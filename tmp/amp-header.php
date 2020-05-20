@@ -122,7 +122,7 @@ if (!is_site_font_family_local()) {
 }
 ?>
 </head>
-<body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage" data-amp-auto-lightbox-disable="">
 
   <?php //AdSense AMP自動広告の<body>直後コード
   get_template_part('tmp/ad-amp-auto-adsense-in-body') ?>
