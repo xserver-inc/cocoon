@@ -20,13 +20,13 @@
 .search-submit{
   position: absolute;
   right: 3px;
-  top: 0;
+  top: calc(50% - 12px);
   //top: 2px;
   // top: 50%;
   // margin-top: -0.65em;
   font-size: 20px;
   cursor: pointer;
-  line-height: 51px;
+  //line-height: 51px;
   border: none;
   color: $thin;
   padding: 0 8px;
