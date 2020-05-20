@@ -351,6 +351,11 @@ function body_class_additional($classes) {
     $classes[] = 'is-header-fixed';
   }
 
+  //AMPの拡大エフェクトがなしの場合
+  if (is_amp_image_zoom_effect_none()) {
+    $classes[] = 'data-amp-auto-lightbox-disable';
+  }
+
   return apply_filters('body_class_additional', $classes);
 }//body_class_additional
 endif;

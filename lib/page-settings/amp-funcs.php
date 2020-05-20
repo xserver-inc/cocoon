@@ -30,6 +30,11 @@ function get_amp_image_zoom_effect(){
   return get_theme_option(OP_AMP_IMAGE_ZOOM_EFFECT, 'amp-lightbox-gallery');
 }
 endif;
+if ( !function_exists( 'is_amp_image_zoom_effect_none' ) ):
+function is_amp_image_zoom_effect_none(){
+  return get_amp_image_zoom_effect() == 'none';
+}
+endif;
 if ( !function_exists( 'is_amp_image_zoom_effect_lightbox' ) ):
 function is_amp_image_zoom_effect_lightbox(){
   return get_amp_image_zoom_effect() == 'amp-image-lightbox';
