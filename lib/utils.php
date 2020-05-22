@@ -3324,3 +3324,10 @@ function get_rel_by_target($target){
   }
 }
 endif;
+
+//存在するカテゴリIDかどうか
+if ( !function_exists( 'is_category_exist' ) ):
+function is_category_exist($cat_id){
+  return get_category($cat_id);
+}
+endif;

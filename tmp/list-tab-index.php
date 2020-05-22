@@ -9,6 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //インデックスカテゴリを読み込む
 $cat_ids = get_index_list_category_ids();
+// var_dump($cat_ids);
 //インデックスリスト用のクラス取得
 $list_classes = get_index_list_classes();
 ?>
@@ -22,8 +23,11 @@ $list_classes = get_index_list_classes();
   <div class="index-tab-buttons">
     <label class="index-tab-button" for="index-tab-1"><?php _e('新着記事', THEME_NAME); ?></label>
     <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
-    $number = $i + 2; ?>
-    <label class="index-tab-button" for="index-tab-<?php echo $number; ?>"><?php echo get_category_name_by_id($cat_ids[$i]); ?></label>
+    $number = $i + 2;
+    $cat_id = $cat_ids[$i]; ?>
+        <?php if (is_category_exist($cat_id)): ?>
+        <label class="index-tab-button" for="index-tab-<?php echo $number; ?>"><?php echo get_category_name_by_id($cat_id);//echo $cat_ids[$i]; ?></label>
+        <?php endif; ?>
     <?php endfor; ?>
   </div>
   <div class="tab-cont tb1">
@@ -36,36 +40,40 @@ $list_classes = get_index_list_classes();
        ?>
   </div>
   <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
-  $number = $i + 2; ?>
-  <div class="tab-cont tb<?php echo $number; ?>">
-      <!-- <?php echo $number; ?>つ目のコンテンツ -->
-      <?php
-      $cat_id = $cat_ids[$i];
-          $arg = array(
-              //表示件数（WordPressの表示設定に準拠）
-              'posts_per_page' => get_option_posts_per_page(),
-              //投稿日順か更新日順か
-              'orderby' => is_get_index_sort_orderby_modified() ? get_index_sort_orderby() : 'date',
-              //降順
-              'order' => 'DESC',
-              //カテゴリーをIDで指定
-              'category' => $cat_id,
-          );
-          $posts = get_posts( $arg );
-          if( $posts ): ?>
-      <div class="<?php echo $list_classes; ?>">
-          <?php
-              foreach ( $posts as $post ) :
-              setup_postdata( $post ); ?>
-                  <?php get_template_part('tmp/entry-card'); ?>
-          <?php endforeach; wp_reset_postdata(); ?>
-      </div>
-      <?php if($cat = get_category($cat_id)): ?>
-        <div class="list-more-button-wrap">
-            <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
+ //var_dump($cat_ids);
+  $number = $i + 2;
+  $cat_id = $cat_ids[$i];
+   ?>
+    <?php if (is_category_exist($cat_id)): ?>
+    <div class="tab-cont tb<?php echo $number; ?>">
+        <!-- <?php echo $number; ?>つ目のコンテンツ -->
+        <?php
+            $arg = array(
+                //表示件数（WordPressの表示設定に準拠）
+                'posts_per_page' => get_option_posts_per_page(),
+                //投稿日順か更新日順か
+                'orderby' => is_get_index_sort_orderby_modified() ? get_index_sort_orderby() : 'date',
+                //降順
+                'order' => 'DESC',
+                //カテゴリーをIDで指定
+                'category' => $cat_id,
+            );
+            $posts = get_posts( $arg );
+            if( $posts ): ?>
+        <div class="<?php echo $list_classes; ?>">
+            <?php
+                foreach ( $posts as $post ) :
+                setup_postdata( $post ); ?>
+                    <?php get_template_part('tmp/entry-card'); ?>
+            <?php endforeach; wp_reset_postdata(); ?>
         </div>
-      <?php endif; ?>
-      <?php endif; ?>
-  </div>
+        <?php if($cat = get_category($cat_id)): ?>
+            <div class="list-more-button-wrap">
+                <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
+            </div>
+        <?php endif; ?>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
   <?php endfor; ?>
 </div>
