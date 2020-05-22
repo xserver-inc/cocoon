@@ -32,6 +32,7 @@ $count = get_index_category_entry_card_count();
     <?php //カテゴリの表示
     for ($i=0; $i < count($cat_ids); $i++):
       $cat_id = $cat_ids[$i]; ?>
+      <?php if (is_category_exist($cat_id)): ?>
       <div class="list-category-<?php echo $cat_id; ?> list-column">
         <h1 class="list-category-<?php echo $cat_id; ?>-title list-title">
           <span class="list-title-in">
@@ -47,6 +48,7 @@ $count = get_index_category_entry_card_count();
           </div>
         <?php endif; ?>
       </div><!-- .list-category- -->
+      <?php endif; ?>
     <?php endfor; ?>
   </div><!-- .list-columns -->
 </div><!-- .list-wrap -->
