@@ -453,8 +453,8 @@ function wp_enqueue_script_theme_js(){
   ) );
   wp_localize_script( THEME_JS, $name, $value );
 
-  // TODO: ファイル読みこみ位置 もしくは HTML側に直接出力など よい方法を考慮
-  wp_enqueue_script( 'set-event-passive', SET_EVENT_PASSIVE_JS_URL, array( ), false, true );
+  // // TODO: ファイル読みこみ位置 もしくは HTML側に直接出力など よい方法を考慮
+  // wp_enqueue_script( 'set-event-passive', SET_EVENT_PASSIVE_JS_URL, array( ), false, true );
 }
 endif;
 
