@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_ads_visible() && is_auto_adsense_enable()): ?>
+if (is_ads_visible()): ?>
 <!-- Google AMP Auto AdSense -->
 <amp-auto-ads type="adsense" data-ad-client="<?php echo get_adsense_data_ad_client(); ?>"></amp-auto-ads>
 <!-- End Google AMP Auto AdSense -->
