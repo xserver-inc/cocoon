@@ -1415,6 +1415,7 @@ img.emoji {
 }
 .entry-content pre {
   line-height: 1.6;
+  word-wrap: normal;
 }
 
 /*本文下カテゴリとタグ*/
