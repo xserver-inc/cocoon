@@ -115,7 +115,7 @@ if (is_sns_follow_buttons_visible() && !is_paged() &&
 ////////////////////////////
 //ページネーション
 ////////////////////////////
-if (is_front_page_type_index()) {
+if (is_front_page_type_index() || !is_front_index_page()) {
   get_template_part('tmp/pagination');
 }
 
