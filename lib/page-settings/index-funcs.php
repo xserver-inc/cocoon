@@ -237,6 +237,9 @@ function get_index_list_category_ids(){
   if ($cat_comma) {
     $cat_ids = explode(',', $cat_comma);
   }
+  if (!is_array($cat_ids)) {
+    $cat_ids = array();
+  }
   //カテゴリーをPHP独自カスタマイズで制御したい人用のフック
   $cat_ids = apply_filters('get_index_list_category_ids', $cat_ids);
   return $cat_ids;

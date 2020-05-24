@@ -9,7 +9,6 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //インデックスカテゴリを読み込む
 $cat_ids = get_index_list_category_ids();
-// var_dump($cat_ids);
 //インデックスリスト用のクラス取得
 $list_classes = get_index_list_classes();
 ?>
