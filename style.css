@@ -1413,7 +1413,9 @@ img.emoji {
   margin-top: 1em;
   margin-bottom: 3em;
 }
-.entry-content pre {
+
+pre,
+pre * {
   line-height: 1.6;
   word-wrap: normal;
 }
