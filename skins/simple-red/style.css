@@ -1,0 +1,332 @@
+@charset "UTF-8";
+
+/*
+  Skin Name: Simple red
+  Description: 赤をベースにしたシンプルで使いやすいスキン
+  Skin URI: https://karasu-hc.com/2020/05/20/cocoon-2/
+  Author: ベーやん
+  Author URI: https://karasu-hc.com/2020/05/20/cocoon-2/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/simple_red.jpg
+  Version: 1.0.0
+  Priority: 9730001000
+*/
+
+/*以下にスタイルシートを記入してください*/
+
+/* 全体 */
+
+body {
+  font-family: Avenir, 'Helvetica neue', Helvetica, 'Segoe UI', '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+  background-color: #f4f5f7;
+}
+
+.main,
+.sidebar {
+  background-color: #f4f5f7;
+}
+
+/* ヘッダー・グローバルナビ */
+
+.header-container .navi {
+  background-color: #eb373c;
+}
+
+#navi .navi-in a {
+  color: #fff;
+}
+
+#navi .navi-in > .menu-header .sub-menu {
+  background-color: #eb373c;
+}
+
+#navi .navi-in a:hover {
+  background-color: #fd8478;
+}
+
+.menu-header .item-label {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.header-container {
+  color: #fff;
+  background-color: #eb373c;
+}
+
+.header {
+  background-color: #eb373c;
+}
+
+.header .header-in {
+  min-height: 100px;
+}
+
+/* サイト名・キャッチフレーズ */
+
+.site-name-text {
+  color: #fff;
+}
+
+.site-name-text:hover {
+  color: #fff;
+}
+
+/* 見出し */
+
+.article h2 {
+  margin: 5px 0;
+  padding: 15px 25px;
+  background-color: #eb373c;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 1px;
+}
+
+.article h3 {
+  padding: 10px 20px;
+  background-color: #ffe1dc;
+  border-color: #eb373c;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: 6px solid #eb373c;
+}
+
+.article h4 {
+  border-top: 2px solid #eb373c;
+  border-bottom: 2px solid #eb373c;
+}
+
+.article h5 {
+  border-bottom: none;
+  position: relative;
+}
+
+.article h5:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #eb373c, #ffe1dc);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* サイドバー */
+
+.sidebar h3 {
+  padding: 10px;
+  border: 1.5px solid #333;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 1px;
+}
+
+.widget_recent_entries ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_meta ul li a:hover,
+.widget_rss ul li a:hover,
+.widget_nav_menu ul li a:hover {
+  background-color: #fff;
+}
+
+/* 検索ボタン */
+
+input[type='text'].search-edit {
+  font-size: 16px;
+  border-radius: 46px;
+}
+
+/* シェアボタン */
+
+#container .sns-buttons a {
+  border-radius: 1px;
+}
+
+/* ブログカード */
+
+.a-wrap .blogcard {
+  border-color: #eb373c;
+}
+
+.a-wrap:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px #f6fafd;
+}
+
+.cat-label {
+  top: 0;
+  left: 0;
+  background-color: #eb373c;
+  border-top: none;
+  border-left: none;
+}
+
+.cat-link {
+  background-color: #eb373c;
+  border-radius: 1px;
+}
+
+.tag-link,
+.comment-reply-link {
+  color: #eb373c;
+  border-color: #fd8478;
+  border-radius: 1px;
+}
+
+.tag-link:hover,
+.comment-reply-link:hover {
+  color: #007eaf;
+  background-color: transparent;
+}
+
+.tagcloud a {
+  /* color: $key-color; */
+  border-radius: 29px;
+}
+
+/* .tagcloud a:hover {
+    color: #007eaf;
+} */
+
+/* コメント送信ボタン */
+
+input[type='submit'] {
+  padding: 10px;
+  background: #eb373c;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 1px;
+}
+
+.pagination-next-link,
+.comment-btn {
+  padding: 10px;
+  background: transparent;
+  color: #eb373c;
+  font-size: 14px;
+  border: 1px solid #eb373c;
+  border-radius: 1px;
+}
+
+/* テーブル */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+table th {
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 1.5px solid #eb373c;
+  background: #ffe1dc;
+  font-size: 18px;
+}
+
+table tr:nth-child(even) {
+  background: #ffe1dc;
+}
+
+/* ページネーション */
+
+.page-numbers {
+  color: #fd8478;
+  border: 1px solid #eb373c;
+  border-radius: 50%;
+}
+
+.pagination .current {
+  background-color: #eb373c;
+  color: #fff;
+}
+
+.page-numbers.dots {
+  opacity: 1;
+  background: none;
+}
+
+.pagination a:hover {
+  background-color: #eb373c;
+  color: #fff;
+}
+
+/* フッター */
+
+.footer {
+  padding-top: 30px;
+  padding-bottom: 35px;
+  color: #fff;
+  background-color: #eb373c;
+}
+
+.footer-bottom {
+  margin-top: 0;
+}
+
+.footer-in h3 {
+  padding: 10px;
+  border: 1.5px solid #333;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 1px;
+}
+
+/* スクロールトップボタン */
+
+.go-to-top {
+  bottom: 35px;
+}
+
+.go-to-top-button {
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.go-to-top-button:hover {
+  color: #fff;
+}
+
+/* レスポンシブ */
+
+@media screen and (max-width: 834px) {
+  .header-container-in.hlt-top-menu #header .header-in {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .header-in {
+    min-height: 80px;
+  }
+
+  .sidebar h3 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .article h2 {
+    padding: 0.6em 0.2em;
+  }
+
+  .article h3 {
+    padding: 0.4em 1em;
+  }
+
+  .footer {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+}
