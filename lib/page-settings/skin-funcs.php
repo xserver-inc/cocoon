@@ -236,6 +236,11 @@ function get_exclude_skins(){
     'veilnui-simplog-lime',
     'veilnui-simplog-purple',
     'veilnui-simplog-yellow',
+    'simple-blue',
+    'simple-green',
+    'simple-navy',
+    'simple-pink',
+    'simple-red',
   );
   return apply_filters('get_exclude_skins', $exclude_skins);
 }
