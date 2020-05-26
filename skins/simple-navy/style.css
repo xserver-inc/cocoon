@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /*
   Skin Name: Simple Navy
   Description: 紺をベースにしたシンプルで使いやすいスキン
@@ -10,11 +9,8 @@
   Version: 1.0.0
   Priority: 9730001000
 */
-
 /*以下にスタイルシートを記入してください*/
-
 /* 全体 */
-
 body {
   font-family: Avenir, 'Helvetica neue', Helvetica, 'Segoe UI', '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
   background-color: #f4f5f7;
@@ -26,7 +22,6 @@ body {
 }
 
 /* ヘッダー・グローバルナビ */
-
 .header-container .navi {
   background-color: #005488;
 }
@@ -62,7 +57,6 @@ body {
 }
 
 /* サイト名・キャッチフレーズ */
-
 .site-name-text {
   color: #fff;
 }
@@ -72,7 +66,6 @@ body {
 }
 
 /* 見出し */
-
 .article h2 {
   margin: 5px 0;
   padding: 15px 25px;
@@ -84,7 +77,7 @@ body {
 
 .article h3 {
   padding: 10px 20px;
-  background-color: #dae0eb;
+  background-color: #007eaf;
   border-color: #005488;
   border-top: none;
   border-right: none;
@@ -107,14 +100,13 @@ body {
   display: block;
   width: 100%;
   height: 4px;
-  background: linear-gradient(to right, #005488, #dae0eb);
+  background: linear-gradient(to right, #005488, #007eaf);
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
 /* サイドバー */
-
 .sidebar h3 {
   padding: 10px;
   border: 1.5px solid #333;
@@ -135,20 +127,17 @@ body {
 }
 
 /* 検索ボタン */
-
 input[type='text'].search-edit {
   font-size: 16px;
   border-radius: 46px;
 }
 
 /* シェアボタン */
-
 #container .sns-buttons a {
   border-radius: 1px;
 }
 
 /* ブログカード */
-
 .a-wrap .blogcard {
   border-color: #005488;
 }
@@ -191,11 +180,9 @@ input[type='text'].search-edit {
 }
 
 /* .tagcloud a:hover {
-    color: #007eaf;
+    color: $key_color3;
 } */
-
 /* コメント送信ボタン */
-
 input[type='submit'] {
   padding: 10px;
   background: #005488;
@@ -216,7 +203,6 @@ input[type='submit'] {
 }
 
 /* テーブル */
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -229,16 +215,15 @@ table th {
   padding: 10px;
   font-weight: bold;
   border-bottom: 1.5px solid #005488;
-  background: #dae0eb;
+  background: #007eaf;
   font-size: 18px;
 }
 
 table tr:nth-child(even) {
-  background: #dae0eb;
+  background: #007eaf;
 }
 
 /* ページネーション */
-
 .page-numbers {
   color: #6b89af;
   border: 1px solid #005488;
@@ -261,7 +246,6 @@ table tr:nth-child(even) {
 }
 
 /* フッター */
-
 .footer {
   padding-top: 30px;
   padding-bottom: 35px;
@@ -282,7 +266,6 @@ table tr:nth-child(even) {
 }
 
 /* スクロールトップボタン */
-
 .go-to-top {
   bottom: 35px;
 }
@@ -300,7 +283,6 @@ table tr:nth-child(even) {
 }
 
 /* レスポンシブ */
-
 @media screen and (max-width: 834px) {
   .header-container-in.hlt-top-menu #header .header-in {
     display: flex;
@@ -315,7 +297,6 @@ table tr:nth-child(even) {
     font-size: 16px;
   }
 }
-
 @media screen and (max-width: 480px) {
   .article h2 {
     padding: 0.6em 0.2em;

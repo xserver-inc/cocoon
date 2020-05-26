@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/*
+  Skin Name: Simple Navy
+  Description: 紺をベースにしたシンプルで使いやすいスキン
+  Skin URI: https://karasu-hc.com/2020/05/20/cocoon-2/
+  Author: ベーやん
+  Author URI: https://karasu-hc.com/2020/05/20/cocoon-2/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/simple_navy.jpg
+  Version: 1.0.0
+  Priority: 9730001000
+*/
+
+/*以下にスタイルシートを記入してください*/
+
+$bg_color: #f4f5f7;
+$white: #fff;
+$black: #333;
+$shadow: #f6fafd;
+$key_color1: #005488;
+$key_color2: #6b89af;
+$key_color3: #007eaf;
+
+// Base file import
+@import "..\\_scss\\_simples_base.scss";
