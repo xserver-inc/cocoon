@@ -8361,6 +8361,22 @@ input[name="tab_item"] {
   display: none;
 }
 
+@keyframes tab-index-show {
+  0% {
+    opacity: 0;
+    padding-top: 100px;
+  }
+  20% {
+    padding-top: 20px;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    padding-top: 0;
+  }
+}
 #index-tab-1:checked ~ .tab-cont.tb1,
 #index-tab-2:checked ~ .tab-cont.tb2,
 #index-tab-3:checked ~ .tab-cont.tb3,

@@ -7,10 +7,3 @@
   81%  { transform: scale(4) rotate(45deg); opacity: 1; }
   100% { transform: scale(50) rotate(45deg); opacity: 0; }
 }
-
-@keyframes tab-index-show {
-  0%   { opacity: 0;padding-top: 100px; }
-  20%  { padding-top: 20px; }
-  80%  { opacity: 0.5; }
-  100% { opacity: 1;padding-top: 0; }
-}
