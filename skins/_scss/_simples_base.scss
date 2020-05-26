@@ -324,6 +324,7 @@ table tr:nth-child(even) {
   border-radius: 99px;
 }
 
-.footer a{
+.footer a,
+.footer .footer-in .sns-buttons a{
   color: $white;
 }
