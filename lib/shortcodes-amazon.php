@@ -159,12 +159,19 @@ endif;
 
 //Amazon APIから情報の取得
 if ( !function_exists( 'get_amazon_itemlookup_json' ) ):
-function get_amazon_itemlookup_json($asin){
+function get_amazon_itemlookup_json($asin, $tracking_id = null){
   $asin = trim($asin);
 
+  //トラッキングIDが存在する場合
+  $tracking_id = trim($tracking_id);
+  $tid = null;
+  if ($tracking_id) {
+    $tid = '+'.$tracking_id;
+  }
+
   //キャッシュの存在
-  $transient_id = get_amazon_api_transient_id($asin);
-  $transient_bk_id = get_amazon_api_transient_bk_id($asin);
+  $transient_id = get_amazon_api_transient_id($asin.$tid);
+  $transient_bk_id = get_amazon_api_transient_bk_id($asin.$tid);
   $json_cache = get_transient( $transient_id );
   // $json = json_decode( $json_cache );
   // $json_error_code    = isset($json->{'Errors'}[0]->{'Code'}) ? $json->{'Errors'}[0]->{'Code'} : null;
@@ -183,7 +190,7 @@ function get_amazon_itemlookup_json($asin){
   //シークレットキー
   $secretKey = trim(get_amazon_api_secret_key());
   //アソシエイトタグ
-  $partnerTag = trim(get_amazon_associate_tracking_id());
+  $partnerTag = trim(get_amazon_associate_tracking_id($tracking_id));
   //キャッシュ更新間隔（日）
   $days = intval(get_api_cache_retention_period());
   //_v($access_key_id);
@@ -363,6 +370,7 @@ function amazon_product_link_shortcode($atts){
     'kw' => null,
     'title' => null,
     'desc' => null,
+    'tracking_id' => null,
     'price' => null,
     'review' => null,
     'size' => 'm',
@@ -409,7 +417,7 @@ function amazon_product_link_shortcode($atts){
   //シークレットキー
   $secret_access_key = trim(get_amazon_api_secret_key());
   //トラッキングID
-  $associate_tracking_id = trim(get_amazon_associate_tracking_id());
+  $associate_tracking_id = trim(get_amazon_associate_tracking_id($tracking_id));
   //楽天アフィリエイトID
   $rakuten_affiliate_id = trim(get_rakuten_affiliate_id());
   //Yahoo!バリューコマースSID
@@ -438,7 +446,7 @@ function amazon_product_link_shortcode($atts){
   $associate_url = get_amazon_associate_url($asin, $associate_tracking_id);
 
   //商品情報の取得
-  $res = get_amazon_itemlookup_json($asin);
+  $res = get_amazon_itemlookup_json($asin, $associate_tracking_id);
 
   if ($res === false) {//503エラーの場合
     return get_amazon_admin_error_message_tag($associate_url, __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。サーバーの「php.ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してください。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME ));

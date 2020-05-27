@@ -26,8 +26,16 @@ endif;
 //AmazonトラッキングID
 define('OP_AMAZON_ASSOCIATE_TRACKING_ID', 'amazon_associate_tracking_id');
 if ( !function_exists( 'get_amazon_associate_tracking_id' ) ):
-function get_amazon_associate_tracking_id(){
-  return get_theme_option(OP_AMAZON_ASSOCIATE_TRACKING_ID);
+function get_amazon_associate_tracking_id($tracking_id = null){
+  //Cocoon設定で入力されているものを取得
+  $id = get_theme_option(OP_AMAZON_ASSOCIATE_TRACKING_ID);
+
+  //個別のトラッキングIDショートコード
+  $tracking_id = trim($tracking_id);
+  if ($tracking_id) {
+    $id = $tracking_id;
+  }
+  return $id;
 }
 endif;
 
