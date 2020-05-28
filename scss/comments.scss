@@ -66,3 +66,14 @@
   //   content: '\f0e5';
   // }
 }
+
+//コメントのページネーション
+.comment-page-link{
+  text-align: center;
+  .page-numbers{
+    width: auto;
+    height: auto;
+    padding: 6px 12px;
+    line-height: normal;
+  }
+}
