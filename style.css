@@ -5279,6 +5279,9 @@ label.screen-reader-text {
   padding: 6px 12px;
   line-height: normal;
 }
+.comment-page-link .current {
+  background-color: #eee;
+}
 
 /************************************
 ** ページネーション

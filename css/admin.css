@@ -1409,6 +1409,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-reply-link { font-size: 14px; }
 .admin-settings .demo .comment-page-link { text-align: center; }
 .admin-settings .demo .comment-page-link .page-numbers { width: auto; height: auto; padding: 6px 12px; line-height: normal; }
+.admin-settings .demo .comment-page-link .current { background-color: #eee; }
 .admin-settings .demo .pagination { margin: 24px 0; clear: both; text-align: center; display: inline-flex; justify-content: center; width: 100%; }
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
@@ -2985,6 +2986,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-reply-link { font-size: 14px; }
 .admin-settings .demo .comment-page-link { text-align: center; }
 .admin-settings .demo .comment-page-link .page-numbers { width: auto; height: auto; padding: 6px 12px; line-height: normal; }
+.admin-settings .demo .comment-page-link .current { background-color: #eee; }
 .admin-settings .demo .pagination { margin: 24px 0; clear: both; text-align: center; display: inline-flex; justify-content: center; width: 100%; }
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
