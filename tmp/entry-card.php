@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 $article_id_attr = null;
-if (!is_front_page_type_index()) {
+if (is_front_page_type_index()) {
   $article_id_attr = ' id="post-'.get_the_ID().'"';
 }
 ?>
