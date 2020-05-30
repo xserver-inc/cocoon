@@ -1241,3 +1241,25 @@ div.speech-balloon {
 .fixed-header .header{
   background-color: $key;
 }
+
+/* -------------------------------------------
+/ 『追加修正』
+------------------------------------------- */
+#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] {
+  background: none #e5e4e6;
+  border: 1px solid #e5e4e6;
+  color: #404453;
+}
+
+.index-tab-buttons .index-tab-button{
+  background-color: #191919;
+}
+
+.list-more-button{
+  color: #d3d3d3;
+}
+
+.list-title-in::before,
+.list-title-in::after{
+  background-color: #d3d3d3;
+}
