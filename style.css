@@ -9072,6 +9072,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   display: none;
 }
 
+div#wpforo-wrap .wpforo-post .wpforo-attached-file {
+  display: block;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;
