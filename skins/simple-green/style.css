@@ -83,6 +83,7 @@ body {
   border-right: none;
   border-bottom: none;
   border-left: 6px solid #28b893;
+  color: #fff;
 }
 
 .article h4 {
@@ -217,10 +218,6 @@ table th {
   border-bottom: 1.5px solid #28b893;
   background: #1a7961;
   font-size: 18px;
-}
-
-table tr:nth-child(even) {
-  background: #1a7961;
 }
 
 /* ページネーション */

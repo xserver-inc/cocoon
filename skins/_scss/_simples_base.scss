@@ -78,6 +78,7 @@ body {
   border-right: none;
   border-bottom: none;
   border-left: 6px solid $key_color1;
+  color: $white;
 }
 
 .article h4 {
@@ -221,9 +222,10 @@ table th {
   font-size: 18px;
 }
 
-table tr:nth-child(even) {
-  background: $key_color3;
-}
+// table tr:nth-child(even) {
+//   background: $key_color3;
+//   color: $white;
+// }
 
 /* ページネーション */
 
