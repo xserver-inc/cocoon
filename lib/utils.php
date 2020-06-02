@@ -3328,6 +3328,6 @@ endif;
 //存在するカテゴリIDかどうか
 if ( !function_exists( 'is_category_exist' ) ):
 function is_category_exist($cat_id){
-  return get_category($cat_id);
+  return is_numeric($cat_id) && get_category($cat_id);
 }
 endif;
