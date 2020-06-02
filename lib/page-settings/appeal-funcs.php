@@ -91,6 +91,14 @@ function is_appeal_area_background_attachment_fixed(){
 }
 endif;
 
+//アピールエリアメッセージ表示
+define('OP_APPEAL_AREA_CONTENT_VISIBLE', 'appeal_area_content_visible');
+if ( !function_exists( 'is_appeal_area_content_visible' ) ):
+function is_appeal_area_content_visible(){
+  return get_theme_option(OP_APPEAL_AREA_CONTENT_VISIBLE, 1);
+}
+endif;
+
 //アピールエリアタイトル
 define('OP_APPEAL_AREA_TITLE', 'appeal_area_title');
 if ( !function_exists( 'get_appeal_area_title' ) ):
