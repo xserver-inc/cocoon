@@ -89,6 +89,15 @@ update_theme_option(OP_YAHOO_SEARCH_BUTTON_VISIBLE);
 //Yahoo!検索ボタンテキスト
 update_theme_option(OP_YAHOO_SEARCH_BUTTON_TEXT);
 
+//DMMアフィリエイトID
+update_theme_option(OP_DMM_AFFILIATE_ID);
+
+//DMM検索ボタンを表示する
+update_theme_option(OP_DMM_SEARCH_BUTTON_VISIBLE);
+
+//DMM検索ボタン文字
+update_theme_option(OP_DMM_SEARCH_BUTTON_TEXT);
+
 //もしもアフィリエイトリンクを有効にする
 update_theme_option(OP_MOSHIMO_AFFILIATE_LINK_ENABLE);
 
