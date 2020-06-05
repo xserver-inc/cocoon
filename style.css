@@ -437,7 +437,7 @@ hr {
   padding-top: 4px;
   border: 1px solid #ddd;
   border-radius: 3px;
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
   text-align: center;
   max-width: 100%;
 }
@@ -1492,7 +1492,7 @@ table {
   border-spacing: 0;
 }
 table th {
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
 }
 table tr:nth-of-type(2n+1) {
   background-color: #fafbfc;
@@ -1611,7 +1611,7 @@ figure.wp-block-table.alignright table {
 .article h2 {
   font-size: 24px;
   padding: 25px;
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
   border-radius: 2px;
 }
 .article h3 {
@@ -2063,7 +2063,7 @@ span.internal-icon {
   background-color: #fff;
 }
 .sidebar h3 {
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
   padding: 12px;
   margin: 16px 0;
   border-radius: 2px;
@@ -3128,7 +3128,7 @@ label.screen-reader-text {
 .blank-box.sticky {
   border-width: 0 0 0 6px;
   border-color: #777;
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
 }
 .blank-box.sticky.st-yellow {
   border-color: #FFA103;
@@ -4678,7 +4678,7 @@ label.screen-reader-text {
   display: block;
   cursor: pointer;
   padding: 3px 10px;
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
   border: 2px solid #ccc;
   text-align: center;
   border-radius: 4px;
@@ -5321,7 +5321,7 @@ label.screen-reader-text {
 
 .page-numbers.dots {
   opacity: 0.6;
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
 }
 
 /************************************
@@ -5937,7 +5937,7 @@ div.sbs-think .speech-balloon::after {
   right: 0;
   top: 0;
   border: 1px solid #ddd;
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
   border-radius: 2px;
   transition: all .3s ease;
   opacity: 0;
@@ -10172,7 +10172,7 @@ _:-ms-lang(x), .mc-circle {
 ** ソースコード
 ************************************/
 pre {
-  background-color: #f3f4f5;
+  background-color: #f5f6f7;
   border: 1px solid #ccc;
   overflow: auto;
   padding: 10px;

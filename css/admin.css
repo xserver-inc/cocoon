@@ -418,7 +418,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .aligncenter { display: block; margin-right: auto; margin-left: auto; }
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
-.admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #ddd; border-radius: 3px; background-color: #f3f4f5; text-align: center; max-width: 100%; }
+.admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #ddd; border-radius: 3px; background-color: #f5f6f7; text-align: center; max-width: 100%; }
 .admin-settings .demo .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .admin-settings .demo .wp-caption-dd { margin: 0; padding: 0 4px 5px; font-size: 11px; line-height: 17px; }
@@ -632,7 +632,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
-.admin-settings .demo table th { background-color: #f3f4f5; }
+.admin-settings .demo table th { background-color: #f5f6f7; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
@@ -656,7 +656,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
 .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 9px 10px; }
-.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; border-radius: 2px; }
+.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f5f6f7; border-radius: 2px; }
 .admin-settings .demo .article h3 { border-left: 7px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 12px 20px; }
 .admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
@@ -736,7 +736,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
+.admin-settings .demo .sidebar h3 { background-color: #f5f6f7; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .sidebar-menu-content .sidebar { height: auto; }
@@ -924,7 +924,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-tab.bb-amber .bb-label { background-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-tab.bb-deep-orange .bb-label { background-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-tab.bb-white .bb-label { background-color: #fff; }
-.admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
+.admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f5f6f7; }
 .admin-settings .demo .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
@@ -1270,7 +1270,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
@@ -1415,7 +1415,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
 .admin-settings .demo .page-numbers span { line-height: inherit; }
-.admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
+.admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f5f6f7; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
@@ -1527,7 +1527,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 160px; min-width: 160px; margin: 0 auto 1em !important; float: none !important; text-align: center; }
 .admin-settings .demo .booklink-image *, .admin-settings .demo .kaerebalink-image *, .admin-settings .demo .tomarebalink-image *, .admin-settings .demo .product-item-thumb * { display: block; }
 .admin-settings .demo .booklink-image > a > img, .admin-settings .demo .kaerebalink-image > a > img, .admin-settings .demo .tomarebalink-image > a > img, .admin-settings .demo .product-item-thumb > a > img { margin: 0 auto; }
-.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f3f4f5; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
+.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f5f6f7; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
 .admin-settings .demo .image-content img { display: block; }
 .admin-settings .demo .image-content amp-img { min-width: 500px; }
 .admin-settings .demo .image-thumb:hover > .image-content { visibility: visible; opacity: 1; }
@@ -1996,7 +1996,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .aligncenter { display: block; margin-right: auto; margin-left: auto; }
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
-.admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #ddd; border-radius: 3px; background-color: #f3f4f5; text-align: center; max-width: 100%; }
+.admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #ddd; border-radius: 3px; background-color: #f5f6f7; text-align: center; max-width: 100%; }
 .admin-settings .demo .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .admin-settings .demo .wp-caption-dd { margin: 0; padding: 0 4px 5px; font-size: 11px; line-height: 17px; }
@@ -2210,7 +2210,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
-.admin-settings .demo table th { background-color: #f3f4f5; }
+.admin-settings .demo table th { background-color: #f5f6f7; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
@@ -2234,7 +2234,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
 .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 9px 10px; }
-.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; border-radius: 2px; }
+.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f5f6f7; border-radius: 2px; }
 .admin-settings .demo .article h3 { border-left: 7px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 12px 20px; }
 .admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
@@ -2314,7 +2314,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
+.admin-settings .demo .sidebar h3 { background-color: #f5f6f7; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .sidebar-menu-content .sidebar { height: auto; }
@@ -2502,7 +2502,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-tab.bb-amber .bb-label { background-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-tab.bb-deep-orange .bb-label { background-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-tab.bb-white .bb-label { background-color: #fff; }
-.admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
+.admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f5f6f7; }
 .admin-settings .demo .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
@@ -2848,7 +2848,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
@@ -2993,7 +2993,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
 .admin-settings .demo .page-numbers span { line-height: inherit; }
-.admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
+.admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f5f6f7; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
@@ -3105,7 +3105,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 160px; min-width: 160px; margin: 0 auto 1em !important; float: none !important; text-align: center; }
 .admin-settings .demo .booklink-image *, .admin-settings .demo .kaerebalink-image *, .admin-settings .demo .tomarebalink-image *, .admin-settings .demo .product-item-thumb * { display: block; }
 .admin-settings .demo .booklink-image > a > img, .admin-settings .demo .kaerebalink-image > a > img, .admin-settings .demo .tomarebalink-image > a > img, .admin-settings .demo .product-item-thumb > a > img { margin: 0 auto; }
-.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f3f4f5; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
+.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f5f6f7; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
 .admin-settings .demo .image-content img { display: block; }
 .admin-settings .demo .image-content amp-img { min-width: 500px; }
 .admin-settings .demo .image-thumb:hover > .image-content { visibility: visible; opacity: 1; }
@@ -3942,7 +3942,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 /************************************
 ** ソースコード
 ************************************/
-pre { background-color: #f3f4f5; border: 1px solid #ccc; overflow: auto; padding: 10px; margin: 1em 0; }
+pre { background-color: #f5f6f7; border: 1px solid #ccc; overflow: auto; padding: 10px; margin: 1em 0; }
 
 .is-code-row-number-enable pre, .is-code-row-number-enable pre#highlight-demo { border: none; position: relative; padding: 0.4em 1em 0.4em 3em; }
 
@@ -4154,7 +4154,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 #singular_sns_image_settings input[type=text] { width: 100%; }
 #singular_sns_image_settings #sns_image_url_thumbnail img { width: 100%; }
 
-.skin-control { opacity: 0.5; padding: 1.4em 0.6em 0.6em; position: relative; display: inline-block; background-color: #f3f4f5; border: 1px solid #ba2636; border-radius: 2px; pointer-events: none; cursor: not-allowed; }
+.skin-control { opacity: 0.5; padding: 1.4em 0.6em 0.6em; position: relative; display: inline-block; background-color: #f5f6f7; border: 1px solid #ba2636; border-radius: 2px; pointer-events: none; cursor: not-allowed; }
 .skin-control::before { content: 'スキン制御'; font-size: 0.7em; border-bottom-right-radius: 8px; position: absolute; top: 0; left: 0; background-color: #ba2636; color: #fff; padding: 2px 10px 2px 6px; }
 
 .backwpup_page_backwpupeditjob #wpfooter { display: none; }
@@ -4286,7 +4286,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.bb-tab.bb-amber .bb-label { background-color: #ffc107; }
 .components-popover__content .blank-box.bb-tab.bb-deep-orange .bb-label { background-color: #ea5506; }
 .components-popover__content .blank-box.bb-tab.bb-white .bb-label { background-color: #fff; }
-.components-popover__content .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
+.components-popover__content .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f5f6f7; }
 .components-popover__content .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .components-popover__content .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .components-popover__content .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
@@ -4632,7 +4632,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .toggle-wrap { margin: 1.2em 0; position: relative; }
 .components-popover__content .toggle-wrap > p { margin: 0; }
 .components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .components-popover__content .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .components-popover__content .toggle-button:hover { opacity: 0.7; }
 .components-popover__content .toggle-checkbox { display: none; }
