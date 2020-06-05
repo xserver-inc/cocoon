@@ -435,7 +435,7 @@ hr {
 
 .wp-caption {
   padding-top: 4px;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-radius: 3px;
   background-color: #f5f6f7;
   text-align: center;
@@ -524,7 +524,7 @@ img {
 /*シャドー*/
 .iwe-shadow img,
 .iwe-shadow amp-img {
-  box-shadow: 5px 5px 15px #ddd;
+  box-shadow: 5px 5px 15px #eee;
 }
 
 /*シャドーペーパー*/
@@ -866,10 +866,10 @@ img.emoji {
 }
 .navi-footer-in > .menu-footer li {
   width: 120px;
-  border-left: 1px solid #ccc;
+  border-left: 1px solid #ddd;
 }
 .navi-footer-in > .menu-footer li:last-child {
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #ddd;
 }
 .navi-footer-in a {
   color: #333;
@@ -1499,7 +1499,7 @@ table tr:nth-of-type(2n+1) {
 }
 table th,
 table td {
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   padding: 6px;
 }
 
@@ -1615,22 +1615,22 @@ figure.wp-block-table.alignright table {
   border-radius: 2px;
 }
 .article h3 {
-  border-left: 7px solid #777;
-  border-right: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-left: 7px solid #888;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   font-size: 22px;
   padding: 12px 20px;
 }
 .article h4 {
-  border-top: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
 }
 .article h5 {
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #ddd;
 }
 .article h6 {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
 }
 .article .column-wrap h1, .article .column-wrap h2, .article .column-wrap h3, .article .column-wrap h4, .article .column-wrap h5, .article .column-wrap h6 {
   margin-top: 0;
@@ -1641,7 +1641,7 @@ figure.wp-block-table.alignright table {
 ************************************/
 blockquote {
   background-color: #fafbfc;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   margin: 1em 0;
   padding: 10px 1.2em;
   position: relative;
@@ -1730,8 +1730,8 @@ span.internal-icon {
 .read-time {
   text-align: center;
   font-size: 0.7em;
-  border-top: 4px double #ddd;
-  border-bottom: 4px double #ddd;
+  border-top: 4px double #eee;
+  border-bottom: 4px double #eee;
   margin: 0 3%;
 }
 
@@ -2140,7 +2140,7 @@ label.screen-reader-text {
   flex-wrap: wrap;
 }
 .tagcloud a {
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-radius: 2px;
   color: #555;
   padding: 3px 8px;
@@ -2237,8 +2237,8 @@ label.screen-reader-text {
   border-right-width: 1px;
   border-top-style: solid;
   border-right-style: solid;
-  border-top-color: #ddd;
-  border-right-color: #ddd;
+  border-top-color: #eee;
+  border-right-color: #eee;
   width: 100%;
   max-width: 400px;
 }
@@ -2263,8 +2263,8 @@ label.screen-reader-text {
   border-left-width: 1px;
   border-bottom-style: solid;
   border-left-style: solid;
-  border-bottom-color: #ddd;
-  border-left-color: #ddd;
+  border-bottom-color: #eee;
+  border-left-color: #eee;
 }
 #wp-calendar td {
   text-align: center;
@@ -2273,8 +2273,8 @@ label.screen-reader-text {
   border-left-width: 1px;
   border-bottom-style: solid;
   border-left-style: solid;
-  border-bottom-color: #ddd;
-  border-left-color: #ddd;
+  border-bottom-color: #eee;
+  border-left-color: #eee;
 }
 #wp-calendar td a {
   color: #333;
@@ -2319,15 +2319,15 @@ label.screen-reader-text {
 }
 
 .border-partition a {
-  border-bottom: 2px dotted #ddd;
+  border-bottom: 2px dotted #eee;
 }
 .border-partition a:first-of-type {
-  border-top: 2px dotted #ddd;
+  border-top: 2px dotted #eee;
 }
 
 .border-square a {
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
 }
 
 .card-title-bold .card-title {
@@ -2481,7 +2481,7 @@ label.screen-reader-text {
 .recent-comment-content {
   position: relative;
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   padding: 6px;
   margin-top: 4px;
   font-size: 0.9em;
@@ -2505,7 +2505,7 @@ label.screen-reader-text {
 }
 .recent-comment-content::before {
   border-color: rgba(221, 221, 221, 0);
-  border-bottom-color: #ccc;
+  border-bottom-color: #ddd;
   border-width: 9px;
   margin-left: -9px;
 }
@@ -2665,7 +2665,7 @@ label.screen-reader-text {
 .keyboard-key {
   background-color: #f9f9f9;
   background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee);
-  border: 1px solid #777;
+  border: 1px solid #888;
   border-radius: 2px;
   box-shadow: 1px 2px 2px #ddd;
   font-family: inherit;
@@ -4569,7 +4569,7 @@ label.screen-reader-text {
 
 .label-box-content {
   margin-top: -0.9em;
-  border: 3px solid #777;
+  border: 3px solid #888;
   padding: 1em 0.8em 0.4em;
   border-radius: 8px;
 }
@@ -4727,7 +4727,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-red .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-red .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e60033;
@@ -4739,7 +4739,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-pink .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-pink .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e95295;
@@ -4751,7 +4751,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-purple .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-purple .toggle-checkbox:checked ~ .toggle-content {
   border-color: #884898;
@@ -4763,7 +4763,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-blue .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #0095d9;
@@ -4775,7 +4775,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-green .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #3eb370;
@@ -4787,7 +4787,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-orange .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #f39800;
@@ -4799,7 +4799,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-yellow .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-yellow .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffd900;
@@ -4811,7 +4811,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-brown .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-brown .toggle-checkbox:checked ~ .toggle-content {
   border-color: #954e2a;
@@ -4823,7 +4823,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-grey .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-grey .toggle-checkbox:checked ~ .toggle-content {
   border-color: #949495;
@@ -4835,7 +4835,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-black .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-black .toggle-checkbox:checked ~ .toggle-content {
   border-color: #333;
@@ -4847,7 +4847,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-deep .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-deep .toggle-checkbox:checked ~ .toggle-content {
   border-color: #55295b;
@@ -4859,7 +4859,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-indigo .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-indigo .toggle-checkbox:checked ~ .toggle-content {
   border-color: #1e50a2;
@@ -4871,7 +4871,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-light-blue .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-light-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #2ca9e1;
@@ -4883,7 +4883,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-cyan .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-cyan .toggle-checkbox:checked ~ .toggle-content {
   border-color: #00a3af;
@@ -4895,7 +4895,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-teal .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-teal .toggle-checkbox:checked ~ .toggle-content {
   border-color: #007b43;
@@ -4907,7 +4907,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-light-green .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-light-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #8bc34a;
@@ -4919,7 +4919,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-lime .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-lime .toggle-checkbox:checked ~ .toggle-content {
   border-color: #c3d825;
@@ -4931,7 +4931,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-amber .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-amber .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffc107;
@@ -4943,7 +4943,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-deep-orange .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ea5506;
@@ -4955,7 +4955,7 @@ label.screen-reader-text {
   color: #fff;
 }
 .tb-white .toggle-button::before {
-  color: #ccc;
+  color: #ddd;
 }
 .tb-white .toggle-checkbox:checked ~ .toggle-content {
   border-color: #fff;
@@ -5309,7 +5309,7 @@ label.screen-reader-text {
   display: inline-block;
   height: 46px;
   width: 46px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   margin: 0 4px;
   line-height: 46px;
   text-align: center;
@@ -5329,7 +5329,7 @@ label.screen-reader-text {
 ************************************/
 .pagination-next-link, .comment-btn {
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   color: #333;
   display: block;
   font-size: 1.2em;
@@ -5398,7 +5398,7 @@ label.screen-reader-text {
 }
 .pager-post-navi a .iconfont {
   font-size: 1.8em;
-  color: #ccc;
+  color: #ddd;
   padding: 8px;
 }
 .pager-post-navi a figure {
@@ -5423,7 +5423,7 @@ label.screen-reader-text {
   justify-content: center;
   font-size: 50px;
   text-align: center;
-  color: #777;
+  color: #888;
 }
 
 .post-navi-square a {
@@ -5890,7 +5890,7 @@ div.sbs-think .speech-balloon::after {
   bottom: 0;
   right: 6px;
   font-size: 24px;
-  color: #ccc;
+  color: #ddd;
 }
 .product-item-box .image-thumb img {
   border: none;
@@ -5936,7 +5936,7 @@ div.sbs-think .speech-balloon::after {
   z-index: 99;
   right: 0;
   top: 0;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   background-color: #f5f6f7;
   border-radius: 2px;
   transition: all .3s ease;
@@ -5964,7 +5964,7 @@ div.sbs-think .speech-balloon::after {
   margin-top: 3px;
 }
 .swatchimages > * {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   margin: 1px;
   display: flex;
   align-items: center;
@@ -7291,7 +7291,7 @@ div.fb-like-mobile {
   font-size: 20px;
   cursor: pointer;
   border: none;
-  color: #ccc;
+  color: #ddd;
   padding: 0 8px;
   background-color: rgba(255, 255, 255, 0);
 }
@@ -8248,7 +8248,7 @@ input[type='submit'],
 
 input[type='submit'] {
   -webkit-appearance: none;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   background-color: #f5f8fa;
 }
 
@@ -8287,7 +8287,7 @@ input[type='submit'] {
   line-height: 1.1;
 }
 .carousel .slick-arrow:before {
-  color: #ccc;
+  color: #ddd;
 }
 
 .carousel-in {
@@ -10173,7 +10173,7 @@ _:-ms-lang(x), .mc-circle {
 ************************************/
 pre {
   background-color: #f5f6f7;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   overflow: auto;
   padding: 10px;
   margin: 1em 0;
