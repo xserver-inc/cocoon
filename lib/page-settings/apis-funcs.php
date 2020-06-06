@@ -231,6 +231,30 @@ function get_yahoo_search_button_text(){
 }
 endif;
 
+//DMMアフィリエイトID
+define('OP_DMM_AFFILIATE_ID', 'dmm_affiliate_id');
+if ( !function_exists( 'get_dmm_affiliate_id' ) ):
+function get_dmm_affiliate_id(){
+  return get_theme_option(OP_DMM_AFFILIATE_ID);
+}
+endif;
+
+//DMM検索ボタンを表示する
+define('OP_DMM_SEARCH_BUTTON_VISIBLE', 'dmm_search_button_visible');
+if ( !function_exists( 'is_dmm_search_button_visible' ) ):
+function is_dmm_search_button_visible(){
+  return get_theme_option(OP_DMM_SEARCH_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//DMM検索ボタン文字
+define('OP_DMM_SEARCH_BUTTON_TEXT', 'dmm_search_button_text');
+if ( !function_exists( 'get_dmm_search_button_text' ) ):
+function get_dmm_search_button_text(){
+  return stripslashes_deep(get_theme_option(OP_DMM_SEARCH_BUTTON_TEXT, __( 'DMM', THEME_NAME )));
+}
+endif;
+
 //もしもアフィリエイトリンクを有効にする
 define('OP_MOSHIMO_AFFILIATE_LINK_ENABLE', 'moshimo_affiliate_link_enable');
 if ( !function_exists( 'is_moshimo_affiliate_link_enable' ) ):

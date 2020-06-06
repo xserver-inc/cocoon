@@ -199,6 +199,37 @@ $help_text = __( '取得方法', THEME_NAME );
         </tr>
 
 
+        <!-- DMM -->
+        <tr>
+          <th scope="row">
+            <?php
+            generate_label_tag('', __('DMM', THEME_NAME) );
+            ?>
+          </th>
+          <td>
+            <?php
+            generate_label_tag(OP_DMM_AFFILIATE_ID, __( 'DMMアフィリエイトID', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_DMM_AFFILIATE_ID, get_dmm_affiliate_id(), '');
+            echo '<br>';
+
+            generate_tips_tag(__( 'DMMアフィリエイトの「アフィリエイトID」をを取得してください。', THEME_NAME ));
+
+
+            echo '<div'.get_not_allowed_form_class(get_dmm_affiliate_id()).'>';
+
+            generate_checkbox_tag(OP_DMM_SEARCH_BUTTON_VISIBLE , is_dmm_search_button_visible(), __( 'DMM検索ボタンを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'DMMのキーワード検索ボタンを表示するか。', THEME_NAME ));
+
+            generate_textbox_tag(OP_DMM_SEARCH_BUTTON_TEXT, get_dmm_search_button_text(), '');
+            generate_tips_tag(__( 'DMMの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
+
+            echo '<div>';
+            ?>
+          </td>
+        </tr>
+
+
         <!-- もしもアフィリエイト -->
         <tr>
           <th scope="row">

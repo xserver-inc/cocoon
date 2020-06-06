@@ -100,6 +100,13 @@ function get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id){
 }
 endif;
 
+//DMM検索用のURL生成
+if ( !function_exists( 'get_dmm_search_url' ) ):
+function get_dmm_search_url($keyword, $dmm_affiliate_id){
+  return 'https://al.dmm.com/?lurl=https%3A%2F%2Fwww.dmm.com%2Fsearch%2F%3D%2Fsearchstr%3D'.urlencode($keyword).'%2Fanalyze%3DV1ECCVYAUQQ_%2Flimit%3D30%2Fsort%3Drankprofile%2F&af_id='.$dmm_affiliate_id.'&ch=link_tool&ch_id=link';
+}
+endif;
+
 //長い文字列だった場合MD5ハッシュにする
 if ( !function_exists( 'get_long_str_to_md5_hash' ) ):
 function get_long_str_to_md5_hash($str, $length = 50){
@@ -267,11 +274,12 @@ function get_search_buttons_tag($args){
           '<a href="'.esc_url($rakuten_url).'" target="_blank" rel="nofollow noopener">'.get_rakuten_search_button_text().$rakuten_impression_tag.'</a>'.
         '</div>';
     }
+
     //Yahoo!ボタンの取得
     $yahoo_tag = null;
     $is_moshimo_yahoo = $moshimo_yahoo_id && is_moshimo_affiliate_link_enable();
     if ((($sid && $pid) || $is_moshimo_yahoo) && is_yahoo_search_button_visible() && $yahoo) {
-      //$yahoo_url = 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.$keyword;
+
       $yahoo_url = get_valucomace_yahoo_search_url($keyword, $sid, $pid);
       //もしもアフィリエイトIDがある場合
       if ($is_moshimo_yahoo) {
@@ -290,6 +298,21 @@ function get_search_buttons_tag($args){
         '</div>';
     }
 
+    //DMMボタンの取得
+    $dmm_tag = null;
+    if ($dmm_affiliate_id && is_dmm_search_button_visible() && $dmm) {
+
+      $dmm_url = get_dmm_search_url($keyword, $dmm_affiliate_id);
+
+      $dmm_tag =
+        '<div class="shoplinkdmm">'.
+          '<a href="'.esc_url($dmm_url).'" target="_blank" rel="nofollow noopener">'.get_dmm_search_button_text().'</a>'.
+        '</div>';
+    }
+
+    // var_dump($dmm_affiliate_id);
+    // var_dump($dmm_tag);
+
     //ボタン2の作成
     $button2_tag = get_additional_button_tag($btn2_url, $btn2_text, $btn2_tag, 'btn2');
     //ボタン3の作成
@@ -302,6 +325,7 @@ function get_search_buttons_tag($args){
         $amazon_btn_tag.
         $rakuten_btn_tag.
         $yahoo_tag.
+        $dmm_tag.
         $button2_tag.
         $button3_tag.
       '</div>';
