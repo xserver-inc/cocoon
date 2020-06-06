@@ -418,7 +418,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .aligncenter { display: block; margin-right: auto; margin-left: auto; }
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
-.admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #ddd; border-radius: 3px; background-color: #f3f4f5; text-align: center; max-width: 100%; }
+.admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #eee; border-radius: 3px; background-color: #f5f6f7; text-align: center; max-width: 100%; }
 .admin-settings .demo .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .admin-settings .demo .wp-caption-dd { margin: 0; padding: 0 4px 5px; font-size: 11px; line-height: 17px; }
@@ -433,7 +433,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .circle-image img { border-radius: 50%; }
 .admin-settings .demo .iwe-border img, .admin-settings .demo .iwe-border amp-img { border: 1px solid #ccc; }
 .admin-settings .demo .iwe-border-bold img, .admin-settings .demo .iwe-border-bold amp-img { border: 4px solid #eee; }
-.admin-settings .demo .iwe-shadow img, .admin-settings .demo .iwe-shadow amp-img { box-shadow: 5px 5px 15px #ddd; }
+.admin-settings .demo .iwe-shadow img, .admin-settings .demo .iwe-shadow amp-img { box-shadow: 5px 5px 15px #eee; }
 .admin-settings .demo .iwe-shadow-paper img, .admin-settings .demo .iwe-shadow-paper amp-img { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08); }
 .admin-settings .demo .entry-card-thumb, .admin-settings .demo .author-thumb, .admin-settings .demo .blogcard-thumbnail, .admin-settings .demo .related-entry-card-thumb, .admin-settings .demo .popular-entry-card-thumb, .admin-settings .demo .new-entry-card-thumb { margin-right: 1.6%; }
 .admin-settings .demo .ect-vertical-card .entry-card-thumb, .admin-settings .demo .rect-vertical-card .related-entry-card-thumb { margin: 0; }
@@ -500,8 +500,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-in > .menu-mobile { display: none; }
 .admin-settings .demo .navi-in > .menu-mobile .sub-menu { display: none; }
 .admin-settings .demo .navi-footer-in > .menu-footer { padding: 0; margin: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: flex-end; text-align: center; margin: 0; }
-.admin-settings .demo .navi-footer-in > .menu-footer li { width: 120px; border-left: 1px solid #ccc; }
-.admin-settings .demo .navi-footer-in > .menu-footer li:last-child { border-right: 1px solid #ccc; }
+.admin-settings .demo .navi-footer-in > .menu-footer li { width: 120px; border-left: 1px solid #ddd; }
+.admin-settings .demo .navi-footer-in > .menu-footer li:last-child { border-right: 1px solid #ddd; }
 .admin-settings .demo .navi-footer-in a { color: #333; text-decoration: none; display: block; font-size: 14px; transition: all 0.3s ease-in-out; }
 .admin-settings .demo .navi-footer-in a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 1.5%; margin-bottom: 3%; transition: all 0.3s ease-in-out; }
@@ -632,9 +632,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
-.admin-settings .demo table th { background-color: #f3f4f5; }
+.admin-settings .demo table th { background-color: #f5f6f7; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
-.admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
+.admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #eee; padding: 6px; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
@@ -656,13 +656,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
 .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 9px 10px; }
-.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; border-radius: 2px; }
-.admin-settings .demo .article h3 { border-left: 7px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 12px 20px; }
-.admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
-.admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
-.admin-settings .demo .article h6 { border-bottom: 1px solid #ccc; }
+.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f5f6f7; border-radius: 2px; }
+.admin-settings .demo .article h3 { border-left: 7px solid #888; border-right: 1px solid #ddd; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; font-size: 22px; padding: 12px 20px; }
+.admin-settings .demo .article h4 { border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; }
+.admin-settings .demo .article h5 { border-bottom: 2px solid #ddd; }
+.admin-settings .demo .article h6 { border-bottom: 1px solid #ddd; }
 .admin-settings .demo .article .column-wrap h1, .admin-settings .demo .article .column-wrap h2, .admin-settings .demo .article .column-wrap h3, .admin-settings .demo .article .column-wrap h4, .admin-settings .demo .article .column-wrap h5, .admin-settings .demo .article .column-wrap h6 { margin-top: 0; }
-.admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; padding: 10px 1.2em; position: relative; }
+.admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ddd; margin: 1em 0; padding: 10px 1.2em; position: relative; }
 .admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; font-family: serif; position: absolute; font-size: 300%; }
 .admin-settings .demo blockquote::before { content: "“"; line-height: 1.1; left: 10px; top: 0; }
 .admin-settings .demo blockquote::after { content: "”"; line-height: 0; right: 10px; bottom: 0px; }
@@ -674,7 +674,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo span.external-icon, .admin-settings .demo span.internal-icon { margin-left: 3px; font-size: 0.8em; }
 .admin-settings .demo .login-user-only { text-align: center; padding: 2em; background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; }
 .admin-settings .demo .no-post-date .post-date, .admin-settings .demo .no-post-update .post-update, .admin-settings .demo .no-post-author .author-info { display: none; }
-.admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #ddd; border-bottom: 4px double #ddd; margin: 0 3%; }
+.admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #eee; border-bottom: 4px double #eee; margin: 0 3%; }
 .admin-settings .demo .eye-catch-wrap { display: flex; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
@@ -736,7 +736,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
+.admin-settings .demo .sidebar h3 { background-color: #f5f6f7; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .sidebar-menu-content .sidebar { height: auto; }
@@ -750,7 +750,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .blogcard-wrap { width: auto; }
 .admin-settings .demo label.screen-reader-text { display: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
-.admin-settings .demo .tagcloud a { border: 1px solid #ddd; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.3s ease-in-out; }
+.admin-settings .demo .tagcloud a { border: 1px solid #eee; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.3s ease-in-out; }
 .admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .tagcloud a .tag-caption { word-break: break-all; }
 .admin-settings .demo .tagcloud a .tag-link-count { margin-left: 8px; }
@@ -761,14 +761,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget_recent_entries ul li a .post-count, .admin-settings .demo .widget_categories ul li a .post-count, .admin-settings .demo .widget_archive ul li a .post-count, .admin-settings .demo .widget_pages ul li a .post-count, .admin-settings .demo .widget_meta ul li a .post-count, .admin-settings .demo .widget_rss ul li a .post-count, .admin-settings .demo .widget_nav_menu ul li a .post-count { display: block; float: right; }
 .admin-settings .demo .widget_recent_comments li { padding: 10px 0; }
 .admin-settings .demo .calendar_wrap { margin: 20px 0; }
-.admin-settings .demo #wp-calendar { border-collapse: collapse; border-top-width: 1px; border-right-width: 1px; border-top-style: solid; border-right-style: solid; border-top-color: #ddd; border-right-color: #ddd; width: 100%; max-width: 400px; }
+.admin-settings .demo #wp-calendar { border-collapse: collapse; border-top-width: 1px; border-right-width: 1px; border-top-style: solid; border-right-style: solid; border-top-color: #eee; border-right-color: #eee; width: 100%; max-width: 400px; }
 .admin-settings .demo #wp-calendar caption { font-weight: bold; text-align: center; }
 .admin-settings .demo #wp-calendar #today { background-color: #ffe6b2; }
 .admin-settings .demo #wp-calendar #today a { background-color: #ffe6b2; }
 .admin-settings .demo #wp-calendar #today a:hover { background-color: #ffd67e; }
 .admin-settings .demo #wp-calendar tr:nth-of-type(2n+1) { background-color: transparent; }
-.admin-settings .demo #wp-calendar th { border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #ddd; border-left-color: #ddd; }
-.admin-settings .demo #wp-calendar td { text-align: center; padding: 0px; border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #ddd; border-left-color: #ddd; }
+.admin-settings .demo #wp-calendar th { border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #eee; border-left-color: #eee; }
+.admin-settings .demo #wp-calendar td { text-align: center; padding: 0px; border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #eee; border-left-color: #eee; }
 .admin-settings .demo #wp-calendar td a { color: #333; display: block; background-color: #ffface; }
 .admin-settings .demo #wp-calendar td a:hover { background-color: #fff69b; }
 .admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px; line-height: 1.3; margin-bottom: 4px; }
@@ -777,9 +777,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-card-content { margin-left: 126px; }
 .admin-settings .demo .widget-entry-card-snippet { margin-top: 6px; font-size: 12px; opacity: 0.8; }
 .admin-settings .demo .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
-.admin-settings .demo .border-partition a { border-bottom: 2px dotted #ddd; }
-.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #ddd; }
-.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ccc; }
+.admin-settings .demo .border-partition a { border-bottom: 2px dotted #eee; }
+.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #eee; }
+.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ddd; }
 .admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
 .admin-settings .demo .card-arrow .a-wrap { position: relative; }
 .admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
@@ -807,10 +807,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recent-comment-author { font-weight: bold; }
 .admin-settings .demo .recent-comment-info, .admin-settings .demo .recent-comment-article { font-size: 16px; }
 .admin-settings .demo .recent-comment-article { margin-top: 3px; }
-.admin-settings .demo .recent-comment-content { position: relative; background: #fff; border: 1px solid #ccc; padding: 6px; margin-top: 4px; font-size: 0.9em; border-radius: 5px; }
+.admin-settings .demo .recent-comment-content { position: relative; background: #fff; border: 1px solid #ddd; padding: 6px; margin-top: 4px; font-size: 0.9em; border-radius: 5px; }
 .admin-settings .demo .recent-comment-content::after, .admin-settings .demo .recent-comment-content::before { bottom: 100%; left: 18px; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .recent-comment-content::after { border-color: rgba(255, 255, 255, 0); border-bottom-color: #fff; border-width: 6px; margin-left: -6px; }
-.admin-settings .demo .recent-comment-content::before { border-color: rgba(221, 221, 221, 0); border-bottom-color: #ccc; border-width: 9px; margin-left: -9px; }
+.admin-settings .demo .recent-comment-content::before { border-color: rgba(221, 221, 221, 0); border-bottom-color: #ddd; border-width: 9px; margin-left: -9px; }
 .admin-settings .demo .sidebar .sns-follow-buttons, .admin-settings .demo .footer .sns-follow-buttons { flex-wrap: wrap; justify-content: space-between; }
 .admin-settings .demo .sidebar .sns-follow-buttons a, .admin-settings .demo .footer .sns-follow-buttons a { width: 49%; margin-right: 0; }
 .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: none; }
@@ -841,7 +841,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .marker-under-red { background: linear-gradient(transparent 60%, #ffd0d1 60%); }
 .admin-settings .demo .marker-under-blue { background: linear-gradient(transparent 60%, #a8dafb 60%); }
 .admin-settings .demo .strike { text-decoration: line-through; }
-.admin-settings .demo .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #777; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
+.admin-settings .demo .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #888; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
 .admin-settings .demo .primary-box, .admin-settings .demo .sp-primary, .admin-settings .demo .primary { color: #004085; background-color: #cce5ff; border-color: #b8daff; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .admin-settings .demo .success-box, .admin-settings .demo .sp-success, .admin-settings .demo .success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .admin-settings .demo .info-box, .admin-settings .demo .sp-info, .admin-settings .demo .info { color: #0c5460; background-color: #d1ecf1; border-color: #bee5eb; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
@@ -924,7 +924,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-tab.bb-amber .bb-label { background-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-tab.bb-deep-orange .bb-label { background-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-tab.bb-white .bb-label { background-color: #fff; }
-.admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
+.admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f5f6f7; }
 .admin-settings .demo .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
@@ -1246,7 +1246,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box.block-box.has-background { background-color: transparent; }
 .admin-settings .demo .label-box-label { margin-left: 1em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
-.admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
+.admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #888; padding: 1em 0.8em 0.4em; border-radius: 8px; }
 .admin-settings .demo .lb-red .label-box-content { border-color: #e60033; }
 .admin-settings .demo .lb-pink .label-box-content { border-color: #e95295; }
 .admin-settings .demo .lb-purple .label-box-content { border-color: #884898; }
@@ -1270,7 +1270,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
@@ -1278,64 +1278,64 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button::before { content: '\f068'; }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.3s ease-in-out; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 .admin-settings .demo .tb-red .toggle-button { border: 2px solid #e60033; background: #e60033; color: #fff; }
-.admin-settings .demo .tb-red .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-red .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-red .toggle-checkbox:checked ~ .toggle-content { border-color: #e60033; }
 .admin-settings .demo .tb-pink .toggle-button { border: 2px solid #e95295; background: #e95295; color: #fff; }
-.admin-settings .demo .tb-pink .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-pink .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-pink .toggle-checkbox:checked ~ .toggle-content { border-color: #e95295; }
 .admin-settings .demo .tb-purple .toggle-button { border: 2px solid #884898; background: #884898; color: #fff; }
-.admin-settings .demo .tb-purple .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-purple .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-purple .toggle-checkbox:checked ~ .toggle-content { border-color: #884898; }
 .admin-settings .demo .tb-blue .toggle-button { border: 2px solid #0095d9; background: #0095d9; color: #fff; }
-.admin-settings .demo .tb-blue .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-blue .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-blue .toggle-checkbox:checked ~ .toggle-content { border-color: #0095d9; }
 .admin-settings .demo .tb-green .toggle-button { border: 2px solid #3eb370; background: #3eb370; color: #fff; }
-.admin-settings .demo .tb-green .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-green .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
 .admin-settings .demo .tb-orange .toggle-button { border: 2px solid #f39800; background: #f39800; color: #fff; }
-.admin-settings .demo .tb-orange .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-orange .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #f39800; }
 .admin-settings .demo .tb-yellow .toggle-button { border: 2px solid #ffd900; background: #ffd900; color: #fff; }
-.admin-settings .demo .tb-yellow .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-yellow .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-yellow .toggle-checkbox:checked ~ .toggle-content { border-color: #ffd900; }
 .admin-settings .demo .tb-brown .toggle-button { border: 2px solid #954e2a; background: #954e2a; color: #fff; }
-.admin-settings .demo .tb-brown .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-brown .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-brown .toggle-checkbox:checked ~ .toggle-content { border-color: #954e2a; }
 .admin-settings .demo .tb-grey .toggle-button { border: 2px solid #949495; background: #949495; color: #fff; }
-.admin-settings .demo .tb-grey .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-grey .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-grey .toggle-checkbox:checked ~ .toggle-content { border-color: #949495; }
 .admin-settings .demo .tb-black .toggle-button { border: 2px solid #333; background: #333; color: #fff; }
-.admin-settings .demo .tb-black .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-black .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-black .toggle-checkbox:checked ~ .toggle-content { border-color: #333; }
 .admin-settings .demo .tb-deep .toggle-button { border: 2px solid #55295b; background: #55295b; color: #fff; }
-.admin-settings .demo .tb-deep .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-deep .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-deep .toggle-checkbox:checked ~ .toggle-content { border-color: #55295b; }
 .admin-settings .demo .tb-indigo .toggle-button { border: 2px solid #1e50a2; background: #1e50a2; color: #fff; }
-.admin-settings .demo .tb-indigo .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-indigo .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-indigo .toggle-checkbox:checked ~ .toggle-content { border-color: #1e50a2; }
 .admin-settings .demo .tb-light-blue .toggle-button { border: 2px solid #2ca9e1; background: #2ca9e1; color: #fff; }
-.admin-settings .demo .tb-light-blue .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-light-blue .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-light-blue .toggle-checkbox:checked ~ .toggle-content { border-color: #2ca9e1; }
 .admin-settings .demo .tb-cyan .toggle-button { border: 2px solid #00a3af; background: #00a3af; color: #fff; }
-.admin-settings .demo .tb-cyan .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-cyan .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-cyan .toggle-checkbox:checked ~ .toggle-content { border-color: #00a3af; }
 .admin-settings .demo .tb-teal .toggle-button { border: 2px solid #007b43; background: #007b43; color: #fff; }
-.admin-settings .demo .tb-teal .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-teal .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-teal .toggle-checkbox:checked ~ .toggle-content { border-color: #007b43; }
 .admin-settings .demo .tb-light-green .toggle-button { border: 2px solid #8bc34a; background: #8bc34a; color: #fff; }
-.admin-settings .demo .tb-light-green .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-light-green .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-light-green .toggle-checkbox:checked ~ .toggle-content { border-color: #8bc34a; }
 .admin-settings .demo .tb-lime .toggle-button { border: 2px solid #c3d825; background: #c3d825; color: #fff; }
-.admin-settings .demo .tb-lime .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-lime .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-lime .toggle-checkbox:checked ~ .toggle-content { border-color: #c3d825; }
 .admin-settings .demo .tb-amber .toggle-button { border: 2px solid #ffc107; background: #ffc107; color: #fff; }
-.admin-settings .demo .tb-amber .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-amber .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-amber .toggle-checkbox:checked ~ .toggle-content { border-color: #ffc107; }
 .admin-settings .demo .tb-deep-orange .toggle-button { border: 2px solid #ea5506; background: #ea5506; color: #fff; }
-.admin-settings .demo .tb-deep-orange .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-deep-orange .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #ea5506; }
 .admin-settings .demo .tb-white .toggle-button { border: 2px solid #fff; background: #fff; color: #fff; }
-.admin-settings .demo .tb-white .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-white .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-white .toggle-checkbox:checked ~ .toggle-content { border-color: #fff; }
 .admin-settings .demo .iic-red li::before { color: #e60033; }
 .admin-settings .demo .iic-pink li::before { color: #e95295; }
@@ -1413,10 +1413,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination { margin: 24px 0; clear: both; text-align: center; display: inline-flex; justify-content: center; width: 100%; }
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
-.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
+.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ddd; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
 .admin-settings .demo .page-numbers span { line-height: inherit; }
-.admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
-.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
+.admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f5f6f7; }
+.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ddd; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
 .admin-settings .demo .pager-links .post-page-numbers { background-color: transparent; }
@@ -1428,13 +1428,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pager-prev-next span { width: 100%; margin: 0; }
 .admin-settings .demo .pager-post-navi { margin: 38px 0; display: flex; flex-direction: column; }
 .admin-settings .demo .pager-post-navi a { padding: 10px; margin: 0; display: inline-flex; align-items: center; line-height: 1.2; font-size: 0.8em; }
-.admin-settings .demo .pager-post-navi a .iconfont { font-size: 1.8em; color: #ccc; padding: 8px; }
+.admin-settings .demo .pager-post-navi a .iconfont { font-size: 1.8em; color: #ddd; padding: 8px; }
 .admin-settings .demo .pager-post-navi a figure { min-width: 120px; max-width: 120px; }
 .admin-settings .demo .pager-post-navi a.prev-post { flex-direction: row; padding-left: 5px; }
 .admin-settings .demo .pager-post-navi a.prev-post .prev-post-title { margin-left: 10px; }
 .admin-settings .demo .pager-post-navi a.next-post { flex-direction: row-reverse; padding-right: 5px; }
 .admin-settings .demo .pager-post-navi a.next-post .next-post-title { margin-right: 10px; }
-.admin-settings .demo .pager-post-navi a.prev-next-home { justify-content: center; font-size: 50px; text-align: center; color: #777; }
+.admin-settings .demo .pager-post-navi a.prev-next-home { justify-content: center; font-size: 50px; text-align: center; color: #888; }
 .admin-settings .demo .post-navi-square a { height: auto; }
 .admin-settings .demo .post-navi-default.post-navi-border a { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
 .admin-settings .demo .post-navi-default.post-navi-border .next-post { border-top-width: 0px; }
@@ -1520,20 +1520,20 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::after { left: auto; right: -44px; }
 .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; margin: 1.6em auto; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
 .admin-settings .demo .product-item-box { position: relative; }
-.admin-settings .demo .product-item-box::after { content: '\ea87'; font-family: icomoon; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ccc; }
+.admin-settings .demo .product-item-box::after { content: '\ea87'; font-family: icomoon; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ddd; }
 .admin-settings .demo .product-item-box .image-thumb img { border: none; box-shadow: none; }
 .admin-settings .demo .rakuten-item-box::after { content: '\e903'; font-family: icomoon; }
 .admin-settings .demo .product-item-error.cf { display: block; line-height: 1.2; }
 .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 160px; min-width: 160px; margin: 0 auto 1em !important; float: none !important; text-align: center; }
 .admin-settings .demo .booklink-image *, .admin-settings .demo .kaerebalink-image *, .admin-settings .demo .tomarebalink-image *, .admin-settings .demo .product-item-thumb * { display: block; }
 .admin-settings .demo .booklink-image > a > img, .admin-settings .demo .kaerebalink-image > a > img, .admin-settings .demo .tomarebalink-image > a > img, .admin-settings .demo .product-item-thumb > a > img { margin: 0 auto; }
-.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f3f4f5; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
+.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #eee; background-color: #f5f6f7; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
 .admin-settings .demo .image-content img { display: block; }
 .admin-settings .demo .image-content amp-img { min-width: 500px; }
 .admin-settings .demo .image-thumb:hover > .image-content { visibility: visible; opacity: 1; }
 .admin-settings .demo .image-thumb:hover > .image-content:hover { display: none; }
 .admin-settings .demo .swatchimages { display: flex; flex-wrap: wrap; margin-top: 3px; }
-.admin-settings .demo .swatchimages > * { border: 1px solid #ccc; margin: 1px; display: flex; align-items: center; justify-content: center; }
+.admin-settings .demo .swatchimages > * { border: 1px solid #ddd; margin: 1px; display: flex; align-items: center; justify-content: center; }
 .admin-settings .demo .swatchimages > *:hover { box-shadow: 0 0 4px #f79901; }
 .admin-settings .demo .swatchimages > * > img { display: block; }
 .admin-settings .demo .swatchimages:hover .si-thumb { display: flex; align-items: center; justify-content: center; }
@@ -1767,7 +1767,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .search-box { margin: 1em 0 2em; position: relative; }
 .admin-settings .demo .search-edit { font-family: inherit; }
 .admin-settings .demo #search-menu-content .search-edit { font-size: 16px; }
-.admin-settings .demo .search-submit { position: absolute; right: 3px; top: calc(50% - 12px); font-size: 20px; cursor: pointer; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
+.admin-settings .demo .search-submit { position: absolute; right: 3px; top: calc(50% - 12px); font-size: 20px; cursor: pointer; border: none; color: #ddd; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
 .admin-settings .demo .timeline-box { padding: 16px 5px; }
 .admin-settings .demo .timeline-box .timeline { list-style: none; padding: 0; margin: 0; }
 .admin-settings .demo .timeline-title { font-weight: bold; font-size: 1.1em; text-align: center; }
@@ -1996,7 +1996,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .aligncenter { display: block; margin-right: auto; margin-left: auto; }
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
-.admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #ddd; border-radius: 3px; background-color: #f3f4f5; text-align: center; max-width: 100%; }
+.admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #eee; border-radius: 3px; background-color: #f5f6f7; text-align: center; max-width: 100%; }
 .admin-settings .demo .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .admin-settings .demo .wp-caption-dd { margin: 0; padding: 0 4px 5px; font-size: 11px; line-height: 17px; }
@@ -2011,7 +2011,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .circle-image img { border-radius: 50%; }
 .admin-settings .demo .iwe-border img, .admin-settings .demo .iwe-border amp-img { border: 1px solid #ccc; }
 .admin-settings .demo .iwe-border-bold img, .admin-settings .demo .iwe-border-bold amp-img { border: 4px solid #eee; }
-.admin-settings .demo .iwe-shadow img, .admin-settings .demo .iwe-shadow amp-img { box-shadow: 5px 5px 15px #ddd; }
+.admin-settings .demo .iwe-shadow img, .admin-settings .demo .iwe-shadow amp-img { box-shadow: 5px 5px 15px #eee; }
 .admin-settings .demo .iwe-shadow-paper img, .admin-settings .demo .iwe-shadow-paper amp-img { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08); }
 .admin-settings .demo .entry-card-thumb, .admin-settings .demo .author-thumb, .admin-settings .demo .blogcard-thumbnail, .admin-settings .demo .related-entry-card-thumb, .admin-settings .demo .popular-entry-card-thumb, .admin-settings .demo .new-entry-card-thumb { margin-right: 1.6%; }
 .admin-settings .demo .ect-vertical-card .entry-card-thumb, .admin-settings .demo .rect-vertical-card .related-entry-card-thumb { margin: 0; }
@@ -2078,8 +2078,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-in > .menu-mobile { display: none; }
 .admin-settings .demo .navi-in > .menu-mobile .sub-menu { display: none; }
 .admin-settings .demo .navi-footer-in > .menu-footer { padding: 0; margin: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: flex-end; text-align: center; margin: 0; }
-.admin-settings .demo .navi-footer-in > .menu-footer li { width: 120px; border-left: 1px solid #ccc; }
-.admin-settings .demo .navi-footer-in > .menu-footer li:last-child { border-right: 1px solid #ccc; }
+.admin-settings .demo .navi-footer-in > .menu-footer li { width: 120px; border-left: 1px solid #ddd; }
+.admin-settings .demo .navi-footer-in > .menu-footer li:last-child { border-right: 1px solid #ddd; }
 .admin-settings .demo .navi-footer-in a { color: #333; text-decoration: none; display: block; font-size: 14px; transition: all 0.3s ease-in-out; }
 .admin-settings .demo .navi-footer-in a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 1.5%; margin-bottom: 3%; transition: all 0.3s ease-in-out; }
@@ -2210,9 +2210,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
-.admin-settings .demo table th { background-color: #f3f4f5; }
+.admin-settings .demo table th { background-color: #f5f6f7; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
-.admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
+.admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #eee; padding: 6px; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
@@ -2234,13 +2234,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
 .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 9px 10px; }
-.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; border-radius: 2px; }
-.admin-settings .demo .article h3 { border-left: 7px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 12px 20px; }
-.admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
-.admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
-.admin-settings .demo .article h6 { border-bottom: 1px solid #ccc; }
+.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f5f6f7; border-radius: 2px; }
+.admin-settings .demo .article h3 { border-left: 7px solid #888; border-right: 1px solid #ddd; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; font-size: 22px; padding: 12px 20px; }
+.admin-settings .demo .article h4 { border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; }
+.admin-settings .demo .article h5 { border-bottom: 2px solid #ddd; }
+.admin-settings .demo .article h6 { border-bottom: 1px solid #ddd; }
 .admin-settings .demo .article .column-wrap h1, .admin-settings .demo .article .column-wrap h2, .admin-settings .demo .article .column-wrap h3, .admin-settings .demo .article .column-wrap h4, .admin-settings .demo .article .column-wrap h5, .admin-settings .demo .article .column-wrap h6 { margin-top: 0; }
-.admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; padding: 10px 1.2em; position: relative; }
+.admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ddd; margin: 1em 0; padding: 10px 1.2em; position: relative; }
 .admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; font-family: serif; position: absolute; font-size: 300%; }
 .admin-settings .demo blockquote::before { content: "“"; line-height: 1.1; left: 10px; top: 0; }
 .admin-settings .demo blockquote::after { content: "”"; line-height: 0; right: 10px; bottom: 0px; }
@@ -2252,7 +2252,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo span.external-icon, .admin-settings .demo span.internal-icon { margin-left: 3px; font-size: 0.8em; }
 .admin-settings .demo .login-user-only { text-align: center; padding: 2em; background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; }
 .admin-settings .demo .no-post-date .post-date, .admin-settings .demo .no-post-update .post-update, .admin-settings .demo .no-post-author .author-info { display: none; }
-.admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #ddd; border-bottom: 4px double #ddd; margin: 0 3%; }
+.admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #eee; border-bottom: 4px double #eee; margin: 0 3%; }
 .admin-settings .demo .eye-catch-wrap { display: flex; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
@@ -2314,7 +2314,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
+.admin-settings .demo .sidebar h3 { background-color: #f5f6f7; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .sidebar-menu-content .sidebar { height: auto; }
@@ -2328,7 +2328,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .blogcard-wrap { width: auto; }
 .admin-settings .demo label.screen-reader-text { display: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
-.admin-settings .demo .tagcloud a { border: 1px solid #ddd; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.3s ease-in-out; }
+.admin-settings .demo .tagcloud a { border: 1px solid #eee; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.3s ease-in-out; }
 .admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .tagcloud a .tag-caption { word-break: break-all; }
 .admin-settings .demo .tagcloud a .tag-link-count { margin-left: 8px; }
@@ -2339,14 +2339,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget_recent_entries ul li a .post-count, .admin-settings .demo .widget_categories ul li a .post-count, .admin-settings .demo .widget_archive ul li a .post-count, .admin-settings .demo .widget_pages ul li a .post-count, .admin-settings .demo .widget_meta ul li a .post-count, .admin-settings .demo .widget_rss ul li a .post-count, .admin-settings .demo .widget_nav_menu ul li a .post-count { display: block; float: right; }
 .admin-settings .demo .widget_recent_comments li { padding: 10px 0; }
 .admin-settings .demo .calendar_wrap { margin: 20px 0; }
-.admin-settings .demo #wp-calendar { border-collapse: collapse; border-top-width: 1px; border-right-width: 1px; border-top-style: solid; border-right-style: solid; border-top-color: #ddd; border-right-color: #ddd; width: 100%; max-width: 400px; }
+.admin-settings .demo #wp-calendar { border-collapse: collapse; border-top-width: 1px; border-right-width: 1px; border-top-style: solid; border-right-style: solid; border-top-color: #eee; border-right-color: #eee; width: 100%; max-width: 400px; }
 .admin-settings .demo #wp-calendar caption { font-weight: bold; text-align: center; }
 .admin-settings .demo #wp-calendar #today { background-color: #ffe6b2; }
 .admin-settings .demo #wp-calendar #today a { background-color: #ffe6b2; }
 .admin-settings .demo #wp-calendar #today a:hover { background-color: #ffd67e; }
 .admin-settings .demo #wp-calendar tr:nth-of-type(2n+1) { background-color: transparent; }
-.admin-settings .demo #wp-calendar th { border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #ddd; border-left-color: #ddd; }
-.admin-settings .demo #wp-calendar td { text-align: center; padding: 0px; border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #ddd; border-left-color: #ddd; }
+.admin-settings .demo #wp-calendar th { border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #eee; border-left-color: #eee; }
+.admin-settings .demo #wp-calendar td { text-align: center; padding: 0px; border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #eee; border-left-color: #eee; }
 .admin-settings .demo #wp-calendar td a { color: #333; display: block; background-color: #ffface; }
 .admin-settings .demo #wp-calendar td a:hover { background-color: #fff69b; }
 .admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px; line-height: 1.3; margin-bottom: 4px; }
@@ -2355,9 +2355,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-card-content { margin-left: 126px; }
 .admin-settings .demo .widget-entry-card-snippet { margin-top: 6px; font-size: 12px; opacity: 0.8; }
 .admin-settings .demo .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
-.admin-settings .demo .border-partition a { border-bottom: 2px dotted #ddd; }
-.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #ddd; }
-.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ccc; }
+.admin-settings .demo .border-partition a { border-bottom: 2px dotted #eee; }
+.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #eee; }
+.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ddd; }
 .admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
 .admin-settings .demo .card-arrow .a-wrap { position: relative; }
 .admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
@@ -2385,10 +2385,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recent-comment-author { font-weight: bold; }
 .admin-settings .demo .recent-comment-info, .admin-settings .demo .recent-comment-article { font-size: 16px; }
 .admin-settings .demo .recent-comment-article { margin-top: 3px; }
-.admin-settings .demo .recent-comment-content { position: relative; background: #fff; border: 1px solid #ccc; padding: 6px; margin-top: 4px; font-size: 0.9em; border-radius: 5px; }
+.admin-settings .demo .recent-comment-content { position: relative; background: #fff; border: 1px solid #ddd; padding: 6px; margin-top: 4px; font-size: 0.9em; border-radius: 5px; }
 .admin-settings .demo .recent-comment-content::after, .admin-settings .demo .recent-comment-content::before { bottom: 100%; left: 18px; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .recent-comment-content::after { border-color: rgba(255, 255, 255, 0); border-bottom-color: #fff; border-width: 6px; margin-left: -6px; }
-.admin-settings .demo .recent-comment-content::before { border-color: rgba(221, 221, 221, 0); border-bottom-color: #ccc; border-width: 9px; margin-left: -9px; }
+.admin-settings .demo .recent-comment-content::before { border-color: rgba(221, 221, 221, 0); border-bottom-color: #ddd; border-width: 9px; margin-left: -9px; }
 .admin-settings .demo .sidebar .sns-follow-buttons, .admin-settings .demo .footer .sns-follow-buttons { flex-wrap: wrap; justify-content: space-between; }
 .admin-settings .demo .sidebar .sns-follow-buttons a, .admin-settings .demo .footer .sns-follow-buttons a { width: 49%; margin-right: 0; }
 .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: none; }
@@ -2419,7 +2419,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .marker-under-red { background: linear-gradient(transparent 60%, #ffd0d1 60%); }
 .admin-settings .demo .marker-under-blue { background: linear-gradient(transparent 60%, #a8dafb 60%); }
 .admin-settings .demo .strike { text-decoration: line-through; }
-.admin-settings .demo .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #777; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
+.admin-settings .demo .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #888; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
 .admin-settings .demo .primary-box, .admin-settings .demo .sp-primary, .admin-settings .demo .primary { color: #004085; background-color: #cce5ff; border-color: #b8daff; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .admin-settings .demo .success-box, .admin-settings .demo .sp-success, .admin-settings .demo .success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .admin-settings .demo .info-box, .admin-settings .demo .sp-info, .admin-settings .demo .info { color: #0c5460; background-color: #d1ecf1; border-color: #bee5eb; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
@@ -2502,7 +2502,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-tab.bb-amber .bb-label { background-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-tab.bb-deep-orange .bb-label { background-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-tab.bb-white .bb-label { background-color: #fff; }
-.admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
+.admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f5f6f7; }
 .admin-settings .demo .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
@@ -2824,7 +2824,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box.block-box.has-background { background-color: transparent; }
 .admin-settings .demo .label-box-label { margin-left: 1em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
-.admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
+.admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #888; padding: 1em 0.8em 0.4em; border-radius: 8px; }
 .admin-settings .demo .lb-red .label-box-content { border-color: #e60033; }
 .admin-settings .demo .lb-pink .label-box-content { border-color: #e95295; }
 .admin-settings .demo .lb-purple .label-box-content { border-color: #884898; }
@@ -2848,7 +2848,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
@@ -2856,64 +2856,64 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button::before { content: '\f068'; }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.3s ease-in-out; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 .admin-settings .demo .tb-red .toggle-button { border: 2px solid #e60033; background: #e60033; color: #fff; }
-.admin-settings .demo .tb-red .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-red .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-red .toggle-checkbox:checked ~ .toggle-content { border-color: #e60033; }
 .admin-settings .demo .tb-pink .toggle-button { border: 2px solid #e95295; background: #e95295; color: #fff; }
-.admin-settings .demo .tb-pink .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-pink .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-pink .toggle-checkbox:checked ~ .toggle-content { border-color: #e95295; }
 .admin-settings .demo .tb-purple .toggle-button { border: 2px solid #884898; background: #884898; color: #fff; }
-.admin-settings .demo .tb-purple .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-purple .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-purple .toggle-checkbox:checked ~ .toggle-content { border-color: #884898; }
 .admin-settings .demo .tb-blue .toggle-button { border: 2px solid #0095d9; background: #0095d9; color: #fff; }
-.admin-settings .demo .tb-blue .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-blue .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-blue .toggle-checkbox:checked ~ .toggle-content { border-color: #0095d9; }
 .admin-settings .demo .tb-green .toggle-button { border: 2px solid #3eb370; background: #3eb370; color: #fff; }
-.admin-settings .demo .tb-green .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-green .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
 .admin-settings .demo .tb-orange .toggle-button { border: 2px solid #f39800; background: #f39800; color: #fff; }
-.admin-settings .demo .tb-orange .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-orange .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #f39800; }
 .admin-settings .demo .tb-yellow .toggle-button { border: 2px solid #ffd900; background: #ffd900; color: #fff; }
-.admin-settings .demo .tb-yellow .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-yellow .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-yellow .toggle-checkbox:checked ~ .toggle-content { border-color: #ffd900; }
 .admin-settings .demo .tb-brown .toggle-button { border: 2px solid #954e2a; background: #954e2a; color: #fff; }
-.admin-settings .demo .tb-brown .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-brown .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-brown .toggle-checkbox:checked ~ .toggle-content { border-color: #954e2a; }
 .admin-settings .demo .tb-grey .toggle-button { border: 2px solid #949495; background: #949495; color: #fff; }
-.admin-settings .demo .tb-grey .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-grey .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-grey .toggle-checkbox:checked ~ .toggle-content { border-color: #949495; }
 .admin-settings .demo .tb-black .toggle-button { border: 2px solid #333; background: #333; color: #fff; }
-.admin-settings .demo .tb-black .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-black .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-black .toggle-checkbox:checked ~ .toggle-content { border-color: #333; }
 .admin-settings .demo .tb-deep .toggle-button { border: 2px solid #55295b; background: #55295b; color: #fff; }
-.admin-settings .demo .tb-deep .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-deep .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-deep .toggle-checkbox:checked ~ .toggle-content { border-color: #55295b; }
 .admin-settings .demo .tb-indigo .toggle-button { border: 2px solid #1e50a2; background: #1e50a2; color: #fff; }
-.admin-settings .demo .tb-indigo .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-indigo .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-indigo .toggle-checkbox:checked ~ .toggle-content { border-color: #1e50a2; }
 .admin-settings .demo .tb-light-blue .toggle-button { border: 2px solid #2ca9e1; background: #2ca9e1; color: #fff; }
-.admin-settings .demo .tb-light-blue .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-light-blue .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-light-blue .toggle-checkbox:checked ~ .toggle-content { border-color: #2ca9e1; }
 .admin-settings .demo .tb-cyan .toggle-button { border: 2px solid #00a3af; background: #00a3af; color: #fff; }
-.admin-settings .demo .tb-cyan .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-cyan .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-cyan .toggle-checkbox:checked ~ .toggle-content { border-color: #00a3af; }
 .admin-settings .demo .tb-teal .toggle-button { border: 2px solid #007b43; background: #007b43; color: #fff; }
-.admin-settings .demo .tb-teal .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-teal .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-teal .toggle-checkbox:checked ~ .toggle-content { border-color: #007b43; }
 .admin-settings .demo .tb-light-green .toggle-button { border: 2px solid #8bc34a; background: #8bc34a; color: #fff; }
-.admin-settings .demo .tb-light-green .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-light-green .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-light-green .toggle-checkbox:checked ~ .toggle-content { border-color: #8bc34a; }
 .admin-settings .demo .tb-lime .toggle-button { border: 2px solid #c3d825; background: #c3d825; color: #fff; }
-.admin-settings .demo .tb-lime .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-lime .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-lime .toggle-checkbox:checked ~ .toggle-content { border-color: #c3d825; }
 .admin-settings .demo .tb-amber .toggle-button { border: 2px solid #ffc107; background: #ffc107; color: #fff; }
-.admin-settings .demo .tb-amber .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-amber .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-amber .toggle-checkbox:checked ~ .toggle-content { border-color: #ffc107; }
 .admin-settings .demo .tb-deep-orange .toggle-button { border: 2px solid #ea5506; background: #ea5506; color: #fff; }
-.admin-settings .demo .tb-deep-orange .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-deep-orange .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #ea5506; }
 .admin-settings .demo .tb-white .toggle-button { border: 2px solid #fff; background: #fff; color: #fff; }
-.admin-settings .demo .tb-white .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-white .toggle-button::before { color: #ddd; }
 .admin-settings .demo .tb-white .toggle-checkbox:checked ~ .toggle-content { border-color: #fff; }
 .admin-settings .demo .iic-red li::before { color: #e60033; }
 .admin-settings .demo .iic-pink li::before { color: #e95295; }
@@ -2991,10 +2991,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination { margin: 24px 0; clear: both; text-align: center; display: inline-flex; justify-content: center; width: 100%; }
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
-.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
+.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ddd; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
 .admin-settings .demo .page-numbers span { line-height: inherit; }
-.admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
-.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
+.admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f5f6f7; }
+.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ddd; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
 .admin-settings .demo .pager-links .post-page-numbers { background-color: transparent; }
@@ -3006,13 +3006,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pager-prev-next span { width: 100%; margin: 0; }
 .admin-settings .demo .pager-post-navi { margin: 38px 0; display: flex; flex-direction: column; }
 .admin-settings .demo .pager-post-navi a { padding: 10px; margin: 0; display: inline-flex; align-items: center; line-height: 1.2; font-size: 0.8em; }
-.admin-settings .demo .pager-post-navi a .iconfont { font-size: 1.8em; color: #ccc; padding: 8px; }
+.admin-settings .demo .pager-post-navi a .iconfont { font-size: 1.8em; color: #ddd; padding: 8px; }
 .admin-settings .demo .pager-post-navi a figure { min-width: 120px; max-width: 120px; }
 .admin-settings .demo .pager-post-navi a.prev-post { flex-direction: row; padding-left: 5px; }
 .admin-settings .demo .pager-post-navi a.prev-post .prev-post-title { margin-left: 10px; }
 .admin-settings .demo .pager-post-navi a.next-post { flex-direction: row-reverse; padding-right: 5px; }
 .admin-settings .demo .pager-post-navi a.next-post .next-post-title { margin-right: 10px; }
-.admin-settings .demo .pager-post-navi a.prev-next-home { justify-content: center; font-size: 50px; text-align: center; color: #777; }
+.admin-settings .demo .pager-post-navi a.prev-next-home { justify-content: center; font-size: 50px; text-align: center; color: #888; }
 .admin-settings .demo .post-navi-square a { height: auto; }
 .admin-settings .demo .post-navi-default.post-navi-border a { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
 .admin-settings .demo .post-navi-default.post-navi-border .next-post { border-top-width: 0px; }
@@ -3098,20 +3098,20 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::after { left: auto; right: -44px; }
 .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; margin: 1.6em auto; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
 .admin-settings .demo .product-item-box { position: relative; }
-.admin-settings .demo .product-item-box::after { content: '\ea87'; font-family: icomoon; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ccc; }
+.admin-settings .demo .product-item-box::after { content: '\ea87'; font-family: icomoon; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ddd; }
 .admin-settings .demo .product-item-box .image-thumb img { border: none; box-shadow: none; }
 .admin-settings .demo .rakuten-item-box::after { content: '\e903'; font-family: icomoon; }
 .admin-settings .demo .product-item-error.cf { display: block; line-height: 1.2; }
 .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 160px; min-width: 160px; margin: 0 auto 1em !important; float: none !important; text-align: center; }
 .admin-settings .demo .booklink-image *, .admin-settings .demo .kaerebalink-image *, .admin-settings .demo .tomarebalink-image *, .admin-settings .demo .product-item-thumb * { display: block; }
 .admin-settings .demo .booklink-image > a > img, .admin-settings .demo .kaerebalink-image > a > img, .admin-settings .demo .tomarebalink-image > a > img, .admin-settings .demo .product-item-thumb > a > img { margin: 0 auto; }
-.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f3f4f5; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
+.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #eee; background-color: #f5f6f7; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
 .admin-settings .demo .image-content img { display: block; }
 .admin-settings .demo .image-content amp-img { min-width: 500px; }
 .admin-settings .demo .image-thumb:hover > .image-content { visibility: visible; opacity: 1; }
 .admin-settings .demo .image-thumb:hover > .image-content:hover { display: none; }
 .admin-settings .demo .swatchimages { display: flex; flex-wrap: wrap; margin-top: 3px; }
-.admin-settings .demo .swatchimages > * { border: 1px solid #ccc; margin: 1px; display: flex; align-items: center; justify-content: center; }
+.admin-settings .demo .swatchimages > * { border: 1px solid #ddd; margin: 1px; display: flex; align-items: center; justify-content: center; }
 .admin-settings .demo .swatchimages > *:hover { box-shadow: 0 0 4px #f79901; }
 .admin-settings .demo .swatchimages > * > img { display: block; }
 .admin-settings .demo .swatchimages:hover .si-thumb { display: flex; align-items: center; justify-content: center; }
@@ -3345,7 +3345,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .search-box { margin: 1em 0 2em; position: relative; }
 .admin-settings .demo .search-edit { font-family: inherit; }
 .admin-settings .demo #search-menu-content .search-edit { font-size: 16px; }
-.admin-settings .demo .search-submit { position: absolute; right: 3px; top: calc(50% - 12px); font-size: 20px; cursor: pointer; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
+.admin-settings .demo .search-submit { position: absolute; right: 3px; top: calc(50% - 12px); font-size: 20px; cursor: pointer; border: none; color: #ddd; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
 .admin-settings .demo .timeline-box { padding: 16px 5px; }
 .admin-settings .demo .timeline-box .timeline { list-style: none; padding: 0; margin: 0; }
 .admin-settings .demo .timeline-title { font-weight: bold; font-size: 1.1em; text-align: center; }
@@ -3528,14 +3528,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }
-.admin-settings .demo input[type='submit'] { -webkit-appearance: none; border: 1px solid #ccc; background-color: #f5f8fa; }
+.admin-settings .demo input[type='submit'] { -webkit-appearance: none; border: 1px solid #ddd; background-color: #f5f8fa; }
 .admin-settings .demo .bp-login-widget-register-link { display: block; margin-top: 10px; }
 .admin-settings .demo .bp-login-widget-register-link a { color: #333; text-decoration: none; display: block; text-align: center; border: 1px solid #777; padding: 6px; border-radius: 2px; }
 .admin-settings .demo .bp-login-widget-register-link a:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .widget.buddypress #bp-login-widget-form input#bp-login-widget-submit { margin: 0; }
 .admin-settings .demo #wp-comment-cookies-consent { margin-right: 5px; }
 .admin-settings .demo .carousel { margin-top: 10px; line-height: 1.1; }
-.admin-settings .demo .carousel .slick-arrow:before { color: #ccc; }
+.admin-settings .demo .carousel .slick-arrow:before { color: #ddd; }
 .admin-settings .demo .carousel-in { background-color: #fff; padding: 2px 0; }
 .admin-settings .demo .carousel-content { margin: 0 30px; padding-bottom: 4px; }
 .admin-settings .demo .carousel-content a { float: left; width: 10%; }
@@ -3942,7 +3942,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 /************************************
 ** ソースコード
 ************************************/
-pre { background-color: #f3f4f5; border: 1px solid #ccc; overflow: auto; padding: 10px; margin: 1em 0; }
+pre { background-color: #f5f6f7; border: 1px solid #ddd; overflow: auto; padding: 10px; margin: 1em 0; }
 
 .is-code-row-number-enable pre, .is-code-row-number-enable pre#highlight-demo { border: none; position: relative; padding: 0.4em 1em 0.4em 3em; }
 
@@ -4154,7 +4154,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 #singular_sns_image_settings input[type=text] { width: 100%; }
 #singular_sns_image_settings #sns_image_url_thumbnail img { width: 100%; }
 
-.skin-control { opacity: 0.5; padding: 1.4em 0.6em 0.6em; position: relative; display: inline-block; background-color: #f3f4f5; border: 1px solid #ba2636; border-radius: 2px; pointer-events: none; cursor: not-allowed; }
+.skin-control { opacity: 0.5; padding: 1.4em 0.6em 0.6em; position: relative; display: inline-block; background-color: #f5f6f7; border: 1px solid #ba2636; border-radius: 2px; pointer-events: none; cursor: not-allowed; }
 .skin-control::before { content: 'スキン制御'; font-size: 0.7em; border-bottom-right-radius: 8px; position: absolute; top: 0; left: 0; background-color: #ba2636; color: #fff; padding: 2px 10px 2px 6px; }
 
 .backwpup_page_backwpupeditjob #wpfooter { display: none; }
@@ -4203,7 +4203,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .marker-under-red { background: linear-gradient(transparent 60%, #ffd0d1 60%); }
 .components-popover__content .marker-under-blue { background: linear-gradient(transparent 60%, #a8dafb 60%); }
 .components-popover__content .strike { text-decoration: line-through; }
-.components-popover__content .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #777; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
+.components-popover__content .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #888; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
 .components-popover__content .primary-box, .components-popover__content .sp-primary, .components-popover__content .primary { color: #004085; background-color: #cce5ff; border-color: #b8daff; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .components-popover__content .success-box, .components-popover__content .sp-success, .components-popover__content .success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .components-popover__content .info-box, .components-popover__content .sp-info, .components-popover__content .info { color: #0c5460; background-color: #d1ecf1; border-color: #bee5eb; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
@@ -4286,7 +4286,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.bb-tab.bb-amber .bb-label { background-color: #ffc107; }
 .components-popover__content .blank-box.bb-tab.bb-deep-orange .bb-label { background-color: #ea5506; }
 .components-popover__content .blank-box.bb-tab.bb-white .bb-label { background-color: #fff; }
-.components-popover__content .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
+.components-popover__content .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f5f6f7; }
 .components-popover__content .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .components-popover__content .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .components-popover__content .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
@@ -4608,7 +4608,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .label-box { margin: 1.2em 0; }
 .components-popover__content .label-box.block-box.has-background { background-color: transparent; }
 .components-popover__content .label-box-label { margin-left: 1em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
-.components-popover__content .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
+.components-popover__content .label-box-content { margin-top: -0.9em; border: 3px solid #888; padding: 1em 0.8em 0.4em; border-radius: 8px; }
 .components-popover__content .lb-red .label-box-content { border-color: #e60033; }
 .components-popover__content .lb-pink .label-box-content { border-color: #e95295; }
 .components-popover__content .lb-purple .label-box-content { border-color: #884898; }
@@ -4632,7 +4632,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .toggle-wrap { margin: 1.2em 0; position: relative; }
 .components-popover__content .toggle-wrap > p { margin: 0; }
 .components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .components-popover__content .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .components-popover__content .toggle-button:hover { opacity: 0.7; }
 .components-popover__content .toggle-checkbox { display: none; }
@@ -4640,64 +4640,64 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .toggle-checkbox:checked ~ .toggle-button::before { content: '\f068'; }
 .components-popover__content .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.3s ease-in-out; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 .components-popover__content .tb-red .toggle-button { border: 2px solid #e60033; background: #e60033; color: #fff; }
-.components-popover__content .tb-red .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-red .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-red .toggle-checkbox:checked ~ .toggle-content { border-color: #e60033; }
 .components-popover__content .tb-pink .toggle-button { border: 2px solid #e95295; background: #e95295; color: #fff; }
-.components-popover__content .tb-pink .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-pink .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-pink .toggle-checkbox:checked ~ .toggle-content { border-color: #e95295; }
 .components-popover__content .tb-purple .toggle-button { border: 2px solid #884898; background: #884898; color: #fff; }
-.components-popover__content .tb-purple .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-purple .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-purple .toggle-checkbox:checked ~ .toggle-content { border-color: #884898; }
 .components-popover__content .tb-blue .toggle-button { border: 2px solid #0095d9; background: #0095d9; color: #fff; }
-.components-popover__content .tb-blue .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-blue .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-blue .toggle-checkbox:checked ~ .toggle-content { border-color: #0095d9; }
 .components-popover__content .tb-green .toggle-button { border: 2px solid #3eb370; background: #3eb370; color: #fff; }
-.components-popover__content .tb-green .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-green .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
 .components-popover__content .tb-orange .toggle-button { border: 2px solid #f39800; background: #f39800; color: #fff; }
-.components-popover__content .tb-orange .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-orange .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #f39800; }
 .components-popover__content .tb-yellow .toggle-button { border: 2px solid #ffd900; background: #ffd900; color: #fff; }
-.components-popover__content .tb-yellow .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-yellow .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-yellow .toggle-checkbox:checked ~ .toggle-content { border-color: #ffd900; }
 .components-popover__content .tb-brown .toggle-button { border: 2px solid #954e2a; background: #954e2a; color: #fff; }
-.components-popover__content .tb-brown .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-brown .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-brown .toggle-checkbox:checked ~ .toggle-content { border-color: #954e2a; }
 .components-popover__content .tb-grey .toggle-button { border: 2px solid #949495; background: #949495; color: #fff; }
-.components-popover__content .tb-grey .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-grey .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-grey .toggle-checkbox:checked ~ .toggle-content { border-color: #949495; }
 .components-popover__content .tb-black .toggle-button { border: 2px solid #333; background: #333; color: #fff; }
-.components-popover__content .tb-black .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-black .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-black .toggle-checkbox:checked ~ .toggle-content { border-color: #333; }
 .components-popover__content .tb-deep .toggle-button { border: 2px solid #55295b; background: #55295b; color: #fff; }
-.components-popover__content .tb-deep .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-deep .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-deep .toggle-checkbox:checked ~ .toggle-content { border-color: #55295b; }
 .components-popover__content .tb-indigo .toggle-button { border: 2px solid #1e50a2; background: #1e50a2; color: #fff; }
-.components-popover__content .tb-indigo .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-indigo .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-indigo .toggle-checkbox:checked ~ .toggle-content { border-color: #1e50a2; }
 .components-popover__content .tb-light-blue .toggle-button { border: 2px solid #2ca9e1; background: #2ca9e1; color: #fff; }
-.components-popover__content .tb-light-blue .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-light-blue .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-light-blue .toggle-checkbox:checked ~ .toggle-content { border-color: #2ca9e1; }
 .components-popover__content .tb-cyan .toggle-button { border: 2px solid #00a3af; background: #00a3af; color: #fff; }
-.components-popover__content .tb-cyan .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-cyan .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-cyan .toggle-checkbox:checked ~ .toggle-content { border-color: #00a3af; }
 .components-popover__content .tb-teal .toggle-button { border: 2px solid #007b43; background: #007b43; color: #fff; }
-.components-popover__content .tb-teal .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-teal .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-teal .toggle-checkbox:checked ~ .toggle-content { border-color: #007b43; }
 .components-popover__content .tb-light-green .toggle-button { border: 2px solid #8bc34a; background: #8bc34a; color: #fff; }
-.components-popover__content .tb-light-green .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-light-green .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-light-green .toggle-checkbox:checked ~ .toggle-content { border-color: #8bc34a; }
 .components-popover__content .tb-lime .toggle-button { border: 2px solid #c3d825; background: #c3d825; color: #fff; }
-.components-popover__content .tb-lime .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-lime .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-lime .toggle-checkbox:checked ~ .toggle-content { border-color: #c3d825; }
 .components-popover__content .tb-amber .toggle-button { border: 2px solid #ffc107; background: #ffc107; color: #fff; }
-.components-popover__content .tb-amber .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-amber .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-amber .toggle-checkbox:checked ~ .toggle-content { border-color: #ffc107; }
 .components-popover__content .tb-deep-orange .toggle-button { border: 2px solid #ea5506; background: #ea5506; color: #fff; }
-.components-popover__content .tb-deep-orange .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-deep-orange .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #ea5506; }
 .components-popover__content .tb-white .toggle-button { border: 2px solid #fff; background: #fff; color: #fff; }
-.components-popover__content .tb-white .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-white .toggle-button::before { color: #ddd; }
 .components-popover__content .tb-white .toggle-checkbox:checked ~ .toggle-content { border-color: #fff; }
 .components-popover__content .iic-red li::before { color: #e60033; }
 .components-popover__content .iic-pink li::before { color: #e95295; }
@@ -4763,7 +4763,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content span.sub-caption { opacity: 0.8; }
 
 .tagcloud { display: flex; flex-wrap: wrap; align-items: flex-start; }
-.tagcloud .admin-tag { border: 1px solid #ddd; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.3s ease-in-out; flex: 0 1 auto; }
+.tagcloud .admin-tag { border: 1px solid #eee; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.3s ease-in-out; flex: 0 1 auto; }
 .tagcloud .admin-tag:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .tagcloud .admin-tag .tag-caption { word-break: break-all; }
 .tagcloud .admin-tag .tag-link-count { margin-left: 8px; }

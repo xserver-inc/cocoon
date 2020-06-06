@@ -13,7 +13,6 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !class_exists( 'menu_description_walker' ) ):
 class menu_description_walker extends Walker_Nav_Menu {
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-    //_v($item);
 
     $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
     $url = trim($item->url);
@@ -126,8 +125,7 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
           $fa_classes[] = 'fa';
           $fa_classes[] = 'fa-star';
         }
-        //$fa_classes[] = 'menu-icon';
-        //_v($fa_classes);
+
         $classes = array_filter($classes, function($v, $k) { return !preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);
 
         $classes[] = 'menu-button';
@@ -151,16 +149,13 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
 
         $caption_before = '<span class="custom-menu-caption menu-caption">';
         $caption_after = '</span>';
-        //$description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_html( $item->description ).'</div>' : '';
 
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .' class="menu-button-in">';
-        //$item_output .= '<div class="caption-wrap">';
-        //$item_output .= $args->link_before;
+
         $item_output .= $icon_before.$icon_after;
         $item_output .= $caption_before.apply_filters( 'the_title', $item->title, $item->ID ).$caption_after;
-        //$item_output .= $args->link_after;
-        //$item_output .= '</div>';
+
         $item_output .= '</a>';
         $item_output .= $args->after.'</li>';
       }
@@ -173,15 +168,6 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
 
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
       $output .= "\n";
-      // if (in_array('menu-item-has-children', $item->classes)) {
-      //   // 親の場合
-      //   $output .= "\n".'</ul></li>';
-      // }
-      // else {
-      //   // 子の場合
-
-      //   $output .= "\n";
-      // }
     }
   }
   endif;
