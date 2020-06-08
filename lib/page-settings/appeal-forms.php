@@ -101,7 +101,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_APPEAL_AREA_CONTENT_VISIBLE, is_appeal_area_content_visible(), __( 'テキストメッセージエリアを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'この設定を無効にすると「タイトル」や「メッセージ」、「ボタン」は表示されず背景画像のみが表示されます。', THEME_NAME ));
+            generate_tips_tag(__( 'この設定を無効にすると「タイトル」や「メッセージ」、「ボタン」は表示されず背景画像のみが表示されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/hide-contents-of-appeal-area/'));
             ?>
           </td>
         </tr>

@@ -213,7 +213,7 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_textbox_tag(OP_DMM_AFFILIATE_ID, get_dmm_affiliate_id(), '');
             echo '<br>';
 
-            generate_tips_tag(__( 'DMMアフィリエイトの「アフィリエイトID」をを取得してください。', THEME_NAME ));
+            generate_tips_tag(__( 'DMMアフィリエイトの「アフィリエイトID」をを取得してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/dmm-search-button/', $help_text));
 
 
             echo '<div'.get_not_allowed_form_class(get_dmm_affiliate_id()).'>';
