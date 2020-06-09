@@ -16,7 +16,10 @@ update_theme_option(OP_INDEX_CATEGORY_IDS);
 //タブインデックスカテゴリー（カンマテキスト）
 update_theme_option(OP_INDEX_CATEGORY_IDS_COMMA_TEXT);
 
-//インデックスエントリーカード数
+//インデックス新着エントリーカード数
+update_theme_option(OP_INDEX_NEW_ENTRY_CARD_COUNT);
+
+//インデックスカテゴリーエントリーカード数
 update_theme_option(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT);
 
 //インデックスの並び順

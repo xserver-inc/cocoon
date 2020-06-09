@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //インデックスカテゴリを読み込む
-$count = get_index_category_entry_card_count();
+$count = get_index_new_entry_card_count();
 ?>
 <div class="list-new-entries">
   <h1 class="list-new-entries-title list-title">

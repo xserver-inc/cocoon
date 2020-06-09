@@ -74,24 +74,38 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_toggle_entered($comma_text);
             echo '<br>';
 
-            //エントリーカード表示数
-            echo '<br>';
-            ob_start();
-            generate_label_tag(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, __( 'エントリーカード表示数', THEME_NAME ));
-            echo '<br>';
+            //エントリーカード数の設定用オプション
             $options = array(
+              '1'  => __( '1個', THEME_NAME ),
               '2'  => __( '2個', THEME_NAME ),
               '3'  => __( '3個', THEME_NAME ),
               '4'  => __( '4個', THEME_NAME ).__( '（デフォルト）', THEME_NAME ),
+              '5'  => __( '5個', THEME_NAME ),
               '6'  => __( '6個', THEME_NAME ),
+              '7'  => __( '7個', THEME_NAME ),
               '8'  => __( '8個', THEME_NAME ),
               '9'  => __( '9個', THEME_NAME ),
               '10' => __( '10個', THEME_NAME ),
+              '11' => __( '11個', THEME_NAME ),
               '12' => __( '12個', THEME_NAME ),
             );
+
+            echo '<br>';
+            ob_start();
+            //新着エントリーカード表示数
+            echo '<br>';
+            generate_label_tag(OP_INDEX_NEW_ENTRY_CARD_COUNT, __( '新着エントリーカード表示数', THEME_NAME ));
+            echo '<br>';
+            generate_selectbox_tag(OP_INDEX_NEW_ENTRY_CARD_COUNT, $options, get_index_new_entry_card_count());
+            generate_tips_tag(__( 'フロントページタイプを「カテゴリごと」にした際に表示される新着エントリーカード数を設定します。', THEME_NAME ));
+
+            //カテゴリーエントリーカード表示数
+            generate_label_tag(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, __( 'カテゴリーエントリーカード表示数', THEME_NAME ));
+            echo '<br>';
             generate_selectbox_tag(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, $options, get_index_category_entry_card_count());
             generate_tips_tag(__( 'フロントページのインデックスでカテゴリごとに表示するエントリーカード数を設定します。', THEME_NAME ));
-            $form = ob_get_clean();generate_toggle_area(__( '「カテゴリごと」表示でカード表示数を変更する場合はこちら', THEME_NAME ), $form);
+            $form = ob_get_clean();
+            generate_toggle_area(__( '「カテゴリごと」表示でカード表示数を変更する場合はこちら', THEME_NAME ), $form);
             ?>
           </td>
         </tr>

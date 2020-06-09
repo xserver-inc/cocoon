@@ -52,7 +52,15 @@ function get_index_category_ids(){
 }
 endif;
 
-//インデックスエントリーカード数
+//インデックス新着エントリーカード数
+define('OP_INDEX_NEW_ENTRY_CARD_COUNT', 'index_new_entry_card_count');
+if ( !function_exists( 'get_index_new_entry_card_count' ) ):
+function get_index_new_entry_card_count(){
+  return get_theme_option(OP_INDEX_NEW_ENTRY_CARD_COUNT, 4);
+}
+endif;
+
+//インデックスカテゴリーエントリーカード数
 define('OP_INDEX_CATEGORY_ENTRY_CARD_COUNT', 'index_category_entry_card_count');
 if ( !function_exists( 'get_index_category_entry_card_count' ) ):
 function get_index_category_entry_card_count(){
