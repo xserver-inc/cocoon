@@ -42,14 +42,24 @@ a {
 }
 /************************************
 ** セレクトボックス
+**
+** セレクトボックスが移動しなくなっていたのでCSSセレクタ修正
+** 詳細：https://wp-cocoon.com/community/postid/34615/
 ************************************/
-.select-box {
+.widget_categories,
+.widget_archive{
+	position: relative;
+}
+
+.widget_categories form,
+.widget_archive form {
 	overflow: hidden;
 	width: 90%;
 	margin: 2em auto;
 	text-align: center;
 }
-.select-box select {
+.widget_categories form select,
+.widget_archive form select {
 	width: 100%;
 	padding-right: 1em;
 	cursor: pointer;
@@ -63,16 +73,19 @@ a {
 	-webkit-appearance: none;
 	appearance: none;
 }
-.select-box select::-ms-expand {
+.widget_categories form select::-ms-expand,
+.widget_archive form select::-ms-expand {
     display: none;
 }
-.select-box {
+.widget_categories form,
+.widget_archive form {
 	position: relative;
 	border: 1px solid #bbbbbb;
 	border-radius: 2px;
 	background: #ffffff;
 }
-.select-box::before {
+.widget_categories form::before,
+.widget_archive form::before {
 	position: absolute;
 	top: 1.6em;
 	right: 0.9em;
@@ -85,7 +98,8 @@ a {
 	border-top: 6px solid #666666;
 	pointer-events: none;
 }
-.select-box select {
+.widget_categories form select,
+.widget_archive form select {
 	padding: 1em;
 	color: #666666;
 }
