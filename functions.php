@@ -196,12 +196,12 @@ function wp_link_pages_link_custom($link){
 }
 endif;
 
-//メインクエリの出力順変更
-add_action( 'pre_get_posts', 'change_main_loop_sort_order' );
-if ( !function_exists( 'change_main_loop_sort_order' ) ):
-function change_main_loop_sort_order( $query ) {
-  if (is_get_index_sort_orderby_modified()) {
-    if ($query->is_main_query()) {
+//メインクエリの出力変更
+add_action( 'pre_get_posts', 'custom_main_query_pre_get_posts' );
+if ( !function_exists( 'custom_main_query_pre_get_posts' ) ):
+function custom_main_query_pre_get_posts( $query ) {
+  if ($query->is_main_query()) {
+    if (is_get_index_sort_orderby_modified()) {
       $query->set( 'orderby', 'modified' );
     }
   }
