@@ -1038,7 +1038,7 @@ function generate_widget_entries_tag($atts){
     'taxonomy' => 'category',
     'sticky' => 0,
     'random' => 0,
-    'modified' => 0,
+    'modified' => is_get_index_sort_orderby_modified(),
     'order' => 'desc',
     'action' => null,
     'exclude_cat_ids' => array(),

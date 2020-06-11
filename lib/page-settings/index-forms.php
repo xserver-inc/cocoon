@@ -236,11 +236,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- 除外カテゴリー -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_INDEX_EXCLUDE_CATEGORY_IDS, __( '除外カテゴリー', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_ARCHIVE_EXCLUDE_CATEGORY_IDS, __( '除外カテゴリー', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_hierarchical_category_check_list( 0, OP_INDEX_EXCLUDE_CATEGORY_IDS, get_index_exclude_category_ids(), 300 );
+            generate_hierarchical_category_check_list( 0, OP_ARCHIVE_EXCLUDE_CATEGORY_IDS, get_archive_exclude_category_ids(), 300 );
             generate_tips_tag(__( 'インデックスリストに表示させたくないカテゴリーを選択してください。', THEME_NAME ));
             ?>
           </td>

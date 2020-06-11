@@ -236,10 +236,10 @@ function is_entry_card_post_comment_count_visible(){
 endif;
 
 //インデックスリストに表示しないカテゴリーID
-define('OP_INDEX_EXCLUDE_CATEGORY_IDS', 'index_exclude_category_ids');
-if ( !function_exists( 'get_index_exclude_category_ids' ) ):
-function get_index_exclude_category_ids(){
-  return get_theme_option(OP_INDEX_EXCLUDE_CATEGORY_IDS, array());
+define('OP_ARCHIVE_EXCLUDE_CATEGORY_IDS', 'archive_exclude_category_ids');
+if ( !function_exists( 'get_archive_exclude_category_ids' ) ):
+function get_archive_exclude_category_ids(){
+  return get_theme_option(OP_ARCHIVE_EXCLUDE_CATEGORY_IDS, array());
 }
 endif;
 
@@ -286,9 +286,15 @@ function get_category_index_list_entry_card_tag($categories, $count){
       'cat' => $categories,
     );
   }
+  //順番変更
+  if (is_get_index_sort_orderby_modified()) {
+    $args += array(
+      'orderby' => 'modified',
+    );
+  }
   //カテゴリーの除外
-  $exclude_category_ids = get_index_exclude_category_ids();
-  if ($exclude_category_ids && is_array($exclude_category_ids)) {
+  $exclude_category_ids = get_archive_exclude_category_ids();
+  if (!$categories && $exclude_category_ids && is_array($exclude_category_ids)) {
     $args += array(
       'category__not_in' => $exclude_category_ids,
     );

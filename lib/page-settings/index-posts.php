@@ -66,4 +66,4 @@ update_theme_option(OP_ENTRY_CARD_POST_AUTHOR_VISIBLE);
 update_theme_option(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE);
 
 //インデックスリストに表示しないカテゴリーID
-update_theme_option(OP_INDEX_EXCLUDE_CATEGORY_IDS);
+update_theme_option(OP_ARCHIVE_EXCLUDE_CATEGORY_IDS);
