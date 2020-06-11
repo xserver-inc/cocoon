@@ -235,6 +235,14 @@ function is_entry_card_post_comment_count_visible(){
 }
 endif;
 
+//インデックスリストに表示しないカテゴリーID
+define('OP_INDEX_EXCLUDE_CATEGORY_IDS', 'index_exclude_category_ids');
+if ( !function_exists( 'get_index_exclude_category_ids' ) ):
+function get_index_exclude_category_ids(){
+  return get_theme_option(OP_INDEX_EXCLUDE_CATEGORY_IDS, array());
+}
+endif;
+
 //フォントページタイプ用のカテゴリーID取得
 if ( !function_exists( 'get_index_list_category_ids' ) ):
 function get_index_list_category_ids(){
@@ -278,6 +286,13 @@ function get_category_index_list_entry_card_tag($categories, $count){
       'cat' => $categories,
     );
   }
+  //カテゴリーの除外
+  $exclude_category_ids = get_index_exclude_category_ids();
+  if ($exclude_category_ids && is_array($exclude_category_ids)) {
+    $args += array(
+      'category__not_in' => $exclude_category_ids,
+    );
+  }
   $query = new WP_Query( $args );
   ////////////////////////////
   //一覧の繰り返し処理
@@ -294,3 +309,5 @@ function get_category_index_list_entry_card_tag($categories, $count){
   return ob_get_clean();
 }
 endif;
+
+

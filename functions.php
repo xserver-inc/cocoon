@@ -200,10 +200,21 @@ endif;
 add_action( 'pre_get_posts', 'custom_main_query_pre_get_posts' );
 if ( !function_exists( 'custom_main_query_pre_get_posts' ) ):
 function custom_main_query_pre_get_posts( $query ) {
+  if (is_admin()) return;
+
   if ($query->is_main_query()) {
+
+    //順番変更
     if (is_get_index_sort_orderby_modified()) {
       $query->set( 'orderby', 'modified' );
     }
+
+    //カテゴリーの除外
+    $exclude_category_ids = get_index_exclude_category_ids();
+    if ($exclude_category_ids && is_array($exclude_category_ids)) {
+      $query->set( 'category__not_in', $exclude_category_ids );
+    }
+
   }
 }
 endif;
