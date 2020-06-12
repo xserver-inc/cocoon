@@ -72,7 +72,7 @@ endif;
 if ( !function_exists( 'is_front_index_page' ) ):
 function is_front_index_page(){
   //var_dump($_GET);
-  return is_front_top_page() && is_home() && !isset($_GET['cat']) || (isset($_GET['cat']) && $_GET['cat'] != '0');
+  return is_front_top_page() && is_home() && (!isset($_GET['cat']) || (isset($_GET['cat']) && $_GET['cat'] != '0'));
 }
 endif;
 
