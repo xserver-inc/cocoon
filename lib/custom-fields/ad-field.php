@@ -14,10 +14,10 @@ add_action('admin_menu', 'add_ad_custom_box');
 if ( !function_exists( 'add_ad_custom_box' ) ):
 function add_ad_custom_box(){
   //広告ボックス
-  add_meta_box( 'singular_ad_settings',__( '広告設定', THEME_NAME ), 'view_ad_custom_box', 'post', 'side' );
-  add_meta_box( 'singular_ad_settings',__( '広告設定', THEME_NAME ), 'view_ad_custom_box', 'page', 'side' );
+  add_meta_box( 'singular_ad_settings',__( '広告', THEME_NAME ), 'view_ad_custom_box', 'post', 'side' );
+  add_meta_box( 'singular_ad_settings',__( '広告', THEME_NAME ), 'view_ad_custom_box', 'page', 'side' );
   //カスタム投稿タイプに登録
-  add_meta_box_custom_post_types( 'singular_ad_settings',__( '広告設定', THEME_NAME ), 'view_ad_custom_box', 'custum_post', 'side' );
+  add_meta_box_custom_post_types( 'singular_ad_settings',__( '広告', THEME_NAME ), 'view_ad_custom_box', 'custum_post', 'side' );
 }
 endif;
 
