@@ -74,6 +74,17 @@ function is_the_page_archive_visible(){
 }
 endif;
 
+//アーカイブ除外IDの取得
+if ( !function_exists( 'get_archive_exclude_post_ids' ) ):
+function get_archive_exclude_post_ids(){
+  global $wpdb;
+  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM wp_postmeta WHERE (meta_key = 'the_page_no_archive') AND (meta_value = 1)");
+  $result = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
+  return $result;
+}
+endif;
+// var_dump(get_archive_exclude_post_ids());
+
 
 //RSSを除外しているか
 if ( !function_exists( 'is_the_page_no_rss' ) ):
@@ -90,3 +101,14 @@ function is_the_page_rss_visible(){
   return !is_the_page_no_rss();
 }
 endif;
+
+//RSS除外IDの取得
+if ( !function_exists( 'get_rss_exclude_post_ids' ) ):
+function get_rss_exclude_post_ids(){
+  global $wpdb;
+  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM wp_postmeta WHERE (meta_key = 'the_page_no_rss') AND (meta_value = 1)");
+  $result = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
+  return $result;
+}
+endif;
+// var_dump(get_rss_exclude_post_ids());
