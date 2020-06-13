@@ -1071,6 +1071,20 @@ function generate_widget_entries_tag($atts){
       'order' => strtoupper($order),
     );
   }
+  //除外カテゴリー
+  $exclude_category_ids = get_archive_exclude_category_ids();
+  if ($exclude_category_ids && is_array($exclude_category_ids)) {
+    $args += array(
+      'category__not_in' => $exclude_category_ids,
+    );
+  }
+  //除外投稿
+  $exclude_post_ids = get_archive_exclude_post_ids();
+  if ($exclude_post_ids && is_array($exclude_post_ids)) {
+    $args += array(
+      'post__not_in' => $exclude_post_ids,
+    );
+  }
   if ($post_type) {
     $args += array(
       'post_type' => explode(',', $post_type)

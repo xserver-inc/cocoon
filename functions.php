@@ -202,6 +202,7 @@ if ( !function_exists( 'custom_main_query_pre_get_posts' ) ):
 function custom_main_query_pre_get_posts( $query ) {
   if (is_admin()) return;
 
+  //メインループ内
   if ($query->is_main_query()) {
 
     //順番変更
@@ -215,6 +216,20 @@ function custom_main_query_pre_get_posts( $query ) {
       $query->set( 'category__not_in', $exclude_category_ids );
     }
 
+    //除外投稿
+    $exclude_post_ids = get_archive_exclude_post_ids();
+    if ($exclude_post_ids && is_array($exclude_post_ids)) {
+      $query->set( 'post__not_in', $exclude_post_ids );
+    }
+
+  }
+
+  //フィード
+  if ($query->is_feed) {
+    $exclude_post_ids = get_rss_exclude_post_ids();
+    if ($exclude_post_ids && is_array($exclude_post_ids)) {
+      $query->set( 'post__not_in', $exclude_post_ids );
+    }
   }
 }
 endif;
