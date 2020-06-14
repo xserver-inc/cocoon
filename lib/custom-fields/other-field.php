@@ -32,8 +32,8 @@ function view_other_custom_box(){
   generate_howto_tag(__( 'チェックを入れると、この記事はインデックスページ等のアーカイブに表示されなくなります。', THEME_NAME ), 'the_page_no_archive');
 
   //RSS除外
-  generate_checkbox_tag('the_page_no_rss' , is_the_page_no_rss(), __( 'RSSに出力しない', THEME_NAME ));
-  generate_howto_tag(__( 'チェックを入れると、この記事はRSS等のフィードに表示されなくなります。', THEME_NAME ), 'the_page_no_rss');
+  generate_checkbox_tag('the_page_no_rss' , is_the_page_no_rss(), __( 'フィードに出力しない', THEME_NAME ));
+  generate_howto_tag(__( 'チェックを入れると、この記事はRSS・Atomのフィードに出力されなくなります。', THEME_NAME ), 'the_page_no_rss');
 }
 endif;
 
