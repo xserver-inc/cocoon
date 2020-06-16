@@ -3520,7 +3520,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nt-danger { background-color: #ff6666; }
 .admin-settings .demo .no-appeal-area .appeal { display: none; }
 .admin-settings .demo .appeal-in { display: flex; min-height: 300px; padding: 3% 5%; }
-.admin-settings .demo .appeal-content { max-width: 800px; background-color: rgba(255, 255, 255, 0.85); margin: auto; padding: 1em; text-align: center; border-radius: 4px; display: block; }
+.admin-settings .demo .appeal-content { max-width: 740px; background-color: rgba(255, 255, 255, 0.85); margin: auto; padding: 2em; text-align: center; border-radius: 4px; display: block; }
 .admin-settings .demo .appeal-title { font-size: 1.1em; font-weight: bold; }
 .admin-settings .demo .appeal-message { margin-bottom: 1em; }
 .admin-settings .demo .appeal-button { color: #fff; text-decoration: none; background-color: #c9171e; font-weight: bold; text-align: center; display: inline-block; padding: 9px 42px; border-radius: 4px; }
