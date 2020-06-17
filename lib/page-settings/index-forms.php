@@ -241,7 +241,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_hierarchical_category_check_list( 0, OP_ARCHIVE_EXCLUDE_CATEGORY_IDS, get_archive_exclude_category_ids(), 300 );
-            generate_tips_tag(__( 'アーカイブ（インデックスリスト・新着関連記事ウィジェット等）に表示させたくないカテゴリーを選択してください。', THEME_NAME ));
+            generate_tips_tag(__( 'アーカイブ（インデックスリスト・新着関連記事ウィジェット等）に表示させたくないカテゴリーを選択してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/do-not-output-posts-that-belong-to-archives/'));
             ?>
           </td>
         </tr>
