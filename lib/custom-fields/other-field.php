@@ -78,7 +78,7 @@ endif;
 if ( !function_exists( 'get_archive_exclude_post_ids' ) ):
 function get_archive_exclude_post_ids(){
   global $wpdb;
-  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM wp_postmeta WHERE (meta_key = 'the_page_no_archive') AND (meta_value = 1)");
+  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM {$wpdb->prefix}postmeta WHERE (meta_key = 'the_page_no_archive') AND (meta_value = 1)");
   $result = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
   return $result;
 }
@@ -106,9 +106,8 @@ endif;
 if ( !function_exists( 'get_rss_exclude_post_ids' ) ):
 function get_rss_exclude_post_ids(){
   global $wpdb;
-  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM wp_postmeta WHERE (meta_key = 'the_page_no_rss') AND (meta_value = 1)");
+  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM {$wpdb->prefix}postmeta WHERE (meta_key = 'the_page_no_rss') AND (meta_value = 1)");
   $result = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
   return $result;
 }
 endif;
-// var_dump(get_rss_exclude_post_ids());
