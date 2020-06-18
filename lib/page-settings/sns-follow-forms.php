@@ -217,10 +217,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-        <!-- キャシュの有効化 -->
+        <!-- キャッシュの有効化 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_SNS_FOLLOW_COUNT_CACHE_ENABLE, __( 'キャシュの有効化', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_FOLLOW_COUNT_CACHE_ENABLE, __( 'キャッシュの有効化', THEME_NAME )); ?>
           </th>
           <td>
             <?php
