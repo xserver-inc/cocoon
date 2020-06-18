@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//SNSカウントキャシュの削除
+//SNSカウントキャッシュの削除
 if ( !function_exists( 'delete_sns_count_caches' ) ):
 function delete_sns_count_caches(){
   $result = false;
@@ -19,7 +19,7 @@ function delete_sns_count_caches(){
 }
 endif;
 
-//人気記事ウィジェットキャシュの削除
+//人気記事ウィジェットキャッシュの削除
 if ( !function_exists( 'delete_popular_entries_caches' ) ):
 function delete_popular_entries_caches(){
   if (is_user_administrator()) {
@@ -29,7 +29,7 @@ function delete_popular_entries_caches(){
 }
 endif;
 
-//ブログカードキャシュの削除
+//ブログカードキャッシュの削除
 if ( !function_exists( 'delete_blogcard_caches' ) ):
 function delete_blogcard_caches(){
   if (is_user_administrator()) {
@@ -39,7 +39,7 @@ function delete_blogcard_caches(){
 }
 endif;
 
-//AmazonAPIキャシュの削除
+//AmazonAPIキャッシュの削除
 if ( !function_exists( 'delete_amazon_api_caches' ) ):
 function delete_amazon_api_caches(){
   if (is_user_administrator()) {
@@ -49,7 +49,7 @@ function delete_amazon_api_caches(){
 }
 endif;
 
-//Amazon個別キャシュの削除
+//Amazon個別キャッシュの削除
 if ( !function_exists( 'delete_amazon_asin_cache' ) ):
 function delete_amazon_asin_cache($asin){
   $result = false;
@@ -61,7 +61,7 @@ function delete_amazon_asin_cache($asin){
 }
 endif;
 
-//楽天APIキャシュの削除
+//楽天APIキャッシュの削除
 if ( !function_exists( 'delete_rakuten_api_caches' ) ):
 function delete_rakuten_api_caches(){
   if (is_user_administrator()) {
@@ -71,7 +71,7 @@ function delete_rakuten_api_caches(){
 }
 endif;
 
-//楽天個別キャシュの削除
+//楽天個別キャッシュの削除
 if ( !function_exists( 'delete_rakuten_id_cache' ) ):
 function delete_rakuten_id_cache($id){
   $result = false;
@@ -98,7 +98,7 @@ function delete_all_theme_caches(){
 endif;
 
 
-//AMPキャシュの削除
+//AMPキャッシュの削除
 if ( !function_exists( 'delete_amp_caches' ) ):
 function delete_amp_caches(){
   if (is_user_administrator()) {

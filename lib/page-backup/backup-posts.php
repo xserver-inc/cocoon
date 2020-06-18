@@ -13,7 +13,7 @@ if (is_user_administrator()) {
 
   //テーマ用のキャッシュディレクトリの取得
   $uploaddir = get_theme_cache_path();
-  //キャシュディレクトリのアップロードファイルパス
+  //キャッシュディレクトリのアップロードファイルパス
   $uploadfile = $uploaddir .'/'. basename($_FILES['settings']['name']);
 
   if (move_uploaded_file($_FILES['settings']['tmp_name'], $uploadfile)) {

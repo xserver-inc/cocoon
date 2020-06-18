@@ -44,7 +44,7 @@ endif;
 
 
 
-//AMP個別キャシュの削除
+//AMP個別キャッシュの削除
 add_action( 'publish_post', 'delete_amp_page_cache');
 if ( !function_exists( 'delete_amp_page_cache' ) ):
 function delete_amp_page_cache($id){
