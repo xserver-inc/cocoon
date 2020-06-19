@@ -84,6 +84,7 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
 //外部サイトからブログカードサムネイルを取得する
 if ( !function_exists( 'fetch_card_image' ) ):
 function fetch_card_image($image){
+  //var_dump($image);
   //URLの？以降のクエリを削除
   $image = preg_replace('/\?.*$/i', '', $image);
   $filename = substr($image, (strrpos($image, '/'))+1);
@@ -111,6 +112,7 @@ function fetch_card_image($image){
     }
     //ローカル画像ファイルパス
     $new_file = $dir.md5($image).'.'.$ext;
+    // var_dump($new_file);
 
     if ( $file_data ) {
       wp_filesystem_put_contents($new_file, $file_data);

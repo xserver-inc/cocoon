@@ -220,7 +220,7 @@ class OpenGraphGetter implements Iterator
             //var_dump($m[1]);
             if (isset($m[1])) {
               //_v($m[0]);
-              $image_url = $m[0];
+              $image_url = $m[1];
             }
           }
         }
