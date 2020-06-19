@@ -543,10 +543,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .related-entry-post-date { margin-right: 0; }
 .admin-settings .demo .breadcrumb { margin: 1em .4em; color: #777; font-size: 13px; }
 .admin-settings .demo .breadcrumb div { display: inline; }
-.admin-settings .demo .breadcrumb span.sp { margin: 0 10px; }
+.admin-settings .demo .breadcrumb .sp { margin: 0 10px; }
 .admin-settings .demo .breadcrumb a { text-decoration: none; color: #777; }
 .admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: .6em 1em; }
 .admin-settings .demo .breadcrumb.sbp-main-before + .content, .admin-settings .demo .breadcrumb.pbp-main-before + .content { margin-top: 12px; }
+.admin-settings .demo .breadcrumb-caption { margin: 0 3px; }
 .admin-settings .demo .sns-buttons { display: flex; align-items: center; }
 .admin-settings .demo .sns-buttons a { display: block; background-color: #333; text-align: center; color: #fff; text-decoration: none; border-radius: 4px; height: 45px; }
 .admin-settings .demo .sns-buttons a:hover { opacity: 0.7; color: #fff; transition: all 0.3s ease-in-out; }
@@ -2122,10 +2123,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .related-entry-post-date { margin-right: 0; }
 .admin-settings .demo .breadcrumb { margin: 1em .4em; color: #777; font-size: 13px; }
 .admin-settings .demo .breadcrumb div { display: inline; }
-.admin-settings .demo .breadcrumb span.sp { margin: 0 10px; }
+.admin-settings .demo .breadcrumb .sp { margin: 0 10px; }
 .admin-settings .demo .breadcrumb a { text-decoration: none; color: #777; }
 .admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: .6em 1em; }
 .admin-settings .demo .breadcrumb.sbp-main-before + .content, .admin-settings .demo .breadcrumb.pbp-main-before + .content { margin-top: 12px; }
+.admin-settings .demo .breadcrumb-caption { margin: 0 3px; }
 .admin-settings .demo .sns-buttons { display: flex; align-items: center; }
 .admin-settings .demo .sns-buttons a { display: block; background-color: #333; text-align: center; color: #fff; text-decoration: none; border-radius: 4px; height: 45px; }
 .admin-settings .demo .sns-buttons a:hover { opacity: 0.7; color: #fff; transition: all 0.3s ease-in-out; }
