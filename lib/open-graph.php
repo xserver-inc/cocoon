@@ -213,10 +213,17 @@ class OpenGraphGetter implements Iterator
             $page->_values['image'] = $m[0];
           }
         }
-      } else {
+      } else if (includes_string($HTML, 'id="imgBlkFront"')) {
         //書籍ページ用
         //https://images-fe.ssl-images-amazon.com/images/I/51aV7NaxG4L.jpg
         $res = preg_match('/id="imgBlkFront" data-a-dynamic-image="\{&quot;(https:\/\/images-(fe|na).ssl-images-amazon.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m);
+        if ($res && isset($m[1])) {
+          $page->_values['image'] = $m[1];
+        }
+      } else if (includes_string($HTML, 'id="MusicCartToastContainer"')) {
+        //Amazon Music
+        //https://m.media-amazon.com/images/I/61+mhXhVhfL._SS500_.jpg
+        $res = preg_match('/<img.+?src="(https:\/\/m.media-amazon.com\/images\/I\/.+?)">/i', $HTML, $m);
         if ($res && isset($m[1])) {
           $page->_values['image'] = $m[1];
         }
