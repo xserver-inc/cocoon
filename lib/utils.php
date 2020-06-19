@@ -72,11 +72,20 @@ function get_the_nolink_category($id = null, $is_visible = true){
     return;
   }
 
-  if ( isset($categories[0]) ) {
-    $category = $categories[0];
-    $category = apply_filters('get_the_nolink_category', $category, $categories);
-    return '<span class="cat-label cat-label-'.$category->cat_ID.$display_class.'">'.$category->cat_name.'</span>';
+  //メインカテゴリが指定してある場合は該当カテゴリーを適用
+  $main_cat_id = get_the_page_main_category($id);
+  if ($main_cat_id) {
+    $category = get_category($main_cat_id);
   }
+
+  //メインカテゴリがない場合は先頭のカテゴリを適用
+  if (!$category) {
+    $category = $categories[0];
+  }
+
+  //カテゴリーラベル制御用のフック
+  $category = apply_filters('get_the_nolink_category', $category, $categories);
+  return '<span class="cat-label cat-label-'.$category->cat_ID.$display_class.'">'.$category->cat_name.'</span>';
 }
 endif;
 
