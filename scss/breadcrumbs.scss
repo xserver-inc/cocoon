@@ -11,7 +11,7 @@
   display: inline;
 }
 
-.breadcrumb span.sp{
+.breadcrumb .sp{
   margin: 0 10px;
 }
 
@@ -32,4 +32,8 @@
 .breadcrumb.sbp-main-before + .content,
 .breadcrumb.pbp-main-before + .content{
   margin-top: 12px;
+}
+
+.breadcrumb-caption{
+  margin: 0 3px;
 }

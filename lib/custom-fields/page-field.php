@@ -27,8 +27,20 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'page_custom_box_view' ) ):
 function page_custom_box_view(){
-  // $page_type = get_singular_page_type();
-  // $the_page_toc_visible = is_the_page_toc_visible();
+
+  //メインカテゴリー
+  if (is_admin_single()) {
+    $options = array(
+      '' => __( 'デフォルト', THEME_NAME ),
+    );
+    $cats = get_the_category();
+    foreach($cats as $cat):
+      $options[$cat->cat_ID] = $cat->name;
+    endforeach ;
+    generate_selectbox_tag('the_page_main_category', $options, get_the_page_main_category(), __( 'メインカテゴリー', THEME_NAME ));
+    generate_howto_tag(__( 'このページで優先するカテゴリを選択します。有線カテゴリーは、アイキャッチやパンくずリストに適用されます。', THEME_NAME ).__( 'カテゴリ選択直後はすぐにセレクトボックスに反映されません。一度ページを更新してください。', THEME_NAME ), 'the_page_main_category');
+  }
+
 
   //ページタイプ
   $options = array(
@@ -56,6 +68,15 @@ add_action('save_post', 'page_custom_box_save_data');
 if ( !function_exists( 'page_custom_box_save_data' ) ):
 function page_custom_box_save_data(){
   $id = get_the_ID();
+
+  //メインカテゴリー
+  if ( is_admin_single() && isset( $_POST['the_page_main_category'] ) ){
+    $the_page_main_category = $_POST['the_page_main_category'];
+    $the_page_main_category_key = 'the_page_main_category';
+    add_post_meta($id, $the_page_main_category_key, $the_page_main_category, true);
+    update_post_meta($id, $the_page_main_category_key, $the_page_main_category);
+  }
+
   //ページタイプ
   if ( isset( $_POST['page_type'] ) ){
     $page_type = $_POST['page_type'];
@@ -81,6 +102,16 @@ function page_custom_box_save_data(){
   // $the_page_toc_visible_key = 'the_page_toc_visible';
   // add_post_meta($id, $the_page_toc_visible_key, $the_page_toc_visible, true);
   // update_post_meta($id, $the_page_toc_visible_key, $the_page_toc_visible);
+}
+endif;
+
+//メインカテゴリーの取得
+if ( !function_exists( 'get_the_page_main_category' ) ):
+function get_the_page_main_category($id = null){
+  if (!$id) {
+    $id = get_the_ID();
+  }
+  return get_post_meta($id, 'the_page_main_category', true);
 }
 endif;
 

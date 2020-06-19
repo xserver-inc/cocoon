@@ -16,17 +16,17 @@ $root_text = apply_filters('breadcrumbs_page_root_text', $root_text);
 <div id="breadcrumb" class="breadcrumb breadcrumb-page<?php echo get_additional_page_breadcrumbs_classes(); ?>" itemscope itemtype="https://schema.org/BreadcrumbList">
   <?php $count = 0;
   $per_ids = array_reverse(get_post_ancestors($post->ID));
-   ?><div class="breadcrumb-home" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-home fa-fw" aria-hidden="true"></span><a href="<?php echo esc_url(get_home_url()); ?>" itemprop="item"><span itemprop="name"><?php echo esc_html($root_text); ?></span></a><meta itemprop="position" content="1" /><?php echo (count($per_ids) == 0 && !is_page_breadcrumbs_include_post()) ? '' : '<span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span>' ?></div>
+   ?><div class="breadcrumb-home" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-home fa-fw" aria-hidden="true"></span><a href="<?php echo esc_url(get_home_url()); ?>" itemprop="item"><span itemprop="name" class="breadcrumb-caption"><?php echo esc_html($root_text); ?></span></a><meta itemprop="position" content="1" /><?php echo (count($per_ids) == 0 && !is_page_breadcrumbs_include_post()) ? '' : '<span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span>' ?></div>
   <?php foreach ( $per_ids as $par_id ){
     $count += 1;
     $page = get_post($par_id);
     $post_title = $page->post_title;
     $post_title = apply_filters('breadcrumbs_page_title', $post_title, $page);
-    ?><div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><a href="<?php echo esc_url(get_page_link( $par_id ));?>" itemprop="item"><span itemprop="name"><?php echo esc_html($post_title); ?></span></a><meta itemprop="position" content="<?php echo $count + 1; ?>" /><?php echo (count($per_ids) == $count && !is_page_breadcrumbs_include_post()) ? '' : '<span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span>' ?></div>
+    ?><div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><a href="<?php echo esc_url(get_page_link( $par_id ));?>" itemprop="item"><span itemprop="name" class="breadcrumb-caption"><?php echo esc_html($post_title); ?></span></a><meta itemprop="position" content="<?php echo $count + 1; ?>" /><?php echo (count($per_ids) == $count && !is_page_breadcrumbs_include_post()) ? '' : '<span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span>' ?></div>
   <?php } ?>
   <?php //ページタイトルを含める場合
   if (is_page_breadcrumbs_include_post()):
-    ?><div class="breadcrumb-item"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span><?php the_title(); ?></span></div>
+    ?><div class="breadcrumb-item"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption"><?php the_title(); ?></span></div>
   <?php endif ?>
 </div><!-- /#breadcrumb -->
 <?php endif; ?>
