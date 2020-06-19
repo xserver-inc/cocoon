@@ -3331,3 +3331,19 @@ function is_category_exist($cat_id){
   return is_numeric($cat_id) && get_category($cat_id);
 }
 endif;
+
+//管理ページが投稿か
+if ( !function_exists( 'is_admin_single' ) ):
+function is_admin_single(){
+  global $post_type;
+  return $post_type === 'post';
+}
+endif;
+
+//管理ページが固定ページか
+if ( !function_exists( 'is_admin_page' ) ):
+function is_admin_page(){
+  global $post_type;
+  return $post_type === 'page';
+}
+endif;
