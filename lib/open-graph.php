@@ -204,14 +204,14 @@ class OpenGraphGetter implements Iterator
      (includes_string($HTML, '//images-fe.ssl-images-amazon.com')
      && includes_string($HTML, '//m.media-amazon.com'))
     ) {
+      $image_url = null;
       //Amazonページなら画像取得
       if (includes_string($HTML, 'id="landingImage"')) {
-
         //通常商品ページ用
         if (preg_match('|https://images-na.ssl-images-amazon.com/images/I/\d[^&"]+?_S[A-Z]\d{3}(,\d{3})?_\.jpg|i', $HTML, $m)) {
           if (isset($m[0])) {
             //_v($m[0]);
-            $page->_values['image'] = $m[0];
+            $image_url = $m[0];
           }
         } else {
           //https://images-na.ssl-images-amazon.com/images/I/41b9TQppZJL._AC_.jp
@@ -220,7 +220,7 @@ class OpenGraphGetter implements Iterator
             //var_dump($m[1]);
             if (isset($m[1])) {
               //_v($m[0]);
-              $page->_values['image'] = $m[0];
+              $image_url = $m[0];
             }
           }
         }
@@ -229,17 +229,25 @@ class OpenGraphGetter implements Iterator
         //https://images-fe.ssl-images-amazon.com/images/I/51aV7NaxG4L.jpg
         $res = preg_match('/id="imgBlkFront" data-a-dynamic-image="\{&quot;(https:\/\/images-(fe|na).ssl-images-amazon.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m);
         if ($res && isset($m[1])) {
-          $page->_values['image'] = $m[1];
+          $image_url = $m[1];
         }
       } else if (includes_string($HTML, 'id="MusicCartToastContainer"')) {
         //Amazon Music
         //https://m.media-amazon.com/images/I/61+mhXhVhfL._SS500_.jpg
+        //https://images-na.ssl-images-amazon.com/images/I/41AFHM036KL._AC_.jpg
         $res = preg_match('/<img.+?src="(https:\/\/m.media-amazon.com\/images\/I\/.+?)">/i', $HTML, $m);
         if ($res && isset($m[1])) {
-          $page->_values['image'] = $m[1];
+          $image_url = $m[1];
+        }
+      } else if (includes_string($HTML, 'id="ebooksImgBlkFront"')) {
+        //Amazon Kindle
+        //https://m.media-amazon.com/images/I/51tY7U5mUHL.jpg
+        $res = preg_match('/"(https:\/\/m.media-amazon\.com\/images\/I\/[^&"]+?\.jpg)"/i', $HTML, $m);
+        if ($res && isset($m[1])) {
+          $image_url = $m[1];
         }
       }
-
+      $page->_values['image'] = $image_url;
     }
 
 		return $page;
