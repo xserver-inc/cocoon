@@ -802,7 +802,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-2 .card-thumb::before { background: #b1b1b3; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-3 .card-thumb::before { background: #b37036; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb { counter-increment: p-rank; }
-.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 14px; z-index: 1; }
+.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 13px; z-index: 1; }
 .admin-settings .demo .recent-comments { line-height: 1.3; }
 .admin-settings .demo .recent-comment-avatar { float: left; margin-right: 10px; }
 .admin-settings .demo .recent-comment-author { font-weight: bold; }
@@ -2382,7 +2382,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-2 .card-thumb::before { background: #b1b1b3; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-3 .card-thumb::before { background: #b37036; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb { counter-increment: p-rank; }
-.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 14px; z-index: 1; }
+.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 13px; z-index: 1; }
 .admin-settings .demo .recent-comments { line-height: 1.3; }
 .admin-settings .demo .recent-comment-avatar { float: left; margin-right: 10px; }
 .admin-settings .demo .recent-comment-author { font-weight: bold; }
