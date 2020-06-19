@@ -120,9 +120,13 @@ function fetch_card_image($image, $url = null){
       $image_editor = wp_get_image_editor($new_file);
       if ( !is_wp_error($image_editor) ){
         if (is_amazon_site_page($url)) {
-          $image_editor->resize(THUMB160WIDTH, THUMB160WIDTH, true);
+          $width = apply_filters('external_blogcard_amazon_image_width',THUMB160WIDTH );
+          $height = apply_filters('external_blogcard_amazon_image_height',THUMB160WIDTH );
+          $image_editor->resize($width, $height, true);
         } else {
-          $image_editor->resize(THUMB160WIDTH, THUMB160HEIGHT, true);
+          $width = apply_filters('external_blogcard_image_width',THUMB160WIDTH );
+          $height = apply_filters('external_blogcard_image_height',THUMB160HEIGHT );
+          $image_editor->resize($width, $height, true);
         }
 
         $image_editor->save( $new_file );
