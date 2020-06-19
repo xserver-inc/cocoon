@@ -83,7 +83,7 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
 
 //外部サイトからブログカードサムネイルを取得する
 if ( !function_exists( 'fetch_card_image' ) ):
-function fetch_card_image($image){
+function fetch_card_image($image, $url = null){
   //var_dump($image);
   //URLの？以降のクエリを削除
   $image = preg_replace('/\?.*$/i', '', $image);
@@ -119,7 +119,12 @@ function fetch_card_image($image){
       //画像編集オブジェクトの作成
       $image_editor = wp_get_image_editor($new_file);
       if ( !is_wp_error($image_editor) ){
-        $image_editor->resize(THUMB160WIDTH, THUMB160HEIGHT, true);
+        if (is_amazon_site_page($url)) {
+          $image_editor->resize(THUMB160WIDTH, THUMB160WIDTH, true);
+        } else {
+          $image_editor->resize(THUMB160WIDTH, THUMB160HEIGHT, true);
+        }
+
         $image_editor->save( $new_file );
         return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
       }
@@ -169,7 +174,7 @@ function url_to_external_ogp_blogcard_tag($url){
       $ogp = 'error';
     } else {
       //キャッシュ画像の取得
-      $res = fetch_card_image($ogp->image);
+      $res = fetch_card_image($ogp->image, $url);
 
       if ( $res ) {
         $ogp->image = $res;

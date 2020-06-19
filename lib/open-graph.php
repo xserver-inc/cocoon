@@ -200,9 +200,10 @@ class OpenGraphGetter implements Iterator
     }
 
     //Amazonページかどうか
-    if ((includes_string($URI, '//amzn.to/') || includes_string($URI, '//www.amazon.co')) ||
-     (includes_string($HTML, '//images-fe.ssl-images-amazon.com')
-     && includes_string($HTML, '//m.media-amazon.com'))
+    if (is_amazon_site_page($URI)
+      //(includes_string($URI, '//amzn.to/') || includes_string($URI, '//www.amazon.co'))
+    //  || (includes_string($HTML, '//images-fe.ssl-images-amazon.com')
+    //  && includes_string($HTML, '//m.media-amazon.com'))
     ) {
       $image_url = null;
       //Amazonページなら画像取得

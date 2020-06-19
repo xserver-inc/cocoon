@@ -3356,3 +3356,10 @@ function is_admin_page(){
   return $post_type === 'page';
 }
 endif;
+
+//URLがAmazonかどうか
+if ( !function_exists( 'is_amazon_site_page' ) ):
+function is_amazon_site_page($URI){
+  return includes_string($URI, '//amzn.to/') || includes_string($URI, '//www.amazon.co');
+}
+endif;
