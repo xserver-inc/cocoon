@@ -123,7 +123,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
 
   $youtube   = preg_replace("/data-youtube=\"(.+?)\"/", "", $cache);
   if (preg_match( '{src=[\'"](.+?)[\'"]}i', $youtube, $m)) {
-    $default_args = array('rel' => 0, 'autoplay' => 1);
+    $default_args = array('autoplay' => 1);
     $default_args = apply_filters('youtube_embed_default_args', $default_args);
 
     //元のURL情報の取得
@@ -139,10 +139,12 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     }
     //srcのURL
     $youtube_old_url = $m[1];
+    // var_dump($youtube_old_url);
     //デフォルトのパラメータ設定
     $args = apply_filters('youtube_embed_args', $args);
     //クエリを追加
     $youtube_new_url = add_query_arg($args, $youtube_old_url);
+    // var_dump($youtube_new_url);
 
     $youtube = str_replace($youtube_old_url, $youtube_new_url, $youtube);
   }
