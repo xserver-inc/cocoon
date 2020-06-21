@@ -79,7 +79,7 @@ function get_the_nolink_category($id = null, $is_visible = true){
   }
 
   //メインカテゴリがない場合は先頭のカテゴリを適用
-  if (!$category) {
+  if ( ! isset( $category ) ) {
     $category = $categories[0];
   }
 
