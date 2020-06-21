@@ -77,6 +77,7 @@ function tag_code_to_minify_js($buffer) {
               //コードハイライト
               //|| (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
               || includes_string($url, '/plugins/highlight-js/highlight')
+              || includes_string($url, '/plugins/spotlight-master/dist/spotlight')
               || includes_string($url, '/plugins/ip-geo-block/')
               //|| (strpos($url, '/plugins/wpforo/') !== false)
               //|| (strpos($url, '/buddypress/bp-core/js/') !== false)
