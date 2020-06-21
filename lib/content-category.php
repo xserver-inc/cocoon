@@ -201,7 +201,7 @@ function get_the_category_meta_keywords($cat_id = null){
 endif;
 
 //拡張カテゴリ編集フォーム
-add_action ( 'edit_category_form_fields', 'extra_category_fields');
+add_action ( 'category_edit_form_fields', 'extra_category_fields');
 if ( !function_exists( 'extra_category_fields' ) ):
 function extra_category_fields( $cat ) {
     $cat_id = $cat->term_id;
