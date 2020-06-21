@@ -73,13 +73,14 @@ function get_the_nolink_category($id = null, $is_visible = true){
   }
 
   //メインカテゴリが指定してある場合は該当カテゴリーを適用
+  $category = null;
   $main_cat_id = get_the_page_main_category($id);
   if ($main_cat_id && in_category($main_cat_id)) {
     $category = get_category($main_cat_id);
   }
 
   //メインカテゴリがない場合は先頭のカテゴリを適用
-  if ( ! isset( $category ) ) {
+  if ( !$category ) {
     $category = $categories[0];
   }
 
