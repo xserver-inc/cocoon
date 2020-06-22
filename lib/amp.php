@@ -534,7 +534,7 @@ function convert_content_for_amp($the_content){
     case 'amp-image-lightbox':
       //amp-img を amp-image-lightbox 用に置換
       $pattern     = '{<a href="[^"]+?/wp-content/uploads[^"]+?"><amp-img([^>]+?)></amp-img></a>}i';
-      $append      = '<amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1>';
+      // $append      = '<amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1></amp-img>';
 
       if (preg_match_all($pattern, $the_content, $m)) {
         $all_idx = 0;
