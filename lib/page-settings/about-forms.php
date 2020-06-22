@@ -26,6 +26,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'インクルードURL：', THEME_NAME ).get_remove_home_url(includes_url()).PHP_EOL;
     $all .= __( 'テンプレートURL：', THEME_NAME ).get_remove_home_url(get_template_directory_uri()).PHP_EOL;
     $all .= __( 'スタイルシートURL：', THEME_NAME ).get_remove_home_url(get_stylesheet_directory_uri()).PHP_EOL;
+    //親テーマ
+    $all .= __( '親テーマスタイル：', THEME_NAME ).get_remove_home_url(PARENT_THEME_STYLE_CSS_URL).PHP_EOL;
     //子テーマ
     if (is_child_theme()) {
       $all .= __( '子テーマスタイル：', THEME_NAME ).get_remove_home_url(CHILD_THEME_STYLE_CSS_URL).PHP_EOL;
