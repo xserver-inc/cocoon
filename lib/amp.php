@@ -533,12 +533,12 @@ function convert_content_for_amp($the_content){
   switch (get_amp_image_zoom_effect()) {
     case 'amp-image-lightbox':
       //amp-img を amp-image-lightbox 用に置換
-      $pattern     = '{<a href="[^"]+?/wp-content/uploads[^"]+?"><amp-img([^>]+?)></amp-img></a>}i';
+      $pattern     = '{<a ([a-z]+?="[^"]+?" )?href="[^"]+?/wp-content/uploads[^"]+?"><amp-img([^>]+?)></amp-img></a>}i';
       // $append      = '<amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1></amp-img>';
 
       if (preg_match_all($pattern, $the_content, $m)) {
         $all_idx = 0;
-        $etc_idx = 1;
+        $etc_idx = 2;
         $i = 0;
         foreach ($m[$all_idx] as $tag) {
           $all_tag = $tag;
@@ -559,10 +559,10 @@ function convert_content_for_amp($the_content){
       break;
     case 'amp-lightbox-gallery':
       // amp-img を amp-lightbox-gallery 用に置換
-      $pattern     = '{<a href="[^"]+?/wp-content/uploads[^"]+?"><amp-img([^>]+?)></amp-img></a>}i';
+      $pattern     = '{<a ([a-z]+?="[^"]+?" )?href="[^"]+?/wp-content/uploads[^"]+?"><amp-img([^>]+?)></amp-img></a>}i';
       if (preg_match_all($pattern, $the_content, $m)) {
         $all_idx = 0;
-        $etc_idx = 1;
+        $etc_idx = 2;
         $i = 0;
         foreach ($m[$all_idx] as $tag) {
           $all_tag = $tag;
