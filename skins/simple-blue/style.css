@@ -281,7 +281,7 @@ table th {
 
 /* レスポンシブ */
 @media screen and (max-width: 834px) {
-  .header-container-in.hlt-top-menu #header .header-in {
+  .header-container-in.hlt-top-menu .header .header-in {
     display: flex;
     align-items: center;
   }

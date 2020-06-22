@@ -9380,7 +9380,7 @@ _:-ms-lang(x), .mc-circle {
 
   .no-mobile-sidebar .sidebar,
   .mobile-button-fmb .go-to-top-button,
-  .no-mobile-header-logo .header .logo-header {
+  .no-mobile-header-logo #header .logo-header {
     display: none;
   }
 
@@ -9658,8 +9658,8 @@ _:-ms-lang(x), .mc-circle {
   .header-container-in.hlt-top-menu {
     display: block;
   }
-  .header-container-in.hlt-top-menu #header .header-in,
-  .header-container-in.hlt-top-menu #header .logo-text {
+  .header-container-in.hlt-top-menu .header .header-in,
+  .header-container-in.hlt-top-menu .header .logo-text {
     display: block;
     height: 100%;
   }

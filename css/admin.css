@@ -3744,7 +3744,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .mobile-header-menu-buttons { top: 0; bottom: auto; justify-content: space-around; min-width: 46px; z-index: 3; box-shadow: 0 0 5px darkgrey; }
   .admin-settings .demo .has-logo-button .menu-button { width: 70px; }
   .admin-settings .demo .has-logo-button .logo-menu-button { flex-grow: 99; }
-  .admin-settings .demo .no-mobile-sidebar .sidebar, .admin-settings .demo .mobile-button-fmb .go-to-top-button, .admin-settings .demo .no-mobile-header-logo .header .logo-header { display: none; }
+  .admin-settings .demo .no-mobile-sidebar .sidebar, .admin-settings .demo .mobile-button-fmb .go-to-top-button, .admin-settings .demo .no-mobile-header-logo #header .logo-header { display: none; }
   .admin-settings .demo .mblt-header-mobile-buttons { margin-top: 46px; }
   .admin-settings .demo .mblt-footer-mobile-buttons { margin-bottom: 50px; }
   .admin-settings .demo .mblt-header-and-footer-mobile-buttons { margin-top: 46px; margin-bottom: 50px; }
@@ -3809,7 +3809,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .ranking-item-image-tag { max-width: 30%; }
   .admin-settings .demo #header .site-name-text { font-size: 22px; }
   .admin-settings .demo .header-container-in.hlt-top-menu { display: block; }
-  .admin-settings .demo .header-container-in.hlt-top-menu #header .header-in, .admin-settings .demo .header-container-in.hlt-top-menu #header .logo-text { display: block; height: 100%; }
+  .admin-settings .demo .header-container-in.hlt-top-menu .header .header-in, .admin-settings .demo .header-container-in.hlt-top-menu .header .logo-text { display: block; height: 100%; }
   .admin-settings .demo .header-container-in.hlt-top-menu .site-name-text { white-space: normal; }
   .admin-settings .demo .header-container-in.hlt-top-menu .logo-header { max-height: none; }
   .admin-settings .demo .eye-catch .cat-label { font-size: 10px; padding: 2px 4px; }
