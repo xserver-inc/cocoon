@@ -546,11 +546,11 @@ function convert_content_for_amp($the_content){
           if (preg_match('/class="(.+?)"/i', $etc_tag, $n)) {
             $etc_tag = preg_replace('/class=".+?"/i', '', $etc_tag );
             $the_content = str_replace($all_tag,
-            '<p><amp-img class="amp-lightbox amp-image-lightbox '.$n[1].'" on="tap:amp-lightbox" role="button" tabindex="0"'.$etc_tag.'></p>',
+            '<p><amp-img class="amp-lightbox amp-image-lightbox '.$n[1].'" on="tap:amp-lightbox" role="button" tabindex="0"'.$etc_tag.'></amp-img></p>',
               $the_content);
           } else {
             $the_content = str_replace($all_tag,
-              '<p><amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"'.$etc_tag.'></p>',
+              '<p><amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"'.$etc_tag.'></amp-img></p>',
               $the_content);
           }
           $i++;
@@ -570,11 +570,11 @@ function convert_content_for_amp($the_content){
           if (preg_match('/class="(.+?)"/i', $etc_tag, $n)) {
             $etc_tag = preg_replace('/class=".+?"/i', '', $etc_tag );
             $the_content = str_replace($all_tag,
-              '<p><amp-img class="amp-lightbox amp-lightbox-gallery '.$n[1].'" lightbox'.$etc_tag.'></p>',
+              '<p><amp-img class="amp-lightbox amp-lightbox-gallery '.$n[1].'" lightbox'.$etc_tag.'></amp-img></p>',
               $the_content);
           } else {
             $the_content = str_replace($all_tag,
-              '<p><amp-img class="amp-lightbox amp-lightbox-gallery" lightbox'.$etc_tag.'></p>',
+              '<p><amp-img class="amp-lightbox amp-lightbox-gallery" lightbox'.$etc_tag.'></amp-img></p>',
               $the_content);
           }
           $i++;
