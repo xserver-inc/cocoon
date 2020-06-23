@@ -390,9 +390,9 @@ function convert_content_for_amp($the_content){
   $append = '<amp-facebook width=324 height=438 layout="responsive" data-href="$1"></amp-facebook>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
-  // vineをamp-vineに置換する
-  $pattern = '/<iframe[^>]+?src="https:\/\/vine.co\/v\/(.+?)\/embed\/simple".+?><\/iframe>/is';
-  $append = '<p><amp-vine data-vineid="$1" width="592" height="592" layout="responsive"></amp-vine></p>';
+  // vineをamp-vineに置換する（サービス終了したけど一応）
+  $pattern = '{<iframe[^>]+?src="https://vine.co/v/([^/]+?)/embed/simple"[^>]+?></iframe>}is';
+  $append = '<amp-vine data-vineid="$1" width="592" height="592" layout="responsive"></amp-vine>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // Instagramをamp-instagramに置換する
