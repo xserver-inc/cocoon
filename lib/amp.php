@@ -416,7 +416,7 @@ function convert_content_for_amp($the_content){
 
 
   // YouTubeを置換する（埋め込みコード）
-  $pattern = '/<iframe[^>]+?src="https?:\/\/www.youtube.com\/embed\/([^\?"]+).*?".*?><\/iframe>/is';
+  $pattern = '{<iframe[^>]+?src="https?://www\.youtube\.com/embed/([^\?"]+)[^"]*?"[^>]*?></iframe>}is';
   $append = '<amp-youtube layout="responsive" data-videoid="$1" width="800" height="450"></amp-youtube>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
