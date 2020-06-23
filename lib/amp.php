@@ -410,12 +410,12 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // videoをamp-videoに置換する
-  $pattern = '/<video/i';
+  $pattern = '<video';
   $append = '<amp-video layout="responsive"';
-  $the_content = preg_replace($pattern, $append, $the_content);
-  $pattern = '/<\/video>/i';
+  $the_content = str_replace($pattern, $append, $the_content);
+  $pattern = '</video>';
   $append = '</amp-video>';
-  $the_content = preg_replace($pattern, $append, $the_content);
+  $the_content = str_replace($pattern, $append, $the_content);
 
 
   // YouTubeを置換する（埋め込みコード）
