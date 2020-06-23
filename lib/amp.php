@@ -400,13 +400,13 @@ function convert_content_for_amp($the_content){
 
   // Instagramをamp-instagramに置換する
   // $pattern = '{<blockquote class="instagram-media".+?"https://www.instagram.com/p/(.+?)/.*?".+?</blockquote>}is';
-  $pattern = '{<blockquote class="instagram-media"[^"]+?"https://www\.instagram\.com/p/([^\/]+?)/[^"]*?".+?</blockquote>}is';
-  $append = '<p><amp-instagram layout="responsive" data-shortcode="$1" width="592" height="592" ></amp-instagram></p>';
+  $pattern = '{<blockquote class="instagram-media"[^>]+?"https://www\.instagram\.com/p/([^\/]+?)/[^"]*?".+?</blockquote>}is';
+  $append = '<amp-instagram layout="responsive" data-shortcode="$1" width="592" height="592" ></amp-instagram>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // audioをamp-audioに置換する
   $pattern = '/<audio .+?src="([^"]+?)".+?<\/audio>/is';
-  $append = '<p><amp-audio src="$1"></amp-audio></p>';
+  $append = '<amp-audio src="$1"></amp-audio>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // videoをamp-videoに置換する
