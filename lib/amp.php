@@ -378,7 +378,10 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/<img(.+?)\/?>/is', '<amp-img$1></amp-img>', $the_content);
 
   // Twitterをamp-twitterに置換する（埋め込みコード）
+  /*
   $pattern = '{<blockquote class="twitter-tweet".*?>.+?<a.+?href="https://twitter.com/.*?/status/([^\?"]+).*?">.+?</blockquote>}is';
+  */
+  $pattern = '{<blockquote class="twitter-tweet"[^>]*?>.+?<a href="https://twitter\.com/[^/]*?/status/([^\?"]+)[^>]*?">.+?</blockquote>}is';
   $append = '<p><amp-twitter width=592 height=472 layout="responsive" data-tweetid="$1"></amp-twitter></p>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
