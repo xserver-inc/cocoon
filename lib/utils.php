@@ -2296,7 +2296,7 @@ function is_the_page_sidebar_visible(){
   }
 
   //サイドバーにウィジェットが入っていない場合
-  if (!is_active_sidebar( 'sidebar' )) {
+  if (!is_active_sidebar( 'sidebar' ) && !is_active_sidebar( 'sidebar-scroll' )) {
     $is_sidebar_visible = false;
   }
 
