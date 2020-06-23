@@ -376,6 +376,9 @@ function convert_content_for_amp($the_content){
 
   //画像タグをAMP用に置換
   $the_content = preg_replace('/<img(.+?)\/?>/is', '<amp-img$1></amp-img>', $the_content);
+  /* AMP画像置換修正候補
+  $the_content = preg_replace('{<img([^>]+?)/?>}is', '<amp-img$1></amp-img>', $the_content);
+  */
 
   // Twitterをamp-twitterに置換する（埋め込みコード）
   /*
