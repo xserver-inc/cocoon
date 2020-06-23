@@ -381,7 +381,7 @@ function convert_content_for_amp($the_content){
   /*
   $pattern = '{<blockquote class="twitter-tweet".*?>.+?<a.+?href="https://twitter.com/.*?/status/([^\?"]+).*?">.+?</blockquote>}is';
   */
-  $pattern = '{<blockquote class="twitter-tweet"[^>]*?>.+?<a href="https://twitter\.com/[^/]*?/status/([^\?"]+)[^>]*?">.+?</blockquote>}is';
+  $pattern = '{<blockquote class="twitter-tweet"[^>]*?>.+?<a[^>]+?href="https://twitter\.com/[^/]*?/status/([^\?"]+)[^>]*?">.+?</blockquote>}is';
   $append = '<p><amp-twitter width=592 height=472 layout="responsive" data-tweetid="$1"></amp-twitter></p>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
