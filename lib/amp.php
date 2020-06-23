@@ -438,7 +438,7 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace($pattern, $append, $the_content);
 
   //Amazon商品紹介iframeのAMP化
-  $pattern = '{<iframe.+?src="(.+?rcm-fe\.amazon-adsystem\.com.+?)".+?(width="(\d+)")?.(height="(\d+)")?.+?</iframe>}is';
+  $pattern = '{<iframe[^>]+?src="(.+?rcm-fe\.amazon-adsystem\.com[^"]+?)"[^>]+?(width="(\d+)")?.(height="(\d+)")?.+?</iframe>}is';
   if (preg_match_all($pattern, $the_content, $m)) {
     $all_idx = 0;
     $url_idx = 1;
