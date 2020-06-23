@@ -433,7 +433,7 @@ function convert_content_for_amp($the_content){
 
 
   //はてなブログカードiframe用の処理追加
-  $pattern = '{<iframe.+?src="(https?://hatenablog-parts\.com/embed.+?)".+?></iframe>}is';
+  $pattern = '{<iframe[^>]+?src="(https?://hatenablog-parts\.com/embed.+?)"[^>]+?></iframe>}is';
   $append = '<amp-iframe src="$1" width="500" height="190"></amp-iframe>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
