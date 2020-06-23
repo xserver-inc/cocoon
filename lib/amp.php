@@ -405,7 +405,7 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // audioをamp-audioに置換する
-  $pattern = '/<audio .+?src="([^"]+?)".+?<\/audio>/is';
+  $pattern = '{<audio .+?src="([^"]+?)".+?</audio>}is';
   $append = '<amp-audio src="$1"></amp-audio>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
