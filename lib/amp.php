@@ -399,9 +399,11 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // Instagramをamp-instagramに置換する
-  // $pattern = '{<blockquote class="instagram-media".+?"https://www.instagram.com/p/(.+?)/.*?".+?</blockquote>}is';
-  $pattern = '{<blockquote class="instagram-media"[^>]+?"https://www\.instagram\.com/p/([^\/]+?)/[^"]*?".+?</blockquote>}is';
+  //$pattern = '{<blockquote class="instagram-media".+?"https://www.instagram.com/p/(.+?)/.*?".+?</blockquote>}is';
+  $pattern = '{<blockquote class="instagram-media"[^>]+?"https://www\.instagram\.com/p/([^\/]+?)/[^"]+?".+?</blockquote>}is';
+  $pattern = '{<blockquote class="instagram-media"[^>]+?"https://www.instagram.com/p/([^/]+?)/[^"]*?".+?</blockquote>}is';
   $append = '<amp-instagram layout="responsive" data-shortcode="$1" width="592" height="592" ></amp-instagram>';
+  //$append = htmlentities('$0');
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // audioをamp-audioに置換する
@@ -503,9 +505,8 @@ function convert_content_for_amp($the_content){
     }
   }
 
-
   //スクリプトを除去する
-  $pattern = '/<p><script.+?<\/script><\/p>/i';
+  $pattern = '{(<p>)<script[^>]+?></script>(</p>)/}i';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
   $pattern = '/<script(?!.*type="application\/json").+?<\/script>/is';
