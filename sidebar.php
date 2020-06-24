@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if ( is_active_sidebar( 'sidebar' ) ) : ?>
+if ( is_active_sidebar( 'sidebar' ) || is_active_sidebar( 'sidebar-scroll' ) ) : ?>
 <div id="sidebar" class="sidebar nwa cf" role="complementary">
 
   <?php //サイドバー上の広告表示
