@@ -131,7 +131,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
       }
       //$counters[$current_depth - 1] ++;
       $hide_class = null;
-      if ($depth == $depth_option) {
+      if ( $depth_option != 0 && $depth >= $depth_option ) {
         $hide_class = ' class="display-none"';
       }
       $counter++;
