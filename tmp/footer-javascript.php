@@ -121,13 +121,19 @@ if (!is_amp()): ?>
       var s1 = (prevScrollTop > threashold);
       var s2 = (scrollTop > threashold);
       var w = $window.width();
+      // console.log(scrollTop);
+
       /*スクロールエリアの位置調整*/
       function adjustScrollArea(selector) {
 
         if ($(selector) && $(selector).offset()) {
           offset = $(selector).offset().top;
+          // console.log(offset);
           h = $("#header-container").height();
+          // console.log(h);
           pt = $(selector).css('padding-top');
+          // console.log(pt);
+
           if (pt) {
             pt = pt.replace('px', '');
           } else {
@@ -135,7 +141,7 @@ if (!is_amp()): ?>
           }
 
           if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
-            if (pt <= 1) {
+            if ((pt <= 1) && $("#header-container").hasClass('fixed-header')) {
               $(selector).css({
                 'padding-top': h + 'px',
               });
