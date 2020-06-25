@@ -730,6 +730,9 @@ ul{
 .wp-block-table {
   overflow: hidden;
 }
+.wp-block-table table {
+  font-size: 16px;
+}
 
 .wp-block .wp-block-table__cell-content {
   min-width: 50px;

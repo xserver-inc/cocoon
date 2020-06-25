@@ -104,6 +104,12 @@ div.mce-content-body {
     float: right;
     margin-left: 1em;
   }
+  // &[data-type="core/table"]{
+  //   &::before,
+  //   &::after{
+  //     display: none;
+  //   }
+  // }
 
 
   .column-2,
@@ -330,11 +336,18 @@ ul{
 
 .wp-block-table{
   overflow: hidden;
+  table{
+    font-size: 16px;
+  }
 }
 .wp-block .wp-block-table__cell-content{
   min-width: 50px;
   padding: 8px;
 }
+
+// .block-editor-block-list__layout *{
+//   box-sizing: border-box;
+// }
 
 // table{
 //   width: 90% !important;
@@ -807,3 +820,8 @@ ol, ul {
 .block-editor-writing-flow__click-redirect{
   display: none;
 }
+
+//ブロックエディターですおが隠れてしまう
+// .wp-block-table {
+// 	overflow: auto;
+// }
