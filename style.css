@@ -9086,6 +9086,12 @@ div#wpforo-wrap .wpforo-post .wpforo-attached-file {
   display: block;
 }
 
+div#bbpress-forums fieldset.bbp-form input[type="text"],
+div#bbpress-forums fieldset.bbp-form select {
+  height: 46px;
+  line-height: 46px;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;

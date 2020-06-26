@@ -97,3 +97,10 @@ div#wpforo-wrap .wpforo-post .wpforo-attached-file {
 // [class^="wpf-reply-create"]#tinymce.main.article{
 //   width: 100%;
 // }
+
+//bbPressスタイル
+div#bbpress-forums fieldset.bbp-form input[type="text"],
+div#bbpress-forums fieldset.bbp-form select {
+  height: 46px;
+  line-height: 46px;
+}
