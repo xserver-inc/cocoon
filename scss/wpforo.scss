@@ -84,6 +84,12 @@ div#wpforo-wrap .wpforo-post .wpforo-attached-file {
   display: block;
 }
 
+div#wpforo-wrap .widget-title,
+div.wpforo-widget-wrap .widget-title{
+  padding: 12px;
+  border-bottom: none;
+}
+
 // #tinymce.main.article{
 //   width: 100%;
 // }

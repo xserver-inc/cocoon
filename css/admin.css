@@ -3691,6 +3691,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo #wpforo-wrap h3::after { display: none; }
 .admin-settings .demo #wpforo-wrap h3.wpforo-forum-title::before, .admin-settings .demo #wpforo-wrap h3.wpforo-forum-title::after { display: none; }
 .admin-settings .demo div#wpforo-wrap .wpforo-post .wpforo-attached-file { display: block; }
+.admin-settings .demo div#wpforo-wrap .widget-title, .admin-settings .demo div.wpforo-widget-wrap .widget-title { padding: 12px; border-bottom: none; }
 .admin-settings .demo div#bbpress-forums fieldset.bbp-form input[type="text"], .admin-settings .demo div#bbpress-forums fieldset.bbp-form select { height: 46px; line-height: 46px; }
 .admin-settings .demo .live-writer .main { max-width: 860px; width: 860px; min-width: 860px; }
 .admin-settings .demo .live-writer .article { width: 800px; }
