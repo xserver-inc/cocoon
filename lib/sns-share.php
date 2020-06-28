@@ -647,6 +647,16 @@ function is_copy_share_button_visible($option){
 }
 endif;
 
+//コメントボタンを表示するか
+if ( !function_exists( 'is_comment_share_button_visible' ) ):
+function is_comment_share_button_visible($option){
+  $res = (is_bottom_comment_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_comment_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
+  return apply_filters('is_comment_share_button_visible', $res, $option);
+}
+endif;
+
 //シェアページのIDを取得する
 if ( !function_exists( 'get_share_cache_ID' ) ):
 function get_share_cache_ID(){

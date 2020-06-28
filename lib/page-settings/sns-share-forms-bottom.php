@@ -91,6 +91,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li>
                 <?php generate_checkbox_tag(OP_BOTTOM_COPY_SHARE_BUTTON_VISIBLE, is_bottom_copy_share_button_visible(), __( 'タイトルとURLをコピー', THEME_NAME )); ?>
               </li>
+              <li>
+                <?php generate_checkbox_tag(OP_BOTTOM_COMMENT_SHARE_BUTTON_VISIBLE, is_bottom_comment_share_button_visible(), __( 'コメント', THEME_NAME )); ?>
+              </li>
             </ul>
             <p><?php _e( 'シェアボタンを選択してください。', THEME_NAME ) ?></p>
           </td>
