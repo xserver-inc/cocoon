@@ -28,8 +28,7 @@ if (is_front_page_type_index()) {
         );
       // サムネイルを持っているとき
       if ( has_post_thumbnail() && $thumbnail_tag ): ?>
-        <?php echo $thumbnail_tag;
-        //the_post_thumbnail(get_entry_card_thumbnail_size() , array('class' => 'entry-card-thumb-image card-thumb-image', 'alt' => '') ); ?>
+        <?php echo $thumbnail_tag; ?>
       <?php else: // サムネイルを持っていないとき ?>
         <?php echo get_entry_card_no_image_tag($count); ?>
       <?php endif; ?>
