@@ -39,6 +39,8 @@
             'brand65': '&#xeaca;',
             'codepen': '&#xeae8;',
             'brand81': '&#xeae8;',
+            'bubble': '&#xe96b;',
+            'comment': '&#xe96b;',
             'soundcloud': '&#xeac3;',
             'brand58': '&#xeac3;',
             'linkedin2': '&#xeacb;',
