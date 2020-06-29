@@ -29,6 +29,8 @@ update_theme_option(OP_TOP_PINTEREST_SHARE_BUTTON_VISIBLE);
 update_theme_option(OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE);
 //コピーシェアボタンの表示
 update_theme_option(OP_TOP_COPY_SHARE_BUTTON_VISIBLE);
+//コメントボタンの表示
+update_theme_option(OP_TOP_COMMENT_SHARE_BUTTON_VISIBLE);
 //フロントページシェアボタンの表示
 update_theme_option(OP_SNS_FRONT_PAGE_TOP_SHARE_BUTTONS_VISIBLE);
 //投稿シェアボタンの表示

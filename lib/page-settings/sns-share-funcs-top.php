@@ -99,6 +99,14 @@ function is_top_copy_share_button_visible(){
 }
 endif;
 
+//コメントボタンの表示
+define('OP_TOP_COMMENT_SHARE_BUTTON_VISIBLE', 'top_comment_share_button_visible');
+if ( !function_exists( 'is_top_comment_share_button_visible' ) ):
+function is_top_comment_share_button_visible(){
+  return get_theme_option(OP_TOP_COMMENT_SHARE_BUTTON_VISIBLE);
+}
+endif;
+
 //フロントページシェアボタンの表示
 define('OP_SNS_FRONT_PAGE_TOP_SHARE_BUTTONS_VISIBLE', 'sns_front_page_top_share_buttons_visible');
 if ( !function_exists( 'is_sns_front_page_top_share_buttons_visible' ) ):

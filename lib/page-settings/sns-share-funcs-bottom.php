@@ -95,6 +95,14 @@ function is_bottom_copy_share_button_visible(){
 }
 endif;
 
+//コメントボタンの表示
+define('OP_BOTTOM_COMMENT_SHARE_BUTTON_VISIBLE', 'bottom_comment_share_button_visible');
+if ( !function_exists( 'is_bottom_comment_share_button_visible' ) ):
+function is_bottom_comment_share_button_visible(){
+  return get_theme_option(OP_BOTTOM_COMMENT_SHARE_BUTTON_VISIBLE);
+}
+endif;
+
 //フロントページシェアボタンの表示
 define('OP_SNS_FRONT_PAGE_BOTTOM_SHARE_BUTTONS_VISIBLE', 'sns_front_page_bottom_share_buttons_visible');
 if ( !function_exists( 'is_sns_front_page_bottom_share_buttons_visible' ) ):

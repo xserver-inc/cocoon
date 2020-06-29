@@ -50,6 +50,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <a href="<?php echo esc_url(get_copy_share_url()); ?>" class="share-button copy-button copy-share-button-sq" rel="nofollow noopener noreferrer"<?php if (is_amp()) echo ' target="_blank"'; ?> data-clipboard-text="<?php echo esc_attr(get_share_page_title()); ?> <?php the_permalink(); ?>"><span class="social-icon icon-copy"></span><span class="button-caption"><?php _e( 'コピー', THEME_NAME ) ?></span><span class="share-count copy-share-count"></span></a>
     <?php endif; ?>
 
+    <?php if ( is_comment_share_button_visible($option) )://コメントボタンを表示するか ?>
+      <a href="#comments" class="share-button comment-button comment-share-button-sq"><span class="social-icon icon-comment"></span><span class="button-caption"><?php _e( 'コメント', THEME_NAME ) ?></span><span class="share-count comment-share-count"></span></a>
+    <?php endif; ?>
+
   </div><!-- /.sns-share-buttons -->
 
 </div><!-- /.sns-share -->
