@@ -52,13 +52,13 @@ function get_editor_text_color(){
 }
 endif;
 
-// //タグをチェックリストにするか
-// define('OP_EDITOR_TAG_CHECK_LIST_ENABLE', 'editor_tag_check_list_enable');
-// if ( !function_exists( 'is_editor_tag_check_list_enable' ) ):
-// function is_editor_tag_check_list_enable(){
-//   return get_theme_option(OP_EDITOR_TAG_CHECK_LIST_ENABLE);
-// }
-// endif;
+//タグをチェックリストにするか
+define('OP_EDITOR_TAG_CHECK_LIST_ENABLE', 'editor_tag_check_list_enable');
+if ( !function_exists( 'is_editor_tag_check_list_enable' ) ):
+function is_editor_tag_check_list_enable(){
+  return get_theme_option(OP_EDITOR_TAG_CHECK_LIST_ENABLE);
+}
+endif;
 
 //ルビボタン有効
 define('OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE', 'block_editor_ruby_button_visible');

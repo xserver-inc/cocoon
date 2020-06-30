@@ -61,8 +61,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
-
-        <?php if(false): ?>
         <!-- タグ -->
         <tr>
           <th scope="row">
@@ -76,8 +74,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
-        <?php endif; ?>
-
 
         </tbody>
     </table>
