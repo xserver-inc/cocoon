@@ -18,7 +18,9 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
   if (!$cat) {
     $cat = $cats[0];
   }
-  // $cat = (is_single() && isset($cats[0])) ? $cats[0] : get_category(get_query_var("cat"));
+  if (is_category()) {
+    $cat = (is_single() && isset($cats[0])) ? $cats[0] : get_category(get_query_var("cat"));
+  }
   if($cat && !is_wp_error($cat)){
     $echo = null;
     $root_text = __( 'ホーム', THEME_NAME );
