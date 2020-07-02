@@ -7,6 +7,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+///////////////////////////////////////////
+// アイコンボックス
+///////////////////////////////////////////
 register_block_style(
   'core/paragraph',
   array(
@@ -84,5 +87,48 @@ register_block_style(
   array(
     'name'  => 'profile-box',
     'label' => __( 'プロフィール', THEME_NAME ),
+  )
+);
+
+///////////////////////////////////////////
+// 付箋風ボックス
+///////////////////////////////////////////
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'sticky-gray',
+    'label' => __( '付箋風（灰色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'sticky-yellow',
+    'label' => __( '付箋風（黄色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'sticky-red',
+    'label' => __( '付箋風（赤色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'sticky-blue',
+    'label' => __( '付箋風（青色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'sticky-green',
+    'label' => __( '付箋風（緑色）', THEME_NAME ),
   )
 );
