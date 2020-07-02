@@ -8,6 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
+  $cat = null;
   $cats = get_the_category();
   //メインカテゴリが指定してある場合は該当カテゴリーを適用
   $main_cat_id = get_the_page_main_category();
@@ -16,9 +17,6 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
   }
   //メインカテゴリがない場合は先頭のカテゴリを適用
   if (!$cat) {
-    $cat = $cats[0];
-  }
-  if (is_category()) {
     $cat = (is_single() && isset($cats[0])) ? $cats[0] : get_category(get_query_var("cat"));
   }
   if($cat && !is_wp_error($cat)){
