@@ -9,15 +9,17 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
   $cats = get_the_category();
-  //メインカテゴリが指定してある場合は該当カテゴリーを適用
-  $main_cat_id = get_the_page_main_category();
-  if ($main_cat_id && in_category($main_cat_id)) {
-    $cat = get_category($main_cat_id);
+  if (is_single()) {
+    //メインカテゴリが指定してある場合は該当カテゴリーを適用
+    $main_cat_id = get_the_page_main_category();
+    if ($main_cat_id && in_category($main_cat_id)) {
+      $cat = get_category($main_cat_id);
+    }
   }
-  //メインカテゴリがない場合は先頭のカテゴリを適用
-  if (!$cat) {
-    $cat = (is_single() && isset($cats[0])) ? $cats[0] : get_category(get_query_var("cat"));
-  }
+  // //メインカテゴリがない場合は先頭のカテゴリを適用
+  // if (!$cat) {
+  //   $cat = (is_single() && isset($cats[0])) ? $cats[0] : get_category(get_query_var("cat"));
+  // }
   if($cat && !is_wp_error($cat)){
     $echo = null;
     $root_text = __( 'ホーム', THEME_NAME );
