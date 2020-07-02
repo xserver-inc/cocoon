@@ -2770,6 +2770,16 @@ label.screen-reader-text {
 /*******************************
 * 補足説明
 ********************************/
+.is-style-information-box,
+.is-style-question-box,
+.is-style-alert-box,
+.is-style-memo-box,
+.is-style-comment-box,
+.is-style-ok-box,
+.is-style-ng-box,
+.is-style-good-box,
+.is-style-bad-box,
+.is-style-profile-box,
 .information-box,
 .question-box,
 .alert-box,
@@ -2798,59 +2808,79 @@ label.screen-reader-text {
   margin: 0;
 }
 
+.is-style-information-box,
 .information-box,
 .information {
   background: #f3fafe;
   border: 1px solid #bde4fc;
 }
 
+.is-style-question-box,
 .question-box,
 .question {
   background: #fff7cc;
   border: 1px solid #ffe766;
 }
 
+.is-style-alert-box,
 .alert-box,
 .alert {
   background: #fdf2f2;
   border: 1px solid #f6b9b9;
 }
 
+.is-style-memo-box,
 .memo-box {
   background: #ebf8f4;
   border: 1px solid #8dd7c1;
 }
 
+.is-style-comment-box,
 .comment-box {
   background: #fefefe;
   border: 1px solid #ccd;
 }
 
+.is-style-ok-box,
 .ok-box {
   background: #f2fafb;
   border: 1px solid #3cb2cc;
 }
 
+.is-style-ng-box,
 .ng-box {
   background: #ffe7e7;
   border: 1px solid #dd5454;
 }
 
+.is-style-good-box,
 .good-box {
   background: #f7fcf7;
   border: 1px solid #98e093;
 }
 
+.is-style-bad-box,
 .bad-box {
   background: #fff1f4;
   border: 1px solid #eb6980;
 }
 
+.is-style-profile-box,
 .profile-box {
   background: #fefefe;
   border: 1px solid #ccd;
 }
 
+.is-style-information-box::before,
+.is-style-question-box::before,
+.is-style-alert-box::before,
+.is-style-memo-box::before,
+.is-style-comment-box::before,
+.is-style-ok-box::before,
+.is-style-ng-box::before,
+.is-style-good-box::before,
+.is-style-bad-box::before,
+.is-style-profile-box::before,
 .information-box::before,
 .question-box::before,
 .alert-box::before,
@@ -2861,17 +2891,18 @@ label.screen-reader-text {
 .comment-box::before,
 .common-icon-box::before {
   font-family: "FontAwesome";
-  font-size: 42px;
+  font-size: 34px;
   position: absolute;
   padding-right: .15em;
   line-height: 1em;
   top: 50%;
   margin-top: -.5em;
-  left: 13px;
+  left: 10px;
   width: 44px;
   text-align: center;
 }
 
+.is-style-information-box::before,
 .information-box::before,
 .information::before {
   content: '\f05a';
@@ -2879,6 +2910,7 @@ label.screen-reader-text {
   border-right: 1px solid #bde4fc;
 }
 
+.is-style-question-box::before,
 .question-box::before,
 .question::before {
   content: '\f059';
@@ -2886,6 +2918,7 @@ label.screen-reader-text {
   border-right: 1px solid #ffe766;
 }
 
+.is-style-alert-box::before,
 .alert-box::before,
 .alert::before {
   content: '\f06a';
@@ -2893,25 +2926,28 @@ label.screen-reader-text {
   border-right: 1px solid #f6b9b9;
 }
 
+.is-style-memo-box::before,
 .memo-box::before {
   content: '\f040';
   color: #7ad0b6;
   border-right: 1px solid #8dd7c1;
-  font-size: 36px;
 }
 
+.is-style-comment-box::before,
 .comment-box::before,
+.is-style-profile-box::before,
 .profile-box::before {
   content: '\f0e5';
   color: #999;
   border-right: 1px solid #ccd;
-  font-size: 36px;
 }
 
+.is-style-profile-box::before,
 .profile-box::before {
   content: '\f007';
 }
 
+.is-style-ok-box::before,
 .ok-box::before {
   content: '\f10c';
   color: #3cb2cc;
@@ -2919,6 +2955,7 @@ label.screen-reader-text {
   font-size: 36px;
 }
 
+.is-style-ng-box::before,
 .ng-box::before {
   content: '\f00d';
   color: #dd5454;
@@ -2926,6 +2963,7 @@ label.screen-reader-text {
   font-size: 36px;
 }
 
+.is-style-good-box::before,
 .good-box::before {
   content: '\f164';
   color: #98e093;
@@ -2933,6 +2971,7 @@ label.screen-reader-text {
   font-size: 36px;
 }
 
+.is-style-bad-box::before,
 .bad-box::before {
   content: '\f165';
   color: #eb6980;
@@ -2945,6 +2984,16 @@ label.screen-reader-text {
 }
 
 @media screen and (max-width: 440px) {
+  .is-style-information-box,
+  .is-style-question-box,
+  .is-style-alert-box,
+  .is-style-memo-box,
+  .is-style-comment-box,
+  .is-style-ok-box,
+  .is-style-ng-box,
+  .is-style-good-box,
+  .is-style-bad-box,
+  .is-style-profile-box,
   .information-box,
   .question-box,
   .alert-box,
@@ -2957,6 +3006,16 @@ label.screen-reader-text {
     padding: 26px 6px 6px;
   }
 
+  .is-style-information-box::before,
+  .is-style-question-box::before,
+  .is-style-alert-box::before,
+  .is-style-memo-box::before,
+  .is-style-comment-box::before,
+  .is-style-ok-box::before,
+  .is-style-ng-box::before,
+  .is-style-good-box::before,
+  .is-style-bad-box::before,
+  .is-style-profile-box::before,
   .information-box::before,
   .question-box::before,
   .alert-box::before,
