@@ -8,6 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
+  $cat = null;
   $cats = get_the_category();
   //メインカテゴリが指定してある場合は該当カテゴリーを適用
   $main_cat_id = get_the_page_main_category();
