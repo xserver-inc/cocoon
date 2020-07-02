@@ -619,6 +619,13 @@ $bb_green: $green_color;
 
 }
 
+// //プレイビュースタイルの調整
+.has-drop-cap:not(:focus)::first-letter {
+  float: none;
+  font-size: 1em;
+}
+
+
 .bb-check .bb-label .fa::before{
   content: $bb-check;
 }
