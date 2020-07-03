@@ -825,3 +825,8 @@ ol, ul {
 // .wp-block-table {
 // 	overflow: auto;
 // }
+
+//Gutenbergオプションのセレクトボックスの調整
+.meta-box-sortables select {
+  box-sizing: border-box;
+}
