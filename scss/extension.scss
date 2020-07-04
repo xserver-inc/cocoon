@@ -118,6 +118,7 @@ $marker_u_blue: $marker_blue;
 }
 
 /*ブートストラップのインフォメーションライクな囲みが表示される*/
+.is-style-primary-box,
 .primary-box,
 .sp-primary,
 .primary {
@@ -130,6 +131,7 @@ $marker_u_blue: $marker_blue;
 }
 
 /*サクセスメッセージ*/
+.is-style-success-box,
 .success-box,
 .sp-success,
 .success {
@@ -142,6 +144,7 @@ $marker_u_blue: $marker_blue;
 }
 
 /*インフォメッセージ*/
+.is-style-info-box,
 .info-box,
 .sp-info,
 .info {
@@ -154,6 +157,7 @@ $marker_u_blue: $marker_blue;
 }
 
 /*注意メッセージ*/
+.is-style-warning-box,
 .warning-box,
 .sp-warning,
 .warning {
@@ -166,6 +170,7 @@ $marker_u_blue: $marker_blue;
 }
 
 /*警告メッセージ*/
+.is-style-danger-box,
 .danger-box,
 .sp-danger,
 .danger {
@@ -178,6 +183,7 @@ $marker_u_blue: $marker_blue;
 }
 
 /*セカンダリー*/
+.is-style-secondary-box,
 .secondary-box {
   color: #383d41;
   background-color: #e2e3e5;
@@ -188,6 +194,7 @@ $marker_u_blue: $marker_blue;
 }
 
 /*ライト*/
+.is-style-light-box,
 .light-box {
   color: #818182;
   background-color: #fefefe;
@@ -198,6 +205,7 @@ $marker_u_blue: $marker_blue;
 }
 
 /*ダーク*/
+.is-style-dark-box,
 .dark-box {
   color: #1b1e21;
   background-color: #d6d8d9;
