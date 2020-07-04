@@ -91,6 +91,73 @@ register_block_style(
 );
 
 ///////////////////////////////////////////
+// 案内ボックス
+///////////////////////////////////////////
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'primary-box',
+    'label' => __( 'プライマリー（濃い水色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'secondary-box',
+    'label' => __( 'セカンダリー（濃い灰色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'info-box',
+    'label' => __( 'インフォ（薄い青）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'success-box',
+    'label' => __( 'サクセス（薄い緑）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'warning-box',
+    'label' => __( 'ワーニング（薄い黄色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'danger-box',
+    'label' => __( 'デンジャー（薄い赤色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'light-box',
+    'label' => __( 'ライト（白色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'dark-box',
+    'label' => __( 'ダーク（暗い灰色）', THEME_NAME ),
+  )
+);
+
+///////////////////////////////////////////
 // 付箋風ボックス
 ///////////////////////////////////////////
 register_block_style(
