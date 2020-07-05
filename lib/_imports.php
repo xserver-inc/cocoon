@@ -121,6 +121,7 @@ require_once abspath(__FILE__).'youtube.php'; //YouTube関係の処理
 require_once abspath(__FILE__).'font-awesome.php'; //Font Awesome
 require_once abspath(__FILE__).'admin.php'; //管理者機能
 require_once abspath(__FILE__).'block-editor-styles-paragraph.php'; //ブロックエディタースタイル（段落）
+require_once abspath(__FILE__).'block-editor-styles-group.php'; //ブロックエディタースタイル（グループ）
 
 //Cocoon Blocks
 if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) && is_gutenberg_editor_enable() ):
