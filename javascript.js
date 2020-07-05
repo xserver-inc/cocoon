@@ -130,7 +130,7 @@
     $('#respond').slideDown();
   });
 
-    //カレーセルの表示
+    //カルーセルの表示
     $('.carousel').fadeIn(1000);
 
   //Google検索ボタン
