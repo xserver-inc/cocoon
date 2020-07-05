@@ -158,6 +158,65 @@ register_block_style(
 );
 
 ///////////////////////////////////////////
+// 白抜きボックス
+///////////////////////////////////////////
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'blank-box-red',
+    'label' => __( '白抜き（赤色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'blank-box-pink',
+    'label' => __( '白抜き（ピンク）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'blank-box-navy',
+    'label' => __( '白抜き（紺色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'blank-box-blue',
+    'label' => __( '白抜き（青色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'blank-box-yellow',
+    'label' => __( '白抜き（黄色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'blank-box-green',
+    'label' => __( '白抜き（緑色）', THEME_NAME ),
+  )
+);
+
+register_block_style(
+  'core/paragraph',
+  array(
+    'name'  => 'blank-box-orange',
+    'label' => __( '白抜き（オレンジ）', THEME_NAME ),
+  )
+);
+
+///////////////////////////////////////////
 // 付箋風ボックス
 ///////////////////////////////////////////
 register_block_style(

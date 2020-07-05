@@ -596,6 +596,37 @@ $bb_green: $green_color;
   }
 }
 
+.is-style-blank-box-red,
+.is-style-blank-box-navy,
+.is-style-blank-box-blue,
+.is-style-blank-box-yellow,
+.is-style-blank-box-green,
+.is-style-blank-box-pink,
+.is-style-blank-box-orange{
+  @extend .blank-box;
+}
+.is-style-blank-box-red{
+  border-color: $red_color;
+}
+.is-style-blank-box-pink{
+  border-color: $pink_color;
+}
+.is-style-blank-box-navy{
+  border-color: $indigo_color;
+}
+.is-style-blank-box-blue{
+  border-color: $blue_color;
+}
+.is-style-blank-box-yellow{
+  border-color: $yellow_color;
+}
+.is-style-blank-box-green{
+  border-color: $green_color;
+}
+.is-style-blank-box-orange{
+  border-color: $orange_color;
+}
+
 .is-style-sticky-gray,
 .is-style-sticky-yellow,
 .is-style-sticky-red,
