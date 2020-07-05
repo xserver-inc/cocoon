@@ -941,7 +941,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .is-style-sticky-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .is-style-sticky-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .admin-settings .demo .is-style-sticky-green { border-color: #028760; background-color: #CBEFE4; }
-.admin-settings .demo .has-drop-cap:not(:focus)::first-letter { float: none; font-size: 1em; }
 .admin-settings .demo .bb-check .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-check .bb-label::after { content: "CHECK"; }
 .admin-settings .demo .bb-comment .bb-label .fa::before { content: ""; }
@@ -2533,7 +2532,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .is-style-sticky-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .is-style-sticky-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .admin-settings .demo .is-style-sticky-green { border-color: #028760; background-color: #CBEFE4; }
-.admin-settings .demo .has-drop-cap:not(:focus)::first-letter { float: none; font-size: 1em; }
 .admin-settings .demo .bb-check .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-check .bb-label::after { content: "CHECK"; }
 .admin-settings .demo .bb-comment .bb-label .fa::before { content: ""; }
@@ -4332,7 +4330,6 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .is-style-sticky-red { border-color: #CD3740; background-color: #F5DADC; }
 .components-popover__content .is-style-sticky-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .components-popover__content .is-style-sticky-green { border-color: #028760; background-color: #CBEFE4; }
-.components-popover__content .has-drop-cap:not(:focus)::first-letter { float: none; font-size: 1em; }
 .components-popover__content .bb-check .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-check .bb-label::after { content: "CHECK"; }
 .components-popover__content .bb-comment .bb-label .fa::before { content: ""; }
