@@ -773,7 +773,9 @@ function wp_enqueue_slicknav(){
     wp_enqueue_script( 'slicknav-js', get_template_directory_uri() . '/plugins/slicknav/jquery.slicknav.min.js', array( 'jquery' ), false, true  );
     $data = minify_js('
               (function($){
-                $(".menu-header").slicknav();
+                $(".menu-header").slicknav({
+                  label: "'.apply_filters('wp_enqueue_slicknav_label', 'MENU').'",
+                });
               })(jQuery);
             ');
     wp_add_inline_script( 'slicknav-js', $data, 'after' ) ;
