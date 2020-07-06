@@ -9092,6 +9092,10 @@ div.wpforo-widget-wrap .widget-title {
   border-bottom: none;
 }
 
+.wpforo-recent-content.wpfr-posts td {
+  overflow-wrap: anywhere;
+}
+
 div#bbpress-forums fieldset.bbp-form input[type="text"],
 div#bbpress-forums fieldset.bbp-form select {
   height: 46px;

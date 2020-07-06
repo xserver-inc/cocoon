@@ -104,6 +104,11 @@ div.wpforo-widget-wrap .widget-title{
 //   width: 100%;
 // }
 
+//Recent Postsのテーブルセル内を強制改行
+.wpforo-recent-content.wpfr-posts td {
+  overflow-wrap: anywhere;
+}
+
 //bbPressスタイル
 div#bbpress-forums fieldset.bbp-form input[type="text"],
 div#bbpress-forums fieldset.bbp-form select {
