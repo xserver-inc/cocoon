@@ -9092,8 +9092,11 @@ div.wpforo-widget-wrap .widget-title {
   border-bottom: none;
 }
 
-.wpforo-recent-content.wpfr-posts td {
-  overflow-wrap: anywhere;
+.wpforo-recent-content.wpfr-posts table {
+  width: 100%;
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-all;
 }
 
 div#bbpress-forums fieldset.bbp-form input[type="text"],

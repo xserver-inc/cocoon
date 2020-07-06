@@ -105,8 +105,11 @@ div.wpforo-widget-wrap .widget-title{
 // }
 
 //Recent Postsのテーブルセル内を強制改行
-.wpforo-recent-content.wpfr-posts td {
-  overflow-wrap: anywhere;
+.wpforo-recent-content.wpfr-posts table{
+  width: 100%;
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-all
 }
 
 //bbPressスタイル
