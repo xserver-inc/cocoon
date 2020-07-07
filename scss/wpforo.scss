@@ -105,11 +105,18 @@ div.wpforo-widget-wrap .widget-title{
 // }
 
 //Recent Postsのテーブルセル内を強制改行
-.wpforo-recent-content.wpfr-posts table{
-  width: 100%;
-  table-layout: fixed;
-  word-break: break-all;
-  word-wrap: break-all
+.wpforo-recent-content.wpfr-posts{
+  table{
+    width: 100%;
+    table-layout: fixed;
+    word-break: break-word;
+    word-wrap: break-word;
+    td{
+      // word-wrap: anywhere;
+      // overflow-wrap: anywhere;
+      word-break: break-word !important;
+    }
+  }
 }
 
 //bbPressスタイル
