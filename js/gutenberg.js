@@ -110,15 +110,21 @@ wp.domReady(function () {
     jQuery('style').each(function () {
         jQuery(this).html(jQuery(this).html().replace(/main\.main/g, '.block-editor-writing-flow.main'));
     });
+
+    // jQuery('.block-editor-block-preview__content .wp-block-group').removeAttr('style');
 });
 
-// (function($){
-//   //タイマーを使ったあまり美しくない方法
-//   //tiny_mce_before_initフック引数配列のbody_classがなかったもので。
-//   //もしWordPressフックを使った方法や、もうちょっと綺麗なjQueryの書き方があればフォーラムで教えていただければ幸いです。
-//   //https://wp-cocoon.com/community/cocoon-theme/
-//   setInterval(function(){
-//     $('#editor .block-editor-writing-flow').addClass('body main article page-body ' + gbSettings['siteIconFont']);
-//   },1000);
+(function($){
+  //タイマーを使ったあまり美しくない方法
+  //tiny_mce_before_initフック引数配列のbody_classがなかったもので。
+  //もしWordPressフックを使った方法や、もうちょっと綺麗なjQueryの書き方があればフォーラムで教えていただければ幸いです。
+  //https://wp-cocoon.com/community/cocoon-theme/
+  setInterval(function(){
+    //$('#editor .block-editor-writing-flow').addClass('body main article page-body ' + gbSettings['siteIconFont']);
 
-// })(jQuery);
+    //グループボックスのスタイルプレビューに余計なstyle属性が入り込んでしまうのを削除
+    //もっと良い方法があるのかもしれない
+    jQuery('.block-editor-block-preview__content .wp-block-group').removeAttr('style');
+  },1000);
+
+})(jQuery);

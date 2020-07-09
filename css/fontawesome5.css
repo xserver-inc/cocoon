@@ -1,3 +1,8 @@
+.is-style-good-box::before,
+.is-style-bad-box::before,
+.is-style-profile-box::before,
+.is-style-comment-box::before,
+.is-style-ok-box::before,
 .comment-box::before,
 .ok-box::before,
 .blank-box.bb-ok .fa::before,
@@ -40,9 +45,11 @@
   font-family: "Font Awesome 5 Free";
   font-weight: 400; }
 
+.is-style-comment-box::before,
 .comment-box::before {
   content: "\f075"; }
 
+.is-style-ok-box::before,
 .ok-box::before,
 .fab-ok::before,
 .bb-ok .bb-label .fa::before {
@@ -96,6 +103,11 @@
 .list-window-close-o li::before {
   content: '\f410'; }
 
+.is-style-information-box::before,
+.is-style-question-box::before,
+.is-style-alert-box::before,
+.is-style-memo-box::before,
+.is-style-ng-box::before,
 .information-box::before,
 .information::before,
 .question-box::before,
@@ -207,6 +219,7 @@
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
+.is-style-memo-box::before,
 .memo-box::before,
 .fab-pencil::before {
   content: "\f303"; }
