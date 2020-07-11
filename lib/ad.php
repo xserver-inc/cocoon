@@ -21,11 +21,11 @@ function is_ads_visible(){
   //広告の除外（いずれかがあてはまれば表示しない）
   $is_exclude_ids = (
     //記事の除外
-    (!$post_ids_empty && is_single( $post_ids )) || //投稿ページの除外
-    (!$post_ids_empty && is_page( $post_ids )) ||   //個別ページの除外
+    (!$post_ids_empty && is_single( $post_ids ))//投稿ページの除外
+    || (!$post_ids_empty && is_page( $post_ids )) //個別ページの除外
     //カテゴリの除外
-    (!$category_ids_empty && is_single() && in_category( $category_ids )) ||//投稿ページの除外
-    (!$category_ids_empty && in_category( $category_ids )) //アーカイブページの除外
+    || (!$category_ids_empty && is_single() && in_category( $category_ids )) //投稿ページの除外
+    || (!$category_ids_empty && is_category() && in_category( $category_ids )) //カテゴリーアーカイブページの除外
   );
 
   return is_all_ads_visible() &&
