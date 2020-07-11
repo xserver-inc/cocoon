@@ -774,8 +774,9 @@ $bb_green: $green_color;
 /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/
-.container .search-form{
+div.search-form{
   margin: 3em 0;
+  // line-height: 36px;
 }
 
 .search-form > div{
@@ -805,12 +806,12 @@ $bb_green: $green_color;
   margin-right: 7px;
 }
 
-.search-form div.sbtn:after{
+.search-form div.sbtn::after{
   content: "\f25a";
   font-family: FontAwesome;
   color: #000;
   position: absolute;
-  bottom: -1.4em;
+  bottom: -1.5em;
   font-size: 25px;
 }
 
@@ -829,7 +830,7 @@ $bb_green: $green_color;
     padding-right: 10px;
   }
 
-  .search-form div.sbtn:after{
+  .search-form div.sbtn::after{
     font-size: 20px;
     margin-left: -10px;
   }

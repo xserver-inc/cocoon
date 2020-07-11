@@ -3917,7 +3917,7 @@ label.screen-reader-text {
 /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/
-.container .search-form {
+div.search-form {
   margin: 3em 0;
 }
 
@@ -3948,12 +3948,12 @@ label.screen-reader-text {
   margin-right: 7px;
 }
 
-.search-form div.sbtn:after {
+.search-form div.sbtn::after {
   content: "\f25a";
   font-family: FontAwesome;
   color: #000;
   position: absolute;
-  bottom: -1.4em;
+  bottom: -1.5em;
   font-size: 25px;
 }
 
@@ -3972,7 +3972,7 @@ label.screen-reader-text {
     padding-right: 10px;
   }
 
-  .search-form div.sbtn:after {
+  .search-form div.sbtn::after {
     font-size: 20px;
     margin-left: -10px;
   }
