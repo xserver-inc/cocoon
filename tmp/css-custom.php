@@ -598,6 +598,7 @@ if ($entry_content_line_hight = get_entry_content_line_hight()): ?>
 }
   <?php //管理画面用
   if(is_admin() && is_gutenberg_editor_enable()): ?>
+  .main,
   .main p,
   .main p.wp-block-paragraph {
     line-height: <?php echo $entry_content_line_hight; ?>;
