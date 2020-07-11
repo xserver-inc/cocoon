@@ -973,10 +973,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-bad .bb-label::after { content: "BAD"; }
 .admin-settings .demo .bb-profile .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-profile .bb-label::after { content: "PROFILE"; }
-.admin-settings .demo div.search-form { margin: 3em 0; }
-.admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
-.admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
-.admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
+.admin-settings .demo div.search-form { margin: 3em 0; display: flex; max-width: 420px; }
+.admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; }
+.admin-settings .demo .search-form div.sform { background-color: #fff; width: 100%; }
+.admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; text-align: center; width: 140px; }
 .admin-settings .demo .search-form div.sbtn:before { content: "\f002"; font-family: FontAwesome; margin-right: 7px; }
 .admin-settings .demo .search-form div.sbtn::after { content: "\f25a"; font-family: FontAwesome; color: #000; position: absolute; bottom: -1.5em; font-size: 25px; }
 @media screen and (max-width: 450px) { .admin-settings .demo .search-form div { padding: 3px 5px; font-size: 75%; }
@@ -2564,10 +2564,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-bad .bb-label::after { content: "BAD"; }
 .admin-settings .demo .bb-profile .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-profile .bb-label::after { content: "PROFILE"; }
-.admin-settings .demo div.search-form { margin: 3em 0; }
-.admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
-.admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
-.admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
+.admin-settings .demo div.search-form { margin: 3em 0; display: flex; max-width: 420px; }
+.admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; }
+.admin-settings .demo .search-form div.sform { background-color: #fff; width: 100%; }
+.admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; text-align: center; width: 140px; }
 .admin-settings .demo .search-form div.sbtn:before { content: "\f002"; font-family: FontAwesome; margin-right: 7px; }
 .admin-settings .demo .search-form div.sbtn::after { content: "\f25a"; font-family: FontAwesome; color: #000; position: absolute; bottom: -1.5em; font-size: 25px; }
 @media screen and (max-width: 450px) { .admin-settings .demo .search-form div { padding: 3px 5px; font-size: 75%; }
@@ -4364,10 +4364,10 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bb-bad .bb-label::after { content: "BAD"; }
 .components-popover__content .bb-profile .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-profile .bb-label::after { content: "PROFILE"; }
-.components-popover__content div.search-form { margin: 3em 0; }
-.components-popover__content .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
-.components-popover__content .search-form div.sform { min-width: 280px; background-color: #fff; }
-.components-popover__content .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
+.components-popover__content div.search-form { margin: 3em 0; display: flex; max-width: 420px; }
+.components-popover__content .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; }
+.components-popover__content .search-form div.sform { background-color: #fff; width: 100%; }
+.components-popover__content .search-form div.sbtn { background-color: #1155EE; color: #fff; text-align: center; width: 140px; }
 .components-popover__content .search-form div.sbtn:before { content: "\f002"; font-family: FontAwesome; margin-right: 7px; }
 .components-popover__content .search-form div.sbtn::after { content: "\f25a"; font-family: FontAwesome; color: #000; position: absolute; bottom: -1.5em; font-size: 25px; }
 @media screen and (max-width: 450px) { .components-popover__content .search-form div { padding: 3px 5px; font-size: 75%; }

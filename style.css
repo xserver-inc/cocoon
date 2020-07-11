@@ -3919,6 +3919,8 @@ label.screen-reader-text {
 ********************************/
 div.search-form {
   margin: 3em 0;
+  display: flex;
+  max-width: 420px;
 }
 
 .search-form > div {
@@ -3926,20 +3928,18 @@ div.search-form {
   border-radius: 2px;
   padding: 5px;
   margin-left: 10px;
-  display: inline-block;
 }
 
 .search-form div.sform {
-  min-width: 280px;
   background-color: #fff;
+  width: 100%;
 }
 
 .search-form div.sbtn {
   background-color: #1155EE;
   color: #fff;
-  padding-left: 20px;
-  padding-right: 30px;
-  position: absolute;
+  text-align: center;
+  width: 140px;
 }
 
 .search-form div.sbtn:before {
