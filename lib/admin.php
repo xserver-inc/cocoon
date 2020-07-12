@@ -618,7 +618,7 @@ if ( !class_exists( 'VisualEditorExcerpt' ) ):
 class VisualEditorExcerpt{
   public static function switch_boxes()
   {
-    if ( ! post_type_supports( $GLOBALS['post']->post_type, 'excerpt' ) )    {
+    if ( isset($GLOBALS['post']) && ! post_type_supports( $GLOBALS['post']->post_type, 'excerpt' ) )    {
       return;
     }
     $current_screen = get_current_screen();
