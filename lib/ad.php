@@ -25,7 +25,7 @@ function is_ads_visible(){
     || (!$post_ids_empty && is_page( $post_ids )) //個別ページの除外
     //カテゴリの除外
     || (!$category_ids_empty && is_single() && in_category( $category_ids )) //投稿ページの除外
-    || (!$category_ids_empty && is_category() && in_category( $category_ids )) //カテゴリーアーカイブページの除外
+    || (!$category_ids_empty && is_category( $category_ids )) //カテゴリーアーカイブページの除外
   );
 
   return is_all_ads_visible() &&
