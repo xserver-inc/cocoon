@@ -20,6 +20,6 @@ $count = get_index_new_entry_card_count();
     <?php echo get_category_index_list_entry_card_tag(null, $count); ?>
   </div><!-- .list -->
   <div class="list-more-button-wrap">
-      <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>?cat=0" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
+      <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>?cat=0" class="list-more-button"><?php echo apply_filters('more_button_caption', __( 'もっと見る', THEME_NAME )); ?></a>
   </div>
 </div><!-- .list-new-entries -->

@@ -62,7 +62,7 @@ $count = get_index_category_entry_card_count();
         </div><!-- .list -->
         <?php if($cat = get_category($cat_id)): ?>
           <div class="list-more-button-wrap">
-              <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
+              <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', __( 'もっと見る', THEME_NAME )); ?></a>
           </div>
         <?php endif; ?>
       </div><!-- .list-column -->
