@@ -112,14 +112,54 @@ function time_mod_form_view() {
 endif;
 
 //「修正のみ」は更新しない。それ以外は、それぞれの更新日時に変更する
-add_filter( 'wp_insert_post_data', 'update_custom_insert_post_data', 10, 2 );
+if (isset( $_POST['update_level'] )) {
+  add_filter( 'wp_insert_post_data', 'update_custom_insert_post_data', 10, 2 );
+}
 if( !function_exists( 'update_custom_insert_post_data' ) ):
 function update_custom_insert_post_data( $data, $postarr ){
   $mydata = isset( $_POST['update_level'] ) ? $_POST['update_level'] : null;
+  // _v($data);
+  // _v($postarr);
+  // _v($mydata);
+  // _v($_POST);
+  // _v("data['post_date']");
+  // _v($data['post_date']);
+  // _v("data['post_date_gmt']");
+  // _v($data['post_date_gmt']);
+  // _v("data['post_modified']");
+  // _v($data['post_modified']);
+  // _v("data['post_modified_gmt']");
+  // _v($data['post_modified_gmt']);
 
+
+  // _v("postarr['post_date']");
+  // _v($postarr['post_date']);
+  // _v("postarr['post_date_gmt']");
+  // _v($postarr['post_date_gmt']);
+  // _v("postarr['post_modified']");
+  // _v($postarr['post_modified']);
+  // _v("postarr['post_modified_gmt']");
+  // _v($postarr['post_modified_gmt']);
   if( $mydata === 'low' ){
     unset( $data['post_modified'] );
     unset( $data['post_modified_gmt'] );
+
+    // $post_modified = isset($postarr['post_modified']) ? $data['post_modified'] : $data['post_date'];
+    // $post_modified_gmt = get_gmt_from_date($post_modified);
+    // _v($post_modified);
+    // _v($post_modified_gmt);
+    // $data['post_modified'] = $post_modified;
+    // $data['post_modified_gmt'] = $post_modified_gmt;
+
+    $last_modified = get_post_meta( $postarr['ID'], 'last_modified', true );
+    if ( isset($last_modified) ) {
+      $data['post_modified'] = $last_modified;
+      $data['post_modified_gmt'] = get_gmt_from_date( $last_modified );
+    }
+
+
+    // $data['post_modified'] = $data['post_date'];
+    // $data['post_modified_gmt'] = get_gmt_from_date( $data['post_date'] );
   }
   elseif( $mydata === 'edit' ) {
     $aa_mod = $_POST['aa_mod'] <= 0 ? date_i18n('Y') : $_POST['aa_mod'];
@@ -142,6 +182,7 @@ function update_custom_insert_post_data( $data, $postarr ){
     $data['post_modified'] = $data['post_date'];
     $data['post_modified_gmt'] = get_gmt_from_date( $data['post_date'] );
   }
+  // _v($data);
 
   return $data;
 }
