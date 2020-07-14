@@ -99,7 +99,11 @@ if ($image_url && file_exists($image_file)) {//ロゴ画像がある場合
 
     }
   },
-  "description": "<?php echo esc_attr(get_meta_description_text()); ?>…"<?php  // 抜粋 ?>
+  "description": "<?php
+    $description = get_meta_description_text();
+    $description = str_replace('\\', '', $description);
+    echo esc_attr($description);
+  ?>…"<?php  // 抜粋 ?>
 
 }
 </script>
