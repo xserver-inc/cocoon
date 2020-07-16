@@ -174,21 +174,8 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
         </amp-ad>';
       } else {
         $code = '<amp-ad
-          media="(max-width: 480px)"
           width="100vw"
           height="320"
-          type="adsense"
-          data-ad-client="'.$ad_client.'"
-          data-ad-slot="'.$ad_slot.'"
-          data-auto-format="rspv"
-          data-full-width>
-            <div overflow></div>
-        </amp-ad>
-
-        <amp-ad
-          media="(min-width: 481px)"
-          layout="fixed-height"
-          height="280"
           type="adsense"
           data-ad-client="'.$ad_client.'"
           data-ad-slot="'.$ad_slot.'"
