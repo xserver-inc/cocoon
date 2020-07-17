@@ -23,6 +23,10 @@ if (is_user_administrator()
   if (is_admin_panel_edit_area_visible() && is_singular()): ?>
     <div class="admin-edit">
       <span class="fa fa-edit fa-fw" aria-hidden="true"></span>
+      <?php //ダッシュボードリンクの表示
+      if (is_admin_panel_wp_dashboard_visible()): ?>
+        <span class="dashboard"><a href="<?php echo admin_url(); ?>"><?php _e( 'ダッシュボード', THEME_NAME ); ?></a></span>
+      <?php endif ?>
       <?php //投稿編集リンクの表示
       if (is_admin_panel_wp_edit_visible()): ?>
         <span class="post-edit"><?php edit_post_link(__( '編集', THEME_NAME )); ?></span>

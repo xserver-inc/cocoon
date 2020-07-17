@@ -65,6 +65,9 @@ update_theme_option(OP_ADMIN_PANEL_PV_TYPE);
 //管理者パネル編集エリアの表示
 update_theme_option(OP_ADMIN_PANEL_EDIT_AREA_VISIBLE);
 
+//管理者パネルWordPressダッシュボードの表示
+update_theme_option(OP_ADMIN_PANEL_WP_DASHBOARD_VISIBLE);
+
 //管理者パネルWordPress編集の表示
 update_theme_option(OP_ADMIN_PANEL_WP_EDIT_VISIBLE);
 

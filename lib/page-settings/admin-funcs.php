@@ -168,6 +168,14 @@ function is_admin_panel_edit_area_visible(){
 }
 endif;
 
+//管理者パネルWordPressダッシュボードの表示
+define('OP_ADMIN_PANEL_WP_DASHBOARD_VISIBLE', 'admin_panel_wp_dashboard_visible');
+if ( !function_exists( 'is_admin_panel_wp_dashboard_visible' ) ):
+function is_admin_panel_wp_dashboard_visible(){
+  return get_theme_option(OP_ADMIN_PANEL_WP_DASHBOARD_VISIBLE);
+}
+endif;
+
 //管理者パネルWordPress編集の表示
 define('OP_ADMIN_PANEL_WP_EDIT_VISIBLE', 'admin_panel_wp_edit_visible');
 if ( !function_exists( 'is_admin_panel_wp_edit_visible' ) ):
