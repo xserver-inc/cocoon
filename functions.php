@@ -268,3 +268,29 @@ function smartnews_feed_content_type( $content_type, $type ) {
   return $content_type;
 }
 endif;
+
+//サイトマップにnoindex設定を反映させる
+add_filter('wp_sitemaps_posts_query_args', 'wp_sitemaps_posts_query_args_noindex_custom');
+if ( !function_exists( 'wp_sitemaps_posts_query_args_noindex_custom' ) ):
+function wp_sitemaps_posts_query_args_noindex_custom($args){
+  $args['post__not_in'] = get_noindex_post_ids();
+  //_v($args);
+  return $args;
+}
+endif;
+
+//サイトマップにカテゴリー・タグのnoindex設定を反映させる
+add_filter('wp_sitemaps_taxonomies_query_args', 'wp_sitemaps_taxonomies_query_args_noindex_custom');
+if ( !function_exists( 'wp_sitemaps_taxonomies_query_args_noindex_custom' ) ):
+function wp_sitemaps_taxonomies_query_args_noindex_custom($args){
+  if (($args['taxonomy'] == 'category') && is_category_page_noindex()) {
+    //ありえないIDのカテゴリだけ表示する＝全て表示しない
+    $args['include'] = array(999999999999);
+  }
+  if (($args['taxonomy'] == 'post_tag') && is_tag_page_noindex()) {
+    //ありえないIDのタグだけ表示する＝全て表示しない
+    $args['include'] = array(999999999999);
+  }
+  return $args;
+}
+endif;
