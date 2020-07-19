@@ -20,7 +20,7 @@ if (is_user_administrator()
   get_template_part('tmp/admin-pv'); ?>
 
   <?php //編集エリアの表示
-  if (is_admin_panel_edit_area_visible() && is_singular()): ?>
+  if (is_admin_panel_edit_area_visible() && (is_singular() || (!is_singular() && is_admin_panel_wp_dashboard_visible()))): ?>
     <div class="admin-edit">
       <span class="fa fa-edit fa-fw" aria-hidden="true"></span>
       <?php //ダッシュボードリンクの表示
@@ -28,7 +28,7 @@ if (is_user_administrator()
         <span class="dashboard"><a href="<?php echo admin_url(); ?>"><?php _e( 'ダッシュボード', THEME_NAME ); ?></a></span>
       <?php endif ?>
       <?php //投稿編集リンクの表示
-      if (is_admin_panel_wp_edit_visible()): ?>
+      if (is_admin_panel_wp_edit_visible() && is_singular()): ?>
         <span class="post-edit"><?php edit_post_link(__( '編集', THEME_NAME )); ?></span>
       <?php endif ?>
       <?php //Windows Live Writer編集リンクの表示
