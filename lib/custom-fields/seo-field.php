@@ -272,3 +272,10 @@ if ( !function_exists( 'get_the_page_canonical_url' ) ):
     return $value;
   }
   endif;
+
+//noindexページIDの取得
+if ( !function_exists( 'get_noindex_post_ids' ) ):
+function get_noindex_post_ids(){
+  return get_postmeta_value_enable_post_ids('the_page_noindex');
+}
+endif;
