@@ -54,15 +54,15 @@ if($pages != 1) {
     // _v($url);
     $string = str_replace(trailingslashit($pagenum_link), '', $url);
     // _v($string);
-    $string = str_replace('/2/', '/%#%/', $string);
+    $string = str_replace(user_trailingslashit('/2'), '/%#%/', $string);
     // _v($string);
     $paginate_format = (substr($paginate_base,-1,1) == '/' ? '' : '/') .
     user_trailingslashit($string, 'paged');
     // _v($paginate_format);
     $paginate_base .= '%_%';
   }
-  // var_dump($paginate_base);
-  // var_dump($paginate_format);
+  // _v($paginate_base);
+  // _v($paginate_format);
 
   echo paginate_links(array(
     'base' => $paginate_base,
