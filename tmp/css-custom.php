@@ -612,25 +612,31 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
   margin-top: <?php echo $entry_content_margin_hight; ?>em;
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
-.entry-content > .micro-top{
+.article .micro-top{
   margin-bottom: -<?php echo $entry_content_margin_hight * 1.1; ?>em;
 }
-.entry-content > .micro-balloon{
+.article .micro-balloon{
   margin-bottom: -<?php echo $entry_content_margin_hight * 0.8; ?>em;
 }
-.entry-content > .micro-bottom{
+.article .micro-bottom{
   margin-top: -<?php echo $entry_content_margin_hight * 1.1; ?>em;
 }
-.entry-content > .micro-bottom.micro-balloon{
+.article .micro-bottom.micro-balloon{
   margin-top: -<?php echo $entry_content_margin_hight * 0.8; ?>em;
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
   <?php ////管理画面用
   if(is_admin() && is_gutenberg_editor_enable()): ?>
-  .main p,
-  .main p.wp-block-paragraph {
+  .article .wp-block {
     margin-top: <?php echo $entry_content_margin_hight; ?>em;
     margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+  }
+  <?php //公開ページと同じにすると「＋」ボタンが押せなかったので少し変更 ?>
+  .article .micro-top{
+    margin-bottom: -<?php echo $entry_content_margin_hight; ?>em;
+  }
+  .article .micro-bottom{
+    margin-top: -<?php echo $entry_content_margin_hight; ?>em;
   }
   <?php endif; ?>
 <?php endif ?>
