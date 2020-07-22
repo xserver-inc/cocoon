@@ -49,20 +49,13 @@ if($pages != 1) {
   }
   else{
     $pagenum_link = html_entity_decode( get_pagenum_link() );
-    // _v($pagenum_link);
     $url = get_pagenum_link(2);
-    // _v($url);
     $string = str_replace(trailingslashit($pagenum_link), '', $url);
-    // _v($string);
     $string = str_replace(user_trailingslashit('/2'), '/%#%/', $string);
-    // _v($string);
     $paginate_format = (substr($paginate_base,-1,1) == '/' ? '' : '/') .
     user_trailingslashit($string, 'paged');
-    // _v($paginate_format);
     $paginate_base .= '%_%';
   }
-  // _v($paginate_base);
-  // _v($paginate_format);
 
   echo paginate_links(array(
     'base' => $paginate_base,
