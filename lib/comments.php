@@ -73,14 +73,14 @@ function comment_custom_callback($comment, $args, $depth) {
 endif;
 
 //コメント用の日付フォーマット
-if ( !function_exists( ' simple_thread_comment_date_format' ) ):
+if ( !function_exists( 'simple_thread_comment_date_format' ) ):
 function simple_thread_comment_date_format(){
   return __( 'Y/m/d(D)', THEME_NAME );
 }
 endif;
 
 //コメント用の時間フォーマット
-if ( !function_exists( ' simple_thread_comment_time_format' ) ):
+if ( !function_exists( 'simple_thread_comment_time_format' ) ):
 function simple_thread_comment_time_format(){
   return __( 'H:i:s', THEME_NAME );
 }
