@@ -19,10 +19,11 @@ function get_entry_content_line_hight(){
 endif;
 
 //行の余白
+define('OP_ENTRY_CONTENT_MARGIN_HIGHT_DEFAULT', 1.8);
 define('OP_ENTRY_CONTENT_MARGIN_HIGHT', 'entry_content_margin_hight');
 if ( !function_exists( 'get_entry_content_margin_hight' ) ):
 function get_entry_content_margin_hight(){
-  return get_theme_option(OP_ENTRY_CONTENT_MARGIN_HIGHT, 1.4);
+  return get_theme_option(OP_ENTRY_CONTENT_MARGIN_HIGHT, 1.8);
 }
 endif;
 

@@ -329,7 +329,6 @@ a:hover {
 }
 
 ol, ul {
-  margin: 1em 0;
   padding-left: 40px;
 }
 
@@ -486,7 +485,7 @@ label {
 
 .content-top,
 .content-bottom {
-  margin: 1em 0;
+  margin-bottom: 1.2em;
 }
 
 /************************************
@@ -1483,11 +1482,6 @@ pre * {
 /************************************
 ** 投稿・固定ページで使うHTML要素
 ************************************/
-p,
-.paragraph {
-  margin: 1.2em 0;
-}
-
 table {
   margin-bottom: 20px;
   max-width: 100%;
@@ -1572,9 +1566,6 @@ figure.wp-block-table.alignright table {
   overflow: hidden;
 }
 
-.article dl {
-  margin: 1em 0;
-}
 .article dd {
   margin-left: 40px;
 }
@@ -1646,7 +1637,6 @@ figure.wp-block-table.alignright table {
 blockquote {
   background-color: #fafbfc;
   border: 1px solid #ddd;
-  margin: 1em 0;
   padding: 10px 1.2em;
   position: relative;
 }
@@ -1722,7 +1712,6 @@ span.internal-icon {
   padding: 2em;
   background-color: #fafbfc;
   border: 1px solid #ccc;
-  margin: 1em 0;
 }
 
 .no-post-date .post-date,
@@ -1737,6 +1726,7 @@ span.internal-icon {
   border-top: 4px double #eee;
   border-bottom: 4px double #eee;
   margin: 0 3%;
+  margin-bottom: 1em;
 }
 
 .eye-catch-wrap {
@@ -1793,10 +1783,6 @@ span.internal-icon {
   text-align: center;
   margin-bottom: 1.8em;
   overflow: hidden;
-}
-
-.entry-content .ad-area {
-  margin: 1em 0;
 }
 
 .ad-label-invisible .ad-label {
@@ -1989,7 +1975,6 @@ span.internal-icon {
   border: 1px solid #ccc;
   font-size: 0.9em;
   padding: 1em 1.6em;
-  margin-bottom: 1em;
   display: table;
 }
 .toc .toc-list {
@@ -2011,10 +1996,6 @@ span.internal-icon {
 }
 .toc a:hover {
   text-decoration: underline;
-}
-
-.toc-center {
-  margin: 1em auto;
 }
 
 .toc-title {
@@ -2801,16 +2782,29 @@ label.screen-reader-text {
   border-radius: 4px;
   position: relative;
   display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 
-.block-box p:first-of-type {
-  margin-top: 0;
-}
-.block-box p:last-of-type {
+.article blockquote :last-of-type,
+.wp-block-media-text__content :last-of-type,
+.wp-block-columns :last-of-type,
+.column-wrap :last-of-type,
+.wp-block-gallery :last-of-type,
+.wp-block-cover :last-of-type,
+.block-box :last-of-type {
   margin-bottom: 0;
 }
+.article blockquote ol,
+.article blockquote ul,
+.wp-block-media-text__content ol,
+.wp-block-media-text__content ul,
+.wp-block-columns ol,
+.wp-block-columns ul,
+.column-wrap ol,
+.column-wrap ul,
+.wp-block-gallery ol,
+.wp-block-gallery ul,
+.wp-block-cover ol,
+.wp-block-cover ul,
 .block-box ol,
 .block-box ul {
   margin: 0;
@@ -3070,7 +3064,8 @@ label.screen-reader-text {
 .is-style-sticky-green {
   border: 3px solid #949495;
   padding: 1.2em 1em;
-  margin: 1em 2%;
+  margin-left: 2%;
+  margin-right: 2%;
   border-radius: 4px;
 }
 .blank-box ol, .is-style-blank-box-red ol,
@@ -4030,7 +4025,6 @@ div.search-form {
 .btn-wrap.btn-wrap-l > a {
   padding: 14px 20px;
   font-size: 18px;
-  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4238,14 +4232,12 @@ div.search-form {
 
 .micro-top {
   font-size: 0.8em;
-  margin-bottom: -1.2em;
-  margin-top: 1em;
+  margin-bottom: 0.2em;
 }
 
 .micro-bottom {
   font-size: 0.8em;
   margin-top: -1.2em;
-  margin-bottom: 1em;
 }
 
 .micro-center {
@@ -4263,6 +4255,7 @@ div.search-form {
   border-radius: 4px;
   padding: 3px 12px;
   display: table;
+  margin-bottom: 0.8em;
   font-size: 0.8em;
 }
 .micro-balloon.has-background {
@@ -4795,7 +4788,6 @@ div.search-form {
 
 .button-block {
   float: none;
-  margin: 1em 0;
 }
 .button-block.alignleft {
   text-align: left;
@@ -4821,7 +4813,6 @@ div.search-form {
 ** キャプションボックス
 ************************************/
 .caption-box {
-  margin: 1.2em 0;
   border: 2px solid #eee;
   border-radius: 4px;
 }
@@ -5001,9 +4992,6 @@ div.search-form {
 /************************************
 ** キャプションタブボックス
 ************************************/
-.tab-caption-box {
-  margin: 1.2em 0;
-}
 .tab-caption-box.block-box.has-background {
   background-color: transparent;
 }
@@ -5191,9 +5179,6 @@ div.search-form {
 /************************************
 ** ラベルボックス
 ************************************/
-.label-box {
-  margin: 1.2em 0;
-}
 .label-box.block-box.has-background {
   background-color: transparent;
 }
@@ -5297,7 +5282,6 @@ div.search-form {
 ** トグル表示ボタン
 ************************************/
 .toggle-wrap {
-  margin: 1.2em 0;
   position: relative;
 }
 .toggle-wrap > p {
@@ -6182,7 +6166,6 @@ canvas, iframe, video,
 .author-box {
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin: 1em 0;
   line-height: 1.4;
   position: relative;
   padding: 1.6% 2.2% 2%;
@@ -6335,8 +6318,6 @@ canvas, iframe, video,
 }
 
 .speech-wrap {
-  margin-top: 1em;
-  margin-bottom: 1em;
   display: flex;
 }
 
@@ -6513,7 +6494,6 @@ div.sbs-think .speech-balloon::after {
 .product-item-box {
   padding: 22px 25px;
   width: 96%;
-  margin: 1.6em auto;
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
   position: relative;
@@ -7491,7 +7471,6 @@ div.fb-like-mobile {
 
 .ranking-item, .timeline-box {
   padding: 3%;
-  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -10842,7 +10821,6 @@ pre {
   border: 1px solid #ddd;
   overflow: auto;
   padding: 10px;
-  margin: 1em 0;
 }
 
 .is-code-row-number-enable pre,

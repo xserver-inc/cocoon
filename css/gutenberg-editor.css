@@ -464,6 +464,8 @@ div.mce-content-body {
 .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/micro-text"],
 .block-editor-block-list__layout .block-editor-block-list__block[data-type^="cocoon-blocks/micro-text"] {
   padding: 0.5em;
+  margin-top: 1.2em;
+  margin-bottom: 0.2em;
 }
 .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/button"][data-align="left"], .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/button-wrap"][data-align="left"], .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/micro-text"][data-align="left"],
 .block-editor-block-list__layout .block-editor-block-list__block[data-type^="cocoon-blocks/button"][data-align="left"],

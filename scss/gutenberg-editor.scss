@@ -54,6 +54,8 @@ div.mce-content-body {
   }
   &[data-type^="cocoon-blocks/micro-text"]{
     padding: 0.5em;
+    margin-top: 1.2em;//これがないと「＋」ボタンが表示されない
+    margin-bottom: 0.2em;//これがないと「＋」ボタンが表示されない
   }
   &[data-type^="cocoon-blocks/button"][data-align="left"],
   &[data-type^="cocoon-blocks/button-wrap"][data-align="left"],
