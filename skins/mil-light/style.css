@@ -389,7 +389,7 @@ input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a {
     color: #928980;
     border: 1.9px solid;
     border-color: #b8b1a9 !important;
-    border-radius: 50%;
+    border-radius: 9em;
     line-height: 44px;
 }
 .pagination .current {
