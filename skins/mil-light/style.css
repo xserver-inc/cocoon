@@ -465,9 +465,13 @@ span.post-date {
 .hlt-top-menu #navi {
     background-color: transparent;
 }
+/*
+以下のようなグローバルメニューになる
+https://wp-cocoon.com/wp-content/uploads/2020/07/item-label.png
 .item-label {
     border-right: solid 5px #f3eee9;
-}
+} */
+
 .navi-in > ul li ul .item-label {
     border-right: none;
 }
