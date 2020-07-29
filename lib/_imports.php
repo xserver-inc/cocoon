@@ -120,7 +120,7 @@ require_once abspath(__FILE__).'profile.php'; //プロフィール関係の処�
 require_once abspath(__FILE__).'youtube.php'; //YouTube関係の処理
 require_once abspath(__FILE__).'font-awesome.php'; //Font Awesome
 require_once abspath(__FILE__).'admin.php'; //管理者機能
-if ( function_exists( 'register_block_style' ) ){
+if ( function_exists( 'register_block_style' ) && is_block_editor_style_block_option_visible() ){
   require_once abspath(__FILE__).'block-editor-styles-paragraph.php'; //ブロックエディタースタイル（段落）
   require_once abspath(__FILE__).'block-editor-styles-group.php'; //ブロックエディタースタイル（グループ）
   require_once abspath(__FILE__).'block-editor-styles-list.php'; //ブロックエディタースタイル（リスト）

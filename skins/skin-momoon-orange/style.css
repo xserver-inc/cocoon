@@ -329,7 +329,8 @@ blockquote,
 }
 
 .font-awesome-5 .widget ul li a::before,
-.font-awesome-5 h2.related-entry-heading::before{
+.font-awesome-5 h2.related-entry-heading::before,
+.font-awesome-5 .navi-footer-in>.menu-footer li.menu-item a::after{
   font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 }

@@ -132,6 +132,14 @@ function is_block_editor_ranking_shortcode_dropdown_visible(){
 }
 endif;
 
+//ブロックエディタースタイルブロックオプション有効
+define('OP_BLOCK_EDITOR_STYLE_BLOCK_OPTION_VISIBLE', 'block_editor_style_block_option_visible');
+if ( !function_exists( 'is_block_editor_style_block_option_visible' ) ):
+function is_block_editor_style_block_option_visible(){
+  return get_theme_option(OP_BLOCK_EDITOR_STYLE_BLOCK_OPTION_VISIBLE, 1);
+}
+endif;
+
 //拡張カラーパレット色A
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A', 'block_editor_extended_palette_color_a');
 if ( !function_exists( 'get_block_editor_extended_palette_color_a' ) ):
