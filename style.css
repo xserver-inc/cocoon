@@ -2785,28 +2785,28 @@ label.screen-reader-text {
 }
 
 .article blockquote :last-of-type,
-.wp-block-media-text__content :last-of-type,
-.wp-block-columns :last-of-type,
-.column-wrap :last-of-type,
-.wp-block-gallery :last-of-type,
-.wp-block-cover :last-of-type,
-.block-box :last-of-type {
+.article .wp-block-media-text__content :last-of-type,
+.article .wp-block-columns :last-of-type,
+.article .column-wrap :last-of-type,
+.article .wp-block-gallery :last-of-type,
+.article .wp-block-cover :last-of-type,
+.article .block-box :last-of-type {
   margin-bottom: 0;
 }
 .article blockquote ol,
 .article blockquote ul,
-.wp-block-media-text__content ol,
-.wp-block-media-text__content ul,
-.wp-block-columns ol,
-.wp-block-columns ul,
-.column-wrap ol,
-.column-wrap ul,
-.wp-block-gallery ol,
-.wp-block-gallery ul,
-.wp-block-cover ol,
-.wp-block-cover ul,
-.block-box ol,
-.block-box ul {
+.article .wp-block-media-text__content ol,
+.article .wp-block-media-text__content ul,
+.article .wp-block-columns ol,
+.article .wp-block-columns ul,
+.article .column-wrap ol,
+.article .column-wrap ul,
+.article .wp-block-gallery ol,
+.article .wp-block-gallery ul,
+.article .wp-block-cover ol,
+.article .wp-block-cover ul,
+.article .block-box ol,
+.article .block-box ul {
   margin: 0;
 }
 
