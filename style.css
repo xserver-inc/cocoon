@@ -2788,6 +2788,7 @@ label.screen-reader-text {
 .article .wp-block-media-text__content :last-of-type,
 .article .wp-block-columns :last-of-type,
 .article .column-wrap :last-of-type,
+.article .timeline-box :last-of-type,
 .article .wp-block-gallery :last-of-type,
 .article .wp-block-cover :last-of-type,
 .article .block-box :last-of-type {
@@ -2801,6 +2802,8 @@ label.screen-reader-text {
 .article .wp-block-columns ul,
 .article .column-wrap ol,
 .article .column-wrap ul,
+.article .timeline-box ol,
+.article .timeline-box ul,
 .article .wp-block-gallery ol,
 .article .wp-block-gallery ul,
 .article .wp-block-cover ol,
