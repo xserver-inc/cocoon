@@ -2810,6 +2810,10 @@ label.screen-reader-text {
   margin: 0;
 }
 
+div.scrollable-table table {
+  margin-bottom: 0;
+}
+
 .is-style-information-box,
 .information-box,
 .information {

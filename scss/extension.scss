@@ -265,6 +265,11 @@ $marker_u_blue: $marker_blue;
     margin: 0;
   }
 }
+div.scrollable-table{
+  table{
+    margin-bottom: 0;
+  }
+}
 
 .is-style-information-box,
 .information-box,
