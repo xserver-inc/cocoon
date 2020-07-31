@@ -2784,14 +2784,14 @@ label.screen-reader-text {
   display: block;
 }
 
-.article blockquote :last-of-type,
-.article .wp-block-media-text__content :last-of-type,
-.article .wp-block-columns :last-of-type,
-.article .column-wrap :last-of-type,
-.article .timeline-box :last-of-type,
-.article .wp-block-gallery :last-of-type,
-.article .wp-block-cover :last-of-type,
-.article .block-box :last-of-type {
+.article blockquote :last-child,
+.article .wp-block-media-text__content :last-child,
+.article .wp-block-columns :last-child,
+.article .column-wrap :last-child,
+.article .timeline-box :last-child,
+.article .wp-block-gallery :last-child,
+.article .wp-block-cover :last-child,
+.article .block-box :last-child {
   margin-bottom: 0;
 }
 .article blockquote ol,
