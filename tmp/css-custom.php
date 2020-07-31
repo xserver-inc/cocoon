@@ -626,7 +626,7 @@ if (!$entry_content_margin_hight) {
 .article pre,
 .article table,
 .article .author-box,
-.article .blogcard,
+.article .blogcard-wrap,
 .article .login-user-only,
 .article .information-box,
 .article .question-box,
