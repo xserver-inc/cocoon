@@ -8698,7 +8698,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   width: 48%;
 }
 .nwa .recommended.rcs-card-margin a:last-child {
-  margin-right: 0;
+  margin-right: 1%;
 }
 
 .box-menus {
@@ -10401,7 +10401,7 @@ _:-ms-lang(x), .mc-circle {
     width: 48%;
   }
   .recommended.rcs-card-margin a:last-child {
-    margin-right: 0;
+    margin-right: 1%;
   }
 }
 @media screen and (max-width: 599px) {
