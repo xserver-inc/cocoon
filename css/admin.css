@@ -1909,6 +1909,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-times-circle-o::before, .admin-settings .demo .list-times-circle-o li::before { content: '\f05c'; }
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
+.admin-settings .demo .recommended { margin: 1em 0; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
 .admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; border-radius: 0; }
 .admin-settings .demo .recommended figure { margin: 0; }
@@ -1923,8 +1924,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-center-label-title .card-content { padding: 0; background: transparent; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; padding: 6px 1.2em; background-color: rgba(255, 255, 255, 0.8); transition: all .3s; border-radius: 99px; font-size: 0.9em; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .5s; opacity: 0; }
-.admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
-.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
+.admin-settings .demo .recommended.rcs-card-margin a { margin: 1% 0.5%; }
+.admin-settings .demo .recommended.rcs-card-margin a:first-child { margin-left: 1%; }
+.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1%; }
 .admin-settings .demo .recommended .ribbon { display: none; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
@@ -3500,6 +3502,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-times-circle-o::before, .admin-settings .demo .list-times-circle-o li::before { content: '\f05c'; }
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
+.admin-settings .demo .recommended { margin: 1em 0; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
 .admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; border-radius: 0; }
 .admin-settings .demo .recommended figure { margin: 0; }
@@ -3514,8 +3517,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-center-label-title .card-content { padding: 0; background: transparent; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; padding: 6px 1.2em; background-color: rgba(255, 255, 255, 0.8); transition: all .3s; border-radius: 99px; font-size: 0.9em; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .5s; opacity: 0; }
-.admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
-.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
+.admin-settings .demo .recommended.rcs-card-margin a { margin: 1% 0.5%; }
+.admin-settings .demo .recommended.rcs-card-margin a:first-child { margin-left: 1%; }
+.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1%; }
 .admin-settings .demo .recommended .ribbon { display: none; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
