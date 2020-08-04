@@ -1503,6 +1503,7 @@ table td {
 
 .scrollable-table {
   -webkit-overflow-scrolling: touch;
+  margin: 0;
 }
 .scrollable-table.stfc-sticky tr > *:first-child {
   background-color: #e9eff2;
@@ -1516,6 +1517,7 @@ table td {
 .scrollable-table table {
   border-collapse: collapse;
   max-width: none;
+  margin: 0;
 }
 
 .scrollable-table th {
@@ -1532,7 +1534,6 @@ table td {
 .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
-  margin-bottom: 1em;
 }
 
 figure.wp-block-table table {
@@ -2811,6 +2812,10 @@ label.screen-reader-text {
 }
 
 div.scrollable-table table {
+  margin-bottom: 0;
+}
+
+.article .wp-block-table .scrollable-table {
   margin-bottom: 0;
 }
 

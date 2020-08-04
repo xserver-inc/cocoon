@@ -139,6 +139,7 @@ table {
 ///////////////////////////////////////
 .scrollable-table{
   -webkit-overflow-scrolling: touch;
+  margin: 0;
 
   //1列目を固定
   &.stfc-sticky tr{
@@ -156,6 +157,7 @@ table {
 .scrollable-table table{
   border-collapse: collapse;
   max-width: none;
+  margin: 0;
 }
 
 .scrollable-table th{
@@ -172,7 +174,6 @@ table {
 .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
-  margin-bottom: 1em;
 }
 
 // figure.wp-block-table.scrollable-block-table{

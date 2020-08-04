@@ -635,12 +635,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo table th { background-color: #f5f6f7; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #eee; padding: 6px; }
-.admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
+.admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; margin: 0; }
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
-.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
+.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; margin: 0; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
-.admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; margin-bottom: 1em; }
+.admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; }
 .admin-settings .demo figure.wp-block-table table { width: auto; }
 .admin-settings .demo figure.wp-block-table.alignwide table, .admin-settings .demo figure.wp-block-table.alignfull table { width: 100%; }
 .admin-settings .demo .main figure.wp-block-table { width: auto; max-width: 100%; display: block; }
@@ -851,6 +851,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article blockquote :last-child, .admin-settings .demo .article .wp-block-media-text__content :last-child, .admin-settings .demo .article .wp-block-columns :last-child, .admin-settings .demo .article .column-wrap :last-child, .admin-settings .demo .article .timeline-box :last-child, .admin-settings .demo .article .wp-block-cover :last-child, .admin-settings .demo .article .block-box :last-child { margin-bottom: 0; }
 .admin-settings .demo .article blockquote ol, .admin-settings .demo .article blockquote ul, .admin-settings .demo .article .wp-block-media-text__content ol, .admin-settings .demo .article .wp-block-media-text__content ul, .admin-settings .demo .article .wp-block-columns ol, .admin-settings .demo .article .wp-block-columns ul, .admin-settings .demo .article .column-wrap ol, .admin-settings .demo .article .column-wrap ul, .admin-settings .demo .article .timeline-box ol, .admin-settings .demo .article .timeline-box ul, .admin-settings .demo .article .wp-block-cover ol, .admin-settings .demo .article .wp-block-cover ul, .admin-settings .demo .article .block-box ol, .admin-settings .demo .article .block-box ul { margin: 0; }
 .admin-settings .demo div.scrollable-table table { margin-bottom: 0; }
+.admin-settings .demo .article .wp-block-table .scrollable-table { margin-bottom: 0; }
 .admin-settings .demo .is-style-information-box, .admin-settings .demo .information-box, .admin-settings .demo .information { background: #f3fafe; border: 1px solid #bde4fc; }
 .admin-settings .demo .is-style-question-box, .admin-settings .demo .question-box, .admin-settings .demo .question { background: #fff7cc; border: 1px solid #ffe766; }
 .admin-settings .demo .is-style-alert-box, .admin-settings .demo .alert-box, .admin-settings .demo .alert { background: #fdf2f2; border: 1px solid #f6b9b9; }
@@ -2222,12 +2223,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo table th { background-color: #f5f6f7; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #eee; padding: 6px; }
-.admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
+.admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; margin: 0; }
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
-.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
+.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; margin: 0; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
-.admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; margin-bottom: 1em; }
+.admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; }
 .admin-settings .demo figure.wp-block-table table { width: auto; }
 .admin-settings .demo figure.wp-block-table.alignwide table, .admin-settings .demo figure.wp-block-table.alignfull table { width: 100%; }
 .admin-settings .demo .main figure.wp-block-table { width: auto; max-width: 100%; display: block; }
@@ -2438,6 +2439,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article blockquote :last-child, .admin-settings .demo .article .wp-block-media-text__content :last-child, .admin-settings .demo .article .wp-block-columns :last-child, .admin-settings .demo .article .column-wrap :last-child, .admin-settings .demo .article .timeline-box :last-child, .admin-settings .demo .article .wp-block-cover :last-child, .admin-settings .demo .article .block-box :last-child { margin-bottom: 0; }
 .admin-settings .demo .article blockquote ol, .admin-settings .demo .article blockquote ul, .admin-settings .demo .article .wp-block-media-text__content ol, .admin-settings .demo .article .wp-block-media-text__content ul, .admin-settings .demo .article .wp-block-columns ol, .admin-settings .demo .article .wp-block-columns ul, .admin-settings .demo .article .column-wrap ol, .admin-settings .demo .article .column-wrap ul, .admin-settings .demo .article .timeline-box ol, .admin-settings .demo .article .timeline-box ul, .admin-settings .demo .article .wp-block-cover ol, .admin-settings .demo .article .wp-block-cover ul, .admin-settings .demo .article .block-box ol, .admin-settings .demo .article .block-box ul { margin: 0; }
 .admin-settings .demo div.scrollable-table table { margin-bottom: 0; }
+.admin-settings .demo .article .wp-block-table .scrollable-table { margin-bottom: 0; }
 .admin-settings .demo .is-style-information-box, .admin-settings .demo .information-box, .admin-settings .demo .information { background: #f3fafe; border: 1px solid #bde4fc; }
 .admin-settings .demo .is-style-question-box, .admin-settings .demo .question-box, .admin-settings .demo .question { background: #fff7cc; border: 1px solid #ffe766; }
 .admin-settings .demo .is-style-alert-box, .admin-settings .demo .alert-box, .admin-settings .demo .alert { background: #fdf2f2; border: 1px solid #f6b9b9; }
@@ -4238,6 +4240,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .article blockquote :last-child, .components-popover__content .article .wp-block-media-text__content :last-child, .components-popover__content .article .wp-block-columns :last-child, .components-popover__content .article .column-wrap :last-child, .components-popover__content .article .timeline-box :last-child, .components-popover__content .article .wp-block-cover :last-child, .components-popover__content .article .block-box :last-child { margin-bottom: 0; }
 .components-popover__content .article blockquote ol, .components-popover__content .article blockquote ul, .components-popover__content .article .wp-block-media-text__content ol, .components-popover__content .article .wp-block-media-text__content ul, .components-popover__content .article .wp-block-columns ol, .components-popover__content .article .wp-block-columns ul, .components-popover__content .article .column-wrap ol, .components-popover__content .article .column-wrap ul, .components-popover__content .article .timeline-box ol, .components-popover__content .article .timeline-box ul, .components-popover__content .article .wp-block-cover ol, .components-popover__content .article .wp-block-cover ul, .components-popover__content .article .block-box ol, .components-popover__content .article .block-box ul { margin: 0; }
 .components-popover__content div.scrollable-table table { margin-bottom: 0; }
+.components-popover__content .article .wp-block-table .scrollable-table { margin-bottom: 0; }
 .components-popover__content .is-style-information-box, .components-popover__content .information-box, .components-popover__content .information { background: #f3fafe; border: 1px solid #bde4fc; }
 .components-popover__content .is-style-question-box, .components-popover__content .question-box, .components-popover__content .question { background: #fff7cc; border: 1px solid #ffe766; }
 .components-popover__content .is-style-alert-box, .components-popover__content .alert-box, .components-popover__content .alert { background: #fdf2f2; border: 1px solid #f6b9b9; }

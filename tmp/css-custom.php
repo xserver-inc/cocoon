@@ -666,7 +666,8 @@ if (!$entry_content_margin_hight) {
 .article .components-placeholder,
 .article .wp-block-search,
 .article .wp-block-social-links,
-.article .timeline-box {
+.article .timeline-box,
+.article .scrollable-table {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
 .article .micro-top{
