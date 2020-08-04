@@ -8682,12 +8682,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .recommended.rcs-card-margin a {
   margin: 1% 0.5%;
 }
-.recommended.rcs-card-margin a:first-child {
-  margin-left: 1%;
-}
-.recommended.rcs-card-margin a:last-child {
-  margin-right: 1%;
-}
 .recommended .ribbon {
   display: none;
 }
@@ -8701,9 +8695,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .nwa .recommended.rcs-card-margin a {
   margin: 1%;
   width: 48%;
-}
-.nwa .recommended.rcs-card-margin a:last-child {
-  margin-right: 1%;
 }
 
 .box-menus {
@@ -10404,9 +10395,6 @@ _:-ms-lang(x), .mc-circle {
   .recommended.rcs-card-margin a {
     margin: 1%;
     width: 48%;
-  }
-  .recommended.rcs-card-margin a:last-child {
-    margin-right: 1%;
   }
 }
 @media screen and (max-width: 599px) {
