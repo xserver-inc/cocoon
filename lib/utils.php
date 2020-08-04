@@ -661,9 +661,6 @@ endif;
 //clingifyの読み込み
 if ( !function_exists( 'wp_enqueue_clingify' ) ):
 function wp_enqueue_clingify(){
-  // $browser_info = get_browser_info();
-  // $is_ie = $browser_info['browser_name'] == 'IE';
-  // $is_edge_version_under_16 = ($browser_info['browser_name'] == 'IE') && (intval($browser_info['browser_version']) < 16);
   //グローバルナビ追従が有効な時
   if ( is_header_fixed() ) {
     //clingifyスタイルの呼び出し

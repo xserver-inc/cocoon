@@ -2,6 +2,7 @@
 ** おすすめカード
 ************************************/
 .recommended{
+  margin: 1em 0;
   .navi-entry-cards{
     display: flex;
     justify-content: center;
@@ -105,10 +106,12 @@
 
   &.rcs-card-margin{
     a{
-      margin: 1em;
-      margin-right: 0;
+      margin: 1% 0.5%;
+      &:first-child{
+        margin-left: 1%;
+      }
       &:last-child{
-        margin-right: 1em;
+        margin-right: 1%;
       }
     }
   }

@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.2.1.10
+Version: 2.2.1.12
 Requires at least: 5.3.0
 Requires PHP: 5.6.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -8595,6 +8595,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 /************************************
 ** おすすめカード
 ************************************/
+.recommended {
+  margin: 1em 0;
+}
 .recommended .navi-entry-cards {
   display: flex;
   justify-content: center;
@@ -8663,11 +8666,13 @@ https://codepen.io/nxworld/pen/oLdoWb
   opacity: 0;
 }
 .recommended.rcs-card-margin a {
-  margin: 1em;
-  margin-right: 0;
+  margin: 1% 0.5%;
+}
+.recommended.rcs-card-margin a:first-child {
+  margin-left: 1%;
 }
 .recommended.rcs-card-margin a:last-child {
-  margin-right: 1em;
+  margin-right: 1%;
 }
 .recommended .ribbon {
   display: none;
@@ -8680,11 +8685,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   width: 50%;
 }
 .nwa .recommended.rcs-card-margin a {
-  margin: .3em 0;
+  margin: 1%;
   width: 48%;
 }
 .nwa .recommended.rcs-card-margin a:last-child {
-  margin-right: 0;
+  margin-right: 1%;
 }
 
 .box-menus {
@@ -10383,11 +10388,11 @@ _:-ms-lang(x), .mc-circle {
     width: 50%;
   }
   .recommended.rcs-card-margin a {
-    margin: .3em 0;
+    margin: 1%;
     width: 48%;
   }
   .recommended.rcs-card-margin a:last-child {
-    margin-right: 0;
+    margin-right: 1%;
   }
 }
 @media screen and (max-width: 599px) {
