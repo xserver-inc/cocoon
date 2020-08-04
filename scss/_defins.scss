@@ -439,6 +439,9 @@ $form_padding: 11px;
       a{
         margin: 1%;
         width: 48%;
+        &:last-child{
+          margin-right: 1%;
+        }
       }
     }
   }

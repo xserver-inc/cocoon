@@ -1925,10 +1925,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; padding: 6px 1.2em; background-color: rgba(255, 255, 255, 0.8); transition: all .3s; border-radius: 99px; font-size: 0.9em; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .5s; opacity: 0; }
 .admin-settings .demo .recommended.rcs-card-margin a { margin: 1% 0.5%; }
+.admin-settings .demo .recommended.rcs-card-margin a:first-child { margin-left: 1%; }
+.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1%; }
 .admin-settings .demo .recommended .ribbon { display: none; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: 1%; width: 48%; }
+.admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 1%; }
 .admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 18px 0; }
 .admin-settings .demo .box-menus * { line-height: 1.6; margin: 0; }
 .admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; transition: none; }
@@ -3515,10 +3518,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; padding: 6px 1.2em; background-color: rgba(255, 255, 255, 0.8); transition: all .3s; border-radius: 99px; font-size: 0.9em; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .5s; opacity: 0; }
 .admin-settings .demo .recommended.rcs-card-margin a { margin: 1% 0.5%; }
+.admin-settings .demo .recommended.rcs-card-margin a:first-child { margin-left: 1%; }
+.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1%; }
 .admin-settings .demo .recommended .ribbon { display: none; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: 1%; width: 48%; }
+.admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 1%; }
 .admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 18px 0; }
 .admin-settings .demo .box-menus * { line-height: 1.6; margin: 0; }
 .admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; transition: none; }
@@ -3851,7 +3857,8 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header { height: auto; }
   .admin-settings .demo .recommended .navi-entry-cards { flex-wrap: wrap; }
   .admin-settings .demo .recommended .navi-entry-cards a { width: 50%; }
-  .admin-settings .demo .recommended.rcs-card-margin a { margin: 1%; width: 48%; } }
+  .admin-settings .demo .recommended.rcs-card-margin a { margin: 1%; width: 48%; }
+  .admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1%; } }
 @media screen and (max-width: 599px) { .admin-settings .demo .container .column-wrap { flex-direction: column; }
   .admin-settings .demo .container .column-wrap > div { width: 100%; padding: 1em 0; }
   .admin-settings .demo .box-menus .box-menu { width: calc(100%/2); }

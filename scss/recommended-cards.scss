@@ -107,6 +107,12 @@
   &.rcs-card-margin{
     a{
       margin: 1% 0.5%;
+      &:first-child{
+        margin-left: 1%;
+      }
+      &:last-child{
+        margin-right: 1%;
+      }
     }
   }
 
