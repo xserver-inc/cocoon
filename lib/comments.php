@@ -139,12 +139,3 @@ function comment_reply_link_custom($tag){
   return $tag;
 }
 endif;
-
-// //get_avatarで取得するタグの変更
-// add_filter('get_avatar', 'get_avatar_tag_custom');
-// if ( !function_exists( 'get_avatar_tag_custom' ) ):
-// function get_avatar_tag_custom($avatar){
-//   $avatar = str_replace("'", '"', $avatar);
-//   return $avatar;
-// }
-// endif;
