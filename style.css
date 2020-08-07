@@ -7569,6 +7569,7 @@ div.fb-like-mobile {
   max-width: 302px;
   margin-right: 1em;
   position: relative;
+  align-items: flex-start;
 }
 
 .ranking-item-description {
