@@ -470,7 +470,17 @@ span.post-date {
 https://wp-cocoon.com/wp-content/uploads/2020/07/item-label.png
 .item-label {
     border-right: solid 5px #f3eee9;
-} */
+}
+*/
+
+.menu-top > .menu-item{
+    border-right: solid 5px #f3eee9;
+}
+.menu-top > .menu-item:last-child,
+.hlt-top-menu .menu-top > .menu-item{
+    border-right: 0;
+}
+.hlt-top-menu
 
 .navi-in > ul li ul .item-label {
     border-right: none;

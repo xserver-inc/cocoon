@@ -963,11 +963,9 @@ function generate_popular_entries_tag($atts){
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;
-      //$no_thumbnail_url = get_template_directory_uri().'/images/no-image-320.png';
       $no_thumbnail_url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url() : get_no_image_320x180_url();
       $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
       $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
-      //$no_thumbnail_url = get_no_image_320x180_url();
 
       $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '') );
       $pv = $post->sum_count;
