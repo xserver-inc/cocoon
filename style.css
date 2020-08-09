@@ -2791,6 +2791,8 @@ label.screen-reader-text {
 .article .column-wrap :last-child,
 .article .timeline-box :last-child,
 .article .wp-block-cover :last-child,
+.article .blogcard-type :last-child,
+.article .btn-wrap :last-child,
 .article .block-box :last-child {
   margin-bottom: 0;
 }
@@ -2806,6 +2808,10 @@ label.screen-reader-text {
 .article .timeline-box ul,
 .article .wp-block-cover ol,
 .article .wp-block-cover ul,
+.article .blogcard-type ol,
+.article .blogcard-type ul,
+.article .btn-wrap ol,
+.article .btn-wrap ul,
 .article .block-box ol,
 .article .block-box ul {
   margin: 0;
