@@ -23,7 +23,7 @@ define('OP_ENTRY_CONTENT_MARGIN_HIGHT_DEFAULT', 1.8);
 define('OP_ENTRY_CONTENT_MARGIN_HIGHT', 'entry_content_margin_hight');
 if ( !function_exists( 'get_entry_content_margin_hight' ) ):
 function get_entry_content_margin_hight(){
-  return get_theme_option(OP_ENTRY_CONTENT_MARGIN_HIGHT, 1.8);
+  return get_theme_option(OP_ENTRY_CONTENT_MARGIN_HIGHT, OP_ENTRY_CONTENT_MARGIN_HIGHT_DEFAULT);
 }
 endif;
 
