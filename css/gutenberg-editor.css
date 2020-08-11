@@ -729,9 +729,6 @@ ul{
   margin: 1em 0;
 }
 
-.wp-block-table {
-  overflow: hidden;
-}
 .wp-block-table table {
   font-size: 16px;
 }
