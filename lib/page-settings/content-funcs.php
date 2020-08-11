@@ -11,10 +11,12 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // 本文行間
 ///////////////////////////////////////
 //行の高さ
+
+define('OP_ENTRY_CONTENT_LINE_HIGHT_DEFAULT', 1.8);
 define('OP_ENTRY_CONTENT_LINE_HIGHT', 'entry_content_line_hight');
 if ( !function_exists( 'get_entry_content_line_hight' ) ):
 function get_entry_content_line_hight(){
-  return get_theme_option(OP_ENTRY_CONTENT_LINE_HIGHT, 1.8);
+  return get_theme_option(OP_ENTRY_CONTENT_LINE_HIGHT, OP_ENTRY_CONTENT_LINE_HIGHT_DEFAULT);
 }
 endif;
 
