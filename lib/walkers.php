@@ -20,7 +20,7 @@ class menu_description_walker extends Walker_Nav_Menu {
     $class_names = $value = '';
 
     $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-    //$classes[] = 'fa';
+
     if ($item->description) {
       $classes[] = 'menu-item-has-description';
     } else {
