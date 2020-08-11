@@ -606,81 +606,88 @@ if ($entry_content_line_hight = get_entry_content_line_hight()): ?>
   <?php endif; ?>
 <?php endif ?>
 <?php //行の余白
+// $entry_content_line_hight = get_entry_content_line_hight()
+// if (!$entry_content_line_hight) {
+//   $entry_content_line_hight = OP_ENTRY_CONTENT_LINE_HIGHT_DEFAULT;
+// }
 $entry_content_margin_hight = get_entry_content_margin_hight();
 if (!$entry_content_margin_hight) {
   $entry_content_margin_hight = OP_ENTRY_CONTENT_MARGIN_HIGHT_DEFAULT;
 } ?>
 .entry-content > *,
-.article p,
+.body p,
 .demo .entry-content p,
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5,
-.article h6,
-.article dl,
-.article ul,
-.article ol,
-.article blockquote,
-.article pre,
-.article table,
-.article .author-box,
-.article .blogcard-wrap,
-.article .login-user-only,
-.article .information-box,
-.article .question-box,
-.article .alert-box,
-.article .information,
-.article .question,
-.article .alert,
-.article .memo-box,
-.article .comment-box,
-.article .common-icon-box,
-.article .blank-box,
-.article .btn,
-.article .micro-bottom,
-.article .caption-box,
-.article .tab-caption-box,
-.article .label-box,
-.article .toggle-wrap,
-.article .wp-block-image,.booklink-box,
-.article .kaerebalink-box,
-.article .tomarebalink-box,
-.article .product-item-box,
-.article .speech-wrap,
-.article .toc,
-.article .column-wrap,
-.article .ranking-item,
-.article .ad-area,
-/*.article [class^="wp-block-"],*/
-.article .wp-block-gallery,
-.article .wp-block-audio,
-.article .wp-block-cover,
-.article .wp-block-file,
-.article .wp-block-media-text,
-.article .wp-block-video,
-.article .wp-block-buttons,
-.article .wp-block-columns,
-.article .wp-block-separator,
-.article .components-placeholder,
-.article .wp-block-search,
-.article .wp-block-social-links,
-.article .timeline-box,
-.article .scrollable-table {
+.body h1,
+.body h2,
+.body h3,
+.body h4,
+.body h5,
+.body h6,
+.body dl,
+.body ul,
+.body ol,
+.body blockquote,
+.body pre,
+.body table,
+.body .author-box,
+.body .blogcard-wrap,
+.body .login-user-only,
+.body .information-box,
+.body .question-box,
+.body .alert-box,
+.body .information,
+.body .question,
+.body .alert,
+.body .memo-box,
+.body .comment-box,
+.body .common-icon-box,
+.body .blank-box,
+.body .btn,
+.body .micro-bottom,
+.body .caption-box,
+.body .tab-caption-box,
+.body .label-box,
+.body .toggle-wrap,
+.body .wp-block-image,.booklink-box,
+.body .kaerebalink-box,
+.body .tomarebalink-box,
+.body .product-item-box,
+.body .speech-wrap,
+.body .toc,
+.body .column-wrap,
+.body .ranking-item,
+.body .ad-area,
+/*.body [class^="wp-block-"],*/
+.body .wp-block-gallery,
+.body .wp-block-audio,
+.body .wp-block-cover,
+.body .wp-block-file,
+.body .wp-block-media-text,
+.body .wp-block-video,
+.body .wp-block-buttons,
+.body .wp-block-columns,
+.body .wp-block-separator,
+.body .components-placeholder,
+.body .wp-block-search,
+.body .wp-block-social-links,
+.body .timeline-box,
+.body .blogcard-type,
+.body .btn-wrap,
+.body .btn-wrap a,
+.body .scrollable-table {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
-.article .micro-top{
+.body .micro-top{
   margin-bottom: <?php echo $entry_content_margin_hight * 0.2; ?>em;
 }
-.article .micro-bottom{
+.body .micro-bottom{
   margin-top: -<?php echo $entry_content_margin_hight * 0.9; ?>em;
 }
 
-.article .micro-balloon{
+.body .micro-balloon{
   margin-bottom: <?php echo $entry_content_margin_hight * 0.5; ?>em;
 }
-.article .micro-bottom.micro-balloon{
+.body .micro-bottom.micro-balloon{
   margin-top: -<?php echo $entry_content_margin_hight * 0.7; ?>em;
 }
 

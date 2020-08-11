@@ -2785,38 +2785,38 @@ label.screen-reader-text {
   display: block;
 }
 
-.article blockquote :last-child,
-.article .wp-block-media-text__content :last-child,
-.article .wp-block-columns :last-child,
-.article .column-wrap :last-child,
-.article .timeline-box :last-child,
-.article .wp-block-cover :last-child,
-.article .blogcard-type :last-child,
-.article .btn-wrap :last-child,
-.article .wp-block-group :last-child,
-.article .block-box :last-child {
+.body blockquote :last-child,
+.body .wp-block-media-text__content :last-child,
+.body .wp-block-columns :last-child,
+.body .column-wrap :last-child,
+.body .timeline-box :last-child,
+.body .wp-block-cover :last-child,
+.body .blogcard-type :last-child,
+.body .btn-wrap :last-child,
+.body .wp-block-group :last-child,
+.body .block-box :last-child {
   margin-bottom: 0;
 }
-.article blockquote ol,
-.article blockquote ul,
-.article .wp-block-media-text__content ol,
-.article .wp-block-media-text__content ul,
-.article .wp-block-columns ol,
-.article .wp-block-columns ul,
-.article .column-wrap ol,
-.article .column-wrap ul,
-.article .timeline-box ol,
-.article .timeline-box ul,
-.article .wp-block-cover ol,
-.article .wp-block-cover ul,
-.article .blogcard-type ol,
-.article .blogcard-type ul,
-.article .btn-wrap ol,
-.article .btn-wrap ul,
-.article .wp-block-group ol,
-.article .wp-block-group ul,
-.article .block-box ol,
-.article .block-box ul {
+.body blockquote ol,
+.body blockquote ul,
+.body .wp-block-media-text__content ol,
+.body .wp-block-media-text__content ul,
+.body .wp-block-columns ol,
+.body .wp-block-columns ul,
+.body .column-wrap ol,
+.body .column-wrap ul,
+.body .timeline-box ol,
+.body .timeline-box ul,
+.body .wp-block-cover ol,
+.body .wp-block-cover ul,
+.body .blogcard-type ol,
+.body .blogcard-type ul,
+.body .btn-wrap ol,
+.body .btn-wrap ul,
+.body .wp-block-group ol,
+.body .wp-block-group ul,
+.body .block-box ol,
+.body .block-box ul {
   margin: 0;
 }
 
@@ -2824,7 +2824,7 @@ div.scrollable-table table {
   margin-bottom: 0;
 }
 
-.article .wp-block-table .scrollable-table {
+.body .wp-block-table .scrollable-table {
   margin-bottom: 0;
 }
 
