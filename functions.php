@@ -309,3 +309,13 @@ function wp_sitemaps_taxonomies_custum( $taxonomies ) {
 //   return $args;
 // }
 // endif;
+
+//サイトマップにその他のアーカイブのnoindex設定を反映する
+add_filter('wp_sitemaps_add_provider', 'wp_sitemaps_add_provider_custom',  10, 2);
+function wp_sitemaps_add_provider_custom( $provider, $name ) {
+    if ( is_other_archive_page_noindex() && 'users' === $name ) {
+        return false;
+    }
+
+    return $provider;
+}
