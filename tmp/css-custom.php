@@ -674,6 +674,7 @@ if (!$entry_content_margin_hight) {
 .body .blogcard-type,
 .body .btn-wrap,
 .body .btn-wrap a,
+.body .block-box,
 .body .scrollable-table {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
