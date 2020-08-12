@@ -2793,7 +2793,6 @@ label.screen-reader-text {
 .article .wp-block-cover :last-child,
 .article .blogcard-type :last-child,
 .article .btn-wrap :last-child,
-.article .wp-block-group :last-child,
 .article .block-box :last-child {
   margin-bottom: 0;
 }
@@ -2813,8 +2812,6 @@ label.screen-reader-text {
 .article .blogcard-type ul,
 .article .btn-wrap ol,
 .article .btn-wrap ul,
-.article .wp-block-group ol,
-.article .wp-block-group ul,
 .article .block-box ol,
 .article .block-box ul {
   margin: 0;
