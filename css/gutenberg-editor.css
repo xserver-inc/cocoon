@@ -1085,3 +1085,7 @@ ol, ul {
 .wp-block-paragraph.has-drop-cap {
   background-color: #fff;
 }
+
+.block-editor-inner-blocks .block-editor-block-list__layout :nth-last-child(2) {
+  margin-bottom: 0;
+}
