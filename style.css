@@ -2817,11 +2817,9 @@ label.screen-reader-text {
 .article .block-box ul {
   margin: 0;
 }
-
-div.scrollable-table table {
+.article div.scrollable-table table {
   margin-bottom: 0;
 }
-
 .article .wp-block-table .scrollable-table {
   margin-bottom: 0;
 }
