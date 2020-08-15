@@ -614,7 +614,9 @@ $entry_content_margin_hight = get_entry_content_margin_hight();
 if (!$entry_content_margin_hight) {
   $entry_content_margin_hight = OP_ENTRY_CONTENT_MARGIN_HIGHT_DEFAULT;
 } ?>
+/*
 .entry-content > *,
+*/
 .article p,
 .demo .entry-content p,
 .article h1,
