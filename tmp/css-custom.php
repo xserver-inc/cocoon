@@ -619,12 +619,6 @@ if (!$entry_content_margin_hight) {
 */
 .article p,
 .demo .entry-content p,
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5,
-.article h6,
 .article dl,
 .article ul,
 .article ol,
