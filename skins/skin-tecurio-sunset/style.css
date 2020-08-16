@@ -236,7 +236,8 @@ background-image: linear-gradient( 165deg, #ff6a00 0%, #ee0979 20%);
 	content: "";
 	display: block;
 	height: 8px;
-background-image: linear-gradient( 165deg, #ff6a00 0%, #ee0979 20%);
+	position: relative;
+	background-image: linear-gradient( 165deg, #ff6a00 0%, #ee0979 20%);
 }
 
 .article h3 {
