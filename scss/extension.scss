@@ -255,6 +255,7 @@ $marker_u_blue: $marker_blue;
   .wp-block-cover,
   .blogcard-type,
   .btn-wrap,
+  .wp-block-group,
   .block-box{
     // p:first-of-type{
     //   margin-top: 0;
@@ -269,7 +270,8 @@ $marker_u_blue: $marker_blue;
     }
   }
 
-  div.scrollable-table{
+  div.scrollable-table,
+  .wp-block-table{
     table{
       margin-bottom: 0;
     }
