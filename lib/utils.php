@@ -3375,3 +3375,10 @@ function get_postmeta_value_enable_post_ids($meta_key){
   return $result;
 }
 endif;
+
+//エディターでページタイプでスタイルを変更する用のclassを出力
+if ( !function_exists( 'get_editor_page_type_class' ) ):
+function get_editor_page_type_class(){
+  return is_singular_page_type_wide() ? ' page-type-wide' : '';
+}
+endif;
