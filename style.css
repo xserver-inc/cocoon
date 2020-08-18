@@ -6250,6 +6250,7 @@ canvas, iframe, video,
 }
 .nwa .author-box .author-content {
   margin: 0;
+  padding: 1em;
 }
 .nwa .author-box .author-description {
   text-align: left;
