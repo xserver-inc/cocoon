@@ -3375,3 +3375,11 @@ function get_postmeta_value_enable_post_ids($meta_key){
   return $result;
 }
 endif;
+
+//WordPress5.5からのLazy Loadが有効な環境かどうか
+if ( !function_exists( 'is_wp_lazyload_valid' ) ):
+function is_wp_lazyload_valid(){
+  global $is_safari;
+  return (get_bloginfo('version') >= '5.5') && $is_safari;
+}
+endif;
