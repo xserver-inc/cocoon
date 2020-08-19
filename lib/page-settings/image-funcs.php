@@ -283,3 +283,16 @@ function get_no_image_large_url(){
   return $res;
 }
 endif;
+
+//NO IMAGEサムネイルタグの取得
+if ( !function_exists( 'get_no_imagf_post_thumbnail_tag' ) ):
+function get_no_imagf_post_thumbnail_tag($post_id, $image_url, $width, $height, $class, $alt = null){
+  $html = '<img src="'.esc_url($image_url).'" alt="'.esc_url($alt).'" class="'.esc_url($class).'" width="'.esc_url($width).'" height="'.esc_url($hight).'" />';
+  $post_thumbnail_id = null;
+  $size ='no-image' ;
+  $attr = array();
+  $attr['class'] = $class;
+  $attr['alt'] = $alt;
+  return apply_filters('post_thumbnail_html', $html, $post_id, $post_thumbnail_id, $size, $attr);
+}
+endif;
