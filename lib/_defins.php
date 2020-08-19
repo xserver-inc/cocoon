@@ -290,8 +290,8 @@ define('FONT_AWESOME_5_SOLID_WOFF2_URL', get_template_directory_uri().'/webfonts
 define('FONT_AWESOME_5_UPDATE_URL', get_template_directory_uri().'/css/fontawesome5.css');
 //IcoMoonフォント
 define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
-define('FONT_ICOMOON_WOFF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff?n4zge5');
-define('FONT_ICOMOON_TTF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf?n4zge5');
+define('FONT_ICOMOON_WOFF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff?3o5bkh');
+define('FONT_ICOMOON_TTF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf?3o5bkh');
 
 //親テーマのJavaScript
 define('THEME_JS_URL', get_template_directory_uri() . '/javascript.js');

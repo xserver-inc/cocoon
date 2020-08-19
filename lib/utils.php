@@ -3380,9 +3380,13 @@ endif;
 if ( !function_exists( 'is_wp_lazy_load_valid' ) ):
 function is_wp_lazy_load_valid(){
   global $is_safari;
-  // _v(get_bloginfo('version'));
-  // _v(get_bloginfo('version') >= '5.5');
-  // _v($is_safari);
   return (get_bloginfo('version') >= '5.5') && !$is_safari;
+}
+endif;
+
+//エディターでページタイプでスタイルを変更する用のclassを出力
+if ( !function_exists( 'get_editor_page_type_class' ) ):
+function get_editor_page_type_class(){
+  return is_singular_page_type_wide() ? ' page-type-wide' : '';
 }
 endif;
