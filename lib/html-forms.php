@@ -1044,6 +1044,7 @@ function generate_widget_entries_tag($atts){
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
+    'author' => null,
   ), $atts));
   global $post;
 
@@ -1064,9 +1065,16 @@ function generate_widget_entries_tag($atts){
       'post__not_in' => get_sticky_post_ids(),
     );
   }
+  //並べ替え
   if ($order) {
     $args += array(
       'order' => strtoupper($order),
+    );
+  }
+  //著者オプション
+  if ($author){
+    $args += array(
+      'author' => $author,
     );
   }
   //除外カテゴリー
