@@ -973,7 +973,8 @@ function generate_popular_entries_tag($atts){
       if ($post_thumbnail) {
         $post_thumbnail_img = $post_thumbnail;
       } else {
-        $post_thumbnail_img = '<img src="'.esc_url($no_thumbnail_url).'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
+        //$post_thumbnail_img = '<img src="'.esc_url($no_thumbnail_url).'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
+        $post_thumbnail_img = get_no_image_post_thumbnail_tag($post->ID, $no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
       }
 
       $pv_tag = null;
@@ -1238,7 +1239,8 @@ endif;
 //ナビカードサムネイルの取得
 if ( !function_exists( 'get_navi_entry_card_thumbnail_tag' ) ):
 function get_navi_entry_card_thumbnail_tag($image_attributes, $title){
-  return '<img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">';
+  // return '<img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">';
+  return get_original_post_thumbnail_tag(get_the_ID(),  $image_attributes[0], $image_attributes[1], $image_attributes[2], '"navi-entry-card--image widget-entry-card--image card-thumb', $title);
 }
 endif;
 
@@ -1256,7 +1258,9 @@ function get_widget_entry_card_no_image_tag($type, $prefix){
   $url = (!$is_large_image_use) ? get_no_image_120x68_url() : get_no_image_320x180_url();
   $w   = (!$is_large_image_use) ? THUMB120WIDTH  : THUMB320WIDTH;
   $h   = (!$is_large_image_use) ? THUMB120HEIGHT : THUMB320HEIGHT;
-  $tag = '<img src="'.esc_url($url).'" alt="" class="no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
+  // $tag = '<img src="'.esc_url($url).'" alt="" class="no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
+
+  $tag = get_no_image_post_thumbnail_tag(get_the_ID(), $url, $w, $h, 'no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
   return $tag;
 }
 endif;

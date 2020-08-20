@@ -3376,6 +3376,14 @@ function get_postmeta_value_enable_post_ids($meta_key){
 }
 endif;
 
+//WordPress5.5からのLazy Loadが有効な環境かどうか
+if ( !function_exists( 'is_wp_lazy_load_valid' ) ):
+function is_wp_lazy_load_valid(){
+  global $is_safari;
+  return (get_bloginfo('version') >= '5.5') && !$is_safari;
+}
+endif;
+
 //エディターでページタイプでスタイルを変更する用のclassを出力
 if ( !function_exists( 'get_editor_page_type_class' ) ):
 function get_editor_page_type_class(){
