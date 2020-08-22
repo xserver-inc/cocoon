@@ -362,3 +362,16 @@ function post_lazy_load_thumbnail_html($html, $post_id, $post_thumbnail_id, $siz
   return $html;
 }
 endif;
+
+//アバター画像のLazy Load置換
+add_filter('get_avatar', 'get_avatar_lazy_load_thumbnail_html');
+if ( !function_exists( 'get_avatar_lazy_load_thumbnail_html' ) ):
+function get_avatar_lazy_load_thumbnail_html($avatar){
+  // _v($avatar);
+  //WordPress5.5のLazy Load環境が有効か
+  if (is_wp_lazy_load_valid()) {
+    $avatar = convert_all_lazy_load_tag($avatar);
+  };
+  return $avatar;
+}
+endif;
