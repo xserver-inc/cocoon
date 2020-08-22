@@ -86,6 +86,7 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
       $h = THUMB150HEIGHT;
       // $wh_attr = ' srcset="'.$image.' '.W120.'w" width="'.W120.'" height="'.W120.'" sizes="(max-width: '.W120.'px) '.W120.'vw, '.W120.'px"';
     }
+    //後で消す
     // $thumb = '<img src="'.$image.'" alt="" class="no-image post-navi-no-image"'.$wh_attr.' />';
     $thumb = get_original_image_tag(get_the_ID(), $image, $w, $h, 'no-image post-navi-no-image');
   }

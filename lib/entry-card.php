@@ -82,10 +82,12 @@ endif;
 if ( !function_exists( 'get_entry_card_no_image_tag' ) ):
 function get_entry_card_no_image_tag($count){
   //通常の大きさのNO IMAGEサムネイル
+  //後で消す
   //  $thumbnail_tag_320 = '<img src="'.get_no_image_320x180_url().'" alt="" class="no-image entry-card-thumb-image list-no-image" width="'.THUMB320WIDTH.'" height="'.THUMB320HEIGHT.'" />';
   $thumbnail_tag_320 = get_original_image_tag(get_the_ID(), get_no_image_320x180_url(), THUMB320WIDTH, THUMB320HEIGHT, 'no-image entry-card-thumb-image list-no-image', '');
 
   //大きなNO IMAGEサムネイル
+  //後で消す
   // $thumbnail_tag_large = '<img src="'.get_no_image_large_url().'" alt="" class="no-image entry-card-thumb-image list-no-image" />';
   $thumbnail_tag_large = get_original_image_tag(get_the_ID(), get_no_image_large_url(), THUMB_LARGE_NO_IMAGE_WIDTH, THUMB_LARGE_NO_IMAGE_HEIGHT, 'no-image entry-card-thumb-image list-no-image', '');
   $thumbnail_tag = $thumbnail_tag_large;
