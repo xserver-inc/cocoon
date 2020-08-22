@@ -79,12 +79,15 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
       $w = THUMB120WIDTH;
       $h = THUMB120HEIGHT;
       $image = get_no_image_160x90_url();
-      $wh_attr = ' srcset="'.$image.' '.$w.'w" width="'.$w.'" height="'.$h.'" sizes="(max-width: '.$w.'px) '.$w.'vw, '.$h.'px"';
+      // $wh_attr = ' srcset="'.$image.' '.$w.'w" width="'.$w.'" height="'.$h.'" sizes="(max-width: '.$w.'px) '.$w.'vw, '.$h.'px"';
     } else {//表示タイプ＝スクエア
       $image = get_no_image_150x150_url();
-      $wh_attr = ' srcset="'.$image.' '.W120.'w" width="'.W120.'" height="'.W120.'" sizes="(max-width: '.W120.'px) '.W120.'vw, '.W120.'px"';
+      $w = THUMB150WIDTH;
+      $h = THUMB150HEIGHT;
+      // $wh_attr = ' srcset="'.$image.' '.W120.'w" width="'.W120.'" height="'.W120.'" sizes="(max-width: '.W120.'px) '.W120.'vw, '.W120.'px"';
     }
-    $thumb = '<img src="'.$image.'" alt="" class="no-image post-navi-no-image"'.$wh_attr.' />';
+    // $thumb = '<img src="'.$image.'" alt="" class="no-image post-navi-no-image"'.$wh_attr.' />';
+    $thumb = get_original_image_tag(get_the_ID(), $image, $w, $h, 'no-image post-navi-no-image');
   }
   return $thumb;
 }
