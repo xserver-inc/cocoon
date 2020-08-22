@@ -170,7 +170,7 @@ if (!is_amp()): ?>
             stickyHeader();
           }
         }
-        if (scrollTop == 0 || w <=  mobileWidth) {
+        if (scrollTop <= 50 || w <=  mobileWidth) {
           staticHeader();
         }
       }
@@ -188,7 +188,10 @@ if (!is_amp()): ?>
       if (w <=  mobileWidth) {/*モバイル端末の場合*/
         staticHeader();
       } else {/*パソコン端末の場合*/
-        stickyHeader();
+        if (scrollTop <= 50) {
+          stickyHeader();
+        }
+
       }
     });
 
