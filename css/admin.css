@@ -712,6 +712,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-favicon { margin-right: 4px; margin-top: 2px; }
+.admin-settings .demo img.blogcard-favicon-image { border: 0; box-shadow: none; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { float: right; margin-left: 1.6%; }
 .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-left: 0; margin-right: 170px; }
 .admin-settings .demo .nwa .blogcard-wrap { width: 100%; }
@@ -2305,6 +2306,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-favicon { margin-right: 4px; margin-top: 2px; }
+.admin-settings .demo img.blogcard-favicon-image { border: 0; box-shadow: none; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { float: right; margin-left: 1.6%; }
 .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-left: 0; margin-right: 170px; }
 .admin-settings .demo .nwa .blogcard-wrap { width: 100%; }

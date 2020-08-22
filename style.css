@@ -1938,6 +1938,11 @@ span.internal-icon {
   margin-top: 2px;
 }
 
+img.blogcard-favicon-image {
+  border: 0;
+  box-shadow: none;
+}
+
 /************************************
 ** ブログカードのサムネイルスタイル
 ************************************/
