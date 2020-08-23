@@ -320,7 +320,6 @@ add_filter('the_category_tag_content', 'shortcode_unautop');
 add_filter('the_category_tag_content', 'do_shortcode');
 add_filter('the_category_tag_content', 'prepend_attachment');
 add_filter('the_category_tag_content', 'wp_make_content_images_responsive');//WordPress5.5未満
-add_filter('the_category_tag_content', 'wp_filter_content_tags');//WordPress5.5以上
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');
