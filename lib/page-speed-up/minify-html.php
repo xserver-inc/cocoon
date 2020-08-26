@@ -353,6 +353,8 @@ if ( !function_exists( 'post_lazy_load_thumbnail_html' ) ):
 function post_lazy_load_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr){
   //WordPress5.5のLazy Load環境が有効か
   if (is_wp_lazy_load_valid()
+    //管理画面では動作させない
+    && !is_admin()
     //投稿のアイキャッチの場合は'thumb160'のような
     //文字列ではなく配列が入るので除外
     && !is_array($size)
