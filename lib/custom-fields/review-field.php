@@ -61,7 +61,7 @@ function review_custom_box_view(){
 
   //レート
   $the_review_rate = get_the_review_rate();
-  if (!$the_review_rate) {
+  if ($the_review_rate === null) {
     $the_review_rate = 5;
   }
   generate_label_tag('the_review_rate', __('レビュー評価', THEME_NAME) );
