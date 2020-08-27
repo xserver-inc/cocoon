@@ -4,9 +4,9 @@
   Skin URI: https://mil-light.milmemo.net/
   Author: みるみ
   Author URI: https://milmemo.net/
-  Screenshot URI: https://im-cocoon.net/wp-content/uploads/mil-light.png
-  Version: 1.0.0
-  Priority: 9720001000
+  Screenshot URI: https://milmemo.net/wp-content/uploads/cocoon-skin-mil_light-main-image-1999x1051.png
+  Version: 1.0.1
+  Priority: 13
 */
 
 body {
@@ -22,7 +22,7 @@ strong {
     color: #454545;
 }
 .a-wrap:hover,
-.pagination-next-link:hover,
+.pagination-next-link:hover, 
 .comment-btn:hover,.widget_recent_entries ul li a:hover,
 .widget_categories ul li a:hover,
 .widget_archive ul li a:hover,
@@ -388,7 +388,7 @@ input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a {
     color: #928980;
     border: 1.9px solid;
     border-color: #b8b1a9 !important;
-    border-radius: 9em;
+    border-radius: 50%;
     line-height: 44px;
 }
 .pagination .current {
@@ -432,7 +432,7 @@ input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a {
     color: #cccccc;
     font-size: 1.1em;
     font-weight: bold;
-    font-family: "Quicksand","Helvetica","Arial","Hiragino Kaku Gothic ProN","Hiragino Sans",YuGothic,"Yu Gothic","メイリオ",Meiryo,sans-serif;
+    font-family: "Helvetica","Arial","Hiragino Kaku Gothic ProN","Hiragino Sans",YuGothic,"Yu Gothic","メイリオ",Meiryo,sans-serif;
 }
 span.post-date {
     margin-right: 8px;
@@ -462,30 +462,11 @@ span.post-date {
     margin: 1em auto 1.7em;
 }
 .hlt-top-menu #navi {
-    background-color: transparent;
+    background-color: transparent;    
 }
-.header-container-in.hlt-top-menu {
-    background-color: #fffcf9;
-    opacity: 0.95;
-}
-
-/*
-以下のようなグローバルメニューになる
-https://wp-cocoon.com/wp-content/uploads/2020/07/item-label.png
 .item-label {
     border-right: solid 5px #f3eee9;
 }
-*/
-
-.menu-top > .menu-item{
-    border-right: solid 5px #f3eee9;
-}
-.menu-top > .menu-item:last-child,
-.hlt-top-menu .menu-top > .menu-item{
-    border-right: 0;
-}
-.hlt-top-menu
-
 .navi-in > ul li ul .item-label {
     border-right: none;
 }
@@ -504,12 +485,19 @@ https://wp-cocoon.com/wp-content/uploads/2020/07/item-label.png
 .hlt-tm-right, トップメニュー右寄せ
 .hlt-top-menu.hlt-tm-small, トップメニュー小
 .hlt-tm-right.hlt-tm-small トップメニュー小右寄せ
-*/
+*/ 
 .hlt-top-menu .item-label, .hlt-tm-right .item-label {
     border-right: none;
     border-bottom: solid 5px #f3eee9;
     display: inline;
     padding: 0 7px 3px 7px;
+}
+.header-container-in.hlt-top-menu {
+    background-color: #fffcf9;
+    opacity: 0.95;
+}
+.header-container-in.hlt-top-menu #navi {
+    margin: 0.3em auto 1em;
 }
 .breadcrumb {
     color: #b1b0af;
