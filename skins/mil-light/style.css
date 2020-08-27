@@ -464,6 +464,11 @@ span.post-date {
 .hlt-top-menu #navi {
     background-color: transparent;
 }
+.header-container-in.hlt-top-menu {
+    background-color: #fffcf9;
+    opacity: 0.95;
+}
+
 /*
 以下のようなグローバルメニューになる
 https://wp-cocoon.com/wp-content/uploads/2020/07/item-label.png
