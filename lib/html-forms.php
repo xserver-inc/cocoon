@@ -1242,7 +1242,7 @@ if ( !function_exists( 'get_navi_entry_card_thumbnail_tag' ) ):
 function get_navi_entry_card_thumbnail_tag($image_attributes, $title){
   //後で消す
   // return '<img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">';
-  return get_original_image_tag(get_the_ID(),  $image_attributes[0], $image_attributes[1], $image_attributes[2], '"navi-entry-card--image widget-entry-card--image card-thumb', $title);
+  return get_original_image_tag(get_the_ID(),  $image_attributes[0], $image_attributes[1], $image_attributes[2], 'navi-entry-card-image widget-entry-card-image card-thumb', $title);
 }
 endif;
 
