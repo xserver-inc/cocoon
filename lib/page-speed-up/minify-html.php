@@ -358,6 +358,8 @@ function post_lazy_load_thumbnail_html($html, $post_id, $post_thumbnail_id, $siz
     //投稿のアイキャッチの場合は'thumb160'のような
     //文字列ではなく配列が入るので除外
     && !is_array($size)
+    //既に標準のLazy Loadが入っている場合は実行しない
+    && !includes_string($html, ' loading="lazy"')
   ) {
     $html = convert_all_lazy_load_tag($html);
   }
