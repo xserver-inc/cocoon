@@ -91,8 +91,8 @@ function fn_minify_css($input, $comment = 0, $quote = 2) {
 function fn_minify_css_union($input) {
     if (stripos($input, 'calc(') !== false) {
         // Keep important white–space(s) in `calc()`
-        $input = preg_replace_callback('#\b(calc\()\s*(.*?)\s*\)#i', function($m) {
-            return $m[1] . preg_replace('#\s+#', X, $m[2]) . ')';
+        $input = preg_replace_callback('#\bcalc(\(([^\(\)]+|(?1))*\))#i', function($m) {
+            return preg_replace('#\s+#', X, $m[0]);
         }, $input);
     }
     $input = preg_replace(array(
