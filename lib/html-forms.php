@@ -1239,10 +1239,10 @@ endif;
 
 //ナビカードサムネイルの取得
 if ( !function_exists( 'get_navi_entry_card_thumbnail_tag' ) ):
-function get_navi_entry_card_thumbnail_tag($image_attributes, $title){
+function get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class){
   //後で消す
   // return '<img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">';
-  return get_original_image_tag(get_the_ID(),  $image_attributes[0], $image_attributes[1], $image_attributes[2], 'navi-entry-card-image widget-entry-card-image card-thumb', $title);
+  return get_original_image_tag(get_the_ID(),  $image_attributes[0], $image_attributes[1], $image_attributes[2], $class, $title);
 }
 endif;
 
@@ -1428,6 +1428,8 @@ function get_widget_entry_card_link_tag($atts){
     'ribbon_no' => null,
     'type' => null,
     'classes' => null,
+    'object' => 'post',
+    'object_id' => null,
   ), $atts));
   $class_text = null;
   if (isset($classes[0]) && !empty($classes[0])) {
@@ -1442,7 +1444,22 @@ function get_widget_entry_card_link_tag($atts){
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php
         if (is_widget_navi_entry_card_prefix($prefix)) {
-          echo get_navi_entry_card_thumbnail_tag($image_attributes, $title);
+          $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
+          if ($object === 'post') {
+            if ($type === ET_DEFAULT) {
+              $size = THUMB120;
+            } else {
+              $size = THUMB320;
+            }
+            $attr = array();
+            $attr['class'] = $class;
+
+            echo get_the_post_thumbnail( $object_id, $size, $attr );
+          } else {
+            //NO IMAGEの場合
+            $class = 'no-image '.$class;
+            echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class);
+          }
         } else {
           echo get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type);
         }

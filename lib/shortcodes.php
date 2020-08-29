@@ -554,6 +554,7 @@ function get_navi_card_list_tag($atts){
   if (!$menu_items) {
     return;
   }
+  // _v($menu_items);
 
   foreach ($menu_items as $menu):
     //画像情報の取得
@@ -563,6 +564,8 @@ function get_navi_card_list_tag($atts){
     $title = $menu->title;
     $snippet = $menu->description;
     $classes = $menu->classes;
+    $object = $menu->object;
+    $object_id = $menu->object_id;
     $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
     //アイテムタグの取得
@@ -575,6 +578,8 @@ function get_navi_card_list_tag($atts){
       'ribbon_no' => $ribbon_no,
       'type' => $type,
       'classes' => $classes,
+      'object' => $object,
+      'object_id' => $object_id,
     );
     $tag .= get_widget_entry_card_link_tag($atts);
 
