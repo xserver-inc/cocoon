@@ -349,24 +349,24 @@ endif;
 
 //サムネイル画像のLazy Load置換
 // add_filter('post_thumbnail_html', 'post_lazy_load_thumbnail_html', 10, 5);
-if ( !function_exists( 'post_lazy_load_thumbnail_html' ) ):
-function post_lazy_load_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr){
-  // _v($html);
-  //WordPress5.5のLazy Load環境が有効か
-  if (is_wp_lazy_load_valid()
-    //管理画面では動作させない
-    && !is_admin()
-    //投稿のアイキャッチの場合は'thumb160'のような
-    //文字列ではなく配列が入るので除外
-    && !is_array($size)
-    //既に標準のLazy Loadが入っている場合は実行しない
-    && !includes_string($html, ' loading="lazy"')
-  ) {
-    $html = convert_all_lazy_load_tag($html);
-  }
-  return $html;
-}
-endif;
+// if ( !function_exists( 'post_lazy_load_thumbnail_html' ) ):
+// function post_lazy_load_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr){
+//   // _v($html);
+//   //WordPress5.5のLazy Load環境が有効か
+//   if (is_wp_lazy_load_valid()
+//     //管理画面では動作させない
+//     && !is_admin()
+//     //投稿のアイキャッチの場合は'thumb160'のような
+//     //文字列ではなく配列が入るので除外
+//     && !is_array($size)
+//     //既に標準のLazy Loadが入っている場合は実行しない
+//     && !includes_string($html, ' loading="lazy"')
+//   ) {
+//     $html = convert_all_lazy_load_tag($html);
+//   }
+//   return $html;
+// }
+// endif;
 
 // //アバター画像のLazy Load置換
 // add_filter('get_avatar', 'get_avatar_lazy_load_thumbnail_html');

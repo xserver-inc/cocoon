@@ -288,11 +288,13 @@ endif;
 if ( !function_exists( 'get_original_image_tag' ) ):
 function get_original_image_tag($post_id, $image_url, $width, $height, $class, $alt = null){
   $html = '<img src="'.esc_url($image_url).'" alt="'.esc_attr($alt).'" class="'.esc_attr($class).'" width="'.esc_attr($width).'" height="'.esc_attr($height).'" />';
-  $post_thumbnail_id = null;
-  $size ='no-image' ;
-  $attr = array();
-  $attr['class'] = $class;
-  $attr['alt'] = $alt;
-  return apply_filters('post_thumbnail_html', $html, $post_id, $post_thumbnail_id, $size, $attr);
+  $html = convert_all_lazy_load_tag($html);
+  return $html;
+  // $post_thumbnail_id = null;
+  // $size ='no-image' ;
+  // $attr = array();
+  // $attr['class'] = $class;
+  // $attr['alt'] = $alt;
+  // return apply_filters('post_thumbnail_html', $html, $post_id, $post_thumbnail_id, $size, $attr);
 }
 endif;
