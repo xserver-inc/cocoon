@@ -3376,11 +3376,18 @@ function get_postmeta_value_enable_post_ids($meta_key){
 }
 endif;
 
+//
+if ( !function_exists( 'is_wp_5_5_or_over' ) ):
+function is_wp_5_5_or_over(){
+  return get_bloginfo('version') >= '5.5';
+}
+endif;
+
 //WordPress5.5からのLazy Loadが有効な環境かどうか
 if ( !function_exists( 'is_wp_lazy_load_valid' ) ):
 function is_wp_lazy_load_valid(){
   global $is_safari;
-  return (get_bloginfo('version') >= '5.5') && !$is_safari;
+  return is_wp_5_5_or_over() && !$is_safari;
 }
 endif;
 
