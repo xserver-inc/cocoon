@@ -1442,9 +1442,10 @@ function get_widget_entry_card_link_tag($atts){
     <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
-        <?php
+        <?php //$prefixがnaviのとき
         if (is_widget_navi_entry_card_prefix($prefix)) {
           $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
+          //投稿の場合
           if ($object === 'post') {
             if ($type === ET_DEFAULT) {
               $size = THUMB120;
@@ -1456,11 +1457,18 @@ function get_widget_entry_card_link_tag($atts){
 
             echo get_the_post_thumbnail( $object_id, $size, $attr );
           } else {
-            //NO IMAGEの場合
-            $class = 'no-image '.$class;
+            if ($object === 'category') {
+              //カテゴリーの場合
+              $class = 'category-image '.$class;
+            } else {
+              //NO IMAGEの場合
+              $class = 'no-image '.$class;
+            }
+
             echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class);
           }
         } else {
+          //新着記事・関連記事など
           echo get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type);
         }
         ?>
