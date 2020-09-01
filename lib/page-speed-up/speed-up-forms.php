@@ -166,11 +166,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_LAZY_LOAD_ENABLE , is_lazy_load_enable(), __( 'Lazy Loadを有効にする', THEME_NAME ));
-            generate_tips_tag(__( 'WordPress 5.5からLazy Loadが標準機能になりました。', THEME_NAME ).__('この機能を有効化すると標準Lazy Loadではカバーしていないエリアの画像の対応をします。', THEME_NAME ).__('例：新着・人気・カルーセル・おすすめカード・ナビカードのサムネイル等', THEME_NAME ));
+            generate_tips_tag(__( 'WordPress 5.5からLazy Loadが標準機能になりました。', THEME_NAME ).__('この機能を有効化すると標準Lazy Loadではカバーしていないエリアの画像の対応をします。', THEME_NAME ).__('例：新着・人気・カルーセル・おすすめカード・ナビカードのNO IMAGEサムネイル等', THEME_NAME ));
 
 
             generate_textarea_tag(OP_LAZY_LOAD_EXCLUDE_LIST, get_lazy_load_exclude_list(), __( '除外文字列を入力', THEME_NAME ) , 3);
             generate_tips_tag(__( 'Lazy Loadを行いたくない場合は、該当するimgタグに含まれている文字列を改行区切りで入力してください。', THEME_NAME ).__( 'ただしWordPress標準のLazy Loadの除外には対応していません。', THEME_NAME ));
+            generate_tips_tag(__( '今後のWordPressの動向次第では、CocoonのLazy Load機能は廃止するかもしれません。', THEME_NAME ));
             ?>
           </td>
         </tr>
