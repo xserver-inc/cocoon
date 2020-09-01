@@ -20,7 +20,7 @@ $list_classes = get_index_list_classes();
   <input id="index-tab-<?php echo $number; ?>" type="radio" name="tab_item">
   <?php endfor; ?>
   <div class="index-tab-buttons">
-    <label class="index-tab-button" for="index-tab-1"><?php _e('新着記事', THEME_NAME); ?></label>
+    <label class="index-tab-button" for="index-tab-1"><?php echo apply_filters('new_entries_caption', __( '新着記事', THEME_NAME )); ?></label>
     <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
     $number = $i + 2;
     $cat_id = $cat_ids[$i]; ?>

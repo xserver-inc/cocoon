@@ -13,7 +13,7 @@ $count = get_index_new_entry_card_count();
 <div class="list-new-entries">
   <h1 class="list-new-entries-title list-title">
     <span class="list-title-in">
-      <?php _e('新着記事', THEME_NAME); ?>
+      <?php echo apply_filters('new_entries_caption', __( '新着記事', THEME_NAME )); ?>
     </span>
   </h1>
   <div class="<?php echo get_index_list_classes(); ?>">
