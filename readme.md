@@ -111,12 +111,12 @@ CSS参考
 プルリクエストでのご協力
 ------
 
-[technote-space](https://github.com/technote-space)
+[technote-space](https://github.com/technote-space) 様
 
-[31o3](https://github.com/31o3)
+[31o3](https://github.com/31o3) 様
 
-[Daisuke Sato](https://github.com/Tiryoh)
+[Daisuke Sato](https://github.com/Tiryoh) 様
 
-[Yukihiko Shinoda](https://github.com/yukihiko-shinoda)
+[Yukihiko Shinoda](https://github.com/yukihiko-shinoda) 様
 
-[stedplay](https://github.com/stedplay)
+[stedplay](https://github.com/stedplay) 様
