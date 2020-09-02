@@ -118,3 +118,5 @@ CSS参考
 [Daisuke Sato](https://github.com/Tiryoh)
 
 [Yukihiko Shinoda](https://github.com/yukihiko-shinoda)
+
+[stedplay](https://github.com/stedplay)
