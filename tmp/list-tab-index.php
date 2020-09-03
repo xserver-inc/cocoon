@@ -51,7 +51,7 @@ $list_classes = get_index_list_classes();
                 //表示件数（WordPressの表示設定に準拠）
                 'posts_per_page' => get_option_posts_per_page(),
                 //投稿日順か更新日順か
-                'orderby' => is_get_index_sort_orderby_modified() ? get_index_sort_orderby() : 'date',
+                'orderby' => !is_index_sort_orderby_date() ? get_index_sort_orderby() : 'date',
                 //降順
                 'order' => 'DESC',
                 //カテゴリーをIDで指定
