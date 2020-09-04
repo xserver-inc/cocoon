@@ -427,25 +427,25 @@ function sitemap_shortcode( $atts, $content = null ) {
   ob_start();?>
   <div class="sitemap">
     <?php if ($page): ?>
-    <h2><?php _e( '固定ページ', THEME_NAME ) ?></h2>
+    <h2><?php echo apply_filters('sitemap_page_caption', __( '固定ページ', THEME_NAME )); ?></h2>
     <ul>
       <?php wp_list_pages('title_li='); ?>
     </ul>
     <?php endif; ?>
     <?php if ($single): ?>
-    <h2><?php _e( '記事一覧', THEME_NAME ) ?></h2>
+    <h2><?php echo apply_filters('sitemap_single_caption', __( '投稿一覧', THEME_NAME )); ?></h2>
     <ul>
       <?php wp_get_archives( 'type=alpha' ); ?>
     </ul>
     <?php endif; ?>
     <?php if ($category): ?>
-    <h2><?php _e( 'カテゴリー', THEME_NAME ) ?></h2>
+    <h2><?php echo apply_filters('sitemap_category_caption', __( 'カテゴリー', THEME_NAME )); ?></h2>
     <ul>
       <?php wp_list_categories('title_li='); ?>
     </ul>
     <?php endif; ?>
     <?php if ($archive): ?>
-    <h2><?php _e( '月別アーカイブ', THEME_NAME ) ?></h2>
+    <h2><?php  echo apply_filters('sitemap_archive_caption', __( '月別アーカイブ', THEME_NAME )); ?></h2>
     <ul>
       <?php wp_get_archives('type=monthly'); ?>
     </ul>
