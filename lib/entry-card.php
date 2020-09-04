@@ -100,7 +100,7 @@ function get_entry_card_no_image_tag($count){
       }
       break;
     case 'big_card':
-      $thumbnail_size = $thumbnail_tag_large;
+      $thumbnail_tag = $thumbnail_tag_large;
       break;
     default://エントリーカード
       $thumbnail_tag = $thumbnail_tag_320;
