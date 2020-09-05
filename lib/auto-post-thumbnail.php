@@ -52,9 +52,11 @@ function fetch_thumbnail_image($matches, $key, $post_content, $post_id){
 
   //処理のためのURL取得
   $imageUrl = $matches[1][$key];
+  // _v($imageUrl);
 
   //ファイル名の取得
   $filename = substr($imageUrl, (strrpos($imageUrl, '/'))+1);
+  // _v($filename);
 
   if (!(($uploads = wp_upload_dir(current_time('mysql')) ) && false === $uploads['error'])){
     return null;
@@ -62,6 +64,7 @@ function fetch_thumbnail_image($matches, $key, $post_content, $post_id){
 
   //ユニーク（一意）ファイル名を生成
   $filename = wp_unique_filename( $uploads['path'], $filename );
+  // _v($filename);
 
   //ファイルをアップロードディレクトリに移動
   $new_file = $uploads['path'] . "/$filename";
@@ -69,7 +72,7 @@ function fetch_thumbnail_image($matches, $key, $post_content, $post_id){
   if (!ini_get('allow_url_fopen')) {
     return null;
   } else {
-    $file_data = @wp_filesystem_get_contents($imageUrl);
+    $file_data = @wp_filesystem_get_contents($imageUrl, true);
   }
 
   if (!$file_data) {
@@ -173,7 +176,8 @@ function auto_post_thumbnail_image($post_id) {
   if (empty($matches[0])) {
     preg_match('%(?:youtube\.com/(?:user/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $the_post[0]->post_content, $match);
     if (!empty($match[1])) {
-      $matches=array(); $matches[0]=$matches[1]=array('http://img.youtube.com/vi/'.$match[1].'/mqdefault.jpg');
+      $matches = array();
+      $matches[0] = $matches[1] = array('https://i.ytimg.com/vi/'.$match[1].'/maxresdefault.jpg');
     }
   }
 
@@ -225,6 +229,7 @@ function auto_post_thumbnail_image($post_id) {
 
       //それでもサムネイルIDが見つからなかったら、画像をURLから取得する
       if (!$thumb_id) {
+        // _v($matches);
         $thumb_id = fetch_thumbnail_image($matches, $key, $the_post[0]->post_content, $post_id);
       }
 
