@@ -1419,6 +1419,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-form .required { color: red; }
 .admin-settings .demo .comment-form .logged-in-as { margin: 0.2em; font-size: 0.8em; }
 .admin-settings .demo .comment-area.website-hide .comment-form-url { display: none; }
+.admin-settings .demo .comment-edit-link { margin-left: 0.4em; }
 .admin-settings .demo .comment-reply-link { font-size: 14px; }
 .admin-settings .demo .comment-page-link { text-align: center; }
 .admin-settings .demo .comment-page-link .page-numbers { width: auto; height: auto; padding: 6px 12px; line-height: normal; }
@@ -3013,6 +3014,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-form .required { color: red; }
 .admin-settings .demo .comment-form .logged-in-as { margin: 0.2em; font-size: 0.8em; }
 .admin-settings .demo .comment-area.website-hide .comment-form-url { display: none; }
+.admin-settings .demo .comment-edit-link { margin-left: 0.4em; }
 .admin-settings .demo .comment-reply-link { font-size: 14px; }
 .admin-settings .demo .comment-page-link { text-align: center; }
 .admin-settings .demo .comment-page-link .page-numbers { width: auto; height: auto; padding: 6px 12px; line-height: normal; }

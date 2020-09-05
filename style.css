@@ -5911,6 +5911,10 @@ div.search-form {
   display: none;
 }
 
+.comment-edit-link {
+  margin-left: 0.4em;
+}
+
 .comment-reply-link {
   font-size: 14px;
 }
