@@ -3946,6 +3946,7 @@ div.search-form {
   color: #fff;
   text-align: center;
   width: 140px;
+  position: relative;
 }
 
 .search-form div.sbtn:before {
