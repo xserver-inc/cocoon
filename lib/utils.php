@@ -2818,10 +2818,11 @@ if ( !function_exists( 'get_editor_key_color' ) ):
 function get_editor_key_color(){
   $site_key_color = get_site_key_color();
   if (!empty($site_key_color)) {
-    return $site_key_color;
+    $color = $site_key_color;
   } else {
-    return DEFAULT_EDITOR_KEY_COLOR;
+    $color = DEFAULT_EDITOR_KEY_COLOR;
   }
+  return apply_filters('get_editor_key_color', $color);
 }
 endif;
 
