@@ -80,33 +80,31 @@
   //モバイルボタンが固定じゃない場合
   if (cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1) {
     //ヘッダーモバイルメニュー
-    var headerMenu = $('.mobile-header-menu-buttons');
-    var headerHight = headerMenu.outerHeight();
+    var headerMenu = $(".mobile-header-menu-buttons");
     var headerStartPos = 0;
     $(window).scroll(function() {
       var headerCurrentPos = $(this).scrollTop();
       if ( headerCurrentPos > headerStartPos ) {
         if(headerCurrentPos >= 100) {
-          headerMenu.css('top', '-' + headerHight + 'px');
+          headerMenu.css("transform", "translateY(-100%)");
         }
       } else {
-        headerMenu.css('top', 0);
+        headerMenu.css("transform", "translateY(0)");
       }
       headerStartPos = headerCurrentPos;
     });
 
     //フッターモバイルメニュー
     var footerMenu = $(".mobile-footer-menu-buttons");
-    var footerHeight = footerMenu.outerHeight();
     var footerStartPos = 0;
     $(window).scroll(function(){
       var footerCurrentPos = $(this).scrollTop();
       if (footerCurrentPos > footerStartPos) {
         if(footerCurrentPos >= 100) {
-          footerMenu.css("bottom", "-" + footerHeight + "px");
+          footerMenu.css("transform", "translateY(100%)");
         }
       } else {
-        footerMenu.css("bottom", 0);
+        footerMenu.css("transform", "translateY(0)");
       }
       footerStartPos = footerCurrentPos;
     });
