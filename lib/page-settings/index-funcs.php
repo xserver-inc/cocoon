@@ -303,7 +303,7 @@ function get_category_index_list_entry_card_tag($categories, $count){
   if (!is_index_sort_orderby_date()) {
     //投稿日順じゃないときは設定値を挿入する
     $args += array(
-      'orderby' => is_get_index_sort_orderby(),
+      'orderby' => get_index_sort_orderby(),
     );
   }
 
