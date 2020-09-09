@@ -9937,6 +9937,10 @@ twitter-widget {
 .fixed-header .navi-in .sub-menu {
   display: none;
 }
+.fixed-header .site-logo-image {
+  height: auto;
+  width: auto;
+}
 
 .click-prevention {
   pointer-events: none;

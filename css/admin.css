@@ -3754,6 +3754,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fixed-header { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25); }
 .admin-settings .demo .fixed-header .header .header-in { min-height: auto; }
 .admin-settings .demo .fixed-header .has-sub, .admin-settings .demo .fixed-header .navi-in .sub-menu { display: none; }
+.admin-settings .demo .fixed-header .site-logo-image { height: auto; width: auto; }
 .admin-settings .demo .click-prevention { pointer-events: none; }
 .admin-settings .demo _:-ms-lang(x), .admin-settings .demo .mc-circle { background-clip: border-box; }
 .admin-settings .demo .blogcard, .admin-settings .demo .ecb-entry-border .entry-card-wrap, .admin-settings .demo .page-numbers, .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn, .admin-settings .demo .index-tab-buttons .index-tab-button, .admin-settings .demo .border-square a, .admin-settings .demo .author-box { border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6; }
