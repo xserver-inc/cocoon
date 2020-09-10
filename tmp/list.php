@@ -12,6 +12,13 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ////////////////////////////
 if ( is_category() && !is_paged() ){
   ////////////////////////////
+  //カテゴリページのパンくずリスト
+  ////////////////////////////
+  if (is_single_breadcrumbs_position_main_top()){
+    get_template_part('tmp/breadcrumbs');
+  }
+
+  ////////////////////////////
   //カテゴリページのコンテンツ
   ////////////////////////////
   get_template_part('tmp/category-content');
@@ -117,6 +124,13 @@ if (is_sns_follow_buttons_visible() && !is_paged() &&
 ////////////////////////////
 if (is_front_page_type_index() || !is_front_index_page()) {
   get_template_part('tmp/pagination');
+}
+
+////////////////////////////
+//カテゴリページのパンくずリスト
+////////////////////////////
+if (is_category() && is_single_breadcrumbs_position_main_bottom()){
+  get_template_part('tmp/breadcrumbs');
 }
 
 ////////////////////////////

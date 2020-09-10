@@ -47,7 +47,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <?php endif; ?>
 
   <?php //投稿パンくずリストがメイン手前の場合
-  if (is_single() && is_single_breadcrumbs_position_main_before()){
+  if ((is_single() || is_category()) && is_single_breadcrumbs_position_main_before()){
     get_template_part('tmp/breadcrumbs');
   } ?>
 
