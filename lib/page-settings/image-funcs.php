@@ -286,7 +286,7 @@ endif;
 
 //オリジナルサムネイルタグの取得
 if ( !function_exists( 'get_original_image_tag' ) ):
-function get_original_image_tag($post_id, $image_url, $width, $height, $class, $alt = null){
+function get_original_image_tag($image_url, $width, $height, $class, $alt = null){
   $html = '<img src="'.esc_url($image_url).'" alt="'.esc_attr($alt).'" class="'.esc_attr($class).'" width="'.esc_attr($width).'" height="'.esc_attr($height).'" />';
   $html = convert_all_lazy_load_tag($html);
   return $html;

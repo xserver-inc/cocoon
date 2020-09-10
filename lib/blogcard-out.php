@@ -260,7 +260,7 @@ function url_to_external_ogp_blogcard_tag($url){
   //後で消す
   // $favicon_tag = '<div class="blogcard-favicon external-blogcard-favicon"><img src="//www.google.com/s2/favicons?domain='.$domain.'" class="blogcard-favicon-image" alt="" width="16" height="16" /></div>';
   $favicon_tag = '<div class="blogcard-favicon external-blogcard-favicon">'.
-    get_original_image_tag(get_the_ID(), 'https://www.google.com/s2/favicons?domain='.$domain, 16, 16, 'blogcard-favicon-image external-blogcard-favicon-image').
+    get_original_image_tag('https://www.google.com/s2/favicons?domain='.$domain, 16, 16, 'blogcard-favicon-image external-blogcard-favicon-image').
   '</div>';
 
   //サイトロゴ
@@ -272,7 +272,7 @@ function url_to_external_ogp_blogcard_tag($url){
   if ( $image ) {
     //後で消す
     // $thumbnail = '<img src="'.esc_url($image).'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="'.THUMB160WIDTH.'" height="'.THUMB160HEIGHT.'" />';
-    $thumbnail = get_original_image_tag(get_the_ID(), $image, THUMB160WIDTH, THUMB160HEIGHT, 'blogcard-thumb-image external-blogcard-thumb-image');
+    $thumbnail = get_original_image_tag($image, THUMB160WIDTH, THUMB160HEIGHT, 'blogcard-thumb-image external-blogcard-thumb-image');
   }
 
   //取得した情報からブログカードのHTMLタグを作成

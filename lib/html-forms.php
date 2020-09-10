@@ -975,7 +975,7 @@ function generate_popular_entries_tag($atts){
       } else {
         //後で消す
         //$post_thumbnail_img = '<img src="'.esc_url($no_thumbnail_url).'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
-        $post_thumbnail_img = get_original_image_tag($post->ID, $no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
+        $post_thumbnail_img = get_original_image_tag($no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
       }
 
       $pv_tag = null;
@@ -1242,7 +1242,7 @@ if ( !function_exists( 'get_navi_entry_card_thumbnail_tag' ) ):
 function get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class){
   //後で消す
   // return '<img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">';
-  return get_original_image_tag(get_the_ID(),  $image_attributes[0], $image_attributes[1], $image_attributes[2], $class, $title);
+  return get_original_image_tag($image_attributes[0], $image_attributes[1], $image_attributes[2], $class, $title);
 }
 endif;
 
@@ -1263,7 +1263,7 @@ function get_widget_entry_card_no_image_tag($type, $prefix){
   //後で消す
   // $tag = '<img src="'.esc_url($url).'" alt="" class="no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
 
-  $tag = get_original_image_tag(get_the_ID(), $url, $w, $h, 'no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
+  $tag = get_original_image_tag($url, $w, $h, 'no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
   return $tag;
 }
 endif;
