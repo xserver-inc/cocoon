@@ -96,7 +96,7 @@ function simple_thread_comment_custom_callback($comment, $args, $depth) {
     $add_below = 'div-comment';
   } ?>
   <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
-    <div id="st-comment-<?php comment_ID(); ?>" class="st-comment-body article">
+    <div id="div-comment-<?php comment_ID(); ?>" class="st-comment-body article">
 
       <div class="st-comment-meta st-commentmetadata">
         <span class="st-comment-author vcard">
