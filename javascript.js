@@ -103,7 +103,9 @@
       var footerCurrentPos = $(this).scrollTop();
       if (footerCurrentPos > footerStartPos) {
         if(footerCurrentPos >= 100) {
-          footerMenu.css("bottom", "-" + footerHeight + "px");
+          // footerMenu.css("bottom", "-" + footerHeight + "px");
+          // footerMenu.css("bottom","-"+footerHeight+"+env(safe-area-inset-bottom)px");
+          footerMenu.css("bottom","calc( -1 * (env(safe-area-inset-bottom) + " + footerHeight + "px) )");
         }
       } else {
         footerMenu.css("bottom", 0);
