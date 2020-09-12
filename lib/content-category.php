@@ -200,6 +200,16 @@ function get_the_category_meta_keywords($cat_id = null){
 }
 endif;
 
+//noindexの取得
+if ( !function_exists( 'get_the_category_noindex' ) ):
+function get_the_category_noindex($cat_id = null){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
+  return get_term_meta( $cat_id, 'the_category_noindex', true );
+}
+endif;
+
 //拡張カテゴリ編集フォーム
 add_action ( 'category_edit_form_fields', 'extra_category_fields');
 if ( !function_exists( 'extra_category_fields' ) ):
@@ -279,6 +289,18 @@ function extra_category_fields( $cat ) {
     <p class="description"><?php _e( 'カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
+<tr class="form-field term-noindex-wrap">
+  <th><label for="noindex"><?php _e( 'noindex', THEME_NAME ) ?></label></th>
+  <td>
+    <?php
+    $the_category_noindex = get_the_category_noindex($cat_id);
+
+    //noindex
+    generate_checkbox_tag('the_category_noindex' , $the_category_noindex, __( 'インデックスしない（noindex）', THEME_NAME ));
+    generate_howto_tag(__( 'このページが検索エンジンにインデックスされないようにメタタグを設定します。', THEME_NAME ).__( 'Cocoon設定の「SEO」タブにあるカテゴリーのnoindex設定が優先されます。', THEME_NAME ), 'the_category_noindex');
+    ?>
+  </td>
+</tr>
 <?php
 }
 endif;
@@ -323,6 +345,9 @@ function save_extra_category_fileds( $term_id ) {
     $the_category_meta_keywords = $_POST['the_category_meta_keywords'];
     update_term_meta( $cat_id, 'the_category_meta_keywords', $the_category_meta_keywords );
   }
+
+  $the_category_noindex = !empty($_POST['the_category_noindex']) ? 1 : 0;
+  update_term_meta( $cat_id, 'the_category_noindex', $the_category_noindex );
 
   //旧バージョンの値を削除
   $key = get_the_category_meta_key($cat_id);

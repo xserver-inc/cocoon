@@ -288,14 +288,40 @@ endif;
 add_filter('wp_sitemaps_taxonomies_query_args', 'wp_sitemaps_taxonomies_query_args_noindex_custom');
 if ( !function_exists( 'wp_sitemaps_taxonomies_query_args_noindex_custom' ) ):
 function wp_sitemaps_taxonomies_query_args_noindex_custom($args){
-  if (($args['taxonomy'] == 'category') && is_category_page_noindex()) {
-    //ありえないIDのカテゴリだけ表示する＝全て表示しない
-    $args['include'] = array(999999999999);
+  $category_ids = get_noindex_category_ids();
+  if (($args['taxonomy'] == 'category') && $category_ids) {
+    $args['exclude'] = $category_ids;
   }
-  if (($args['taxonomy'] == 'post_tag') && is_tag_page_noindex()) {
-    //ありえないIDのタグだけ表示する＝全て表示しない
-    $args['include'] = array(999999999999);
-  }
+  // if (($args['taxonomy'] == 'post_tag') && is_tag_page_noindex()) {
+  //   //ありえないIDのタグだけ表示する＝全て表示しない
+  //   $args['include'] = array(999999999999);
+  // }
   return $args;
 }
 endif;
+
+//サイトマップにカテゴリー・タグのnoindex設定を反映させる
+add_filter('wp_sitemaps_taxonomies', 'wp_sitemaps_taxonomies_custum');
+function wp_sitemaps_taxonomies_custum( $taxonomies ) {
+  //サイトマップにカテゴリーを出力しない
+  if (is_category_page_noindex()) {
+    unset( $taxonomies['category'] );
+  }
+
+  //サイトマップにタグを出力しない
+  if (is_tag_page_noindex()) {
+    unset( $taxonomies['post_tag'] );
+  }
+
+  return $taxonomies;
+}
+
+//サイトマップにその他のアーカイブのnoindex設定を反映する
+add_filter('wp_sitemaps_add_provider', 'wp_sitemaps_add_provider_custom',  10, 2);
+function wp_sitemaps_add_provider_custom( $provider, $name ) {
+    if ( is_other_archive_page_noindex() && 'users' === $name ) {
+        return false;
+    }
+
+    return $provider;
+}

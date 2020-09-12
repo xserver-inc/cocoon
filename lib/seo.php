@@ -120,7 +120,7 @@ endif;
 if ( !function_exists( 'is_noindex_page' ) ):
 function is_noindex_page(){
   $is_noindex = (is_archive() && !is_category() && !is_tag() && !is_tax() && is_other_archive_page_noindex()) || //アーカイブページはインデックスに含めない
-  ( is_category()  && is_category_page_noindex() )  || //カテゴリページ
+  ( is_category() && (is_category_page_noindex() || get_the_category_noindex()) )  || //カテゴリページ
   ( is_category() && is_paged() && is_paged_category_page_noindex() )  || //カテゴリページ（2ページ目以降）
   ( is_tax() && is_tag_page_noindex() ) || //タクソノミ
   ( is_tag()  && is_tag_page_noindex() ) || //タグページ（2ページ目以降）

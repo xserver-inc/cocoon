@@ -3368,10 +3368,21 @@ function is_amazon_site_page($URI){
 }
 endif;
 
+//投稿の個別noindex idをすべて取得する
 if ( !function_exists( 'get_postmeta_value_enable_post_ids' ) ):
 function get_postmeta_value_enable_post_ids($meta_key){
   global $wpdb;
   $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM {$wpdb->prefix}postmeta WHERE (meta_key = '{$meta_key}') AND (meta_value = 1)");
+  $result = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
+  return $result;
+}
+endif;
+
+//カテゴリーの個別noindex idをすべて取得する
+if ( !function_exists( 'get_postmeta_value_enable_category_ids' ) ):
+function get_categorymeta_value_enable_post_ids($meta_key){
+  global $wpdb;
+  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(term_id) AS ids FROM {$wpdb->prefix}termmeta WHERE (meta_key = '{$meta_key}') AND (meta_value = 1)");
   $result = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
   return $result;
 }
