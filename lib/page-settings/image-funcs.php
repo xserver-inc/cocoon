@@ -215,8 +215,13 @@ function get_no_image_large_url(){
 endif;
 if ( !function_exists( 'get_no_image_320x180_url' ) ):
 function get_no_image_320x180_url(){
+  // $cat_url = null;
+  // $cat = get_the_category();
+  // if ($cat && isset($cat[0])) {
+  //   $cat_url = get_the_category_eye_catch_url($cat[0]->cat_ID);
+  // }
   if ($no_image_url = get_no_image_url()) {
-    $res = get_image_sized_url(get_no_image_url(), THUMB320WIDTH, THUMB320HEIGHT);
+    $res = get_image_sized_url($no_image_url, THUMB320WIDTH, THUMB320HEIGHT);
   } else {
     $res = NO_IMAGE_320;
   }
