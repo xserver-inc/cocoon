@@ -288,14 +288,17 @@ endif;
 add_filter('wp_sitemaps_taxonomies_query_args', 'wp_sitemaps_taxonomies_query_args_noindex_custom');
 if ( !function_exists( 'wp_sitemaps_taxonomies_query_args_noindex_custom' ) ):
 function wp_sitemaps_taxonomies_query_args_noindex_custom($args){
+  //カテゴリーの除外
   $category_ids = get_noindex_category_ids();
   if (($args['taxonomy'] == 'category') && $category_ids) {
     $args['exclude'] = $category_ids;
   }
-  // if (($args['taxonomy'] == 'post_tag') && is_tag_page_noindex()) {
-  //   //ありえないIDのタグだけ表示する＝全て表示しない
-  //   $args['include'] = array(999999999999);
-  // }
+
+  //タグの除外
+  $tag_ids = get_noindex_tag_ids();
+  if (($args['taxonomy'] == 'post_tag') && $tag_ids) {
+    $args['exclude'] = $tag_ids;
+  }
   return $args;
 }
 endif;

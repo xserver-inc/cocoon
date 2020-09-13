@@ -167,6 +167,16 @@ function get_the_tag_meta_keywords($tag_id = null){
 }
 endif;
 
+//noindexの取得
+if ( !function_exists( 'get_the_tag_noindex' ) ):
+function get_the_tag_noindex($tag_id = null){
+  if (!$tag_id) {
+    $tag_id = get_query_var('tag_id');
+  }
+  return get_term_meta( $tag_id, 'the_tag_noindex', true );
+}
+endif;
+
 //拡張タグ編集フォーム
 add_action ( 'edit_tag_form_fields', 'extra_tag_fields');
 if ( !function_exists( 'extra_tag_fields' ) ):
@@ -222,6 +232,18 @@ function extra_tag_fields( $tag ) {
     <p class="description"><?php _e( 'タグページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
+<tr class="form-field term-noindex-wrap">
+  <th><label for="noindex"><?php _e( 'noindex', THEME_NAME ) ?></label></th>
+  <td>
+    <?php
+    $the_tag_noindex = get_the_tag_noindex($tag_id);
+
+    //noindex
+    generate_checkbox_tag('the_tag_noindex' , $the_tag_noindex, __( 'インデックスしない（noindex）', THEME_NAME ));
+    generate_howto_tag(__( 'このページが検索エンジンにインデックスされないようにメタタグを設定します。', THEME_NAME ).__( 'Cocoon設定の「SEO」タブにあるカテゴリーのnoindex設定が優先されます。', THEME_NAME ), 'the_tag_noindex');
+    ?>
+  </td>
+</tr>
 <?php
 }
 endif;
@@ -256,6 +278,9 @@ function save_extra_tag_fileds( $term_id ) {
     $the_tag_meta_keywords = $_POST['the_tag_meta_keywords'];
     update_term_meta( $tag_id, 'the_tag_meta_keywords', $the_tag_meta_keywords );
   }
+
+  $the_tag_noindex = !empty($_POST['the_tag_noindex']) ? 1 : 0;
+  update_term_meta( $tag_id, 'the_tag_noindex', $the_tag_noindex );
 
   //旧バージョンの値を削除
   $key = get_the_tag_meta_key($tag_id);
