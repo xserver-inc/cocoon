@@ -210,22 +210,17 @@ function get_no_image_large_url(){
   } else {
     $res = NO_IMAGE_LARGE;
   }
-  return $res;
+  return apply_filters('get_sized_no_image_url', $res, null, null);
 }
 endif;
 if ( !function_exists( 'get_no_image_320x180_url' ) ):
 function get_no_image_320x180_url(){
-  // $cat_url = null;
-  // $cat = get_the_category();
-  // if ($cat && isset($cat[0])) {
-  //   $cat_url = get_the_category_eye_catch_url($cat[0]->cat_ID);
-  // }
   if ($no_image_url = get_no_image_url()) {
     $res = get_image_sized_url($no_image_url, THUMB320WIDTH, THUMB320HEIGHT);
   } else {
     $res = NO_IMAGE_320;
   }
-  return $res;
+  return apply_filters('get_sized_no_image_url', $res, THUMB320WIDTH, THUMB320HEIGHT);
 }
 endif;
 if ( !function_exists( 'get_no_image_320x180_file' ) ):
@@ -240,7 +235,7 @@ function get_no_image_160x90_url(){
   } else {
     $res = NO_IMAGE_160;
   }
-  return $res;
+  return apply_filters('get_sized_no_image_url', $res, THUMB160WIDTH, THUMB160HEIGHT);
 }
 endif;
 if ( !function_exists( 'get_no_image_160x90_file' ) ):
@@ -255,7 +250,7 @@ function get_no_image_120x68_url(){
   } else {
     $res = NO_IMAGE_120;
   }
-  return $res;
+  return apply_filters('get_sized_no_image_url', $res, THUMB120WIDTH, THUMB120HEIGHT);
 }
 endif;
 if ( !function_exists( 'get_no_image_120x68_file' ) ):
@@ -270,7 +265,7 @@ function get_no_image_150x150_url(){
   } else {
     $res = NO_IMAGE_150;
   }
-  return $res;
+  return apply_filters('get_sized_no_image_url', $res, THUMB150WIDTH, THUMB150HEIGHT);
 }
 endif;
 if ( !function_exists( 'get_no_image_150x150_file' ) ):
@@ -301,5 +296,23 @@ function get_original_image_tag($image_url, $width, $height, $class, $alt = null
   // $attr['class'] = $class;
   // $attr['alt'] = $alt;
   // return apply_filters('post_thumbnail_html', $html, $post_id, $post_thumbnail_id, $size, $attr);
+}
+endif;
+
+//アイキャッチ画像が存在しない場合はカテゴリーの画像を利用
+//画像サイズが存在しない場合は、[large]画像を使用
+add_filter('get_sized_no_image_url', 'get_categorized_no_image_url', 10, 3);
+if ( !function_exists( 'get_categorized_no_image_url' ) ):
+function get_categorized_no_image_url($url, $width = null, $height = null){
+  //サイズ指定がある場合はカテゴリーURLを取得
+  if ($width && $height) {
+    $cat_url = null;
+    $cat = get_the_category();
+    if ($cat && isset($cat[0])) {
+      $cat_url = get_the_category_eye_catch_url($cat[0]->cat_ID);
+      $url = get_image_sized_url($cat_url, $width, $height);
+    }
+  }
+  return $url;
 }
 endif;
