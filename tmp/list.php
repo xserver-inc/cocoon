@@ -22,7 +22,7 @@ if ( is_category() && !is_paged() ){
   //カテゴリページのコンテンツ
   ////////////////////////////
   get_template_part('tmp/category-content');
-} elseif ( is_tag() && !is_paged() ) {
+} elseif ( (is_tag() || is_tax()) && !is_paged() ) {
   get_template_part('tmp/tag-content');
 } elseif (!is_home()) {
   //それ以外

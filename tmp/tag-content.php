@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //タグIDの取得
-$tag_id = get_query_var('tag_id');
+$tag_id = get_queried_object_id();
 $eye_catch_url = get_the_tag_eye_catch_url($tag_id);
 $content = get_the_tag_content($tag_id);
 if ($eye_catch_url || $content): ?>

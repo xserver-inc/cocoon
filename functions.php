@@ -107,7 +107,7 @@ function get_archive_chapter_title(){
       $chapter_title .= single_cat_title( $icon_font, false );
     }
   } elseif( is_tag() ) {//タグページの場合
-    $tag_id = get_query_var('tag_id');
+    $tag_id = get_queried_object_id();
     $icon_font = '<span class="fa fa-tags" aria-hidden="true"></span>';
     if ($tag_id && get_the_tag_title($tag_id)) {
       $chapter_title .= $icon_font.get_the_tag_title($tag_id);
