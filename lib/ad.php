@@ -127,25 +127,13 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
     if ($format == DATA_AD_FORMAT_AUTORELAXED) {
       $code = '
         <amp-ad
-          media="(max-width: 480px)"
-          layout="fixed-height"
-          height="800"
-          type="adsense"
-          data-ad-client="'.$ad_client.'"
-          data-ad-slot="'.$ad_slot.'"
-          data-auto-format="rspv"
-          data-full-width>
-        </amp-ad>
-
-        <amp-ad
-          media="(min-width: 481px)"
-          layout="fixed-height"
+          width="100vw"
           height="320"
           type="adsense"
           data-ad-client="'.$ad_client.'"
           data-ad-slot="'.$ad_slot.'"
-          data-auto-format="rspv"
-          data-full-width>
+          data-auto-format="mcrspv"
+          data-full-width="">
         </amp-ad>';
     } else {
       //リンクユニットの場合
