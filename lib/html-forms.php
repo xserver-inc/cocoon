@@ -128,7 +128,7 @@ endif;
 if ( !function_exists( 'generate_checkbox_tag' ) ):
 function generate_checkbox_tag($name, $now_value, $label){
   ob_start();?>
-  <input type="checkbox" name="<?php echo $name; ?>" value="1"<?php the_checkbox_checked($now_value); ?>><?php echo $label; ?>
+  <input type="checkbox" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="1"<?php the_checkbox_checked($now_value); ?>><?php generate_label_tag($name, $label); ?>
   <?php
   $res = ob_get_clean();
   echo apply_filters('admin_input_form_tag', $res, $name);
