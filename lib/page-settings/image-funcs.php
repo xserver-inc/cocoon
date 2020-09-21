@@ -304,7 +304,9 @@ function get_categorized_no_image_url($url, $width = null, $height = null){
     $cat = get_the_category();
     if ($cat && isset($cat[0])) {
       $cat_url = get_the_category_eye_catch_url($cat[0]->cat_ID);
-      $url = get_image_sized_url($cat_url, $width, $height);
+      if ($cat_url) {
+        $url = get_image_sized_url($cat_url, $width, $height);
+      }
     }
   }
   return $url;
