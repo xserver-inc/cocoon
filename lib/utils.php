@@ -89,7 +89,9 @@ function get_the_nolink_category($id = null, $is_visible = true){
 
   //カテゴリーラベル制御用のフック
   $category = apply_filters('get_the_nolink_category', $category, $categories);
-  return '<span class="cat-label cat-label-'.$category->cat_ID.$display_class.'">'.$category->cat_name.'</span>';
+  if (isset($category->cat_ID) && isset($category->cat_name)) {
+    return '<span class="cat-label cat-label-'.$category->cat_ID.$display_class.'">'.$category->cat_name.'</span>';
+  }
 }
 endif;
 
