@@ -183,6 +183,7 @@ if (!is_amp()): ?>
 
     /*ウインドウがリサイズされたら発動*/
     $window.resize(function() {
+      var scrollTop = $window.scrollTop();
       /*ウインドウの幅を変数に格納*/
       var w = $window.width();
       if (w <=  mobileWidth) {/*モバイル端末の場合*/
