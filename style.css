@@ -7727,7 +7727,7 @@ div.fb-like-mobile {
 ************************************/
 .footer {
   margin-top: 20px;
-  padding-top: 10px;
+  padding: 8px;
 }
 
 .copyright {
@@ -7802,7 +7802,6 @@ div.fb-like-mobile {
 }
 .footer-bottom-logo .site-name-text {
   font-size: 18px;
-  padding-bottom: 8px;
 }
 .footer-bottom-logo .logo-image {
   padding: 0;

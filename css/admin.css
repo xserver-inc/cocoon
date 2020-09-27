@@ -1740,7 +1740,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .c-crown-circle:before { background-color: #69433f; }
 .admin-settings .demo .c-crown-circle:after { background-color: #69433f; }
 .admin-settings .demo .widget_item_ranking .main-widget-label { font-size: 23px; padding: 6px; margin: 28px 0 12px; font-weight: bold; }
-.admin-settings .demo .footer { margin-top: 20px; padding-top: 10px; }
+.admin-settings .demo .footer { margin-top: 20px; padding: 8px; }
 .admin-settings .demo .copyright { margin-top: 8px; }
 .admin-settings .demo .footer-widgets, .admin-settings .demo .footer-widgets-mobile { margin: 10px auto; display: flex; }
 .admin-settings .demo .footer-left, .admin-settings .demo .footer-center, .admin-settings .demo .footer-right, .admin-settings .demo .footer-mobile { padding: 10px 16px; }
@@ -1756,7 +1756,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .footer-bottom.fnm-text-width .menu-footer li a { padding: 0 10px; }
 .admin-settings .demo .footer-bottom-logo { float: left; bottom: 0; position: absolute; }
 .admin-settings .demo .footer-bottom-logo .logo-text { padding: 0; }
-.admin-settings .demo .footer-bottom-logo .site-name-text { font-size: 18px; padding-bottom: 8px; }
+.admin-settings .demo .footer-bottom-logo .site-name-text { font-size: 18px; }
 .admin-settings .demo .footer-bottom-logo .logo-image { padding: 0; max-width: 120px; }
 .admin-settings .demo .footer-bottom-logo img { height: 50px; width: auto; }
 .admin-settings .demo .footer-bottom-content { float: right; text-align: right; }
@@ -3335,7 +3335,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .c-crown-circle:before { background-color: #69433f; }
 .admin-settings .demo .c-crown-circle:after { background-color: #69433f; }
 .admin-settings .demo .widget_item_ranking .main-widget-label { font-size: 23px; padding: 6px; margin: 28px 0 12px; font-weight: bold; }
-.admin-settings .demo .footer { margin-top: 20px; padding-top: 10px; }
+.admin-settings .demo .footer { margin-top: 20px; padding: 8px; }
 .admin-settings .demo .copyright { margin-top: 8px; }
 .admin-settings .demo .footer-widgets, .admin-settings .demo .footer-widgets-mobile { margin: 10px auto; display: flex; }
 .admin-settings .demo .footer-left, .admin-settings .demo .footer-center, .admin-settings .demo .footer-right, .admin-settings .demo .footer-mobile { padding: 10px 16px; }
@@ -3351,7 +3351,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .footer-bottom.fnm-text-width .menu-footer li a { padding: 0 10px; }
 .admin-settings .demo .footer-bottom-logo { float: left; bottom: 0; position: absolute; }
 .admin-settings .demo .footer-bottom-logo .logo-text { padding: 0; }
-.admin-settings .demo .footer-bottom-logo .site-name-text { font-size: 18px; padding-bottom: 8px; }
+.admin-settings .demo .footer-bottom-logo .site-name-text { font-size: 18px; }
 .admin-settings .demo .footer-bottom-logo .logo-image { padding: 0; max-width: 120px; }
 .admin-settings .demo .footer-bottom-logo img { height: 50px; width: auto; }
 .admin-settings .demo .footer-bottom-content { float: right; text-align: right; }
