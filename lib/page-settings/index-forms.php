@@ -120,6 +120,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             $options = array(
               '' => __( '投稿日（降順）', THEME_NAME ),
               'modified' => __( '更新日（降順）', THEME_NAME ),
+              'rand' => __( 'ランダム', THEME_NAME ),
             );
             generate_radiobox_tag(OP_INDEX_SORT_ORDERBY, $options, get_index_sort_orderby());
             generate_tips_tag(__( '一覧リストを表示する順番を設定します。', THEME_NAME ));

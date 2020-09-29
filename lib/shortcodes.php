@@ -48,6 +48,7 @@ function new_entries_shortcode($atts) {
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
+    'author' => null,
   ), $atts, 'new_list'));
 
   //カテゴリを配列化
@@ -78,6 +79,7 @@ function new_entries_shortcode($atts) {
     'arrow' => $arrow,
     'class' => $class,
     'snippet' => $snippet,
+    'author' => $author,
   );
   ob_start();
   generate_widget_entries_tag($atts);
@@ -425,25 +427,25 @@ function sitemap_shortcode( $atts, $content = null ) {
   ob_start();?>
   <div class="sitemap">
     <?php if ($page): ?>
-    <h2><?php _e( '固定ページ', THEME_NAME ) ?></h2>
+    <h2><?php echo apply_filters('sitemap_page_caption', __( '固定ページ', THEME_NAME )); ?></h2>
     <ul>
       <?php wp_list_pages('title_li='); ?>
     </ul>
     <?php endif; ?>
     <?php if ($single): ?>
-    <h2><?php _e( '記事一覧', THEME_NAME ) ?></h2>
+    <h2><?php echo apply_filters('sitemap_single_caption', __( '投稿一覧', THEME_NAME )); ?></h2>
     <ul>
       <?php wp_get_archives( 'type=alpha' ); ?>
     </ul>
     <?php endif; ?>
     <?php if ($category): ?>
-    <h2><?php _e( 'カテゴリー', THEME_NAME ) ?></h2>
+    <h2><?php echo apply_filters('sitemap_category_caption', __( 'カテゴリー', THEME_NAME )); ?></h2>
     <ul>
       <?php wp_list_categories('title_li='); ?>
     </ul>
     <?php endif; ?>
     <?php if ($archive): ?>
-    <h2><?php _e( '月別アーカイブ', THEME_NAME ) ?></h2>
+    <h2><?php  echo apply_filters('sitemap_archive_caption', __( '月別アーカイブ', THEME_NAME )); ?></h2>
     <ul>
       <?php wp_get_archives('type=monthly'); ?>
     </ul>
@@ -552,6 +554,7 @@ function get_navi_card_list_tag($atts){
   if (!$menu_items) {
     return;
   }
+  // _v($menu_items);
 
   foreach ($menu_items as $menu):
     //画像情報の取得
@@ -561,6 +564,8 @@ function get_navi_card_list_tag($atts){
     $title = $menu->title;
     $snippet = $menu->description;
     $classes = $menu->classes;
+    $object = $menu->object;
+    $object_id = $menu->object_id;
     $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
     //アイテムタグの取得
@@ -573,6 +578,8 @@ function get_navi_card_list_tag($atts){
       'ribbon_no' => $ribbon_no,
       'type' => $type,
       'classes' => $classes,
+      'object' => $object,
+      'object_id' => $object_id,
     );
     $tag .= get_widget_entry_card_link_tag($atts);
 

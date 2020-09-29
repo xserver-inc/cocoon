@@ -104,8 +104,6 @@ if( $is_post_ok ):
     require_once get_template_directory().'/lib/skin.php';   //スキン
   }
 
-  do_action('cocoon_settings_after_save');
-
   ///////////////////////////////////////
   // エディター用のカスタマイズCSS出力
   ///////////////////////////////////////
@@ -117,6 +115,8 @@ if( $is_post_ok ):
     //エディター用CSSファイルの書き出し
     wp_filesystem_put_contents($custum_css_file, $custum_css);
   }
+
+  do_action('cocoon_settings_after_save');
 
 endif;
 

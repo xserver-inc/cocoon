@@ -91,10 +91,22 @@ function get_index_sort_orderby(){
   return get_theme_option(OP_INDEX_SORT_ORDERBY);
 }
 endif;
+//インデックスの並び順は投稿日順か
+if ( !function_exists( 'is_index_sort_orderby_date' ) ):
+function is_index_sort_orderby_date(){
+  return get_index_sort_orderby() === '';
+}
+endif;
 //インデックスの並び順は更新日順か
-if ( !function_exists( 'is_get_index_sort_orderby_modified' ) ):
-function is_get_index_sort_orderby_modified(){
-  return get_index_sort_orderby() == 'modified';
+if ( !function_exists( 'is_index_sort_orderby_modified' ) ):
+function is_index_sort_orderby_modified(){
+  return get_index_sort_orderby() === 'modified';
+}
+endif;
+//インデックスの並び順はランダムか
+if ( !function_exists( 'is_index_sort_orderby_ramdom' ) ):
+function is_index_sort_orderby_ramdom(){
+  return get_index_sort_orderby() === 'rand';
 }
 endif;
 
@@ -286,12 +298,15 @@ function get_category_index_list_entry_card_tag($categories, $count){
       'cat' => $categories,
     );
   }
+
   //順番変更
-  if (is_get_index_sort_orderby_modified()) {
+  if (!is_index_sort_orderby_date()) {
+    //投稿日順じゃないときは設定値を挿入する
     $args += array(
-      'orderby' => 'modified',
+      'orderby' => get_index_sort_orderby(),
     );
   }
+
   //カテゴリーの除外
   $exclude_category_ids = get_archive_exclude_category_ids();
   if (!$categories && $exclude_category_ids && is_array($exclude_category_ids)) {

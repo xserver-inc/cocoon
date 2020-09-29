@@ -24,6 +24,7 @@ amp-img {
 
 .fb-like-thumb amp-img{
   height: 100%;
+  min-width: 100%;
 }
 
 .entry-content amp-img,
@@ -66,55 +67,56 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   display: none;
 }
 
-// %follow_amp_button{
-//   text-decoration: none;
-//   text-align: center;
-//   margin: 0 auto;
-//   padding: 3px 6px;
-//   top: 8px;
-//   font-size: 14px;
-//   font-weight: bold;
-//   color: $white;
-//   position: relative;
-//   border-radius: $basic_border_radius;
+%follow_amp_button{
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3px 12px;
+  top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: $white;
+  position: relative;
+  border-radius: $basic_border_radius;
 
-//   &:hover{
-//     color: $white;
-//     opacity: 0.7;
-//   }
-// }
+  &:hover{
+    color: $white;
+    opacity: 0.7;
+  }
+}
 
-// @mixin follow_amp_button($unicode, $bc_color){
-//   background-color: $bc_color;
-//   &::before{
-//     @include fontawesome($unicode);
-//     margin: 0 3px;
-//     font-weight: normal;
-//   }
-// }
+@mixin follow_amp_button($unicode, $bc_color){
+  background-color: $bc_color;
+  &::before{
+    // @include fontawesome($unicode);
+    // font-family: FontAwesome;
+    // margin: 0 3px;
+    font-weight: normal;
+  }
+}
 
-// //Facebookボタン
-// .facebook-follow-button{
-//   @extend %follow_amp_button;
+//Facebookボタン
+.facebook-follow-button{
+  @extend %follow_amp_button;
 
-//   @include follow_amp_button('\f087', $facebook_color);
-// }
+  @include follow_amp_button('\f087', $facebook_color);
+}
 
-// //Twitterボタン
-// .twitter-follow-button{
-//   @extend %follow_amp_button;
-//   font-weight: normal;
+//Twitterボタン
+.twitter-follow-button{
+  @extend %follow_amp_button;
+  font-weight: normal;
 
-//   @include follow_amp_button('\f099', $twitter_color);
-// }
+  @include follow_amp_button('\f099', $twitter_color);
+}
 
-// //LINEボタン
-// .line-follow-button{
-//   @extend %follow_amp_button;
-//   font-weight: normal;
+//LINEボタン
+.line-follow-button{
+  @extend %follow_amp_button;
+  font-weight: normal;
 
-//   @include follow_amp_button('\f075', $line_color);
-// }
+  @include follow_amp_button('\f075', $line_color);
+}
 
 .comment-reply-link{
   display: none;

@@ -265,7 +265,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_META_DESCRIPTION_TO_CATEGORY, is_meta_description_to_category(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
-            generate_tips_tag(__( 'カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -278,7 +278,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_META_KEYWORDS_TO_CATEGORY, is_meta_keywords_to_category(), __( 'メタキーワードタグを出力する', THEME_NAME ));
-            generate_tips_tag(__( 'カテゴリー・タグページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリー・タグページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
             ?>
           </td>
         </tr>

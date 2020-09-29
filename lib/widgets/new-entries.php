@@ -54,11 +54,10 @@ class NewEntryWidgetItem extends WP_Widget {
           echo $title;//タイトルが設定されている場合は使用する
         } else {
           if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
-            _e( '新着記事', THEME_NAME );
+            echo apply_filters('new_entries_caption', __( '新着記事', THEME_NAME ));;
           } else {
             _e( 'カテゴリー別新着記事', THEME_NAME );
           }
-          //echo '新着記事';
         }
         echo $args['after_title'];
       }

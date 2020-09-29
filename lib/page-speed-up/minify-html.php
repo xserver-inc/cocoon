@@ -9,81 +9,79 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //HTMLソースコードの縮小化
 if ( !function_exists( 'code_minify_call_back' ) ):
-function code_minify_call_back($buffer) {
+function code_minify_call_back($html) {
   global $post;
   //_v($post);
   if (is_admin() || is_feed() || !$post) {
-    return $buffer;
+    return $html;
   }
   //何故かa開始タグがpタグでラップされるのを修正
-  $buffer = preg_replace('{<p>(<a[^>]+?>)</p>}i', "$1", $buffer);
+  $html = preg_replace('{<p>(<a[^>]+?>)</p>}i', "$1", $html);
   //何故かa終了タグがpタグでラップされるのを修正
-  $buffer = preg_replace('{<p>(</a>)</p>}i', "$1", $buffer);
+  $html = preg_replace('{<p>(</a>)</p>}i', "$1", $html);
 
   //HTMLの縮小化
   if (is_html_minify_enable()) {
-    $buffer = minify_html($buffer);
+    $html = minify_html($html);
   }
 
   ///////////////////////////////////////////
   // Lazy Load
   ///////////////////////////////////////////
-  if (is_lazy_load_enable() && !is_login_page()) {
-    //画像の変換
-    $buffer = convert_lazy_load_tag($buffer, 'img');
-    //iframeの変換
-    $buffer = convert_lazy_load_tag($buffer, 'iframe');
+  //WordPress5.5で追加されたLazy Loadが有効でないときはCocoonのLazy Loadを利用する
+  if (!is_wp_lazy_load_valid()) {
+    $html = convert_all_lazy_load_tag($html);
   }
 
   //数式表示ショートコードの除外
   if (is_formula_enable() && is_math_shortcode_exist()) {
     $esc_shortcode = preg_quote(MATH_SHORTCODE, '#');
-    $buffer = preg_replace('#<p[^>]*?>'.$esc_shortcode.'</p>|'.$esc_shortcode.'#', '', $buffer);
+    $html = preg_replace('#<p[^>]*?>'.$esc_shortcode.'</p>|'.$esc_shortcode.'#', '', $html);
   }
 
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
-  $buffer = str_replace('aria-required="true" required>', 'aria-required="true">', $buffer);
-  $buffer = str_replace('aria-required="true" required="required">', 'aria-required="true">', $buffer);
+  $html = str_replace('aria-required="true" required>', 'aria-required="true">', $html);
+  $html = str_replace('aria-required="true" required="required">', 'aria-required="true">', $html);
 
   ///////////////////////////////////////
   // HTML5エラー除外
   ///////////////////////////////////////
   //Alt属性がないIMGタグにalt=""を追加する
-  $buffer = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt=""${1}>', $buffer);
+  $html = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt=""${1}>', $html);
   //画像タグの border="0"を削除する
-  $buffer = str_replace(' border="0"', '', $buffer);
+  $html = str_replace(' border="0"', '', $html);
 
   //wpForoのHTML5エラー
   if (is_wpforo_exist()) {
-    $buffer = str_replace(' id="wpf-widget-recent-replies"', '', $buffer);
+    $html = str_replace(' id="wpf-widget-recent-replies"', '', $html);
   }
   //BuddyPressのHTML5エラー
   if (is_buddypress_exist()) {
-    $buffer = str_replace('<label for="bp-login-widget-rememberme">', '<label>', $buffer);
+    $html = str_replace('<label for="bp-login-widget-rememberme">', '<label>', $html);
   }
 
   //JavaScriptの縮小化
   if (is_amp() && is_js_minify_enable()) {
     $pattern = '{<script[^>]*?>(.*?)</script>}is';
-    $subject = $buffer;
+    $subject = $html;
     $res = preg_match_all($pattern, $subject, $m);
     if ($res && isset($m[1])) {
       foreach ($m[1] as $match) {
         if (empty($match)) {
           continue;
         }
-        $buffer = str_replace($match, minify_js($match), $buffer);
+        $html = str_replace($match, minify_js($match), $html);
       }
     }
   }
 
   //タブボックスのタブ変換
-  $buffer = preg_replace('#<div class="(.*?)blank-box bb-tab bb-(.+?)".*?>#', '$0<div class="bb-label"><span class="fa"></span></div>', $buffer);
+  $html = preg_replace('#<div class="(.*?)blank-box bb-tab bb-(.+?)".*?>#', '$0<div class="bb-label"><span class="fa"></span></div>', $html);
 
   //Font Awesome5変換
-  $buffer = change_fa($buffer);
+  $html = change_fa($html);
 
-  return apply_filters('code_minify_call_back', $buffer);
+  return apply_filters('code_minify_call_back', $html);
 }
 endif;
 
@@ -168,47 +166,47 @@ endif;
 // フィルター
 ///////////////////////////////////////
 if ( !function_exists( 'wp_head_minify' ) ):
-function wp_head_minify($buffer) {
+function wp_head_minify($html) {
 
   //ヘッダーコードのCSS縮小化
   if (is_css_minify_enable()) {
-    $buffer = tag_code_to_minify_css($buffer);
+    $html = tag_code_to_minify_css($html);
   }
 
   //ヘッダーコードのJS縮小化
   if (is_js_minify_enable()) {
-    $buffer = tag_code_to_minify_js($buffer);
+    $html = tag_code_to_minify_js($html);
   }
   //WordPressが出力する type='text/javascript'を削除
-  $buffer = str_replace(" type='text/javascript'", '', $buffer);
-  $buffer = str_replace(' type="text/javascript"', '', $buffer);
+  $html = str_replace(" type='text/javascript'", '', $html);
+  $html = str_replace(' type="text/javascript"', '', $html);
   //WordPressが出力する type='text/css'を削除
-  $buffer = str_replace(" type='text/css'", '', $buffer);
-  $buffer = str_replace(' type="text/css"', '', $buffer);
+  $html = str_replace(" type='text/css'", '', $html);
+  $html = str_replace(' type="text/css"', '', $html);
 
-  //_v($buffer);
-  return apply_filters('wp_head_minify', $buffer);
+  //_v($html);
+  return apply_filters('wp_head_minify', $html);
 }
 endif;
 
 if ( !function_exists( 'wp_footer_minify' ) ):
-function wp_footer_minify($buffer) {
-  //_v($buffer);
+function wp_footer_minify($html) {
+  //_v($html);
   //フッターコードのCSS縮小化
   if (is_css_minify_enable()) {
-    $buffer = tag_code_to_minify_css($buffer);
+    $html = tag_code_to_minify_css($html);
   }
 
   //フッターコードのJS縮小化
   if (is_js_minify_enable()) {
-    $buffer = tag_code_to_minify_js($buffer);
+    $html = tag_code_to_minify_js($html);
   }
 
   //WordPressが出力する type='text/javascript'を削除
-  $buffer = str_replace(" type='text/javascript'", '', $buffer);
-  $buffer = str_replace(' type="text/javascript"', '', $buffer);
+  $html = str_replace(" type='text/javascript'", '', $html);
+  $html = str_replace(' type="text/javascript"', '', $html);
 
-  return apply_filters('wp_footer_minify', $buffer);
+  return apply_filters('wp_footer_minify', $html);
 }
 endif;
 
@@ -335,3 +333,50 @@ function convert_lazy_load_tag($the_content, $media){
   return apply_filters('convert_lazy_load_tag', $the_content, $media);
 }
 endif;
+
+//全てのLazy Load置換処理の実行
+if ( !function_exists( 'convert_all_lazy_load_tag' ) ):
+function convert_all_lazy_load_tag($html){
+  if (is_lazy_load_enable() && !is_login_page()) {
+    //画像の変換
+    $html = convert_lazy_load_tag($html, 'img');
+    //iframeの変換
+    $html = convert_lazy_load_tag($html, 'iframe');
+  }
+  return $html;
+}
+endif;
+
+//サムネイル画像のLazy Load置換
+// add_filter('post_thumbnail_html', 'post_lazy_load_thumbnail_html', 10, 5);
+// if ( !function_exists( 'post_lazy_load_thumbnail_html' ) ):
+// function post_lazy_load_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr){
+//   // _v($html);
+//   //WordPress5.5のLazy Load環境が有効か
+//   if (is_wp_lazy_load_valid()
+//     //管理画面では動作させない
+//     && !is_admin()
+//     //投稿のアイキャッチの場合は'thumb160'のような
+//     //文字列ではなく配列が入るので除外
+//     && !is_array($size)
+//     //既に標準のLazy Loadが入っている場合は実行しない
+//     && !includes_string($html, ' loading="lazy"')
+//   ) {
+//     $html = convert_all_lazy_load_tag($html);
+//   }
+//   return $html;
+// }
+// endif;
+
+// //アバター画像のLazy Load置換
+// add_filter('get_avatar', 'get_avatar_lazy_load_thumbnail_html');
+// if ( !function_exists( 'get_avatar_lazy_load_thumbnail_html' ) ):
+// function get_avatar_lazy_load_thumbnail_html($avatar){
+//   // _v($avatar);
+//   //WordPress5.5のLazy Load環境が有効か
+//   if (is_wp_lazy_load_valid()) {
+//     $avatar = convert_all_lazy_load_tag($avatar);
+//   };
+//   return $avatar;
+// }
+// endif;

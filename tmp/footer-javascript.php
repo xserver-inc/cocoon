@@ -170,7 +170,7 @@ if (!is_amp()): ?>
             stickyHeader();
           }
         }
-        if (scrollTop == 0 || w <=  mobileWidth) {
+        if (scrollTop <= 50 || w <=  mobileWidth) {
           staticHeader();
         }
       }
@@ -183,12 +183,16 @@ if (!is_amp()): ?>
 
     /*ウインドウがリサイズされたら発動*/
     $window.resize(function() {
+      var scrollTop = $window.scrollTop();
       /*ウインドウの幅を変数に格納*/
       var w = $window.width();
       if (w <=  mobileWidth) {/*モバイル端末の場合*/
         staticHeader();
       } else {/*パソコン端末の場合*/
-        stickyHeader();
+        if (scrollTop <= 50) {
+          stickyHeader();
+        }
+
       }
     });
 

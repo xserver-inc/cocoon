@@ -98,7 +98,8 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'isRankingVisible' => $is_rankings_visible,
     'isSpeechBalloonEnable' => $balloons ? 1 : 0,
     'speechBalloonDefaultIconUrl' => get_template_directory_uri().'/images/anony.png',
-    'siteIconFont' => get_site_icon_font_class(),
+    'siteIconFont' => ' '.get_site_icon_font_class(),
+    'pageTypeClass' => get_editor_page_type_class(),
     'isDebugMode' => DEBUG_MODE,
   );
 

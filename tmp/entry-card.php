@@ -44,7 +44,7 @@ if (is_front_page_type_index()) {
       </div>
       <?php endif ?>
       <?php //PVエリアの表示
-      if (is_admin_index_pv_visible() && is_user_administrator()) {
+      if (is_admin_index_pv_visible() && is_user_administrator() || apply_filters('public_page_entry_card_pv_visible', false)) {
         get_template_part('tmp/admin-pv');
       } ?>
       <div class="entry-card-meta card-meta e-card-meta">

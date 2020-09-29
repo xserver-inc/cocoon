@@ -697,7 +697,7 @@ function tiny_mce_before_init_custom( $mceInit ) {
   if (isset($mceInit['body_class'])) {
     //if (!is_plugin_fourm_page()) {
       $fa_class = ' '.get_site_icon_font_class();
-      $mceInit['body_class'] .= ' body main article'.$fa_class;
+      $mceInit['body_class'] .= ' body main article'.$fa_class.get_editor_page_type_class();
     //}
 
     if (is_admin()) {

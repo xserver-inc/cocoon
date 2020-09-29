@@ -64,6 +64,9 @@ define('THUMB320HEIGHT', get_thumbnail_height(THUMB320WIDTH));
 add_image_size(THUMB320, THUMB320WIDTH, THUMB320HEIGHT, true);
 define('THUMB320WIDTH_DEF', W320);
 define('THUMB320HEIGHT_DEF', get_thumbnail_height(THUMB320WIDTH_DEF));
+//大きなNO IMAGEサムネイルサイズ
+define('THUMB_LARGE_NO_IMAGE_WIDTH', 800);
+define('THUMB_LARGE_NO_IMAGE_HEIGHT', 451);
 
 //縦型カード2列用の可変サムネイル
 if (is_entry_card_type_vertical_card_2()) {
@@ -316,7 +319,7 @@ add_filter('the_category_tag_content', 'replace_ad_shortcode_to_advertisement');
 add_filter('the_category_tag_content', 'shortcode_unautop');
 add_filter('the_category_tag_content', 'do_shortcode');
 add_filter('the_category_tag_content', 'prepend_attachment');
-add_filter('the_category_tag_content', 'wp_make_content_images_responsive');
+add_filter('the_category_tag_content', 'wp_make_content_images_responsive');//WordPress5.5未満
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');

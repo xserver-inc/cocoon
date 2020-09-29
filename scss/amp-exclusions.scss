@@ -4,14 +4,14 @@
 
 /* 検索フォーム風スタイルのボタンを装飾 */
 .search-form div.sbtn {
-	transition: 0.3s; /* 変化をなめらかにする */
+  transition: 0.3s; /* 変化をなめらかにする */
 }
 /* ボタンにカーソルを合わせた時のスタイル */
 .search-form div.sbtn:hover {
-	color: #333; /* 文字色 */
-	background: #fff; /* 背景色 */
-	border-color: #333; /* ボーダーの色 */
-	cursor: pointer; /* カーソルをポインターに */
+  color: #333; /* 文字色 */
+  background: #fff; /* 背景色 */
+  border-color: #333; /* ボーダーの色 */
+  cursor: pointer; /* カーソルをポインターに */
 }
 
 //MacでChromeの際何度か提示遷移するとページャーがクリックできなくなる対応
@@ -30,21 +30,21 @@
 ************************************/
 .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-current-page,
 .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-page {
-	font-size: 15px;
-	border-width: 1px;
-	border-style: solid;
-	padding: 2px 10px;
-	display: inline-block;
-	margin-bottom: 8px;
+  font-size: 15px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px 10px;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
 .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
-	background-color: #1A73E8;
-	color: #fff;
+  background-color: #1A73E8;
+  color: #fff;
 }
 
 .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-page {
-	border-color: #ccc;
+  border-color: #ccc;
 }
 
 // Lazy Load誤動作の対応
@@ -57,30 +57,35 @@
 
 //固定ヘッダー
 .is-header-fixed{
-	.header-container{
-		z-index: 3;
-		.logo{
-			transition: .3s;
-		}
-	}
+  .header-container{
+    z-index: 3;
+    .logo{
+      transition: .3s;
+    }
+  }
 }
 
 
 .fixed-header{
-	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
-	.header .header-in{
-		min-height: auto;
-	}
-	.has-sub,
-	.navi-in .sub-menu{
-		display: none;
-	}
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  .header .header-in{
+    min-height: auto;
+  }
+  .has-sub,
+  .navi-in .sub-menu{
+    display: none;
+  }
+
+  .site-logo-image{
+    height: auto;
+    width: auto;
+  }
 }
 
 
 //クリック動作しない
 .click-prevention{
-	pointer-events: none;
+  pointer-events: none;
 }
 
 //IE・Edgeでbackground-clip: padding-box;除外

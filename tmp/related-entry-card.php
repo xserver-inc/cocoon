@@ -14,7 +14,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php
     echo get_the_post_thumbnail($post->ID, get_related_entry_card_thumbnail_size(), array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
-    <img src="<?php echo get_no_image_160x90_url(); ?>" alt="" class="no-image related-entry-card-no-image" width="<?php echo THUMB160WIDTH; ?>" height="<?php echo THUMB160HEIGHT; ?>" />
+      <?php //NO IMAGEサムネイルの出力
+      echo get_original_image_tag(get_no_image_160x90_url(), THUMB160WIDTH, THUMB160HEIGHT, '"no-image related-entry-card-no-image', ''); ?>
+
+      <?php //後で消す↓
+      if (false): ?>
+        <img src="<?php echo get_no_image_160x90_url(); ?>" alt="" class="no-image related-entry-card-no-image" width="<?php echo THUMB160WIDTH; ?>" height="<?php echo THUMB160HEIGHT; ?>" />
+      <?php endif; ?>
+
     <?php endif; ?>
     <?php the_nolink_category(null, apply_filters('is_related_entry_card_category_label_visible', true)); //カテゴリラベルの取得 ?>
   </figure><!-- /.related-entry-thumb -->

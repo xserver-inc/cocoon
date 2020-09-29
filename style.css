@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.2.2
+Version: 2.2.4.5
 Requires at least: 5.3.0
 Requires PHP: 5.6.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -693,6 +693,7 @@ img.emoji {
 .header-container-in.hlt-top-menu .logo-header img {
   max-height: 60px;
   height: auto;
+  vertical-align: middle;
 }
 .header-container-in.hlt-top-menu amp-img {
   max-width: 160px;
@@ -1923,6 +1924,11 @@ span.internal-icon {
 .blogcard-favicon {
   margin-right: 4px;
   margin-top: 2px;
+}
+
+img.blogcard-favicon-image {
+  border: 0;
+  box-shadow: none;
 }
 
 /************************************
@@ -3953,6 +3959,7 @@ div.search-form {
   color: #fff;
   text-align: center;
   width: 140px;
+  position: relative;
 }
 
 .search-form div.sbtn:before {
@@ -5907,6 +5914,10 @@ div.search-form {
   display: none;
 }
 
+.comment-edit-link {
+  margin-left: 0.4em;
+}
+
 .comment-reply-link {
   font-size: 14px;
 }
@@ -6250,6 +6261,7 @@ canvas, iframe, video,
 }
 .nwa .author-box .author-content {
   margin: 0;
+  padding: 1em;
 }
 .nwa .author-box .author-description {
   text-align: left;
@@ -7712,7 +7724,7 @@ div.fb-like-mobile {
 ************************************/
 .footer {
   margin-top: 20px;
-  padding-top: 10px;
+  padding: 8px;
 }
 
 .copyright {
@@ -7787,7 +7799,6 @@ div.fb-like-mobile {
 }
 .footer-bottom-logo .site-name-text {
   font-size: 18px;
-  padding-bottom: 8px;
 }
 .footer-bottom-logo .logo-image {
   padding: 0;
@@ -9921,6 +9932,10 @@ twitter-widget {
 .fixed-header .has-sub,
 .fixed-header .navi-in .sub-menu {
   display: none;
+}
+.fixed-header .site-logo-image {
+  height: auto;
+  width: auto;
 }
 
 .click-prevention {

@@ -58,6 +58,11 @@
   }
 }
 
+//編集リンクの余白
+.comment-edit-link {
+  margin-left: 0.4em;
+}
+
 //返信ボタン
 .comment-reply-link{
   @extend .tag-link;

@@ -423,6 +423,7 @@ body::after{
   width: 1px;
   height: 1px;
   overflow: hidden;
+  display: inline !important;
 }
 <?php endif ?>
 <?php //アピールエリア背景色

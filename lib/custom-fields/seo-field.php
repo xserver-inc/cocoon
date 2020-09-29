@@ -273,9 +273,23 @@ if ( !function_exists( 'get_the_page_canonical_url' ) ):
   }
   endif;
 
-//noindexページIDの取得
+//投稿のnoindexページIDの取得
 if ( !function_exists( 'get_noindex_post_ids' ) ):
 function get_noindex_post_ids(){
   return get_postmeta_value_enable_post_ids('the_page_noindex');
+}
+endif;
+
+//カテゴリーのnoindexページIDの取得
+if ( !function_exists( 'get_noindex_category_ids' ) ):
+function get_noindex_category_ids(){
+  return get_termmeta_value_enable_ids('the_category_noindex');
+}
+endif;
+
+//タグのnoindexページIDの取得
+if ( !function_exists( 'get_noindex_tag_ids' ) ):
+function get_noindex_tag_ids(){
+  return get_termmeta_value_enable_ids('the_tag_noindex');
 }
 endif;
