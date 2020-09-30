@@ -140,17 +140,21 @@ endif;
 if ( !function_exists( 'generate_radiobox_tag' ) ):
 function generate_radiobox_tag($name, $options, $now_value, $label = null){
   ob_start();
+  $i = 0;
   if ($label) {
     generate_label_tag($name, $label);
     generate_br_tag();
   }?>
   <ul>
     <?php foreach ($options as $value => $caption) {
+    $id = $name.'_'.$i;
     // _v($value.' == '.$now_value);
     // _v($value == $now_value);
     ?>
-    <li><input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><?php echo $caption; ?></li>
-    <?php } ?>
+    <li><input type="radio" name="<?php echo $name; ?>" id="<?php echo $id; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><label for="<?php echo $id; ?>"><?php echo $caption; ?></label></li>
+    <?php
+    $i++;
+    } ?>
   </ul>
   <?php
   $res = ob_get_clean();
