@@ -54,6 +54,8 @@ div.mce-content-body {
   }
   &[data-type^="cocoon-blocks/micro-text"]{
     padding: 0.5em;
+    margin-top: 1.2em;//これがないと「＋」ボタンが表示されない
+    margin-bottom: 0.2em;//これがないと「＋」ボタンが表示されない
   }
   &[data-type^="cocoon-blocks/button"][data-align="left"],
   &[data-type^="cocoon-blocks/button-wrap"][data-align="left"],
@@ -335,7 +337,6 @@ ul{
 }
 
 .wp-block-table{
-  overflow: hidden;
   table{
     font-size: 16px;
   }
@@ -840,6 +841,20 @@ ol, ul {
 // プレイビュースタイルの背景色を白にする
 .wp-block-paragraph.has-drop-cap{
   background-color: #fff;
+}
+
+//Gutenbergエディター.block-editor-block-list__layoutの最後に
+//.block-list-appenderが来るので:last-child余白調整が入らないのを修正
+.block-editor-inner-blocks{
+  .block-editor-block-list__layout{
+    :nth-last-child(2){
+      margin-bottom: 0;
+    }
+  }
+}
+
+p {
+  margin-top: 0;
 }
 
 .page-type-wide{

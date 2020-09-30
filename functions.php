@@ -279,7 +279,6 @@ add_filter('wp_sitemaps_posts_query_args', 'wp_sitemaps_posts_query_args_noindex
 if ( !function_exists( 'wp_sitemaps_posts_query_args_noindex_custom' ) ):
 function wp_sitemaps_posts_query_args_noindex_custom($args){
   $args['post__not_in'] = get_noindex_post_ids();
-  //_v($args);
   return $args;
 }
 endif;
@@ -305,6 +304,7 @@ endif;
 
 //サイトマップにカテゴリー・タグのnoindex設定を反映させる
 add_filter('wp_sitemaps_taxonomies', 'wp_sitemaps_taxonomies_custum');
+if ( !function_exists( 'wp_sitemaps_taxonomies_custum' ) ):
 function wp_sitemaps_taxonomies_custum( $taxonomies ) {
   //サイトマップにカテゴリーを出力しない
   if (is_category_page_noindex()) {
@@ -318,9 +318,11 @@ function wp_sitemaps_taxonomies_custum( $taxonomies ) {
 
   return $taxonomies;
 }
+endif;
 
 //サイトマップにその他のアーカイブのnoindex設定を反映する
 add_filter('wp_sitemaps_add_provider', 'wp_sitemaps_add_provider_custom',  10, 2);
+if ( !function_exists( 'wp_sitemaps_add_provider_custom' ) ):
 function wp_sitemaps_add_provider_custom( $provider, $name ) {
     if ( is_other_archive_page_noindex() && 'users' === $name ) {
         return false;
@@ -328,3 +330,4 @@ function wp_sitemaps_add_provider_custom( $provider, $name ) {
 
     return $provider;
 }
+endif;

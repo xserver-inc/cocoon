@@ -400,7 +400,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo body { /* フォントの種類 */ font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
-.admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
+.admin-settings .demo ol, .admin-settings .demo ul { padding-left: 40px; }
 .admin-settings .demo hr { color: #eee; }
 .admin-settings .demo .cf::after { clear: both; content: ""; display: block; }
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
@@ -427,7 +427,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-btn { margin: 24px 0; cursor: pointer; }
 .admin-settings .demo label { cursor: pointer; }
 .admin-settings .demo .sitemap li a::before { display: none; }
-.admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin: 1em 0; }
+.admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin-bottom: 1.2em; }
 .admin-settings .demo figure { margin: 0; }
 .admin-settings .demo img { max-width: 100%; height: auto; border: 0; }
 .admin-settings .demo .circle-image img { border-radius: 50%; }
@@ -631,17 +631,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cat-link:hover { opacity: 0.5; color: #fff; }
 .admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
-.admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f5f6f7; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #eee; padding: 6px; }
-.admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
+.admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; margin: 0; }
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
-.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
+.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; margin: 0; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
-.admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; margin-bottom: 1em; }
+.admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; }
 .admin-settings .demo figure.wp-block-table table { width: auto; }
 .admin-settings .demo figure.wp-block-table.alignwide table, .admin-settings .demo figure.wp-block-table.alignfull table { width: 100%; }
 .admin-settings .demo .main figure.wp-block-table { width: auto; max-width: 100%; display: block; }
@@ -649,7 +648,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo figure.wp-block-table.aligncenter table { margin-left: auto; }
 .admin-settings .demo figure.wp-block-table.alignright table { margin-left: 0; }
 .admin-settings .demo .scroll-hint-icon-wrap { overflow: hidden; }
-.admin-settings .demo .article dl { margin: 1em 0; }
 .admin-settings .demo .article dd { margin-left: 40px; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
@@ -663,7 +661,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ddd; }
 .admin-settings .demo .article h6 { border-bottom: 1px solid #ddd; }
 .admin-settings .demo .article .column-wrap h1, .admin-settings .demo .article .column-wrap h2, .admin-settings .demo .article .column-wrap h3, .admin-settings .demo .article .column-wrap h4, .admin-settings .demo .article .column-wrap h5, .admin-settings .demo .article .column-wrap h6 { margin-top: 0; }
-.admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ddd; margin: 1em 0; padding: 10px 1.2em; position: relative; }
+.admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ddd; padding: 10px 1.2em; position: relative; }
 .admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; font-family: serif; position: absolute; font-size: 300%; }
 .admin-settings .demo blockquote::before { content: "“"; line-height: 1.1; left: 10px; top: 0; }
 .admin-settings .demo blockquote::after { content: "”"; line-height: 0; right: 10px; bottom: 0px; }
@@ -673,9 +671,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .content-only .header-container, .admin-settings .demo .content-only .appeal, .admin-settings .demo .content-only .ad-area, .admin-settings .demo .content-only .sns-share, .admin-settings .demo .content-only .date-tags, .admin-settings .demo .content-only .sns-follow, .admin-settings .demo .content-only .article-footer, .admin-settings .demo .content-only .under-entry-content, .admin-settings .demo .content-only .breadcrumb, .admin-settings .demo .content-only .main-scroll, .admin-settings .demo .content-only .footer, .admin-settings .demo .content-only .go-to-top-button, .admin-settings .demo .content-only .notice-area, .admin-settings .demo .content-only .content-top, .admin-settings .demo .content-only .content-bottom, .admin-settings .demo .content-only .recommended { display: none; }
 .admin-settings .demo .content-only .carousel { display: none !important; }
 .admin-settings .demo span.external-icon, .admin-settings .demo span.internal-icon { margin-left: 3px; font-size: 0.8em; }
-.admin-settings .demo .login-user-only { text-align: center; padding: 2em; background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; }
+.admin-settings .demo .login-user-only { text-align: center; padding: 2em; background-color: #fafbfc; border: 1px solid #ccc; }
 .admin-settings .demo .no-post-date .post-date, .admin-settings .demo .no-post-update .post-update, .admin-settings .demo .no-post-author .author-info { display: none; }
-.admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #eee; border-bottom: 4px double #eee; margin: 0 3%; }
+.admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #eee; border-bottom: 4px double #eee; margin: 0 3%; margin-bottom: 1em; }
 .admin-settings .demo .eye-catch-wrap { display: flex; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
@@ -685,7 +683,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .eye-catch-wrap { display: block; } }
 .admin-settings .demo .show-pinterest-button .eye-catch:hover .cat-label { display: none; }
 .admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; overflow: hidden; }
-.admin-settings .demo .entry-content .ad-area { margin: 1em 0; }
 .admin-settings .demo .ad-label-invisible .ad-label { display: none; }
 .admin-settings .demo .ad-content-top { margin-top: 1em; }
 .admin-settings .demo .ad-responsive ins { width: 100%; }
@@ -722,14 +719,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .blogcard-content { margin-left: 130px; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
 .admin-settings .demo .nwa .blogcard-footer { font-size: 14px; }
 .admin-settings .demo .nwa .ib-right .blogcard-content, .admin-settings .demo .nwa .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
-.admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; padding: 1em 1.6em; margin-bottom: 1em; display: table; }
+.admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; padding: 1em 1.6em; display: table; }
 .admin-settings .demo .toc .toc-list { padding-left: 1em; }
 .admin-settings .demo .toc .toc-list ul, .admin-settings .demo .toc .toc-list ol { padding-left: 1em; margin: 0; }
 .admin-settings .demo .toc li { margin: 0; }
 .admin-settings .demo .toc ul { list-style: none; }
 .admin-settings .demo .toc a { color: #333; text-decoration: none; }
 .admin-settings .demo .toc a:hover { text-decoration: underline; }
-.admin-settings .demo .toc-center { margin: 1em auto; }
 .admin-settings .demo .toc-title { font-size: 1.1em; text-align: center; display: block; padding: 2px 16px; }
 .admin-settings .demo .toc-widget-box .toc-title { display: none; }
 .admin-settings .demo .toc-widget-box .toc-content { visibility: visible; opacity: 1; height: 100%; }
@@ -852,10 +848,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .is-style-secondary-box, .admin-settings .demo .secondary-box { color: #383d41; background-color: #e2e3e5; border-color: #d6d8db; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .admin-settings .demo .is-style-light-box, .admin-settings .demo .light-box { color: #818182; background-color: #fefefe; border-color: #fdfdfe; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .admin-settings .demo .is-style-dark-box, .admin-settings .demo .dark-box { color: #1b1e21; background-color: #d6d8d9; border-color: #c6c8ca; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
-.admin-settings .demo .is-style-information-box, .admin-settings .demo .is-style-question-box, .admin-settings .demo .is-style-alert-box, .admin-settings .demo .is-style-memo-box, .admin-settings .demo .is-style-comment-box, .admin-settings .demo .is-style-ok-box, .admin-settings .demo .is-style-ng-box, .admin-settings .demo .is-style-good-box, .admin-settings .demo .is-style-bad-box, .admin-settings .demo .is-style-profile-box, .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 20px 20px 20px 72px; border-radius: 4px; position: relative; display: block; margin-top: 1em; margin-bottom: 1em; }
-.admin-settings .demo .block-box p:first-of-type { margin-top: 0; }
-.admin-settings .demo .block-box p:last-of-type { margin-bottom: 0; }
-.admin-settings .demo .block-box ol, .admin-settings .demo .block-box ul { margin: 0; }
+.admin-settings .demo .is-style-information-box, .admin-settings .demo .is-style-question-box, .admin-settings .demo .is-style-alert-box, .admin-settings .demo .is-style-memo-box, .admin-settings .demo .is-style-comment-box, .admin-settings .demo .is-style-ok-box, .admin-settings .demo .is-style-ng-box, .admin-settings .demo .is-style-good-box, .admin-settings .demo .is-style-bad-box, .admin-settings .demo .is-style-profile-box, .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 20px 20px 20px 72px; border-radius: 4px; position: relative; display: block; }
+.admin-settings .demo .article blockquote :last-child, .admin-settings .demo .article .wp-block-media-text__content :last-child, .admin-settings .demo .article .wp-block-columns :last-child, .admin-settings .demo .article .column-wrap :last-child, .admin-settings .demo .article .timeline-box :last-child, .admin-settings .demo .article .wp-block-cover :last-child, .admin-settings .demo .article .blogcard-type :last-child, .admin-settings .demo .article .btn-wrap :last-child, .admin-settings .demo .article .wp-block-group :last-child, .admin-settings .demo .article .block-box :last-child { margin-bottom: 0; }
+.admin-settings .demo .article blockquote ol, .admin-settings .demo .article blockquote ul, .admin-settings .demo .article .wp-block-media-text__content ol, .admin-settings .demo .article .wp-block-media-text__content ul, .admin-settings .demo .article .wp-block-columns ol, .admin-settings .demo .article .wp-block-columns ul, .admin-settings .demo .article .column-wrap ol, .admin-settings .demo .article .column-wrap ul, .admin-settings .demo .article .timeline-box ol, .admin-settings .demo .article .timeline-box ul, .admin-settings .demo .article .wp-block-cover ol, .admin-settings .demo .article .wp-block-cover ul, .admin-settings .demo .article .blogcard-type ol, .admin-settings .demo .article .blogcard-type ul, .admin-settings .demo .article .btn-wrap ol, .admin-settings .demo .article .btn-wrap ul, .admin-settings .demo .article .wp-block-group ol, .admin-settings .demo .article .wp-block-group ul, .admin-settings .demo .article .block-box ol, .admin-settings .demo .article .block-box ul { margin: 0; }
+.admin-settings .demo .article div.scrollable-table table, .admin-settings .demo .article .wp-block-table table { margin-bottom: 0; }
+.admin-settings .demo .article .wp-block-table .scrollable-table { margin-bottom: 0; }
 .admin-settings .demo .is-style-information-box, .admin-settings .demo .information-box, .admin-settings .demo .information { background: #f3fafe; border: 1px solid #bde4fc; }
 .admin-settings .demo .is-style-question-box, .admin-settings .demo .question-box, .admin-settings .demo .question { background: #fff7cc; border: 1px solid #ffe766; }
 .admin-settings .demo .is-style-alert-box, .admin-settings .demo .alert-box, .admin-settings .demo .alert { background: #fdf2f2; border: 1px solid #f6b9b9; }
@@ -881,7 +878,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (max-width: 440px) { .admin-settings .demo .is-style-information-box, .admin-settings .demo .is-style-question-box, .admin-settings .demo .is-style-alert-box, .admin-settings .demo .is-style-memo-box, .admin-settings .demo .is-style-comment-box, .admin-settings .demo .is-style-ok-box, .admin-settings .demo .is-style-ng-box, .admin-settings .demo .is-style-good-box, .admin-settings .demo .is-style-bad-box, .admin-settings .demo .is-style-profile-box, .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 26px 6px 6px; }
   .admin-settings .demo .is-style-information-box::before, .admin-settings .demo .is-style-question-box::before, .admin-settings .demo .is-style-alert-box::before, .admin-settings .demo .is-style-memo-box::before, .admin-settings .demo .is-style-comment-box::before, .admin-settings .demo .is-style-ok-box::before, .admin-settings .demo .is-style-ng-box::before, .admin-settings .demo .is-style-good-box::before, .admin-settings .demo .is-style-bad-box::before, .admin-settings .demo .is-style-profile-box::before, .admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { padding: 0; top: 0.7em; left: 50%; margin-left: -0.5em; font-size: 18px; border: none; width: auto; }
   .admin-settings .demo .container .blank-box, .admin-settings .demo .container .is-style-blank-box-red, .admin-settings .demo .container .is-style-blank-box-navy, .admin-settings .demo .container .is-style-blank-box-blue, .admin-settings .demo .container .is-style-blank-box-yellow, .admin-settings .demo .container .is-style-blank-box-green, .admin-settings .demo .container .is-style-blank-box-pink, .admin-settings .demo .container .is-style-blank-box-orange, .admin-settings .demo .container .is-style-sticky-gray, .admin-settings .demo .container .is-style-sticky-yellow, .admin-settings .demo .container .is-style-sticky-red, .admin-settings .demo .container .is-style-sticky-blue, .admin-settings .demo .container .is-style-sticky-green { margin-left: 0; margin-right: 0; } }
-.admin-settings .demo .blank-box, .admin-settings .demo .is-style-blank-box-red, .admin-settings .demo .is-style-blank-box-navy, .admin-settings .demo .is-style-blank-box-blue, .admin-settings .demo .is-style-blank-box-yellow, .admin-settings .demo .is-style-blank-box-green, .admin-settings .demo .is-style-blank-box-pink, .admin-settings .demo .is-style-blank-box-orange, .admin-settings .demo .is-style-sticky-gray, .admin-settings .demo .is-style-sticky-yellow, .admin-settings .demo .is-style-sticky-red, .admin-settings .demo .is-style-sticky-blue, .admin-settings .demo .is-style-sticky-green { border: 3px solid #949495; padding: 1.2em 1em; margin: 1em 2%; border-radius: 4px; }
+.admin-settings .demo .blank-box, .admin-settings .demo .is-style-blank-box-red, .admin-settings .demo .is-style-blank-box-navy, .admin-settings .demo .is-style-blank-box-blue, .admin-settings .demo .is-style-blank-box-yellow, .admin-settings .demo .is-style-blank-box-green, .admin-settings .demo .is-style-blank-box-pink, .admin-settings .demo .is-style-blank-box-orange, .admin-settings .demo .is-style-sticky-gray, .admin-settings .demo .is-style-sticky-yellow, .admin-settings .demo .is-style-sticky-red, .admin-settings .demo .is-style-sticky-blue, .admin-settings .demo .is-style-sticky-green { border: 3px solid #949495; padding: 1.2em 1em; margin-left: 2%; margin-right: 2%; border-radius: 4px; }
 .admin-settings .demo .blank-box ol, .admin-settings .demo .is-style-blank-box-red ol, .admin-settings .demo .is-style-blank-box-navy ol, .admin-settings .demo .is-style-blank-box-blue ol, .admin-settings .demo .is-style-blank-box-yellow ol, .admin-settings .demo .is-style-blank-box-green ol, .admin-settings .demo .is-style-blank-box-pink ol, .admin-settings .demo .is-style-blank-box-orange ol, .admin-settings .demo .is-style-sticky-gray ol, .admin-settings .demo .is-style-sticky-yellow ol, .admin-settings .demo .is-style-sticky-red ol, .admin-settings .demo .is-style-sticky-blue ol, .admin-settings .demo .is-style-sticky-green ol, .admin-settings .demo .blank-box ul, .admin-settings .demo .is-style-blank-box-red ul, .admin-settings .demo .is-style-blank-box-navy ul, .admin-settings .demo .is-style-blank-box-blue ul, .admin-settings .demo .is-style-blank-box-yellow ul, .admin-settings .demo .is-style-blank-box-green ul, .admin-settings .demo .is-style-blank-box-pink ul, .admin-settings .demo .is-style-blank-box-orange ul, .admin-settings .demo .is-style-sticky-gray ul, .admin-settings .demo .is-style-sticky-yellow ul, .admin-settings .demo .is-style-sticky-red ul, .admin-settings .demo .is-style-sticky-blue ul, .admin-settings .demo .is-style-sticky-green ul { margin: 0; }
 .admin-settings .demo .blank-box.bb-red, .admin-settings .demo .bb-red.is-style-blank-box-red, .admin-settings .demo .bb-red.is-style-blank-box-navy, .admin-settings .demo .bb-red.is-style-blank-box-blue, .admin-settings .demo .bb-red.is-style-blank-box-yellow, .admin-settings .demo .bb-red.is-style-blank-box-green, .admin-settings .demo .bb-red.is-style-blank-box-pink, .admin-settings .demo .bb-red.is-style-blank-box-orange, .admin-settings .demo .bb-red.is-style-sticky-gray, .admin-settings .demo .bb-red.is-style-sticky-yellow, .admin-settings .demo .bb-red.is-style-sticky-red, .admin-settings .demo .bb-red.is-style-sticky-blue, .admin-settings .demo .bb-red.is-style-sticky-green { border-color: #e60033; }
 .admin-settings .demo .blank-box.bb-pink, .admin-settings .demo .bb-pink.is-style-blank-box-red, .admin-settings .demo .bb-pink.is-style-blank-box-navy, .admin-settings .demo .bb-pink.is-style-blank-box-blue, .admin-settings .demo .bb-pink.is-style-blank-box-yellow, .admin-settings .demo .bb-pink.is-style-blank-box-green, .admin-settings .demo .bb-pink.is-style-blank-box-pink, .admin-settings .demo .bb-pink.is-style-blank-box-orange, .admin-settings .demo .bb-pink.is-style-sticky-gray, .admin-settings .demo .bb-pink.is-style-sticky-yellow, .admin-settings .demo .bb-pink.is-style-sticky-red, .admin-settings .demo .bb-pink.is-style-sticky-blue, .admin-settings .demo .bb-pink.is-style-sticky-green { border-color: #e95295; }
@@ -990,7 +987,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .btn:after, .admin-settings .demo .ranking-item-link-buttons a:after, .admin-settings .demo .btn-wrap > a:before, .admin-settings .demo .btn-wrap > a:after { font-family: FontAwesome; margin-right: 12px; transition: all .2s ease; }
 .admin-settings .demo .btn-m, .admin-settings .demo .btn-wrap.btn-wrap-m > a { padding: 14px 45px; font-size: 16px; }
-.admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; margin: 1em; display: flex; justify-content: center; align-items: center; }
+.admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; display: flex; justify-content: center; align-items: center; }
 .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 20px; }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.3s ease-in-out; }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .btn-wrap > a:hover::after { right: -4px; transition: all 0.3s ease-in-out; }
@@ -1035,11 +1032,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-copy.alignleft { float: none; margin-right: 0; text-align: left; }
 .admin-settings .demo .micro-copy.alignright { float: none; margin-left: 0; text-align: right; }
 .admin-settings .demo .micro-copy.aligncenter { text-align: center; }
-.admin-settings .demo .micro-top { font-size: 0.8em; margin-bottom: -1.2em; margin-top: 1em; }
-.admin-settings .demo .micro-bottom { font-size: 0.8em; margin-top: -1.2em; margin-bottom: 1em; }
+.admin-settings .demo .micro-top { font-size: 0.8em; margin-bottom: 0.2em; }
+.admin-settings .demo .micro-bottom { font-size: 0.8em; margin-top: -1.2em; }
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
-.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
+.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; margin-bottom: 0.8em; font-size: 0.8em; }
 .admin-settings .demo .micro-balloon.has-background { color: #fff; }
 .admin-settings .demo .micro-balloon.aligncenter { margin-left: auto; margin-right: auto; }
 .admin-settings .demo .micro-balloon.alignleft { margin-right: auto; }
@@ -1161,13 +1158,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bct-official .blogcard-label::after { content: "公式サイト"; }
 .admin-settings .demo .bct-dl .blogcard-label .fa::before { content: ""; }
 .admin-settings .demo .bct-dl .blogcard-label::after { content: "ダウンロード"; }
-.admin-settings .demo .button-block { float: none; margin: 1em 0; }
+.admin-settings .demo .button-block { float: none; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
 .admin-settings .demo .block-box-label { display: flex; }
 .admin-settings .demo .block-box-label::before { margin-right: 0.3em; }
-.admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
+.admin-settings .demo .caption-box { border: 2px solid #eee; border-radius: 4px; }
 .admin-settings .demo .caption-box.has-border-color .box-label { color: #fff; }
 .admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
@@ -1211,7 +1208,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cb-deep-orange .caption-box-label { background-color: #ea5506; color: #fff; }
 .admin-settings .demo .cb-white.caption-box { border-color: #fff; }
 .admin-settings .demo .cb-white .caption-box-label { background-color: #fff; color: #fff; }
-.admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
 .admin-settings .demo .tab-caption-box.block-box.has-background { background-color: transparent; }
 .admin-settings .demo .tab-caption-box.has-border-color .box-label { color: #fff; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
@@ -1256,7 +1252,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tcb-deep-orange .tab-caption-box-content { border-color: #ea5506; }
 .admin-settings .demo .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
 .admin-settings .demo .tcb-white .tab-caption-box-content { border-color: #fff; }
-.admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box.block-box.has-background { background-color: transparent; }
 .admin-settings .demo .label-box-label { margin-left: 1em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #888; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -1280,7 +1275,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .lb-amber .label-box-content { border-color: #ffc107; }
 .admin-settings .demo .lb-deep-orange .label-box-content { border-color: #ea5506; }
 .admin-settings .demo .lb-white .label-box-content { border-color: #fff; }
-.admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
+.admin-settings .demo .toggle-wrap { position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
@@ -1370,7 +1365,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-amber li::before { color: #ffc107; }
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
-.admin-settings .demo .body .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
+.admin-settings .demo .article .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -1467,7 +1462,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .video iframe, .admin-settings .demo .video object, .admin-settings .demo .video embed, .admin-settings .demo .instagram iframe, .admin-settings .demo .instagram object, .admin-settings .demo .instagram embed, .admin-settings .demo .facebook iframe, .admin-settings .demo .facebook object, .admin-settings .demo .facebook embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .admin-settings .demo .twitter-video { min-width: 200px !important; }
 .admin-settings .demo .instagram-media { position: static !important; min-width: 280px !important; }
-.admin-settings .demo .author-box { border: 1px solid #ccc; border-radius: 4px; margin: 1em 0; line-height: 1.4; position: relative; padding: 1.6% 2.2% 2%; }
+.admin-settings .demo .author-box { border: 1px solid #ccc; border-radius: 4px; line-height: 1.4; position: relative; padding: 1.6% 2.2% 2%; }
 .admin-settings .demo .author-box p { margin-top: 0.3em; line-height: 1.3; }
 .admin-settings .demo .author-box .sns-follow { margin: 0; }
 .admin-settings .demo .author-box .sns-follow-message { display: none; }
@@ -1500,7 +1495,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar .cta-left-and-right .cta-content div, .admin-settings .demo .sidebar .cta-right-and-left .cta-content div { width: 100%; }
 .admin-settings .demo .sidebar .cta-message { margin-top: 1em; }
 .admin-settings .demo .sidebar .cta-button .btn-l, .admin-settings .demo .sidebar .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .sidebar .cta-button a { padding: 1em; font-size: 16px; }
-.admin-settings .demo .speech-wrap { margin-top: 1em; margin-bottom: 1em; display: flex; }
+.admin-settings .demo .speech-wrap { display: flex; }
 .admin-settings .demo .speech-person { width: 12%; min-width: 12%; }
 .admin-settings .demo .speech-icon img, .admin-settings .demo .speech-icon amp-img { border-radius: 50%; border: 2px solid #ccc; width: 100%; }
 .admin-settings .demo .speech-name { text-align: center; font-size: 13px; }
@@ -1532,7 +1527,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon { margin-right: 46px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::before { left: auto; right: -29px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::after { left: auto; right: -44px; }
-.admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; margin: 1.6em auto; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
+.admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
 .admin-settings .demo .product-item-box { position: relative; }
 .admin-settings .demo .product-item-box::after { content: '\ea87'; font-family: icomoon; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ddd; }
 .admin-settings .demo .product-item-box .image-thumb img { border: none; box-shadow: none; }
@@ -1698,7 +1693,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .follow-menu-content .sns-follow-message { display: none; }
 .admin-settings .demo .ranking-items { line-height: 1.4; }
 .admin-settings .demo .ranking-items p { font-size: 18px; margin-top: 0; }
-.admin-settings .demo .ranking-item, .admin-settings .demo .timeline-box { padding: 3%; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; }
+.admin-settings .demo .ranking-item, .admin-settings .demo .timeline-box { padding: 3%; border: 1px solid #ccc; border-radius: 4px; }
 .admin-settings .demo .ranking-item img[width="1"], .admin-settings .demo .timeline-box img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .ranking-item-name-text { font-size: 24px; font-weight: bold; }
 .admin-settings .demo .star::before, .admin-settings .demo .star-half-o::before, .admin-settings .demo .star-o::before { font-family: FontAwesome; }
@@ -1995,7 +1990,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo body { /* フォントの種類 */ font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
-.admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
+.admin-settings .demo ol, .admin-settings .demo ul { padding-left: 40px; }
 .admin-settings .demo hr { color: #eee; }
 .admin-settings .demo .cf::after { clear: both; content: ""; display: block; }
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
@@ -2022,7 +2017,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-btn { margin: 24px 0; cursor: pointer; }
 .admin-settings .demo label { cursor: pointer; }
 .admin-settings .demo .sitemap li a::before { display: none; }
-.admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin: 1em 0; }
+.admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin-bottom: 1.2em; }
 .admin-settings .demo figure { margin: 0; }
 .admin-settings .demo img { max-width: 100%; height: auto; border: 0; }
 .admin-settings .demo .circle-image img { border-radius: 50%; }
@@ -2226,17 +2221,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cat-link:hover { opacity: 0.5; color: #fff; }
 .admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
-.admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f5f6f7; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #eee; padding: 6px; }
-.admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
+.admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; margin: 0; }
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
-.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
+.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; margin: 0; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
-.admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; margin-bottom: 1em; }
+.admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; }
 .admin-settings .demo figure.wp-block-table table { width: auto; }
 .admin-settings .demo figure.wp-block-table.alignwide table, .admin-settings .demo figure.wp-block-table.alignfull table { width: 100%; }
 .admin-settings .demo .main figure.wp-block-table { width: auto; max-width: 100%; display: block; }
@@ -2244,7 +2238,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo figure.wp-block-table.aligncenter table { margin-left: auto; }
 .admin-settings .demo figure.wp-block-table.alignright table { margin-left: 0; }
 .admin-settings .demo .scroll-hint-icon-wrap { overflow: hidden; }
-.admin-settings .demo .article dl { margin: 1em 0; }
 .admin-settings .demo .article dd { margin-left: 40px; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
@@ -2258,7 +2251,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ddd; }
 .admin-settings .demo .article h6 { border-bottom: 1px solid #ddd; }
 .admin-settings .demo .article .column-wrap h1, .admin-settings .demo .article .column-wrap h2, .admin-settings .demo .article .column-wrap h3, .admin-settings .demo .article .column-wrap h4, .admin-settings .demo .article .column-wrap h5, .admin-settings .demo .article .column-wrap h6 { margin-top: 0; }
-.admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ddd; margin: 1em 0; padding: 10px 1.2em; position: relative; }
+.admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ddd; padding: 10px 1.2em; position: relative; }
 .admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; font-family: serif; position: absolute; font-size: 300%; }
 .admin-settings .demo blockquote::before { content: "“"; line-height: 1.1; left: 10px; top: 0; }
 .admin-settings .demo blockquote::after { content: "”"; line-height: 0; right: 10px; bottom: 0px; }
@@ -2268,9 +2261,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .content-only .header-container, .admin-settings .demo .content-only .appeal, .admin-settings .demo .content-only .ad-area, .admin-settings .demo .content-only .sns-share, .admin-settings .demo .content-only .date-tags, .admin-settings .demo .content-only .sns-follow, .admin-settings .demo .content-only .article-footer, .admin-settings .demo .content-only .under-entry-content, .admin-settings .demo .content-only .breadcrumb, .admin-settings .demo .content-only .main-scroll, .admin-settings .demo .content-only .footer, .admin-settings .demo .content-only .go-to-top-button, .admin-settings .demo .content-only .notice-area, .admin-settings .demo .content-only .content-top, .admin-settings .demo .content-only .content-bottom, .admin-settings .demo .content-only .recommended { display: none; }
 .admin-settings .demo .content-only .carousel { display: none !important; }
 .admin-settings .demo span.external-icon, .admin-settings .demo span.internal-icon { margin-left: 3px; font-size: 0.8em; }
-.admin-settings .demo .login-user-only { text-align: center; padding: 2em; background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; }
+.admin-settings .demo .login-user-only { text-align: center; padding: 2em; background-color: #fafbfc; border: 1px solid #ccc; }
 .admin-settings .demo .no-post-date .post-date, .admin-settings .demo .no-post-update .post-update, .admin-settings .demo .no-post-author .author-info { display: none; }
-.admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #eee; border-bottom: 4px double #eee; margin: 0 3%; }
+.admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #eee; border-bottom: 4px double #eee; margin: 0 3%; margin-bottom: 1em; }
 .admin-settings .demo .eye-catch-wrap { display: flex; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
@@ -2280,7 +2273,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .eye-catch-wrap { display: block; } }
 .admin-settings .demo .show-pinterest-button .eye-catch:hover .cat-label { display: none; }
 .admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; overflow: hidden; }
-.admin-settings .demo .entry-content .ad-area { margin: 1em 0; }
 .admin-settings .demo .ad-label-invisible .ad-label { display: none; }
 .admin-settings .demo .ad-content-top { margin-top: 1em; }
 .admin-settings .demo .ad-responsive ins { width: 100%; }
@@ -2317,14 +2309,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .blogcard-content { margin-left: 130px; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
 .admin-settings .demo .nwa .blogcard-footer { font-size: 14px; }
 .admin-settings .demo .nwa .ib-right .blogcard-content, .admin-settings .demo .nwa .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
-.admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; padding: 1em 1.6em; margin-bottom: 1em; display: table; }
+.admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; padding: 1em 1.6em; display: table; }
 .admin-settings .demo .toc .toc-list { padding-left: 1em; }
 .admin-settings .demo .toc .toc-list ul, .admin-settings .demo .toc .toc-list ol { padding-left: 1em; margin: 0; }
 .admin-settings .demo .toc li { margin: 0; }
 .admin-settings .demo .toc ul { list-style: none; }
 .admin-settings .demo .toc a { color: #333; text-decoration: none; }
 .admin-settings .demo .toc a:hover { text-decoration: underline; }
-.admin-settings .demo .toc-center { margin: 1em auto; }
 .admin-settings .demo .toc-title { font-size: 1.1em; text-align: center; display: block; padding: 2px 16px; }
 .admin-settings .demo .toc-widget-box .toc-title { display: none; }
 .admin-settings .demo .toc-widget-box .toc-content { visibility: visible; opacity: 1; height: 100%; }
@@ -2447,10 +2438,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .is-style-secondary-box, .admin-settings .demo .secondary-box { color: #383d41; background-color: #e2e3e5; border-color: #d6d8db; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .admin-settings .demo .is-style-light-box, .admin-settings .demo .light-box { color: #818182; background-color: #fefefe; border-color: #fdfdfe; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .admin-settings .demo .is-style-dark-box, .admin-settings .demo .dark-box { color: #1b1e21; background-color: #d6d8d9; border-color: #c6c8ca; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
-.admin-settings .demo .is-style-information-box, .admin-settings .demo .is-style-question-box, .admin-settings .demo .is-style-alert-box, .admin-settings .demo .is-style-memo-box, .admin-settings .demo .is-style-comment-box, .admin-settings .demo .is-style-ok-box, .admin-settings .demo .is-style-ng-box, .admin-settings .demo .is-style-good-box, .admin-settings .demo .is-style-bad-box, .admin-settings .demo .is-style-profile-box, .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 20px 20px 20px 72px; border-radius: 4px; position: relative; display: block; margin-top: 1em; margin-bottom: 1em; }
-.admin-settings .demo .block-box p:first-of-type { margin-top: 0; }
-.admin-settings .demo .block-box p:last-of-type { margin-bottom: 0; }
-.admin-settings .demo .block-box ol, .admin-settings .demo .block-box ul { margin: 0; }
+.admin-settings .demo .is-style-information-box, .admin-settings .demo .is-style-question-box, .admin-settings .demo .is-style-alert-box, .admin-settings .demo .is-style-memo-box, .admin-settings .demo .is-style-comment-box, .admin-settings .demo .is-style-ok-box, .admin-settings .demo .is-style-ng-box, .admin-settings .demo .is-style-good-box, .admin-settings .demo .is-style-bad-box, .admin-settings .demo .is-style-profile-box, .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 20px 20px 20px 72px; border-radius: 4px; position: relative; display: block; }
+.admin-settings .demo .article blockquote :last-child, .admin-settings .demo .article .wp-block-media-text__content :last-child, .admin-settings .demo .article .wp-block-columns :last-child, .admin-settings .demo .article .column-wrap :last-child, .admin-settings .demo .article .timeline-box :last-child, .admin-settings .demo .article .wp-block-cover :last-child, .admin-settings .demo .article .blogcard-type :last-child, .admin-settings .demo .article .btn-wrap :last-child, .admin-settings .demo .article .wp-block-group :last-child, .admin-settings .demo .article .block-box :last-child { margin-bottom: 0; }
+.admin-settings .demo .article blockquote ol, .admin-settings .demo .article blockquote ul, .admin-settings .demo .article .wp-block-media-text__content ol, .admin-settings .demo .article .wp-block-media-text__content ul, .admin-settings .demo .article .wp-block-columns ol, .admin-settings .demo .article .wp-block-columns ul, .admin-settings .demo .article .column-wrap ol, .admin-settings .demo .article .column-wrap ul, .admin-settings .demo .article .timeline-box ol, .admin-settings .demo .article .timeline-box ul, .admin-settings .demo .article .wp-block-cover ol, .admin-settings .demo .article .wp-block-cover ul, .admin-settings .demo .article .blogcard-type ol, .admin-settings .demo .article .blogcard-type ul, .admin-settings .demo .article .btn-wrap ol, .admin-settings .demo .article .btn-wrap ul, .admin-settings .demo .article .wp-block-group ol, .admin-settings .demo .article .wp-block-group ul, .admin-settings .demo .article .block-box ol, .admin-settings .demo .article .block-box ul { margin: 0; }
+.admin-settings .demo .article div.scrollable-table table, .admin-settings .demo .article .wp-block-table table { margin-bottom: 0; }
+.admin-settings .demo .article .wp-block-table .scrollable-table { margin-bottom: 0; }
 .admin-settings .demo .is-style-information-box, .admin-settings .demo .information-box, .admin-settings .demo .information { background: #f3fafe; border: 1px solid #bde4fc; }
 .admin-settings .demo .is-style-question-box, .admin-settings .demo .question-box, .admin-settings .demo .question { background: #fff7cc; border: 1px solid #ffe766; }
 .admin-settings .demo .is-style-alert-box, .admin-settings .demo .alert-box, .admin-settings .demo .alert { background: #fdf2f2; border: 1px solid #f6b9b9; }
@@ -2476,7 +2468,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (max-width: 440px) { .admin-settings .demo .is-style-information-box, .admin-settings .demo .is-style-question-box, .admin-settings .demo .is-style-alert-box, .admin-settings .demo .is-style-memo-box, .admin-settings .demo .is-style-comment-box, .admin-settings .demo .is-style-ok-box, .admin-settings .demo .is-style-ng-box, .admin-settings .demo .is-style-good-box, .admin-settings .demo .is-style-bad-box, .admin-settings .demo .is-style-profile-box, .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 26px 6px 6px; }
   .admin-settings .demo .is-style-information-box::before, .admin-settings .demo .is-style-question-box::before, .admin-settings .demo .is-style-alert-box::before, .admin-settings .demo .is-style-memo-box::before, .admin-settings .demo .is-style-comment-box::before, .admin-settings .demo .is-style-ok-box::before, .admin-settings .demo .is-style-ng-box::before, .admin-settings .demo .is-style-good-box::before, .admin-settings .demo .is-style-bad-box::before, .admin-settings .demo .is-style-profile-box::before, .admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { padding: 0; top: 0.7em; left: 50%; margin-left: -0.5em; font-size: 18px; border: none; width: auto; }
   .admin-settings .demo .container .blank-box, .admin-settings .demo .container .is-style-blank-box-red, .admin-settings .demo .container .is-style-blank-box-navy, .admin-settings .demo .container .is-style-blank-box-blue, .admin-settings .demo .container .is-style-blank-box-yellow, .admin-settings .demo .container .is-style-blank-box-green, .admin-settings .demo .container .is-style-blank-box-pink, .admin-settings .demo .container .is-style-blank-box-orange, .admin-settings .demo .container .is-style-sticky-gray, .admin-settings .demo .container .is-style-sticky-yellow, .admin-settings .demo .container .is-style-sticky-red, .admin-settings .demo .container .is-style-sticky-blue, .admin-settings .demo .container .is-style-sticky-green { margin-left: 0; margin-right: 0; } }
-.admin-settings .demo .blank-box, .admin-settings .demo .is-style-blank-box-red, .admin-settings .demo .is-style-blank-box-navy, .admin-settings .demo .is-style-blank-box-blue, .admin-settings .demo .is-style-blank-box-yellow, .admin-settings .demo .is-style-blank-box-green, .admin-settings .demo .is-style-blank-box-pink, .admin-settings .demo .is-style-blank-box-orange, .admin-settings .demo .is-style-sticky-gray, .admin-settings .demo .is-style-sticky-yellow, .admin-settings .demo .is-style-sticky-red, .admin-settings .demo .is-style-sticky-blue, .admin-settings .demo .is-style-sticky-green { border: 3px solid #949495; padding: 1.2em 1em; margin: 1em 2%; border-radius: 4px; }
+.admin-settings .demo .blank-box, .admin-settings .demo .is-style-blank-box-red, .admin-settings .demo .is-style-blank-box-navy, .admin-settings .demo .is-style-blank-box-blue, .admin-settings .demo .is-style-blank-box-yellow, .admin-settings .demo .is-style-blank-box-green, .admin-settings .demo .is-style-blank-box-pink, .admin-settings .demo .is-style-blank-box-orange, .admin-settings .demo .is-style-sticky-gray, .admin-settings .demo .is-style-sticky-yellow, .admin-settings .demo .is-style-sticky-red, .admin-settings .demo .is-style-sticky-blue, .admin-settings .demo .is-style-sticky-green { border: 3px solid #949495; padding: 1.2em 1em; margin-left: 2%; margin-right: 2%; border-radius: 4px; }
 .admin-settings .demo .blank-box ol, .admin-settings .demo .is-style-blank-box-red ol, .admin-settings .demo .is-style-blank-box-navy ol, .admin-settings .demo .is-style-blank-box-blue ol, .admin-settings .demo .is-style-blank-box-yellow ol, .admin-settings .demo .is-style-blank-box-green ol, .admin-settings .demo .is-style-blank-box-pink ol, .admin-settings .demo .is-style-blank-box-orange ol, .admin-settings .demo .is-style-sticky-gray ol, .admin-settings .demo .is-style-sticky-yellow ol, .admin-settings .demo .is-style-sticky-red ol, .admin-settings .demo .is-style-sticky-blue ol, .admin-settings .demo .is-style-sticky-green ol, .admin-settings .demo .blank-box ul, .admin-settings .demo .is-style-blank-box-red ul, .admin-settings .demo .is-style-blank-box-navy ul, .admin-settings .demo .is-style-blank-box-blue ul, .admin-settings .demo .is-style-blank-box-yellow ul, .admin-settings .demo .is-style-blank-box-green ul, .admin-settings .demo .is-style-blank-box-pink ul, .admin-settings .demo .is-style-blank-box-orange ul, .admin-settings .demo .is-style-sticky-gray ul, .admin-settings .demo .is-style-sticky-yellow ul, .admin-settings .demo .is-style-sticky-red ul, .admin-settings .demo .is-style-sticky-blue ul, .admin-settings .demo .is-style-sticky-green ul { margin: 0; }
 .admin-settings .demo .blank-box.bb-red, .admin-settings .demo .bb-red.is-style-blank-box-red, .admin-settings .demo .bb-red.is-style-blank-box-navy, .admin-settings .demo .bb-red.is-style-blank-box-blue, .admin-settings .demo .bb-red.is-style-blank-box-yellow, .admin-settings .demo .bb-red.is-style-blank-box-green, .admin-settings .demo .bb-red.is-style-blank-box-pink, .admin-settings .demo .bb-red.is-style-blank-box-orange, .admin-settings .demo .bb-red.is-style-sticky-gray, .admin-settings .demo .bb-red.is-style-sticky-yellow, .admin-settings .demo .bb-red.is-style-sticky-red, .admin-settings .demo .bb-red.is-style-sticky-blue, .admin-settings .demo .bb-red.is-style-sticky-green { border-color: #e60033; }
 .admin-settings .demo .blank-box.bb-pink, .admin-settings .demo .bb-pink.is-style-blank-box-red, .admin-settings .demo .bb-pink.is-style-blank-box-navy, .admin-settings .demo .bb-pink.is-style-blank-box-blue, .admin-settings .demo .bb-pink.is-style-blank-box-yellow, .admin-settings .demo .bb-pink.is-style-blank-box-green, .admin-settings .demo .bb-pink.is-style-blank-box-pink, .admin-settings .demo .bb-pink.is-style-blank-box-orange, .admin-settings .demo .bb-pink.is-style-sticky-gray, .admin-settings .demo .bb-pink.is-style-sticky-yellow, .admin-settings .demo .bb-pink.is-style-sticky-red, .admin-settings .demo .bb-pink.is-style-sticky-blue, .admin-settings .demo .bb-pink.is-style-sticky-green { border-color: #e95295; }
@@ -2585,7 +2577,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .btn:after, .admin-settings .demo .ranking-item-link-buttons a:after, .admin-settings .demo .btn-wrap > a:before, .admin-settings .demo .btn-wrap > a:after { font-family: FontAwesome; margin-right: 12px; transition: all .2s ease; }
 .admin-settings .demo .btn-m, .admin-settings .demo .btn-wrap.btn-wrap-m > a { padding: 14px 45px; font-size: 16px; }
-.admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; margin: 1em; display: flex; justify-content: center; align-items: center; }
+.admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; display: flex; justify-content: center; align-items: center; }
 .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 20px; }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.3s ease-in-out; }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .btn-wrap > a:hover::after { right: -4px; transition: all 0.3s ease-in-out; }
@@ -2630,11 +2622,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-copy.alignleft { float: none; margin-right: 0; text-align: left; }
 .admin-settings .demo .micro-copy.alignright { float: none; margin-left: 0; text-align: right; }
 .admin-settings .demo .micro-copy.aligncenter { text-align: center; }
-.admin-settings .demo .micro-top { font-size: 0.8em; margin-bottom: -1.2em; margin-top: 1em; }
-.admin-settings .demo .micro-bottom { font-size: 0.8em; margin-top: -1.2em; margin-bottom: 1em; }
+.admin-settings .demo .micro-top { font-size: 0.8em; margin-bottom: 0.2em; }
+.admin-settings .demo .micro-bottom { font-size: 0.8em; margin-top: -1.2em; }
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
-.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
+.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; margin-bottom: 0.8em; font-size: 0.8em; }
 .admin-settings .demo .micro-balloon.has-background { color: #fff; }
 .admin-settings .demo .micro-balloon.aligncenter { margin-left: auto; margin-right: auto; }
 .admin-settings .demo .micro-balloon.alignleft { margin-right: auto; }
@@ -2756,13 +2748,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bct-official .blogcard-label::after { content: "公式サイト"; }
 .admin-settings .demo .bct-dl .blogcard-label .fa::before { content: ""; }
 .admin-settings .demo .bct-dl .blogcard-label::after { content: "ダウンロード"; }
-.admin-settings .demo .button-block { float: none; margin: 1em 0; }
+.admin-settings .demo .button-block { float: none; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
 .admin-settings .demo .block-box-label { display: flex; }
 .admin-settings .demo .block-box-label::before { margin-right: 0.3em; }
-.admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
+.admin-settings .demo .caption-box { border: 2px solid #eee; border-radius: 4px; }
 .admin-settings .demo .caption-box.has-border-color .box-label { color: #fff; }
 .admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
@@ -2806,7 +2798,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cb-deep-orange .caption-box-label { background-color: #ea5506; color: #fff; }
 .admin-settings .demo .cb-white.caption-box { border-color: #fff; }
 .admin-settings .demo .cb-white .caption-box-label { background-color: #fff; color: #fff; }
-.admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
 .admin-settings .demo .tab-caption-box.block-box.has-background { background-color: transparent; }
 .admin-settings .demo .tab-caption-box.has-border-color .box-label { color: #fff; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
@@ -2851,7 +2842,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tcb-deep-orange .tab-caption-box-content { border-color: #ea5506; }
 .admin-settings .demo .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
 .admin-settings .demo .tcb-white .tab-caption-box-content { border-color: #fff; }
-.admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box.block-box.has-background { background-color: transparent; }
 .admin-settings .demo .label-box-label { margin-left: 1em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #888; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -2875,7 +2865,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .lb-amber .label-box-content { border-color: #ffc107; }
 .admin-settings .demo .lb-deep-orange .label-box-content { border-color: #ea5506; }
 .admin-settings .demo .lb-white .label-box-content { border-color: #fff; }
-.admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
+.admin-settings .demo .toggle-wrap { position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
@@ -2965,7 +2955,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-amber li::before { color: #ffc107; }
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
-.admin-settings .demo .body .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
+.admin-settings .demo .article .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -3062,7 +3052,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .video iframe, .admin-settings .demo .video object, .admin-settings .demo .video embed, .admin-settings .demo .instagram iframe, .admin-settings .demo .instagram object, .admin-settings .demo .instagram embed, .admin-settings .demo .facebook iframe, .admin-settings .demo .facebook object, .admin-settings .demo .facebook embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .admin-settings .demo .twitter-video { min-width: 200px !important; }
 .admin-settings .demo .instagram-media { position: static !important; min-width: 280px !important; }
-.admin-settings .demo .author-box { border: 1px solid #ccc; border-radius: 4px; margin: 1em 0; line-height: 1.4; position: relative; padding: 1.6% 2.2% 2%; }
+.admin-settings .demo .author-box { border: 1px solid #ccc; border-radius: 4px; line-height: 1.4; position: relative; padding: 1.6% 2.2% 2%; }
 .admin-settings .demo .author-box p { margin-top: 0.3em; line-height: 1.3; }
 .admin-settings .demo .author-box .sns-follow { margin: 0; }
 .admin-settings .demo .author-box .sns-follow-message { display: none; }
@@ -3095,7 +3085,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar .cta-left-and-right .cta-content div, .admin-settings .demo .sidebar .cta-right-and-left .cta-content div { width: 100%; }
 .admin-settings .demo .sidebar .cta-message { margin-top: 1em; }
 .admin-settings .demo .sidebar .cta-button .btn-l, .admin-settings .demo .sidebar .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .sidebar .cta-button a { padding: 1em; font-size: 16px; }
-.admin-settings .demo .speech-wrap { margin-top: 1em; margin-bottom: 1em; display: flex; }
+.admin-settings .demo .speech-wrap { display: flex; }
 .admin-settings .demo .speech-person { width: 12%; min-width: 12%; }
 .admin-settings .demo .speech-icon img, .admin-settings .demo .speech-icon amp-img { border-radius: 50%; border: 2px solid #ccc; width: 100%; }
 .admin-settings .demo .speech-name { text-align: center; font-size: 13px; }
@@ -3127,7 +3117,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon { margin-right: 46px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::before { left: auto; right: -29px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::after { left: auto; right: -44px; }
-.admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; margin: 1.6em auto; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
+.admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
 .admin-settings .demo .product-item-box { position: relative; }
 .admin-settings .demo .product-item-box::after { content: '\ea87'; font-family: icomoon; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ddd; }
 .admin-settings .demo .product-item-box .image-thumb img { border: none; box-shadow: none; }
@@ -3293,7 +3283,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .follow-menu-content .sns-follow-message { display: none; }
 .admin-settings .demo .ranking-items { line-height: 1.4; }
 .admin-settings .demo .ranking-items p { font-size: 18px; margin-top: 0; }
-.admin-settings .demo .ranking-item, .admin-settings .demo .timeline-box { padding: 3%; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; }
+.admin-settings .demo .ranking-item, .admin-settings .demo .timeline-box { padding: 3%; border: 1px solid #ccc; border-radius: 4px; }
 .admin-settings .demo .ranking-item img[width="1"], .admin-settings .demo .timeline-box img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .ranking-item-name-text { font-size: 24px; font-weight: bold; }
 .admin-settings .demo .star::before, .admin-settings .demo .star-half-o::before, .admin-settings .demo .star-o::before { font-family: FontAwesome; }
@@ -3981,7 +3971,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 /************************************
 ** ソースコード
 ************************************/
-pre { background-color: #f5f6f7; border: 1px solid #ddd; overflow: auto; padding: 10px; margin: 1em 0; }
+pre { background-color: #f5f6f7; border: 1px solid #ddd; overflow: auto; padding: 10px; }
 
 .is-code-row-number-enable pre, .is-code-row-number-enable pre#highlight-demo { border: none; position: relative; padding: 0.4em 1em 0.4em 3em; }
 
@@ -4251,10 +4241,11 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .is-style-secondary-box, .components-popover__content .secondary-box { color: #383d41; background-color: #e2e3e5; border-color: #d6d8db; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .components-popover__content .is-style-light-box, .components-popover__content .light-box { color: #818182; background-color: #fefefe; border-color: #fdfdfe; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 .components-popover__content .is-style-dark-box, .components-popover__content .dark-box { color: #1b1e21; background-color: #d6d8d9; border-color: #c6c8ca; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
-.components-popover__content .is-style-information-box, .components-popover__content .is-style-question-box, .components-popover__content .is-style-alert-box, .components-popover__content .is-style-memo-box, .components-popover__content .is-style-comment-box, .components-popover__content .is-style-ok-box, .components-popover__content .is-style-ng-box, .components-popover__content .is-style-good-box, .components-popover__content .is-style-bad-box, .components-popover__content .is-style-profile-box, .components-popover__content .information-box, .components-popover__content .question-box, .components-popover__content .alert-box, .components-popover__content .information, .components-popover__content .question, .components-popover__content .alert, .components-popover__content .memo-box, .components-popover__content .comment-box, .components-popover__content .common-icon-box { padding: 20px 20px 20px 72px; border-radius: 4px; position: relative; display: block; margin-top: 1em; margin-bottom: 1em; }
-.components-popover__content .block-box p:first-of-type { margin-top: 0; }
-.components-popover__content .block-box p:last-of-type { margin-bottom: 0; }
-.components-popover__content .block-box ol, .components-popover__content .block-box ul { margin: 0; }
+.components-popover__content .is-style-information-box, .components-popover__content .is-style-question-box, .components-popover__content .is-style-alert-box, .components-popover__content .is-style-memo-box, .components-popover__content .is-style-comment-box, .components-popover__content .is-style-ok-box, .components-popover__content .is-style-ng-box, .components-popover__content .is-style-good-box, .components-popover__content .is-style-bad-box, .components-popover__content .is-style-profile-box, .components-popover__content .information-box, .components-popover__content .question-box, .components-popover__content .alert-box, .components-popover__content .information, .components-popover__content .question, .components-popover__content .alert, .components-popover__content .memo-box, .components-popover__content .comment-box, .components-popover__content .common-icon-box { padding: 20px 20px 20px 72px; border-radius: 4px; position: relative; display: block; }
+.components-popover__content .article blockquote :last-child, .components-popover__content .article .wp-block-media-text__content :last-child, .components-popover__content .article .wp-block-columns :last-child, .components-popover__content .article .column-wrap :last-child, .components-popover__content .article .timeline-box :last-child, .components-popover__content .article .wp-block-cover :last-child, .components-popover__content .article .blogcard-type :last-child, .components-popover__content .article .btn-wrap :last-child, .components-popover__content .article .wp-block-group :last-child, .components-popover__content .article .block-box :last-child { margin-bottom: 0; }
+.components-popover__content .article blockquote ol, .components-popover__content .article blockquote ul, .components-popover__content .article .wp-block-media-text__content ol, .components-popover__content .article .wp-block-media-text__content ul, .components-popover__content .article .wp-block-columns ol, .components-popover__content .article .wp-block-columns ul, .components-popover__content .article .column-wrap ol, .components-popover__content .article .column-wrap ul, .components-popover__content .article .timeline-box ol, .components-popover__content .article .timeline-box ul, .components-popover__content .article .wp-block-cover ol, .components-popover__content .article .wp-block-cover ul, .components-popover__content .article .blogcard-type ol, .components-popover__content .article .blogcard-type ul, .components-popover__content .article .btn-wrap ol, .components-popover__content .article .btn-wrap ul, .components-popover__content .article .wp-block-group ol, .components-popover__content .article .wp-block-group ul, .components-popover__content .article .block-box ol, .components-popover__content .article .block-box ul { margin: 0; }
+.components-popover__content .article div.scrollable-table table, .components-popover__content .article .wp-block-table table { margin-bottom: 0; }
+.components-popover__content .article .wp-block-table .scrollable-table { margin-bottom: 0; }
 .components-popover__content .is-style-information-box, .components-popover__content .information-box, .components-popover__content .information { background: #f3fafe; border: 1px solid #bde4fc; }
 .components-popover__content .is-style-question-box, .components-popover__content .question-box, .components-popover__content .question { background: #fff7cc; border: 1px solid #ffe766; }
 .components-popover__content .is-style-alert-box, .components-popover__content .alert-box, .components-popover__content .alert { background: #fdf2f2; border: 1px solid #f6b9b9; }
@@ -4280,7 +4271,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 @media screen and (max-width: 440px) { .components-popover__content .is-style-information-box, .components-popover__content .is-style-question-box, .components-popover__content .is-style-alert-box, .components-popover__content .is-style-memo-box, .components-popover__content .is-style-comment-box, .components-popover__content .is-style-ok-box, .components-popover__content .is-style-ng-box, .components-popover__content .is-style-good-box, .components-popover__content .is-style-bad-box, .components-popover__content .is-style-profile-box, .components-popover__content .information-box, .components-popover__content .question-box, .components-popover__content .alert-box, .components-popover__content .information, .components-popover__content .question, .components-popover__content .alert, .components-popover__content .memo-box, .components-popover__content .comment-box, .components-popover__content .common-icon-box { padding: 26px 6px 6px; }
   .components-popover__content .is-style-information-box::before, .components-popover__content .is-style-question-box::before, .components-popover__content .is-style-alert-box::before, .components-popover__content .is-style-memo-box::before, .components-popover__content .is-style-comment-box::before, .components-popover__content .is-style-ok-box::before, .components-popover__content .is-style-ng-box::before, .components-popover__content .is-style-good-box::before, .components-popover__content .is-style-bad-box::before, .components-popover__content .is-style-profile-box::before, .components-popover__content .information-box::before, .components-popover__content .question-box::before, .components-popover__content .alert-box::before, .components-popover__content .information::before, .components-popover__content .question::before, .components-popover__content .alert::before, .components-popover__content .memo-box::before, .components-popover__content .comment-box::before, .components-popover__content .common-icon-box::before { padding: 0; top: 0.7em; left: 50%; margin-left: -0.5em; font-size: 18px; border: none; width: auto; }
   .components-popover__content .container .blank-box, .components-popover__content .container .is-style-blank-box-red, .components-popover__content .container .is-style-blank-box-navy, .components-popover__content .container .is-style-blank-box-blue, .components-popover__content .container .is-style-blank-box-yellow, .components-popover__content .container .is-style-blank-box-green, .components-popover__content .container .is-style-blank-box-pink, .components-popover__content .container .is-style-blank-box-orange, .components-popover__content .container .is-style-sticky-gray, .components-popover__content .container .is-style-sticky-yellow, .components-popover__content .container .is-style-sticky-red, .components-popover__content .container .is-style-sticky-blue, .components-popover__content .container .is-style-sticky-green { margin-left: 0; margin-right: 0; } }
-.components-popover__content .blank-box, .components-popover__content .admin-settings .demo .is-style-blank-box-red, .admin-settings .demo .components-popover__content .is-style-blank-box-red, .components-popover__content .admin-settings .demo .is-style-blank-box-navy, .admin-settings .demo .components-popover__content .is-style-blank-box-navy, .components-popover__content .admin-settings .demo .is-style-blank-box-blue, .admin-settings .demo .components-popover__content .is-style-blank-box-blue, .components-popover__content .admin-settings .demo .is-style-blank-box-yellow, .admin-settings .demo .components-popover__content .is-style-blank-box-yellow, .components-popover__content .admin-settings .demo .is-style-blank-box-green, .admin-settings .demo .components-popover__content .is-style-blank-box-green, .components-popover__content .admin-settings .demo .is-style-blank-box-pink, .admin-settings .demo .components-popover__content .is-style-blank-box-pink, .components-popover__content .admin-settings .demo .is-style-blank-box-orange, .admin-settings .demo .components-popover__content .is-style-blank-box-orange, .components-popover__content .admin-settings .demo .is-style-sticky-gray, .admin-settings .demo .components-popover__content .is-style-sticky-gray, .components-popover__content .admin-settings .demo .is-style-sticky-yellow, .admin-settings .demo .components-popover__content .is-style-sticky-yellow, .components-popover__content .admin-settings .demo .is-style-sticky-red, .admin-settings .demo .components-popover__content .is-style-sticky-red, .components-popover__content .admin-settings .demo .is-style-sticky-blue, .admin-settings .demo .components-popover__content .is-style-sticky-blue, .components-popover__content .admin-settings .demo .is-style-sticky-green, .admin-settings .demo .components-popover__content .is-style-sticky-green, .components-popover__content .is-style-blank-box-red, .components-popover__content .is-style-blank-box-navy, .components-popover__content .is-style-blank-box-blue, .components-popover__content .is-style-blank-box-yellow, .components-popover__content .is-style-blank-box-green, .components-popover__content .is-style-blank-box-pink, .components-popover__content .is-style-blank-box-orange, .components-popover__content .is-style-sticky-gray, .components-popover__content .is-style-sticky-yellow, .components-popover__content .is-style-sticky-red, .components-popover__content .is-style-sticky-blue, .components-popover__content .is-style-sticky-green { border: 3px solid #949495; padding: 1.2em 1em; margin: 1em 2%; border-radius: 4px; }
+.components-popover__content .blank-box, .components-popover__content .admin-settings .demo .is-style-blank-box-red, .admin-settings .demo .components-popover__content .is-style-blank-box-red, .components-popover__content .admin-settings .demo .is-style-blank-box-navy, .admin-settings .demo .components-popover__content .is-style-blank-box-navy, .components-popover__content .admin-settings .demo .is-style-blank-box-blue, .admin-settings .demo .components-popover__content .is-style-blank-box-blue, .components-popover__content .admin-settings .demo .is-style-blank-box-yellow, .admin-settings .demo .components-popover__content .is-style-blank-box-yellow, .components-popover__content .admin-settings .demo .is-style-blank-box-green, .admin-settings .demo .components-popover__content .is-style-blank-box-green, .components-popover__content .admin-settings .demo .is-style-blank-box-pink, .admin-settings .demo .components-popover__content .is-style-blank-box-pink, .components-popover__content .admin-settings .demo .is-style-blank-box-orange, .admin-settings .demo .components-popover__content .is-style-blank-box-orange, .components-popover__content .admin-settings .demo .is-style-sticky-gray, .admin-settings .demo .components-popover__content .is-style-sticky-gray, .components-popover__content .admin-settings .demo .is-style-sticky-yellow, .admin-settings .demo .components-popover__content .is-style-sticky-yellow, .components-popover__content .admin-settings .demo .is-style-sticky-red, .admin-settings .demo .components-popover__content .is-style-sticky-red, .components-popover__content .admin-settings .demo .is-style-sticky-blue, .admin-settings .demo .components-popover__content .is-style-sticky-blue, .components-popover__content .admin-settings .demo .is-style-sticky-green, .admin-settings .demo .components-popover__content .is-style-sticky-green, .components-popover__content .is-style-blank-box-red, .components-popover__content .is-style-blank-box-navy, .components-popover__content .is-style-blank-box-blue, .components-popover__content .is-style-blank-box-yellow, .components-popover__content .is-style-blank-box-green, .components-popover__content .is-style-blank-box-pink, .components-popover__content .is-style-blank-box-orange, .components-popover__content .is-style-sticky-gray, .components-popover__content .is-style-sticky-yellow, .components-popover__content .is-style-sticky-red, .components-popover__content .is-style-sticky-blue, .components-popover__content .is-style-sticky-green { border: 3px solid #949495; padding: 1.2em 1em; margin-left: 2%; margin-right: 2%; border-radius: 4px; }
 .components-popover__content .blank-box ol, .components-popover__content .admin-settings .demo .is-style-blank-box-red ol, .admin-settings .demo .components-popover__content .is-style-blank-box-red ol, .components-popover__content .admin-settings .demo .is-style-blank-box-navy ol, .admin-settings .demo .components-popover__content .is-style-blank-box-navy ol, .components-popover__content .admin-settings .demo .is-style-blank-box-blue ol, .admin-settings .demo .components-popover__content .is-style-blank-box-blue ol, .components-popover__content .admin-settings .demo .is-style-blank-box-yellow ol, .admin-settings .demo .components-popover__content .is-style-blank-box-yellow ol, .components-popover__content .admin-settings .demo .is-style-blank-box-green ol, .admin-settings .demo .components-popover__content .is-style-blank-box-green ol, .components-popover__content .admin-settings .demo .is-style-blank-box-pink ol, .admin-settings .demo .components-popover__content .is-style-blank-box-pink ol, .components-popover__content .admin-settings .demo .is-style-blank-box-orange ol, .admin-settings .demo .components-popover__content .is-style-blank-box-orange ol, .components-popover__content .admin-settings .demo .is-style-sticky-gray ol, .admin-settings .demo .components-popover__content .is-style-sticky-gray ol, .components-popover__content .admin-settings .demo .is-style-sticky-yellow ol, .admin-settings .demo .components-popover__content .is-style-sticky-yellow ol, .components-popover__content .admin-settings .demo .is-style-sticky-red ol, .admin-settings .demo .components-popover__content .is-style-sticky-red ol, .components-popover__content .admin-settings .demo .is-style-sticky-blue ol, .admin-settings .demo .components-popover__content .is-style-sticky-blue ol, .components-popover__content .admin-settings .demo .is-style-sticky-green ol, .admin-settings .demo .components-popover__content .is-style-sticky-green ol, .components-popover__content .is-style-blank-box-red ol, .components-popover__content .is-style-blank-box-navy ol, .components-popover__content .is-style-blank-box-blue ol, .components-popover__content .is-style-blank-box-yellow ol, .components-popover__content .is-style-blank-box-green ol, .components-popover__content .is-style-blank-box-pink ol, .components-popover__content .is-style-blank-box-orange ol, .components-popover__content .is-style-sticky-gray ol, .components-popover__content .is-style-sticky-yellow ol, .components-popover__content .is-style-sticky-red ol, .components-popover__content .is-style-sticky-blue ol, .components-popover__content .is-style-sticky-green ol, .components-popover__content .blank-box ul, .components-popover__content .admin-settings .demo .is-style-blank-box-red ul, .admin-settings .demo .components-popover__content .is-style-blank-box-red ul, .components-popover__content .admin-settings .demo .is-style-blank-box-navy ul, .admin-settings .demo .components-popover__content .is-style-blank-box-navy ul, .components-popover__content .admin-settings .demo .is-style-blank-box-blue ul, .admin-settings .demo .components-popover__content .is-style-blank-box-blue ul, .components-popover__content .admin-settings .demo .is-style-blank-box-yellow ul, .admin-settings .demo .components-popover__content .is-style-blank-box-yellow ul, .components-popover__content .admin-settings .demo .is-style-blank-box-green ul, .admin-settings .demo .components-popover__content .is-style-blank-box-green ul, .components-popover__content .admin-settings .demo .is-style-blank-box-pink ul, .admin-settings .demo .components-popover__content .is-style-blank-box-pink ul, .components-popover__content .admin-settings .demo .is-style-blank-box-orange ul, .admin-settings .demo .components-popover__content .is-style-blank-box-orange ul, .components-popover__content .admin-settings .demo .is-style-sticky-gray ul, .admin-settings .demo .components-popover__content .is-style-sticky-gray ul, .components-popover__content .admin-settings .demo .is-style-sticky-yellow ul, .admin-settings .demo .components-popover__content .is-style-sticky-yellow ul, .components-popover__content .admin-settings .demo .is-style-sticky-red ul, .admin-settings .demo .components-popover__content .is-style-sticky-red ul, .components-popover__content .admin-settings .demo .is-style-sticky-blue ul, .admin-settings .demo .components-popover__content .is-style-sticky-blue ul, .components-popover__content .admin-settings .demo .is-style-sticky-green ul, .admin-settings .demo .components-popover__content .is-style-sticky-green ul, .components-popover__content .is-style-blank-box-red ul, .components-popover__content .is-style-blank-box-navy ul, .components-popover__content .is-style-blank-box-blue ul, .components-popover__content .is-style-blank-box-yellow ul, .components-popover__content .is-style-blank-box-green ul, .components-popover__content .is-style-blank-box-pink ul, .components-popover__content .is-style-blank-box-orange ul, .components-popover__content .is-style-sticky-gray ul, .components-popover__content .is-style-sticky-yellow ul, .components-popover__content .is-style-sticky-red ul, .components-popover__content .is-style-sticky-blue ul, .components-popover__content .is-style-sticky-green ul { margin: 0; }
 .components-popover__content .blank-box.bb-red, .components-popover__content .bb-red.is-style-blank-box-red, .components-popover__content .bb-red.is-style-blank-box-navy, .components-popover__content .bb-red.is-style-blank-box-blue, .components-popover__content .bb-red.is-style-blank-box-yellow, .components-popover__content .bb-red.is-style-blank-box-green, .components-popover__content .bb-red.is-style-blank-box-pink, .components-popover__content .bb-red.is-style-blank-box-orange, .components-popover__content .bb-red.is-style-sticky-gray, .components-popover__content .bb-red.is-style-sticky-yellow, .components-popover__content .bb-red.is-style-sticky-red, .components-popover__content .bb-red.is-style-sticky-blue, .components-popover__content .bb-red.is-style-sticky-green { border-color: #e60033; }
 .components-popover__content .blank-box.bb-pink, .components-popover__content .bb-pink.is-style-blank-box-red, .components-popover__content .bb-pink.is-style-blank-box-navy, .components-popover__content .bb-pink.is-style-blank-box-blue, .components-popover__content .bb-pink.is-style-blank-box-yellow, .components-popover__content .bb-pink.is-style-blank-box-green, .components-popover__content .bb-pink.is-style-blank-box-pink, .components-popover__content .bb-pink.is-style-blank-box-orange, .components-popover__content .bb-pink.is-style-sticky-gray, .components-popover__content .bb-pink.is-style-sticky-yellow, .components-popover__content .bb-pink.is-style-sticky-red, .components-popover__content .bb-pink.is-style-sticky-blue, .components-popover__content .bb-pink.is-style-sticky-green { border-color: #e95295; }
@@ -4389,7 +4380,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .btn amp-img, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a amp-img, .components-popover__content .btn-wrap > a amp-img, .components-popover__content .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
 .components-popover__content .btn:before, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:before, .components-popover__content .btn:after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:after, .components-popover__content .btn-wrap > a:before, .components-popover__content .btn-wrap > a:after { font-family: FontAwesome; margin-right: 12px; transition: all .2s ease; }
 .components-popover__content .btn-m, .components-popover__content .btn-wrap.btn-wrap-m > a { padding: 14px 45px; font-size: 16px; }
-.components-popover__content .btn-l, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; margin: 1em; display: flex; justify-content: center; align-items: center; }
+.components-popover__content .btn-l, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; display: flex; justify-content: center; align-items: center; }
 .components-popover__content .btn-l::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a::after, .components-popover__content .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 20px; }
 .components-popover__content .btn:hover, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover, .components-popover__content .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.3s ease-in-out; }
 .components-popover__content .btn:hover::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover::after, .components-popover__content .btn-wrap > a:hover::after { right: -4px; transition: all 0.3s ease-in-out; }
@@ -4434,11 +4425,11 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .micro-copy.alignleft { float: none; margin-right: 0; text-align: left; }
 .components-popover__content .micro-copy.alignright { float: none; margin-left: 0; text-align: right; }
 .components-popover__content .micro-copy.aligncenter { text-align: center; }
-.components-popover__content .micro-top { font-size: 0.8em; margin-bottom: -1.2em; margin-top: 1em; }
-.components-popover__content .micro-bottom { font-size: 0.8em; margin-top: -1.2em; margin-bottom: 1em; }
+.components-popover__content .micro-top { font-size: 0.8em; margin-bottom: 0.2em; }
+.components-popover__content .micro-bottom { font-size: 0.8em; margin-top: -1.2em; }
 .components-popover__content .micro-center { text-align: center; }
 .components-popover__content .micro-right { text-align: right; }
-.components-popover__content .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
+.components-popover__content .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; margin-bottom: 0.8em; font-size: 0.8em; }
 .components-popover__content .micro-balloon.has-background { color: #fff; }
 .components-popover__content .micro-balloon.aligncenter { margin-left: auto; margin-right: auto; }
 .components-popover__content .micro-balloon.alignleft { margin-right: auto; }
@@ -4560,13 +4551,13 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bct-official .blogcard-label::after { content: "公式サイト"; }
 .components-popover__content .bct-dl .blogcard-label .fa::before { content: ""; }
 .components-popover__content .bct-dl .blogcard-label::after { content: "ダウンロード"; }
-.components-popover__content .button-block { float: none; margin: 1em 0; }
+.components-popover__content .button-block { float: none; }
 .components-popover__content .button-block.alignleft { text-align: left; }
 .components-popover__content .button-block.aligncenter { text-align: center; }
 .components-popover__content .button-block.alignright { text-align: right; }
 .components-popover__content .block-box-label { display: flex; }
 .components-popover__content .block-box-label::before { margin-right: 0.3em; }
-.components-popover__content .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
+.components-popover__content .caption-box { border: 2px solid #eee; border-radius: 4px; }
 .components-popover__content .caption-box.has-border-color .box-label { color: #fff; }
 .components-popover__content .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .components-popover__content .caption-box-content { padding: 0.4em 0.8em; }
@@ -4610,7 +4601,6 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .cb-deep-orange .caption-box-label { background-color: #ea5506; color: #fff; }
 .components-popover__content .cb-white.caption-box { border-color: #fff; }
 .components-popover__content .cb-white .caption-box-label { background-color: #fff; color: #fff; }
-.components-popover__content .tab-caption-box { margin: 1.2em 0; }
 .components-popover__content .tab-caption-box.block-box.has-background { background-color: transparent; }
 .components-popover__content .tab-caption-box.has-border-color .box-label { color: #fff; }
 .components-popover__content .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
@@ -4655,7 +4645,6 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .tcb-deep-orange .tab-caption-box-content { border-color: #ea5506; }
 .components-popover__content .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
 .components-popover__content .tcb-white .tab-caption-box-content { border-color: #fff; }
-.components-popover__content .label-box { margin: 1.2em 0; }
 .components-popover__content .label-box.block-box.has-background { background-color: transparent; }
 .components-popover__content .label-box-label { margin-left: 1em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
 .components-popover__content .label-box-content { margin-top: -0.9em; border: 3px solid #888; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -4679,7 +4668,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .lb-amber .label-box-content { border-color: #ffc107; }
 .components-popover__content .lb-deep-orange .label-box-content { border-color: #ea5506; }
 .components-popover__content .lb-white .label-box-content { border-color: #fff; }
-.components-popover__content .toggle-wrap { margin: 1.2em 0; position: relative; }
+.components-popover__content .toggle-wrap { position: relative; }
 .components-popover__content .toggle-wrap > p { margin: 0; }
 .components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
 .components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
@@ -4769,7 +4758,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .iic-amber li::before { color: #ffc107; }
 .components-popover__content .iic-deep-orange li::before { color: #ea5506; }
 .components-popover__content .iic-white li::before { color: #fff; }
-.components-popover__content .body .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
+.components-popover__content .article .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
 .components-popover__content .red { margin: 0; }
 .components-popover__content .fz-12px { font-size: 12px; }
 .components-popover__content .fz-13px { font-size: 13px; }

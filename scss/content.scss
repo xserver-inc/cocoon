@@ -100,10 +100,10 @@ pre *{
 /************************************
 ** 投稿・固定ページで使うHTML要素
 ************************************/
-p,
-.paragraph{
-  margin: 1.2em 0;
-}
+// p,
+// .paragraph{
+//   margin-bottom: 1.2em;
+// }
 
 
 table {
@@ -139,6 +139,7 @@ table {
 ///////////////////////////////////////
 .scrollable-table{
   -webkit-overflow-scrolling: touch;
+  margin: 0;
 
   //1列目を固定
   &.stfc-sticky tr{
@@ -156,6 +157,7 @@ table {
 .scrollable-table table{
   border-collapse: collapse;
   max-width: none;
+  margin: 0;
 }
 
 .scrollable-table th{
@@ -172,7 +174,6 @@ table {
 .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
-  margin-bottom: 1em;
 }
 
 // figure.wp-block-table.scrollable-block-table{
@@ -233,7 +234,7 @@ figure.wp-block-table.alignright table {
 blockquote {
   background-color: $xxx_thin;
   border: 1px solid $thin;
-  margin: 1em 0;
+  // margin-bottom: 1.2em;
   padding: 10px 1.2em;
   position: relative;
 
@@ -321,7 +322,7 @@ span.internal-icon{
   padding: 2em;
   background-color: $xxx_thin;
   border: 1px solid $basic_border_color;
-  margin: 1em 0;
+  // margin-bottom: 1.2em;
 }
 
 ///////////////////////////////////////
@@ -339,4 +340,5 @@ span.internal-icon{
   border-top: 4px double $x_thin;
   border-bottom: 4px double $x_thin;
   margin: 0 3%;
+  margin-bottom: 1em;
 }

@@ -607,40 +607,91 @@ if ($entry_content_line_hight = get_entry_content_line_hight()): ?>
   <?php endif; ?>
 <?php endif ?>
 <?php //行の余白
-if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
+// $entry_content_line_hight = get_entry_content_line_hight()
+// if (!$entry_content_line_hight) {
+//   $entry_content_line_hight = OP_ENTRY_CONTENT_LINE_HIGHT_DEFAULT;
+// }
+$entry_content_margin_hight = get_entry_content_margin_hight();
+if (!$entry_content_margin_hight) {
+  $entry_content_margin_hight = OP_ENTRY_CONTENT_MARGIN_HIGHT_DEFAULT;
+} ?>
+/*
 .entry-content > *,
-.demo .entry-content p {
-  margin-top: <?php echo $entry_content_margin_hight; ?>em;
+*/
+.article p,
+.demo .entry-content p,
+.article dl,
+.article ul,
+.article ol,
+.article blockquote,
+.article pre,
+.article table,
+.article .author-box,
+.article .blogcard-wrap,
+.article .login-user-only,
+.article .information-box,
+.article .question-box,
+.article .alert-box,
+.article .information,
+.article .question,
+.article .alert,
+.article .memo-box,
+.article .comment-box,
+.article .common-icon-box,
+.article .blank-box,
+.article .btn,
+.article .micro-bottom,
+.article .caption-box,
+.article .tab-caption-box,
+.article .label-box,
+.article .toggle-wrap,
+.article .wp-block-image,.booklink-box,
+.article .kaerebalink-box,
+.article .tomarebalink-box,
+.article .product-item-box,
+.article .speech-wrap,
+.article .toc,
+.article .column-wrap,
+.article .ranking-item,
+.article .ad-area,
+/*.article [class^="wp-block-"],*/
+.article .wp-block-gallery,
+.article .wp-block-audio,
+.article .wp-block-cover,
+.article .wp-block-file,
+.article .wp-block-media-text,
+.article .wp-block-video,
+.article .wp-block-buttons,
+.article .wp-block-columns,
+.article .wp-block-separator,
+.article .components-placeholder,
+.article .wp-block-search,
+.article .wp-block-social-links,
+.article .timeline-box,
+.article .blogcard-type,
+.article .btn-wrap,
+.article .btn-wrap a,
+.article .block-box,
+.article .wp-block-embed,
+.article .wp-block-group,
+.article .wp-block-table,
+.article .scrollable-table {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
 .article .micro-top{
-  margin-bottom: -<?php echo $entry_content_margin_hight * 1.1; ?>em;
-}
-.article .micro-balloon{
-  margin-bottom: -<?php echo $entry_content_margin_hight * 0.8; ?>em;
+  margin-bottom: <?php echo $entry_content_margin_hight * 0.2; ?>em;
 }
 .article .micro-bottom{
-  margin-top: -<?php echo $entry_content_margin_hight * 1.1; ?>em;
+  margin-top: -<?php echo $entry_content_margin_hight * 0.9; ?>em;
+}
+
+.article .micro-balloon{
+  margin-bottom: <?php echo $entry_content_margin_hight * 0.5; ?>em;
 }
 .article .micro-bottom.micro-balloon{
-  margin-top: -<?php echo $entry_content_margin_hight * 0.8; ?>em;
-  margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+  margin-top: -<?php echo $entry_content_margin_hight * 0.7; ?>em;
 }
-  <?php ////管理画面用
-  if(is_admin() && is_gutenberg_editor_enable()): ?>
-  .article .wp-block {
-    margin-top: <?php echo $entry_content_margin_hight; ?>em;
-    margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
-  }
-  <?php //公開ページと同じにすると「＋」ボタンが押せなかったので少し変更 ?>
-  .article .micro-top{
-    margin-bottom: -<?php echo $entry_content_margin_hight; ?>em;
-  }
-  .article .micro-bottom{
-    margin-top: -<?php echo $entry_content_margin_hight; ?>em;
-  }
-  <?php endif; ?>
-<?php endif ?>
+
 .blank-box.bb-key-color{
   border-color: <?php echo get_editor_key_color(); ?>;
 }

@@ -242,24 +242,46 @@ $marker_u_blue: $marker_blue;
   border-radius: 4px;
   position: relative;
   display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  // margin-bottom: 1.2em;
   //overflow: hidden;
 }
 
-.block-box{
-  p:first-of-type{
-    margin-top: 0;
-  }
-  p:last-of-type{
-    margin-bottom: 0;
+.article {
+  blockquote,
+  .wp-block-media-text__content,
+  .wp-block-columns,
+  .column-wrap,
+  .timeline-box,
+  .wp-block-cover,
+  .blogcard-type,
+  .btn-wrap,
+  .wp-block-group,
+  .block-box{
+    // p:first-of-type{
+    //   margin-top: 0;
+    // }
+    :last-child{
+      margin-bottom: 0;
+    }
+
+    ol,
+    ul{
+      margin: 0;
+    }
   }
 
-  ol,
-  ul{
-    margin: 0;
+  div.scrollable-table,
+  .wp-block-table{
+    table{
+      margin-bottom: 0;
+    }
+  }
+
+  .wp-block-table .scrollable-table{
+    margin-bottom: 0;
   }
 }
+
 
 .is-style-information-box,
 .information-box,
@@ -507,7 +529,9 @@ $bb_green: $green_color;
 .blank-box{
   border: 3px solid $grey_color;
   padding: 1.2em 1em;
-  margin: 1em 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  // margin-bottom: 1.2em;
   border-radius: $basic_border_radius;
     ol, ul {
     margin: 0;
@@ -887,8 +911,7 @@ div.search-form{
 .btn-wrap.btn-wrap-l > a{
   padding: 14px 20px;
   font-size: 18px;
-  //display: block;
-  margin: 1em;
+  // margin-bottom: 1.2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1002,13 +1025,14 @@ div.search-form{
 
 .micro-top{
   font-size: 0.8em;
-  margin-bottom: -1.2em;
-  margin-top: 1em;
+  margin-bottom: 0.2em;
+  // margin-bottom: -1.2em;
+  // margin-top: 1.2em;
 }
 .micro-bottom{
   font-size: 0.8em;
   margin-top: -1.2em;
-  margin-bottom: 1em;
+  // margin-bottom: 1.2em;
 }
 .micro-center{
   text-align: center;
@@ -1025,7 +1049,7 @@ div.search-form{
   border-radius: 4px;
   padding: 3px 12px;
   display: table;
-  //margin-bottom: -.7em;
+  margin-bottom: 0.8em;
   font-size: 0.8em;
   &.has-background{
     color: #fff;
@@ -1235,7 +1259,7 @@ div.search-form{
 ///////////////////////////////////////////
 .button-block{
   float: none;
-  margin: 1em 0;
+  // margin-bottom: 1.2em;
   &.alignleft{
     text-align: left;
   }
@@ -1261,7 +1285,7 @@ div.search-form{
 ** キャプションボックス
 ************************************/
 .caption-box{
-  margin: 1.2em 0;
+  // margin-bottom: 1.2em;
   border: 2px solid $current_bgc;
   border-radius: $basic_border_radius;
   &.has-border-color .box-label{
@@ -1313,7 +1337,7 @@ div.search-form{
 ** キャプションタブボックス
 ************************************/
 .tab-caption-box{
-  margin: 1.2em 0;
+  // margin-bottom: 1.2em;
   &.block-box.has-background{
     background-color: transparent;
   }
@@ -1372,7 +1396,7 @@ div.search-form{
 ** ラベルボックス
 ************************************/
 .label-box{
-  margin: 1.2em 0;
+  // margin-bottom: 1.2em;
   &.block-box.has-background{
     background-color: transparent;
   }
@@ -1445,7 +1469,7 @@ div.search-form{
 ** トグル表示ボタン
 ************************************/
 .toggle-wrap {
-  margin: 1.2em 0;
+  // margin-bottom: 1.2em;
   position: relative;
   >p{
     margin: 0;
@@ -1641,8 +1665,11 @@ $toggle_border_width: 2px;
 //     display: none;
 //   }
 // }
+// .wp-block-image{
+//   margin-bottom: 1.2em;
+// }
 
-.body .wp-block-image{
+.article .wp-block-image{
   figcaption{
     margin: 0;
     font-size: 0.7em;

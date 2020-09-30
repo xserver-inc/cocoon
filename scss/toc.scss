@@ -5,7 +5,7 @@
   border: 1px solid $basic_border_color;
   font-size: 0.9em;
   padding: 1em 1.6em;
-  margin-bottom: 1em;
+  // margin-bottom: 1.2em;
   display: table;
 
   .toc-list{
@@ -35,9 +35,9 @@
   }
 }
 
-.toc-center{
-  margin: 1em auto;
-}
+// .toc-center{
+//   margin-bottom: 1.2em;
+// }
 
 .toc-title{
   font-size: 1.1em;
