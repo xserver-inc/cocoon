@@ -1752,7 +1752,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .footer-bottom-logo { float: left; bottom: 0; position: absolute; }
 .admin-settings .demo .footer-bottom-logo .logo-text { padding: 0; }
 .admin-settings .demo .footer-bottom-logo .site-name-text { font-size: 18px; }
-.admin-settings .demo .footer-bottom-logo .logo-image { padding: 0; max-width: 120px; }
+.admin-settings .demo .footer-bottom-logo .logo-image { padding: 0; }
 .admin-settings .demo .footer-bottom-logo img { height: 50px; width: auto; }
 .admin-settings .demo .footer-bottom-content { float: right; text-align: right; }
 .admin-settings .demo .go-to-top { position: fixed; display: none; right: 10px; bottom: 10px; z-index: 99999; }
@@ -3342,7 +3342,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .footer-bottom-logo { float: left; bottom: 0; position: absolute; }
 .admin-settings .demo .footer-bottom-logo .logo-text { padding: 0; }
 .admin-settings .demo .footer-bottom-logo .site-name-text { font-size: 18px; }
-.admin-settings .demo .footer-bottom-logo .logo-image { padding: 0; max-width: 120px; }
+.admin-settings .demo .footer-bottom-logo .logo-image { padding: 0; }
 .admin-settings .demo .footer-bottom-logo img { height: 50px; width: auto; }
 .admin-settings .demo .footer-bottom-content { float: right; text-align: right; }
 .admin-settings .demo .go-to-top { position: fixed; display: none; right: 10px; bottom: 10px; z-index: 99999; }
