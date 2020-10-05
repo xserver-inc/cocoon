@@ -38,7 +38,7 @@ endif;
 //チェックボックスのチェックを付けるか
 if ( !function_exists( 'the_checkbox_checked' ) ):
 function the_checkbox_checked($val1, $val2 = 1){
-  if ( $val1 == $val2 ) {
+  if ( $val1 == $val2 || ( is_array($val2) && in_array($val1, $val2))) {
     echo ' checked="checked"';
   }
 }
@@ -126,9 +126,12 @@ endif;
 
 //チェックボックスの生成
 if ( !function_exists( 'generate_checkbox_tag' ) ):
-function generate_checkbox_tag($name, $now_value, $label){
+function generate_checkbox_tag($name, $now_value, $label, $id = null, $checks = array()){
+  if (!$id) {
+    $id = $name;
+  }
   ob_start();?>
-  <input type="checkbox" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="1"<?php the_checkbox_checked($now_value); ?>><?php generate_label_tag($name, $label); ?>
+  <input type="checkbox" name="<?php echo $name; ?>" id="<?php echo $id; ?>" value="1"<?php the_checkbox_checked($now_value, $checks); ?>><?php generate_label_tag($id, $label); ?>
   <?php
   $res = ob_get_clean();
   echo apply_filters('admin_input_form_tag', $res, $name);
@@ -706,7 +709,8 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
 
   if( $next ) :
     foreach( $next as $cat ) :
-      $checked = '';
+      // $checked = '';
+
       // if (is_string($checks)) {
       //   $checks = array();
       // }
@@ -714,10 +718,11 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
       // if ($cat->term_id == 1) {
       //   continue;
       // }
-      if (in_array($cat->term_id, $checks)) {
-        $checked = ' checked="checked"';
-      }
-      echo '<ul><li><input type="checkbox" name="'.$name.'[]" value="'.$cat->term_id.'"'.$checked.'>' . $cat->name . '';
+      // if (in_array($cat->term_id, $checks)) {
+      //   $checked = ' checked="checked"';
+      // }
+      echo '<ul><li>';//<input type="checkbox" name="'.$name.'[]" value="'.$cat->term_id.'"'.$checked.'>' . $cat->name . '';
+      generate_checkbox_tag($name.'[]', $cat->term_id, $cat->name, $name.'_'.$cat->term_id, $checks);
       hierarchical_category_check_list( $cat->term_id, $name, $checks );
     endforeach;
   endif;
@@ -769,6 +774,10 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_front_page" ';
   checked(in_array('is_front_page', $checks));
   echo '>' . __( 'トップページのみ', THEME_NAME ) . '</li>';
+
+  // echo '<li>';
+  // generate_checkbox_tag($name.'[]', in_array('is_front_page', $checks), __( 'トップページのみ', THEME_NAME ), $name.'_'.'is_front_page');
+  // echo '</li>';
 
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_single" ';
   checked(in_array('is_single', $checks));
