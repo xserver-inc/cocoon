@@ -852,9 +852,10 @@ function generate_author_check_list( $name, $checks, $width = 0 ) {
   $users = get_users( array('orderby'=>'ID','order'=>'ASC') );
   foreach($users as $user) {
     $uid = $user->ID;
-    echo '<li><input type="checkbox" name="'.$name.'[]" value="'.$uid.'" ';
+    $id = $name.'_'.$uid;
+    echo '<li><input type="checkbox" name="'.$name.'[]" value="'.$uid.'" id="'.$id.'"';
     checked(in_array($uid, $checks));
-    echo '>' . $user->display_name . '</li>';
+    echo '><label for="'.$id.'">' . $user->display_name . '</label></li>';
   } //foreach
 
   echo '</ul></div>';
