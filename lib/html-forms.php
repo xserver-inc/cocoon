@@ -717,7 +717,8 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
       if (in_array($cat->term_id, $checks)) {
         $checked = ' checked="checked"';
       }
-      echo '<ul><li><input type="checkbox" name="'.$name.'[]" value="'.$cat->term_id.'"'.$checked.'>' . $cat->name . '';
+      $id = $name.'_'.$cat->term_id;
+      echo '<ul><li><input type="checkbox" name="'.$name.'[]" id="'.$id.'" value="'.$cat->term_id.'"'.$checked.'><label for="'.$id.'">' . $cat->name . '</label>';
       hierarchical_category_check_list( $cat->term_id, $name, $checks );
     endforeach;
   endif;
