@@ -17,11 +17,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <?php //NO IMAGEサムネイルの出力
       echo get_original_image_tag(get_no_image_320x180_url(), THUMB320WIDTH, THUMB320HEIGHT, 'no-image carousel-entry-card-no-image', ''); ?>
 
-      <?php //後で消す↓
-      if (false): ?>
-        <img src="<?php echo get_no_image_320x180_url(); ?>" alt="" class="no-image carousel-entry-card-no-image" width="<?php echo THUMB320WIDTH; ?>" height="<?php echo THUMB320HEIGHT; ?>" />
-      <?php endif; ?>
-
     <?php endif; ?>
     <?php the_nolink_category(null, apply_filters('is_carousel_entry_card_category_label_visible', true)); //カテゴリラベルの取得 ?>
   </figure><!-- /.carousel-entry-thumb -->
