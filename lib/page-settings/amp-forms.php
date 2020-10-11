@@ -69,7 +69,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_AMP_INLINE_STYLE_ENABLE, is_amp_inline_style_enable(), __("インラインスタイルを有効にする",THEME_NAME ));
-            generate_tips_tag(__( '本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、AMPのサイズ制限（50000バイト）を超えやすくなるため有効は推奨はしません。', THEME_NAME ));
+            generate_tips_tag(__( '本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、AMPのサイズ制限（75000バイト）を超えやすくなるため有効は推奨はしません。', THEME_NAME ));
             ?>
           </td>
         </tr>
