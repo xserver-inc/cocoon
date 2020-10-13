@@ -459,7 +459,7 @@ span.post-date {
 #navi {
     background-color: #faf5ef;
     background-color: transparent;
-    margin: 1em auto 1.7em;
+    margin: 1em auto;
 }
 .hlt-top-menu #navi {
     background-color: transparent;
