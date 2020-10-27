@@ -105,6 +105,7 @@ function popular_entries_shortcode($atts) {
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
+    'author' => null,
   ), $atts, 'popular_list'));
   $cat_ids = array();
   if ($cats && $cats != 'all') {
@@ -121,6 +122,7 @@ function popular_entries_shortcode($atts) {
     'bold' => $bold,
     'arrow' => $arrow,
     'class' => $class,
+    'author' => $author,
   );
   ob_start();
   generate_popular_entries_tag($atts);

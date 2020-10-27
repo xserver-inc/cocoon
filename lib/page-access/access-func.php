@@ -335,11 +335,15 @@ function get_all_access_count($post_id = null){
 endif;
 
 if ( !function_exists( 'wrap_joined_wp_posts_query' ) ):
-function wrap_joined_wp_posts_query($query, $limit){
+function wrap_joined_wp_posts_query($query, $limit, $author){
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
   //$post_type = is_page() ? 'page' : 'post';
+  $author_query = null;
+  if ($author) {
+    $author_query = ' AND post_author = '.esc_sql($author);
+  }
   $post_type = 'post';
   $query = "
     SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
@@ -347,7 +351,8 @@ function wrap_joined_wp_posts_query($query, $limit){
     ) AS {$ranks_posts}
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
     WHERE post_status = 'publish' AND
-          post_type = '{$post_type}'
+          post_type = '{$post_type}'".
+          $author_query."
     ORDER BY sum_count DESC
     LIMIT $limit
   ";
@@ -359,7 +364,7 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array(), $children = 0){
+function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array(), $children = 0, $author = null){
   // //ページの判別ができない場合はDBにアクセスしない
   // if (!is_singular()) {
   //   return null;
@@ -469,7 +474,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     ";
     //_v($query);
     //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit);
+    $query = wrap_joined_wp_posts_query($query, $limit, $author);
   } else {
     $query = "
       SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
@@ -478,7 +483,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         ORDER BY sum_count DESC
     ";
     //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit);
+    $query = wrap_joined_wp_posts_query($query, $limit, $author);
   }
 
   //_v($query);
