@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/WebPage">
   <?php
   if ( have_posts() ) {
     while ( have_posts() ) {
