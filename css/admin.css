@@ -1365,7 +1365,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-amber li::before { color: #ffc107; }
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
-.admin-settings .demo .article .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
+.admin-settings .demo .wp-block-image figcaption, .admin-settings .demo .wp-block-table figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -2955,7 +2955,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-amber li::before { color: #ffc107; }
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
-.admin-settings .demo .article .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
+.admin-settings .demo .wp-block-image figcaption, .admin-settings .demo .wp-block-table figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -4758,7 +4758,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .iic-amber li::before { color: #ffc107; }
 .components-popover__content .iic-deep-orange li::before { color: #ea5506; }
 .components-popover__content .iic-white li::before { color: #fff; }
-.components-popover__content .article .wp-block-image figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
+.components-popover__content .wp-block-image figcaption, .components-popover__content .wp-block-table figcaption { margin: 0; font-size: 0.7em; opacity: 0.8; padding: 0 6px; }
 .components-popover__content .red { margin: 0; }
 .components-popover__content .fz-12px { font-size: 12px; }
 .components-popover__content .fz-13px { font-size: 13px; }

@@ -1669,7 +1669,8 @@ $toggle_border_width: 2px;
 //   margin-bottom: 1.2em;
 // }
 
-.article .wp-block-image{
+.wp-block-image,
+.wp-block-table{
   figcaption{
     margin: 0;
     font-size: 0.7em;
