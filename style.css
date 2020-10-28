@@ -5689,8 +5689,7 @@ div.search-form {
   color: #fff;
 }
 
-.wp-block-image figcaption,
-.wp-block-table figcaption {
+figcaption {
   margin: 0;
   font-size: 0.7em;
   opacity: 0.8;

@@ -1669,12 +1669,10 @@ $toggle_border_width: 2px;
 //   margin-bottom: 1.2em;
 // }
 
-.wp-block-image,
-.wp-block-table{
-  figcaption{
-    margin: 0;
-    font-size: 0.7em;
-    opacity: 0.8;
-    padding: 0 6px;
-  }
+
+figcaption{
+  margin: 0;
+  font-size: 0.7em;
+  opacity: 0.8;
+  padding: 0 6px;
 }
