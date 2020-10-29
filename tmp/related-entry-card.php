@@ -30,7 +30,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     </div>
     <?php endif ?>
     <?php //表示するものがあるか判定
-    if (is_related_entry_card_post_date_visible() && is_related_entry_card_post_update_visible() && is_related_entry_card_post_author_visible()): ?>
+    if (is_related_entry_card_post_date_visible() || is_related_entry_card_post_update_visible() || is_related_entry_card_post_author_visible()): ?>
     <div class="related-entry-card-meta card-meta e-card-meta">
       <div class="related-entry-card-info e-card-info">
         <?php
