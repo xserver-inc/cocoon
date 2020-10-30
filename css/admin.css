@@ -427,7 +427,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-btn { margin: 24px 0; cursor: pointer; }
 .admin-settings .demo label { cursor: pointer; }
 .admin-settings .demo .sitemap li a::before { display: none; }
-.admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin-bottom: 1.2em; }
+.admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin: 1em 0; }
 .admin-settings .demo figure { margin: 0; }
 .admin-settings .demo img { max-width: 100%; height: auto; border: 0; }
 .admin-settings .demo .circle-image img { border-radius: 50%; }
@@ -2017,7 +2017,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-btn { margin: 24px 0; cursor: pointer; }
 .admin-settings .demo label { cursor: pointer; }
 .admin-settings .demo .sitemap li a::before { display: none; }
-.admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin-bottom: 1.2em; }
+.admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin: 1em 0; }
 .admin-settings .demo figure { margin: 0; }
 .admin-settings .demo img { max-width: 100%; height: auto; border: 0; }
 .admin-settings .demo .circle-image img { border-radius: 50%; }
