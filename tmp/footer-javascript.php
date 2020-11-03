@@ -183,13 +183,14 @@ if (!is_amp()): ?>
 
     /*ウインドウがリサイズされたら発動*/
     $window.resize(function() {
-      var scrollTop = $window.scrollTop();
       /*ウインドウの幅を変数に格納*/
       var w = $window.width();
       if (w <=  mobileWidth) {/*モバイル端末の場合*/
         staticHeader();
       } else {/*パソコン端末の場合*/
-        if (scrollTop <= 50) {
+        var scrollTop = $window.scrollTop();
+        console.log(scrollTop);
+        if (scrollTop >= 50) {
           stickyHeader();
         }
 
