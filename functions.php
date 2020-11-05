@@ -206,7 +206,7 @@ function custom_main_query_pre_get_posts( $query ) {
   if ($query->is_main_query()) {
 
     //順番変更
-  if (!is_index_sort_orderby_date()) {
+  if (!is_index_sort_orderby_date() && !is_search()) {
     //投稿日順じゃないときは設定値を挿入する
     $query->set( 'orderby', get_index_sort_orderby() );
   }
