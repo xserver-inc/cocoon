@@ -1612,6 +1612,7 @@ function get_navi_card_ribbon_tag($ribbon_no){
   }
   $tag = '';
   if ($caption){
+    $caption = apply_filters('get_navi_card_ribbon_caption', $caption, $ribbon_no);
     $tag = '<div class="ribbon ribbon-top-left ribbon-color-'.$ribbon_no.'"><span>'.$caption.'</span></div>';
   }
   return $tag;
