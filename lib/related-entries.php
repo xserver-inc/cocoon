@@ -42,11 +42,17 @@ function get_related_wp_query_args(){
 
   if ( is_related_association_type_category() ) {
     $set_args['category__in'] = get_the_category_ids($post->ID);
-    if (!empty($set_args['category__in'])) $args = $set_args;
   } else {
     $set_args['tag__in'] = get_the_tag_ids($post->ID);
-    if (!empty($set_args['tag__in'])) $args = $set_args;
   }
+
+  //除外投稿
+  $exclude_post_ids = get_archive_exclude_post_ids();
+  if ($exclude_post_ids && is_array($exclude_post_ids)) {
+    $set_args['post__not_in'] = $exclude_post_ids;
+  }
+
+  $args = $set_args;
 
   return apply_filters('get_related_wp_query_args', $args);
 }
