@@ -386,6 +386,13 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         $cats = implode(',', $res);
       }
     }
+
+    //除外投稿
+    $archive_exclude_post_ids = get_archive_exclude_post_ids();
+    if ($archive_exclude_post_ids && is_array($archive_exclude_post_ids)) {
+      $exclude_post_ids = array_unique(array_merge($exclude_post_ids, $archive_exclude_post_ids));
+    }
+
     $expids = implode(',', $exclude_post_ids);
     $excats = implode(',', $exclude_cat_ids);
     $type = get_accesses_post_type();
