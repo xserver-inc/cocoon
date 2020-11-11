@@ -56,6 +56,11 @@ $count = get_index_category_entry_card_count();
             'sticky' => 0,
             'include_children' => 1,
           );
+          if (is_index_sort_orderby_ramdom()) {
+            $atts += array(
+              'random' => 1,
+            );
+          }
           //新着記事リストの作成
           generate_widget_entries_tag($atts);
           ?>
