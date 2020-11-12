@@ -234,8 +234,7 @@ figure.wp-block-table.alignright table {
 blockquote {
   background-color: $xxx_thin;
   border: 1px solid $thin;
-  // margin-bottom: 1.2em;
-  padding: 10px 1.2em;
+  padding: 1.2em;
   position: relative;
 
   &::before,
