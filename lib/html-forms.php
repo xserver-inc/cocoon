@@ -1134,7 +1134,7 @@ function generate_widget_entries_tag($atts){
     }
   }
   //関連記事の場合は表示ページを除外
-  if ($random) {
+  if (is_single() && $random) {
     $post_id = get_the_ID();
     if (isset($args['post__not_in'])) {
       $args['post__not_in'][] = $post_id;
@@ -1173,13 +1173,13 @@ function generate_widget_entries_tag($atts){
         'operator' => 'IN'
       );
     }
-    //_v($tax_querys);
     $args += array(
       'tax_query' => array(
         $tax_querys,
         'relation' => 'AND'
       )
     );
+    //_v($tax_querys);
   }
   // _v($args);
   $thumb_size = get_widget_entries_thumbnail_size($type);
