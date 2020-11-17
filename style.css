@@ -10091,6 +10091,10 @@ _:-ms-lang(x), .mc-circle {
   .mblt-header-and-footer-mobile-buttons .go-to-top-button {
     display: none;
   }
+
+  .mblt-header-mobile-buttons .menu-pc {
+    display: none;
+  }
 }
 @media screen and (max-width: 834px) {
   .navi-in > .menu-header {

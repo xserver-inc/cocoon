@@ -3776,7 +3776,8 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .scrollable-mobile-buttons { margin-bottom: 0; }
   .admin-settings .demo .navi-footer-in > .menu-footer { justify-content: center; }
   .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; }
-  .admin-settings .demo .mblt-footer-mobile-buttons .go-to-top-button, .admin-settings .demo .mblt-header-and-footer-mobile-buttons .go-to-top-button { display: none; } }
+  .admin-settings .demo .mblt-footer-mobile-buttons .go-to-top-button, .admin-settings .demo .mblt-header-and-footer-mobile-buttons .go-to-top-button { display: none; }
+  .admin-settings .demo .mblt-header-mobile-buttons .menu-pc { display: none; } }
 @media screen and (max-width: 834px) { .admin-settings .demo { /************************************
 ** 関連記事
 ************************************/ }
