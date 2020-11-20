@@ -5,6 +5,7 @@
 .header{
   @extend %background_image;
   height: 100%;
+  flex-shrink: 0;
 }
 
 .header-in{
@@ -133,7 +134,10 @@
   }
 
   .logo-header{
-    height: 40px;
+    max-height: 40px;
+    img{
+      max-height: 40px;
+    }
   }
 
   .navi-in > ul > li,

@@ -601,6 +601,7 @@ img.emoji {
 ************************************/
 .header {
   height: 100%;
+  flex-shrink: 0;
 }
 
 .header-in {
@@ -713,7 +714,10 @@ img.emoji {
   font-size: 20px;
 }
 .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
-  height: 40px;
+  max-height: 40px;
+}
+.header-container-in.hlt-top-menu.hlt-tm-small .logo-header img {
+  max-height: 40px;
 }
 .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,
 .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
