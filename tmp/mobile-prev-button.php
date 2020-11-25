@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 global $_MENU_CAPTION;
 global $_MENU_ICON;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-arrow-left';
-$prevpost = get_adjacent_post(false, '', true); //前の記事 ?>
+$prevpost = get_adjacent_post(is_post_navi_same_category_enable(), '', true); //前の記事 ?>
 <?php if (is_single() && $prevpost): ?>
 <!-- 前へボタン -->
 <li class="prev-menu-button menu-button">
