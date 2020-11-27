@@ -1107,3 +1107,7 @@ body::before,
 .editor-styles-wrapper::before {
   background: none !important;
 }
+
+.edit-post-visual-editor > .block-editor__typewriter {
+  height: auto;
+}
