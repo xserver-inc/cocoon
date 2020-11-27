@@ -1101,3 +1101,9 @@ p {
 .block-editor-block-styles__item-preview .editor-styles-wrapper::before {
   display: none;
 }
+
+body,
+body::before,
+.editor-styles-wrapper::before {
+  background: none !important;
+}

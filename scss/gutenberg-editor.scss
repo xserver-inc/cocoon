@@ -861,9 +861,15 @@ p {
   max-width: 96% !important;
 }
 
+//ブロックエディターの背景画像問題の修正
 .block-editor-block-styles__item-preview .editor-styles-wrapper::before{
   // background-image: none !important;
   // width: 0;
   // height: 0;
   display: none;
+}
+body,
+body::before,
+.editor-styles-wrapper::before {
+  background: none !important;
 }
