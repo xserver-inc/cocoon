@@ -38,7 +38,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                   // 'top_slidein' => __( 'トップボタン＆スライドインメニューボタン', THEME_NAME ),
                 );
                 generate_radiobox_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, $options, get_mobile_button_layout_type());
-                generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。834px以下で表示されます。※「トップボタン」はAMPページでは表示されません。', THEME_NAME ));
+                generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。1024px未満で表示されます。※「トップボタン」はAMPページでは表示されません。', THEME_NAME ));
                 ?>
 
               </td>
