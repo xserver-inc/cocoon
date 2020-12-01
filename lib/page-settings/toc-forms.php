@@ -160,6 +160,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'none' => __( '表示しない', THEME_NAME ),
               'number' => __( '数字（デフォルト）', THEME_NAME ),
               'number_detail' => __( '数字詳細（ex: 1.1.1）', THEME_NAME ),
+              'disc' => __( 'ドット（黒丸）', THEME_NAME ),
+              'circle' => __( 'ドット（白丸）', THEME_NAME ),
+              'square' => __( '黒四角', THEME_NAME ),
             );
             generate_selectbox_tag(OP_TOC_NUMBER_TYPE, $options, get_toc_number_type());
             generate_tips_tag(__( '設定項目手前の数字の表示形式を設定します。', THEME_NAME ));

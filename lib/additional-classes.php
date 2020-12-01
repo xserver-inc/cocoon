@@ -930,6 +930,9 @@ function get_additional_toc_classes($option = null){
   if (is_toc_position_center()) {
     $classes .= ' toc-center';
   }
+
+  $classes .= ' tnt-'.get_toc_number_type();
+
   if ($option) {
     $classes .= ' '.trim($option);
   }
