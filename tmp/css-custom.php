@@ -680,7 +680,8 @@ if (!$entry_content_margin_hight) {
 .article h3,
 .article h4,
 .article h5,
-.article h6 {
+.article h6,
+[data-type="core/freeform"] {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
 .article h2,
