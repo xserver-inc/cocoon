@@ -2814,30 +2814,6 @@ label.screen-reader-text {
 .article .toc :last-child {
   margin-bottom: 0;
 }
-.article blockquote ol,
-.article blockquote ul,
-.article .wp-block-media-text__content ol,
-.article .wp-block-media-text__content ul,
-.article .wp-block-columns ol,
-.article .wp-block-columns ul,
-.article .column-wrap ol,
-.article .column-wrap ul,
-.article .timeline-box ol,
-.article .timeline-box ul,
-.article .wp-block-cover ol,
-.article .wp-block-cover ul,
-.article .blogcard-type ol,
-.article .blogcard-type ul,
-.article .btn-wrap ol,
-.article .btn-wrap ul,
-.article .wp-block-group ol,
-.article .wp-block-group ul,
-.article .block-box ol,
-.article .block-box ul,
-.article .toc ol,
-.article .toc ul {
-  margin: 0;
-}
 .article div.scrollable-table table,
 .article .wp-block-table table {
   margin-bottom: 0;
