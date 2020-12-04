@@ -1579,11 +1579,6 @@ figure.wp-block-table.alignright table {
 .article ol li {
   margin: 0.2em;
 }
-.article ul ul, .article ul ol,
-.article ol ul,
-.article ol ol {
-  margin: 0;
-}
 .article .wp-block-gallery ul {
   padding-left: 0;
 }
