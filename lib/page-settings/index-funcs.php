@@ -315,14 +315,19 @@ function get_category_index_list_entry_card_tag($categories, $count){
     );
   }
   $query = new WP_Query( $args );
+  $count = 0;
   ////////////////////////////
   //一覧の繰り返し処理
   ////////////////////////////
   if ($query->have_posts()) { //投稿があるとき
     while ($query->have_posts()) {
       $query->the_post(); // 繰り返し処理開始
+      $count++;
+      //エントリーカウントをテンプレートファイルに渡す
+      set_query_var('count', $count);
       get_template_part('tmp/entry-card');
     } // 繰り返し処理終了
+    $count = 0;
   } else { // ここから記事が見つからなかった場合の処理
     get_template_part('tmp/list-not-found-posts');
   }

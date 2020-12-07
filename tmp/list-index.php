@@ -31,7 +31,8 @@ if (have_posts()) : // WordPress ループ
       dynamic_sidebar( 'index-middle' );
     };
 
-  endwhile; // 繰り返し処理終了 ?>
+  endwhile; // 繰り返し処理終了
+  $count = 0; ?>
 <?php else : // ここから記事が見つからなかった場合の処理
   get_template_part('tmp/list-not-found-posts');
 endif;

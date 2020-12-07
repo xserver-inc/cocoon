@@ -61,10 +61,17 @@ $list_classes = get_index_list_classes();
             if( $posts ): ?>
         <div class="<?php echo $list_classes; ?>">
             <?php
+                $count = 0;
                 foreach ( $posts as $post ) :
                 setup_postdata( $post ); ?>
-                    <?php get_template_part('tmp/entry-card'); ?>
-            <?php endforeach; wp_reset_postdata(); ?>
+                    <?php
+                    $count++;
+                    //エントリーカウントをテンプレートファイルに渡す
+                    set_query_var('count', $count);
+                    get_template_part('tmp/entry-card');
+                    ?>
+            <?php endforeach; wp_reset_postdata();
+            $count = 0; ?>
         </div>
         <?php if($cat = get_category($cat_id)): ?>
             <div class="list-more-button-wrap">

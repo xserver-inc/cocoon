@@ -54,6 +54,7 @@ function get_entry_card_thumbnail_size($count){
       // } else {
       //   $thumbnail_size = THUMB320;
       // }
+      // _v($thumbnail_size);
       break;
     case 'big_card':
       $thumbnail_size = get_big_card_thumbnail_size();
