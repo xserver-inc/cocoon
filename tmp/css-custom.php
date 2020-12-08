@@ -667,6 +667,7 @@ if (!$entry_content_margin_hight) {
 .article .wp-block-group,
 .article .wp-block-table,
 .article .scrollable-table,
+.article .wp-block-separator,
 [data-type="core/freeform"] {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
