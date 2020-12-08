@@ -7,15 +7,6 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<?php //モバイルサイトフォント
-if (get_mobile_site_font_size()): ?>
-@media screen and (max-width: 480px){
-  .page-body,
-  .menu-content{
-    font-size: <?php echo get_mobile_site_font_size(); ?>;
-  }
-}
-<?php endif ?>
 <?php //サイトキー色
 if (get_site_key_color()): ?>
 #header-container,
@@ -676,14 +667,34 @@ if (!$entry_content_margin_hight) {
 .article .wp-block-group,
 .article .wp-block-table,
 .article .scrollable-table,
+[data-type="core/freeform"] {
+  margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+}
 .article h2,
 .article h3,
 .article h4,
 .article h5,
-.article h6,
-[data-type="core/freeform"] {
-  margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+.article h6{
+  margin-bottom: <?php echo $entry_content_margin_hight * get_site_font_size(); ?>px;
 }
+<?php //モバイルサイトフォント
+$mobile_site_font_size = get_mobile_site_font_size();
+if ($mobile_site_font_size): ?>
+@media screen and (max-width: 480px){
+  .page-body,
+  .menu-content{
+    font-size: <?php echo $mobile_site_font_size; ?>;
+  }
+  <?php //本文中の見出しの余白調整 ?>
+  .article h2,
+  .article h3,
+  .article h4,
+  .article h5,
+  .article h6{
+    margin-bottom: <?php echo $entry_content_margin_hight * $mobile_site_font_size; ?>px;
+  }
+}
+<?php endif ?>
 @media screen and (max-width:781px) {
   .wp-block-column{
     margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
