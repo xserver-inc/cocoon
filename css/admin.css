@@ -3858,7 +3858,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .recommended.rcs-card-margin a { margin: 1%; width: 48%; }
   .admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1%; } }
 @media screen and (max-width: 599px) { .admin-settings .demo .container .column-wrap { flex-direction: column; }
-  .admin-settings .demo .container .column-wrap > div { width: 100%; padding: 1em 0; }
+  .admin-settings .demo .container .column-wrap > div { width: 100%; }
   .admin-settings .demo .box-menus .box-menu { width: calc(100%/2); }
   .admin-settings .demo .wwa .box-menus { margin-left: 10px; margin-right: 10px; } }
 @media screen and (max-width: 480px) { .admin-settings .demo { /*本文の見出し*/ }

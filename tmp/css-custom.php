@@ -684,6 +684,16 @@ if (!$entry_content_margin_hight) {
 [data-type="core/freeform"] {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
+@media screen and (max-width:781px) {
+  .wp-block-column{
+    margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+  }
+}
+@media screen and (max-width:599px) {
+  .column-wrap > div{
+    margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+  }
+}
 .article h2,
 .article h3,
 .article h4,
