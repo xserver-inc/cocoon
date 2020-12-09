@@ -5,11 +5,15 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-wp.domReady(function () {
+//  console.log('1');
+
+wp.data.subscribe(function () {
     // add classes
     const addClasses = function () {
+        // console.log('2');
+        // console.log(jQuery('.block-editor-writing-flow'));
         // add body class
-        jQuery('#editor .block-editor-writing-flow').addClass('body main article page-body' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
+        jQuery('#editor .block-editor-writing-flow').parent().addClass('block-editor-cocoon-wrap body main article page-body' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
 
         // add title class
         jQuery('#editor .editor-post-title__input').addClass('entry-title');
