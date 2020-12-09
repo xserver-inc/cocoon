@@ -19,7 +19,21 @@ wp.data.subscribe(function () {
         jQuery('#editor .editor-post-title__input').addClass('entry-title');
     };
     addClasses();
-
+    // subscribe switch editor mode
+    wp.data.subscribe(function (selector, listener) {
+        let previousValue = selector();
+        return function () {
+            let selectedValue = selector();
+            if (selectedValue !== previousValue) {
+                previousValue = selectedValue;
+                listener(selectedValue);
+            }
+        };
+    }(function () {
+        return wp.data.select('core/edit-post').getEditorMode();
+    }, function () {
+        setTimeout(addClasses, 1);
+    }));
 });
 
 (function($){
