@@ -5679,8 +5679,8 @@ figcaption {
   padding: 0 6px;
 }
 
-.body .wp-block-separator.is-style-wide {
-  border-bottom-width: 3px;
+.wp-block-separator.is-style-wide {
+  border-bottom: solid 3px !important;
 }
 
 .column-wrap {
