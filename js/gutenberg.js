@@ -7,7 +7,7 @@
 
 //  console.log('1');
 
-wp.data.subscribe(function () {
+wp.domReady(function () {
     // add classes
     const addClasses = function () {
         // console.log('2');
@@ -18,7 +18,7 @@ wp.data.subscribe(function () {
         // add title class
         jQuery('#editor .editor-post-title__input').addClass('entry-title');
     };
-    addClasses();
+    setTimeout(addClasses, 100);
     // subscribe switch editor mode
     wp.data.subscribe(function (selector, listener) {
         let previousValue = selector();

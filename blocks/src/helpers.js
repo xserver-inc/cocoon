@@ -6,6 +6,36 @@
  */
 
 import classnames from 'classnames';
+// import domReady from '@wordpress/dom-ready';
+
+// domReady( function() {
+//   const addClasses = function () {
+//     console.log(jQuery('.block-editor-writing-flow'));
+//   };
+//   // setTimeout(addClasses, 100);
+//   // let classList = document.getElementsByClassName("block-editor__typewriter");
+//   // console.log(classList.length);
+//   // const addClasses = function () {
+//     // console.log('2');
+//     // console.log(jQuery('.block-editor-writing-flow'));
+//     // add body class
+
+//     //do something after DOM loads.
+//     // console.log('domReady');
+//     // // document.getElementById("wpbody").classList.add("test");
+//     // let classList = document.getElementsByClassName('block-editor__typewriter');
+//     // console.log(document.getElementById("wpwrap"));
+//     // console.log([ ... classList]);
+//     // for (var i = 0; i < classList[0].length; i++) {
+//     //   console.log(classList[0][i]); //second console output
+//     //   classList[0][i].add('ex2-1', 'ex2-2');
+//     // }
+//     // console.log(classList.length);
+//     // [ ... classList].forEach(e =>
+//     //   console.log(e);
+//     // )
+//     // classList.add('ex2-1', 'ex2-2');
+// } );
 
 const { __ } = wp.i18n;
 const {
