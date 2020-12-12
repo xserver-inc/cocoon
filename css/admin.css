@@ -735,6 +735,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tnt-disc ol { list-style-type: disc; }
 .admin-settings .demo .tnt-circle ol { list-style-type: circle; }
 .admin-settings .demo .tnt-square ol { list-style-type: square; }
+.admin-settings .demo .toc-center { margin: 1em auto; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
 .admin-settings .demo .sidebar h3 { background-color: #f5f6f7; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
@@ -2327,6 +2328,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tnt-disc ol { list-style-type: disc; }
 .admin-settings .demo .tnt-circle ol { list-style-type: circle; }
 .admin-settings .demo .tnt-square ol { list-style-type: square; }
+.admin-settings .demo .toc-center { margin: 1em auto; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
 .admin-settings .demo .sidebar h3 { background-color: #f5f6f7; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }

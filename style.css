@@ -2048,6 +2048,10 @@ img.blogcard-favicon-image {
   list-style-type: square;
 }
 
+.toc-center {
+  margin: 1em auto;
+}
+
 /************************************
 ** サイドバーのスタイル
 ************************************/
