@@ -431,28 +431,6 @@ function get_jquery_migrate_full_version($ver){
 }
 endif;
 
-//jQueryファイルの読み込み
-if ( !function_exists( 'wp_enqueue_script_jquery_js' ) ):
-function wp_enqueue_script_jquery_js(){
-  wp_deregister_script('jquery');
-  wp_deregister_script('jquery-core');
-  wp_deregister_script('jquery-migrate');
-
-  $ver = get_jquery_version();
-  $in_footer = is_footer_javascript_enable() ? true : false;
-
-  wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), get_jquery_core_full_version($ver), $in_footer);
-
-  //jQueryの読み込み
-  wp_enqueue_script('jquery-core', get_jquery_core_url($ver), array(), get_jquery_core_full_version($ver), $in_footer);
-
-  //jQuery Migrateの読み込み
-  $ver = get_jquery_migrate_version();
-  wp_enqueue_script('jquery-migrate', get_jquery_migrate_url($ver), array(), get_jquery_migrate_full_version($ver), $in_footer);
-
-}
-endif;
-
 //親テーマのjavascript.jsの読み込み
 if ( !function_exists( 'wp_enqueue_script_theme_js' ) ):
 function wp_enqueue_script_theme_js(){

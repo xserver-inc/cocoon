@@ -147,9 +147,6 @@ function wp_enqueue_scripts_custom() {
     ///////////////////////////////////////////
     wp_enqueue_lazy_load();
 
-    //jQueryライブラリの読み込み
-    wp_enqueue_script_jquery_js();
-
     //タイルカード
     wp_enqueue_jquery_masonry();
 
