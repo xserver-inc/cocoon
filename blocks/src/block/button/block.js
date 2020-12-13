@@ -315,7 +315,6 @@ registerBlockType( 'cocoon-blocks/button-1', {
           href={ url }
           className={ className }
           target={ target }
-          rel="noopener"
         >
           <RichText.Content
             value={ content }
