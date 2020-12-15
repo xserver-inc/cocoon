@@ -2810,6 +2810,19 @@ label.screen-reader-text {
 .article .btn-wrap :last-child,
 .article .wp-block-group :last-child,
 .article .block-box :last-child,
+.article .blank-box :last-child,
+.article .is-style-blank-box-red :last-child,
+.article .is-style-blank-box-navy :last-child,
+.article .is-style-blank-box-blue :last-child,
+.article .is-style-blank-box-yellow :last-child,
+.article .is-style-blank-box-green :last-child,
+.article .is-style-blank-box-pink :last-child,
+.article .is-style-blank-box-orange :last-child,
+.article .is-style-sticky-gray :last-child,
+.article .is-style-sticky-yellow :last-child,
+.article .is-style-sticky-red :last-child,
+.article .is-style-sticky-blue :last-child,
+.article .is-style-sticky-green :last-child,
 .article .toc :last-child {
   margin-bottom: 0;
 }
