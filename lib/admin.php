@@ -613,7 +613,7 @@ jQuery(function($) {
 endif;
 
 //デフォルトの抜粋入力欄をビジュアルエディターにする
-add_action( 'add_meta_boxes', array ( 'VisualEditorExcerpt', 'switch_boxes' ) );
+// add_action( 'add_meta_boxes', array ( 'VisualEditorExcerpt', 'switch_boxes' ) );
 if ( !class_exists( 'VisualEditorExcerpt' ) ):
 class VisualEditorExcerpt{
   public static function switch_boxes()
