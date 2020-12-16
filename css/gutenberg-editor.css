@@ -454,6 +454,10 @@
 div.mce-content-body {
   line-height: 1.8;
 }
+div.mce-content-body div.mce-content-body {
+  line-height: 1.8;
+  padding-top: 1em;
+}
 
 .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/button"], .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/button-wrap"],
 .block-editor-block-list__layout .block-editor-block-list__block[data-type^="cocoon-blocks/button"],

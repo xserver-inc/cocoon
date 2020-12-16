@@ -6,7 +6,7 @@
 
 /*ビジュアルエディターのスタイルを書く*/
 body#tinymce {
-  padding: 0 20px !important;
+  padding: 1em 20px !important;
   margin-top: 0 !important;
   background-image: none;
   background-color: #fff;

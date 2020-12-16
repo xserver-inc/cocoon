@@ -42,7 +42,10 @@
 
 //ブロックエディタークラシックブロック本文の.mce-content-bodyをテーマデフォルトと同じにする
 div.mce-content-body {
-  line-height: 1.8;
+  line-height: 1.8;div.mce-content-body {
+    line-height: 1.8;
+    padding-top: 1em;
+  }
 }
 
 .editor-block-list__layout .editor-block-list__block,,//Wordpress 5.4未満
