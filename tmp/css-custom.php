@@ -643,6 +643,10 @@ if (!$entry_content_margin_hight) {
 .article .speech-wrap,
 .article .toc,
 .article .column-wrap,
+.article .new-entry-cards,
+.article .popular-entry-cards,
+.article .navi-entry-cards,
+.article .box-menus,
 .article .ranking-item,
 .article .ad-area,
 /*.article [class^="wp-block-"],*/
