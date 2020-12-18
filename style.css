@@ -2826,9 +2826,6 @@ label.screen-reader-text {
 .article .toc :last-child {
   margin-bottom: 0;
 }
-.article .wp-block-columns :nth-child(odd):nth-last-child(2) {
-  margin-bottom: 0;
-}
 .article div.scrollable-table table,
 .article .wp-block-table table {
   margin-bottom: 0;
@@ -5703,6 +5700,11 @@ figcaption {
   border-bottom: solid 3px !important;
 }
 
+@media screen and (min-width: 600px) and (max-width: 781px) {
+  .article .wp-block-columns :nth-child(odd):nth-last-child(2) {
+    margin-bottom: 0;
+  }
+}
 .column-wrap {
   display: flex;
   justify-content: space-between;

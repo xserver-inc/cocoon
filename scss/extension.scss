@@ -272,10 +272,6 @@ $marker_u_blue: $marker_blue;
     // }
   }
 
-  .wp-block-columns :nth-child(odd):last-child{
-    margin-bottom: 0;
-  }
-
   div.scrollable-table,
   .wp-block-table{
     table{
@@ -1686,3 +1682,12 @@ figcaption{
 .wp-block-separator.is-style-wide{
   border-bottom: solid 3px !important;
 }
+
+
+
+@media screen and (min-width:600px) and (max-width:781px){
+  .article .wp-block-columns :nth-child(odd):nth-last-child(2){
+    margin-bottom: 0;
+  }
+}
+
