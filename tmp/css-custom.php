@@ -648,7 +648,6 @@ if (!$entry_content_margin_hight) {
 .article .navi-entry-cards,
 .article .box-menus,
 .article .ranking-item,
-.article .rating-star,
 .article .rss-entry-cards,
 .article .ad-area,
 /*.article [class^="wp-block-"],*/
