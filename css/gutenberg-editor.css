@@ -660,9 +660,8 @@ div.mce-content-body div.mce-content-body {
   width: 100%;
 }
 
-.block-editor-cocoon-wrap {
+.editor-styles-wrapper .block-editor__typewriter .block-editor-cocoon-wrap {
   max-width: 860px;
-  background-color: white;
   width: auto;
   padding-left: 14px;
   padding-right: 14px;
