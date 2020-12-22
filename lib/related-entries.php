@@ -49,8 +49,14 @@ function get_related_wp_query_args(){
   //除外投稿
   $exclude_post_ids = get_archive_exclude_post_ids();
   if ($exclude_post_ids && is_array($exclude_post_ids)) {
-    $set_args['post__not_in'] = $exclude_post_ids;
+    // $set_args['post__not_in'] = $exclude_post_ids;
+    foreach ($exclude_post_ids as $exclude_post_id) {
+      array_push($set_args['post__not_in'], $exclude_post_id);
+    }
   }
+  // _v($set_args['post__not_in']);
+  // _v($exclude_post_ids);
+  // _v($set_args);
 
   $args = $set_args;
 
@@ -93,18 +99,22 @@ add_filter('get_related_wp_query_args', 'get_additional_related_wp_query_args');
 if ( !function_exists( 'get_additional_related_wp_query_args' ) ):
 function get_additional_related_wp_query_args($args) {
   global $post;
-  if (empty($args)) {
-    $set_args = get_common_related_args($post->ID);
-    if ( is_related_association_type_category() ) {
+
+  $set_args = get_common_related_args($post->ID);
+  if ( is_related_association_type_category() ) {
+    if (empty($args['category__in'])) {
       //有効なカテゴリー投稿が見つからなかった場合はタグと関連付ける
       $set_args['tag__in'] = get_the_tag_ids($post->ID);
-      if (!empty($set_args['tag__in'])) $args = $set_args;
-    } else {
+      $args = $set_args;
+    }
+  } else {
+    if (empty($args['tag__in'])) {
       //有効なタグ投稿が見つからなかった場合はタグと関連付ける
       $set_args['category__in'] = get_the_category_ids($post->ID);
-      if (!empty($set_args['category__in'])) $args = $set_args;
+      $args = $set_args;
     }
   }
+
   return apply_filters('get_additional_related_wp_query_args', $args);
 }
 endif;
