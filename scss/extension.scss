@@ -250,7 +250,8 @@ $marker_u_blue: $marker_blue;
   blockquote,
   .wp-block-media-text__content,
   .wp-block-columns,
-  .column-wrap,
+  .column-left,
+  .column-right,
   .timeline-box,
   .wp-block-cover,
   .blogcard-type,
@@ -259,9 +260,6 @@ $marker_u_blue: $marker_blue;
   .block-box,
   .blank-box,
   .toc{
-    // p:first-of-type{
-    //   margin-top: 0;
-    // }
     :last-child{
       margin-bottom: 0;
     }
@@ -1690,4 +1688,13 @@ figcaption{
     margin-bottom: 0;
   }
 }
+
+@media screen and (min-width:600px){
+  .article .entry-content .column-wrap > *{
+    margin-bottom: 0;
+  }
+}
+
+
+
 

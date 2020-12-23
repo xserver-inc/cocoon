@@ -2803,7 +2803,8 @@ label.screen-reader-text {
 .article blockquote :last-child,
 .article .wp-block-media-text__content :last-child,
 .article .wp-block-columns :last-child,
-.article .column-wrap :last-child,
+.article .column-left :last-child,
+.article .column-right :last-child,
 .article .timeline-box :last-child,
 .article .wp-block-cover :last-child,
 .article .blogcard-type :last-child,
@@ -5702,6 +5703,11 @@ figcaption {
 
 @media screen and (min-width: 600px) and (max-width: 781px) {
   .article .wp-block-columns :nth-child(odd):nth-last-child(2) {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .article .entry-content .column-wrap > * {
     margin-bottom: 0;
   }
 }
