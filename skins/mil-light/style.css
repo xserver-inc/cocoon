@@ -981,7 +981,7 @@ div.speech-balloon {
 
 @media screen and (max-width: 834px) {
     main.main, div.sidebar {
-        padding: 0 10px 16px;
+        padding: 0 24px 16px;
         margin: 0 0 10px;
     }
     .breadcrumb {
