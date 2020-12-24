@@ -5709,8 +5709,8 @@ figcaption {
   }
 }
 @media screen and (min-width: 600px) {
-  .article .entry-content .column-wrap > * {
-    margin-bottom: 0;
+  .column-wrap > * {
+    margin-bottom: 0 !important;
   }
 }
 .column-wrap {
