@@ -138,12 +138,6 @@ registerBlockType( 'cocoon-blocks/icon-box', {
         </InspectorControls>
 
         <div className={ classnames(getClasses(style), className) }>
-          <span className={'box-block-msg'}>
-            <RichText
-              value={ content }
-              placeholder={ CLICK_POINT_MSG }
-            />
-          </span>
           <InnerBlocks />
         </div>
       </Fragment>

@@ -125,12 +125,6 @@ class CocoonBlankBoxBlock extends Component {
               [fontSize.class]: fontSize.class,
           }) }
         >
-          <span className={'box-block-msg'}>
-            <RichText
-              value={ content }
-              placeholder={ CLICK_POINT_MSG }
-            />
-          </span>
           <InnerBlocks />
         </div>
 
