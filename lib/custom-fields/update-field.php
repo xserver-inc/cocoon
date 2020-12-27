@@ -152,14 +152,12 @@ function update_custom_insert_post_data( $data, $postarr ){
     // $data['post_modified_gmt'] = $post_modified_gmt;
 
     $last_modified = get_post_meta( $postarr['ID'], 'last_modified', true );
+    // _v($last_modified);
     if ( isset($last_modified) ) {
       $data['post_modified'] = $last_modified;
       $data['post_modified_gmt'] = get_gmt_from_date( $last_modified );
     }
 
-
-    // $data['post_modified'] = $data['post_date'];
-    // $data['post_modified_gmt'] = get_gmt_from_date( $data['post_date'] );
   }
   elseif( $mydata === 'edit' ) {
     $aa_mod = $_POST['aa_mod'] <= 0 ? date_i18n('Y') : $_POST['aa_mod'];
@@ -183,6 +181,10 @@ function update_custom_insert_post_data( $data, $postarr ){
     $data['post_modified_gmt'] = get_gmt_from_date( $data['post_date'] );
   }
   // _v($data);
+
+
+  add_post_meta( $postarr['ID'], 'last_modified', $data['post_modified'], true);
+  update_post_meta( $postarr['ID'], 'last_modified', $data['post_modified']);
 
   return $data;
 }
