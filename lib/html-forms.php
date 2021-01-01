@@ -984,7 +984,7 @@ function generate_popular_entries_tag($atts){
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;
-      $no_thumbnail_url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url() : get_no_image_320x180_url();
+      $no_thumbnail_url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url($post->ID) : get_no_image_320x180_url($post->ID);
       $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
       $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
 
