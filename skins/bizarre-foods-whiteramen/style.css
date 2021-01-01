@@ -878,7 +878,7 @@ a.comment-reply-link {
 /*Table of Contents*********************************************************/
 
 .toc{
-    padding:0;
+    padding:0 0 1em 0;
     border: 2px solid whitesmoke;
     border-top-left-radius:7px;
     border-top-right-radius:7px;
