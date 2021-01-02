@@ -903,6 +903,10 @@ export const LIST_ICONS = [
     value: 'list-window-close-o',
     label: __( 'fab-window-close-o', THEME_NAME ),
   },
+  {
+    value: 'list-paw',
+    label: __( 'fab-paw', THEME_NAME ),
+  },
 ];
 
 export function LetterToolbarButton( { name, shortcutType, shortcutCharacter, ...props } ) {

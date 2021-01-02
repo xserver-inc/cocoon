@@ -8631,6 +8631,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   content: '\f2d4';
 }
 
+.fab-paw::before,
+.list-paw li::before {
+  content: '\f1b0';
+}
+
 /************************************
 ** おすすめカード
 ************************************/

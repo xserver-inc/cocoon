@@ -420,6 +420,11 @@
   content: '\f2d4';
 }
 
+.fab-paw::before,
+.list-paw li::before {
+  content: '\f1b0';
+}
+
 .components-button.is-button {
   padding: 0 4px;
 }

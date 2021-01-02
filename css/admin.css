@@ -1911,6 +1911,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-times-circle-o::before, .admin-settings .demo .list-times-circle-o li::before { content: '\f05c'; }
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
+.admin-settings .demo .fab-paw::before, .admin-settings .demo .list-paw li::before { content: '\f1b0'; }
 .admin-settings .demo .recommended { margin: 1em 0; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
 .admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; border-radius: 0; }
@@ -3506,6 +3507,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-times-circle-o::before, .admin-settings .demo .list-times-circle-o li::before { content: '\f05c'; }
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
+.admin-settings .demo .fab-paw::before, .admin-settings .demo .list-paw li::before { content: '\f1b0'; }
 .admin-settings .demo .recommended { margin: 1em 0; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
 .admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; border-radius: 0; }
