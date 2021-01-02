@@ -11,6 +11,7 @@ const { __ } = wp.i18n;
 const { registerFormatType, toggleFormat } = wp.richText;
 const { RichTextShortcut, RichTextToolbarButton } = wp.editor;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/keyboard-key';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const TITLE = __( 'キーボードキー', THEME_NAME );
 
 registerFormatType( FORMAT_TYPE_NAME, {
@@ -23,7 +24,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={'screenoptions'}
+          icon={<FontAwesomeIcon icon="keyboard" />}
           title={<span className="keyboard-key">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }

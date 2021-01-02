@@ -19,6 +19,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
   tagName: 'span',
   className: 'marker-under-blue',
   edit({isActive, value, onChange}){
+    // console.log(isActive);
     const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
 
     return (

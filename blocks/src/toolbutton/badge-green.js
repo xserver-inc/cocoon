@@ -10,6 +10,7 @@ const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { registerFormatType, toggleFormat } = wp.richText;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/badge-green';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const TITLE = __( '緑色', THEME_NAME );
 
 registerFormatType( FORMAT_TYPE_NAME, {
@@ -22,7 +23,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <BadgeToolbarButton
-          icon="tag"
+          icon={<FontAwesomeIcon icon="tag" />}
           title={<span className="badge-green">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }

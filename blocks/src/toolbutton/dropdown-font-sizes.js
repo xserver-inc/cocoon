@@ -30,7 +30,7 @@ sizes.map((size, index) => {
       return (
         <Fragment>
           <FontSizeToolbarButton
-            icon={'edit'}
+          icon={<FontAwesomeIcon icon="pencil-alt" />}
             title={<span className={clss}>{name}</span>}
             onClick={ onToggle }
             isActive={ isActive }

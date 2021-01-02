@@ -11,6 +11,7 @@ const { __ } = wp.i18n;
 const { registerFormatType, toggleFormat } = wp.richText;
 const { RichTextShortcut, RichTextToolbarButton } = wp.editor;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/blue';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const TITLE = __( '青色', THEME_NAME );
 
 registerFormatType( FORMAT_TYPE_NAME, {
@@ -23,7 +24,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={'editor-textcolor'}
+          icon={<FontAwesomeIcon icon="font" />}
           title={<span className="blue">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }
