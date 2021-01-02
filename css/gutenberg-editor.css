@@ -1113,3 +1113,7 @@ body::before,
 .edit-post-visual-editor > .block-editor__typewriter {
   height: auto;
 }
+
+.block-editor__typewriter .wp-block-button__link {
+  padding: .667em 1.333em;
+}
