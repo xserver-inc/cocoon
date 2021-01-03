@@ -2217,3 +2217,7 @@ body{
 .pager-post-navi .iconfont{
   display: none;
 }
+
+.widget{
+  margin-bottom: 60px;
+}
