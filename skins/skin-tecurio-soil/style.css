@@ -379,7 +379,7 @@ background-image: linear-gradient( 165deg, #F0C27B 0%, #4B1248 20%);
 }
 .toc .toc-content {
     height: 0;
-	padding: 0 1.5em 0 1em;
+	padding: 0 1.5em 1em 1em;
     overflow: hidden;
     opacity: 0;
     transition: 0.8s;
