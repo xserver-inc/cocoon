@@ -177,8 +177,9 @@ blockquote::after {
 	border: 2px solid #202020;
 }
 
-.toc-content {
+.article .toc .toc-content {
 	border-top: 1px solid #ccc;
+	margin-bottom: 1em;
 }
 .toc ol.toc-list,
 .toc ul.toc-list {
