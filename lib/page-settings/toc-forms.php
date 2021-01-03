@@ -144,7 +144,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               '0' => __( 'H6見出しまで（デフォルト）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_TOC_DEPTH, $options, get_toc_depth());
-            generate_tips_tag(__( 'どの見出しの深さまで表示するかを設定します。', THEME_NAME ));
+            generate_tips_tag(__( 'どの見出しの深さまで表示するかを設定します。', THEME_NAME ).__( 'こちらで表示設定がされていないと、ショートコードで深さを指定していたとしても表示されません。', THEME_NAME ));
             ?>
           </td>
         </tr>
