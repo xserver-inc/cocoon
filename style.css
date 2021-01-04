@@ -9011,7 +9011,7 @@ input[type='submit'] {
 }
 
 .carousel {
-  display: none;
+  height: 196px;
   animation: carousel-show 0.6s cubic-bezier(0, 0, 0.2, 1);
 }
 .carousel .a-wrap {

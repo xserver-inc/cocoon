@@ -132,8 +132,8 @@
     $('#respond').slideDown();
   });
 
-    //カルーセルの表示
-    $('.carousel').fadeIn(1000);
+  //カルーセルの表示
+  $('.carousel-in').fadeIn(1000);
 
   //Google検索ボタン
   $('.sbtn').click(function(){
