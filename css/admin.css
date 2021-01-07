@@ -480,6 +480,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description { display: none; }
 .admin-settings .demo .hlt-tm-right .navi-in > ul { justify-content: flex-end; }
 .admin-settings .demo .header-container-in.hlt-center-logo-top-menu { display: flex; flex-direction: column-reverse; }
+.admin-settings .demo .fixed-header .cl-slim .logo-header { max-height: 40px; }
+.admin-settings .demo .fixed-header .cl-slim .logo-header img { max-height: 40px; }
 .admin-settings .demo .cl-slim .navi-in > ul li { height: 40px; line-height: 40px; }
 .admin-settings .demo .cl-slim .navi-in > ul li .sub-menu ul { top: -40px; }
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap { height: 40px; line-height: 16px; font-size: 14px; padding-top: 6px; }
@@ -2076,6 +2078,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description { display: none; }
 .admin-settings .demo .hlt-tm-right .navi-in > ul { justify-content: flex-end; }
 .admin-settings .demo .header-container-in.hlt-center-logo-top-menu { display: flex; flex-direction: column-reverse; }
+.admin-settings .demo .fixed-header .cl-slim .logo-header { max-height: 40px; }
+.admin-settings .demo .fixed-header .cl-slim .logo-header img { max-height: 40px; }
 .admin-settings .demo .cl-slim .navi-in > ul li { height: 40px; line-height: 40px; }
 .admin-settings .demo .cl-slim .navi-in > ul li .sub-menu ul { top: -40px; }
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap { height: 40px; line-height: 16px; font-size: 14px; padding-top: 6px; }

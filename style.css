@@ -741,6 +741,13 @@ img.emoji {
   flex-direction: column-reverse;
 }
 
+.fixed-header .cl-slim .logo-header {
+  max-height: 40px;
+}
+.fixed-header .cl-slim .logo-header img {
+  max-height: 40px;
+}
+
 .cl-slim .navi-in > ul li {
   height: 40px;
   line-height: 40px;

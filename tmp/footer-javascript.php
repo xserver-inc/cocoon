@@ -82,7 +82,7 @@ if (!is_amp()): ?>
       if (!$("#header-container").hasClass("fixed-header")) {
         <?php if (get_header_layout_type_center_logo()): ?>
         /*トップメニュータイプに変更する*/
-        $("#header-container-in").removeClass('hlt-center-logo hlt-center-logo-top-menu cl-slim').addClass("hlt-top-menu wrap");
+        $("#header-container-in").removeClass('hlt-center-logo hlt-center-logo-top-menu').addClass("hlt-top-menu wrap");
         <?php endif; ?>
         $("#header-container").addClass("fixed-header");
         $("#header-container").css({

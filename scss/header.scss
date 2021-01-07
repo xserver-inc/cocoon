@@ -168,6 +168,12 @@
 
 //スリムサイズのグローバルナビ
 $slim_height: 40px;
+.fixed-header .cl-slim .logo-header{
+  max-height: $slim_height;
+  img{
+    max-height: $slim_height;
+  }
+}
 .cl-slim .navi-in > ul li{
   height: $slim_height;
   line-height: $slim_height;
