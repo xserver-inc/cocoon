@@ -630,7 +630,7 @@ if (!$entry_content_margin_hight) {
 .article .comment-box,
 .article .common-icon-box,
 .article .blank-box,
-.article .btn,
+.article .button-block,
 .article .micro-bottom,
 .article .caption-box,
 .article .tab-caption-box,
