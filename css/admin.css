@@ -3585,8 +3585,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .carousel-entry-card-thumb { float: none; display: inline-block; }
 .admin-settings .demo .carousel-entry-card-title { font-size: 16px; margin-top: 4px; max-height: 3.2em; overflow: hidden; }
 .admin-settings .demo .no-carousel .carousel { display: none; }
-.admin-settings .demo .carousel { animation: carousel-fade-in 1.5s ease-in-out; }
+.admin-settings .demo .carousel { opacity: 0; transition: all 1s ease-out; }
 .admin-settings .demo .carousel .a-wrap { padding: 0.2em 0.3em; }
+.admin-settings .demo .carousel.loaded { opacity: 1; }
 .admin-settings .demo .ccb-carousel-border .a-wrap { border: 1px solid #ccc; }
 .admin-settings .demo .index-tab-buttons { margin: 1em 0 1.4em; display: flex; }
 .admin-settings .demo .index-tab-buttons .index-tab-button { padding: 12px 16px; font-size: 14px; margin: 2px; border-radius: 4px; background-color: #fff; border: 1px solid #eee; min-width: calc(100% / 4); width: 100%; text-align: center; }

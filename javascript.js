@@ -175,6 +175,10 @@
     }
   });
 
+  $(window).load(function(){
+    $('#carousel').addClass('loaded');
+  });
+
 /*
   $(function(){
     // #で始まるアンカーをクリックした場合に処理

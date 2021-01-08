@@ -9018,10 +9018,15 @@ input[type='submit'] {
 }
 
 .carousel {
-  animation: carousel-fade-in 1.5s ease-in-out;
+  opacity: 0;
+  transition: all 1s ease-out;
 }
 .carousel .a-wrap {
   padding: 0.2em 0.3em;
+}
+
+.carousel.loaded {
+  opacity: 1;
 }
 
 .ccb-carousel-border .a-wrap {
