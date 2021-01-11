@@ -665,7 +665,7 @@ div.mce-content-body div.mce-content-body {
   width: 100%;
 }
 
-.editor-styles-wrapper .block-editor__typewriter .block-editor-cocoon-wrap {
+.editor-styles-wrapper div.block-editor-cocoon-wrap {
   max-width: 860px;
   width: auto;
   padding-left: 14px;
@@ -1108,12 +1108,4 @@ body,
 body::before,
 .editor-styles-wrapper::before {
   background: none !important;
-}
-
-.edit-post-visual-editor > .block-editor__typewriter {
-  height: auto;
-}
-
-.block-editor__typewriter .wp-block-button__link {
-  padding: .667em 1.333em;
 }

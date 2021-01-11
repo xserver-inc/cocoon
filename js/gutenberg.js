@@ -13,6 +13,7 @@ wp.domReady(function () {
         // console.log('2');
         // console.log(jQuery('.block-editor-writing-flow'));
         // add body class
+        jQuery('#editor .block-editor-writing-flow').wrap('<div>');
         jQuery('#editor .block-editor-writing-flow').parent().addClass('block-editor-cocoon-wrap body main article page-body' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
 
         // add title class
