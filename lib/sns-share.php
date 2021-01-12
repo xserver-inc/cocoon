@@ -358,19 +358,19 @@ function fetch_pocket_count($url = null) {
 }
 endif;
 
-//Pocketカウントの取得
-if ( !function_exists( 'get_pocket_count' ) ):
-function get_pocket_count($url = null) {
-  if (!is_sns_share_buttons_count_visible())
-    return null;
+// //Pocketカウントの取得
+// if ( !function_exists( 'get_pocket_count' ) ):
+// function get_pocket_count($url = null) {
+//   if (!is_sns_share_buttons_count_visible())
+//     return null;
 
-  if (is_scc_pocket_exists()) {
-    return scc_get_share_pocket();
-  } else {
-    return fetch_pocket_count($url);
-  }
-}
-endif;
+//   if (is_scc_pocket_exists()) {
+//     return scc_get_share_pocket();
+//   } else {
+//     return fetch_pocket_count($url);
+//   }
+// }
+// endif;
 
 //SNS Count Cacheプラグインはインストールされているか
 function is_scc_exists(){
