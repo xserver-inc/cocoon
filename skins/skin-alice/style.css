@@ -1,0 +1,787 @@
+/*
+  Skin Name: アリス
+  Description: パステルカラーの可愛らしいスキンです。
+  Skin URI: https://yuhostyles.com/
+  Author: Yuhomyan
+  Author URI: https://yuhostyles.com/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-alice.jpg
+  Version: 1.0.1
+  Priority: 9600001000
+  Visibility: false
+*/
+/*以下にスタイルシートを記入してください*/
+
+/* 全体 */
+body {
+    color: #6a859c;
+	background-color: #c6eeee;
+}
+/* link color */
+a:hover{
+	color:#ef97e8;
+}
+a {
+    color: #ff928b;
+}
+a:hover {
+    color: #ef97e8;
+}
+/* フォント */
+@font-face {
+     font-family: "WebLTGothicFont";
+     src: url('/wp-content/themes/luxech/webfonts/WebLTGothicFontt.woff2') format('woff2'),
+          url('/wp-content/themes/luxech/webfonts/WebLTGothicFont.woff') format('woff'),
+          url('/wp-content/themes/luxech/webfonts/WebLTGothicFont.ttf') format('truetype');
+}
+Header{font-family:"WebLTGothicFont";}
+Footer{font-family:"WebLTGothicFont";}
+
+/* ヘッダー背景 */
+.header-in {
+    background: repeating-linear-gradient(90deg, #edf5f4, #edf5f4 10px, #f6faf9 0, #f6faf9 20px);
+}
+.header, .header .site-name-text, #navi .navi-in a, #navi .navi-in a:hover {
+    color: #f47fd7;
+}
+/* フッター色 */
+#footer {
+    background: #c6eeee;
+}
+
+/* サイトタイトル */
+#head-in #sitename a {
+    font-family:"WebLTGothicFont";
+}
+.site-name-text{
+	font-size: 3rem;
+}
+@media screen and (max-width: 834px){
+	#header .site-name-text{
+		font-size: 3rem;
+}
+}
+@media (max-width: 575px){
+#head-in #sitename a {
+    font-size: 1.5em;
+}
+}
+@media screen and (max-width: 480px){
+	#header .site-name-text {
+    font-size: 1.5rem;
+}
+}
+
+
+/* タイトル下コメント */
+.logo-text{
+	padding: 30px 0 0 0;
+}
+.tagline{
+	    margin: 0 0 1.5em 0;
+	    color: #24e5df;
+}
+
+/* Navibar */
+#navi .navi-in a, #navi .navi-in a{
+	font-family: 'WebLTGothicFont';
+  color: #09123a;
+}
+#navi .navi-in a, #navi .navi-in a:hover {
+    color: #09123a;
+}
+/* 色と影 */
+#header-container .navi, #navi .navi-in>.menu-header .sub-menu {
+  background: #95e5e2;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+/* グローバルナビアニメーション */
+.item-label:hover{
+	color:#fff;
+}
+.item-label:after{
+	content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;/*初期状態では下線非表示*/
+  height: 3px;/*下線の高さ*/
+  background: #fff;/*下線の色*/
+  z-index: 999;
+  transition: all 0.3s
+}
+.item-label:hover:after{
+	width: 100%;/*hover時に表示*/
+}
+#navi .navi-in a:hover{
+	background: #95e5e2;
+}
+
+/* サイト全体文字色 */
+.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a{
+	color: inherit;
+}
+
+/* Category label */
+.eye-catch .cat-label,.cat-label{
+	background-color: #7fbfff;
+    border-radius: 50px;
+    padding: 0 10px;
+	border: none;
+}
+.cat-link{
+	background-color: #7fbfff;
+}
+
+/* go to top */
+.go-to-top-button{
+	background: #ef97e8;
+	color: #fff;
+	opacity: 0.5;
+    visibility: visible;
+}
+.go-to-top-button:hover{
+	color: #fff;
+	opacity: 1;
+}
+
+
+/* 記事タイトルフォント */
+.entry-card-title, .related-entry-card-title {
+    font-family:"WebLTGothicFont";
+	color: #ef97e8;
+}
+.entry-title, .archive-title{
+	color: #95e5e2;
+}
+/* 新着記事 */
+.list-title-in{
+	color: #ef97e8;
+	font-family: 'WebLTGothicFont';
+}
+.list-title-in:before, .list-title-in:after{
+	background-color: #ef97e8;
+}
+
+/* 記事内見出しH2 */
+.article h2{
+	background: #f7f7f7;
+    padding: 20px 15px 18px;
+    border-left: 9px solid #95e5e2;
+    line-height: 40px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+/* 記事内見出しH3 */
+.article h3{
+	letter-spacing: 1.6px;
+	border: none;
+    border-left: 9px solid #95e5e2;
+    margin-top: 60px;
+     margin-bottom: 40px;
+
+}
+/* 記事内見出しH4 */
+.article h4 {
+	border: none;
+	  border-left: 4px solid #95e5e2;
+}
+
+/* メタ情報 */
+.ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update,.date-tags, .e-card-info > span {
+ color: #b2e0df;
+ text-decoration: none;
+}
+/* Breadcrumb */
+.breadcrumb, .breadcrumb-caption{
+	color: #ef97e8;
+}
+
+/* 記事タイトルホバー */
+.entry-title{
+	color: #ef97e8;
+}
+.entry-title a:hover {
+color: #ba91e2;
+}
+
+/* 続きを読む */
+@media (max-width: 575px){
+.read-more-link {
+    background: #f58694;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    opacity: 80%;
+ }
+.read-more-link:hover {
+    color: #fff;
+    background: #f58694;
+    text-decoration: none;
+    opacity: 50%;
+}
+}
+
+
+/* NextとPrev */
+ #pnavi a{
+	 color: #ef97e8;
+	 margin: -1px;/* グレーの線を消す */
+         border: 1px solid #c6eeee;/* 線の色 */
+}
+#pnavi img {border-color: #ef97e8;}/* 画像の枠線の色 */
+#pnavi a:hover {color: #ba91e2;}/* ハバー時の文字色 */
+#pnavi a:hover > img {border-color: #c6eeee;}/* ハバー時の画像の枠線の色 */
+
+/* 関連記事ホバー */
+#related h3 a:hover {
+ color: #ef97e8;
+}
+#related .toc {
+    padding: 10px 0;
+    border-top: 1px dotted #95e5e2;
+}
+.term img:hover {
+    border-color: #95e5e2;
+}
+
+/* Navigation */
+@media (min-width: 992px)
+#gnavi div>ul>li>a>span {
+     font-family:"WebLTGothicFont";
+}
+
+
+/* サイドバー */
+.sidebar h3, .sidebar h4 {
+	background: none;
+	border-bottom: 2px solid #ef97e8;
+}
+/* ウィジェットタイトルの編集*/
+.side-title{
+	color:#ef97e8;
+	font-family:WebLTGothicFont;
+	}
+/* 記事抜粋の文字色 */
+.a-wrap{
+	color: inherit;
+}
+.a-wrap:hover{
+	background:none;
+	transform: translateY(-4px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,.2);
+	color: inherit;
+}
+/* サイト内検索 */
+/* サイト内検索 */
+.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+   border: 2px solid #a4e8e6; /* 線の色 */
+   border-radius: 3px;
+  outline: none;
+}
+[type=submit].search-submit {
+   top: 0;
+    right: 0;
+    height: 100%;
+    padding: 8px 15px;
+    background: #a4e8e6; /* ボタンの色 */
+    color: #fff; /* 文字の色 */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 3px 3px 0;
+}
+[type=submit].search-submit:hover {
+    color: #fff;
+    background: #95e5e2;
+}
+
+/* プロフィールウィジェット */
+.author-box {
+    border: none;
+}
+.nwa .author-box .sns-follow-buttons a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+	border: none;
+	color: #fff;
+    font-size: 23px;
+    text-align: center;
+    line-height: 40px;
+}
+.author-box .sns-follow-buttons a.follow-button{
+	background-color: #ffc8fb;
+}
+.author-box .sns-follow-buttons a.follow-button:hover{
+	background-color: pink;
+}
+
+
+/* Widgetリスト系 */
+.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a{
+	font-size: 0.9rem;
+	padding: 3px;
+}
+.widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover{
+	color: inherit;
+	background-color: transparent;
+	border-bottom: 2px solid #ef97e8;
+	transition-duration: 0s;
+	display: inline-block;
+}
+/* Box-Menu */
+.box-menu{
+	color: inherit;
+	box-shadow: inset 1px 1px 0 0 #c6eeee, 1px 1px 0 0 #c6eeee, 1px 0 0 0 #c6eeee;
+}
+.box-menu-icon {
+    color: #ffc8fb !important;
+}
+.box-menu:hover {
+    box-shadow: inset 2px 2px 0 0 #ef97e8, 2px 2px 0 0 #ef97e8, 2px 0 0 0 #ef97e8, 0 2px 0 0 #ef97e8 !important;
+}
+/* カレンダー */
+table th {
+    background: #FDF6F9;
+}
+#wp-calendar th:nth-child(6){
+	background-color: lightblue;
+}
+#wp-calendar th:nth-child(7){
+	background-color: lightpink;
+}
+#wp-calendar td{
+	background-color: #fff;
+}
+
+/* Page Nation *
+/* ページネーションの枠線を消す */
+.page-numbers{
+	color: #6a859c;
+ border-radius: 0;
+	border-bottom: 2px solid;
+ border-color: transparent;
+}
+/* 色を変更 */
+.pagination .current{
+	background: none;
+ border-bottom: 2px solid #f564a9; /* 枠線の色 */
+	color: #f564a9; /* 文字の色 */
+}
+.pagination a:hover{
+ background: none;
+ border-bottom: 2px solid #f564a9; /* 枠線の色 */
+	color: #f564a9; /* 文字の色 */
+}
+.page-numbers.dots{
+ background-color: #fff;}
+
+/* ボタン系 */
+.wp-block-file .wp-block-file__button, .pagination-next-link, .comment-btn,input[type='submit']{
+    display: inline-block;
+ line-height: 1;
+ color: #fff;
+ background: #f58694;
+ padding: 12px 20px;
+ border-radius: 3px;
+ opacity: 80%;
+ margin: 10px;
+ box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+    -webkit-tap-highlight-color: transparent;
+    transition: .3s ease-out;
+}
+.pagination-next-link:hover,
+.comment-btn:hover{
+	color: #fff;
+ background: #f58694;
+	box-shadow: 0 13px 20px -3px rgba(0, 0, 0, 0.24);
+}
+
+/* Read more Button */
+.list-more-button{
+	 background: #faa2c1;
+    color: #ffffff;
+    border: solid 2px #faa2c1;
+	border-radius: 3px;
+}
+.list-more-button:hover{
+	background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    color: #faa2c1;
+}
+
+
+/* SNS */
+ /* ホワイト全体 */
+.bc-brand-color-white.sns-share a:hover, .bc-brand-color-white.sns-follow a:hover {
+  opacity: 1;
+	color: #fff;
+	transition: all .3s ease-in-out;
+}
+
+/* Twitter */
+.bc-brand-color-white.sns-share .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
+	border: 1px solid #7fbfff; /* 枠線色 */
+	color: #7fbfff; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .twitter-button:hover, .bc-brand-color-white.sns-follow .twitter-button:hover,
+/* color */
+.bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.twitter-button {
+    background-color: #7fbfff;
+}
+/* Facebook */
+.bc-brand-color-white.sns-share .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
+	border: 1px solid #3b97f3; /* 枠線色 */
+	color: #3b97f3; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .facebook-button:hover, .bc-brand-color-white.sns-follow .facebook-button:hover,
+/* color */
+.bc-brand-color.sns-share .facebook-button, .bc-brand-color.sns-follow .facebook-button
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.facebook-button {
+	background-color: #3b97f3;
+}
+
+/* LinkedIn */
+.bc-brand-color-white.sns-share .linkedin-button, .bc-brand-color-white.sns-follow .linkedin-button {
+        border: 1px solid #57abd6; /* 枠線色 */
+	color: #57abd6; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .linkedin-button:hover, .bc-brand-color-white.sns-follow .linkedin-button:hover,
+/* color */
+.bc-brand-color.sns-share .linkedin-button, .bc-brand-color.sns-follow .linkedin-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.linkedin-button {
+    background-color: #57abd6;
+}
+/* Pinterest */
+.bc-brand-color-white.sns-share .pinterest-button, .bc-brand-color-white.sns-follow .pinterest-button {
+	border: 1px solid #ea4c89; /* 枠線色 */
+	color: #ea4c89; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .pinterest-button:hover, .bc-brand-color-white.sns-follow .pinterest-button:hover,
+.bc-brand-color.sns-share .pinterest-button, .bc-brand-color.sns-follow .pinterest-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.pinterest-button {
+	background-color: #fb82b1;
+	border-color: #fb82b1;
+}
+
+/* はてブ */
+.bc-brand-color-white.sns-share .hatebu-button, .bc-brand-color-white.sns-follow .hatebu-button {
+	border: 1px solid #488ce4; /* 枠線色 */
+	color: #488ce4; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .hatebu-button:hover, .bc-brand-color-white.sns-follow .hatebu-button:hover,
+/* color */
+.bc-brand-color.sns-share .hatebu-button, .bc-brand-color.sns-follow .hatebu-button
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.hatebu-button{
+	background-color: #488ce4;
+	color: #fff;
+}
+
+/* Pocket */
+.bc-brand-color-white.sns-share .pocket-button, .bc-brand-color-white.sns-follow .pocket-button {
+	border: 1px solid #f58694; /* 枠線色 */
+	color: #f58694; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .pocket-button:hover, .bc-brand-color-white.sns-follow .pocket-button:hover,
+/* color */
+.bc-brand-color.sns-share .pocket-button, .bc-brand-color.sns-follow .pocket-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.pocket-button{
+	background-color: #f58694;
+	color: #fff;
+}
+
+/* LINE */
+.bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
+	border: 1px solid #41c9b4; /* 枠線色 */
+	color: #03c8a8; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .line-button:hover, .bc-brand-color-white.sns-follow .line-button:hover,
+/* color */
+.bc-brand-color.sns-share .line-button, .bc-brand-color.sns-follow .line-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.line-button{
+	background-color: #41c9b4;
+	color: #fff;
+}
+/* コピーボタン */
+.bc-brand-color-white.sns-share a, .bc-brand-color-white.sns-follow a {
+	border: 1px solid #f7d0f5; /* 枠線色 */
+	color: #fb217580; /* 文字色 */
+}
+.bc-brand-color-white.sns-share a:hover, .bc-brand-color-white.sns-follow a:hover, .sns-buttons a{
+	background-color: #fb217580;
+}
+
+/* RSS */
+.bc-brand-color-white.sns-share .rss-button, .bc-brand-color-white.sns-follow .rss-button{
+    border: 1px solid #ffbf7f; /* 枠線色 */
+	color: #ff8204; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .rss-button:hover, .bc-brand-color-white.sns-follow .rss-button:hover,
+/* color */
+.bc-brand-color.sns-share .rss-button, .bc-brand-color.sns-follow .rss-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.rss-button{
+    background-color: #ffbf7f;
+    color: #fff;
+}
+/* feedly */
+.bc-brand-color-white.sns-share .feedly-button, .bc-brand-color-white.sns-follow .feedly-button {
+	border: 1px solid #96e4df; /* 枠線色 */
+	color: #62dad2; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .feedly-button:hover, .bc-brand-color-white.sns-follow .feedly-button:hover,
+/* color */
+.bc-brand-color.sns-share .feedly-button, .bc-brand-color.sns-follow .feedly-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.feedly-button{
+	background-color: #96e4df;
+	color: #fff;
+}
+/* ブログ */
+.bc-brand-color-white.sns-share .website-button, .bc-brand-color-white.sns-follow .website-button{
+	border: 1px solid #f47fd7; /* 枠線色 */
+	color: #f47fd7; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .website-button:hover, .bc-brand-color-white.sns-follow .website-button:hover,
+.bc-brand-color.sns-share .website-button, .bc-brand-color.sns-follow .website-button{
+	background-color: #f47fd7
+}
+/* YouTube */.author-box .sns-follow-buttons a.follow-button
+.bc-brand-color-white.sns-share .youtube-button, .bc-brand-color-white.sns-follow .youtube-button {
+    color: #ea4c89;
+    border-color: #ea4c89;
+}
+.bc-brand-color-white.sns-share .youtube-button:hover, .bc-brand-color-white.sns-follow .youtube-button:hover,
+/* color */
+.bc-brand-color.sns-share .youtube-button, .bc-brand-color.sns-follow .youtube-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.youtube-button{
+    background-color: #ea4c89;
+}
+/* Github */
+.bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button{
+	border: 1px solid #4078c0; /* 枠線色 */
+	color: #4078c0; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .github-button:hover, .bc-brand-color-white.sns-follow .github-button:hover,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.github-button{
+	background-color: #4078c0; /* 枠線色 */
+	color: #fff; /* 文字色 */
+}
+/* Amazon */
+.bc-brand-color-white.sns-share .amazon-button, .bc-brand-color-white.sns-follow .amazon-button{
+border: 1px solid #ffbf7f; /* 枠線色 */
+	color: #ff8204; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .amazon-button:hover, .bc-brand-color-white.sns-follow .amazon-button:hover {
+	background-color: #ffbf7f;
+    color: #fff;
+}
+/* Rakuten */
+.bc-brand-color-white.sns-share .rakuten-room-button, .bc-brand-color-white.sns-follow .rakuten-room-button{
+	border: 1px solid #ea4c89; /* 枠線色 */
+	color: #ea4c89; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .rakuten-room-button:hover, .bc-brand-color-white.sns-follow .rakuten-room-button:hover,
+.bc-brand-color.sns-share .rakuten-room-button, .bc-brand-color.sns-follow .rakuten-room-button{
+	background-color: #ea4c89; /* 枠線色 */
+	color: #fff; /* 文字色 */
+}
+/* CodePen, Instagram */
+.bc-brand-color-white.sns-share .codepen-button, .bc-brand-color-white.sns-follow .codepen-button,
+.bc-brand-color-white.sns-share .instagram-button, .bc-brand-color-white.sns-follow .instagram-button{
+	border: 1px solid #ba91e2; /* 枠線色 */
+	color: #ba91e2; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .codepen-button:hover, .bc-brand-color-white.sns-follow .codepen-button:hover,
+.bc-brand-color-white.sns-share .instagram-button:hover, .bc-brand-color-white.sns-follow .instagram-button:hover,
+/* color */
+.bc-brand-color.sns-share .codepen-button, .bc-brand-color.sns-follow .codepen-button, .bc-brand-color.sns-share .instagram-button, .bc-brand-color.sns-follow .instagram-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.codepen-button, .author-box .sns-follow-buttons a.follow-button.instagram-button{
+	background-color: #ba91e2; /* 枠線色 */
+	color: #fff; /* 文字色 */
+}
+/* note,slack */
+.bc-brand-color-white.sns-share .slack-button, .bc-brand-color-white.sns-follow .slack-button,
+.bc-brand-color-white.sns-share .note-button, .bc-brand-color-white.sns-follow .note-button {
+	border: 1px solid #96e4df; /* 枠線色 */
+	color: #62dad2; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .slack-button:hover, .bc-brand-color-white.sns-follow .slack-button:hover,
+/* color */
+.bc-brand-color-white.sns-share .note-button:hover, .bc-brand-color-white.sns-follow .note-button:hover,
+.bc-brand-color.sns-share .slack-button, .bc-brand-color.sns-follow .slack-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.note-button{
+	background-color: #96e4df;
+	color: #fff;
+}
+/* flicker */
+.bc-brand-color-white.sns-share .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
+    color: #405de6;
+    border-color: #405de6;
+}
+.bc-brand-color-white.sns-share .flickr-button:hover, .bc-brand-color-white.sns-follow .flickr-button:hover ,
+.bc-brand-color.sns-share .flickr-button, .bc-brand-color.sns-follow .flickr-button{
+    background-color: #405de6;
+}
+/* SoundCloud */
+.bc-brand-color-white.sns-share .soundcloud-button:hover, .bc-brand-color-white.sns-follow .soundcloud-button:hover{
+    background-color: #ff8800;
+}
+
+/* SNSシェアメッセージ下のボーダー色 */
+.sns-share-message, .sns-follow-message{
+	display: inline-block;
+	border-bottom: 4px solid #fbe3f9;
+	margin-bottom: 1rem;
+}
+
+
+/* Contact Form 7 */
+/* 必須マーク */
+.must{
+	color: #fff;
+	margin-right: 10px;
+	padding: 6px 10px;
+	background: #f58694; /* 背景色 */
+	border-radius: 5px;
+}
+
+/* 任意マーク */
+.free {
+	color: #fff;
+	margin-right: 10px;
+	padding: 6px 10px;
+	background: #7fbfff; /* 背景色 */
+	border-radius: 5px;
+}
+
+/* 項目名を太字にする */
+form p {
+	font-weight: 600;
+}
+
+/* 入力項目を見やすくする */
+input.wpcf7-form-control.wpcf7-text,
+textarea.wpcf7-form-control.wpcf7-textarea {
+	width: 100%;
+	padding: 8px 15px;
+	margin-right: 10px;
+	margin-top: 10px;
+	border: 1px solid #d0d5d8; /* 枠線の色 */
+	border-radius: 3px;
+}
+textarea.wpcf7-form-control.wpcf7-textarea {
+	height: 200px;
+}
+
+/* 必須項目の入力欄を見やすくする */
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+	background: #eff1f5; /* 背景色 */
+}
+
+/* 送信ボタンを見やすくする */
+input.wpcf7-submit {
+	width: 100%; /* 好みで60〜80%でもOK */
+	height: 60px;
+	border-color: #ffbf7f; /* 枠線の色 */
+	background: #ffbf7f; /* ボタンの色 */
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 2px;
+}
+
+/* エラーメッセージを見やすくする */
+span.wpcf7-not-valid-tip,
+.wpcf7-response-output.wpcf7-validation-errors {
+	color: red;
+	font-weight: 600;
+}
+
+/* 目次 */
+.toc{
+ background: #fffef6; /* 背景色 */
+ border: 2px solid #ffb1d8; /* 枠線 */
+ border-radius: 3px;
+}
+.toc-title{ /* タイトル */
+  color: #ffb1d8; /* 文字色 */
+	font-size: 1.8em; /* 大きさ */
+	font-family: WebLTGothicFont; /* フォント */
+}
+.toc-title:before{ /* タイトル前のアイコン */
+ font-family: "Font Awesome 5 Free";
+ content: "\f15b";
+ margin-right: 5px;
+ margin-left: 5px;
+}
+.toc a{
+	color: inherit;
+}
+.toc a:hover{
+	color: #ffb1d8;
+	text-decoration: none;
+}
+.toc_list ul {
+list-style: none;
+padding-left: 5px;
+}
+.toc_list li, .toc_list li li, .toc_list li li li {
+font-size: 14px;
+padding: 5px 0;
+}
+ol.toc-list li{
+	margin: 1em 0;
+}
+ol.toc-list {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0;
+}
+ol.toc-list > li:before {
+    counter-increment: item;
+    content: counter(item)'';
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    background: #ffb1d8;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: .5em;
+}
+
+/* シンタックスハイライター */
+.hljs{
+	padding: 1em;
+    border-radius: 10px;
+    border: 4px solid #c6eeee;
+	 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18) inset;
+}
+
+/* CTA */
+.cta-box {
+    background-color: #f3fafe;
+    color: inherit;
+}
+.sidebar .cta-button .btn-l, .sidebar .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .sidebar .cta-button a {
+	color: #fff;
+    background: #f58694;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+}
