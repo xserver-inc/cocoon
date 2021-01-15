@@ -31,7 +31,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php endif; ?>
 
     <?php if ( is_pocket_share_button_visible($option) )://pocketボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_pocket_share_url()); ?>" class="share-button pocket-button pocket-share-button-sq" target="_blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-pocket"></span><span class="button-caption"><?php _e( 'Pocket', THEME_NAME ) ?></span></a>
+      <a href="<?php echo esc_url(get_pocket_share_url()); ?>" class="share-button pocket-button pocket-share-button-sq" target="_blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-pocket"></span><span class="button-caption"><?php _e( 'Pocket', THEME_NAME ) ?></span><span class="share-count pocket-share-count"><?php echo get_pocket_count(); ?></span></a>
     <?php endif; ?>
 
     <?php if ( is_line_at_share_button_visible($option) )://LINEボタンを表示するか ?>
