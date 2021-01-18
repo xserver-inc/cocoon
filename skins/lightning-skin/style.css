@@ -775,3 +775,7 @@ a.popular-entry-card-link{
 .navi-in .menu-item-has-description .has-icon {
 	top: 12px;
 }
+
+#navi .navi-in .menu-item-has-description .sub-menu li{
+	height: 72px;
+}
