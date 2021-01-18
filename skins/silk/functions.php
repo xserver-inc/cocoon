@@ -14,7 +14,7 @@ class Functions {
   private $fa = '';
 
   //スキンカラー初期値
-  const KEY_COLOR  = '#757575';
+  const KEY_COLOR  = '#e57373';
   const TEXT_COLOR = '#ffffff';
 
   //ブロックスタイル一覧
@@ -102,6 +102,13 @@ class Functions {
         'name'  => 'columns-card',
         'label' => 'カラム'
       ]
+    ],
+    [
+      'name'       => 'cocoon-blocks/blogcard',
+      'properties' => [
+        'name'  => 'text',
+        'label' => 'テキスト'
+      ]
     ]
   ];
 
@@ -125,7 +132,7 @@ class Functions {
     'deep-orange'   => '#ff7043',
     'brown'         => '#8d6e63',
     'grey'          => '#90a4ae',
-    'black'         => '#616161',
+    'black'         => '#424242',
     'watery-blue'   => '#e3f2fd',
     'watery-yellow' => '#fff8e1',
     'watery-red'    => '#ffebee',
@@ -159,7 +166,9 @@ class Functions {
     add_filter('external_blogcard_image_height', [$this, 'blogcard_height']);
 
     //ブロックカスタマイズ
-    add_action('enqueue_block_editor_assets', [$this, 'editor_assets']);
+    add_action('enqueue_block_editor_assets', [$this, 'editor_assets'], 11);
+    add_action('admin_menu', [$this, 'reusable_menu']);
+    add_filter('image_size_names_choose', [$this, 'image_size']);
     add_filter('render_block', [$this, 'custom_blocks'], 10, 2);
 
     //AMP
@@ -184,6 +193,9 @@ class Functions {
     foreach (self::BLOCK_STYLES as $blockstyle) {
       register_block_style($blockstyle['name'], $blockstyle['properties']);
     }
+
+    //公式ブロックパターン削除
+    remove_theme_support('core-block-patterns');
   }
 
   //アイコンバージョン
@@ -241,6 +253,7 @@ class Functions {
     .article h5,
     .sidebar h3,
     ul.toc-list > li::before,
+    .is-style-normal-card .blogcard-label,
     .search-form div.sbtn::after,
     .search-submit,
     .pager-post-navi a .iconfont,
@@ -392,7 +405,9 @@ class Functions {
     $link_color = get_site_link_color() ?: '#1967d2';
     echo 'a:hover,
     .comment-btn,
-    .comment-btn:hover {
+    .comment-btn:hover,
+    .is-style-text .a-wrap,
+    .is-style-text .a-wrap:hover {
       color: '.$link_color.';
     }
     
@@ -425,18 +440,16 @@ class Functions {
     }';
 
     //ボックスメニュー
-    if ($color !== self::KEY_COLOR) {
-      echo '.box-menus .box-menu:hover {
-        box-shadow: inset 2px 2px 0 0 '.$color.', 2px 2px 0 0 '.$color.', 2px 0 0 0 '.$color.', 0 2px 0 0 '.$color.';
-      }
-      
-      .box-menus .box-menu-icon {
-        color: '.$color.';
-      }';
+    echo '.box-menus .box-menu:hover {
+      box-shadow: inset 2px 2px 0 0 '.$color.', 2px 2px 0 0 '.$color.', 2px 0 0 0 '.$color.', 0 2px 0 0 '.$color.';
     }
+    
+    .box-menus .box-menu-icon {
+      color: '.$color.';
+    }';
 
     //アイコン
-    if ($this->fa === 'fa') {
+    if (is_site_icon_font_font_awesome_4()) {
       $font   = 'font-family: FontAwesome;';
       $weight = '';
     } else {
@@ -601,13 +614,43 @@ class Functions {
     return THUMB320HEIGHT;
   }
 
-  //エディター用JS
+  //エディター用JS・CSS
   public function editor_assets() {
-    wp_enqueue_script(
-      'silk-gutenberg-js',
-      plugins_url('gutenberg.js', __FILE__),
-      ['wp-rich-text']
-    );
+    $file = str_ireplace('style.css', 'gutenberg.js', get_skin_url());
+    $path = url_to_local($file);
+
+    if ($file && file_exists($path)) {
+      wp_enqueue_script(
+        'silk-gutenberg',
+        $file,
+        ['wp-rich-text']
+      );
+
+      wp_add_inline_style(
+        THEME_NAME.'-gutenberg',
+        '.blogcard-url-search .components-popover__content {
+          padding: 10px;
+        }
+        .blogcard-url-search .components-base-control__field {
+          margin-bottom: 0;
+        }'
+      );
+    }
+  }
+
+  //再利用ブロックメニュー
+  public function reusable_menu() {
+    add_menu_page('再利用ブロック', '再利用ブロック', 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-controls-repeat', 22);
+    add_submenu_page('edit.php?post_type=wp_block', '再利用ブロック一覧', '再利用ブロック一覧', 'manage_options', 'edit.php?post_type=wp_block');
+    add_submenu_page('edit.php?post_type=wp_block', '新規追加', '新規追加', 'manage_options', 'post-new.php?post_type=wp_block');
+  }
+
+  //画像サイズ追加
+  public function image_size($names) {
+    foreach (wp_get_additional_image_sizes() as $name => $size) {
+      $names[$name] = $name.' ('.strval($size['width']).'x'.strval($size['height']).')';
+    }
+    return $names;
   }
 
   //ブロックコンテンツ

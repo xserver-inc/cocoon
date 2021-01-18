@@ -5,8 +5,8 @@
   Skin URI: https://dateqa.com/cocoon/#silk
   Author: ろこ
   Author URI: https://dateqa.com/cocoon/
+  Version: 2.0.7
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-silk.png
-  Version: 1.6.0
   Priority: 9500001000
 */
 
@@ -22,6 +22,7 @@
 .eye-catch,
 .sns-buttons a,
 .blogcard-wrap,
+.is-style-text a .blogcard-label,
 .btn,
 .btn-wrap > a,
 .ranking-item-image-tag img,
@@ -66,6 +67,7 @@ input[type="submit"],
 .ect-big-card-first .a-wrap:not(:first-of-type):hover img,
 .sns-buttons a:hover,
 .blogcard-wrap:hover,
+.is-style-text a:hover .blogcard-label,
 .btn:hover,
 .btn-wrap > a:hover,
 .ranking-item-image-tag a:hover img,
@@ -136,11 +138,11 @@ a.box-menu:hover {
 
 /* カラーパレット修正 */
 :root body .has-black-background-color {
-  background-color: #616161;
+  background-color: #424242;
 }
 
 :root body .has-black-color {
-  color: #616161;
+  color: #424242;
 }
 
 /* 全般 */
@@ -310,6 +312,12 @@ a.site-name:hover {
   max-width: 510px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.appeal-title {
+  display: inline-block;
+  margin-bottom: 1em;
+  border-bottom: 2px solid currentColor;
 }
 
 .appeal-button {
@@ -507,6 +515,11 @@ a.site-name:hover {
   border-width: 0;
   border-radius: 23px;
   opacity: 0.85;
+}
+
+a.page-numbers {
+  line-height: 42px;
+  border: 2px solid currentColor;
 }
 
 .page-numbers.dots,
@@ -983,6 +996,10 @@ img {
   opacity: 1;
 }
 
+.no-sidebar .wp-block-image {
+  text-align: center;
+}
+
 /* リスト */
 ul.is-style-link,
 ol.is-style-link {
@@ -1051,17 +1068,9 @@ p code.hljs {
   border-radius: 4px;
 }
 
-.is-style-normal-card .blogcard-wrap {
-  max-width: none;
-}
-
 .blogcard {
   padding: 0;
   border: 0;
-}
-
-.is-style-normal-card .blogcard {
-  padding: 12px 0.5em 0.5em;
 }
 
 .blogcard-label {
@@ -1075,23 +1084,17 @@ p code.hljs {
   border-radius: 12px;
 }
 
-.is-style-normal-card .blogcard-label {
-  top: -1em;
-  left: 1em;
-  right: auto;
-}
-
-.blogcard-type:not(.is-style-normal-card) .blogcard-thumbnail {
+.blogcard-thumbnail {
   float: none;
   width: 100%;
   margin: 0;
 }
 
-.blogcard-type:not(.is-style-normal-card) .blogcard-thumbnail img {
+.blogcard-thumb-image {
   border-radius: 4px 4px 0 0;
 }
 
-.blogcard-type:not(.is-style-normal-card) .blogcard-content {
+.blogcard-content {
   padding: 1em 1em 0;
   margin-left: 0;
   max-height: none;
@@ -1107,25 +1110,146 @@ p code.hljs {
   font-size: 0.8em;
 }
 
-.blogcard-type:not(.is-style-normal-card) .blogcard-footer {
+.blogcard-footer {
   padding: 0 1em 1em;
   font-size: 0.8em;
   opacity: 0.7;
 }
 
-.blogcard-type:not(.is-style-normal-card) .blogcard-site {
-  display: none;
-}
-
-.blogcard-type:not(.is-style-normal-card) .ib-right .blogcard-thumbnail,
-.blogcard-type:not(.is-style-normal-card) .eb-right .blogcard-thumbnail {
+.ib-right .blogcard-thumbnail,
+.eb-right .blogcard-thumbnail {
   float: none;
   margin-left: 0;
 }
 
-.blogcard-type:not(.is-style-normal-card) .ib-right .blogcard-content,
-.blogcard-type:not(.is-style-normal-card) .eb-right .blogcard-content {
+.ib-right .blogcard-content,
+.eb-right .blogcard-content {
   margin-right: 0;
+}
+
+.is-style-normal-card .blogcard-wrap,
+.is-style-normal-card .blogcard-wrap:hover {
+  width: 100%;
+  max-width: none;
+}
+
+.is-style-normal-card .blogcard {
+  display: table;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.is-style-normal-card .blogcard-label {
+  top: -2em;
+  left: 0;
+  right: auto;
+  padding: 0 0.5em;
+  background: transparent;
+  font-size: 0.5em;
+  border-radius: 0;
+  text-decoration: underline;
+}
+
+.is-style-normal-card .blogcard-thumbnail,
+.is-style-normal-card .blogcard-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.is-style-normal-card .blogcard-title,
+.is-style-text .blogcard-title {
+  margin-bottom: 0;
+}
+
+.is-style-normal-card .blogcard-thumbnail {
+  width: 90px;
+}
+
+.is-style-normal-card .blogcard-thumb-image {
+  border-radius: 4px;
+}
+
+.is-style-normal-card .blogcard-content {
+  padding: 0 0 0 0.5em;
+  font-size: 0.8em;
+  line-height: 1.2;
+}
+
+.article .is-style-normal-card .blogcard-wrap {
+  margin-top: 0;
+  margin-bottom: 1.25em;
+}
+
+.article .bct-none.is-style-normal-card .blogcard-wrap {
+  margin-bottom: 0.5em;
+}
+
+.article .is-style-normal-card > .blogcard-wrap:last-child {
+  margin-bottom: 0;
+}
+
+.blogcard-type.is-style-text {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.is-style-text .blogcard-wrap,
+.is-style-text .blogcard-wrap:hover {
+  width: 100%;
+  max-width: none;
+  border: 0;
+  box-shadow: none;
+  transform: none;
+}
+
+.is-style-text .blogcard,
+.is-style-text .blogcard-label {
+  position: unset;
+}
+
+.is-style-text .blogcard {
+  padding: 1em 0.5em;
+  border-bottom: 2px dashed #ddd;
+  border-radius: 0;
+}
+
+.is-style-text > .blogcard-wrap:first-child,
+.is-style-text > *:first-child .blogcard {
+  border-radius: 4px 4px 0 0;
+}
+
+.is-style-text > .blogcard-wrap:last-child,
+.is-style-text > *:last-child .blogcard {
+  border-bottom: 0;
+  border-radius: 0 0 4px 4px;
+}
+
+.is-style-text .blogcard-label {
+  float: left;
+  margin-right: 0.5em;
+  padding: 0 0.5em;
+  font-size: 0.64em;
+  border-radius: 2px;
+}
+
+.is-style-text .blogcard-content {
+  padding: 0;
+  font-size: 0.8em;
+  line-height: 1.6;
+  overflow: unset;
+}
+
+.article .is-style-text .blogcard-wrap {
+  margin: 0;
+}
+
+.blogcard-site,
+.is-style-normal-card .blogcard-snippet,
+.is-style-normal-card .blogcard-footer,
+.is-style-text .blogcard-thumbnail,
+.is-style-text .blogcard-snippet,
+.is-style-text .blogcard-footer {
+  display: none;
 }
 
 /* ボタン */
@@ -1904,6 +2028,22 @@ table tfoot td > a .anchor-icon {
   text-decoration: underline;
 }
 
+/* 文字色 */
+.red,
+.bold-red {
+  color: #d50000;
+}
+
+.blue,
+.bold-blue {
+  color: #0091ea;
+}
+
+.green,
+.bold-green {
+  color: #43a047;
+}
+
 /* マーカー */
 .marker {
   background: rgba(255, 235, 59, 0.5);
@@ -2143,6 +2283,19 @@ div.search-form {
 /* 区切り */
 hr {
   color: inherit;
+}
+
+.wp-block-separator.is-style-default {
+  border-width: 1px 0 0 0;
+  border-style: solid;
+}
+
+.wp-block-separator.is-style-wide {
+  border-style: solid;
+}
+
+hr.wp-block-separator.is-style-dots::before {
+  content: "\02022 \02022 \02022 \02022 \02022";
 }
 
 hr.is-style-cut-line {
@@ -2871,14 +3024,6 @@ ol.toc-list > li > ol {
 
 @media screen and (max-width: 480px) {
   /* 見出し */
-  .article h2,
-  .article h3,
-  .article h4,
-  .article h5,
-  .article h6 {
-    margin-top: 2.4em;
-  }
-
   .article h1 {
     padding-left: 0;
     padding-right: 0;
