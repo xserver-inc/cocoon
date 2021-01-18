@@ -168,9 +168,12 @@ box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 	top: 8px;
 	right: 8px;
 }
+.navi-in > ul > li{
+	padding: 5px;
+}
 .navi-in a{
 	border: dashed 2px white;
-	margin: 5px;
+	/* margin: 5px; */
 	padding: 0 10px;
 }
 .navi-in a:hover{
@@ -762,4 +765,13 @@ a.popular-entry-card-link{
 }
 .menu-drawer li .sub-menu li{
 	margin-right: 0;
+}
+
+
+#navi .navi-in > ul > li.menu-item-has-description{
+	height: 72px;
+}
+
+.navi-in .menu-item-has-description .has-icon {
+	top: 12px;
 }
