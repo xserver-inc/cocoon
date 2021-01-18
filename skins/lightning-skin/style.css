@@ -606,7 +606,7 @@ a.prev-post:hover::before,a.next-post:hover::before{
 	font-size: 14px;
 }
 .search-submit{
-	top: -8px;
+	top: 4px;
 }
 /* 最新記事 */
 a.new-entry-card-link{
