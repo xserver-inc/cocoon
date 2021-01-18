@@ -842,7 +842,7 @@ span.post-date {
 }
 .btn-l, .ranking-item-link-buttons a, .btn-wrap.btn-wrap-l > a {
     padding: 15px 20px;
-    margin: 1.7em;
+    margin: 0 1.7em 1.7em;
 }
 .btn:hover::after, .ranking-item-link-buttons a:hover::after, .btn-wrap > a:hover::after {
     right: 0px;

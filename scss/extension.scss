@@ -1152,27 +1152,30 @@ div.search-form{
   }
 }
 
-.mc-red{@include micro_copycolor($red_color);}
-.mc-pink{@include micro_copycolor($pink_color);}
-.mc-purple{@include micro_copycolor($purple_color);}
-.mc-blue{@include micro_copycolor($blue_color);}
-.mc-green{@include micro_copycolor($green_color);}
-.mc-orange{@include micro_copycolor($orange_color);}
-.mc-yellow{@include micro_copycolor($yellow_color);}
-.mc-brown{@include micro_copycolor($brown_color);}
-.mc-grey{@include micro_copycolor($grey_color);}
-.mc-black{@include micro_copycolor($black_color);}
+.micro-balloon{
+  &.mc-red{@include micro_copycolor($red_color);}
+  &.mc-pink{@include micro_copycolor($pink_color);}
+  &.mc-purple{@include micro_copycolor($purple_color);}
+  &.mc-blue{@include micro_copycolor($blue_color);}
+  &.mc-green{@include micro_copycolor($green_color);}
+  &.mc-orange{@include micro_copycolor($orange_color);}
+  &.mc-yellow{@include micro_copycolor($yellow_color);}
+  &.mc-brown{@include micro_copycolor($brown_color);}
+  &.mc-grey{@include micro_copycolor($grey_color);}
+  &.mc-black{@include micro_copycolor($black_color);}
 
-.mc-deep{@include micro_copycolor($deep_color);}
-.mc-indigo{@include micro_copycolor($indigo_color);}
-.mc-light-blue{@include micro_copycolor($light_blue_color);}
-.mc-cyan{@include micro_copycolor($cyan_color);}
-.mc-teal{@include micro_copycolor($teal_color);}
-.mc-light-green{@include micro_copycolor($light_green_color);}
-.mc-lime{@include micro_copycolor($lime_color);}
-.mc-amber{@include micro_copycolor($amber_color);}
-.mc-deep-orange{@include micro_copycolor($deep_orange_color);}
-.mc-white{@include micro_copycolor($white_color);}
+  &.mc-deep{@include micro_copycolor($deep_color);}
+  &.mc-indigo{@include micro_copycolor($indigo_color);}
+  &.mc-light-blue{@include micro_copycolor($light_blue_color);}
+  &.mc-cyan{@include micro_copycolor($cyan_color);}
+  &.mc-teal{@include micro_copycolor($teal_color);}
+  &.mc-light-green{@include micro_copycolor($light_green_color);}
+  &.mc-lime{@include micro_copycolor($lime_color);}
+  &.mc-amber{@include micro_copycolor($amber_color);}
+  &.mc-deep-orange{@include micro_copycolor($deep_orange_color);}
+  &.mc-white{@include micro_copycolor($white_color);}
+}
+
 
 .blogcard-label{
   position: absolute;

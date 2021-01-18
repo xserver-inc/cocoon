@@ -1058,86 +1058,86 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-copy.alignleft, .admin-settings .demo .micro-copy.alignright { float: none; }
 .admin-settings .demo .micro-copy.alignright { margin-left: auto; }
 .admin-settings .demo .mc-circle { border-radius: 2em; background-clip: padding-box; }
-.admin-settings .demo .mc-red { background-color: #e60033; color: #fff; border: none; }
-.admin-settings .demo .mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
-.admin-settings .demo .mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-red::after { border-top-color: #e60033; }
-.admin-settings .demo .mc-pink { background-color: #e95295; color: #fff; border: none; }
-.admin-settings .demo .mc-pink.micro-bottom::after { border-bottom-color: #e95295; border-top-color: transparent; }
-.admin-settings .demo .mc-pink::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-pink::after { border-top-color: #e95295; }
-.admin-settings .demo .mc-purple { background-color: #884898; color: #fff; border: none; }
-.admin-settings .demo .mc-purple.micro-bottom::after { border-bottom-color: #884898; border-top-color: transparent; }
-.admin-settings .demo .mc-purple::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-purple::after { border-top-color: #884898; }
-.admin-settings .demo .mc-blue { background-color: #0095d9; color: #fff; border: none; }
-.admin-settings .demo .mc-blue.micro-bottom::after { border-bottom-color: #0095d9; border-top-color: transparent; }
-.admin-settings .demo .mc-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-blue::after { border-top-color: #0095d9; }
-.admin-settings .demo .mc-green { background-color: #3eb370; color: #fff; border: none; }
-.admin-settings .demo .mc-green.micro-bottom::after { border-bottom-color: #3eb370; border-top-color: transparent; }
-.admin-settings .demo .mc-green::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-green::after { border-top-color: #3eb370; }
-.admin-settings .demo .mc-orange { background-color: #f39800; color: #fff; border: none; }
-.admin-settings .demo .mc-orange.micro-bottom::after { border-bottom-color: #f39800; border-top-color: transparent; }
-.admin-settings .demo .mc-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-orange::after { border-top-color: #f39800; }
-.admin-settings .demo .mc-yellow { background-color: #ffd900; color: #fff; border: none; }
-.admin-settings .demo .mc-yellow.micro-bottom::after { border-bottom-color: #ffd900; border-top-color: transparent; }
-.admin-settings .demo .mc-yellow::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-yellow::after { border-top-color: #ffd900; }
-.admin-settings .demo .mc-brown { background-color: #954e2a; color: #fff; border: none; }
-.admin-settings .demo .mc-brown.micro-bottom::after { border-bottom-color: #954e2a; border-top-color: transparent; }
-.admin-settings .demo .mc-brown::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-brown::after { border-top-color: #954e2a; }
-.admin-settings .demo .mc-grey { background-color: #949495; color: #fff; border: none; }
-.admin-settings .demo .mc-grey.micro-bottom::after { border-bottom-color: #949495; border-top-color: transparent; }
-.admin-settings .demo .mc-grey::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-grey::after { border-top-color: #949495; }
-.admin-settings .demo .mc-black { background-color: #333; color: #fff; border: none; }
-.admin-settings .demo .mc-black.micro-bottom::after { border-bottom-color: #333; border-top-color: transparent; }
-.admin-settings .demo .mc-black::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-black::after { border-top-color: #333; }
-.admin-settings .demo .mc-deep { background-color: #55295b; color: #fff; border: none; }
-.admin-settings .demo .mc-deep.micro-bottom::after { border-bottom-color: #55295b; border-top-color: transparent; }
-.admin-settings .demo .mc-deep::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-deep::after { border-top-color: #55295b; }
-.admin-settings .demo .mc-indigo { background-color: #1e50a2; color: #fff; border: none; }
-.admin-settings .demo .mc-indigo.micro-bottom::after { border-bottom-color: #1e50a2; border-top-color: transparent; }
-.admin-settings .demo .mc-indigo::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-indigo::after { border-top-color: #1e50a2; }
-.admin-settings .demo .mc-light-blue { background-color: #2ca9e1; color: #fff; border: none; }
-.admin-settings .demo .mc-light-blue.micro-bottom::after { border-bottom-color: #2ca9e1; border-top-color: transparent; }
-.admin-settings .demo .mc-light-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-light-blue::after { border-top-color: #2ca9e1; }
-.admin-settings .demo .mc-cyan { background-color: #00a3af; color: #fff; border: none; }
-.admin-settings .demo .mc-cyan.micro-bottom::after { border-bottom-color: #00a3af; border-top-color: transparent; }
-.admin-settings .demo .mc-cyan::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-cyan::after { border-top-color: #00a3af; }
-.admin-settings .demo .mc-teal { background-color: #007b43; color: #fff; border: none; }
-.admin-settings .demo .mc-teal.micro-bottom::after { border-bottom-color: #007b43; border-top-color: transparent; }
-.admin-settings .demo .mc-teal::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-teal::after { border-top-color: #007b43; }
-.admin-settings .demo .mc-light-green { background-color: #8bc34a; color: #fff; border: none; }
-.admin-settings .demo .mc-light-green.micro-bottom::after { border-bottom-color: #8bc34a; border-top-color: transparent; }
-.admin-settings .demo .mc-light-green::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-light-green::after { border-top-color: #8bc34a; }
-.admin-settings .demo .mc-lime { background-color: #c3d825; color: #fff; border: none; }
-.admin-settings .demo .mc-lime.micro-bottom::after { border-bottom-color: #c3d825; border-top-color: transparent; }
-.admin-settings .demo .mc-lime::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-lime::after { border-top-color: #c3d825; }
-.admin-settings .demo .mc-amber { background-color: #ffc107; color: #fff; border: none; }
-.admin-settings .demo .mc-amber.micro-bottom::after { border-bottom-color: #ffc107; border-top-color: transparent; }
-.admin-settings .demo .mc-amber::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-amber::after { border-top-color: #ffc107; }
-.admin-settings .demo .mc-deep-orange { background-color: #ea5506; color: #fff; border: none; }
-.admin-settings .demo .mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
-.admin-settings .demo .mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-deep-orange::after { border-top-color: #ea5506; }
-.admin-settings .demo .mc-white { background-color: #fff; color: #fff; border: none; }
-.admin-settings .demo .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
-.admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-white::after { border-top-color: #fff; }
+.admin-settings .demo .micro-balloon.mc-red { background-color: #e60033; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-red::after { border-top-color: #e60033; }
+.admin-settings .demo .micro-balloon.mc-pink { background-color: #e95295; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-pink.micro-bottom::after { border-bottom-color: #e95295; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-pink::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-pink::after { border-top-color: #e95295; }
+.admin-settings .demo .micro-balloon.mc-purple { background-color: #884898; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-purple.micro-bottom::after { border-bottom-color: #884898; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-purple::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-purple::after { border-top-color: #884898; }
+.admin-settings .demo .micro-balloon.mc-blue { background-color: #0095d9; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-blue.micro-bottom::after { border-bottom-color: #0095d9; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-blue::after { border-top-color: #0095d9; }
+.admin-settings .demo .micro-balloon.mc-green { background-color: #3eb370; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-green.micro-bottom::after { border-bottom-color: #3eb370; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-green::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-green::after { border-top-color: #3eb370; }
+.admin-settings .demo .micro-balloon.mc-orange { background-color: #f39800; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-orange.micro-bottom::after { border-bottom-color: #f39800; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-orange::after { border-top-color: #f39800; }
+.admin-settings .demo .micro-balloon.mc-yellow { background-color: #ffd900; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-yellow.micro-bottom::after { border-bottom-color: #ffd900; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-yellow::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-yellow::after { border-top-color: #ffd900; }
+.admin-settings .demo .micro-balloon.mc-brown { background-color: #954e2a; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-brown.micro-bottom::after { border-bottom-color: #954e2a; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-brown::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-brown::after { border-top-color: #954e2a; }
+.admin-settings .demo .micro-balloon.mc-grey { background-color: #949495; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-grey.micro-bottom::after { border-bottom-color: #949495; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-grey::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-grey::after { border-top-color: #949495; }
+.admin-settings .demo .micro-balloon.mc-black { background-color: #333; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-black.micro-bottom::after { border-bottom-color: #333; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-black::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-black::after { border-top-color: #333; }
+.admin-settings .demo .micro-balloon.mc-deep { background-color: #55295b; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-deep.micro-bottom::after { border-bottom-color: #55295b; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-deep::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-deep::after { border-top-color: #55295b; }
+.admin-settings .demo .micro-balloon.mc-indigo { background-color: #1e50a2; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-indigo.micro-bottom::after { border-bottom-color: #1e50a2; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-indigo::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-indigo::after { border-top-color: #1e50a2; }
+.admin-settings .demo .micro-balloon.mc-light-blue { background-color: #2ca9e1; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-light-blue.micro-bottom::after { border-bottom-color: #2ca9e1; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-light-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-light-blue::after { border-top-color: #2ca9e1; }
+.admin-settings .demo .micro-balloon.mc-cyan { background-color: #00a3af; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-cyan.micro-bottom::after { border-bottom-color: #00a3af; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-cyan::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-cyan::after { border-top-color: #00a3af; }
+.admin-settings .demo .micro-balloon.mc-teal { background-color: #007b43; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-teal.micro-bottom::after { border-bottom-color: #007b43; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-teal::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-teal::after { border-top-color: #007b43; }
+.admin-settings .demo .micro-balloon.mc-light-green { background-color: #8bc34a; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-light-green.micro-bottom::after { border-bottom-color: #8bc34a; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-light-green::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-light-green::after { border-top-color: #8bc34a; }
+.admin-settings .demo .micro-balloon.mc-lime { background-color: #c3d825; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-lime.micro-bottom::after { border-bottom-color: #c3d825; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-lime::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-lime::after { border-top-color: #c3d825; }
+.admin-settings .demo .micro-balloon.mc-amber { background-color: #ffc107; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-amber.micro-bottom::after { border-bottom-color: #ffc107; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-amber::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-amber::after { border-top-color: #ffc107; }
+.admin-settings .demo .micro-balloon.mc-deep-orange { background-color: #ea5506; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-deep-orange::after { border-top-color: #ea5506; }
+.admin-settings .demo .micro-balloon.mc-white { background-color: #fff; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-white::after { border-top-color: #fff; }
 .admin-settings .demo .blogcard-label { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; letter-spacing: 0.7px; display: none; }
 .admin-settings .demo .blogcard-label .fa::before { margin-right: 6px; }
 .admin-settings .demo .blogcard-type .blogcard-label { display: block; }
@@ -2656,86 +2656,86 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-copy.alignleft, .admin-settings .demo .micro-copy.alignright { float: none; }
 .admin-settings .demo .micro-copy.alignright { margin-left: auto; }
 .admin-settings .demo .mc-circle { border-radius: 2em; background-clip: padding-box; }
-.admin-settings .demo .mc-red { background-color: #e60033; color: #fff; border: none; }
-.admin-settings .demo .mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
-.admin-settings .demo .mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-red::after { border-top-color: #e60033; }
-.admin-settings .demo .mc-pink { background-color: #e95295; color: #fff; border: none; }
-.admin-settings .demo .mc-pink.micro-bottom::after { border-bottom-color: #e95295; border-top-color: transparent; }
-.admin-settings .demo .mc-pink::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-pink::after { border-top-color: #e95295; }
-.admin-settings .demo .mc-purple { background-color: #884898; color: #fff; border: none; }
-.admin-settings .demo .mc-purple.micro-bottom::after { border-bottom-color: #884898; border-top-color: transparent; }
-.admin-settings .demo .mc-purple::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-purple::after { border-top-color: #884898; }
-.admin-settings .demo .mc-blue { background-color: #0095d9; color: #fff; border: none; }
-.admin-settings .demo .mc-blue.micro-bottom::after { border-bottom-color: #0095d9; border-top-color: transparent; }
-.admin-settings .demo .mc-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-blue::after { border-top-color: #0095d9; }
-.admin-settings .demo .mc-green { background-color: #3eb370; color: #fff; border: none; }
-.admin-settings .demo .mc-green.micro-bottom::after { border-bottom-color: #3eb370; border-top-color: transparent; }
-.admin-settings .demo .mc-green::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-green::after { border-top-color: #3eb370; }
-.admin-settings .demo .mc-orange { background-color: #f39800; color: #fff; border: none; }
-.admin-settings .demo .mc-orange.micro-bottom::after { border-bottom-color: #f39800; border-top-color: transparent; }
-.admin-settings .demo .mc-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-orange::after { border-top-color: #f39800; }
-.admin-settings .demo .mc-yellow { background-color: #ffd900; color: #fff; border: none; }
-.admin-settings .demo .mc-yellow.micro-bottom::after { border-bottom-color: #ffd900; border-top-color: transparent; }
-.admin-settings .demo .mc-yellow::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-yellow::after { border-top-color: #ffd900; }
-.admin-settings .demo .mc-brown { background-color: #954e2a; color: #fff; border: none; }
-.admin-settings .demo .mc-brown.micro-bottom::after { border-bottom-color: #954e2a; border-top-color: transparent; }
-.admin-settings .demo .mc-brown::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-brown::after { border-top-color: #954e2a; }
-.admin-settings .demo .mc-grey { background-color: #949495; color: #fff; border: none; }
-.admin-settings .demo .mc-grey.micro-bottom::after { border-bottom-color: #949495; border-top-color: transparent; }
-.admin-settings .demo .mc-grey::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-grey::after { border-top-color: #949495; }
-.admin-settings .demo .mc-black { background-color: #333; color: #fff; border: none; }
-.admin-settings .demo .mc-black.micro-bottom::after { border-bottom-color: #333; border-top-color: transparent; }
-.admin-settings .demo .mc-black::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-black::after { border-top-color: #333; }
-.admin-settings .demo .mc-deep { background-color: #55295b; color: #fff; border: none; }
-.admin-settings .demo .mc-deep.micro-bottom::after { border-bottom-color: #55295b; border-top-color: transparent; }
-.admin-settings .demo .mc-deep::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-deep::after { border-top-color: #55295b; }
-.admin-settings .demo .mc-indigo { background-color: #1e50a2; color: #fff; border: none; }
-.admin-settings .demo .mc-indigo.micro-bottom::after { border-bottom-color: #1e50a2; border-top-color: transparent; }
-.admin-settings .demo .mc-indigo::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-indigo::after { border-top-color: #1e50a2; }
-.admin-settings .demo .mc-light-blue { background-color: #2ca9e1; color: #fff; border: none; }
-.admin-settings .demo .mc-light-blue.micro-bottom::after { border-bottom-color: #2ca9e1; border-top-color: transparent; }
-.admin-settings .demo .mc-light-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-light-blue::after { border-top-color: #2ca9e1; }
-.admin-settings .demo .mc-cyan { background-color: #00a3af; color: #fff; border: none; }
-.admin-settings .demo .mc-cyan.micro-bottom::after { border-bottom-color: #00a3af; border-top-color: transparent; }
-.admin-settings .demo .mc-cyan::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-cyan::after { border-top-color: #00a3af; }
-.admin-settings .demo .mc-teal { background-color: #007b43; color: #fff; border: none; }
-.admin-settings .demo .mc-teal.micro-bottom::after { border-bottom-color: #007b43; border-top-color: transparent; }
-.admin-settings .demo .mc-teal::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-teal::after { border-top-color: #007b43; }
-.admin-settings .demo .mc-light-green { background-color: #8bc34a; color: #fff; border: none; }
-.admin-settings .demo .mc-light-green.micro-bottom::after { border-bottom-color: #8bc34a; border-top-color: transparent; }
-.admin-settings .demo .mc-light-green::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-light-green::after { border-top-color: #8bc34a; }
-.admin-settings .demo .mc-lime { background-color: #c3d825; color: #fff; border: none; }
-.admin-settings .demo .mc-lime.micro-bottom::after { border-bottom-color: #c3d825; border-top-color: transparent; }
-.admin-settings .demo .mc-lime::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-lime::after { border-top-color: #c3d825; }
-.admin-settings .demo .mc-amber { background-color: #ffc107; color: #fff; border: none; }
-.admin-settings .demo .mc-amber.micro-bottom::after { border-bottom-color: #ffc107; border-top-color: transparent; }
-.admin-settings .demo .mc-amber::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-amber::after { border-top-color: #ffc107; }
-.admin-settings .demo .mc-deep-orange { background-color: #ea5506; color: #fff; border: none; }
-.admin-settings .demo .mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
-.admin-settings .demo .mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-deep-orange::after { border-top-color: #ea5506; }
-.admin-settings .demo .mc-white { background-color: #fff; color: #fff; border: none; }
-.admin-settings .demo .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
-.admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
-.admin-settings .demo .mc-white::after { border-top-color: #fff; }
+.admin-settings .demo .micro-balloon.mc-red { background-color: #e60033; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-red::after { border-top-color: #e60033; }
+.admin-settings .demo .micro-balloon.mc-pink { background-color: #e95295; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-pink.micro-bottom::after { border-bottom-color: #e95295; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-pink::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-pink::after { border-top-color: #e95295; }
+.admin-settings .demo .micro-balloon.mc-purple { background-color: #884898; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-purple.micro-bottom::after { border-bottom-color: #884898; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-purple::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-purple::after { border-top-color: #884898; }
+.admin-settings .demo .micro-balloon.mc-blue { background-color: #0095d9; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-blue.micro-bottom::after { border-bottom-color: #0095d9; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-blue::after { border-top-color: #0095d9; }
+.admin-settings .demo .micro-balloon.mc-green { background-color: #3eb370; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-green.micro-bottom::after { border-bottom-color: #3eb370; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-green::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-green::after { border-top-color: #3eb370; }
+.admin-settings .demo .micro-balloon.mc-orange { background-color: #f39800; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-orange.micro-bottom::after { border-bottom-color: #f39800; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-orange::after { border-top-color: #f39800; }
+.admin-settings .demo .micro-balloon.mc-yellow { background-color: #ffd900; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-yellow.micro-bottom::after { border-bottom-color: #ffd900; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-yellow::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-yellow::after { border-top-color: #ffd900; }
+.admin-settings .demo .micro-balloon.mc-brown { background-color: #954e2a; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-brown.micro-bottom::after { border-bottom-color: #954e2a; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-brown::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-brown::after { border-top-color: #954e2a; }
+.admin-settings .demo .micro-balloon.mc-grey { background-color: #949495; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-grey.micro-bottom::after { border-bottom-color: #949495; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-grey::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-grey::after { border-top-color: #949495; }
+.admin-settings .demo .micro-balloon.mc-black { background-color: #333; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-black.micro-bottom::after { border-bottom-color: #333; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-black::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-black::after { border-top-color: #333; }
+.admin-settings .demo .micro-balloon.mc-deep { background-color: #55295b; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-deep.micro-bottom::after { border-bottom-color: #55295b; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-deep::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-deep::after { border-top-color: #55295b; }
+.admin-settings .demo .micro-balloon.mc-indigo { background-color: #1e50a2; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-indigo.micro-bottom::after { border-bottom-color: #1e50a2; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-indigo::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-indigo::after { border-top-color: #1e50a2; }
+.admin-settings .demo .micro-balloon.mc-light-blue { background-color: #2ca9e1; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-light-blue.micro-bottom::after { border-bottom-color: #2ca9e1; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-light-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-light-blue::after { border-top-color: #2ca9e1; }
+.admin-settings .demo .micro-balloon.mc-cyan { background-color: #00a3af; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-cyan.micro-bottom::after { border-bottom-color: #00a3af; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-cyan::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-cyan::after { border-top-color: #00a3af; }
+.admin-settings .demo .micro-balloon.mc-teal { background-color: #007b43; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-teal.micro-bottom::after { border-bottom-color: #007b43; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-teal::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-teal::after { border-top-color: #007b43; }
+.admin-settings .demo .micro-balloon.mc-light-green { background-color: #8bc34a; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-light-green.micro-bottom::after { border-bottom-color: #8bc34a; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-light-green::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-light-green::after { border-top-color: #8bc34a; }
+.admin-settings .demo .micro-balloon.mc-lime { background-color: #c3d825; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-lime.micro-bottom::after { border-bottom-color: #c3d825; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-lime::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-lime::after { border-top-color: #c3d825; }
+.admin-settings .demo .micro-balloon.mc-amber { background-color: #ffc107; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-amber.micro-bottom::after { border-bottom-color: #ffc107; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-amber::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-amber::after { border-top-color: #ffc107; }
+.admin-settings .demo .micro-balloon.mc-deep-orange { background-color: #ea5506; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-deep-orange::after { border-top-color: #ea5506; }
+.admin-settings .demo .micro-balloon.mc-white { background-color: #fff; color: #fff; border: none; }
+.admin-settings .demo .micro-balloon.mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-white::after { border-top-color: #fff; }
 .admin-settings .demo .blogcard-label { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; letter-spacing: 0.7px; display: none; }
 .admin-settings .demo .blogcard-label .fa::before { margin-right: 6px; }
 .admin-settings .demo .blogcard-type .blogcard-label { display: block; }
@@ -4464,86 +4464,86 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .micro-copy.alignleft, .components-popover__content .micro-copy.alignright { float: none; }
 .components-popover__content .micro-copy.alignright { margin-left: auto; }
 .components-popover__content .mc-circle { border-radius: 2em; background-clip: padding-box; }
-.components-popover__content .mc-red { background-color: #e60033; color: #fff; border: none; }
-.components-popover__content .mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
-.components-popover__content .mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-red::after { border-top-color: #e60033; }
-.components-popover__content .mc-pink { background-color: #e95295; color: #fff; border: none; }
-.components-popover__content .mc-pink.micro-bottom::after { border-bottom-color: #e95295; border-top-color: transparent; }
-.components-popover__content .mc-pink::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-pink::after { border-top-color: #e95295; }
-.components-popover__content .mc-purple { background-color: #884898; color: #fff; border: none; }
-.components-popover__content .mc-purple.micro-bottom::after { border-bottom-color: #884898; border-top-color: transparent; }
-.components-popover__content .mc-purple::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-purple::after { border-top-color: #884898; }
-.components-popover__content .mc-blue { background-color: #0095d9; color: #fff; border: none; }
-.components-popover__content .mc-blue.micro-bottom::after { border-bottom-color: #0095d9; border-top-color: transparent; }
-.components-popover__content .mc-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-blue::after { border-top-color: #0095d9; }
-.components-popover__content .mc-green { background-color: #3eb370; color: #fff; border: none; }
-.components-popover__content .mc-green.micro-bottom::after { border-bottom-color: #3eb370; border-top-color: transparent; }
-.components-popover__content .mc-green::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-green::after { border-top-color: #3eb370; }
-.components-popover__content .mc-orange { background-color: #f39800; color: #fff; border: none; }
-.components-popover__content .mc-orange.micro-bottom::after { border-bottom-color: #f39800; border-top-color: transparent; }
-.components-popover__content .mc-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-orange::after { border-top-color: #f39800; }
-.components-popover__content .mc-yellow { background-color: #ffd900; color: #fff; border: none; }
-.components-popover__content .mc-yellow.micro-bottom::after { border-bottom-color: #ffd900; border-top-color: transparent; }
-.components-popover__content .mc-yellow::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-yellow::after { border-top-color: #ffd900; }
-.components-popover__content .mc-brown { background-color: #954e2a; color: #fff; border: none; }
-.components-popover__content .mc-brown.micro-bottom::after { border-bottom-color: #954e2a; border-top-color: transparent; }
-.components-popover__content .mc-brown::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-brown::after { border-top-color: #954e2a; }
-.components-popover__content .mc-grey { background-color: #949495; color: #fff; border: none; }
-.components-popover__content .mc-grey.micro-bottom::after { border-bottom-color: #949495; border-top-color: transparent; }
-.components-popover__content .mc-grey::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-grey::after { border-top-color: #949495; }
-.components-popover__content .mc-black { background-color: #333; color: #fff; border: none; }
-.components-popover__content .mc-black.micro-bottom::after { border-bottom-color: #333; border-top-color: transparent; }
-.components-popover__content .mc-black::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-black::after { border-top-color: #333; }
-.components-popover__content .mc-deep { background-color: #55295b; color: #fff; border: none; }
-.components-popover__content .mc-deep.micro-bottom::after { border-bottom-color: #55295b; border-top-color: transparent; }
-.components-popover__content .mc-deep::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-deep::after { border-top-color: #55295b; }
-.components-popover__content .mc-indigo { background-color: #1e50a2; color: #fff; border: none; }
-.components-popover__content .mc-indigo.micro-bottom::after { border-bottom-color: #1e50a2; border-top-color: transparent; }
-.components-popover__content .mc-indigo::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-indigo::after { border-top-color: #1e50a2; }
-.components-popover__content .mc-light-blue { background-color: #2ca9e1; color: #fff; border: none; }
-.components-popover__content .mc-light-blue.micro-bottom::after { border-bottom-color: #2ca9e1; border-top-color: transparent; }
-.components-popover__content .mc-light-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-light-blue::after { border-top-color: #2ca9e1; }
-.components-popover__content .mc-cyan { background-color: #00a3af; color: #fff; border: none; }
-.components-popover__content .mc-cyan.micro-bottom::after { border-bottom-color: #00a3af; border-top-color: transparent; }
-.components-popover__content .mc-cyan::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-cyan::after { border-top-color: #00a3af; }
-.components-popover__content .mc-teal { background-color: #007b43; color: #fff; border: none; }
-.components-popover__content .mc-teal.micro-bottom::after { border-bottom-color: #007b43; border-top-color: transparent; }
-.components-popover__content .mc-teal::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-teal::after { border-top-color: #007b43; }
-.components-popover__content .mc-light-green { background-color: #8bc34a; color: #fff; border: none; }
-.components-popover__content .mc-light-green.micro-bottom::after { border-bottom-color: #8bc34a; border-top-color: transparent; }
-.components-popover__content .mc-light-green::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-light-green::after { border-top-color: #8bc34a; }
-.components-popover__content .mc-lime { background-color: #c3d825; color: #fff; border: none; }
-.components-popover__content .mc-lime.micro-bottom::after { border-bottom-color: #c3d825; border-top-color: transparent; }
-.components-popover__content .mc-lime::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-lime::after { border-top-color: #c3d825; }
-.components-popover__content .mc-amber { background-color: #ffc107; color: #fff; border: none; }
-.components-popover__content .mc-amber.micro-bottom::after { border-bottom-color: #ffc107; border-top-color: transparent; }
-.components-popover__content .mc-amber::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-amber::after { border-top-color: #ffc107; }
-.components-popover__content .mc-deep-orange { background-color: #ea5506; color: #fff; border: none; }
-.components-popover__content .mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
-.components-popover__content .mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-deep-orange::after { border-top-color: #ea5506; }
-.components-popover__content .mc-white { background-color: #fff; color: #fff; border: none; }
-.components-popover__content .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
-.components-popover__content .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
-.components-popover__content .mc-white::after { border-top-color: #fff; }
+.components-popover__content .micro-balloon.mc-red { background-color: #e60033; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-red::after { border-top-color: #e60033; }
+.components-popover__content .micro-balloon.mc-pink { background-color: #e95295; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-pink.micro-bottom::after { border-bottom-color: #e95295; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-pink::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-pink::after { border-top-color: #e95295; }
+.components-popover__content .micro-balloon.mc-purple { background-color: #884898; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-purple.micro-bottom::after { border-bottom-color: #884898; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-purple::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-purple::after { border-top-color: #884898; }
+.components-popover__content .micro-balloon.mc-blue { background-color: #0095d9; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-blue.micro-bottom::after { border-bottom-color: #0095d9; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-blue::after { border-top-color: #0095d9; }
+.components-popover__content .micro-balloon.mc-green { background-color: #3eb370; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-green.micro-bottom::after { border-bottom-color: #3eb370; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-green::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-green::after { border-top-color: #3eb370; }
+.components-popover__content .micro-balloon.mc-orange { background-color: #f39800; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-orange.micro-bottom::after { border-bottom-color: #f39800; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-orange::after { border-top-color: #f39800; }
+.components-popover__content .micro-balloon.mc-yellow { background-color: #ffd900; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-yellow.micro-bottom::after { border-bottom-color: #ffd900; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-yellow::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-yellow::after { border-top-color: #ffd900; }
+.components-popover__content .micro-balloon.mc-brown { background-color: #954e2a; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-brown.micro-bottom::after { border-bottom-color: #954e2a; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-brown::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-brown::after { border-top-color: #954e2a; }
+.components-popover__content .micro-balloon.mc-grey { background-color: #949495; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-grey.micro-bottom::after { border-bottom-color: #949495; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-grey::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-grey::after { border-top-color: #949495; }
+.components-popover__content .micro-balloon.mc-black { background-color: #333; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-black.micro-bottom::after { border-bottom-color: #333; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-black::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-black::after { border-top-color: #333; }
+.components-popover__content .micro-balloon.mc-deep { background-color: #55295b; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-deep.micro-bottom::after { border-bottom-color: #55295b; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-deep::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-deep::after { border-top-color: #55295b; }
+.components-popover__content .micro-balloon.mc-indigo { background-color: #1e50a2; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-indigo.micro-bottom::after { border-bottom-color: #1e50a2; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-indigo::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-indigo::after { border-top-color: #1e50a2; }
+.components-popover__content .micro-balloon.mc-light-blue { background-color: #2ca9e1; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-light-blue.micro-bottom::after { border-bottom-color: #2ca9e1; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-light-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-light-blue::after { border-top-color: #2ca9e1; }
+.components-popover__content .micro-balloon.mc-cyan { background-color: #00a3af; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-cyan.micro-bottom::after { border-bottom-color: #00a3af; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-cyan::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-cyan::after { border-top-color: #00a3af; }
+.components-popover__content .micro-balloon.mc-teal { background-color: #007b43; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-teal.micro-bottom::after { border-bottom-color: #007b43; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-teal::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-teal::after { border-top-color: #007b43; }
+.components-popover__content .micro-balloon.mc-light-green { background-color: #8bc34a; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-light-green.micro-bottom::after { border-bottom-color: #8bc34a; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-light-green::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-light-green::after { border-top-color: #8bc34a; }
+.components-popover__content .micro-balloon.mc-lime { background-color: #c3d825; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-lime.micro-bottom::after { border-bottom-color: #c3d825; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-lime::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-lime::after { border-top-color: #c3d825; }
+.components-popover__content .micro-balloon.mc-amber { background-color: #ffc107; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-amber.micro-bottom::after { border-bottom-color: #ffc107; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-amber::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-amber::after { border-top-color: #ffc107; }
+.components-popover__content .micro-balloon.mc-deep-orange { background-color: #ea5506; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-deep-orange::after { border-top-color: #ea5506; }
+.components-popover__content .micro-balloon.mc-white { background-color: #fff; color: #fff; border: none; }
+.components-popover__content .micro-balloon.mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
+.components-popover__content .micro-balloon.mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .micro-balloon.mc-white::after { border-top-color: #fff; }
 .components-popover__content .blogcard-label { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; letter-spacing: 0.7px; display: none; }
 .components-popover__content .blogcard-label .fa::before { margin-right: 6px; }
 .components-popover__content .blogcard-type .blogcard-label { display: block; }

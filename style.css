@@ -4377,343 +4377,324 @@ div.search-form {
   background-clip: padding-box;
 }
 
-.mc-red {
+.micro-balloon.mc-red {
   background-color: #e60033;
   color: #fff;
   border: none;
 }
-.mc-red.micro-bottom::after {
+.micro-balloon.mc-red.micro-bottom::after {
   border-bottom-color: #e60033;
   border-top-color: transparent;
 }
-.mc-red::before {
+.micro-balloon.mc-red::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-red::after {
+.micro-balloon.mc-red::after {
   border-top-color: #e60033;
 }
-
-.mc-pink {
+.micro-balloon.mc-pink {
   background-color: #e95295;
   color: #fff;
   border: none;
 }
-.mc-pink.micro-bottom::after {
+.micro-balloon.mc-pink.micro-bottom::after {
   border-bottom-color: #e95295;
   border-top-color: transparent;
 }
-.mc-pink::before {
+.micro-balloon.mc-pink::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-pink::after {
+.micro-balloon.mc-pink::after {
   border-top-color: #e95295;
 }
-
-.mc-purple {
+.micro-balloon.mc-purple {
   background-color: #884898;
   color: #fff;
   border: none;
 }
-.mc-purple.micro-bottom::after {
+.micro-balloon.mc-purple.micro-bottom::after {
   border-bottom-color: #884898;
   border-top-color: transparent;
 }
-.mc-purple::before {
+.micro-balloon.mc-purple::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-purple::after {
+.micro-balloon.mc-purple::after {
   border-top-color: #884898;
 }
-
-.mc-blue {
+.micro-balloon.mc-blue {
   background-color: #0095d9;
   color: #fff;
   border: none;
 }
-.mc-blue.micro-bottom::after {
+.micro-balloon.mc-blue.micro-bottom::after {
   border-bottom-color: #0095d9;
   border-top-color: transparent;
 }
-.mc-blue::before {
+.micro-balloon.mc-blue::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-blue::after {
+.micro-balloon.mc-blue::after {
   border-top-color: #0095d9;
 }
-
-.mc-green {
+.micro-balloon.mc-green {
   background-color: #3eb370;
   color: #fff;
   border: none;
 }
-.mc-green.micro-bottom::after {
+.micro-balloon.mc-green.micro-bottom::after {
   border-bottom-color: #3eb370;
   border-top-color: transparent;
 }
-.mc-green::before {
+.micro-balloon.mc-green::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-green::after {
+.micro-balloon.mc-green::after {
   border-top-color: #3eb370;
 }
-
-.mc-orange {
+.micro-balloon.mc-orange {
   background-color: #f39800;
   color: #fff;
   border: none;
 }
-.mc-orange.micro-bottom::after {
+.micro-balloon.mc-orange.micro-bottom::after {
   border-bottom-color: #f39800;
   border-top-color: transparent;
 }
-.mc-orange::before {
+.micro-balloon.mc-orange::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-orange::after {
+.micro-balloon.mc-orange::after {
   border-top-color: #f39800;
 }
-
-.mc-yellow {
+.micro-balloon.mc-yellow {
   background-color: #ffd900;
   color: #fff;
   border: none;
 }
-.mc-yellow.micro-bottom::after {
+.micro-balloon.mc-yellow.micro-bottom::after {
   border-bottom-color: #ffd900;
   border-top-color: transparent;
 }
-.mc-yellow::before {
+.micro-balloon.mc-yellow::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-yellow::after {
+.micro-balloon.mc-yellow::after {
   border-top-color: #ffd900;
 }
-
-.mc-brown {
+.micro-balloon.mc-brown {
   background-color: #954e2a;
   color: #fff;
   border: none;
 }
-.mc-brown.micro-bottom::after {
+.micro-balloon.mc-brown.micro-bottom::after {
   border-bottom-color: #954e2a;
   border-top-color: transparent;
 }
-.mc-brown::before {
+.micro-balloon.mc-brown::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-brown::after {
+.micro-balloon.mc-brown::after {
   border-top-color: #954e2a;
 }
-
-.mc-grey {
+.micro-balloon.mc-grey {
   background-color: #949495;
   color: #fff;
   border: none;
 }
-.mc-grey.micro-bottom::after {
+.micro-balloon.mc-grey.micro-bottom::after {
   border-bottom-color: #949495;
   border-top-color: transparent;
 }
-.mc-grey::before {
+.micro-balloon.mc-grey::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-grey::after {
+.micro-balloon.mc-grey::after {
   border-top-color: #949495;
 }
-
-.mc-black {
+.micro-balloon.mc-black {
   background-color: #333;
   color: #fff;
   border: none;
 }
-.mc-black.micro-bottom::after {
+.micro-balloon.mc-black.micro-bottom::after {
   border-bottom-color: #333;
   border-top-color: transparent;
 }
-.mc-black::before {
+.micro-balloon.mc-black::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-black::after {
+.micro-balloon.mc-black::after {
   border-top-color: #333;
 }
-
-.mc-deep {
+.micro-balloon.mc-deep {
   background-color: #55295b;
   color: #fff;
   border: none;
 }
-.mc-deep.micro-bottom::after {
+.micro-balloon.mc-deep.micro-bottom::after {
   border-bottom-color: #55295b;
   border-top-color: transparent;
 }
-.mc-deep::before {
+.micro-balloon.mc-deep::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-deep::after {
+.micro-balloon.mc-deep::after {
   border-top-color: #55295b;
 }
-
-.mc-indigo {
+.micro-balloon.mc-indigo {
   background-color: #1e50a2;
   color: #fff;
   border: none;
 }
-.mc-indigo.micro-bottom::after {
+.micro-balloon.mc-indigo.micro-bottom::after {
   border-bottom-color: #1e50a2;
   border-top-color: transparent;
 }
-.mc-indigo::before {
+.micro-balloon.mc-indigo::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-indigo::after {
+.micro-balloon.mc-indigo::after {
   border-top-color: #1e50a2;
 }
-
-.mc-light-blue {
+.micro-balloon.mc-light-blue {
   background-color: #2ca9e1;
   color: #fff;
   border: none;
 }
-.mc-light-blue.micro-bottom::after {
+.micro-balloon.mc-light-blue.micro-bottom::after {
   border-bottom-color: #2ca9e1;
   border-top-color: transparent;
 }
-.mc-light-blue::before {
+.micro-balloon.mc-light-blue::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-light-blue::after {
+.micro-balloon.mc-light-blue::after {
   border-top-color: #2ca9e1;
 }
-
-.mc-cyan {
+.micro-balloon.mc-cyan {
   background-color: #00a3af;
   color: #fff;
   border: none;
 }
-.mc-cyan.micro-bottom::after {
+.micro-balloon.mc-cyan.micro-bottom::after {
   border-bottom-color: #00a3af;
   border-top-color: transparent;
 }
-.mc-cyan::before {
+.micro-balloon.mc-cyan::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-cyan::after {
+.micro-balloon.mc-cyan::after {
   border-top-color: #00a3af;
 }
-
-.mc-teal {
+.micro-balloon.mc-teal {
   background-color: #007b43;
   color: #fff;
   border: none;
 }
-.mc-teal.micro-bottom::after {
+.micro-balloon.mc-teal.micro-bottom::after {
   border-bottom-color: #007b43;
   border-top-color: transparent;
 }
-.mc-teal::before {
+.micro-balloon.mc-teal::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-teal::after {
+.micro-balloon.mc-teal::after {
   border-top-color: #007b43;
 }
-
-.mc-light-green {
+.micro-balloon.mc-light-green {
   background-color: #8bc34a;
   color: #fff;
   border: none;
 }
-.mc-light-green.micro-bottom::after {
+.micro-balloon.mc-light-green.micro-bottom::after {
   border-bottom-color: #8bc34a;
   border-top-color: transparent;
 }
-.mc-light-green::before {
+.micro-balloon.mc-light-green::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-light-green::after {
+.micro-balloon.mc-light-green::after {
   border-top-color: #8bc34a;
 }
-
-.mc-lime {
+.micro-balloon.mc-lime {
   background-color: #c3d825;
   color: #fff;
   border: none;
 }
-.mc-lime.micro-bottom::after {
+.micro-balloon.mc-lime.micro-bottom::after {
   border-bottom-color: #c3d825;
   border-top-color: transparent;
 }
-.mc-lime::before {
+.micro-balloon.mc-lime::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-lime::after {
+.micro-balloon.mc-lime::after {
   border-top-color: #c3d825;
 }
-
-.mc-amber {
+.micro-balloon.mc-amber {
   background-color: #ffc107;
   color: #fff;
   border: none;
 }
-.mc-amber.micro-bottom::after {
+.micro-balloon.mc-amber.micro-bottom::after {
   border-bottom-color: #ffc107;
   border-top-color: transparent;
 }
-.mc-amber::before {
+.micro-balloon.mc-amber::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-amber::after {
+.micro-balloon.mc-amber::after {
   border-top-color: #ffc107;
 }
-
-.mc-deep-orange {
+.micro-balloon.mc-deep-orange {
   background-color: #ea5506;
   color: #fff;
   border: none;
 }
-.mc-deep-orange.micro-bottom::after {
+.micro-balloon.mc-deep-orange.micro-bottom::after {
   border-bottom-color: #ea5506;
   border-top-color: transparent;
 }
-.mc-deep-orange::before {
+.micro-balloon.mc-deep-orange::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-deep-orange::after {
+.micro-balloon.mc-deep-orange::after {
   border-top-color: #ea5506;
 }
-
-.mc-white {
+.micro-balloon.mc-white {
   background-color: #fff;
   color: #fff;
   border: none;
 }
-.mc-white.micro-bottom::after {
+.micro-balloon.mc-white.micro-bottom::after {
   border-bottom-color: #fff;
   border-top-color: transparent;
 }
-.mc-white::before {
+.micro-balloon.mc-white::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.mc-white::after {
+.micro-balloon.mc-white::after {
   border-top-color: #fff;
 }
 
