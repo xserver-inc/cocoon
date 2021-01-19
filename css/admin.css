@@ -699,7 +699,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar .ad-additional-vertical { display: none; }
 @media screen and (max-width: 834px) { .admin-settings .demo .sidebar .ad-vertical .ad-usual { display: none; }
   .admin-settings .demo .sidebar .ad-vertical .ad-additional-vertical { display: block; } }
-.admin-settings .demo .blogcard-wrap { margin: 24px auto; padding: 0; width: 90%; background-color: #fff; }
+.admin-settings .demo .blogcard-wrap { margin-left: auto; margin-right: auto; padding: 0; width: 90%; background-color: #fff; }
 .admin-settings .demo .blogcard { padding: 1.6% 2.2% 2%; border: 1px solid #ccc; border-radius: 4px; line-height: 1.6; position: relative; }
 .admin-settings .demo .blogcard-thumbnail { float: left; margin-top: 3px; width: 160px; }
 .admin-settings .demo .blogcard-thumbnail img { width: 100%; }
@@ -2297,7 +2297,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar .ad-additional-vertical { display: none; }
 @media screen and (max-width: 834px) { .admin-settings .demo .sidebar .ad-vertical .ad-usual { display: none; }
   .admin-settings .demo .sidebar .ad-vertical .ad-additional-vertical { display: block; } }
-.admin-settings .demo .blogcard-wrap { margin: 24px auto; padding: 0; width: 90%; background-color: #fff; }
+.admin-settings .demo .blogcard-wrap { margin-left: auto; margin-right: auto; padding: 0; width: 90%; background-color: #fff; }
 .admin-settings .demo .blogcard { padding: 1.6% 2.2% 2%; border: 1px solid #ccc; border-radius: 4px; line-height: 1.6; position: relative; }
 .admin-settings .demo .blogcard-thumbnail { float: left; margin-top: 3px; width: 160px; }
 .admin-settings .demo .blogcard-thumbnail img { width: 100%; }

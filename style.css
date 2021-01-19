@@ -1863,7 +1863,8 @@ span.internal-icon {
   }
 }
 .blogcard-wrap {
-  margin: 24px auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   width: 90%;
   background-color: #fff;
