@@ -122,12 +122,13 @@ function visual_editor_stylesheets_custom($stylesheets) {
         add_file_ver_to_css_js(get_site_icon_font_url()),
 
       );
-      //Font Awesome5が有効な場合
-      if (is_site_icon_font_font_awesome_5()) {
-        array_push($stylesheets,
-          add_file_ver_to_css_js(FONT_AWESOME_5_UPDATE_URL)
-        );
-      }
+    }
+
+    //Font Awesome5が有効な場合
+    if (is_site_icon_font_font_awesome_5()) {
+      array_push($stylesheets,
+        add_file_ver_to_css_js(FONT_AWESOME_5_UPDATE_URL)
+      );
     }
 
     //スキンが設定されている場合
