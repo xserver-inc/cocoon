@@ -3411,3 +3411,10 @@ function get_editor_page_type_class(){
   return is_singular_page_type_wide() ? ' page-type-wide' : '';
 }
 endif;
+
+if ( !function_exists( 'use_gutenberg_editor' ) ):
+function use_gutenberg_editor(){
+  $current_screen = get_current_screen();
+  return ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) || ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() );
+}
+endif;
