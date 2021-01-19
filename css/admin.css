@@ -624,7 +624,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-title, .admin-settings .demo .archive-title { font-size: 26px; margin: 16px 0; line-height: 1.3; }
 .admin-settings .demo .archive-title span { margin-right: 10px; }
 .admin-settings .demo .entry-content { margin-top: 1em; margin-bottom: 3em; }
-.admin-settings .demo pre, .admin-settings .demo pre * { line-height: 1.6; word-wrap: normal; }
+.admin-settings .demo pre, .admin-settings .demo pre * { line-height: 1.6 !important; word-wrap: normal; }
 .admin-settings .demo .entry-categories-tags > div { margin-bottom: 0.5em; }
 .admin-settings .demo .ctdt-one-row > div { display: inline-block; }
 .admin-settings .demo .ctdt-category-only .entry-tags { display: none; }
@@ -2222,7 +2222,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-title, .admin-settings .demo .archive-title { font-size: 26px; margin: 16px 0; line-height: 1.3; }
 .admin-settings .demo .archive-title span { margin-right: 10px; }
 .admin-settings .demo .entry-content { margin-top: 1em; margin-bottom: 3em; }
-.admin-settings .demo pre, .admin-settings .demo pre * { line-height: 1.6; word-wrap: normal; }
+.admin-settings .demo pre, .admin-settings .demo pre * { line-height: 1.6 !important; word-wrap: normal; }
 .admin-settings .demo .entry-categories-tags > div { margin-bottom: 0.5em; }
 .admin-settings .demo .ctdt-one-row > div { display: inline-block; }
 .admin-settings .demo .ctdt-category-only .entry-tags { display: none; }
