@@ -985,7 +985,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn::after { font-size: 20px; margin-left: -10px; } }
-.admin-settings .demo .btn-wrap { min-height: 2em; margin: 1.6em 0; }
+.admin-settings .demo .btn-wrap { min-height: 2em; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; background-color: #32373c; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 7px 13px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
@@ -2583,7 +2583,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn::after { font-size: 20px; margin-left: -10px; } }
-.admin-settings .demo .btn-wrap { min-height: 2em; margin: 1.6em 0; }
+.admin-settings .demo .btn-wrap { min-height: 2em; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; background-color: #32373c; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 7px 13px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
@@ -4391,7 +4391,7 @@ textarea[name="the_page_memo"] { width: 100%; }
   .components-popover__content .search-form div.sform { min-width: 180px; }
   .components-popover__content .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .components-popover__content .search-form div.sbtn::after { font-size: 20px; margin-left: -10px; } }
-.components-popover__content .btn-wrap { min-height: 2em; margin: 1.6em 0; }
+.components-popover__content .btn-wrap { min-height: 2em; }
 .components-popover__content .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a, .components-popover__content .btn-wrap > a, .components-popover__content .wp-block-freeform .btn-wrap > a { color: #fff; background-color: #32373c; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 7px 13px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .components-popover__content .btn amp-img, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a amp-img, .components-popover__content .btn-wrap > a amp-img, .components-popover__content .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
