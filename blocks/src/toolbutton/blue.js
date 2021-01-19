@@ -24,7 +24,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={<FontAwesomeIcon icon="font" />}
+          icon={<FontAwesomeIcon icon="pen" />}
           title={<span className="blue">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }

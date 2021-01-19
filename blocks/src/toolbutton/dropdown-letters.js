@@ -34,7 +34,7 @@ if (isLetterVisible) {
               <Slot name="Letter.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
-                    icon="editor-textcolor"
+                    icon={<FontAwesomeIcon icon="font" />}
                     label={__( '文字', THEME_NAME )}
                     className='letters'
                     controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }

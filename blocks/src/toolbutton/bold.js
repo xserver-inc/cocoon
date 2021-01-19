@@ -19,7 +19,6 @@ registerFormatType( FORMAT_TYPE_NAME, {
   tagName: 'span',
   className: 'bold',
   edit({isActive, value, onChange}){
-    console.log(isActive);
     const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
 
     return (
