@@ -10,7 +10,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //関連記事の共通引数を取得
 if ( !function_exists( 'get_common_related_args' ) ):
 function get_common_related_args($post_id){
+  global $post;
+  $post_type = get_post_type( $post );
   $related_args = array(
+    'post_type' => $post_type,
     'post__not_in' => array($post_id),
     'posts_per_page'=> intval(get_related_entry_count()),
     'orderby' => 'rand',
