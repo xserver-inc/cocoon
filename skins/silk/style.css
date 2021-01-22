@@ -5,8 +5,8 @@
   Skin URI: https://dateqa.com/cocoon/#silk
   Author: ろこ
   Author URI: https://dateqa.com/cocoon/
-  Version: 2.0.7
-  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-silk.png
+  Screenshot URI: https://dateqa.com/cocoon/silk.png
+  Version: 2.1.1
   Priority: 9500001000
 */
 
@@ -1841,7 +1841,6 @@ p code.hljs {
 .timeline-box {
   position: relative;
   border-width: 3em 2px 2px 2px;
-  border-color: #f1f1f1;
   border-radius: 4px;
 }
 

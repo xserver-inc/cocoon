@@ -139,6 +139,9 @@ class Functions {
     'watery-green'  => '#e8f5e9'
   ];
 
+  //隠しフィールド名
+  const HIDDEN = 'silk_submit_hidden';
+
   //初期値・フック一覧
   private function __construct() {
     //ダークカラー定義
@@ -174,6 +177,9 @@ class Functions {
     //AMP
     add_filter('amp_skin_css', [$this, 'amp_css']);
     add_action('get_template_part_tmp/amp-header', [$this, 'amp_skin']);
+
+    //スキン設定
+    add_action('admin_menu', [$this, 'option_setting'], 11);
   }
 
   //インスタンス生成
@@ -712,6 +718,84 @@ class Functions {
       remove_filter('external_blogcard_image_width', [$this, 'blogcard_width']);
       remove_filter('external_blogcard_amazon_image_height', [$this, 'blogcard_height']);
       remove_filter('external_blogcard_image_height', [$this, 'blogcard_height']);
+    }
+  }
+
+  //設定追加
+  public function option_setting() {
+    $hook = get_plugin_page_hook('theme-backup', THEME_SETTINGS_PAFE);
+    if (!is_null($hook)) {
+      add_action($hook, [$this, 'option_field']);
+    }
+  }
+
+  //設定項目
+  public function option_field() {
+    if (isset($_POST[self::HIDDEN]) && wp_verify_nonce($_POST[self::HIDDEN], 'skin-option') && $_FILES['options']['name'] != '') {
+      if ($_FILES['options']['type'] === 'application/json') {
+        $this->update_option($_FILES);
+        echo '<div class="updated"><p><strong>設定を追加しました。</strong></p></div>';
+      } else {
+        echo '<div class="error"><p><strong>JSONファイルを選択してください。</strong></p></div>';
+      }
+    } ?>
+
+    <div class="wrap admin-settings">
+      <div class="metabox-holder">
+        <div id="skin-option" class="postbox">
+          <h2 class="hndle">オプション設定（β版）</h2>
+          <div class="inside">
+            <p>スキンのオプション設定を追加します。Cocoon設定が変更されるので、事前にバックアップファイルを取得してください。</p>
+            <table class="form-table">
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <?php generate_label_tag('', 'オプション'); ?>
+                  </th>
+                  <td>
+                    <form enctype="multipart/form-data" action="" method="POST">
+                      <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                      JSONファイルをアップロード:
+                      <input name="options" type="file" accept="application/json" /><br>
+                      <input type="submit" class="button" value="設定の追加" />
+                      <input type="hidden" name="<?php echo self::HIDDEN; ?>" value="<?php echo wp_create_nonce('skin-option'); ?>">
+                      <?php generate_tips_tag('スキンのオプション設定が書かれたJSONファイルを選択し、「設定の追加」ボタンを押してください。JSONファイルの作成方法はファイル名を除き、スキン制御に従います。'.get_help_page_tag('https://wp-cocoon.com/option-json/')); ?>
+                    </form>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php
+  }
+
+  //オプション追加
+  private function update_option($files) {
+    if (is_user_administrator()) {
+      $path = get_theme_cache_path().'/'.basename($files['options']['name']);
+
+      if (move_uploaded_file($files['options']['tmp_name'], $path)) {
+        if ($json = wp_filesystem_get_contents($path)) {
+          $options = json_decode($json, true);
+
+          if (!is_null($options)) {
+            $mods = get_theme_mods();
+
+            foreach ($options as $name => $value) {
+              if (isset($mods[$name])) {
+                $mods[$name] = $value;
+              }
+            }
+
+            update_option("theme_mods_".get_option('stylesheet'), $mods);
+          }
+
+          wp_filesystem_delete($path);
+        }
+      }
     }
   }
 }
