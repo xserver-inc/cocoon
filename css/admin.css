@@ -3993,7 +3993,7 @@ pre { background-color: #f5f6f7; border: 1px solid #ddd; overflow: auto; padding
 
 .is-code-row-number-enable pre, .is-code-row-number-enable pre#highlight-demo { border: none; position: relative; padding: 0.4em 1em 0.4em 3em; }
 
-.is-code-row-number-enable pre::before { overflow: hidden; position: absolute; top: 0; left: 0; bottom: 0; display: block; padding: 0.5em 0em 0.5em 0em; width: 3em; box-sizing: border-box; color: #777; text-align: center; }
+.is-code-row-number-enable pre::before { overflow: hidden; position: absolute; top: 0; left: 0; bottom: 0; display: block; width: 3em; box-sizing: border-box; color: #777; text-align: center; }
 
 /*記事一覧のサムネイル幅*/
 .column-thumbnail { width: 80px; }
