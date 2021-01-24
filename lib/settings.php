@@ -119,8 +119,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     //ブロックエディターを利用しているとき
     if (!use_gutenberg_editor()) {
       array_push($stylesheets,
-        add_file_ver_to_css_js(get_site_icon_font_url()),
-
+        add_file_ver_to_css_js(get_site_icon_font_url())
       );
     }
 
