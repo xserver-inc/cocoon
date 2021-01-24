@@ -380,7 +380,7 @@ if (is_clumns_changed() && !is_admin()): ?>
 }
 <?php endif ?>
 <?php //レスポンシブ
-$responsive_width = get_site_wrap_width() + 4;
+$responsive_width = get_site_wrap_width() + 20;
 //次のブレークポイント（1023px）より幅が狭い場合はブレークポイントの値にする
 if ($responsive_width <= 1023) {
   $responsive_width = 1023;
