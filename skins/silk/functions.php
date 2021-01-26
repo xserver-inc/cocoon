@@ -139,6 +139,13 @@ class Functions {
     'watery-green'  => '#e8f5e9'
   ];
 
+  //パターン名
+  const PATTERNS = [
+    'comparison-table',
+    'fullwide-columns',
+    'linklist-box'
+  ];
+
   //隠しフィールド名
   const HIDDEN = 'silk_submit_hidden';
 
@@ -172,6 +179,7 @@ class Functions {
     add_action('enqueue_block_editor_assets', [$this, 'editor_assets'], 11);
     add_action('admin_menu', [$this, 'reusable_menu']);
     add_filter('image_size_names_choose', [$this, 'image_size']);
+    add_action('init', [$this, 'block_pattern']);
     add_filter('render_block', [$this, 'custom_blocks'], 10, 2);
 
     //AMP
@@ -542,7 +550,7 @@ class Functions {
       
       @media screen and (max-width: 834px) {
         .alignfull > .wp-block-group__inner-container {
-          padding: '.$group_margin.'em 16px;
+          padding: '.$group_margin.'em 24px;
         }
       }';
     }
@@ -657,6 +665,18 @@ class Functions {
       $names[$name] = $name.' ('.strval($size['width']).'x'.strval($size['height']).')';
     }
     return $names;
+  }
+
+  //ブロックパターン
+  public function block_pattern() {
+    foreach (self::PATTERNS as $pattern) {
+      register_block_pattern(
+        'silk/'.$pattern,
+        require __DIR__.'/patterns/'.$pattern.'.php'
+      );
+    }
+
+    register_block_pattern_category('silk', ['label' => 'Cocoonスキン「SILK」']);
   }
 
   //ブロックコンテンツ

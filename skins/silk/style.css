@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /*
   Skin Name: SILK（シルク）
-  Description: キーカラー設定・ダークカラー対応のデザインスキン
+  Description: キーカラー設定やダークスキン対応のブロックエディター向けCocoonスキン。
   Skin URI: https://dateqa.com/cocoon/#silk
   Author: ろこ
   Author URI: https://dateqa.com/cocoon/
-  Screenshot URI: https://dateqa.com/cocoon/silk.png
-  Version: 2.1.1
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-silk.png
+  Version: 2.1.5
   Priority: 9500001000
 */
 
@@ -1043,6 +1043,10 @@ pre {
   border-radius: 2px;
 }
 
+pre.wp-block-code code {
+  white-space: pre;
+}
+
 pre.wp-block-code * {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 0.95em;
@@ -1880,6 +1884,7 @@ p code.hljs {
   top: -1em;
   left: 1em;
   padding: 0 8px;
+  line-height: 2;
 }
 
 /* 吹き出し */
