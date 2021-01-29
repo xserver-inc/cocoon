@@ -2835,6 +2835,8 @@ label.screen-reader-text {
 .article .is-style-sticky-red :last-child,
 .article .is-style-sticky-blue :last-child,
 .article .is-style-sticky-green :last-child,
+.article .common-icon-box :last-child,
+.article .info-box :last-child,
 .article .toc :last-child {
   margin-bottom: 0;
 }
