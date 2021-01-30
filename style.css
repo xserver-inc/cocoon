@@ -9036,7 +9036,6 @@ input[type='submit'] {
   border-radius: 4px;
   background-color: #fff;
   border: 1px solid #eee;
-  min-width: calc(100% / 4);
   width: 100%;
   text-align: center;
 }
