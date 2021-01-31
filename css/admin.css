@@ -642,7 +642,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; margin: 0; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
-.admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
+.admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { padding: 3px 5px; white-space: nowrap; }
 .admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; }
 .admin-settings .demo figure.wp-block-table table { width: auto; }
 .admin-settings .demo figure.wp-block-table.alignwide table, .admin-settings .demo figure.wp-block-table.alignfull table { width: 100%; }
@@ -2240,7 +2240,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; margin: 0; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
-.admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
+.admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { padding: 3px 5px; white-space: nowrap; }
 .admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; }
 .admin-settings .demo figure.wp-block-table table { width: auto; }
 .admin-settings .demo figure.wp-block-table.alignwide table, .admin-settings .demo figure.wp-block-table.alignfull table { width: 100%; }

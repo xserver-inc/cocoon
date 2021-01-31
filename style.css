@@ -1538,7 +1538,6 @@ table td {
 
 .scrollable-table th,
 .scrollable-table td {
-  border: solid 1px #ccc;
   padding: 3px 5px;
   white-space: nowrap;
 }
