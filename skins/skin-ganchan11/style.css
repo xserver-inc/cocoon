@@ -184,7 +184,7 @@ body.public-page,.content .cf .main, .navi {
 /*ウィジェット*/
 
 .sidebar .widget h3 {
-    margin: 0 30px;
+    margin: 16px 30px;
 }
 
 .sidebar .widget li a {
