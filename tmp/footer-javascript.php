@@ -42,13 +42,14 @@ if (!is_amp()): ?>
     $(selector).click(function(event){
       //クリック動作をキャンセル
       event.preventDefault();
-      //クリップボード動作
-      var clipboard = new Clipboard(selector);
-      clipboard.on('success', function(e) {
-        $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+    });
 
-        e.clearSelection();
-      });
+    //クリップボード動作
+    var clipboard = new Clipboard(selector);
+    clipboard.on('success', function(e) {
+      $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+
+      e.clearSelection();
     });
   })(jQuery);
   </script>
