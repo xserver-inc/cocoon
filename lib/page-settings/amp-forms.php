@@ -82,10 +82,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_AMP_SKIN_STYLE_ENABLE, is_amp_skin_style_enable(), __('スキンのスタイルを有効にする',THEME_NAME ));
-            generate_tips_tag(__( '凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（50000バイト）を超えてしまう可能性があります。スキンを適用したことにより、AMPエラーが続出した場合は、AMPページでスキンを適用しないことにより、CSSのサイズを減らします。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/skin-child-theme-css-off/'));
+            generate_tips_tag(__( '凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（75000バイト）を超えてしまう可能性があります。スキンを適用したことにより、AMPエラーが続出した場合は、AMPページでスキンを適用しないことにより、CSSのサイズを減らします。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/skin-child-theme-css-off/'));
 
             generate_checkbox_tag(OP_AMP_CHILD_THEME_STYLE_ENABLE, is_amp_child_theme_style_enable(), __('子テーマのスタイルを有効にする',THEME_NAME ));
-            generate_tips_tag(__( '子テーマのstyle.cssで凝ったカスタマイズをしていると、AMPのCSSサイズ上限（50000バイト）を超えてしまう可能性があります。子テーマのCSSカスタマイズにより、AMPエラーが続出した場合は、AMPページで「子テーマCSS」を適用しないことにより、CSSのサイズを減らします。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/skin-child-theme-css-off/'));
+            generate_tips_tag(__( '子テーマのstyle.cssで凝ったカスタマイズをしていると、AMPのCSSサイズ上限（75000バイト）を超えてしまう可能性があります。子テーマのCSSカスタマイズにより、AMPエラーが続出した場合は、AMPページで「子テーマCSS」を適用しないことにより、CSSのサイズを減らします。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/skin-child-theme-css-off/'));
             ?>
           </td>
         </tr>
