@@ -5710,6 +5710,10 @@ figcaption {
     margin-bottom: 0 !important;
   }
 }
+.body .wp-block-gallery .blocks-gallery-item {
+  margin-bottom: 1em;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;

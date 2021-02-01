@@ -1373,6 +1373,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .wp-block-separator.is-style-wide { border-bottom: solid 3px !important; }
 @media screen and (min-width: 600px) and (max-width: 781px) { .admin-settings .demo .article .wp-block-columns :nth-child(odd):nth-last-child(2) { margin-bottom: 0; } }
 @media screen and (min-width: 600px) { .admin-settings .demo .column-wrap > * { margin-bottom: 0 !important; } }
+.admin-settings .demo .body .wp-block-gallery .blocks-gallery-item { margin-bottom: 1em; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -2971,6 +2972,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .wp-block-separator.is-style-wide { border-bottom: solid 3px !important; }
 @media screen and (min-width: 600px) and (max-width: 781px) { .admin-settings .demo .article .wp-block-columns :nth-child(odd):nth-last-child(2) { margin-bottom: 0; } }
 @media screen and (min-width: 600px) { .admin-settings .demo .column-wrap > * { margin-bottom: 0 !important; } }
+.admin-settings .demo .body .wp-block-gallery .blocks-gallery-item { margin-bottom: 1em; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -4779,6 +4781,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .wp-block-separator.is-style-wide { border-bottom: solid 3px !important; }
 @media screen and (min-width: 600px) and (max-width: 781px) { .components-popover__content .article .wp-block-columns :nth-child(odd):nth-last-child(2) { margin-bottom: 0; } }
 @media screen and (min-width: 600px) { .components-popover__content .column-wrap > * { margin-bottom: 0 !important; } }
+.components-popover__content .body .wp-block-gallery .blocks-gallery-item { margin-bottom: 1em; }
 .components-popover__content .red { margin: 0; }
 .components-popover__content .fz-12px { font-size: 12px; }
 .components-popover__content .fz-13px { font-size: 13px; }
