@@ -9,6 +9,10 @@ pre {
   // margin-bottom: 1.2em;
 }
 
+.is-code-row-number-enable pre,
+.is-code-row-number-enable pre *{
+  line-height: 1.6 !important;
+}
 
 .is-code-row-number-enable pre,
 .is-code-row-number-enable pre#highlight-demo {

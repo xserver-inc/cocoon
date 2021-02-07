@@ -1431,7 +1431,7 @@ img.emoji {
 
 pre,
 pre * {
-  line-height: 1.6 !important;
+  line-height: 1.6;
   word-wrap: normal;
 }
 
@@ -10895,6 +10895,11 @@ pre {
   border: 1px solid #ddd;
   overflow: auto;
   padding: 10px;
+}
+
+.is-code-row-number-enable pre,
+.is-code-row-number-enable pre * {
+  line-height: 1.6 !important;
 }
 
 .is-code-row-number-enable pre,
