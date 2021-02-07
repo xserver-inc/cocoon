@@ -1108,9 +1108,13 @@ function generate_widget_entries_tag($atts){
   //除外投稿
   $exclude_post_ids = get_archive_exclude_post_ids();
   if ($exclude_post_ids && is_array($exclude_post_ids)) {
-    $args += array(
-      'post__not_in' => $exclude_post_ids,
-    );
+    if (isset($args['post__not_in']) && is_array($args['post__not_in'])) {
+      foreach ($exclude_post_ids as $exclude_post_id) {
+        array_push($args['post__not_in'], $exclude_post_id);
+      }
+    } else {
+      $args['post__not_in'] = $exclude_post_ids;
+    }
   }
   if ($post_type) {
     $args += array(
