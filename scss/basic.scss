@@ -57,6 +57,10 @@ ol, ul{
   padding-left: 40px;
 }
 
+ul{
+  list-style-type: disc;
+}
+
 hr{
   color: $current_bgc;
 }

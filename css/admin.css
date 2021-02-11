@@ -401,6 +401,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { padding-left: 40px; }
+.admin-settings .demo ul { list-style-type: disc; }
 .admin-settings .demo hr { color: #eee; }
 .admin-settings .demo .cf::after { clear: both; content: ""; display: block; }
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
@@ -2000,6 +2001,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { padding-left: 40px; }
+.admin-settings .demo ul { list-style-type: disc; }
 .admin-settings .demo hr { color: #eee; }
 .admin-settings .demo .cf::after { clear: both; content: ""; display: block; }
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
