@@ -420,7 +420,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
 .admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #eee; border-radius: 3px; background-color: #f5f6f7; text-align: center; max-width: 100%; }
-.admin-settings .demo .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
+.admin-settings .demo .wp-caption .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .admin-settings .demo .wp-caption-dd { margin: 0; padding: 0 4px 5px; font-size: 11px; line-height: 17px; }
 .admin-settings .demo img.alignright { display: inline-block; margin: 0 0 1em 1.5em; }
@@ -2021,7 +2021,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
 .admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #eee; border-radius: 3px; background-color: #f5f6f7; text-align: center; max-width: 100%; }
-.admin-settings .demo .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
+.admin-settings .demo .wp-caption .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .admin-settings .demo .wp-caption-dd { margin: 0; padding: 0 4px 5px; font-size: 11px; line-height: 17px; }
 .admin-settings .demo img.alignright { display: inline-block; margin: 0 0 1em 1.5em; }
