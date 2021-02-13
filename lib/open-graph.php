@@ -325,8 +325,10 @@ class OpenGraphGetter implements Iterator
 //curlのバージョンチェック
 if ( !function_exists( 'is_nss_curl' ) ):
 function is_nss_curl() {
-  $info = curl_version();
-  return $info['version'] === '7.19.7';
+  if (function_exists('curl_version')) {
+    $info = curl_version();
+    return $info['version'] === '7.19.7';
+  }
 }
 endif;
 
