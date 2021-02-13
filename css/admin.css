@@ -420,7 +420,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
 .admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #eee; border-radius: 3px; background-color: #f5f6f7; text-align: center; max-width: 100%; }
-.admin-settings .demo .wp-caption .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
+.admin-settings .demo .wp-caption .wp-caption-text, .admin-settings .demo .gallery .gallery-caption { font-size: 0.8em; margin: 2px; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .admin-settings .demo .wp-caption-dd { margin: 0; padding: 0 4px 5px; font-size: 11px; line-height: 17px; }
 .admin-settings .demo img.alignright { display: inline-block; margin: 0 0 1em 1.5em; }
@@ -2021,7 +2021,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
 .admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #eee; border-radius: 3px; background-color: #f5f6f7; text-align: center; max-width: 100%; }
-.admin-settings .demo .wp-caption .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 0.8em; margin: 2px; }
+.admin-settings .demo .wp-caption .wp-caption-text, .admin-settings .demo .gallery .gallery-caption { font-size: 0.8em; margin: 2px; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .admin-settings .demo .wp-caption-dd { margin: 0; padding: 0 4px 5px; font-size: 11px; line-height: 17px; }
 .admin-settings .demo img.alignright { display: inline-block; margin: 0 0 1em 1.5em; }
@@ -3887,7 +3887,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (max-width: 480px) { .admin-settings .demo { /*本文の見出し*/ }
   .admin-settings .demo h2, .admin-settings .demo h3 { font-size: 20px; }
   .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 1.2em 0 1em; }
-  .admin-settings .demo .entry-card, .admin-settings .demo .related-entry-card, .admin-settings .demo .e-card-title { line-height: 1.1; }
+  .admin-settings .demo .entry-card, .admin-settings .demo .related-entry-card, .admin-settings .demo .e-card-title { line-height: 1.3; }
   .admin-settings .demo .e-card-title { font-size: 16px; }
   .admin-settings .demo .e-card-snippet { font-size: 13px; }
   .admin-settings .demo .cat-label { font-size: 10px; padding: 1px 3px; }
