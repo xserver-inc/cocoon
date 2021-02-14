@@ -280,8 +280,10 @@ function save_extra_tag_fileds( $term_id ) {
     update_term_meta( $tag_id, 'the_tag_meta_keywords', $the_tag_meta_keywords );
   }
 
-  $the_tag_noindex = !empty($_POST['the_tag_noindex']) ? 1 : 0;
-  update_term_meta( $tag_id, 'the_tag_noindex', $the_tag_noindex );
+  if ( isset( $_POST['the_tag_noindex'] ) ) {
+    $the_tag_noindex = !empty($_POST['the_tag_noindex']) ? 1 : 0;
+    update_term_meta( $tag_id, 'the_tag_noindex', $the_tag_noindex );
+  }
 
   //旧バージョンの値を削除
   $key = get_the_tag_meta_key($tag_id);
