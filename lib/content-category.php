@@ -346,10 +346,8 @@ function save_extra_category_fileds( $term_id ) {
     update_term_meta( $cat_id, 'the_category_meta_keywords', $the_category_meta_keywords );
   }
 
-  if ( isset( $_POST['the_category_noindex'] ) ) {
-    $the_category_noindex = !empty($_POST['the_category_noindex']) ? 1 : 0;
-    update_term_meta( $cat_id, 'the_category_noindex', $the_category_noindex );
-  }
+  $the_category_noindex = !empty($_POST['the_category_noindex']) ? 1 : 0;
+  update_term_meta( $cat_id, 'the_category_noindex', $the_category_noindex );
 
   //旧バージョンの値を削除
   $key = get_the_category_meta_key($cat_id);
