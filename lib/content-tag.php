@@ -253,40 +253,42 @@ endif;
 add_action ( 'edited_term', 'save_extra_tag_fileds');
 if ( !function_exists( 'save_extra_tag_fileds' ) ):
 function save_extra_tag_fileds( $term_id ) {
-  $tag_id = $term_id;
+  if (isset($_POST['taxonomy']) && ($_POST['taxonomy'] === 'post_tag')) {
+    $tag_id = $term_id;
 
-  if ( isset( $_POST['the_tag_title'] ) ) {
-    $the_tag_title = $_POST['the_tag_title'];
-    update_term_meta( $tag_id, 'the_tag_title', $the_tag_title );
-  }
+    if ( isset( $_POST['the_tag_title'] ) ) {
+      $the_tag_title = $_POST['the_tag_title'];
+      update_term_meta( $tag_id, 'the_tag_title', $the_tag_title );
+    }
 
-  if ( isset( $_POST['the_tag_content'] ) ) {
-    $the_tag_content = $_POST['the_tag_content'];
-    update_term_meta( $tag_id, 'the_tag_content', $the_tag_content );
-  }
+    if ( isset( $_POST['the_tag_content'] ) ) {
+      $the_tag_content = $_POST['the_tag_content'];
+      update_term_meta( $tag_id, 'the_tag_content', $the_tag_content );
+    }
 
-  if ( isset( $_POST['the_tag_eye_catch_url'] ) ) {
-    $the_tag_eye_catch_url = $_POST['the_tag_eye_catch_url'];
-    update_term_meta( $tag_id, 'the_tag_eye_catch_url', $the_tag_eye_catch_url );
-  }
+    if ( isset( $_POST['the_tag_eye_catch_url'] ) ) {
+      $the_tag_eye_catch_url = $_POST['the_tag_eye_catch_url'];
+      update_term_meta( $tag_id, 'the_tag_eye_catch_url', $the_tag_eye_catch_url );
+    }
 
-  if ( isset( $_POST['the_tag_meta_description'] ) ) {
-    $the_tag_meta_description = $_POST['the_tag_meta_description'];
-    update_term_meta( $tag_id, 'the_tag_meta_description', $the_tag_meta_description );
-  }
+    if ( isset( $_POST['the_tag_meta_description'] ) ) {
+      $the_tag_meta_description = $_POST['the_tag_meta_description'];
+      update_term_meta( $tag_id, 'the_tag_meta_description', $the_tag_meta_description );
+    }
 
-  if ( isset( $_POST['the_tag_meta_keywords'] ) ) {
-    $the_tag_meta_keywords = $_POST['the_tag_meta_keywords'];
-    update_term_meta( $tag_id, 'the_tag_meta_keywords', $the_tag_meta_keywords );
-  }
+    if ( isset( $_POST['the_tag_meta_keywords'] ) ) {
+      $the_tag_meta_keywords = $_POST['the_tag_meta_keywords'];
+      update_term_meta( $tag_id, 'the_tag_meta_keywords', $the_tag_meta_keywords );
+    }
 
-  $the_tag_noindex = !empty($_POST['the_tag_noindex']) ? 1 : 0;
-  update_term_meta( $tag_id, 'the_tag_noindex', $the_tag_noindex );
+    $the_tag_noindex = !empty($_POST['the_tag_noindex']) ? 1 : 0;
+    update_term_meta( $tag_id, 'the_tag_noindex', $the_tag_noindex );
 
-  //旧バージョンの値を削除
-  $key = get_the_tag_meta_key($tag_id);
-  if (term_metadata_exists($tag_id, $key)) {
-    delete_term_meta($tag_id, $key);
+    //旧バージョンの値を削除
+    $key = get_the_tag_meta_key($tag_id);
+    if (term_metadata_exists($tag_id, $key)) {
+      delete_term_meta($tag_id, $key);
+    }
   }
 }
 endif;
