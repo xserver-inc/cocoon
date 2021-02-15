@@ -4169,10 +4169,6 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 
 .metaslider-ui .col-2 > div { width: 100%; }
 
-.widget.open { margin-left: -116px; z-index: 100; }
-
-.customize-control .widget.open, #wp_inactive_widgets .widget.open { margin-left: 0; }
-
 .not-allowed-form { opacity: 0.5; }
 
 .toggle-entered { font-size: 0.8em; }
