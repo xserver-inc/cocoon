@@ -3385,7 +3385,22 @@ if ( !function_exists( 'get_termmeta_value_enable_ids' ) ):
 function get_termmeta_value_enable_ids($meta_key){
   global $wpdb;
   $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(term_id) AS ids FROM {$wpdb->prefix}termmeta WHERE (meta_key = '{$meta_key}') AND (meta_value = 1)");
-  $result = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
+  $ids = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
+  $result = array();
+  if ($meta_key === 'the_category_noindex') {
+    foreach ($ids as $id) {
+      if (get_category($id)) {
+        array_push($result, $id);
+      }
+    }
+  }
+  if ($meta_key === 'the_tag_noindex') {
+    foreach ($ids as $id) {
+      if (get_tag($id)) {
+        array_push($result, $id);
+      }
+    }
+  }
   return $result;
 }
 endif;
