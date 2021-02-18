@@ -7,8 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if ( !function_exists( 'get_theme_info' ) ):
-function get_theme_info($file){
+if ( !function_exists( 'get_wp_theme_info' ) ):
+function get_wp_theme_info($file){
   if (file_exists($file)) {
     $text = wp_filesystem_get_contents($file);
     if ($text) {

@@ -63,7 +63,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     //親テーマ
     $file = PARENT_THEME_STYLE_CSS_FILE;
-    $info = get_theme_info($file);
+    $info = get_wp_theme_info($file);
     if ($info) {
       if (isset($info['theme_name'])) {
         $all .= __( 'テーマ名：', THEME_NAME ).$info['theme_name'].PHP_EOL;
@@ -90,7 +90,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     //子テーマ
     if (is_child_theme()) {
       $file = CHILD_THEME_STYLE_CSS_FILE;
-      $info = get_theme_info($file);
+      $info = get_wp_theme_info($file);
       if ($info) {
         if (isset($info['theme_name'])) {
           $all .= __( '子テーマ名：', THEME_NAME ).$info['theme_name'].PHP_EOL;
