@@ -109,6 +109,20 @@ class Functions {
         'name'  => 'text',
         'label' => 'テキスト'
       ]
+    ],
+    [
+      'name'       => 'cocoon-blocks/toggle-box-1',
+      'properties' => [
+        'name'  => 'faq',
+        'label' => 'よくある質問'
+      ]
+    ],
+    [
+      'name'       => 'cocoon-blocks/iconlist-box',
+      'properties' => [
+        'name'  => 'no-icon',
+        'label' => 'アイコンなし'
+      ]
     ]
   ];
 
@@ -181,6 +195,7 @@ class Functions {
     add_filter('image_size_names_choose', [$this, 'image_size']);
     add_action('init', [$this, 'block_pattern']);
     add_filter('render_block', [$this, 'custom_blocks'], 10, 2);
+    add_action('wp_footer', [$this, 'footer_script']);
 
     //AMP
     add_filter('amp_skin_css', [$this, 'amp_css']);
@@ -188,6 +203,9 @@ class Functions {
 
     //スキン設定
     add_action('admin_menu', [$this, 'option_setting'], 11);
+
+    //コードコピー
+    add_action('get_template_part_tmp/footer-custom-field', [$this, 'clipboard_js']);
   }
 
   //インスタンス生成
@@ -204,7 +222,8 @@ class Functions {
     $this->fa = $this->fa_class();
 
     //ブロックスタイル
-    foreach (self::BLOCK_STYLES as $blockstyle) {
+    $blockstyles = apply_filters('silk_block_styles', self::BLOCK_STYLES);
+    foreach ($blockstyles as $blockstyle) {
       register_block_style($blockstyle['name'], $blockstyle['properties']);
     }
 
@@ -482,7 +501,8 @@ class Functions {
     .widget_rss ul li a::before,
     .widget_nav_menu ul li a::before,
     .comment-btn::before,
-    .menu-drawer a::before {
+    .menu-drawer a::before,
+    .is-style-faq .toggle-button::after {
       '.$font.$weight.'
     }';
 
@@ -498,6 +518,47 @@ class Functions {
       }';
     }
 
+    //コピーボタン
+    if ($this->is_highlight()) {
+      global $_MOBILE_COPY_BUTTON;
+      $_MOBILE_COPY_BUTTON = true;
+
+      echo '.code-wrap {
+        position: relative;
+      }
+      
+      .code-wrap .code-copy {
+        transition: all 0.3s ease-out;
+      }
+      
+      .code-wrap:hover .code-copy {
+        opacity: 1;
+      }
+      
+      .code-copy {
+        position: absolute;
+        top: 0.5em;
+        right: 1.25em;
+        padding: 0.2em 1.5em;
+        color: '.$textcolor.';
+        background: '.$color.';
+        font-size: 0.8em;
+        border: 0;
+        border-radius: 2px;
+        opacity: 0;
+        outline: none;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        z-index: 2;
+      }';
+    }
+
+    //よくある質問
+    $group_margin = get_entry_content_margin_hight();
+    $faq_margin   = (string)((float)$group_margin - 0.5);
+    echo '.toggle-wrap.is-style-faq + .toggle-wrap.is-style-faq {
+      margin-top: -'.$faq_margin.'em;
+    }';
+
     //幅広
     $group_padding = get_main_column_padding() ?: '29';
     echo '.entry-content .alignwide:not(.wp-block-table) {
@@ -508,7 +569,6 @@ class Functions {
     //全幅
     if (!is_admin() && !is_the_page_sidebar_visible()) {
       $group_width  = is_clumns_changed() ? get_site_wrap_width() : '1256';
-      $group_margin = get_entry_content_margin_hight();
 
       echo 'html {
         overflow-x: hidden;
@@ -696,6 +756,32 @@ class Functions {
       $content = $this->group_replace($content, $block, 'is-style-toggle-accordion', 'cocoon-blocks/toggle-box-1');
     }
 
+    //トグルボックス
+    if ($this->class_exists($block, 'cocoon-blocks/toggle-box-1')) {
+      //よくある質問
+      if ($this->is_style($block, 'is-style-faq')) {
+        add_filter('silk_faq_entity', function ($faq) use ($content, $block) {
+          $id = array_key_exists('dateID', $block['attrs']) ? $block['attrs']['dateID'] : null;
+
+          if (!is_null($id) && !array_key_exists($id, $faq)) {
+            $name = array_key_exists('content', $block['attrs']) ? strip_tags($block['attrs']['content']) : '';
+            $text = strip_tags(str_replace(["\n", "\r", '"', $name], '', $content), '<br><a><strong><em>');
+
+            $faq[$id] = [
+              '@type'          => 'Question',
+              'name'           => $name,
+              'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text'  => $text
+              ]
+            ];
+          }
+
+          return $faq;
+        });
+      }
+    }
+
     return $content;
   }
 
@@ -719,6 +805,25 @@ class Functions {
       }
     }
     return $content;
+  }
+
+  //フッタースクリプト
+  public function footer_script() {
+    $faq = apply_filters('silk_faq_entity', []);
+
+    if (!empty($faq)) {
+      $entity = [];
+
+      foreach ($faq as $key => $value) {
+        $entity[] = $value;
+      }
+
+      echo '<script type="application/ld+json">'.json_encode([
+        '@context'   => 'https://schema.org',
+        '@type'      => 'FAQPage',
+        'mainEntity' => $entity
+      ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).'</script>';
+    }
   }
 
   //AMP対応
@@ -763,7 +868,7 @@ class Functions {
     <div class="wrap admin-settings">
       <div class="metabox-holder">
         <div id="skin-option" class="postbox">
-          <h2 class="hndle">オプション設定（β版）</h2>
+          <h2 class="hndle">オプション設定</h2>
           <div class="inside">
             <p>スキンのオプション設定を追加します。Cocoon設定が変更されるので、事前にバックアップファイルを取得してください。</p>
             <table class="form-table">
@@ -780,6 +885,8 @@ class Functions {
                       <input type="submit" class="button" value="設定の追加" />
                       <input type="hidden" name="<?php echo self::HIDDEN; ?>" value="<?php echo wp_create_nonce('skin-option'); ?>">
                       <?php generate_tips_tag('スキンのオプション設定が書かれたJSONファイルを選択し、「設定の追加」ボタンを押してください。JSONファイルの作成方法はファイル名を除き、スキン制御に従います。'.get_help_page_tag('https://wp-cocoon.com/option-json/')); ?>
+                      <p><span class="fa fa-arrow-right" aria-hidden="true"></span> <a href="https://dateqa.com/cocoon/#silk" target="_blank" rel="noopener">設定ファイルをダウンロードする</a></p>
+                      <p><span class="fa fa-arrow-right" aria-hidden="true"></span> <a href="https://dateqa.com/cocoon/#option" target="_blank" rel="noopener">オプションの詳しい設定方法を見る</a></p>
                     </form>
                   </td>
                 </tr>
@@ -817,6 +924,34 @@ class Functions {
         }
       }
     }
+  }
+
+  //clipboard.js
+  public function clipboard_js() {
+    if ($this->is_highlight()) { ?>
+		  <script>
+			  (function ($) {
+				  $(".wp-block-code").wrap('<div class="code-wrap"></div>').before('<button class="code-copy"><i class="<?php echo $this->fa; ?> fa-copy"></i></button>');
+				  let clip = new Clipboard(".code-copy", {
+					  target: function (trigger) {
+						  return trigger.nextElementSibling;
+					  },
+				  });
+				  clip.on("success", function(event) {
+            let info = $(".copy-info").text();
+					  $(".copy-info").text("コードをコピーしました").fadeIn(500).delay(1000).fadeOut(500, function() {
+              $(".copy-info").text(info);
+            });
+					  event.clearSelection();
+				  });
+			  })(jQuery);
+		  </script>
+    <?php }
+  }
+
+  //ハイライト表示
+  private function is_highlight() {
+    return is_code_highlight_enable() && is_singular();
   }
 }
 

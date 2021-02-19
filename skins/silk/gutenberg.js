@@ -19,10 +19,10 @@
       return el(blockEditor.RichTextToolbarButton, {
         icon: el(
           primitives.SVG,
-          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20" },
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
           el(primitives.Path, {
             d:
-              "M14 5h-2v5.71c0 1.99-1.12 2.98-2.45 2.98-1.32 0-2.55-1-2.55-2.96v-5.73h-2v5.87c0 1.91 1 4.54 4.48 4.54 3.49 0 4.52-2.58 4.52-4.5v-5.91zM14 18v-2h-9v2h9z",
+              "M7 18v1h10v-1H7zm5-2c1.5 0 2.6-.4 3.4-1.2.8-.8 1.1-2 1.1-3.5V5H15v5.8c0 1.2-.2 2.1-.6 2.8-.4.7-1.2 1-2.4 1s-2-.3-2.4-1c-.4-.7-.6-1.6-.6-2.8V5H7.5v6.2c0 1.5.4 2.7 1.1 3.5.8.9 1.9 1.3 3.4 1.3z",
           })
         ),
         title: "下線",

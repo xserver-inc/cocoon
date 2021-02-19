@@ -6,7 +6,7 @@
   Author: ろこ
   Author URI: https://dateqa.com/cocoon/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-silk.png
-  Version: 2.1.5
+  Version: 2.4.0
   Priority: 9500001000
 */
 
@@ -52,7 +52,9 @@ input[type="submit"],
 .kaerebalink-link1 a,
 .booklink-link2 a,
 .tomarebalink-link1 a,
-.product-item-buttons a {
+.product-item-buttons a,
+.iwe-shadow-paper img,
+.iconlist-box.is-style-no-icon li a {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease-out;
@@ -89,7 +91,8 @@ input[type="submit"]:hover,
 .kaerebalink-link1 a:hover,
 .booklink-link2 a:hover,
 .tomarebalink-link1 a:hover,
-.product-item-buttons a:hover {
+.product-item-buttons a:hover,
+.iconlist-box.is-style-no-icon li a:hover {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
     0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
   transform: scale(1.02);
@@ -171,6 +174,10 @@ a:hover {
 .breadcrumb.pbp-main-before,
 .breadcrumb.pbp-footer-before {
   background: transparent;
+}
+
+body p.has-background {
+  padding: 1em;
 }
 
 /* ヘッダー */
@@ -593,7 +600,7 @@ a.page-numbers {
   top: 50%;
   left: 0;
   margin-top: -0.5em;
-  line-height: 1.2;
+  line-height: 1;
   transition: all 0.3s ease-out;
 }
 
@@ -1000,6 +1007,16 @@ img {
   text-align: center;
 }
 
+.iwe-border .blogcard img,
+.iwe-border-bold .blogcard img {
+  border: 0;
+}
+
+.iwe-shadow .blogcard img,
+.iwe-shadow-paper .blogcard img {
+  box-shadow: none;
+}
+
 /* リスト */
 ul.is-style-link,
 ol.is-style-link {
@@ -1039,30 +1056,46 @@ ol.is-style-link li a::before {
 
 /* コード */
 pre {
-  background: rgba(153, 153, 153, 0.2);
+  padding: 0.5em;
+  color: #ddd;
+  background: #2d2d2d;
+  border: 0;
   border-radius: 2px;
 }
 
-pre.wp-block-code code {
-  white-space: pre;
+pre,
+pre * {
+  line-height: 1.4;
 }
 
-pre.wp-block-code * {
+code,
+.is-code-row-number-enable pre::before {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 0.95em;
+}
+
+pre.wp-block-code code {
+  display: block;
+  font-size: 0.8em;
+  white-space: pre;
 }
 
 .is-code-row-number-enable pre::before {
   color: inherit;
+  font-size: 0.8em;
   opacity: 0.7;
 }
 
+p code {
+  color: #ddd;
+  background: #2d2d2d;
+}
+
+p code,
 p code.hljs {
   display: unset;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   margin: 0 0.1em;
   padding: 0.1em;
-  font-size: 0.9em;
+  font-size: 0.8em;
   border-radius: 2px;
 }
 
@@ -1160,6 +1193,17 @@ p code.hljs {
   vertical-align: middle;
 }
 
+.is-style-normal-card .ib-right,
+.is-style-normal-card .eb-right,
+.is-style-normal-card .ib-right .blogcard-thumbnail,
+.is-style-normal-card .ib-right .blogcard-content,
+.is-style-normal-card .eb-right .blogcard-thumbnail,
+.is-style-normal-card .eb-right .blogcard-content,
+.is-style-normal-card .ib-right .blogcard-label,
+.is-style-normal-card .eb-right .blogcard-label {
+  transform: scale(-1, 1);
+}
+
 .is-style-normal-card .blogcard-title,
 .is-style-text .blogcard-title {
   margin-bottom: 0;
@@ -1232,14 +1276,16 @@ p code.hljs {
   float: left;
   margin-right: 0.5em;
   padding: 0 0.5em;
-  font-size: 0.64em;
+  font-size: 0.75em;
+  font-weight: normal;
   border-radius: 2px;
 }
 
 .is-style-text .blogcard-content {
   padding: 0;
-  font-size: 0.8em;
-  line-height: 1.6;
+  font-size: 0.9em;
+  line-height: 1.8;
+  text-decoration: underline;
   overflow: unset;
 }
 
@@ -1709,6 +1755,62 @@ p code.hljs {
   transform: rotate(90deg);
 }
 
+.is-style-faq .toggle-button {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.is-style-faq .toggle-button:hover {
+  opacity: 1;
+}
+
+.is-style-faq .toggle-button::before,
+.is-style-faq .toggle-checkbox:checked ~ .toggle-button::before {
+  content: "Q.";
+  font-family: inherit;
+  font-weight: inherit;
+  transform: none;
+}
+
+.is-style-faq .toggle-button::after {
+  position: absolute;
+  content: "\f078";
+  top: calc(50% - 0.5em);
+  right: 0.5em;
+  font-size: 0.5em;
+  line-height: 1;
+  transition: all 0.3s ease-out;
+}
+
+.is-style-faq .toggle-checkbox:checked ~ .toggle-button::after {
+  transform: rotate(180deg);
+}
+
+.toggle-wrap.is-style-faq .toggle-content {
+  position: relative;
+  padding: 0 1em 0 2em;
+}
+
+.is-style-faq .toggle-checkbox:checked ~ .toggle-content {
+  padding: 0.5em 1em 0.5em 2em;
+  background: transparent;
+  border-radius: 0;
+}
+
+.is-style-faq .toggle-content::before {
+  position: absolute;
+  content: "A.";
+  font-weight: bold;
+  top: 0;
+  left: 0.5em;
+  transition: all 0.3s ease-in-out;
+}
+
+.is-style-faq .toggle-checkbox:checked ~ .toggle-content::before {
+  top: 0.5em;
+}
+
 /* 見出しボックス */
 .caption-box {
   position: relative;
@@ -1878,6 +1980,25 @@ p code.hljs {
   border-width: 2px;
 }
 
+.article .is-style-compare .is-style-no-icon ul li:not(:last-child) {
+  border-bottom: 0;
+}
+
+.iconlist-box.is-style-no-icon li::before {
+  content: none;
+}
+
+.iconlist-box.is-style-no-icon li a {
+  display: block;
+  padding: 0.3em 1em;
+  color: #fff;
+  background: #42a5f5;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .iconlist-title {
   text-align: left;
   position: absolute;
@@ -1971,7 +2092,6 @@ table tr:nth-of-type(2n + 1) {
 table tfoot td > a,
 table tfoot td > a:hover {
   display: block;
-  position: relative;
   padding: 0.3em 1em;
   color: #fff;
   background: #42a5f5;
@@ -2299,7 +2419,7 @@ hr {
 }
 
 hr.wp-block-separator.is-style-dots::before {
-  content: "\02022 \02022 \02022 \02022 \02022";
+  content: "\02022 \02022 \02022";
 }
 
 hr.is-style-cut-line {
@@ -2450,6 +2570,19 @@ a.swatchimages:hover .swatch-image-thumb > img {
 }
 
 /* 記事上 */
+.review-rating {
+  text-align: right;
+}
+
+.review-rating .rating-number {
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.review-rating .rating-number::before {
+  content: "評価：";
+}
+
 .eye-catch .cat-label {
   padding: 0 1em;
   border: 0;
@@ -2901,6 +3034,15 @@ ol.toc-list > li > ol {
   font-size: 16px;
 }
 
+/* コピー */
+.copy-info {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  opacity: 1;
+}
+
 /* モバイルボタン */
 .mobile-header-menu-buttons,
 .mobile-footer-menu-buttons {
@@ -2984,7 +3126,7 @@ ol.toc-list > li > ol {
 }
 
 /* 独自カラム */
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
   .is-style-compare > *,
   .is-style-columns-card {
     flex-wrap: nowrap;
@@ -3019,7 +3161,13 @@ ol.toc-list > li > ol {
   }
 }
 
-@media (max-width: 599px) {
+@media screen and (max-width: 781px) {
+  .is-style-mobile-columns .wp-block-column {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
   .is-style-compare > div > *,
   .is-style-columns-card > * {
     flex-basis: 100% !important;
