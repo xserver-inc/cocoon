@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BUTTON_BLOCK, getCurrentColorSlug, getCurrentColorCode } from '../../helpers';
+import { THEME_NAME, BUTTON_BLOCK, getCurrentColorSlug, getCurrentColorCode, keyColor } from '../../helpers';
 // import { attrs } from './_attrs';
 import { deprecated } from './deprecated';
 import classnames from 'classnames';

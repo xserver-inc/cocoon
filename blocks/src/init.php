@@ -80,6 +80,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   );
   //ショートコードオブジェクトの取得
   $balloons = get_speech_balloons(null, 'title');
+  $colors = array('keyColor' => get_editor_key_color());
   $templates = get_function_texts(null, 'title');
   $affiliates = get_affiliate_tags(null, 'title');
   $rankings = get_item_rankings(null, 'title');
@@ -119,7 +120,6 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   // オブジェクト渡し
   ///////////////////////////////////////////
   //吹き出し情報を渡す
-  //_v($balloons);
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'gbSpeechBalloons', //任意のオブジェクト名
@@ -128,11 +128,10 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   //テーマのキーカラーを渡す
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'keyColor', //任意のオブジェクト名
-     get_editor_key_color()//プロバティ
+    'gbColors', //任意のオブジェクト名
+    $colors//プロバティ
   );
   //テンプレート情報を渡す
-  //_v($templates);
   if ($is_templates_visible) {
     wp_localize_script(
       'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
@@ -142,7 +141,6 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   }
 
   //アフィリエイト情報を渡す
-  //_v($affiliates);
   if ($is_affiliates_visible) {
     wp_localize_script(
       'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
@@ -152,7 +150,6 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   }
 
   //ランキング情報を渡す
-  //_v($rankings);
   if ($is_rankings_visible) {
     wp_localize_script(
       'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
