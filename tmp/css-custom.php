@@ -684,7 +684,7 @@ if (!$entry_content_margin_hight) {
 .article h4,
 .article h5,
 .article h6{
-  margin-bottom: <?php echo $entry_content_margin_hight * get_site_font_size(); ?>px;
+  margin-bottom: <?php echo intval($entry_content_margin_hight) * intval(px_to_int(get_site_font_size())); ?>px;
 }
 <?php //モバイルサイトフォント
 $mobile_site_font_size = get_mobile_site_font_size();
@@ -700,7 +700,7 @@ if ($mobile_site_font_size): ?>
   .article h4,
   .article h5,
   .article h6{
-    margin-bottom: <?php echo $entry_content_margin_hight * $mobile_site_font_size; ?>px;
+    margin-bottom: <?php echo intval($entry_content_margin_hight) * intval(px_to_int($mobile_site_font_size)); ?>px;
   }
 }
 <?php endif ?>

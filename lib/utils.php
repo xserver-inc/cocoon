@@ -3433,3 +3433,10 @@ function use_gutenberg_editor(){
   return ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) || ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() );
 }
 endif;
+
+//ピクセル数を数字にする
+if ( !function_exists( 'px_to_int' ) ):
+function px_to_int($px){
+  return intval(str_replace('px', '', $px));
+}
+endif;
