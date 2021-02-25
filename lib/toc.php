@@ -74,7 +74,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/us', $content, $headers);
   $header_count = count($headers[0]);
   if($header_count > 0){
-    $level = strtolower($headers[1][0]);
+    $level = intval(strtolower($headers[1][0]));
     if($top_level < $level){$top_level = $level;}
   }
   if($top_level < 1){$top_level = 1;}
@@ -98,15 +98,12 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
       case 'h5': $depth = 5 - $top_level + 1; break;
       case 'h6': $depth = 6 - $top_level + 1; break;
     }
-    //var_dump($depth);
     if($depth >= 1 && $depth <= $max_depth){
       if($current_depth == $depth && $i != 0){
         $toc_list .= '</li>';
         $counters[$current_depth - 1] ++;
       }
       while($current_depth > $depth){
-        //_v($current_depth);
-        //_v($depth);
         $toc_list .= '</li></'.$list_tag.'>';
 
         $current_depth--;
@@ -120,16 +117,10 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
       }
       while($current_depth < $depth){
         $toc_list .= '<'.$list_tag.'>';
-        //$diff = $depth - $current_depth;
-        // //見出しに不具合がある場合は出力しない
-        // if ($diff >= 2) {
-        //   return $the_content;
-        // }
 
         $current_depth++;
         $counters[$current_depth - 1] ++;
       }
-      //$counters[$current_depth - 1] ++;
       $hide_class = null;
       if ( $depth_option != 0 && $depth >= $depth_option ) {
         $hide_class = ' class="display-none"';
@@ -160,7 +151,6 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
       $label_for = null;
     } else {
       global $_TOC_INDEX;
-      //_v($_TOC_INDEX);
       $toc_id = 'toc-checkbox-'.$_TOC_INDEX;
       $toc_check = '<input type="checkbox" class="toc-checkbox" id="'.$toc_id.'"'.$checked.'>';
       $label_for = ' for="'.$toc_id.'"';
@@ -181,15 +171,11 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
 
   global $_TOC_AVAILABLE_H_COUNT;
   $_TOC_AVAILABLE_H_COUNT = $counter;
-  //_v($counter);
-  // $display_count = intval(get_toc_display_count());
-  // if (is_int($display_count) && ($counter < $display_count)) {
   if (!is_toc_display_count_available($counter)){
     return ;
   }
 
   return apply_filters('get_toc_tag',$html, $harray, $is_widget );
-  //}
 }
 endif;
 
@@ -355,6 +341,6 @@ endif;
 if ( !function_exists( 'is_toc_display_count_available' ) ):
 function is_toc_display_count_available($h_count){
   $display_count = intval(get_toc_display_count());
-  return ($h_count >= $display_count);
+  return (intval($h_count) >= $display_count);
 }
 endif;
