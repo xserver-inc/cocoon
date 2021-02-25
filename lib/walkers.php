@@ -88,7 +88,7 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
       $fa_classes = array_filter($classes, function($v, $k) { return preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);
       $_MENU_ICON = !empty($fa_classes) ? implode(' ', $fa_classes) : null;
 
-      //定形へメニューボタンの処理
+      //定形メニューボタンの処理
       $url = trim($item->url);
       $lower_url = strtolower($url);
       if ($lower_url === '#menu') {
@@ -137,7 +137,6 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
 
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
         $class_names = ' class="'. esc_attr( $class_names ) . '"';
-        $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 
         $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
         $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
@@ -150,7 +149,8 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
         $caption_before = '<span class="custom-menu-caption menu-caption">';
         $caption_after = '</span>';
 
-        $item_output = $args->before;
+        $item_output = '<li class="navi-menu-button menu-button">';
+        $item_output .= $args->before;
         $item_output .= '<a'. $attributes .' class="menu-button-in">';
 
         $item_output .= $icon_before.$icon_after;
@@ -159,7 +159,6 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
         $item_output .= '</a>';
         $item_output .= $args->after.'</li>';
       }
-
       $output .= apply_filters( 'mobile_menu_walker', $item_output, $item, $depth, $args );
 
       $_MENU_CAPTION = null;
