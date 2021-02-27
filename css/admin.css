@@ -678,7 +678,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #eee; border-bottom: 4px double #eee; margin: 0 3%; margin-bottom: 1em; }
 .admin-settings .demo .eye-catch-wrap { display: flex; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
-.admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
+.admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 2px 8px; opacity: 0.9; border: 1px solid #eee; }
 .admin-settings .demo .eye-catch img { vertical-align: bottom; }
 .admin-settings .demo .eye-catch-caption { color: #fff; position: absolute; bottom: 0; padding: 2em 0.6em 0.2em; text-align: right; width: 100%; font-size: 0.9em; background: linear-gradient(180deg, transparent, #555); opacity: 0.9; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo { /* IE10～ */ }
@@ -2279,7 +2279,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .read-time { text-align: center; font-size: 0.7em; border-top: 4px double #eee; border-bottom: 4px double #eee; margin: 0 3%; margin-bottom: 1em; }
 .admin-settings .demo .eye-catch-wrap { display: flex; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
-.admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
+.admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 2px 8px; opacity: 0.9; border: 1px solid #eee; }
 .admin-settings .demo .eye-catch img { vertical-align: bottom; }
 .admin-settings .demo .eye-catch-caption { color: #fff; position: absolute; bottom: 0; padding: 2em 0.6em 0.2em; text-align: right; width: 100%; font-size: 0.9em; background: linear-gradient(180deg, transparent, #555); opacity: 0.9; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo { /* IE10～ */ }

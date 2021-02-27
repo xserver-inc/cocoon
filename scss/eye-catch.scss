@@ -8,26 +8,16 @@
   position: relative;
   margin-bottom: .6em;
   max-width: 100%;
-  //display: table-cell;
-  //display: inline-block;
-  //display: table;
-  //display: block;
-  //display: inline-block;
 
   .cat-label{
     position: absolute;
-    // right: 0.4em;
-    // top: 0.4em;
-    // bottom: auto;
-    // left: auto;
     right: auto;
     top: 0.4em;
     bottom: auto;
     left: 0.4em;
     font-size: 14px;
-    padding: 4px 8px;
+    padding: 2px 8px;
     opacity: 0.9;
-    //border-radius: 2px;
     border: 1px solid #eee;
 
   }
@@ -36,19 +26,6 @@
     vertical-align: bottom;
   }
 
-  // img{
-  //   // width: 100%;
-  //   // height: auto;
-  //   //display: block;
-  // }
-
-  // img{
-  //   width: 100%;
-  //   height: auto;
-  // }
-
-  //@extend %bottom_margin;
-  //& +
 }
 
 .eye-catch-caption{
