@@ -73,13 +73,10 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
 
   preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/us', $content, $headers);
   $header_count = count($headers[0]);
-  if($header_count > 0){
-    $level = intval(strtolower($headers[1][0]));
-    if($top_level < $level){$top_level = $level;}
-  }
+
   if($top_level < 1){$top_level = 1;}
   if($top_level > 6){$top_level = 6;}
-  $top_level = $top_level;
+
   $current_depth          = $top_level - 1;
   $prev_depth             = $top_level - 1;
   $max_depth              = (($depth == 0) ? 6 : intval($depth)) - $top_level + 1;
