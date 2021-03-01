@@ -662,6 +662,8 @@ border: 1px solid #ffbf7f; /* 枠線色 */
 	display: inline-block;
 	border-bottom: 4px solid #fbe3f9;
 	margin-bottom: 1rem;
+	padding-left: 12px;
+	padding-right: 12px;
 }
 
 /* Contact Form 7 */
