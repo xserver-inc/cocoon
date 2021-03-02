@@ -23,8 +23,9 @@ array(
   'toc_depth' => 3, //目次の深さ
   'toc_number_type' => 0, //目次の数字の表示
   'single_breadcrumbs_position' => 'main_top', //パンくずリストの位置
+  'sns_top_share_buttons_count_visible' => 0 , //トップSNSシェア数の表示
   'sns_bottom_share_column_count' => 3, //ボトムSNSシェアボタンのカラム数
   'sns_bottom_share_logo_caption_position' => 'left_and_right', //ボトムSNSシェアボタンのロゴとキャプションの位置
-  'sns_bottom_share_buttons_count_visible' => 0, //SNSボトムシェア数の表示
+  'sns_bottom_share_buttons_count_visible' => 0, //ボトムSNSシェア数の表示
   'related_entry_card_snippet_visible' => 0, //関連記事のスニペットの表示
 );

@@ -7,7 +7,6 @@
   Screenshot URI: https://pote-chil.com/wp-content/uploads/2021/02/innocence_top-1.png
   Version: 1.0.0
   Priority: 9300001000
-  Visibility: false
 */
 
 /*以下にスタイルシートを記入してください*/
@@ -26,7 +25,7 @@ body {
     color: #5a5a5a;
 }
 
-.home .main, .sidebar {
+.home:not(.page) .main, .sidebar {
     background-color: initial;
 }
 
@@ -42,19 +41,11 @@ body {
     box-shadow: 0 2px 7px rgb(0 0 0 / 11%);
 }
 
-.header-container-in.hlt-top-menu {
-    width: 90%;
-}
-
 #navi .caption-wrap .item-label {
     font-size: 15px;
-    line-height: 62px;
+    /*line-height: 62px;*/
     color: #888;
     letter-spacing: .07em;
-}
-
-#navi .navi-in>ul li {
-    width: 140px;
 }
 
 /************************************
@@ -169,20 +160,20 @@ body {
     margin-top: 20px;
 }
 
-.date-tags .post-date .fa, .date-tags .post-update .fa {
+.date-tags .post-date>span[class^="fa"], .date-tags .post-update>span[class^="fa"] {
     width: 31px;
     height: 31px;
     background-color: #777;
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.35em;
     border-radius: 50%;
     text-align: center;
-    line-height: 1.7;
+    line-height: 1.9;
 }
 
 @media screen and (max-width:480px) {
-    .date-tags .post-date .fa, .date-tags .post-update .fa {
-        line-height: 1.9;
+    .date-tags .post-date>span[class^="fa"], .date-tags .post-update>span[class^="fa"] {
+        line-height: 2.1;
     }
 }
 
@@ -220,7 +211,6 @@ body {
     font-family: FontAwesome;
     content: "\f0ca";
     background-color: #777;
-    font-weight: normal;
     line-height: 47px;
     margin-right: 5px;
 }
@@ -241,7 +231,6 @@ body {
     content: "\f138";
     position: absolute;
     color: #777;
-    font-weight: 900;
     top: 3px;
     left: -20px;
 }
@@ -259,9 +248,8 @@ body {
     content: "\f105";
     position: absolute;
     color: #777;
-    font-weight: 900;
     top: 1px;
-    left: -11px;
+    left: -12px;
 }
 
 .entry-content .toc-list>li>ul>li>a {
@@ -309,9 +297,8 @@ body {
     display: inline-block;
     position: absolute;
     padding: 0;
-    color: #fff;
+    color: #eee;
     background: #777;
-    font-weight: 900;
     width: 40px;
     height: 40px;
     text-align: center;
@@ -486,7 +473,7 @@ body {
 }
 
 .sns-follow-buttons a {
-    font-size: 1.5em;
+    font-size: 1.7em;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -517,7 +504,6 @@ body {
 .related-entry-heading:before, .comment-title:before {
     font-family: FontAwesome;
     display: inline-block;
-    font-weight: bold;
     background-color: #777;
     color: #fff;
     border-radius: 50%;
@@ -690,7 +676,8 @@ button#comment-reply-btn {
 ************************************/
 
 .widget_categories ul {
-    padding: 0 9px 10px 9px;
+    padding: 0 0px 10px 9px;
+    margin-right: 8px;
 }
 
 .widget_categories ul li a {
@@ -701,7 +688,6 @@ button#comment-reply-btn {
     font-family: FontAwesome;
     content: "\f07b";
     color: #777;
-    font-weight: 900;
     padding-right: 7px;
 }
 
@@ -723,6 +709,15 @@ button#comment-reply-btn {
 /************************************
 ** 検索フォーム
 ************************************/
+
+.sidebar:not(#slide-in-sidebar) .widget_search {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.sidebar:not(#slide-in-sidebar) .widget-sidebar .search-box {
+    box-shadow: 0 3px 3px rgb(0 0 0 / 12%), 0 2px 3px -2px rgb(0 0 0 / 1%);
+}
 
 input.search-edit {
     border: none;
@@ -750,6 +745,15 @@ button.search-submit {
 
 #footer {
     background-color: #e7e7e7;
+}
+
+/************************************
+** Font Awesome 5対応
+************************************/
+
+.font-awesome-5 .entry-content .toc-title:before, .font-awesome-5 .entry-content .toc-list>li:before, .font-awesome-5 .entry-content .toc-list>li>ul>li:before, .font-awesome-5 .entry-content h3:before, .font-awesome-5 .related-entry-heading:before, .comment-title:before, .font-awesome-5 .widget_categories ul li a:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 
 /************************************
