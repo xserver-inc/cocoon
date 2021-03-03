@@ -1386,3 +1386,9 @@ table th {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 }
+
+@media screen and (max-width: 1280px) {
+  .entry-card-content {
+    margin-left: 0 !important;
+  }
+}
