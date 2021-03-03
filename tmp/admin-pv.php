@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //PVエリアの表示
-if (is_admin_panel_pv_area_visible()): ?>
+if (is_admin_panel_pv_area_visible() && is_singular()): ?>
   <div class="admin-pv">
     <span class="admin-pv-by">
       <?php if (get_admin_panel_pv_type() == THEME_NAME): ?>

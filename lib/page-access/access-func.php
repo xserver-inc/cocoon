@@ -261,11 +261,13 @@ if ( !function_exists( 'get_todays_access_count' ) ):
 function get_todays_access_count($post_id = null){
   $res = 0;
   global $post;
-  if (!$post_id) {
-    $post_id = $post->ID;
-  }
+  if (isset($post->ID)) {
+    if (!$post_id) {
+      $post_id = $post->ID;
+    }
 
-  $res = get_several_access_count($post_id, 1);
+    $res = get_several_access_count($post_id, 1);
+  }
   return $res;
 }
 endif;
@@ -274,10 +276,9 @@ endif;
 if ( !function_exists( 'get_several_access_count' ) ):
 function get_several_access_count($post_id = null, $days = 'all'){
   $res = 0;
-  if (is_access_count_enable()) {
-    global $post;
-    global $wpdb;
-
+  global $post;
+  global $wpdb;
+  if (is_access_count_enable() && isset($post->ID)) {;
     if (!$post_id) {
       $post_id = $post->ID;
     }
@@ -520,9 +521,9 @@ endif;
 if ( !function_exists( 'get_several_jetpack_access_count' ) ):
 function get_several_jetpack_access_count($post_id = null, $days = -1){
   $views = 0;
-  if (is_jetpack_stats_module_active()) {
+  global $post;
+  if (is_jetpack_stats_module_active() && isset($post->ID)) {
     if (!$post_id) {
-      global $post;
       $post_id = $post->ID;
     }
     $jetpack_views = stats_get_csv('postviews', array('days' => $days, 'limit' => 1, 'post_id' => $post_id ));
