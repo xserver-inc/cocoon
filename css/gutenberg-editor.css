@@ -458,9 +458,6 @@
 }
 div.mce-content-body {
   line-height: 1.8;
-}
-div.mce-content-body div.mce-content-body {
-  line-height: 1.8;
   padding-top: 1em;
 }
 
