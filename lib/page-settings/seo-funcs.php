@@ -43,7 +43,7 @@ endif;
 define('OP_TAG_PAGE_NOINDEX', 'tag_page_noindex');
 if ( !function_exists( 'is_tag_page_noindex' ) ):
 function is_tag_page_noindex(){
-  return get_theme_option(OP_TAG_PAGE_NOINDEX, 1);
+  return get_theme_option(OP_TAG_PAGE_NOINDEX);
 }
 endif;
 
