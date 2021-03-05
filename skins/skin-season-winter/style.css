@@ -207,6 +207,7 @@ a {
 .entry-card-content {
 	margin: 0;
 	flex: 3;
+	margin-left:0 !important;
 }
 /************************************
 ** 関連記事
@@ -987,13 +988,6 @@ input[type='submit']:hover {
 }
 .menu-content .sidebar .author-description {
 	margin: 3em 0;
-}
-
-/*1240px以下*/
-@media screen and (max-width: 1240px) {
-.entry-card-content {
-	margin-left: 0 !important;
-}
 }
 
 /*1023px以下*/
