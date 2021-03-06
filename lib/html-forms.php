@@ -1568,7 +1568,7 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
     $image_url = get_the_category_eye_catch_url($object_id);
     $thumb_id = attachment_url_to_postid( $image_url );
     $thumb_img = wp_get_attachment_image_src($thumb_id, $thumb_size);
-    if ($thumb_img[0]) {
+    if (isset($thumb_img[0]) && $thumb_img[0]) {
       $image_url = $thumb_img[0];
     }
     $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
