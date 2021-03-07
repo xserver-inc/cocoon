@@ -21,20 +21,22 @@ get_header(); ?>
 
 	<?php do_action( 'bbp_template_notices' ); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php if (is_bbpress_exist()): ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-		<div id="forum-front" class="bbp-forum-front">
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<div class="entry-content">
+			<div id="forum-front" class="bbp-forum-front">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<div class="entry-content">
 
-				<?php the_content(); ?>
+					<?php the_content(); ?>
 
-				<?php bbp_get_template_part( 'content', 'archive-forum' ); ?>
+					<?php bbp_get_template_part( 'content', 'archive-forum' ); ?>
 
-			</div>
-		</div><!-- #forum-front -->
+				</div>
+			</div><!-- #forum-front -->
 
-	<?php endwhile; ?>
+		<?php endwhile; ?>
+	<?php endif; ?>
 
 	<?php do_action( 'bbp_after_main_content' ); ?>
 
