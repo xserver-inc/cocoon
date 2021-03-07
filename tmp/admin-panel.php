@@ -17,7 +17,10 @@ if (is_user_administrator()
 <div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>" data-barba-prevent="all">
 
   <?php //PVエリアの表示
-  get_template_part('tmp/admin-pv'); ?>
+  if (is_singular()) {
+    get_template_part('tmp/admin-pv');
+  }
+   ?>
 
   <?php //編集エリアの表示
   if (is_admin_panel_edit_area_visible() && (is_singular() || (!is_singular() && is_admin_panel_wp_dashboard_visible()))): ?>
