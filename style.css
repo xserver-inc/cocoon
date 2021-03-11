@@ -2811,53 +2811,53 @@ label.screen-reader-text {
   display: block;
 }
 
-.article blockquote :last-child,
-.article .wp-block-media-text__content :last-child,
-.article .wp-block-columns :last-child,
-.article .column-left :last-child,
-.article .column-center :last-child,
-.article .column-right :last-child,
-.article .column-wrap :last-child,
-.article .timeline-box :last-child,
-.article .wp-block-cover :last-child,
-.article .blogcard-type :last-child,
-.article .btn-wrap :last-child,
-.article .wp-block-group :last-child,
-.article .wp-block-gallery :last-child,
-.article .block-box :last-child,
-.article .blank-box :last-child,
-.article .is-style-blank-box-red :last-child,
-.article .is-style-blank-box-navy :last-child,
-.article .is-style-blank-box-blue :last-child,
-.article .is-style-blank-box-yellow :last-child,
-.article .is-style-blank-box-green :last-child,
-.article .is-style-blank-box-pink :last-child,
-.article .is-style-blank-box-orange :last-child,
-.article .is-style-sticky-gray :last-child,
-.article .is-style-sticky-yellow :last-child,
-.article .is-style-sticky-red :last-child,
-.article .is-style-sticky-blue :last-child,
-.article .is-style-sticky-green :last-child,
-.article .common-icon-box :last-child,
-.article .info-box :last-child,
-.article .primary-box :last-child,
-.article .success-box :last-child,
-.article .warning-box :last-child,
-.article .danger-box :last-child,
-.article .secondary-box :last-child,
-.article .light-box :last-child,
-.article .dark-box :last-child,
-.article .toc :last-child {
+.body blockquote :last-child,
+.body .wp-block-media-text__content :last-child,
+.body .wp-block-columns :last-child,
+.body .column-left :last-child,
+.body .column-center :last-child,
+.body .column-right :last-child,
+.body .column-wrap :last-child,
+.body .timeline-box :last-child,
+.body .wp-block-cover :last-child,
+.body .blogcard-type :last-child,
+.body .btn-wrap :last-child,
+.body .wp-block-group :last-child,
+.body .wp-block-gallery :last-child,
+.body .block-box :last-child,
+.body .blank-box :last-child,
+.body .is-style-blank-box-red :last-child,
+.body .is-style-blank-box-navy :last-child,
+.body .is-style-blank-box-blue :last-child,
+.body .is-style-blank-box-yellow :last-child,
+.body .is-style-blank-box-green :last-child,
+.body .is-style-blank-box-pink :last-child,
+.body .is-style-blank-box-orange :last-child,
+.body .is-style-sticky-gray :last-child,
+.body .is-style-sticky-yellow :last-child,
+.body .is-style-sticky-red :last-child,
+.body .is-style-sticky-blue :last-child,
+.body .is-style-sticky-green :last-child,
+.body .common-icon-box :last-child,
+.body .info-box :last-child,
+.body .primary-box :last-child,
+.body .success-box :last-child,
+.body .warning-box :last-child,
+.body .danger-box :last-child,
+.body .secondary-box :last-child,
+.body .light-box :last-child,
+.body .dark-box :last-child,
+.body .toc :last-child {
   margin-bottom: 0;
 }
-.article .entry-content > div > :last-child {
+.body .entry-content > div > :last-child {
   margin-bottom: 0;
 }
-.article div.scrollable-table table,
-.article .wp-block-table table {
+.body div.scrollable-table table,
+.body .wp-block-table table {
   margin-bottom: 0;
 }
-.article .wp-block-table .scrollable-table {
+.body .wp-block-table .scrollable-table {
   margin-bottom: 0;
 }
 
