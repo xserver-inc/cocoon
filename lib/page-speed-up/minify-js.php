@@ -67,7 +67,8 @@ function tag_code_to_minify_js($buffer) {
               //プレイリストのJSは除外
               || includes_string($url, '/mediaelement-and-player.min.js')
               || includes_string($url, '/wp-includes/js/underscore.min.js')
-              // //Lityの除外
+              //WordPress6.7からのエラー対応
+              || includes_string($url, '/wp-includes/js/dist/')              // //Lityの除外
               // || includes_string($url, '/plugins/lity/dist/lity.min.js')
               // || includes_string($url, '/wp-playlist.min.js')
               // || includes_string($url, '/wp-mediaelement.min.js')
