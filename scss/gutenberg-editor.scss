@@ -6,18 +6,31 @@
   padding: 0 4px;
 }
 /* copy from editor-style.css */
-
-.wp-block {
-  padding: 0;
-  margin: 0 auto;
-  max-width: none;
+div.editor-styles-wrapper{
+  margin: 20px;
+  background-color: #fff;
+  padding-top: 20px;
 }
 
-.edit-post-text-editor {
-  padding: 0;
-  margin: 0 auto;
-  max-width: 800px;
-}
+// .editor-styles-wrapper div.block-editor-cocoon-wrap {
+//   max-width: 860px;
+//   width: auto;
+//   padding-left: 14px;
+//   padding-right: 14px;
+//   margin: 20px auto !important;
+// }
+
+// .wp-block {
+//   padding: 0;
+//   margin: 0 auto;
+//   max-width: none;
+// }
+
+// .edit-post-text-editor {
+//   padding: 0;
+//   margin: 0 auto;
+//   max-width: 800px;
+// }
 
 
 //ブロックボックス内のインナーブロックのマージン変更
@@ -266,14 +279,6 @@ div.mce-content-body {
 //   // margin-right: 20px;
 //   margin: 20px auto;
 // }
-
-.editor-styles-wrapper div.block-editor-cocoon-wrap {
-  max-width: 860px;
-  width: auto;
-  padding-left: 14px;
-  padding-right: 14px;
-  margin: 20px auto !important;
-}
 
 /* wp-includes/css/dist/edit-post/style.css
  * wp-includes/css/dist/editor/style.css
