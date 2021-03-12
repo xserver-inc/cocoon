@@ -341,18 +341,8 @@ endif;
 
 //吹き出しHTMLを生成
 if ( !function_exists( 'generate_speech_balloon_tag' ) ):
-function generate_speech_balloon_tag($record, $voice){
-  $w = 92;
-  $h = 92;
-  if (isset($record->icon)) {
-    $size = get_image_width_and_height($record->icon);
-    if ($size) {
-      $w = $size['width'];
-      $h = $size['height'];
-    }
-  }
-?>
-<div class="speech-wrap sb-id-<?php echo esc_html($record->id); ?> sbs-<?php echo esc_html($record->style); ?> sbp-<?php echo esc_html($record->position); ?> sbis-<?php echo esc_html($record->iconstyle); ?> cf"><div class="speech-person"><figure class="speech-icon"><img src="<?php echo esc_html($record->icon); ?>" alt="<?php echo esc_html($record->name); ?>" class="speech-icon-image" width="<?php echo $w; ?>" height="<?php echo $h; ?>"></figure><?php if ($record->name): ?><div class="speech-name"><?php echo esc_html($record->name); ?></div><?php endif ?></div><div class="speech-balloon"><p><?php echo esc_html($voice); ?></p></div></div>
+function generate_speech_balloon_tag($record, $voice){?>
+<div class="speech-wrap sb-id-<?php echo esc_html($record->id); ?> sbs-<?php echo esc_html($record->style); ?> sbp-<?php echo esc_html($record->position); ?> sbis-<?php echo esc_html($record->iconstyle); ?> cf"><div class="speech-person"><figure class="speech-icon"><img src="<?php echo esc_html($record->icon); ?>" alt="<?php echo esc_html($record->name); ?>" class="speech-icon-image"></figure><?php if ($record->name): ?><div class="speech-name"><?php echo esc_html($record->name); ?></div><?php endif ?></div><div class="speech-balloon"><p><?php echo esc_html($voice); ?></p></div></div>
 <?php
 }
 endif;
