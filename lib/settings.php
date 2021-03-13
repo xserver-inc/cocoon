@@ -317,7 +317,7 @@ add_filter('appeal_area_message', 'wpautop');
 add_filter('appeal_area_message', 'shortcode_unautop');
 add_filter('appeal_area_message', 'do_shortcode');
 add_filter('appeal_area_message', 'prepend_attachment');
-add_filter('appeal_area_message', 'wp_make_content_images_responsive');
+add_filter('appeal_area_message', 'wp_filter_content_tags');
 //カテゴリ・タグページ（※フックの順番が大事）
 add_filter('the_category_tag_content', 'wptexturize');
 add_filter('the_category_tag_content', 'convert_smilies');
@@ -327,7 +327,7 @@ add_filter('the_category_tag_content', 'replace_ad_shortcode_to_advertisement');
 add_filter('the_category_tag_content', 'shortcode_unautop');
 add_filter('the_category_tag_content', 'do_shortcode');
 add_filter('the_category_tag_content', 'prepend_attachment');
-add_filter('the_category_tag_content', 'wp_make_content_images_responsive');//WordPress5.5未満
+add_filter('the_category_tag_content', 'wp_filter_content_tags');//WordPress5.5未満
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');
