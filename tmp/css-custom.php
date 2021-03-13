@@ -690,7 +690,7 @@ if (!$entry_content_margin_hight) {
 $mobile_site_font_size = get_mobile_site_font_size();
 if ($mobile_site_font_size): ?>
 @media screen and (max-width: 480px){
-  .page-body,
+  .body,
   .menu-content{
     font-size: <?php echo $mobile_site_font_size; ?>;
   }
@@ -802,7 +802,7 @@ $editor_background_color = get_editor_background_color();
 if (!$editor_background_color) {
   $editor_background_color = '#fff';
 } ?>
-.article.page-body,
+.body.article,
 body#tinymce.wp-editor{
   background-color: <?php echo $editor_background_color; ?>
 }
@@ -811,7 +811,7 @@ $editor_text_color = get_editor_text_color();
 if (!$editor_text_color) {
   $editor_text_color = '#333';
 } ?>
-.article.page-body,
+.body.article,
 .editor-post-title__block .editor-post-title__input,
 body#tinymce.wp-editor{
   color: <?php echo $editor_text_color; ?>

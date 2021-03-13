@@ -1016,8 +1016,8 @@ ol, ul {
   height: auto;
 }
 
-.page-body,
-.page-body p {
+.body,
+.body p {
   font-size: 18px;
 }
 
