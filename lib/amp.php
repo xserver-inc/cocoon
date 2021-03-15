@@ -185,6 +185,9 @@ function convert_content_for_amp($the_content){
   // //type属性を取り除く
   $the_content = str_replace(' type="text/html"', '', $the_content);
 
+  //loading="lazy"属性の削除
+  $the_content = str_replace(' loading="lazy"', '', $the_content);
+
   //YouTubeプレイヤーのtype属性を取り除く
   $the_content = str_replace(" class='youtube-player' type='text/html'", " class='youtube-player'", $the_content);
   $the_content = str_replace(' class="youtube-player" type="text/html"', ' class="youtube-player"', $the_content);
@@ -1107,3 +1110,15 @@ function get_amp_product_image_height(){
   return 75;
 }
 endif;
+
+//AMPのiframeはLazy Loadしない
+add_filter( 'wp_lazy_loading_enabled', 'disable_post_content_iframe_lazy_loading_for_amp', 10, 3 );
+if ( !function_exists( 'disable_post_content_iframe_lazy_loading_for_amp' ) ):
+function disable_post_content_iframe_lazy_loading_for_amp( $default, $tag_name, $context ) {
+  if ( is_amp() && $tag_name === 'iframe' ) {
+      return false;
+  }
+  return $default;
+}
+endif;
+
