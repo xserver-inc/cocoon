@@ -436,6 +436,10 @@ div.editor-styles-wrapper {
   padding-top: 20px;
 }
 
+.editor-post-title .editor-post-title__input {
+  font-size: 1.625rem;
+}
+
 .block-box .editor-block-list__layout .editor-block-list__block-edit {
   margin-top: 8px;
   margin-bottom: 8px;

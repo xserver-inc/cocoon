@@ -17,7 +17,7 @@ wp.domReady(function () {
         jQuery('#editor .block-editor-writing-flow').parent().addClass('cocoon-block-wrap body article' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
 
         // add title class
-        jQuery('#editor .editor-post-title__input').addClass('entry-title');
+        // jQuery('#editor .editor-post-title__input').addClass('entry-title');
     };
     setTimeout(addClasses, 100);
     // subscribe switch editor mode
