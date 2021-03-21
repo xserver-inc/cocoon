@@ -2850,9 +2850,6 @@ label.screen-reader-text {
 .article .toc :last-child {
   margin-bottom: 0;
 }
-.article .entry-content > div > :last-child {
-  margin-bottom: 0;
-}
 .article div.scrollable-table table,
 .article .wp-block-table table {
   margin-bottom: 0;
