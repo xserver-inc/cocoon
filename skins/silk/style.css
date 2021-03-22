@@ -6,7 +6,7 @@
   Author: ろこ
   Author URI: https://dateqa.com/cocoon/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-silk.png
-  Version: 2.4.0
+  Version: 2.6.0
   Priority: 9500001000
 */
 
@@ -888,15 +888,6 @@ input[type="submit"] {
 }
 
 /* 見出し */
-.entry-content {
-  counter-reset: h2;
-}
-
-.entry-content h2 > span::before {
-  content: counter(h2, decimal) ". ";
-  counter-increment: h2;
-}
-
 .article h1,
 .article h2,
 .article h3 {

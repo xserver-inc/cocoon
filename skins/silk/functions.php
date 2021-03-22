@@ -1,11 +1,8 @@
 <?php
-
-namespace SKIN\SILK;
-
 /**
  * Cocoon設定のカスタマイズ
  */
-class Functions {
+class Skin_Silk_Functions {
 
   //インスタンス保持
   public static $instance = false;
@@ -170,6 +167,16 @@ class Functions {
       define('SILK_DARK', ['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.8)']);
     }
 
+    //ダークモード設定
+    if (!defined('SILK_SWITCH')) {
+      define('SILK_SWITCH', false);
+    }
+
+    //見出しナンバリング
+    if (!defined('SILK_COUNTER')) {
+      define('SILK_COUNTER', true);
+    }
+
     //カラー・スタイル関連のフック
     add_action('after_setup_theme', [$this, 'setup_skin']);
     add_filter('get_editor_key_color', [$this, 'editor_color']);
@@ -206,6 +213,11 @@ class Functions {
 
     //コードコピー
     add_action('get_template_part_tmp/footer-custom-field', [$this, 'clipboard_js']);
+
+    //ダークモード
+    add_filter('get_template_part_tmp/button-go-to-top', [$this, 'dark_mode']);
+    add_action('wp_enqueue_scripts', [$this, 'js_cookie']);
+    add_filter('body_class', [$this, 'cookie_class'], 20);
   }
 
   //インスタンス生成
@@ -434,6 +446,94 @@ class Functions {
       text-shadow: 1px 1px 2px '.$site_background.';
     }';
 
+    //スライドインサイドバー
+    echo '.sidebar-menu-content {
+      color: '.$site_color.';
+      background: '.$site_background.';
+    }';
+
+    //ダークモード設定
+    if (SILK_SWITCH) {
+      echo 'body,
+      .carousel .slick-arrow:before,
+      .rating-number,
+      ul.is-style-link li a::before,
+      ol.is-style-link li a::before,
+      hr.is-style-cut-line::after,
+      .iconlist-title,
+      .speech-balloon::after,
+      .sbp-r .speech-balloon::after,
+      .recent-comment-content::after,
+      .marker,
+      .marker-under,
+      .marker-red,
+      .marker-under-red,
+      .marker-blue,
+      .marker-under-blue,
+      .sidebar-menu-content {
+        transition: all 0.3s ease-out;
+      }
+
+      body.silk-darkmode {
+        color: '.$site_background.';
+      }
+
+      body.public-page.silk-darkmode {
+        background-color: '.$site_color.';
+      }
+
+      .silk-darkmode .carousel .slick-arrow:before,
+      .silk-darkmode .rating-number,
+      .silk-darkmode ul.is-style-link li a::before,
+      .silk-darkmode ol.is-style-link li a::before {
+        color: '.$site_background.';
+      }
+
+      .silk-darkmode hr.is-style-cut-line::after,
+      .silk-darkmode .iconlist-title {
+        background: '.$site_color.';
+      }
+      
+      .silk-darkmode .speech-balloon::after {
+        border-right-color: '.$site_color.';
+      }
+      
+      .silk-darkmode .sbp-r .speech-balloon::after {
+        border-left-color: '.$site_color.';
+      }
+
+      .silk-darkmode .recent-comment-content::after {
+        border-bottom-color: '.$site_color.';
+      }
+      
+      .silk-darkmode .marker,
+      .silk-darkmode .marker-under,
+      .silk-darkmode .marker-red,
+      .silk-darkmode .marker-under-red,
+      .silk-darkmode .marker-blue,
+      .silk-darkmode .marker-under-blue {
+        text-shadow: 1px 1px 2px '.$site_color.';
+      }
+
+      .silk-darkmode .sidebar-menu-content {
+        color: '.$site_background.';
+        background: '.$site_color.';
+      }
+      
+      .silk-darkmode-button {
+        position: fixed;
+        left: 10px;
+        bottom: 10px;
+        line-height: 1;
+        cursor: pointer;
+      }
+      
+      .silk-darkmode-button i {
+        display: block;
+        font-size: 2em;
+      }';
+    }
+
     //リンク色
     $link_color = get_site_link_color() ?: '#1967d2';
     echo 'a:hover,
@@ -464,12 +564,6 @@ class Functions {
     .menu-drawer a:hover {
       color: '.$menu_color.';
       background: '.$menu_background.';
-    }';
-
-    //スライドインサイドバー
-    echo '.sidebar-menu-content {
-      color: '.$site_color.';
-      background: '.$site_background.';
     }';
 
     //ボックスメニュー
@@ -518,12 +612,33 @@ class Functions {
       }';
     }
 
+    //見出しカウント
+    if (SILK_COUNTER) {
+      echo '.entry-content {
+        counter-reset: h2;
+      }
+      
+      .entry-content h2 > span::before {
+        content: counter(h2, decimal) ". ";
+        counter-increment: h2;
+      }';
+    }
+
     //コピーボタン
+    $group_margin = get_entry_content_margin_hight();
     if ($this->is_highlight()) {
       global $_MOBILE_COPY_BUTTON;
       $_MOBILE_COPY_BUTTON = true;
 
-      echo '.code-wrap {
+      echo '.article pre.wp-block-code {
+        margin-bottom: 0;
+      }
+
+      .article .code-wrap {
+        margin-bottom: '.$group_margin.'em;
+      }
+      
+      .code-wrap {
         position: relative;
       }
       
@@ -549,12 +664,12 @@ class Functions {
         outline: none;
         box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
         z-index: 2;
+        cursor: pointer;
       }';
     }
 
     //よくある質問
-    $group_margin = get_entry_content_margin_hight();
-    $faq_margin   = (string)((float)$group_margin - 0.5);
+    $faq_margin = (string)((float)$group_margin - 0.5);
     echo '.toggle-wrap.is-style-faq + .toggle-wrap.is-style-faq {
       margin-top: -'.$faq_margin.'em;
     }';
@@ -652,6 +767,42 @@ class Functions {
     }
   }
 
+  //ダークモード
+  public function dark_mode() {
+    if (SILK_SWITCH && !is_amp()) {
+      echo '<div class="silk-darkmode-button"><i class="fa fa-adjust" aria-hidden="true"></i></div>';
+    }
+  }
+
+  //Cookie
+  public function js_cookie() {
+    if (SILK_SWITCH && !is_amp()) {
+      wp_enqueue_script('js-cookie', '//cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js', [], false, true);
+
+      $data = '(function ($) {
+        $(".silk-darkmode-button").click(function (event) {
+          event.preventDefault();
+          $("body").toggleClass("silk-darkmode");
+
+          if (Cookies.get("silk-darkmode") === undefined) {
+            Cookies.set("silk-darkmode", 1);
+          } else {
+            Cookies.remove("silk-darkmode");
+          }
+        });
+      })(jQuery);';
+      wp_add_inline_script('js-cookie', minify_js($data));
+    }
+  }
+
+  //Cookie判定
+  public function cookie_class($classes) {
+    if (SILK_SWITCH && !is_amp() && array_key_exists('silk-darkmode', $_COOKIE)) {
+      $classes[] = 'silk-darkmode';
+    }
+    return $classes;
+  }
+
   //ヘッダーメニュー
   public function navi_header($output) {
     return str_replace(['fa-angle-down', 'fa-angle-right'], ['fa-caret-down', 'fa-caret-right'], $output);
@@ -729,14 +880,18 @@ class Functions {
 
   //ブロックパターン
   public function block_pattern() {
-    foreach (self::PATTERNS as $pattern) {
-      register_block_pattern(
-        'silk/'.$pattern,
-        require __DIR__.'/patterns/'.$pattern.'.php'
-      );
+    if (function_exists('register_block_pattern')) {
+      foreach (self::PATTERNS as $pattern) {
+        register_block_pattern(
+          'silk/'.$pattern,
+          require __DIR__.'/patterns/'.$pattern.'.php'
+        );
+      }
     }
 
-    register_block_pattern_category('silk', ['label' => 'Cocoonスキン「SILK」']);
+    if (function_exists('register_block_pattern_category')) {
+      register_block_pattern_category('silk', ['label' => 'Cocoonスキン「SILK」']);
+    }
   }
 
   //ブロックコンテンツ
@@ -951,8 +1106,8 @@ class Functions {
 
   //ハイライト表示
   private function is_highlight() {
-    return is_code_highlight_enable() && is_singular();
+    return is_code_highlight_enable() && is_singular() && !is_amp();
   }
 }
 
-Functions::instance();
+Skin_Silk_Functions::instance();
