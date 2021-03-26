@@ -118,13 +118,15 @@ registerBlockType( 'cocoon-blocks/blogcard', {
   },
 
   save( { attributes } ) {
-    const { content } = attributes;
+    let { content } = attributes;
+    // content = '\n' + content + '\n';
+    //console.log(content);
     return (
       <div className={attributes.style}>
-          {"\n"}<RichText.Content
-            value={ content.replace(/<\/p><p>/g, '</p>\n<p>')/*.replace(/<p> +/g, '<p>').replace(/ +<\/p>/g, '</p>')*/ }
+          <RichText.Content
+            value={ content.replace(/<\/p><p>/g, '</p>\n<p>').replace(/^<p>/g, '\n<p>').replace(/<\/p>$/g, '<\/p>\n') }
             multiline={"p"}
-          />{"\n"}
+          />
       </div>
     );
   }
