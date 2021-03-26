@@ -1288,3 +1288,9 @@ h3.wpforo-forum-title::before {
     display: none;
 }
 
+/* インフィード広告がエントリーカードとくっつく不具合修正 */
+.list aside {
+    background-color: transparent;
+    padding: 0;
+}
+
