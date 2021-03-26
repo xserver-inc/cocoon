@@ -310,7 +310,7 @@ add_filter('ranking_item_description', 'do_shortcode');
 add_filter('ranking_item_link_tag', 'do_shortcode');
 //キャンペーンショートコードでもショートコードを利用する
 add_filter('campaign_shortcode_content', 'do_shortcode');
-//アピールリアadd_filter('appeal_area_message', 'wptexturize');
+//アピールエリアadd_filter('appeal_area_message', 'wptexturize');
 add_filter('appeal_area_message', 'convert_smilies');
 add_filter('appeal_area_message', 'convert_chars');
 add_filter('appeal_area_message', 'wpautop');
