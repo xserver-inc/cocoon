@@ -328,7 +328,11 @@ add_filter('the_category_tag_content', 'shortcode_unautop');
 add_filter('the_category_tag_content', 'do_shortcode');
 add_filter('the_category_tag_content', 'prepend_attachment');
 add_filter('the_category_tag_content', 'wp_filter_content_tags');//WordPress5.5未満
-add_filter('the_category_tag_content', array($wp_embed, 'autoembed'), 8);//カテゴリー・タグページの本文で埋め込みを処理する
+//カテゴリー・タグページの本文で埋め込みを処理する
+if ($wp_embed) {
+  add_filter('the_category_tag_content', array($wp_embed, 'autoembed'), 8);
+}
+
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');
