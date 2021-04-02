@@ -25,15 +25,6 @@ a {
 a:hover {
     color: #ef97e8;
 }
-/* フォント */
-@font-face {
-     font-family: "WebLTGothicFont";
-     src: url('/wp-content/themes/luxech/webfonts/WebLTGothicFontt.woff2') format('woff2'),
-          url('/wp-content/themes/luxech/webfonts/WebLTGothicFont.woff') format('woff'),
-          url('/wp-content/themes/luxech/webfonts/WebLTGothicFont.ttf') format('truetype');
-}
-Header{font-family:"WebLTGothicFont";}
-Footer{font-family:"WebLTGothicFont";}
 
 /* ヘッダー背景 */
 #header{
@@ -48,9 +39,6 @@ Footer{font-family:"WebLTGothicFont";}
 }
 
 /* サイトタイトル */
-#head-in #sitename a {
-    font-family:"WebLTGothicFont";
-}
 .site-name-text{
 	font-size: 3rem;
 }
@@ -82,7 +70,6 @@ Footer{font-family:"WebLTGothicFont";}
 
 /* Navibar */
 #navi .navi-in a, #navi .navi-in a{
-	font-family: 'WebLTGothicFont';
   color: #09123a;
 }
 #navi .navi-in a, #navi .navi-in a:hover {
@@ -147,7 +134,6 @@ Footer{font-family:"WebLTGothicFont";}
 
 /* 記事タイトルフォント */
 .entry-card-title, .related-entry-card-title {
-    font-family:"WebLTGothicFont";
 	color: #ef97e8;
 }
 .entry-title, .archive-title{
@@ -156,7 +142,6 @@ Footer{font-family:"WebLTGothicFont";}
 /* 新着記事 */
 .list-title-in{
 	color: #ef97e8;
-	font-family: 'WebLTGothicFont';
 }
 .list-title-in:before, .list-title-in:after{
 	background-color: #ef97e8;
@@ -245,13 +230,6 @@ color: #ba91e2;
     border-color: #95e5e2;
 }
 
-/* Navigation */
-@media (min-width: 992px)
-#gnavi div>ul>li>a>span {
-     font-family:"WebLTGothicFont";
-}
-
-
 /* サイドバー */
 .sidebar h3, .sidebar h4 {
 	background: none;
@@ -260,7 +238,6 @@ color: #ba91e2;
 /* ウィジェットタイトルの編集*/
 .side-title{
 	color:#ef97e8;
-	font-family:WebLTGothicFont;
 	}
 /* 記事抜粋の文字色 */
 .a-wrap{
@@ -737,7 +714,6 @@ span.wpcf7-not-valid-tip,
 .toc-title{ /* タイトル */
   color: #ffb1d8; /* 文字色 */
 	font-size: 1.8em; /* 大きさ */
-	font-family: WebLTGothicFont; /* フォント */
 }
 .toc-title:before{ /* タイトル前のアイコン */
  font-family: "Font Awesome 5 Free";

@@ -22,15 +22,6 @@ a {
 a:hover {
     color: #ef97e8;
 }
-/* フォント */
-@font-face {
-     font-family: "WebLTGothicFont";
-     src: url('/wp-content/themes/luxech/webfonts/WebLTGothicFontt.woff2') format('woff2'),
-          url('/wp-content/themes/luxech/webfonts/WebLTGothicFont.woff') format('woff'),
-          url('/wp-content/themes/luxech/webfonts/WebLTGothicFont.ttf') format('truetype');
-}
-Header{font-family:"WebLTGothicFont";}
-Footer{font-family:"WebLTGothicFont";}
 
 /* ヘッダー背景 */
 #header {
@@ -45,9 +36,6 @@ Footer{font-family:"WebLTGothicFont";}
 }
 
 /* サイトタイトル */
-#head-in #sitename a {
-    font-family:"WebLTGothicFont";
-}
 .site-name-text{
 	font-size: 3rem;
 }
