@@ -627,6 +627,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-content { margin-top: 1em; margin-bottom: 3em; }
 .admin-settings .demo pre, .admin-settings .demo pre * { line-height: 1.6; word-wrap: normal; }
 .admin-settings .demo .entry-categories-tags > div { margin-bottom: 0.5em; }
+.admin-settings .demo .entry-categories-tags .tax-icon { margin-right: 0.4em; }
 .admin-settings .demo .ctdt-one-row > div { display: inline-block; }
 .admin-settings .demo .ctdt-category-only .entry-tags { display: none; }
 .admin-settings .demo .ctdt-tag-only .entry-categories { display: none; }
@@ -2227,6 +2228,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-content { margin-top: 1em; margin-bottom: 3em; }
 .admin-settings .demo pre, .admin-settings .demo pre * { line-height: 1.6; word-wrap: normal; }
 .admin-settings .demo .entry-categories-tags > div { margin-bottom: 0.5em; }
+.admin-settings .demo .entry-categories-tags .tax-icon { margin-right: 0.4em; }
 .admin-settings .demo .ctdt-one-row > div { display: inline-block; }
 .admin-settings .demo .ctdt-category-only .entry-tags { display: none; }
 .admin-settings .demo .ctdt-tag-only .entry-categories { display: none; }

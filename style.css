@@ -1443,6 +1443,9 @@ pre * {
 .entry-categories-tags > div {
   margin-bottom: 0.5em;
 }
+.entry-categories-tags .tax-icon {
+  margin-right: 0.4em;
+}
 
 .ctdt-one-row > div {
   display: inline-block;

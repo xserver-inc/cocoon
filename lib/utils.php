@@ -45,7 +45,7 @@ function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
     $style = null;
-    $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'><span class="fa fa-folder" aria-hidden="true"></span> '.$category->cat_name.'</a>';
+    $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'><span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>'.$category->cat_name.'</a>';
   }
   return $categories;
 }
@@ -112,7 +112,7 @@ function get_the_tag_links(){
   $posttags = get_the_tags();
   if ( $posttags ) {
     foreach(get_the_tags() as $tag){
-      $tags .= '<a class="tag-link tag-link-'.$tag->term_id.' border-element" href="'.get_tag_link( $tag->term_id ).'"><span class="fa fa-tag" aria-hidden="true"></span> '.$tag->name.'</a>';
+      $tags .= '<a class="tag-link tag-link-'.$tag->term_id.' border-element" href="'.get_tag_link( $tag->term_id ).'"><span class="fa fa-tag tag-icon tax-icon" aria-hidden="true"></span>'.$tag->name.'</a>';
     }
   }
   return $tags;
