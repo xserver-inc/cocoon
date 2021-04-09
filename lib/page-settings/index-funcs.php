@@ -292,6 +292,8 @@ function get_category_index_list_entry_card_tag($categories, $count){
   $args = array(
     'posts_per_page' => $count,
     'post__not_in' => get_sticky_post_ids(),
+    //アーカイブに表示しないページのID
+    'post__not_in' =>  get_archive_exclude_post_ids(),
   );
   if ($categories) {
     $args += array(

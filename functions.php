@@ -317,13 +317,25 @@ function wp_sitemaps_taxonomies_custum( $taxonomies ) {
 endif;
 
 //サイトマップにその他のアーカイブのnoindex設定を反映する
-add_filter('wp_sitemaps_add_provider', 'wp_sitemaps_add_provider_custom',  10, 2);
+add_filter('wp_sitemaps_add_provider', 'wp_sitemaps_add_provider_custom', 10, 2);
 if ( !function_exists( 'wp_sitemaps_add_provider_custom' ) ):
 function wp_sitemaps_add_provider_custom( $provider, $name ) {
-    if ( is_other_archive_page_noindex() && 'users' === $name ) {
-        return false;
-    }
+  if ( is_other_archive_page_noindex() && 'users' === $name ) {
+      return false;
+  }
 
-    return $provider;
+  return $provider;
+}
+endif;
+
+//ウィジェットの「最近の投稿」から「アーカイブ除外ページ」を削除
+add_filter('widget_posts_args', 'remove_no_archive_pages_from_widget_recent_entries');
+if ( !function_exists( 'remove_no_archive_pages_from_widget_recent_entries' ) ):
+function remove_no_archive_pages_from_widget_recent_entries($args){
+  $archive_exclude_post_ids = get_archive_exclude_post_ids();
+  if ($archive_exclude_post_ids) {
+    $args['post__not_in'] = $archive_exclude_post_ids;
+  }
+  return $args;
 }
 endif;

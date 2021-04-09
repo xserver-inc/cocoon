@@ -56,6 +56,8 @@ $list_classes = get_index_list_classes();
                 'order' => 'DESC',
                 //カテゴリーをIDで指定
                 'category' => $cat_id,
+                //アーカイブに表示しないページのID
+                'post__not_in' =>  get_archive_exclude_post_ids(),
             );
             $posts = get_posts( $arg );
             if( $posts ): ?>
