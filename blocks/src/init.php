@@ -74,7 +74,18 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 		'cocoon-blocks-js', // Handle.
 		get_template_directory_uri().'/blocks/dist/blocks.build.js',
 		//plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ) // Dependencies, defined above.
+		array(
+      'lodash',
+      'react',
+      'wp-block-editor',
+      'wp-components',
+      'wp-blocks',
+      'wp-compose',
+      'wp-element',
+      'wp-editor',
+      'wp-polyfill',
+      'wp-rich-text'
+    ) // Dependencies, defined above.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		// true // Enqueue the script in the footer.
   );
