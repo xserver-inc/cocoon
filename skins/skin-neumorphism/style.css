@@ -1,0 +1,482 @@
+/*
+  Skin Name: 凸凹
+  Description: 立体感のあるニューモフィズムデザインにするためのスキンです。※全体の色と角の丸みは外観⇒カスタマイズ⇒Neumorphismで変更できます。
+  Skin URI: https://kitatarian.com/cocoon/
+  Author: 北
+  Author URI: https://kitatarian.com/cocoonskin/
+  Screenshot URI: https://kitatarian.com/wp-content/uploads/2021/04/cocoon-neumorphism.png
+  Version: 1.1
+  Priority: 9720001000
+  Visibility: false
+*/
+/*以下にスタイルシートを記入してください*/
+
+/*------------------------色------------------------*/
+a,.a-wrap,blockquote::before, blockquote::after,.cta-box,.fb-like-message,.fb-like-sub-message,.search-submit,.fa-chevron-right:before,.fa-chevron-left:before,.carousel .slick-arrow:before,.search-form div.sbtn,.widget-entry-cards.large-thumb-on .card-content,.menu-drawer a{
+	color: var(--color-ki);
+}
+body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h3,.footer,.article h1,.article h2,.article h3, .article h4, .article h5, .article h6,.blogcard-wrap,.pagination-next-link, .comment-btn,.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"],input[type='submit'], textarea, select,.nwa .box-menu,.tagcloud a,.cta-box,.fb_iframe_widget,.fb_iframe_widget iframe,.fb-like-balloon-body,.fb-like-balloon-button,.recent-comment-content,#wp-calendar th,.wp-block-table.is-style-stripes td, .wp-block-table.is-style-stripes th,.toggle-button,.pager-links a span,.appeal-content,.carousel-in,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.go-to-top-button,.share-menu-content .sns-buttons,#wp-calendar #today,#wp-calendar #today a,.navi-in a:hover,.a-wrap:hover,.list-more-button:hover,.pagination-next-link:hover,.comment-btn:hover,.nwa .box-menu:hover,.widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.tagcloud a:hover,.recent-comment-content:hover,.toc a:hover,.search-form div.sbtn:hover,.pager-links a:hover span,.wp-block-search .wp-block-search__button:hover,input[type='submit']:hover,.comment-reply-link:hover,.pagination a:hover,.author-box .sns-follow-buttons a.follow-button:hover,.pager-links a:hover span,.search-form div.sbtn,.menu-drawer a:hover,.search-menu-content,table tr:nth-of-type(2n+1)
+{
+	background: var(--color-bg);
+}
+
+.wp-block-search .wp-block-search__button{
+	background: var(--color-bg)!important;
+}
+.menu-drawer .sub-menu a{
+	background: var(--color-shadow-light);
+}
+table th, table td,.wp-block-calendar tbody td, .wp-block-calendar th,.recent-comment-content,.fb-like-balloon-arrow-box{
+	border: 1px solid var(--color-shadow-light)!important;
+}
+/*------------------------凹------------------------*/
+img,.video-container,.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select,.wp-block-embed iframe,.toggle-wrap .toggle-content,.search-form div.sform,.wp-block-cocoon-blocks-icon-box,.wp-block-cocoon-blocks-info-box,.wp-block-cocoon-blocks-blank-box-1,.wp-block-cocoon-blocks-tab-box-1,.tab-caption-box-content,.caption-box-content,.label-box-content,blockquote,pre.wp-block-verse,.wp-block-table.is-style-stripes td, .wp-block-table.is-style-stripes th{
+	box-shadow: inset 3px 3px 6px var(--color-shadow-dark), inset -6px -6px 12px var(--color-shadow-light);
+}
+/*------------------------凸------------------------*/
+.a-wrap,.navi-in a,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons a,.ect-vertical-card .entry-card-wrap,.box-menu,.tagcloud a,.cta-box,.fb-like-box,.btn,.wp-block-cover-image.has-background-dim:not([class*=-background-color]), .wp-block-cover.has-background-dim:not([class*=-background-color]),.mejs-container .mejs-controls,.ranking-item-link-buttons a,.fb-like-balloon-arrow-box,.recent-comment-content,.calendar_wrap,.wp-block-audio audio,.toggle-button,.search-form div.sbtn,.wp-block-file__button,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-button,.appeal,.notice-area-wrap,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.header,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.wp-block-image,.go-to-top-button,.menu-drawer a,.toc a:hover,.menu-close-button .fa,.menu-button,.search-menu-content,.wp-block-code
+{
+	box-shadow: 6px 6px 12px var(--color-shadow-dark), -6px -6px 12px var(--color-shadow-light);
+}
+.wp-block-button__link{
+	box-shadow: 6px 6px 12px var(--color-shadow-dark), -6px -6px 12px var(--color-shadow-light)!important;
+}
+
+/*凸薄く*/
+.ranking-item,.entry-content .toc-center,.speech-balloon,.wp-block-cocoon-blocks-sticky-box,.micro-balloon,.blank-box.bb-tab .bb-label,.tab-caption-box-label,.caption-box-label,.appeal-content{
+	box-shadow: 2px 2px 5px var(--color-shadow-dark), -2px -2px 5px var(--color-shadow-light);
+}
+/*凸全般縁取り*/
+.sns-follow-buttons a, .sidebar .sns-follow-buttons a, .footer .sns-follow-buttons a, .sns-share-buttons a,.search-form div.sbtn,.mejs-container .mejs-controls,.wp-block-file__button,.appeal-button,.notice-area-wrap{
+	border: solid 3px var(--color-bg);
+}
+.btn,.ranking-item-link-buttons a,.wp-block-audio audio,.wp-block-cover,.appeal,.header{
+	border: solid 6px var(--color-bg);
+}
+.wp-block-code,.wp-block-button__link{
+	border: solid 6px var(--color-bg)!important;
+}
+
+/*凹全般縁取り*/
+.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.wp-block-image{
+	line-height:normal;
+	padding: 3px;
+}
+/*凹文字*/
+body,input,button,textarea{
+	text-shadow: 1px 1px 0 var(--color-shadow-light);
+}
+
+/*------------------------角丸------------------------*/
+pre, blockquote,img,.video,.mejs-container, .mejs-container *,.navi-in a,.a-wrap,.widget,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons a,.ect-vertical-card .entry-card-wrap,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.wp-block-image,.video-container,.navi-in>ul .sub-menu,.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a,.author-box .sns-follow-buttons a.follow-button,.tagcloud a,.sidebar .cta-box,.ranking-item,[type="text"]:not(.has-background):not(.has-background-dim), [type="tel"]:not(.has-background):not(.has-background-dim), [type="email"]:not(.has-background):not(.has-background-dim), [type="url"]:not(.has-background):not(.has-background-dim), [type="number"]:not(.has-background):not(.has-background-dim), [type="password"]:not(.has-background):not(.has-background-dim), [type="search"]:not(.has-background):not(.has-background-dim), [type="file"]:not(.has-background):not(.has-background-dim),.list-title-in:before, .list-title-in:after,.article h2:after,.article h2:before,.article h3:before,.article h3:after,.article h4:before,.article h4:after,.sidebar h3:after,.fb-like-box,.box-menu,.widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.toc a:hover,.calendar_wrap,.entry-content .toc-center,.wp-block-audio audio,.wp-block-embed iframe,.btn-l,.ranking-item-link-buttons a,.toggle-button,.search-form div.sform,.search-form div.sbtn,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-content,.appeal-button,.share-menu-content .sns-buttons,.go-to-top-button,.menu-drawer a,.menu-close-button .fa,.menu-button,.search-menu-content,.cat-label,.cat-link
+{
+	border-radius: var(--corner);
+}
+/*モバイルメニューとトグルボックス*/
+.mobile-header-menu-buttons,.toggle-checkbox:checked ~ .toggle-content {
+	border-radius: 0 0 var(--corner) var(--corner);
+}
+.mobile-footer-menu-buttons{
+	border-radius: var(--corner) var(--corner) 0 0;
+}
+/*------------------------インプット------------------------*/
+/*フォーカス*/
+:focus{
+	border: none;
+	outline: none;
+}
+/*-----------------------本文------------------------*/
+/*-----ブロックエディター用-----*/
+/*背景色*/
+.block-editor-writing-flow{
+	background-color: var(--color-bg);
+}
+
+/*ブロックエディター内見出し崩れ修正*/
+.article h2[role=group]:before{
+	top: 3.3em;
+}
+.article h3[role=group]:after{
+	content: '';
+    position: absolute;
+    top: .3em;
+    left: 0;
+    height: 100%;
+    width: 5px;
+}
+.article h3[role=group]:before{
+	content: '';
+    position: absolute;
+    height: 5px;
+    top: 2em;
+    left: -2%;
+    width: 80%;
+}
+.article h4[role=group]:after {
+    margin-left: auto;
+}
+/*-----見出し-----*/
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
+    position: relative;
+}
+.article h2:before,.article h2:after,.article h3:before,.article h3:after,.article h4:before,.article h4:after,.list-title-in:before, .list-title-in:after,.sidebar h3:after{
+	box-shadow: inset 1px 1px 2px var(--color-shadow-dark), inset -1px -1px 2px var(--color-shadow-light);
+}
+
+.article h2:before{
+    content: '';
+	position: absolute;
+    height: 5px;
+    top: 0.3em;
+    left: -2%;
+    width: 100%;
+}
+.article h2:after{
+    content: '';
+	position: absolute;
+    height: 5px;
+	bottom: 0.2em;
+    left: -2%;
+    width: 100%;
+}
+.article h3:before{
+	content: '';
+    position: absolute;
+    top: .3em;
+    left: 0;
+    height: 100%;
+    width: 5px;
+}
+.article h3:after{
+	content: '';
+    position: absolute;
+    height: 5px;
+    bottom: 0.2em;
+    left: -2%;
+    width: 80%;
+}
+.article h4:before {
+    content: '';
+    position: absolute;
+	height: 100%;
+    top: 0;
+    left: 0;
+    width: 5px;
+}
+
+.article h4:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 5px;
+    margin-left: 2%;
+}
+.article h4, .article h5, .article h6 {
+    padding-left: 2%;
+}
+
+.list-title-in:before, .list-title-in:after{
+	background: transparent;
+	height: 4px
+}
+
+.sidebar h3:after{
+	content: '';
+    display: block;
+    height: 5px;
+    bottom: .2em;
+    left: -2%;
+    width: 100%;
+}
+/*引用ブロックの「”」*/
+blockquote::before, blockquote::after{
+	text-shadow: -3px -3px 3px var(--color-shadow-light), 3px 3px 3px var(--color-shadow-dark);
+}
+/*区切り線*/
+hr{
+	border-width: 2px;
+}
+/*テーブル*/
+table th, table td {
+    box-shadow: 2px 2px 5px var(--color-shadow-dark), -2px -2px 5px var(--color-shadow-light);
+}
+/*カレンダー*/
+#wp-calendar #today,#wp-calendar #today a{
+	border: solid var(--color-ki);
+}
+
+#wp-calendar td a,#wp-calendar td a:hover{
+	background: var(--color-shadow-light);
+}
+.wp-calendar-nav-prev a{
+	padding: 0 15px 0 15px;
+}
+/*------------------------ウィジェット------------------------*/
+/*[C]プロフィール*/
+.author-box .sns-follow-buttons a.follow-button{
+	border-color: var(--color-bg);
+}
+/*[C]Facebookバルーン*/
+.fb-like-balloon-arrow-box:before{
+	border-right-color: var(--color-shadow-light);
+}
+.fb-like-balloon-arrow-box:after {
+	border-right-color: var(--color-bg);
+}
+/*[C]最近のコメント*/
+.recent-comment-content::before{
+	border-bottom-color: var(--color-shadow-light);
+}
+.recent-comment-content::after{
+	border-bottom-color: var(--color-bg);
+}
+
+/*------------------------SNSボタン------------------------*/
+.sns-share-buttons,.sns-buttons,.sidebar .sns-follow-buttons, .footer .sns-follow-buttons{
+	justify-content: center;
+}
+/*SNSシェア*/
+.sns-share-buttons a {
+    margin: 6px;
+	width: 4em!important;
+    height: 3em!important;
+	flex-direction: column;
+}
+.sns-share-buttons a .button-caption{
+	margin-left: 0px!important;
+	font-size: 0.5em!important;
+}
+/*SNSフォロー*/
+.sns-follow-buttons a,.sidebar .sns-follow-buttons a, .footer .sns-follow-buttons a{
+    width: 1.5em!important;
+    height: 1.5em!important;
+	margin-right: 10px;
+}
+/*------------------------余白等調整------------------------*/
+/*上ボタン*/
+.go-to-top-button{
+    width: 2.5em;
+    height: 2.5em;
+}
+/*インデックス*/
+.ect-vertical-card .entry-card-wrap{
+	width: 49%;
+}
+.ect-3-columns .entry-card-wrap{
+	width: 31%;
+}
+.widget-entry-cards .a-wrap{
+	margin: 4%;
+}
+/*アピールエリアとエントリーカード*/
+.appeal,.entry-card-title{
+	margin-top: 12px;
+}
+/*カルーセル*/
+.carousel .a-wrap {
+    padding: 0.6em 0.3em 0 0.3em;
+}
+/*画像、動画、figure*/
+img,.video-container,.main figure.wp-block-table{
+	padding: 8px;
+}
+.wp-block-embed iframe{
+	padding: 6px;
+}
+/*動画上部余白調整*/
+.video{
+	margin-top: 0px !important;
+}
+/*動画をカラム幅いっぱいに*/
+.video-container {
+	max-width: none;
+}
+.recent-comment-article {
+    margin-top: 10px;
+}
+/*ウィジェット*/
+.ranking-item, .timeline-box{
+	margin-bottom: 5%;
+}
+.nwa .box-menu {
+    width: 45%;
+	margin: 5px;
+}
+.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a {
+    padding-left: 5%;
+}
+.nwa .author-box .sns-follow-buttons a,.tagcloud a{
+	margin: 4px;
+}
+#gallery-1 .gallery-item{
+	width: 31%!important;
+    margin: 2px;
+}
+.ranking-item, .timeline-box{
+	padding: 4%;
+}
+.ranking-item-link-buttons a {
+    margin: 0px 5px 10px;
+}
+.toc a{
+	padding: 2px 8px;
+}
+.fb-like-mobile{
+	padding-top: 3px;
+}
+
+/*記事下一覧*/
+.rect-vertical-card .related-entry-card-wrap{
+	margin: 4px;
+}
+/*記事下一覧4カラム*/
+.rect-vertical-card-4 .related-entry-card-wrap{
+	width: 23.5%;
+}
+/*次記事前記事*/
+.pager-post-navi a{
+	margin-bottom: 12px;
+}
+/*サムネイル下*/
+.rect-vertical-card .related-entry-card-thumb,.sns-share-buttons, .sns-buttons{
+	margin-bottom: 8px;
+}
+/*ウィジェットとサムネその他*/
+.widget,.entry-card, .related-entry-card,.widget-entry-card{
+	padding: 10px;
+}
+/*縁取り下部分調整角丸調整*/
+.entry-content>.wp-block-image{
+	line-height:normal;
+}
+/*ページ送り部分*/
+.pagination-next-link, .comment-btn{
+	width: 40%;
+    margin: auto;
+}
+.pagination .current,.post-page-numbers .current{
+    background: var(--color-ki);
+}
+/*カットラベル*/
+.cat-label,.eye-catch .cat-label{
+	top: 1em;
+	left: 1.3em;
+}
+.cat-label{
+	border: solid var(--color-shadow-light);
+}
+/*カットリンク*/
+.cat-link{
+	color: var(--color-shadow-light);
+	background: var(--color-ki);
+}
+/*メニュー*/
+.navi-in > ul .sub-menu a{
+	margin: 12px 6px -12px 6px;
+}
+.header-container .navi-in ul li{
+	margin: 6px;
+}
+/*モバイルメニュー*/
+.logo-menu-button{
+	line-height: 1.5em;
+}
+.menu-drawer a{
+	margin-top: 1em;
+	padding-left: 1em;
+}
+.menu-close-button {
+    text-align: left;
+    padding-left: 0.5em;
+}
+#sidebar-menu-content .menu-close-button {
+	text-align: right;
+    padding-right: 0.5em;
+}
+.menu-close-button .fa {
+	padding: 2px 6px;
+    margin-top: 0.3em;
+}
+#navi-menu-input:checked ~ #navi-menu-close, #sidebar-menu-input:checked ~ #sidebar-menu-close, #search-menu-input:checked ~ #search-menu-close, #share-menu-input:checked ~ #share-menu-close, #follow-menu-input:checked ~ #follow-menu-close {
+    opacity: 0;
+}
+.menu-button{
+	margin: 0.6em 0.3em;
+}
+.search-menu-content{
+	padding: 0.7em 0.7em 0 0.7em;
+}
+/*------------------------ホバー時挙動------------------------*/
+/*ホバー前*/
+.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a {
+    transition: all .3s ease-in-out;
+}
+/*サムネイル画像*/
+/*ホバー前*/
+.card-thumb{
+	overflow: hidden;
+}
+.card-thumb img{
+  	transform: scale(1);
+ 	transition: .3s ease-in-out;
+}
+/*ホバー後*/
+.a-wrap:hover .card-thumb img,.card-thumb:hover img{
+	transform: scale(0.95);
+}
+
+/*ホバー後*/
+/*凸薄く*/
+.a-wrap:hover,.navi-in a:hover,.list-more-button:hover,.pagination-next-link:hover,.comment-btn:hover,.nwa .box-menu:hover,.widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.tagcloud a:hover,.recent-comment-content:hover,.toc a:hover,.search-form div.sbtn:hover,.pager-links a:hover span,.wp-block-search .wp-block-search__button:hover,input[type='submit']:hover,.comment-reply-link:hover,.go-to-top-button:hover{
+    transition: all .3s ease-in-out;
+	box-shadow: 2px 2px 5px var(--color-shadow-dark),-2px -2px 5px var(--color-shadow-light);
+}
+/*平面に*/
+
+.sns-follow-buttons a:hover,.sns-share-buttons a:hover,.pagination a:hover,.btn:hover,.ranking-item-link-buttons a:hover,.wp-block-button__link:hover,.wp-block-file .wp-block-file__button:hover,.appeal-button:hover,.menu-drawer a:hover{
+	transition: all .3s ease-in-out;
+	box-shadow: none;
+	opacity: 0.5;
+}
+.menu-button:hover{
+	transition: all .3s ease-in-out;
+	box-shadow: none;
+}
+.wp-block-button__link:hover{
+	box-shadow: none!important;
+}
+
+/*目次*/
+.search-form div.sbtn:hover {
+    border-color: var(--color-bg);
+}
+
+#wp-calendar td a:hover {
+    opacity: 0.5;
+}
+/*------------------------打消しシリーズ------------------------*/
+/*背景色透明*/
+pre,blockquote,.recommended.rcs-center-white-title .card-content,.fb-like-box,.search-form div.sform,table th{
+	background: transparent;
+}
+/*はみ出し許可*/
+.widget-entry-cards.large-thumb-on .a-wrap, .recent-comments .a-wrap{
+    overflow: visible;
+}
+/*角丸打消し*/
+.wp-block-cover img.wp-block-cover__image-background,.logo-header img{
+    border-radius: 0;
+}
+/*影打消し*/
+.logo-header img,.carousel .a-wrap,#search-2,.widget-entry-cards.large-thumb-on .a-wrap, .recent-comments .a-wrap,.header-container-in.hlt-top-menu .header,.logo-menu-button{
+    box-shadow: none;
+}
+/*ボーダー打消し*/
+pre,blockquote,.entry-content .toc-center,.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select,.article h2, .article h3, .article h4, .article h5, .article h6,.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn,.index-tab-buttons .index-tab-button, .border-square a, .author-box,.tagcloud a,.list-more-button,.ranking-item, .timeline-box,.toggle-button,.toggle-checkbox:checked ~ .toggle-content,.search-form div.sform,.wp-block-cocoon-blocks-icon-box,.attachment-thumbnail,.comment-reply-link{
+    border: none!important;
+}
+/*凹文字打消し*/
+.mejs-container, .mejs-container *,.admin-panel a,.cat-label,.cat-link,.appeal-content .appeal-button,.sns-share-buttons a,.sns-follow-buttons a,.cta-button,.ranking-item-link-buttons a,.search-form div.sbtn,.btn,.wp-block-button__link,.blank-box.bb-tab .bb-label,.micro-balloon,.pagination .current,.post-page-numbers .current,.video-title-text,.wp-block-file__button,.notice-area,.article pre{
+	text-shadow: none;
+}

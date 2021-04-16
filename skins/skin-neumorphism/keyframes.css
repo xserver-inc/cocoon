@@ -1,0 +1,16 @@
+/*アニメーションの@keyframes用のCSSコードを書く（ここに書くとAMP用で約500KBまで記入できます）*/
+body {
+	animation: load 1s ease-in-out;
+}
+@keyframes load {
+    from  {opacity: 0;}
+    100%  {opacity: 1;}
+}
+.effect {
+ 	animation: Effect 1.5s;
+}
+@keyframes Effect {
+	from{box-shadow: none;
+		transform: scale(0.95);
+	}
+}
