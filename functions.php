@@ -339,7 +339,3 @@ function remove_no_archive_pages_from_widget_recent_entries($args){
   return $args;
 }
 endif;
-
-add_action('init', function () {
-  register_block_style('cocoon-blocks/icon-box', ['name' => 'text', 'label' => 'テキスト']);
-});
