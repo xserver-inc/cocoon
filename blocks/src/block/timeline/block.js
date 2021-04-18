@@ -51,7 +51,7 @@ import { times } from 'lodash';
 
 //this.activateMode is not a function対策
 //https://wpdevelopment.courses/how-to-fix-activatemode-is-not-a-function-error-in-gutenberg/
-window.lodash = _.noConflict();
+// window.lodash = _.noConflict();
 
 const ALLOWED_BLOCKS = [ 'cocoon-blocks/timeline-item' ];
 
