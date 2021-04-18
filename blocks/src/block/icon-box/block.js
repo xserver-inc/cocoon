@@ -10,11 +10,18 @@ import { deprecated } from './deprecated';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
-const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, RichText, InspectorControls, useBlockProps } = wp.blockEditor;
-const { PanelBody, SelectControl, BaseControl } = wp.components;
-const { Fragment } = wp.element;
+// const { __ } = wp.i18n;
+// const { registerBlockType, createBlock } = wp.blocks;
+// const { InnerBlocks, RichText, InspectorControls, useBlockProps } = wp.blockEditor;
+// const { PanelBody, SelectControl, BaseControl } = wp.components;
+// const { Fragment } = wp.element;
+
+import { __ } from '@wordpress/i18n';
+import { registerBlockType, createBlock } from '@wordpress/blocks';
+import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+
 
 //classの取得
 function getClasses(style) {
