@@ -6,7 +6,7 @@
  */
 
 import {THEME_NAME, CLICK_POINT_MSG, BLOCK_CLASS} from '../../helpers';
-import { deprecated } from './deprecated';
+// import { deprecated } from './deprecated';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
@@ -170,5 +170,5 @@ registerBlockType( 'cocoon-blocks/icon-box', {
     );
   },
 
-  deprecated: deprecated,
+  // deprecated: deprecated,
 });

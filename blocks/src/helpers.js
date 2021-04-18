@@ -7,23 +7,45 @@
 
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
-const {
+// const { __ } = wp.i18n;
+// const {
+//   Fill,
+//   ToolbarButton,
+//   withFallbackStyles,
+// } = wp.components;
+// const {
+//   getColorObjectByColorValue,
+//   getColorObjectByAttributeValues,
+//   getColorClassName
+// } = wp.editor;
+// const {
+//   displayShortcut
+// } = wp.keycodes;
+// const {
+//   find
+// } = lodash;
+// const {
+//   getComputedStyle
+// } = window;
+
+
+import { __ } from '@wordpress/i18n';
+import {
   Fill,
   ToolbarButton,
   withFallbackStyles,
-} = wp.components;
-const {
+} from '@wordpress/components';
+import {
   getColorObjectByColorValue,
   getColorObjectByAttributeValues,
   getColorClassName
-} = wp.editor;
-const {
+} from '@wordpress/block-editor';
+import {
   displayShortcut
-} = wp.keycodes;
-const {
-  find
-} = lodash;
+} from '@wordpress/keycodes';
+// import {
+//   find
+// } from 'lodash';
 const {
   getComputedStyle
 } = window;
