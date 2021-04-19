@@ -6,9 +6,7 @@
  */
 
 //ブロック
-
-import './block/test-box/block.js';
-// import './block/icon-box/block.js';
+import './block/icon-box/block.js';
 // import './block/info-box/block.js';
 // import './block/blank-box/block.js';
 // import './block/sticky-box/block.js';

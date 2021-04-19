@@ -267,5 +267,4 @@ endif;
 //プレビュー動作テストコードの追加
 add_action('init', function () {
   register_block_style('cocoon-blocks/icon-box', ['name' => 'text', 'label' => 'テキスト']);
-  register_block_style('cocoon-blocks/test-box', ['name' => 'text', 'label' => 'テキスト']);
 });
