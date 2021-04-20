@@ -6,22 +6,13 @@
  */
 
 import {THEME_NAME, CLICK_POINT_MSG, BLOCK_CLASS} from '../../helpers';
-import { deprecated } from './deprecated';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
-// const { __ } = wp.i18n;
-// const { registerBlockType, createBlock } = wp.blocks;
-// const { InnerBlocks, RichText, InspectorControls, useBlockProps } = wp.blockEditor;
-// const { PanelBody, SelectControl, BaseControl } = wp.components;
-// const { Fragment } = wp.element;
-
-import { __ } from '@wordpress/i18n';
-import { registerBlockType, createBlock } from '@wordpress/blocks';
-import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { PanelBody, SelectControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
-
+const { __ } = wp.i18n;
+const { registerBlockType, createBlock } = wp.blocks;
+const { InnerBlocks, RichText, InspectorControls } = wp.editor;
+const { PanelBody, SelectControl, BaseControl } = wp.components;
+const { Fragment } = wp.element;
 
 //classの取得
 function getClasses(style) {
@@ -35,15 +26,7 @@ function getClasses(style) {
   return classes;
 }
 
-registerBlockType( 'cocoon-blocks/icon-box', {
-
-  apiVersion: 2,
-  title: __( 'アイコンボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'exclamation-circle']} />,
-  category: THEME_NAME + '-block',
-  description: __( 'アイコンを用いて直感的にメッセージ内容を伝えるためのボックスです。', THEME_NAME ),
-  keywords: [ 'icon', 'box' ],
-
+export const deprecated = [{
   attributes: {
     content: {
       type: 'string',
@@ -89,10 +72,6 @@ registerBlockType( 'cocoon-blocks/icon-box', {
 
   edit( { attributes, setAttributes, className } ) {
     const { content, style } = attributes;
-    const classes = classnames(getClasses(style), className);
-    const blockProps = useBlockProps({
-      className: classes,
-    });
 
     return (
       <Fragment>
@@ -150,7 +129,7 @@ registerBlockType( 'cocoon-blocks/icon-box', {
           </PanelBody>
         </InspectorControls>
 
-        <div { ...blockProps }>
+        <div className={ classnames(getClasses(style), className) }>
           <InnerBlocks />
         </div>
       </Fragment>
@@ -159,18 +138,10 @@ registerBlockType( 'cocoon-blocks/icon-box', {
 
   save( { attributes } ) {
     const { content, style } = attributes;
-    const classes = getClasses(style);
-    const blockProps = useBlockProps.save({
-      className: classes,
-    });
     return (
-      <div { ...blockProps }>
+      <div className={ getClasses(style) }>
         <InnerBlocks.Content />
       </div>
     );
   },
-
-  deprecated: deprecated,
-
-  example: {},
-});
+}];

@@ -4,9 +4,56 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+ import {
+	registerBlockType,
+	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
+} from '@wordpress/blocks';
+import compareVersions from 'compare-versions';
+const cocoonBlocksPro = [];
+
+//構造化したブロック
+import * as iconBox from './block/icon-box';
+
+const cocoonBlocks = [
+	iconBox,
+];
+
+
+export const __getCocoonBlocks = () => cocoonBlocks.concat(cocoonBlocksPro);
+
+const registerBlock = (block) => {
+	if (!block) {
+		return;
+	}
+
+	let { metadata, settings, name } = block;
+
+	// //WP5.5未満の場合
+	// if (compareVersions(window.wpVersion, '5.5') < 0) {
+	// 	//nameを削除
+	// 	delete metadata.name;
+	// 	//カテゴリ等を追加
+	// 	settings = {
+	// 		...settings,
+	// 		...metadata,
+	// 	};
+	// } else if (metadata) {
+	// 	unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
+	// }
+	registerBlockType(name, settings);
+};
+
+export const registerCocoonBlocks = (blocks = __getCocoonBlocks()) => {
+	blocks.forEach(registerBlock);
+};
+
+registerCocoonBlocks();
+
+
+
 
 //ブロック
-import './block/icon-box/block.js';
+// import './block/icon-box';
 import './block/info-box/block.js';
 import './block/blank-box/block.js';
 import './block/sticky-box/block.js';

@@ -38,7 +38,10 @@ function cocoon_blocks_cgb_block_assets() { // phpcs:ignore
 		'cocoon_blocks-cgb-style-css', // Handle.
 		get_template_directory_uri().'/blocks/dist/blocks.style.build.css',
 		//plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-editor' ) // Dependency to include the CSS after it.
+		array(
+      'wp-block-editor',
+      'wp-editor',
+    ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
 
@@ -268,3 +271,6 @@ endif;
 add_action('init', function () {
   register_block_style('cocoon-blocks/icon-box', ['name' => 'text', 'label' => 'テキスト']);
 });
+
+//ブロックの読み込み
+require_once abspath(__FILE__).'block/icon-box/index.php';
