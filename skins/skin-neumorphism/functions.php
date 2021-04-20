@@ -27,7 +27,7 @@ array(
 //全体色と角丸のデフォルト値設定
 const S_DEFAULT = array(
         'default'       => array(
-                'bg'                  => '#e0e0e0',
+                'bg'                  => '#d8eeff',
                 'corner'                  => '15',
         ),
 );
@@ -97,7 +97,7 @@ $wp_customize->add_control(
 	$wp_customize->add_setting(
 		'color_bg',
 		array(
-			'default'           => '#e0e0e0', // デフォルト値を設定
+			'default'           => '#d8eeff', // デフォルト値を設定
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		)
