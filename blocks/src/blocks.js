@@ -28,17 +28,21 @@ const registerBlock = (block) => {
 
 	let { metadata, settings, name } = block;
 
-	//WP5.5未満の場合
-	// if (compareVersions(window.wpVersion, '5.5') < 0) {
-	// 	//nameを削除
-	// 	delete metadata.name;
-	// 	//カテゴリ等を追加
-	// 	settings = {
-	// 		...settings,
-	// 		...metadata,
-	// 	};
-	// } else
-  if (metadata) {
+	// WP5.5未満の場合
+  let wpVersion = 0;
+  if (gbSettings['wpVersion']) {
+    wpVersion = gbSettings['wpVersion'];
+    // console.log(wpVersion);
+  }
+	if (compareVersions(wpVersion, '5.5') < 0) {
+		//nameを削除
+	 	delete metadata.name;
+	 	//カテゴリ等を追加
+	 	settings = {
+	 		...settings,
+	 		...metadata,
+	 	};
+	 } else if (metadata) {
 		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata });
 	}
 	registerBlockType(name, settings);

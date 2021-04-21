@@ -101,6 +101,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   $is_templates_visible = (has_valid_shortcode_item($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
   $is_affiliates_visible = (has_valid_shortcode_item($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
   $is_rankings_visible = (has_valid_shortcode_item($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
+  global $wp_version;
   $gutenberg_settings = array(
     'isRubyVisible' => is_block_editor_ruby_button_visible() ? 1 : 0,
     'isLetterVisible' => is_block_editor_letter_style_dropdown_visible() ? 1 : 0,
@@ -116,6 +117,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'siteIconFont' => ' '.get_site_icon_font_class(),
     'pageTypeClass' => get_editor_page_type_class(),
     'isDebugMode' => DEBUG_MODE,
+    'wpVersion' => $wp_version,
   );
 
 
