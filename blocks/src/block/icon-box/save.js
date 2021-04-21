@@ -3,7 +3,6 @@ import classnames from 'classnames';
 
 export default function save({ attributes }) {
   const { style } = attributes;
-  // const classes = getClasses(style);
   const classes = classnames('common-icon-box', 'block-box',
     {
       [ style ]: !! style,
