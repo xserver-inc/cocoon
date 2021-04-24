@@ -1,0 +1,47 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/iconlist-box",
+  "category": "cocoon-block",
+  "keywords": [ "icon", "list", "box" ],
+
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "icon": {
+      "type": "string",
+      "default": "list-caret-right"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "customBackgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "customTextColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "customIconColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    },
+    "customFontSize": {
+      "type": "string"
+    }
+  }
+}
