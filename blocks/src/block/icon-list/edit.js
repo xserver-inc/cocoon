@@ -166,5 +166,5 @@ export function IconListEdit( props ) {
 export default compose([
   withColors('backgroundColor', {textColor: 'color', borderColor: 'border-color', iconColor: 'icon-color'}),
   withFontSizes('fontSize'),
-  FallbackStyles,
+  // FallbackStyles,
 ])(IconListEdit);
