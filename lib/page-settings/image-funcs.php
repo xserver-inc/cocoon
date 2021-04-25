@@ -273,16 +273,6 @@ function get_no_image_150x150_file(){
   return url_to_local(get_no_image_150x150_url());
 }
 endif;
-if ( !function_exists( 'get_no_image_large_url' ) ):
-function get_no_image_large_url(){
-  if (($no_image_url = get_no_image_url()) && file_exists(get_no_image_file())) {
-    $res = $no_image_url ;
-  } else {
-    $res = NO_IMAGE_LARGE;
-  }
-  return $res;
-}
-endif;
 
 //オリジナルサムネイルタグの取得
 if ( !function_exists( 'get_original_image_tag' ) ):
