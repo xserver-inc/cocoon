@@ -75,7 +75,7 @@ export function IconListEdit( props ) {
 
   const classes = classnames(className, {
     'iconlist-box': true,
-    'blank-box': false,
+    'blank-box': true,
     [ icon ]: !! icon,
     'block-box': true,
     'has-text-color': textColor.color,
