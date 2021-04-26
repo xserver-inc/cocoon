@@ -128,6 +128,16 @@ export function IconListEdit( props ) {
               onChange: setBorderColor,
               value: borderColor.color,
             },
+            {
+              label: __( '背景色', THEME_NAME ),
+              onChange: setBackgroundColor,
+              value: backgroundColor.color,
+            },
+            {
+              label: __( '文字色', THEME_NAME ),
+              onChange: setTextColor,
+              value: textColor.color,
+            },
           ]}
         />
       </InspectorControls>

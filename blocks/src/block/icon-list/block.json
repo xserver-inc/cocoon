@@ -34,9 +34,5 @@
     "fontSize": {
       "type": "string"
     }
-  },
-  "supports": {
-    "color": true,
-    "fontSize": true
   }
 }
