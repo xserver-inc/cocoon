@@ -14,10 +14,12 @@ const cocoonBlocksPro = [];
 //構造化したブロック
 import * as iconBox from './block/icon-box';
 import * as iconList from './block/icon-list';
+import * as infoBox from './block/info-box';
 
 const cocoonBlocks = [
   iconBox,
   iconList,
+  infoBox,
 ];
 
 
@@ -61,7 +63,7 @@ registerCocoonBlocks();
 
 //ブロック
 // import './block/icon-box';
-import './block/info-box/block.js';
+//import './block/info-box/block.js';
 import './block/blank-box/block.js';
 import './block/sticky-box/block.js';
 import './block/tab-box/block.js';

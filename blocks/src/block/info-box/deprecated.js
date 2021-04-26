@@ -6,13 +6,12 @@
  */
 
 import {THEME_NAME, CLICK_POINT_MSG, BLOCK_CLASS} from '../../helpers';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 const { __ } = wp.i18n;
-const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl, BaseControl } = wp.components;
+const { createBlock } = wp.blocks;
+const { InnerBlocks, InspectorControls } = wp.editor;
+const { PanelBody, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 
 //classの取得
@@ -26,14 +25,7 @@ function getClasses(style) {
   return classes;
 }
 
-registerBlockType( 'cocoon-blocks/info-box', {
-
-  title: __( '案内ボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'info-circle']} />,
-  category: THEME_NAME + '-block',
-  description: __( 'ボックスの背景色により、直感的にメッセージ内容を伝えるためのボックスです。', THEME_NAME ),
-  keywords: [ 'info', 'box' ],
-
+export default [{
   attributes: {
     content: {
       type: 'string',
@@ -142,5 +134,5 @@ registerBlockType( 'cocoon-blocks/info-box', {
         <InnerBlocks.Content />
       </div>
     );
-  }
-} );
+  },
+}];
