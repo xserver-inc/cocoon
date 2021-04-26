@@ -16,13 +16,7 @@
     "backgroundColor": {
       "type": "string"
     },
-    "customBackgroundColor": {
-      "type": "string"
-    },
     "textColor": {
-      "type": "string"
-    },
-    "customTextColor": {
       "type": "string"
     },
     "borderColor": {
@@ -38,9 +32,6 @@
       "type": "string"
     },
     "fontSize": {
-      "type": "string"
-    },
-    "customFontSize": {
       "type": "string"
     }
   }

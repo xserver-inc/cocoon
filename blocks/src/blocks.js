@@ -77,7 +77,6 @@ import './block/timeline/block.js';
 
 //デフォルトブロックの拡張
 import './custom/code/block.js';
-//import './block/code-box/block.js';
 // import './block/hoc-color-palette-demo/block.js';
 
 //汎用ブロック
