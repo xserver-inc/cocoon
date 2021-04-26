@@ -275,6 +275,7 @@ add_action('init', function () {
 });
 
 //ブロックの読み込み
+require_once abspath(__FILE__).'block/blank-box/index.php';
 require_once abspath(__FILE__).'block/icon-box/index.php';
 require_once abspath(__FILE__).'block/icon-list/index.php';
 require_once abspath(__FILE__).'block/info-box/index.php';
