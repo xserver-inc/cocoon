@@ -30,7 +30,6 @@ const FallbackStyles = withFallbackStyles((node, ownProps) => {
     borderColor,
     iconColor,
     fontSize,
-    customFontSize,
   } = ownProps.attributes;
   const editableNode = node.querySelector('[contenteditable="true"]');
   //verify if editableNode is available, before using getComputedStyle.
@@ -40,7 +39,7 @@ const FallbackStyles = withFallbackStyles((node, ownProps) => {
     fallbackTextColor: textColor || !computedStyles ? undefined : computedStyles.color,
     fallbackBorderColor: borderColor || !computedStyles ? undefined : computedStyles.color,
     fallbackIconColor: iconColor || !computedStyles ? undefined : computedStyles.color,
-    fallbackFontSize: fontSize || customFontSize || !computedStyles ? undefined : parseInt( computedStyles.fontSize ) || undefined,
+    fallbackFontSize: fontSize || !computedStyles ? undefined : parseInt( computedStyles.fontSize ) || undefined,
   }
 });
 
@@ -75,7 +74,7 @@ export function IconListEdit( props ) {
 
   const classes = classnames(className, {
     'iconlist-box': true,
-    'blank-box': false,
+    'blank-box': true,
     [ icon ]: !! icon,
     'block-box': true,
     'has-text-color': textColor.color,
@@ -128,16 +127,6 @@ export function IconListEdit( props ) {
               label: __( 'ボーダー色', THEME_NAME ),
               onChange: setBorderColor,
               value: borderColor.color,
-            },
-            {
-              label: __( '背景色', THEME_NAME ),
-              onChange: setBackgroundColor,
-              value: backgroundColor.color,
-            },
-            {
-              label: __( '文字色', THEME_NAME ),
-              onChange: setTextColor,
-              value: textColor.color,
             },
           ]}
         />
