@@ -16,12 +16,14 @@ import * as blankBox from './block/blank-box';
 import * as iconBox from './block/icon-box';
 import * as iconList from './block/icon-list';
 import * as infoBox from './block/info-box';
+import * as stickyBox from './block/sticky-box';
 
 const cocoonBlocks = [
   blankBox,
   iconBox,
   iconList,
   infoBox,
+  stickyBox,
 ];
 
 
@@ -67,7 +69,7 @@ registerCocoonBlocks();
 // import './block/icon-box';
 //import './block/info-box/block.js';
 //import './block/blank-box/block.js';
-import './block/sticky-box/block.js';
+//import './block/sticky-box/block.js';
 import './block/tab-box/block.js';
 import './block/balloon/block.js';
 //import './block/balloon-ex/block.js';

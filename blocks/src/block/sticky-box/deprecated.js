@@ -5,14 +5,13 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, CLICK_POINT_MSG, BLOCK_CLASS} from '../../helpers';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {THEME_NAME, CLICK_POINT_MSG} from '../../helpers';
 import classnames from 'classnames';
 
 const { __ } = wp.i18n;
-const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl, BaseControl } = wp.components;
+const { createBlock } = wp.blocks;
+const { InnerBlocks, InspectorControls } = wp.editor;
+const { PanelBody, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 
 //classの取得
@@ -28,14 +27,7 @@ function getClasses(style) {
   return classes;
 }
 
-registerBlockType( 'cocoon-blocks/sticky-box', {
-
-  title: __( '付箋風ボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['far', 'sticky-note']} />,
-  category: THEME_NAME + '-block',
-  description: __( '目立つ濃いめの色で付箋風にメッセージを伝えるためのボックスです。', THEME_NAME ),
-  keywords: [ 'sticky', 'box' ],
-
+export default [{
   attributes: {
     content: {
       type: 'string',
@@ -133,4 +125,4 @@ registerBlockType( 'cocoon-blocks/sticky-box', {
       </div>
     );
   }
-} );
+}];
