@@ -280,3 +280,4 @@ require_once abspath(__FILE__).'block/icon-box/index.php';
 require_once abspath(__FILE__).'block/icon-list/index.php';
 require_once abspath(__FILE__).'block/info-box/index.php';
 require_once abspath(__FILE__).'block/sticky-box/index.php';
+require_once abspath(__FILE__).'block/tab-box/index.php';
