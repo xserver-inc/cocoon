@@ -6431,16 +6431,12 @@ div.speech-balloon p {
   border-bottom: 12px solid transparent;
 }
 
-.sbp-l {
-  margin-right: 100px;
-}
 .sbp-l .speech-balloon {
   margin-left: 20px;
 }
 
 .sbp-r {
   flex-direction: row-reverse;
-  margin-left: 100px;
   /* アイコンを右に表示 */
 }
 .sbp-r .speech-balloon {
@@ -6503,9 +6499,6 @@ div.speech-balloon p {
   border-left-color: #85e249;
 }
 
-div.sbs-think.sbp-l {
-  margin-right: 126px;
-}
 div.sbs-think.sbp-l .speech-balloon {
   margin-left: 46px;
 }
@@ -6526,9 +6519,6 @@ div.sbs-think .speech-balloon::after {
   height: 10px;
 }
 
-.sbs-think.sbp-r {
-  margin-left: 126px;
-}
 .sbs-think.sbp-r .speech-balloon {
   margin-right: 46px;
 }
