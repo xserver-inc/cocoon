@@ -6,21 +6,18 @@
  */
 
 import {THEME_NAME, CLICK_POINT_MSG, BLOCK_CLASS} from '../../helpers';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 const { __ } = wp.i18n;
-const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl, BaseControl } = wp.components;
+const { createBlock } = wp.blocks;
+const { InnerBlocks, InspectorControls } = wp.editor;
+const { PanelBody, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 
 //classの取得
 function getClasses(style) {
   const classes = classnames(
     {
-      [ 'blank-box' ]: true,
-      [ 'sticky' ]: true,
       [ style ]: !! style,
       [ 'block-box' ]: true,
     }
@@ -28,14 +25,7 @@ function getClasses(style) {
   return classes;
 }
 
-registerBlockType( 'cocoon-blocks/sticky-box', {
-
-  title: __( '付箋風ボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['far', 'sticky-note']} />,
-  category: THEME_NAME + '-block',
-  description: __( '目立つ濃いめの色で付箋風にメッセージを伝えるためのボックスです。', THEME_NAME ),
-  keywords: [ 'sticky', 'box' ],
-
+export default [{
   attributes: {
     content: {
       type: 'string',
@@ -43,23 +33,23 @@ registerBlockType( 'cocoon-blocks/sticky-box', {
     },
     style: {
       type: 'string',
-      default: '',
+      default: 'primary-box',
     },
   },
   transforms: {
     to: [
       {
         type: 'block',
-        blocks: [ 'cocoon-blocks/blank-box-1' ],
+        blocks: [ 'cocoon-blocks/sticky-box' ],
         transform: ( attributes, innerBlocks ) => {
-          return createBlock( 'cocoon-blocks/blank-box-1', {}, innerBlocks );
+          return createBlock( 'cocoon-blocks/sticky-box', {}, innerBlocks );
         },
       },
       {
         type: 'block',
-        blocks: [ 'cocoon-blocks/tab-box-1' ],
+        blocks: [ 'cocoon-blocks/blank-box-1' ],
         transform: ( attributes, innerBlocks ) => {
-          return createBlock( 'cocoon-blocks/tab-box-1', {}, innerBlocks );
+          return createBlock( 'cocoon-blocks/blank-box-1', {}, innerBlocks );
         },
       },
       {
@@ -71,9 +61,9 @@ registerBlockType( 'cocoon-blocks/sticky-box', {
       },
       {
         type: 'block',
-        blocks: [ 'cocoon-blocks/info-box' ],
+        blocks: [ 'cocoon-blocks/tab-box-1' ],
         transform: ( attributes, innerBlocks ) => {
-          return createBlock( 'cocoon-blocks/info-box', {}, innerBlocks );
+          return createBlock( 'cocoon-blocks/tab-box-1', {}, innerBlocks );
         },
       },
     ],
@@ -93,24 +83,36 @@ registerBlockType( 'cocoon-blocks/sticky-box', {
               onChange={ ( value ) => setAttributes( { style: value } ) }
               options={ [
                 {
-                  value: '',
-                  label: __( '灰色', THEME_NAME ),
+                  value: 'primary-box',
+                  label: __( 'プライマリー（濃い水色）', THEME_NAME ),
                 },
                 {
-                  value: 'st-yellow',
-                  label: __( '黄色', THEME_NAME ),
+                  value: 'secondary-box',
+                  label: __( 'セカンダリー（濃い灰色）', THEME_NAME ),
                 },
                 {
-                  value: 'st-red',
-                  label: __( '赤色', THEME_NAME ),
+                  value: 'info-box',
+                  label: __( 'インフォ（薄い青）', THEME_NAME ),
                 },
                 {
-                  value: 'st-blue',
-                  label: __( '青色', THEME_NAME ),
+                  value: 'success-box',
+                  label: __( 'サクセス（薄い緑）', THEME_NAME ),
                 },
                 {
-                  value: 'st-green',
-                  label: __( '緑色', THEME_NAME ),
+                  value: 'warning-box',
+                  label: __( 'ワーニング（薄い黄色）', THEME_NAME ),
+                },
+                {
+                  value: 'danger-box',
+                  label: __( 'デンジャー（薄い赤色）', THEME_NAME ),
+                },
+                {
+                  value: 'light-box',
+                  label: __( 'ライト（白色）', THEME_NAME ),
+                },
+                {
+                  value: 'dark-box',
+                  label: __( 'ダーク（暗い灰色）', THEME_NAME ),
                 },
               ] }
             />
@@ -132,5 +134,5 @@ registerBlockType( 'cocoon-blocks/sticky-box', {
         <InnerBlocks.Content />
       </div>
     );
-  }
-} );
+  },
+}];
