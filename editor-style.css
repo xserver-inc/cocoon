@@ -18,7 +18,8 @@ body#tinymce.wp-editor::before {
 
 .column-2,
 .column-3 {
-  margin: 16px 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 /* .column-2::before,
@@ -39,6 +40,22 @@ html[lang="en"] .column-2::before,
 html[lang="en"] .column-3::before{
   content: "* Coloring is Editor Only.";
 } */
+.column-left,
+.column-center,
+.column-right {
+  min-height: 60px;
+}
+.column-left .block-editor-inner-blocks,
+.column-center .block-editor-inner-blocks,
+.column-right .block-editor-inner-blocks {
+  min-height: 60px;
+}
+.column-left .block-editor-inner-blocks .block-editor-block-list__layout,
+.column-center .block-editor-inner-blocks .block-editor-block-list__layout,
+.column-right .block-editor-inner-blocks .block-editor-block-list__layout {
+  min-height: 60px;
+}
+
 .column-left {
   background-color: #c7e1ef;
 }

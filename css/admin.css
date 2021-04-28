@@ -1376,7 +1376,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (min-width: 600px) and (max-width: 781px) { .admin-settings .demo .article .wp-block-columns :nth-child(odd):nth-last-child(2) { margin-bottom: 0; } }
 @media screen and (min-width: 600px) { .admin-settings .demo .column-wrap > * { margin-bottom: 0 !important; } }
 .admin-settings .demo .body .wp-block-gallery .blocks-gallery-item { margin-bottom: 1em; }
-.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
 .admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
@@ -2977,7 +2977,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (min-width: 600px) and (max-width: 781px) { .admin-settings .demo .article .wp-block-columns :nth-child(odd):nth-last-child(2) { margin-bottom: 0; } }
 @media screen and (min-width: 600px) { .admin-settings .demo .column-wrap > * { margin-bottom: 0 !important; } }
 .admin-settings .demo .body .wp-block-gallery .blocks-gallery-item { margin-bottom: 1em; }
-.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
 .admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }

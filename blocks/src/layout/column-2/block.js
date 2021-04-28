@@ -9,11 +9,11 @@ import {THEME_NAME, LAYOUT_BLOCK_CLASS} from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InnerBlocks, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl } = wp.components;
-const { Fragment } = wp.element;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
 
 const ALLOWED_BLOCKS = [ 'cocoon-blocks/column-left', 'cocoon-blocks/column-right' ];
 
@@ -32,6 +32,8 @@ function getClasses(ratio) {
 
 registerBlockType( 'cocoon-blocks/column-2', {
 
+  apiVersion: 2,
+  name: 'cocoon-blocks/column-2',
   title: __( '2カラム', THEME_NAME ),
   icon: <FontAwesomeIcon icon="columns" />,
   category: THEME_NAME + '-layout',
@@ -47,6 +49,16 @@ registerBlockType( 'cocoon-blocks/column-2', {
 
   edit( { attributes, setAttributes, className } ) {
     const { ratio } = attributes;
+
+    const classes = classnames('column-wrap', 'column-2', 'layout-box',
+      {
+        [ ratio ]: !! ratio,
+        [ className ]: !! className,
+      }
+    );
+    const blockProps = useBlockProps({
+      className: classes,
+    });
     return (
       <Fragment>
         <InspectorControls>
@@ -82,7 +94,7 @@ registerBlockType( 'cocoon-blocks/column-2', {
 
           </PanelBody>
         </InspectorControls>
-        <div className={ classnames(getClasses(ratio), className) }>
+        <div { ...blockProps}>
           <InnerBlocks
           template={[
               [ 'cocoon-blocks/column-left', { placeholder: __( '左側に入力する内容', THEME_NAME ) } ],
@@ -98,8 +110,16 @@ registerBlockType( 'cocoon-blocks/column-2', {
 
   save( { attributes } ) {
     const { ratio } = attributes;
+    const classes = classnames('column-wrap', 'column-2', 'layout-box',
+      {
+        [ ratio ]: !! ratio,
+      }
+    );
+    const blockProps = useBlockProps.save({
+      className: classes,
+    });
     return (
-      <div className={ getClasses(ratio) }>
+      <div  className={getClasses(ratio)}>
         <InnerBlocks.Content />
       </div>
     );
