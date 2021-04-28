@@ -8,11 +8,10 @@
 import {THEME_NAME, LAYOUT_BLOCK_CLASS} from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-import { __ } from '@wordpress/i18n';
-import { registerBlockType } from '@wordpress/blocks';
-import { InnerBlocks } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
+const { __ } = wp.i18n;
+const { registerBlockType } = wp.blocks;
+const { InnerBlocks } = wp.editor;
+const { Fragment } = wp.element;
 
 //左カラム
 registerBlockType( 'cocoon-blocks/column-left', {
@@ -86,7 +85,6 @@ registerBlockType( 'cocoon-blocks/column-center', {
 //右カラム
 registerBlockType( 'cocoon-blocks/column-right', {
 
-  apiVersion: 2,
   title: __( '右カラム', THEME_NAME ),
   parent: [
     'cocoon-blocks/column-2',

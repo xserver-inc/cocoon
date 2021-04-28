@@ -6,11 +6,13 @@
  */
 
 import {THEME_NAME, LAYOUT_BLOCK_CLASS} from '../../helpers';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks, InspectorControls } = wp.editor;
+const { PanelBody, SelectControl, Path, SVG } = wp.components;
 const { Fragment } = wp.element;
 
 const ALLOWED_BLOCKS = [ 'cocoon-blocks/column-left', 'cocoon-blocks/column-center', 'cocoon-blocks/column-right' ];
@@ -29,7 +31,6 @@ function getClasses() {
 
 registerBlockType( 'cocoon-blocks/column-3', {
 
-  apiVersion: 2,
   title: __( '3カラム', THEME_NAME ),
   icon: <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path fill="none" d="M0 0h24v24H0V0z"></path><g><path d="M21 4H3L2 5v14l1 1h18l1-1V5l-1-1zM8 18H4V6h4v12zm6 0h-4V6h4v12zm6 0h-4V6h4v12z"></path></g></svg>,
   category: THEME_NAME + '-layout',
