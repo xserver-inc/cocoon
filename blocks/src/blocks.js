@@ -13,6 +13,7 @@ const cocoonBlocksPro = [];
 
 //構造化したブロック
 import * as blankBox from './block/blank-box';
+import * as blogCard from './block/blogcard';
 import * as iconBox from './block/icon-box';
 import * as iconList from './block/icon-list';
 import * as infoBox from './block/info-box';
@@ -21,6 +22,7 @@ import * as tabBox from './block/tab-box';
 
 const cocoonBlocks = [
   blankBox,
+  blogCard,
   iconBox,
   iconList,
   infoBox,
@@ -75,7 +77,7 @@ registerCocoonBlocks();
 //import './block/tab-box/block.js';
 import './block/balloon/block.js';
 //import './block/balloon-ex/block.js';
-import './block/blogcard/block.js';
+//import './block/blogcard/block.js';
 import './block/button/block.js';
 import './block/button-wrap/block.js';
 import './block/toggle-box/block.js';
