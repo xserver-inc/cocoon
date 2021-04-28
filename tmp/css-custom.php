@@ -606,9 +606,7 @@ $entry_content_margin_hight = get_entry_content_margin_hight();
 if (!$entry_content_margin_hight) {
   $entry_content_margin_hight = OP_ENTRY_CONTENT_MARGIN_HIGHT_DEFAULT;
 } ?>
-/*
 .entry-content > *,
-*/
 .article p,
 .demo .entry-content p,
 .article dl,
@@ -678,6 +676,7 @@ if (!$entry_content_margin_hight) {
 .body .wp-block-table,
 .body .scrollable-table,
 .body .wp-block-separator,
+.is-root-container > *,
 [data-type="core/freeform"] {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
