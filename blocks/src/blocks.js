@@ -20,6 +20,7 @@ import * as iconList from './block/icon-list';
 import * as infoBox from './block/info-box';
 import * as stickyBox from './block/sticky-box';
 import * as tabBox from './block/tab-box';
+import * as faq from './block/faq';
 
 const cocoonBlocks = [
   balloon,
@@ -30,6 +31,7 @@ const cocoonBlocks = [
   infoBox,
   stickyBox,
   tabBox,
+  faq,
 ];
 
 

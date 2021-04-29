@@ -5716,7 +5716,56 @@ figcaption {
   }
 }
 .body .wp-block-gallery .blocks-gallery-item {
-  margin-bottom: 1em;
+  margin-bottom: 0.6em;
+}
+
+.faq-wrap {
+  border-color: transparent;
+}
+
+.faq {
+  line-height: 24px;
+}
+
+.faq-item {
+  display: flex;
+}
+
+.faq-item-label {
+  font-size: 24px;
+  margin-right: 0.6em;
+}
+
+.is-style-square .faq-item-label {
+  font-size: 20px;
+  padding: 5px 8px;
+  height: 100%;
+}
+
+.faq-item-content {
+  flex: 1 1 auto;
+  width: calc(60%);
+}
+
+.faq-question {
+  margin-bottom: 1.8em;
+  align-items: center;
+}
+
+.faq-question-label {
+  color: #b7282e;
+}
+
+.faq-question-content {
+  font-weight: 700;
+}
+
+.faq .faq-answer {
+  margin-left: 0;
+}
+
+.faq-answer-label {
+  color: #007bbb;
 }
 
 .column-wrap {
@@ -6431,12 +6480,16 @@ div.speech-balloon p {
   border-bottom: 12px solid transparent;
 }
 
+.sbp-l {
+  margin-right: 100px;
+}
 .sbp-l .speech-balloon {
   margin-left: 20px;
 }
 
 .sbp-r {
   flex-direction: row-reverse;
+  margin-left: 100px;
   /* アイコンを右に表示 */
 }
 .sbp-r .speech-balloon {
@@ -6499,6 +6552,9 @@ div.speech-balloon p {
   border-left-color: #85e249;
 }
 
+div.sbs-think.sbp-l {
+  margin-right: 126px;
+}
 div.sbs-think.sbp-l .speech-balloon {
   margin-left: 46px;
 }
@@ -6519,6 +6575,9 @@ div.sbs-think .speech-balloon::after {
   height: 10px;
 }
 
+.sbs-think.sbp-r {
+  margin-left: 126px;
+}
 .sbs-think.sbp-r .speech-balloon {
   margin-right: 46px;
 }
