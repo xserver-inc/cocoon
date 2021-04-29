@@ -20,6 +20,7 @@ import * as buttonWrap from './block/button-wrap';
 import * as iconBox from './block/icon-box';
 import * as iconList from './block/icon-list';
 import * as infoBox from './block/info-box';
+import * as searchBox from './block/search-box';
 import * as stickyBox from './block/sticky-box';
 import * as tabBox from './block/tab-box';
 
@@ -32,6 +33,7 @@ const cocoonBlocks = [
   iconBox,
   iconList,
   infoBox,
+  searchBox,
   stickyBox,
   tabBox,
 ];
@@ -87,7 +89,7 @@ registerCocoonBlocks();
 //import './block/button/block.js';
 //import './block/button-wrap/block.js';
 import './block/toggle-box/block.js';
-import './block/search-box/block.js';
+//import './block/search-box/block.js';
 import './block/timeline/block.js';
 //import './block/icon-list/block.js';
 

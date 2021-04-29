@@ -3962,7 +3962,6 @@ label.screen-reader-text {
 * 続きはWEBで的な検索ボックス
 ********************************/
 div.search-form {
-  margin: 3em 0;
   display: flex;
   max-width: 420px;
 }
