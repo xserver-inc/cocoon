@@ -15,6 +15,7 @@ const cocoonBlocksPro = [];
 import * as balloon from './block/balloon';
 import * as blankBox from './block/blank-box';
 import * as blogCard from './block/blogcard';
+import * as button from './block/button';
 import * as iconBox from './block/icon-box';
 import * as iconList from './block/icon-list';
 import * as infoBox from './block/info-box';
@@ -25,6 +26,7 @@ const cocoonBlocks = [
   balloon,
   blankBox,
   blogCard,
+  button,
   iconBox,
   iconList,
   infoBox,
@@ -80,7 +82,7 @@ registerCocoonBlocks();
 //import './block/balloon/block.js';
 //import './block/balloon-ex/block.js';
 //import './block/blogcard/block.js';
-import './block/button/block.js';
+//import './block/button/block.js';
 import './block/button-wrap/block.js';
 import './block/toggle-box/block.js';
 import './block/search-box/block.js';
