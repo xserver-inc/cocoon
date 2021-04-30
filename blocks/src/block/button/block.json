@@ -7,7 +7,7 @@
   "attributes": {
     "content": {
       "type": "string",
-      "default": "Button"
+      "default": "ボタン"
     },
     "url": {
       "type": "string",
