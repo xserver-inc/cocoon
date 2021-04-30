@@ -286,3 +286,4 @@ require_once abspath(__FILE__).'block/info-box/index.php';
 require_once abspath(__FILE__).'block/search-box/index.php';
 require_once abspath(__FILE__).'block/sticky-box/index.php';
 require_once abspath(__FILE__).'block/tab-box/index.php';
+require_once abspath(__FILE__).'block/toggle-box/index.php';
