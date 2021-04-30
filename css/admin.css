@@ -1513,9 +1513,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo div.speech-balloon p { margin: 0; }
 .admin-settings .demo .speech-balloon::before { content: ''; position: absolute; display: block; width: 0; height: 0; left: -12px; top: 10px; border-right: 12px solid #ccc; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .speech-balloon::after { content: ''; position: absolute; display: block; width: 0; height: 0; left: -9px; top: 10px; border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
-.admin-settings .demo .sbp-l { margin-right: 100px; }
 .admin-settings .demo .sbp-l .speech-balloon { margin-left: 20px; }
-.admin-settings .demo .sbp-r { flex-direction: row-reverse; margin-left: 100px; /* アイコンを右に表示 */ }
+.admin-settings .demo .sbp-r { flex-direction: row-reverse; /* アイコンを右に表示 */ }
 .admin-settings .demo .sbp-r .speech-balloon { margin-right: 20px; }
 .admin-settings .demo .sbp-r .speech-balloon::before { right: -12px; left: auto; border-left: 12px solid #ccc; border-right: none; }
 .admin-settings .demo .sbp-r .speech-balloon::after { right: -9px; left: auto; border-left: 12px solid #fff; border-right: none; }
@@ -1529,11 +1528,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbs-line.sbp-r .speech-balloon { background-color: #85e249; border-color: #85e249; }
 .admin-settings .demo .sbs-line.sbp-r .speech-balloon::after { left: auto; right: -10px; }
 .admin-settings .demo .sbs-line.sbp-r .speech-balloon::before, .admin-settings .demo .sbs-line.sbp-r .speech-balloon::after { border-right-color: #85e249; border-left-color: #85e249; }
-.admin-settings .demo div.sbs-think.sbp-l { margin-right: 126px; }
 .admin-settings .demo div.sbs-think.sbp-l .speech-balloon { margin-left: 46px; }
 .admin-settings .demo div.sbs-think .speech-balloon::before { border: 2px solid #ccc; border-radius: 50%; left: -29px; top: 11px; width: 20px; height: 20px; }
 .admin-settings .demo div.sbs-think .speech-balloon::after { border: 2px solid #ccc; border-radius: 50%; left: -44px; top: 25px; width: 10px; height: 10px; }
-.admin-settings .demo .sbs-think.sbp-r { margin-left: 126px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon { margin-right: 46px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::before { left: auto; right: -29px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::after { left: auto; right: -44px; }
@@ -3114,9 +3111,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo div.speech-balloon p { margin: 0; }
 .admin-settings .demo .speech-balloon::before { content: ''; position: absolute; display: block; width: 0; height: 0; left: -12px; top: 10px; border-right: 12px solid #ccc; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .speech-balloon::after { content: ''; position: absolute; display: block; width: 0; height: 0; left: -9px; top: 10px; border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
-.admin-settings .demo .sbp-l { margin-right: 100px; }
 .admin-settings .demo .sbp-l .speech-balloon { margin-left: 20px; }
-.admin-settings .demo .sbp-r { flex-direction: row-reverse; margin-left: 100px; /* アイコンを右に表示 */ }
+.admin-settings .demo .sbp-r { flex-direction: row-reverse; /* アイコンを右に表示 */ }
 .admin-settings .demo .sbp-r .speech-balloon { margin-right: 20px; }
 .admin-settings .demo .sbp-r .speech-balloon::before { right: -12px; left: auto; border-left: 12px solid #ccc; border-right: none; }
 .admin-settings .demo .sbp-r .speech-balloon::after { right: -9px; left: auto; border-left: 12px solid #fff; border-right: none; }
@@ -3130,11 +3126,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbs-line.sbp-r .speech-balloon { background-color: #85e249; border-color: #85e249; }
 .admin-settings .demo .sbs-line.sbp-r .speech-balloon::after { left: auto; right: -10px; }
 .admin-settings .demo .sbs-line.sbp-r .speech-balloon::before, .admin-settings .demo .sbs-line.sbp-r .speech-balloon::after { border-right-color: #85e249; border-left-color: #85e249; }
-.admin-settings .demo div.sbs-think.sbp-l { margin-right: 126px; }
 .admin-settings .demo div.sbs-think.sbp-l .speech-balloon { margin-left: 46px; }
 .admin-settings .demo div.sbs-think .speech-balloon::before { border: 2px solid #ccc; border-radius: 50%; left: -29px; top: 11px; width: 20px; height: 20px; }
 .admin-settings .demo div.sbs-think .speech-balloon::after { border: 2px solid #ccc; border-radius: 50%; left: -44px; top: 25px; width: 10px; height: 10px; }
-.admin-settings .demo .sbs-think.sbp-r { margin-left: 126px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon { margin-right: 46px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::before { left: auto; right: -29px; }
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::after { left: auto; right: -44px; }
