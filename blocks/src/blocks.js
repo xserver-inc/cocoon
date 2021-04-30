@@ -23,6 +23,8 @@ import * as infoBox from './block/info-box';
 import * as searchBox from './block/search-box';
 import * as stickyBox from './block/sticky-box';
 import * as tabBox from './block/tab-box';
+import * as timeline from './block/timeline';
+import * as timelineItem from './block/timeline-item';
 import * as toggleBox from './block/toggle-box';
 
 const cocoonBlocks = [
@@ -37,6 +39,8 @@ const cocoonBlocks = [
   searchBox,
   stickyBox,
   tabBox,
+  timeline,
+  timelineItem,
   toggleBox,
 ];
 
@@ -92,7 +96,7 @@ registerCocoonBlocks();
 //import './block/button-wrap/block.js';
 //import './block/toggle-box/block.js';
 //import './block/search-box/block.js';
-import './block/timeline/block.js';
+//import './block/timeline/block.js';
 //import './block/icon-list/block.js';
 
 //デフォルトブロックの拡張
