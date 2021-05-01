@@ -597,7 +597,7 @@ img[width="1"]{
 		margin: 1.6em 1em;
 	}
 	.sns-share-buttons a{
-		width: calc(100% / 3 - 12px);
+		width: calc(100% / 3 - 12px)!important;
 	}
 }
 @media screen and (max-width: 599px){
