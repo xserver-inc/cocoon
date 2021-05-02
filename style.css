@@ -1484,9 +1484,8 @@ pre * {
 .tag-link, .comment-reply-link {
   color: #333;
   text-decoration: none;
-  display: inline-block;
   margin-right: 5px;
-  padding: 1px 5px;
+  padding: 5px 8px;
   font-size: 12px;
   border: 1px solid #999;
   border-radius: 2px;

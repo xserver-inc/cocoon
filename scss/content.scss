@@ -88,9 +88,9 @@ pre *{
 /*本文下タグ*/
 .tag-link{
   @include link_cancel;
-  display: inline-block;
+  // display: inline-block;
   margin-right: 5px;
-  padding: 1px 5px;
+  padding: 5px 8px;
   font-size: 12px;
   border: 1px solid $x_pallid_text_color;
   border-radius: $badge_border_radius;
