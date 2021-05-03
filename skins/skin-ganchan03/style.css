@@ -77,9 +77,10 @@ main.main, div.sidebar {
     font-size: 20px;
     color:#fff;
     padding:  10px 16px;
-	margin:10px 16px;
-	border:none;
-	border-radius:4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border:none;
+    border-radius:4px;
     background: #594321;
 }
 

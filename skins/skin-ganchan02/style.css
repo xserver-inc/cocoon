@@ -80,7 +80,8 @@ main.main, div.sidebar {
 .article h3 {
     font-size: 20px;
     padding:  10px 16px;
-	 margin:10px 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: solid 3px #BBDAD9;
     background: #fffdf6;
 }
