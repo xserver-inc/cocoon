@@ -283,5 +283,13 @@ require_once abspath(__FILE__).'block/button-wrap/index.php';
 require_once abspath(__FILE__).'block/icon-box/index.php';
 require_once abspath(__FILE__).'block/icon-list/index.php';
 require_once abspath(__FILE__).'block/info-box/index.php';
+require_once abspath(__FILE__).'block/search-box/index.php';
 require_once abspath(__FILE__).'block/sticky-box/index.php';
 require_once abspath(__FILE__).'block/tab-box/index.php';
+require_once abspath(__FILE__).'block/timeline/index.php';
+require_once abspath(__FILE__).'block/timeline-item/index.php';
+require_once abspath(__FILE__).'block/toggle-box/index.php';
+
+require_once abspath(__FILE__).'block-universal/caption-box/index.php';
+require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';
+require_once abspath(__FILE__).'block-universal/label-box/index.php';

@@ -20,8 +20,16 @@ import * as buttonWrap from './block/button-wrap';
 import * as iconBox from './block/icon-box';
 import * as iconList from './block/icon-list';
 import * as infoBox from './block/info-box';
+import * as searchBox from './block/search-box';
 import * as stickyBox from './block/sticky-box';
 import * as tabBox from './block/tab-box';
+import * as timeline from './block/timeline';
+import * as timelineItem from './block/timeline-item';
+import * as toggleBox from './block/toggle-box';
+
+import * as captionBox from './block-universal/caption-box';
+import * as labelBox from './block-universal/label-box';
+import * as tabCaptionBox from './block-universal/tab-caption-box';
 
 const cocoonBlocks = [
   balloon,
@@ -32,8 +40,16 @@ const cocoonBlocks = [
   iconBox,
   iconList,
   infoBox,
+  searchBox,
   stickyBox,
   tabBox,
+  timeline,
+  timelineItem,
+  toggleBox,
+
+  captionBox,
+  labelBox,
+  tabCaptionBox,
 ];
 
 
@@ -86,9 +102,9 @@ registerCocoonBlocks();
 //import './block/blogcard/block.js';
 //import './block/button/block.js';
 //import './block/button-wrap/block.js';
-import './block/toggle-box/block.js';
-import './block/search-box/block.js';
-import './block/timeline/block.js';
+//import './block/toggle-box/block.js';
+//import './block/search-box/block.js';
+//import './block/timeline/block.js';
 //import './block/icon-list/block.js';
 
 //デフォルトブロックの拡張
@@ -96,9 +112,9 @@ import './custom/code/block.js';
 // import './block/hoc-color-palette-demo/block.js';
 
 //汎用ブロック
-import './block-universal/caption-box/block.js';
-import './block-universal/tab-caption-box/block.js';
-import './block-universal/label-box/block.js';
+//import './block-universal/caption-box/block.js';
+//import './block-universal/tab-caption-box/block.js';
+//import './block-universal/label-box/block.js';
 
 //マイクロコピー
 import './micro/micro-text/block.js';
