@@ -7,7 +7,7 @@
   "attributes": {
     "content": {
       "type": "string",
-      "default": "Keyword"
+      "default": "キーワード"
     }
   }
 }
