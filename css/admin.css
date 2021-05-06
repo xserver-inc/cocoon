@@ -977,7 +977,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-bad .bb-label::after { content: "BAD"; }
 .admin-settings .demo .bb-profile .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-profile .bb-label::after { content: "PROFILE"; }
-.admin-settings .demo div.search-form { margin: 3em 0; display: flex; max-width: 420px; }
+.admin-settings .demo div.search-form { margin: 3em auto; display: flex; max-width: 420px; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; }
 .admin-settings .demo .search-form div.sform { background-color: #fff; width: 100%; }
 .admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; text-align: center; width: 140px; position: relative; }
@@ -2575,7 +2575,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-bad .bb-label::after { content: "BAD"; }
 .admin-settings .demo .bb-profile .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-profile .bb-label::after { content: "PROFILE"; }
-.admin-settings .demo div.search-form { margin: 3em 0; display: flex; max-width: 420px; }
+.admin-settings .demo div.search-form { margin: 3em auto; display: flex; max-width: 420px; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; }
 .admin-settings .demo .search-form div.sform { background-color: #fff; width: 100%; }
 .admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; text-align: center; width: 140px; position: relative; }
@@ -4381,7 +4381,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bb-bad .bb-label::after { content: "BAD"; }
 .components-popover__content .bb-profile .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-profile .bb-label::after { content: "PROFILE"; }
-.components-popover__content div.search-form { margin: 3em 0; display: flex; max-width: 420px; }
+.components-popover__content div.search-form { margin: 3em auto; display: flex; max-width: 420px; }
 .components-popover__content .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; }
 .components-popover__content .search-form div.sform { background-color: #fff; width: 100%; }
 .components-popover__content .search-form div.sbtn { background-color: #1155EE; color: #fff; text-align: center; width: 140px; position: relative; }
