@@ -292,3 +292,4 @@ require_once abspath(__FILE__).'block/toggle-box/index.php';
 
 require_once abspath(__FILE__).'block-universal/caption-box/index.php';
 require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';
+require_once abspath(__FILE__).'block-universal/label-box/index.php';

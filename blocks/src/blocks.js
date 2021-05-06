@@ -28,6 +28,7 @@ import * as timelineItem from './block/timeline-item';
 import * as toggleBox from './block/toggle-box';
 
 import * as captionBox from './block-universal/caption-box';
+import * as labelBox from './block-universal/label-box';
 import * as tabCaptionBox from './block-universal/tab-caption-box';
 
 const cocoonBlocks = [
@@ -47,6 +48,7 @@ const cocoonBlocks = [
   toggleBox,
 
   captionBox,
+  labelBox,
   tabCaptionBox,
 ];
 
@@ -112,7 +114,7 @@ import './custom/code/block.js';
 //汎用ブロック
 //import './block-universal/caption-box/block.js';
 //import './block-universal/tab-caption-box/block.js';
-import './block-universal/label-box/block.js';
+//import './block-universal/label-box/block.js';
 
 //マイクロコピー
 import './micro/micro-text/block.js';
