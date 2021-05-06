@@ -26,6 +26,7 @@ import * as tabBox from './block/tab-box';
 import * as timeline from './block/timeline';
 import * as timelineItem from './block/timeline-item';
 import * as toggleBox from './block/toggle-box';
+import * as captionBox from './block-universal/caption-box';
 
 const cocoonBlocks = [
   balloon,
@@ -42,6 +43,7 @@ const cocoonBlocks = [
   timeline,
   timelineItem,
   toggleBox,
+  captionBox,
 ];
 
 
@@ -104,7 +106,7 @@ import './custom/code/block.js';
 // import './block/hoc-color-palette-demo/block.js';
 
 //汎用ブロック
-import './block-universal/caption-box/block.js';
+//import './block-universal/caption-box/block.js';
 import './block-universal/tab-caption-box/block.js';
 import './block-universal/label-box/block.js';
 
