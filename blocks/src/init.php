@@ -294,4 +294,5 @@ require_once abspath(__FILE__).'block-universal/caption-box/index.php';
 require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';
 require_once abspath(__FILE__).'block-universal/label-box/index.php';
 
+require_once abspath(__FILE__).'micro/micro-balloon/index.php';
 require_once abspath(__FILE__).'micro/micro-text/index.php';

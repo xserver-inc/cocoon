@@ -31,6 +31,7 @@ import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
 import * as tabCaptionBox from './block-universal/tab-caption-box';
 
+import * as microBalloon from './micro/micro-balloon';
 import * as microText from './micro/micro-text';
 
 const cocoonBlocks = [
@@ -53,6 +54,7 @@ const cocoonBlocks = [
   labelBox,
   tabCaptionBox,
 
+  microBalloon,
   microText,
 ];
 
@@ -122,7 +124,7 @@ import './custom/code/block.js';
 
 //マイクロコピー
 //import './micro/micro-text/block.js';
-import './micro/micro-balloon/block.js';
+//import './micro/micro-balloon/block.js';
 
 //レイアウト
 import './layout/column-children/block.js';
