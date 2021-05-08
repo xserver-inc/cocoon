@@ -1,0 +1,42 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/micro-text",
+  "category": "cocoon-micro",
+  "keywords": [ "micro", "copy", "text" ],
+
+  "attributes": {
+    "content": {
+      "type": "string",
+      "default": "マイクロコピーテキスト"
+    },
+    "type": {
+      "type": "string",
+      "default": "micro-top"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "align": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "align": [ "left", "center", "right" ],
+    "customClassName": true
+  }
+}
