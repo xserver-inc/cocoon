@@ -10903,19 +10903,19 @@ pre {
   padding: 10px;
 }
 
-.is-code-row-number-enable pre,
-.is-code-row-number-enable pre * {
+.is-code-row-number-enable pre.hljs,
+.is-code-row-number-enable pre.hljs * {
   line-height: 1.6 !important;
 }
 
-.is-code-row-number-enable pre,
-.is-code-row-number-enable pre#highlight-demo {
+.is-code-row-number-enable pre.hljs,
+.is-code-row-number-enable pre.hljs#highlight-demo {
   border: none;
   position: relative;
   padding: 0.4em 1em 0.4em 3em;
 }
 
-.is-code-row-number-enable pre::before {
+.is-code-row-number-enable pre.hljs::before {
   overflow: hidden;
   position: absolute;
   top: 0;

@@ -1060,7 +1060,7 @@ pre * {
 }
 
 code,
-.is-code-row-number-enable pre::before {
+.is-code-row-number-enable pre.hljs::before {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 
@@ -1070,7 +1070,7 @@ pre.wp-block-code code {
   white-space: pre;
 }
 
-.is-code-row-number-enable pre::before {
+.is-code-row-number-enable pre.hljs::before {
   color: inherit;
   font-size: 0.8em;
   opacity: 0.7;
