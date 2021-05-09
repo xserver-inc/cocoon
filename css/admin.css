@@ -634,7 +634,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ctdt-none { display: none; }
 .admin-settings .demo .cat-link { color: #fff; text-decoration: none; display: inline-block; margin-right: 5px; padding: 2px 6px; font-size: 12px; background-color: #333; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .cat-link:hover { opacity: 0.5; color: #fff; }
-.admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; margin-right: 5px; padding: 5px 8px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
+.admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f5f6f7; }
@@ -1425,7 +1425,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-form .logged-in-as { margin: 0.2em; font-size: 0.8em; }
 .admin-settings .demo .comment-area.website-hide .comment-form-url { display: none; }
 .admin-settings .demo .comment-edit-link { margin-left: 0.4em; }
-.admin-settings .demo .comment-reply-link { font-size: 14px; }
+.admin-settings .demo .comment-reply-link { font-size: 14px; display: inline; padding: 1px 5px; }
 .admin-settings .demo .comment-page-link { text-align: center; }
 .admin-settings .demo .comment-page-link .page-numbers { width: auto; height: auto; padding: 6px 12px; line-height: normal; }
 .admin-settings .demo .comment-page-link .current { background-color: #eee; }
@@ -2235,7 +2235,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ctdt-none { display: none; }
 .admin-settings .demo .cat-link { color: #fff; text-decoration: none; display: inline-block; margin-right: 5px; padding: 2px 6px; font-size: 12px; background-color: #333; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .cat-link:hover { opacity: 0.5; color: #fff; }
-.admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; margin-right: 5px; padding: 5px 8px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
+.admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f5f6f7; }
@@ -3026,7 +3026,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-form .logged-in-as { margin: 0.2em; font-size: 0.8em; }
 .admin-settings .demo .comment-area.website-hide .comment-form-url { display: none; }
 .admin-settings .demo .comment-edit-link { margin-left: 0.4em; }
-.admin-settings .demo .comment-reply-link { font-size: 14px; }
+.admin-settings .demo .comment-reply-link { font-size: 14px; display: inline; padding: 1px 5px; }
 .admin-settings .demo .comment-page-link { text-align: center; }
 .admin-settings .demo .comment-page-link .page-numbers { width: auto; height: auto; padding: 6px 12px; line-height: normal; }
 .admin-settings .demo .comment-page-link .current { background-color: #eee; }
