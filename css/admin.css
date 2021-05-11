@@ -13,7 +13,7 @@ body.wp-admin { color: #444; }
 
 .admin-settings .demo .entry-card-content, .admin-settings .demo .related-entry-card-content { padding-bottom: 1.2em; }
 
-.admin-settings .demo .entry-card-title, .admin-settings .demo .related-entry-card-title { font-size: 18px; margin: 0 0 5px 0; line-height: 1.2; font-weight: bold; }
+.admin-settings .demo .entry-card-title, .admin-settings .demo .related-entry-card-title { font-size: 18px; margin: 0 0 5px 0; line-height: 1.6; font-weight: bold; }
 
 .admin-settings .demo .entry-card-snippet, .admin-settings .demo .related-entry-card-snippet { font-size: 0.8em; max-height: 7.8em; line-height: 1.3; overflow: hidden; }
 
