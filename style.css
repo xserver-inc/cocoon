@@ -6006,6 +6006,10 @@ figcaption {
 /************************************
 ** 「次のページ」ページネーション
 ************************************/
+.pagination-next {
+  margin-top: 24px;
+}
+
 .pagination-next-link, .comment-btn {
   background-color: #f9f9f9;
   border: 1px solid #ddd;

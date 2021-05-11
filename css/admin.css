@@ -1435,6 +1435,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ddd; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
 .admin-settings .demo .page-numbers span { line-height: inherit; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f5f6f7; }
+.admin-settings .demo .pagination-next { margin-top: 24px; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ddd; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
@@ -3036,6 +3037,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ddd; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
 .admin-settings .demo .page-numbers span { line-height: inherit; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f5f6f7; }
+.admin-settings .demo .pagination-next { margin-top: 24px; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ddd; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
