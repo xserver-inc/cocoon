@@ -26,6 +26,7 @@ import * as tabBox from './block/tab-box';
 import * as timeline from './block/timeline';
 import * as timelineItem from './block/timeline-item';
 import * as toggleBox from './block/toggle-box';
+import * as faq from './block/faq';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -49,6 +50,7 @@ const cocoonBlocks = [
   timeline,
   timelineItem,
   toggleBox,
+  faq,
 
   captionBox,
   labelBox,

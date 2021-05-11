@@ -5716,7 +5716,56 @@ figcaption {
   }
 }
 .body .wp-block-gallery .blocks-gallery-item {
-  margin-bottom: 1em;
+  margin-bottom: 0.6em;
+}
+
+.faq-wrap {
+  border-color: transparent;
+}
+
+.faq {
+  line-height: 24px;
+}
+
+.faq-item {
+  display: flex;
+}
+
+.faq-item-label {
+  font-size: 24px;
+  margin-right: 0.6em;
+}
+
+.is-style-square .faq-item-label {
+  font-size: 20px;
+  padding: 5px 8px;
+  height: 100%;
+}
+
+.faq-item-content {
+  flex: 1 1 auto;
+  width: calc(60%);
+}
+
+.faq-question {
+  margin-bottom: 1.8em;
+  align-items: center;
+}
+
+.faq-question-label {
+  color: #b7282e;
+}
+
+.faq-question-content {
+  font-weight: 700;
+}
+
+.faq .faq-answer {
+  margin-left: 0;
+}
+
+.faq-answer-label {
+  color: #007bbb;
 }
 
 .column-wrap {

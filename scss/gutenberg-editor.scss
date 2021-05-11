@@ -63,7 +63,7 @@ div.mce-content-body {
   padding-top: 1em;
 }
 
-.editor-block-list__layout .editor-block-list__block,,//Wordpress 5.4未満
+.editor-block-list__layout .editor-block-list__block,//Wordpress 5.4未満
 .block-editor-block-list__layout .block-editor-block-list__block //WordPress 5.4以降
  {
   &[data-type^="cocoon-blocks/button"], &[data-type^="cocoon-blocks/button-wrap"] {
@@ -875,7 +875,7 @@ ol, ul {
 //.block-list-appenderが来るので:last-child余白調整が入らないのを修正
 .block-editor-inner-blocks{
   .block-editor-block-list__layout{
-    :nth-last-child(2){
+    :last-of-type{
       margin-bottom: 0;
     }
   }
@@ -900,4 +900,12 @@ body,
 body::before,
 .editor-styles-wrapper::before {
   background: none !important;
+}
+
+
+.faq .faq-answer {
+  .wp-block,
+  textarea.block-editor-default-block-appender__content{
+    margin-top: 0;
+  }
 }

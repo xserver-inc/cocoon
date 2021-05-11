@@ -570,6 +570,8 @@ function the_json_ld_tag() {
       echo '<!-- '.THEME_NAME_CAMEL.' Review JSON-LD -->'.PHP_EOL;
       get_template_part('tmp/json-ld-review');
     }
+    echo '<!-- '.THEME_NAME_CAMEL.' FAQ JSON-LD -->'.PHP_EOL;
+    get_template_part('tmp/json-ld-faq');
   }
 }
 endif;

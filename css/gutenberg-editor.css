@@ -1083,7 +1083,7 @@ ol, ul {
   background-color: #fff;
 }
 
-.block-editor-inner-blocks .block-editor-block-list__layout :nth-last-child(2) {
+.block-editor-inner-blocks .block-editor-block-list__layout :last-of-type {
   margin-bottom: 0;
 }
 
@@ -1103,4 +1103,9 @@ body,
 body::before,
 .editor-styles-wrapper::before {
   background: none !important;
+}
+
+.faq .faq-answer .wp-block,
+.faq .faq-answer textarea.block-editor-default-block-appender__content {
+  margin-top: 0;
 }
