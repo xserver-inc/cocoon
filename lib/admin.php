@@ -542,6 +542,20 @@ add_action( 'admin_head-post-new.php', 'add_head_post_custum' );
 add_action( 'admin_head-post.php', 'add_head_post_custum' );
 if ( !function_exists( 'add_head_post_custum' ) ):
 function add_head_post_custum() {
+  //カスタムCSSスタイルが反映されていない場合は反映させる
+  define('OP_LAST_OUTPUT_EDITOR_CSS_DAY', 'last_output_editor_css_day');
+  $day = get_theme_mod(OP_LAST_OUTPUT_EDITOR_CSS_DAY);
+  $now = date('Y-m-d H:i:s');
+  if (!$day || strtotime($day) < strtotime('-7 day') ) {
+    set_theme_mod(OP_LAST_OUTPUT_EDITOR_CSS_DAY, $now);
+    // エディター用のカスタマイズCSS出力
+    put_theme_css_cache_file();
+    // var_dump(strtotime($day));
+    // var_dump(strtotime('-7 day'));
+    // var_dump($day);
+    // var_dump(date('Y-m-d H:i:s', strtotime('-7 day')));
+    // var_dump($now);
+  }
 ?>
 <style>
 div.editor-block-list__block,
