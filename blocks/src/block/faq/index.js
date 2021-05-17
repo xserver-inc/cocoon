@@ -7,6 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
+import { Icon, help } from '@wordpress/icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import edit from './edit';
@@ -20,7 +21,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'FAQ', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'question-circle']} />,
+  icon: <Icon icon={help} size={32} /> ,
   description: __( 'よくある質問と回答。', THEME_NAME ),
 
   edit,

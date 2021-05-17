@@ -13,6 +13,7 @@ const { BlockFormatControls } = wp.editor;
 const { Slot, Toolbar, DropdownMenu } = wp.components;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/font-sizes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, edit } from '@wordpress/icons'
 import { orderBy } from 'lodash';
 
 var sizes = [12, 14, 16, 18, 20, 22, 24, 28, 32, 36, 40, 44, 48];
@@ -30,7 +31,7 @@ sizes.map((size, index) => {
       return (
         <Fragment>
           <FontSizeToolbarButton
-          icon={<FontAwesomeIcon icon="pencil-alt" />}
+          icon={<Icon icon={edit} size={32} />}
             title={<span className={clss}>{name}</span>}
             onClick={ onToggle }
             isActive={ isActive }

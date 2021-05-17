@@ -12,7 +12,7 @@ const { registerFormatType, toggleFormat } = wp.richText;
 const { BlockFormatControls } = wp.editor;
 const { Slot, Toolbar, DropdownMenu } = wp.components;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/badges';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, tag } from '@wordpress/icons';
 import { orderBy } from 'lodash';
 
 
@@ -31,7 +31,7 @@ if (isBadgeVisible) {
               <Slot name="Badge.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
-                    icon={<FontAwesomeIcon icon="tag" />}
+                    icon={<Icon icon={tag} size={32} />}
                     label={__( 'バッジ', THEME_NAME )}
                     className='badges'
                     controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }

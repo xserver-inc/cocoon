@@ -11,6 +11,7 @@ const { __ } = wp.i18n;
 const { registerFormatType, toggleFormat } = wp.richText;
 const { RichTextShortcut, RichTextToolbarButton } = wp.editor;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/bold-green';
+import { Icon, formatBold } from '@wordpress/icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const TITLE = __( '緑太字', THEME_NAME );
 
@@ -24,7 +25,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={<FontAwesomeIcon icon="bold" />}
+          icon={<Icon icon={formatBold} size={32} />}
           title={<span className="bold-green">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }

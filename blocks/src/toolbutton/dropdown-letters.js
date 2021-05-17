@@ -13,7 +13,7 @@ const { registerFormatType, toggleFormat } = wp.richText;
 const { BlockFormatControls } = wp.editor;
 const { Slot, Toolbar, DropdownMenu } = wp.components;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/letters';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, textColor } from '@wordpress/icons'
 import { orderBy } from 'lodash';
 
 //console.log(gbSettings);
@@ -34,7 +34,7 @@ if (isLetterVisible) {
               <Slot name="Letter.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
-                    icon={<FontAwesomeIcon icon="font" />}
+                    icon={<Icon icon={textColor} size={32} /> }
                     label={__( '文字', THEME_NAME )}
                     className='letters'
                     controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }

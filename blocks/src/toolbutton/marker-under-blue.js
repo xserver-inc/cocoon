@@ -10,8 +10,7 @@ const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { registerFormatType, toggleFormat } = wp.richText;
 const { RichTextShortcut, RichTextToolbarButton } = wp.editor;
-const FORMAT_TYPE_NAME = 'cocoon-blocks/marker-under-blue';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/marker-under-blue';import { Icon, minus } from '@wordpress/icons'
 const TITLE = __( '青色アンダーラインマーカー', THEME_NAME );
 
 registerFormatType( FORMAT_TYPE_NAME, {
@@ -25,7 +24,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <MarkerToolbarButton
-          icon={<FontAwesomeIcon icon="window-minimize" />}
+          icon={<Icon icon={minus} size={32} />}
           title={<span className="marker-under-blue">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }
