@@ -1,3 +1,4 @@
+@charset "UTF-8";
 [class*="fab-"]::before {
   font-family: FontAwesome;
 }
@@ -1108,4 +1109,24 @@ body::before,
 .faq .faq-answer .wp-block,
 .faq .faq-answer textarea.block-editor-default-block-appender__content {
   margin-top: 0;
+}
+
+.editor-block-list-item-cocoon-blocks-faq {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.editor-block-list-item-cocoon-blocks-faq::before, .editor-block-list-item-cocoon-blocks-faq::after {
+  background-color: #c9171e;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-size: 8px;
+  line-height: 1;
+  padding: 3px 4px;
+  position: absolute;
+  right: 0;
+}
+.editor-block-list-item-cocoon-blocks-faq::before {
+  content: "寄付特典";
+  top: 0;
 }

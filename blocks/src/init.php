@@ -117,6 +117,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'siteIconFont' => ' '.get_site_icon_font_class(),
     'pageTypeClass' => get_editor_page_type_class(),
     'isDebugMode' => DEBUG_MODE,
+    'isPrivilegeActivationCodeAvailable' => is_privilege_activation_code_available(),
     'wpVersion' => $wp_version,
   );
 

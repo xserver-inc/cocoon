@@ -96,6 +96,8 @@ if( $is_post_ok ):
   require_once abspath(__FILE__).'apis-posts.php';
   //その他
   require_once abspath(__FILE__).'others-posts.php';
+  //寄付
+  require_once abspath(__FILE__).'donation-posts.php';
 
   ///////////////////////////////////////////
   // テーマ設定ページではスキン設定の読み込みを保存後にするために遅らせる
@@ -200,6 +202,7 @@ endif;
     <li class="others"><?php _e( 'その他', THEME_NAME ) ?></li>
     <li class="reset"><?php _e( 'リセット', THEME_NAME ) ?></li>
     <li class="about"><?php _e( 'テーマ情報', THEME_NAME ) ?></li>
+    <li class="donation"><?php _e( '寄付', THEME_NAME ) ?></li>
   </ul>
 
   <?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
@@ -396,6 +399,11 @@ endif;
   <!-- テーマ情報 -->
   <div class="theme-about metabox-holder">
     <?php require_once abspath(__FILE__).'about-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 寄付 -->
+  <div class="theme-donation metabox-holder">
+    <?php require_once abspath(__FILE__).'donation-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <?php //スキン制御変数の復元

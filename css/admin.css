@@ -4212,7 +4212,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 
 .necessity-input { font-size: 14px; color: red; }
 
-.api-badge { color: #fff; padding: 1px 5px 0; border-radius: 2px; font-size: 12px; margin: 0 4px; }
+.api-badge { color: #fff; padding: 2px 5px; border-radius: 2px; font-size: 12px; margin: 0 4px; }
 
 .amazon-badge { background-color: #f79901; }
 

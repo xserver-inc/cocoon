@@ -909,3 +909,29 @@ body::before,
     margin-top: 0;
   }
 }
+
+.editor-block-list-item-cocoon-blocks-faq{
+  opacity: 0.4;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    background-color: #c9171e;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 8px;
+    line-height: 1;
+    padding: 3px 4px;
+    position: absolute;
+    right: 0;
+  }
+  &::before{
+    content: "寄付特典";
+    top: 0;
+  }
+  // &::after{
+  //   content: "制限中";
+  //   bottom: 0;
+  // }
+}
