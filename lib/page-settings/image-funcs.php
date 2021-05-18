@@ -288,18 +288,51 @@ endif;
 add_filter('get_sized_no_image_url', 'get_categorized_no_image_url', 10, 4);
 if ( !function_exists( 'get_categorized_no_image_url' ) ):
 function get_categorized_no_image_url($url, $width = null, $height = null, $id = null){
+  if (!$id) {
+    $id = get_the_ID();
+  }
   //サイズ指定がある場合はカテゴリーURLを取得
   if ($width && $height) {
     $cat_url = null;
     $cat = get_the_category($id);
-    // _v($id);
-    // _v($cat);
+
+    // //カテゴリー画像取得
     if ($cat && isset($cat[0])) {
       $cat_url = get_the_category_eye_catch_url($cat[0]->cat_ID);
       if ($cat_url) {
         $url = get_image_sized_url($cat_url, $width, $height);
       }
     }
+
+    //メインカテゴリーが設定してある場合
+    // _v('id='.$id);
+    $main_cat_id = get_the_page_main_category($id);
+    // _v('mid='.$main_cat_id);
+    if ($main_cat_id && in_category($main_cat_id, $id)) {
+      $cat_url = get_the_category_eye_catch_url($main_cat_id);
+      if ($cat_url) {
+        $url = get_image_sized_url($cat_url, $width, $height);
+      } else {
+        switch ($width) {
+          case 120:
+            $url = NO_IMAGE_120;
+            break;
+          case 150:
+            $url = NO_IMAGE_150;
+            break;
+          case 160:
+            $url = NO_IMAGE_160;
+            break;
+          case 320:
+            $url = NO_IMAGE_320;
+            break;
+          default:
+            $url = NO_IMAGE_LARGE;
+            break;
+        }
+      }
+    }
+
   }
   return $url;
 }
