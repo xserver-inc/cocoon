@@ -9,11 +9,11 @@ import classnames from 'classnames';
 export default function edit({ attributes, setAttributes, className }) {
   const { style } = attributes;
   const classes = classnames('common-icon-box', 'block-box',
-  {
-    [ style ]: !! style,
-    [ className ]: !! className,
-  }
-);;
+    {
+      [ style ]: !! style,
+      [ className ]: !! className,
+    }
+  );
   const blockProps = useBlockProps({
     className: classes,
   });
