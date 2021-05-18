@@ -82,11 +82,26 @@ endif;
 
 if ( !function_exists( 'get_entry_card_no_image_tag' ) ):
 function get_entry_card_no_image_tag($count){
+  //NO IMAGE画像URLの初期
+  $no_image_320x180_url = get_no_image_320x180_url();
+  $no_image_large_url = get_no_image_large_url();
+
+  //メインカテゴリー設定時にカテゴリー画像を表示する
+  $id = get_the_ID();
+  $main_cat_id = get_the_page_main_category($id);
+  if ($main_cat_id && in_category($main_cat_id, $id)) {
+    $the_category_eye_catch_url = get_the_category_eye_catch_url($main_cat_id);
+    if ($the_category_eye_catch_url) {
+      $no_image_320x180_url = get_image_sized_url($the_category_eye_catch_url, THUMB320WIDTH, THUMB320HEIGHT);
+      $no_image_large_url = get_image_sized_url($the_category_eye_catch_url, THUMB_LARGE_NO_IMAGE_WIDTH, THUMB_LARGE_NO_IMAGE_HEIGHT);
+    }
+  }
+
   //通常の大きさのNO IMAGEサムネイル
-  $thumbnail_tag_320 = get_original_image_tag(get_no_image_320x180_url(), THUMB320WIDTH, THUMB320HEIGHT, 'no-image entry-card-thumb-image list-no-image', '');
+  $thumbnail_tag_320 = get_original_image_tag($no_image_320x180_url, THUMB320WIDTH, THUMB320HEIGHT, 'no-image entry-card-thumb-image list-no-image', '');
 
   //大きなNO IMAGEサムネイル
-  $thumbnail_tag_large = get_original_image_tag(get_no_image_large_url(), THUMB_LARGE_NO_IMAGE_WIDTH, THUMB_LARGE_NO_IMAGE_HEIGHT, 'no-image entry-card-thumb-image list-no-image', '');
+  $thumbnail_tag_large = get_original_image_tag($no_image_large_url, THUMB_LARGE_NO_IMAGE_WIDTH, THUMB_LARGE_NO_IMAGE_HEIGHT, 'no-image entry-card-thumb-image list-no-image', '');
   $thumbnail_tag = $thumbnail_tag_large;
   switch (get_entry_card_type()) {
     case 'big_card_first':
