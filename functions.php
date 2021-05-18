@@ -78,9 +78,9 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
     if ($width == THUMB120WIDTH) {
       $w = THUMB120WIDTH;
       $h = THUMB120HEIGHT;
-      $image = get_no_image_160x90_url($id);
+      $image = get_no_image_160x90_url();
     } else {//表示タイプ＝スクエア
-      $image = get_no_image_150x150_url($id);
+      $image = get_no_image_150x150_url();
       $w = THUMB150WIDTH;
       $h = THUMB150HEIGHT;
     }
