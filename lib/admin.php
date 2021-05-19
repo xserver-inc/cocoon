@@ -564,13 +564,18 @@ div.editor-block-list__block p{
 
 <?php //寄付特典
 if(is_privilege_activation_code_available()): ?>
-  .editor-block-list-item-cocoon-blocks-faq{
+  .editor-block-list-item-cocoon-blocks-faq,
+  [id*="block-cocoon-blocks/faq"]{
     opacity: 1;
     pointer-events: auto;
   }
-  .editor-block-list-item-cocoon-blocks-faq::before{
+  .editor-block-list-item-cocoon-blocks-faq::before,
+  [id*="block-cocoon-blocks/faq"]::before{
     content: "特典";
     background-color: #99c737;
+  }
+  [id*="block-cocoon-blocks/faq"]{
+    display: flex !important;
   }
 <?php endif; ?>
 </style>

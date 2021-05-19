@@ -911,9 +911,11 @@ body::before,
   }
 }
 
-.editor-block-list-item-cocoon-blocks-faq{
+.editor-block-list-item-cocoon-blocks-faq,
+[id*="block-cocoon-blocks/faq"]{
   opacity: 0.4;
   pointer-events: none;
+  position: relative;
 
   &::before,
   &::after {
@@ -935,6 +937,10 @@ body::before,
   //   content: "制限中";
   //   bottom: 0;
   // }
+}
+
+[id*="block-cocoon-blocks/faq"]{
+  display: none !important;
 }
 
 .block-editor-writing-flow .block-editor-block-list__layout .column-wrap{
