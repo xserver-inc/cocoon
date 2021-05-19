@@ -12,7 +12,7 @@ const { registerFormatType, insert } = wp.richText;
 const { BlockFormatControls } = wp.editor;
 const { Slot, Toolbar, DropdownMenu } = wp.components;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/shortcodes';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, shortcode } from '@wordpress/icons';
 import { orderBy } from 'lodash';
 
 //ショートコード作成関数
@@ -28,7 +28,7 @@ function registerShortcodeFormatType(name, title, code, icon) {
       return (
         <Fragment>
           <ShortcodeToolbarButton
-            icon={<FontAwesomeIcon icon={icon} />}
+            icon={<Icon icon={shortcode} size={32} />}
             title={<span className={name}>{title}</span>}
             onClick={ onToggle }
           />
@@ -202,7 +202,7 @@ if (isGeneralVisible) {
               <Slot name="Shortcode.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
-                    icon={<FontAwesomeIcon icon={['fas', 'code']} />}
+                    icon={<Icon icon={shortcode} size={32} />}
                     label={__( 'ショートコード', THEME_NAME )}
                     className='shortcodes'
                     controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }

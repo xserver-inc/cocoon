@@ -7,7 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, archive } from '@wordpress/icons';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'タブ見出しボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'folder']} />,
+  icon: <Icon icon={archive} size={32} />,
   description: __( 'ボックスに「タブ見出し」を入力できる汎用ボックスです。', THEME_NAME ),
 
   edit,

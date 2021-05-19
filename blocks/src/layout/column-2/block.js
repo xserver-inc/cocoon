@@ -6,7 +6,6 @@
  */
 
 import {THEME_NAME, LAYOUT_BLOCK_CLASS} from '../../helpers';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -15,7 +14,6 @@ import {
   InnerBlocks,
   InspectorControls,
   useBlockProps,
-	// __experimentalUseInnerBlocksProps as useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
@@ -43,7 +41,7 @@ registerBlockType( 'cocoon-blocks/column-2', {
 
   apiVersion: 2,
   title: __( '2カラム', THEME_NAME ),
-  icon: <FontAwesomeIcon icon="columns" />,
+  icon: <svg enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m22.5 24h-8c-.827 0-1.5-.673-1.5-1.5v-21c0-.827.673-1.5 1.5-1.5h8c.827 0 1.5.673 1.5 1.5v21c0 .827-.673 1.5-1.5 1.5zm-8-23c-.276 0-.5.224-.5.5v21c0 .276.224.5.5.5h8c.276 0 .5-.224.5-.5v-21c0-.276-.224-.5-.5-.5z"/><path d="m9.5 24h-8c-.827 0-1.5-.673-1.5-1.5v-21c0-.827.673-1.5 1.5-1.5h8c.827 0 1.5.673 1.5 1.5v21c0 .827-.673 1.5-1.5 1.5zm-8-23c-.276 0-.5.224-.5.5v21c0 .276.224.5.5.5h8c.276 0 .5-.224.5-.5v-21c0-.276-.224-.5-.5-.5z"/></svg>,
   category: THEME_NAME + '-layout',
   description: __( '本文を左右カラムに分けます。オプションでカラム比率を変更できます。', THEME_NAME ),
   keywords: [ 'column', '2' ],

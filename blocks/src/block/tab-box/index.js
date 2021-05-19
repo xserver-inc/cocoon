@@ -7,6 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
+import { Icon, file } from '@wordpress/icons';
 
 import edit from './edit';
 import save from './save';
@@ -19,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'タブボックス', THEME_NAME ),
-  icon: 'category',
+  icon: <Icon icon={file} size={32} />,
   description: __( 'タブにメッセージ内容を伝えるための文字が書かれているボックスです。', THEME_NAME ),
 
   edit,

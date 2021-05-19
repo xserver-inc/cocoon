@@ -7,7 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, search } from '@wordpress/icons';
 
 import edit from './edit';
 import save from './save';
@@ -19,7 +19,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '検索案内', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'search']} />,
+  icon: <Icon icon={search} size={32} />,
   description: __( '訪問者に検索を促すためのボックスです。検索をクリックすることで検索結果へ跳びます（※AMPページ以外）。', THEME_NAME ),
   example: {},
 

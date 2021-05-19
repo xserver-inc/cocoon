@@ -9,9 +9,8 @@ import {THEME_NAME, LetterToolbarButton } from '../helpers.js';
 const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { registerFormatType, toggleFormat } = wp.richText;
-const { RichTextShortcut, RichTextToolbarButton } = wp.editor;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/keyboard-key';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, classic } from '@wordpress/icons';
 const TITLE = __( 'キーボードキー', THEME_NAME );
 
 registerFormatType( FORMAT_TYPE_NAME, {
@@ -24,7 +23,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={<FontAwesomeIcon icon="keyboard" />}
+          icon={<Icon icon={classic} size={32} />}
           title={<span className="keyboard-key">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }

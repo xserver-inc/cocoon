@@ -7,7 +7,6 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +19,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '付箋風ボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'sticky-note']} />,
+  icon: 'button',
   description: __( '目立つ濃いめの色で付箋風にメッセージを伝えるためのボックスです。', THEME_NAME ),
   example: {},
 

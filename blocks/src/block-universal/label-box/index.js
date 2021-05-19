@@ -7,6 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
+import { Icon, tag } from '@wordpress/icons';
 
 import edit from './edit';
 import save from './save';
@@ -19,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'ラベルボックス', THEME_NAME ),
-  icon: 'tag',
+  icon: <Icon icon={tag} size={32} /> ,
   description: __( 'ボックスに「ラベル見出し」入力できる汎用ボックスです。', THEME_NAME ),
 
   edit,

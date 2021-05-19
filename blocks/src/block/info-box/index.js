@@ -7,7 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, info } from '@wordpress/icons';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '案内ボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'info-circle']} />,
+  icon: <Icon icon={info} size={32} />,
   description: __( 'ボックスの背景色により、直感的にメッセージ内容を伝えるためのボックスです。', THEME_NAME ),
   example: {},
 

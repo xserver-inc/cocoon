@@ -12,7 +12,7 @@ const { registerFormatType, insert } = wp.richText;
 const { BlockFormatControls } = wp.editor;
 const { Slot, Toolbar, DropdownMenu } = wp.components;
 const FORMAT_TYPE_NAME = 'cocoon-blocks/templates';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, code, page } from '@wordpress/icons';
 import { orderBy } from 'lodash';
 
 var isTemplateVisible = Number(gbSettings['isTemplateVisible'] ? gbSettings['isTemplateVisible'] : 0);
@@ -32,7 +32,7 @@ if (isTemplateVisible) {
           return (
             <Fragment>
               <TemplateToolbarButton
-                icon={'editor-code'}
+                icon={<Icon icon={code} size={32} />}
                 title={<span className={name}>{title}</span>}
                 onClick={ onToggle }
               />
@@ -57,7 +57,7 @@ if (isTemplateVisible) {
               <Slot name="Template.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
-                    icon={<FontAwesomeIcon icon={['fas', 'file-alt']} />}
+                    icon={<Icon icon={page} size={32} />}
                     label={__( 'テンプレート', THEME_NAME )}
                     className='templates'
                     controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }

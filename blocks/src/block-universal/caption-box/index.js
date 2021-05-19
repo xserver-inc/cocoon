@@ -7,7 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, calendar } from '@wordpress/icons';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '見出しボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['far', 'window-maximize']} />,
+  icon: <Icon icon={calendar} size={32} />,
   description: __( 'ボックス「見出し」を入力できる汎用ボックスです。', THEME_NAME ),
 
   edit,

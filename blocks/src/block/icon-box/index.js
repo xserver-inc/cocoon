@@ -7,7 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, warning } from '@wordpress/icons';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'アイコンボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'exclamation-circle']} />,
+  icon: <Icon icon={warning} size={32} />,
   description: __( 'アイコンを用いて直感的にメッセージ内容を伝えるためのボックスです。', THEME_NAME ),
 
   edit,

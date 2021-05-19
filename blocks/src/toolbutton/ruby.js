@@ -5,8 +5,8 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, LetterToolbarButton } from '../helpers.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {THEME_NAME } from '../helpers.js';
+import { Icon, queryPagination } from '@wordpress/icons';
 const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { toggleFormat, registerFormatType, insert, applyFormat } = wp.richText;
@@ -65,7 +65,7 @@ if (isRubyVisible) {
       return (
         <Fragment>
           <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
-          <RichTextToolbarButton icon={<FontAwesomeIcon icon={['fas', 'ellipsis-h']} />} title={__( 'ふりがな（ルビ）', THEME_NAME )} onClick={onToggle}
+          <RichTextToolbarButton icon={<Icon icon={queryPagination} size={32} />} title={__( 'ふりがな（ルビ）', THEME_NAME )} onClick={onToggle}
                                  isActive={isActive} shorcutType={shortcutType} shorcutCharacter={shortcutCharacter} />
         </Fragment>
       )

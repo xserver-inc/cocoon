@@ -1013,3 +1013,12 @@ body::before,
   }
 
 }
+
+.block-editor-block-types-list__item-icon{
+  .block-editor-block-icon{
+    svg{
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

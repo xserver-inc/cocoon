@@ -7,6 +7,7 @@
 
 import {THEME_NAME} from '../../helpers';
 import { __ } from '@wordpress/i18n';
+import { Icon, comment } from '@wordpress/icons';
 
 import edit from './edit';
 import save from './save';
@@ -19,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'マイクロバルーン', THEME_NAME ),
-  icon: 'admin-comments',
+  icon: <Icon icon={comment} size={32} /> ,
   description: __( 'コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。', THEME_NAME ),
   example: {},
 
