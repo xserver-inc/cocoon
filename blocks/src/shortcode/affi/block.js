@@ -5,12 +5,10 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME} from '../../helpers';
+import { THEME_NAME } from '../../helpers';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
-const { Fragment } = wp.element;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
 
 //左カラム
 registerBlockType( 'cocoon-blocks/affi', {

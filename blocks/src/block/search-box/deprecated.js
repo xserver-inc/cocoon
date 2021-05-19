@@ -5,12 +5,12 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME} from '../../helpers';
+import { THEME_NAME } from '../../helpers';
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 const { RichText } = wp.editor;
-const { Fragment } = wp.element;
+import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __( 'キーワード', THEME_NAME );
 
 //classの取得

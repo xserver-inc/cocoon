@@ -5,12 +5,12 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, LetterToolbarButton } from '../helpers.js';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { registerFormatType, toggleFormat } = wp.richText;
-const FORMAT_TYPE_NAME = 'cocoon-blocks/keyboard-key';
+import { THEME_NAME, LetterToolbarButton } from '../helpers.js';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { Icon, classic } from '@wordpress/icons';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/keyboard-key';
 const TITLE = __( 'キーボードキー', THEME_NAME );
 
 registerFormatType( FORMAT_TYPE_NAME, {

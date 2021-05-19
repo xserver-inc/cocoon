@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 const { times } = lodash;
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 const {
   registerBlockType,
 } = wp.blocks;

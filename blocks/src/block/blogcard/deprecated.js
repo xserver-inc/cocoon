@@ -5,13 +5,13 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME } from '../../helpers';
+import { THEME_NAME } from '../../helpers';
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 const { InspectorControls } = wp.editor;
 const { PanelBody, SelectControl } = wp.components;
-const { Fragment } = wp.element;
+import { Fragment } from '@wordpress/element';
 
 export default [{
   attributes: {

@@ -6,14 +6,14 @@
  */
 
 import { THEME_NAME, RankingToolbarButton } from '../helpers.js';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { registerFormatType, insert } = wp.richText;
-const { BlockFormatControls } = wp.editor;
-const { Slot, Toolbar, DropdownMenu } = wp.components;
-const FORMAT_TYPE_NAME = 'cocoon-blocks/rankings';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, insert } from '@wordpress/rich-text';
+import { BlockFormatControls } from '@wordpress/block-editor';
+import { Slot, Toolbar, DropdownMenu } from '@wordpress/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { orderBy } from 'lodash';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/rankings';
 
 var isRankingVisible = Number(gbSettings['isRankingVisible'] ? gbSettings['isRankingVisible'] : 0);
 if (isRankingVisible) {

@@ -5,13 +5,12 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME } from '../helpers.js';
+import { THEME_NAME } from '../helpers.js';
 import { Icon, queryPagination } from '@wordpress/icons';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { toggleFormat, registerFormatType, insert, applyFormat } = wp.richText;
-const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
-const { SVG, Path } = wp.components;
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { toggleFormat, registerFormatType, insert, applyFormat } from '@wordpress/rich-text';
+import { RichTextToolbarButton, RichTextShortcut } from '@wordpress/block-editor';
 
 
 var isRubyVisible = Number(gbSettings['isRubyVisible'] ? gbSettings['isRubyVisible'] : 0);

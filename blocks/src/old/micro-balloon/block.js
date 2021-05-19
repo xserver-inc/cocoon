@@ -5,13 +5,13 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS} from '../../helpers';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
 const { InnerBlocks, RichText, InspectorControls } = wp.editor;
 const { PanelBody, SelectControl, BaseControl, ToggleControl } = wp.components;
-const { Fragment } = wp.element;
+import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __( 'マイクロコピーバルーン', THEME_NAME );
 const MICRO_COPY_CLASS = ' micro-copy';
 

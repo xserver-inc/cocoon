@@ -6,14 +6,14 @@
  */
 
 import { THEME_NAME, TemplateToolbarButton } from '../helpers.js';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { registerFormatType, insert } = wp.richText;
-const { BlockFormatControls } = wp.editor;
-const { Slot, Toolbar, DropdownMenu } = wp.components;
-const FORMAT_TYPE_NAME = 'cocoon-blocks/templates';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, insert } from '@wordpress/rich-text';
+import { BlockFormatControls } from '@wordpress/block-editor';
+import { Slot, Toolbar, DropdownMenu } from '@wordpress/components';
 import { Icon, code, page } from '@wordpress/icons';
 import { orderBy } from 'lodash';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/templates';
 
 var isTemplateVisible = Number(gbSettings['isTemplateVisible'] ? gbSettings['isTemplateVisible'] : 0);
 if (isTemplateVisible) {
