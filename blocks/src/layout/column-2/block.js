@@ -15,7 +15,7 @@ import {
   InnerBlocks,
   InspectorControls,
   useBlockProps,
-	__experimentalUseInnerBlocksProps as useInnerBlocksProps,
+	// __experimentalUseInnerBlocksProps as useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
@@ -68,12 +68,12 @@ registerBlockType( 'cocoon-blocks/column-2', {
       className: classes,
     });
 
-    const innerBlocksProps = useInnerBlocksProps( {
-      allowedBlocks: ALLOWED_BLOCKS,
-      template: TEMPLATE,
-      templateLock: "all",
-      orientation: 'horizontal',
-    } );
+    // const innerBlocksProps = useInnerBlocksProps( {
+    //   allowedBlocks: ALLOWED_BLOCKS,
+    //   template: TEMPLATE,
+    //   templateLock: "all",
+    //   orientation: 'horizontal',
+    // } );
 
     return (
       <Fragment>
