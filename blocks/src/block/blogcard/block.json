@@ -15,5 +15,6 @@
       "type": "string",
       "default": "blogcard-type bct-none"
     }
-  }
+  },
+  "example": {}
 }

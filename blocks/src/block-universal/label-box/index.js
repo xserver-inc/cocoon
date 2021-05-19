@@ -21,7 +21,6 @@ export const settings = {
   title: __( 'ラベルボックス', THEME_NAME ),
   icon: 'tag',
   description: __( 'ボックスに「ラベル見出し」入力できる汎用ボックスです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

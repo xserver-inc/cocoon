@@ -27,5 +27,6 @@
     "fontSize": {
       "type": "string"
     }
-  }
+  },
+  "example": {}
 }

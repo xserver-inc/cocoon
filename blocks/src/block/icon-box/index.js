@@ -22,7 +22,6 @@ export const settings = {
   title: __( 'アイコンボックス', THEME_NAME ),
   icon: <FontAwesomeIcon icon={['fas', 'exclamation-circle']} />,
   description: __( 'アイコンを用いて直感的にメッセージ内容を伝えるためのボックスです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

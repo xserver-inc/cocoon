@@ -22,7 +22,6 @@ export const settings = {
   title: __( '見出しボックス', THEME_NAME ),
   icon: <FontAwesomeIcon icon={['far', 'window-maximize']} />,
   description: __( 'ボックス「見出し」を入力できる汎用ボックスです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

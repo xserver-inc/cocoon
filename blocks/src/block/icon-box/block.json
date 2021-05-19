@@ -9,5 +9,6 @@
       "type": "string",
       "default": "information-box"
     }
-  }
+  },
+  "example": {}
 }

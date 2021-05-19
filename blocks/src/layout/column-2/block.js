@@ -47,6 +47,7 @@ registerBlockType( 'cocoon-blocks/column-2', {
   category: THEME_NAME + '-layout',
   description: __( '本文を左右カラムに分けます。オプションでカラム比率を変更できます。', THEME_NAME ),
   keywords: [ 'column', '2' ],
+  example: {},
 
   attributes: {
     ratio: {

@@ -20,7 +20,6 @@ export const settings = {
   title: __( 'ボタン', THEME_NAME ),
   icon: 'embed-generic',
   description: __( '一般的なリンクボタンを作成します。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

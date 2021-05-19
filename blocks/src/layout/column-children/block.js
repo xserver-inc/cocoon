@@ -29,6 +29,7 @@ registerBlockType( 'cocoon-blocks/column-left', {
   supports: {
     inserter: false,
   },
+  example: {},
 
   edit( { className } ) {
     const classes = classnames(className, {
@@ -80,6 +81,7 @@ registerBlockType( 'cocoon-blocks/column-center', {
   supports: {
     inserter: false,
   },
+  example: {},
 
   edit( { className } ) {
     const classes = classnames(className, {
@@ -132,6 +134,7 @@ registerBlockType( 'cocoon-blocks/column-right', {
   supports: {
     inserter: false,
   },
+  example: {},
 
   edit( { className } ) {
     const classes = classnames(className, {

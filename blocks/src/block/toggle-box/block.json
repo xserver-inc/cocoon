@@ -33,5 +33,6 @@
   "supports": {
     "reusable": false,
     "className": false
-  }
+  },
+  "example": {}
 }

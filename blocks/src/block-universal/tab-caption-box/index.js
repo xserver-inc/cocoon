@@ -22,7 +22,6 @@ export const settings = {
   title: __( 'タブ見出しボックス', THEME_NAME ),
   icon: <FontAwesomeIcon icon={['fas', 'folder']} />,
   description: __( 'ボックスに「タブ見出し」を入力できる汎用ボックスです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

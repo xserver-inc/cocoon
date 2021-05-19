@@ -20,7 +20,6 @@ export const settings = {
   title: __( 'トグルボックス', THEME_NAME ),
   icon: 'randomize',
   description: __( 'クリックすることでコンテンツ内容の表示を切り替えることができるボックスです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

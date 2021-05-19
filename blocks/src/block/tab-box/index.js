@@ -21,7 +21,6 @@ export const settings = {
   title: __( 'タブボックス', THEME_NAME ),
   icon: 'category',
   description: __( 'タブにメッセージ内容を伝えるための文字が書かれているボックスです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

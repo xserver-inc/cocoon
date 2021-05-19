@@ -22,7 +22,6 @@ export const settings = {
   title: __( '吹き出し', THEME_NAME ),
   icon: <FontAwesomeIcon icon={['fas', 'comment']} />,
   description: __( '登録されている吹き出しのオプションを変更できます。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

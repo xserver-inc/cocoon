@@ -34,5 +34,6 @@
     "fontSize": {
       "type": "string"
     }
-  }
+  },
+  "example": {}
 }

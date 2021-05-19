@@ -16,5 +16,6 @@
   },
   "supports": {
     "inserter": false
-  }
+  },
+  "example": {}
 }

@@ -20,5 +20,6 @@
     "fontSize": {
       "type": "string"
     }
-  }
+  },
+  "example": {}
 }

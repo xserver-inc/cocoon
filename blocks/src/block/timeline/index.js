@@ -21,7 +21,6 @@ export const settings = {
   title: __( 'タイムライン', THEME_NAME ),
   icon: <FontAwesomeIcon icon={['far', 'clock']} />,
   description: __( '時系列を表現するためのブロックです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,
