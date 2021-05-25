@@ -849,7 +849,7 @@ for ($i=1; $i <= $max_code_row_count; $i++) {
   $rows[] = $i.'\A';
 }
 ?>
-.is-code-row-number-enable pre::before {
+.is-code-row-number-enable pre.hljs::before {
   content: "<?php echo implode(' ', $rows); ?>";
 }
 <?php endif; ?>

@@ -121,7 +121,9 @@ add_action( 'customize_register', 'customizer_color' );
 //取得した色をhead内にCSS変数にして入れ込み
 function root_customize_css(){
 	$color_bg = esc_html( get_theme_mod( 'color_bg', S_DEFAULT['default']['bg'] ) );
-	$color_ki = generate_new_color( $color_bg, -0.5 );
+	$color_ki = generate_new_color( $color_bg, -0.7 );
+	$color_us = generate_new_color( $color_bg, 0.07 );
+	$color_hk = generate_new_color( $color_bg, 0.18 );
 	$light_color = generate_new_color( $color_bg, 0.1 );
 	$dark_color  = generate_new_color( $color_bg, -0.15 );
 	$customizable_range = esc_html( get_theme_mod( 'customizable_range', S_DEFAULT['default']['corner'] ) );
@@ -131,6 +133,8 @@ function root_customize_css(){
                 :root{ 
                         --color-bg:<?php echo $color_bg ?>;
 						--color-ki:<?php echo $color_ki ?>;
+						--color-us:<?php echo $color_us ?>;
+						--color-hk:<?php echo $color_hk ?>;
 						--color-shadow-light:<?php echo $light_color ?>;
 						--color-shadow-dark :<?php echo $dark_color ?>;
 						--corner :<?php echo $customizable_range,'px' ?>;

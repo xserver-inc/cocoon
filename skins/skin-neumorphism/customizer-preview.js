@@ -5,13 +5,17 @@
 
 		value.bind( function( color ) {
 
-			var keyColor = generateNewColor ( color, -0.5 );
+			var keyColor = generateNewColor ( color, -0.7 );
+			var UsColor = generateNewColor ( color, 0.07 );
+			var HkColor = generateNewColor ( color, 0.18 );
 			var lightColor = generateNewColor ( color, 0.1 );
 			var darkColor = generateNewColor ( color, -0.15 );
 
 			mergeStyle({
 				'--color-bg': color,
 				'--color-ki': keyColor,
+				'--color-us': UsColor,
+				'--color-hk': HkColor,
 				'--color-shadow-light': lightColor,
 				'--color-shadow-dark': darkColor
 			});

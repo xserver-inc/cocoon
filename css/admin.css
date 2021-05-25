@@ -13,7 +13,7 @@ body.wp-admin { color: #444; }
 
 .admin-settings .demo .entry-card-content, .admin-settings .demo .related-entry-card-content { padding-bottom: 1.2em; }
 
-.admin-settings .demo .entry-card-title, .admin-settings .demo .related-entry-card-title { font-size: 18px; margin: 0 0 5px 0; line-height: 1.2; font-weight: bold; }
+.admin-settings .demo .entry-card-title, .admin-settings .demo .related-entry-card-title { font-size: 18px; margin: 0 0 5px 0; line-height: 1.6; font-weight: bold; }
 
 .admin-settings .demo .entry-card-snippet, .admin-settings .demo .related-entry-card-snippet { font-size: 0.8em; max-height: 7.8em; line-height: 1.3; overflow: hidden; }
 
@@ -1436,7 +1436,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-form .logged-in-as { margin: 0.2em; font-size: 0.8em; }
 .admin-settings .demo .comment-area.website-hide .comment-form-url { display: none; }
 .admin-settings .demo .comment-edit-link { margin-left: 0.4em; }
-.admin-settings .demo .comment-reply-link { font-size: 14px; }
+.admin-settings .demo .comment-reply-link { font-size: 14px; display: inline; padding: 5px 8px; }
 .admin-settings .demo .comment-page-link { text-align: center; }
 .admin-settings .demo .comment-page-link .page-numbers { width: auto; height: auto; padding: 6px 12px; line-height: normal; }
 .admin-settings .demo .comment-page-link .current { background-color: #eee; }
@@ -1446,6 +1446,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ddd; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
 .admin-settings .demo .page-numbers span { line-height: inherit; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f5f6f7; }
+.admin-settings .demo .pagination-next { margin-top: 24px; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ddd; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
@@ -3045,7 +3046,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-form .logged-in-as { margin: 0.2em; font-size: 0.8em; }
 .admin-settings .demo .comment-area.website-hide .comment-form-url { display: none; }
 .admin-settings .demo .comment-edit-link { margin-left: 0.4em; }
-.admin-settings .demo .comment-reply-link { font-size: 14px; }
+.admin-settings .demo .comment-reply-link { font-size: 14px; display: inline; padding: 5px 8px; }
 .admin-settings .demo .comment-page-link { text-align: center; }
 .admin-settings .demo .comment-page-link .page-numbers { width: auto; height: auto; padding: 6px 12px; line-height: normal; }
 .admin-settings .demo .comment-page-link .current { background-color: #eee; }
@@ -3055,6 +3056,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ddd; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
 .admin-settings .demo .page-numbers span { line-height: inherit; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f5f6f7; }
+.admin-settings .demo .pagination-next { margin-top: 24px; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ddd; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
@@ -4015,11 +4017,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 ************************************/
 pre { background-color: #f5f6f7; border: 1px solid #ddd; overflow: auto; padding: 10px; }
 
-.is-code-row-number-enable pre, .is-code-row-number-enable pre * { line-height: 1.6 !important; }
+.is-code-row-number-enable pre.hljs, .is-code-row-number-enable pre.hljs * { line-height: 1.6 !important; }
 
-.is-code-row-number-enable pre, .is-code-row-number-enable pre#highlight-demo { border: none; position: relative; padding: 0.4em 1em 0.4em 3em; }
+.is-code-row-number-enable pre.hljs, .is-code-row-number-enable pre.hljs#highlight-demo { border: none; position: relative; padding: 0.4em 1em 0.4em 3em; }
 
-.is-code-row-number-enable pre::before { overflow: hidden; position: absolute; top: 0; left: 0; bottom: 0; display: block; width: 3em; box-sizing: border-box; color: #777; text-align: center; padding: 0.4em 0; }
+.is-code-row-number-enable pre.hljs::before { overflow: hidden; position: absolute; top: 0; left: 0; bottom: 0; display: block; width: 3em; box-sizing: border-box; color: #777; text-align: center; padding: 0.4em 0; }
 
 /*記事一覧のサムネイル幅*/
 .column-thumbnail { width: 80px; }

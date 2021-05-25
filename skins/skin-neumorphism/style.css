@@ -4,18 +4,16 @@
   Skin URI: https://kitatarian.com/cocoon/
   Author: 北
   Author URI: https://kitatarian.com/cocoonskin/
-  Screenshot URI: https://kitatarian.com/wp-content/uploads/2021/04/cocoon-neumorphism.png
-  Version: 1.1
+  Screenshot URI: https://kitatarian.com/wp-content/uploads/2021/04/kokudemopng.jpg
+  Version: 1.3.5
   Priority: 9720001000
-  Visibility: false
 */
 /*以下にスタイルシートを記入してください*/
-
 /*------------------------色------------------------*/
 blockquote::before, blockquote::after,.cta-box,.fb-like-message,.fb-like-sub-message,.search-submit,.fa-chevron-right:before,.fa-chevron-left:before,.carousel .slick-arrow:before,.search-form div.sbtn,.menu-drawer a{
 	color: var(--color-ki);
 }
-body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h3,.footer,.article h1,.article h2,.article h3, .article h4, .article h5, .article h6,.blogcard-wrap,.pagination-next-link, .comment-btn,.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"],input[type='submit'], textarea, select,.box-menu,.tagcloud a,.cta-box,.fb_iframe_widget,.fb_iframe_widget iframe,.fb-like-balloon-body,.fb-like-balloon-button,.recent-comment-content,#wp-calendar th,.wp-block-table.is-style-stripes td, .wp-block-table.is-style-stripes th,.toggle-button,.pager-links a span,.appeal-content,.carousel-in,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.go-to-top-button,.share-menu-content .sns-buttons,#wp-calendar #today,#wp-calendar #today a,.navi-in a:hover,.a-wrap:hover,.list-more-button:hover,.pagination-next-link:hover,.comment-btn:hover,.box-menu:hover,.widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.tagcloud a:hover,.recent-comment-content:hover,.toc a:hover,.search-form div.sbtn:hover,.pager-links a:hover span,.wp-block-search .wp-block-search__button:hover,input[type='submit']:hover,.comment-reply-link:hover,.pagination a:hover,.author-box .sns-follow-buttons a.follow-button:hover,.pager-links a:hover span,.search-form div.sbtn,.menu-drawer a:hover,.search-menu-content
+body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h3,.footer,.article h1,.article h2,.article h3, .article h4, .article h5, .article h6,.blogcard-wrap,.pagination-next-link, .comment-btn,.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"],input[type='submit'], textarea, select,.tagcloud a,.cta-box,.fb_iframe_widget,.fb_iframe_widget iframe,.fb-like-balloon-body,.fb-like-balloon-button,.recent-comment-content,#wp-calendar th, .toggle-button,.pager-links a span,.appeal-content,.carousel-in,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.go-to-top-button,.share-menu-content .sns-buttons,#wp-calendar #today,#wp-calendar #today a,.navi-in a:hover,.a-wrap:hover,.list-more-button:hover,.pagination-next-link:hover,.comment-btn:hover,.widget_recent_entries ul li a:hover, .widget_categories .cat-item a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.tagcloud a:hover,.recent-comment-content:hover,.toc a:hover,.search-form div.sbtn:hover,.pager-links a:hover span,.wp-block-search .wp-block-search__button:hover,input[type='submit']:hover,.comment-reply-link:hover,.pagination a:hover,.author-box .sns-follow-buttons a.follow-button:hover,.pager-links a:hover span,.search-form div.sbtn,.menu-drawer a:hover,.search-menu-content,.box-menu,.pagination .current,.post-page-numbers .current,.fb-like-balloon-arrow-box-in,.index-tab-buttons .index-tab-button,#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"],.navi-footer-in a:hover
 {
 	background: var(--color-bg);
 }
@@ -23,19 +21,28 @@ body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h3,
 .wp-block-search .wp-block-search__button{
 	background: var(--color-bg)!important;
 }
-.menu-drawer .sub-menu a,.widget_nav_menu .sub-menu a,.menu-drawer .sub-menu a:hover,.widget_nav_menu .sub-menu a:hover{
-	background: var(--color-shadow-light);
+.menu-drawer .sub-menu a,.widget_nav_menu .sub-menu a,.widget_categories .children a,.menu-drawer .sub-menu a:hover,.widget_nav_menu .sub-menu a:hover,.widget_categories .children a:hover,.toc ul ul li a,.toc ol ol li a,.toc ul ul li a:hover,.toc ol ol li a:hover{
+	background: var(--color-us);
 }
-.article table th,.article table td,.wp-block-calendar tbody td, .wp-block-calendar th,.recent-comment-content,.fb-like-balloon-arrow-box{
-	border: 1px solid var(--color-shadow-light)!important;
+.menu-drawer .sub-menu .sub-menu a,.widget_nav_menu .sub-menu .sub-menu a,.widget_categories .children .children a,.toc ul ul ul li a,.toc ol ol ol li a,.toc ul ul ul li a:hover,.toc ol ol ol li a:hover{
+	background: var(--color-hk);
 }
-
+.navi-footer-in > .menu-footer li{
+	border-left: 1px solid var(--color-hk);
+}
+.navi-footer-in>.menu-footer li:last-child{
+	border-right: 1px solid var(--color-hk);
+}
 /*------------------------凹------------------------*/
-.eye-catch img,.card-thumb img,.wp-block-image img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-media-text__media img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar,.video-container,.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select,.wp-block-embed iframe,.toggle-wrap .toggle-content,.search-form div.sform,.wp-block-cocoon-blocks-icon-box,.wp-block-cocoon-blocks-info-box,.wp-block-cocoon-blocks-blank-box-1,.wp-block-cocoon-blocks-tab-box-1,.tab-caption-box-content,.caption-box-content,.label-box-content,blockquote,pre.wp-block-verse,.wp-block-table.is-style-stripes td, .wp-block-table.is-style-stripes th,.wp-video{
+.eye-catch img,.card-thumb img,.wp-block-image img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-media-text__media img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar,.video-container,.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea,.wp-block-embed iframe,.toggle-wrap .toggle-content,.search-form div.sform,.wp-block-cocoon-blocks-icon-box,.wp-block-cocoon-blocks-info-box,.wp-block-cocoon-blocks-blank-box-1,.wp-block-cocoon-blocks-tab-box-1,.tab-caption-box-content,.caption-box-content,.label-box-content,blockquote,pre.wp-block-verse,.wp-video{
 	box-shadow: inset 3px 3px 6px var(--color-shadow-dark), inset -6px -6px 12px var(--color-shadow-light)!important;
 }
+/*凹薄く*/
+.pagination .current,.post-page-numbers .current,#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"],.toc-list .open{
+	box-shadow: inset 1px 1px 3px var(--color-shadow-dark), inset -3px -3px 6px var(--color-shadow-light);
+}
 /*------------------------凸------------------------*/
-.a-wrap,.navi-in a,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons a,.ect-vertical-card .entry-card-wrap,.box-menu,.tagcloud a,.cta-box,.fb-like-box,.btn,.wp-block-cover-image.has-background-dim:not([class*=-background-color]), .wp-block-cover.has-background-dim:not([class*=-background-color]),.mejs-container .mejs-controls,.ranking-item-link-buttons a,.fb-like-balloon-arrow-box,.recent-comment-content,.wp-block-audio audio,.toggle-button,.search-form div.sbtn,.wp-block-file__button,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-button,.appeal,.notice-area-wrap,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.header,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.wp-block-image,.go-to-top-button,.menu-drawer a,.toc a:hover,.menu-button,.search-menu-content,.wp-block-code,.wp-block-media-text .wp-block-media-text__media,.blocks-gallery-item,.widget_nav_menu ul li a
+.a-wrap,.navi-in a,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons a,.ect-vertical-card .entry-card-wrap,.tagcloud a,.cta-box,.fb-like-box,.btn,.wp-block-cover-image.has-background-dim:not([class*=-background-color]), .wp-block-cover.has-background-dim:not([class*=-background-color]),.mejs-container .mejs-controls,.ranking-item-link-buttons a,.fb-like-balloon-arrow-box,.recent-comment-content,.wp-block-audio audio,.toggle-button,.search-form div.sbtn,.wp-block-file__button,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-button,.appeal,.notice-area,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.header,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.go-to-top-button,.menu-drawer a,.toc a:hover,.menu-button,.search-menu-content,.wp-block-code,.wp-block-media-text .wp-block-media-text__media,.blocks-gallery-item,.widget_nav_menu ul li a,.box-menu,.index-tab-buttons .index-tab-button,.widget_categories .cat-item a,.toc a,figure[class*="wp-block-image"],.wp-block-image figure,select
 {
 	box-shadow: 6px 6px 12px var(--color-shadow-dark), -6px -6px 12px var(--color-shadow-light);
 }
@@ -48,7 +55,7 @@ body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h3,
 	box-shadow: 2px 2px 5px var(--color-shadow-dark), -2px -2px 5px var(--color-shadow-light);
 }
 /*凸全般縁取り*/
-.sns-follow-buttons a, .sidebar .sns-follow-buttons a, .footer .sns-follow-buttons a, .sns-share-buttons a,.search-form div.sbtn,.mejs-container .mejs-controls,.wp-block-file__button,.appeal-button,.notice-area-wrap{
+.sns-follow-buttons a, .sidebar .sns-follow-buttons a, .footer .sns-follow-buttons a, .sns-share-buttons a,.search-form div.sbtn,.mejs-container .mejs-controls,.wp-block-file__button,.appeal-button,.notice-area,.menu-drawer a,.widget_categories .cat-item a,.widget_nav_menu a,.toc a{
 	border: solid 3px var(--color-bg);
 }
 .btn,.ranking-item-link-buttons a,.wp-block-audio audio,.wp-block-cover,.appeal,.header{
@@ -64,12 +71,13 @@ body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h3,
 	padding: 3px;
 }
 /*凹文字*/
-input,button,textarea,.site-name-text,.tagline,.article h1, .article h2, .article h3, .article h4, .article h5, .article h6,.article p,.blogcard,.pager-links span,.appeal-title,.appeal-message,.navi-in,.entry-card-title,.new-entry-card-title,.list-more-button,.copyright,.navi-footer-in a,.sns-share-message, .sns-follow-message,.pagination-next-link,.list-title-in,.go-to-top-button,.toggle-button,.rect-vertical-card .related-entry-card-title,.box-menu-label,.ranking-item-name-text{
+input,button,textarea,.site-name-text,.tagline,.article h1, .article h2, .article h3, .article h4, .article h5, .article h6,.article p,.blogcard-title,.pager-links span,.appeal-title,.appeal-message,.navi-in,.entry-card-title,.new-entry-card-title,.list-more-button,.copyright,.navi-footer-in a,.sns-share-message, .sns-follow-message,.pagination-next-link,.list-title-in,.go-to-top-button,.rect-vertical-card .related-entry-card-title,.box-menu-label,.ranking-item-name-text,.index-tab-buttons .index-tab-button
+{
 	text-shadow: 1px 1px 0 var(--color-shadow-light);
 }
 
 /*------------------------角丸------------------------*/
-pre, blockquote,.eye-catch img,.card-thumb img,.wp-block-image img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-media-text__media img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar,.video,.mejs-container, .mejs-container *,.navi-in a,.a-wrap,.widget,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons a,.ect-vertical-card .entry-card-wrap,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.wp-block-image,.video-container,.navi-in>ul .sub-menu,.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a,.author-box .sns-follow-buttons a.follow-button,.tagcloud a,.sidebar .cta-box,.ranking-item,[type="text"]:not(.has-background):not(.has-background-dim), [type="tel"]:not(.has-background):not(.has-background-dim), [type="email"]:not(.has-background):not(.has-background-dim), [type="url"]:not(.has-background):not(.has-background-dim), [type="number"]:not(.has-background):not(.has-background-dim), [type="password"]:not(.has-background):not(.has-background-dim), [type="search"]:not(.has-background):not(.has-background-dim), [type="file"]:not(.has-background):not(.has-background-dim),.list-title-in:before, .list-title-in:after,.article h2:after,.article h2:before,.article h3:before,.article h3:after,.article h4:before,.article h4:after,.sidebar h3:after,.fb-like-box,.box-menu,.widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.toc a:hover,.calendar_wrap,.entry-content .toc-center,.wp-block-audio audio,.wp-block-embed iframe,.btn-l,.ranking-item-link-buttons a,.toggle-button,.search-form div.sform,.search-form div.sbtn,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-content,.appeal-button,.share-menu-content .sns-buttons,.go-to-top-button,.menu-drawer a,.menu-close-button .fa,.menu-button,.search-menu-content,.cat-label,.cat-link,.wp-block-media-text .wp-block-media-text__media,.blocks-gallery-item,.widget-entry-cards.ranking-visible .card-thumb::before,.wp-video
+select,pre, blockquote,.eye-catch img,.card-thumb img,.wp-block-image img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-media-text__media img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar,.video,.mejs-container, .mejs-container *,.navi-in a,.a-wrap,.widget,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons a,.ect-vertical-card .entry-card-wrap,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.wp-block-image,.video-container,.navi-in>ul .sub-menu,.widget_recent_entries ul li a, .widget_categories .cat-item a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a,.author-box .sns-follow-buttons a.follow-button,.tagcloud a,.cta-box,.ranking-item,[type="text"]:not(.has-background):not(.has-background-dim), [type="tel"]:not(.has-background):not(.has-background-dim), [type="email"]:not(.has-background):not(.has-background-dim), [type="url"]:not(.has-background):not(.has-background-dim), [type="number"]:not(.has-background):not(.has-background-dim), [type="password"]:not(.has-background):not(.has-background-dim), [type="search"]:not(.has-background):not(.has-background-dim), [type="file"]:not(.has-background):not(.has-background-dim),.list-title-in:before, .list-title-in:after,.article h2:after,.article h2:before,.article h3:before,.article h3:after,.article h4:before,.article h4:after,.sidebar h3:after,.fb-like-box,.box-menu,.widget_recent_entries ul li a:hover, .widget_categories .cat-item a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.toc a:hover,.calendar_wrap,.entry-content .toc-center,.wp-block-audio audio,.wp-block-embed iframe,.btn-l,.ranking-item-link-buttons a,.toggle-button,.search-form div.sform,.search-form div.sbtn,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-content,.appeal-button,.share-menu-content .sns-buttons,.go-to-top-button,.menu-drawer a,.menu-close-button .fa,.menu-button,.search-menu-content,.cat-label,.cat-link,.wp-block-media-text .wp-block-media-text__media,.blocks-gallery-item,.widget-entry-cards.ranking-visible .card-thumb::before,.wp-video,.notice-area,.index-tab-buttons .index-tab-button,.toc a,.wp-block-image figure
 {
 	border-radius: var(--corner);
 }
@@ -199,11 +207,38 @@ hr{
 	border-width: 2px;
 }
 /*テーブル*/
-.article table th,.article table td,.calendar_wrap table th,.calendar_wrap table td {
-    box-shadow: 2px 2px 5px var(--color-shadow-dark), -2px -2px 5px var(--color-shadow-light);
+.main figure.wp-block-table table {
+	box-shadow: 6px 6px 12px var(--color-shadow-dark), -6px -6px 12px var(--color-shadow-light);
+	margin: 14px;
+}
+
+thead th{
+	background: var(--color-bg);
+}
+th,tbody td{
+	box-shadow: inset 1px 1px 3px var(--color-shadow-dark), inset -3px -3px 6px var(--color-shadow-light);
+}
+
+.wp-block-table tbody tr{
+	background: var(--color-hk);
+}
+tbody tr:nth-of-type(2n+1){
+	background: var(--color-hk);
+}
+tfoot td{
+	background: var(--color-shadow-dark);
+}
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd){
+	background-color: var(--color-us)!important;
+}
+.wp-block-table .has-fixed-layout {
+    width: 96.1%!important;
+}
+.wp-block-table.is-style-stripes{
+	border-bottom: none!important;
 }
 /*カレンダー*/
-#wp-calendar #today,#wp-calendar #today a{
+#wp-calendar #today,#wp-calendar #today{
 	border: solid var(--color-ki);
 }
 
@@ -213,9 +248,13 @@ hr{
 .wp-calendar-nav-prev a{
 	padding: 0 15px 0 15px;
 }
-#slide-in-sidebar table tr:nth-of-type(2n+1){
+#slide-in-sidebar table tr{
 	background: var(--color-bg);
 }
+/*画像*/
+.wp-block-image{
+}
+
 /*------------------------ウィジェット------------------------*/
 /*[C]プロフィール*/
 .author-box .sns-follow-buttons a.follow-button{
@@ -243,7 +282,7 @@ hr{
 /*SNSシェア*/
 .sns-share-buttons a {
     margin: 6px;
-	width: 4em!important;
+	width: calc(100% / 9 - 12px)!important;
     height: 3em!important;
 	flex-direction: column;
 }
@@ -265,16 +304,42 @@ hr{
 }
 /*インデックス*/
 .ect-vertical-card .entry-card-wrap{
-	width: 49%;
+	width: 48%;
+	margin-bottom: 15px;
 }
-.ect-3-columns .entry-card-wrap{
+.ect-3-columns .entry-card-wrap,.rect-vertical-card-3 .related-entry-card-wrap{
 	width: 31%;
 }
+.ect-vertical-card.ect-tile-card .a-wrap{
+	margin: 0 1% 15px;
+}
+.ect-2-columns .list,.ect-3-columns .list{
+	margin: 0 6px;
+}
+.rect-mini-card .related-entry-card-wrap{
+	width: 49%;
+}
+.ect-vertical-card .entry-card-wrap
 .widget-entry-cards .a-wrap{
 	margin: .7em 0.3em;
 }
-/*アピールエリアとエントリーカード*/
-.appeal,.entry-card-title{
+/*インデックスタブ一覧*/
+#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"]{
+	color: var(--color-ki);
+}
+.index-tab-buttons .index-tab-button{
+	margin: 6px;
+}
+/*記事下一覧4カラム*/
+.rect-vertical-card-4 .related-entry-card-wrap{
+	width: 23.5%;
+}
+/*次記事前記事*/
+.pager-post-navi a{
+	margin-bottom: 12px;
+}
+/*アピールエリアとエントリーカードと通知エリア*/
+.appeal,.entry-card-title,.notice-area{
 	margin-top: 12px;
 }
 /*カルーセル*/
@@ -282,7 +347,7 @@ hr{
     padding: 0.6em 0.3em 0 0.3em;
 }
 /*画像、動画、figure*/
-.card-thumb img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar,.main figure.wp-block-table{
+.card-thumb img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar{
 	padding: 3.5%;
 }
 .eye-catch img,.wp-block-media-text__media img,.wp-block-image img,.video-container,.wp-block-latest-comments__comment-avatar,.wp-video,.commets-list img{
@@ -302,18 +367,24 @@ hr{
 .recent-comment-article {
     margin-top: 10px;
 }
+/*目次*/
+.toc ul li,.toc ol li{
+	margin-top: 12px;
+}
+.toc a{
+	padding: 2px 8px;
+	display: inline-block;
+}
 /*ウィジェット*/
 .ranking-item, .timeline-box{
 	margin-bottom: 5%;
 }
-.box-menu {
-	margin: 0.28em;
+.recent-comment-content,.fb-like-balloon-arrow-box{
+    border: 1px solid var(--color-shadow-light)!important;
 }
-.nwa .box-menu{
-	width: calc(93%/2);
-}
-.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a {
+.widget_recent_entries ul li a, .widget_categories .cat-item a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a {
     padding-left: 5%;
+    padding-right: 5%;
 }
 .nwa .author-box .sns-follow-buttons a,.tagcloud a{
 	margin: 4px;
@@ -328,24 +399,22 @@ hr{
 .ranking-item-link-buttons a {
     margin: 0px 5px 10px;
 }
-.toc a{
-	padding: 2px 8px;
-}
 .fb-like-mobile{
 	padding-top: 3px;
 }
-
-/*記事下一覧*/
-.rect-vertical-card .related-entry-card-wrap{
-	margin: 4px;
+.widget-entry-cards .a-wrap{
+	margin-bottom: 14px;
 }
-/*記事下一覧4カラム*/
-.rect-vertical-card-4 .related-entry-card-wrap{
-	width: 23.5%;
+/*ボックスメニュー*/
+.box-menu{
+	margin: 6px;
+	width: calc(100%/4 - 12px);
 }
-/*次記事前記事*/
-.pager-post-navi a{
-	margin-bottom: 12px;
+.wwa .box-menu {
+	width: calc(100%/6 - 12px);
+}
+.nwa .box-menu {
+    width: calc(100%/2 - 12px);
 }
 /*サムネイル下*/
 .rect-vertical-card .related-entry-card-thumb,.sns-share-buttons, .sns-buttons{
@@ -364,11 +433,11 @@ hr{
 	width: 40%;
     margin: auto;
 }
-.pagination .current,.post-page-numbers .current{
-    background: var(--color-ki);
-}
 .pager-post-navi.post-navi-square a{
 	margin: 6px;
+}
+.page-numbers{
+	margin: 0 6px;
 }
 /*カットラベル*/
 .cat-label,.eye-catch .cat-label{
@@ -390,8 +459,8 @@ hr{
 .header-container .navi-in ul li{
 	margin: 6px;
 }
-/*ウィジェットメニュー*/
-.widget_nav_menu ul li a{
+/*ウィジェットメニューとカテゴリー*/
+.widget_nav_menu ul li a,.widget_categories .cat-item a{
 	margin-top: 1em;
 }
 
@@ -426,7 +495,7 @@ hr{
 }
 /*------------------------ホバー時挙動------------------------*/
 /*ホバー前*/
-.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a {
+.widget_recent_entries ul li a, .widget_categories .cat-item a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a {
     transition: all .3s ease-in-out;
 }
 /*サムネイル画像*/
@@ -445,20 +514,22 @@ hr{
 
 /*ホバー後*/
 /*凸薄く*/
-.a-wrap:hover,.navi-in a:hover,.list-more-button:hover,.pagination-next-link:hover,.comment-btn:hover,.widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.tagcloud a:hover,.recent-comment-content:hover,.toc a:hover,.search-form div.sbtn:hover,.pager-links a:hover span,.wp-block-search .wp-block-search__button:hover,input[type='submit']:hover,.comment-reply-link:hover,.go-to-top-button:hover{
+.a-wrap:hover,.navi-in a:hover,.list-more-button:hover,.pagination-next-link:hover,.comment-btn:hover,.widget_recent_entries ul li a:hover, .widget_categories .cat-item a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.tagcloud a:hover,.recent-comment-content:hover,.toc a:hover,.search-form div.sbtn:hover,.pager-links a:hover span,.wp-block-search .wp-block-search__button:hover,input[type='submit']:hover,.comment-reply-link:hover,.go-to-top-button:hover,.navi-footer-in a:hover,.index-tab-buttons .index-tab-button:hover{
     transition: all .3s ease-in-out;
-	box-shadow: 2px 2px 5px var(--color-shadow-dark),-2px -2px 5px var(--color-shadow-light);
+	box-shadow: 1px 1px 3px var(--color-shadow-dark),-1px -1px 3px var(--color-shadow-light);
 }
 .box-menu:hover{
-	transition: all .3s ease-in-out!important;
-	box-shadow: 2px 2px 5px var(--color-shadow-dark),-2px -2px 5px var(--color-shadow-light)!important;
+	transition: all .3s ease-in-out;
+	box-shadow: 1px 1px 3px var(--color-shadow-dark),-1px -1px 3px var(--color-shadow-light)!important;
+}
+.toc a:hover{
+	text-decoration: none;
 }
 /*平面に*/
 
 .sns-follow-buttons a:hover,.sns-share-buttons a:hover,.pagination a:hover,.btn:hover,.ranking-item-link-buttons a:hover,.wp-block-button__link:hover,.wp-block-file .wp-block-file__button:hover,.appeal-button:hover,.menu-drawer a:hover{
 	transition: all .3s ease-in-out;
 	box-shadow: none;
-	opacity: 0.5;
 }
 .menu-button:hover{
 	transition: all .3s ease-in-out;
@@ -476,9 +547,16 @@ hr{
 #wp-calendar td a:hover {
     opacity: 0.5;
 }
+/*------------------------アクティブ時挙動------------------------*/
+.a-wrap:active,.navi-in a:active,.list-more-button:active,.pagination-next-link:active,.comment-btn:active,.widget_recent_entries ul li a:active, .widget_categories .cat-item a:active, .widget_archive ul li a:active, .widget_pages ul li a:active, .widget_meta ul li a:active, .widget_rss ul li a:active, .widget_nav_menu ul li a:active,.tagcloud a:active,.recent-comment-content:active,.toc a:active,.search-form div.sbtn:active,.pager-links a:active span,.wp-block-search .wp-block-search__button:active,input[type='submit']:active,.comment-reply-link:active,.go-to-top-button:active,.sns-follow-buttons a:active,.sns-share-buttons a:active,.pagination a:active,.btn:active,.ranking-item-link-buttons a:active,.wp-block-button__link:active,.wp-block-file .wp-block-file__button:active,.appeal-button:active,.menu-drawer a:active,.menu-button:active,.wp-block-button__link:active{
+	box-shadow: inset 1px 1px 3px var(--color-shadow-dark), inset -3px -3px 6px var(--color-shadow-light);
+}
+.box-menu:active,.wp-block-file a.wp-block-file__button:active{
+	box-shadow: inset 1px 1px 3px var(--color-shadow-dark), inset -3px -3px 6px var(--color-shadow-light)!important;
+}
 /*------------------------打消しシリーズ------------------------*/
 /*背景色透明*/
-pre,blockquote,.recommended.rcs-center-white-title .card-content,.fb-like-box,.search-form div.sform,table th{
+pre,blockquote,.recommended.rcs-center-white-title .card-content,.fb-like-box,.search-form div.sform{
 	background: transparent;
 }
 /*はみ出し許可*/
@@ -494,10 +572,41 @@ pre,blockquote,.recommended.rcs-center-white-title .card-content,.fb-like-box,.s
     box-shadow: none;
 }
 /*ボーダー打消し*/
-pre,blockquote,.entry-content .toc-center,.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select,.article h2, .article h3, .article h4, .article h5, .article h6,.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn,.index-tab-buttons .index-tab-button, .border-square a, .author-box,.tagcloud a,.list-more-button,.ranking-item, .timeline-box,.toggle-button,.toggle-checkbox:checked ~ .toggle-content,.search-form div.sform,.wp-block-cocoon-blocks-icon-box,.attachment-thumbnail,.comment-reply-link{
+pre,blockquote,.entry-content .toc-center,.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select,.article h2, .article h3, .article h4, .article h5, .article h6,.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn, .border-square a, .author-box,.tagcloud a,.list-more-button,.ranking-item, .timeline-box,.toggle-button,.toggle-checkbox:checked ~ .toggle-content,.search-form div.sform,.wp-block-cocoon-blocks-icon-box,.attachment-thumbnail,.comment-reply-link,.index-tab-buttons .index-tab-button,.speech-icon img, .speech-icon amp-img{
     border: none!important;
+}
+/*文字影打消し*/
+.badge, .ref, .reffer, .sankou, .badge-red, .badge-pink, .badge-purple, .badge-blue, .badge-green, .badge-yellow, .badge-brown, .badge-grey, .pagination .current{
+    text-shadow: none;
+}
+/*インプレッションタグのスタイル打消し*/
+img[width="1"]{
+	padding: 0;
 }
 /*Googleカスタム検索用打消し*/
 .gsc-input input[type=text]{
 	box-shadow:none!important;
 }
+/*モバイル表示*/
+@media screen and (max-width: 834px){
+.index-tab-buttons .index-tab-button,#navi .navi-in>.menu-mobile li {
+    width: calc(98% / 2 - 12px);
+}
+.tagline {
+		margin: 1.6em 1em;
+	}
+	.sns-share-buttons a{
+		width: calc(100% / 3 - 12px)!important;
+	}
+}
+@media screen and (max-width: 599px){
+.box-menus .box-menu,.rect-vertical-card-3 .related-entry-card-wrap,.rect-vertical-card-4 .related-entry-card-wrap{
+    width: calc(100%/2 - 12px);
+    margin: 6px;
+	}
+}
+@media screen and (max-width: 480px){
+.ect-vertical-card.sp-entry-card-1-column > * ,.rect-mini-card .related-entry-card-wrap{
+    width: 100%;
+	margin:0 0 24px 0;
+}}

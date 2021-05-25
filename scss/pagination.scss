@@ -53,6 +53,9 @@ $pagination_wh: 46px;
 /************************************
 ** 「次のページ」ページネーション
 ************************************/
+.pagination-next{
+  margin-top: 24px;
+}
 .pagination-next-link {
   background-color: #f9f9f9;
   border: 1px solid $thin;

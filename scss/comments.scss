@@ -67,6 +67,8 @@
 .comment-reply-link{
   @extend .tag-link;
   font-size: 14px;
+  display: inline;
+  padding: 5px 8px;
   // &:before{
   //   content: '\f0e5';
   // }
