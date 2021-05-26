@@ -586,7 +586,9 @@ if(is_privilege_activation_code_available()): ?>
   .editor-block-list-item-cocoon-blocks-faq::before,
   [id*="block-cocoon-blocks/faq"]::before{
     content: "特典";
-    background-color: #99c737;
+    color: #777;
+    background-color: #fff;
+    border: 1px solid #777;
   }
   [id*="block-cocoon-blocks/faq"]{
     display: flex !important;
