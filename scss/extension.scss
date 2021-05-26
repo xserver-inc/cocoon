@@ -1498,6 +1498,24 @@ div.search-form{
     transition: $bgc_hover_anime;
     overflow: hidden;
   }
+
+  &.is-style-faq{
+    .toggle-button{
+      text-align: left;
+      &::before{
+        content: 'Q' !important;
+        font-size: 1em;
+        margin-right: 0.6em;
+      }
+    }
+    &.has-border-color{
+      .toggle-button{
+        &::before{
+          color: #fff;
+        }
+      }
+    }
+  }
 }
 
 $toggle_border_width: 2px;
@@ -1519,8 +1537,6 @@ $toggle_border_width: 2px;
     font-size: 0.8em;
     color: $x_pallid_text_color;
   }
-
-
 }
 
 .toggle-button:hover {

@@ -5326,6 +5326,17 @@ div.search-form {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
+.toggle-wrap.is-style-faq .toggle-button {
+  text-align: left;
+}
+.toggle-wrap.is-style-faq .toggle-button::before {
+  content: 'Q' !important;
+  font-size: 1em;
+  margin-right: 0.6em;
+}
+.toggle-wrap.is-style-faq.has-border-color .toggle-button::before {
+  color: #fff;
+}
 
 .toggle-button {
   display: block;

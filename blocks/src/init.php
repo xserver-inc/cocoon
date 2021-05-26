@@ -270,11 +270,6 @@ function cocoon_editor_color_palette_setup() {
 }
 endif;
 
-//プレビュー動作テストコードの追加
-add_action('init', function () {
-  register_block_style('cocoon-blocks/icon-box', ['name' => 'text', 'label' => 'テキスト']);
-});
-
 //ブロックの読み込み
 require_once abspath(__FILE__).'block/balloon/index.php';
 require_once abspath(__FILE__).'block/blank-box/index.php';
