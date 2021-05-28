@@ -104,6 +104,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   global $wp_version;
   $gutenberg_settings = array(
     'isRubyVisible' => is_block_editor_ruby_button_visible() ? 1 : 0,
+    'isClearFormatVisible' => is_block_editor_clear_format_button_visible() ? 1 : 0,
     'isLetterVisible' => is_block_editor_letter_style_dropdown_visible() ? 1 : 0,
     'isMarkerVisible' => is_block_editor_marker_style_dropdown_visible() ? 1 : 0,
     'isBadgeVisible'  => is_block_editor_badge_style_dropdown_visible() ? 1 : 0,

@@ -146,6 +146,7 @@ import './toolbutton/green.js';
 import './toolbutton/bold-green.js';
 import './toolbutton/keyboard-key.js';
 import './toolbutton/ruby.js';
+import './toolbutton/clear-format.js';
 // import './toolbutton/html.js';
 
 //マーカー

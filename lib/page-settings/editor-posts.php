@@ -25,6 +25,9 @@ update_theme_option(OP_EDITOR_TAG_CHECK_LIST_ENABLE);
 //ルビボタン有効
 update_theme_option(OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE);
 
+//書式のクリアボタン有効
+update_theme_option(OP_BLOCK_EDITOR_CLEAR_FORMAT_BUTTON_VISIBLE);
+
 //ブロックエディターインラインスタイルドロップダウン有効
 update_theme_option(OP_BLOCK_EDITOR_LETTER_STYLE_DROPDOWN_VISIBLE);
 

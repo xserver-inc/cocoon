@@ -13,7 +13,7 @@ import { toggleFormat, registerFormatType, insert, applyFormat } from '@wordpres
 import { RichTextToolbarButton, RichTextShortcut } from '@wordpress/block-editor';
 
 
-var isRubyVisible = Number(gbSettings['isRubyVisible'] ? gbSettings['isRubyVisible'] : 0);
+const isRubyVisible = Number(gbSettings['isRubyVisible'] ? gbSettings['isRubyVisible'] : 0);
 
 if (isRubyVisible) {
   registerFormatType( 'cocoon-blocks/rt', {
