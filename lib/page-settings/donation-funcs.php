@@ -16,8 +16,26 @@ function get_privilege_activation_code(){
 endif;
 
 function is_privilege_activation_code_available(){
+  return is_standard_privilege_activation_code_available() || is_premium_privilege_activation_code_available() || is_moderator_privilege_activation_code_available() || is_trial_privilege_activation_code_available();
+}
+
+function is_standard_privilege_activation_code_available(){
   $code = trim(get_privilege_activation_code());
   return md5($code) === '7081aec2ac3fa8669a70df50335a4be8';
 }
 
+function is_premium_privilege_activation_code_available(){
+  $code = trim(get_privilege_activation_code());
+  return md5($code) === '5518f3a52e446b036749548114b1278e';
+}
+
+function is_moderator_privilege_activation_code_available(){
+  $code = trim(get_privilege_activation_code());
+  return md5($code) === '0cd7eedf451181910507e526dc485138';
+}
+
+function is_trial_privilege_activation_code_available(){
+  $code = trim(get_privilege_activation_code());
+  return md5($code) === 'e82a4cd24a36907aa0c171dcaa5aa8cc';
+}
 
