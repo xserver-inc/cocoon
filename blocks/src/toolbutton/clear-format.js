@@ -21,7 +21,7 @@ if (isClearFormatVisible) {
   registerFormatType( 'cocoon-blocks/clear-format', {
     title: TITLE,
     tagName: 'span',
-    className: 'rtex-clear-format',
+    className: 'clear-format',
 
     edit({ isActive, value, onChange }) {
       const onToggle = () => {

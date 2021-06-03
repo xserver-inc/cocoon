@@ -879,3 +879,25 @@ function campaign_shortcode( $atts, $content = null ) {
   return $tag;
 }
 endif;
+
+//HTMLタグをそのまま表示
+if (!shortcode_exists('html')) {
+  add_shortcode('html', 'html_shortcode');
+}
+if ( !function_exists( 'html_shortcode' ) ):
+function html_shortcode( $atts, $content = null ) {
+  return html_entity_decode($content, ENT_NOQUOTES);
+}
+endif;
+
+//wptexturizeを除外するショートコードを指定する
+add_filter( 'no_texturize_shortcodes', 'shortcodes_to_exempt_from_wptexturize' );
+if ( !function_exists( 'shortcodes_to_exempt_from_wptexturize' ) ):
+function shortcodes_to_exempt_from_wptexturize( $shortcodes ) {
+    $shortcodes[] = 'html';
+    return $shortcodes;
+};
+endif;
+
+
+
