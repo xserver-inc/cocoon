@@ -41,7 +41,7 @@ function get_access_count_cache_interval(){
 }
 endif;
 
-//トテーブルのバージョン取得
+//テーブルのバージョン取得
 define('OP_ACCESSES_TABLE_VERSION', 'accesses_table_version');
 if ( !function_exists( 'get_accesses_table_version' ) ):
 function get_accesses_table_version(){
@@ -481,7 +481,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         ORDER BY sum_count DESC
     ";
     //_v($query);
-    //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
+    //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query, $limit, $author);
   } else {
     $query = "
