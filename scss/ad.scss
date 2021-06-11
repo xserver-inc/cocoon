@@ -129,3 +129,8 @@
     }
   }
 }
+
+//自動広告がモバイルで横幅を取りすぎるのを防ぐ
+.google-auto-placed{
+  overflow: hidden;
+}

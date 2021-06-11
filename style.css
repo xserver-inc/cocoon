@@ -1868,6 +1868,10 @@ span.internal-icon {
     display: block;
   }
 }
+.google-auto-placed {
+  overflow: hidden;
+}
+
 .blogcard-wrap {
   margin-left: auto;
   margin-right: auto;
