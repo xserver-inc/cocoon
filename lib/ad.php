@@ -107,7 +107,7 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
   data-ad-slot="'.get_adsense_data_ad_slot($code).'"'.
   $data_ad_layout.'
   data-ad-format="'.$format.'"
-  data-full-width-responsive="true"></ins>
+  data-full-width-responsive="false"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
