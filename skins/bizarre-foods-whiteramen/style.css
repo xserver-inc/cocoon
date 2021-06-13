@@ -978,7 +978,7 @@ div#comment-area {
     font-size:15px;
 }
 
-.commets-list .avatar{
+.comments-list .avatar{
     float:none;
 }
 
@@ -1036,7 +1036,7 @@ textarea#comment {
     background: #eff1f5;
 }
 
-.commets-list .children {
+.comments-list .children {
     padding-left:40px;
 }
 

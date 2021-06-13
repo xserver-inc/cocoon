@@ -2730,12 +2730,12 @@ a.swatchimages:hover .swatch-image-thumb > img {
   margin-right: 0.3em;
 }
 
-.commets-list > li {
+.comments-list > li {
   padding-top: 1em;
   border-top: 2px dashed #ccc;
 }
 
-.commets-list > li:first-child {
+.comments-list > li:first-child {
   padding-top: 0;
   border-width: 0;
 }

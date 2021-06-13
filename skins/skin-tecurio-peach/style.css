@@ -91,14 +91,14 @@ body p{
 	padding: .5em;
 	border-radius: 5px;
 }
-.commets-list .avatar {
+.comments-list .avatar {
 	float: none;
 }
-.commets-list .comment-meta{
+.comments-list .comment-meta{
 	background-color: #f9c0bb;
 	border-radius: 5px;
 }
-.commets-list .comment-meta a{
+.comments-list .comment-meta a{
 	padding-left: 1em;
 	color: #333;
 	text-decoration: none;

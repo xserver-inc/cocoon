@@ -526,7 +526,7 @@ div.list {
   z-index:1;
 }
 
-.commets-list .byuser .comment-content:before {
+.comments-list .byuser .comment-content:before {
   width: 0;
   height: 0;
    position: absolute;
@@ -541,7 +541,7 @@ div.list {
 
 }
 
-.commets-list .byuser .comment-content:after {
+.comments-list .byuser .comment-content:after {
   width: 0;
   height: 0;
    position: absolute;
@@ -556,27 +556,27 @@ div.list {
   z-index:1;
 }
 
-.commets-list .comment.even .avatar {
+.comments-list .comment.even .avatar {
     float: left;
     border-radius: 50%;
   margin-right:5px;
 }
-.commets-list .comment.byuser .avatar {
+.comments-list .comment.byuser .avatar {
     float: right;
     border-radius: 50%;
   margin-left:5px;
 }
 
-.commets-list .comment-reply-link {
+.comments-list .comment-reply-link {
   margin-top:10px;
 }
 
-.commets-list .comment.even .comment-body {
+.comments-list .comment.even .comment-body {
     padding:0 210px 0 20px;
 }
 
 
-.commets-list .comment.byuser .comment-body {
+.comments-list .comment.byuser .comment-body {
     padding:0 20px 0 210px;
 }
 
@@ -720,12 +720,12 @@ main.main, div.sidebar {
 
 
 /*コメント*/
-.commets-list .comment.even .comment-body {
+.comments-list .comment.even .comment-body {
     padding:0 110px 0 10px;
 }
 
 
-.commets-list .comment.byuser .comment-body {
+.comments-list .comment.byuser .comment-body {
     padding:0 10px 0 110px;
 }
 
@@ -759,15 +759,15 @@ article.article {
 }
 
 /*コメント*/
-.commets-list .comment.even .comment-body {
+.comments-list .comment.even .comment-body {
     padding:0 40px 0 10px;
 }
 
-.commets-list .comment.byuser .comment-body {
+.comments-list .comment.byuser .comment-body {
     padding:0 10px 0 50px;
 }
 
-.commets-list .comment-content {
+.comments-list .comment-content {
   margin-top:10px;
   padding:7px 10px;
 }

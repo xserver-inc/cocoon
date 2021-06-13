@@ -5894,26 +5894,26 @@ figcaption {
 /************************************
 ** コメント
 ************************************/
-.commets-list {
+.comments-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-.commets-list .avatar {
+.comments-list .avatar {
   float: right;
 }
-.commets-list .reply {
+.comments-list .reply {
   text-align: right;
   font-size: 0.8em;
 }
-.commets-list .comment-meta {
+.comments-list .comment-meta {
   font-size: 0.8em;
 }
-.commets-list .comment-body,
-.commets-list .st-comment-body {
+.comments-list .comment-body,
+.comments-list .st-comment-body {
   margin-bottom: 1em;
 }
-.commets-list .children {
+.comments-list .children {
   list-style: none;
   padding-left: 20px;
 }

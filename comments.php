@@ -21,7 +21,7 @@ if ( is_comment_allow() || have_comments() ): ?>
     <?php
     if(have_comments()): // コメントがあったら
     ?>
-        <ol class="commets-list">
+        <ol class="comments-list">
         <?php
         $args = get_wp_list_comments_args();
         wp_list_comments($args); //コメント一覧を表示 ?>
