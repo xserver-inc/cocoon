@@ -1413,12 +1413,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .rect-vertical-card-3 .related-entry-card-wrap { width: 33%; }
 .admin-settings .demo .rect-vertical-card-4 .related-entry-card-wrap { width: 24.5%; }
 .admin-settings .demo .recb-entry-border .related-entry-card-wrap { border: 1px solid #ccc; }
-.admin-settings .demo .comments-list { padding: 0; margin: 0; list-style: none; }
-.admin-settings .demo .comments-list .avatar { float: right; }
-.admin-settings .demo .comments-list .reply { text-align: right; font-size: 0.8em; }
-.admin-settings .demo .comments-list .comment-meta { font-size: 0.8em; }
-.admin-settings .demo .comments-list .comment-body, .admin-settings .demo .comments-list .st-comment-body { margin-bottom: 1em; }
-.admin-settings .demo .comments-list .children { list-style: none; padding-left: 20px; }
+.admin-settings .demo .commets-list { padding: 0; margin: 0; list-style: none; }
+.admin-settings .demo .commets-list .avatar { float: right; }
+.admin-settings .demo .commets-list .reply { text-align: right; font-size: 0.8em; }
+.admin-settings .demo .commets-list .comment-meta { font-size: 0.8em; }
+.admin-settings .demo .commets-list .comment-body, .admin-settings .demo .commets-list .st-comment-body { margin-bottom: 1em; }
+.admin-settings .demo .commets-list .children { list-style: none; padding-left: 20px; }
 .admin-settings .demo .st-comment-id { display: none; }
 .admin-settings .demo .st-comment-edit { font-size: 0.8em; margin-left: 6px; }
 .admin-settings .demo .st-comment-author .fn { font-weight: bold; }
@@ -3016,12 +3016,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .rect-vertical-card-3 .related-entry-card-wrap { width: 33%; }
 .admin-settings .demo .rect-vertical-card-4 .related-entry-card-wrap { width: 24.5%; }
 .admin-settings .demo .recb-entry-border .related-entry-card-wrap { border: 1px solid #ccc; }
-.admin-settings .demo .comments-list { padding: 0; margin: 0; list-style: none; }
-.admin-settings .demo .comments-list .avatar { float: right; }
-.admin-settings .demo .comments-list .reply { text-align: right; font-size: 0.8em; }
-.admin-settings .demo .comments-list .comment-meta { font-size: 0.8em; }
-.admin-settings .demo .comments-list .comment-body, .admin-settings .demo .comments-list .st-comment-body { margin-bottom: 1em; }
-.admin-settings .demo .comments-list .children { list-style: none; padding-left: 20px; }
+.admin-settings .demo .commets-list { padding: 0; margin: 0; list-style: none; }
+.admin-settings .demo .commets-list .avatar { float: right; }
+.admin-settings .demo .commets-list .reply { text-align: right; font-size: 0.8em; }
+.admin-settings .demo .commets-list .comment-meta { font-size: 0.8em; }
+.admin-settings .demo .commets-list .comment-body, .admin-settings .demo .commets-list .st-comment-body { margin-bottom: 1em; }
+.admin-settings .demo .commets-list .children { list-style: none; padding-left: 20px; }
 .admin-settings .demo .st-comment-id { display: none; }
 .admin-settings .demo .st-comment-edit { font-size: 0.8em; margin-left: 6px; }
 .admin-settings .demo .st-comment-author .fn { font-weight: bold; }

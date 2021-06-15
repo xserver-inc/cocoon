@@ -350,7 +350,7 @@ tfoot td{
 .card-thumb img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar{
 	padding: 3.5%;
 }
-.eye-catch img,.wp-block-media-text__media img,.wp-block-image img,.video-container,.wp-block-latest-comments__comment-avatar,.wp-video,.comments-list img{
+.eye-catch img,.wp-block-media-text__media img,.wp-block-image img,.video-container,.wp-block-latest-comments__comment-avatar,.wp-video,.commets-list img{
 	padding: 1%;
 }
 .wp-block-embed iframe{

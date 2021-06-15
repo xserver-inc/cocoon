@@ -426,7 +426,7 @@ table{
 }
 
 /* コメント欄 */
-.comments-list .comment-body{
+.commets-list .comment-body{
 	position: relative;
 	z-index: 0;
 }
@@ -470,11 +470,11 @@ table{
 .bypostauthor > .comment-body .comment-content::after{
 	border-left: 18px solid #f2faef;
 }
-.comments-list .comment-meta a{
+.commets-list .comment-meta a{
 	color: #adadad;
 	text-decoration: none;
 }
-.comments-list .comment-meta a.comment-edit-link{
+.commets-list .comment-meta a.comment-edit-link{
 	text-decoration: underline;
 }
 .comment-author cite a{

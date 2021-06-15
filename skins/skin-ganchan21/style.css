@@ -357,7 +357,7 @@ height:1px;
 	z-index:1;
 }
 
-.comments-list .byuser .comment-content:before {
+.commets-list .byuser .comment-content:before {
 	width: 0;
 	height: 0;
    position: absolute;
@@ -372,7 +372,7 @@ height:1px;
 
 }
 
-.comments-list .byuser .comment-content:after {
+.commets-list .byuser .comment-content:after {
 	width: 0;
 	height: 0;
    position: absolute;
@@ -387,27 +387,27 @@ height:1px;
 	z-index:1;
 }
 
-.comments-list .comment.even .avatar {
+.commets-list .comment.even .avatar {
     float: left;
     border-radius: 50%;
 	margin-right:5px;
 }
-.comments-list .comment.byuser .avatar {
+.commets-list .comment.byuser .avatar {
     float: right;
     border-radius: 50%;
 	margin-left:5px;
 }
 
-.comments-list .comment-reply-link {
+.commets-list .comment-reply-link {
 	margin-top:10px;
 }
 
-.comments-list .comment.even .comment-body {
+.commets-list .comment.even .comment-body {
     padding:0 10px 0 20px;
 }
 
 
-.comments-list .comment.byuser .comment-body {
+.commets-list .comment.byuser .comment-body {
     padding:0 20px 0 10px;
 }
 
