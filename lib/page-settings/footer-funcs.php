@@ -106,7 +106,7 @@ function get_the_site_credit(){
       $credit = get_user_credit_notation();
       break;
   }
-  return $credit;
+  return do_shortcode($credit);
 }
 endif;
 
