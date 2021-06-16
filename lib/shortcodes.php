@@ -879,3 +879,15 @@ function campaign_shortcode( $atts, $content = null ) {
   return $tag;
 }
 endif;
+
+//日付ショートコード
+add_shortcode('date', 'date_shortcode');
+if ( !function_exists( 'date_shortcode' ) ):
+function date_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'format' => 'Y-m-d H:i:s',
+  ), $atts, 'date' ) );
+
+  return date_i18n($format);
+}
+endif;
