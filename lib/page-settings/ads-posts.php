@@ -23,6 +23,8 @@ update_theme_option(OP_AD_LABEL_CAPTION);
 
 //アドセンス表示方式
 update_theme_option(OP_ADSENSE_DISPLAY_METHOD);
+//モバイル広告の幅を広くする
+update_theme_option(OP_MOBILE_ADSENSE_WIDTH_WIDE);
 
 //インデックストップの広告表示
 update_theme_option(OP_AD_POS_INDEX_TOP_VISIBLE);

@@ -124,6 +124,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             );
             generate_radiobox_tag(OP_ADSENSE_DISPLAY_METHOD, $options, get_adsense_display_method());
             generate_tips_tag(__( '「自動広告」を選択した場合は、AdSenseが勝手に広告コードを挿入するので制御はできません。「自動広告のみ」が有効の場合、「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります。', THEME_NAME ));
+
+
+            generate_checkbox_tag(OP_MOBILE_ADSENSE_WIDTH_WIDE, is_mobile_adsense_width_wide(), __("モバイル広告の幅を広くする",THEME_NAME ));
+            generate_tips_tag(__( 'モバイルでAdSenseの幅を画面いっぱいにします。', THEME_NAME ).__( 'AdSenseタグの「data-full-width-responsive」を「true」にします。', THEME_NAME ));
             ?>
           </td>
         </tr>

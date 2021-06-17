@@ -99,6 +99,11 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
 
     $adsense_script = null;
 
+    $data_full_width_responsive = 'false';
+    if (is_mobile_adsense_width_wide()) {
+      $data_full_width_responsive = 'true';
+    }
+
     return $adsense_script.
 '<!-- レスポンシブコード -->
 <ins class="adsbygoogle"
@@ -107,7 +112,7 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
   data-ad-slot="'.get_adsense_data_ad_slot($code).'"'.
   $data_ad_layout.'
   data-ad-format="'.$format.'"
-  data-full-width-responsive="false"></ins>
+  data-full-width-responsive="'.$data_full_width_responsive.'"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';

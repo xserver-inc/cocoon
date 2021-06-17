@@ -98,6 +98,14 @@ function is_auto_adsense_enable(){
 }
 endif;
 
+//モバイル広告の幅を広くする
+define('OP_MOBILE_ADSENSE_WIDTH_WIDE', 'mobile_adsense_width_wide');
+if ( !function_exists( 'is_mobile_adsense_width_wide' ) ):
+function is_mobile_adsense_width_wide(){
+  return get_theme_option(OP_MOBILE_ADSENSE_WIDTH_WIDE, 1);
+}
+endif;
+
 //インデックストップの広告表示
 define('OP_AD_POS_INDEX_TOP_VISIBLE', 'ad_pos_index_top_visible');
 if ( !function_exists( 'is_ad_pos_index_top_visible' ) ):
