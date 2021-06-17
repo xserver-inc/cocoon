@@ -9802,6 +9802,10 @@ div#bbpress-forums fieldset.bbp-form select {
   margin-bottom: 1em;
 }
 
+div#wpforo #wpforo-wrap {
+  padding: 10px 0;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;
