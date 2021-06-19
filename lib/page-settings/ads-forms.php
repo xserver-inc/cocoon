@@ -127,7 +127,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
             generate_checkbox_tag(OP_MOBILE_ADSENSE_WIDTH_WIDE, is_mobile_adsense_width_wide(), __("モバイル広告の幅を広くする",THEME_NAME ));
-            generate_tips_tag(__( 'モバイルでAdSenseの幅を画面いっぱいにします。', THEME_NAME ).__( 'AdSenseタグの「data-full-width-responsive」を「true」にします。', THEME_NAME ));
+            generate_tips_tag(__( 'モバイルでAdSenseの幅を画面いっぱいにします。', THEME_NAME ).__( 'AdSenseタグの「data-full-width-responsive」を「true」にします。', THEME_NAME ).__( 'この機能が有効な場合、AdSenseの仕様で"horizontal","vertical"広告をモバイルで表示した際は"rectangle"として表示されます。', THEME_NAME ).__( '意図通りのサイズで表示する場合は機能を無効にしてください。', THEME_NAME ));
             ?>
           </td>
         </tr>
