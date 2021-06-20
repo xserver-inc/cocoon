@@ -300,6 +300,43 @@ function customize_admin_add_column($column_name, $post_id) {
 }
 endif;
 
+//カテゴリー管理画面にIDカラムを設置する
+add_filter('manage_edit-category_columns', 'add_taxonomy_columns');
+add_filter('manage_edit-post_tag_columns', 'add_taxonomy_columns');
+if ( !function_exists( 'add_taxonomy_columns' ) ):
+function add_taxonomy_columns($columns){
+  $index = 4; // 追加位置
+
+  return array_merge(
+    array_slice($columns, 0, $index),
+    array('id' => 'ID'),
+    array_slice($columns, $index)
+  );
+}
+endif;
+
+//IDを表示
+add_action('manage_category_custom_column', 'add_taxonomy_custom_fields', 10, 3);
+add_action('manage_post_tag_custom_column', 'add_taxonomy_custom_fields', 10, 3);
+if ( !function_exists( 'add_taxonomy_custom_fields' ) ):
+function add_taxonomy_custom_fields($content, $column_name, $term_id){
+  if ( 'id' === $column_name ) {
+    $content = $term_id;
+  }
+  return $content;
+}
+endif;
+
+//ソート可能にする
+add_filter( 'manage_edit-category_sortable_columns', 'sort_term_columns' );
+add_filter( 'manage_edit-post_tag_sortable_columns', 'sort_term_columns' );
+if ( !function_exists( 'sort_term_columns' ) ):
+function sort_term_columns($columns) {
+  $columns['id'] = 'ID';
+  return $columns;
+}
+endif;
+
 //管理ツールバーにメニュー追加
 if (is_admin_tool_menu_visible() && is_user_administrator()) {
   add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
