@@ -68,8 +68,9 @@ function tag_code_to_minify_js($buffer) {
               || includes_string($url, '/mediaelement-and-player.min.js')
               || includes_string($url, '/wp-includes/js/underscore.min.js')
               //WordPress6.7からのエラー対応
-              || includes_string($url, '/wp-includes/js/dist/')              // //Lityの除外
-              // || includes_string($url, '/plugins/lity/dist/lity.min.js')
+              || includes_string($url, '/wp-includes/js/dist/')
+              //Stripe Paymentsの除外
+              || includes_string($url, 'stripe-payments/')
               // || includes_string($url, '/wp-playlist.min.js')
               // || includes_string($url, '/wp-mediaelement.min.js')
               // || includes_string($url, '/mediaelement-migrate.min.js')
