@@ -300,7 +300,7 @@ function customize_admin_add_column($column_name, $post_id) {
 }
 endif;
 
-//カテゴリー管理画面にIDカラムを設置する
+//カテゴリー・タグ管理画面にIDカラムを設置する
 add_filter('manage_edit-category_columns', 'add_taxonomy_columns');
 add_filter('manage_edit-post_tag_columns', 'add_taxonomy_columns');
 if ( !function_exists( 'add_taxonomy_columns' ) ):
@@ -315,7 +315,7 @@ function add_taxonomy_columns($columns){
 }
 endif;
 
-//IDを表示
+//カテゴリー・タグ管理画面にIDを表示
 add_action('manage_category_custom_column', 'add_taxonomy_custom_fields', 10, 3);
 add_action('manage_post_tag_custom_column', 'add_taxonomy_custom_fields', 10, 3);
 if ( !function_exists( 'add_taxonomy_custom_fields' ) ):
@@ -327,7 +327,7 @@ function add_taxonomy_custom_fields($content, $column_name, $term_id){
 }
 endif;
 
-//ソート可能にする
+//カテゴリー・タグ管理画面にIDソートを可能にする
 add_filter( 'manage_edit-category_sortable_columns', 'sort_term_columns' );
 add_filter( 'manage_edit-post_tag_sortable_columns', 'sort_term_columns' );
 if ( !function_exists( 'sort_term_columns' ) ):
