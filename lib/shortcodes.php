@@ -885,7 +885,7 @@ add_shortcode('date', 'date_shortcode');
 if ( !function_exists( 'date_shortcode' ) ):
 function date_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
-    'format' => 'Y-m-d H:i:s',
+    'format' => 'Y/m/d',
   ), $atts, 'date' ) );
 
   return date_i18n($format);
