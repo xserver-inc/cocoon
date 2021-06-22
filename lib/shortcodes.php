@@ -760,7 +760,6 @@ function get_rss_feed_tag( $atts ) {
   if ( !is_wp_error( $rss ) ) {
     $maxitems = $rss->get_item_quantity( $feed_count );
     $rss_items = $rss->get_items( 0, $maxitems );
-
     foreach ( $rss_items as $item ) :
       $first_img = '';
       if ( preg_match( '/<img.+?src=[\'"]([^\'"]+?)[\'"].*?>/msi', $item->get_content(), $matches )) $first_img = $matches[1];
@@ -770,7 +769,7 @@ function get_rss_feed_tag( $atts ) {
         $feed_img = $img_url;
       endif;
       $feed_url = $item->get_permalink();
-      $feed_title = $item->get_title();
+      $feed_title = str_replace(["\r\n", "\r", "\n"], '', $item->get_title());
       $feed_date = $item->get_date('Y.m.d');
       $feed_text = mb_substr(strip_tags($item->get_content()), 0, 110);
 
