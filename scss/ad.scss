@@ -6,7 +6,7 @@
   //margin: 24px 0;
   text-align: center;
   margin-bottom: 1.8em;
-  overflow:hidden;
+  // overflow: hidden;
 }
 
 // .entry-content .ad-area{
@@ -129,3 +129,8 @@
     }
   }
 }
+
+// //自動広告がモバイルで横幅を取りすぎるのを防ぐ
+// .google-auto-placed{
+//   overflow: hidden;
+// }

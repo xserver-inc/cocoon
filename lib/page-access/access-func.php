@@ -41,7 +41,7 @@ function get_access_count_cache_interval(){
 }
 endif;
 
-//トテーブルのバージョン取得
+//テーブルのバージョン取得
 define('OP_ACCESSES_TABLE_VERSION', 'accesses_table_version');
 if ( !function_exists( 'get_accesses_table_version' ) ):
 function get_accesses_table_version(){
@@ -52,8 +52,9 @@ endif;
 //ページタイプの取得
 if ( !function_exists( 'get_accesses_post_type' ) ):
 function get_accesses_post_type(){
+  global $post;
   global $post_type;
-  if (is_page() || ($post_type === 'page')) {
+  if (is_page() || ($post->post_type === 'page') || ($post_type === 'page')) {
     $res = 'page'; //page
   } else {
     $res = 'post'; //single
@@ -180,8 +181,7 @@ function logging_page_access($post_id = null, $post_type = 'post'){
       //ボットでないとき
       && !is_useragent_robot()
     ) {
-    // _v($post_id);
-    // _v($post_type);
+
     if (!$post_id || !$post_type ) {
       global $post;
       $post_id = $post->ID;
@@ -481,7 +481,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         ORDER BY sum_count DESC
     ";
     //_v($query);
-    //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
+    //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query, $limit, $author);
   } else {
     $query = "
@@ -490,7 +490,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         GROUP BY {$access_table}.post_id
         ORDER BY sum_count DESC
     ";
-    //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
+    //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query, $limit, $author);
   }
 

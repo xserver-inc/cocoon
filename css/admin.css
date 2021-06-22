@@ -685,7 +685,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media all and (-ms-high-contrast: none) { .admin-settings .demo { /* IE10～ */ }
   .admin-settings .demo .eye-catch-wrap { display: block; } }
 .admin-settings .demo .show-pinterest-button .eye-catch:hover .cat-label { display: none; }
-.admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; overflow: hidden; }
+.admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; }
 .admin-settings .demo .ad-label-invisible .ad-label { display: none; }
 .admin-settings .demo .ad-content-top { margin-top: 1em; }
 .admin-settings .demo .ad-responsive ins { width: 100%; }
@@ -2298,7 +2298,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media all and (-ms-high-contrast: none) { .admin-settings .demo { /* IE10～ */ }
   .admin-settings .demo .eye-catch-wrap { display: block; } }
 .admin-settings .demo .show-pinterest-button .eye-catch:hover .cat-label { display: none; }
-.admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; overflow: hidden; }
+.admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; }
 .admin-settings .demo .ad-label-invisible .ad-label { display: none; }
 .admin-settings .demo .ad-content-top { margin-top: 1em; }
 .admin-settings .demo .ad-responsive ins { width: 100%; }
@@ -3764,6 +3764,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo div#bbpress-forums fieldset.bbp-form input[type="text"], .admin-settings .demo div#bbpress-forums fieldset.bbp-form select { height: 46px; line-height: 46px; }
 .admin-settings .demo .body #wpforo #wpforo-wrap .wpforo-post .wpforo-post-content p { line-height: 1.4; }
 .admin-settings .demo #wpforo #wpforo-wrap .wpforo-post .wpforo-post-content hr { margin-bottom: 1em; }
+.admin-settings .demo div#wpforo #wpforo-wrap { padding: 10px 0; }
 .admin-settings .demo .live-writer .main { max-width: 860px; width: 860px; min-width: 860px; }
 .admin-settings .demo .live-writer .article { width: 800px; }
 .admin-settings .demo .live-writer blockquote, .admin-settings .demo .live-writer .information-box, .admin-settings .demo .live-writer .question-box, .admin-settings .demo .live-writer .alert-box { padding: 10px; }
@@ -3836,7 +3837,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo #navi .navi-in > .menu-mobile li { width: 50%; height: 40px; line-height: 40px; }
   .admin-settings .demo #navi .navi-in > .menu-mobile li a { font-size: 14px; }
   .admin-settings .demo #navi .navi-in > .menu-mobile li a:after { display: none; }
-  .admin-settings .demo main.main, .admin-settings .demo div.sidebar { padding: 16px 20px; margin: 10px 0; border-width: 0; }
+  .admin-settings .demo main.main, .admin-settings .demo div.sidebar { padding: 16px; margin: 10px 0; border-width: 0; }
   .admin-settings .demo .article ul, .admin-settings .demo .article ol { padding-left: 26px; }
   .admin-settings .demo .entry-card-title, .admin-settings .demo .related-entry-card-title { font-size: 17px; }
   .admin-settings .demo .entry-card-snippet, .admin-settings .demo .related-entry-card-snippet { font-size: 14px; }

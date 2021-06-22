@@ -899,5 +899,14 @@ function shortcodes_to_exempt_from_wptexturize( $shortcodes ) {
 };
 endif;
 
+//日付ショートコード
+add_shortcode('date', 'date_shortcode');
+if ( !function_exists( 'date_shortcode' ) ):
+function date_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'format' => 'Y/m/d',
+  ), $atts, 'date' ) );
 
-
+  return date_i18n($format);
+}
+endif;

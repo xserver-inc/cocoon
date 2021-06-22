@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.3.0
+Version: 2.3.2
 Requires at least: 5.5.0
 Requires PHP: 5.6.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -1789,7 +1789,6 @@ span.internal-icon {
 .ad-area {
   text-align: center;
   margin-bottom: 1.8em;
-  overflow: hidden;
 }
 
 .ad-label-invisible .ad-label {
@@ -9852,6 +9851,10 @@ div#bbpress-forums fieldset.bbp-form select {
   margin-bottom: 1em;
 }
 
+div#wpforo #wpforo-wrap {
+  padding: 10px 0;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;
@@ -10214,7 +10217,7 @@ _:-ms-lang(x), .mc-circle {
 
   main.main,
   div.sidebar {
-    padding: 16px 20px;
+    padding: 16px;
     margin: 10px 0;
     border-width: 0;
   }
