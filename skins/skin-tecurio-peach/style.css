@@ -416,9 +416,7 @@ background-image: linear-gradient( 165deg, #FFEDBC 0%, #ED4264 20%);
 .toc #toc-checkbox:checked + label.toc-title::before {
     content: '\f115';
 }
-.toc label.toc-title::after, .toc #toc-checkbox:checked + label.toc-title::after{
-	content: none;
-}
+
 /*.toc-title::before {
     font-family: FontAwesome;
     content: '\f022';
