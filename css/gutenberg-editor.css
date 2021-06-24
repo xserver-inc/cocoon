@@ -1119,7 +1119,7 @@ body::before,
 
 .editor-block-list-item-cocoon-blocks-faq,
 [id*="block-cocoon-blocks/faq"],
-.components-dropdown-menu__menu .components-button:first-child {
+.components-dropdown-menu__menu > .html-insert-button {
   opacity: 0.4;
   pointer-events: none;
   position: relative;
@@ -1127,8 +1127,8 @@ body::before,
 .editor-block-list-item-cocoon-blocks-faq::before, .editor-block-list-item-cocoon-blocks-faq::after,
 [id*="block-cocoon-blocks/faq"]::before,
 [id*="block-cocoon-blocks/faq"]::after,
-.components-dropdown-menu__menu .components-button:first-child::before,
-.components-dropdown-menu__menu .components-button:first-child::after {
+.components-dropdown-menu__menu > .html-insert-button::before,
+.components-dropdown-menu__menu > .html-insert-button::after {
   background-color: #c9171e;
   border-radius: 2px;
   color: #fff;
@@ -1141,7 +1141,7 @@ body::before,
 }
 .editor-block-list-item-cocoon-blocks-faq::before,
 [id*="block-cocoon-blocks/faq"]::before,
-.components-dropdown-menu__menu .components-button:first-child::before {
+.components-dropdown-menu__menu > .html-insert-button::before {
   content: "寄付特典";
   top: 0;
 }

@@ -913,7 +913,7 @@ body::before,
 
 .editor-block-list-item-cocoon-blocks-faq,
 [id*="block-cocoon-blocks/faq"],
-.components-dropdown-menu__menu .components-button:first-child{
+.components-dropdown-menu__menu > .html-insert-button{
   opacity: 0.4;
   pointer-events: none;
   position: relative;

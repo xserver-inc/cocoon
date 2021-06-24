@@ -50,4 +50,8 @@ wp.domReady(function () {
     jQuery('.block-editor-block-preview__content .wp-block-group').removeAttr('style');
   },1000);
 
+  setInterval(function(){
+    jQuery("button:contains('HTML挿入')").addClass('html-insert-button');
+  },100);
+
 })(jQuery);
