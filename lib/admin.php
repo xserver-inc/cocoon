@@ -301,10 +301,10 @@ function customize_admin_add_column($column_name, $post_id) {
 endif;
 
 //投稿・固定ページ管理画面の記事一覧テーブルにIDソートを可能にする
-add_filter( 'manage_edit-post_sortable_columns', 'sort_term_columns' );//投稿
-add_filter( 'manage_edit-page_sortable_columns', 'sort_term_columns' );//固定ページ
-if ( !function_exists( 'sort_term_columns' ) ):
-function sort_term_columns($columns) {
+add_filter( 'manage_edit-post_sortable_columns', 'sort_post_columns' );//投稿
+add_filter( 'manage_edit-page_sortable_columns', 'sort_post_columns' );//固定ページ
+if ( !function_exists( 'sort_post_columns' ) ):
+function sort_post_columns($columns) {
   $columns['post-id'] = 'ID';
   return $columns;
 }
