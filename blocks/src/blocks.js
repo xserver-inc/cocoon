@@ -36,25 +36,25 @@ import * as microBalloon from './micro/micro-balloon';
 import * as microText from './micro/micro-text';
 
 const cocoonBlocks = [
-  balloon,
+  iconBox,
+  infoBox,
   blankBox,
+  stickyBox,
+  tabBox,
+  balloon,
   blogCard,
   button,
   buttonWrap,
-  iconBox,
-  iconList,
-  infoBox,
+  toggleBox,
   searchBox,
-  stickyBox,
-  tabBox,
   timeline,
   timelineItem,
-  toggleBox,
+  iconList,
   faq,
 
   captionBox,
-  labelBox,
   tabCaptionBox,
+  labelBox,
 
   microBalloon,
   microText,
