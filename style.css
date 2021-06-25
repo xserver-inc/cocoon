@@ -9806,6 +9806,11 @@ div#wpforo #wpforo-wrap {
   padding: 10px 0;
 }
 
+.body div#wpforo #wpforo-wrap .wpforo-post .wpforo-post-content p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;

@@ -3743,6 +3743,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .body #wpforo #wpforo-wrap .wpforo-post .wpforo-post-content p { line-height: 1.4; }
 .admin-settings .demo #wpforo #wpforo-wrap .wpforo-post .wpforo-post-content hr { margin-bottom: 1em; }
 .admin-settings .demo div#wpforo #wpforo-wrap { padding: 10px 0; }
+.admin-settings .demo .body div#wpforo #wpforo-wrap .wpforo-post .wpforo-post-content p { line-height: 1.6; margin-bottom: 1em; }
 .admin-settings .demo .live-writer .main { max-width: 860px; width: 860px; min-width: 860px; }
 .admin-settings .demo .live-writer .article { width: 800px; }
 .admin-settings .demo .live-writer blockquote, .admin-settings .demo .live-writer .information-box, .admin-settings .demo .live-writer .question-box, .admin-settings .demo .live-writer .alert-box { padding: 10px; }
