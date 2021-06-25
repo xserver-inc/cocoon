@@ -1146,6 +1146,10 @@ body::before,
   top: 0;
 }
 
+.components-dropdown-menu__menu > .html-insert-button {
+  pointer-events: auto;
+}
+
 [id*="block-cocoon-blocks/faq"] {
   display: none !important;
 }

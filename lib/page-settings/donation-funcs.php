@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //寄付コードの取得
-define('OP_PRIVILEGE_ACTIVATION_CODE', 'get_privilege_activation_code');
+define('OP_PRIVILEGE_ACTIVATION_CODE', 'privilege_activation_code');
 if ( !function_exists( 'get_privilege_activation_code' ) ):
 function get_privilege_activation_code(){
   return get_theme_option(OP_PRIVILEGE_ACTIVATION_CODE);
