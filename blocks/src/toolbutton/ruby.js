@@ -11,6 +11,7 @@ import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { toggleFormat, registerFormatType, insert, applyFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton, RichTextShortcut } from '@wordpress/block-editor';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const isRubyVisible = Number(gbSettings['isRubyVisible'] ? gbSettings['isRubyVisible'] : 0);
@@ -60,11 +61,11 @@ if (isRubyVisible) {
       // @see keycodes/src/index.js
       const shortcutType = 'primaryShift';
       const shortcutCharacter ='r';
-      //const icon = (<FontAwesomeIcon icon={['fas', 'ellipsis-h']} />);
+      const icon = (<FontAwesomeIcon icon={['fas', 'ellipsis-h']} />);
       return (
         <Fragment>
           <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
-          <RichTextToolbarButton icon={<Icon icon={queryPagination} size={32} />} title={__( 'ふりがな（ルビ）', THEME_NAME )} onClick={onToggle}
+          <RichTextToolbarButton icon={icon} title={__( 'ふりがな（ルビ）', THEME_NAME )} onClick={onToggle}
                                  isActive={isActive} shorcutType={shortcutType} shorcutCharacter={shortcutCharacter} />
         </Fragment>
       )
