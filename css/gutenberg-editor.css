@@ -1220,7 +1220,9 @@ body::before,
 }
 
 .wp-block[data-align=left] > .micro-copy,
-.wp-block[data-align=right] > .micro-copy {
+.wp-block[data-align=right] > .micro-copy,
+.wp-block[data-align=left] > .admin-micro-balloon-wrap,
+.wp-block[data-align=right] > .admin-micro-balloon-wrap {
   float: none;
 }
 
@@ -1239,5 +1241,17 @@ body::before,
 .micro-copy {
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-bottom: 32px !important;
+}
+
+.micro-balloon {
+  margin-left: 0 !important;
+}
+
+.wp-block[data-align=center] .micro-balloon {
+  margin-left: auto !important;
+}
+
+.wp-block[data-align=right] .micro-balloon {
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }

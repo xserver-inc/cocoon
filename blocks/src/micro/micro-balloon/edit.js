@@ -130,17 +130,17 @@ export function MicroBalloonEdit( props ) {
           ]}
         />
       </InspectorControls>
-
-      <div { ...blockProps }>
-        <span className="micro-balloon-content micro-content">
-          { icon && <span className={classnames('micro-balloon-icon', 'micro-icon', icon)}></span> }
-          <RichText
-            value={ content }
-            onChange={ ( value ) => setAttributes( { content: value } ) }
-          />
-        </span>
+      <div className="admin-micro-balloon-wrap wp-block micro-copy">
+        <div { ...blockProps }>
+          <span className="micro-balloon-content micro-content">
+            { icon && <span className={classnames('micro-balloon-icon', 'micro-icon', icon)}></span> }
+            <RichText
+              value={ content }
+              onChange={ ( value ) => setAttributes( { content: value } ) }
+            />
+          </span>
+        </div>
       </div>
-
     </Fragment>
   );
 }
