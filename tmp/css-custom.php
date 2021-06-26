@@ -684,7 +684,7 @@ if (!$entry_content_margin_hight) {
 .article h4,
 .article h5,
 .article h6{
-  margin-bottom: <?php echo intval($entry_content_margin_hight) * intval(px_to_int(get_site_font_size())); ?>px;
+  margin-bottom: <?php echo round($entry_content_margin_hight * 0.9, 2); ?>em;
 }
 <?php //モバイルサイトフォント
 $mobile_site_font_size = get_mobile_site_font_size();
