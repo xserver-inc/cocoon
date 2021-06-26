@@ -1023,3 +1023,31 @@ body::before,
     }
   }
 }
+
+.wp-block[data-align=left],
+.wp-block[data-align=right]{
+  height: auto;
+}
+
+.wp-block[data-align=left] > .micro-copy,
+.wp-block[data-align=right] > .micro-copy{
+  float: none;
+}
+
+.wp-block[data-align=left] > .micro-text{
+  text-align: left;
+}
+.wp-block[data-align=center] > .micro-text{
+  text-align: center;
+}
+.wp-block[data-align=right] > .micro-text{
+  text-align: right;
+}
+
+
+
+.micro-copy{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 32px !important;
+}

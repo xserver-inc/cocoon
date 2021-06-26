@@ -38,6 +38,7 @@ export function MicroTextEdit( props ) {
   } = attributes;
 
   const classes = classnames(className, {
+    // [ 'wp-block' ]: true,
     [ 'micro-text' ]: true,
     [ MICRO_COPY_CLASS ]: true,
     [ type ]: !! type,
