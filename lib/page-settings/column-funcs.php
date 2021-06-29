@@ -118,7 +118,12 @@ endif;
 
 if ( !function_exists( 'get_main_column_width' ) ):
 function get_main_column_width(){
-  $main_column_contents_width = get_main_column_contents_width() ? get_main_column_contents_width() : 800;
+  $default_width = 800;
+  $main_column_contents_width = $default_width;
+  $w = get_main_column_contents_width();
+  if ($w && (!is_singular_page_type_narrow() || (is_singular_page_type_narrow() && ($w <= $default_width)))) {
+    $main_column_contents_width = $w;
+  }
   $main_column_padding = get_main_column_padding() ? get_main_column_padding() : 29;
   $main_column_border_width = is_numeric(get_main_column_border_width()) ? get_main_column_border_width() : 1;
   return intval($main_column_contents_width) +
