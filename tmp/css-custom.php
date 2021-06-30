@@ -696,14 +696,6 @@ if ($mobile_site_font_size): ?>
   .menu-content{
     font-size: <?php echo $mobile_site_font_size; ?>;
   }
-  <?php //本文中の見出しの余白調整 ?>
-  .article h2,
-  .article h3,
-  .article h4,
-  .article h5,
-  .article h6{
-    margin-bottom: <?php echo intval($entry_content_margin_hight) * intval(px_to_int($mobile_site_font_size)); ?>px;
-  }
 }
 <?php endif ?>
 @media screen and (max-width:781px) {

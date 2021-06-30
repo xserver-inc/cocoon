@@ -3921,7 +3921,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { font-size: 1em; }
   .admin-settings .demo .related-entry-card-thumb { width: 38%; }
   .admin-settings .demo .related-entry-card-content { margin-left: 40%; font-size: 0.9em; }
-  .admin-settings .demo .entry-title, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { padding: 0.6em; margin: 1.2em 0 0.8em; }
+  .admin-settings .demo .entry-title, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { padding: 0.6em; }
   .admin-settings .demo .entry-title, .admin-settings .demo .article h2 { font-size: 20px; padding: 0.6em 0.8em; }
   .admin-settings .demo .article h3 { font-size: 18px; }
   .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 16px; }
