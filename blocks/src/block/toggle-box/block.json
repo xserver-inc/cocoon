@@ -31,8 +31,7 @@
     }
   },
   "supports": {
-    "reusable": false,
-    "className": false
+    "reusable": false
   },
   "example": {}
 }

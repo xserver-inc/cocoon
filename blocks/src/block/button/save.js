@@ -27,7 +27,10 @@ export default function save({ attributes }) {
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
 
-  const classes = BUTTON_BLOCK;
+  // const classes = BUTTON_BLOCK;
+  const classes = classnames( {
+    [BUTTON_BLOCK]: true,
+  } );
   const blockProps = useBlockProps.save({
     className: classes,
   });

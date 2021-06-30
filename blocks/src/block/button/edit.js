@@ -45,8 +45,10 @@ export function ButtonEdit( props ) {
     isShine,
   } = attributes;
 
-  const classes = BUTTON_BLOCK;
-  const blockProps = useBlockProps({
+  const classes = classnames( {
+    [BUTTON_BLOCK]: true,
+  } );
+  const blockProps = useBlockProps(className, {
     className: classes,
   });
 

@@ -49,7 +49,6 @@
   },
   "supports": {
     "align": [ "left", "center", "right" ],
-    "className": false,
     "customClassName": true
   },
   "example": {}
