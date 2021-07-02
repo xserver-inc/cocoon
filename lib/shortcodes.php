@@ -890,3 +890,27 @@ function date_shortcode( $atts, $content = null ) {
   return date_i18n($format);
 }
 endif;
+
+//日付ショートコード
+add_shortcode('updated', 'updated_shortcode');
+if ( !function_exists( 'updated_shortcode' ) ):
+function updated_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'format' => 'Y/m/d',
+  ), $atts, 'updated' ) );
+
+  if (is_singular()) {
+    $up = get_update_time($format);
+    if ($up) {
+      $res = $up;
+    } else {
+      $res = get_the_time($format);
+    }
+  } else {
+    $res = __( 'updatedショートコードは投稿・固定ページ以外では利用できません。', THEME_NAME );
+  }
+
+
+  return $res;
+}
+endif;
