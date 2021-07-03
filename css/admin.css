@@ -3753,6 +3753,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo #cse-search-box input[name="q"] { line-height: 34px; width: calc(100% - 60px); float: left; }
 .admin-settings .demo #cse-search-box input[name="sa"] { width: 60px; padding: 0; line-height: 34px; }
 .admin-settings .demo twitter-widget { overflow: hidden; }
+.admin-settings .demo .scroll-hint-icon-wrap { z-index: 3; }
 .admin-settings .demo .video-click { cursor: pointer; }
 .admin-settings .demo .video-click:hover .video-play { background: url("images/youtube-play.png") no-repeat scroll -101px -13px rgba(0, 0, 0, 0); }
 .admin-settings .demo .video-play { background: url("images/youtube-play.png") no-repeat scroll 2px -13px rgba(0, 0, 0, 0); height: 62px; left: 50%; margin-left: -45px; margin-top: -33px; position: absolute; top: 50%; width: 100px; opacity: 0.8; }

@@ -9859,6 +9859,10 @@ twitter-widget {
   overflow: hidden;
 }
 
+.scroll-hint-icon-wrap {
+  z-index: 3;
+}
+
 /**
  * Cocoon WordPress Theme
  * @author: yhira
