@@ -2140,6 +2140,10 @@ img.blogcard-favicon-image {
   width: auto;
 }
 
+.no-sidebar .content-in {
+  display: block;
+}
+
 /************************************
 ** ウィジェット
 ************************************/

@@ -753,6 +753,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .ranking-item-name-text, .admin-settings .demo .nwa .widget_item_ranking .main-widget-label { font-size: 20px; }
 .admin-settings .demo .nwa .ranking-item-description p { font-size: 0.9em; }
 .admin-settings .demo .nwa .blogcard-wrap { width: auto; }
+.admin-settings .demo .no-sidebar .content-in { display: block; }
 .admin-settings .demo label.screen-reader-text { display: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
 .admin-settings .demo .tagcloud a { border: 1px solid #eee; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.3s ease-in-out; }
@@ -2355,6 +2356,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .ranking-item-name-text, .admin-settings .demo .nwa .widget_item_ranking .main-widget-label { font-size: 20px; }
 .admin-settings .demo .nwa .ranking-item-description p { font-size: 0.9em; }
 .admin-settings .demo .nwa .blogcard-wrap { width: auto; }
+.admin-settings .demo .no-sidebar .content-in { display: block; }
 .admin-settings .demo label.screen-reader-text { display: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
 .admin-settings .demo .tagcloud a { border: 1px solid #eee; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.3s ease-in-out; }
