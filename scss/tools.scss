@@ -25,3 +25,8 @@
 twitter-widget {
   overflow: hidden;
 }
+
+//スクロールヒントが1列目に重なるのを防ぐ
+.scroll-hint-icon-wrap {
+  z-index: 3;
+}

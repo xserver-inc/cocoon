@@ -24,15 +24,6 @@ body {
 	width: 1000px;
 }
 
-#main{
-	width: auto;
-}
-
-.ect-tile-card-2-wrap #main,
-.ect-tile-card-3-wrap #main{
-	width: 100%;
-}
-
 #content {
 	margin-top: 0;
 }
