@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '寄付', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e('Cocoonは無料テーマのため開発支援をいただければ幸いです。寄付の詳細は<a href="https://wp-cocoon.com/donation/" target="_blank" rel="noopener noreferrer">こちら</a>。', THEME_NAME); ?></p>
+    <p><?php _e('Cocoonは無料テーマのため開発支援をいただければ幸いです。寄付の詳細は<a href="https://wp-cocoon.com/donation-privilege/" target="_blank" rel="noopener noreferrer">こちら</a>。', THEME_NAME); ?></p>
 
     <table class="form-table">
       <tbody>
@@ -29,8 +29,17 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <td>
           <?php
           generate_textbox_tag(OP_PRIVILEGE_ACTIVATION_CODE, get_privilege_activation_code(), '');
-          generate_tips_tag(__( '取得した「寄付コード」を入力してください。', THEME_NAME ));
+          generate_tips_tag(__( '取得した「<a href="https://wp-cocoon.com/donation-privilege/" target="_blank" rel="noopener noreferrer">寄付コード</a>」を入力してください。', THEME_NAME ));
           ?>
+          <br>
+          <p><?php _e('現在は以下の特典機能が利用できます。', THEME_NAME); ?><?php _e('詳細は<a href="https://wp-cocoon.com/cocoon-donation-privileges/" target="_blank" rel="noopener noreferrer">こちら</a>をご参照ください。', THEME_NAME); ?></p>
+
+          <ul style="list-style-type: disc;padding-left: 30px;margin: 2em 0;">
+            <li><?php _e('FAQブロック（リッチスニペット対応）', THEME_NAME); ?></li>
+            <li><?php _e('HTML挿入ボタン（※ショートコード）', THEME_NAME); ?></li>
+          </ul>
+
+          <p><?php _e('特典機能を入手する場合は<a href="https://wp-cocoon.com/donation-privilege/" target="_blank" rel="noopener noreferrer">こちら</a>。', THEME_NAME); ?></p>
         </td>
       </tr>
 
