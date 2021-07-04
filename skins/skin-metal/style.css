@@ -385,3 +385,30 @@ body {
 #sidebar{
 	display: none;
 }
+
+
+.content-in{
+	display: block;
+}
+
+#main{
+	width: 100%;
+}
+
+@media screen and (max-width: 1280px) {
+	.entry-card .entry-card-thumb{
+		width: 240px;
+	}
+	.entry-card .entry-card-content {
+    margin-left: 250px;
+	}
+}
+
+@media screen and (max-width: 834px) {
+	.entry-card .entry-card-thumb{
+		width: 38%;
+	}
+	.entry-card .entry-card-content {
+    margin-left: 40%;
+	}
+}
