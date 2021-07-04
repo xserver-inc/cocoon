@@ -99,6 +99,7 @@ body {
 /**
  * .entry
  */
+/*
 .entry-card-thumb {
 	text-align: center;
 	width: 240px;
@@ -113,7 +114,7 @@ body {
 
 .entry-card-content {
 	margin-left: 250px;
-}
+} */
 
 /**
  * .toc
@@ -394,7 +395,7 @@ body {
 #main{
 	width: 100%;
 }
-
+/*
 @media screen and (max-width: 1280px) {
 	.entry-card .entry-card-thumb{
 		width: 240px;
@@ -411,4 +412,4 @@ body {
 	.entry-card .entry-card-content {
     margin-left: 40%;
 	}
-}
+} */
