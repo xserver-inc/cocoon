@@ -910,8 +910,10 @@ function date_shortcode( $atts, $content = null ) {
 }
 endif;
 
-//日付ショートコード
-add_shortcode('updated', 'updated_shortcode');
+//更新日ショートコード
+if (is_privilege_activation_code_available()) {
+  add_shortcode('updated', 'updated_shortcode');
+}
 if ( !function_exists( 'updated_shortcode' ) ):
 function updated_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(

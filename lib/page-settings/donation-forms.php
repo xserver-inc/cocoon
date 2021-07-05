@@ -37,6 +37,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <ul style="list-style-type: disc;padding-left: 30px;margin: 2em 0;">
             <li><?php _e('FAQブロック（リッチスニペット対応）', THEME_NAME); ?></li>
             <li><?php _e('HTML挿入ボタン（※ショートコード）', THEME_NAME); ?></li>
+            <li><?php _e('更新日表示ショートコード', THEME_NAME); ?></li>
           </ul>
 
           <p><?php _e('特典機能を入手する場合は<a href="https://wp-cocoon.com/donation-privilege/" target="_blank" rel="noopener noreferrer">こちら</a>。', THEME_NAME); ?></p>

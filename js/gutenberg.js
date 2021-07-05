@@ -56,7 +56,8 @@ wp.domReady(function () {
   },1000);
 
   setInterval(function(){
-    jQuery("button:contains('HTML挿入')").addClass('html-insert-button');
+    jQuery("button:contains('HTML挿入')").addClass('html-insert-button cocoon-donation-privilege');
+    jQuery("button:contains('ページの更新日')").addClass('shortcode-updated-button cocoon-donation-privilege');
   },100);
 
 })(jQuery);

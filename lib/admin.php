@@ -627,13 +627,13 @@ div.editor-block-list__block p{
 if(is_privilege_activation_code_available()): ?>
   .editor-block-list-item-cocoon-blocks-faq,
   [id*="block-cocoon-blocks/faq"],
-  .components-dropdown-menu__menu > .html-insert-button{
+  .components-dropdown-menu__menu > .cocoon-donation-privilege{
     opacity: 1;
     pointer-events: auto;
   }
   .editor-block-list-item-cocoon-blocks-faq::before,
   [id*="block-cocoon-blocks/faq"]::before,
-  .components-dropdown-menu__menu > .html-insert-button::before{
+  .components-dropdown-menu__menu > .cocoon-donation-privilege::before{
     content: "特典";
     color: #777;
     background-color: #fff;

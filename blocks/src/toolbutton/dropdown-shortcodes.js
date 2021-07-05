@@ -135,6 +135,20 @@ registerShortcodeFormatType(
   '[age birth="YYYY/MM/DD"]',
   ['fas', 'birthday-cake']
 );
+//ページ読み込み時の日付
+registerShortcodeFormatType(
+  'shortcode-date',
+  __( 'ページ読み込み時の日付', THEME_NAME ),
+  '[date format="Y/m/d"]',
+  ['fas', 'birthday-cake']
+);
+//ページの更新日
+registerShortcodeFormatType(
+  'shortcode-updated',
+  __( 'ページの更新日', THEME_NAME ),
+  '[updated format="Y/m/d"]',
+  ['fas', 'birthday-cake']
+);
 //カウントダウン
 registerShortcodeFormatType(
   'shortcode-countdown',

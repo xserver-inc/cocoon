@@ -913,7 +913,7 @@ body::before,
 
 .editor-block-list-item-cocoon-blocks-faq,
 [id*="block-cocoon-blocks/faq"],
-.components-dropdown-menu__menu > .html-insert-button{
+.components-dropdown-menu__menu > .cocoon-donation-privilege{
   opacity: 0.4;
   pointer-events: none;
   position: relative;
@@ -936,7 +936,7 @@ body::before,
   }
 }
 
-.components-dropdown-menu__menu > .html-insert-button{
+.components-dropdown-menu__menu > .cocoon-donation-privilege{
   pointer-events: auto;
 }
 
