@@ -677,6 +677,7 @@ if (!$entry_content_margin_hight) {
 .body .scrollable-table,
 .body .wp-block-separator,
 .body .wp-block,
+.body .video-container,
 .is-root-container > *,
 [data-type="core/freeform"] {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
