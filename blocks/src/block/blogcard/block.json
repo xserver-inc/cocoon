@@ -1,0 +1,20 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/blogcard",
+  "category": "cocoon-block",
+  "keywords": [ "blogcard", "box", "wrap" ],
+
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "div",
+      "default": ""
+    },
+    "style": {
+      "type": "string",
+      "default": "blogcard-type bct-none"
+    }
+  },
+  "example": {}
+}

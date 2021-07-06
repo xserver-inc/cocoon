@@ -6,14 +6,14 @@
  */
 
 import { THEME_NAME, ShortcodeToolbarButton } from '../helpers.js';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { registerFormatType, insert } = wp.richText;
-const { BlockFormatControls } = wp.editor;
-const { Slot, Toolbar, DropdownMenu } = wp.components;
-const FORMAT_TYPE_NAME = 'cocoon-blocks/shortcodes';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, insert } from '@wordpress/rich-text';
+import { BlockFormatControls } from '@wordpress/block-editor';
+import { Slot, Toolbar, DropdownMenu } from '@wordpress/components';
+import { Icon, shortcode } from '@wordpress/icons';
 import { orderBy } from 'lodash';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/shortcodes';
 
 //ショートコード作成関数
 function registerShortcodeFormatType(name, title, code, icon) {
@@ -28,7 +28,7 @@ function registerShortcodeFormatType(name, title, code, icon) {
       return (
         <Fragment>
           <ShortcodeToolbarButton
-            icon={<FontAwesomeIcon icon={icon} />}
+            icon={<Icon icon={shortcode} size={32} />}
             title={<span className={name}>{title}</span>}
             onClick={ onToggle }
           />
@@ -135,6 +135,20 @@ registerShortcodeFormatType(
   '[age birth="YYYY/MM/DD"]',
   ['fas', 'birthday-cake']
 );
+//ページ読み込み時の日付
+registerShortcodeFormatType(
+  'shortcode-date',
+  __( 'ページ読み込み時の日付', THEME_NAME ),
+  '[date format="Y/m/d"]',
+  ['fas', 'birthday-cake']
+);
+//ページの更新日
+registerShortcodeFormatType(
+  'shortcode-updated',
+  __( 'ページの更新日', THEME_NAME ),
+  '[updated format="Y/m/d"]',
+  ['fas', 'birthday-cake']
+);
 //カウントダウン
 registerShortcodeFormatType(
   'shortcode-countdown',
@@ -202,7 +216,7 @@ if (isGeneralVisible) {
               <Slot name="Shortcode.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
-                    icon={<FontAwesomeIcon icon={['fas', 'code']} />}
+                    icon={<Icon icon={shortcode} size={32} />}
                     label={__( 'ショートコード', THEME_NAME )}
                     className='shortcodes'
                     controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }

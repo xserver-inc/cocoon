@@ -6,14 +6,13 @@
  */
 
 import { THEME_NAME } from '../helpers.js';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { registerFormatType, toggleFormat } = wp.richText;
-const { BlockFormatControls } = wp.editor;
-const { Slot, Toolbar, DropdownMenu } = wp.components;
-const FORMAT_TYPE_NAME = 'cocoon-blocks/markers';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType } from '@wordpress/rich-text';
+import { BlockFormatControls } from '@wordpress/block-editor';
+import { Slot, Toolbar, DropdownMenu } from '@wordpress/components';
+import { Icon, brush } from '@wordpress/icons';
 import { orderBy } from 'lodash';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/markers';
 
 var isMarkerVisible = Number(gbSettings['isMarkerVisible'] ? gbSettings['isMarkerVisible'] : 0);
 if (isMarkerVisible) {
@@ -30,7 +29,7 @@ if (isMarkerVisible) {
               <Slot name="Marker.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
-                    icon={<FontAwesomeIcon icon="highlighter" />}
+                    icon={<Icon icon={brush} size={32} />}
                     label={__( '文字', THEME_NAME )}
                     className='letters'
                     controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }

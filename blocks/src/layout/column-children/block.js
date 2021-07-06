@@ -5,17 +5,19 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, LAYOUT_BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, LAYOUT_BLOCK_CLASS} from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classnames from 'classnames';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
-const { Fragment } = wp.element;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { Fragment } from '@wordpress/element';
 
 //左カラム
 registerBlockType( 'cocoon-blocks/column-left', {
 
+  apiVersion: 2,
   title: __( '左カラム', THEME_NAME ),
   parent: [
     'cocoon-blocks/column-2',
@@ -27,20 +29,37 @@ registerBlockType( 'cocoon-blocks/column-left', {
   supports: {
     inserter: false,
   },
+  example: {},
 
-  edit( { attributes, setAttributes } ) {
+  edit( { className } ) {
+    const classes = classnames(className, {
+      [ 'column-left' ]: true,
+    });
+
+    const blockProps = useBlockProps({
+      className: classes,
+    });
+
     return (
       <Fragment>
-        <div className="column-left">
+        <div { ...blockProps }>
           <InnerBlocks templateLock={ false } />
         </div>
       </Fragment>
     );
   },
 
-  save( { attributes } ) {
+  save( { className } ) {
+    const classes = classnames(className, {
+      [ 'column-left' ]: true,
+    });
+
+    const blockProps = useBlockProps.save({
+      className: classes,
+    });
+
     return (
-      <div className="column-left">
+      <div { ...blockProps }>
         <InnerBlocks.Content />
       </div>
     );
@@ -50,6 +69,7 @@ registerBlockType( 'cocoon-blocks/column-left', {
 //中央カラム
 registerBlockType( 'cocoon-blocks/column-center', {
 
+  apiVersion: 2,
   title: __( '中央カラム', THEME_NAME ),
   parent: [
     'cocoon-blocks/column-2',
@@ -61,20 +81,37 @@ registerBlockType( 'cocoon-blocks/column-center', {
   supports: {
     inserter: false,
   },
+  example: {},
 
-  edit( { attributes, setAttributes } ) {
+  edit( { className } ) {
+    const classes = classnames(className, {
+      [ 'column-center' ]: true,
+    });
+
+    const blockProps = useBlockProps({
+      className: classes,
+    });
+
     return (
       <Fragment>
-        <div className="column-center">
+        <div { ...blockProps }>
           <InnerBlocks templateLock={ false } />
         </div>
       </Fragment>
     );
   },
 
-  save( { attributes } ) {
+  save( { className } ) {
+    const classes = classnames(className, {
+      [ 'column-center' ]: true,
+    });
+
+    const blockProps = useBlockProps.save({
+      className: classes,
+    });
+
     return (
-      <div className="column-center">
+      <div { ...blockProps }>
         <InnerBlocks.Content />
       </div>
     );
@@ -85,6 +122,7 @@ registerBlockType( 'cocoon-blocks/column-center', {
 //右カラム
 registerBlockType( 'cocoon-blocks/column-right', {
 
+  apiVersion: 2,
   title: __( '右カラム', THEME_NAME ),
   parent: [
     'cocoon-blocks/column-2',
@@ -96,20 +134,37 @@ registerBlockType( 'cocoon-blocks/column-right', {
   supports: {
     inserter: false,
   },
+  example: {},
 
-  edit( { attributes, setAttributes } ) {
+  edit( { className } ) {
+    const classes = classnames(className, {
+      [ 'column-right' ]: true,
+    });
+
+    const blockProps = useBlockProps({
+      className: classes,
+    });
+
     return (
       <Fragment>
-        <div className="column-right">
+        <div { ...blockProps }>
           <InnerBlocks templateLock={ false } />
         </div>
       </Fragment>
     );
   },
 
-  save( { attributes } ) {
+  save( { className } ) {
+    const classes = classnames(className, {
+      [ 'column-right' ]: true,
+    });
+
+    const blockProps = useBlockProps.save({
+      className: classes,
+    });
+
     return (
-      <div className="column-right">
+      <div { ...blockProps }>
         <InnerBlocks.Content />
       </div>
     );

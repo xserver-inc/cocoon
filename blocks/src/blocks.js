@@ -4,36 +4,129 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+ import {
+  registerBlockType,
+  unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
+} from '@wordpress/blocks';
+import compareVersions from 'compare-versions';
+const cocoonBlocksPro = [];
+
+//構造化したブロック
+import * as balloon from './block/balloon';
+import * as blankBox from './block/blank-box';
+import * as blogCard from './block/blogcard';
+import * as button from './block/button';
+import * as buttonWrap from './block/button-wrap';
+import * as iconBox from './block/icon-box';
+import * as iconList from './block/icon-list';
+import * as infoBox from './block/info-box';
+import * as searchBox from './block/search-box';
+import * as stickyBox from './block/sticky-box';
+import * as tabBox from './block/tab-box';
+import * as timeline from './block/timeline';
+import * as timelineItem from './block/timeline-item';
+import * as toggleBox from './block/toggle-box';
+import * as faq from './block/faq';
+
+import * as captionBox from './block-universal/caption-box';
+import * as labelBox from './block-universal/label-box';
+import * as tabCaptionBox from './block-universal/tab-caption-box';
+
+import * as microBalloon from './micro/micro-balloon';
+import * as microText from './micro/micro-text';
+
+const cocoonBlocks = [
+  iconBox,
+  infoBox,
+  blankBox,
+  stickyBox,
+  tabBox,
+  balloon,
+  blogCard,
+  button,
+  buttonWrap,
+  toggleBox,
+  searchBox,
+  timeline,
+  timelineItem,
+  iconList,
+  faq,
+
+  captionBox,
+  tabCaptionBox,
+  labelBox,
+
+  microBalloon,
+  microText,
+];
+
+
+export const __getCocoonBlocks = () => cocoonBlocks.concat(cocoonBlocksPro);
+
+const registerBlock = (block) => {
+  if (!block) {
+    return;
+  }
+
+  let { metadata, settings, name } = block;
+
+  // WP5.5未満の場合
+  let wpVersion = 0;
+  if (gbSettings['wpVersion']) {
+    wpVersion = gbSettings['wpVersion'];
+    // console.log(wpVersion);
+  }
+  if (compareVersions(wpVersion, '5.5') < 0) {
+    //nameを削除
+     delete metadata.name;
+     //カテゴリ等を追加
+     settings = {
+       ...settings,
+       ...metadata,
+     };
+   } else if (metadata) {
+    unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata });
+  }
+  registerBlockType(name, settings);
+};
+
+export const registerCocoonBlocks = (blocks = __getCocoonBlocks()) => {
+  blocks.forEach(registerBlock);
+};
+
+registerCocoonBlocks();
+
+
+
 
 //ブロック
-import './block/icon-box/block.js';
-import './block/info-box/block.js';
-import './block/blank-box/block.js';
-import './block/sticky-box/block.js';
-import './block/tab-box/block.js';
-import './block/balloon/block.js';
+// import './block/icon-box';
+//import './block/info-box/block.js';
+//import './block/blank-box/block.js';
+//import './block/sticky-box/block.js';
+//import './block/tab-box/block.js';
+//import './block/balloon/block.js';
 //import './block/balloon-ex/block.js';
-import './block/blogcard/block.js';
-import './block/button/block.js';
-import './block/button-wrap/block.js';
-import './block/toggle-box/block.js';
-import './block/search-box/block.js';
-import './block/timeline/block.js';
-import './block/icon-list/block.js';
+//import './block/blogcard/block.js';
+//import './block/button/block.js';
+//import './block/button-wrap/block.js';
+//import './block/toggle-box/block.js';
+//import './block/search-box/block.js';
+//import './block/timeline/block.js';
+//import './block/icon-list/block.js';
 
 //デフォルトブロックの拡張
 import './custom/code/block.js';
-//import './block/code-box/block.js';
 // import './block/hoc-color-palette-demo/block.js';
 
 //汎用ブロック
-import './block-universal/caption-box/block.js';
-import './block-universal/tab-caption-box/block.js';
-import './block-universal/label-box/block.js';
+//import './block-universal/caption-box/block.js';
+//import './block-universal/tab-caption-box/block.js';
+//import './block-universal/label-box/block.js';
 
 //マイクロコピー
-import './micro/micro-text/block.js';
-import './micro/micro-balloon/block.js';
+//import './micro/micro-text/block.js';
+//import './micro/micro-balloon/block.js';
 
 //レイアウト
 import './layout/column-children/block.js';
@@ -53,7 +146,8 @@ import './toolbutton/green.js';
 import './toolbutton/bold-green.js';
 import './toolbutton/keyboard-key.js';
 import './toolbutton/ruby.js';
-//import './toolbutton/html.js';
+import './toolbutton/clear-format.js';
+import './toolbutton/html.js';
 
 //マーカー
 import './toolbutton/marker-yellow.js';

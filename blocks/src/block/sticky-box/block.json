@@ -1,0 +1,13 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/sticky-box",
+  "category": "cocoon-block",
+  "keywords": [ "sticky", "box" ],
+
+  "attributes": {
+    "style": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

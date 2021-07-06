@@ -1,0 +1,29 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/tab-box-1",
+  "category": "cocoon-block",
+  "keywords": [ "tab", "box" ],
+
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "bb-check"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    }
+  },
+  "example": {}
+}

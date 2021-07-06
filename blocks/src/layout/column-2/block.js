@@ -5,17 +5,24 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, LAYOUT_BLOCK_CLASS} from '../../helpers';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { THEME_NAME, LAYOUT_BLOCK_CLASS} from '../../helpers';
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InnerBlocks, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl } = wp.components;
-const { Fragment } = wp.element;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import {
+  InnerBlocks,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
 
 const ALLOWED_BLOCKS = [ 'cocoon-blocks/column-left', 'cocoon-blocks/column-right' ];
+const TEMPLATE = [
+  [ 'cocoon-blocks/column-left', { placeholder: __( '左側に入力する内容', THEME_NAME ) } ],
+  [ 'cocoon-blocks/column-right', { placeholder: __( '右側に入力する内容', THEME_NAME ) } ]
+];
 
 //classの取得
 function getClasses(ratio) {
@@ -32,11 +39,13 @@ function getClasses(ratio) {
 
 registerBlockType( 'cocoon-blocks/column-2', {
 
+  apiVersion: 2,
   title: __( '2カラム', THEME_NAME ),
-  icon: <FontAwesomeIcon icon="columns" />,
+  icon: <svg enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m22.5 24h-8c-.827 0-1.5-.673-1.5-1.5v-21c0-.827.673-1.5 1.5-1.5h8c.827 0 1.5.673 1.5 1.5v21c0 .827-.673 1.5-1.5 1.5zm-8-23c-.276 0-.5.224-.5.5v21c0 .276.224.5.5.5h8c.276 0 .5-.224.5-.5v-21c0-.276-.224-.5-.5-.5z"/><path d="m9.5 24h-8c-.827 0-1.5-.673-1.5-1.5v-21c0-.827.673-1.5 1.5-1.5h8c.827 0 1.5.673 1.5 1.5v21c0 .827-.673 1.5-1.5 1.5zm-8-23c-.276 0-.5.224-.5.5v21c0 .276.224.5.5.5h8c.276 0 .5-.224.5-.5v-21c0-.276-.224-.5-.5-.5z"/></svg>,
   category: THEME_NAME + '-layout',
   description: __( '本文を左右カラムに分けます。オプションでカラム比率を変更できます。', THEME_NAME ),
   keywords: [ 'column', '2' ],
+  example: {},
 
   attributes: {
     ratio: {
@@ -47,6 +56,24 @@ registerBlockType( 'cocoon-blocks/column-2', {
 
   edit( { attributes, setAttributes, className } ) {
     const { ratio } = attributes;
+    const classes = classnames(className, {
+      [ 'column-wrap' ]: true,
+      [ 'column-2' ]: true,
+      [ ratio ]: !! ratio,
+      [ LAYOUT_BLOCK_CLASS ]: true,
+    });
+
+    const blockProps = useBlockProps({
+      className: classes,
+    });
+
+    // const innerBlocksProps = useInnerBlocksProps( {
+    //   allowedBlocks: ALLOWED_BLOCKS,
+    //   template: TEMPLATE,
+    //   templateLock: "all",
+    //   orientation: 'horizontal',
+    // } );
+
     return (
       <Fragment>
         <InspectorControls>
@@ -82,7 +109,7 @@ registerBlockType( 'cocoon-blocks/column-2', {
 
           </PanelBody>
         </InspectorControls>
-        <div className={ classnames(getClasses(ratio), className) }>
+        <div { ...blockProps }>
           <InnerBlocks
           template={[
               [ 'cocoon-blocks/column-left', { placeholder: __( '左側に入力する内容', THEME_NAME ) } ],
@@ -96,10 +123,21 @@ registerBlockType( 'cocoon-blocks/column-2', {
     );
   },
 
-  save( { attributes } ) {
+  save( { attributes, className } ) {
     const { ratio } = attributes;
+    const classes= classnames(className, {
+      [ 'column-wrap' ]: true,
+      [ 'column-2' ]: true,
+      [ ratio ]: !! ratio,
+      [ LAYOUT_BLOCK_CLASS ]: true,
+    });
+
+    const blockProps = useBlockProps.save({
+      className: classes,
+    });
+
     return (
-      <div className={ getClasses(ratio) }>
+      <div { ...blockProps }>
         <InnerBlocks.Content />
       </div>
     );

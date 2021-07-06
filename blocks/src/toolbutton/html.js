@@ -5,24 +5,37 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, LetterToolbarButton } from '../helpers.js';
+import { THEME_NAME } from '../helpers.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { toggleFormat, registerFormatType, insert, applyFormat } = wp.richText;
-const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
-const { SVG, Path } = wp.components;
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, insert } from '@wordpress/rich-text';
+import { RichTextToolbarButton, RichTextShortcut } from '@wordpress/block-editor';
+import { Icon, html } from '@wordpress/icons';
+
+const isPrivilegeActivationCodeAvailable = gbSettings['isPrivilegeActivationCodeAvailable'] ? gbSettings['isPrivilegeActivationCodeAvailable'] : '';
 
 registerFormatType( 'cocoon-blocks/html', {
   title: __( 'HTML挿入', THEME_NAME ),
-  tagName: 'html',
-  className: null,
+  tagName: 'span',
+  className: 'insert-html',
 
   edit ({ isActive, value, onChange }) {
     const onToggle = () => {
-      let html = '';
-      html = window.prompt( __( 'HTMLを入力してください。', THEME_NAME ) ) || value.text.substr( value.start, value.end -value.start );
-      value = insert( value, html, value.start, value.end );
+      if (isPrivilegeActivationCodeAvailable) {
+        let html = '';
+        // console.log(value);
+        if ((value.end - value.start) > 0) {
+          value = insert( value, '[html]' + value.text.substr( value.start, value.end - value.start ) + '[/html]', value.start, value.end );
+        } else {
+          html = window.prompt( __( 'HTMLを入力してください。', THEME_NAME ) ) || value.text.substr( value.start, value.end - value.start );
+          if (html) {
+            // console.log(html);
+            value = insert( value, '[html]' + html + '[/html]', value.start, value.end );
+          }
+
+        }
+      }
       //console.log(value);
       return onChange( value );
     };
@@ -33,8 +46,15 @@ registerFormatType( 'cocoon-blocks/html', {
     return (
       <Fragment>
         <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
-        <RichTextToolbarButton icon={<FontAwesomeIcon icon={['fas', 'code']} />} title={__( 'HTML挿入', THEME_NAME )} onClick={onToggle}
-                               isActive={isActive} shorcutType={shortcutType} shorcutCharacter={shortcutCharacter} />
+        <RichTextToolbarButton
+          icon={<Icon icon={html} size={32} />}
+          title={__( 'HTML挿入', THEME_NAME )}
+          onClick={onToggle}
+          isActive={isActive}
+          shorcutType={shortcutType}
+          shorcutCharacter={shortcutCharacter}
+          // className='abcddddddddddddddd'
+        />
       </Fragment>
     )
   }

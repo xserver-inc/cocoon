@@ -2817,50 +2817,50 @@ label.screen-reader-text {
   display: block;
 }
 
-.article blockquote :last-child,
-.article .wp-block-media-text__content :last-child,
-.article .wp-block-columns :last-child,
-.article .column-left :last-child,
-.article .column-center :last-child,
-.article .column-right :last-child,
-.article .column-wrap :last-child,
-.article .timeline-box :last-child,
-.article .wp-block-cover :last-child,
-.article .blogcard-type :last-child,
-.article .btn-wrap :last-child,
-.article .wp-block-group :last-child,
-.article .wp-block-gallery :last-child,
-.article .block-box :last-child,
-.article .blank-box :last-child,
-.article .is-style-blank-box-red :last-child,
-.article .is-style-blank-box-navy :last-child,
-.article .is-style-blank-box-blue :last-child,
-.article .is-style-blank-box-yellow :last-child,
-.article .is-style-blank-box-green :last-child,
-.article .is-style-blank-box-pink :last-child,
-.article .is-style-blank-box-orange :last-child,
-.article .is-style-sticky-gray :last-child,
-.article .is-style-sticky-yellow :last-child,
-.article .is-style-sticky-red :last-child,
-.article .is-style-sticky-blue :last-child,
-.article .is-style-sticky-green :last-child,
-.article .common-icon-box :last-child,
-.article .info-box :last-child,
-.article .primary-box :last-child,
-.article .success-box :last-child,
-.article .warning-box :last-child,
-.article .danger-box :last-child,
-.article .secondary-box :last-child,
-.article .light-box :last-child,
-.article .dark-box :last-child,
-.article .toc :last-child {
+.body blockquote :last-child,
+.body .wp-block-media-text__content :last-child,
+.body .wp-block-columns :last-child,
+.body .column-left :last-child,
+.body .column-center :last-child,
+.body .column-right :last-child,
+.body .column-wrap :last-child,
+.body .timeline-box :last-child,
+.body .wp-block-cover :last-child,
+.body .blogcard-type :last-child,
+.body .btn-wrap :last-child,
+.body .wp-block-group :last-child,
+.body .wp-block-gallery :last-child,
+.body .block-box :last-child,
+.body .blank-box :last-child,
+.body .is-style-blank-box-red :last-child,
+.body .is-style-blank-box-navy :last-child,
+.body .is-style-blank-box-blue :last-child,
+.body .is-style-blank-box-yellow :last-child,
+.body .is-style-blank-box-green :last-child,
+.body .is-style-blank-box-pink :last-child,
+.body .is-style-blank-box-orange :last-child,
+.body .is-style-sticky-gray :last-child,
+.body .is-style-sticky-yellow :last-child,
+.body .is-style-sticky-red :last-child,
+.body .is-style-sticky-blue :last-child,
+.body .is-style-sticky-green :last-child,
+.body .common-icon-box :last-child,
+.body .info-box :last-child,
+.body .primary-box :last-child,
+.body .success-box :last-child,
+.body .warning-box :last-child,
+.body .danger-box :last-child,
+.body .secondary-box :last-child,
+.body .light-box :last-child,
+.body .dark-box :last-child,
+.body .toc :last-child {
   margin-bottom: 0;
 }
-.article div.scrollable-table table,
-.article .wp-block-table table {
+.body div.scrollable-table table,
+.body .wp-block-table table {
   margin-bottom: 0;
 }
-.article .wp-block-table .scrollable-table {
+.body .wp-block-table .scrollable-table {
   margin-bottom: 0;
 }
 
@@ -3118,8 +3118,6 @@ label.screen-reader-text {
 .is-style-sticky-green {
   border: 3px solid #949495;
   padding: 1.2em 1em;
-  margin-left: 2%;
-  margin-right: 2%;
   border-radius: 4px;
 }
 .blank-box ol, .is-style-blank-box-red ol,
@@ -3967,7 +3965,7 @@ label.screen-reader-text {
 * 続きはWEBで的な検索ボックス
 ********************************/
 div.search-form {
-  margin: 3em 0;
+  margin: 3em auto;
   display: flex;
   max-width: 420px;
 }
@@ -5331,6 +5329,17 @@ div.search-form {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
+.toggle-wrap.is-style-faq .toggle-button {
+  text-align: left;
+}
+.toggle-wrap.is-style-faq .toggle-button::before {
+  content: 'Q' !important;
+  font-size: 1em;
+  margin-right: 0.6em;
+}
+.toggle-wrap.is-style-faq.has-border-color .toggle-button::before {
+  color: #fff;
+}
 
 .toggle-button {
   display: block;
@@ -5721,7 +5730,56 @@ figcaption {
   }
 }
 .body .wp-block-gallery .blocks-gallery-item {
-  margin-bottom: 1em;
+  margin-bottom: 0.6em;
+}
+
+.faq-wrap {
+  border-color: transparent;
+}
+
+.faq {
+  line-height: 24px;
+}
+
+.faq-item {
+  display: flex;
+}
+
+.faq-item-label {
+  font-size: 24px;
+  margin-right: 0.6em;
+}
+
+.is-style-square .faq-item-label {
+  font-size: 20px;
+  padding: 5px 8px;
+  height: 100%;
+}
+
+.faq-item-content {
+  flex: 1 1 auto;
+  width: calc(60%);
+}
+
+.faq-question {
+  margin-bottom: 1.8em;
+  align-items: center;
+}
+
+.faq-question-label {
+  color: #b7282e;
+}
+
+.faq-question-content {
+  font-weight: 700;
+}
+
+.faq .faq-answer {
+  margin-left: 0;
+}
+
+.faq-answer-label {
+  color: #007bbb;
 }
 
 .column-wrap {
@@ -6442,16 +6500,12 @@ div.speech-balloon p {
   border-bottom: 12px solid transparent;
 }
 
-.sbp-l {
-  margin-right: 100px;
-}
 .sbp-l .speech-balloon {
   margin-left: 20px;
 }
 
 .sbp-r {
   flex-direction: row-reverse;
-  margin-left: 100px;
   /* アイコンを右に表示 */
 }
 .sbp-r .speech-balloon {
@@ -6514,9 +6568,6 @@ div.speech-balloon p {
   border-left-color: #85e249;
 }
 
-div.sbs-think.sbp-l {
-  margin-right: 126px;
-}
 div.sbs-think.sbp-l .speech-balloon {
   margin-left: 46px;
 }
@@ -6537,9 +6588,6 @@ div.sbs-think .speech-balloon::after {
   height: 10px;
 }
 
-.sbs-think.sbp-r {
-  margin-left: 126px;
-}
 .sbs-think.sbp-r .speech-balloon {
   margin-right: 46px;
 }
@@ -7984,6 +8032,7 @@ div.fb-like-mobile {
 
 .timeline-box {
   padding: 16px 5px;
+  overflow: auto;
 }
 
 .timeline-box .timeline {
@@ -10561,7 +10610,6 @@ _:-ms-lang(x), .mc-circle {
   .article h5,
   .article h6 {
     padding: 0.6em;
-    margin: 1.2em 0 0.8em;
   }
 
   .entry-title,

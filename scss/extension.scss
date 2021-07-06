@@ -246,7 +246,7 @@ $marker_u_blue: $marker_blue;
   //overflow: hidden;
 }
 
-.article {
+.body {
   blockquote,
   .wp-block-media-text__content,
   .wp-block-columns,
@@ -541,8 +541,8 @@ $bb_green: $green_color;
 .blank-box{
   border: 3px solid $grey_color;
   padding: 1.2em 1em;
-  margin-left: 2%;
-  margin-right: 2%;
+  // margin-left: 2%;
+  // margin-right: 2%;
   // margin-bottom: 1.2em;
   border-radius: $basic_border_radius;
     ol, ul {
@@ -811,7 +811,7 @@ $bb_green: $green_color;
 * 続きはWEBで的な検索ボックス
 ********************************/
 div.search-form{
-  margin: 3em 0;
+  margin: 3em auto;
   display: flex;
   max-width: 420px;
 }
@@ -1498,6 +1498,24 @@ div.search-form{
     transition: $bgc_hover_anime;
     overflow: hidden;
   }
+
+  &.is-style-faq{
+    .toggle-button{
+      text-align: left;
+      &::before{
+        content: 'Q' !important;
+        font-size: 1em;
+        margin-right: 0.6em;
+      }
+    }
+    &.has-border-color{
+      .toggle-button{
+        &::before{
+          color: #fff;
+        }
+      }
+    }
+  }
 }
 
 $toggle_border_width: 2px;
@@ -1519,8 +1537,6 @@ $toggle_border_width: 2px;
     font-size: 0.8em;
     color: $x_pallid_text_color;
   }
-
-
 }
 
 .toggle-button:hover {
@@ -1611,79 +1627,6 @@ $toggle_border_width: 2px;
 .iic-deep-orange li::before{color: $deep_orange_color;}
 .iic-white li::before{color: $white_color;}
 
-// div{
-//   .has-red-color{color: $red_color;}
-//   .has-pink-color{color: $pink_color;}
-//   .has-purple-color{color: $purple_color;}
-//   .has-blue-color{color: $blue_color;}
-//   .has-green-color{color: $green_color;}
-//   .has-orange-color{color: $orange_color;}
-//   .has-yellow-color{color: $yellow_color;}
-//   .has-brown-color{color: $brown_color;}
-//   .has-grey-color{color: $grey_color;}
-//   .has-black-color{color: $black_color;}
-
-//   .has-deep-color{color: $deep_color;}
-//   .has-indigo-color{color: $indigo_color;}
-//   .has-light-blue-color{color: $light_blue_color;}
-//   .has-cyan-color{color: $cyan_color;}
-//   .has-teal-color{color: $teal_color;}
-//   .has-light-green-color{color: $light_green_color;}
-//   .has-lime-color{color: $lime_color;}
-//   .has-amber-color{color: $amber_color;}
-//   .has-deep-orange-color{color: $deep_orange_color;}
-//   .has-white-color{color: $white_color;}
-
-
-//   .has-red-background-color{background-color: $red_color;}
-//   .has-pink-background-color{background-color: $pink_color;}
-//   .has-purple-background-color{background-color: $purple_color;}
-//   .has-blue-background-color{background-color: $blue_color;}
-//   .has-green-background-color{background-color: $green_color;}
-//   .has-orange-background-color{background-color: $orange_color;}
-//   .has-yellow-background-color{background-color: $yellow_color;}
-//   .has-brown-background-color{background-color: $brown_color;}
-//   .has-grey-background-color{background-color: $grey_color;}
-//   .has-black-background-color{background-color: $black_color;}
-
-//   .has-deep-background-color{background-color: $deep_color;}
-//   .has-indigo-background-color{background-color: $indigo_color;}
-//   .has-light-blue-background-color{background-color: $light_blue_color;}
-//   .has-cyan-background-color{background-color: $cyan_color;}
-//   .has-teal-background-color{background-color: $teal_color;}
-//   .has-light-green-background-color{background-color: $light_green_color;}
-//   .has-lime-background-color{background-color: $lime_color;}
-//   .has-amber-background-color{background-color: $amber_color;}
-//   .has-deep-orange-background-color{background-color: $deep_orange_color;}
-//   .has-white-background-color{background-color: $white_color;}
-// }
-
-// pre.code-box{
-//   padding-top: 26px;
-//   position: relative;
-//   &::before{
-//     content: attr(aria-label);
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     background: #0e7ac4;
-//     color: #fff;
-//     padding: 0 1em;
-//     font-size: 16px;
-//   }
-// }
-
-// pre.code-box.auto,
-// pre.code-box.nohighlight{
-//   padding-top: 0.5em;
-//   &::before{
-//     display: none;
-//   }
-// }
-// .wp-block-image{
-//   margin-bottom: 1.2em;
-// }
-
 
 figcaption{
   margin: 0;
@@ -1711,7 +1654,53 @@ figcaption{
 }
 
 .body .wp-block-gallery .blocks-gallery-item {
-  margin-bottom: 1em;
+  margin-bottom: 0.6em;
+}
+
+.faq-wrap{
+  border-color: transparent;
+}
+
+.faq{
+  line-height: 24px;
+}
+
+.faq-item{
+  display: flex;
+  // align-items: center;
+}
+
+.faq-item-label{
+  font-size: 24px;
+  margin-right: 0.6em;
+}
+.is-style-square .faq-item-label{
+  font-size: 20px;
+  padding: 5px 8px;
+  height: 100%;
+}
+.faq-item-content{
+  flex: 1 1 auto;
+  width: calc(60%);
+}
+
+.faq-question{
+  margin-bottom: 1.8em;
+  align-items: center;
+}
+.faq-question-label{
+  color: #b7282e;
+}
+.faq-question-content{
+  font-weight: 700;
+}
+
+.faq .faq-answer{
+  margin-left: 0;
+}
+
+.faq-answer-label{
+  color: #007bbb;
 }
 
 

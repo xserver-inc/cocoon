@@ -8,11 +8,11 @@
 import { THEME_NAME, BUTTON_BLOCK, colorValueToSlug, keyColor } from '../../helpers';
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
 const { RichText, InspectorControls, PanelColorSettings, ContrastChecker } = wp.editor;
 const { PanelBody, SelectControl, BaseControl, TextControl, ToggleControl } = wp.components;
-const { Fragment } = wp.element;
+import { Fragment } from '@wordpress/element';
 
 //classの取得
 function getClasses(color, size, isCircle, isShine) {

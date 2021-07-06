@@ -5,12 +5,12 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, BadgeToolbarButton } from '../helpers.js';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { registerFormatType, toggleFormat } = wp.richText;
+import { THEME_NAME, BadgeToolbarButton } from '../helpers.js';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
+import { Icon, tag } from '@wordpress/icons';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/badge-brown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const TITLE = __( '茶色', THEME_NAME );
 
 registerFormatType( FORMAT_TYPE_NAME, {
@@ -23,7 +23,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <BadgeToolbarButton
-          icon={<FontAwesomeIcon icon="tag" />}
+          icon={<Icon icon={tag} size={32} />}
           title={<span className="badge-brown">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }

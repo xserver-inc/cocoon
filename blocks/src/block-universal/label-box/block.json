@@ -1,0 +1,32 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/label-box-1",
+  "category": "cocoon-universal-block",
+  "keywords": [ "label", "caption", "box" ],
+
+  "attributes": {
+    "content": {
+      "type": "string",
+      "default": "見出し"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    }
+  },
+  "example": {}
+}

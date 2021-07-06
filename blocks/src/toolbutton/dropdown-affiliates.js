@@ -6,14 +6,14 @@
  */
 
 import { THEME_NAME, AffiliateToolbarButton } from '../helpers.js';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { registerFormatType, insert } = wp.richText;
-const { BlockFormatControls } = wp.editor;
-const { Slot, Toolbar, DropdownMenu } = wp.components;
-const FORMAT_TYPE_NAME = 'cocoon-blocks/affiliates';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, insert } from '@wordpress/rich-text';
+import { BlockFormatControls } from '@wordpress/block-editor';
+import { Slot, Toolbar, DropdownMenu } from '@wordpress/components';
+import { Icon, code, currencyDollar } from '@wordpress/icons';
 import { orderBy } from 'lodash';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/affiliates';
 
 var isAffiliateVisible = Number(gbSettings['isAffiliateVisible'] ? gbSettings['isAffiliateVisible'] : 0);
 if (isAffiliateVisible) {
@@ -32,7 +32,7 @@ if (isAffiliateVisible) {
           return (
             <Fragment>
               <AffiliateToolbarButton
-                icon={'editor-code'}
+                icon={<Icon icon={code} size={32} />}
                 title={<span className={name}>{title}</span>}
                 onClick={ onToggle }
               />
@@ -57,7 +57,7 @@ if (isAffiliateVisible) {
               <Slot name="Affiliate.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
-                    icon={<FontAwesomeIcon icon={['fas', 'dollar-sign']} />}
+                    icon={<Icon icon={currencyDollar} size={32} />}
                     label={__( 'アフィリエイトタグ', THEME_NAME )}
                     className='affiliates'
                     controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }

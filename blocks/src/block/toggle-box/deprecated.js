@@ -7,7 +7,7 @@
 import { THEME_NAME, BUTTON_BLOCK, colorValueToSlug } from '../../helpers';
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 const { InnerBlocks, RichText } = wp.editor;
 
 const { createBlock } = wp.blocks;

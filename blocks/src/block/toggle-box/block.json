@@ -1,0 +1,37 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/toggle-box-1",
+  "category": "cocoon-block",
+  "keywords": [ "toggle", "box" ],
+
+  "attributes": {
+    "content": {
+      "type": "string",
+      "selector": "div",
+      "default": "トグルボックス見出し"
+    },
+    "dateID": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "reusable": false
+  },
+  "example": {}
+}

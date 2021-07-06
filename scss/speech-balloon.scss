@@ -70,7 +70,7 @@ div.speech-balloon{
 }
 
 .sbp-l{
-  margin-right: 100px;
+  // margin-right: 100px;
   .speech-balloon{
     margin-left: 20px;
   }
@@ -79,10 +79,7 @@ div.speech-balloon{
 //画像位置
 .sbp-r{
   flex-direction: row-reverse;
-  margin-left: 100px;
-  // .speech-person{
-  //   float: right;
-  // }
+  // margin-left: 100px;
 
   .speech-balloon{
     margin-right: 20px;
@@ -185,7 +182,7 @@ div.speech-balloon{
 ///////////////////////////////////////
 div.sbs-think{
   &.sbp-l{
-    margin-right: 126px;
+    // margin-right: 126px;
     .speech-balloon{
       margin-left: 46px;
     }
@@ -212,7 +209,7 @@ div.sbs-think{
   }
 }
 .sbs-think.sbp-r{
-  margin-left: 126px;
+  // margin-left: 126px;
   .speech-balloon{
     margin-right: 46px;
 

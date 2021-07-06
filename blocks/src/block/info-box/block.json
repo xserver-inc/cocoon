@@ -1,0 +1,13 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/info-box",
+  "category": "cocoon-block",
+  "keywords": [ "info", "box" ],
+
+  "attributes": {
+    "style": {
+      "type": "string",
+      "default": "primary-box"
+    }
+  }
+}

@@ -5,14 +5,14 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, CLICK_POINT_MSG, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, CLICK_POINT_MSG} from '../../helpers';
 import classnames from 'classnames';
 
-const { __ } = wp.i18n;
-const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl, BaseControl } = wp.components;
-const { Fragment } = wp.element;
+import { __ } from '@wordpress/i18n';
+const { createBlock } = wp.blocks;
+const { InnerBlocks, InspectorControls } = wp.editor;
+const { PanelBody, SelectControl } = wp.components;
+import { Fragment } from '@wordpress/element';
 
 //classの取得
 function getClasses(style) {
@@ -26,7 +26,7 @@ function getClasses(style) {
   return classes;
 }
 
-export const deprecated = [{
+export default [{
   attributes: {
     content: {
       type: 'string',

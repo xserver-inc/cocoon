@@ -1,0 +1,9 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/comparison-box",
+  "category": "cocoon-block",
+  "keywords": [ "comparison", "box" ],
+
+  "attributes": {
+  }
+}

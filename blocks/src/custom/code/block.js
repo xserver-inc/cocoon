@@ -18,9 +18,9 @@
  */
 
 import { THEME_NAME, CODE_LANGUAGES } from '../../helpers';
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 //コンポーネントの読み込み
-const { Fragment } = wp.element;
+import { Fragment } from '@wordpress/element';
 const { addFilter } = wp.hooks;
 const {
   PanelBody,

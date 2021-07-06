@@ -1,0 +1,55 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/button-wrap-1",
+  "category": "cocoon-block",
+  "keywords": [ "button", "btn", "wrap" ],
+
+  "attributes": {
+    "content": {
+      "type": "string",
+      "default": "こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。"
+    },
+    "tag": {
+      "type": "string",
+      "default": ""
+    },
+    "size": {
+      "type": "string",
+      "default": ""
+    },
+    "isCircle": {
+      "type": "boolean",
+      "default": false
+    },
+    "isShine": {
+      "type": "boolean",
+      "default": false
+    },
+    "align": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    },
+    "customFontSize": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "align": [ "left", "center", "right" ],
+    "customClassName": true
+  },
+  "example": {}
+}

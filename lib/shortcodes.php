@@ -879,6 +879,25 @@ function campaign_shortcode( $atts, $content = null ) {
 }
 endif;
 
+//HTMLタグをそのまま表示
+if (!shortcode_exists('html')) {
+  add_shortcode('html', 'html_shortcode');
+}
+if ( !function_exists( 'html_shortcode' ) ):
+function html_shortcode( $atts, $content = null ) {
+  return html_entity_decode($content, ENT_NOQUOTES);
+}
+endif;
+
+//wptexturizeを除外するショートコードを指定する
+add_filter( 'no_texturize_shortcodes', 'shortcodes_to_exempt_from_wptexturize' );
+if ( !function_exists( 'shortcodes_to_exempt_from_wptexturize' ) ):
+function shortcodes_to_exempt_from_wptexturize( $shortcodes ) {
+    $shortcodes[] = 'html';
+    return $shortcodes;
+};
+endif;
+
 //日付ショートコード
 add_shortcode('date', 'date_shortcode');
 if ( !function_exists( 'date_shortcode' ) ):
@@ -891,8 +910,10 @@ function date_shortcode( $atts, $content = null ) {
 }
 endif;
 
-//日付ショートコード
-add_shortcode('updated', 'updated_shortcode');
+//更新日ショートコード
+if (is_privilege_activation_code_available()) {
+  add_shortcode('updated', 'updated_shortcode');
+}
 if ( !function_exists( 'updated_shortcode' ) ):
 function updated_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(

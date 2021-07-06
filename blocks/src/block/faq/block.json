@@ -1,0 +1,53 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/faq",
+  "category": "cocoon-block",
+  "keywords": [ "faq", "box" ],
+
+  "attributes": {
+    "question": {
+      "type": "string",
+      "default": ""
+    },
+    "questionLabel": {
+      "type": "string",
+      "default": "Q"
+    },
+    "answerLabel": {
+      "type": "string",
+      "default": "A"
+    },
+    "questionColor": {
+      "type": "string"
+    },
+    "answerColor": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    }
+  },
+  "example": {
+    "attributes": {
+      "question": "Lorem ipsum dolor sit amet ?"
+    },
+    "innerBlocks": [
+      {
+        "name": "core/paragraph",
+        "attributes": {
+          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius facilis in molestiae quod! Aut doloribus est illum iure porro sunt. Eius illo iusto maxime nihil possimus quae tempora voluptas voluptates."
+        }
+      }
+    ]
+  },
+  "example": {}
+}

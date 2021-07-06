@@ -5,16 +5,16 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, LetterToolbarButton } from '../helpers.js';
+import { THEME_NAME } from '../helpers.js';
+import { Icon, queryPagination } from '@wordpress/icons';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { toggleFormat, registerFormatType, insert, applyFormat } from '@wordpress/rich-text';
+import { RichTextToolbarButton, RichTextShortcut } from '@wordpress/block-editor';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { toggleFormat, registerFormatType, insert, applyFormat } = wp.richText;
-const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
-const { SVG, Path } = wp.components;
 
 
-var isRubyVisible = Number(gbSettings['isRubyVisible'] ? gbSettings['isRubyVisible'] : 0);
+const isRubyVisible = Number(gbSettings['isRubyVisible'] ? gbSettings['isRubyVisible'] : 0);
 
 if (isRubyVisible) {
   registerFormatType( 'cocoon-blocks/rt', {
@@ -61,11 +61,11 @@ if (isRubyVisible) {
       // @see keycodes/src/index.js
       const shortcutType = 'primaryShift';
       const shortcutCharacter ='r';
-      //const icon = (<FontAwesomeIcon icon={['fas', 'ellipsis-h']} />);
+      const icon = (<FontAwesomeIcon icon={['fas', 'ellipsis-h']} />);
       return (
         <Fragment>
           <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
-          <RichTextToolbarButton icon={<FontAwesomeIcon icon={['fas', 'ellipsis-h']} />} title={__( 'ふりがな（ルビ）', THEME_NAME )} onClick={onToggle}
+          <RichTextToolbarButton icon={icon} title={__( 'ふりがな（ルビ）', THEME_NAME )} onClick={onToggle}
                                  isActive={isActive} shorcutType={shortcutType} shorcutCharacter={shortcutCharacter} />
         </Fragment>
       )

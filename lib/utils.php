@@ -3456,3 +3456,10 @@ function px_to_int($px){
   return intval(str_replace('px', '', $px));
 }
 endif;
+
+//デバッグ用の関数
+if ( !function_exists( '_v' ) ):
+function _v($v){
+  do_action( 'qm/debug', $v );
+}
+endif;

@@ -339,3 +339,39 @@ function remove_no_archive_pages_from_widget_recent_entries($args){
   return $args;
 }
 endif;
+
+
+
+add_action('init', function () {
+  //FAQ
+  register_block_style('cocoon-blocks/faq', array(
+    'name' => 'square',
+    'label' => __('角型ラベル', THEME_NAME),
+    'inline_style' => '.is-style-square .faq-item-label{
+      color: #fff !important;
+      background-color: #b7282e;
+      font-size: 20px;
+      padding: 5px 8px;
+      height: 100%;
+    }
+    .is-style-square .faq-answer-label{
+      background-color: #007bbb;
+    }',
+  ));
+
+  //トグルボックス
+  register_block_style('cocoon-blocks/toggle-box-1', array(
+    'name' => 'faq',
+    'label' => __('FAQ型', THEME_NAME),
+    // 'inline_style' => '.is-style-square .faq-item-label{
+    //   color: #fff !important;
+    //   background-color: #b7282e;
+    //   font-size: 20px;
+    //   padding: 5px 8px;
+    //   height: 100%;
+    // }
+    // .is-style-square .faq-answer-label{
+    //   background-color: #007bbb;
+    // }',
+  ));
+});

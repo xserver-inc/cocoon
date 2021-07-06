@@ -1,0 +1,39 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/timeline",
+  "category": "cocoon-block",
+  "keywords": [ "timeline", "box" ],
+
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "タイムラインのタイトル"
+    },
+    "items": {
+      "type": "integer",
+      "default": 1
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
+    "pointColor": {
+      "type": "string"
+    },
+    "customPointColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    }
+  },
+  "example": {}
+}

@@ -38,7 +38,10 @@ function cocoon_blocks_cgb_block_assets() { // phpcs:ignore
 		'cocoon_blocks-cgb-style-css', // Handle.
 		get_template_directory_uri().'/blocks/dist/blocks.style.build.css',
 		//plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-editor' ) // Dependency to include the CSS after it.
+		array(
+      'wp-block-editor',
+      'wp-editor',
+    ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
 
@@ -84,7 +87,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
       'wp-element',
       'wp-editor',
       'wp-polyfill',
-      'wp-rich-text'
+      'wp-rich-text',
     ) // Dependencies, defined above.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		// true // Enqueue the script in the footer.
@@ -98,8 +101,10 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   $is_templates_visible = (has_valid_shortcode_item($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
   $is_affiliates_visible = (has_valid_shortcode_item($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
   $is_rankings_visible = (has_valid_shortcode_item($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
+  global $wp_version;
   $gutenberg_settings = array(
     'isRubyVisible' => is_block_editor_ruby_button_visible() ? 1 : 0,
+    'isClearFormatVisible' => is_block_editor_clear_format_button_visible() ? 1 : 0,
     'isLetterVisible' => is_block_editor_letter_style_dropdown_visible() ? 1 : 0,
     'isMarkerVisible' => is_block_editor_marker_style_dropdown_visible() ? 1 : 0,
     'isBadgeVisible'  => is_block_editor_badge_style_dropdown_visible() ? 1 : 0,
@@ -113,6 +118,8 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'siteIconFont' => ' '.get_site_icon_font_class(),
     'pageTypeClass' => get_editor_page_type_class(),
     'isDebugMode' => DEBUG_MODE,
+    'isPrivilegeActivationCodeAvailable' => is_privilege_activation_code_available(),
+    'wpVersion' => $wp_version,
   );
 
 
@@ -263,3 +270,26 @@ function cocoon_editor_color_palette_setup() {
     return $colors;
 }
 endif;
+
+//ブロックの読み込み
+require_once abspath(__FILE__).'block/balloon/index.php';
+require_once abspath(__FILE__).'block/blank-box/index.php';
+require_once abspath(__FILE__).'block/blogcard/index.php';
+require_once abspath(__FILE__).'block/button/index.php';
+require_once abspath(__FILE__).'block/button-wrap/index.php';
+require_once abspath(__FILE__).'block/icon-box/index.php';
+require_once abspath(__FILE__).'block/icon-list/index.php';
+require_once abspath(__FILE__).'block/info-box/index.php';
+require_once abspath(__FILE__).'block/search-box/index.php';
+require_once abspath(__FILE__).'block/sticky-box/index.php';
+require_once abspath(__FILE__).'block/tab-box/index.php';
+require_once abspath(__FILE__).'block/timeline/index.php';
+require_once abspath(__FILE__).'block/timeline-item/index.php';
+require_once abspath(__FILE__).'block/toggle-box/index.php';
+
+require_once abspath(__FILE__).'block-universal/caption-box/index.php';
+require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';
+require_once abspath(__FILE__).'block-universal/label-box/index.php';
+
+require_once abspath(__FILE__).'micro/micro-balloon/index.php';
+require_once abspath(__FILE__).'micro/micro-text/index.php';

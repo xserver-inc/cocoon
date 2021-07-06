@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/icon-box",
+  "category": "cocoon-block",
+  "keywords": [ "icon", "box" ],
+
+  "attributes": {
+    "style": {
+      "type": "string",
+      "default": "information-box"
+    }
+  },
+  "example": {}
+}

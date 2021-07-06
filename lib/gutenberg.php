@@ -474,6 +474,21 @@ function get_block_editor_color_palette_css(){
 .timeline-box.has-<?php echo $slug; ?>-point-color .timeline-item::before{
   background-color: <?php echo $color; ?>;
 }
+<?php //FAQ ?>
+.has-<?php echo $slug; ?>-question-color .faq-question-label{
+  color: <?php echo $color; ?>;
+}
+.has-<?php echo $slug; ?>-answer-color .faq-answer-label{
+  color: <?php echo $color; ?>;
+}
+.is-style-square.has-<?php echo $slug; ?>-question-color .faq-question-label{
+  color: #fff;
+  background-color: <?php echo $color; ?>;
+}
+.is-style-square.has-<?php echo $slug; ?>-answer-color .faq-answer-label{
+  color: #fff;
+  background-color: <?php echo $color; ?>;
+}
 
     <?php
     }//カラーパレットのループ終了

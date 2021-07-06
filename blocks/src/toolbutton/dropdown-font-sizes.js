@@ -5,15 +5,16 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import {THEME_NAME, FontSizeToolbarButton } from '../helpers.js';
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
-const { registerFormatType, toggleFormat } = wp.richText;
-const { BlockFormatControls } = wp.editor;
-const { Slot, Toolbar, DropdownMenu } = wp.components;
-const FORMAT_TYPE_NAME = 'cocoon-blocks/font-sizes';
+import { THEME_NAME, FontSizeToolbarButton } from '../helpers.js';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
+import { BlockFormatControls } from '@wordpress/block-editor';
+import { Slot, Toolbar, DropdownMenu } from '@wordpress/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, edit } from '@wordpress/icons'
 import { orderBy } from 'lodash';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/font-sizes';
 
 var sizes = [12, 14, 16, 18, 20, 22, 24, 28, 32, 36, 40, 44, 48];
 sizes.map((size, index) => {
@@ -30,7 +31,7 @@ sizes.map((size, index) => {
       return (
         <Fragment>
           <FontSizeToolbarButton
-          icon={<FontAwesomeIcon icon="pencil-alt" />}
+          icon={<Icon icon={edit} size={32} />}
             title={<span className={clss}>{name}</span>}
             onClick={ onToggle }
             isActive={ isActive }

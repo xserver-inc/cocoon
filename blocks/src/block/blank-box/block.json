@@ -1,0 +1,25 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/blank-box-1",
+  "category": "cocoon-block",
+  "keywords": [ "blank", "box" ],
+
+  "attributes": {
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "string"
+    }
+  },
+  "example": {}
+}
