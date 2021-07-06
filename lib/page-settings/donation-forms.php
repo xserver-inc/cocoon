@@ -36,7 +36,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
           <ul style="list-style-type: disc;padding-left: 30px;margin: 2em 0;">
             <li><?php _e('FAQブロック（リッチスニペット対応）', THEME_NAME); ?><?php _e('（<a href="https://wp-cocoon.com/faq-block/" target="_blank" rel="noopener noreferrer">詳細</a>）', THEME_NAME); ?></li>
-            <li><?php _e('HTML挿入ボタン（※ショートコード）', THEME_NAME); ?></li>
+            <li><?php _e('HTML挿入ボタン（※ショートコード）', THEME_NAME); ?><?php _e('（<a href="https://wp-cocoon.com/html-insert-tool-button/" target="_blank" rel="noopener noreferrer">詳細</a>）', THEME_NAME); ?></li>
             <li><?php _e('更新日表示ショートコード', THEME_NAME); ?><?php _e('（<a href="https://wp-cocoon.com/updated-shortcode" target="_blank" rel="noopener noreferrer">詳細</a>）', THEME_NAME); ?></li>
           </ul>
 
