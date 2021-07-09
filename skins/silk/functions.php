@@ -424,11 +424,11 @@ class Skin_Silk_Functions {
     .iconlist-title {
       background: '.$site_background.';
     }
-    
+
     .speech-balloon::after {
       border-right-color: '.$site_background.';
     }
-    
+
     .sbp-r .speech-balloon::after {
       border-left-color: '.$site_background.';
     }
@@ -436,7 +436,7 @@ class Skin_Silk_Functions {
     .recent-comment-content::after {
       border-bottom-color: '.$site_background.';
     }
-    
+
     .marker,
     .marker-under,
     .marker-red,
@@ -493,11 +493,11 @@ class Skin_Silk_Functions {
       .silk-darkmode .iconlist-title {
         background: '.$site_color.';
       }
-      
+
       .silk-darkmode .speech-balloon::after {
         border-right-color: '.$site_color.';
       }
-      
+
       .silk-darkmode .sbp-r .speech-balloon::after {
         border-left-color: '.$site_color.';
       }
@@ -505,7 +505,7 @@ class Skin_Silk_Functions {
       .silk-darkmode .recent-comment-content::after {
         border-bottom-color: '.$site_color.';
       }
-      
+
       .silk-darkmode .marker,
       .silk-darkmode .marker-under,
       .silk-darkmode .marker-red,
@@ -519,7 +519,7 @@ class Skin_Silk_Functions {
         color: '.$site_background.';
         background: '.$site_color.';
       }
-      
+
       .silk-darkmode-button {
         position: fixed;
         left: 10px;
@@ -527,7 +527,7 @@ class Skin_Silk_Functions {
         line-height: 1;
         cursor: pointer;
       }
-      
+
       .silk-darkmode-button i {
         display: block;
         font-size: 2em;
@@ -543,7 +543,7 @@ class Skin_Silk_Functions {
     .is-style-text .a-wrap:hover {
       color: '.$link_color.';
     }
-    
+
     input[type="submit"] {
       background: '.$link_color.';
     }';
@@ -570,7 +570,7 @@ class Skin_Silk_Functions {
     echo '.box-menus .box-menu:hover {
       box-shadow: inset 2px 2px 0 0 '.$color.', 2px 2px 0 0 '.$color.', 2px 0 0 0 '.$color.', 0 2px 0 0 '.$color.';
     }
-    
+
     .box-menus .box-menu-icon {
       color: '.$color.';
     }';
@@ -605,7 +605,7 @@ class Skin_Silk_Functions {
       echo '.header-container {
         padding-top: 20px;
       }
-      
+
       .header-container.fixed-header {
         padding-top: 0;
         border-top: 3px solid '.$color.';
@@ -617,7 +617,7 @@ class Skin_Silk_Functions {
       echo '.entry-content {
         counter-reset: h2;
       }
-      
+
       .entry-content h2 > span::before {
         content: counter(h2, decimal) ". ";
         counter-increment: h2;
@@ -637,19 +637,19 @@ class Skin_Silk_Functions {
       .article .code-wrap {
         margin-bottom: '.$group_margin.'em;
       }
-      
+
       .code-wrap {
         position: relative;
       }
-      
+
       .code-wrap .code-copy {
         transition: all 0.3s ease-out;
       }
-      
+
       .code-wrap:hover .code-copy {
         opacity: 1;
       }
-      
+
       .code-copy {
         position: absolute;
         top: 0.5em;
@@ -701,28 +701,28 @@ class Skin_Silk_Functions {
         max-width: 100vw;
         width: 100vw;
       }
-      
+
       .main figure.wp-block-table.alignfull {
         max-width: 100vw;
         width: 100vw;
       }
-      
+
       .wp-block-cover.alignfull {
         width: 100vw;
       }
-      
+
       .alignfull > .wp-block-group__inner-container {
         width: '.$group_width.'px;
         padding: '.$group_margin.'em '.$group_padding.'px;
         margin: 0 auto;
       }
-      
+
       @media screen and (max-width: 1260px) {
         .alignfull > .wp-block-group__inner-container {
           width: auto;
         }
       }
-      
+
       @media screen and (max-width: 834px) {
         .alignfull > .wp-block-group__inner-container {
           padding: '.$group_margin.'em 24px;
@@ -911,7 +911,7 @@ class Skin_Silk_Functions {
       $content = $this->group_replace($content, $block, 'is-style-toggle-accordion', 'cocoon-blocks/toggle-box-1');
     }
 
-    //トグルボックス
+    //アコーディオンボックス
     if ($this->class_exists($block, 'cocoon-blocks/toggle-box-1')) {
       //よくある質問
       if ($this->is_style($block, 'is-style-faq')) {

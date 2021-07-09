@@ -359,7 +359,7 @@ add_action('init', function () {
     }',
   ));
 
-  //トグルボックス
+  //アコーディオンボックス
   register_block_style('cocoon-blocks/toggle-box-1', array(
     'name' => 'faq',
     'label' => __('FAQ型', THEME_NAME),

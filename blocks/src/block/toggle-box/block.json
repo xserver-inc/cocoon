@@ -8,7 +8,7 @@
     "content": {
       "type": "string",
       "selector": "div",
-      "default": "トグルボックス見出し"
+      "default": "アコーディオン見出し"
     },
     "dateID": {
       "type": "string",

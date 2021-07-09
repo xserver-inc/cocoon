@@ -18,9 +18,9 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-  title: __( 'トグルボックス', THEME_NAME ),
+  title: __( 'アコーディオン', THEME_NAME ),
   icon: <Icon icon={reusableBlock} size={32} />,
-  description: __( 'クリックすることでコンテンツ内容の表示を切り替えることができるボックスです。', THEME_NAME ),
+  description: __( '旧トグルボックス。クリックすることでコンテンツ内容の表示を切り替えることができるボックスです。', THEME_NAME ),
 
   edit,
   save,

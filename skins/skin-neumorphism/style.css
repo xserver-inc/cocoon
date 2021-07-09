@@ -81,7 +81,7 @@ select,pre, blockquote,.eye-catch img,.card-thumb img,.wp-block-image img,.blogc
 {
 	border-radius: var(--corner);
 }
-/*モバイルメニューとトグルボックス*/
+/*モバイルメニューとアコーディオンボックス*/
 .mobile-header-menu-buttons,.toggle-checkbox:checked ~ .toggle-content {
 	border-radius: 0 0 var(--corner) var(--corner);
 }

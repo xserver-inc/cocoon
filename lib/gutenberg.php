@@ -384,7 +384,7 @@ function get_block_editor_color_palette_css(){
 .bb-tab.has-<?php echo $slug; ?>-border-color .bb-label{
     background-color: <?php echo $color; ?>;
 }
-<?php //トグルボックス ?>
+<?php //アコーディオンボックス ?>
 .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
     background-color: <?php echo $color; ?>;
 }

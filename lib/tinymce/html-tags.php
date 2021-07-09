@@ -119,13 +119,13 @@ function generate_html_tags_is($value){
   htmlTags[6].before = '<?php echo $before; ?>';
   htmlTags[6].after = '<?php echo $after; ?>';
 
-  <?php //トグルボックス
-  $before = '<div class="toggle-wrap"><input id="toggle-checkbox-COCOON_DATE_ID" class="toggle-checkbox" type="checkbox"><label class="toggle-button" for="toggle-checkbox-COCOON_DATE_ID">'.__( 'トグルボックス見出し', THEME_NAME ).'</label><span class="toggle-content">';
+  <?php //アコーディオンボックス
+  $before = '<div class="toggle-wrap"><input id="toggle-checkbox-COCOON_DATE_ID" class="toggle-checkbox" type="checkbox"><label class="toggle-button" for="toggle-checkbox-COCOON_DATE_ID">'.__( 'アコーディオンボックス見出し', THEME_NAME ).'</label><span class="toggle-content">';
   $after = '</span></div>';
   ?>
   htmlTags[7] = new Array();
-  htmlTags[7].title  = '<?php echo __( 'トグルボックス', THEME_NAME ); ?>';
-  htmlTags[7].tag = '<?php echo $before.__( 'トグルボックス内容', THEME_NAME ).$after; ?>';
+  htmlTags[7].title  = '<?php echo __( 'アコーディオンボックス', THEME_NAME ); ?>';
+  htmlTags[7].tag = '<?php echo $before.__( 'アコーディオンボックス内容', THEME_NAME ).$after; ?>';
   htmlTags[7].before = '<?php echo $before; ?>';
   htmlTags[7].after = '<?php echo $after; ?>';
 
