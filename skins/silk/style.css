@@ -1579,6 +1579,7 @@ p code.hljs {
 }
 
 /* 白抜きボックス */
+/*
 .blank-box:not(.bb-tab):not(.iconlist-box):not(.sticky),
 .is-style-blank-box-red,
 .is-style-blank-box-navy,
@@ -1590,6 +1591,7 @@ p code.hljs {
   margin-right: 0;
   margin-left: 0;
 }
+*/
 
 .blank-box,
 .is-style-blank-box-red,
@@ -1614,8 +1616,10 @@ p code.hljs {
 .is-style-sticky-red,
 .is-style-sticky-blue,
 .is-style-sticky-green {
+  /*
   margin-left: 0;
   margin-right: 0;
+   */
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border-left-width: 6px;
@@ -1710,8 +1714,8 @@ p code.hljs {
 /* タブボックス */
 .blank-box.bb-tab {
   padding-top: 1.5em;
-  margin-left: 0;
-  margin-right: 0;
+  /* margin-left: 0;
+  margin-right: 0; */
   border-width: 2px;
   border-radius: 2px;
 }
@@ -1966,8 +1970,8 @@ p code.hljs {
 /* アイコンリスト */
 .blank-box {
   position: relative;
-  margin-left: 0;
-  margin-right: 0;
+  /* margin-left: 0;
+  margin-right: 0; */
   border-width: 2px;
 }
 
