@@ -38,7 +38,8 @@
 }
 
 main.main {
-    padding: 0px 29px;
+    padding-left: 29px;
+    padding-left: 29px;
 }
 
 .article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
@@ -47,7 +48,7 @@ main.main {
 
 .entry-title, #editor .entry-title, .archive-title {
     padding: 20px;
-    margin:38px 0;
+    margin-bottom: 38px;
     background-color: #F57388;
     color: #fff;
     font-size: 24px;
