@@ -1022,6 +1022,17 @@ ol, ul {
   background-color: #f8e58c !important;
 }
 
+.wp-block[data-align] > * {
+  float: none;
+  margin: 0;
+}
+.wp-block[data-align="center"] .btn-wrap {
+  text-align: center;
+}
+.wp-block[data-align="right"] {
+  text-align: right;
+}
+
 .tab-caption-box-label.box-label,
 .label-box-label.box-label {
   margin-bottom: -2px;

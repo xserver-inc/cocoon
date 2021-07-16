@@ -67,6 +67,10 @@ html[lang="en"] .column-3::before{
   position: relative;
 }
 
+.btn-wrap {
+  padding: 10px !important;
+}
+
 span.btn-wrap {
   padding: 6px 18px 6px;
   display: inline-block;
