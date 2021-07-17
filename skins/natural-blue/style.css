@@ -1,0 +1,495 @@
+@charset "UTF-8";
+/*
+  Skin Name: Natural（ブルー）
+  Description: #73c3fbをベースにした優しい色合いで使いやすいスキン
+  Skin URI: https://usefulweb.net/skin-natural/
+  Author: Taka
+  Author URI: https://usefulweb.net/
+  Screenshot URI: https://usefulweb.net/wp/wp-content/uploads/2021/06/natural_blue.png
+  Version: 1.0.0
+  Visibility: false
+  Priority: 9999000000
+*/
+/*以下にスタイルシートを記入してください*/
+/* 全体 */
+body {
+  background-color: #f4f5f7;
+}
+
+.main,
+.sidebar {
+  background-color: #fff;
+}
+
+/* ヘッダー・グローバルナビ */
+.header-container .navi {
+  background-color: #73c3fb;
+}
+
+#navi .navi-in a {
+  color: #fff;
+}
+
+#navi .navi-in > .menu-header .sub-menu {
+  background-color: #73c3fb;
+}
+
+#navi .navi-in a:hover {
+  background-color: #9dd5fc;
+}
+
+.menu-header .item-label {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.header-container {
+  color: #fff;
+  background-color: #73c3fb;
+}
+
+.header {
+  background-color: #73c3fb;
+}
+
+.header .header-in {
+  min-height: 100px;
+}
+
+/* サイト名・キャッチフレーズ */
+.site-name-text {
+  color: #fff;
+}
+
+.site-name-text:hover {
+  color: #fff;
+}
+
+/* 見出し */
+.article h2 {
+  margin: 5px 0;
+  padding: 20px 25px;
+  background-color: #73c3fb;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 0.5em;
+}
+
+.article h3 {
+  padding: 15px 20px 11px;
+  background-color: rgba(115, 195, 251, 0.2);
+  border-color: #73c3fb;
+  border-top: none;
+  border-right: none;
+  border-bottom: 4px solid #73c3fb;
+  border-left: none;
+}
+
+.article h4 {
+  border-top: none;
+  border-bottom: none;
+  border-left: 6px solid #73c3fb;
+}
+
+.article h5 {
+  border-bottom: 2px solid #73c3fb;
+  position: relative;
+}
+
+/* サイドバー */
+.sidebar h3 {
+  padding: 10px;
+  color: #fff;
+  background-color: #73c3fb;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 0.5em;
+}
+
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_pages ul li a,
+.widget_meta ul li a,
+.widget_rss ul li a,
+.widget_nav_menu ul li a {
+  border-radius: 0.5em;
+}
+
+.widget_recent_entries ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_meta ul li a:hover,
+.widget_rss ul li a:hover,
+.widget_nav_menu ul li a:hover {
+  background-color: #f1f9fe;
+}
+
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_pages ul li a,
+.widget_meta ul li a,
+.widget_rss ul li a,
+.widget_nav_menu ul li a {
+  padding: 0.5em 0.5em;
+}
+
+/* サイドバーカテゴリ */
+.cat-item a::before {
+  font-family: FontAwesome;
+  content: '\f0da';
+  margin-right: 6px;
+}
+
+.cat-item .children a::before {
+  content: '\f105';
+}
+
+.font-awesome-5 .cat-item a::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.font-awesome-5 .cat-item .children a::before {
+  content: '\f105';
+}
+
+/* プロフィールボックス */
+.author-box {
+  border: 1px solid #73c3fb;
+}
+
+.author-box .sns-follow-buttons a.follow-button {
+  color: #73c3fb;
+  border: 1px solid #73c3fb;
+}
+
+/* 検索ボタン */
+.search-edit,
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+textarea,
+select {
+  font-size: 16px;
+  border: 2px solid #73c3fb;
+  border-radius: 0.5em;
+}
+
+/* シェアボタン */
+#container .sns-buttons a {
+  border-radius: 0.5em;
+}
+
+/* ブログカード */
+.a-wrap .blogcard {
+  border-color: #73c3fb;
+}
+
+.a-wrap {
+  border-radius: 0.5em;
+}
+
+.a-wrap:hover {
+  background-color: #f1f9fe;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px #f6fafd;
+}
+
+.blogcard-label {
+  background-color: #73c3fb;
+}
+
+/* カテゴリラベル */
+.cat-label {
+  top: 0;
+  left: 0;
+  background-color: #fbab73;
+  border-top: none;
+  border-left: none;
+}
+
+.cat-link {
+  background-color: #fbab73;
+  border-radius: 0.5em;
+  transition: all 0.3s;
+}
+
+.cat-link:hover {
+  opacity: 0.8;
+}
+
+/* タグリンク */
+.tag-link {
+  color: #fbab73;
+  border-color: #fbab73;
+  border-radius: 0.5em;
+}
+
+.tag-link:hover {
+  color: #fbab73;
+  background-color: rgba(251, 171, 115, 0.1);
+}
+
+/* コメント箇所 */
+.comment-reply-link {
+  color: #73c3fb;
+  border-color: #73c3fb;
+  border-radius: 0.5em;
+}
+
+.comment-reply-link:hover {
+  color: #67afe1;
+  background-color: #f1f9fe;
+}
+
+/* タグ */
+.tagcloud a {
+  color: #73c3fb;
+  border-color: #73c3fb;
+  border-radius: 0.5em;
+}
+
+.tagcloud a:hover {
+  color: #67afe1;
+  background-color: #f1f9fe;
+}
+
+.fa-tag:before {
+  content: '\f02c';
+}
+
+/* コメント送信ボタン */
+input[type='submit'] {
+  padding: 10px;
+  background: #73c3fb;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 0.5em;
+}
+
+.pagination-next-link,
+.comment-btn {
+  padding: 10px;
+  background: transparent;
+  color: #73c3fb;
+  font-size: 14px;
+  border: 1px solid #73c3fb;
+  border-radius: 0.5em;
+}
+
+.pagination-next-link:hover,
+.comment-btn:hover {
+  color: #67afe1;
+  background-color: #f1f9fe;
+}
+
+/* テーブル */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+table th {
+  padding: 10px;
+  font-weight: bold;
+  background: #f1f9fe;
+  font-size: 18px;
+}
+
+table > th,
+td {
+  border-bottom: 1.5px solid #73c3fb;
+}
+
+table tr:nth-child(even) {
+  background: #f1f9fe;
+}
+
+/* 目次 */
+.toc {
+  border: 1px solid #73c3fb;
+}
+
+/* ページネーション */
+.page-numbers {
+  color: #73c3fb;
+  border: 1px solid #73c3fb;
+  border-radius: 0.5em;
+}
+
+.pagination .current {
+  background-color: #73c3fb;
+  color: #fff;
+}
+
+.page-numbers.dots {
+  opacity: 1;
+  background: none;
+}
+
+.pagination a:hover {
+  background-color: #73c3fb;
+  color: #fff;
+}
+
+/* 引用 */
+blockquote {
+  border-color: #73c3fb;
+  background-color: #f1f9fe;
+  border-radius: 0.5em;
+}
+
+blockquote::before,
+blockquote::after {
+  color: #73c3fb;
+}
+
+/* フッター */
+.footer {
+  padding-top: 30px;
+  padding-bottom: 35px;
+  color: #fff;
+  background-color: #73c3fb;
+}
+
+.footer-bottom {
+  margin-top: 0;
+}
+
+.footer-in h3 {
+  padding: 10px;
+  border: 1.5px solid #333;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 0.5em;
+}
+
+.navi-footer-in a {
+  color: #fff;
+}
+
+.navi-footer-in a:hover {
+  color: #fff;
+  background-color: #9dd5fc;
+}
+
+/* スクロールトップボタン */
+.go-to-top {
+  bottom: 35px;
+}
+
+.go-to-top-button {
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  background-color: #67afe1;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.go-to-top-button:hover {
+  color: #fff;
+  background-color: #9dd5fc;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 834px) {
+  .header-container-in.hlt-top-menu #header .header-in {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .header-in {
+    min-height: 80px;
+  }
+
+  .sidebar h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .article h2 {
+    padding: 0.6em 1em;
+  }
+
+  .article h3 {
+    padding: 0.4em 1em;
+  }
+
+  .footer {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+}
+/* SNSボタン */
+.sns-buttons a {
+  background-color: #444;
+}
+
+.bc-brand-color.sns-share .twitter-button,
+.bc-brand-color.sns-follow .twitter-button {
+  background-color: #34aaf3;
+}
+
+.bc-brand-color.sns-share .facebook-button,
+.bc-brand-color.sns-follow .facebook-button {
+  background-color: #4f6aa2;
+}
+
+.bc-brand-color.sns-share .hatebu-button,
+.bc-brand-color.sns-follow .hatebu-button {
+  background-color: #417dc4;
+}
+
+.bc-brand-color.sns-share .pocket-button,
+.bc-brand-color.sns-follow .pocket-button {
+  background-color: #f26678;
+}
+
+.bc-brand-color.sns-share .line-button,
+.bc-brand-color.sns-follow .line-button {
+  background-color: #4dd54d;
+}
+
+.bc-brand-color.sns-share .website-button,
+.bc-brand-color.sns-follow .website-button {
+  background-color: #335181;
+}
+
+.bc-brand-color.sns-share .feedly-button,
+.bc-brand-color.sns-follow .feedly-button {
+  background-color: #55c170;
+}
+
+.bc-brand-color.sns-share .rss-button,
+.bc-brand-color.sns-follow .rss-button {
+  background-color: #f5844e;
+}
+
+.bc-brand-color.sns-share .pinterest-button,
+.bc-brand-color.sns-follow .pinterest-button {
+  background-color: #f63147;
+}
+
+.bc-brand-color.sns-share .linkedin-button,
+.bc-brand-color.sns-follow .linkedin-button {
+  background-color: #0091dc;
+}

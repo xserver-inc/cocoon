@@ -1,0 +1,514 @@
+/*
+  Skin Name: Natural（グリーン）
+  Description: #86cfcfをベースにしたシ優しい色合いで使いやすいスキン
+  Skin URI: https://usefulweb.net/skin-natural/
+  Author: Taka
+  Author URI: https://usefulweb.net/
+  Screenshot URI: https://usefulweb.net/wp/wp-content/uploads/2021/06/natural_green.png
+  Version: 1.0.0
+  Visibility: false
+  Priority: 9999000000
+*/
+/*以下にスタイルシートを記入してください*/
+
+$key-color: #86cfcf;
+$key-sub-color: #e2f3f3;
+$key-mid-color: #aadddd;
+$key-light-color: #eff9f9;
+$key-dark-color: #44abab;
+// $bg-color: #eff9f9;
+$bg-color: #f4f5f7;
+$accent-color-primary: #deabc4;
+$accent-color-secondary: #ddccaa;
+$white: #fff;
+$black: #333;
+
+/* 全体 */
+body {
+    // font-family: Avenir, 'Helvetica neue', Helvetica, 'Segoe UI', '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium',
+    //     'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    background-color: $bg-color;
+}
+
+.main,
+.sidebar {
+    // background-color: $bg-color;
+    background-color: $white;
+}
+
+/* ヘッダー・グローバルナビ */
+.header-container .navi {
+    background-color: $key-color;
+}
+
+#navi .navi-in a {
+    color: $white;
+}
+
+#navi .navi-in > .menu-header .sub-menu {
+    background-color: $key-color;
+}
+
+#navi .navi-in a:hover {
+    // color: $key-color;
+    background-color: $key-mid-color;
+}
+
+.menu-header .item-label {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.header-container {
+    color: $white;
+    background-color: $key-color;
+}
+
+.header {
+    background-color: $key-color;
+}
+
+.header .header-in {
+    min-height: 100px;
+}
+
+/* サイト名・キャッチフレーズ */
+.site-name-text {
+    color: $white;
+}
+
+.site-name-text:hover {
+    color: $white;
+}
+
+/* 見出し */
+.article h2 {
+    margin: 5px 0;
+    padding: 20px 25px;
+    background-color: $key-color;
+    color: $white;
+    font-size: 22px;
+    border-radius: 0.5em;
+}
+
+.article h3 {
+    padding: 15px 20px 11px;
+    background-color: $key-sub-color;
+    border-color: $key-color;
+    border-top: none;
+    border-right: none;
+    border-bottom: 4px solid $key-color;
+    border-left: none;
+}
+
+.article h4 {
+    border-top: none;
+    border-bottom: none;
+    border-left: 6px solid $key-color;
+}
+
+.article h5 {
+    border-bottom: 2px solid $key-color;
+    position: relative;
+}
+
+/* サイドバー */
+.sidebar h3 {
+    padding: 10px;
+    color: $white;
+    background-color: $key-color;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+}
+
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_pages ul li a,
+.widget_meta ul li a,
+.widget_rss ul li a,
+.widget_nav_menu ul li a {
+    border-radius: 0.5em;
+}
+
+.widget_recent_entries ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_meta ul li a:hover,
+.widget_rss ul li a:hover,
+.widget_nav_menu ul li a:hover {
+    background-color: $key-light-color;
+}
+
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_pages ul li a,
+.widget_meta ul li a,
+.widget_rss ul li a,
+.widget_nav_menu ul li a {
+    padding: 0.5em 0.5em;
+}
+
+/* サイドバーカテゴリ */
+.cat-item a::before {
+    font-family: FontAwesome;
+    content: '\f0da';
+    margin-right: 6px;
+}
+
+.cat-item .children a::before {
+    content: '\f105';
+}
+
+.font-awesome-5 .cat-item a::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.font-awesome-5 .cat-item .children a::before {
+    content: '\f105';
+}
+
+/* プロフィールボックス */
+.author-box {
+    border: 1px solid $key-color;
+}
+
+.author-box .sns-follow-buttons a.follow-button {
+    color: $key-color;
+    border: 1px solid $key-color;
+}
+
+/* 検索ボタン */
+.search-edit,
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+textarea,
+select {
+    font-size: 16px;
+    border: 2px solid $key-color;
+    border-radius: 0.5em;
+}
+
+/* シェアボタン */
+#container .sns-buttons a {
+    border-radius: 0.5em;
+}
+
+/* ブログカード */
+.a-wrap .blogcard {
+    border-color: $key-color;
+}
+
+.a-wrap {
+    border-radius: 0.5em;
+}
+
+.a-wrap:hover {
+    // background-color: $white;
+    background-color: $key-light-color;
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+    box-shadow: 0 0 8px #f6fafd;
+}
+
+.blogcard-label {
+    background-color: $key-color;
+}
+
+/* カテゴリラベル */
+.cat-label {
+    top: 0;
+    left: 0;
+    background-color: $accent-color-primary;
+    border-top: none;
+    border-left: none;
+}
+
+.cat-link {
+    background-color: $accent-color-primary;
+    border-radius: 0.5em;
+    transition: all 0.3s;
+}
+
+.cat-link:hover {
+    opacity: 0.8;
+}
+
+/* タグリンク */
+.tag-link {
+    color: $accent-color-primary;
+    border-color: $accent-color-primary;
+    border-radius: 0.5em;
+}
+
+.tag-link:hover {
+    color: $accent-color-primary;
+    background-color: rgba($accent-color-primary, 0.1);
+}
+
+/* コメント箇所 */
+.comment-reply-link {
+    color: $key-color;
+    border-color: $key-color;
+    border-radius: 0.5em;
+}
+
+.comment-reply-link:hover {
+    color: $key-dark-color;
+    background-color: $key-light-color;
+}
+
+/* タグ */
+.tagcloud a {
+    color: $key-color;
+    border-color: $key-color;
+    border-radius: 0.5em;
+}
+
+.tagcloud a:hover {
+    color: $key-dark-color;
+    background-color: $key-light-color;
+}
+
+.fa-tag:before {
+    content: '\f02c';
+}
+
+/* コメント送信ボタン */
+input[type='submit'] {
+    padding: 10px;
+    background: $key-color;
+    color: $white;
+    font-size: 14px;
+    border: none;
+    border-radius: 0.5em;
+}
+
+.pagination-next-link,
+.comment-btn {
+    padding: 10px;
+    background: transparent;
+    color: $key-color;
+    font-size: 14px;
+    border: 1px solid $key-color;
+    border-radius: 0.5em;
+}
+
+.pagination-next-link:hover,
+.comment-btn:hover {
+    color: $key-dark-color;
+    background-color: $key-light-color;
+}
+
+/* テーブル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+table th {
+    padding: 10px;
+    font-weight: bold;
+    background: $key-light-color;
+    font-size: 18px;
+}
+
+table > th,
+td {
+    border-bottom: 1.5px solid $key-color;
+}
+
+table tr:nth-child(even) {
+    background: $key-light-color;
+}
+
+/* 目次 */
+.toc {
+    border: 1px solid $key-color;
+}
+
+/* ページネーション */
+.page-numbers {
+    color: $key-color;
+    border: 1px solid $key-color;
+    border-radius: 0.5em;
+}
+
+.pagination .current {
+    background-color: $key-color;
+    color: $white;
+}
+
+.page-numbers.dots {
+    opacity: 1;
+    background: none;
+}
+
+.pagination a:hover {
+    background-color: $key-color;
+    color: $white;
+}
+
+/* 引用 */
+blockquote {
+    // padding: 10px 30px 10px 50px;
+    border-color: $key-color;
+    background-color: $key-light-color;
+    border-radius: 0.5em;
+}
+
+blockquote::before,
+blockquote::after {
+    color: $key-color;
+}
+
+/* フッター */
+.footer {
+    padding-top: 30px;
+    padding-bottom: 35px;
+    color: $white;
+    background-color: $key-color;
+}
+
+.footer-bottom {
+    margin-top: 0;
+}
+
+.footer-in h3 {
+    padding: 10px;
+    border: 1.5px solid $black;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 0.5em;
+}
+
+.navi-footer-in a {
+    color: $white;
+}
+
+.navi-footer-in a:hover {
+    color: $white;
+    background-color: $key-mid-color;
+}
+
+/* スクロールトップボタン */
+.go-to-top {
+    bottom: 35px;
+}
+
+.go-to-top-button {
+    width: 45px;
+    height: 45px;
+    color: $white;
+    background-color: $key-dark-color;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.go-to-top-button:hover {
+    color: $white;
+    background-color: $key-mid-color;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 834px) {
+    .header-container-in.hlt-top-menu #header .header-in {
+        display: flex;
+        align-items: center;
+    }
+
+    .header .header-in {
+        min-height: 80px;
+    }
+
+    .sidebar h3 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .article h2 {
+        padding: 0.6em 1em;
+    }
+
+    .article h3 {
+        padding: 0.4em 1em;
+    }
+
+    .footer {
+        padding-top: 25px;
+        padding-bottom: 30px;
+    }
+}
+
+/* SNSボタン */
+.sns-buttons a {
+    background-color: #444;
+}
+
+.bc-brand-color.sns-share .twitter-button,
+.bc-brand-color.sns-follow .twitter-button {
+    background-color: #34aaf3;
+}
+
+.bc-brand-color.sns-share .facebook-button,
+.bc-brand-color.sns-follow .facebook-button {
+    background-color: #4f6aa2;
+}
+
+.bc-brand-color.sns-share .hatebu-button,
+.bc-brand-color.sns-follow .hatebu-button {
+    background-color: #417dc4;
+}
+
+.bc-brand-color.sns-share .pocket-button,
+.bc-brand-color.sns-follow .pocket-button {
+    background-color: #f26678;
+}
+
+.bc-brand-color.sns-share .line-button,
+.bc-brand-color.sns-follow .line-button {
+    background-color: #4dd54d;
+}
+
+.bc-brand-color.sns-share .website-button,
+.bc-brand-color.sns-follow .website-button {
+    background-color: #335181;
+}
+
+.bc-brand-color.sns-share .feedly-button,
+.bc-brand-color.sns-follow .feedly-button {
+    background-color: #55c170;
+}
+
+.bc-brand-color.sns-share .rss-button,
+.bc-brand-color.sns-follow .rss-button {
+    background-color: #f5844e;
+}
+.bc-brand-color.sns-share .pinterest-button,
+.bc-brand-color.sns-follow .pinterest-button {
+    background-color: #f63147;
+}
+
+.bc-brand-color.sns-share .linkedin-button,
+.bc-brand-color.sns-follow .linkedin-button {
+    background-color: #0091dc;
+}
