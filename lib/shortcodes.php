@@ -901,7 +901,7 @@ endif;
 //日付ショートコード
 add_shortcode('date', 'date_shortcode');
 if ( !function_exists( 'date_shortcode' ) ):
-function date_shortcode( $atts, $content = null ) {
+function date_shortcode( $atts ) {
   extract( shortcode_atts( array(
     'format' => 'Y/m/d',
   ), $atts, 'date' ) );
@@ -915,7 +915,7 @@ if (is_privilege_activation_code_available()) {
   add_shortcode('updated', 'updated_shortcode');
 }
 if ( !function_exists( 'updated_shortcode' ) ):
-function updated_shortcode( $atts, $content = null ) {
+function updated_shortcode( $atts ) {
   extract( shortcode_atts( array(
     'format' => 'Y/m/d',
   ), $atts, 'updated' ) );
