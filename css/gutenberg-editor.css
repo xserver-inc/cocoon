@@ -1026,10 +1026,12 @@ ol, ul {
   float: none;
   margin: 0;
 }
-.wp-block[data-align="center"] .btn-wrap {
+.wp-block[data-align="center"] .btn-wrap,
+.wp-block[data-align="center"] .wp-block-cocoon-blocks-button-1 {
   text-align: center;
 }
-.wp-block[data-align="right"] {
+.wp-block[data-align="right"] .btn-wrap,
+.wp-block[data-align="right"] .wp-block-cocoon-blocks-button-1 {
   text-align: right;
 }
 

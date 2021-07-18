@@ -788,13 +788,17 @@ ol, ul {
   }
 
   &[data-align="center"]{
-    .btn-wrap{
+    .btn-wrap,
+    .wp-block-cocoon-blocks-button-1{
       text-align: center;
     }
   }
 
   &[data-align="right"]{
+    .btn-wrap,
+    .wp-block-cocoon-blocks-button-1{
       text-align: right;
+    }
   }
 }
 
