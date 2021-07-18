@@ -76,6 +76,7 @@ const registerBlock = (block) => {
     wpVersion = gbSettings['wpVersion'];
     // console.log(wpVersion);
   }
+  wpVersion = wpVersion.replace(/-.+$/, '');
   if (compareVersions(wpVersion, '5.5') < 0) {
     //nameを削除
      delete metadata.name;
@@ -84,7 +85,8 @@ const registerBlock = (block) => {
        ...settings,
        ...metadata,
      };
-   } else if (metadata) {
+   } else
+   if (metadata) {
     unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata });
   }
   registerBlockType(name, settings);
