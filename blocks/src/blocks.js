@@ -76,6 +76,7 @@ const registerBlock = (block) => {
     wpVersion = gbSettings['wpVersion'];
     // console.log(wpVersion);
   }
+  //-RC版などの文字列が組まれる場合は取り除く
   wpVersion = wpVersion.replace(/-.+$/, '');
   if (compareVersions(wpVersion, '5.5') < 0) {
     //nameを削除
