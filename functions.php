@@ -382,3 +382,12 @@ add_filter('wpforo_body_text_filter', function ($text){
   $text = preg_replace('#(<div id="wpfa-\d+?" class="wpforo-attached-file"><a class="wpforo-default-attachment" .*?href="(.+?(\.jpe?g|\.png|\.gif))".*?>).+?(</a></div>)#i', '$1<i class="fas fa-paperclip paperclip"></i><img alt="" src="$2" />$4', $text);
   return $text;
 });
+
+//ウィジェットブロックエディターの停止
+add_action( 'after_setup_theme', 'remove_widgets_block_editor' );
+if ( !function_exists( 'remove_widgets_block_editor' ) ):
+function remove_widgets_block_editor() {
+  remove_theme_support( 'widgets-block-editor' );
+}
+endif;
+
