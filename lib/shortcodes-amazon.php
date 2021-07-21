@@ -665,15 +665,23 @@ function amazon_product_link_shortcode($atts){
       }
       //_v($maker);
 
-      $Offers = $item->{'Offers'};
-      $HighestPrice = isset($Offers->{'Summaries'}[0]->{'HighestPrice'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'HighestPrice'}->{'DisplayAmount'} : null;
-      $LowestPrice = isset($Offers->{'Summaries'}[0]->{'LowestPrice'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'LowestPrice'}->{'DisplayAmount'} : null;
+      $HighestPrice = null;
+      $LowestPrice = null;
+      $SavingBasisPrice = null;
+      $Price = null;
 
-      $SavingBasisPrice = isset($Offers->{'Listings'}[0]->{'SavingBasis'}->{'DisplayAmount'}) ? $Offers->{'Listings'}[0]->{'SavingBasis'}->{'DisplayAmount'} : null;
-      $Price = isset($Offers->{'Listings'}[0]->{'Price'}->{'DisplayAmount'}) ? $Offers->{'Listings'}[0]->{'Price'}->{'DisplayAmount'} : null;
+      if (isset($item->{'Offers'})) {
+        $Offers = $item->{'Offers'};
+        $HighestPrice = isset($Offers->{'Summaries'}[0]->{'HighestPrice'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'HighestPrice'}->{'DisplayAmount'} : null;
+        $LowestPrice = isset($Offers->{'Summaries'}[0]->{'LowestPrice'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'LowestPrice'}->{'DisplayAmount'} : null;
 
-      //$ListPrice = $item->ItemAttributes->ListPrice;
-      //_v($FormattedPrice);
+        $SavingBasisPrice = isset($Offers->{'Listings'}[0]->{'SavingBasis'}->{'DisplayAmount'}) ? $Offers->{'Listings'}[0]->{'SavingBasis'}->{'DisplayAmount'} : null;
+        $Price = isset($Offers->{'Listings'}[0]->{'Price'}->{'DisplayAmount'}) ? $Offers->{'Listings'}[0]->{'Price'}->{'DisplayAmount'} : null;
+
+        //$ListPrice = $item->ItemAttributes->ListPrice;
+        //_v($FormattedPrice);
+      }
+
 
       ///////////////////////////////////////////
       // デフォルト価格取得
