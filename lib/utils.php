@@ -3421,10 +3421,17 @@ function get_termmeta_value_enable_ids($meta_key){
 }
 endif;
 
-//WordPress5.5以上かどうか
+//WordPressバージョンが5.5以上かどうか
 if ( !function_exists( 'is_wp_5_5_or_over' ) ):
 function is_wp_5_5_or_over(){
   return get_bloginfo('version') >= '5.5';
+}
+endif;
+
+//WordPressバージョンが5.8以上かどうか
+if ( !function_exists( 'is_wp_5_8_or_over' ) ):
+function is_wp_5_8_or_over(){
+  return get_bloginfo('version') >= '5.8';
 }
 endif;
 
