@@ -182,6 +182,7 @@ class Skin_Silk_Functions {
     add_filter('get_editor_key_color', [$this, 'editor_color']);
     add_filter('block_editor_color_palette_colors', [$this, 'palette_colors']);
     add_action('get_template_part_tmp/css-custom', [$this, 'css_custom']);
+    add_action('admin_print_styles', [$this, 'echo_block_css']);
     add_action('cocoon_settings_after_save', [$this, 'delete_options']);
     add_action('get_header', [$this, 'icon_settings']);
     add_filter('menu_description_walker', [$this, 'navi_header']);
@@ -264,6 +265,16 @@ class Skin_Silk_Functions {
     return $colors;
   }
 
+  public function echo_block_css() {
+    $current_screen = get_current_screen();
+  if ( ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) || ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ) ) {
+    echo '<style>';
+    $this->css_custom();
+    echo '</style>'.PHP_EOL;
+  }
+
+  }
+
   //カスタムCSS
   public function css_custom() {
     $color     = get_site_key_color() ?: self::KEY_COLOR;
@@ -340,7 +351,7 @@ class Skin_Silk_Functions {
     //カラーパレット追加
     $color_palette = get_cocoon_editor_color_palette_colors();
     foreach ($color_palette as $editor_color) {
-      echo '.body .has-'.$editor_color['slug'].'-border-color .label-box-label,
+      echo 'html .body .has-'.$editor_color['slug'].'-border-color .label-box-label,
       .wp-block-cover-image.has-'.$editor_color['slug'].'-background-color.has-background-dim,
       .wp-block-cover.has-'.$editor_color['slug'].'-background-color.has-background-dim,
       .has-'.$editor_color['slug'].'-background-color hr.is-style-cut-line::after,
@@ -839,6 +850,7 @@ class Skin_Silk_Functions {
     return THUMB320HEIGHT;
   }
 
+
   //エディター用JS・CSS
   public function editor_assets() {
     $file = str_ireplace('style.css', 'gutenberg.js', get_skin_url());
@@ -1111,3 +1123,4 @@ class Skin_Silk_Functions {
 }
 
 Skin_Silk_Functions::instance();
+
