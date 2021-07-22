@@ -396,7 +396,10 @@ html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
 html .body .iconlist-box.has-<?php echo $slug; ?>-icon-color li::before{
     color: <?php echo $color; ?>;
 }
-<?php //マイクロバルーン（背景色） ?>
+<?php //マイクロバルーン ?>
+html .body .micro-balloon.has-<?php echo $slug; ?>-color {
+    color: <?php echo $color; ?>;
+}
 html .body .micro-balloon.has-<?php echo $slug; ?>-background-color {
   background-color: <?php echo $color; ?>;
   border-color: transparent;
