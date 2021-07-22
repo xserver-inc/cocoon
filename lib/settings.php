@@ -165,15 +165,46 @@ add_action( 'enqueue_block_editor_assets', 'gutenberg_stylesheets_custom' );
 if ( !function_exists( 'gutenberg_stylesheets_custom' ) ):
 function gutenberg_stylesheets_custom() {
   if ( is_visual_editor_style_enable() ) {
+
     // Gutenberg用のCSSとJSのみ読み込み
     wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_template_directory_uri() . '/js/gutenberg.js', array( 'jquery' ), false, true );
     wp_enqueue_style( THEME_NAME . '-gutenberg', get_template_directory_uri() . '/css/gutenberg-editor.css' );
 
+
+    $style_url = PARENT_THEME_STYLE_CSS_URL;
+    $keyframes_url = PARENT_THEME_KEYFRAMES_CSS_URL;
+    $editor_style_url = get_template_directory_uri().'/editor-style.css';
+    wp_enqueue_style( THEME_NAME . '-style', $style_url );
+    wp_enqueue_style( THEME_NAME . '-keyframes-style', $keyframes_url );
+    wp_enqueue_style( THEME_NAME . '-editor-style', $editor_style_url );
+
+    //カラーパレットスタイル
     $css = get_block_editor_color_palette_css();
     $file = get_block_color_palette_css_cache_file();
     wp_filesystem_put_contents($file, $css, 0);
-    wp_enqueue_style( THEME_NAME . '-color-palette', get_block_color_palette_css_cache_url() );
+    wp_enqueue_style( THEME_NAME . '-color-palette-style', get_block_color_palette_css_cache_url() );
     // var_dump(get_block_color_palette_css_cache_url());
+
+    //Font Awesome5が有効な場合
+    if (is_site_icon_font_font_awesome_5()) {
+      wp_enqueue_style( THEME_NAME . '-font-a-stylewesome-5-style', FONT_AWESOME_5_UPDATE_URL );
+    }
+
+    //スキンが設定されている場合
+    if (get_skin_url() &&
+        //エディター除外スキンの場合
+        !is_exclude_skin(get_skin_url(), get_editor_exclude_skins())) {
+      wp_enqueue_style( THEME_NAME . '-skin-style', get_skin_url() );
+    }
+
+    //カスタムスタイル
+    $cache_file_url = get_theme_css_cache_file_url();
+    wp_enqueue_style( THEME_NAME . '-css-cache-style', $cache_file_url );
+
+    //子テーマがある場合
+    if (is_child_theme()) {
+      wp_enqueue_style( THEME_NAME . '-child-style', CHILD_THEME_STYLE_CSS_URL );
+    }
 
     /**
      * Filters the script parameter name.
