@@ -385,7 +385,7 @@ html .body .bb-tab.has-<?php echo $slug; ?>-border-color .bb-label{
     background-color: <?php echo $color; ?>;
 }
 <?php //アコーディオンボックス ?>
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color html .body .toggle-button{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
     background-color: <?php echo $color; ?>;
 }
 html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
