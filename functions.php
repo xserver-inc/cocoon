@@ -128,6 +128,7 @@ function get_archive_chapter_title(){
     //年のフォーマットを取得
     $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y');
   } elseif (is_author()) {//著書ページの場合
+    $author = get_the_author();
     $chapter_title .= '<span class="fa fa-user" aria-hidden="true"></span>'.esc_html(get_the_author_meta( 'display_name', $author ));
   } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
     $chapter_title .= 'Archives';

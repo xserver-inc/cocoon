@@ -428,7 +428,7 @@ function get_share_page_url(){
     //カテゴリートップページ
     $cat_id = get_query_var('cat');
     $url = get_category_link($cat_id);
-  } elseif (is_tag() && !is_paged()) {
+  } elseif (is_tag() && !is_paged() && isset($tag->term_id)) {
     //タグトップページ
     $name = single_tag_title('', false);
     $tag = get_term_by('name', $name, 'post_tag');

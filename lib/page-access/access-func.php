@@ -54,7 +54,7 @@ if ( !function_exists( 'get_accesses_post_type' ) ):
 function get_accesses_post_type(){
   global $post;
   global $post_type;
-  if (is_page() || ($post->post_type === 'page') || ($post_type === 'page')) {
+  if (is_page() || (isset($post->post_type) && ($post->post_type === 'page')) || ($post_type === 'page')) {
     $res = 'page'; //page
   } else {
     $res = 'post'; //single
