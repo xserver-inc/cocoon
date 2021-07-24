@@ -55,9 +55,10 @@
   .search-form{
     margin: 0 !important;
     display: block !important;
-    max-width: auto !important;
+    max-width: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
     border: none !important;
+    padding: 0 !important;
   }
 }
