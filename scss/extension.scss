@@ -1511,23 +1511,23 @@ div.search-form{
     overflow: hidden;
   }
 
-  &.is-style-faq{
-    .toggle-button{
-      text-align: left;
-      &::before{
-        content: 'Q' !important;
-        font-size: 1em;
-        margin-right: 0.6em;
-      }
-    }
-    &.has-border-color{
-      .toggle-button{
-        &::before{
-          color: #fff;
-        }
-      }
-    }
-  }
+  // &.is-style-faq{
+  //   .toggle-button{
+  //     text-align: left;
+  //     &::before{
+  //       content: 'Q' !important;
+  //       font-size: 1em;
+  //       margin-right: 0.6em;
+  //     }
+  //   }
+  //   &.has-border-color{
+  //     .toggle-button{
+  //       &::before{
+  //         color: #fff;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 $toggle_border_width: 2px;

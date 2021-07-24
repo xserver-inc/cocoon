@@ -1286,9 +1286,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-wrap { position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.admin-settings .demo .toggle-wrap.is-style-faq .toggle-button { text-align: left; }
-.admin-settings .demo .toggle-wrap.is-style-faq .toggle-button::before { content: 'Q' !important; font-size: 1em; margin-right: 0.6em; }
-.admin-settings .demo .toggle-wrap.is-style-faq.has-border-color .toggle-button::before { color: #fff; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
@@ -2901,9 +2898,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-wrap { position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.admin-settings .demo .toggle-wrap.is-style-faq .toggle-button { text-align: left; }
-.admin-settings .demo .toggle-wrap.is-style-faq .toggle-button::before { content: 'Q' !important; font-size: 1em; margin-right: 0.6em; }
-.admin-settings .demo .toggle-wrap.is-style-faq.has-border-color .toggle-button::before { color: #fff; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
@@ -4725,9 +4719,6 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .toggle-wrap { position: relative; }
 .components-popover__content .toggle-wrap > p { margin: 0; }
 .components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-.components-popover__content .toggle-wrap.is-style-faq .toggle-button { text-align: left; }
-.components-popover__content .toggle-wrap.is-style-faq .toggle-button::before { content: 'Q' !important; font-size: 1em; margin-right: 0.6em; }
-.components-popover__content .toggle-wrap.is-style-faq.has-border-color .toggle-button::before { color: #fff; }
 .components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f5f6f7; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .components-popover__content .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .components-popover__content .toggle-button:hover { opacity: 0.7; }
