@@ -450,7 +450,7 @@ html .body .label-box.has-<?php echo $slug; ?>-background-color .box-content{
 html .body .speech-balloon.has-<?php echo $slug; ?>-background-color {
     background-color: <?php echo $color; ?>;
 }
-html .body .speech-balloon.has-<?php echo $slug; ?>-color {
+html .body .speech-balloon.has-text-color.has-<?php echo $slug; ?>-color {
     color: <?php echo $color; ?>;
 }
 html .body .speech-balloon.has-<?php echo $slug; ?>-border-color {
