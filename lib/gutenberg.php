@@ -482,6 +482,9 @@ html .body .sbs-think .speech-balloon.has-<?php echo $slug; ?>-background-color:
 html .body .sbs-think .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
   background-color: <?php echo $color; ?>;
 }
+html .body .sbs-think .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
+  border-color: <?php echo $color; ?>;
+}
 <?php //タイムライン ?>
 html .body .timeline-box.has-<?php echo $slug; ?>-point-color .timeline-item::before{
   background-color: <?php echo $color; ?>;
