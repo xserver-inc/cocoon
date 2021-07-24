@@ -60,6 +60,7 @@ if (!empty($faqs)) {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@id":"#FAQContents",
   "@type": "FAQPage",
   "mainEntity": [
     <?php //FAQ JSONの結合
