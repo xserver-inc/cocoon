@@ -4025,6 +4025,15 @@ div.search-form {
     margin-left: -10px;
   }
 }
+.media-modal-content .search-form {
+  margin: 0 !important;
+  display: block !important;
+  max-width: auto !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
 .btn-wrap {
   min-height: 2em;
 }
@@ -8971,10 +8980,6 @@ input[type="search"] {
   border-radius: 4px;
   border: 1px solid #ccc;
   cursor: pointer;
-}
-
-textarea {
-  min-height: 260px;
 }
 
 option {

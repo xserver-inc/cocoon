@@ -988,6 +988,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn::after { font-size: 20px; margin-left: -10px; } }
+.admin-settings .demo .media-modal-content .search-form { margin: 0 !important; display: block !important; max-width: auto !important; box-shadow: none !important; border-radius: 0 !important; border: none !important; }
 .admin-settings .demo .btn-wrap { min-height: 2em; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; background-color: #32373c; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 7px 13px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
@@ -2602,6 +2603,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn::after { font-size: 20px; margin-left: -10px; } }
+.admin-settings .demo .media-modal-content .search-form { margin: 0 !important; display: block !important; max-width: auto !important; box-shadow: none !important; border-radius: 0 !important; border: none !important; }
 .admin-settings .demo .btn-wrap { min-height: 2em; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; background-color: #32373c; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 7px 13px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
@@ -3597,7 +3599,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .appeal-button:hover { color: #fff; opacity: 0.7; }
 .admin-settings .demo input[type="search"] { width: auto; flex-grow: 1; }
 .admin-settings .demo .wp-block-search__button { width: 60px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }
-.admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }
 .admin-settings .demo input[type='submit'] { -webkit-appearance: none; border: 1px solid #ddd; background-color: #f5f8fa; }
@@ -4426,6 +4427,7 @@ textarea[name="the_page_memo"] { width: 100%; }
   .components-popover__content .search-form div.sform { min-width: 180px; }
   .components-popover__content .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .components-popover__content .search-form div.sbtn::after { font-size: 20px; margin-left: -10px; } }
+.components-popover__content .media-modal-content .search-form { margin: 0 !important; display: block !important; max-width: auto !important; box-shadow: none !important; border-radius: 0 !important; border: none !important; }
 .components-popover__content .btn-wrap { min-height: 2em; }
 .components-popover__content .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a, .components-popover__content .btn-wrap > a, .components-popover__content .wp-block-freeform .btn-wrap > a { color: #fff; background-color: #32373c; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 7px 13px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }

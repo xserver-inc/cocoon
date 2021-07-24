@@ -872,6 +872,18 @@ div.search-form{
   }
 }
 
+//メディアライブラリに適用されたのを打ち消す
+.media-modal-content{
+  .search-form{
+    margin: 0 !important;
+    display: block !important;
+    max-width: auto !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+}
+
 .btn-wrap{
   min-height: 2em;
   img[width="1"]{
