@@ -447,6 +447,15 @@ html .body .label-box.has-<?php echo $slug; ?>-background-color .box-content{
   background-color: <?php echo $color; ?>;
 }
 <?php //吹き出しボックス ?>
+html .body .speech-balloon.has-<?php echo $slug; ?>-background-color {
+    background-color: <?php echo $color; ?>;
+}
+html .body .speech-balloon.has-<?php echo $slug; ?>-color {
+    color: <?php echo $color; ?>;
+}
+html .body .speech-balloon.has-<?php echo $slug; ?>-border-color {
+    border-color: <?php echo $color; ?>;
+}
 html .body .sbp-l .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
   border-right-color: <?php echo $color; ?>;
 }
