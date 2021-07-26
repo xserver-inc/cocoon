@@ -136,9 +136,7 @@ export function FAQEdit( props ) {
               <RichText
                 tagName="div"
                 className="faq-question-content"
-                placeholder={ __( '質問を入力してください…',
-                  'snow-monkey-blocks'
-                ) }
+                placeholder={ __( '質問を入力してください…', THEME_NAME ) }
                 value={ question }
                 multiline={ false }
                 onChange={(value) => setAttributes({ question: value })}
