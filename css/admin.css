@@ -4874,3 +4874,5 @@ textarea[name="the_page_memo"] { width: 100%; }
 .wp-core-ui .button-primary { background: #0071a1 !important; border-color: #0071a1 !important; color: #fff !important; }
 
 .demo .carousel { opacity: 1 !important; }
+
+.ranking-item-rating ul { list-style: none !important; }
