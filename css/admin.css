@@ -4876,3 +4876,5 @@ textarea[name="the_page_memo"] { width: 100%; }
 .demo .carousel { opacity: 1 !important; }
 
 .ranking-item-rating ul { list-style: none !important; }
+
+.demo .ranking-item, .admin-settings .demo .timeline-box { margin-bottom: 1em; }
