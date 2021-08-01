@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <p><?php _e( 'ランキングを作成します。次のランキングを入力するには保存ボタンを押してください。', THEME_NAME ) ?></p>
 <?php //IDがある場合はIDの取得（編集モードの場合）
 $id = isset($_GET['id']) ? intval($_GET['id']) : null;
-$action = isset($_GET['action']) ? intval($_GET['action']) : null;
+$action = isset($_GET['action']) ? $_GET['action'] : null;
 //アイテムの移動
 if ( $id && ($action == 'move') && isset($_GET['from']) && isset($_GET['to']) ) {
   $from = $_GET['from'];
