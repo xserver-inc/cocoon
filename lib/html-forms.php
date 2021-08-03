@@ -1083,7 +1083,7 @@ function generate_widget_entries_tag($atts){
   );
   if (!$sticky) {
     $args += array(
-      'post__not_in' => get_sticky_post_ids(),
+      'ignore_sticky_posts' => true,
     );
   }
   //並べ替え
