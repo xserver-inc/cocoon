@@ -1,4 +1,56 @@
 @charset "UTF-8";
+.faw::before {
+  font-family: FontAwesome;
+  padding-right: 4px;
+}
+
+.body.font-awesome-5 .bct-related::before,
+.body.font-awesome-5 .blank-box.bb-ok::before,
+.body.font-awesome-5 .blank-box.bb-point::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+.body.font-awesome-5 .bb-ok::before {
+  content: "  OK";
+}
+.body.font-awesome-5 .blank-box.bb-check::before,
+.body.font-awesome-5 .blank-box.bb-comment::before,
+.body.font-awesome-5 .blank-box.bb-tips::before,
+.body.font-awesome-5 .blank-box.bb-pickup::before,
+.body.font-awesome-5 .blank-box.bb-hint::before,
+.body.font-awesome-5 .blank-box.bb-bookmark::before,
+.body.font-awesome-5 .blank-box.bb-memo::before,
+.body.font-awesome-5 .blank-box.bb-download::before,
+.body.font-awesome-5 .blank-box.bb-break::before,
+.body.font-awesome-5 .blank-box.bb-ng::before,
+.body.font-awesome-5 .blank-box.bb-good::before,
+.body.font-awesome-5 .blank-box.bb-bad::before,
+.body.font-awesome-5 .blank-box.bb-profile::before,
+.body.font-awesome-5 .bct-none::before,
+.body.font-awesome-5 .bct-reference::before,
+.body.font-awesome-5 .bct-reference-link::before,
+.body.font-awesome-5 .bct-popular::before,
+.body.font-awesome-5 .bct-pickup::before,
+.body.font-awesome-5 .bct-check::before,
+.body.font-awesome-5 .bct-together::before,
+.body.font-awesome-5 .bct-detail::before,
+.body.font-awesome-5 .bct-official::before,
+.body.font-awesome-5 .bct-dl::before,
+.body.font-awesome-5 .btn-wrap::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 501;
+}
+.body.font-awesome-5 .bb-memo::before {
+  content: "  MEMO";
+}
+.body.font-awesome-5 .blank-box.bb-tab::before {
+  font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+}
+.body.font-awesome-5 .blank-box.bb-amazon::before {
+  font-family: "Font Awesome 5 Brands", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+  font-weight: 400;
+}
+
 [class*="fab-"]::before {
   font-family: FontAwesome;
 }

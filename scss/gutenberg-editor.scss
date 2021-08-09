@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import "common-editor";
+
 //Font Awesomeのアイコン
 @import "fontawesome-before";
 .components-button.is-button{
@@ -1103,3 +1105,4 @@ body::before,
   margin-left: auto;
   margin-right: 0;
 }
+

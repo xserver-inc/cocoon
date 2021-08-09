@@ -4,6 +4,53 @@
   padding-right: 4px;
 }
 
+.body.font-awesome-5 .bct-related::before,
+.body.font-awesome-5 .blank-box.bb-ok::before,
+.body.font-awesome-5 .blank-box.bb-point::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+.body.font-awesome-5 .bb-ok::before {
+  content: "  OK";
+}
+.body.font-awesome-5 .blank-box.bb-check::before,
+.body.font-awesome-5 .blank-box.bb-comment::before,
+.body.font-awesome-5 .blank-box.bb-tips::before,
+.body.font-awesome-5 .blank-box.bb-pickup::before,
+.body.font-awesome-5 .blank-box.bb-hint::before,
+.body.font-awesome-5 .blank-box.bb-bookmark::before,
+.body.font-awesome-5 .blank-box.bb-memo::before,
+.body.font-awesome-5 .blank-box.bb-download::before,
+.body.font-awesome-5 .blank-box.bb-break::before,
+.body.font-awesome-5 .blank-box.bb-ng::before,
+.body.font-awesome-5 .blank-box.bb-good::before,
+.body.font-awesome-5 .blank-box.bb-bad::before,
+.body.font-awesome-5 .blank-box.bb-profile::before,
+.body.font-awesome-5 .bct-none::before,
+.body.font-awesome-5 .bct-reference::before,
+.body.font-awesome-5 .bct-reference-link::before,
+.body.font-awesome-5 .bct-popular::before,
+.body.font-awesome-5 .bct-pickup::before,
+.body.font-awesome-5 .bct-check::before,
+.body.font-awesome-5 .bct-together::before,
+.body.font-awesome-5 .bct-detail::before,
+.body.font-awesome-5 .bct-official::before,
+.body.font-awesome-5 .bct-dl::before,
+.body.font-awesome-5 .btn-wrap::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 501;
+}
+.body.font-awesome-5 .bb-memo::before {
+  content: "  MEMO";
+}
+.body.font-awesome-5 .blank-box.bb-tab::before {
+  font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+}
+.body.font-awesome-5 .blank-box.bb-amazon::before {
+  font-family: "Font Awesome 5 Brands", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+  font-weight: 400;
+}
+
 /*ビジュアルエディターのスタイルを書く*/
 body#tinymce {
   padding: 1em 20px !important;
@@ -152,53 +199,6 @@ span.btn-wrap {
 
 .blogcard-type.bct-dl::before {
   content: "  ダウンロード";
-}
-
-.font-awesome-5 .bct-related::before,
-.font-awesome-5 .blank-box.bb-ok::before,
-.font-awesome-5 .blank-box.bb-point::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-}
-.font-awesome-5 .bb-ok::before {
-  content: "  OK";
-}
-.font-awesome-5 .blank-box.bb-check::before,
-.font-awesome-5 .blank-box.bb-comment::before,
-.font-awesome-5 .blank-box.bb-tips::before,
-.font-awesome-5 .blank-box.bb-pickup::before,
-.font-awesome-5 .blank-box.bb-hint::before,
-.font-awesome-5 .blank-box.bb-bookmark::before,
-.font-awesome-5 .blank-box.bb-memo::before,
-.font-awesome-5 .blank-box.bb-download::before,
-.font-awesome-5 .blank-box.bb-break::before,
-.font-awesome-5 .blank-box.bb-ng::before,
-.font-awesome-5 .blank-box.bb-good::before,
-.font-awesome-5 .blank-box.bb-bad::before,
-.font-awesome-5 .blank-box.bb-profile::before,
-.font-awesome-5 .bct-none::before,
-.font-awesome-5 .bct-reference::before,
-.font-awesome-5 .bct-reference-link::before,
-.font-awesome-5 .bct-popular::before,
-.font-awesome-5 .bct-pickup::before,
-.font-awesome-5 .bct-check::before,
-.font-awesome-5 .bct-together::before,
-.font-awesome-5 .bct-detail::before,
-.font-awesome-5 .bct-official::before,
-.font-awesome-5 .bct-dl::before,
-.font-awesome-5 .btn-wrap::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 501;
-}
-.font-awesome-5 .bb-memo::before {
-  content: "  MEMO";
-}
-.font-awesome-5 .blank-box.bb-tab::before {
-  font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
-}
-.font-awesome-5 .blank-box.bb-amazon::before {
-  font-family: "Font Awesome 5 Brands", Aharoni, "Arial Black", Impact, Arial, sans-serif;
-  font-weight: 400;
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
