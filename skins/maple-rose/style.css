@@ -1,23 +1,23 @@
 /*
-  Skin Name: 白ウサギ(白×ブルー)
-  Description: アリスの色違い。白×ブルーを基調とした、パステルカラーの可愛らしいスキンです。
+  Skin Name: ローズカラー（アリス色違い）
+  Description: パステルカラーの可愛らしいスキンです。
   Skin URI: https://yuhostyles.com/
   Author: Yuhomyan
-  Author URI: https://yuhostyles.com/wordpress-cocoon-alice/
-  Screenshot URI: https://im-cocoon.net/wp-content/uploads/maple-white-rabbit.jpg
+  Author URI: https://yuhostyles.com/cocoon-alice2/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/maple-rose.jpg
   Version: 1.0.1
-  Priority: 9400001200
+  Priority: 9400001400
 */
 /*以下にスタイルシートを記入してください*/
 
 /* 全体 */
 body {
     color: #6a859c;
-	background: #c5ddf7;
+	background-color: #f9f0ee;
 }
 /* link color */
 a {
-    color: #3b97f3;
+    color: #ec98c1;
 }
 a:hover {
     color: #ef97e8;
@@ -25,15 +25,14 @@ a:hover {
 
 /* ヘッダー背景 */
 #header {
-    background: repeating-linear-gradient(90deg, #f3fafe, #f3fafe 10px, #eaf5ff 0, #eaf5ff 20px);
+    background: repeating-linear-gradient(90deg,#f3e5e3,#f3e5e3 10px,#f9f0ee 0,#f9f0ee 20px);
 }
 .header, .header .site-name-text, #navi .navi-in a, #navi .navi-in a:hover {
-    color: #1588fb;
+    color: #7b5959;
 }
-
-/* footer */
-#footer{
-	background: #c5ddf7;
+/* フッター色 */
+#footer {
+    background: #f9f0ee;
 }
 
 /* サイトタイトル */
@@ -63,19 +62,19 @@ a:hover {
 }
 .tagline{
 	    margin: 0 0 1.5em 0;
-	    color: #f47fd7;
+	    color: #ff3083;
 }
 
 /* Navibar */
 #navi .navi-in a, #navi .navi-in a{
-  color: #09123a;
+  color: #795548;
 }
 #navi .navi-in a, #navi .navi-in a:hover {
-    color: #09123a;
+    color: #795548;
 }
 /* 色と影 */
 #header-container .navi, #navi .navi-in>.menu-header .sub-menu {
-  background: #7fbfff;
+  background: #debdcd;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
 }
 
@@ -98,28 +97,28 @@ a:hover {
 	width: 100%;/*hover時に表示*/
 }
 #navi .navi-in a:hover{
-	background: #7fbfff;
+	background: #ec98c1;
 }
 
 /* サイト全体文字色 */
-.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a{
+.__recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a{
 	color: inherit;
 }
 
 /* Category label */
 .eye-catch .cat-label,.cat-label{
-	background-color: #7fbfff;
+	background-color: #ec98c1;
     border-radius: 50px;
     padding: 0 10px;
 	border: none;
 }
 .cat-link{
-	background-color: #7fbfff;
+	background-color: #ec98c1;
 }
 
 /* go to top */
 .go-to-top-button{
-	background: #ef97e8;
+	background: #ec98c1;
 	color: #fff;
 	opacity: 0.5;
     visibility: visible;
@@ -132,24 +131,28 @@ a:hover {
 
 /* 記事タイトルフォント */
 .entry-card-title, .related-entry-card-title {
-	color: #1588fb;
+	color: #b59c66;
 }
 .entry-title, .archive-title{
-	color: #1588fb;
+	color: #b59c66;
+}
+/* 記事タイトルホバー */
+.entry-title a:hover {
+color: #b59c66;
 }
 /* 新着記事 */
 .list-title-in{
-	color: #1588fb;
+	color: #b59c66;
 }
 .list-title-in:before, .list-title-in:after{
-	background-color: #1588fb;
+	background-color: #b59c66;
 }
 
 /* 記事内見出しH2 */
 .article h2{
 	background: #f7f7f7;
     padding: 20px 15px 18px;
-    border-left: 9px solid #7fbfff;
+    border-left: 9px solid #ec98c1;
     line-height: 40px;
     margin-top: 60px;
     margin-bottom: 40px;
@@ -159,7 +162,7 @@ a:hover {
 .article h3{
 	letter-spacing: 1.6px;
 	border: none;
-    border-left: 9px solid #7fbfff;
+    border-left: 9px solid #ec98c1;
     margin-top: 60px;
      margin-bottom: 40px;
 
@@ -167,26 +170,19 @@ a:hover {
 /* 記事内見出しH4 */
 .article h4 {
 	border: none;
-	  border-left: 4px solid #7fbfff;
+	  border-left: 4px solid #ec98c1;
 }
 
 /* メタ情報 */
 .ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update,.date-tags, .e-card-info > span {
- color: #cdbb9d;
+ color: #b2e0df;
  text-decoration: none;
 }
 /* Breadcrumb */
 .breadcrumb, .breadcrumb-caption{
-	color: #ef97e8;
+	color: #ec98c1;
 }
 
-/* 記事タイトルホバー */
-.entry-title{
-	color: #1588fb;
-}
-.entry-title a:hover {
-color: #ba91e2;
-}
 
 /* 続きを読む */
 @media (max-width: 575px){
@@ -206,37 +202,12 @@ color: #ba91e2;
 }
 
 
-/* NextとPrev */
- #pnavi a{
-	 color: #ef97e8;
-	 margin: -1px;/* グレーの線を消す */
-         border: 1px solid #c6eeee;/* 線の色 */
-}
-#pnavi img {border-color: #ef97e8;}/* 画像の枠線の色 */
-#pnavi a:hover {color: #ba91e2;}/* ハバー時の文字色 */
-#pnavi a:hover > img {border-color: #c6eeee;}/* ハバー時の画像の枠線の色 */
-
-/* 関連記事ホバー */
-#related h3 a:hover {
- color: #ef97e8;
-}
-#related .toc {
-    padding: 10px 0;
-    border-top: 1px dotted #95e5e2;
-}
-.term img:hover {
-    border-color: #95e5e2;
-}
-
 /* サイドバー */
 .sidebar h3, .sidebar h4 {
 	background: none;
-	border-bottom: 2px solid #f47fd7;
+	border-bottom: 2px solid #b59c66;
 }
-/* ウィジェットタイトルの編集*/
-.side-title{
-	color:#ef97e8;
-	}
+
 /* 記事抜粋の文字色 */
 .a-wrap{
 	color: inherit;
@@ -250,8 +221,8 @@ color: #ba91e2;
 /* サイト内検索 */
 /* サイト内検索 */
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
-   border: 2px solid #7fbfff; /* 線の色 */
-  border-radius: 3px;
+   border: 2px solid #debdcd; /* 線の色 */
+   border-radius: 3px;
   outline: none;
 }
 [type=submit].search-submit {
@@ -259,7 +230,7 @@ color: #ba91e2;
     right: 0;
     height: 100%;
     padding: 8px 15px;
-    background: #7fbfff; /* ボタンの色 */
+    background: #debdcd; /* ボタンの色 */
     color: #fff; /* 文字の色 */
     font-size: 16px;
     font-weight: bold;
@@ -268,7 +239,7 @@ color: #ba91e2;
 }
 [type=submit].search-submit:hover {
     color: #fff;
-    background: #7fbfff;
+    background: #debdcd;
 }
 
 /* プロフィールウィジェット */
@@ -303,19 +274,19 @@ color: #ba91e2;
 .widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover{
 	color: inherit;
 	background-color: transparent;
-	border-bottom: 2px solid #7fbfff;
+	border-bottom: 2px solid #debdcd;
 	transition-duration: 0s;
 }
 /* Box-Menu */
 .box-menu{
 	color: inherit;
-	box-shadow: inset 1px 1px 0 0 #cbe5ff, 1px 1px 0 0 #cbe5ff, 1px 0 0 0 #cbe5ff;
+	box-shadow: inset 1px 1px 0 0 #debdcd, 1px 1px 0 0 #debdcd, 1px 0 0 0 #debdcd;
 }
 .box-menu-icon {
     color: #ffc8fb !important;
 }
 .box-menu:hover {
-    box-shadow: inset 2px 2px 0 0 #7fbfff, 2px 2px 0 0 #7fbfff, 2px 0 0 0 #7fbfff, 0 2px 0 0 #7fbfff !important;
+    box-shadow: inset 2px 2px 0 0 #FFC107, 2px 2px 0 0 #FFC107, 2px 0 0 0 #FFC107, 0 2px 0 0 #FFC107 !important;
 }
 /* カレンダー */
 table th {
@@ -358,8 +329,7 @@ table th {
     display: inline-block;
  line-height: 1;
  color: #fff;
- background: lightskyblue;
-	border: none;
+ background: #FFC107;
  padding: 12px 20px;
  border-radius: 3px;
  opacity: 80%;
@@ -371,7 +341,7 @@ table th {
 .pagination-next-link:hover,
 .comment-btn:hover{
 	color: #fff;
- background: lightskyblue;
+ background: #FF9800;
 	box-shadow: 0 13px 20px -3px rgba(0, 0, 0, 0.24);
 }
 
@@ -638,8 +608,6 @@ border: 1px solid #ffbf7f; /* 枠線色 */
 	display: inline-block;
 	border-bottom: 4px solid #fbe3f9;
 	margin-bottom: 1rem;
-	padding-left: 12px;
-	padding-right: 12px;
 }
 
 /* Contact Form 7 */
@@ -705,39 +673,41 @@ span.wpcf7-not-valid-tip,
 }
 
 /* 目次 */
+/*目次 */
 .toc{
- background: #fffef6; /* 背景色 */
- border: 2px solid #7fbfff; /* 枠線 */
+ background: #fffef6;
+ border: 2px solid #ffb1d8;
  border-radius: 3px;
 }
-.toc-title{ /* タイトル */
-  color: #7fbfff; /* 文字色 */
-	font-size: 1.8em; /* 大きさ */
+.toc-title{
+  color: #ffb1d8;
+	font-size: 1.5rem;
 }
-.toc-title:before{ /* タイトル前のアイコン */
+.toc-title:before{
  font-family: "Font Awesome 5 Free";
  content: "\f15b";
  margin-right: 5px;
  margin-left: 5px;
 }
 .toc a{
-	color: inherit;
+	color: #6a859c;
+	font-weight: bold;
 }
 .toc a:hover{
-	color: #7fbfff;
+	color: #ffb1d8;
 	text-decoration: none;
+}
+.article .toc :last-child {
+	font-weight: 300;
 }
 .toc_list ul {
 list-style: none;
 padding-left: 5px;
 }
 .toc_list li, .toc_list li li, .toc_list li li li {
-font-size: 14px;
 padding: 5px 0;
 }
-ol.toc-list li{
-	margin: 1em 0;
-}
+
 ol.toc-list {
     counter-reset: item;
     list-style-type: none;
@@ -747,18 +717,31 @@ ol.toc-list > li:before {
     counter-increment: item;
     content: counter(item)'';
     display: inline-block;
-    width: 2em;
-    height: 2em;
-    line-height: 2em;
+    width: 1.7em;
+    height: 1.7em;
+    line-height: 1.7em;
     text-align: center;
-    background: #7fbfff;
+    background: #ffb1d8;
     color: #fff;
     border-radius: 50%;
     margin-right: .5em;
 }
 .toc .toc-list ul, .toc .toc-list ol {
-    padding-left: 3em;
+    padding-left: 2em;
     margin: 0;
+	 list-style: none;
+}
+.toc ol li ol a::before{
+	content: '';
+	position: relative;
+	top: -2px;
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #ffb1d8;
+	margin-right: .5em;
+	padding-right:0;
 }
 
 /* シンタックスハイライター */
@@ -776,11 +759,121 @@ ol.toc-list > li:before {
 }
 .sidebar .cta-button .btn-l, .sidebar .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .sidebar .cta-button a {
 	color: #fff;
-    background: #f58694;
+    background: #ffb1d8;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
 }
 
-/* モバイル版メニュー */
-.menu-drawer a{
-	color: #3b97f3;
+/* カテゴリ別インデックス */
+.index-tab-buttons .index-tab-button {
+	margin: 0;
+	border-radius: 0;
+	border-right: none;
+	border-color: #c8d8e6;
+}
+.index-tab-buttons .index-tab-button:nth-child(1) {
+	border-radius: 3px 0 0 3px;
+}
+.index-tab-button:last-child {
+	border-radius: 0 3px 3px 0;
+	border-right: 1px solid #c8d8e6;
+}
+#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] {
+	background: #debdcd;
+    border: 1px solid #debdcd;
+}
+
+/* アピールエリアボタン */
+.appeal-content .appeal-button{
+	transition: all .3s ease-out;
+}
+.appeal-content .appeal-button:hover{
+	transform:scale(1.02);
+	opacity: 1;
+}
+
+/* 関連記事 */
+.rect-vertical-card-3 .related-entry-card-wrap{
+	width: 30%;
+	padding: 0;
+	border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+.rect-vertical-card-3 .related-entry-card-wrap:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,.2);
+}
+.rect-vertical-card .related-entry-card-thumb img{
+
+    border-radius: 3px 3px 0 0;
+}
+.rect-vertical-card .related-entry-card-title{
+	margin: 0 10px;
+}
+
+/* モバイルナビ */
+#navi-menu-input:checked ~ #navi-menu-content, .mobile-menu-buttons{
+	background: #debdcd;
+}
+
+.slicknav_menu{
+	background: transparent;
+
+}
+.slicknav_btn{
+	background-color: #ffb1d8;
+}
+.slicknav_menu .slicknav_menutxt{
+	text-shadow: 0 1px 3px rgb(0 0 0 / 45%);
+}
+.slicknav_nav a{
+	color: #795548;
+}
+
+/* Button */
+.wp-block-file .wp-block-file__button, .pagination-next-link, .comment-btn, input[type='submit'], .sidebar .cta-button .btn-l {
+	background: #ffb1d8;
+	border: none;
+  box-shadow: rgb(0 0 0 / 20%) 0px 3px 10px -2px;
+}
+.wp-block-file .wp-block-file__button:hover, .pagination-next-link:hover, .comment-btn:hover, input[type='submit']:hover {
+	background: #ffb1d8;
+}
+
+/* Blog Card */
+.blogcard {
+	padding: .5em;
+	border: none;
+	box-shadow: 0 1px 5px 0 rgb(0 0 0 / 25%);
+}
+
+.blogcard-label {
+	background-color: #7fbfff;
+	padding: .3em 1em;
+	bottom: 5px;
+    right: 5px;
+    top: auto;
+    left: auto;
+}
+.blogcard-content {
+    padding: .5em;
+    margin-left: 0;
+    max-height: none;
+    min-height: auto;
+}
+.blogcard-footer{
+	display: none;
+}
+
+/* アコーディオンボックス */
+.toggle-button {
+	background-color: #ffb1d8;
+	color: #fff;
+	border: none;
+}
+.toggle-button::before {
+	color: #fff;
+}
+.toggle-checkbox:checked ~ .toggle-content {
+	border: none;
+  background: aliceblue;
 }
