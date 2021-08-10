@@ -41,7 +41,7 @@
   font-weight: 501;
 }
 .body.font-awesome-5 .bb-memo::before {
-  content: "  MEMO";
+  content: "  MEMO";
 }
 .body.font-awesome-5 .blank-box.bb-tab::before {
   font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
