@@ -325,8 +325,15 @@ endif;
 //目次生成用の展開した本文の取得
 if ( !function_exists( 'get_toc_expanded_content' ) ):
 function get_toc_expanded_content(){
-  if (is_singular()) {
-    $the_content = get_shortcode_removed_content(get_the_content());
+  if (is_singular() || is_category() || is_tag()) {
+    if (is_category()) {
+      $the_content = get_the_category_content(null, true);
+    } elseif (is_tag()) {
+      $the_content = get_the_tag_content(null, tru);
+    } else {
+      $the_content = get_the_content();
+    }
+    $the_content = get_shortcode_removed_content($the_content);
     $the_content = do_blocks($the_content);
     $the_content = do_shortcode($the_content);
     return apply_filters('get_toc_expanded_content', $the_content);

@@ -404,8 +404,8 @@ if ( !function_exists( 'toc_shortcode' ) ):
 function toc_shortcode( $atts, $content = null ) {
   extract(shortcode_atts(array(
     'depth' => 0,
-  ), $atts, 'author_box'));
-  if (is_singular()) {
+  ), $atts, 'toc_box'));
+  if (is_singular() || is_category() || is_tag()) {
     global $_TOC_WIDGET_OR_SHORTCODE_USE;
     $_TOC_WIDGET_OR_SHORTCODE_USE = true;
     $harray = array();
