@@ -3,7 +3,6 @@
  * Cocoon設定のカスタマイズ
  */
 class Skin_Silk_Functions {
-
   //インスタンス保持
   public static $instance = false;
 
@@ -177,6 +176,11 @@ class Skin_Silk_Functions {
       define('SILK_COUNTER', true);
     }
 
+    //縦型ブログカード
+    if (!defined('SILK_BLOGCARD')) {
+      define('SILK_BLOGCARD', true);
+    }
+
     //カラー・スタイル関連のフック
     add_action('after_setup_theme', [$this, 'setup_skin']);
     add_filter('get_editor_key_color', [$this, 'editor_color']);
@@ -201,7 +205,11 @@ class Skin_Silk_Functions {
     add_action('admin_menu', [$this, 'reusable_menu']);
     add_filter('image_size_names_choose', [$this, 'image_size']);
     add_action('init', [$this, 'block_pattern']);
-    add_filter('render_block', [$this, 'custom_blocks'], 10, 2);
+    add_filter('render_block_core/heading', [$this, 'blocks_heading'], 10, 2);
+    add_filter('render_block_core/group', [$this, 'blocks_group'], 10, 2);
+    add_filter('render_block_cocoon-blocks/toggle-box-1', [$this, 'blocks_toggle'], 10, 2);
+    add_filter('render_block_cocoon-blocks/faq', [$this, 'blocks_faq'], 10, 2);
+    add_filter('cocoon_json_ld_faq_visible', [$this, 'cocoon_faq']);
     add_action('wp_footer', [$this, 'footer_script']);
 
     //AMP
@@ -237,6 +245,13 @@ class Skin_Silk_Functions {
     $blockstyles = apply_filters('silk_block_styles', self::BLOCK_STYLES);
     foreach ($blockstyles as $blockstyle) {
       register_block_style($blockstyle['name'], $blockstyle['properties']);
+    }
+
+    //ブログカードスタイル削除
+    if (!SILK_BLOGCARD) {
+      unregister_block_style('cocoon-blocks/blogcard', 'normal-card');
+      unregister_block_style('cocoon-blocks/blogcard', 'columns-card');
+      unregister_block_style('cocoon-blocks/blogcard', 'text');
     }
 
     //公式ブロックパターン削除
@@ -424,11 +439,11 @@ class Skin_Silk_Functions {
     .iconlist-title {
       background: '.$site_background.';
     }
-
+    
     .speech-balloon::after {
       border-right-color: '.$site_background.';
     }
-
+    
     .sbp-r .speech-balloon::after {
       border-left-color: '.$site_background.';
     }
@@ -436,7 +451,7 @@ class Skin_Silk_Functions {
     .recent-comment-content::after {
       border-bottom-color: '.$site_background.';
     }
-
+    
     .marker,
     .marker-under,
     .marker-red,
@@ -493,11 +508,11 @@ class Skin_Silk_Functions {
       .silk-darkmode .iconlist-title {
         background: '.$site_color.';
       }
-
+      
       .silk-darkmode .speech-balloon::after {
         border-right-color: '.$site_color.';
       }
-
+      
       .silk-darkmode .sbp-r .speech-balloon::after {
         border-left-color: '.$site_color.';
       }
@@ -505,7 +520,7 @@ class Skin_Silk_Functions {
       .silk-darkmode .recent-comment-content::after {
         border-bottom-color: '.$site_color.';
       }
-
+      
       .silk-darkmode .marker,
       .silk-darkmode .marker-under,
       .silk-darkmode .marker-red,
@@ -519,7 +534,7 @@ class Skin_Silk_Functions {
         color: '.$site_background.';
         background: '.$site_color.';
       }
-
+      
       .silk-darkmode-button {
         position: fixed;
         left: 10px;
@@ -527,7 +542,7 @@ class Skin_Silk_Functions {
         line-height: 1;
         cursor: pointer;
       }
-
+      
       .silk-darkmode-button i {
         display: block;
         font-size: 2em;
@@ -543,7 +558,7 @@ class Skin_Silk_Functions {
     .is-style-text .a-wrap:hover {
       color: '.$link_color.';
     }
-
+    
     input[type="submit"] {
       background: '.$link_color.';
     }';
@@ -570,7 +585,7 @@ class Skin_Silk_Functions {
     echo '.box-menus .box-menu:hover {
       box-shadow: inset 2px 2px 0 0 '.$color.', 2px 2px 0 0 '.$color.', 2px 0 0 0 '.$color.', 0 2px 0 0 '.$color.';
     }
-
+    
     .box-menus .box-menu-icon {
       color: '.$color.';
     }';
@@ -605,7 +620,7 @@ class Skin_Silk_Functions {
       echo '.header-container {
         padding-top: 20px;
       }
-
+      
       .header-container.fixed-header {
         padding-top: 0;
         border-top: 3px solid '.$color.';
@@ -617,10 +632,78 @@ class Skin_Silk_Functions {
       echo '.entry-content {
         counter-reset: h2;
       }
-
+      
       .entry-content h2 > span::before {
         content: counter(h2, decimal) ". ";
         counter-increment: h2;
+      }';
+    }
+
+    //縦型ブログカード
+    if (!SILK_BLOGCARD) {
+      echo '.blogcard-wrap {
+        max-width: none;
+      }
+
+      .blogcard {
+        padding: 0.6em;
+      }
+
+      .blogcard-label {
+        top: -1em;
+        right: auto;
+        left: 1em;
+        padding: 0 0.6em;
+        font-size: 13px;
+        font-weight: normal;
+        line-height: 1.6;
+        border-radius: 3px;
+      }
+
+      .blogcard-thumbnail {
+        float: left;
+        width: 160px;
+        margin-top: 3px;
+      }
+
+      .blogcard-thumb-image {
+        border-radius: 0;
+      }
+
+      .blogcard-content {
+        padding: 0;
+        margin-left: 170px;
+        max-height: 140px;
+        min-height: 100px;
+      }
+
+      .blogcard-title {
+        margin-bottom: 0.4em;
+      }
+
+      .blogcard-footer {
+        padding: 0.3em 0 0;
+        font-size: 16px;
+        opacity: 1;
+      }
+
+      .blogcard-site {
+        display: flex;
+      }
+
+      .blogcard-favicon img {
+        vertical-align: inherit;
+      }
+
+      .ib-right .blogcard-thumbnail,
+      .eb-right .blogcard-thumbnail {
+        float: right;
+        margin-left: 0.6em;
+      }
+
+      .ib-right .blogcard-content,
+      .eb-right .blogcard-content {
+        margin-right: 170px;
       }';
     }
 
@@ -637,19 +720,19 @@ class Skin_Silk_Functions {
       .article .code-wrap {
         margin-bottom: '.$group_margin.'em;
       }
-
+      
       .code-wrap {
         position: relative;
       }
-
+      
       .code-wrap .code-copy {
         transition: all 0.3s ease-out;
       }
-
+      
       .code-wrap:hover .code-copy {
         opacity: 1;
       }
-
+      
       .code-copy {
         position: absolute;
         top: 0.5em;
@@ -701,28 +784,28 @@ class Skin_Silk_Functions {
         max-width: 100vw;
         width: 100vw;
       }
-
+      
       .main figure.wp-block-table.alignfull {
         max-width: 100vw;
         width: 100vw;
       }
-
+      
       .wp-block-cover.alignfull {
         width: 100vw;
       }
-
+      
       .alignfull > .wp-block-group__inner-container {
         width: '.$group_width.'px;
         padding: '.$group_margin.'em '.$group_padding.'px;
         margin: 0 auto;
       }
-
+      
       @media screen and (max-width: 1260px) {
         .alignfull > .wp-block-group__inner-container {
           width: auto;
         }
       }
-
+      
       @media screen and (max-width: 834px) {
         .alignfull > .wp-block-group__inner-container {
           padding: '.$group_margin.'em 24px;
@@ -894,16 +977,16 @@ class Skin_Silk_Functions {
     }
   }
 
-  //ブロックコンテンツ
-  public function custom_blocks($content, $block) {
-    //見出し
-    if ($block['blockName'] === 'core/heading') {
-      $level   = array_key_exists('level', $block['attrs']) ? 'h'.strval($block['attrs']['level']) : 'h2';
-      $content = preg_replace('/<'.$level.'(.*?)>(.*?)<\/'.$level.'>/', '<'.$level.'$1><span>$2</span></'.$level.'>', $content);
-    }
+  //見出しブロック
+  public function blocks_heading($content, $block) {
+    $level   = array_key_exists('level', $block['attrs']) ? 'h'.strval($block['attrs']['level']) : 'h2';
+    $content = preg_replace('/<'.$level.'(.*?)>(.*?)<\/'.$level.'>/', '<'.$level.'$1><span>$2</span></'.$level.'>', $content);
+    return $content;
+  }
 
-    //グループ
-    if ($this->class_exists($block, 'core/group')) {
+  //グループブロック
+  public function blocks_group($content, $block) {
+    if (array_key_exists('className', $block['attrs'])) {
       //比較表整形
       $content = $this->group_replace($content, $block, 'is-style-compare', 'cocoon-blocks/iconlist-box');
 
@@ -911,55 +994,63 @@ class Skin_Silk_Functions {
       $content = $this->group_replace($content, $block, 'is-style-toggle-accordion', 'cocoon-blocks/toggle-box-1');
     }
 
-    //アコーディオンボックス
-    if ($this->class_exists($block, 'cocoon-blocks/toggle-box-1')) {
-      //よくある質問
-      if ($this->is_style($block, 'is-style-faq')) {
-        add_filter('silk_faq_entity', function ($faq) use ($content, $block) {
-          $id = array_key_exists('dateID', $block['attrs']) ? $block['attrs']['dateID'] : null;
-
-          if (!is_null($id) && !array_key_exists($id, $faq)) {
-            $name = array_key_exists('content', $block['attrs']) ? strip_tags($block['attrs']['content']) : '';
-            $text = strip_tags(str_replace(["\n", "\r", '"', $name], '', $content), '<br><a><strong><em>');
-
-            $faq[$id] = [
-              '@type'          => 'Question',
-              'name'           => $name,
-              'acceptedAnswer' => [
-                '@type' => 'Answer',
-                'text'  => $text
-              ]
-            ];
-          }
-
-          return $faq;
-        });
-      }
-    }
-
     return $content;
-  }
-
-  //クラス有無
-  private function class_exists($block, $name) {
-    return $block['blockName'] === $name && array_key_exists('className', $block['attrs']);
-  }
-
-  //スタイル判定
-  private function is_style($block, $style) {
-    return strpos($block['attrs']['className'], $style) !== false;
   }
 
   //グループ整形
   private function group_replace($content, $block, $style, $blockname) {
-    if ($this->is_style($block, $style)) {
+    if (strpos($block['attrs']['className'], $style) !== false) {
       foreach ($block['innerBlocks'] as $innerblock) {
         if ($innerblock['blockName'] !== $blockname) {
           $content = str_replace(render_block($innerblock), '', $content);
         }
       }
     }
+
     return $content;
+  }
+
+  //トグルボックス
+  public function blocks_toggle($content, $block) {
+    if (array_key_exists('className', $block['attrs']) && strpos($block['attrs']['className'], 'is-style-faq') !== false) {
+      add_filter('silk_faq_entity', function ($faq) use ($content, $block) {
+        return $this->add_faq($content, $block, $faq, 'content');
+      });
+    }
+    
+    return $content;
+  }
+
+  //FAQブロック
+  public function blocks_faq($content, $block) {
+    add_filter('silk_faq_entity', function ($faq) use ($content, $block) {
+      return $this->add_faq($content, $block, $faq, 'question');
+    });
+    
+    return $content;
+  }
+
+  //FAQ追加
+  private function add_faq($content, $block, $faq, $question) {
+    $name = array_key_exists($question, $block['attrs']) ? strip_tags($block['attrs'][$question]) : '';
+    $answer = preg_replace('{^'.$block['innerContent'][0].'(.+?)'.$block['innerContent'][count($block['innerContent']) - 1].'$}s', '$1', $content);
+    $text = strip_tags(str_replace(["\n", "\r"], '', $answer), '<h1><h2><h3><h4><h5><h6><br><ol><ul><li><a><p><div><b><strong><i><em>');
+
+    $faq[count($faq)] = [
+      '@type'          => 'Question',
+      'name'           => $name,
+      'acceptedAnswer' => [
+        '@type' => 'Answer',
+        'text'  => $text
+      ]
+    ];
+
+    return $faq;
+  }
+
+  //FAQスクリプト削除
+  public function cocoon_faq($bool) {
+    return false;
   }
 
   //フッタースクリプト
@@ -975,7 +1066,6 @@ class Skin_Silk_Functions {
 
       echo '<script type="application/ld+json">'.json_encode([
         '@context'   => 'https://schema.org',
-        '@id'        => '#FAQContents',
         '@type'      => 'FAQPage',
         'mainEntity' => $entity
       ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).'</script>';

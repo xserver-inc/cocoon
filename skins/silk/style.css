@@ -6,7 +6,7 @@
   Author: ろこ
   Author URI: https://dateqa.com/cocoon/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-silk.png
-  Version: 2.6.0
+  Version: 2.8.2
   Priority: 9500001000
 */
 
@@ -1060,7 +1060,7 @@ pre * {
 }
 
 code,
-.is-code-row-number-enable pre.hljs::before {
+.is-code-row-number-enable pre::before {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 
@@ -1070,7 +1070,7 @@ pre.wp-block-code code {
   white-space: pre;
 }
 
-.is-code-row-number-enable pre.hljs::before {
+.is-code-row-number-enable pre::before {
   color: inherit;
   font-size: 0.8em;
   opacity: 0.7;
@@ -1092,6 +1092,7 @@ p code.hljs {
 
 /* ブログカード */
 .blogcard-wrap {
+  width: 100%;
   max-width: 320px;
   border-radius: 4px;
 }
@@ -1130,12 +1131,7 @@ p code.hljs {
 }
 
 .blogcard-title {
-  font-size: 1em;
   margin-bottom: 0.2em;
-}
-
-.blogcard-snippet {
-  font-size: 0.8em;
 }
 
 .blogcard-footer {
@@ -1155,10 +1151,8 @@ p code.hljs {
   margin-right: 0;
 }
 
-.is-style-normal-card .blogcard-wrap,
-.is-style-normal-card .blogcard-wrap:hover {
-  width: 100%;
-  max-width: none;
+.is-style-normal-card .blogcard-wrap {
+  max-width: 480px;
 }
 
 .is-style-normal-card .blogcard {
@@ -1201,7 +1195,7 @@ p code.hljs {
 }
 
 .is-style-normal-card .blogcard-thumbnail {
-  width: 90px;
+  width: 100px;
 }
 
 .is-style-normal-card .blogcard-thumb-image {
@@ -1210,8 +1204,8 @@ p code.hljs {
 
 .is-style-normal-card .blogcard-content {
   padding: 0 0 0 0.5em;
-  font-size: 0.8em;
-  line-height: 1.2;
+  font-size: 0.9em;
+  line-height: 1.1;
 }
 
 .article .is-style-normal-card .blogcard-wrap {
@@ -1232,9 +1226,7 @@ p code.hljs {
   border-radius: 4px;
 }
 
-.is-style-text .blogcard-wrap,
-.is-style-text .blogcard-wrap:hover {
-  width: 100%;
+.is-style-text .blogcard-wrap {
   max-width: none;
   border: 0;
   box-shadow: none;
@@ -1267,8 +1259,7 @@ p code.hljs {
   float: left;
   margin-right: 0.5em;
   padding: 0 0.5em;
-  font-size: 0.75em;
-  font-weight: normal;
+  font-size: 0.8em;
   border-radius: 2px;
 }
 
@@ -1579,20 +1570,6 @@ p code.hljs {
 }
 
 /* 白抜きボックス */
-/*
-.blank-box:not(.bb-tab):not(.iconlist-box):not(.sticky),
-.is-style-blank-box-red,
-.is-style-blank-box-navy,
-.is-style-blank-box-blue,
-.is-style-blank-box-yellow,
-.is-style-blank-box-green,
-.is-style-blank-box-pink,
-.is-style-blank-box-orange {
-  margin-right: 0;
-  margin-left: 0;
-}
-*/
-
 .blank-box,
 .is-style-blank-box-red,
 .is-style-blank-box-navy,
@@ -1616,10 +1593,6 @@ p code.hljs {
 .is-style-sticky-red,
 .is-style-sticky-blue,
 .is-style-sticky-green {
-  /*
-  margin-left: 0;
-  margin-right: 0;
-   */
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border-left-width: 6px;
@@ -1714,8 +1687,6 @@ p code.hljs {
 /* タブボックス */
 .blank-box.bb-tab {
   padding-top: 1.5em;
-  /* margin-left: 0;
-  margin-right: 0; */
   border-width: 2px;
   border-radius: 2px;
 }
@@ -1726,7 +1697,7 @@ p code.hljs {
   border-radius: 2px 0;
 }
 
-/* アコーディオンボックス */
+/* トグルボックス */
 .toggle-button {
   padding: 0.5em 1em 0.5em 2em;
   font-weight: bold;
@@ -1943,6 +1914,7 @@ p code.hljs {
   position: relative;
   border-width: 3em 2px 2px 2px;
   border-radius: 4px;
+  overflow: visible;
 }
 
 .timeline-title {
@@ -1970,8 +1942,6 @@ p code.hljs {
 /* アイコンリスト */
 .blank-box {
   position: relative;
-  /* margin-left: 0;
-  margin-right: 0; */
   border-width: 2px;
 }
 
