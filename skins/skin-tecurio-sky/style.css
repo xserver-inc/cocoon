@@ -236,7 +236,7 @@ background-image: linear-gradient( 165deg, #56CCF2 0%, #2F80ED 20%);
 	content: "";
 	display: block;
 	height: 8px;
-	position: relative;
+	position: relative !important;
 	background-image: linear-gradient( 165deg, #56CCF2 0%, #2F80ED 20%);
 }
 
