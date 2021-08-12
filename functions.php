@@ -392,3 +392,53 @@ function remove_widgets_block_editor() {
 }
 endif;
 
+//FAQブロック
+add_filter('render_block_cocoon-blocks/faq', 'cocoon_blocks_faq', 10, 2);
+
+function cocoon_blocks_faq($content, $block) {
+  add_filter('cocoon_faq_entity', function ($faq) use ($content, $block) {
+    return cocoon_add_faq($content, $block, $faq, 'question');
+  });
+
+  return $content;
+}
+
+function cocoon_add_faq($content, $block, $faq, $question) {
+  $name = array_key_exists($question, $block['attrs']) ? strip_tags($block['attrs'][$question]) : '';
+  $answer = preg_replace('{^'.$block['innerContent'][0].'(.+?)'.$block['innerContent'][count($block['innerContent']) - 1].'$}s', '$1', $content);
+  $text = strip_tags(str_replace(["\n", "\r"], '', $answer), '<h1><h2><h3><h4><h5><h6><br><ol><ul><li><a><p><div><b><strong><i><em>');
+
+  $faq[count($faq)] = [
+    '@type'          => 'Question',
+    'name'           => $name,
+    'acceptedAnswer' => [
+      '@type' => 'Answer',
+      'text'  => $text
+    ]
+  ];
+
+  return $faq;
+}
+
+if (apply_filters('cocoon_json_ld_faq_visible', true)) {
+  add_action('wp_footer', 'cocoon_footer_faq_script');
+}
+
+function cocoon_footer_faq_script() {
+  $faq = apply_filters('cocoon_faq_entity', []);
+
+  if (!empty($faq)) {
+    $entity = [];
+
+    foreach ($faq as $key => $value) {
+      $entity[] = $value;
+    }
+
+    echo '<!-- '.THEME_NAME_CAMEL.' FAQ JSON-LD -->'.PHP_EOL;
+    echo '<script type="application/ld+json">'.json_encode([
+      '@context'   => 'https://schema.org',
+      '@type'      => 'FAQPage',
+      'mainEntity' => $entity
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).'</script>';
+  }
+}

@@ -570,10 +570,10 @@ function the_json_ld_tag() {
       echo '<!-- '.THEME_NAME_CAMEL.' Review JSON-LD -->'.PHP_EOL;
       get_template_part('tmp/json-ld-review');
     }
-    if (apply_filters('cocoon_json_ld_faq_visible', true)) {
-      echo '<!-- '.THEME_NAME_CAMEL.' FAQ JSON-LD -->'.PHP_EOL;
-      get_template_part('tmp/json-ld-faq');
-    }
+    // if (apply_filters('cocoon_json_ld_faq_visible', true)) {
+    //   echo '<!-- '.THEME_NAME_CAMEL.' FAQ JSON-LD -->'.PHP_EOL;
+    //   get_template_part('tmp/json-ld-faq');
+    // }
   }
 }
 endif;
