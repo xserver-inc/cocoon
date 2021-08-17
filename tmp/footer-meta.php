@@ -23,9 +23,10 @@ if (is_post_author_visible() && get_the_author()) {
  ?>
 <div class="footer-meta">
   <div class="author-info">
-    <span class="fa fa-pencil" aria-hidden="true"></span> <a href="<?php echo esc_url($url); ?>" class="author-link">
+    <span class="fa fa-pencil" aria-hidden="true"></span> <a href="<?php echo esc_url(get_the_auther_profile_page_url()); ?>" class="author-link">
       <span class="post-author vcard author" itemprop="editor author creator copyrightHolder" itemscope itemtype="https://schema.org/Person">
-        <span class="author-name fn" itemprop="name"><?php echo $name; ?></span>
+        <meta itemprop="url" content="<?php echo esc_url(get_the_auther_profile_page_url()); ?>">
+        <span class="author-name fn" itemprop="name"><?php echo get_the_auther_profile_name(); ?></span>
       </span>
     </a>
   </div>

@@ -3470,3 +3470,33 @@ endif;
 //   do_action( 'qm/debug', $v );
 // }
 // endif;
+
+//著者プロフィールページのURLを取得
+if ( !function_exists( 'get_the_auther_profile_page_url' ) ):
+function get_the_auther_profile_page_url(){
+  if (is_post_author_visible() && get_the_author()) {
+    $author_id = get_the_author_meta( 'ID' );
+    $profile_page_url = get_the_author_profile_page_url($author_id);
+    if ($profile_page_url) {
+      $url = $profile_page_url;
+    } else {
+      $url = get_author_posts_url( $author_id );
+    }
+  } else {
+    $url = home_url();
+  }
+  return $url;
+}
+endif;
+
+//著者プロフィール名前を取得
+if ( !function_exists( 'get_the_auther_profile_name' ) ):
+function get_the_auther_profile_name(){
+  if (is_post_author_visible() && get_the_author()) {
+    $name = get_the_author();
+  } else {
+    $name = get_bloginfo('name');
+  }
+  return $name;
+}
+endif;

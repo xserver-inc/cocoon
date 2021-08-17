@@ -58,7 +58,8 @@ if ($image_url && file_exists($image_file)) {
 
   "author": {
     "@type": "Person",
-    "name": "<?php echo esc_attr($author); ?>"<?php // 投稿者ニックネーム ?>
+    "name": "<?php echo esc_attr(get_the_auther_profile_name()); ?>"<?php // 投稿者ニックネーム ?>,
+    "url": "<?php echo esc_url(get_the_auther_profile_page_url()); ?>"<?php // 投稿者URL ?>
 
   },
   "publisher": {
