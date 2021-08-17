@@ -57,7 +57,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     }
 
     // もしビデオIDないまだ空ならおそらくYouTubeがオフライン
-    if (!$video_id[0]) {
+    if (empty($video_id) || !$video_id[0]) {
       return $cache;
     }
 
