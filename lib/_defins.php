@@ -149,8 +149,6 @@ $_MAIN_DATA_AD_FORMATS = array(
 );
 // define('MAIN_DATA_AD_FORMATS', $_MAIN_DATA_AD_FORMATS);
 
-//アドセンス共通スクリプトコード
-define('ADSENSE_SCRIPT_CODE', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
 //AdSenseの存在フラグ
 global $_IS_ADSENSE_EXIST;
 $_IS_ADSENSE_EXIST = false; //最初はAdSenseの存在がない

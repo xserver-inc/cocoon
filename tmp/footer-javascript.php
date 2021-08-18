@@ -11,7 +11,12 @@ if (!is_amp()): ?>
 
 
   <?php //AdSense非同期スクリプトを出力
+
+  //広告の存在を確認するグローバル変数
   global $_IS_ADSENSE_EXIST;
+
+  //アドセンス共通スクリプトコード
+  define('ADSENSE_SCRIPT_CODE', '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='.get_adsense_data_ad_client().'" crossorigin="anonymous"></script>');
   //if ($_IS_ADSENSE_EXIST && !is_customize_preview() && !is_cocoon_settings_preview()) {
   if ($_IS_ADSENSE_EXIST && !is_customize_preview()) {
     echo ADSENSE_SCRIPT_CODE;
