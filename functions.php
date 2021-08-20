@@ -392,6 +392,9 @@ function remove_widgets_block_editor() {
 endif;
 
 //FAQブロック
+//参考：SILKスキンのコード（ろこさん作成）
+//URL：https://dateqa.com/cocoon/
+//参考にしたコード：https://github.com/yhira/cocoon/blob/20cdc9efc15c9074a8ce445af926fe70d6dec3f7/skins/silk/functions.php#L1034
 add_filter('render_block_cocoon-blocks/faq', 'cocoon_blocks_faq', 10, 2);
 
 function cocoon_blocks_faq($content, $block) {
