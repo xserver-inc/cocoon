@@ -72,6 +72,14 @@ export default function edit({ attributes, setAttributes, className }) {
                 value: 'blogcard-type bct-dl',
                 label: __( 'ダウンロード', THEME_NAME ),
               },
+              {
+                value: 'blogcard-type bct-prev',
+                label: __( '前回の記事', THEME_NAME ),
+              },
+              {
+                value: 'blogcard-type bct-next',
+                label: __( '続きの記事', THEME_NAME ),
+              },
             ] }
           />
 

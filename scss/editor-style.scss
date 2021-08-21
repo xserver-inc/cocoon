@@ -155,6 +155,14 @@ span.btn-wrap{
   content: $bct-dl + '  ' + $bct-dl-text;
 }
 
+.blogcard-type.bct-prev::before{
+  content: $bct-prev + '  ' + $bct-prev-text;
+}
+
+.blogcard-type.bct-next::before{
+  content: $bct-next + '  ' + $bct-next-text;
+}
+
 // .font-awesome-5{
 //   .bct-related::before,
 //   .blank-box.bb-ok::before,

@@ -36,6 +36,8 @@
 .body.font-awesome-5 .bct-detail::before,
 .body.font-awesome-5 .bct-official::before,
 .body.font-awesome-5 .bct-dl::before,
+.body.font-awesome-5 .bct-prev::before,
+.body.font-awesome-5 .bct-next::before,
 .body.font-awesome-5 .btn-wrap::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 501;

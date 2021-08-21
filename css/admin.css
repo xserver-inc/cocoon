@@ -1166,6 +1166,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bct-official .blogcard-label::after { content: "公式サイト"; }
 .admin-settings .demo .bct-dl .blogcard-label .fa::before { content: ""; }
 .admin-settings .demo .bct-dl .blogcard-label::after { content: "ダウンロード"; }
+.admin-settings .demo .bct-prev .blogcard-label .fa::before { content: ""; }
+.admin-settings .demo .bct-prev .blogcard-label::after { content: "前回の記事"; }
+.admin-settings .demo .bct-next .blogcard-label .fa::before { content: ""; }
+.admin-settings .demo .bct-next .blogcard-label::after { content: "続きの記事"; }
 .admin-settings .demo .button-block { float: none; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
@@ -2778,6 +2782,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bct-official .blogcard-label::after { content: "公式サイト"; }
 .admin-settings .demo .bct-dl .blogcard-label .fa::before { content: ""; }
 .admin-settings .demo .bct-dl .blogcard-label::after { content: "ダウンロード"; }
+.admin-settings .demo .bct-prev .blogcard-label .fa::before { content: ""; }
+.admin-settings .demo .bct-prev .blogcard-label::after { content: "前回の記事"; }
+.admin-settings .demo .bct-next .blogcard-label .fa::before { content: ""; }
+.admin-settings .demo .bct-next .blogcard-label::after { content: "続きの記事"; }
 .admin-settings .demo .button-block { float: none; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
@@ -4599,6 +4607,10 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bct-official .blogcard-label::after { content: "公式サイト"; }
 .components-popover__content .bct-dl .blogcard-label .fa::before { content: ""; }
 .components-popover__content .bct-dl .blogcard-label::after { content: "ダウンロード"; }
+.components-popover__content .bct-prev .blogcard-label .fa::before { content: ""; }
+.components-popover__content .bct-prev .blogcard-label::after { content: "前回の記事"; }
+.components-popover__content .bct-next .blogcard-label .fa::before { content: ""; }
+.components-popover__content .bct-next .blogcard-label::after { content: "続きの記事"; }
 .components-popover__content .button-block { float: none; }
 .components-popover__content .button-block.alignleft { text-align: left; }
 .components-popover__content .button-block.aligncenter { text-align: center; }

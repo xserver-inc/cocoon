@@ -4828,6 +4828,22 @@ div.search-form {
   content: "ダウンロード";
 }
 
+.bct-prev .blogcard-label .fa::before {
+  content: "";
+}
+
+.bct-prev .blogcard-label::after {
+  content: "前回の記事";
+}
+
+.bct-next .blogcard-label .fa::before {
+  content: "";
+}
+
+.bct-next .blogcard-label::after {
+  content: "続きの記事";
+}
+
 .button-block {
   float: none;
 }

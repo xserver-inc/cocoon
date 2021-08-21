@@ -1280,6 +1280,18 @@ div.search-form{
 .bct-dl .blogcard-label::after{
   content:$bct-dl-text;
 }
+.bct-prev .blogcard-label .fa::before{
+  content:$bct-prev;
+}
+.bct-prev .blogcard-label::after{
+  content:$bct-prev-text;
+}
+.bct-next .blogcard-label .fa::before{
+  content:$bct-next;
+}
+.bct-next .blogcard-label::after{
+  content:$bct-next-text;
+}
 
 ///////////////////////////////////////////
 // ボタンブロック

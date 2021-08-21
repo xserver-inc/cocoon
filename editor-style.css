@@ -36,6 +36,8 @@
 .body.font-awesome-5 .bct-detail::before,
 .body.font-awesome-5 .bct-official::before,
 .body.font-awesome-5 .bct-dl::before,
+.body.font-awesome-5 .bct-prev::before,
+.body.font-awesome-5 .bct-next::before,
 .body.font-awesome-5 .btn-wrap::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 501;
@@ -199,6 +201,14 @@ span.btn-wrap {
 
 .blogcard-type.bct-dl::before {
   content: "  ダウンロード";
+}
+
+.blogcard-type.bct-prev::before {
+  content: "  前回の記事";
+}
+
+.blogcard-type.bct-next::before {
+  content: "  続きの記事";
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
