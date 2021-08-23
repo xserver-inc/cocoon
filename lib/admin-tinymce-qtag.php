@@ -1646,6 +1646,18 @@ function initialize_tinymce_styles($init_array) {
           'wrapper' => true,
           'classes' => 'blogcard-type bct-dl'
         ),
+        array(
+          'title' => __( '前回の記事', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-prev'
+        ),
+        array(
+          'title' => __( '続きの記事', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-next'
+        ),
       ),
     ),
   );
