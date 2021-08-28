@@ -202,6 +202,22 @@ register_sidebars(1,
 endif;
 register_below_single_related_entries_widget_area();
 
+if ( !function_exists( 'register_below_single_post_navi_widget_area' ) ):
+function register_below_single_post_navi_widget_area(){
+register_sidebars(1,
+  array(
+  'name' => __( '投稿ページ送りナビ下', THEME_NAME ),
+  'id' => 'below-single-post-navi',
+  'description' => __( 'ページ送りナビの下に表示されるウイジェット。', THEME_NAME ),
+  'before_widget' => '<div id="%1$s" class="widget widget-below-post-navi %2$s">',
+  'after_widget' => '</div>',
+  'before_title' => '<h2 class="widget-below-post-navi-title main-widget-label">',
+  'after_title' => '</h2>',
+));
+}
+endif;
+register_below_single_post_navi_widget_area();
+
 if ( !function_exists( 'register_below_single_comment_form_widget_area' ) ):
 function register_below_single_comment_form_widget_area(){
 register_sidebars(1,

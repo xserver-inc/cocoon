@@ -38,10 +38,15 @@ get_template_part('tmp/content') ?>
     <?php dynamic_sidebar( 'below-single-related-entries' ); ?>
   <?php endif; ?>
 
-  <?php //関連記事下ページ送りナビ
+  <?php //ページ送りナビ
   if (is_post_navi_position_under_related()) {
     get_template_part('tmp/pager-post-navi');
   } ?>
+
+  <?php //ページ送りナビ下ウイジェット
+  if ( is_active_sidebar( 'below-single-post-navi' ) ): ?>
+    <?php dynamic_sidebar( 'below-single-post-navi' ); ?>
+  <?php endif; ?>
 
   <?php //コメントを表示する場合
   if (is_single_comment_visible()) {
