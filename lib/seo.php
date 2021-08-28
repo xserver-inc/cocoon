@@ -86,7 +86,7 @@ function title_parts_custom( $title ){
         $title['site'] = $cat_name;
         break;
     }
-  } elseif (is_tag()) {
+  } elseif (is_tag() || is_tax()) {
     $tag_id = get_queried_object_id();
     $tag_name = $title['title'];
     if ($tag_id && get_the_tag_title($tag_id)) {
@@ -447,7 +447,7 @@ function get_meta_description_text(){
     $description = get_the_meta_description();
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
-  } elseif (is_tag() && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
+  } elseif ((is_tag() || is_tax()) && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
     $description = get_tag_meta_description();
   }
   $description = htmlspecialchars($description);
