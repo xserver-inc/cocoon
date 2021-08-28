@@ -610,3 +610,11 @@ img[width="1"]{
     width: 100%;
 	margin:0 0 24px 0;
 }}
+
+
+body {
+	animation: load 1s ease-in-out;
+}
+.effect {
+ 	animation: Effect 1.5s;
+}
