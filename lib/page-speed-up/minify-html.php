@@ -48,8 +48,8 @@ function code_minify_call_back($html) {
   ///////////////////////////////////////
   //Alt属性がないIMGタグにalt=""を追加する
   $html = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt=""${1}>', $html);
-  //画像タグの border="0"を削除する
-  $html = str_replace(' border="0"', '', $html);
+  // //画像タグの border="0"を削除する
+  // $html = str_replace(' border="0"', '', $html);
 
   //wpForoのHTML5エラー
   if (is_wpforo_exist()) {
