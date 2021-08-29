@@ -3,9 +3,3 @@
     from  {opacity: 0;}
     100%  {opacity: 1;}
 }
-
-@keyframes Effect {
-	from{box-shadow: none;
-		transform: scale(0.95);
-	}
-}

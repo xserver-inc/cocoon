@@ -618,3 +618,9 @@ body {
 .effect {
  	animation: Effect 1.5s;
 }
+
+@keyframes Effect {
+	from{box-shadow: none;
+		transform: scale(0.95);
+	}
+}
