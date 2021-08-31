@@ -43,9 +43,9 @@ get_template_part('tmp/content') ?>
     get_template_part('tmp/pager-post-navi');
   } ?>
 
-  <?php //ページ送りナビ下ウイジェット
-  if ( is_active_sidebar( 'below-single-post-navi' ) ): ?>
-    <?php dynamic_sidebar( 'below-single-post-navi' ); ?>
+  <?php //コメント上ウイジェット
+  if ( is_active_sidebar( 'above-single-comment-aria' ) ): ?>
+    <?php dynamic_sidebar( 'above-single-comment-aria' ); ?>
   <?php endif; ?>
 
   <?php //コメントを表示する場合
