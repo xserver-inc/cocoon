@@ -627,7 +627,7 @@ function get_the_snippet($content, $length = 70) {
     $description = str_replace('<', '&lt;', $description);
     $description = str_replace('>', '&gt;', $description);
   }
-  return apply_filters( 'get_the_snippet', $description );
+  return apply_filters( 'get_the_snippet', $description, $post );
 }
 endif;
 
