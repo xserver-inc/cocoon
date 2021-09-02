@@ -971,6 +971,10 @@ body::before,
   margin-left: auto;
   margin-right: auto;
   display: block;
+  >.column-2,
+  >.column-3{
+    display: flex;
+  }
   >.block-editor-inner-blocks{
     width: 100%;
     >.block-editor-block-list__layout{
