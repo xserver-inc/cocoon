@@ -600,6 +600,16 @@ img.emoji {
   margin-right: 0.1em;
 }
 
+.wp-block-image .aligncenter {
+  text-align: center;
+}
+.wp-block-image img {
+  display: block;
+}
+.wp-block-image figcaption {
+  margin: 0;
+}
+
 /************************************
 ** ヘッダー
 ************************************/

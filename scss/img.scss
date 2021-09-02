@@ -122,3 +122,18 @@ img.emoji {
 	vertical-align: text-bottom;
 	margin-right: 0.1em;
 }
+
+///////////////////////////////////////
+// ブロック
+///////////////////////////////////////
+.wp-block-image{
+  .aligncenter{
+    text-align: center;
+  }
+  img{
+    display: block;
+  }
+  figcaption{
+    margin: 0;
+  }
+}
