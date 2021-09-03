@@ -1077,7 +1077,6 @@ ol, ul {
 }
 
 .wp-block[data-align] > * {
-  float: none;
   margin: 0;
 }
 .wp-block[data-align="center"] .btn-wrap,

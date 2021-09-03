@@ -785,7 +785,7 @@ ol, ul {
 
 .wp-block{
   &[data-align] > *{
-    float: none;
+    // float: none;
     margin: 0;
   }
 
