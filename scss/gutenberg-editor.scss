@@ -1110,3 +1110,14 @@ body::before,
   margin-right: 0;
 }
 
+.wp-block{
+  &[data-align="wide"],
+  &[data-align="full"]{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 840px !important;
+    .wp-block-table table{
+      width: 100%;
+    }
+  }
+}
