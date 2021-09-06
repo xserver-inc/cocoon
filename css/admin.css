@@ -3630,6 +3630,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .carousel .a-wrap { padding: 0.2em 0.3em; }
 .admin-settings .demo .carousel.loaded { opacity: 1; }
 .admin-settings .demo .ccb-carousel-border .a-wrap { border: 1px solid #ccc; }
+.admin-settings .demo .carousel-entry-card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .admin-settings .demo .index-tab-buttons { margin: 1em 0 1.4em; display: flex; }
 .admin-settings .demo .index-tab-buttons .index-tab-button { padding: 12px 16px; font-size: 14px; margin: 2px; border-radius: 4px; background-color: #fff; border: 1px solid #eee; width: 100%; text-align: center; }
 .admin-settings .demo #index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], .admin-settings .demo #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], .admin-settings .demo #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], .admin-settings .demo #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] { background: none #404453; border: 1px solid #404453; color: #fff; font-weight: 700; }

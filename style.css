@@ -9112,6 +9112,12 @@ input[type='submit'] {
   border: 1px solid #ccc;
 }
 
+.carousel-entry-card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 .index-tab-buttons {
   margin: 1em 0 1.4em;
   display: flex;
