@@ -1327,3 +1327,7 @@ body::before,
 .wp-block[data-align="wide"] .wp-block-table table, .wp-block[data-align="full"] .wp-block-table table {
   width: 100%;
 }
+
+.wp-block-table .has-fixed-layout {
+  width: 100% !important;
+}

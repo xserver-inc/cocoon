@@ -1121,3 +1121,7 @@ body::before,
     }
   }
 }
+
+.wp-block-table .has-fixed-layout{
+  width: 100% !important;
+}
