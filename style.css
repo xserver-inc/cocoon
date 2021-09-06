@@ -418,22 +418,18 @@ hr {
 /************************************
 ** WordPress Misc
 ************************************/
-.aligncenter {
+.body .aligncenter {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-
-.alignleft {
+.body .alignleft {
   float: left;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-right: 25px;
 }
-
-.alignright {
+.body .alignright {
   float: right;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  margin-left: 25px;
 }
 
 .wp-caption {
