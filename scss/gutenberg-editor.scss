@@ -784,10 +784,10 @@ ol, ul {
 }
 
 .wp-block{
-  &[data-align] > *{
-    // float: none;
-    margin: 0;
-  }
+  // &[data-align] > *{
+  //   // float: none;
+  //   margin: 0;
+  // }
 
   &[data-align="center"]{
     .btn-wrap,
@@ -1051,10 +1051,10 @@ body::before,
   }
 }
 
-.wp-block[data-align=left],
-.wp-block[data-align=right]{
-  height: auto;
-}
+// .wp-block[data-align=left],
+// .wp-block[data-align=right]{
+//   height: auto;
+// }
 
 .wp-block[data-align=left] > .micro-copy,
 .wp-block[data-align=right] > .micro-copy,

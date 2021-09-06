@@ -1076,9 +1076,6 @@ ol, ul {
   background-color: #f8e58c !important;
 }
 
-.wp-block[data-align] > * {
-  margin: 0;
-}
 .wp-block[data-align="center"] .btn-wrap,
 .wp-block[data-align="center"] .wp-block-cocoon-blocks-button-1 {
   text-align: center;
@@ -1282,11 +1279,6 @@ body::before,
 .block-editor-block-types-list__item-icon .block-editor-block-icon svg {
   width: 20px;
   height: 20px;
-}
-
-.wp-block[data-align=left],
-.wp-block[data-align=right] {
-  height: auto;
 }
 
 .wp-block[data-align=left] > .micro-copy,
