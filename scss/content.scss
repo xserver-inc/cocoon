@@ -212,15 +212,33 @@ figure.wp-block-table.alignfull table{
   max-width: 100%;
   display: block;
 }
-figure.wp-block-table table {
-  margin-right: auto;
+figure.wp-block-table{
+  table {
+    margin-right: auto;
+  }
+  &.aligncenter table {
+    margin-left: auto;
+  }
+  &.aligncenter figcaption {
+    text-align: center;
+  }
+  &.alignright table {
+    margin-left: 0;
+  }
 }
-figure.wp-block-table.aligncenter table {
-  margin-left: auto;
-}
-figure.wp-block-table.alignright table {
-  margin-left: 0;
-}
+
+// figure.wp-block-table table {
+//   margin-right: auto;
+// }
+// figure.wp-block-table.aligncenter table {
+//   margin-left: auto;
+// }
+// figure.wp-block-table.aligncenter figcaption {
+//   text-align: center;
+// }
+// figure.wp-block-table.alignright table {
+//   margin-left: 0;
+// }
 
 .scroll-hint-icon-wrap {
   overflow: hidden;

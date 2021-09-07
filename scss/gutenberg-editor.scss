@@ -1122,6 +1122,17 @@ body::before,
   }
 }
 
-.wp-block-table .has-fixed-layout{
+.wp-block-table {
+  .has-fixed-layout{
   width: 100% !important;
+  }
+  figcaption{
+    text-align: left;
+  }
+}
+
+.wp-block[data-align="center"]{
+  figcaption{
+    text-align: center;
+  }
 }

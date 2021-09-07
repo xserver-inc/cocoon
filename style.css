@@ -1578,11 +1578,12 @@ figure.wp-block-table.alignfull table {
 figure.wp-block-table table {
   margin-right: auto;
 }
-
 figure.wp-block-table.aligncenter table {
   margin-left: auto;
 }
-
+figure.wp-block-table.aligncenter figcaption {
+  text-align: center;
+}
 figure.wp-block-table.alignright table {
   margin-left: 0;
 }

@@ -1331,3 +1331,10 @@ body::before,
 .wp-block-table .has-fixed-layout {
   width: 100% !important;
 }
+.wp-block-table figcaption {
+  text-align: left;
+}
+
+.wp-block[data-align="center"] figcaption {
+  text-align: center;
+}
