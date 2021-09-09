@@ -233,7 +233,11 @@ function gutenberg_stylesheets_custom() {
 endif;
 
 // Classic Editor用のCSS読み込みを利用してGutenberg用のCSSを設定
-add_filter ( 'block_editor_settings', 'gutenberg_editor_settings', 10, 2 );
+if (is_wp_5_8_or_over()) {
+  add_filter ( 'block_editor_settings_all', 'gutenberg_editor_settings', 10, 2 );
+} else {
+  add_filter ( 'block_editor_settings', 'gutenberg_editor_settings', 10, 2 );
+}
 if ( ! function_exists( 'gutenberg_editor_settings' ) ):
 function gutenberg_editor_settings( $editor_settings, $post ) {
   /** @var array $editor_settings */

@@ -203,7 +203,11 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 
 //Cocoonカテゴリーを追加
 if (is_admin()) {
-	add_filter( 'block_categories', 'add_cocoon_theme_block_categories', 10, 2 );
+  if (is_wp_5_8_or_over()) {
+    add_filter( 'block_categories_all', 'add_cocoon_theme_block_categories', 10, 2 );
+  } else {
+    add_filter( 'block_categories', 'add_cocoon_theme_block_categories', 10, 2 );
+  }
 }
 if ( !function_exists( 'add_cocoon_theme_block_categories' ) ):
 function add_cocoon_theme_block_categories( $categories, $post ){
@@ -249,7 +253,11 @@ function add_cocoon_theme_block_categories( $categories, $post ){
 endif;
 
 //許可するブロックを配列で返す（ホワイトリスト形式で実用性がない…）
-add_filter( 'allowed_block_types', 'cocoon_allowed_block_types_custom' );
+if (is_wp_5_8_or_over()) {
+  add_filter( 'allowed_block_types_all', 'cocoon_allowed_block_types_custom' );
+} else {
+  add_filter( 'allowed_block_types', 'cocoon_allowed_block_types_custom' );
+}
 if ( !function_exists( 'cocoon_allowed_block_types_custom' ) ):
 function cocoon_allowed_block_types_custom( $allowed_block_types ) {
   return $allowed_block_types;
