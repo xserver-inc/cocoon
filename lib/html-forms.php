@@ -936,6 +936,46 @@ function generate_tag_check_list( $name, $value, $width = 0 ) {
 }
 endif;
 
+
+//カスタム投稿タイプエディット
+if ( !function_exists( 'generate_custom_post_type_check_list' ) ):
+function generate_custom_post_type_check_list( $name, $checks, $width = 0 ) {
+  if ($width == 0) {
+    $width = 'auto';
+  } else {
+    $width = $width.'px';
+  }
+
+  if (empty($checks)) {
+    $checks = array();
+  }
+
+  echo '<div class="tab-content custom-post-type-check-list '.$name.'-list cocoon-donation-privilege" style="width: '.$width.';"><ul>';
+
+  $custom_post_types = get_custum_post_types();
+
+  foreach($custom_post_types as $custom_post_type) {
+    $post_type_object = get_post_type_object($custom_post_type);
+    $label = ($post_type_object->label) ? $post_type_object->label : $custom_post_type;
+    $id = $id = $name.'_'.$custom_post_type;
+
+    echo '<li><input type="checkbox" name="'.esc_attr($name).'[]" value="'.esc_attr($custom_post_type).'" id="'.esc_attr($id).'"';
+    checked(in_array($custom_post_type, $checks));
+    echo '><label for="'.$id.'">' . esc_html($label) . '</label></li>';
+  } //foreach
+
+  echo '</ul></div>';
+
+  // echo '<div class="tab-content tag-check-list '.$name.'-list" style="width: '.$width.';">';
+
+  // echo '<p>'.__( 'タグID入力', THEME_NAME ).'</p>';
+  // generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+  // echo '<p>'.__( 'タグIDをカンマ区切りで入力してください。', THEME_NAME ).'</p>';
+
+  // echo '</div>';
+}
+endif;
+
 //Windows Live Writerで編集するためのリンクを作成する
 if ( !function_exists( 'wlw_edit_post_link' ) ):
 function wlw_edit_post_link($link, $before = '', $after = ''){

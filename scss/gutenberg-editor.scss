@@ -934,33 +934,33 @@ body::before,
   }
 }
 
-.editor-block-list-item-cocoon-blocks-faq,
-[id*="block-cocoon-blocks/faq"],
-.components-dropdown-menu__menu > .cocoon-donation-privilege{
-  opacity: 0.4;
-  pointer-events: none;
-  position: relative;
+// .editor-block-list-item-cocoon-blocks-faq,
+// [id*="block-cocoon-blocks/faq"],
+// .cocoon-donation-privilege{
+//   opacity: 0.4 !important;
+//   pointer-events: none !important;
+//   position: relative !important;
 
-  &::before,
-  &::after {
-    background-color: #c9171e;
-    border-radius: 2px;
-    color: #fff;
-    display: inline-block;
-    font-size: 8px;
-    line-height: 1;
-    padding: 3px 4px;
-    position: absolute;
-    right: 0;
-  }
-  &::before{
-    content: "寄付特典";
-    top: 0;
-  }
-}
+//   &::before,
+//   &::after {
+//     background-color: #c9171e !important;
+//     border-radius: 2px !important;
+//     color: #fff !important;
+//     display: inline-block !important;
+//     font-size: 8px !important;
+//     line-height: 1 !important;
+//     padding: 3px 4px !important;
+//     position: absolute !important;
+//     right: 0 !important;
+//   }
+//   &::before{
+//     content: "寄付特典" !important;
+//     top: 0 !important;
+//   }
+// }
 
 .components-dropdown-menu__menu > .cocoon-donation-privilege{
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 
 [id*="block-cocoon-blocks/faq"]{

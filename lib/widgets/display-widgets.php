@@ -65,6 +65,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_posts_def = '';
   $widget_fixed_pages_def = '';
   $widget_tags_def = '';
+  $widget_custom_post_types_def = array();
   if ($info) {
     if (isset($info['widget_action'])) {
       $widget_action_def = $info['widget_action'];
@@ -87,6 +88,9 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     if (!empty($info['widget_tags'])) {
       $widget_tags_def = $info['widget_tags'];
     }
+    if (!empty($info['widget_custom_post_types'])) {
+      $widget_custom_post_types_def = $info['widget_custom_post_types'];
+    }
   }
 
   $widget_action = isset( $instance['widget_action'] ) ? $instance['widget_action'] : $widget_action_def;
@@ -96,6 +100,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_posts = !empty( $instance['widget_posts'] ) ? $instance['widget_posts'] : $widget_posts_def;
   $widget_fixed_pages = !empty( $instance['widget_fixed_pages'] ) ? $instance['widget_fixed_pages'] : $widget_fixed_pages_def;
   $widget_tags = !empty( $instance['widget_tags'] ) ? $instance['widget_tags'] : $widget_tags_def;
+  $widget_custom_post_types = !empty( $instance['widget_custom_post_types'] ) ? $instance['widget_custom_post_types'] : $widget_custom_post_types_def;
 
   ?>
   <?php
@@ -132,6 +137,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         $post_tab_id = 'post-tab-'.$widget_id;
         $fixed_page_tab_id = 'fixed-page-tab-'.$widget_id;
         $tag_tab_id = 'tag-tab-'.$widget_id;
+        $custom_post_type_tab_id = 'custom-post-type-tab-'.$widget_id;
       ?>
       <style type="text/css">
         /*選択されているタブのコンテンツのみを表示*/
@@ -140,7 +146,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         #author-tab-<?php echo $dw->id; ?>:checked ~ .author-check-list,
         #post-tab-<?php echo $dw->id; ?>:checked ~ .post-check-list,
         #fixed-page-tab-<?php echo $dw->id; ?>:checked ~ .fixed-page-check-list,
-        #tag-tab-<?php echo $dw->id; ?>:checked ~ .tag-check-list {
+        #tag-tab-<?php echo $dw->id; ?>:checked ~ .tag-check-list,
+        #custom-post-type-tab-<?php echo $dw->id; ?>:checked ~ .custom-post-type-check-list {
           display: block;
         }
       </style>
@@ -165,6 +172,9 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         <input id="<?php echo $tag_tab_id; ?>" type="radio" name="tab_item" checked>
         <label id="tag-<?php echo $widget_id; ?>" class="tag-tab tab-item" for="<?php echo $tag_tab_id; ?>"><?php _e( 'タグ', THEME_NAME ) ?></label>
 
+        <input id="<?php echo $custom_post_type_tab_id; ?>" type="radio" name="tab_item" checked>
+        <label id="custom-post-type-<?php echo $widget_id; ?>" class="custom-post-type-tab tab-item" for="<?php echo $custom_post_type_tab_id; ?>"><?php _e( 'カスタム投稿タイプ', THEME_NAME ) ?></label>
+
         <?php
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
         generate_page_display_check_list($widget->get_field_name('widget_pages'), $widget_pages);
@@ -179,6 +189,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         generate_fixed_page_check_list($widget->get_field_name('widget_fixed_pages'), $widget_fixed_pages);
 
         generate_tag_check_list($widget->get_field_name('widget_tags'), $widget_tags);
+
+        generate_custom_post_type_check_list($widget->get_field_name('widget_custom_post_types'), $widget_custom_post_types);
 
        ?>
       </div>
@@ -237,6 +249,12 @@ function display_widgets_update_callback( $instance, $new_instance, $old_instanc
   else
     $instance['widget_tags'] = array();
 
+  //カスタム投稿タイプ条件
+  if ( isset( $new_instance['widget_custom_post_types'] ) )
+    $instance['widget_custom_post_types'] = $new_instance['widget_custom_post_types'];
+  else
+    $instance['widget_custom_post_types'] = array();
+
   return $instance;
 }
 endif;
@@ -253,11 +271,12 @@ function is_display_widgets_widget_visible( $info ){
   $widget_posts = isset($info['widget_posts']) ? $info['widget_posts'] : '';
   $widget_fixed_pages = isset($info['widget_fixed_pages']) ? $info['widget_fixed_pages'] : '';
   $widget_tags = isset($info['widget_tags']) ? $info['widget_tags'] : '';
+  $widget_custom_post_types = isset($info['widget_custom_post_types']) ? $info['widget_custom_post_types'] : array();
 
   $display = false;
 
   // //チェックリストすべてが空かどうか
-  $is_all_empty = empty($widget_categories) && empty($widget_pages) && empty($widget_authors) && empty($widget_posts) && empty($widget_fixed_pages) && empty($widget_tags);
+  $is_all_empty = empty($widget_categories) && empty($widget_pages) && empty($widget_authors) && empty($widget_posts) && empty($widget_fixed_pages) && empty($widget_tags) && empty($widget_custom_post_types);
   //カテゴリーリストに何かチェックがついている場合
   if (!empty($widget_categories)) {
     $display = $display || (in_category($widget_categories) && is_singular()) || is_category($widget_categories);
@@ -337,6 +356,11 @@ function is_display_widgets_widget_visible( $info ){
     $widget_tags = sanitize_comma_text($widget_tags);
     $widget_tags = explode(',', $widget_tags);
     $display = $display || (has_tag($widget_tags) && is_singular()) || is_tag($widget_tags);
+  }
+
+  //カスタム投稿タイプに何かチェックがついている場合
+  if (!empty($widget_custom_post_types)) {
+    $display = $display || is_singular($widget_custom_post_types);
   }
 
   //ウィジェットを表示する条件
