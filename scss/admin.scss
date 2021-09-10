@@ -1162,3 +1162,28 @@ textarea[name="the_page_memo"]{
 .demo .ranking-item{
   margin-bottom: 1em;
 }
+
+.editor-block-list-item-cocoon-blocks-faq,
+[id*="block-cocoon-blocks/faq"],
+.cocoon-donation-privilege{
+  opacity: 0.4 !important;
+  pointer-events: none !important;
+  position: relative !important;
+
+  &::before,
+  &::after {
+    background-color: #c9171e !important;
+    border-radius: 2px !important;
+    color: #fff !important;
+    display: inline-block !important;
+    font-size: 8px !important;
+    line-height: 1 !important;
+    padding: 3px 4px !important;
+    position: absolute !important;
+    right: 0 !important;
+  }
+  &::before{
+    content: "寄付特典" !important;
+    top: 0 !important;
+  }
+}

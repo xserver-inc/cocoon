@@ -587,6 +587,7 @@ endif;
 //投稿管理画面のヘッダーカスタマイズ
 add_action( 'admin_head-post-new.php', 'add_head_post_custum' );
 add_action( 'admin_head-post.php', 'add_head_post_custum' );
+add_action( 'admin_head-widgets.php', 'add_head_post_custum' );
 if ( !function_exists( 'add_head_post_custum' ) ):
 function add_head_post_custum() {
   //カスタムCSSスタイルが反映されていない場合は反映させる
@@ -627,17 +628,17 @@ div.editor-block-list__block p{
 if(is_privilege_activation_code_available()): ?>
   .editor-block-list-item-cocoon-blocks-faq,
   [id*="block-cocoon-blocks/faq"],
-  .components-dropdown-menu__menu > .cocoon-donation-privilege{
-    opacity: 1;
-    pointer-events: auto;
+  .cocoon-donation-privilege{
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
   .editor-block-list-item-cocoon-blocks-faq::before,
   [id*="block-cocoon-blocks/faq"]::before,
-  .components-dropdown-menu__menu > .cocoon-donation-privilege::before{
-    content: "特典";
-    color: #777;
-    background-color: #fff;
-    border: 1px solid #777;
+  .cocoon-donation-privilege::before{
+    content: "特典" !important;
+    color: #777 !important;
+    background-color: #fff !important;
+    border: 1px solid #777 !important;
   }
   [id*="block-cocoon-blocks/faq"]{
     display: flex !important;

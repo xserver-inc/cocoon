@@ -1180,37 +1180,8 @@ body::before,
   margin-top: 0;
 }
 
-.editor-block-list-item-cocoon-blocks-faq,
-[id*="block-cocoon-blocks/faq"],
 .components-dropdown-menu__menu > .cocoon-donation-privilege {
-  opacity: 0.4;
-  pointer-events: none;
-  position: relative;
-}
-.editor-block-list-item-cocoon-blocks-faq::before, .editor-block-list-item-cocoon-blocks-faq::after,
-[id*="block-cocoon-blocks/faq"]::before,
-[id*="block-cocoon-blocks/faq"]::after,
-.components-dropdown-menu__menu > .cocoon-donation-privilege::before,
-.components-dropdown-menu__menu > .cocoon-donation-privilege::after {
-  background-color: #c9171e;
-  border-radius: 2px;
-  color: #fff;
-  display: inline-block;
-  font-size: 8px;
-  line-height: 1;
-  padding: 3px 4px;
-  position: absolute;
-  right: 0;
-}
-.editor-block-list-item-cocoon-blocks-faq::before,
-[id*="block-cocoon-blocks/faq"]::before,
-.components-dropdown-menu__menu > .cocoon-donation-privilege::before {
-  content: "寄付特典";
-  top: 0;
-}
-
-.components-dropdown-menu__menu > .cocoon-donation-privilege {
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 
 [id*="block-cocoon-blocks/faq"] {

@@ -38,6 +38,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <li><?php _e('FAQブロック（リッチスニペット対応）', THEME_NAME); ?><?php _e('（<a href="https://wp-cocoon.com/faq-block/" target="_blank" rel="noopener noreferrer">詳細</a>）', THEME_NAME); ?></li>
             <li><?php _e('HTML挿入ボタン（※ショートコード）', THEME_NAME); ?><?php _e('（<a href="https://wp-cocoon.com/html-insert-tool-button/" target="_blank" rel="noopener noreferrer">詳細</a>）', THEME_NAME); ?></li>
             <li><?php _e('更新日表示ショートコード', THEME_NAME); ?><?php _e('（<a href="https://wp-cocoon.com/updated-shortcode" target="_blank" rel="noopener noreferrer">詳細</a>）', THEME_NAME); ?></li>
+            <li><?php _e('ウィジェットの「表示設定」の「カスタム投稿タイプ」機能', THEME_NAME); ?><?php _e('（<a href="https://wp-cocoon.com/custom-post-type-for-widget-display-settings" target="_blank" rel="noopener noreferrer">詳細</a>）', THEME_NAME); ?></li>
           </ul>
 
           <p><?php _e('特典機能を入手する場合は<a href="https://wp-cocoon.com/donation-privilege/" target="_blank" rel="noopener noreferrer">こちら</a>。', THEME_NAME); ?></p>
