@@ -950,7 +950,7 @@ function generate_custom_post_type_check_list( $name, $checks, $width = 0 ) {
     $checks = array();
   }
 
-  echo '<div class="tab-content custom-post-type-check-list '.$name.'-list cocoon-donation-privilege" style="width: '.$width.';"><ul>';
+  echo '<div class="tab-content custom-post-type-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
 
   $custom_post_types = get_custum_post_types();
 
