@@ -9109,7 +9109,8 @@ input[type='submit'] {
   border: 1px solid #ccc;
 }
 
-.carousel-entry-card-title {
+.carousel-entry-card-title,
+.blogcard-snippet {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
