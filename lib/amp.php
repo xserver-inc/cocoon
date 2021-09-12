@@ -196,21 +196,21 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/<font[^>]+?>/i', '', $the_content);
   $the_content = preg_replace('/<\/font>/i', '', $the_content);
 
-  //ドロップダウンのアーカイブウィジェットは削除
-  $pattern = '{<aside id="archives-.+?archives-dropdown.+?</aside>}is';
-  $append = '';
-  $the_content = preg_replace($pattern, $append, $the_content);
-  $pattern = '{<div id="archives-.+?<select id="archives-dropdown-.+?</div>}is';
-  $append = '';
-  $the_content = preg_replace($pattern, $append, $the_content);
+  // //ドロップダウンのアーカイブウィジェットは削除
+  // $pattern = '{<aside id="archives-.+?archives-dropdown.+?</aside>}is';
+  // $append = '';
+  // $the_content = preg_replace($pattern, $append, $the_content);
+  // $pattern = '{<div id="archives-.+?<select id="archives-dropdown-.+?</div>}is';
+  // $append = '';
+  // $the_content = preg_replace($pattern, $append, $the_content);
 
-  //ドロップダウンのカテゴリウィジェットは削除
-  $pattern = '{<aside id="categories-.+?categories-dropdown.+?</aside>}is';
-  $append = '';
-  $the_content = preg_replace($pattern, $append, $the_content);
-  $pattern = '{<div id="categories.+?categories-dropdown.+?</div>}is';
-  $append = '';
-  $the_content = preg_replace($pattern, $append, $the_content);
+  // //ドロップダウンのカテゴリウィジェットは削除
+  // $pattern = '{<aside id="categories-.+?categories-dropdown.+?</aside>}is';
+  // $append = '';
+  // $the_content = preg_replace($pattern, $append, $the_content);
+  // $pattern = '{<div id="categories.+?categories-dropdown.+?</div>}is';
+  // $append = '';
+  // $the_content = preg_replace($pattern, $append, $the_content);
 
   //formタグを取り除く
   $the_content = preg_replace('{<form(?!.*class="amp-form).+?</form>}is', '', $the_content);

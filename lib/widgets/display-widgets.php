@@ -363,6 +363,13 @@ function is_display_widgets_widget_visible( $info ){
     $display = $display || is_singular($widget_custom_post_types);
   }
 
+  //AMPページではドロップダウンウィジェットは表示しない
+  if (is_amp()) {
+    if (isset($info['dropdown']) && $info['dropdown']) {
+      return false;
+    }
+  }
+
   //ウィジェットを表示する条件
   if ($widget_action == 'show') {
     if ($is_all_empty) {
