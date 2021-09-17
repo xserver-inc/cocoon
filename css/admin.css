@@ -657,6 +657,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo figure.wp-block-table.aligncenter figcaption { text-align: center; }
 .admin-settings .demo figure.wp-block-table.alignright table { margin-left: 0; }
 .admin-settings .demo .scroll-hint-icon-wrap { overflow: hidden; }
+.admin-settings .demo .article { margin-bottom: 2em; }
 .admin-settings .demo .article dd { margin-left: 40px; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article .wp-block-gallery ul { padding-left: 0; }
@@ -2277,6 +2278,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo figure.wp-block-table.aligncenter figcaption { text-align: center; }
 .admin-settings .demo figure.wp-block-table.alignright table { margin-left: 0; }
 .admin-settings .demo .scroll-hint-icon-wrap { overflow: hidden; }
+.admin-settings .demo .article { margin-bottom: 2em; }
 .admin-settings .demo .article dd { margin-left: 40px; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article .wp-block-gallery ul { padding-left: 0; }

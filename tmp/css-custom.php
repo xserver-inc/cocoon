@@ -616,6 +616,7 @@ if (!$entry_content_margin_hight) {
 .article pre,
 .article table,
 .article .toc,
+.body .article,
 .body .column-wrap,
 .body .new-entry-cards,
 .body .popular-entry-cards,

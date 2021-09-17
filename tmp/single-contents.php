@@ -26,6 +26,11 @@ get_template_part('tmp/content') ?>
     get_template_part('tmp/pager-post-navi');
   } ?>
 
+  <?php //投稿関連記事上ウイジェット
+  if ( is_active_sidebar( 'above-single-related-entries' ) ): ?>
+    <?php dynamic_sidebar( 'above-single-related-entries' ); ?>
+  <?php endif; ?>
+
   <?php get_template_part('tmp/related-entries'); //関連記事 ?>
 
   <?php //関連記事下の広告表示

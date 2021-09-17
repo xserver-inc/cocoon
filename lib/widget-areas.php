@@ -186,6 +186,22 @@ function register_below_single_sns_buttons_widget_area(){
 endif;
 register_below_single_sns_buttons_widget_area();
 
+if ( !function_exists( 'register_above_single_related_entries_widget_area' ) ):
+function register_above_single_related_entries_widget_area(){
+register_sidebars(1,
+  array(
+  'name' => __( '投稿関連記事上', THEME_NAME ),
+  'id' => 'above-single-related-entries',
+  'description' => __( '関連記事の上に表示されるウイジェット。', THEME_NAME ),
+  'before_widget' => '<div id="%1$s" class="widget widget-above-related-entries %2$s">',
+  'after_widget' => '</div>',
+  'before_title' => '<h2 class="widget-above-related-entries-title main-widget-label">',
+  'after_title' => '</h2>',
+));
+}
+endif;
+register_above_single_related_entries_widget_area();
+
 if ( !function_exists( 'register_below_single_related_entries_widget_area' ) ):
 function register_below_single_related_entries_widget_area(){
 register_sidebars(1,

@@ -1592,6 +1592,9 @@ figure.wp-block-table.alignright table {
   overflow: hidden;
 }
 
+.article {
+  margin-bottom: 2em;
+}
 .article dd {
   margin-left: 40px;
 }
