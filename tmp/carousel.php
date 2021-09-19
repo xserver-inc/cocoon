@@ -19,7 +19,7 @@ $args = array(
 //人気記事が有効の場合
 if ( is_carousel_popular_posts_enable()) {
   $days = get_carousel_popular_posts_count_days();
-  $limit = get_carousel_max_count();
+  $limit = intval(get_carousel_max_count()) * 10;
   $records = get_access_ranking_records($days, $limit);
   $post_ids = array();
   //取得した投稿IDをセット
