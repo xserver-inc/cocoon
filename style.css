@@ -4335,6 +4335,7 @@ div.search-form {
 .micro-balloon.aligncenter {
   margin-left: auto;
   margin-right: auto;
+  display: table;
 }
 .micro-balloon.alignleft {
   margin-right: auto;
