@@ -20,7 +20,8 @@ $args = array(
 if ( is_carousel_popular_posts_enable()) {
   $days = get_carousel_popular_posts_count_days();
   $limit = intval(get_carousel_max_count()) * 5;
-  $records = get_access_ranking_records($days, $limit, 'post', get_carousel_category_ids());//カテゴリーで絞り込み
+  $category_ids = is_array(get_carousel_category_ids()) ? get_carousel_category_ids() : array();
+  $records = get_access_ranking_records($days, $limit, 'post', $category_ids);//カテゴリーで絞り込み
   $post_ids = array();
   //取得した投稿IDをセット
   foreach ($records as $post) {

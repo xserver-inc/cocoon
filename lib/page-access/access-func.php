@@ -374,6 +374,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
 
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
+    $cat_ids = is_array($cat_ids) ? $cat_ids : array();
     $cats = implode(',', $cat_ids);
     if ($cat_ids) {
       //子孫カテゴリも含める場合
