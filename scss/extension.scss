@@ -992,6 +992,7 @@ div.search-form{
 .btn-circle,
 .btn-wrap-circle > a{
   border-radius: 99px;
+  clip-path: border-box;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a{color: $text_color;background-color: $white;}

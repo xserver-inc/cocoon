@@ -1008,7 +1008,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn-l.btn-circle:hover::after, .admin-settings .demo .ranking-item-link-buttons a.btn-circle:hover::after, .admin-settings .demo .btn-wrap.btn-wrap-l.btn-wrap-circle > a:hover::after { right: 4px; }
 .admin-settings .demo .btn-shine, .admin-settings .demo .btn-wrap-shine > a { overflow: hidden; }
 .admin-settings .demo .btn-shine:before, .admin-settings .demo .btn-wrap-shine > a:before { animation: shine 3s ease-in-out infinite; background-color: #fff; content: " "; height: 100%; left: 0; opacity: 0; position: absolute; top: -180px; transform: rotate(45deg); width: 30px; }
-.admin-settings .demo .btn-circle, .admin-settings .demo .btn-wrap-circle > a { border-radius: 99px; }
+.admin-settings .demo .btn-circle, .admin-settings .demo .btn-wrap-circle > a { border-radius: 99px; clip-path: border-box; }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
@@ -2629,7 +2629,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn-l.btn-circle:hover::after, .admin-settings .demo .ranking-item-link-buttons a.btn-circle:hover::after, .admin-settings .demo .btn-wrap.btn-wrap-l.btn-wrap-circle > a:hover::after { right: 4px; }
 .admin-settings .demo .btn-shine, .admin-settings .demo .btn-wrap-shine > a { overflow: hidden; }
 .admin-settings .demo .btn-shine:before, .admin-settings .demo .btn-wrap-shine > a:before { animation: shine 3s ease-in-out infinite; background-color: #fff; content: " "; height: 100%; left: 0; opacity: 0; position: absolute; top: -180px; transform: rotate(45deg); width: 30px; }
-.admin-settings .demo .btn-circle, .admin-settings .demo .btn-wrap-circle > a { border-radius: 99px; }
+.admin-settings .demo .btn-circle, .admin-settings .demo .btn-wrap-circle > a { border-radius: 99px; clip-path: border-box; }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
@@ -4455,7 +4455,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .btn-l.btn-circle:hover::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a.btn-circle:hover::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a.btn-circle:hover::after, .components-popover__content .btn-wrap.btn-wrap-l.btn-wrap-circle > a:hover::after { right: 4px; }
 .components-popover__content .btn-shine, .components-popover__content .btn-wrap-shine > a { overflow: hidden; }
 .components-popover__content .btn-shine:before, .components-popover__content .btn-wrap-shine > a:before { animation: shine 3s ease-in-out infinite; background-color: #fff; content: " "; height: 100%; left: 0; opacity: 0; position: absolute; top: -180px; transform: rotate(45deg); width: 30px; }
-.components-popover__content .btn-circle, .components-popover__content .btn-wrap-circle > a { border-radius: 99px; }
+.components-popover__content .btn-circle, .components-popover__content .btn-wrap-circle > a { border-radius: 99px; clip-path: border-box; }
 .components-popover__content .btn-white, .components-popover__content .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .components-popover__content #container .btn-white:hover, .components-popover__content #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
 .components-popover__content .btn-red, .components-popover__content .admin-settings .demo .ranking-item-link a, .admin-settings .demo .ranking-item-link .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
