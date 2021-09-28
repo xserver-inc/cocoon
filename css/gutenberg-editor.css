@@ -1271,6 +1271,18 @@ body::before,
   text-align: right;
 }
 
+.wp-block[data-align=left] > .wp-block-cocoon-blocks-button-1 {
+  float: none;
+}
+
+.wp-block[data-align=center] > .wp-block-cocoon-blocks-button-1 {
+  float: none;
+}
+
+.wp-block[data-align=right] > .wp-block-cocoon-blocks-button-1 {
+  float: none;
+}
+
 .micro-copy {
   margin-left: auto;
   margin-right: auto;
