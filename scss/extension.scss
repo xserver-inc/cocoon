@@ -885,6 +885,8 @@ div.search-form{
 }
 
 .btn-wrap{
+  float: none !important;
+  margin: 0 !important;
   min-height: 2em;
   img[width="1"]{
     position: absolute;
