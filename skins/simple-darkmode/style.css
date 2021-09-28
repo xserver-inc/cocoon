@@ -5,7 +5,7 @@
   Author: Hirosite
   Author URI: https://hirosite.com/
   Screenshot URI:https://im-cocoon.net/wp-content/uploads/simple-darkmode.jpeg
-  Version: 1.3.5
+  Version: 1.3.7
   Priority: 9180101000
   Visibility: false
 */
@@ -37,7 +37,30 @@
     background: yellow;
     color: #1c1a1a;
   }
-  a {
+  .keyboard-key{
+    box-shadow: 1px 2px 2px rgb(110, 110, 110);
+  }
+  /*ダークモード時の吹き出し*/
+  .sbs-line.sbp-r .speech-balloon{
+    background-color: var(--bg2);
+    border-color: #85e249;
+    border-width: 2px;
+  }
+  .sbs-line.sbp-r .speech-balloon::after,
+  .sbs-stn.sbp-r .speech-balloon::after{
+    border-left-color: var(--bg2);
+  }
+  .sbs-line.sbp-l .speech-balloon::after,
+  .sbs-flat.sbp-l .speech-balloon::after{
+    border-right-color: var(--bg2);
+  }
+  .sbs-line.sbp-l .speech-balloon,
+  .sbs-flat.sbp-l .speech-balloon {
+    background-color: var(--bg2);
+    border-color: var(--text-main);
+    border-width: 2px;
+  }
+  a{
     color: #99ccff;
   }
   a:hover {
@@ -127,6 +150,14 @@ a.page-numbers:hover{
 .widget_meta ul li a, .widget_rss ul li a,
 .widget_nav_menu ul li a {
   border-bottom: 1px solid var(--bg3);
+}
+/*コメントウィジェット*/
+div.recent-comment-content{
+  background-color: var(--bg1);
+  color: var(--text-main);
+}
+.recent-comment-content::after{
+  border-bottom-color: var(--bg1);
 }
 /*検索ボックス*/
 .search-box input::placeholder {
@@ -282,6 +313,11 @@ table tr:nth-of-type(2n+1){
 table th{
   background-color: var(--bg1);
 }
+/*ソースコード*/
+pre.wp-block-code{
+  color: var(--text-main);
+  background-color: var(--bg1);
+}
 /*パンくずリスト*/
 .breadcrumb,
 .breadcrumb-caption{
@@ -313,6 +349,17 @@ blockquote{
 .speech-balloon::after{
   border-right-color: var(--bg2);
 }
+/* .speech-balloon::after{
+  border-left-color: var(--bg2);
+} */
+/* .sbs-line.sbp-r .speech-balloon::before{
+  border-left-color: #85e249;
+} */
+/*キーボードキー*/
+.keyboard-key{
+  background-color: var(--bg2);
+  color: var(--text-main);
+}
 /*アンダーライン*/
 .marker-under-blue{
   background: linear-gradient(transparent 60%, var(--underline-blue) 0%);
@@ -332,14 +379,14 @@ blockquote{
   color: var(--text-main);
 }
 /*アイコンボックス*/
-.is-style-information-box, .information-box,
-.is-style-question-box, .question-box,
-.is-style-alert-box, .alert-box,
-.is-style-memo-box, .memo-box,
-.is-style-comment-box, .comment-box,
-.is-style-good-box, .good-box,
-.is-style-bad-box, .bad-box,
-.is-style-ok-box, .ok-box,
+.is-style-information-box, .information-box, .information,
+.is-style-question-box, .question-box, .question,
+.is-style-alert-box, .alert-box, .alert,
+.is-style-memo-box, .memo-box, .memo,
+.is-style-comment-box, .comment-box, .comment,
+.is-style-good-box, .good-box, .good,
+.is-style-bad-box, .bad-box, .bad,
+.is-style-ok-box, .ok-box, .ok,
 .is-style-ng-box, .ng-box,
 .is-style-profile-box, .profile-box{
   background-color: var(--bg3);
@@ -362,6 +409,9 @@ blockquote{
 .is-style-primary-box,.primary-box, .sp-primary,.primary{
   color: #1c1a1a;
 }
+/* .appeal-content, .block-box-label, .toggle-button{
+  color: black;
+} */
 /*ラベルボックス*/
 .label-box-label{
   text-shadow: var(--bg3) 3px 0 0, var(--bg3) 2px 1px 0, var(--bg3) 2px 2px 0, var(--bg3) 2px 3px 0, var(--bg3) 1px 3px 0, var(--bg3) 0 3px 0, var(--bg3) -1px 3px 0, var(--bg3) -2px 2px 0, var(--bg3) -3px 1px 0, var(--bg3) -3px 0 0, var(--bg3) -3px -1px 0, var(--bg3) -3px -2px 0, var(--bg3) -2px -2px 0, var(--bg3) -1px -3px 0, var(--bg3) 0 -3px 0, var(--bg3) 1px -3px 0, var(--bg3) 2px -2px 0, var(--bg3) 2px -2px 0, var(--bg3) 3px -1px 0;
