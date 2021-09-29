@@ -4,8 +4,8 @@
   Skin URI: https://hirosite.com/simple-darkmode/
   Author: Hirosite
   Author URI: https://hirosite.com/
-  Screenshot URI:https://im-cocoon.net/wp-content/uploads/simple-darkmode.jpeg
-  Version: 1.3.7
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/simple-darkmode.jpeg
+  Version: 1.3.8
   Priority: 9180101000
   Visibility: false
 */
@@ -60,6 +60,10 @@
     border-color: var(--text-main);
     border-width: 2px;
   }
+  .sns-buttons a{
+    background-color: #585858;
+  }
+  /*リンクの色変更*/
   a{
     color: #99ccff;
   }
@@ -94,7 +98,6 @@ a.new-entry-card-link.widget-entry-card-link.a-wrap{
   background-color: var(--bg1);
   border-color: var(--bg1);
 }
-
 /*続きを読む*/
 .list-more-button{
   background-color: var(--bg2);
@@ -119,6 +122,9 @@ a.new-entry-card-link.widget-entry-card-link.a-wrap{
 .pagination .page-numbers,
 .pager-numbers .page-numbers {
   border-radius: 50%;
+}
+.page-numbers.dots{
+  background: none;
 }
 .page-numbers:hover{
   background-color: var(--bg1-on);
@@ -310,11 +316,13 @@ tr{
 table tr:nth-of-type(2n+1){
   background-color: var(--bg3);
 }
-table th{
+table th,
+.scrollable-table th{
   background-color: var(--bg1);
 }
 /*ソースコード*/
-pre.wp-block-code{
+pre.wp-block-code,
+pre{
   color: var(--text-main);
   background-color: var(--bg1);
 }
@@ -349,12 +357,6 @@ blockquote{
 .speech-balloon::after{
   border-right-color: var(--bg2);
 }
-/* .speech-balloon::after{
-  border-left-color: var(--bg2);
-} */
-/* .sbs-line.sbp-r .speech-balloon::before{
-  border-left-color: #85e249;
-} */
 /*キーボードキー*/
 .keyboard-key{
   background-color: var(--bg2);
@@ -409,12 +411,19 @@ blockquote{
 .is-style-primary-box,.primary-box, .sp-primary,.primary{
   color: #1c1a1a;
 }
-/* .appeal-content, .block-box-label, .toggle-button{
-  color: black;
-} */
 /*ラベルボックス*/
 .label-box-label{
   text-shadow: var(--bg3) 3px 0 0, var(--bg3) 2px 1px 0, var(--bg3) 2px 2px 0, var(--bg3) 2px 3px 0, var(--bg3) 1px 3px 0, var(--bg3) 0 3px 0, var(--bg3) -1px 3px 0, var(--bg3) -2px 2px 0, var(--bg3) -3px 1px 0, var(--bg3) -3px 0 0, var(--bg3) -3px -1px 0, var(--bg3) -3px -2px 0, var(--bg3) -2px -2px 0, var(--bg3) -1px -3px 0, var(--bg3) 0 -3px 0, var(--bg3) 1px -3px 0, var(--bg3) 2px -2px 0, var(--bg3) 2px -2px 0, var(--bg3) 3px -1px 0;
+}
+/*見出しボックス、タブ見出しボックス、アコーディオンボックス*/
+.caption-box:not(.has-border-color, [class*=cb-]) .caption-box-label{
+  color: #1c1a1a;
+}
+.tab-caption-box:not(.has-border-color, [class*=tcb-]) span.tab-caption-box-label-text{
+  color: #1c1a1a;
+}
+.toggle-box:not(.has-border-color, [class*=tb-]) label.toggle-button{
+  color: #1c1a1a;
 }
 /*マイクロバルーン*/
 .micro-balloon {
@@ -422,6 +431,9 @@ blockquote{
 }
 .micro-balloon::after {
   border-top-color: var(--bg3);
+}
+.micro-bottom.micro-balloon::after {
+  border-bottom-color: var(--bg3);
 }
 /*検索案内*/
 .search-form div.sform{
