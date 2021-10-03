@@ -3438,7 +3438,7 @@ msgid "固定ページ"
 msgstr "Page"
 
 #: lib/html-forms.php:783
-msgid "カテゴリー一覧"
+msgid "カテゴリ一覧"
 msgstr "Categories list"
 
 #: lib/html-forms.php:787

@@ -3418,7 +3418,7 @@ msgstr "Page fixe"
 
 #: lib/html-forms.php:768
 #, fuzzy
-msgid "カテゴリー一覧"
+msgid "カテゴリ一覧"
 msgstr "Liste des catégories"
 
 #: lib/html-forms.php:772
