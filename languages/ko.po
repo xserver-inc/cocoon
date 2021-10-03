@@ -4101,7 +4101,7 @@ msgstr "페이지를 고정합니다."
 
 #: lib/html-forms.php:788
 #, fuzzy
-msgid "カテゴリ一覧"
+msgid "カテゴリー一覧"
 msgstr "범주 목록입니다."
 
 #: lib/html-forms.php:793

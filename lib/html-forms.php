@@ -785,7 +785,7 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   $id = $name.'_'.'is_category';
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_category" id="'.$id.'" ';
   checked(in_array('is_category', $checks));
-  echo '><label for="'.$id.'">' . __( 'カテゴリ一覧', THEME_NAME ) . '</label></li>';
+  echo '><label for="'.$id.'">' . __( 'カテゴリー一覧', THEME_NAME ) . '</label></li>';
 
   $id = $name.'_'.'is_tag';
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_tag" id="'.$id.'" ';
@@ -810,7 +810,7 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   $id = $name.'_'.'is_404';
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_404" id="'.$id.'" ';
   checked(in_array('is_404', $checks));
-  echo '><label for="'.$id.'">' . __( '404ページ一覧', THEME_NAME ) . '</label></li>';
+  echo '><label for="'.$id.'">' . __( '404ページ', THEME_NAME ) . '</label></li>';
 
   $id = $name.'_'.'is_amp';
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_amp" id="'.$id.'" ';

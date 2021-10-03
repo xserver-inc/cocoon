@@ -3423,7 +3423,7 @@ msgstr "Feste Seite"
 
 #: lib/html-forms.php:768
 #, fuzzy
-msgid "カテゴリ一覧"
+msgid "カテゴリー一覧"
 msgstr "Kategorie Liste"
 
 #: lib/html-forms.php:772
