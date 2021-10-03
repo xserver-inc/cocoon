@@ -4126,7 +4126,7 @@ msgstr "검색 결과 목록입니다."
 
 #: lib/html-forms.php:813
 #, fuzzy
-msgid "404ページ一覧"
+msgid "404ページ"
 msgstr "404페이지 목록입니다."
 
 #: lib/html-forms.php:818

@@ -3448,8 +3448,8 @@ msgstr "Suchergebnisliste"
 
 #: lib/html-forms.php:788
 #, fuzzy
-msgid "404ページ一覧"
-msgstr "404 Seiten Liste"
+msgid "404ページ"
+msgstr "404 Page"
 
 #: lib/html-forms.php:792
 #, fuzzy

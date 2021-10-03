@@ -3458,7 +3458,7 @@ msgid "検索結果一覧"
 msgstr "Search results list"
 
 #: lib/html-forms.php:803
-msgid "404ページ一覧"
+msgid "404ページ"
 msgstr "404 pages list"
 
 #: lib/html-forms.php:807
