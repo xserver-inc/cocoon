@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-03 22:31+0900\n"
-"PO-Revision-Date: 2021-10-03 22:31+0900\n"
+"POT-Creation-Date: 2021-10-03 22:32+0900\n"
+"PO-Revision-Date: 2021-10-03 22:48+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -3502,9 +3502,10 @@ msgstr "Archives list"
 msgid "検索結果一覧"
 msgstr "Search results list"
 
-#: lib/html-forms.php:813
-msgid "404ページ一覧"
-msgstr "404 pages list"
+#: lib/html-forms.php:813 lib/page-settings/_top-page.php:187
+#: lib/widget-areas.php:516
+msgid "404ページ"
+msgstr "404 page"
 
 #: lib/html-forms.php:818
 msgid "AMPページ"
@@ -4540,10 +4541,6 @@ msgstr "Footer"
 #: lib/page-settings/_top-page.php:186
 msgid "モバイル"
 msgstr "Mobile"
-
-#: lib/page-settings/_top-page.php:187 lib/widget-areas.php:516
-msgid "404ページ"
-msgstr "404 page"
 
 #: lib/page-settings/_top-page.php:189
 msgid "PWA"
@@ -13683,6 +13680,9 @@ msgstr "LINE"
 #: tmp/sns-share-buttons.php:50
 msgid "コピー"
 msgstr "Copy"
+
+#~ msgid "404ページ一覧"
+#~ msgstr "404 pages list"
 
 #~ msgid "fontSize"
 #~ msgstr "fontSize"
