@@ -3443,7 +3443,7 @@ msgstr "Liste des résultats de la recherche"
 
 #: lib/html-forms.php:788
 #, fuzzy
-msgid "404ページ"
+msgid "404ページ一覧"
 msgstr "404 liste des pages"
 
 #: lib/html-forms.php:792
