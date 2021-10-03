@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-09-27 21:54+0800\n"
-"PO-Revision-Date: 2021-09-27 22:33+0800\n"
+"POT-Creation-Date: 2021-10-03 22:31+0900\n"
+"PO-Revision-Date: 2021-10-03 22:31+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -54,7 +54,9 @@ msgstr "Heading"
 #: blocks/src/block/sticky-box/deprecated.js:80
 #: blocks/src/block/sticky-box/edit.js:23 blocks/src/block/tab-box/edit.js:58
 #: blocks/src/block/test-box/deprecated.js:79
-#: blocks/src/block/timeline/edit.js:71 blocks/src/layout/column-2/block.js:79
+#: blocks/src/block/timeline/edit.js:71
+#: blocks/src/demo/blank-box-demo/block.js:43
+#: blocks/src/layout/column-2/block.js:79
 #: blocks/src/micro/micro-balloon/edit.js:67
 #: blocks/src/micro/micro-text/edit.js:55 blocks/src/old/balloon-1/block.js:96
 #: blocks/src/old/balloon-2/block.js:127
@@ -561,6 +563,7 @@ msgstr "FAQ."
 #: blocks/src/block/sticky-box/deprecated.js:83
 #: blocks/src/block/sticky-box/edit.js:26
 #: blocks/src/block/test-box/deprecated.js:82
+#: blocks/src/demo/blank-box-demo/block.js:49
 #: blocks/src/micro/micro-balloon/edit.js:70
 #: blocks/src/micro/micro-text/edit.js:58 blocks/src/old/blank-box/block.js:58
 #: blocks/src/old/micro-balloon-1/block.js:64
@@ -677,49 +680,57 @@ msgid "リストポイントにアイコンを適用した非順序リストで�
 msgstr "Unordered list with an icon applied to list points."
 
 #: blocks/src/block/info-box/deprecated.js:87
-#: blocks/src/block/info-box/edit.js:33 lib/admin-tinymce-qtag.php:228
+#: blocks/src/block/info-box/edit.js:33
+#: blocks/src/demo/info-box-drop/block.js:50 lib/admin-tinymce-qtag.php:228
 #: lib/block-editor-styles-group.php:100
 msgid "プライマリー（濃い水色）"
 msgstr "Primary (dark blue)"
 
 #: blocks/src/block/info-box/deprecated.js:91
-#: blocks/src/block/info-box/edit.js:37 lib/admin-tinymce-qtag.php:233
+#: blocks/src/block/info-box/edit.js:37
+#: blocks/src/demo/info-box-drop/block.js:54 lib/admin-tinymce-qtag.php:233
 #: lib/block-editor-styles-group.php:108
 msgid "セカンダリー（濃い灰色）"
 msgstr "Secondary (dark gray)"
 
 #: blocks/src/block/info-box/deprecated.js:95
-#: blocks/src/block/info-box/edit.js:41 lib/admin-tinymce-qtag.php:243
+#: blocks/src/block/info-box/edit.js:41
+#: blocks/src/demo/info-box-drop/block.js:58 lib/admin-tinymce-qtag.php:243
 #: lib/block-editor-styles-group.php:116
 msgid "インフォ（薄い青）"
 msgstr "Info (light blue)"
 
 #: blocks/src/block/info-box/deprecated.js:99
-#: blocks/src/block/info-box/edit.js:45 lib/admin-tinymce-qtag.php:238
+#: blocks/src/block/info-box/edit.js:45
+#: blocks/src/demo/info-box-drop/block.js:62 lib/admin-tinymce-qtag.php:238
 #: lib/block-editor-styles-group.php:124
 msgid "サクセス（薄い緑）"
 msgstr "Success (light green)"
 
 #: blocks/src/block/info-box/deprecated.js:103
-#: blocks/src/block/info-box/edit.js:49 lib/admin-tinymce-qtag.php:248
+#: blocks/src/block/info-box/edit.js:49
+#: blocks/src/demo/info-box-drop/block.js:66 lib/admin-tinymce-qtag.php:248
 #: lib/block-editor-styles-group.php:132
 msgid "ワーニング（薄い黄色）"
 msgstr "Warning (light yellow)"
 
 #: blocks/src/block/info-box/deprecated.js:107
-#: blocks/src/block/info-box/edit.js:53 lib/admin-tinymce-qtag.php:253
+#: blocks/src/block/info-box/edit.js:53
+#: blocks/src/demo/info-box-drop/block.js:70 lib/admin-tinymce-qtag.php:253
 #: lib/block-editor-styles-group.php:140
 msgid "デンジャー（薄い赤色）"
 msgstr "Danger (light red)"
 
 #: blocks/src/block/info-box/deprecated.js:111
-#: blocks/src/block/info-box/edit.js:57 lib/admin-tinymce-qtag.php:258
+#: blocks/src/block/info-box/edit.js:57
+#: blocks/src/demo/info-box-drop/block.js:74 lib/admin-tinymce-qtag.php:258
 #: lib/block-editor-styles-group.php:148
 msgid "ライト（白色）"
 msgstr "Light (white)"
 
 #: blocks/src/block/info-box/deprecated.js:115
-#: blocks/src/block/info-box/edit.js:61 lib/admin-tinymce-qtag.php:263
+#: blocks/src/block/info-box/edit.js:61
+#: blocks/src/demo/info-box-drop/block.js:78 lib/admin-tinymce-qtag.php:263
 #: lib/block-editor-styles-group.php:156
 msgid "ダーク（暗い灰色）"
 msgstr "Dark (dark gray)"
@@ -772,23 +783,27 @@ msgid "検索"
 msgstr "Search"
 
 #: blocks/src/block/sticky-box/deprecated.js:89
-#: blocks/src/block/sticky-box/edit.js:32 blocks/src/old/tab-box/block.js:143
-#: blocks/src/toolbutton/badge-grey.js:14 lib/admin-tinymce-qtag.php:274
-#: lib/admin-tinymce-qtag.php:308 lib/admin-tinymce-qtag.php:338
-#: lib/admin-tinymce-qtag.php:368 lib/admin-tinymce-qtag.php:398
-#: lib/admin-tinymce-qtag.php:428 lib/admin-tinymce-qtag.php:458
-#: lib/admin-tinymce-qtag.php:488 lib/admin-tinymce-qtag.php:518
-#: lib/admin-tinymce-qtag.php:548 lib/admin-tinymce-qtag.php:578
-#: lib/admin-tinymce-qtag.php:609 lib/admin-tinymce-qtag.php:640
-#: lib/admin-tinymce-qtag.php:671 lib/admin-tinymce-qtag.php:702
-#: lib/admin-tinymce-qtag.php:733 lib/admin-tinymce-qtag.php:764
-#: lib/admin-tinymce-qtag.php:797 lib/gutenberg.php:105
+#: blocks/src/block/sticky-box/edit.js:32
+#: blocks/src/demo/blank-box-demo/block.js:55
+#: blocks/src/old/tab-box/block.js:143 blocks/src/toolbutton/badge-grey.js:14
+#: lib/admin-tinymce-qtag.php:274 lib/admin-tinymce-qtag.php:308
+#: lib/admin-tinymce-qtag.php:338 lib/admin-tinymce-qtag.php:368
+#: lib/admin-tinymce-qtag.php:398 lib/admin-tinymce-qtag.php:428
+#: lib/admin-tinymce-qtag.php:458 lib/admin-tinymce-qtag.php:488
+#: lib/admin-tinymce-qtag.php:518 lib/admin-tinymce-qtag.php:548
+#: lib/admin-tinymce-qtag.php:578 lib/admin-tinymce-qtag.php:609
+#: lib/admin-tinymce-qtag.php:640 lib/admin-tinymce-qtag.php:671
+#: lib/admin-tinymce-qtag.php:702 lib/admin-tinymce-qtag.php:733
+#: lib/admin-tinymce-qtag.php:764 lib/admin-tinymce-qtag.php:797
+#: lib/gutenberg.php:105
 msgid "灰色"
 msgstr "Gray"
 
 #: blocks/src/block/sticky-box/deprecated.js:93
-#: blocks/src/block/sticky-box/edit.js:36 blocks/src/old/blank-box/block.js:68
-#: blocks/src/old/caption-box/block.js:65 blocks/src/old/label-box/block.js:64
+#: blocks/src/block/sticky-box/edit.js:36
+#: blocks/src/demo/blank-box-demo/block.js:59
+#: blocks/src/old/blank-box/block.js:68 blocks/src/old/caption-box/block.js:65
+#: blocks/src/old/label-box/block.js:64
 #: blocks/src/old/micro-balloon-1/block.js:90
 #: blocks/src/old/micro-balloon/block.js:89 blocks/src/old/tab-box/block.js:147
 #: blocks/src/old/tab-caption-box/block.js:65
@@ -808,8 +823,10 @@ msgid "黄色"
 msgstr "Yellow"
 
 #: blocks/src/block/sticky-box/deprecated.js:97
-#: blocks/src/block/sticky-box/edit.js:40 blocks/src/old/blank-box/block.js:72
-#: blocks/src/old/caption-box/block.js:69 blocks/src/old/label-box/block.js:68
+#: blocks/src/block/sticky-box/edit.js:40
+#: blocks/src/demo/blank-box-demo/block.js:63
+#: blocks/src/old/blank-box/block.js:72 blocks/src/old/caption-box/block.js:69
+#: blocks/src/old/label-box/block.js:68
 #: blocks/src/old/micro-balloon-1/block.js:94
 #: blocks/src/old/micro-balloon/block.js:93 blocks/src/old/tab-box/block.js:151
 #: blocks/src/old/tab-caption-box/block.js:69
@@ -829,8 +846,10 @@ msgid "赤色"
 msgstr "Red"
 
 #: blocks/src/block/sticky-box/deprecated.js:101
-#: blocks/src/block/sticky-box/edit.js:44 blocks/src/old/blank-box/block.js:76
-#: blocks/src/old/caption-box/block.js:73 blocks/src/old/label-box/block.js:72
+#: blocks/src/block/sticky-box/edit.js:44
+#: blocks/src/demo/blank-box-demo/block.js:67
+#: blocks/src/old/blank-box/block.js:76 blocks/src/old/caption-box/block.js:73
+#: blocks/src/old/label-box/block.js:72
 #: blocks/src/old/micro-balloon-1/block.js:98
 #: blocks/src/old/micro-balloon/block.js:97 blocks/src/old/tab-box/block.js:155
 #: blocks/src/old/tab-caption-box/block.js:73
@@ -850,8 +869,10 @@ msgid "青色"
 msgstr "Blue"
 
 #: blocks/src/block/sticky-box/deprecated.js:105
-#: blocks/src/block/sticky-box/edit.js:48 blocks/src/old/blank-box/block.js:80
-#: blocks/src/old/caption-box/block.js:77 blocks/src/old/label-box/block.js:76
+#: blocks/src/block/sticky-box/edit.js:48
+#: blocks/src/demo/blank-box-demo/block.js:71
+#: blocks/src/old/blank-box/block.js:80 blocks/src/old/caption-box/block.js:77
+#: blocks/src/old/label-box/block.js:76
 #: blocks/src/old/micro-balloon-1/block.js:102
 #: blocks/src/old/micro-balloon/block.js:101
 #: blocks/src/old/tab-box/block.js:159
@@ -975,20 +996,28 @@ msgstr ""
 "Old toggle box. It is a box that you can switch the display of the contents "
 "by clicking."
 
-#: blocks/src/custom/code/block.js:33
+#: blocks/src/custom/code/block.js:33 blocks/src/sample/extended-controls.js:24
 msgid "言語"
 msgstr "Language"
 
-#: blocks/src/custom/code/block.js:36
+#: blocks/src/custom/code/block.js:36 blocks/src/sample/extended-controls.js:27
 msgid "言語選択"
 msgstr "Language Selection"
 
-#: blocks/src/helpers.js:58 blocks/src/old/blank-box/block.js:17
-#: blocks/src/old/tab-box/block.js:15
+#: blocks/src/demo/blank-box-demo/block.js:15 blocks/src/helpers.js:58
+#: blocks/src/old/blank-box/block.js:17 blocks/src/old/tab-box/block.js:15
 msgid "こちらをクリックして設定変更。この入力は公開ページで反映されません。"
 msgstr ""
 "Click here to change the setting. This entry will not be displayed on the "
 "published page."
+
+#: blocks/src/demo/blank-box-demo/block.js:20
+msgid "サーバー動作デモボックス"
+msgstr "Server operation demo box"
+
+#: blocks/src/demo/info-box-drop/block.js:9
+msgid "ドロップダウンデモ"
+msgstr "Drop-down demo"
 
 #: blocks/src/helpers.js:281
 msgid "fab-info-circle"
@@ -1678,6 +1707,18 @@ msgstr "Toggle box"
 msgid ""
 "クリックすることでコンテンツ内容の表示を切り替えることができるボックスです。"
 msgstr "A box where you can display or hide the content with a click."
+
+#: blocks/src/sample/block.js:11
+msgid "Rounded"
+msgstr "Rounded"
+
+#: blocks/src/sample/block.js:16
+msgid "Squared"
+msgstr "Squared"
+
+#: blocks/src/sample/cocoon-dropdown.js:24
+msgid "Cocoon Buttons"
+msgstr "Cocoon buttons"
 
 #: blocks/src/shortcode/affi/block.js:16
 msgid "アフィリエイトタグタグ"
@@ -2481,68 +2522,52 @@ msgid "Excerpt"
 msgstr "Excerpt"
 
 #: lib/block-editor-styles-group.php:167
-#, fuzzy
-#| msgid "警告（赤色）"
 msgid "白抜き（赤色）"
-msgstr "Warning (red)"
+msgstr "Outer Frame (red)"
 
 #: lib/block-editor-styles-group.php:175
-#, fuzzy
-#| msgid "バッジ（ピンク）"
 msgid "白抜き（ピンク）"
-msgstr "Badge (Pink)"
+msgstr "Outer Frame (pink)"
 
 #: lib/block-editor-styles-group.php:183
 msgid "白抜き（紺色）"
-msgstr ""
+msgstr "Outer Frame (navy)"
 
 #: lib/block-editor-styles-group.php:191
 msgid "白抜き（青色）"
-msgstr ""
+msgstr "Outer Frame (blue)"
 
 #: lib/block-editor-styles-group.php:199
-#, fuzzy
-#| msgid "注意（黄色）"
 msgid "白抜き（黄色）"
-msgstr "Attention (yellow)"
+msgstr "Outer Frame (yellow)"
 
 #: lib/block-editor-styles-group.php:207
-#, fuzzy
-#| msgid "通知（緑色）"
 msgid "白抜き（緑色）"
-msgstr "Notification (green)"
+msgstr "Outer Frame (green)"
 
 #: lib/block-editor-styles-group.php:215
-#, fuzzy
-#| msgid "バッジ（オレンジ）"
 msgid "白抜き（オレンジ）"
-msgstr "Badge (Orange)"
+msgstr "Outer Frame (Orange)"
 
 #: lib/block-editor-styles-group.php:226
 msgid "付箋風（灰色）"
-msgstr ""
+msgstr "Label Style (gray)"
 
 #: lib/block-editor-styles-group.php:234
-#, fuzzy
-#| msgid "注意（黄色）"
 msgid "付箋風（黄色）"
-msgstr "Attention (yellow)"
+msgstr "Label Style (yellow)"
 
 #: lib/block-editor-styles-group.php:242
-#, fuzzy
-#| msgid "警告（赤色）"
 msgid "付箋風（赤色）"
-msgstr "Warning (red)"
+msgstr "Label Style (red)"
 
 #: lib/block-editor-styles-group.php:250
 msgid "付箋風（青色）"
-msgstr ""
+msgstr "Label Style (blue)"
 
 #: lib/block-editor-styles-group.php:258
-#, fuzzy
-#| msgid "通知（緑色）"
 msgid "付箋風（緑色）"
-msgstr "Notification (green)"
+msgstr "Label Style (green)"
 
 #: lib/comments.php:45
 #, php-format
@@ -3458,7 +3483,7 @@ msgid "固定ページ"
 msgstr "Page"
 
 #: lib/html-forms.php:788
-msgid "カテゴリ一覧"
+msgid "カテゴリー一覧"
 msgstr "Categories list"
 
 #: lib/html-forms.php:793
@@ -5902,10 +5927,6 @@ msgstr ""
 "d)."
 
 #: lib/page-settings/all-forms.php:324
-#, fuzzy
-#| msgid ""
-#| "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">日付と時刻の書"
-#| "式の解説</a>"
 msgid ""
 "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/"
 "\">日付と時刻の書式の解説</a>"
@@ -8031,8 +8052,6 @@ msgid "ブロックエディターのみに適用される設定です。"
 msgstr "The settings are applied to the block editor only."
 
 #: lib/page-settings/editor-forms.php:101
-#, fuzzy
-#| msgid "ふりがな（ルビ）ボタン表示"
 msgid "「ふりがな（ルビ）」ボタン表示"
 msgstr "Furigana (JA) button display"
 
@@ -8138,10 +8157,8 @@ msgid "ブロックオプション"
 msgstr "Block Option"
 
 #: lib/page-settings/editor-forms.php:164
-#, fuzzy
-#| msgid "文字スタイル表示"
 msgid "スタイル表示"
-msgstr "Text style display"
+msgstr "Style view"
 
 #: lib/page-settings/editor-forms.php:165
 msgid "ブロックエディターのスタイルオプションの表示を表示するか。"
@@ -12099,7 +12116,6 @@ msgid "画像やスクリプト等のリソースの事前読み込み設定で�
 msgstr "Pre-load settings for resources such as images and scripts."
 
 #: lib/page-speed-up/speed-up-forms.php:267
-#, fuzzy
 msgid "事前読み込み"
 msgstr "Lazy Loading"
 
@@ -13685,21 +13701,6 @@ msgstr "Copy"
 
 #~ msgid "投稿コメントフォーム下"
 #~ msgstr "Below comment form in a post"
-
-#~ msgid "サーバー動作デモボックス"
-#~ msgstr "Server operation demo box"
-
-#~ msgid "ドロップダウンデモ"
-#~ msgstr "Drop-down demo"
-
-#~ msgid "Rounded"
-#~ msgstr "Rounded"
-
-#~ msgid "Squared"
-#~ msgstr "Squared"
-
-#~ msgid "Cocoon Buttons"
-#~ msgstr "Cocoon buttons"
 
 #~ msgid "SEO設定"
 #~ msgstr "SEO settings"
