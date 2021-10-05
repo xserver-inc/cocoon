@@ -169,10 +169,10 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         <input id="<?php echo $fixed_page_tab_id; ?>" type="radio" name="tab_item">
         <label id="fixed-page-<?php echo $widget_id; ?>" class="fixed-page-tab tab-item" for="<?php echo $fixed_page_tab_id; ?>"><?php _e( '固定ページ', THEME_NAME ) ?></label>
 
-        <input id="<?php echo $tag_tab_id; ?>" type="radio" name="tab_item" checked>
+        <input id="<?php echo $tag_tab_id; ?>" type="radio" name="tab_item">
         <label id="tag-<?php echo $widget_id; ?>" class="tag-tab tab-item" for="<?php echo $tag_tab_id; ?>"><?php _e( 'タグ', THEME_NAME ) ?></label>
 
-        <input id="<?php echo $custom_post_type_tab_id; ?>" type="radio" name="tab_item" checked>
+        <input id="<?php echo $custom_post_type_tab_id; ?>" type="radio" name="tab_item">
         <label id="custom-post-type-<?php echo $widget_id; ?>" class="custom-post-type-tab tab-item" for="<?php echo $custom_post_type_tab_id; ?>"><?php _e( 'カスタム投稿タイプ', THEME_NAME ) ?></label>
 
         <?php
