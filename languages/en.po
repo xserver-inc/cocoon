@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-10-03 22:32+0900\n"
-"PO-Revision-Date: 2021-10-03 22:48+0900\n"
+"PO-Revision-Date: 2021-10-05 19:24+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -227,7 +227,7 @@ msgstr "Border color"
 
 #: blocks/src/block/blank-box/index.js:22 blocks/src/old/blank-box/block.js:21
 msgid "白抜きボックス"
-msgstr "Blank box"
+msgstr "Outline box"
 
 #: blocks/src/block/blank-box/index.js:24 blocks/src/old/blank-box/block.js:24
 msgid "コンテンツを囲むだけのブランクボックスを表示します。"
@@ -894,7 +894,7 @@ msgstr "Green"
 
 #: blocks/src/block/sticky-box/index.js:21
 msgid "付箋風ボックス"
-msgstr "Sticky box"
+msgstr "Sticky note style box"
 
 #: blocks/src/block/sticky-box/index.js:23
 msgid "目立つ濃いめの色で付箋風にメッセージを伝えるためのボックスです。"
@@ -2146,7 +2146,7 @@ msgstr "Box (guide)"
 
 #: lib/admin-tinymce-qtag.php:271
 msgid "ボックス（白抜き）"
-msgstr "Box (blank)"
+msgstr "Box (outline)"
 
 #: lib/admin-tinymce-qtag.php:302
 msgid "ボックス（タブ）"
@@ -2154,7 +2154,7 @@ msgstr "Box (tab)"
 
 #: lib/admin-tinymce-qtag.php:794
 msgid "ボックス（付箋風）"
-msgstr "Box (sticky)"
+msgstr "Box (sticky note style)"
 
 #: lib/admin-tinymce-qtag.php:874
 msgid "マイクロコピー"
@@ -2523,51 +2523,51 @@ msgstr "Excerpt"
 
 #: lib/block-editor-styles-group.php:167
 msgid "白抜き（赤色）"
-msgstr "Outer Frame (red)"
+msgstr "Outline (red)"
 
 #: lib/block-editor-styles-group.php:175
 msgid "白抜き（ピンク）"
-msgstr "Outer Frame (pink)"
+msgstr "Outline (pink)"
 
 #: lib/block-editor-styles-group.php:183
 msgid "白抜き（紺色）"
-msgstr "Outer Frame (navy)"
+msgstr "Outline (navy)"
 
 #: lib/block-editor-styles-group.php:191
 msgid "白抜き（青色）"
-msgstr "Outer Frame (blue)"
+msgstr "Outline (blue)"
 
 #: lib/block-editor-styles-group.php:199
 msgid "白抜き（黄色）"
-msgstr "Outer Frame (yellow)"
+msgstr "Outline (yellow)"
 
 #: lib/block-editor-styles-group.php:207
 msgid "白抜き（緑色）"
-msgstr "Outer Frame (green)"
+msgstr "Outline (green)"
 
 #: lib/block-editor-styles-group.php:215
 msgid "白抜き（オレンジ）"
-msgstr "Outer Frame (Orange)"
+msgstr "Outline (Orange)"
 
 #: lib/block-editor-styles-group.php:226
 msgid "付箋風（灰色）"
-msgstr "Label Style (gray)"
+msgstr "Sticky note style (gray)"
 
 #: lib/block-editor-styles-group.php:234
 msgid "付箋風（黄色）"
-msgstr "Label Style (yellow)"
+msgstr "Sticky note style (yellow)"
 
 #: lib/block-editor-styles-group.php:242
 msgid "付箋風（赤色）"
-msgstr "Label Style (red)"
+msgstr "Sticky note style (red)"
 
 #: lib/block-editor-styles-group.php:250
 msgid "付箋風（青色）"
-msgstr "Label Style (blue)"
+msgstr "Sticky note style (blue)"
 
 #: lib/block-editor-styles-group.php:258
 msgid "付箋風（緑色）"
-msgstr "Label Style (green)"
+msgstr "Sticky note style (green)"
 
 #: lib/comments.php:45
 #, php-format
@@ -3505,7 +3505,7 @@ msgstr "Search results list"
 #: lib/html-forms.php:813 lib/page-settings/_top-page.php:187
 #: lib/widget-areas.php:516
 msgid "404ページ"
-msgstr "404 page"
+msgstr "404 pages"
 
 #: lib/html-forms.php:818
 msgid "AMPページ"
@@ -10603,7 +10603,7 @@ msgstr "Brand color"
 #: lib/page-settings/sns-share-forms-bottom.php:141
 #: lib/page-settings/sns-share-forms-top.php:128
 msgid "ブランドカラー（白抜き）"
-msgstr "Brand color (white)"
+msgstr "Brand color (outline)"
 
 #: lib/page-settings/sns-follow-forms.php:161
 msgid "シェアボタンの配色を選択してください。"
