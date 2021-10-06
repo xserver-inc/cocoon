@@ -9,8 +9,11 @@ add_action('get_template_part_tmp/css-custom', function() {
   .shortcut{
     color: '.$color.';
   }
-  .header, .header .site-name-text{
+  .header{
     background-color: '.$color.';
+    color: '.$text_color.';
+  }
+  .site-name-text{
     color: '.$text_color.';
   }
   .eye-catch .cat-label{
