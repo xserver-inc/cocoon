@@ -49,10 +49,12 @@ function fn_minify_css($input, $comment = 0, $quote = 2) {
     foreach (fn_minify(array(MINIFY_COMMENT_CSS, MINIFY_STRING), $input) as $part) {
         if (trim($part) === "") continue;
         if ($comment !== 1 && strpos($part, '/*') === 0 && substr($part, -2) === '*/') {
+            $part2 = isset($part[2]) ? $part[2] : false;
+            $res = $part2 ? strpos('*!', $part2) !== false : false;
             if (
                 $comment === 2 && (
                     // Detect special comment(s) from the third character. It should be a `!` or `*` → `/*! keep */` or `/** keep */`
-                    strpos('*!', $part[2]) !== false ||
+                    $res ||
                     // Detect license comment(s) from the content. It should contains character(s) like `@license`
                     stripos($part, '@licence') !== false || // noun
                     stripos($part, '@license') !== false || // verb
@@ -271,10 +273,12 @@ function fn_minify_js($input, $comment = 2, $quote = 2) {
             strpos($part, '//') === 0 || // Remove inline comment(s)
             strpos($part, '/*') === 0 && substr($part, -2) === '*/'
         )) {
+            $part2 = isset($part[2]) ? $part[2] : false;
+            $res = $part2 ? strpos('*!', $part2) !== false : false;
             if (
                 $comment === 2 && (
                     // Detect special comment(s) from the third character. It should be a `!` or `*` → `/*! keep */` or `/** keep */`
-                    strpos('*!', $part[2]) !== false ||
+                    $res ||
                     // Detect license comment(s) from the content. It should contains character(s) like `@license`
                     stripos($part, '@licence') !== false || // noun
                     stripos($part, '@license') !== false || // verb
