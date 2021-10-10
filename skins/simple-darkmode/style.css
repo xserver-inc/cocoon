@@ -5,7 +5,7 @@
   Author: Hirosite
   Author URI:  https://hirosite.com/
   Screenshot URI:  https://im-cocoon.net/wp-content/uploads/simple-darkmode.png
-  Version: 1.3.9
+  Version: 1.4.2
   Priority: 9180101000
   Visibility: false
 */
@@ -140,8 +140,17 @@ a.page-numbers:hover{
   background-color: var(--bg3);
   color: var(--text-main);
 }
-#sidebar ul li a{
-  margin: 6px;
+#sidebar ul li a,
+a.popular-entry-card-link{
+  margin: 10px;
+}
+.widget_recent_entries ul li a, .widget_categories ul li a,
+.widget_archive ul li a, .widget_pages ul li a,
+.widget_meta ul li a, .widget_rss ul li a,
+.widget_nav_menu ul li a {
+  border-bottom: 1px solid var(--bg3);
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .author-box .sns-follow-buttons a.follow-button{
   color: var(--text-main);
@@ -150,12 +159,6 @@ a.page-numbers:hover{
 .widget-entry-cards .a-wrap{
   color: var(--text-main);
   background-color: var(--bg2);
-}
-.widget_recent_entries ul li a, .widget_categories ul li a,
-.widget_archive ul li a, .widget_pages ul li a,
-.widget_meta ul li a, .widget_rss ul li a,
-.widget_nav_menu ul li a {
-  border-bottom: 1px solid var(--bg3);
 }
 /*コメントウィジェット*/
 div.recent-comment-content{
@@ -177,7 +180,6 @@ input,input[type=submit]{
   color: var(--text-main);
 }
 input.search-edit{
-  border: solid 0.25px var(--text-main);
   box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgb(0 0 0 / 5%);
 }
 input.search-edit::placeholder {
@@ -445,6 +447,17 @@ blockquote{
 .search-form div.sbtn:hover{
   color: var(--text-main);
   background-color: var(--bg1-on);
+}
+/*faq*/
+.faq-item-label{
+  font-size: 26px;
+}
+.faq-answer-label{
+  font-size: 20px;
+  margin-left: 4px;
+}
+.faq-answer-content.faq-item-content p{
+  font-size: 16px;
 }
 /*見出し*/
 .article h2,
