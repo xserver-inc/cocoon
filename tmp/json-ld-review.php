@@ -14,34 +14,29 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 $author = (get_the_author_meta('display_name') ? get_the_author_meta('display_name') : get_bloginfo('name'));
 $review_type = get_the_review_type() ? get_the_review_type() : 'Product';
- ?>
+?>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "<?php echo esc_attr($review_type); ?>",
-    "name": "<?php echo esc_attr(get_the_review_name()); ?>",
-    "review":{
-      "author": {
-      "@type": "Person"
-      }
+  "@type": "<?php echo esc_attr($review_type); ?>",
+  "name": "<?php echo esc_attr(get_the_review_name()); ?>",
+  "review": {
+    "@type": "Review",
+    "datePublished": "<?php echo esc_attr(get_seo_post_time()); ?>",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "<?php echo esc_attr(sprintf('%.1f', get_the_review_rate())); ?>",
+      "bestRating": "5",
+      "worstRating": "0"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "<?php echo esc_attr($author); ?>"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "<?php echo esc_attr(get_bloginfo( 'name' )); ?>"
     }
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "<?php echo esc_attr(sprintf('%.1f', get_the_review_rate())); ?>",
-    "bestRating": "5",
-    "worstRating": "0"
-  },
-  "datePublished": "<?php echo esc_attr(get_seo_post_time()); ?>",
-  "author": {
-    "@type": "Person",
-    "name": "<?php echo esc_attr($author); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "<?php echo esc_attr(get_bloginfo( 'name' )); ?>"
   }
 }
 </script>
