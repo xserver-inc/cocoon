@@ -3,6 +3,8 @@
 //https://developers.google.com/search/docs/data-types/articles
 //https://schema.org/NewsArticle
 //https://fantastech.net/review-snippet-customize
+//Akiraさん修正版
+//https://wp-cocoon.com/community/postid/57621/
 
 /**
  * Cocoon WordPress Theme
