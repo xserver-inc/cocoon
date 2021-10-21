@@ -329,7 +329,7 @@ function get_toc_expanded_content(){
     if (is_category()) {
       $the_content = get_the_category_content(null, true);
     } elseif (is_tag()) {
-      $the_content = get_the_tag_content(null, tru);
+      $the_content = get_the_tag_content(null, true);
     } else {
       $the_content = get_the_content();
     }
