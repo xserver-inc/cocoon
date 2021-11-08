@@ -37,6 +37,7 @@ function is_site_font_family_local(){
     case 'yu_gothic':
     case 'hiragino':
     case 'ms_pgothic':
+    case '':
       return true;
       break;
   }
