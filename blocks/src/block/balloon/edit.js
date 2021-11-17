@@ -94,7 +94,7 @@ export function BalloonEdit( props ) {
       if (!name) {
         name = speechBalloons[index].name;
       }
-      setAttributes( { index: index, id: id, icon: icon, style: style, position: position, iconstyle: iconstyle } );
+      // setAttributes( { index: index, id: id, icon: icon, style: style, position: position, iconstyle: iconstyle } );
     }
   }
 
