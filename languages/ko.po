@@ -1,8 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
+<<<<<<< Updated upstream
 "POT-Creation-Date: 2021-11-18 21:13+0900\n"
 "PO-Revision-Date: 2021-11-19 22:46+0900\n"
+=======
+"POT-Creation-Date: 2021-11-20 16:59+0900\n"
+"PO-Revision-Date: 2021-11-20 17:00+0900\n"
+>>>>>>> Stashed changes
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ko_KR\n"
@@ -132,8 +137,14 @@ msgstr "테두리색"
 #: blocks/src/block/tab-box/edit.js:142 blocks/src/block/timeline/edit.js:90
 #: blocks/src/block/toggle-box/edit.js:66
 #: blocks/src/micro/micro-balloon/edit.js:116 lib/content-category.php:227
+<<<<<<< Updated upstream
 #: lib/page-settings/all-forms.php:159 lib/page-settings/buttons-forms.php:83
 #: lib/page-settings/editor-forms.php:54 lib/page-settings/pwa-forms.php:131
+=======
+#: lib/page-settings/all-forms.php:159 lib/page-settings/appeal-forms.php:90
+#: lib/page-settings/buttons-forms.php:83 lib/page-settings/editor-forms.php:54
+#: lib/page-settings/pwa-forms.php:131
+>>>>>>> Stashed changes
 msgid "背景色"
 msgstr "배경색"
 
@@ -3769,6 +3780,13 @@ msgstr ""
 #: lib/page-affiliate-tag/affiliate-tag-func.php:38
 msgid "アフィリエイトタグサンプル"
 msgstr "제휴 태그 샘플"
+<<<<<<< Updated upstream
+=======
+
+#: lib/page-affiliate-tag/affiliate-tag-func.php:39
+msgid "Simplicity | 内部SEO施策済みのシンプルな無料WordPressテーマ"
+msgstr "Simplicity | SEO가 적용된 간단한 무료 워드프레스 테마"
+>>>>>>> Stashed changes
 
 #: lib/page-affiliate-tag/form-delete.php:26
 #: lib/page-func-text/form-delete.php:26
@@ -3820,7 +3838,11 @@ msgid ""
 msgstr "편집기의 드롭다운 목록에 제휴 태그를 표시하지 않으려면 비활성화합니다."
 
 #: lib/page-affiliate-tag/form.php:46 lib/page-func-text/form.php:48
+<<<<<<< Updated upstream
 #: lib/page-speech-balloon/form.php:152
+=======
+#: lib/page-item-ranking/form.php:86 lib/page-speech-balloon/form.php:152
+>>>>>>> Stashed changes
 msgid "保存"
 msgstr "저장"
 
@@ -4219,6 +4241,13 @@ msgstr "이미지 태그를 입력합니다. ※공백으로 두면 표시되지
 #: lib/page-item-ranking/form.php:158
 msgid "説明文（※必須）"
 msgstr "설명 (※필수)"
+<<<<<<< Updated upstream
+=======
+
+#: lib/page-item-ranking/form.php:160
+msgid "商品等の説明文を入力してください。"
+msgstr "상품 등의 설명을 입력해주세요."
+>>>>>>> Stashed changes
 
 #: lib/page-item-ranking/form.php:161
 msgid "紹介文を入力してください。タグ・ショートコード入力も可能です。"
@@ -10285,6 +10314,13 @@ msgstr "GitHub"
 #: lib/page-settings/sns-follow-forms.php:86
 msgid "CodePen"
 msgstr "CodePen"
+<<<<<<< Updated upstream
+=======
+
+#: lib/page-settings/sns-follow-forms.php:88
+msgid "から設定"
+msgstr "에서 설정"
+>>>>>>> Stashed changes
 
 #: lib/page-settings/sns-follow-forms.php:89
 msgid "現ログインユーザーのSNSフォローページを設定します。"
@@ -10815,6 +10851,14 @@ msgstr ""
 "https 사이트라면 http 사이트일 때의 공유수를 가져오겠습니까(http의 경우는 "
 "https)? SNS 서버에 2배의 부하를 주고, 가져오는데 시간이 걸리므로 캐시를 활성"
 "화하지 않으면 사용할 수 없는 사양입니다."
+<<<<<<< Updated upstream
+=======
+
+#: lib/page-settings/sns-share-funcs-bottom.php:22
+#: lib/page-settings/sns-share-funcs-top.php:26
+msgid "シェアする"
+msgstr "공유하기"
+>>>>>>> Stashed changes
 
 #: lib/page-settings/title-forms.php:13
 msgid "フロントページ設定"
@@ -13402,21 +13446,27 @@ msgstr "복사"
 #~ msgid "404ページ一覧"
 #~ msgstr "404 페이지 목록"
 
+<<<<<<< Updated upstream
 #~ msgid "Simplicity | 内部SEO施策済みのシンプルな無料WordPressテーマ"
 #~ msgstr "Simplicity | SEO가 적용된 간단한 무료 워드프레스 테마"
 
 #~ msgid "商品等の説明文を入力してください。"
 #~ msgstr "상품 등의 설명을 입력해주세요."
 
+=======
+>>>>>>> Stashed changes
 #~ msgid ""
 #~ "モバイルメニュー等を表示するための設定を行います。834px以下で表示されま"
 #~ "す。※「トップボタン」はAMPページでは表示されません。"
 #~ msgstr ""
 #~ "모바일 메뉴등을 표시하기 위한 설정입니다. 834px 이하에서 표시됩니다. ※\"상"
 #~ "단으로\" 버튼은 AMP 페이지에서는 표시되지 않습니다."
+<<<<<<< Updated upstream
 
 #~ msgid "から設定"
 #~ msgstr "에서 설정"
+=======
+>>>>>>> Stashed changes
 
 #~ msgid "SEO設定"
 #~ msgstr "SEO 설정"
