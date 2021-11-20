@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-11-20 16:59+0900\n"
-"PO-Revision-Date: 2021-11-20 17:00+0900\n"
+"PO-Revision-Date: 2021-11-20 20:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ko_KR\n"
@@ -11514,11 +11514,11 @@ msgstr "[SAMPLE 004] 회사원 여자 (오른쪽)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:176
 msgid "[SAMPLE 005] 悩むおじさん（左）"
-msgstr "[SAMPLE 005] 고민하는 남자 (왼쪽)"
+msgstr "[SAMPLE 005] 고민하는 할아버지 (왼쪽)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:186
-msgid "[SAMPLE 006] 悩むおばさん（左）"
-msgstr "[SAMPLE 006] 고민하는 여자 (왼쪽)"
+msgid "[SAMPLE 006] 悩むおばさん（右）"
+msgstr "[SAMPLE 006] 고민하는 할머니 (오른쪽)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:196
 msgid "[SAMPLE 007] 男性医師（左）"
