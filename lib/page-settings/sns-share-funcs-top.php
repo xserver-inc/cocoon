@@ -23,7 +23,7 @@ endif;
 define('OP_SNS_TOP_SHARE_MESSAGE', 'sns_top_share_message');
 if ( !function_exists( 'get_sns_top_share_message' ) ):
 function get_sns_top_share_message(){
-  return get_theme_option(OP_SNS_TOP_SHARE_MESSAGE, 'シェアする');
+  return get_theme_option(OP_SNS_TOP_SHARE_MESSAGE, __( 'シェアする', THEME_NAME ));
 }
 endif;
 
