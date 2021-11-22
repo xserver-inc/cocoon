@@ -83,7 +83,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
     generate_tips_tag(__( 'エディターのドロップダウンリストに表示しなくて良い場合は、無効にしてください。', THEME_NAME ));
     echo '<br>';
 
-    submit_button('保存');
+    submit_button(__( '保存', THEME_NAME ));
     echo '<br>';
     ?>
   </div>
@@ -157,7 +157,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
           <?php
           generate_label_tag('', __('説明文（※必須）', THEME_NAME) );
           echo '<br>';
-          generate_textarea_tag('item_ranking['.$i.'][description]', $description,  '商品等の説明文を入力してください。', 5);
+          generate_textarea_tag('item_ranking['.$i.'][description]', $description,  __( '商品等の説明文を入力してください。', THEME_NAME ), 5);
           generate_tips_tag(__( '紹介文を入力してください。タグ・ショートコード入力も可能です。', THEME_NAME ));
            ?>
         </div>

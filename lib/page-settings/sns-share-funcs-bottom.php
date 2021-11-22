@@ -19,7 +19,7 @@ endif;
 define('OP_SNS_BOTTOM_SHARE_MESSAGE', 'sns_bottom_share_message');
 if ( !function_exists( 'get_sns_bottom_share_message' ) ):
 function get_sns_bottom_share_message(){
-  return stripslashes_deep(get_theme_option(OP_SNS_BOTTOM_SHARE_MESSAGE, 'シェアする'));
+  return stripslashes_deep(get_theme_option(OP_SNS_BOTTOM_SHARE_MESSAGE, __( 'シェアする', THEME_NAME )));
 }
 endif;
 
