@@ -223,12 +223,18 @@ class OpenGraphGetter implements Iterator
               //_v($m[0]);
               $image_url = $m[1];
             }
+          //https://m.media-amazon.com/images/I/51QZhiaZqRL._AC_.jpg
+          //https://m.media-amazon.com/images/I/61Hs3z66UFL._AC_SY450_.jpg
+          } else if (preg_match('/id="landingImage" data-a-dynamic-image="\{&quot;(https:\/\/m\.media-amazon\.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m)) {
+            if (isset($m[1])) {
+              $image_url = $m[1];
+            }
           }
         }
       } else if (includes_string($HTML, 'id="imgBlkFront"')) {
         //書籍ページ用
         //https://images-fe.ssl-images-amazon.com/images/I/51aV7NaxG4L.jpg
-        $res = preg_match('/id="imgBlkFront" data-a-dynamic-image="\{&quot;(https:\/\/images-(fe|na).ssl-images-amazon.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m);
+        $res = preg_match('/id="imgBlkFront" data-a-dynamic-image="\{&quot;(https:\/\/images-(fe|na)\.ssl-images-amazon\.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m);
         if ($res && isset($m[1])) {
           $image_url = $m[1];
         }
@@ -236,14 +242,14 @@ class OpenGraphGetter implements Iterator
         //Amazon Music
         //https://m.media-amazon.com/images/I/61+mhXhVhfL._SS500_.jpg
         //https://images-na.ssl-images-amazon.com/images/I/41AFHM036KL._AC_.jpg
-        $res = preg_match('/<img.+?src="(https:\/\/m.media-amazon.com\/images\/I\/.+?)">/i', $HTML, $m);
+        $res = preg_match('/<img.+?src="(https:\/\/m\.media-amazon\.com\/images\/I\/.+?)">/i', $HTML, $m);
         if ($res && isset($m[1])) {
           $image_url = $m[1];
         }
       } else if (includes_string($HTML, 'id="ebooksImgBlkFront"')) {
         //Amazon Kindle
         //https://m.media-amazon.com/images/I/51tY7U5mUHL.jpg
-        $res = preg_match('/"(https:\/\/m.media-amazon\.com\/images\/I\/[^&"]+?\.jpg)"/i', $HTML, $m);
+        $res = preg_match('/"(https:\/\/m\.media-amazon\.com\/images\/I\/[^&"]+?\.jpg)"/i', $HTML, $m);
         if ($res && isset($m[1])) {
           $image_url = $m[1];
         }
