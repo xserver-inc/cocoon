@@ -66,6 +66,9 @@ class OpenGraphGetter implements Iterator
           'cocoon' => true,
           'user-agent' => $_SERVER['HTTP_USER_AGENT'],
         );
+        if (is_amazon_site_page($URI)) {
+          $args['user-agent'] = 'Twitterbot/1.0';
+        }
         $res = wp_remote_get( $URI, $args );
         $response_code = wp_remote_retrieve_response_code( $res );
         //echo('<pre>');

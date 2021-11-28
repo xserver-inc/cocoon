@@ -173,7 +173,7 @@ function url_to_external_ogp_blogcard_tag($url){
 
   if ( empty($ogp) ) {
     $ogp = OpenGraphGetter::fetch( $url );
-    //_v($ogp);
+    _v($ogp);
     if ( $ogp == false ) {
       $ogp = 'error';
     } else {
