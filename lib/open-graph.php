@@ -63,6 +63,12 @@ class OpenGraphGetter implements Iterator
         $args = array(
           //'sslverify' => false,
           //'redirection' => 10,
+          'headers' => [
+            'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'Accept-Encoding' => 'gzip, deflate, br',
+            'Accept-Language' => 'ja,ja-JP;q=0.9,und;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5',
+            'Cache-Control' => 'no-cache',
+          ],
           'cocoon' => true,
           'user-agent' => $_SERVER['HTTP_USER_AGENT'],
         );
