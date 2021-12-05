@@ -1,6 +1,6 @@
 /*
   Skin Name: one
-  Description: 1カラム×サイドバー
+  Description: PCでもフッターモバイルボタンが使える
   Skin URI: https://haiji-blog.com/cocoon/skin-one
   Author: haiji
   Author URI: https://haiji-blog.com/cocoon
@@ -13,30 +13,27 @@
 :root{
   --dark-box: #485056;
   --light-box: #ebebeb;
-  --dark-shadow-1: 0px 3px 4px 0px rgb(0 0 0 / 50%);
-  --dark-shadow-2: 0px 3px 3px -2px rgb(0 0 0 / 50%);
-  --light-shadow-1: 0px 2px 4px -1px rgb(0 0 0 / 40%);
-  --light-shadow-2: 0px 2px 3px -2px rgb(0 0 0 / 40%);
-  --dark-shadow-on: 0 4px 6px rgb(0 0 0 / 40%), 0 4px 5px -3px rgb(0 0 0 / 30%);
-  --light-shadow-on: 0 4px 6px rgb(0 0 0 / 30%), 0 4px 5px -4px rgb(0 0 0 / 20%);
+  --dark-shadow-1: 0px 3px 4px 0px rgb(0,0,0 , 50%);
+  --dark-shadow-2: 0px 3px 3px -2px rgb(0,0,0 , 50%);
+  --light-shadow-1: 0px 2px 4px -1px rgb(0,0,0 , 40%);
+  --light-shadow-2: 0px 2px 3px -2px rgb(0,0,0 , 40%);
+  --dark-shadow-on: 0 4px 6px rgb(0,0,0 , 40%), 0 4px 5px -3px rgb(0,0,0 , 30%);
+  --light-shadow-on: 0 4px 6px rgb(0,0,0 , 30%), 0 4px 5px -4px rgb(0,0,0 , 20%);
 }
 /*以下にスタイルシートを記入してください*/
 @media screen and (min-width: 1024px) {
-.is-pcmenu-on .mobile-menu-buttons {
+.is-pcmenu-on .mobile-menu-buttons.mobile-footer-menu-buttons {
   display: flex;
   align-items:center;
   margin-right: calc((100% - 450px) / 2);
   margin-left: calc((100% - 450px) / 2);
   margin-bottom: 10px;
   border-radius: 50px;
-  background: rgb(255 255 255 / 80%);
-  box-shadow: 0 0 5px rgb(54 54 54 / 35%)
+  background: rgb(255,255,255 , 80%);
+  box-shadow: 0 0 5px rgb(54,54,54 , 35%)
 }
 .is-dark-on.is-pcmenu-on .mobile-menu-buttons{
-  background: rgb(72 80 86 / 80%);
-  color: white;
-}
-.is-dark-on .mobile-menu-buttons .menu-button > a{
+  background: rgb(72,80,86 , 80%);
   color: white;
 }
 .is-pcmenu-on #footer{
@@ -54,7 +51,9 @@
 .one-fixed-sidebar:hover{
   width: 300px;
 }
-
+.is-dark-on .mobile-menu-buttons .menu-button > a{
+  color: white;
+}
 }
 @media screen and (max-width: 1023px){
 .one-fixed-sidebar{
@@ -83,7 +82,12 @@
 img{
   vertical-align: bottom;
 }
-
+.read-time {
+    text-align: right;
+    border: none;
+    margin: 0;
+    font-size: 0.65em;
+}
 .toc{
   max-width: 700px;
   width: 100%;
@@ -235,9 +239,17 @@ img{
 .a-wrap:hover .related-entry-card-thumb::before, .a-wrap:hover .carousel-entry-card-thumb::before,
 .a-wrap:hover figure.prev-post-thumb.card-thumb::before, .a-wrap:hover figure.next-post-thumb.card-thumb::before,
 .a-wrap:hover .blogcard-thumbnail::before{
-  animation: hamon  1.5s linear;
+  animation: hamon  2s linear;
   animation-fill-mode: forwards;
   display: block;
+}
+.ranking-visible a.popular-entry-card-link.a-wrap .widget-entry-card-thumb::before{
+  display: block;
+  border-radius: 0;
+}
+.ranking-visible a.popular-entry-card-link.a-wrap:hover .widget-entry-card-thumb::before{
+  animation: hamon2 1.5s linear;
+  animation-fill-mode: forwards;
 }
 .blogcard{
   border-radius: 0;
@@ -341,7 +353,7 @@ div#pager-post-navi{
  }
 /* DEBUG: 全体的に影を付ける */
 .is-shadow-on div#header-container{
-    box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+    box-shadow: 0 2px 8px rgb(0,0,0 , 15%);
     position: relative!important;
     z-index: 2;
 }
@@ -402,10 +414,28 @@ div#pager-post-navi{
   color: #d1d1d1;
 }
 /* DEBUG: ダーク */
-.is-dark-on .common-icon-box, .is-dark-on .box-menu,
-.is-dark-on .article .micro-balloon, .is-dark-on .toggle-button, .is-dark-on input, .is-dark-on .toc, .is-dark-on .recent-comment-content,
+.is-dark-on .common-icon-box, .is-dark-on .box-menu, .is-dark-on input,
+.is-dark-on .toc, .is-dark-on .recent-comment-content,
 .is-dark-on blockquote, .is-dark-on div.speech-balloon, .is-dark-on select{
   background: var(--dark-box);
+}
+label.toggle-button{
+  color: var(--dark-box);
+}
+.is-dark-on .micro-balloon:not([class*=mc-]){
+  background: var(--dark-box);
+}
+.is-dark-on .micro-bottom.micro-balloon:not([class*=mc-])::after{
+  border-bottom-color: var(--dark-box);
+  border-top-color: transparent;
+}
+.is-dark-on .micro-balloon:not([class*=mc-])::after{
+  border-top-color: var(--dark-box);
+}
+.is-dark-on .search-form div.sform{
+  background: var(--dark-box);
+  color: white;
+  border: 1px solid #6e6f70;
 }
 .is-dark-on .marker{
   background: #bdbd0c;
@@ -434,14 +464,8 @@ div#pager-post-navi{
 .is-dark-on .sticky, .is-dark-on .label-box-label{
   color: #545454;
 }
-.is-dark-on .micro-top.micro-balloon:after{
-  border-top-color: var(--dark-box);
-}
-.is-dark-on .micro-bottom.micro-balloon:after{
-  border-bottom-color: var(--dark-box);
-}
 .is-dark-on .mobile-menu-buttons{
-  background: rgb(72 80 86 );
+  background: rgb(72,80,86);
   color: white;
 }
 .is-dark-on .speech-balloon::after{
@@ -519,7 +543,7 @@ kbd {
     margin: 5px 10px;
     background: #646b70;
     border-radius: 2px;
-    box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 50%);
+    box-shadow: 0px 1px 3px 1px rgb(0,0,0 , 50%);
     color: white;
     text-align: center;
     line-height: 35px;
@@ -546,7 +570,8 @@ code {
 .is-border-0  textarea, .is-border-0 select, .is-border-0 .list-more-button, .is-border-0 .tagcloud a, .is-border-0 .tag-link,
 .is-border-0  .btn-wrap > a:not(.btn-wrap-circle > a), .is-border-0 .go-to-top-button, .is-border-0 .sns-share-buttons a, .is-border-0 .sns-follow-buttons a,
 .is-border-0 .author-box, .is-border-0 .page-numbers, .is-border-0 .widget-entry-cards .a-wrap, .is-border-0 .wp-block-cocoon-blocks-info-box.block-box,
-.is-border-0 .index-tab-buttons .index-tab-button, .is-border-0 .page-numbers, .is-border-0 .pagination-next-link, .is-border-0 .comment-btn, .is-border-0 .cta-button a{
+.is-border-0 .index-tab-buttons .index-tab-button, .is-border-0 .page-numbers, .is-border-0 .pagination-next-link, .is-border-0 .comment-btn, .is-border-0 .cta-button a,
+.is-border-0 a.btn{
   border-radius: 0;
 }
 #header-container #navi .navi-in a:hover{
@@ -587,6 +612,17 @@ code {
   0% {
     transform: scale(0.1);
     opacity: 0.2;
+  }
+  100% {
+    transform: scale(50);
+    opacity: 0.65;
+  }
+}
+@keyframes hamon2 {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.2;
+    content: '';
   }
   100% {
     transform: scale(35);

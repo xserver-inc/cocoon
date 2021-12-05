@@ -1,4 +1,8 @@
 <?php
+//one WordPress Theme Cocoon skin is derived from SILK WordPress Theme Cocoon skin, Copyright 2020 roko(https://dateqa.com/cocoon/)
+//SILK WordPress Theme Cocoon sukin is distributed under the terms of the GNU GPL
+//& one WordPress Theme Cocoon skin is derived from Simple-Darkmode WordPress Theme Cocoon skin, Copyright 2021 hiro(https://hirosite.com/)
+//Simple-Dark-mode WordPress Theme Cocoon sukin is distributed under the terms of the GNU GPL
 /* ブロックエディターに適用するCSSを登録 */
 add_theme_support( 'editor-styles' );
 
@@ -12,7 +16,7 @@ add_action('get_template_part_tmp/css-custom', function() {
   $content_color = get_site_background_color() ?: '#fff';
   $color = get_site_key_color() ?: '#5be3ff';
   $text_color = get_site_key_text_color() ?: '#ffffff';
-  $content_text_color = get_site_text_color() ?: 'rgb(66 66 66)';
+  $content_text_color = get_site_text_color() ?: 'rgb(66,66,66)';
 
 
   echo '
@@ -79,7 +83,7 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
 .content, .blogcard-label, .entry-card, .related-entry-card, .blogcard, .widget-entry-cards .a-wrap,
 .post-navi-square.post-navi-border a, .index-tab-buttons .index-tab-button, .pager-post-navi a, .sidebar h3,
 .widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a,
-.recent-comment, .list-more-button, .menu-drawer a, .slick-initialized .slick-slide, .pager-post-navi a div, .menu-content{
+.recent-comment, .list-more-button, .menu-drawer a, .slick-initialized .slick-slide, .pager-post-navi a div, .menu-content, .is-dark-on .search-form div.sbtn::after{
   color:'.$content_text_color.';
 }
 
@@ -141,7 +145,7 @@ function one_customize_register( $wp_customize ) {
         'type'        => 'checkbox',
     )));
     $wp_customize->add_setting( 'checkbox_one4', array(
-        'default'  => true,
+        'default'  => false,
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one4', array(
@@ -198,49 +202,42 @@ function my_class_names( $classes ) {
  $classes[] = 'is-count-on';
  return $classes;
 } }
- else { }
  if (get_theme_mod('checkbox_one2',true)) {
 add_filter( 'body_class', 'my_class_names2' );
 function my_class_names2( $classes ) {
   $classes[] = 'is-pcmenu-on';
   return $classes;
  } }
-  else { }
   if (get_theme_mod('checkbox_one3',true)) {
   add_filter( 'body_class', 'my_class_names3' );
   function my_class_names3( $classes ) {
    $classes[] = 'is-shadow-on';
    return $classes;
   } }
-   else { }
-  if (get_theme_mod('checkbox_one4',true)) {
+  if (get_theme_mod('checkbox_one4',false)) {
    add_filter( 'body_class', 'my_class_names4' );
    function my_class_names4( $classes ) {
     $classes[] = 'is-dark-on';
     return $classes;
    } }
-    else { }
     if (get_theme_mod('checkbox_one5',true)) {
      add_filter( 'body_class', 'my_class_names5' );
      function my_class_names5( $classes ) {
       $classes[] = 'is-border-0';
       return $classes;
      } }
-      else { }
       if (get_theme_mod('checkbox_one6',true)) {
        add_filter( 'body_class', 'my_class_names6' );
        function my_class_names6( $classes ) {
         $classes[] = 'is-main-serif';
         return $classes;
        } }
-        else { }
       if (get_theme_mod('checkbox_one7',true)) {
        add_filter( 'body_class', 'my_class_names7' );
        function my_class_names7( $classes ) {
         $classes[] = 'is-sidebar-serif';
         return $classes;
        } }
-        else { }
 
 
 //ウィジェットエリア追加
