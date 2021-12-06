@@ -14,7 +14,7 @@ add_action( 'enqueue_block_editor_assets', 'org_theme_add_editor_styles' );
 
 add_action('get_template_part_tmp/css-custom', function() {
   $content_color = get_site_background_color() ?: '#fff';
-  $color = get_site_key_color() ?: '#5be3ff';
+  $color = get_site_key_color() ?: 'rgb(91,227,255)';
   $text_color = get_site_key_text_color() ?: '#ffffff';
   $content_text_color = get_site_text_color() ?: 'rgb(66,66,66)';
 
@@ -59,7 +59,7 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
   background-color: '.colorcode_to_rgb_css_code(get_site_key_color(),0.2 ).';
 }
  .navi-in a::before{
-   background: '.colorcode_to_rgb_css_code(get_site_key_color(),0.65 ).';
+   background: '.colorcode_to_rgb_css_code(get_site_key_color(),0.6 ).';
  }
   .entry-card-thumb::before, .widget-entry-card-thumb::before, figure.prev-post-thumb.card-thumb::before,
   figure.next-post-thumb.card-thumb::before, #content-in .article h2 ::before,

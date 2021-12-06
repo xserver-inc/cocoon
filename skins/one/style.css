@@ -113,13 +113,13 @@ img{
    left: 0;
    transform: translate(-50%,-50%) rotateZ(45deg);
    border-radius: 2px;
-   width: 1em;
+   width: auto;
    height: 1em;
    content: '';
  }
 .is-count-on #content-in .article h2::before {
     content: counter(x) ".";
-    font-size: 2em;
+    font-size: 1.8em;
     display: inline-block;
     position: relative;
     font-weight: normal;
@@ -364,7 +364,7 @@ div#pager-post-navi{
 .is-shadow-on .entry-card-thumb, .is-shadow-on .widget-entry-card-thumb, .is-shadow-on .related-entry-card-thumb, .is-shadow-on .carousel-entry-card-thumb,
 .is-shadow-on figure.prev-post-thumb.card-thumb, .is-shadow-on figure.next-post-thumb.card-thumb, .is-shadow-on .recommended .navi-entry-cards a,
 .is-shadow-on .one-fixed-sidebar img,  .is-shadow-on .go-to-top-button, .is-shadow-on .btn, .is-shadow-on  .ranking-item-link-buttons a, .btn-wrap > a,
-.is-shadow-on  .wp-block-freeform .btn-wrap > a, .is-shadow-on .appeal-content .appeal-button{
+.is-shadow-on  .wp-block-freeform .btn-wrap > a, .is-shadow-on .appeal-content .appeal-button, .is-shadow-on figure.eye-catch{
   box-shadow: var(--light-shadow-1);
 }
 .is-shadow-on .sns-share-buttons a, .is-shadow-on .sns-follow-buttons a, .is-shadow-on .pagination-next-link, .is-shadow-on .comment-btn,
@@ -376,7 +376,7 @@ div#pager-post-navi{
 .is-shadow-on.is-dark-on .entry-card-thumb, .is-shadow-on.is-dark-on .widget-entry-card-thumb, .is-shadow-on.is-dark-on .related-entry-card-thumb, .is-shadow-on.is-dark-on .carousel-entry-card-thumb,
 .is-shadow-on.is-dark-on figure.prev-post-thumb.card-thumb, .is-shadow-on.is-dark-on figure.next-post-thumb.card-thumb, .is-shadow-on.is-dark-on .recommended .navi-entry-cards a,
 .is-shadow-on.is-dark-on .one-fixed-sidebar img,  .is-shadow-on.is-dark-on .go-to-top-button, .is-shadow-on.is-dark-on .btn, .is-shadow-on.is-dark-on  .ranking-item-link-buttons a,
-.is-shadow-on.is-dark-on .btn-wrap > a, .is-shadow-on.is-dark-on  .wp-block-freeform .btn-wrap > a, .is-shadow-on.is-dark-on .appeal-content .appeal-button{
+.is-shadow-on.is-dark-on .btn-wrap > a, .is-shadow-on.is-dark-on  .wp-block-freeform .btn-wrap > a, .is-shadow-on.is-dark-on .appeal-content .appeal-button, .is-shadow-on.is-dark-on figure.eye-catch{
   box-shadow: var(--dark-shadow-1);
 }
 .is-shadow-on.is-dark-on .sns-share-buttons a, .is-shadow-on.is-dark-on .sns-follow-buttons a, .is-shadow-on.is-dark-on .pagination-next-link, .is-shadow-on.is-dark-on .comment-btn,
@@ -416,7 +416,8 @@ div#pager-post-navi{
 /* DEBUG: ダーク */
 .is-dark-on .common-icon-box, .is-dark-on .box-menu, .is-dark-on input,
 .is-dark-on .toc, .is-dark-on .recent-comment-content,
-.is-dark-on blockquote, .is-dark-on div.speech-balloon, .is-dark-on select{
+.is-dark-on blockquote, .is-dark-on div.speech-balloon, .is-dark-on select,
+.is-dark-on .information-box, .is-dark-on .question-box, .is-dark-on .alert-box, .is-dark-on .memo-box, .is-dark-on .comment-box{
   background: var(--dark-box);
 }
 label.toggle-button{
@@ -571,7 +572,9 @@ code {
 .is-border-0  .btn-wrap > a:not(.btn-wrap-circle > a), .is-border-0 .go-to-top-button, .is-border-0 .sns-share-buttons a, .is-border-0 .sns-follow-buttons a,
 .is-border-0 .author-box, .is-border-0 .page-numbers, .is-border-0 .widget-entry-cards .a-wrap, .is-border-0 .wp-block-cocoon-blocks-info-box.block-box,
 .is-border-0 .index-tab-buttons .index-tab-button, .is-border-0 .page-numbers, .is-border-0 .pagination-next-link, .is-border-0 .comment-btn, .is-border-0 .cta-button a,
-.is-border-0 a.btn{
+.is-border-0 a.btn, .is-border-0 .information-box, .is-border-0 .question-box, .is-border-0 .alert-box, .is-border-0 .memo-box, .is-border-0 .comment-box,
+.is-border-0 .primary-box, .is-border-0 .secondary-box, .is-border-0 .success-box, .is-border-0 .info-box, .is-border-0 .warning-box, .is-border-0 .danger-box,
+.is-border-0 .light-box, .is-border-0 .dark-box{
   border-radius: 0;
 }
 #header-container #navi .navi-in a:hover{
@@ -627,6 +630,7 @@ code {
   100% {
     transform: scale(35);
     opacity: 0.65;
+    content: '';
   }
 }
 @keyframes navimaru {
@@ -644,7 +648,4 @@ code {
 }
 /* DEBUG: ダークモード */
 @media (prefers-color-scheme: dark){
-  .article .author-box{
-    background: black;
-  }
 }
