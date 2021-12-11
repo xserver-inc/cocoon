@@ -1,0 +1,651 @@
+/*
+  Skin Name: one
+  Description: PCでもフッターモバイルボタンが使える
+  Skin URI: https://haiji-blog.com/cocoon/skin-one
+  Author: haiji
+  Author URI: https://haiji-blog.com/cocoon
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-template.png
+  Version: 1.0.0
+  Priority: 9900000
+  Visibility: false
+*/
+
+:root{
+  --dark-box: #485056;
+  --light-box: #ebebeb;
+  --dark-shadow-1: 0px 3px 4px 0px rgb(0,0,0 , 50%);
+  --dark-shadow-2: 0px 3px 3px -2px rgb(0,0,0 , 50%);
+  --light-shadow-1: 0px 2px 4px -1px rgb(0,0,0 , 40%);
+  --light-shadow-2: 0px 2px 3px -2px rgb(0,0,0 , 40%);
+  --dark-shadow-on: 0 4px 6px rgb(0,0,0 , 40%), 0 4px 5px -3px rgb(0,0,0 , 30%);
+  --light-shadow-on: 0 4px 6px rgb(0,0,0 , 30%), 0 4px 5px -4px rgb(0,0,0 , 20%);
+}
+/*以下にスタイルシートを記入してください*/
+@media screen and (min-width: 1024px) {
+.is-pcmenu-on .mobile-menu-buttons.mobile-footer-menu-buttons {
+  display: flex;
+  align-items:center;
+  margin-right: calc((100% - 450px) / 2);
+  margin-left: calc((100% - 450px) / 2);
+  margin-bottom: 10px;
+  border-radius: 50px;
+  background: rgb(255,255,255 , 80%);
+  box-shadow: 0 0 5px rgb(54,54,54 , 35%)
+}
+.is-dark-on.is-pcmenu-on .mobile-menu-buttons{
+  background: rgb(72,80,86 , 80%);
+  color: white;
+}
+.is-pcmenu-on #footer{
+  padding-bottom: 60px;
+}
+.one-fixed-sidebar{
+  display: block;
+  position: fixed;
+  bottom: 5em;
+  right: 2em;
+  width: 120px;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+.one-fixed-sidebar:hover{
+  width: 300px;
+}
+.is-dark-on .mobile-menu-buttons .menu-button > a{
+  color: white;
+}
+}
+@media screen and (max-width: 1023px){
+.one-fixed-sidebar{
+  display: none;
+}}
+.appeal{
+  position: relative;
+}
+.appeal-content{
+  background: initial;
+  z-index: 1;
+  color: white;
+}
+.appeal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #5454546e;
+}
+.index-tab-buttons .index-tab-button{
+  transition: all ease 0.3s;
+}
+img{
+  vertical-align: bottom;
+}
+.read-time {
+    text-align: right;
+    border: none;
+    margin: 0;
+    font-size: 0.65em;
+}
+.toc{
+  max-width: 700px;
+  width: 100%;
+  border: none;
+  background: #f9f9f9;
+}
+.toc-list>li>a{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+/* DEBUG: 見出し */
+ #content-in .article h2 {
+    counter-increment: x;
+    background: transparent;
+    color: currentColor;
+    font-size: 26px;
+    padding-left: 1em;
+    position: relative;
+}
+ #content-in .article h2::before{
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translate(-50%,-50%) rotateZ(45deg);
+   border-radius: 2px;
+   width: auto;
+   height: 1em;
+   content: '';
+ }
+.is-count-on #content-in .article h2::before {
+    content: counter(x) ".";
+    font-size: 1.8em;
+    display: inline-block;
+    position: relative;
+    font-weight: normal;
+    font-family: inherit;
+    transform: rotateZ(0);
+    background: transparent;
+}
+.is-count-on #content-in .article h2{
+  padding-left: 0;
+  font-size: 24px;
+}
+.article h3{
+  position: relative;
+  border-color: #7a7a7a;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+.article h3::before{
+    content: '';
+    width: 7px;
+    position: absolute;
+    height: 50%;
+    left: -7px;
+    bottom: 0;
+}
+.article h4::before {
+    content: '';
+    width: 0.9em;
+    height: 0.9em;
+    border-radius: 2px;
+    bottom: 50%;
+    left: 0;
+    position: absolute;
+    transform: translate(0,50%) rotateZ(45deg);
+}
+.article h4, .article h5, .article h6, .sidebar h3{
+  border: none;
+  position: relative;
+  padding-left: 1.5em;
+}
+.sidebar h3{
+  margin-bottom: 0;
+}
+.article h5::before, .article h6::before, .sidebar h3::before{
+  content: '';
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 2px;
+  bottom: 50%;
+  left: 0;
+  position: absolute;
+  transform: translate(0,50%) rotateZ(45deg);
+}
+.is-main-serif .article h2, .is-main-serif .article h3, .is-main-serif .article h4, .is-main-serif .article h5, .is-main-serif .article h6,
+.is-sidebar-serif #sidebar h3, .is-sidebar-serif #sidebar-menu-content h3{
+  font-family: serif;
+}
+/* DEBUG: 改ページ */
+.page-numbers{
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  border-radius: 50px;
+}
+.author-box{
+  font-size: 98%;
+}
+.article .author-box{
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.author-box .sns-follow-buttons a.follow-button{
+  font-size: 19px;
+  width: 30px;
+  height: 30px;
+  color: #484848;
+  border-radius: 30px;
+  background: white;
+  border-color: #939393;
+}
+.author-content{
+  margin-left: auto;
+  text-align: left;
+}
+.author-thumb{
+  float: none;
+  margin: 1em auto 0;
+}
+.author-name,.author-widget-name{
+  text-align: center;
+}
+.entry-card-thumb, .widget-entry-card-thumb,
+.related-entry-card-thumb, .carousel-entry-card-thumb, figure.prev-post-thumb.card-thumb, figure.next-post-thumb.card-thumb, .blogcard-thumbnail{
+  position: relative;
+  overflow: hidden;
+}
+
+.entry-card-thumb::before, .widget-entry-card-thumb::before,
+.related-entry-card-thumb::before, .carousel-entry-card-thumb::before, figure.prev-post-thumb.card-thumb::before, figure.next-post-thumb.card-thumb::before,
+.blogcard-thumbnail::before{
+  content: '';
+  display: none;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+}
+.a-wrap:hover{
+  background-color: inherit;
+  color: inherit;
+}
+.a-wrap:hover .entry-card-thumb::before, .a-wrap:hover .widget-entry-card-thumb::before,
+.a-wrap:hover .related-entry-card-thumb::before, .a-wrap:hover .carousel-entry-card-thumb::before,
+.a-wrap:hover figure.prev-post-thumb.card-thumb::before, .a-wrap:hover figure.next-post-thumb.card-thumb::before,
+.a-wrap:hover .blogcard-thumbnail::before{
+  animation: hamon  2s linear;
+  animation-fill-mode: forwards;
+  display: block;
+}
+.ranking-visible a.popular-entry-card-link.a-wrap .widget-entry-card-thumb::before{
+  display: block;
+  border-radius: 0;
+}
+.ranking-visible a.popular-entry-card-link.a-wrap:hover .widget-entry-card-thumb::before{
+  animation: hamon2 1.5s linear;
+  animation-fill-mode: forwards;
+}
+.blogcard{
+  border-radius: 0;
+}
+.blogcard-label{
+  font-size: 14px;
+}
+img.blogcard-favicon-image{
+  vertical-align: baseline;
+}
+.border-partition a:first-of-type{
+  border-top: 1px dashed;
+  } .border-partition a{
+  border-bottom: 1px dashed;
+}
+body .content-in .widget-entry-cards .a-wrap{
+  margin-bottom: 7px;
+}
+/* DEBUG: snsボタン */
+.sns-share-buttons a, .sns-follow-buttons a{
+  color: #5e5e5e;
+  background: #dfdfdf;
+}
+.sns-share-buttons a:hover, .sns-follow-buttons a:hover{
+  opacity: 1;
+  background: #b9b9b9;
+}
+.bc-brand-color .sns-share-buttons a, .bc-brand-color .sns-follow-buttons a{
+  color: white;
+  border: none;
+  background: #333;
+}
+.bc-brand-color .sns-share-buttons a:hover, .bc-brand-color .sns-follow-buttons a:hover{
+  background: white;
+  color: #2a2a2a;
+}
+.bc-brand-color-white.sns-share a, .bc-brand-color-white.sns-follow a{
+  border-color: transparent!important;
+  border-width: 2px;
+}
+.bc-brand-color-white.sns-share a:hover, .bc-brand-color-white.sns-follow  a:hover{
+  border-color: inherit!important;
+  background: white;
+  opacity: 1;
+}
+.sns-follow-buttons a{
+  margin: 2px;
+}
+.sns-follow.sf-bottom .sns-follow-buttons.sns-buttons{
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.sns-follow-buttons a{
+  width: 14%;
+  font-size: 22px;
+  height: 1.6em;
+  margin-bottom: 15px;
+}
+#footer .sns-follow a{
+  color: #ffffff;
+  background: #c9c9c9;
+  border-color: #afafaf;
+}
+#footer .sns-follow a:hover{
+  color: #646464;
+  background: #ededed;
+}
+.pagination-next-link, .comment-btn{
+  width: 300px;
+  margin: auto;
+  font-size: 1em;
+  font-family: inherit;
+  padding: 0.4em;
+  border-radius: 50px;
+}
+div#pager-post-navi{
+  max-width: 600px;
+  margin: 1em auto;
+}
+.post-navi-default.pager-post-navi a{
+  margin-bottom: 1em;
+}
+.post-navi-default.post-navi-border a{
+  border: 1px solid;
+}
+.post-navi-default.post-navi-border .next-post{
+  border-top-width: 1px;
+}
+.pager-post-navi.post-navi-square.post-navi-border a{
+  margin:0 0.5em;
+
+}
+.post-navi-square.post-navi-border a:last-child{
+  border-left-width: 1px;
+}
+div#pager-post-navi{
+  max-width: calc(600px + 2em);
+}
+ .go-to-top-button{
+   border-radius: 50%;
+ }
+/* DEBUG: 全体的に影を付ける */
+.is-shadow-on div#header-container{
+    box-shadow: 0 2px 8px rgb(0,0,0 , 15%);
+    position: relative!important;
+    z-index: 2;
+}
+.is-shadow-on div#header-container.fixed-header{
+  position: fixed!important;
+}
+
+.is-shadow-on .entry-card-thumb, .is-shadow-on .widget-entry-card-thumb, .is-shadow-on .related-entry-card-thumb, .is-shadow-on .carousel-entry-card-thumb,
+.is-shadow-on figure.prev-post-thumb.card-thumb, .is-shadow-on figure.next-post-thumb.card-thumb, .is-shadow-on .recommended .navi-entry-cards a,
+.is-shadow-on .one-fixed-sidebar img,  .is-shadow-on .go-to-top-button, .is-shadow-on .btn, .is-shadow-on  .ranking-item-link-buttons a, .btn-wrap > a,
+.is-shadow-on  .wp-block-freeform .btn-wrap > a, .is-shadow-on .appeal-content .appeal-button, .is-shadow-on figure.eye-catch{
+  box-shadow: var(--light-shadow-1);
+}
+.is-shadow-on .sns-share-buttons a, .is-shadow-on .sns-follow-buttons a, .is-shadow-on .pagination-next-link, .is-shadow-on .comment-btn,
+.is-shadow-on .page-numbers, .tagcloud a, .is-shadow-on .pagination-next-link, .is-shadow-on .comment-reply-link, .is-shadow-on .ecb-entry-border a,
+.is-shadow-on .recb-entry-border .related-entry-card-wrap, .is-shadow-on .border-square .a-wrap, .is-shadow-on .post-navi-default.post-navi-border a,
+.is-shadow-on .pager-post-navi.post-navi-square.post-navi-border a, .is-shadow-on .ccb-carousel-border .a-wrap, .is-shadow-on .blogcard, .is-shadow-on .cta-button a{
+  box-shadow: var(--light-shadow-2);
+}
+.is-shadow-on.is-dark-on .entry-card-thumb, .is-shadow-on.is-dark-on .widget-entry-card-thumb, .is-shadow-on.is-dark-on .related-entry-card-thumb, .is-shadow-on.is-dark-on .carousel-entry-card-thumb,
+.is-shadow-on.is-dark-on figure.prev-post-thumb.card-thumb, .is-shadow-on.is-dark-on figure.next-post-thumb.card-thumb, .is-shadow-on.is-dark-on .recommended .navi-entry-cards a,
+.is-shadow-on.is-dark-on .one-fixed-sidebar img,  .is-shadow-on.is-dark-on .go-to-top-button, .is-shadow-on.is-dark-on .btn, .is-shadow-on.is-dark-on  .ranking-item-link-buttons a,
+.is-shadow-on.is-dark-on .btn-wrap > a, .is-shadow-on.is-dark-on  .wp-block-freeform .btn-wrap > a, .is-shadow-on.is-dark-on .appeal-content .appeal-button, .is-shadow-on.is-dark-on figure.eye-catch{
+  box-shadow: var(--dark-shadow-1);
+}
+.is-shadow-on.is-dark-on .sns-share-buttons a, .is-shadow-on.is-dark-on .sns-follow-buttons a, .is-shadow-on.is-dark-on .pagination-next-link, .is-shadow-on.is-dark-on .comment-btn,
+.is-shadow-on.is-dark-on .page-numbers, .tagcloud a, .is-shadow-on.is-dark-on .pagination-next-link, .is-shadow-on.is-dark-on .comment-reply-link, .is-shadow-on.is-dark-on .ecb-entry-border a,
+.is-shadow-on.is-dark-on .recb-entry-border .related-entry-card-wrap, .is-shadow-on.is-dark-on .border-square .a-wrap, .is-shadow-on.is-dark-on .post-navi-default.post-navi-border a,
+.is-shadow-on.is-dark-on .pager-post-navi.post-navi-square.post-navi-border a, .is-shadow-on.is-dark-on .ccb-carousel-border .a-wrap,
+.is-shadow-on.is-dark-on .blogcard, .is-shadow-on.is-dark-on .cta-button a{
+  box-shadow: var(--dark-shadow-2);
+}
+
+.is-shadow-on .ecb-entry-border a .entry-card-thumb, .is-shadow-on .recb-entry-border a .related-entry-card-thumb,
+.is-shadow-on .border-square .widget-entry-card-thumb, .is-shadow-on .post-navi-default.post-navi-border a .card-thumb,
+.is-shadow-on .pager-post-navi.post-navi-square.post-navi-border a .card-thumb, .is-shadow-on .ccb-carousel-border .a-wrap .card-thumb,
+.is-shadow-on.is-dark-on .ecb-entry-border a .entry-card-thumb, .is-shadow-on.is-dark-on .recb-entry-border a .related-entry-card-thumb,
+.is-shadow-on.is-dark-on .border-square .widget-entry-card-thumb, .is-shadow-on.is-dark-on .post-navi-default.post-navi-border a .card-thumb,
+.is-shadow-on.is-dark-on .pager-post-navi.post-navi-square.post-navi-border a .card-thumb, .is-shadow-on.is-dark-on .ccb-carousel-border .a-wrap .card-thumb,
+.ecb-entry-border a .entry-card-thumb, .recb-entry-border a .related-entry-card-thumb,  .border-square .widget-entry-card-thumb,
+.post-navi-default.post-navi-border a .card-thumb, .pager-post-navi.post-navi-square.post-navi-border a .card-thumb, .ccb-carousel-border .a-wrap .card-thumb{
+  box-shadow: 0 0 0;
+}
+.is-shadow-on .ecb-entry-border a:hover, .recb-entry-border .related-entry-card-wrap:hover,  .border-square .a-wrap:hover,
+.pager-post-navi.post-navi-square.post-navi-border a:hover, .post-navi-default.post-navi-border a:hover, .ccb-carousel-border .a-wrap:hover,
+.blogcard-wrap:hover{
+  box-shadow: var(--light-shadow-on);
+}
+.is-shadow-on.is-dark-on .ecb-entry-border a:hover, .is-shadow-on.is-dark-on .recb-entry-border .related-entry-card-wrap:hover,  .is-shadow-on.is-dark-on .border-square .a-wrap:hover,
+.is-shadow-on.is-dark-on .pager-post-navi.post-navi-square.post-navi-border a:hover, .is-shadow-on.is-dark-on .post-navi-default.post-navi-border a:hover,
+.is-shadow-on.is-dark-on .ccb-carousel-border .a-wrap:hover, .is-shadow-on.is-dark-on .blogcard-wrap:hover{
+  box-shadow: var(--dark-shadow-on);
+}
+.slick-track{
+  margin-bottom: 7px;
+}
+.is-dark-on select{
+  color: #d1d1d1;
+}
+/* DEBUG: ダーク */
+.is-dark-on .common-icon-box, .is-dark-on .box-menu, .is-dark-on input,
+.is-dark-on .toc, .is-dark-on .recent-comment-content,
+.is-dark-on blockquote, .is-dark-on div.speech-balloon, .is-dark-on select,
+.is-dark-on .information-box, .is-dark-on .question-box, .is-dark-on .alert-box, .is-dark-on .memo-box, .is-dark-on .comment-box{
+  background: var(--dark-box);
+}
+label.toggle-button{
+  color: var(--dark-box);
+}
+.is-dark-on .micro-balloon:not([class*=mc-]){
+  background: var(--dark-box);
+}
+.is-dark-on .micro-bottom.micro-balloon:not([class*=mc-])::after{
+  border-bottom-color: var(--dark-box);
+  border-top-color: transparent;
+}
+.is-dark-on .micro-balloon:not([class*=mc-])::after{
+  border-top-color: var(--dark-box);
+}
+.is-dark-on .search-form div.sform{
+  background: var(--dark-box);
+  color: white;
+  border: 1px solid #6e6f70;
+}
+.is-dark-on .marker{
+  background: #bdbd0c;
+}
+.is-dark-on .marker-under {
+    background: linear-gradient(transparent 60%, #bdbd0c 60%);
+}
+.is-dark-on .marker-red {
+    background-color: #e56769;
+}
+.is-dark-on .marker-under-red {
+    background: linear-gradient(transparent 60%, #e56769 60%);
+}
+.is-dark-on .marker-blue {
+    background-color: #2d91d3;
+}
+.is-dark-on .marker-under-blue {
+    background: linear-gradient(transparent 60%, #2d91d3 60%);
+}
+ .is-dark-on .recent-comment-content::after{
+   border-bottom-color: var(--dark-box);
+ }
+.is-dark-on .box-menu, .is-dark-on .toc li a{
+  color: white;
+}
+.is-dark-on .sticky, .is-dark-on .label-box-label{
+  color: #545454;
+}
+.is-dark-on .mobile-menu-buttons{
+  background: rgb(72,80,86);
+  color: white;
+}
+.is-dark-on .speech-balloon::after{
+  border-right-color: var(--dark-box);
+}
+.is-dark-on .sbp-r .speech-balloon::after{
+  border-left-color: var(--dark-box);
+}
+.is-dark-on .sbs-line.sbp-r .speech-balloon::before,.is-dark-on  .sbs-line.sbp-r .speech-balloon::after{
+  border-left-color: #85e249;
+}
+.is-dark-on .sbs-think.sbp-r .speech-balloon::after{
+  border-left-color: #ccc;
+}
+.common-icon-box::before{
+  font-size: 25px;
+}
+hr.wp-block-separator {
+    border: 0.5px dashed;
+    text-align: center;
+    overflow: visible;
+    height: 0;
+    border-width: 1px 0 0;
+    position: relative;
+}
+hr.wp-block-separator::after {
+    content: "";
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    top: -1em;
+    width: 2em;
+}
+hr.wp-block-separator::before {
+    content: "";
+    height: 0.7em;
+    line-height: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateZ(45deg);
+    width: 0.7em;
+    z-index: 1;
+    border-radius: 2px;
+}
+.widget_categories ul li a::before{
+  display: inline-block;
+    font: normal normal normal 14px/1;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f07b";
+    padding-right: 0.5em;
+    font-family: "FontAwesome", "Font Awesome 5 Free";
+}
+.widget_categories ul.children li a::before{
+  content: none;
+}
+.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a{
+  font-size: 0.9em;
+  border-bottom: 1px solid;
+}
+blockquote{
+  background: var(--light-box);
+}
+.booklink-box, .kaerebalink-box, .tomarebalink-box, .product-item-box{
+  border-width: 1px;
+}
+kbd {
+    height: 35px;
+    min-width: 35px;
+    padding: 0 10px;
+    margin: 5px 10px;
+    background: #646b70;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 1px rgb(0,0,0 , 50%);
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    display: inline-block;
+    font-family: inherit;
+}
+code {
+    font-family: inherit;
+    background: #dfdfdf;
+    padding: 2px 10px;
+    height: 20px;
+    border-radius: 3px;
+    color: #666666;
+}
+.list-more-button{
+  border-width: 1px;
+}
+/* DEBUG: border-radius を0 */
+.is-border-0 .ranking-item, .is-border-0 .timeline-box, .is-border-0 .ranking-item-link-buttons a, .is-border-0 .appeal-content .appeal-button, .is-border-0 .common-icon-box,
+.is-border-0 .blank-box, .is-border-0 .blank-box.bb-tab div.bb-label, .is-border-0 .toggle-button, .is-border-0 .toggle-checkbox:checked ~ .toggle-content,
+.is-border-0 .tab-caption-box-content, .is-border-0 .tab-caption-box-label, .is-border-0 .label-box-content, .is-border-0 .search-edit, .is-border-0 input[type="text"],
+.is-border-0 input[type="password"], .is-border-0 input[type="date"], .is-border-0 input[type="datetime"], .is-border-0 input[type="email"],
+.is-border-0 input[type="number"], .is-border-0 input[type="search"], .is-border-0 input[type="tel"], .is-border-0 input[type="time"], .is-border-0 input[type="url"],
+.is-border-0  textarea, .is-border-0 select, .is-border-0 .list-more-button, .is-border-0 .tagcloud a, .is-border-0 .tag-link,
+.is-border-0  .btn-wrap > a:not(.btn-wrap-circle > a), .is-border-0 .go-to-top-button, .is-border-0 .sns-share-buttons a, .is-border-0 .sns-follow-buttons a,
+.is-border-0 .author-box, .is-border-0 .page-numbers, .is-border-0 .widget-entry-cards .a-wrap, .is-border-0 .wp-block-cocoon-blocks-info-box.block-box,
+.is-border-0 .index-tab-buttons .index-tab-button, .is-border-0 .page-numbers, .is-border-0 .pagination-next-link, .is-border-0 .comment-btn, .is-border-0 .cta-button a,
+.is-border-0 a.btn, .is-border-0 .information-box, .is-border-0 .question-box, .is-border-0 .alert-box, .is-border-0 .memo-box, .is-border-0 .comment-box,
+.is-border-0 .primary-box, .is-border-0 .secondary-box, .is-border-0 .success-box, .is-border-0 .info-box, .is-border-0 .warning-box, .is-border-0 .danger-box,
+.is-border-0 .light-box, .is-border-0 .dark-box{
+  border-radius: 0;
+}
+#header-container #navi .navi-in a:hover{
+  background: inherit;
+}
+.navi-in a::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  content: '';
+  transition: all 0.4s ease;
+  transform:translate(-50%,-50%) scale(0) ;
+}
+.navi-in a:hover::before{
+  animation: navimaru  0.6s linear;
+  animation-fill-mode: forwards;
+}
+@media screen and (max-width: 480px){
+.author-box .author-content {
+    margin-left: inherit;
+}
+.common-icon-box::before{
+  font-size: 18px;
+}
+.pager-post-navi.post-navi-square a:last-child{
+  border-top-width: 1px;
+  margin-top: 1em;
+}
+.pager-post-navi.post-navi-square.post-navi-border a{
+  margin: auto;
+  margin-top: 0.5em;
+}
+}
+@keyframes hamon {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50);
+    opacity: 0.65;
+  }
+}
+@keyframes hamon2 {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.2;
+    content: '';
+  }
+  100% {
+    transform: scale(35);
+    opacity: 0.65;
+    content: '';
+  }
+}
+@keyframes navimaru {
+  0% {
+    transform: translate(-50%,-50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%,-50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%,-50%) scale(1.4);
+    opacity: 0;
+  }
+
+}
+/* DEBUG: ダークモード */
+@media (prefers-color-scheme: dark){
+}
