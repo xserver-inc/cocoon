@@ -117,6 +117,9 @@ class OpenGraphGetter implements Iterator
     // }
     $HTML = @mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
     //$HTML = mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8');
+    if (!$HTML) {
+      return false;
+    }
 		$doc->loadHTML($HTML);
 
     //タイトルタグからタイトル情報を取得
