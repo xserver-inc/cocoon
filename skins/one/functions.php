@@ -12,16 +12,18 @@ function org_theme_add_editor_styles() {
 }
 add_action( 'enqueue_block_editor_assets', 'org_theme_add_editor_styles' );
 
+
 add_action('get_template_part_tmp/css-custom', function() {
   $content_color = get_site_background_color() ?: '#fff';
-  $color = get_site_key_color() ?: 'rgb(91,227,255)';
+  $color = get_site_key_color() ?: 'rgb(91,227,255,1)';
   $text_color = get_site_key_text_color() ?: '#ffffff';
-  $content_text_color = get_site_text_color() ?: 'rgb(66,66,66)';
+  $content_text_color = get_site_text_color() ?: 'rgb(61,61,61,1)';
+
 
 
   echo '
 body.body,  #main.main, #sidebar.sidebar, .blogcard-label, .blogcard, .index-tab-buttons .index-tab-button, .sidebar h3, hr.wp-block-separator::after, #slide-in-sidebar, .menu-content,
-  .carousel-in, .pager-post-navi{
+  .carousel-in, .pager-post-navi, .page-numbers.dots{
     background-color: '.$content_color.';
   }
   .page-numbers,
@@ -56,10 +58,11 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
 .widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover,
 .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover, .menu-drawer a:hover{
   color: inherit;
-  background-color: '.colorcode_to_rgb_css_code(get_site_key_color(),0.2 ).';
+  background: '.$color.';
+  opacity: 0.3;
 }
- .navi-in a::before{
-   background: '.colorcode_to_rgb_css_code(get_site_key_color(),0.6 ).';
+#header-container #navi .navi-in a::before{
+   background: '.$color.';
  }
   .entry-card-thumb::before, .widget-entry-card-thumb::before, figure.prev-post-thumb.card-thumb::before,
   figure.next-post-thumb.card-thumb::before, #content-in .article h2 ::before,
@@ -67,7 +70,7 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
   .article h3::before, .article h5::before, .blogcard-thumbnail::before, .sidebar h3::before, hr.wp-block-separator::before{
     background-color: '.$color.';
   }
-  .pager-post-navi a.prev-next-home:hover, .box-menus .box-menu-icon, .search-submit{
+  .pager-post-navi a.prev-next-home:hover, .box-menus .box-menu-icon, .search-submit, .page-numbers.dots{
     color:'.$color.';
   }
 .box-menus  .box-menu:hover {

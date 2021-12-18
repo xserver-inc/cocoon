@@ -1,12 +1,12 @@
 /*
   Skin Name: one
   Description: PCでもフッターモバイルボタンが使える
-  Skin URI: https://haiji-blog.com/cocoon/skin-one
+  Skin URI: https://haiji-blog.com/cocoon-skin-one
   Author: haiji
-  Author URI: https://haiji-blog.com/cocoon
+  Author URI: https://haiji-blog.com/cocoon-skin-one
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-template.png
   Version: 1.0.0
-  Priority: 9900000
+  Priority: 9160001000
   Visibility: false
 */
 
@@ -98,6 +98,7 @@ img{
   font-size: 1.1em;
   font-weight: bold;
 }
+
 /* DEBUG: 見出し */
  #content-in .article h2 {
     counter-increment: x;
@@ -186,6 +187,11 @@ img{
   font-size: 15px;
   border-radius: 50px;
 }
+.page-numbers.dots{
+  box-shadow: 0 0 0!important;
+  border: none;
+  opacity: 0.9;
+}
 .author-box{
   font-size: 98%;
 }
@@ -239,16 +245,24 @@ img{
 .a-wrap:hover .related-entry-card-thumb::before, .a-wrap:hover .carousel-entry-card-thumb::before,
 .a-wrap:hover figure.prev-post-thumb.card-thumb::before, .a-wrap:hover figure.next-post-thumb.card-thumb::before,
 .a-wrap:hover .blogcard-thumbnail::before{
-  animation: hamon  2s linear;
+  animation: hamon  1.5s linear;
   animation-fill-mode: forwards;
   display: block;
+}
+.ect-big-card .a-wrap:hover .entry-card-thumb::before{
+  animation: hamon3 2.5s linear;
+  animation-fill-mode: forwards;
+}
+.ect-big-card-first .a-wrap:first-of-type:hover .entry-card-thumb::before{
+  animation: hamon3 2s linear;
+  animation-fill-mode: forwards;
 }
 .ranking-visible a.popular-entry-card-link.a-wrap .widget-entry-card-thumb::before{
   display: block;
   border-radius: 0;
 }
 .ranking-visible a.popular-entry-card-link.a-wrap:hover .widget-entry-card-thumb::before{
-  animation: hamon2 1.5s linear;
+  animation: hamon2 2.0s linear;
   animation-fill-mode: forwards;
 }
 .blogcard{
@@ -572,7 +586,7 @@ code {
 .is-border-0  .btn-wrap > a:not(.btn-wrap-circle > a), .is-border-0 .go-to-top-button, .is-border-0 .sns-share-buttons a, .is-border-0 .sns-follow-buttons a,
 .is-border-0 .author-box, .is-border-0 .page-numbers, .is-border-0 .widget-entry-cards .a-wrap, .is-border-0 .wp-block-cocoon-blocks-info-box.block-box,
 .is-border-0 .index-tab-buttons .index-tab-button, .is-border-0 .page-numbers, .is-border-0 .pagination-next-link, .is-border-0 .comment-btn, .is-border-0 .cta-button a,
-.is-border-0 a.btn, .is-border-0 .information-box, .is-border-0 .question-box, .is-border-0 .alert-box, .is-border-0 .memo-box, .is-border-0 .comment-box,
+.is-border-0 a.btn, .is-border-0 .information, .is-border-0 .question, .is-border-0 .alert, .is-border-0 .memo-box, .is-border-0 .comment-box,
 .is-border-0 .primary-box, .is-border-0 .secondary-box, .is-border-0 .success-box, .is-border-0 .info-box, .is-border-0 .warning-box, .is-border-0 .danger-box,
 .is-border-0 .light-box, .is-border-0 .dark-box{
   border-radius: 0;
@@ -617,7 +631,17 @@ code {
     opacity: 0.2;
   }
   100% {
-    transform: scale(50);
+    transform: scale(35);
+    opacity: 0.65;
+  }
+}
+@keyframes hamon3 {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(100);
     opacity: 0.65;
   }
 }
