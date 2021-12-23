@@ -216,7 +216,7 @@ function url_to_external_ogp_blogcard_tag($url){
   //var_dump($image);
 
   //ドメイン名を取得
-  $domain = get_domain_name(isset($url) ? punycode_decode($url) : punycode_decode($url));
+  $domain = get_domain_name(isset($ogp->url) ? punycode_decode($ogp->url) : punycode_decode($url));
 
   //og:imageが相対パスのとき
   if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか
