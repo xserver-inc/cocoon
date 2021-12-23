@@ -1106,6 +1106,7 @@ function generate_widget_entries_tag($atts){
     'class' => null,
     'snippet' => 0,
     'author' => null,
+    'offset' => 0,
   ), $atts));
   global $post;
 
@@ -1120,6 +1121,7 @@ function generate_widget_entries_tag($atts){
     'posts_per_page' => $entry_count,
     'no_found_rows' => true,
     'action' => $action,
+    'offset' => $offset,
   );
   if (!$sticky) {
     $args += array(

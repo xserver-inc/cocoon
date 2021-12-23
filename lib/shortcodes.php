@@ -49,6 +49,7 @@ function new_entries_shortcode($atts) {
     'class' => null,
     'snippet' => 0,
     'author' => null,
+    'offset' => 0,
   ), $atts, 'new_list'));
 
   //カテゴリを配列化
@@ -80,6 +81,7 @@ function new_entries_shortcode($atts) {
     'class' => $class,
     'snippet' => $snippet,
     'author' => $author,
+    'offset' => $offset,
   );
   ob_start();
   generate_widget_entries_tag($atts);
