@@ -61,20 +61,24 @@ class OpenGraphGetter implements Iterator
         global $wp_version;
 
         $args = array(
-          //'sslverify' => false,
-          //'redirection' => 10,
-          'headers' => [
+          'headers' => array(
             'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'Accept-Encoding' => 'gzip, deflate, br',
             'Accept-Language' => 'ja,ja-JP;q=0.9,und;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5',
             'Cache-Control' => 'no-cache',
-          ],
+          ),
           'cocoon' => true,
           'user-agent' => $_SERVER['HTTP_USER_AGENT'],
         );
         if (is_amazon_site_page($URI)) {
           $args['user-agent'] = 'Twitterbot/1.0';
         }
+        if (is_rakuten_site_page($URI)) {
+          unset($args['headers']);
+        }
+        // _v($URI);
+        // _v(is_rakuten_site_page($URI));
+        // _v($args);
         $res = wp_remote_get( $URI, $args );
         $response_code = wp_remote_retrieve_response_code( $res );
         //echo('<pre>');
@@ -212,11 +216,7 @@ class OpenGraphGetter implements Iterator
     }
 
     //Amazonページかどうか
-    if (is_amazon_site_page($URI)
-      //(includes_string($URI, '//amzn.to/') || includes_string($URI, '//www.amazon.co'))
-    //  || (includes_string($HTML, '//images-fe.ssl-images-amazon.com')
-    //  && includes_string($HTML, '//m.media-amazon.com'))
-    ) {
+    if (is_amazon_site_page($URI)) {
       $image_url = null;
       //Amazonページなら画像取得
       if (includes_string($HTML, 'id="landingImage"')) {
