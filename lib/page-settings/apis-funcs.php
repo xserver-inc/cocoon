@@ -155,7 +155,7 @@ endif;
 define('OP_GET_RAKUTEN_API_SORT', 'get_rakuten_api_sort');
 if ( !function_exists( 'get_rakuten_api_sort' ) ):
 function get_rakuten_api_sort(){
-  return get_theme_option(OP_GET_RAKUTEN_API_SORT, '-affiliateRate');
+  return get_theme_option(OP_GET_RAKUTEN_API_SORT, 'standard');
 }
 endif;
 
