@@ -1,12 +1,2 @@
-@charset "UTF-8";
-@import './../simple-darkmode/style.css';
-/*
-  Skin Name: Simple‐Darkmode-always
-  Description: 装飾は控えめかつダークモードに対応したシンプルスキン。
-  Skin URI:  https://hirosite.com/simple-darkmode/
-  Author: Taako
-  Author URI:  https://taako-biz.com/
-  Screenshot URI:  https://im-cocoon.net/wp-content/uploads/simple-darkmode.png
-  Version: 20220105
-  Priority: 9180101000
-*/
+@import './../../simple-darkmode/style.css';
+@import './../../simple-darkmode/style-dark.css';

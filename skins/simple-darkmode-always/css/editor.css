@@ -1,0 +1,10 @@
+@import './../../simple-darkmode/style-dark.css';
+:root .editor-styles-wrapper {
+  background-color: var(--bg3);
+  color: var(--text-main);
+}
+
+.edit-post-layout__metaboxes textarea {
+  background: #FFFFFF;
+  color: #333;
+}
