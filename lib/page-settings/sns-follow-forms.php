@@ -85,7 +85,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li><?php _e( 'GitHub', THEME_NAME ) ?></li>
               <li><?php _e( 'CodePen', THEME_NAME ) ?></li>
             </ul>
-            <p><a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>から設定</p>
+            <p><a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a><?php _e( 'から設定', THEME_NAME ) ?></p>
             <p class="tips"><?php _e( '現ログインユーザーのSNSフォローページを設定します。', THEME_NAME ) ?></p>
           </td>
         </tr>

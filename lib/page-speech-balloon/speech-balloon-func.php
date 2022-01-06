@@ -183,7 +183,7 @@ function add_default_speech_balloon_records(){
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 006] 悩むおばさん（左）', THEME_NAME );
+  $posts['title'] = __( '[SAMPLE 006] 悩むおばさん（右）', THEME_NAME );
   $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/obasan.png';
   $posts['style'] = SBS_FLAT;

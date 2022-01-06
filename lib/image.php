@@ -97,7 +97,7 @@ endif;
 //WordPressサービスを用いてサイトのスクリーンショットの取得
 if ( !function_exists( 'get_site_screenshot_url' ) ):
 function get_site_screenshot_url($url){
-  $mshot = 'https://s0.wordpress.com/mshots/v1/';
+  $mshot = 'https://s.wordpress.com/mshots/v1/';
   return $mshot.urlencode($url).'?w='.THUMB160WIDTH.'&h='.THUMB160HEIGHT;
 }
 endif;

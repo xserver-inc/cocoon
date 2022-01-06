@@ -3386,6 +3386,13 @@ function is_amazon_site_page($URI){
 }
 endif;
 
+//URLが楽天かどうか
+if ( !function_exists( 'is_rakuten_site_page' ) ):
+function is_rakuten_site_page($URI){
+  return includes_string($URI, '//a.r10.to/') || preg_match('{//.+\.rakuten\.co\.jp/}', $URI);
+}
+endif;
+
 //投稿の個別noindex idをすべて取得する
 if ( !function_exists( 'get_postmeta_value_enable_post_ids' ) ):
 function get_postmeta_value_enable_post_ids($meta_key){

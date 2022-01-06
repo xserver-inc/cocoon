@@ -61,11 +61,24 @@ class OpenGraphGetter implements Iterator
         global $wp_version;
 
         $args = array(
-          //'sslverify' => false,
-          //'redirection' => 10,
+          'headers' => array(
+            'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'Accept-Encoding' => 'gzip, deflate, br',
+            'Accept-Language' => 'ja,ja-JP;q=0.9,und;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5',
+            'Cache-Control' => 'no-cache',
+          ),
           'cocoon' => true,
           'user-agent' => $_SERVER['HTTP_USER_AGENT'],
         );
+        if (is_amazon_site_page($URI)) {
+          $args['user-agent'] = 'Twitterbot/1.0';
+        }
+        if (!is_rakuten_site_page($URI)) {
+          unset($args['headers']);
+        }
+        // _v($URI);
+        // _v(is_rakuten_site_page($URI));
+        // _v($args);
         $res = wp_remote_get( $URI, $args );
         $response_code = wp_remote_retrieve_response_code( $res );
         //echo('<pre>');
@@ -108,6 +121,9 @@ class OpenGraphGetter implements Iterator
     // }
     $HTML = @mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
     //$HTML = mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8');
+    if (!$HTML) {
+      return false;
+    }
 		$doc->loadHTML($HTML);
 
     //タイトルタグからタイトル情報を取得
@@ -200,11 +216,7 @@ class OpenGraphGetter implements Iterator
     }
 
     //Amazonページかどうか
-    if (is_amazon_site_page($URI)
-      //(includes_string($URI, '//amzn.to/') || includes_string($URI, '//www.amazon.co'))
-    //  || (includes_string($HTML, '//images-fe.ssl-images-amazon.com')
-    //  && includes_string($HTML, '//m.media-amazon.com'))
-    ) {
+    if (is_amazon_site_page($URI)) {
       $image_url = null;
       //Amazonページなら画像取得
       if (includes_string($HTML, 'id="landingImage"')) {
@@ -223,12 +235,18 @@ class OpenGraphGetter implements Iterator
               //_v($m[0]);
               $image_url = $m[1];
             }
+          //https://m.media-amazon.com/images/I/51QZhiaZqRL._AC_.jpg
+          //https://m.media-amazon.com/images/I/61Hs3z66UFL._AC_SY450_.jpg
+          } else if (preg_match('/id="landingImage" data-a-dynamic-image="\{&quot;(https:\/\/m\.media-amazon\.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m)) {
+            if (isset($m[1])) {
+              $image_url = $m[1];
+            }
           }
         }
       } else if (includes_string($HTML, 'id="imgBlkFront"')) {
         //書籍ページ用
         //https://images-fe.ssl-images-amazon.com/images/I/51aV7NaxG4L.jpg
-        $res = preg_match('/id="imgBlkFront" data-a-dynamic-image="\{&quot;(https:\/\/images-(fe|na).ssl-images-amazon.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m);
+        $res = preg_match('/id="imgBlkFront" data-a-dynamic-image="\{&quot;(https:\/\/images-(fe|na)\.ssl-images-amazon\.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m);
         if ($res && isset($m[1])) {
           $image_url = $m[1];
         }
@@ -236,14 +254,14 @@ class OpenGraphGetter implements Iterator
         //Amazon Music
         //https://m.media-amazon.com/images/I/61+mhXhVhfL._SS500_.jpg
         //https://images-na.ssl-images-amazon.com/images/I/41AFHM036KL._AC_.jpg
-        $res = preg_match('/<img.+?src="(https:\/\/m.media-amazon.com\/images\/I\/.+?)">/i', $HTML, $m);
+        $res = preg_match('/<img.+?src="(https:\/\/m\.media-amazon\.com\/images\/I\/.+?)">/i', $HTML, $m);
         if ($res && isset($m[1])) {
           $image_url = $m[1];
         }
       } else if (includes_string($HTML, 'id="ebooksImgBlkFront"')) {
         //Amazon Kindle
         //https://m.media-amazon.com/images/I/51tY7U5mUHL.jpg
-        $res = preg_match('/"(https:\/\/m.media-amazon\.com\/images\/I\/[^&"]+?\.jpg)"/i', $HTML, $m);
+        $res = preg_match('/"(https:\/\/m\.media-amazon\.com\/images\/I\/[^&"]+?\.jpg)"/i', $HTML, $m);
         if ($res && isset($m[1])) {
           $image_url = $m[1];
         }

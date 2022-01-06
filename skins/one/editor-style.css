@@ -1,0 +1,23 @@
+/* DEBUG: .editor-styles-wrapper が付与されない・・・ */
+.editor-styles-wrapper kbd {
+    height: 35px;
+    min-width: 35px;
+    padding: 0 10px;
+    margin: 5px 10px;
+    background: #646b70;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 50%);
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    display: inline-block;
+    font-family: inherit;
+}
+.editor-styles-wrapper code {
+    font-family: inherit;
+    background: #dfdfdf;
+    padding: 2px 10px;
+    height: 20px;
+    border-radius: 3px;
+    color: #666666;
+}
