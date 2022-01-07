@@ -11,6 +11,7 @@
   --underline: #ff9;
 }
 
+/* PCの設定でダークモードを選択した場合のスタイリング */
 @media (prefers-color-scheme: dark) {
   :root {
     --text-main: #faf8f7;
