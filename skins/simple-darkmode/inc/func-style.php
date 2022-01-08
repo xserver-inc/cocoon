@@ -1,4 +1,7 @@
 <?php
+/**
+ * 動的スタイルシート
+ */
 add_action('get_template_part_tmp/css-custom', function() {
   $color = get_site_key_color() ?: '#757575';
   $text_color = get_site_key_text_color() ?: '#ffffff';

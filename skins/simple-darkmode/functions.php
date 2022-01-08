@@ -1,4 +1,5 @@
 <?php
+// simple-darkmodeの動的スタイルシートを参照する
 include_once get_template_directory() . '/skins/simple-darkmode/inc/func-style.php';
 
 add_action( 'wp_enqueue_scripts', function() {
