@@ -1,0 +1,55 @@
+// ダークモード用カスタムプロパティ
+@mixin prefers_dark_root {
+  :root {
+  --text-main: #faf8f7;
+  --bg4: #1c1a1a;
+  --bg3:#242529;
+  --bg2:#2d343a;
+  --bg1:#42505e;
+  --bg1-on:#313c46bd;
+  --underline-blue: #234794 ;
+  --underline:rgba(255, 255, 0, 0.801);
+  --underline-red:#ff2f33;
+  }
+}
+
+// ダークモード用スタイルシート
+@mixin prefers_dark_style {
+  .marker{
+    background: yellow;
+    color: #1c1a1a;
+  }
+  .keyboard-key{
+    box-shadow: 1px 2px 2px rgb(110, 110, 110);
+  }
+  /*ダークモード時の吹き出し*/
+  .sbs-line.sbp-r .speech-balloon{
+    background-color: var(--bg2);
+    border-color: #85e249;
+    border-width: 2px;
+  }
+  .sbs-line.sbp-r .speech-balloon::after,
+  .sbs-stn.sbp-r .speech-balloon::after{
+    border-left-color: var(--bg2);
+  }
+  .sbs-line.sbp-l .speech-balloon::after,
+  .sbs-flat.sbp-l .speech-balloon::after{
+    border-right-color: var(--bg2);
+  }
+  .sbs-line.sbp-l .speech-balloon,
+  .sbs-flat.sbp-l .speech-balloon {
+    background-color: var(--bg2);
+    border-color: var(--text-main);
+    border-width: 2px;
+  }
+  .sns-buttons a{
+    background-color: #585858;
+  }
+  /*リンクの色変更*/
+  a{
+    color: #99ccff;
+  }
+  a:hover {
+    color: #f7a488;
+  }
+}

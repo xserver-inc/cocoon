@@ -1,0 +1,11 @@
+{
+  "name": "skin-darkmode",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "style": "sass scss/:css/ --no-source-map --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.43.2"
+  }
+}
