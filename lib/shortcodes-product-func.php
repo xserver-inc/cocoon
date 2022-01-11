@@ -336,7 +336,7 @@ endif;
 
 //キャッシュの削除リンク作成
 if ( !function_exists( 'get_cache_delete_tag' ) ):
-function get_cache_delete_tag($mode = 'amazon', $id){
+function get_cache_delete_tag($mode = 'amazon', $id = null){
   switch ($mode) {
     case 'rakuten':
     $url = add_query_arg(array('page' => 'theme-cache', 'cache' => 'rakuten_id_cache', 'id' => $id, HIDDEN_DELETE_FIELD_NAME => wp_create_nonce('delete-cache')), admin_url().'admin.php');
