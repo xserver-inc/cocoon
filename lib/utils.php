@@ -367,7 +367,7 @@ function get_jquery_core_url($ver){
   $url = null;
   switch ($ver) {
     case '3':
-      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js';
+      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
       break;
     case '2':
       $url = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js';
@@ -405,7 +405,7 @@ function get_jquery_migrate_url($ver){
   $url = null;
   switch ($ver) {
     case '3':
-      $url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js';
+      $url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js';
       break;
     case '1':
       $url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js';

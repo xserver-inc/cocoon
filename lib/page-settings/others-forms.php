@@ -97,7 +97,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
           <?php
             $options = array(
-              '3' => __( 'jQuery Core 3.3.1', THEME_NAME ),
+              '3' => __( 'jQuery Core 3.6.0', THEME_NAME ),
               '2' => __( 'jQuery Core 2.2.4', THEME_NAME ),
               '1' => __( 'jQuery Core 1.12.4', THEME_NAME ),
             );
@@ -117,7 +117,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
           <?php
             $options = array(
-              '3' => __( 'jQuery Migrate 3.0.1', THEME_NAME ),
+              '3' => __( 'jQuery Migrate 3.3.2', THEME_NAME ),
               '1' => __( 'jQuery Migrate 1.4.1', THEME_NAME ),
             );
             generate_radiobox_tag(OP_JQUERY_MIGRATE_VERSION, $options, get_jquery_migrate_version());
