@@ -60,7 +60,7 @@ Cocoonテーマの再配布もしくは、Cocoonを基盤として作成した�
 
 [Masonry](http://masonry.desandro.com/)
 
-[slicknav](http://slicknav.io/)
+[slicknav](https://computerwolf.github.io/SlickNav/)
 
 [slick](http://kenwheeler.github.io/slick/)
 
