@@ -128,3 +128,7 @@ CSS参考
 [semicolon3253](https://github.com/semicolon3253)
 
 [tsukumi](https://github.com/tsukumijima)
+
+[taako](https://github.com/taako-502)
+
+[takumiando](https://github.com/takumiando)
