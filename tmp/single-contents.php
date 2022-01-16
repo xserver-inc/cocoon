@@ -54,7 +54,7 @@ get_template_part('tmp/content') ?>
   <?php endif; ?>
 
   <?php //コメントを表示する場合
-  if (is_single_comment_visible()) {
+  if (is_single_comment_visible() && !post_password_required( $post )) {
     comments_template(); //コメントテンプレート
   } ?>
 
