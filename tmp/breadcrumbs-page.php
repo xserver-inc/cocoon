@@ -26,7 +26,7 @@ $root_text = apply_filters('breadcrumbs_page_root_text', $root_text);
   <?php } ?>
   <?php //ページタイトルを含める場合
   if (is_page_breadcrumbs_include_post()):
-    ?><div class="breadcrumb-item"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption"><?php the_title(); ?></span></div>
+    ?><div class="breadcrumb-item"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption"><?php echo esc_html(get_the_title()); ?></span></div>
   <?php endif ?>
 </div><!-- /#breadcrumb -->
 <?php endif; ?>
