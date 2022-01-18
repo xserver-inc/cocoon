@@ -253,7 +253,7 @@ endif;
 add_action ( 'edited_term', 'save_extra_tag_fileds');
 if ( !function_exists( 'save_extra_tag_fileds' ) ):
 function save_extra_tag_fileds( $term_id ) {
-  if (isset($_POST['taxonomy']) && ($_POST['taxonomy'] === 'post_tag')) {
+  if (isset($_POST['taxonomy'])) {
     $tag_id = $term_id;
 
     if ( isset( $_POST['the_tag_title'] ) ) {
