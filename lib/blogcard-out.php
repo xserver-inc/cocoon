@@ -262,7 +262,7 @@ function url_to_external_ogp_blogcard_tag($url){
   //GoogleファビコンAPIを利用する
   ////www.google.com/s2/favicons?domain=nelog.jp
   $favicon_tag = '<div class="blogcard-favicon external-blogcard-favicon">'.
-    get_original_image_tag('https://www.google.com/s2/favicons?domain='.$domain, 16, 16, 'blogcard-favicon-image external-blogcard-favicon-image').
+    get_original_image_tag('https://www.google.com/s2/favicons?domain='.$durl, 16, 16, 'blogcard-favicon-image external-blogcard-favicon-image').
   '</div>';
 
   //サイトロゴ
