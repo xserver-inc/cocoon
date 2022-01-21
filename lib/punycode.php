@@ -15,18 +15,18 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //PECLのhttp_build_urlがある可能性があるためチェックする
 if(!function_exists('puny_http_build_url')){
   //フラグの定数を設定
-  define('HTTP_URL_REPLACE',1);
-  define('HTTP_URL_JOIN_PATH',2);
-  define('HTTP_URL_JOIN_QUERY',4);
-  define('HTTP_URL_STRIP_USER',8);
-  define('HTTP_URL_STRIP_PASS',16);
-  define('HTTP_URL_STRIP_AUTH',24);
-  define('HTTP_URL_STRIP_PORT',32);
-  define('HTTP_URL_STRIP_PATH',64);
-  define('HTTP_URL_STRIP_QUERY',128);
-  define('HTTP_URL_STRIP_FRAGMENT',256);
-  define('HTTP_URL_STRIP_ALL',504);
-  function puny_http_build_url($url,$parts=array(),$flags=HTTP_URL_REPLACE,&$new_url=array())  {
+  define('COCOON_HTTP_URL_REPLACE',1);
+  define('COCOON_HTTP_URL_JOIN_PATH',2);
+  define('COCOON_HTTP_URL_JOIN_QUERY',4);
+  define('COCOON_HTTP_URL_STRIP_USER',8);
+  define('COCOON_HTTP_URL_STRIP_PASS',16);
+  define('COCOON_HTTP_URL_STRIP_AUTH',24);
+  define('COCOON_HTTP_URL_STRIP_PORT',32);
+  define('COCOON_HTTP_URL_STRIP_PATH',64);
+  define('COCOON_HTTP_URL_STRIP_QUERY',128);
+  define('COCOON_HTTP_URL_STRIP_FRAGMENT',256);
+  define('COCOON_HTTP_URL_STRIP_ALL',504);
+  function puny_http_build_url($url,$parts=array(),$flags=COCOON_HTTP_URL_REPLACE,&$new_url=array())  {
     //置き換えるキー
     $key=array('user','pass','port','path','query','fragment');
     //urlをパースする
@@ -37,24 +37,24 @@ if(!function_exists('puny_http_build_url')){
     } if(isset($parts['host'])) {
       $new_url['host']=$parts['host'];
     }
-    //フラグにHTTP_URL_REPLACEがあれば置き換える
-    if($flags&HTTP_URL_REPLACE) {
+    //フラグにCOCOON_HTTP_URL_REPLACEがあれば置き換える
+    if($flags&COCOON_HTTP_URL_REPLACE) {
       foreach($key as $v) {
         if(isset($parts[$v])) {
           $new_url[$v]=$parts[$v];
         }
       }
     } else {
-      //フラグにHTTP_URL_JOIN_PATHがあり新しいパスがあれば新しいパスをつなげる
-      if(isset($parts['path'])&&$flags&HTTP_URL_JOIN_PATH) {
+      //フラグにCOCOON_HTTP_URL_JOIN_PATHがあり新しいパスがあれば新しいパスをつなげる
+      if(isset($parts['path'])&&$flags&COCOON_HTTP_URL_JOIN_PATH) {
         if(isset($new_url['path'])) {
           $new_url['path']=rtrim(preg_replace('#'.preg_quote(basename($new_url['path']),'#').'$#','',$new_url['path']),'/').'/'.ltrim($parts['path'],'/');
         } else {
           $new_url['path']=$parts['path'];
         }
       }
-      //フラグにHTTP_URL_JOIN_QUERYがあり新しいクエリがあれば新しいクエリをつなげる
-      if(isset($parts['query'])&&$flags&HTTP_URL_JOIN_QUERY) {
+      //フラグにCOCOON_HTTP_URL_JOIN_QUERYがあり新しいクエリがあれば新しいクエリをつなげる
+      if(isset($parts['query'])&&$flags&COCOON_HTTP_URL_JOIN_QUERY) {
         if(isset($new_url['query'])) {
           $new_url['query'].='&'.$parts['query'];
         } else {
@@ -64,7 +64,7 @@ if(!function_exists('puny_http_build_url')){
     }
     //ストリップフラグの判定をし、設定されていれば消す
     foreach($key as $v) {
-      if($flags&constant('HTTP_URL_STRIP_'.strtoupper($v))) {
+      if($flags&constant('COCOON_HTTP_URL_STRIP_'.strtoupper($v))) {
           unset($new_url[$v]);
       }
     }
