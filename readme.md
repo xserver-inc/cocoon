@@ -132,3 +132,7 @@ CSS参考
 [taako](https://github.com/taako-502)
 
 [takumiando](https://github.com/takumiando)
+
+[Takeyuki Miyagi](https://github.com/v97ug)
+
+[hausercarl](https://github.com/hausercarl)
