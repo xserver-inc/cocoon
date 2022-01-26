@@ -45,6 +45,8 @@
             'brand58': '&#xeac3;',
             'linkedin2': '&#xeacb;',
             'brand65': '&#xeacb;',
+            'twitch': '&#xea9f;',
+            'brand23': '&#xea9f;',
           '0': 0
         };
         delete icons['0'];

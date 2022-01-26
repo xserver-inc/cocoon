@@ -1196,6 +1196,9 @@ img.emoji {
 .bc-brand-color.sns-share .amazon-button, .bc-brand-color.sns-follow .amazon-button {
   background-color: #ff9900;
 }
+.bc-brand-color.sns-share .twitch-button, .bc-brand-color.sns-follow .twitch-button {
+  background-color: #6441a4;
+}
 .bc-brand-color.sns-share .rakuten-room-button, .bc-brand-color.sns-follow .rakuten-room-button {
   background-color: #c61e79;
 }
@@ -1286,6 +1289,10 @@ img.emoji {
 .bc-brand-color-white.sns-share .amazon-button, .bc-brand-color-white.sns-follow .amazon-button {
   color: #ff9900;
   border-color: #ff9900;
+}
+.bc-brand-color-white.sns-share .twitch-button, .bc-brand-color-white.sns-follow .twitch-button {
+  color: #6441a4;
+  border-color: #6441a4;
 }
 .bc-brand-color-white.sns-share .rakuten-room-button, .bc-brand-color-white.sns-follow .rakuten-room-button {
   color: #c61e79;

@@ -81,6 +81,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo esc_url(get_the_author_amazon_url($user_id)); //Amazon欲しい物リストURLの取得 ?>" class="follow-button amazon-button amazon-follow-button-sq" target="_blank" title="<?php _e( 'Amazon欲しい物リスト', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-amazon-logo"></span></a>
   <?php endif; ?>
 
+  <?php if ( get_the_author_twitch_url($user_id) )://Twitchボタンを表示するか ?>
+    <a href="<?php echo esc_url(get_the_author_twitch_url($user_id)); //Twitch URLの取得 ?>" class="follow-button twitch-button twitch-follow-button-sq" target="_blank" title="<?php _e( 'Twitch', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-twitch-logo"></span></a>
+  <?php endif; ?>
+
   <?php if ( get_the_author_rakuten_room_url($user_id) )://楽天ROOMボタンを表示するか ?>
     <a href="<?php echo esc_url(get_the_author_rakuten_room_url($user_id)); //楽天ROOM URLの取得 ?>" class="follow-button rakuten-room-button rakuten-room-follow-button-sq" target="_blank" title="<?php _e( '楽天ROOM', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-rakuten-room-logo"></span></a>
   <?php endif; ?>

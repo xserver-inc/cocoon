@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?3o5bkh');
-  src:  url('fonts/icomoon.eot?3o5bkh#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?3o5bkh') format('truetype'),
-    url('fonts/icomoon.woff?3o5bkh') format('woff'),
-    url('fonts/icomoon.svg?3o5bkh#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?byg6oj');
+  src:  url('fonts/icomoon.eot?byg6oj#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?byg6oj') format('truetype'),
+    url('fonts/icomoon.woff?byg6oj') format('woff'),
+    url('fonts/icomoon.svg?byg6oj#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -104,9 +104,6 @@
 .icon-hatena:before {
   content: "\e916";
 }
-.icon-copy:before {
-  content: "\e901";
-}
 .icon-facebook:before {
   content: "\e919";
 }
@@ -154,4 +151,10 @@
 }
 .icon-linkedin:before {
   content: "\eacb";
+}
+.icon-twitch-logo:before {
+  content: "\ea9f";
+}
+.icon-copy:before {
+  content: "\e901";
 }

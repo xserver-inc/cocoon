@@ -80,6 +80,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li><?php _e( 'note', THEME_NAME ) ?></li>
               <li><?php _e( 'Flickr', THEME_NAME ) ?></li>
               <li><?php _e( 'Amazon欲しい物リスト', THEME_NAME ) ?></li>
+              <li><?php _e( 'Twitch', THEME_NAME ) ?></li>
               <li><?php _e( '楽天ROOM', THEME_NAME ) ?></li>
               <li><?php _e( 'Slack', THEME_NAME ) ?></li>
               <li><?php _e( 'GitHub', THEME_NAME ) ?></li>

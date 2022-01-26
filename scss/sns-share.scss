@@ -90,6 +90,10 @@
       background-color: $amazon_color;
     }
 
+    .twitch-button{
+      background-color: $twitch_color;
+    }
+
     .rakuten-room-button{
       background-color: $rakuten_room_color;
     }
@@ -206,6 +210,11 @@
     .amazon-button{
       color: $amazon_color;
       border-color: $amazon_color;
+    }
+
+    .twitch-button{
+      color: $twitch_color;
+      border-color: $twitch_color;
     }
 
     .rakuten-room-button{
