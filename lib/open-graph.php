@@ -190,6 +190,9 @@ class OpenGraphGetter implements Iterator
             if ($elements->length > 0) {
                 $domattr = $elements->item(0)->attributes->getNamedItem('href');
                 if ($domattr) {
+                    if (is_amazon_site_page($URI)) {
+                      $domattr->value = preg_replace('/[^\.]+?\.jpg$/', '.jpg', $domattr->value);
+                    }
                     $page->_values['image'] = $domattr->value;
                     $page->_values['image_src'] = $domattr->value;
                 }
