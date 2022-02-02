@@ -7,36 +7,35 @@
 
 //  console.log('1');
 
-// wp.domReady(function () {
-//     // add classes
-//     const addClasses = function () {
-//         // console.log('2');
-//         // console.log(jQuery('.block-editor-writing-flow'));
-//         // add body class
-//         jQuery('#editor .block-editor-writing-flow').wrap('<div>');
-//         jQuery('#editor .block-editor-writing-flow').parent().addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
+wp.domReady(function () {
+    // add classes
+    const addClasses = function () {
+        // console.log('2');
+        // console.log(jQuery('.block-editor-writing-flow'));
+        // add body class
+        jQuery('#editor .block-editor-writing-flow').wrap('<div>');
+        jQuery('#editor .block-editor-writing-flow').parent().addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
 
-//         // add title class
-//         // jQuery('#editor .editor-post-title__input').addClass('entry-title');
-//     };
-//     setTimeout(addClasses, 100);
-
-//     // subscribe switch editor mode
-//     wp.data.subscribe(function (selector, listener) {
-//         let previousValue = selector();
-//         return function () {
-//             let selectedValue = selector();
-//             if (selectedValue !== previousValue) {
-//                 previousValue = selectedValue;
-//                 listener(selectedValue);
-//             }
-//         };
-//     }(function () {
-//         return wp.data.select('core/edit-post').getEditorMode();
-//     }, function () {
-//         setTimeout(addClasses, 1);
-//     }));
-// });
+        // add title class
+        // jQuery('#editor .editor-post-title__input').addClass('entry-title');
+    };
+    setTimeout(addClasses, 100);
+    // subscribe switch editor mode
+    wp.data.subscribe(function (selector, listener) {
+        let previousValue = selector();
+        return function () {
+            let selectedValue = selector();
+            if (selectedValue !== previousValue) {
+                previousValue = selectedValue;
+                listener(selectedValue);
+            }
+        };
+    }(function () {
+        return wp.data.select('core/edit-post').getEditorMode();
+    }, function () {
+        setTimeout(addClasses, 1);
+    }));
+});
 
 (function($){
   //タイマーを使ったあまり美しくない方法
