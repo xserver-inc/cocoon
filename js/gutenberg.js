@@ -13,8 +13,10 @@ wp.domReady(function () {
         // console.log('2');
         // console.log(jQuery('.block-editor-writing-flow'));
         // add body class
-        jQuery('#editor .block-editor-writing-flow').wrap('<div>');
-        jQuery('#editor .block-editor-writing-flow').parent().addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
+        // jQuery('#editor .block-editor-writing-flow').wrap('<div>');
+        // jQuery('#editor .block-editor-writing-flow').parent().addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
+
+        jQuery('#editor .block-editor-writing-flow').addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
 
         // add title class
         // jQuery('#editor .editor-post-title__input').addClass('entry-title');
