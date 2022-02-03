@@ -2616,7 +2616,7 @@ function get_singular_sns_share_image_url(){
     $image_id = get_post_thumbnail_id();
     $image = wp_get_attachment_image_src( $image_id, 'full');
     $sns_image_url = $image[0];
-  } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive()) {//投稿にアイキャッチは無いが画像がある場合の処理
+  } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive() && is_auto_post_thumbnail_enable()) {//投稿にアイキャッチは無いが画像がある場合の処理
     $sns_image_url = $image[2];
   } else if ( $no_image_url = get_no_image_url() ){//NO IMAGEが設定されている場合
     $sns_image_url = $no_image_url;
@@ -2646,7 +2646,7 @@ function get_singular_eyecatch_image_url(){
     $eyecatch_image_url = $image[0];
   } else if ($singular_sns_image_url = get_singular_sns_image_url()) {
     $eyecatch_image_url = $singular_sns_image_url;
-  } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive()) {//投稿にサムネイルは無いが画像がある場合の処理
+  } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive() && is_auto_post_thumbnail_enable()) {//投稿にサムネイルは無いが画像がある場合の処理
     $eyecatch_image_url = $image[2];
   } else if ( $no_image_url = get_no_image_url() ){//NO IMAGEが設定されている場合
     $eyecatch_image_url = $no_image_url;
