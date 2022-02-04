@@ -393,8 +393,9 @@ function rating_star_shortcode( $atts, $content = null ) {
       'rate' => 5,
       'max' => 5,
       'number' => 1,
+      'color' => null,
   ), $atts, 'star' ) );
-  return get_rating_star_tag($rate, $max, $number);
+  return get_rating_star_tag($rate, $max, $number, $color);
 }
 endif;
 

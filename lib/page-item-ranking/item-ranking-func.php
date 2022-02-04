@@ -199,7 +199,7 @@ endif;
 
 //レーティングスタータグの取得
 if ( !function_exists( 'get_rating_star_tag' ) ):
-function get_rating_star_tag($rate, $max = 5, $number = false){
+function get_rating_star_tag($rate, $max = 5, $number = false, $color = null){
   $rate = floatval($rate);
   $rate = floor($rate * 10) / 10;
   $max = intval($max);
@@ -210,6 +210,10 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
   //レーティングが100より多い場合は多すぎるので処理しない
   if ($rate > 100 && $max > 100) {
     return $rate;
+  }
+  $style = null;
+  if ($color) {
+    $style = ' style="color: '.$color.';"';
   }
 
   $tag = '<span class="rating-star">';
@@ -238,15 +242,15 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
   }
   //スターの出力
   for ($j=1; $j <= $before; $j++) {
-    $tag .= '<span class="fa fa-star" aria-hidden="true"></span>';
+    $tag .= '<span class="fa fa-star" aria-hidden="true"'.$style.'></span>';
   }
   //半分スターの出力
   for ($j=1; $j <= $middle; $j++) {
-    $tag .= '<span class="fa fa-star-half-o" aria-hidden="true"></span>';
+    $tag .= '<span class="fa fa-star-half-o" aria-hidden="true"'.$style.'></span>';
   }
   //空スターの出力
   for ($j=1; $j <= $after; $j++) {
-    $tag .= '<span class="fa fa-star-o" aria-hidden="true"></span>';
+    $tag .= '<span class="fa fa-star-o" aria-hidden="true"'.$style.'></span>';
   }
 
   if ($number) {
