@@ -316,6 +316,7 @@ function get_category_index_list_entry_card_tag($categories, $count){
       'category__not_in' => $exclude_category_ids,
     );
   }
+  $args = apply_filters('get_category_index_list_entry_card_args', $args, $categories);
   $query = new WP_Query( $args );
   $count = 0;
   ////////////////////////////
