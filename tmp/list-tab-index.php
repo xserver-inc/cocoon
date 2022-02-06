@@ -47,7 +47,7 @@ $list_classes = get_index_list_classes();
     <div class="tab-cont tb<?php echo $number; ?>">
         <!-- <?php echo $number; ?>つ目のコンテンツ -->
         <?php
-            $arg = array(
+            $args = array(
                 //表示件数（WordPressの表示設定に準拠）
                 'posts_per_page' => get_option_posts_per_page(),
                 //投稿日順か更新日順か
@@ -59,7 +59,8 @@ $list_classes = get_index_list_classes();
                 //アーカイブに表示しないページのID
                 'post__not_in' =>  get_archive_exclude_post_ids(),
             );
-            $posts = get_posts( $arg );
+            $args = apply_filters('list_category_tab_args', $args, $cat_id);
+            $posts = get_posts( $args );
             if( $posts ): ?>
         <div class="<?php echo $list_classes; ?>">
             <?php
