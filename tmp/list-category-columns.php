@@ -61,7 +61,7 @@ $count = get_index_category_entry_card_count();
               'random' => 1,
             );
           }
-          $atts = apply_filters('list_category_columns_atts', $atts, $cat_id);
+          $atts = apply_filters('list_category_column_atts', $atts, $cat_id);
           //新着記事リストの作成
           generate_widget_entries_tag($atts);
           ?>
