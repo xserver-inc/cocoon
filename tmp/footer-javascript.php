@@ -18,7 +18,7 @@ if (!is_amp()): ?>
   //アドセンス共通スクリプトコード
   define('ADSENSE_SCRIPT_CODE', '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='.get_adsense_data_ad_client().'" crossorigin="anonymous"></script>');
   //if ($_IS_ADSENSE_EXIST && !is_customize_preview() && !is_cocoon_settings_preview()) {
-  if ($_IS_ADSENSE_EXIST && !is_customize_preview()) {
+  if (is_ads_visible() && $_IS_ADSENSE_EXIST && !is_customize_preview()) {
     echo ADSENSE_SCRIPT_CODE;
   } //AdSense非同期スクリプトを出力
   ?>
