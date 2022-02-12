@@ -427,9 +427,9 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     $date_before = get_current_db_date_before($days);
     $where .= " AND {$access_table}.date BETWEEN '$date_before' AND '$date' ".PHP_EOL;
   }
-  if ($days == 1) {
-    $where .= " AND {$access_table}.date = '$date' ".PHP_EOL;
-  }
+  // if ($days == 1) {
+  //   $where .= " AND {$access_table}.date = '$date' ".PHP_EOL;
+  // }
   //_v($exclude_post_ids);
   // _v($exclude_post_ids[0]);
   if (is_ids_exist($exclude_post_ids)) {
@@ -495,19 +495,14 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     $query = wrap_joined_wp_posts_query($query, $limit, $author);
   }
 
-  //_v($query);
   $records = $wpdb->get_results( $query );
   //_v($query);
   if (is_access_count_cache_enable() && $records) {
     set_transient( $transient_id, $records, 60 * get_access_count_cache_interval() );
   }
-  // _v($records);
   return $records;
 }
 endif;
-//get_access_ranking_records();
-// global $wpdb;
-// var_dump($wpdb->term_relationships);
 
 
 //Jetpackがインストールされているかどうか
