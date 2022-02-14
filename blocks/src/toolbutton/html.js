@@ -45,7 +45,7 @@ registerFormatType( 'cocoon-blocks/html', {
     // const shortcutCharacter ='';
     return (
       <Fragment>
-        <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
+        <RichTextShortcut /*type={shortcutType} character={shortcutCharacter}*/ onUse={onToggle}  />
         <RichTextToolbarButton
           icon={<Icon icon={html} size={32} />}
           title={__( 'HTML挿入', THEME_NAME )}
