@@ -41,8 +41,8 @@ registerFormatType( 'cocoon-blocks/html', {
     };
 
     // @see keycodes/src/index.js
-    const shortcutType = 'primaryShift';
-    const shortcutCharacter ='';
+    // const shortcutType = 'primaryShift';
+    // const shortcutCharacter ='';
     return (
       <Fragment>
         <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
@@ -51,8 +51,8 @@ registerFormatType( 'cocoon-blocks/html', {
           title={__( 'HTML挿入', THEME_NAME )}
           onClick={onToggle}
           isActive={isActive}
-          shorcutType={shortcutType}
-          shorcutCharacter={shortcutCharacter}
+          // shorcutType={shortcutType}
+          // shorcutCharacter={shortcutCharacter}
           // className='abcddddddddddddddd'
         />
       </Fragment>
