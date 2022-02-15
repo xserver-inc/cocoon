@@ -41,18 +41,18 @@ registerFormatType( 'cocoon-blocks/html', {
     };
 
     // @see keycodes/src/index.js
-    // const shortcutType = 'primaryShift';
-    // const shortcutCharacter ='';
+    const shortcutType = 'primaryShift';
+    const shortcutCharacter ='h';
     return (
       <Fragment>
-        <RichTextShortcut /*type={shortcutType} character={shortcutCharacter}*/ onUse={onToggle}  />
+        <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
         <RichTextToolbarButton
           icon={<Icon icon={html} size={32} />}
           title={__( 'HTML挿入', THEME_NAME )}
           onClick={onToggle}
           isActive={isActive}
-          // shorcutType={shortcutType}
-          // shorcutCharacter={shortcutCharacter}
+          shorcutType={shortcutType}
+          shorcutCharacter={shortcutCharacter}
           // className='abcddddddddddddddd'
         />
       </Fragment>
