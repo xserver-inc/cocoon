@@ -9024,6 +9024,7 @@ input[type='submit'] {
   -webkit-appearance: none;
   border: 1px solid #ddd;
   background-color: #f5f8fa;
+  color: #333;
 }
 
 .bp-login-widget-register-link {
