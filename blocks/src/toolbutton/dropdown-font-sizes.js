@@ -10,7 +10,7 @@ import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { BlockFormatControls } from '@wordpress/block-editor';
-import { Slot, Toolbar, DropdownMenu } from '@wordpress/components';
+import { Slot, ToolbarGroup, DropdownMenu } from '@wordpress/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Icon, edit } from '@wordpress/icons'
 import { orderBy } from 'lodash';
@@ -54,7 +54,7 @@ if (isFontSizeVisible) {
       return (
         <BlockFormatControls>
           <div className="editor-format-toolbar block-editor-format-toolbar">
-            <Toolbar>
+            <ToolbarGroup>
               <Slot name="FontSize.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
@@ -65,7 +65,7 @@ if (isFontSizeVisible) {
                   />
                 }
               </Slot>
-            </Toolbar>
+            </ToolbarGroup>
           </div>
         </BlockFormatControls>
       );

@@ -10,7 +10,7 @@ import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType, insert } from '@wordpress/rich-text';
 import { BlockFormatControls } from '@wordpress/block-editor';
-import { Slot, Toolbar, DropdownMenu } from '@wordpress/components';
+import { Slot, ToolbarGroup, DropdownMenu } from '@wordpress/components';
 import { Icon, shortcode } from '@wordpress/icons';
 import { orderBy } from 'lodash';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/shortcodes';
@@ -212,7 +212,7 @@ if (isGeneralVisible) {
       return (
         <BlockFormatControls>
           <div className="editor-format-toolbar block-editor-format-toolbar">
-            <Toolbar>
+            <ToolbarGroup>
               <Slot name="Shortcode.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
                   <DropdownMenu
@@ -223,7 +223,7 @@ if (isGeneralVisible) {
                   />
                 }
               </Slot>
-            </Toolbar>
+            </ToolbarGroup>
           </div>
         </BlockFormatControls>
       );
