@@ -10,7 +10,7 @@ import { THEME_NAME } from '../helpers.js';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType } from '@wordpress/rich-text';
 import { BlockFormatControls } from '@wordpress/block-editor';
-import { Slot, ToolbarGroup, DropdownMenu } from '@wordpress/components';
+import { Slot, ToolbarGroup, ToolbarDropdownMenu } from '@wordpress/components';
 import { Icon, textColor } from '@wordpress/icons'
 import { orderBy } from 'lodash';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/letters';
@@ -32,7 +32,7 @@ if (isLetterVisible) {
             <ToolbarGroup>
               <Slot name="Letter.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
-                  <DropdownMenu
+                  <ToolbarDropdownMenu
                     icon={<Icon icon={textColor} size={32} /> }
                     label={__( '文字', THEME_NAME )}
                     className='letters'

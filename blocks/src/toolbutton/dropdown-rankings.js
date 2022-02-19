@@ -10,7 +10,7 @@ import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType, insert } from '@wordpress/rich-text';
 import { BlockFormatControls } from '@wordpress/block-editor';
-import { Slot, ToolbarGroup, DropdownMenu } from '@wordpress/components';
+import { Slot, ToolbarGroup, ToolbarDropdownMenu } from '@wordpress/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { orderBy } from 'lodash';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/rankings';
@@ -56,7 +56,7 @@ if (isRankingVisible) {
             <ToolbarGroup>
               <Slot name="Ranking.ToolbarControls">
                 { ( fills ) => fills.length !== 0 &&
-                  <DropdownMenu
+                  <ToolbarDropdownMenu
                     icon={<FontAwesomeIcon icon={['fas', 'crown']} />}
                     label={__( 'ランキング', THEME_NAME )}
                     className='rankings'
