@@ -69,7 +69,7 @@ function cocoon_blocks_cgb_block_assets() { // phpcs:ignore
  */
 // Hook: Editor assets.
 if (is_admin()) {
-	add_action( 'enqueue_block_editor_assets', 'cocoon_blocks_cgb_editor_assets' );
+	add_action( 'enqueue_block_editor_assets', 'cocoon_blocks_cgb_editor_assets', 9 );
 }
 function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 	// Scripts.
