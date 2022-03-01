@@ -2092,6 +2092,7 @@ img.blogcard-favicon-image {
   border-radius: 4px;
   background-color: #fff;
 }
+.sidebar h2,
 .sidebar h3 {
   background-color: #f5f6f7;
   padding: 12px;
@@ -2205,7 +2206,8 @@ label.screen-reader-text {
 .widget_pages ul,
 .widget_meta ul,
 .widget_rss ul,
-.widget_nav_menu ul {
+.widget_nav_menu ul,
+.widget_block ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -2216,7 +2218,8 @@ label.screen-reader-text {
 .widget_pages ul li ul,
 .widget_meta ul li ul,
 .widget_rss ul li ul,
-.widget_nav_menu ul li ul {
+.widget_nav_menu ul li ul,
+.widget_block ul li ul {
   padding-left: 20px;
   margin: 0;
 }
@@ -2226,7 +2229,8 @@ label.screen-reader-text {
 .widget_pages ul li a,
 .widget_meta ul li a,
 .widget_rss ul li a,
-.widget_nav_menu ul li a {
+.widget_nav_menu ul li a,
+.widget_block ul li a {
   color: #333;
   text-decoration: none;
   padding: 10px 0;
@@ -2240,7 +2244,8 @@ label.screen-reader-text {
 .widget_pages ul li a:hover,
 .widget_meta ul li a:hover,
 .widget_rss ul li a:hover,
-.widget_nav_menu ul li a:hover {
+.widget_nav_menu ul li a:hover,
+.widget_block ul li a:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: #333;
@@ -2251,7 +2256,8 @@ label.screen-reader-text {
 .widget_pages ul li a .post-count,
 .widget_meta ul li a .post-count,
 .widget_rss ul li a .post-count,
-.widget_nav_menu ul li a .post-count {
+.widget_nav_menu ul li a .post-count,
+.widget_block ul li a .post-count {
   display: block;
   float: right;
 }
@@ -2570,6 +2576,25 @@ label.screen-reader-text {
 
 .entry-content .main-widget-label {
   display: none;
+}
+
+.widget_recent_comments ul {
+  padding-left: 0;
+}
+.widget_recent_comments ul li {
+  list-style: none;
+}
+
+.wp-block-latest-comments {
+  padding-left: 0;
+}
+
+.widget_search .wp-block-search__button {
+  padding: .375em 0.1em;
+  font-size: 14px;
+}
+.widget_search .wp-block-search__input {
+  line-height: normal;
 }
 
 /*拡張クラスを追加するスタイルシート*/

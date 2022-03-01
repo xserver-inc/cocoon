@@ -32,7 +32,8 @@ label.screen-reader-text{
 .widget_pages,
 .widget_meta,
 .widget_rss,
-.widget_nav_menu{
+.widget_nav_menu,
+.widget_block{
   ul{
     @include list_cancel;
 
@@ -440,4 +441,27 @@ label.screen-reader-text{
 
 .entry-content .main-widget-label{
   display: none;
+}
+
+.widget_recent_comments{
+  ul{
+    padding-left: 0;
+    li{
+      list-style: none;
+    }
+  }
+}
+
+.wp-block-latest-comments{
+  padding-left: 0;
+}
+
+.widget_search {
+  .wp-block-search__button {
+    padding: .375em 0.1em;
+    font-size: 14px;
+  }
+  .wp-block-search__input {
+    line-height: normal;
+  }
 }
