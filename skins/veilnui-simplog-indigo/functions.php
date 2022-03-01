@@ -4,7 +4,6 @@
   Description: シンプルなブログスキン（群青色）
   Skin URI: Veilnui Simplog
   Author: veilnui
-  Author URI: https://veilnui.net/
   Priority: 9840001000
   Screenshot URI: https://wp-cocoon.com/wp-content/themes/cocoon-master/skins/veilnui-simplog-indigo/images/image.png
   Version: 1.1.7

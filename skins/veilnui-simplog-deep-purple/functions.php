@@ -2,9 +2,8 @@
 /*!
   Skin Name: Veilnui Simplog (deep purple)
   Description: シンプルなブログスキン（濃紫色）
-  Skin URI: https://simplog.veilnui.org
+  Skin URI: https://wp-cocoon.com/veilnui-simplog
   Author: veilnui
-  Author URI: https://veilnui.net/
   Priority: 9840001000
   Screenshot URI: https://wp-cocoon.com/wp-content/themes/cocoon-master/skins/veilnui-simplog-deep-purple/images/image.png
   Version: 1.1.7
