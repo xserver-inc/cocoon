@@ -156,15 +156,16 @@ img{
     position: absolute;
     transform: translate(0,50%) rotateZ(45deg);
 }
-.article h4, .article h5, .article h6, .sidebar h3{
+.article h4, .article h5, .article h6, .sidebar h2, .sidebar h3{
   border: none;
   position: relative;
   padding-left: 1.5em;
 }
+.sidebar h2,
 .sidebar h3{
   margin-bottom: 0;
 }
-.article h5::before, .article h6::before, .sidebar h3::before{
+.article h5::before, .article h6::before, .sidebar h2::before, .sidebar h3::before{
   content: '';
   width: 0.7em;
   height: 0.7em;

@@ -206,7 +206,7 @@ color: #acde39;
 
 
 /* サイドバー */
-.sidebar h3, .sidebar h4 {
+.sidebar h2, .sidebar h3, .sidebar h4 {
 	background: none;
 	border-bottom: 2px solid #fff122;
 }

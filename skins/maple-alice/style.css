@@ -231,7 +231,7 @@ color: #ba91e2;
 }
 
 /* サイドバー */
-.sidebar h3, .sidebar h4 {
+.sidebar h2, .sidebar h3, .sidebar h4 {
 	background: none;
 	border-bottom: 2px solid #ef97e8;
 }

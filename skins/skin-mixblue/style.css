@@ -212,6 +212,7 @@
 / 『サイドバーの見出し（h3）』　　投稿のh3と同じ
 -----------------------------------------------------■□ */
 /* ----- ベースのボーダー ----- */
+.sidebar h2,
 .sidebar h3 {
   background: none;
   border-top: none;
@@ -222,6 +223,7 @@
 }
 
 /* ----- 2色目のボーダー ----- */
+.sidebar h2::after,
 .sidebar h3:after {
   position: absolute;
   content: " ";

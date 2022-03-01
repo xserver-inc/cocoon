@@ -580,6 +580,7 @@ button#comment-reply-btn {
     padding: 0 .5em .4em .5em;
 }
 
+.sidebar h2,
 .sidebar h3 {
     color: #fff;
     background-color: #777;

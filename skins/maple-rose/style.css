@@ -203,7 +203,7 @@ color: #b59c66;
 
 
 /* サイドバー */
-.sidebar h3, .sidebar h4 {
+.sidebar h2, .sidebar h3, .sidebar h4 {
 	background: none;
 	border-bottom: 2px solid #b59c66;
 }

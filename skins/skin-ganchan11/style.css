@@ -196,6 +196,7 @@ body.public-page,.content .cf .main, .navi {
   margin: 0 18px;
 }
 
+.sidebar h2,
 .sidebar h3 {
 	position: relative;
    background-color: #FFF;
@@ -205,6 +206,7 @@ body.public-page,.content .cf .main, .navi {
    text-align: center;
 }
 
+.sidebar h2::before,
 .sidebar h3:before {
 	content: '';
 	position: absolute;

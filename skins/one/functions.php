@@ -22,7 +22,7 @@ add_action('get_template_part_tmp/css-custom', function() {
 
 
   echo '
-body.body,  #main.main, #sidebar.sidebar, .blogcard-label, .blogcard, .index-tab-buttons .index-tab-button, .sidebar h3, hr.wp-block-separator::after, #slide-in-sidebar, .menu-content,
+body.body,  #main.main, #sidebar.sidebar, .blogcard-label, .blogcard, .index-tab-buttons .index-tab-button, .sidebar h2, .sidebar h3, hr.wp-block-separator::after, #slide-in-sidebar, .menu-content,
   .carousel-in, .pager-post-navi, .page-numbers.dots{
     background-color: '.$content_color.';
   }
@@ -67,7 +67,7 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
   .entry-card-thumb::before, .widget-entry-card-thumb::before, figure.prev-post-thumb.card-thumb::before,
   figure.next-post-thumb.card-thumb::before, #content-in .article h2 ::before,
   .related-entry-card-thumb::before, .carousel-entry-card-thumb::before,
-  .article h3::before, .article h5::before, .blogcard-thumbnail::before, .sidebar h3::before, hr.wp-block-separator::before{
+  .article h3::before, .article h5::before, .blogcard-thumbnail::before, .sidebar h2::before, .sidebar h3::before, hr.wp-block-separator::before{
     background-color: '.$color.';
   }
   .pager-post-navi a.prev-next-home:hover, .box-menus .box-menu-icon, .search-submit, .page-numbers.dots{
@@ -84,7 +84,7 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
   background-color: white;
 }
 .content, .blogcard-label, .entry-card, .related-entry-card, .blogcard, .widget-entry-cards .a-wrap,
-.post-navi-square.post-navi-border a, .index-tab-buttons .index-tab-button, .pager-post-navi a, .sidebar h3,
+.post-navi-square.post-navi-border a, .index-tab-buttons .index-tab-button, .pager-post-navi a, .sidebar h2, .sidebar h3,
 .widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a,
 .recent-comment, .list-more-button, .menu-drawer a, .slick-initialized .slick-slide, .pager-post-navi a div, .menu-content, .is-dark-on .search-form div.sbtn::after{
   color:'.$content_text_color.';

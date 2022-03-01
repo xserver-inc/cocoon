@@ -108,6 +108,7 @@ body {
 }
 
 /* サイドバー */
+.sidebar h2,
 .sidebar h3 {
   padding: 10px;
   border: 1.5px solid #333;
@@ -290,6 +291,7 @@ table th {
     min-height: 80px;
   }
 
+  .sidebar h2,
   .sidebar h3 {
     font-size: 16px;
   }

@@ -85,6 +85,7 @@ add_action('get_template_part_tmp/css-custom', function() {
     border-bottom: 3px solid '.$color.';
   }
   .article h3,
+  .sidebar h2,
   .sidebar h3,
   .under-entry-content h2{
     padding: 1rem 2rem;

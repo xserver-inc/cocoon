@@ -406,6 +406,7 @@ article .tag-link:hover {
 .sidebar {
 	font-size: 0.9em;
 }
+.sidebar h2,
 .sidebar h3 {
 	background: #00a0e9;
 	color: #fff;

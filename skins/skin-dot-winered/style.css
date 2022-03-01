@@ -70,6 +70,7 @@ blockquote::after {
   content: '”';
 }
 /*サイドバーウィジェット*/
+.sidebar h2,
 .sidebar h3 {
   border: 0;
   position: relative;
@@ -78,6 +79,7 @@ blockquote::after {
   background: transparent;
   border-bottom: solid 2px #7b3341;
 }
+.sidebar h2::before,
 .sidebar h3:before{
   font-family: "FontAwesome";
   content: "\f105";
@@ -203,6 +205,7 @@ blockquote::after {
 }
 
 .font-awesome-5 .article h3:before,
+.font-awesome-5 .sidebar h2:before,
 .font-awesome-5 .sidebar h3:before,
 .font-awesome-5 .related-entry-heading::before,
 .font-awesome-5 .comment-title::before,

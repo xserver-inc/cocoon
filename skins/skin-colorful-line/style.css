@@ -366,6 +366,7 @@
 /* □■-----------------------------------------------------
 / 『サイドバーの見出し（h3）』
 -----------------------------------------------------■□ */
+.sidebar h2,
 .sidebar h3 {
   background-image: repeating-linear-gradient(90deg,rgba(8,140,192,.3) 0%,rgba(8,140,192,.3) 50%,rgba(57,188,128,.3) 50%,rgba(57,188,128,.3) 100%);
   position: relative;
@@ -373,6 +374,7 @@
   border-radius: 4px;
 }
 
+.sidebar h2::before,
 .sidebar h3::after {
   position: absolute;
   content: '';

@@ -505,6 +505,7 @@ div.item-label {
 /*----------------------------------
 /* サイドバーの見出し
  */
+.sidebar h2,
 .sidebar h3 {
 	background: none;
 	padding: 12px 35px 12px 15px;
@@ -513,6 +514,7 @@ div.item-label {
 	margin-top: 26px;
 	position: relative;
 }
+.sidebar h2::before,
 .sidebar h3::before {
 	position: absolute;
 	content: "";
@@ -527,6 +529,7 @@ div.item-label {
 	transform: rotate(10deg);
 	z-index: 1;
 }
+.sidebar h2::after,
 .sidebar h3::after {
 	/*見出し背景色*/
 	background-color: #333333;
@@ -546,6 +549,7 @@ div.item-label {
 .sidebar-scroll {
 	top: 15px !important;
 }
+.sidebar h2,
 .sidebar h3 {
 	font-size: 0.9em;
 	padding: 7px 12px;

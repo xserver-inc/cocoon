@@ -112,6 +112,7 @@ body {
 }
 
 /* サイドバー */
+.sidebar h2,
 .sidebar h3 {
     padding: 10px;
     color: $white;
@@ -438,6 +439,7 @@ blockquote::after {
         min-height: 80px;
     }
 
+    .sidebar h2,
     .sidebar h3 {
         font-size: 16px;
     }

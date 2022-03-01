@@ -398,6 +398,7 @@ article .tag-link:hover{
 .sidebar {
 	font-size: 0.9em;
 }
+.sidebar h2,
 .sidebar h3{
 	background: #89c997;
    color: #fff;

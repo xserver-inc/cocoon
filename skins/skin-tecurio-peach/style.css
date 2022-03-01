@@ -120,9 +120,10 @@ img.avatar {
 .sidebar aside .author-box{
 	max-width: none;
 }
-.sidebar h3:first-child, .sidebar div:first-child, .sidebar form:first-child{
+.sidebar h2:first-child, .sidebar h3:first-child, .sidebar div:first-child, .sidebar form:first-child{
     margin-top: 0;
 }
+.sidebar h2,
 .sidebar h3 {
 background-image: linear-gradient( 165deg, #FFEDBC 0%, #ED4264 20%);
 	text-shadow: 1px 1px 2px rgba(0,0,0,.3);

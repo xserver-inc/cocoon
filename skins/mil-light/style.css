@@ -317,6 +317,7 @@ input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a {
 .pagination-next-link {
     display: none;
 }
+.sidebar h2,
 .sidebar h3 {
     position: relative;
     background-color: transparent;
@@ -326,6 +327,7 @@ input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a {
     border-bottom: solid 2.1px #e8e0d9;
     color: #5d5a56;
 }
+.sidebar h2::before,
 .sidebar h3:before {
     position: absolute;
     content: '';
@@ -340,6 +342,7 @@ input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a {
     opacity: .5;
     z-index: 2;
 }
+.sidebar h2::after,
 .sidebar h3:after {
     content: '';
     position: absolute;

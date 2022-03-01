@@ -364,6 +364,7 @@ body {
 /* -------------------------------------------
 / 『サイドバーの見出し（h3）』
 ------------------------------------------- */
+.sidebar h2,
 .sidebar h3 {
   margin-top:26px;
   background:none;
@@ -371,6 +372,7 @@ body {
   padding: 11px 0 2px 38px;
 }
 
+.sidebar h2::before,
 .sidebar h3::before {
   position: absolute;
   top: .3em;
@@ -386,6 +388,7 @@ body {
   border: 1px outset #817b7b;
 }
 
+.sidebar h2::after,
 .sidebar h3::after {
   position: absolute;
   top: 1.2em;

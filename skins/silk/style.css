@@ -546,6 +546,7 @@ a.page-numbers {
   margin-bottom: 0;
 }
 
+.sidebar h2,
 .sidebar h3 {
   padding: 0.4em;
   background: repeating-linear-gradient(

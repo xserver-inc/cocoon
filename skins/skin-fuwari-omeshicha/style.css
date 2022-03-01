@@ -520,6 +520,7 @@ a.page-numbers:hover {
 /************************************
 ** サイドバー
 ************************************/
+.sidebar h2,
 .sidebar h3 {
 	position: relative;
 	margin-bottom: 1.5em;
@@ -529,6 +530,7 @@ a.page-numbers:hover {
 	color: #4d767b;
 	font-size: 18px;
 }
+.sidebar h2::before,
 .sidebar h3::after {
 	display: block;
 	position: absolute;
