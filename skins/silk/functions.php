@@ -611,6 +611,7 @@ class Skin_Silk_Functions {
     .widget_meta ul li a::before,
     .widget_rss ul li a::before,
     .widget_nav_menu ul li a::before,
+    .wp-block-group ul li a::before,
     .comment-btn::before,
     .menu-drawer a::before,
     .is-style-faq .toggle-button::after {

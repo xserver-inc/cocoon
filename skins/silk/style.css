@@ -570,7 +570,8 @@ a.page-numbers {
 .widget_pages ul li a,
 .widget_meta ul li a,
 .widget_rss ul li a,
-.widget_nav_menu ul li a {
+.widget_nav_menu ul li a,
+.wp-block-group ul li a {
   position: relative;
   color: inherit;
   padding-left: 1em;
@@ -583,7 +584,8 @@ a.page-numbers {
 .widget_pages ul li a:hover,
 .widget_meta ul li a:hover,
 .widget_rss ul li a:hover,
-.widget_nav_menu ul li a:hover {
+.widget_nav_menu ul li a:hover,
+.wp-block-group ul li a:hover {
   color: inherit;
   background: transparent;
   transition: all 0.3s ease-out;
@@ -595,7 +597,8 @@ a.page-numbers {
 .widget_pages ul li a::before,
 .widget_meta ul li a::before,
 .widget_rss ul li a::before,
-.widget_nav_menu ul li a::before {
+.widget_nav_menu ul li a::before,
+.wp-block-group ul li a::before {
   position: absolute;
   content: "\f0da";
   top: 50%;
@@ -611,7 +614,8 @@ a.page-numbers {
 .widget_pages ul li a:hover::before,
 .widget_meta ul li a:hover::before,
 .widget_rss ul li a:hover::before,
-.widget_nav_menu ul li a:hover::before {
+.widget_nav_menu ul li a:hover::before,
+.wp-block-group ul li a:hover::before {
   left: 0.2em;
 }
 
