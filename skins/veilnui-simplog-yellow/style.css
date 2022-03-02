@@ -119,7 +119,9 @@ body {
   color: #FFEE58;
 }
 
-#sidebar-menu-content h3, #sidebar h3 {
+#sidebar-menu-content h2, #sidebar h2,
+#sidebar-menu-content h3,
+#sidebar h3 {
   background-color: #FFEE58;
   color: white;
   padding: 5px 5px 5px 42px;
@@ -127,7 +129,9 @@ body {
   position: relative;
   z-index: 0;
 }
-#sidebar-menu-content h3::after, #sidebar h3::after {
+#sidebar-menu-content h2::after, #sidebar h2::after,
+#sidebar-menu-content h3::after,
+#sidebar h3::after {
   position: absolute;
   content: "";
   top: -2px;
