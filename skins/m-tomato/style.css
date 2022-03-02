@@ -201,6 +201,7 @@ body::before {
 	top:5px;
 	left:17px;
 }
+.sidebar h2 ,
 h3.widget-title ,
 .article h6 {
 	position: relative;
@@ -211,6 +212,7 @@ h3.widget-title ,
 	text-shadow: 1px 1px 1px #dcdcdc;
 	z-index: 0;
 }
+.sidebar h2:before ,
 h3.widget-title:before ,
 .article h6:before {
 	position: absolute;
@@ -223,9 +225,11 @@ h3.widget-title:before ,
 	border-radius: 50%;
 	z-index: -1;
 }
+.sidebar h2,
 h3.widget-title {
 	margin:0;
 }
+.sidebar h2:before,
 h3.widget-title:before {
 	top:10px;
 	left:0px;

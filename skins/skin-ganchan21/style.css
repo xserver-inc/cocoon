@@ -247,6 +247,7 @@ height:1px;
 /*ウィジェット*/
 
 /*サイドバー見出し*/
+.sidebar h2,
 .widget h3 {
 	position: relative;
 	background-color: #FFF;
@@ -255,6 +256,7 @@ height:1px;
 	text-align: center;
 }
 
+.sidebar h2::before,
 .widget h3:before {
 	content: '';
 	position: absolute;

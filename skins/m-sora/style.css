@@ -163,6 +163,7 @@ top:0;
 left:17px;
 }
 
+.sidebar h2 ,
 h3.widget-title ,
 .article h6 {
   position: relative;
@@ -170,6 +171,7 @@ h3.widget-title ,
   color:#333333;
   text-shadow:1px 1px 1px #fff;
 }
+.sidebar h2:before ,
 h3.widget-title:before ,
 .article h6:before {
 position:absolute;
@@ -183,10 +185,12 @@ border-radius:50%;
   transform:translateY(-50%);
   z-index:-1;
 }
+.sidebar h2,
 h3.widget-title {
   margin: 0 0 6px 0;
     background:transparent;
 }
+.sidebar h2:before,
 h3.widget-title:before {
   top:30px;
   left:-3px;

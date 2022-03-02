@@ -564,7 +564,7 @@ a.prev-post:hover::before,a.next-post:hover::before{
 }
 
 /* 見出し */
-#sidebar h3,#sidebar-menu-content h3{
+#sidebar h2,#sidebar h3,#sidebar-menu-content h2,#sidebar-menu-content h3{
 	margin: 10px 0;
 	padding: 0 10px;
 	font-size: 18px;

@@ -176,7 +176,7 @@ img{
   transform: translate(0,50%) rotateZ(45deg);
 }
 .is-main-serif .article h2, .is-main-serif .article h3, .is-main-serif .article h4, .is-main-serif .article h5, .is-main-serif .article h6,
-.is-sidebar-serif #sidebar h3, .is-sidebar-serif #sidebar-menu-content h3{
+.is-sidebar-serif #sidebar h2, .is-sidebar-serif #sidebar h3, .is-sidebar-serif #sidebar-menu-content h2, #sidebar-menu-content h3{
   font-family: serif;
 }
 /* DEBUG: 改ページ */
