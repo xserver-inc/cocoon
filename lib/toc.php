@@ -307,10 +307,10 @@ function is_the_page_toc_use(){
   global $_TOC_AVAILABLE_H_COUNT;
   if (is_category()) {
     $cat_id = get_query_var('cat');
-    $content = get_the_category_content($cat_id);
+    $content = get_the_category_content($cat_id, true);
   } elseif (is_tag()) {
     $tag_id = get_queried_object_id();
-    $content = get_the_tag_content($tag_id);
+    $content = get_the_tag_content($tag_id, true);
   } else {
     $content = get_the_content();
   }
