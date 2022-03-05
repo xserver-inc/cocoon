@@ -37,7 +37,6 @@ body.wp-admin{
     padding: 10px;
     font-size: 16px;
     line-height: 1.4;
-    // font-family: Arial,sans-serif;
     max-width: 600px;
 
 
@@ -133,9 +132,6 @@ body.wp-admin{
 .form-table td p{
   font-size: unset;
 }
-// #all .demo{
-//   @import "font";
-// }
 
 //管理画面でプレビューできないので.demo内で読みみたくない
 @import "pre";
@@ -156,11 +152,6 @@ body.wp-admin{
 .column-word-count{
   width:76px;
 }
-// .word-count-title-count,
-// .word-count-content-count{
-//   white-space: pre-wrap;
-//   font-family: Consolas, monospace;
-// }
 
 .admin-custum-label{
   margin-left: -30px;
@@ -186,50 +177,6 @@ body.wp-admin{
 .tips{
   margin: 4px 0 12px !important;
 }
-/*設定項目のヒント*/
-// p,
-// a,
-// .form-table td p{
-
-//   // &.tips,
-//   &.alert,
-//   &.help-page{
-//     font-size: 14px;
-//     font-style: italic;
-//     margin-bottom: 1em;
-
-//     &::before{
-//       font-family: FontAwesome;
-//       margin-right: 4px;
-//     }
-
-//     // + .tips{
-//     //   margin-top: -14px;
-//     // }
-//   }
-
-//   // &.tips{
-//   //   &::before{
-//   //     content: '\f05a';
-//   //   }
-//   // }
-
-//   &.help-page{
-//     &::before{
-//       content: '\f059';
-//     }
-//   }
-
-//   &.alert{
-//     color: red;
-
-//     &::before{
-//       content: '\f071';
-//     }
-//   }
-// }
-
-
 
 form.admin-settings{
   margin-top: 2em;
@@ -298,9 +245,6 @@ form.admin-settings{
     cursor: pointer;
 
     margin-left: 6px;
-    // border: 1px solid #777;
-    // padding: 2px;
-    // background-color: #eee;
 
     text-decoration: underline;
     color: #0073aa;
@@ -318,29 +262,7 @@ form.admin-settings{
   .toggle-content{
     display: none;
     width: 100%;
-    // visibility: visible;
-    // height: auto;
-    // opacity: 1;
   }
-
-  //
-  // color: blue;
-  // font-size: 0.8em;
-
-  // &:hover{
-  //   color: red;
-  // }
-
-}
-
-// .sb-demo{
-//   @import "speech-balloon";
-// }
-
-/*カスタムボックスラベル*/
-.box-label{
-  font-weight: bold;
-  margin-bottom: 5px;
 }
 
 /*文字数カウントエリア*/
@@ -464,18 +386,7 @@ select option.fa{
     margin-right: 5px;
   }
 }
-
-
-// .page-display-check-list,
-// .author-check-list,
-// .post-check-list,
-// .fixed-page-check-list{
-//   display: none;
-// }
-
-// .fixed-page-tab{
-//   display: none !important;
-// }
+SMBC日興証券のファンド四人だ
 .list-content,
 .tabs .tab-content,
 .tabs .tagcloud-list,
@@ -507,57 +418,10 @@ select option.fa{
   max-height: 200px;
 }
 
-// .tabs-widget{
-//   padding-top: 6px;
-//   >ul{
-//     margin-bottom: 3px;
-//   }
-
-
-//   >ul > li {
-//       -moz-border-bottom-colors: none;
-//       -moz-border-left-colors: none;
-//       -moz-border-right-colors: none;
-//       -moz-border-top-colors: none;
-//       background-color: rgb(241, 241, 241);
-//       border-color: transparent transparent -moz-use-text-color;
-//       border-image: none;
-//       border-style: solid solid none;
-//       border-width: 1px 1px medium;
-//       cursor: pointer;
-//       display: inline-block;
-//       margin: 0 0 0 5px;
-//       padding: 4px 8px 3px;
-//       border-color: #333;
-//       background-color: #f1f1f1;
-
-//       &.cat-tab{
-//         border-color: #aaa;
-//         background-color: #fff;
-//       }
-//   }
-// }
-
 //カテゴリ編集ページの横幅
 #edittag{
   max-width: 1200px;
 }
-
-// .sb-list{
-//   .demo{
-//     background-color: #fff;
-//     resize: none;
-//     border-style: none;
-//     padding-bottom: 0;
-//   }
-
-//   .demo .speech-wrap{
-//     margin: 0;
-//   }
-//   .htmlcode{
-//     margin-bottom: 20px;
-//   }
-// }
 
 .indent{
   padding-left: 30px;
@@ -584,18 +448,6 @@ select option.fa{
   }
 }
 
-
-// table.sb-list{
-//   border-collapse: collapse;
-//   td{
-//     padding: 12px 0;
-//     border-bottom: 1px solid #ccc;
-//   }
-//   td:first-child{
-//     border-top: 1px solid #ccc;
-//   }
-
-// }//
 .list-option{
   width: 50px;
   text-align: center;
@@ -604,10 +456,6 @@ select option.fa{
 //ランキング入力フォーム
 #ranking-items{
   counter-reset: ranking-item-number;
-
-  // .ranking-item:last-of-type{
-  //   background-color: #FDF1F5;
-  // }
 
   .ranking-items .ranking-item{
     &::before{
@@ -645,7 +493,6 @@ select option.fa{
       background-color: #eaf5fa;
     }
 
-    //padding-left: 20px;
     &::before{
       counter-increment: ranking-item-number;      /* ranking-item-number カウンタの増加数をセット */
       content: counter(ranking-item-number);      /* 表示形式を指定 */
@@ -768,11 +615,6 @@ select option.fa{
   padding: 1em 0 0.6em;
 }
 
-// //カテゴリ編集画面の説明
-// .taxonomy-category .term-description-wrap{
-//   display: none;
-// }
-
 .speech-wrap div.speech-balloon p{
   font-size: 16px;
   margin: 0;
@@ -846,8 +688,6 @@ select option.fa{
     width: 100%;
   }
 }
-
-
 
 ///////////////////////////////////////
 // ウィジェット表示競って
@@ -924,15 +764,6 @@ select option.fa{
       display: none;
     }
 
-    //選択されているタブのコンテンツのみを表示
-    // input[name="tab_item"]:checked ~ .category-check-list,
-    // input[name="tab_item"]:checked ~ .page-display-check-list,
-    // input[name="tab_item"]:checked ~ .author-check-list,
-    // input[name="tab_item"]:checked ~ .post-check-list,
-    // input[name="tab_item"]:checked ~ .fixed-page-check-list {
-    //   display: block;
-    // }
-
     //選択されているタブのスタイルを変える
     input[name="tab_item"]:checked + .tab-item {
       background-color: #fff;
@@ -949,20 +780,8 @@ select option.fa{
   width: 100%;
 }
 
-// .widget.open{
-//   margin-left: -116px;
-//   z-index: 100;
-// }
-
-// .customize-control .widget.open,
-// #wp_inactive_widgets .widget.open{
-//   margin-left: 0;
-// }
-
 .not-allowed-form{
   opacity: 0.5;
-  //pointer-events: none;
-  //cursor: not-allowed;
 }
 
 .toggle-entered {
@@ -981,11 +800,6 @@ select option.fa{
 .tooltip .fa-picture-o {
   color: #285294;
 }
-
-// #ranking-items textarea {
-//   resize: both !important;
-// }
-
 
 textarea[name="the_page_memo"]{
   width: 100%;
@@ -1135,13 +949,6 @@ textarea[name="the_page_memo"]{
   input{
     margin-right: 5px;
   }
-  // .tag-link-count{
-  //   margin-left: 20px;
-  //   // padding: 0px 4px;
-  //   // background-color: #eee;
-  //   // border: 1px solid #ddd;
-  //   // border-radius: 6px;
-  // }
 }
 
 //管理画面のボタン色
