@@ -305,7 +305,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
 
    ?>
 
-    <div class="ranking-item border-element">
+    <div class="ranking-item-<?php echo $i; ?> ranking-item border-element">
 
       <div class="ranking-item-name">
         <div class="ranking-item-name-crown">
