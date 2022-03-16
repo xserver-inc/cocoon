@@ -5541,7 +5541,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-red .toggle-button::before {
-  color: #ddd;
+  color: #e60033;
 }
 .admin-settings .demo .tb-red .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e60033;
@@ -5552,7 +5552,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-pink .toggle-button::before {
-  color: #ddd;
+  color: #e95295;
 }
 .admin-settings .demo .tb-pink .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e95295;
@@ -5563,7 +5563,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-purple .toggle-button::before {
-  color: #ddd;
+  color: #884898;
 }
 .admin-settings .demo .tb-purple .toggle-checkbox:checked ~ .toggle-content {
   border-color: #884898;
@@ -5574,7 +5574,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-blue .toggle-button::before {
-  color: #ddd;
+  color: #0095d9;
 }
 .admin-settings .demo .tb-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #0095d9;
@@ -5585,7 +5585,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-green .toggle-button::before {
-  color: #ddd;
+  color: #3eb370;
 }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #3eb370;
@@ -5596,7 +5596,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-orange .toggle-button::before {
-  color: #ddd;
+  color: #f39800;
 }
 .admin-settings .demo .tb-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #f39800;
@@ -5607,7 +5607,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-yellow .toggle-button::before {
-  color: #ddd;
+  color: #ffd900;
 }
 .admin-settings .demo .tb-yellow .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffd900;
@@ -5618,7 +5618,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-brown .toggle-button::before {
-  color: #ddd;
+  color: #954e2a;
 }
 .admin-settings .demo .tb-brown .toggle-checkbox:checked ~ .toggle-content {
   border-color: #954e2a;
@@ -5629,7 +5629,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-grey .toggle-button::before {
-  color: #ddd;
+  color: #949495;
 }
 .admin-settings .demo .tb-grey .toggle-checkbox:checked ~ .toggle-content {
   border-color: #949495;
@@ -5640,7 +5640,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-black .toggle-button::before {
-  color: #ddd;
+  color: #333;
 }
 .admin-settings .demo .tb-black .toggle-checkbox:checked ~ .toggle-content {
   border-color: #333;
@@ -5651,7 +5651,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-deep .toggle-button::before {
-  color: #ddd;
+  color: #55295b;
 }
 .admin-settings .demo .tb-deep .toggle-checkbox:checked ~ .toggle-content {
   border-color: #55295b;
@@ -5662,7 +5662,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-indigo .toggle-button::before {
-  color: #ddd;
+  color: #1e50a2;
 }
 .admin-settings .demo .tb-indigo .toggle-checkbox:checked ~ .toggle-content {
   border-color: #1e50a2;
@@ -5673,7 +5673,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-light-blue .toggle-button::before {
-  color: #ddd;
+  color: #2ca9e1;
 }
 .admin-settings .demo .tb-light-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #2ca9e1;
@@ -5684,7 +5684,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-cyan .toggle-button::before {
-  color: #ddd;
+  color: #00a3af;
 }
 .admin-settings .demo .tb-cyan .toggle-checkbox:checked ~ .toggle-content {
   border-color: #00a3af;
@@ -5695,7 +5695,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-teal .toggle-button::before {
-  color: #ddd;
+  color: #007b43;
 }
 .admin-settings .demo .tb-teal .toggle-checkbox:checked ~ .toggle-content {
   border-color: #007b43;
@@ -5706,7 +5706,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-light-green .toggle-button::before {
-  color: #ddd;
+  color: #8bc34a;
 }
 .admin-settings .demo .tb-light-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #8bc34a;
@@ -5717,7 +5717,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-lime .toggle-button::before {
-  color: #ddd;
+  color: #c3d825;
 }
 .admin-settings .demo .tb-lime .toggle-checkbox:checked ~ .toggle-content {
   border-color: #c3d825;
@@ -5728,7 +5728,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-amber .toggle-button::before {
-  color: #ddd;
+  color: #ffc107;
 }
 .admin-settings .demo .tb-amber .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffc107;
@@ -5739,7 +5739,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-deep-orange .toggle-button::before {
-  color: #ddd;
+  color: #ea5506;
 }
 .admin-settings .demo .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ea5506;
@@ -5750,7 +5750,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-white .toggle-button::before {
-  color: #ddd;
+  color: #fff;
 }
 .admin-settings .demo .tb-white .toggle-checkbox:checked ~ .toggle-content {
   border-color: #fff;
@@ -13147,7 +13147,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-red .toggle-button::before {
-  color: #ddd;
+  color: #e60033;
 }
 .admin-settings .demo .tb-red .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e60033;
@@ -13158,7 +13158,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-pink .toggle-button::before {
-  color: #ddd;
+  color: #e95295;
 }
 .admin-settings .demo .tb-pink .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e95295;
@@ -13169,7 +13169,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-purple .toggle-button::before {
-  color: #ddd;
+  color: #884898;
 }
 .admin-settings .demo .tb-purple .toggle-checkbox:checked ~ .toggle-content {
   border-color: #884898;
@@ -13180,7 +13180,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-blue .toggle-button::before {
-  color: #ddd;
+  color: #0095d9;
 }
 .admin-settings .demo .tb-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #0095d9;
@@ -13191,7 +13191,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-green .toggle-button::before {
-  color: #ddd;
+  color: #3eb370;
 }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #3eb370;
@@ -13202,7 +13202,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-orange .toggle-button::before {
-  color: #ddd;
+  color: #f39800;
 }
 .admin-settings .demo .tb-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #f39800;
@@ -13213,7 +13213,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-yellow .toggle-button::before {
-  color: #ddd;
+  color: #ffd900;
 }
 .admin-settings .demo .tb-yellow .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffd900;
@@ -13224,7 +13224,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-brown .toggle-button::before {
-  color: #ddd;
+  color: #954e2a;
 }
 .admin-settings .demo .tb-brown .toggle-checkbox:checked ~ .toggle-content {
   border-color: #954e2a;
@@ -13235,7 +13235,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-grey .toggle-button::before {
-  color: #ddd;
+  color: #949495;
 }
 .admin-settings .demo .tb-grey .toggle-checkbox:checked ~ .toggle-content {
   border-color: #949495;
@@ -13246,7 +13246,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-black .toggle-button::before {
-  color: #ddd;
+  color: #333;
 }
 .admin-settings .demo .tb-black .toggle-checkbox:checked ~ .toggle-content {
   border-color: #333;
@@ -13257,7 +13257,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-deep .toggle-button::before {
-  color: #ddd;
+  color: #55295b;
 }
 .admin-settings .demo .tb-deep .toggle-checkbox:checked ~ .toggle-content {
   border-color: #55295b;
@@ -13268,7 +13268,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-indigo .toggle-button::before {
-  color: #ddd;
+  color: #1e50a2;
 }
 .admin-settings .demo .tb-indigo .toggle-checkbox:checked ~ .toggle-content {
   border-color: #1e50a2;
@@ -13279,7 +13279,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-light-blue .toggle-button::before {
-  color: #ddd;
+  color: #2ca9e1;
 }
 .admin-settings .demo .tb-light-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #2ca9e1;
@@ -13290,7 +13290,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-cyan .toggle-button::before {
-  color: #ddd;
+  color: #00a3af;
 }
 .admin-settings .demo .tb-cyan .toggle-checkbox:checked ~ .toggle-content {
   border-color: #00a3af;
@@ -13301,7 +13301,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-teal .toggle-button::before {
-  color: #ddd;
+  color: #007b43;
 }
 .admin-settings .demo .tb-teal .toggle-checkbox:checked ~ .toggle-content {
   border-color: #007b43;
@@ -13312,7 +13312,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-light-green .toggle-button::before {
-  color: #ddd;
+  color: #8bc34a;
 }
 .admin-settings .demo .tb-light-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #8bc34a;
@@ -13323,7 +13323,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-lime .toggle-button::before {
-  color: #ddd;
+  color: #c3d825;
 }
 .admin-settings .demo .tb-lime .toggle-checkbox:checked ~ .toggle-content {
   border-color: #c3d825;
@@ -13334,7 +13334,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-amber .toggle-button::before {
-  color: #ddd;
+  color: #ffc107;
 }
 .admin-settings .demo .tb-amber .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffc107;
@@ -13345,7 +13345,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-deep-orange .toggle-button::before {
-  color: #ddd;
+  color: #ea5506;
 }
 .admin-settings .demo .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ea5506;
@@ -13356,7 +13356,7 @@ body.wp-admin {
   color: #fff;
 }
 .admin-settings .demo .tb-white .toggle-button::before {
-  color: #ddd;
+  color: #fff;
 }
 .admin-settings .demo .tb-white .toggle-checkbox:checked ~ .toggle-content {
   border-color: #fff;
@@ -21325,7 +21325,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-red .toggle-button::before {
-  color: #ddd;
+  color: #e60033;
 }
 .components-popover__content .tb-red .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e60033;
@@ -21336,7 +21336,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-pink .toggle-button::before {
-  color: #ddd;
+  color: #e95295;
 }
 .components-popover__content .tb-pink .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e95295;
@@ -21347,7 +21347,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-purple .toggle-button::before {
-  color: #ddd;
+  color: #884898;
 }
 .components-popover__content .tb-purple .toggle-checkbox:checked ~ .toggle-content {
   border-color: #884898;
@@ -21358,7 +21358,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-blue .toggle-button::before {
-  color: #ddd;
+  color: #0095d9;
 }
 .components-popover__content .tb-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #0095d9;
@@ -21369,7 +21369,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-green .toggle-button::before {
-  color: #ddd;
+  color: #3eb370;
 }
 .components-popover__content .tb-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #3eb370;
@@ -21380,7 +21380,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-orange .toggle-button::before {
-  color: #ddd;
+  color: #f39800;
 }
 .components-popover__content .tb-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #f39800;
@@ -21391,7 +21391,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-yellow .toggle-button::before {
-  color: #ddd;
+  color: #ffd900;
 }
 .components-popover__content .tb-yellow .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffd900;
@@ -21402,7 +21402,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-brown .toggle-button::before {
-  color: #ddd;
+  color: #954e2a;
 }
 .components-popover__content .tb-brown .toggle-checkbox:checked ~ .toggle-content {
   border-color: #954e2a;
@@ -21413,7 +21413,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-grey .toggle-button::before {
-  color: #ddd;
+  color: #949495;
 }
 .components-popover__content .tb-grey .toggle-checkbox:checked ~ .toggle-content {
   border-color: #949495;
@@ -21424,7 +21424,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-black .toggle-button::before {
-  color: #ddd;
+  color: #333;
 }
 .components-popover__content .tb-black .toggle-checkbox:checked ~ .toggle-content {
   border-color: #333;
@@ -21435,7 +21435,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-deep .toggle-button::before {
-  color: #ddd;
+  color: #55295b;
 }
 .components-popover__content .tb-deep .toggle-checkbox:checked ~ .toggle-content {
   border-color: #55295b;
@@ -21446,7 +21446,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-indigo .toggle-button::before {
-  color: #ddd;
+  color: #1e50a2;
 }
 .components-popover__content .tb-indigo .toggle-checkbox:checked ~ .toggle-content {
   border-color: #1e50a2;
@@ -21457,7 +21457,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-light-blue .toggle-button::before {
-  color: #ddd;
+  color: #2ca9e1;
 }
 .components-popover__content .tb-light-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #2ca9e1;
@@ -21468,7 +21468,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-cyan .toggle-button::before {
-  color: #ddd;
+  color: #00a3af;
 }
 .components-popover__content .tb-cyan .toggle-checkbox:checked ~ .toggle-content {
   border-color: #00a3af;
@@ -21479,7 +21479,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-teal .toggle-button::before {
-  color: #ddd;
+  color: #007b43;
 }
 .components-popover__content .tb-teal .toggle-checkbox:checked ~ .toggle-content {
   border-color: #007b43;
@@ -21490,7 +21490,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-light-green .toggle-button::before {
-  color: #ddd;
+  color: #8bc34a;
 }
 .components-popover__content .tb-light-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #8bc34a;
@@ -21501,7 +21501,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-lime .toggle-button::before {
-  color: #ddd;
+  color: #c3d825;
 }
 .components-popover__content .tb-lime .toggle-checkbox:checked ~ .toggle-content {
   border-color: #c3d825;
@@ -21512,7 +21512,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-amber .toggle-button::before {
-  color: #ddd;
+  color: #ffc107;
 }
 .components-popover__content .tb-amber .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffc107;
@@ -21523,7 +21523,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-deep-orange .toggle-button::before {
-  color: #ddd;
+  color: #ea5506;
 }
 .components-popover__content .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ea5506;
@@ -21534,7 +21534,7 @@ textarea[name="the_page_memo"] {
   color: #fff;
 }
 .components-popover__content .tb-white .toggle-button::before {
-  color: #ddd;
+  color: #fff;
 }
 .components-popover__content .tb-white .toggle-checkbox:checked ~ .toggle-content {
   border-color: #fff;

@@ -1601,7 +1601,7 @@ $toggle_border_width: 2px;
     background: $color;
     color: $white;
     &::before{
-      color: $thin;
+      color: $color;
     }
   }
   .toggle-checkbox:checked ~ .toggle-content{

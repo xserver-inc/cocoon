@@ -5453,7 +5453,7 @@ div.search-form {
   color: #fff;
 }
 .tb-red .toggle-button::before {
-  color: #ddd;
+  color: #e60033;
 }
 .tb-red .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e60033;
@@ -5465,7 +5465,7 @@ div.search-form {
   color: #fff;
 }
 .tb-pink .toggle-button::before {
-  color: #ddd;
+  color: #e95295;
 }
 .tb-pink .toggle-checkbox:checked ~ .toggle-content {
   border-color: #e95295;
@@ -5477,7 +5477,7 @@ div.search-form {
   color: #fff;
 }
 .tb-purple .toggle-button::before {
-  color: #ddd;
+  color: #884898;
 }
 .tb-purple .toggle-checkbox:checked ~ .toggle-content {
   border-color: #884898;
@@ -5489,7 +5489,7 @@ div.search-form {
   color: #fff;
 }
 .tb-blue .toggle-button::before {
-  color: #ddd;
+  color: #0095d9;
 }
 .tb-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #0095d9;
@@ -5501,7 +5501,7 @@ div.search-form {
   color: #fff;
 }
 .tb-green .toggle-button::before {
-  color: #ddd;
+  color: #3eb370;
 }
 .tb-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #3eb370;
@@ -5513,7 +5513,7 @@ div.search-form {
   color: #fff;
 }
 .tb-orange .toggle-button::before {
-  color: #ddd;
+  color: #f39800;
 }
 .tb-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #f39800;
@@ -5525,7 +5525,7 @@ div.search-form {
   color: #fff;
 }
 .tb-yellow .toggle-button::before {
-  color: #ddd;
+  color: #ffd900;
 }
 .tb-yellow .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffd900;
@@ -5537,7 +5537,7 @@ div.search-form {
   color: #fff;
 }
 .tb-brown .toggle-button::before {
-  color: #ddd;
+  color: #954e2a;
 }
 .tb-brown .toggle-checkbox:checked ~ .toggle-content {
   border-color: #954e2a;
@@ -5549,7 +5549,7 @@ div.search-form {
   color: #fff;
 }
 .tb-grey .toggle-button::before {
-  color: #ddd;
+  color: #949495;
 }
 .tb-grey .toggle-checkbox:checked ~ .toggle-content {
   border-color: #949495;
@@ -5561,7 +5561,7 @@ div.search-form {
   color: #fff;
 }
 .tb-black .toggle-button::before {
-  color: #ddd;
+  color: #333;
 }
 .tb-black .toggle-checkbox:checked ~ .toggle-content {
   border-color: #333;
@@ -5573,7 +5573,7 @@ div.search-form {
   color: #fff;
 }
 .tb-deep .toggle-button::before {
-  color: #ddd;
+  color: #55295b;
 }
 .tb-deep .toggle-checkbox:checked ~ .toggle-content {
   border-color: #55295b;
@@ -5585,7 +5585,7 @@ div.search-form {
   color: #fff;
 }
 .tb-indigo .toggle-button::before {
-  color: #ddd;
+  color: #1e50a2;
 }
 .tb-indigo .toggle-checkbox:checked ~ .toggle-content {
   border-color: #1e50a2;
@@ -5597,7 +5597,7 @@ div.search-form {
   color: #fff;
 }
 .tb-light-blue .toggle-button::before {
-  color: #ddd;
+  color: #2ca9e1;
 }
 .tb-light-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #2ca9e1;
@@ -5609,7 +5609,7 @@ div.search-form {
   color: #fff;
 }
 .tb-cyan .toggle-button::before {
-  color: #ddd;
+  color: #00a3af;
 }
 .tb-cyan .toggle-checkbox:checked ~ .toggle-content {
   border-color: #00a3af;
@@ -5621,7 +5621,7 @@ div.search-form {
   color: #fff;
 }
 .tb-teal .toggle-button::before {
-  color: #ddd;
+  color: #007b43;
 }
 .tb-teal .toggle-checkbox:checked ~ .toggle-content {
   border-color: #007b43;
@@ -5633,7 +5633,7 @@ div.search-form {
   color: #fff;
 }
 .tb-light-green .toggle-button::before {
-  color: #ddd;
+  color: #8bc34a;
 }
 .tb-light-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #8bc34a;
@@ -5645,7 +5645,7 @@ div.search-form {
   color: #fff;
 }
 .tb-lime .toggle-button::before {
-  color: #ddd;
+  color: #c3d825;
 }
 .tb-lime .toggle-checkbox:checked ~ .toggle-content {
   border-color: #c3d825;
@@ -5657,7 +5657,7 @@ div.search-form {
   color: #fff;
 }
 .tb-amber .toggle-button::before {
-  color: #ddd;
+  color: #ffc107;
 }
 .tb-amber .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ffc107;
@@ -5669,7 +5669,7 @@ div.search-form {
   color: #fff;
 }
 .tb-deep-orange .toggle-button::before {
-  color: #ddd;
+  color: #ea5506;
 }
 .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content {
   border-color: #ea5506;
@@ -5681,7 +5681,7 @@ div.search-form {
   color: #fff;
 }
 .tb-white .toggle-button::before {
-  color: #ddd;
+  color: #fff;
 }
 .tb-white .toggle-checkbox:checked ~ .toggle-content {
   border-color: #fff;
