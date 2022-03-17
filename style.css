@@ -5414,9 +5414,10 @@ div.search-form {
 .toggle-button::before {
   content: '\f067';
   font-family: FontAwesome;
-  margin-right: 0.4em;
+  margin-right: 0.8em;
   font-size: 0.8em;
   color: #999;
+  opacity: 0.4;
 }
 
 .toggle-button:hover {
