@@ -5510,7 +5510,7 @@ body.wp-admin {
   margin-right: 0.8em;
   font-size: 0.8em;
   color: #999;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 .admin-settings .demo .has-border-color .toggle-button::before {
   opacity: 0.6;
@@ -13120,7 +13120,7 @@ body.wp-admin {
   margin-right: 0.8em;
   font-size: 0.8em;
   color: #999;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 .admin-settings .demo .has-border-color .toggle-button::before {
   opacity: 0.6;
@@ -21302,7 +21302,7 @@ textarea[name="the_page_memo"] {
   margin-right: 0.8em;
   font-size: 0.8em;
   color: #999;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 .components-popover__content .has-border-color .toggle-button::before {
   opacity: 0.6;
