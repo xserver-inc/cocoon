@@ -111,7 +111,11 @@ function get_the_date_tags(){
   $updated = $is_update_output ? ' updated' : null;
   $date_modified = $is_update_output ? ' dateModified' : null;
   $display_none = is_seo_date_type_none() ? ' display-none' : null;
-  $post_date_tag_wrap_before = '<span class="post-date'.$display_none.'"><span class="fa fa-clock-o" aria-hidden="true"></span> ';
+  $post_date_icon_tag = '<span class="fa fa-clock-o" aria-hidden="true"></span>';
+  if (!is_post_date_visible() && is_post_update_visible()) {
+    $post_date_icon_tag = '<span class="fa fa-history" aria-hidden="true"></span>';
+  }
+  $post_date_tag_wrap_before = '<span class="post-date'.$display_none.'">'.$post_date_icon_tag.' ';
   $post_date_tag_wrap_after = '</span>';
   //spanタグの投稿日
   $span_post_date_tag =
