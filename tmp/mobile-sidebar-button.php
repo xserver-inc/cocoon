@@ -10,7 +10,7 @@ global $_MENU_CAPTION;
 global $_MENU_ICON;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-outdent'; ?>
 
-<?php if (is_active_sidebar( 'sidebar' )): ?>
+<?php if ( is_active_sidebar( 'sidebar' ) || is_active_sidebar( 'sidebar-scroll' ) ): ?>
 <!-- サイドバーボタン -->
   <li class="sidebar-menu-button menu-button">
     <input id="sidebar-menu-input" type="checkbox" class="display-none">
