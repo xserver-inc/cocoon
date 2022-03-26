@@ -196,22 +196,6 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/<font[^>]+?>/i', '', $the_content);
   $the_content = preg_replace('/<\/font>/i', '', $the_content);
 
-  // //ドロップダウンのアーカイブウィジェットは削除
-  // $pattern = '{<aside id="archives-.+?archives-dropdown.+?</aside>}is';
-  // $append = '';
-  // $the_content = preg_replace($pattern, $append, $the_content);
-  // $pattern = '{<div id="archives-.+?<select id="archives-dropdown-.+?</div>}is';
-  // $append = '';
-  // $the_content = preg_replace($pattern, $append, $the_content);
-
-  // //ドロップダウンのカテゴリウィジェットは削除
-  // $pattern = '{<aside id="categories-.+?categories-dropdown.+?</aside>}is';
-  // $append = '';
-  // $the_content = preg_replace($pattern, $append, $the_content);
-  // $pattern = '{<div id="categories.+?categories-dropdown.+?</div>}is';
-  // $append = '';
-  // $the_content = preg_replace($pattern, $append, $the_content);
-
   //formタグを取り除く
   $the_content = preg_replace('{<form(?!.*class="amp-form).+?</form>}is', '', $the_content);
 
@@ -237,26 +221,13 @@ function convert_content_for_amp($the_content){
 
   //数式変換
   if (is_formula_enable() && is_math_shortcode_exist()) {
-    // $the_content = preg_replace('/\\\\\\(.+?\\\\\\)/', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $the_content);
-    // $the_content = preg_replace('/\\\\\\[[\s\S]+?\\\\\\]/', '<amp-mathml layout="container" data-formula="$0"></amp-mathml>', $the_content);
-
-    // //インライン
-    // $the_content = str_replace('\(', '<amp-mathml layout="container" inline data-formula="\(', $the_content);
-    // $the_content = str_replace('\)', '\)"></amp-mathml>', $the_content);
-    // //ブロック
-    // $the_content = str_replace('\[', '<amp-mathml " layout="container" data-formula="\[', $the_content);
-    // $the_content = str_replace('\]', '\]"></amp-mathml>', $the_content);
 
     if (preg_match_all('#<p[^>]*?>[\s\S]+?</p>#', $the_content, $m)) {
-      //_v($m);
       $paragraphs = $m[0];
       foreach ($paragraphs as $paragraph) {
-        // preg_match_all('#\$.+?\$#', $the_content, $m);
-        // _v($m);
         $old_p = $paragraph;
         $new_p = preg_replace('/\\\\\\(.+?\\\\\\)/', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $old_p);
         $new_p = preg_replace('/\\\\\\[[\s\S]+?\\\\\\]/', '<amp-mathml layout="container" data-formula="$0"></amp-mathml>', $new_p);
-        // $new_p = preg_replace('#\$.+?\$#', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $new_p);
         $the_content = str_replace($old_p, $new_p, $the_content);
       }
     }
