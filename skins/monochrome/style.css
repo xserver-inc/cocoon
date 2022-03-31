@@ -1048,11 +1048,15 @@ blockquote:before {
 	top: 10px;
 	left: 15px;
 	content: "\f10d";
-	font-family: "Font Awesome 5 Free";
+	font-family: FontAwesome;
 	color: #333333;
 	font-size: 28px;
 	line-height: 1;
 	font-weight: 900;
+}
+
+blockquote::after{
+	display: none;
 }
 
 blockquote p {
