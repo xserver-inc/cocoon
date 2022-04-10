@@ -27,8 +27,8 @@ function after_setup_theme_gutenberg_editor_setup(){
   add_theme_support( 'align-wide' );
   // //ブロックスタイルに読み込み
   // add_theme_support( 'wp-block-styles' );
-  //埋め込み要素のレスポンシブスタイルを適用する
-  add_theme_support( 'responsive-embeds' );
+  // //埋め込み要素のレスポンシブスタイルを適用する
+  // add_theme_support( 'responsive-embeds' );
 
 }
 endif;
