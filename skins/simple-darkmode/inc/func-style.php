@@ -48,7 +48,6 @@ add_action('get_template_part_tmp/css-custom', function() {
   .search-submit{
     border: solid 2px '.$color.';
   }
-  .fa,
   .blogcard-label::after,
   .fas .fa-folder,
   .search-submit{
