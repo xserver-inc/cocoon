@@ -55,7 +55,10 @@ function get_the_tag_title($tag_id = null, $is_tag_name = true){
   }
   //タイトルが存在しない場合はタグ名を利用する
   if (!$res && $is_tag_name) {
-    $res = get_tag($tag_id)->name;
+    $tag = get_tag($tag_id);
+    if (isset($tag->name)) {
+      $res = $tag->name;
+    }    
   }
   return $res;
 }
