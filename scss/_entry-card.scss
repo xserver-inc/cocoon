@@ -173,15 +173,11 @@
     padding: 7px;
   }
   .entry-card-snippet{
-    max-height: 4em;
+    display: -webkit-box;
     overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
-  // &.ect-tile-card{
-  //   .a-wrap{
-  //     padding: 0;
-  //     margin: 7px;
-  //   }
-  // }
 }
 .ect-3-columns > *{
   width: 33%;

@@ -36,9 +36,11 @@ body.wp-admin {
 
 .admin-settings .demo .entry-card-snippet, .admin-settings .demo .related-entry-card-snippet {
   font-size: 0.8em;
-  max-height: 7.8em;
   line-height: 1.3;
+  display: -webkit-box;
   overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .admin-settings .demo .entry-card-meta, .admin-settings .demo .related-entry-card-meta {
@@ -1632,8 +1634,10 @@ body.wp-admin {
   padding: 7px;
 }
 .admin-settings .demo .ect-3-columns .entry-card-snippet {
-  max-height: 4em;
+  display: -webkit-box;
   overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .admin-settings .demo .ect-3-columns > * {
   width: 33%;
@@ -5961,6 +5965,9 @@ body.wp-admin {
 }
 .admin-settings .demo .related-entry-card-content {
   margin-left: 170px;
+}
+.admin-settings .demo .related-entry-card-snippet {
+  -webkit-line-clamp: 3;
 }
 .admin-settings .demo .rect-mini-card .related-list {
   display: flex;
@@ -9242,8 +9249,10 @@ body.wp-admin {
   padding: 7px;
 }
 .admin-settings .demo .ect-3-columns .entry-card-snippet {
-  max-height: 4em;
+  display: -webkit-box;
   overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .admin-settings .demo .ect-3-columns > * {
   width: 33%;
@@ -13571,6 +13580,9 @@ body.wp-admin {
 }
 .admin-settings .demo .related-entry-card-content {
   margin-left: 170px;
+}
+.admin-settings .demo .related-entry-card-snippet {
+  -webkit-line-clamp: 3;
 }
 .admin-settings .demo .rect-mini-card .related-list {
   display: flex;
@@ -17703,6 +17715,12 @@ body.wp-admin {
   }
   .admin-settings .demo #bbpress-forums .form-allowed-tags code {
     width: 100% !important;
+  }
+  .admin-settings .demo .entry-card-snippet {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   .admin-settings .demo .no-sp-snippet .entry-card-snippet {
     display: none;

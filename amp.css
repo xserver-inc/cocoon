@@ -28,9 +28,11 @@
 
 .entry-card-snippet, .related-entry-card-snippet {
   font-size: 0.8em;
-  max-height: 7.8em;
   line-height: 1.3;
+  display: -webkit-box;
   overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .entry-card-meta, .related-entry-card-meta {
@@ -1017,8 +1019,10 @@ img.emoji {
   padding: 7px;
 }
 .ect-3-columns .entry-card-snippet {
-  max-height: 4em;
+  display: -webkit-box;
   overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .ect-3-columns > * {
@@ -5922,6 +5926,10 @@ figcaption {
   margin-left: 170px;
 }
 
+.related-entry-card-snippet {
+  -webkit-line-clamp: 3;
+}
+
 /************************************
 ** 関連記事表示タイプがミニカードの時
 ************************************/
@@ -9711,6 +9719,13 @@ pre {
 
   #bbpress-forums .form-allowed-tags code {
     width: 100% !important;
+  }
+
+  .entry-card-snippet {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   .no-sp-snippet .entry-card-snippet {

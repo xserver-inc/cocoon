@@ -297,10 +297,6 @@ a.facebook-follow-button{
   font-size: 0.74em;
 }
 
-// .slick-dots{
-//   display: none !important;
-// }
-
 
 .ect-vertical-card .entry-card-wrap{
   margin-bottom: 8px;
@@ -317,6 +313,13 @@ a.facebook-follow-button{
 
 #bbpress-forums .form-allowed-tags code{
   width: 100% !important;
+}
+
+.entry-card-snippet{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .no-sp-snippet{

@@ -31,6 +31,7 @@
 
 .related-entry-card-snippet{
   @extend %card_snippet;
+  -webkit-line-clamp: 3;
 }
 
 .related-entry-card-meta {
