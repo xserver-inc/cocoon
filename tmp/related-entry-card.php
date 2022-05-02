@@ -15,7 +15,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     echo get_the_post_thumbnail($post->ID, get_related_entry_card_thumbnail_size(), array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
       <?php //NO IMAGEサムネイルの出力
-      echo get_original_image_tag(get_no_image_160x90_url(), THUMB160WIDTH, THUMB160HEIGHT, '"no-image related-entry-card-no-image', ''); ?>
+      echo get_original_image_tag(get_no_image_160x90_url(), THUMB160WIDTH, THUMB160HEIGHT, 'no-image related-entry-card-no-image', ''); ?>
 
     <?php endif; ?>
     <?php the_nolink_category(null, apply_filters('is_related_entry_card_category_label_visible', true)); //カテゴリラベルの取得 ?>
