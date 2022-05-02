@@ -9164,6 +9164,7 @@ input[type='submit'] {
 .carousel-entry-card-title,
 .blogcard-snippet {
   display: -webkit-box;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }

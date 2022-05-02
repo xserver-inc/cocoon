@@ -16259,6 +16259,7 @@ body.wp-admin {
 .admin-settings .demo .carousel-entry-card-title,
 .admin-settings .demo .blogcard-snippet {
   display: -webkit-box;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
