@@ -1506,8 +1506,9 @@ function get_widget_entry_card_link_tag($atts){
         <?php //$prefixがnaviのとき
         if (is_widget_navi_entry_card_prefix($prefix)) {
           $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
+          
           //投稿の場合
-          if ($object === 'post') {
+          if ($object === 'post' || $object === 'page') {
             if ($type === ET_DEFAULT) {
               $size = THUMB120;
             } else {
@@ -1516,16 +1517,21 @@ function get_widget_entry_card_link_tag($atts){
             $attr = array();
             $attr['class'] = $class;
 
-            echo get_the_post_thumbnail( $object_id, $size, $attr );
+            $thumbnail_tag = get_the_post_thumbnail( $object_id, $size, $attr );
+            if ($thumbnail_tag) {
+              echo $thumbnail_tag;
+            } else {
+              echo get_widget_entry_card_no_image_tag(ET_DEFAULT, $prefix);
+            }
           } else {
             if ($object === 'category') {
               //カテゴリーの場合
               $class = 'category-image '.$class;
-            } else {
-              //NO IMAGEの場合
-              $class = 'no-image '.$class;
+              if (!get_the_category_eye_catch_url($object_id)) {
+                //NO IMAGEの場合
+                $class = 'no-image '.$class;
+              }
             }
-
             echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class);
           }
         } else {
