@@ -123,7 +123,11 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
         $hide_class = ' class="display-none"';
       }
       $counter++;
-      $toc_list .= '<li'.$hide_class.'><a href="#toc' . $counter . '" tabindex="0">' . strip_tags($headers[2][$i]) . '</a>';
+      $text = strip_tags($headers[2][$i]);
+      if (is_toc_heading_inner_html_tag_enable()) {
+        $text = $headers[2][$i];
+      }
+      $toc_list .= '<li'.$hide_class.'><a href="#toc' . $counter . '" tabindex="0">' . $text . '</a>';
       $prev_depth = $depth;
     }
   }

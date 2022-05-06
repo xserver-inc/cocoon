@@ -2351,7 +2351,7 @@ endif;
 //フロントトップページかどうか
 if ( !function_exists( 'is_front_top_page' ) ):
 function is_front_top_page(){
-  return is_front_page() && !is_paged() && (!isset($_GET['cat']) || (isset($_GET['cat']) && $_GET['cat'] !== '0'));;
+  return is_front_page() && !is_paged() && (!isset($_GET['cat']) || (isset($_GET['cat']) && $_GET['cat'] !== '0'));
 }
 endif;
 
