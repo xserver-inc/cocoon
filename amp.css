@@ -2250,7 +2250,7 @@ label.screen-reader-text {
   margin: 20px 0;
 }
 
-#wp-calendar {
+[id$="wp-calendar"] {
   border-collapse: collapse;
   border-top-width: 1px;
   border-right-width: 1px;
@@ -2261,23 +2261,23 @@ label.screen-reader-text {
   width: 100%;
   max-width: 400px;
 }
-#wp-calendar caption {
+[id$="wp-calendar"] caption {
   font-weight: bold;
   text-align: center;
 }
-#wp-calendar #today {
+[id$="wp-calendar"] [id$="today"] {
   background-color: #ffe6b2;
 }
-#wp-calendar #today a {
+[id$="wp-calendar"] [id$="today"] a {
   background-color: #ffe6b2;
 }
-#wp-calendar #today a:hover {
+[id$="wp-calendar"] [id$="today"] a:hover {
   background-color: #ffd67e;
 }
-#wp-calendar tr:nth-of-type(2n+1) {
+[id$="wp-calendar"] tr:nth-of-type(2n+1) {
   background-color: transparent;
 }
-#wp-calendar th {
+[id$="wp-calendar"] th {
   border-bottom-width: 1px;
   border-left-width: 1px;
   border-bottom-style: solid;
@@ -2285,7 +2285,7 @@ label.screen-reader-text {
   border-bottom-color: #eee;
   border-left-color: #eee;
 }
-#wp-calendar td {
+[id$="wp-calendar"] td {
   text-align: center;
   padding: 0px;
   border-bottom-width: 1px;
@@ -2295,12 +2295,12 @@ label.screen-reader-text {
   border-bottom-color: #eee;
   border-left-color: #eee;
 }
-#wp-calendar td a {
+[id$="wp-calendar"] td a {
   color: #333;
   display: block;
   background-color: #ffface;
 }
-#wp-calendar td a:hover {
+[id$="wp-calendar"] td a:hover {
   background-color: #fff69b;
 }
 

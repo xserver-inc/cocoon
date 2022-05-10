@@ -13,7 +13,7 @@
 blockquote::before, blockquote::after,.cta-box,.fb-like-message,.fb-like-sub-message,.search-submit,.fa-chevron-right:before,.fa-chevron-left:before,.carousel .slick-arrow:before,.search-form div.sbtn,.menu-drawer a{
 	color: var(--color-ki);
 }
-body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h2, .sidebar h3,.footer,.article h1,.article h2,.article h3, .article h4, .article h5, .article h6,.blogcard-wrap,.pagination-next-link, .comment-btn,.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"],input[type='submit'], textarea, select,.tagcloud a,.cta-box,.fb_iframe_widget,.fb_iframe_widget iframe,.fb-like-balloon-body,.fb-like-balloon-button,.recent-comment-content,#wp-calendar th, .toggle-button,.pager-links a span,.appeal-content,.carousel-in,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.go-to-top-button,.share-menu-content .sns-buttons,#wp-calendar #today,#wp-calendar #today a,.navi-in a:hover,.a-wrap:hover,.list-more-button:hover,.pagination-next-link:hover,.comment-btn:hover,.widget_recent_entries ul li a:hover, .widget_categories .cat-item a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.tagcloud a:hover,.recent-comment-content:hover,.toc a:hover,.search-form div.sbtn:hover,.pager-links a:hover span,.wp-block-search .wp-block-search__button:hover,input[type='submit']:hover,.comment-reply-link:hover,.pagination a:hover,.author-box .sns-follow-buttons a.follow-button:hover,.pager-links a:hover span,.search-form div.sbtn,.menu-drawer a:hover,.search-menu-content,.box-menu,.pagination .current,.post-page-numbers .current,.fb-like-balloon-arrow-box-in,.index-tab-buttons .index-tab-button,#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"],.navi-footer-in a:hover
+body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h2, .sidebar h3,.footer,.article h1,.article h2,.article h3, .article h4, .article h5, .article h6,.blogcard-wrap,.pagination-next-link, .comment-btn,.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"],input[type='submit'], textarea, select,.tagcloud a,.cta-box,.fb_iframe_widget,.fb_iframe_widget iframe,.fb-like-balloon-body,.fb-like-balloon-button,.recent-comment-content,[id$="wp-calendar"] th, .toggle-button,.pager-links a span,.appeal-content,.carousel-in,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.go-to-top-button,.share-menu-content .sns-buttons,[id$="wp-calendar"]   [id$="today"],[id$="wp-calendar"]   [id$="today"] a,.navi-in a:hover,.a-wrap:hover,.list-more-button:hover,.pagination-next-link:hover,.comment-btn:hover,.widget_recent_entries ul li a:hover, .widget_categories .cat-item a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.tagcloud a:hover,.recent-comment-content:hover,.toc a:hover,.search-form div.sbtn:hover,.pager-links a:hover span,.wp-block-search .wp-block-search__button:hover,input[type='submit']:hover,.comment-reply-link:hover,.pagination a:hover,.author-box .sns-follow-buttons a.follow-button:hover,.pager-links a:hover span,.search-form div.sbtn,.menu-drawer a:hover,.search-menu-content,.box-menu,.pagination .current,.post-page-numbers .current,.fb-like-balloon-arrow-box-in,.index-tab-buttons .index-tab-button,#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"],.navi-footer-in a:hover
 {
 	background: var(--color-bg);
 }
@@ -239,11 +239,11 @@ tfoot td{
 	border-bottom: none!important;
 }
 /*カレンダー*/
-#wp-calendar #today,#wp-calendar #today{
+[id$="wp-calendar"]   [id$="today"],[id$="wp-calendar"]   [id$="today"]{
 	border: solid var(--color-ki);
 }
 
-#wp-calendar td a,#wp-calendar td a:hover{
+[id$="wp-calendar"] td a,[id$="wp-calendar"] td a:hover{
 	background: var(--color-shadow-light);
 }
 .wp-calendar-nav-prev a{
@@ -545,7 +545,7 @@ tfoot td{
     border-color: var(--color-bg);
 }
 
-#wp-calendar td a:hover {
+[id$="wp-calendar"] td a:hover {
     opacity: 0.5;
 }
 /*------------------------アクティブ時挙動------------------------*/

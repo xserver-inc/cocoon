@@ -300,7 +300,7 @@ class Skin_Silk_Functions {
     .sns-share-message,
     .author-widget-name,
     .go-to-top-button,
-    #wp-calendar #today,
+    [id$="wp-calendar"]   [id$="today"],
     .mobile-footer-menu-buttons,
     .is-style-color-head th {
       background: '.$color.';
@@ -347,7 +347,7 @@ class Skin_Silk_Functions {
     .author-widget-name,
     .go-to-top-button,
     .go-to-top-button:hover,
-    #wp-calendar #today,
+    [id$="wp-calendar"]   [id$="today"],
     .mobile-footer-menu-buttons .menu-icon,
     .mobile-footer-menu-buttons .menu-caption,
     .is-style-color-head th {

@@ -578,7 +578,7 @@ body {
   }
   // Calendar カレンダー
   .widget_calendar {
-    #wp-calendar {
+    [id$="wp-calendar"] {
       caption {
         color: $white-color;
         border-color: $key-color;;
@@ -598,7 +598,7 @@ body {
           background-color: $main-color-light;
           color: $white-color;
         }
-        &#today, &#today a {
+        &  [id$="today"], &  [id$="today"] a {
           background-color: $main-color-midium;
           color: $white-color;
         }
@@ -999,7 +999,7 @@ body {
 #main {
   // Calendar カレンダー
   .wp-block-calendar {
-    #wp-calendar {
+    [id$="wp-calendar"] {
       caption {
         color: $white-color;
         border-color: $key-color;;
@@ -1019,7 +1019,7 @@ body {
           background-color: $main-color-light;
           color: $white-color;
         }
-        &#today, &#today a {
+        &  [id$="today"], &  [id$="today"] a {
           background-color: $main-color-midium;
           color: $white-color;
         }

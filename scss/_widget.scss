@@ -76,7 +76,7 @@ label.screen-reader-text{
   margin: 20px 0;
 }
 
-#wp-calendar {
+[id$="wp-calendar"] {
   border-collapse: collapse;
   border-top-width: 1px;
   border-right-width: 1px;
@@ -92,7 +92,7 @@ label.screen-reader-text{
     text-align: center;
   }
 
-  #today  {
+  [id$="today"]  {
     background-color: #ffe6b2;
 
     a{

@@ -525,8 +525,8 @@ table tr:nth-of-type(2n) {
   background-color: #191e1c;
 }
 
-#wp-calendar th,
-#wp-calendar td {
+[id$="wp-calendar"] th,
+[id$="wp-calendar"] td {
   border: solid 1px #5c5b5b;
 }
 
@@ -892,25 +892,25 @@ a {
 /* -------------------------------------------
 / 『カレンダー』
 ------------------------------------------- */
-#wp-calendar #today,
+[id$="wp-calendar"]   [id$="today"],
 #slide-in-wp-calendar #slide-in-today {
   background-color: #a4701a;
 }
 
-#wp-calendar #today a,
+[id$="wp-calendar"]   [id$="today"] a,
 #slide-in-wp-calendar #slide-in-today a {
   background-color: #cba350;
   color: black;
 }
 
-#wp-calendar td a,
+[id$="wp-calendar"] td a,
 #slide-in-wp-calendar td a {
   display: block;
   background-color: rgba(0, 146, 80, 0.4);
   color: #ccc;
 }
 
-#wp-calendar td a:hover,
+[id$="wp-calendar"] td a:hover,
 #slide-in-wp-calendar td a:hover {
   background-color: rgba(0, 146, 80, 0.6);
 }
