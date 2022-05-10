@@ -2260,6 +2260,7 @@ label.screen-reader-text {
   border-right-color: #eee;
   width: 100%;
   max-width: 400px;
+  text-align: center;
 }
 [id$="wp-calendar"] caption {
   font-weight: bold;
