@@ -1133,31 +1133,31 @@ blockquote cite {
 /* □■-----------------------------------------------------
 / 『カレンダー』
 -----------------------------------------------------■□ */
-[id$="wp-calendar"] th:nth-of-type(1) {
+.wp-calendar-table th:nth-of-type(1) {
 	background-color: #333;
 }
 
-[id$="wp-calendar"] th:nth-of-type(2) {
+.wp-calendar-table th:nth-of-type(2) {
 	background-color: #333;
 }
 
-[id$="wp-calendar"] th:nth-of-type(3) {
+.wp-calendar-table th:nth-of-type(3) {
 	background-color: #333;
 }
 
-[id$="wp-calendar"] th:nth-of-type(4) {
+.wp-calendar-table th:nth-of-type(4) {
 	background-color: #333;
 }
 
-[id$="wp-calendar"] th:nth-of-type(5) {
+.wp-calendar-table th:nth-of-type(5) {
 	background-color: #333;
 }
 
-[id$="wp-calendar"] th:nth-of-type(6) {
+.wp-calendar-table th:nth-of-type(6) {
 	background-color: #333;
 }
 
-[id$="wp-calendar"] th:nth-of-type(7) {
+.wp-calendar-table th:nth-of-type(7) {
 	background-color: #333;
 }
 

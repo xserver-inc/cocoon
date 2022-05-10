@@ -578,7 +578,7 @@ body {
   }
   // Calendar カレンダー
   .widget_calendar {
-    [id$="wp-calendar"] {
+    .wp-calendar-table {
       caption {
         color: $white-color;
         border-color: $key-color;;
@@ -999,7 +999,7 @@ body {
 #main {
   // Calendar カレンダー
   .wp-block-calendar {
-    [id$="wp-calendar"] {
+    .wp-calendar-table {
       caption {
         color: $white-color;
         border-color: $key-color;;

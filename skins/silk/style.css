@@ -779,13 +779,13 @@ a.page-numbers {
   border-radius: 2px;
 }
 
-[id$="wp-calendar"] td a {
+.wp-calendar-table td a {
   color: inherit;
   background: rgba(204, 204, 204, 0.4);
   transition: all 0.3s ease-out;
 }
 
-[id$="wp-calendar"] td a:hover {
+.wp-calendar-table td a:hover {
   background: rgba(204, 204, 204, 0.4);
   opacity: 0.7;
 }

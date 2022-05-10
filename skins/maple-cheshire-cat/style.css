@@ -331,13 +331,13 @@ color: #ba91e2;
 table th {
     background: #FDF6F9;
 }
-[id$="wp-calendar"] th:nth-child(6){
+.wp-calendar-table th:nth-child(6){
 	background-color: lightblue;
 }
-[id$="wp-calendar"] th:nth-child(7){
+.wp-calendar-table th:nth-child(7){
 	background-color: lightpink;
 }
-[id$="wp-calendar"] td{
+.wp-calendar-table td{
 	background-color: #fff;
 }
 

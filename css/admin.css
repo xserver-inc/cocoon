@@ -2692,7 +2692,7 @@ body.wp-admin {
 .admin-settings .demo .calendar_wrap {
   margin: 20px 0;
 }
-.admin-settings .demo [id$="wp-calendar"] {
+.admin-settings .demo .wp-calendar-table {
   border-collapse: collapse;
   border-top-width: 1px;
   border-right-width: 1px;
@@ -2704,23 +2704,23 @@ body.wp-admin {
   max-width: 400px;
   text-align: center;
 }
-.admin-settings .demo [id$="wp-calendar"] caption {
+.admin-settings .demo .wp-calendar-table caption {
   font-weight: bold;
   text-align: center;
 }
-.admin-settings .demo [id$="wp-calendar"] [id$="today"] {
+.admin-settings .demo .wp-calendar-table [id$="today"] {
   background-color: #ffe6b2;
 }
-.admin-settings .demo [id$="wp-calendar"] [id$="today"] a {
+.admin-settings .demo .wp-calendar-table [id$="today"] a {
   background-color: #ffe6b2;
 }
-.admin-settings .demo [id$="wp-calendar"] [id$="today"] a:hover {
+.admin-settings .demo .wp-calendar-table [id$="today"] a:hover {
   background-color: #ffd67e;
 }
-.admin-settings .demo [id$="wp-calendar"] tr:nth-of-type(2n+1) {
+.admin-settings .demo .wp-calendar-table tr:nth-of-type(2n+1) {
   background-color: transparent;
 }
-.admin-settings .demo [id$="wp-calendar"] th {
+.admin-settings .demo .wp-calendar-table th {
   border-bottom-width: 1px;
   border-left-width: 1px;
   border-bottom-style: solid;
@@ -2728,7 +2728,7 @@ body.wp-admin {
   border-bottom-color: #eee;
   border-left-color: #eee;
 }
-.admin-settings .demo [id$="wp-calendar"] td {
+.admin-settings .demo .wp-calendar-table td {
   text-align: center;
   padding: 0px;
   border-bottom-width: 1px;
@@ -2738,12 +2738,12 @@ body.wp-admin {
   border-bottom-color: #eee;
   border-left-color: #eee;
 }
-.admin-settings .demo [id$="wp-calendar"] td a {
+.admin-settings .demo .wp-calendar-table td a {
   color: #333;
   display: block;
   background-color: #ffface;
 }
-.admin-settings .demo [id$="wp-calendar"] td a:hover {
+.admin-settings .demo .wp-calendar-table td a:hover {
   background-color: #fff69b;
 }
 .admin-settings .demo .widget-entry-cards .a-wrap {
@@ -10308,7 +10308,7 @@ body.wp-admin {
 .admin-settings .demo .calendar_wrap {
   margin: 20px 0;
 }
-.admin-settings .demo [id$="wp-calendar"] {
+.admin-settings .demo .wp-calendar-table {
   border-collapse: collapse;
   border-top-width: 1px;
   border-right-width: 1px;
@@ -10320,23 +10320,23 @@ body.wp-admin {
   max-width: 400px;
   text-align: center;
 }
-.admin-settings .demo [id$="wp-calendar"] caption {
+.admin-settings .demo .wp-calendar-table caption {
   font-weight: bold;
   text-align: center;
 }
-.admin-settings .demo [id$="wp-calendar"] [id$="today"] {
+.admin-settings .demo .wp-calendar-table [id$="today"] {
   background-color: #ffe6b2;
 }
-.admin-settings .demo [id$="wp-calendar"] [id$="today"] a {
+.admin-settings .demo .wp-calendar-table [id$="today"] a {
   background-color: #ffe6b2;
 }
-.admin-settings .demo [id$="wp-calendar"] [id$="today"] a:hover {
+.admin-settings .demo .wp-calendar-table [id$="today"] a:hover {
   background-color: #ffd67e;
 }
-.admin-settings .demo [id$="wp-calendar"] tr:nth-of-type(2n+1) {
+.admin-settings .demo .wp-calendar-table tr:nth-of-type(2n+1) {
   background-color: transparent;
 }
-.admin-settings .demo [id$="wp-calendar"] th {
+.admin-settings .demo .wp-calendar-table th {
   border-bottom-width: 1px;
   border-left-width: 1px;
   border-bottom-style: solid;
@@ -10344,7 +10344,7 @@ body.wp-admin {
   border-bottom-color: #eee;
   border-left-color: #eee;
 }
-.admin-settings .demo [id$="wp-calendar"] td {
+.admin-settings .demo .wp-calendar-table td {
   text-align: center;
   padding: 0px;
   border-bottom-width: 1px;
@@ -10354,12 +10354,12 @@ body.wp-admin {
   border-bottom-color: #eee;
   border-left-color: #eee;
 }
-.admin-settings .demo [id$="wp-calendar"] td a {
+.admin-settings .demo .wp-calendar-table td a {
   color: #333;
   display: block;
   background-color: #ffface;
 }
-.admin-settings .demo [id$="wp-calendar"] td a:hover {
+.admin-settings .demo .wp-calendar-table td a:hover {
   background-color: #fff69b;
 }
 .admin-settings .demo .widget-entry-cards .a-wrap {
