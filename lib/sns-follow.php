@@ -139,6 +139,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['instagram_url'] = __( 'Instagram URL', THEME_NAME );
   $prof_items['pinterest_url'] = __( 'Pinterest URL', THEME_NAME );
   $prof_items['youtube_url'] = __( 'YouTube URL', THEME_NAME );
+  $prof_items['tiktok_url'] = __( 'TikTok URL', THEME_NAME );
   $prof_items['linkedin_url'] = __( 'LinkedIn URL', THEME_NAME );
   $prof_items['note_url'] = __( 'note URL', THEME_NAME );
   $prof_items['soundcloud_url'] = __( 'SoundCloud URL', THEME_NAME );
@@ -288,6 +289,14 @@ if ( !function_exists( 'get_the_author_youtube_url' ) ):
 function get_the_author_youtube_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
   return esc_html(get_the_author_meta('youtube_url', $user_id));
+}
+endif;
+
+//プロフィール画面で設定したTikTok URLの取得
+if ( !function_exists( 'get_the_author_tiktok_url' ) ):
+function get_the_author_tiktok_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('tiktok_url', $user_id));
 }
 endif;
 
