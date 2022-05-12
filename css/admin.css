@@ -16719,6 +16719,9 @@ body.wp-admin {
 .admin-settings .demo .slicknav_menu {
   display: none;
 }
+.admin-settings .demo .slicknav_nav .has-sub {
+  display: none;
+}
 .admin-settings .demo .bbp-breadcrumb-home,
 .admin-settings .demo .bbp-breadcrumb-home + .bbp-breadcrumb-sep,
 .admin-settings .demo .topic .post-date,

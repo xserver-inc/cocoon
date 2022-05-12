@@ -9702,6 +9702,10 @@ input[name="tab_item"] {
   display: none;
 }
 
+.slicknav_nav .has-sub {
+  display: none;
+}
+
 /*bbPressのスタイルを整える*/
 .bbp-breadcrumb-home,
 .bbp-breadcrumb-home + .bbp-breadcrumb-sep,
