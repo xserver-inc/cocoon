@@ -9639,6 +9639,12 @@ input[name="tab_item"] {
   padding: 0;
   font-size: 0.875em;
 }
+.slicknav_nav .slicknav_arrow {
+  display: inline-block;
+  font-size: 0.8em;
+  text-align: center;
+  width: 44px;
+}
 
 .slicknav_nav, .slicknav_nav ul {
   list-style: none;
@@ -9707,14 +9713,6 @@ input[name="tab_item"] {
 
 .slicknav_nav .has-sub {
   display: none;
-}
-
-.slicknav_row {
-  display: inline-flex;
-  width: 100%;
-}
-.slicknav_row .slicknav_arrow {
-  width: 100%;
 }
 
 /*bbPressのスタイルを整える*/

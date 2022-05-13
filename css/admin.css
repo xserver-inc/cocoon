@@ -16676,6 +16676,12 @@ body.wp-admin {
   padding: 0;
   font-size: 0.875em;
 }
+.admin-settings .demo .slicknav_nav .slicknav_arrow {
+  display: inline-block;
+  font-size: 0.8em;
+  text-align: center;
+  width: 44px;
+}
 .admin-settings .demo .slicknav_nav, .admin-settings .demo .slicknav_nav ul {
   list-style: none;
   overflow: hidden;
@@ -16732,13 +16738,6 @@ body.wp-admin {
 }
 .admin-settings .demo .slicknav_nav .has-sub {
   display: none;
-}
-.admin-settings .demo .slicknav_row {
-  display: inline-flex;
-  width: 100%;
-}
-.admin-settings .demo .slicknav_row .slicknav_arrow {
-  width: 100%;
 }
 .admin-settings .demo .bbp-breadcrumb-home,
 .admin-settings .demo .bbp-breadcrumb-home + .bbp-breadcrumb-sep,

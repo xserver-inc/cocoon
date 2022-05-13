@@ -62,7 +62,13 @@ background-color: #f5f5f5;
   color:#fff;
   margin:0;
   padding:0;
-  font-size:0.875em;
+  font-size:0.875em;  
+  .slicknav_arrow {
+    display: inline-block;
+    font-size: 0.8em;
+    text-align: center;
+    width: 44px;
+  }
 }
 .slicknav_nav, .slicknav_nav ul {
   list-style: none;
@@ -129,10 +135,9 @@ background-color: #f5f5f5;
   }
 }
 
-.slicknav_row{
-  display: inline-flex;
-  width: 100%;
-  .slicknav_arrow{
-    width: 100%;
-  }
-}
+// .slicknav_row{
+//   display: flex;
+//   .slicknav_arrow{
+//     width: 100%;
+//   }
+// }
