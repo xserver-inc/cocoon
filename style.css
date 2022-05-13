@@ -9511,7 +9511,7 @@ input[name="tab_item"] {
 }
 
 /*
-    Mobile Menu Core Style
+  Mobile Menu Core Style
 */
 .slicknav_btn {
   position: relative;
@@ -9570,10 +9570,6 @@ input[name="tab_item"] {
   cursor: pointer;
 }
 
-.slicknav_nav .slicknav_row {
-  display: block;
-}
-
 .slicknav_nav a {
   display: block;
 }
@@ -9603,8 +9599,8 @@ input[name="tab_item"] {
 }
 
 /*
-    User Default Style
-    Change the following styles to modify the appearance of the menu.
+  User Default Style
+  Change the following styles to modify the appearance of the menu.
 */
 .slicknav_menu {
   font-size: 16px;
@@ -9711,6 +9707,14 @@ input[name="tab_item"] {
 
 .slicknav_nav .has-sub {
   display: none;
+}
+
+.slicknav_row {
+  display: inline-flex;
+  width: 100%;
+}
+.slicknav_row .slicknav_arrow {
+  width: 100%;
 }
 
 /*bbPressのスタイルを整える*/

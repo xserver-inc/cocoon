@@ -821,12 +821,12 @@ body.wp-admin {
   /* スマホ用 */
   /* Slider */
   /*
-      Mobile Menu Core Style
+    Mobile Menu Core Style
   */
   /* IE6/7 support */
   /*
-      User Default Style
-      Change the following styles to modify the appearance of the menu.
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
   */
   /* Button */
   /* Button Text */
@@ -16626,9 +16626,6 @@ body.wp-admin {
 .admin-settings .demo .slicknav_nav .slicknav_item {
   cursor: pointer;
 }
-.admin-settings .demo .slicknav_nav .slicknav_row {
-  display: block;
-}
 .admin-settings .demo .slicknav_nav a {
   display: block;
 }
@@ -16735,6 +16732,13 @@ body.wp-admin {
 }
 .admin-settings .demo .slicknav_nav .has-sub {
   display: none;
+}
+.admin-settings .demo .slicknav_row {
+  display: inline-flex;
+  width: 100%;
+}
+.admin-settings .demo .slicknav_row .slicknav_arrow {
+  width: 100%;
 }
 .admin-settings .demo .bbp-breadcrumb-home,
 .admin-settings .demo .bbp-breadcrumb-home + .bbp-breadcrumb-sep,
