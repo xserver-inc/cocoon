@@ -4,7 +4,7 @@
 [![Join the chat at https://gitter.im/ComputerWolf/SlickNav](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ComputerWolf/SlickNav?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/slicknav/badge?style=rounded)](https://www.jsdelivr.com/package/npm/slicknav)
 
-### [SlickNav.io](http://slicknav.io)
+### [Docs & Examples](https://computerwolf.github.io/SlickNav/)
 
 ### Features
 * Multi-level menu support
@@ -22,6 +22,13 @@ slicknav.css can be modified to fit website design
 
     <link rel="stylesheet" href="SlickNav/dist/slicknav.min.css" />
     <script src="SlickNav/dist/jquery.slicknav.min.js"></script>
+    
+
+If you prefer you can also use the _CSS_ and _JS_ libraries from the **CDN**:
+```
+<link rel="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
+```
 
 #### Menu Markup
 
@@ -94,7 +101,7 @@ For example:
         }
     }
 
-More examples at [SlickNav.io](http://slicknav.io)
+[View more examples](https://computerwolf.github.io/SlickNav/)
 
 ### Browser Support
 * Chrome

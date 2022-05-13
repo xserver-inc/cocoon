@@ -777,6 +777,8 @@ function wp_enqueue_slicknav(){
               (function($){
                 $(".menu-header").slicknav({
                   label: "'.apply_filters('wp_enqueue_slicknav_label', 'MENU').'",
+                  parentTag: "div",
+                  allowParentLinks: true,
                 });
               })(jQuery);
             ');
