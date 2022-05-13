@@ -18,9 +18,11 @@ $pages = $wp_query->max_num_pages;
 if(!$pages){
   $pages = 1;
 }
+//1ページかどうか
+$is_1_page = ($pages != 1);
 
 //ページが1ページしかない場合は出力しない
-if($pages != 1) {
+if($is_1_page) {
   //次のページ番号
   if ( $pages == $paged ) {
     $next_page_num = $paged;
@@ -37,9 +39,10 @@ if($pages != 1) {
   }
 
 }
+
+//ページが1ページしかない場合は出力しない
+if($is_1_page):
 ?>
-
-
 <div class="pagination">
   <?php global $wp_rewrite;
   $paginate_base = get_pagenum_link(1);
@@ -67,3 +70,5 @@ if($pages != 1) {
     'next_text' => '<span class="fa fa-angle-right" aria-hidden="true"></span>',
   )); ?>
 </div><!-- /.pagination -->
+<?php
+endif;
