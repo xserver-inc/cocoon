@@ -1399,6 +1399,13 @@ body.wp-admin {
 .admin-settings .demo .navi {
   background-color: #fff;
 }
+.admin-settings .demo .navi .item-label,
+.admin-settings .demo .navi .item-description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
 .admin-settings .demo .navi-in a {
   position: relative;
 }
@@ -9021,6 +9028,13 @@ body.wp-admin {
 }
 .admin-settings .demo .navi {
   background-color: #fff;
+}
+.admin-settings .demo .navi .item-label,
+.admin-settings .demo .navi .item-description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .admin-settings .demo .navi-in a {
   position: relative;

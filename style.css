@@ -780,6 +780,13 @@ img.emoji {
 .navi {
   background-color: #fff;
 }
+.navi .item-label,
+.navi .item-description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
 
 .navi-in a {
   position: relative;

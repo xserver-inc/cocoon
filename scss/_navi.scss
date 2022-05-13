@@ -21,6 +21,14 @@ $icon_height: 16px;
 
 .navi{
   background-color: $white;
+
+  .item-label,
+  .item-description{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
 }
 
 // //clingifyプラグインの不具合対応
