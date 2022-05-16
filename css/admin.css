@@ -5881,6 +5881,16 @@ body.wp-admin {
   margin-right: 0.6em;
 }
 .admin-settings .demo .is-style-square .faq-item-label {
+  color: #fff !important;
+  background-color: #b7282e;
+  font-size: 20px;
+  padding: 5px 8px;
+  height: 100%;
+}
+.admin-settings .demo .is-style-square .faq-answer-label {
+  background-color: #007bbb;
+}
+.admin-settings .demo .is-style-square .faq-item-label {
   font-size: 20px;
   padding: 5px 8px;
   height: 100%;
@@ -13516,6 +13526,16 @@ body.wp-admin {
 .admin-settings .demo .faq-item-label {
   font-size: 24px;
   margin-right: 0.6em;
+}
+.admin-settings .demo .is-style-square .faq-item-label {
+  color: #fff !important;
+  background-color: #b7282e;
+  font-size: 20px;
+  padding: 5px 8px;
+  height: 100%;
+}
+.admin-settings .demo .is-style-square .faq-answer-label {
+  background-color: #007bbb;
 }
 .admin-settings .demo .is-style-square .faq-item-label {
   font-size: 20px;
@@ -21721,6 +21741,16 @@ textarea[name="the_page_memo"] {
 .components-popover__content .faq-item-label {
   font-size: 24px;
   margin-right: 0.6em;
+}
+.components-popover__content .is-style-square .faq-item-label {
+  color: #fff !important;
+  background-color: #b7282e;
+  font-size: 20px;
+  padding: 5px 8px;
+  height: 100%;
+}
+.components-popover__content .is-style-square .faq-answer-label {
+  background-color: #007bbb;
 }
 .components-popover__content .is-style-square .faq-item-label {
   font-size: 20px;
