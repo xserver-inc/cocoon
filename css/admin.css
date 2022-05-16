@@ -5499,6 +5499,7 @@ body.wp-admin {
 }
 .admin-settings .demo .toggle-wrap {
   position: relative;
+  border-width: 0;
 }
 .admin-settings .demo .toggle-wrap > p {
   margin: 0;
@@ -13129,6 +13130,7 @@ body.wp-admin {
 }
 .admin-settings .demo .toggle-wrap {
   position: relative;
+  border-width: 0;
 }
 .admin-settings .demo .toggle-wrap > p {
   margin: 0;
@@ -21327,6 +21329,7 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .toggle-wrap {
   position: relative;
+  border-width: 0;
 }
 .components-popover__content .toggle-wrap > p {
   margin: 0;

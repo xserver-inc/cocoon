@@ -5380,6 +5380,7 @@ div.search-form {
 ************************************/
 .toggle-wrap {
   position: relative;
+  border-width: 0;
 }
 .toggle-wrap > p {
   margin: 0;
