@@ -5279,6 +5279,9 @@ div.search-form {
 /************************************
 ** ラベルボックス
 ************************************/
+.label-box {
+  border-width: 0;
+}
 .label-box.block-box.has-background {
   background-color: transparent;
 }

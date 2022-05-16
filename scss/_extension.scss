@@ -1438,7 +1438,7 @@ div.search-form{
 ** ラベルボックス
 ************************************/
 .label-box{
-  // margin-bottom: 1.2em;
+  border-width: 0;
   &.block-box.has-background{
     background-color: transparent;
   }

@@ -5424,6 +5424,9 @@ body.wp-admin {
 .admin-settings .demo .tcb-white .tab-caption-box-content {
   border-color: #fff;
 }
+.admin-settings .demo .label-box {
+  border-width: 0;
+}
 .admin-settings .demo .label-box.block-box.has-background {
   background-color: transparent;
 }
@@ -13057,6 +13060,9 @@ body.wp-admin {
 }
 .admin-settings .demo .tcb-white .tab-caption-box-content {
   border-color: #fff;
+}
+.admin-settings .demo .label-box {
+  border-width: 0;
 }
 .admin-settings .demo .label-box.block-box.has-background {
   background-color: transparent;
@@ -21259,6 +21265,9 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .tcb-white .tab-caption-box-content {
   border-color: #fff;
+}
+.components-popover__content .label-box {
+  border-width: 0;
 }
 .components-popover__content .label-box.block-box.has-background {
   background-color: transparent;
