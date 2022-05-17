@@ -106,7 +106,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- ユニバーサルアナリティクスID -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, __( 'Google AnalyticsトラッキングID', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, __( 'ユニバーサルアナリティクスID', THEME_NAME )); ?>
           </th>
           <td>
             <?php
