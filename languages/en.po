@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-03 22:32+0900\n"
-"PO-Revision-Date: 2021-10-05 19:24+0900\n"
+"POT-Creation-Date: 2022-05-17 17:49+0900\n"
+"PO-Revision-Date: 2022-05-17 18:23+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: blocks/.git\n"
@@ -134,8 +134,9 @@ msgstr "Border color"
 #: blocks/src/block/tab-box/edit.js:142 blocks/src/block/timeline/edit.js:90
 #: blocks/src/block/toggle-box/edit.js:66
 #: blocks/src/micro/micro-balloon/edit.js:116 lib/content-category.php:227
-#: lib/page-settings/all-forms.php:159 lib/page-settings/buttons-forms.php:83
-#: lib/page-settings/editor-forms.php:54 lib/page-settings/pwa-forms.php:131
+#: lib/page-settings/all-forms.php:160 lib/page-settings/appeal-forms.php:90
+#: lib/page-settings/buttons-forms.php:83 lib/page-settings/editor-forms.php:54
+#: lib/page-settings/pwa-forms.php:131
 msgid "背景色"
 msgstr "Background color"
 
@@ -152,7 +153,7 @@ msgstr "Background color"
 #: blocks/src/block/toggle-box/edit.js:71
 #: blocks/src/micro/micro-balloon/edit.js:121
 #: blocks/src/micro/micro-text/edit.js:98 lib/content-category.php:236
-#: lib/page-settings/all-forms.php:93 lib/page-settings/buttons-forms.php:86
+#: lib/page-settings/all-forms.php:94 lib/page-settings/buttons-forms.php:86
 #: lib/page-settings/editor-forms.php:58
 msgid "文字色"
 msgstr "Text color"
@@ -419,7 +420,7 @@ msgid "光らせる"
 msgstr "Shiny"
 
 #: blocks/src/block/button-wrap/edit.js:111 blocks/src/block/button/edit.js:116
-#: lib/page-settings/all-forms.php:89
+#: lib/page-settings/all-forms.php:90
 msgid "文字サイズ"
 msgstr "Text size"
 
@@ -1752,7 +1753,7 @@ msgstr "Green bold"
 msgid "赤太字"
 msgstr "Red bold"
 
-#: blocks/src/toolbutton/bold.js:14
+#: blocks/src/toolbutton/bold.js:15
 msgid "太字（boldクラス指定）"
 msgstr "Bold (bold class specification)"
 
@@ -1894,7 +1895,7 @@ msgstr "Rating star"
 msgid "ログインコンテンツ"
 msgstr "Login content"
 
-#: blocks/src/toolbutton/dropdown-shortcodes.js:170 lib/shortcodes.php:244
+#: blocks/src/toolbutton/dropdown-shortcodes.js:170 lib/shortcodes.php:246
 #: lib/tinymce/shortcodes.php:232
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
 msgstr "This content is displayed for logged-in users only."
@@ -2418,7 +2419,7 @@ msgstr "Character count"
 msgid "PV"
 msgstr "PV"
 
-#: lib/admin.php:184 lib/content-category.php:264 lib/content-tag.php:207
+#: lib/admin.php:184 lib/content-category.php:264 lib/content-tag.php:210
 msgid "アイキャッチ"
 msgstr "Eye-catching image"
 
@@ -2454,7 +2455,7 @@ msgstr "Admin menu"
 msgid "ダッシュボード"
 msgstr "Dashboard"
 
-#: lib/admin.php:378 lib/shortcodes.php:438
+#: lib/admin.php:378 lib/shortcodes.php:441
 msgid "投稿一覧"
 msgstr "Posts"
 
@@ -2614,7 +2615,7 @@ msgstr "Posted date:"
 msgid "Edit"
 msgstr "Edit"
 
-#: lib/content-category.php:180 lib/content-tag.php:147 lib/seo.php:400
+#: lib/content-category.php:180 lib/content-tag.php:150 lib/seo.php:400
 #: lib/seo.php:528
 #, php-format
 msgid "「%s」の記事一覧です。"
@@ -2658,11 +2659,11 @@ msgstr "Category body"
 msgid "カテゴリページで表示されるメインコンテンツを入力してください。"
 msgstr "Enter the main content that will appear on the category page."
 
-#: lib/content-category.php:269 lib/content-tag.php:212
+#: lib/content-category.php:269 lib/content-tag.php:215
 msgid "タイトル下に表示されるアイキャッチ画像を選択してください。"
 msgstr "Select an eye-catching image that will appear below the title."
 
-#: lib/content-category.php:273 lib/content-tag.php:216
+#: lib/content-category.php:273 lib/content-tag.php:219
 #: lib/custom-fields/seo-field.php:95 lib/page-settings/title-forms.php:162
 #: lib/page-settings/title-forms.php:263
 msgid "メタディスクリプション"
@@ -2680,13 +2681,13 @@ msgstr ""
 "Enter a description for the category page. The text entered here will be "
 "used as a meta description tag."
 
-#: lib/content-category.php:283 lib/content-tag.php:226
+#: lib/content-category.php:283 lib/content-tag.php:229
 #: lib/custom-fields/seo-field.php:101 lib/page-settings/title-forms.php:77
 #: lib/page-settings/title-forms.php:175 lib/page-settings/title-forms.php:276
 msgid "メタキーワード"
 msgstr "Meta keywords"
 
-#: lib/content-category.php:288 lib/content-tag.php:231
+#: lib/content-category.php:288 lib/content-tag.php:234
 msgid "キーワード1,キーワード2,キーワード3"
 msgstr "Keyword 1, Keyword 2, Keyword 3, ..."
 
@@ -2698,23 +2699,23 @@ msgstr ""
 "Enter category page meta keywords, separated by commas. *This setting does "
 "not currently have much effect."
 
-#: lib/content-category.php:293 lib/content-tag.php:236
+#: lib/content-category.php:293 lib/content-tag.php:239
 msgid "noindex"
 msgstr "No index"
 
-#: lib/content-category.php:299 lib/content-tag.php:243
+#: lib/content-category.php:299 lib/content-tag.php:246
 #: lib/custom-fields/seo-field.php:106
 msgid "インデックスしない（noindex）"
 msgstr "Do not index (noindex)"
 
-#: lib/content-category.php:300 lib/content-tag.php:244
+#: lib/content-category.php:300 lib/content-tag.php:247
 #: lib/custom-fields/seo-field.php:107
 msgid ""
 "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr ""
 "Sets a meta tag so that this page will not be indexed by search engines."
 
-#: lib/content-category.php:300 lib/content-tag.php:244
+#: lib/content-category.php:300 lib/content-tag.php:247
 msgid "Cocoon設定の「SEO」タブにあるカテゴリーのnoindex設定が優先されます。"
 msgstr ""
 "The noindex setting for the category on the SEO tab of Cocoon settings is "
@@ -2736,15 +2737,15 @@ msgstr ""
 "This is basically entered for displaying a description in the list table of "
 "the tag settings."
 
-#: lib/content-tag.php:188
+#: lib/content-tag.php:191
 msgid "タグタイトル"
 msgstr "Tag title"
 
-#: lib/content-tag.php:193
+#: lib/content-tag.php:196
 msgid "タグページのタイトル"
 msgstr "Tag page title"
 
-#: lib/content-tag.php:194
+#: lib/content-tag.php:197
 msgid ""
 "タグページのタイトルを指定します。タグページのタイトルタグにここで入力したテ"
 "キストが適用されます。"
@@ -2752,19 +2753,19 @@ msgstr ""
 "Specifies a title for the tag page. The text entered here will be applied to "
 "the title tag of the tag page."
 
-#: lib/content-tag.php:198
+#: lib/content-tag.php:201
 msgid "タグ本文"
 msgstr "Tag body"
 
-#: lib/content-tag.php:203
+#: lib/content-tag.php:206
 msgid "タグページで表示されるメインコンテンツを入力してください。"
 msgstr "Enter the main content to be displayed on the tag page."
 
-#: lib/content-tag.php:220
+#: lib/content-tag.php:223
 msgid "タグページの説明文を入力してください"
 msgstr "Enter a description for the tag page."
 
-#: lib/content-tag.php:222
+#: lib/content-tag.php:225
 msgid ""
 "タグページの説明を入力します。ここに入力したテキストはメタディスクリプション"
 "タグとして利用されます。"
@@ -2772,7 +2773,7 @@ msgstr ""
 "Enter a description for the tag page. The text entered here will be used as "
 "a meta description tag."
 
-#: lib/content-tag.php:232
+#: lib/content-tag.php:235
 msgid ""
 "タグページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味"
 "のない設定となっています。"
@@ -3466,7 +3467,7 @@ msgid "トップページのみ"
 msgstr "Homepage only"
 
 #: lib/html-forms.php:778 lib/page-settings/_top-page.php:170
-#: lib/page-settings/sns-follow-forms.php:106
+#: lib/page-settings/sns-follow-forms.php:107
 #: lib/page-settings/sns-share-forms-bottom.php:115
 #: lib/page-settings/sns-share-forms-top.php:102
 #: lib/widgets/display-widgets.php:167
@@ -3474,10 +3475,10 @@ msgid "投稿"
 msgstr "Post"
 
 #: lib/html-forms.php:783 lib/page-settings/_top-page.php:171
-#: lib/page-settings/sns-follow-forms.php:109
+#: lib/page-settings/sns-follow-forms.php:110
 #: lib/page-settings/sns-share-forms-bottom.php:118
 #: lib/page-settings/sns-share-forms-top.php:105
-#: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:432
+#: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:435
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
 msgstr "Page"
@@ -3559,64 +3560,64 @@ msgstr "Enter tag IDs, separated by commas."
 msgid "人気記事は見つかりませんでした。"
 msgstr "Popular articles were not found."
 
-#: lib/html-forms.php:1270
+#: lib/html-forms.php:1272
 msgid "記事は見つかりませんでした。"
 msgstr "No articles found."
 
-#: lib/html-forms.php:1393
+#: lib/html-forms.php:1395
 #, php-format
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1411
+#: lib/html-forms.php:1413
 msgid "未登録のユーザーさん"
 msgstr "Unregistered user"
 
-#: lib/html-forms.php:1421
+#: lib/html-forms.php:1423
 msgid "未登録のユーザーさんです。"
 msgstr "The user is unregistered."
 
-#: lib/html-forms.php:1423
+#: lib/html-forms.php:1425
 msgid "ログイン・登録はこちら→"
 msgstr "To login and register, click here ->"
 
-#: lib/html-forms.php:1425
+#: lib/html-forms.php:1427
 msgid "ログインページ"
 msgstr "Login page"
 
-#: lib/html-forms.php:1430
+#: lib/html-forms.php:1432
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "Profile content can be changed in the admin screen ->"
 
-#: lib/html-forms.php:1430
+#: lib/html-forms.php:1432
 msgid "プロフィール設定画面"
 msgstr "Profile settings"
 
-#: lib/html-forms.php:1430
+#: lib/html-forms.php:1432
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*This message is displayed for logged-in users only."
 
-#: lib/html-forms.php:1460
+#: lib/html-forms.php:1462
 msgid "管理者用エラーメッセージ"
 msgstr "Error messages for the administrator"
 
-#: lib/html-forms.php:1647
+#: lib/html-forms.php:1655
 msgid "おすすめ"
 msgstr "Recommended"
 
-#: lib/html-forms.php:1650
+#: lib/html-forms.php:1658
 msgid "新着"
 msgstr "New posts"
 
-#: lib/html-forms.php:1653
+#: lib/html-forms.php:1661
 msgid "注目"
 msgstr "Featured"
 
-#: lib/html-forms.php:1656
+#: lib/html-forms.php:1664
 msgid "必見"
 msgstr "Must-see"
 
-#: lib/html-forms.php:1659
+#: lib/html-forms.php:1667
 msgid "お得"
 msgstr "Great deals"
 
@@ -3761,7 +3762,7 @@ msgid "3時間"
 msgstr "3 hours"
 
 #: lib/page-access/access-forms.php:65
-#: lib/page-settings/sns-follow-forms.php:241
+#: lib/page-settings/sns-follow-forms.php:242
 #: lib/page-settings/sns-share-forms.php:175
 msgid "6時間"
 msgstr "6 hours"
@@ -3771,18 +3772,18 @@ msgid "9時間"
 msgstr "9 hours"
 
 #: lib/page-access/access-forms.php:67
-#: lib/page-settings/sns-follow-forms.php:242
+#: lib/page-settings/sns-follow-forms.php:243
 #: lib/page-settings/sns-share-forms.php:178
 msgid "12時間"
 msgstr "12 hours"
 
 #: lib/page-access/access-forms.php:68
-#: lib/page-settings/sns-follow-forms.php:243
+#: lib/page-settings/sns-follow-forms.php:244
 msgid "18時間"
 msgstr "18 hours"
 
 #: lib/page-access/access-forms.php:69
-#: lib/page-settings/sns-follow-forms.php:244
+#: lib/page-settings/sns-follow-forms.php:245
 #: lib/page-settings/sns-share-forms.php:181
 msgid "24時間"
 msgstr "24 hours"
@@ -3830,6 +3831,10 @@ msgstr ""
 #: lib/page-affiliate-tag/affiliate-tag-func.php:38
 msgid "アフィリエイトタグサンプル"
 msgstr "Affiliate tag sample"
+
+#: lib/page-affiliate-tag/affiliate-tag-func.php:39
+msgid "Simplicity | 内部SEO施策済みのシンプルな無料WordPressテーマ"
+msgstr "Simplicity"
 
 #: lib/page-affiliate-tag/form-delete.php:26
 #: lib/page-func-text/form-delete.php:26
@@ -3884,7 +3889,7 @@ msgstr ""
 "in the editor."
 
 #: lib/page-affiliate-tag/form.php:46 lib/page-func-text/form.php:48
-#: lib/page-speech-balloon/form.php:152
+#: lib/page-item-ranking/form.php:86 lib/page-speech-balloon/form.php:152
 msgid "保存"
 msgstr "Save"
 
@@ -4288,6 +4293,10 @@ msgstr "Enter a tag of the image. *Will not be displayed if left blank."
 msgid "説明文（※必須）"
 msgstr "Description (*required)"
 
+#: lib/page-item-ranking/form.php:160
+msgid "商品等の説明文を入力してください。"
+msgstr "Enter the description of the product etc."
+
 #: lib/page-item-ranking/form.php:161
 msgid "紹介文を入力してください。タグ・ショートコード入力も可能です。"
 msgstr "Enter a product description. A tag or short code is also valid."
@@ -4341,14 +4350,14 @@ msgstr ""
 msgid "アイテムを上に移動"
 msgstr "Move item up"
 
-#: lib/page-item-ranking/item-ranking-func.php:348
+#: lib/page-item-ranking/item-ranking-func.php:352
 #: lib/shortcodes-amazon.php:389 lib/shortcodes-amazon.php:392
 #: lib/shortcodes-amazon.php:395 lib/shortcodes-rakuten.php:36
 #: lib/shortcodes-rakuten.php:39 lib/shortcodes-rakuten.php:42
 msgid "詳細ページ"
 msgstr "Details page"
 
-#: lib/page-item-ranking/item-ranking-func.php:359
+#: lib/page-item-ranking/item-ranking-func.php:363
 msgid "公式ページ"
 msgstr "Official page"
 
@@ -5330,38 +5339,6 @@ msgstr "Enter for related contents code"
 msgid "アドセンス表示方式"
 msgstr "Adsense display method"
 
-#: lib/page-settings/ads-forms.php:121
-msgid "アドセンス自動広告のみ利用"
-msgstr "Use auto AdSense ads only"
-
-#: lib/page-settings/ads-forms.php:123
-msgid "マニュアル広告設定（自前で位置を設定）"
-msgstr "Manual ad settings (Set the location yourself)"
-
-#: lib/page-settings/ads-forms.php:123
-msgid "※要AdSense管理画面で自動広告無効"
-msgstr ""
-"* Requires automatic advertising disabled on the AdSense management screen"
-
-#: lib/page-settings/ads-forms.php:123
-msgid ""
-"AdSenseの「広告」設定からドメインの「編集」ボタンを押して「自動広告」の「無"
-"効」にしてください。"
-msgstr ""
-"From the AdSense “Advertising” settings, press the “Edit” button for the "
-"domain and disable “Automatic Advertising”."
-
-#: lib/page-settings/ads-forms.php:126
-msgid ""
-"「自動広告」を選択した場合は、AdSenseが勝手に広告コードを挿入するので制御はで"
-"きません。「自動広告のみ」が有効の場合、「広告の表示位置」や「[ad]ショート"
-"コード」で設定した広告の表示は無効になります。"
-msgstr ""
-"When \"Auto ads\" is selected, AdSense will automatically insert the ad "
-"code, so you cannot control it. When \"Auto ads only\" is enabled, the ad "
-"display settings in items such as \"Ad location\" and \"[ad] Short code\" "
-"will be disabled."
-
 #: lib/page-settings/ads-forms.php:129
 msgid "モバイル広告の幅を広くする"
 msgstr "Widen the width of Mobile Ad"
@@ -5648,81 +5625,85 @@ msgstr "Sawarabi Gothic (web font)"
 msgid "さわらび明朝（WEBフォント）"
 msgstr "Sawarabi Mincho (web font)"
 
-#: lib/page-settings/all-forms.php:72
+#: lib/page-settings/all-forms.php:71
+msgid "指定なし"
+msgstr "No specified"
+
+#: lib/page-settings/all-forms.php:73
 msgid "フォント"
 msgstr "Font"
 
-#: lib/page-settings/all-forms.php:73
+#: lib/page-settings/all-forms.php:74
 msgid "サイト全体適用されるフォントを選択します。"
 msgstr "Select the font to be applied to the entire site."
 
-#: lib/page-settings/all-forms.php:77
+#: lib/page-settings/all-forms.php:78
 msgid "12px"
 msgstr "12 px"
 
-#: lib/page-settings/all-forms.php:78
+#: lib/page-settings/all-forms.php:79
 msgid "13px"
 msgstr "13 px"
 
-#: lib/page-settings/all-forms.php:79
+#: lib/page-settings/all-forms.php:80
 msgid "14px"
 msgstr "14 px"
 
-#: lib/page-settings/all-forms.php:80
+#: lib/page-settings/all-forms.php:81
 msgid "15px"
 msgstr "15 px"
 
-#: lib/page-settings/all-forms.php:81
+#: lib/page-settings/all-forms.php:82
 msgid "16px"
 msgstr "16 px"
 
-#: lib/page-settings/all-forms.php:82
+#: lib/page-settings/all-forms.php:83
 msgid "17px"
 msgstr "17 px"
 
-#: lib/page-settings/all-forms.php:83
+#: lib/page-settings/all-forms.php:84
 msgid "18px"
 msgstr "18 px"
 
-#: lib/page-settings/all-forms.php:84
+#: lib/page-settings/all-forms.php:85
 msgid "19px"
 msgstr "19 px"
 
-#: lib/page-settings/all-forms.php:85
+#: lib/page-settings/all-forms.php:86
 msgid "20px"
 msgstr "20 px"
 
-#: lib/page-settings/all-forms.php:86
+#: lib/page-settings/all-forms.php:87
 msgid "21px"
 msgstr "21 px"
 
-#: lib/page-settings/all-forms.php:87
+#: lib/page-settings/all-forms.php:88
 msgid "22px"
 msgstr "22 px"
 
-#: lib/page-settings/all-forms.php:90
+#: lib/page-settings/all-forms.php:91
 msgid "サイト全体のフォントサイズを変更します。"
 msgstr "Change the font size of the entire site."
 
-#: lib/page-settings/all-forms.php:95
+#: lib/page-settings/all-forms.php:96
 msgid "サイト全体の文字色を変更します。"
 msgstr "Change the text color of the entire site."
 
-#: lib/page-settings/all-forms.php:109
+#: lib/page-settings/all-forms.php:110
 msgid "モバイルサイトフォント"
 msgstr "Mobile site font"
 
-#: lib/page-settings/all-forms.php:114
+#: lib/page-settings/all-forms.php:115
 msgid "モバイル端末でのフォントサイズを変更します（横幅が480px以下の端末）。"
 msgstr ""
 "Modifies the font size on your mobile device (device with a width of up to "
 "480 px)."
 
-#: lib/page-settings/all-forms.php:122
+#: lib/page-settings/all-forms.php:123
 msgid "文字の太さ"
 msgstr "Font weight"
 
-#: lib/page-settings/all-forms.php:127
+#: lib/page-settings/all-forms.php:128
 msgid ""
 "font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～"
 "900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありま"
@@ -5733,35 +5714,35 @@ msgstr ""
 "which a thin weight cannot be specified, so check the actual weight when "
 "configuring this setting."
 
-#: lib/page-settings/all-forms.php:136
+#: lib/page-settings/all-forms.php:137
 msgid "サイトアイコンフォント"
 msgstr "Site icon font"
 
-#: lib/page-settings/all-forms.php:141
+#: lib/page-settings/all-forms.php:142
 msgid "Font Awesome 4"
 msgstr "Font Awesome 4"
 
-#: lib/page-settings/all-forms.php:142
+#: lib/page-settings/all-forms.php:143
 msgid "Font Awesome 5"
 msgstr "Font Awesome 5"
 
-#: lib/page-settings/all-forms.php:145
+#: lib/page-settings/all-forms.php:146
 msgid "サイト全体で使用するアイコンフォントを選択します。"
 msgstr "Select the icon font that you want to use throughout the site."
 
-#: lib/page-settings/all-forms.php:154
+#: lib/page-settings/all-forms.php:155
 msgid "サイト背景色"
 msgstr "Site background color"
 
-#: lib/page-settings/all-forms.php:160
+#: lib/page-settings/all-forms.php:161
 msgid "サイト全体の背景色を選択します。"
 msgstr "Select the background color for the entire site."
 
-#: lib/page-settings/all-forms.php:168
+#: lib/page-settings/all-forms.php:169
 msgid "サイト背景画像"
 msgstr "Site background image"
 
-#: lib/page-settings/all-forms.php:173
+#: lib/page-settings/all-forms.php:174
 msgid ""
 "サイト全体の背景画像を選択します。より詳細に背景画像を設定するには、当設定を"
 "無効にして、「外観→カスタマイズ」の「背景画像」設定から行ってください。"
@@ -5770,111 +5751,111 @@ msgstr ""
 "with more detailed settings, disable this setting and make the settings in "
 "\"Appearance -> Customize\" > \"Background image\"."
 
-#: lib/page-settings/all-forms.php:181
+#: lib/page-settings/all-forms.php:182
 msgid "サイト幅の均一化"
 msgstr "Uniformity of site width"
 
-#: lib/page-settings/all-forms.php:185
+#: lib/page-settings/all-forms.php:186
 msgid "サイト幅を揃える"
 msgstr "Align the site width"
 
-#: lib/page-settings/all-forms.php:186
+#: lib/page-settings/all-forms.php:187
 msgid "サイト全体の幅をコンテンツ幅で統一します。"
 msgstr "Makes the width of the entire site uniform by content width."
 
-#: lib/page-settings/all-forms.php:195
+#: lib/page-settings/all-forms.php:196
 msgid "サイトリンク色"
 msgstr "Site link color"
 
-#: lib/page-settings/all-forms.php:200
+#: lib/page-settings/all-forms.php:201
 msgid "リンク色"
 msgstr "Link color"
 
-#: lib/page-settings/all-forms.php:201
+#: lib/page-settings/all-forms.php:202
 msgid "サイトで利用されるリンク色を選択します。"
 msgstr "Select the link color to be used on the site."
 
-#: lib/page-settings/all-forms.php:209
+#: lib/page-settings/all-forms.php:210
 msgid "サイト選択文字色"
 msgstr "Site selection text color"
 
-#: lib/page-settings/all-forms.php:214
+#: lib/page-settings/all-forms.php:215
 msgid "選択文字色"
 msgstr "Selected text color"
 
-#: lib/page-settings/all-forms.php:215
+#: lib/page-settings/all-forms.php:216
 msgid "サイト内のテキストを選択した際の文字色です。"
 msgstr "This is the text color when text within the site is selected."
 
-#: lib/page-settings/all-forms.php:223
+#: lib/page-settings/all-forms.php:224
 msgid "サイト選択背景色"
 msgstr "Site selection background color"
 
-#: lib/page-settings/all-forms.php:228
+#: lib/page-settings/all-forms.php:229
 msgid "選択文字背景色"
 msgstr "Selectied background color"
 
-#: lib/page-settings/all-forms.php:229
+#: lib/page-settings/all-forms.php:230
 msgid "サイト内のテキストを選択した際の背景色です。"
 msgstr "This is the background color when text within the site is selected."
 
-#: lib/page-settings/all-forms.php:237
+#: lib/page-settings/all-forms.php:238
 msgid "サイドバーの位置"
 msgstr "Sidebar position"
 
-#: lib/page-settings/all-forms.php:242
+#: lib/page-settings/all-forms.php:243
 msgid "サイドバー右"
 msgstr "Sidebar right"
 
-#: lib/page-settings/all-forms.php:243
+#: lib/page-settings/all-forms.php:244
 msgid "サイドバー左"
 msgstr "Sidebar left"
 
-#: lib/page-settings/all-forms.php:247
+#: lib/page-settings/all-forms.php:248
 msgid "サイドバーの表示位置の設定です。"
 msgstr "This is the side bar display position setting."
 
-#: lib/page-settings/all-forms.php:255
+#: lib/page-settings/all-forms.php:256
 msgid "サイドバーの表示状態"
 msgstr "Display status of the sidebar"
 
-#: lib/page-settings/all-forms.php:260
+#: lib/page-settings/all-forms.php:261
 msgid "全てのページで表示"
 msgstr "Display on all pages"
 
-#: lib/page-settings/all-forms.php:261
+#: lib/page-settings/all-forms.php:262
 msgid "全てのページで非表示"
 msgstr "Hide on all pages"
 
-#: lib/page-settings/all-forms.php:262
+#: lib/page-settings/all-forms.php:263
 msgid "フロントページで非表示"
 msgstr "Hide on front page"
 
-#: lib/page-settings/all-forms.php:263
+#: lib/page-settings/all-forms.php:264
 msgid "インデックスページで非表示"
 msgstr "Hide on index pages"
 
-#: lib/page-settings/all-forms.php:264
+#: lib/page-settings/all-forms.php:265
 msgid "固定ページで非表示"
 msgstr "Hide on pages"
 
-#: lib/page-settings/all-forms.php:265
+#: lib/page-settings/all-forms.php:266
 msgid "投稿ページで非表示"
 msgstr "Hide on post pages"
 
-#: lib/page-settings/all-forms.php:266
+#: lib/page-settings/all-forms.php:267
 msgid "404ページで非表示"
 msgstr "Hide on 404 pages"
 
-#: lib/page-settings/all-forms.php:270
+#: lib/page-settings/all-forms.php:271
 msgid "サイドバーを表示するページの設定です。"
 msgstr "This is the setting of pages on which the sidebar will be displayed."
 
-#: lib/page-settings/all-forms.php:278
+#: lib/page-settings/all-forms.php:279
 msgid "ファビコン"
 msgstr "Favicon"
 
-#: lib/page-settings/all-forms.php:281
+#: lib/page-settings/all-forms.php:282
 msgid ""
 "ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイ"
 "ト基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は"
@@ -5883,11 +5864,11 @@ msgstr ""
 "The Favicon (site icon) settings are accessed from the \"Site Icon\" setting "
 "in \"Appearance > Customize > Site Identity\" in the admin screen."
 
-#: lib/page-settings/all-forms.php:289
+#: lib/page-settings/all-forms.php:290
 msgid "サイトアイコン"
 msgstr "Site icon"
 
-#: lib/page-settings/all-forms.php:295
+#: lib/page-settings/all-forms.php:296
 msgid ""
 "サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイ"
 "コンは正方形で、幅・高さともに 512 ピクセル以上である必要があります。"
@@ -5895,15 +5876,15 @@ msgstr ""
 "Site icons are used as site apps and browser icons. The icon must be a "
 "square, and both the height and width must be at least 512 pixels."
 
-#: lib/page-settings/all-forms.php:303
+#: lib/page-settings/all-forms.php:304
 msgid "サムネイル表示"
 msgstr "Thumbnail display"
 
-#: lib/page-settings/all-forms.php:307
+#: lib/page-settings/all-forms.php:308
 msgid "サイト全体のサムネイルを表示する"
 msgstr "To display thumbnails of the entire site"
 
-#: lib/page-settings/all-forms.php:308
+#: lib/page-settings/all-forms.php:309
 msgid ""
 "サイト内のサムネイル画像の表示を切り替えます。文章メインのサイト用設定です。※"
 "ブログカードは何かしら画像が取得できるので表示します。"
@@ -5911,11 +5892,11 @@ msgstr ""
 "Toggle display of the thumbnail images within the site. The settings are for "
 "sites comprising mainly of text. *Any image will be displayed in a blog card."
 
-#: lib/page-settings/all-forms.php:317
+#: lib/page-settings/all-forms.php:318
 msgid "日付フォーマット"
 msgstr "Date format"
 
-#: lib/page-settings/all-forms.php:322
+#: lib/page-settings/all-forms.php:323
 msgid ""
 "テーマ全体に使われている日付のフォーマット形式を入力してください（初期値：Y."
 "m.d）。"
@@ -5923,7 +5904,7 @@ msgstr ""
 "Enter the date format to be used for the entire theme (initial values: Y.m."
 "d)."
 
-#: lib/page-settings/all-forms.php:324
+#: lib/page-settings/all-forms.php:325
 msgid ""
 "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/"
 "\">日付と時刻の書式の解説</a>"
@@ -5931,7 +5912,7 @@ msgstr ""
 "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">Description of "
 "the date and time format</a>"
 
-#: lib/page-settings/all-funcs.php:249
+#: lib/page-settings/all-funcs.php:250
 msgid "Y.m.d"
 msgstr "Y.m.d"
 
@@ -6146,37 +6127,60 @@ msgid "Google Analyticsの解析タグの設定です。"
 msgstr "Sets an analysis tag of Google Analytics."
 
 #: lib/page-settings/analytics-forms.php:96
-msgid "Google AnalyticsトラッキングID"
-msgstr "Google Analytics tracking ID"
+msgid "GA4測定ID"
+msgstr "GA4 ID"
 
 #: lib/page-settings/analytics-forms.php:100
-msgid "UA-00000000-0"
-msgstr "UA-00000000-0"
+msgid "G-XXXXXXXXXXXX"
+msgstr "G-XXXXXXXXXXXX"
 
 #: lib/page-settings/analytics-forms.php:101
 msgid ""
-"Google AnalyticsのトラッキングIDを入力してください。タグマネージャのトラッキ"
-"ングIDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのト"
-"ラッキングIDとしても利用します"
+"Google Analytics 4の測定IDを入力してください。タグマネージャのトラッキングID"
+"が入っている場合はタグマネージャが優先されます。"
+msgstr ""
+"Enter a Google Analytics 4 tracking ID. If a tag manager tracking ID has "
+"been entered, the tag manager takes precedence."
+
+#: lib/page-settings/analytics-forms.php:101
+msgid ""
+"GA4はAMP対応していません。よってAMPページでは計測できないのでご了承ください。"
+msgstr ""
+"GA4 does not support AMP. Therefore, please note that it cannot be measured "
+"on the AMP page."
+
+#: lib/page-settings/analytics-forms.php:109
+msgid "Google AnalyticsトラッキングID"
+msgstr "Google Analytics tracking ID"
+
+#: lib/page-settings/analytics-forms.php:113
+msgid "UA-00000000-0"
+msgstr "UA-00000000-0"
+
+#: lib/page-settings/analytics-forms.php:114
+msgid ""
+"ユニバーサルアナリティクスIDを入力してください。タグマネージャのトラッキング"
+"IDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキ"
+"ングIDとしても利用します"
 msgstr ""
 "Enter a Google Analytics tracking ID. If a tag manager tracking ID has been "
 "entered, the tag manager takes precedence. This is also used as a SmartNews "
 "feed tracking ID."
 
-#: lib/page-settings/analytics-forms.php:109
+#: lib/page-settings/analytics-forms.php:123
 #: lib/page-speed-up/speed-up-forms.php:232
 msgid "スクリプト"
 msgstr "Script"
 
-#: lib/page-settings/analytics-forms.php:114
+#: lib/page-settings/analytics-forms.php:128
 msgid "gtag.js（公式）"
 msgstr "gtag.js (official)"
 
-#: lib/page-settings/analytics-forms.php:115
+#: lib/page-settings/analytics-forms.php:129
 msgid "ga-lite.min.js（高速化）"
 msgstr "ga-lite.min.js (faster)"
 
-#: lib/page-settings/analytics-forms.php:118
+#: lib/page-settings/analytics-forms.php:132
 msgid ""
 "アクセス解析で利用するスクリプトを指定します。よくわからない場合は公式スクリ"
 "プトのgtag.jsをご利用ください。"
@@ -6184,51 +6188,51 @@ msgstr ""
 "Specifies the script to use for access analysis. If you're not sure, please "
 "use the official script gtag.js."
 
-#: lib/page-settings/analytics-forms.php:132
+#: lib/page-settings/analytics-forms.php:147
 msgid "Google Search Console設定"
 msgstr "Google Search Console settings"
 
-#: lib/page-settings/analytics-forms.php:135
+#: lib/page-settings/analytics-forms.php:150
 msgid "Google Search Consoleのサイト認証タグの設定です。"
 msgstr "Sets a site authentication tag of Google Search Console."
 
-#: lib/page-settings/analytics-forms.php:143
+#: lib/page-settings/analytics-forms.php:158
 msgid "Google Search Console ID"
 msgstr "Google Search Console ID"
 
-#: lib/page-settings/analytics-forms.php:147
+#: lib/page-settings/analytics-forms.php:162
 msgid "サイト認証IDのみ入力"
 msgstr "Enter a site authentication ID only"
 
-#: lib/page-settings/analytics-forms.php:148
+#: lib/page-settings/analytics-forms.php:163
 msgid "Google Search Consoleのサイト認証IDを入力してください。"
 msgstr "Enter a site authentication ID of Google Search Console."
 
-#: lib/page-settings/analytics-forms.php:162
+#: lib/page-settings/analytics-forms.php:177
 msgid "Ptengine設定"
 msgstr "Ptengine settings"
 
-#: lib/page-settings/analytics-forms.php:165
+#: lib/page-settings/analytics-forms.php:180
 msgid "Ptengineの解析タグの設定です。"
 msgstr "Sets an analysis tag of Ptengine."
 
-#: lib/page-settings/analytics-forms.php:173
+#: lib/page-settings/analytics-forms.php:188
 msgid "PtengineのトラッキングID"
 msgstr "Ptengine tracking ID"
 
-#: lib/page-settings/analytics-forms.php:177
+#: lib/page-settings/analytics-forms.php:192
 msgid "PtengineのトラッキングIDのみ入力"
 msgstr "Enter only a tracking ID of Ptengine"
 
-#: lib/page-settings/analytics-forms.php:178
+#: lib/page-settings/analytics-forms.php:193
 msgid "PtengineのトラッキングIDを入力してください。"
 msgstr "Enter a Ptengine tracking ID."
 
-#: lib/page-settings/analytics-forms.php:194
+#: lib/page-settings/analytics-forms.php:209
 msgid "その他のアクセス解析・認証コード設定"
 msgstr "Other access analysis and authentication code settings"
 
-#: lib/page-settings/analytics-forms.php:197
+#: lib/page-settings/analytics-forms.php:212
 msgid ""
 "ヘッダーやフッターに、その他サービスのアクセス解析・サイト認証タグをそのまま"
 "貼り付けます。"
@@ -6236,15 +6240,15 @@ msgstr ""
 "Paste other service access analysis and site authentication tags into the "
 "header or footer as is."
 
-#: lib/page-settings/analytics-forms.php:205
+#: lib/page-settings/analytics-forms.php:220
 msgid "ヘッド用コード"
 msgstr "Head code"
 
-#: lib/page-settings/analytics-forms.php:209
+#: lib/page-settings/analytics-forms.php:224
 msgid "head用のタグ入力"
 msgstr "Tag entry for head"
 
-#: lib/page-settings/analytics-forms.php:210
+#: lib/page-settings/analytics-forms.php:225
 msgid ""
 "ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス"
 "解析・認証タグを入力してください。アドセンス認証コードもこちらに貼り付けて、"
@@ -6254,15 +6258,15 @@ msgstr ""
 "into the header tags (&lt;head&gt;&lt;/head&gt;). It is easiest if access "
 "authentication codes are also pasted here for inspection."
 
-#: lib/page-settings/analytics-forms.php:218
+#: lib/page-settings/analytics-forms.php:233
 msgid "ヘッダー用コード"
 msgstr "Header code"
 
-#: lib/page-settings/analytics-forms.php:222
+#: lib/page-settings/analytics-forms.php:237
 msgid "ヘッダー用のタグ入力"
 msgstr "Tag entry for header"
 
-#: lib/page-settings/analytics-forms.php:223
+#: lib/page-settings/analytics-forms.php:238
 msgid ""
 "ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析・認証タ"
 "グを入力してください。"
@@ -6270,15 +6274,15 @@ msgstr ""
 "Enter other access analysis and authentication tags that must be inserted "
 "into the header (immediately after &lt;body&gt;)."
 
-#: lib/page-settings/analytics-forms.php:231
+#: lib/page-settings/analytics-forms.php:246
 msgid "フッター用コード"
 msgstr "Footer code"
 
-#: lib/page-settings/analytics-forms.php:235
+#: lib/page-settings/analytics-forms.php:250
 msgid "フッター用のタグ入力"
 msgstr "Tag entry for footer"
 
-#: lib/page-settings/analytics-forms.php:236
+#: lib/page-settings/analytics-forms.php:251
 msgid ""
 "フッター（&lt;/body&gt;直前）に挿入する必要のある、その他アクセス解析・認証タ"
 "グを入力してください。"
@@ -6988,11 +6992,11 @@ msgstr "Select the thumbnail display position."
 msgid "日付表示"
 msgstr "Date display"
 
-#: lib/page-settings/blogcard-in-forms.php:93 skins/silk/functions.php:822
+#: lib/page-settings/blogcard-in-forms.php:93 skins/silk/functions.php:825
 msgid "投稿日"
 msgstr "Posted date"
 
-#: lib/page-settings/blogcard-in-forms.php:94 skins/silk/functions.php:818
+#: lib/page-settings/blogcard-in-forms.php:94 skins/silk/functions.php:821
 msgid "更新日"
 msgstr "Updated date"
 
@@ -7184,16 +7188,16 @@ msgstr "Include popular articles aggregated in"
 #: lib/page-settings/carousel-forms.php:76
 #: lib/page-settings/single-forms.php:129
 #: lib/page-settings/single-forms.php:357
-#: lib/page-settings/sns-follow-forms.php:112
+#: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:121
-#: lib/page-settings/sns-share-forms-top.php:108 lib/shortcodes.php:444
+#: lib/page-settings/sns-share-forms-top.php:108 lib/shortcodes.php:447
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
 msgstr "Category"
 
 #: lib/page-settings/carousel-forms.php:80
 #: lib/page-settings/editor-forms.php:67 lib/page-settings/single-forms.php:130
-#: lib/page-settings/sns-follow-forms.php:115
+#: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:124
 #: lib/page-settings/sns-share-forms-top.php:111 lib/tinymce/html-tags.php:43
 #: lib/widgets/display-widgets.php:173
@@ -9528,8 +9532,8 @@ msgid "jQuery"
 msgstr "jQuery"
 
 #: lib/page-settings/others-forms.php:100
-msgid "jQuery Core 3.3.1"
-msgstr "JQuery Core 3.3.1"
+msgid "jQuery Core 3.6.0"
+msgstr "JQuery Core 3.6.0"
 
 #: lib/page-settings/others-forms.php:101
 msgid "jQuery Core 2.2.4"
@@ -9551,8 +9555,8 @@ msgid "jQuery Migrate"
 msgstr "JQuery Migrate"
 
 #: lib/page-settings/others-forms.php:120
-msgid "jQuery Migrate 3.0.1"
-msgstr "JQuery Migrate 3.0.1"
+msgid "jQuery Migrate 3.3.2"
+msgstr "JQuery Migrate 3.3.2"
 
 #: lib/page-settings/others-forms.php:121
 msgid "jQuery Migrate 1.4.1"
@@ -10354,39 +10358,39 @@ msgstr "By changing the skin, you can easily change the design of the site."
 msgid "スキン一覧"
 msgstr "Skins list"
 
-#: lib/page-settings/skin-forms.php:61
+#: lib/page-settings/skin-forms.php:63 lib/page-settings/skin-forms.php:65
 msgid "作者"
 msgstr "Author"
 
-#: lib/page-settings/skin-forms.php:84
+#: lib/page-settings/skin-forms.php:88
 msgid "スキンを選択してください。"
 msgstr "Select a skin."
 
-#: lib/page-settings/skin-forms.php:93
+#: lib/page-settings/skin-forms.php:97
 msgid "表示スキン"
 msgstr "Display skins"
 
-#: lib/page-settings/skin-forms.php:98
+#: lib/page-settings/skin-forms.php:102
 msgid "全てのスキンを表示"
 msgstr "Display all skins"
 
-#: lib/page-settings/skin-forms.php:99
+#: lib/page-settings/skin-forms.php:103
 msgid "親テーマのスキンのみ表示"
 msgstr "Display only parent theme skins"
 
-#: lib/page-settings/skin-forms.php:100
+#: lib/page-settings/skin-forms.php:104
 msgid "子テーマのスキンのみ表示"
 msgstr "Display only child theme skins"
 
-#: lib/page-settings/skin-forms.php:103
+#: lib/page-settings/skin-forms.php:107
 msgid "スキン一覧に含めて表示するスキンを選択してください。"
 msgstr "Select a skin from the skin list to be displayed."
 
-#: lib/page-settings/skin-forms.php:111
+#: lib/page-settings/skin-forms.php:115
 msgid "オリジナルスキン"
 msgstr "Original skin"
 
-#: lib/page-settings/skin-forms.php:114
+#: lib/page-settings/skin-forms.php:118
 msgid ""
 "もしスキンを作成された際には、是非ご連絡ください。サイトで紹介させていただけ"
 "ればと思います。"
@@ -10394,11 +10398,11 @@ msgstr ""
 "If you create a skin, contact us. We would like to introduce it on the "
 "website."
 
-#: lib/page-settings/skin-forms.php:115
+#: lib/page-settings/skin-forms.php:119
 msgid "詳しくはこちら"
 msgstr "Click here for more information"
 
-#: lib/page-settings/skin-forms.php:115
+#: lib/page-settings/skin-forms.php:119
 msgid "オリジナルスキンのCocoonサイト紹介について"
 msgstr "Introduction of original skins on the Cocoon site"
 
@@ -10454,7 +10458,7 @@ msgstr ""
 "profile page."
 
 #: lib/page-settings/sns-follow-forms.php:69
-#: lib/page-settings/sns-follow-forms.php:88 lib/widgets/author-box.php:92
+#: lib/page-settings/sns-follow-forms.php:89 lib/widgets/author-box.php:92
 msgid "あなたのプロフィール"
 msgstr "Your profile"
 
@@ -10512,130 +10516,138 @@ msgstr "note"
 msgid "Flickr"
 msgstr "Flickr"
 
-#: lib/page-settings/sns-follow-forms.php:82 tmp/sns-follow-buttons.php:81
+#: lib/page-settings/sns-follow-forms.php:82 tmp/sns-follow-buttons.php:85
 msgid "Amazon欲しい物リスト"
 msgstr "Amazon Wishlist"
 
-#: lib/page-settings/sns-follow-forms.php:83 tmp/sns-follow-buttons.php:85
+#: lib/page-settings/sns-follow-forms.php:83 tmp/sns-follow-buttons.php:89
+msgid "Twitch"
+msgstr "Twitch"
+
+#: lib/page-settings/sns-follow-forms.php:84 tmp/sns-follow-buttons.php:93
 msgid "楽天ROOM"
 msgstr "Rakuten Room"
 
-#: lib/page-settings/sns-follow-forms.php:84
+#: lib/page-settings/sns-follow-forms.php:85
 msgid "Slack"
 msgstr "Slack"
 
-#: lib/page-settings/sns-follow-forms.php:85
+#: lib/page-settings/sns-follow-forms.php:86
 msgid "GitHub"
 msgstr "GitHub"
 
-#: lib/page-settings/sns-follow-forms.php:86
+#: lib/page-settings/sns-follow-forms.php:87
 msgid "CodePen"
 msgstr "CodePen"
 
 #: lib/page-settings/sns-follow-forms.php:89
+msgid "から設定"
+msgstr ""
+
+#: lib/page-settings/sns-follow-forms.php:90
 msgid "現ログインユーザーのSNSフォローページを設定します。"
 msgstr "Set social media follow pages for the currently logged-in user."
 
-#: lib/page-settings/sns-follow-forms.php:97
+#: lib/page-settings/sns-follow-forms.php:98
 #: lib/page-settings/sns-share-forms-bottom.php:106
 #: lib/page-settings/sns-share-forms-top.php:93
 #: lib/page-settings/toc-forms.php:56
 msgid "表示ページ"
 msgstr "Display page"
 
-#: lib/page-settings/sns-follow-forms.php:100
+#: lib/page-settings/sns-follow-forms.php:101
 msgid "フォローボタンを表示するページの切り替え。"
 msgstr "Switch between pages that display the follow buttons."
 
-#: lib/page-settings/sns-follow-forms.php:103
+#: lib/page-settings/sns-follow-forms.php:104
 #: lib/page-settings/sns-share-forms-bottom.php:112
 #: lib/page-settings/sns-share-forms-top.php:99
 msgid "フロントページ"
 msgstr "Front page"
 
-#: lib/page-settings/sns-follow-forms.php:117
+#: lib/page-settings/sns-follow-forms.php:118
 msgid "フォローボタンを表示するページを選択してください。"
 msgstr "Select the pages on which you want the follow buttons to appear."
 
-#: lib/page-settings/sns-follow-forms.php:124
+#: lib/page-settings/sns-follow-forms.php:125
 msgid "feedlyの表示"
 msgstr "Feedly display"
 
-#: lib/page-settings/sns-follow-forms.php:128
+#: lib/page-settings/sns-follow-forms.php:129
 msgid "feedlyフォローボタンを表示する"
 msgstr "Display feedly follow button"
 
-#: lib/page-settings/sns-follow-forms.php:129
+#: lib/page-settings/sns-follow-forms.php:130
 msgid "feedlyフォローボタンを表示します。"
 msgstr "Displays the feedly follow button."
 
-#: lib/page-settings/sns-follow-forms.php:137
+#: lib/page-settings/sns-follow-forms.php:138
 msgid "RSSの表示"
 msgstr "RSS display"
 
-#: lib/page-settings/sns-follow-forms.php:141
+#: lib/page-settings/sns-follow-forms.php:142
 msgid "RSS購読ボタンを表示する"
 msgstr "Display RSS subscription button"
 
-#: lib/page-settings/sns-follow-forms.php:142
+#: lib/page-settings/sns-follow-forms.php:143
 msgid "RSS購読用のボタンを表示します。"
 msgstr "Displays the button for RSS subscriptions."
 
-#: lib/page-settings/sns-follow-forms.php:151
+#: lib/page-settings/sns-follow-forms.php:152
 #: lib/page-settings/sns-share-forms-bottom.php:134
 #: lib/page-settings/sns-share-forms-top.php:121
 msgid "ボタンカラー"
 msgstr "Button color"
 
-#: lib/page-settings/sns-follow-forms.php:156
+#: lib/page-settings/sns-follow-forms.php:157
 #: lib/page-settings/sns-share-forms-bottom.php:139
 #: lib/page-settings/sns-share-forms-top.php:126
 msgid "モノクロ"
 msgstr "Monochrome"
 
-#: lib/page-settings/sns-follow-forms.php:157
+#: lib/page-settings/sns-follow-forms.php:158
 #: lib/page-settings/sns-share-forms-bottom.php:140
 #: lib/page-settings/sns-share-forms-top.php:127
 msgid "ブランドカラー"
 msgstr "Brand color"
 
-#: lib/page-settings/sns-follow-forms.php:158
+#: lib/page-settings/sns-follow-forms.php:159
 #: lib/page-settings/sns-share-forms-bottom.php:141
 #: lib/page-settings/sns-share-forms-top.php:128
 msgid "ブランドカラー（白抜き）"
 msgstr "Brand color (outline)"
 
-#: lib/page-settings/sns-follow-forms.php:161
+#: lib/page-settings/sns-follow-forms.php:162
 msgid "シェアボタンの配色を選択してください。"
 msgstr "Select the color scheme of the share button."
 
-#: lib/page-settings/sns-follow-forms.php:169
+#: lib/page-settings/sns-follow-forms.php:170
 msgid "デフォルトユーザー"
 msgstr "Default user"
 
-#: lib/page-settings/sns-follow-forms.php:174
+#: lib/page-settings/sns-follow-forms.php:175
 msgid ""
 "投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。"
 msgstr ""
 "Select a user who will display the follow button outside of posts/pages."
 
-#: lib/page-settings/sns-follow-forms.php:182
+#: lib/page-settings/sns-follow-forms.php:183
 msgid "フォロー数の表示"
 msgstr "Display follow count"
 
-#: lib/page-settings/sns-follow-forms.php:186
+#: lib/page-settings/sns-follow-forms.php:187
 msgid "フォロー数を表示する"
 msgstr "Display the follow count"
 
-#: lib/page-settings/sns-follow-forms.php:187
+#: lib/page-settings/sns-follow-forms.php:188
 msgid "本文下やウィジェットなどのフォロー数表示を切り替えます。"
 msgstr "Toggle display of the follow count below body text or on widgets, etc."
 
-#: lib/page-settings/sns-follow-forms.php:195
+#: lib/page-settings/sns-follow-forms.php:196
 msgid "feedly購読者数"
 msgstr "feedly subscriber count"
 
-#: lib/page-settings/sns-follow-forms.php:200
+#: lib/page-settings/sns-follow-forms.php:201
 msgid ""
 "feedlyは購読者情報がエラーで取得できない場合があります。その際には、こちらで"
 "設定された購読者数が表示されます。"
@@ -10643,12 +10655,12 @@ msgstr ""
 "There are times when you cannot get subscriber information from feedly due "
 "to an error. At such times, the subscriber count set here will be displayed."
 
-#: lib/page-settings/sns-follow-forms.php:214
+#: lib/page-settings/sns-follow-forms.php:215
 #: lib/page-settings/sns-share-forms.php:143
 msgid "キャッシュ設定"
 msgstr "Cache settings"
 
-#: lib/page-settings/sns-follow-forms.php:216
+#: lib/page-settings/sns-follow-forms.php:217
 msgid ""
 "フォロー数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示ス"
 "ピードを多少なりともあげることができます。"
@@ -10656,39 +10668,39 @@ msgstr ""
 "Sets cache usage when getting follow counts. By using the cache you can "
 "increase the page display speed somewhat."
 
-#: lib/page-settings/sns-follow-forms.php:223
+#: lib/page-settings/sns-follow-forms.php:224
 #: lib/page-settings/sns-share-forms.php:152
 msgid "キャッシュの有効化"
 msgstr "Enable cache"
 
-#: lib/page-settings/sns-follow-forms.php:227
+#: lib/page-settings/sns-follow-forms.php:228
 #: lib/page-settings/sns-share-forms.php:156
 msgid "キャッシュを有効にする"
 msgstr "Enable the cache"
 
-#: lib/page-settings/sns-follow-forms.php:228
+#: lib/page-settings/sns-follow-forms.php:229
 #: lib/page-settings/sns-share-forms.php:157
 msgid ""
 "SNSシェア数をキャッシュ化することでページ表示スピードの短縮化を図ります。"
 msgstr ""
 "Shorten page display times by caching the social media market share count."
 
-#: lib/page-settings/sns-follow-forms.php:236
+#: lib/page-settings/sns-follow-forms.php:237
 #: lib/page-settings/sns-share-forms.php:165
 msgid "キャッシュ間隔"
 msgstr "Cache interval"
 
-#: lib/page-settings/sns-follow-forms.php:245
+#: lib/page-settings/sns-follow-forms.php:246
 #: lib/page-settings/sns-share-forms.php:182
 msgid "2日間"
 msgstr "2 days"
 
-#: lib/page-settings/sns-follow-forms.php:246
+#: lib/page-settings/sns-follow-forms.php:247
 #: lib/page-settings/sns-share-forms.php:183
 msgid "3日間"
 msgstr "3 days"
 
-#: lib/page-settings/sns-follow-forms.php:249
+#: lib/page-settings/sns-follow-forms.php:250
 #: lib/page-settings/sns-share-forms.php:186
 msgid ""
 "キャッシュの取得間隔を設定します。間隔が狭いほど更新は増えますがサーバー負担"
@@ -10697,15 +10709,15 @@ msgstr ""
 "Sets the caching interval. The smaller the interval, the higher the server "
 "load due to the increase in updates (mainly partner server)."
 
-#: lib/page-settings/sns-follow-forms.php:258
+#: lib/page-settings/sns-follow-forms.php:259
 msgid "別スキームフォロー数"
 msgstr "Follow count for other schemes"
 
-#: lib/page-settings/sns-follow-forms.php:263
+#: lib/page-settings/sns-follow-forms.php:264
 msgid "別スキームのSNSフォロー数をキャッシュする"
 msgstr "Cache the social media follow count for other schemes"
 
-#: lib/page-settings/sns-follow-forms.php:264
+#: lib/page-settings/sns-follow-forms.php:265
 msgid ""
 "httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合は"
 "https）。相手サーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュ"
@@ -11064,6 +11076,11 @@ msgstr ""
 "site (and vice versa)? It takes time to get the count and doubles the load "
 "on the social media service server, so this feature cannot be used if "
 "caching is disabled."
+
+#: lib/page-settings/sns-share-funcs-bottom.php:22
+#: lib/page-settings/sns-share-funcs-top.php:26
+msgid "シェアする"
+msgstr "Share"
 
 #: lib/page-settings/title-forms.php:13
 msgid "フロントページ設定"
@@ -11778,8 +11795,8 @@ msgid "[SAMPLE 005] 悩むおじさん（左）"
 msgstr "[SAMPLE 005] Troubled man (left)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:186
-msgid "[SAMPLE 006] 悩むおばさん（左）"
-msgstr "[SAMPLE 006] Troubled woman (left)"
+msgid "[SAMPLE 006] 悩むおばさん（右）"
+msgstr "[SAMPLE 006] Troubled woman (right)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:196
 msgid "[SAMPLE 007] 男性医師（左）"
@@ -12363,19 +12380,19 @@ msgstr "Rakuten product retrieval error"
 msgid "楽天商品リンクが取得できませんでした。"
 msgstr "Failed to retrieve the Rakuten product link."
 
-#: lib/shortcodes.php:325
+#: lib/shortcodes.php:327
 msgid "日付未入力"
 msgstr "Date not entered"
 
-#: lib/shortcodes.php:351
+#: lib/shortcodes.php:353
 msgid "歳"
 msgstr "years old"
 
-#: lib/shortcodes.php:450
+#: lib/shortcodes.php:453
 msgid "月別アーカイブ"
 msgstr "Monthly archive"
 
-#: lib/shortcodes.php:931
+#: lib/shortcodes.php:934
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "updated short codes can only be used on posts and fixed pages."
 
@@ -12404,42 +12421,50 @@ msgid "YouTube URL"
 msgstr "YouTube URL"
 
 #: lib/sns-follow.php:142
+msgid "TikTok URL"
+msgstr "TikTok URL"
+
+#: lib/sns-follow.php:143
 msgid "LinkedIn URL"
 msgstr "LinkedIn URL"
 
-#: lib/sns-follow.php:143
+#: lib/sns-follow.php:144
 msgid "note URL"
 msgstr "note URL"
 
-#: lib/sns-follow.php:144
+#: lib/sns-follow.php:145
 msgid "SoundCloud URL"
 msgstr "SoundCloud URL"
 
-#: lib/sns-follow.php:145
+#: lib/sns-follow.php:146
 msgid "Flickr URL"
 msgstr "Flickr URL"
 
-#: lib/sns-follow.php:146
+#: lib/sns-follow.php:147
 msgid "LINE@ URL"
 msgstr "LINE@ URL"
 
-#: lib/sns-follow.php:147
+#: lib/sns-follow.php:148
 msgid "Amazon URL"
 msgstr "Amazon URL"
 
-#: lib/sns-follow.php:148
+#: lib/sns-follow.php:149
+msgid "Twitch URL"
+msgstr "Twitch URL"
+
+#: lib/sns-follow.php:150
 msgid "楽天 ROOM URL"
 msgstr "Rakuten ROOM URL"
 
-#: lib/sns-follow.php:149
+#: lib/sns-follow.php:151
 msgid "Slack URL"
 msgstr "Slack URL"
 
-#: lib/sns-follow.php:150
+#: lib/sns-follow.php:152
 msgid "GitHub URL"
 msgstr "Github URL"
 
-#: lib/sns-follow.php:151
+#: lib/sns-follow.php:153
 msgid "CodePen URL"
 msgstr "CodePen URL"
 
@@ -12571,24 +12596,24 @@ msgstr "Please enter the content you want to display during the campaign."
 msgid "キャンペーン期間中のみ表示"
 msgstr "Displayed only during the campaign period"
 
-#: lib/utils.php:803
+#: lib/utils.php:805
 msgid "スクロールできます"
 msgstr "Can scroll"
 
-#: lib/utils.php:906
+#: lib/utils.php:908
 msgid "公開"
 msgstr "Publish"
 
-#: lib/utils.php:907
+#: lib/utils.php:909
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure you want to publish the page?"
 
-#: lib/utils.php:2518
+#: lib/utils.php:2520
 #, php-format
 msgid "%s年"
 msgstr "%s years"
 
-#: lib/utils.php:2520
+#: lib/utils.php:2522
 #, php-format
 msgid "%s年%sヶ月"
 msgstr "%s years and %s months"
@@ -13421,6 +13446,56 @@ msgstr ""
 msgid "サイト内を検索"
 msgstr "Search within the site"
 
+#: skins/one/functions.php:113
+msgid "スキンoneの設定"
+msgstr ""
+
+#: skins/one/functions.php:122
+msgid "本文見出し(H2)にカウントを付ける"
+msgstr ""
+
+#: skins/one/functions.php:123
+msgid "本文の見出しにカウントをつけたくない場合はチェックを外してください"
+msgstr ""
+
+#: skins/one/functions.php:134
+msgid "PCでもスマホ用の固定フッターメニューを表示する"
+msgstr "Display fixed footer menu for smartphones even on a PC"
+
+#: skins/one/functions.php:135
+msgid ""
+"従来どおりPCでスマホ用の固定フッターメニューを表示させたくない場合はチェック"
+"を外してください"
+msgstr ""
+
+#: skins/one/functions.php:145
+msgid "全体的に影を付ける"
+msgstr ""
+
+#: skins/one/functions.php:155
+msgid "ダークスキン対応にする"
+msgstr "Dark skin compatible"
+
+#: skins/one/functions.php:156
+msgid "背景をダークにしたときはチェックを入れてください"
+msgstr "Check when the background is dark."
+
+#: skins/one/functions.php:166
+msgid "丸みをなくす"
+msgstr ""
+
+#: skins/one/functions.php:167
+msgid "ボタンなどの角の丸みをなくしたいときはチェックを入れてください"
+msgstr ""
+
+#: skins/one/functions.php:177
+msgid "本文の見出しを明朝体にする"
+msgstr ""
+
+#: skins/one/functions.php:187
+msgid "サイドバーの見出しを明朝体にする"
+msgstr "Make the sidebar heading Mincho."
+
 #: tmp/admin-panel.php:39
 msgid "WLWで編集"
 msgstr "Edit by WLW"
@@ -13560,8 +13635,8 @@ msgstr "(Web fonts)"
 msgid "タイトルとURLをコピーしました"
 msgstr "Copied title and URL"
 
-#: tmp/list-category-columns.php:70 tmp/list-category.php:47
-#: tmp/list-new-entries.php:23 tmp/list-tab-index.php:80
+#: tmp/list-category-columns.php:71 tmp/list-category.php:47
+#: tmp/list-new-entries.php:23 tmp/list-tab-index.php:81
 msgid "もっと見る"
 msgstr "Load more"
 
@@ -13589,7 +13664,7 @@ msgstr "Share"
 msgid "目次へ"
 msgstr "To the table of contents"
 
-#: tmp/pagination.php:36
+#: tmp/pagination.php:38
 msgid "次のページ"
 msgstr "Next page"
 
@@ -13626,46 +13701,50 @@ msgid "YouTubeをフォロー"
 msgstr "Follow YouTube"
 
 #: tmp/sns-follow-buttons.php:57
+msgid "TikTokをフォロー"
+msgstr "Follow TikTok"
+
+#: tmp/sns-follow-buttons.php:61
 msgid "LinkedInをフォロー"
 msgstr "Follow LinkedIn"
 
-#: tmp/sns-follow-buttons.php:61
+#: tmp/sns-follow-buttons.php:65
 msgid "noteをフォロー"
 msgstr "Follow note"
 
-#: tmp/sns-follow-buttons.php:65
+#: tmp/sns-follow-buttons.php:69
 msgid "SoundCloudをフォロー"
 msgstr "Follow SoundCloud"
 
-#: tmp/sns-follow-buttons.php:69
+#: tmp/sns-follow-buttons.php:73
 msgid "Flickrをフォロー"
 msgstr "Follow Flickr"
 
-#: tmp/sns-follow-buttons.php:73
+#: tmp/sns-follow-buttons.php:77
 msgid "Pinterestをフォロー"
 msgstr "Follow Pinterest"
 
-#: tmp/sns-follow-buttons.php:77
+#: tmp/sns-follow-buttons.php:81
 msgid "LINE@をフォロー"
 msgstr "Follow LINE@"
 
-#: tmp/sns-follow-buttons.php:89
+#: tmp/sns-follow-buttons.php:97
 msgid "Slackをフォロー"
 msgstr "Follow Slack"
 
-#: tmp/sns-follow-buttons.php:93
+#: tmp/sns-follow-buttons.php:101
 msgid "GitHubをフォロー"
 msgstr "Follow GitHub"
 
-#: tmp/sns-follow-buttons.php:97
+#: tmp/sns-follow-buttons.php:105
 msgid "CodePenをフォロー"
 msgstr "Follow CodePen"
 
-#: tmp/sns-follow-buttons.php:101
+#: tmp/sns-follow-buttons.php:109
 msgid "feedlyで更新情報を購読"
 msgstr "Subscribe to feedly"
 
-#: tmp/sns-follow-buttons.php:105
+#: tmp/sns-follow-buttons.php:113
 msgid "RSSで更新情報をフォロー"
 msgstr "Follow RSS"
 
@@ -13680,6 +13759,33 @@ msgstr "LINE"
 #: tmp/sns-share-buttons.php:50
 msgid "コピー"
 msgstr "Copy"
+
+#~ msgid "アドセンス自動広告のみ利用"
+#~ msgstr "Use auto AdSense ads only"
+
+#~ msgid "マニュアル広告設定（自前で位置を設定）"
+#~ msgstr "Manual ad settings (Set the location yourself)"
+
+#~ msgid "※要AdSense管理画面で自動広告無効"
+#~ msgstr ""
+#~ "* Requires automatic advertising disabled on the AdSense management screen"
+
+#~ msgid ""
+#~ "AdSenseの「広告」設定からドメインの「編集」ボタンを押して「自動広告」の"
+#~ "「無効」にしてください。"
+#~ msgstr ""
+#~ "From the AdSense “Advertising” settings, press the “Edit” button for the "
+#~ "domain and disable “Automatic Advertising”."
+
+#~ msgid ""
+#~ "「自動広告」を選択した場合は、AdSenseが勝手に広告コードを挿入するので制御"
+#~ "はできません。「自動広告のみ」が有効の場合、「広告の表示位置」や「[ad]"
+#~ "ショートコード」で設定した広告の表示は無効になります。"
+#~ msgstr ""
+#~ "When \"Auto ads\" is selected, AdSense will automatically insert the ad "
+#~ "code, so you cannot control it. When \"Auto ads only\" is enabled, the ad "
+#~ "display settings in items such as \"Ad location\" and \"[ad] Short code\" "
+#~ "will be disabled."
 
 #~ msgid "404ページ一覧"
 #~ msgstr "404 pages list"
@@ -13977,7 +14083,7 @@ msgstr "Copy"
 
 #, fuzzy
 #~| msgid "AdSenseのレスポンシブコードを入力してください"
-#~ msgid "Google AnalyticsのトラッキングIDを入力してください。"
+#~ msgid "ユニバーサルアナリティクスIDを入力してください。"
 #~ msgstr "Please enter your Google Analytics tracking ID."
 
 #, fuzzy
@@ -14140,11 +14246,6 @@ msgstr "Copy"
 
 #~ msgid "[SAMPLE 13] ウサギ（右）"
 #~ msgstr "[SAMPLE 13] rabbit (right)"
-
-#, fuzzy
-#~| msgid "タイトルを入力してください。"
-#~ msgid "アフィリエイトタグを入力してください"
-#~ msgstr "Enter your affiliate tag."
 
 #, fuzzy
 #~ msgid "  AMPBench"

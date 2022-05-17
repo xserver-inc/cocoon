@@ -16,7 +16,10 @@ update_theme_option(OP_GOOGLE_TAG_MANAGER_TRACKING_ID);
 //Google Tag ManagerのAMPトラッキングID
 update_theme_option(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID);
 
-//Google AnalyticsトラッキングID
+//GA4測定ID
+update_theme_option(OP_GA4_TRACKING_ID);
+
+//ユニバーサルアナリティクスID
 update_theme_option(OP_GOOGLE_ANALYTICS_TRACKING_ID);
 
 //Google Analyticsのスクリプト

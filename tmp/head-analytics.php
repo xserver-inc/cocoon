@@ -41,7 +41,23 @@ galite('send', 'pageview');
     <?php endif; ?>
   <?php endif; ?>
 
+  <?php //GA4測定ID
+  if ( $ga4_tracking_id = get_ga4_tracking_id() ) : ?>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $ga4_tracking_id; ?>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<?php echo $ga4_tracking_id; ?>');
+</script>
+
+  <?php endif; ?>
+
 <?php endif ?>
+
 <?php //その他の解析コード
 if (is_analytics() && !is_amp()): ?>
   <?php //その他<head></head>内用の解析コード

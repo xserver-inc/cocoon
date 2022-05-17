@@ -31,7 +31,15 @@ function get_google_tag_manager_amp_tracking_id(){
 }
 endif;
 
-//Google AnalyticsのトラッキングID
+//GA4測定ID
+define('OP_GA4_TRACKING_ID', 'ga4_tracking_id');
+if ( !function_exists( 'get_ga4_tracking_id' ) ):
+function get_ga4_tracking_id(){
+  return get_theme_option(OP_GA4_TRACKING_ID);
+}
+endif;
+
+//ユニバーサルアナリティクスID
 define('OP_GOOGLE_ANALYTICS_TRACKING_ID', 'google_analytics_tracking_id');
 if ( !function_exists( 'get_google_analytics_tracking_id' ) ):
 function get_google_analytics_tracking_id(){
@@ -43,7 +51,8 @@ endif;
 define('OP_GOOGLE_ANALYTICS_SCRIPT', 'google_analytics_script');
 if ( !function_exists( 'get_google_analytics_script' ) ):
 function get_google_analytics_script(){
-  return get_theme_option(OP_GOOGLE_ANALYTICS_SCRIPT, 'gtag.js');
+  return 'gtag.js';
+  // return get_theme_option(OP_GOOGLE_ANALYTICS_SCRIPT, 'gtag.js');
 }
 endif;
 if ( !function_exists( 'is_google_analytics_script_gtag_js' ) ):

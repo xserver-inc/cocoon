@@ -90,7 +90,20 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-        <!-- Google AnalyticsトラッキングID -->
+        <!-- GA4測定ID -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_GA4_TRACKING_ID, __( 'GA4測定ID', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_textbox_tag(OP_GA4_TRACKING_ID, get_ga4_tracking_id(), __( 'G-XXXXXXXXXXXX', THEME_NAME ));
+            generate_tips_tag(__( 'Google Analytics 4の測定IDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。', THEME_NAME ).'<b>'.__( 'GA4はAMP対応していません。よってAMPページでは計測できないのでご了承ください。', THEME_NAME ).'</b>' );
+            ?>
+          </td>
+        </tr>
+
+        <!-- ユニバーサルアナリティクスID -->
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, __( 'Google AnalyticsトラッキングID', THEME_NAME )); ?>
@@ -98,11 +111,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_textbox_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, get_google_analytics_tracking_id(), __( 'UA-00000000-0', THEME_NAME ));
-            generate_tips_tag(__( 'Google AnalyticsのトラッキングIDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキングIDとしても利用します', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-analytics/'));
+            generate_tips_tag(__( 'ユニバーサルアナリティクスIDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキングIDとしても利用します', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-analytics/'));
             ?>
           </td>
         </tr>
 
+        <?php if ( false ) : ?>
         <!-- スクリプト  -->
         <tr>
           <th scope="row">
@@ -118,7 +132,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__('アクセス解析で利用するスクリプトを指定します。よくわからない場合は公式スクリプトのgtag.jsをご利用ください。', THEME_NAME));
             ?>
           </td>
-        </tr>
+        </tr>          
+        <?php endif; ?>
 
       </tbody>
     </table>

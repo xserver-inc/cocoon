@@ -6559,7 +6559,7 @@ msgstr "UA-00000000-0"
 #: lib/page-settings/analytics-forms.php:101
 #, fuzzy
 msgid ""
-"Google AnalyticsのトラッキングIDを入力してください。タグマネージャのトラッキ"
+"ユニバーサルアナリティクスIDを入力してください。タグマネージャのトラッキ"
 "ングIDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのト"
 "ラッキングIDとしても利用します"
 msgstr ""
@@ -14819,7 +14819,7 @@ msgstr "Cópia"
 #~ msgstr "Insira o ID de acompanhamento do Gerenciador de Tags do Google."
 
 #, fuzzy
-#~ msgid "Google AnalyticsのトラッキングIDを入力してください。"
+#~ msgid "ユニバーサルアナリティクスIDを入力してください。"
 #~ msgstr "Insira seu ID de acompanhamento do GOOGLE Analytics."
 
 #, fuzzy
