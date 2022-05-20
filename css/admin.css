@@ -17026,6 +17026,9 @@ body.wp-admin {
 .admin-settings .demo .gsc-search-box table td {
   border: 0;
 }
+.admin-settings .demo .gsc-input-box input.gsc-input {
+  color: #333;
+}
 .admin-settings .demo #cse-search-box input[name="q"] {
   line-height: 34px;
   width: calc(100% - 60px);

@@ -10015,6 +10015,10 @@ div#wpforo #wpforo-wrap {
   border: 0;
 }
 
+.gsc-input-box input.gsc-input {
+  color: #333;
+}
+
 #cse-search-box input[name="q"] {
   line-height: 34px;
   width: calc(100% - 60px);

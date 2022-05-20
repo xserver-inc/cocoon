@@ -8,6 +8,11 @@
   }
 }
 
+//Googleカスタム文字色
+.gsc-input-box input.gsc-input{
+	color: $black_color;
+}
+
 //Googleカスタム検索
 #cse-search-box input[name="q"] {
   line-height: 34px;
