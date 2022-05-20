@@ -1100,16 +1100,16 @@ body.wp-admin {
 .admin-settings .demo .wp-caption {
   margin: 1em 0;
 }
-.admin-settings .demo .body .aligncenter {
+.admin-settings .demo .aligncenter {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-.admin-settings .demo .body .alignleft {
+.admin-settings .demo .alignleft {
   float: left;
   margin-right: 25px;
 }
-.admin-settings .demo .body .alignright {
+.admin-settings .demo .alignright {
   float: right;
   margin-left: 25px;
 }
@@ -8747,16 +8747,16 @@ body.wp-admin {
 .admin-settings .demo .wp-caption {
   margin: 1em 0;
 }
-.admin-settings .demo .body .aligncenter {
+.admin-settings .demo .aligncenter {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-.admin-settings .demo .body .alignleft {
+.admin-settings .demo .alignleft {
   float: left;
   margin-right: 25px;
 }
-.admin-settings .demo .body .alignright {
+.admin-settings .demo .alignright {
   float: right;
   margin-left: 25px;
 }

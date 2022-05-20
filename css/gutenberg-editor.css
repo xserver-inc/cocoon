@@ -1321,3 +1321,7 @@ body::before,
 .wp-block[data-align="center"] figcaption {
   text-align: center;
 }
+
+.is-root-container .wp-block {
+  height: auto;
+}

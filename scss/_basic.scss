@@ -151,23 +151,19 @@ hr{
 /************************************
 ** WordPress Misc
 ************************************/
-.body{
-  .aligncenter {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
+.aligncenter {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-  .alignleft {
-    float: left;
-    margin-right: 25px;
-    // margin-bottom: 25px;
-  }
-  .alignright {
-    float: right;
-    margin-left: 25px;
-    // margin-bottom: 25px;
-  }
+.alignleft {
+  float: left;
+  margin-right: 25px;
+}
+.alignright {
+  float: right;
+  margin-left: 25px;
 }
 
 .wp-caption {

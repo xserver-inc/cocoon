@@ -1146,3 +1146,7 @@ body::before,
     text-align: center;
   }
 }
+
+.is-root-container .wp-block{
+  height: auto;
+}

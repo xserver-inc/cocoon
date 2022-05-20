@@ -1,14 +1,18 @@
 .faw::before {
   font-family: FontAwesome;
-  padding-right: 4px; }
+  padding-right: 4px;
+}
 
 .article dd {
-  margin-left: 40px; }
+  margin-left: 40px;
+}
 .article ul li,
 .article ol li {
-  margin: 0.2em; }
+  margin: 0.2em;
+}
 .article .wp-block-gallery ul {
-  padding-left: 0; }
+  padding-left: 0;
+}
 .article h1,
 .article h2,
 .article h3,
@@ -16,363 +20,468 @@
 .article h5,
 .article h6 {
   line-height: 1.25;
-  font-weight: bold; }
+  font-weight: bold;
+}
 .article h4,
 .article h5,
 .article h6 {
   font-size: 20px;
-  padding: 9px 10px; }
+  padding: 9px 10px;
+}
 .article h2 {
   font-size: 24px;
   padding: 25px;
   background-color: #f5f6f7;
-  border-radius: 2px; }
+  border-radius: 2px;
+}
 .article h3 {
   border-left: 7px solid #888;
   border-right: 1px solid #ddd;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   font-size: 22px;
-  padding: 12px 20px; }
+  padding: 12px 20px;
+}
 .article h4 {
   border-top: 2px solid #ddd;
-  border-bottom: 2px solid #ddd; }
+  border-bottom: 2px solid #ddd;
+}
 .article h5 {
-  border-bottom: 2px solid #ddd; }
+  border-bottom: 2px solid #ddd;
+}
 .article h6 {
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 1px solid #ddd;
+}
 .article .column-wrap h1, .article .column-wrap h2, .article .column-wrap h3, .article .column-wrap h4, .article .column-wrap h5, .article .column-wrap h6 {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 [class*="fab-"]::before {
-  font-family: FontAwesome; }
+  font-family: FontAwesome;
+}
 
 .fab-info-circle::before {
-  content: '\f05a'; }
+  content: '\f05a';
+}
 
 .fab-question-circle::before {
-  content: '\f059'; }
+  content: '\f059';
+}
 
 .fab-exclamation-circle::before {
-  content: '\f06a'; }
+  content: '\f06a';
+}
 
 .fab-pencil::before {
-  content: '\f040'; }
+  content: '\f040';
+}
 
 .fab-edit::before {
-  content: '\f044'; }
+  content: '\f044';
+}
 
 .fab-comment::before {
-  content: '\f075'; }
+  content: '\f075';
+}
 
 .fab-ok::before {
-  content: '\f10c'; }
+  content: '\f10c';
+}
 
 .fab-bad::before {
-  content: '\f00d'; }
+  content: '\f00d';
+}
 
 .fab-lightbulb::before {
-  content: '\f0eb'; }
+  content: '\f0eb';
+}
 
 .fab-graduation-cap::before {
-  content: '\f19d'; }
+  content: '\f19d';
+}
 
 .fab-book::before {
-  content: '\f02d'; }
+  content: '\f02d';
+}
 
 .fab-amazon::before {
-  content: '\f270'; }
+  content: '\f270';
+}
 
 .fab-envelope::before {
-  content: '\f0e0'; }
+  content: '\f0e0';
+}
 
 .fab-flag::before {
-  content: '\f024'; }
+  content: '\f024';
+}
 
 .fab-ban::before {
-  content: '\f05e'; }
+  content: '\f05e';
+}
 
 .fab-bolt::before {
-  content: '\f0e7'; }
+  content: '\f0e7';
+}
 
 .fab-calendar::before {
-  content: '\f073'; }
+  content: '\f073';
+}
 
 .fab-clock::before {
-  content: '\f017'; }
+  content: '\f017';
+}
 
 .fab-cutlery::before {
-  content: '\f0f5'; }
+  content: '\f0f5';
+}
 
 .fab-heart::before,
 .list-heart li::before {
-  content: '\f004'; }
+  content: '\f004';
+}
 
 .fab-camera::before {
-  content: '\f030'; }
+  content: '\f030';
+}
 
 .fab-search::before {
-  content: '\f002'; }
+  content: '\f002';
+}
 
 .fab-folder::before {
-  content: '\f07b'; }
+  content: '\f07b';
+}
 
 .fab-tag::before {
-  content: '\f02b'; }
+  content: '\f02b';
+}
 
 .fab-trophy::before {
-  content: '\f091'; }
+  content: '\f091';
+}
 
 .fab-car::before {
-  content: '\f1b9'; }
+  content: '\f1b9';
+}
 
 .fab-truck::before {
-  content: '\f0d1'; }
+  content: '\f0d1';
+}
 
 .fab-bicycle::before {
-  content: '\f206'; }
+  content: '\f206';
+}
 
 .fab-motorcycle::before {
-  content: '\f21c'; }
+  content: '\f21c';
+}
 
 .fab-bus::before {
-  content: '\f207'; }
+  content: '\f207';
+}
 
 .fab-plane::before {
-  content: '\f072'; }
+  content: '\f072';
+}
 
 .fab-train::before {
-  content: '\f238'; }
+  content: '\f238';
+}
 
 .fab-subway::before {
-  content: '\f239'; }
+  content: '\f239';
+}
 
 .fab-taxi::before {
-  content: '\f1ba'; }
+  content: '\f1ba';
+}
 
 .fab-file-text::before {
-  content: '\f15c'; }
+  content: '\f15c';
+}
 
 .fab-jpy::before {
-  content: '\f157'; }
+  content: '\f157';
+}
 
 .fab-usd::before {
-  content: '\f155'; }
+  content: '\f155';
+}
 
 .fab-eur::before {
-  content: '\f153'; }
+  content: '\f153';
+}
 
 .fab-btc::before {
-  content: '\f15a'; }
+  content: '\f15a';
+}
 
 .fab-apple::before {
-  content: '\f179'; }
+  content: '\f179';
+}
 
 .fab-android::before {
-  content: '\f17b'; }
+  content: '\f17b';
+}
 
 .fab-ship::before {
-  content: '\f21a'; }
+  content: '\f21a';
+}
 
 .fab-wordpress::before {
-  content: '\f19a'; }
+  content: '\f19a';
+}
 
 .fab-thumbs-up::before {
-  content: '\f164'; }
+  content: '\f164';
+}
 
 .fab-thumbs-down::before {
-  content: '\f165'; }
+  content: '\f165';
+}
 
 .fab-check::before,
 .list-check li::before {
-  content: '\f00c'; }
+  content: '\f00c';
+}
 
 .fab-bell::before {
-  content: '\f0f3'; }
+  content: '\f0f3';
+}
 
 .fab-star::before,
 .list-star li::before {
-  content: '\f005'; }
+  content: '\f005';
+}
 
 .fab-bookmark::before {
-  content: '\f02e'; }
+  content: '\f02e';
+}
 
 .fab-download::before {
-  content: '\f019'; }
+  content: '\f019';
+}
 
 .fab-coffee::before {
-  content: '\f0f4'; }
+  content: '\f0f4';
+}
 
 .fab-user::before {
-  content: '\f007'; }
+  content: '\f007';
+}
 
 .iconlist-box {
-  border-color: transparent; }
-  .iconlist-box ul {
-    list-style: none; }
-  .iconlist-box ol li::before {
-    display: none; }
-  .iconlist-box.list-none ul {
-    list-style: disc; }
-  .iconlist-box.list-none ol {
-    list-style: decimal; }
+  border-color: transparent;
+}
+.iconlist-box ul {
+  list-style: none;
+}
+.iconlist-box ol li::before {
+  display: none;
+}
+.iconlist-box.list-none ul {
+  list-style: disc;
+}
+.iconlist-box.list-none ol {
+  list-style: decimal;
+}
 
 .iconlist-box li::before {
   font-family: FontAwesome;
   margin-right: 0.4em;
-  margin-left: -1em; }
+  margin-left: -1em;
+}
 
 .iconlist-title {
   font-weight: 700;
-  text-align: center; }
+  text-align: center;
+}
 
 .fab-check-circle::before,
 .list-check-circle li::before {
-  content: '\f058'; }
+  content: '\f058';
+}
 
 .fab-check-circle-o::before,
 .list-check-circle-o li::before {
-  content: '\f05d'; }
+  content: '\f05d';
+}
 
 .fab-check-square::before,
 .list-check-square li::before {
-  content: '\f14a'; }
+  content: '\f14a';
+}
 
 .fab-check-square-o::before,
 .list-check-square-o li::before {
-  content: '\f046'; }
+  content: '\f046';
+}
 
 .fab-caret-right::before,
 .list-caret-right li::before {
-  content: '\f0da'; }
+  content: '\f0da';
+}
 
 .fab-caret-square-o-right::before,
 .list-caret-square-o-right li::before {
-  content: '\f152'; }
+  content: '\f152';
+}
 
 .fab-arrow-right::before,
 .list-arrow-right li::before {
-  content: '\f061'; }
+  content: '\f061';
+}
 
 .fab-angle-right::before,
 .list-angle-right li::before {
-  content: '\f105'; }
+  content: '\f105';
+}
 
 .fab-angle-double-right::before,
 .list-angle-double-right li::before {
-  content: '\f101'; }
+  content: '\f101';
+}
 
 .fab-arrow-circle-right::before,
 .list-arrow-circle-right li::before {
-  content: '\f0a9'; }
+  content: '\f0a9';
+}
 
 .fab-arrow-circle-o-right::before,
 .list-arrow-circle-o-right li::before {
-  content: '\f18e'; }
+  content: '\f18e';
+}
 
 .fab-play-circle::before,
 .list-play-circle li::before {
-  content: '\f144'; }
+  content: '\f144';
+}
 
 .fab-play-circle-o::before,
 .list-play-circle-o li::before {
-  content: '\f01d'; }
+  content: '\f01d';
+}
 
 .fab-chevron-right::before,
 .list-chevron-right li::before {
-  content: '\f054'; }
+  content: '\f054';
+}
 
 .fab-chevron-circle-right::before,
 .list-chevron-circle-right li::before {
-  content: '\f138'; }
+  content: '\f138';
+}
 
 .fab-hand-o-right::before,
 .list-hand-o-right li::before {
-  content: '\f0a4'; }
+  content: '\f0a4';
+}
 
 .fab-star-o::before,
 .list-star-o li::before {
-  content: '\f006'; }
+  content: '\f006';
+}
 
 .fab-heart-o::before,
 .list-heart-o li::before {
-  content: '\f08a'; }
+  content: '\f08a';
+}
 
 .fab-square::before,
 .list-square li::before {
-  content: '\f0c8'; }
+  content: '\f0c8';
+}
 
 .fab-square-o::before,
 .list-square-o li::before {
-  content: '\f096'; }
+  content: '\f096';
+}
 
 .fab-circle::before,
 .list-circle li::before {
-  content: '\f111'; }
+  content: '\f111';
+}
 
 .fab-circle-o::before,
 .list-circle-o li::before {
-  content: '\f10c'; }
+  content: '\f10c';
+}
 
 .fab-dot-circle-o::before,
 .list-dot-circle-o li::before {
-  content: '\f192'; }
+  content: '\f192';
+}
 
 .fab-plus::before,
 .list-plus li::before {
-  content: '\f067'; }
+  content: '\f067';
+}
 
 .fab-plus-circle::before,
 .list-plus-circle li::before {
-  content: '\f055'; }
+  content: '\f055';
+}
 
 .fab-plus-square::before,
 .list-plus-square li::before {
-  content: '\f0fe'; }
+  content: '\f0fe';
+}
 
 .fab-plus-square-o::before,
 .list-plus-square-o li::before {
-  content: '\f196'; }
+  content: '\f196';
+}
 
 .fab-minus::before,
 .list-minus li::before {
-  content: '\f068'; }
+  content: '\f068';
+}
 
 .fab-minus-circle::before,
 .list-minus-circle li::before {
-  content: '\f056'; }
+  content: '\f056';
+}
 
 .fab-minus-square::before,
 .list-minus-square li::before {
-  content: '\f146'; }
+  content: '\f146';
+}
 
 .fab-minus-square-o::before,
 .list-minus-square-o li::before {
-  content: '\f147'; }
+  content: '\f147';
+}
 
 .fab-times::before,
 .list-times li::before {
-  content: '\f00d'; }
+  content: '\f00d';
+}
 
 .fab-times-circle::before,
 .list-times-circle li::before {
-  content: '\f057'; }
+  content: '\f057';
+}
 
 .fab-times-circle-o::before,
 .list-times-circle-o li::before {
-  content: '\f05c'; }
+  content: '\f05c';
+}
 
 .fab-window-close::before,
 .list-window-close li::before {
-  content: '\f2d3'; }
+  content: '\f2d3';
+}
 
 .fab-window-close-o::before,
 .list-window-close-o li::before {
-  content: '\f2d4'; }
+  content: '\f2d4';
+}
 
 .fab-paw::before,
 .list-paw li::before {
-  content: '\f1b0'; }
+  content: '\f1b0';
+}
 
 .media-modal-content .search-form {
   margin: 0 !important;
@@ -381,4 +490,5 @@
   box-shadow: none !important;
   border-radius: 0 !important;
   border: none !important;
-  padding: 0 !important; }
+  padding: 0 !important;
+}

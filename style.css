@@ -420,16 +420,18 @@ hr {
 /************************************
 ** WordPress Misc
 ************************************/
-.body .aligncenter {
+.aligncenter {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-.body .alignleft {
+
+.alignleft {
   float: left;
   margin-right: 25px;
 }
-.body .alignright {
+
+.alignright {
   float: right;
   margin-left: 25px;
 }
