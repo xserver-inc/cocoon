@@ -85,7 +85,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'Google Analytics設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'Google Analyticsの解析タグの設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'Google Analyticsの解析タグの設定です。', THEME_NAME ) ?><?php _e( 'GA4解析とユニバーサルアナリティクス解析の共存は可能です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -111,7 +111,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_textbox_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, get_google_analytics_tracking_id(), __( 'UA-00000000-0', THEME_NAME ));
-            generate_tips_tag(__( 'ユニバーサルアナリティクスIDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキングIDとしても利用します', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-analytics/'));
+            generate_tips_tag(__( 'ユニバーサルアナリティクスIDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキングIDとしても利用します。', THEME_NAME ).'<b>'.__( 'ユニバーサルアナリティクスのサポートは、2023年7月1日をもって終了します。', THEME_NAME ).'</b>'.get_help_page_tag('https://wp-cocoon.com/google-analytics/'));
             ?>
           </td>
         </tr>
