@@ -140,6 +140,15 @@ div#header-container {
     color:#545454;
 }
 
+.nwa .toc-list.open{
+    padding: 0;
+}
+
+.nwa .toc{
+    padding: 0;
+    width: 100%;
+}
+
 #sidebar > .widget {
     margin-bottom: 24px;
 }
