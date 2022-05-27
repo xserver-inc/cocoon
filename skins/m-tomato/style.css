@@ -28,8 +28,8 @@ body::before {
 	background-size: auto;
 	background-size: cover;
 }
-#header,#header-container , #header-in,.hlt-center-logo, .header-container-in,
-.container, .cf ,.header-container {
+#header,#header-container ,#header-in,.hlt-center-logo,.header-container-in,
+.container,.cf ,.header-container {
     background:transparent;
 }
 #main {
@@ -62,7 +62,7 @@ body::before {
 
 #footer {
   clear: both;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #fff;
   padding: 5px;
 }
@@ -131,7 +131,6 @@ body::before {
 	border-width: 0 0 16px 16px;
 	border-style: solid;
 	border-color: #fff #fff #fff4ea;
-	border-shadow:1px 1px 1px rgba(0,0,0,0.15);
 	box-shadow: 1px 2px 0 rgba(0,0,0,0.29);
 }
 #under-entry-body h2 ,
@@ -168,7 +167,7 @@ body::before {
 	border:solid 3px #fff;
 	border-radius:50%;
 	background: #ffa337;
-	box-shadow:1px 1px 2px rgba(0.0.0.0.29);
+	box-shadow:1px 1px 2px rgba(0,0,0,0.29);
 	text-shadow: -1px -1px 1px rgba(0,0,0,0.1);
 
 }
