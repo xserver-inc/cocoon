@@ -1,0 +1,11 @@
+.article h2 {
+	z-index: 1;
+}
+
+.article h2:before, .article h2:after {
+	z-index: -1;
+}
+
+.blank-box.sticky:after {
+	display: none;
+}
