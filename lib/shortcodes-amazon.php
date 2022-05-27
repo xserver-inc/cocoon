@@ -152,7 +152,10 @@ endif;
 //PA-APIの返り値のJSONにアイテムが存在するか
 if ( !function_exists( 'is_paapi_json_item_exist' ) ):
 function is_paapi_json_item_exist($json){
-  return property_exists($json->{'ItemsResult'}, 'Items');
+  if (isset($json->{'ItemsResult'})) {
+    $ItemsResult = $json->{'ItemsResult'};
+    return property_exists($ItemsResult, 'Items');
+  }  
 }
 endif;
 
