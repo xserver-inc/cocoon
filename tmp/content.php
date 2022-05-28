@@ -143,7 +143,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php endif; ?>
 
         <?php //本文下ページ送りナビ
-        if (is_post_navi_position_under_content()) {
+        if (is_post_navi_position_under_content() && is_single()) {
           get_template_part('tmp/pager-post-navi');
         } ?>
 
