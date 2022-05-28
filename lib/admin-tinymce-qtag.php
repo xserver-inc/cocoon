@@ -19,6 +19,7 @@ function add_quicktags_to_text_editor() {
   //スクリプトキューにquicktagsが保存されているかチェック
   if (wp_script_is('quicktags')){?>
     <script>
+    window.addEventListener('DOMContentLoaded', () => {
       QTags.addButton('qt-pre','pre','<pre>','</pre>');
       QTags.addButton('qt-ruby','<?php _e( 'ふりがな', THEME_NAME ) ?>','<ruby>','<rt><?php _e( 'ふりがな', THEME_NAME ) ?></rt></ruby>');
       QTags.addButton('qt-bold','<?php _e( '太字', THEME_NAME ) ?>','<span class="bold">','</span>');
@@ -38,6 +39,7 @@ function add_quicktags_to_text_editor() {
       QTags.addButton('qt-sp-info','info','<div class="info-box">','</div>');
       QTags.addButton('qt-sp-warning','<?php _e( 'warning', THEME_NAME ); ?>','<div class="warning-box">','</div>');
       QTags.addButton('qt-sp-danger','<?php _e( 'danger', THEME_NAME ); ?>','<div class="danger-box">','</div>');
+    });
     </script>
   <?php
   }
