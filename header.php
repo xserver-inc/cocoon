@@ -35,6 +35,17 @@ if ($domains) {
 foreach ($domains as $domain): ?>
 <link rel="preconnect dns-prefetch" href="//<?php echo $domain; ?>">
 <?php endforeach; ?>
+
+<!-- Preload -->
+<link rel="preload" as="font" type="font/woff" href="<?php echo FONT_ICOMOON_WOFF_URL; ?>" crossorigin>
+<?php if (is_site_icon_font_font_awesome_4()): ?>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_4_WOFF2_URL; ?>" crossorigin>
+<?php else: ?>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_BRANDS_WOFF2_URL; ?>" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>" crossorigin>
+<?php endif; ?>
+
 <?php //Google Tag Manager
 if (is_analytics() && $tracking_id = get_google_tag_manager_tracking_id()): ?>
 <!-- Google Tag Manager -->
@@ -48,17 +59,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <?php //WordPressが出力するヘッダー情報
 wp_head();
 ?>
-
-<!-- Preload -->
-<link rel="preload" as="font" type="font/woff" href="<?php echo FONT_ICOMOON_WOFF_URL; ?>" crossorigin>
-<link rel="preload" as="font" type="font/ttf" href="<?php echo FONT_ICOMOON_TTF_URL; ?>" crossorigin>
-<?php if (is_site_icon_font_font_awesome_4()): ?>
-<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_4_WOFF2_URL; ?>" crossorigin>
-<?php else: ?>
-<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_BRANDS_WOFF2_URL; ?>" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>" crossorigin>
-<?php endif; ?>
 
 <?php //カスタムフィールドの挿入（カスタムフィールド名：head_custom
 get_template_part('tmp/head-custom-field'); ?>

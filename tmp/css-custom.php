@@ -865,3 +865,10 @@ $color = get_site_key_color() ? get_site_key_color() : '#f6a068';
 .box-menu-icon{
   color: <?php echo $color; ?>;
 }
+@font-face {
+  font-family: 'icomoon';
+  src: url(<?php echo FONT_ICOMOON_WOFF_URL; ?>) format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
