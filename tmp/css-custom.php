@@ -872,34 +872,3 @@ $color = get_site_key_color() ? get_site_key_color() : '#f6a068';
   font-style: normal;
   font-display: swap;
 }
-<?php if (is_site_icon_font_font_awesome_4()): ?>
-@font-face{
-  font-family:'FontAwesome';
-  src: url(<?php echo FONT_AWESOME_4_WOFF2_URL; ?>) format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap
-}
-<?php else: ?>
-@font-face {
-  font-family: 'Font Awesome 5 Brands';
-  src: url(<?php echo FONT_AWESOME_5_BRANDS_WOFF2_URL; ?>) format('woff');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Font Awesome 5 Free';
-  src: url(<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>) format('woff');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Font Awesome 5 Free';
-  src: url(<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>) format('woff');
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-}
-<?php endif; ?>
