@@ -334,7 +334,7 @@ define('THEME_MAIL_AMAZON_PR', "
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[PR]━┓
 　▼▼ クラウド型レンタルサーバー ColorfulBox（カラフルボックス） ▼▼
 　https://px.a8.net/svt/ejp?a8mat=2ZNCKS+45FZ0Q+42SG+5YZ77
-　480円から始められるコスパ無双レンタルサーバー
+　528円から始められるコスパ無双レンタルサーバー
 　https://nelog.jp/colorfulbox
 　サイト作成方法はこちら
 　https://nelog.jp/making-colorfulbox-wordpress-site
