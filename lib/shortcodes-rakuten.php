@@ -517,7 +517,8 @@ if ( !function_exists( 'error_log_to_rakuten_product' ) ):
         'URL:'.get_the_permalink().PHP_EOL.
         'Message:'.$message.PHP_EOL.
         THEME_MAIL_RAKUTEN_PR.PHP_EOL.
-        $rakuten_url.
+        $rakuten_url.PHP_EOL.
+        THEME_MAIL_AMAZON_PR.
         THEME_MAIL_CREDIT;
       wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
     }

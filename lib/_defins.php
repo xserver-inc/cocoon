@@ -338,7 +338,7 @@ define('THEME_MAIL_AMAZON_PR', "
 　https://nelog.jp/colorfulbox
 　サイト作成方法はこちら
 　https://nelog.jp/making-colorfulbox-wordpress-site
-　10％OFFクーポンはこちら
+　【50％OFF】クーポンはこちら
 　https://nelog.jp/colorfulbox-coupon-code
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 
