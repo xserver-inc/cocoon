@@ -93,15 +93,15 @@ function font_css() {
 		</style>
 	';
 	$style_font = '';
-	if (get_theme_mod('font_pattern_control') === 'font_klee') {
+	if (get_theme_mod('font_pattern_control','font_klee') === 'font_klee') {
 		$style_font = '"Klee One", sans-serif';
-	} elseif (get_theme_mod('font_pattern_control') === 'font_zen_kusenaido') {
+	} elseif (get_theme_mod('font_pattern_control','font_klee') === 'font_zen_kusenaido') {
 		$style_font = '"Zen Kurenaido", sans-serif';
-	} elseif (get_theme_mod('font_pattern_control') === 'font_zen_kaku_gothic') {
+	} elseif (get_theme_mod('font_pattern_control','font_klee') === 'font_zen_kaku_gothic') {
 		$style_font = '"Zen Kaku Gothic New", sans-serif';
-	} elseif (get_theme_mod('font_pattern_control') === 'font_zen_maru_gothic') {
+	} elseif (get_theme_mod('font_pattern_control','font_klee') === 'font_zen_maru_gothic') {
 		$style_font = '"Zen Maru Gothic", sans-serif';
-	} elseif (get_theme_mod('font_pattern_control') === 'font_kiwi') {
+	} elseif (get_theme_mod('font_pattern_control','font_klee') === 'font_kiwi') {
 		$style_font = '"Kiwi Maru", sans-serif';
 	} else {
 		$style_font = 'inherit';
@@ -161,19 +161,19 @@ function bg_image_css() {
 	';
 	$style_image = '';
 	$style_size = '';
-	if (get_theme_mod('bg_image_control') === 'bg_grid') {
+	if (get_theme_mod('bg_image_control','bg_grid') === 'bg_grid') {
 		$style_image = 'linear-gradient(180deg, rgba(var(--gray-dark-color), 0) 93%, rgba(var(--gray-dark-color), 1) 100%),linear-gradient(90deg, rgba(var(--gray-dark-color), 0) 93%, rgba(var(--gray-dark-color), 1) 100%)';
 		$style_size= '15px 15px';
-	} elseif (get_theme_mod('bg_image_control') === 'bg_grid_paper') {
+	} elseif (get_theme_mod('bg_image_control','bg_grid') === 'bg_grid_paper') {
 		$style_image = 'linear-gradient(rgba(var(--gray-dark-color), .7) 1%, rgba(var(--gray-dark-color), .7) 1%, transparent 1%, transparent 99%, rgba(var(--gray-dark-color), .7) 99%, rgba(var(--gray-dark-color), .7) 100%), linear-gradient(90deg, rgba(var(--gray-dark-color), .7) 1%, rgba(var(--gray-dark-color), .7) 1%, transparent 1%, transparent 99%, rgba(var(--gray-dark-color), .7) 99%, rgba(var(--gray-dark-color), .7) 100%), linear-gradient(transparent, transparent 25%, rgba(var(--gray-dark-color), .4) 25%, rgba(var(--gray-dark-color), .4) 26%, transparent 26%, transparent 50%, rgba(var(--gray-dark-color), .4) 50%, rgba(var(--gray-dark-color), .4) 51%, transparent 51%, transparent 75%, rgba(var(--gray-dark-color), .4) 75%, rgba(var(--gray-dark-color), .4) 76%, transparent 76%, transparent 100%), linear-gradient(90deg, transparent, transparent 25%, rgba(var(--gray-dark-color), .4) 25%, rgba(var(--gray-dark-color), .4) 26%, transparent 26%, transparent 50%, rgba(var(--gray-dark-color), .4) 50%, rgba(var(--gray-dark-color), .4) 51%, transparent 51%, transparent 75%, rgba(var(--gray-dark-color), .4) 75%, rgba(var(--gray-dark-color), .4) 76%, transparent 76%, transparent 100%)';
 		$style_size = '80px 80px';
-	} elseif (get_theme_mod('bg_image_control') === 'bg_line') {
+	} elseif (get_theme_mod('bg_image_control','bg_grid') === 'bg_line') {
 		$style_image = 'linear-gradient(rgba(var(--gray-dark-color), 1) .1px, rgba(var(--gray-dark-color), 0) .05em)';
 		$style_size = 'auto 1em';
-	} elseif (get_theme_mod('bg_image_control') === 'bg_dot') {
+	} elseif (get_theme_mod('bg_image_control','bg_grid') === 'bg_dot') {
 		$style_image = 'radial-gradient(rgba(var(--gray-dark-color), 1) 3px, rgba(var(--gray-dark-color), 0) 3px)';
 		$style_size= '25px 25px';
-	}else {
+	} else {
 		$style_image= 'none';
 		$style_size= 'unset';
 	}
@@ -260,30 +260,30 @@ function logo_text_dot_css() {
 	';
 	$style_value = '';
 	$style_position = '';
-	if (get_theme_mod('logo_text_dot_control') === 'dot_point') {
+	if (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_point') {
 		$style_value = 'dot';
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_point_open') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_point_open') {
 		$style_value = 'open dot'; 
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_circle') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_circle') {
 		$style_value = 'circle';
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_circle_open') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_circle_open') {
 		$style_value = 'open circle';
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_double_circle') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_double_circle') {
 		$style_value = 'double-circle';
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_double_circle_open') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_double_circle_open') {
 		$style_value = 'open double-circle';
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_triangle') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_triangle') {
 		$style_value = 'triangle';
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_triangle_open') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_triangle_open') {
 		$style_value = 'open triangle';
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_sesame') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_sesame') {
 		$style_value = 'sesame';
-	} elseif (get_theme_mod('logo_text_dot_control') === 'dot_sesame_open') {
+	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_sesame_open') {
 		$style_value = 'open sesame';
 	} else {
 		$style_value = 'none';
 	}
-	if (get_theme_mod('logo_text_dot_potision') === 'dot_under') {
+	if (get_theme_mod('logo_text_dot_potision','dot_under') === 'dot_under') {
 		$style_position = 'under left';
 	} else {
 		$style_position = 'over left'; 

@@ -6,7 +6,7 @@
   Author: ゆうそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-green-orange.jpg
-  Version: 1.0.6
+  Version: 1.0.7
   Priority: 9140002000
 */
 
@@ -180,6 +180,11 @@ div:not(list-columns) .list:after {
 .ect-3-columns .list-column .list:after {
 	bottom: -43px;
 	right: -43px;
+}
+
+/* 検索結果が「NOT FOUND」だった場合 */
+.search-no-results .list {
+	height: 100% !important;
 }
 
 /************************
@@ -414,7 +419,7 @@ div:not(list-columns) .list:after {
 @media screen and (max-width: 834px) {
 
 	#navi .navi-in > .menu-mobile {
-		margin: auto .2em;
+		padding-top: .2em;
 		padding-bottom: .2em;
 	}
 
@@ -1699,6 +1704,10 @@ pre {
 }
 
 .author-description p {
+	margin-bottom: 1.5em !important;
+}
+
+.author-description p:last-of-type {
 	margin-bottom: 0 !important;
 }
 
@@ -1758,6 +1767,19 @@ pre {
 /************************
 * 検索
 ************************/
+/* 検索結果用 */
+.search .search-edit{
+	width: 96%;
+}
+
+/* ブロック用 */
+.wp-block-search__button {
+	border: none;
+	color: rgba(var(--white-color), 1);
+	background: rgba(var(--primary-color), 1);
+}
+
+/* ウィジェット用 */
 .widget_search .search-edit {
 	width: 92%;
 }

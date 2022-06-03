@@ -6,7 +6,7 @@
   Author: ゆうそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-dark-sky.jpg
-  Version: 1.0.6
+  Version: 1.0.7
   Priority: 9140005000
 */
 
@@ -192,6 +192,11 @@ div:not(list-columns) .list:after {
 .ect-3-columns .list-column .list:after {
 	bottom: -43px;
 	right: -43px;
+}
+
+/* 検索結果が「NOT FOUND」だった場合 */
+.search-no-results .list {
+	height: 100% !important;
 }
 
 /************************
@@ -439,7 +444,7 @@ ul .item-label:hover, ul .sub-menu .item-label:hover{
 @media screen and (max-width: 834px) {
 
 	#navi .navi-in > .menu-mobile {
-		margin: auto .2em;
+		padding-top:  .2em;
 		padding-bottom: .2em;
 	}
 
@@ -1887,7 +1892,7 @@ div.speech-balloon {
 
 .author-description {
 	font-size: .9em;
-	background-image: linear-gradient(180deg, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0) 98.5%, rgba( 100, 100, 100, 1) 100%);
+	background-image: linear-gradient(180deg, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0) 98.5%, rgba( 255, 255, 255, 1) 100%);
 	background-repeat: repeat-y;
 	background-size: 100% 1.35em;
 	line-height: 1.35em;
@@ -1895,6 +1900,10 @@ div.speech-balloon {
 }
 
 .author-description p {
+	margin-bottom: 1.5em !important;
+}
+
+.author-description p:last-of-type {
 	margin-bottom: 0 !important;
 }
 
@@ -1965,6 +1974,19 @@ div.speech-balloon {
 /************************
 * 検索
 ************************/
+/* 検索結果用 */
+.search .search-edit{
+	width: 96%;
+}
+
+/* ブロック用 */
+.wp-block-search__button {
+	border: none;
+	color: rgba(var(--white-color), 1);
+	background: rgba(var(--primary-color), 1);
+}
+
+/* ウィジェット用 */
 .widget_search .search-edit {
 	width: 92%;
 }
