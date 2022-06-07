@@ -196,7 +196,6 @@ div:not(list-columns) .list:after {
 	position: relative;
 	background: rgba(var(--white-color), 1);
 	padding: 2em 1em 1em;
-	overflow: hidden;
 }
 
 .appeal-content {
