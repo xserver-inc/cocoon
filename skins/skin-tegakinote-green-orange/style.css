@@ -6,7 +6,7 @@
   Author: ゆうそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-green-orange.jpg
-  Version: 1.0.7
+  Version: 1.0.7.5
   Priority: 9140002000
 */
 
@@ -39,13 +39,13 @@ html,body {
 ・詳細ページの関連記事のタイトル(.elated-entry-card-title)
 ・一覧ページのリストタイトル(.list-title)
 ・一覧ページのカードタイトル(.entry-title)
-・一覧ページのページネーション(.pagination a, .pagination .current)
+・一覧ページのページネーション(.pagination .page-numbers)
 ・見出しh2、h3、h4、h5、h6
 ・ウィジェットのh2(.widget h2)
 ・ウィジェットタイトル(.widget-title)
 ・フッタータイトル(.footer-title)
 ************************/
-.logo-text, .logo-menu-button, .appeal-title, .entry-title, .list-title, .entry-card-title, .pagination a, .pagination .current, .article h2, .article h3, .article h4, .article h5, .article h6, .widget h2, .widget-title, .related-entry-main-heading, .comment-title, .footer-title {
+.logo-text, .logo-menu-button, .appeal-title, .entry-title, .list-title, .entry-card-title, .pagination .page-numbers, .article h2, .article h3, .article h4, .article h5, .article h6, .widget h2, .widget-title, .related-entry-main-heading, .comment-title, .footer-title {
 	font-family: "Klee One", sans-serif;
 }
 
@@ -196,6 +196,7 @@ div:not(list-columns) .list:after {
 	position: relative;
 	background: rgba(var(--white-color), 1);
 	padding: 2em 1em 1em;
+	overflow: hidden;
 }
 
 .appeal-content {
@@ -274,12 +275,18 @@ div:not(list-columns) .list:after {
 
 .article h2:before, .related-entry-heading:before, .comment-title:before {
 	transform: rotate(-.7deg);
-	border-radius: 4em 6em 2em 5em/2em 7em 6em 5em;
+	border-radius: 6em 6em 2em 9em/2em 8em 9em 4em;
 }
 
 .article h2:after, .related-entry-heading:after, .comment-title:after {
 	transform: rotate(.7deg);
-	border-radius: 10em 15em 10em 5em/5em 10em 6em 10em;
+	border-radius: 10em 8em 10em 5em/5em 10em 6em 10em;
+}
+
+@media screen and (max-width: 480px) {
+	.article h2 {
+		padding: .6em .9em;
+	}
 }
 
 /* 関連記事・コメント */
@@ -378,7 +385,7 @@ div:not(list-columns) .list:after {
 	background-color: transparent;
 }
 
-.navi-in .has-icon {
+.navi-in > ul > li > a > .has-icon {
 	right: 0;
 }
 
@@ -404,10 +411,6 @@ div:not(list-columns) .list:after {
 .navi-in > ul .sub-menu {
 	background-color: rgba(var(--white-color), 1);
 	box-shadow: 0 5px 8px -7px rgba(var(--black-color), 1);
-}
-
-.navi-in > ul .sub-menu li {
-	height: auto;
 }
 
 .navi-in > ul .sub-menu li .caption-wrap {
@@ -1196,14 +1199,14 @@ pre {
 /************************
 * 丸ボタン
 ・サブメニューのボタン(.navi-in .has-icon div)
-・一覧ページの「もっと見る」ボタン(.list-more-button)
 ・検索欄のボタン(.search-submit)
 ・「トップへ戻る」ボタン(.go-to-top-button)
-・一覧ページのページネーション(.pagination a)
+・プロフィールボックスの吹き出し(.author-widget-name)
+・一覧ページのページネーション(.pagination .page-numbers, .pagination .current, .pagination-next-link)
 ・一覧ページの「もっと見る」ボタン(.list-more-button)
 ・コメントのボタン(.comment-btn)
 ************************/
-.navi-in .has-icon div, .pagination a, .search-submit, .go-to-top-button, .author-widget-name {
+.navi-in .has-icon div, .pagination .page-numbers, .search-submit, .go-to-top-button, .author-widget-name {
 	border-top-left-radius: 185px 160px;
 	border-top-right-radius: 200px 195px;
 	border-bottom-right-radius: 160px 195px;
@@ -1255,6 +1258,11 @@ pre {
 	line-height: 1.6;
 }
 
+.home .main .sns-share-message, .archive .main .sns-share-message,
+.home .main .sns-follow-message, .archive .main .sns-follow-message {
+	background: rgba(var(--white-color),1);
+}
+
 .sns-share-message:before, .sns-follow-message:before {
 	content: "\f00c";
 	font-family: FontAwesome;
@@ -1303,6 +1311,10 @@ pre {
 
 .sns-buttons a:hover:before {
 	background: rgba(var(--primary-color), 1);
+}
+
+.home .main .sns-buttons a:before, .archive .main .sns-buttons a:before {
+	background: rgba(var(--white-color),1);
 }
 
 /* SNSシェアボタン */
@@ -1507,7 +1519,7 @@ pre {
 }
 
 /* メインコンテンツ用 */
-.article-footer .sns-follow-buttons a:last-child {
+.main .sns-follow-buttons a:last-child {
 	margin-right: auto;
 }
 
@@ -1792,6 +1804,13 @@ pre {
 	padding: .5em .6em;
 }
 
+/* モバイルメニューボタン用 */
+#search-menu-content .search-edit {
+	border: 3px solid rgba(var(--gray-color), 1);
+	background-color: rgba(var(--white-color), 1);
+	width: 97%;
+}
+
 /************************
 * ボックスメニュー
 ************************/
@@ -1864,11 +1883,11 @@ input[type="submit"]:hover {
 
 /************************
 * ページネーション
-・一覧ページのページネーション(.pagination a)
+・一覧ページのページネーション(.pagination .page-numbers)
 ・一覧ページの「もっと見る」ボタン(.list-more-button)
 ・コメントのボタン(.comment-btn)
 ************************/
-.pagination a {
+.pagination .page-numbers {
 	text-shadow: 0px 0px 1px rgba(var(--white-color), 1);
 	transition: all 235ms ease-out 0s;
 	color: rgba(var(--black-color), 1);

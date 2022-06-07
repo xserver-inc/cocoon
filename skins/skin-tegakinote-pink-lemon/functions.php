@@ -87,7 +87,7 @@ add_action( 'wp_head', 'font_css');
 function font_css() {
 	$style_template = '
 		<style>
-			.logo-text, .logo-menu-button, .appeal-title, .entry-title, .list-title, .entry-card-title, .pagination a, .pagination .current, .article h2, .article h3, .article h4, .article h5, .article h6, .widget h2, .widget-title, .related-entry-main-heading, .comment-title, .footer-title {
+			.logo-text, .logo-menu-button, .appeal-title, .entry-title, .list-title, .entry-card-title, .pagination .page-numbers, .article h2, .article h3, .article h4, .article h5, .article h6, .widget h2, .widget-title, .related-entry-main-heading, .comment-title, .footer-title {
 				font-family: %s;
 			}
 		</style>
