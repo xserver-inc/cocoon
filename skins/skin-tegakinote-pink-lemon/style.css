@@ -6,7 +6,7 @@
   Author: ゆうそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-pink-lemon.jpg
-  Version: 1.0.7.5
+  Version: 1.0.7.7
   Priority: 9140003000
 */
 
@@ -22,9 +22,13 @@
 }
 
 /* 全体設定 */
-html,body {
-	color: rgba(var(--black-color), 1);
+html {
 	overflow-x: hidden !important;
+}
+
+body {
+	color: rgba(var(--black-color), 1);
+	overflow: visible;
 }
 
 .main {
@@ -196,7 +200,6 @@ div:not(list-columns) .list:after {
 	position: relative;
 	background: rgba(var(--white-color), 1);
 	padding: 2em 1em 1em;
-	overflow: hidden;
 }
 
 .appeal-content {
