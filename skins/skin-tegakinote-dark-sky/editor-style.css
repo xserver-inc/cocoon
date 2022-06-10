@@ -1,6 +1,5 @@
 .article h2 {
 	z-index: 1;
-	color: var(--white-color)
 }
 
 .article h2:before, .article h2:after {
@@ -8,7 +7,7 @@
 }
 
 .blank-box.sticky:before {
-	border-color: transparent transparent var(--white-color) transparent !important;
+	border-color: transparent transparent rgba(var(--gray-color), 1) transparent !important;
 }
 
 .blank-box.sticky:after {
@@ -18,4 +17,9 @@
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, input[type="submit"] {
 	background-color: initial !important;
 	color: initial !important;
+}
+
+/* テキストカラー */
+.article h2, .speech-balloon p, .micro-balloon {
+	color: rgba(var(--gray-color), 1);
 }

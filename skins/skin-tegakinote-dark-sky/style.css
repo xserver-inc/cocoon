@@ -6,7 +6,7 @@
   Author: ゆうそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-dark-sky.jpg
-  Version: 1.0.7.7
+  Version: 1.0.7.8
   Priority: 9140005000
 */
 
@@ -29,6 +29,12 @@ html {
 body {
 	color: rgba(var(--gray-color), 1);
 	overflow: visible;
+}
+
+@media screen and (max-width: 1023px) {
+	body {
+		overflow-x: hidden !important;
+	}
 }
 
 .main {
@@ -101,7 +107,7 @@ a {
 /************************
 * 表示時アニメーション
 ************************/
-body {
+.container {
 	animation-name: fadeIn;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
@@ -1748,11 +1754,11 @@ div.speech-balloon {
 ・プロフィールボックス
 ・CTAボックス
 ************************/
-.article .main-widget-label {
+.main .main-widget-label {
 	text-align: center;
 }
 
-.article .author-box, .article .cta-box {
+.main .author-box, .main .cta-box {
 	position: relative;
 	padding: 1em;
 	margin: auto;
@@ -1766,7 +1772,7 @@ div.speech-balloon {
 	z-index: 1;
 }
 
-.article .author-box:before, .article .cta-box:before {
+.main .author-box:before, .main .cta-box:before {
 	position: absolute;
 	content: "";
 	margin: auto;
@@ -1780,7 +1786,7 @@ div.speech-balloon {
 	z-index: -1;
 }
 
-.article .author-box:after, .article .cta-box:after {
+.main .author-box:after, .main .cta-box:after {
 	position: absolute;
 	content: "";
 	margin: auto;
@@ -1794,52 +1800,53 @@ div.speech-balloon {
 	z-index: 0;
 }
 
-.article .author-box .sns-follow-buttons,
-.article .cta-box .cta-button {
+.main .author-box .sns-follow-buttons,
+.main .cta-box .cta-button {
 	position: relative;
 	z-index: 3;
 }
 
 /* プロフィールボックス用 */
-.article .author-box {
+.main .author-box {
 	box-shadow: 0px 2px 0px 0px rgba(var(--back-color), 1), 0px 1px 4px 0px rgba(0, 0, 0, .1);
-	border-top-color: rgba(var(--back-color), 1);
+	border-top-color: rgba(var(--gray-dark-color), 1);
+	background: rgba(var(--black-color), 1);
 }
 
 @media screen and (max-width: 480px) {	
-	.article .author-thumb {
+	.main .author-thumb {
 		float: none;
 		margin-top: 0;
 		width: 100%;
 	}
 	
-	.article .widget_author_box .author-box {	
+	.main .widget_author_box .author-box {	
 		text-align: center;
 	}
 	
-	.article .author-description {
+	.main .author-description {
 		text-align: left;
 	}
 	
-	.article .widget_author_box .author-box .author-content {
+	.main .widget_author_box .author-box .author-content {
 		margin-left: 0;
 	}
 }
 
 /* CTAボックス用 */
-.article .cta-box {
+.main .cta-box {
 	box-shadow: 0px 2px 0px 0px rgba(var(--gray-color), 1), 0px 1px 4px 0px rgba(0, 0, 0, .1);
 	border-top-color: rgba(var(--gray-color), 1);
 	background: rgba(var(--white-color), 1);
 	color: rgba(var(--black-color), 1);
 }
 
-.article .cta-box:after {
+.main .cta-box:after {
 	right: 20%;
 	background: rgba(var(--primary-color-tegaki-note), 1);
 }
 
-.article .cta-thumb img {
+.main .cta-thumb img {
 	box-shadow: 5px 5px rgba(var(--black-color), 1);
 }
 
