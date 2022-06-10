@@ -301,7 +301,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'テーブル設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'テーブル動作の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'テーブル動作の設定です。', THEME_NAME );_e( 'テーブルのセルを結合している場合は正常に動作しない場合があります。あらかじめご了承ください。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
