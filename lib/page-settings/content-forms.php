@@ -301,7 +301,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'テーブル設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'テーブル動作の設定です。', THEME_NAME );_e( 'テーブルのセルを結合している場合は正常に動作しない場合があります。あらかじめご了承ください。', THEME_NAME ) ?></p>
+    <p><?php _e( 'テーブル動作の設定です。', THEME_NAME ); ?></p>
 
     <table class="form-table">
       <tbody>
@@ -319,7 +319,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <div class="indent<?php echo get_not_allowed_form_class(is_responsive_table_enable(), true); ?>">
               <?php
               generate_checkbox_tag(OP_RESPONSIVE_TABLE_FIRST_COLUMN_STICKY_ENABLE, is_responsive_table_first_column_sticky_enable(), __( 'テーブルの1列目を固定表示', THEME_NAME ));
-              generate_tips_tag(__( '横スクロールテーブルで1列目となるth、tdを固定します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/responsive-table-first-column-fixed/'));
+              generate_tips_tag(__( '横スクロールテーブルで1列目となるth、tdを固定します。', THEME_NAME ).__( 'テーブルの1列目のセルを結合している場合は正常に動作しない場合があります。あらかじめご了承ください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/responsive-table-first-column-fixed/'));
               ?>
             </div>
           </td>
