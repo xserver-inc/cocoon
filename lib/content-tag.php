@@ -181,7 +181,7 @@ function get_the_tag_noindex($tag_id = null){
 endif;
 
 //拡張タグ編集フォーム
-add_action ( 'edit_tag_form_fields', 'extra_tag_fields');
+add_action ( 'post_tag_edit_form_fields', 'extra_tag_fields');
 if ( !function_exists( 'extra_tag_fields' ) ):
 function extra_tag_fields( $tag ) {
     $tag_id = $tag->term_id;
