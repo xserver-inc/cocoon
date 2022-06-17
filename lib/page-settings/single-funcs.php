@@ -174,6 +174,15 @@ function is_related_entry_card_post_author_visible(){
   return get_theme_option(OP_RELATED_ENTRY_CARD_POST_AUTHOR_VISIBLE);
 }
 endif;
+
+//優先関連記事
+define('OP_PRIORITY_RELATED_POST_URL_LIST', 'priority_related_post_url_list');
+if ( !function_exists( 'get_priority_related_post_url_list' ) ):
+function get_priority_related_post_url_list(){
+  return get_theme_option(OP_PRIORITY_RELATED_POST_URL_LIST);
+}
+endif;
+
 ///////////////////////////////////////
 // ページ送りナビ
 ///////////////////////////////////////

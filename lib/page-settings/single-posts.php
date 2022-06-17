@@ -60,6 +60,10 @@ update_theme_option(OP_RELATED_ENTRY_CARD_POST_UPDATE_VISIBLE);
 
 //投稿者を表示
 update_theme_option(OP_RELATED_ENTRY_CARD_POST_AUTHOR_VISIBLE);
+
+//優先関連記事
+update_theme_option(OP_PRIORITY_RELATED_POST_URL_LIST);
+
 ///////////////////////////////////////
 // ページ送りナビ
 ///////////////////////////////////////
