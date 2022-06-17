@@ -268,6 +268,21 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- 優先関連記事 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_PRIORITY_RELATED_POST_URL_LIST, __('優先関連記事', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <div class="cocoon-donation-privilege" style="display: inline-grid;">
+            <?php
+            generate_textarea_tag(OP_PRIORITY_RELATED_POST_URL_LIST, get_priority_related_post_url_list(), __( '投稿ページのURLを改行区切りで入力', THEME_NAME ), 6) ;
+            generate_tips_tag(__( '関連記事に優先して表示する投稿のURLを改行区切りで入力してください。', THEME_NAME ).__( '入力した順番で関連記事の先頭から表示されます。', THEME_NAME ).__( 'ここに指定した記事の数だけ本来表示される関連記事が表示されなくなるのでご注意ください。', THEME_NAME ));
+            ?>
+            </div>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 
