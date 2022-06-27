@@ -9142,6 +9142,10 @@ pre {
   .mblt-header-mobile-buttons .menu-pc {
     display: none;
   }
+
+  .no-mobile-header-logo .header .header-in {
+    min-height: auto;
+  }
 }
 @media screen and (max-width: 834px) {
   .navi-in > .menu-header {
