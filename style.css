@@ -5120,7 +5120,7 @@ div.search-form {
   border-width: 0;
 }
 .tab-caption-box.block-box.has-background {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .tab-caption-box.has-border-color .box-label {
   color: #fff;
@@ -5310,7 +5310,7 @@ div.search-form {
   border-width: 0;
 }
 .label-box.block-box.has-background {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .label-box-label {

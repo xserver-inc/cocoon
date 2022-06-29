@@ -522,9 +522,9 @@ html .body .is-style-square.has-<?php echo $slug; ?>-answer-color .faq-answer-la
     }
     //1回だけ呼び出す ?>
 html .body .btn-wrap{
-    background-color: <?php echo $btn_wrap_bk_color; ?>;
+    background-color: <?php echo $btn_wrap_bk_color; ?> !important;
     color: #333;
-    border-color: transparent;
+    border-color: transparent !important;
     font-size: 16px;
 }
 

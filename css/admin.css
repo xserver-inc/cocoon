@@ -5264,7 +5264,7 @@ body.wp-admin {
   border-width: 0;
 }
 .admin-settings .demo .tab-caption-box.block-box.has-background {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .admin-settings .demo .tab-caption-box.has-border-color .box-label {
   color: #fff;
@@ -5428,7 +5428,7 @@ body.wp-admin {
   border-width: 0;
 }
 .admin-settings .demo .label-box.block-box.has-background {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .admin-settings .demo .label-box-label {
   margin-left: 1em;
@@ -12911,7 +12911,7 @@ body.wp-admin {
   border-width: 0;
 }
 .admin-settings .demo .tab-caption-box.block-box.has-background {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .admin-settings .demo .tab-caption-box.has-border-color .box-label {
   color: #fff;
@@ -13075,7 +13075,7 @@ body.wp-admin {
   border-width: 0;
 }
 .admin-settings .demo .label-box.block-box.has-background {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .admin-settings .demo .label-box-label {
   margin-left: 1em;
@@ -21132,7 +21132,7 @@ textarea[name="the_page_memo"] {
   border-width: 0;
 }
 .components-popover__content .tab-caption-box.block-box.has-background {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .components-popover__content .tab-caption-box.has-border-color .box-label {
   color: #fff;
@@ -21296,7 +21296,7 @@ textarea[name="the_page_memo"] {
   border-width: 0;
 }
 .components-popover__content .label-box.block-box.has-background {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .components-popover__content .label-box-label {
   margin-left: 1em;

@@ -1381,7 +1381,7 @@ div.search-form{
 .tab-caption-box{
   border-width: 0;
   &.block-box.has-background{
-    background-color: transparent;
+    background-color: transparent !important;
   }
   &.has-border-color .box-label{
     color: $white;
@@ -1440,7 +1440,7 @@ div.search-form{
 .label-box{
   border-width: 0;
   &.block-box.has-background{
-    background-color: transparent;
+    background-color: transparent !important;
   }
 }
 .label-box-label{
