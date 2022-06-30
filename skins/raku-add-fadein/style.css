@@ -1,0 +1,82 @@
+/*
+  Skin Name: ふわっと追加
+  Description: 好きなスキンにふわっと動き（フェイドイン）を追加します。
+  Skin URI: https://lucklog.info/cocoon-raku-fadein/
+  Author: らく
+  Author URI: https://lucklog.info/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/raku-add-fadein.gif
+  Version: 1.1.2
+  Priority: 10001000000
+*/
+/*以下にスタイルシートを記入してください*/
+
+.animation-done {
+    -webkit-animation-fill-mode: none !important;
+    animation-fill-mode: none !important;
+}
+
+#header-container,
+#main,
+#main > *,
+#main .article > *,
+#sidebar {
+    -webkit-animation-duration: 1.3s;
+    animation-duration: 1.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    visibility: hidden;
+}
+
+.raku_fadein_type4 #header-container {
+    animation-delay:1.1s;
+    -webkit-animation-delay:1.1s;
+}
+
+#main {
+    animation-delay:0.4s;
+    -webkit-animation-delay:0.4s;
+}
+
+#main > *,
+#main .article > * {
+    animation-delay:0.2s;
+    -webkit-animation-delay:0.2s;
+}
+
+#sidebar {
+    animation-delay:0.8s;
+    -webkit-animation-delay:0.8s;
+}
+
+.raku_fadeIn,
+.raku_fadeInDown,
+.raku_fadeInLeft,
+.raku_fadeInRight,
+.raku_fadeInUp {
+    visibility: visible !important;
+}
+
+/* raku_fadeIn */
+.raku_fadeIn {
+    animation-name:raku_fadeIn;
+}
+
+/* raku_fadeInDown */
+.raku_fadeInDown {
+    animation-name:raku_fadeInDown;
+}
+
+/* raku_fadeInLeft */
+.raku_fadeInLeft {
+    animation-name:raku_fadeInLeft;
+}
+
+/* raku_fadeInRight */
+.raku_fadeInRight {
+    animation-name:raku_fadeInRight;
+}
+
+/* raku_fadeInUp */
+.raku_fadeInUp {
+    animation-name:raku_fadeInUp;
+}
