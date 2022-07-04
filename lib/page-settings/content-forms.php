@@ -314,7 +314,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_RESPONSIVE_TABLE_ENABLE , is_responsive_table_enable(), __( '横幅の広いテーブルは横スクロール', THEME_NAME ));
-            generate_tips_tag(__( '端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れないようにします。', THEME_NAME ));
+            generate_tips_tag(__( '端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れないようにします。', THEME_NAME ).__( 'テーブルに画像を挿入した際、入力内容によっては画像が小さく表示されてしまうケースがあるのでご注意ください。', THEME_NAME ));
             ?>
             <div class="indent<?php echo get_not_allowed_form_class(is_responsive_table_enable(), true); ?>">
               <?php
