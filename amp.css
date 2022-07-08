@@ -4098,6 +4098,7 @@ div.search-form {
   font-size: 14px;
   border: 2px solid transparent;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .btn amp-img, .ranking-item-link-buttons a amp-img,
 .btn-wrap > a amp-img,
@@ -4141,12 +4142,10 @@ div.search-form {
 .btn-wrap > a:hover {
   opacity: 0.7;
   color: #fff;
-  transition: all 0.3s ease-in-out;
 }
 .btn:hover::after, .ranking-item-link-buttons a:hover::after,
 .btn-wrap > a:hover::after {
   right: -4px;
-  transition: all 0.3s ease-in-out;
 }
 
 .btn-l.btn-circle::after, .ranking-item-link-buttons a.btn-circle::after,

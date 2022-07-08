@@ -4392,6 +4392,7 @@ body.wp-admin {
   font-size: 14px;
   border: 2px solid transparent;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img,
 .admin-settings .demo .btn-wrap > a amp-img,
@@ -4431,12 +4432,10 @@ body.wp-admin {
 .admin-settings .demo .btn-wrap > a:hover {
   opacity: 0.7;
   color: #fff;
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after,
 .admin-settings .demo .btn-wrap > a:hover::after {
   right: -4px;
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .btn-l.btn-circle::after, .admin-settings .demo .ranking-item-link-buttons a.btn-circle::after,
 .admin-settings .demo .btn-wrap.btn-wrap-l.btn-wrap-circle > a::after {
@@ -12039,6 +12038,7 @@ body.wp-admin {
   font-size: 14px;
   border: 2px solid transparent;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img,
 .admin-settings .demo .btn-wrap > a amp-img,
@@ -12078,12 +12078,10 @@ body.wp-admin {
 .admin-settings .demo .btn-wrap > a:hover {
   opacity: 0.7;
   color: #fff;
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after,
 .admin-settings .demo .btn-wrap > a:hover::after {
   right: -4px;
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .btn-l.btn-circle::after, .admin-settings .demo .ranking-item-link-buttons a.btn-circle::after,
 .admin-settings .demo .btn-wrap.btn-wrap-l.btn-wrap-circle > a::after {
@@ -20259,6 +20257,7 @@ textarea[name="the_page_memo"] {
   font-size: 14px;
   border: 2px solid transparent;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .components-popover__content .btn amp-img, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a amp-img,
 .components-popover__content .btn-wrap > a amp-img,
@@ -20299,12 +20298,10 @@ textarea[name="the_page_memo"] {
 .components-popover__content .btn-wrap > a:hover {
   opacity: 0.7;
   color: #fff;
-  transition: all 0.3s ease-in-out;
 }
 .components-popover__content .btn:hover::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover::after,
 .components-popover__content .btn-wrap > a:hover::after {
   right: -4px;
-  transition: all 0.3s ease-in-out;
 }
 .components-popover__content .btn-l.btn-circle::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a.btn-circle::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a.btn-circle::after,
 .components-popover__content .btn-wrap.btn-wrap-l.btn-wrap-circle > a::after {

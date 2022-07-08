@@ -911,6 +911,7 @@ div.search-form{
   font-size: 14px;
   border: 2px solid transparent;
   position: relative;
+  transition: $bgc_hover_anime;
 
   amp-img{
     position: absolute;
@@ -952,10 +953,10 @@ div.search-form{
 .btn-wrap > a:hover{
   opacity: 0.7;
   color: $white;
-  transition: $bgc_hover_anime;
+  // transition: $bgc_hover_anime;
   &::after{
     right: -4px;
-    transition: $bgc_hover_anime;
+    // transition: $bgc_hover_anime;
   }
 }
 
