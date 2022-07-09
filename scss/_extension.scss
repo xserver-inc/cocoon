@@ -951,7 +951,9 @@ div.search-form{
 
 .btn:hover,
 .btn-wrap > a:hover{
-  opacity: 0.7;
+  // opacity: 0.7;
+  filter: opacity(0.7);
+  opacity: 1;
   color: $white;
   // transition: $bgc_hover_anime;
   &::after{

@@ -4430,7 +4430,8 @@ body.wp-admin {
 }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
 .admin-settings .demo .btn-wrap > a:hover {
-  opacity: 0.7;
+  filter: opacity(0.7);
+  opacity: 1;
   color: #fff;
 }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after,
@@ -12076,7 +12077,8 @@ body.wp-admin {
 }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
 .admin-settings .demo .btn-wrap > a:hover {
-  opacity: 0.7;
+  filter: opacity(0.7);
+  opacity: 1;
   color: #fff;
 }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after,
@@ -20296,7 +20298,8 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .btn:hover, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover,
 .components-popover__content .btn-wrap > a:hover {
-  opacity: 0.7;
+  filter: opacity(0.7);
+  opacity: 1;
   color: #fff;
 }
 .components-popover__content .btn:hover::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover::after,
