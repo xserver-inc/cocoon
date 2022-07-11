@@ -674,6 +674,7 @@ a.page-numbers:hover {
 }
 .navi-footer-in a:hover {
 	background-color: #f9f1f0;
+	color: #333 !important;
 }
 
 .navi-footer-in > .menu-footer li {
@@ -683,10 +684,6 @@ a.page-numbers:hover {
 @media screen and (max-width: 834px) {
 	.navi-footer-in > .menu-footer li.menu-item {
 		border: none;
-	}
-
-	.navi-footer-in a {
-		background-color: #f4e7e5;
 	}
 }
 /************************************
