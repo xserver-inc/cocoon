@@ -4140,7 +4140,8 @@ div.search-form {
 
 .btn:hover, .ranking-item-link-buttons a:hover,
 .btn-wrap > a:hover {
-  opacity: 0.7;
+  filter: opacity(0.7);
+  opacity: 1;
   color: #fff;
 }
 .btn:hover::after, .ranking-item-link-buttons a:hover::after,
@@ -8010,7 +8011,6 @@ div.fb-like-mobile {
 .go-to-top-button-image {
   background-color: transparent;
   padding: 0;
-  max-width: 120px;
 }
 
 #wpforo-wrap .anchor-icon,

@@ -7771,7 +7771,6 @@ body.wp-admin {
 .admin-settings .demo .go-to-top-button-image {
   background-color: transparent;
   padding: 0;
-  max-width: 120px;
 }
 .admin-settings .demo #wpforo-wrap .anchor-icon,
 .admin-settings .demo .gallery .anchor-icon,
@@ -15418,7 +15417,6 @@ body.wp-admin {
 .admin-settings .demo .go-to-top-button-image {
   background-color: transparent;
   padding: 0;
-  max-width: 120px;
 }
 .admin-settings .demo #wpforo-wrap .anchor-icon,
 .admin-settings .demo .gallery .anchor-icon,
