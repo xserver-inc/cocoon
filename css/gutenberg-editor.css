@@ -1180,10 +1180,6 @@ body::before,
   margin-top: 0;
 }
 
-.components-dropdown-menu__menu > .cocoon-donation-privilege {
-  pointer-events: auto !important;
-}
-
 [id*="block-cocoon-blocks/faq"] {
   display: none !important;
 }
