@@ -262,6 +262,7 @@ div:not(list-columns) .list:after {
 .related-entry-heading:before, .comment-title:before,
 .related-entry-heading:after, .comment-title:after { 
 	border: solid 1px #777;
+	pointer-events: none;
 }
 
 .article h2, .related-entry-heading, .comment-title {
