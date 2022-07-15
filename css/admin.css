@@ -17273,16 +17273,6 @@ body.wp-admin {
   .admin-settings .demo .no-mobile-header-logo .header .header-in {
     min-height: auto;
   }
-}
-@media screen and (max-width: 834px) {
-  .admin-settings .demo {
-    /************************************
-    ** 関連記事
-    ************************************/
-  }
-  .admin-settings .demo .navi-in > .menu-header {
-    display: none;
-  }
   .admin-settings .demo #navi .navi-in > .menu-mobile {
     display: flex;
   }
@@ -17299,6 +17289,16 @@ body.wp-admin {
     font-size: 14px;
   }
   .admin-settings .demo #navi .navi-in > .menu-mobile li a:after {
+    display: none;
+  }
+}
+@media screen and (max-width: 834px) {
+  .admin-settings .demo {
+    /************************************
+    ** 関連記事
+    ************************************/
+  }
+  .admin-settings .demo .navi-in > .menu-header {
     display: none;
   }
   .admin-settings .demo main.main,

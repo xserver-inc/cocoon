@@ -2,26 +2,6 @@
   display: none;
 }
 
-#navi .navi-in > .menu-mobile{
-  display: flex;
-  > .menu-item-has-description > a > .caption-wrap{
-    height: 40px;
-    line-height: 16px;
-  }
-  li{
-    width: 50%;
-    height: 40px;
-    line-height: 40px;
-    a{
-      font-size: 14px;
-
-      &:after{
-        display: none;
-      }
-    }
-  }
-}
-
 
 main.main,
 div.sidebar{

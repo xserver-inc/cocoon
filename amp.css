@@ -9145,11 +9145,6 @@ pre {
   .no-mobile-header-logo .header .header-in {
     min-height: auto;
   }
-}
-@media screen and (max-width: 834px) {
-  .navi-in > .menu-header {
-    display: none;
-  }
 
   #navi .navi-in > .menu-mobile {
     display: flex;
@@ -9167,6 +9162,11 @@ pre {
     font-size: 14px;
   }
   #navi .navi-in > .menu-mobile li a:after {
+    display: none;
+  }
+}
+@media screen and (max-width: 834px) {
+  .navi-in > .menu-header {
     display: none;
   }
 
