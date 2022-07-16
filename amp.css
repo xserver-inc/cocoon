@@ -9164,6 +9164,10 @@ pre {
   #navi .navi-in > .menu-mobile li a:after {
     display: none;
   }
+
+  .slicknav_menu {
+    display: block;
+  }
 }
 @media screen and (max-width: 834px) {
   .navi-in > .menu-header {
@@ -9307,10 +9311,6 @@ pre {
 
   .widget_mobile_text,
   .widget_mobile_ad {
-    display: block;
-  }
-
-  .slicknav_menu {
     display: block;
   }
 

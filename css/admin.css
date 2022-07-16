@@ -17291,6 +17291,9 @@ body.wp-admin {
   .admin-settings .demo #navi .navi-in > .menu-mobile li a:after {
     display: none;
   }
+  .admin-settings .demo .slicknav_menu {
+    display: block;
+  }
 }
 @media screen and (max-width: 834px) {
   .admin-settings .demo {
@@ -17412,9 +17415,6 @@ body.wp-admin {
   }
   .admin-settings .demo .widget_mobile_text,
   .admin-settings .demo .widget_mobile_ad {
-    display: block;
-  }
-  .admin-settings .demo .slicknav_menu {
     display: block;
   }
   .admin-settings .demo .fb-like-box {
