@@ -13,17 +13,7 @@
   @import "max-width-834";
 }
 
-//599px以下
-@media screen and (max-width: 599px){
-  @import "max-width-599";
-}
-
 //480px以下
 @media screen and (max-width: 480px){
   @import "max-width-480";
-}
-
-//356px以下
-@media screen and (max-width: 356px){
-  @import "max-width-356";
 }

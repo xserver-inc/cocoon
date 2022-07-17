@@ -301,6 +301,12 @@ a.facebook-follow-button{
 .ect-vertical-card .entry-card-wrap{
   margin-bottom: 8px;
 }
+.ect-vertical-card .entry-card-wrap,
+.rect-vertical-card .related-entry-card-wrap,
+.ect-2-columns > *,
+.ect-3-columns > *{
+  width: 100% !important;
+}
 ///////////////////////////
 //統一できるかも
 .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap{
@@ -378,3 +384,158 @@ a.facebook-follow-button{
 .blogcard{
   padding-top: 3%;
 }
+
+//装飾関係
+.is-style-information-box,
+.is-style-question-box,
+.is-style-alert-box,
+.is-style-memo-box,
+.is-style-comment-box,
+.is-style-ok-box,
+.is-style-ng-box,
+.is-style-good-box,
+.is-style-bad-box,
+.is-style-profile-box,
+.information-box,
+.question-box,
+.alert-box,
+.information,
+.question,
+.alert,
+.memo-box,
+.comment-box,
+.common-icon-box{
+  padding: 26px 6px 6px;
+}
+
+.is-style-information-box::before,
+.is-style-question-box::before,
+.is-style-alert-box::before,
+.is-style-memo-box::before,
+.is-style-comment-box::before,
+.is-style-ok-box::before,
+.is-style-ng-box::before,
+.is-style-good-box::before,
+.is-style-bad-box::before,
+.is-style-profile-box::before,
+.information-box::before,
+.question-box::before,
+.alert-box::before,
+.information::before,
+.question::before,
+.alert::before,
+.memo-box::before,
+.comment-box::before,
+.common-icon-box::before{
+  padding: 0;
+  top: 0.7em;
+  left: 50%;
+  margin-left: -0.5em;
+  // top: 1em;
+  // left: 6px;
+  font-size: 18px;
+  border: none;
+  width: auto;
+}
+
+.container .blank-box{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+//タイムライン
+.timeline-box .timeline{
+  padding-left: 10px;
+}
+.timeline > li.timeline-item{
+  overflow: visible;
+  border-left: 3px #e5e5d1 solid;
+}
+.timeline-item-label{
+  width: auto;
+  float: none;
+  text-align: left;
+  padding-left: 16px;
+}
+.timeline-item-content{
+  width: auto;
+  padding: 8px;
+  float: none;
+  border: none;
+}
+.timeline-item::before{
+  left: -12px;
+  top: 19px;
+  width: 21px;
+  height: 21px;
+}
+
+//Facebook吹き出し関係
+.fb-like-balloon-body{
+  font-size: 0.8em;
+  padding: 5px;
+  line-height: 1.1em;
+  margin-right: 0;
+  height: 70px;
+}
+
+.fb-like-balloon-button{
+  float: none;
+  width: 100%;
+  height: 30px;
+  display: block;
+  padding-top: 0;
+  line-height: 24px;
+}
+div.fb-like-mobile{
+  display: block;
+}
+div.fb-like-pc{
+  display: none;
+}
+
+//カエレバ関係
+.pis-m .si-thumb{
+  width: 30%;
+}
+
+//検索フォーム関連
+.search-form div{
+  padding: 3px 5px;
+  font-size: 75%;
+}
+
+.search-form div.sform{
+  min-width: 180px;
+}
+
+.search-form div.sbtn{
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.search-form div.sbtn::after{
+  font-size: 20px;
+  margin-left: -10px;
+}
+
+//bbpress関係
+div#bbpress-forums div.bbp-reply-author img.avatar{
+  position: static;
+}
+div#bbpress-forums .bbp-body div.bbp-reply-author{
+  padding-left: 0;
+  width: 80px;
+  text-align: center;
+}
+
+div#bbpress-forums .bbp-body div.bbp-reply-content{
+  clear: none;
+  margin: 0;
+  p{
+    margin-top: 0;
+  }
+}
+
+//商品ボックス
+@include product_item_box_480;

@@ -181,3 +181,21 @@ div.sidebar{
 .slicknav_menu{
   display: block;
 }
+
+//管理バーとヘッダーモバイルボタンとの兼ね合い
+.admin-bar .mobile-header-menu-buttons{
+  margin-top: 32px;
+}
+
+.admin-bar.mblt-header-mobile-buttons,
+.admin-bar.mblt-header-and-footer-mobile-buttons{
+  margin-top: 32px;
+}
+.admin-bar .mobile-header-menu-buttons{
+  margin-top: 0;
+}
+
+.admin-bar.mblt-header-mobile-buttons,
+.admin-bar.mblt-header-and-footer-mobile-buttons{
+  margin-top: 0;
+} 

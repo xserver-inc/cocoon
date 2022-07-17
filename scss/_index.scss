@@ -76,47 +76,6 @@ input[name="tab_item"]{
 .btn-wrap-circle > a {
   background: #999;
 }
-/* スマホ用 */
-@media screen and (max-width: 834px){
-  .index-tab-buttons{
-    flex-wrap: wrap;
-    .index-tab-button{
-      width: calc(98% / 2);
-      margin: .5%;
-      // &:first-child{
-      //   border-radius: 4px 0 0 0;
-      // }
-      // &:nth-child(2){
-      //   border-radius: 0 4px 0 0;
-      // }
-      // &:nth-child(3){
-      //   border-radius: 0 0 0 4px;
-      // }
-      // &:last-child {
-      //   border-radius: 0 0 4px 0;
-      // }
-
-      // &:nth-child(2){
-      //   border-right: 0;
-      // }
-      // &:nth-child(3),
-      // &:nth-child(4){
-      //   border-top: 1px solid #aaa;;
-      // }
-    }
-
-
-  }
-  // .index-tab-buttons .index-tab-button:nth-last-of-type(n+3){
-  //   border-bottom: 1px solid #ddd;
-  // }
-  .list-columns {
-    flex-direction: column;
-    .list-column{
-      width: 100%;
-    }
-  }
-}
 
 //リストタイトル
 .list-title{

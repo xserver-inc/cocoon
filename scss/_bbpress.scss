@@ -105,24 +105,3 @@ div#bbpress-forums{
   padding: 4px;
   width: auto;
 }
-
-//480px以下
-@media screen and (max-width: 480px){
-  div#bbpress-forums div.bbp-reply-author img.avatar{
-    position: static;
-  }
-  div#bbpress-forums .bbp-body div.bbp-reply-author{
-    padding-left: 0;
-    width: 80px;
-    text-align: center;
-  }
-
-  div#bbpress-forums .bbp-body div.bbp-reply-content{
-    clear: none;
-    margin: 0;
-    p{
-      margin-top: 0;
-    }
-  }
-}
-

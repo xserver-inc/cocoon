@@ -471,65 +471,6 @@ $marker_u_blue: $marker_blue;
   display: none;
 }
 
-@media screen and (max-width:440px){
-  .is-style-information-box,
-  .is-style-question-box,
-  .is-style-alert-box,
-  .is-style-memo-box,
-  .is-style-comment-box,
-  .is-style-ok-box,
-  .is-style-ng-box,
-  .is-style-good-box,
-  .is-style-bad-box,
-  .is-style-profile-box,
-  .information-box,
-  .question-box,
-  .alert-box,
-  .information,
-  .question,
-  .alert,
-  .memo-box,
-  .comment-box,
-  .common-icon-box{
-    padding: 26px 6px 6px;
-  }
-
-  .is-style-information-box::before,
-  .is-style-question-box::before,
-  .is-style-alert-box::before,
-  .is-style-memo-box::before,
-  .is-style-comment-box::before,
-  .is-style-ok-box::before,
-  .is-style-ng-box::before,
-  .is-style-good-box::before,
-  .is-style-bad-box::before,
-  .is-style-profile-box::before,
-  .information-box::before,
-  .question-box::before,
-  .alert-box::before,
-  .information::before,
-  .question::before,
-  .alert::before,
-  .memo-box::before,
-  .comment-box::before,
-  .common-icon-box::before{
-    padding: 0;
-    top: 0.7em;
-    left: 50%;
-    margin-left: -0.5em;
-    // top: 1em;
-    // left: 6px;
-    font-size: 18px;
-    border: none;
-    width: auto;
-  }
-
-  .container .blank-box{
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 ///////////////////////////////////////
 // 白抜きボックス
 ///////////////////////////////////////
@@ -849,27 +790,6 @@ div.search-form{
   position: absolute;
   bottom: -1.5em;
   font-size: 25px;
-}
-
-@media screen and (max-width:450px){
-  .search-form div{
-    padding: 3px 5px;
-    font-size: 75%;
-  }
-
-  .search-form div.sform{
-    min-width: 180px;
-  }
-
-  .search-form div.sbtn{
-    padding-left: 5px;
-    padding-right: 10px;
-  }
-
-  .search-form div.sbtn::after{
-    font-size: 20px;
-    margin-left: -10px;
-  }
 }
 
 //メディアライブラリに適用されたのを打ち消す
@@ -1657,19 +1577,6 @@ figcaption{
   border-bottom: solid 3px !important;
 }
 
-
-
-@media screen and (min-width:600px) and (max-width:781px){
-  .article .wp-block-columns :nth-child(odd):nth-last-child(2){
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (min-width:600px){
-  .column-wrap > *{
-    margin-bottom: 0 !important;
-  }
-}
 
 .body .wp-block-gallery .blocks-gallery-item {
   margin-bottom: 0.6em;
