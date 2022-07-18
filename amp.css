@@ -9602,13 +9602,6 @@ pre {
     margin-bottom: 8px;
   }
 
-  .ect-vertical-card .entry-card-wrap,
-  .rect-vertical-card .related-entry-card-wrap,
-  .ect-2-columns > *,
-  .ect-3-columns > * {
-    width: 100% !important;
-  }
-
   .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap {
     display: block;
   }
@@ -9860,6 +9853,14 @@ pre {
   .product-item-buttons > * {
     width: 100%;
     margin: 0 .5% !important;
+  }
+}
+@media screen and (max-width: 356px) {
+  .ect-vertical-card .entry-card-wrap,
+  .rect-vertical-card .related-entry-card-wrap,
+  .ect-2-columns > *,
+  .ect-3-columns > * {
+    width: 100% !important;
   }
 }
 img {

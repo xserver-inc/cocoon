@@ -17359,12 +17359,6 @@ body.wp-admin {
   .admin-settings .demo .ect-vertical-card .entry-card-wrap {
     margin-bottom: 8px;
   }
-  .admin-settings .demo .ect-vertical-card .entry-card-wrap,
-  .admin-settings .demo .rect-vertical-card .related-entry-card-wrap,
-  .admin-settings .demo .ect-2-columns > *,
-  .admin-settings .demo .ect-3-columns > * {
-    width: 100% !important;
-  }
   .admin-settings .demo .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap {
     display: block;
   }
@@ -17582,6 +17576,14 @@ body.wp-admin {
   .admin-settings .demo .product-item-buttons > * {
     width: 100%;
     margin: 0 .5% !important;
+  }
+}
+@media screen and (max-width: 356px) {
+  .admin-settings .demo .ect-vertical-card .entry-card-wrap,
+  .admin-settings .demo .rect-vertical-card .related-entry-card-wrap,
+  .admin-settings .demo .ect-2-columns > *,
+  .admin-settings .demo .ect-3-columns > * {
+    width: 100% !important;
   }
 }
 @media print {
