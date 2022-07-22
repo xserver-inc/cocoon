@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-add_action( 'wp_enqueue_scripts', 'wp_enqueue_scripts_custom', 1 );
+add_action( 'wp_enqueue_scripts', 'wp_enqueue_scripts_custom' );
 if ( !function_exists( 'wp_enqueue_scripts_custom' ) ):
 function wp_enqueue_scripts_custom() {
 ////////////////////////////////////////////////////////////////
