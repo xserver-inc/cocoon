@@ -76,7 +76,7 @@ if (is_singular()){//単一記事ページの場合
 }
 ?>
 <meta property="og:site_name" content="<?php echo esc_attr(get_bloginfo('name')); ?>">
-<meta property="og:locale" content="ja_JP">
+<meta property="og:locale" content="<?php _e( 'ja_JP', THEME_NAME ); ?>">
 <?php if ( false ): //fb:adminsの取得?>
 <meta property="fb:admins" content="<?php echo esc_attr(get_fb_admins()); ?>">
 <?php endif; ?>
