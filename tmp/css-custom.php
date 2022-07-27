@@ -872,3 +872,99 @@ $color = get_site_key_color() ? get_site_key_color() : '#f6a068';
   font-style: normal;
   font-display: swap;
 }
+<?php //囲みブログカードスタイル（エディター画面）
+//日本語でない時
+if (is_admin() && !preg_match('/^ja/', $locale)): ?>
+.blogcard-type.bct-none::before {
+  content: "  <?php _e('ラベルなし', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-related::before {
+  content: "  <?php _e('関連記事', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-reference::before {
+  content: "  <?php _e('参考記事', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-reference-link::before {
+  content: "  <?php _e('参考リンク', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-popular::before {
+  content: "  <?php _e('人気記事', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-pickup::before {
+  content: "  <?php _e('ピックアップ', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-check::before {
+  content: "  <?php _e('チェック', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-together::before {
+  content: "  <?php _e('あわせて読みたい', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-detail::before {
+  content: "  <?php _e('詳細はこちら', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-official::before {
+  content: "  <?php _e('公式サイト', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-dl::before {
+  content: "  <?php _e('ダウンロード', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-prev::before {
+  content: "  <?php _e('前回の記事', THEME_NAME); ?>";
+}
+
+.blogcard-type.bct-next::before {
+  content: "  <?php _e('続きの記事', THEME_NAME); ?>";
+}
+<?php endif ?>
+<?php //囲みブログカードスタイル（公開画面）
+//日本語でない時
+if (!is_admin() && !preg_match('/^ja/', $locale)): ?>
+
+.bct-related .blogcard-label::after {
+  content: "<?php _e('関連記事', THEME_NAME); ?>";
+}
+.bct-reference .blogcard-label::after {
+  content: "<?php _e('参考記事', THEME_NAME); ?>";
+}
+.bct-reference-link .blogcard-label::after {
+  content: "<?php _e('参考リンク', THEME_NAME); ?>";
+}
+.bct-popular .blogcard-label::after {
+  content: "<?php _e('人気記事', THEME_NAME); ?>";
+}
+.bct-pickup .blogcard-label::after {
+  content: "<?php _e('ピックアップ', THEME_NAME); ?>";
+}
+.bct-check .blogcard-label::after {
+  content: "<?php _e('チェック', THEME_NAME); ?>";
+}
+.bct-together .blogcard-label::after {
+  content: "<?php _e('あわせて読みたい', THEME_NAME); ?>";
+}
+.bct-detail .blogcard-label::after {
+  content: "<?php _e('詳細はこちら', THEME_NAME); ?>";
+}
+.bct-official .blogcard-label::after {
+  content: "<?php _e('公式サイト', THEME_NAME); ?>";
+}
+.bct-dl .blogcard-label::after {
+  content: "<?php _e('ダウンロード', THEME_NAME); ?>";
+}
+.bct-prev .blogcard-label::after {
+  content: "<?php _e('前回の記事', THEME_NAME); ?>";
+}
+.bct-next .blogcard-label::after {
+  content: "<?php _e('続きの記事', THEME_NAME); ?>";
+}
+<?php endif ?>

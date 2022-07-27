@@ -144,10 +144,58 @@ div.sidebar{
   display: none;
 }
 
-.mblt-header-mobile-buttons .menu-pc {
+.navi-in .menu-pc {
   display: none;
 }
 
 .no-mobile-header-logo .header .header-in {
   min-height: auto;
 }
+
+//モバイルグローバルメニュー
+#navi .navi-in > .menu-mobile{
+  display: flex;
+  > .menu-item-has-description > a > .caption-wrap{
+    height: 40px;
+    line-height: 16px;
+  }
+  li{
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    a{
+      font-size: 14px;
+
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+///////////////////////////////////////
+// SlickNavの表示
+///////////////////////////////////////
+.slicknav_menu{
+  display: block;
+}
+
+//管理バーとヘッダーモバイルボタンとの兼ね合い
+.admin-bar .mobile-header-menu-buttons{
+  margin-top: 32px;
+}
+
+.admin-bar.mblt-header-mobile-buttons,
+.admin-bar.mblt-header-and-footer-mobile-buttons{
+  margin-top: 32px;
+}
+.admin-bar .mobile-header-menu-buttons{
+  margin-top: 0;
+}
+
+.admin-bar.mblt-header-mobile-buttons,
+.admin-bar.mblt-header-and-footer-mobile-buttons{
+  margin-top: 0;
+} 

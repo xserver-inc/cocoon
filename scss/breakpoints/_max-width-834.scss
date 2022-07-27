@@ -2,26 +2,6 @@
   display: none;
 }
 
-#navi .navi-in > .menu-mobile{
-  display: flex;
-  > .menu-item-has-description > a > .caption-wrap{
-    height: 40px;
-    line-height: 16px;
-  }
-  li{
-    width: 50%;
-    height: 40px;
-    line-height: 40px;
-    a{
-      font-size: 14px;
-
-      &:after{
-        display: none;
-      }
-    }
-  }
-}
-
 
 main.main,
 div.sidebar{
@@ -177,14 +157,6 @@ table{
 }
 
 ///////////////////////////////////////
-// SlickNavの表示
-///////////////////////////////////////
-.slicknav_menu{
-  display: block;
-}
-
-
-///////////////////////////////////////
 // Facebookボックス
 ///////////////////////////////////////
 @include fb_like_box(none);
@@ -331,3 +303,85 @@ textarea {
 }
 
 @include recommended_nallow;
+
+///////////////////////////////////////
+// カラム
+///////////////////////////////////////
+.container .column-wrap{
+  flex-direction: column;
+  >div{
+    width: 100%;
+    //padding: 1em 0;
+  }
+}
+
+///////////////////////////////////////
+// ボックスメニュー
+///////////////////////////////////////
+.box-menus{
+  .box-menu{
+    width: calc(100%/2);
+  }
+}
+.wwa{
+  .box-menus{
+    margin-left:  10px;
+    margin-right: 10px;
+  }
+}
+
+.article .wp-block-columns :nth-child(odd):nth-last-child(2){
+  margin-bottom: 0;
+}
+
+.column-wrap > *{
+  margin-bottom: 0 !important;
+}
+
+/************************************
+** Facebookページを「いいね！」するエリアのスタイル
+************************************/
+.fb-like-balloon-body{
+  margin-right: 100px;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+.fb-like-balloon-body::after{
+  display: none;
+}
+
+
+//タブインデックス
+.index-tab-buttons{
+  flex-wrap: wrap;
+  .index-tab-button{
+    width: calc(98% / 2);
+    margin: .5%;
+  }
+
+
+}
+
+//カラムインデックス
+.list-columns {
+  flex-direction: column;
+  .list-column{
+    width: 100%;
+  }
+}
+
+//サイドバーのスカイスクレイパー広告
+.sidebar{
+  .ad-vertical{
+    .ad-usual{
+      display: none;
+    }
+
+    .ad-additional-vertical{
+      display: block;
+    }
+  }
+}
+
+//商品ボックス
+@include product_item_box_834;

@@ -264,6 +264,12 @@ div:not(list-columns) .list:after {
 	border: solid 1px #777;
 }
 
+.article h2:before, .article h2:after,
+.related-entry-heading:before, .comment-title:before,
+.related-entry-heading:after, .comment-title:after{
+	pointer-events: none;
+}
+
 .article h2, .related-entry-heading, .comment-title {
 	position: relative;
 	background: rgba(var(--back-color), 1);

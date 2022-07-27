@@ -138,12 +138,6 @@
   width: 30%;
 }
 
-@media screen and (max-width: 480px){
-  .pis-m .si-thumb{
-    width: 30%;
-  }
-}
-
 .booklink-info,
 .kaerebalink-info,
 .tomarebalink-info,
@@ -408,11 +402,6 @@
     height: 100% !important;
   }
 
-  // .product-item-content{
-  //   margin-bottom: 18px;
-  // }
-
-
   .booklink-link2,
   .kaerebalink-link1,
   .tomarebalink-link1,
@@ -464,15 +453,5 @@
 
 .nwa{
   @include product_item_box_834;
-  @include product_item_box_480;
-}
-
-//834px以下
-@media screen and (max-width: 834px){
-  @include product_item_box_834;
-}
-
-//480px以下
-@media screen and (max-width: 480px){
   @include product_item_box_480;
 }
