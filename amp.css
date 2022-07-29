@@ -708,15 +708,6 @@ img.emoji {
 .header-container-in.hlt-top-menu.hlt-tm-small .logo-header img {
   max-height: 40px;
 }
-.header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,
-.header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
-  line-height: 40px;
-  height: 40px;
-  display: block;
-}
-.header-container-in.hlt-top-menu.hlt-tm-small .item-description {
-  display: none;
-}
 
 .hlt-tm-right .navi-in > ul {
   justify-content: flex-end;
@@ -737,13 +728,16 @@ img.emoji {
   max-height: 40px;
 }
 
+.hlt-tm-small .navi-in > ul li,
 .cl-slim .navi-in > ul li {
   height: 40px;
   line-height: 40px;
 }
+.hlt-tm-small .navi-in > ul li .sub-menu ul,
 .cl-slim .navi-in > ul li .sub-menu ul {
   top: -40px;
 }
+.hlt-tm-small .navi-in > ul li.menu-item-has-description > a > .caption-wrap,
 .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;

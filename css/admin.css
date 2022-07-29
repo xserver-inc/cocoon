@@ -1346,15 +1346,6 @@ body.wp-admin {
 .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header img {
   max-height: 40px;
 }
-.admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,
-.admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
-  line-height: 40px;
-  height: 40px;
-  display: block;
-}
-.admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
-  display: none;
-}
 .admin-settings .demo .hlt-tm-right .navi-in > ul {
   justify-content: flex-end;
 }
@@ -1368,13 +1359,16 @@ body.wp-admin {
 .admin-settings .demo .fixed-header .cl-slim .logo-header img {
   max-height: 40px;
 }
+.admin-settings .demo .hlt-tm-small .navi-in > ul li,
 .admin-settings .demo .cl-slim .navi-in > ul li {
   height: 40px;
   line-height: 40px;
 }
+.admin-settings .demo .hlt-tm-small .navi-in > ul li .sub-menu ul,
 .admin-settings .demo .cl-slim .navi-in > ul li .sub-menu ul {
   top: -40px;
 }
+.admin-settings .demo .hlt-tm-small .navi-in > ul li.menu-item-has-description > a > .caption-wrap,
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
@@ -8772,15 +8766,6 @@ body.wp-admin {
 .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header img {
   max-height: 40px;
 }
-.admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,
-.admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
-  line-height: 40px;
-  height: 40px;
-  display: block;
-}
-.admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
-  display: none;
-}
 .admin-settings .demo .hlt-tm-right .navi-in > ul {
   justify-content: flex-end;
 }
@@ -8794,13 +8779,16 @@ body.wp-admin {
 .admin-settings .demo .fixed-header .cl-slim .logo-header img {
   max-height: 40px;
 }
+.admin-settings .demo .hlt-tm-small .navi-in > ul li,
 .admin-settings .demo .cl-slim .navi-in > ul li {
   height: 40px;
   line-height: 40px;
 }
+.admin-settings .demo .hlt-tm-small .navi-in > ul li .sub-menu ul,
 .admin-settings .demo .cl-slim .navi-in > ul li .sub-menu ul {
   top: -40px;
 }
+.admin-settings .demo .hlt-tm-small .navi-in > ul li.menu-item-has-description > a > .caption-wrap,
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
