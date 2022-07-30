@@ -348,7 +348,10 @@ add_action('init', function () {
     'name' => 'square',
     'label' => __('角型ラベル', THEME_NAME),
   ));
-
+  register_block_style('cocoon-blocks/faq', array(
+    'name' => 'accordion',
+    'label' => __('アコーディオン', THEME_NAME),
+  ));
 });
 
 

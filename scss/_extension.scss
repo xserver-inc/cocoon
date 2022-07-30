@@ -1638,4 +1638,41 @@ figcaption{
   color: #007bbb;
 }
 
+//アコーディオンスタイル
+.is-style-accordion{
+  padding: 0;
 
+  .faq-question{
+    padding: .5em;
+    margin: 0;
+  }
+  .faq-answer{
+    padding: 1em .5em;
+    // display: none;
+  }
+  .faq-question{
+    cursor: pointer;
+    position: relative;
+    background-color: $xx_thin; 
+    border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
+
+    &::before{
+      content: "+";
+      position: absolute;
+      right: 1em;
+      opacity: 0.5;
+    }
+
+    &.active::before{
+      content: "-";
+    }
+  }
+
+  &.has-border-color{
+    .faq-question,
+    .faq-question-label{
+      color: $white;
+      border: none;
+    }
+  }
+}

@@ -171,3 +171,14 @@ amp-image-lightbox {
     }
   }
 }
+
+//アコーディオンスタイル
+.is-style-accordion{
+  .faq-question{
+    cursor: default;
+
+    &::before{
+      content: "";
+    }
+  }
+}
