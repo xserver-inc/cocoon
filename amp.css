@@ -2357,21 +2357,22 @@ label.screen-reader-text {
   position: relative;
 }
 .card-arrow .a-wrap::after {
-  display: block;
-  content: '';
+  content: '\f105';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: -8px;
   position: absolute;
-  top: 50%;
-  bottom: 0;
   right: 20px;
-  width: 6px;
-  height: 6px;
-  border-top: solid 2px #697b91;
-  border-right: solid 2px #697b91;
-  transform: rotate(45deg);
-  margin-top: -3px;
+  top: 50%;
 }
 .card-arrow .card-content {
   margin-right: 22px;
+}
+
+.font-awesome-5 .card-arrow .a-wrap::after {
+  font-family: 'Font Awesome 5 Free';
 }
 
 /************************************
