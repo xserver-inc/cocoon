@@ -79,7 +79,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             echo __( 'タグ', THEME_NAME ).'<br>';
             generate_tagcloud_check_list(OP_CAROUSEL_TAG_IDS, get_carousel_tag_ids());
-            generate_tips_tag(__( 'カルーセルと関連付けるカテゴリもしくはタグを選択してください。人気記事を有効にしカテゴリーのタグを選択した場合は、すべて合算しランダムで表示されます。', THEME_NAME ));
+            generate_tips_tag(__( 'カルーセルと関連付けるカテゴリもしくはタグを選択してください。人気記事を有効にしカテゴリー・タグを選択した場合は、すべて合算し「カルーセルの並び替え」で設定した順番に表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
