@@ -35,7 +35,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
     //タイトルを太字にする
     $is_bold = apply_filters( 'related_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : $instance['is_bold'] );
     //矢印表示
-    $is_arrow_visible = apply_filters( 'related_entries_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : $instance['is_bold'] );
+    $is_arrow_visible = apply_filters( 'related_entries_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : $instance['is_arrow_visible'] );
     //除外カテゴリーIDを取得
     $exclude_cat_ids = empty($instance['exclude_cat_ids']) ? array() : $instance['exclude_cat_ids'];
     $exclude_cat_ids = apply_filters( 'related_entries_widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
