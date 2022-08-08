@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 $cat_ids = get_index_list_category_ids();
 $count = get_index_category_entry_card_count();
 ?>
-<div id="list-wrap" class="list-wrap">
+<div id="list-wrap" class="list-wrap <?php echo get_front_page_type_class(); ?>">
   <!-- 新着記事 -->
   <?php get_template_part('tmp/list-new-entries'); ?>
 

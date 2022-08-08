@@ -13,7 +13,7 @@ $cat_ids = get_index_list_category_ids();
 $list_classes = get_index_list_classes();
 ?>
 
-<div id="index-tab-wrap" class="index-tab-wrap">
+<div id="index-tab-wrap" class="index-tab-wrap <?php echo get_front_page_type_class(); ?>">
   <input id="index-tab-1" type="radio" name="tab_item" checked>
   <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
   $number = $i + 2; ?>

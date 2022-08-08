@@ -3509,3 +3509,10 @@ function get_the_auther_profile_name(){
   return $name;
 }
 endif;
+
+//フロントページタイプの取得
+if ( !function_exists( 'get_front_page_type_class' ) ):
+function get_front_page_type_class(){
+  return 'front-page-type-'.str_replace('_', '-', get_front_page_type());;
+}
+endif;
