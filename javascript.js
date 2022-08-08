@@ -188,9 +188,9 @@
   });
 
   //FAQボックスのアコーディオン化用
-  $('.faq-answer').hide();
-  $('.faq-question').click(function(){
-    $(this).next('.faq-answer').slideToggle();
+  $('.is-style-accordion .faq-answer').hide();
+  $('.is-style-accordion .faq-question').click(function(){
+    $(this).next('.is-style-accordion .faq-answer').slideToggle();
     $(this).toggleClass('active');
   });
 })(jQuery);
