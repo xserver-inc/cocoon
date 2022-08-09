@@ -905,7 +905,9 @@ function get_additional_entry_card_classes($option = null){
   }
 
   //フロントページタイプ
-  $classes .= ' front-page-type-'.str_replace('_', '-', get_front_page_type());
+  if (is_front_page_type_index()) {
+    $classes .= ' '.get_front_page_type_class();
+  } 
 
   //スマートフォンでエントリーカードを1カラムに
   if (!is_entry_card_type_entry_card() && is_smartphone_entry_card_1_column()) {
