@@ -385,7 +385,11 @@ function cocoon_blocks_faq($content, $block) {
 
 function cocoon_add_faq($content, $block, $faq, $question) {
   $name = array_key_exists($question, $block['attrs']) ? strip_tags($block['attrs'][$question]) : '';
-  $answer = preg_replace('{^'.$block['innerContent'][0].'(.+?)'.$block['innerContent'][count($block['innerContent']) - 1].'$}s', '$1', $content);
+  $answer = '';
+  $innerBlocks = $block['innerBlocks'];
+  foreach ($innerBlocks as $innerBlock) {
+    $answer .= $innerBlock['innerHTML'];
+  }
   $text = strip_tags(str_replace(["\n", "\r"], '', $answer), '<h1><h2><h3><h4><h5><h6><br><ol><ul><li><a><p><div><b><strong><i><em>');
 
   $faq[count($faq)] = [
