@@ -29,13 +29,13 @@ $count = get_index_category_entry_card_count();
   };
 
   //フロントページタイプのカラムによる変更
-  $ect_columns = 'ect-2-columns';
+  $columns = 'fpt-2-columns';
   if (is_front_page_type_category_3_columns()) {
-    $ect_columns = 'ect-3-columns';
+    $columns = 'fpt-3-columns';
   }
   ?>
 
-  <div id="list-columns" class="list-columns ect-vertical-card <?php echo $ect_columns; ?>">
+  <div id="list-columns" class="list-columns fpt-columns <?php echo $columns; ?>">
     <?php //カテゴリの表示
     for ($i=0; $i < count($cat_ids); $i++):
       $cat_id = $cat_ids[$i]; ?>

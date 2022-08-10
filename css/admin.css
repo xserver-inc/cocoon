@@ -1569,6 +1569,11 @@ body.wp-admin {
 .admin-settings .demo .e-card-info > span {
   margin-right: 4px;
 }
+.admin-settings .demo .fpt-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .admin-settings .demo .ect-vertical-card {
   display: flex;
   flex-wrap: wrap;
@@ -1608,7 +1613,8 @@ body.wp-admin {
 .admin-settings .demo .ect-vertical-card.ect-tile-card .a-wrap {
   margin: 0 0.16666% 12px;
 }
-.admin-settings .demo .ect-2-columns > * {
+.admin-settings .demo .ect-2-columns > *,
+.admin-settings .demo .fpt-2-columns > * {
   width: 49.5%;
   display: inline-block;
 }
@@ -1625,7 +1631,8 @@ body.wp-admin {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.admin-settings .demo .ect-3-columns > * {
+.admin-settings .demo .ect-3-columns > *,
+.admin-settings .demo .fpt-3-columns > * {
   width: 33%;
   display: inline-block;
 }
@@ -9019,6 +9026,11 @@ body.wp-admin {
 .admin-settings .demo .e-card-info > span {
   margin-right: 4px;
 }
+.admin-settings .demo .fpt-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .admin-settings .demo .ect-vertical-card {
   display: flex;
   flex-wrap: wrap;
@@ -9058,7 +9070,8 @@ body.wp-admin {
 .admin-settings .demo .ect-vertical-card.ect-tile-card .a-wrap {
   margin: 0 0.16666% 12px;
 }
-.admin-settings .demo .ect-2-columns > * {
+.admin-settings .demo .ect-2-columns > *,
+.admin-settings .demo .fpt-2-columns > * {
   width: 49.5%;
   display: inline-block;
 }
@@ -9075,7 +9088,8 @@ body.wp-admin {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.admin-settings .demo .ect-3-columns > * {
+.admin-settings .demo .ect-3-columns > *,
+.admin-settings .demo .fpt-3-columns > * {
   width: 33%;
   display: inline-block;
 }
@@ -17630,7 +17644,9 @@ body.wp-admin {
   .admin-settings .demo .ect-vertical-card .entry-card-wrap,
   .admin-settings .demo .rect-vertical-card .related-entry-card-wrap,
   .admin-settings .demo .ect-2-columns > *,
-  .admin-settings .demo .ect-3-columns > * {
+  .admin-settings .demo .ect-3-columns > *,
+  .admin-settings .demo .fpt-2-columns > *,
+  .admin-settings .demo .fpt-3-columns > * {
     width: 100% !important;
   }
 }

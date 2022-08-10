@@ -108,7 +108,11 @@
     //display: block;
   }
 }
-
+.fpt-columns{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 /************************************
 ** エントリーカードタイプ
@@ -161,7 +165,8 @@
     }
   }
 }
-.ect-2-columns > *{
+.ect-2-columns > *,
+.fpt-2-columns > *{
   width: 49.5%;
   display: inline-block;
 }
@@ -179,7 +184,8 @@
     -webkit-box-orient: vertical;
   }
 }
-.ect-3-columns > *{
+.ect-3-columns > *,
+.fpt-3-columns > *{
   width: 33%;
   display: inline-block;
 }
