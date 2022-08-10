@@ -81,7 +81,7 @@ function skin_files_comp($a, $b) {
   if ($f1 == $f2) {
       $n1 = (float)isset($a['skin_name']) ? $a['skin_name'] : 99999999999;
       $n2 = (float)isset($b['skin_name']) ? $b['skin_name'] : 99999999999;
-      return $n1 > $n2;
+      return $n1 <=> $n2;
   }
   return ($f1 < $f2) ? -1 : 1;
 }
