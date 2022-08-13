@@ -5815,7 +5815,7 @@ body.wp-admin {
 .admin-settings .demo .is-style-accordion .faq-question {
   cursor: pointer;
   position: relative;
-  background-color: #f5f6f7;
+  background-color: #e8ecef;
   border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
 }
 .admin-settings .demo .is-style-accordion .faq-question::before {
@@ -13272,7 +13272,7 @@ body.wp-admin {
 .admin-settings .demo .is-style-accordion .faq-question {
   cursor: pointer;
   position: relative;
-  background-color: #f5f6f7;
+  background-color: #e8ecef;
   border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
 }
 .admin-settings .demo .is-style-accordion .faq-question::before {
@@ -21502,7 +21502,7 @@ textarea[name="the_page_memo"] {
 .components-popover__content .is-style-accordion .faq-question {
   cursor: pointer;
   position: relative;
-  background-color: #f5f6f7;
+  background-color: #e8ecef;
   border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
 }
 .components-popover__content .is-style-accordion .faq-question::before {
