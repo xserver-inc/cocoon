@@ -68,7 +68,7 @@ class OpenGraphGetter implements Iterator
             'Cache-Control' => 'no-cache',
           ),
           'cocoon' => true,
-          'user-agent' => $_SERVER['HTTP_USER_AGENT'],
+          'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',
         );
         if (is_amazon_site_page($URI)) {
           $args['user-agent'] = 'Twitterbot/1.0';
