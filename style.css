@@ -329,6 +329,9 @@ a {
 a:hover {
   color: #e53900;
 }
+.has-text-color a {
+  color: inherit;
+}
 
 ol, ul {
   padding-left: 40px;

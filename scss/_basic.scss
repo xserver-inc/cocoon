@@ -34,21 +34,12 @@ body {
 a{
   color: #1967d2;
 
-
-  // &:visited{
-  //   color: blue;
-  // }
-  // figure{
-  //   transition: .7s;
-  // }
-
   &:hover{
     color: #e53900;
-    // //Lo-Fi風のフィルタリング
-    // figure{
-    //   //-webkit-filter: saturate(1.1) contrast(1.5);
-    //   filter: saturate(1.1) contrast(1.5);
-    // }
+  }
+
+  .has-text-color & {
+    color: inherit;
   }
 }
 
