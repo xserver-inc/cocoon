@@ -1018,6 +1018,9 @@ body.wp-admin {
 .admin-settings .demo a:hover {
   color: #e53900;
 }
+.has-text-color .admin-settings .demo a {
+  color: inherit;
+}
 .admin-settings .demo ol, .admin-settings .demo ul {
   padding-left: 40px;
 }
@@ -8474,6 +8477,9 @@ body.wp-admin {
 }
 .admin-settings .demo a:hover {
   color: #e53900;
+}
+.has-text-color .admin-settings .demo a {
+  color: inherit;
 }
 .admin-settings .demo ol, .admin-settings .demo ul {
   padding-left: 40px;

@@ -2586,6 +2586,7 @@ endif;
 //ブログカードの無効化を解除
 if ( !function_exists( 'cancel_blog_card_deactivation' ) ):
 function cancel_blog_card_deactivation($the_content, $is_p = true){
+  //テキストのみ
   $not_url_reg = '!(https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+)';
   if ($is_p) {
     $pattern = '{^<p>'.$not_url_reg.'</p>}im';
@@ -2595,6 +2596,18 @@ function cancel_blog_card_deactivation($the_content, $is_p = true){
     $append = '$1';
   }
   $the_content = preg_replace($pattern, $append, $the_content);
+
+  //URLリンク
+  $not_url_reg = '!(<a.+>https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+</a>)';
+  if ($is_p) {
+    $pattern = '{^<p>'.$not_url_reg.'</p>}im';
+    $append = '<p>$1</p>';
+  } else {
+    $pattern = '{^'.$not_url_reg.'}im';
+    $append = '$1';
+  }
+  $the_content = preg_replace($pattern, $append, $the_content);
+
   return $the_content;
 }
 endif;
