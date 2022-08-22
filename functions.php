@@ -392,6 +392,12 @@ function cocoon_add_faq($content, $block, $faq, $question) {
   }
   $text = strip_tags(str_replace(["\n", "\r"], '', $answer), '<h1><h2><h3><h4><h5><h6><br><ol><ul><li><a><p><div><b><strong><i><em>');
 
+  foreach ($faq as $key => $value) {
+    if ( $value["name"] === $name) {
+      return $faq;
+    }
+  }
+
   $faq[count($faq)] = [
     '@type'          => 'Question',
     'name'           => $name,
