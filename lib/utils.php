@@ -386,7 +386,7 @@ function get_jquery_core_full_version($ver){
   $full_ver = null;
   switch ($ver) {
     case '3':
-      $full_ver = '3.3.1';
+      $full_ver = '3.6.0';
       break;
     case '2':
       $full_ver = '2.2.4';
