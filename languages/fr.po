@@ -9569,7 +9569,7 @@ msgstr "Afficher le bouton suivre"
 #: lib/page-settings/mobile-buttons-forms.php:58
 #, fuzzy
 msgid ""
-"「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときボタンを"
+"「モバイルメニュー」で「モバイルボタン」が選択されているときボタンを"
 "固定表示するか。無効の場合はスクロールするとモバイルボタンが隠れます。"
 msgstr ""
 "Si la barre latérale affichée en dessous de la colonne principale est "
@@ -9594,7 +9594,7 @@ msgstr "Afficher la barre latérale sous contenu au niveau du bouton coulissant"
 #: lib/page-settings/mobile-buttons-forms.php:64
 #, fuzzy
 msgid ""
-"「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときメインカ"
+"「モバイルメニュー」で「モバイルボタン」が選択されているときメインカ"
 "ラム下に表示されるサイドバーを表示するかどうか。"
 msgstr ""
 "Si la barre latérale affichée en dessous de la colonne principale est "

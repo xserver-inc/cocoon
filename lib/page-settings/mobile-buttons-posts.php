@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//モバイルボタンレイアウト
+//モバイルメニュー
 update_theme_option(OP_MOBILE_BUTTON_LAYOUT_TYPE);
 
 //モバイルボタンを固定表示するか
