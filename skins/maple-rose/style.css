@@ -24,7 +24,7 @@ a:hover {
 }
 
 /* ヘッダー背景 */
-#header {
+.header {
     background: repeating-linear-gradient(90deg,#f3e5e3,#f3e5e3 10px,#f9f0ee 0,#f9f0ee 20px);
 }
 .header, .header .site-name-text, #navi .navi-in a, #navi .navi-in a:hover {
