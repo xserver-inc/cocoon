@@ -34,16 +34,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       } ?>
 
       <header class="article-header entry-header">
-        <h1 class="entry-title" itemprop="headline">
-          <?php
+        <h1 class="entry-title" itemprop="headline"><?php
           if (is_wpforo_plugin_page()) {
             echo wp_get_document_title();
           } else {
             the_title();
           }
-           ?>
-        </h1>
-
+           ?></h1>
+        
         <?php //レビュー表示
         if (is_the_page_review_enable()) {
           echo '<div class="review-rating">';
