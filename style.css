@@ -1090,6 +1090,10 @@ img.emoji {
 /************************************
 ** 日付関係のスタイル
 ************************************/
+.entry-date {
+  margin-left: 3px;
+}
+
 .date-tags {
   line-height: 0.8;
   text-align: right;

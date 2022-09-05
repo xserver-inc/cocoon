@@ -1654,6 +1654,9 @@ body.wp-admin {
 .admin-settings .demo .ect-big-card .card-content {
   margin: 0;
 }
+.admin-settings .demo .entry-date {
+  margin-left: 3px;
+}
 .admin-settings .demo .date-tags {
   line-height: 0.8;
   text-align: right;
@@ -9113,6 +9116,9 @@ body.wp-admin {
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-content,
 .admin-settings .demo .ect-big-card .card-content {
   margin: 0;
+}
+.admin-settings .demo .entry-date {
+  margin-left: 3px;
 }
 .admin-settings .demo .date-tags {
   line-height: 0.8;
