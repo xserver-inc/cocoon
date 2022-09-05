@@ -9554,7 +9554,7 @@ msgstr "Botão Mostrar follow"
 #: lib/page-settings/mobile-buttons-forms.php:58
 #, fuzzy
 msgid ""
-"「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときボタンを"
+"「モバイルメニュー」で「モバイルボタン」が選択されているときボタンを"
 "固定表示するか。無効の場合はスクロールするとモバイルボタンが隠れます。"
 msgstr ""
 "Se a barra lateral mostrada abaixo da coluna principal é exibida quando "
@@ -9578,7 +9578,7 @@ msgstr "Mostrar barra lateral em conteúdo no botão de slide-in"
 #: lib/page-settings/mobile-buttons-forms.php:64
 #, fuzzy
 msgid ""
-"「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときメインカ"
+"「モバイルメニュー」で「モバイルボタン」が選択されているときメインカ"
 "ラム下に表示されるサイドバーを表示するかどうか。"
 msgstr ""
 "Se a barra lateral mostrada abaixo da coluna principal é exibida quando "

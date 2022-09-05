@@ -7,5 +7,6 @@ add_action( 'wp_enqueue_scripts', function() {
   wp_enqueue_style(
     'cocoon-skins-sda',
     esc_url(get_template_directory_uri() . '/skins/simple-darkmode-always/css/style.css'),
+    [THEME_NAME.'-style', THEME_NAME.'-keyframes']
   );
 });

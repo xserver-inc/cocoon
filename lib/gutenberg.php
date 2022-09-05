@@ -498,7 +498,13 @@ html .body .timeline-box.has-<?php echo $slug; ?>-point-color .timeline-item::be
   background-color: <?php echo $color; ?>;
 }
 <?php //FAQ ?>
+.has-<?php echo $slug; ?>-border-color.is-style-accordion .faq-question {
+  background-color: <?php echo $color; ?>;
+}
 html .body .has-<?php echo $slug; ?>-question-color .faq-question-label{
+  color: <?php echo $color; ?>;
+}
+html .body .has-<?php echo $slug; ?>-question-color.has-border-color .faq-question-label{
   color: <?php echo $color; ?>;
 }
 html .body .has-<?php echo $slug; ?>-answer-color .faq-answer-label{

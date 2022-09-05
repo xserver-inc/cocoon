@@ -9169,7 +9169,7 @@ msgstr "Fixed display of mobile button"
 
 #: lib/page-settings/mobile-buttons-forms.php:58
 msgid ""
-"「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときボタンを"
+"「モバイルメニュー」で「モバイルボタン」が選択されているときボタンを"
 "固定表示するか。無効の場合はスクロールするとモバイルボタンが隠れます。"
 msgstr ""
 "Do you want fixed display of the button when \"Mobile button\" is selected "
@@ -9190,7 +9190,7 @@ msgstr "Display the sidebar below the content when using the mobile button"
 
 #: lib/page-settings/mobile-buttons-forms.php:64
 msgid ""
-"「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときメインカ"
+"「モバイルメニュー」で「モバイルボタン」が選択されているときメインカ"
 "ラム下に表示されるサイドバーを表示するかどうか。"
 msgstr ""
 "Do you want to display the sidebar that is displayed below the main column "

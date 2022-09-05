@@ -304,6 +304,9 @@ a {
 a:hover {
   color: #e53900;
 }
+.has-text-color a {
+  color: inherit;
+}
 
 ol, ul {
   padding-left: 40px;
@@ -708,15 +711,6 @@ img.emoji {
 .header-container-in.hlt-top-menu.hlt-tm-small .logo-header img {
   max-height: 40px;
 }
-.header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,
-.header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
-  line-height: 40px;
-  height: 40px;
-  display: block;
-}
-.header-container-in.hlt-top-menu.hlt-tm-small .item-description {
-  display: none;
-}
 
 .hlt-tm-right .navi-in > ul {
   justify-content: flex-end;
@@ -737,13 +731,16 @@ img.emoji {
   max-height: 40px;
 }
 
+.hlt-tm-small .navi-in > ul li,
 .cl-slim .navi-in > ul li {
   height: 40px;
   line-height: 40px;
 }
+.hlt-tm-small .navi-in > ul li .sub-menu ul,
 .cl-slim .navi-in > ul li .sub-menu ul {
   top: -40px;
 }
+.hlt-tm-small .navi-in > ul li.menu-item-has-description > a > .caption-wrap,
 .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
@@ -972,6 +969,12 @@ img.emoji {
   margin-right: 4px;
 }
 
+.fpt-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 /************************************
 ** エントリーカードタイプ
 ************************************/
@@ -1015,7 +1018,8 @@ img.emoji {
   margin: 0 0.16666% 12px;
 }
 
-.ect-2-columns > * {
+.ect-2-columns > *,
+.fpt-2-columns > * {
   width: 49.5%;
   display: inline-block;
 }
@@ -1034,7 +1038,8 @@ img.emoji {
   -webkit-box-orient: vertical;
 }
 
-.ect-3-columns > * {
+.ect-3-columns > *,
+.fpt-3-columns > * {
   width: 33%;
   display: inline-block;
 }
@@ -1060,6 +1065,10 @@ img.emoji {
 /************************************
 ** 日付関係のスタイル
 ************************************/
+.entry-date {
+  margin-left: 3px;
+}
+
 .date-tags {
   line-height: 0.8;
   text-align: right;
@@ -2363,21 +2372,22 @@ label.screen-reader-text {
   position: relative;
 }
 .card-arrow .a-wrap::after {
-  display: block;
-  content: '';
+  content: '\f105';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: -8px;
   position: absolute;
-  top: 50%;
-  bottom: 0;
   right: 20px;
-  width: 6px;
-  height: 6px;
-  border-top: solid 2px #697b91;
-  border-right: solid 2px #697b91;
-  transform: rotate(45deg);
-  margin-top: -3px;
+  top: 50%;
 }
 .card-arrow .card-content {
   margin-right: 22px;
+}
+
+.font-awesome-5 .card-arrow .a-wrap::after {
+  font-family: 'Font Awesome 5 Free';
 }
 
 /************************************
@@ -5752,6 +5762,37 @@ figcaption {
 
 .faq-answer-label {
   color: #007bbb;
+}
+
+.is-style-accordion {
+  padding: 0;
+}
+.is-style-accordion .faq-question {
+  padding: .5em;
+  margin: 0;
+}
+.is-style-accordion .faq-answer {
+  padding: 1em .5em;
+}
+.is-style-accordion .faq-question {
+  cursor: pointer;
+  position: relative;
+  background-color: #e8ecef;
+  border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
+}
+.is-style-accordion .faq-question::before {
+  content: "+";
+  position: absolute;
+  right: 1em;
+  opacity: 0.5;
+}
+.is-style-accordion .faq-question.active::before {
+  content: "-";
+}
+.is-style-accordion.has-border-color .faq-question,
+.is-style-accordion.has-border-color .faq-question-label {
+  color: #fff;
+  border: none;
 }
 
 .column-wrap {
@@ -9859,7 +9900,9 @@ pre {
   .ect-vertical-card .entry-card-wrap,
   .rect-vertical-card .related-entry-card-wrap,
   .ect-2-columns > *,
-  .ect-3-columns > * {
+  .ect-3-columns > *,
+  .fpt-2-columns > *,
+  .fpt-3-columns > * {
     width: 100% !important;
   }
 }
@@ -9991,4 +10034,11 @@ amp-image-lightbox {
   position: absolute;
   left: -9999px;
   overflow: hidden;
+}
+
+.is-style-accordion .faq-question {
+  cursor: default;
+}
+.is-style-accordion .faq-question::before {
+  content: "";
 }

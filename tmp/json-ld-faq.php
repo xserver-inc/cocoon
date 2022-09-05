@@ -33,7 +33,7 @@ if ($dl_res && isset($dls[0])) {
         foreach ($dds[0] as $dd) {
           $a_res = preg_match('{<div class="faq-answer-content.+?>(.+?)</div>}s', $dd, $a);
           if ($a_res && isset($a[1])) {
-            $a = strip_tags($a[1], '<h1><h2><h3><h4><h5><h6><br><ol><ul><li><a><p><div><b><strong><i><em>');
+            $a = strip_tags($a[1], '<h1><h2><h3><h4><h5><h6><br><ol><ul><li><a><p><b><strong><i><em>');
             $a = str_replace("\n", '', $a);
             // _v($a);
           }

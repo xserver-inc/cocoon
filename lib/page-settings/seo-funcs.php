@@ -115,7 +115,7 @@ function get_the_date_tags(){
   if (!is_post_date_visible() && is_post_update_visible()) {
     $post_date_icon_tag = '<span class="fa fa-history" aria-hidden="true"></span>';
   }
-  $post_date_tag_wrap_before = '<span class="post-date'.$display_none.'">'.$post_date_icon_tag.' ';
+  $post_date_tag_wrap_before = '<span class="post-date'.$display_none.'">'.$post_date_icon_tag;
   $post_date_tag_wrap_after = '</span>';
   //spanタグの投稿日
   $span_post_date_tag =
@@ -128,7 +128,7 @@ function get_the_date_tags(){
       '<time class="entry-date date published'.$updated.'" datetime="'.get_the_time('c').'" itemprop="datePublished'.$date_modified.'">'.get_the_time(get_site_date_format()).'</time>'.
     $post_date_tag_wrap_after;
   //timeタグがある更新日
-  $time_update_date_tag = '<span class="post-update'.$display_none.'"><span class="fa fa-history" aria-hidden="true"></span> <time class="entry-date date'.$published.' updated" datetime="'.get_update_time('c').'" itemprop="'.$date_published.'dateModified">'.get_update_time(get_site_date_format()).'</time></span>';
+  $time_update_date_tag = '<span class="post-update'.$display_none.'"><span class="fa fa-history" aria-hidden="true"></span><time class="entry-date date'.$published.' updated" datetime="'.get_update_time('c').'" itemprop="'.$date_published.'dateModified">'.get_update_time(get_site_date_format()).'</time></span>';
   switch (get_seo_date_type()) {
     //投稿日のみを伝える
     case 'post_date_only':

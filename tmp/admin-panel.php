@@ -101,7 +101,7 @@ if (is_user_administrator()
         $encoded_url = get_encoded_url(get_requested_url());
       ?>
       <?php if (is_admin_responsinator_visible()): ?>
-        <a href="https://www.responsinator.com/?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer"><?php _e( 'レスポンシブテスト', THEME_NAME ) ?></a>
+        <a href="http://www.responsinator.com/?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer"><?php _e( 'レスポンシブテスト', THEME_NAME ) ?></a>
       <?php endif ?>
       <?php if (is_admin_sizzy_visible()): ?>
         <a href="https://sizzy.co/?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer"><?php _e( 'Sizzy', THEME_NAME ) ?></a>

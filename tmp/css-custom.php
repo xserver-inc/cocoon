@@ -874,7 +874,7 @@ $color = get_site_key_color() ? get_site_key_color() : '#f6a068';
 }
 <?php //囲みブログカードスタイル（エディター画面）
 //日本語でない時
-if (is_admin() && !preg_match('/^ja/', $locale)): ?>
+if (is_admin() && isset($locale) && !preg_match('/^ja/', $locale)): ?>
 .blogcard-type.bct-none::before {
   content: "  <?php _e('ラベルなし', THEME_NAME); ?>";
 }
@@ -929,7 +929,7 @@ if (is_admin() && !preg_match('/^ja/', $locale)): ?>
 <?php endif ?>
 <?php //囲みブログカードスタイル（公開画面）
 //日本語でない時
-if (!is_admin() && !preg_match('/^ja/', $locale)): ?>
+if (!is_admin() && isset($locale) && !preg_match('/^ja/', $locale)): ?>
 
 .bct-related .blogcard-label::after {
   content: "<?php _e('関連記事', THEME_NAME); ?>";

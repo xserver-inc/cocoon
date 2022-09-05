@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 $cat_ids = get_index_list_category_ids();
 $count = get_index_category_entry_card_count();
 ?>
-<div id="list-wrap" class="list-wrap">
+<div id="list-wrap" class="list-wrap <?php echo get_front_page_type_class(); ?>">
   <!-- 新着記事 -->
   <?php get_template_part('tmp/list-new-entries'); ?>
 
@@ -29,13 +29,13 @@ $count = get_index_category_entry_card_count();
   };
 
   //フロントページタイプのカラムによる変更
-  $ect_columns = 'ect-2-columns';
+  $columns = 'fpt-2-columns';
   if (is_front_page_type_category_3_columns()) {
-    $ect_columns = 'ect-3-columns';
+    $columns = 'fpt-3-columns';
   }
   ?>
 
-  <div id="list-columns" class="list-columns ect-vertical-card <?php echo $ect_columns; ?>">
+  <div id="list-columns" class="list-columns fpt-columns <?php echo $columns; ?>">
     <?php //カテゴリの表示
     for ($i=0; $i < count($cat_ids); $i++):
       $cat_id = $cat_ids[$i]; ?>

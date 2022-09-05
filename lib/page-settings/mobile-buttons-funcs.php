@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//モバイルボタンレイアウト
+//モバイルメニュー
 define('OP_MOBILE_BUTTON_LAYOUT_TYPE', 'mobile_button_layout_type');
 if ( !function_exists( 'get_mobile_button_layout_type' ) ):
 function get_mobile_button_layout_type(){

@@ -102,7 +102,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               '1' => __( 'jQuery Core 1.12.4', THEME_NAME ),
             );
             generate_radiobox_tag(OP_JQUERY_VERSION, $options, get_jquery_version());
-            generate_tips_tag(__( 'jQueryのバージョン違いで動作しないプログラムがある場合は変更してください。', THEME_NAME ));
+            generate_tips_tag(__( 'jQueryのバージョン違いで動作しないプログラムがある場合は変更してください。', THEME_NAME ).__( 'jQuery 1、jQuery 2は古いバージョンなので脆弱性があります。できる限りjQuery 3をご利用ください。', THEME_NAME ).__( 'このjQuery選択機能は2022年12月末日をもって廃止いたします。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -121,7 +121,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               '1' => __( 'jQuery Migrate 1.4.1', THEME_NAME ),
             );
             generate_radiobox_tag(OP_JQUERY_MIGRATE_VERSION, $options, get_jquery_migrate_version());
-            generate_tips_tag(__( 'jQuery Migrateのバージョン違いで動作しないプログラムがある場合は変更してください。', THEME_NAME ));
+            generate_tips_tag(__( 'jQuery Migrateのバージョン違いで動作しないプログラムがある場合は変更してください。', THEME_NAME ).__( 'できる限りjQuery Migrate 3をご利用ください。', THEME_NAME ).__( 'このjQuery Migrate選択機能は2022年12月末日をもって廃止いたします。', THEME_NAME ));
             ?>
           </td>
         </tr>
