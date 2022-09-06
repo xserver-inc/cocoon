@@ -914,9 +914,7 @@ function date_shortcode( $atts ) {
 endif;
 
 //更新日ショートコード
-if (is_privilege_activation_code_available()) {
-  add_shortcode('updated', 'updated_shortcode');
-}
+add_shortcode('updated', 'updated_shortcode');
 if ( !function_exists( 'updated_shortcode' ) ):
 function updated_shortcode( $atts ) {
   extract( shortcode_atts( array(

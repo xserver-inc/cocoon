@@ -76,7 +76,7 @@ require_once abspath(__FILE__).'page-settings/apis-funcs.php';       //API設定
 require_once abspath(__FILE__).'page-settings/others-funcs.php';     //その他設定関数
 require_once abspath(__FILE__).'page-settings/reset-funcs.php';      //リセット設定関数
 require_once abspath(__FILE__).'page-settings/about-funcs.php';      //テーマ情報設定関数
-require_once abspath(__FILE__).'page-settings/donation-funcs.php';      //寄付設定関数
+// require_once abspath(__FILE__).'page-settings/donation-funcs.php';      //寄付設定関数
 require_once abspath(__FILE__).'db.php';  //データベース操作関数
 require_once abspath(__FILE__).'page-func-text/func-text-func.php';  //使いまわしテキスト関数
 require_once abspath(__FILE__).'page-backup/backup-func.php';  //バックアップ関数

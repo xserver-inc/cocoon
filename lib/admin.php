@@ -623,27 +623,6 @@ div.editor-block-list__block p{
     font-weight: <?php echo get_site_font_weight(); ?>;
   <?php endif; ?>
 }
-
-<?php //寄付特典
-if(is_privilege_activation_code_available()): ?>
-  .editor-block-list-item-cocoon-blocks-faq,
-  [id*="block-cocoon-blocks/faq"],
-  .cocoon-donation-privilege{
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-  .editor-block-list-item-cocoon-blocks-faq::before,
-  [id*="block-cocoon-blocks/faq"]::before,
-  .cocoon-donation-privilege::before{
-    content: "特典" !important;
-    color: #777 !important;
-    background-color: #fff !important;
-    border: 1px solid #777 !important;
-  }
-  [id*="block-cocoon-blocks/faq"]{
-    display: flex !important;
-  }
-<?php endif; ?>
 </style>
 <script type="text/javascript">
 jQuery(function($) {
