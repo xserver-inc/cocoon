@@ -20,5 +20,5 @@ $site_logo_text = apply_filters('mobile_header_site_logo_text', $site_logo_text)
 <a href="<?php echo esc_url($home_url); ?>" class="menu-button-in"><?php
 $logo_url = get_the_site_logo_url();
 //ロゴが存在する場合は画像
-if ($logo_url): ?><img class="site-logo-image" src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($site_logo_text); ?>"><?php else: ?><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : $site_logo_text; ?><?php endif; ?></a>
+if ($logo_url): ?><img class="site-logo-image" src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($site_logo_text); ?>" loading="lazy" decoding="async"><?php else: ?><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : $site_logo_text; ?><?php endif; ?></a>
 </li>

@@ -107,7 +107,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php endif; ?>
             <?php if ($site_icon_url): ?>
             <div style="width:192px;">
-              <img src="<?php echo $site_icon_url; ?>" alt="" style="width:100%;">
+              <img src="<?php echo $site_icon_url; ?>" alt="" style="width:100%;" loading="lazy" decoding="async">
             </div>
             <?php endif; ?>
           <?php
