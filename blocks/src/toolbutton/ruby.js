@@ -59,7 +59,7 @@ if (isRubyVisible) {
       };
 
       // @see keycodes/src/index.js
-      const shortcutType = 'primaryShift';
+      const shortcutType = 'primaryAlt';
       const shortcutCharacter ='r';
       const icon = (<FontAwesomeIcon icon={['fas', 'ellipsis-h']} />);
       return (
