@@ -22,18 +22,15 @@ registerFormatType( 'cocoon-blocks/html', {
 
   edit ({ isActive, value, onChange }) {
     const onToggle = () => {
-      if (isPrivilegeActivationCodeAvailable) {
-        let html = '';
-        // console.log(value);
-        if ((value.end - value.start) > 0) {
-          value = insert( value, '[html]' + value.text.substr( value.start, value.end - value.start ) + '[/html]', value.start, value.end );
-        } else {
-          html = window.prompt( __( 'HTMLを入力してください。', THEME_NAME ) ) || value.text.substr( value.start, value.end - value.start );
-          if (html) {
-            // console.log(html);
-            value = insert( value, '[html]' + html + '[/html]', value.start, value.end );
-          }
-
+      let html = '';
+      // console.log(value);
+      if ((value.end - value.start) > 0) {
+        value = insert( value, '[html]' + value.text.substr( value.start, value.end - value.start ) + '[/html]', value.start, value.end );
+      } else {
+        html = window.prompt( __( 'HTMLを入力してください。', THEME_NAME ) ) || value.text.substr( value.start, value.end - value.start );
+        if (html) {
+          // console.log(html);
+          value = insert( value, '[html]' + html + '[/html]', value.start, value.end );
         }
       }
       //console.log(value);
