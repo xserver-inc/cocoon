@@ -129,8 +129,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'CSS縮小化：', THEME_NAME ).intval(is_css_minify_enable()).PHP_EOL;
     $all .= __( 'JavaScript縮小化：', THEME_NAME ).intval(is_js_minify_enable()).PHP_EOL;
     $all .= __( 'Lazy Load：', THEME_NAME ).intval(is_lazy_load_enable()).PHP_EOL;
-    $all .= __( 'WEBフォントLazy Load：', THEME_NAME ).intval(is_web_font_lazy_load_enable()).PHP_EOL;
-    //$all .= __( 'JavaScript（フッター）：', THEME_NAME ).intval(is_footer_javascript_enable()).PHP_EOL;
     $all .= $sep;
 
     //plugin.phpを読み込む

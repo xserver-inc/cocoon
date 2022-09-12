@@ -343,11 +343,9 @@ endif;
 //Font Awesomeの読み込み
 if ( !function_exists( 'wp_enqueue_style_font_awesome' ) ):
 function wp_enqueue_style_font_awesome(){
-  if (!is_web_font_lazy_load_enable() || is_admin()) {
-    wp_enqueue_style( 'font-awesome-style', get_site_icon_font_url() );
-    if (is_site_icon_font_font_awesome_5()) {
-      wp_enqueue_style( 'font-awesome5-update-style', FONT_AWESOME_5_UPDATE_URL );
-    }
+  wp_enqueue_style( 'font-awesome-style', get_site_icon_font_url() );
+  if (is_site_icon_font_font_awesome_5()) {
+    wp_enqueue_style( 'font-awesome5-update-style', FONT_AWESOME_5_UPDATE_URL );
   }
 }
 endif;
@@ -355,9 +353,7 @@ endif;
 //IcoMoonの読み込み
 if ( !function_exists( 'wp_enqueue_style_icomoon' ) ):
 function wp_enqueue_style_icomoon(){
-  if (!is_web_font_lazy_load_enable() || is_admin()) {
-    wp_enqueue_style( 'icomoon-style', FONT_ICOMOON_URL );
-  }
+  wp_enqueue_style( 'icomoon-style', FONT_ICOMOON_URL );
 }
 endif;
 
@@ -547,23 +543,6 @@ function wp_enqueue_script_clipboard_js(){
     })(jQuery);
     ");
     wp_add_inline_script( 'clipboard-js', $data, 'after' ) ;
-  }
-}
-endif;
-
-//アイコンフォントの読み込み
-if ( !function_exists( 'wp_enqueue_web_font_lazy_load_js' ) ):
-function wp_enqueue_web_font_lazy_load_js(){
-  if ( is_web_font_lazy_load_enable() && !is_admin() ){
-    wp_enqueue_script( 'web-font-lazy-load-js', get_template_directory_uri().'/js/web-font-lazy-load.js', array(), false, true );
-    $data = ('
-      loadWebFont("'.get_site_icon_font_url().'");
-      loadWebFont("'.FONT_ICOMOON_URL.'");
-    ');
-    if (is_site_icon_font_font_awesome_5()) {
-      $data .= 'loadWebFont("'.get_template_directory_uri().'/css/fontawesome5.css");';
-    }
-    wp_add_inline_script( 'web-font-lazy-load-js', $data, 'after' ) ;
   }
 }
 endif;

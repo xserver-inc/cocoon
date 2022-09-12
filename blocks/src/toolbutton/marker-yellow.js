@@ -9,6 +9,7 @@ import { THEME_NAME, MarkerToolbarButton } from '../helpers.js';
 import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
+import { RichTextShortcut } from '@wordpress/block-editor';
 import { Icon, brush } from '@wordpress/icons';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/marker';
 const TITLE = __( '黄色マーカー', THEME_NAME );
@@ -18,15 +19,21 @@ registerFormatType( FORMAT_TYPE_NAME, {
   tagName: 'span',
   className: 'marker',
   edit({isActive, value, onChange}){
-    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
+    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));    
+    const shortcutType = 'primaryShift';
+    const shortcutCharacter ='y';
+
 
     return (
       <Fragment>
+        <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
         <MarkerToolbarButton
           icon={<Icon icon={brush} size={32} />}
           title={<span className="marker">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }
+          shorcutType={shortcutType} 
+          shorcutCharacter={shortcutCharacter}
         />
       </Fragment>
     );

@@ -9,6 +9,7 @@ import { THEME_NAME, MarkerToolbarButton } from '../helpers.js';
 import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
+import { RichTextShortcut } from '@wordpress/block-editor';
 import { Icon, minus } from '@wordpress/icons';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/marker-under-red';
 const TITLE = __( '赤色アンダーラインマーカー', THEME_NAME );
@@ -18,15 +19,20 @@ registerFormatType( FORMAT_TYPE_NAME, {
   tagName: 'span',
   className: 'marker-under-red',
   edit({isActive, value, onChange}){
-    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
+    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));   
+    const shortcutType = 'primaryShift';
+    const shortcutCharacter ='s';
 
     return (
       <Fragment>
+        <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
         <MarkerToolbarButton
           icon={<Icon icon={minus} size={32} />}
           title={<span className="marker-under-red">{TITLE}</span>}
           onClick={ onToggle }
           isActive={ isActive }
+          shorcutType={shortcutType} 
+          shorcutCharacter={shortcutCharacter}
         />
       </Fragment>
     );
