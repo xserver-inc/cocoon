@@ -7,10 +7,6 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//フォーマットはリンクユニットの場合
-if ($format == DATA_AD_FORMAT_LINK && !$ad_code) {
-  $ad_code = get_ad_link_unit_code();
-}
 $ad_code = get_adsense_responsive_code(to_adsense_format($format), $ad_code);
 if (!$ad_code) {
   $ad_code = get_ad_code();

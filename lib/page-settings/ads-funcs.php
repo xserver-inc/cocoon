@@ -31,14 +31,6 @@ function get_ad_code(){
 }
 endif;
 
-//広告リンクユニットコード
-define('OP_AD_LINK_UNIT_CODE', 'ad_link_unit_code');
-if ( !function_exists( 'get_ad_link_unit_code' ) ):
-function get_ad_link_unit_code(){
-  return stripslashes_deep(get_theme_option(OP_AD_LINK_UNIT_CODE));
-}
-endif;
-
 //広告ラベル
 define('OP_AD_LABEL_CAPTION', 'ad_label_caption');
 if ( !function_exists( 'get_ad_label_caption' ) ):
