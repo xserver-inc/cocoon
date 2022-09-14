@@ -93,19 +93,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             //入力チェック
             generate_toggle_entered($link_unit_code);
             echo get_help_page_tag('https://wp-cocoon.com/adsense-link-unit/');
-
-            echo '<br>';
-
-            //関連コンテンツユニット
-            $related_contents_unit_code = get_ad_related_contents_unit_code();
-            ob_start();
-            generate_textarea_tag(OP_AD_RELATED_CONTENTS_UNIT_CODE, $related_contents_unit_code, __( 'アドセンス関連コンテンツコードを入力', THEME_NAME )) ;
-            generate_tips_tag(__( '関連コンテンツ用の広告コードを入力してください。ここに広告コードを入力することでAMPページでも関連コンテンツが表示されます。', THEME_NAME ));
-            $form = ob_get_clean();
-            generate_toggle_area(__( '関連コンテンツ用コード入力', THEME_NAME ), $form);
-            //入力チェック
-            generate_toggle_entered($related_contents_unit_code);
-            echo get_help_page_tag('https://wp-cocoon.com/related-contents-unit/');
             ?>
           </td>
         </tr>
