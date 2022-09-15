@@ -74,7 +74,7 @@ function tag_code_to_minify_js($buffer) {
               //wpForo除外
               || includes_string($url, '/plugins/wpforo/')
               //wpForoなどでも使われるエディターのスクリプト
-              || includes_string($url, '/js/editor')
+              || includes_string($url, '/wp-includes/js/tinymce/')
               //wpForo（1.9.1.2以下）
               || is_buddypress_page()
               //bbPress
