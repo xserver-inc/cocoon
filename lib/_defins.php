@@ -106,9 +106,6 @@ define('AD_FORMAT_SINGLE_RECTANGLE', 'single-rectangle'); //シングルレク�
 define('AD_FORMAT_DABBLE_RECTANGLE', 'dabble-rectangle'); //ダブルレクタングル
 //広告ユニット以外
 define('DATA_AD_FORMAT_FLUID', 'fluid'); //記事中広告
-define('DATA_AD_FORMAT_AUTORELAXED', 'autorelaxed'); //関連記事
-//リンクユニット
-define('DATA_AD_FORMAT_LINK', 'link');
 //ナビゲーションメニュー
 define('NAV_MENU_HEADER', 'navi-header');
 define('NAV_MENU_HEADER_MOBILE', 'navi-mobile');
@@ -145,7 +142,6 @@ $_MAIN_DATA_AD_FORMATS = array(
   AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
   AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
   DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
-  DATA_AD_FORMAT_LINK => __( 'リンクユニット', THEME_NAME ),
 );
 // define('MAIN_DATA_AD_FORMATS', $_MAIN_DATA_AD_FORMATS);
 
@@ -165,7 +161,6 @@ $_SIDEBAR_DATA_AD_FORMATS = array(
   DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
   DATA_AD_FORMAT_RECTANGLE => __( 'レクタングル', THEME_NAME ),
   DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
-  DATA_AD_FORMAT_LINK => __( 'リンクユニット', THEME_NAME ),
 );
 // define('SIDEBAR_DATA_AD_FORMATS', $_SIDEBAR_DATA_AD_FORMATS);
 
@@ -180,9 +175,7 @@ $_PC_WIDGET_DATA_AD_FORMATS = array(
   AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
   DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
   DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
-  DATA_AD_FORMAT_LINK => __( 'リンクユニット', THEME_NAME ),
 );
-// define('PC_WIDGET_DATA_AD_FORMATS', $_PC_WIDGET_DATA_AD_FORMATS);
 
 //モバイル用の広告フォーマット集
 global $_MOBILE_WIDGET_DATA_AD_FORMATS;
@@ -192,9 +185,7 @@ $_MOBILE_WIDGET_DATA_AD_FORMATS = array(
   DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
   DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
   AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
-  DATA_AD_FORMAT_LINK => __( 'リンクユニット', THEME_NAME ),
 );
-// define('MOBILE_WIDGET_DATA_AD_FORMATS', $_MOBILE_WIDGET_DATA_AD_FORMATS);
 
 //スキン制御向けのグローバル変数
 global $_THEME_OPTIONS;

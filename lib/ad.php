@@ -129,49 +129,8 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
   if (get_adsense_ids($code)) {
     $ad_client = get_adsense_data_ad_client($code);
     $ad_slot = get_adsense_data_ad_slot($code);
-    //関連コンテンツユニットの場合
-    if ($format == DATA_AD_FORMAT_AUTORELAXED) {
-      $code = '
-        <amp-ad
-          width="100vw"
-          height="320"
-          type="adsense"
-          data-ad-client="'.$ad_client.'"
-          data-ad-slot="'.$ad_slot.'"
-          data-auto-format="mcrspv"
-          data-full-width="">
-        </amp-ad>';
-    } else {
-      //リンクユニットの場合
-      if ($format == DATA_AD_FORMAT_LINK) {
-        $code = '<amp-ad
-          media="(max-width: 515px)"
-          layout="fixed-height"
-          height="250"
-          type="adsense"
-          data-ad-client="'.$ad_client.'"
-          data-ad-slot="'.$ad_slot.'">
-        </amp-ad>
-
-        <amp-ad
-          media="(min-width: 516px) and (max-width: 840px)"
-          layout="fixed-height"
-          height="90"
-          type="adsense"
-          data-ad-client="'.$ad_client.'"
-          data-ad-slot="'.$ad_slot.'">
-        </amp-ad>
-
-        <amp-ad
-          media="(min-width: 841px)"
-          width="640"
-          height="90"
-          type="adsense"
-          data-ad-client="'.$ad_client.'"
-          data-ad-slot="'.$ad_slot.'">
-        </amp-ad>';
-      } else {
-        $code = '<amp-ad
+    //広告コード
+    $code = '<amp-ad
           width="100vw"
           height="320"
           type="adsense"
@@ -181,8 +140,6 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
           data-full-width>
             <div overflow></div>
         </amp-ad>';
-      }
-    }
 
     return $code;
   }
