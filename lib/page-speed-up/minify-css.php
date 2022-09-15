@@ -62,7 +62,7 @@ function tag_code_to_minify_css($buffer) {
             if (
               //アドミンバースタイルは除外
               // (strpos($url, 'admin-bar.min.css') !== false)
-              || includes_string($url, 'admin-bar.min.css')
+              includes_string($url, 'admin-bar.min.css')
               //ダッシュアイコンは除外
               // || (strpos($url, 'dashicons.min.css') !== false)
               || includes_string($url, 'dashicons.min.css')
