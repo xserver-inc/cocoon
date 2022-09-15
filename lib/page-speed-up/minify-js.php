@@ -54,13 +54,11 @@ function tag_code_to_minify_js($buffer) {
         if ($url) {//continue;
           //サイトURLが含まれているものだけ処理
           if (includes_site_url($url)) {
-            //_v($url);
             //除外処理
             if (
               //jQueryは除外
               //(strpos($url, 'js/jquery/jquery.js') !== false) ||
               //アドミンバーのJSは除外
-              //(strpos($url, 'js/admin-bar.min.js') !== false)
               includes_string($url, 'js/admin-bar.min.js')
               //プレイリストのJSは除外
               || includes_string($url, '/mediaelement-and-player.min.js')
@@ -70,13 +68,16 @@ function tag_code_to_minify_js($buffer) {
               //Stripe Paymentsの除外
               || includes_string($url, 'stripe-payments/')
               //コードハイライト
-              //|| (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
               || includes_string($url, '/plugins/highlight-js/highlight')
               || includes_string($url, '/plugins/spotlight-master/dist/spotlight')
               || includes_string($url, '/plugins/ip-geo-block/')
+              //wpForo除外
               || includes_string($url, '/plugins/wpforo/')
+              //wpForoなどでも使われるエディターのスクリプト
               || includes_string($url, '/js/editor')
+              //wpForo（1.9.1.2以下）
               || is_buddypress_page()
+              //bbPress
               || is_bbpress_page()
               || is_wpforo_plugin_page()
             ) {

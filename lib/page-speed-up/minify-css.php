@@ -48,10 +48,8 @@ function tag_code_to_minify_css($buffer) {
         $url = $m[$file][$i];
         //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
         $url = preg_replace('/\?.*$/m', '', $url);
-        //_v($url);
         //CSSコード
         $css_inline_code = $m[$code][$i];
-        //_v($css_inline_code);
 
         ++$i;
 
@@ -63,9 +61,13 @@ function tag_code_to_minify_css($buffer) {
           if (includes_site_url($url)) {
             if (
               //アドミンバースタイルは除外
-              (strpos($url, 'admin-bar.min.css') !== false)
+              // (strpos($url, 'admin-bar.min.css') !== false)
+              || includes_string($url, 'admin-bar.min.css')
               //ダッシュアイコンは除外
-              || (strpos($url, 'dashicons.min.css') !== false)
+              // || (strpos($url, 'dashicons.min.css') !== false)
+              || includes_string($url, 'dashicons.min.css')
+              //wpForo除外
+              || includes_string($url, '/plugins/wpforo/')
             ) {
               continue;
             }
@@ -74,8 +76,6 @@ function tag_code_to_minify_css($buffer) {
             if (has_match_list_text($url, get_css_minify_exclude_list())) {
               continue;
             }
-
-            //_v($url);//CSSコード変換するURL
 
             //CSS URLからCSSコードの取得
             $css = css_url_to_css_minify_code( $url );
