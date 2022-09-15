@@ -18,15 +18,8 @@ if (is_related_entries_visible()): ?>
     <?php endif ?>
   </h2>
   <div class="related-list">
-  <?php //関連コンテンツユニット以外
-    if (get_related_entry_type() != DATA_AD_FORMAT_AUTORELAXED) {
-      get_template_part('tmp/related-list');
-    } else {//関連コンテンツユニットの場合
-      //AdSense広告表示が許可されている場合
-      if (is_all_adsenses_visible()) {
-        get_template_part_with_ad_format(DATA_AD_FORMAT_AUTORELAXED, 'ad-related-autorelaxed', false, get_ad_related_contents_unit_code());
-      }
-    }
+  <?php //関連記事
+    get_template_part('tmp/related-list');
   ?>
   </div>
 </aside>

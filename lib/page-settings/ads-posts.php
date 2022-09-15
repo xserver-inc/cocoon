@@ -13,10 +13,6 @@ update_theme_option(OP_ALL_ADS_VISIBLE);
 update_theme_option(OP_ALL_ADSENSES_VISIBLE);
 //広告コード
 update_theme_option(OP_AD_CODE);
-//リンクユニット広告コード
-update_theme_option(OP_AD_LINK_UNIT_CODE);
-//関連コンテンツユニットコード
-update_theme_option(OP_AD_RELATED_CONTENTS_UNIT_CODE);
 //広告ラベル
 update_theme_option(OP_AD_LABEL_CAPTION);
 
