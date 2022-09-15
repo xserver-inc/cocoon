@@ -30,8 +30,6 @@ function tag_code_to_minify_js($buffer) {
     $pattern = '{'.$js_file_pattern.'|'.$js_inline_pattern.'}is';
     $subject = $buffer;
     $res = preg_match_all($pattern, $subject, $m);
-    //_v($m);
-    //_v($m);
     $all = 0;  //scriptタグ全体にマッチ
     $flie = 1; //src内のファイルURLにマッチ
     $attr = 2; //scriptタグの属性
@@ -71,26 +69,16 @@ function tag_code_to_minify_js($buffer) {
               || includes_string($url, '/wp-includes/js/dist/')
               //Stripe Paymentsの除外
               || includes_string($url, 'stripe-payments/')
-              // || includes_string($url, '/wp-playlist.min.js')
-              // || includes_string($url, '/wp-mediaelement.min.js')
-              // || includes_string($url, '/mediaelement-migrate.min.js')
-              // || includes_string($url, '/wp-includes/js/backbone.min.js')
-              // || includes_string($url, '/wp-includes/js/wp-util.min.js')
               //コードハイライト
               //|| (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
               || includes_string($url, '/plugins/highlight-js/highlight')
               || includes_string($url, '/plugins/spotlight-master/dist/spotlight')
               || includes_string($url, '/plugins/ip-geo-block/')
-              //|| (strpos($url, '/plugins/wpforo/') !== false)
-              //|| (strpos($url, '/buddypress/bp-core/js/') !== false)
-              // || (strpos($url, '/plugins/bbpress/templates/default/js/editor.js') !== false)
-              // || (strpos($url, '/plugins/image-upload-for-bbpress/') !== false)
+              || includes_string($url, '/plugins/wpforo/')
+              || includes_string($url, '/js/editor')
               || is_buddypress_page()
               || is_bbpress_page()
               || is_wpforo_plugin_page()
-
-              //jQueryマイグレートは除外
-              //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
             ) {
               continue;
             }
@@ -106,19 +94,6 @@ function tag_code_to_minify_js($buffer) {
 
             //JS URLからJSコードの取得
             $js = js_url_to_js_minify_code( $url );
-            // if (includes_string($url, '/plugins/lity/dist/lity.min.js')) {
-            //   _v($js);
-            // }
-            // if ($js) {
-            //   $start_name_url = $url.'-start';
-            //   $start_url = 'performance.mark("'.$start_name_url.'");';
-            //   $end_name_url = $url.'-end';
-            //   $end_url = 'performance.mark("'.$end_name_url.'");';
-            //   $measure_url = 'performance.measure("'.$url.'", "'.$start_name_url.'", "'.$end_name_url.'");';
-            //   $js = $start_url.$js.$end_url.$measure_url;
-            //   //_v($js);
-            // }
-
 
             //縮小化可能なJSな時
             if ($js !== false) {
@@ -127,8 +102,6 @@ function tag_code_to_minify_js($buffer) {
               //JSを縮小化したJSファイルURL linkタグをインラインにする
               $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
 
-
-              //$last_minfified_js .= $js;
             }//$js
 
           }//URLが存在するか
@@ -138,18 +111,6 @@ function tag_code_to_minify_js($buffer) {
         //インラインタイプのJavaScriptコードだった場合
         if ($js_code) {
           $js = minify_js($js_code);
-          //JSON-LDスクリプトは除外
-          /*
-          if ($js && !preg_match('/<script.*? type="application\/ld\+json".*?>/i', $script_tag)) {
-            $start_name_in = 'inline-js-'.$i.'-start';
-            $start_in = 'performance.mark("'.$start_name_in.'");';
-            $end_name_in = 'inline-js-'.$i.'-end';
-            $end_in = 'performance.mark("'.$end_name_in.'");';
-            $measure_in = 'performance.measure("inline-js-'.$i.'", "'.$start_name_in.'", "'.$end_name_in.'");';
-            $js = $start_in.$js.$end_in.$measure_in;
-            //_v($js);
-          }
-          */
 
           //インラインタイプのscriptタグを縮小化して置換する
           $buffer = str_replace($script_tag, '<script'.$attr_code.'>'.$js.'</script>', $buffer);
@@ -173,16 +134,12 @@ function js_url_to_js_minify_code( $url ) {
   $js = false;
   //URLファイルをローカルファイルパスに変更
   $local_file = url_to_local($url);
-  //_v($local_file);
 
   //if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
   if ( file_exists($local_file) && $js = wp_filesystem_get_contents($local_file) ) {//WP_Filesystemの初期化
 
     //コメントの除去
     $js = remove_code_comments($js);
-    // if (!includes_string($url, '/plugins/lity/dist/lity.min.js')) {
-    //   _v($js);
-    // }
     //CSS内容を縮小化して書式を統一化する
     $js = minify_js($js);
     //コード内scriptタグの処理
