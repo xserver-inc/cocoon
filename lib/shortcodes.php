@@ -108,6 +108,7 @@ function popular_entries_shortcode($atts) {
     'arrow' => 0,
     'class' => null,
     'author' => null,
+    'post_type' => 'post',
   ), $atts, 'popular_list'));
   $cat_ids = array();
   if ($cats && $cats != 'all') {
@@ -125,11 +126,10 @@ function popular_entries_shortcode($atts) {
     'arrow' => $arrow,
     'class' => $class,
     'author' => $author,
+    'post_type' => $post_type,
   );
   ob_start();
   generate_popular_entries_tag($atts);
-  //_v($atts);
-  //generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
   $res = ob_get_clean();
   return $res;
 }
