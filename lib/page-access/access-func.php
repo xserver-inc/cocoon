@@ -54,11 +54,20 @@ if ( !function_exists( 'get_accesses_post_type' ) ):
 function get_accesses_post_type(){
   global $post;
   global $post_type;
-  if (is_page() || (isset($post->post_type) && ($post->post_type === 'page')) || ($post_type === 'page')) {
-    $res = 'page'; //page
+  // _v($post);
+  // _v($post_type);
+  // if (is_page() || (isset($post->post_type) && ($post->post_type === 'page')) || ($post_type === 'page')) {
+  //   $res = 'page'; //page
+  // } else {
+  //   $res = 'post'; //single
+  // }
+  if (isset($post->post_type)) {
+    $res = $post->post_type; 
+  } elseif (isset($post_type)) {
+    $res = $post_type; 
   } else {
     $res = 'post'; //single
-  }
+  }  
   return $res;
 }
 endif;
@@ -172,7 +181,7 @@ endif;
 //DBにアクセスをカウントする
 if ( !function_exists( 'logging_page_access' ) ):
 function logging_page_access($post_id = null, $post_type = 'post'){
-  //_v(111);
+  
   $res = false;
   //投稿・固定ページのみでカウントする
   if (is_access_count_enable()
@@ -181,7 +190,6 @@ function logging_page_access($post_id = null, $post_type = 'post'){
       //ボットでないとき
       && !is_useragent_robot()
     ) {
-
     if (!$post_id || !$post_type ) {
       global $post;
       $post_id = $post->ID;
