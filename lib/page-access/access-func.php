@@ -107,13 +107,11 @@ function update_accesses_record($id, $posts){
   $table = ACCESSES_TABLE_NAME;
   $data = array(
     'count' => $posts['count'],
-    'post_type' => $posts['post_type'],
     'last_ip' => $posts['last_ip'],
   );
   $where = array('id' => $id);
   $format = array(
     '%d',
-    '%s',
     '%s',
   );
   $where_format = array('%d');
@@ -212,7 +210,6 @@ function logging_page_access($post_id = null, $post_type = 'post'){
         //if (($record->last_ip != $last_ip) || DEBUG_MODE) {
           $post_id = $record->id;
           $posts['last_ip'] = $last_ip;
-          $posts['post_type'] = $post_type;
           $posts['count'] = intval($record->count) + 1;
           $res = update_accesses_record($post_id, $posts);
         //}
