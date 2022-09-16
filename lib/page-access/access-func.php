@@ -344,7 +344,7 @@ function get_all_access_count($post_id = null){
 endif;
 
 if ( !function_exists( 'wrap_joined_wp_posts_query' ) ):
-function wrap_joined_wp_posts_query($query, $limit, $author){
+function wrap_joined_wp_posts_query($query, $limit, $author, $post_type){
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
@@ -353,7 +353,7 @@ function wrap_joined_wp_posts_query($query, $limit, $author){
   if ($author) {
     $author_query = ' AND post_author = '.esc_sql($author);
   }
-  $post_type = 'post';
+  // $post_type = 'post';
   $query = "
     SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
@@ -373,13 +373,7 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array(), $children = 0, $author = null){
-  // //ページの判別ができない場合はDBにアクセスしない
-  // if (!is_singular()) {
-  //   return null;
-  // }
-  //var_dump($cat_ids);
-
+function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAULT, $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array(), $children = 0, $author = null, $post_type = 'post'){
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
     $cat_ids = is_array($cat_ids) ? $cat_ids : array();
@@ -406,7 +400,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     $expids = implode(',', $exclude_post_ids);
     $excats = implode(',', $exclude_cat_ids);
     $type = get_accesses_post_type();
-    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats;
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats.'&auther='.$auther.'&post_type='.$post_type;
     //_v($transient_id);
     $cache = get_transient( $transient_id );
     if ($cache) {
@@ -426,20 +420,17 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
 
   global $wpdb;
   $access_table = ACCESSES_TABLE_NAME;
-  $post_type = 'post';
+  // $post_type = 'post';
   $date = get_current_db_date();
 
 
   $where = " WHERE {$access_table}.post_type = '$post_type' ".PHP_EOL;
+  // _v($where);
   if ($days != 'all') {
     $date_before = get_current_db_date_before($days);
     $where .= " AND {$access_table}.date BETWEEN '$date_before' AND '$date' ".PHP_EOL;
   }
-  // if ($days == 1) {
-  //   $where .= " AND {$access_table}.date = '$date' ".PHP_EOL;
-  // }
-  //_v($exclude_post_ids);
-  // _v($exclude_post_ids[0]);
+
   if (is_ids_exist($exclude_post_ids)) {
     $where .= " AND {$access_table}.post_id NOT IN(".implode(',', $exclude_post_ids).") ".PHP_EOL;
   }
@@ -500,11 +491,11 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         ORDER BY sum_count DESC
     ";
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $author);
+    $query = wrap_joined_wp_posts_query($query, $limit, $autho, $post_type);
   }
 
   $records = $wpdb->get_results( $query );
-  //_v($query);
+  
   if (is_access_count_cache_enable() && $records) {
     set_transient( $transient_id, $records, 60 * get_access_count_cache_interval() );
   }

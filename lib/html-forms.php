@@ -1003,9 +1003,10 @@ function generate_popular_entries_tag($atts){
     'arrow' => 0,
     'class' => null,
     'author' => null,
+    'post_type' => 'post',
   ), $atts));
 
-  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author);
+  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type);
 
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   $atts = array(
