@@ -23,7 +23,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             //unlink(/app/public/wp-content/temp-write-test-1512636307): Text file busy
             //原因はよくわからないけど警告なので様子見
         ?>
-        <iframe id="column-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400"></iframe>
+        <iframe id="column-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400" loading="lazy"></iframe>
       </div>
     <?php endif; ?>
 

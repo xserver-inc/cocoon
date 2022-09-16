@@ -17,7 +17,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <div class="cta-content">
     <?php if ($_IMAGE_URL): ?>
       <div class="cta-thumb">
-        <img src="<?php echo $_IMAGE_URL; ?>" alt="" />
+        <img src="<?php echo $_IMAGE_URL; ?>" alt="" loading="lazy" decoding="async" />
       </div>
     <?php endif ?>
     <?php if ($_MESSAGE): ?>

@@ -16,7 +16,7 @@ if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示す�
 ?>
 <div id="go-to-top" class="go-to-top">
   <?php if ( get_go_to_top_button_image_url() ): //カスタマイザーでトップへ戻る画像が指定されている時 ?>
-    <a class="go-to-top-button go-to-top-common go-to-top-hide go-to-top-button-image"<?php echo $on; ?>><img src="<?php echo get_go_to_top_button_image_url(); ?>" alt="<?php _e( 'トップへ戻る', THEME_NAME ) ?>"></a>
+    <a class="go-to-top-button go-to-top-common go-to-top-hide go-to-top-button-image"<?php echo $on; ?>><img src="<?php echo get_go_to_top_button_image_url(); ?>" alt="<?php _e( 'トップへ戻る', THEME_NAME ) ?>" loading="lazy" decoding="async"></a>
   <?php else: ?>
     <a class="go-to-top-button go-to-top-common go-to-top-hide go-to-top-button-icon-font"<?php echo $on; ?>><span class="fa <?php echo get_go_to_top_button_icon_font(); //Font Awesomeアイコンフォントの取得 ?>"></span></a>
   <?php endif ?>

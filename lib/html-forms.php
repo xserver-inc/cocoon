@@ -422,7 +422,7 @@ function generate_the_site_logo_tag($is_header = true){
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
-    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'>';
+    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.' loading="lazy" decoding="async">';
   } else {
     $site_logo_tag = esc_html($site_logo_text);
   }
@@ -572,7 +572,7 @@ function generate_upload_image_tag($name, $value, $id = null){
   <input type="button" name="<?php echo $name; ?>_clear" value="<?php _e( 'クリア', THEME_NAME ) ?>" />
   <div id="<?php echo $thumb_id; ?>_thumbnail" class="uploded-thumbnail">
     <?php if ($value): ?>
-      <img src="<?php echo $value; ?>" alt="選択中の画像">
+      <img src="<?php echo $value; ?>" alt="選択中の画像" loading="lazy" decoding="async">
     <?php endif ?>
   </div>
   <?php if (0/*$value*/): ?>
@@ -628,7 +628,7 @@ function generate_upload_image_tag($name, $value, $id = null){
                   $("input:text[name='<?php echo $name; ?>']").val(file.attributes.sizes.full.url);
 
                   /* プレビュー用に選択されたサムネイル画像を表示 */
-                  $("#<?php echo $thumb_id; ?>_thumbnail").append('<img src="'+file.attributes.sizes.full.url+'" />');
+                  $("#<?php echo $thumb_id; ?>_thumbnail").append('<img src="'+file.attributes.sizes.full.url+'" loading="lazy" decoding="async" />');
 
               });
           });

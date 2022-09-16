@@ -77,7 +77,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <div style="width: 380px">
           <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
           <div class="demo mobile-demo" style="width: 370px;">
-            <iframe id="mobile-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="360" height="640"></iframe>
+            <iframe id="mobile-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="360" height="640" loading="lazy"></iframe>
           </div>
       </div>
       <?php endif; ?>

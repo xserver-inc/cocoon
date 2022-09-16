@@ -35,7 +35,7 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     $size = get_image_width_and_height($url);
     $width = isset($size['width']) ? $size['width'] : 800;
     $height = isset($size['height']) ? $size['height'] : 600;
-    echo ' <img src="'.$url.'" width="'.$width.'" height="'.$height.'" alt="">';
+    echo ' <img src="'.$url.'" width="'.$width.'" height="'.$height.'" alt="" loading="lazy" decoding="async">';
   }
   ?>
   <meta itemprop="url" content="<?php echo $url; ?>">

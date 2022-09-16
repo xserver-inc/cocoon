@@ -227,7 +227,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
          ?>
         <div class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-              <img src="<?php echo $home_image_url; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" alt="">
+              <img src="<?php echo $home_image_url; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" alt="" loading="lazy" decoding="async">
               <meta itemprop="url" content="<?php echo $home_image_url; ?>">
               <meta itemprop="width" content="<?php echo $width; ?>">
               <meta itemprop="height" content="<?php echo $height; ?>">
