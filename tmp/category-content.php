@@ -19,7 +19,7 @@ if ($eye_catch_url || $content): ?>
     <?php if ($eye_catch_url): ?>
       <div class="eye-catch-wrap">
         <figure class="eye-catch">
-          <img src="<?php echo esc_url($eye_catch_url); ?>" class="eye-catch-image wp-category-image" alt="<?php echo esc_attr(get_the_category_title($cat_id)); ?>" loading="lazy" decoding="async">
+          <img src="<?php echo esc_url($eye_catch_url); ?>" class="eye-catch-image wp-category-image" alt="<?php echo esc_attr(get_the_category_title($cat_id)); ?>" decoding="async">
           <?php //カテゴリラベル
           // echo get_original_image_tag($eye_catch_url, $width, $height, '"eye-catch-image wp-category-image', get_the_category_title($cat_id));
           if (apply_filters('is_eyecatch_category_label_visible', true)) {
