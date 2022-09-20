@@ -521,9 +521,11 @@ function get_several_jetpack_access_count($post_id = null, $days = -1){
     if (!$post_id) {
       $post_id = $post->ID;
     }
-    $jetpack_views = stats_get_csv('postviews', array('days' => $days, 'limit' => 1, 'post_id' => $post_id ));
-    if (isset($jetpack_views[0]['views'])) {
-      $views = $jetpack_views[0]['views'];
+    if (function_exists('stats_get_csv')) {
+      $jetpack_views = stats_get_csv('postviews', array('days' => $days, 'limit' => 1, 'post_id' => $post_id ));
+      if (isset($jetpack_views[0]['views'])) {
+        $views = $jetpack_views[0]['views'];
+      }      
     }
   }
   return $views;
