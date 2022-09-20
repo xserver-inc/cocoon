@@ -482,7 +482,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     ";
     //_v($query);
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $author);
+    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type);
   } else {
     $query = "
       SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
