@@ -508,18 +508,28 @@ endif;
 //タグメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_tag_meta_description' ) ):
 function get_tag_meta_description($tag = null){
+  $tag_desc = '';
   //タグ設定ページのディスクリプションを取得
-  $tag_desc = trim( strip_tags( get_the_tag_meta_description() ) );
+  if (get_the_tag_meta_description()) {
+    $tag_desc = trim( strip_tags( get_the_tag_meta_description() ) );
+  }  
   if ( $tag_desc ) {//ディスクリプションが設定されている場合
     return htmlspecialchars($tag_desc);
   }
+
   //タグ説明文を取得
-  $tag_desc = trim( strip_tags( tag_description() ) );
+  if (tag_description()) {
+    $tag_desc = trim( strip_tags( tag_description() ) );
+  }  
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }
+
   //タグ本文から抜粋文を作成
-  $tag_desc = trim( strip_tags( get_content_excerpt(get_the_tag_content(), 160) ) );
+  $tag_content = get_content_excerpt(get_the_tag_content(), 160);
+  if ($tag_content) {
+    $tag_desc = trim( strip_tags( $tag_content ) );
+  }  
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }
