@@ -450,7 +450,9 @@ function get_meta_description_text(){
   } elseif ((is_tag() || is_tax()) && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
     $description = get_tag_meta_description();
   }
-  $description = htmlspecialchars($description);
+  if ($description) {
+    $description = htmlspecialchars($description);
+  }  
   return apply_filters('get_meta_description_text', $description);
 }
 endif;
@@ -481,7 +483,9 @@ function get_meta_keywords_text(){
   } elseif (is_tag() && is_meta_keywords_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
     $keywords = get_tag_meta_keywords();
   }
-  $keywords = htmlspecialchars($keywords);
+  if ($keywords) {
+    $keywords = htmlspecialchars($keywords);
+  }  
   return apply_filters('get_meta_keywords_text', $keywords);
 }
 endif;
