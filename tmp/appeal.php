@@ -25,14 +25,22 @@ if (is_appeal_area_visible() && !is_amp() && apply_filters('appeal_area_visible'
       if ($message = get_appeal_area_message()):
         $message = apply_filters('appeal_area_message', $message);
        ?>
-      <div class="appeal-message">
-        <?php echo $message; ?>
-      </div>
+        <div class="appeal-message">
+          <?php echo $message; ?>
+        </div>
       <?php endif ?>
       <?php if (get_appeal_area_button_message() && get_appeal_area_button_url()): ?>
-      <a href="<?php echo get_appeal_area_button_url(); ?>" class="appeal-button" target="<?php echo get_appeal_area_button_target(); ?>">
-        <?php echo get_appeal_area_button_message(); ?>
-      </a>
+        <div class="appeal-button-wrap">
+          <?php //デフォルトアピールボタン前
+          do_action('appeal_button_before'); ?>
+
+          <a href="<?php echo get_appeal_area_button_url(); ?>" class="appeal-button" target="<?php echo get_appeal_area_button_target(); ?>">
+            <?php echo get_appeal_area_button_message(); ?>
+          </a>          
+          
+          <?php //デフォルトアピールボタン後
+          do_action('appeal_button_after'); ?>
+        </div>
       <?php endif ?>
     </div>
     <?php endif; ?>
