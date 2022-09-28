@@ -12,6 +12,9 @@ if (is_appeal_area_visible() && !is_amp() && apply_filters('appeal_area_visible'
 <div id="appeal" class="appeal<?php echo get_additional_appeal_area_classes(); ?>">
   <div id="appeal-in" class="appeal-in wrap">
 
+    <?php //アピールエリア冒頭
+    do_action('appeal_area_before'); ?>
+
     <?php //テキストメッセージエリアを表示するか
     if (is_appeal_area_content_visible()): ?>
     <div class="appeal-content">
@@ -37,6 +40,9 @@ if (is_appeal_area_visible() && !is_amp() && apply_filters('appeal_area_visible'
     </div>
     <?php endif; ?>
 
+    <?php //アピールエリア末尾
+    do_action('appeal_area_after'); ?>
+    
   </div>
 </div>
 <?php endif ?>
