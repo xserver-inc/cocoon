@@ -29,11 +29,18 @@ if (is_appeal_area_visible() && !is_amp() && apply_filters('appeal_area_visible'
         <?php echo $message; ?>
       </div>
       <?php endif ?>
+
+      <?php //アピールボタン前
+      do_action('appeal_button_before'); ?>
+
       <?php if (get_appeal_area_button_message() && get_appeal_area_button_url()): ?>
       <a href="<?php echo get_appeal_area_button_url(); ?>" class="appeal-button" target="<?php echo get_appeal_area_button_target(); ?>">
         <?php echo get_appeal_area_button_message(); ?>
       </a>
       <?php endif ?>
+
+      <?php //アピールボタン後
+      do_action('appeal_button_after'); ?>
     </div>
     <?php endif; ?>
 
