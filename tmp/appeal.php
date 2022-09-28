@@ -29,19 +29,15 @@ if (is_appeal_area_visible() && !is_amp() && apply_filters('appeal_area_visible'
           <?php echo $message; ?>
         </div>
       <?php endif ?>
-      <?php //アピールボタン設定があるとき
-      $is_defalt_appeal_button = get_appeal_area_button_message() && get_appeal_area_button_url();
-      if ($is_defalt_appeal_button || apply_filters('is_appeal_button_area', false)): ?>
-        <div class="appeal-button-area">
+      <?php if (get_appeal_area_button_message() && get_appeal_area_button_url()): ?>
+        <div class="appeal-button-wrap">
           <?php //デフォルトアピールボタン前
           do_action('appeal_button_before'); ?>
 
-          <?php if ($is_defalt_appeal_button): ?>
           <a href="<?php echo get_appeal_area_button_url(); ?>" class="appeal-button" target="<?php echo get_appeal_area_button_target(); ?>">
             <?php echo get_appeal_area_button_message(); ?>
           </a>          
-          <?php endif ?>
-
+          
           <?php //デフォルトアピールボタン後
           do_action('appeal_button_after'); ?>
         </div>
