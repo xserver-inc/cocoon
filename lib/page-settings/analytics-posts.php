@@ -28,6 +28,9 @@ update_theme_option(OP_GOOGLE_ANALYTICS_SCRIPT);
 //Google Search Console ID
 update_theme_option(OP_GOOGLE_SEARCH_CONSOLE_ID);
 
+//Clarity ID
+update_theme_option(OP_CLARITY_ID);
+
 //PtengineのトラッキングID
 update_theme_option(OP_PTENGINE_TRACKING_ID);
 

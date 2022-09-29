@@ -28,6 +28,18 @@ if ( get_google_search_console_id() ): ?>
 <meta name="google-site-verification" content="<?php echo get_google_search_console_id() ?>" />
 <!-- /Google Search Console -->
 <?php endif;//Google Search Console終了 ?>
+<?php //Clarityコードの表示
+if ( get_clarity_id() ): ?>
+<!-- Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "<?php echo get_clarity_id() ?>");
+</script>
+<!-- /Clarity -->
+<?php endif;//Clarity終了 ?>
 <?php //preconnect dns-prefetch
 $domains = list_text_to_array(get_pre_acquisition_list());
 if ($domains) {

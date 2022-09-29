@@ -171,6 +171,37 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
+
+<!-- Clarity設定 -->
+<div id="gsc" class="postbox">
+  <h2 class="hndle"><?php _e( 'Clarity設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'ヒートマップ分析ツールClarityの設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- Clarity ID -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_CLARITY_ID, __( 'Clarity ID', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_textbox_tag(OP_CLARITY_ID, get_clarity_id(), __( 'Clarity IDのみ入力', THEME_NAME ));
+            generate_tips_tag(__( 'Clarity IDを入力してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 <?php if (0): ?>
 <!-- Ptengine設定 -->
 <div id="ptengine" class="postbox">
