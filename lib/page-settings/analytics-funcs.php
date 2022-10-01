@@ -69,11 +69,11 @@ function get_google_search_console_id(){
 }
 endif;
 
-//ClarityのID
-define('OP_CLARITY_ID', 'clarity_id');
-if ( !function_exists( 'get_clarity_id' ) ):
-function get_clarity_id(){
-  return get_theme_option(OP_CLARITY_ID);
+//ClarityのプロジェクトID
+define('OP_CLARITY_PROJECT_ID', 'clarity_project_id');
+if ( !function_exists( 'get_clarity_project_id' ) ):
+function get_clarity_project_id(){
+  return get_theme_option(OP_CLARITY_PROJECT_ID);
 }
 endif;
 
