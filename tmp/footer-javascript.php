@@ -102,7 +102,7 @@ if (!is_amp()): ?>
         }, 500);
 
         /* ヘッダーの高さの変化分、paddingで調整しスクロール位置を止まらせる★ */
-        $("#content").css({
+        $("#header-fixed").css({
           'padding-top': `${threashold}px`,
         });
       }
@@ -122,7 +122,7 @@ if (!is_amp()): ?>
         });
 
         /* ヘッダーの高さの戻る分、padding削除しスクロール位置を止まらせる★ */
-        $("#content").css({
+        $("#header-fixed").css({
           'padding-top': '0',
         });
 
