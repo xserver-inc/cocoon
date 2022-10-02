@@ -400,7 +400,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     $expids = implode(',', $exclude_post_ids);
     $excats = implode(',', $exclude_cat_ids);
     $type = get_accesses_post_type();
-    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats.'&auther='.$auther.'&post_type='.$post_type;
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats.'&author='.$author.'&post_type='.$post_type;
     //_v($transient_id);
     $cache = get_transient( $transient_id );
     if ($cache) {
@@ -491,7 +491,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
         ORDER BY sum_count DESC
     ";
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $autho, $post_type);
+    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type);
   }
 
   $records = $wpdb->get_results( $query );
