@@ -160,7 +160,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_textbox_tag(OP_GOOGLE_SEARCH_CONSOLE_ID, get_google_search_console_id(), __( 'サイト認証IDのみ入力', THEME_NAME ));
-            generate_tips_tag(__( 'Google Search Consoleのサイト認証IDを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'Google Search Consoleのサイト認証IDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-search-console/'));
             ?>
           </td>
         </tr>
@@ -190,7 +190,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_textbox_tag(OP_CLARITY_PROJECT_ID, get_clarity_project_id(), __( 'プロジェクトIDのみ入力', THEME_NAME ));
-            generate_tips_tag(__( 'ClarityのプロジェクトIDを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'ClarityのプロジェクトIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/clarity/'));
             ?>
           </td>
         </tr>
