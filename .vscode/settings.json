@@ -1,0 +1,5 @@
+{
+  //"codic.case": "PascalCase",
+  "editor.formatOnSave": true,
+  "extensions.ignoreRecommendations": false
+}
