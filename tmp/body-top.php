@@ -21,8 +21,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   <?php //サイトヘッダー
   get_template_part('tmp/header-container'); ?>
-  
-  <div id="header-fixed"></div>
 
   <?php //通知エリア
   get_template_part('tmp/notice'); ?>
