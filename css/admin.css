@@ -16008,6 +16008,7 @@ body.wp-admin {
   position: relative;
   display: inline-block;
   padding: 0 75px;
+  white-space: nowrap;
 }
 .admin-settings .demo .list-title-in:before,
 .admin-settings .demo .list-title-in:after {
