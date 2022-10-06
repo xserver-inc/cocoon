@@ -82,14 +82,13 @@ if (!is_amp()): ?>
   <?php /*固定ヘッダー*/
   if (is_header_fixed()): ?>
   <script>
-  (function($){
+  $(function() {
     /*固定ヘッダー化*/
-    function stickyHeader(){
+    function stickyHeader() {
       if (!$("#header-container").hasClass("fixed-header")) {
-        <?php if (get_header_layout_type_center_logo()): ?>
         /*トップメニュータイプに変更する*/
+
         $("#header-container-in").removeClass('hlt-center-logo hlt-center-logo-top-menu').addClass("hlt-top-menu wrap");
-        <?php endif; ?>
         $("#header-container").addClass("fixed-header");
         $("#header-container").css({
           'position': 'fixed',
@@ -97,17 +96,25 @@ if (!is_amp()): ?>
           'left': '0',
           'width': '100%',
         });
-        $("#header-container").animate({'top': '0'}, 500);
+
+        $("#header-container").animate({
+          'top': '0'
+        }, 500);
+
+        $('#header-container').after('<div id="header-fixed"></div>');
+
+        /* ヘッダーの高さの変化分、paddingで調整しスクロール位置を止まらせる★ */
+        $("#header-fixed").css({
+          'padding-top': `${threashold}px`,
+        });
       }
     }
 
     /*固定ヘッダーの解除*/
-    function staticHeader(){
+    function staticHeader() {
       if ($("#header-container").hasClass("fixed-header")) {
-        <?php if (get_header_layout_type_center_logo()): ?>
         /*センターロゴタイプに戻す*/
-        $("#header-container-in").removeClass("hlt-top-menu hlt-tm-right hlt-tm-small hlt-tm-small wrap").addClass("<?php echo get_additional_header_container_classes(); ?>");
-        <?php endif; ?>
+        $("#header-container-in").removeClass("hlt-top-menu hlt-tm-right hlt-tm-small hlt-tm-small wrap").addClass(" hlt-center-logo cl-slim");
         $("#header-container").removeClass("fixed-header");
         $("#header-container").css({
           'position': 'static',
@@ -115,15 +122,29 @@ if (!is_amp()): ?>
           'left': 'auto',
           'width': 'auto',
         });
+
+        /* ヘッダーの高さの戻る分、padding削除しスクロール位置を止まらせる★ */
+        $("#header-fixed").css({
+          'padding-top': '0',
+        });
+
+        $("#header-fixed").remove();
       }
     }
+
+
+    /* 境界値をヘッダーコンテナに設定★ */
+    var threashold  = $('#header-container').height();
 
     var prevScrollTop = -1;
     var $window = $(window);
     var mobileWidth = 1023;
-    $window.scroll(function(){
+
+    $window.scroll(function() {
       var scrollTop = $window.scrollTop();
-      var threashold = 600;
+
+      console.log(scrollTop);
+
       var s1 = (prevScrollTop > threashold);
       var s2 = (scrollTop > threashold);
       var w = $window.width();
@@ -131,7 +152,6 @@ if (!is_amp()): ?>
 
       /*スクロールエリアの位置調整*/
       function adjustScrollArea(selector) {
-
         if ($(selector) && $(selector).offset()) {
           offset = $(selector).offset().top;
           // console.log(offset);
@@ -139,14 +159,12 @@ if (!is_amp()): ?>
           // console.log(h);
           pt = $(selector).css('padding-top');
           // console.log(pt);
-
           if (pt) {
             pt = pt.replace('px', '');
           } else {
             pt = 0;
           }
-
-          if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
+          if ((scrollTop >= offset - h) && (w > mobileWidth)) {
             if ((pt <= 1) && $("#header-container").hasClass('fixed-header')) {
               $(selector).css({
                 'padding-top': h + 'px',
@@ -160,7 +178,6 @@ if (!is_amp()): ?>
             }
           }
         }
-
       }
 
       /*スクロール追従エリアの調整*/
@@ -176,34 +193,32 @@ if (!is_amp()): ?>
             stickyHeader();
           }
         }
-        if (scrollTop <= 50 || w <=  mobileWidth) {
+
+        /* 境界値に達したら固定化★ */
+        if (scrollTop <= threashold || w <= mobileWidth) {
           staticHeader();
         }
       }
-
       adjustFixedHeaderStyle(s1, s2, w, scrollTop, mobileWidth);
       adjustScrollAreas();
-
       prevScrollTop = scrollTop;
     });
 
     /*ウインドウがリサイズされたら発動*/
-    $window.resize(function() {
+    $window.resize(function () {
       /*ウインドウの幅を変数に格納*/
       var w = $window.width();
-      if (w <=  mobileWidth) {/*モバイル端末の場合*/
+      if (w <= mobileWidth) { /*モバイル端末の場合*/
         staticHeader();
-      } else {/*パソコン端末の場合*/
+      } else { /*パソコン端末の場合*/
         var scrollTop = $window.scrollTop();
         console.log(scrollTop);
         if (scrollTop >= 50) {
           stickyHeader();
         }
-
       }
     });
-
-  })(jQuery);
+  });
   </script>
   <?php endif //固定ヘッダー ?>
 
