@@ -373,20 +373,26 @@ endif;
 if ( !function_exists( 'get_category_meta_description' ) ):
 function get_category_meta_description($category = null){
   //カテゴリー設定ページのディスクリプションを取得
-  $cat_desc = trim( strip_tags( get_the_category_meta_description() ) );
-  if ( $cat_desc ) {//ディスクリプションが設定されている場合
+  $cat_desc = get_the_category_meta_description();
+  if ($cat_desc) {
+    $cat_desc = trim( strip_tags( $cat_desc ) );
+    //ディスクリプションが設定されている場合
     return htmlspecialchars($cat_desc);
   }
 
   //カテゴリ説明文を取得
-  $cat_desc = trim( strip_tags( category_description() ) );
-  if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
+  $cat_desc = category_description();
+  if ($cat_desc) {
+    $cat_desc = trim( strip_tags( $cat_desc ) );
+    //カテゴリ設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
   }
 
   //カテゴリ本文から抜粋文を作成
-  $cat_desc = trim( strip_tags( get_content_excerpt(get_the_category_content(), 160) ) );
-  if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
+  $cat_desc = get_content_excerpt(get_the_category_content(), 160);
+  if ( $cat_desc ) {
+    $cat_desc = trim( strip_tags( $cat_desc ) );
+    //カテゴリ設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
   }
 
