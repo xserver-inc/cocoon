@@ -5,41 +5,71 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-if ( !defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) {
+  exit();
+}
 
 if (!is_amp()): ?>
 
 
-  <?php //AdSense非同期スクリプトを出力
-
+  <?php
+  //AdSense非同期スクリプトを出力
+  //AdSense非同期スクリプトを出力
+  ?>
   //広告の存在を確認するグローバル変数
   global $_IS_ADSENSE_EXIST;
 
   //アドセンス共通スクリプトコード
-  define('ADSENSE_SCRIPT_CODE', '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='.get_adsense_data_ad_client().'" crossorigin="anonymous"></script>');
+  define(
+    'ADSENSE_SCRIPT_CODE',
+    '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' .
+      get_adsense_data_ad_client() .
+      '" crossorigin="anonymous"></script>'
+  );
   //if ($_IS_ADSENSE_EXIST && !is_customize_preview() && !is_cocoon_settings_preview()) {
   if (is_ads_visible() && $_IS_ADSENSE_EXIST && !is_customize_preview()) {
     echo ADSENSE_SCRIPT_CODE;
-  } //AdSense非同期スクリプトを出力
+  }
+
+  //AdSense非同期スクリプトを出力
   ?>
 
 
   <?php //Pinterestシェア用のスクリプト
+
   if (is_singular() && is_pinterest_share_pin_visible()): ?>
   <script async defer data-pin-height="28" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
-  <?php endif //Pinterestシェア用のスクリプト ?>
+  <?php endif;
+  //Pinterestシェア用のスクリプト
+  ?>
 
 
   <?php //Pinterestシェアボタン用のスクリプト
-  if (is_singular() && (is_top_pinterest_share_button_visible() || is_bottom_pinterest_share_button_visible())): ?>
+
+  if (
+    is_singular() &&
+    (is_top_pinterest_share_button_visible() ||
+      is_bottom_pinterest_share_button_visible())
+  ): ?>
   <script>!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="//assets.pinterest.com/js/pinit_main.js";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pinterest-btn-js");</script>
-  <?php endif //Pinterestシェアボタン用のスクリプト ?>
+  <?php endif;
+  //Pinterestシェアボタン用のスクリプト
+  ?>
 
 
   <?php //コピーシェアボタン用のスクリプト
+
+
   global $_MOBILE_COPY_BUTTON;
-  if (is_top_copy_share_button_visible() || is_bottom_copy_share_button_visible() || $_MOBILE_COPY_BUTTON): ?>
-  <div class="copy-info"><?php _e('タイトルとURLをコピーしました', THEME_NAME); ?></div>
+  if (
+    is_top_copy_share_button_visible() ||
+    is_bottom_copy_share_button_visible() ||
+    $_MOBILE_COPY_BUTTON
+  ): ?>
+  <div class="copy-info"><?php _e(
+    'タイトルとURLをコピーしました',
+    THEME_NAME
+  ); ?></div>
   <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
   <script>
   (function($){
@@ -58,10 +88,14 @@ if (!is_amp()): ?>
     });
   })(jQuery);
   </script>
-  <?php endif //コピーシェアボタン用のスクリプト ?>
+  <?php endif;
+
+  //コピーシェアボタン用のスクリプト
+  ?>
 
 
   <?php //カルーセルが表示されている時
+
   if (false && is_carousel_visible() && get_carousel_category_ids()): ?>
   <script>
   (function($){
@@ -69,18 +103,24 @@ if (!is_amp()): ?>
     $('.carousel').fadeIn();
   })(jQuery);
   </script>
-  <?php endif //カルーセルが表示されている時?>
+  <?php endif;
+  //カルーセルが表示されている時
+  ?>
 
 
   <?php //本文中のJavaScriptをまとめて出力
+
+
   global $_THE_CONTENT_SCRIPTS;
   if ($_THE_CONTENT_SCRIPTS): ?>
   <script><?php echo $_THE_CONTENT_SCRIPTS; ?></script>
-  <?php endif //本文中のJavaScriptをまとめて出力 ?>
+  <?php endif;
+
+  //本文中のJavaScriptをまとめて出力
+  ?>
 
 
-  <?php /*固定ヘッダー*/
-  if (is_header_fixed()): ?>
+   /*固定ヘッダー*/<?php if (is_header_fixed()): ?>
   <script>
   $(function() {
     /*固定ヘッダー化*/
@@ -143,12 +183,9 @@ if (!is_amp()): ?>
     $window.scroll(function() {
       var scrollTop = $window.scrollTop();
 
-      console.log(scrollTop);
-
       var s1 = (prevScrollTop > threashold);
       var s2 = (scrollTop > threashold);
       var w = $window.width();
-      // console.log(scrollTop);
 
       /*スクロールエリアの位置調整*/
       function adjustScrollArea(selector) {
@@ -212,7 +249,6 @@ if (!is_amp()): ?>
         staticHeader();
       } else { /*パソコン端末の場合*/
         var scrollTop = $window.scrollTop();
-        console.log(scrollTop);
         if (scrollTop >= 50) {
           stickyHeader();
         }
@@ -220,15 +256,20 @@ if (!is_amp()): ?>
     });
   });
   </script>
-  <?php endif //固定ヘッダー ?>
+  <?php endif;
+  //固定ヘッダー
+  ?>
 
   <?php //数式表示
+
   if (is_formula_enable() && is_math_shortcode_exist()): ?>
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({
 
     });
   </script>
-  <?php endif; //数式表示 ?>
+  <?php endif;
+  //数式表示
+  ?>
 
-<?php endif //!is_amp() ?>
+<?php endif; //!is_amp() ?>
