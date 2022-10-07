@@ -126,8 +126,15 @@ if (!is_amp()): ?>
     /*固定ヘッダー化*/
     function stickyHeader() {
       if (!$("#header-container").hasClass("fixed-header")) {
-        /*トップメニュータイプに変更する*/
+        /* 余白調整用の空クラスを追加する */
+        $('#header-container').after('<div id="header-fixed"></div>');
 
+        /* ヘッダーの高さの変化分、paddingで調整しスクロール位置を止まらせる */
+        $("#header-fixed").css({
+          'padding-top': `${threashold}px`,
+        });
+
+        /* トップメニュータイプに変更する */
         $("#header-container-in").removeClass('hlt-center-logo hlt-center-logo-top-menu').addClass("hlt-top-menu wrap");
         $("#header-container").addClass("fixed-header");
         $("#header-container").css({
@@ -140,13 +147,6 @@ if (!is_amp()): ?>
         $("#header-container").animate({
           'top': '0'
         }, 500);
-
-        $('#header-container').after('<div id="header-fixed"></div>');
-
-        /* ヘッダーの高さの変化分、paddingで調整しスクロール位置を止まらせる★ */
-        $("#header-fixed").css({
-          'padding-top': `${threashold}px`,
-        });
       }
     }
 
@@ -163,7 +163,7 @@ if (!is_amp()): ?>
           'width': 'auto',
         });
 
-        /* ヘッダーの高さの戻る分、padding削除しスクロール位置を止まらせる★ */
+        /* ヘッダーの高さの戻る分、padding削除しスクロール位置を止まらせる */
         $("#header-fixed").css({
           'padding-top': '0',
         });
@@ -173,7 +173,7 @@ if (!is_amp()): ?>
     }
 
 
-    /* 境界値をヘッダーコンテナに設定★ */
+    /* 境界値をヘッダーコンテナに設定 */
     var threashold  = $('#header-container').height();
 
     var prevScrollTop = -1;
@@ -191,11 +191,11 @@ if (!is_amp()): ?>
       function adjustScrollArea(selector) {
         if ($(selector) && $(selector).offset()) {
           offset = $(selector).offset().top;
-          // console.log(offset);
+          
           h = $("#header-container").height();
-          // console.log(h);
+          
           pt = $(selector).css('padding-top');
-          // console.log(pt);
+          
           if (pt) {
             pt = pt.replace('px', '');
           } else {
@@ -231,7 +231,7 @@ if (!is_amp()): ?>
           }
         }
 
-        /* 境界値に達したら固定化★ */
+        /* 境界値に達したら固定化 */
         if (scrollTop <= threashold || w <= mobileWidth) {
           staticHeader();
         }
