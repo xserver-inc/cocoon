@@ -143,12 +143,9 @@ if (!is_amp()): ?>
     $window.scroll(function() {
       var scrollTop = $window.scrollTop();
 
-      console.log(scrollTop);
-
       var s1 = (prevScrollTop > threashold);
       var s2 = (scrollTop > threashold);
       var w = $window.width();
-      // console.log(scrollTop);
 
       /*スクロールエリアの位置調整*/
       function adjustScrollArea(selector) {
@@ -212,7 +209,6 @@ if (!is_amp()): ?>
         staticHeader();
       } else { /*パソコン端末の場合*/
         var scrollTop = $window.scrollTop();
-        console.log(scrollTop);
         if (scrollTop >= 50) {
           stickyHeader();
         }
