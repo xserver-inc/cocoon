@@ -118,7 +118,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ADMIN_LIST_WORD_COUNT_VISIBLE , is_admin_list_word_count_visible(), __( '文字数を表示する', THEME_NAME ));
             echo '<br>';
 
-            generate_checkbox_tag(OP_ADMIN_LIST_PV_VISIBLE , is_admin_list_pv_visible(), __( 'PVを表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_LIST_PV_VISIBLE , is_admin_list_pv_visible(), __( 'PVを表示する', THEME_NAME ).__( '（※投稿・固定ページ一覧が重い場合は無効にしてください）', THEME_NAME ));
             echo '<br>';
 
             generate_checkbox_tag(OP_ADMIN_LIST_EYECATCH_VISIBLE , is_admin_list_eyecatch_visible(), __( 'アイキャッチを表示する', THEME_NAME ));

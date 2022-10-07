@@ -176,7 +176,7 @@ function customize_admin_manage_posts_columns($columns) {
 
   //文字数表示
   if (is_admin_list_pv_visible()) {
-    $columns['pv'] = __( 'PV', THEME_NAME ).__( '（表示重い）', THEME_NAME );
+    $columns['pv'] = __( 'PV', THEME_NAME );
   }
 
   //アイキャッチ表示
