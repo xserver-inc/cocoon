@@ -1268,6 +1268,7 @@ body.wp-admin {
   color: #333;
   text-decoration: none;
   font-weight: normal;
+  padding: 0 0.5em;
 }
 .admin-settings .demo .site-name-text-link:hover {
   color: inherit;
@@ -8731,6 +8732,7 @@ body.wp-admin {
   color: #333;
   text-decoration: none;
   font-weight: normal;
+  padding: 0 0.5em;
 }
 .admin-settings .demo .site-name-text-link:hover {
   color: inherit;

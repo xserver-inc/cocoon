@@ -114,7 +114,7 @@ if (!is_amp()): ?>
     function staticHeader() {
       if ($("#header-container").hasClass("fixed-header")) {
         /*センターロゴタイプに戻す*/
-        $("#header-container-in").removeClass("hlt-top-menu hlt-tm-right hlt-tm-small hlt-tm-small wrap").addClass(" hlt-center-logo cl-slim");
+        $("#header-container-in").removeClass("hlt-top-menu hlt-tm-right hlt-tm-small hlt-tm-small wrap").addClass("<?php echo get_additional_header_container_classes(); ?>");
         $("#header-container").removeClass("fixed-header");
         $("#header-container").css({
           'position': 'static',

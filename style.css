@@ -647,6 +647,7 @@ img.emoji {
   color: #333;
   text-decoration: none;
   font-weight: normal;
+  padding: 0 0.5em;
 }
 .site-name-text-link:hover {
   color: inherit;

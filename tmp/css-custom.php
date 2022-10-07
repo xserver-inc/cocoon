@@ -140,7 +140,7 @@ body.public-page{
 }
 <?php endif ?>
 <?php //ヘッダーの高さ
-if (get_header_area_height()): ?>
+if (get_header_layout_type_center_logo() && get_header_area_height()): ?>
 .header .header-in{
   min-height: <?php echo get_header_area_height(); ?>px;
 }
