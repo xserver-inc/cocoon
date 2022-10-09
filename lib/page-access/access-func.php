@@ -11,9 +11,6 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.3');//rand(0, 99)
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 
-// define('INDEX_ACCESSES_PID', 'index_pid');
-// define('INDEX_ACCESSES_PID_PTYPE', 'index_pid_ptype');
-// define('INDEX_ACCESSES_PID_DATE', 'index_pid_date');
 define('INDEX_ACCESSES_PID_PTYPE_DATE', 'index_pid_ptype_date');
 
 
@@ -54,13 +51,7 @@ if ( !function_exists( 'get_accesses_post_type' ) ):
 function get_accesses_post_type(){
   global $post;
   global $post_type;
-  // _v($post);
-  // _v($post_type);
-  // if (is_page() || (isset($post->post_type) && ($post->post_type === 'page')) || ($post_type === 'page')) {
-  //   $res = 'page'; //page
-  // } else {
-  //   $res = 'post'; //single
-  // }
+  
   if (isset($post->post_type)) {
     $res = $post->post_type; 
   } elseif (isset($post_type)) {
@@ -138,22 +129,14 @@ function create_accesses_table() {
   $sql = "CREATE TABLE ".ACCESSES_TABLE_NAME." (
       id bigint(20) NOT NULL AUTO_INCREMENT,
       post_id bigint(20),
-      post_type varchar(10) DEFAULT 'post',
+      post_type varchar(126) DEFAULT 'post',
       date varchar(20),
       count bigint(20) DEFAULT 0,
       last_ip varchar(40),
       PRIMARY KEY (id),
       INDEX ".INDEX_ACCESSES_PID_PTYPE_DATE." (post_id,post_type,date)
     )";
-  //_v($sql);
   $res = create_db_table($sql);
-  //_v($res);
-
-  // //初期データの挿入
-  // if ($res && $add_default_records) {
-  //   //データ挿入処理
-  //   add_default_accesses_records();
-  // }
 
   set_theme_mod( OP_ACCESSES_TABLE_VERSION, ACCESSES_TABLE_VERSION );
   return $res;
