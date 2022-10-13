@@ -115,6 +115,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li>
                 <?php generate_checkbox_tag(OP_SNS_TAG_FOLLOW_BUTTONS_VISIBLE, is_sns_tag_follow_buttons_visible(), __( 'タグ', THEME_NAME )); ?>
               </li>
+            </ul>
             <p><?php _e( 'フォローボタンを表示するページを選択してください。', THEME_NAME );echo get_help_page_tag('https://wp-cocoon.com/sns-button-display-switching/'); ?></p>
           </td>
         </tr>
