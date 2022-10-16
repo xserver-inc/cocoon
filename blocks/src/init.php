@@ -278,6 +278,8 @@ function cocoon_editor_color_palette_setup() {
 		add_theme_support('custom-line-height');
 		// 寸法設定
 		add_theme_support('custom-spacing');
+    // 単位設定
+    add_theme_support( 'custom-units' );
     
     return $colors;
 }
