@@ -16658,6 +16658,10 @@ body.wp-admin {
 .admin-settings .demo ul.block-editor-block-list__block li div {
   display: inline-block;
 }
+.admin-settings .demo .btn-wrap-block {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 .admin-settings .demo .search-form div.sbtn {
   transition: 0.3s;
   /* 変化をなめらかにする */

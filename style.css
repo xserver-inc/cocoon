@@ -9841,6 +9841,11 @@ ul.block-editor-block-list__block li div {
   display: inline-block;
 }
 
+.btn-wrap-block {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* 検索フォーム風スタイルのボタンを装飾 */
 .search-form div.sbtn {
   transition: 0.3s;

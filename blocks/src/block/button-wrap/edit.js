@@ -36,7 +36,6 @@ export function ButtonWrapEdit( props ) {
   } = props;
 
   const {
-    content,
     tag,
     size,
     isCircle,
@@ -138,11 +137,6 @@ export function ButtonWrapEdit( props ) {
         />
       </InspectorControls>
 
-      <span className={'button-wrap-msg'}>
-        <RichText
-          value={ content }
-        />
-      </span>
       <div { ...blockProps }>
       </div>
 
