@@ -5,12 +5,7 @@
 	display: list-item;
 }
 
-// .wp-block-search{
-// 	.wp-block-search__input{
-// 		width: calc(100% - 40px);
-// 	}
-// }
 
-// .faq-answer{
-//   display: flex !important;
-// }
+ul.block-editor-block-list__block li div {
+	display: inline-block;
+}

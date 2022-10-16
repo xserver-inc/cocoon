@@ -9837,6 +9837,10 @@ twitter-widget {
   display: list-item;
 }
 
+ul.block-editor-block-list__block li div {
+  display: inline-block;
+}
+
 /* 検索フォーム風スタイルのボタンを装飾 */
 .search-form div.sbtn {
   transition: 0.3s;
