@@ -30,6 +30,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-outdent'; ?>
       //ドロワーメニュー用のサイドバーからIDを削除（IDの重複HTML5エラー対応）
       $sidebar = preg_replace('/ id="([^"]+?)"/i', ' id="slide-in-$1"', $sidebar);
       $sidebar = preg_replace('/ for="([^"]+?)"/i', ' for="slide-in-$1"', $sidebar);
+      $sidebar = preg_replace('/ name="([^"]+?)"/i', ' name="slide-in-$1"', $sidebar);
 
       //AdSense広告の除去
       $sidebar = preg_replace('/<ins.+?<\/ins>/is', '', $sidebar);
