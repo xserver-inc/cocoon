@@ -193,6 +193,16 @@
     $(this).next('.is-style-accordion .faq-answer').slideToggle();
     $(this).toggleClass('active');
   });
+
+  //モバイルサイドバー表示時にサイドバーを移動する・モバイルサイドバーを閉じる時に元の位置に戻す
+  $('#sidebar-menu-input').change(function() {
+    if($(this).prop('checked')){
+      $('#sidebar').appendTo('#sidebar-menu-content');
+    }else{
+      $('#sidebar').insertAfter('#main');
+    }
+  });
+  
 })(jQuery);
 
 /*

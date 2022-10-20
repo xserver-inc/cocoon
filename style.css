@@ -7415,7 +7415,7 @@ div.fb-like-mobile {
   transform: translateX(105%);
 }
 
-#slide-in-sidebar {
+#sidebar-menu-content #sidebar {
   display: block;
   margin: 0;
 }
