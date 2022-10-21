@@ -173,7 +173,7 @@
   drawerCloser('.menu-drawer .menu-item a', '#navi-menu-input');
 
   //モバイルサイドバーをクリックしたら閉じる
-  drawerCloser('#slide-in-sidebar a', '#sidebar-menu-input');
+  drawerCloser('#sidebar-menu-content #sidebar a', '#sidebar-menu-input');
 
   //モバイルヘッダーメニューのロゴ処理
   //console.log($('.mobile-menu-buttons'));
@@ -193,6 +193,23 @@
     $(this).next('.is-style-accordion .faq-answer').slideToggle();
     $(this).toggleClass('active');
   });
+
+  //モバイルサイドバー表示時にサイドバーを移動する・モバイルサイドバーを閉じる時に元の位置に戻す
+  $('#sidebar-menu-input').change(function() {
+    if($(this).prop('checked')){
+      $('#sidebar').appendTo('#sidebar-menu-content');
+      $('#sidebar').addClass('slide-in-sidebar');
+    }else{
+      $('#sidebar').removeClass('slide-in-sidebar');
+      $('#sidebar').insertAfter('#main');
+    }
+  });
+
+  //リサイズした時はサイドバーを元に戻す
+  $(window).resize(function(){
+    $('#sidebar-menu-input').prop('checked', false).change();
+  });
+  
 })(jQuery);
 
 /*
