@@ -9105,8 +9105,7 @@ pre {
     width: 49%;
   }
 
-  .header div.header-in,
-  .appeal div.appeal-in {
+  .header div.header-in {
     min-height: auto;
   }
 

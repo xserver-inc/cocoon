@@ -16998,8 +16998,7 @@ body.wp-admin {
   .admin-settings .demo .ect-vertical-card .entry-card-wrap {
     width: 49%;
   }
-  .admin-settings .demo .header div.header-in,
-  .admin-settings .demo .appeal div.appeal-in {
+  .admin-settings .demo .header div.header-in {
     min-height: auto;
   }
   .admin-settings .demo .footer-widgets {
