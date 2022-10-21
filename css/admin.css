@@ -7219,7 +7219,7 @@ body.wp-admin {
   -webkit-transform: translateX(105%);
   transform: translateX(105%);
 }
-.admin-settings .demo #sidebar-menu-content #sidebar {
+.admin-settings .demo #slide-in-sidebar {
   display: block;
   margin: 0;
 }
@@ -14683,7 +14683,7 @@ body.wp-admin {
   -webkit-transform: translateX(105%);
   transform: translateX(105%);
 }
-.admin-settings .demo #sidebar-menu-content #sidebar {
+.admin-settings .demo #slide-in-sidebar {
   display: block;
   margin: 0;
 }

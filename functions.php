@@ -352,15 +352,6 @@ add_action('init', function () {
     'name' => 'accordion',
     'label' => __('アコーディオン', THEME_NAME),
   ));
-
-  // global $allowedtags;
-  // $allowedtags['font'] = array(
-  //   'color' => true,
-  //   'size'  => true,
-  //   'face'  => true,
-  //   'font-weight'  => true,
-  // );
-  // _v($allowedtags);
 });
 
 
