@@ -191,7 +191,9 @@
     if ($(this).prop('checked')) {
       $('#sidebar').appendTo('#sidebar-menu-content');
       $('#sidebar').attr('id', 'slide-in-sidebar');
+      $('#sidebar').addClass('slide-in-sidebar');
     } else {
+      $('#sidebar').removeClass('slide-in-sidebar');
       $('#slide-in-sidebar').attr('id', 'sidebar');
       $('#sidebar').insertAfter('#main');
     }
