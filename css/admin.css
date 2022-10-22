@@ -16788,10 +16788,12 @@ body.wp-admin {
   .admin-settings .demo .sidebar-scroll {
     position: static;
   }
-  .admin-settings .demo .ba-fixed.header, .admin-settings .demo .ba-fixed.appeal {
+  .admin-settings .demo .ba-fixed.header,
+  .admin-settings .demo .ba-fixed.appeal {
     background-attachment: scroll;
   }
-  .admin-settings .demo .header, .admin-settings .demo .appeal {
+  .admin-settings .demo .header,
+  .admin-settings .demo .appeal {
     background-size: cover;
   }
   .admin-settings .demo .footer-bottom-logo {
@@ -16822,7 +16824,6 @@ body.wp-admin {
   .admin-settings .demo .has-logo-button .logo-menu-button {
     flex-grow: 99;
   }
-  .admin-settings .demo .no-mobile-sidebar .sidebar,
   .admin-settings .demo .mobile-button-fmb .go-to-top-button,
   .admin-settings .demo .no-mobile-header-logo #header .logo-header {
     display: none;

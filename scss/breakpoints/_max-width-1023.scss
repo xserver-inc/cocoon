@@ -1,44 +1,45 @@
-.navi-footer{
+.navi-footer {
   float: none;
   margin: 0;
   width: 100%;
 }
 
-.copyright{
+.copyright {
   width: 100%;
 }
 
-.navi-footer-in > ul{
+.navi-footer-in>ul {
   justify-content: center;
   padding: 1em;
 }
 
-.footer-widgets{
+.footer-widgets {
   display: block;
+
   // flex-direction: column;
-  >div{
+  >div {
     width: 100%;
   }
 }
 
-.content-in{
+.content-in {
   display: block;
   //flex-direction: column;
 }
 
 main.main,
-div.sidebar{
+div.sidebar {
   display: block;
   margin: 10px;
   width: auto;
 }
 
 .footer-bottom-logo,
-.footer-bottom-content{
+.footer-bottom-content {
   float: none;
 }
 
-.footer-bottom-logo{
+.footer-bottom-logo {
   line-height: 1;
   // .logo-image{
   //   // .site-name{
@@ -47,47 +48,51 @@ div.sidebar{
   // }
 }
 
-.footer-bottom-content{
+.footer-bottom-content {
   text-align: center;
 }
 
-.fb-like-message{
+.fb-like-message {
   font-size: 0.8em;
   line-height: 1.4;
 }
 
-.sidebar-scroll{
+.sidebar-scroll {
   position: static;
 }
 
 
 //ヘッダーなどの背景画像
-.ba-fixed.header, .ba-fixed.appeal{
+.ba-fixed.header,
+.ba-fixed.appeal {
   background-attachment: scroll;
 }
 
-.header, .appeal{
+.header,
+.appeal {
   background-size: cover;
 }
 
-.footer-bottom-logo{
+.footer-bottom-logo {
   position: relative;
   bottom: auto;
 }
-.logo-footer{
+
+.logo-footer {
   margin: 8px auto;
 }
 
 
-.mobile-menu-buttons{
+.mobile-menu-buttons {
   display: flex;
   align-items: stretch;
-  >li{
+
+  >li {
     padding-top: 3px;
   }
 }
 
-.mobile-header-menu-buttons{
+.mobile-header-menu-buttons {
   top: 0;
   bottom: auto;
   justify-content: space-around;
@@ -96,41 +101,43 @@ div.sidebar{
   box-shadow: 0 0 5px darkgrey;
 }
 
-.has-logo-button{
-  .menu-button{
+.has-logo-button {
+  .menu-button {
     width: 70px;
   }
 
-  .logo-menu-button{
+  .logo-menu-button {
     flex-grow: 99;
   }
 }
 
-.no-mobile-sidebar .sidebar,
 .mobile-button-fmb .go-to-top-button,
-.no-mobile-header-logo #header .logo-header{
+.no-mobile-header-logo #header .logo-header {
   display: none;
 }
 
-.mblt-header-mobile-buttons{
+.mblt-header-mobile-buttons {
   margin-top: 46px;
 }
-.mblt-footer-mobile-buttons{
+
+.mblt-footer-mobile-buttons {
   margin-bottom: 50px;
 }
-.mblt-header-and-footer-mobile-buttons{
+
+.mblt-header-and-footer-mobile-buttons {
   margin-top: 46px;
   margin-bottom: 50px;
 }
-.scrollable-mobile-buttons{
+
+.scrollable-mobile-buttons {
   margin-bottom: 0;
 }
 
-.navi-footer-in > .menu-footer{
+.navi-footer-in>.menu-footer {
   justify-content: center;
 }
 
-.footer-bottom.fdt-left-and-right .footer-bottom-content{
+.footer-bottom.fdt-left-and-right .footer-bottom-content {
   flex-direction: column;
 }
 
@@ -153,20 +160,23 @@ div.sidebar{
 }
 
 //モバイルグローバルメニュー
-#navi .navi-in > .menu-mobile{
+#navi .navi-in>.menu-mobile {
   display: flex;
-  > .menu-item-has-description > a > .caption-wrap{
+
+  >.menu-item-has-description>a>.caption-wrap {
     height: 40px;
     line-height: 16px;
   }
-  li{
+
+  li {
     width: 50%;
     height: 40px;
     line-height: 40px;
-    a{
+
+    a {
       font-size: 14px;
 
-      &:after{
+      &:after {
         display: none;
       }
     }
@@ -178,24 +188,25 @@ div.sidebar{
 ///////////////////////////////////////
 // SlickNavの表示
 ///////////////////////////////////////
-.slicknav_menu{
+.slicknav_menu {
   display: block;
 }
 
 //管理バーとヘッダーモバイルボタンとの兼ね合い
-.admin-bar .mobile-header-menu-buttons{
+.admin-bar .mobile-header-menu-buttons {
   margin-top: 32px;
 }
 
 .admin-bar.mblt-header-mobile-buttons,
-.admin-bar.mblt-header-and-footer-mobile-buttons{
+.admin-bar.mblt-header-and-footer-mobile-buttons {
   margin-top: 32px;
 }
-.admin-bar .mobile-header-menu-buttons{
+
+.admin-bar .mobile-header-menu-buttons {
   margin-top: 0;
 }
 
 .admin-bar.mblt-header-mobile-buttons,
-.admin-bar.mblt-header-and-footer-mobile-buttons{
+.admin-bar.mblt-header-and-footer-mobile-buttons {
   margin-top: 0;
-} 
+}

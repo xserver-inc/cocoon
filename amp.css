@@ -8858,11 +8858,13 @@ pre {
     position: static;
   }
 
-  .ba-fixed.header, .ba-fixed.appeal {
+  .ba-fixed.header,
+  .ba-fixed.appeal {
     background-attachment: scroll;
   }
 
-  .header, .appeal {
+  .header,
+  .appeal {
     background-size: cover;
   }
 
@@ -8899,7 +8901,6 @@ pre {
     flex-grow: 99;
   }
 
-  .no-mobile-sidebar .sidebar,
   .mobile-button-fmb .go-to-top-button,
   .no-mobile-header-logo #header .logo-header {
     display: none;
