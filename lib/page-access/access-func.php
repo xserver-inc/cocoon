@@ -11,9 +11,6 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.3');//rand(0, 99)
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 
-// define('INDEX_ACCESSES_PID', 'index_pid');
-// define('INDEX_ACCESSES_PID_PTYPE', 'index_pid_ptype');
-// define('INDEX_ACCESSES_PID_DATE', 'index_pid_date');
 define('INDEX_ACCESSES_PID_PTYPE_DATE', 'index_pid_ptype_date');
 
 
@@ -54,13 +51,7 @@ if ( !function_exists( 'get_accesses_post_type' ) ):
 function get_accesses_post_type(){
   global $post;
   global $post_type;
-  // _v($post);
-  // _v($post_type);
-  // if (is_page() || (isset($post->post_type) && ($post->post_type === 'page')) || ($post_type === 'page')) {
-  //   $res = 'page'; //page
-  // } else {
-  //   $res = 'post'; //single
-  // }
+  
   if (isset($post->post_type)) {
     $res = $post->post_type; 
   } elseif (isset($post_type)) {
@@ -138,22 +129,14 @@ function create_accesses_table() {
   $sql = "CREATE TABLE ".ACCESSES_TABLE_NAME." (
       id bigint(20) NOT NULL AUTO_INCREMENT,
       post_id bigint(20),
-      post_type varchar(10) DEFAULT 'post',
+      post_type varchar(126) DEFAULT 'post',
       date varchar(20),
       count bigint(20) DEFAULT 0,
       last_ip varchar(40),
       PRIMARY KEY (id),
       INDEX ".INDEX_ACCESSES_PID_PTYPE_DATE." (post_id,post_type,date)
     )";
-  //_v($sql);
   $res = create_db_table($sql);
-  //_v($res);
-
-  // //初期データの挿入
-  // if ($res && $add_default_records) {
-  //   //データ挿入処理
-  //   add_default_accesses_records();
-  // }
 
   set_theme_mod( OP_ACCESSES_TABLE_VERSION, ACCESSES_TABLE_VERSION );
   return $res;
@@ -374,10 +357,12 @@ endif;
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
 function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAULT, $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array(), $children = 0, $author = null, $post_type = 'post'){
+  //カテゴリー配列を文字列に変換
+  $cat_ids = is_array($cat_ids) ? $cat_ids : array();
+  $cats = implode(',', $cat_ids);
+  
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
-    $cat_ids = is_array($cat_ids) ? $cat_ids : array();
-    $cats = implode(',', $cat_ids);
     if ($cat_ids) {
       //子孫カテゴリも含める場合
       if ($children) {
@@ -397,11 +382,13 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
       $exclude_post_ids = array_unique(array_merge($exclude_post_ids, $archive_exclude_post_ids));
     }
 
+    $exclude_post_ids = is_array($exclude_post_ids) ? $exclude_post_ids : array();
     $expids = implode(',', $exclude_post_ids);
+    $exclude_cat_ids = is_array($exclude_cat_ids) ? $exclude_cat_ids : array();
     $excats = implode(',', $exclude_cat_ids);
     $type = get_accesses_post_type();
-    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats.'&auther='.$auther.'&post_type='.$post_type;
-    //_v($transient_id);
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats.'&author='.$author.'&post_type='.$post_type;
+    
     $cache = get_transient( $transient_id );
     if ($cache) {
       if (DEBUG_MODE && is_user_administrator()) {
@@ -482,7 +469,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     ";
     //_v($query);
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $author);
+    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type);
   } else {
     $query = "
       SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
@@ -491,7 +478,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
         ORDER BY sum_count DESC
     ";
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $autho, $post_type);
+    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type);
   }
 
   $records = $wpdb->get_results( $query );
@@ -521,9 +508,11 @@ function get_several_jetpack_access_count($post_id = null, $days = -1){
     if (!$post_id) {
       $post_id = $post->ID;
     }
-    $jetpack_views = stats_get_csv('postviews', array('days' => $days, 'limit' => 1, 'post_id' => $post_id ));
-    if (isset($jetpack_views[0]['views'])) {
-      $views = $jetpack_views[0]['views'];
+    if (function_exists('stats_get_csv')) {
+      $jetpack_views = stats_get_csv('postviews', array('days' => $days, 'limit' => 1, 'post_id' => $post_id ));
+      if (isset($jetpack_views[0]['views'])) {
+        $views = $jetpack_views[0]['views'];
+      }      
     }
   }
   return $views;

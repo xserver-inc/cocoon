@@ -1,17 +1,17 @@
-.navi-in > .menu-header{
+.navi-in>.menu-header {
   display: none;
 }
 
 
 main.main,
-div.sidebar{
+div.sidebar {
   padding: 16px;
   margin: 10px 0;
   border-width: 0;
 }
 
 .article ul,
-.article ol{
+.article ol {
   padding-left: 26px;
 }
 
@@ -20,12 +20,12 @@ div.sidebar{
 // }
 
 .entry-card-title,
-.related-entry-card-title{
+.related-entry-card-title {
   font-size: 17px;
 }
 
 .entry-card-snippet,
-.related-entry-card-snippet{
+.related-entry-card-snippet {
   font-size: 14px;
 }
 
@@ -34,9 +34,10 @@ div.sidebar{
 //   //position: relative;
 // }
 
-table{
+table {
+
   th,
-  td{
+  td {
     padding: 3px;
     font-size: $text_size_s;
   }
@@ -49,10 +50,10 @@ table{
 ///////////////////////////////////////
 .ss-top .sns-share-buttons,
 .ss-bottom .sns-share-buttons {
-  a{
+  a {
     font-size: 14px;
 
-    .button-caption{
+    .button-caption {
       font-size: 14px;
       margin-left: 4px;
     }
@@ -60,16 +61,16 @@ table{
 }
 
 .sns-share.ss-top.ss-col-6 a,
-.sns-share.ss-bottom.ss-col-6 a{
+.sns-share.ss-bottom.ss-col-6 a {
   width: 32%;
 }
 
 //フォローボタン
-.sns-follow-buttons{
+.sns-follow-buttons {
   flex-wrap: wrap;
   justify-content: space-around;
 
-  a{
+  a {
     margin-right: 0;
     width: 48%;
   }
@@ -78,31 +79,31 @@ table{
 /************************************
 ** 関連記事
 ************************************/
-.rect-vertical-card{
-  .related-entry-card-wrap{
+.rect-vertical-card {
+  .related-entry-card-wrap {
     width: 49%;
   }
 }
 
-.rect-mini-card{
-  .related-entry-card-wrap{
+.rect-mini-card {
+  .related-entry-card-wrap {
     margin-bottom: 10px;
   }
 
-  .cat-label{
+  .cat-label {
     font-size: 8px;
   }
 
-  .related-entry-card-thumb{
+  .related-entry-card-thumb {
     width: 30%;
   }
 
-  .related-entry-card-content{
+  .related-entry-card-content {
     margin-left: 32%;
   }
 }
 
-.header-container-in.hlt-top-menu{
+.header-container-in.hlt-top-menu {
   flex-direction: column;
 }
 
@@ -122,22 +123,21 @@ table{
 //   line-height: 1;
 // }
 
-.ect-vertical-card .entry-card-wrap{
+.ect-vertical-card .entry-card-wrap {
   width: 49%;
 }
 
 
-.header div.header-in,
-.appeal div.appeal-in {
+.header div.header-in {
   min-height: auto;
 }
 
 
-.footer-widgets{
+.footer-widgets {
   display: none;
 }
 
-.footer-widgets-mobile{
+.footer-widgets-mobile {
   display: block;
 }
 
@@ -146,13 +146,13 @@ table{
 ///////////////////////////////////////
 .widget_pc_text,
 .widget_pc_ad,
-.widget_pc_double_ads{
+.widget_pc_double_ads {
   display: none;
 }
 
 
 .widget_mobile_text,
-.widget_mobile_ad{
+.widget_mobile_ad {
   display: block;
 }
 
@@ -170,58 +170,62 @@ table{
 ///////////////////////////////////////
 // 吹き出し
 ///////////////////////////////////////
-.sbp-l{
+.sbp-l {
   margin-right: auto;
 }
 
-.sbp-r{
+.sbp-r {
   margin-left: auto;
 }
 
-.speech-wrap.sbs-think.sbp-l{
-    margin-right: 0;
+.speech-wrap.sbs-think.sbp-l {
+  margin-right: 0;
 }
-.speech-wrap.sbs-think.sbp-r{
-    margin-left: 0;
+
+.speech-wrap.sbs-think.sbp-r {
+  margin-left: 0;
 }
 
 //モバイル用管理パネル
-.admin-panel{
+.admin-panel {
   padding: 5px;
   font-size: 14px;
   line-height: 1.4;
-  >div{
+
+  >div {
     margin: 3px;
   }
 }
 
-.apdt-pc-only{
+.apdt-pc-only {
   display: none;
 }
 
-.apdt-mobile-only{
+.apdt-mobile-only {
   display: flex;
 }
 
-.ranking-item-image-tag{
+.ranking-item-image-tag {
   max-width: 30%;
 }
 
-#header .site-name-text{
+#header .site-name-text {
   font-size: 22px;
 }
 
 .header-container-in.hlt-top-menu {
   display: block;
-  .header{
+
+  .header {
+
     .header-in,
-    .logo-text{
+    .logo-text {
       display: block;
       height: 100%;
     }
   }
 
-  .site-name-text{
+  .site-name-text {
     white-space: normal;
   }
 }
@@ -240,7 +244,7 @@ textarea {
   min-height: 160px;
 }
 
-.navi-footer-in > .menu-footer li.menu-item{
+.navi-footer-in>.menu-footer li.menu-item {
   width: 32%;
   border: 0;
   margin: 2px;
@@ -248,36 +252,36 @@ textarea {
   flex: 1 1 auto;
   text-align: center;
 
-  a{
+  a {
     padding: 0;
     width: 100%;
   }
 }
 
-.footer-bottom.fdt-left-and-right .footer-bottom-content{
+.footer-bottom.fdt-left-and-right .footer-bottom-content {
   flex-direction: column;
 }
 
-#wpf-form-wrapper .mce-edit-area iframe{
+#wpf-form-wrapper .mce-edit-area iframe {
   min-height: 200px;
 }
 
-.content{
+.content {
   margin-top: 10px;
 }
 
 .product-item-thumb-l,
-.swatchimages{
+.swatchimages {
   display: none;
 }
 
-.image-content amp-img{
+.image-content amp-img {
   min-width: 360px;
   max-width: 360px;
 }
 
 .btn-l,
-.btn-wrap.btn-wrap-l > a{
+.btn-wrap.btn-wrap-l>a {
   //padding: 14px 18px;
   font-size: 14px;
   // &::after{
@@ -288,16 +292,16 @@ textarea {
 }
 
 
-.slick-dots{
+.slick-dots {
   display: none !important;
 }
 
-.carousel-entry-card-title{
+.carousel-entry-card-title {
   font-size: 0.7em;
 }
 
-.header-container-in.hlt-top-menu.hlt-tm-small{
-  .logo-header{
+.header-container-in.hlt-top-menu.hlt-tm-small {
+  .logo-header {
     height: auto;
   }
 }
@@ -307,9 +311,10 @@ textarea {
 ///////////////////////////////////////
 // カラム
 ///////////////////////////////////////
-.container .column-wrap{
+.container .column-wrap {
   flex-direction: column;
-  >div{
+
+  >div {
     width: 100%;
     //padding: 1em 0;
   }
@@ -318,43 +323,46 @@ textarea {
 ///////////////////////////////////////
 // ボックスメニュー
 ///////////////////////////////////////
-.box-menus{
-  .box-menu{
+.box-menus {
+  .box-menu {
     width: calc(100%/2);
   }
 }
-.wwa{
-  .box-menus{
-    margin-left:  10px;
+
+.wwa {
+  .box-menus {
+    margin-left: 10px;
     margin-right: 10px;
   }
 }
 
-.article .wp-block-columns :nth-child(odd):nth-last-child(2){
+.article .wp-block-columns :nth-child(odd):nth-last-child(2) {
   margin-bottom: 0;
 }
 
-.column-wrap > *{
+.column-wrap>* {
   margin-bottom: 0 !important;
 }
 
 /************************************
 ** Facebookページを「いいね！」するエリアのスタイル
 ************************************/
-.fb-like-balloon-body{
+.fb-like-balloon-body {
   margin-right: 100px;
   font-size: 1em;
   line-height: 1.2em;
 }
-.fb-like-balloon-body::after{
+
+.fb-like-balloon-body::after {
   display: none;
 }
 
 
 //タブインデックス
-.index-tab-buttons{
+.index-tab-buttons {
   flex-wrap: wrap;
-  .index-tab-button{
+
+  .index-tab-button {
     width: calc(98% / 2);
     margin: .5%;
   }
@@ -365,19 +373,20 @@ textarea {
 //カラムインデックス
 .list-columns {
   flex-direction: column;
-  .list-column{
+
+  .list-column {
     width: 100%;
   }
 }
 
 //サイドバーのスカイスクレイパー広告
-.sidebar{
-  .ad-vertical{
-    .ad-usual{
+.sidebar {
+  .ad-vertical {
+    .ad-usual {
       display: none;
     }
 
-    .ad-additional-vertical{
+    .ad-additional-vertical {
       display: block;
     }
   }

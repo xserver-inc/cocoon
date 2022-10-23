@@ -373,20 +373,26 @@ endif;
 if ( !function_exists( 'get_category_meta_description' ) ):
 function get_category_meta_description($category = null){
   //カテゴリー設定ページのディスクリプションを取得
-  $cat_desc = trim( strip_tags( get_the_category_meta_description() ) );
-  if ( $cat_desc ) {//ディスクリプションが設定されている場合
+  $cat_desc = get_the_category_meta_description();
+  if ($cat_desc) {
+    $cat_desc = trim( strip_tags( $cat_desc ) );
+    //ディスクリプションが設定されている場合
     return htmlspecialchars($cat_desc);
   }
 
   //カテゴリ説明文を取得
-  $cat_desc = trim( strip_tags( category_description() ) );
-  if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
+  $cat_desc = category_description();
+  if ($cat_desc) {
+    $cat_desc = trim( strip_tags( $cat_desc ) );
+    //カテゴリ設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
   }
 
   //カテゴリ本文から抜粋文を作成
-  $cat_desc = trim( strip_tags( get_content_excerpt(get_the_category_content(), 160) ) );
-  if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
+  $cat_desc = get_content_excerpt(get_the_category_content(), 160);
+  if ( $cat_desc ) {
+    $cat_desc = trim( strip_tags( $cat_desc ) );
+    //カテゴリ設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
   }
 
@@ -450,7 +456,9 @@ function get_meta_description_text(){
   } elseif ((is_tag() || is_tax()) && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
     $description = get_tag_meta_description();
   }
-  $description = htmlspecialchars($description);
+  if ($description) {
+    $description = htmlspecialchars($description);
+  }  
   return apply_filters('get_meta_description_text', $description);
 }
 endif;
@@ -481,7 +489,9 @@ function get_meta_keywords_text(){
   } elseif (is_tag() && is_meta_keywords_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
     $keywords = get_tag_meta_keywords();
   }
-  $keywords = htmlspecialchars($keywords);
+  if ($keywords) {
+    $keywords = htmlspecialchars($keywords);
+  }  
   return apply_filters('get_meta_keywords_text', $keywords);
 }
 endif;
@@ -504,18 +514,28 @@ endif;
 //タグメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_tag_meta_description' ) ):
 function get_tag_meta_description($tag = null){
+  $tag_desc = '';
   //タグ設定ページのディスクリプションを取得
-  $tag_desc = trim( strip_tags( get_the_tag_meta_description() ) );
+  if (get_the_tag_meta_description()) {
+    $tag_desc = trim( strip_tags( get_the_tag_meta_description() ) );
+  }  
   if ( $tag_desc ) {//ディスクリプションが設定されている場合
     return htmlspecialchars($tag_desc);
   }
+
   //タグ説明文を取得
-  $tag_desc = trim( strip_tags( tag_description() ) );
+  if (tag_description()) {
+    $tag_desc = trim( strip_tags( tag_description() ) );
+  }  
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }
+
   //タグ本文から抜粋文を作成
-  $tag_desc = trim( strip_tags( get_content_excerpt(get_the_tag_content(), 160) ) );
+  $tag_content = get_content_excerpt(get_the_tag_content(), 160);
+  if ($tag_content) {
+    $tag_desc = trim( strip_tags( $tag_content ) );
+  }  
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }

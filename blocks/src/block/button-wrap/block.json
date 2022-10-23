@@ -2,13 +2,12 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/button-wrap-1",
   "category": "cocoon-block",
-  "keywords": [ "button", "btn", "wrap" ],
-
+  "keywords": [
+    "button",
+    "btn",
+    "wrap"
+  ],
   "attributes": {
-    "content": {
-      "type": "string",
-      "default": "こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。"
-    },
     "tag": {
       "type": "string",
       "default": ""
@@ -48,7 +47,11 @@
     }
   },
   "supports": {
-    "align": [ "left", "center", "right" ],
+    "align": [
+      "left",
+      "center",
+      "right"
+    ],
     "customClassName": true
   },
   "example": {}

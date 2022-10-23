@@ -1676,3 +1676,101 @@ figcaption{
     }
   }
 }
+
+//写真スタイル
+
+// Clarendon Filter 
+.is-style-filter-clarendon img{
+  filter: sepia(.15) contrast(1.25) brightness(1.25) hue-rotate(5deg);
+
+  &::before {
+    background: rgba(127, 187, 227, .4);
+    content: "";
+    mix-blend-mode: overlay;
+  }
+}
+// Gingham Filter 
+.is-style-filter-gingham img{
+  filter: contrast(1.1) brightness(1.1);
+
+  &::before {
+    background: rgb(230, 230, 230);
+    content: "";
+    mix-blend-mode: soft-light;
+  }
+}
+// Moon Filter 
+.is-style-filter-moon img{
+  filter: brightness(1.4) contrast(.95) saturate(0) sepia(.35);
+}
+.is-style-filter-lark img{
+  filter: sepia(.25) contrast(1.2) brightness(1.3) saturate(1.25);
+}
+// Reyes Filter 
+.is-style-filter-reyes img{
+  filter: sepia(.75) contrast(.75) brightness(1.25) saturate(1.4);
+}
+// Juno Filter 
+.is-style-filter-juno img{
+  filter: sepia(.35) contrast(1.15) brightness(1.15) saturate(1.8);
+
+  &::before {
+    background: rgba(127, 187, 227, .2);
+    content: "";
+    mix-blend-mode: overlay;
+  }
+}
+// Slumber Filter 
+.is-style-filter-slumber img{
+  filter: sepia(.35) contrast(1.25) saturate(1.25);
+
+  &::before {
+    background: rgba(125, 105, 24, .2);
+    content: "";
+    mix-blend-mode: darken;
+  }
+}
+// Crema Filter 
+.is-style-filter-crema img{
+  filter: sepia(.5) contrast(1.25) brightness(1.15) saturate(.9) hue-rotate(-2deg);
+
+  &::before {
+    background: rgba(125, 105, 24, .2);
+    content: "";
+    mix-blend-mode: multiply;
+  }
+}
+// Ludwig Filter 
+.is-style-filter-ludwig img{
+  filter: sepia(.25) contrast(1.05) brightness(1.05) saturate(2);
+
+  &::before {
+    background: rgba(125, 105, 24, .1);
+    content: "";
+    mix-blend-mode: overlay;
+  }
+}
+// Aden Filter 
+.is-style-filter-aden img{
+  filter: sepia(.2) brightness(1.15) saturate(1.4);
+  
+  &::before {
+    background: rgba(125, 105, 24, .1);
+    content: "";
+    mix-blend-mode: multiply;
+  }
+}
+// Perpetua Filter 
+.is-style-filter-perpetua img{
+  filter: contrast(1.1) brightness(1.25) saturate(1.1);
+
+  &::before {
+    background: linear-gradient(to bottom, rgba(0, 91, 154, .25), rgba(230, 193, 61, .25));
+    content: "";
+    mix-blend-mode: multiply;
+  }
+}
+// Mono Filter 
+.is-style-filter-monochrome img{
+  filter: grayscale(100%)
+}

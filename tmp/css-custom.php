@@ -140,7 +140,7 @@ body.public-page{
 }
 <?php endif ?>
 <?php //ヘッダーの高さ
-if (get_header_area_height()): ?>
+if (get_header_layout_type_center_logo() && get_header_area_height()): ?>
 .header .header-in{
   min-height: <?php echo get_header_area_height(); ?>px;
 }
@@ -689,6 +689,11 @@ if (!$entry_content_margin_hight) {
 .is-root-container > *,
 [data-type="core/freeform"] {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+}
+@media screen and (max-width:834px) {
+  .body .column-left :last-child{
+    margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+  }
 }
 .article h2,
 .article h3,

@@ -69,6 +69,14 @@ function get_google_search_console_id(){
 }
 endif;
 
+//ClarityのプロジェクトID
+define('OP_CLARITY_PROJECT_ID', 'clarity_project_id');
+if ( !function_exists( 'get_clarity_project_id' ) ):
+function get_clarity_project_id(){
+  return get_theme_option(OP_CLARITY_PROJECT_ID);
+}
+endif;
+
 //PtengineのID
 define('OP_PTENGINE_TRACKING_ID', 'ptengine_tracking_id');
 if ( !function_exists( 'get_ptengine_tracking_id' ) ):

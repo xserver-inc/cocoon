@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php if (is_singular() && ($_FACEBOOK_URL || $_TWITTER_ID || $_LINE_ID)): ?>
-  <?php $thumb = get_the_post_thumbnail(get_the_ID(), THUMB320, array('class' => 'fb-like-thumb-image card-thumb-image', 'alt' => '') ) ?>
+  <?php $thumb = get_the_post_thumbnail(get_the_ID(), THUMB320, array('class' => 'fb-like-thumb-image card-thumb-image', 'alt' => '', 'loading' => 'lazy', 'decoding' => 'async') ) ?>
   <div class="fb-like-box cf">
     <?php //アイキャッチがある場合
     if ($thumb): ?>

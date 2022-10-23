@@ -24,18 +24,19 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-outdent'; ?>
     <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
       <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"><span class="fa fa-close" aria-hidden="true"></span></label>
       <?php //サイドバー
-      ob_start();
-      get_template_part('sidebar');
-      $sidebar = ob_get_clean();
-      //ドロワーメニュー用のサイドバーからIDを削除（IDの重複HTML5エラー対応）
-      $sidebar = preg_replace('/ id="([^"]+?)"/i', ' id="slide-in-$1"', $sidebar);
-      $sidebar = preg_replace('/ for="([^"]+?)"/i', ' for="slide-in-$1"', $sidebar);
+      // ob_start();
+      // get_template_part('sidebar');
+      // $sidebar = ob_get_clean();
+      // //ドロワーメニュー用のサイドバーからIDを削除（IDの重複HTML5エラー対応）
+      // $sidebar = preg_replace('/ id="([^"]+?)"/i', ' id="slide-in-$1"', $sidebar);
+      // $sidebar = preg_replace('/ for="([^"]+?)"/i', ' for="slide-in-$1"', $sidebar);
 
-      //AdSense広告の除去
-      $sidebar = preg_replace('/<ins.+?<\/ins>/is', '', $sidebar);
-      $sidebar = preg_replace('/<script.+?<\/script>/is', '', $sidebar);
+      // //AdSense広告の除去
+      // $sidebar = preg_replace('/<ins.+?<\/ins>/is', '', $sidebar);
+      // $sidebar = preg_replace('/<script.+?<\/script>/is', '', $sidebar);
 
-      echo $sidebar; ?>
+      // echo $sidebar; 
+      ?>
     </div>
   </li>
 <?php endif ?>

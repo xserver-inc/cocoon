@@ -422,7 +422,7 @@ function generate_the_site_logo_tag($is_header = true){
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
-    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.' loading="lazy" decoding="async">';
+    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.' decoding="async">';
   } else {
     $site_logo_tag = esc_html($site_logo_text);
   }
@@ -1029,7 +1029,7 @@ function generate_popular_entries_tag($atts){
       $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
       $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
 
-      $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '') );
+      $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '', 'loading' => 'lazy', 'decoding' => 'async') );
       $pv = $post->sum_count;
 
       if ($post_thumbnail) {
@@ -1285,7 +1285,7 @@ function get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type){
   global $post;
   ob_start();
   if ( has_post_thumbnail() ){ // サムネイルを持っているときの処理
-    the_post_thumbnail( $thumb_size, array('alt' => '') );
+    the_post_thumbnail( $thumb_size, array('alt' => '', 'loading' => 'lazy', 'decoding' => 'async') );
   } else { // サムネイルを持っていないときの処理
     echo get_widget_entry_card_no_image_tag($type, $prefix);
   }
@@ -1515,7 +1515,7 @@ function get_widget_entry_card_link_tag($atts){
             } else {
               $size = THUMB320;
             }
-            $attr = array();
+            $attr = array('loading' => 'lazy', 'decoding' => 'async');
             $attr['class'] = $class;
 
             $thumbnail_tag = get_the_post_thumbnail( $object_id, $size, $attr );

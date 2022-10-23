@@ -336,10 +336,15 @@ class OpenGraphGetter implements Iterator
    * Iterator code
    */
 	private $_position = 0;
+  #[\ReturnTypeWillChange]
 	public function rewind() { reset($this->_values); $this->_position = 0; }
+  #[\ReturnTypeWillChange]
 	public function current() { return current($this->_values); }
+  #[\ReturnTypeWillChange]
 	public function key() { return key($this->_values); }
+  #[\ReturnTypeWillChange]
 	public function next() { next($this->_values); ++$this->_position; }
+  #[\ReturnTypeWillChange]
 	public function valid() { return $this->_position < sizeof($this->_values); }
 }
 

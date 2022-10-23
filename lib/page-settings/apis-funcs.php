@@ -31,8 +31,8 @@ function get_amazon_associate_tracking_id($tracking_id = null){
   $id = get_theme_option(OP_AMAZON_ASSOCIATE_TRACKING_ID);
 
   //個別のトラッキングIDショートコード
-  $tracking_id = trim($tracking_id);
   if ($tracking_id) {
+    $tracking_id = trim($tracking_id);
     $id = $tracking_id;
   }
   return $id;

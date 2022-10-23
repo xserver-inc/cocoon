@@ -23,7 +23,9 @@ if (is_front_page_type_index()) {
           get_entry_card_thumbnail_size($count),
           array(
             'class' => 'entry-card-thumb-image card-thumb-image',
-            'alt' => ''
+            'alt' => '', 
+            'loading' => 'lazy', 
+            'decoding' => 'async',
           )
         );
       // サムネイルを持っているとき

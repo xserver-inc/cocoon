@@ -12,8 +12,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<meta name="referrer" content="no-referrer-when-downgrade"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
 
 <?php //ヘッドタグ内挿入用のアクセス解析用テンプレート
 get_template_part('tmp/head-analytics'); ?>
@@ -27,6 +28,18 @@ if ( get_google_search_console_id() ): ?>
 <meta name="google-site-verification" content="<?php echo get_google_search_console_id() ?>" />
 <!-- /Google Search Console -->
 <?php endif;//Google Search Console終了 ?>
+<?php //Clarityコードの表示
+if ( get_clarity_project_id() ): ?>
+<!-- Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "<?php echo get_clarity_project_id() ?>");
+</script>
+<!-- /Clarity -->
+<?php endif;//Clarity終了 ?>
 <?php //preconnect dns-prefetch
 $domains = list_text_to_array(get_pre_acquisition_list());
 if ($domains) {
@@ -80,5 +93,3 @@ get_template_part('tmp-user/head-insert'); ?>
 
 <?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
 get_template_part('tmp/body-top'); ?>
-
-<!-- <?php var_dump(is_singular('news')); ?> -->
