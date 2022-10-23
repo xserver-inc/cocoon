@@ -7219,7 +7219,7 @@ body.wp-admin {
   -webkit-transform: translateX(105%);
   transform: translateX(105%);
 }
-.admin-settings .demo #sidebar-menu-content #sidebar {
+.admin-settings .demo #slide-in-sidebar {
   display: block;
   margin: 0;
 }
@@ -14683,7 +14683,7 @@ body.wp-admin {
   -webkit-transform: translateX(105%);
   transform: translateX(105%);
 }
-.admin-settings .demo #sidebar-menu-content #sidebar {
+.admin-settings .demo #slide-in-sidebar {
   display: block;
   margin: 0;
 }
@@ -16824,6 +16824,7 @@ body.wp-admin {
   .admin-settings .demo .has-logo-button .logo-menu-button {
     flex-grow: 99;
   }
+  .admin-settings .demo .no-mobile-sidebar .sidebar,
   .admin-settings .demo .mobile-button-fmb .go-to-top-button,
   .admin-settings .demo .no-mobile-header-logo #header .logo-header {
     display: none;
