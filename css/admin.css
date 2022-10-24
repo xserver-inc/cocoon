@@ -2989,7 +2989,7 @@ body.wp-admin {
   max-width: 320px;
 }
 .admin-settings .demo .is-list-horizontal .card-title {
-  font-size: 14px;
+  font-size: 16px;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 200px;
@@ -10545,7 +10545,7 @@ body.wp-admin {
   max-width: 320px;
 }
 .admin-settings .demo .is-list-horizontal .card-title {
-  font-size: 14px;
+  font-size: 16px;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 200px;

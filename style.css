@@ -2631,7 +2631,7 @@ label.screen-reader-text {
   max-width: 320px;
 }
 .is-list-horizontal .card-title {
-  font-size: 14px;
+  font-size: 16px;
 }
 .is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 200px;
