@@ -707,28 +707,28 @@ function wp_enqueue_slick(){
                   slidesToScroll: 6,
                   responsive: [
                       {
-                        breakpoint: 1240,
+                        breakpoint: 1241,
                         settings: {
                           slidesToShow: 5,
                           slidesToScroll: 5
                         }
                       },
                       {
-                        breakpoint: 1023,
+                        breakpoint: 1024,
                         settings: {
                           slidesToShow: 4,
                           slidesToScroll: 4
                         }
                       },
                       {
-                        breakpoint: 834,
+                        breakpoint: 835,
                         settings: {
                           slidesToShow: 3,
                           slidesToScroll: 3
                         }
                       },
                       {
-                        breakpoint: 480,
+                        breakpoint: 481,
                         settings: {
                           slidesToShow: 2,
                           slidesToScroll: 2
