@@ -5,7 +5,7 @@
   "keywords": ["ranking"],
 
   "attributes": {
-    "code": {
+    "id": {
       "type": "string",
       "default": "1"
     }

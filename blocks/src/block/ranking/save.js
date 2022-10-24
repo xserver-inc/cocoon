@@ -1,14 +1,14 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes, className }) {
-  let { code } = attributes;
+  let { id } = attributes;
   const blockProps = useBlockProps.save({
     className: className,
   });
 
   return (
     <div {...blockProps}>
-      {'[rank id=' + code + ']'}
+      {'[rank id=' + id + ']'}
     </div>
   );
 }

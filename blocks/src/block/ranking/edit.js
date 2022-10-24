@@ -6,11 +6,12 @@ import { Fragment } from '@wordpress/element';
 import { ServerSideRender } from '@wordpress/editor'
 
 export default function edit(props) {
-  const { attributes, setAttributes, className } = props
-  const { code } = attributes;
+  const { attributes, setAttributes, className } = props;
+  const { id } = attributes;
 
   function createOptions() {
     var options = [];
+    console.log(gbItemRankings);
     gbItemRankings.forEach((rank) => {
       if (rank.visible == '1') {
         options.unshift({ value: rank.id, label: rank.title });
@@ -31,15 +32,13 @@ export default function edit(props) {
         <SelectControl
           label={__('ランキング', THEME_NAME)}
           labelPosition="side"
-          value={code}
-          onChange={(value) => setAttributes({ code: value })}
+          value={id}
+          onChange={(value) => setAttributes({ id: value })}
           options={options}
         />
         <ServerSideRender
           block={props.name}
-          attributes={{
-            code: code,
-          }}
+          attributes={attributes}
         />
       </div>
     </Fragment>
