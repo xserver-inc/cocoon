@@ -318,6 +318,8 @@ body.wp-admin {
   /************************************
   ** フォーローボタウィジェット
   ************************************/
+  /* 新着カードを横並びにする */
+  /* はみ出した分を横スクロール */
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -619,6 +621,8 @@ body.wp-admin {
   /************************************
   ** フォーローボタウィジェット
   ************************************/
+  /* 新着カードを横並びにする */
+  /* はみ出した分を横スクロール */
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -2973,6 +2977,22 @@ body.wp-admin {
 }
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
+}
+.admin-settings .demo .is-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* カードのサムネイル幅200px */
+}
+.admin-settings .demo .is-list-horizontal .widget-entry-card-link {
+  flex-shrink: 0;
+  max-width: 320px;
+}
+.admin-settings .demo .is-list-horizontal .card-title {
+  font-size: 14px;
+}
+.admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
+  max-width: 200px;
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
@@ -10513,6 +10533,22 @@ body.wp-admin {
 }
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
+}
+.admin-settings .demo .is-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* カードのサムネイル幅200px */
+}
+.admin-settings .demo .is-list-horizontal .widget-entry-card-link {
+  flex-shrink: 0;
+  max-width: 320px;
+}
+.admin-settings .demo .is-list-horizontal .card-title {
+  font-size: 14px;
+}
+.admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
+  max-width: 200px;
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
