@@ -5,5 +5,8 @@
   "keywords": [ "comparison", "box" ],
 
   "attributes": {
+  },
+  "supports": {
+    "anchor": true
   }
 }

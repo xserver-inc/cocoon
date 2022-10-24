@@ -54,5 +54,8 @@
     ],
     "customClassName": true
   },
-  "example": {}
+  "example": {},
+  "supports": {
+    "anchor": true
+  }
 }

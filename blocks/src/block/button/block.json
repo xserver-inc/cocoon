@@ -52,5 +52,8 @@
     "align": [ "left", "center", "right" ],
     "customClassName": true
   },
-  "example": {}
+  "example": {},
+  "supports": {
+    "anchor": true
+  }
 }

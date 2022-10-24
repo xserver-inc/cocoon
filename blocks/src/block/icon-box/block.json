@@ -10,5 +10,8 @@
       "default": "information-box"
     }
   },
-  "example": {}
+  "example": {},
+  "supports": {
+    "anchor": true
+  }
 }

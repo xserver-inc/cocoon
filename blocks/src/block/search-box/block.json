@@ -9,5 +9,8 @@
       "type": "string",
       "default": "キーワード"
     }
+  },
+  "supports": {
+    "anchor": true
   }
 }

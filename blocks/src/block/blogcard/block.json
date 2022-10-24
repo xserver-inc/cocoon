@@ -16,5 +16,8 @@
       "default": "blogcard-type bct-none"
     }
   },
-  "example": {}
+  "example": {},
+  "supports": {
+    "anchor": true
+  }
 }
