@@ -470,6 +470,14 @@ label {
   margin: 1em 0;
 }
 
+p.has-background {
+  padding: 12px;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+  gap: 1em;
+}
+
 /************************************
 ** 画像関係のスタイル
 ************************************/

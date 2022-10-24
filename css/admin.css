@@ -1151,6 +1151,12 @@ body.wp-admin {
 .admin-settings .demo .content-bottom {
   margin: 1em 0;
 }
+.admin-settings .demo p.has-background {
+  padding: 12px;
+}
+.admin-settings .demo :where(.wp-block-columns.is-layout-flex) {
+  gap: 1em;
+}
 .admin-settings .demo figure {
   margin: 0;
 }
@@ -8706,6 +8712,12 @@ body.wp-admin {
 .admin-settings .demo .content-top,
 .admin-settings .demo .content-bottom {
   margin: 1em 0;
+}
+.admin-settings .demo p.has-background {
+  padding: 12px;
+}
+.admin-settings .demo :where(.wp-block-columns.is-layout-flex) {
+  gap: 1em;
 }
 .admin-settings .demo figure {
   margin: 0;
