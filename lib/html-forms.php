@@ -1108,6 +1108,7 @@ function generate_widget_entries_tag($atts){
     'snippet' => 0,
     'author' => null,
     'offset' => 0,
+    'horizontal' => 0,
   ), $atts));
   global $post;
 
@@ -1192,14 +1193,10 @@ function generate_widget_entries_tag($atts){
 
   //除外カテゴリーの設定
   if (!empty($exclude_cat_ids)) {
-    // _v($cat_ids);
-    // _v($exclude_cat_ids);
     $cat_ids = array_diff($cat_ids, $exclude_cat_ids);
-    // _v($cat_ids);
   }
   //カテゴリー・タグの指定
   if ( $cat_ids || $tag_ids ) {
-    //_v($cat_ids);
     $tax_querys = array();
     if ($cat_ids) {
       $tax_querys[] = array(
@@ -1239,14 +1236,15 @@ function generate_widget_entries_tag($atts){
     $thumb_size = apply_filters('get_new_entries_thumbnail_size', $thumb_size, $type);
   }
   $args = apply_filters('widget_entries_args', $args);
-  //_v($args);
-  //query_posts( $args ); //クエリの作成
+  
+  //クエリの作成
   $query = new WP_Query( $args );
   $atts = array(
     'type' => $type,
     'bold' => $bold,
     'arrow' => $arrow,
     'class' => $class,
+    'horizontal' => $horizontal,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>

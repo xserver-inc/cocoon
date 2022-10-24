@@ -417,6 +417,7 @@ function get_additional_widget_entry_cards_classes($atts){
     'ranking_visible' => 0,
     'pv_visible' => 0,
     'class' => null,
+    'horizontal' => 0,
   ), $atts));
   $classes = null;
 
@@ -450,36 +451,13 @@ function get_additional_widget_entry_cards_classes($atts){
   if ($class) {
     $classes .= ' '.trim($class);
   }
+
+  if ($horizontal) {
+    $classes .= ' is-list-horizontal';
+  }
   return apply_filters('get_additional_widget_entry_cards_classes', $classes);
 }
 endif;
-
-// //エントリーカードの追加関数
-// if ( !function_exists( 'get_additional_popular_entry_cards_classes' ) ):
-// function get_additional_popular_entry_cards_classes($entry_type, $ranking_visible, $option = null){
-//   // global $_ENTRY_TYPE;
-//   // global $_RANKING_VISIBLE;
-
-//   $classes = null;
-//   if ($entry_type != ET_DEFAULT) {
-//     $classes .= ' card-large-image';
-//     if ($entry_type == ET_LARGE_THUMB) {
-//       $classes .= ' large-thumb';
-//     } else if ($entry_type == ET_LARGE_THUMB_ON) {
-//       $classes .= ' large-thumb-on';
-//     }
-//   }
-
-//   if ($ranking_visible) {
-//     $classes .= ' ranking-visible';
-//   }
-
-//   if ($option) {
-//     $classes .= ' '.trim($option);
-//   }
-//   return apply_filters('get_additional_popular_entry_cards_classes', $classes);
-// }
-// endif;
 
 //SNSシェアボタンの追加関数
 if ( !function_exists( 'get_additional_sns_share_button_classes' ) ):

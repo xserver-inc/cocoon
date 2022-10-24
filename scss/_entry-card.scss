@@ -18,13 +18,8 @@
   @extend %card;
 }
 
-//.new-entry-card-thumb,
-//.related-entry-card-thumb,
 .entry-card-thumb{
   @extend %card_thumb;
-  // float: left;
-  // margin-top: $emtry_card_thumb_margin_top;
-  // position: relative;
 }
 
 .card-thumb img{

@@ -2,7 +2,7 @@
 ** 基本表示
 ************************************/
 /*初期化*/
-*{
+.container *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -214,3 +214,10 @@ label {
   margin: 1em 0;
 }
 
+p.has-background{
+	padding: 12px;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+	gap: 1em;
+}

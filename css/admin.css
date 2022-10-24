@@ -318,6 +318,8 @@ body.wp-admin {
   /************************************
   ** フォーローボタウィジェット
   ************************************/
+  /* 新着カードを横並びにする */
+  /* はみ出した分を横スクロール */
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -619,6 +621,8 @@ body.wp-admin {
   /************************************
   ** フォーローボタウィジェット
   ************************************/
+  /* 新着カードを横並びにする */
+  /* はみ出した分を横スクロール */
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -980,7 +984,7 @@ body.wp-admin {
 .admin-settings .demo span.sub-caption {
   opacity: 0.8;
 }
-.admin-settings .demo * {
+.admin-settings .demo .container * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -1146,6 +1150,12 @@ body.wp-admin {
 .admin-settings .demo .content-top,
 .admin-settings .demo .content-bottom {
   margin: 1em 0;
+}
+.admin-settings .demo p.has-background {
+  padding: 12px;
+}
+.admin-settings .demo :where(.wp-block-columns.is-layout-flex) {
+  gap: 1em;
 }
 .admin-settings .demo figure {
   margin: 0;
@@ -2973,6 +2983,22 @@ body.wp-admin {
 }
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
+}
+.admin-settings .demo .is-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* カードのサムネイル幅200px */
+}
+.admin-settings .demo .is-list-horizontal .widget-entry-card-link {
+  flex-shrink: 0;
+  max-width: 320px;
+}
+.admin-settings .demo .is-list-horizontal .card-title {
+  font-size: 16px;
+}
+.admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
+  max-width: 200px;
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
@@ -5914,6 +5940,20 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-filter-monochrome img {
   filter: grayscale(100%);
+}
+.admin-settings .demo .wp-block-button__link {
+  color: #fff;
+  background-color: #333631;
+  border-radius: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -8520,7 +8560,7 @@ body.wp-admin {
 .admin-settings .demo span.sub-caption {
   opacity: 0.8;
 }
-.admin-settings .demo * {
+.admin-settings .demo .container * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8686,6 +8726,12 @@ body.wp-admin {
 .admin-settings .demo .content-top,
 .admin-settings .demo .content-bottom {
   margin: 1em 0;
+}
+.admin-settings .demo p.has-background {
+  padding: 12px;
+}
+.admin-settings .demo :where(.wp-block-columns.is-layout-flex) {
+  gap: 1em;
 }
 .admin-settings .demo figure {
   margin: 0;
@@ -10513,6 +10559,22 @@ body.wp-admin {
 }
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
+}
+.admin-settings .demo .is-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* カードのサムネイル幅200px */
+}
+.admin-settings .demo .is-list-horizontal .widget-entry-card-link {
+  flex-shrink: 0;
+  max-width: 320px;
+}
+.admin-settings .demo .is-list-horizontal .card-title {
+  font-size: 16px;
+}
+.admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
+  max-width: 200px;
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
@@ -13454,6 +13516,20 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-filter-monochrome img {
   filter: grayscale(100%);
+}
+.admin-settings .demo .wp-block-button__link {
+  color: #fff;
+  background-color: #333631;
+  border-radius: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -21774,6 +21850,20 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .is-style-filter-monochrome img {
   filter: grayscale(100%);
+}
+.components-popover__content .wp-block-button__link {
+  color: #fff;
+  background-color: #333631;
+  border-radius: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 .components-popover__content .red {
   margin: 0;

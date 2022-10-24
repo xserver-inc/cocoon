@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.5.0.7
+Version: 2.5.0.8
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -287,7 +287,7 @@ span.sub-caption {
 ** 基本表示
 ************************************/
 /*初期化*/
-* {
+.container * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -493,6 +493,14 @@ label {
 .content-top,
 .content-bottom {
   margin: 1em 0;
+}
+
+p.has-background {
+  padding: 12px;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+  gap: 1em;
 }
 
 /************************************
@@ -2616,6 +2624,25 @@ label.screen-reader-text {
 }
 .widget_search .wp-block-search__input {
   line-height: normal;
+}
+
+/* 新着カードを横並びにする */
+/* はみ出した分を横スクロール */
+.is-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* カードのサムネイル幅200px */
+}
+.is-list-horizontal .widget-entry-card-link {
+  flex-shrink: 0;
+  max-width: 320px;
+}
+.is-list-horizontal .card-title {
+  font-size: 16px;
+}
+.is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
+  max-width: 200px;
 }
 
 /*拡張クラスを追加するスタイルシート*/
@@ -5907,6 +5934,21 @@ figcaption {
 
 .is-style-filter-monochrome img {
   filter: grayscale(100%);
+}
+
+.wp-block-button__link {
+  color: #fff;
+  background-color: #333631;
+  border-radius: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 
 .column-wrap {
