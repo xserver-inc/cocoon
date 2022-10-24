@@ -5936,6 +5936,21 @@ figcaption {
   filter: grayscale(100%);
 }
 
+.wp-block-button__link {
+  color: #fff;
+  background-color: #333631;
+  border-radius: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;

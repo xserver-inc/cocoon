@@ -5941,6 +5941,20 @@ body.wp-admin {
 .admin-settings .demo .is-style-filter-monochrome img {
   filter: grayscale(100%);
 }
+.admin-settings .demo .wp-block-button__link {
+  color: #fff;
+  background-color: #333631;
+  border-radius: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
+}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -13502,6 +13516,20 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-filter-monochrome img {
   filter: grayscale(100%);
+}
+.admin-settings .demo .wp-block-button__link {
+  color: #fff;
+  background-color: #333631;
+  border-radius: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -21822,6 +21850,20 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .is-style-filter-monochrome img {
   filter: grayscale(100%);
+}
+.components-popover__content .wp-block-button__link {
+  color: #fff;
+  background-color: #333631;
+  border-radius: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 .components-popover__content .red {
   margin: 0;
