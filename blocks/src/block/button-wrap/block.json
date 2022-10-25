@@ -46,16 +46,14 @@
       "type": "string"
     }
   },
+  "example": {},
   "supports": {
     "align": [
       "left",
       "center",
       "right"
     ],
-    "customClassName": true
-  },
-  "example": {},
-  "supports": {
+    "customClassName": true,
     "anchor": true
   }
 }

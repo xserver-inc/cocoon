@@ -48,12 +48,10 @@
       "type": "string"
     }
   },
-  "supports": {
-    "align": [ "left", "center", "right" ],
-    "customClassName": true
-  },
   "example": {},
   "supports": {
+    "align": [ "left", "center", "right" ],
+    "customClassName": true,
     "anchor": true
   }
 }
