@@ -47,20 +47,24 @@ if (file_exists(get_no_image_file()) &&
    (!file_exists(get_no_image_320x180_file())
        || !file_exists(get_no_image_160x90_file())
        || !file_exists(get_no_image_120x68_file())
-       || !file_exists(get_no_image_150x150_file()))
+       || !file_exists(get_no_image_150x150_file())
+    )
 ) {
   $image_editor = wp_get_image_editor(get_no_image_file());
   if ( !is_wp_error($image_editor) ) {
-    $image_editor->resize(THUMB320WIDTH, THUMB320HEIGHT, true);
+    $image_editor->resize(THUMB320WIDTH, get_thumbnail_height(THUMB320WIDTH), true);
     $image_editor->save( get_no_image_320x180_file() );
 
-    $image_editor->resize(THUMB160WIDTH, THUMB160HEIGHT, true);
+    $image_editor = wp_get_image_editor(get_no_image_file());
+    $image_editor->resize(THUMB160WIDTH, get_thumbnail_height(THUMB160WIDTH), true);
     $image_editor->save( get_no_image_160x90_file() );
 
-    $image_editor->resize(THUMB120WIDTH, THUMB120HEIGHT, true);
+    $image_editor = wp_get_image_editor(get_no_image_file());
+    $image_editor->resize(THUMB120WIDTH, get_thumbnail_height(THUMB120WIDTH), true);
     $image_editor->save( get_no_image_120x68_file() );
 
-    $image_editor->resize(THUMB150WIDTH, THUMB150HEIGHT, true);
+    $image_editor = wp_get_image_editor(get_no_image_file());
+    $image_editor->resize(THUMB150WIDTH, get_square_thumbnail_height(THUMB150WIDTH), true);
     $image_editor->save( get_no_image_150x150_file() );
   }
 }
