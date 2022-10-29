@@ -56,7 +56,9 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
     echo '</div>';
     //ページタイトルを含める場合
     if (is_single_breadcrumbs_include_post() && is_singular()) {
-      echo '<div class="breadcrumb-item"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption">'.esc_html(get_the_title()).'</span></div>';
+      //カウントを進める
+      ++$count;
+      echo '<div class="breadcrumb-item"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption">'.esc_html(get_the_title()).'</span><meta itemprop="position" content="'.$count.'" /></div>';
     }
 
     echo '</div><!-- /#breadcrumb -->';
