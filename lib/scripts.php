@@ -7,6 +7,16 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+add_action( 'wp_enqueue_scripts', 'wp_enqueue_jquery', 1 );
+if ( !function_exists( 'wp_enqueue_jquery' ) ):
+function wp_enqueue_jquery() {
+  if (!is_admin()) {
+    //jQueryライブラリの読み込み
+    wp_enqueue_script_jquery_js();
+  }
+}
+endif;
+
 add_action( 'wp_enqueue_scripts', 'wp_enqueue_scripts_custom' );
 if ( !function_exists( 'wp_enqueue_scripts_custom' ) ):
 function wp_enqueue_scripts_custom() {
@@ -124,12 +134,6 @@ function wp_enqueue_scripts_custom() {
 //
 ////////////////////////////////////////////////////////////////
 
-  ///////////////////////////////////////////
-  //jQueryの読み込み
-  ///////////////////////////////////////////
-  //wp_enqueue_script('jquery');
-
-  //レンダリングをブロックしている jQuery, jQuery-migrate をフッタに移動する
   if (!is_admin()) {
 
     ///////////////////////////////////////////
@@ -142,8 +146,8 @@ function wp_enqueue_scripts_custom() {
     ///////////////////////////////////////////
     wp_enqueue_lazy_load();
 
-    //jQueryライブラリの読み込み
-    wp_enqueue_script_jquery_js();
+    // //jQueryライブラリの読み込み
+    // wp_enqueue_script_jquery_js();
 
     //タイルカード
     wp_enqueue_jquery_masonry();
