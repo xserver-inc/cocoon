@@ -5951,6 +5951,13 @@ figcaption {
   box-sizing: border-box;
 }
 
+.is-layout-flex {
+  gap: 1.5rem;
+}
+.is-layout-flex > * {
+  margin: 0 !important;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -9979,13 +9986,6 @@ ul.block-editor-block-list__block li div {
 .is-layout-flex {
   display: flex;
   flex-wrap: wrap;
-}
-
-.is-layout-flex {
-  gap: 1.5rem;
-}
-.is-layout-flex > * {
-  margin: 0;
 }
 
 /* 検索フォーム風スタイルのボタンを装飾 */

@@ -1790,3 +1790,10 @@ figcaption{
   word-break: break-word;
   box-sizing: border-box;
 }
+
+.is-layout-flex{
+	gap: 1.5rem;
+	>*{
+		margin: 0 !important;
+	}
+}

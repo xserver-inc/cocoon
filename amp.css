@@ -5926,6 +5926,13 @@ figcaption {
   box-sizing: border-box;
 }
 
+.is-layout-flex {
+  gap: 1.5rem;
+}
+.is-layout-flex > * {
+  margin: 0 !important;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;

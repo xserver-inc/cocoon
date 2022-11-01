@@ -5955,6 +5955,12 @@ body.wp-admin {
   word-break: break-word;
   box-sizing: border-box;
 }
+.admin-settings .demo .is-layout-flex {
+  gap: 1.5rem;
+}
+.admin-settings .demo .is-layout-flex > * {
+  margin: 0 !important;
+}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -13531,6 +13537,12 @@ body.wp-admin {
   word-break: break-word;
   box-sizing: border-box;
 }
+.admin-settings .demo .is-layout-flex {
+  gap: 1.5rem;
+}
+.admin-settings .demo .is-layout-flex > * {
+  margin: 0 !important;
+}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -16893,12 +16905,6 @@ body.wp-admin {
 .admin-settings .demo .is-layout-flex {
   display: flex;
   flex-wrap: wrap;
-}
-.admin-settings .demo .is-layout-flex {
-  gap: 1.5rem;
-}
-.admin-settings .demo .is-layout-flex > * {
-  margin: 0;
 }
 .admin-settings .demo .search-form div.sbtn {
   transition: 0.3s;
@@ -21870,6 +21876,12 @@ textarea[name="the_page_memo"] {
   text-decoration: none;
   word-break: break-word;
   box-sizing: border-box;
+}
+.components-popover__content .is-layout-flex {
+  gap: 1.5rem;
+}
+.components-popover__content .is-layout-flex > * {
+  margin: 0 !important;
 }
 .components-popover__content .red {
   margin: 0;
