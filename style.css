@@ -9981,6 +9981,13 @@ ul.block-editor-block-list__block li div {
   flex-wrap: wrap;
 }
 
+.is-layout-flex {
+  gap: 1.5rem;
+}
+.is-layout-flex > * {
+  margin: 0;
+}
+
 /* 検索フォーム風スタイルのボタンを装飾 */
 .search-form div.sbtn {
   transition: 0.3s;

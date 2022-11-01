@@ -16894,6 +16894,12 @@ body.wp-admin {
   display: flex;
   flex-wrap: wrap;
 }
+.admin-settings .demo .is-layout-flex {
+  gap: 1.5rem;
+}
+.admin-settings .demo .is-layout-flex > * {
+  margin: 0;
+}
 .admin-settings .demo .search-form div.sbtn {
   transition: 0.3s;
   /* 変化をなめらかにする */

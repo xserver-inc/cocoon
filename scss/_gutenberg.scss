@@ -19,3 +19,10 @@ ul.block-editor-block-list__block li div {
 	display: flex;
 	flex-wrap: wrap;
 }
+
+.is-layout-flex{
+	gap: 1.5rem;
+	>*{
+		margin: 0;
+	}
+}
