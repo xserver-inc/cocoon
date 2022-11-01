@@ -17,7 +17,7 @@ class ItemRankingWidgetItem extends WP_Widget {
      parent::__construct(
       'item_ranking',
       WIDGET_NAME_PREFIX.__( 'ランキング', THEME_NAME ),//ウイジェット名
-      array('description' => __( '商品・サービスのランキング表示をウィジェットです。', THEME_NAME )),
+      array('description' => __( '商品・サービスのランキングを表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );
   }

@@ -1004,6 +1004,7 @@ function generate_popular_entries_tag($atts){
     'class' => null,
     'author' => null,
     'post_type' => 'post',
+    'horizontal' => 0,
   ), $atts));
 
   $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type);
@@ -1016,6 +1017,7 @@ function generate_popular_entries_tag($atts){
     'bold' => $bold,
     'arrow' => $arrow,
     'class' => $class,
+    'horizontal' => $horizontal,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>

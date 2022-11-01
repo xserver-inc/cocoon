@@ -984,7 +984,7 @@ body.wp-admin {
 .admin-settings .demo span.sub-caption {
   opacity: 0.8;
 }
-.admin-settings .demo .container * {
+.admin-settings .demo * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8560,7 +8560,7 @@ body.wp-admin {
 .admin-settings .demo span.sub-caption {
   opacity: 0.8;
 }
-.admin-settings .demo .container * {
+.admin-settings .demo * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;

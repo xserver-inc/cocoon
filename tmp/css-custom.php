@@ -722,13 +722,6 @@ if ($mobile_site_font_size): ?>
     margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
   }
 }
-.article h2,
-.article h3,
-.article h4,
-.article h5,
-.article h6 {
-  margin-top: <?php echo round($entry_content_margin_hight * 1.3333, 2); ?>em;
-}
 .article .micro-top{
   margin-bottom: <?php echo $entry_content_margin_hight * 0.2; ?>em;
 }

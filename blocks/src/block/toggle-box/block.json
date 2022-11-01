@@ -30,8 +30,9 @@
       "type": "string"
     }
   },
+  "example": {},
   "supports": {
-    "reusable": false
-  },
-  "example": {}
+    "reusable": false,
+    "anchor": true
+  }
 }

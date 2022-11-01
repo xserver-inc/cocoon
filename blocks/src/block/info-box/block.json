@@ -9,5 +9,8 @@
       "type": "string",
       "default": "primary-box"
     }
+  },
+  "supports": {
+    "anchor": true
   }
 }

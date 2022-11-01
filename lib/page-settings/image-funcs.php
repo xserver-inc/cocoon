@@ -216,11 +216,11 @@ endif;
 if ( !function_exists( 'get_no_image_320x180_url' ) ):
 function get_no_image_320x180_url($id = null){
   if ($no_image_url = get_no_image_url()) {
-    $res = get_image_sized_url($no_image_url, THUMB320WIDTH, THUMB320HEIGHT);
+    $res = get_image_sized_url($no_image_url, THUMB320WIDTH, get_thumbnail_height(THUMB320WIDTH));
   } else {
     $res = NO_IMAGE_320;
   }
-  return apply_filters('get_sized_no_image_url', $res, THUMB320WIDTH, THUMB320HEIGHT, $id);
+  return apply_filters('get_sized_no_image_url', $res, THUMB320WIDTH, get_thumbnail_height(THUMB320WIDTH), $id);
 }
 endif;
 if ( !function_exists( 'get_no_image_320x180_file' ) ):
@@ -231,11 +231,11 @@ endif;
 if ( !function_exists( 'get_no_image_160x90_url' ) ):
 function get_no_image_160x90_url($id = null){
   if ($no_image_url = get_no_image_url()) {
-    $res = get_image_sized_url(get_no_image_url(), THUMB160WIDTH, THUMB160HEIGHT);
+    $res = get_image_sized_url(get_no_image_url(), THUMB160WIDTH, get_thumbnail_height(THUMB160WIDTH));
   } else {
     $res = NO_IMAGE_160;
   }
-  return apply_filters('get_sized_no_image_url', $res, THUMB160WIDTH, THUMB160HEIGHT, $id);
+  return apply_filters('get_sized_no_image_url', $res, THUMB160WIDTH, get_thumbnail_height(THUMB160WIDTH), $id);
 }
 endif;
 if ( !function_exists( 'get_no_image_160x90_file' ) ):
@@ -246,11 +246,11 @@ endif;
 if ( !function_exists( 'get_no_image_120x68_url' ) ):
 function get_no_image_120x68_url($id = null){
   if ($no_image_url = get_no_image_url()) {
-    $res = get_image_sized_url($no_image_url, THUMB120WIDTH, THUMB120HEIGHT);
+    $res = get_image_sized_url($no_image_url, THUMB120WIDTH, get_thumbnail_height(THUMB120WIDTH));
   } else {
     $res = NO_IMAGE_120;
   }
-  return apply_filters('get_sized_no_image_url', $res, THUMB120WIDTH, THUMB120HEIGHT, $id);
+  return apply_filters('get_sized_no_image_url', $res, THUMB120WIDTH, get_thumbnail_height(THUMB120WIDTH), $id);
 }
 endif;
 if ( !function_exists( 'get_no_image_120x68_file' ) ):
@@ -261,11 +261,11 @@ endif;
 if ( !function_exists( 'get_no_image_150x150_url' ) ):
 function get_no_image_150x150_url($id = null){
   if ($no_image_url = get_no_image_url()) {
-    $res = get_image_sized_url($no_image_url, THUMB150WIDTH, THUMB150HEIGHT);
+    $res = get_image_sized_url($no_image_url, THUMB150WIDTH, get_square_thumbnail_height(THUMB150WIDTH));
   } else {
     $res = NO_IMAGE_150;
   }
-  return apply_filters('get_sized_no_image_url', $res, THUMB150WIDTH, THUMB150HEIGHT, $id);
+  return apply_filters('get_sized_no_image_url', $res, THUMB150WIDTH, get_square_thumbnail_height(THUMB150WIDTH), $id);
 }
 endif;
 if ( !function_exists( 'get_no_image_150x150_file' ) ):

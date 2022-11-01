@@ -9,5 +9,8 @@
       "type": "string",
       "default": ""
     }
+  },
+  "supports": {
+    "anchor": true
   }
 }

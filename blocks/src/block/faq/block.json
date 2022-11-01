@@ -49,5 +49,8 @@
       }
     ]
   },
-  "example": {}
+  "example": {},
+  "supports": {
+    "anchor": true
+  }
 }

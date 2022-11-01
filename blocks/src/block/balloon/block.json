@@ -53,5 +53,8 @@
       "type": "string"
     }
   },
-  "example": {}
+  "example": {},
+  "supports": {
+    "anchor": true
+  }
 }
