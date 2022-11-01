@@ -32,6 +32,8 @@ class RelatedEntryWidgetItem extends WP_Widget {
     $entry_type = apply_filters( 'related_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
     //関連付け
     $taxonomy = apply_filters( 'related_entries_widget_taxonomy', empty($instance['taxonomy']) ? 'category' : $instance['taxonomy'] );
+    //水平表示
+    $is_horizontal = apply_filters( 'new_entries_widget_is_horizontal', empty($instance['is_horizontal']) ? 0 : 1 );
     //タイトルを太字にする
     $is_bold = apply_filters( 'related_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : $instance['is_bold'] );
     //矢印表示
@@ -96,6 +98,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
         'cat_ids' => $categories,
         'tag_ids' => $tags,
         'type' => $entry_type,
+        'horizontal' => $is_horizontal,
         'bold' => $is_bold,
         'arrow' => $is_arrow_visible,
         'include_children' => 0,
@@ -123,6 +126,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
     if (isset($new_instance['taxonomy']))
       $instance['taxonomy'] = strip_tags($new_instance['taxonomy']);
 
+    $instance['is_horizontal'] = !empty($new_instance['is_horizontal']) ? 1 : 0;
     $instance['is_bold'] = !empty($new_instance['is_bold']) ? 1 : 0;
     $instance['is_arrow_visible'] = !empty($new_instance['is_arrow_visible']) ? 1 : 0;
     if (isset($new_instance['exclude_cat_ids'])){
@@ -139,6 +143,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
         'entry_count' => EC_DEFAULT,
         'entry_type'  => ET_DEFAULT,
         'taxonomy'  => 'category',
+        'is_horizontal'  => 0,
         'is_bold'  => 0,
         'is_arrow_visible'  => 0,
         'exclude_cat_ids' => array(),
@@ -156,6 +161,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
       $entry_type = esc_attr($instance['entry_type']);
     if (isset($instance['taxonomy']))
       $taxonomy = esc_attr($instance['taxonomy']);
+      $is_horizontal = empty($instance['is_horizontal']) ? 0 : 1;
     $is_bold = empty($instance['is_bold']) ? 0 : 1;
     $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
 
@@ -194,6 +200,13 @@ class RelatedEntryWidgetItem extends WP_Widget {
         'post_tag' => 'タグ（無い場合はカテゴリ表示）',
       );
       generate_radiobox_tag($this->get_field_name('taxonomy'), $options, $taxonomy);
+      ?>
+    </p>
+    <?php //横型表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横型表示', THEME_NAME ));
+        _e( '（「大きなサムネイル」との使用がお勧め）', THEME_NAME )
       ?>
     </p>
     <?php //タイトルを太字にする ?>

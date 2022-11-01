@@ -41,6 +41,8 @@ class PopularEntryWidgetItem extends WP_Widget {
     $ranking_visible = apply_filters( 'popular_entries_widget_ranking_visible', empty($instance['ranking_visible']) ? 0 : $instance['ranking_visible'] );
     //PV表示
     $pv_visible = apply_filters( 'popular_entries_widget_pv_visible', empty($instance['pv_visible']) ? 0 : $instance['pv_visible'] );
+    //水平表示
+    $is_horizontal = apply_filters( 'new_entries_widget_is_horizontal', empty($instance['is_horizontal']) ? 0 : 1 );
     //タイトルを太字に
     $is_bold = apply_filters( 'popular_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : $instance['is_bold'] );
     //矢印表示
@@ -59,12 +61,6 @@ class PopularEntryWidgetItem extends WP_Widget {
     }
     //除外投稿ID配列のサニタイズ
     $exclude_post_ids = comma_text_to_array($exclude_post_ids);
-    // $exclude_post_ids = str_replace(' ', '', $exclude_post_ids);
-    // if (empty($exclude_post_ids)) {
-    //   $exclude_post_ids = array();
-    // } else {
-    //   $exclude_post_ids = explode(',', $exclude_post_ids);
-    // }
 
     //除外カテゴリ配列のサニタイズ
     //$exclude_cat_ids = comma_text_to_array($exclude_cat_ids);
@@ -104,6 +100,7 @@ class PopularEntryWidgetItem extends WP_Widget {
         'entry_type' => $entry_type,
         'ranking_visible' => $ranking_visible,
         'pv_visible' => $pv_visible,
+        'horizontal' => $is_horizontal,
         'bold' => $is_bold,
         'arrow' => $is_arrow_visible,
         'cat_ids' => $cat_ids,
@@ -133,6 +130,7 @@ class PopularEntryWidgetItem extends WP_Widget {
 
     $instance['ranking_visible'] = !empty($new_instance['ranking_visible']) ? 1 : 0;
     $instance['pv_visible'] = !empty($new_instance['pv_visible']) ? 1 : 0;
+    $instance['is_horizontal'] = !empty($new_instance['is_horizontal']) ? 1 : 0;
     $instance['is_bold'] = !empty($new_instance['is_bold']) ? 1 : 0;
     $instance['is_arrow_visible'] = !empty($new_instance['is_arrow_visible']) ? 1 : 0;
 
@@ -156,6 +154,7 @@ class PopularEntryWidgetItem extends WP_Widget {
         'count_days' => PCD_DEFAULT,
         'ranking_visible' => 0,
         'pv_visible' => 0,
+        'is_horizontal'  => 0,
         'is_bold' => 0,
         'is_arrow_visible' => 0,
         'exclude_post_ids' => '',
@@ -169,6 +168,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $count_days = isset($instance['count_days']) ? esc_attr($instance['count_days']) : PCD_DEFAULT;
     $ranking_visible = !empty($instance['ranking_visible']) ? 1 : 0;
     $pv_visible = !empty($instance['pv_visible']) ? 1 : 0;
+    $is_horizontal = empty($instance['is_horizontal']) ? 0 : 1;
     $is_bold = !empty($instance['is_bold']) ? 1 : 0;
     $is_arrow_visible = !empty($instance['is_arrow_visible']) ? 1 : 0;
     $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : '';
@@ -233,6 +233,13 @@ class PopularEntryWidgetItem extends WP_Widget {
       <?php
         generate_checkbox_tag($this->get_field_name('pv_visible') , $pv_visible, __( 'PV表示', THEME_NAME ));
        ?>
+    </p>
+    <?php //横型表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横型表示', THEME_NAME ));
+        _e( '（「大きなサムネイル」との使用がお勧め）', THEME_NAME )
+      ?>
     </p>
     <?php //タイトルを太字にする ?>
     <p>
