@@ -10,8 +10,8 @@ import { __ } from '@wordpress/i18n';
 
 import edit from './edit';
 import save from './save';
-//import deprecated from './deprecated';
-//import transforms from './transforms';
+import deprecated from './deprecated';
+import transforms from './transforms';
 import metadata from './block.json';
 
 const { name } = metadata;
@@ -23,6 +23,6 @@ export const settings = {
 
   edit,
   save,
-  //    deprecated,
-  //    transforms,
+  deprecated,
+  transforms,
 };
