@@ -1021,7 +1021,8 @@ function generate_popular_entries_tag($atts){
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>
-  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>">
+  <div class="popular-entry-cards widget-entry-cards no-icon swiper cf<?php echo $cards_classes; ?>">
+  <div class="swiper-wrapper">
   <?php if ( $records ) :
     $i = 1;
     foreach ($records as $post):
@@ -1046,7 +1047,7 @@ function generate_popular_entries_tag($atts){
         $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
       }
       ?>
-  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?>" title="<?php echo esc_attr($title); ?>">
+  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap swiper-slide no-<?php echo $i; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="popular-entry-card widget-entry-card e-card cf">
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php echo $post_thumbnail_img; ?>
@@ -1075,6 +1076,8 @@ function generate_popular_entries_tag($atts){
   else :
     echo '<p>'.__( '人気記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
   endif; ?>
+  </div>
+    <div class="swiper-button-next"></div>
   </div>
 <?php
 }
@@ -1276,15 +1279,7 @@ function generate_widget_entries_tag($atts){
   <?php wp_reset_postdata(); ?>
   <?php //wp_reset_query(); ?>
   </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
- 
- <!-- If we need navigation buttons -->
- <div class="swiper-button-prev"></div>
- <div class="swiper-button-next"></div>
-
- <!-- If we need scrollbar -->
- <div class="swiper-scrollbar"></div>
+    <div class="swiper-button-next"></div>
   </div>
 <?php
 }

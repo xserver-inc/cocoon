@@ -2601,38 +2601,6 @@ label.screen-reader-text {
   line-height: normal;
 }
 
-/* 新着カードを横並びにする */
-/* はみ出した分を横スクロール */
-.is-list-horizontal {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  /* カードのサムネイル幅200px */
-}
-.is-list-horizontal .widget-entry-card-link {
-  flex-shrink: 0;
-  max-width: 320px;
-}
-.is-list-horizontal .card-title {
-  font-size: 16px;
-}
-.is-list-horizontal .card-content {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-}
-.is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
-  max-width: 200px;
-}
-.is-list-horizontal.large-thumb-on .card-content {
-  max-height: 50%;
-  line-height: 1.1;
-}
-.is-list-horizontal.large-thumb-on .card-title {
-  font-size: 14px;
-}
-
 /*拡張クラスを追加するスタイルシート*/
 .badge,
 .ref,
@@ -8898,6 +8866,106 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .wwa .box-menu {
   width: 16.66%;
+}
+
+/* 新着カードを横並びにする */
+/* はみ出した分を横スクロール */
+.is-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* カードのサムネイル幅200px */
+}
+.is-list-horizontal .widget-entry-card-link {
+  flex-shrink: 0;
+  max-width: 320px;
+}
+.is-list-horizontal .card-title {
+  font-size: 16px;
+}
+.is-list-horizontal .card-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
+  max-width: 220px;
+}
+.is-list-horizontal.large-thumb-on .card-content {
+  max-height: 50%;
+  overflow: hidden;
+}
+.is-list-horizontal.large-thumb-on .card-title {
+  font-size: 14px;
+}
+
+:root {
+  --easing: cubic-bezier(.2, 1, .2, 1);
+  --transition: .8s var(--easing);
+  --box-shadow: 0 0 30px #fff;
+}
+
+div.swiper-button-next {
+  left: calc(100% - 62px);
+}
+
+div.swiper-button-prev, div.swiper-button-next {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+div.swiper-button-prev, div.swiper-button-next {
+  display: grid;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+div.swiper-button-prev:hover, div.swiper-button-next:hover {
+  left: calc(100% - 66px);
+  width: 60px;
+  height: 60px;
+}
+
+div.swiper-button-prev::before, div.swiper-button-next::before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+div.swiper-button-prev::before, div.swiper-button-next::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  border-radius: 50%;
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+div.swiper-button-prev::after, div.swiper-button-next::after {
+  border-color: #fff;
+}
+
+div.swiper-button-next::after {
+  margin-right: 0.4rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+div.swiper-button-prev::after, div.swiper-button-next::after {
+  width: 12px;
+  height: 12px;
+  content: "";
+  border: solid rgba(255, 255, 255, 0.7);
+  border-width: 2px 2px 0 0;
 }
 
 .no-border {
