@@ -1250,7 +1250,8 @@ function generate_widget_entries_tag($atts){
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>
-  <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>">
+  <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon swiper cf<?php echo $cards_classes; ?>">
+  <div class="swiper-wrapper">
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
     <?php //エントリーカードリンクタグの生成
@@ -1274,6 +1275,16 @@ function generate_widget_entries_tag($atts){
   endif; ?>
   <?php wp_reset_postdata(); ?>
   <?php //wp_reset_query(); ?>
+  </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+ 
+ <!-- If we need navigation buttons -->
+ <div class="swiper-button-prev"></div>
+ <div class="swiper-button-next"></div>
+
+ <!-- If we need scrollbar -->
+ <div class="swiper-scrollbar"></div>
   </div>
 <?php
 }
@@ -1500,7 +1511,7 @@ function get_widget_entry_card_link_tag($atts){
   //リボンタグの取得
   $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
   ob_start(); ?>
-  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?>" title="<?php echo esc_attr($title); ?>">
+  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap swiper-slide<?php echo $class_text; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
@@ -1688,7 +1699,7 @@ function get_navi_card_wrap_tag($atts){
     'class' => null,
   ), $atts));
   $navi_card_class = get_additional_widget_entry_cards_classes($atts);
-  $tag = '<div class="navi-entry-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+  $tag = '<div class="navi-entry-cards widget-entry-cards no-icon swiper'.esc_attr($navi_card_class).'">'.$tag.'</div>';
   return $tag;
 }
 endif;
