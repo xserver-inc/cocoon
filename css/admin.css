@@ -1278,7 +1278,7 @@ body.wp-admin {
   color: #333;
   text-decoration: none;
   font-weight: normal;
-  padding: 0 0.5em;
+  padding: 0 1em;
 }
 .admin-settings .demo .site-name-text-link:hover {
   color: inherit;
@@ -8406,6 +8406,11 @@ body.wp-admin {
 .admin-settings .demo .wwa .box-menu {
   width: 16.66%;
 }
+.admin-settings .demo :root {
+  --easing: cubic-bezier(.2, 1, .2, 1);
+  --transition: .8s var(--easing);
+  --box-shadow: 0 0 30px #fff;
+}
 .admin-settings .demo .is-list-horizontal {
   display: flex;
   flex-direction: row;
@@ -8418,39 +8423,32 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .card-title {
   font-size: 16px;
-}
-.admin-settings .demo .is-list-horizontal .card-content {
+  overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  overflow: hidden;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-content {
-  max-height: 50%;
+  max-height: 45%;
   overflow: hidden;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
 }
-.admin-settings .demo :root {
-  --easing: cubic-bezier(.2, 1, .2, 1);
-  --transition: .8s var(--easing);
-  --box-shadow: 0 0 30px #fff;
-}
-.admin-settings .demo div.swiper-button-next {
+.admin-settings .demo .is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);
 }
-.admin-settings .demo div.swiper-button-prev, .admin-settings .demo div.swiper-button-next {
+.admin-settings .demo .is-list-horizontal .swiper-button-next {
   position: absolute;
   z-index: 1;
   top: 0;
   bottom: 0;
   margin: auto;
 }
-.admin-settings .demo div.swiper-button-prev, .admin-settings .demo div.swiper-button-next {
+.admin-settings .demo .is-list-horizontal .swiper-button-next {
   display: grid;
   place-content: center;
   width: 50px;
@@ -8459,15 +8457,15 @@ body.wp-admin {
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-.admin-settings .demo div.swiper-button-prev:hover, .admin-settings .demo div.swiper-button-next:hover {
+.admin-settings .demo .is-list-horizontal .swiper-button-next:hover {
   left: calc(100% - 66px);
   width: 60px;
   height: 60px;
 }
-.admin-settings .demo div.swiper-button-prev::before, .admin-settings .demo div.swiper-button-next::before {
+.admin-settings .demo .is-list-horizontal .swiper-button-next::before {
   background-color: rgba(0, 0, 0, 0.3);
 }
-.admin-settings .demo div.swiper-button-prev::before, .admin-settings .demo div.swiper-button-next::before {
+.admin-settings .demo .is-list-horizontal .swiper-button-next::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -8478,15 +8476,11 @@ body.wp-admin {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
 }
-.admin-settings .demo div.swiper-button-prev::after, .admin-settings .demo div.swiper-button-next::after {
-  border-color: #fff;
-}
-.admin-settings .demo div.swiper-button-next::after {
+.admin-settings .demo .is-list-horizontal .swiper-button-next::after {
+  border-color: #ffffff;
   margin-right: 0.4rem;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-.admin-settings .demo div.swiper-button-prev::after, .admin-settings .demo div.swiper-button-next::after {
   width: 12px;
   height: 12px;
   content: "";
@@ -8931,7 +8925,7 @@ body.wp-admin {
   color: #333;
   text-decoration: none;
   font-weight: normal;
-  padding: 0 0.5em;
+  padding: 0 1em;
 }
 .admin-settings .demo .site-name-text-link:hover {
   color: inherit;
@@ -16059,6 +16053,11 @@ body.wp-admin {
 .admin-settings .demo .wwa .box-menu {
   width: 16.66%;
 }
+.admin-settings .demo :root {
+  --easing: cubic-bezier(.2, 1, .2, 1);
+  --transition: .8s var(--easing);
+  --box-shadow: 0 0 30px #fff;
+}
 .admin-settings .demo .is-list-horizontal {
   display: flex;
   flex-direction: row;
@@ -16071,39 +16070,32 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .card-title {
   font-size: 16px;
-}
-.admin-settings .demo .is-list-horizontal .card-content {
+  overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  overflow: hidden;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-content {
-  max-height: 50%;
+  max-height: 45%;
   overflow: hidden;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
 }
-.admin-settings .demo :root {
-  --easing: cubic-bezier(.2, 1, .2, 1);
-  --transition: .8s var(--easing);
-  --box-shadow: 0 0 30px #fff;
-}
-.admin-settings .demo div.swiper-button-next {
+.admin-settings .demo .is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);
 }
-.admin-settings .demo div.swiper-button-prev, .admin-settings .demo div.swiper-button-next {
+.admin-settings .demo .is-list-horizontal .swiper-button-next {
   position: absolute;
   z-index: 1;
   top: 0;
   bottom: 0;
   margin: auto;
 }
-.admin-settings .demo div.swiper-button-prev, .admin-settings .demo div.swiper-button-next {
+.admin-settings .demo .is-list-horizontal .swiper-button-next {
   display: grid;
   place-content: center;
   width: 50px;
@@ -16112,15 +16104,15 @@ body.wp-admin {
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-.admin-settings .demo div.swiper-button-prev:hover, .admin-settings .demo div.swiper-button-next:hover {
+.admin-settings .demo .is-list-horizontal .swiper-button-next:hover {
   left: calc(100% - 66px);
   width: 60px;
   height: 60px;
 }
-.admin-settings .demo div.swiper-button-prev::before, .admin-settings .demo div.swiper-button-next::before {
+.admin-settings .demo .is-list-horizontal .swiper-button-next::before {
   background-color: rgba(0, 0, 0, 0.3);
 }
-.admin-settings .demo div.swiper-button-prev::before, .admin-settings .demo div.swiper-button-next::before {
+.admin-settings .demo .is-list-horizontal .swiper-button-next::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -16131,15 +16123,11 @@ body.wp-admin {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
 }
-.admin-settings .demo div.swiper-button-prev::after, .admin-settings .demo div.swiper-button-next::after {
-  border-color: #fff;
-}
-.admin-settings .demo div.swiper-button-next::after {
+.admin-settings .demo .is-list-horizontal .swiper-button-next::after {
+  border-color: #ffffff;
   margin-right: 0.4rem;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-.admin-settings .demo div.swiper-button-prev::after, .admin-settings .demo div.swiper-button-next::after {
   width: 12px;
   height: 12px;
   content: "";

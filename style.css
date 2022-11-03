@@ -655,7 +655,7 @@ img.emoji {
   color: #333;
   text-decoration: none;
   font-weight: normal;
-  padding: 0 0.5em;
+  padding: 0 1em;
 }
 .site-name-text-link:hover {
   color: inherit;
@@ -8893,6 +8893,12 @@ https://codepen.io/nxworld/pen/oLdoWb
   width: 16.66%;
 }
 
+:root {
+  --easing: cubic-bezier(.2, 1, .2, 1);
+  --transition: .8s var(--easing);
+  --box-shadow: 0 0 30px #fff;
+}
+
 /* 新着カードを横並びにする */
 /* はみ出した分を横スクロール */
 .is-list-horizontal {
@@ -8907,43 +8913,32 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .is-list-horizontal .card-title {
   font-size: 16px;
-}
-.is-list-horizontal .card-content {
+  overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  overflow: hidden;
 }
 .is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
 }
 .is-list-horizontal.large-thumb-on .card-content {
-  max-height: 50%;
+  max-height: 45%;
   overflow: hidden;
 }
 .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
 }
-
-:root {
-  --easing: cubic-bezier(.2, 1, .2, 1);
-  --transition: .8s var(--easing);
-  --box-shadow: 0 0 30px #fff;
-}
-
-div.swiper-button-next {
+.is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);
 }
-
-div.swiper-button-prev, div.swiper-button-next {
+.is-list-horizontal .swiper-button-next {
   position: absolute;
   z-index: 1;
   top: 0;
   bottom: 0;
   margin: auto;
 }
-
-div.swiper-button-prev, div.swiper-button-next {
+.is-list-horizontal .swiper-button-next {
   display: grid;
   place-content: center;
   width: 50px;
@@ -8952,18 +8947,15 @@ div.swiper-button-prev, div.swiper-button-next {
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-
-div.swiper-button-prev:hover, div.swiper-button-next:hover {
+.is-list-horizontal .swiper-button-next:hover {
   left: calc(100% - 66px);
   width: 60px;
   height: 60px;
 }
-
-div.swiper-button-prev::before, div.swiper-button-next::before {
+.is-list-horizontal .swiper-button-next::before {
   background-color: rgba(0, 0, 0, 0.3);
 }
-
-div.swiper-button-prev::before, div.swiper-button-next::before {
+.is-list-horizontal .swiper-button-next::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -8974,18 +8966,11 @@ div.swiper-button-prev::before, div.swiper-button-next::before {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
 }
-
-div.swiper-button-prev::after, div.swiper-button-next::after {
-  border-color: #fff;
-}
-
-div.swiper-button-next::after {
+.is-list-horizontal .swiper-button-next::after {
+  border-color: #ffffff;
   margin-right: 0.4rem;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-div.swiper-button-prev::after, div.swiper-button-next::after {
   width: 12px;
   height: 12px;
   content: "";

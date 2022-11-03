@@ -1,3 +1,10 @@
+:root {
+  --easing: cubic-bezier(.2, 1, .2, 1);
+  --transition: .8s var(--easing);
+  --box-shadow: 0 0 30px #fff;
+}
+
+
 /* 新着カードを横並びにする */
 /* はみ出した分を横スクロール */
 .is-list-horizontal {
@@ -10,14 +17,18 @@
     max-width: 320px;
   }
   .card-title{
-    font-size: 16px;
-  }
-  .card-content{
+    font-size: 16px;  
+    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    overflow: hidden;
   }
+  // .card-content{
+  //   display: -webkit-box;
+  //   -webkit-box-orient: vertical;
+  //   -webkit-line-clamp: 2;
+  //   overflow: hidden;
+  // }
   &.large-thumb,
   &.large-thumb-on{
     .widget-entry-card-link {
@@ -26,7 +37,7 @@
   } 
   &.large-thumb-on{
     .card-content{
-      max-height: 50%;
+      max-height: 45%;
       overflow: hidden;
       // line-height: 1.1;
     }   
@@ -34,88 +45,57 @@
       font-size: 14px;
     } 
   }
-}
 
-// div.swiper-button-next {
-//   top: 0;
-//   color: white;
-//   bottom: 0;
-//   right: 0;
-//   height: 100%;
-//   background-color: rgba(15,23,30,.5);
-//   width: 30px;
-//   &::after {
-//     font-size: 20px;
-//   }
-// }
-
-// .widget-entry-cards .a-wrap {
-//   padding: 0;
-//   margin-bottom: 0;
-// }
-// .entry-card-thumb, .widget-entry-card-thumb, .related-entry-card-thumb, .carousel-entry-card-thumb {
-//   margin-top: 3px;
-// }
-
-:root {
-  --easing: cubic-bezier(.2, 1, .2, 1);
-  --transition: .8s var(--easing);
-  --box-shadow: 0 0 30px #fff;
-}
-
-div.swiper-button-next {
-  left: calc(100% - 62px);
-  // right: 0;
-}
-div.swiper-button-prev, div.swiper-button-next {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-div.swiper-button-prev, div.swiper-button-next {
-  display: grid;
-  place-content: center;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
-}
-div.swiper-button-prev:hover, div.swiper-button-next:hover {
-  left: calc(100% - 66px);
-  width: 60px;
-  height: 60px;
-}
+  .swiper-button-next {
+    left: calc(100% - 62px);
+    // right: 0;
+  }
+  .swiper-button-next {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .swiper-button-next {
+    display: grid;
+    place-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+  }
+  .swiper-button-next:hover {
+    left: calc(100% - 66px);
+    width: 60px;
+    height: 60px;
+  }
 
 
-div.swiper-button-prev::before, div.swiper-button-next::before {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-div.swiper-button-prev::before, div.swiper-button-next::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  content: "";
-  border-radius: 50%;
-  -webkit-box-shadow: var(--box-shadow);
-  box-shadow: var(--box-shadow);
-}
-div.swiper-button-prev::after, div.swiper-button-next::after {
-  border-color: #fff;
-}
-div.swiper-button-next::after {
-  margin-right: 0.4rem;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-div.swiper-button-prev::after, div.swiper-button-next::after {
-  width: 12px;
-  height: 12px;
-  content: "";
-  border: solid rgba(255, 255, 255, 0.7);
-  border-width: 2px 2px 0 0;
+  .swiper-button-next::before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .swiper-button-next::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    border-radius: 50%;
+    -webkit-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+  }
+  .swiper-button-next::after {
+    border-color: #ffffff;
+    margin-right: 0.4rem;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: solid rgba(255, 255, 255, 0.7);
+    border-width: 2px 2px 0 0;
+  }
 }
