@@ -2616,8 +2616,21 @@ label.screen-reader-text {
 .is-list-horizontal .card-title {
   font-size: 16px;
 }
+.is-list-horizontal .card-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 .is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 200px;
+}
+.is-list-horizontal.large-thumb-on .card-content {
+  max-height: 50%;
+  line-height: 1.1;
+}
+.is-list-horizontal.large-thumb-on .card-title {
+  font-size: 14px;
 }
 
 /*拡張クラスを追加するスタイルシート*/

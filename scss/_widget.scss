@@ -479,8 +479,16 @@ label.screen-reader-text{
     max-width: 320px;
   }
 
+
+
   .card-title{
     font-size: 16px;
+  }
+  .card-content{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
   &.large-thumb,
   &.large-thumb-on{
@@ -488,5 +496,14 @@ label.screen-reader-text{
       max-width: 200px;
     }
   } 
+  &.large-thumb-on{
+    .card-content{
+      max-height: 50%;
+      line-height: 1.1;
+    }   
+    .card-title{
+      font-size: 14px;
+    } 
+  }
 }
 
