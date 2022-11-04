@@ -113,6 +113,7 @@ function popular_entries_shortcode($atts) {
     'post_type' => 'post',
     'horizontal' => 0,
   ), $atts, 'popular_list'));
+
   $cat_ids = array();
   if ($cats && $cats != 'all') {
     $cat_ids = explode(',', $cats);

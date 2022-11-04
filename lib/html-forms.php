@@ -1007,6 +1007,13 @@ function generate_popular_entries_tag($atts){
     'horizontal' => 0,
   ), $atts));
 
+  //Swiperスクリプトコードを呼び出すかどうか
+  global $_IS_SWIPER_ENABLE;
+  if ($horizontal) {
+    $_IS_SWIPER_ENABLE = true;
+  }
+
+
   $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type);
 
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
@@ -1123,7 +1130,12 @@ function generate_widget_entries_tag($atts){
     'offset' => 0,
     'horizontal' => 0,
   ), $atts));
-  global $post;
+
+  //Swiperスクリプトコードを呼び出すかどうか
+  global $_IS_SWIPER_ENABLE;
+  if ($horizontal) {
+    $_IS_SWIPER_ENABLE = true;
+  }
 
   //ランダムが有効な時は関連記事
   if ($random) {
