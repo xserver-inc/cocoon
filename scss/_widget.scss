@@ -467,43 +467,4 @@ label.screen-reader-text{
   }
 }
 
-/* 新着カードを横並びにする */
-/* はみ出した分を横スクロール */
-.is-list-horizontal {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  /* カードのサムネイル幅200px */
-  .widget-entry-card-link {
-    flex-shrink: 0;
-    max-width: 320px;
-  }
-
-
-
-  .card-title{
-    font-size: 16px;
-  }
-  .card-content{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-  &.large-thumb,
-  &.large-thumb-on{
-    .widget-entry-card-link {
-      max-width: 200px;
-    }
-  } 
-  &.large-thumb-on{
-    .card-content{
-      max-height: 50%;
-      line-height: 1.1;
-    }   
-    .card-title{
-      font-size: 14px;
-    } 
-  }
-}
 

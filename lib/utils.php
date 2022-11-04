@@ -745,6 +745,13 @@ function wp_enqueue_slick(){
 }
 endif;
 
+//Swiper
+if ( !function_exists( 'wp_enqueue_swiper' ) ):
+function wp_enqueue_swiper(){
+  wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
+}
+endif;
+
 //SlickNav
 if ( !function_exists( 'wp_enqueue_slicknav' ) ):
 function wp_enqueue_slicknav(){

@@ -1007,6 +1007,13 @@ function generate_popular_entries_tag($atts){
     'horizontal' => 0,
   ), $atts));
 
+  //Swiperスクリプトコードを呼び出すかどうか
+  global $_IS_SWIPER_ENABLE;
+  if ($horizontal) {
+    $_IS_SWIPER_ENABLE = true;
+  }
+
+
   $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type);
 
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
@@ -1020,8 +1027,15 @@ function generate_popular_entries_tag($atts){
     'horizontal' => $horizontal,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
+  $swiper_slide = null;
+  if ($horizontal) {
+    $swiper_slide = ' swiper-slide';
+  }
   ?>
   <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>">
+  <?php if ( $horizontal ) : ?>
+    <div class="swiper-wrapper">
+  <?php endif; ?>
   <?php if ( $records ) :
     $i = 1;
     foreach ($records as $post):
@@ -1046,7 +1060,7 @@ function generate_popular_entries_tag($atts){
         $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
       }
       ?>
-  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?>" title="<?php echo esc_attr($title); ?>">
+  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="popular-entry-card widget-entry-card e-card cf">
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php echo $post_thumbnail_img; ?>
@@ -1075,6 +1089,10 @@ function generate_popular_entries_tag($atts){
   else :
     echo '<p>'.__( '人気記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
   endif; ?>
+  <?php if ( $horizontal ) : ?>
+    </div>
+      <div class="swiper-button-next"></div>
+  <?php endif; ?>
   </div>
 <?php
 }
@@ -1112,7 +1130,12 @@ function generate_widget_entries_tag($atts){
     'offset' => 0,
     'horizontal' => 0,
   ), $atts));
-  global $post;
+
+  //Swiperスクリプトコードを呼び出すかどうか
+  global $_IS_SWIPER_ENABLE;
+  if ($horizontal) {
+    $_IS_SWIPER_ENABLE = true;
+  }
 
   //ランダムが有効な時は関連記事
   if ($random) {
@@ -1251,6 +1274,9 @@ function generate_widget_entries_tag($atts){
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>
   <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>">
+  <?php if ( $horizontal ) : ?>
+    <div class="swiper-wrapper">
+  <?php endif; ?>  
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
     <?php //エントリーカードリンクタグの生成
@@ -1260,6 +1286,7 @@ function generate_widget_entries_tag($atts){
       'title' => get_the_title(),
       'thumb_size' => $thumb_size,
       'type' => $type,
+      'horizontal' => $horizontal,
     );
     if ($snippet) {
       $atts += array(
@@ -1274,6 +1301,10 @@ function generate_widget_entries_tag($atts){
   endif; ?>
   <?php wp_reset_postdata(); ?>
   <?php //wp_reset_query(); ?>
+  <?php if ( $horizontal ) : ?>
+    </div>
+      <div class="swiper-button-next"></div>
+  <?php endif; ?>
   </div>
 <?php
 }
@@ -1492,6 +1523,7 @@ function get_widget_entry_card_link_tag($atts){
     'classes' => null,
     'object' => 'post',
     'object_id' => null,
+    'horizontal' => 0,
   ), $atts));
   $class_text = null;
   if (isset($classes[0]) && !empty($classes[0])) {
@@ -1499,8 +1531,12 @@ function get_widget_entry_card_link_tag($atts){
   }
   //リボンタグの取得
   $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
+  $swiper_slide = null;
+  if ($horizontal) {
+    $swiper_slide = ' swiper-slide';
+  }
   ob_start(); ?>
-  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?>" title="<?php echo esc_attr($title); ?>">
+  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap swiper-slide<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
@@ -1688,7 +1724,7 @@ function get_navi_card_wrap_tag($atts){
     'class' => null,
   ), $atts));
   $navi_card_class = get_additional_widget_entry_cards_classes($atts);
-  $tag = '<div class="navi-entry-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+  $tag = '<div class="navi-entry-cards widget-entry-cards no-icon swiper'.esc_attr($navi_card_class).'">'.$tag.'</div>';
   return $tag;
 }
 endif;
