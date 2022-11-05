@@ -8411,6 +8411,9 @@ body.wp-admin {
   --transition: .8s var(--easing);
   --box-shadow: 0 0 30px #fff;
 }
+.admin-settings .demo .swiper-wrapper {
+  margin-top: 8px;
+}
 .admin-settings .demo .is-list-horizontal {
   display: flex;
   flex-direction: row;
@@ -8426,7 +8429,7 @@ body.wp-admin {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
@@ -8437,6 +8440,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
+  -webkit-line-clamp: 3;
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);
@@ -16058,6 +16062,9 @@ body.wp-admin {
   --transition: .8s var(--easing);
   --box-shadow: 0 0 30px #fff;
 }
+.admin-settings .demo .swiper-wrapper {
+  margin-top: 8px;
+}
 .admin-settings .demo .is-list-horizontal {
   display: flex;
   flex-direction: row;
@@ -16073,7 +16080,7 @@ body.wp-admin {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
@@ -16084,6 +16091,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
+  -webkit-line-clamp: 3;
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);

@@ -4,6 +4,9 @@
   --box-shadow: 0 0 30px #fff;
 }
 
+.swiper-wrapper{
+  margin-top: 8px;
+}
 
 /* 新着カードを横並びにする */
 /* はみ出した分を横スクロール */
@@ -21,7 +24,7 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
   }
   // .card-content{
   //   display: -webkit-box;
@@ -43,6 +46,7 @@
     }   
     .card-title{
       font-size: 14px;
+      -webkit-line-clamp: 3;
     } 
   }
 

@@ -8874,6 +8874,10 @@ https://codepen.io/nxworld/pen/oLdoWb
   --box-shadow: 0 0 30px #fff;
 }
 
+.swiper-wrapper {
+  margin-top: 8px;
+}
+
 /* 新着カードを横並びにする */
 /* はみ出した分を横スクロール */
 .is-list-horizontal {
@@ -8891,7 +8895,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
 }
 .is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
@@ -8902,6 +8906,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
+  -webkit-line-clamp: 3;
 }
 .is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);
