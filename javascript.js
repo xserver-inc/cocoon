@@ -192,6 +192,8 @@
       $('#sidebar').appendTo('#sidebar-menu-content');
       $('#sidebar').attr('id', 'slide-in-sidebar');
       $('#sidebar').addClass('slide-in-sidebar');
+      //モバイルサイドバーをクリックしたら閉じる
+      drawerCloser('#slide-in-sidebar a', '#sidebar-menu-input');
     } else {
       $('#sidebar').removeClass('slide-in-sidebar');
       $('#slide-in-sidebar').attr('id', 'sidebar');
