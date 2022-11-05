@@ -228,7 +228,7 @@ if (!is_amp()): ?>
     loop: true,
     loopAdditionalSlides: 1,
     slidesPerView: 'auto',
-    spaceBetween: 2,
+    spaceBetween: 4,
     navigation: {
       nextEl: '.is-list-horizontal .swiper-button-next',
     },
