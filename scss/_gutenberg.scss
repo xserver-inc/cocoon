@@ -5,10 +5,20 @@
 	display: list-item;
 }
 
-
-ul.block-editor-block-list__block li div {
-	display: inline-block;
+.wp-block-list,
+.iconlist-box{
+	li{
+		margin: 0;
+	}
 }
+
+
+.iconlist-box li{
+	display: flex;
+}
+// ul.block-editor-block-list__block li {
+// 	display: flex;
+// }
 
 .btn-wrap-block {
 	margin-left: auto !important;

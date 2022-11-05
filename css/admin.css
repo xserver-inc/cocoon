@@ -17025,8 +17025,12 @@ body.wp-admin {
 .admin-settings .demo .entry-content .wp-block-gallery .blocks-gallery-item {
   display: list-item;
 }
-.admin-settings .demo ul.block-editor-block-list__block li div {
-  display: inline-block;
+.admin-settings .demo .wp-block-list li,
+.admin-settings .demo .iconlist-box li {
+  margin: 0;
+}
+.admin-settings .demo .iconlist-box li {
+  display: flex;
 }
 .admin-settings .demo .btn-wrap-block {
   margin-left: auto !important;

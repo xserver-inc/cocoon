@@ -10040,8 +10040,13 @@ twitter-widget {
   display: list-item;
 }
 
-ul.block-editor-block-list__block li div {
-  display: inline-block;
+.wp-block-list li,
+.iconlist-box li {
+  margin: 0;
+}
+
+.iconlist-box li {
+  display: flex;
 }
 
 .btn-wrap-block {
