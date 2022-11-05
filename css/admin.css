@@ -8434,13 +8434,15 @@ body.wp-admin {
 .admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
 }
+.admin-settings .demo .is-list-horizontal.large-thumb .card-title, .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
+  -webkit-line-clamp: 2;
+}
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-content {
   max-height: 45%;
   overflow: hidden;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
-  -webkit-line-clamp: 3;
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);
@@ -16085,13 +16087,15 @@ body.wp-admin {
 .admin-settings .demo .is-list-horizontal.large-thumb .widget-entry-card-link, .admin-settings .demo .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
 }
+.admin-settings .demo .is-list-horizontal.large-thumb .card-title, .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
+  -webkit-line-clamp: 2;
+}
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-content {
   max-height: 45%;
   overflow: hidden;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
-  -webkit-line-clamp: 3;
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);

@@ -8900,13 +8900,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
   max-width: 220px;
 }
+.is-list-horizontal.large-thumb .card-title, .is-list-horizontal.large-thumb-on .card-title {
+  -webkit-line-clamp: 2;
+}
 .is-list-horizontal.large-thumb-on .card-content {
   max-height: 45%;
   overflow: hidden;
 }
 .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
-  -webkit-line-clamp: 3;
 }
 .is-list-horizontal .swiper-button-next {
   left: calc(100% - 62px);

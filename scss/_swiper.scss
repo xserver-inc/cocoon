@@ -37,6 +37,9 @@
     .widget-entry-card-link {
       max-width: 220px;
     }
+    .card-title{
+      -webkit-line-clamp: 2;
+    } 
   } 
   &.large-thumb-on{
     .card-content{
@@ -46,7 +49,6 @@
     }   
     .card-title{
       font-size: 14px;
-      -webkit-line-clamp: 3;
     } 
   }
 
