@@ -200,8 +200,12 @@
   });
 
   //リサイズした時はサイドバーを元に戻す
+  var vw = window.innerWidth;
   $(window).resize(function () {
-    $('#sidebar-menu-input').prop('checked', false).change();
+    if (vw != window.innerWidth) {
+      $('#sidebar-menu-input').prop('checked', false).change();
+    }
+    vw = window.innerWidth;
   });
 
 })(jQuery);
