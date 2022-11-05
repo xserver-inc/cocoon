@@ -17040,6 +17040,10 @@ body.wp-admin {
   display: flex;
   flex-wrap: wrap;
 }
+.admin-settings .demo .block-editor-block-list__layout .column-wrap {
+  display: flex;
+  margin-bottom: 1em;
+}
 .admin-settings .demo .search-form div.sbtn {
   transition: 0.3s;
   /* 変化をなめらかにする */
@@ -17541,9 +17545,6 @@ body.wp-admin {
   }
   .admin-settings .demo .article .wp-block-columns :nth-child(odd):nth-last-child(2) {
     margin-bottom: 0;
-  }
-  .admin-settings .demo .column-wrap > * {
-    margin-bottom: 0 !important;
   }
   .admin-settings .demo .fb-like-balloon-body {
     margin-right: 100px;

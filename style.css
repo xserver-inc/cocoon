@@ -10059,6 +10059,11 @@ twitter-widget {
   flex-wrap: wrap;
 }
 
+.block-editor-block-list__layout .column-wrap {
+  display: flex;
+  margin-bottom: 1em;
+}
+
 /* 検索フォーム風スタイルのボタンを装飾 */
 .search-form div.sbtn {
   transition: 0.3s;
@@ -10664,10 +10669,6 @@ _:-ms-lang(x), .mc-circle {
 
   .article .wp-block-columns :nth-child(odd):nth-last-child(2) {
     margin-bottom: 0;
-  }
-
-  .column-wrap > * {
-    margin-bottom: 0 !important;
   }
 
   /************************************
