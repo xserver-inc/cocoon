@@ -40,10 +40,19 @@ update_theme_option(OP_THUMBNAIL_IMAGE_TYPE);
 //Retinaディスプレイ
 update_theme_option(OP_RETINA_THUMBNAIL_ENABLE);
 
+//以前のNO IMAGE画像
+$old_no_image = get_no_image_url();
 //NO IMAGE画像
 update_theme_option(OP_NO_IMAGE_URL);
+
+//現在のNO IMAGE画像
+$new_no_image = get_no_image_url();
+
 //画像が設定された場合は生成
+// _v('old='.$old_no_image);
+// _v('new='.$new_no_image);
 if (file_exists(get_no_image_file()) &&
+   ($old_no_image !== $new_no_image) &&
    (!file_exists(get_no_image_320x180_file())
        || !file_exists(get_no_image_160x90_file())
        || !file_exists(get_no_image_120x68_file())
