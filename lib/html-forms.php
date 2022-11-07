@@ -1724,7 +1724,7 @@ function get_navi_card_wrap_tag($atts){
     'class' => null,
   ), $atts));
   $navi_card_class = get_additional_widget_entry_cards_classes($atts);
-  $tag = '<div class="navi-entry-cards widget-entry-cards no-icon swiper'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+  $tag = '<div class="navi-entry-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
   return $tag;
 }
 endif;
