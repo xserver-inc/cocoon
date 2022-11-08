@@ -27,22 +27,43 @@ export default function edit(props) {
     className: className,
   });
 
+
+  const getRankingMessage = () => {
+    if (id == '-1' && typeof gbItemRankings !== 'undefined') {
+      return (
+        <div class='editor-ranking-message'>
+          {__('ランキングを選択してください。', THEME_NAME)}
+        </div>
+      );
+    }
+    else if (id == '-1' && typeof gbItemRankings === 'undefined') {
+      return (
+        <div class='editor-ranking-message'>
+          {__('ランキングが登録されていません。ダッシュボードメニューの「Cocoon設定」→「ランキング作成」からランキングを作成してください。', THEME_NAME)}
+        </div>
+      );
+    }
+  }
+
   var options = createOptions();
   return (
-    <Fragment>
-      <div {...blockProps}>
-        <SelectControl
-          label={__('ランキング', THEME_NAME)}
-          labelPosition="side"
-          value={id}
-          onChange={(value) => setAttributes({ id: value })}
-          options={options}
-        />
-        <ServerSideRender
-          block={props.name}
-          attributes={attributes}
-        />
-      </div>
-    </Fragment>
+    [
+      <Fragment>
+        <div {...blockProps}>
+          <SelectControl
+            label={__('ランキング', THEME_NAME)}
+            labelPosition="side"
+            value={id}
+            onChange={(value) => setAttributes({ id: value })}
+            options={options}
+          />
+          <ServerSideRender
+            block={props.name}
+            attributes={attributes}
+          />
+        </div>
+      </Fragment>,
+      getRankingMessage()
+    ]
   );
 }
