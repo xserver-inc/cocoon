@@ -895,12 +895,13 @@ textarea[name="the_page_memo"]{
   opacity: 0.5;
   padding: 1.4em 0.6em 0.6em;
   position: relative;
-  display: inline-block;
+  display: table-cell;
   background-color: $xx_thin;
   border: 1px solid #ba2636;
   border-radius: 2px;
   pointer-events: none;
   cursor: not-allowed;
+  min-width: 60px;
 
   &::before{
     content: 'スキン制御';
