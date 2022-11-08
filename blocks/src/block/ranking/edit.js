@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 import { SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { ServerSideRender } from '@wordpress/editor'
+import { ServerSideRender } from '@wordpress/editor';
 
 export default function edit(props) {
   const { attributes, setAttributes, className } = props;
@@ -11,13 +11,15 @@ export default function edit(props) {
 
   function createOptions() {
     var options = [];
-    console.log(gbItemRankings);
-    gbItemRankings.forEach((rank) => {
-      if (rank.visible == '1') {
-        options.unshift({ value: rank.id, label: rank.title });
-      }
-    });
+    if (typeof gbItemRankings !== 'undefined') {
+      gbItemRankings.forEach((rank) => {
+        if (rank.visible == '1') {
+          options.unshift({ value: rank.id, label: rank.title });
+        }
+      });
+    }
 
+    options.unshift({ value: '-1', label: __('未選択', THEME_NAME)})
     return options;
   }
 

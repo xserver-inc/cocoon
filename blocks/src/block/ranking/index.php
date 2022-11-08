@@ -6,7 +6,7 @@ function render_ranking_list($attributes, $content) {
   ob_start();
   generate_item_ranking_tag($id);
   $ranking_html = ob_get_clean();
-  
+
   return $ranking_html;
 }
 
@@ -15,9 +15,9 @@ if( function_exists('register_block_type')) {
     'attributes' => array(
       'id' => array (
         'type' => 'string',
-        'default' => '1',
+        'default' => '-1',
       )
     ),
     'render_callback' => 'render_ranking_list',
-  ) );  
+  ) );
 }
