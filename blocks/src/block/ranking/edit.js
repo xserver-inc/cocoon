@@ -11,15 +11,15 @@ export default function edit(props) {
 
   function createOptions() {
     var options = [];
+    options.push({ value: '-1', label: __('未選択', THEME_NAME)})
     if (typeof gbItemRankings !== 'undefined') {
       gbItemRankings.forEach((rank) => {
         if (rank.visible == '1') {
-          options.unshift({ value: rank.id, label: rank.title });
+          options.push({ value: rank.id, label: rank.title });
         }
       });
     }
 
-    options.unshift({ value: '-1', label: __('未選択', THEME_NAME)})
     return options;
   }
 
