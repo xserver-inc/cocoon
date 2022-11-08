@@ -15,10 +15,12 @@ endif;
 require_once abspath(__FILE__).'lib/_defins.php'; //定数を定義
 
 //アップデートチェックの初期化
-require abspath(__FILE__).'lib/theme-update-checker.php'; //ライブラリのパス
-$example_update_checker = new ThemeUpdateChecker(
-  strtolower(THEME_PARENT_DIR), //テーマフォルダ名
-  'https://raw.githubusercontent.com/xserver-inc/cocoon/master/update-info.json' //JSONファイルのURL
+require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://raw.githubusercontent.com/xserver-inc/cocoon/master/update-info.json', //JSONファイルのURL
+    __FILE__,
+    'wp-cocoon-theme' 
 );
 
 //本文部分の冒頭を綺麗に抜粋する
