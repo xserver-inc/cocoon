@@ -10043,32 +10043,9 @@ twitter-widget {
   display: none;
 }
 
-.entry-content .wp-block-gallery .blocks-gallery-item {
-  display: list-item;
-}
-
-.wp-block-list li,
-.iconlist-box li {
-  margin: 0;
-}
-
-.iconlist-box li {
-  display: flex;
-}
-
-.btn-wrap-block {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 .is-layout-flex {
   display: flex;
   flex-wrap: wrap;
-}
-
-.block-editor-block-list__layout .column-wrap {
-  display: flex;
-  margin-bottom: 1em;
 }
 
 /* 検索フォーム風スタイルのボタンを装飾 */

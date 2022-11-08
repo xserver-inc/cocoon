@@ -1096,6 +1096,38 @@ body::before,
   }
 }
 
+
+//古いiOSでGutenbergのギャラリー表示を表示させると表示が崩れる不具合対応
+//https://wp-cocoon.com/community/bugs/%e3%82%bf%e3%83%96%e3%83%ac%e3%83%83%e3%83%88%e9%96%b2%e8%a6%a7%e6%99%82%e3%81%ab%e7%94%bb%e5%83%8f%e3%81%a8%e8%a8%98%e4%ba%8b%e3%81%ae%e6%96%87%e5%ad%97%e3%81%8c%e8%a2%ab%e3%81%a3%e3%81%a6%e3%81%97/
+.entry-content .wp-block-gallery .blocks-gallery-item {
+	display: list-item;
+}
+.block-editor-block-list__layout .column-wrap {
+  display: flex;
+	margin-bottom: 1em;
+}
+
 .is-root-container .wp-block{
   height: auto;
+}
+
+.wp-block-list,
+.iconlist-box{
+	li{
+		margin: 0;
+	}
+}
+
+.iconlist-box li{
+	display: flex;
+}
+
+.btn-wrap-block {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.block-editor-block-list__layout .column-wrap {
+  display: flex;
+	margin-bottom: 1em;
 }

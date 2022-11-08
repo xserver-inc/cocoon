@@ -17034,27 +17034,9 @@ body.wp-admin {
 .admin-settings .demo #main .wp-block-embed__wrapper::before {
   display: none;
 }
-.admin-settings .demo .entry-content .wp-block-gallery .blocks-gallery-item {
-  display: list-item;
-}
-.admin-settings .demo .wp-block-list li,
-.admin-settings .demo .iconlist-box li {
-  margin: 0;
-}
-.admin-settings .demo .iconlist-box li {
-  display: flex;
-}
-.admin-settings .demo .btn-wrap-block {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
 .admin-settings .demo .is-layout-flex {
   display: flex;
   flex-wrap: wrap;
-}
-.admin-settings .demo .block-editor-block-list__layout .column-wrap {
-  display: flex;
-  margin-bottom: 1em;
 }
 .admin-settings .demo .search-form div.sbtn {
   transition: 0.3s;

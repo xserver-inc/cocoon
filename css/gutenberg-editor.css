@@ -1310,6 +1310,34 @@ body::before,
   text-align: center;
 }
 
+.entry-content .wp-block-gallery .blocks-gallery-item {
+  display: list-item;
+}
+
+.block-editor-block-list__layout .column-wrap {
+  display: flex;
+  margin-bottom: 1em;
+}
+
 .is-root-container .wp-block {
   height: auto;
+}
+
+.wp-block-list li,
+.iconlist-box li {
+  margin: 0;
+}
+
+.iconlist-box li {
+  display: flex;
+}
+
+.btn-wrap-block {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.block-editor-block-list__layout .column-wrap {
+  display: flex;
+  margin-bottom: 1em;
 }
