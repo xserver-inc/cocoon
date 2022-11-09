@@ -53,6 +53,7 @@ export default function edit(props) {
           <SelectControl
             label={__('ランキング', THEME_NAME)}
             labelPosition="side"
+            className="editor-ranking-dropdown"
             value={id}
             onChange={(value) => setAttributes({ id: value })}
             options={options}
@@ -61,9 +62,9 @@ export default function edit(props) {
             block={props.name}
             attributes={attributes}
           />
+          {getRankingMessage()}
         </div>
       </Fragment>,
-      getRankingMessage()
     ]
   );
 }

@@ -7,7 +7,7 @@
   "attributes": {
     "id": {
       "type": "string",
-      "default": "1"
+      "default": "-1"
     }
   },
   "example": {}
