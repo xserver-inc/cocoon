@@ -2,6 +2,10 @@
 
 function render_ranking_list($attributes, $content) {
   $id = $attributes['id'];
+  $record = get_item_ranking($id);
+  if ($record->visible == false) {
+    return;
+  }
   //返り値がないechoとかのHTML出力結果を取得する
   ob_start();
   generate_item_ranking_tag($id);
