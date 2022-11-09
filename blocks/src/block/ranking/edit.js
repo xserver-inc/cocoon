@@ -45,6 +45,21 @@ export default function edit(props) {
     }
   }
 
+
+  const getRankingContent = () => {
+    if (id == '-1') {
+      return getRankingMessage();
+    }
+    else {
+      return (
+        <ServerSideRender
+          block={props.name}
+          attributes={attributes}
+        />
+      );
+    }
+  }
+
   var options = createOptions();
   return (
     [
@@ -58,11 +73,7 @@ export default function edit(props) {
             onChange={(value) => setAttributes({ id: value })}
             options={options}
           />
-          <ServerSideRender
-            block={props.name}
-            attributes={attributes}
-          />
-          {getRankingMessage()}
+          {getRankingContent()}
         </div>
       </Fragment>,
     ]
