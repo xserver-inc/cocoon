@@ -11,15 +11,15 @@ export default function edit(props) {
 
   function createOptions() {
     var options = [];
+    options.push({ value: '-1', label: __('未選択', THEME_NAME)})
     if (typeof gbItemRankings !== 'undefined') {
       gbItemRankings.forEach((rank) => {
         if (rank.visible == '1') {
-          options.unshift({ value: rank.id, label: rank.title });
+          options.push({ value: rank.id, label: rank.title });
         }
       });
     }
 
-    options.unshift({ value: '-1', label: __('未選択', THEME_NAME)})
     return options;
   }
 
@@ -27,22 +27,43 @@ export default function edit(props) {
     className: className,
   });
 
+
+  const getRankingMessage = () => {
+    if (id == '-1' && typeof gbItemRankings !== 'undefined') {
+      return (
+        <div class='editor-ranking-message'>
+          {__('ランキングを選択してください。', THEME_NAME)}
+        </div>
+      );
+    }
+    else if (id == '-1' && typeof gbItemRankings === 'undefined') {
+      return (
+        <div class='editor-ranking-message'>
+          {__('ランキングが登録されていません。ダッシュボードメニューの「Cocoon設定」→「ランキング作成」からランキングを作成してください。', THEME_NAME)}
+        </div>
+      );
+    }
+  }
+
   var options = createOptions();
   return (
-    <Fragment>
-      <div {...blockProps}>
-        <SelectControl
-          label={__('ランキング', THEME_NAME)}
-          labelPosition="side"
-          value={id}
-          onChange={(value) => setAttributes({ id: value })}
-          options={options}
-        />
-        <ServerSideRender
-          block={props.name}
-          attributes={attributes}
-        />
-      </div>
-    </Fragment>
+    [
+      <Fragment>
+        <div {...blockProps}>
+          <SelectControl
+            label={__('ランキング', THEME_NAME)}
+            labelPosition="side"
+            value={id}
+            onChange={(value) => setAttributes({ id: value })}
+            options={options}
+          />
+          <ServerSideRender
+            block={props.name}
+            attributes={attributes}
+          />
+        </div>
+      </Fragment>,
+      getRankingMessage()
+    ]
   );
 }
