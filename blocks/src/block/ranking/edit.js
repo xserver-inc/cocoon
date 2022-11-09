@@ -15,7 +15,10 @@ export default function edit(props) {
     if (typeof gbItemRankings !== 'undefined') {
       gbItemRankings.forEach((rank) => {
         if (rank.visible == '1') {
-          options.push({ value: rank.id, label: rank.title });
+          options.push({ value: rank.id, label: rank.title, disabled: false });
+        }
+        else {
+          options.push({ value: rank.id, label: rank.title, disabled: true });
         }
       });
     }

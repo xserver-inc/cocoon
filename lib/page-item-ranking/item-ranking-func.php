@@ -266,6 +266,9 @@ endif;
 if ( !function_exists( 'generate_item_ranking_tag' ) ):
 function generate_item_ranking_tag($id, $is_first_only = false){
   $record = get_item_ranking($id);
+  if ($record->visible == false) {
+    return;
+  }
   $items = isset($record->item_ranking) ? $record->item_ranking : array();
   $count = isset($record->count) ? intval($record->count) : 1;
   //$demo_class = $is_first_only ? ' demo' : '';
