@@ -56,11 +56,9 @@ if ( is_comment_allow() || have_comments() ): ?>
     'label_submit' => get_comment_submit_label(),
     'logged_in_as' => '<p class="logged-in-as">' . sprintf(
       /* translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL */
-      __( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>' ),
-      get_edit_user_link(),
-      /* translators: %s: user name */
-      esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.' ), $user_identity ) ),
+      __( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>' ),
       $user_identity,
+      get_edit_user_link(),
       wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
     ) . '</p>'.$comment_info_msg_tag,
     'comment_notes_before' => '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span>'. ( $req ? $required_text : '' ) . '</p>'.$comment_info_msg_tag,

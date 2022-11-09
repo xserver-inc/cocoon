@@ -231,7 +231,7 @@ endif;
 if ( !function_exists( 'get_no_image_160x90_url' ) ):
 function get_no_image_160x90_url($id = null){
   if ($no_image_url = get_no_image_url()) {
-    $res = get_image_sized_url(get_no_image_url(), THUMB160WIDTH, get_thumbnail_height(THUMB160WIDTH));
+    $res = get_image_sized_url($no_image_url, THUMB160WIDTH, get_thumbnail_height(THUMB160WIDTH));
   } else {
     $res = NO_IMAGE_160;
   }

@@ -218,6 +218,24 @@ if (!is_amp()): ?>
   </script>
   <?php endif //固定ヘッダー ?>
 
+  <?php //Swiper
+  global $_IS_SWIPER_ENABLE;
+  if ($_IS_SWIPER_ENABLE): ?>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+  const mySwiper = new Swiper('.is-list-horizontal.swiper', {
+    // Optional parameters
+    loop: true,
+    loopAdditionalSlides: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 4,
+    navigation: {
+      nextEl: '.is-list-horizontal .swiper-button-next',
+    },
+  });
+  </script>
+  <?php endif; //Swiper ?>
+
   <?php //数式表示
   if (is_formula_enable() && is_math_shortcode_exist()): ?>
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">

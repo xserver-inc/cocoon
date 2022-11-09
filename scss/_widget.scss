@@ -467,26 +467,4 @@ label.screen-reader-text{
   }
 }
 
-/* 新着カードを横並びにする */
-/* はみ出した分を横スクロール */
-.is-list-horizontal {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  /* カードのサムネイル幅200px */
-  .widget-entry-card-link {
-    flex-shrink: 0;
-    max-width: 320px;
-  }
-
-  .card-title{
-    font-size: 16px;
-  }
-  &.large-thumb,
-  &.large-thumb-on{
-    .widget-entry-card-link {
-      max-width: 200px;
-    }
-  } 
-}
 

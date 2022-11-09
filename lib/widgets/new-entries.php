@@ -31,6 +31,8 @@ class NewEntryWidgetItem extends WP_Widget {
     //表示数を取得
     $entry_count = apply_filters( 'new_entries_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     $entry_type = apply_filters( 'new_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    //水平表示
+    $is_horizontal = apply_filters( 'new_entries_widget_is_horizontal', empty($instance['is_horizontal']) ? 0 : 1 );
     $is_bold = apply_filters( 'new_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : 1 );
     $is_arrow_visible = apply_filters( 'new_entries_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : 1 );
     $is_sticky_visible = apply_filters( 'new_entries_widget_is_sticky_visible', empty($instance['is_sticky_visible']) ? 0 : 1 );
@@ -63,12 +65,12 @@ class NewEntryWidgetItem extends WP_Widget {
       }
 
 
-      //get_template_part('tmp/new-entries');
       //引数配列のセット
       $atts = array(
         'entry_count' => $entry_count,
         'cat_ids' => $categories,
         'type' => $entry_type,
+        'horizontal' => $is_horizontal,
         'bold' => $is_bold,
         'arrow' => $is_arrow_visible,
         'sticky' => $is_sticky_visible,
@@ -92,6 +94,7 @@ class NewEntryWidgetItem extends WP_Widget {
     if (isset($new_instance['entry_type']))
       $instance['entry_type'] = strip_tags($new_instance['entry_type']);
 
+    $instance['is_horizontal'] = !empty($new_instance['is_horizontal']) ? 1 : 0;
     $instance['is_bold'] = !empty($new_instance['is_bold']) ? 1 : 0;
     $instance['is_arrow_visible'] = !empty($new_instance['is_arrow_visible']) ? 1 : 0;
     $instance['is_sticky_visible'] = !empty($new_instance['is_sticky_visible']) ? 1 : 0;
@@ -104,6 +107,7 @@ class NewEntryWidgetItem extends WP_Widget {
         'title'   => '',
         'entry_count' => EC_DEFAULT,
         'entry_type'  => ET_DEFAULT,
+        'is_horizontal'  => 0,
         'is_bold'  => 0,
         'is_arrow_visible'  => 0,
         'is_sticky_visible'  => 1,
@@ -122,6 +126,7 @@ class NewEntryWidgetItem extends WP_Widget {
       $entry_count = esc_attr($instance['entry_count']);
     if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
+    $is_horizontal = empty($instance['is_horizontal']) ? 0 : 1;
     $is_bold = empty($instance['is_bold']) ? 0 : 1;
     $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
     $is_sticky_visible = empty($instance['is_sticky_visible']) ? 0 : 1;
@@ -159,6 +164,13 @@ class NewEntryWidgetItem extends WP_Widget {
       echo '<br>';
       $options = get_widget_entry_type_options();
       generate_radiobox_tag($this->get_field_name('entry_type'), $options, $entry_type);
+      ?>
+    </p>
+    <?php //横型表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横型表示', THEME_NAME ));
+        _e( '（「大きなサムネイル」との使用がお勧め）', THEME_NAME )
       ?>
     </p>
     <?php //タイトルを太字にする ?>

@@ -453,7 +453,7 @@ function get_additional_widget_entry_cards_classes($atts){
   }
 
   if ($horizontal) {
-    $classes .= ' is-list-horizontal';
+    $classes .= ' is-list-horizontal swiper';
   }
   return apply_filters('get_additional_widget_entry_cards_classes', $classes);
 }

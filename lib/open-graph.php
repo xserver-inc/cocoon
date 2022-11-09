@@ -68,8 +68,12 @@ class OpenGraphGetter implements Iterator
             'Cache-Control' => 'no-cache',
           ),
           'cocoon' => true,
-          'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',
+          'user-agent' => 'Mozilla/5.0',
+          // 'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',//×
+          // 'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0',//○
+          // 'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.home_url(),//×
         );
+        // _v($args);
         if (is_amazon_site_page($URI)) {
           $args['user-agent'] = 'Twitterbot/1.0';
         }
