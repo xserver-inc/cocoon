@@ -69,6 +69,7 @@ class OpenGraphGetter implements Iterator
           ),
           'cocoon' => true,
           'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',//×
+          // 楽天OGP情報取得テスト
           // 'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain(),//○
           // 'user-agent' => 'Mozilla/5.0',//○
           // 'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0',//○
@@ -79,6 +80,7 @@ class OpenGraphGetter implements Iterator
           $args['user-agent'] = 'Twitterbot/1.0';
         }
         if (is_rakuten_site_page($URI)) {
+          //通常のユーザーエージェントだと楽天でOGP情報が取得できないため
           $args['user-agent'] = 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain();
         } else {
           unset($args['headers']);
@@ -96,7 +98,6 @@ class OpenGraphGetter implements Iterator
             $response = get_http_content($URI);
           }
         }
-        //var_dump($response);
         if (!empty($response)) {
             return self::_parse($response, $URI);
         } else {
@@ -219,60 +220,6 @@ class OpenGraphGetter implements Iterator
     if (empty($page_description)) {
       $page->_values['description'] = $description;
     }
-
-    // //Amazonページかどうか
-    // if (is_amazon_site_page($URI)) {
-    //   $image_url = null;
-    //   //Amazonページなら画像取得
-    //   if (includes_string($HTML, 'id="landingImage"')) {
-    //     //通常商品ページ用
-    //     if (preg_match('|https://images-na.ssl-images-amazon.com/images/I/\d[^&"]+?_S[A-Z]\d{3}(,\d{3})?_\.jpg|i', $HTML, $m)) {
-    //       if (isset($m[0])) {
-    //         //_v($m[0]);
-    //         $image_url = $m[0];
-    //       }
-    //     } else {
-    //       //https://images-na.ssl-images-amazon.com/images/I/41b9TQppZJL._AC_.jp
-    //       //https://images-na.ssl-images-amazon.com/images/I/81OcexSf0SL._AC_UX625_.jpg
-    //       if (preg_match('/"(https:\/\/images-na\.ssl-images-amazon\.com\/images\/I\/[^&"]+?\._AC_(U[XY][^&"]+?)?\.jpg)"/i', $HTML, $m)) {
-    //         //var_dump($m[1]);
-    //         if (isset($m[1])) {
-    //           //_v($m[0]);
-    //           $image_url = $m[1];
-    //         }
-    //       //https://m.media-amazon.com/images/I/51QZhiaZqRL._AC_.jpg
-    //       //https://m.media-amazon.com/images/I/61Hs3z66UFL._AC_SY450_.jpg
-    //       } else if (preg_match('/id="landingImage" data-a-dynamic-image="\{&quot;(https:\/\/m\.media-amazon\.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m)) {
-    //         if (isset($m[1])) {
-    //           $image_url = $m[1];
-    //         }
-    //       }
-    //     }
-    //   } else if (includes_string($HTML, 'id="imgBlkFront"')) {
-    //     //書籍ページ用
-    //     //https://images-fe.ssl-images-amazon.com/images/I/51aV7NaxG4L.jpg
-    //     $res = preg_match('/id="imgBlkFront" data-a-dynamic-image="\{&quot;(https:\/\/images-(fe|na)\.ssl-images-amazon\.com\/images\/I\/.+?\.jpg)&quot;:/i', $HTML, $m);
-    //     if ($res && isset($m[1])) {
-    //       $image_url = $m[1];
-    //     }
-    //   } else if (includes_string($HTML, 'id="MusicCartToastContainer"')) {
-    //     //Amazon Music
-    //     //https://m.media-amazon.com/images/I/61+mhXhVhfL._SS500_.jpg
-    //     //https://images-na.ssl-images-amazon.com/images/I/41AFHM036KL._AC_.jpg
-    //     $res = preg_match('/<img.+?src="(https:\/\/m\.media-amazon\.com\/images\/I\/.+?)">/i', $HTML, $m);
-    //     if ($res && isset($m[1])) {
-    //       $image_url = $m[1];
-    //     }
-    //   } else if (includes_string($HTML, 'id="ebooksImgBlkFront"')) {
-    //     //Amazon Kindle
-    //     //https://m.media-amazon.com/images/I/51tY7U5mUHL.jpg
-    //     $res = preg_match('/"(https:\/\/m\.media-amazon\.com\/images\/I\/[^&"]+?\.jpg)"/i', $HTML, $m);
-    //     if ($res && isset($m[1])) {
-    //       $image_url = $m[1];
-    //     }
-    //   }
-    //   $page->_values['image'] = $image_url;
-    // }
 
 		return $page;
 	}
