@@ -1131,3 +1131,17 @@ body::before,
   display: flex;
 	margin-bottom: 1em;
 }
+
+//ランキングブロック
+div.editor-ranking-message{
+  padding: 20px;
+  border: solid aliceblue 2px;
+  margin-bottom: 1em;
+}
+
+div.editor-ranking-dropdown{
+  margin-bottom: 1em;
+  select option[disabled]{
+    display: none;
+  }
+}

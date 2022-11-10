@@ -300,6 +300,7 @@ require_once abspath(__FILE__).'block/tab-box/index.php';
 require_once abspath(__FILE__).'block/timeline/index.php';
 require_once abspath(__FILE__).'block/timeline-item/index.php';
 require_once abspath(__FILE__).'block/toggle-box/index.php';
+require_once abspath(__FILE__).'block/ranking/index.php';
 
 require_once abspath(__FILE__).'block-universal/caption-box/index.php';
 require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';

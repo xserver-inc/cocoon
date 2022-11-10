@@ -19,5 +19,11 @@
 			"command": "cd blocks && npm run-script eject",
 			"problemMatcher": []
 		},
+		{
+			"label": "npm install",
+			"type": "shell",
+			"command": "cd blocks && npm install && npm audit fix",
+			"problemMatcher": []
+		},
 	]
 }
