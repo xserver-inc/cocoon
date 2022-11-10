@@ -10,5 +10,9 @@
       "default": "-1"
     }
   },
-  "example": {}
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
 }

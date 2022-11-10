@@ -12,13 +12,16 @@ function render_ranking_list($attributes, $content) {
 }
 
 if( function_exists('register_block_type')) {
-  register_block_type( 'cocoon-blocks/ranking', array(
-    'attributes' => array(
-      'id' => array (
-        'type' => 'string',
-        'default' => '-1',
-      )
-    ),
-    'render_callback' => 'render_ranking_list',
-  ) );
+  register_block_type_from_metadata( 
+    __DIR__,
+     array(
+      'attributes' => array(
+        'id' => array (
+          'type' => 'string',
+          'default' => '-1',
+        )
+      ),
+      'render_callback' => 'render_ranking_list',
+    ) 
+  );
 }
