@@ -135,3 +135,5 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 [hausercarl](https://github.com/hausercarl)
 
 [mirumi](https://github.com/mirumirumi)
+
+[vic322](https://github.com/vic322)

@@ -1,4 +1,4 @@
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes, className }) {
   let { id } = attributes;
