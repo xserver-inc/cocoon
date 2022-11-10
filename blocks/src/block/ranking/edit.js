@@ -4,10 +4,21 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { ServerSideRender } from '@wordpress/editor';
+import classnames from 'classnames';
 
 export default function edit(props) {
   const { attributes, setAttributes, className } = props;
   const { id } = attributes;
+  const classes = classnames('ranking-box', 'block-box', 
+    {
+      [ 'ranking-' + id ]: !! (id !== '-1'),
+      [ className ]: !! className,
+    }
+  );
+
+  const blockProps = useBlockProps({
+    className: classes,
+  });
 
   function createOptions() {
     var options = [];
@@ -25,10 +36,6 @@ export default function edit(props) {
 
     return options;
   }
-
-  const blockProps = useBlockProps({
-    className: className,
-  });
 
 
   const getRankingMessage = () => {
