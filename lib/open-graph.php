@@ -78,8 +78,9 @@ class OpenGraphGetter implements Iterator
         if (is_amazon_site_page($URI)) {
           $args['user-agent'] = 'Twitterbot/1.0';
         }
-        if (!is_rakuten_site_page($URI)) {
+        if (is_rakuten_site_page($URI)) {
           $args['user-agent'] = 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain();
+        } else {
           unset($args['headers']);
         }
 
