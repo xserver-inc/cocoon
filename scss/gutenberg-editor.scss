@@ -1141,4 +1141,7 @@ div.editor-ranking-message{
 
 div.editor-ranking-dropdown{
   margin-bottom: 1em;
+  select option[disabled]{
+    display: none;
+  }
 }
