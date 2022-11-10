@@ -68,9 +68,9 @@ class OpenGraphGetter implements Iterator
             'Cache-Control' => 'no-cache',
           ),
           'cocoon' => true,
-          'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain(),//○
+          'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',//×
+          // 'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain(),//○
           // 'user-agent' => 'Mozilla/5.0',//○
-          // 'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',//×
           // 'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0',//○
           // 'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.home_url(),//×
         );
@@ -79,17 +79,13 @@ class OpenGraphGetter implements Iterator
           $args['user-agent'] = 'Twitterbot/1.0';
         }
         if (!is_rakuten_site_page($URI)) {
+          $args['user-agent'] = 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain();
           unset($args['headers']);
         }
-        // _v($URI);
-        // _v(is_rakuten_site_page($URI));
-        // _v($args);
+
         $res = wp_remote_get( $URI, $args );
         $response_code = wp_remote_retrieve_response_code( $res );
-        //echo('<pre>');
-        // _v($res);
-        // _v($response_code);
-        //echo('</pre>');
+
         if (!is_wp_error( $res ) && $response_code === 200) {
           $response = $res['body'];
         } else if (!is_admin()) {
