@@ -8,7 +8,7 @@ import classnames from 'classnames';
 
 export default function edit(props) {
   const { attributes, setAttributes, className } = props;
-  const { id, classNames} = attributes;
+  const { id } = attributes;
   const classes = classnames('ranking-box', 'block-box',
     {
       [ 'ranking-' + id ]: !! (id !== '-1'),
@@ -16,10 +16,6 @@ export default function edit(props) {
     }
   );
   setAttributes({ classNames: classes });
-
-  const blockProps = useBlockProps({
-    className: classes,
-  });
 
   function createOptions() {
     var options = [];
@@ -82,7 +78,7 @@ export default function edit(props) {
           onChange={(value) => setAttributes({ id: value, classNames: classes })}
           options={options}
       />
-      <div {...blockProps}>
+      <div {...useBlockProps()}>
         {getRankingContent()}
       </div>
     </Fragment>
