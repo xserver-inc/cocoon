@@ -70,15 +70,15 @@ export default function edit(props) {
   var options = createOptions();
   return (
     <Fragment>
-      <SelectControl
-          label={__('ランキング', THEME_NAME)}
-          labelPosition="side"
-          className="editor-ranking-dropdown"
-          value={id}
-          onChange={(value) => setAttributes({ id: value, classNames: classes })}
-          options={options}
-      />
       <div {...useBlockProps()}>
+        <SelectControl
+            label={__('ランキング', THEME_NAME)}
+            labelPosition="side"
+            className="editor-ranking-dropdown"
+            value={id}
+            onChange={(value) => setAttributes({ id: value, classNames: classes })}
+            options={options}
+        />
         {getRankingContent()}
       </div>
     </Fragment>
