@@ -2,26 +2,32 @@
 
 function render_ranking_list($attributes, $content) {
   $id = $attributes['id'];
-
-  //返り値がないechoとかのHTML出力結果を取得する
-  ob_start();
-  generate_item_ranking_tag($id);
-  $ranking_html = ob_get_clean();
-
-  return $ranking_html;
+  $classes = $attributes['classNames'];
+  if ($id) {
+    //返り値がないechoとかのHTML出力結果を取得する
+    ob_start();
+    echo '<div class="'.$classes.'">';
+    generate_item_ranking_tag($id);
+    echo '</div>';
+    return ob_get_clean();
+  }
 }
 
 if( function_exists('register_block_type')) {
-  register_block_type_from_metadata( 
+  register_block_type_from_metadata(
     __DIR__,
      array(
       'attributes' => array(
         'id' => array (
           'type' => 'string',
           'default' => '-1',
-        )
+        ),
+        'classNames' => array (
+          'type' => 'string',
+          'default' => '',
+        ),
       ),
       'render_callback' => 'render_ranking_list',
-    ) 
+    )
   );
 }

@@ -8,13 +8,14 @@ import classnames from 'classnames';
 
 export default function edit(props) {
   const { attributes, setAttributes, className } = props;
-  const { id } = attributes;
-  const classes = classnames('ranking-box', 'block-box', 
+  const { id, classNames} = attributes;
+  const classes = classnames('ranking-box', 'block-box',
     {
       [ 'ranking-' + id ]: !! (id !== '-1'),
       [ className ]: !! className,
     }
   );
+  setAttributes({ classNames: classes });
 
   const blockProps = useBlockProps({
     className: classes,
@@ -72,20 +73,18 @@ export default function edit(props) {
 
   var options = createOptions();
   return (
-    [
-      <Fragment>
-        <div {...blockProps}>
-          <SelectControl
-            label={__('ランキング', THEME_NAME)}
-            labelPosition="side"
-            className="editor-ranking-dropdown"
-            value={id}
-            onChange={(value) => setAttributes({ id: value })}
-            options={options}
-          />
-          {getRankingContent()}
-        </div>
-      </Fragment>,
-    ]
+    <Fragment>
+      <SelectControl
+          label={__('ランキング', THEME_NAME)}
+          labelPosition="side"
+          className="editor-ranking-dropdown"
+          value={id}
+          onChange={(value) => setAttributes({ id: value, classNames: classes })}
+          options={options}
+      />
+      <div {...blockProps}>
+        {getRankingContent()}
+      </div>
+    </Fragment>
   );
 }
