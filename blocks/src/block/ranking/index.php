@@ -17,16 +17,6 @@ if( function_exists('register_block_type')) {
   register_block_type_from_metadata(
     __DIR__,
      array(
-      'attributes' => array(
-        'id' => array (
-          'type' => 'string',
-          'default' => '-1',
-        ),
-        'classNames' => array (
-          'type' => 'string',
-          'default' => '',
-        ),
-      ),
       'render_callback' => 'render_ranking_list',
     )
   );
