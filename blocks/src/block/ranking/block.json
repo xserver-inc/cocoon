@@ -8,6 +8,10 @@
     "id": {
       "type": "string",
       "default": "-1"
+    },
+    "classNames": {
+      "type": "string",
+      "default": ""
     }
   },
   "example": {},

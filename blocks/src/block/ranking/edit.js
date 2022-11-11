@@ -4,10 +4,18 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { ServerSideRender } from '@wordpress/editor';
+import classnames from 'classnames';
 
 export default function edit(props) {
   const { attributes, setAttributes, className } = props;
   const { id } = attributes;
+  const classes = classnames('ranking-box', 'block-box',
+    {
+      [ 'ranking-' + id ]: !! (id !== '-1'),
+      [ className ]: !! className,
+    }
+  );
+  setAttributes({ classNames: classes });
 
   function createOptions() {
     var options = [];
@@ -25,10 +33,6 @@ export default function edit(props) {
 
     return options;
   }
-
-  const blockProps = useBlockProps({
-    className: className,
-  });
 
 
   const getRankingMessage = () => {
@@ -65,20 +69,18 @@ export default function edit(props) {
 
   var options = createOptions();
   return (
-    [
-      <Fragment>
-        <div {...blockProps}>
-          <SelectControl
+    <Fragment>
+      <div {...useBlockProps()}>
+        <SelectControl
             label={__('ランキング', THEME_NAME)}
             labelPosition="side"
             className="editor-ranking-dropdown"
             value={id}
-            onChange={(value) => setAttributes({ id: value })}
+            onChange={(value) => setAttributes({ id: value, classNames: classes })}
             options={options}
-          />
-          {getRankingContent()}
-        </div>
-      </Fragment>,
-    ]
+        />
+        {getRankingContent()}
+      </div>
+    </Fragment>
   );
 }
