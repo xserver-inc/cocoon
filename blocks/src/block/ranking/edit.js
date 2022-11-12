@@ -17,16 +17,22 @@ export default function edit(props) {
   );
   setAttributes({ classNames: classes });
 
+  // attributesのidが存在するかしないかを判断するフラグ
+  let isRankingIdExist = false;
+
   function createOptions() {
     var options = [];
     options.push({ value: '-1', label: __('未選択', THEME_NAME)})
     if (typeof gbItemRankings !== 'undefined') {
       gbItemRankings.forEach((rank) => {
+        if ((isRankingIdExist === false) && (rank.id === id)) {
+          isRankingIdExist = true;
+        }
         if (rank.visible == '1') {
           options.push({ value: rank.id, label: rank.title, disabled: false });
         }
         else {
-          options.push({ value: rank.id, label: rank.title, disabled: true });
+          options.push({ value: rank.id, label: rank.title + __('（リスト非表示）', THEME_NAME), disabled: true });
         }
       });
     }
@@ -68,6 +74,13 @@ export default function edit(props) {
   }
 
   var options = createOptions();
+
+  // ランキングを消したりして存在しないランキングIDだった場合は-1をセットする
+  // これをすることによりブロックエディターリロード時でも「ランキングを選択してください。」などのエラーメッセージが出力される
+  if (!isRankingIdExist) {
+    setAttributes({ id: '-1' });
+  }
+  
   return (
     <Fragment>
       <div {...useBlockProps()}>
