@@ -167,13 +167,11 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   }
 
   //ランキング情報を渡す
-  if ($is_rankings_visible) {
-    wp_localize_script(
-      'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-      'gbItemRankings', //任意のオブジェクト名
-      $rankings //プロバティ
-    );
-  }
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'gbItemRankings', //任意のオブジェクト名
+    $rankings //プロバティ
+  );
 
   //カラーパレット情報渡し
   wp_localize_script(
