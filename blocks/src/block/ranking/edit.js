@@ -28,7 +28,7 @@ export default function edit(props) {
     options.push({ value: '-1', label: __('未選択', THEME_NAME)})
     if (typeof gbItemRankings !== 'undefined') {
       gbItemRankings.forEach((rank) => {
-        if ((isRankingIdExist === false) && (rank.id === id)) {
+        if ((isRankingIdExist === false) && (rank.id == id)) {
           isRankingIdExist = true;
         }
         if (rank.visible == '1') {
@@ -58,6 +58,9 @@ export default function edit(props) {
     else if (id == '-1' && typeof gbItemRankings === 'undefined') {
       msg = __('ランキングが登録されていません。', THEME_NAME) + setmsg;
     }
+    else {
+      return '';
+    }
     return (
       <div class='editor-ranking-message'>
         {msg}
@@ -84,6 +87,7 @@ export default function edit(props) {
 
   // ランキングを消したりして存在しないランキングIDだった場合は-1をセットする
   // これをすることによりブロックエディターリロード時でも「ランキングを選択してください。」などのエラーメッセージが出力される
+  // ServerSideRenderも呼び出されない
   if (!isRankingIdExist) {
     setAttributes({ id: '-1' });
   }
