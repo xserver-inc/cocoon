@@ -225,8 +225,6 @@ if (!is_amp()): ?>
   <script>
   const mySwiper = new Swiper('.is-list-horizontal.swiper', {
     // Optional parameters
-    loop: true,
-    loopAdditionalSlides: 1,
     slidesPerView: 'auto',
     spaceBetween: 4,
     navigation: {
