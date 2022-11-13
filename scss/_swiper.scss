@@ -13,7 +13,6 @@
 .is-list-horizontal {
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
   /* カードのサムネイル幅200px */
   .widget-entry-card-link {
     flex-shrink: 0;

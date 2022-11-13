@@ -8883,7 +8883,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-list-horizontal {
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
   /* カードのサムネイル幅200px */
 }
 .is-list-horizontal .widget-entry-card-link {
