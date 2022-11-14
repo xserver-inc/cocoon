@@ -532,5 +532,9 @@ div#bbpress-forums .bbp-body div.bbp-reply-content{
   }
 }
 
+.appeal-in{
+  min-height: 200px;
+}
+
 //商品ボックス
 @include product_item_box_480;

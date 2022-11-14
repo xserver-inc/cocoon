@@ -18017,6 +18017,9 @@ body.wp-admin {
   .admin-settings .demo div#bbpress-forums .bbp-body div.bbp-reply-content p {
     margin-top: 0;
   }
+  .admin-settings .demo .appeal-in {
+    min-height: 200px;
+  }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb {
     width: 80px;
     min-width: 80px;

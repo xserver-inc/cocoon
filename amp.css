@@ -10083,6 +10083,10 @@ pre {
     margin-top: 0;
   }
 
+  .appeal-in {
+    min-height: 200px;
+  }
+
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb {
     width: 80px;
     min-width: 80px;
