@@ -149,7 +149,7 @@ endif;
 define('OP_BLOCK_EDITOR_STYLE_BLOCK_OPTION_VISIBLE', 'block_editor_style_block_option_visible');
 if ( !function_exists( 'is_block_editor_style_block_option_visible' ) ):
 function is_block_editor_style_block_option_visible(){
-  return get_theme_option(OP_BLOCK_EDITOR_STYLE_BLOCK_OPTION_VISIBLE);
+  return get_theme_option(OP_BLOCK_EDITOR_STYLE_BLOCK_OPTION_VISIBLE, 1);
 }
 endif;
 
