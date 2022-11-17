@@ -58,7 +58,7 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
     if (is_single_breadcrumbs_include_post() && is_singular()) {
       //カウントを進める
       ++$count;
-      echo '<div class="breadcrumb-item"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption">'.esc_html(get_the_title()).'</span><meta itemprop="position" content="'.$count.'" /></div>';
+      echo '<div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption" itemprop="name">'.esc_html(get_the_title()).'</span><meta itemprop="position" content="'.$count.'" /></div>';
     }
 
     echo '</div><!-- /#breadcrumb -->';
