@@ -40,6 +40,7 @@ export default function edit(props) {
         }
       });
     }
+    console.log(abledDropdownListItemCount);
 
     return options;
   }
@@ -48,21 +49,22 @@ export default function edit(props) {
   const getTemplateMessage = () => {
     let msg = '';
     const setmsg = __('ダッシュボードメニューの「Cocoon設定」→「テンプレート」からテンプレートを作成してください。', THEME_NAME);
-    if (id == '-1' && typeof gbTemplates !== 'undefined' && abledDropdownListItemCount === 0) {
-      //テンプレート非表示などで行こに選択できるテンプレートが存在しない場合
-      msg = __('有効なテンプレートが登録されていません。', THEME_NAME) + setmsg;
-    }
-    else if (id == '-1' && typeof gbTemplates !== 'undefined') {
-      msg = __('テンプレートを選択してください。', THEME_NAME);
-    }
-    else if (id == '-1' && typeof gbTemplates === 'undefined') {
+    if (typeof gbTemplates === 'undefined' || gbTemplates.length === 0) {
       msg = __('テンプレートが登録されていません。', THEME_NAME) + setmsg;
+    }
+    else if (typeof gbTemplates !== 'undefined' && abledDropdownListItemCount === 0) {
+      //テンプレート非表示などで有効に選択できるテンプレートが存在しない場合
+      msg = __('有効なテンプレートが登録されていません。', THEME_NAME) + setmsg + __('もしくは登録されているテンプレートを表示設定にしてください。。', THEME_NAME);
+    }
+    else if (typeof gbTemplates !== 'undefined') {
+      //ドロップダウンにテンプレートの選択肢がある場合
+      msg = __('テンプレートを選択してください。', THEME_NAME);
     }
     else {
       return '';
     }
     return (
-      <div class='editor-template-message'>
+      <div class='cocoon-render-message editor-template-message'>
         {msg}
       </div>
     );
@@ -98,7 +100,7 @@ export default function edit(props) {
         <SelectControl
             label={__('テンプレート', THEME_NAME)}
             labelPosition="side"
-            className="editor-template-dropdown"
+            className="cocoon-render-dropdown editor-template-dropdown"
             value={id}
             onChange={(value) => setAttributes({ id: value, classNames: classes })}
             options={options}
