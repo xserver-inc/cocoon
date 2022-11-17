@@ -27,7 +27,7 @@ $root_text = apply_filters('breadcrumbs_page_root_text', $root_text);
   <?php //ページタイトルを含める場合
   if (is_page_breadcrumbs_include_post()):
     $count++;
-    ?><div class="breadcrumb-item"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption"><?php echo esc_html(get_the_title()); ?></span><meta itemprop="position" content="<?php echo $count; ?>" /></div>
+    ?><div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><span class="breadcrumb-caption" itemprop="name"><?php echo esc_html(get_the_title()); ?></span><meta itemprop="position" content="<?php echo $count; ?>" /></div>
   <?php endif ?>
 </div><!-- /#breadcrumb -->
 <?php endif; ?>
