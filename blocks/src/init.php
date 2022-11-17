@@ -149,13 +149,11 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     $colors//プロバティ
   );
   //テンプレート情報を渡す
-  if ($is_templates_visible) {
-    wp_localize_script(
-      'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-      'gbTemplates', //任意のオブジェクト名
-      $templates //プロバティ
-    );
-  }
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'gbTemplates', //任意のオブジェクト名
+    $templates //プロバティ
+  );
 
   //アフィリエイト情報を渡す
   if ($is_affiliates_visible) {
@@ -278,7 +276,7 @@ function cocoon_editor_color_palette_setup() {
 		add_theme_support('custom-spacing');
     // 単位設定
     add_theme_support( 'custom-units' );
-    
+
     return $colors;
 }
 endif;
@@ -299,6 +297,7 @@ require_once abspath(__FILE__).'block/timeline/index.php';
 require_once abspath(__FILE__).'block/timeline-item/index.php';
 require_once abspath(__FILE__).'block/toggle-box/index.php';
 require_once abspath(__FILE__).'block/ranking/index.php';
+require_once abspath(__FILE__).'block/temp/index.php';
 
 require_once abspath(__FILE__).'block-universal/caption-box/index.php';
 require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';

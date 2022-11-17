@@ -1,8 +1,8 @@
 {
   "apiVersion": 2,
-  "name": "cocoon-blocks/ranking",
+  "name": "cocoon-blocks/template",
   "category": "cocoon-block",
-  "keywords": ["ranking"],
+  "keywords": ["template"],
 
   "attributes": {
     "id": {

@@ -9,34 +9,34 @@ import classnames from 'classnames';
 export default function edit(props) {
   const { attributes, setAttributes, className } = props;
   const { id } = attributes;
-  const classes = classnames('ranking-box', 'block-box',
+  const classes = classnames('template-box', 'block-box',
     {
-      [ 'ranking-' + id ]: !! (id !== '-1'),
+      [ 'template-' + id ]: !! (id !== '-1'),
       [ className ]: !! className,
     }
   );
   setAttributes({ classNames: classes });
 
   // attributesのidが存在するかしないかを判断するフラグ
-  let isRankingIdExist = false;
+  let isTemplateIdExist = false;
 
-  // ドロップダウンリストに表示される有効なランキングアイテムの数
+  // ドロップダウンリストに表示される有効なテンプレートアイテムの数
   let abledDropdownListItemCount = 0;
 
   function createOptions() {
     var options = [];
     options.push({ value: '-1', label: __('未選択', THEME_NAME)})
-    if (typeof gbItemRankings !== 'undefined') {
-      gbItemRankings.forEach((rank) => {
-        if ((isRankingIdExist === false) && (rank.id == id)) {
-          isRankingIdExist = true;
+    if (typeof gbTemplates !== 'undefined') {
+      gbTemplates.forEach((temp) => {
+        if ((isTemplateIdExist === false) && (temp.id == id)) {
+          isTemplateIdExist = true;
         }
-        if (rank.visible == '1') {
-          options.push({ value: rank.id, label: rank.title, disabled: false });
+        if (temp.visible == '1') {
+          options.push({ value: temp.id, label: temp.title, disabled: false });
           abledDropdownListItemCount += 1;
         }
         else {
-          options.push({ value: rank.id, label: rank.title + __('（リスト非表示）', THEME_NAME), disabled: true });
+          options.push({ value: temp.id, label: temp.title + __('（リスト非表示）', THEME_NAME), disabled: true });
         }
       });
     }
@@ -45,33 +45,33 @@ export default function edit(props) {
   }
 
 
-  const getRankingMessage = () => {
+  const getTemplateMessage = () => {
     let msg = '';
-    const setmsg = __('ダッシュボードメニューの「Cocoon設定」→「ランキング作成」からランキングを作成してください。', THEME_NAME);
-    if (id == '-1' && typeof gbItemRankings !== 'undefined' && abledDropdownListItemCount === 0) {
-      //ランキング非表示などで行こに選択できるランキングが存在しない場合
-      msg = __('有効なランキングが登録されていません。', THEME_NAME) + setmsg;
+    const setmsg = __('ダッシュボードメニューの「Cocoon設定」→「テンプレート」からテンプレートを作成してください。', THEME_NAME);
+    if (id == '-1' && typeof gbTemplates !== 'undefined' && abledDropdownListItemCount === 0) {
+      //テンプレート非表示などで行こに選択できるテンプレートが存在しない場合
+      msg = __('有効なテンプレートが登録されていません。', THEME_NAME) + setmsg;
     }
-    else if (id == '-1' && typeof gbItemRankings !== 'undefined') {
-      msg = __('ランキングを選択してください。', THEME_NAME);
+    else if (id == '-1' && typeof gbTemplates !== 'undefined') {
+      msg = __('テンプレートを選択してください。', THEME_NAME);
     }
-    else if (id == '-1' && typeof gbItemRankings === 'undefined') {
-      msg = __('ランキングが登録されていません。', THEME_NAME) + setmsg;
+    else if (id == '-1' && typeof gbTemplates === 'undefined') {
+      msg = __('テンプレートが登録されていません。', THEME_NAME) + setmsg;
     }
     else {
       return '';
     }
     return (
-      <div class='editor-ranking-message'>
+      <div class='editor-template-message'>
         {msg}
       </div>
     );
   }
 
 
-  const getRankingContent = () => {
+  const getTemplateContent = () => {
     if (id == '-1') {
-      return getRankingMessage();
+      return getTemplateMessage();
     }
     else {
       return (
@@ -85,25 +85,25 @@ export default function edit(props) {
 
   var options = createOptions();
 
-  // ランキングを消したりして存在しないランキングIDだった場合は-1をセットする
-  // これをすることによりブロックエディターリロード時でも「ランキングを選択してください。」などのエラーメッセージが出力される
+  // テンプレートを消したりして存在しないランキングIDだった場合は-1をセットする
+  // これをすることによりブロックエディターリロード時でも「テンプレートを選択してください。」などのエラーメッセージが出力される
   // ServerSideRenderも呼び出されない
-  if (!isRankingIdExist) {
+  if (!isTemplateIdExist) {
     setAttributes({ id: '-1' });
   }
-  
+
   return (
     <Fragment>
       <div {...useBlockProps()}>
         <SelectControl
-            label={__('ランキング', THEME_NAME)}
+            label={__('テンプレート', THEME_NAME)}
             labelPosition="side"
-            className="editor-ranking-dropdown"
+            className="editor-template-dropdown"
             value={id}
             onChange={(value) => setAttributes({ id: value, classNames: classes })}
             options={options}
         />
-        {getRankingContent()}
+        {getTemplateContent()}
       </div>
     </Fragment>
   );
