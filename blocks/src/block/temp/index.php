@@ -1,13 +1,13 @@
 <?php
 
-function render_ranking_list($attributes, $content) {
+function render_template_list($attributes, $content) {
   $id = $attributes['id'];
   $classes = $attributes['classNames'];
   if ($id) {
-    //返り値がないechoとかのHTML出力結果を取得する
+    $template_content = function_text_shortcode($attributes);
     ob_start();
     echo '<div class="'.$classes.'">';
-    generate_item_ranking_tag($id);
+    echo $template_content;
     echo '</div>';
     return ob_get_clean();
   }
@@ -17,7 +17,7 @@ if( function_exists('register_block_type')) {
   register_block_type_from_metadata(
     __DIR__,
      array(
-      'render_callback' => 'render_ranking_list',
+      'render_callback' => 'render_template_list',
     )
   );
 }
