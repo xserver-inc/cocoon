@@ -47,22 +47,23 @@ export default function edit(props) {
 
   const getRankingMessage = () => {
     let msg = '';
-    const setmsg = __('ダッシュボードメニューの「Cocoon設定」→「ランキング作成」からランキングを作成してください。', THEME_NAME);
-    if (id == '-1' && typeof gbItemRankings !== 'undefined' && abledDropdownListItemCount === 0) {
-      //ランキング非表示などで行こに選択できるランキングが存在しない場合
-      msg = __('有効なランキングが登録されていません。', THEME_NAME) + setmsg;
-    }
-    else if (id == '-1' && typeof gbItemRankings !== 'undefined') {
-      msg = __('ランキングを選択してください。', THEME_NAME);
-    }
-    else if (id == '-1' && typeof gbItemRankings === 'undefined') {
+    const setmsg = __('ダッシュボードメニューの「Cocoon設定」→「ランキング」からランキングを作成してください。', THEME_NAME);
+    if (typeof gbItemRankings === 'undefined' || gbItemRankings.length === 0) {
       msg = __('ランキングが登録されていません。', THEME_NAME) + setmsg;
+    }
+    else if (typeof gbItemRankings !== 'undefined' && abledDropdownListItemCount === 0) {
+      //ランキング非表示などで有効に選択できるランキングが存在しない場合
+      msg = __('有効なランキングが登録されていません。', THEME_NAME) + setmsg + __('もしくは登録されているランキングを表示設定にしてください。。', THEME_NAME);
+    }
+    else if (typeof gbItemRankings !== 'undefined') {
+      //ドロップダウンにランキングの選択肢がある場合
+      msg = __('ランキングを選択してください。', THEME_NAME);
     }
     else {
       return '';
     }
     return (
-      <div class='editor-ranking-message'>
+      <div class='cocoon-render-message editor-ranking-message'>
         {msg}
       </div>
     );
@@ -98,7 +99,7 @@ export default function edit(props) {
         <SelectControl
             label={__('ランキング', THEME_NAME)}
             labelPosition="side"
-            className="editor-ranking-dropdown"
+            className="cocoon-render-dropdown editor-ranking-dropdown"
             value={id}
             onChange={(value) => setAttributes({ id: value, classNames: classes })}
             options={options}

@@ -1133,13 +1133,13 @@ body::before,
 }
 
 //ランキングブロック
-div.editor-ranking-message{
+div.cocoon-render-message{
   padding: 20px;
   border: solid aliceblue 2px;
   margin-bottom: 1em;
 }
 
-div.editor-ranking-dropdown{
+div.cocoon-render-dropdown {
   margin-bottom: 1em;
   select option[disabled]{
     display: none;
