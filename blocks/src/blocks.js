@@ -28,7 +28,7 @@ import * as timelineItem from './block/timeline-item';
 import * as toggleBox from './block/toggle-box';
 import * as faq from './block/faq';
 import * as ranking from './block/ranking';
-import * as temp from './block/temp';
+import * as template from './block/template';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -54,7 +54,7 @@ const cocoonBlocks = [
   iconList,
   faq,
   ranking,
-  temp,
+  template,
 
   captionBox,
   tabCaptionBox,
