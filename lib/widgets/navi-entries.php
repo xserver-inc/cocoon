@@ -105,7 +105,6 @@ class NaviEntryWidgetItem extends WP_Widget {
       echo '<br>';
       $options = array();
       $menus = wp_get_nav_menus();
-      //_v($menus);
       foreach ($menus as $menu) {
         $menu_name = $menu->name;
         $options[$menu_name] = $menu_name;

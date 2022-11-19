@@ -98,6 +98,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   $templates = get_function_texts(null, 'title');
   $affiliates = get_affiliate_tags(null, 'title');
   $rankings = get_item_rankings(null, 'title');
+
   $is_templates_visible = (has_valid_shortcode_item($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
   $is_affiliates_visible = (has_valid_shortcode_item($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
   $is_rankings_visible = (has_valid_shortcode_item($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
@@ -169,6 +170,14 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'gbItemRankings', //任意のオブジェクト名
     $rankings //プロバティ
+  );
+
+  //ナビカード情報渡す
+  $menus = wp_get_nav_menus();
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'gbNavMenus', //任意のオブジェクト名
+    $menus //プロバティ
   );
 
   //カラーパレット情報渡し
