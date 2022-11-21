@@ -172,7 +172,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     $rankings //プロバティ
   );
 
-  //メニュー情報を渡す
+  //ナビカード情報渡す
   $menus = wp_get_nav_menus();
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
