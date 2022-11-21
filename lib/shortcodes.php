@@ -690,8 +690,14 @@ function get_box_menu_tag($atts){
     return;
   }
 
-  //_v($menu_items);
+  //ボックスメニューオプション配列のリンクの開き方のデフォルト値をセット
+  $atts = array(
+    'target' => $target,
+  );
+
   foreach ($menu_items as $menu):
+    //WordPressのメニューの設定で「リンクを新しいタブで開く」が有効（_blank）な場合はそちらを優先
+    $target = !empty($menu->target) ? $menu->target : $atts['target'];
 
     $url = $menu->url;
     $title = $menu->title;
