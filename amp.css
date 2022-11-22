@@ -5942,7 +5942,7 @@ figcaption {
 
 .is-style-solid-cross {
   position: relative;
-  margin: 15px 0;
+  margin: 15px auto;
   padding: 1.5em 3.2em;
   color: #323232;
   border-top: solid 2px #323232;
@@ -5962,13 +5962,6 @@ figcaption {
 }
 .is-style-solid-cross::after {
   right: 10px;
-}
-.is-style-solid-cross ul {
-  margin: 0;
-  padding: 0;
-}
-.is-style-solid-cross ul li {
-  margin-bottom: 5px;
 }
 
 .column-wrap {
