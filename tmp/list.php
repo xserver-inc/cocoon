@@ -10,11 +10,13 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ////////////////////////////
 //アーカイブのタイトル
 ////////////////////////////
-if ( is_category() && is_single_breadcrumbs_position_main_top() ){
+if ( is_category() ){
   ////////////////////////////
   //カテゴリページのパンくずリスト
   ////////////////////////////
-  get_template_part('tmp/breadcrumbs');
+  if (is_single_breadcrumbs_position_main_top()) {
+    get_template_part('tmp/breadcrumbs');
+  }
 
   ////////////////////////////
   //カテゴリページのコンテンツ
