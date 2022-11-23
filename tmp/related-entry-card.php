@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
  <a href="<?php echo esc_url(get_the_permalink()); ?>" class="related-entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(get_the_title()); ?>">
-<article class="related-entry-card e-card cf">
+<article <?php post_class( array('post-'.get_the_ID(), 'related-entry-card', 'e-card', 'cf') ); ?>>
 
   <figure class="related-entry-card-thumb card-thumb e-card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
