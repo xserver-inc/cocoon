@@ -9,35 +9,42 @@ import classnames from 'classnames';
 export default function edit(props) {
   const { attributes, setAttributes, className } = props;
   const { id } = attributes;
-  const classes = classnames('ranking-box', 'block-box',
+  const classes = classnames('box-menu-box', 'block-box',
     {
-      [ 'ranking-' + id ]: !! (id !== '-1'),
+      [ 'box-menu-' + id ]: !! (id !== '-1'),
       [ className ]: !! className,
     }
   );
   setAttributes({ classNames: classes });
 
   // attributesのidが存在するかしないかを判断するフラグ
-  let isRankingIdExist = false;
+  let isBoxMenuIdExist = false;
 
   // ドロップダウンリストに表示される有効なランキングアイテムの数
   let abledDropdownListItemCount = 0;
 
+  function getMenuNameFromId(id) {
+    var name = '';
+    if (typeof gbNavMenus !== 'undefined') {
+      for (let menu of gbNavMenus) {
+        if (menu.term_id == id) {
+          name = menu.name;
+        }
+      }
+    }
+    return name;
+  }
+
   function createOptions() {
     var options = [];
     options.push({ value: '-1', label: __('未選択', THEME_NAME)})
-    if (typeof gbItemRankings !== 'undefined') {
-      gbItemRankings.forEach((rank) => {
-        if ((isRankingIdExist === false) && (rank.id == id)) {
-          isRankingIdExist = true;
+    if (typeof gbNavMenus !== 'undefined') {
+      gbNavMenus.forEach((menu) => {
+        if ((isBoxMenuIdExist === false) && (menu.term_id == id)) {
+          isBoxMenuIdExist = true;
         }
-        if (rank.visible == '1') {
-          options.push({ value: rank.id, label: rank.title, disabled: false });
-          abledDropdownListItemCount += 1;
-        }
-        else {
-          options.push({ value: rank.id, label: rank.title + __('（リスト非表示）', THEME_NAME), disabled: true });
-        }
+        options.push({ value: menu.term_id, label: menu.name, disabled: false });
+        abledDropdownListItemCount += 1;
       });
     }
 
@@ -45,34 +52,32 @@ export default function edit(props) {
   }
 
 
-  const getRankingMessage = () => {
+  const getBoxMenuMessage = () => {
     let msg = '';
-    const setmsg = __('ダッシュボードメニューの「Cocoon設定」→「ランキング」からランキングを作成してください。', THEME_NAME);
-    if (typeof gbItemRankings === 'undefined' || gbItemRankings.length === 0) {
-      msg = __('ランキングが登録されていません。', THEME_NAME) + setmsg;
+    const setmsg = __('ダッシュボードメニューの「外観」→「メニュー」からボックスメニューを作成してください。', THEME_NAME);
+    if (typeof gbNavMenus === 'undefined' || gbNavMenus.length === 0) {
+      msg = __('ボックスメニューが登録されていません。', THEME_NAME) + setmsg;
     }
-    else if (typeof gbItemRankings !== 'undefined' && abledDropdownListItemCount === 0) {
-      //ランキング非表示などで有効に選択できるランキングが存在しない場合
-      msg = __('有効なランキングが登録されていません。', THEME_NAME) + setmsg + __('もしくは登録されているランキングを表示設定にしてください。。', THEME_NAME);
+    else if (typeof gbNavMenus !== 'undefined' && abledDropdownListItemCount === 0) {
+      msg = __('有効なボックスメニューが登録されていません。', THEME_NAME) + setmsg + __('もしくは登録されているボックスメニューを表示設定にしてください。', THEME_NAME);
     }
-    else if (typeof gbItemRankings !== 'undefined') {
-      //ドロップダウンにランキングの選択肢がある場合
-      msg = __('ランキングを選択してください。', THEME_NAME);
+    else if (typeof gbNavMenus !== 'undefined') {
+      msg = __('ボックスメニューを選択してください。', THEME_NAME);
     }
     else {
       return '';
     }
     return (
-      <div class='cocoon-render-message editor-ranking-message'>
+      <div class='cocoon-render-message editor-box-menu-message'>
         {msg}
       </div>
     );
   }
 
 
-  const getRankingContent = () => {
+  const getBoxMenuContent = () => {
     if (id == '-1') {
-      return getRankingMessage();
+      return getBoxMenuMessage();
     }
     else {
       return (
@@ -86,25 +91,22 @@ export default function edit(props) {
 
   var options = createOptions();
 
-  // ランキングを消したりして存在しないランキングIDだった場合は-1をセットする
-  // これをすることによりブロックエディターリロード時でも「ランキングを選択してください。」などのエラーメッセージが出力される
-  // ServerSideRenderも呼び出されない
-  if (!isRankingIdExist) {
+  if (!isBoxMenuIdExist) {
     setAttributes({ id: '-1' });
   }
-  
+
   return (
     <Fragment>
       <div {...useBlockProps()}>
         <SelectControl
-            label={__('ランキング', THEME_NAME)}
+            label={__('ボックスメニュー', THEME_NAME)}
             labelPosition="side"
-            className="cocoon-render-dropdown editor-ranking-dropdown"
+            className="cocoon-render-dropdown editor-box-menu-dropdown"
             value={id}
-            onChange={(value) => setAttributes({ id: value, classNames: classes })}
+            onChange={(value) => setAttributes({ id: value, classNames: classes, boxName: getMenuNameFromId(value) })}
             options={options}
         />
-        {getRankingContent()}
+        {getBoxMenuContent()}
       </div>
     </Fragment>
   );
