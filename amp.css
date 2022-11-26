@@ -488,7 +488,6 @@ figure {
 img {
   max-width: 100%;
   height: auto;
-  border: 0;
 }
 
 .circle-image img {

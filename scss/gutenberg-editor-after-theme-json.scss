@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+//タイトルと本文の中央寄せ
+.edit-post-visual-editor__post-title-wrapper > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
+.block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)){
+  max-width: 840px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

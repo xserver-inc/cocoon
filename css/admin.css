@@ -1163,7 +1163,6 @@ body.wp-admin {
 .admin-settings .demo img {
   max-width: 100%;
   height: auto;
-  border: 0;
 }
 .admin-settings .demo .circle-image img {
   border-radius: 50%;
@@ -8860,7 +8859,6 @@ body.wp-admin {
 .admin-settings .demo img {
   max-width: 100%;
   height: auto;
-  border: 0;
 }
 .admin-settings .demo .circle-image img {
   border-radius: 50%;
