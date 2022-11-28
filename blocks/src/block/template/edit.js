@@ -13,6 +13,7 @@ export default function edit(props) {
     {
       [ 'template-' + id ]: !! (id !== '-1'),
       [ className ]: !! className,
+      [ attributes.className ]: !! attributes.className,
     }
   );
   setAttributes({ classNames: classes });

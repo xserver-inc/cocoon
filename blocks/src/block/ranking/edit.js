@@ -13,6 +13,7 @@ export default function edit(props) {
     {
       [ 'ranking-' + id ]: !! (id !== '-1'),
       [ className ]: !! className,
+      [ attributes.className ]: !! attributes.className,
     }
   );
   setAttributes({ classNames: classes });
@@ -92,7 +93,7 @@ export default function edit(props) {
   if (!isRankingIdExist) {
     setAttributes({ id: '-1' });
   }
-  
+
   return (
     <Fragment>
       <div {...useBlockProps()}>
