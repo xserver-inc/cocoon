@@ -295,6 +295,7 @@
   font-family: FontAwesome;
   margin-right: 0.4em;
   margin-left: -1em;
+  position: absolute;
 }
 
 .iconlist-title {
@@ -1333,10 +1334,6 @@ body::before,
 .wp-block-list li,
 .iconlist-box li {
   margin: 0;
-}
-
-.iconlist-box li {
-  display: flex;
 }
 
 .btn-wrap-block {

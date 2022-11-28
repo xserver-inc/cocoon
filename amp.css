@@ -8556,6 +8556,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   font-family: FontAwesome;
   margin-right: 0.4em;
   margin-left: -1em;
+  position: absolute;
 }
 
 .iconlist-title {
