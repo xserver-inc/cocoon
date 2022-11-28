@@ -3,9 +3,9 @@
 	"version": 2,
 	"settings": {
     "spacing": {
-			"blockGap": true, //not default
-			"margin": true, //not default
-			"padding": true, //not default
+			"blockGap": true,
+			"margin": true,
+			"padding": true,
       "units": [
 				"px",
 				"em",
@@ -20,7 +20,7 @@
 			"fontStyle": true,
 			"fontWeight": true,
 			"letterSpacing": true,
-			"lineHeight": true, //not default
+			"lineHeight": true,
 			"textDecoration": true,
 			"textTransform": true,
 			"customFontSize": true,
@@ -28,10 +28,10 @@
 			"fontFamilies": []
 		},
 		"border": {
-			"color": true, //not default
-			"radius": true, //not default
-			"style": true, //not default
-			"width": true //not default
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
 		},
     "layout": {
 			"contentSize": "840px",
