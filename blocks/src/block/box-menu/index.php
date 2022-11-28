@@ -2,7 +2,7 @@
 
 function render_box_menu_list($attributes, $content) {
   //$id = $attributes['id'];
-  //$classes = $attributes['classNames'];
+  $classes = $attributes['classNames'];
   $name = $attributes['boxName'];
   if ($name != '') {
     $atts = array(
@@ -10,7 +10,9 @@ function render_box_menu_list($attributes, $content) {
     );
     $box_menu_content = get_box_menu_tag($atts);
     ob_start();
+    echo '<div class="'.$classes.'">';
     echo $box_menu_content;
+    echo '</div>';
     return ob_get_clean();
   }
 }
