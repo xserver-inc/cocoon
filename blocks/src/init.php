@@ -277,8 +277,8 @@ function cocoon_editor_color_palette_setup() {
     add_theme_support('editor-color-palette', $colors);
     // // カスタム色を無効
     // add_theme_support('disable-custom-colors');
-    // カスタムフォントサイズを無効
-    add_theme_support('disable-custom-font-sizes');
+    // // カスタムフォントサイズを無効
+    // add_theme_support('disable-custom-font-sizes');
 		// 行の高さ
 		add_theme_support('custom-line-height');
 		// 寸法設定
