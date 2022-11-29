@@ -162,7 +162,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_BLOCK_EDITOR_STYLE_BLOCK_OPTION_VISIBLE , is_block_editor_style_block_option_visible(), __( 'スタイル表示', THEME_NAME ));
-            generate_tips_tag(__( 'ブロックエディターのスタイルオプションの表示を表示するか。', THEME_NAME ));
+            generate_tips_tag(__( 'ブロックエディターのスタイルオプションを表示するか。', THEME_NAME ));
             ?>
           </td>
         </tr>

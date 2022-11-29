@@ -10,18 +10,20 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ////////////////////////////
 //アーカイブのタイトル
 ////////////////////////////
-if ( is_category() && !is_paged() ){
+if ( is_category() ){
   ////////////////////////////
   //カテゴリページのパンくずリスト
   ////////////////////////////
-  if (is_single_breadcrumbs_position_main_top()){
+  if (is_single_breadcrumbs_position_main_top()) {
     get_template_part('tmp/breadcrumbs');
   }
 
   ////////////////////////////
   //カテゴリページのコンテンツ
   ////////////////////////////
-  get_template_part('tmp/category-content');
+  if (!is_paged()) {
+    get_template_part('tmp/category-content');
+  }
 } elseif ( (is_tag() || is_tax()) && !is_paged() ) {
   get_template_part('tmp/tag-content');
 } elseif (!is_home()) {

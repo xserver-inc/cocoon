@@ -8162,7 +8162,7 @@ msgid "スタイル表示"
 msgstr "Style view"
 
 #: lib/page-settings/editor-forms.php:165
-msgid "ブロックエディターのスタイルオプションの表示を表示するか。"
+msgid "ブロックエディターのスタイルオプションを表示するか。"
 msgstr "Do you want to see the display of style options in the block editor?"
 
 #: lib/page-settings/editor-forms.php:173
