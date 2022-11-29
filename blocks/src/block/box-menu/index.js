@@ -20,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __('ボックスメニュー', THEME_NAME),
-  //icon: <FontAwesomeIcon icon={['fas', 'crown']} />,
+  icon: <FontAwesomeIcon icon={['fas', 'th-large']} />,
   description: __('登録されているボックスメニューを表示します。', THEME_NAME),
 
   edit,
