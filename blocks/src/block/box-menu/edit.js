@@ -30,6 +30,7 @@ export default function edit(props) {
       for (let menu of gbNavMenus) {
         if (menu.term_id == id) {
           name = menu.name;
+          break;
         }
       }
     }
