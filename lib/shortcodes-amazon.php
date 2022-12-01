@@ -155,7 +155,7 @@ function is_paapi_json_item_exist($json){
   if (isset($json->{'ItemsResult'})) {
     $ItemsResult = $json->{'ItemsResult'};
     return property_exists($ItemsResult, 'Items');
-  }  
+  }
 }
 endif;
 
@@ -281,27 +281,51 @@ function get_amazon_itemlookup_json($asin, $tracking_id = null){
   $headers = $awsv4->getHeaders ();
   $headerString = "";
   foreach ( $headers as $key => $value ) {
+		$curl_headers[] = $key . ': ' . $value;
     $headerString .= $key . ': ' . $value . "\r\n";
   }
-  $params = array (
-    'http' => array (
-      'header' => $headerString,
-      'method' => 'POST',
-      'content' => $payload,
-      'ignore_errors' => true,
-    )
-  );
-  $stream = stream_context_create( $params );
 
-  $fp = @fopen ( 'https://'.$host.$uriPath, 'rb', false, $stream );
+  //cURLがインストールされていれば利用する
+  if ( ini_get('allow_url_fopen') == '1' ) {
+    $params = array (
+      'http' => array (
+        'header' => $headerString,
+        'method' => 'POST',
+        'content' => $payload,
+        'ignore_errors' => true,
+      )
+    );
+    $stream = stream_context_create( $params );
 
-  if (!$fp) {
-    //throw new Exception ( "Exception Occured" );
-    return false;
-  }
-  $res = @stream_get_contents( $fp );
-  if ($res === false) {
-    //throw new Exception ( "Exception Occured" );
+    $fp = @fopen ( 'https://'.$host.$uriPath, 'rb', false, $stream );
+
+    if (!$fp) {
+      //throw new Exception ( "Exception Occured" );
+      return false;
+    }
+    $res = @stream_get_contents( $fp );
+    if ($res === false) {
+      //throw new Exception ( "Exception Occured" );
+      return false;
+    }
+  } elseif (function_exists( 'curl_version' )) {
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, 'https://' . $host.$uriPath );
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST' );
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $payload );
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $curl_headers );
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true );
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true );
+    curl_setopt($curl, CURLOPT_HEADER, true );
+    curl_setopt($curl, CURLOPT_TIMEOUT, 10 );
+    $response	= curl_exec( $curl );
+    $info		= curl_getinfo( $curl );
+    $error_no	= curl_errno( $curl );
+
+    $status_code = $info[ 'http_code' ];
+    $header_size = curl_getinfo( $curl, CURLINFO_HEADER_SIZE );
+    $res = substr( $response, $header_size );
+  } else {
     return false;
   }
 
