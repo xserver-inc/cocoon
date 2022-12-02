@@ -7,7 +7,7 @@
 
 import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { Icon, code, page } from '@wordpress/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __('テンプレート', THEME_NAME),
-  icon: <Icon icon={code} size={32} />,
+  icon: <FontAwesomeIcon icon={['far', 'file-alt']} />,
   description: __('登録されているテンプレートを表示します。', THEME_NAME),
 
   edit,
