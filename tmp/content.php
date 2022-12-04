@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting" data-clarity-region="article">
   <?php
   if ( have_posts() ) {
     while ( have_posts() ) {
@@ -41,7 +41,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             the_title();
           }
            ?></h1>
-        
+
         <?php //レビュー表示
         if (is_the_page_review_enable()) {
           echo '<div class="review-rating">';
