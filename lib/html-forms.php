@@ -1039,7 +1039,6 @@ function generate_popular_entries_tag($atts){
   <?php if ( $records ) :
     $i = 1;
     foreach ($records as $post):
-      _v($post);
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;
       $no_thumbnail_url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url($post->ID) : get_no_image_320x180_url($post->ID);
