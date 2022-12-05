@@ -1039,6 +1039,7 @@ function generate_popular_entries_tag($atts){
   <?php if ( $records ) :
     $i = 1;
     foreach ($records as $post):
+      _v($post);
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;
       $no_thumbnail_url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url($post->ID) : get_no_image_320x180_url($post->ID);
@@ -1061,7 +1062,7 @@ function generate_popular_entries_tag($atts){
       }
       ?>
   <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>">
-    <div class="popular-entry-card widget-entry-card e-card cf">
+    <div <?php post_class( array('post-'.$post->ID, 'popular-entry-card', 'widget-entry-card', 'e-card', 'cf'), $post->ID ); ?>>
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php echo $post_thumbnail_img; ?>
         <?php
@@ -1261,7 +1262,7 @@ function generate_widget_entries_tag($atts){
     $thumb_size = apply_filters('get_new_entries_thumbnail_size', $thumb_size, $type);
   }
   $args = apply_filters('widget_entries_args', $args);
-  
+
   //クエリの作成
   $query = new WP_Query( $args );
   $atts = array(
@@ -1276,7 +1277,7 @@ function generate_widget_entries_tag($atts){
   <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>">
   <?php if ( $horizontal ) : ?>
     <div class="swiper-wrapper">
-  <?php endif; ?>  
+  <?php endif; ?>
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
     <?php //エントリーカードリンクタグの生成
@@ -1535,15 +1536,23 @@ function get_widget_entry_card_link_tag($atts){
   if ($horizontal) {
     $swiper_slide = ' swiper-slide';
   }
+
+  //クラス名の取得
+  if ($prefix === WIDGET_NAVI_ENTRY_CARD_PREFIX) {
+    $div_class = 'class="'.$prefix.'-entry-card widget-entry-card e-card cf"';
+  } else {
+    $div_class = 'class="'.implode(' ', get_post_class( array('post-'.get_the_ID(), $prefix.'-entry-card', 'widget-entry-card', 'e-card', 'cf') )).'"';
+  }
+
   ob_start(); ?>
   <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>">
-    <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
+    <div <?php echo $div_class; ?>>
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php //$prefixがnaviのとき
         if (is_widget_navi_entry_card_prefix($prefix)) {
           $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
-          
+
           //投稿の場合
           if ($object === 'post' || $object === 'page') {
             if ($type === ET_DEFAULT) {
