@@ -947,3 +947,15 @@ function updated_shortcode( $atts ) {
   return $res;
 }
 endif;
+
+//広告ショートコード
+add_shortcode('ad', 'ad_shortcode');
+if ( !function_exists( 'ad_shortcode' ) ):
+function ad_shortcode( $atts ) {
+  ob_start();//バッファリング
+  get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
+
+  return ob_get_clean();
+}
+endif;
+
