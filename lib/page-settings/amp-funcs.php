@@ -71,7 +71,7 @@ endif;
 define('OP_AMP_INLINE_STYLE_ENABLE', 'amp_inline_style_enable');
 if ( !function_exists( 'is_amp_inline_style_enable' ) ):
 function is_amp_inline_style_enable(){
-  return get_theme_option(OP_AMP_INLINE_STYLE_ENABLE);
+  return get_theme_option(OP_AMP_INLINE_STYLE_ENABLE, 1);
 }
 endif;
 
