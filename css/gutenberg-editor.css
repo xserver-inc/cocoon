@@ -1406,3 +1406,14 @@ div.cocoon-render-dropdown select option[disabled] {
 .has-midnight-gradient-background {
   background: var(--wp--preset--gradient--midnight) !important;
 }
+
+.wp-element-button, .wp-block-button__link {
+  background-color: #32373c;
+  border-width: 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: calc(.667em + 2px) calc(1.333em + 2px) !important;
+  text-decoration: none;
+}
