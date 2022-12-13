@@ -1417,3 +1417,8 @@ div.cocoon-render-dropdown select option[disabled] {
   padding: calc(.667em + 2px) calc(1.333em + 2px) !important;
   text-decoration: none;
 }
+
+.wp-block-image.aligncenter > figcaption {
+  display: block;
+  margin-top: -0.8em !important;
+}
