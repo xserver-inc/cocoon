@@ -679,10 +679,12 @@ if (!$entry_content_margin_hight) {
 .comment-area,
 .related-entries,
 .pager-post-navi,
-.comment-respond,
+.comment-respond {
+  margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+}
 .is-root-container > *,
 [data-type="core/freeform"] {
-  margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+  margin-bottom: <?php echo $entry_content_margin_hight; ?>em !important;
 }
 .article h2,
 .article h3,
