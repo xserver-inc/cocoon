@@ -1210,3 +1210,22 @@ div.cocoon-render-dropdown {
   display: block;
   margin-top: -0.8em !important;
 }
+
+.is-root-container{
+  max-width: 840px !important;
+  margin: auto !important;
+}
+
+.wp-block-cocoon-blocks-button-1{
+  float: none !important;
+
+  &.alignleft{
+    text-align: left;
+  }
+  &.aligncenter{
+    text-align: center;
+  }
+  &.alignright{
+    text-align: right;
+  }
+}
