@@ -308,6 +308,7 @@ require_once abspath(__FILE__).'block/toggle-box/index.php';
 require_once abspath(__FILE__).'block/ranking/index.php';
 require_once abspath(__FILE__).'block/template/index.php';
 require_once abspath(__FILE__).'block/box-menu/index.php';
+require_once abspath(__FILE__).'block/ad/index.php';
 
 require_once abspath(__FILE__).'block-universal/caption-box/index.php';
 require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';
