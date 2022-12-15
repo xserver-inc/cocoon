@@ -1423,13 +1423,11 @@ div.cocoon-render-dropdown select option[disabled] {
   margin-top: -0.8em !important;
 }
 
-.is-root-container {
-  max-width: 840px !important;
-  margin: auto !important;
-}
-
 .wp-block-cocoon-blocks-button-1 {
   float: none !important;
+  max-width: 840px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .wp-block-cocoon-blocks-button-1.alignleft {
   text-align: left;
