@@ -2,7 +2,7 @@
 
 function render_ad($attributes, $content) {
   $classes = $attributes['classNames'];
-  $ad_content = get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
+  $ad_content = ad_shortcode($attributes);
 
   ob_start();
   echo '<div class="'.$classes.'">';
