@@ -1192,3 +1192,38 @@ div.cocoon-render-dropdown {
 .has-midnight-gradient-background {
   background: var(--wp--preset--gradient--midnight) !important;
 }
+
+//ファイルブロックのダウンロードボタン
+.wp-element-button, .wp-block-button__link {
+  background-color: #32373c;
+  border-width: 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: calc(.667em + 2px) calc(1.333em + 2px) !important;
+  text-decoration: none;
+}
+
+//画像ブロックの中央配置のキャプションの不具合修正
+.wp-block-image.aligncenter > figcaption{
+  display: block;
+  margin-top: -0.8em !important;
+}
+
+.wp-block-cocoon-blocks-button-1{
+  float: none !important;
+  max-width: 840px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  &.alignleft{
+    text-align: left;
+  }
+  &.aligncenter{
+    text-align: center;
+  }
+  &.alignright{
+    text-align: right;
+  }
+}

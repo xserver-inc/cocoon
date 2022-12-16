@@ -1406,3 +1406,35 @@ div.cocoon-render-dropdown select option[disabled] {
 .has-midnight-gradient-background {
   background: var(--wp--preset--gradient--midnight) !important;
 }
+
+.wp-element-button, .wp-block-button__link {
+  background-color: #32373c;
+  border-width: 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: calc(.667em + 2px) calc(1.333em + 2px) !important;
+  text-decoration: none;
+}
+
+.wp-block-image.aligncenter > figcaption {
+  display: block;
+  margin-top: -0.8em !important;
+}
+
+.wp-block-cocoon-blocks-button-1 {
+  float: none !important;
+  max-width: 840px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.wp-block-cocoon-blocks-button-1.alignleft {
+  text-align: left;
+}
+.wp-block-cocoon-blocks-button-1.aligncenter {
+  text-align: center;
+}
+.wp-block-cocoon-blocks-button-1.alignright {
+  text-align: right;
+}
