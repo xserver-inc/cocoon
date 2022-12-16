@@ -22,7 +22,7 @@ export default function edit(props) {
       msg = __('広告が非表示です。', THEME_NAME);
     }
     else if (gbSettings.isAdShortcodeEnable == 0) {
-      msg = __('[ad]ショートカードが無効です。', THEME_NAME);
+      msg = __('[ad]ショートコードが無効です。', THEME_NAME);
     }
 
     // メッセージが設定されていたらメッセージを表示する。
