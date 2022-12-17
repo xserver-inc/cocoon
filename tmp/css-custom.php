@@ -682,6 +682,7 @@ if (!$entry_content_margin_hight) {
 .comment-respond {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
+.wp-block-post-title,
 .is-root-container > *,
 [data-type="core/freeform"] {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em !important;
