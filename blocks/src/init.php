@@ -115,6 +115,8 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'isAffiliateVisible' => $is_affiliates_visible,
     'isRankingVisible' => $is_rankings_visible,
     'isSpeechBalloonEnable' => $balloons ? 1 : 0,
+    'isAdsVisible' => is_ads_visible() ? 1 : 0,
+    'isAdShortcodeEnable' => is_ad_shortcode_enable() ? 1 : 0,
     'speechBalloonDefaultIconUrl' => get_template_directory_uri().'/images/anony.png',
     'siteIconFont' => ' '.get_site_icon_font_class(),
     'pageTypeClass' => get_editor_page_type_class(),
@@ -308,6 +310,7 @@ require_once abspath(__FILE__).'block/toggle-box/index.php';
 require_once abspath(__FILE__).'block/ranking/index.php';
 require_once abspath(__FILE__).'block/template/index.php';
 require_once abspath(__FILE__).'block/box-menu/index.php';
+require_once abspath(__FILE__).'block/ad/index.php';
 
 require_once abspath(__FILE__).'block-universal/caption-box/index.php';
 require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';
