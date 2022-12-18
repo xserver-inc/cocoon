@@ -1846,5 +1846,7 @@ figcaption{
   &::after {right: 10px;}
 }
 
-
-
+//WordPressのボタンブロック（右寄せ）
+.wp-block-button.alignright {
+  margin-left: auto !important;
+}

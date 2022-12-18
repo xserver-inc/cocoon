@@ -5988,6 +5988,10 @@ figcaption {
   right: 10px;
 }
 
+.wp-block-button.alignright {
+  margin-left: auto !important;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;
