@@ -5910,7 +5910,7 @@ figcaption {
   gap: 1.5rem;
 }
 .is-layout-flex > * {
-  margin: 0 !important;
+  margin: 0;
 }
 
 .is-style-solid-line {

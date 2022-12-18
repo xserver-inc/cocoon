@@ -5942,7 +5942,7 @@ body.wp-admin {
   gap: 1.5rem;
 }
 .admin-settings .demo .is-layout-flex > * {
-  margin: 0 !important;
+  margin: 0;
 }
 .admin-settings .demo .is-style-solid-line {
   padding: .7em 2.5em;
@@ -13639,7 +13639,7 @@ body.wp-admin {
   gap: 1.5rem;
 }
 .admin-settings .demo .is-layout-flex > * {
-  margin: 0 !important;
+  margin: 0;
 }
 .admin-settings .demo .is-style-solid-line {
   padding: .7em 2.5em;
@@ -22102,7 +22102,7 @@ textarea[name="the_page_memo"] {
   gap: 1.5rem;
 }
 .components-popover__content .is-layout-flex > * {
-  margin: 0 !important;
+  margin: 0;
 }
 .components-popover__content .is-style-solid-line {
   padding: .7em 2.5em;
