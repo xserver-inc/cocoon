@@ -2,12 +2,10 @@ import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 import { Fragment } from '@wordpress/element';
-import { ServerSideRender } from '@wordpress/editor';
 import classnames from 'classnames';
 
 export default function edit(props) {
   const { attributes, setAttributes, className } = props;
-  const { id } = attributes;
   const classes = classnames('ad-box', 'block-box',
     {
       [ className ]: !! className,
@@ -18,29 +16,25 @@ export default function edit(props) {
 
   const getAdContent = () => {
     let msg = '';
+    let adVisible = false;
     if (gbSettings.isAdsVisible == 0) {
       msg = __('広告が非表示です。', THEME_NAME);
     }
     else if (gbSettings.isAdShortcodeEnable == 0) {
       msg = __('[ad]ショートコードが無効です。', THEME_NAME);
     }
-
-    // メッセージが設定されていたらメッセージを表示する。
-    if (msg !== '') {
-      return (
-        <div class='cocoon-render-message editor-ad-message'>
-          {msg}
-        </div>
-      );
-    }
+    // 広告表示可能
     else {
-      return (
-        <ServerSideRender
-          block={props.name}
-          attributes={attributes}
-        />
-      );
+      msg = __('広告', THEME_NAME);
+      adVisible = true;
     }
+    setAttributes({ adVisible: adVisible });
+
+    return (
+      <div class='cocoon-render-message editor-ad-message'>
+        {msg}
+      </div>
+    );
   }
 
   return (
