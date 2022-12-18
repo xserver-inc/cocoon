@@ -1387,19 +1387,19 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
   }
 
   ?>
-  <div class="author-box border-element no-icon cf">
+  <div class="profile-box author-box border-element no-icon cf">
     <?php //ウィジェット名がある場合
     $image_class = $is_image_circle ? ' circle-image' : null;
     if ($label): ?>
-      <div class="author-widget-name">
+      <div class="profile-widget-name author-widget-name">
         <?php echo $label; ?>
       </div>
     <?php endif ?>
-    <figure class="author-thumb<?php echo $image_class; ?>">
+    <figure class="author-thumb author-thumb<?php echo $image_class; ?>">
       <?php echo get_avatar( $user_id, 200 ); ?>
     </figure>
-    <div class="author-content">
-      <div class="author-name">
+    <div class="profile-content author-content">
+      <div class="profile-name author-name">
         <?php
         if ($user_id) {
           $description = get_the_author_description_text($user_id);
@@ -1446,7 +1446,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
         }
          ?>
       </div>
-      <div class="author-description">
+      <div class="profile-description author-description">
         <?php
         if ($description) {
           echo apply_filters( 'the_author_box_description', $description, $user_id );
@@ -1467,7 +1467,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
 
       </div>
       <?php if ($user_id): ?>
-      <div class="author-follows">
+      <div class="profile-follows author-follows">
         <?php
         set_query_var( '_USER_ID', $user_id );
         get_template_part_with_option('tmp/sns-follow-buttons', SF_PROFILE);

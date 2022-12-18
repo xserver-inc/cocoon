@@ -1,0 +1,30 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/box-menu",
+  "category": "cocoon-block",
+  "keywords": ["box-menu"],
+
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": "-1"
+    },
+    "classNames": {
+      "type": "string",
+      "default": ""
+    },
+    "boxName": {
+      "type": "string",
+      "default": ""
+    },
+    "target": {
+      "type": "string",
+      "default": "_self"
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}
