@@ -30,8 +30,15 @@ export default function edit(props) {
     }
     setAttributes({ adVisible: adVisible });
 
+    const adMsgClasses = classnames('cocoon-render-message', 'editor-ad-message',
+    {
+      [ 'is-ads-visible' ]: gbSettings.isAdsVisible === 1,
+      [ 'is-ad-shortcode-enable' ]: gbSettings.isAdShortcodeEnable === 1,
+    }
+  );
+
     return (
-      <div class='cocoon-render-message editor-ad-message'>
+      <div className={ adMsgClasses }>
         {msg}
       </div>
     );

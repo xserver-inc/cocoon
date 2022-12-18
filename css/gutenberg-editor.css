@@ -1352,6 +1352,14 @@ div.cocoon-render-message {
   margin-bottom: 1em;
 }
 
+div.editor-ad-message {
+  border: solid #ddd 1px;
+  text-align: center;
+  height: 280px;
+  line-height: 260px;
+  background-color: #fbfcfc;
+}
+
 div.cocoon-render-dropdown {
   margin-bottom: 1em;
 }
