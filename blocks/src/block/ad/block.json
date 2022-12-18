@@ -12,6 +12,10 @@
     "classNames": {
       "type": "string",
       "default": ""
+    },
+    "adVisible": {
+      "type": "boolean",
+      "default": false
     }
   },
   "example": {},
