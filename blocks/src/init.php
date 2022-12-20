@@ -180,6 +180,14 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     $menus //プロバティ
   );
 
+  //プロフィール情報を渡す
+  $users = get_users(array('fields'=> array('ID', 'user_nicename')));
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'gbUsers', //任意のオブジェクト名
+    $users //プロバティ
+  );
+
   //カラーパレット情報渡し
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
@@ -308,6 +316,7 @@ require_once abspath(__FILE__).'block/toggle-box/index.php';
 require_once abspath(__FILE__).'block/ranking/index.php';
 require_once abspath(__FILE__).'block/template/index.php';
 require_once abspath(__FILE__).'block/box-menu/index.php';
+require_once abspath(__FILE__).'block/profile/index.php';
 
 require_once abspath(__FILE__).'block-universal/caption-box/index.php';
 require_once abspath(__FILE__).'block-universal/tab-caption-box/index.php';

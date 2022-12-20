@@ -19,9 +19,9 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-  title: __('ボックスメニュー', THEME_NAME),
-  icon: <FontAwesomeIcon icon={['fas', 'th-large']} />,
-  description: __('登録されているボックスメニューを表示します。', THEME_NAME),
+  title: __('プロフィールボックス', THEME_NAME),
+  //icon: <FontAwesomeIcon icon={['fas', 'th-large']} />,
+  description: __('プロフィールを表示します。', THEME_NAME),
 
   edit,
   save,
