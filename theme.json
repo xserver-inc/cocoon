@@ -23,9 +23,7 @@
 			"lineHeight": true,
 			"textDecoration": true,
 			"textTransform": true,
-			"customFontSize": true,
-			"fontSizes": [],
-			"fontFamilies": []
+			"customFontSize": true
 		},
 		"border": {
 			"color": true,
