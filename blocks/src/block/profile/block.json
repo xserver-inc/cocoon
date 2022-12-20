@@ -1,8 +1,8 @@
 {
   "apiVersion": 2,
-  "name": "cocoon-blocks/box-menu",
+  "name": "cocoon-blocks/profile",
   "category": "cocoon-block",
-  "keywords": ["box-menu"],
+  "keywords": ["profile", "author", "box"],
 
   "attributes": {
     "id": {
@@ -13,13 +13,9 @@
       "type": "string",
       "default": ""
     },
-    "boxName": {
+    "label": {
       "type": "string",
       "default": ""
-    },
-    "target": {
-      "type": "string",
-      "default": "_self"
     }
   },
   "example": {},
