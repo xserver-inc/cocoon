@@ -43,7 +43,7 @@ export default function edit(props) {
   const getProfileMessage = () => {
     let msg = '';
     if (typeof gbUsers !== 'undefined' && abledDropdownListItemCount === 0) {
-      msg = __('選択できるユーザがありません。', THEME_NAME);
+      msg = __('選択できるユーザーがありません。', THEME_NAME);
     }
     else if (typeof gbUsers !== 'undefined') {
       msg = __('ユーザーを選択してください。', THEME_NAME);
