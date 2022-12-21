@@ -17,13 +17,13 @@
     "@wordpress/compose": "^3.25.2",
     "@wordpress/dom-ready": "^2.13.2",
     "@wordpress/i18n": "^3.19.2",
-    "@wp-g2/create-styles": "0.0.154",
+    "@wp-g2/create-styles": "0.0.164",
     "babel-core": "^6.26.3",
     "cgb-scripts": "^1.23.1",
     "classnames": "^2.3.1",
     "compare-versions": "^3.6.0",
     "po2json": "^0.4.5",
     "react": "^16.14.0",
-    "react-native": "^0.64.0"
+    "react-native": "^0.70.6"
   }
 }
