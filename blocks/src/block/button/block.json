@@ -48,7 +48,11 @@
       "type": "string"
     }
   },
-  "example": {},
+  "example": {
+    "attributes": {
+      "content": "Button"
+    }
+  },
   "supports": {
     "align": [ "left", "center", "right" ],
     "customClassName": true,
