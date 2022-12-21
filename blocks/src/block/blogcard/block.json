@@ -16,7 +16,11 @@
       "default": "blogcard-type bct-none"
     }
   },
-  "example": {},
+  "example": {
+    "attributes": {
+      "content": "https://wp-cocoon.com/"
+    }
+  },
   "supports": {
     "anchor": true
   }

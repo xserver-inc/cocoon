@@ -21,7 +21,6 @@ export const settings = {
   title: __( 'アイコンリスト', THEME_NAME ),
   icon: <Icon icon={postList} size={32} />,
   description: __( 'リストポイントにアイコンを適用した非順序リストです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

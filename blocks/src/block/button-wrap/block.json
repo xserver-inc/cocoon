@@ -46,7 +46,11 @@
       "type": "string"
     }
   },
-  "example": {},
+  "example": {
+    "attributes": {
+      "tag": "<a href=\"https://www.google.com/\">Button</a>"
+    }
+  },
   "supports": {
     "align": [
       "left",

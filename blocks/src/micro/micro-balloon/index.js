@@ -22,7 +22,6 @@ export const settings = {
   title: __( 'マイクロバルーン', THEME_NAME ),
   icon: <Icon icon={comment} size={32} /> ,
   description: __( 'コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,
