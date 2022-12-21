@@ -10,6 +10,11 @@
       "default": "キーワード"
     }
   },
+  "example": {
+    "attributes": {
+      "content": "Keywords"
+    }
+  },
   "supports": {
     "anchor": true
   }

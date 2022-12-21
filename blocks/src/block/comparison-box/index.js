@@ -22,7 +22,6 @@ export const settings = {
   title: __( '比較ボックス', THEME_NAME ),
   icon: <FontAwesomeIcon icon={['fas', 'columns']} />,
   description: __( '2つの商品（サービス）の比較用の装飾です。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

@@ -21,7 +21,6 @@ export const settings = {
   title: __( '検索案内', THEME_NAME ),
   icon: <Icon icon={search} size={32} />,
   description: __( '訪問者に検索を促すためのボックスです。検索をクリックすることで検索結果へ跳びます（※AMPページ以外）。', THEME_NAME ),
-  example: {},
 
   edit,
   save,

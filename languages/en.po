@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-17 17:49+0900\n"
-"PO-Revision-Date: 2022-05-17 18:23+0900\n"
+"POT-Creation-Date: 2022-12-21 23:22+0900\n"
+"PO-Revision-Date: 2022-12-22 00:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -10,9 +10,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Bookmarks: -1,2822,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: blocks/.git\n"
 "X-Poedit-SearchPathExcluded-1: blocks/bower_components\n"
@@ -20,6 +21,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: .git\n"
 "X-Poedit-SearchPathExcluded-4: .vscode\n"
 "X-Poedit-SearchPathExcluded-5: plugins\n"
+"X-Poedit-SearchPathExcluded-6: blocks/dist\n"
 
 #: blocks/src/block-universal/caption-box/block.js:50
 #: blocks/src/block-universal/caption-box/deprecated.js:14
@@ -54,9 +56,7 @@ msgstr "Heading"
 #: blocks/src/block/sticky-box/deprecated.js:80
 #: blocks/src/block/sticky-box/edit.js:23 blocks/src/block/tab-box/edit.js:58
 #: blocks/src/block/test-box/deprecated.js:79
-#: blocks/src/block/timeline/edit.js:71
-#: blocks/src/demo/blank-box-demo/block.js:43
-#: blocks/src/layout/column-2/block.js:79
+#: blocks/src/block/timeline/edit.js:71 blocks/src/layout/column-2/block.js:79
 #: blocks/src/micro/micro-balloon/edit.js:67
 #: blocks/src/micro/micro-text/edit.js:55 blocks/src/old/balloon-1/block.js:96
 #: blocks/src/old/balloon-2/block.js:127
@@ -94,7 +94,7 @@ msgstr "Icon"
 #: blocks/src/block-universal/tab-caption-box/block.js:108
 #: blocks/src/block-universal/tab-caption-box/edit.js:85
 #: blocks/src/block/blank-box/edit.js:49
-#: blocks/src/block/button-wrap/edit.js:120 blocks/src/block/button/edit.js:125
+#: blocks/src/block/button-wrap/edit.js:119 blocks/src/block/button/edit.js:125
 #: blocks/src/block/faq/edit.js:92 blocks/src/block/icon-list/edit.js:119
 #: blocks/src/block/tab-box/edit.js:134 blocks/src/block/timeline/edit.js:82
 #: blocks/src/block/toggle-box/edit.js:58
@@ -129,14 +129,15 @@ msgstr "Border color"
 #: blocks/src/block-universal/tab-caption-box/block.js:116
 #: blocks/src/block-universal/tab-caption-box/edit.js:93
 #: blocks/src/block/blank-box/edit.js:57
-#: blocks/src/block/button-wrap/edit.js:123 blocks/src/block/button/edit.js:128
+#: blocks/src/block/button-wrap/edit.js:122 blocks/src/block/button/edit.js:128
 #: blocks/src/block/faq/edit.js:110 blocks/src/block/icon-list/edit.js:132
 #: blocks/src/block/tab-box/edit.js:142 blocks/src/block/timeline/edit.js:90
 #: blocks/src/block/toggle-box/edit.js:66
-#: blocks/src/micro/micro-balloon/edit.js:116 lib/content-category.php:227
-#: lib/page-settings/all-forms.php:160 lib/page-settings/appeal-forms.php:90
-#: lib/page-settings/buttons-forms.php:83 lib/page-settings/editor-forms.php:54
-#: lib/page-settings/pwa-forms.php:131
+#: blocks/src/micro/micro-balloon/edit.js:116
+#: lib/block-editor-styles-list.php:25 lib/block-editor-styles-paragraph.php:25
+#: lib/content-category.php:227 lib/page-settings/all-forms.php:160
+#: lib/page-settings/appeal-forms.php:90 lib/page-settings/buttons-forms.php:83
+#: lib/page-settings/editor-forms.php:54 lib/page-settings/pwa-forms.php:131
 msgid "背景色"
 msgstr "Background color"
 
@@ -147,7 +148,7 @@ msgstr "Background color"
 #: blocks/src/block-universal/tab-caption-box/block.js:121
 #: blocks/src/block-universal/tab-caption-box/edit.js:98
 #: blocks/src/block/blank-box/edit.js:62
-#: blocks/src/block/button-wrap/edit.js:128 blocks/src/block/button/edit.js:133
+#: blocks/src/block/button-wrap/edit.js:127 blocks/src/block/button/edit.js:133
 #: blocks/src/block/faq/edit.js:115 blocks/src/block/icon-list/edit.js:137
 #: blocks/src/block/tab-box/edit.js:147 blocks/src/block/timeline/edit.js:95
 #: blocks/src/block/toggle-box/edit.js:71
@@ -194,6 +195,26 @@ msgstr "Tab heading box"
 msgid "ボックスに「タブ見出し」を入力できる汎用ボックスです。"
 msgstr "A generic box where you can enter a tab heading in the box."
 
+#: blocks/src/block/ad/edit.js:21
+msgid "広告が非表示です。"
+msgstr "Ad display setting is disabled."
+
+#: blocks/src/block/ad/edit.js:24
+msgid "[ad]ショートコードが無効です。"
+msgstr "[ad] shortcode is disabled."
+
+#: blocks/src/block/ad/edit.js:28 blocks/src/block/ad/index.js:22
+#: blocks/src/toolbutton/dropdown-shortcodes.js:43
+#: lib/custom-fields/ad-field.php:17 lib/custom-fields/ad-field.php:18
+#: lib/custom-fields/ad-field.php:20 lib/page-settings/_top-page.php:163
+#: lib/widgets/ad.php:19
+msgid "広告"
+msgstr "Ad"
+
+#: blocks/src/block/ad/index.js:24
+msgid "広告を表示します。"
+msgstr "Display Ads."
+
 #: blocks/src/block/balloon/edit.js:22 blocks/src/old/balloon-1/block.js:17
 #: blocks/src/old/balloon-2/block.js:17
 #: blocks/src/old/balloon-ex-fix1/block.js:17
@@ -205,7 +226,7 @@ msgstr "Not entered"
 
 #: blocks/src/block/balloon/index.js:21 blocks/src/old/balloon-1/block.js:53
 #: blocks/src/old/balloon-2/block.js:37 blocks/src/old/balloon/block.js:36
-#: lib/admin.php:449 lib/original-menu.php:27
+#: lib/admin.php:452 lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37 lib/tinymce/speech-balloons.php:50
 msgid "吹き出し"
 msgstr "Speech balloon"
@@ -218,7 +239,7 @@ msgid "登録されている吹き出しのオプションを変更できます�
 msgstr "You can change the option of a registered speech balloon."
 
 #: blocks/src/block/blank-box/edit.js:52
-#: blocks/src/block/button-wrap/edit.js:133 blocks/src/block/button/edit.js:138
+#: blocks/src/block/button-wrap/edit.js:132 blocks/src/block/button/edit.js:138
 #: blocks/src/block/faq/edit.js:105 blocks/src/block/icon-list/edit.js:127
 #: blocks/src/block/timeline/edit.js:100 blocks/src/block/toggle-box/edit.js:61
 #: blocks/src/micro/micro-balloon/edit.js:126
@@ -249,7 +270,8 @@ msgstr ""
 
 #: blocks/src/block/blogcard/block.js:55
 #: blocks/src/block/blogcard/deprecated.js:47
-#: blocks/src/block/blogcard/edit.js:27 blocks/src/block/tab-box/edit.js:61
+#: blocks/src/block/blogcard/edit.js:27 blocks/src/block/profile/edit.js:87
+#: blocks/src/block/tab-box/edit.js:61
 #: blocks/src/block/timeline-item/deprecated.js:24
 #: blocks/src/block/timeline-item/deprecated.js:44
 #: blocks/src/block/timeline-item/edit.js:20
@@ -271,47 +293,52 @@ msgstr "None"
 #: blocks/src/block/blogcard/block.js:65
 #: blocks/src/block/blogcard/deprecated.js:57
 #: blocks/src/block/blogcard/edit.js:37
-#: blocks/src/old/blogcard-class/block.js:66 lib/admin-tinymce-qtag.php:1590
+#: blocks/src/old/blogcard-class/block.js:66 lib/admin-tinymce-qtag.php:1592
 #: lib/page-settings/image-forms.php:212 lib/page-settings/single-funcs.php:76
-#: lib/widgets/related-entries.php:19 lib/widgets/related-entries.php:78
+#: lib/widgets/related-entries.php:19 lib/widgets/related-entries.php:80
+#: tmp/css-custom.php:873 tmp/css-custom.php:925
 msgid "関連記事"
 msgstr "Related articles"
 
 #: blocks/src/block/blogcard/block.js:69
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:41
-#: blocks/src/old/blogcard-class/block.js:70 lib/admin-tinymce-qtag.php:1596
+#: blocks/src/old/blogcard-class/block.js:70 lib/admin-tinymce-qtag.php:1598
+#: tmp/css-custom.php:877 tmp/css-custom.php:928
 msgid "参考記事"
 msgstr "Reference articles"
 
 #: blocks/src/block/blogcard/block.js:73
 #: blocks/src/block/blogcard/deprecated.js:65
-#: blocks/src/block/blogcard/edit.js:45 lib/admin-tinymce-qtag.php:1602
+#: blocks/src/block/blogcard/edit.js:45 lib/admin-tinymce-qtag.php:1604
+#: tmp/css-custom.php:881 tmp/css-custom.php:931
 msgid "参考リンク"
 msgstr "Reference link"
 
 #: blocks/src/block/blogcard/block.js:77
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:49
-#: blocks/src/old/blogcard-class/block.js:74 lib/admin-tinymce-qtag.php:1608
+#: blocks/src/old/blogcard-class/block.js:74 lib/admin-tinymce-qtag.php:1610
 #: lib/page-settings/carousel-forms.php:61
 #: lib/page-settings/image-forms.php:211 lib/widgets/popular-entries.php:21
-#: lib/widgets/popular-entries.php:91
+#: lib/widgets/popular-entries.php:87 tmp/css-custom.php:885
+#: tmp/css-custom.php:934
 msgid "人気記事"
 msgstr "Popular articles"
 
 #: blocks/src/block/blogcard/block.js:81
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:53
-#: blocks/src/old/blogcard-class/block.js:78 lib/admin-tinymce-qtag.php:1614
+#: blocks/src/old/blogcard-class/block.js:78 lib/admin-tinymce-qtag.php:1616
+#: tmp/css-custom.php:897 tmp/css-custom.php:943
 msgid "あわせて読みたい"
 msgstr "Read together"
 
 #: blocks/src/block/blogcard/block.js:85
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:57
-#: blocks/src/old/blogcard-class/block.js:82 lib/admin-tinymce-qtag.php:1620
-#: lib/widgets/cta-box.php:34
+#: blocks/src/old/blogcard-class/block.js:82 lib/admin-tinymce-qtag.php:1622
+#: lib/widgets/cta-box.php:34 tmp/css-custom.php:901 tmp/css-custom.php:946
 msgid "詳細はこちら"
 msgstr "Details"
 
@@ -319,7 +346,8 @@ msgstr "Details"
 #: blocks/src/block/blogcard/deprecated.js:81
 #: blocks/src/block/blogcard/edit.js:61 blocks/src/block/tab-box/edit.js:67
 #: blocks/src/old/blogcard-class/block.js:86 blocks/src/old/tab-box/block.js:71
-#: lib/admin-tinymce-qtag.php:305 lib/admin-tinymce-qtag.php:1626
+#: lib/admin-tinymce-qtag.php:307 lib/admin-tinymce-qtag.php:1628
+#: tmp/css-custom.php:893 tmp/css-custom.php:940
 msgid "チェック"
 msgstr "Check"
 
@@ -327,32 +355,74 @@ msgstr "Check"
 #: blocks/src/block/blogcard/deprecated.js:85
 #: blocks/src/block/blogcard/edit.js:65 blocks/src/block/tab-box/edit.js:87
 #: blocks/src/old/blogcard-class/block.js:90 blocks/src/old/tab-box/block.js:91
-#: lib/admin-tinymce-qtag.php:455 lib/admin-tinymce-qtag.php:1632
+#: lib/admin-tinymce-qtag.php:457 lib/admin-tinymce-qtag.php:1634
+#: tmp/css-custom.php:889 tmp/css-custom.php:937
 msgid "ピックアップ"
 msgstr "Recommended"
 
 #: blocks/src/block/blogcard/block.js:97
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:69
-#: blocks/src/old/blogcard-class/block.js:94 lib/admin-tinymce-qtag.php:1638
+#: blocks/src/old/blogcard-class/block.js:94 lib/admin-tinymce-qtag.php:1640
+#: tmp/css-custom.php:905 tmp/css-custom.php:949
 msgid "公式サイト"
 msgstr "Official site"
 
 #: blocks/src/block/blogcard/block.js:101
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:73 blocks/src/block/tab-box/edit.js:99
-#: blocks/src/old/tab-box/block.js:103 lib/admin-tinymce-qtag.php:545
-#: lib/admin-tinymce-qtag.php:1644
+#: blocks/src/old/tab-box/block.js:103 lib/admin-tinymce-qtag.php:547
+#: lib/admin-tinymce-qtag.php:1646 tmp/css-custom.php:909
+#: tmp/css-custom.php:952
 msgid "ダウンロード"
 msgstr "Download"
 
-#: blocks/src/block/blogcard/edit.js:77 lib/admin-tinymce-qtag.php:1650
+#: blocks/src/block/blogcard/edit.js:77 lib/admin-tinymce-qtag.php:1652
+#: tmp/css-custom.php:913 tmp/css-custom.php:955
 msgid "前回の記事"
 msgstr "Previous article"
 
-#: blocks/src/block/blogcard/edit.js:81 lib/admin-tinymce-qtag.php:1656
+#: blocks/src/block/blogcard/edit.js:81 lib/admin-tinymce-qtag.php:1658
+#: tmp/css-custom.php:917 tmp/css-custom.php:958
 msgid "続きの記事"
 msgstr "Next article"
+
+#: blocks/src/block/box-menu/edit.js:42 blocks/src/block/profile/edit.js:29
+#: blocks/src/block/ranking/edit.js:29 blocks/src/block/template/edit.js:29
+#: lib/page-settings/recommended-forms.php:61
+msgid "未選択"
+msgstr "Unselected"
+
+#: blocks/src/block/box-menu/edit.js:59
+msgid ""
+"ダッシュボードメニューの「外観」→「メニュー」からボックスメニューを作成してく"
+"ださい。"
+msgstr "Create a menu from \"Dashboard\" -> \"Appearance\" -> \"Menus\"."
+
+#: blocks/src/block/box-menu/edit.js:61
+msgid "ボックスメニューが登録されていません。"
+msgstr "Box menu is not registered."
+
+#: blocks/src/block/box-menu/edit.js:64
+msgid "有効なボックスメニューが登録されていません。"
+msgstr "Valid box menu is not registered."
+
+#: blocks/src/block/box-menu/edit.js:64
+msgid "もしくは登録されているボックスメニューを表示設定にしてください。"
+msgstr "or change the display setting of the box menu."
+
+#: blocks/src/block/box-menu/edit.js:67
+msgid "ボックスメニューを選択してください。"
+msgstr "Select a box menu."
+
+#: blocks/src/block/box-menu/edit.js:104 blocks/src/block/box-menu/index.js:22
+#: lib/widgets/box-menus.php:19
+msgid "ボックスメニュー"
+msgstr "Box menu"
+
+#: blocks/src/block/box-menu/index.js:24
+msgid "登録されているボックスメニューを表示します。"
+msgstr "Displays the registered box menu."
 
 #: blocks/src/block/button-wrap/deprecated.js:20
 #: blocks/src/old/button-wrap-1/block.js:44
@@ -364,47 +434,47 @@ msgstr ""
 "Click here to enter an area for setting a link tag. This input will not be "
 "reflected on the published page."
 
-#: blocks/src/block/button-wrap/edit.js:69
+#: blocks/src/block/button-wrap/edit.js:68
 #: blocks/src/old/button-wrap-1/block.js:77
 #: blocks/src/old/button-wrap/block.js:61
 msgid "囲みボタン設定"
 msgstr "Surround button settings"
 
-#: blocks/src/block/button-wrap/edit.js:72
+#: blocks/src/block/button-wrap/edit.js:71
 #: blocks/src/old/button-wrap-1/block.js:80
 #: blocks/src/old/button-wrap/block.js:64
 msgid "リンクタグ・ショートコード"
 msgstr "Link tags and short codes"
 
-#: blocks/src/block/button-wrap/edit.js:78 blocks/src/block/button/edit.js:83
+#: blocks/src/block/button-wrap/edit.js:77 blocks/src/block/button/edit.js:83
 #: blocks/src/old/button-1/block.js:105
 #: blocks/src/old/button-wrap-1/block.js:86
 #: blocks/src/old/button-wrap/block.js:150 blocks/src/old/button/block.js:172
 msgid "サイズ"
 msgstr "Size"
 
-#: blocks/src/block/button-wrap/edit.js:84 blocks/src/block/button/edit.js:89
+#: blocks/src/block/button-wrap/edit.js:83 blocks/src/block/button/edit.js:89
 #: blocks/src/old/button-1/block.js:111
 #: blocks/src/old/button-wrap-1/block.js:92
 #: blocks/src/old/button-wrap/block.js:156 blocks/src/old/button/block.js:178
 msgid "小"
 msgstr "Small"
 
-#: blocks/src/block/button-wrap/edit.js:88 blocks/src/block/button/edit.js:93
+#: blocks/src/block/button-wrap/edit.js:87 blocks/src/block/button/edit.js:93
 #: blocks/src/old/button-1/block.js:115
 #: blocks/src/old/button-wrap-1/block.js:96
 #: blocks/src/old/button-wrap/block.js:160 blocks/src/old/button/block.js:182
 msgid "中"
 msgstr "Medium"
 
-#: blocks/src/block/button-wrap/edit.js:92 blocks/src/block/button/edit.js:97
+#: blocks/src/block/button-wrap/edit.js:91 blocks/src/block/button/edit.js:97
 #: blocks/src/old/button-1/block.js:119
 #: blocks/src/old/button-wrap-1/block.js:100
 #: blocks/src/old/button-wrap/block.js:164 blocks/src/old/button/block.js:186
 msgid "大"
 msgstr "Large"
 
-#: blocks/src/block/button-wrap/edit.js:98 blocks/src/block/button/edit.js:103
+#: blocks/src/block/button-wrap/edit.js:97 blocks/src/block/button/edit.js:103
 #: blocks/src/micro/micro-balloon/edit.js:86
 #: blocks/src/old/button-1/block.js:125
 #: blocks/src/old/button-wrap-1/block.js:106
@@ -413,20 +483,20 @@ msgstr "Large"
 msgid "円形にする"
 msgstr "Rounded"
 
-#: blocks/src/block/button-wrap/edit.js:104 blocks/src/block/button/edit.js:109
+#: blocks/src/block/button-wrap/edit.js:103 blocks/src/block/button/edit.js:109
 #: blocks/src/old/button-1/block.js:131
 #: blocks/src/old/button-wrap-1/block.js:112
 msgid "光らせる"
 msgstr "Shiny"
 
-#: blocks/src/block/button-wrap/edit.js:111 blocks/src/block/button/edit.js:116
+#: blocks/src/block/button-wrap/edit.js:110 blocks/src/block/button/edit.js:116
 #: lib/page-settings/all-forms.php:90
 msgid "文字サイズ"
 msgstr "Text size"
 
 #: blocks/src/block/button-wrap/index.js:21
 #: blocks/src/old/button-wrap-1/block.js:35
-#: blocks/src/old/button-wrap/block.js:21 lib/admin-tinymce-qtag.php:1255
+#: blocks/src/old/button-wrap/block.js:21 lib/admin-tinymce-qtag.php:1257
 msgid "囲みボタン"
 msgstr "Surround button"
 
@@ -441,7 +511,7 @@ msgstr ""
 #: blocks/src/block/button/deprecated.js:20 blocks/src/block/button/index.js:20
 #: blocks/src/old/button-1/block.js:33 blocks/src/old/button-1/block.js:42
 #: blocks/src/old/button/block.js:20 blocks/src/old/button/block.js:28
-#: lib/admin-tinymce-qtag.php:960 lib/page-settings/_top-page.php:185
+#: lib/admin-tinymce-qtag.php:962 lib/page-settings/_top-page.php:185
 #: lib/page-settings/editor-forms.php:97
 msgid "ボタン"
 msgstr "Button"
@@ -490,8 +560,8 @@ msgid "2つの商品（サービス）の比較用の装飾です。"
 msgstr "This is a decoration for comparison of two products (service)."
 
 #: blocks/src/block/comparison-box/items/block.js:28
-#: lib/admin-tinymce-qtag.php:880 lib/admin-tinymce-qtag.php:900
-#: lib/admin-tinymce-qtag.php:920 lib/admin-tinymce-qtag.php:941
+#: lib/admin-tinymce-qtag.php:882 lib/admin-tinymce-qtag.php:902
+#: lib/admin-tinymce-qtag.php:922 lib/admin-tinymce-qtag.php:943
 #: lib/page-settings/blogcard-in-forms.php:75
 #: lib/page-settings/blogcard-out-forms.php:72
 msgid "左側"
@@ -502,8 +572,8 @@ msgid "比較ボックスの左。"
 msgstr "Left of Comparison Box"
 
 #: blocks/src/block/comparison-box/items/block.js:58
-#: lib/admin-tinymce-qtag.php:890 lib/admin-tinymce-qtag.php:910
-#: lib/admin-tinymce-qtag.php:930 lib/admin-tinymce-qtag.php:951
+#: lib/admin-tinymce-qtag.php:892 lib/admin-tinymce-qtag.php:912
+#: lib/admin-tinymce-qtag.php:932 lib/admin-tinymce-qtag.php:953
 #: lib/page-settings/blogcard-in-forms.php:76
 #: lib/page-settings/blogcard-out-forms.php:73
 msgid "右側"
@@ -564,7 +634,6 @@ msgstr "FAQ."
 #: blocks/src/block/sticky-box/deprecated.js:83
 #: blocks/src/block/sticky-box/edit.js:26
 #: blocks/src/block/test-box/deprecated.js:82
-#: blocks/src/demo/blank-box-demo/block.js:49
 #: blocks/src/micro/micro-balloon/edit.js:70
 #: blocks/src/micro/micro-text/edit.js:58 blocks/src/old/blank-box/block.js:58
 #: blocks/src/old/micro-balloon-1/block.js:64
@@ -574,31 +643,35 @@ msgstr "Type"
 
 #: blocks/src/block/icon-box/deprecated.js:88
 #: blocks/src/block/icon-box/edit.js:33
-#: blocks/src/block/test-box/deprecated.js:88 lib/admin-tinymce-qtag.php:33
-#: lib/admin-tinymce-qtag.php:173 lib/block-editor-styles-group.php:17
+#: blocks/src/block/test-box/deprecated.js:88 lib/admin-tinymce-qtag.php:34
+#: lib/admin-tinymce-qtag.php:175 lib/block-editor-styles-group.php:17
+#: lib/block-editor-styles-paragraph.php:52
 msgid "補足情報(i)"
 msgstr "Info (i)"
 
 #: blocks/src/block/icon-box/deprecated.js:92
 #: blocks/src/block/icon-box/edit.js:37
-#: blocks/src/block/test-box/deprecated.js:92 lib/admin-tinymce-qtag.php:34
-#: lib/admin-tinymce-qtag.php:178 lib/block-editor-styles-group.php:25
+#: blocks/src/block/test-box/deprecated.js:92 lib/admin-tinymce-qtag.php:35
+#: lib/admin-tinymce-qtag.php:180 lib/block-editor-styles-group.php:25
+#: lib/block-editor-styles-paragraph.php:60
 msgid "補足情報(?)"
 msgstr "Info (?)"
 
 #: blocks/src/block/icon-box/deprecated.js:96
 #: blocks/src/block/icon-box/edit.js:41
-#: blocks/src/block/test-box/deprecated.js:96 lib/admin-tinymce-qtag.php:35
+#: blocks/src/block/test-box/deprecated.js:96 lib/admin-tinymce-qtag.php:36
 #: lib/block-editor-styles-group.php:33
+#: lib/block-editor-styles-paragraph.php:68
 msgid "補足情報(!)"
 msgstr "Info (!)"
 
 #: blocks/src/block/icon-box/deprecated.js:100
 #: blocks/src/block/icon-box/edit.js:45 blocks/src/block/tab-box/edit.js:95
 #: blocks/src/block/test-box/deprecated.js:100
-#: blocks/src/old/tab-box/block.js:99 lib/admin-tinymce-qtag.php:188
-#: lib/admin-tinymce-qtag.php:515 lib/admin.php:189
-#: lib/block-editor-styles-group.php:41 lib/custom-fields/memo-field.php:17
+#: blocks/src/old/tab-box/block.js:99 lib/admin-tinymce-qtag.php:190
+#: lib/admin-tinymce-qtag.php:517 lib/admin.php:192
+#: lib/block-editor-styles-group.php:41
+#: lib/block-editor-styles-paragraph.php:76 lib/custom-fields/memo-field.php:17
 #: lib/custom-fields/memo-field.php:18 lib/custom-fields/memo-field.php:21
 msgid "メモ"
 msgstr "Note"
@@ -606,9 +679,10 @@ msgstr "Note"
 #: blocks/src/block/icon-box/deprecated.js:104
 #: blocks/src/block/icon-box/edit.js:49 blocks/src/block/tab-box/edit.js:71
 #: blocks/src/block/test-box/deprecated.js:104
-#: blocks/src/old/tab-box/block.js:75 lib/admin-tinymce-qtag.php:193
-#: lib/admin-tinymce-qtag.php:335 lib/block-editor-styles-group.php:49
-#: lib/page-settings/_top-page.php:179 lib/page-settings/comment-funcs.php:32
+#: blocks/src/old/tab-box/block.js:75 lib/admin-tinymce-qtag.php:195
+#: lib/admin-tinymce-qtag.php:337 lib/block-editor-styles-group.php:49
+#: lib/block-editor-styles-paragraph.php:84 lib/page-settings/_top-page.php:179
+#: lib/page-settings/comment-funcs.php:32
 #: lib/page-settings/sns-share-forms-bottom.php:95
 #: lib/page-settings/sns-share-forms-top.php:82
 #: tmp/mobile-comments-button.php:12 tmp/sns-share-buttons.php:54
@@ -618,41 +692,45 @@ msgstr "Comments"
 #: blocks/src/block/icon-box/deprecated.js:108
 #: blocks/src/block/icon-box/edit.js:53 blocks/src/block/tab-box/edit.js:111
 #: blocks/src/block/test-box/deprecated.js:108
-#: blocks/src/old/tab-box/block.js:115 lib/admin-tinymce-qtag.php:198
-#: lib/admin-tinymce-qtag.php:637 lib/block-editor-styles-group.php:57
+#: blocks/src/old/tab-box/block.js:115 lib/admin-tinymce-qtag.php:200
+#: lib/admin-tinymce-qtag.php:639 lib/block-editor-styles-group.php:57
+#: lib/block-editor-styles-paragraph.php:92
 msgid "OK"
 msgstr "OK"
 
 #: blocks/src/block/icon-box/deprecated.js:112
 #: blocks/src/block/icon-box/edit.js:57 blocks/src/block/tab-box/edit.js:115
 #: blocks/src/block/test-box/deprecated.js:112
-#: blocks/src/old/tab-box/block.js:119 lib/admin-tinymce-qtag.php:203
-#: lib/admin-tinymce-qtag.php:668 lib/block-editor-styles-group.php:65
+#: blocks/src/old/tab-box/block.js:119 lib/admin-tinymce-qtag.php:205
+#: lib/admin-tinymce-qtag.php:670 lib/block-editor-styles-group.php:65
+#: lib/block-editor-styles-paragraph.php:100
 msgid "NG"
 msgstr "Not good"
 
 #: blocks/src/block/icon-box/deprecated.js:116
 #: blocks/src/block/icon-box/edit.js:61 blocks/src/block/tab-box/edit.js:119
 #: blocks/src/block/test-box/deprecated.js:116
-#: blocks/src/old/tab-box/block.js:123 lib/admin-tinymce-qtag.php:208
-#: lib/admin-tinymce-qtag.php:699 lib/block-editor-styles-group.php:73
+#: blocks/src/old/tab-box/block.js:123 lib/admin-tinymce-qtag.php:210
+#: lib/admin-tinymce-qtag.php:701 lib/block-editor-styles-group.php:73
+#: lib/block-editor-styles-paragraph.php:108
 msgid "GOOD"
 msgstr "Good"
 
 #: blocks/src/block/icon-box/deprecated.js:120
 #: blocks/src/block/icon-box/edit.js:65 blocks/src/block/tab-box/edit.js:123
 #: blocks/src/block/test-box/deprecated.js:120
-#: blocks/src/old/tab-box/block.js:127 lib/admin-tinymce-qtag.php:213
-#: lib/admin-tinymce-qtag.php:730 lib/block-editor-styles-group.php:81
+#: blocks/src/old/tab-box/block.js:127 lib/admin-tinymce-qtag.php:215
+#: lib/admin-tinymce-qtag.php:732 lib/block-editor-styles-group.php:81
+#: lib/block-editor-styles-paragraph.php:116
 msgid "BAD"
 msgstr "Bad"
 
 #: blocks/src/block/icon-box/deprecated.js:124
 #: blocks/src/block/icon-box/edit.js:69 blocks/src/block/tab-box/edit.js:127
 #: blocks/src/block/test-box/deprecated.js:124
-#: blocks/src/old/tab-box/block.js:131 lib/admin-tinymce-qtag.php:218
-#: lib/admin-tinymce-qtag.php:761 lib/block-editor-styles-group.php:89
-#: lib/widgets/author-box.php:19
+#: blocks/src/old/tab-box/block.js:131 lib/admin-tinymce-qtag.php:220
+#: lib/admin-tinymce-qtag.php:763 lib/block-editor-styles-group.php:89
+#: lib/block-editor-styles-paragraph.php:124 lib/widgets/author-box.php:19
 msgid "プロフィール"
 msgstr "Profile"
 
@@ -681,58 +759,58 @@ msgid "リストポイントにアイコンを適用した非順序リストで�
 msgstr "Unordered list with an icon applied to list points."
 
 #: blocks/src/block/info-box/deprecated.js:87
-#: blocks/src/block/info-box/edit.js:33
-#: blocks/src/demo/info-box-drop/block.js:50 lib/admin-tinymce-qtag.php:228
+#: blocks/src/block/info-box/edit.js:33 lib/admin-tinymce-qtag.php:230
 #: lib/block-editor-styles-group.php:100
+#: lib/block-editor-styles-paragraph.php:135
 msgid "プライマリー（濃い水色）"
 msgstr "Primary (dark blue)"
 
 #: blocks/src/block/info-box/deprecated.js:91
-#: blocks/src/block/info-box/edit.js:37
-#: blocks/src/demo/info-box-drop/block.js:54 lib/admin-tinymce-qtag.php:233
+#: blocks/src/block/info-box/edit.js:37 lib/admin-tinymce-qtag.php:235
 #: lib/block-editor-styles-group.php:108
+#: lib/block-editor-styles-paragraph.php:143
 msgid "セカンダリー（濃い灰色）"
 msgstr "Secondary (dark gray)"
 
 #: blocks/src/block/info-box/deprecated.js:95
-#: blocks/src/block/info-box/edit.js:41
-#: blocks/src/demo/info-box-drop/block.js:58 lib/admin-tinymce-qtag.php:243
+#: blocks/src/block/info-box/edit.js:41 lib/admin-tinymce-qtag.php:245
 #: lib/block-editor-styles-group.php:116
+#: lib/block-editor-styles-paragraph.php:151
 msgid "インフォ（薄い青）"
 msgstr "Info (light blue)"
 
 #: blocks/src/block/info-box/deprecated.js:99
-#: blocks/src/block/info-box/edit.js:45
-#: blocks/src/demo/info-box-drop/block.js:62 lib/admin-tinymce-qtag.php:238
+#: blocks/src/block/info-box/edit.js:45 lib/admin-tinymce-qtag.php:240
 #: lib/block-editor-styles-group.php:124
+#: lib/block-editor-styles-paragraph.php:159
 msgid "サクセス（薄い緑）"
 msgstr "Success (light green)"
 
 #: blocks/src/block/info-box/deprecated.js:103
-#: blocks/src/block/info-box/edit.js:49
-#: blocks/src/demo/info-box-drop/block.js:66 lib/admin-tinymce-qtag.php:248
+#: blocks/src/block/info-box/edit.js:49 lib/admin-tinymce-qtag.php:250
 #: lib/block-editor-styles-group.php:132
+#: lib/block-editor-styles-paragraph.php:167
 msgid "ワーニング（薄い黄色）"
 msgstr "Warning (light yellow)"
 
 #: blocks/src/block/info-box/deprecated.js:107
-#: blocks/src/block/info-box/edit.js:53
-#: blocks/src/demo/info-box-drop/block.js:70 lib/admin-tinymce-qtag.php:253
+#: blocks/src/block/info-box/edit.js:53 lib/admin-tinymce-qtag.php:255
 #: lib/block-editor-styles-group.php:140
+#: lib/block-editor-styles-paragraph.php:175
 msgid "デンジャー（薄い赤色）"
 msgstr "Danger (light red)"
 
 #: blocks/src/block/info-box/deprecated.js:111
-#: blocks/src/block/info-box/edit.js:57
-#: blocks/src/demo/info-box-drop/block.js:74 lib/admin-tinymce-qtag.php:258
+#: blocks/src/block/info-box/edit.js:57 lib/admin-tinymce-qtag.php:260
 #: lib/block-editor-styles-group.php:148
+#: lib/block-editor-styles-paragraph.php:183
 msgid "ライト（白色）"
 msgstr "Light (white)"
 
 #: blocks/src/block/info-box/deprecated.js:115
-#: blocks/src/block/info-box/edit.js:61
-#: blocks/src/demo/info-box-drop/block.js:78 lib/admin-tinymce-qtag.php:263
+#: blocks/src/block/info-box/edit.js:61 lib/admin-tinymce-qtag.php:265
 #: lib/block-editor-styles-group.php:156
+#: lib/block-editor-styles-paragraph.php:191
 msgid "ダーク（暗い灰色）"
 msgstr "Dark (dark gray)"
 
@@ -745,6 +823,68 @@ msgid ""
 "ボックスの背景色により、直感的にメッセージ内容を伝えるためのボックスです。"
 msgstr ""
 "It is a box to convey the message content by the background color of the box."
+
+#: blocks/src/block/profile/edit.js:46
+msgid "選択できるユーザーがありません。"
+msgstr "There are no users to select."
+
+#: blocks/src/block/profile/edit.js:49
+msgid "ユーザーを選択してください。"
+msgstr "Select a user."
+
+#: blocks/src/block/profile/edit.js:95
+msgid "ユーザー"
+msgstr "User"
+
+#: blocks/src/block/profile/index.js:22
+#: blocks/src/toolbutton/dropdown-shortcodes.js:71
+#: lib/tinymce/shortcodes.php:94
+msgid "プロフィールボックス"
+msgstr "Profile box"
+
+#: blocks/src/block/profile/index.js:24
+msgid "プロフィールを表示します。"
+msgstr "Displays the bio of the user."
+
+#: blocks/src/block/ranking/edit.js:40 blocks/src/block/template/edit.js:40
+msgid "（リスト非表示）"
+msgstr "(List hidden)"
+
+#: blocks/src/block/ranking/edit.js:51
+msgid ""
+"ダッシュボードメニューの「Cocoon設定」→「ランキング」からランキングを作成して"
+"ください。"
+msgstr ""
+"Create a ranking from \"Dashboard\" -> \"Cocoon Settings\" -> \"Create "
+"ranking\"."
+
+#: blocks/src/block/ranking/edit.js:53
+msgid "ランキングが登録されていません。"
+msgstr "Ranking is not registered."
+
+#: blocks/src/block/ranking/edit.js:57
+msgid "有効なランキングが登録されていません。"
+msgstr "Valid ranking is not registered."
+
+#: blocks/src/block/ranking/edit.js:57
+msgid "もしくは登録されているランキングを表示設定にしてください。。"
+msgstr "or change the display setting of the ranking."
+
+#: blocks/src/block/ranking/edit.js:61 lib/widgets/item-ranking.php:83
+msgid "ランキングを選択してください。"
+msgstr "Select a ranking."
+
+#: blocks/src/block/ranking/edit.js:101 blocks/src/block/ranking/index.js:22
+#: blocks/src/toolbutton/dropdown-rankings.js:48
+#: blocks/src/toolbutton/dropdown-rankings.js:61
+#: lib/page-item-ranking/_top-page.php:37 lib/tinymce/item-rankings.php:51
+#: lib/widgets/item-ranking.php:19 lib/widgets/item-ranking.php:71
+msgid "ランキング"
+msgstr "Ranking"
+
+#: blocks/src/block/ranking/index.js:24
+msgid "登録されているランキングを表示します。"
+msgstr "Displays the registered ranking."
 
 #: blocks/src/block/search-box/block.js:17
 #: blocks/src/block/search-box/deprecated.js:14
@@ -784,111 +924,101 @@ msgid "検索"
 msgstr "Search"
 
 #: blocks/src/block/sticky-box/deprecated.js:89
-#: blocks/src/block/sticky-box/edit.js:32
-#: blocks/src/demo/blank-box-demo/block.js:55
-#: blocks/src/old/tab-box/block.js:143 blocks/src/toolbutton/badge-grey.js:14
-#: lib/admin-tinymce-qtag.php:274 lib/admin-tinymce-qtag.php:308
-#: lib/admin-tinymce-qtag.php:338 lib/admin-tinymce-qtag.php:368
-#: lib/admin-tinymce-qtag.php:398 lib/admin-tinymce-qtag.php:428
-#: lib/admin-tinymce-qtag.php:458 lib/admin-tinymce-qtag.php:488
-#: lib/admin-tinymce-qtag.php:518 lib/admin-tinymce-qtag.php:548
-#: lib/admin-tinymce-qtag.php:578 lib/admin-tinymce-qtag.php:609
-#: lib/admin-tinymce-qtag.php:640 lib/admin-tinymce-qtag.php:671
-#: lib/admin-tinymce-qtag.php:702 lib/admin-tinymce-qtag.php:733
-#: lib/admin-tinymce-qtag.php:764 lib/admin-tinymce-qtag.php:797
-#: lib/gutenberg.php:105
+#: blocks/src/block/sticky-box/edit.js:32 blocks/src/old/tab-box/block.js:143
+#: blocks/src/toolbutton/badge-grey.js:14 lib/admin-tinymce-qtag.php:276
+#: lib/admin-tinymce-qtag.php:310 lib/admin-tinymce-qtag.php:340
+#: lib/admin-tinymce-qtag.php:370 lib/admin-tinymce-qtag.php:400
+#: lib/admin-tinymce-qtag.php:430 lib/admin-tinymce-qtag.php:460
+#: lib/admin-tinymce-qtag.php:490 lib/admin-tinymce-qtag.php:520
+#: lib/admin-tinymce-qtag.php:550 lib/admin-tinymce-qtag.php:580
+#: lib/admin-tinymce-qtag.php:611 lib/admin-tinymce-qtag.php:642
+#: lib/admin-tinymce-qtag.php:673 lib/admin-tinymce-qtag.php:704
+#: lib/admin-tinymce-qtag.php:735 lib/admin-tinymce-qtag.php:766
+#: lib/admin-tinymce-qtag.php:799 lib/gutenberg.php:105
 msgid "灰色"
 msgstr "Gray"
 
 #: blocks/src/block/sticky-box/deprecated.js:93
-#: blocks/src/block/sticky-box/edit.js:36
-#: blocks/src/demo/blank-box-demo/block.js:59
-#: blocks/src/old/blank-box/block.js:68 blocks/src/old/caption-box/block.js:65
-#: blocks/src/old/label-box/block.js:64
+#: blocks/src/block/sticky-box/edit.js:36 blocks/src/old/blank-box/block.js:68
+#: blocks/src/old/caption-box/block.js:65 blocks/src/old/label-box/block.js:64
 #: blocks/src/old/micro-balloon-1/block.js:90
 #: blocks/src/old/micro-balloon/block.js:89 blocks/src/old/tab-box/block.js:147
 #: blocks/src/old/tab-caption-box/block.js:65
 #: blocks/src/old/toggle-box/block.js:68
-#: blocks/src/toolbutton/badge-yellow.js:14 lib/admin-tinymce-qtag.php:279
-#: lib/admin-tinymce-qtag.php:313 lib/admin-tinymce-qtag.php:343
-#: lib/admin-tinymce-qtag.php:373 lib/admin-tinymce-qtag.php:403
-#: lib/admin-tinymce-qtag.php:433 lib/admin-tinymce-qtag.php:463
-#: lib/admin-tinymce-qtag.php:493 lib/admin-tinymce-qtag.php:523
-#: lib/admin-tinymce-qtag.php:553 lib/admin-tinymce-qtag.php:583
-#: lib/admin-tinymce-qtag.php:614 lib/admin-tinymce-qtag.php:645
-#: lib/admin-tinymce-qtag.php:676 lib/admin-tinymce-qtag.php:707
-#: lib/admin-tinymce-qtag.php:738 lib/admin-tinymce-qtag.php:769
-#: lib/admin-tinymce-qtag.php:802 lib/gutenberg.php:80
+#: blocks/src/toolbutton/badge-yellow.js:14 lib/admin-tinymce-qtag.php:281
+#: lib/admin-tinymce-qtag.php:315 lib/admin-tinymce-qtag.php:345
+#: lib/admin-tinymce-qtag.php:375 lib/admin-tinymce-qtag.php:405
+#: lib/admin-tinymce-qtag.php:435 lib/admin-tinymce-qtag.php:465
+#: lib/admin-tinymce-qtag.php:495 lib/admin-tinymce-qtag.php:525
+#: lib/admin-tinymce-qtag.php:555 lib/admin-tinymce-qtag.php:585
+#: lib/admin-tinymce-qtag.php:616 lib/admin-tinymce-qtag.php:647
+#: lib/admin-tinymce-qtag.php:678 lib/admin-tinymce-qtag.php:709
+#: lib/admin-tinymce-qtag.php:740 lib/admin-tinymce-qtag.php:771
+#: lib/admin-tinymce-qtag.php:804 lib/gutenberg.php:80
 #: lib/widgets/cta-box.php:176
 msgid "黄色"
 msgstr "Yellow"
 
 #: blocks/src/block/sticky-box/deprecated.js:97
-#: blocks/src/block/sticky-box/edit.js:40
-#: blocks/src/demo/blank-box-demo/block.js:63
-#: blocks/src/old/blank-box/block.js:72 blocks/src/old/caption-box/block.js:69
-#: blocks/src/old/label-box/block.js:68
+#: blocks/src/block/sticky-box/edit.js:40 blocks/src/old/blank-box/block.js:72
+#: blocks/src/old/caption-box/block.js:69 blocks/src/old/label-box/block.js:68
 #: blocks/src/old/micro-balloon-1/block.js:94
 #: blocks/src/old/micro-balloon/block.js:93 blocks/src/old/tab-box/block.js:151
 #: blocks/src/old/tab-caption-box/block.js:69
 #: blocks/src/old/toggle-box/block.js:72 blocks/src/toolbutton/badge-red.js:14
-#: blocks/src/toolbutton/red.js:14 lib/admin-tinymce-qtag.php:284
-#: lib/admin-tinymce-qtag.php:318 lib/admin-tinymce-qtag.php:348
-#: lib/admin-tinymce-qtag.php:378 lib/admin-tinymce-qtag.php:408
-#: lib/admin-tinymce-qtag.php:438 lib/admin-tinymce-qtag.php:468
-#: lib/admin-tinymce-qtag.php:498 lib/admin-tinymce-qtag.php:528
-#: lib/admin-tinymce-qtag.php:558 lib/admin-tinymce-qtag.php:588
-#: lib/admin-tinymce-qtag.php:619 lib/admin-tinymce-qtag.php:650
-#: lib/admin-tinymce-qtag.php:681 lib/admin-tinymce-qtag.php:712
-#: lib/admin-tinymce-qtag.php:743 lib/admin-tinymce-qtag.php:774
-#: lib/admin-tinymce-qtag.php:807 lib/gutenberg.php:20
+#: blocks/src/toolbutton/red.js:14 lib/admin-tinymce-qtag.php:286
+#: lib/admin-tinymce-qtag.php:320 lib/admin-tinymce-qtag.php:350
+#: lib/admin-tinymce-qtag.php:380 lib/admin-tinymce-qtag.php:410
+#: lib/admin-tinymce-qtag.php:440 lib/admin-tinymce-qtag.php:470
+#: lib/admin-tinymce-qtag.php:500 lib/admin-tinymce-qtag.php:530
+#: lib/admin-tinymce-qtag.php:560 lib/admin-tinymce-qtag.php:590
+#: lib/admin-tinymce-qtag.php:621 lib/admin-tinymce-qtag.php:652
+#: lib/admin-tinymce-qtag.php:683 lib/admin-tinymce-qtag.php:714
+#: lib/admin-tinymce-qtag.php:745 lib/admin-tinymce-qtag.php:776
+#: lib/admin-tinymce-qtag.php:809 lib/gutenberg.php:20
 #: lib/widgets/cta-box.php:164
 msgid "赤色"
 msgstr "Red"
 
 #: blocks/src/block/sticky-box/deprecated.js:101
-#: blocks/src/block/sticky-box/edit.js:44
-#: blocks/src/demo/blank-box-demo/block.js:67
-#: blocks/src/old/blank-box/block.js:76 blocks/src/old/caption-box/block.js:73
-#: blocks/src/old/label-box/block.js:72
+#: blocks/src/block/sticky-box/edit.js:44 blocks/src/old/blank-box/block.js:76
+#: blocks/src/old/caption-box/block.js:73 blocks/src/old/label-box/block.js:72
 #: blocks/src/old/micro-balloon-1/block.js:98
 #: blocks/src/old/micro-balloon/block.js:97 blocks/src/old/tab-box/block.js:155
 #: blocks/src/old/tab-caption-box/block.js:73
 #: blocks/src/old/toggle-box/block.js:76 blocks/src/toolbutton/badge-blue.js:14
-#: blocks/src/toolbutton/blue.js:14 lib/admin-tinymce-qtag.php:289
-#: lib/admin-tinymce-qtag.php:323 lib/admin-tinymce-qtag.php:353
-#: lib/admin-tinymce-qtag.php:383 lib/admin-tinymce-qtag.php:413
-#: lib/admin-tinymce-qtag.php:443 lib/admin-tinymce-qtag.php:473
-#: lib/admin-tinymce-qtag.php:503 lib/admin-tinymce-qtag.php:533
-#: lib/admin-tinymce-qtag.php:563 lib/admin-tinymce-qtag.php:593
-#: lib/admin-tinymce-qtag.php:624 lib/admin-tinymce-qtag.php:655
-#: lib/admin-tinymce-qtag.php:686 lib/admin-tinymce-qtag.php:717
-#: lib/admin-tinymce-qtag.php:748 lib/admin-tinymce-qtag.php:779
-#: lib/admin-tinymce-qtag.php:812 lib/gutenberg.php:45
+#: blocks/src/toolbutton/blue.js:14 lib/admin-tinymce-qtag.php:291
+#: lib/admin-tinymce-qtag.php:325 lib/admin-tinymce-qtag.php:355
+#: lib/admin-tinymce-qtag.php:385 lib/admin-tinymce-qtag.php:415
+#: lib/admin-tinymce-qtag.php:445 lib/admin-tinymce-qtag.php:475
+#: lib/admin-tinymce-qtag.php:505 lib/admin-tinymce-qtag.php:535
+#: lib/admin-tinymce-qtag.php:565 lib/admin-tinymce-qtag.php:595
+#: lib/admin-tinymce-qtag.php:626 lib/admin-tinymce-qtag.php:657
+#: lib/admin-tinymce-qtag.php:688 lib/admin-tinymce-qtag.php:719
+#: lib/admin-tinymce-qtag.php:750 lib/admin-tinymce-qtag.php:781
+#: lib/admin-tinymce-qtag.php:814 lib/gutenberg.php:45
 #: lib/widgets/cta-box.php:169
 msgid "青色"
 msgstr "Blue"
 
 #: blocks/src/block/sticky-box/deprecated.js:105
-#: blocks/src/block/sticky-box/edit.js:48
-#: blocks/src/demo/blank-box-demo/block.js:71
-#: blocks/src/old/blank-box/block.js:80 blocks/src/old/caption-box/block.js:77
-#: blocks/src/old/label-box/block.js:76
+#: blocks/src/block/sticky-box/edit.js:48 blocks/src/old/blank-box/block.js:80
+#: blocks/src/old/caption-box/block.js:77 blocks/src/old/label-box/block.js:76
 #: blocks/src/old/micro-balloon-1/block.js:102
 #: blocks/src/old/micro-balloon/block.js:101
 #: blocks/src/old/tab-box/block.js:159
 #: blocks/src/old/tab-caption-box/block.js:77
 #: blocks/src/old/toggle-box/block.js:80
 #: blocks/src/toolbutton/badge-green.js:14 blocks/src/toolbutton/green.js:14
-#: lib/admin-tinymce-qtag.php:294 lib/admin-tinymce-qtag.php:328
-#: lib/admin-tinymce-qtag.php:358 lib/admin-tinymce-qtag.php:388
-#: lib/admin-tinymce-qtag.php:418 lib/admin-tinymce-qtag.php:448
-#: lib/admin-tinymce-qtag.php:478 lib/admin-tinymce-qtag.php:508
-#: lib/admin-tinymce-qtag.php:538 lib/admin-tinymce-qtag.php:568
-#: lib/admin-tinymce-qtag.php:598 lib/admin-tinymce-qtag.php:629
-#: lib/admin-tinymce-qtag.php:660 lib/admin-tinymce-qtag.php:691
-#: lib/admin-tinymce-qtag.php:722 lib/admin-tinymce-qtag.php:753
-#: lib/admin-tinymce-qtag.php:784 lib/admin-tinymce-qtag.php:817
+#: lib/admin-tinymce-qtag.php:296 lib/admin-tinymce-qtag.php:330
+#: lib/admin-tinymce-qtag.php:360 lib/admin-tinymce-qtag.php:390
+#: lib/admin-tinymce-qtag.php:420 lib/admin-tinymce-qtag.php:450
+#: lib/admin-tinymce-qtag.php:480 lib/admin-tinymce-qtag.php:510
+#: lib/admin-tinymce-qtag.php:540 lib/admin-tinymce-qtag.php:570
+#: lib/admin-tinymce-qtag.php:600 lib/admin-tinymce-qtag.php:631
+#: lib/admin-tinymce-qtag.php:662 lib/admin-tinymce-qtag.php:693
+#: lib/admin-tinymce-qtag.php:724 lib/admin-tinymce-qtag.php:755
+#: lib/admin-tinymce-qtag.php:786 lib/admin-tinymce-qtag.php:819
 #: lib/gutenberg.php:65 lib/widgets/cta-box.php:173
 msgid "緑色"
 msgstr "Green"
@@ -902,32 +1032,32 @@ msgid "目立つ濃いめの色で付箋風にメッセージを伝えるため�
 msgstr "It is a box to convey a message like a sticky note with dark colors."
 
 #: blocks/src/block/tab-box/edit.js:75 blocks/src/old/tab-box/block.js:79
-#: lib/admin-tinymce-qtag.php:365
+#: lib/admin-tinymce-qtag.php:367
 msgid "ポイント"
 msgstr "Point"
 
 #: blocks/src/block/tab-box/edit.js:79 blocks/src/old/tab-box/block.js:83
-#: lib/admin-tinymce-qtag.php:395
+#: lib/admin-tinymce-qtag.php:397
 msgid "ティップス"
 msgstr "Tips"
 
 #: blocks/src/block/tab-box/edit.js:83 blocks/src/old/tab-box/block.js:87
-#: lib/admin-tinymce-qtag.php:425
+#: lib/admin-tinymce-qtag.php:427
 msgid "ヒント"
 msgstr "Hint"
 
 #: blocks/src/block/tab-box/edit.js:91 blocks/src/old/tab-box/block.js:95
-#: lib/admin-tinymce-qtag.php:485
+#: lib/admin-tinymce-qtag.php:487
 msgid "ブックマーク"
 msgstr "Bookmark"
 
 #: blocks/src/block/tab-box/edit.js:103 blocks/src/old/tab-box/block.js:107
-#: lib/admin-tinymce-qtag.php:575
+#: lib/admin-tinymce-qtag.php:577
 msgid "ブレイク"
 msgstr "Break"
 
 #: blocks/src/block/tab-box/edit.js:107 blocks/src/old/tab-box/block.js:111
-#: lib/admin-tinymce-qtag.php:606 lib/page-settings/apis-forms.php:29
+#: lib/admin-tinymce-qtag.php:608 lib/page-settings/apis-forms.php:29
 #: lib/page-settings/apis-funcs.php:126
 msgid "Amazon"
 msgstr "Amazon"
@@ -939,6 +1069,40 @@ msgstr "Tab box"
 #: blocks/src/block/tab-box/index.js:24 blocks/src/old/tab-box/block.js:22
 msgid "タブにメッセージ内容を伝えるための文字が書かれているボックスです。"
 msgstr "A box with a label on the tab to convey the contents of the message."
+
+#: blocks/src/block/template/edit.js:52
+msgid ""
+"ダッシュボードメニューの「Cocoon設定」→「テンプレート」からテンプレートを作成"
+"してください。"
+msgstr ""
+"Craete a template from \"Dashboard\" -> \"Cocoon Settings\" -> \"Template\"."
+
+#: blocks/src/block/template/edit.js:54
+msgid "テンプレートが登録されていません。"
+msgstr "Template is not registered."
+
+#: blocks/src/block/template/edit.js:58
+msgid "有効なテンプレートが登録されていません。"
+msgstr "Valid template is not registered."
+
+#: blocks/src/block/template/edit.js:58
+msgid "もしくは登録されているテンプレートを表示設定にしてください。。"
+msgstr "or change the display setting of the template."
+
+#: blocks/src/block/template/edit.js:62
+msgid "テンプレートを選択してください。"
+msgstr "Select a template."
+
+#: blocks/src/block/template/edit.js:102 blocks/src/block/template/index.js:22
+#: blocks/src/toolbutton/dropdown-templates.js:48
+#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:459
+#: lib/original-menu.php:30 lib/tinymce/function-texts.php:49
+msgid "テンプレート"
+msgstr "Template"
+
+#: blocks/src/block/template/index.js:24
+msgid "登録されているテンプレートを表示します。"
+msgstr "Displays the registered template."
 
 #: blocks/src/block/timeline-item/deprecated.js:28
 #: blocks/src/block/timeline-item/deprecated.js:52
@@ -997,28 +1161,20 @@ msgstr ""
 "Old toggle box. It is a box that you can switch the display of the contents "
 "by clicking."
 
-#: blocks/src/custom/code/block.js:33 blocks/src/sample/extended-controls.js:24
+#: blocks/src/custom/code/block.js:33
 msgid "言語"
 msgstr "Language"
 
-#: blocks/src/custom/code/block.js:36 blocks/src/sample/extended-controls.js:27
+#: blocks/src/custom/code/block.js:36
 msgid "言語選択"
 msgstr "Language Selection"
 
-#: blocks/src/demo/blank-box-demo/block.js:15 blocks/src/helpers.js:58
-#: blocks/src/old/blank-box/block.js:17 blocks/src/old/tab-box/block.js:15
+#: blocks/src/helpers.js:58 blocks/src/old/blank-box/block.js:17
+#: blocks/src/old/tab-box/block.js:15
 msgid "こちらをクリックして設定変更。この入力は公開ページで反映されません。"
 msgstr ""
 "Click here to change the setting. This entry will not be displayed on the "
 "published page."
-
-#: blocks/src/demo/blank-box-demo/block.js:20
-msgid "サーバー動作デモボックス"
-msgstr "Server operation demo box"
-
-#: blocks/src/demo/info-box-drop/block.js:9
-msgid "ドロップダウンデモ"
-msgstr "Drop-down demo"
 
 #: blocks/src/helpers.js:281
 msgid "fab-info-circle"
@@ -1376,27 +1532,27 @@ msgstr "fab-window-close-o"
 msgid "fab-paw"
 msgstr "Fab-paw"
 
-#: blocks/src/init.php:219
+#: blocks/src/init.php:233
 msgid "Cocoonブロック"
 msgstr "Cocoon blocks"
 
-#: blocks/src/init.php:224
+#: blocks/src/init.php:238
 msgid "Cocoon汎用ブロック"
 msgstr "Cocoon generic blocks"
 
-#: blocks/src/init.php:229
+#: blocks/src/init.php:243
 msgid "Cocoonマイクロコピー"
 msgstr "Cocoon micro copy"
 
-#: blocks/src/init.php:234
+#: blocks/src/init.php:248
 msgid "Cocoonレイアウト"
 msgstr "Cocoon layout"
 
-#: blocks/src/init.php:239
+#: blocks/src/init.php:253
 msgid "Cocoonショートコード"
 msgstr "Cocoon short codes"
 
-#: blocks/src/init.php:244
+#: blocks/src/init.php:258
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon old block editor (not recommended)"
 
@@ -1558,7 +1714,7 @@ msgstr "Speech balloon style"
 #: blocks/src/old/tab-caption-box/block.js:61
 #: blocks/src/old/toggle-box/block.js:64 lib/custom-fields/page-field.php:34
 #: lib/custom-fields/page-field.php:47 lib/page-settings/comment-forms.php:43
-#: lib/page-settings/single-forms.php:326 lib/page-speech-balloon/form.php:90
+#: lib/page-settings/single-forms.php:325 lib/page-speech-balloon/form.php:90
 #: lib/settings.php:553
 msgid "デフォルト"
 msgstr "Default"
@@ -1616,18 +1772,18 @@ msgid "丸（枠線あり）"
 msgstr "Circle (with border)"
 
 #: blocks/src/old/button-wrap/block.js:76 blocks/src/old/button/block.js:98
-#: lib/admin-tinymce-qtag.php:832
+#: lib/admin-tinymce-qtag.php:834
 msgid "レッド"
 msgstr "Red"
 
 #: blocks/src/old/button-wrap/block.js:80 blocks/src/old/button/block.js:102
-#: blocks/src/toolbutton/badge-pink.js:14 lib/admin-tinymce-qtag.php:837
+#: blocks/src/toolbutton/badge-pink.js:14 lib/admin-tinymce-qtag.php:839
 #: lib/gutenberg.php:25 lib/widgets/cta-box.php:165
 msgid "ピンク"
 msgstr "Pink"
 
 #: blocks/src/old/button-wrap/block.js:84 blocks/src/old/button/block.js:106
-#: lib/admin-tinymce-qtag.php:842
+#: lib/admin-tinymce-qtag.php:844
 msgid "パープル"
 msgstr "Purple"
 
@@ -1640,7 +1796,7 @@ msgid "インディゴ[紺色]"
 msgstr "Indigo (navy blue)"
 
 #: blocks/src/old/button-wrap/block.js:96 blocks/src/old/button/block.js:118
-#: lib/admin-tinymce-qtag.php:847
+#: lib/admin-tinymce-qtag.php:849
 msgid "ブルー"
 msgstr "Blue"
 
@@ -1657,7 +1813,7 @@ msgid "ティール[緑色がかった青]"
 msgstr "Teal [medium blue-green]"
 
 #: blocks/src/old/button-wrap/block.js:112 blocks/src/old/button/block.js:134
-#: lib/admin-tinymce-qtag.php:852
+#: lib/admin-tinymce-qtag.php:854
 msgid "グリーン"
 msgstr "Green"
 
@@ -1671,7 +1827,7 @@ msgid "ライム"
 msgstr "Lime"
 
 #: blocks/src/old/button-wrap/block.js:124 blocks/src/old/button/block.js:146
-#: lib/admin-tinymce-qtag.php:857
+#: lib/admin-tinymce-qtag.php:859
 msgid "イエロー"
 msgstr "Yellow"
 
@@ -1680,7 +1836,7 @@ msgid "アンバー[琥珀色]"
 msgstr "Amber"
 
 #: blocks/src/old/button-wrap/block.js:132 blocks/src/old/button/block.js:154
-#: blocks/src/toolbutton/badge-orange.js:14 lib/admin-tinymce-qtag.php:827
+#: blocks/src/toolbutton/badge-orange.js:14 lib/admin-tinymce-qtag.php:829
 #: lib/gutenberg.php:90 lib/widgets/cta-box.php:178
 msgid "オレンジ"
 msgstr "Orange"
@@ -1691,12 +1847,12 @@ msgid "ディープオレンジ"
 msgstr "Deep orange"
 
 #: blocks/src/old/button-wrap/block.js:140 blocks/src/old/button/block.js:162
-#: lib/admin-tinymce-qtag.php:862
+#: lib/admin-tinymce-qtag.php:864
 msgid "ブラウン"
 msgstr "Brown"
 
 #: blocks/src/old/button-wrap/block.js:144 blocks/src/old/button/block.js:166
-#: lib/admin-tinymce-qtag.php:867
+#: lib/admin-tinymce-qtag.php:869
 msgid "グレー"
 msgstr "Gray"
 
@@ -1709,24 +1865,12 @@ msgid ""
 "クリックすることでコンテンツ内容の表示を切り替えることができるボックスです。"
 msgstr "A box where you can display or hide the content with a click."
 
-#: blocks/src/sample/block.js:11
-msgid "Rounded"
-msgstr "Rounded"
-
-#: blocks/src/sample/block.js:16
-msgid "Squared"
-msgstr "Squared"
-
-#: blocks/src/sample/cocoon-dropdown.js:24
-msgid "Cocoon Buttons"
-msgstr "Cocoon buttons"
-
 #: blocks/src/shortcode/affi/block.js:16
 msgid "アフィリエイトタグタグ"
 msgstr "Affiliate tags"
 
 #: blocks/src/shortcode/affi/block.js:19
-#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:463
+#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:466
 #: lib/original-menu.php:33 lib/tinymce/affiliate-tags.php:48
 msgid "アフィリエイトタグ"
 msgstr "Affiliate tag"
@@ -1741,15 +1885,15 @@ msgstr "Brown"
 msgid "紫色"
 msgstr "Purple"
 
-#: blocks/src/toolbutton/bold-blue.js:14 lib/admin-tinymce-qtag.php:104
+#: blocks/src/toolbutton/bold-blue.js:14 lib/admin-tinymce-qtag.php:106
 msgid "青太字"
 msgstr "Blue bold"
 
-#: blocks/src/toolbutton/bold-green.js:14 lib/admin-tinymce-qtag.php:114
+#: blocks/src/toolbutton/bold-green.js:14 lib/admin-tinymce-qtag.php:116
 msgid "緑太字"
 msgstr "Green bold"
 
-#: blocks/src/toolbutton/bold-red.js:14 lib/admin-tinymce-qtag.php:89
+#: blocks/src/toolbutton/bold-red.js:14 lib/admin-tinymce-qtag.php:91
 msgid "赤太字"
 msgstr "Red bold"
 
@@ -1766,14 +1910,14 @@ msgid "アフィリエイト"
 msgstr "Affiliate"
 
 #: blocks/src/toolbutton/dropdown-badges.js:21
-#: blocks/src/toolbutton/dropdown-badges.js:34 lib/admin-tinymce-qtag.php:31
-#: lib/admin-tinymce-qtag.php:824
+#: blocks/src/toolbutton/dropdown-badges.js:34 lib/admin-tinymce-qtag.php:32
+#: lib/admin-tinymce-qtag.php:826
 msgid "バッジ"
 msgstr "Badge"
 
 #: blocks/src/toolbutton/dropdown-font-sizes.js:49
 #: blocks/src/toolbutton/dropdown-font-sizes.js:62
-#: lib/admin-tinymce-qtag.php:166
+#: lib/admin-tinymce-qtag.php:168
 msgid "フォントサイズ"
 msgstr "Font size"
 
@@ -1783,23 +1927,9 @@ msgstr "Font size"
 msgid "文字"
 msgstr "Characters"
 
-#: blocks/src/toolbutton/dropdown-markers.js:20 lib/admin-tinymce-qtag.php:131
+#: blocks/src/toolbutton/dropdown-markers.js:20 lib/admin-tinymce-qtag.php:133
 msgid "マーカー"
 msgstr "Marker"
-
-#: blocks/src/toolbutton/dropdown-rankings.js:48
-#: blocks/src/toolbutton/dropdown-rankings.js:61
-#: lib/page-item-ranking/_top-page.php:37 lib/tinymce/item-rankings.php:51
-#: lib/widgets/item-ranking.php:19 lib/widgets/item-ranking.php:71
-msgid "ランキング"
-msgstr "Ranking"
-
-#: blocks/src/toolbutton/dropdown-shortcodes.js:43
-#: lib/custom-fields/ad-field.php:17 lib/custom-fields/ad-field.php:18
-#: lib/custom-fields/ad-field.php:20 lib/page-settings/_top-page.php:163
-#: lib/widgets/ad.php:19
-msgid "広告"
-msgstr "Ads"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:50
 #: lib/tinymce/shortcodes.php:62
@@ -1821,11 +1951,6 @@ msgstr "List of navi cards"
 #: lib/widgets/navi-entries.php:104 lib/widgets/recommended-cards.php:96
 msgid "メニュー名"
 msgstr "Menu name"
-
-#: blocks/src/toolbutton/dropdown-shortcodes.js:71
-#: lib/tinymce/shortcodes.php:94
-msgid "プロフィールボックス"
-msgstr "Profile box"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:72
 #: lib/tinymce/shortcodes.php:89
@@ -1895,7 +2020,7 @@ msgstr "Rating star"
 msgid "ログインコンテンツ"
 msgstr "Login content"
 
-#: blocks/src/toolbutton/dropdown-shortcodes.js:170 lib/shortcodes.php:246
+#: blocks/src/toolbutton/dropdown-shortcodes.js:170 lib/shortcodes.php:251
 #: lib/tinymce/shortcodes.php:232
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
 msgstr "This content is displayed for logged-in users only."
@@ -1914,48 +2039,42 @@ msgstr "Generic short codes"
 msgid "ショートコード"
 msgstr "Short code"
 
-#: blocks/src/toolbutton/dropdown-templates.js:48
-#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:456
-#: lib/original-menu.php:30 lib/tinymce/function-texts.php:49
-msgid "テンプレート"
-msgstr "Template"
-
-#: blocks/src/toolbutton/html.js:19 blocks/src/toolbutton/html.js:51
+#: blocks/src/toolbutton/html.js:19 blocks/src/toolbutton/html.js:48
 #: lib/tinymce/insert-html.php:34
 msgid "HTML挿入"
 msgstr "HTML insert"
 
-#: blocks/src/toolbutton/html.js:31
+#: blocks/src/toolbutton/html.js:30
 msgid "HTMLを入力してください。"
 msgstr "Insert HTML"
 
-#: blocks/src/toolbutton/keyboard-key.js:14 lib/admin-tinymce-qtag.php:124
+#: blocks/src/toolbutton/keyboard-key.js:14 lib/admin-tinymce-qtag.php:126
 msgid "キーボードキー"
 msgstr "Keyboard key"
 
-#: blocks/src/toolbutton/marker-blue.js:14 lib/admin-tinymce-qtag.php:144
+#: blocks/src/toolbutton/marker-blue.js:15 lib/admin-tinymce-qtag.php:146
 msgid "青色マーカー"
 msgstr "Blue marker"
 
-#: blocks/src/toolbutton/marker-red.js:14 lib/admin-tinymce-qtag.php:139
+#: blocks/src/toolbutton/marker-red.js:15 lib/admin-tinymce-qtag.php:141
 msgid "赤色マーカー"
 msgstr "Red marker"
 
-#: blocks/src/toolbutton/marker-under-blue.js:14 lib/admin-tinymce-qtag.php:159
+#: blocks/src/toolbutton/marker-under-blue.js:15 lib/admin-tinymce-qtag.php:161
 msgid "青色アンダーラインマーカー"
 msgstr "Blue underline marker"
 
-#: blocks/src/toolbutton/marker-under-red.js:14 lib/admin-tinymce-qtag.php:154
+#: blocks/src/toolbutton/marker-under-red.js:15 lib/admin-tinymce-qtag.php:156
 msgid "赤色アンダーラインマーカー"
 msgstr "Red underline marker"
 
-#: blocks/src/toolbutton/marker-under-yellow.js:14
-#: lib/admin-tinymce-qtag.php:149
+#: blocks/src/toolbutton/marker-under-yellow.js:15
+#: lib/admin-tinymce-qtag.php:151
 msgid "黄色アンダーラインマーカー"
 msgstr "Yellow underline marker"
 
-#: blocks/src/toolbutton/marker-yellow.js:14 lib/admin-tinymce-qtag.php:28
-#: lib/admin-tinymce-qtag.php:134
+#: blocks/src/toolbutton/marker-yellow.js:15 lib/admin-tinymce-qtag.php:29
+#: lib/admin-tinymce-qtag.php:136
 msgid "黄色マーカー"
 msgstr "Yellow marker"
 
@@ -1984,421 +2103,415 @@ msgstr "Required fields are marked %s"
 #: comments.php:59
 #, php-format
 msgid ""
-"<a href=\"%1$s\" aria-label=\"%2$s\">Logged in as %3$s</a>. <a href=\"%4$s"
-"\">Log out?</a>"
+"Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a "
+"href=\"%3$s\">Log out?</a>"
 msgstr ""
-"<a href=\"%1$s\" aria-label=\"%2$s\">Logged in as %3$s</a>. <a href=\"%4$s"
-"\">Log out?</a>"
+"Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a "
+"href=\"%3$s\">Log out?</a>"
 
-#: comments.php:62
-#, php-format
-msgid "Logged in as %s. Edit your profile."
-msgstr "Logged in as %s. Edit your profile."
-
-#: comments.php:66
+#: comments.php:64
 msgid "Your email address will not be published."
 msgstr "Your email address will not be published."
 
-#: comments.php:72 comments.php:79
+#: comments.php:70 comments.php:77
 msgid "コメントを書き込む"
 msgstr "Write a comment"
 
-#: functions.php:118
+#: functions.php:120
 msgid "キーワード指定なし"
 msgstr "No keyword specified"
 
-#: functions.php:349
+#: functions.php:351
 msgid "角型ラベル"
 msgstr "Square label"
 
-#: lib/_defins.php:142 lib/_defins.php:164 lib/_defins.php:176
-#: lib/_defins.php:191
+#: functions.php:355
+msgid "アコーディオン"
+msgstr "Accordion"
+
+#: lib/_defins.php:139 lib/_defins.php:160 lib/_defins.php:171
+#: lib/_defins.php:184
 msgid "オート（AdSenseにおまかせ）"
 msgstr "Auto (by AdSense)"
 
-#: lib/_defins.php:143 lib/_defins.php:165 lib/_defins.php:177
-#: lib/_defins.php:192
+#: lib/_defins.php:140 lib/_defins.php:161 lib/_defins.php:172
+#: lib/_defins.php:185
 msgid "バナー"
 msgstr "Banner"
 
-#: lib/_defins.php:144 lib/_defins.php:178 lib/_defins.php:193
+#: lib/_defins.php:141 lib/_defins.php:173 lib/_defins.php:186
 msgid "レスポンシブレクタングル"
 msgstr "Responsive rectangle"
 
-#: lib/_defins.php:145 lib/_defins.php:179 lib/_defins.php:194
+#: lib/_defins.php:142 lib/_defins.php:174 lib/_defins.php:187
 msgid "シングルレクタングル"
 msgstr "Single rectangle"
 
-#: lib/_defins.php:146 lib/_defins.php:180
+#: lib/_defins.php:143 lib/_defins.php:175
 msgid "ダブルレクタングル"
 msgstr "Double rectangle"
 
-#: lib/_defins.php:147 lib/_defins.php:182
+#: lib/_defins.php:144 lib/_defins.php:177
 msgid "記事内広告"
 msgstr "In-article ad"
 
-#: lib/_defins.php:148 lib/_defins.php:168 lib/_defins.php:183
-#: lib/_defins.php:195
-msgid "リンクユニット"
-msgstr "Link unit"
-
-#: lib/_defins.php:166
+#: lib/_defins.php:162
 msgid "レクタングル"
 msgstr "Rectangle"
 
-#: lib/_defins.php:167 lib/_defins.php:181
+#: lib/_defins.php:163 lib/_defins.php:176
 msgid "ラージスカイスクレイパー"
 msgstr "Large skyscraper"
 
-#: lib/_defins.php:175 lib/_defins.php:190
+#: lib/_defins.php:170 lib/_defins.php:183
 msgid "広告コードをそのまま表示"
 msgstr "The ad code will appear as is"
 
-#: lib/_defins.php:307
+#: lib/_defins.php:298
 msgid "本当に削除してもいいですか？"
 msgstr "Do you really want to delete it?"
 
-#: lib/_defins.php:328
+#: lib/_defins.php:319
 msgid "www.amazon.co.jp"
 msgstr "www.amazon.co.jp"
 
-#: lib/_defins.php:331
+#: lib/_defins.php:322
 msgid ""
 "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr ""
 "The product could not be retrieved. You may have specified an ASIN that does "
 "not exist."
 
-#: lib/admin-tinymce-qtag.php:23 lib/tinymce/html-tags.php:134
+#: lib/admin-tinymce-qtag.php:24 lib/tinymce/html-tags.php:134
 msgid "ふりがな"
 msgstr "Furigana (JA)"
 
-#: lib/admin-tinymce-qtag.php:24 lib/admin-tinymce-qtag.php:79
+#: lib/admin-tinymce-qtag.php:25 lib/admin-tinymce-qtag.php:81
 msgid "太字"
 msgstr "Bold"
 
-#: lib/admin-tinymce-qtag.php:25 lib/admin-tinymce-qtag.php:84
+#: lib/admin-tinymce-qtag.php:26 lib/admin-tinymce-qtag.php:86
 msgid "赤字"
 msgstr "Red"
 
-#: lib/admin-tinymce-qtag.php:26
+#: lib/admin-tinymce-qtag.php:27
 msgid "太い赤字"
 msgstr "Bold red"
 
-#: lib/admin-tinymce-qtag.php:27
+#: lib/admin-tinymce-qtag.php:28
 msgid "赤アンダー"
 msgstr "Red underline"
 
-#: lib/admin-tinymce-qtag.php:29
+#: lib/admin-tinymce-qtag.php:30
 msgid "黄色アンダーマーカー"
 msgstr "Yellow underline marker"
 
-#: lib/admin-tinymce-qtag.php:30 lib/admin-tinymce-qtag.php:119
+#: lib/admin-tinymce-qtag.php:31 lib/admin-tinymce-qtag.php:121
 msgid "打ち消し線"
 msgstr "Strikethrough"
 
-#: lib/admin-tinymce-qtag.php:32
+#: lib/admin-tinymce-qtag.php:33
 msgid "キーボード"
 msgstr "Keyboard"
 
-#: lib/admin-tinymce-qtag.php:36
+#: lib/admin-tinymce-qtag.php:37
 msgid "primary"
 msgstr "primary"
 
-#: lib/admin-tinymce-qtag.php:37
+#: lib/admin-tinymce-qtag.php:38
 msgid "success"
 msgstr "success"
 
-#: lib/admin-tinymce-qtag.php:39
+#: lib/admin-tinymce-qtag.php:40
 msgid "warning"
 msgstr "warning"
 
-#: lib/admin-tinymce-qtag.php:40
+#: lib/admin-tinymce-qtag.php:41
 msgid "danger"
 msgstr "danger"
 
-#: lib/admin-tinymce-qtag.php:76
+#: lib/admin-tinymce-qtag.php:78
 msgid "インライン"
 msgstr "Inline"
 
-#: lib/admin-tinymce-qtag.php:94
+#: lib/admin-tinymce-qtag.php:96
 msgid "赤アンダーライン"
 msgstr "Red underline"
 
-#: lib/admin-tinymce-qtag.php:99
+#: lib/admin-tinymce-qtag.php:101
 msgid "青"
 msgstr "Blue"
 
-#: lib/admin-tinymce-qtag.php:109
+#: lib/admin-tinymce-qtag.php:111
 msgid "緑"
 msgstr "Green"
 
-#: lib/admin-tinymce-qtag.php:170
+#: lib/admin-tinymce-qtag.php:172
 msgid "ボックス（アイコン）"
 msgstr "Box (icon)"
 
-#: lib/admin-tinymce-qtag.php:183
+#: lib/admin-tinymce-qtag.php:185
 msgid "注意喚起(!)"
 msgstr "Alert (!)"
 
-#: lib/admin-tinymce-qtag.php:225
+#: lib/admin-tinymce-qtag.php:227
 msgid "ボックス（案内）"
 msgstr "Box (guide)"
 
-#: lib/admin-tinymce-qtag.php:271
+#: lib/admin-tinymce-qtag.php:273
 msgid "ボックス（白抜き）"
 msgstr "Box (outline)"
 
-#: lib/admin-tinymce-qtag.php:302
+#: lib/admin-tinymce-qtag.php:304
 msgid "ボックス（タブ）"
 msgstr "Box (tab)"
 
-#: lib/admin-tinymce-qtag.php:794
+#: lib/admin-tinymce-qtag.php:796
 msgid "ボックス（付箋風）"
 msgstr "Box (sticky note style)"
 
-#: lib/admin-tinymce-qtag.php:874
+#: lib/admin-tinymce-qtag.php:876
 msgid "マイクロコピー"
 msgstr "Microcopy"
 
-#: lib/admin-tinymce-qtag.php:877
+#: lib/admin-tinymce-qtag.php:879
 msgid "テキスト（上）"
 msgstr "Text (above)"
 
-#: lib/admin-tinymce-qtag.php:885 lib/admin-tinymce-qtag.php:905
-#: lib/admin-tinymce-qtag.php:925 lib/admin-tinymce-qtag.php:946
+#: lib/admin-tinymce-qtag.php:887 lib/admin-tinymce-qtag.php:907
+#: lib/admin-tinymce-qtag.php:927 lib/admin-tinymce-qtag.php:948
 msgid "中央"
 msgstr "Center"
 
-#: lib/admin-tinymce-qtag.php:897
+#: lib/admin-tinymce-qtag.php:899
 msgid "テキスト（下）"
 msgstr "Text (below)"
 
-#: lib/admin-tinymce-qtag.php:917
+#: lib/admin-tinymce-qtag.php:919
 msgid "吹き出し（上）"
 msgstr "Speech balloon (above)"
 
-#: lib/admin-tinymce-qtag.php:937
+#: lib/admin-tinymce-qtag.php:939
 msgid "吹き出し（下）"
 msgstr "Speech balloon (below)"
 
-#: lib/admin-tinymce-qtag.php:964 lib/admin-tinymce-qtag.php:1259
+#: lib/admin-tinymce-qtag.php:966 lib/admin-tinymce-qtag.php:1261
 msgid "レッド（小）"
 msgstr "Red (small)"
 
-#: lib/admin-tinymce-qtag.php:969 lib/admin-tinymce-qtag.php:1265
+#: lib/admin-tinymce-qtag.php:971 lib/admin-tinymce-qtag.php:1267
 msgid "レッド（中）"
 msgstr "Red (medium)"
 
-#: lib/admin-tinymce-qtag.php:974 lib/admin-tinymce-qtag.php:1271
+#: lib/admin-tinymce-qtag.php:976 lib/admin-tinymce-qtag.php:1273
 msgid "レッド（大）"
 msgstr "Red (large)"
 
-#: lib/admin-tinymce-qtag.php:980 lib/admin-tinymce-qtag.php:1277
+#: lib/admin-tinymce-qtag.php:982 lib/admin-tinymce-qtag.php:1279
 msgid "ピンク（小）"
 msgstr "Pink (small)"
 
-#: lib/admin-tinymce-qtag.php:985 lib/admin-tinymce-qtag.php:1283
+#: lib/admin-tinymce-qtag.php:987 lib/admin-tinymce-qtag.php:1285
 msgid "ピンク（中）"
 msgstr "Pink (medium)"
 
-#: lib/admin-tinymce-qtag.php:990 lib/admin-tinymce-qtag.php:1289
+#: lib/admin-tinymce-qtag.php:992 lib/admin-tinymce-qtag.php:1291
 msgid "ピンク（大）"
 msgstr "Pink (large)"
 
-#: lib/admin-tinymce-qtag.php:996 lib/admin-tinymce-qtag.php:1295
+#: lib/admin-tinymce-qtag.php:998 lib/admin-tinymce-qtag.php:1297
 msgid "パープル（小）"
 msgstr "Purple (small)"
 
-#: lib/admin-tinymce-qtag.php:1001 lib/admin-tinymce-qtag.php:1301
+#: lib/admin-tinymce-qtag.php:1003 lib/admin-tinymce-qtag.php:1303
 msgid "パープル（中）"
 msgstr "Purple (medium)"
 
-#: lib/admin-tinymce-qtag.php:1006 lib/admin-tinymce-qtag.php:1307
+#: lib/admin-tinymce-qtag.php:1008 lib/admin-tinymce-qtag.php:1309
 msgid "パープル（大）"
 msgstr "Purple (large)"
 
-#: lib/admin-tinymce-qtag.php:1012 lib/admin-tinymce-qtag.php:1313
+#: lib/admin-tinymce-qtag.php:1014 lib/admin-tinymce-qtag.php:1315
 msgid "ディープパープル（小）"
 msgstr "Deep purple (small)"
 
-#: lib/admin-tinymce-qtag.php:1017 lib/admin-tinymce-qtag.php:1319
+#: lib/admin-tinymce-qtag.php:1019 lib/admin-tinymce-qtag.php:1321
 msgid "ディープパープル（中）"
 msgstr "Deep purple (medium)"
 
-#: lib/admin-tinymce-qtag.php:1022 lib/admin-tinymce-qtag.php:1325
+#: lib/admin-tinymce-qtag.php:1024 lib/admin-tinymce-qtag.php:1327
 msgid "ディープパープル（大）"
 msgstr "Deep purple (large)"
 
-#: lib/admin-tinymce-qtag.php:1028 lib/admin-tinymce-qtag.php:1331
+#: lib/admin-tinymce-qtag.php:1030 lib/admin-tinymce-qtag.php:1333
 msgid "インディゴ[紺色]（小）"
 msgstr "Indigo (navy blue) (small)"
 
-#: lib/admin-tinymce-qtag.php:1033 lib/admin-tinymce-qtag.php:1337
+#: lib/admin-tinymce-qtag.php:1035 lib/admin-tinymce-qtag.php:1339
 msgid "インディゴ[紺色]（中）"
 msgstr "Indigo (navy blue) (medium)"
 
-#: lib/admin-tinymce-qtag.php:1038 lib/admin-tinymce-qtag.php:1343
+#: lib/admin-tinymce-qtag.php:1040 lib/admin-tinymce-qtag.php:1345
 msgid "インディゴ[紺色]（大）"
 msgstr "Indigo (navy blue) (large)"
 
-#: lib/admin-tinymce-qtag.php:1044 lib/admin-tinymce-qtag.php:1349
+#: lib/admin-tinymce-qtag.php:1046 lib/admin-tinymce-qtag.php:1351
 msgid "ブルー（小）"
 msgstr "Blue (small)"
 
-#: lib/admin-tinymce-qtag.php:1049 lib/admin-tinymce-qtag.php:1355
+#: lib/admin-tinymce-qtag.php:1051 lib/admin-tinymce-qtag.php:1357
 msgid "ブルー（中）"
 msgstr "Blue (medium)"
 
-#: lib/admin-tinymce-qtag.php:1054 lib/admin-tinymce-qtag.php:1361
+#: lib/admin-tinymce-qtag.php:1056 lib/admin-tinymce-qtag.php:1363
 msgid "ブルー（大）"
 msgstr "Blue (large)"
 
-#: lib/admin-tinymce-qtag.php:1060 lib/admin-tinymce-qtag.php:1367
+#: lib/admin-tinymce-qtag.php:1062 lib/admin-tinymce-qtag.php:1369
 msgid "ライトブルー（小）"
 msgstr "Light blue (small)"
 
-#: lib/admin-tinymce-qtag.php:1065 lib/admin-tinymce-qtag.php:1373
+#: lib/admin-tinymce-qtag.php:1067 lib/admin-tinymce-qtag.php:1375
 msgid "ライトブルー（中）"
 msgstr "Light blue (medium)"
 
-#: lib/admin-tinymce-qtag.php:1070 lib/admin-tinymce-qtag.php:1379
+#: lib/admin-tinymce-qtag.php:1072 lib/admin-tinymce-qtag.php:1381
 msgid "ライトブルー（大）"
 msgstr "Light blue (large)"
 
-#: lib/admin-tinymce-qtag.php:1076 lib/admin-tinymce-qtag.php:1385
+#: lib/admin-tinymce-qtag.php:1078 lib/admin-tinymce-qtag.php:1387
 msgid "シアン（小）"
 msgstr "Cyan (small)"
 
-#: lib/admin-tinymce-qtag.php:1081 lib/admin-tinymce-qtag.php:1391
+#: lib/admin-tinymce-qtag.php:1083 lib/admin-tinymce-qtag.php:1393
 msgid "シアン（中）"
 msgstr "Cyan (medium)"
 
-#: lib/admin-tinymce-qtag.php:1086 lib/admin-tinymce-qtag.php:1397
+#: lib/admin-tinymce-qtag.php:1088 lib/admin-tinymce-qtag.php:1399
 msgid "シアン（大）"
 msgstr "Cyan (large)"
 
-#: lib/admin-tinymce-qtag.php:1092 lib/admin-tinymce-qtag.php:1403
+#: lib/admin-tinymce-qtag.php:1094 lib/admin-tinymce-qtag.php:1405
 msgid "ティール[緑色がかった青]（小）"
 msgstr "Teal (medium blue-green) (small)"
 
-#: lib/admin-tinymce-qtag.php:1097 lib/admin-tinymce-qtag.php:1409
+#: lib/admin-tinymce-qtag.php:1099 lib/admin-tinymce-qtag.php:1411
 msgid "ティール[緑色がかった青]（中）"
 msgstr "Teal (medium blue-green) (medium)"
 
-#: lib/admin-tinymce-qtag.php:1102 lib/admin-tinymce-qtag.php:1415
+#: lib/admin-tinymce-qtag.php:1104 lib/admin-tinymce-qtag.php:1417
 msgid "ティール[緑色がかった青]（大）"
 msgstr "Teal (medium blue-green) (large)"
 
-#: lib/admin-tinymce-qtag.php:1108 lib/admin-tinymce-qtag.php:1421
+#: lib/admin-tinymce-qtag.php:1110 lib/admin-tinymce-qtag.php:1423
 msgid "グリーン（小）"
 msgstr "Green (small)"
 
-#: lib/admin-tinymce-qtag.php:1113 lib/admin-tinymce-qtag.php:1427
+#: lib/admin-tinymce-qtag.php:1115 lib/admin-tinymce-qtag.php:1429
 msgid "グリーン（中）"
 msgstr "Green (medium)"
 
-#: lib/admin-tinymce-qtag.php:1118 lib/admin-tinymce-qtag.php:1433
+#: lib/admin-tinymce-qtag.php:1120 lib/admin-tinymce-qtag.php:1435
 msgid "グリーン（大）"
 msgstr "Green (large)"
 
-#: lib/admin-tinymce-qtag.php:1124 lib/admin-tinymce-qtag.php:1439
+#: lib/admin-tinymce-qtag.php:1126 lib/admin-tinymce-qtag.php:1441
 msgid "ライトグリーン（小）"
 msgstr "Light green (small)"
 
-#: lib/admin-tinymce-qtag.php:1129 lib/admin-tinymce-qtag.php:1445
+#: lib/admin-tinymce-qtag.php:1131 lib/admin-tinymce-qtag.php:1447
 msgid "ライトグリーン（中）"
 msgstr "Light green (medium)"
 
-#: lib/admin-tinymce-qtag.php:1134 lib/admin-tinymce-qtag.php:1451
+#: lib/admin-tinymce-qtag.php:1136 lib/admin-tinymce-qtag.php:1453
 msgid "ライトグリーン（大）"
 msgstr "Light green (large)"
 
-#: lib/admin-tinymce-qtag.php:1140 lib/admin-tinymce-qtag.php:1457
+#: lib/admin-tinymce-qtag.php:1142 lib/admin-tinymce-qtag.php:1459
 msgid "ライム（小）"
 msgstr "Lime (small)"
 
-#: lib/admin-tinymce-qtag.php:1145 lib/admin-tinymce-qtag.php:1463
+#: lib/admin-tinymce-qtag.php:1147 lib/admin-tinymce-qtag.php:1465
 msgid "ライム（中）"
 msgstr "Lime (medium)"
 
-#: lib/admin-tinymce-qtag.php:1150 lib/admin-tinymce-qtag.php:1469
+#: lib/admin-tinymce-qtag.php:1152 lib/admin-tinymce-qtag.php:1471
 msgid "ライム（大）"
 msgstr "Lime (large)"
 
-#: lib/admin-tinymce-qtag.php:1156 lib/admin-tinymce-qtag.php:1475
+#: lib/admin-tinymce-qtag.php:1158 lib/admin-tinymce-qtag.php:1477
 msgid "イエロー（小）"
 msgstr "Yellow (small)"
 
-#: lib/admin-tinymce-qtag.php:1161 lib/admin-tinymce-qtag.php:1481
+#: lib/admin-tinymce-qtag.php:1163 lib/admin-tinymce-qtag.php:1483
 msgid "イエロー（中）"
 msgstr "Yellow (medium)"
 
-#: lib/admin-tinymce-qtag.php:1166 lib/admin-tinymce-qtag.php:1487
+#: lib/admin-tinymce-qtag.php:1168 lib/admin-tinymce-qtag.php:1489
 msgid "イエロー（大）"
 msgstr "Yellow (large)"
 
-#: lib/admin-tinymce-qtag.php:1172 lib/admin-tinymce-qtag.php:1493
+#: lib/admin-tinymce-qtag.php:1174 lib/admin-tinymce-qtag.php:1495
 msgid "アンバー[琥珀色]（小）"
 msgstr "Amber (small)"
 
-#: lib/admin-tinymce-qtag.php:1177 lib/admin-tinymce-qtag.php:1499
+#: lib/admin-tinymce-qtag.php:1179 lib/admin-tinymce-qtag.php:1501
 msgid "アンバー[琥珀色]（中）"
 msgstr "Amber (medium)"
 
-#: lib/admin-tinymce-qtag.php:1182 lib/admin-tinymce-qtag.php:1505
+#: lib/admin-tinymce-qtag.php:1184 lib/admin-tinymce-qtag.php:1507
 msgid "アンバー[琥珀色]（大）"
 msgstr "Amber (large)"
 
-#: lib/admin-tinymce-qtag.php:1188 lib/admin-tinymce-qtag.php:1511
+#: lib/admin-tinymce-qtag.php:1190 lib/admin-tinymce-qtag.php:1513
 msgid "オレンジ（小）"
 msgstr "Orange (small)"
 
-#: lib/admin-tinymce-qtag.php:1193 lib/admin-tinymce-qtag.php:1517
+#: lib/admin-tinymce-qtag.php:1195 lib/admin-tinymce-qtag.php:1519
 msgid "オレンジ（中）"
 msgstr "Orange (medium)"
 
-#: lib/admin-tinymce-qtag.php:1198 lib/admin-tinymce-qtag.php:1523
+#: lib/admin-tinymce-qtag.php:1200 lib/admin-tinymce-qtag.php:1525
 msgid "オレンジ（大）"
 msgstr "Orange (large)"
 
-#: lib/admin-tinymce-qtag.php:1204 lib/admin-tinymce-qtag.php:1529
+#: lib/admin-tinymce-qtag.php:1206 lib/admin-tinymce-qtag.php:1531
 msgid "ディープオレンジ（小）"
 msgstr "Deep orange (small)"
 
-#: lib/admin-tinymce-qtag.php:1209 lib/admin-tinymce-qtag.php:1535
+#: lib/admin-tinymce-qtag.php:1211 lib/admin-tinymce-qtag.php:1537
 msgid "ディープオレンジ（中）"
 msgstr "Deep orange (medium)"
 
-#: lib/admin-tinymce-qtag.php:1214 lib/admin-tinymce-qtag.php:1541
+#: lib/admin-tinymce-qtag.php:1216 lib/admin-tinymce-qtag.php:1543
 msgid "ディープオレンジ（大）"
 msgstr "Deep orange (large)"
 
-#: lib/admin-tinymce-qtag.php:1220 lib/admin-tinymce-qtag.php:1547
+#: lib/admin-tinymce-qtag.php:1222 lib/admin-tinymce-qtag.php:1549
 msgid "ブラウン（小）"
 msgstr "Brown (small)"
 
-#: lib/admin-tinymce-qtag.php:1225 lib/admin-tinymce-qtag.php:1553
+#: lib/admin-tinymce-qtag.php:1227 lib/admin-tinymce-qtag.php:1555
 msgid "ブラウン（中）"
 msgstr "Brown (medium)"
 
-#: lib/admin-tinymce-qtag.php:1230 lib/admin-tinymce-qtag.php:1559
+#: lib/admin-tinymce-qtag.php:1232 lib/admin-tinymce-qtag.php:1561
 msgid "ブラウン（大）"
 msgstr "Brown (large)"
 
-#: lib/admin-tinymce-qtag.php:1236 lib/admin-tinymce-qtag.php:1565
+#: lib/admin-tinymce-qtag.php:1238 lib/admin-tinymce-qtag.php:1567
 msgid "グレー（小）"
 msgstr "Gray (small)"
 
-#: lib/admin-tinymce-qtag.php:1241 lib/admin-tinymce-qtag.php:1571
+#: lib/admin-tinymce-qtag.php:1243 lib/admin-tinymce-qtag.php:1573
 msgid "グレー（中）"
 msgstr "Gray (medium)"
 
-#: lib/admin-tinymce-qtag.php:1246 lib/admin-tinymce-qtag.php:1577
+#: lib/admin-tinymce-qtag.php:1248 lib/admin-tinymce-qtag.php:1579
 msgid "グレー（大）"
 msgstr "Gray (large)"
 
-#: lib/admin-tinymce-qtag.php:1586
+#: lib/admin-tinymce-qtag.php:1588
 msgid "囲みブログカードラベル"
 msgstr "Surround blog card label"
 
@@ -2406,169 +2519,241 @@ msgstr "Surround blog card label"
 msgid "商品リンクの追加"
 msgstr "Add product link"
 
-#: lib/admin.php:169
+#: lib/admin.php:172
 msgid "ID"
 msgstr "ID"
 
-#: lib/admin.php:174 lib/custom-fields/seo-field.php:61
+#: lib/admin.php:177 lib/custom-fields/seo-field.php:61
 #: lib/custom-fields/seo-field.php:83 lib/custom-fields/seo-field.php:93
 msgid "文字数"
 msgstr "Character count"
 
-#: lib/admin.php:179
+#: lib/admin.php:182
 msgid "PV"
 msgstr "PV"
 
-#: lib/admin.php:184 lib/content-category.php:264 lib/content-tag.php:210
+#: lib/admin.php:187 lib/content-category.php:264 lib/content-tag.php:213
 msgid "アイキャッチ"
 msgstr "Eye-catching image"
 
-#: lib/admin.php:222
+#: lib/admin.php:225
 msgid "　題："
 msgstr "Title:"
 
-#: lib/admin.php:230
+#: lib/admin.php:233
 msgid "本文："
 msgstr "Body:"
 
-#: lib/admin.php:252
+#: lib/admin.php:255
 msgid "日："
 msgstr "Day: "
 
-#: lib/admin.php:260
+#: lib/admin.php:263
 msgid "週："
 msgstr "Week :"
 
-#: lib/admin.php:268
+#: lib/admin.php:271
 msgid "月："
 msgstr "Month :"
 
-#: lib/admin.php:276
+#: lib/admin.php:279
 msgid "全："
 msgstr "All :"
 
-#: lib/admin.php:359
+#: lib/admin.php:362
 msgid "管理メニュー"
 msgstr "Admin menu"
 
-#: lib/admin.php:371 tmp/admin-panel.php:31
+#: lib/admin.php:374 tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr "Dashboard"
 
-#: lib/admin.php:378 lib/shortcodes.php:441
+#: lib/admin.php:381 lib/shortcodes.php:446
 msgid "投稿一覧"
 msgstr "Posts"
 
-#: lib/admin.php:385
+#: lib/admin.php:388
 msgid "固定ページ一覧"
 msgstr "Pages"
 
-#: lib/admin.php:392
+#: lib/admin.php:395
 msgid "メディア一覧"
 msgstr "Media"
 
-#: lib/admin.php:399
+#: lib/admin.php:402
 msgid "テーマ"
 msgstr "Themes"
 
-#: lib/admin.php:406
+#: lib/admin.php:409
 msgid "カスタマイズ"
 msgstr "Customize"
 
-#: lib/admin.php:413 lib/page-settings/_top-page.php:191
+#: lib/admin.php:416 lib/page-settings/_top-page.php:191
 msgid "ウィジェット"
 msgstr "Widgets"
 
-#: lib/admin.php:420 tmp/mobile-navi-button.php:21
+#: lib/admin.php:423 tmp/mobile-navi-button.php:21
 msgid "メニュー"
 msgstr "Menus"
 
-#: lib/admin.php:427
+#: lib/admin.php:430
 msgid "テーマの編集"
 msgstr "Theme editor"
 
-#: lib/admin.php:434
+#: lib/admin.php:437
 msgid "プラグイン一覧"
 msgstr "Plugins"
 
-#: lib/admin.php:470 lib/original-menu.php:36
+#: lib/admin.php:473 lib/original-menu.php:36
 msgid "ランキング作成"
 msgstr "Create ranking"
 
-#: lib/admin.php:477 lib/original-menu.php:39 lib/page-access/_top-page.php:39
+#: lib/admin.php:480 lib/original-menu.php:39 lib/page-access/_top-page.php:39
 #: lib/page-access/access-forms.php:14 lib/page-access/access-forms.php:26
 msgid "アクセス集計"
 msgstr "Access summary"
 
-#: lib/admin.php:484 lib/original-menu.php:42
+#: lib/admin.php:487 lib/original-menu.php:42
 msgid "高速化"
 msgstr "Speed up"
 
-#: lib/admin.php:491 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
+#: lib/admin.php:494 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
 #: lib/page-backup/backup-forms.php:24
 msgid "バックアップ"
 msgstr "Backup"
 
-#: lib/admin.php:498 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
+#: lib/admin.php:501 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
 #: lib/page-cache/cache-forms.php:14 lib/shortcodes-product-func.php:350
 msgid "キャッシュ削除"
 msgstr "Delete cache"
 
-#: lib/admin.php:658
+#: lib/admin.php:640
 msgid "カテゴリー検索"
 msgstr "Category search"
 
-#: lib/admin.php:718 lib/admin.php:732
+#: lib/admin.php:700 lib/admin.php:714
 msgid "Excerpt"
 msgstr "Excerpt"
 
 #: lib/block-editor-styles-group.php:167
+#: lib/block-editor-styles-paragraph.php:202
 msgid "白抜き（赤色）"
 msgstr "Outline (red)"
 
 #: lib/block-editor-styles-group.php:175
+#: lib/block-editor-styles-paragraph.php:210
 msgid "白抜き（ピンク）"
 msgstr "Outline (pink)"
 
 #: lib/block-editor-styles-group.php:183
+#: lib/block-editor-styles-paragraph.php:218
 msgid "白抜き（紺色）"
 msgstr "Outline (navy)"
 
 #: lib/block-editor-styles-group.php:191
+#: lib/block-editor-styles-paragraph.php:226
 msgid "白抜き（青色）"
 msgstr "Outline (blue)"
 
 #: lib/block-editor-styles-group.php:199
+#: lib/block-editor-styles-paragraph.php:234
 msgid "白抜き（黄色）"
 msgstr "Outline (yellow)"
 
 #: lib/block-editor-styles-group.php:207
+#: lib/block-editor-styles-paragraph.php:242
 msgid "白抜き（緑色）"
 msgstr "Outline (green)"
 
 #: lib/block-editor-styles-group.php:215
+#: lib/block-editor-styles-paragraph.php:250
 msgid "白抜き（オレンジ）"
 msgstr "Outline (Orange)"
 
 #: lib/block-editor-styles-group.php:226
+#: lib/block-editor-styles-paragraph.php:261
 msgid "付箋風（灰色）"
 msgstr "Sticky note style (gray)"
 
 #: lib/block-editor-styles-group.php:234
+#: lib/block-editor-styles-paragraph.php:269
 msgid "付箋風（黄色）"
 msgstr "Sticky note style (yellow)"
 
 #: lib/block-editor-styles-group.php:242
+#: lib/block-editor-styles-paragraph.php:277
 msgid "付箋風（赤色）"
 msgstr "Sticky note style (red)"
 
 #: lib/block-editor-styles-group.php:250
+#: lib/block-editor-styles-paragraph.php:285
 msgid "付箋風（青色）"
 msgstr "Sticky note style (blue)"
 
 #: lib/block-editor-styles-group.php:258
+#: lib/block-editor-styles-paragraph.php:293
 msgid "付箋風（緑色）"
 msgstr "Sticky note style (green)"
+
+#: lib/block-editor-styles-image.php:15
+msgid "Clarendon"
+msgstr "Clarendon"
+
+#: lib/block-editor-styles-image.php:19
+msgid "Gingham"
+msgstr "Gingham"
+
+#: lib/block-editor-styles-image.php:23
+msgid "Moon"
+msgstr "Moon"
+
+#: lib/block-editor-styles-image.php:27
+msgid "Lark"
+msgstr "Lark"
+
+#: lib/block-editor-styles-image.php:31
+msgid "Reyes"
+msgstr "Reyes"
+
+#: lib/block-editor-styles-image.php:35
+msgid "Juno"
+msgstr "Juno"
+
+#: lib/block-editor-styles-image.php:39
+msgid "Slumber"
+msgstr "Slumber"
+
+#: lib/block-editor-styles-image.php:43
+msgid "Crema"
+msgstr "Crema"
+
+#: lib/block-editor-styles-image.php:47
+msgid "Ludwig"
+msgstr "Ludwig"
+
+#: lib/block-editor-styles-image.php:51
+msgid "Aden"
+msgstr "Aden"
+
+#: lib/block-editor-styles-image.php:55
+msgid "Perpetua"
+msgstr "Perpetua"
+
+#: lib/block-editor-styles-image.php:59
+msgid "Mono"
+msgstr "Mono"
+
+#: lib/block-editor-styles-list.php:17 lib/block-editor-styles-paragraph.php:17
+msgid "枠線"
+msgstr "Border line"
+
+#: lib/block-editor-styles-list.php:33 lib/block-editor-styles-paragraph.php:33
+msgid "枠線・背景色"
+msgstr "Border Color / Background Color"
+
+#: lib/block-editor-styles-list.php:41 lib/block-editor-styles-paragraph.php:41
+msgid "交差線"
+msgstr "Intersection line"
 
 #: lib/comments.php:45
 #, php-format
@@ -2615,8 +2800,8 @@ msgstr "Posted date:"
 msgid "Edit"
 msgstr "Edit"
 
-#: lib/content-category.php:180 lib/content-tag.php:150 lib/seo.php:400
-#: lib/seo.php:528
+#: lib/content-category.php:180 lib/content-tag.php:150 lib/seo.php:406
+#: lib/seo.php:548
 #, php-format
 msgid "「%s」の記事一覧です。"
 msgstr "Articles of \"%s\"."
@@ -2659,13 +2844,13 @@ msgstr "Category body"
 msgid "カテゴリページで表示されるメインコンテンツを入力してください。"
 msgstr "Enter the main content that will appear on the category page."
 
-#: lib/content-category.php:269 lib/content-tag.php:215
+#: lib/content-category.php:269 lib/content-tag.php:218
 msgid "タイトル下に表示されるアイキャッチ画像を選択してください。"
 msgstr "Select an eye-catching image that will appear below the title."
 
-#: lib/content-category.php:273 lib/content-tag.php:219
-#: lib/custom-fields/seo-field.php:95 lib/page-settings/title-forms.php:162
-#: lib/page-settings/title-forms.php:263
+#: lib/content-category.php:273 lib/content-tag.php:222
+#: lib/custom-fields/seo-field.php:95 lib/page-settings/title-forms.php:163
+#: lib/page-settings/title-forms.php:264
 msgid "メタディスクリプション"
 msgstr "Meta description"
 
@@ -2681,13 +2866,13 @@ msgstr ""
 "Enter a description for the category page. The text entered here will be "
 "used as a meta description tag."
 
-#: lib/content-category.php:283 lib/content-tag.php:229
-#: lib/custom-fields/seo-field.php:101 lib/page-settings/title-forms.php:77
-#: lib/page-settings/title-forms.php:175 lib/page-settings/title-forms.php:276
+#: lib/content-category.php:283 lib/content-tag.php:232
+#: lib/custom-fields/seo-field.php:101 lib/page-settings/title-forms.php:78
+#: lib/page-settings/title-forms.php:176 lib/page-settings/title-forms.php:277
 msgid "メタキーワード"
 msgstr "Meta keywords"
 
-#: lib/content-category.php:288 lib/content-tag.php:234
+#: lib/content-category.php:288 lib/content-tag.php:237
 msgid "キーワード1,キーワード2,キーワード3"
 msgstr "Keyword 1, Keyword 2, Keyword 3, ..."
 
@@ -2699,23 +2884,23 @@ msgstr ""
 "Enter category page meta keywords, separated by commas. *This setting does "
 "not currently have much effect."
 
-#: lib/content-category.php:293 lib/content-tag.php:239
+#: lib/content-category.php:293 lib/content-tag.php:242
 msgid "noindex"
 msgstr "No index"
 
-#: lib/content-category.php:299 lib/content-tag.php:246
+#: lib/content-category.php:299 lib/content-tag.php:249
 #: lib/custom-fields/seo-field.php:106
 msgid "インデックスしない（noindex）"
 msgstr "Do not index (noindex)"
 
-#: lib/content-category.php:300 lib/content-tag.php:247
+#: lib/content-category.php:300 lib/content-tag.php:250
 #: lib/custom-fields/seo-field.php:107
 msgid ""
 "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr ""
 "Sets a meta tag so that this page will not be indexed by search engines."
 
-#: lib/content-category.php:300 lib/content-tag.php:247
+#: lib/content-category.php:300 lib/content-tag.php:250
 msgid "Cocoon設定の「SEO」タブにあるカテゴリーのnoindex設定が優先されます。"
 msgstr ""
 "The noindex setting for the category on the SEO tab of Cocoon settings is "
@@ -2737,15 +2922,15 @@ msgstr ""
 "This is basically entered for displaying a description in the list table of "
 "the tag settings."
 
-#: lib/content-tag.php:191
+#: lib/content-tag.php:194
 msgid "タグタイトル"
 msgstr "Tag title"
 
-#: lib/content-tag.php:196
+#: lib/content-tag.php:199
 msgid "タグページのタイトル"
 msgstr "Tag page title"
 
-#: lib/content-tag.php:197
+#: lib/content-tag.php:200
 msgid ""
 "タグページのタイトルを指定します。タグページのタイトルタグにここで入力したテ"
 "キストが適用されます。"
@@ -2753,19 +2938,19 @@ msgstr ""
 "Specifies a title for the tag page. The text entered here will be applied to "
 "the title tag of the tag page."
 
-#: lib/content-tag.php:201
+#: lib/content-tag.php:204
 msgid "タグ本文"
 msgstr "Tag body"
 
-#: lib/content-tag.php:206
+#: lib/content-tag.php:209
 msgid "タグページで表示されるメインコンテンツを入力してください。"
 msgstr "Enter the main content to be displayed on the tag page."
 
-#: lib/content-tag.php:223
+#: lib/content-tag.php:226
 msgid "タグページの説明文を入力してください"
 msgstr "Enter a description for the tag page."
 
-#: lib/content-tag.php:225
+#: lib/content-tag.php:228
 msgid ""
 "タグページの説明を入力します。ここに入力したテキストはメタディスクリプション"
 "タグとして利用されます。"
@@ -2773,7 +2958,7 @@ msgstr ""
 "Enter a description for the tag page. The text entered here will be used as "
 "a meta description tag."
 
-#: lib/content-tag.php:235
+#: lib/content-tag.php:238
 msgid ""
 "タグページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味"
 "のない設定となっています。"
@@ -3478,7 +3663,7 @@ msgstr "Post"
 #: lib/page-settings/sns-follow-forms.php:110
 #: lib/page-settings/sns-share-forms-bottom.php:118
 #: lib/page-settings/sns-share-forms-top.php:105
-#: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:435
+#: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:440
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
 msgstr "Page"
@@ -3556,68 +3741,68 @@ msgstr "Enter tag IDs"
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr "Enter tag IDs, separated by commas."
 
-#: lib/html-forms.php:1073
+#: lib/html-forms.php:1090
 msgid "人気記事は見つかりませんでした。"
 msgstr "Popular articles were not found."
 
-#: lib/html-forms.php:1272
+#: lib/html-forms.php:1300
 msgid "記事は見つかりませんでした。"
 msgstr "No articles found."
 
-#: lib/html-forms.php:1395
+#: lib/html-forms.php:1427
 #, php-format
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1413
+#: lib/html-forms.php:1445
 msgid "未登録のユーザーさん"
 msgstr "Unregistered user"
 
-#: lib/html-forms.php:1423
+#: lib/html-forms.php:1455
 msgid "未登録のユーザーさんです。"
 msgstr "The user is unregistered."
 
-#: lib/html-forms.php:1425
+#: lib/html-forms.php:1457
 msgid "ログイン・登録はこちら→"
-msgstr "To login and register, click here ->"
+msgstr "Login/Register ->"
 
-#: lib/html-forms.php:1427
+#: lib/html-forms.php:1459
 msgid "ログインページ"
 msgstr "Login page"
 
-#: lib/html-forms.php:1432
+#: lib/html-forms.php:1464
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "Profile content can be changed in the admin screen ->"
 
-#: lib/html-forms.php:1432
+#: lib/html-forms.php:1464
 msgid "プロフィール設定画面"
 msgstr "Profile settings"
 
-#: lib/html-forms.php:1432
+#: lib/html-forms.php:1464
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*This message is displayed for logged-in users only."
 
-#: lib/html-forms.php:1462
+#: lib/html-forms.php:1494
 msgid "管理者用エラーメッセージ"
 msgstr "Error messages for the administrator"
 
-#: lib/html-forms.php:1655
+#: lib/html-forms.php:1700
 msgid "おすすめ"
 msgstr "Recommended"
 
-#: lib/html-forms.php:1658
+#: lib/html-forms.php:1703
 msgid "新着"
 msgstr "New posts"
 
-#: lib/html-forms.php:1661
+#: lib/html-forms.php:1706
 msgid "注目"
 msgstr "Featured"
 
-#: lib/html-forms.php:1664
+#: lib/html-forms.php:1709
 msgid "必見"
 msgstr "Must-see"
 
-#: lib/html-forms.php:1667
+#: lib/html-forms.php:1712
 msgid "お得"
 msgstr "Great deals"
 
@@ -3762,7 +3947,7 @@ msgid "3時間"
 msgstr "3 hours"
 
 #: lib/page-access/access-forms.php:65
-#: lib/page-settings/sns-follow-forms.php:242
+#: lib/page-settings/sns-follow-forms.php:243
 #: lib/page-settings/sns-share-forms.php:175
 msgid "6時間"
 msgstr "6 hours"
@@ -3772,18 +3957,18 @@ msgid "9時間"
 msgstr "9 hours"
 
 #: lib/page-access/access-forms.php:67
-#: lib/page-settings/sns-follow-forms.php:243
+#: lib/page-settings/sns-follow-forms.php:244
 #: lib/page-settings/sns-share-forms.php:178
 msgid "12時間"
 msgstr "12 hours"
 
 #: lib/page-access/access-forms.php:68
-#: lib/page-settings/sns-follow-forms.php:244
+#: lib/page-settings/sns-follow-forms.php:245
 msgid "18時間"
 msgstr "18 hours"
 
 #: lib/page-access/access-forms.php:69
-#: lib/page-settings/sns-follow-forms.php:245
+#: lib/page-settings/sns-follow-forms.php:246
 #: lib/page-settings/sns-share-forms.php:181
 msgid "24時間"
 msgstr "24 hours"
@@ -3796,7 +3981,7 @@ msgstr "2 days"
 msgid "3日"
 msgstr "3 days"
 
-#: lib/page-access/access-forms.php:72 lib/page-settings/single-forms.php:195
+#: lib/page-access/access-forms.php:72 lib/page-settings/single-forms.php:194
 msgid "1週間"
 msgstr "1 week"
 
@@ -4186,12 +4371,12 @@ msgstr "Create a ranking. Click \"Save\" to enter the next ranking."
 #: lib/page-settings/notice-forms.php:23
 #: lib/page-settings/recommended-forms.php:19
 #: lib/page-settings/single-forms.php:25 lib/page-settings/single-forms.php:95
-#: lib/page-settings/single-forms.php:292 lib/page-settings/skin-forms.php:18
+#: lib/page-settings/single-forms.php:291 lib/page-settings/skin-forms.php:18
 #: lib/page-settings/sns-follow-forms.php:23
 #: lib/page-settings/sns-share-forms-bottom.php:21
 #: lib/page-settings/sns-share-forms-top.php:21
-#: lib/page-settings/title-forms.php:25 lib/page-settings/title-forms.php:108
-#: lib/page-settings/title-forms.php:206 lib/page-settings/toc-forms.php:25
+#: lib/page-settings/title-forms.php:25 lib/page-settings/title-forms.php:109
+#: lib/page-settings/title-forms.php:207 lib/page-settings/toc-forms.php:25
 msgid "プレビュー"
 msgstr "Preview"
 
@@ -4350,14 +4535,14 @@ msgstr ""
 msgid "アイテムを上に移動"
 msgstr "Move item up"
 
-#: lib/page-item-ranking/item-ranking-func.php:352
-#: lib/shortcodes-amazon.php:389 lib/shortcodes-amazon.php:392
-#: lib/shortcodes-amazon.php:395 lib/shortcodes-rakuten.php:36
+#: lib/page-item-ranking/item-ranking-func.php:351
+#: lib/shortcodes-amazon.php:416 lib/shortcodes-amazon.php:419
+#: lib/shortcodes-amazon.php:422 lib/shortcodes-rakuten.php:36
 #: lib/shortcodes-rakuten.php:39 lib/shortcodes-rakuten.php:42
 msgid "詳細ページ"
 msgstr "Details page"
 
-#: lib/page-item-ranking/item-ranking-func.php:363
+#: lib/page-item-ranking/item-ranking-func.php:362
 msgid "公式ページ"
 msgstr "Official page"
 
@@ -4579,11 +4764,7 @@ msgstr "Reset"
 msgid "テーマ情報"
 msgstr "Theme info"
 
-#: lib/page-settings/_top-page.php:198 lib/page-settings/donation-forms.php:13
-msgid "寄付"
-msgstr "Donate"
-
-#: lib/page-settings/_top-page.php:201 lib/page-settings/_top-page.php:409
+#: lib/page-settings/_top-page.php:200 lib/page-settings/_top-page.php:403
 msgid "変更をまとめて保存"
 msgstr "Save all changes"
 
@@ -4755,15 +4936,11 @@ msgstr "Optimize JavaScript:"
 msgid "Lazy Load："
 msgstr "Lazy Load:"
 
-#: lib/page-settings/about-forms.php:132
-msgid "WEBフォントLazy Load："
-msgstr "Web font Lazy Load:"
-
-#: lib/page-settings/about-forms.php:140
+#: lib/page-settings/about-forms.php:138
 msgid "利用中のプラグイン："
 msgstr "Plugins in use:"
 
-#: lib/page-settings/about-forms.php:153
+#: lib/page-settings/about-forms.php:151
 msgid "不具合報告の際には以下の情報を添えてもらうと助かります。"
 msgstr ""
 "It is helpful to attach the following information when reporting an issue."
@@ -4855,7 +5032,7 @@ msgid "タグを表示する"
 msgstr "Display tag"
 
 #: lib/page-settings/admin-forms.php:108 lib/page-settings/page-forms.php:27
-#: lib/page-settings/single-forms.php:407
+#: lib/page-settings/single-forms.php:406
 msgid "コメントを表示する"
 msgstr "Display comment"
 
@@ -4874,6 +5051,10 @@ msgstr "Display character count"
 #: lib/page-settings/admin-forms.php:121
 msgid "PVを表示する"
 msgstr "Display PV"
+
+#: lib/page-settings/admin-forms.php:121
+msgid "（※投稿・固定ページ一覧が重い場合は無効にしてください）"
+msgstr "(* Disable if the post/fixed page list is slow)"
 
 #: lib/page-settings/admin-forms.php:124
 msgid "アイキャッチを表示する"
@@ -4921,7 +5102,7 @@ msgstr "Display on mobile only"
 #: lib/page-settings/carousel-forms.php:38
 #: lib/page-settings/header-forms.php:128 lib/page-settings/page-forms.php:56
 #: lib/page-settings/recommended-forms.php:39
-#: lib/page-settings/seo-forms.php:114 lib/page-settings/single-forms.php:436
+#: lib/page-settings/seo-forms.php:114 lib/page-settings/single-forms.php:435
 #: lib/page-settings/toc-forms.php:160
 msgid "表示しない"
 msgstr "Do not display"
@@ -5034,9 +5215,9 @@ msgstr "Display Google AMP test"
 
 #: lib/page-settings/admin-forms.php:253
 msgid ""
-"<a href=\"https://search.google.com/test/amp\" target=\"_blank\" rel="
-"\"noopener\">AMP テスト - Google Search Console</a>でチェックするためのリンク"
-"の表示。"
+"<a href=\"https://search.google.com/test/amp\" target=\"_blank\" "
+"rel=\"noopener\">AMP テスト - Google Search Console</a>でチェックするためのリ"
+"ンクの表示。"
 msgstr ""
 "Display link to check in <a href=\"https://search.google.com/test/amp\" "
 "target=\"_blank\" rel=\"noopener\">AMP test - Google Search Console</a>."
@@ -5047,8 +5228,8 @@ msgstr "Display the AMP Validator"
 
 #: lib/page-settings/admin-forms.php:256
 msgid ""
-"<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" rel="
-"\"noopener\">The AMP Validator</a>でチェックするためのリンクの表示。"
+"<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" "
+"rel=\"noopener\">The AMP Validator</a>でチェックするためのリンクの表示。"
 msgstr ""
 "Display link to check in <a href=\"https://validator.ampproject.org/#\" "
 "target=\"_blank\" rel=\"noopener\">The AMP Validator</a>."
@@ -5078,12 +5259,12 @@ msgstr "Display PageSpeed Insights"
 #: lib/page-settings/admin-forms.php:278
 msgid ""
 "<a href=\"https://developers.google.com/speed/pagespeed/insights/?"
-"filter_third_party_resources=true\" target=\"_blank\" rel=\"noopener"
-"\">PageSpeed Insights</a>リンクの表示。"
+"filter_third_party_resources=true\" target=\"_blank\" "
+"rel=\"noopener\">PageSpeed Insights</a>リンクの表示。"
 msgstr ""
 "Display the <a href=\"https://developers.google.com/speed/pagespeed/"
-"insights/?filter_third_party_resources=true\" target=\"_blank\" rel="
-"\"noopener\">PageSpeed Insights</a> link."
+"insights/?filter_third_party_resources=true\" target=\"_blank\" "
+"rel=\"noopener\">PageSpeed Insights</a> link."
 
 #: lib/page-settings/admin-forms.php:280
 msgid "GTmetrixを表示する"
@@ -5091,11 +5272,11 @@ msgstr "Display GTmetrix"
 
 #: lib/page-settings/admin-forms.php:281
 msgid ""
-"<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener"
-"\">GTmetrix</a>リンクの表示。"
+"<a href=\"https://gtmetrix.com/\" target=\"_blank\" "
+"rel=\"noopener\">GTmetrix</a>リンクの表示。"
 msgstr ""
-"Displays the <a href=\"https://gtmetrix.com/\" target=\"_blank\" rel="
-"\"noopener\">GTmetrix</a> link."
+"Displays the <a href=\"https://gtmetrix.com/\" target=\"_blank\" "
+"rel=\"noopener\">GTmetrix</a> link."
 
 #: lib/page-settings/admin-forms.php:283
 msgid "モバイルフレンドリーテストを表示する"
@@ -5115,8 +5296,9 @@ msgstr "Display structured data check"
 
 #: lib/page-settings/admin-forms.php:287
 msgid ""
-"<a href=\"https://search.google.com/structured-data/testing-tool#\" target="
-"\"_blank\" rel=\"noopener\">構造化データ テストツール</a>リンクの表示。"
+"<a href=\"https://search.google.com/structured-data/testing-tool#\" "
+"target=\"_blank\" rel=\"noopener\">構造化データ テストツール</a>リンクの表"
+"示。"
 msgstr ""
 "Displays the <a href=\"https://search.google.com/structured-data/testing-"
 "tool#\" target=\"_blank\" rel=\"noopener\">structured data test tool</a> "
@@ -5128,11 +5310,11 @@ msgstr "Display HTML5 check"
 
 #: lib/page-settings/admin-forms.php:290
 msgid ""
-"<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener"
-"\">Nu Html Checker</a>リンクの表示。"
+"<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" "
+"rel=\"noopener\">Nu Html Checker</a>リンクの表示。"
 msgstr ""
-"Displays the <a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel="
-"\"noopener\">Nu Html Checker</a> link."
+"Displays the <a href=\"https://validator.w3.org/nu/\" target=\"_blank\" "
+"rel=\"noopener\">Nu Html Checker</a> link."
 
 #: lib/page-settings/admin-forms.php:292
 msgid "HTML5アウトラインチェックを表示する"
@@ -5140,11 +5322,11 @@ msgstr "Display HTML5 outline check"
 
 #: lib/page-settings/admin-forms.php:293
 msgid ""
-"<a href=\"https://gsnedders.html5.org/outliner/\" target=\"_blank\" rel="
-"\"noopener\">HTML 5 Outliner</a>リンクの表示。"
+"<a href=\"https://gsnedders.html5.org/outliner/\" target=\"_blank\" "
+"rel=\"noopener\">HTML 5 Outliner</a>リンクの表示。"
 msgstr ""
-"Displays the <a href=\"https://gsnedders.html5.org/outliner/\" target="
-"\"_blank\" rel=\"noopener\">HTML 5 Outliner</a> link."
+"Displays the <a href=\"https://gsnedders.html5.org/outliner/\" "
+"target=\"_blank\" rel=\"noopener\">HTML 5 Outliner</a> link."
 
 #: lib/page-settings/admin-forms.php:295
 msgid "SEOチェキを表示する"
@@ -5155,8 +5337,8 @@ msgid ""
 "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェ"
 "キ! 無料で使えるSEOツール</a>リンクの表示。"
 msgstr ""
-"Displays the <a href=\"http://seocheki.net/\" target=\"_blank\" rel="
-"\"noopener\">SEO Check! Free SEO tools</a> link."
+"Displays the <a href=\"http://seocheki.net/\" target=\"_blank\" "
+"rel=\"noopener\">SEO Check! Free SEO tools</a> link."
 
 #: lib/page-settings/admin-forms.php:298
 msgid "ツイートチェックを表示する"
@@ -5188,11 +5370,11 @@ msgstr "Display Responsinator check"
 
 #: lib/page-settings/admin-forms.php:318
 msgid ""
-"<a href=\"https://www.responsinator.com/\" target=\"_blank\" rel=\"noopener"
-"\">Responsinator</a>チェック用リンクの表示。"
+"<a href=\"http://www.responsinator.com/\" target=\"_blank\" "
+"rel=\"noopener\">Responsinator</a>チェック用リンクの表示。"
 msgstr ""
-"Displays the link for the <a href=\"https://www.responsinator.com/\" target="
-"\"_blank\" rel=\"noopener\">Responsinator</a> check."
+"Displays the check link of the <a href=\"https://www.responsinator.com/\" "
+"target=\"_blank\" rel=\"noopener\">Responsinator</a>"
 
 #: lib/page-settings/admin-forms.php:320
 msgid "Sizzyチェックを表示する"
@@ -5212,13 +5394,13 @@ msgstr "Display ScreenResolution check"
 
 #: lib/page-settings/admin-forms.php:324
 msgid ""
-"<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target="
-"\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表"
-"示。"
+"<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" "
+"target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リン"
+"クの表示。"
 msgstr ""
 "Displays the link for the <a href=\"http://whatismyscreenresolution.net/"
-"multi-screen-test\" target=\"_blank\" rel=\"noopener"
-"\">WhatIsMyScreenResolution</a> check."
+"multi-screen-test\" target=\"_blank\" "
+"rel=\"noopener\">WhatIsMyScreenResolution</a> check."
 
 #: lib/page-settings/ads-forms.php:11
 msgid "広告設定"
@@ -5301,57 +5483,23 @@ msgstr ""
 "errors to be output when saving, try entering the code without the script "
 "tag."
 
-#: lib/page-settings/ads-forms.php:89
-msgid "アドセンスリンクユニットのレスポンシブコードを入力"
-msgstr "Enter your AdSense link unit responsive code"
-
-#: lib/page-settings/ads-forms.php:90
-msgid ""
-"リンクユニットのレスポンシブ広告コードを入力してください。ここに広告コードを"
-"入力することでAMPページでもリンクユニットが表示されます。入力しない場合はAMP"
-"ページで「レクタングル（中）」サイズの広告が表示されます。"
-msgstr ""
-"Enter a link unit responsive ad code. By entering an ad code here, the link "
-"unit will be displayed even in AMP pages. If left blank, a \"Rectangle "
-"(medium)\"-sized ad will be displayed in AMP pages."
-
 #: lib/page-settings/ads-forms.php:92
-msgid "リンクユニット用コード入力"
-msgstr "Enter code for link unit"
-
-#: lib/page-settings/ads-forms.php:102
-msgid "アドセンス関連コンテンツコードを入力"
-msgstr "Enter your Adsense related contents code"
-
-#: lib/page-settings/ads-forms.php:103
-msgid ""
-"関連コンテンツ用の広告コードを入力してください。ここに広告コードを入力するこ"
-"とでAMPページでも関連コンテンツが表示されます。"
-msgstr ""
-"Enter a related contents ad code. By entering an ad code here, the related "
-"contents will be displayed even in AMP pages."
-
-#: lib/page-settings/ads-forms.php:105
-msgid "関連コンテンツ用コード入力"
-msgstr "Enter for related contents code"
-
-#: lib/page-settings/ads-forms.php:116
 msgid "アドセンス表示方式"
 msgstr "Adsense display method"
 
-#: lib/page-settings/ads-forms.php:129
+#: lib/page-settings/ads-forms.php:105
 msgid "モバイル広告の幅を広くする"
 msgstr "Widen the width of Mobile Ad"
 
-#: lib/page-settings/ads-forms.php:130
+#: lib/page-settings/ads-forms.php:106
 msgid "モバイルでAdSenseの幅を画面いっぱいにします。"
 msgstr "Set AdSense width to maximum width of mobile device."
 
-#: lib/page-settings/ads-forms.php:130
+#: lib/page-settings/ads-forms.php:106
 msgid "AdSenseタグの「data-full-width-responsive」を「true」にします。"
 msgstr "Set ‘data-full-width-responsive’ tag on AdSense to true"
 
-#: lib/page-settings/ads-forms.php:130
+#: lib/page-settings/ads-forms.php:106
 msgid ""
 "この機能が有効な場合、AdSenseの仕様で\"horizontal\",\"vertical\"広告をモバイ"
 "ルで表示した際は\"rectangle\"として表示されます。"
@@ -5360,83 +5508,83 @@ msgstr ""
 "displayed as “rectangle” when displayed on mobile according to the AdSense "
 "specifications"
 
-#: lib/page-settings/ads-forms.php:130
+#: lib/page-settings/ads-forms.php:106
 msgid "意図通りのサイズで表示する場合は機能を無効にしてください。"
 msgstr "If you want to display the size as you intended, disable the function."
 
-#: lib/page-settings/ads-forms.php:139
+#: lib/page-settings/ads-forms.php:115
 msgid "広告の表示位置"
 msgstr "Ad location"
 
-#: lib/page-settings/ads-forms.php:148
+#: lib/page-settings/ads-forms.php:124
 msgid "インデックスページの表示位置"
 msgstr "Index page location"
 
-#: lib/page-settings/ads-forms.php:152 tmp/mobile-top-button.php:26
+#: lib/page-settings/ads-forms.php:128 tmp/mobile-top-button.php:26
 msgid "トップ"
 msgstr "Top"
 
-#: lib/page-settings/ads-forms.php:160
+#: lib/page-settings/ads-forms.php:136
 msgid "ミドル"
 msgstr "Middle"
 
-#: lib/page-settings/ads-forms.php:165
+#: lib/page-settings/ads-forms.php:141
 msgid "ボトム"
 msgstr "Bottom"
 
-#: lib/page-settings/ads-forms.php:173
+#: lib/page-settings/ads-forms.php:149
 msgid "サイドバーの表示位置"
 msgstr "Sidebar location"
 
-#: lib/page-settings/ads-forms.php:177
+#: lib/page-settings/ads-forms.php:153
 msgid "サイドバートップ"
 msgstr "Sidebar top"
 
-#: lib/page-settings/ads-forms.php:184
+#: lib/page-settings/ads-forms.php:160
 msgid "サイドバーボトム"
 msgstr "Sidebar bottom"
 
-#: lib/page-settings/ads-forms.php:194
+#: lib/page-settings/ads-forms.php:170
 msgid "投稿・固定ページの表示位置"
 msgstr "Post/page location"
 
-#: lib/page-settings/ads-forms.php:198 lib/page-settings/single-forms.php:64
+#: lib/page-settings/ads-forms.php:174 lib/page-settings/single-forms.php:64
 msgid "タイトル上"
 msgstr "Above title"
 
-#: lib/page-settings/ads-forms.php:205
+#: lib/page-settings/ads-forms.php:181
 msgid "タイトル下"
 msgstr "Below title"
 
-#: lib/page-settings/ads-forms.php:212 lib/page-settings/single-forms.php:65
+#: lib/page-settings/ads-forms.php:188 lib/page-settings/single-forms.php:65
 msgid "本文上"
 msgstr "Content top"
 
-#: lib/page-settings/ads-forms.php:218
+#: lib/page-settings/ads-forms.php:194
 msgid "本文中"
 msgstr "Content middle"
 
-#: lib/page-settings/ads-forms.php:224 lib/page-settings/single-forms.php:343
+#: lib/page-settings/ads-forms.php:200 lib/page-settings/single-forms.php:342
 msgid "本文下"
 msgstr "Content bottom"
 
-#: lib/page-settings/ads-forms.php:230
+#: lib/page-settings/ads-forms.php:206
 msgid "SNSボタン上（本文下部分）"
 msgstr "Above social media button (bottom part of content)"
 
-#: lib/page-settings/ads-forms.php:236
+#: lib/page-settings/ads-forms.php:212
 msgid "SNSボタン下（本文下部分）"
 msgstr "Below social media button (bottom part of content)"
 
-#: lib/page-settings/ads-forms.php:242
+#: lib/page-settings/ads-forms.php:218
 msgid "関連記事下（投稿ページのみ）"
 msgstr "Below related articles (post page only)"
 
-#: lib/page-settings/ads-forms.php:252
+#: lib/page-settings/ads-forms.php:228
 msgid "それぞれのページで広告を表示する位置を設定します。"
 msgstr "Set the location to display ads on each page."
 
-#: lib/page-settings/ads-forms.php:254 lib/page-settings/ads-forms.php:272
+#: lib/page-settings/ads-forms.php:230 lib/page-settings/ads-forms.php:248
 msgid ""
 "設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに"
 "動作確認をしてください。"
@@ -5444,15 +5592,15 @@ msgstr ""
 "Depending on the setting, it may be a violation of Adsense policy, so "
 "carefully check the operation after configuring the setting."
 
-#: lib/page-settings/ads-forms.php:262
+#: lib/page-settings/ads-forms.php:238
 msgid "[ad]ショートコード"
 msgstr "[ad] Short code"
 
-#: lib/page-settings/ads-forms.php:266
+#: lib/page-settings/ads-forms.php:242
 msgid "[ad]ショートコードを有効にする"
 msgstr "Enable [ad] short code"
 
-#: lib/page-settings/ads-forms.php:270
+#: lib/page-settings/ads-forms.php:246
 msgid ""
 "本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示"
 "します。"
@@ -5460,23 +5608,23 @@ msgstr ""
 "If you enter [ad] in the text, ads that are set to \"ad code\" will be "
 "displayed in that location."
 
-#: lib/page-settings/ads-forms.php:285
+#: lib/page-settings/ads-forms.php:261
 msgid "バリューコマース"
 msgstr "Value Commerce"
 
-#: lib/page-settings/ads-forms.php:288
+#: lib/page-settings/ads-forms.php:264
 msgid "バリューコマース関連の広告設定です。"
 msgstr "The ad settings related to Value Commerce."
 
-#: lib/page-settings/ads-forms.php:295
+#: lib/page-settings/ads-forms.php:271
 msgid "LinkSwitch"
 msgstr "LinkSwitch"
 
-#: lib/page-settings/ads-forms.php:299
+#: lib/page-settings/ads-forms.php:275
 msgid "LinkSwitchを有効にする"
 msgstr "Enable LinkSwitch"
 
-#: lib/page-settings/ads-forms.php:300
+#: lib/page-settings/ads-forms.php:276
 msgid ""
 "バリューコマースのLinkSwitch機能を有効にするか。LinkSwitch IDが入力されている"
 "必要があります。"
@@ -5484,59 +5632,59 @@ msgstr ""
 "Do you want to enable the LinkSwitch feature of Value Commerce? The "
 "LinkSwitch ID must be entered."
 
-#: lib/page-settings/ads-forms.php:303
+#: lib/page-settings/ads-forms.php:279
 msgid "LinkSwitch ID"
 msgstr "LinkSwitch ID"
 
-#: lib/page-settings/ads-forms.php:305
+#: lib/page-settings/ads-forms.php:281
 msgid "LinkSwitch IDの入力"
 msgstr "Enter LinkSwitch ID"
 
-#: lib/page-settings/ads-forms.php:306
+#: lib/page-settings/ads-forms.php:282
 msgid ""
 "バリューコマースの「便利ツール」メニューの「LinkSwitch」からIDを取得してくだ"
 "さい。"
 msgstr ""
 "Get the ID from \"LinkSwitch\" in the \"Handy tools\" menu of Value Commerce."
 
-#: lib/page-settings/ads-forms.php:307
+#: lib/page-settings/ads-forms.php:283
 msgid "LinkSwitchタグから取得できるIDを入力してください。"
 msgstr "Enter the ID that can be obtained from the LinkSwitch tag."
 
-#: lib/page-settings/ads-forms.php:321
+#: lib/page-settings/ads-forms.php:297
 msgid "広告除外設定"
 msgstr "Ad exclusion settings"
 
-#: lib/page-settings/ads-forms.php:324
+#: lib/page-settings/ads-forms.php:300
 msgid "広告を表示したくないページやカテゴリの設定です。"
 msgstr ""
 "This is for setting pages or categories for which you do not want to display "
 "ads."
 
-#: lib/page-settings/ads-forms.php:331
+#: lib/page-settings/ads-forms.php:307
 msgid "広告除外記事ID"
 msgstr "Ad exclusion article IDs"
 
-#: lib/page-settings/ads-forms.php:335
+#: lib/page-settings/ads-forms.php:311
 msgid "例：111,222,3333"
 msgstr "Example: 111, 222, 3333"
 
-#: lib/page-settings/ads-forms.php:336
+#: lib/page-settings/ads-forms.php:312
 msgid ""
 "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr ""
 "Specifies the IDs of posts/pages for which you want to hide ads. Separate "
 "the IDs with a comma."
 
-#: lib/page-settings/ads-forms.php:344
+#: lib/page-settings/ads-forms.php:320
 msgid "広告除外カテゴリー"
 msgstr "Ad exclusion category"
 
-#: lib/page-settings/ads-forms.php:350
+#: lib/page-settings/ads-forms.php:326
 msgid "広告を非表示にするカテゴリを選択してください。"
 msgstr "Select a category for which you want to hide ads."
 
-#: lib/page-settings/ads-funcs.php:54
+#: lib/page-settings/ads-funcs.php:38
 msgid "スポンサーリンク"
 msgstr "Sponsored links"
 
@@ -5705,9 +5853,9 @@ msgstr "Font weight"
 
 #: lib/page-settings/all-forms.php:128
 msgid ""
-"font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～"
-"900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありま"
-"すので実際の太さを確認しながら設定してください。"
+"font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～900"
+"（太い）」で指定できます。ただし、細かく太さを設定できないフォントもあります"
+"ので実際の太さを確認しながら設定してください。"
 msgstr ""
 "font-weight specifies the thickness of the font. The font weight can be "
 "specified from 100 (thin) to 900 (thick). However, there are some fonts for "
@@ -6126,6 +6274,10 @@ msgstr "Google Analytics settings"
 msgid "Google Analyticsの解析タグの設定です。"
 msgstr "Sets an analysis tag of Google Analytics."
 
+#: lib/page-settings/analytics-forms.php:88
+msgid "GA4解析とユニバーサルアナリティクス解析の共存は可能です。"
+msgstr "GA4 analysis and Universal Analytics analysis can coexist."
+
 #: lib/page-settings/analytics-forms.php:96
 msgid "GA4測定ID"
 msgstr "GA4 ID"
@@ -6150,8 +6302,8 @@ msgstr ""
 "on the AMP page."
 
 #: lib/page-settings/analytics-forms.php:109
-msgid "Google AnalyticsトラッキングID"
-msgstr "Google Analytics tracking ID"
+msgid "ユニバーサルアナリティクスID"
+msgstr "Universal Analytics ID"
 
 #: lib/page-settings/analytics-forms.php:113
 msgid "UA-00000000-0"
@@ -6161,14 +6313,19 @@ msgstr "UA-00000000-0"
 msgid ""
 "ユニバーサルアナリティクスIDを入力してください。タグマネージャのトラッキング"
 "IDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキ"
-"ングIDとしても利用します"
+"ングIDとしても利用します。"
 msgstr ""
-"Enter a Google Analytics tracking ID. If a tag manager tracking ID has been "
-"entered, the tag manager takes precedence. This is also used as a SmartNews "
-"feed tracking ID."
+"Enter a Universal Analytics tracking ID. If a tag manager tracking ID is "
+"entered, the tag manager is preferred. This is also used as a SmartNews feed "
+"tracking ID."
+
+#: lib/page-settings/analytics-forms.php:114
+msgid ""
+"ユニバーサルアナリティクスのサポートは、2023年7月1日をもって終了します。"
+msgstr "Support for Universal Analytics will end on July 1, 2023."
 
 #: lib/page-settings/analytics-forms.php:123
-#: lib/page-speed-up/speed-up-forms.php:232
+#: lib/page-speed-up/speed-up-forms.php:217
 msgid "スクリプト"
 msgstr "Script"
 
@@ -6209,30 +6366,50 @@ msgid "Google Search Consoleのサイト認証IDを入力してください。"
 msgstr "Enter a site authentication ID of Google Search Console."
 
 #: lib/page-settings/analytics-forms.php:177
+msgid "Clarity設定"
+msgstr "Clarity settings"
+
+#: lib/page-settings/analytics-forms.php:180
+msgid "ヒートマップ分析ツールClarityの設定です。"
+msgstr "Settings for Clarity, a heat map analysis tool."
+
+#: lib/page-settings/analytics-forms.php:188
+msgid "プロジェクトID"
+msgstr "Project ID"
+
+#: lib/page-settings/analytics-forms.php:192
+msgid "プロジェクトIDのみ入力"
+msgstr "Enter Project ID only"
+
+#: lib/page-settings/analytics-forms.php:193
+msgid "ClarityのプロジェクトIDを入力してください。"
+msgstr "Enter a Clarity project ID."
+
+#: lib/page-settings/analytics-forms.php:208
 msgid "Ptengine設定"
 msgstr "Ptengine settings"
 
-#: lib/page-settings/analytics-forms.php:180
+#: lib/page-settings/analytics-forms.php:211
 msgid "Ptengineの解析タグの設定です。"
 msgstr "Sets an analysis tag of Ptengine."
 
-#: lib/page-settings/analytics-forms.php:188
+#: lib/page-settings/analytics-forms.php:219
 msgid "PtengineのトラッキングID"
 msgstr "Ptengine tracking ID"
 
-#: lib/page-settings/analytics-forms.php:192
+#: lib/page-settings/analytics-forms.php:223
 msgid "PtengineのトラッキングIDのみ入力"
 msgstr "Enter only a tracking ID of Ptengine"
 
-#: lib/page-settings/analytics-forms.php:193
+#: lib/page-settings/analytics-forms.php:224
 msgid "PtengineのトラッキングIDを入力してください。"
 msgstr "Enter a Ptengine tracking ID."
 
-#: lib/page-settings/analytics-forms.php:209
+#: lib/page-settings/analytics-forms.php:240
 msgid "その他のアクセス解析・認証コード設定"
 msgstr "Other access analysis and authentication code settings"
 
-#: lib/page-settings/analytics-forms.php:212
+#: lib/page-settings/analytics-forms.php:243
 msgid ""
 "ヘッダーやフッターに、その他サービスのアクセス解析・サイト認証タグをそのまま"
 "貼り付けます。"
@@ -6240,15 +6417,15 @@ msgstr ""
 "Paste other service access analysis and site authentication tags into the "
 "header or footer as is."
 
-#: lib/page-settings/analytics-forms.php:220
+#: lib/page-settings/analytics-forms.php:251
 msgid "ヘッド用コード"
 msgstr "Head code"
 
-#: lib/page-settings/analytics-forms.php:224
+#: lib/page-settings/analytics-forms.php:255
 msgid "head用のタグ入力"
 msgstr "Tag entry for head"
 
-#: lib/page-settings/analytics-forms.php:225
+#: lib/page-settings/analytics-forms.php:256
 msgid ""
 "ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス"
 "解析・認証タグを入力してください。アドセンス認証コードもこちらに貼り付けて、"
@@ -6258,15 +6435,15 @@ msgstr ""
 "into the header tags (&lt;head&gt;&lt;/head&gt;). It is easiest if access "
 "authentication codes are also pasted here for inspection."
 
-#: lib/page-settings/analytics-forms.php:233
+#: lib/page-settings/analytics-forms.php:264
 msgid "ヘッダー用コード"
 msgstr "Header code"
 
-#: lib/page-settings/analytics-forms.php:237
+#: lib/page-settings/analytics-forms.php:268
 msgid "ヘッダー用のタグ入力"
 msgstr "Tag entry for header"
 
-#: lib/page-settings/analytics-forms.php:238
+#: lib/page-settings/analytics-forms.php:269
 msgid ""
 "ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析・認証タ"
 "グを入力してください。"
@@ -6274,15 +6451,15 @@ msgstr ""
 "Enter other access analysis and authentication tags that must be inserted "
 "into the header (immediately after &lt;body&gt;)."
 
-#: lib/page-settings/analytics-forms.php:246
+#: lib/page-settings/analytics-forms.php:277
 msgid "フッター用コード"
 msgstr "Footer code"
 
-#: lib/page-settings/analytics-forms.php:250
+#: lib/page-settings/analytics-forms.php:281
 msgid "フッター用のタグ入力"
 msgstr "Tag entry for footer"
 
-#: lib/page-settings/analytics-forms.php:251
+#: lib/page-settings/analytics-forms.php:282
 msgid ""
 "フッター（&lt;/body&gt;直前）に挿入する必要のある、その他アクセス解析・認証タ"
 "グを入力してください。"
@@ -6600,11 +6777,11 @@ msgstr ""
 "ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-"
 "b2c640121b1f\" target=\"_blank\" rel=\"noopener\"></a>Due to a change of PA-"
 "API specification on January 23, 2019, the API is no longer available if no "
-"sales occur from the link generated by the API. <span class=\"red"
-"\">Therefore, if you are linking via a Moshimo affiliate, the API may no "
-"longer be available in 30 days. </span>. If you want to use an Amazon API, "
-"disabling this feature is recommended. If you cannot clear the PA-API limit, "
-"use the Rakuten product link."
+"sales occur from the link generated by the API. <span "
+"class=\"red\">Therefore, if you are linking via a Moshimo affiliate, the API "
+"may no longer be available in 30 days. </span>. If you want to use an Amazon "
+"API, disabling this feature is recommended. If you cannot clear the PA-API "
+"limit, use the Rakuten product link."
 
 #: lib/page-settings/apis-forms.php:244
 msgid "Amazon a_id"
@@ -6799,6 +6976,10 @@ msgstr ""
 "Fixes the background image set in the announcement area. The background "
 "image does not move when you scroll up and down."
 
+#: lib/page-settings/appeal-forms.php:77
+msgid "※iOSでは動作しません。"
+msgstr "*Doesn't support iOS."
+
 #: lib/page-settings/appeal-forms.php:85
 msgid "エリア背景色"
 msgstr "Area background color"
@@ -6950,7 +7131,7 @@ msgstr ""
 "are for displaying posts/pages."
 
 #: lib/page-settings/blogcard-in-forms.php:39
-#: lib/page-settings/title-forms.php:134
+#: lib/page-settings/title-forms.php:135
 msgid "ランダムで投稿を取得しています。"
 msgstr "Posts are obtained randomly."
 
@@ -7124,12 +7305,10 @@ msgstr "Button image"
 #: lib/page-settings/buttons-forms.php:100
 msgid ""
 "トップへ戻るボタンのアイコンフォント代わりに表示する画像を選択します。こちら"
-"に画像を設定するとアイコンフォントボタンは表示されません。最大横幅は120pxにな"
-"ります。"
+"に画像を設定するとアイコンフォントボタンは表示されません。"
 msgstr ""
 "Select an image to be displayed instead of the icon font on the back to top "
-"button. If an image is set here, the icon font button will not be displayed. "
-"The maximum width is 120 px."
+"button. If an image is selected, the icon font button will not be displayed."
 
 #: lib/page-settings/carousel-forms.php:13
 msgid "カルーセル設定"
@@ -7177,7 +7356,7 @@ msgid "1年間"
 msgstr "1 year"
 
 #: lib/page-settings/carousel-forms.php:69
-#: lib/page-settings/single-forms.php:194 lib/widgets/popular-entries.php:220
+#: lib/page-settings/single-forms.php:193 lib/widgets/popular-entries.php:220
 msgid "全期間"
 msgstr "All times"
 
@@ -7187,10 +7366,10 @@ msgstr "Include popular articles aggregated in"
 
 #: lib/page-settings/carousel-forms.php:76
 #: lib/page-settings/single-forms.php:129
-#: lib/page-settings/single-forms.php:357
+#: lib/page-settings/single-forms.php:356
 #: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:121
-#: lib/page-settings/sns-share-forms-top.php:108 lib/shortcodes.php:447
+#: lib/page-settings/sns-share-forms-top.php:108 lib/shortcodes.php:452
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
 msgstr "Category"
@@ -7207,11 +7386,12 @@ msgstr "Tag"
 #: lib/page-settings/carousel-forms.php:82
 msgid ""
 "カルーセルと関連付けるカテゴリもしくはタグを選択してください。人気記事を有効"
-"にしカテゴリーのタグを選択した場合は、すべて合算しランダムで表示されます。"
+"にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び替"
+"え」で設定した順番で表示されます。"
 msgstr ""
 "Select the category or tag associated with the carousel. If a popular "
-"article is enabled and a category tag is selected, all will be added and "
-"displayed randomly."
+"article is enabled and a category or tag is selected, all will be added up "
+"and displayed in the order set in \"Sort carousel"
 
 #: lib/page-settings/carousel-forms.php:90
 msgid "カルーセルの並び替え"
@@ -7249,12 +7429,12 @@ msgstr ""
 "(default: 18, minimum: 12, maximum: 120)"
 
 #: lib/page-settings/carousel-forms.php:123
-#: lib/page-settings/index-forms.php:164 lib/page-settings/single-forms.php:215
+#: lib/page-settings/index-forms.php:164 lib/page-settings/single-forms.php:214
 msgid "枠線の表示"
 msgstr "Show border"
 
 #: lib/page-settings/carousel-forms.php:127
-#: lib/page-settings/index-forms.php:168 lib/page-settings/single-forms.php:219
+#: lib/page-settings/index-forms.php:168 lib/page-settings/single-forms.php:218
 msgid "カードの枠線を表示する"
 msgstr "Show the card border"
 
@@ -7297,9 +7477,9 @@ msgstr "Source code settings"
 
 #: lib/page-settings/code-forms.php:16
 msgid ""
-"ソースコードのハイライト表示の設定です。ハイライト表示には、<a href="
-"\"https://highlightjs.org/\" target=\"_blank\" rel=\"noopener\">highlight."
-"js</a>を利用しています。"
+"ソースコードのハイライト表示の設定です。ハイライト表示には、<a "
+"href=\"https://highlightjs.org/\" target=\"_blank\" "
+"rel=\"noopener\">highlight.js</a>を利用しています。"
 msgstr ""
 "Sets the display of source code highlighting. <a href=\"https://highlightjs."
 "org/\" target=\"_blank\" rel=\"noopener\">Highlight.js</a> is used to "
@@ -7353,9 +7533,9 @@ msgid ""
 "highlightjs.org/static/demo/\" target=\"_blank\" rel=\"noopener\">highlight."
 "js demo</a>を参照してください。"
 msgstr ""
-"The highlight theme of source code. For details on styles, see <a href="
-"\"https://highlightjs.org/static/demo/\" target=\"_blank\" rel=\"noopener"
-"\">highlight.js demo</a>."
+"The highlight theme of source code. For details on styles, see <a "
+"href=\"https://highlightjs.org/static/demo/\" target=\"_blank\" "
+"rel=\"noopener\">highlight.js demo</a>."
 
 #: lib/page-settings/code-forms.php:99
 msgid "ハイライト表示するCSSセレクタ"
@@ -7519,7 +7699,7 @@ msgstr ""
 "0 px, maximum: 60 px)"
 
 #: lib/page-settings/comment-forms.php:13 lib/page-settings/page-forms.php:13
-#: lib/page-settings/single-forms.php:393
+#: lib/page-settings/single-forms.php:392
 msgid "コメント設定"
 msgstr "Comment settings"
 
@@ -7528,7 +7708,7 @@ msgid "コメント一覧や入力欄のみタグに関する設定です。"
 msgstr "The settings related to the comments list and input field-only tags."
 
 #: lib/page-settings/comment-forms.php:30
-#: lib/page-settings/single-forms.php:300
+#: lib/page-settings/single-forms.php:299
 msgid "デモはランダム表示です。"
 msgstr "The demo is a random display."
 
@@ -7846,6 +8026,13 @@ msgid "横スクロールテーブルで1列目となるth、tdを固定しま�
 msgstr ""
 "Fix th and td, which are the first column in the side-scrolling tables."
 
+#: lib/page-settings/content-forms.php:322
+msgid ""
+"テーブルの1列目のセルを結合している場合は正常に動作しない場合があります。あら"
+"かじめご了承ください。"
+msgstr ""
+"It may not work properly when merging cells in the first column of a table."
+
 #: lib/page-settings/content-forms.php:338
 msgid "投稿情報表示設定"
 msgstr "Post information display settings"
@@ -7859,27 +8046,29 @@ msgid "投稿関連情報"
 msgstr "Post-related information"
 
 #: lib/page-settings/content-forms.php:353
-#: lib/page-settings/index-forms.php:216 lib/page-settings/single-forms.php:254
+#: lib/page-settings/index-forms.php:216 lib/page-settings/single-forms.php:253
 msgid "投稿日の表示"
 msgstr "Posted date display"
 
 #: lib/page-settings/content-forms.php:355
-#: lib/page-settings/index-forms.php:224 lib/page-settings/single-forms.php:262
+#: lib/page-settings/index-forms.php:224 lib/page-settings/single-forms.php:261
 msgid "更新日の表示"
 msgstr "Updated date display"
 
 #: lib/page-settings/content-forms.php:357
-#: lib/page-settings/index-forms.php:227 lib/page-settings/single-forms.php:265
+#: lib/page-settings/index-forms.php:227 lib/page-settings/single-forms.php:264
 msgid "投稿者名の表示"
 msgstr "Contributor name display"
 
 #: lib/page-settings/content-forms.php:358
-msgid ""
-"投稿・固定ページの関連情報を表示するかどうか。構造化データエラーになるのを防"
-"ぐためCSSで非表示化されます。"
+msgid "投稿・固定ページの関連情報を表示するかどうか。"
+msgstr "Display a related information of a post/fixed page or not."
+
+#: lib/page-settings/content-forms.php:358
+msgid "投稿日・更新日が同じ日付の場合は投稿日のみが表示されます。"
 msgstr ""
-"Sets whether or not to display post/page-related information. Such "
-"information is hidden by CSS to avoid structured data errors."
+"When posted date and updated date are the same, only posted date will be "
+"displayed."
 
 #: lib/page-settings/content-forms.php:366
 msgid "記事を読む時間"
@@ -7895,11 +8084,15 @@ msgstr ""
 "Displays the time required to read the body text. The time is provided as a "
 "guide only."
 
+#: lib/page-settings/donation-forms.php:13
+msgid "寄付"
+msgstr "Donate"
+
 #: lib/page-settings/donation-forms.php:16
 msgid ""
-"Cocoonは無料テーマのため開発支援をいただければ幸いです。寄付の詳細は<a href="
-"\"https://wp-cocoon.com/donation-privilege/\" target=\"_blank\" rel="
-"\"noopener noreferrer\">こちら</a>。"
+"Cocoonは無料テーマのため開発支援をいただければ幸いです。寄付の詳細は<a "
+"href=\"https://wp-cocoon.com/donation-privilege/\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">こちら</a>。"
 msgstr ""
 "Cocoon is a free theme, so we would appreciate your support for development. "
 "For more information on donations, check <a href=\"https://wp-cocoon.com/"
@@ -7915,8 +8108,9 @@ msgstr "Enable"
 
 #: lib/page-settings/donation-forms.php:32
 msgid ""
-"取得した「<a href=\"https://wp-cocoon.com/donation-privilege/\" target="
-"\"_blank\" rel=\"noopener noreferrer\">寄付コード</a>」を入力してください。"
+"取得した「<a href=\"https://wp-cocoon.com/donation-privilege/\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">寄付コード</a>」を入力してくだ"
+"さい。"
 msgstr ""
 "Please enter the obtained \"<a href=\"https://wp-cocoon.com/donation-"
 "privilege/\" target=\"_blank\" rel=\"noopener noreferrer\"> donation code </"
@@ -7928,11 +8122,11 @@ msgstr "You can use the following functions as donation benefits."
 
 #: lib/page-settings/donation-forms.php:35
 msgid ""
-"詳細は<a href=\"https://wp-cocoon.com/cocoon-donation-privileges/\" target="
-"\"_blank\" rel=\"noopener noreferrer\">こちら</a>をご参照ください。"
+"詳細は<a href=\"https://wp-cocoon.com/cocoon-donation-privileges/\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">こちら</a>をご参照ください。"
 msgstr ""
-"See <a href=\"https://wp-cocoon.com/cocoon-donation-privileges/\" target="
-"\"_blank\" rel=\"noopener noreferrer\"> here </a> for details."
+"See <a href=\"https://wp-cocoon.com/cocoon-donation-privileges/\" "
+"target=\"_blank\" rel=\"noopener noreferrer\"> here </a> for details."
 
 #: lib/page-settings/donation-forms.php:38
 msgid "FAQブロック（リッチスニペット対応）"
@@ -7940,11 +8134,11 @@ msgstr "FAQ block (rich snippet compatible)"
 
 #: lib/page-settings/donation-forms.php:38
 msgid ""
-"（<a href=\"https://wp-cocoon.com/faq-block/\" target=\"_blank\" rel="
-"\"noopener noreferrer\">詳細</a>）"
+"（<a href=\"https://wp-cocoon.com/faq-block/\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">詳細</a>）"
 msgstr ""
-"（<a href=\"https://wp-cocoon.com/faq-block/\" target=\"_blank\" rel="
-"\"noopener noreferrer\">Details</a>）"
+"（<a href=\"https://wp-cocoon.com/faq-block/\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">Details</a>）"
 
 #: lib/page-settings/donation-forms.php:39
 msgid "HTML挿入ボタン（※ショートコード）"
@@ -7952,11 +8146,11 @@ msgstr "HTML insert button (*short code)"
 
 #: lib/page-settings/donation-forms.php:39
 msgid ""
-"（<a href=\"https://wp-cocoon.com/html-insert-tool-button/\" target=\"_blank"
-"\" rel=\"noopener noreferrer\">詳細</a>）"
+"（<a href=\"https://wp-cocoon.com/html-insert-tool-button/\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">詳細</a>）"
 msgstr ""
-"（<a href=\"https://wp-cocoon.com/html-insert-tool-button/\" target=\"_blank"
-"\" rel=\"noopener noreferrer\">Details</a>）"
+"（<a href=\"https://wp-cocoon.com/html-insert-tool-button/\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">Details</a>）"
 
 #: lib/page-settings/donation-forms.php:40
 msgid "更新日表示ショートコード"
@@ -7964,11 +8158,11 @@ msgstr "Update Date Display short code"
 
 #: lib/page-settings/donation-forms.php:40
 msgid ""
-"（<a href=\"https://wp-cocoon.com/updated-shortcode\" target=\"_blank\" rel="
-"\"noopener noreferrer\">詳細</a>）"
+"（<a href=\"https://wp-cocoon.com/updated-shortcode\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">詳細</a>）"
 msgstr ""
-"（<a href=\"https://wp-cocoon.com/updated-shortcode\" target=\"_blank\" rel="
-"\"noopener noreferrer\">Details</a>）"
+"（<a href=\"https://wp-cocoon.com/updated-shortcode\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">Details</a>）"
 
 #: lib/page-settings/donation-forms.php:41
 msgid "ウィジェットの「表示設定」の「カスタム投稿タイプ」機能"
@@ -7987,8 +8181,9 @@ msgid ""
 "特典機能を入手する場合は<a href=\"https://wp-cocoon.com/donation-privilege/"
 "\" target=\"_blank\" rel=\"noopener noreferrer\">こちら</a>。"
 msgstr ""
-"<a href=\"https://wp-cocoon.com/donation-privilege/\" target=\"_blank\" rel="
-"\"noopener noreferrer\"> here </a> to get the features enabled from donation."
+"<a href=\"https://wp-cocoon.com/donation-privilege/\" target=\"_blank\" "
+"rel=\"noopener noreferrer\"> here </a> to get the features enabled from "
+"donation."
 
 #: lib/page-settings/editor-forms.php:13
 msgid "エディター共通設定"
@@ -8388,6 +8583,10 @@ msgstr ""
 "settings will be used. If left blank, the default height will be used. "
 "(minimum: 0 px, maximum: 800 px)"
 
+#: lib/page-settings/header-forms.php:73
+msgid "※「ヘッダーレイアウト」が「センターロゴ」の時のみに適用されます。"
+msgstr "*Applied only when \"Header layout\" is \"Center logo\""
+
 #: lib/page-settings/header-forms.php:81
 msgid "高さ（モバイル）"
 msgstr "Height (mobile)"
@@ -8730,8 +8929,8 @@ msgstr "Make thumbnails compatible with Retina display"
 
 #: lib/page-settings/image-forms.php:198
 msgid ""
-"サムネイルをRetinaディスプレイ対応端末で見ても綺麗に表示されるようにします。"
-"※「インデックスカードタイプ」の「大きなカード」には適用されません。"
+"サムネイルをRetinaディスプレイ対応端末で見ても綺麗に表示されるようにします。※"
+"「インデックスカードタイプ」の「大きなカード」には適用されません。"
 msgstr ""
 "Thumbnails are displayed beautifully even on Retina display-compatible "
 "devices. *This is not applied to \"Large card\" in \"Index card type\"."
@@ -8755,7 +8954,7 @@ msgid "新着記事ウィジェットのサムネイル。"
 msgstr "The thumbnail of a new article widget."
 
 #: lib/page-settings/image-forms.php:210 lib/widgets/new-entries.php:19
-#: lib/widgets/new-entries.php:57 tmp/list-new-entries.php:16
+#: lib/widgets/new-entries.php:59 tmp/list-new-entries.php:16
 #: tmp/list-tab-index.php:23
 msgid "新着記事"
 msgstr "New articles"
@@ -9051,7 +9250,7 @@ msgstr ""
 "If the card type is \"Vertical card\"/\"Tile card\", it will be displayed in "
 "a single column on smartphones (up to 480 px). *The default is 2 columns"
 
-#: lib/page-settings/index-forms.php:169 lib/page-settings/single-forms.php:220
+#: lib/page-settings/index-forms.php:169 lib/page-settings/single-forms.php:219
 msgid "投稿エントリーカードの枠となる罫線を表示するか。"
 msgstr "Do you want to display ruled lines for the border of post entry cards?"
 
@@ -9087,19 +9286,19 @@ msgstr ""
 "generated excerpts exceed the maximum character count for automatically "
 "generated excerpts."
 
-#: lib/page-settings/index-forms.php:205 lib/page-settings/single-forms.php:243
+#: lib/page-settings/index-forms.php:205 lib/page-settings/single-forms.php:242
 msgid "投稿関連情報の表示"
 msgstr "Display post-related information"
 
-#: lib/page-settings/index-forms.php:209 lib/page-settings/single-forms.php:247
+#: lib/page-settings/index-forms.php:209 lib/page-settings/single-forms.php:246
 msgid "スニペット（抜粋）の表示"
 msgstr "Display snippets (excerpts)"
 
-#: lib/page-settings/index-forms.php:213 lib/page-settings/single-forms.php:251
+#: lib/page-settings/index-forms.php:213 lib/page-settings/single-forms.php:250
 msgid "スマホ端末でスニペットを表示（480px以下）"
 msgstr "Display snippets on smartphone devices (up to 480 px)"
 
-#: lib/page-settings/index-forms.php:221 lib/page-settings/single-forms.php:259
+#: lib/page-settings/index-forms.php:221 lib/page-settings/single-forms.php:258
 msgid "更新日が存在しない場合は投稿日を表示"
 msgstr "Display the posted date if there is no updated date"
 
@@ -9107,11 +9306,11 @@ msgstr "Display the posted date if there is no updated date"
 msgid "コメント数の表示"
 msgstr "Comment count display"
 
-#: lib/page-settings/index-forms.php:232 lib/page-settings/single-forms.php:266
+#: lib/page-settings/index-forms.php:232 lib/page-settings/single-forms.php:265
 msgid "エントリーカードに投稿関連情報を表示するかどうか。"
 msgstr "Do you want to display post-related information in the entry card?"
 
-#: lib/page-settings/index-forms.php:240 lib/page-settings/single-forms.php:365
+#: lib/page-settings/index-forms.php:240 lib/page-settings/single-forms.php:364
 msgid "除外カテゴリー"
 msgstr "Excluded categories"
 
@@ -9153,8 +9352,8 @@ msgstr "Header and footer mobile button"
 
 #: lib/page-settings/mobile-buttons-forms.php:41
 msgid ""
-"モバイルメニュー等を表示するための設定を行います。1024px未満で表示されます。"
-"※「トップボタン」はAMPページでは表示されません。"
+"モバイルメニュー等を表示するための設定を行います。1024px未満で表示されます。※"
+"「トップボタン」はAMPページでは表示されません。"
 msgstr ""
 "Make settings to display mobile menus, etc. It will be displayed below "
 "1024px. *The “top button” is not displayed on the AMP page. "
@@ -9169,8 +9368,8 @@ msgstr "Fixed display of mobile button"
 
 #: lib/page-settings/mobile-buttons-forms.php:58
 msgid ""
-"「モバイルメニュー」で「モバイルボタン」が選択されているときボタンを"
-"固定表示するか。無効の場合はスクロールするとモバイルボタンが隠れます。"
+"「モバイルメニュー」で「モバイルボタン」が選択されているときボタンを固定表示"
+"するか。無効の場合はスクロールするとモバイルボタンが隠れます。"
 msgstr ""
 "Do you want fixed display of the button when \"Mobile button\" is selected "
 "in \"Mobile button layout\"? If disabled, the mobile button will become "
@@ -9190,8 +9389,8 @@ msgstr "Display the sidebar below the content when using the mobile button"
 
 #: lib/page-settings/mobile-buttons-forms.php:64
 msgid ""
-"「モバイルメニュー」で「モバイルボタン」が選択されているときメインカ"
-"ラム下に表示されるサイドバーを表示するかどうか。"
+"「モバイルメニュー」で「モバイルボタン」が選択されているときメインカラム下に"
+"表示されるサイドバーを表示するかどうか。"
 msgstr ""
 "Do you want to display the sidebar that is displayed below the main column "
 "when \"Mobile button\" is selected in \"Mobile button layout\"?"
@@ -9550,6 +9749,19 @@ msgstr ""
 "If you have a program that does not work due to a difference of jQuery "
 "versions, change it."
 
+#: lib/page-settings/others-forms.php:105
+msgid ""
+"jQuery 1、jQuery 2は古いバージョンなので脆弱性があります。できる限りjQuery 3"
+"をご利用ください。"
+msgstr ""
+"jQuery 1 and jQuery 2 are old versions and have vulnerabilities. Use jQuery "
+"3 as much as possible."
+
+#: lib/page-settings/others-forms.php:105
+msgid "このjQuery選択機能は2022年12月末日をもって廃止いたします。"
+msgstr ""
+"This jQuery selection feature will be removed at the end of December 2022."
+
 #: lib/page-settings/others-forms.php:114
 msgid "jQuery Migrate"
 msgstr "JQuery Migrate"
@@ -9570,13 +9782,23 @@ msgstr ""
 "If you have a program that does not work due to a difference of jQuery "
 "Migrate versions, change it."
 
+#: lib/page-settings/others-forms.php:124
+msgid "できる限りjQuery Migrate 3をご利用ください。"
+msgstr "Use jQuery 3 as much as possible."
+
+#: lib/page-settings/others-forms.php:124
+msgid "このjQuery Migrate選択機能は2022年12月末日をもって廃止いたします。"
+msgstr ""
+"This jQuery Migrate selection feature will be removed at the end of December "
+"2022."
+
 #: lib/page-settings/page-forms.php:16
 msgid "固定ページのコメント表示設定です。"
 msgstr "Comment display settings of pages."
 
 #: lib/page-settings/page-forms.php:23 lib/page-settings/single-forms.php:111
-#: lib/page-settings/single-forms.php:308
-#: lib/page-settings/single-forms.php:403
+#: lib/page-settings/single-forms.php:307
+#: lib/page-settings/single-forms.php:402
 msgid "表示"
 msgstr "Display"
 
@@ -9584,7 +9806,7 @@ msgstr "Display"
 msgid "固定ページにコメントを表示するか。"
 msgstr "Do you want to display comments on pages?"
 
-#: lib/page-settings/page-forms.php:41 lib/page-settings/single-forms.php:421
+#: lib/page-settings/page-forms.php:41 lib/page-settings/single-forms.php:420
 msgid "パンくずリスト設定"
 msgstr "Breadcrumb settings"
 
@@ -9592,23 +9814,23 @@ msgstr "Breadcrumb settings"
 msgid "固定ページのパンくずリスト設定です。"
 msgstr "The breadcrumbs settings of pages."
 
-#: lib/page-settings/page-forms.php:51 lib/page-settings/single-forms.php:431
+#: lib/page-settings/page-forms.php:51 lib/page-settings/single-forms.php:430
 msgid "パンくずリストの配置"
 msgstr "Breadcrumb placement"
 
-#: lib/page-settings/page-forms.php:57 lib/page-settings/single-forms.php:437
+#: lib/page-settings/page-forms.php:57 lib/page-settings/single-forms.php:436
 msgid "メインカラム手前"
 msgstr "Above the main column"
 
-#: lib/page-settings/page-forms.php:58 lib/page-settings/single-forms.php:438
+#: lib/page-settings/page-forms.php:58 lib/page-settings/single-forms.php:437
 msgid "メインカラムトップ"
 msgstr "Above the page/post title"
 
-#: lib/page-settings/page-forms.php:59 lib/page-settings/single-forms.php:439
+#: lib/page-settings/page-forms.php:59 lib/page-settings/single-forms.php:438
 msgid "メインカラムボトム（デフォルト）"
 msgstr "Bottom of the main column (default)"
 
-#: lib/page-settings/page-forms.php:60 lib/page-settings/single-forms.php:440
+#: lib/page-settings/page-forms.php:60 lib/page-settings/single-forms.php:439
 msgid "フッター手前"
 msgstr "Above the footer"
 
@@ -9616,11 +9838,11 @@ msgstr "Above the footer"
 msgid "固定ページのパンくずリスト表示位置を設定します。"
 msgstr "Set the breadcrumb display position for pages."
 
-#: lib/page-settings/page-forms.php:71 lib/page-settings/single-forms.php:451
+#: lib/page-settings/page-forms.php:71 lib/page-settings/single-forms.php:450
 msgid "記事タイトル"
 msgstr "Article title"
 
-#: lib/page-settings/page-forms.php:75 lib/page-settings/single-forms.php:455
+#: lib/page-settings/page-forms.php:75 lib/page-settings/single-forms.php:454
 msgid "パンくずリストに記事タイトルを含める"
 msgstr "Include the article title in breadcrumbs"
 
@@ -9714,8 +9936,8 @@ msgstr ""
 
 #: lib/page-settings/pwa-forms.php:103
 msgid ""
-"512x512px の PNG画像 をサイトアイコンに設定してださい。設定方法は<a href="
-"\"https://wp-cocoon.com/site-icon/\" target=\"_blank\" rel=\"noopener "
+"512x512px の PNG画像 をサイトアイコンに設定してださい。設定方法は<a "
+"href=\"https://wp-cocoon.com/site-icon/\" target=\"_blank\" rel=\"noopener "
 "noreferrer\">こちら</a>。"
 msgstr ""
 "Set a PNG image of 512 x 512 px for the site icon. See <a href=\"https://wp-"
@@ -9756,7 +9978,7 @@ msgstr ""
 "The background color of the app. This color may be applied until the site is "
 "displayed."
 
-#: lib/page-settings/pwa-forms.php:140 lib/widgets/new-entries.php:132
+#: lib/page-settings/pwa-forms.php:140 lib/widgets/new-entries.php:137
 #: lib/widgets/popular-entries.php:182
 msgid "表示モード"
 msgstr "Display mode"
@@ -9824,10 +10046,6 @@ msgstr "Set the page to display recommended cards."
 #: lib/page-settings/recommended-forms.php:56
 msgid "メニュー選択"
 msgstr "Select menu"
-
-#: lib/page-settings/recommended-forms.php:61
-msgid "未選択"
-msgstr "Unselected"
 
 #: lib/page-settings/recommended-forms.php:70
 msgid ""
@@ -10142,9 +10360,9 @@ msgid "関連記事の補助となる見出しを入力してください。"
 msgstr "Enter a subheading for related articles."
 
 #: lib/page-settings/single-forms.php:156
-#: lib/page-settings/single-forms.php:321 lib/widgets/navi-entries.php:119
-#: lib/widgets/new-entries.php:158 lib/widgets/popular-entries.php:204
-#: lib/widgets/related-entries.php:181
+#: lib/page-settings/single-forms.php:320 lib/widgets/navi-entries.php:118
+#: lib/widgets/new-entries.php:163 lib/widgets/popular-entries.php:204
+#: lib/widgets/related-entries.php:187
 msgid "表示タイプ"
 msgstr "Display type"
 
@@ -10160,69 +10378,61 @@ msgstr "Vertical card 3-column (recommended display count: 6, 12, 18,...)"
 msgid "縦型カード4列（推奨表示数：4, 8, 12...）"
 msgstr "Vertical card 4-column (recommended display count: 4, 8, 12,...)"
 
-#: lib/page-settings/single-forms.php:165
-msgid "AdSense関連コンテンツユニット"
-msgstr "AdSense-related content unit"
+#: lib/page-settings/single-forms.php:167
+msgid "関連記事の表示タイプを選択します。"
+msgstr "Select the display type of the related articles."
 
-#: lib/page-settings/single-forms.php:168
-msgid ""
-"関連記事の表示タイプを選択します。※「AdSense関連コンテンツユニット」は広告設"
-"定でAdSenseコードが設定してある必要があります"
-msgstr ""
-"Select the display type of related articles. *\"AdSense-related content unit"
-"\" requires an AdSense code to be set in the ads settings"
-
-#: lib/page-settings/single-forms.php:176
+#: lib/page-settings/single-forms.php:175
 msgid "表示数"
 msgstr "Display count"
 
-#: lib/page-settings/single-forms.php:181
+#: lib/page-settings/single-forms.php:180
 msgid "関連記事で表示する投稿数の設定です。（最小：2、最大：30）"
 msgstr ""
 "The post count setting to be displayed for related articles. (minimum: 2, "
 "maximum: 30)"
 
-#: lib/page-settings/single-forms.php:189
+#: lib/page-settings/single-forms.php:188
 msgid "取得期間"
 msgstr "Acquisition period"
 
-#: lib/page-settings/single-forms.php:196
+#: lib/page-settings/single-forms.php:195
 msgid "2週間"
 msgstr "2 weeks"
 
-#: lib/page-settings/single-forms.php:197
+#: lib/page-settings/single-forms.php:196
 msgid "3週間"
 msgstr "3 weeks"
 
-#: lib/page-settings/single-forms.php:198
+#: lib/page-settings/single-forms.php:197
 msgid "1ヶ月"
 msgstr "1 month"
 
-#: lib/page-settings/single-forms.php:199
+#: lib/page-settings/single-forms.php:198
 msgid "2ヶ月"
 msgstr "2 months"
 
-#: lib/page-settings/single-forms.php:200
+#: lib/page-settings/single-forms.php:199
 msgid "3ヶ月"
 msgstr "3 months"
 
-#: lib/page-settings/single-forms.php:201
+#: lib/page-settings/single-forms.php:200
 msgid "6ヶ月"
 msgstr "6 months"
 
-#: lib/page-settings/single-forms.php:202
+#: lib/page-settings/single-forms.php:201
 msgid "1年"
 msgstr "1 year"
 
-#: lib/page-settings/single-forms.php:203
+#: lib/page-settings/single-forms.php:202
 msgid "2年"
 msgstr "2 years"
 
-#: lib/page-settings/single-forms.php:204
+#: lib/page-settings/single-forms.php:203
 msgid "3年"
 msgstr "3 years"
 
-#: lib/page-settings/single-forms.php:207
+#: lib/page-settings/single-forms.php:206
 msgid ""
 "関連記事を取得する期間を選択することで新鮮な記事を表示しやすくします。ニュー"
 "スサイト等で、新しい記事が並んで欲しい時に設定します。頻回にサイトを更新して"
@@ -10233,11 +10443,11 @@ msgstr ""
 "a news site, etc. If you do not update your site frequently, we recommend "
 "that you do not use this item."
 
-#: lib/page-settings/single-forms.php:228
+#: lib/page-settings/single-forms.php:227
 msgid "最大自動生成抜粋文字数"
 msgstr "Maximum character count for automatically generated excerpts"
 
-#: lib/page-settings/single-forms.php:233
+#: lib/page-settings/single-forms.php:232
 msgid ""
 "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場"
 "合の最大文字数を\n"
@@ -10248,57 +10458,57 @@ msgstr ""
 "the text excerpt\" in \"Related article entry cards\". *This is not excerpt "
 "text of the post editing screen. (minimum: 0, maximum: 500)"
 
-#: lib/page-settings/single-forms.php:279
+#: lib/page-settings/single-forms.php:278
 msgid "ページ送りナビ設定"
 msgstr "Page feed navigation settings"
 
-#: lib/page-settings/single-forms.php:282
+#: lib/page-settings/single-forms.php:281
 msgid "[前ページ][次ページ]へと送るナビゲーションの設定です。"
 msgstr ""
 "The navigation settings for feed navigation to the [Previous page]/[Next "
 "page] navigation settings."
 
-#: lib/page-settings/single-forms.php:312
+#: lib/page-settings/single-forms.php:311
 msgid "ページ送りナビを表示する"
 msgstr "Display page feed navigation"
 
-#: lib/page-settings/single-forms.php:313
+#: lib/page-settings/single-forms.php:312
 msgid "[前ページ][次ページ]ナビを表示するか。"
 msgstr "Do you want to display the [Previous page]/[Next page] navigation?"
 
-#: lib/page-settings/single-forms.php:327
+#: lib/page-settings/single-forms.php:326
 msgid "サムネイル正方形"
 msgstr "Thumbnail square"
 
-#: lib/page-settings/single-forms.php:330
+#: lib/page-settings/single-forms.php:329
 msgid "ページ送りナビの見た目を変更します。"
 msgstr "Change the look of the page feed navigation."
 
-#: lib/page-settings/single-forms.php:338
+#: lib/page-settings/single-forms.php:337
 msgid "表示位置"
 msgstr "Display position"
 
-#: lib/page-settings/single-forms.php:344
+#: lib/page-settings/single-forms.php:343
 msgid "関連記事上"
 msgstr "Above related articles"
 
-#: lib/page-settings/single-forms.php:345
+#: lib/page-settings/single-forms.php:344
 msgid "関連記事下（デフォルト）"
 msgstr "Below related articles (default)"
 
-#: lib/page-settings/single-forms.php:346
+#: lib/page-settings/single-forms.php:345
 msgid "コメント下"
 msgstr "Below comments"
 
-#: lib/page-settings/single-forms.php:349
+#: lib/page-settings/single-forms.php:348
 msgid "ページ送りナビを表示する位置を変更します。"
 msgstr "Change the display position of the page feed navigation."
 
-#: lib/page-settings/single-forms.php:361
+#: lib/page-settings/single-forms.php:360
 msgid "同一カテゴリーのものを表示する"
 msgstr "Display posts of the same category"
 
-#: lib/page-settings/single-forms.php:362
+#: lib/page-settings/single-forms.php:361
 msgid ""
 "投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリが設定し"
 "てある場合は、複数に属するものが表示されます。"
@@ -10307,40 +10517,40 @@ msgstr ""
 "If multiple categories have been set, the items that belong to multiple "
 "categories will be displayed."
 
-#: lib/page-settings/single-forms.php:367
+#: lib/page-settings/single-forms.php:366
 msgid "ページ送りナビに表示させないカテゴリを選択してください。"
 msgstr ""
 "Select a category to be excluded from display in the page feed navigation."
 
-#: lib/page-settings/single-forms.php:375
+#: lib/page-settings/single-forms.php:374
 msgid "枠線表示"
 msgstr "Display borders"
 
-#: lib/page-settings/single-forms.php:379
+#: lib/page-settings/single-forms.php:378
 msgid "ページ送りナビの枠線を表示する"
 msgstr "Display page feed navigation borders"
 
-#: lib/page-settings/single-forms.php:380
+#: lib/page-settings/single-forms.php:379
 msgid "ページ送りナビを囲む枠線を表示するか。"
 msgstr "Do you want to display borders around the page feed navigation?"
 
-#: lib/page-settings/single-forms.php:396
+#: lib/page-settings/single-forms.php:395
 msgid "投稿のコメント表示設定です。"
 msgstr "Comment display settings of posts."
 
-#: lib/page-settings/single-forms.php:408
+#: lib/page-settings/single-forms.php:407
 msgid "投稿ページにコメントを表示するか。"
 msgstr "Do you want to display comments on post pages?"
 
-#: lib/page-settings/single-forms.php:424
+#: lib/page-settings/single-forms.php:423
 msgid "投稿のパンくずリスト設定です。"
 msgstr "The breadcrumbs settings of posts."
 
-#: lib/page-settings/single-forms.php:443
+#: lib/page-settings/single-forms.php:442
 msgid "投稿のパンくずリスト表示位置を設定します。"
 msgstr "Set the breadcrumb display position for posts."
 
-#: lib/page-settings/single-forms.php:456
+#: lib/page-settings/single-forms.php:455
 msgid ""
 "投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか"
 "切り替えます。"
@@ -10542,7 +10752,7 @@ msgstr "CodePen"
 
 #: lib/page-settings/sns-follow-forms.php:89
 msgid "から設定"
-msgstr ""
+msgstr "<- configure from here"
 
 #: lib/page-settings/sns-follow-forms.php:90
 msgid "現ログインユーザーのSNSフォローページを設定します。"
@@ -10565,89 +10775,89 @@ msgstr "Switch between pages that display the follow buttons."
 msgid "フロントページ"
 msgstr "Front page"
 
-#: lib/page-settings/sns-follow-forms.php:118
+#: lib/page-settings/sns-follow-forms.php:119
 msgid "フォローボタンを表示するページを選択してください。"
 msgstr "Select the pages on which you want the follow buttons to appear."
 
-#: lib/page-settings/sns-follow-forms.php:125
+#: lib/page-settings/sns-follow-forms.php:126
 msgid "feedlyの表示"
 msgstr "Feedly display"
 
-#: lib/page-settings/sns-follow-forms.php:129
+#: lib/page-settings/sns-follow-forms.php:130
 msgid "feedlyフォローボタンを表示する"
 msgstr "Display feedly follow button"
 
-#: lib/page-settings/sns-follow-forms.php:130
+#: lib/page-settings/sns-follow-forms.php:131
 msgid "feedlyフォローボタンを表示します。"
 msgstr "Displays the feedly follow button."
 
-#: lib/page-settings/sns-follow-forms.php:138
+#: lib/page-settings/sns-follow-forms.php:139
 msgid "RSSの表示"
 msgstr "RSS display"
 
-#: lib/page-settings/sns-follow-forms.php:142
+#: lib/page-settings/sns-follow-forms.php:143
 msgid "RSS購読ボタンを表示する"
 msgstr "Display RSS subscription button"
 
-#: lib/page-settings/sns-follow-forms.php:143
+#: lib/page-settings/sns-follow-forms.php:144
 msgid "RSS購読用のボタンを表示します。"
 msgstr "Displays the button for RSS subscriptions."
 
-#: lib/page-settings/sns-follow-forms.php:152
+#: lib/page-settings/sns-follow-forms.php:153
 #: lib/page-settings/sns-share-forms-bottom.php:134
 #: lib/page-settings/sns-share-forms-top.php:121
 msgid "ボタンカラー"
 msgstr "Button color"
 
-#: lib/page-settings/sns-follow-forms.php:157
+#: lib/page-settings/sns-follow-forms.php:158
 #: lib/page-settings/sns-share-forms-bottom.php:139
 #: lib/page-settings/sns-share-forms-top.php:126
 msgid "モノクロ"
 msgstr "Monochrome"
 
-#: lib/page-settings/sns-follow-forms.php:158
+#: lib/page-settings/sns-follow-forms.php:159
 #: lib/page-settings/sns-share-forms-bottom.php:140
 #: lib/page-settings/sns-share-forms-top.php:127
 msgid "ブランドカラー"
 msgstr "Brand color"
 
-#: lib/page-settings/sns-follow-forms.php:159
+#: lib/page-settings/sns-follow-forms.php:160
 #: lib/page-settings/sns-share-forms-bottom.php:141
 #: lib/page-settings/sns-share-forms-top.php:128
 msgid "ブランドカラー（白抜き）"
 msgstr "Brand color (outline)"
 
-#: lib/page-settings/sns-follow-forms.php:162
+#: lib/page-settings/sns-follow-forms.php:163
 msgid "シェアボタンの配色を選択してください。"
 msgstr "Select the color scheme of the share button."
 
-#: lib/page-settings/sns-follow-forms.php:170
+#: lib/page-settings/sns-follow-forms.php:171
 msgid "デフォルトユーザー"
 msgstr "Default user"
 
-#: lib/page-settings/sns-follow-forms.php:175
+#: lib/page-settings/sns-follow-forms.php:176
 msgid ""
 "投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。"
 msgstr ""
 "Select a user who will display the follow button outside of posts/pages."
 
-#: lib/page-settings/sns-follow-forms.php:183
+#: lib/page-settings/sns-follow-forms.php:184
 msgid "フォロー数の表示"
 msgstr "Display follow count"
 
-#: lib/page-settings/sns-follow-forms.php:187
+#: lib/page-settings/sns-follow-forms.php:188
 msgid "フォロー数を表示する"
 msgstr "Display the follow count"
 
-#: lib/page-settings/sns-follow-forms.php:188
+#: lib/page-settings/sns-follow-forms.php:189
 msgid "本文下やウィジェットなどのフォロー数表示を切り替えます。"
 msgstr "Toggle display of the follow count below body text or on widgets, etc."
 
-#: lib/page-settings/sns-follow-forms.php:196
+#: lib/page-settings/sns-follow-forms.php:197
 msgid "feedly購読者数"
 msgstr "feedly subscriber count"
 
-#: lib/page-settings/sns-follow-forms.php:201
+#: lib/page-settings/sns-follow-forms.php:202
 msgid ""
 "feedlyは購読者情報がエラーで取得できない場合があります。その際には、こちらで"
 "設定された購読者数が表示されます。"
@@ -10655,12 +10865,12 @@ msgstr ""
 "There are times when you cannot get subscriber information from feedly due "
 "to an error. At such times, the subscriber count set here will be displayed."
 
-#: lib/page-settings/sns-follow-forms.php:215
+#: lib/page-settings/sns-follow-forms.php:216
 #: lib/page-settings/sns-share-forms.php:143
 msgid "キャッシュ設定"
 msgstr "Cache settings"
 
-#: lib/page-settings/sns-follow-forms.php:217
+#: lib/page-settings/sns-follow-forms.php:218
 msgid ""
 "フォロー数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示ス"
 "ピードを多少なりともあげることができます。"
@@ -10668,39 +10878,39 @@ msgstr ""
 "Sets cache usage when getting follow counts. By using the cache you can "
 "increase the page display speed somewhat."
 
-#: lib/page-settings/sns-follow-forms.php:224
+#: lib/page-settings/sns-follow-forms.php:225
 #: lib/page-settings/sns-share-forms.php:152
 msgid "キャッシュの有効化"
 msgstr "Enable cache"
 
-#: lib/page-settings/sns-follow-forms.php:228
+#: lib/page-settings/sns-follow-forms.php:229
 #: lib/page-settings/sns-share-forms.php:156
 msgid "キャッシュを有効にする"
 msgstr "Enable the cache"
 
-#: lib/page-settings/sns-follow-forms.php:229
+#: lib/page-settings/sns-follow-forms.php:230
 #: lib/page-settings/sns-share-forms.php:157
 msgid ""
 "SNSシェア数をキャッシュ化することでページ表示スピードの短縮化を図ります。"
 msgstr ""
 "Shorten page display times by caching the social media market share count."
 
-#: lib/page-settings/sns-follow-forms.php:237
+#: lib/page-settings/sns-follow-forms.php:238
 #: lib/page-settings/sns-share-forms.php:165
 msgid "キャッシュ間隔"
 msgstr "Cache interval"
 
-#: lib/page-settings/sns-follow-forms.php:246
+#: lib/page-settings/sns-follow-forms.php:247
 #: lib/page-settings/sns-share-forms.php:182
 msgid "2日間"
 msgstr "2 days"
 
-#: lib/page-settings/sns-follow-forms.php:247
+#: lib/page-settings/sns-follow-forms.php:248
 #: lib/page-settings/sns-share-forms.php:183
 msgid "3日間"
 msgstr "3 days"
 
-#: lib/page-settings/sns-follow-forms.php:250
+#: lib/page-settings/sns-follow-forms.php:251
 #: lib/page-settings/sns-share-forms.php:186
 msgid ""
 "キャッシュの取得間隔を設定します。間隔が狭いほど更新は増えますがサーバー負担"
@@ -10709,15 +10919,15 @@ msgstr ""
 "Sets the caching interval. The smaller the interval, the higher the server "
 "load due to the increase in updates (mainly partner server)."
 
-#: lib/page-settings/sns-follow-forms.php:259
+#: lib/page-settings/sns-follow-forms.php:260
 msgid "別スキームフォロー数"
 msgstr "Follow count for other schemes"
 
-#: lib/page-settings/sns-follow-forms.php:264
+#: lib/page-settings/sns-follow-forms.php:265
 msgid "別スキームのSNSフォロー数をキャッシュする"
 msgstr "Cache the social media follow count for other schemes"
 
-#: lib/page-settings/sns-follow-forms.php:265
+#: lib/page-settings/sns-follow-forms.php:266
 msgid ""
 "httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合は"
 "https）。相手サーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュ"
@@ -11094,8 +11304,8 @@ msgstr ""
 "The settings for the title, meta description and meta keywords of the front "
 "page."
 
-#: lib/page-settings/title-forms.php:35 lib/page-settings/title-forms.php:135
-#: lib/page-settings/title-forms.php:237
+#: lib/page-settings/title-forms.php:35 lib/page-settings/title-forms.php:136
+#: lib/page-settings/title-forms.php:238
 msgid ""
 "プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があ"
 "ります。"
@@ -11107,8 +11317,8 @@ msgid "フロントページタイトル"
 msgstr "Front page title"
 
 #: lib/page-settings/title-forms.php:48 lib/page-settings/title-forms.php:49
-#: lib/page-settings/title-forms.php:149 lib/page-settings/title-forms.php:150
-#: lib/page-settings/title-forms.php:251 lib/page-settings/title-forms.php:252
+#: lib/page-settings/title-forms.php:150 lib/page-settings/title-forms.php:151
+#: lib/page-settings/title-forms.php:252 lib/page-settings/title-forms.php:253
 msgid "サイト名"
 msgstr "Site name"
 
@@ -11120,15 +11330,15 @@ msgstr "Tagline"
 msgid "自由形式"
 msgstr "Free form"
 
-#: lib/page-settings/title-forms.php:53
+#: lib/page-settings/title-forms.php:54
 msgid "自由形式タイトル"
 msgstr "Free-form title"
 
-#: lib/page-settings/title-forms.php:55
+#: lib/page-settings/title-forms.php:56
 msgid "自由形式のタイトルを入力してください"
 msgstr "Enter a free-form title"
 
-#: lib/page-settings/title-forms.php:56
+#: lib/page-settings/title-forms.php:57
 msgid ""
 "フロントページで出力するタイトルタグのフォーマットを選択してください。自由に"
 "設定する場合は「自由形式タイトル」ボックスに入力してください。"
@@ -11136,15 +11346,15 @@ msgstr ""
 "Select the format of the title tag output on the front page. To freely set "
 "your own title, enter it in the \"Free-form title\" box."
 
-#: lib/page-settings/title-forms.php:64
+#: lib/page-settings/title-forms.php:65
 msgid "サイトの説明"
 msgstr "Site description"
 
-#: lib/page-settings/title-forms.php:68
+#: lib/page-settings/title-forms.php:69
 msgid "メタディスクリプションを入力"
 msgstr "Enter meta description"
 
-#: lib/page-settings/title-forms.php:69
+#: lib/page-settings/title-forms.php:70
 msgid ""
 "フロントページで出力するメタディスクリプションタグの内容を入力してください。"
 "入力しない場合は、メタタグは出力されません。"
@@ -11152,11 +11362,11 @@ msgstr ""
 "Enter the content of the meta description tag output on the front page. If "
 "left blank, meta tags will not be output."
 
-#: lib/page-settings/title-forms.php:81
+#: lib/page-settings/title-forms.php:82
 msgid "キーワード1,キーワード2,キーワード3,..."
 msgstr "Keyword 1, Keyword 2, Keyword 3, ..."
 
-#: lib/page-settings/title-forms.php:82
+#: lib/page-settings/title-forms.php:83
 msgid ""
 "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力して"
 "ください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味"
@@ -11166,11 +11376,11 @@ msgstr ""
 "by commas. If left blank, meta tags will not be output. *From an SEO "
 "perspective, this setting is virtually meaningless."
 
-#: lib/page-settings/title-forms.php:96
+#: lib/page-settings/title-forms.php:97
 msgid "投稿・固定ページ設定"
 msgstr "Post and page settings"
 
-#: lib/page-settings/title-forms.php:99
+#: lib/page-settings/title-forms.php:100
 msgid ""
 "投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定で"
 "す。"
@@ -11178,27 +11388,27 @@ msgstr ""
 "The settings for the title, meta description and meta keywords of posts and "
 "pages."
 
-#: lib/page-settings/title-forms.php:143
+#: lib/page-settings/title-forms.php:144
 msgid "投稿・固定ページタイトル"
 msgstr "Post/page title"
 
-#: lib/page-settings/title-forms.php:148 lib/page-settings/title-forms.php:149
-#: lib/page-settings/title-forms.php:150 lib/page-settings/title-forms.php:245
-#: lib/page-settings/title-forms.php:250 lib/page-settings/title-forms.php:251
-#: lib/page-settings/title-forms.php:252
+#: lib/page-settings/title-forms.php:149 lib/page-settings/title-forms.php:150
+#: lib/page-settings/title-forms.php:151 lib/page-settings/title-forms.php:246
+#: lib/page-settings/title-forms.php:251 lib/page-settings/title-forms.php:252
+#: lib/page-settings/title-forms.php:253
 msgid "ページタイトル"
 msgstr "Page title"
 
-#: lib/page-settings/title-forms.php:153
+#: lib/page-settings/title-forms.php:154
 msgid ""
 "投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。"
 msgstr "Select the format of the title tag output on posts and pages."
 
-#: lib/page-settings/title-forms.php:166 lib/page-settings/title-forms.php:267
+#: lib/page-settings/title-forms.php:167 lib/page-settings/title-forms.php:268
 msgid "メタディスクリプションタグを出力する"
 msgstr "Output meta description tags"
 
-#: lib/page-settings/title-forms.php:167
+#: lib/page-settings/title-forms.php:168
 msgid ""
 "投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力する"
 "か。"
@@ -11206,11 +11416,11 @@ msgstr ""
 "Do you want to output meta description tags within the head tags of posts/"
 "pages?"
 
-#: lib/page-settings/title-forms.php:179 lib/page-settings/title-forms.php:280
+#: lib/page-settings/title-forms.php:180 lib/page-settings/title-forms.php:281
 msgid "メタキーワードタグを出力する"
 msgstr "Output meta keyword tag"
 
-#: lib/page-settings/title-forms.php:180
+#: lib/page-settings/title-forms.php:181
 msgid ""
 "投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO"
 "的にはほとんど意味のない設定だと思います。"
@@ -11218,11 +11428,11 @@ msgstr ""
 "Do you want to output meta keyword tags within the head tags of posts/pages? "
 "*From an SEO perspective, this setting is virtually meaningless."
 
-#: lib/page-settings/title-forms.php:194
+#: lib/page-settings/title-forms.php:195
 msgid "カテゴリー・タグページ設定"
 msgstr "Category and tag page settings"
 
-#: lib/page-settings/title-forms.php:197
+#: lib/page-settings/title-forms.php:198
 msgid ""
 "カテゴリー・タグページの、タイトル、メタディスクリプション、メタキーワードの"
 "設定です。"
@@ -11230,17 +11440,17 @@ msgstr ""
 "The settings for the title, meta description and meta keywords of category "
 "and tag pages."
 
-#: lib/page-settings/title-forms.php:236
+#: lib/page-settings/title-forms.php:237
 msgid "カテゴリーページのランダム表示です。"
 msgstr "This is a random display of category pages."
 
-#: lib/page-settings/title-forms.php:255
+#: lib/page-settings/title-forms.php:256
 msgid ""
 "カテゴリー・タグページで出力するタイトルタグのフォーマットを選択してくださ"
 "い。"
 msgstr "Select the format of the title tag output on category and tag pages."
 
-#: lib/page-settings/title-forms.php:268
+#: lib/page-settings/title-forms.php:269
 msgid ""
 "カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出"
 "力するか。"
@@ -11248,7 +11458,7 @@ msgstr ""
 "Whether to output the meta description tag in the head tag of the page of "
 "the category tag page."
 
-#: lib/page-settings/title-forms.php:281
+#: lib/page-settings/title-forms.php:282
 msgid ""
 "カテゴリー・タグページのページのheadタグ内に、メタキーワードタグを出力する"
 "か。※SEO的にはほとんど意味のない設定だと思います。"
@@ -11256,23 +11466,23 @@ msgstr ""
 "Whether to output the meta keyword tag in the head tag of the page of the "
 "category tag page. * Almost meaningless for SEO. "
 
-#: lib/page-settings/title-forms.php:294
+#: lib/page-settings/title-forms.php:295
 msgid "タイトル共通設定"
 msgstr "Common title settings"
 
-#: lib/page-settings/title-forms.php:297
+#: lib/page-settings/title-forms.php:298
 msgid "タイトルで使用される区切り文字の設定です。"
 msgstr "The setting for the delimiter used in titles."
 
-#: lib/page-settings/title-forms.php:305
+#: lib/page-settings/title-forms.php:306
 msgid "簡略化したサイト名"
 msgstr "Simplified site name"
 
-#: lib/page-settings/title-forms.php:309
+#: lib/page-settings/title-forms.php:310
 msgid "短縮形のサイト名"
 msgstr "Short site name"
 
-#: lib/page-settings/title-forms.php:312
+#: lib/page-settings/title-forms.php:313
 msgid ""
 "サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してく"
 "ださい。入力しない場合は、通常のサイト名が表示されます。この短縮サイト名は投"
@@ -11283,19 +11493,19 @@ msgstr ""
 "will be displayed. The short site name will be applied to posts, pages, "
 "category and tag pages."
 
-#: lib/page-settings/title-forms.php:320
+#: lib/page-settings/title-forms.php:321
 msgid "セパレーター"
 msgstr "Separator"
 
-#: lib/page-settings/title-forms.php:325
+#: lib/page-settings/title-forms.php:326
 msgid " | （パイプ）"
 msgstr "| (pipe)"
 
-#: lib/page-settings/title-forms.php:326
+#: lib/page-settings/title-forms.php:327
 msgid " - （ハイフン）"
 msgstr " - (hyphen)"
 
-#: lib/page-settings/title-forms.php:329
+#: lib/page-settings/title-forms.php:330
 msgid "タイトルの区切りとなる文字を設定してください。"
 msgstr "Set a character that will be used to delimit titles."
 
@@ -11560,19 +11770,19 @@ msgstr "Excluded widget"
 msgid ""
 "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモ"
 "です。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意"
-"するか、「<a href=\"http://www.irasutoya.com/\" target=\"_blank\" rel="
-"\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを探す"
-"などして、自サーバーにアップして利用することをおすすめします。アクセス集中に"
-"よりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
+"するか、「<a href=\"http://www.irasutoya.com/\" target=\"_blank\" "
+"rel=\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを"
+"探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集"
+"中によりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
 msgstr ""
 "This icon is a demo distributed on the CDN server of this theme with the "
 "permission of Irasutoya. Since there is a possibility that it may not be "
 "displayed when access increases, we recommend either preparing the image "
 "yourself, or looking up an icon of your choice from the abundant selection "
-"of illustrations in \" <a href=\"http://www.irasutoya.com/\" target=\"_blank"
-"\" rel=\"noopener\">Irasutoya</a> \", and uploading it to your server for "
-"use. We cannot guarantee display of images on CDN when access concentration "
-"is high."
+"of illustrations in \" <a href=\"http://www.irasutoya.com/\" "
+"target=\"_blank\" rel=\"noopener\">Irasutoya</a> \", and uploading it to "
+"your server for use. We cannot guarantee display of images on CDN when "
+"access concentration is high."
 
 #: lib/page-speech-balloon/form.php:10
 msgid "吹き出し用の設定です。"
@@ -12081,37 +12291,19 @@ msgstr ""
 "page display. However, JavaScript (Web Font Loader) has some time lag until "
 "the fonts are successfully loaded."
 
-#: lib/page-speed-up/speed-up-forms.php:198
-msgid "WEBフォント（β版）"
-msgstr "Web fonts (beta version)"
-
-#: lib/page-speed-up/speed-up-forms.php:202
-msgid "アイコンフォントの非同期読み込みを有効にする"
-msgstr "Enable asynchronous loading of icon fonts"
-
-#: lib/page-speed-up/speed-up-forms.php:203
-msgid ""
-"サイズが大きくなりがちなアイコンフォントを非同期読み込みしてページ表示を高速"
-"化します。ただし、JavaScriptによりアイコンフォントが正常に読み込まれるまで"
-"は、多少タイムラグがあります。"
-msgstr ""
-"Asynchronously loads icon fonts, which tend to grow in size, to speed up "
-"page display. However, JavaScript has some time lag until the icon fonts are "
-"successfully loaded."
-
-#: lib/page-speed-up/speed-up-forms.php:220
+#: lib/page-speed-up/speed-up-forms.php:205
 msgid "スクリプト読み込み設定"
 msgstr "Script loading settings"
 
-#: lib/page-speed-up/speed-up-forms.php:223
+#: lib/page-speed-up/speed-up-forms.php:208
 msgid "JavaScriptの読み込み方式を変更する設定です。"
 msgstr "This setting changes the JavaScript loading method."
 
-#: lib/page-speed-up/speed-up-forms.php:236
+#: lib/page-speed-up/speed-up-forms.php:221
 msgid "JavaScriptをフッターで読み込む"
 msgstr "Loading JavaScript in the footer"
 
-#: lib/page-speed-up/speed-up-forms.php:237
+#: lib/page-speed-up/speed-up-forms.php:222
 msgid ""
 "JavaScriptファイルのレンダリングブロックを避けるためにフッターでjsファイルを"
 "読み込みます。プラグインが正常に動作しない場合は、無効にしてください。ただし"
@@ -12121,23 +12313,23 @@ msgstr ""
 "If the plugin does not work properly, disable it. However, because rendering "
 "blocks occur, speed is sacrificed."
 
-#: lib/page-speed-up/speed-up-forms.php:256
+#: lib/page-speed-up/speed-up-forms.php:241
 msgid "事前読み込み設定"
 msgstr "Script pre-loading settings"
 
-#: lib/page-speed-up/speed-up-forms.php:259
+#: lib/page-speed-up/speed-up-forms.php:244
 msgid "画像やスクリプト等のリソースの事前読み込み設定です。"
 msgstr "Pre-load settings for resources such as images and scripts."
 
-#: lib/page-speed-up/speed-up-forms.php:267
+#: lib/page-speed-up/speed-up-forms.php:252
 msgid "事前読み込み"
 msgstr "Lazy Loading"
 
-#: lib/page-speed-up/speed-up-forms.php:271
+#: lib/page-speed-up/speed-up-forms.php:256
 msgid "事前読込ドメインを入力"
 msgstr "Enter pre-loaded domain"
 
-#: lib/page-speed-up/speed-up-forms.php:272
+#: lib/page-speed-up/speed-up-forms.php:257
 msgid ""
 "linkタグでdns-prefetchとpreconnectを用いて、外部リソース読み込みの高速化を行"
 "います。"
@@ -12145,9 +12337,31 @@ msgstr ""
 "Use dns-prefetch and preconnect in the link tag to speed up the loading of "
 "external resources."
 
-#: lib/page-speed-up/speed-up-forms.php:272
+#: lib/page-speed-up/speed-up-forms.php:257
 msgid "よくわからない場合は、デフォルトのままご利用ください。"
 msgstr "If you are not sure, please use the default."
+
+#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:56
+msgid "View details"
+msgstr "View details"
+
+#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:79
+#, php-format
+msgid "More information about %s"
+msgstr "More information about %s"
+
+#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:130
+msgid "Check for updates"
+msgstr "Check for updates"
+
+#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:227
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Unknown update checker status \"%s\""
+
+#: lib/plugin-update-checker/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "There is no changelog available."
 
 #: lib/profile.php:39
 msgid "プロフィール画像"
@@ -12169,12 +12383,12 @@ msgstr ""
 
 #: lib/profile.php:49
 msgid ""
-"ページサイズ縮小のため<a href=\"https://tinypng.com/\" target=\"_blank\" rel="
-"\"noopener\">TinyPNG</a>等で登録前にで圧縮することをおすすめします。"
+"ページサイズ縮小のため<a href=\"https://tinypng.com/\" target=\"_blank\" "
+"rel=\"noopener\">TinyPNG</a>等で登録前にで圧縮することをおすすめします。"
 msgstr ""
-"t is recommended that you use <a href=\"https://tinypng.com/\" target="
-"\"_blank\" rel=\"noopener\">TinyPNG</a> or similar tool to compress your "
-"image before registration so that the page size is reduced."
+"t is recommended that you use <a href=\"https://tinypng.com/\" "
+"target=\"_blank\" rel=\"noopener\">TinyPNG</a> or similar tool to compress "
+"your image before registration so that the page size is reduced."
 
 #: lib/profile.php:55
 msgid "プロフィールページURL"
@@ -12260,15 +12474,15 @@ msgid "画像下段を黒背景にしタイトルを重ねる"
 msgstr ""
 "The title overlaps the lower part of the image with a black background."
 
-#: lib/shortcodes-amazon.php:185
+#: lib/shortcodes-amazon.php:188
 msgid "us-west-2"
 msgstr "us-east-1"
 
-#: lib/shortcodes-amazon.php:265
+#: lib/shortcodes-amazon.php:268
 msgid "webservices.amazon.co.jp"
 msgstr "webservices.amazon.com"
 
-#: lib/shortcodes-amazon.php:438
+#: lib/shortcodes-amazon.php:465
 msgid ""
 "Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定"
 "されていません。「Cocoon設定」の「API」タブから入力してください。"
@@ -12276,11 +12490,11 @@ msgstr ""
 "Amazon API access key, secret key or tracking ID has not been set. Enter it "
 "in the \"API\" tab of \"Cocoon settings\"."
 
-#: lib/shortcodes-amazon.php:444
+#: lib/shortcodes-amazon.php:471
 msgid "Amazon商品リンクショートコード内にASINが入力されていません。"
 msgstr "The ASIN has not been entered in the Amazon product link short code."
 
-#: lib/shortcodes-amazon.php:455
+#: lib/shortcodes-amazon.php:482
 msgid ""
 "503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中な"
 "どにより、リクエストに応答できない場合に出力されるエラーコードです。サーバー"
@@ -12292,26 +12506,26 @@ msgstr ""
 "the PA-API access limit is exceeded, or when unable to respond to requests, "
 "such as during maintenance. Check if the \"allow_url_fopen\" item is set to "
 "\"ON\" in \"php.ini settings\" on the server. If this error is frequent, it "
-"is recommended that you set a longer \"Cache retention period\" in the \"API"
-"\" setting item."
+"is recommended that you set a longer \"Cache retention period\" in the "
+"\"API\" setting item."
 
-#: lib/shortcodes-amazon.php:468
+#: lib/shortcodes-amazon.php:495
 msgid "アイテムを取得できませんでした。"
 msgstr "Failed to retrieve item."
 
-#: lib/shortcodes-amazon.php:470
+#: lib/shortcodes-amazon.php:497
 msgid "このエラーメッセージは\"サイト管理者のみ\"に表示されています。"
 msgstr "This error message is displayed in \"Site administrators only\""
 
-#: lib/shortcodes-amazon.php:944
+#: lib/shortcodes-amazon.php:971
 msgid "Amazon商品取得エラー"
 msgstr "Amazon product retrieval error"
 
-#: lib/shortcodes-amazon.php:946
+#: lib/shortcodes-amazon.php:973
 msgid "Amazon商品リンクが取得できませんでした。"
 msgstr "Failed to retrieve the Amazon product link."
 
-#: lib/shortcodes-amazon.php:960
+#: lib/shortcodes-amazon.php:987
 msgid "Amazonで詳細を見る"
 msgstr "Read more on Amazon"
 
@@ -12380,19 +12594,19 @@ msgstr "Rakuten product retrieval error"
 msgid "楽天商品リンクが取得できませんでした。"
 msgstr "Failed to retrieve the Rakuten product link."
 
-#: lib/shortcodes.php:327
+#: lib/shortcodes.php:332
 msgid "日付未入力"
 msgstr "Date not entered"
 
-#: lib/shortcodes.php:353
+#: lib/shortcodes.php:358
 msgid "歳"
 msgstr "years old"
 
-#: lib/shortcodes.php:453
+#: lib/shortcodes.php:458
 msgid "月別アーカイブ"
 msgstr "Monthly archive"
 
-#: lib/shortcodes.php:934
+#: lib/shortcodes.php:943
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "updated short codes can only be used on posts and fixed pages."
 
@@ -12468,7 +12682,7 @@ msgstr "Github URL"
 msgid "CodePen URL"
 msgstr "CodePen URL"
 
-#: lib/sns.php:17
+#: lib/sns.php:17 tmp/header-ogp.php:79
 msgid "ja_JP"
 msgstr "en_US"
 
@@ -12596,24 +12810,24 @@ msgstr "Please enter the content you want to display during the campaign."
 msgid "キャンペーン期間中のみ表示"
 msgstr "Displayed only during the campaign period"
 
-#: lib/utils.php:805
+#: lib/utils.php:791
 msgid "スクロールできます"
 msgstr "Can scroll"
 
-#: lib/utils.php:908
+#: lib/utils.php:894
 msgid "公開"
 msgstr "Publish"
 
-#: lib/utils.php:909
+#: lib/utils.php:895
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure you want to publish the page?"
 
-#: lib/utils.php:2520
+#: lib/utils.php:2506
 #, php-format
 msgid "%s年"
 msgstr "%s years"
 
-#: lib/utils.php:2522
+#: lib/utils.php:2508
 #, php-format
 msgid "%s年%sヶ月"
 msgstr "%s years and %s months"
@@ -12966,10 +13180,6 @@ msgstr ""
 "*Change settings such as \"Profile information\" and \"Follow button\" in "
 "the profile page."
 
-#: lib/widgets/box-menus.php:19
-msgid "ボックスメニュー"
-msgstr "Box menu"
-
 #: lib/widgets/box-menus.php:20
 msgid "アイコンつきメニューを表示するウィジェットです。"
 msgstr "This is a widget for displaying the navigation menu (with icons)."
@@ -13183,12 +13393,8 @@ msgid "LINE ID（＠は不要です）"
 msgstr "LINE ID (@ is not required)"
 
 #: lib/widgets/item-ranking.php:20
-msgid "商品・サービスのランキング表示をウィジェットです。"
+msgid "商品・サービスのランキングを表示するウィジェットです。"
 msgstr "This is a widget that displays the ranking of products and services."
-
-#: lib/widgets/item-ranking.php:83
-msgid "ランキングを選択してください。"
-msgstr "Select a ranking."
 
 #: lib/widgets/item-ranking.php:85
 msgid "ランキングが設定されていません。"
@@ -13235,13 +13441,13 @@ msgstr "Navi card"
 msgid "ナビカードリストを表示するウィジェットです。"
 msgstr "This is a widget for displaying the navi card list."
 
-#: lib/widgets/navi-entries.php:128 lib/widgets/new-entries.php:167
-#: lib/widgets/popular-entries.php:240 lib/widgets/related-entries.php:202
+#: lib/widgets/navi-entries.php:127 lib/widgets/new-entries.php:179
+#: lib/widgets/popular-entries.php:247 lib/widgets/related-entries.php:215
 msgid "タイトルを太字にする"
 msgstr "Bold title"
 
-#: lib/widgets/navi-entries.php:134 lib/widgets/new-entries.php:173
-#: lib/widgets/popular-entries.php:246 lib/widgets/related-entries.php:208
+#: lib/widgets/navi-entries.php:133 lib/widgets/new-entries.php:185
+#: lib/widgets/popular-entries.php:253 lib/widgets/related-entries.php:221
 msgid "矢印表示"
 msgstr "Arrow display"
 
@@ -13250,28 +13456,38 @@ msgid "新着記事リストをサムネイルつきで表示するウィジェ�
 msgstr ""
 "This is a widget for displaying a list of new articles with thumbnails."
 
-#: lib/widgets/new-entries.php:59
+#: lib/widgets/new-entries.php:61
 msgid "カテゴリー別新着記事"
 msgstr "New articles by category"
 
-#: lib/widgets/new-entries.php:135
+#: lib/widgets/new-entries.php:140
 msgid "全ての新着記事（全ページで表示）"
 msgstr "All new articles (displayed on all pages)"
 
-#: lib/widgets/new-entries.php:136
+#: lib/widgets/new-entries.php:141
 msgid "カテゴリ別新着記事（投稿・カテゴリで表示）"
 msgstr "New articles by category (displayed on posts and categories)"
 
-#: lib/widgets/new-entries.php:144
+#: lib/widgets/new-entries.php:149
 msgid "新着記事のタイトル"
 msgstr "New articles title"
 
-#: lib/widgets/new-entries.php:151 lib/widgets/popular-entries.php:197
-#: lib/widgets/related-entries.php:174
+#: lib/widgets/new-entries.php:156 lib/widgets/popular-entries.php:197
+#: lib/widgets/related-entries.php:180
 msgid "表示数（半角数字）"
 msgstr "Display count"
 
-#: lib/widgets/new-entries.php:179
+#: lib/widgets/new-entries.php:172 lib/widgets/popular-entries.php:240
+#: lib/widgets/related-entries.php:208
+msgid "横型表示"
+msgstr "Horizontal display"
+
+#: lib/widgets/new-entries.php:173 lib/widgets/popular-entries.php:241
+#: lib/widgets/related-entries.php:209
+msgid "（「大きなサムネイル」との使用がお勧め）"
+msgstr "(Recommended use with \"Large thumbnail\")"
+
+#: lib/widgets/new-entries.php:191
 msgid "「固定表示」記事を表示"
 msgstr "Display \"Fixed display\" articles"
 
@@ -13324,7 +13540,7 @@ msgid "人気記事リストをサムネイルつきで表示するウィジェ�
 msgstr ""
 "This is a widget for displaying a list of popular articles with thumbnails."
 
-#: lib/widgets/popular-entries.php:93
+#: lib/widgets/popular-entries.php:89
 msgid "カテゴリー別人気記事"
 msgstr "Popular articles by category"
 
@@ -13348,11 +13564,11 @@ msgstr "Aggregation period"
 msgid "PV表示"
 msgstr "PV display"
 
-#: lib/widgets/popular-entries.php:252
+#: lib/widgets/popular-entries.php:259
 msgid "除外投稿ID（カンマ区切りでIDを入力してください）"
 msgstr "IDs of posts to be excluded (enter IDs, separated by commas)"
 
-#: lib/widgets/popular-entries.php:259 lib/widgets/related-entries.php:213
+#: lib/widgets/popular-entries.php:266 lib/widgets/related-entries.php:226
 msgid "除外カテゴリーID（除外するものを選択してください）"
 msgstr "IDs of categories to be excluded (select IDs to be excluded)"
 
@@ -13401,11 +13617,11 @@ msgstr ""
 "This is a widget to display a list of related articles with thumbnails. It "
 "is displayed on posts only."
 
-#: lib/widgets/related-entries.php:167
+#: lib/widgets/related-entries.php:173
 msgid "関連記事のタイトル"
 msgstr "Related articles title"
 
-#: lib/widgets/related-entries.php:190
+#: lib/widgets/related-entries.php:196
 msgid "関連付け"
 msgstr "Related"
 
@@ -13448,15 +13664,15 @@ msgstr "Search within the site"
 
 #: skins/one/functions.php:113
 msgid "スキンoneの設定"
-msgstr ""
+msgstr "skin one setting"
 
 #: skins/one/functions.php:122
 msgid "本文見出し(H2)にカウントを付ける"
-msgstr ""
+msgstr "Add a count to the body headings(H2)"
 
 #: skins/one/functions.php:123
 msgid "本文の見出しにカウントをつけたくない場合はチェックを外してください"
-msgstr ""
+msgstr "Uncheck if do not want to add a count to the body headings"
 
 #: skins/one/functions.php:134
 msgid "PCでもスマホ用の固定フッターメニューを表示する"
@@ -13467,10 +13683,12 @@ msgid ""
 "従来どおりPCでスマホ用の固定フッターメニューを表示させたくない場合はチェック"
 "を外してください"
 msgstr ""
+"Uncheck if do not want to display the fixed footer menu for smart phones on "
+"your PC as before."
 
 #: skins/one/functions.php:145
 msgid "全体的に影を付ける"
-msgstr ""
+msgstr "Add shadow entirely"
 
 #: skins/one/functions.php:155
 msgid "ダークスキン対応にする"
@@ -13482,19 +13700,27 @@ msgstr "Check when the background is dark."
 
 #: skins/one/functions.php:166
 msgid "丸みをなくす"
-msgstr ""
+msgstr "Disable round edge"
 
 #: skins/one/functions.php:167
 msgid "ボタンなどの角の丸みをなくしたいときはチェックを入れてください"
-msgstr ""
+msgstr "Check if you do not want round corners of buttons, etc."
 
 #: skins/one/functions.php:177
 msgid "本文の見出しを明朝体にする"
-msgstr ""
+msgstr "Use \"Minchotai font\"  for body headings"
 
 #: skins/one/functions.php:187
 msgid "サイドバーの見出しを明朝体にする"
 msgstr "Make the sidebar heading Mincho."
+
+#: skins/raku-add-fadein/functions.php:269
+msgid "ふわっとタイプ"
+msgstr "Fluffy type"
+
+#: skins/raku-add-fadein/functions.php:291
+msgid "表示スキン（ベース）"
+msgstr "Display skins (base)"
 
 #: tmp/admin-panel.php:39
 msgid "WLWで編集"
@@ -13573,11 +13799,15 @@ msgstr "Home"
 msgid "トップへ戻る"
 msgstr "Back to top"
 
-#: tmp/content.php:99
+#: tmp/content.php:97
 #, php-format
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr ""
 "This article can be read in <span class=\"bold\">about %s</span> minutes."
+
+#: tmp/css-custom.php:869
+msgid "ラベルなし"
+msgstr "No label"
 
 #: tmp/date-tags.php:17
 msgid "通常ページへ"
@@ -13760,6 +13990,94 @@ msgstr "LINE"
 msgid "コピー"
 msgstr "Copy"
 
+#~ msgid "サーバー動作デモボックス"
+#~ msgstr "Server operation demo box"
+
+#~ msgid "ドロップダウンデモ"
+#~ msgstr "Drop-down demo"
+
+#~ msgid "Rounded"
+#~ msgstr "Rounded"
+
+#~ msgid "Squared"
+#~ msgstr "Squared"
+
+#~ msgid "Cocoon Buttons"
+#~ msgstr "Cocoon buttons"
+
+#, php-format
+#~ msgid "Logged in as %s. Edit your profile."
+#~ msgstr "Logged in as %s. Edit your profile."
+
+#~ msgid "リンクユニット"
+#~ msgstr "Link unit"
+
+#~ msgid "WEBフォントLazy Load："
+#~ msgstr "Web font Lazy Load:"
+
+#~ msgid "アドセンスリンクユニットのレスポンシブコードを入力"
+#~ msgstr "Enter your AdSense link unit responsive code"
+
+#~ msgid ""
+#~ "リンクユニットのレスポンシブ広告コードを入力してください。ここに広告コード"
+#~ "を入力することでAMPページでもリンクユニットが表示されます。入力しない場合"
+#~ "はAMPページで「レクタングル（中）」サイズの広告が表示されます。"
+#~ msgstr ""
+#~ "Enter a link unit responsive ad code. By entering an ad code here, the "
+#~ "link unit will be displayed even in AMP pages. If left blank, a "
+#~ "\"Rectangle (medium)\"-sized ad will be displayed in AMP pages."
+
+#~ msgid "リンクユニット用コード入力"
+#~ msgstr "Enter code for link unit"
+
+#~ msgid "アドセンス関連コンテンツコードを入力"
+#~ msgstr "Enter your Adsense related contents code"
+
+#~ msgid ""
+#~ "関連コンテンツ用の広告コードを入力してください。ここに広告コードを入力する"
+#~ "ことでAMPページでも関連コンテンツが表示されます。"
+#~ msgstr ""
+#~ "Enter a related contents ad code. By entering an ad code here, the "
+#~ "related contents will be displayed even in AMP pages."
+
+#~ msgid "関連コンテンツ用コード入力"
+#~ msgstr "Enter for related contents code"
+
+#~ msgid "Google AnalyticsトラッキングID"
+#~ msgstr "Google Analytics tracking ID"
+
+#~ msgid ""
+#~ "投稿・固定ページの関連情報を表示するかどうか。構造化データエラーになるのを"
+#~ "防ぐためCSSで非表示化されます。"
+#~ msgstr ""
+#~ "Sets whether or not to display post/page-related information. Such "
+#~ "information is hidden by CSS to avoid structured data errors."
+
+#~ msgid "AdSense関連コンテンツユニット"
+#~ msgstr "AdSense-related content unit"
+
+#~ msgid ""
+#~ "関連記事の表示タイプを選択します。※「AdSense関連コンテンツユニット」は広告"
+#~ "設定でAdSenseコードが設定してある必要があります"
+#~ msgstr ""
+#~ "Select the display type of related articles. *\"AdSense-related content "
+#~ "unit\" requires an AdSense code to be set in the ads settings"
+
+#~ msgid "WEBフォント（β版）"
+#~ msgstr "Web fonts (beta version)"
+
+#~ msgid "アイコンフォントの非同期読み込みを有効にする"
+#~ msgstr "Enable asynchronous loading of icon fonts"
+
+#~ msgid ""
+#~ "サイズが大きくなりがちなアイコンフォントを非同期読み込みしてページ表示を高"
+#~ "速化します。ただし、JavaScriptによりアイコンフォントが正常に読み込まれるま"
+#~ "では、多少タイムラグがあります。"
+#~ msgstr ""
+#~ "Asynchronously loads icon fonts, which tend to grow in size, to speed up "
+#~ "page display. However, JavaScript has some time lag until the icon fonts "
+#~ "are successfully loaded."
+
 #~ msgid "アドセンス自動広告のみ利用"
 #~ msgstr "Use auto AdSense ads only"
 
@@ -13818,11 +14136,11 @@ msgstr "Copy"
 #~ msgstr "Display AMPBench"
 
 #~ msgid ""
-#~ "<a href=\"https://ampbench.appspot.com/\" target=\"_blank\" rel=\"noopener"
-#~ "\">AMPBench</a>でチェックするためのリンクの表示。"
+#~ "<a href=\"https://ampbench.appspot.com/\" target=\"_blank\" "
+#~ "rel=\"noopener\">AMPBench</a>でチェックするためのリンクの表示。"
 #~ msgstr ""
-#~ "Display link to check in <a href=\"https://ampbench.appspot.com/\" target="
-#~ "\"_blank\" rel=\"noopener\">AMPBench</a>."
+#~ "Display link to check in <a href=\"https://ampbench.appspot.com/\" "
+#~ "target=\"_blank\" rel=\"noopener\">AMPBench</a>."
 
 #~ msgid "自動広告とマニュアル広告を併用"
 #~ msgstr "Use both automated and manual ads"
@@ -14080,11 +14398,6 @@ msgstr "Copy"
 #~| msgid "AdSenseのレスポンシブコードを入力してください"
 #~ msgid "GoogleタグマネージャのトラッキングIDを入力してください。"
 #~ msgstr "Please enter the tracking ID of the Google tag Manager."
-
-#, fuzzy
-#~| msgid "AdSenseのレスポンシブコードを入力してください"
-#~ msgid "ユニバーサルアナリティクスIDを入力してください。"
-#~ msgstr "Please enter your Google Analytics tracking ID."
 
 #, fuzzy
 #~ msgid "関連記事にカテゴリーを関連づけるかタグを関連づけるか。"
@@ -14408,10 +14721,6 @@ msgstr "Copy"
 #, fuzzy
 #~ msgid "timeタグを付加する日付の設定です。"
 #~ msgstr "time This is the setting of the date to which the tag is attached."
-
-#, fuzzy
-#~ msgid "関連記事の表示タイプを選択します。"
-#~ msgstr "Select the display type of the related articles."
 
 #, fuzzy
 #~ msgid "男性デフォルトサンプル（左）"

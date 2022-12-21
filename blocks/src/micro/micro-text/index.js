@@ -22,7 +22,6 @@ export const settings = {
   title: __( 'マイクロテキスト', THEME_NAME ),
   icon: <Icon icon={textColor} size={32} />,
   description: __( 'コンバージョンリンク（ボタン）の直上もしくは直下に小さくテキスト表示して、コンバージョン率アップを図るためのマイクロコピーです。', THEME_NAME ),
-  example: {},
 
   edit,
   save,
