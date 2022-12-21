@@ -39,6 +39,11 @@
       "type": "string"
     }
   },
+  "example": {
+    "attributes": {
+      "content": "microcopy balloon"
+    }
+  },
   "supports": {
     "align": [ "left", "center", "right" ],
     "customClassName": true,

@@ -35,6 +35,11 @@
       "type": "string"
     }
   },
+  "example": {
+    "attributes": {
+      "content": "microcopy text"
+    }
+  },
   "supports": {
     "align": [ "left", "center", "right" ],
     "customClassName": true,

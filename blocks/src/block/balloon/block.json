@@ -53,7 +53,16 @@
       "type": "string"
     }
   },
-  "example": {},
+  "example": {
+    "innerBlocks": [
+      {
+        "name": "core/paragraph",
+        "attributes": {
+          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius facilis in molestiae quod!"
+        }
+      }
+    ]
+  },
   "supports": {
     "anchor": true
   }

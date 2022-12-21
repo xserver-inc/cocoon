@@ -10,7 +10,16 @@
       "default": "information-box"
     }
   },
-  "example": {},
+  "example": {
+    "innerBlocks": [
+      {
+        "name": "core/paragraph",
+        "attributes": {
+          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius facilis in molestiae quod! Aut doloribus est illum iure porro sunt. Eius illo iusto maxime nihil possimus quae tempora voluptas voluptates."
+        }
+      }
+    ]
+  },
   "supports": {
     "anchor": true
   }
