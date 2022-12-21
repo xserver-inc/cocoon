@@ -22,6 +22,9 @@ function admin_print_styles_custom() {
   //Font Awesome
   wp_enqueue_style_font_awesome();
 
+  //IcoMoon
+  wp_enqueue_style_icomoon();
+
   //カラーピッカー
   wp_enqueue_style( 'wp-color-picker' );
 
