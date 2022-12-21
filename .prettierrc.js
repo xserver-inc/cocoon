@@ -1,3 +1,3 @@
 // Import the default config file and expose it in the project root.
-// Useful for editor integrations.ß
-module.exports = require( '@wordpress/prettier-config');
+// Useful for editor integrations.
+module.exports = require( '@wordpress/prettier-config' );
