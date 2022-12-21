@@ -1,0 +1,26 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/ad",
+  "category": "cocoon-block",
+  "keywords": ["ad"],
+
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": "-1"
+    },
+    "classNames": {
+      "type": "string",
+      "default": ""
+    },
+    "adVisible": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}

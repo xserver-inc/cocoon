@@ -1131,13 +1131,21 @@ body::before,
 	margin-bottom: 1em;
 }
 
-//ランキングブロック
+//Cocoonブロックメッセージエリア
 div.cocoon-render-message{
   padding: 20px;
   border: solid aliceblue 2px;
   margin-bottom: 1em;
 }
+div.editor-ad-message{
+  border: solid #ddd 1px;
+  text-align: center;
+  height: 280px;
+  line-height: 260px;
+  background-color: #fbfcfc;
+}
 
+//ランキングブロック
 div.cocoon-render-dropdown {
   margin-bottom: 1em;
   select option[disabled]{
