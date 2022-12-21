@@ -56,6 +56,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </span>
         <?php endif ?>
       </div>
+      <div class="related-entry-card-categorys e-card-categorys"><?php the_nolink_categories() ?></div>
     </div>
     <?php endif ?>
   </div><!-- /.related-entry-card-content -->

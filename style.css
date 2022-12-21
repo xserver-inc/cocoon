@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.5.4.3
+Version: 2.5.4.4
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -595,10 +595,10 @@ img {
 .no-thumbnail .entry-card-day {
   display: inline;
 }
-.no-thumbnail .entry-card-meta .entry-card-categorys {
+.no-thumbnail .e-card-meta .e-card-categorys {
   display: inline;
 }
-.no-thumbnail .entry-card-meta .entry-card-categorys > span {
+.no-thumbnail .e-card-meta .e-card-categorys > span {
   margin-left: 0.6em;
 }
 
@@ -974,7 +974,7 @@ img.emoji {
   padding: 2px;
 }
 
-.entry-card-meta .entry-card-categorys {
+.e-card-meta .e-card-categorys {
   display: none;
 }
 

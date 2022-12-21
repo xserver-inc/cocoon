@@ -30,6 +30,7 @@ import * as faq from './block/faq';
 import * as ranking from './block/ranking';
 import * as template from './block/template';
 import * as boxMenu from './block/box-menu';
+import * as ad from './block/ad';
 import * as profile from './block/profile';
 
 import * as captionBox from './block-universal/caption-box';
@@ -58,6 +59,7 @@ const cocoonBlocks = [
   ranking,
   template,
   boxMenu,
+  ad,
   profile,
 
   captionBox,
