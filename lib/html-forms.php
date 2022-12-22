@@ -1387,19 +1387,19 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
   }
 
   ?>
-  <div class="profile-box author-box border-element no-icon cf">
+  <div class="author-box border-element no-icon cf">
     <?php //ウィジェット名がある場合
     $image_class = $is_image_circle ? ' circle-image' : null;
     if ($label): ?>
-      <div class="profile-widget-name author-widget-name">
+      <div class="author-widget-name">
         <?php echo $label; ?>
       </div>
     <?php endif ?>
-    <figure class="author-thumb author-thumb<?php echo $image_class; ?>">
+    <figure class="author-thumb<?php echo $image_class; ?>">
       <?php echo get_avatar( $user_id, 200 ); ?>
     </figure>
-    <div class="profile-content author-content">
-      <div class="profile-name author-name">
+    <div class="author-content">
+      <div class="author-name">
         <?php
         if ($user_id) {
           $description = get_the_author_description_text($user_id);
@@ -1446,7 +1446,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
         }
          ?>
       </div>
-      <div class="profile-description author-description">
+      <div class="author-description">
         <?php
         if ($description) {
           echo apply_filters( 'the_author_box_description', $description, $user_id );
