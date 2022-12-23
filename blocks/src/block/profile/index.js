@@ -20,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __('プロフィールボックス', THEME_NAME),
-  //icon: <FontAwesomeIcon icon={['fas', 'th-large']} />,
+  icon: <FontAwesomeIcon icon={['far', 'id-card']} />,
   description: __('プロフィールを表示します。', THEME_NAME),
 
   edit,
