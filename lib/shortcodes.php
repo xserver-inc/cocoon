@@ -16,10 +16,11 @@ function author_box_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => null,
     'label' => null,
+    'is_image_circle' => 0,
   ), $atts, 'author_box'));
   $label = sanitize_shortcode_value($label);
   ob_start();
-  generate_author_box_tag($id, $label);
+  generate_author_box_tag($id, $label, $is_image_circle);
   $res = ob_get_clean();
   return $res;
 }

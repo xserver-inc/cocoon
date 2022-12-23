@@ -1467,7 +1467,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
 
       </div>
       <?php if ($user_id): ?>
-      <div class="author-follows">
+      <div class="profile-follows author-follows">
         <?php
         set_query_var( '_USER_ID', $user_id );
         get_template_part_with_option('tmp/sns-follow-buttons', SF_PROFILE);
