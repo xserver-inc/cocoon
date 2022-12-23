@@ -77,21 +77,14 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 		'cocoon-blocks-js', // Handle.
 		get_template_directory_uri().'/blocks/dist/blocks.build.js',
 		//plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array(
-      'lodash',
-      'react',
-      'wp-block-editor',
-      'wp-components',
-      'wp-blocks',
-      'wp-compose',
-      'wp-element',
-      'wp-editor',
-      'wp-polyfill',
-      'wp-rich-text',
-    ) // Dependencies, defined above.
+		array(), // Dependencies, defined above.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		// true // Enqueue the script in the footer.
   );
+
+  // ブロックエディターに翻訳ファイルを読み込む
+  wp_set_script_translations( 'cocoon-blocks-js', THEME_NAME, get_template_directory().'/languages' );
+
   //ショートコードオブジェクトの取得
   $balloons = get_speech_balloons(null, 'title');
   $colors = array('keyColor' => get_editor_key_color());
