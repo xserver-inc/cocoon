@@ -4,11 +4,12 @@ function render_profile($attributes, $content) {
   $id = $attributes['id'];
   $classes = $attributes['classNames'];
   $label = $attributes['label'];
+  $isImageCircle = $attributes['isImageCircle'] ? 1 : 0;
 
   if ($id) {
     ob_start();
     echo '<div class="'.$classes.'">';
-    generate_author_box_tag($id, $label);
+    generate_author_box_tag($id, $label, $isImageCircle);
     echo '</div>';
     return ob_get_clean();
   }
