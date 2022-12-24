@@ -5,7 +5,7 @@ import {
 	SelectControl,
 	PanelBody,
 	TextControl,
-	CheckboxControl,
+	ToggleControl,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { ServerSideRender } from '@wordpress/editor';
@@ -96,7 +96,7 @@ export default function edit( props ) {
 							setAttributes( { label: value } )
 						}
 					/>
-					<CheckboxControl
+					<ToggleControl
 						label={ __( '画像を円形にする', THEME_NAME ) }
 						checked={ isImageCircle }
 						onChange={ ( isChecked ) =>
