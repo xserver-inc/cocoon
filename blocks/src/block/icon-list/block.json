@@ -37,5 +37,47 @@
   },
   "supports": {
     "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "title": "Title"
+    },
+    "innerBlocks": [
+      {
+        "name": "core/list",
+        "innerBlocks": [
+          {
+            "name": "core/list-item",
+            "attributes": {
+                "content": "Lorem ipsum dolor sit amet."
+            }
+          },
+          {
+            "name": "core/list-item",
+            "attributes": {
+                "content": "Lorem ipsum dolor sit amet."
+            }
+          },
+          {
+            "name": "core/list-item",
+            "attributes": {
+                "content": "Lorem ipsum dolor sit amet."
+            }
+          },
+          {
+            "name": "core/list-item",
+            "attributes": {
+                "content": "Lorem ipsum dolor sit amet."
+            }
+          },
+          {
+            "name": "core/list-item",
+            "attributes": {
+                "content": "Lorem ipsum dolor sit amet."
+            }
+          }
+        ]
+      }
+    ]
   }
 }
