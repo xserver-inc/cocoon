@@ -35,7 +35,58 @@
       "type": "string"
     }
   },
-  "example": {},
+  "example": {
+    "attributes": {
+      "title": "Title"
+    },
+    "innerBlocks": [
+      {
+        "name": "cocoon-blocks/timeline-item",
+        "attributes": {
+          "label": "STEP 1",
+          "title": "Volutpat consequat mauris nunc congue"
+        },
+        "innerBlocks": [
+          {
+            "name": "core/paragraph",
+            "attributes": {
+              "content": "Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac."
+            }
+          }
+        ]
+      },
+      {
+        "name": "cocoon-blocks/timeline-item",
+        "attributes": {
+          "label": "STEP 2",
+          "title": "Elementum curabitur vitae nunc sed"
+        },
+        "innerBlocks": [
+          {
+            "name": "core/paragraph",
+            "attributes": {
+              "content": "Suspendisse in est ante in nibh mauris cursus mattis molestie."
+            }
+          }
+        ]
+      },
+      {
+        "name": "cocoon-blocks/timeline-item",
+        "attributes": {
+          "label": "STEP 3",
+          "title": "Adipiscing bibendum est ultricies integer"
+        },
+        "innerBlocks": [
+          {
+            "name": "core/paragraph",
+            "attributes": {
+              "content": "Donec ac odio tempor orci dapibus ultrices in iaculis nunc."
+            }
+          }
+        ]
+      }
+    ]
+  },
   "supports": {
     "anchor": true
   }
