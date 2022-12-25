@@ -94,7 +94,7 @@ function cocoon_blocks_cgb_editor_assets()
 			'wp-polyfill',
 			'wp-rich-text',
 			'wp-i18n',
-		] // Dependencies, defined above.
+		] // const xxx = wp.xxx型式の古い記述で有効 // Dependencies, defined above.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		// true // Enqueue the script in the footer.
 	);

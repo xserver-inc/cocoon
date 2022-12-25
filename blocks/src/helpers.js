@@ -7,28 +7,6 @@
 
 import classnames from 'classnames';
 
-// import { __ } from '@wordpress/i18n';
-// const {
-//   Fill,
-//   ToolbarButton,
-//   withFallbackStyles,
-// } = wp.components;
-// const {
-//   getColorObjectByColorValue,
-//   getColorObjectByAttributeValues,
-//   getColorClassName
-// } = wp.editor;
-// const {
-//   displayShortcut
-// } = wp.keycodes;
-// const {
-//   find
-// } = lodash;
-// const {
-//   getComputedStyle
-// } = window;
-
-
 import { __ } from '@wordpress/i18n';
 import {
   Fill,
