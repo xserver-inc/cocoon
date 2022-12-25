@@ -1,0 +1,22 @@
+/*
+  Skin Name: ゆっくり色が変化
+  Description: 背景の色がゆっくり変化していきます（4つの色を選べます）。
+  Skin URI: https://lucklog.info/cocoon-raku-color-changing/
+  Author: らく
+  Author URI: https://lucklog.info/
+  Screenshot URI: https://lucklog.info/img/color-changing.gif
+  Version: 1.1.0
+  Priority: 10001000000
+*/
+/*以下にスタイルシートを記入してください*/
+.header-container,
+.footer-container {
+    position: relative;
+}
+
+@media screen and (max-width: 834px) {
+    .content-in {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
