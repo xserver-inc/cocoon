@@ -1,24 +1,32 @@
 /**
- * Cocoon Blocks
+ * @package Cocoon Blocks
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, CLICK_POINT_MSG} from '../../helpers';
+/**
+ * External dependencies
+ */
 import classnames from 'classnames';
 
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 const { createBlock } = wp.blocks;
-const { InnerBlocks, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl } = wp.components;
+const { InnerBlocks } = wp.editor;
 import { Fragment } from '@wordpress/element';
 
+/**
+ * Internal dependencies
+ */
+import { CLICK_POINT_MSG} from '../../helpers';
+
 //classの取得
-function getClasses(style) {
+function getClasses() {
   const classes = classnames(
     {
-      [ style ]: !! style,
       'common-icon-box': true,
       [ 'block-box' ]: true,
     }
@@ -31,10 +39,6 @@ export default [{
     content: {
       type: 'string',
       default: CLICK_POINT_MSG,
-    },
-    style: {
-      type: 'string',
-      default: 'information-box'
     },
   },
   transforms: {
@@ -71,65 +75,11 @@ export default [{
   },
 
   edit( { attributes, setAttributes, className } ) {
-    const { content, style } = attributes;
+    const { content } = attributes;
 
     return (
       <Fragment>
-        <InspectorControls>
-          <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
-            <SelectControl
-              label={ __( 'タイプ', THEME_NAME ) }
-              value={ style }
-              onChange={ ( value ) => setAttributes( { style: value } ) }
-              options={ [
-                {
-                  value: 'information-box',
-                  label: __( '補足情報(i)', THEME_NAME ),
-                },
-                {
-                  value: 'question-box',
-                  label: __( '補足情報(?)', THEME_NAME ),
-                },
-                {
-                  value: 'alert-box',
-                  label: __( '補足情報(!)', THEME_NAME ),
-                },
-                {
-                  value: 'memo-box',
-                  label: __( 'メモ', THEME_NAME ),
-                },
-                {
-                  value: 'comment-box',
-                  label: __( 'コメント', THEME_NAME ),
-                },
-                {
-                  value: 'ok-box',
-                  label: __( 'OK', THEME_NAME ),
-                },
-                {
-                  value: 'ng-box',
-                  label: __( 'NG', THEME_NAME ),
-                },
-                {
-                  value: 'good-box',
-                  label: __( 'GOOD', THEME_NAME ),
-                },
-                {
-                  value: 'bad-box',
-                  label: __( 'BAD', THEME_NAME ),
-                },
-                {
-                  value: 'profile-box',
-                  label: __( 'プロフィール', THEME_NAME ),
-                },
-              ] }
-            />
-
-          </PanelBody>
-        </InspectorControls>
-
-        <div className={ classnames(getClasses(style), className) }>
+        <div className={ classnames(getClasses(), className) }>
           <InnerBlocks />
         </div>
       </Fragment>
@@ -137,9 +87,9 @@ export default [{
   },
 
   save( { attributes } ) {
-    const { content, style } = attributes;
+    const { content } = attributes;
     return (
-      <div className={ getClasses(style) }>
+      <div className={ getClasses() }>
         <InnerBlocks.Content />
       </div>
     );
