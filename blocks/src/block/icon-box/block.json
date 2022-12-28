@@ -5,10 +5,6 @@
   "keywords": [ "icon", "box" ],
 
   "attributes": {
-    "style": {
-      "type": "string",
-      "default": "information-box"
-    }
   },
   "example": {
     "innerBlocks": [
@@ -22,5 +18,7 @@
   },
   "supports": {
     "anchor": true
-  }
+  },
+  "editorStyle": "common-icon-box block-box",
+  "style": "common-icon-box block-box"
 }
