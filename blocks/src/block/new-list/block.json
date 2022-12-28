@@ -1,0 +1,30 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/profile",
+  "category": "cocoon-block",
+  "keywords": ["profile", "author", "box"],
+
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": "-1"
+    },
+    "classNames": {
+      "type": "string",
+      "default": ""
+    },
+    "label": {
+      "type": "string",
+      "default": ""
+    },
+    "isImageCircle": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}
