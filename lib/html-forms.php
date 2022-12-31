@@ -1736,3 +1736,38 @@ function get_navi_card_wrap_tag($atts){
   return $tag;
 }
 endif;
+
+//インフォリスト生成タグ
+if ( !function_exists( 'generate_info_list_tag' ) ):
+function generate_info_list_tag($atts){
+  extract(shortcode_atts(array(
+    'count' => 5,
+    'title' => __( '新着情報', THEME_NAME ),
+  ), $atts));
+  $args = array(
+    'no_found_rows' => true,
+    'ignore_sticky_posts' => true,
+    'posts_per_page' => $count,
+  );
+  $query = new WP_Query( $args );
+  if( $query -> have_posts() ): //投稿が存在する時
+  ?>
+  <div id="info-list" class="info-list">
+    <?php if ($title): ?>
+      <div class="info-list-title"><?php echo esc_html($title); ?></div>
+    <?php endif; ?>
+    <?php while ($query -> have_posts()) : $query -> the_post(); ?>
+      <div class="info-list-item">
+        <div class="info-list-item-date"><?php the_date(); ?></div>
+        <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
+      </div>
+    <?php endwhile;
+  else :
+    echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
+  endif; ?>
+  <?php wp_reset_postdata(); ?>
+  <?php //wp_reset_query(); ?>
+  </div>
+<?php
+}
+endif;

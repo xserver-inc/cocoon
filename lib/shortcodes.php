@@ -960,3 +960,23 @@ function ad_shortcode( $atts ) {
 }
 endif;
 
+
+//インフォリストショートコード
+add_shortcode('info_list', 'get_info_list_shortcode');
+if ( !function_exists( 'get_info_list_shortcode' ) ):
+function get_info_list_shortcode($atts){
+  extract(shortcode_atts(array(
+    'count' => 5,
+    'title' => __( '新着情報', THEME_NAME ),
+  ), $atts, 'navi'));
+  $atts = array(
+    'count' => $count,
+    'title' => $title,
+  );
+  ob_start();
+  generate_info_list_tag($atts);
+  $tag = ob_get_clean();
+
+  return apply_filters('get_info_list_tag', $tag);
+}
+endif;
