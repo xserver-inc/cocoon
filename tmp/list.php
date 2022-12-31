@@ -23,6 +23,8 @@ if ( is_category() ){
   ////////////////////////////
   if (!is_paged()) {
     get_template_part('tmp/category-content');
+  } else {
+    get_template_part('tmp/list-title');
   }
 } elseif ( (is_tag() || is_tax()) && !is_paged() ) {
   get_template_part('tmp/tag-content');
