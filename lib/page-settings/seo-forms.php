@@ -28,20 +28,20 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             //canonicalタグ
             generate_checkbox_tag(OP_CANONICAL_TAG_ENABLE, is_canonical_tag_enable(), __( 'canonicalタグの追加', THEME_NAME ));
-            generate_tips_tag(__( 'WordPressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。', THEME_NAME ).'<br>'.__( 'この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入されます。', THEME_NAME ));
+            generate_tips_tag(__( 'WordPressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。', THEME_NAME ).'<br>'.__( 'この機能を有効にするとトップページやカテゴリーページ等にもcanonicalタグが挿入されます。', THEME_NAME ));
 
             //prev nextタグ
             generate_checkbox_tag(OP_PREV_NEXT_ENABLE, is_prev_next_enable(), __( '分割ページにrel="next"/"prev"タグの追加', THEME_NAME ));
             generate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。無効にした場合はWordPressデフォルトのnext/prev設定になります。', THEME_NAME ));
 
-            //カテゴリページをnoindexとする
-            generate_checkbox_tag(OP_CATEGORY_PAGE_NOINDEX, is_category_page_noindex(), __( 'カテゴリページをnoindexとする', THEME_NAME ));
-            generate_tips_tag(__( 'カテゴリページ全体をnoindex設定にします。', THEME_NAME ));
+            //カテゴリーページをnoindexとする
+            generate_checkbox_tag(OP_CATEGORY_PAGE_NOINDEX, is_category_page_noindex(), __( 'カテゴリーページをnoindexとする', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリーページ全体をnoindex設定にします。', THEME_NAME ));
 
             echo '<div class="indent'.get_not_allowed_form_class(!is_category_page_noindex(), true).'">';
-              //カテゴリページの2ページ目以降をnoindexとする
-              generate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリページの2ページ目以降をnoindexとする', THEME_NAME ));
-              generate_tips_tag(__( 'カテゴリページのトップページ以外はnoindex設定にします。', THEME_NAME ));
+              //カテゴリーページの2ページ目以降をnoindexとする
+              generate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリーページの2ページ目以降をnoindexとする', THEME_NAME ));
+              generate_tips_tag(__( 'カテゴリーページのトップページ以外はnoindex設定にします。', THEME_NAME ));
             echo '</div>';
 
 
@@ -58,7 +58,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             //その他のアーカイブページをnoindexとする
             generate_checkbox_tag(OP_OTHER_ARCHIVE_PAGE_NOINDEX, is_other_archive_page_noindex(), __( 'その他のアーカイブページをnoindexとする', THEME_NAME ));
-            generate_tips_tag(__( 'カテゴリ・タグ以外のアーカイブページをnoindex設定にします。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリー・タグ以外のアーカイブページをnoindex設定にします。', THEME_NAME ));
 
             //添付ファイルページをnoindexとする
             generate_checkbox_tag(OP_ATTACHMENT_PAGE_NOINDEX, is_attachment_page_noindex(), __( '添付ファイルページをnoindexとする', THEME_NAME ));

@@ -91,7 +91,7 @@ const registerBlock = (block) => {
   if (compareVersions(wpVersion, '5.5') < 0) {
     //nameを削除
      delete metadata.name;
-     //カテゴリ等を追加
+     //カテゴリー等を追加
      settings = {
        ...settings,
        ...metadata,

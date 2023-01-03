@@ -100,7 +100,7 @@ function seo_custom_box_view(){
   //メタキーワード
   generate_label_tag('the_page_meta_keywords', __('メタキーワード', THEME_NAME) );
   generate_textbox_tag('the_page_meta_keywords', $the_page_meta_keywords, __( '記事の関連キーワードを半角カンマ区切りで入力してください。', THEME_NAME ));
-  generate_howto_tag(__( '記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合は、カテゴリ名などから自動で設定されます。', THEME_NAME ), 'the_page_meta_keywords');
+  generate_howto_tag(__( '記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合は、カテゴリー名などから自動で設定されます。', THEME_NAME ), 'the_page_meta_keywords');
 
   //noindex
   generate_checkbox_tag('the_page_noindex' , $the_page_noindex, __( 'インデックスしない（noindex）', THEME_NAME ));

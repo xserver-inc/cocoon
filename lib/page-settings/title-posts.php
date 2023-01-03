@@ -28,13 +28,13 @@ update_theme_option(OP_META_DESCRIPTION_TO_SINGULAR);
 //投稿・固定ページにメタキーワードを含める
 update_theme_option(OP_META_KEYWORDS_TO_SINGULAR);
 
-//カテゴリページのタイトル
+//カテゴリーページのタイトル
 update_theme_option(OP_CATEGORY_PAGE_TITLE_FORMAT);
 
-//カテゴリページにメタディスクリプションを含める
+//カテゴリーページにメタディスクリプションを含める
 update_theme_option(OP_META_DESCRIPTION_TO_CATEGORY);
 
-//カテゴリページにメタキーワードを含める
+//カテゴリーページにメタキーワードを含める
 update_theme_option(OP_META_KEYWORDS_TO_CATEGORY);
 
 //検索エンジンに知らせる日付

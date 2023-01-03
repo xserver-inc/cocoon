@@ -71,13 +71,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       if (isset($info['version'])) {
         $all .= __( 'バージョン：', THEME_NAME ).$info['version'].PHP_EOL;
       }
-      //カテゴリ数
+      //カテゴリー数
       $args = array(
         'get' => 'all',
         'hide_empty' => 0
       );
       $categories = get_categories( $args );
-      $all .= __( 'カテゴリ数：', THEME_NAME ).count($categories).PHP_EOL;
+      $all .= __( 'カテゴリー数：', THEME_NAME ).count($categories).PHP_EOL;
 
       $tags = get_tags( $args );
       $all .= __( 'タグ数：', THEME_NAME ).count($tags).PHP_EOL;

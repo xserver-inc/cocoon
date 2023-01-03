@@ -34,7 +34,7 @@ if (is_front_page_type_index()) {
       <?php else: // サムネイルを持っていないとき ?>
         <?php echo get_entry_card_no_image_tag($count); ?>
       <?php endif; ?>
-      <?php the_nolink_category(null, apply_filters('is_entry_card_category_label_visible', true)); //カテゴリラベルの取得 ?>
+      <?php the_nolink_category(null, apply_filters('is_entry_card_category_label_visible', true)); //カテゴリーラベルの取得 ?>
     </figure><!-- /.entry-card-thumb -->
 
     <div class="entry-card-content card-content e-card-content">

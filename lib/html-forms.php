@@ -1067,7 +1067,7 @@ function generate_popular_entries_tag($atts){
         <?php
         $is_visible = apply_filters('is_popular_entry_card_category_label_visible', false);
         $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
-        the_nolink_category($post->ID, $is_visible); //カテゴリラベルの取得 ?>
+        the_nolink_category($post->ID, $is_visible); //カテゴリーラベルの取得 ?>
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
@@ -1328,7 +1328,7 @@ function get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type){
     }
     $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
     $post_id = isset($post->ID) ? $post->ID : null;
-    the_nolink_category($post_id, $is_visible); //カテゴリラベルの取得
+    the_nolink_category($post_id, $is_visible); //カテゴリーラベルの取得
   }
   return ob_get_clean();
 }

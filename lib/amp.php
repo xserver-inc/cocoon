@@ -42,7 +42,7 @@ function has_amp_page(){
   return is_singular() &&
     is_amp_enable() &&
     is_the_page_amp_enable() &&
-    !in_category( $category_ids ) && //除外カテゴリではAMPページを生成しない
+    !in_category( $category_ids ) && //除外カテゴリーではAMPページを生成しない
     //プラグインが生成するフォーラムページでない場合
     !is_plugin_fourm_page();
 }
@@ -215,7 +215,7 @@ function convert_content_for_amp($the_content){
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
 
-  //ドロップダンスカテゴリの削除
+  //ドロップダンスカテゴリーの削除
   $pattern = '{<aside class="widget.+?categories-dropdown.+?</aside>}is';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);

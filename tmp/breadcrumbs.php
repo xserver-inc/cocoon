@@ -12,14 +12,14 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
   //投稿ページの場合
   if (is_single()) {
     $cats = get_the_category();
-    //メインカテゴリが指定してある場合は該当カテゴリーを適用
+    //メインカテゴリーが指定してある場合は該当カテゴリーを適用
     $main_cat_id = get_the_page_main_category();
     if ($main_cat_id && in_category($main_cat_id)) {
       $cat = get_category($main_cat_id);
     }
   }
 
-  //メインカテゴリがない場合は先頭のカテゴリを適用
+  //メインカテゴリーがない場合は先頭のカテゴリーを適用
   if (!$cat) {
     $cat = (is_single() && isset($cats[0])) ? $cats[0] : get_category(get_query_var("cat"));
   }
@@ -38,15 +38,15 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
       $cats[] = $par;
       $par = get_category($par->parent);
     }
-    //カテゴリの順番入れ替え
+    //カテゴリーの順番入れ替え
     $cats = array_reverse($cats);
-    //先祖カテゴリの出力
+    //先祖カテゴリーの出力
     foreach ($cats as $par) {
       ++$count;
       //var_dump($par->name);
       $echo .= '<div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-folder fa-fw" aria-hidden="true"></span><a href="'.esc_url(get_category_link($par->term_id)).'" itemprop="item"><span itemprop="name" class="breadcrumb-caption">'.esc_html($par->name).'</span></a><meta itemprop="position" content="'.$count.'" /><span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span></div>';
     }
-    // 現カテゴリの出力
+    // 現カテゴリーの出力
     ++$count;
     echo $echo.'<div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-folder fa-fw" aria-hidden="true"></span><a href="'.esc_url(get_category_link($cat->term_id)).'" itemprop="item"><span itemprop="name" class="breadcrumb-caption">'.esc_html($cat->name).'</span></a><meta itemprop="position" content="'.$count.'" />';
     //ページタイトルを含める場合はセパレーターを表示

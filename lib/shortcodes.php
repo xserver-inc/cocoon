@@ -54,7 +54,7 @@ function new_entries_shortcode($atts) {
     'horizontal' => 0,
   ), $atts, 'new_list'));
 
-  //カテゴリを配列化
+  //カテゴリーを配列化
   $cat_ids = array();
   if ($cats && $cats != 'all') {
     $cat_ids = explode(',', $cats);

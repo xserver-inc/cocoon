@@ -118,7 +118,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_hierarchical_category_check_list( 0, OP_AMP_EXCLUDE_CATEGORY_IDS, get_amp_exclude_category_ids(), 300 );
-            generate_tips_tag(__( 'AMPページを生成しないカテゴリを選択してください。', THEME_NAME ));
+            generate_tips_tag(__( 'AMPページを生成しないカテゴリーを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

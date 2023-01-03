@@ -116,7 +116,7 @@ function url_to_internal_blogcard_tag($url){
       $thumbnail = get_blogcard_thumbnail_image_tag($image);
     }
   } elseif ($cat = get_category_by_path($url, false)){
-    //カテゴリページの場合
+    //カテゴリーページの場合
     $cat_id = $cat->cat_ID;
 
     $title = get_the_category_title($cat_id);

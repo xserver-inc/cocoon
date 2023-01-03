@@ -38,7 +38,7 @@ function page_custom_box_view(){
       $options[$cat->cat_ID] = $cat->name;
     endforeach ;
     generate_selectbox_tag('the_page_main_category', $options, get_the_page_main_category(), __( 'メインカテゴリー', THEME_NAME ));
-    generate_howto_tag(__( 'このページで優先するカテゴリを選択します。', THEME_NAME ).__( '優先カテゴリーは、アイキャッチやパンくずリストに適用されます。', THEME_NAME ).__( 'カテゴリ選択直後はすぐにセレクトボックスに反映されません。', THEME_NAME ).__( '一度ページを更新してください。', THEME_NAME ), 'the_page_main_category');
+    generate_howto_tag(__( 'このページで優先するカテゴリーを選択します。', THEME_NAME ).__( '優先カテゴリーは、アイキャッチやパンくずリストに適用されます。', THEME_NAME ).__( 'カテゴリー選択直後はすぐにセレクトボックスに反映されません。', THEME_NAME ).__( '一度ページを更新してください。', THEME_NAME ), 'the_page_main_category');
   }
 
 

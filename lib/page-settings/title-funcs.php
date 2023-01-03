@@ -137,7 +137,7 @@ function is_meta_keywords_to_singular(){
 }
 endif;
 
-//カテゴリページのタイトル
+//カテゴリーページのタイトル
 define('OP_CATEGORY_PAGE_TITLE_FORMAT', 'category_page_title_format');
 if ( !function_exists( 'get_category_page_title_format' ) ):
 function get_category_page_title_format(){
@@ -168,7 +168,7 @@ function get_category_title_caption($category){
 endif;
 
 
-//カテゴリページにメタディスクリプションを含める
+//カテゴリーページにメタディスクリプションを含める
 define('OP_META_DESCRIPTION_TO_CATEGORY', 'meta_description_to_category');
 if ( !function_exists( 'is_meta_description_to_category' ) ):
 function is_meta_description_to_category(){
@@ -184,7 +184,7 @@ function get_simplified_site_name(){
 }
 endif;
 
-//カテゴリページにメタキーワードを含める
+//カテゴリーページにメタキーワードを含める
 define('OP_META_KEYWORDS_TO_CATEGORY', 'meta_keywords_to_category');
 if ( !function_exists( 'is_meta_keywords_to_category' ) ):
 function is_meta_keywords_to_category(){

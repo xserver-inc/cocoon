@@ -23,7 +23,7 @@ class NewEntryWidgetItem extends WP_Widget {
   }
   function widget($args, $instance) {
     extract( $args );
-    //ウィジェットモード（全ての新着記事を表示するか、カテゴリ別に表示するか）
+    //ウィジェットモード（全ての新着記事を表示するか、カテゴリー別に表示するか）
     $widget_mode = apply_filters( 'new_entries_widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
     $title = apply_filters( 'new_entries_widget_title', empty($instance['title']) ? '' : $instance['title'] );
@@ -38,7 +38,7 @@ class NewEntryWidgetItem extends WP_Widget {
     $is_sticky_visible = apply_filters( 'new_entries_widget_is_sticky_visible', empty($instance['is_sticky_visible']) ? 0 : 1 );
     $is_modified_enable = apply_filters( 'new_entries_widget_is_modified_enable', empty($instance['is_modified_enable']) ? 0 : 1 );
 
-    //現在のカテゴリを取得
+    //現在のカテゴリーを取得
     $categories = array();
     if ($widget_mode == 'category') {
       $categories = get_category_ids();//カテゴリ配列の取得
@@ -48,7 +48,7 @@ class NewEntryWidgetItem extends WP_Widget {
     //classにwidgetと一意となるクラス名を追加する
     if ( //「表示モード」が「全ての新着記事」のとき
               ($widget_mode == WM_DEFAULT) ||
-              //「表示モード」が「カテゴリ別新着記事」のとき
+              //「表示モード」が「カテゴリー別新着記事」のとき
               ( ($widget_mode == 'category') && get_category_ids() ) ):
       echo $args['before_widget'];
       if (!is_null($title)) {
@@ -136,14 +136,14 @@ class NewEntryWidgetItem extends WP_Widget {
     $is_sticky_visible = empty($instance['is_sticky_visible']) ? 0 : 1;
     $is_modified_enable = empty($instance['is_modified_enable']) ? 0 : 1;
     ?>
-    <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
+    <?php //ウィジェットモード（全てか、カテゴリー別か） ?>
     <p>
       <?php
       generate_label_tag($this->get_field_id('widget_mode'), __('表示モード', THEME_NAME) );
       echo '<br>';
       $options = array(
         'all' => __( '全ての新着記事（全ページで表示）'),
-        'category' => __( 'カテゴリ別新着記事（投稿・カテゴリで表示）'),
+        'category' => __( 'カテゴリー別新着記事（投稿・カテゴリーで表示）'),
       );
       generate_radiobox_tag($this->get_field_name('widget_mode'), $options, $widget_mode);
       ?>

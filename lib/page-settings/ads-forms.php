@@ -297,7 +297,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '広告除外設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '広告を表示したくないページやカテゴリの設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( '広告を表示したくないページやカテゴリーの設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -323,7 +323,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             generate_hierarchical_category_check_list( 0, OP_AD_EXCLUDE_CATEGORY_IDS, get_ad_exclude_category_ids(), 300 );
             //generate_textbox_tag(OP_AD_EXCLUDE_CATEGORY_IDS, get_ad_exclude_category_ids(), __( '例：111,222,3333', THEME_NAME ));
-            generate_tips_tag(__( '広告を非表示にするカテゴリを選択してください。', THEME_NAME ));
+            generate_tips_tag(__( '広告を非表示にするカテゴリーを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

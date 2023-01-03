@@ -42,7 +42,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
     $exclude_cat_ids = empty($instance['exclude_cat_ids']) ? array() : $instance['exclude_cat_ids'];
     $exclude_cat_ids = apply_filters( 'related_entries_widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
 
-    //現在のカテゴリを取得
+    //現在のカテゴリーを取得
     $categories = array();
     $categories = get_category_ids();//カテゴリ配列の取得
     //除外カテゴリ配列のサニタイズ
@@ -64,7 +64,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
       // _v($tags);
       // _v($post->ID);
     }
-    //タグがない場合はカテゴリを表示
+    //タグがない場合はカテゴリーを表示
     if (!$tags) {
       $taxonomy = 'category';
     }
@@ -197,7 +197,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
       echo '<br>';
       $options = array(
         'category' => 'カテゴリー',
-        'post_tag' => 'タグ（無い場合はカテゴリ表示）',
+        'post_tag' => 'タグ（無い場合はカテゴリー表示）',
       );
       generate_radiobox_tag($this->get_field_name('taxonomy'), $options, $taxonomy);
       ?>

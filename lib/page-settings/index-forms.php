@@ -49,9 +49,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             $options = array(
               'index' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-index.png', '', 400).__( '一覧', THEME_NAME ).__( '（デフォルト）', THEME_NAME ),
               'tab_index' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-tab-min.gif', '', 400).__( 'タブ一覧', THEME_NAME ),
-              'category' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categories-min.gif', '', 400).__( 'カテゴリごと', THEME_NAME ),
-              'category_2_columns' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categoly-columnn-2-min.gif', '', 400).__( 'カテゴリごと', THEME_NAME ).__( '（2カラム）', THEME_NAME ),
-              'category_3_columns' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categoly-columnn-3-min.gif', '', 400).__( 'カテゴリごと', THEME_NAME ).__( '（3カラム）', THEME_NAME ).__( '※サイドバーを表示しないレイアウト向け。', THEME_NAME ).__( '表示数は3の倍数推奨。', THEME_NAME ),
+              'category' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categories-min.gif', '', 400).__( 'カテゴリーごと', THEME_NAME ),
+              'category_2_columns' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categoly-columnn-2-min.gif', '', 400).__( 'カテゴリーごと', THEME_NAME ).__( '（2カラム）', THEME_NAME ),
+              'category_3_columns' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categoly-columnn-3-min.gif', '', 400).__( 'カテゴリーごと', THEME_NAME ).__( '（3カラム）', THEME_NAME ).__( '※サイドバーを表示しないレイアウト向け。', THEME_NAME ).__( '表示数は3の倍数推奨。', THEME_NAME ),
             );
             generate_radiobox_tag(OP_FRONT_PAGE_TYPE, $options, get_front_page_type());
             generate_tips_tag(__( 'フロントページの表示形式を選択します。', THEME_NAME ));
@@ -67,9 +67,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_label_tag(OP_INDEX_CATEGORY_IDS_COMMA_TEXT, __( 'カテゴリー順の変更', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_INDEX_CATEGORY_IDS_COMMA_TEXT, $comma_text, __( 'カテゴリーIDのカンマテキストを入力', THEME_NAME )) ;
-            generate_tips_tag(__( '意図通りの順番でカテゴリを表示する場合は、カテゴリーIDをカンマ区切りで入力してください。', THEME_NAME ).__( 'こちらの入力がある場合は、チェックボックスのものよりこちらの設定が優先されます。', THEME_NAME ));
+            generate_tips_tag(__( '意図通りの順番でカテゴリーを表示する場合は、カテゴリーIDをカンマ区切りで入力してください。', THEME_NAME ).__( 'こちらの入力がある場合は、チェックボックスのものよりこちらの設定が優先されます。', THEME_NAME ));
             $form = ob_get_clean();
-            generate_toggle_area(__( 'カテゴリ表示の順番を並び替える場合はこちら', THEME_NAME ), $form);
+            generate_toggle_area(__( 'カテゴリー表示の順番を並び替える場合はこちら', THEME_NAME ), $form);
             //入力チェック
             generate_toggle_entered($comma_text);
             echo '<br>';
@@ -97,15 +97,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_label_tag(OP_INDEX_NEW_ENTRY_CARD_COUNT, __( '新着エントリーカード表示数', THEME_NAME ));
             echo '<br>';
             generate_selectbox_tag(OP_INDEX_NEW_ENTRY_CARD_COUNT, $options, get_index_new_entry_card_count());
-            generate_tips_tag(__( 'フロントページタイプを「カテゴリごと」にした際に表示される新着エントリーカード数を設定します。', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページタイプを「カテゴリーごと」にした際に表示される新着エントリーカード数を設定します。', THEME_NAME ));
 
             //カテゴリーエントリーカード表示数
             generate_label_tag(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, __( 'カテゴリーエントリーカード表示数', THEME_NAME ));
             echo '<br>';
             generate_selectbox_tag(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, $options, get_index_category_entry_card_count());
-            generate_tips_tag(__( 'フロントページのインデックスでカテゴリごとに表示するエントリーカード数を設定します。', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページのインデックスでカテゴリーごとに表示するエントリーカード数を設定します。', THEME_NAME ));
             $form = ob_get_clean();
-            generate_toggle_area(__( '「カテゴリごと」表示でカード表示数を変更する場合はこちら', THEME_NAME ), $form);
+            generate_toggle_area(__( '「カテゴリーごと」表示でカード表示数を変更する場合はこちら', THEME_NAME ), $form);
             ?>
           </td>
         </tr>

@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 ///////////////////////////////////////
-// 拡張カテゴリ設定
+// 拡張カテゴリー設定
 ///////////////////////////////////////
 
 if ( !function_exists( 'get_the_category_meta_key' ) ):
@@ -21,7 +21,7 @@ endif;
 if ( !function_exists( 'get_the_category_meta' ) ):
 function get_the_category_meta($cat_id = null){
   if (empty($cat_id) && is_category()) {
-    //カテゴリがないときはカテゴリIDを取得
+    //カテゴリーがないときはカテゴリIDを取得
     $cat_id = get_query_var('cat');
   }
   //カテゴリIDが正常な場合
@@ -38,7 +38,7 @@ function get_the_category_meta($cat_id = null){
 }
 endif;
 
-//カテゴリ色の取得
+//カテゴリー色の取得
 if ( !function_exists( 'get_the_category_color' ) ):
 function get_the_category_color($cat_id = null){
   if (!$cat_id) {
@@ -70,7 +70,7 @@ function get_the_category_text_color($cat_id = null){
 }
 endif;
 
-//カテゴリタイトルの取得
+//カテゴリータイトルの取得
 if ( !function_exists( 'get_the_category_title' ) ):
 function get_the_category_title($cat_id = null, $is_cat_name = true){
   if (!$cat_id) {
@@ -85,7 +85,7 @@ function get_the_category_title($cat_id = null, $is_cat_name = true){
       $res = $meta['title'];
     }
   }
-  //タイトルが存在しない場合はカテゴリ名を利用する
+  //タイトルが存在しない場合はカテゴリー名を利用する
   if (!$res && $is_cat_name) {
     $res = get_category($cat_id)->name;
   }
@@ -93,7 +93,7 @@ function get_the_category_title($cat_id = null, $is_cat_name = true){
 }
 endif;
 
-//カテゴリ本文の取得
+//カテゴリー本文の取得
 if ( !function_exists( 'get_the_category_content' ) ):
 function get_the_category_content($cat_id = null, $for_editor = false){
   if (!$cat_id) {
@@ -145,7 +145,7 @@ function get_the_category_eye_catch_url($cat_id = null){
 }
 endif;
 
-//カテゴリのメタディスクリプション
+//カテゴリーのメタディスクリプション
 if ( !function_exists( 'get_the_category_meta_description' ) ):
 function get_the_category_meta_description($cat_id = null){
   if (!$cat_id) {
@@ -161,7 +161,7 @@ function get_the_category_meta_description($cat_id = null){
 }
 endif;
 
-//カテゴリのスニペット文を取得
+//カテゴリーのスニペット文を取得
 if ( !function_exists( 'get_the_category_snippet' ) ):
 function get_the_category_snippet($cat_id){
   $snippet = get_the_category_meta_description($cat_id);
@@ -219,7 +219,7 @@ function extra_category_fields( $cat ) {
     //_v($cat_meta);
 ?>
 <tr class="form-field term-color-wrap">
-  <th><label for="color"><?php _e( 'カテゴリ色', THEME_NAME ) ?></label></th>
+  <th><label for="color"><?php _e( 'カテゴリー色', THEME_NAME ) ?></label></th>
   <td>
     <div style="float: left;padding-right: 30px;">
       <?php
@@ -228,7 +228,7 @@ function extra_category_fields( $cat ) {
       echo '<br>';
       generate_color_picker_tag('the_category_color',  $the_category_color, '');
       ?>
-      <p class="description"><?php _e( 'カテゴリの色を指定します。', THEME_NAME ) ?></p>
+      <p class="description"><?php _e( 'カテゴリーの色を指定します。', THEME_NAME ) ?></p>
     </div>
     <div style="">
       <?php
@@ -237,27 +237,27 @@ function extra_category_fields( $cat ) {
       echo '<br>';
       generate_color_picker_tag('the_category_text_color',  $the_category_text_color, '');
       ?>
-      <p class="description"><?php _e( 'カテゴリの文字色を指定します。入力しない場合は、白色になります。', THEME_NAME ) ?></p>
+      <p class="description"><?php _e( 'カテゴリーの文字色を指定します。入力しない場合は、白色になります。', THEME_NAME ) ?></p>
     </div>
   </td>
 </tr>
 <tr class="form-field term-title-wrap">
-  <th><label for="title"><?php _e( 'カテゴリタイトル', THEME_NAME ) ?></label></th>
+  <th><label for="title"><?php _e( 'カテゴリータイトル', THEME_NAME ) ?></label></th>
   <td>
     <?php
     $the_category_title = get_the_category_title($cat_id, false);
     ?>
-    <input type="text" name="the_category_title" id="title" size="25" value="<?php echo esc_attr($the_category_title) ?>" placeholder="<?php _e( 'カテゴリページのタイトル', THEME_NAME ) ?>" />
-    <p class="description"><?php _e( 'カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
+    <input type="text" name="the_category_title" id="title" size="25" value="<?php echo esc_attr($the_category_title) ?>" placeholder="<?php _e( 'カテゴリーページのタイトル', THEME_NAME ) ?>" />
+    <p class="description"><?php _e( 'カテゴリーページのタイトルを指定します。カテゴリーページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-content-wrap">
-  <th><label for="content"><?php _e( 'カテゴリ本文', THEME_NAME ) ?></label></th>
+  <th><label for="content"><?php _e( 'カテゴリー本文', THEME_NAME ) ?></label></th>
   <td><?php
     $the_category_content = get_the_category_content($cat_id, true);
     generate_visuel_editor_tag('the_category_content', $the_category_content, 'content');
    ?>
-    <p class="description"><?php _e( 'カテゴリページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'カテゴリーページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
    </td>
 </tr>
 <tr class="form-field term-eye-catch-wrap">
@@ -274,9 +274,9 @@ function extra_category_fields( $cat ) {
   <td>
     <?php
     $the_category_meta_description = get_the_category_meta_description($cat_id);
-    generate_textarea_tag('the_category_meta_description', $the_category_meta_description, __( 'カテゴリページの説明文を入力してください', THEME_NAME ), 3) ;
+    generate_textarea_tag('the_category_meta_description', $the_category_meta_description, __( 'カテゴリーページの説明文を入力してください', THEME_NAME ), 3) ;
      ?>
-    <p class="description"><?php _e( 'カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'カテゴリーページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-meta-keywords-wrap">
@@ -286,7 +286,7 @@ function extra_category_fields( $cat ) {
     $the_category_meta_keywords = get_the_category_meta_keywords($cat_id);
     ?>
     <input type="text" name="the_category_meta_keywords" id="keywords" size="25" value="<?php echo esc_attr($the_category_meta_keywords) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
-    <p class="description"><?php _e( 'カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'カテゴリーページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-noindex-wrap">
@@ -369,7 +369,7 @@ function move_default_category_description(){
   {
     $name_description = __( 'カテゴリーとしてウィジェットやラベル等で表示される名前です。', THEME_NAME );
     if ($current_screen->id == 'edit-category') {
-      $description = __( '基本的にカテゴリ設定の一覧テーブルに説明文を表示するための入力です。', THEME_NAME );
+      $description = __( '基本的にカテゴリー設定の一覧テーブルに説明文を表示するための入力です。', THEME_NAME );
     } else {
       $description = __( '基本的にタグ設定の一覧テーブルに説明文を表示するための入力です。', THEME_NAME );
     }

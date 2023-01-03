@@ -257,7 +257,7 @@ if (get_appeal_area_button_background_color()): ?>
 $cats = get_categories();
 $colors = array();
 $text_colors = array();
-//カテゴリ色の振り分け
+//カテゴリー色の振り分け
 foreach ($cats as $cat) {
   $color = get_the_category_color($cat->cat_ID);
   $text_color = get_the_category_text_color($cat->cat_ID);

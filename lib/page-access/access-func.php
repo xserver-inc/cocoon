@@ -51,14 +51,14 @@ if ( !function_exists( 'get_accesses_post_type' ) ):
 function get_accesses_post_type(){
   global $post;
   global $post_type;
-  
+
   if (isset($post->post_type)) {
-    $res = $post->post_type; 
+    $res = $post->post_type;
   } elseif (isset($post_type)) {
-    $res = $post_type; 
+    $res = $post_type;
   } else {
     $res = 'post'; //single
-  }  
+  }
   return $res;
 }
 endif;
@@ -164,7 +164,7 @@ endif;
 //DBにアクセスをカウントする
 if ( !function_exists( 'logging_page_access' ) ):
 function logging_page_access($post_id = null, $post_type = 'post'){
-  
+
   $res = false;
   //投稿・固定ページのみでカウントする
   if (is_access_count_enable()
@@ -360,11 +360,11 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   //カテゴリー配列を文字列に変換
   $cat_ids = is_array($cat_ids) ? $cat_ids : array();
   $cats = implode(',', $cat_ids);
-  
+
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
     if ($cat_ids) {
-      //子孫カテゴリも含める場合
+      //子孫カテゴリーも含める場合
       if ($children) {
         $categories = $cat_ids;
         $res = $categories;
@@ -388,7 +388,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     $excats = implode(',', $exclude_cat_ids);
     $type = get_accesses_post_type();
     $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats.'&author='.$author.'&post_type='.$post_type;
-    
+
     $cache = get_transient( $transient_id );
     if ($cache) {
       if (DEBUG_MODE && is_user_administrator()) {
@@ -425,7 +425,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   if (!is_numeric($limit)) {
     $limit = 5;
   }
-  //カテゴリを指定する場合
+  //カテゴリーを指定する場合
   if (is_ids_exist($cat_ids) || is_ids_exist($exclude_cat_ids)) {
     global $post;
     $term_relationships = $wpdb->term_relationships;
@@ -454,7 +454,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
       SELECT {$joined_table}.post_id, SUM({$joined_table}.count) AS sum_count, {$joined_table}.term_taxonomy_id, {$joined_table}.taxonomy
         FROM (
 
-          #カテゴリとアクセステーブルを内部結合してグルーピングし並び替えた結果
+          #カテゴリーとアクセステーブルを内部結合してグルーピングし並び替えた結果
           SELECT {$access_table}.post_id, {$access_table}.count, {$term_relationships}.term_taxonomy_id, {$term_taxonomy}.taxonomy
             FROM {$term_relationships}
             INNER JOIN {$access_table} ON {$term_relationships}.object_id = {$access_table}.post_id
@@ -462,7 +462,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
             $where #WHERE句
             GROUP BY {$access_table}.id
 
-        ) AS {$joined_table} #カテゴリとアクセステーブルを内部結合した仮の名前
+        ) AS {$joined_table} #カテゴリーとアクセステーブルを内部結合した仮の名前
 
         GROUP BY {$joined_table}.post_id
         ORDER BY sum_count DESC
@@ -482,7 +482,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   }
 
   $records = $wpdb->get_results( $query );
-  
+
   if (is_access_count_cache_enable() && $records) {
     set_transient( $transient_id, $records, 60 * get_access_count_cache_interval() );
   }
@@ -512,7 +512,7 @@ function get_several_jetpack_access_count($post_id = null, $days = -1){
       $jetpack_views = stats_get_csv('postviews', array('days' => $days, 'limit' => 1, 'post_id' => $post_id ));
       if (isset($jetpack_views[0]['views'])) {
         $views = $jetpack_views[0]['views'];
-      }      
+      }
     }
   }
   return $views;

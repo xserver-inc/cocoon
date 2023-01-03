@@ -258,7 +258,7 @@ endif;
 //フォントページタイプ用のカテゴリーID取得
 if ( !function_exists( 'get_index_list_category_ids' ) ):
 function get_index_list_category_ids(){
-  //チェックリストのカテゴリを読み込む
+  //チェックリストのカテゴリーを読み込む
   $cat_ids = get_index_category_ids();
   //順番を変更したい場合はカンマテキストのほうを読み込む
   $cat_comma = trim(get_index_category_ids_comma_text());

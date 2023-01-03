@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-12-25 19:47+0900\n"
-"PO-Revision-Date: 2022-12-25 19:54+0900\n"
+"PO-Revision-Date: 2023-01-03 19:28+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -2853,41 +2853,41 @@ msgid "「%s」の記事一覧です。"
 msgstr "Articles of \"%s\"."
 
 #: lib/content-category.php:222
-msgid "カテゴリ色"
+msgid "カテゴリー色"
 msgstr "Category color"
 
 #: lib/content-category.php:231
-msgid "カテゴリの色を指定します。"
+msgid "カテゴリーの色を指定します。"
 msgstr "Specifies the category color."
 
 #: lib/content-category.php:240
-msgid "カテゴリの文字色を指定します。入力しない場合は、白色になります。"
+msgid "カテゴリーの文字色を指定します。入力しない場合は、白色になります。"
 msgstr ""
 "Specifies the category text color. If no color is specified, white is used "
 "by default."
 
 #: lib/content-category.php:245
-msgid "カテゴリタイトル"
+msgid "カテゴリータイトル"
 msgstr "Category title"
 
 #: lib/content-category.php:250
-msgid "カテゴリページのタイトル"
+msgid "カテゴリーページのタイトル"
 msgstr "Title of the category page"
 
 #: lib/content-category.php:251
 msgid ""
-"カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入"
-"力したテキストが適用されます。"
+"カテゴリーページのタイトルを指定します。カテゴリーページのタイトルタグにここ"
+"で入力したテキストが適用されます。"
 msgstr ""
 "Specifies a title for the category page. The text entered here will be "
 "applied to the title tag on the category page."
 
 #: lib/content-category.php:255
-msgid "カテゴリ本文"
+msgid "カテゴリー本文"
 msgstr "Category body"
 
 #: lib/content-category.php:260
-msgid "カテゴリページで表示されるメインコンテンツを入力してください。"
+msgid "カテゴリーページで表示されるメインコンテンツを入力してください。"
 msgstr "Enter the main content that will appear on the category page."
 
 #: lib/content-category.php:269 lib/content-tag.php:218
@@ -2901,12 +2901,12 @@ msgid "メタディスクリプション"
 msgstr "Meta description"
 
 #: lib/content-category.php:277
-msgid "カテゴリページの説明文を入力してください"
+msgid "カテゴリーページの説明文を入力してください"
 msgstr "Enter a description for the category page."
 
 #: lib/content-category.php:279
 msgid ""
-"カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプ"
+"カテゴリーページの説明を入力します。ここに入力したテキストはメタディスクリプ"
 "ションタグとして利用されます。"
 msgstr ""
 "Enter a description for the category page. The text entered here will be "
@@ -2924,8 +2924,8 @@ msgstr "Keyword 1, Keyword 2, Keyword 3, ..."
 
 #: lib/content-category.php:289
 msgid ""
-"カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり"
-"意味のない設定となっています。"
+"カテゴリーページのメタキーワードをカンマ区切りで入力してください。※現在はあま"
+"り意味のない設定となっています。"
 msgstr ""
 "Enter category page meta keywords, separated by commas. *This setting does "
 "not currently have much effect."
@@ -2957,7 +2957,7 @@ msgid "カテゴリーとしてウィジェットやラベル等で表示され�
 msgstr "It is the name displayed by widgets, labels, etc. as a category."
 
 #: lib/content-category.php:372
-msgid "基本的にカテゴリ設定の一覧テーブルに説明文を表示するための入力です。"
+msgid "基本的にカテゴリー設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr ""
 "This is basically entered for displaying a description in the list table of "
 "the category settings."
@@ -3018,8 +3018,8 @@ msgstr "Exclude ads"
 
 #: lib/custom-fields/ad-field.php:32
 msgid ""
-"ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリごと"
-"の設定も行えます。"
+"ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリーご"
+"との設定も行えます。"
 msgstr ""
 "Toggle display of ads on this page (such as AdSense). You can also configure "
 "the settings for each category from \"Ads\" settings."
@@ -3107,7 +3107,7 @@ msgid "メインカテゴリー"
 msgstr "Main category"
 
 #: lib/custom-fields/page-field.php:41
-msgid "このページで優先するカテゴリを選択します。"
+msgid "このページで優先するカテゴリーを選択します。"
 msgstr "Select your preferred category on this page."
 
 #: lib/custom-fields/page-field.php:41
@@ -3115,7 +3115,7 @@ msgid "優先カテゴリーは、アイキャッチやパンくずリストに�
 msgstr "Prioritized categories is applied to eye-catching and breadcrumb list."
 
 #: lib/custom-fields/page-field.php:41
-msgid "カテゴリ選択直後はすぐにセレクトボックスに反映されません。"
+msgid "カテゴリー選択直後はすぐにセレクトボックスに反映されません。"
 msgstr "Category selection not be reflected in the Select Box immediately"
 
 #: lib/custom-fields/page-field.php:41
@@ -3308,7 +3308,7 @@ msgstr "Enter meta keywords related to the article, separated by commas."
 #: lib/custom-fields/seo-field.php:103
 msgid ""
 "記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合"
-"は、カテゴリ名などから自動で設定されます。"
+"は、カテゴリー名などから自動で設定されます。"
 msgstr ""
 "Enter keywords related to the article, separated by commas. If left blank, "
 "keywords will be set automatically from the category name, etc."
@@ -4907,7 +4907,7 @@ msgid "バージョン："
 msgstr "Version:"
 
 #: lib/page-settings/about-forms.php:80
-msgid "カテゴリ数："
+msgid "カテゴリー数："
 msgstr "Category count:"
 
 #: lib/page-settings/about-forms.php:83
@@ -5702,7 +5702,7 @@ msgid "広告除外設定"
 msgstr "Ad exclusion settings"
 
 #: lib/page-settings/ads-forms.php:300
-msgid "広告を表示したくないページやカテゴリの設定です。"
+msgid "広告を表示したくないページやカテゴリーの設定です。"
 msgstr ""
 "This is for setting pages or categories for which you do not want to display "
 "ads."
@@ -5727,7 +5727,7 @@ msgid "広告除外カテゴリー"
 msgstr "Ad exclusion category"
 
 #: lib/page-settings/ads-forms.php:326
-msgid "広告を非表示にするカテゴリを選択してください。"
+msgid "広告を非表示にするカテゴリーを選択してください。"
 msgstr "Select a category for which you want to hide ads."
 
 #: lib/page-settings/ads-funcs.php:38
@@ -6247,7 +6247,7 @@ msgid "AMP除外カテゴリー"
 msgstr "AMP exclusion categories"
 
 #: lib/page-settings/amp-forms.php:121
-msgid "AMPページを生成しないカテゴリを選択してください。"
+msgid "AMPページを生成しないカテゴリーを選択してください。"
 msgstr "Select a category that does not generate AMP."
 
 #: lib/page-settings/analytics-forms.php:13
@@ -7431,9 +7431,9 @@ msgstr "Tag"
 
 #: lib/page-settings/carousel-forms.php:82
 msgid ""
-"カルーセルと関連付けるカテゴリもしくはタグを選択してください。人気記事を有効"
-"にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び替"
-"え」で設定した順番で表示されます。"
+"カルーセルと関連付けるカテゴリーもしくはタグを選択してください。人気記事を有"
+"効にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び"
+"替え」で設定した順番で表示されます。"
 msgstr ""
 "Select the category or tag associated with the carousel. If a popular "
 "article is enabled and a category or tag is selected, all will be added up "
@@ -8795,7 +8795,8 @@ msgstr "Display eye-catching labels"
 
 #: lib/page-settings/image-forms.php:72
 msgid ""
-"投稿・固定ページのアイキャッチに表示されるカテゴリラベルの表示切り替えです。"
+"投稿・固定ページのアイキャッチに表示されるカテゴリーラベルの表示切り替えで"
+"す。"
 msgstr ""
 "Toggle display of the category label displayed for eye-catching images on "
 "post/pages."
@@ -9085,7 +9086,7 @@ msgstr "Tab list"
 
 #: lib/page-settings/index-forms.php:52 lib/page-settings/index-forms.php:53
 #: lib/page-settings/index-forms.php:54
-msgid "カテゴリごと"
+msgid "カテゴリーごと"
 msgstr "By categories"
 
 #: lib/page-settings/index-forms.php:53
@@ -9134,8 +9135,8 @@ msgstr "Enter the comma text for the category ID"
 
 #: lib/page-settings/index-forms.php:70
 msgid ""
-"意図通りの順番でカテゴリを表示する場合は、カテゴリーIDをカンマ区切りで入力し"
-"てください。"
+"意図通りの順番でカテゴリーを表示する場合は、カテゴリーIDをカンマ区切りで入力"
+"してください。"
 msgstr ""
 "If you want the categories to be displayed in the order you intended, enter "
 "the category IDs separated by commas."
@@ -9149,7 +9150,7 @@ msgstr ""
 "the checkbox."
 
 #: lib/page-settings/index-forms.php:72
-msgid "カテゴリ表示の順番を並び替える場合はこちら"
+msgid "カテゴリー表示の順番を並び替える場合はこちら"
 msgstr "Click here to rearrange the order of category display"
 
 #: lib/page-settings/index-forms.php:79
@@ -9206,8 +9207,8 @@ msgstr "Number of new entry cards displayed"
 
 #: lib/page-settings/index-forms.php:100
 msgid ""
-"フロントページタイプを「カテゴリごと」にした際に表示される新着エントリーカー"
-"ド数を設定します。"
+"フロントページタイプを「カテゴリーごと」にした際に表示される新着エントリー"
+"カード数を設定します。"
 msgstr ""
 "Set the number of new entry cards displayed when the front page type is set "
 "to “By category”."
@@ -9218,14 +9219,14 @@ msgstr "Number of category entry cards displayed"
 
 #: lib/page-settings/index-forms.php:106
 msgid ""
-"フロントページのインデックスでカテゴリごとに表示するエントリーカード数を設定"
-"します。"
+"フロントページのインデックスでカテゴリーごとに表示するエントリーカード数を設"
+"定します。"
 msgstr ""
 "Set the number of entry cards to be displayed for each category in the index "
 "on the front page."
 
 #: lib/page-settings/index-forms.php:108
-msgid "「カテゴリごと」表示でカード表示数を変更する場合はこちら"
+msgid "「カテゴリーごと」表示でカード表示数を変更する場合はこちら"
 msgstr ""
 "Click here to change the number of cards displayed in “By Category” display"
 
@@ -10201,8 +10202,8 @@ msgstr "A canonical tag is inserted in posts/pages by default in WordPress."
 
 #: lib/page-settings/seo-forms.php:31
 msgid ""
-"この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入さ"
-"れます。"
+"この機能を有効にするとトップページやカテゴリーページ等にもcanonicalタグが挿入"
+"されます。"
 msgstr ""
 "When this feature is enabled, a canonical tag is also inserted in the home "
 "page, category pages, etc."
@@ -10220,19 +10221,19 @@ msgstr ""
 "next/prev setting will be used by default in WordPress."
 
 #: lib/page-settings/seo-forms.php:38
-msgid "カテゴリページをnoindexとする"
+msgid "カテゴリーページをnoindexとする"
 msgstr "Set category pages to noindex"
 
 #: lib/page-settings/seo-forms.php:39
-msgid "カテゴリページ全体をnoindex設定にします。"
+msgid "カテゴリーページ全体をnoindex設定にします。"
 msgstr "Set all category pages to noindex."
 
 #: lib/page-settings/seo-forms.php:43
-msgid "カテゴリページの2ページ目以降をnoindexとする"
+msgid "カテゴリーページの2ページ目以降をnoindexとする"
 msgstr "Set 2nd and later category pages to noindex"
 
 #: lib/page-settings/seo-forms.php:44
-msgid "カテゴリページのトップページ以外はnoindex設定にします。"
+msgid "カテゴリーページのトップページ以外はnoindex設定にします。"
 msgstr "Set category pages except the homepage to noindex."
 
 #: lib/page-settings/seo-forms.php:49
@@ -10256,7 +10257,7 @@ msgid "その他のアーカイブページをnoindexとする"
 msgstr "Set other archive pages to noindex"
 
 #: lib/page-settings/seo-forms.php:61
-msgid "カテゴリ・タグ以外のアーカイブページをnoindex設定にします。"
+msgid "カテゴリー・タグ以外のアーカイブページをnoindex設定にします。"
 msgstr "Set archive pages other than category and tag to noindex."
 
 #: lib/page-settings/seo-forms.php:64
@@ -10309,11 +10310,11 @@ msgstr ""
 "engines will differ depending on the date displayed."
 
 #: lib/page-settings/single-forms.php:13
-msgid "カテゴリ・タグ表示設定"
+msgid "カテゴリー・タグ表示設定"
 msgstr "Category and tag display settings"
 
 #: lib/page-settings/single-forms.php:16
-msgid "投稿本文下のカテゴリとタグの表示を設定します。"
+msgid "投稿本文下のカテゴリーとタグの表示を設定します。"
 msgstr "Set the display of categories and tags below body text in a post."
 
 #: lib/page-settings/single-forms.php:31
@@ -10321,19 +10322,19 @@ msgid "デモはランダムです。"
 msgstr "Demo is random."
 
 #: lib/page-settings/single-forms.php:39
-msgid "カテゴリ・タグ表示"
+msgid "カテゴリー・タグ表示"
 msgstr "Category and tag display"
 
 #: lib/page-settings/single-forms.php:44
-msgid "カテゴリ・タグ2列"
+msgid "カテゴリー・タグ2列"
 msgstr "Categories/tags 2-column"
 
 #: lib/page-settings/single-forms.php:45
-msgid "カテゴリ・タグ1列"
+msgid "カテゴリー・タグ1列"
 msgstr "Categories/tags 1-column"
 
 #: lib/page-settings/single-forms.php:46
-msgid "カテゴリのみ"
+msgid "カテゴリーのみ"
 msgstr "Categories only"
 
 #: lib/page-settings/single-forms.php:47
@@ -10341,15 +10342,15 @@ msgid "タグのみ"
 msgstr "Tags only"
 
 #: lib/page-settings/single-forms.php:48
-msgid "カテゴリもタグも表示しない"
+msgid "カテゴリーもタグも表示しない"
 msgstr "Do not display categories or tags"
 
 #: lib/page-settings/single-forms.php:51
-msgid "カテゴリとタグの表示を制御します。"
+msgid "カテゴリーとタグの表示を制御します。"
 msgstr "Control the display of categories and tags."
 
 #: lib/page-settings/single-forms.php:59
-msgid "カテゴリ・タグ表示位置"
+msgid "カテゴリー・タグ表示位置"
 msgstr "Category and tag display position"
 
 #: lib/page-settings/single-forms.php:66
@@ -10357,7 +10358,7 @@ msgid "本文下（デフォルト）"
 msgstr "Content bottom (default)"
 
 #: lib/page-settings/single-forms.php:69
-msgid "カテゴリとタグの表示位置を設定します。"
+msgid "カテゴリーとタグの表示位置を設定します。"
 msgstr "Sets the display of categories and tags."
 
 #: lib/page-settings/single-forms.php:83
@@ -10556,15 +10557,15 @@ msgstr "Display posts of the same category"
 
 #: lib/page-settings/single-forms.php:361
 msgid ""
-"投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリが設定し"
-"てある場合は、複数に属するものが表示されます。"
+"投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリーが設定"
+"してある場合は、複数に属するものが表示されます。"
 msgstr ""
 "Do you want to display posts and page feed navigation of the same category? "
 "If multiple categories have been set, the items that belong to multiple "
 "categories will be displayed."
 
 #: lib/page-settings/single-forms.php:366
-msgid "ページ送りナビに表示させないカテゴリを選択してください。"
+msgid "ページ送りナビに表示させないカテゴリーを選択してください。"
 msgstr ""
 "Select a category to be excluded from display in the page feed navigation."
 
@@ -12159,7 +12160,7 @@ msgstr ""
 "the URL that includes the character string."
 
 #: lib/page-speed-up/speed-up-forms.php:64
-msgid "カテゴリページ全体を除外する例：/category/"
+msgid "カテゴリーページ全体を除外する例：/category/"
 msgstr "Example of excluding the entire category page: /category/"
 
 #: lib/page-speed-up/speed-up-forms.php:81
@@ -13507,7 +13508,7 @@ msgid "全ての新着記事（全ページで表示）"
 msgstr "All new articles (displayed on all pages)"
 
 #: lib/widgets/new-entries.php:146
-msgid "カテゴリ別新着記事（投稿・カテゴリで表示）"
+msgid "カテゴリー別新着記事（投稿・カテゴリーで表示）"
 msgstr "New articles by category (displayed on posts and categories)"
 
 #: lib/widgets/new-entries.php:154
@@ -13595,7 +13596,7 @@ msgid "全ての人気記事（全ページで表示）"
 msgstr "All popular articles (displayed on all pages)"
 
 #: lib/widgets/popular-entries.php:185
-msgid "カテゴリ別人気記事（投稿・カテゴリで表示）"
+msgid "カテゴリー別人気記事（投稿・カテゴリーで表示）"
 msgstr "Popular articles by category (displayed on posts and categories)"
 
 #: lib/widgets/popular-entries.php:190
@@ -14547,9 +14548,9 @@ msgstr "Copy"
 #~ msgstr "Button"
 
 #~ msgid ""
-#~ "基本的に、カテゴリ設定一覧ページに説明文を表示するための入力です。本文が入"
-#~ "力されていない場合は本文代わりに、メタディスクリプションが入力されてない場"
-#~ "合はメタディスクリプション代わりに利用されることもあります。"
+#~ "基本的に、カテゴリー設定一覧ページに説明文を表示するための入力です。本文が"
+#~ "入力されていない場合は本文代わりに、メタディスクリプションが入力されてない"
+#~ "場合はメタディスクリプション代わりに利用されることもあります。"
 #~ msgstr ""
 #~ "It is basically the category settings list page display the description "
 #~ "input."

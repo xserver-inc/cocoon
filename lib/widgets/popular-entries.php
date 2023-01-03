@@ -25,7 +25,7 @@ class PopularEntryWidgetItem extends WP_Widget {
   }
   function widget($args, $instance) {
     extract( $args );
-    //ウィジェットモード（全ての人気記事を表示するか、カテゴリ別に表示するか）
+    //ウィジェットモード（全ての人気記事を表示するか、カテゴリー別に表示するか）
     $widget_mode = apply_filters( 'widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
     $title = empty($instance['title']) ? '' : $instance['title'];
@@ -75,7 +75,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     //classにwidgetと一意となるクラス名を追加する
     if ( //「表示モード」が「全ての人気記事」のとき
                ($widget_mode == WM_DEFAULT) ||
-               //「表示モード」が「カテゴリ別人気記事」のとき
+               //「表示モード」が「カテゴリー別人気記事」のとき
                ( ($widget_mode == 'category') && get_category_ids() ) ):
       echo $args['before_widget'];
       if (!is_null($title)) {
@@ -176,13 +176,13 @@ class PopularEntryWidgetItem extends WP_Widget {
     //_v($exclude_cat_ids);
     //var_dump($instance);
     ?>
-    <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
+    <?php //ウィジェットモード（全てか、カテゴリー別か） ?>
     <p>
       <label for="<?php echo $this->get_field_id('widget_mode'); ?>">
         <?php _e( '表示モード', THEME_NAME ) ?>
       </label><br />
       <input class="widefat" id="<?php echo $this->get_field_id('widget_mode'); ?>" name="<?php echo $this->get_field_name('widget_mode'); ?>"  type="radio" value="all" <?php echo ( ($widget_mode == WM_DEFAULT || !$widget_mode ) ? ' checked="checked"' : ""); ?> /><?php _e( '全ての人気記事（全ページで表示）', THEME_NAME ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('widget_mode'); ?>" name="<?php echo $this->get_field_name('widget_mode'); ?>"  type="radio" value="category"<?php echo ($widget_mode == 'category' ? ' checked="checked"' : ""); ?> /><?php _e( 'カテゴリ別人気記事（投稿・カテゴリで表示）', THEME_NAME ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('widget_mode'); ?>" name="<?php echo $this->get_field_name('widget_mode'); ?>"  type="radio" value="category"<?php echo ($widget_mode == 'category' ? ' checked="checked"' : ""); ?> /><?php _e( 'カテゴリー別人気記事（投稿・カテゴリーで表示）', THEME_NAME ) ?><br />
     </p>
     <?php //タイトル入力フォーム ?>
     <p>
