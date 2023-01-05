@@ -8552,6 +8552,8 @@ body.wp-admin {
 }
 .admin-settings .demo .info-list-item-date {
   font-size: 0.8em;
+  width: 136px;
+  text-align: right;
 }
 .admin-settings .demo .info-list-item-content-link {
   color: #333;
@@ -16272,6 +16274,8 @@ body.wp-admin {
 }
 .admin-settings .demo .info-list-item-date {
   font-size: 0.8em;
+  width: 136px;
+  text-align: right;
 }
 .admin-settings .demo .info-list-item-content-link {
   color: #333;
