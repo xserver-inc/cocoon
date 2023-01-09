@@ -10,10 +10,6 @@
   "bugs": {
     "url": "https://github.com/xserver-inc/cocoon/issues"
   },
-  "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.9.0 <7"
-  },
   "dependencies": {
     "@wordpress/prettier-config": "^2.6.0"
   },
