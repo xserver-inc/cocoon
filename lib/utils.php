@@ -2423,9 +2423,10 @@ endif;
 //人間感覚の年の取得
 if ( !function_exists( 'get_human_years_ago' ) ):
 function get_human_years_ago( $from, $unit = '' ) {
-  $to = time();
-  $diff = (int) abs($to - $from);
-  $years = floor($diff / 31536000);
+  $to    = date('Ymd');
+  $from  = date('Ymd', $from);
+  $years = floor(($to - $from) / 10000);
+
   $since = sprintf('%s'.$unit, $years);
   return $since;
 }
