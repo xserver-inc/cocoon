@@ -198,8 +198,6 @@ function manage_cocoon_pwa_files(){
     //service-worker.js
     $service_worker_ver = THEME_NAME.'_'.PWA_SERVICE_WORKER_VERSION.$modified_date; //PWAに変更を加えたらバージョン変更
     $site_logo = get_the_site_logo_url();
-    $jquery_core_url = get_jquery_core_url(get_jquery_version());
-    $jquery_migrate_url = get_jquery_migrate_url(get_jquery_migrate_version());
     $theme_js_url = THEME_JS_URL;
     $theme_child_js_url = THEME_CHILD_JS_URL;
     $font_awesome_url = get_site_icon_font_url();
