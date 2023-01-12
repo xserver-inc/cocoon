@@ -13,6 +13,33 @@ Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+:root {
+  --twitter-color: #1da1f2;
+  --facebook-color: #3b5998;
+  --hatebu-color: #2c6ebd;
+  --google-plus-color: #dd4b39;
+  --pocket-color: #ef4056;
+  --line-color: #00c300;
+  --linkedin-color: #0077b5;
+  --website-color: #002561;
+  --instagram-color: #405de6;
+  --pinterest-color: #bd081c;
+  --youtube-color: #cd201f;
+  --tiktok-color: #000000;
+  --note-color: #41c9b4;
+  --soundcloud-color: #ff8800;
+  --flickr-color: #111;
+  --amazon-color: #ff9900;
+  --twitch-color: #6441a4;
+  --rakuten-color: #bf0000;
+  --rakuten-room-color: #c61e79;
+  --slack-color: #e01563;
+  --github-color: #4078c0;
+  --codepen-color: #333;
+  --feedly-color: #2bb24c;
+  --rss-color: #f26522;
+}
+
 .faw::before {
   font-family: FontAwesome;
   padding-right: 4px;
@@ -1182,73 +1209,73 @@ img.emoji {
   cursor: pointer;
 }
 .bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
-  background-color: #1da1f2;
+  background-color: var(--twitter-color);
 }
 .bc-brand-color.sns-share .facebook-button, .bc-brand-color.sns-follow .facebook-button {
-  background-color: #3b5998;
+  background-color: var(--facebook-color);
 }
 .bc-brand-color.sns-share .hatebu-button, .bc-brand-color.sns-follow .hatebu-button {
-  background-color: #2c6ebd;
+  background-color: var(--hatebu-color);
 }
 .bc-brand-color.sns-share .google-plus-button, .bc-brand-color.sns-follow .google-plus-button {
-  background-color: #dd4b39;
+  background-color: var(--google-plus-color);
 }
 .bc-brand-color.sns-share .pocket-button, .bc-brand-color.sns-follow .pocket-button {
-  background-color: #ef4056;
+  background-color: var(--pocket-color);
 }
 .bc-brand-color.sns-share .line-button, .bc-brand-color.sns-follow .line-button {
-  background-color: #00c300;
+  background-color: var(--line-color);
 }
 .bc-brand-color.sns-share .website-button, .bc-brand-color.sns-follow .website-button {
-  background-color: #002561;
+  background-color: var(--website-color);
 }
 .bc-brand-color.sns-share .instagram-button, .bc-brand-color.sns-follow .instagram-button {
-  background-color: #405de6;
+  background-color: var(--instagram-color);
 }
 .bc-brand-color.sns-share .pinterest-button, .bc-brand-color.sns-follow .pinterest-button {
-  background-color: #bd081c;
+  background-color: var(--pinterest-color);
 }
 .bc-brand-color.sns-share .youtube-button, .bc-brand-color.sns-follow .youtube-button {
-  background-color: #cd201f;
+  background-color: var(--youtube-color);
 }
 .bc-brand-color.sns-share .tiktok-button, .bc-brand-color.sns-follow .tiktok-button {
-  background-color: #000000;
+  background-color: var(--tiktok-color);
 }
 .bc-brand-color.sns-share .linkedin-button, .bc-brand-color.sns-follow .linkedin-button {
-  background-color: #0077b5;
+  background-color: var(--linkedin-color);
 }
 .bc-brand-color.sns-share .note-button, .bc-brand-color.sns-follow .note-button {
-  background-color: #41c9b4;
+  background-color: var(--note-color);
 }
 .bc-brand-color.sns-share .soundcloud-button, .bc-brand-color.sns-follow .soundcloud-button {
-  background-color: #ff8800;
+  background-color: var(--soundcloud-color);
 }
 .bc-brand-color.sns-share .flickr-button, .bc-brand-color.sns-follow .flickr-button {
-  background-color: #111;
+  background-color: var(--flickr-color);
 }
 .bc-brand-color.sns-share .amazon-button, .bc-brand-color.sns-follow .amazon-button {
-  background-color: #ff9900;
+  background-color: var(--amazon-color);
 }
 .bc-brand-color.sns-share .twitch-button, .bc-brand-color.sns-follow .twitch-button {
-  background-color: #6441a4;
+  background-color: var(--twitch-color);
 }
 .bc-brand-color.sns-share .rakuten-room-button, .bc-brand-color.sns-follow .rakuten-room-button {
-  background-color: #c61e79;
+  background-color: var(--rakuten-room-color);
 }
 .bc-brand-color.sns-share .slack-button, .bc-brand-color.sns-follow .slack-button {
-  background-color: #e01563;
+  background-color: var(--slack-color);
 }
 .bc-brand-color.sns-share .github-button, .bc-brand-color.sns-follow .github-button {
-  background-color: #4078c0;
+  background-color: var(--github-color);
 }
 .bc-brand-color.sns-share .codepen-button, .bc-brand-color.sns-follow .codepen-button {
-  background-color: #333;
+  background-color: var(--codepen-color);
 }
 .bc-brand-color.sns-share .feedly-button, .bc-brand-color.sns-follow .feedly-button {
-  background-color: #2bb24c;
+  background-color: var(--feedly-color);
 }
 .bc-brand-color.sns-share .rss-button, .bc-brand-color.sns-follow .rss-button {
-  background-color: #f26522;
+  background-color: var(--rss-color);
 }
 .bc-brand-color-white.sns-share a, .bc-brand-color-white.sns-follow a {
   background-color: #fff;
@@ -1260,100 +1287,100 @@ img.emoji {
   opacity: 0.5;
 }
 .bc-brand-color-white.sns-share .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
-  color: #1da1f2;
-  border-color: #1da1f2;
+  color: var(--twitter-color);
+  border-color: var(--twitter-color);
 }
 .bc-brand-color-white.sns-share .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
-  color: #3b5998;
-  border-color: #3b5998;
+  color: var(--facebook-color);
+  border-color: var(--facebook-color);
 }
 .bc-brand-color-white.sns-share .hatebu-button, .bc-brand-color-white.sns-follow .hatebu-button {
-  color: #2c6ebd;
-  border-color: #2c6ebd;
+  color: var(--hatebu-color);
+  border-color: var(--hatebu-color);
 }
 .bc-brand-color-white.sns-share .google-plus-button, .bc-brand-color-white.sns-follow .google-plus-button {
-  color: #dd4b39;
-  border-color: #dd4b39;
+  color: var(--google-plus-color);
+  border-color: var(--google-plus-color);
 }
 .bc-brand-color-white.sns-share .pocket-button, .bc-brand-color-white.sns-follow .pocket-button {
-  color: #ef4056;
-  border-color: #ef4056;
+  color: var(--pocket-color);
+  border-color: var(--pocket-color);
 }
 .bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border-color: #00c300;
+  color: var(--line-color);
+  border-color: var(--line-color);
 }
 .bc-brand-color-white.sns-share .website-button, .bc-brand-color-white.sns-follow .website-button {
-  color: #002561;
-  border-color: #002561;
+  color: var(--website-color);
+  border-color: var(--website-color);
 }
 .bc-brand-color-white.sns-share .instagram-button, .bc-brand-color-white.sns-follow .instagram-button {
-  color: #405de6;
-  border-color: #405de6;
+  color: var(--instagram-color);
+  border-color: var(--instagram-color);
 }
 .bc-brand-color-white.sns-share .pinterest-button, .bc-brand-color-white.sns-follow .pinterest-button {
-  color: #bd081c;
-  border-color: #bd081c;
+  color: var(--pinterest-color);
+  border-color: var(--pinterest-color);
 }
 .bc-brand-color-white.sns-share .youtube-button, .bc-brand-color-white.sns-follow .youtube-button {
-  color: #cd201f;
-  border-color: #cd201f;
+  color: var(--youtube-color);
+  border-color: var(--youtube-color);
 }
 .bc-brand-color-white.sns-share .tiktok-button, .bc-brand-color-white.sns-follow .tiktok-button {
-  color: #000000;
-  border-color: #000000;
+  color: var(--tiktok-color);
+  border-color: var(--tiktok-color);
 }
 .bc-brand-color-white.sns-share .linkedin-button, .bc-brand-color-white.sns-follow .linkedin-button {
-  color: #0077b5;
-  border-color: #0077b5;
+  color: var(--linkedin-color);
+  border-color: var(--linkedin-color);
 }
 .bc-brand-color-white.sns-share .note-button, .bc-brand-color-white.sns-follow .note-button {
-  color: #41c9b4;
-  border-color: #41c9b4;
+  color: var(--note-color);
+  border-color: var(--note-color);
 }
 .bc-brand-color-white.sns-share .soundcloud-button, .bc-brand-color-white.sns-follow .soundcloud-button {
-  color: #ff8800;
-  border-color: #ff8800;
+  color: var(--soundcloud-color);
+  border-color: var(--soundcloud-color);
 }
 .bc-brand-color-white.sns-share .soundcloud-button, .bc-brand-color-white.sns-follow .soundcloud-button {
-  color: #ff8800;
-  border-color: #ff8800;
+  color: var(--soundcloud-color);
+  border-color: var(--soundcloud-color);
 }
 .bc-brand-color-white.sns-share .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
-  color: #111;
-  border-color: #111;
+  color: var(--flickr-color);
+  border-color: var(--flickr-color);
 }
 .bc-brand-color-white.sns-share .amazon-button, .bc-brand-color-white.sns-follow .amazon-button {
-  color: #ff9900;
-  border-color: #ff9900;
+  color: var(--amazon-color);
+  border-color: var(--amazon-color);
 }
 .bc-brand-color-white.sns-share .twitch-button, .bc-brand-color-white.sns-follow .twitch-button {
-  color: #6441a4;
-  border-color: #6441a4;
+  color: var(--twitch-color);
+  border-color: var(--twitch-color);
 }
 .bc-brand-color-white.sns-share .rakuten-room-button, .bc-brand-color-white.sns-follow .rakuten-room-button {
-  color: #c61e79;
-  border-color: #c61e79;
+  color: var(--rakuten-room-color);
+  border-color: var(--rakuten-room-color);
 }
 .bc-brand-color-white.sns-share .slack-button, .bc-brand-color-white.sns-follow .slack-button {
-  color: #e01563;
-  border-color: #e01563;
+  color: var(--slack-color);
+  border-color: var(--slack-color);
 }
 .bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button {
-  color: #4078c0;
-  border-color: #4078c0;
+  color: var(--github-color);
+  border-color: var(--github-color);
 }
 .bc-brand-color-white.sns-share .codepen-button, .bc-brand-color-white.sns-follow .codepen-button {
-  color: #333;
-  border-color: #333;
+  color: var(--codepen-color);
+  border-color: var(--codepen-color);
 }
 .bc-brand-color-white.sns-share .feedly-button, .bc-brand-color-white.sns-follow .feedly-button {
-  color: #2bb24c;
-  border-color: #2bb24c;
+  color: var(--feedly-color);
+  border-color: var(--feedly-color);
 }
 .bc-brand-color-white.sns-share .rss-button, .bc-brand-color-white.sns-follow .rss-button {
-  color: #f26522;
-  border-color: #f26522;
+  color: var(--rss-color);
+  border-color: var(--rss-color);
 }
 
 .ss-top {
