@@ -2422,13 +2422,20 @@ endif;
 
 //人間感覚の年の取得
 if ( !function_exists( 'get_human_years_ago' ) ):
-function get_human_years_ago( $from, $unit = '' ) {
-  $to    = date('Ymd');
-  $from  = date('Ymd', $from);
-  $years = floor(($to - $from) / 10000);
+// function get_human_years_ago( $from, $unit = '' ) {
+//   $to    = date('Ymd');
+//   $from  = date('Ymd', $from);
+//   $years = floor(($to - $from) / 10000);
 
-  $since = sprintf('%s'.$unit, $years);
-  return $since;
+//   $since = sprintf('%s'.$unit, $years);
+//   return $since;
+// }
+function get_human_years_ago( $from, $unit = '' ) {
+  $from = new DateTime(date('Y-m-d', $from));
+  $to = new DateTime('today');
+  $diff = $from->diff($to);
+  $year = $diff->format('%y'.$unit);
+  return $year;
 }
 endif;
 
