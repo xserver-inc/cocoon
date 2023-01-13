@@ -97,7 +97,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
           <?php
             $options = array(
-              '3' => __( 'jQuery Core 3.6.0', THEME_NAME ),
+              '3' => __( 'jQuery Core 3.6.1', THEME_NAME ),
               '2' => __( 'jQuery Core 2.2.4', THEME_NAME ),
               '1' => __( 'jQuery Core 1.12.4', THEME_NAME ),
             );
