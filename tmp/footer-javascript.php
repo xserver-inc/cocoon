@@ -82,7 +82,7 @@ if (!is_amp()): ?>
   <?php /*固定ヘッダー*/
   if (is_header_fixed()): ?>
   <script>
-  $(function() {
+  (function($) {
     /*固定ヘッダー化*/
     function stickyHeader() {
       if (!$("#header-container").hasClass("fixed-header")) {
@@ -214,7 +214,7 @@ if (!is_amp()): ?>
         }
       }
     });
-  });
+  })(jQuery);
   </script>
   <?php endif //固定ヘッダー ?>
 
