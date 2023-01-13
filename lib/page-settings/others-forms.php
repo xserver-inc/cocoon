@@ -76,7 +76,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
-
+<?php if (false): ?>
 <!-- JavaScriptライブラリ -->
 <div id="others" class="postbox">
   <h2 class="hndle"><?php _e( 'JavaScriptライブラリ設定', THEME_NAME ) ?></h2>
@@ -131,5 +131,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   </div>
 </div>
+<?php endif; ?>
 
 </div><!-- /.metabox-holder -->
