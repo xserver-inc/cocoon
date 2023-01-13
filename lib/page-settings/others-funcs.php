@@ -52,3 +52,23 @@ function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
   return $slug;
 }
 endif;
+
+///////////////////////////////////////////
+// JavaScriptライブラリ
+///////////////////////////////////////////
+
+//jQueryのバージョン
+define('OP_JQUERY_VERSION', 'jquery_version');
+if ( !function_exists( 'get_jquery_version' ) ):
+function get_jquery_version(){
+  return get_theme_option(OP_JQUERY_VERSION, '3');
+}
+endif;
+
+//jQuery Mygrateのバージョン
+define('OP_JQUERY_MIGRATE_VERSION', 'jquery_migrate_version');
+if ( !function_exists( 'get_jquery_migrate_version' ) ):
+function get_jquery_migrate_version(){
+  return get_theme_option(OP_JQUERY_MIGRATE_VERSION, '3');
+}
+endif;
