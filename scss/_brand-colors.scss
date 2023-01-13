@@ -1,27 +1,3 @@
-//汎用色
-//以下の色を変更したらブロックエディターの設定の変更する
-$red_color: #e60033;
-$pink_color: #e95295;
-$purple_color: #884898;
-$deep_color: #55295b;
-$indigo_color: #1e50a2;
-$blue_color: #0095d9;
-$light_blue_color: #2ca9e1;
-$cyan_color: #00a3af;
-$teal_color: #007b43;
-$green_color: #3eb370;
-$light_green_color: #8bc34a;
-$lime_color: #c3d825;
-$yellow_color: #ffd900;
-$amber_color: #ffc107;
-$orange_color: #f39800;
-$deep_orange_color: #ea5506;
-$brown_color: #954e2a;
-$grey_color: #949495;
-$blue_gray_color: #607d8b;
-$black_color: #333;
-$white_color: #fff;
-
 :root{
   //ブランドカラーまとめ
   --twitter-color: #1da1f2;
@@ -48,4 +24,32 @@ $white_color: #fff;
   --codepen-color: #333;
   --feedly-color: #2bb24c;
   --rss-color: #f26522;
+
+  //汎用色
+  //以下の色を変更したらブロックエディターの設定の変更する
+  --red-color: #e60033;
+  --pink-color: #e95295;
+  --purple-color: #884898;
+  --deep-color: #55295b;
+  --indigo-color: #1e50a2;
+  --blue-color: #0095d9;
+  --light-blue-color: #2ca9e1;
+  --cyan-color: #00a3af;
+  --teal-color: #007b43;
+  --green-color: #3eb370;
+  --light-green-color: #8bc34a;
+  --lime-color: #c3d825;
+  --yellow-color: #ffd900;
+  --amber-color: #ffc107;
+  --orange-color: #f39800;
+  --deep-orange-color: #ea5506;
+  --brown-color: #954e2a;
+  --grey-color: #949495;
+  --blue-gray-color: #607d8b;
+  --black-color: #333333;
+  --white-color: #ffffff;
+  --watery-blue-color: #f3fafe;
+  --watery-yellow-color: #fff7cc;
+  --watery-red-color: #fdf2f2;
+  --watery-green-color: #ebf8f4;
 }

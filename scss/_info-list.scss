@@ -18,7 +18,7 @@
 }
 
 .info-list-item-content-link{
-  color: $black_color;
+  color: var(--black-color);
   text-decoration: none;
   &:hover{
     text-decoration: underline;

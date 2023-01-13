@@ -8,7 +8,7 @@ $default_font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 $navi_font: FontAwesome, $default_font;
 
 //テキスト色
-$text_color: $black_color;
+$text_color: var(--black-color);
 $pallid_text_color: #777;
 $x_pallid_text_color: #999;
 $white: #fff;
@@ -458,7 +458,7 @@ $form_padding: 11px;
 // タブボックス
 ///////////////////////////////////////////
 @mixin tabbox_label{
-  background-color: $grey_color;
+  background-color: var(--grey-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;

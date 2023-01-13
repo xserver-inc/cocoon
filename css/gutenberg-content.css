@@ -23,6 +23,31 @@
   --codepen-color: #333;
   --feedly-color: #2bb24c;
   --rss-color: #f26522;
+  --red-color: #e60033;
+  --pink-color: #e95295;
+  --purple-color: #884898;
+  --deep-color: #55295b;
+  --indigo-color: #1e50a2;
+  --blue-color: #0095d9;
+  --light-blue-color: #2ca9e1;
+  --cyan-color: #00a3af;
+  --teal-color: #007b43;
+  --green-color: #3eb370;
+  --light-green-color: #8bc34a;
+  --lime-color: #c3d825;
+  --yellow-color: #ffd900;
+  --amber-color: #ffc107;
+  --orange-color: #f39800;
+  --deep-orange-color: #ea5506;
+  --brown-color: #954e2a;
+  --grey-color: #949495;
+  --blue-gray-color: #607d8b;
+  --black-color: #333333;
+  --white-color: #ffffff;
+  --watery-blue-color: #f3fafe;
+  --watery-yellow-color: #fff7cc;
+  --watery-red-color: #fdf2f2;
+  --watery-green-color: #ebf8f4;
 }
 
 .faw::before {
