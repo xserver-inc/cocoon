@@ -140,9 +140,6 @@ function wp_enqueue_scripts_custom() {
     // Lazy Load
     ///////////////////////////////////////////
     wp_enqueue_lazy_load();
-
-    //タイルカード
-    wp_enqueue_jquery_masonry();
   }
 
   ///////////////////////////////////////////
