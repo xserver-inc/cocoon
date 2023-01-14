@@ -244,6 +244,12 @@ if (get_appeal_area_image_url()): ?>
   background-image: url(<?php echo get_appeal_area_image_url(); ?>);
 }
 <?php endif ?>
+<?php //アピールエリアの高さ
+if (get_appeal_area_height()): ?>
+.appeal-in{
+  min-height: <?php echo get_appeal_area_height(); ?>px;
+}
+<?php endif ?>
 <?php //アピールボタンの背景色
 if (get_appeal_area_button_background_color()): ?>
 .appeal-content .appeal-button{
