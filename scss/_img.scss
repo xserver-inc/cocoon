@@ -22,19 +22,19 @@ img{
 /*ボーダー*/
 .iwe-border img,
 .iwe-border amp-img{
-  border: 1px solid $basic_border_color;
+  border: 1px solid var(--basic-border-color);
   //box-shadow: 0 0 1px rgba(0,0,0,.6);
 }
 
 /*ボーダー（太線）*/
 .iwe-border-bold img,
 .iwe-border-bold amp-img{
-  border: 4px solid $current_bgc;
+  border: 4px solid var(--current-background-color);
 }
 /*シャドー*/
 .iwe-shadow img,
 .iwe-shadow amp-img{
-  box-shadow: 5px 5px 15px $x_thin;
+  box-shadow: 5px 5px 15px var(--x-thin-color);
 }
 /*シャドーペーパー*/
 .iwe-shadow-paper img,

@@ -3,48 +3,45 @@
 //ブランドカラー
 @import 'brand-colors';
 
-//フォント
-$default_font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-$navi_font: FontAwesome, $default_font;
+:root{
+  //フォント
+  --default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
-//テキスト色
-$text_color: var(--black-color);
-$pallid_text_color: #777;
-$x_pallid_text_color: #999;
-$white: #fff;
+  //テキスト色
+  --text-color: #333;
+  --pallid-text-color: #777;
+  --x-pallid-text-color: #999;
 
-//テキストサイズ
-$text_size_default: 18px;
-$text_size_s: 0.8em;
-$text_size_xs: 0.6em;
+  //テキストサイズ
+  --default-text-size: 18px;
+  --text-size-s: 0.8em;
 
-//ボーダー色
-//$basic_border_color: #cccfd2;
-$basic_border_color: #ccc;
+  //ボーダー色
+  --basic-border-color: #ccc;
+
+  //色
+  --middle-thickness-color: #888;
+  --thin-color: #ddd;
+  --x-thin-color: #eee;
+  --xx-thin-color: #f5f6f7;
+  --xxx-thin-color: #fafbfc;
+  --current-background-color: #eee;
+  --select-background-color: #d8eaf2;
+
+  //要素の丸め
+  --basic-border-radius: 4px;
+  --badge-border-radius: 2px;
+  --middle-border-radius: 8px;
+}
+
 $transparent_border_color: transparent;
-
-//色
-$middle_thickness: #888;
-$thin: #ddd;
-$x_thin: #eee;
-$xx_thin: #f5f6f7;
-$xxx_thin: #fafbfc;
-//$current_bgc: #eeeff0;
-$current_bgc: #eee;
-
-$select_bgc: #d8eaf2;
 $transpalent_black_bgc: rgba(51,51,51,0.7);
-
-//要素の丸め
-$basic_border_radius: 4px;
-$badge_border_radius: 2px;
-$middle_border_radius: 8px;
 
 //メインカラム
 $main_inner_width: 800px;
 $main_border_width: 1px;
 $main_border_style: solid ;
-$main_border_color: $basic_border_color;
+$main_border_color: var(--basic-border-color);
 $main_padding_width: 29px;
 
 //メインカラムとサイドバーの余白
@@ -54,7 +51,7 @@ $between_main_and_sidebar: 20px;
 $sidebar_inner_width: 336px;
 $sidebar_border_width: 1px;
 $sidebar_border_style: solid ;
-$sidebar_border_color: $basic_border_color;
+$sidebar_border_color: var(--basic-border-color);
 $sidebar_padding_width: 19px;
 
 $main_outer_width: $main_inner_width + $main_border_width*2 + $main_padding_width*2;
@@ -103,7 +100,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
-  color: $text_color;
+  color: var(--text-color);
 }
 
 //Font Awesomeアイコンを出力するとき
@@ -119,7 +116,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 }
 
 //リンクキャンセル
-@mixin link_cancel($color: $text_color) {
+@mixin link_cancel($color: var(--text-color)) {
   color: $color;
   text-decoration: none;
 }
@@ -143,13 +140,13 @@ $bgc_hover_anime: all .3s ease-in-out;
 
 @mixin base_font{
   /* フォントの種類 */
-  font-family: $default_font;
+  font-family: var(--default-font);
 
   /* フォントのサイズ */
-  font-size: $text_size_default;
+  font-size: var(--default-text-size);
 
   /* フォントの色 */
-  color: $text_color;
+  color: var(--text-color);
 
   /* カーニングの設定 */
   //letter-spacing: 1.2px;
@@ -191,7 +188,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 }
 
 %card_snippet{
-  font-size: $text_size_s;
+  font-size: var(--text-size-s);
   // max-height: #{6 * 1.3}em;
   line-height: 1.3;
   display: -webkit-box;
@@ -206,9 +203,6 @@ $bgc_hover_anime: all .3s ease-in-out;
   right: 0;
   text-align: right;
   line-height: 1;
-  // background-color: $white;
-  // padding-left: 8px;
-  //display: flex;
 }
 
 ///////////////////////////////////////
@@ -394,7 +388,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 // タグクラウド
 ///////////////////////////////////////////
 @mixin tagcloud_a {
-  border: 1px solid $x_thin;
+  border: 1px solid var(--x-thin-color);
   border-radius: 2px;
   color: #555;
   padding: 3px 8px;
@@ -425,9 +419,9 @@ $bgc_hover_anime: all .3s ease-in-out;
 $form_padding: 11px;
 %form_common {
   padding: $form_padding;
-  border: 1px solid $basic_border_color;
-  border-radius: $basic_border_radius;
-  font-size: $text_size_default;
+  border: 1px solid var(--basic-border-color);
+  border-radius: var(--basic-border-radius);
+  font-size: var(--default-text-size);
   width: 100%;
 }
 
@@ -464,7 +458,7 @@ $form_padding: 11px;
   font-size: 13px;
   top: -1.8em;
   line-height: 1.8;
-  color: $white;      left: -3px;
+  color: var(--white-color);      left: -3px;
   border-radius: 6px 6px 0 0;
   padding: 0 1em 0 .8em;
 }

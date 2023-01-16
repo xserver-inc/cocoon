@@ -9,14 +9,14 @@
   }
 
   span{
-    background-color: $current_bgc;
+    background-color: var(--current-background-color);
   }
 
   a{
     display: inline-block;
 
     span{
-      background-color: $white;
+      background-color: var(--white-color);
     }
 
     &:hover span {

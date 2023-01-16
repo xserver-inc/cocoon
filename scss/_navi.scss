@@ -20,7 +20,7 @@ $icon_height: 16px;
 // }
 
 .navi{
-  background-color: $white;
+  background-color: var(--white-color);
 
   .item-label,
   .item-description{
@@ -69,14 +69,6 @@ $icon_height: 16px;
           display: block;
         }
       }
-
-
-      // &.fa{
-      //   font-family: $navi_font;
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      // }
     }
 
 
@@ -98,24 +90,8 @@ $icon_height: 16px;
           width: 100%;
         }
 
-        // padding-top: 8px;
-        // padding-bottom: 6px;
-
       }
-
-      // .item-label{
-      //   //line-height: 1;
-      // }
-
-      // .item-description{
-      //   font-size: 0.8em;
-      //   //color: $pallid_text_color;
-      // }
     }
-
-    // >.menu-item-has-children{
-    //   @include menu_item_has_children('\f107');
-    // }
 
     /*サブメニュー*/
     .sub-menu{
@@ -125,7 +101,7 @@ $icon_height: 16px;
       min-width: $sub_menu_width;
       list-style: none;
       padding: 0;
-      background-color: $xxx_thin;
+      background-color: var(--xxx-thin-color);
       z-index: 99;
       text-align: left;
       li{
@@ -163,14 +139,6 @@ $icon_height: 16px;
       }
     }
   }
-
-  // >ul>li{
-  //   border-right: 1px solid $x_thin;
-  //   &:first-child{
-  //     border-left: 1px solid $x_thin;
-  //   }
-
-  // }
 }
 
 /************************************
@@ -199,10 +167,10 @@ $icon_height: 16px;
 
     li{
       width: 120px;
-      border-left: 1px solid $thin;
+      border-left: 1px solid var(--thin-color);
 
       &:last-child{
-        border-right: 1px solid $thin;
+        border-right: 1px solid var(--thin-color);
       }
     }
 

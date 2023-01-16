@@ -338,7 +338,7 @@ span.btn-wrap {
   }
 
   &.bb-white::before {
-    background-color: $white;
+    background-color: var(--white-color);
   }
 }
 

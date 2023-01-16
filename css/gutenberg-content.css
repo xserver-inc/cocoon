@@ -50,6 +50,26 @@
   --watery-green-color: #ebf8f4;
 }
 
+:root {
+  --default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --text-color: #333;
+  --pallid-text-color: #777;
+  --x-pallid-text-color: #999;
+  --default-text-size: 18px;
+  --text-size-s: 0.8em;
+  --basic-border-color: #ccc;
+  --middle-thickness-color: #888;
+  --thin-color: #ddd;
+  --x-thin-color: #eee;
+  --xx-thin-color: #f5f6f7;
+  --xxx-thin-color: #fafbfc;
+  --current-background-color: #eee;
+  --select-background-color: #d8eaf2;
+  --basic-border-radius: 4px;
+  --badge-border-radius: 2px;
+  --middle-border-radius: 8px;
+}
+
 .faw::before {
   font-family: FontAwesome;
   padding-right: 4px;
@@ -83,26 +103,26 @@
 .article h2 {
   font-size: 24px;
   padding: 25px;
-  background-color: #f5f6f7;
-  border-radius: 2px;
+  background-color: var(--xx-thin-color);
+  border-radius: var(--badge-border-radius);
 }
 .article h3 {
-  border-left: 7px solid #888;
-  border-right: 1px solid #ddd;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-left: 7px solid var(--middle-thickness-color);
+  border-right: 1px solid var(--thin-color);
+  border-top: 1px solid var(--thin-color);
+  border-bottom: 1px solid var(--thin-color);
   font-size: 22px;
   padding: 12px 20px;
 }
 .article h4 {
-  border-top: 2px solid #ddd;
-  border-bottom: 2px solid #ddd;
+  border-top: 2px solid var(--thin-color);
+  border-bottom: 2px solid var(--thin-color);
 }
 .article h5 {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid var(--thin-color);
 }
 .article h6 {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--thin-color);
 }
 .article .column-wrap h1, .article .column-wrap h2, .article .column-wrap h3, .article .column-wrap h4, .article .column-wrap h5, .article .column-wrap h6 {
   margin-top: 0;

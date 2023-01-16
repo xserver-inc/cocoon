@@ -51,6 +51,26 @@
   --watery-green-color: #ebf8f4;
 }
 
+:root {
+  --default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --text-color: #333;
+  --pallid-text-color: #777;
+  --x-pallid-text-color: #999;
+  --default-text-size: 18px;
+  --text-size-s: 0.8em;
+  --basic-border-color: #ccc;
+  --middle-thickness-color: #888;
+  --thin-color: #ddd;
+  --x-thin-color: #eee;
+  --xx-thin-color: #f5f6f7;
+  --xxx-thin-color: #fafbfc;
+  --current-background-color: #eee;
+  --select-background-color: #d8eaf2;
+  --basic-border-radius: 4px;
+  --badge-border-radius: 2px;
+  --middle-border-radius: 8px;
+}
+
 .faw::before {
   font-family: FontAwesome;
   padding-right: 4px;

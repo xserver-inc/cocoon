@@ -7,16 +7,16 @@
 
   a{
     display: block;
-    background-color: $text_color;
+    background-color: var(--text-color);
     text-align: center;
-    @include link_cancel($white);
-    border-radius: $basic_border_radius;
+    @include link_cancel(var(--white-color));
+    border-radius: var(--basic-border-radius);
     height: 45px;
     //line-height: 45px;
 
     &:hover{
       opacity: 0.7;
-      color: $white;
+      color: var(--white-color);
       transition: $bgc_hover_anime;
     }
   }
@@ -125,10 +125,10 @@
 
   &.bc-brand-color-white{
     a{
-      background-color: $white;
+      background-color: var(--white-color);
       font-weight: 500;
-      border: 1px solid $text_color;
-      color: $text_color;
+      border: 1px solid var(--text-color);
+      color: var(--text-color);
       &:hover{
         //background-color: $bgc_hover_color;
         //transition: $bgc_hover_anime;
@@ -386,8 +386,8 @@ $sns_button_margin_bottom: 8px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: $text_color;
+  background-color: var(--text-color);
   opacity: 0.8;
-  box-shadow: 0 4px 8px $pallid_text_color;
+  box-shadow: 0 4px 8px var(--x-pallid-text-color);
   z-index: 2;
 }

@@ -28,7 +28,7 @@
   margin: auto;
   padding: 2em;
   text-align: center;
-  border-radius: $basic_border_radius;
+  border-radius: var(--basic-border-radius);
 
   display: block;
   // display: flex;
@@ -47,7 +47,7 @@
 }
 
 .appeal-button{
-  @include link_cancel($white);
+  @include link_cancel(var(--white-color));
 
   background-color: #c9171e;
   font-weight: bold;
@@ -57,9 +57,9 @@
   //margin: auto;
   padding: 9px 42px;
   margin: 0 8px;
-  border-radius: $basic_border_radius;
+  border-radius: var(--basic-border-radius);
   &:hover{
-    color: $white;
+    color: var(--white-color);
     opacity: 0.7;
   }
 }
