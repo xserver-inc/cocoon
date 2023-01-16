@@ -953,10 +953,12 @@ endif;
 add_shortcode('ad', 'ad_shortcode');
 if ( !function_exists( 'ad_shortcode' ) ):
 function ad_shortcode( $atts ) {
-  ob_start();//バッファリング
-  get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
+  if (is_ad_shortcode_enable()) {
+    ob_start();//バッファリング
+    get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
 
-  return ob_get_clean();
+    return ob_get_clean();
+  }
 }
 endif;
 
