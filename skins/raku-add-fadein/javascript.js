@@ -11,71 +11,137 @@ $('#navi-in').find('li, a').on('mouseenter', function() {
 });
 
 /*----------------------------------------------------
- fadein_type1
+ fadeIn
 ----------------------------------------------------*/
-const fadein_type1 = [
-    '#header-container',
-    '#main',
-    '#main > *',
-    '#main .article > *',
-    '#sidebar',
-    '#sidebar > *',
+// fadein
+const raku_fadein = [
+    // raku_fadein_type1
+    '.raku_fadein_type1 #header-container',
+    '.raku_fadein_type1 #main',
+    '.raku_fadein_type1 #main > *',
+    '.raku_fadein_type1 #main .article > *',
+    '.raku_fadein_type1 #sidebar',
+    '.raku_fadein_type1 #sidebar > *',
+    // raku_fadein_type2
+    '.raku_fadein_type2 #header-container',
+    '.raku_fadein_type2 #main',
+    '.raku_fadein_type2 #sidebar',
+    // raku_fadein_type3
+    '.raku_fadein_type3 #header-container',
+    '.raku_fadein_type3 #main > *', 
+    '.raku_fadein_type3 #main .article > *',
+    '.raku_fadein_type3 #sidebar > *',
+    // raku_fadein_type4
+    '.raku_fadein_type4 #main > *',
+    '.raku_fadein_type4 #main .article > *',
+    '.raku_fadein_type4 #sidebar > *',
 ];
 
-$('.raku_fadein_type1').find(fadein_type1.join(',')).on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeIn');} });
+const observer_fadein = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('raku_fadeIn');
+            observer_fadein.unobserve(entry.target);
+        }
+    });
+});
+
+const targets_fadein = document.querySelectorAll(raku_fadein.join(','));
+targets_fadein.forEach((target) => {
+    observer_fadein.observe(target);
+});
 
 /*----------------------------------------------------
- fadein_type2
+ fadeInUp
 ----------------------------------------------------*/
-const fadein_type2 = [
-    '#header-container',
-    '#main',
-    '#sidebar',
+const raku_fadein_up = [
+    // raku_fadein_type2
+    '.raku_fadein_type2 #main > *',
+    '.raku_fadein_type2 #main .article > *',
+    '.raku_fadein_type2 #sidebar > *',
 ];
 
-$('.raku_fadein_type2').find(fadein_type2.join(',')).on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeIn');} });
+const observer_raku_fadein_up = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('raku_fadeInUp');
+            observer_raku_fadein_up.unobserve(entry.target);
+        }
+    });
+});
 
-$('.raku_fadein_type2').find('#main > *, #main .article > *, #sidebar > *').on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeInUp');} });
+const targets_raku_fadein_up = document.querySelectorAll(raku_fadein_up.join(','));
+targets_raku_fadein_up.forEach((target) => {
+    observer_raku_fadein_up.observe(target);
+});
 
 /*----------------------------------------------------
- fadein_type3
+ fadeInDown
 ----------------------------------------------------*/
-const fadein_type3 = [
-    '#header-container',
-    '#main > *', 
-    '#main .article > *',
-    '#sidebar > *',
+const raku_fadein_down = [
+    // raku_fadein_type4
+    '.raku_fadein_type4 #header-container',
 ];
 
-$('.raku_fadein_type3').find(fadein_type3.join(',')).on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeIn');} });
+const observer_fadein_down = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('raku_fadeInDown');
+            observer_fadein_down.unobserve(entry.target);
+        }
+    });
+});
 
-$('.raku_fadein_type3').find('#main').on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeInLeft');} });
-
-$('.raku_fadein_type3').find('#sidebar').on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeInRight');} });
+const targets_fadein_down = document.querySelectorAll(raku_fadein_down.join(','));
+targets_fadein_down.forEach((target) => {
+    observer_fadein_down.observe(target);
+});
 
 /*----------------------------------------------------
- fadein_type4
+ fadeInLeft
 ----------------------------------------------------*/
-const fadein_type4 = [
-    '#main > *',
-    '#main .article > *',
-    '#sidebar > *',
+const raku_fadein_left = [
+    // raku_fadein_type3
+    '.raku_fadein_type3 #main',
+    // raku_fadein_type4
+    '.raku_fadein_type4 #main',
 ];
 
-$('.raku_fadein_type4').find(fadein_type4.join(',')).on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeIn');} });
+const observer_fadein_left = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('raku_fadeInLeft');
+            observer_fadein_left.unobserve(entry.target);
+        }
+    });
+});
 
-$('.raku_fadein_type4').find('#header-container').on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeInDown');} });
+const targets_fadein_left = document.querySelectorAll(raku_fadein_left.join(','));
+targets_fadein_left.forEach((target) => {
+    observer_fadein_left.observe(target);
+});
 
-$('.raku_fadein_type4').find('#main').on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeInLeft');} });
+/*----------------------------------------------------
+ fadeInRight
+----------------------------------------------------*/
+const raku_fadein_right = [
+    // raku_fadein_type3
+    '.raku_fadein_type3 #sidebar',
+    // raku_fadein_type4
+    '.raku_fadein_type4 #sidebar',
+];
 
-$('.raku_fadein_type4').find('#sidebar').on('inview', function(event, isInView) {
-    if (isInView) { $(this).stop().addClass('raku_fadeInRight');} });
+const observer_fadein_right = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('raku_fadeInRight');
+            observer_fadein_right.unobserve(entry.target);
+        }
+    });
+});
+
+const targets_fadein_right = document.querySelectorAll(raku_fadein_right.join(','));
+targets_fadein_right.forEach((target) => {
+    observer_fadein_right.observe(target);
+});
+

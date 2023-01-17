@@ -93,7 +93,6 @@ class SkinRaku {
         /*----------------------------------------------------
         フェイドイン処理
         ----------------------------------------------------*/
-        add_action('wp_enqueue_scripts', [$this, 'wp_enqueue_scripts_custom2'], 1 );
         add_filter('body_class', [$this, 'add_body_class']);
     }
     /*----------------------------------------------------
@@ -327,10 +326,6 @@ class SkinRaku {
     /*----------------------------------------------------
     フェイドイン処理
     ----------------------------------------------------*/
-    public function wp_enqueue_scripts_custom2() {
-        wp_enqueue_script( THEME_SKIN_JS . '-inview', 'https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js', array( 'jquery' ));
-        
-    }
     function add_body_class($classes){
         $classes[] = $this->fadein_type;
         return $classes;
