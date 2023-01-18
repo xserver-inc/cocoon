@@ -11,11 +11,11 @@ $pagination_wh: 46px;
   display: inline-block;
   height: $pagination_wh;
   width: $pagination_wh;
-  border: 1px solid $thin;
+  border: 1px solid var(--thin-color);
   margin: 0 4px;
   line-height: $pagination_wh;
   text-align: center;
-  border-radius: $basic_border_radius;
+  border-radius: var(--basic-border-radius);
 }
 
 /************************************
@@ -28,7 +28,7 @@ $pagination_wh: 46px;
   width: 100%;
 
   .current{
-    background-color: $current_bgc;
+    background-color: var(--current-background-color);
   }
 
   a{
@@ -47,7 +47,7 @@ $pagination_wh: 46px;
 
 .page-numbers.dots {
   opacity: 0.6;
-  background-color: $xx_thin;
+  background-color: var(--xx-thin-color);
 }
 
 /************************************
@@ -58,8 +58,8 @@ $pagination_wh: 46px;
 }
 .pagination-next-link {
   background-color: #f9f9f9;
-  border: 1px solid $thin;
-  color: $text_color;
+  border: 1px solid var(--thin-color);
+  color: var(--text-color);
   display: block;
   font-size: 1.2em;
   text-decoration: none;

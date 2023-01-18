@@ -2,8 +2,8 @@
 ** プロフィールボックス
 ************************************/
 .author-box{
-  border: 1px solid $basic_border_color;
-  border-radius: $basic_border_radius;
+  border: 1px solid var(--basic-border-color);
+  border-radius: var(--basic-border-radius);
   // margin-bottom: 1.2em;
   //padding: 1.2% 1.6%;
   //display: flex;
@@ -15,17 +15,6 @@
     margin-top: 0.3em;
     line-height: 1.3;
   }
-
-  // .author-widget-name{
-  //   padding: 4px;
-  //   background-color: $middle_thickness;
-  //   color: $white;
-  //   display: inline;
-  //   position: absolute;
-  //   top: -1em;
-  //   left: 10px;
-  //   font-size: 16px;
-  // }
 
   .sns-follow{
     margin: 0;
@@ -44,11 +33,11 @@
       margin-bottom: 4px;
       margin-right: 4px;
       background-color: transparent;
-      color: $pallid_text_color;
-      border: 1px solid $basic_border_color;
+      color: var(--x-pallid-text-color);
+      border: 1px solid var(--basic-border-color);
       border-radius: 2px;
       &:hover{
-        background-color: $xxx_thin;
+        background-color: var(--xxx-thin-color);
       }
 
       .follow-count{

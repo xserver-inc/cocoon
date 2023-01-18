@@ -10,7 +10,7 @@
 
 //Googleカスタム文字色
 .gsc-input-box input.gsc-input{
-	color: $black_color;
+	color: var(--black-color);
 }
 
 //Googleカスタム検索

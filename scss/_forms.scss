@@ -24,8 +24,8 @@ input[type="search"]{
 
 .wp-block-search__button{
   width: 60px;
-  border-radius: $basic_border_radius;
-  border: 1px solid #ccc;
+  border-radius: var(--basic-border-radius);
+  border: 1px solid var(--basic-border-color);
   cursor: pointer;
 }
 
@@ -56,7 +56,7 @@ input[type='submit'],
 
 input[type='submit']{
   -webkit-appearance: none;
-  border: 1px solid $thin;
+  border: 1px solid var(--thin-color);
   background-color: #f5f8fa;
   color: #333;
 }
@@ -71,7 +71,7 @@ input[type='submit']{
     text-align: center;
     border: 1px solid #777;
     padding: 6px;
-    border-radius: $badge_border_radius;
+    border-radius: var(--badge-border-radius);
 
     &:hover{
       @include bgc_hover;

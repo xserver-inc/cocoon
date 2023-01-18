@@ -1,3 +1,72 @@
+:root {
+  --twitter-color: #1da1f2;
+  --facebook-color: #3b5998;
+  --hatebu-color: #2c6ebd;
+  --google-plus-color: #dd4b39;
+  --pocket-color: #ef4056;
+  --line-color: #00c300;
+  --linkedin-color: #0077b5;
+  --website-color: #002561;
+  --instagram-color: #405de6;
+  --pinterest-color: #bd081c;
+  --youtube-color: #cd201f;
+  --tiktok-color: #000000;
+  --note-color: #41c9b4;
+  --soundcloud-color: #ff8800;
+  --flickr-color: #111;
+  --amazon-color: #ff9900;
+  --twitch-color: #6441a4;
+  --rakuten-color: #bf0000;
+  --rakuten-room-color: #c61e79;
+  --slack-color: #e01563;
+  --github-color: #4078c0;
+  --codepen-color: #333;
+  --feedly-color: #2bb24c;
+  --rss-color: #f26522;
+  --red-color: #e60033;
+  --pink-color: #e95295;
+  --purple-color: #884898;
+  --deep-color: #55295b;
+  --indigo-color: #1e50a2;
+  --blue-color: #0095d9;
+  --light-blue-color: #2ca9e1;
+  --cyan-color: #00a3af;
+  --teal-color: #007b43;
+  --green-color: #3eb370;
+  --light-green-color: #8bc34a;
+  --lime-color: #c3d825;
+  --yellow-color: #ffd900;
+  --amber-color: #ffc107;
+  --orange-color: #f39800;
+  --deep-orange-color: #ea5506;
+  --brown-color: #954e2a;
+  --grey-color: #949495;
+  --blue-gray-color: #607d8b;
+  --black-color: #333333;
+  --white-color: #ffffff;
+  --watery-blue-color: #f3fafe;
+  --watery-yellow-color: #fff7cc;
+  --watery-red-color: #fdf2f2;
+  --watery-green-color: #ebf8f4;
+  --default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --text-color: #333;
+  --pallid-text-color: #777;
+  --x-pallid-text-color: #999;
+  --default-text-size: 18px;
+  --text-size-s: 0.8em;
+  --basic-border-color: #ccc;
+  --middle-thickness-color: #888;
+  --thin-color: #ddd;
+  --x-thin-color: #eee;
+  --xx-thin-color: #f5f6f7;
+  --xxx-thin-color: #fafbfc;
+  --current-background-color: #eee;
+  --select-background-color: #d8eaf2;
+  --basic-border-radius: 4px;
+  --badge-border-radius: 2px;
+  --middle-border-radius: 8px;
+}
+
 .faw::before {
   font-family: FontAwesome;
   padding-right: 4px;
@@ -31,26 +100,26 @@
 .article h2 {
   font-size: 24px;
   padding: 25px;
-  background-color: #f5f6f7;
-  border-radius: 2px;
+  background-color: var(--xx-thin-color);
+  border-radius: var(--badge-border-radius);
 }
 .article h3 {
-  border-left: 7px solid #888;
-  border-right: 1px solid #ddd;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-left: 7px solid var(--middle-thickness-color);
+  border-right: 1px solid var(--thin-color);
+  border-top: 1px solid var(--thin-color);
+  border-bottom: 1px solid var(--thin-color);
   font-size: 22px;
   padding: 12px 20px;
 }
 .article h4 {
-  border-top: 2px solid #ddd;
-  border-bottom: 2px solid #ddd;
+  border-top: 2px solid var(--thin-color);
+  border-bottom: 2px solid var(--thin-color);
 }
 .article h5 {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid var(--thin-color);
 }
 .article h6 {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--thin-color);
 }
 .article .column-wrap h1, .article .column-wrap h2, .article .column-wrap h3, .article .column-wrap h4, .article .column-wrap h5, .article .column-wrap h6 {
   margin-top: 0;

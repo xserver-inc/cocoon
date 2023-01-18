@@ -10,7 +10,7 @@
 */
 /*以下にスタイルシートを記入してください*/
 $bg_color: #fbfaf5;
-$white: #fff;
+var(--white-color): #fff;
 $key_color: #f8b500;
 $key_sub_color: #ffec47;
 $key_color_thin: rgba(248, 181, 0, 0.05);

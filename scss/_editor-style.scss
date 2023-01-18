@@ -217,29 +217,6 @@ span.btn-wrap {
   position: relative !important;
 }
 
-// /*Gutenbergの引用スタイルを打ち消す*/
-// .wp-block-freeform.core-blocks-rich-text__tinymce blockquote{
-//   border: 1px solid #ccc;
-// }
-
-// /*Gutenbergのテーマ用ドロップダウンリストを1列に収める*/
-// .mce-listbox button {
-//   max-width: 98px;
-// }
-// /* Main column width */
-
-// body.gutenberg-editor-page .editor-block-list__layout{
-//   padding: 0;
-// }
-
-// @media screen and (min-width: 960px){
-//   div.edit-post-text-editor {
-//     // padding-left: 10%;
-//     // padding-right: 10%;
-//     max-width: 800px;
-//   }
-// }
-
 //wpForoの入力フォームをiPhoneでみた場合横揺れする場合の対処
 .postbody.main {
   width: auto;
@@ -262,83 +239,83 @@ span.btn-wrap {
   }
 
   &.bb-red::before {
-    background-color: $red_color;
+    background-color: var(--red-color);
   }
 
   &.bb-pink::before {
-    background-color: $pink_color;
+    background-color: var(--pink-color);
   }
 
   &.bb-purple::before {
-    background-color: $purple_color;
+    background-color: var(--purple-color);
   }
 
   &.bb-blue::before {
-    background-color: $blue_color;
+    background-color: var(--blue-color);
   }
 
   &.bb-green::before {
-    background-color: $green_color;
+    background-color: var(--green-color);
   }
 
   &.bb-orange::before {
-    background-color: $orange_color;
+    background-color: var(--orange-color);
   }
 
   &.bb-yellow::before {
-    background-color: $yellow_color;
+    background-color: var(--yellow-color);
   }
 
   &.bb-brown::before {
-    background-color: $brown_color;
+    background-color: var(--brown-color);
   }
 
   &.bb-grey::before {
-    background-color: $grey_color;
+    background-color: var(--grey-color);
   }
 
   &.bb-black::before {
-    background-color: $black_color;
+    background-color: var(--black-color);
   }
 
   &.bb-deep::before {
-    background-color: $deep_color;
+    background-color: var(--deep-color);
   }
 
   &.bb-indigo::before {
-    background-color: $indigo_color;
+    background-color: var(--indigo-color);
   }
 
   &.bb-light-blue::before {
-    background-color: $light_blue_color;
+    background-color: var(--light-blue-color);
   }
 
   &.bb-cyan::before {
-    background-color: $cyan_color;
+    background-color: var(--cyan-color);
   }
 
   &.bb-teal::before {
-    background-color: $teal_color;
+    background-color: var(--teal-color);
   }
 
   &.bb-light-green::before {
-    background-color: $light_green_color;
+    background-color: var(--light-green-color);
   }
 
   &.bb-lime::before {
-    background-color: $lime_color;
+    background-color: var(--lime-color);
   }
 
   &.bb-amber::before {
-    background-color: $amber_color;
+    background-color: var(--amber-color);
   }
 
   &.bb-deep-orange::before {
-    background-color: $deep_orange_color;
+    background-color: var(--deep-orange-color);
   }
 
   &.bb-white::before {
-    background-color: $white;
+    background-color: var(--white-color);
   }
 }
 

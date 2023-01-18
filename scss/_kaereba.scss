@@ -26,7 +26,7 @@
     bottom: 0;
     right: 6px;
     font-size: 24px;
-    color: $thin;
+    color: var(--thin-color);
   }
   .image-thumb{
     img{
@@ -73,9 +73,9 @@
   //left: 0;
   top: 0;
   //padding: 10px;
-  border: 1px solid $x_thin;
-  background-color: $xx_thin;
-  border-radius: $badge_border_radius;
+  border: 1px solid var(--x-thin-color);
+  background-color: var(--xx-thin-color);
+  border-radius: var(--badge-border-radius);
   transition: all .3s ease;
   opacity: 0;
   max-width: calc(100% - 160px);
@@ -101,7 +101,7 @@
   flex-wrap: wrap;
   margin-top: 3px;
   >*{
-    border: 1px solid $thin;
+    border: 1px solid var(--thin-color);
     //padding: 1px;
     margin: 1px;
     display: flex;

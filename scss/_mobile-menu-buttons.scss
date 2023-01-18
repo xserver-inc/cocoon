@@ -1,5 +1,5 @@
 .mobile-menu-buttons {
-  background: $white;
+  background: var(--white-color);
   box-shadow: 0 0 5px darkgrey;
   font-size: 19px;
   position: fixed;
@@ -309,7 +309,7 @@
     justify-content: space-around;
 
     .share-count {
-      color: $white;
+      color: var(--white-color);
     }
   }
 

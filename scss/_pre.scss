@@ -2,8 +2,8 @@
 ** ソースコード
 ************************************/
 pre {
-  background-color: $xx_thin;
-  border: 1px solid $thin;
+  background-color: var(--xx-thin-color);
+  border: 1px solid var(--thin-color);
   overflow: auto;
   padding: 10px;
   // margin-bottom: 1.2em;
