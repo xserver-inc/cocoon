@@ -1752,14 +1752,14 @@ function generate_info_list_tag($atts){
   $query = new WP_Query( $args );
   if( $query -> have_posts() ): //投稿が存在する時
   ?>
-  <div id="info-list" class="info-list">
+  <div id="info-list" class="info-list is-style-frame-border is-style-divider-line">
     <?php if ($title): ?>
       <div class="info-list-title"><?php echo esc_html($title); ?></div>
     <?php endif; ?>
     <?php while ($query -> have_posts()) : $query -> the_post(); ?>
       <div class="info-list-item">
-        <div class="info-list-item-date"><?php the_time(get_option('date_format')); ?></div>
         <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
+        <div class="info-list-item-date"><?php the_time(get_option('date_format')); ?></div>
       </div>
     <?php endwhile;
   else :

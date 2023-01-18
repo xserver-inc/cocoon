@@ -388,13 +388,5 @@ textarea {
   }
 }
 
-.info-list-item{
-  flex-direction: column;
-  margin-bottom: 8px;
-  & > div{
-    padding: 2px;
-  }
-}
-
 //商品ボックス
 @include product_item_box_834;

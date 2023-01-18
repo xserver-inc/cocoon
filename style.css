@@ -9038,22 +9038,34 @@ https://codepen.io/nxworld/pen/oLdoWb
   border-width: 2px 2px 0 0;
 }
 
-.info-list-item {
-  display: flex;
+.info-list {
+  padding: 20px;
+}
+.info-list.is-style-frame-border {
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .info-list-title {
   text-align: center;
 }
 
-.info-list-item > div {
-  padding: 4px 8px;
-  line-height: 20px;
+.info-list-item {
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.is-style-divider-line .info-list-item {
+  border-bottom: 1px dashed #ccc;
+}
+.is-style-divider-line .info-list-item:last-child {
+  border-bottom-style: none;
 }
 
 .info-list-item-date {
   font-size: 0.8em;
-  width: 136px;
+  opacity: 0.6;
 }
 
 .info-list-item-content-link {
@@ -10767,14 +10779,6 @@ _:-ms-lang(x), .mc-circle {
   }
   .sidebar .ad-vertical .ad-additional-vertical {
     display: block;
-  }
-
-  .info-list-item {
-    flex-direction: column;
-    margin-bottom: 8px;
-  }
-  .info-list-item > div {
-    padding: 2px;
   }
 
   .booklink-box, .kaerebalink-box, .tomarebalink-box, .product-item-box {
