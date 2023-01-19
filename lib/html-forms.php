@@ -1740,19 +1740,18 @@ endif;
 //インフォリスト生成タグ
 if ( !function_exists( 'generate_info_list_tag' ) ):
 function generate_info_list_tag($atts){
-  extract(shortcode_atts(array(
-    'count' => 5,
-    'title' => __( '新着情報', THEME_NAME ),
-  ), $atts));
+  extract(shortcode_atts($atts, $atts));
   $args = array(
     'no_found_rows' => true,
     'ignore_sticky_posts' => true,
     'posts_per_page' => $count,
   );
   $query = new WP_Query( $args );
+  $frame_class = ($frame ? ' is-style-frame-border' : '');
+  $divider_class = ($divider ? ' is-style-divider-line' : '');
   if( $query -> have_posts() ): //投稿が存在する時
   ?>
-  <div id="info-list" class="info-list is-style-frame-border is-style-divider-line">
+  <div id="info-list" class="info-list<?php echo $frame_class; ?><?php echo $divider_class; ?>">
     <?php if ($title): ?>
       <div class="info-list-title"><?php echo esc_html($title); ?></div>
     <?php endif; ?>

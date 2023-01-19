@@ -970,10 +970,14 @@ function get_info_list_shortcode($atts){
   extract(shortcode_atts(array(
     'count' => 5,
     'title' => __( '新着情報', THEME_NAME ),
-  ), $atts, 'navi'));
+    'frame' => 1,
+    'divider' => 1,
+  ), $atts, 'info_list'));
   $atts = array(
     'count' => $count,
     'title' => $title,
+    'frame' => $frame,
+    'divider' => $divider,
   );
   ob_start();
   generate_info_list_tag($atts);
