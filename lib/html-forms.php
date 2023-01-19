@@ -1752,8 +1752,8 @@ function generate_info_list_tag($atts){
   if( $query -> have_posts() ): //投稿が存在する時
   ?>
   <div id="info-list" class="info-list<?php echo $frame_class; ?><?php echo $divider_class; ?>">
-    <?php if ($title): ?>
-      <div class="info-list-title"><?php echo esc_html($title); ?></div>
+    <?php if ($caption): ?>
+      <div class="info-list-caption"><?php echo esc_html($caption); ?></div>
     <?php endif; ?>
     <?php while ($query -> have_posts()) : $query -> the_post(); ?>
       <div class="info-list-item">

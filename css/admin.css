@@ -8510,7 +8510,7 @@ body.wp-admin {
   border-color: var(--three-d-border-colors);
   border-radius: var(--basic-border-radius);
 }
-.admin-settings .demo .info-list-title {
+.admin-settings .demo .info-list-caption {
   text-align: center;
 }
 .admin-settings .demo .info-list-item {
@@ -16243,7 +16243,7 @@ body.wp-admin {
   border-color: var(--three-d-border-colors);
   border-radius: var(--basic-border-radius);
 }
-.admin-settings .demo .info-list-title {
+.admin-settings .demo .info-list-caption {
   text-align: center;
 }
 .admin-settings .demo .info-list-item {

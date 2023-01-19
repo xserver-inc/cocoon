@@ -969,13 +969,13 @@ if ( !function_exists( 'get_info_list_shortcode' ) ):
 function get_info_list_shortcode($atts){
   extract(shortcode_atts(array(
     'count' => 5,
-    'title' => __( '新着情報', THEME_NAME ),
+    'caption' => __( '新着情報', THEME_NAME ),
     'frame' => 1,
     'divider' => 1,
   ), $atts, 'info_list'));
   $atts = array(
     'count' => $count,
-    'title' => $title,
+    'caption' => $caption,
     'frame' => $frame,
     'divider' => $divider,
   );
