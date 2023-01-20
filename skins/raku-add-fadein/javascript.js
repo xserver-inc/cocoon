@@ -1,16 +1,6 @@
 //ここにスキンで利用するJavaScriptを記入する
 
 /*----------------------------------------------------
- メニューが被ってしまうのを回避
- ※「animation-fill-mode:both」を指定するとz-indexが正常に動作しないバグがあるようです
-----------------------------------------------------*/
-$('#navi-in').find('li, a').on('mouseenter', function() {
-    if ($('#header-container').hasClass(('animation-done')) === false) {
-        $('#header-container').addClass('animation-done');
-    }
-});
-
-/*----------------------------------------------------
  fadeIn
 ----------------------------------------------------*/
 // fadein

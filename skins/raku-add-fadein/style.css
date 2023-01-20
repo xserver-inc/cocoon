@@ -5,15 +5,10 @@
   Author: らく
   Author URI: https://lucklog.info/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/raku-add-fadein.gif
-  Version: 1.1.3
+  Version: 1.1.4
   Priority: 10001000000
 */
 /*以下にスタイルシートを記入してください*/
-
-.animation-done {
-	-webkit-animation-fill-mode: none !important;
-	animation-fill-mode: none !important;
-}
 
 #header-container,
 #main,
@@ -22,8 +17,8 @@
 #sidebar {
 	-webkit-animation-duration: 1.3s;
 	animation-duration: 1.3s;
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;
+	-webkit-animation-fill-mode: backwards;
+	animation-fill-mode: backwards;
 	visibility: hidden;
 }
 
