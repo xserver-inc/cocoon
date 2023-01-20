@@ -1742,10 +1742,12 @@ if ( !function_exists( 'generate_info_list_tag' ) ):
 function generate_info_list_tag($atts){
   extract(shortcode_atts($atts, $atts));
   $args = array(
+    'category__in' => $cats,
     'no_found_rows' => true,
     'ignore_sticky_posts' => true,
     'posts_per_page' => $count,
   );
+  $args = apply_filters( 'get_info_list_args', $args );
   $query = new WP_Query( $args );
   $frame_class = ($frame ? ' is-style-frame-border' : '');
   $divider_class = ($divider ? ' is-style-divider-line' : '');

@@ -969,12 +969,21 @@ if ( !function_exists( 'get_info_list_shortcode' ) ):
 function get_info_list_shortcode($atts){
   extract(shortcode_atts(array(
     'count' => 5,
+    'cats' => 'all',
     'caption' => __( '新着情報', THEME_NAME ),
     'frame' => 1,
     'divider' => 1,
   ), $atts, 'info_list'));
+
+  //カテゴリーを配列化
+  $cat_ids = array();
+  if ($cats && $cats != 'all') {
+    $cat_ids = explode(',', $cats);
+  }
+
   $atts = array(
     'count' => $count,
+    'cats' => $cat_ids,
     'caption' => $caption,
     'frame' => $frame,
     'divider' => $divider,
