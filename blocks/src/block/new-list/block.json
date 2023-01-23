@@ -1,25 +1,85 @@
 {
   "apiVersion": 2,
-  "name": "cocoon-blocks/profile",
+  "name": "cocoon-blocks/new-list",
   "category": "cocoon-block",
-  "keywords": ["profile", "author", "box"],
+  "keywords": ["new", "list"],
 
   "attributes": {
-    "id": {
-      "type": "string",
-      "default": "-1"
-    },
     "classNames": {
       "type": "string",
       "default": ""
     },
-    "label": {
+    "count": {
+      "type": "integer",
+      "default": 5
+    },
+    "type": {
+      "enum": [ "default", "border_partition", "border_square", "large_thumb", "large_thumb_on"],
+      "default": "default"
+    },
+    "bold": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrow": {
+      "type": "boolean",
+      "default": false
+    },
+    "showAllCats": {
+      "type": "boolean",
+      "default": true
+    },
+    "cats": {
       "type": "string",
       "default": ""
     },
-    "isImageCircle": {
+    "children": {
       "type": "boolean",
       "default": false
+    },
+    "horizontal": {
+      "type": "boolean",
+      "default": false
+    },
+    "showAllTags": {
+      "type": "boolean",
+      "default": true
+    },
+    "tags": {
+      "type": "string",
+      "default": ""
+    },
+    "modified": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "enum": ["desc", "asc"],
+      "default": "desc"
+    },
+    "offset": {
+      "type": "integer",
+      "default": 0
+    },
+    "sticky": {
+      "type": "boolean",
+      "default": true
+    },
+    "snippet": {
+      "type": "boolean",
+      "default": false
+    },
+    "post_type": {
+      "type": "string",
+      "default": "post"
+    },
+    "taxonomy": {
+      "type": "string",
+      "default": "category"
+    },
+    "author": {
+      "type": "string",
+      "default": ""
     }
   },
   "example": {},
