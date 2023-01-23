@@ -42,7 +42,12 @@ function render_block_cocoon_block_new_list($attributes, $content)
 	echo '<div class="' . $classes . '">';
 	echo $new_list_content;
 	echo '</div>';
-	return ob_get_clean();
+  $html = ob_get_clean();
+  if (is_rest()) {
+    $html = str_replace('<a ', '<span ', $html);
+    $html = str_replace('</a>', '</span>', $html);
+  }
+	return $html;
 }
 
 /**

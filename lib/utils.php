@@ -3530,3 +3530,10 @@ function get_front_page_type_class(){
   return 'front-page-type-'.str_replace('_', '-', get_front_page_type());;
 }
 endif;
+
+//RESTリクエストかどうか
+if ( !function_exists( 'is_rest' ) ):
+function is_rest() {
+  return ( defined( 'REST_REQUEST' ) && REST_REQUEST );
+}
+endif;
