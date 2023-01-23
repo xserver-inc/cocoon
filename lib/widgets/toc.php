@@ -27,7 +27,7 @@ class TOCWidgetItem extends WP_Widget {
     $title = !empty($instance['title']) ? $instance['title'] : '';
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $title = apply_filters( 'toc_widget_title', $title, $instance, $this->id_base );
-    $depth = !empty($instance['depth']) ? $instance['depth'] : 6;
+    $depth = !empty($instance['depth']) ? $instance['depth'] : 0;
     $depth = apply_filters( 'toc_widget_depth', $depth, $instance, $this->id_base );
 
     if ( is_singular() ){
@@ -67,11 +67,11 @@ class TOCWidgetItem extends WP_Widget {
     if(empty($instance)){//notice回避
       $instance = array(
         'title' => null,
-        'depth' => null,
+        'depth' => 0,
       );
     }
     $title = esc_attr(!empty($instance['title']) ? $instance['title'] : '');
-    $depth = esc_attr(!empty($instance['depth']) ? $instance['depth'] : 6);
+    $depth = esc_attr(!empty($instance['depth']) ? $instance['depth'] : 0);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
