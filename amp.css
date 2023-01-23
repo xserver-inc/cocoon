@@ -2035,15 +2035,6 @@ img.blogcard-favicon-image {
   padding: 2px 16px;
 }
 
-.toc-widget-box .toc-title {
-  display: none;
-}
-.toc-widget-box .toc-content {
-  visibility: visible;
-  opacity: 1;
-  height: 100%;
-}
-
 .nwa .toc {
   border: 0;
   padding: 0 1em;

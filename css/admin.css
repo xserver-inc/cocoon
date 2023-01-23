@@ -2506,14 +2506,6 @@ body.wp-admin {
   display: block;
   padding: 2px 16px;
 }
-.admin-settings .demo .toc-widget-box .toc-title {
-  display: none;
-}
-.admin-settings .demo .toc-widget-box .toc-content {
-  visibility: visible;
-  opacity: 1;
-  height: 100%;
-}
 .admin-settings .demo .nwa .toc {
   border: 0;
   padding: 0 1em;
@@ -10226,14 +10218,6 @@ body.wp-admin {
   text-align: center;
   display: block;
   padding: 2px 16px;
-}
-.admin-settings .demo .toc-widget-box .toc-title {
-  display: none;
-}
-.admin-settings .demo .toc-widget-box .toc-content {
-  visibility: visible;
-  opacity: 1;
-  height: 100%;
 }
 .admin-settings .demo .nwa .toc {
   border: 0;
