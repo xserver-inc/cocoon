@@ -18,7 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       echo get_original_image_tag(get_no_image_320x180_url(), THUMB320WIDTH, THUMB320HEIGHT, 'no-image carousel-entry-card-no-image', ''); ?>
 
     <?php endif; ?>
-    <?php the_nolink_category(null, apply_filters('is_carousel_entry_card_category_label_visible', true)); //カテゴリラベルの取得 ?>
+    <?php the_nolink_category(null, apply_filters('is_carousel_entry_card_category_label_visible', true)); //カテゴリーラベルの取得 ?>
   </figure><!-- /.carousel-entry-thumb -->
 
   <div class="carousel-entry-card-content card-content">

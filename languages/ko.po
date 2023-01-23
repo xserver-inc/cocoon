@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-12-23 21:53+0900\n"
-"PO-Revision-Date: 2022-12-23 21:57+0900\n"
+"PO-Revision-Date: 2023-01-03 19:29+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ko_KR\n"
@@ -2886,39 +2886,39 @@ msgid "「%s」の記事一覧です。"
 msgstr "\"%s\"의 게시글 목록입니다."
 
 #: lib/content-category.php:222
-msgid "カテゴリ色"
+msgid "カテゴリー色"
 msgstr "카테고리 색"
 
 #: lib/content-category.php:231
-msgid "カテゴリの色を指定します。"
+msgid "カテゴリーの色を指定します。"
 msgstr "카테고리 색을 설정합니다."
 
 #: lib/content-category.php:240
-msgid "カテゴリの文字色を指定します。入力しない場合は、白色になります。"
+msgid "カテゴリーの文字色を指定します。入力しない場合は、白色になります。"
 msgstr "카테고리의 글자색을 지정합니다. 입력하지 않은 경우 흰색이 적용됩니다."
 
 #: lib/content-category.php:245
-msgid "カテゴリタイトル"
+msgid "カテゴリータイトル"
 msgstr "카테고리 타이틀"
 
 #: lib/content-category.php:250
-msgid "カテゴリページのタイトル"
+msgid "カテゴリーページのタイトル"
 msgstr "카테고리 페이지의 제목"
 
 #: lib/content-category.php:251
 msgid ""
-"カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入"
-"力したテキストが適用されます。"
+"カテゴリーページのタイトルを指定します。カテゴリーページのタイトルタグにここ"
+"で入力したテキストが適用されます。"
 msgstr ""
 "카테고리 페이지의 제목을 지정하세요. 여기에 입력된 텍스트는 카테고리 페이지"
 "의 title 태그에 적용될것입니다."
 
 #: lib/content-category.php:255
-msgid "カテゴリ本文"
+msgid "カテゴリー本文"
 msgstr "카테고리 본문"
 
 #: lib/content-category.php:260
-msgid "カテゴリページで表示されるメインコンテンツを入力してください。"
+msgid "カテゴリーページで表示されるメインコンテンツを入力してください。"
 msgstr "카테고리 페이지에 나타날 기본 내용을 입력하세요."
 
 #: lib/content-category.php:269 lib/content-tag.php:218
@@ -2932,12 +2932,12 @@ msgid "メタディスクリプション"
 msgstr "meta description"
 
 #: lib/content-category.php:277
-msgid "カテゴリページの説明文を入力してください"
+msgid "カテゴリーページの説明文を入力してください"
 msgstr "카테고리 페이지에 대한 설명을 입력하세요."
 
 #: lib/content-category.php:279
 msgid ""
-"カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプ"
+"カテゴリーページの説明を入力します。ここに入力したテキストはメタディスクリプ"
 "ションタグとして利用されます。"
 msgstr ""
 "카테고리 페이지에 대한 설명을 입력하세요. 여기에 입력된 텍스트는 meta "
@@ -2955,8 +2955,8 @@ msgstr "키워드1, 키워드2, 키워드3"
 
 #: lib/content-category.php:289
 msgid ""
-"カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり"
-"意味のない設定となっています。"
+"カテゴリーページのメタキーワードをカンマ区切りで入力してください。※現在はあま"
+"り意味のない設定となっています。"
 msgstr ""
 "카테고리 페이지의 meta keywords를 쉼표로 구분해 쓰세요. ※이 설정은 큰 영향을 "
 "미치지는 못합니다."
@@ -2985,7 +2985,7 @@ msgid "カテゴリーとしてウィジェットやラベル等で表示され�
 msgstr "위젯, 레이블 등이 카테고리로 표시하는 이름입니다."
 
 #: lib/content-category.php:372
-msgid "基本的にカテゴリ設定の一覧テーブルに説明文を表示するための入力です。"
+msgid "基本的にカテゴリー設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr ""
 "기본적으로 카테고리 설정 일람 테이블에 설명문을 표시하기 위한 입력입니다."
 
@@ -3043,8 +3043,8 @@ msgstr "광고 제외"
 
 #: lib/custom-fields/ad-field.php:32
 msgid ""
-"ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリごと"
-"の設定も行えます。"
+"ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリーご"
+"との設定も行えます。"
 msgstr ""
 "페이지의 광고(AdSense등) 표시 상태를 바꿉니다. 또한 광고 설정에서 각 카테고리"
 "에 대한 설정을 바꿀 수 있습니다."
@@ -3129,7 +3129,7 @@ msgid "メインカテゴリー"
 msgstr "메인 카테고리"
 
 #: lib/custom-fields/page-field.php:41
-msgid "このページで優先するカテゴリを選択します。"
+msgid "このページで優先するカテゴリーを選択します。"
 msgstr "이 페이지에서 우선하는 카테고리를 선택합니다."
 
 #: lib/custom-fields/page-field.php:41
@@ -3137,7 +3137,7 @@ msgid "優先カテゴリーは、アイキャッチやパンくずリストに�
 msgstr "우선 카테고리는 아이캐치 및 페이지 위치 경로에 적용됩니다."
 
 #: lib/custom-fields/page-field.php:41
-msgid "カテゴリ選択直後はすぐにセレクトボックスに反映されません。"
+msgid "カテゴリー選択直後はすぐにセレクトボックスに反映されません。"
 msgstr "카테고리 선택은 선택 상자에 즉시 반영되지 않습니다."
 
 #: lib/custom-fields/page-field.php:41
@@ -3330,7 +3330,7 @@ msgstr "기사와 관련된 meta keywords를 쉼표로 구분하여 입력하세
 #: lib/custom-fields/seo-field.php:103
 msgid ""
 "記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合"
-"は、カテゴリ名などから自動で設定されます。"
+"は、カテゴリー名などから自動で設定されます。"
 msgstr ""
 "기사와 관련된 키워드를 쉼표로 구분하여 입력하세요. 공백으로 두면 카테고리 이"
 "름 등에서 자동으로 설정됩니다."
@@ -4918,7 +4918,7 @@ msgid "バージョン："
 msgstr "버전:"
 
 #: lib/page-settings/about-forms.php:80
-msgid "カテゴリ数："
+msgid "カテゴリー数："
 msgstr "카테고리 수:"
 
 #: lib/page-settings/about-forms.php:83
@@ -5701,7 +5701,7 @@ msgid "広告除外設定"
 msgstr "광고 제외 설정"
 
 #: lib/page-settings/ads-forms.php:300
-msgid "広告を表示したくないページやカテゴリの設定です。"
+msgid "広告を表示したくないページやカテゴリーの設定です。"
 msgstr "광고를 표시하지 않을 페이지 또는 카테고리를 설정합니다."
 
 #: lib/page-settings/ads-forms.php:307
@@ -5722,7 +5722,7 @@ msgid "広告除外カテゴリー"
 msgstr "광고 제외 카테고리"
 
 #: lib/page-settings/ads-forms.php:326
-msgid "広告を非表示にするカテゴリを選択してください。"
+msgid "広告を非表示にするカテゴリーを選択してください。"
 msgstr "광고를 숨길 카테고리를 설정합니다."
 
 #: lib/page-settings/ads-funcs.php:38
@@ -6236,7 +6236,7 @@ msgid "AMP除外カテゴリー"
 msgstr "AMP 제외 카테고리"
 
 #: lib/page-settings/amp-forms.php:121
-msgid "AMPページを生成しないカテゴリを選択してください。"
+msgid "AMPページを生成しないカテゴリーを選択してください。"
 msgstr "AMP를 생성하지 않을 카테고리를 선택합니다."
 
 #: lib/page-settings/analytics-forms.php:13
@@ -7421,13 +7421,13 @@ msgstr "태그"
 #: lib/page-settings/carousel-forms.php:82
 #, fuzzy
 #| msgid ""
-#| "カルーセルと関連付けるカテゴリもしくはタグを選択してください。人気記事を有"
-#| "効にしカテゴリーのタグを選択した場合は、すべて合算しランダムで表示されま"
+#| "カルーセルと関連付けるカテゴリーもしくはタグを選択してください。人気記事を"
+#| "有効にしカテゴリーのタグを選択した場合は、すべて合算しランダムで表示されま"
 #| "す。"
 msgid ""
-"カルーセルと関連付けるカテゴリもしくはタグを選択してください。人気記事を有効"
-"にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び替"
-"え」で設定した順番で表示されます。"
+"カルーセルと関連付けるカテゴリーもしくはタグを選択してください。人気記事を有"
+"効にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び"
+"替え」で設定した順番で表示されます。"
 msgstr ""
 "캐러셀과 관련된 카테고리 또는 태그를 선택하세요. 만약 인기 글이 활성화되있고 "
 "카테고리 태그가 선택되어있으면 모두 추가되고 랜덤으로 보여집니다."
@@ -8746,7 +8746,8 @@ msgstr "아이캐치 레이블 표시"
 
 #: lib/page-settings/image-forms.php:72
 msgid ""
-"投稿・固定ページのアイキャッチに表示されるカテゴリラベルの表示切り替えです。"
+"投稿・固定ページのアイキャッチに表示されるカテゴリーラベルの表示切り替えで"
+"す。"
 msgstr ""
 "글ㆍ고정 페이지의 아이캐치에 표시할 카테고리 레이블의 표시 여부를 지정합니다."
 
@@ -9019,7 +9020,7 @@ msgstr "탭 목록"
 
 #: lib/page-settings/index-forms.php:52 lib/page-settings/index-forms.php:53
 #: lib/page-settings/index-forms.php:54
-msgid "カテゴリごと"
+msgid "カテゴリーごと"
 msgstr "카테고리별"
 
 #: lib/page-settings/index-forms.php:53
@@ -9064,8 +9065,8 @@ msgstr "쉼표로 구분된 카테고리 ID 입력"
 
 #: lib/page-settings/index-forms.php:70
 msgid ""
-"意図通りの順番でカテゴリを表示する場合は、カテゴリーIDをカンマ区切りで入力し"
-"てください。"
+"意図通りの順番でカテゴリーを表示する場合は、カテゴリーIDをカンマ区切りで入力"
+"してください。"
 msgstr ""
 "카테고리 순서를 직접 지정할 경우 카테고리 ID를 쉼표로 구분하여 입력해 주세"
 "요. "
@@ -9077,7 +9078,7 @@ msgid ""
 msgstr "이것을 입력한 경우는 체크박스보다 이 설정이 우선됩니다."
 
 #: lib/page-settings/index-forms.php:72
-msgid "カテゴリ表示の順番を並び替える場合はこちら"
+msgid "カテゴリー表示の順番を並び替える場合はこちら"
 msgstr "카테고리가 표시되는 순서를 정렬하려면 여기를 클릭하세요."
 
 #: lib/page-settings/index-forms.php:79
@@ -9134,8 +9135,8 @@ msgstr "새 엔트리 카드 표시 수"
 
 #: lib/page-settings/index-forms.php:100
 msgid ""
-"フロントページタイプを「カテゴリごと」にした際に表示される新着エントリーカー"
-"ド数を設定します。"
+"フロントページタイプを「カテゴリーごと」にした際に表示される新着エントリー"
+"カード数を設定します。"
 msgstr ""
 "프런트 페이지 타입을 「카테고리별」로 했을 때 표시되는 새 엔트리 카드 수를 설"
 "정합니다"
@@ -9146,13 +9147,13 @@ msgstr "카테고리 엔트리 카드 표시 수"
 
 #: lib/page-settings/index-forms.php:106
 msgid ""
-"フロントページのインデックスでカテゴリごとに表示するエントリーカード数を設定"
-"します。"
+"フロントページのインデックスでカテゴリーごとに表示するエントリーカード数を設"
+"定します。"
 msgstr ""
 "프런트 페이지의 인덱스에 카테고리별로 표시하는 엔트리 카드 수를 설정합니다."
 
 #: lib/page-settings/index-forms.php:108
-msgid "「カテゴリごと」表示でカード表示数を変更する場合はこちら"
+msgid "「カテゴリーごと」表示でカード表示数を変更する場合はこちら"
 msgstr "카테고리별 표시의 카드 표시 수를 변경하려면 클릭하세요"
 
 #: lib/page-settings/index-forms.php:116
@@ -10094,8 +10095,8 @@ msgstr ""
 
 #: lib/page-settings/seo-forms.php:31
 msgid ""
-"この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入さ"
-"れます。"
+"この機能を有効にするとトップページやカテゴリーページ等にもcanonicalタグが挿入"
+"されます。"
 msgstr ""
 "이 기능을 설정하면 탑 페이지나 카테고리 페이지 등에도 canonical 태그가 삽입됩"
 "니다."
@@ -10113,19 +10114,19 @@ msgstr ""
 "next/prev설정입니다."
 
 #: lib/page-settings/seo-forms.php:38
-msgid "カテゴリページをnoindexとする"
+msgid "カテゴリーページをnoindexとする"
 msgstr "카테고리 페이지를 noindex로"
 
 #: lib/page-settings/seo-forms.php:39
-msgid "カテゴリページ全体をnoindex設定にします。"
+msgid "カテゴリーページ全体をnoindex設定にします。"
 msgstr "모든 카테고리 페이지를 noindex로 설정합니다."
 
 #: lib/page-settings/seo-forms.php:43
-msgid "カテゴリページの2ページ目以降をnoindexとする"
+msgid "カテゴリーページの2ページ目以降をnoindexとする"
 msgstr "카테고리 페이지의 2페이지 이후를 noindex로"
 
 #: lib/page-settings/seo-forms.php:44
-msgid "カテゴリページのトップページ以外はnoindex設定にします。"
+msgid "カテゴリーページのトップページ以外はnoindex設定にします。"
 msgstr "카테고리 페이지의 탑 페이지 이외는 noindex로 설정합니다."
 
 #: lib/page-settings/seo-forms.php:49
@@ -10149,7 +10150,7 @@ msgid "その他のアーカイブページをnoindexとする"
 msgstr "기타 아카이브 페이지를 noindex로"
 
 #: lib/page-settings/seo-forms.php:61
-msgid "カテゴリ・タグ以外のアーカイブページをnoindex設定にします。"
+msgid "カテゴリー・タグ以外のアーカイブページをnoindex設定にします。"
 msgstr "카테고리ㆍ태그 이외의 페이지를 noindex로 설정합니다."
 
 #: lib/page-settings/seo-forms.php:64
@@ -10201,11 +10202,11 @@ msgstr ""
 "는 방법이 달라집니다."
 
 #: lib/page-settings/single-forms.php:13
-msgid "カテゴリ・タグ表示設定"
+msgid "カテゴリー・タグ表示設定"
 msgstr "카테고리ㆍ태그 표시 설정"
 
 #: lib/page-settings/single-forms.php:16
-msgid "投稿本文下のカテゴリとタグの表示を設定します。"
+msgid "投稿本文下のカテゴリーとタグの表示を設定します。"
 msgstr "글 본문 아래의 카테고리와 태그의 표시설정입니다."
 
 #: lib/page-settings/single-forms.php:31
@@ -10213,19 +10214,19 @@ msgid "デモはランダムです。"
 msgstr "미리보기는 무작위입니다."
 
 #: lib/page-settings/single-forms.php:39
-msgid "カテゴリ・タグ表示"
+msgid "カテゴリー・タグ表示"
 msgstr "카테고리ㆍ태그 표시"
 
 #: lib/page-settings/single-forms.php:44
-msgid "カテゴリ・タグ2列"
+msgid "カテゴリー・タグ2列"
 msgstr "카테고리ㆍ태그 2열"
 
 #: lib/page-settings/single-forms.php:45
-msgid "カテゴリ・タグ1列"
+msgid "カテゴリー・タグ1列"
 msgstr "카테고리ㆍ태그 1열"
 
 #: lib/page-settings/single-forms.php:46
-msgid "カテゴリのみ"
+msgid "カテゴリーのみ"
 msgstr "카테고리만"
 
 #: lib/page-settings/single-forms.php:47
@@ -10233,15 +10234,15 @@ msgid "タグのみ"
 msgstr "태그만"
 
 #: lib/page-settings/single-forms.php:48
-msgid "カテゴリもタグも表示しない"
+msgid "カテゴリーもタグも表示しない"
 msgstr "카테고리와 태그 모두 표시 안함"
 
 #: lib/page-settings/single-forms.php:51
-msgid "カテゴリとタグの表示を制御します。"
+msgid "カテゴリーとタグの表示を制御します。"
 msgstr "카테고리와 태그의 표시 여부입니다."
 
 #: lib/page-settings/single-forms.php:59
-msgid "カテゴリ・タグ表示位置"
+msgid "カテゴリー・タグ表示位置"
 msgstr "카테고리ㆍ태그 표시 위치"
 
 #: lib/page-settings/single-forms.php:66
@@ -10249,7 +10250,7 @@ msgid "本文下（デフォルト）"
 msgstr "본문 아래 (기본)"
 
 #: lib/page-settings/single-forms.php:69
-msgid "カテゴリとタグの表示位置を設定します。"
+msgid "カテゴリーとタグの表示位置を設定します。"
 msgstr "카테고리와 태그의 표시 위치를 설정합니다."
 
 #: lib/page-settings/single-forms.php:83
@@ -10443,14 +10444,14 @@ msgstr "동일 카테고리의 것을 표시"
 
 #: lib/page-settings/single-forms.php:361
 msgid ""
-"投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリが設定し"
-"てある場合は、複数に属するものが表示されます。"
+"投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリーが設定"
+"してある場合は、複数に属するものが表示されます。"
 msgstr ""
 "글과 동일한 카테고리의 페이지로 이동하도록 하시겠습니까? 여러 카테고리가 설정"
 "되어 있는 경우는 그 중에 속하는 것이 표시됩니다."
 
 #: lib/page-settings/single-forms.php:366
-msgid "ページ送りナビに表示させないカテゴリを選択してください。"
+msgid "ページ送りナビに表示させないカテゴリーを選択してください。"
 msgstr "페이지 이동 네비를 표시하지 않을 카테고리를 선택해 주세요."
 
 #: lib/page-settings/single-forms.php:374
@@ -12008,7 +12009,7 @@ msgstr ""
 "니다."
 
 #: lib/page-speed-up/speed-up-forms.php:64
-msgid "カテゴリページ全体を除外する例：/category/"
+msgid "カテゴリーページ全体を除外する例：/category/"
 msgstr "카테고리 페이지 전체를 제외하는 경우: /category/"
 
 #: lib/page-speed-up/speed-up-forms.php:81
@@ -13332,7 +13333,7 @@ msgid "全ての新着記事（全ページで表示）"
 msgstr "모든 새 글 (모든 페이지에서 표시)"
 
 #: lib/widgets/new-entries.php:141
-msgid "カテゴリ別新着記事（投稿・カテゴリで表示）"
+msgid "カテゴリー別新着記事（投稿・カテゴリーで表示）"
 msgstr "카테고리별 새 글 (글ㆍ카테고리에서 표시)"
 
 #: lib/widgets/new-entries.php:149
@@ -13412,7 +13413,7 @@ msgid "全ての人気記事（全ページで表示）"
 msgstr "모든 인기 글 (모든 페이지에서 표시)"
 
 #: lib/widgets/popular-entries.php:185
-msgid "カテゴリ別人気記事（投稿・カテゴリで表示）"
+msgid "カテゴリー別人気記事（投稿・カテゴリーで表示）"
 msgstr "카테고리별 인기 글 (글ㆍ카테고리에서 표시)"
 
 #: lib/widgets/popular-entries.php:190
@@ -14375,9 +14376,9 @@ msgstr "복사"
 #~ msgstr "Button"
 
 #~ msgid ""
-#~ "基本的に、カテゴリ設定一覧ページに説明文を表示するための入力です。本文が入"
-#~ "力されていない場合は本文代わりに、メタディスクリプションが入力されてない場"
-#~ "合はメタディスクリプション代わりに利用されることもあります。"
+#~ "基本的に、カテゴリー設定一覧ページに説明文を表示するための入力です。本文が"
+#~ "入力されていない場合は本文代わりに、メタディスクリプションが入力されてない"
+#~ "場合はメタディスクリプション代わりに利用されることもあります。"
 #~ msgstr ""
 #~ "It is basically the category settings list page display the description "
 #~ "input."

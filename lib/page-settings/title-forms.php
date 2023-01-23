@@ -210,7 +210,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             //全カテゴリデータを取得
             $cat_all = get_terms( 'category', 'fields=all&get=all' );
-            //全カテゴリ数から乱数の配列を生成
+            //全カテゴリー数から乱数の配列を生成
             $cat_list = range(0, count( $cat_all )-1);
             shuffle( $cat_list );
             $rand_category = isset($cat_list[0]) ? $cat_all[$cat_list[0]]: null;

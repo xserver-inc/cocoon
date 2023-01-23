@@ -29,7 +29,7 @@ if ( !function_exists( 'view_ad_custom_box' ) ):
 function view_ad_custom_box(){
   //広告を表示する
   generate_checkbox_tag('the_page_ads_novisible' , is_the_page_ads_novisible(), __( '広告を除外する', THEME_NAME ));
-  generate_howto_tag(__( 'ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリごとの設定も行えます。', THEME_NAME ), 'the_page_ads_novisible');
+  generate_howto_tag(__( 'ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリーごとの設定も行えます。', THEME_NAME ), 'the_page_ads_novisible');
 }
 endif;
 

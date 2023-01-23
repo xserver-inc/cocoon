@@ -72,7 +72,7 @@ function get_the_nolink_category($id = null, $is_visible = true){
     return;
   }
 
-  //メインカテゴリが指定してある場合は該当カテゴリーを適用
+  //メインカテゴリーが指定してある場合は該当カテゴリーを適用
   $category = isset($categories[0]) ? $categories[0] : null;
   $main_cat_id = get_the_page_main_category($id);
   if ($main_cat_id && in_category($main_cat_id, $id)) {
@@ -82,7 +82,7 @@ function get_the_nolink_category($id = null, $is_visible = true){
   // var_dump($main_cat_id);
   // var_dump($category->cat_ID);
 
-  // //メインカテゴリがない場合は先頭のカテゴリを適用
+  // //メインカテゴリーがない場合は先頭のカテゴリーを適用
   // if ( !$category ) {
   //   $category = $categories[0];
   // }
@@ -140,7 +140,7 @@ function is_comment_allow(){
 endif;
 
 
-//現在のカテゴリをカンマ区切りテキストで取得する
+//現在のカテゴリーをカンマ区切りテキストで取得する
 if ( !function_exists( 'get_category_ids' ) ):
 function get_category_ids(){
   if ( is_single() ) {//投稿ページでは全カテゴリー取得
@@ -150,7 +150,7 @@ function get_category_ids(){
       array_push( $category_IDs, $category -> cat_ID);
     endforeach ;
     return $category_IDs;
-  } elseif ( is_category() ) {//カテゴリページではトップカテゴリーのみ取得
+  } elseif ( is_category() ) {//カテゴリーページではトップカテゴリーのみ取得
     $obj = get_queried_object();
     return array( $obj->cat_ID );
   }
@@ -363,7 +363,7 @@ function get_jquery_core_url($ver){
   $url = null;
   switch ($ver) {
     case '3':
-      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
+      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js';
       break;
     case '2':
       $url = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js';
@@ -382,7 +382,7 @@ function get_jquery_core_full_version($ver){
   $full_ver = null;
   switch ($ver) {
     case '3':
-      $full_ver = '3.6.0';
+      $full_ver = '3.6.1';
       break;
     case '2':
       $full_ver = '2.2.4';
@@ -2514,12 +2514,20 @@ endif;
 
 //人間感覚の年の取得
 if ( !function_exists( 'get_human_years_ago' ) ):
+// function get_human_years_ago( $from, $unit = '' ) {
+//   $to    = date('Ymd');
+//   $from  = date('Ymd', $from);
+//   $years = floor(($to - $from) / 10000);
+
+//   $since = sprintf('%s'.$unit, $years);
+//   return $since;
+// }
 function get_human_years_ago( $from, $unit = '' ) {
-  $to = time();
-  $diff = (int) abs($to - $from);
-  $years = floor($diff / 31536000);
-  $since = sprintf('%s'.$unit, $years);
-  return $since;
+  $from = new DateTime(date('Y-m-d', $from));
+  $to = new DateTime('today');
+  $diff = $from->diff($to);
+  $year = $diff->format('%y'.$unit);
+  return $year;
 }
 endif;
 
@@ -3324,13 +3332,13 @@ function get_option_posts_per_page(){
 }
 endif;
 
-//カテゴリーIDからカテゴリ名を取得
+//カテゴリーIDからカテゴリー名を取得
 if ( !function_exists( 'get_category_name_by_id' ) ):
 function get_category_name_by_id($id){
   //カテゴリIDからカテゴリ情報取得
   $category = get_category($id);
   if (isset($category->cat_name)) {
-    //カテゴリ名表示
+    //カテゴリー名表示
     return $category->cat_name;
   }
 }

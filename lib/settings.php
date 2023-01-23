@@ -358,7 +358,7 @@ add_filter('appeal_area_message', 'shortcode_unautop');
 add_filter('appeal_area_message', 'do_shortcode');
 add_filter('appeal_area_message', 'prepend_attachment');
 add_filter('appeal_area_message', 'wp_filter_content_tags');
-//カテゴリ・タグページ（※フックの順番が大事）
+//カテゴリー・タグページ（※フックの順番が大事）
 add_filter('the_category_tag_content', 'wptexturize');
 add_filter('the_category_tag_content', 'convert_smilies');
 add_filter('the_category_tag_content', 'convert_chars');

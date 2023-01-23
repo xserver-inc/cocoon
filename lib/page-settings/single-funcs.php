@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // 関連記事
 ///////////////////////////////////////
 
-//カテゴリ・タグ表示タイプ
+//カテゴリー・タグ表示タイプ
 define('OP_CATEGORY_TAG_DISPLAY_TYPE', 'category_tag_display_type');
 if ( !function_exists( 'get_category_tag_display_type' ) ):
 function get_category_tag_display_type(){
@@ -18,7 +18,7 @@ function get_category_tag_display_type(){
 }
 endif;
 
-//カテゴリ・タグ表示位置
+//カテゴリー・タグ表示位置
 define('OP_CATEGORY_TAG_DISPLAY_POSITION', 'category_tag_display_position');
 if ( !function_exists( 'get_category_tag_display_position' ) ):
 function get_category_tag_display_position(){

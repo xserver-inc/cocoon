@@ -232,18 +232,18 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
-        <!-- [ad]ショートコードの利用 -->
+        <!-- 挿入型広告の利用 -->
         <tr<?php generate_not_allowed_form_class(!is_auto_adsens_only_enable()); ?>>
           <th scope="row">
-            <?php generate_label_tag(OP_AD_SHORTCODE_ENABLE, __('[ad]ショートコード', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_AD_SHORTCODE_ENABLE, __('挿入型広告', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_AD_SHORTCODE_ENABLE , is_ad_shortcode_enable(), __( '[ad]ショートコードを有効にする', THEME_NAME ));
+            generate_checkbox_tag(OP_AD_SHORTCODE_ENABLE , is_ad_shortcode_enable(), __( '[ad]ショートコード・広告ブロックを有効にする', THEME_NAME ));
             //詳細設定
             generate_main_column_ad_detail_setting_forms(OP_AD_SHORTCODE_FORMAT, get_ad_shortcode_format(), OP_AD_SHORTCODE_LABEL_VISIBLE, is_ad_shortcode_label_visible());
 
-            generate_tips_tag(__( '本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/ad-shortcode/'));
+            generate_tips_tag(__( '本文内に[ad]と入力したり「広告ブロック」を挿入した場合、その部分に「広告コード」に設定してある広告を表示します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/ad-shortcode/'));
             ?>
             <p class="alert"><?php _e( '設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに動作確認をしてください。', THEME_NAME ) ?></p>
           </td>
@@ -297,7 +297,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '広告除外設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '広告を表示したくないページやカテゴリの設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( '広告を表示したくないページやカテゴリーの設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -323,7 +323,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             generate_hierarchical_category_check_list( 0, OP_AD_EXCLUDE_CATEGORY_IDS, get_ad_exclude_category_ids(), 300 );
             //generate_textbox_tag(OP_AD_EXCLUDE_CATEGORY_IDS, get_ad_exclude_category_ids(), __( '例：111,222,3333', THEME_NAME ));
-            generate_tips_tag(__( '広告を非表示にするカテゴリを選択してください。', THEME_NAME ));
+            generate_tips_tag(__( '広告を非表示にするカテゴリーを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

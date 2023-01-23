@@ -61,7 +61,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             generate_textarea_tag(OP_HIGHSPEED_MODE_EXCLUDE_LIST, get_highspeed_mode_exclude_list(), __( '高速化を除外するURL（URLの一部）', THEME_NAME ) , 3);
             generate_tips_tag(__( 'barba.jsを用いた遷移を行わないページのURLを改行区切りで入力してください。', THEME_NAME ).__( '複数指定したい場合はURLの一部を入力することで、その文字列が含まれるURLは除外します。', THEME_NAME ));
-            generate_tips_tag(__( 'カテゴリページ全体を除外する例：/category/', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリーページ全体を除外する例：/category/', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -190,7 +190,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
-        
+
 
       </tbody>
     </table>

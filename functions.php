@@ -14,13 +14,39 @@ endif;
 
 require_once abspath(__FILE__).'lib/_defins.php'; //定数を定義
 
+/**
+ * ダウンロード配信サーバーの参照先を取得する関数
+ *
+ * @param int $new_sv_weight 新サーバーを参照するウェイト（1～100）
+ * @return string $url アップデートサーバーのURL
+ */
+function fetch_updater_url( $new_sv_weight ) {
+  $uri = get_template_directory_uri();
+
+  // サイトURLをベースに符号化（数値化）
+  $crc = abs( crc32( $uri ) ) ;
+
+  // 符号化した値をシード値として用いて0～100の乱数を生成
+  srand( $crc );
+  $percent = rand( 1, 100 );
+
+  // 指定したウェイトよりも小さい数であれば新サーバー、それ以外は既存を見に行く
+  if ( $percent <= $new_sv_weight ) {
+      $url = 'https://download.wp-cocoon.com/v1/update.php?action=get_metadata&slug=cocoon-master';
+  } else {
+      $url = 'https://raw.githubusercontent.com/xserver-inc/cocoon/master/update-info.json';
+  }
+
+  return $url;
+}
+
 //アップデートチェックの初期化
 require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-    'https://raw.githubusercontent.com/xserver-inc/cocoon/master/update-info.json', //JSONファイルのURL
+    fetch_updater_url(20), //JSONファイルのURL
     __FILE__,
-    'wp-cocoon-theme' 
+    'wp-cocoon-theme'
 );
 
 //本文部分の冒頭を綺麗に抜粋する
@@ -96,7 +122,7 @@ endif;
 if ( !function_exists( 'get_archive_chapter_title' ) ):
 function get_archive_chapter_title(){
   $chapter_title = null;
-  if( is_category() ) {//カテゴリページの場合
+  if( is_category() ) {//カテゴリーページの場合
     $cat_id = get_query_var('cat');
     $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
     if ($cat_id && get_the_category_title($cat_id)) {
@@ -161,7 +187,7 @@ function admin_enqueue_scripts_custom($hook) {
 }
 endif;
 
-//投稿管理画面のカテゴリリストの階層を保つ
+//投稿管理画面のカテゴリーリストの階層を保つ
 add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2);
 if ( !function_exists( 'solecolor_wp_terms_checklist_args' ) ):
 function solecolor_wp_terms_checklist_args( $args, $post_id ){
@@ -390,7 +416,7 @@ function cocoon_add_faq($content, $block, $faq, $question) {
   $answer = '';
   $innerBlocks = $block['innerBlocks'];
   foreach ($innerBlocks as $innerBlock) {
-    
+
     //WordPress 6.1以上の場合
     if (is_wp_6_1_or_over()) {
       //リストブロックかどうか
@@ -405,11 +431,11 @@ function cocoon_add_faq($content, $block, $faq, $question) {
           }
           //</ul> or </ol>
           $answer .= $innerBlock['innerContent'][count($innerBlock['innerContent']) - 1];
-        }      
+        }
       } else {
         //リストブロック以外
         $answer .= trim($innerBlock['innerHTML']);
-      }      
+      }
     } else {
       //ONE PIECE 6.1未満の場合
       $answer .= trim($innerBlock['innerHTML']);

@@ -1067,7 +1067,7 @@ function generate_popular_entries_tag($atts){
         <?php
         $is_visible = apply_filters('is_popular_entry_card_category_label_visible', false);
         $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
-        the_nolink_category($post->ID, $is_visible); //カテゴリラベルの取得 ?>
+        the_nolink_category($post->ID, $is_visible); //カテゴリーラベルの取得 ?>
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
@@ -1328,7 +1328,7 @@ function get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type){
     }
     $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
     $post_id = isset($post->ID) ? $post->ID : null;
-    the_nolink_category($post_id, $is_visible); //カテゴリラベルの取得
+    the_nolink_category($post_id, $is_visible); //カテゴリーラベルの取得
   }
   return ob_get_clean();
 }
@@ -1734,5 +1734,40 @@ function get_navi_card_wrap_tag($atts){
   $navi_card_class = get_additional_widget_entry_cards_classes($atts);
   $tag = '<div class="navi-entry-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
   return $tag;
+}
+endif;
+
+//インフォリスト生成タグ
+if ( !function_exists( 'generate_info_list_tag' ) ):
+function generate_info_list_tag($atts){
+  extract(shortcode_atts(array(
+    'count' => 5,
+    'title' => __( '新着情報', THEME_NAME ),
+  ), $atts));
+  $args = array(
+    'no_found_rows' => true,
+    'ignore_sticky_posts' => true,
+    'posts_per_page' => $count,
+  );
+  $query = new WP_Query( $args );
+  if( $query -> have_posts() ): //投稿が存在する時
+  ?>
+  <div id="info-list" class="info-list">
+    <?php if ($title): ?>
+      <div class="info-list-title"><?php echo esc_html($title); ?></div>
+    <?php endif; ?>
+    <?php while ($query -> have_posts()) : $query -> the_post(); ?>
+      <div class="info-list-item">
+        <div class="info-list-item-date"><?php the_time(get_option('date_format')); ?></div>
+        <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
+      </div>
+    <?php endwhile;
+  else :
+    echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
+  endif; ?>
+  <?php wp_reset_postdata(); ?>
+  <?php //wp_reset_query(); ?>
+  </div>
+<?php
 }
 endif;

@@ -58,7 +58,7 @@ function get_the_tag_title($tag_id = null, $is_tag_name = true){
     $tag = get_tag($tag_id);
     if (isset($tag->name)) {
       $res = $tag->name;
-    }    
+    }
   }
   return $res;
 }
@@ -82,7 +82,7 @@ function get_the_tag_content($tag_id = null, $for_editor = false){
   }
   if (!$for_editor) {
     //$content = wpautop($content);
-    $content = apply_filters( 'the_category_tag_content', $content );//カテゴリ・タグ本文共通
+    $content = apply_filters( 'the_category_tag_content', $content );//カテゴリー・タグ本文共通
     $content = apply_filters( 'the_tag_content', $content );
   }
   return $content;

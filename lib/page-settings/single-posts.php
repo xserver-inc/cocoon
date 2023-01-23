@@ -10,10 +10,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // 関連記事
 ///////////////////////////////////////
 
-//カテゴリ・タグ表示タイプ
+//カテゴリー・タグ表示タイプ
 update_theme_option(OP_CATEGORY_TAG_DISPLAY_TYPE);
 
-//カテゴリ・タグ表示位置
+//カテゴリー・タグ表示位置
 update_theme_option(OP_CATEGORY_TAG_DISPLAY_POSITION);
 
 //関連記事の表示

@@ -247,7 +247,7 @@ body.wp-admin {
   ** 内容
   ************************************/
   /*エントリー・アーカイブの見出し*/
-  /*本文下カテゴリとタグ*/
+  /*本文下カテゴリーとタグ*/
   /*本文下カテゴリ*/
   /*本文下タグ*/
   /************************************
@@ -550,7 +550,7 @@ body.wp-admin {
   ** 内容
   ************************************/
   /*エントリー・アーカイブの見出し*/
-  /*本文下カテゴリとタグ*/
+  /*本文下カテゴリーとタグ*/
   /*本文下カテゴリ*/
   /*本文下タグ*/
   /************************************
@@ -2506,14 +2506,6 @@ body.wp-admin {
   display: block;
   padding: 2px 16px;
 }
-.admin-settings .demo .toc-widget-box .toc-title {
-  display: none;
-}
-.admin-settings .demo .toc-widget-box .toc-content {
-  visibility: visible;
-  opacity: 1;
-  height: 100%;
-}
 .admin-settings .demo .nwa .toc {
   border: 0;
   padding: 0 1em;
@@ -8539,6 +8531,27 @@ body.wp-admin {
   content: "";
   border: solid rgba(255, 255, 255, 0.7);
   border-width: 2px 2px 0 0;
+}
+.admin-settings .demo .info-list-item {
+  display: flex;
+}
+.admin-settings .demo .info-list-title {
+  text-align: center;
+}
+.admin-settings .demo .info-list-item > div {
+  padding: 4px 8px;
+  line-height: 20px;
+}
+.admin-settings .demo .info-list-item-date {
+  font-size: 0.8em;
+  width: 136px;
+}
+.admin-settings .demo .info-list-item-content-link {
+  color: #333;
+  text-decoration: none;
+}
+.admin-settings .demo .info-list-item-content-link:hover {
+  text-decoration: underline;
 }
 .admin-settings .demo .no-border {
   border: none;
@@ -10206,14 +10219,6 @@ body.wp-admin {
   display: block;
   padding: 2px 16px;
 }
-.admin-settings .demo .toc-widget-box .toc-title {
-  display: none;
-}
-.admin-settings .demo .toc-widget-box .toc-content {
-  visibility: visible;
-  opacity: 1;
-  height: 100%;
-}
 .admin-settings .demo .nwa .toc {
   border: 0;
   padding: 0 1em;
@@ -16240,6 +16245,27 @@ body.wp-admin {
   border: solid rgba(255, 255, 255, 0.7);
   border-width: 2px 2px 0 0;
 }
+.admin-settings .demo .info-list-item {
+  display: flex;
+}
+.admin-settings .demo .info-list-title {
+  text-align: center;
+}
+.admin-settings .demo .info-list-item > div {
+  padding: 4px 8px;
+  line-height: 20px;
+}
+.admin-settings .demo .info-list-item-date {
+  font-size: 0.8em;
+  width: 136px;
+}
+.admin-settings .demo .info-list-item-content-link {
+  color: #333;
+  text-decoration: none;
+}
+.admin-settings .demo .info-list-item-content-link:hover {
+  text-decoration: underline;
+}
 .admin-settings .demo .no-border {
   border: none;
 }
@@ -17661,6 +17687,13 @@ body.wp-admin {
   .admin-settings .demo .sidebar .ad-vertical .ad-additional-vertical {
     display: block;
   }
+  .admin-settings .demo .info-list-item {
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  .admin-settings .demo .info-list-item > div {
+    padding: 2px;
+  }
   .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box {
     padding: 10px 10px 24px;
     display: block;
@@ -18113,7 +18146,7 @@ body.wp-admin {
   .admin-settings .demo div#bbpress-forums .bbp-body div.bbp-reply-content p {
     margin-top: 0;
   }
-  .admin-settings .demo .appeal-in {
+  .admin-settings .demo .appeal .appeal-in {
     min-height: 200px;
   }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb {

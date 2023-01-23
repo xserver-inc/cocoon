@@ -76,7 +76,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
-
+<?php if (false): ?>
 <!-- JavaScriptライブラリ -->
 <div id="others" class="postbox">
   <h2 class="hndle"><?php _e( 'JavaScriptライブラリ設定', THEME_NAME ) ?></h2>
@@ -97,7 +97,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
           <?php
             $options = array(
-              '3' => __( 'jQuery Core 3.6.0', THEME_NAME ),
+              '3' => __( 'jQuery Core 3.6.1', THEME_NAME ),
               '2' => __( 'jQuery Core 2.2.4', THEME_NAME ),
               '1' => __( 'jQuery Core 1.12.4', THEME_NAME ),
             );
@@ -131,5 +131,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   </div>
 </div>
+<?php endif; ?>
 
 </div><!-- /.metabox-holder -->

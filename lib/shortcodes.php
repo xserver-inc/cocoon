@@ -54,7 +54,7 @@ function new_entries_shortcode($atts) {
     'horizontal' => 0,
   ), $atts, 'new_list'));
 
-  //カテゴリを配列化
+  //カテゴリーを配列化
   $cat_ids = array();
   if ($cats && $cats != 'all') {
     $cat_ids = explode(',', $cats);
@@ -953,10 +953,32 @@ endif;
 add_shortcode('ad', 'ad_shortcode');
 if ( !function_exists( 'ad_shortcode' ) ):
 function ad_shortcode( $atts ) {
-  ob_start();//バッファリング
-  get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
+  if (is_ad_shortcode_enable()) {
+    ob_start();//バッファリング
+    get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
 
-  return ob_get_clean();
+    return ob_get_clean();
+  }
 }
 endif;
 
+
+//インフォリストショートコード
+add_shortcode('info_list', 'get_info_list_shortcode');
+if ( !function_exists( 'get_info_list_shortcode' ) ):
+function get_info_list_shortcode($atts){
+  extract(shortcode_atts(array(
+    'count' => 5,
+    'title' => __( '新着情報', THEME_NAME ),
+  ), $atts, 'navi'));
+  $atts = array(
+    'count' => $count,
+    'title' => $title,
+  );
+  ob_start();
+  generate_info_list_tag($atts);
+  $tag = ob_get_clean();
+
+  return apply_filters('get_info_list_tag', $tag);
+}
+endif;

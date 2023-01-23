@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//インデックスカテゴリを読み込む
+//インデックスカテゴリーを読み込む
 $cat_ids = get_index_list_category_ids();
 $count = get_index_category_entry_card_count();
 ?>
@@ -29,7 +29,7 @@ $count = get_index_category_entry_card_count();
   }; ?>
 
   <div id="list-columns" class="list-columns">
-    <?php //カテゴリの表示
+    <?php //カテゴリーの表示
     for ($i=0; $i < count($cat_ids); $i++):
       $cat_id = $cat_ids[$i]; ?>
       <?php if (is_category_exist($cat_id)): ?>

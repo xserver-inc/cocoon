@@ -12,17 +12,19 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ////////////////////////////
 if ( is_category() ){
   ////////////////////////////
-  //カテゴリページのパンくずリスト
+  //カテゴリーページのパンくずリスト
   ////////////////////////////
   if (is_single_breadcrumbs_position_main_top()) {
     get_template_part('tmp/breadcrumbs');
   }
 
   ////////////////////////////
-  //カテゴリページのコンテンツ
+  //カテゴリーページのコンテンツ
   ////////////////////////////
   if (!is_paged()) {
     get_template_part('tmp/category-content');
+  } else {
+    get_template_part('tmp/list-title');
   }
 } elseif ( (is_tag() || is_tax()) && !is_paged() ) {
   get_template_part('tmp/tag-content');
@@ -129,7 +131,7 @@ if (is_front_page_type_index() || !is_front_top_page()) {
 }
 
 ////////////////////////////
-//カテゴリページのパンくずリスト
+//カテゴリーページのパンくずリスト
 ////////////////////////////
 if (is_category() && is_single_breadcrumbs_position_main_bottom()){
   get_template_part('tmp/breadcrumbs');

@@ -1,0 +1,26 @@
+//インフォリストのCSS
+.info-list-item{
+  display: flex;
+}
+
+.info-list-title{
+  text-align: center;
+}
+
+.info-list-item > div{
+  padding: 4px 8px;
+  line-height: 20px;
+}
+
+.info-list-item-date{
+  font-size: 0.8em;
+  width: 136px;
+}
+
+.info-list-item-content-link{
+  color: $black_color;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}

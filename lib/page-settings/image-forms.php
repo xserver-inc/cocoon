@@ -69,7 +69,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <div class="indent<?php echo get_not_allowed_form_class(is_eyecatch_visible(), true); ?>">
               <?php
               generate_checkbox_tag(OP_EYECATCH_LABEL_VISIBLE, is_eyecatch_label_visible(), __( 'アイキャッチラベルを表示する', THEME_NAME ));
-              generate_tips_tag(__( '投稿・固定ページのアイキャッチに表示されるカテゴリラベルの表示切り替えです。', THEME_NAME ));
+              generate_tips_tag(__( '投稿・固定ページのアイキャッチに表示されるカテゴリーラベルの表示切り替えです。', THEME_NAME ));
 
             generate_checkbox_tag(OP_EYECATCH_CENTER_ENABLE , is_eyecatch_center_enable(), __( 'アイキャッチの中央寄せ', THEME_NAME ));
             generate_tips_tag(__( '投稿・固定ページに表示されるアイキャッチをカラムの中央に表示します。', THEME_NAME ));

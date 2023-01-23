@@ -120,8 +120,8 @@ endif;
 if ( !function_exists( 'is_noindex_page' ) ):
 function is_noindex_page(){
   $is_noindex = (is_archive() && !is_category() && !is_tag() && !is_tax() && is_other_archive_page_noindex()) || //アーカイブページはインデックスに含めない
-  ( is_category() && (is_category_page_noindex() || get_the_category_noindex()) )  || //カテゴリページ
-  ( is_category() && is_paged() && is_paged_category_page_noindex() )  || //カテゴリページ（2ページ目以降）
+  ( is_category() && (is_category_page_noindex() || get_the_category_noindex()) )  || //カテゴリーページ
+  ( is_category() && is_paged() && is_paged_category_page_noindex() )  || //カテゴリーページ（2ページ目以降）
   ( is_tax() && (is_tag_page_noindex() || get_the_tag_noindex()) ) || //タクソノミ
   ( is_tag() && (is_tag_page_noindex() || get_the_tag_noindex()) ) || //タグページ（2ページ目以降）
   ( is_tag() && is_paged() && is_paged_tag_page_noindex() ) || //タグページ（2ページ目以降）
@@ -185,7 +185,7 @@ function the_prev_next_link_tag() {
       }
     }
   } else if (is_search()){
-    //トップページやカテゴリページなどの分割ページの設定
+    //トップページやカテゴリーページなどの分割ページの設定
     global $paged;
     $search_query = htmlspecialchars(get_search_query());
     if ( get_previous_posts_link() ){
@@ -201,7 +201,7 @@ function the_prev_next_link_tag() {
       echo '<link rel="next" href="'.esc_url($url).'" />'.PHP_EOL;
     }
   } else if (!is_404()){
-    //トップページやカテゴリページなどの分割ページの設定
+    //トップページやカテゴリーページなどの分割ページの設定
     global $paged;
     if ( get_previous_posts_link() ){
       $url = user_trailingslashit(get_pagenum_link( $paged - 1 ));
@@ -314,7 +314,7 @@ function generate_canonical_url(){
   } elseif (is_front_page()) {
     $canonical_url = home_url();
   } elseif (is_category()) {
-    //カテゴリページのみcocoon.dev/category/hoge/catname/page/2/といったURLの対策が必要
+    //カテゴリーページのみcocoon.dev/category/hoge/catname/page/2/といったURLの対策が必要
     $canonical_url = get_category_link(get_query_var('cat'));
     $canonical_url = get_paged_archive_url($canonical_url);
   } elseif (is_tag()) {
@@ -384,19 +384,19 @@ function get_category_meta_description($category = null){
   $cat_desc = category_description();
   if ($cat_desc) {
     $cat_desc = trim( strip_tags( $cat_desc ) );
-    //カテゴリ設定に説明がある場合はそれを返す
+    //カテゴリー設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
   }
 
-  //カテゴリ本文から抜粋文を作成
+  //カテゴリー本文から抜粋文を作成
   $cat_desc = get_content_excerpt(get_the_category_content(), 160);
   if ( $cat_desc ) {
     $cat_desc = trim( strip_tags( $cat_desc ) );
-    //カテゴリ設定に説明がある場合はそれを返す
+    //カテゴリー設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
   }
 
-  //カテゴリ名から作成
+  //カテゴリー名から作成
   if ($category) {
     $cat_name = $category->name;
   } else {
@@ -458,7 +458,7 @@ function get_meta_description_text(){
   }
   if ($description) {
     $description = htmlspecialchars($description);
-  }  
+  }
   return apply_filters('get_meta_description_text', $description);
 }
 endif;
@@ -491,7 +491,7 @@ function get_meta_keywords_text(){
   }
   if ($keywords) {
     $keywords = htmlspecialchars($keywords);
-  }  
+  }
   return apply_filters('get_meta_keywords_text', $keywords);
 }
 endif;
@@ -518,7 +518,7 @@ function get_tag_meta_description($tag = null){
   //タグ設定ページのディスクリプションを取得
   if (get_the_tag_meta_description()) {
     $tag_desc = trim( strip_tags( get_the_tag_meta_description() ) );
-  }  
+  }
   if ( $tag_desc ) {//ディスクリプションが設定されている場合
     return htmlspecialchars($tag_desc);
   }
@@ -526,7 +526,7 @@ function get_tag_meta_description($tag = null){
   //タグ説明文を取得
   if (tag_description()) {
     $tag_desc = trim( strip_tags( tag_description() ) );
-  }  
+  }
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }
@@ -535,7 +535,7 @@ function get_tag_meta_description($tag = null){
   $tag_content = get_content_excerpt(get_the_tag_content(), 160);
   if ($tag_content) {
     $tag_desc = trim( strip_tags( $tag_content ) );
-  }  
+  }
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }

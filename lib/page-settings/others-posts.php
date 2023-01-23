@@ -23,8 +23,8 @@ update_theme_option(OP_AUTO_POST_SLUG_ENABLE);
 // JavaScriptライブラリ
 ///////////////////////////////////////////
 
-//jQueryのバージョン
-update_theme_option(OP_JQUERY_VERSION);
+// //jQueryのバージョン
+// update_theme_option(OP_JQUERY_VERSION);
 
-//jQueryのバージョン
-update_theme_option(OP_JQUERY_MIGRATE_VERSION);
+// //jQueryのバージョン
+// update_theme_option(OP_JQUERY_MIGRATE_VERSION);

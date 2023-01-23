@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-12-23 22:07+0900\n"
-"PO-Revision-Date: 2022-12-23 22:07+0900\n"
+"PO-Revision-Date: 2023-01-03 19:28+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -3328,47 +3328,47 @@ msgstr "Esta é uma lista de artigos de \" %s\"."
 
 #: lib/content-category.php:222
 #, fuzzy
-msgid "カテゴリ色"
+msgid "カテゴリー色"
 msgstr "Cor da categoria"
 
 #: lib/content-category.php:231
 #, fuzzy
-msgid "カテゴリの色を指定します。"
+msgid "カテゴリーの色を指定します。"
 msgstr "Especifica a cor da categoria."
 
 #: lib/content-category.php:240
 #, fuzzy
-msgid "カテゴリの文字色を指定します。入力しない場合は、白色になります。"
+msgid "カテゴリーの文字色を指定します。入力しない場合は、白色になります。"
 msgstr ""
 "Especifica a cor do texto da categoria. Se você não digitar, ele será branco."
 
 #: lib/content-category.php:245
 #, fuzzy
-msgid "カテゴリタイトル"
+msgid "カテゴリータイトル"
 msgstr "Título da categoria"
 
 #: lib/content-category.php:250
 #, fuzzy
-msgid "カテゴリページのタイトル"
+msgid "カテゴリーページのタイトル"
 msgstr "Título da página de categoria"
 
 #: lib/content-category.php:251
 #, fuzzy
 msgid ""
-"カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入"
-"力したテキストが適用されます。"
+"カテゴリーページのタイトルを指定します。カテゴリーページのタイトルタグにここ"
+"で入力したテキストが適用されます。"
 msgstr ""
 "Especifica o título da página de categoria. O texto digitado aqui na tag de "
 "título da página de categoria é aplicado."
 
 #: lib/content-category.php:255
 #, fuzzy
-msgid "カテゴリ本文"
+msgid "カテゴリー本文"
 msgstr "Corpo da categoria"
 
 #: lib/content-category.php:260
 #, fuzzy
-msgid "カテゴリページで表示されるメインコンテンツを入力してください。"
+msgid "カテゴリーページで表示されるメインコンテンツを入力してください。"
 msgstr "Insira o conteúdo principal que aparece na página de categoria."
 
 #: lib/content-category.php:269 lib/content-tag.php:218
@@ -3385,13 +3385,13 @@ msgstr "Meta descriçăo"
 
 #: lib/content-category.php:277
 #, fuzzy
-msgid "カテゴリページの説明文を入力してください"
+msgid "カテゴリーページの説明文を入力してください"
 msgstr "Digite um texto descritivo para a página de categoria"
 
 #: lib/content-category.php:279
 #, fuzzy
 msgid ""
-"カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプ"
+"カテゴリーページの説明を入力します。ここに入力したテキストはメタディスクリプ"
 "ションタグとして利用されます。"
 msgstr ""
 "Digite uma descrição para a página de categoria. O texto que você inserir "
@@ -3412,8 +3412,8 @@ msgstr "Palavra-chave 1, palavra-chave 2, palavra-chave 3"
 #: lib/content-category.php:289
 #, fuzzy
 msgid ""
-"カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり"
-"意味のない設定となっています。"
+"カテゴリーページのメタキーワードをカンマ区切りで入力してください。※現在はあま"
+"り意味のない設定となっています。"
 msgstr ""
 "Insira uma lista separada por vírgulas de meta-palavras-chave para a página "
 "de categoria. ※ Tornou-se um cenário que não tem muito significado agora."
@@ -3448,7 +3448,7 @@ msgstr "É o nome exibido pelo widget e o rótulo, etc. como uma categoria."
 
 #: lib/content-category.php:372
 #, fuzzy
-msgid "基本的にカテゴリ設定の一覧テーブルに説明文を表示するための入力です。"
+msgid "基本的にカテゴリー設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr ""
 "Isso é basicamente uma entrada para exibir texto descritivo na tabela de "
 "lista de configurações de categoria."
@@ -3520,8 +3520,8 @@ msgstr "Excluir anúncios"
 #: lib/custom-fields/ad-field.php:32
 #, fuzzy
 msgid ""
-"ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリごと"
-"の設定も行えます。"
+"ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリーご"
+"との設定も行えます。"
 msgstr ""
 "Alterna a exibição de anúncios (como o Google Adsense) na página. Você "
 "também pode definir cada categoria a partir da configuração \"anúncios\"."
@@ -3621,7 +3621,7 @@ msgstr "Categoria"
 
 #: lib/custom-fields/page-field.php:41
 #, fuzzy
-msgid "このページで優先するカテゴリを選択します。"
+msgid "このページで優先するカテゴリーを選択します。"
 msgstr "Selecione uma categoria que não gere uma página amp."
 
 #: lib/custom-fields/page-field.php:41
@@ -3630,7 +3630,7 @@ msgid "優先カテゴリーは、アイキャッチやパンくずリストに�
 msgstr "É o nome exibido pelo widget e o rótulo, etc. como uma categoria."
 
 #: lib/custom-fields/page-field.php:41
-msgid "カテゴリ選択直後はすぐにセレクトボックスに反映されません。"
+msgid "カテゴリー選択直後はすぐにセレクトボックスに反映されません。"
 msgstr ""
 
 #: lib/custom-fields/page-field.php:41
@@ -3871,7 +3871,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合"
-"は、カテゴリ名などから自動で設定されます。"
+"は、カテゴリー名などから自動で設定されます。"
 msgstr ""
 "Insira palavras-chave relacionadas ao artigo, separadas por vírgulas. Se "
 "você não digitar, ele será definido automaticamente a partir do nome da "
@@ -5806,7 +5806,7 @@ msgstr "Versão:"
 
 #: lib/page-settings/about-forms.php:80
 #, fuzzy
-msgid "カテゴリ数："
+msgid "カテゴリー数："
 msgstr "Número de categorias:"
 
 #: lib/page-settings/about-forms.php:83
@@ -6760,7 +6760,7 @@ msgstr "Configurações de exclusão de anúncios"
 
 #: lib/page-settings/ads-forms.php:300
 #, fuzzy
-msgid "広告を表示したくないページやカテゴリの設定です。"
+msgid "広告を表示したくないページやカテゴリーの設定です。"
 msgstr ""
 "Definições para páginas e categorias que não pretende que os seus anúncios "
 "sejam exibidos."
@@ -6790,7 +6790,7 @@ msgstr "Categoria de exclusão de anúncios"
 
 #: lib/page-settings/ads-forms.php:326
 #, fuzzy
-msgid "広告を非表示にするカテゴリを選択してください。"
+msgid "広告を非表示にするカテゴリーを選択してください。"
 msgstr "Escolha uma categoria para ocultar seus anúncios."
 
 #: lib/page-settings/ads-funcs.php:38
@@ -7427,7 +7427,7 @@ msgstr "Categorias de exclusão AMP"
 
 #: lib/page-settings/amp-forms.php:121
 #, fuzzy
-msgid "AMPページを生成しないカテゴリを選択してください。"
+msgid "AMPページを生成しないカテゴリーを選択してください。"
 msgstr "Selecione uma categoria que não gere uma página amp."
 
 #: lib/page-settings/analytics-forms.php:13
@@ -8847,9 +8847,9 @@ msgstr "Tags"
 #: lib/page-settings/carousel-forms.php:82
 #, fuzzy
 msgid ""
-"カルーセルと関連付けるカテゴリもしくはタグを選択してください。人気記事を有効"
-"にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び替"
-"え」で設定した順番で表示されます。"
+"カルーセルと関連付けるカテゴリーもしくはタグを選択してください。人気記事を有"
+"効にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び"
+"替え」で設定した順番で表示されます。"
 msgstr ""
 "Selecione a categoria que você deseja associar ao carrossel. é exibido "
 "aleatoriamente."
@@ -10451,7 +10451,8 @@ msgstr "Mostrar rótulos de capturas oculares"
 #: lib/page-settings/image-forms.php:72
 #, fuzzy
 msgid ""
-"投稿・固定ページのアイキャッチに表示されるカテゴリラベルの表示切り替えです。"
+"投稿・固定ページのアイキャッチに表示されるカテゴリーラベルの表示切り替えで"
+"す。"
 msgstr ""
 "A alternância de exibição da legenda da categoria exibida na captura ocular "
 "da página post/Fixed."
@@ -10802,7 +10803,7 @@ msgstr ""
 #: lib/page-settings/index-forms.php:52 lib/page-settings/index-forms.php:53
 #: lib/page-settings/index-forms.php:54
 #, fuzzy
-msgid "カテゴリごと"
+msgid "カテゴリーごと"
 msgstr "Apenas categoria"
 
 #: lib/page-settings/index-forms.php:53
@@ -10855,8 +10856,8 @@ msgstr "Insira o texto do link na página de revisão"
 #: lib/page-settings/index-forms.php:70
 #, fuzzy
 msgid ""
-"意図通りの順番でカテゴリを表示する場合は、カテゴリーIDをカンマ区切りで入力し"
-"てください。"
+"意図通りの順番でカテゴリーを表示する場合は、カテゴリーIDをカンマ区切りで入力"
+"してください。"
 msgstr "Insira o conteúdo principal que aparece na página de categoria."
 
 #: lib/page-settings/index-forms.php:70
@@ -10869,7 +10870,7 @@ msgstr ""
 "inserida, isso prevalecerá."
 
 #: lib/page-settings/index-forms.php:72
-msgid "カテゴリ表示の順番を並び替える場合はこちら"
+msgid "カテゴリー表示の順番を並び替える場合はこちら"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:79
@@ -10929,8 +10930,8 @@ msgstr "Código abreviado"
 #: lib/page-settings/index-forms.php:100
 #, fuzzy
 msgid ""
-"フロントページタイプを「カテゴリごと」にした際に表示される新着エントリーカー"
-"ド数を設定します。"
+"フロントページタイプを「カテゴリーごと」にした際に表示される新着エントリー"
+"カード数を設定します。"
 msgstr ""
 "As configurações para a primeira página, título, descrição meta e META "
 "palavras-chave."
@@ -10943,14 +10944,14 @@ msgstr "Exibição aleatória de páginas de categoria."
 #: lib/page-settings/index-forms.php:106
 #, fuzzy
 msgid ""
-"フロントページのインデックスでカテゴリごとに表示するエントリーカード数を設定"
-"します。"
+"フロントページのインデックスでカテゴリーごとに表示するエントリーカード数を設"
+"定します。"
 msgstr ""
 "As configurações para a primeira página, título, descrição meta e META "
 "palavras-chave."
 
 #: lib/page-settings/index-forms.php:108
-msgid "「カテゴリごと」表示でカード表示数を変更する場合はこちら"
+msgid "「カテゴリーごと」表示でカード表示数を変更する場合はこちら"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:116
@@ -12122,8 +12123,8 @@ msgstr ""
 #: lib/page-settings/seo-forms.php:31
 #, fuzzy
 msgid ""
-"この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入さ"
-"れます。"
+"この機能を有効にするとトップページやカテゴリーページ等にもcanonicalタグが挿入"
+"されます。"
 msgstr ""
 "Quando esse recurso está habilitado, a marca canônica é inserida na página "
 "superior, na página de categoria, etc."
@@ -12144,22 +12145,22 @@ msgstr ""
 
 #: lib/page-settings/seo-forms.php:38
 #, fuzzy
-msgid "カテゴリページをnoindexとする"
+msgid "カテゴリーページをnoindexとする"
 msgstr "Página de Tags com noindex"
 
 #: lib/page-settings/seo-forms.php:39
 #, fuzzy
-msgid "カテゴリページ全体をnoindex設定にします。"
+msgid "カテゴリーページ全体をnoindex設定にします。"
 msgstr "Defina a página de índice da marca para NOINDEX."
 
 #: lib/page-settings/seo-forms.php:43
 #, fuzzy
-msgid "カテゴリページの2ページ目以降をnoindexとする"
+msgid "カテゴリーページの2ページ目以降をnoindexとする"
 msgstr "Noindex a segunda página da página de categoria."
 
 #: lib/page-settings/seo-forms.php:44
 #, fuzzy
-msgid "カテゴリページのトップページ以外はnoindex設定にします。"
+msgid "カテゴリーページのトップページ以外はnoindex設定にします。"
 msgstr "Exceto para a página superior da página de categoria, defina NOINDEX."
 
 #: lib/page-settings/seo-forms.php:49
@@ -12189,7 +12190,7 @@ msgstr "Outras páginas de arquivo com NOINDEX"
 
 #: lib/page-settings/seo-forms.php:61
 #, fuzzy
-msgid "カテゴリ・タグ以外のアーカイブページをnoindex設定にします。"
+msgid "カテゴリー・タグ以外のアーカイブページをnoindex設定にします。"
 msgstr ""
 "Defina NOINDEX para a página de arquivamento diferente da marca de categoria."
 
@@ -12255,12 +12256,12 @@ msgstr ""
 
 #: lib/page-settings/single-forms.php:13
 #, fuzzy
-msgid "カテゴリ・タグ表示設定"
+msgid "カテゴリー・タグ表示設定"
 msgstr "Tag de categoria exibir configurações"
 
 #: lib/page-settings/single-forms.php:16
 #, fuzzy
-msgid "投稿本文下のカテゴリとタグの表示を設定します。"
+msgid "投稿本文下のカテゴリーとタグの表示を設定します。"
 msgstr "Define a exibição de categorias e marcas abaixo do corpo da postagem."
 
 #: lib/page-settings/single-forms.php:31
@@ -12270,22 +12271,22 @@ msgstr "A demo é aleatória."
 
 #: lib/page-settings/single-forms.php:39
 #, fuzzy
-msgid "カテゴリ・タグ表示"
+msgid "カテゴリー・タグ表示"
 msgstr "Exibição da tag de categoria"
 
 #: lib/page-settings/single-forms.php:44
 #, fuzzy
-msgid "カテゴリ・タグ2列"
+msgid "カテゴリー・タグ2列"
 msgstr "Categoria Tags 2 colunas"
 
 #: lib/page-settings/single-forms.php:45
 #, fuzzy
-msgid "カテゴリ・タグ1列"
+msgid "カテゴリー・タグ1列"
 msgstr "Categoria Tags 1 coluna"
 
 #: lib/page-settings/single-forms.php:46
 #, fuzzy
-msgid "カテゴリのみ"
+msgid "カテゴリーのみ"
 msgstr "Apenas categoria"
 
 #: lib/page-settings/single-forms.php:47
@@ -12295,17 +12296,17 @@ msgstr "apenas Tags"
 
 #: lib/page-settings/single-forms.php:48
 #, fuzzy
-msgid "カテゴリもタグも表示しない"
+msgid "カテゴリーもタグも表示しない"
 msgstr "Ocultar categorias e Tags"
 
 #: lib/page-settings/single-forms.php:51
 #, fuzzy
-msgid "カテゴリとタグの表示を制御します。"
+msgid "カテゴリーとタグの表示を制御します。"
 msgstr "Controla a exibição de categorias e marcas."
 
 #: lib/page-settings/single-forms.php:59
 #, fuzzy
-msgid "カテゴリ・タグ表示位置"
+msgid "カテゴリー・タグ表示位置"
 msgstr "Exibição da tag de categoria"
 
 #: lib/page-settings/single-forms.php:66
@@ -12315,7 +12316,7 @@ msgstr "Número (padrão)"
 
 #: lib/page-settings/single-forms.php:69
 #, fuzzy
-msgid "カテゴリとタグの表示位置を設定します。"
+msgid "カテゴリーとタグの表示位置を設定します。"
 msgstr "Controla a exibição de categorias e marcas."
 
 #: lib/page-settings/single-forms.php:83
@@ -12557,8 +12558,8 @@ msgstr "Ver categorias"
 #: lib/page-settings/single-forms.php:361
 #, fuzzy
 msgid ""
-"投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリが設定し"
-"てある場合は、複数に属するものが表示されます。"
+"投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリーが設定"
+"してある場合は、複数に属するものが表示されます。"
 msgstr ""
 "Se deseja exibir a navegação de página na mesma categoria que a postagem. Se "
 "você tiver mais de uma categoria configurada, verá uma que pertence a mais "
@@ -12566,7 +12567,7 @@ msgstr ""
 
 #: lib/page-settings/single-forms.php:366
 #, fuzzy
-msgid "ページ送りナビに表示させないカテゴリを選択してください。"
+msgid "ページ送りナビに表示させないカテゴリーを選択してください。"
 msgstr "Selecione uma categoria que não gere uma página amp."
 
 #: lib/page-settings/single-forms.php:374
@@ -14475,7 +14476,7 @@ msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:64
 #, fuzzy
-msgid "カテゴリページ全体を除外する例：/category/"
+msgid "カテゴリーページ全体を除外する例：/category/"
 msgstr "Defina a página de índice da marca para NOINDEX."
 
 #: lib/page-speed-up/speed-up-forms.php:81
@@ -16107,7 +16108,7 @@ msgstr "Todos os novos artigos (exibidos em todas as páginas)"
 
 #: lib/widgets/new-entries.php:141
 #, fuzzy
-msgid "カテゴリ別新着記事（投稿・カテゴリで表示）"
+msgid "カテゴリー別新着記事（投稿・カテゴリーで表示）"
 msgstr "Novos artigos por categoria (Mostrar na categoria post)"
 
 #: lib/widgets/new-entries.php:149
@@ -16205,7 +16206,7 @@ msgstr "Todos os artigos populares (exibidos em todas as páginas)"
 
 #: lib/widgets/popular-entries.php:185
 #, fuzzy
-msgid "カテゴリ別人気記事（投稿・カテゴリで表示）"
+msgid "カテゴリー別人気記事（投稿・カテゴリーで表示）"
 msgstr "Artigos populares por categoria (Mostrar por categoria de lançamento)"
 
 #: lib/widgets/popular-entries.php:190
