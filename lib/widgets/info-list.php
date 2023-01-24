@@ -35,14 +35,20 @@ class InfoListWidgetItem extends WP_Widget {
     //水平表示
     $is_frame = apply_filters( 'info_list_widget_is_frame', empty($instance['is_frame']) ? 0 : 1 );
     $is_divider = apply_filters( 'info_list_widget_is_divider', empty($instance['is_divider']) ? 0 : 1 );
+    //カテゴリーID
+    $cat_ids = empty($instance['cat_ids']) ? array() : $instance['cat_ids'];
+    $cat_ids = apply_filters( 'info_list_widget_cat_ids', $cat_ids, $instance, $this->id_base );
+    //カテゴリー配列のサニタイズ
+    $cats = 'all';
+    if (is_array($cat_ids)) {
+      $cats = implode(',', $cat_ids);
+    }
 
     echo $args['before_widget'];
     if (!is_null($title)) {
       echo $args['before_title'];
       if ($title) {
         echo $title;//タイトルが設定されている場合は使用する
-      // } else {
-      //   echo apply_filters('info_list_title', __( '新着情報', THEME_NAME ));
       }
       echo $args['after_title'];
     }
@@ -54,6 +60,7 @@ class InfoListWidgetItem extends WP_Widget {
       'count' => $count,
       'frame' => $is_frame,
       'divider' => $is_divider,
+      'cats' => $cats,
     );
     //新着記事リストの作成
     generate_info_list_tag($atts);
@@ -73,6 +80,12 @@ class InfoListWidgetItem extends WP_Widget {
     $instance['is_frame'] = !empty($new_instance['is_frame']) ? 1 : 0;
     $instance['is_divider'] = !empty($new_instance['is_divider']) ? 1 : 0;
 
+    if (isset($new_instance['cat_ids'])){
+      $instance['cat_ids'] = $new_instance['cat_ids'];
+    } else {
+      $instance['cat_ids'] = array();
+    }
+
     return $instance;
   }
   function form($instance) {
@@ -83,6 +96,7 @@ class InfoListWidgetItem extends WP_Widget {
         'count' => EC_DEFAULT,
         'is_frame'  => 1,
         'is_divider'  => 1,
+        'cat_ids' => array(),
       );
     }
     $title   = __( '新着情報', THEME_NAME );
@@ -96,6 +110,7 @@ class InfoListWidgetItem extends WP_Widget {
       $count = esc_attr($instance['count']);
     $is_frame = empty($instance['is_frame']) ? 0 : 1;
     $is_divider = empty($instance['is_divider']) ? 0 : 1;
+    $cat_ids = isset($instance['cat_ids']) ? $instance['cat_ids'] : array();
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
@@ -129,6 +144,13 @@ class InfoListWidgetItem extends WP_Widget {
       <?php
         generate_checkbox_tag($this->get_field_name('is_divider') , $is_divider, __( '仕切り線表示', THEME_NAME ));
       ?>
+    </p>
+    <?php //表示カテゴリー ?>
+      <label>
+        <?php _e( '表示カテゴリー', THEME_NAME ) ?>
+        <?php _e( '（※未選択の場合は全て表示）', THEME_NAME ) ?>
+      </label>
+      <?php echo generate_hierarchical_category_check_list(0, $this->get_field_name('cat_ids'), $cat_ids); ?>
     </p>
     <?php
   }

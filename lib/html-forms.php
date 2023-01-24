@@ -707,13 +707,7 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
   if( $next ) :
     foreach( $next as $cat ) :
       $checked = '';
-      // if (is_string($checks)) {
-      //   $checks = array();
-      // }
-      // //デフォルトのカテゴリは誤動作を起こすので除外
-      // if ($cat->term_id == 1) {
-      //   continue;
-      // }
+
       if (in_array($cat->term_id, $checks)) {
         $checked = ' checked="checked"';
       }
@@ -1742,7 +1736,7 @@ if ( !function_exists( 'generate_info_list_tag' ) ):
 function generate_info_list_tag($atts){
   extract(shortcode_atts($atts, $atts));
   $args = array(
-    'category__in' => $cats,
+    'cat' => $cats,
     'no_found_rows' => true,
     'ignore_sticky_posts' => true,
     'posts_per_page' => $count,
