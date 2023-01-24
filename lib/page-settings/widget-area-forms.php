@@ -24,17 +24,21 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
               $widget_areas = $GLOBALS['wp_registered_sidebars'];
-              //_v($widget_areas);
             ?>
             <ul>
               <?php
               foreach ($widget_areas as $id => $widget_area) {
-                $checked = null;
-                //_v($widget->widget_options);
-                if (in_array($id, get_exclude_widget_area_ids())) {
-                  $checked = ' checked="checked"';
-                }
-                echo '<li><input type="checkbox" name="'.OP_EXCLUDE_WIDGET_AREA_IDS.'[]" value="'.$id.'"'.$checked.'><b>' . $widget_area['name'].'</b>：'.$widget_area['description'].'</li>';
+                // $checked = null;
+                // if (in_array($id, get_exclude_widget_area_ids())) {
+                //   $checked = ' checked="checked"';
+                // }
+                // echo '<li><input type="checkbox" name="'.OP_EXCLUDE_WIDGET_AREA_IDS.'[]" value="'.$id.'"'.$checked.'><b>' . $widget_area['name'].'</b>：'.$widget_area['description'].'</li>';
+
+                echo '<li>';
+                generate_checkbox_tag(OP_EXCLUDE_WIDGET_AREA_IDS.'[]', get_exclude_widget_area_ids(), '<b>'.$widget_area['name'].'</b>:'.$widget_area['description'], $id);
+                echo '</li>';
+
+
               }
               ?>
             </ul>

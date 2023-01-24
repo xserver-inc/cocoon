@@ -6,8 +6,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
-<?php if ( is_sns_share_buttons_visible($option) ):
-//var_dump($option) ?>
+<?php if ( is_sns_share_buttons_visible($option) ): ?>
 <div class="sns-share<?php echo esc_attr(get_additional_sns_share_button_classes($option)); ?>">
   <?php if ( get_sns_bottom_share_message() && $option == SS_BOTTOM ): //シェアボタン用のメッセージを取得?>
     <div class="sns-share-message"><?php echo get_sns_bottom_share_message(); ?></div>
