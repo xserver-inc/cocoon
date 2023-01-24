@@ -55,6 +55,7 @@
   --default-text-size: 18px;
   --text-size-s: 0.8em;
   --basic-border-color: #ccc;
+  --three-d-border-colors: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
   --middle-thickness-color: #888;
   --thin-color: #ddd;
   --x-thin-color: #eee;
