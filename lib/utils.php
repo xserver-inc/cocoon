@@ -3537,3 +3537,12 @@ function is_rest() {
   return ( defined( 'REST_REQUEST' ) && REST_REQUEST );
 }
 endif;
+
+//HTML内のAタグをSPANタグに変換
+if ( !function_exists( 'replace_a_tags_to_span_tags' ) ):
+function replace_a_tags_to_span_tags( $html ) {
+  $html = str_replace('<a ', '<span ', $html);
+  $html = str_replace('</a>', '</span>', $html);
+  return $html;
+}
+endif;
