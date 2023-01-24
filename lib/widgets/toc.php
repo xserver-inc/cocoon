@@ -38,11 +38,11 @@ class TOCWidgetItem extends WP_Widget {
       //目次が出力されている場合
       if ($html) {
         echo $args['before_widget'];
-        if (!is_null($title)) {
-          if (empty($title)) {
-            $title = __( '目次', THEME_NAME );
-          }
-        }
+        // if (!is_null($title)) {
+        //   if (empty($title)) {
+        //     $title = __( '目次', THEME_NAME );
+        //   }
+        // }
         if ($title) {
           echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
         } ?>
