@@ -34,6 +34,11 @@ function admin_print_styles_custom() {
   // wp_enqueue_script( 'media-upload');
   //_v("ha");
 
+  ///////////////////////////////////
+  //Swiper
+  ///////////////////////////////////
+  wp_enqueue_swiper();
+
   //wp_enqueue_script( 'tab-js-jquery', 'https://code.jquery.com/jquery.min.js');
 
   //global $pagenow;

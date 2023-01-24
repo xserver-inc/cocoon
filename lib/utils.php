@@ -745,12 +745,12 @@ function wp_enqueue_slick(){
 }
 endif;
 
-// //Swiper
-// if ( !function_exists( 'wp_enqueue_swiper' ) ):
-// function wp_enqueue_swiper(){
-//   wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
-// }
-// endif;
+//Swiper
+if ( !function_exists( 'wp_enqueue_swiper' ) ):
+function wp_enqueue_swiper(){
+  wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
+}
+endif;
 
 //SlickNav
 if ( !function_exists( 'wp_enqueue_slicknav' ) ):
@@ -3528,5 +3528,21 @@ endif;
 if ( !function_exists( 'get_front_page_type_class' ) ):
 function get_front_page_type_class(){
   return 'front-page-type-'.str_replace('_', '-', get_front_page_type());;
+}
+endif;
+
+//RESTリクエストかどうか
+if ( !function_exists( 'is_rest' ) ):
+function is_rest() {
+  return ( defined( 'REST_REQUEST' ) && REST_REQUEST );
+}
+endif;
+
+//HTML内のAタグをSPANタグに変換
+if ( !function_exists( 'replace_a_tags_to_span_tags' ) ):
+function replace_a_tags_to_span_tags( $html ) {
+  $html = str_replace('<a ', '<span ', $html);
+  $html = str_replace('</a>', '</span>', $html);
+  return $html;
 }
 endif;
