@@ -45,6 +45,7 @@ if (is_front_page_type_index()) {
         <?php echo get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <?php endif ?>
+      <?php do_action( 'entry_card_snippet_after', get_the_ID() ); ?>
       <?php //PVエリアの表示
       if (is_admin_index_pv_visible() && is_user_administrator() || apply_filters('public_page_entry_card_pv_visible', false)) {
         get_template_part('tmp/admin-pv');

@@ -13,7 +13,11 @@ function render_box_menu_list($attributes, $content) {
     echo '<div class="'.$classes.'">';
     echo $box_menu_content;
     echo '</div>';
-    return ob_get_clean();
+    $html = ob_get_clean();
+    if (is_rest()) {
+      $html = replace_a_tags_to_span_tags($html);
+    }
+    return $html;
   }
 }
 

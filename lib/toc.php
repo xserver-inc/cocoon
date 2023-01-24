@@ -148,16 +148,21 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
       $checked = ' checked';
     }
     $title_elm = 'label';
-    if ($is_widget) {
-      $toc_check = null;
-      $label_for = null;
-    } else {
-      global $_TOC_INDEX;
-      $toc_id = 'toc-checkbox-'.$_TOC_INDEX;
-      $toc_check = '<input type="checkbox" class="toc-checkbox" id="'.$toc_id.'"'.$checked.'>';
-      $label_for = ' for="'.$toc_id.'"';
-      $_TOC_INDEX++;
-    }
+    // if ($is_widget) {
+    //   $toc_check = null;
+    //   $label_for = null;
+    // } else {
+    //   global $_TOC_INDEX;
+    //   $toc_id = 'toc-checkbox-'.$_TOC_INDEX;
+    //   $toc_check = '<input type="checkbox" class="toc-checkbox" id="'.$toc_id.'"'.$checked.'>';
+    //   $label_for = ' for="'.$toc_id.'"';
+    //   $_TOC_INDEX++;
+    // }
+    global $_TOC_INDEX;
+    $toc_id = 'toc-checkbox-'.$_TOC_INDEX;
+    $toc_check = '<input type="checkbox" class="toc-checkbox" id="'.$toc_id.'"'.$checked.'>';
+    $label_for = ' for="'.$toc_id.'"';
+    $_TOC_INDEX++;
   } else {
     $title_elm = 'div';
     $toc_check = null;

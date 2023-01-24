@@ -14,11 +14,37 @@ endif;
 
 require_once abspath(__FILE__).'lib/_defins.php'; //定数を定義
 
+/**
+ * ダウンロード配信サーバーの参照先を取得する関数
+ *
+ * @param int $new_sv_weight 新サーバーを参照するウェイト（1～100）
+ * @return string $url アップデートサーバーのURL
+ */
+function fetch_updater_url( $new_sv_weight ) {
+  $uri = get_template_directory_uri();
+
+  // サイトURLをベースに符号化（数値化）
+  $crc = abs( crc32( $uri ) ) ;
+
+  // 符号化した値をシード値として用いて0～100の乱数を生成
+  srand( $crc );
+  $percent = rand( 1, 100 );
+
+  // 指定したウェイトよりも小さい数であれば新サーバー、それ以外は既存を見に行く
+  if ( $percent <= $new_sv_weight ) {
+      $url = 'https://download.wp-cocoon.com/v1/update.php?action=get_metadata&slug=cocoon-master';
+  } else {
+      $url = 'https://raw.githubusercontent.com/xserver-inc/cocoon/master/update-info.json';
+  }
+
+  return $url;
+}
+
 //アップデートチェックの初期化
 require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-    'https://raw.githubusercontent.com/xserver-inc/cocoon/master/update-info.json', //JSONファイルのURL
+    fetch_updater_url(20), //JSONファイルのURL
     __FILE__,
     'wp-cocoon-theme'
 );
