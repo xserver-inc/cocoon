@@ -35,6 +35,11 @@ import { THEME_NAME } from '../../helpers';
 export default function edit( props ) {
 	const { attributes, setAttributes, className } = props;
 	const {
+		showAllDays,
+		days,
+		rank,
+		pv,
+		post_type,
 		count,
 		type,
 		bold,
@@ -43,19 +48,9 @@ export default function edit( props ) {
 		cats,
 		children,
 		horizontal,
-		showAllTags,
-		tags,
-		modified,
-		order,
-		offset,
-		sticky,
-		snippet,
-		post_type,
-		taxonomy,
-		author,
 	} = attributes;
 
-	const classes = classnames( 'new-list-box', 'block-box', {
+	const classes = classnames( 'popular-list-box', 'block-box', {
 		[ className ]: !! className,
 		[ attributes.className ]: !! attributes.className,
 	} );
@@ -73,20 +68,20 @@ export default function edit( props ) {
 		catsTextControl = <Disabled>{ catsTextControl }</Disabled>;
 	}
 
-	let tagsTextControl = (
-		<TextControl
-			label={ __( 'タグ', THEME_NAME ) }
-			value={ tags }
-			onChange={ ( value ) => setAttributes( { tags: value } ) }
+	let daysNumberControl = (
+		<NumberControl
+			label={ __( 'データの集計期間(日)', THEME_NAME ) }
+			isShiftStepEnabled={ false }
+			value={ days }
+			onChange={ ( newValue ) => setAttributes( { days: newValue } ) }
+			min={ 0 }
 		/>
 	);
-	if ( showAllTags ) {
-		tagsTextControl = <Disabled>{ tagsTextControl } </Disabled>;
+	if ( showAllDays ) {
+		daysNumberControl = <Disabled>{ daysNumberControl }</Disabled>;
 	}
 
-	console.log( attributes );
-
-	const getNewListContent = () => {
+	const getPopularListContent = () => {
 		return (
 			<ServerSideRender block={ props.name } attributes={ attributes } />
 		);
@@ -108,6 +103,14 @@ export default function edit( props ) {
 						}
 						min={ 0 }
 					/>
+					<ToggleControl
+						label={ __( '全期間集計', THEME_NAME ) }
+						checked={ showAllDays }
+						onChange={ ( isChecked ) => {
+							setAttributes( { showAllDays: isChecked } );
+						} }
+					/>
+					{ daysNumberControl }
 					<SelectControl
 						label={ __( '表示タイプ', THEME_NAME ) }
 						value={ type }
@@ -146,47 +149,6 @@ export default function edit( props ) {
 							},
 						] }
 					/>
-					<SelectControl
-						label={ __( '表示順', THEME_NAME ) }
-						value={ modified ? '1' : '0' }
-						options={ [
-							{
-								label: __( '更新日順', THEME_NAME ),
-								value: '1',
-							},
-							{
-								label: __( '投稿日順', THEME_NAME ),
-								value: '0',
-							},
-						] }
-						onChange={ ( value ) => {
-							if ( value === '0' ) {
-								setAttributes( { modified: false } );
-							} else {
-								setAttributes( { modified: true } );
-							}
-						} }
-					/>
-					<SelectControl
-						label={ __( '並び替え', THEME_NAME ) }
-						value={ order }
-						options={ [
-							{ label: __( '昇順', THEME_NAME ), value: 'asc' },
-							{ label: __( '降順', THEME_NAME ), value: 'desc' },
-						] }
-						onChange={ ( value ) => {
-							setAttributes( { order: value } );
-						} }
-					/>
-					<NumberControl
-						label={ __( '読み飛ばし', THEME_NAME ) }
-						isShiftStepEnabled={ false }
-						value={ offset }
-						onChange={ ( newValue ) =>
-							setAttributes( { offset: newValue } )
-						}
-						min={ 0 }
-					/>
 					<Divider />
 					<ToggleControl
 						label={ __( '記事タイトルを太字にする', THEME_NAME ) }
@@ -210,11 +172,18 @@ export default function edit( props ) {
 						}
 					/>
 					<ToggleControl
-						label={ __( '説明文の表示', THEME_NAME ) }
-						checked={ snippet }
-						onChange={ ( isChecked ) =>
-							setAttributes( { snippet: isChecked } )
-						}
+						label={ __( 'ランキング番号表示', THEME_NAME ) }
+						checked={ rank }
+						onChange={ ( isChecked ) => {
+							setAttributes( { rank: isChecked } );
+						} }
+					/>
+					<ToggleControl
+						label={ __( 'PV数表示', THEME_NAME ) }
+						checked={ pv }
+						onChange={ ( isChecked ) => {
+							setAttributes( { pv: isChecked } );
+						} }
 					/>
 				</PanelBody>
 				<PanelBody
@@ -239,21 +208,6 @@ export default function edit( props ) {
 							setAttributes( { children: isChecked } )
 						}
 					/>
-					<ToggleControl
-						label={ __( '全タグ表示', THEME_NAME ) }
-						checked={ showAllTags }
-						onChange={ ( isChecked ) => {
-							setAttributes( { showAllTags: isChecked } );
-						} }
-					/>
-					{ tagsTextControl }
-					<ToggleControl
-						label={ __( '固定記事の表示', THEME_NAME ) }
-						checked={ sticky }
-						onChange={ ( isChecked ) =>
-							setAttributes( { sticky: isChecked } )
-						}
-					/>
 					<TextControl
 						label={ __( '投稿タイプ', THEME_NAME ) }
 						value={ post_type }
@@ -261,23 +215,9 @@ export default function edit( props ) {
 							setAttributes( { post_type: newValue } )
 						}
 					/>
-					<TextControl
-						label={ __( '検索グループ', THEME_NAME ) }
-						value={ taxonomy }
-						onChange={ ( newValue ) =>
-							setAttributes( { taxonomy: newValue } )
-						}
-					/>
-					<TextControl
-						label={ __( '投稿ユーザ', THEME_NAME ) }
-						value={ author }
-						onChange={ ( newValue ) =>
-							setAttributes( { author: newValue } )
-						}
-					/>
 				</PanelBody>
 			</InspectorControls>
-			<div { ...useBlockProps() }>{ getNewListContent() }</div>
+			<div { ...useBlockProps() }>{ getPopularListContent() }</div>
 		</Fragment>
 	);
 }

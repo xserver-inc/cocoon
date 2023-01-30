@@ -1,13 +1,33 @@
 {
   "apiVersion": 2,
-  "name": "cocoon-blocks/new-list",
+  "name": "cocoon-blocks/popular-list",
   "category": "cocoon-block",
-  "keywords": ["new", "list"],
+  "keywords": ["popular", "list"],
 
   "attributes": {
     "classNames": {
       "type": "string",
       "default": ""
+    },
+    "showAllDays": {
+      "type": "boolean",
+      "default": true
+    },
+    "days": {
+      "type": "integer",
+      "default": 0
+    },
+    "rank": {
+      "type": "boolean",
+      "default": false
+    },
+    "pv": {
+      "type": "boolean",
+      "default": false
+    },
+    "post_type": {
+      "type": "string",
+      "default": "post"
     },
     "count": {
       "type": "integer",
@@ -40,46 +60,6 @@
     "horizontal": {
       "type": "boolean",
       "default": false
-    },
-    "showAllTags": {
-      "type": "boolean",
-      "default": true
-    },
-    "tags": {
-      "type": "string",
-      "default": ""
-    },
-    "modified": {
-      "type": "boolean",
-      "default": false
-    },
-    "order": {
-      "enum": ["desc", "asc"],
-      "default": "desc"
-    },
-    "offset": {
-      "type": "integer",
-      "default": 0
-    },
-    "sticky": {
-      "type": "boolean",
-      "default": true
-    },
-    "snippet": {
-      "type": "boolean",
-      "default": false
-    },
-    "post_type": {
-      "type": "string",
-      "default": "post"
-    },
-    "taxonomy": {
-      "type": "string",
-      "default": "category"
-    },
-    "author": {
-      "type": "string",
-      "default": ""
     }
   },
   "example": {},

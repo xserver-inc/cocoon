@@ -84,8 +84,6 @@ export default function edit( props ) {
 		tagsTextControl = <Disabled>{ tagsTextControl } </Disabled>;
 	}
 
-	console.log( attributes );
-
 	const getNewListContent = () => {
 		return (
 			<ServerSideRender block={ props.name } attributes={ attributes } />
