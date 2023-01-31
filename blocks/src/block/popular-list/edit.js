@@ -208,6 +208,7 @@ export default function edit( props ) {
 							setAttributes( { children: isChecked } )
 						}
 					/>
+					<Divider />
 					<TextControl
 						label={ __( '投稿タイプ', THEME_NAME ) }
 						value={ post_type }

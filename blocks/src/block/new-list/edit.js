@@ -237,6 +237,7 @@ export default function edit( props ) {
 							setAttributes( { children: isChecked } )
 						}
 					/>
+					<Divider />
 					<ToggleControl
 						label={ __( '全タグ表示', THEME_NAME ) }
 						checked={ showAllTags }
@@ -245,6 +246,7 @@ export default function edit( props ) {
 						} }
 					/>
 					{ tagsTextControl }
+					<Divider />
 					<ToggleControl
 						label={ __( '固定記事の表示', THEME_NAME ) }
 						checked={ sticky }
