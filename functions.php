@@ -23,12 +23,15 @@ require_once abspath(__FILE__).'lib/_defins.php'; //定数を定義
 function fetch_updater_url( $new_sv_weight ) {
   $uri = get_template_directory_uri();
 
-  // // サイトURLをベースに符号化（数値化）
-  // $crc = abs( crc32( $uri ) ) ;
+  // サイトURLをベースに符号化（数値化）
+  $crc = abs( crc32( $uri ) ) ;
 
-  // // 符号化した値をシード値として用いて0～100の乱数を生成
-  // srand( $crc );
-  $percent = random_int( 1, 100 );
+  // 符号化した値をシード値として用いて0～100の乱数を生成
+  srand( $crc );
+
+  $percent = rand( 1, 100 );
+
+  srand();
 
   // 指定したウェイトよりも小さい数であれば新サーバー、それ以外は既存を見に行く
   if ( $percent <= $new_sv_weight ) {
