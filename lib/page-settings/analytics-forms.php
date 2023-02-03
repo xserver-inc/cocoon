@@ -98,7 +98,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_textbox_tag(OP_GA4_TRACKING_ID, get_ga4_tracking_id(), __( 'G-XXXXXXXXXXXX', THEME_NAME ));
-            generate_tips_tag(__( 'Google Analytics 4の測定IDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。', THEME_NAME ).'<b>'.__( 'GA4はAMP対応していません。よってAMPページでは計測できないのでご了承ください。', THEME_NAME ).'</b>' );
+            generate_tips_tag(__( 'Google Analytics 4の測定IDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。', THEME_NAME ).'<b>'.__( 'GA4はAMP対応していません。', THEME_NAME ).__( 'よってGoogle非推奨の方法でAMPページの計測を行なっておりますが動作を保証するものではありません。。', THEME_NAME ).'</b>' );
             ?>
           </td>
         </tr>
@@ -132,7 +132,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__('アクセス解析で利用するスクリプトを指定します。よくわからない場合は公式スクリプトのgtag.jsをご利用ください。', THEME_NAME));
             ?>
           </td>
-        </tr>          
+        </tr>
         <?php endif; ?>
 
       </tbody>
