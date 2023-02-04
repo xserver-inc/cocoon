@@ -10332,3 +10332,12 @@ amp-image-lightbox {
 .is-style-accordion .faq-question::before {
   content: "";
 }
+
+.is-list-horizontal .swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+.is-list-horizontal .swiper-button-next {
+  display: none !important;
+}

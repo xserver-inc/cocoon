@@ -182,3 +182,16 @@ amp-image-lightbox {
     }
   }
 }
+
+//Swiper
+.is-list-horizontal {
+  .swiper-wrapper{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+
+  .swiper-button-next{
+    display: none !important;
+  }
+}
