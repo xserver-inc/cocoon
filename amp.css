@@ -2351,10 +2351,10 @@ label.screen-reader-text {
   font-size: 0.8em;
 }
 
-.border-partition a {
+.border-partition .a-wrap {
   border-bottom: 2px dotted #eee;
 }
-.border-partition a:first-of-type {
+.border-partition .a-wrap:first-of-type {
   border-top: 2px dotted #eee;
 }
 
