@@ -21,7 +21,7 @@ array(
   'entry_card_post_date_visible' => 1, //投稿日を表示するか
   'entry_card_post_update_visible' => 0, //更新日を表示するか
   'toc_depth' => 3, //目次の深さ
-  'toc_number_type' => 0, //目次の数字の表示
+  'toc_number_type' => 'none', //目次の数字の表示
   'single_breadcrumbs_position' => 'main_top', //パンくずリストの位置
   'sns_top_share_buttons_count_visible' => 0 , //トップSNSシェア数の表示
   'sns_bottom_share_column_count' => 3, //ボトムSNSシェアボタンのカラム数
