@@ -42,7 +42,8 @@ if ( is_analytics() && !get_google_tag_manager_tracking_id() ) {
   //https://www.thyngster.com/how-to-track-amp-pages-with-google-analytics-4
   //https://www.kagua.biz/wp/wpplugin/amp2ga4.html
   //https://github.com/analytics-debugger/google-analytics-4-for-amp/blob/main/ga4.json
-  if ( $ga4_tracking_id = get_ga4_tracking_id() ) { ?>
+  $ga4_tracking_id = get_ga4_tracking_id();
+  if ( is_analytics() && $ga4_tracking_id ) { ?>
     <amp-analytics type="googleanalytics" config="<?php echo home_url('/wp-content/themes/cocoon-master/ga4.json'); ?>" data-credentials="include">
     <script type="application/json">
     {
