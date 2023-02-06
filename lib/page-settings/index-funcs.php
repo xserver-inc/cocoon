@@ -86,7 +86,7 @@ endif;
 
 //インデックスの並び順
 define('OP_INDEX_SORT_ORDERBY', 'index_sort_orderby');
-if ( !function_exists( '' ) ):
+if ( !function_exists( 'get_index_sort_orderby' ) ):
 function get_index_sort_orderby(){
   return get_theme_option(OP_INDEX_SORT_ORDERBY);
 }

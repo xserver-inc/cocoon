@@ -32,7 +32,6 @@ get_template_part('tmp/header-twitter-card');//Twitterカード用のタグテ�
 $all_content = get_the_singular_content();
 $all_content = convert_content_for_amp($all_content);
 $elements = array(
-  //'amp-analytics' => 'amp-analytics-0.1.js',
   'amp-facebook' => 'amp-facebook-0.1.js',
   'amp-youtube' => 'amp-youtube-0.1.js',
   'amp-vine' => 'amp-vine-0.1.js',
@@ -45,8 +44,6 @@ $elements = array(
   'amp-video' => 'amp-video-0.1.js',
   'amp-image-lightbox' => 'amp-image-lightbox-0.1.js',
   'amp-mathml' => 'amp-mathml-0.1.js',
-  //'amp-link-rewriter' => 'amp-link-rewriter-0.1.js',
-  //form class="amp-form'form class="amp-form' => 'amp-form-0.1.js',
 );
 
 //var_dump($the_content);
@@ -63,7 +60,7 @@ if( includes_string($all_content, 'class="amp-form') ) {
 }
 
 //AMP Analytics・Google Tag Manager用のライブラリ
-if ( is_analytics() && (get_google_analytics_tracking_id() || get_google_tag_manager_tracking_id()) )  {
+if ( is_analytics() && (get_google_analytics_tracking_id() || get_google_tag_manager_tracking_id() || get_ga4_tracking_id()) )  {
   echo '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'.PHP_EOL;
 }
 

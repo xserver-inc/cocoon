@@ -179,10 +179,9 @@ label.screen-reader-text{
   margin-left: 5px;
   font-style: italic;
   font-size: 0.8em;
-  //font-weight: bold;
 }
 
-.border-partition a {
+.border-partition .a-wrap {
   border-bottom: 2px dotted var(--x-thin-color);
 
   &:first-of-type {

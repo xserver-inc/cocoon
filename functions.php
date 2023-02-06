@@ -28,7 +28,10 @@ function fetch_updater_url( $new_sv_weight ) {
 
   // 符号化した値をシード値として用いて0～100の乱数を生成
   srand( $crc );
+
   $percent = rand( 1, 100 );
+
+  srand();
 
   // 指定したウェイトよりも小さい数であれば新サーバー、それ以外は既存を見に行く
   if ( $percent <= $new_sv_weight ) {

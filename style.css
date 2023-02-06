@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.5.5.3
+Version: 2.5.6.3
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -2446,10 +2446,10 @@ label.screen-reader-text {
   font-size: 0.8em;
 }
 
-.border-partition a {
+.border-partition .a-wrap {
   border-bottom: 2px dotted var(--x-thin-color);
 }
-.border-partition a:first-of-type {
+.border-partition .a-wrap:first-of-type {
   border-top: 2px dotted var(--x-thin-color);
 }
 
@@ -10237,9 +10237,11 @@ _:-ms-lang(x), .mc-circle {
 .pagination-next-link,
 .comment-btn,
 .index-tab-buttons .index-tab-button,
-.border-square a,
+.border-square .a-wrap,
 .author-box {
   border-color: var(--three-d-border-colors);
+  border-width: 1px;
+  border-style: solid;
 }
 
 @media screen and (max-width: 1023px) {

@@ -98,8 +98,9 @@ _:-ms-lang(x), .mc-circle {
 .page-numbers,
 .pagination-next-link,
 .index-tab-buttons .index-tab-button,
-.border-square a,
-.author-box
-{
+.border-square .a-wrap,
+.author-box {
   border-color: var(--three-d-border-colors);
+  border-width: 1px;
+  border-style: solid;
 }

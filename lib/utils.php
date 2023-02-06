@@ -227,8 +227,13 @@ endif;
 
 //フォームの際のスキンオプションの取得
 if ( !function_exists( 'get_form_skin_option' ) ):
-function get_form_skin_option($name){
+function get_form_skin_option($name, $value = 1){
   global $_FORM_SKIN_OPTIONS;
+  $name = str_replace('[]', '', $name);
+  if (isset($_FORM_SKIN_OPTIONS[$name]) && is_array($_FORM_SKIN_OPTIONS[$name])) {
+    // _v([$name, $value, $_FORM_SKIN_OPTIONS[$name]]);
+    return in_array($value, $_FORM_SKIN_OPTIONS[$name]);
+  }
   //スキンにより固定値がある場合は採用する
   if (isset($_FORM_SKIN_OPTIONS[$name])) {
     return $_FORM_SKIN_OPTIONS[$name];

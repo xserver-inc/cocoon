@@ -38,4 +38,26 @@ if ( is_analytics() && !get_google_tag_manager_tracking_id() ) {
   <!-- /AMP Google Analytics -->
   <?php //AMP用Analyticsトラッキングコードを設定しておらず通常ステージ用の場合
   }
+  //GA4でAMP情報を取得（Google非推奨）
+  //https://www.thyngster.com/how-to-track-amp-pages-with-google-analytics-4
+  //https://www.kagua.biz/wp/wpplugin/amp2ga4.html
+  //https://github.com/analytics-debugger/google-analytics-4-for-amp/blob/main/ga4.json
+  $ga4_tracking_id = get_ga4_tracking_id();
+  if ( is_analytics() && $ga4_tracking_id ) { ?>
+    <amp-analytics type="googleanalytics" config="<?php echo home_url('/wp-content/themes/cocoon-master/ga4.json'); ?>" data-credentials="include">
+    <script type="application/json">
+    {
+      "vars": {
+          "GA4_MEASUREMENT_ID": "<?php echo $ga4_tracking_id; ?>",
+          "GA4_ENDPOINT_HOSTNAME": "www.google-analytics.com",
+          "DEFAULT_PAGEVIEW_ENABLED": true,
+          "GOOGLE_CONSENT_ENABLED": false,
+          "WEBVITALS_TRACKING": false,
+          "PERFORMANCE_TIMING_TRACKING": false,
+          "SEND_DOUBLECLICK_BEACON": false
+      }
+    }
+    </script>
+    </amp-analytics>
+  <?php }
 }//AMP Analytics終了 ?>

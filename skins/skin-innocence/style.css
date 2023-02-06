@@ -229,6 +229,10 @@ body {
 	padding: 0.2em 2em 0.2em 0;
 }
 
+.entry-content .toc-list {
+	padding-left: 1em;
+}
+
 .entry-content .toc-list > li {
 	position: relative;
 }
