@@ -1,0 +1,70 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/popular-list",
+  "category": "cocoon-block",
+  "keywords": ["popular", "list"],
+
+  "attributes": {
+    "classNames": {
+      "type": "string",
+      "default": ""
+    },
+    "showAllDays": {
+      "type": "boolean",
+      "default": true
+    },
+    "days": {
+      "type": "integer",
+      "default": 0
+    },
+    "rank": {
+      "type": "boolean",
+      "default": false
+    },
+    "pv": {
+      "type": "boolean",
+      "default": false
+    },
+    "post_type": {
+      "type": "string",
+      "default": "post"
+    },
+    "count": {
+      "type": "integer",
+      "default": 5
+    },
+    "type": {
+      "enum": [ "default", "border_partition", "border_square", "large_thumb", "large_thumb_on"],
+      "default": "default"
+    },
+    "bold": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrow": {
+      "type": "boolean",
+      "default": false
+    },
+    "showAllCats": {
+      "type": "boolean",
+      "default": true
+    },
+    "cats": {
+      "type": "string",
+      "default": ""
+    },
+    "children": {
+      "type": "boolean",
+      "default": false
+    },
+    "horizontal": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}
