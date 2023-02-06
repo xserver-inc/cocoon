@@ -2,8 +2,8 @@
 // 管理パネル
 ///////////////////////////////////////
 .admin-panel{
-  background-color: $text_color;
-  color: $white;
+  background-color: var(--text-color);
+  color: var(--white-color);
   opacity: 0.8;
   padding: 10px;
   font-size: 16px;
@@ -18,7 +18,7 @@
   z-index: 9999;
 
   a{
-    color: $white;
+    color: var(--white-color);
   }
 
   // &::before{
@@ -35,7 +35,7 @@
 .admin-cresponsive{
   border-radius: 3px;
   padding: 0 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--basic-border-color);
   margin: 6px 4px;
 
   >span{
@@ -60,7 +60,7 @@
     bottom: -1em;
     right: 0.4em;
     font-size: 0.6em;
-    background-color: $text_color;
+    background-color: var(--text-color);
     padding: 0 5px;
   }
 }

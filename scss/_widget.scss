@@ -82,8 +82,8 @@ label.screen-reader-text{
   border-right-width: 1px;
   border-top-style: solid;
   border-right-style: solid;
-  border-top-color: $x_thin;
-  border-right-color: $x_thin;
+  border-top-color: var(--x-thin-color);
+  border-right-color: var(--x-thin-color);
   width: 100%;
   max-width: $widget_max_width;
   text-align: center;
@@ -115,8 +115,8 @@ label.screen-reader-text{
     border-left-width: 1px;
     border-bottom-style: solid;
     border-left-style: solid;
-    border-bottom-color: $x_thin;
-    border-left-color: $x_thin;
+    border-bottom-color: var(--x-thin-color);
+    border-left-color: var(--x-thin-color);
   }
 
   td {
@@ -126,11 +126,11 @@ label.screen-reader-text{
     border-left-width: 1px;
     border-bottom-style: solid;
     border-left-style: solid;
-    border-bottom-color: $x_thin;
-    border-left-color: $x_thin;
+    border-bottom-color: var(--x-thin-color);
+    border-left-color: var(--x-thin-color);
 
     a{
-      color: $text_color;
+      color: var(--text-color);
       display: block;
       background-color: #ffface;
       &:hover{
@@ -179,24 +179,19 @@ label.screen-reader-text{
   margin-left: 5px;
   font-style: italic;
   font-size: 0.8em;
-  //font-weight: bold;
 }
 
 .border-partition .a-wrap {
-  border-bottom: 2px dotted $x_thin;
+  border-bottom: 2px dotted var(--x-thin-color);
 
   &:first-of-type {
-    border-top: 2px dotted $x_thin;
+    border-top: 2px dotted var(--x-thin-color);
   }
-
-  // &:last-of-type {
-  //   border-bottom: 2px solid $x_thin;
-  // }
 }
 
 .border-square a {
-  border-radius: $basic_border_radius;
-  border: 1px solid $thin;
+  border-radius: var(--basic-border-radius);
+  border: 1px solid var(--thin-color);
 }
 
 .card-title-bold .card-title{
@@ -234,7 +229,7 @@ label.screen-reader-text{
   }
 
   .e-card{
-    font-size: $text_size_default;
+    font-size: var(--default-text-size);
   }
 
   figure{
@@ -290,9 +285,8 @@ label.screen-reader-text{
     width: 100%;
     bottom: 0;
     padding: .6em;
-    //background-color: $transpalent_black_bgc;
     background: linear-gradient(180deg, transparent, #555);
-    color: $white;
+    color: var(--white-color);
     max-height: 40%;
     overflow: hidden;
     transition: all 0.5s;
@@ -378,8 +372,8 @@ label.screen-reader-text{
 
 .recent-comment-content {
   position: relative;
-  background: $white;
-  border: 1px solid $thin;
+  background: var(--white-color);
+  border: 1px solid var(--thin-color);
   padding: 6px;
   margin-top: 4px;
   font-size: 0.9em;
@@ -398,13 +392,13 @@ label.screen-reader-text{
 
   &::after {
     border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: $white;
+    border-bottom-color: var(--white-color);
     border-width: 6px;
     margin-left: -6px;
   }
   &::before {
     border-color: rgba(221, 221, 221, 0);
-    border-bottom-color: $thin;
+    border-bottom-color: var(--thin-color);
     border-width: 9px;
     margin-left: -9px;
   }

@@ -56,14 +56,12 @@ class PopularEntryWidgetItem extends WP_Widget {
 
     $cat_ids = array();
     if ($widget_mode == 'category') {
-      $cat_ids = get_category_ids();//カテゴリ配列の取得
-      //_v($cat_ids);
+      $cat_ids = get_category_ids();//カテゴリー配列の取得
     }
     //除外投稿ID配列のサニタイズ
     $exclude_post_ids = comma_text_to_array($exclude_post_ids);
 
-    //除外カテゴリ配列のサニタイズ
-    //$exclude_cat_ids = comma_text_to_array($exclude_cat_ids);
+    //除外カテゴリー配列のサニタイズ
     if (empty($exclude_cat_ids)) {
       $exclude_cat_ids = array();
     } else {
@@ -108,8 +106,6 @@ class PopularEntryWidgetItem extends WP_Widget {
         'exclude_cat_ids' => $exclude_cat_ids,
       );
       generate_popular_entries_tag($atts);
-      //_v($atts);
-      //generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>
@@ -173,8 +169,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $is_arrow_visible = !empty($instance['is_arrow_visible']) ? 1 : 0;
     $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : '';
     $exclude_cat_ids = isset($instance['exclude_cat_ids']) ? $instance['exclude_cat_ids'] : array();
-    //_v($exclude_cat_ids);
-    //var_dump($instance);
+
     ?>
     <?php //ウィジェットモード（全てか、カテゴリー別か） ?>
     <p>
@@ -261,9 +256,9 @@ class PopularEntryWidgetItem extends WP_Widget {
       <input class="widefat" id="<?php echo $this->get_field_id('exclude_post_ids'); ?>" name="<?php echo $this->get_field_name('exclude_post_ids'); ?>" type="text" value="<?php echo $exclude_post_ids; ?>" />
     </p>
     <p>
-    <?php //除外カテゴリーID ?>
+    <?php //除外カテゴリー ?>
       <label>
-        <?php _e( '除外カテゴリーID（除外するものを選択してください）', THEME_NAME ) ?>
+        <?php _e( '除外カテゴリー（除外するものを選択してください）', THEME_NAME ) ?>
       </label>
       <?php echo generate_hierarchical_category_check_list(0, $this->get_field_name('exclude_cat_ids'), $exclude_cat_ids); ?>
     </p>

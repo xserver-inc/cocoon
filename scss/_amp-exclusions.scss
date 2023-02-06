@@ -40,11 +40,11 @@
 
 .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
   background-color: #1A73E8;
-  color: #fff;
+  color: var(--white-color);
 }
 
 .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-page {
-  border-color: #ccc;
+  border-color: var(--basic-border-color);
 }
 
 // Lazy Load誤動作の対応
@@ -99,9 +99,8 @@ _:-ms-lang(x), .mc-circle {
 .pagination-next-link,
 .index-tab-buttons .index-tab-button,
 .border-square .a-wrap,
-.author-box
-{
-  border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
+.author-box {
+  border-color: var(--three-d-border-colors);
   border-width: 1px;
   border-style: solid;
 }

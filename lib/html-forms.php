@@ -712,13 +712,7 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
   if( $next ) :
     foreach( $next as $cat ) :
       $checked = '';
-      // if (is_string($checks)) {
-      //   $checks = array();
-      // }
-      // //デフォルトのカテゴリは誤動作を起こすので除外
-      // if ($cat->term_id == 1) {
-      //   continue;
-      // }
+
       if (in_array($cat->term_id, $checks)) {
         $checked = ' checked="checked"';
       }
@@ -1745,26 +1739,27 @@ endif;
 //インフォリスト生成タグ
 if ( !function_exists( 'generate_info_list_tag' ) ):
 function generate_info_list_tag($atts){
-  extract(shortcode_atts(array(
-    'count' => 5,
-    'title' => __( '新着情報', THEME_NAME ),
-  ), $atts));
+  extract(shortcode_atts($atts, $atts));
   $args = array(
+    'cat' => $cats,
     'no_found_rows' => true,
     'ignore_sticky_posts' => true,
     'posts_per_page' => $count,
   );
+  $args = apply_filters( 'get_info_list_args', $args );
   $query = new WP_Query( $args );
+  $frame_class = ($frame ? ' is-style-frame-border' : '');
+  $divider_class = ($divider ? ' is-style-divider-line' : '');
   if( $query -> have_posts() ): //投稿が存在する時
   ?>
-  <div id="info-list" class="info-list">
-    <?php if ($title): ?>
-      <div class="info-list-title"><?php echo esc_html($title); ?></div>
+  <div id="info-list" class="info-list<?php echo $frame_class; ?><?php echo $divider_class; ?>">
+    <?php if ($caption): ?>
+      <div class="info-list-caption"><?php echo esc_html($caption); ?></div>
     <?php endif; ?>
     <?php while ($query -> have_posts()) : $query -> the_post(); ?>
       <div class="info-list-item">
-        <div class="info-list-item-date"><?php the_time(get_option('date_format')); ?></div>
         <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
+        <div class="info-list-item-date"><?php the_time(get_option('date_format')); ?></div>
       </div>
     <?php endwhile;
   else :

@@ -1,24 +1,40 @@
 //インフォリストのCSS
-.info-list-item{
-  display: flex;
+.info-list{
+  padding: 20px;
+
+  &.is-style-frame-border{
+    border: 1px solid var(--basic-border-color);
+    border-color: var(--three-d-border-colors);
+    border-radius: var(--basic-border-radius);
+  }
 }
 
-.info-list-title{
+.info-list-caption{
   text-align: center;
 }
 
-.info-list-item > div{
-  padding: 4px 8px;
-  line-height: 20px;
+.info-list-item{
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.is-style-divider-line{
+  .info-list-item{
+    border-bottom: 1px dashed var(--basic-border-color);
+    &:last-child{
+      border-bottom-style: none;
+    }
+  }
 }
 
 .info-list-item-date{
-  font-size: 0.8em;
-  width: 136px;
+  font-size: 12px;
+  opacity: 0.6;
 }
 
 .info-list-item-content-link{
-  color: $black_color;
+  color: var(--black-color);
   text-decoration: none;
   &:hover{
     text-decoration: underline;

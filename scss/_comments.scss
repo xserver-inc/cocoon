@@ -10,11 +10,11 @@
 
   .reply{
     text-align: right;
-    font-size: $text_size_s;
+    font-size: var(--text-size-s);
   }
 
   .comment-meta{
-    font-size:$text_size_s;
+    font-size:var(--text-size-s);
   }
 
   .comment-body,

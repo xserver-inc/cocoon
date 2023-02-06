@@ -66,22 +66,20 @@ pre *{
 
 /*本文下カテゴリ*/
 .cat-link{
-  @include link_cancel($white);
+  @include link_cancel(var(--white-color));
   display: inline-block;
   margin-right: 5px;
   padding: 2px 6px;
   font-size: 12px;
-  background-color: $text_color;
-  //border: 1px solid $text_color;
-  //color: $white;
-  border-radius: $badge_border_radius;
+  background-color: var(--text-color);
+  border-radius: var(--badge-border-radius);
   word-break: break-all;
 
   &:hover{
     opacity: 0.5;
-    color: $white;
+    color: var(--white-color);
     // @include bgc_hover;
-    // color: $text_color;
+    // color: var(--text-color);
   }
 }
 
@@ -92,8 +90,8 @@ pre *{
   margin-right: 5px;
   padding: 1px 5px;
   font-size: 12px;
-  border: 1px solid $x_pallid_text_color;
-  border-radius: $badge_border_radius;
+  border: 1px solid var(--x-pallid-text-color);
+  border-radius: var(--badge-border-radius);
   word-break: break-all;
 
   &:hover{
@@ -104,12 +102,6 @@ pre *{
 /************************************
 ** 投稿・固定ページで使うHTML要素
 ************************************/
-// p,
-// .paragraph{
-//   margin-bottom: 1.2em;
-// }
-
-
 table {
   margin-bottom: 20px;
   max-width: 100%;
@@ -118,12 +110,12 @@ table {
   border-spacing: 0;
 
   th{
-    background-color: $xx_thin;
+    background-color: var(--xx-thin-color);
   }
 
   tr{
     &:nth-of-type(2n+1){
-      background-color: $xxx_thin;
+      background-color: var(--xxx-thin-color);
     }
 
     // &:hover{
@@ -133,7 +125,7 @@ table {
 
   th,
   td{
-    border: 1px solid $x_thin;
+    border: 1px solid var(--x-thin-color);
     padding: 6px;
   }
 }
@@ -149,7 +141,7 @@ table {
   &.stfc-sticky tr{
     >*:first-child {
       background-color: #e9eff2;
-      color: $text_color;
+      color: var(--text-color);
       position: sticky;
       position: -webkit-sticky;
       left: 0;
@@ -254,8 +246,8 @@ figure.wp-block-table{
 ** 引用（blockquote）
 ************************************/
 blockquote {
-  background-color: $xxx_thin;
-  border: 1px solid $thin;
+  background-color: var(--xxx-thin-color);
+  border: 1px solid var(--thin-color);
   padding: 1.4em 1.8em;
   position: relative;
 
@@ -341,8 +333,8 @@ span.internal-icon{
 .login-user-only{
   text-align: center;
   padding: 2em;
-  background-color: $xxx_thin;
-  border: 1px solid $basic_border_color;
+  background-color: var(--xxx-thin-color);
+  border: 1px solid var(--basic-border-color);
   // margin-bottom: 1.2em;
 }
 
@@ -358,8 +350,8 @@ span.internal-icon{
 .read-time{
   text-align: center;
   font-size: 0.7em;
-  border-top: 4px double $x_thin;
-  border-bottom: 4px double $x_thin;
+  border-top: 4px double var(--x-thin-color);
+  border-bottom: 4px double var(--x-thin-color);
   margin: 0 3%;
   margin-bottom: 1em;
 }

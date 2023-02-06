@@ -7,16 +7,16 @@
 
   a{
     display: block;
-    background-color: $text_color;
+    background-color: var(--text-color);
     text-align: center;
-    @include link_cancel($white);
-    border-radius: $basic_border_radius;
+    @include link_cancel(var(--white-color));
+    border-radius: var(--basic-border-radius);
     height: 45px;
     //line-height: 45px;
 
     &:hover{
       opacity: 0.7;
-      color: $white;
+      color: var(--white-color);
       transition: $bgc_hover_anime;
     }
   }
@@ -31,104 +31,104 @@
   //ボタンカラー
   &.bc-brand-color{
     .twitter-button{
-      background-color: $twitter_color;
+      background-color: var(--twitter-color);
     }
 
     .facebook-button{
-      background-color: $facebook_color;
+      background-color: var(--facebook-color);
     }
 
     .hatebu-button{
-      background-color: $hatebu_color;
+      background-color: var(--hatebu-color);
     }
 
     .google-plus-button{
-      background-color: $google_plus_color;
+      background-color: var(--google-plus-color);
     }
 
     .pocket-button{
-      background-color: $pocket_color;
+      background-color: var(--pocket-color);
     }
 
     .line-button{
-      background-color: $line_color;
+      background-color: var(--line-color);
     }
 
     .website-button{
-      background-color: $website_color;
+      background-color: var(--website-color);
     }
 
     .instagram-button{
-      background-color: $instagram_color;
+      background-color: var(--instagram-color);
     }
 
     .pinterest-button{
-      background-color: $pinterest_color;
+      background-color: var(--pinterest-color);
     }
 
     .youtube-button{
-      background-color: $youtube_color;
+      background-color: var(--youtube-color);
     }
 
     .tiktok-button{
-      background-color: $tiktok_color;
+      background-color: var(--tiktok-color);
     }
 
     .linkedin-button{
-      background-color: $linkedin_color;
+      background-color: var(--linkedin-color);
     }
 
     .note-button{
-      background-color: $note_color;
+      background-color: var(--note-color);
     }
 
     .soundcloud-button{
-      background-color: $soundcloud_color;
+      background-color: var(--soundcloud-color);
     }
 
     .flickr-button{
-      background-color: $flickr_color;
+      background-color: var(--flickr-color);
     }
 
     .amazon-button{
-      background-color: $amazon_color;
+      background-color: var(--amazon-color);
     }
 
     .twitch-button{
-      background-color: $twitch_color;
+      background-color: var(--twitch-color);
     }
 
     .rakuten-room-button{
-      background-color: $rakuten_room_color;
+      background-color: var(--rakuten-room-color);
     }
 
     .slack-button{
-      background-color: $slack_color;
+      background-color: var(--slack-color);
     }
 
     .github-button{
-      background-color: $github_color;
+      background-color: var(--github-color);
     }
 
     .codepen-button{
-      background-color: $codepen_color;
+      background-color: var(--codepen-color);
     }
 
     .feedly-button{
-      background-color: $feedly_color;
+      background-color: var(--feedly-color);
     }
 
     .rss-button{
-      background-color: $rss_color;
+      background-color: var(--rss-color);
     }
   }
 
   &.bc-brand-color-white{
     a{
-      background-color: $white;
+      background-color: var(--white-color);
       font-weight: 500;
-      border: 1px solid $text_color;
-      color: $text_color;
+      border: 1px solid var(--text-color);
+      color: var(--text-color);
       &:hover{
         //background-color: $bgc_hover_color;
         //transition: $bgc_hover_anime;
@@ -137,123 +137,123 @@
     }
 
     .twitter-button{
-      color: $twitter_color;
-      border-color: $twitter_color;
+      color: var(--twitter-color);
+      border-color: var(--twitter-color);
     }
 
     .facebook-button{
-      color: $facebook_color;
-      border-color: $facebook_color;
+      color: var(--facebook-color);
+      border-color: var(--facebook-color);
     }
 
     .hatebu-button{
-      color: $hatebu_color;
-      border-color: $hatebu_color;
+      color: var(--hatebu-color);
+      border-color: var(--hatebu-color);
     }
 
     .google-plus-button{
-      color: $google_plus_color;
-      border-color: $google_plus_color;
+      color: var(--google-plus-color);
+      border-color: var(--google-plus-color);
     }
 
     .pocket-button{
-      color: $pocket_color;
-      border-color: $pocket_color;
+      color: var(--pocket-color);
+      border-color: var(--pocket-color);
     }
 
     .line-button{
-      color: $line_color;
-      border-color: $line_color;
+      color: var(--line-color);
+      border-color: var(--line-color);
     }
 
     .website-button{
-      color: $website_color;
-      border-color: $website_color;
+      color: var(--website-color);
+      border-color: var(--website-color);
     }
 
     .instagram-button{
-      color: $instagram_color;
-      border-color: $instagram_color;
+      color: var(--instagram-color);
+      border-color: var(--instagram-color);
     }
 
     .pinterest-button{
-      color: $pinterest_color;
-      border-color: $pinterest_color;
+      color: var(--pinterest-color);
+      border-color: var(--pinterest-color);
     }
 
     .youtube-button{
-      color: $youtube_color;
-      border-color: $youtube_color;
+      color: var(--youtube-color);
+      border-color: var(--youtube-color);
     }
 
     .tiktok-button{
-      color: $tiktok_color;
-      border-color: $tiktok_color;
+      color: var(--tiktok-color);
+      border-color: var(--tiktok-color);
     }
 
     .linkedin-button{
-      color: $linkedin_color;
-      border-color: $linkedin_color;
+      color: var(--linkedin-color);
+      border-color: var(--linkedin-color);
     }
 
     .note-button{
-      color: $note_color;
-      border-color: $note_color;
+      color: var(--note-color);
+      border-color: var(--note-color);
     }
 
     .soundcloud-button{
-      color: $soundcloud_color;
-      border-color: $soundcloud_color;
+      color: var(--soundcloud-color);
+      border-color: var(--soundcloud-color);
     }
 
     .soundcloud-button{
-      color: $soundcloud_color;
-      border-color: $soundcloud_color;
+      color: var(--soundcloud-color);
+      border-color: var(--soundcloud-color);
     }
 
     .flickr-button{
-      color: $flickr_color;
-      border-color: $flickr_color;
+      color: var(--flickr-color);
+      border-color: var(--flickr-color);
     }
 
     .amazon-button{
-      color: $amazon_color;
-      border-color: $amazon_color;
+      color: var(--amazon-color);
+      border-color: var(--amazon-color);
     }
 
     .twitch-button{
-      color: $twitch_color;
-      border-color: $twitch_color;
+      color: var(--twitch-color);
+      border-color: var(--twitch-color);
     }
 
     .rakuten-room-button{
-      color: $rakuten_room_color;
-      border-color: $rakuten_room_color;
+      color: var(--rakuten-room-color);
+      border-color: var(--rakuten-room-color);
     }
 
     .slack-button{
-      color: $slack_color;
-      border-color: $slack_color;
+      color: var(--slack-color);
+      border-color: var(--slack-color);
     }
 
     .github-button{
-      color: $github_color;
-      border-color: $github_color;
+      color: var(--github-color);
+      border-color: var(--github-color);
     }
 
     .codepen-button{
-      color: $codepen_color;
-      border-color: $codepen_color;
+      color: var(--codepen-color);
+      border-color: var(--codepen-color);
     }
 
     .feedly-button{
-      color: $feedly_color;
-      border-color: $feedly_color;
+      color: var(--feedly-color);
+      border-color: var(--feedly-color);
     }
 
     .rss-button{
-      color: $rss_color;
-      border-color: $rss_color;
+      color: var(--rss-color);
+      border-color: var(--rss-color);
     }
 
   }
@@ -386,8 +386,8 @@ $sns_button_margin_bottom: 8px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: $text_color;
+  background-color: var(--text-color);
   opacity: 0.8;
-  box-shadow: 0 4px 8px $pallid_text_color;
+  box-shadow: 0 4px 8px var(--x-pallid-text-color);
   z-index: 2;
 }

@@ -87,7 +87,7 @@
       background: transparent;
 
       .card-title{
-        color: $text_color;
+        color: var(--text-color);
         padding: 6px 1.2em;
         background-color: rgba(255, 255, 255, 0.8);
         transition: all .3s;

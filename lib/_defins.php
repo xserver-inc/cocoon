@@ -55,7 +55,7 @@ define('ET_BORDER_SQUARE', 'border_square');
 define('WM_DEFAULT', 'all');
 //人気ウィジェット集計期間デフォルト
 define('PCD_DEFAULT', 30);
-//新着・人気ウィジェットのデフォルト表示数字
+//新着・人気ウィジェット・インフォリストのデフォルト表示数字
 define('EC_DEFAULT', 5);
 //おすすめカードのデフォルト値
 define('RC_DEFAULT', 'center_white_title');

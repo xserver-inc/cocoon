@@ -5,13 +5,13 @@
   margin-right: auto;
   padding: 0;
   width: 90%;
-  background-color: $white;
+  background-color: var(--white-color);
 }
 
 .blogcard{
   @include card_padding;
-  border: 1px solid $basic_border_color;
-  border-radius: $basic_border_radius;
+  border: 1px solid var(--basic-border-color);
+  border-radius: var(--basic-border-radius);
   line-height: 1.6;
   position: relative;
   // margin-bottom: 1.2em;
