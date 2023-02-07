@@ -21,7 +21,7 @@ function render_block_cocoon_block_popular_list($attributes, $content)
 	$atts = [
 		'days' => $attributes['showAllDays'] ? 'all' : $attributes['days'],
 		'count' => $attributes['count'],
-		'type' => $attributes['type'],
+		'type' => $attributes['displayType'],
 		'rank' => $attributes['rank'] ? 1 : 0,
 		'pv' => $attributes['pv'] ? 1 : 0,
 		'cats' => $attributes['showAllCats'] ? 'all' : $attributes['cats'],

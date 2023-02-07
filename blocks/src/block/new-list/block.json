@@ -13,7 +13,7 @@
       "type": "integer",
       "default": 5
     },
-    "type": {
+    "displayType": {
       "enum": [ "default", "border_partition", "border_square", "large_thumb", "large_thumb_on"],
       "default": "default"
     },

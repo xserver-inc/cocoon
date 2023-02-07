@@ -36,7 +36,7 @@ export default function edit( props ) {
 	const { attributes, setAttributes, className } = props;
 	const {
 		count,
-		type,
+		displayType,
 		bold,
 		arrow,
 		showAllCats,
@@ -108,9 +108,9 @@ export default function edit( props ) {
 					/>
 					<SelectControl
 						label={ __( '表示タイプ', THEME_NAME ) }
-						value={ type }
+						value={ displayType }
 						onChange={ ( newType ) =>
-							setAttributes( { type: newType } )
+							setAttributes( { displayType: newType } )
 						}
 						options={ [
 							{

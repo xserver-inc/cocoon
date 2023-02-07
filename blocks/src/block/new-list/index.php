@@ -22,7 +22,7 @@ function render_block_cocoon_block_new_list($attributes, $content)
 		'count' => $attributes['count'],
 		'cats' => $attributes['showAllCats'] ? 'all' : $attributes['cats'],
 		'tags' => $attributes['showAllTags'] ? 'all' : $attributes['tags'],
-		'type' => $attributes['type'],
+		'type' => $attributes['displayType'],
 		'children' => $attributes['children'] ? 1 : 0,
 		'post_type' => $attributes['post_type'],
 		'taxonomy' => $attributes['taxonomy'],
