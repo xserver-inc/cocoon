@@ -34,6 +34,7 @@ import * as ad from './block/ad';
 import * as profile from './block/profile';
 import * as newlist from './block/new-list';
 import * as popularlist from './block/popular-list';
+import * as infolist from './block/info-list';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -65,6 +66,7 @@ const cocoonBlocks = [
 	profile,
 	newlist,
 	popularlist,
+	infolist,
 
 	captionBox,
 	tabCaptionBox,

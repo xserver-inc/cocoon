@@ -1,0 +1,42 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/info-list",
+  "category": "cocoon-block",
+  "keywords": ["info", "list"],
+
+  "attributes": {
+    "classNames": {
+      "type": "string",
+      "default": ""
+    },
+    "count": {
+      "type": "integer",
+      "default": 5
+    },
+    "showAllCats": {
+      "type": "boolean",
+      "default": true
+    },
+    "cats": {
+      "type": "string",
+      "default": ""
+    },
+    "caption": {
+      "type": "string",
+      "default": ""
+    },
+    "showFrame": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDivider": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}

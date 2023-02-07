@@ -15,6 +15,7 @@
     "@wordpress/api-fetch": "^3.23.1",
     "@wordpress/block-editor": "^5.3.2",
     "@wordpress/compose": "^3.25.2",
+    "@wordpress/data": "^8.3.0",
     "@wordpress/dom-ready": "^2.13.2",
     "@wordpress/i18n": "^3.19.2",
     "@wp-g2/create-styles": "0.0.164",
