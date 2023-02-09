@@ -16,16 +16,15 @@ import classnames from 'classnames';
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import {
-	SelectControl,
 	PanelBody,
 	TextControl,
 	ToggleControl,
 	CheckboxControl,
+	SearchControl,
 	__experimentalNumberControl as NumberControl,
-	__experimentalDivider as Divider,
 	Disabled,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
+import { Fragment, useState } from '@wordpress/element';
 import { ServerSideRender } from '@wordpress/editor';
 import { useSelect } from '@wordpress/data';
 
@@ -45,10 +44,15 @@ export default function edit( props ) {
 	} );
 	setAttributes( { classNames: classes } );
 
+	// カテゴリ検索文字列の保持
+	const [ catSearchInput, setCatSearchInput ] = useState( '' );
+
+	// wp.coreから全カテゴリ情報の取得
 	const categoryData = useSelect( ( select ) => {
 		return select( 'core' ).getEntityRecords( 'taxonomy', 'category' );
 	} );
 
+	// 1カテゴリ分のcatsへの追加・削除およびCheckboxControlの生成
 	function createCategory( isChecked, label, id ) {
 		// cats文字列にidを追加する
 		const addCat = ( id ) => {
@@ -98,27 +102,73 @@ export default function edit( props ) {
 		);
 	}
 
-	function createCategoryList() {
+	// 入力文字列に応じてカテゴリの一覧を出力する
+	function createCategoryList( input ) {
 		if ( categoryData == null ) return null;
 
 		let control = [];
-		categoryData.forEach( ( record ) => {
-			let isChecked = false;
-			let catsArray = cats.split( ',' );
-			for ( var i = 0; i < catsArray.length; i++ ) {
-				if ( catsArray[ i ] == String( record.id ) ) {
-					isChecked = true;
-					break;
+		let catsArray = cats.split(',');
+		// 検索文字列が空の場合は選択されているカテゴリの一覧を表示する
+		if (input == '') {
+			categoryData.forEach((record) => {
+				for (var i = 0; i < catsArray.length; i++) {
+					if (catsArray[i] == String(record.id)) {
+						control.push(createCategory(true, record.name, String(record.id)));
+					}
 				}
-			}
-			control.push(
-				createCategory( isChecked, record.name, String( record.id ) )
-			);
-		} );
+			});
+		}
+		// 検索文字列がある場合は文字列を含むカテゴリの一覧を表示する
+		else {
+			categoryData.forEach((record) => {
+				console.log(record);
+				let isChecked = false;
+				// record.nameにinputが含まれるなら
+				if (record.name.indexOf(input) != -1) {
+					for (var i = 0; i < catsArray.length; i++) {
+						if (catsArray[i] == String(record.id)) {
+							isChecked = true;
+							break;
+						}
+					}
+					control.push(
+						createCategory(
+							isChecked,
+							record.name,
+							String(record.id)
+						)
+					);
+				}
+			});
+		}
 		if ( showAllCats ) {
 			control = <Disabled> { control } </Disabled>;
 		}
 		return control;
+	}
+
+	// 可変コントロールの定義
+	let catsTextControl = (
+		<Fragment>
+			<TextControl
+				label={ __(
+					'表示するカテゴリをカンマ区切りで指定',
+					THEME_NAME
+				) }
+				value={ cats }
+				onChange={ ( value ) => setAttributes( { cats: value } ) }
+			/>
+			<PanelBody title={ __( 'カテゴリ検索', THEME_NAME ) }>
+				<SearchControl
+					value={ catSearchInput }
+					onChange={ setCatSearchInput }
+				/>
+				{ createCategoryList( catSearchInput ) }
+			</PanelBody>
+		</Fragment>
+	);
+	if ( showAllCats ) {
+		catsTextControl = <Disabled>{ catsTextControl }</Disabled>;
 	}
 
 	const getInfoListContent = () => {
@@ -173,12 +223,12 @@ export default function edit( props ) {
 						label={ __( '全カテゴリ表示', THEME_NAME ) }
 						checked={ showAllCats }
 						onChange={ ( isChecked ) => {
-							setAttributes( { showAllCats: isChecked } );
+							setAttributes({ showAllCats: isChecked });
+							// 全カテゴリ表示を切り替えた際は検索文字列をリセット
+							setCatSearchInput( '' );
 						} }
 					/>
-					<PanelBody title={ __( '表示カテゴリ', THEME_NAME ) }>
-						{ createCategoryList() }
-					</PanelBody>
+					{ catsTextControl }
 				</PanelBody>
 			</InspectorControls>
 			<div { ...useBlockProps() }>{ getInfoListContent() }</div>
