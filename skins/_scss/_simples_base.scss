@@ -20,7 +20,7 @@ body {
 }
 
 #navi .navi-in a {
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
 }
 
 #navi .navi-in > .menu-header .sub-menu {
@@ -37,7 +37,7 @@ body {
 }
 
 .header-container {
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   background-color: $key_color1;
 }
 
@@ -52,11 +52,11 @@ body {
 /* サイト名・キャッチフレーズ */
 
 .site-name-text {
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
 }
 
 .site-name-text:hover {
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
 }
 
 /* 見出し */
@@ -65,7 +65,7 @@ body {
   margin: 5px 0;
   padding: 15px 25px;
   background-color: $key_color1;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   font-size: 22px;
   border-radius: 1px;
 }
@@ -78,7 +78,7 @@ body {
   border-right: none;
   border-bottom: none;
   border-left: 6px solid $key_color1;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
 }
 
 .article h4 {
@@ -121,7 +121,7 @@ body {
 .widget_meta ul li a:hover,
 .widget_rss ul li a:hover,
 .widget_nav_menu ul li a:hover {
-  background-color: var(--white-color);
+  background-color: var(--cocoon-white-color);
 }
 
 /* 検索ボタン */
@@ -144,7 +144,7 @@ input[type='text'].search-edit {
 }
 
 .a-wrap:hover {
-  background-color: var(--white-color);
+  background-color: var(--cocoon-white-color);
   transform: translateY(-2px);
   box-shadow: 0 0 8px $shadow;
 }
@@ -189,7 +189,7 @@ input[type='text'].search-edit {
 input[type='submit'] {
   padding: 10px;
   background: $key_color1;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   font-size: 14px;
   border: none;
   border-radius: 1px;
@@ -225,7 +225,7 @@ table th {
 
 // table tr:nth-child(even) {
 //   background: $key_color3;
-//   color: var(--white-color);
+//   color: var(--cocoon-white-color);
 // }
 
 /* ページネーション */
@@ -238,7 +238,7 @@ table th {
 
 .pagination .current {
   background-color: $key_color1;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
 }
 
 .page-numbers.dots {
@@ -248,7 +248,7 @@ table th {
 
 .pagination a:hover {
   background-color: $key_color1;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
 }
 
 /* フッター */
@@ -256,7 +256,7 @@ table th {
 .footer {
   padding-top: 30px;
   padding-bottom: 35px;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   background-color: $key_color1;
 }
 
@@ -281,13 +281,13 @@ table th {
 .go-to-top-button {
   width: 45px;
   height: 45px;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   background-color: $black;
   border-radius: 50%;
 }
 
 .go-to-top-button:hover {
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
 }
 
 /* レスポンシブ */
@@ -330,5 +330,5 @@ table th {
 
 .footer a,
 .footer .footer-in .sns-buttons a{
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
 }

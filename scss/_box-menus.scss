@@ -19,7 +19,7 @@
   cursor: pointer;
   background:#fff;
   width: calc(100%/4);
-  color: var(--x-pallid-text-color);
+  color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
   &:last-child{
@@ -27,7 +27,7 @@
   }
 
   &:hover{
-    color: var(--x-pallid-text-color);
+    color: var(--cocoon-x-pallid-text-color);
     z-index:2;
     //box-shadow: inset 2px 2px 0 0 #f6a068, 2px 2px 0 0 #f6a068, 2px 0 0 0 #f6a068, 0 2px 0 0 #f6a068;
     //transition: 0.4s;

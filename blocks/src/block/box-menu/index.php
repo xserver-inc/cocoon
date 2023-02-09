@@ -22,7 +22,7 @@ function render_box_menu_list($attributes, $content) {
 }
 
 if( function_exists('register_block_type')) {
-  register_block_type_from_metadata(
+  register_block_type(
     __DIR__,
      array(
       'render_callback' => 'render_box_menu_list',

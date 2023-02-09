@@ -19,7 +19,7 @@ body.wp-admin{
   overflow: auto;
   resize: both;
 
-  background-color: var(--xxx-thin-color);
+  background-color: var(--cocoon-xxx-thin-color);
 
   padding: 10px;
 
@@ -271,7 +271,7 @@ form.admin-settings{
   background-color: #f7f7f7;
   padding: 1px 2px;
   border-radius: 5px;
-  border: 1px solid var(--basic-border-color);
+  border: 1px solid var(--cocoon-basic-border-color);
   font-weight: normal;
 }
 
@@ -289,7 +289,7 @@ form.admin-settings{
   background-color: #f7f7f7;
   padding: 1px 2px;
   border-radius: 5px;
-  border: 1px solid var(--basic-border-color);
+  border: 1px solid var(--cocoon-basic-border-color);
 }
 
 .uploded-thumbnail img{
@@ -373,7 +373,7 @@ p.submit{
   padding: 5px 10px;
   margin-bottom: 10px;
   background-color: #eee;
-  border: 1px solid var(--basic-border-color);
+  border: 1px solid var(--cocoon-basic-border-color);
 }
 
 select option.fa{
@@ -393,7 +393,7 @@ select option.fa{
 .widget-content .tab-content{
   height: 200px;
   overflow: auto;
-  border: 1px solid var(--basic-border-color);
+  border: 1px solid var(--cocoon-basic-border-color);
   padding: 5px;
   margin: 0 0 5px;
   background-color: #fff;
@@ -896,7 +896,7 @@ textarea[name="the_page_memo"]{
   padding: 1.4em 0.6em 0.6em;
   position: relative;
   display: table-cell;
-  background-color: var(--xx-thin-color);
+  background-color: var(--cocoon-xx-thin-color);
   border: 1px solid #ba2636;
   border-radius: 2px;
   pointer-events: none;
@@ -911,7 +911,7 @@ textarea[name="the_page_memo"]{
     top: 0;
     left: 0;
     background-color: #ba2636;
-    color: var(--white-color);
+    color: var(--cocoon-white-color);
     padding: 2px 10px 2px 6px;
   }
 }

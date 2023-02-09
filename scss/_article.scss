@@ -62,31 +62,31 @@ h2 {
   //margin-top: 40px;
   //margin-bottom: 20px;
   padding: 25px;
-  background-color: var(--xx-thin-color);
-  border-radius: var(--badge-border-radius);
+  background-color: var(--cocoon-xx-thin-color);
+  border-radius: var(--cocoon-badge-border-radius);
 }
 
 h3 {
-  border-left: 7px solid var(--middle-thickness-color);
-  border-right: 1px solid var(--thin-color);
-  border-top: 1px solid var(--thin-color);
-  border-bottom: 1px solid var(--thin-color);
+  border-left: 7px solid var(--cocoon-middle-thickness-color);
+  border-right: 1px solid var(--cocoon-thin-color);
+  border-top: 1px solid var(--cocoon-thin-color);
+  border-bottom: 1px solid var(--cocoon-thin-color);
   font-size: 22px;
   padding: 12px 20px;
 
 }
 
 h4 {
-  border-top: 2px solid var(--thin-color);
-  border-bottom: 2px solid var(--thin-color);
+  border-top: 2px solid var(--cocoon-thin-color);
+  border-bottom: 2px solid var(--cocoon-thin-color);
 }
 
 h5 {
-  border-bottom: 2px solid var(--thin-color);
+  border-bottom: 2px solid var(--cocoon-thin-color);
 }
 
 h6 {
-  border-bottom: 1px solid var(--thin-color);
+  border-bottom: 1px solid var(--cocoon-thin-color);
 }
 
 .column-wrap{

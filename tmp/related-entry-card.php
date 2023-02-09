@@ -31,6 +31,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <?php echo get_the_snippet( get_the_content(''), get_related_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
     </div>
     <?php endif ?>
+    <?php do_action( 'related_entry_card_snippet_after', get_the_ID() ); ?>
     <?php //表示するものがあるか判定
     if (is_related_entry_card_post_date_visible() || is_related_entry_card_post_update_visible() || is_related_entry_card_post_author_visible()): ?>
     <div class="related-entry-card-meta card-meta e-card-meta">
