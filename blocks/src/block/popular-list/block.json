@@ -34,7 +34,7 @@
       "default": 5
     },
     "type": {
-      "enum": [ "default", "border_partition", "border_square", "large_thumb", "large_thumb_on"],
+      "type": [ "default", "border_partition", "border_square", "large_thumb", "large_thumb_on"],
       "default": "default"
     },
     "bold": {
