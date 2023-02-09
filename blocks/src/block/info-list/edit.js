@@ -121,7 +121,6 @@ export default function edit( props ) {
 		// 検索文字列がある場合は文字列を含むカテゴリの一覧を表示する
 		else {
 			categoryData.forEach((record) => {
-				console.log(record);
 				let isChecked = false;
 				// record.nameにinputが含まれるなら
 				if (record.name.indexOf(input) != -1) {
@@ -158,7 +157,10 @@ export default function edit( props ) {
 				value={ cats }
 				onChange={ ( value ) => setAttributes( { cats: value } ) }
 			/>
-			<PanelBody title={ __( 'カテゴリ検索', THEME_NAME ) }>
+			<PanelBody
+				title={__('カテゴリ検索', THEME_NAME)}
+				initialOpen={false}
+			>
 				<SearchControl
 					value={ catSearchInput }
 					onChange={ setCatSearchInput }
