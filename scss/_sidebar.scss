@@ -6,16 +6,16 @@
   width: $sidebar_outer_width;
   border: $sidebar_border_width $sidebar_border_style $transparent_border_color;
   padding: $sidebar_padding_width;
-  border-radius: var(--basic-border-radius);
-  background-color: var(--white-color);
+  border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-white-color);
   //height: 5000px;
 
   h2,
   h3{
-    background-color: var(--xx-thin-color);
+    background-color: var(--cocoon-xx-thin-color);
     padding: 12px;
     margin: 16px 0;
-    border-radius: var(--badge-border-radius);
+    border-radius: var(--cocoon-badge-border-radius);
   }
 }
 

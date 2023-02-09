@@ -7,7 +7,7 @@ Error: Invalid CSS after "...r)-color: white": expected "{", was ";"
 17: // Font color
 18: $font-color: #333333;
 19: // Background color
-20: var(--white-color)-color: white;
+20: var(--cocoon-white-color)-color: white;
 21: // Hover color
 22: $hover-color: #FBE9E7;
 23: // Base color（60%）
@@ -36,6 +36,7 @@ D:/DefaultSoft/Koala/bin/sass:22:in `load'
 D:/DefaultSoft/Koala/bin/sass:22:in `<main>'
 */
 body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...r)-color: white\": expected \"{\", was \";\"\A         on line 20 of C:\Users\yhira_3az\Local Sites\cocoon\app\public\wp-content\themes\cocoon-master\skins\veilnui-simplog-deep-orange\style.scss\A \A 15: // Fields\A 16: //-------\A 17: // Font color\A 18: $font-color: #333333;\A 19: // Background color\A 20: var(--white-color)-color: white;\A 21: // Hover color\A 22: $hover-color: #FBE9E7;\A 23: // Base color（60%）\A 24: $base-color: #FBE9E7;\A 25: // Key color（10%）"; }
+	white-space: pre;
+	font-family: monospace;
+	content: 'Error: Invalid CSS after "...r)-color: white": expected "{", was ";"\A         on line 20 of C:\Users\yhira_3az\Local Sites\cocoon\app\public\wp-content\themes\cocoon-master\skins\veilnui-simplog-deep-orange\style.scss\A \A 15: // Fields\A 16: //-------\A 17: // Font color\A 18: $font-color: #333333;\A 19: // Background color\A 20: var(--cocoon-white-color)-color: white;\A 21: // Hover color\A 22: $hover-color: #FBE9E7;\A 23: // Base color（60%）\A 24: $base-color: #FBE9E7;\A 25: // Key color（10%）';
+}

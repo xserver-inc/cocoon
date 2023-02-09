@@ -3,9 +3,9 @@
   padding: 20px;
 
   &.is-style-frame-border{
-    border: 1px solid var(--basic-border-color);
-    border-color: var(--three-d-border-colors);
-    border-radius: var(--basic-border-radius);
+    border: 1px solid var(--cocoon-basic-border-color);
+    border-color: var(--cocoon-three-d-border-colors);
+    border-radius: var(--cocoon-basic-border-radius);
   }
 }
 
@@ -21,7 +21,7 @@
 
 .is-style-divider-line{
   .info-list-item{
-    border-bottom: 1px dashed var(--basic-border-color);
+    border-bottom: 1px dashed var(--cocoon-basic-border-color);
     &:last-child{
       border-bottom-style: none;
     }
@@ -34,7 +34,7 @@
 }
 
 .info-list-item-content-link{
-  color: var(--black-color);
+  color: var(--cocoon-black-color);
   text-decoration: none;
   &:hover{
     text-decoration: underline;

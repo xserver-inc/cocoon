@@ -3,7 +3,7 @@
 ************************************/
 .breadcrumb{
   margin: 1em .4em;
-  color: var(--x-pallid-text-color);
+  color: var(--cocoon-x-pallid-text-color);
   font-size: 13px;
 }
 
@@ -17,14 +17,14 @@
 
 .breadcrumb a{
   text-decoration:none;
-  color: var(--x-pallid-text-color);
+  color: var(--cocoon-x-pallid-text-color);
 }
 
 .breadcrumb.sbp-main-before,
 .breadcrumb.sbp-footer-before,
 .breadcrumb.pbp-main-before,
 .breadcrumb.pbp-footer-before{
-  background-color: var(--white-color);
+  background-color: var(--cocoon-white-color);
   margin: 12px auto 0;
   padding: .6em 1em;
 }

@@ -1,6 +1,6 @@
 /*拡張クラスを追加するスタイルシート*/
 %badge{
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   padding: 1px 5px 0;
   border-radius: 2px;
   font-size: 12px;
@@ -10,17 +10,17 @@
 .reffer,
 .sankou{
   @extend %badge;
-  background-color: var(--orange-color);
+  background-color: var(--cocoon-orange-color);
 }
 
-.badge-red{@extend %badge;background-color: var(--red-color);}
-.badge-pink{@extend %badge;background-color: var(--pink-color);}
-.badge-purple{@extend %badge;background-color: var(--purple-color);}
-.badge-blue{@extend %badge;background-color: var(--blue-color);}
-.badge-green{@extend %badge;background-color: var(--green-color);}
-.badge-yellow{@extend %badge;background-color: var(--yellow-color);}
-.badge-brown{@extend %badge;background-color: var(--brown-color);}
-.badge-grey{@extend %badge;background-color: var(--grey-color);}
+.badge-red{@extend %badge;background-color: var(--cocoon-red-color);}
+.badge-pink{@extend %badge;background-color: var(--cocoon-pink-color);}
+.badge-purple{@extend %badge;background-color: var(--cocoon-purple-color);}
+.badge-blue{@extend %badge;background-color: var(--cocoon-blue-color);}
+.badge-green{@extend %badge;background-color: var(--cocoon-green-color);}
+.badge-yellow{@extend %badge;background-color: var(--cocoon-yellow-color);}
+.badge-brown{@extend %badge;background-color: var(--cocoon-brown-color);}
+.badge-grey{@extend %badge;background-color: var(--cocoon-grey-color);}
 
 /*太字*/
 .bold{
@@ -29,35 +29,35 @@
 
 /*赤色*/
 .red{
-  color: var(--red-color);
+  color: var(--cocoon-red-color);
 }
 
 /*太字で赤色*/
 .bold-red{
   font-weight:bold;
-  color: var(--red-color);
+  color: var(--cocoon-red-color);
 }
 
 /*青色*/
 .blue{
-  color: var(--blue-color);
+  color: var(--cocoon-blue-color);
 }
 
 /*太字で青色*/
 .bold-blue{
   font-weight:bold;
-  color: var(--blue-color);
+  color: var(--cocoon-blue-color);
 }
 
 /*緑色*/
 .green{
-  color: var(--green-color);
+  color: var(--cocoon-green-color);
 }
 
 /*太字で緑色*/
 .bold-green{
   font-weight:bold;
-  color: var(--green-color);
+  color: var(--cocoon-green-color);
 }
 
 /*赤のアンダーライン*/
@@ -104,7 +104,7 @@ $marker_u_blue: $marker_blue;
 .keyboard-key {
   background-color: #f9f9f9;
   background-image: -moz-linear-gradient(center top , #eee, #f9f9f9, #eee);
-  border: 1px solid var(--middle-thickness-color);
+  border: 1px solid var(--cocoon-middle-thickness-color);
   border-radius: 2px;
   box-shadow: 1px 2px 2px #ddd;
   font-family: inherit;
@@ -473,39 +473,39 @@ $bb_gray: #999;
 $bb_yellow: #fc9f4d;
 $bb_red: #d05a6e;
 $bb_blue: #2ea9df;
-$bb_green: var(--green-color);
+$bb_green: var(--cocoon-green-color);
 .blank-box{
-  border: 3px solid var(--grey-color);
+  border: 3px solid var(--cocoon-grey-color);
   padding: 1.2em 1em;
   // margin-left: 2%;
   // margin-right: 2%;
   // margin-bottom: 1.2em;
-  border-radius: var(--basic-border-radius);
+  border-radius: var(--cocoon-basic-border-radius);
     ol, ul {
     margin: 0;
   }
 
-  &.bb-red{border-color: var(--red-color);}
-  &.bb-pink{border-color: var(--pink-color);}
-  &.bb-purple{border-color: var(--purple-color);}
-  &.bb-blue{border-color: var(--blue-color);}
-  &.bb-green{border-color: var(--green-color);}
-  &.bb-orange{border-color: var(--orange-color);}
-  &.bb-yellow{border-color: var(--yellow-color);}
-  &.bb-brown{border-color: var(--brown-color);}
-  &.bb-grey{border-color: var(--grey-color);}
-  &.bb-black{border-color: var(--black-color);}
+  &.bb-red{border-color: var(--cocoon-red-color);}
+  &.bb-pink{border-color: var(--cocoon-pink-color);}
+  &.bb-purple{border-color: var(--cocoon-purple-color);}
+  &.bb-blue{border-color: var(--cocoon-blue-color);}
+  &.bb-green{border-color: var(--cocoon-green-color);}
+  &.bb-orange{border-color: var(--cocoon-orange-color);}
+  &.bb-yellow{border-color: var(--cocoon-yellow-color);}
+  &.bb-brown{border-color: var(--cocoon-brown-color);}
+  &.bb-grey{border-color: var(--cocoon-grey-color);}
+  &.bb-black{border-color: var(--cocoon-black-color);}
 
-  &.bb-deep{border-color: var(--deep-color);}
-  &.bb-indigo{border-color: var(--indigo-color);}
-  &.bb-light-blue{border-color: var(--light-blue-color);}
-  &.bb-cyan{border-color: var(--cyan-color);}
-  &.bb-teal{border-color: var(--teal-color);}
-  &.bb-light-green{border-color: var(--light-green-color);}
-  &.bb-lime{border-color: var(--lime-color);}
-  &.bb-amber{border-color: var(--amber-color);}
-  &.bb-deep-orange{border-color: var(--deep-orange-color);}
-  &.bb-white{border-color: var(--white-color);}
+  &.bb-deep{border-color: var(--cocoon-deep-color);}
+  &.bb-indigo{border-color: var(--cocoon-indigo-color);}
+  &.bb-light-blue{border-color: var(--cocoon-light-blue-color);}
+  &.bb-cyan{border-color: var(--cocoon-cyan-color);}
+  &.bb-teal{border-color: var(--cocoon-teal-color);}
+  &.bb-light-green{border-color: var(--cocoon-light-green-color);}
+  &.bb-lime{border-color: var(--cocoon-lime-color);}
+  &.bb-amber{border-color: var(--cocoon-amber-color);}
+  &.bb-deep-orange{border-color: var(--cocoon-deep-orange-color);}
+  &.bb-white{border-color: var(--cocoon-white-color);}
 
 
   &.bb-tab{
@@ -521,33 +521,33 @@ $bb_green: var(--green-color);
     }
 
 
-    &.bb-red .bb-label{background-color: var(--red-color);}
-    &.bb-pink .bb-label{background-color: var(--pink-color);}
-    &.bb-purple .bb-label{background-color: var(--purple-color);}
-    &.bb-blue .bb-label{background-color: var(--blue-color);}
-    &.bb-green .bb-label{background-color: var(--green-color);}
-    &.bb-orange .bb-label{background-color: var(--orange-color);}
-    &.bb-yellow .bb-label{background-color: var(--yellow-color);}
-    &.bb-brown .bb-label{background-color: var(--brown-color);}
-    &.bb-grey .bb-label{background-color: var(--grey-color);}
-    &.bb-black .bb-label{background-color: var(--black-color);}
-    &.bb-deep .bb-label{background-color: var(--deep-color);}
-    &.bb-indigo .bb-label{background-color: var(--indigo-color);}
-    &.bb-light-blue .bb-label{background-color: var(--light-blue-color);}
-    &.bb-cyan .bb-label{background-color: var(--cyan-color);}
-    &.bb-teal .bb-label{background-color: var(--teal-color);}
-    &.bb-light-green .bb-label{background-color: var(--light-green-color);}
-    &.bb-lime .bb-label{background-color: var(--lime-color);}
-    &.bb-amber .bb-label{background-color: var(--amber-color);}
-    &.bb-deep-orange .bb-label{background-color: var(--deep-orange-color);}
-    &.bb-white .bb-label{background-color: var(--white-color);}
+    &.bb-red .bb-label{background-color: var(--cocoon-red-color);}
+    &.bb-pink .bb-label{background-color: var(--cocoon-pink-color);}
+    &.bb-purple .bb-label{background-color: var(--cocoon-purple-color);}
+    &.bb-blue .bb-label{background-color: var(--cocoon-blue-color);}
+    &.bb-green .bb-label{background-color: var(--cocoon-green-color);}
+    &.bb-orange .bb-label{background-color: var(--cocoon-orange-color);}
+    &.bb-yellow .bb-label{background-color: var(--cocoon-yellow-color);}
+    &.bb-brown .bb-label{background-color: var(--cocoon-brown-color);}
+    &.bb-grey .bb-label{background-color: var(--cocoon-grey-color);}
+    &.bb-black .bb-label{background-color: var(--cocoon-black-color);}
+    &.bb-deep .bb-label{background-color: var(--cocoon-deep-color);}
+    &.bb-indigo .bb-label{background-color: var(--cocoon-indigo-color);}
+    &.bb-light-blue .bb-label{background-color: var(--cocoon-light-blue-color);}
+    &.bb-cyan .bb-label{background-color: var(--cocoon-cyan-color);}
+    &.bb-teal .bb-label{background-color: var(--cocoon-teal-color);}
+    &.bb-light-green .bb-label{background-color: var(--cocoon-light-green-color);}
+    &.bb-lime .bb-label{background-color: var(--cocoon-lime-color);}
+    &.bb-amber .bb-label{background-color: var(--cocoon-amber-color);}
+    &.bb-deep-orange .bb-label{background-color: var(--cocoon-deep-orange-color);}
+    &.bb-white .bb-label{background-color: var(--cocoon-white-color);}
 
   }
 
   &.sticky{
     border-width: 0 0 0 6px;
-    border-color: var(--x-pallid-text-color);
-    background-color: var(--xx-thin-color);
+    border-color: var(--cocoon-x-pallid-text-color);
+    background-color: var(--cocoon-xx-thin-color);
 
     &.st-yellow{
       border-color: #FFA103;
@@ -578,25 +578,25 @@ $bb_green: var(--green-color);
   @extend .blank-box;
 }
 .is-style-blank-box-red{
-  border-color: var(--red-color);
+  border-color: var(--cocoon-red-color);
 }
 .is-style-blank-box-pink{
-  border-color: var(--pink-color);
+  border-color: var(--cocoon-pink-color);
 }
 .is-style-blank-box-navy{
-  border-color: var(--indigo-color);
+  border-color: var(--cocoon-indigo-color);
 }
 .is-style-blank-box-blue{
-  border-color: var(--blue-color);
+  border-color: var(--cocoon-blue-color);
 }
 .is-style-blank-box-yellow{
-  border-color: var(--yellow-color);
+  border-color: var(--cocoon-yellow-color);
 }
 .is-style-blank-box-green{
-  border-color: var(--green-color);
+  border-color: var(--cocoon-green-color);
 }
 .is-style-blank-box-orange{
-  border-color: var(--orange-color);
+  border-color: var(--cocoon-orange-color);
 }
 
 .is-style-sticky-gray,
@@ -760,7 +760,7 @@ div.search-form{
 }
 
 .search-form div.sform{
-  background-color: var(--white-color);
+  background-color: var(--cocoon-white-color);
   width: 100%;
 }
 
@@ -813,7 +813,7 @@ div.search-form{
 .btn,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a{
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   background-color: #32373c;
   font-weight: bold;
   border-radius: 4px;
@@ -868,7 +868,7 @@ div.search-form{
 .btn-wrap > a:hover{
   filter: opacity(0.7);
   opacity: 1;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   &::after{
     right: -4px;
   }
@@ -911,28 +911,28 @@ div.search-form{
   clip-path: border-box;
 }
 
-.btn-white, .btn-wrap.btn-wrap-white > a{color: var(--text-color);background-color: var(--white-color);}
-#container .btn-white:hover, #container .btn-wrap.btn-wrap-white > a:hover{color: var(--text-color);}
-.btn-red, .btn-wrap.btn-wrap-red > a{background-color: var(--red-color);}
-.btn-pink, .btn-wrap.btn-wrap-pink > a{background-color: var(--pink-color);}
-.btn-purple, .btn-wrap.btn-wrap-purple > a{background-color: var(--purple-color);}
-.btn-deep, .btn-wrap.btn-wrap-deep > a{background-color: var(--deep-color);}
-.btn-indigo, .btn-wrap.btn-wrap-indigo > a{background-color: var(--indigo-color);}
-.btn-blue, .btn-wrap.btn-wrap-blue > a{background-color: var(--blue-color);}
-.btn-light-blue, .btn-wrap.btn-wrap-light-blue > a{background-color: var(--light-blue-color);}
-.btn-cyan, .btn-wrap.btn-wrap-cyan > a{background-color: var(--cyan-color);}
-.btn-teal, .btn-wrap.btn-wrap-teal > a{background-color: var(--teal-color);}
-.btn-green, .btn-wrap.btn-wrap-green > a{background-color: var(--green-color);}
-.btn-light-green, .btn-wrap.btn-wrap-light-green > a{background-color: var(--light-green-color);}
-.btn-lime, .btn-wrap.btn-wrap-lime > a{background-color:var(--lime-color)}
-.btn-yellow, .btn-wrap.btn-wrap-yellow > a{background-color: var(--yellow-color);}
-.btn-amber, .btn-wrap.btn-wrap-amber > a{background-color: var(--amber-color);}
-.btn-orange, .btn-wrap.btn-wrap-orange > a{background-color: var(--orange-color);}
-.btn-deep-orange, .btn-wrap.btn-wrap-deep-orange > a{background-color: var(--deep-orange-color);}
-.btn-brown, .btn-wrap.btn-wrap-brown > a{background-color: var(--brown-color);}
-.btn-grey, .btn-wrap.btn-wrap-grey > a{background-color: var(--grey-color);}
-.btn-blue-grey, .btn-wrap.btn-wrap-blue-grey > a{background-color: var(--blue-gray-color);}
-.btn-black, .btn-wrap.btn-wrap-black > a{background-color: var(--black-color);}
+.btn-white, .btn-wrap.btn-wrap-white > a{color: var(--cocoon-text-color);background-color: var(--cocoon-white-color);}
+#container .btn-white:hover, #container .btn-wrap.btn-wrap-white > a:hover{color: var(--cocoon-text-color);}
+.btn-red, .btn-wrap.btn-wrap-red > a{background-color: var(--cocoon-red-color);}
+.btn-pink, .btn-wrap.btn-wrap-pink > a{background-color: var(--cocoon-pink-color);}
+.btn-purple, .btn-wrap.btn-wrap-purple > a{background-color: var(--cocoon-purple-color);}
+.btn-deep, .btn-wrap.btn-wrap-deep > a{background-color: var(--cocoon-deep-color);}
+.btn-indigo, .btn-wrap.btn-wrap-indigo > a{background-color: var(--cocoon-indigo-color);}
+.btn-blue, .btn-wrap.btn-wrap-blue > a{background-color: var(--cocoon-blue-color);}
+.btn-light-blue, .btn-wrap.btn-wrap-light-blue > a{background-color: var(--cocoon-light-blue-color);}
+.btn-cyan, .btn-wrap.btn-wrap-cyan > a{background-color: var(--cocoon-cyan-color);}
+.btn-teal, .btn-wrap.btn-wrap-teal > a{background-color: var(--cocoon-teal-color);}
+.btn-green, .btn-wrap.btn-wrap-green > a{background-color: var(--cocoon-green-color);}
+.btn-light-green, .btn-wrap.btn-wrap-light-green > a{background-color: var(--cocoon-light-green-color);}
+.btn-lime, .btn-wrap.btn-wrap-lime > a{background-color:var(--cocoon-lime-color)}
+.btn-yellow, .btn-wrap.btn-wrap-yellow > a{background-color: var(--cocoon-yellow-color);}
+.btn-amber, .btn-wrap.btn-wrap-amber > a{background-color: var(--cocoon-amber-color);}
+.btn-orange, .btn-wrap.btn-wrap-orange > a{background-color: var(--cocoon-orange-color);}
+.btn-deep-orange, .btn-wrap.btn-wrap-deep-orange > a{background-color: var(--cocoon-deep-orange-color);}
+.btn-brown, .btn-wrap.btn-wrap-brown > a{background-color: var(--cocoon-brown-color);}
+.btn-grey, .btn-wrap.btn-wrap-grey > a{background-color: var(--cocoon-grey-color);}
+.btn-blue-grey, .btn-wrap.btn-wrap-blue-grey > a{background-color: var(--cocoon-blue-gray-color);}
+.btn-black, .btn-wrap.btn-wrap-black > a{background-color: var(--cocoon-black-color);}
 
 .btn-arrow-right:before, .btn-wrap.btn-wrap-arrow-right > a:before{content: "\f061";}
 .btn-chevron-right:before, .btn-wrap.btn-wrap-chevron-circle-right > a:before{content: "\f054";}
@@ -985,8 +985,8 @@ div.search-form{
 
 .micro-balloon {
 	position: relative;
-	background: var(--white-color);
-  border: 1px solid var(--x-pallid-text-color);
+	background: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-x-pallid-text-color);
   border-radius: 4px;
   padding: 3px 12px;
   display: table;
@@ -1019,12 +1019,12 @@ div.search-form{
 }
 
 .micro-balloon:after {
-	border-top-color: var(--white-color);
+	border-top-color: var(--cocoon-white-color);
 	border-width: 7px;
 	margin-left: -7px;
 }
 .micro-balloon:before {
-	border-top-color: var(--x-pallid-text-color);
+	border-top-color: var(--cocoon-x-pallid-text-color);
 	border-width: 8px;
 	margin-left: -8px;
 }
@@ -1045,11 +1045,11 @@ div.search-form{
 }
 
 .micro-bottom.micro-balloon:after {
-	border-bottom-color: var(--white-color);
+	border-bottom-color: var(--cocoon-white-color);
   border-top-color: transparent;
 }
 .micro-bottom.micro-balloon:before {
-  border-bottom-color: var(--x-pallid-text-color);
+  border-bottom-color: var(--cocoon-x-pallid-text-color);
   border-top-color: transparent;
 }
 
@@ -1074,7 +1074,7 @@ div.search-form{
 }
 @mixin micro_copycolor($color: 'red'){
   background-color: $color;
-  color:var(--white-color);
+  color:var(--cocoon-white-color);
   border: none;
   &.micro-bottom{
     &::after{
@@ -1092,27 +1092,27 @@ div.search-form{
 }
 
 .micro-balloon{
-  &.mc-red{@include micro_copycolor(var(--red-color));}
-  &.mc-pink{@include micro_copycolor(var(--pink-color));}
-  &.mc-purple{@include micro_copycolor(var(--purple-color));}
-  &.mc-blue{@include micro_copycolor(var(--blue-color));}
-  &.mc-green{@include micro_copycolor(var(--green-color));}
-  &.mc-orange{@include micro_copycolor(var(--orange-color));}
-  &.mc-yellow{@include micro_copycolor(var(--yellow-color));}
-  &.mc-brown{@include micro_copycolor(var(--brown-color));}
-  &.mc-grey{@include micro_copycolor(var(--grey-color));}
-  &.mc-black{@include micro_copycolor(var(--black-color));}
+  &.mc-red{@include micro_copycolor(var(--cocoon-red-color));}
+  &.mc-pink{@include micro_copycolor(var(--cocoon-pink-color));}
+  &.mc-purple{@include micro_copycolor(var(--cocoon-purple-color));}
+  &.mc-blue{@include micro_copycolor(var(--cocoon-blue-color));}
+  &.mc-green{@include micro_copycolor(var(--cocoon-green-color));}
+  &.mc-orange{@include micro_copycolor(var(--cocoon-orange-color));}
+  &.mc-yellow{@include micro_copycolor(var(--cocoon-yellow-color));}
+  &.mc-brown{@include micro_copycolor(var(--cocoon-brown-color));}
+  &.mc-grey{@include micro_copycolor(var(--cocoon-grey-color));}
+  &.mc-black{@include micro_copycolor(var(--cocoon-black-color));}
 
-  &.mc-deep{@include micro_copycolor(var(--deep-color));}
-  &.mc-indigo{@include micro_copycolor(var(--indigo-color));}
-  &.mc-light-blue{@include micro_copycolor(var(--light-blue-color));}
-  &.mc-cyan{@include micro_copycolor(var(--cyan-color));}
-  &.mc-teal{@include micro_copycolor(var(--teal-color));}
-  &.mc-light-green{@include micro_copycolor(var(--light-green-color));}
-  &.mc-lime{@include micro_copycolor(var(--lime-color));}
-  &.mc-amber{@include micro_copycolor(var(--amber-color));}
-  &.mc-deep-orange{@include micro_copycolor(var(--deep-orange-color));}
-  &.mc-white{@include micro_copycolor(var(--white-color));}
+  &.mc-deep{@include micro_copycolor(var(--cocoon-deep-color));}
+  &.mc-indigo{@include micro_copycolor(var(--cocoon-indigo-color));}
+  &.mc-light-blue{@include micro_copycolor(var(--cocoon-light-blue-color));}
+  &.mc-cyan{@include micro_copycolor(var(--cocoon-cyan-color));}
+  &.mc-teal{@include micro_copycolor(var(--cocoon-teal-color));}
+  &.mc-light-green{@include micro_copycolor(var(--cocoon-light-green-color));}
+  &.mc-lime{@include micro_copycolor(var(--cocoon-lime-color));}
+  &.mc-amber{@include micro_copycolor(var(--cocoon-amber-color));}
+  &.mc-deep-orange{@include micro_copycolor(var(--cocoon-deep-orange-color));}
+  &.mc-white{@include micro_copycolor(var(--cocoon-white-color));}
 }
 
 
@@ -1243,52 +1243,52 @@ div.search-form{
 ************************************/
 .caption-box{
   // margin-bottom: 1.2em;
-  border: 2px solid var(--current-background-color);
-  border-radius: var(--basic-border-radius);
+  border: 2px solid var(--cocoon-current-background-color);
+  border-radius: var(--cocoon-basic-border-radius);
   &.has-border-color .box-label{
-    color: var(--white-color);
+    color: var(--cocoon-white-color);
   }
 }
 
 .caption-box-label{
   padding: 0.2em 0.8em;
-  background-color: var(--current-background-color);
+  background-color: var(--cocoon-current-background-color);
 }
 .caption-box-content{
   padding: 0.4em 0.8em;
 }
 
-@mixin caption_color($color: var(--red-color)) {
+@mixin caption_color($color: var(--cocoon-red-color)) {
   &.caption-box{
     border-color: $color;
   }
   .caption-box-label{
     background-color: $color;
-    color: var(--white-color);
+    color: var(--cocoon-white-color);
   }
 }
 
-.cb-red{@include caption_color(var(--red-color));}
-.cb-pink{@include caption_color(var(--pink-color));}
-.cb-purple{@include caption_color(var(--purple-color));}
-.cb-blue{@include caption_color(var(--blue-color));}
-.cb-green{@include caption_color(var(--green-color));}
-.cb-orange{@include caption_color(var(--orange-color));}
-.cb-yellow{@include caption_color(var(--yellow-color));}
-.cb-brown{@include caption_color(var(--brown-color));}
-.cb-grey{@include caption_color(var(--grey-color));}
-.cb-black{@include caption_color(var(--black-color));}
+.cb-red{@include caption_color(var(--cocoon-red-color));}
+.cb-pink{@include caption_color(var(--cocoon-pink-color));}
+.cb-purple{@include caption_color(var(--cocoon-purple-color));}
+.cb-blue{@include caption_color(var(--cocoon-blue-color));}
+.cb-green{@include caption_color(var(--cocoon-green-color));}
+.cb-orange{@include caption_color(var(--cocoon-orange-color));}
+.cb-yellow{@include caption_color(var(--cocoon-yellow-color));}
+.cb-brown{@include caption_color(var(--cocoon-brown-color));}
+.cb-grey{@include caption_color(var(--cocoon-grey-color));}
+.cb-black{@include caption_color(var(--cocoon-black-color));}
 
-.cb-deep{@include caption_color(var(--deep-color));}
-.cb-indigo{@include caption_color(var(--indigo-color));}
-.cb-light-blue{@include caption_color(var(--light-blue-color));}
-.cb-cyan{@include caption_color(var(--cyan-color));}
-.cb-teal{@include caption_color(var(--teal-color));}
-.cb-light-green{@include caption_color(var(--light-green-color));}
-.cb-lime{@include caption_color(var(--lime-color));}
-.cb-amber{@include caption_color(var(--amber-color));}
-.cb-deep-orange{@include caption_color(var(--deep-orange-color));}
-.cb-white{@include caption_color(var(--white-color));}
+.cb-deep{@include caption_color(var(--cocoon-deep-color));}
+.cb-indigo{@include caption_color(var(--cocoon-indigo-color));}
+.cb-light-blue{@include caption_color(var(--cocoon-light-blue-color));}
+.cb-cyan{@include caption_color(var(--cocoon-cyan-color));}
+.cb-teal{@include caption_color(var(--cocoon-teal-color));}
+.cb-light-green{@include caption_color(var(--cocoon-light-green-color));}
+.cb-lime{@include caption_color(var(--cocoon-lime-color));}
+.cb-amber{@include caption_color(var(--cocoon-amber-color));}
+.cb-deep-orange{@include caption_color(var(--cocoon-deep-orange-color));}
+.cb-white{@include caption_color(var(--cocoon-white-color));}
 
 /************************************
 ** キャプションタブボックス
@@ -1299,55 +1299,55 @@ div.search-form{
     background-color: transparent !important;
   }
   &.has-border-color .box-label{
-    color: var(--white-color);
+    color: var(--cocoon-white-color);
   }
 }
 .tab-caption-box-label{
   padding: 0 0.8em;
   font-size: 0.9em;
-  background-color: var(--current-background-color);
+  background-color: var(--cocoon-current-background-color);
   display: inline-block;
-  border-top-left-radius: var(--middle-border-radius);
-  border-top-right-radius: var(--middle-border-radius);
+  border-top-left-radius: var(--cocoon-middle-border-radius);
+  border-top-right-radius: var(--cocoon-middle-border-radius);
 }
 .tab-caption-box-content{
   margin-top: -3px;
-  border: 3px solid var(--current-background-color);
+  border: 3px solid var(--cocoon-current-background-color);
   padding: 0.4em 0.8em;
-  border-radius: var(--middle-border-radius);
+  border-radius: var(--cocoon-middle-border-radius);
   border-top-left-radius: 0;
 }
-@mixin caption_tab_color($color: var(--red-color)) {
+@mixin caption_tab_color($color: var(--cocoon-red-color)) {
   .tab-caption-box-label{
     background-color: $color;
-    color: var(--white-color);
+    color: var(--cocoon-white-color);
   }
   .tab-caption-box-content{
     border-color: $color;
   }
 }
 
-.tcb-red{@include caption_tab_color(var(--red-color));}
-.tcb-pink{@include caption_tab_color(var(--pink-color));}
-.tcb-purple{@include caption_tab_color(var(--purple-color));}
-.tcb-blue{@include caption_tab_color(var(--blue-color));}
-.tcb-green{@include caption_tab_color(var(--green-color));}
-.tcb-orange{@include caption_tab_color(var(--orange-color));}
-.tcb-yellow{@include caption_tab_color(var(--yellow-color));}
-.tcb-brown{@include caption_tab_color(var(--brown-color));}
-.tcb-grey{@include caption_tab_color(var(--grey-color));}
-.tcb-black{@include caption_tab_color(var(--black-color));}
+.tcb-red{@include caption_tab_color(var(--cocoon-red-color));}
+.tcb-pink{@include caption_tab_color(var(--cocoon-pink-color));}
+.tcb-purple{@include caption_tab_color(var(--cocoon-purple-color));}
+.tcb-blue{@include caption_tab_color(var(--cocoon-blue-color));}
+.tcb-green{@include caption_tab_color(var(--cocoon-green-color));}
+.tcb-orange{@include caption_tab_color(var(--cocoon-orange-color));}
+.tcb-yellow{@include caption_tab_color(var(--cocoon-yellow-color));}
+.tcb-brown{@include caption_tab_color(var(--cocoon-brown-color));}
+.tcb-grey{@include caption_tab_color(var(--cocoon-grey-color));}
+.tcb-black{@include caption_tab_color(var(--cocoon-black-color));}
 
-.tcb-deep{@include caption_tab_color(var(--deep-color));}
-.tcb-indigo{@include caption_tab_color(var(--indigo-color));}
-.tcb-light-blue{@include caption_tab_color(var(--light-blue-color));}
-.tcb-cyan{@include caption_tab_color(var(--cyan-color));}
-.tcb-teal{@include caption_tab_color(var(--teal-color));}
-.tcb-light-green{@include caption_tab_color(var(--light-green-color));}
-.tcb-lime{@include caption_tab_color(var(--lime-color));}
-.tcb-amber{@include caption_tab_color(var(--amber-color));}
-.tcb-deep-orange{@include caption_tab_color(var(--deep-orange-color));}
-.tcb-white{@include caption_tab_color(var(--white-color));}
+.tcb-deep{@include caption_tab_color(var(--cocoon-deep-color));}
+.tcb-indigo{@include caption_tab_color(var(--cocoon-indigo-color));}
+.tcb-light-blue{@include caption_tab_color(var(--cocoon-light-blue-color));}
+.tcb-cyan{@include caption_tab_color(var(--cocoon-cyan-color));}
+.tcb-teal{@include caption_tab_color(var(--cocoon-teal-color));}
+.tcb-light-green{@include caption_tab_color(var(--cocoon-light-green-color));}
+.tcb-lime{@include caption_tab_color(var(--cocoon-lime-color));}
+.tcb-amber{@include caption_tab_color(var(--cocoon-amber-color));}
+.tcb-deep-orange{@include caption_tab_color(var(--cocoon-deep-orange-color));}
+.tcb-white{@include caption_tab_color(var(--cocoon-white-color));}
 
 /************************************
 ** ラベルボックス
@@ -1364,59 +1364,59 @@ div.search-form{
   font-size: 0.9em;
   font-weight: bold;
   text-shadow:
-  var(--white-color) 3px 0px 0px,
-  var(--white-color) 2px 1px 0px,
-  var(--white-color) 2px 2px 0px,
-  var(--white-color) 2px 3px 0px,
-  var(--white-color) 1px 3px 0px,
-  var(--white-color) -0px 3px 0px,
-  var(--white-color) -1px 3px 0px,
-  var(--white-color) -2px 2px 0px,
-  var(--white-color) -3px 1px 0px,
-  var(--white-color) -3px 0px 0px,
-  var(--white-color) -3px -1px 0px,
-  var(--white-color) -3px -2px 0px,
-  var(--white-color) -2px -2px 0px,
-  var(--white-color) -1px -3px 0px,
-  var(--white-color) -0px -3px 0px,
-  var(--white-color) 1px -3px 0px,
-  var(--white-color) 2px -2px 0px,
-  var(--white-color) 2px -2px 0px,
-  var(--white-color) 3px -1px 0px;
+  var(--cocoon-white-color) 3px 0px 0px,
+  var(--cocoon-white-color) 2px 1px 0px,
+  var(--cocoon-white-color) 2px 2px 0px,
+  var(--cocoon-white-color) 2px 3px 0px,
+  var(--cocoon-white-color) 1px 3px 0px,
+  var(--cocoon-white-color) -0px 3px 0px,
+  var(--cocoon-white-color) -1px 3px 0px,
+  var(--cocoon-white-color) -2px 2px 0px,
+  var(--cocoon-white-color) -3px 1px 0px,
+  var(--cocoon-white-color) -3px 0px 0px,
+  var(--cocoon-white-color) -3px -1px 0px,
+  var(--cocoon-white-color) -3px -2px 0px,
+  var(--cocoon-white-color) -2px -2px 0px,
+  var(--cocoon-white-color) -1px -3px 0px,
+  var(--cocoon-white-color) -0px -3px 0px,
+  var(--cocoon-white-color) 1px -3px 0px,
+  var(--cocoon-white-color) 2px -2px 0px,
+  var(--cocoon-white-color) 2px -2px 0px,
+  var(--cocoon-white-color) 3px -1px 0px;
 }
 .label-box-content{
   margin-top: -0.9em;
-  border: 3px solid var(--middle-thickness-color);
+  border: 3px solid var(--cocoon-middle-thickness-color);
   padding: 1em 0.8em 0.4em;
-  border-radius: var(--middle-border-radius);
+  border-radius: var(--cocoon-middle-border-radius);
 }
-@mixin label_color($color: var(--red-color)) {
+@mixin label_color($color: var(--cocoon-red-color)) {
   .label-box-content{
     border-color: $color;
   }
 }
 
-.lb-red{@include label_color(var(--red-color));}
-.lb-pink{@include label_color(var(--pink-color));}
-.lb-purple{@include label_color(var(--purple-color));}
-.lb-blue{@include label_color(var(--blue-color));}
-.lb-green{@include label_color(var(--green-color));}
-.lb-orange{@include label_color(var(--orange-color));}
-.lb-yellow{@include label_color(var(--yellow-color));}
-.lb-brown{@include label_color(var(--brown-color));}
-.lb-grey{@include label_color(var(--grey-color));}
-.lb-black{@include label_color(var(--black-color));}
+.lb-red{@include label_color(var(--cocoon-red-color));}
+.lb-pink{@include label_color(var(--cocoon-pink-color));}
+.lb-purple{@include label_color(var(--cocoon-purple-color));}
+.lb-blue{@include label_color(var(--cocoon-blue-color));}
+.lb-green{@include label_color(var(--cocoon-green-color));}
+.lb-orange{@include label_color(var(--cocoon-orange-color));}
+.lb-yellow{@include label_color(var(--cocoon-yellow-color));}
+.lb-brown{@include label_color(var(--cocoon-brown-color));}
+.lb-grey{@include label_color(var(--cocoon-grey-color));}
+.lb-black{@include label_color(var(--cocoon-black-color));}
 
-.lb-deep{@include label_color(var(--deep-color));}
-.lb-indigo{@include label_color(var(--indigo-color));}
-.lb-light-blue{@include label_color(var(--light-blue-color));}
-.lb-cyan{@include label_color(var(--cyan-color));}
-.lb-teal{@include label_color(var(--teal-color));}
-.lb-light-green{@include label_color(var(--light-green-color));}
-.lb-lime{@include label_color(var(--lime-color));}
-.lb-amber{@include label_color(var(--amber-color));}
-.lb-deep-orange{@include label_color(var(--deep-orange-color));}
-.lb-white{@include label_color(var(--white-color));}
+.lb-deep{@include label_color(var(--cocoon-deep-color));}
+.lb-indigo{@include label_color(var(--cocoon-indigo-color));}
+.lb-light-blue{@include label_color(var(--cocoon-light-blue-color));}
+.lb-cyan{@include label_color(var(--cocoon-cyan-color));}
+.lb-teal{@include label_color(var(--cocoon-teal-color));}
+.lb-light-green{@include label_color(var(--cocoon-light-green-color));}
+.lb-lime{@include label_color(var(--cocoon-lime-color));}
+.lb-amber{@include label_color(var(--cocoon-amber-color));}
+.lb-deep-orange{@include label_color(var(--cocoon-deep-orange-color));}
+.lb-white{@include label_color(var(--cocoon-white-color));}
 
 /************************************
 ** トグル表示ボタン
@@ -1444,10 +1444,10 @@ $toggle_border_width: 2px;
   display: block;
   cursor: pointer;
   padding: 3px 10px;
-  background-color: var(--xx-thin-color);
-  border: $toggle_border_width solid var(--basic-border-color);
+  background-color: var(--cocoon-xx-thin-color);
+  border: $toggle_border_width solid var(--cocoon-basic-border-color);
   text-align: center;
-  border-radius: var(--basic-border-radius);
+  border-radius: var(--cocoon-basic-border-radius);
   position: relative;
   margin: 0;
 
@@ -1456,7 +1456,7 @@ $toggle_border_width: 2px;
     font-family: FontAwesome;
     margin-right: 0.8em;
     font-size: 0.8em;
-    color: var(--x-pallid-text-color);
+    color: var(--cocoon-x-pallid-text-color);
     opacity: 0.3;
   }
 }
@@ -1488,17 +1488,17 @@ $toggle_border_width: 2px;
   height: 100%;
   transition: $bgc_hover_anime;
   padding: 1em;
-  border: $toggle_border_width solid var(--basic-border-color);
+  border: $toggle_border_width solid var(--cocoon-basic-border-color);
   border-top-width: 0;
-  border-bottom-left-radius: var(--basic-border-radius);
-  border-bottom-right-radius: var(--basic-border-radius);
+  border-bottom-left-radius: var(--cocoon-basic-border-radius);
+  border-bottom-right-radius: var(--cocoon-basic-border-radius);
 }
 
-@mixin toggle_color($color: var(--blue-color)) {
+@mixin toggle_color($color: var(--cocoon-blue-color)) {
   .toggle-button{
     border: $toggle_border_width solid $color;
     background: $color;
-    color: var(--white-color);
+    color: var(--cocoon-white-color);
     &::before{
       color: $color;
     }
@@ -1508,50 +1508,50 @@ $toggle_border_width: 2px;
   }
 }
 
-.tb-red{@include toggle_color(var(--red-color));}
-.tb-pink{@include toggle_color(var(--pink-color));}
-.tb-purple{@include toggle_color(var(--purple-color));}
-.tb-blue{@include toggle_color(var(--blue-color));}
-.tb-green{@include toggle_color(var(--green-color));}
-.tb-orange{@include toggle_color(var(--orange-color));}
-.tb-yellow{@include toggle_color(var(--yellow-color));}
-.tb-brown{@include toggle_color(var(--brown-color));}
-.tb-grey{@include toggle_color(var(--grey-color));}
-.tb-black{@include toggle_color(var(--black-color));}
+.tb-red{@include toggle_color(var(--cocoon-red-color));}
+.tb-pink{@include toggle_color(var(--cocoon-pink-color));}
+.tb-purple{@include toggle_color(var(--cocoon-purple-color));}
+.tb-blue{@include toggle_color(var(--cocoon-blue-color));}
+.tb-green{@include toggle_color(var(--cocoon-green-color));}
+.tb-orange{@include toggle_color(var(--cocoon-orange-color));}
+.tb-yellow{@include toggle_color(var(--cocoon-yellow-color));}
+.tb-brown{@include toggle_color(var(--cocoon-brown-color));}
+.tb-grey{@include toggle_color(var(--cocoon-grey-color));}
+.tb-black{@include toggle_color(var(--cocoon-black-color));}
 
-.tb-deep{@include toggle_color(var(--deep-color));}
-.tb-indigo{@include toggle_color(var(--indigo-color));}
-.tb-light-blue{@include toggle_color(var(--light-blue-color));}
-.tb-cyan{@include toggle_color(var(--cyan-color));}
-.tb-teal{@include toggle_color(var(--teal-color));}
-.tb-light-green{@include toggle_color(var(--light-green-color));}
-.tb-lime{@include toggle_color(var(--lime-color));}
-.tb-amber{@include toggle_color(var(--amber-color));}
-.tb-deep-orange{@include toggle_color(var(--deep-orange-color));}
-.tb-white{@include toggle_color(var(--white-color));}
+.tb-deep{@include toggle_color(var(--cocoon-deep-color));}
+.tb-indigo{@include toggle_color(var(--cocoon-indigo-color));}
+.tb-light-blue{@include toggle_color(var(--cocoon-light-blue-color));}
+.tb-cyan{@include toggle_color(var(--cocoon-cyan-color));}
+.tb-teal{@include toggle_color(var(--cocoon-teal-color));}
+.tb-light-green{@include toggle_color(var(--cocoon-light-green-color));}
+.tb-lime{@include toggle_color(var(--cocoon-lime-color));}
+.tb-amber{@include toggle_color(var(--cocoon-amber-color));}
+.tb-deep-orange{@include toggle_color(var(--cocoon-deep-orange-color));}
+.tb-white{@include toggle_color(var(--cocoon-white-color));}
 
 
-.iic-red li::before{color: var(--red-color);}
-.iic-pink li::before{color: var(--pink-color);}
-.iic-purple li::before{color: var(--purple-color);}
-.iic-blue li::before{color: var(--blue-color);}
-.iic-green li::before{color: var(--green-color);}
-.iic-orange li::before{color: var(--orange-color);}
-.iic-yellow li::before{color: var(--yellow-color);}
-.iic-brown li::before{color: var(--brown-color);}
-.iic-grey li::before{color: var(--grey-color);}
-.iic-black li::before{color: var(--black-color);}
+.iic-red li::before{color: var(--cocoon-red-color);}
+.iic-pink li::before{color: var(--cocoon-pink-color);}
+.iic-purple li::before{color: var(--cocoon-purple-color);}
+.iic-blue li::before{color: var(--cocoon-blue-color);}
+.iic-green li::before{color: var(--cocoon-green-color);}
+.iic-orange li::before{color: var(--cocoon-orange-color);}
+.iic-yellow li::before{color: var(--cocoon-yellow-color);}
+.iic-brown li::before{color: var(--cocoon-brown-color);}
+.iic-grey li::before{color: var(--cocoon-grey-color);}
+.iic-black li::before{color: var(--cocoon-black-color);}
 
-.iic-deep li::before{color: var(--deep-color);}
-.iic-indigo li::before{color: var(--indigo-color);}
-.iic-light-blue li::before{color: var(--light-blue-color);}
-.iic-cyan li::before{color: var(--cyan-color);}
-.iic-teal li::before{color: var(--teal-color);}
-.iic-light-green li::before{color: var(--light-green-color);}
-.iic-lime li::before{color: var(--lime-color);}
-.iic-amber li::before{color: var(--amber-color);}
-.iic-deep-orange li::before{color: var(--deep-orange-color);}
-.iic-white li::before{color: var(--white-color);}
+.iic-deep li::before{color: var(--cocoon-deep-color);}
+.iic-indigo li::before{color: var(--cocoon-indigo-color);}
+.iic-light-blue li::before{color: var(--cocoon-light-blue-color);}
+.iic-cyan li::before{color: var(--cocoon-cyan-color);}
+.iic-teal li::before{color: var(--cocoon-teal-color);}
+.iic-light-green li::before{color: var(--cocoon-light-green-color);}
+.iic-lime li::before{color: var(--cocoon-lime-color);}
+.iic-amber li::before{color: var(--cocoon-amber-color);}
+.iic-deep-orange li::before{color: var(--cocoon-deep-orange-color);}
+.iic-white li::before{color: var(--cocoon-white-color);}
 
 
 figcaption{
@@ -1641,7 +1641,7 @@ figcaption{
     cursor: pointer;
     position: relative;
     background-color: #e8ecef;
-    border-color: var(--three-d-border-colors);
+    border-color: var(--cocoon-three-d-border-colors);
 
     &::before{
       content: "+";
@@ -1658,7 +1658,7 @@ figcaption{
   &.has-border-color{
     .faq-question,
     .faq-question-label{
-      color: var(--white-color);
+      color: var(--cocoon-white-color);
       border: none;
     }
   }

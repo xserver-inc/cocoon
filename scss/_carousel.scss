@@ -10,12 +10,12 @@
   // }
 
   .slick-arrow:before{
-    color: var(--thin-color);
+    color: var(--cocoon-thin-color);
   }
 }
 
 .carousel-in{
-  background-color: var(--white-color);
+  background-color: var(--cocoon-white-color);
   padding: 2px 0;
 }
 
@@ -86,7 +86,7 @@
 //カルーセルの枠線
 .ccb-carousel-border{
   .a-wrap{
-    border: 1px solid var(--basic-border-color);
+    border: 1px solid var(--cocoon-basic-border-color);
   }
 }
 

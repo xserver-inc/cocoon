@@ -20,7 +20,7 @@ $icon_height: 16px;
 // }
 
 .navi{
-  background-color: var(--white-color);
+  background-color: var(--cocoon-white-color);
 
   .item-label,
   .item-description{
@@ -101,7 +101,7 @@ $icon_height: 16px;
       min-width: $sub_menu_width;
       list-style: none;
       padding: 0;
-      background-color: var(--xxx-thin-color);
+      background-color: var(--cocoon-xxx-thin-color);
       z-index: 99;
       text-align: left;
       li{
@@ -167,10 +167,10 @@ $icon_height: 16px;
 
     li{
       width: 120px;
-      border-left: 1px solid var(--thin-color);
+      border-left: 1px solid var(--cocoon-thin-color);
 
       &:last-child{
-        border-right: 1px solid var(--thin-color);
+        border-right: 1px solid var(--cocoon-thin-color);
       }
     }
 

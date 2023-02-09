@@ -4,7 +4,7 @@
 .a-wrap{
   text-decoration: none;
   display: block;
-  color: var(--text-color);
+  color: var(--cocoon-text-color);
   padding: 1.5%;
   margin-bottom: 3%;
   transition: $bgc_hover_anime;
@@ -40,7 +40,7 @@
   left: 0.3em;
   border: 1px solid #eee;
   font-size: 11px;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   background-color: $transpalent_black_bgc;
   padding: 1px 5px;
   max-width: 80%;
@@ -190,7 +190,7 @@
 //エントリーカードの枠線
 .ecb-entry-border{
   .entry-card-wrap{
-    border: 1px solid var(--basic-border-color);
+    border: 1px solid var(--cocoon-basic-border-color);
   }
 }
 

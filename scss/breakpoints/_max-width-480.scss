@@ -205,7 +205,7 @@ body{
 
     &::before {
       //border: 1px;
-      //border: 1px solid var(--basic-border-color);
+      //border: 1px solid var(--cocoon-basic-border-color);
       top: 4px;
       left: -19px;
       width: 12px;
@@ -214,7 +214,7 @@ body{
 
     &::after {
       //border: 1px;
-      //border: 1px solid var(--basic-border-color);
+      //border: 1px solid var(--cocoon-basic-border-color);
       top: 16px;
       width: 6px;
       height: 6px;
@@ -229,13 +229,13 @@ body{
     margin-right: 28px;
 
     &::before {
-      border: 2px solid var(--basic-border-color);
+      border: 2px solid var(--cocoon-basic-border-color);
       left: auto;
       right: -19px;
     }
 
     &::after {
-      border: 2px solid var(--basic-border-color);
+      border: 2px solid var(--cocoon-basic-border-color);
       left: auto;
       right: -27px;
     }

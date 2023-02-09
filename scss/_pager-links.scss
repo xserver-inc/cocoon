@@ -9,14 +9,14 @@
   }
 
   span{
-    background-color: var(--current-background-color);
+    background-color: var(--cocoon-current-background-color);
   }
 
   a{
     display: inline-block;
 
     span{
-      background-color: var(--white-color);
+      background-color: var(--cocoon-white-color);
     }
 
     &:hover span {

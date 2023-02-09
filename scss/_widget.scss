@@ -82,8 +82,8 @@ label.screen-reader-text{
   border-right-width: 1px;
   border-top-style: solid;
   border-right-style: solid;
-  border-top-color: var(--x-thin-color);
-  border-right-color: var(--x-thin-color);
+  border-top-color: var(--cocoon-x-thin-color);
+  border-right-color: var(--cocoon-x-thin-color);
   width: 100%;
   max-width: $widget_max_width;
   text-align: center;
@@ -115,8 +115,8 @@ label.screen-reader-text{
     border-left-width: 1px;
     border-bottom-style: solid;
     border-left-style: solid;
-    border-bottom-color: var(--x-thin-color);
-    border-left-color: var(--x-thin-color);
+    border-bottom-color: var(--cocoon-x-thin-color);
+    border-left-color: var(--cocoon-x-thin-color);
   }
 
   td {
@@ -126,11 +126,11 @@ label.screen-reader-text{
     border-left-width: 1px;
     border-bottom-style: solid;
     border-left-style: solid;
-    border-bottom-color: var(--x-thin-color);
-    border-left-color: var(--x-thin-color);
+    border-bottom-color: var(--cocoon-x-thin-color);
+    border-left-color: var(--cocoon-x-thin-color);
 
     a{
-      color: var(--text-color);
+      color: var(--cocoon-text-color);
       display: block;
       background-color: #ffface;
       &:hover{
@@ -182,16 +182,16 @@ label.screen-reader-text{
 }
 
 .border-partition .a-wrap {
-  border-bottom: 2px dotted var(--x-thin-color);
+  border-bottom: 2px dotted var(--cocoon-x-thin-color);
 
   &:first-of-type {
-    border-top: 2px dotted var(--x-thin-color);
+    border-top: 2px dotted var(--cocoon-x-thin-color);
   }
 }
 
 .border-square a {
-  border-radius: var(--basic-border-radius);
-  border: 1px solid var(--thin-color);
+  border-radius: var(--cocoon-basic-border-radius);
+  border: 1px solid var(--cocoon-thin-color);
 }
 
 .card-title-bold .card-title{
@@ -229,7 +229,7 @@ label.screen-reader-text{
   }
 
   .e-card{
-    font-size: var(--default-text-size);
+    font-size: var(--cocoon-default-text-size);
   }
 
   figure{
@@ -286,7 +286,7 @@ label.screen-reader-text{
     bottom: 0;
     padding: .6em;
     background: linear-gradient(180deg, transparent, #555);
-    color: var(--white-color);
+    color: var(--cocoon-white-color);
     max-height: 40%;
     overflow: hidden;
     transition: all 0.5s;
@@ -372,8 +372,8 @@ label.screen-reader-text{
 
 .recent-comment-content {
   position: relative;
-  background: var(--white-color);
-  border: 1px solid var(--thin-color);
+  background: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-thin-color);
   padding: 6px;
   margin-top: 4px;
   font-size: 0.9em;
@@ -392,13 +392,13 @@ label.screen-reader-text{
 
   &::after {
     border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: var(--white-color);
+    border-bottom-color: var(--cocoon-white-color);
     border-width: 6px;
     margin-left: -6px;
   }
   &::before {
     border-color: rgba(221, 221, 221, 0);
-    border-bottom-color: var(--thin-color);
+    border-bottom-color: var(--cocoon-thin-color);
     border-width: 9px;
     margin-left: -9px;
   }

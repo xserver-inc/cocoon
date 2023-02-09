@@ -75,12 +75,12 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   top: 8px;
   font-size: 14px;
   font-weight: bold;
-  color: var(--white-color);
+  color: var(--cocoon-white-color);
   position: relative;
-  border-radius: var(--basic-border-radius);
+  border-radius: var(--cocoon-basic-border-radius);
 
   &:hover{
-    color: var(--white-color);
+    color: var(--cocoon-white-color);
     opacity: 0.7;
   }
 }
@@ -99,7 +99,7 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
 .facebook-follow-button{
   @extend %follow_amp_button;
 
-  @include follow_amp_button('\f087', var(--facebook-color));
+  @include follow_amp_button('\f087', var(--cocoon-facebook-color));
 }
 
 //Twitterボタン
@@ -107,7 +107,7 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   @extend %follow_amp_button;
   font-weight: normal;
 
-  @include follow_amp_button('\f099', var(--twitter-color));
+  @include follow_amp_button('\f099', var(--cocoon-twitter-color));
 }
 
 //LINEボタン
@@ -115,7 +115,7 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   @extend %follow_amp_button;
   font-weight: normal;
 
-  @include follow_amp_button('\f075', var(--line-color));
+  @include follow_amp_button('\f075', var(--cocoon-line-color));
 }
 
 .comment-reply-link{

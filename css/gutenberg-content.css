@@ -1,71 +1,71 @@
 :root {
-  --twitter-color: #1da1f2;
-  --facebook-color: #3b5998;
-  --hatebu-color: #2c6ebd;
-  --google-plus-color: #dd4b39;
-  --pocket-color: #ef4056;
-  --line-color: #00c300;
-  --linkedin-color: #0077b5;
-  --website-color: #002561;
-  --instagram-color: #405de6;
-  --pinterest-color: #bd081c;
-  --youtube-color: #cd201f;
-  --tiktok-color: #000000;
-  --note-color: #41c9b4;
-  --soundcloud-color: #ff8800;
-  --flickr-color: #111;
-  --amazon-color: #ff9900;
-  --twitch-color: #6441a4;
-  --rakuten-color: #bf0000;
-  --rakuten-room-color: #c61e79;
-  --slack-color: #e01563;
-  --github-color: #4078c0;
-  --codepen-color: #333;
-  --feedly-color: #2bb24c;
-  --rss-color: #f26522;
-  --red-color: #e60033;
-  --pink-color: #e95295;
-  --purple-color: #884898;
-  --deep-color: #55295b;
-  --indigo-color: #1e50a2;
-  --blue-color: #0095d9;
-  --light-blue-color: #2ca9e1;
-  --cyan-color: #00a3af;
-  --teal-color: #007b43;
-  --green-color: #3eb370;
-  --light-green-color: #8bc34a;
-  --lime-color: #c3d825;
-  --yellow-color: #ffd900;
-  --amber-color: #ffc107;
-  --orange-color: #f39800;
-  --deep-orange-color: #ea5506;
-  --brown-color: #954e2a;
-  --grey-color: #949495;
-  --blue-gray-color: #607d8b;
-  --black-color: #333333;
-  --white-color: #ffffff;
-  --watery-blue-color: #f3fafe;
-  --watery-yellow-color: #fff7cc;
-  --watery-red-color: #fdf2f2;
-  --watery-green-color: #ebf8f4;
-  --default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  --text-color: #333;
-  --pallid-text-color: #777;
-  --x-pallid-text-color: #999;
-  --default-text-size: 18px;
-  --text-size-s: 0.8em;
-  --basic-border-color: #ccc;
-  --three-d-border-colors: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
-  --middle-thickness-color: #888;
-  --thin-color: #ddd;
-  --x-thin-color: #eee;
-  --xx-thin-color: #f5f6f7;
-  --xxx-thin-color: #fafbfc;
-  --current-background-color: #eee;
-  --select-background-color: #d8eaf2;
-  --basic-border-radius: 4px;
-  --badge-border-radius: 2px;
-  --middle-border-radius: 8px;
+  --cocoon-twitter-color: #1da1f2;
+  --cocoon-facebook-color: #3b5998;
+  --cocoon-hatebu-color: #2c6ebd;
+  --cocoon-google-plus-color: #dd4b39;
+  --cocoon-pocket-color: #ef4056;
+  --cocoon-line-color: #00c300;
+  --cocoon-linkedin-color: #0077b5;
+  --cocoon-website-color: #002561;
+  --cocoon-instagram-color: #405de6;
+  --cocoon-pinterest-color: #bd081c;
+  --cocoon-youtube-color: #cd201f;
+  --cocoon-tiktok-color: #000000;
+  --cocoon-note-color: #41c9b4;
+  --cocoon-soundcloud-color: #ff8800;
+  --cocoon-flickr-color: #111;
+  --cocoon-amazon-color: #ff9900;
+  --cocoon-twitch-color: #6441a4;
+  --cocoon-rakuten-color: #bf0000;
+  --cocoon-rakuten-room-color: #c61e79;
+  --cocoon-slack-color: #e01563;
+  --cocoon-github-color: #4078c0;
+  --cocoon-codepen-color: #333;
+  --cocoon-feedly-color: #2bb24c;
+  --cocoon-rss-color: #f26522;
+  --cocoon-red-color: #e60033;
+  --cocoon-pink-color: #e95295;
+  --cocoon-purple-color: #884898;
+  --cocoon-deep-color: #55295b;
+  --cocoon-indigo-color: #1e50a2;
+  --cocoon-blue-color: #0095d9;
+  --cocoon-light-blue-color: #2ca9e1;
+  --cocoon-cyan-color: #00a3af;
+  --cocoon-teal-color: #007b43;
+  --cocoon-green-color: #3eb370;
+  --cocoon-light-green-color: #8bc34a;
+  --cocoon-lime-color: #c3d825;
+  --cocoon-yellow-color: #ffd900;
+  --cocoon-amber-color: #ffc107;
+  --cocoon-orange-color: #f39800;
+  --cocoon-deep-orange-color: #ea5506;
+  --cocoon-brown-color: #954e2a;
+  --cocoon-grey-color: #949495;
+  --cocoon-blue-gray-color: #607d8b;
+  --cocoon-black-color: #333333;
+  --cocoon-white-color: #ffffff;
+  --cocoon-watery-blue-color: #f3fafe;
+  --cocoon-watery-yellow-color: #fff7cc;
+  --cocoon-watery-red-color: #fdf2f2;
+  --cocoon-watery-green-color: #ebf8f4;
+  --cocoon-default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --cocoon-text-color: #333;
+  --cocoon-pallid-text-color: #777;
+  --cocoon-x-pallid-text-color: #999;
+  --cocoon-default-text-size: 18px;
+  --cocoon-text-size-s: 0.8em;
+  --cocoon-basic-border-color: #ccc;
+  --cocoon-three-d-border-colors: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
+  --cocoon-middle-thickness-color: #888;
+  --cocoon-thin-color: #ddd;
+  --cocoon-x-thin-color: #eee;
+  --cocoon-xx-thin-color: #f5f6f7;
+  --cocoon-xxx-thin-color: #fafbfc;
+  --cocoon-current-background-color: #eee;
+  --cocoon-select-background-color: #d8eaf2;
+  --cocoon-basic-border-radius: 4px;
+  --cocoon-badge-border-radius: 2px;
+  --cocoon-middle-border-radius: 8px;
 }
 
 .faw::before {
@@ -101,26 +101,26 @@
 .article h2 {
   font-size: 24px;
   padding: 25px;
-  background-color: var(--xx-thin-color);
-  border-radius: var(--badge-border-radius);
+  background-color: var(--cocoon-xx-thin-color);
+  border-radius: var(--cocoon-badge-border-radius);
 }
 .article h3 {
-  border-left: 7px solid var(--middle-thickness-color);
-  border-right: 1px solid var(--thin-color);
-  border-top: 1px solid var(--thin-color);
-  border-bottom: 1px solid var(--thin-color);
+  border-left: 7px solid var(--cocoon-middle-thickness-color);
+  border-right: 1px solid var(--cocoon-thin-color);
+  border-top: 1px solid var(--cocoon-thin-color);
+  border-bottom: 1px solid var(--cocoon-thin-color);
   font-size: 22px;
   padding: 12px 20px;
 }
 .article h4 {
-  border-top: 2px solid var(--thin-color);
-  border-bottom: 2px solid var(--thin-color);
+  border-top: 2px solid var(--cocoon-thin-color);
+  border-bottom: 2px solid var(--cocoon-thin-color);
 }
 .article h5 {
-  border-bottom: 2px solid var(--thin-color);
+  border-bottom: 2px solid var(--cocoon-thin-color);
 }
 .article h6 {
-  border-bottom: 1px solid var(--thin-color);
+  border-bottom: 1px solid var(--cocoon-thin-color);
 }
 .article .column-wrap h1, .article .column-wrap h2, .article .column-wrap h3, .article .column-wrap h4, .article .column-wrap h5, .article .column-wrap h6 {
   margin-top: 0;
