@@ -54,7 +54,7 @@
       "default": false
     },
     "order": {
-      "enum": ["desc", "asc"],
+      "type": ["desc", "asc"],
       "default": "desc"
     },
     "offset": {
