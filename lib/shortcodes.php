@@ -107,6 +107,8 @@ function popular_entries_shortcode($atts) {
     'pv' => 0,
     'cats' => 'all',
     'children' => 0,
+    'ex_posts' => null,
+    'ex_cats' => null,
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
@@ -115,10 +117,22 @@ function popular_entries_shortcode($atts) {
     'horizontal' => 0,
   ), $atts, 'popular_list'));
 
+  //表示カテゴリー
   $cat_ids = array();
   if ($cats && $cats != 'all') {
     $cat_ids = explode(',', $cats);
   }
+  //除外投稿
+  $exclude_post_ids = array();
+  if ($ex_posts) {
+    $exclude_post_ids = explode(',', $ex_posts);
+  }
+  //除外カテゴリー
+  $exclude_cat_ids = array();
+  if ($ex_cats) {
+    $exclude_cat_ids = explode(',', $ex_cats);
+  }
+
   $atts = array(
     'days' => $days,
     'entry_count' => $count,
@@ -127,6 +141,8 @@ function popular_entries_shortcode($atts) {
     'pv_visible' => $pv,
     'cat_ids' => $cat_ids,
     'children' => $children,
+    'exclude_post_ids' => $exclude_post_ids,
+    'exclude_cat_ids' => $exclude_cat_ids,
     'bold' => $bold,
     'arrow' => $arrow,
     'class' => $class,
