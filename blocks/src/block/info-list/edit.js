@@ -108,14 +108,23 @@ export default function edit( props ) {
 
 		let control = [];
 		let catsArray = cats.split(',');
-		// 検索文字列が空の場合は選択されているカテゴリの一覧を表示する
+		// 検索文字列が空の場合は全カテゴリの一覧を表示する
 		if (input == '') {
 			categoryData.forEach((record) => {
+				let isChecked = false;
 				for (var i = 0; i < catsArray.length; i++) {
 					if (catsArray[i] == String(record.id)) {
-						control.push(createCategory(true, record.name, String(record.id)));
+						isChecked = true;
+						break;
 					}
 				}
+				control.push(
+					createCategory(
+						isChecked,
+						record.name,
+						String(record.id)
+					)
+				);
 			});
 		}
 		// 検索文字列がある場合は文字列を含むカテゴリの一覧を表示する
@@ -159,7 +168,7 @@ export default function edit( props ) {
 			/>
 			<PanelBody
 				title={__('カテゴリ検索', THEME_NAME)}
-				initialOpen={false}
+				initialOpen={true}
 			>
 				<SearchControl
 					value={ catSearchInput }
