@@ -107,48 +107,31 @@ export default function edit( props ) {
 		if ( categoryData == null ) return null;
 
 		let control = [];
-		let catsArray = cats.split(',');
-		// 検索文字列が空の場合は全カテゴリの一覧を表示する
-		if (input == '') {
-			categoryData.forEach((record) => {
-				let isChecked = false;
-				for (var i = 0; i < catsArray.length; i++) {
-					if (catsArray[i] == String(record.id)) {
-						isChecked = true;
-						break;
-					}
+		let catsArray = cats.split( ',' );
+		categoryData.forEach( ( record ) => {
+			let isChecked = false;
+			for ( var i = 0; i < catsArray.length; i++ ) {
+				if ( catsArray[ i ] == String( record.id ) ) {
+					isChecked = true;
+					break;
 				}
-				control.push(
-					createCategory(
-						isChecked,
-						record.name,
-						String(record.id)
-					)
-				);
-			});
-		}
-		// 検索文字列がある場合は文字列を含むカテゴリの一覧を表示する
-		else {
-			categoryData.forEach((record) => {
-				let isChecked = false;
-				// record.nameにinputが含まれるなら
-				if (record.name.indexOf(input) != -1) {
-					for (var i = 0; i < catsArray.length; i++) {
-						if (catsArray[i] == String(record.id)) {
-							isChecked = true;
-							break;
-						}
-					}
+			}
+			//検索文字列がある場合
+			if (input != '') {
+				// recode.nameにinputが含まれるなら追加
+				if (record.name.indexOf(input) != -1)
 					control.push(
-						createCategory(
-							isChecked,
-							record.name,
-							String(record.id)
-						)
+						createCategory(isChecked, record.name, String(record.id))
 					);
-				}
-			});
-		}
+			}
+			// 検索文字列が無い場合は全て追加
+			else {
+				control.push(
+					createCategory(isChecked, record.name, String(record.id))
+				);
+			}
+		} );
+
 		if ( showAllCats ) {
 			control = <Disabled> { control } </Disabled>;
 		}
@@ -167,8 +150,8 @@ export default function edit( props ) {
 				onChange={ ( value ) => setAttributes( { cats: value } ) }
 			/>
 			<PanelBody
-				title={__('カテゴリ検索', THEME_NAME)}
-				initialOpen={true}
+				title={ __( 'カテゴリ検索', THEME_NAME ) }
+				initialOpen={ true }
 			>
 				<SearchControl
 					value={ catSearchInput }
@@ -234,7 +217,7 @@ export default function edit( props ) {
 						label={ __( '全カテゴリ表示', THEME_NAME ) }
 						checked={ showAllCats }
 						onChange={ ( isChecked ) => {
-							setAttributes({ showAllCats: isChecked });
+							setAttributes( { showAllCats: isChecked } );
 							// 全カテゴリ表示を切り替えた際は検索文字列をリセット
 							setCatSearchInput( '' );
 						} }
