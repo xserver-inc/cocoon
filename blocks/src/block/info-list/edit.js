@@ -44,15 +44,15 @@ export default function edit( props ) {
 	} );
 	setAttributes( { classNames: classes } );
 
-	// カテゴリ検索文字列の保持
+	// カテゴリー検索文字列の保持
 	const [ catSearchInput, setCatSearchInput ] = useState( '' );
 
-	// wp.coreから全カテゴリ情報の取得
+	// wp.coreから全カテゴリー情報の取得
 	const categoryData = useSelect( ( select ) => {
 		return select( 'core' ).getEntityRecords( 'taxonomy', 'category' );
 	} );
 
-	// 1カテゴリ分のcatsへの追加・削除およびCheckboxControlの生成
+	// 1カテゴリー分のcatsへの追加・削除およびCheckboxControlの生成
 	function createCategory( isChecked, label, id ) {
 		// cats文字列にidを追加する
 		const addCat = ( id ) => {
@@ -102,7 +102,7 @@ export default function edit( props ) {
 		);
 	}
 
-	// 入力文字列に応じてカテゴリの一覧を出力する
+	// 入力文字列に応じてカテゴリーの一覧を出力する
 	function createCategoryList( input ) {
 		if ( categoryData == null ) return null;
 
@@ -143,14 +143,14 @@ export default function edit( props ) {
 		<Fragment>
 			<TextControl
 				label={ __(
-					'表示するカテゴリをカンマ区切りで指定',
+					'表示するカテゴリーをカンマ区切りで指定',
 					THEME_NAME
 				) }
 				value={ cats }
 				onChange={ ( value ) => setAttributes( { cats: value } ) }
 			/>
 			<PanelBody
-				title={ __( 'カテゴリ検索', THEME_NAME ) }
+				title={ __( 'カテゴリー検索', THEME_NAME ) }
 				initialOpen={ true }
 			>
 				<SearchControl
@@ -214,11 +214,11 @@ export default function edit( props ) {
 					initialOpen={ false }
 				>
 					<ToggleControl
-						label={ __( '全カテゴリ表示', THEME_NAME ) }
+						label={ __( '全カテゴリー表示', THEME_NAME ) }
 						checked={ showAllCats }
 						onChange={ ( isChecked ) => {
 							setAttributes( { showAllCats: isChecked } );
-							// 全カテゴリ表示を切り替えた際は検索文字列をリセット
+							// 全カテゴリー表示を切り替えた際は検索文字列をリセット
 							setCatSearchInput( '' );
 						} }
 					/>
