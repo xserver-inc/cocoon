@@ -27,7 +27,7 @@ export { metadata, name };
 
 export const settings = {
 	title: __( '新着情報', THEME_NAME ),
-	//icon: <FontAwesomeIcon icon={['far', 'newspaper']} />,
+	icon: <FontAwesomeIcon icon={['far', 'file-alt']} />,
 	description: __( '新着情報の一覧を表示します。', THEME_NAME ),
 
 	edit,
