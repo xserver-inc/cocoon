@@ -25,13 +25,16 @@ jobs:
         wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --exclude="languages/*,plugins/*,blocks/dist/*,node_modules/*" --skip-audit --ignore-domain
 
         # Commit regenerated POT file to a master branch
-        git config --global user.name "Github Runner"
-        git config --global user.email "githubactionsbot@noreply"
-        if [ "$(git status --porcelain)" != "" ]; then
-          git add "$SAVE_FULL_PATH"
-          git commit -m "POT File Regenerated"
-          git push "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-        fi
+        # git config --global user.name "Github Runner"
+        # git config --global user.email "githubactionsbot@noreply"
+        # if [ "$(git status --porcelain)" != "" ]; then
+        #   git add "$SAVE_FULL_PATH"
+        #   git commit -m "POT File Regenerated"
+        #   git push "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
+        # fi
+
+        # Create Pull Request
+        gh pr create -t "POT File Regenerated" -b ""
       env:
         SAVE_DIR: 'languages'
         DOMAIN: 'cocoon'
