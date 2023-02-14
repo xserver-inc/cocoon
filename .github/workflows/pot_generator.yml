@@ -1,0 +1,38 @@
+name: Generate POT file
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  WP_POT_Generator:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Wordpress POT Generation
+      shell: bash
+      run: |
+        THEME_ROOT="/home/runner/work/cocoon/cocoon"
+        SAVE_FULL_PATH="$THEME_ROOT/$SAVE_DIR/$DOMAIN.pot"
+
+        # Download WP CLI
+        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+        sudo mv wp-cli.phar /usr/bin/wp
+
+        # Regenerate POT file
+        wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --exclude="languages/*,plugins/*,blocks/dist/*,node_modules/*" --skip-audit --ignore-domain
+
+        # Commit regenerated POT file to a master branch
+        git config --global user.name "Github Runner"
+        git config --global user.email "githubactionsbot@noreply"
+        if [ "$(git status --porcelain)" != "" ]; then
+          git add "$SAVE_FULL_PATH"
+          git commit -m "POT File Regenerated"
+          git push "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
+        fi
+      env:
+        SAVE_DIR: 'languages'
+        DOMAIN: 'cocoon'
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
