@@ -4,8 +4,9 @@
   --box-shadow: 0 0 30px #fff;
 }
 
-.swiper-wrapper{
+.swiper-wrapper {
   margin-top: 8px;
+  margin-left: 1px;
 }
 
 /* 新着カードを横並びにする */
@@ -13,18 +14,21 @@
 .is-list-horizontal {
   display: flex;
   flex-direction: row;
+
   /* カードのサムネイル幅200px */
   .widget-entry-card-link {
     flex-shrink: 0;
     max-width: 320px;
   }
-  .card-title{
-    font-size: 16px;  
+
+  .card-title {
+    font-size: 16px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
+
   // .card-content{
   //   display: -webkit-box;
   //   -webkit-box-orient: vertical;
@@ -32,29 +36,33 @@
   //   overflow: hidden;
   // }
   &.large-thumb,
-  &.large-thumb-on{
+  &.large-thumb-on {
     .widget-entry-card-link {
       max-width: 220px;
     }
-    .card-title{
+
+    .card-title {
       -webkit-line-clamp: 2;
-    } 
-  } 
-  &.large-thumb-on{
-    .card-content{
+    }
+  }
+
+  &.large-thumb-on {
+    .card-content {
       max-height: 45%;
       overflow: hidden;
       // line-height: 1.1;
-    }   
-    .card-title{
+    }
+
+    .card-title {
       font-size: 14px;
-    } 
+    }
   }
 
   .swiper-button-next {
     left: calc(100% - 62px);
     // right: 0;
   }
+
   .swiper-button-next {
     position: absolute;
     z-index: 1;
@@ -62,6 +70,7 @@
     bottom: 0;
     margin: auto;
   }
+
   .swiper-button-next {
     display: grid;
     place-content: center;
@@ -71,6 +80,7 @@
     -webkit-transition: var(--transition);
     transition: var(--transition);
   }
+
   .swiper-button-next:hover {
     left: calc(100% - 66px);
     width: 60px;
@@ -81,6 +91,7 @@
   .swiper-button-next::before {
     background-color: rgba(0, 0, 0, 0.3);
   }
+
   .swiper-button-next::before {
     position: absolute;
     top: 0;
@@ -92,6 +103,7 @@
     -webkit-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
   }
+
   .swiper-button-next::after {
     border-color: #ffffff;
     margin-right: 0.4rem;
