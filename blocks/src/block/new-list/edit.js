@@ -64,7 +64,7 @@ export default function edit( props ) {
 	// 可変コントロールの定義
 	let catsTextControl = (
 		<TextControl
-			label={ __( '表示するカテゴリをカンマ区切りで指定', THEME_NAME ) }
+			label={ __( '表示するカテゴリーをカンマ区切りで指定', THEME_NAME ) }
 			value={ cats }
 			onChange={ ( value ) => setAttributes( { cats: value } ) }
 		/>
@@ -220,7 +220,7 @@ export default function edit( props ) {
 					initialOpen={ false }
 				>
 					<ToggleControl
-						label={ __( '全カテゴリ表示', THEME_NAME ) }
+						label={ __( '全カテゴリー表示', THEME_NAME ) }
 						checked={ showAllCats }
 						onChange={ ( isChecked ) => {
 							setAttributes( { showAllCats: isChecked } );
@@ -229,7 +229,7 @@ export default function edit( props ) {
 					{ catsTextControl }
 					<ToggleControl
 						label={ __(
-							'子カテゴリの内容を含めて表示',
+							'子カテゴリーの内容を含めて表示',
 							THEME_NAME
 						) }
 						checked={ children }

@@ -60,6 +60,14 @@
     "horizontal": {
       "type": "boolean",
       "default": false
+    },
+    "ex_posts": {
+      "type": "string",
+      "default": ""
+    },
+    "ex_cats": {
+      "type": "string",
+      "default": ""
     }
   },
   "example": {},

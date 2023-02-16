@@ -48,6 +48,8 @@ export default function edit( props ) {
 		cats,
 		children,
 		horizontal,
+		ex_posts,
+		ex_cats,
 	} = attributes;
 
 	const classes = classnames( 'popular-list-box', 'block-box', {
@@ -59,7 +61,7 @@ export default function edit( props ) {
 	// 可変コントロールの定義
 	let catsTextControl = (
 		<TextControl
-			label={ __( '表示するカテゴリをカンマ区切りで指定', THEME_NAME ) }
+			label={ __( '表示するカテゴリーをカンマ区切りで指定', THEME_NAME ) }
 			value={ cats }
 			onChange={ ( value ) => setAttributes( { cats: value } ) }
 		/>
@@ -191,7 +193,7 @@ export default function edit( props ) {
 					initialOpen={ false }
 				>
 					<ToggleControl
-						label={ __( '全カテゴリ表示', THEME_NAME ) }
+						label={ __( '全カテゴリー表示', THEME_NAME ) }
 						checked={ showAllCats }
 						onChange={ ( isChecked ) => {
 							setAttributes( { showAllCats: isChecked } );
@@ -200,12 +202,19 @@ export default function edit( props ) {
 					{ catsTextControl }
 					<ToggleControl
 						label={ __(
-							'子カテゴリの内容を含めて表示',
+							'子カテゴリーの内容を含めて表示',
 							THEME_NAME
 						) }
 						checked={ children }
 						onChange={ ( isChecked ) =>
 							setAttributes( { children: isChecked } )
+						}
+					/>
+					<TextControl
+						label={ __( '除外カテゴリ', THEME_NAME ) }
+						value={ ex_cats }
+						onChange={ ( newValue ) =>
+							setAttributes( { ex_cats: newValue } )
 						}
 					/>
 					<Divider />
@@ -214,6 +223,13 @@ export default function edit( props ) {
 						value={ post_type }
 						onChange={ ( newValue ) =>
 							setAttributes( { post_type: newValue } )
+						}
+					/>
+					<TextControl
+						label={ __( '除外投稿(ID)', THEME_NAME ) }
+						value={ ex_posts }
+						onChange={ ( newValue ) =>
+							setAttributes( { ex_posts: newValue } )
 						}
 					/>
 				</PanelBody>
