@@ -7,6 +7,7 @@ on:
       - 'languages/**'
       - '.github/**'
       - '.vscode/**'
+      - 'crowdin.yml'
 
 jobs:
   WP_POT_Generator:
