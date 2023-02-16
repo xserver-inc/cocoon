@@ -2,7 +2,11 @@ name: Generate POT file
 on:
   workflow_dispatch:
   push:
-    branches: [master, develop]
+    branches: [develop]
+    paths-ignore:
+      - 'languages/**'
+      - '.github/**'
+      - '.vscode/**'
 
 jobs:
   WP_POT_Generator:
