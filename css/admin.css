@@ -8415,6 +8415,7 @@ body.wp-admin {
 }
 .admin-settings .demo .swiper-wrapper {
   margin-top: 8px;
+  margin-left: 1px;
 }
 .admin-settings .demo .is-list-horizontal {
   display: flex;
@@ -16140,6 +16141,7 @@ body.wp-admin {
 }
 .admin-settings .demo .swiper-wrapper {
   margin-top: 8px;
+  margin-left: 1px;
 }
 .admin-settings .demo .is-list-horizontal {
   display: flex;

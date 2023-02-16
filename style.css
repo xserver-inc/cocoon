@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.5.6.7
+Version: 2.5.7
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -8962,6 +8962,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .swiper-wrapper {
   margin-top: 8px;
+  margin-left: 1px;
 }
 
 /* 新着カードを横並びにする */
