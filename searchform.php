@@ -9,6 +9,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 $s = null;
 if (isset($_GET['s'])) {
   $s = $_GET['s'];
+  // クォートされた文字列のクォート部分を取り除く
+  $s = stripslashes($s);
 }
 
 if (!is_amp() || !is_ssl()): ?>

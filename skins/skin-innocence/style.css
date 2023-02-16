@@ -781,7 +781,7 @@ button.search-submit {
 .font-awesome-5 .entry-content .toc-list > li > ul > li:before,
 .font-awesome-5 .entry-content h3:before,
 .font-awesome-5 .related-entry-heading:before,
-.comment-title:before,
+.font-awesome-5 .comment-title:before,
 .font-awesome-5 .widget_categories ul li a:before {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;

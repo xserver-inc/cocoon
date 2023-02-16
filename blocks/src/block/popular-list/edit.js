@@ -48,6 +48,8 @@ export default function edit( props ) {
 		cats,
 		children,
 		horizontal,
+		ex_posts,
+		ex_cats,
 	} = attributes;
 
 	const classes = classnames( 'popular-list-box', 'block-box', {
@@ -208,12 +210,26 @@ export default function edit( props ) {
 							setAttributes( { children: isChecked } )
 						}
 					/>
+					<TextControl
+						label={ __( '除外カテゴリ', THEME_NAME ) }
+						value={ ex_cats }
+						onChange={ ( newValue ) =>
+							setAttributes( { ex_cats: newValue } )
+						}
+					/>
 					<Divider />
 					<TextControl
 						label={ __( '投稿タイプ', THEME_NAME ) }
 						value={ post_type }
 						onChange={ ( newValue ) =>
 							setAttributes( { post_type: newValue } )
+						}
+					/>
+					<TextControl
+						label={ __( '除外投稿(ID)', THEME_NAME ) }
+						value={ ex_posts }
+						onChange={ ( newValue ) =>
+							setAttributes( { ex_posts: newValue } )
 						}
 					/>
 				</PanelBody>
