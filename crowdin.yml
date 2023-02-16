@@ -1,0 +1,3 @@
+files:
+  - source: /languages/cocoon.pot
+    translation: /languages/cocoon-%two_letters_code%.pot
