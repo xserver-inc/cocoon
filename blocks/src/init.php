@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Blocks Initializer
  *
@@ -117,18 +116,18 @@ function cocoon_blocks_cgb_editor_assets()
 	$is_templates_visible =
 		has_valid_shortcode_item($templates) &&
 		is_block_editor_template_shortcode_dropdown_visible()
-		? 1
-		: 0;
+			? 1
+			: 0;
 	$is_affiliates_visible =
 		has_valid_shortcode_item($affiliates) &&
 		is_block_editor_affiliate_shortcode_dropdown_visible()
-		? 1
-		: 0;
+			? 1
+			: 0;
 	$is_rankings_visible =
 		has_valid_shortcode_item($rankings) &&
 		is_block_editor_ranking_shortcode_dropdown_visible()
-		? 1
-		: 0;
+			? 1
+			: 0;
 	global $wp_version;
 	$gutenberg_settings = [
 		'isRubyVisible' => is_block_editor_ruby_button_visible() ? 1 : 0,
@@ -157,7 +156,7 @@ function cocoon_blocks_cgb_editor_assets()
 		'isAdsVisible' => is_ads_visible() ? 1 : 0,
 		'isAdShortcodeEnable' => is_ad_shortcode_enable() ? 1 : 0,
 		'speechBalloonDefaultIconUrl' =>
-		get_template_directory_uri() . '/images/anony.png',
+			get_template_directory_uri() . '/images/anony.png',
 		'siteIconFont' => ' ' . get_site_icon_font_class(),
 		'pageTypeClass' => get_editor_page_type_class(),
 		'isDebugMode' => DEBUG_MODE,
@@ -271,7 +270,7 @@ if (is_admin()) {
 		);
 	}
 }
-if (!function_exists('add_cocoon_theme_block_categories')) :
+if (!function_exists('add_cocoon_theme_block_categories')):
 	function add_cocoon_theme_block_categories($categories, $post)
 	{
 		$block_categories = array_merge($categories, [
@@ -321,7 +320,7 @@ if (is_wp_5_8_or_over()) {
 } else {
 	add_filter('allowed_block_types', 'cocoon_allowed_block_types_custom');
 }
-if (!function_exists('cocoon_allowed_block_types_custom')) :
+if (!function_exists('cocoon_allowed_block_types_custom')):
 	function cocoon_allowed_block_types_custom($allowed_block_types)
 	{
 		return $allowed_block_types;
@@ -330,7 +329,7 @@ endif;
 
 //カラーパレット
 add_action('after_setup_theme', 'cocoon_editor_color_palette_setup');
-if (!function_exists('cocoon_editor_color_palette_setup')) :
+if (!function_exists('cocoon_editor_color_palette_setup')):
 	function cocoon_editor_color_palette_setup()
 	{
 		$colors = get_cocoon_editor_color_palette_colors();
@@ -373,7 +372,7 @@ require_once abspath(__FILE__) . 'block/ad/index.php';
 require_once abspath(__FILE__) . 'block/profile/index.php';
 require_once abspath(__FILE__) . 'block/new-list/index.php';
 require_once abspath(__FILE__) . 'block/popular-list/index.php';
-// require_once abspath(__FILE__) . 'block/info-list/index.php';
+require_once abspath(__FILE__) . 'block/info-list/index.php';
 
 require_once abspath(__FILE__) . 'block-universal/caption-box/index.php';
 require_once abspath(__FILE__) . 'block-universal/tab-caption-box/index.php';

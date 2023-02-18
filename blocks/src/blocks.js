@@ -34,7 +34,7 @@ import * as ad from './block/ad';
 import * as profile from './block/profile';
 import * as newlist from './block/new-list';
 import * as popularlist from './block/popular-list';
-// import * as infolist from './block/info-list';
+import * as infolist from './block/info-list';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -66,7 +66,7 @@ const cocoonBlocks = [
 	profile,
 	newlist,
 	popularlist,
-	// infolist,
+	infolist,
 
 	captionBox,
 	tabCaptionBox,
@@ -76,10 +76,10 @@ const cocoonBlocks = [
 	microText,
 ];
 
-export const __getCocoonBlocks = () => cocoonBlocks.concat(cocoonBlocksPro);
+export const __getCocoonBlocks = () => cocoonBlocks.concat( cocoonBlocksPro );
 
-const registerBlock = (block) => {
-	if (!block) {
+const registerBlock = ( block ) => {
+	if ( ! block ) {
 		return;
 	}
 
@@ -87,13 +87,13 @@ const registerBlock = (block) => {
 
 	// WP5.5未満の場合
 	let wpVersion = 0;
-	if (gbSettings['wpVersion']) {
-		wpVersion = gbSettings['wpVersion'];
+	if ( gbSettings[ 'wpVersion' ] ) {
+		wpVersion = gbSettings[ 'wpVersion' ];
 		// console.log(wpVersion);
 	}
 	//-RC版などの文字列が組まれる場合は取り除く
-	wpVersion = wpVersion.replace(/-.+$/, '');
-	if (compareVersions(wpVersion, '5.5') < 0) {
+	wpVersion = wpVersion.replace( /-.+$/, '' );
+	if ( compareVersions( wpVersion, '5.5' ) < 0 ) {
 		//nameを削除
 		delete metadata.name;
 		//カテゴリー等を追加
@@ -101,14 +101,14 @@ const registerBlock = (block) => {
 			...settings,
 			...metadata,
 		};
-	} else if (metadata) {
-		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata });
+	} else if ( metadata ) {
+		unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
 	}
-	registerBlockType(name, settings);
+	registerBlockType( name, settings );
 };
 
-export const registerCocoonBlocks = (blocks = __getCocoonBlocks()) => {
-	blocks.forEach(registerBlock);
+export const registerCocoonBlocks = ( blocks = __getCocoonBlocks() ) => {
+	blocks.forEach( registerBlock );
 };
 
 registerCocoonBlocks();
