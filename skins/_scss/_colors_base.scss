@@ -8,7 +8,7 @@ body {
 }
 
 .header, .header .site-name-text{
-  color: var(--cocoon-white-color);
+  color: $white;
 }
 .header{
   background-color: $key_color;
@@ -63,7 +63,7 @@ body {
 .go-to-top-button,
 #submit{
   background-color: $key_color;
-  color: var(--cocoon-white-color);
+  color: $white;
 }
 
 // .mobile-menu-buttons .menu-button > a:hover{
@@ -80,7 +80,7 @@ body {
 div.mobile-menu-buttons .menu-button:hover,
 .navi-menu-content a:hover{
   background-color: rgba(255, 255, 255, 0.2);
-  color: var(--cocoon-white-color);
+  color: $white;
 }
 
 .sidebar-menu-content{
@@ -185,15 +185,15 @@ div.mobile-menu-buttons .menu-button:hover,
 
 //グローバルナビ関係
 .navi{
-  background-color: var(--cocoon-white-color);
+  background-color: $white;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
   font-weight: bold;
 
   a {
-    //border-bottom: 4px solid var(--cocoon-white-color);
+    //border-bottom: 4px solid $white;
     //box-sizing: border-box;
     &:hover{
-      background-color: var(--cocoon-white-color);
+      background-color: $white;
       text-decoration: underline;
       //border-bottom: 4px solid $key_color;
     }
@@ -204,7 +204,7 @@ div.mobile-menu-buttons .menu-button:hover,
     background-color: $key_color;
     opacity: 0.95;
     a{
-      color: var(--cocoon-white-color);
+      color: $white;
       &:hover{
         background-color: rgba(255,255,255,0.2);
       }
