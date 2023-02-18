@@ -135,7 +135,7 @@ body {
 
   .tagline,
   .site-name-text {
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
   }
 
   #header {
@@ -155,7 +155,7 @@ body {
 
       .sub-menu {
         background-color: $main-color-dark;
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
       }
     }
   }
@@ -173,7 +173,7 @@ body {
 
       .sub-menu {
         background-color: $main-color-midium;
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
       }
     }
   }
@@ -182,13 +182,13 @@ body {
 #navi {
   a {
     position: relative;
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
 
     &::after {
       @include pseudo();
       @include position(auto, 0, 0, auto);
       @include size(100%, 2px);
-      background-color: var(--cocoon-white-color)-color;
+      background-color: $white-color;
       transform: scale(0, 1);
       transform-origin: center top;
       transition: transform 0.3s;
@@ -200,10 +200,10 @@ body {
   }
 
   .fa-angle-down {
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
 
     &:hover {
-      color: var(--cocoon-white-color)-color;
+      color: $white-color;
     }
   }
 }
@@ -220,7 +220,7 @@ body {
   }
 
   span {
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
   }
 }
 
@@ -239,7 +239,7 @@ body {
   h2,
   h3 {
     background-color: $main-color-midium;
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
     padding: 5px 5px 5px 42px;
     line-height: 2.5;
     position: relative;
@@ -273,7 +273,7 @@ body {
       }
 
       .rsswidget {
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
         text-decoration: none;
 
         &:hover {
@@ -308,7 +308,7 @@ body {
   .widget_cta_box {
     .cta-box {
       border: solid $main-color-midium 1px;
-      background-color: var(--cocoon-white-color)-color;
+      background-color: $white-color;
     }
 
     .cta-heading {
@@ -391,7 +391,7 @@ body {
 
       .follow-button {
         border: none;
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
       }
 
       .website-button {
@@ -576,7 +576,7 @@ body {
       }
 
       a:hover {
-        background-color: var(--cocoon-white-color)-color;
+        background-color: $white-color;
       }
     }
   }
@@ -687,33 +687,33 @@ body {
   .widget_calendar {
     .wp-calendar-table {
       caption {
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
         border-color: $key-color;
         ;
         background-color: $main-color-dark;
       }
 
       thead tr th {
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
         border-color: $key-color;
         background-color: $main-color-midium;
       }
 
       tbody tr td {
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
         border-color: $key-color;
         background-color: $main-color-light;
 
         a {
           border-radius: 0;
           background-color: $main-color-light;
-          color: var(--cocoon-white-color)-color;
+          color: $white-color;
         }
 
         & [id$="today"],
         & [id$="today"] a {
           background-color: $main-color-midium;
-          color: var(--cocoon-white-color)-color;
+          color: $white-color;
         }
       }
 
@@ -869,7 +869,7 @@ body {
   //  color: $font-color;
   //  position: relative;
   //  z-index: 2;
-  //  background-color: var(--cocoon-white-color)-color;
+  //  background-color: $white-color;
   //  border-radius: 4px;
   //  margin-bottom: 1em;
   //  &:hover {
@@ -945,7 +945,7 @@ body {
     background-color: $main-color-midium;
     border: none;
     border-radius: 4px;
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
   }
 }
 
@@ -981,7 +981,7 @@ body {
 
   .pagination-previous-link,
   .pagination-next-link {
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
     background-color: $main-color-midium;
     border: none;
     border-radius: 4px;
@@ -989,14 +989,14 @@ body {
 
   .pagination {
     span {
-      color: var(--cocoon-white-color)-color;
+      color: $white-color;
       border: none;
       border-radius: 4px;
       background-color: $main-color-midium;
     }
 
     a {
-      color: var(--cocoon-white-color)-color;
+      color: $white-color;
       border: none;
       border-radius: 4px;
       background-color: $main-color-midium;
@@ -1016,10 +1016,10 @@ body {
   .toc-title {
     padding: 0;
     background-color: $main-color-midium;
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
 
     &::after {
-      color: var(--cocoon-white-color)-color;
+      color: $white-color;
       text-decoration: none;
     }
   }
@@ -1054,7 +1054,7 @@ body {
   // Heading 見出し
   .entry-header h1.entry-title {
     @include linear-gradient();
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
     padding: 1em;
   }
 
@@ -1175,7 +1175,7 @@ blockquote {
       }
 
       &:nth-child(even) {
-        background-color: var(--cocoon-white-color)-color;
+        background-color: $white-color;
       }
 
       td {
@@ -1193,33 +1193,33 @@ blockquote {
   .wp-block-calendar {
     .wp-calendar-table {
       caption {
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
         border-color: $key-color;
         ;
         background-color: $main-color-dark;
       }
 
       thead tr th {
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
         border-color: $key-color;
         background-color: $main-color-midium;
       }
 
       tbody tr td {
-        color: var(--cocoon-white-color)-color;
+        color: $white-color;
         border-color: $key-color;
         background-color: $main-color-light;
 
         a {
           border-radius: 0;
           background-color: $main-color-light;
-          color: var(--cocoon-white-color)-color;
+          color: $white-color;
         }
 
         & [id$="today"],
         & [id$="today"] a {
           background-color: $main-color-midium;
-          color: var(--cocoon-white-color)-color;
+          color: $white-color;
         }
       }
 
@@ -1268,7 +1268,7 @@ blockquote {
       padding: 1em 2em;
       background-color: $main-color-midium;
       border: none;
-      color: var(--cocoon-white-color)-color;
+      color: $white-color;
       border-top-right-radius: 4px;
       border-top-left-radius: 4px;
     }
@@ -1306,13 +1306,13 @@ blockquote {
 #comment-area {
   .reply a {
     border: none;
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
     background-color: $main-color-midium;
   }
 }
 
 #comment-reply-btn {
-  color: var(--cocoon-white-color)-color;
+  color: $white-color;
   background-color: $main-color-midium;
   border-radius: 4px;
   border: none;
@@ -1333,7 +1333,7 @@ blockquote {
 }
 
 #submit {
-  color: var(--cocoon-white-color)-color;
+  color: $white-color;
   background-color: $main-color-midium;
   border-radius: 4px;
   border: none;
@@ -1341,20 +1341,20 @@ blockquote {
 
 // Footer フッター
 #footer {
-  color: var(--cocoon-white-color)-color;
+  color: $white-color;
   background-color: black;
 
   .site-name-text {
-    color: var(--cocoon-white-color)-color;
+    color: $white-color;
   }
 
   #navi-footer {
     a {
-      color: var(--cocoon-white-color)-color;
+      color: $white-color;
       background-color: black;
 
       &:hover {
-        background-color: var(--cocoon-white-color)-color;
+        background-color: $white-color;
         color: black;
       }
     }
@@ -1370,14 +1370,14 @@ body .mobile-menu-buttons {
     }
 
     .menu-button-in {
-      color: var(--cocoon-white-color)-color;
+      color: $white-color;
     }
   }
 
   // Menu メニュー
   .navi-menu-button {
     .navi-menu-content {
-      background-color: var(--cocoon-white-color)-color;
+      background-color: $white-color;
 
       a {
         color: $main-color-dark;
@@ -1385,7 +1385,7 @@ body .mobile-menu-buttons {
         border-bottom: solid $main-color-midium 1px;
 
         &:hover {
-          background-color: var(--cocoon-white-color)-color;
+          background-color: $white-color;
         }
       }
 

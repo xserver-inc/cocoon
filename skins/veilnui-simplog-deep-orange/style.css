@@ -42,7 +42,7 @@ body {
 }
 #header-container .tagline,
 #header-container .site-name-text {
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #header-container #header {
   background-color: #F4511E;
@@ -58,7 +58,7 @@ body {
 }
 #header-container .hlt-top-menu #navi .sub-menu {
   background-color: #F4511E;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #header-container .hlt-center-logo {
   background-color: #FF7043;
@@ -71,12 +71,12 @@ body {
 }
 #header-container .hlt-center-logo #navi .sub-menu {
   background-color: #FF7043;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 
 #navi a {
   position: relative;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #navi a::after {
   position: absolute;
@@ -87,7 +87,7 @@ body {
   right: auto;
   width: 100%;
   height: 2px;
-  background-color: var(--cocoon-white-color) -color;
+  background-color: white;
   transform: scale(0, 1);
   transform-origin: center top;
   transition: transform 0.3s;
@@ -96,10 +96,10 @@ body {
   transform: scale(1, 1);
 }
 #navi .fa-angle-down {
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #navi .fa-angle-down:hover {
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 
 #go-to-top .go-to-top-button {
@@ -113,7 +113,7 @@ body {
   transition: 0.2s;
 }
 #go-to-top .go-to-top-button span {
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 
 #breadcrumb span,
@@ -125,7 +125,7 @@ body {
 #sidebar-menu-content h3,
 #sidebar h3 {
   background-color: #FF7043;
-  color: var(--cocoon-white-color) -color;
+  color: white;
   padding: 5px 5px 5px 42px;
   line-height: 2.5;
   position: relative;
@@ -152,7 +152,7 @@ body {
 }
 #sidebar .widget_rss .widget-title .rsswidget,
 #slide-in-sidebar .widget_rss .widget-title .rsswidget {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   text-decoration: none;
 }
 #sidebar .widget_rss .widget-title .rsswidget:hover,
@@ -183,7 +183,7 @@ body {
 #sidebar .widget_cta_box .cta-box,
 #slide-in-sidebar .widget_cta_box .cta-box {
   border: solid #FF7043 1px;
-  background-color: var(--cocoon-white-color) -color;
+  background-color: white;
 }
 #sidebar .widget_cta_box .cta-heading,
 #slide-in-sidebar .widget_cta_box .cta-heading {
@@ -247,7 +247,7 @@ body {
 #sidebar .widget_author_box .author-box .follow-button,
 #slide-in-sidebar .widget_author_box .author-box .follow-button {
   border: none;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #sidebar .widget_author_box .author-box .website-button,
 #slide-in-sidebar .widget_author_box .author-box .website-button {
@@ -405,7 +405,7 @@ body {
 }
 #sidebar .widget_recent_comments .recent-comments a:hover,
 #slide-in-sidebar .widget_recent_comments .recent-comments a:hover {
-  background-color: var(--cocoon-white-color) -color;
+  background-color: white;
 }
 #sidebar .widget_toc .toc-content li a:hover,
 #slide-in-sidebar .widget_toc .toc-content li a:hover {
@@ -491,19 +491,19 @@ body {
 }
 #sidebar .widget_calendar .wp-calendar-table caption,
 #slide-in-sidebar .widget_calendar .wp-calendar-table caption {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border-color: #D84315;
   background-color: #F4511E;
 }
 #sidebar .widget_calendar .wp-calendar-table thead tr th,
 #slide-in-sidebar .widget_calendar .wp-calendar-table thead tr th {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border-color: #D84315;
   background-color: #FF7043;
 }
 #sidebar .widget_calendar .wp-calendar-table tbody tr td,
 #slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border-color: #D84315;
   background-color: #FFAB91;
 }
@@ -511,13 +511,13 @@ body {
 #slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td a {
   border-radius: 0;
   background-color: #FFAB91;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"], #sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"] a,
 #slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"],
 #slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"] a {
   background-color: #FF7043;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #sidebar .widget_calendar .wp-calendar-table tfoot,
 #slide-in-sidebar .widget_calendar .wp-calendar-table tfoot {
@@ -676,7 +676,7 @@ body {
   background-color: #FF7043;
   border: none;
   border-radius: 4px;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 
 #related-entries.recb-entry-border a {
@@ -699,19 +699,19 @@ body {
 
 #main .pagination-previous-link,
 #main .pagination-next-link {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   background-color: #FF7043;
   border: none;
   border-radius: 4px;
 }
 #main .pagination span {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border: none;
   border-radius: 4px;
   background-color: #FF7043;
 }
 #main .pagination a {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border: none;
   border-radius: 4px;
   background-color: #FF7043;
@@ -729,11 +729,11 @@ body {
 .toc .toc-title {
   padding: 0;
   background-color: #FF7043;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #toc .toc-title::after,
 .toc .toc-title::after {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   text-decoration: none;
 }
 #toc .toc-content,
@@ -760,7 +760,7 @@ body {
 
 #main .entry-header h1.entry-title {
   background: linear-gradient(to right, #F4511E, #FF7043);
-  color: var(--cocoon-white-color) -color;
+  color: white;
   padding: 1em;
 }
 #main .entry-content h2,
@@ -827,35 +827,35 @@ blockquote cite {
   background-color: #FFAB91;
 }
 .wp-block-table tbody tr:nth-child(even) {
-  background-color: var(--cocoon-white-color) -color;
+  background-color: white;
 }
 .wp-block-table tbody tr td {
   border: none;
 }
 
 #main .wp-block-calendar .wp-calendar-table caption {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border-color: #D84315;
   background-color: #F4511E;
 }
 #main .wp-block-calendar .wp-calendar-table thead tr th {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border-color: #D84315;
   background-color: #FF7043;
 }
 #main .wp-block-calendar .wp-calendar-table tbody tr td {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border-color: #D84315;
   background-color: #FFAB91;
 }
 #main .wp-block-calendar .wp-calendar-table tbody tr td a {
   border-radius: 0;
   background-color: #FFAB91;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #main .wp-block-calendar .wp-calendar-table tbody tr td [id$="today"], #main .wp-block-calendar .wp-calendar-table tbody tr td [id$="today"] a {
   background-color: #FF7043;
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #main .wp-block-calendar .wp-calendar-table tfoot {
   display: none;
@@ -888,7 +888,7 @@ blockquote cite {
   padding: 1em 2em;
   background-color: #FF7043;
   border: none;
-  color: var(--cocoon-white-color) -color;
+  color: white;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
@@ -912,12 +912,12 @@ blockquote cite {
 
 #comment-area .reply a {
   border: none;
-  color: var(--cocoon-white-color) -color;
+  color: white;
   background-color: #FF7043;
 }
 
 #comment-reply-btn {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   background-color: #FF7043;
   border-radius: 4px;
   border: none;
@@ -940,25 +940,25 @@ blockquote cite {
 }
 
 #submit {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   background-color: #FF7043;
   border-radius: 4px;
   border: none;
 }
 
 #footer {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   background-color: black;
 }
 #footer .site-name-text {
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 #footer #navi-footer a {
-  color: var(--cocoon-white-color) -color;
+  color: white;
   background-color: black;
 }
 #footer #navi-footer a:hover {
-  background-color: var(--cocoon-white-color) -color;
+  background-color: white;
   color: black;
 }
 
@@ -969,10 +969,10 @@ body .mobile-menu-buttons .menu-button:hover {
   background-color: #F4511E;
 }
 body .mobile-menu-buttons .menu-button .menu-button-in {
-  color: var(--cocoon-white-color) -color;
+  color: white;
 }
 body .mobile-menu-buttons .navi-menu-button .navi-menu-content {
-  background-color: var(--cocoon-white-color) -color;
+  background-color: white;
 }
 body .mobile-menu-buttons .navi-menu-button .navi-menu-content a {
   color: #F4511E;
@@ -980,7 +980,7 @@ body .mobile-menu-buttons .navi-menu-button .navi-menu-content a {
   border-bottom: solid #FF7043 1px;
 }
 body .mobile-menu-buttons .navi-menu-button .navi-menu-content a:hover {
-  background-color: var(--cocoon-white-color) -color;
+  background-color: white;
 }
 body .mobile-menu-buttons .navi-menu-button .navi-menu-content .fa {
   color: #F4511E;
