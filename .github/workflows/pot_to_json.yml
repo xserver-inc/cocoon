@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
   push:
     branches: develop
-    # paths:
-    #   - 'languages/*.pot'
+    paths:
+      - 'languages/cocoon-*.pot'
 
 jobs:
   WP_POT_TO_JSON:
