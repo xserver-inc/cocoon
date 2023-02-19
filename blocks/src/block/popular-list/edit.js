@@ -175,7 +175,7 @@ export default function edit( props ) {
 				onChange={ ( value ) => setAttributes( { cats: value } ) }
 			/>
 			<PanelBody
-				title={ __( 'カテゴリー検索', THEME_NAME ) }
+				title={ __( '表示カテゴリー選択', THEME_NAME ) }
 				initialOpen={ true }
 			>
 				<SearchControl
@@ -184,6 +184,16 @@ export default function edit( props ) {
 				/>
 				{ createCategoryList( catSearchInput ) }
 			</PanelBody>
+			<ToggleControl
+				label={ __(
+					'子カテゴリーの内容を含めて表示',
+					THEME_NAME
+				) }
+				checked={ children }
+				onChange={ ( isChecked ) =>
+					setAttributes( { children: isChecked } )
+				}
+			/>
 		</Fragment>
 	);
 	if ( showAllCats ) {
@@ -322,16 +332,6 @@ export default function edit( props ) {
 						} }
 					/>
 					{ catsTextControl }
-					<ToggleControl
-						label={ __(
-							'子カテゴリーの内容を含めて表示',
-							THEME_NAME
-						) }
-						checked={ children }
-						onChange={ ( isChecked ) =>
-							setAttributes( { children: isChecked } )
-						}
-					/>
 					<TextControl
 						label={ __( '除外カテゴリ', THEME_NAME ) }
 						value={ ex_cats }
