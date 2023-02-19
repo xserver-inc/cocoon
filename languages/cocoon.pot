@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.5.7.1\n"
+"Project-Id-Version: Cocoon 2.5.7.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-02-17T09:58:56+00:00\n"
+"POT-Creation-Date: 2023-02-18T14:35:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 
@@ -33,27 +33,27 @@ msgstr ""
 msgid "https://nelog.jp/"
 msgstr ""
 
-#: blocks/src/init.php:279
+#: blocks/src/init.php:280
 msgid "Cocoonブロック"
 msgstr ""
 
-#: blocks/src/init.php:284
+#: blocks/src/init.php:285
 msgid "Cocoon汎用ブロック"
 msgstr ""
 
-#: blocks/src/init.php:289
+#: blocks/src/init.php:290
 msgid "Cocoonマイクロコピー"
 msgstr ""
 
-#: blocks/src/init.php:294
+#: blocks/src/init.php:295
 msgid "Cocoonレイアウト"
 msgstr ""
 
-#: blocks/src/init.php:299
+#: blocks/src/init.php:300
 msgid "Cocoonショートコード"
 msgstr ""
 
-#: blocks/src/init.php:304
+#: blocks/src/init.php:305
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr ""
 
