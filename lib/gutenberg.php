@@ -108,12 +108,12 @@ function get_cocoon_editor_color_palette_colors(){
     ),
     array(
         'name' => __( '黒', THEME_NAME ),
-        'slug' => 'black',
+        'slug' => 'cocoon-black',
         'color' => 'var(--cocoon-black-color)',
     ),
     array(
         'name' => __( '白', THEME_NAME ),
-        'slug' => 'white',
+        'slug' => 'cocoon-white',
         'color' => 'var(--cocoon-white-color)',
     ),
     array(
