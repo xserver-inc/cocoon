@@ -178,7 +178,7 @@ export default function edit( props ) {
 				onChange={ ( value ) => setAttributes( { cats: value } ) }
 			/>
 			<PanelBody
-				title={ __( 'カテゴリー検索', THEME_NAME ) }
+				title={ __( '表示カテゴリー選択', THEME_NAME ) }
 				initialOpen={ true }
 			>
 				<SearchControl
