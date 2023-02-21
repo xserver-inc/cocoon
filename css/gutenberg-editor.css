@@ -1520,3 +1520,7 @@ div.cocoon-render-dropdown select option[disabled] {
 .em5sgkm6 {
   margin-bottom: 8px;
 }
+
+.components-disabled {
+  opacity: 0.3;
+}

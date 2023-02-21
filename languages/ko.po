@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-12-23 21:53+0900\n"
-"PO-Revision-Date: 2023-01-03 19:29+0900\n"
+"POT-Creation-Date: 2023-02-21 20:03+0900\n"
+"PO-Revision-Date: 2023-02-21 20:03+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ko_KR\n"
@@ -21,6 +21,18 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-4: .vscode\n"
 "X-Poedit-SearchPathExcluded-5: plugins\n"
 "X-Poedit-SearchPathExcluded-6: node_modules\n"
+
+#: blocks/dist/blocks.build.js:1
+msgid "classes"
+msgstr ""
+
+#: blocks/dist/blocks.build.js:1
+msgid "transform"
+msgstr ""
+
+#: blocks/dist/blocks.build.js:1
+msgid "mask"
+msgstr ""
 
 #: blocks/src/block-universal/caption-box/block.js:50
 #: blocks/src/block-universal/caption-box/deprecated.js:14
@@ -225,13 +237,13 @@ msgstr "목차 숨기기"
 #: blocks/src/old/balloon-ex-fix1/block.js:17
 #: blocks/src/old/balloon-ex-v2/block.js:16
 #: blocks/src/old/balloon-ex/block.js:17 blocks/src/old/balloon/block.js:15
-#: lib/html-forms.php:532
+#: lib/html-forms.php:537
 msgid "未入力"
 msgstr "미입력"
 
 #: blocks/src/block/balloon/index.js:21 blocks/src/old/balloon-1/block.js:53
 #: blocks/src/old/balloon-2/block.js:37 blocks/src/old/balloon/block.js:36
-#: lib/admin.php:452 lib/original-menu.php:27
+#: lib/admin.php:457 lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37 lib/tinymce/speech-balloons.php:50
 msgid "吹き出し"
 msgstr "말풍선"
@@ -274,7 +286,7 @@ msgstr ""
 
 #: blocks/src/block/blogcard/block.js:55
 #: blocks/src/block/blogcard/deprecated.js:47
-#: blocks/src/block/blogcard/edit.js:27 blocks/src/block/profile/edit.js:87
+#: blocks/src/block/blogcard/edit.js:27 blocks/src/block/profile/edit.js:93
 #: blocks/src/block/tab-box/edit.js:61
 #: blocks/src/block/timeline-item/deprecated.js:24
 #: blocks/src/block/timeline-item/deprecated.js:44
@@ -300,7 +312,7 @@ msgstr "없음"
 #: blocks/src/old/blogcard-class/block.js:66 lib/admin-tinymce-qtag.php:1592
 #: lib/page-settings/image-forms.php:212 lib/page-settings/single-funcs.php:76
 #: lib/widgets/related-entries.php:19 lib/widgets/related-entries.php:80
-#: tmp/css-custom.php:873 tmp/css-custom.php:925
+#: tmp/css-custom.php:879 tmp/css-custom.php:931
 msgid "関連記事"
 msgstr "관련 글"
 
@@ -308,25 +320,26 @@ msgstr "관련 글"
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:41
 #: blocks/src/old/blogcard-class/block.js:70 lib/admin-tinymce-qtag.php:1598
-#: tmp/css-custom.php:877 tmp/css-custom.php:928
+#: tmp/css-custom.php:883 tmp/css-custom.php:934
 msgid "参考記事"
 msgstr "참고 글"
 
 #: blocks/src/block/blogcard/block.js:73
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:45 lib/admin-tinymce-qtag.php:1604
-#: tmp/css-custom.php:881 tmp/css-custom.php:931
+#: tmp/css-custom.php:887 tmp/css-custom.php:937
 msgid "参考リンク"
 msgstr "연관 링크"
 
 #: blocks/src/block/blogcard/block.js:77
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:49
+#: blocks/src/block/popular-list/index.js:29
 #: blocks/src/old/blogcard-class/block.js:74 lib/admin-tinymce-qtag.php:1610
 #: lib/page-settings/carousel-forms.php:61
 #: lib/page-settings/image-forms.php:211 lib/widgets/popular-entries.php:21
-#: lib/widgets/popular-entries.php:87 tmp/css-custom.php:885
-#: tmp/css-custom.php:934
+#: lib/widgets/popular-entries.php:85 tmp/css-custom.php:891
+#: tmp/css-custom.php:940
 msgid "人気記事"
 msgstr "인기 글"
 
@@ -334,7 +347,7 @@ msgstr "인기 글"
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:53
 #: blocks/src/old/blogcard-class/block.js:78 lib/admin-tinymce-qtag.php:1616
-#: tmp/css-custom.php:897 tmp/css-custom.php:943
+#: tmp/css-custom.php:903 tmp/css-custom.php:949
 msgid "あわせて読みたい"
 msgstr "같이 보기"
 
@@ -342,7 +355,7 @@ msgstr "같이 보기"
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:57
 #: blocks/src/old/blogcard-class/block.js:82 lib/admin-tinymce-qtag.php:1622
-#: lib/widgets/cta-box.php:34 tmp/css-custom.php:901 tmp/css-custom.php:946
+#: lib/widgets/cta-box.php:34 tmp/css-custom.php:907 tmp/css-custom.php:952
 msgid "詳細はこちら"
 msgstr "자세히"
 
@@ -351,7 +364,7 @@ msgstr "자세히"
 #: blocks/src/block/blogcard/edit.js:61 blocks/src/block/tab-box/edit.js:67
 #: blocks/src/old/blogcard-class/block.js:86 blocks/src/old/tab-box/block.js:71
 #: lib/admin-tinymce-qtag.php:307 lib/admin-tinymce-qtag.php:1628
-#: tmp/css-custom.php:893 tmp/css-custom.php:940
+#: tmp/css-custom.php:899 tmp/css-custom.php:946
 msgid "チェック"
 msgstr "체크"
 
@@ -360,7 +373,7 @@ msgstr "체크"
 #: blocks/src/block/blogcard/edit.js:65 blocks/src/block/tab-box/edit.js:87
 #: blocks/src/old/blogcard-class/block.js:90 blocks/src/old/tab-box/block.js:91
 #: lib/admin-tinymce-qtag.php:457 lib/admin-tinymce-qtag.php:1634
-#: tmp/css-custom.php:889 tmp/css-custom.php:937
+#: tmp/css-custom.php:895 tmp/css-custom.php:943
 msgid "ピックアップ"
 msgstr "추천"
 
@@ -368,7 +381,7 @@ msgstr "추천"
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:69
 #: blocks/src/old/blogcard-class/block.js:94 lib/admin-tinymce-qtag.php:1640
-#: tmp/css-custom.php:905 tmp/css-custom.php:949
+#: tmp/css-custom.php:911 tmp/css-custom.php:955
 msgid "公式サイト"
 msgstr "공식 사이트"
 
@@ -376,22 +389,22 @@ msgstr "공식 사이트"
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:73 blocks/src/block/tab-box/edit.js:99
 #: blocks/src/old/tab-box/block.js:103 lib/admin-tinymce-qtag.php:547
-#: lib/admin-tinymce-qtag.php:1646 tmp/css-custom.php:909
-#: tmp/css-custom.php:952
+#: lib/admin-tinymce-qtag.php:1646 tmp/css-custom.php:915
+#: tmp/css-custom.php:958
 msgid "ダウンロード"
 msgstr "다운로드"
 
 #: blocks/src/block/blogcard/edit.js:77 lib/admin-tinymce-qtag.php:1652
-#: tmp/css-custom.php:913 tmp/css-custom.php:955
+#: tmp/css-custom.php:919 tmp/css-custom.php:961
 msgid "前回の記事"
 msgstr "이전 글"
 
 #: blocks/src/block/blogcard/edit.js:81 lib/admin-tinymce-qtag.php:1658
-#: tmp/css-custom.php:917 tmp/css-custom.php:958
+#: tmp/css-custom.php:923 tmp/css-custom.php:964
 msgid "続きの記事"
 msgstr "다음 글"
 
-#: blocks/src/block/box-menu/edit.js:42 blocks/src/block/profile/edit.js:29
+#: blocks/src/block/box-menu/edit.js:42 blocks/src/block/profile/edit.js:32
 #: blocks/src/block/ranking/edit.js:29 blocks/src/block/template/edit.js:29
 #: lib/page-settings/recommended-forms.php:61
 msgid "未選択"
@@ -682,7 +695,7 @@ msgstr "보충정보(!)"
 #: blocks/src/block/icon-box/edit.js:45 blocks/src/block/tab-box/edit.js:95
 #: blocks/src/block/test-box/deprecated.js:100
 #: blocks/src/old/tab-box/block.js:99 lib/admin-tinymce-qtag.php:190
-#: lib/admin-tinymce-qtag.php:517 lib/admin.php:192
+#: lib/admin-tinymce-qtag.php:517 lib/admin.php:197
 #: lib/block-editor-styles-group.php:41
 #: lib/block-editor-styles-paragraph.php:76 lib/custom-fields/memo-field.php:17
 #: lib/custom-fields/memo-field.php:18 lib/custom-fields/memo-field.php:21
@@ -698,7 +711,7 @@ msgstr "메모"
 #: lib/page-settings/comment-funcs.php:32
 #: lib/page-settings/sns-share-forms-bottom.php:95
 #: lib/page-settings/sns-share-forms-top.php:82
-#: tmp/mobile-comments-button.php:12 tmp/sns-share-buttons.php:54
+#: tmp/mobile-comments-button.php:12 tmp/sns-share-buttons.php:53
 msgid "コメント"
 msgstr "댓글"
 
@@ -845,19 +858,270 @@ msgid ""
 msgstr ""
 "박스의 배경색에 따라 직관적으로 메시지 내용을 전달할 수 있는 박스입니다."
 
-#: blocks/src/block/profile/edit.js:46
+#: blocks/src/block/info-list/edit.js:146 blocks/src/block/new-list/edit.js:67
+#: blocks/src/block/popular-list/edit.js:64
+#, fuzzy
+#| msgid "除外するカテゴリID（カンマ区切りで指定）"
+msgid "表示するカテゴリーをカンマ区切りで指定"
+msgstr "Excluded category IDs (specified by comma)"
+
+#: blocks/src/block/info-list/edit.js:153 lib/admin.php:645
+msgid "カテゴリー検索"
+msgstr "카테고리 검색"
+
+#: blocks/src/block/info-list/edit.js:178 blocks/src/block/new-list/edit.js:97
+#: blocks/src/block/popular-list/edit.js:96
+msgid "基本設定"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:182
+msgid "キャプション(枠線内表示)"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:189
+#: lib/page-settings/single-forms.php:175
+msgid "表示数"
+msgstr "표시 수"
+
+#: blocks/src/block/info-list/edit.js:198
+#: lib/page-settings/single-forms.php:374 lib/widgets/info-list.php:139
+msgid "枠線表示"
+msgstr "테두리 표시"
+
+#: blocks/src/block/info-list/edit.js:205 lib/widgets/info-list.php:145
+msgid "仕切り線表示"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:213 blocks/src/block/new-list/edit.js:219
+#: blocks/src/block/popular-list/edit.js:192
+msgid "フィルタ"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:217 blocks/src/block/new-list/edit.js:223
+#: blocks/src/block/popular-list/edit.js:196
+#, fuzzy
+#| msgid "カテゴリーを表示する"
+msgid "全カテゴリー表示"
+msgstr "카테고리 표시"
+
+#: blocks/src/block/info-list/index.js:29 lib/shortcodes.php:989
+#: lib/widgets/info-list.php:19 lib/widgets/info-list.php:94
+#: lib/widgets/info-list.php:102
+msgid "新着情報"
+msgstr ""
+
+#: blocks/src/block/info-list/index.js:31
+#, fuzzy
+#| msgid "目次を表示しない"
+msgid "新着情報の一覧を表示します。"
+msgstr "목차 숨기기"
+
+#: blocks/src/block/new-list/edit.js:78 lib/page-settings/carousel-forms.php:80
+#: lib/page-settings/editor-forms.php:67 lib/page-settings/single-forms.php:130
+#: lib/page-settings/sns-follow-forms.php:116
+#: lib/page-settings/sns-share-forms-bottom.php:124
+#: lib/page-settings/sns-share-forms-top.php:111 lib/tinymce/html-tags.php:43
+#: lib/widgets/display-widgets.php:173
+msgid "タグ"
+msgstr "태그"
+
+#: blocks/src/block/new-list/edit.js:101
+#: blocks/src/block/popular-list/edit.js:100
+#, fuzzy
+#| msgid "表示するコメント数"
+msgid "表示する記事の数"
+msgstr "표시할 댓글 수"
+
+#: blocks/src/block/new-list/edit.js:110
+#: blocks/src/block/popular-list/edit.js:117
+#: lib/page-settings/single-forms.php:156
+#: lib/page-settings/single-forms.php:320 lib/widgets/navi-entries.php:118
+#: lib/widgets/new-entries.php:168 lib/widgets/popular-entries.php:199
+#: lib/widgets/related-entries.php:187
+msgid "表示タイプ"
+msgstr "표시 유형"
+
+#: blocks/src/block/new-list/edit.js:117
+#: blocks/src/block/popular-list/edit.js:124
+msgid "通常のリスト"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:122
+#: blocks/src/block/popular-list/edit.js:129
+#, fuzzy
+#| msgid "カードの上下に破線の区切り線が表示されます。"
+msgid "カードの上下に区切り線を入れる"
+msgstr "카드의 위아래에 구분선이 표시됩니다."
+
+#: blocks/src/block/new-list/edit.js:129
+#: blocks/src/block/popular-list/edit.js:136
+#, fuzzy
+#| msgid "カードの枠線を表示する"
+msgid "カードに枠線を表示する"
+msgstr "카드 테두리 표시"
+
+#: blocks/src/block/new-list/edit.js:135
+#: blocks/src/block/popular-list/edit.js:142
+#, fuzzy
+#| msgid "大きなサムネイル"
+msgid "大きなサムネイル表示"
+msgstr "큰 썸네일"
+
+#: blocks/src/block/new-list/edit.js:140
+#: blocks/src/block/popular-list/edit.js:147
+#, fuzzy
+#| msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
+msgid "大きなサムネイルにタイトルを重ねる"
+msgstr "큰 썸네일 사진 하단에 제목을 겹칩니다."
+
+#: blocks/src/block/new-list/edit.js:148
+#, fuzzy
+#| msgid "表示"
+msgid "表示順"
+msgstr "표시"
+
+#: blocks/src/block/new-list/edit.js:152
+msgid "更新日順"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:156
+msgid "投稿日順"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:169
+#, fuzzy
+#| msgid "商品並び替え優先度"
+msgid "並び替え"
+msgstr "제품 정렬 우선 순위"
+
+#: blocks/src/block/new-list/edit.js:172
+msgid "昇順"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:173
+msgid "降順"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:180
+msgid "読み飛ばし"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:190
+#: blocks/src/block/popular-list/edit.js:156
+#, fuzzy
+#| msgid "タイトルを太字にする"
+msgid "記事タイトルを太字にする"
+msgstr "타이틀을 굵게"
+
+#: blocks/src/block/new-list/edit.js:197
+#: blocks/src/block/popular-list/edit.js:163
+#, fuzzy
+#| msgid "カードの枠線を表示する"
+msgid "カードに矢印を表示する"
+msgstr "카드 테두리 표시"
+
+#: blocks/src/block/new-list/edit.js:204
+#: blocks/src/block/popular-list/edit.js:170
+msgid "横並び表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:211
+msgid "説明文の表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:232
+#: blocks/src/block/popular-list/edit.js:205
+#, fuzzy
+#| msgid "カテゴリー・タグ表示"
+msgid "子カテゴリーの内容を含めて表示"
+msgstr "카테고리ㆍ태그 표시"
+
+#: blocks/src/block/new-list/edit.js:242
+msgid "全タグ表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:251
+msgid "固定記事の表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:258
+#: blocks/src/block/popular-list/edit.js:222
+#, fuzzy
+#| msgid "投稿タイトル上"
+msgid "投稿タイプ"
+msgstr "글 제목 상단"
+
+#: blocks/src/block/new-list/edit.js:265
+msgid "検索グループ"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:272
+msgid "投稿ユーザ"
+msgstr ""
+
+#: blocks/src/block/new-list/index.js:29 lib/page-settings/image-forms.php:210
+#: lib/widgets/new-entries.php:19 lib/widgets/new-entries.php:60
+#: tmp/list-new-entries.php:16 tmp/list-tab-index.php:23
+msgid "新着記事"
+msgstr "새 글"
+
+#: blocks/src/block/new-list/index.js:31
+#, fuzzy
+#| msgid "目次を表示しない"
+msgid "新着記事の一覧を表示します。"
+msgstr "목차 숨기기"
+
+#: blocks/src/block/popular-list/edit.js:75
+msgid "データの集計期間(日)"
+msgstr ""
+
+#: blocks/src/block/popular-list/edit.js:109
+msgid "全期間集計"
+msgstr ""
+
+#: blocks/src/block/popular-list/edit.js:177
+#, fuzzy
+#| msgid "ランキング表示"
+msgid "ランキング番号表示"
+msgstr "랭킹 표시"
+
+#: blocks/src/block/popular-list/edit.js:184
+msgid "PV数表示"
+msgstr ""
+
+#: blocks/src/block/popular-list/edit.js:214
+#, fuzzy
+#| msgid "除外カテゴリー"
+msgid "除外カテゴリ"
+msgstr "제외 카테고리"
+
+#: blocks/src/block/popular-list/edit.js:229
+msgid "除外投稿(ID)"
+msgstr ""
+
+#: blocks/src/block/popular-list/index.js:31
+#, fuzzy
+#| msgid "目次を表示しない"
+msgid "人気記事の一覧を表示します。"
+msgstr "목차 숨기기"
+
+#: blocks/src/block/profile/edit.js:56
 #, fuzzy
 #| msgid "お探しのページは見つかりませんでした。"
 msgid "選択できるユーザーがありません。"
 msgstr "찾으려는 페이지를 찾을 수 없습니다."
 
-#: blocks/src/block/profile/edit.js:49
+#: blocks/src/block/profile/edit.js:58
 #, fuzzy
 #| msgid "ランキングを選択してください。"
 msgid "ユーザーを選択してください。"
 msgstr "랭킹을 선택해 주세요."
 
-#: blocks/src/block/profile/edit.js:95
+#: blocks/src/block/profile/edit.js:100 lib/widgets/author-box.php:86
+msgid "画像を円形にする"
+msgstr "사진을 둥글게"
+
+#: blocks/src/block/profile/edit.js:110
 #, fuzzy
 #| msgid "ユーザー数："
 msgid "ユーザー"
@@ -1150,7 +1414,7 @@ msgstr "랭킹을 선택해 주세요."
 
 #: blocks/src/block/template/edit.js:102 blocks/src/block/template/index.js:22
 #: blocks/src/toolbutton/dropdown-templates.js:48
-#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:459
+#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:464
 #: lib/original-menu.php:30 lib/tinymce/function-texts.php:49
 msgid "テンプレート"
 msgstr "템플릿"
@@ -1226,7 +1490,7 @@ msgstr "언어"
 msgid "言語選択"
 msgstr "언어 선택"
 
-#: blocks/src/demo/blank-box-demo/block.js:15 blocks/src/helpers.js:58
+#: blocks/src/demo/blank-box-demo/block.js:15 blocks/src/helpers.js:36
 #: blocks/src/old/blank-box/block.js:17 blocks/src/old/tab-box/block.js:15
 msgid "こちらをクリックして設定変更。この入力は公開ページで反映されません。"
 msgstr ""
@@ -1240,383 +1504,383 @@ msgstr "서버 동작 미리보기 박스"
 msgid "ドロップダウンデモ"
 msgstr "드롭다운 미리보기"
 
-#: blocks/src/helpers.js:281
+#: blocks/src/helpers.js:259
 msgid "fab-info-circle"
 msgstr "fab-info-circle"
 
-#: blocks/src/helpers.js:285
+#: blocks/src/helpers.js:263
 msgid "fab-question-circle"
 msgstr "fab-question-circle"
 
-#: blocks/src/helpers.js:289
+#: blocks/src/helpers.js:267
 msgid "fab-exclamation-circle"
 msgstr "fab-exclamation-circle"
 
-#: blocks/src/helpers.js:293
+#: blocks/src/helpers.js:271
 msgid "fab-pencil"
 msgstr "fab-pencil"
 
-#: blocks/src/helpers.js:297
+#: blocks/src/helpers.js:275
 msgid "fab-edit"
 msgstr "fab-edit"
 
-#: blocks/src/helpers.js:301
+#: blocks/src/helpers.js:279
 msgid "fab-comment"
 msgstr "fab-comment"
 
-#: blocks/src/helpers.js:305
+#: blocks/src/helpers.js:283
 msgid "fab-ok"
 msgstr "fab-ok"
 
-#: blocks/src/helpers.js:309
+#: blocks/src/helpers.js:287
 msgid "fab-bad"
 msgstr "fab-bad"
 
-#: blocks/src/helpers.js:313
+#: blocks/src/helpers.js:291
 msgid "fab-thumbs-up"
 msgstr "fab-thumbs-up"
 
-#: blocks/src/helpers.js:317
+#: blocks/src/helpers.js:295
 msgid "fab-thumbs-down"
 msgstr "fab-thumbs-down"
 
-#: blocks/src/helpers.js:321 blocks/src/helpers.js:505
+#: blocks/src/helpers.js:299 blocks/src/helpers.js:483
 msgid "fab-check"
 msgstr "fab-check"
 
-#: blocks/src/helpers.js:325 blocks/src/helpers.js:569
+#: blocks/src/helpers.js:303 blocks/src/helpers.js:547
 msgid "fab-star"
 msgstr "fab-star"
 
-#: blocks/src/helpers.js:329
+#: blocks/src/helpers.js:307
 msgid "fab-bell"
 msgstr "fab-bell"
 
-#: blocks/src/helpers.js:333
+#: blocks/src/helpers.js:311
 msgid "fab-trophy"
 msgstr "fab-trophy"
 
-#: blocks/src/helpers.js:337
+#: blocks/src/helpers.js:315
 msgid "fab-lightbulb"
 msgstr "fab-lightbulb"
 
-#: blocks/src/helpers.js:341
+#: blocks/src/helpers.js:319
 msgid "fab-graduation-cap"
 msgstr "fab-graduation-cap"
 
-#: blocks/src/helpers.js:345
+#: blocks/src/helpers.js:323
 msgid "fab-bolt"
 msgstr "fab-bolt"
 
-#: blocks/src/helpers.js:349
+#: blocks/src/helpers.js:327
 msgid "fab-bookmark"
 msgstr "fab-bookmark"
 
-#: blocks/src/helpers.js:353
+#: blocks/src/helpers.js:331
 msgid "fab-book"
 msgstr "fab-book"
 
-#: blocks/src/helpers.js:357
+#: blocks/src/helpers.js:335
 msgid "fab-download"
 msgstr "fab-download"
 
-#: blocks/src/helpers.js:361
+#: blocks/src/helpers.js:339
 msgid "fab-coffee"
 msgstr "fab-coffee"
 
-#: blocks/src/helpers.js:365
+#: blocks/src/helpers.js:343
 msgid "fab-amazon"
 msgstr "fab-amazon"
 
-#: blocks/src/helpers.js:369
+#: blocks/src/helpers.js:347
 msgid "fab-user"
 msgstr "fab-user"
 
-#: blocks/src/helpers.js:373
+#: blocks/src/helpers.js:351
 msgid "fab-envelope"
 msgstr "fab-envelope"
 
-#: blocks/src/helpers.js:377
+#: blocks/src/helpers.js:355
 msgid "fab-flag"
 msgstr "fab-flag"
 
-#: blocks/src/helpers.js:381
+#: blocks/src/helpers.js:359
 msgid "fab-ban"
 msgstr "fab-ban"
 
-#: blocks/src/helpers.js:385
+#: blocks/src/helpers.js:363
 msgid "fab-calendar"
 msgstr "fab-calendar"
 
-#: blocks/src/helpers.js:389
+#: blocks/src/helpers.js:367
 msgid "fab-clock"
 msgstr "fab-clock"
 
-#: blocks/src/helpers.js:393
+#: blocks/src/helpers.js:371
 msgid "fab-cutlery"
 msgstr "fab-cutlery"
 
-#: blocks/src/helpers.js:397 blocks/src/helpers.js:577
+#: blocks/src/helpers.js:375 blocks/src/helpers.js:555
 msgid "fab-heart"
 msgstr "fab-heart"
 
-#: blocks/src/helpers.js:401
+#: blocks/src/helpers.js:379
 msgid "fab-camera"
 msgstr "fab-camera"
 
-#: blocks/src/helpers.js:405
+#: blocks/src/helpers.js:383
 msgid "fab-search"
 msgstr "fab-search"
 
-#: blocks/src/helpers.js:409
+#: blocks/src/helpers.js:387
 msgid "fab-file-text"
 msgstr "fab-file-text"
 
-#: blocks/src/helpers.js:413
+#: blocks/src/helpers.js:391
 msgid "fab-folder"
 msgstr "fab-folder"
 
-#: blocks/src/helpers.js:417
+#: blocks/src/helpers.js:395
 msgid "fab-tag"
 msgstr "fab-tag"
 
-#: blocks/src/helpers.js:421
+#: blocks/src/helpers.js:399
 msgid "fab-car"
 msgstr "fab-car"
 
-#: blocks/src/helpers.js:425
+#: blocks/src/helpers.js:403
 msgid "fab-truck"
 msgstr "fab-truck"
 
-#: blocks/src/helpers.js:429
+#: blocks/src/helpers.js:407
 msgid "fab-bicycle"
 msgstr "fab-bicycle"
 
-#: blocks/src/helpers.js:433
+#: blocks/src/helpers.js:411
 msgid "fab-motorcycle"
 msgstr "fab-motorcycle"
 
-#: blocks/src/helpers.js:437
+#: blocks/src/helpers.js:415
 msgid "fab-bus"
 msgstr "fab-bus"
 
-#: blocks/src/helpers.js:441
+#: blocks/src/helpers.js:419
 msgid "fab-plane"
 msgstr "fab-plane"
 
-#: blocks/src/helpers.js:445
+#: blocks/src/helpers.js:423
 msgid "fab-train"
 msgstr "fab-train"
 
-#: blocks/src/helpers.js:449
+#: blocks/src/helpers.js:427
 msgid "fab-subway"
 msgstr "fab-subway"
 
-#: blocks/src/helpers.js:453
+#: blocks/src/helpers.js:431
 msgid "fab-taxi"
 msgstr "fab-taxi"
 
-#: blocks/src/helpers.js:457
+#: blocks/src/helpers.js:435
 msgid "fab-ship"
 msgstr "fab-ship"
 
-#: blocks/src/helpers.js:461
+#: blocks/src/helpers.js:439
 msgid "fab-jpy"
 msgstr "fab-jpy"
 
-#: blocks/src/helpers.js:465
+#: blocks/src/helpers.js:443
 msgid "fab-usd"
 msgstr "fab-usd"
 
-#: blocks/src/helpers.js:469
+#: blocks/src/helpers.js:447
 msgid "fab-eur"
 msgstr "fab-eur"
 
-#: blocks/src/helpers.js:473
+#: blocks/src/helpers.js:451
 msgid "fab-btc"
 msgstr "fab-btc"
 
-#: blocks/src/helpers.js:477
+#: blocks/src/helpers.js:455
 msgid "fab-apple"
 msgstr "fab-apple"
 
-#: blocks/src/helpers.js:481
+#: blocks/src/helpers.js:459
 msgid "fab-android"
 msgstr "fab-android"
 
-#: blocks/src/helpers.js:485
+#: blocks/src/helpers.js:463
 msgid "fab-wordpress"
 msgstr "fab-wordpress"
 
-#: blocks/src/helpers.js:501
+#: blocks/src/helpers.js:479
 msgid "fab-caret-right"
 msgstr "fab-caret-right"
 
-#: blocks/src/helpers.js:509
+#: blocks/src/helpers.js:487
 msgid "fab-check-circle"
 msgstr "fab-check-circle"
 
-#: blocks/src/helpers.js:513
+#: blocks/src/helpers.js:491
 msgid "fab-check-circle-o"
 msgstr "fab-check-circle-o"
 
-#: blocks/src/helpers.js:517
+#: blocks/src/helpers.js:495
 msgid "fab-check-square"
 msgstr "fab-check-square"
 
-#: blocks/src/helpers.js:521
+#: blocks/src/helpers.js:499
 msgid "fab-check-square-o"
 msgstr "fab-check-square-o"
 
-#: blocks/src/helpers.js:525
+#: blocks/src/helpers.js:503
 msgid "fab-caret-square-o-right"
 msgstr "fab-caret-square-o-right"
 
-#: blocks/src/helpers.js:529
+#: blocks/src/helpers.js:507
 msgid "fab-arrow-right"
 msgstr "fab-arrow-right"
 
-#: blocks/src/helpers.js:533
+#: blocks/src/helpers.js:511
 msgid "fab-angle-right"
 msgstr "fab-angle-right"
 
-#: blocks/src/helpers.js:537
+#: blocks/src/helpers.js:515
 msgid "fab-angle-double-right"
 msgstr "fab-angle-double-right"
 
-#: blocks/src/helpers.js:541
+#: blocks/src/helpers.js:519
 msgid "fab-arrow-circle-right"
 msgstr "fab-arrow-circle-right"
 
-#: blocks/src/helpers.js:545
+#: blocks/src/helpers.js:523
 msgid "fab-arrow-circle-o-right"
 msgstr "fab-arrow-circle-o-right"
 
-#: blocks/src/helpers.js:549
+#: blocks/src/helpers.js:527
 msgid "fab-play-circle"
 msgstr "fab-play-circle"
 
-#: blocks/src/helpers.js:553
+#: blocks/src/helpers.js:531
 msgid "fab-play-circle-o"
 msgstr "fab-play-circle-o"
 
-#: blocks/src/helpers.js:557
+#: blocks/src/helpers.js:535
 msgid "fab-chevron-right"
 msgstr "fab-chevron-right"
 
-#: blocks/src/helpers.js:561
+#: blocks/src/helpers.js:539
 msgid "fab-chevron-circle-right"
 msgstr "fab-chevron-circle-right"
 
-#: blocks/src/helpers.js:565
+#: blocks/src/helpers.js:543
 msgid "fab-hand-o-right"
 msgstr "fab-hand-o-right"
 
-#: blocks/src/helpers.js:573
+#: blocks/src/helpers.js:551
 msgid "fab-star-o"
 msgstr "fab-star-o"
 
-#: blocks/src/helpers.js:581
+#: blocks/src/helpers.js:559
 msgid "fab-heart-o"
 msgstr "fab-heart-o"
 
-#: blocks/src/helpers.js:585
+#: blocks/src/helpers.js:563
 msgid "fab-square"
 msgstr "fab-square"
 
-#: blocks/src/helpers.js:589
+#: blocks/src/helpers.js:567
 msgid "fab-square-o"
 msgstr "fab-square-o"
 
-#: blocks/src/helpers.js:593
+#: blocks/src/helpers.js:571
 msgid "fab-circle"
 msgstr "fab-circle"
 
-#: blocks/src/helpers.js:597
+#: blocks/src/helpers.js:575
 msgid "fab-circle-o"
 msgstr "fab-circle-o"
 
-#: blocks/src/helpers.js:601
+#: blocks/src/helpers.js:579
 msgid "fab-dot-circle-o"
 msgstr "fab-dot-circle-o"
 
-#: blocks/src/helpers.js:605
+#: blocks/src/helpers.js:583
 msgid "fab-plus"
 msgstr "fab-plus"
 
-#: blocks/src/helpers.js:609
+#: blocks/src/helpers.js:587
 msgid "fab-plus-circle"
 msgstr "fab-plus-circle"
 
-#: blocks/src/helpers.js:613
+#: blocks/src/helpers.js:591
 msgid "fab-plus-square"
 msgstr "fab-plus-square"
 
-#: blocks/src/helpers.js:617
+#: blocks/src/helpers.js:595
 msgid "fab-plus-square-o"
 msgstr "fab-plus-square-o"
 
-#: blocks/src/helpers.js:621
+#: blocks/src/helpers.js:599
 msgid "fab-minus"
 msgstr "fab-minus"
 
-#: blocks/src/helpers.js:625
+#: blocks/src/helpers.js:603
 msgid "fab-minus-circle"
 msgstr "fab-minus-circle"
 
-#: blocks/src/helpers.js:629
+#: blocks/src/helpers.js:607
 msgid "fab-minus-square"
 msgstr "fab-minus-square"
 
-#: blocks/src/helpers.js:633
+#: blocks/src/helpers.js:611
 msgid "fab-minus-square-o"
 msgstr "fab-minus-square-o"
 
-#: blocks/src/helpers.js:637
+#: blocks/src/helpers.js:615
 msgid "fab-times"
 msgstr "fab-times"
 
-#: blocks/src/helpers.js:641
+#: blocks/src/helpers.js:619
 msgid "fab-times-circle"
 msgstr "fab-times-circle"
 
-#: blocks/src/helpers.js:645
+#: blocks/src/helpers.js:623
 msgid "fab-times-circle-o"
 msgstr "fab-times-circle-o"
 
-#: blocks/src/helpers.js:649
+#: blocks/src/helpers.js:627
 msgid "fab-window-close"
 msgstr "fab-window-close"
 
-#: blocks/src/helpers.js:653
+#: blocks/src/helpers.js:631
 msgid "fab-window-close-o"
 msgstr "fab-window-close-o"
 
-#: blocks/src/helpers.js:657
+#: blocks/src/helpers.js:635
 msgid "fab-paw"
 msgstr "fab-paw"
 
-#: blocks/src/init.php:226
+#: blocks/src/init.php:280
 msgid "Cocoonブロック"
 msgstr "Cocoon 블록"
 
-#: blocks/src/init.php:231
+#: blocks/src/init.php:285
 msgid "Cocoon汎用ブロック"
 msgstr "Cocoon 범용 블록"
 
-#: blocks/src/init.php:236
+#: blocks/src/init.php:290
 msgid "Cocoonマイクロコピー"
 msgstr "Cocoon 마이크로 카피"
 
-#: blocks/src/init.php:241
+#: blocks/src/init.php:295
 msgid "Cocoonレイアウト"
 msgstr "Cocoon 레이아웃"
 
-#: blocks/src/init.php:246
+#: blocks/src/init.php:300
 msgid "Cocoonショートコード"
 msgstr "Cocoon 숏 코드"
 
-#: blocks/src/init.php:251
+#: blocks/src/init.php:305
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon 이전 블록 에디터 (비추천)"
 
@@ -1946,7 +2210,7 @@ msgid "アフィリエイトタグタグ"
 msgstr "제휴 태그"
 
 #: blocks/src/shortcode/affi/block.js:19
-#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:466
+#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:471
 #: lib/original-menu.php:33 lib/tinymce/affiliate-tags.php:48
 msgid "アフィリエイトタグ"
 msgstr "제휴 태그"
@@ -2096,7 +2360,7 @@ msgstr "별점"
 msgid "ログインコンテンツ"
 msgstr "로그인 콘텐츠"
 
-#: blocks/src/toolbutton/dropdown-shortcodes.js:170 lib/shortcodes.php:252
+#: blocks/src/toolbutton/dropdown-shortcodes.js:170 lib/shortcodes.php:268
 #: lib/tinymce/shortcodes.php:232
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
 msgstr "이 콘텐츠는 로그인한 사용자에게만 표시됩니다."
@@ -2196,15 +2460,15 @@ msgstr "이메일은 공개되지 않습니다."
 msgid "コメントを書き込む"
 msgstr "댓글 작성"
 
-#: functions.php:120
+#: functions.php:149
 msgid "キーワード指定なし"
 msgstr "키워드가 지정되지 않음"
 
-#: functions.php:351
+#: functions.php:380
 msgid "角型ラベル"
 msgstr "사각형 라벨"
 
-#: functions.php:355
+#: functions.php:384
 msgid "アコーディオン"
 msgstr "아코디언 박스"
 
@@ -2596,119 +2860,115 @@ msgstr "블로그 카드 레이블 포장"
 msgid "商品リンクの追加"
 msgstr "상품 링크 추가"
 
-#: lib/admin.php:172
+#: lib/admin.php:177
 msgid "ID"
 msgstr "ID"
 
-#: lib/admin.php:177 lib/custom-fields/seo-field.php:61
+#: lib/admin.php:182 lib/custom-fields/seo-field.php:61
 #: lib/custom-fields/seo-field.php:83 lib/custom-fields/seo-field.php:93
 msgid "文字数"
 msgstr "글자 수"
 
-#: lib/admin.php:182
+#: lib/admin.php:187
 msgid "PV"
 msgstr "PV"
 
-#: lib/admin.php:187 lib/content-category.php:264 lib/content-tag.php:213
+#: lib/admin.php:192 lib/content-category.php:264 lib/content-tag.php:213
 msgid "アイキャッチ"
 msgstr "아이캐치"
 
-#: lib/admin.php:225
+#: lib/admin.php:230
 msgid "　題："
 msgstr "제목: "
 
-#: lib/admin.php:233
+#: lib/admin.php:238
 msgid "本文："
 msgstr "본문: "
 
-#: lib/admin.php:255
+#: lib/admin.php:260
 msgid "日："
 msgstr "일: "
 
-#: lib/admin.php:263
+#: lib/admin.php:268
 msgid "週："
 msgstr "주: "
 
-#: lib/admin.php:271
+#: lib/admin.php:276
 msgid "月："
 msgstr "월: "
 
-#: lib/admin.php:279
+#: lib/admin.php:284
 msgid "全："
 msgstr "전체: "
 
-#: lib/admin.php:362
+#: lib/admin.php:367
 msgid "管理メニュー"
 msgstr "관리 메뉴"
 
-#: lib/admin.php:374 tmp/admin-panel.php:31
+#: lib/admin.php:379 tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr "대시보드"
 
-#: lib/admin.php:381 lib/shortcodes.php:447
+#: lib/admin.php:386 lib/shortcodes.php:463
 msgid "投稿一覧"
 msgstr "글 목록"
 
-#: lib/admin.php:388
+#: lib/admin.php:393
 msgid "固定ページ一覧"
 msgstr "페이지 목록"
 
-#: lib/admin.php:395
+#: lib/admin.php:400
 msgid "メディア一覧"
 msgstr "미디어 목록"
 
-#: lib/admin.php:402
+#: lib/admin.php:407
 msgid "テーマ"
 msgstr "테마"
 
-#: lib/admin.php:409
+#: lib/admin.php:414
 msgid "カスタマイズ"
 msgstr "커스터마이즈"
 
-#: lib/admin.php:416 lib/page-settings/_top-page.php:191
+#: lib/admin.php:421 lib/page-settings/_top-page.php:191
 msgid "ウィジェット"
 msgstr "위젯"
 
-#: lib/admin.php:423 tmp/mobile-navi-button.php:21
+#: lib/admin.php:428 tmp/mobile-navi-button.php:21
 msgid "メニュー"
 msgstr "메뉴"
 
-#: lib/admin.php:430
+#: lib/admin.php:435
 msgid "テーマの編集"
 msgstr "테마 편집"
 
-#: lib/admin.php:437
+#: lib/admin.php:442
 msgid "プラグイン一覧"
 msgstr "플러그인"
 
-#: lib/admin.php:473 lib/original-menu.php:36
+#: lib/admin.php:478 lib/original-menu.php:36
 msgid "ランキング作成"
 msgstr "랭킹 생성"
 
-#: lib/admin.php:480 lib/original-menu.php:39 lib/page-access/_top-page.php:39
+#: lib/admin.php:485 lib/original-menu.php:39 lib/page-access/_top-page.php:39
 #: lib/page-access/access-forms.php:14 lib/page-access/access-forms.php:26
 msgid "アクセス集計"
 msgstr "접속 집계"
 
-#: lib/admin.php:487 lib/original-menu.php:42
+#: lib/admin.php:492 lib/original-menu.php:42
 msgid "高速化"
 msgstr "고속화"
 
-#: lib/admin.php:494 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
+#: lib/admin.php:499 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
 #: lib/page-backup/backup-forms.php:24
 msgid "バックアップ"
 msgstr "백업"
 
-#: lib/admin.php:501 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
+#: lib/admin.php:506 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
 #: lib/page-cache/cache-forms.php:14 lib/shortcodes-product-func.php:350
 msgid "キャッシュ削除"
 msgstr "캐시 삭제"
 
-#: lib/admin.php:640
-msgid "カテゴリー検索"
-msgstr "카테고리 검색"
-
-#: lib/admin.php:700 lib/admin.php:714
+#: lib/admin.php:705 lib/admin.php:719
 msgid "Excerpt"
 msgstr "Excerpt"
 
@@ -3365,8 +3625,8 @@ msgstr ""
 "용하는 기술입니다. 컨텐츠가 중복되는 경우는 대표 페이지의 URL 를 입력해 주세"
 "요."
 
-#: lib/custom-fields/seo-field.php:117 lib/html-forms.php:477
-#: lib/html-forms.php:543
+#: lib/custom-fields/seo-field.php:117 lib/html-forms.php:482
+#: lib/html-forms.php:548
 msgid "詳細設定"
 msgstr "고급 설정"
 
@@ -3630,95 +3890,95 @@ msgstr "VBScript"
 msgid "XML"
 msgstr "XML"
 
-#: lib/html-forms.php:256
+#: lib/html-forms.php:261
 msgid "解説ページ"
 msgstr "설명 페이지"
 
-#: lib/html-forms.php:347
+#: lib/html-forms.php:352
 msgid "タイトル検索"
 msgstr "제목 검색"
 
-#: lib/html-forms.php:351
+#: lib/html-forms.php:356
 msgid "タイトル昇順"
 msgstr "제목 (오름차순)"
 
-#: lib/html-forms.php:352
+#: lib/html-forms.php:357
 msgid "タイトル降順"
 msgstr "제목 (내림차순)"
 
-#: lib/html-forms.php:353
+#: lib/html-forms.php:358
 msgid "作成日昇順"
 msgstr "작성일 (오름차순)"
 
-#: lib/html-forms.php:354
+#: lib/html-forms.php:359
 msgid "作成日降順"
 msgstr "작성일 (내림차순)"
 
-#: lib/html-forms.php:355
+#: lib/html-forms.php:360
 msgid "編集日昇順"
 msgstr "수정일 (오름차순)"
 
-#: lib/html-forms.php:356
+#: lib/html-forms.php:361
 msgid "編集日降順"
 msgstr "수정일 (내림차순)"
 
-#: lib/html-forms.php:360
+#: lib/html-forms.php:365
 msgid "抽出"
 msgstr "적용"
 
-#: lib/html-forms.php:483 lib/html-forms.php:549
+#: lib/html-forms.php:488 lib/html-forms.php:554
 msgid "フォーマット（広告ユニット）"
 msgstr "종류 (광고 단위)"
 
-#: lib/html-forms.php:487 lib/html-forms.php:552
+#: lib/html-forms.php:492 lib/html-forms.php:557
 msgid "広告ラベルを表示"
 msgstr "광고 라벨 표시"
 
-#: lib/html-forms.php:494
+#: lib/html-forms.php:499
 msgid "広告の表示数を制御する"
 msgstr "광고 표시 수 설정"
 
-#: lib/html-forms.php:496
+#: lib/html-forms.php:501
 msgid "先頭から"
 msgstr "처음부터"
 
-#: lib/html-forms.php:498
+#: lib/html-forms.php:503
 msgid "個まで"
 msgstr "개 까지"
 
-#: lib/html-forms.php:500
+#: lib/html-forms.php:505
 msgid "※-1で全てのH2見出し手前に広告を挿入"
 msgstr "※-1은 모든 H2 헤딩 바로 앞에 광고를 삽입합니다"
 
-#: lib/html-forms.php:530
+#: lib/html-forms.php:535
 msgid "入力済"
 msgstr "입력됨"
 
-#: lib/html-forms.php:571
+#: lib/html-forms.php:576
 msgid "選択"
 msgstr "선택"
 
-#: lib/html-forms.php:572
+#: lib/html-forms.php:577
 msgid "クリア"
 msgstr "초기화"
 
-#: lib/html-forms.php:579
+#: lib/html-forms.php:584
 msgid "大きな画像は縮小して表示されます。"
 msgstr "큰 이미지는 축소되어 표시됩니다."
 
-#: lib/html-forms.php:600
+#: lib/html-forms.php:605
 msgid "画像を選択してください。"
 msgstr "사진을 선택해 주세요."
 
-#: lib/html-forms.php:608
+#: lib/html-forms.php:613
 msgid "画像の選択"
 msgstr "사진 신택"
 
-#: lib/html-forms.php:773
+#: lib/html-forms.php:772
 msgid "トップページのみ"
 msgstr "탑 페이지만"
 
-#: lib/html-forms.php:778 lib/page-settings/_top-page.php:170
+#: lib/html-forms.php:777 lib/page-settings/_top-page.php:170
 #: lib/page-settings/sns-follow-forms.php:107
 #: lib/page-settings/sns-share-forms-bottom.php:115
 #: lib/page-settings/sns-share-forms-top.php:102
@@ -3726,150 +3986,150 @@ msgstr "탑 페이지만"
 msgid "投稿"
 msgstr "글"
 
-#: lib/html-forms.php:783 lib/page-settings/_top-page.php:171
+#: lib/html-forms.php:782 lib/page-settings/_top-page.php:171
 #: lib/page-settings/sns-follow-forms.php:110
 #: lib/page-settings/sns-share-forms-bottom.php:118
 #: lib/page-settings/sns-share-forms-top.php:105
-#: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:441
+#: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:457
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
 msgstr "페이지"
 
-#: lib/html-forms.php:788
+#: lib/html-forms.php:787
 msgid "カテゴリー一覧"
 msgstr "카테고리 목록"
 
-#: lib/html-forms.php:793
+#: lib/html-forms.php:792
 msgid "タグ一覧"
 msgstr "태그 목록"
 
-#: lib/html-forms.php:798
+#: lib/html-forms.php:797
 msgid "著者一覧"
 msgstr "작성자 목록"
 
-#: lib/html-forms.php:803
+#: lib/html-forms.php:802
 msgid "アーカイブ一覧"
 msgstr "아카이브 목록"
 
-#: lib/html-forms.php:808
+#: lib/html-forms.php:807
 msgid "検索結果一覧"
 msgstr "검색 결과 목록"
 
-#: lib/html-forms.php:813 lib/page-settings/_top-page.php:187
+#: lib/html-forms.php:812 lib/page-settings/_top-page.php:187
 #: lib/widget-areas.php:516
 msgid "404ページ"
 msgstr "404 페이지"
 
-#: lib/html-forms.php:818
+#: lib/html-forms.php:817
 msgid "AMPページ"
 msgstr "AMP 페이지"
 
-#: lib/html-forms.php:824
+#: lib/html-forms.php:823
 msgid "wpForoページ"
 msgstr "wpForo 페이지"
 
-#: lib/html-forms.php:831
+#: lib/html-forms.php:830
 msgid "bbPressページ"
 msgstr "bbPress 페이지"
 
-#: lib/html-forms.php:838
+#: lib/html-forms.php:837
 msgid "BuddyPressページ"
 msgstr "BuddyPress 페이지"
 
-#: lib/html-forms.php:845
+#: lib/html-forms.php:844
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr "플러그인 포럼 페이지(bbPress, BuddyPress, wpForo)"
 
-#: lib/html-forms.php:891
+#: lib/html-forms.php:890
 msgid "投稿ID入力"
 msgstr "글 ID 입력"
 
-#: lib/html-forms.php:892 lib/html-forms.php:912 lib/html-forms.php:932
+#: lib/html-forms.php:891 lib/html-forms.php:911 lib/html-forms.php:931
 msgid "例：111,222,333"
 msgstr "예시: 111,222,333"
 
-#: lib/html-forms.php:893
+#: lib/html-forms.php:892
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "쉼표로 구분된 글 ID를 입력해 주세요."
 
-#: lib/html-forms.php:911
+#: lib/html-forms.php:910
 msgid "固定ページID入力"
 msgstr "페이지 ID 입력"
 
-#: lib/html-forms.php:913
+#: lib/html-forms.php:912
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "쉼표로 구분된 페이지 ID를 입력해 주세요."
 
-#: lib/html-forms.php:931
+#: lib/html-forms.php:930
 msgid "タグID入力"
 msgstr "태그 ID 입력"
 
-#: lib/html-forms.php:933
+#: lib/html-forms.php:932
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr "쉼표로 구분된 태그 ID를 입력해 주세요."
 
-#: lib/html-forms.php:1090
+#: lib/html-forms.php:1089
 msgid "人気記事は見つかりませんでした。"
 msgstr "인기글을 찾을 수 없습니다."
 
-#: lib/html-forms.php:1300
+#: lib/html-forms.php:1299 lib/html-forms.php:1766
 msgid "記事は見つかりませんでした。"
 msgstr "글을 찾을 수 없습니다."
 
-#: lib/html-forms.php:1427
+#: lib/html-forms.php:1426
 #, php-format
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1445
+#: lib/html-forms.php:1444
 msgid "未登録のユーザーさん"
 msgstr "미가입 사용자"
 
-#: lib/html-forms.php:1455
+#: lib/html-forms.php:1454
 msgid "未登録のユーザーさんです。"
 msgstr "가입하지 않은 사용자입니다."
 
-#: lib/html-forms.php:1457
+#: lib/html-forms.php:1456
 msgid "ログイン・登録はこちら→"
 msgstr "로그인ㆍ가입하려면 여기를 클릭 →"
 
-#: lib/html-forms.php:1459
+#: lib/html-forms.php:1458
 msgid "ログインページ"
 msgstr "로그인 페이지"
 
-#: lib/html-forms.php:1464
+#: lib/html-forms.php:1463
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "프로필 설정 화면에서 프로필 내용을 변경할 수 있습니다 →"
 
-#: lib/html-forms.php:1464
+#: lib/html-forms.php:1463
 msgid "プロフィール設定画面"
 msgstr "프로필 설정 화면"
 
-#: lib/html-forms.php:1464
+#: lib/html-forms.php:1463
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "※이 메시지는 로그인 사용자에게만 표시됩니다."
 
-#: lib/html-forms.php:1494
+#: lib/html-forms.php:1493
 msgid "管理者用エラーメッセージ"
 msgstr "관리자용 오류 메시지"
 
-#: lib/html-forms.php:1700
+#: lib/html-forms.php:1699
 msgid "おすすめ"
 msgstr "추천"
 
-#: lib/html-forms.php:1703
+#: lib/html-forms.php:1702
 msgid "新着"
 msgstr "새글"
 
-#: lib/html-forms.php:1706
+#: lib/html-forms.php:1705
 msgid "注目"
 msgstr "주목"
 
-#: lib/html-forms.php:1709
+#: lib/html-forms.php:1708
 msgid "必見"
 msgstr "필독"
 
-#: lib/html-forms.php:1712
+#: lib/html-forms.php:1711
 msgid "お得"
 msgstr "이득"
 
@@ -4749,7 +5009,6 @@ msgstr "본문"
 
 #: lib/page-settings/_top-page.php:173 lib/page-settings/toc-forms.php:80
 #: lib/page-settings/toc-funcs.php:54 lib/widgets/toc.php:19
-#: lib/widgets/toc.php:43
 msgid "目次"
 msgstr "목차"
 
@@ -5639,17 +5898,23 @@ msgstr ""
 "게 확인해 주세요."
 
 #: lib/page-settings/ads-forms.php:238
-msgid "[ad]ショートコード"
-msgstr "[ad] 숏 코드"
+msgid "挿入型広告"
+msgstr ""
 
 #: lib/page-settings/ads-forms.php:242
-msgid "[ad]ショートコードを有効にする"
+#, fuzzy
+#| msgid "[ad]ショートコードを有効にする"
+msgid "[ad]ショートコード・広告ブロックを有効にする"
 msgstr "[ad] 숏 코드 활성화"
 
 #: lib/page-settings/ads-forms.php:246
+#, fuzzy
+#| msgid ""
+#| "本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表"
+#| "示します。"
 msgid ""
-"本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示"
-"します。"
+"本文内に[ad]と入力したり「広告ブロック」を挿入した場合、その部分に「広告コー"
+"ド」に設定してある広告を表示します。"
 msgstr ""
 "본문 내에 [ad]라고 입력시 그 부분에 「광고 코드」에 설정되어 있는 광고를 표시"
 "합니다."
@@ -6337,11 +6602,16 @@ msgstr ""
 "그 관리자가 우선됩니다. SmartNews 피드 추적 ID로도 사용됩니다."
 
 #: lib/page-settings/analytics-forms.php:101
+#, fuzzy
+#| msgid "内容が入力されていません。"
+msgid "GA4はAMP対応していません。"
+msgstr "내용이 입력되지 않았습니다."
+
+#: lib/page-settings/analytics-forms.php:101
 msgid ""
-"GA4はAMP対応していません。よってAMPページでは計測できないのでご了承ください。"
+"よってGoogle非推奨の方法でAMPページの計測を行なっておりますが動作を保証するも"
+"のではありません。。"
 msgstr ""
-"GA4는 AMP 대응하고 있지 않습니다. 따라서 AMP 페이지에서는 측정할 수 없으므로 "
-"양해 바랍니다."
 
 #: lib/page-settings/analytics-forms.php:109
 #, fuzzy
@@ -7374,24 +7644,24 @@ msgstr "스마트폰에서 표시 (480px 이하)"
 msgid "表示内容"
 msgstr "표시 내용"
 
-#: lib/page-settings/carousel-forms.php:65 lib/widgets/popular-entries.php:216
+#: lib/page-settings/carousel-forms.php:65 lib/widgets/popular-entries.php:211
 msgid "本日"
 msgstr "오늘"
 
-#: lib/page-settings/carousel-forms.php:66 lib/widgets/popular-entries.php:217
+#: lib/page-settings/carousel-forms.php:66 lib/widgets/popular-entries.php:212
 msgid "7日間"
 msgstr "7 일간"
 
-#: lib/page-settings/carousel-forms.php:67 lib/widgets/popular-entries.php:218
+#: lib/page-settings/carousel-forms.php:67 lib/widgets/popular-entries.php:213
 msgid "30日間"
 msgstr "30 일간"
 
-#: lib/page-settings/carousel-forms.php:68 lib/widgets/popular-entries.php:219
+#: lib/page-settings/carousel-forms.php:68 lib/widgets/popular-entries.php:214
 msgid "1年間"
 msgstr "1 년간"
 
 #: lib/page-settings/carousel-forms.php:69
-#: lib/page-settings/single-forms.php:193 lib/widgets/popular-entries.php:220
+#: lib/page-settings/single-forms.php:193 lib/widgets/popular-entries.php:215
 msgid "全期間"
 msgstr "전기간"
 
@@ -7404,19 +7674,10 @@ msgstr "으로 집계한 인기글을 포함"
 #: lib/page-settings/single-forms.php:356
 #: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:121
-#: lib/page-settings/sns-share-forms-top.php:108 lib/shortcodes.php:453
+#: lib/page-settings/sns-share-forms-top.php:108 lib/shortcodes.php:469
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
 msgstr "카테고리"
-
-#: lib/page-settings/carousel-forms.php:80
-#: lib/page-settings/editor-forms.php:67 lib/page-settings/single-forms.php:130
-#: lib/page-settings/sns-follow-forms.php:116
-#: lib/page-settings/sns-share-forms-bottom.php:124
-#: lib/page-settings/sns-share-forms-top.php:111 lib/tinymce/html-tags.php:43
-#: lib/widgets/display-widgets.php:173
-msgid "タグ"
-msgstr "태그"
 
 #: lib/page-settings/carousel-forms.php:82
 #, fuzzy
@@ -8350,7 +8611,7 @@ msgstr "제휴 표시"
 msgid "ツールバーのアフィリエイトショートコードドロップダウンを表示するか。"
 msgstr "툴바의 제휴 숏 코드 드롭다운을 표시하겠습니까?"
 
-#: lib/page-settings/editor-forms.php:150 lib/widgets/popular-entries.php:228
+#: lib/page-settings/editor-forms.php:150 lib/widgets/popular-entries.php:223
 msgid "ランキング表示"
 msgstr "랭킹 표시"
 
@@ -8938,12 +9199,6 @@ msgstr "인덱스 카드"
 msgid "新着記事ウィジェットのサムネイル。"
 msgstr "새 글 위젯의 썸네일."
 
-#: lib/page-settings/image-forms.php:210 lib/widgets/new-entries.php:19
-#: lib/widgets/new-entries.php:59 tmp/list-new-entries.php:16
-#: tmp/list-tab-index.php:23
-msgid "新着記事"
-msgstr "새 글"
-
 #: lib/page-settings/image-forms.php:211
 msgid "人気記事ウィジェットのサムネイル。"
 msgstr "인기 글 위젯의 썸네일."
@@ -9043,7 +9298,7 @@ msgstr "3의 배수가 권장됩니다."
 msgid "フロントページの表示形式を選択します。"
 msgstr "프런트 페이지의 표시 형식을 선택하세요."
 
-#: lib/page-settings/index-forms.php:60
+#: lib/page-settings/index-forms.php:60 lib/widgets/info-list.php:150
 msgid "表示カテゴリー"
 msgstr "표시 카테고리"
 
@@ -9687,7 +9942,7 @@ msgstr "jQuery"
 #: lib/page-settings/others-forms.php:100
 #, fuzzy
 #| msgid "jQuery Core 3.3.1"
-msgid "jQuery Core 3.6.0"
+msgid "jQuery Core 3.6.1"
 msgstr "JQuery Core 3.3.1"
 
 #: lib/page-settings/others-forms.php:101
@@ -9925,8 +10180,8 @@ msgid ""
 "ます。"
 msgstr "앱의 배경색입니다. 사이트가 표시될 때 까지 이 색이 적용될 수 있습니다."
 
-#: lib/page-settings/pwa-forms.php:140 lib/widgets/new-entries.php:137
-#: lib/widgets/popular-entries.php:182
+#: lib/page-settings/pwa-forms.php:140 lib/widgets/new-entries.php:142
+#: lib/widgets/popular-entries.php:177
 msgid "表示モード"
 msgstr "표시 모드"
 
@@ -10297,13 +10552,6 @@ msgstr "관련 글 목록의 제목을 넣으세요."
 msgid "関連記事の補助となる見出しを入力してください。"
 msgstr "관련 글의 보조가 되는 제목을 입력하세요."
 
-#: lib/page-settings/single-forms.php:156
-#: lib/page-settings/single-forms.php:320 lib/widgets/navi-entries.php:118
-#: lib/widgets/new-entries.php:163 lib/widgets/popular-entries.php:204
-#: lib/widgets/related-entries.php:187
-msgid "表示タイプ"
-msgstr "표시 유형"
-
 #: lib/page-settings/single-forms.php:162
 msgid "ミニカード（推奨表示数：偶数）"
 msgstr "미니 카드 (권장 표시 수: 짝수)"
@@ -10320,10 +10568,6 @@ msgstr "수직 4열 (권장 표시 수: 4, 8, 12...)"
 #, fuzzy
 msgid "関連記事の表示タイプを選択します。"
 msgstr "Select the display type of the related articles."
-
-#: lib/page-settings/single-forms.php:175
-msgid "表示数"
-msgstr "표시 수"
 
 #: lib/page-settings/single-forms.php:180
 msgid "関連記事で表示する投稿数の設定です。（最小：2、最大：30）"
@@ -10453,10 +10697,6 @@ msgstr ""
 #: lib/page-settings/single-forms.php:366
 msgid "ページ送りナビに表示させないカテゴリーを選択してください。"
 msgstr "페이지 이동 네비를 표시하지 않을 카테고리를 선택해 주세요."
-
-#: lib/page-settings/single-forms.php:374
-msgid "枠線表示"
-msgstr "테두리 표시"
 
 #: lib/page-settings/single-forms.php:378
 msgid "ページ送りナビの枠線を表示する"
@@ -10608,17 +10848,17 @@ msgstr "웹사이트"
 
 #: lib/page-settings/sns-follow-forms.php:72
 #: lib/page-settings/sns-share-forms-bottom.php:68
-#: lib/page-settings/sns-share-forms-top.php:55 tmp/sns-share-buttons.php:18
+#: lib/page-settings/sns-share-forms-top.php:55 tmp/sns-share-buttons.php:17
 msgid "Twitter"
 msgstr "트위터"
 
 #: lib/page-settings/sns-follow-forms.php:73
 #: lib/page-settings/sns-share-forms-bottom.php:71
-#: lib/page-settings/sns-share-forms-top.php:58 tmp/sns-share-buttons.php:22
+#: lib/page-settings/sns-share-forms-top.php:58 tmp/sns-share-buttons.php:21
 msgid "Facebook"
 msgstr "페이스북"
 
-#: lib/page-settings/sns-follow-forms.php:74 tmp/sns-share-buttons.php:30
+#: lib/page-settings/sns-follow-forms.php:74 tmp/sns-share-buttons.php:29
 msgid "Google+"
 msgstr "구글+"
 
@@ -10634,7 +10874,7 @@ msgstr "인스타그램"
 
 #: lib/page-settings/sns-follow-forms.php:77
 #: lib/page-settings/sns-share-forms-bottom.php:86
-#: lib/page-settings/sns-share-forms-top.php:73 tmp/sns-share-buttons.php:42
+#: lib/page-settings/sns-share-forms-top.php:73 tmp/sns-share-buttons.php:41
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -10644,7 +10884,7 @@ msgstr "유튜브"
 
 #: lib/page-settings/sns-follow-forms.php:79
 #: lib/page-settings/sns-share-forms-bottom.php:89
-#: lib/page-settings/sns-share-forms-top.php:76 tmp/sns-share-buttons.php:46
+#: lib/page-settings/sns-share-forms-top.php:76 tmp/sns-share-buttons.php:45
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -10919,7 +11159,7 @@ msgid "Google"
 msgstr "Google"
 
 #: lib/page-settings/sns-share-forms-bottom.php:80
-#: lib/page-settings/sns-share-forms-top.php:67 tmp/sns-share-buttons.php:34
+#: lib/page-settings/sns-share-forms-top.php:67 tmp/sns-share-buttons.php:33
 msgid "Pocket"
 msgstr "Pocket"
 
@@ -12480,19 +12720,19 @@ msgstr "라쿠텐 상품 가져오기 오류"
 msgid "楽天商品リンクが取得できませんでした。"
 msgstr "라쿠텐 상품 링크를 가져오지 못했습니다."
 
-#: lib/shortcodes.php:333
+#: lib/shortcodes.php:349
 msgid "日付未入力"
 msgstr "날짜 미입력"
 
-#: lib/shortcodes.php:359
+#: lib/shortcodes.php:375
 msgid "歳"
 msgstr "나이"
 
-#: lib/shortcodes.php:459
+#: lib/shortcodes.php:475
 msgid "月別アーカイブ"
 msgstr "월별 아카이브"
 
-#: lib/shortcodes.php:944
+#: lib/shortcodes.php:960
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "updated 숏 코드는 글, 고정 페이지 이외에서는 이용할 수 없습니다."
 
@@ -12700,24 +12940,24 @@ msgstr "캠페인 중에 표시할 콘텐츠를 입력하세요."
 msgid "キャンペーン期間中のみ表示"
 msgstr "캠페인 기간 동안만 표시"
 
-#: lib/utils.php:791
+#: lib/utils.php:796
 msgid "スクロールできます"
 msgstr "스크롤 가능"
 
-#: lib/utils.php:894
+#: lib/utils.php:899
 msgid "公開"
 msgstr "공개"
 
-#: lib/utils.php:895
+#: lib/utils.php:900
 msgid "記事を公開してもよろしいですか？"
 msgstr "이 글을 공개하시겠습니까?"
 
-#: lib/utils.php:2506
+#: lib/utils.php:2511
 #, php-format
 msgid "%s年"
 msgstr "%s년"
 
-#: lib/utils.php:2508
+#: lib/utils.php:2513
 #, php-format
 msgid "%s年%sヶ月"
 msgstr "%s년 %s월"
@@ -13041,10 +13281,6 @@ msgstr "제목 라벨"
 msgid "例：この記事を書いた人"
 msgstr "예시: 이 글을 쓴 사람"
 
-#: lib/widgets/author-box.php:86
-msgid "画像を円形にする"
-msgstr "사진을 둥글게"
-
 #: lib/widgets/author-box.php:91
 msgid ""
 "※「プロフィール画像・情報」や、「フォローボタン」はプロフィールページにて変更"
@@ -13263,6 +13499,31 @@ msgstr "위와 같음. ※0 입력시 숨김"
 msgid "LINE ID（＠は不要です）"
 msgstr "라인 ID (@은 불필요)"
 
+#: lib/widgets/info-list.php:20
+#, fuzzy
+#| msgid "登録されている吹き出しのオプションを変更できます。"
+msgid "最近書かれた記事のタイトルリストを表示します。"
+msgstr "등록된 말풍선의 옵션을 변경할 수 있습니다."
+
+#: lib/widgets/info-list.php:118
+#, fuzzy
+#| msgid "新着記事のタイトル"
+msgid "新着情報のタイトル"
+msgstr "새 글 목록 제목"
+
+#: lib/widgets/info-list.php:125
+msgid "キャプション（枠線内表示）"
+msgstr ""
+
+#: lib/widgets/info-list.php:132 lib/widgets/new-entries.php:161
+#: lib/widgets/popular-entries.php:192 lib/widgets/related-entries.php:180
+msgid "表示数（半角数字）"
+msgstr "표시수"
+
+#: lib/widgets/info-list.php:151
+msgid "（※未選択の場合は全て表示）"
+msgstr ""
+
 #: lib/widgets/item-ranking.php:20
 #, fuzzy
 #| msgid "商品・サービスのランキング表示をウィジェットです。"
@@ -13310,13 +13571,13 @@ msgstr "네비 카드"
 msgid "ナビカードリストを表示するウィジェットです。"
 msgstr "네비 카드 목록을 보여주는 위젯입니다."
 
-#: lib/widgets/navi-entries.php:127 lib/widgets/new-entries.php:179
-#: lib/widgets/popular-entries.php:247 lib/widgets/related-entries.php:215
+#: lib/widgets/navi-entries.php:127 lib/widgets/new-entries.php:184
+#: lib/widgets/popular-entries.php:242 lib/widgets/related-entries.php:215
 msgid "タイトルを太字にする"
 msgstr "타이틀을 굵게"
 
-#: lib/widgets/navi-entries.php:133 lib/widgets/new-entries.php:185
-#: lib/widgets/popular-entries.php:253 lib/widgets/related-entries.php:221
+#: lib/widgets/navi-entries.php:133 lib/widgets/new-entries.php:190
+#: lib/widgets/popular-entries.php:248 lib/widgets/related-entries.php:221
 msgid "矢印表示"
 msgstr "화살표 표시"
 
@@ -13324,40 +13585,39 @@ msgstr "화살표 표시"
 msgid "新着記事リストをサムネイルつきで表示するウィジェットです。"
 msgstr "새 글 리스트를 썸네일과 함께 표시하는 위젯입니다."
 
-#: lib/widgets/new-entries.php:61
+#: lib/widgets/new-entries.php:62
 msgid "カテゴリー別新着記事"
 msgstr "카테고리별 새 글"
 
-#: lib/widgets/new-entries.php:140
+#: lib/widgets/new-entries.php:145
 msgid "全ての新着記事（全ページで表示）"
 msgstr "모든 새 글 (모든 페이지에서 표시)"
 
-#: lib/widgets/new-entries.php:141
+#: lib/widgets/new-entries.php:146
 msgid "カテゴリー別新着記事（投稿・カテゴリーで表示）"
 msgstr "카테고리별 새 글 (글ㆍ카테고리에서 표시)"
 
-#: lib/widgets/new-entries.php:149
+#: lib/widgets/new-entries.php:154
 msgid "新着記事のタイトル"
 msgstr "새 글 목록 제목"
 
-#: lib/widgets/new-entries.php:156 lib/widgets/popular-entries.php:197
-#: lib/widgets/related-entries.php:180
-msgid "表示数（半角数字）"
-msgstr "표시수"
-
-#: lib/widgets/new-entries.php:172 lib/widgets/popular-entries.php:240
+#: lib/widgets/new-entries.php:177 lib/widgets/popular-entries.php:235
 #: lib/widgets/related-entries.php:208
 msgid "横型表示"
 msgstr ""
 
-#: lib/widgets/new-entries.php:173 lib/widgets/popular-entries.php:241
+#: lib/widgets/new-entries.php:178 lib/widgets/popular-entries.php:236
 #: lib/widgets/related-entries.php:209
 msgid "（「大きなサムネイル」との使用がお勧め）"
 msgstr ""
 
-#: lib/widgets/new-entries.php:191
+#: lib/widgets/new-entries.php:196
 msgid "「固定表示」記事を表示"
 msgstr "고정 표시 글을 표시"
+
+#: lib/widgets/new-entries.php:202
+msgid "更新日順に並び替え"
+msgstr ""
 
 #: lib/widgets/pc-ad.php:19
 msgid "広告（PC用）"
@@ -13404,36 +13664,38 @@ msgstr ""
 msgid "人気記事リストをサムネイルつきで表示するウィジェットです。"
 msgstr "인기 글 목록을 썸네일과 같이 보여주는 위젯입니다."
 
-#: lib/widgets/popular-entries.php:89
+#: lib/widgets/popular-entries.php:87
 msgid "カテゴリー別人気記事"
 msgstr "카테고리별 인기 글"
 
-#: lib/widgets/popular-entries.php:184
+#: lib/widgets/popular-entries.php:179
 msgid "全ての人気記事（全ページで表示）"
 msgstr "모든 인기 글 (모든 페이지에서 표시)"
 
-#: lib/widgets/popular-entries.php:185
+#: lib/widgets/popular-entries.php:180
 msgid "カテゴリー別人気記事（投稿・カテゴリーで表示）"
 msgstr "카테고리별 인기 글 (글ㆍ카테고리에서 표시)"
 
-#: lib/widgets/popular-entries.php:190
+#: lib/widgets/popular-entries.php:185
 msgid "人気記事のタイトル"
 msgstr "인기 글 목록 제목"
 
-#: lib/widgets/popular-entries.php:213
+#: lib/widgets/popular-entries.php:208
 msgid "集計期間"
 msgstr "집계 기간"
 
-#: lib/widgets/popular-entries.php:234
+#: lib/widgets/popular-entries.php:229
 msgid "PV表示"
 msgstr "PV 표시"
 
-#: lib/widgets/popular-entries.php:259
+#: lib/widgets/popular-entries.php:254
 msgid "除外投稿ID（カンマ区切りでIDを入力してください）"
 msgstr "제외할 글 ID (ID를 쉼표로 구분해서 입력해 주세요)"
 
-#: lib/widgets/popular-entries.php:266 lib/widgets/related-entries.php:226
-msgid "除外カテゴリーID（除外するものを選択してください）"
+#: lib/widgets/popular-entries.php:261
+#, fuzzy
+#| msgid "除外カテゴリーID（除外するものを選択してください）"
+msgid "除外カテゴリー（除外するものを選択してください）"
 msgstr "제외할 카테고리 ID (제외할 것을 선택해 주세요)"
 
 #: lib/widgets/recent-comments.php:19 lib/widgets/recent-comments.php:28
@@ -13488,6 +13750,10 @@ msgstr "관련 글 목록 제목"
 msgid "関連付け"
 msgstr "관련"
 
+#: lib/widgets/related-entries.php:226
+msgid "除外カテゴリーID（除外するものを選択してください）"
+msgstr "제외할 카테고리 ID (제외할 것을 선택해 주세요)"
+
 #: lib/widgets/sns-follow-buttons.php:19 lib/widgets/sns-follow-buttons.php:34
 msgid "SNSフォローボタン"
 msgstr "SNS 팔로우 버튼"
@@ -13520,7 +13786,7 @@ msgstr ""
 "예: Cocoon 설정에서 \"H2 까지\"로 설정된 경우 이 위젯에는 H3 이상은 표시되지 "
 "않습니다."
 
-#: searchform.php:19
+#: searchform.php:21
 msgid "サイト内を検索"
 msgstr "사이트 내에서 검색"
 
@@ -13584,15 +13850,34 @@ msgstr "본문의 표제를 명조체로 한다"
 msgid "サイドバーの見出しを明朝体にする"
 msgstr "사이드바 표시 위치 설정입니다."
 
-#: skins/raku-add-fadein/functions.php:269
+#: skins/raku-add-fadein/functions.php:268
 msgid "ふわっとタイプ"
 msgstr "푹신한 타입"
 
-#: skins/raku-add-fadein/functions.php:291
+#: skins/raku-add-fadein/functions.php:290
 #, fuzzy
 #| msgid "表示スキン"
 msgid "表示スキン（ベース）"
 msgstr "표시 스킨"
+
+#: skins/raku-color-changing/functions.php:190
+#, fuzzy
+#| msgid "ボタンカラー"
+msgid "スキンカラー"
+msgstr "버튼 색"
+
+#: skins/raku-color-changing/functions.php:203
+msgid ""
+"背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:218
+msgid "記事内のタイトル<br><small>（選択した4色を順に適応する）</small>"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:240
+msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適応する）</small>"
+msgstr ""
 
 #: tmp/admin-panel.php:39
 msgid "WLWで編集"
@@ -13676,7 +13961,7 @@ msgstr "상단으로"
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr "이 글은 읽는데 약 <span class=\"bold\">%s분</span>이 걸립니다."
 
-#: tmp/css-custom.php:869
+#: tmp/css-custom.php:875
 msgid "ラベルなし"
 msgstr "라벨 없음"
 
@@ -13850,17 +14135,27 @@ msgstr "feedly로 새 글 구독"
 msgid "RSSで更新情報をフォロー"
 msgstr "RSS 구독"
 
-#: tmp/sns-share-buttons.php:26
+#: tmp/sns-share-buttons.php:25
 msgid "はてブ"
 msgstr "하테나 북마크"
 
-#: tmp/sns-share-buttons.php:38
+#: tmp/sns-share-buttons.php:37
 msgid "LINE"
 msgstr "LINE"
 
-#: tmp/sns-share-buttons.php:50
+#: tmp/sns-share-buttons.php:49
 msgid "コピー"
 msgstr "복사"
+
+#~ msgid "[ad]ショートコード"
+#~ msgstr "[ad] 숏 코드"
+
+#~ msgid ""
+#~ "GA4はAMP対応していません。よってAMPページでは計測できないのでご了承くださ"
+#~ "い。"
+#~ msgstr ""
+#~ "GA4는 AMP 대응하고 있지 않습니다. 따라서 AMP 페이지에서는 측정할 수 없으므"
+#~ "로 양해 바랍니다."
 
 #, php-format
 #~ msgid "Logged in as %s. Edit your profile."
@@ -14703,9 +14998,6 @@ msgstr "복사"
 
 #~ msgid "除外する投稿ID（カンマ区切りで指定）"
 #~ msgstr "Excluded post IDs (specified by comma)"
-
-#~ msgid "除外するカテゴリID（カンマ区切りで指定）"
-#~ msgstr "Excluded category IDs (specified by comma)"
 
 #, fuzzy
 #~ msgid "トップに戻る"
