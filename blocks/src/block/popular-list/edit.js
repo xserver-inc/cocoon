@@ -333,7 +333,7 @@ export default function edit( props ) {
 					/>
 					{ catsTextControl }
 					<TextControl
-						label={ __( '除外カテゴリ', THEME_NAME ) }
+						label={ __( '除外カテゴリー', THEME_NAME ) }
 						value={ ex_cats }
 						onChange={ ( newValue ) =>
 							setAttributes( { ex_cats: newValue } )
