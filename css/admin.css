@@ -2497,6 +2497,9 @@ body.wp-admin {
 .admin-settings .demo .toc-center {
   margin: 1em auto;
 }
+.admin-settings .demo .nwa .widget_toc .widget-title + .toc-widget-box .toc-title {
+  display: none;
+}
 .admin-settings .demo .sidebar {
   width: 376px;
   border: 1px solid transparent;
@@ -10228,6 +10231,9 @@ body.wp-admin {
 }
 .admin-settings .demo .toc-center {
   margin: 1em auto;
+}
+.admin-settings .demo .nwa .widget_toc .widget-title + .toc-widget-box .toc-title {
+  display: none;
 }
 .admin-settings .demo .sidebar {
   width: 376px;
