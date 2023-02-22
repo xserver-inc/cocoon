@@ -5291,6 +5291,9 @@ body.wp-admin {
 .admin-settings .demo .tcb-white .tab-caption-box-content {
   border-color: var(--cocoon-white-color);
 }
+.admin-settings .demo html .body .tab-caption-box.has-white-background-color .box-content {
+  background-color: #fff;
+}
 .admin-settings .demo .label-box {
   border-width: 0;
 }
@@ -5369,6 +5372,9 @@ body.wp-admin {
 }
 .admin-settings .demo .lb-white .label-box-content {
   border-color: var(--cocoon-white-color);
+}
+.admin-settings .demo html .body .label-box.has-white-background-color .box-content {
+  background-color: var(--wp--preset--color--white) !important;
 }
 .admin-settings .demo .toggle-wrap {
   position: relative;
@@ -13017,6 +13023,9 @@ body.wp-admin {
 .admin-settings .demo .tcb-white .tab-caption-box-content {
   border-color: var(--cocoon-white-color);
 }
+.admin-settings .demo html .body .tab-caption-box.has-white-background-color .box-content {
+  background-color: #fff;
+}
 .admin-settings .demo .label-box {
   border-width: 0;
 }
@@ -13095,6 +13104,9 @@ body.wp-admin {
 }
 .admin-settings .demo .lb-white .label-box-content {
   border-color: var(--cocoon-white-color);
+}
+.admin-settings .demo html .body .label-box.has-white-background-color .box-content {
+  background-color: var(--wp--preset--color--white) !important;
 }
 .admin-settings .demo .toggle-wrap {
   position: relative;
@@ -21515,6 +21527,9 @@ textarea[name="the_page_memo"] {
 .components-popover__content .tcb-white .tab-caption-box-content {
   border-color: var(--cocoon-white-color);
 }
+.components-popover__content html .body .tab-caption-box.has-white-background-color .box-content {
+  background-color: #fff;
+}
 .components-popover__content .label-box {
   border-width: 0;
 }
@@ -21593,6 +21608,9 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .lb-white .label-box-content {
   border-color: var(--cocoon-white-color);
+}
+.components-popover__content html .body .label-box.has-white-background-color .box-content {
+  background-color: var(--wp--preset--color--white) !important;
 }
 .components-popover__content .toggle-wrap {
   position: relative;

@@ -1349,6 +1349,10 @@ div.search-form{
 .tcb-deep-orange{@include caption_tab_color(var(--cocoon-deep-orange-color));}
 .tcb-white{@include caption_tab_color(var(--cocoon-white-color));}
 
+html .body .tab-caption-box.has-white-background-color .box-content {
+  background-color: #fff;
+}
+
 /************************************
 ** ラベルボックス
 ************************************/
@@ -1418,6 +1422,9 @@ div.search-form{
 .lb-deep-orange{@include label_color(var(--cocoon-deep-orange-color));}
 .lb-white{@include label_color(var(--cocoon-white-color));}
 
+html .body .label-box.has-white-background-color .box-content {
+  background-color: var(--wp--preset--color--white) !important;
+}
 /************************************
 ** トグル表示ボタン
 ************************************/
