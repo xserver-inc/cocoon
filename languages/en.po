@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-02-21 20:00+0900\n"
-"PO-Revision-Date: 2023-02-21 23:03+0900\n"
+"POT-Creation-Date: 2023-02-23 13:05+0900\n"
+"PO-Revision-Date: 2023-02-23 13:07+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -837,8 +837,8 @@ msgid ""
 msgstr ""
 "It is a box to convey the message content by the background color of the box."
 
-#: blocks/src/block/info-list/edit.js:146 blocks/src/block/new-list/edit.js:67
-#: blocks/src/block/popular-list/edit.js:64
+#: blocks/src/block/info-list/edit.js:146 blocks/src/block/new-list/edit.js:174
+#: blocks/src/block/popular-list/edit.js:171
 msgid "表示するカテゴリーをカンマ区切りで指定"
 msgstr "Specifiy categories by id to display separated by commas"
 
@@ -846,8 +846,8 @@ msgstr "Specifiy categories by id to display separated by commas"
 msgid "カテゴリー検索"
 msgstr "Category search"
 
-#: blocks/src/block/info-list/edit.js:178 blocks/src/block/new-list/edit.js:97
-#: blocks/src/block/popular-list/edit.js:96
+#: blocks/src/block/info-list/edit.js:178 blocks/src/block/new-list/edit.js:227
+#: blocks/src/block/popular-list/edit.js:226
 msgid "基本設定"
 msgstr "Basic Settings"
 
@@ -869,13 +869,13 @@ msgstr "Display borders"
 msgid "仕切り線表示"
 msgstr "Display divider"
 
-#: blocks/src/block/info-list/edit.js:213 blocks/src/block/new-list/edit.js:219
-#: blocks/src/block/popular-list/edit.js:192
+#: blocks/src/block/info-list/edit.js:213 blocks/src/block/new-list/edit.js:349
+#: blocks/src/block/popular-list/edit.js:322
 msgid "フィルタ"
 msgstr "Filter"
 
-#: blocks/src/block/info-list/edit.js:217 blocks/src/block/new-list/edit.js:223
-#: blocks/src/block/popular-list/edit.js:196
+#: blocks/src/block/info-list/edit.js:217 blocks/src/block/new-list/edit.js:353
+#: blocks/src/block/popular-list/edit.js:326
 msgid "全カテゴリー表示"
 msgstr "Display all categories"
 
@@ -889,7 +889,18 @@ msgstr "New Items"
 msgid "新着情報の一覧を表示します。"
 msgstr "Displays the list of new information."
 
-#: blocks/src/block/new-list/edit.js:78 lib/page-settings/carousel-forms.php:80
+#: blocks/src/block/new-list/edit.js:181
+#: blocks/src/block/popular-list/edit.js:178
+msgid "表示カテゴリー選択"
+msgstr "Display categories"
+
+#: blocks/src/block/new-list/edit.js:192
+#: blocks/src/block/popular-list/edit.js:189
+msgid "子カテゴリーの内容を含めて表示"
+msgstr "Include contents of child categories"
+
+#: blocks/src/block/new-list/edit.js:208
+#: lib/page-settings/carousel-forms.php:80
 #: lib/page-settings/editor-forms.php:67 lib/page-settings/single-forms.php:130
 #: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:124
@@ -898,13 +909,13 @@ msgstr "Displays the list of new information."
 msgid "タグ"
 msgstr "Tag"
 
-#: blocks/src/block/new-list/edit.js:101
-#: blocks/src/block/popular-list/edit.js:100
+#: blocks/src/block/new-list/edit.js:231
+#: blocks/src/block/popular-list/edit.js:230
 msgid "表示する記事の数"
 msgstr "Number of articles to display"
 
-#: blocks/src/block/new-list/edit.js:110
-#: blocks/src/block/popular-list/edit.js:117
+#: blocks/src/block/new-list/edit.js:240
+#: blocks/src/block/popular-list/edit.js:247
 #: lib/page-settings/single-forms.php:156
 #: lib/page-settings/single-forms.php:320 lib/widgets/navi-entries.php:118
 #: lib/widgets/new-entries.php:168 lib/widgets/popular-entries.php:199
@@ -912,101 +923,96 @@ msgstr "Number of articles to display"
 msgid "表示タイプ"
 msgstr "Display type"
 
-#: blocks/src/block/new-list/edit.js:117
-#: blocks/src/block/popular-list/edit.js:124
+#: blocks/src/block/new-list/edit.js:247
+#: blocks/src/block/popular-list/edit.js:254
 msgid "通常のリスト"
 msgstr "Default"
 
-#: blocks/src/block/new-list/edit.js:122
-#: blocks/src/block/popular-list/edit.js:129
+#: blocks/src/block/new-list/edit.js:252
+#: blocks/src/block/popular-list/edit.js:259
 msgid "カードの上下に区切り線を入れる"
 msgstr "Add a separator line to the top and bottom of the card"
 
-#: blocks/src/block/new-list/edit.js:129
-#: blocks/src/block/popular-list/edit.js:136
+#: blocks/src/block/new-list/edit.js:259
+#: blocks/src/block/popular-list/edit.js:266
 msgid "カードに枠線を表示する"
 msgstr "Display borders on card"
 
-#: blocks/src/block/new-list/edit.js:135
-#: blocks/src/block/popular-list/edit.js:142
+#: blocks/src/block/new-list/edit.js:265
+#: blocks/src/block/popular-list/edit.js:272
 msgid "大きなサムネイル表示"
 msgstr "Large thumbnail"
 
-#: blocks/src/block/new-list/edit.js:140
-#: blocks/src/block/popular-list/edit.js:147
+#: blocks/src/block/new-list/edit.js:270
+#: blocks/src/block/popular-list/edit.js:277
 msgid "大きなサムネイルにタイトルを重ねる"
 msgstr "Large thumbnail with the title overlayed"
 
-#: blocks/src/block/new-list/edit.js:148
+#: blocks/src/block/new-list/edit.js:278
 msgid "表示順"
 msgstr "Display order"
 
-#: blocks/src/block/new-list/edit.js:152
+#: blocks/src/block/new-list/edit.js:282
 msgid "更新日順"
 msgstr "Sort by modified date"
 
-#: blocks/src/block/new-list/edit.js:156
+#: blocks/src/block/new-list/edit.js:286
 msgid "投稿日順"
 msgstr "sort by posted date"
 
-#: blocks/src/block/new-list/edit.js:169
+#: blocks/src/block/new-list/edit.js:299
 msgid "並び替え"
 msgstr "Sort"
 
-#: blocks/src/block/new-list/edit.js:172
+#: blocks/src/block/new-list/edit.js:302
 msgid "昇順"
 msgstr "Ascending"
 
-#: blocks/src/block/new-list/edit.js:173
+#: blocks/src/block/new-list/edit.js:303
 msgid "降順"
 msgstr "Descending"
 
-#: blocks/src/block/new-list/edit.js:180
+#: blocks/src/block/new-list/edit.js:310
 msgid "読み飛ばし"
 msgstr "Skip articles"
 
-#: blocks/src/block/new-list/edit.js:190
-#: blocks/src/block/popular-list/edit.js:156
+#: blocks/src/block/new-list/edit.js:320
+#: blocks/src/block/popular-list/edit.js:286
 msgid "記事タイトルを太字にする"
 msgstr "Bold title"
 
-#: blocks/src/block/new-list/edit.js:197
-#: blocks/src/block/popular-list/edit.js:163
+#: blocks/src/block/new-list/edit.js:327
+#: blocks/src/block/popular-list/edit.js:293
 msgid "カードに矢印を表示する"
 msgstr "Display arrow"
 
-#: blocks/src/block/new-list/edit.js:204
-#: blocks/src/block/popular-list/edit.js:170
+#: blocks/src/block/new-list/edit.js:334
+#: blocks/src/block/popular-list/edit.js:300
 msgid "横並び表示"
 msgstr "Display side by side"
 
-#: blocks/src/block/new-list/edit.js:211
+#: blocks/src/block/new-list/edit.js:341
 msgid "説明文の表示"
 msgstr "Display description"
 
-#: blocks/src/block/new-list/edit.js:232
-#: blocks/src/block/popular-list/edit.js:205
-msgid "子カテゴリーの内容を含めて表示"
-msgstr "Include contents of child categories"
-
-#: blocks/src/block/new-list/edit.js:242
+#: blocks/src/block/new-list/edit.js:364
 msgid "全タグ表示"
 msgstr "Display all tags"
 
-#: blocks/src/block/new-list/edit.js:251
+#: blocks/src/block/new-list/edit.js:373
 msgid "固定記事の表示"
 msgstr "Display fixed articles"
 
-#: blocks/src/block/new-list/edit.js:258
-#: blocks/src/block/popular-list/edit.js:222
+#: blocks/src/block/new-list/edit.js:380
+#: blocks/src/block/popular-list/edit.js:344
 msgid "投稿タイプ"
 msgstr "Post type"
 
-#: blocks/src/block/new-list/edit.js:265
+#: blocks/src/block/new-list/edit.js:387
 msgid "検索グループ"
 msgstr "Search group"
 
-#: blocks/src/block/new-list/edit.js:272
+#: blocks/src/block/new-list/edit.js:394
 msgid "投稿ユーザ"
 msgstr "Author"
 
@@ -1020,27 +1026,28 @@ msgstr "New articles"
 msgid "新着記事の一覧を表示します。"
 msgstr "Display the list of new articles."
 
-#: blocks/src/block/popular-list/edit.js:75
+#: blocks/src/block/popular-list/edit.js:205
 msgid "データの集計期間(日)"
 msgstr "Data aggregation period (days)"
 
-#: blocks/src/block/popular-list/edit.js:109
+#: blocks/src/block/popular-list/edit.js:239
 msgid "全期間集計"
 msgstr "Aggregate whole period"
 
-#: blocks/src/block/popular-list/edit.js:177
+#: blocks/src/block/popular-list/edit.js:307
 msgid "ランキング番号表示"
 msgstr "Display ranking"
 
-#: blocks/src/block/popular-list/edit.js:184
+#: blocks/src/block/popular-list/edit.js:314
 msgid "PV数表示"
 msgstr "Display PV"
 
-#: blocks/src/block/popular-list/edit.js:214
-msgid "除外カテゴリ"
+#: blocks/src/block/popular-list/edit.js:336
+#: lib/page-settings/index-forms.php:240 lib/page-settings/single-forms.php:364
+msgid "除外カテゴリー"
 msgstr "Excluded categories"
 
-#: blocks/src/block/popular-list/edit.js:229
+#: blocks/src/block/popular-list/edit.js:351
 msgid "除外投稿(ID)"
 msgstr "Exclude Articles (ID)"
 
@@ -1778,27 +1785,27 @@ msgstr "fab-window-close-o"
 msgid "fab-paw"
 msgstr "Fab-paw"
 
-#: blocks/src/init.php:280
+#: blocks/src/init.php:279
 msgid "Cocoonブロック"
 msgstr "Cocoon blocks"
 
-#: blocks/src/init.php:285
+#: blocks/src/init.php:284
 msgid "Cocoon汎用ブロック"
 msgstr "Cocoon generic blocks"
 
-#: blocks/src/init.php:290
+#: blocks/src/init.php:289
 msgid "Cocoonマイクロコピー"
 msgstr "Cocoon micro copy"
 
-#: blocks/src/init.php:295
+#: blocks/src/init.php:294
 msgid "Cocoonレイアウト"
 msgstr "Cocoon layout"
 
-#: blocks/src/init.php:300
+#: blocks/src/init.php:299
 msgid "Cocoonショートコード"
 msgstr "Cocoon short codes"
 
-#: blocks/src/init.php:305
+#: blocks/src/init.php:304
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon old block editor (not recommended)"
 
@@ -9554,10 +9561,6 @@ msgstr "Comment count display"
 msgid "エントリーカードに投稿関連情報を表示するかどうか。"
 msgstr "Do you want to display post-related information in the entry card?"
 
-#: lib/page-settings/index-forms.php:240 lib/page-settings/single-forms.php:364
-msgid "除外カテゴリー"
-msgstr "Excluded categories"
-
 #: lib/page-settings/index-forms.php:245
 msgid ""
 "アーカイブ（インデックスリスト・新着関連記事ウィジェット等）に表示させたくな"
@@ -11859,7 +11862,7 @@ msgid "つ以上見出しがあるとき"
 msgstr "When there are more than ... heading?"
 
 #: lib/page-settings/toc-forms.php:127
-msgid "設定した数以上の目次数がある時のみ表示されます。"
+msgid "設定した数以上の見出し数がある時のみ表示されます。"
 msgstr ""
 "The table of contents is displayed only when the number of heading items is "
 "equal to or more than the set number."
@@ -14258,6 +14261,9 @@ msgstr "LINE"
 #: tmp/sns-share-buttons.php:49
 msgid "コピー"
 msgstr "Copy"
+
+#~ msgid "除外カテゴリ"
+#~ msgstr "Excluded categories"
 
 #~ msgid "[ad]ショートコード"
 #~ msgstr "[ad] Short code"

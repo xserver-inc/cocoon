@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-12-23 22:07+0900\n"
-"PO-Revision-Date: 2023-01-03 19:28+0900\n"
+"POT-Creation-Date: 2023-02-23 13:08+0900\n"
+"PO-Revision-Date: 2023-02-23 13:08+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -21,6 +21,18 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-4: .vscode\n"
 "X-Poedit-SearchPathExcluded-5: plugins\n"
 "X-Poedit-SearchPathExcluded-6: node_modules\n"
+
+#: blocks/dist/blocks.build.js:1
+msgid "classes"
+msgstr ""
+
+#: blocks/dist/blocks.build.js:1
+msgid "transform"
+msgstr ""
+
+#: blocks/dist/blocks.build.js:1
+msgid "mask"
+msgstr ""
 
 #: blocks/src/block-universal/caption-box/block.js:50
 #: blocks/src/block-universal/caption-box/deprecated.js:14
@@ -239,14 +251,14 @@ msgstr "Ocultar tabela de conteúdo"
 #: blocks/src/old/balloon-ex-fix1/block.js:17
 #: blocks/src/old/balloon-ex-v2/block.js:16
 #: blocks/src/old/balloon-ex/block.js:17 blocks/src/old/balloon/block.js:15
-#: lib/html-forms.php:532
+#: lib/html-forms.php:537
 #, fuzzy
 msgid "未入力"
 msgstr "Faltando"
 
 #: blocks/src/block/balloon/index.js:21 blocks/src/old/balloon-1/block.js:53
 #: blocks/src/old/balloon-2/block.js:37 blocks/src/old/balloon/block.js:36
-#: lib/admin.php:452 lib/original-menu.php:27
+#: lib/admin.php:457 lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37 lib/tinymce/speech-balloons.php:50
 #, fuzzy
 msgid "吹き出し"
@@ -296,7 +308,7 @@ msgstr ""
 
 #: blocks/src/block/blogcard/block.js:55
 #: blocks/src/block/blogcard/deprecated.js:47
-#: blocks/src/block/blogcard/edit.js:27 blocks/src/block/profile/edit.js:87
+#: blocks/src/block/blogcard/edit.js:27 blocks/src/block/profile/edit.js:93
 #: blocks/src/block/tab-box/edit.js:61
 #: blocks/src/block/timeline-item/deprecated.js:24
 #: blocks/src/block/timeline-item/deprecated.js:44
@@ -324,7 +336,7 @@ msgstr "Sem"
 #: blocks/src/old/blogcard-class/block.js:66 lib/admin-tinymce-qtag.php:1592
 #: lib/page-settings/image-forms.php:212 lib/page-settings/single-funcs.php:76
 #: lib/widgets/related-entries.php:19 lib/widgets/related-entries.php:80
-#: tmp/css-custom.php:873 tmp/css-custom.php:925
+#: tmp/css-custom.php:879 tmp/css-custom.php:931
 #, fuzzy
 msgid "関連記事"
 msgstr "Artigos relacionados"
@@ -333,7 +345,7 @@ msgstr "Artigos relacionados"
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:41
 #: blocks/src/old/blogcard-class/block.js:70 lib/admin-tinymce-qtag.php:1598
-#: tmp/css-custom.php:877 tmp/css-custom.php:928
+#: tmp/css-custom.php:883 tmp/css-custom.php:934
 #, fuzzy
 msgid "参考記事"
 msgstr "Artigos de referência"
@@ -341,7 +353,7 @@ msgstr "Artigos de referência"
 #: blocks/src/block/blogcard/block.js:73
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:45 lib/admin-tinymce-qtag.php:1604
-#: tmp/css-custom.php:881 tmp/css-custom.php:931
+#: tmp/css-custom.php:887 tmp/css-custom.php:937
 #, fuzzy
 msgid "参考リンク"
 msgstr "Link de referência"
@@ -349,11 +361,12 @@ msgstr "Link de referência"
 #: blocks/src/block/blogcard/block.js:77
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:49
+#: blocks/src/block/popular-list/index.js:29
 #: blocks/src/old/blogcard-class/block.js:74 lib/admin-tinymce-qtag.php:1610
 #: lib/page-settings/carousel-forms.php:61
 #: lib/page-settings/image-forms.php:211 lib/widgets/popular-entries.php:21
-#: lib/widgets/popular-entries.php:87 tmp/css-custom.php:885
-#: tmp/css-custom.php:934
+#: lib/widgets/popular-entries.php:85 tmp/css-custom.php:891
+#: tmp/css-custom.php:940
 #, fuzzy
 msgid "人気記事"
 msgstr "Artigos populares"
@@ -362,7 +375,7 @@ msgstr "Artigos populares"
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:53
 #: blocks/src/old/blogcard-class/block.js:78 lib/admin-tinymce-qtag.php:1616
-#: tmp/css-custom.php:897 tmp/css-custom.php:943
+#: tmp/css-custom.php:903 tmp/css-custom.php:949
 #, fuzzy
 msgid "あわせて読みたい"
 msgstr "Eu quero ler juntos"
@@ -371,7 +384,7 @@ msgstr "Eu quero ler juntos"
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:57
 #: blocks/src/old/blogcard-class/block.js:82 lib/admin-tinymce-qtag.php:1622
-#: lib/widgets/cta-box.php:34 tmp/css-custom.php:901 tmp/css-custom.php:946
+#: lib/widgets/cta-box.php:34 tmp/css-custom.php:907 tmp/css-custom.php:952
 #, fuzzy
 msgid "詳細はこちら"
 msgstr "Saiba Mais"
@@ -381,7 +394,7 @@ msgstr "Saiba Mais"
 #: blocks/src/block/blogcard/edit.js:61 blocks/src/block/tab-box/edit.js:67
 #: blocks/src/old/blogcard-class/block.js:86 blocks/src/old/tab-box/block.js:71
 #: lib/admin-tinymce-qtag.php:307 lib/admin-tinymce-qtag.php:1628
-#: tmp/css-custom.php:893 tmp/css-custom.php:940
+#: tmp/css-custom.php:899 tmp/css-custom.php:946
 #, fuzzy
 msgid "チェック"
 msgstr "Verificar"
@@ -391,7 +404,7 @@ msgstr "Verificar"
 #: blocks/src/block/blogcard/edit.js:65 blocks/src/block/tab-box/edit.js:87
 #: blocks/src/old/blogcard-class/block.js:90 blocks/src/old/tab-box/block.js:91
 #: lib/admin-tinymce-qtag.php:457 lib/admin-tinymce-qtag.php:1634
-#: tmp/css-custom.php:889 tmp/css-custom.php:937
+#: tmp/css-custom.php:895 tmp/css-custom.php:943
 #, fuzzy
 msgid "ピックアップ"
 msgstr "Coletor"
@@ -400,7 +413,7 @@ msgstr "Coletor"
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:69
 #: blocks/src/old/blogcard-class/block.js:94 lib/admin-tinymce-qtag.php:1640
-#: tmp/css-custom.php:905 tmp/css-custom.php:949
+#: tmp/css-custom.php:911 tmp/css-custom.php:955
 #, fuzzy
 msgid "公式サイト"
 msgstr "Site oficial"
@@ -409,23 +422,23 @@ msgstr "Site oficial"
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:73 blocks/src/block/tab-box/edit.js:99
 #: blocks/src/old/tab-box/block.js:103 lib/admin-tinymce-qtag.php:547
-#: lib/admin-tinymce-qtag.php:1646 tmp/css-custom.php:909
-#: tmp/css-custom.php:952
+#: lib/admin-tinymce-qtag.php:1646 tmp/css-custom.php:915
+#: tmp/css-custom.php:958
 #, fuzzy
 msgid "ダウンロード"
 msgstr "Download"
 
 #: blocks/src/block/blogcard/edit.js:77 lib/admin-tinymce-qtag.php:1652
-#: tmp/css-custom.php:913 tmp/css-custom.php:955
+#: tmp/css-custom.php:919 tmp/css-custom.php:961
 msgid "前回の記事"
 msgstr ""
 
 #: blocks/src/block/blogcard/edit.js:81 lib/admin-tinymce-qtag.php:1658
-#: tmp/css-custom.php:917 tmp/css-custom.php:958
+#: tmp/css-custom.php:923 tmp/css-custom.php:964
 msgid "続きの記事"
 msgstr ""
 
-#: blocks/src/block/box-menu/edit.js:42 blocks/src/block/profile/edit.js:29
+#: blocks/src/block/box-menu/edit.js:42 blocks/src/block/profile/edit.js:32
 #: blocks/src/block/ranking/edit.js:29 blocks/src/block/template/edit.js:29
 #: lib/page-settings/recommended-forms.php:61
 #, fuzzy
@@ -741,7 +754,7 @@ msgstr "Informações suplementares (!)"
 #: blocks/src/block/icon-box/edit.js:45 blocks/src/block/tab-box/edit.js:95
 #: blocks/src/block/test-box/deprecated.js:100
 #: blocks/src/old/tab-box/block.js:99 lib/admin-tinymce-qtag.php:190
-#: lib/admin-tinymce-qtag.php:517 lib/admin.php:192
+#: lib/admin-tinymce-qtag.php:517 lib/admin.php:197
 #: lib/block-editor-styles-group.php:41
 #: lib/block-editor-styles-paragraph.php:76 lib/custom-fields/memo-field.php:17
 #: lib/custom-fields/memo-field.php:18 lib/custom-fields/memo-field.php:21
@@ -758,7 +771,7 @@ msgstr "Nota"
 #: lib/page-settings/comment-funcs.php:32
 #: lib/page-settings/sns-share-forms-bottom.php:95
 #: lib/page-settings/sns-share-forms-top.php:82
-#: tmp/mobile-comments-button.php:12 tmp/sns-share-buttons.php:54
+#: tmp/mobile-comments-button.php:12 tmp/sns-share-buttons.php:53
 #, fuzzy
 msgid "コメント"
 msgstr "Comentários"
@@ -925,17 +938,265 @@ msgid ""
 "ボックスの背景色により、直感的にメッセージ内容を伝えるためのボックスです。"
 msgstr "Uma caixa com letras na guia para transmitir o conteúdo da mensagem."
 
-#: blocks/src/block/profile/edit.js:46
+#: blocks/src/block/info-list/edit.js:146 blocks/src/block/new-list/edit.js:174
+#: blocks/src/block/popular-list/edit.js:171
+msgid "表示するカテゴリーをカンマ区切りで指定"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:153 lib/admin.php:645
+#, fuzzy
+msgid "カテゴリー検索"
+msgstr "Pesquisa de categoria"
+
+#: blocks/src/block/info-list/edit.js:178 blocks/src/block/new-list/edit.js:227
+#: blocks/src/block/popular-list/edit.js:226
+msgid "基本設定"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:182
+msgid "キャプション(枠線内表示)"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:189
+#: lib/page-settings/single-forms.php:175
+#, fuzzy
+msgid "表示数"
+msgstr "Número de visualizações"
+
+#: blocks/src/block/info-list/edit.js:198
+#: lib/page-settings/single-forms.php:374 lib/widgets/info-list.php:139
+#, fuzzy
+msgid "枠線表示"
+msgstr "Exposição da beira"
+
+#: blocks/src/block/info-list/edit.js:205 lib/widgets/info-list.php:145
+msgid "仕切り線表示"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:213 blocks/src/block/new-list/edit.js:349
+#: blocks/src/block/popular-list/edit.js:322
+msgid "フィルタ"
+msgstr ""
+
+#: blocks/src/block/info-list/edit.js:217 blocks/src/block/new-list/edit.js:353
+#: blocks/src/block/popular-list/edit.js:326
+#, fuzzy
+msgid "全カテゴリー表示"
+msgstr "Ver categorias"
+
+#: blocks/src/block/info-list/index.js:29 lib/shortcodes.php:989
+#: lib/widgets/info-list.php:19 lib/widgets/info-list.php:94
+#: lib/widgets/info-list.php:102
+msgid "新着情報"
+msgstr ""
+
+#: blocks/src/block/info-list/index.js:31
+#, fuzzy
+msgid "新着情報の一覧を表示します。"
+msgstr "Ocultar tabela de conteúdo"
+
+#: blocks/src/block/new-list/edit.js:181
+#: blocks/src/block/popular-list/edit.js:178
+#, fuzzy
+msgid "表示カテゴリー選択"
+msgstr "Exibir categoria"
+
+#: blocks/src/block/new-list/edit.js:192
+#: blocks/src/block/popular-list/edit.js:189
+#, fuzzy
+msgid "子カテゴリーの内容を含めて表示"
+msgstr "Exibição da tag de categoria"
+
+#: blocks/src/block/new-list/edit.js:208
+#: lib/page-settings/carousel-forms.php:80
+#: lib/page-settings/editor-forms.php:67 lib/page-settings/single-forms.php:130
+#: lib/page-settings/sns-follow-forms.php:116
+#: lib/page-settings/sns-share-forms-bottom.php:124
+#: lib/page-settings/sns-share-forms-top.php:111 lib/tinymce/html-tags.php:43
+#: lib/widgets/display-widgets.php:173
+#, fuzzy
+msgid "タグ"
+msgstr "Tags"
+
+#: blocks/src/block/new-list/edit.js:231
+#: blocks/src/block/popular-list/edit.js:230
+#, fuzzy
+msgid "表示する記事の数"
+msgstr "Número de comentários a serem exibidos"
+
+#: blocks/src/block/new-list/edit.js:240
+#: blocks/src/block/popular-list/edit.js:247
+#: lib/page-settings/single-forms.php:156
+#: lib/page-settings/single-forms.php:320 lib/widgets/navi-entries.php:118
+#: lib/widgets/new-entries.php:168 lib/widgets/popular-entries.php:199
+#: lib/widgets/related-entries.php:187
+#, fuzzy
+msgid "表示タイプ"
+msgstr "Tipo de exibição"
+
+#: blocks/src/block/new-list/edit.js:247
+#: blocks/src/block/popular-list/edit.js:254
+msgid "通常のリスト"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:252
+#: blocks/src/block/popular-list/edit.js:259
+#, fuzzy
+msgid "カードの上下に区切り線を入れる"
+msgstr "Uma linha tracejada aparece acima e abaixo do cartão."
+
+#: blocks/src/block/new-list/edit.js:259
+#: blocks/src/block/popular-list/edit.js:266
+#, fuzzy
+msgid "カードに枠線を表示する"
+msgstr "Mostrar a borda do cartão"
+
+#: blocks/src/block/new-list/edit.js:265
+#: blocks/src/block/popular-list/edit.js:272
+#, fuzzy
+msgid "大きなサムネイル表示"
+msgstr "Miniaturas grandes"
+
+#: blocks/src/block/new-list/edit.js:270
+#: blocks/src/block/popular-list/edit.js:277
+#, fuzzy
+msgid "大きなサムネイルにタイトルを重ねる"
+msgstr ""
+"O título é empilhou-se na parte inferior de uma grande imagem em miniatura."
+
+#: blocks/src/block/new-list/edit.js:278
+#, fuzzy
+msgid "表示順"
+msgstr "Exibir"
+
+#: blocks/src/block/new-list/edit.js:282
+msgid "更新日順"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:286
+msgid "投稿日順"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:299
+#, fuzzy
+msgid "並び替え"
+msgstr "Prioridade de classificação do produto"
+
+#: blocks/src/block/new-list/edit.js:302
+msgid "昇順"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:303
+msgid "降順"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:310
+msgid "読み飛ばし"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:320
+#: blocks/src/block/popular-list/edit.js:286
+#, fuzzy
+msgid "記事タイトルを太字にする"
+msgstr "Por favor, insira um título."
+
+#: blocks/src/block/new-list/edit.js:327
+#: blocks/src/block/popular-list/edit.js:293
+#, fuzzy
+msgid "カードに矢印を表示する"
+msgstr "Mostrar a borda do cartão"
+
+#: blocks/src/block/new-list/edit.js:334
+#: blocks/src/block/popular-list/edit.js:300
+msgid "横並び表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:341
+msgid "説明文の表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:364
+msgid "全タグ表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:373
+msgid "固定記事の表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:380
+#: blocks/src/block/popular-list/edit.js:344
+#, fuzzy
+msgid "投稿タイプ"
+msgstr "Postar no título"
+
+#: blocks/src/block/new-list/edit.js:387
+msgid "検索グループ"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:394
+msgid "投稿ユーザ"
+msgstr ""
+
+#: blocks/src/block/new-list/index.js:29 lib/page-settings/image-forms.php:210
+#: lib/widgets/new-entries.php:19 lib/widgets/new-entries.php:60
+#: tmp/list-new-entries.php:16 tmp/list-tab-index.php:23
+#, fuzzy
+msgid "新着記事"
+msgstr "Novos artigos"
+
+#: blocks/src/block/new-list/index.js:31
+#, fuzzy
+msgid "新着記事の一覧を表示します。"
+msgstr "Ocultar tabela de conteúdo"
+
+#: blocks/src/block/popular-list/edit.js:205
+msgid "データの集計期間(日)"
+msgstr ""
+
+#: blocks/src/block/popular-list/edit.js:239
+msgid "全期間集計"
+msgstr ""
+
+#: blocks/src/block/popular-list/edit.js:307
+#, fuzzy
+msgid "ランキング番号表示"
+msgstr "Vista de classificação"
+
+#: blocks/src/block/popular-list/edit.js:314
+msgid "PV数表示"
+msgstr ""
+
+#: blocks/src/block/popular-list/edit.js:336
+#: lib/page-settings/index-forms.php:240 lib/page-settings/single-forms.php:364
+#, fuzzy
+msgid "除外カテゴリー"
+msgstr "Categorias de exclusão AMP"
+
+#: blocks/src/block/popular-list/edit.js:351
+msgid "除外投稿(ID)"
+msgstr ""
+
+#: blocks/src/block/popular-list/index.js:31
+#, fuzzy
+msgid "人気記事の一覧を表示します。"
+msgstr "Ocultar tabela de conteúdo"
+
+#: blocks/src/block/profile/edit.js:56
 #, fuzzy
 msgid "選択できるユーザーがありません。"
 msgstr "A página que procurava não foi encontrada."
 
-#: blocks/src/block/profile/edit.js:49
+#: blocks/src/block/profile/edit.js:58
 #, fuzzy
 msgid "ユーザーを選択してください。"
 msgstr "Por favor, selecione uma classificação."
 
-#: blocks/src/block/profile/edit.js:95
+#: blocks/src/block/profile/edit.js:100 lib/widgets/author-box.php:86
+#, fuzzy
+msgid "画像を円形にする"
+msgstr "Arredondar uma imagem"
+
+#: blocks/src/block/profile/edit.js:110
 #, fuzzy
 msgid "ユーザー"
 msgstr "Número de usuários:"
@@ -1234,7 +1495,7 @@ msgstr "Por favor, selecione uma classificação."
 
 #: blocks/src/block/template/edit.js:102 blocks/src/block/template/index.js:22
 #: blocks/src/toolbutton/dropdown-templates.js:48
-#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:459
+#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:464
 #: lib/original-menu.php:30 lib/tinymce/function-texts.php:49
 #, fuzzy
 msgid "テンプレート"
@@ -1321,7 +1582,7 @@ msgstr "Língua:"
 msgid "言語選択"
 msgstr ""
 
-#: blocks/src/demo/blank-box-demo/block.js:15 blocks/src/helpers.js:58
+#: blocks/src/demo/blank-box-demo/block.js:15 blocks/src/helpers.js:36
 #: blocks/src/old/blank-box/block.js:17 blocks/src/old/tab-box/block.js:15
 #, fuzzy
 msgid "こちらをクリックして設定変更。この入力は公開ページで反映されません。"
@@ -1339,477 +1600,477 @@ msgstr "Caixa de perfil"
 msgid "ドロップダウンデモ"
 msgstr "Demo suspensa"
 
-#: blocks/src/helpers.js:281
+#: blocks/src/helpers.js:259
 #, fuzzy
 msgid "fab-info-circle"
 msgstr "Fab-info-Circle"
 
-#: blocks/src/helpers.js:285
+#: blocks/src/helpers.js:263
 #, fuzzy
 msgid "fab-question-circle"
 msgstr "Fab-pergunta-círculo"
 
-#: blocks/src/helpers.js:289
+#: blocks/src/helpers.js:267
 #, fuzzy
 msgid "fab-exclamation-circle"
 msgstr "Fab-exclamação-círculo"
 
-#: blocks/src/helpers.js:293
+#: blocks/src/helpers.js:271
 #, fuzzy
 msgid "fab-pencil"
 msgstr "Fab-lápis"
 
-#: blocks/src/helpers.js:297
+#: blocks/src/helpers.js:275
 #, fuzzy
 msgid "fab-edit"
 msgstr "Fab-editar"
 
-#: blocks/src/helpers.js:301
+#: blocks/src/helpers.js:279
 #, fuzzy
 msgid "fab-comment"
 msgstr "Fab-comentário"
 
-#: blocks/src/helpers.js:305
+#: blocks/src/helpers.js:283
 #, fuzzy
 msgid "fab-ok"
 msgstr "Fab-Ok"
 
-#: blocks/src/helpers.js:309
+#: blocks/src/helpers.js:287
 #, fuzzy
 msgid "fab-bad"
 msgstr "Fab-Bad"
 
-#: blocks/src/helpers.js:313
+#: blocks/src/helpers.js:291
 #, fuzzy
 msgid "fab-thumbs-up"
 msgstr "Fab-thumbs-up"
 
-#: blocks/src/helpers.js:317
+#: blocks/src/helpers.js:295
 #, fuzzy
 msgid "fab-thumbs-down"
 msgstr "Fab-polegares para baixo"
 
-#: blocks/src/helpers.js:321 blocks/src/helpers.js:505
+#: blocks/src/helpers.js:299 blocks/src/helpers.js:483
 #, fuzzy
 msgid "fab-check"
 msgstr "Fab-check"
 
-#: blocks/src/helpers.js:325 blocks/src/helpers.js:569
+#: blocks/src/helpers.js:303 blocks/src/helpers.js:547
 #, fuzzy
 msgid "fab-star"
 msgstr "Fab-Star"
 
-#: blocks/src/helpers.js:329
+#: blocks/src/helpers.js:307
 #, fuzzy
 msgid "fab-bell"
 msgstr "Fab-sino"
 
-#: blocks/src/helpers.js:333
+#: blocks/src/helpers.js:311
 #, fuzzy
 msgid "fab-trophy"
 msgstr "Fab-troféu"
 
-#: blocks/src/helpers.js:337
+#: blocks/src/helpers.js:315
 #, fuzzy
 msgid "fab-lightbulb"
 msgstr "Fab-Lightbulb"
 
-#: blocks/src/helpers.js:341
+#: blocks/src/helpers.js:319
 #, fuzzy
 msgid "fab-graduation-cap"
 msgstr "Fab-graduação-Cap"
 
-#: blocks/src/helpers.js:345
+#: blocks/src/helpers.js:323
 #, fuzzy
 msgid "fab-bolt"
 msgstr "Fab-Bolt"
 
-#: blocks/src/helpers.js:349
+#: blocks/src/helpers.js:327
 #, fuzzy
 msgid "fab-bookmark"
 msgstr "Fab-Bookmark"
 
-#: blocks/src/helpers.js:353
+#: blocks/src/helpers.js:331
 #, fuzzy
 msgid "fab-book"
 msgstr "Facebook"
 
-#: blocks/src/helpers.js:357
+#: blocks/src/helpers.js:335
 #, fuzzy
 msgid "fab-download"
 msgstr "Fab-download"
 
-#: blocks/src/helpers.js:361
+#: blocks/src/helpers.js:339
 #, fuzzy
 msgid "fab-coffee"
 msgstr "Fab-café"
 
-#: blocks/src/helpers.js:365
+#: blocks/src/helpers.js:343
 #, fuzzy
 msgid "fab-amazon"
 msgstr "Amazônia"
 
-#: blocks/src/helpers.js:369
+#: blocks/src/helpers.js:347
 #, fuzzy
 msgid "fab-user"
 msgstr "Fab-usuário"
 
-#: blocks/src/helpers.js:373
+#: blocks/src/helpers.js:351
 #, fuzzy
 msgid "fab-envelope"
 msgstr "Fab-envelope"
 
-#: blocks/src/helpers.js:377
+#: blocks/src/helpers.js:355
 #, fuzzy
 msgid "fab-flag"
 msgstr "Fab-bandeira"
 
-#: blocks/src/helpers.js:381
+#: blocks/src/helpers.js:359
 #, fuzzy
 msgid "fab-ban"
 msgstr "Fab-Ban"
 
-#: blocks/src/helpers.js:385
+#: blocks/src/helpers.js:363
 #, fuzzy
 msgid "fab-calendar"
 msgstr "Fab-calendário"
 
-#: blocks/src/helpers.js:389
+#: blocks/src/helpers.js:367
 #, fuzzy
 msgid "fab-clock"
 msgstr "Fab-relógio"
 
-#: blocks/src/helpers.js:393
+#: blocks/src/helpers.js:371
 #, fuzzy
 msgid "fab-cutlery"
 msgstr "Fab-talheres"
 
-#: blocks/src/helpers.js:397 blocks/src/helpers.js:577
+#: blocks/src/helpers.js:375 blocks/src/helpers.js:555
 #, fuzzy
 msgid "fab-heart"
 msgstr "Fab-coração"
 
-#: blocks/src/helpers.js:401
+#: blocks/src/helpers.js:379
 #, fuzzy
 msgid "fab-camera"
 msgstr "Fab-câmera"
 
-#: blocks/src/helpers.js:405
+#: blocks/src/helpers.js:383
 #, fuzzy
 msgid "fab-search"
 msgstr "Fab-pesquisa"
 
-#: blocks/src/helpers.js:409
+#: blocks/src/helpers.js:387
 #, fuzzy
 msgid "fab-file-text"
 msgstr "Fab-arquivo-texto"
 
-#: blocks/src/helpers.js:413
+#: blocks/src/helpers.js:391
 #, fuzzy
 msgid "fab-folder"
 msgstr "Fab-pasta"
 
-#: blocks/src/helpers.js:417
+#: blocks/src/helpers.js:395
 #, fuzzy
 msgid "fab-tag"
 msgstr "Fab-tag"
 
-#: blocks/src/helpers.js:421
+#: blocks/src/helpers.js:399
 #, fuzzy
 msgid "fab-car"
 msgstr "Fab-carro"
 
-#: blocks/src/helpers.js:425
+#: blocks/src/helpers.js:403
 #, fuzzy
 msgid "fab-truck"
 msgstr "Fab-caminhão"
 
-#: blocks/src/helpers.js:429
+#: blocks/src/helpers.js:407
 #, fuzzy
 msgid "fab-bicycle"
 msgstr "Fab-bicicleta"
 
-#: blocks/src/helpers.js:433
+#: blocks/src/helpers.js:411
 #, fuzzy
 msgid "fab-motorcycle"
 msgstr "Fab-motocicleta"
 
-#: blocks/src/helpers.js:437
+#: blocks/src/helpers.js:415
 #, fuzzy
 msgid "fab-bus"
 msgstr "Fab-ônibus"
 
-#: blocks/src/helpers.js:441
+#: blocks/src/helpers.js:419
 #, fuzzy
 msgid "fab-plane"
 msgstr "Fab-Plane"
 
-#: blocks/src/helpers.js:445
+#: blocks/src/helpers.js:423
 #, fuzzy
 msgid "fab-train"
 msgstr "Fab-trem"
 
-#: blocks/src/helpers.js:449
+#: blocks/src/helpers.js:427
 #, fuzzy
 msgid "fab-subway"
 msgstr "Fab-metrô"
 
-#: blocks/src/helpers.js:453
+#: blocks/src/helpers.js:431
 #, fuzzy
 msgid "fab-taxi"
 msgstr "Fab-taxi"
 
-#: blocks/src/helpers.js:457
+#: blocks/src/helpers.js:435
 #, fuzzy
 msgid "fab-ship"
 msgstr "Fab-Ship"
 
-#: blocks/src/helpers.js:461
+#: blocks/src/helpers.js:439
 #, fuzzy
 msgid "fab-jpy"
 msgstr "Fab-JPY"
 
-#: blocks/src/helpers.js:465
+#: blocks/src/helpers.js:443
 #, fuzzy
 msgid "fab-usd"
 msgstr "Fab-USD"
 
-#: blocks/src/helpers.js:469
+#: blocks/src/helpers.js:447
 #, fuzzy
 msgid "fab-eur"
 msgstr "Fab-EUR"
 
-#: blocks/src/helpers.js:473
+#: blocks/src/helpers.js:451
 #, fuzzy
 msgid "fab-btc"
 msgstr "Fab-BTC"
 
-#: blocks/src/helpers.js:477
+#: blocks/src/helpers.js:455
 #, fuzzy
 msgid "fab-apple"
 msgstr "Fab-maçã"
 
-#: blocks/src/helpers.js:481
+#: blocks/src/helpers.js:459
 #, fuzzy
 msgid "fab-android"
 msgstr "Fab-Android"
 
-#: blocks/src/helpers.js:485
+#: blocks/src/helpers.js:463
 #, fuzzy
 msgid "fab-wordpress"
 msgstr "Fab-WordPress"
 
-#: blocks/src/helpers.js:501
+#: blocks/src/helpers.js:479
 #, fuzzy
 msgid "fab-caret-right"
 msgstr "Fab-acento circunflexo-direito"
 
-#: blocks/src/helpers.js:509
+#: blocks/src/helpers.js:487
 #, fuzzy
 msgid "fab-check-circle"
 msgstr "Fab-check-Circle"
 
-#: blocks/src/helpers.js:513
+#: blocks/src/helpers.js:491
 #, fuzzy
 msgid "fab-check-circle-o"
 msgstr "Fab-check-Circle-o"
 
-#: blocks/src/helpers.js:517
+#: blocks/src/helpers.js:495
 #, fuzzy
 msgid "fab-check-square"
 msgstr "Fab-check-Square"
 
-#: blocks/src/helpers.js:521
+#: blocks/src/helpers.js:499
 #, fuzzy
 msgid "fab-check-square-o"
 msgstr "Fab-check-Square-o"
 
-#: blocks/src/helpers.js:525
+#: blocks/src/helpers.js:503
 #, fuzzy
 msgid "fab-caret-square-o-right"
 msgstr "Fab-acento circunflexo-quadrado-o-direito"
 
-#: blocks/src/helpers.js:529
+#: blocks/src/helpers.js:507
 #, fuzzy
 msgid "fab-arrow-right"
 msgstr "Fab-Arrow-direita"
 
-#: blocks/src/helpers.js:533
+#: blocks/src/helpers.js:511
 #, fuzzy
 msgid "fab-angle-right"
 msgstr "Fab-ângulo-direito"
 
-#: blocks/src/helpers.js:537
+#: blocks/src/helpers.js:515
 #, fuzzy
 msgid "fab-angle-double-right"
 msgstr "Fab-Angle-duplo-direito"
 
-#: blocks/src/helpers.js:541
+#: blocks/src/helpers.js:519
 #, fuzzy
 msgid "fab-arrow-circle-right"
 msgstr "Fab-Arrow-círculo-direita"
 
-#: blocks/src/helpers.js:545
+#: blocks/src/helpers.js:523
 #, fuzzy
 msgid "fab-arrow-circle-o-right"
 msgstr "Fab-Arrow-círculo-o-direito"
 
-#: blocks/src/helpers.js:549
+#: blocks/src/helpers.js:527
 #, fuzzy
 msgid "fab-play-circle"
 msgstr "Fab-Play-Circle"
 
-#: blocks/src/helpers.js:553
+#: blocks/src/helpers.js:531
 #, fuzzy
 msgid "fab-play-circle-o"
 msgstr "Fab-Play-Circle-o"
 
-#: blocks/src/helpers.js:557
+#: blocks/src/helpers.js:535
 #, fuzzy
 msgid "fab-chevron-right"
 msgstr "Fab-Chevron-direito"
 
-#: blocks/src/helpers.js:561
+#: blocks/src/helpers.js:539
 #, fuzzy
 msgid "fab-chevron-circle-right"
 msgstr "Fab-Chevron-Circle-Right"
 
-#: blocks/src/helpers.js:565
+#: blocks/src/helpers.js:543
 #, fuzzy
 msgid "fab-hand-o-right"
 msgstr "Fab-mão-o-direito"
 
-#: blocks/src/helpers.js:573
+#: blocks/src/helpers.js:551
 #, fuzzy
 msgid "fab-star-o"
 msgstr "Fab-Star-o"
 
-#: blocks/src/helpers.js:581
+#: blocks/src/helpers.js:559
 #, fuzzy
 msgid "fab-heart-o"
 msgstr "Fab-Heart-o"
 
-#: blocks/src/helpers.js:585
+#: blocks/src/helpers.js:563
 #, fuzzy
 msgid "fab-square"
 msgstr "Fab-quadrado"
 
-#: blocks/src/helpers.js:589
+#: blocks/src/helpers.js:567
 #, fuzzy
 msgid "fab-square-o"
 msgstr "Fab-Square-o"
 
-#: blocks/src/helpers.js:593
+#: blocks/src/helpers.js:571
 #, fuzzy
 msgid "fab-circle"
 msgstr "Fab-círculo"
 
-#: blocks/src/helpers.js:597
+#: blocks/src/helpers.js:575
 #, fuzzy
 msgid "fab-circle-o"
 msgstr "Fab-Circle-o"
 
-#: blocks/src/helpers.js:601
+#: blocks/src/helpers.js:579
 #, fuzzy
 msgid "fab-dot-circle-o"
 msgstr "Fab-dot-Circle-o"
 
-#: blocks/src/helpers.js:605
+#: blocks/src/helpers.js:583
 #, fuzzy
 msgid "fab-plus"
 msgstr "Fab-Plus"
 
-#: blocks/src/helpers.js:609
+#: blocks/src/helpers.js:587
 #, fuzzy
 msgid "fab-plus-circle"
 msgstr "Fab-Plus-Circle"
 
-#: blocks/src/helpers.js:613
+#: blocks/src/helpers.js:591
 #, fuzzy
 msgid "fab-plus-square"
 msgstr "Fab-Plus-quadrado"
 
-#: blocks/src/helpers.js:617
+#: blocks/src/helpers.js:595
 #, fuzzy
 msgid "fab-plus-square-o"
 msgstr "Fab-Plus-Square-o"
 
-#: blocks/src/helpers.js:621
+#: blocks/src/helpers.js:599
 #, fuzzy
 msgid "fab-minus"
 msgstr "Fab-menos"
 
-#: blocks/src/helpers.js:625
+#: blocks/src/helpers.js:603
 #, fuzzy
 msgid "fab-minus-circle"
 msgstr "Fab-Minus-Circle"
 
-#: blocks/src/helpers.js:629
+#: blocks/src/helpers.js:607
 #, fuzzy
 msgid "fab-minus-square"
 msgstr "Fab-Minus-quadrado"
 
-#: blocks/src/helpers.js:633
+#: blocks/src/helpers.js:611
 #, fuzzy
 msgid "fab-minus-square-o"
 msgstr "Fab-Minus-Square-o"
 
-#: blocks/src/helpers.js:637
+#: blocks/src/helpers.js:615
 #, fuzzy
 msgid "fab-times"
 msgstr "Fab-Times"
 
-#: blocks/src/helpers.js:641
+#: blocks/src/helpers.js:619
 #, fuzzy
 msgid "fab-times-circle"
 msgstr "Fab-Times-Circle"
 
-#: blocks/src/helpers.js:645
+#: blocks/src/helpers.js:623
 #, fuzzy
 msgid "fab-times-circle-o"
 msgstr "Fab-Times-Circle-o"
 
-#: blocks/src/helpers.js:649
+#: blocks/src/helpers.js:627
 #, fuzzy
 msgid "fab-window-close"
 msgstr "Fab-Window-Close"
 
-#: blocks/src/helpers.js:653
+#: blocks/src/helpers.js:631
 #, fuzzy
 msgid "fab-window-close-o"
 msgstr "Fab-Window-Close-o"
 
-#: blocks/src/helpers.js:657
+#: blocks/src/helpers.js:635
 #, fuzzy
 msgid "fab-paw"
 msgstr "Fab-Plane"
 
-#: blocks/src/init.php:226
+#: blocks/src/init.php:279
 #, fuzzy
 msgid "Cocoonブロック"
 msgstr "Bloco do casulo"
 
-#: blocks/src/init.php:231
+#: blocks/src/init.php:284
 #, fuzzy
 msgid "Cocoon汎用ブロック"
 msgstr "Bloco geral do casulo"
 
-#: blocks/src/init.php:236
+#: blocks/src/init.php:289
 #, fuzzy
 msgid "Cocoonマイクロコピー"
 msgstr "Micro cópia"
 
-#: blocks/src/init.php:241
+#: blocks/src/init.php:294
 #, fuzzy
 msgid "Cocoonレイアウト"
 msgstr "Layout do cabeçalho"
 
-#: blocks/src/init.php:246
+#: blocks/src/init.php:299
 #, fuzzy
 msgid "Cocoonショートコード"
 msgstr "Código abreviado"
 
-#: blocks/src/init.php:251
+#: blocks/src/init.php:304
 #, fuzzy
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Bloco antigo Cocoon (preterido)"
@@ -2203,7 +2464,7 @@ msgid "アフィリエイトタグタグ"
 msgstr "Tags de afiliados"
 
 #: blocks/src/shortcode/affi/block.js:19
-#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:466
+#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:471
 #: lib/original-menu.php:33 lib/tinymce/affiliate-tags.php:48
 #, fuzzy
 msgid "アフィリエイトタグ"
@@ -2383,7 +2644,7 @@ msgstr "Pontuação Star"
 msgid "ログインコンテンツ"
 msgstr "Página de login"
 
-#: blocks/src/toolbutton/dropdown-shortcodes.js:170 lib/shortcodes.php:252
+#: blocks/src/toolbutton/dropdown-shortcodes.js:170 lib/shortcodes.php:268
 #: lib/tinymce/shortcodes.php:232
 #, fuzzy
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
@@ -2499,16 +2760,16 @@ msgstr "Seu endereço de e-mail não será publicado."
 msgid "コメントを書き込む"
 msgstr "Escrever um comentário"
 
-#: functions.php:120
+#: functions.php:149
 #, fuzzy
 msgid "キーワード指定なし"
 msgstr "Nenhuma palavra-chave especificada"
 
-#: functions.php:351
+#: functions.php:380
 msgid "角型ラベル"
 msgstr ""
 
-#: functions.php:355
+#: functions.php:384
 #, fuzzy
 msgid "アコーディオン"
 msgstr "Codificação:"
@@ -2999,144 +3260,139 @@ msgstr "Etiqueta incluída do cartão do blogue"
 msgid "商品リンクの追加"
 msgstr "Adicionar link de produto"
 
-#: lib/admin.php:172
+#: lib/admin.php:177
 #, fuzzy
 msgid "ID"
 msgstr "Id"
 
-#: lib/admin.php:177 lib/custom-fields/seo-field.php:61
+#: lib/admin.php:182 lib/custom-fields/seo-field.php:61
 #: lib/custom-fields/seo-field.php:83 lib/custom-fields/seo-field.php:93
 #, fuzzy
 msgid "文字数"
 msgstr "Número de caracteres"
 
-#: lib/admin.php:182
+#: lib/admin.php:187
 msgid "PV"
 msgstr ""
 
-#: lib/admin.php:187 lib/content-category.php:264 lib/content-tag.php:213
+#: lib/admin.php:192 lib/content-category.php:264 lib/content-tag.php:213
 #, fuzzy
 msgid "アイキャッチ"
 msgstr "Prendedor do olho"
 
-#: lib/admin.php:225
+#: lib/admin.php:230
 #, fuzzy
 msgid "　題："
 msgstr "Problemas:"
 
-#: lib/admin.php:233
+#: lib/admin.php:238
 #, fuzzy
 msgid "本文："
 msgstr "Texto completo:"
 
-#: lib/admin.php:255
+#: lib/admin.php:260
 #, fuzzy
 msgid "日："
 msgstr "Dia"
 
-#: lib/admin.php:263
+#: lib/admin.php:268
 #, fuzzy
 msgid "週："
 msgstr "Semana"
 
-#: lib/admin.php:271
+#: lib/admin.php:276
 #, fuzzy
 msgid "月："
 msgstr "Mês"
 
-#: lib/admin.php:279
+#: lib/admin.php:284
 #, fuzzy
 msgid "全："
 msgstr "Largura:"
 
-#: lib/admin.php:362
+#: lib/admin.php:367
 #, fuzzy
 msgid "管理メニュー"
 msgstr "Menu Administração"
 
-#: lib/admin.php:374 tmp/admin-panel.php:31
+#: lib/admin.php:379 tmp/admin-panel.php:31
 #, fuzzy
 msgid "ダッシュボード"
 msgstr "Painel"
 
-#: lib/admin.php:381 lib/shortcodes.php:447
+#: lib/admin.php:386 lib/shortcodes.php:463
 #, fuzzy
 msgid "投稿一覧"
 msgstr "Lista de postagem"
 
-#: lib/admin.php:388
+#: lib/admin.php:393
 #, fuzzy
 msgid "固定ページ一覧"
 msgstr "Lista de páginas fixas"
 
-#: lib/admin.php:395
+#: lib/admin.php:400
 #, fuzzy
 msgid "メディア一覧"
 msgstr "Lista de mídia"
 
-#: lib/admin.php:402
+#: lib/admin.php:407
 #, fuzzy
 msgid "テーマ"
 msgstr "Tema"
 
-#: lib/admin.php:409
+#: lib/admin.php:414
 #, fuzzy
 msgid "カスタマイズ"
 msgstr "Personalizar"
 
-#: lib/admin.php:416 lib/page-settings/_top-page.php:191
+#: lib/admin.php:421 lib/page-settings/_top-page.php:191
 #, fuzzy
 msgid "ウィジェット"
 msgstr "Widget"
 
-#: lib/admin.php:423 tmp/mobile-navi-button.php:21
+#: lib/admin.php:428 tmp/mobile-navi-button.php:21
 #, fuzzy
 msgid "メニュー"
 msgstr "Menu"
 
-#: lib/admin.php:430
+#: lib/admin.php:435
 #, fuzzy
 msgid "テーマの編集"
 msgstr "Editar tema"
 
-#: lib/admin.php:437
+#: lib/admin.php:442
 #, fuzzy
 msgid "プラグイン一覧"
 msgstr "Lista de plug-ins"
 
-#: lib/admin.php:473 lib/original-menu.php:36
+#: lib/admin.php:478 lib/original-menu.php:36
 #, fuzzy
 msgid "ランキング作成"
 msgstr "Criar classificação"
 
-#: lib/admin.php:480 lib/original-menu.php:39 lib/page-access/_top-page.php:39
+#: lib/admin.php:485 lib/original-menu.php:39 lib/page-access/_top-page.php:39
 #: lib/page-access/access-forms.php:14 lib/page-access/access-forms.php:26
 #, fuzzy
 msgid "アクセス集計"
 msgstr "Agregação de acesso"
 
-#: lib/admin.php:487 lib/original-menu.php:42
+#: lib/admin.php:492 lib/original-menu.php:42
 #, fuzzy
 msgid "高速化"
 msgstr "Rápido"
 
-#: lib/admin.php:494 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
+#: lib/admin.php:499 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
 #: lib/page-backup/backup-forms.php:24
 msgid "バックアップ"
 msgstr "Cópias de segurança"
 
-#: lib/admin.php:501 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
+#: lib/admin.php:506 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
 #: lib/page-cache/cache-forms.php:14 lib/shortcodes-product-func.php:350
 #, fuzzy
 msgid "キャッシュ削除"
 msgstr "Excluir cache"
 
-#: lib/admin.php:640
-#, fuzzy
-msgid "カテゴリー検索"
-msgstr "Pesquisa de categoria"
-
-#: lib/admin.php:700 lib/admin.php:714
+#: lib/admin.php:705 lib/admin.php:719
 #, fuzzy
 msgid "Excerpt"
 msgstr "Trecho"
@@ -3914,8 +4170,8 @@ msgstr ""
 "para que a avaliação de página do mecanismo de pesquisa não seja "
 "distribuída. Se o conteúdo for duplicado, insira o URL da página canônica."
 
-#: lib/custom-fields/seo-field.php:117 lib/html-forms.php:477
-#: lib/html-forms.php:543
+#: lib/custom-fields/seo-field.php:117 lib/html-forms.php:482
+#: lib/html-forms.php:548
 #, fuzzy
 msgid "詳細設定"
 msgstr "Configurações avançadas"
@@ -4217,114 +4473,114 @@ msgstr "<script>"
 msgid "XML"
 msgstr ""
 
-#: lib/html-forms.php:256
+#: lib/html-forms.php:261
 #, fuzzy
 msgid "解説ページ"
 msgstr "Página de comentários"
 
-#: lib/html-forms.php:347
+#: lib/html-forms.php:352
 #, fuzzy
 msgid "タイトル検索"
 msgstr "Pesquisa de título"
 
-#: lib/html-forms.php:351
+#: lib/html-forms.php:356
 #, fuzzy
 msgid "タイトル昇順"
 msgstr "Título ascendente"
 
-#: lib/html-forms.php:352
+#: lib/html-forms.php:357
 #, fuzzy
 msgid "タイトル降順"
 msgstr "Título descendente"
 
-#: lib/html-forms.php:353
+#: lib/html-forms.php:358
 #, fuzzy
 msgid "作成日昇順"
 msgstr "Data de criação ascendente"
 
-#: lib/html-forms.php:354
+#: lib/html-forms.php:359
 #, fuzzy
 msgid "作成日降順"
 msgstr "Data de criação descendente"
 
-#: lib/html-forms.php:355
+#: lib/html-forms.php:360
 #, fuzzy
 msgid "編集日昇順"
 msgstr "Editar data ascendente"
 
-#: lib/html-forms.php:356
+#: lib/html-forms.php:361
 #, fuzzy
 msgid "編集日降順"
 msgstr "Editar data decrescente"
 
-#: lib/html-forms.php:360
+#: lib/html-forms.php:365
 #, fuzzy
 msgid "抽出"
 msgstr "Extrair"
 
-#: lib/html-forms.php:483 lib/html-forms.php:549
+#: lib/html-forms.php:488 lib/html-forms.php:554
 #, fuzzy
 msgid "フォーマット（広告ユニット）"
 msgstr "Formato"
 
-#: lib/html-forms.php:487 lib/html-forms.php:552
+#: lib/html-forms.php:492 lib/html-forms.php:557
 #, fuzzy
 msgid "広告ラベルを表示"
 msgstr "Mostrar rótulos de anúncios"
 
-#: lib/html-forms.php:494
+#: lib/html-forms.php:499
 #, fuzzy
 msgid "広告の表示数を制御する"
 msgstr "Exibir anúncios"
 
-#: lib/html-forms.php:496
+#: lib/html-forms.php:501
 msgid "先頭から"
 msgstr ""
 
-#: lib/html-forms.php:498
+#: lib/html-forms.php:503
 msgid "個まで"
 msgstr ""
 
-#: lib/html-forms.php:500
+#: lib/html-forms.php:505
 #, fuzzy
 msgid "※-1で全てのH2見出し手前に広告を挿入"
 msgstr "Inserir anúncios na frente de todas as manchetes H2"
 
-#: lib/html-forms.php:530
+#: lib/html-forms.php:535
 #, fuzzy
 msgid "入力済"
 msgstr "Entrou"
 
-#: lib/html-forms.php:571
+#: lib/html-forms.php:576
 #, fuzzy
 msgid "選択"
 msgstr "Selecione"
 
-#: lib/html-forms.php:572
+#: lib/html-forms.php:577
 msgid "クリア"
 msgstr "Borrar"
 
-#: lib/html-forms.php:579
+#: lib/html-forms.php:584
 #, fuzzy
 msgid "大きな画像は縮小して表示されます。"
 msgstr "A imagem maior será dimensionada para baixo."
 
-#: lib/html-forms.php:600
+#: lib/html-forms.php:605
 #, fuzzy
 msgid "画像を選択してください。"
 msgstr "Escolha uma imagem"
 
-#: lib/html-forms.php:608
+#: lib/html-forms.php:613
 #, fuzzy
 msgid "画像の選択"
 msgstr "Selecionar imagem"
 
-#: lib/html-forms.php:773
+#: lib/html-forms.php:772
 #, fuzzy
 msgid "トップページのみ"
 msgstr "Apenas página superior"
 
-#: lib/html-forms.php:778 lib/page-settings/_top-page.php:170
+#: lib/html-forms.php:777 lib/page-settings/_top-page.php:170
 #: lib/page-settings/sns-follow-forms.php:107
 #: lib/page-settings/sns-share-forms-bottom.php:115
 #: lib/page-settings/sns-share-forms-top.php:102
@@ -4333,184 +4589,184 @@ msgstr "Apenas página superior"
 msgid "投稿"
 msgstr "Postar"
 
-#: lib/html-forms.php:783 lib/page-settings/_top-page.php:171
+#: lib/html-forms.php:782 lib/page-settings/_top-page.php:171
 #: lib/page-settings/sns-follow-forms.php:110
 #: lib/page-settings/sns-share-forms-bottom.php:118
 #: lib/page-settings/sns-share-forms-top.php:105
-#: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:441
+#: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:457
 #: lib/widgets/display-widgets.php:170
 #, fuzzy
 msgid "固定ページ"
 msgstr "Página fixa"
 
-#: lib/html-forms.php:788
+#: lib/html-forms.php:787
 #, fuzzy
 msgid "カテゴリー一覧"
 msgstr "Lista de categorias"
 
-#: lib/html-forms.php:793
+#: lib/html-forms.php:792
 #, fuzzy
 msgid "タグ一覧"
 msgstr "Lista de Tags"
 
-#: lib/html-forms.php:798
+#: lib/html-forms.php:797
 #, fuzzy
 msgid "著者一覧"
 msgstr "Lista de autores"
 
-#: lib/html-forms.php:803
+#: lib/html-forms.php:802
 #, fuzzy
 msgid "アーカイブ一覧"
 msgstr "Lista de arquivos"
 
-#: lib/html-forms.php:808
+#: lib/html-forms.php:807
 #, fuzzy
 msgid "検索結果一覧"
 msgstr "Lista de resultados da pesquisa"
 
-#: lib/html-forms.php:813 lib/page-settings/_top-page.php:187
+#: lib/html-forms.php:812 lib/page-settings/_top-page.php:187
 #: lib/widget-areas.php:516
 #, fuzzy
 msgid "404ページ"
 msgstr "404 páginas da Web"
 
-#: lib/html-forms.php:818
+#: lib/html-forms.php:817
 #, fuzzy
 msgid "AMPページ"
 msgstr "Páginas AMP"
 
-#: lib/html-forms.php:824
+#: lib/html-forms.php:823
 #, fuzzy
 msgid "wpForoページ"
 msgstr "Página Wpforo"
 
-#: lib/html-forms.php:831
+#: lib/html-forms.php:830
 #, fuzzy
 msgid "bbPressページ"
 msgstr "Página bbPress"
 
-#: lib/html-forms.php:838
+#: lib/html-forms.php:837
 #, fuzzy
 msgid "BuddyPressページ"
 msgstr "Página BuddyPress"
 
-#: lib/html-forms.php:845
+#: lib/html-forms.php:844
 #, fuzzy
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr "Plugins página do fórum (bbPress, BuddyPress, Wpforo)"
 
-#: lib/html-forms.php:891
+#: lib/html-forms.php:890
 #, fuzzy
 msgid "投稿ID入力"
 msgstr "Entrada de ID de post"
 
-#: lib/html-forms.php:892 lib/html-forms.php:912 lib/html-forms.php:932
+#: lib/html-forms.php:891 lib/html-forms.php:911 lib/html-forms.php:931
 #, fuzzy
 msgid "例：111,222,333"
 msgstr "Exemplo: 111222333"
 
-#: lib/html-forms.php:893
+#: lib/html-forms.php:892
 #, fuzzy
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "Insira uma ID de postagem separada por vírgulas."
 
-#: lib/html-forms.php:911
+#: lib/html-forms.php:910
 #, fuzzy
 msgid "固定ページID入力"
 msgstr "Entrada de ID de página fixa"
 
-#: lib/html-forms.php:913
+#: lib/html-forms.php:912
 #, fuzzy
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "Insira uma ID de página fixa separada por uma vírgula."
 
-#: lib/html-forms.php:931
+#: lib/html-forms.php:930
 #, fuzzy
 msgid "タグID入力"
 msgstr "Entrada de ID de post"
 
-#: lib/html-forms.php:933
+#: lib/html-forms.php:932
 #, fuzzy
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr "Insira uma ID de postagem separada por vírgulas."
 
-#: lib/html-forms.php:1090
+#: lib/html-forms.php:1089
 #, fuzzy
 msgid "人気記事は見つかりませんでした。"
 msgstr "Nenhum artigo popular foi encontrado."
 
-#: lib/html-forms.php:1300
+#: lib/html-forms.php:1299 lib/html-forms.php:1766
 #, fuzzy
 msgid "記事は見つかりませんでした。"
 msgstr "Não foram encontrados artigos."
 
-#: lib/html-forms.php:1427
+#: lib/html-forms.php:1426
 #, fuzzy, php-format
 msgid "Posts by %s"
 msgstr "Postagens de %s"
 
-#: lib/html-forms.php:1445
+#: lib/html-forms.php:1444
 #, fuzzy
 msgid "未登録のユーザーさん"
 msgstr "Usuários não registrados"
 
-#: lib/html-forms.php:1455
+#: lib/html-forms.php:1454
 #, fuzzy
 msgid "未登録のユーザーさんです。"
 msgstr "Usuário não registrado."
 
-#: lib/html-forms.php:1457
+#: lib/html-forms.php:1456
 #, fuzzy
 msgid "ログイン・登録はこちら→"
 msgstr "Login e registro →"
 
-#: lib/html-forms.php:1459
+#: lib/html-forms.php:1458
 #, fuzzy
 msgid "ログインページ"
 msgstr "Página de login"
 
-#: lib/html-forms.php:1464
+#: lib/html-forms.php:1463
 #, fuzzy
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr ""
 "O conteúdo do perfil pode ser alterado a partir da tela de gerenciamento →"
 
-#: lib/html-forms.php:1464
+#: lib/html-forms.php:1463
 #, fuzzy
 msgid "プロフィール設定画面"
 msgstr "Tela Configurações do perfil"
 
-#: lib/html-forms.php:1464
+#: lib/html-forms.php:1463
 #, fuzzy
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "* Esta mensagem só será visível para o usuário conectado."
 
-#: lib/html-forms.php:1494
+#: lib/html-forms.php:1493
 #, fuzzy
 msgid "管理者用エラーメッセージ"
 msgstr "Mensagens de erro administrativas"
 
-#: lib/html-forms.php:1700
+#: lib/html-forms.php:1699
 #, fuzzy
 msgid "おすすめ"
 msgstr "Recomendado"
 
-#: lib/html-forms.php:1703
+#: lib/html-forms.php:1702
 #, fuzzy
 msgid "新着"
 msgstr "Novo"
 
-#: lib/html-forms.php:1706
+#: lib/html-forms.php:1705
 #, fuzzy
 msgid "注目"
 msgstr "Destaque"
 
-#: lib/html-forms.php:1709
+#: lib/html-forms.php:1708
 #, fuzzy
 msgid "必見"
 msgstr "Must-ver"
 
-#: lib/html-forms.php:1712
+#: lib/html-forms.php:1711
 #, fuzzy
 msgid "お得"
 msgstr "Muito"
@@ -5594,7 +5850,6 @@ msgstr "Texto completo"
 
 #: lib/page-settings/_top-page.php:173 lib/page-settings/toc-forms.php:80
 #: lib/page-settings/toc-funcs.php:54 lib/widgets/toc.php:19
-#: lib/widgets/toc.php:43
 #, fuzzy
 msgid "目次"
 msgstr "Índice"
@@ -6684,20 +6939,19 @@ msgstr ""
 "após a configuração, porque é possível violar a política do Google Adsense."
 
 #: lib/page-settings/ads-forms.php:238
-#, fuzzy
-msgid "[ad]ショートコード"
-msgstr "Shortcode do anúncio"
+msgid "挿入型広告"
+msgstr ""
 
 #: lib/page-settings/ads-forms.php:242
 #, fuzzy
-msgid "[ad]ショートコードを有効にする"
+msgid "[ad]ショートコード・広告ブロックを有効にする"
 msgstr "Habilitar o shortcode do AD"
 
 #: lib/page-settings/ads-forms.php:246
 #, fuzzy
 msgid ""
-"本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示"
-"します。"
+"本文内に[ad]と入力したり「広告ブロック」を挿入した場合、その部分に「広告コー"
+"ド」に設定してある広告を表示します。"
 msgstr ""
 "Se você digitar anúncio no texto, verá um anúncio definido como código de "
 "anúncio para essa peça."
@@ -7540,8 +7794,14 @@ msgstr ""
 "feeds smartnews."
 
 #: lib/page-settings/analytics-forms.php:101
+#, fuzzy
+msgid "GA4はAMP対応していません。"
+msgstr "Você não inseriu nenhum conteúdo."
+
+#: lib/page-settings/analytics-forms.php:101
 msgid ""
-"GA4はAMP対応していません。よってAMPページでは計測できないのでご了承ください。"
+"よってGoogle非推奨の方法でAMPページの計測を行なっておりますが動作を保証するも"
+"のではありません。。"
 msgstr ""
 
 #: lib/page-settings/analytics-forms.php:109
@@ -8792,28 +9052,28 @@ msgstr "Exibir trechos em seu telefone (480px ou menos)"
 msgid "表示内容"
 msgstr "O que você vê"
 
-#: lib/page-settings/carousel-forms.php:65 lib/widgets/popular-entries.php:216
+#: lib/page-settings/carousel-forms.php:65 lib/widgets/popular-entries.php:211
 #, fuzzy
 msgid "本日"
 msgstr "Hoje"
 
-#: lib/page-settings/carousel-forms.php:66 lib/widgets/popular-entries.php:217
+#: lib/page-settings/carousel-forms.php:66 lib/widgets/popular-entries.php:212
 #, fuzzy
 msgid "7日間"
 msgstr "sete dias"
 
-#: lib/page-settings/carousel-forms.php:67 lib/widgets/popular-entries.php:218
+#: lib/page-settings/carousel-forms.php:67 lib/widgets/popular-entries.php:213
 #, fuzzy
 msgid "30日間"
 msgstr "30 dias"
 
-#: lib/page-settings/carousel-forms.php:68 lib/widgets/popular-entries.php:219
+#: lib/page-settings/carousel-forms.php:68 lib/widgets/popular-entries.php:214
 #, fuzzy
 msgid "1年間"
 msgstr "Um ano"
 
 #: lib/page-settings/carousel-forms.php:69
-#: lib/page-settings/single-forms.php:193 lib/widgets/popular-entries.php:220
+#: lib/page-settings/single-forms.php:193 lib/widgets/popular-entries.php:215
 #, fuzzy
 msgid "全期間"
 msgstr "Todos os períodos"
@@ -8828,21 +9088,11 @@ msgstr "Inclua artigos populares agregados em"
 #: lib/page-settings/single-forms.php:356
 #: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:121
-#: lib/page-settings/sns-share-forms-top.php:108 lib/shortcodes.php:453
+#: lib/page-settings/sns-share-forms-top.php:108 lib/shortcodes.php:469
 #: lib/widgets/display-widgets.php:156
 #, fuzzy
 msgid "カテゴリー"
 msgstr "Categoria"
-
-#: lib/page-settings/carousel-forms.php:80
-#: lib/page-settings/editor-forms.php:67 lib/page-settings/single-forms.php:130
-#: lib/page-settings/sns-follow-forms.php:116
-#: lib/page-settings/sns-share-forms-bottom.php:124
-#: lib/page-settings/sns-share-forms-top.php:111 lib/tinymce/html-tags.php:43
-#: lib/widgets/display-widgets.php:173
-#, fuzzy
-msgid "タグ"
-msgstr "Tags"
 
 #: lib/page-settings/carousel-forms.php:82
 #, fuzzy
@@ -9958,7 +10208,7 @@ msgstr ""
 "Você quer ver a lista suspensa de shortcode da filial na barra de "
 "ferramentas?"
 
-#: lib/page-settings/editor-forms.php:150 lib/widgets/popular-entries.php:228
+#: lib/page-settings/editor-forms.php:150 lib/widgets/popular-entries.php:223
 #, fuzzy
 msgid "ランキング表示"
 msgstr "Vista de classificação"
@@ -10697,13 +10947,6 @@ msgstr "Cartões de índice"
 msgid "新着記事ウィジェットのサムネイル。"
 msgstr "Novos artigos widgets também são miniaturas."
 
-#: lib/page-settings/image-forms.php:210 lib/widgets/new-entries.php:19
-#: lib/widgets/new-entries.php:59 tmp/list-new-entries.php:16
-#: tmp/list-tab-index.php:23
-#, fuzzy
-msgid "新着記事"
-msgstr "Novos artigos"
-
 #: lib/page-settings/image-forms.php:211
 #, fuzzy
 msgid "人気記事ウィジェットのサムネイル。"
@@ -10830,7 +11073,7 @@ msgstr ""
 msgid "フロントページの表示形式を選択します。"
 msgstr "Selecione o formato de exibição para o cabeçalho."
 
-#: lib/page-settings/index-forms.php:60
+#: lib/page-settings/index-forms.php:60 lib/widgets/info-list.php:150
 #, fuzzy
 msgid "表示カテゴリー"
 msgstr "Exibir categoria"
@@ -11109,11 +11352,6 @@ msgstr "Ver número de comentários"
 #, fuzzy
 msgid "エントリーカードに投稿関連情報を表示するかどうか。"
 msgstr "Se deve mostrar informações post-Related no cartão de entrada."
-
-#: lib/page-settings/index-forms.php:240 lib/page-settings/single-forms.php:364
-#, fuzzy
-msgid "除外カテゴリー"
-msgstr "Categorias de exclusão AMP"
 
 #: lib/page-settings/index-forms.php:245
 #, fuzzy
@@ -11622,7 +11860,7 @@ msgstr "Jquery"
 
 #: lib/page-settings/others-forms.php:100
 #, fuzzy
-msgid "jQuery Core 3.6.0"
+msgid "jQuery Core 3.6.1"
 msgstr "JQuery Core 3.3.1"
 
 #: lib/page-settings/others-forms.php:101
@@ -11909,8 +12147,8 @@ msgstr ""
 "A cor do plano de fundo do aplicativo. Essa cor pode ser aplicada ao site "
 "até que seja exibida."
 
-#: lib/page-settings/pwa-forms.php:140 lib/widgets/new-entries.php:137
-#: lib/widgets/popular-entries.php:182
+#: lib/page-settings/pwa-forms.php:140 lib/widgets/new-entries.php:142
+#: lib/widgets/popular-entries.php:177
 #, fuzzy
 msgid "表示モード"
 msgstr "Modo de exibição"
@@ -12374,14 +12612,6 @@ msgstr "Insira o título para o artigo relacionado."
 msgid "関連記事の補助となる見出しを入力してください。"
 msgstr "Digite o título que irá ajudá-lo com o artigo relacionado."
 
-#: lib/page-settings/single-forms.php:156
-#: lib/page-settings/single-forms.php:320 lib/widgets/navi-entries.php:118
-#: lib/widgets/new-entries.php:163 lib/widgets/popular-entries.php:204
-#: lib/widgets/related-entries.php:187
-#, fuzzy
-msgid "表示タイプ"
-msgstr "Tipo de exibição"
-
 #: lib/page-settings/single-forms.php:162
 #, fuzzy
 msgid "ミニカード（推奨表示数：偶数）"
@@ -12401,11 +12631,6 @@ msgstr "Cartão vertical 4 colunas (visualizações recomendadas: 4, 8, 12...)"
 #, fuzzy
 msgid "関連記事の表示タイプを選択します。"
 msgstr "Essa é a configuração relacionada à exibição do artigo."
-
-#: lib/page-settings/single-forms.php:175
-#, fuzzy
-msgid "表示数"
-msgstr "Número de visualizações"
 
 #: lib/page-settings/single-forms.php:180
 #, fuzzy
@@ -12569,11 +12794,6 @@ msgstr ""
 #, fuzzy
 msgid "ページ送りナビに表示させないカテゴリーを選択してください。"
 msgstr "Selecione uma categoria que não gere uma página amp."
-
-#: lib/page-settings/single-forms.php:374
-#, fuzzy
-msgid "枠線表示"
-msgstr "Exposição da beira"
 
 #: lib/page-settings/single-forms.php:378
 #, fuzzy
@@ -12766,19 +12986,19 @@ msgstr "Site"
 
 #: lib/page-settings/sns-follow-forms.php:72
 #: lib/page-settings/sns-share-forms-bottom.php:68
-#: lib/page-settings/sns-share-forms-top.php:55 tmp/sns-share-buttons.php:18
+#: lib/page-settings/sns-share-forms-top.php:55 tmp/sns-share-buttons.php:17
 #, fuzzy
 msgid "Twitter"
 msgstr "Twitter"
 
 #: lib/page-settings/sns-follow-forms.php:73
 #: lib/page-settings/sns-share-forms-bottom.php:71
-#: lib/page-settings/sns-share-forms-top.php:58 tmp/sns-share-buttons.php:22
+#: lib/page-settings/sns-share-forms-top.php:58 tmp/sns-share-buttons.php:21
 #, fuzzy
 msgid "Facebook"
 msgstr "Facebook"
 
-#: lib/page-settings/sns-follow-forms.php:74 tmp/sns-share-buttons.php:30
+#: lib/page-settings/sns-follow-forms.php:74 tmp/sns-share-buttons.php:29
 #, fuzzy
 msgid "Google+"
 msgstr "Google +"
@@ -12797,7 +13017,7 @@ msgstr "Instagram"
 
 #: lib/page-settings/sns-follow-forms.php:77
 #: lib/page-settings/sns-share-forms-bottom.php:86
-#: lib/page-settings/sns-share-forms-top.php:73 tmp/sns-share-buttons.php:42
+#: lib/page-settings/sns-share-forms-top.php:73 tmp/sns-share-buttons.php:41
 #, fuzzy
 msgid "Pinterest"
 msgstr "Pinterest"
@@ -12808,7 +13028,7 @@ msgstr "Globo.com"
 
 #: lib/page-settings/sns-follow-forms.php:79
 #: lib/page-settings/sns-share-forms-bottom.php:89
-#: lib/page-settings/sns-share-forms-top.php:76 tmp/sns-share-buttons.php:46
+#: lib/page-settings/sns-share-forms-top.php:76 tmp/sns-share-buttons.php:45
 #, fuzzy
 msgid "LinkedIn"
 msgstr "Linkedin"
@@ -13147,7 +13367,7 @@ msgid "Google"
 msgstr "Google"
 
 #: lib/page-settings/sns-share-forms-bottom.php:80
-#: lib/page-settings/sns-share-forms-top.php:67 tmp/sns-share-buttons.php:34
+#: lib/page-settings/sns-share-forms-top.php:67 tmp/sns-share-buttons.php:33
 #, fuzzy
 msgid "Pocket"
 msgstr "Bolso"
@@ -13927,7 +14147,7 @@ msgstr "Quando há mais de um título"
 
 #: lib/page-settings/toc-forms.php:127
 #, fuzzy
-msgid "設定した数以上の目次数がある時のみ表示されます。"
+msgid "設定した数以上の見出し数がある時のみ表示されます。"
 msgstr ""
 "Exibido somente quando há mais do que o número de tabela de Sumário definido."
 
@@ -15037,22 +15257,22 @@ msgstr "Erro de aquisição de produto Rakuten"
 msgid "楽天商品リンクが取得できませんでした。"
 msgstr "Não foi possível obter o link do produto Rakuten."
 
-#: lib/shortcodes.php:333
+#: lib/shortcodes.php:349
 #, fuzzy
 msgid "日付未入力"
 msgstr "Data não inserida"
 
-#: lib/shortcodes.php:359
+#: lib/shortcodes.php:375
 #, fuzzy
 msgid "歳"
 msgstr "Anos"
 
-#: lib/shortcodes.php:459
+#: lib/shortcodes.php:475
 #, fuzzy
 msgid "月別アーカイブ"
 msgstr "Arquivos mensais"
 
-#: lib/shortcodes.php:944
+#: lib/shortcodes.php:960
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr ""
 
@@ -15305,27 +15525,27 @@ msgstr "Insira o conteúdo a ser exibido para o usuário conectado."
 msgid "キャンペーン期間中のみ表示"
 msgstr "Mostrar somente usuários conectados"
 
-#: lib/utils.php:791
+#: lib/utils.php:796
 #, fuzzy
 msgid "スクロールできます"
 msgstr "Pode rolar"
 
-#: lib/utils.php:894
+#: lib/utils.php:899
 #, fuzzy
 msgid "公開"
 msgstr "Publicado"
 
-#: lib/utils.php:895
+#: lib/utils.php:900
 #, fuzzy
 msgid "記事を公開してもよろしいですか？"
 msgstr "Tem certeza de que deseja publicar o artigo?"
 
-#: lib/utils.php:2506
+#: lib/utils.php:2511
 #, fuzzy, php-format
 msgid "%s年"
 msgstr "%s ano"
 
-#: lib/utils.php:2508
+#: lib/utils.php:2513
 #, fuzzy, php-format
 msgid "%s年%sヶ月"
 msgstr "%s ano %s meses"
@@ -15744,11 +15964,6 @@ msgstr "Rótulo do título"
 msgid "例：この記事を書いた人"
 msgstr "Exemplo: a pessoa que escreveu este artigo"
 
-#: lib/widgets/author-box.php:86
-#, fuzzy
-msgid "画像を円形にする"
-msgstr "Arredondar uma imagem"
-
 #: lib/widgets/author-box.php:91
 #, fuzzy
 msgid ""
@@ -16019,6 +16234,30 @@ msgstr "Ditto. * \"0\" está oculto por entrada."
 msgid "LINE ID（＠は不要です）"
 msgstr "ID da linha (@ não é obrigatório)"
 
+#: lib/widgets/info-list.php:20
+#, fuzzy
+msgid "最近書かれた記事のタイトルリストを表示します。"
+msgstr "Altere a legenda do Sumário aberto e próximo."
+
+#: lib/widgets/info-list.php:118
+#, fuzzy
+msgid "新着情報のタイトル"
+msgstr "Título do novo artigo"
+
+#: lib/widgets/info-list.php:125
+msgid "キャプション（枠線内表示）"
+msgstr ""
+
+#: lib/widgets/info-list.php:132 lib/widgets/new-entries.php:161
+#: lib/widgets/popular-entries.php:192 lib/widgets/related-entries.php:180
+#, fuzzy
+msgid "表示数（半角数字）"
+msgstr "Número de números de exibição"
+
+#: lib/widgets/info-list.php:151
+msgid "（※未選択の場合は全て表示）"
+msgstr ""
+
 #: lib/widgets/item-ranking.php:20
 #, fuzzy
 msgid "商品・サービスのランキングを表示するウィジェットです。"
@@ -16079,14 +16318,14 @@ msgstr "Cartão Navi"
 msgid "ナビカードリストを表示するウィジェットです。"
 msgstr "Um widget que exibe comentários postados recentemente."
 
-#: lib/widgets/navi-entries.php:127 lib/widgets/new-entries.php:179
-#: lib/widgets/popular-entries.php:247 lib/widgets/related-entries.php:215
+#: lib/widgets/navi-entries.php:127 lib/widgets/new-entries.php:184
+#: lib/widgets/popular-entries.php:242 lib/widgets/related-entries.php:215
 #, fuzzy
 msgid "タイトルを太字にする"
 msgstr "Por favor, insira um título."
 
-#: lib/widgets/navi-entries.php:133 lib/widgets/new-entries.php:185
-#: lib/widgets/popular-entries.php:253 lib/widgets/related-entries.php:221
+#: lib/widgets/navi-entries.php:133 lib/widgets/new-entries.php:190
+#: lib/widgets/popular-entries.php:248 lib/widgets/related-entries.php:221
 #, fuzzy
 msgid "矢印表示"
 msgstr "Indicador da seta"
@@ -16096,46 +16335,44 @@ msgstr "Indicador da seta"
 msgid "新着記事リストをサムネイルつきで表示するウィジェットです。"
 msgstr "Este é um widget para exibir a lista de novos artigos com miniaturas."
 
-#: lib/widgets/new-entries.php:61
+#: lib/widgets/new-entries.php:62
 #, fuzzy
 msgid "カテゴリー別新着記事"
 msgstr "Novos artigos por categoria"
 
-#: lib/widgets/new-entries.php:140
+#: lib/widgets/new-entries.php:145
 #, fuzzy
 msgid "全ての新着記事（全ページで表示）"
 msgstr "Todos os novos artigos (exibidos em todas as páginas)"
 
-#: lib/widgets/new-entries.php:141
+#: lib/widgets/new-entries.php:146
 #, fuzzy
 msgid "カテゴリー別新着記事（投稿・カテゴリーで表示）"
 msgstr "Novos artigos por categoria (Mostrar na categoria post)"
 
-#: lib/widgets/new-entries.php:149
+#: lib/widgets/new-entries.php:154
 #, fuzzy
 msgid "新着記事のタイトル"
 msgstr "Título do novo artigo"
 
-#: lib/widgets/new-entries.php:156 lib/widgets/popular-entries.php:197
-#: lib/widgets/related-entries.php:180
-#, fuzzy
-msgid "表示数（半角数字）"
-msgstr "Número de números de exibição"
-
-#: lib/widgets/new-entries.php:172 lib/widgets/popular-entries.php:240
+#: lib/widgets/new-entries.php:177 lib/widgets/popular-entries.php:235
 #: lib/widgets/related-entries.php:208
 msgid "横型表示"
 msgstr ""
 
-#: lib/widgets/new-entries.php:173 lib/widgets/popular-entries.php:241
+#: lib/widgets/new-entries.php:178 lib/widgets/popular-entries.php:236
 #: lib/widgets/related-entries.php:209
 msgid "（「大きなサムネイル」との使用がお勧め）"
 msgstr ""
 
-#: lib/widgets/new-entries.php:191
+#: lib/widgets/new-entries.php:196
 #, fuzzy
 msgid "「固定表示」記事を表示"
 msgstr "Exibir o artigo de exibição fixo"
+
+#: lib/widgets/new-entries.php:202
+msgid "更新日順に並び替え"
+msgstr ""
 
 #: lib/widgets/pc-ad.php:19
 #, fuzzy
@@ -16194,44 +16431,44 @@ msgstr ""
 msgid "人気記事リストをサムネイルつきで表示するウィジェットです。"
 msgstr "Artigos populares um widget para exibir uma lista com miniaturas."
 
-#: lib/widgets/popular-entries.php:89
+#: lib/widgets/popular-entries.php:87
 #, fuzzy
 msgid "カテゴリー別人気記事"
 msgstr "Artigos populares por categoria"
 
-#: lib/widgets/popular-entries.php:184
+#: lib/widgets/popular-entries.php:179
 #, fuzzy
 msgid "全ての人気記事（全ページで表示）"
 msgstr "Todos os artigos populares (exibidos em todas as páginas)"
 
-#: lib/widgets/popular-entries.php:185
+#: lib/widgets/popular-entries.php:180
 #, fuzzy
 msgid "カテゴリー別人気記事（投稿・カテゴリーで表示）"
 msgstr "Artigos populares por categoria (Mostrar por categoria de lançamento)"
 
-#: lib/widgets/popular-entries.php:190
+#: lib/widgets/popular-entries.php:185
 #, fuzzy
 msgid "人気記事のタイトル"
 msgstr "O título do artigo popular"
 
-#: lib/widgets/popular-entries.php:213
+#: lib/widgets/popular-entries.php:208
 #, fuzzy
 msgid "集計期間"
 msgstr "Período total"
 
-#: lib/widgets/popular-entries.php:234
+#: lib/widgets/popular-entries.php:229
 #, fuzzy
 msgid "PV表示"
 msgstr "Exposição do picovolt"
 
-#: lib/widgets/popular-entries.php:259
+#: lib/widgets/popular-entries.php:254
 #, fuzzy
 msgid "除外投稿ID（カンマ区切りでIDを入力してください）"
 msgstr "Excluir ID de postagem (Insira ID com vírgula separada)"
 
-#: lib/widgets/popular-entries.php:266 lib/widgets/related-entries.php:226
+#: lib/widgets/popular-entries.php:261
 #, fuzzy
-msgid "除外カテゴリーID（除外するものを選択してください）"
+msgid "除外カテゴリー（除外するものを選択してください）"
 msgstr "ID de categoria de exclusão (selecione excluído)"
 
 #: lib/widgets/recent-comments.php:19 lib/widgets/recent-comments.php:28
@@ -16299,6 +16536,11 @@ msgstr "Títulos de artigos relacionados"
 msgid "関連付け"
 msgstr "Associação"
 
+#: lib/widgets/related-entries.php:226
+#, fuzzy
+msgid "除外カテゴリーID（除外するものを選択してください）"
+msgstr "ID de categoria de exclusão (selecione excluído)"
+
 #: lib/widgets/sns-follow-buttons.php:19 lib/widgets/sns-follow-buttons.php:34
 #, fuzzy
 msgid "SNSフォローボタン"
@@ -16331,7 +16573,7 @@ msgid ""
 "見出し」以降を表示することはできません。"
 msgstr ""
 
-#: searchform.php:19
+#: searchform.php:21
 #, fuzzy
 msgid "サイト内を検索"
 msgstr "Pesquise no site"
@@ -16390,14 +16632,32 @@ msgstr ""
 msgid "サイドバーの見出しを明朝体にする"
 msgstr "A configuração da posição de exibição da barra lateral."
 
-#: skins/raku-add-fadein/functions.php:269
+#: skins/raku-add-fadein/functions.php:268
 msgid "ふわっとタイプ"
 msgstr ""
 
-#: skins/raku-add-fadein/functions.php:291
+#: skins/raku-add-fadein/functions.php:290
 #, fuzzy
 msgid "表示スキン（ベース）"
 msgstr "Exibir skins"
+
+#: skins/raku-color-changing/functions.php:190
+#, fuzzy
+msgid "スキンカラー"
+msgstr "Cor da tecla"
+
+#: skins/raku-color-changing/functions.php:203
+msgid ""
+"背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:218
+msgid "記事内のタイトル<br><small>（選択した4色を順に適応する）</small>"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:240
+msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適応する）</small>"
+msgstr ""
 
 #: tmp/admin-panel.php:39
 #, fuzzy
@@ -16499,7 +16759,7 @@ msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr ""
 "Você pode ler este artigo em <span class=\"bold\">cerca de %s</span> minutos."
 
-#: tmp/css-custom.php:869
+#: tmp/css-custom.php:875
 msgid "ラベルなし"
 msgstr ""
 
@@ -16711,20 +16971,24 @@ msgstr "Inscrever-se para Feedly atualizar informações"
 msgid "RSSで更新情報をフォロー"
 msgstr "Siga as informações atualizadas em RSS"
 
-#: tmp/sns-share-buttons.php:26
+#: tmp/sns-share-buttons.php:25
 #, fuzzy
 msgid "はてブ"
 msgstr "O"
 
-#: tmp/sns-share-buttons.php:38
+#: tmp/sns-share-buttons.php:37
 #, fuzzy
 msgid "LINE"
 msgstr "Linha"
 
-#: tmp/sns-share-buttons.php:50
+#: tmp/sns-share-buttons.php:49
 #, fuzzy
 msgid "コピー"
 msgstr "Cópia"
+
+#, fuzzy
+#~ msgid "[ad]ショートコード"
+#~ msgstr "Shortcode do anúncio"
 
 #, fuzzy
 #~ msgid "タイムラインのタイトル"

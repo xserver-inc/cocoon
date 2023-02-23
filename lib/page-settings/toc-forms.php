@@ -124,7 +124,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             }
             generate_selectbox_tag(OP_TOC_DISPLAY_COUNT, $options, get_toc_display_count());
             _e( 'つ以上見出しがあるとき', THEME_NAME );
-            generate_tips_tag(__( '設定した数以上の目次数がある時のみ表示されます。', THEME_NAME ));
+            generate_tips_tag(__( '設定した数以上の見出し数がある時のみ表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
