@@ -2144,6 +2144,10 @@ img.blogcard-favicon-image {
   margin: 1em auto;
 }
 
+.nwa .widget_toc .widget-title + .toc-widget-box .toc-title {
+  display: none;
+}
+
 /************************************
 ** サイドバーのスタイル
 ************************************/
