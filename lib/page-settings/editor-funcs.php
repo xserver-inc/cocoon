@@ -157,7 +157,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A', 'block_editor_extended_palette_color_a');
 if ( !function_exists( 'get_block_editor_extended_palette_color_a' ) ):
 function get_block_editor_extended_palette_color_a(){
-  $default_color = '#ffffff';
+  $default_color = '#fef4f4';//桜色
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A, $default_color);
   return $color ? $color : $default_color;
 }
@@ -167,7 +167,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B', 'block_editor_extended_palette_color_b');
 if ( !function_exists( 'get_block_editor_extended_palette_color_b' ) ):
 function get_block_editor_extended_palette_color_b(){
-  $default_color = '#ffffff';
+  $default_color = '#f8f4e6';//象牙色
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B, $default_color);
   return $color ? $color : $default_color;
 }
@@ -177,7 +177,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C', 'block_editor_extended_palette_color_c');
 if ( !function_exists( 'get_block_editor_extended_palette_color_c' ) ):
 function get_block_editor_extended_palette_color_c(){
-  $default_color = '#ffffff';
+  $default_color = '#eaf4fc';//月白色
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C, $default_color);
   return $color ? $color : $default_color;
 }
@@ -187,7 +187,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D', 'block_editor_extended_palette_color_d');
 if ( !function_exists( 'get_block_editor_extended_palette_color_d' ) ):
 function get_block_editor_extended_palette_color_d(){
-  $default_color = '#ffffff';
+  $default_color = '#eaedf7';//白菫色色
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D, $default_color);
   return $color ? $color : $default_color;
 }
@@ -197,7 +197,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E', 'block_editor_extended_palette_color_e');
 if ( !function_exists( 'get_block_editor_extended_palette_color_e' ) ):
 function get_block_editor_extended_palette_color_e(){
-  $default_color = '#ffffff';
+  $default_color = '#e8ecef';//#e8ecef色
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E, $default_color);
   return $color ? $color : $default_color;
 }
@@ -207,7 +207,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F', 'block_editor_extended_palette_color_f');
 if ( !function_exists( 'get_block_editor_extended_palette_color_f' ) ):
 function get_block_editor_extended_palette_color_f(){
-  $default_color = '#ffffff';
+  $default_color = '#f8fbf8';//白磁色
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F, $default_color);
   return $color ? $color : $default_color;
 }
