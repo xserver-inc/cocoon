@@ -356,8 +356,17 @@ function get_block_editor_color_palette_css(){
 
 
 <?php //WordPressデフォルト ?>
+html .body .has-<?php echo $slug; ?>-background-color {
+    background-color: <?php echo $color; ?>;
+}
+html .body .has-<?php echo $slug; ?>-color {
+    color: <?php echo $color; ?>;
+}
 html .body .has-<?php echo $slug; ?>-color .toggle-button::before {
     color: <?php echo $color; ?>;
+}
+html .body .has-<?php echo $slug; ?>-border-color {
+    border-color: <?php echo $color; ?>;
 }
 <?php //囲みボタン ?>
 html .body .btn-wrap.has-<?php echo $slug; ?>-background-color > a{
