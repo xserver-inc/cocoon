@@ -1521,6 +1521,6 @@ div.cocoon-render-dropdown select option[disabled] {
   margin-bottom: 8px;
 }
 
-.components-disabled {
+.block-editor-block-inspector .components-disabled {
   opacity: 0.3;
 }
