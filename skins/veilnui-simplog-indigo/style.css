@@ -717,42 +717,33 @@ body {
   background-color: #5C6BC0;
 }
 
-#toc,
 .toc {
-  margin: 0;
   width: 100%;
   padding: 0;
   border-color: #5C6BC0;
   border-radius: 4px;
 }
-#toc .toc-title,
 .toc .toc-title {
   padding: 0;
   background-color: #5C6BC0;
   color: white;
 }
-#toc .toc-title::after,
 .toc .toc-title::after {
   color: white;
   text-decoration: none;
 }
-#toc .toc-content,
 .toc .toc-content {
   padding: 1em;
 }
-#toc .toc-content .toc-list,
 .toc .toc-content .toc-list {
   margin: 0 1em;
 }
-#toc .toc-content .toc-list li,
 .toc .toc-content .toc-list li {
   margin: 0;
 }
-#toc .toc-content .toc-list li a,
 .toc .toc-content .toc-list li a {
   transition: all 0.3s ease;
 }
-#toc .toc-content .toc-list li a:hover,
 .toc .toc-content .toc-list li a:hover {
   color: #5C6BC0;
   text-decoration: none;

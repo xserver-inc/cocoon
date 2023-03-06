@@ -1242,6 +1242,6 @@ div.cocoon-render-dropdown {
 }
 
 //操作できないGutenbergオプションは透過表示にする
-.components-disabled {
+.block-editor-block-inspector .components-disabled {
   opacity: 0.3;
 }
