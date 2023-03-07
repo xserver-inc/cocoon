@@ -305,32 +305,43 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
     }
 
     //メインカテゴリーが設定してある場合
-    // _v('id='.$id);
     $main_cat_id = get_the_page_main_category($id);
-    // _v('mid='.$main_cat_id);
+    $test_page_id = 752;
+    // if ($id == $test_page_id) {
+    //   _v('id='.$id);
+    //   _v('mid='.$main_cat_id);
+    // }
+
     if ($main_cat_id && in_category($main_cat_id, $id)) {
       $cat_url = get_the_category_eye_catch_url($main_cat_id);
+
+      // if ($id == $test_page_id) {
+      //   _v('cat_url='.$cat_url);
+      //   _v($cat_url);
+      // }
+
       if ($cat_url) {
         $url = get_image_sized_url($cat_url, $width, $height);
-      } else {
-        switch ($width) {
-          case 120:
-            $url = NO_IMAGE_120;
-            break;
-          case 150:
-            $url = NO_IMAGE_150;
-            break;
-          case 160:
-            $url = NO_IMAGE_160;
-            break;
-          case 320:
-            $url = NO_IMAGE_320;
-            break;
-          default:
-            $url = NO_IMAGE_LARGE;
-            break;
-        }
       }
+      // else {
+      //   switch ($width) {
+      //     case 120:
+      //       $url = NO_IMAGE_120;
+      //       break;
+      //     case 150:
+      //       $url = NO_IMAGE_150;
+      //       break;
+      //     case 160:
+      //       $url = NO_IMAGE_160;
+      //       break;
+      //     case 320:
+      //       $url = NO_IMAGE_320;
+      //       break;
+      //     default:
+      //       $url = NO_IMAGE_LARGE;
+      //       break;
+      //   }
+      // }
     }
 
   }
