@@ -306,7 +306,7 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
 
     //メインカテゴリーが設定してある場合
     $main_cat_id = get_the_page_main_category($id);
-    $test_page_id = 752;
+    // $test_page_id = 752;
     // if ($id == $test_page_id) {
     //   _v('id='.$id);
     //   _v('mid='.$main_cat_id);
