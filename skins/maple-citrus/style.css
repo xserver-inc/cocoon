@@ -776,14 +776,10 @@ span.wpcf7-not-valid-tip,
 }
 .toc a {
 	color: #6a859c;
-	font-weight: bold;
 }
 .toc a:hover {
 	color: #fbc861;
 	text-decoration: none;
-}
-.article .toc :last-child {
-	font-weight: 300;
 }
 .toc_list ul {
 	list-style: none;
