@@ -716,10 +716,14 @@ span.wpcf7-not-valid-tip,
 	font-size: 1.8em; /* 大きさ */
 }
 .toc-title:before{ /* タイトル前のアイコン */
- font-family: "Font Awesome 5 Free";
- content: "\f15b";
+ font-family: FontAwesome;
+ content: "\f016";
  margin-right: 5px;
  margin-left: 5px;
+}
+.font-awesome-5 .toc-title:before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f15b";
 }
 .toc a{
 	color: inherit;
