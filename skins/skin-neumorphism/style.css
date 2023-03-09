@@ -42,7 +42,7 @@ body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h2,
 	box-shadow: inset 1px 1px 3px var(--color-shadow-dark), inset -3px -3px 6px var(--color-shadow-light);
 }
 /*------------------------凸------------------------*/
-.a-wrap,.navi-in a,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons a,.ect-vertical-card .entry-card-wrap,.tagcloud a,.cta-box,.fb-like-box,.btn,.wp-block-cover-image.has-background-dim:not([class*=-background-color]), .wp-block-cover.has-background-dim:not([class*=-background-color]),.mejs-container .mejs-controls,.ranking-item-link-buttons a,.fb-like-balloon-arrow-box,.recent-comment-content,.wp-block-audio audio,.toggle-button,.search-form div.sbtn,.wp-block-file__button,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-button,.appeal,.notice-area,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.header,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.go-to-top-button,.menu-drawer a,.toc a:hover,.menu-button,.search-menu-content,.wp-block-code,.wp-block-media-text .wp-block-media-text__media,.blocks-gallery-item,.widget_nav_menu ul li a,.box-menu,.index-tab-buttons .index-tab-button,.widget_categories .cat-item a,.toc a,figure[class*="wp-block-image"],.wp-block-image figure,select
+.a-wrap,.navi-in a,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons  .sns-button,.ect-vertical-card .entry-card-wrap,.tagcloud a,.cta-box,.fb-like-box,.btn,.wp-block-cover-image.has-background-dim:not([class*=-background-color]), .wp-block-cover.has-background-dim:not([class*=-background-color]),.mejs-container .mejs-controls,.ranking-item-link-buttons a,.fb-like-balloon-arrow-box,.recent-comment-content,.wp-block-audio audio,.toggle-button,.search-form div.sbtn,.wp-block-file__button,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-button,.appeal,.notice-area,.mobile-menu-buttons,.mobile-menu-buttons .menu-content,.header,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.go-to-top-button,.menu-drawer a,.toc a:hover,.menu-button,.search-menu-content,.wp-block-code,.wp-block-media-text .wp-block-media-text__media,.blocks-gallery-item,.widget_nav_menu ul li a,.box-menu,.index-tab-buttons .index-tab-button,.widget_categories .cat-item a,.toc a,figure[class*="wp-block-image"],.wp-block-image figure,select
 {
 	box-shadow: 6px 6px 12px var(--color-shadow-dark), -6px -6px 12px var(--color-shadow-light);
 }
@@ -55,7 +55,7 @@ body,.header-container,.navi,.navi-in>ul li:hover>ul,.main,.sidebar,.sidebar h2,
 	box-shadow: 2px 2px 5px var(--color-shadow-dark), -2px -2px 5px var(--color-shadow-light);
 }
 /*凸全般縁取り*/
-.sns-follow-buttons a, .sidebar .sns-follow-buttons a, .footer .sns-follow-buttons a, .sns-share-buttons a,.search-form div.sbtn,.mejs-container .mejs-controls,.wp-block-file__button,.appeal-button,.notice-area,.menu-drawer a,.widget_categories .cat-item a,.widget_nav_menu a,.toc a{
+.sns-follow-buttons a, .sidebar .sns-follow-buttons a, .footer .sns-follow-buttons a, .sns-share-buttons  .sns-button,.search-form div.sbtn,.mejs-container .mejs-controls,.wp-block-file__button,.appeal-button,.notice-area,.menu-drawer a,.widget_categories .cat-item a,.widget_nav_menu a,.toc a{
 	border: solid 3px var(--color-bg);
 }
 .btn,.ranking-item-link-buttons a,.wp-block-audio audio,.wp-block-cover,.appeal,.header{
@@ -77,7 +77,7 @@ input,button,textarea,.site-name-text,.tagline,.article h1, .article h2, .articl
 }
 
 /*------------------------角丸------------------------*/
-select,pre, blockquote,.eye-catch img,.card-thumb img,.wp-block-image img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-media-text__media img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar,.video,.mejs-container, .mejs-container *,.navi-in a,.a-wrap,.widget,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons a,.ect-vertical-card .entry-card-wrap,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.wp-block-image,.video-container,.navi-in>ul .sub-menu,.widget_recent_entries ul li a, .widget_categories .cat-item a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a,.author-box .sns-follow-buttons a.follow-button,.tagcloud a,.cta-box,.ranking-item,[type="text"]:not(.has-background):not(.has-background-dim), [type="tel"]:not(.has-background):not(.has-background-dim), [type="email"]:not(.has-background):not(.has-background-dim), [type="url"]:not(.has-background):not(.has-background-dim), [type="number"]:not(.has-background):not(.has-background-dim), [type="password"]:not(.has-background):not(.has-background-dim), [type="search"]:not(.has-background):not(.has-background-dim), [type="file"]:not(.has-background):not(.has-background-dim),.list-title-in:before, .list-title-in:after,.article h2:after,.article h2:before,.article h3:before,.article h3:after,.article h4:before,.article h4:after,.sidebar h2::after,.sidebar h3:after,.fb-like-box,.box-menu,.widget_recent_entries ul li a:hover, .widget_categories .cat-item a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.toc a:hover,.calendar_wrap,.entry-content .toc-center,.wp-block-audio audio,.wp-block-embed iframe,.btn-l,.ranking-item-link-buttons a,.toggle-button,.search-form div.sform,.search-form div.sbtn,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-content,.appeal-button,.share-menu-content .sns-buttons,.go-to-top-button,.menu-drawer a,.menu-close-button .fa,.menu-button,.search-menu-content,.cat-label,.cat-link,.wp-block-media-text .wp-block-media-text__media,.blocks-gallery-item,.widget-entry-cards.ranking-visible .card-thumb::before,.wp-video,.notice-area,.index-tab-buttons .index-tab-button,.toc a,.wp-block-image figure
+select,pre, blockquote,.eye-catch img,.card-thumb img,.wp-block-image img,.blogcard-thumbnail img,.speech-icon img, .speech-icon amp-img,.wp-block-media-text__media img,.wp-block-gallery.is-cropped .blocks-gallery-item img,.cta-thumb img,.fb-like-balloon-thumb img,.ranking-item-image-tag img,.gallery-item img,.widget_media_image img,.fb-like-box img,.avatar,.video,.mejs-container, .mejs-container *,.navi-in a,.a-wrap,.widget,.list-more-button,.pagination-next-link, .comment-btn,.sns-follow-buttons a,.page-numbers,.sns-share-buttons  .sns-button,.ect-vertical-card .entry-card-wrap,.eye-catch,.entry-card-thumb,.widget-entry-card-thumb,.related-entry-card-thumb,.carousel-entry-card-thumb,.pager-post-navi a figure,.wp-block-image,.video-container,.navi-in>ul .sub-menu,.widget_recent_entries ul li a, .widget_categories .cat-item a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a,.author-box .sns-follow-buttons a.follow-button,.tagcloud a,.cta-box,.ranking-item,[type="text"]:not(.has-background):not(.has-background-dim), [type="tel"]:not(.has-background):not(.has-background-dim), [type="email"]:not(.has-background):not(.has-background-dim), [type="url"]:not(.has-background):not(.has-background-dim), [type="number"]:not(.has-background):not(.has-background-dim), [type="password"]:not(.has-background):not(.has-background-dim), [type="search"]:not(.has-background):not(.has-background-dim), [type="file"]:not(.has-background):not(.has-background-dim),.list-title-in:before, .list-title-in:after,.article h2:after,.article h2:before,.article h3:before,.article h3:after,.article h4:before,.article h4:after,.sidebar h2::after,.sidebar h3:after,.fb-like-box,.box-menu,.widget_recent_entries ul li a:hover, .widget_categories .cat-item a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,.toc a:hover,.calendar_wrap,.entry-content .toc-center,.wp-block-audio audio,.wp-block-embed iframe,.btn-l,.ranking-item-link-buttons a,.toggle-button,.search-form div.sform,.search-form div.sbtn,.wp-block-search .wp-block-search__button,input[type='submit'],.comment-reply-link,.appeal-content,.appeal-button,.share-menu-content .sns-buttons,.go-to-top-button,.menu-drawer a,.menu-close-button .fa,.menu-button,.search-menu-content,.cat-label,.cat-link,.wp-block-media-text .wp-block-media-text__media,.blocks-gallery-item,.widget-entry-cards.ranking-visible .card-thumb::before,.wp-video,.notice-area,.index-tab-buttons .index-tab-button,.toc a,.wp-block-image figure
 {
 	border-radius: var(--corner);
 }
@@ -281,13 +281,13 @@ tfoot td{
 	justify-content: center;
 }
 /*SNSシェア*/
-.sns-share-buttons a {
+.sns-share-buttons  .sns-button {
     margin: 6px;
 	width: calc(100% / 9 - 12px)!important;
     height: 3em!important;
 	flex-direction: column;
 }
-.sns-share-buttons a .button-caption{
+.sns-share-buttons  .sns-button .button-caption{
 	margin-left: 0px!important;
 	font-size: 0.5em!important;
 }
@@ -528,7 +528,7 @@ tfoot td{
 }
 /*平面に*/
 
-.sns-follow-buttons a:hover,.sns-share-buttons a:hover,.pagination a:hover,.btn:hover,.ranking-item-link-buttons a:hover,.wp-block-button__link:hover,.wp-block-file .wp-block-file__button:hover,.appeal-button:hover,.menu-drawer a:hover{
+.sns-follow-buttons a:hover,.sns-share-buttons  .sns-button:hover,.pagination a:hover,.btn:hover,.ranking-item-link-buttons a:hover,.wp-block-button__link:hover,.wp-block-file .wp-block-file__button:hover,.appeal-button:hover,.menu-drawer a:hover{
 	transition: all .3s ease-in-out;
 	box-shadow: none;
 }
@@ -549,7 +549,7 @@ tfoot td{
     opacity: 0.5;
 }
 /*------------------------アクティブ時挙動------------------------*/
-.a-wrap:active,.navi-in a:active,.list-more-button:active,.pagination-next-link:active,.comment-btn:active,.widget_recent_entries ul li a:active, .widget_categories .cat-item a:active, .widget_archive ul li a:active, .widget_pages ul li a:active, .widget_meta ul li a:active, .widget_rss ul li a:active, .widget_nav_menu ul li a:active,.tagcloud a:active,.recent-comment-content:active,.toc a:active,.search-form div.sbtn:active,.pager-links a:active span,.wp-block-search .wp-block-search__button:active,input[type='submit']:active,.comment-reply-link:active,.go-to-top-button:active,.sns-follow-buttons a:active,.sns-share-buttons a:active,.pagination a:active,.btn:active,.ranking-item-link-buttons a:active,.wp-block-button__link:active,.wp-block-file .wp-block-file__button:active,.appeal-button:active,.menu-drawer a:active,.menu-button:active,.wp-block-button__link:active{
+.a-wrap:active,.navi-in a:active,.list-more-button:active,.pagination-next-link:active,.comment-btn:active,.widget_recent_entries ul li a:active, .widget_categories .cat-item a:active, .widget_archive ul li a:active, .widget_pages ul li a:active, .widget_meta ul li a:active, .widget_rss ul li a:active, .widget_nav_menu ul li a:active,.tagcloud a:active,.recent-comment-content:active,.toc a:active,.search-form div.sbtn:active,.pager-links a:active span,.wp-block-search .wp-block-search__button:active,input[type='submit']:active,.comment-reply-link:active,.go-to-top-button:active,.sns-follow-buttons a:active,.sns-share-buttons  .sns-button:active,.pagination a:active,.btn:active,.ranking-item-link-buttons a:active,.wp-block-button__link:active,.wp-block-file .wp-block-file__button:active,.appeal-button:active,.menu-drawer a:active,.menu-button:active,.wp-block-button__link:active{
 	box-shadow: inset 1px 1px 3px var(--color-shadow-dark), inset -3px -3px 6px var(--color-shadow-light);
 }
 .box-menu:active,.wp-block-file a.wp-block-file__button:active{
@@ -596,7 +596,7 @@ img[width="1"]{
 .tagline {
 		margin: 1.6em 1em;
 	}
-	.sns-share-buttons a{
+	.sns-share-buttons  .sns-button{
 		width: calc(100% / 3 - 12px)!important;
 	}
 }

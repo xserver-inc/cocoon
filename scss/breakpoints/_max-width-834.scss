@@ -50,7 +50,7 @@ table {
 ///////////////////////////////////////
 .ss-top .sns-share-buttons,
 .ss-bottom .sns-share-buttons {
-  a {
+  .sns-button {
     font-size: 14px;
 
     .button-caption {
@@ -60,8 +60,8 @@ table {
   }
 }
 
-.sns-share.ss-top.ss-col-6 a,
-.sns-share.ss-bottom.ss-col-6 a {
+.sns-share.ss-top.ss-col-6 .sns-button,
+.sns-sh.sns-buttonre.ss-bottom.ss-col-6 a {
   width: 32%;
 }
 

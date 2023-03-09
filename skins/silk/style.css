@@ -20,7 +20,7 @@
 .ect-entry-card .a-wrap img,
 .ect-big-card-first .a-wrap:not(:first-of-type) img,
 .eye-catch,
-.sns-buttons a,
+.sns-follow .sns-button,
 .blogcard-wrap,
 .is-style-text a .blogcard-label,
 .btn,
@@ -67,7 +67,7 @@ input[type="submit"],
 .entry-card-wrap.a-wrap:hover,
 .ect-entry-card .a-wrap:hover img,
 .ect-big-card-first .a-wrap:not(:first-of-type):hover img,
-.sns-buttons a:hover,
+.sns-follow .sns-button:hover,
 .blogcard-wrap:hover,
 .is-style-text a:hover .blogcard-label,
 .btn:hover,
@@ -2306,8 +2306,8 @@ div.search-form {
   margin-top: 1em;
 }
 
-.author-box .sns-buttons a,
-.author-box .sns-buttons a:hover {
+.author-box .sns-follow .sns-button,
+.author-box .sns-follow .sns-button:hover {
   box-shadow: none;
   transform: none;
 }
@@ -2765,7 +2765,7 @@ a.swatchimages:hover .swatch-image-thumb > img {
   justify-content: flex-end;
 }
 
-.sns-share.ss-top .sns-buttons a {
+.sns-share.ss-top .sns-follow .sns-button {
   width: 40px;
   height: 40px;
   margin-left: 8px;
@@ -2800,13 +2800,13 @@ a.swatchimages:hover .swatch-image-thumb > img {
   width: 15%;
 }
 
-.ss-bottom .sns-share-buttons.sns-buttons a {
+.ss-bottom .sns-share-buttons.sns-follow .sns-button {
   height: 36px;
   margin-bottom: 15px;
   font-size: 20px;
 }
 
-.sns-share-buttons a .share-count,
+.sns-share-buttons  .sns-button .share-count,
 .sns-follow-buttons a .follow-count {
   top: -8px;
   right: auto;
@@ -2818,7 +2818,7 @@ a.swatchimages:hover .swatch-image-thumb > img {
   background: #f9a825;
 }
 
-.ss-bottom .sns-share-buttons a .share-count {
+.ss-bottom .sns-share-buttons  .sns-button .share-count {
   right: -6px;
 }
 
@@ -3024,7 +3024,7 @@ ol.toc-list > li > ol {
   background: #fff;
 }
 
-.follow-menu-content .sns-buttons a {
+.follow-menu-content .sns-follow .sns-button {
   width: 36px;
 }
 

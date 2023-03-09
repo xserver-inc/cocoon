@@ -524,7 +524,7 @@ input[type='submit'] {
 /
 /   ・全てサムライブルーに
 --------------------------------------------------------- */
-#container .sns-buttons a{
+#container .sns-follow .sns-button{
   background-color: #19295a;
   color: #fff;
   border: 0;

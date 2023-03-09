@@ -698,7 +698,7 @@ div.list {
 	opacity:1;
 }
 
-.sns-share a {
+.sns-share .sns-button {
     border-radius: 4px;
 }
 

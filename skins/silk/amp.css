@@ -7,7 +7,7 @@ body {
 }
 
 .eye-catch,
-.sns-share-buttons a,
+.sns-share-buttons  .sns-button,
 .btn,
 .btn-wrap > a,
 .ranking-item-image-tag amp-img,
@@ -68,7 +68,7 @@ a.rsswidget amp-img,
 }
 
 .date-tags [class^="fa"],
-.sns-share-buttons a .button-caption {
+.sns-share-buttons  .sns-button .button-caption {
   display: none;
 }
 

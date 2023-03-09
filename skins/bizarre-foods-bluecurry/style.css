@@ -651,11 +651,11 @@ a.tag-link {
     color:lightskyblue;
 }
 
-.sns-buttons a{
+.sns-follow .sns-button{
     color:#545454;
 }
 
-.sns-buttons a.share-button {
+.sns-follow .sns-button.share-button {
     color: #545454;
     background: white;
     border-radius: 0;
@@ -663,20 +663,20 @@ a.tag-link {
     margin-top:10px;
 }
 
-.bc-brand-color-white .sns-buttons a.share-button{
+.bc-brand-color-white .sns-follow .sns-button.share-button{
     border-width: 1px;
     border-style: solid;
 }
 
-.sns-buttons a:hover {
+.sns-follow .sns-button:hover {
     transform: translateY(-4px);
     transition:all 500ms;
     color:#545454;
 }
 
-.bc-brand-color.sns-share .sns-buttons a,
-.bc-brand-color.sns-follow  .sns-buttons a,
-.bc-monochrome .sns-buttons a{
+.bc-brand-color.sns-share .sns-follow .sns-button,
+.bc-brand-color.sns-follow  .sns-follow .sns-button,
+.bc-monochrome .sns-follow .sns-button{
     background:#fff;
     border:none;
 }

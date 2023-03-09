@@ -204,7 +204,7 @@ select {
 }
 
 /* シェアボタン */
-#container .sns-buttons a {
+#container .sns-follow .sns-button {
     border-radius: 0.5em;
 }
 
@@ -461,7 +461,7 @@ blockquote::after {
 }
 
 /* SNSボタン */
-.sns-buttons a {
+.sns-follow .sns-button {
     background-color: #444;
 }
 
