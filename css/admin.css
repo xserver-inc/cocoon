@@ -7697,6 +7697,7 @@ body.wp-admin {
   z-index: 99999;
 }
 .admin-settings .demo .go-to-top-button {
+  border-width: 0;
   background-color: #eee;
   color: #333;
   text-decoration: none;
@@ -15432,6 +15433,7 @@ body.wp-admin {
   z-index: 99999;
 }
 .admin-settings .demo .go-to-top-button {
+  border-width: 0;
   background-color: #eee;
   color: #333;
   text-decoration: none;
