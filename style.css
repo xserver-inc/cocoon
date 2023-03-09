@@ -8088,6 +8088,7 @@ div.fb-like-mobile {
 }
 
 .go-to-top-button {
+  border-width: 0;
   background-color: #eee;
   color: #333;
   text-decoration: none;
