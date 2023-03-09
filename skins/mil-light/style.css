@@ -88,24 +88,24 @@ strong {
 .button-caption {
     display: none !important;
 }
-.bc-monochrome .sns-share-buttons  .sns-button,
+.bc-monochrome .sns-share-buttons a,
 .bc-monochrome .sns-follow-buttons a {
     background-color: #706762;
 }
-.sns-share-buttons  .sns-button {
+.sns-share-buttons a {
     border-radius: 7px;
     background-color: #606060;
 }
-.sns-share .sns-share-buttons  .sns-button .social-icon {
+.sns-share .sns-share-buttons a .social-icon {
     margin-bottom: 2px;
     font-size: 23px;
 }
-.sns-share-buttons  .sns-button .share-count {
+.sns-share-buttons a .share-count {
     right: 7px;
     bottom: 4px;
 }
-.bc-brand-color-white.sns-share .sns-button,
-.bc-brand-color-white.sns-follow .sns-button {
+.bc-brand-color-white.sns-share a,
+.bc-brand-color-white.sns-follow a {
     background-color: #fcf9f5;
     border: 2.3px solid #606060;
     color: #606060;
@@ -1017,10 +1017,10 @@ div.speech-balloon {
         margin: 3px 0px;
         padding: 0.5em;
     }
-    .sns-share .sns-share-buttons  .sns-button .social-icon {
+    .sns-share .sns-share-buttons a .social-icon {
         font-size: 18px;
     }
-    .sns-follow .sns-button {
+    .sns-buttons a {
         height: 38px;
     }
 }

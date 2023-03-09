@@ -656,11 +656,11 @@ a.tag-link {
     color:#545454;
 }
 
-.sns-follow .sns-button{
+.sns-buttons a{
     color:#545454;
 }
 
-.sns-follow .sns-button.share-button {
+.sns-buttons a.share-button {
     color: #545454;
     background: white;
     border-radius: 0;
@@ -668,20 +668,20 @@ a.tag-link {
     margin-top:10px;
 }
 
-.bc-brand-color-white .sns-follow .sns-button.share-button{
+.bc-brand-color-white .sns-buttons a.share-button{
     border-width: 1px;
     border-style: solid;
 }
 
-.sns-follow .sns-button:hover {
+.sns-buttons a:hover {
     transform: translateY(-4px);
     transition:all 500ms;
     color:#545454;
 }
 
-.bc-brand-color.sns-share .sns-follow .sns-button,
-.bc-brand-color.sns-follow  .sns-follow .sns-button,
-.bc-monochrome .sns-follow .sns-button{
+.bc-brand-color.sns-share .sns-buttons a,
+.bc-brand-color.sns-follow  .sns-buttons a,
+.bc-monochrome .sns-buttons a{
     background:#fff;
     border:none;
 }

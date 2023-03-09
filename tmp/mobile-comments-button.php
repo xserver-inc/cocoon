@@ -13,12 +13,12 @@ $caption = $_MENU_CAPTION ? $_MENU_CAPTION : __( 'コメント', THEME_NAME ) ?>
 <?php if (is_single() && is_single_comment_visible()): ?>
 <!-- コメント -->
 <li class="comments-menu-button menu-button">
-  <div href="#comment-area" title="<?php echo $caption; ?>" class="go-to-comment-area menu-button-in">
+  <a href="#comment-area" title="<?php echo $caption; ?>" class="go-to-comment-area menu-button-in">
     <span class="comments-menu-icon menu-icon">
       <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
     </span>
     <span class="comments-menu-caption menu-caption"><?php echo $caption; ?></span>
-  </div>
+  </a>
 </li>
 <?php endif; ?>
 

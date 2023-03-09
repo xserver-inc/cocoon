@@ -392,7 +392,7 @@ table th {
 
 /* SNS */
  /* ホワイト全体 */
-.bc-brand-color-white.sns-share .sns-button:hover, .bc-brand-color-white.sns-follow .sns-button:hover {
+.bc-brand-color-white.sns-share a:hover, .bc-brand-color-white.sns-follow a:hover {
   opacity: 1;
 	color: #fff;
 	transition: all .3s ease-in-out;
@@ -490,11 +490,11 @@ table th {
 	color: #fff;
 }
 /* コピーボタン */
-.bc-brand-color-white.sns-share .sns-button, .bc-brand-color-white.sns-follow .sns-button {
+.bc-brand-color-white.sns-share a, .bc-brand-color-white.sns-follow a {
 	border: 1px solid #f7d0f5; /* 枠線色 */
 	color: #fb217580; /* 文字色 */
 }
-.bc-brand-color-white.sns-share .sns-button:hover, .bc-brand-color-white.sns-follow .sns-button:hover, .sns-follow .sns-button{
+.bc-brand-color-white.sns-share a:hover, .bc-brand-color-white.sns-follow a:hover, .sns-buttons a{
 	background-color: #fb217580;
 }
 

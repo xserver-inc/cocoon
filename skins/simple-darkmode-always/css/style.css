@@ -58,7 +58,7 @@
     border-width: 2px;
   }
 
-  .sns-follow .sns-button {
+  .sns-buttons a {
     background-color: #585858;
   }
 
@@ -608,7 +608,7 @@ blockquote {
   border-width: 2px;
 }
 
-.sns-follow .sns-button {
+.sns-buttons a {
   background-color: #585858;
 }
 

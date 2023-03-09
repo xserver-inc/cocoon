@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
 
-  .sns-button{
+  a{
     display: block;
     background-color: var(--cocoon-text-color);
     text-align: center;
@@ -25,7 +25,7 @@
 // SNSシェアボタン
 ///////////////////////////////////////
 %sns_button_color{
-  .sns-button{
+  a{
     cursor: pointer;
   }
   //ボタンカラー
@@ -124,7 +124,7 @@
   }
 
   &.bc-brand-color-white{
-    .sns-button{
+    a{
       background-color: var(--cocoon-white-color);
       font-weight: 500;
       border: 1px solid var(--cocoon-text-color);
@@ -275,27 +275,27 @@
 
 .sns-share{
   //カラム数
-  &.ss-col-1 .sns-button{
+  &.ss-col-1 a{
     width: 100%;
   }
 
-  &.ss-col-2 .sns-button{
+  &.ss-col-2 a{
     width: 49%;
   }
 
-  &.ss-col-3 .sns-button{
+  &.ss-col-3 a{
 
   }
 
-  &.ss-col-4 .sns-button{
+  &.ss-col-4 a{
     width: 24%;
   }
 
-  &.ss-col-5 .sns-button{
+  &.ss-col-5 a{
     width: 19%;
   }
 
-  &.ss-col-6 .sns-button{
+  &.ss-col-6 a{
     width: 16%;
   }
 
@@ -316,7 +316,7 @@
   }
 
   //ロゴ・キャプション配置
-  &.ss-high-and-low-lc .sns-button{
+  &.ss-high-and-low-lc a{
     @extend %high_and_low;
     flex-direction: column;
     >span{
@@ -324,7 +324,7 @@
     }
   }
 
-  &.ss-high-and-low-cl .sns-button{
+  &.ss-high-and-low-cl a{
     @extend %high_and_low;
     flex-direction: column-reverse;
   }
@@ -346,7 +346,7 @@ $sns_button_margin_bottom: 8px;
   justify-content: space-around;
   align-content: center;
 
-  .sns-button{
+  a{
     width: 32%;
     margin-bottom: $sns_button_margin_bottom;
     font-size: 18px;
@@ -367,7 +367,7 @@ $sns_button_margin_bottom: 8px;
   }
 }
 
-.share-menu-content .sns-share-buttons  .sns-button{
+.share-menu-content .sns-share-buttons a{
   width: 24%;
 }
 

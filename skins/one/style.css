@@ -283,28 +283,28 @@ body .content-in .widget-entry-cards .a-wrap{
   margin-bottom: 7px;
 }
 /* DEBUG: snsボタン */
-.sns-share-buttons  .sns-button, .sns-follow-buttons a{
+.sns-share-buttons a, .sns-follow-buttons a{
   color: #5e5e5e;
   background: #dfdfdf;
 }
-.sns-share-buttons  .sns-button:hover, .sns-follow-buttons a:hover{
+.sns-share-buttons a:hover, .sns-follow-buttons a:hover{
   opacity: 1;
   background: #b9b9b9;
 }
-.bc-brand-color .sns-share-buttons  .sns-button, .bc-brand-color .sns-follow-buttons a{
+.bc-brand-color .sns-share-buttons a, .bc-brand-color .sns-follow-buttons a{
   color: white;
   border: none;
   background: #333;
 }
-.bc-brand-color .sns-share-buttons  .sns-button:hover, .bc-brand-color .sns-follow-buttons a:hover{
+.bc-brand-color .sns-share-buttons a:hover, .bc-brand-color .sns-follow-buttons a:hover{
   background: white;
   color: #2a2a2a;
 }
-.bc-brand-color-white.sns-share .sns-button, .bc-brand-color-white.sns-follow .sns-button{
+.bc-brand-color-white.sns-share a, .bc-brand-color-white.sns-follow a{
   border-color: transparent!important;
   border-width: 2px;
 }
-.bc-brand-color-white.sns-share .sns-button:hover, .bc-brand-color-white.sns-follow  a:hover{
+.bc-brand-color-white.sns-share a:hover, .bc-brand-color-white.sns-follow  a:hover{
   border-color: inherit!important;
   background: white;
   opacity: 1;
@@ -322,12 +322,12 @@ body .content-in .widget-entry-cards .a-wrap{
   height: 1.6em;
   margin-bottom: 15px;
 }
-#footer .sns-follow .sns-button{
+#footer .sns-follow a{
   color: #ffffff;
   background: #c9c9c9;
   border-color: #afafaf;
 }
-#footer .sns-follow .sns-button:hover{
+#footer .sns-follow a:hover{
   color: #646464;
   background: #ededed;
 }
@@ -381,7 +381,7 @@ div#pager-post-navi{
 .is-shadow-on  .wp-block-freeform .btn-wrap > a, .is-shadow-on .appeal-content .appeal-button, .is-shadow-on figure.eye-catch{
   box-shadow: var(--light-shadow-1);
 }
-.is-shadow-on .sns-share-buttons  .sns-button, .is-shadow-on .sns-follow-buttons a, .is-shadow-on .pagination-next-link, .is-shadow-on .comment-btn,
+.is-shadow-on .sns-share-buttons a, .is-shadow-on .sns-follow-buttons a, .is-shadow-on .pagination-next-link, .is-shadow-on .comment-btn,
 .is-shadow-on .page-numbers, .tagcloud a, .is-shadow-on .pagination-next-link, .is-shadow-on .comment-reply-link, .is-shadow-on .ecb-entry-border a,
 .is-shadow-on .recb-entry-border .related-entry-card-wrap, .is-shadow-on .border-square .a-wrap, .is-shadow-on .post-navi-default.post-navi-border a,
 .is-shadow-on .pager-post-navi.post-navi-square.post-navi-border a, .is-shadow-on .ccb-carousel-border .a-wrap, .is-shadow-on .blogcard, .is-shadow-on .cta-button a{
@@ -393,7 +393,7 @@ div#pager-post-navi{
 .is-shadow-on.is-dark-on .btn-wrap > a, .is-shadow-on.is-dark-on  .wp-block-freeform .btn-wrap > a, .is-shadow-on.is-dark-on .appeal-content .appeal-button, .is-shadow-on.is-dark-on figure.eye-catch{
   box-shadow: var(--dark-shadow-1);
 }
-.is-shadow-on.is-dark-on .sns-share-buttons  .sns-button, .is-shadow-on.is-dark-on .sns-follow-buttons a, .is-shadow-on.is-dark-on .pagination-next-link, .is-shadow-on.is-dark-on .comment-btn,
+.is-shadow-on.is-dark-on .sns-share-buttons a, .is-shadow-on.is-dark-on .sns-follow-buttons a, .is-shadow-on.is-dark-on .pagination-next-link, .is-shadow-on.is-dark-on .comment-btn,
 .is-shadow-on.is-dark-on .page-numbers, .tagcloud a, .is-shadow-on.is-dark-on .pagination-next-link, .is-shadow-on.is-dark-on .comment-reply-link, .is-shadow-on.is-dark-on .ecb-entry-border a,
 .is-shadow-on.is-dark-on .recb-entry-border .related-entry-card-wrap, .is-shadow-on.is-dark-on .border-square .a-wrap, .is-shadow-on.is-dark-on .post-navi-default.post-navi-border a,
 .is-shadow-on.is-dark-on .pager-post-navi.post-navi-square.post-navi-border a, .is-shadow-on.is-dark-on .ccb-carousel-border .a-wrap,
@@ -583,7 +583,7 @@ code {
 .is-border-0 input[type="password"], .is-border-0 input[type="date"], .is-border-0 input[type="datetime"], .is-border-0 input[type="email"],
 .is-border-0 input[type="number"], .is-border-0 input[type="search"], .is-border-0 input[type="tel"], .is-border-0 input[type="time"], .is-border-0 input[type="url"],
 .is-border-0  textarea, .is-border-0 select, .is-border-0 .list-more-button, .is-border-0 .tagcloud a, .is-border-0 .tag-link,
-.is-border-0  .btn-wrap > a:not(.btn-wrap-circle > a), .is-border-0 .go-to-top-button, .is-border-0 .sns-share-buttons  .sns-button, .is-border-0 .sns-follow-buttons a,
+.is-border-0  .btn-wrap > a:not(.btn-wrap-circle > a), .is-border-0 .go-to-top-button, .is-border-0 .sns-share-buttons a, .is-border-0 .sns-follow-buttons a,
 .is-border-0 .author-box, .is-border-0 .page-numbers, .is-border-0 .widget-entry-cards .a-wrap, .is-border-0 .wp-block-cocoon-blocks-info-box.block-box,
 .is-border-0 .index-tab-buttons .index-tab-button, .is-border-0 .page-numbers, .is-border-0 .pagination-next-link, .is-border-0 .comment-btn, .is-border-0 .cta-button a,
 .is-border-0 a.btn, .is-border-0 .information, .is-border-0 .question, .is-border-0 .alert, .is-border-0 .memo-box, .is-border-0 .comment-box,

@@ -178,7 +178,7 @@ table th {
 	text-align: left;
 }
 
-.sns-share-buttons  .sns-button,
+.sns-share-buttons a,
 .sns-follow-buttons a,
 .sidebar .sns-follow-buttons a,
 .footer .sns-follow-buttons a {
@@ -187,14 +187,14 @@ table th {
 	margin-right: 8px;
 	background-color: #a7a6b9;
 }
-.sns-share-buttons  .sns-button:last-child,
+.sns-share-buttons a:last-child,
 .sns-follow-buttons a:last-child,
 .sidebar .sns-follow-buttons a:last-child,
 .footer .sns-follow-buttons a:last-child {
 	margin-right: 0;
 }
 
-.sns-share-buttons  .sns-button span.social-icon {
+.sns-share-buttons a span.social-icon {
 	padding-top: 0;
 	font-size: 20px !important;
 }

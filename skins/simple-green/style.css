@@ -135,7 +135,7 @@ input[type='text'].search-edit {
 }
 
 /* シェアボタン */
-#container .sns-follow .sns-button {
+#container .sns-buttons a {
   border-radius: 1px;
 }
 
@@ -316,6 +316,6 @@ table th {
 }
 
 .footer a,
-.footer .footer-in .sns-follow .sns-button {
+.footer .footer-in .sns-buttons a {
   color: #fff;
 }

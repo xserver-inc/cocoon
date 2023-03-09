@@ -439,7 +439,7 @@ body {
 	justify-content: space-evenly;
 }
 
-.sns-share-buttons  .sns-button {
+.sns-share-buttons a {
 	font-size: 1.25em;
 	border-radius: 50%;
 	width: 50px !important;
@@ -448,12 +448,12 @@ body {
 }
 
 @media screen and (max-width: 834px) {
-	.ss-bottom .sns-share-buttons  .sns-button {
+	.ss-bottom .sns-share-buttons a {
 		font-size: 1.3em;
 	}
 }
 
-.sns-share-buttons  .sns-button .button-caption {
+.sns-share-buttons a .button-caption {
 	display: none !important;
 }
 

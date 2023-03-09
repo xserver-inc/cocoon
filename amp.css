@@ -1208,7 +1208,7 @@ img.emoji {
   display: flex;
   align-items: center;
 }
-.sns-buttons .sns-button {
+.sns-buttons a {
   display: block;
   background-color: var(--cocoon-text-color);
   text-align: center;
@@ -1217,13 +1217,13 @@ img.emoji {
   border-radius: var(--cocoon-basic-border-radius);
   height: 45px;
 }
-.sns-buttons .sns-button:hover {
+.sns-buttons a:hover {
   opacity: 0.7;
   color: var(--cocoon-white-color);
   transition: all 0.3s ease-in-out;
 }
 
-.sns-share .sns-button, .sns-follow .sns-button {
+.sns-share a, .sns-follow a {
   cursor: pointer;
 }
 .bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
@@ -1295,13 +1295,13 @@ img.emoji {
 .bc-brand-color.sns-share .rss-button, .bc-brand-color.sns-follow .rss-button {
   background-color: var(--cocoon-rss-color);
 }
-.bc-brand-color-white.sns-share .sns-button, .bc-brand-color-white.sns-follow .sns-button {
+.bc-brand-color-white.sns-share a, .bc-brand-color-white.sns-follow a {
   background-color: var(--cocoon-white-color);
   font-weight: 500;
   border: 1px solid var(--cocoon-text-color);
   color: var(--cocoon-text-color);
 }
-.bc-brand-color-white.sns-share .sns-button:hover, .bc-brand-color-white.sns-follow .sns-button:hover {
+.bc-brand-color-white.sns-share a:hover, .bc-brand-color-white.sns-follow a:hover {
   opacity: 0.5;
 }
 .bc-brand-color-white.sns-share .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
@@ -1409,45 +1409,45 @@ img.emoji {
   display: none;
 }
 
-.sns-share.ss-col-1 .sns-button {
+.sns-share.ss-col-1 a {
   width: 100%;
 }
-.sns-share.ss-col-2 .sns-button {
+.sns-share.ss-col-2 a {
   width: 49%;
 }
-.sns-share.ss-col-4 .sns-button {
+.sns-share.ss-col-4 a {
   width: 24%;
 }
-.sns-share.ss-col-5 .sns-button {
+.sns-share.ss-col-5 a {
   width: 19%;
 }
-.sns-share.ss-col-6 .sns-button {
+.sns-share.ss-col-6 a {
   width: 16%;
 }
-.sns-share.ss-high-and-low-lc .sns-button, .sns-share.ss-high-and-low-cl .sns-button {
+.sns-share.ss-high-and-low-lc a, .sns-share.ss-high-and-low-cl a {
   display: flex;
   align-content: center;
   line-height: 16px;
 }
-.sns-share.ss-high-and-low-lc .sns-button .social-icon, .sns-share.ss-high-and-low-cl .sns-button .social-icon,
-.sns-share.ss-high-and-low-lc .sns-button .button-caption,
-.sns-share.ss-high-and-low-cl .sns-button .button-caption {
+.sns-share.ss-high-and-low-lc a .social-icon, .sns-share.ss-high-and-low-cl a .social-icon,
+.sns-share.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-high-and-low-cl a .button-caption {
   display: block;
   font-size: 16px;
   margin: 0;
 }
-.sns-share.ss-high-and-low-lc .sns-button .social-icon.button-caption, .sns-share.ss-high-and-low-cl .sns-button .social-icon.button-caption,
-.sns-share.ss-high-and-low-lc .sns-button .button-caption.button-caption,
-.sns-share.ss-high-and-low-cl .sns-button .button-caption.button-caption {
+.sns-share.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-high-and-low-cl a .social-icon.button-caption,
+.sns-share.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-high-and-low-cl a .button-caption.button-caption {
   font-size: 12px;
 }
-.sns-share.ss-high-and-low-lc .sns-button {
+.sns-share.ss-high-and-low-lc a {
   flex-direction: column;
 }
-.sns-share.ss-high-and-low-lc .sns-button > span {
+.sns-share.ss-high-and-low-lc a > span {
   padding-top: 3px;
 }
-.sns-share.ss-high-and-low-cl .sns-button {
+.sns-share.ss-high-and-low-cl a {
   flex-direction: column-reverse;
 }
 
@@ -1456,7 +1456,7 @@ img.emoji {
   justify-content: space-around;
   align-content: center;
 }
-.sns-share-buttons .sns-button {
+.sns-share-buttons a {
   width: 32%;
   margin-bottom: 8px;
   font-size: 18px;
@@ -1466,11 +1466,11 @@ img.emoji {
   justify-content: center;
   position: relative;
 }
-.sns-share-buttons .sns-button .button-caption {
+.sns-share-buttons a .button-caption {
   font-size: 16px;
   margin-left: 10px;
 }
-.sns-share-buttons .sns-button .share-count {
+.sns-share-buttons a .share-count {
   position: absolute;
   right: 3px;
   bottom: 3px;
@@ -1478,7 +1478,7 @@ img.emoji {
   line-height: 1;
 }
 
-.share-menu-content .sns-share-buttons .sns-button {
+.share-menu-content .sns-share-buttons a {
   width: 24%;
 }
 
@@ -7722,7 +7722,7 @@ div.fb-like-mobile {
 .follow-menu-content .sns-buttons {
   justify-content: space-around;
 }
-.follow-menu-content .sns-buttons .sns-button {
+.follow-menu-content .sns-buttons a {
   width: 24%;
 }
 .follow-menu-content .sns-follow-message {
@@ -9378,18 +9378,18 @@ pre {
     margin-left: 0;
   }
 
-  .ss-top .sns-share-buttons .sns-button,
-  .ss-bottom .sns-share-buttons .sns-button {
+  .ss-top .sns-share-buttons a,
+  .ss-bottom .sns-share-buttons a {
     font-size: 14px;
   }
-  .ss-top .sns-share-buttons .sns-button .button-caption,
-  .ss-bottom .sns-share-buttons .sns-button .button-caption {
+  .ss-top .sns-share-buttons a .button-caption,
+  .ss-bottom .sns-share-buttons a .button-caption {
     font-size: 14px;
     margin-left: 4px;
   }
 
-  .sns-share.ss-top.ss-col-6 .sns-button,
-  .sns-sh.sns-buttonre.ss-bottom.ss-col-6 a {
+  .sns-share.ss-top.ss-col-6 a,
+  .sns-share.ss-bottom.ss-col-6 a {
     width: 32%;
   }
 

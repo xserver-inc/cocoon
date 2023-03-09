@@ -600,14 +600,14 @@ article .tag-link:hover {
 #main a .button-caption {
 	display: none;
 }
-#main .sns-follow .sns-button {
+#main .sns-buttons a {
 	height: 35px;
 	width: 35px;
 	border-radius: 50%;
 	margin-right: 10px;
 	opacity:0.9;
 }
-#main .sns-follow .sns-button:last-child {
+#main .sns-buttons a:last-child {
 	margin-right: 0;
 }
 .sns-share-buttons {
@@ -632,7 +632,7 @@ article .tag-link:hover {
 .sns-share, .sns-follow {
 	margin: 0;
 }
-.sns-share-buttons  .sns-button .share-count,
+.sns-share-buttons a .share-count,
 .sns-follow-buttons a .follow-count {
     right: -10px;
     bottom: -10px;
