@@ -765,22 +765,22 @@ span.wpcf7-not-valid-tip,
 	color: #ffb1d8;
 	font-size: 1.5rem;
 }
-.toc-title:before {
-	font-family: "Font Awesome 5 Free";
-	content: "\f15b";
-	margin-right: 5px;
-	margin-left: 5px;
+.toc-title:before{ /* タイトル前のアイコン */
+ font-family: FontAwesome;
+ content: "\f016";
+ margin-right: 5px;
+ margin-left: 5px;
+}
+.font-awesome-5 .toc-title:before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f15b";
 }
 .toc a {
 	color: #6a859c;
-	font-weight: bold;
 }
 .toc a:hover {
 	color: #ffb1d8;
 	text-decoration: none;
-}
-.article .toc :last-child {
-	font-weight: 300;
 }
 .toc_list ul {
 	list-style: none;

@@ -348,11 +348,24 @@ endif;
 //ブロックエディターカラーパレット用のCSS
 if ( !function_exists( 'get_block_editor_color_palette_css' ) ):
 function get_block_editor_color_palette_css(){
+    //Cocoonカラーパレットの取得
     $colors = get_cocoon_editor_color_palette_colors();
+
+    //wp-includes/theme.jsonからデフォルトのカラーパレットを取得する
+    $default_colors = [];
+    if (class_exists('WP_Theme_JSON_Resolver')) {
+        $settings = WP_Theme_JSON_Resolver::get_core_data()->get_settings();
+        if (isset($settings['color']['palette']['default'])) {
+            $default_colors = $settings['color']['palette']['default'];
+        }
+    }
+    //CocoonカラーパレットとWordPressデフォルトカラーパレットの結合
+    $colors = array_merge($colors, $default_colors);
     ob_start();
     foreach ($colors as $color) {
     $slug = $color['slug'];
-    $color = $color['color']; ?>
+    $color = $color['color'];
+     ?>
 
 
 <?php //WordPressデフォルト ?>
