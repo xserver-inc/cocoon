@@ -33,7 +33,7 @@ import { useSelect } from '@wordpress/data';
 /**
  * Internal dependencies
  */
-import { THEME_NAME } from '../../helpers';
+import { THEME_NAME, CreateCategoryList } from '../../helpers';
 
 export default function edit( props ) {
 	const { attributes, setAttributes, className } = props;
@@ -63,105 +63,13 @@ export default function edit( props ) {
 
 	// カテゴリー検索文字列の保持
 	const [ catSearchInput, setCatSearchInput ] = useState( '' );
+	// 除外カテゴリー検索文字列の保持
+	const [ exCatSearchInput, setExCatSearchInput ] = useState( '' );
 
 	// wp.coreから全カテゴリー情報の取得
 	const categoryData = useSelect( ( select ) => {
 		return select( 'core' ).getEntityRecords( 'taxonomy', 'category' );
 	} );
-
-	// 1カテゴリー分のcatsへの追加・削除およびCheckboxControlの生成
-	function createCategory( isChecked, label, id ) {
-		// cats文字列にidを追加する
-		const addCat = ( id ) => {
-			let catsString = '';
-			if ( cats == '' ) {
-				catsString = id;
-			} else {
-				let catsArray = cats.split( ',' );
-				let found = false;
-				for ( var i = 0; i < catsArray.length; i++ ) {
-					if ( catsArray[ i ] == id ) {
-						found = true;
-						break;
-					}
-				}
-				if ( found == false ) {
-					catsArray.push( id );
-				}
-				catsString = catsArray.join( ',' );
-			}
-			setAttributes( { cats: catsString } );
-		};
-
-		// cats文字列からidを削除する
-		const deleteCat = ( id ) => {
-			let catsArray = cats.split( ',' );
-			for ( var i = 0; i < catsArray.length; i++ ) {
-				if ( catsArray[ i ] == id ) {
-					catsArray.splice( i, 1 );
-				}
-			}
-			setAttributes( { cats: catsArray.join( ',' ) } );
-		};
-
-		return (
-			<CheckboxControl
-				label={ label }
-				checked={ isChecked }
-				onChange={ ( isChecked ) => {
-					if ( isChecked == true ) {
-						addCat( id );
-					} else {
-						deleteCat( id );
-					}
-				} }
-			/>
-		);
-	}
-
-	// 入力文字列に応じてカテゴリーの一覧を出力する
-	function createCategoryList( input ) {
-		if ( categoryData == null ) return null;
-
-		let control = [];
-		let catsArray = cats.split( ',' );
-		categoryData.forEach( ( record ) => {
-			let isChecked = false;
-			for ( var i = 0; i < catsArray.length; i++ ) {
-				if ( catsArray[ i ] == String( record.id ) ) {
-					isChecked = true;
-					break;
-				}
-			}
-			//検索文字列がある場合
-			if ( input != '' ) {
-				// recode.nameにinputが含まれるなら追加
-				if ( record.name.indexOf( input ) != -1 )
-					control.push(
-						createCategory(
-							isChecked,
-							record.name,
-							String( record.id )
-						)
-					);
-			}
-			// 検索文字列が無い場合は全て追加
-			else {
-				control.push(
-					createCategory(
-						isChecked,
-						record.name,
-						String( record.id )
-					)
-				);
-			}
-		} );
-
-		if ( showAllCats ) {
-			control = <Disabled> { control } </Disabled>;
-		}
-		return control;
-	}
 
 	// 可変コントロールの定義
 	let catsTextControl = (
@@ -182,13 +90,17 @@ export default function edit( props ) {
 					value={ catSearchInput }
 					onChange={ setCatSearchInput }
 				/>
-				{ createCategoryList( catSearchInput ) }
+				{ CreateCategoryList(
+					categoryData,
+					catSearchInput,
+					cats,
+					( attr ) => {
+						setAttributes( { cats: attr } );
+					}
+				) }
 			</PanelBody>
 			<ToggleControl
-				label={ __(
-					'子カテゴリーの内容を含めて表示',
-					THEME_NAME
-				) }
+				label={ __( '子カテゴリーの内容を含めて表示', THEME_NAME ) }
 				checked={ children }
 				onChange={ ( isChecked ) =>
 					setAttributes( { children: isChecked } )
@@ -198,6 +110,39 @@ export default function edit( props ) {
 	);
 	if ( showAllCats ) {
 		catsTextControl = <Disabled>{ catsTextControl }</Disabled>;
+	}
+
+	let exCatsTextControl = (
+		<Fragment>
+			<TextControl
+				label={ __(
+					'除外するカテゴリーをカンマ区切りで指定',
+					THEME_NAME
+				) }
+				value={ ex_cats }
+				onChange={ ( value ) => setAttributes( { ex_cats: value } ) }
+			/>
+			<PanelBody
+				title={ __( '除外カテゴリー選択', THEME_NAME ) }
+				initialOpen={ true }
+			>
+				<SearchControl
+					value={ exCatSearchInput }
+					onChange={ setExCatSearchInput }
+				/>
+				{ CreateCategoryList(
+					categoryData,
+					exCatSearchInput,
+					ex_cats,
+					( attr ) => {
+						setAttributes( { ex_cats: attr } );
+					}
+				) }
+			</PanelBody>
+		</Fragment>
+	);
+	if ( showAllCats == false ) {
+		exCatsTextControl = <Disabled>{ exCatsTextControl }</Disabled>;
 	}
 
 	let daysNumberControl = (
@@ -332,13 +277,7 @@ export default function edit( props ) {
 						} }
 					/>
 					{ catsTextControl }
-					<TextControl
-						label={ __( '除外カテゴリー', THEME_NAME ) }
-						value={ ex_cats }
-						onChange={ ( newValue ) =>
-							setAttributes( { ex_cats: newValue } )
-						}
-					/>
+					{ exCatsTextControl }
 					<Divider />
 					<TextControl
 						label={ __( '投稿タイプ', THEME_NAME ) }
