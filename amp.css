@@ -8579,7 +8579,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .iconlist-box li::before {
   font-family: FontAwesome;
   margin-right: 0.4em;
-  margin-left: -1em;
+  margin-left: -1.4em;
   position: absolute;
 }
 

@@ -8106,7 +8106,7 @@ body.wp-admin {
 .admin-settings .demo .iconlist-box li::before {
   font-family: FontAwesome;
   margin-right: 0.4em;
-  margin-left: -1em;
+  margin-left: -1.4em;
   position: absolute;
 }
 .admin-settings .demo .iconlist-title {
@@ -15842,7 +15842,7 @@ body.wp-admin {
 .admin-settings .demo .iconlist-box li::before {
   font-family: FontAwesome;
   margin-right: 0.4em;
-  margin-left: -1em;
+  margin-left: -1.4em;
   position: absolute;
 }
 .admin-settings .demo .iconlist-title {

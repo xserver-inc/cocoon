@@ -123,6 +123,7 @@
   font-weight: 400;
 }
 
+.wp-block,
 .edit-post-visual-editor__post-title-wrapper > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
 .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
   max-width: 840px;
@@ -364,7 +365,7 @@
 .iconlist-box li::before {
   font-family: FontAwesome;
   margin-right: 0.4em;
-  margin-left: -1em;
+  margin-left: -1.4em;
   position: absolute;
 }
 
