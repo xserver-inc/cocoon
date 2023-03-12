@@ -129,7 +129,7 @@
   //コメントボタンがクリックされたとき
   $('#comment-reply-btn, .comment-reply-link').click(function () {
     $('#comment-reply-btn').slideUp();
-    $('#respond').css('height','100%');
+    $('#respond').slideDown();
   });
 
   //Google検索ボタン
