@@ -54,7 +54,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 
 //本文部分の冒頭を綺麗に抜粋する
 if ( !function_exists( 'get_content_excerpt' ) ):
-function get_content_excerpt($content, $length = 70){
+function get_content_excerpt($content, $length = 120){
   $content = apply_filters( 'content_excerpt_before', $content);
   $content = cancel_blog_card_deactivation($content, false);
   $content = preg_replace('/<!--more-->.+/is', '', $content); //moreタグ以降削除
@@ -65,11 +65,10 @@ function get_content_excerpt($content, $length = 70){
   $content = preg_replace(URL_REG, '', $content); //URLを取り除く
 
   //$lengthが整数じゃなかった場合の処理
-  if (is_int(intval($length))) {
-    $length = intval($length);
-  } else {
-    $length = 70;
+  if (!is_int($length)) {
+    $length = 120;
   }
+
   $over    = intval(mb_strlen($content)) > $length;
   $content = mb_substr($content, 0, $length);//文字列を指定した長さで切り取る
   if ( $over && $more = get_entry_card_excerpt_more() ) {

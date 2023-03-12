@@ -6257,6 +6257,9 @@ figcaption {
   margin: 0.2em;
   font-size: 0.8em;
 }
+.comment-form .submit {
+  margin: 1em 0;
+}
 
 .comment-area.website-hide .comment-form-url {
   display: none;
@@ -8579,7 +8582,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .iconlist-box li::before {
   font-family: FontAwesome;
   margin-right: 0.4em;
-  margin-left: -1em;
+  margin-left: -1.4em;
   position: absolute;
 }
 

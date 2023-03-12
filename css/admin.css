@@ -6132,6 +6132,9 @@ body.wp-admin {
   margin: 0.2em;
   font-size: 0.8em;
 }
+.admin-settings .demo .comment-form .submit {
+  margin: 1em 0;
+}
 .admin-settings .demo .comment-area.website-hide .comment-form-url {
   display: none;
 }
@@ -8106,7 +8109,7 @@ body.wp-admin {
 .admin-settings .demo .iconlist-box li::before {
   font-family: FontAwesome;
   margin-right: 0.4em;
-  margin-left: -1em;
+  margin-left: -1.4em;
   position: absolute;
 }
 .admin-settings .demo .iconlist-title {
@@ -13868,6 +13871,9 @@ body.wp-admin {
   margin: 0.2em;
   font-size: 0.8em;
 }
+.admin-settings .demo .comment-form .submit {
+  margin: 1em 0;
+}
 .admin-settings .demo .comment-area.website-hide .comment-form-url {
   display: none;
 }
@@ -15842,7 +15848,7 @@ body.wp-admin {
 .admin-settings .demo .iconlist-box li::before {
   font-family: FontAwesome;
   margin-right: 0.4em;
-  margin-left: -1em;
+  margin-left: -1.4em;
   position: absolute;
 }
 .admin-settings .demo .iconlist-title {
