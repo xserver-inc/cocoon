@@ -559,7 +559,8 @@ if (!$main_column_contents_width) {
 <?php //コメント入力欄を表示ボタンで切り替えるとき
 if (is_comment_form_display_type_toggle_button()): ?>
 #respond {
-  display: none;
+  height:0;
+  overflow:clip;
 }
 <?php endif ?>
 <?php //グローバルメニュー幅をテキストの幅にする

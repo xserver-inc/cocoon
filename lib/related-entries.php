@@ -15,7 +15,7 @@ function get_common_related_args($post_id){
   $related_args = array(
     'post_type' => $post_type,
     'post__not_in' => array($post_id),
-    'posts_per_page'=> intval(get_related_entry_count()),
+    'posts_per_page'=> empty(get_related_entry_count()) ? 6 : get_related_entry_count(),
     'orderby' => 'rand',
     'no_found_rows' => true,
   );
