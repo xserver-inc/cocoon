@@ -6132,6 +6132,9 @@ body.wp-admin {
   margin: 0.2em;
   font-size: 0.8em;
 }
+.admin-settings .demo .comment-form .submit {
+  margin: 1em 0;
+}
 .admin-settings .demo .comment-area.website-hide .comment-form-url {
   display: none;
 }
@@ -13867,6 +13870,9 @@ body.wp-admin {
 .admin-settings .demo .comment-form .logged-in-as {
   margin: 0.2em;
   font-size: 0.8em;
+}
+.admin-settings .demo .comment-form .submit {
+  margin: 1em 0;
 }
 .admin-settings .demo .comment-area.website-hide .comment-form-url {
   display: none;
