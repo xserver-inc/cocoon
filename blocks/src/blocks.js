@@ -34,7 +34,7 @@ import * as ad from './block/ad';
 import * as profile from './block/profile';
 import * as newlist from './block/new-list';
 import * as popularlist from './block/popular-list';
-// import * as infolist from './block/info-list';
+import * as infolist from './block/info-list';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -66,7 +66,7 @@ const cocoonBlocks = [
 	profile,
 	newlist,
 	popularlist,
-	// infolist,
+	infolist,
 
 	captionBox,
 	tabCaptionBox,
@@ -113,42 +113,13 @@ export const registerCocoonBlocks = (blocks = __getCocoonBlocks()) => {
 
 registerCocoonBlocks();
 
-//ブロック
-// import './block/icon-box';
-//import './block/info-box/block.js';
-//import './block/blank-box/block.js';
-//import './block/sticky-box/block.js';
-//import './block/tab-box/block.js';
-//import './block/balloon/block.js';
-//import './block/balloon-ex/block.js';
-//import './block/blogcard/block.js';
-//import './block/button/block.js';
-//import './block/button-wrap/block.js';
-//import './block/toggle-box/block.js';
-//import './block/search-box/block.js';
-//import './block/timeline/block.js';
-//import './block/icon-list/block.js';
-
 //デフォルトブロックの拡張
 import './custom/code/block.js';
-// import './block/hoc-color-palette-demo/block.js';
-
-//汎用ブロック
-//import './block-universal/caption-box/block.js';
-//import './block-universal/tab-caption-box/block.js';
-//import './block-universal/label-box/block.js';
-
-//マイクロコピー
-//import './micro/micro-text/block.js';
-//import './micro/micro-balloon/block.js';
 
 //レイアウト
 import './layout/column-children/block.js';
 import './layout/column-2/block.js';
 import './layout/column-3/block.js';
-
-//ショートコード
-// import './shortcode/affi/block.js';
 
 //文字色変更など
 import './toolbutton/bold.js';
@@ -208,13 +179,5 @@ import './old/caption-box/block.js';
 import './old/tab-caption-box/block.js';
 import './old/label-box/block.js';
 import './old/button/block.js';
-// import './old/button-1/block.js';
 import './old/button-wrap/block.js';
-// import './old/button-wrap-1/block.js';
 
-// import './demo/test/block.js';
-// import './demo/info-box-drop/block.js';
-// import './demo/blank-box-demo/block.js';
-// import './demo/test-as-shortcode-text/block.js';
-// import './demo/test-severside-as-shortcode-input/block.js';
-// import './demo/test-get-id/block.js';

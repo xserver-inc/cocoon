@@ -372,7 +372,7 @@ require_once abspath(__FILE__) . 'block/ad/index.php';
 require_once abspath(__FILE__) . 'block/profile/index.php';
 require_once abspath(__FILE__) . 'block/new-list/index.php';
 require_once abspath(__FILE__) . 'block/popular-list/index.php';
-// require_once abspath(__FILE__) . 'block/info-list/index.php';
+require_once abspath(__FILE__) . 'block/info-list/index.php';
 
 require_once abspath(__FILE__) . 'block-universal/caption-box/index.php';
 require_once abspath(__FILE__) . 'block-universal/tab-caption-box/index.php';

@@ -203,4 +203,4 @@ if (!empty($nav_menus)) {
   require_once abspath(__FILE__).'widgets/box-menus.php';
 }
 // //インフォリストウィジェット
-// require_once abspath(__FILE__).'widgets/info-list.php';
+require_once abspath(__FILE__).'widgets/info-list.php';
