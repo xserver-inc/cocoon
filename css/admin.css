@@ -8524,9 +8524,6 @@ body.wp-admin {
   font-size: 16px;
   line-height: 1.4;
 }
-.admin-settings .demo .info-list-meta {
-  line-height: 21px;
-}
 .admin-settings .demo .is-style-divider-line .info-list-item {
   border-bottom: 1px dashed var(--cocoon-basic-border-color);
 }
@@ -8536,7 +8533,6 @@ body.wp-admin {
 .admin-settings .demo .info-list-item-date {
   font-size: 12px;
   opacity: 0.6;
-  margin-right: 8px;
 }
 .admin-settings .demo .info-list-item-content-link {
   color: var(--cocoon-black-color);
@@ -16267,9 +16263,6 @@ body.wp-admin {
   font-size: 16px;
   line-height: 1.4;
 }
-.admin-settings .demo .info-list-meta {
-  line-height: 21px;
-}
 .admin-settings .demo .is-style-divider-line .info-list-item {
   border-bottom: 1px dashed var(--cocoon-basic-border-color);
 }
@@ -16279,7 +16272,6 @@ body.wp-admin {
 .admin-settings .demo .info-list-item-date {
   font-size: 12px;
   opacity: 0.6;
-  margin-right: 8px;
 }
 .admin-settings .demo .info-list-item-content-link {
   color: var(--cocoon-black-color);

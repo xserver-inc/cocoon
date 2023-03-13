@@ -1759,9 +1759,7 @@ function generate_info_list_tag($atts){
     <?php while ($query -> have_posts()) : $query -> the_post(); ?>
       <div class="info-list-item">
         <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
-        <div class="info-list-meta">
-          <span class="info-list-item-date"><?php the_time(get_option('date_format')); ?></span><span class="entry-categories-tags info-list-categorys"><?php echo get_the_category_links(); ?></span>
-        </div>
+        <div class="info-list-item-date"><?php the_time(get_option('date_format')); ?></div>
       </div>
     <?php endwhile;
   else :
