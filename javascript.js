@@ -126,11 +126,16 @@
     })
   }
 
-  // //コメントボタンがクリックされたとき
-  // $('#comment-reply-btn, .comment-reply-link').click(function () {
-  //   $('#comment-reply-btn').slideUp();
-  //   $('#respond').slideDown();
-  // });
+  //コメントボタンがクリックされたとき
+  $('#comment-reply-btn, .comment-reply-link').click(function () {
+    $('#comment-reply-btn').slideUp();
+    const respond = document.getElementById('respond');
+    const styles = { inset: 'auto', position: 'static', visibility: 'visible' };
+    Object.entries(styles).forEach(([key, value]) => {
+      respond.style[key] = value;
+    });
+    $('#respond').slideDown();
+  });
 
   //Google検索ボタン
   $('.sbtn').click(function () {
@@ -208,16 +213,6 @@
       $('#sidebar-menu-input').prop('checked', false).change();
     }
     vw = window.innerWidth;
-  });
-
-  $('#comment-reply-btn, .comment-reply-link').click(function () {
-    $('#comment-reply-btn').slideUp();
-    const respond = document.getElementById('respond');
-    const styles = { pointerEvents: 'auto', position: 'relative', visibility: 'visible' };
-    Object.entries(styles).forEach(([key, value]) => {
-      respond.style[key] = value;
-    });
-    $('#respond').slideDown();
   });
 })(jQuery);
 
