@@ -450,7 +450,7 @@ function get_meta_description_text(){
   if (is_front_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
-    if (!post_password_required($post)) {
+    if (!post_password_required()) {
       $description = get_the_meta_description();
     }
   } elseif (is_category() && is_meta_description_to_category()) {
