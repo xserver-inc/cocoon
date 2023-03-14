@@ -14,9 +14,13 @@
 }
 
 .info-list-item{
-  padding: 10px 0;
+  padding: 14px 0;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.6;
+}
+
+.info-list-item-content{
+  margin-bottom: 8px;
 }
 
 .is-style-divider-line{
@@ -28,9 +32,22 @@
   }
 }
 
-.info-list-item-date{
+.info-list-item-meta{
   font-size: 12px;
   opacity: 0.6;
+  line-height: 20px;
+}
+
+.info-list-item-date{
+  margin-right: 18px;
+}
+
+.info-list-item-categorys{
+  .entry-category{
+    padding: 1px 20px;
+    margin-right: 8px;
+    border: 1px solid #999;
+  }
 }
 
 .info-list-item-content-link{
