@@ -7,13 +7,15 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 ?>
-<div id="list" class="<?php echo get_index_list_classes(); ?>">
+
 <?php
 ////////////////////////////
 //一覧の繰り返し処理
 ////////////////////////////
 $count = 0;
-if (have_posts()) : // WordPress ループ
+if (have_posts()) : // WordPress ループ ?>
+  <div id="list" class="<?php echo get_index_list_classes(); ?>">
+  <?php
   while (have_posts()) : the_post(); // 繰り返し処理開始
     $count++;
     set_query_var( 'count', $count );
@@ -33,8 +35,9 @@ if (have_posts()) : // WordPress ループ
 
   endwhile; // 繰り返し処理終了
   $count = 0; ?>
+  </div><!-- .list -->
 <?php else : // ここから記事が見つからなかった場合の処理
   get_template_part('tmp/list-not-found-posts');
 endif;
 ?>
-</div><!-- .list -->
+
