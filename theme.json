@@ -29,7 +29,8 @@
 			"wideSize": "1200px"
 		},
 		"color": {
-			"defaultPalette": false
+			"defaultPalette": false,
+			"custom": false
 		}
 	}
 }
