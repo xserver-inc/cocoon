@@ -450,7 +450,9 @@ function get_meta_description_text(){
   if (is_front_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
-    $description = get_the_meta_description();
+    if (!post_password_required()) {
+      $description = get_the_meta_description();
+    }
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
   } elseif ((is_tag() || is_tax()) && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
