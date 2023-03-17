@@ -8542,9 +8542,11 @@ body.wp-admin {
   margin-right: 18px;
 }
 .admin-settings .demo .info-list-item-categorys .entry-category {
-  padding: 1px 20px;
+  padding: 1px 18px;
   margin-right: 8px;
   border: 1px solid #999;
+  height: 20px;
+  line-height: 20px;
 }
 .admin-settings .demo .info-list-item-content-link {
   color: var(--cocoon-black-color);
@@ -16293,9 +16295,11 @@ body.wp-admin {
   margin-right: 18px;
 }
 .admin-settings .demo .info-list-item-categorys .entry-category {
-  padding: 1px 20px;
+  padding: 1px 18px;
   margin-right: 8px;
   border: 1px solid #999;
+  height: 20px;
+  line-height: 20px;
 }
 .admin-settings .demo .info-list-item-content-link {
   color: var(--cocoon-black-color);
