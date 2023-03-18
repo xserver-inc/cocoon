@@ -10,8 +10,8 @@
       "default": ""
     },
     "count": {
-      "type": "integer",
-      "default": 5
+      "type": "string",
+      "default": "5"
     },
     "showAllCats": {
       "type": "boolean",
