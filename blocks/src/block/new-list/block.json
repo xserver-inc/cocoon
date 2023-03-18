@@ -58,8 +58,8 @@
       "default": "desc"
     },
     "offset": {
-      "type": "string",
-      "default": "0"
+      "type": "integer",
+      "default": 0
     },
     "sticky": {
       "type": "boolean",
