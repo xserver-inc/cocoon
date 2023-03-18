@@ -30,8 +30,8 @@
       "default": "post"
     },
     "count": {
-      "type": "integer",
-      "default": 5
+      "type": "strinn",
+      "default": "5"
     },
     "type": {
       "type": [ "default", "border_partition", "border_square", "large_thumb", "large_thumb_on"],

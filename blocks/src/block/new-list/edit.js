@@ -20,7 +20,6 @@ import {
 	PanelBody,
 	TextControl,
 	ToggleControl,
-	CheckboxControl,
 	SearchControl,
 	__experimentalNumberControl as NumberControl,
 	__experimentalDivider as Divider,
