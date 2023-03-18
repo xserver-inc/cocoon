@@ -20,8 +20,8 @@ import {
 	PanelBody,
 	TextControl,
 	ToggleControl,
-	CheckboxControl,
 	SearchControl,
+	RangeControl,
 	__experimentalNumberControl as NumberControl,
 	__experimentalDivider as Divider,
 	Disabled,
@@ -171,14 +171,14 @@ export default function edit( props ) {
 					title={ __( '基本設定', THEME_NAME ) }
 					initialOpen={ true }
 				>
-					<NumberControl
+					<RangeControl
 						label={ __( '表示する記事の数', THEME_NAME ) }
 						isShiftStepEnabled={ false }
 						value={ count }
 						onChange={ ( newValue ) =>
 							setAttributes( { count: newValue } )
 						}
-						min={ 0 }
+						min={ 1 }
 					/>
 					<ToggleControl
 						label={ __( '全期間集計', THEME_NAME ) }

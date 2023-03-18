@@ -20,9 +20,8 @@ import {
 	PanelBody,
 	TextControl,
 	ToggleControl,
-	CheckboxControl,
 	SearchControl,
-	__experimentalNumberControl as NumberControl,
+	RangeControl,
 	__experimentalDivider as Divider,
 	Disabled,
 } from '@wordpress/components';
@@ -137,14 +136,15 @@ export default function edit( props ) {
 					title={ __( '基本設定', THEME_NAME ) }
 					initialOpen={ true }
 				>
-					<NumberControl
+					<RangeControl
 						label={ __( '表示する記事の数', THEME_NAME ) }
 						isShiftStepEnabled={ false }
 						value={ count }
 						onChange={ ( newValue ) =>
 							setAttributes( { count: newValue } )
 						}
-						min={ 0 }
+						min={ 1 }
+						max={ 100 }
 					/>
 					<SelectControl
 						label={ __( '表示タイプ', THEME_NAME ) }
@@ -216,7 +216,7 @@ export default function edit( props ) {
 							setAttributes( { order: value } );
 						} }
 					/>
-					<NumberControl
+					<RangeControl
 						label={ __( '読み飛ばし', THEME_NAME ) }
 						isShiftStepEnabled={ false }
 						value={ offset }
@@ -224,6 +224,7 @@ export default function edit( props ) {
 							setAttributes( { offset: newValue } )
 						}
 						min={ 0 }
+						max={ 100 }
 					/>
 					<Divider />
 					<ToggleControl

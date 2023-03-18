@@ -19,9 +19,8 @@ import {
 	PanelBody,
 	TextControl,
 	ToggleControl,
-	CheckboxControl,
 	SearchControl,
-	__experimentalNumberControl as NumberControl,
+	RangeControl,
 	Disabled,
 } from '@wordpress/components';
 import { Fragment, useState } from '@wordpress/element';
@@ -106,14 +105,15 @@ export default function edit( props ) {
 							setAttributes( { caption: newValue } )
 						}
 					/>
-					<NumberControl
+					<RangeControl
 						label={ __( '表示数', THEME_NAME ) }
 						isShiftStepEnabled={ false }
 						value={ count }
 						onChange={ ( newValue ) =>
 							setAttributes( { count: newValue } )
 						}
-						min={ 0 }
+						min={ 1 }
+						max={ 100 }
 					/>
 					<ToggleControl
 						label={ __( '枠線表示', THEME_NAME ) }
