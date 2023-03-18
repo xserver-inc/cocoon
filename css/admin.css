@@ -8548,7 +8548,6 @@ body.wp-admin {
   height: 20px;
   line-height: 20px;
   display: inline-block;
-  vertical-align: top;
   border-radius: 2px;
 }
 .admin-settings .demo .info-list-item-content-link {
@@ -16304,7 +16303,6 @@ body.wp-admin {
   height: 20px;
   line-height: 20px;
   display: inline-block;
-  vertical-align: top;
   border-radius: 2px;
 }
 .admin-settings .demo .info-list-item-content-link {
