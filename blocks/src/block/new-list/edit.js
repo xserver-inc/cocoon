@@ -22,6 +22,7 @@ import {
 	ToggleControl,
 	SearchControl,
 	RangeControl,
+	__experimentalNumberControl as NumberControl,
 	__experimentalDivider as Divider,
 	Disabled,
 } from '@wordpress/components';
@@ -216,7 +217,7 @@ export default function edit( props ) {
 							setAttributes( { order: value } );
 						} }
 					/>
-					<RangeControl
+					<NumberControl
 						label={ __( '読み飛ばし', THEME_NAME ) }
 						isShiftStepEnabled={ false }
 						value={ offset }
@@ -224,7 +225,6 @@ export default function edit( props ) {
 							setAttributes( { offset: newValue } )
 						}
 						min={ 0 }
-						max={ 100 }
 					/>
 					<Divider />
 					<ToggleControl
