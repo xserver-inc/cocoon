@@ -2945,7 +2945,7 @@ function get_shortcode_removed_content($content){
 endif;
 
 //テンプレートのタグ取得
-if ( !function_exists( 'get_template_part_tag( $slug )' ) ):
+if ( !function_exists( 'get_template_part_tag' ) ):
 function get_template_part_tag($slug){
   ob_start();
   get_template_part($slug);
