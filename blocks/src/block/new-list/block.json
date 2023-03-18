@@ -10,8 +10,8 @@
       "default": ""
     },
     "count": {
-      "type": "string",
-      "default": "5"
+      "type": "integer",
+      "default": 5
     },
     "type": {
       "type": "string",
