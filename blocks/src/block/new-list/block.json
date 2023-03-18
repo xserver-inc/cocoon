@@ -10,7 +10,7 @@
       "default": ""
     },
     "count": {
-      "type": "integer",
+      "type": "Number",
       "default": 5
     },
     "type": {
@@ -58,7 +58,7 @@
       "default": "desc"
     },
     "offset": {
-      "type": "integer",
+      "type": "Number",
       "default": 0
     },
     "sticky": {
