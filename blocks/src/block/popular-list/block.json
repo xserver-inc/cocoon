@@ -14,7 +14,7 @@
       "default": true
     },
     "days": {
-      "type": "Number",
+      "type": "number",
       "default": 0
     },
     "rank": {
@@ -30,7 +30,7 @@
       "default": "post"
     },
     "count": {
-      "type": "Number",
+      "type": "number",
       "default": 5
     },
     "type": {

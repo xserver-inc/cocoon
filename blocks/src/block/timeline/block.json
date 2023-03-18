@@ -10,7 +10,7 @@
       "default": "タイムラインのタイトル"
     },
     "items": {
-      "type": "Number",
+      "type": "number",
       "default": 1
     },
     "backgroundColor": {
