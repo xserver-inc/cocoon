@@ -22,7 +22,6 @@ import {
 	ToggleControl,
 	SearchControl,
 	RangeControl,
-	__experimentalNumberControl as NumberControl,
 	__experimentalDivider as Divider,
 	Disabled,
 } from '@wordpress/components';
@@ -146,12 +145,79 @@ export default function edit( props ) {
 	}
 
 	let daysNumberControl = (
-		<NumberControl
-			label={ __( 'データの集計期間(日)', THEME_NAME ) }
-			isShiftStepEnabled={ false }
+		<SelectControl
+			label={ __( 'データの集計期間', THEME_NAME ) }
 			value={ days }
 			onChange={ ( newValue ) => setAttributes( { days: newValue } ) }
-			min={ 0 }
+			options={ [
+				{
+					label: __( '全期間', THEME_NAME ),
+					value: 0,
+				},
+				{
+					label: __(
+						'1日',
+						THEME_NAME
+					),
+					value: 1,
+				},
+				{
+					label: __(
+						'3日',
+						THEME_NAME
+					),
+					value: 3,
+				},
+				{
+					label: __(
+						'1週間',
+						THEME_NAME
+					),
+					value: 7,
+				},
+				{
+					label: __(
+						'2週間',
+						THEME_NAME
+					),
+					value: 14,
+				},
+				{
+					label: __(
+						'1ヶ月',
+						THEME_NAME
+					),
+					value: 30,
+				},
+				{
+					label: __(
+						'2ヶ月',
+						THEME_NAME
+					),
+					value: 60,
+				},
+				{
+					label: __(
+						'3ヶ月',
+						THEME_NAME
+					),
+					value: 90,
+				},
+				{
+					label: __(
+						'半年',
+						THEME_NAME
+					),
+					value: 182,
+				},
+				{
+					label: __(
+						'1年',
+						THEME_NAME
+					),
+					value: 365,
+				},
+			] }
 		/>
 	);
 	if ( showAllDays ) {
