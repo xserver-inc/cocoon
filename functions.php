@@ -35,9 +35,9 @@ function fetch_updater_url( $new_sv_weight ) {
 
   // 指定したウェイトよりも小さい数であれば新サーバー、それ以外は既存を見に行く
   if ( $percent <= $new_sv_weight ) {
-      $url = 'https://download.wp-cocoon.com/v1/update.php?action=get_metadata&slug=cocoon-master';
+    $url = 'https://download.wp-cocoon.com/v1/update.php?action=get_metadata&slug=cocoon-master';
   } else {
-      $url = 'https://raw.githubusercontent.com/xserver-inc/cocoon/master/update-info.json';
+    $url = 'https://raw.githubusercontent.com/xserver-inc/cocoon/master/update-info.json';
   }
 
   return $url;
@@ -47,9 +47,9 @@ function fetch_updater_url( $new_sv_weight ) {
 require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-    fetch_updater_url(60), //JSONファイルのURL
-    __FILE__,
-    'wp-cocoon-theme'
+  fetch_updater_url(60), //JSONファイルのURL
+  __FILE__,
+  'wp-cocoon-theme'
 );
 
 //本文部分の冒頭を綺麗に抜粋する
