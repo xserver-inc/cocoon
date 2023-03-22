@@ -10101,7 +10101,7 @@ msgid "タグ選択をチェックリスト形式にする"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:73
-msgid "エディターでチェックリストを選択する形でタグを選択する用に変更します。"
+msgid "エディターでチェックリストを選択する形でタグを選択する様に変更します。"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:87

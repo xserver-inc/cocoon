@@ -8519,7 +8519,7 @@ msgid "タグ選択をチェックリスト形式にする"
 msgstr "태그 선택을 체크 리스트 형식으로 변환"
 
 #: lib/page-settings/editor-forms.php:73
-msgid "エディターでチェックリストを選択する形でタグを選択する用に変更します。"
+msgid "エディターでチェックリストを選択する形でタグを選択する様に変更します。"
 msgstr "편집기에서 체크 리스트를 선택하는 것으로 태그를 선택하도록 변경합니다."
 
 #: lib/page-settings/editor-forms.php:87

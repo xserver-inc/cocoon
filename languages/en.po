@@ -8492,7 +8492,7 @@ msgid "タグ選択をチェックリスト形式にする"
 msgstr "Make tag selection into checklist format"
 
 #: lib/page-settings/editor-forms.php:73
-msgid "エディターでチェックリストを選択する形でタグを選択する用に変更します。"
+msgid "エディターでチェックリストを選択する形でタグを選択する様に変更します。"
 msgstr "Change it for selecting tags by selecting the checklist in the editor."
 
 #: lib/page-settings/editor-forms.php:87
