@@ -871,6 +871,7 @@ $color = get_site_key_color() ? get_site_key_color() : '#f6a068';
   font-display: swap;
 }
 <?php //囲みブログカードスタイル（エディター画面）
+global $locale;
 //日本語でない時
 if (is_admin() && isset($locale) && !preg_match('/^ja/', $locale)): ?>
 .blogcard-type.bct-none::before {
