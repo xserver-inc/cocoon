@@ -2,6 +2,36 @@
 
 @import "common-editor";
 
+// :root{
+//   --cocoon-bct-none: '\f0c8';
+//   --cocoon-bct-none-text: 'ラベルなし';
+//   --cocoon-bct-related: '\f15c';
+//   --cocoon-bct-related-text: '関連記事';
+//   --cocoon-bct-reference: '\f19d';
+//   --cocoon-bct-reference-text: '参考記事';
+//   --cocoon-bct-reference-link: '\f19d';
+//   --cocoon-bct-reference-link-text: '参考リンク';
+//   --cocoon-bct-popular: '\f005';
+//   --cocoon-bct-popular-text: '人気記事';
+//   --cocoon-bct-pickup: '\f005';
+//   --cocoon-bct-pickup-text: 'ピックアップ';
+//   --cocoon-bct-check: '\f00c';
+//   --cocoon-bct-check-text: 'チェック';
+//   --cocoon-bct-together: '\f02d';
+//   --cocoon-bct-together-text: 'あわせて読みたい';
+//   --cocoon-bct-detail: '\f15c';
+//   --cocoon-bct-detail-text: '詳細はこちら';
+//   --cocoon-bct-official: '\f024';
+//   --cocoon-bct-official-text: '公式サイト';
+//   --cocoon-bct-dl: '\f019';
+//   --cocoon-bct-dl-text: 'ダウンロード';
+//   --cocoon-bct-prev: '\f137';
+//   --cocoon-bct-prev-text: '前回の記事';
+//   --cocoon-bct-next: '\f138';
+//   --cocoon-bct-next-text: '続きの記事';
+// }
+
+
 /*ビジュアルエディターのスタイルを書く*/
 body#tinymce {
   padding: 1em 20px !important;
