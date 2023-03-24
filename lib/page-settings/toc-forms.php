@@ -119,7 +119,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array();
-            for ($i=2; $i <= 10; $i++) {
+            for ($i=1; $i <= 10; $i++) {
               $options[$i] = $i;
             }
             generate_selectbox_tag(OP_TOC_DISPLAY_COUNT, $options, get_toc_display_count());
