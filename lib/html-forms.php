@@ -1675,6 +1675,7 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
   }
 
   if (!$image_attributes) {//アイキャッチがない場合
+    $image_attributes = array();
     if ($is_large_image_use) {
       $image_attributes[0] = get_no_image_320x180_url();
       $image_attributes[1] = THUMB320WIDTH_DEF;
