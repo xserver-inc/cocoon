@@ -19,5 +19,6 @@
   },
   "prettier.configPath": ".prettierrc.js",
   "prettier.ignorePath": ".prettierignore",
-  "prettier.prettierPath": "node_modules/prettier"
+  "prettier.prettierPath": "node_modules/prettier",
+  "editor.tabSize": 2
 }
