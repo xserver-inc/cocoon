@@ -22,7 +22,7 @@ article.article {
 }
 
 /*背景カラー*/
-body.public-page,.content .cf .main, .navi {
+body.public-page,.content .main, .navi {
     background-color: #FAEEBE;
 }
 
@@ -234,12 +234,6 @@ body.public-page,.content .cf .main, .navi {
 .widget-entry-cards .a-wrap {
     margin-bottom: 0px;
 }
-
-
- /*インデックス*/
-div.list {
-	margin:17px 0 0;
-	}
 
 .entry-card-title, .related-entry-card-title {
     line-height: 1.5;
