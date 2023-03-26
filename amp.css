@@ -1528,8 +1528,7 @@ img.emoji {
   margin-bottom: 3em;
 }
 
-pre,
-pre * {
+pre {
   line-height: 1.6;
   word-wrap: normal;
 }
@@ -1693,6 +1692,10 @@ figure.wp-block-table.alignright table {
 }
 .article .wp-block-gallery ul {
   padding-left: 0;
+}
+.article .wp-block-pullquote.has-background blockquote {
+  background-color: transparent;
+  border-color: transparent;
 }
 .article h1,
 .article h2,

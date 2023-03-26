@@ -83,6 +83,10 @@
 .article .wp-block-gallery ul {
   padding-left: 0;
 }
+.article .wp-block-pullquote.has-background blockquote {
+  background-color: transparent;
+  border-color: transparent;
+}
 .article h1,
 .article h2,
 .article h3,
