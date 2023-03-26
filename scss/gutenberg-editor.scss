@@ -1240,3 +1240,12 @@ div.cocoon-render-dropdown {
 .block-editor-block-inspector .components-disabled {
   opacity: 0.3;
 }
+
+.is-content-justification-left{
+  justify-content: flex-start;
+}
+
+//
+.wp-block-button.wp-block{
+  margin: 0 !important;
+}
