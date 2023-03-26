@@ -1522,10 +1522,10 @@ div.cocoon-render-dropdown select option[disabled] {
   opacity: 0.3;
 }
 
-.is-content-justification-left {
-  justify-content: flex-start;
-}
-
 .wp-block-button.wp-block {
   margin: 0 !important;
+}
+
+.components-dropdown-menu__menu .components-button.has-icon {
+  justify-content: flex-start;
 }

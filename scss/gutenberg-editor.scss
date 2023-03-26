@@ -1241,11 +1241,14 @@ div.cocoon-render-dropdown {
   opacity: 0.3;
 }
 
-.is-content-justification-left{
-  justify-content: flex-start;
-}
-
-//
+//WordPressコアのボタンが常に中央揃えになる不具合修正
 .wp-block-button.wp-block{
   margin: 0 !important;
+}
+
+//ツールバーのドロップダウンメニューが中央揃えになる不具合修正
+.components-dropdown-menu__menu{
+  .components-button.has-icon {
+    justify-content: flex-start;
+  }
 }
