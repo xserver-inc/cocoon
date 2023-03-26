@@ -1844,3 +1844,11 @@ figcaption{
 .wp-block-button.alignright {
   margin-left: auto !important;
 }
+
+//プルクオートブロックの不具合修正
+.wp-block-pullquote.has-background{
+  blockquote{
+    background-color: transparent;
+    border-color: transparent;
+  }
+}

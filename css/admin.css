@@ -2120,10 +2120,6 @@ body.wp-admin {
 .admin-settings .demo .article .wp-block-gallery ul {
   padding-left: 0;
 }
-.admin-settings .demo .article .wp-block-pullquote.has-background blockquote {
-  background-color: transparent;
-  border-color: transparent;
-}
 .admin-settings .demo .article h1,
 .admin-settings .demo .article h2,
 .admin-settings .demo .article h3,
@@ -5957,6 +5953,10 @@ body.wp-admin {
 }
 .admin-settings .demo .wp-block-button.alignright {
   margin-left: auto !important;
+}
+.admin-settings .demo .wp-block-pullquote.has-background blockquote {
+  background-color: transparent;
+  border-color: transparent;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -9878,10 +9878,6 @@ body.wp-admin {
 .admin-settings .demo .article .wp-block-gallery ul {
   padding-left: 0;
 }
-.admin-settings .demo .article .wp-block-pullquote.has-background blockquote {
-  background-color: transparent;
-  border-color: transparent;
-}
 .admin-settings .demo .article h1,
 .admin-settings .demo .article h2,
 .admin-settings .demo .article h3,
@@ -13715,6 +13711,10 @@ body.wp-admin {
 }
 .admin-settings .demo .wp-block-button.alignright {
   margin-left: auto !important;
+}
+.admin-settings .demo .wp-block-pullquote.has-background blockquote {
+  background-color: transparent;
+  border-color: transparent;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -22239,6 +22239,10 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .wp-block-button.alignright {
   margin-left: auto !important;
+}
+.components-popover__content .wp-block-pullquote.has-background blockquote {
+  background-color: transparent;
+  border-color: transparent;
 }
 .components-popover__content .red {
   margin: 0;
