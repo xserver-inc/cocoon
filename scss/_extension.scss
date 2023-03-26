@@ -475,12 +475,12 @@ $bb_red: #d05a6e;
 $bb_blue: #2ea9df;
 $bb_green: var(--cocoon-green-color);
 .blank-box{
-  border: 3px solid var(--cocoon-grey-color);
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border: 3px solid var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
-  // margin-left: 2%;
-  // margin-right: 2%;
-  // margin-bottom: 1.2em;
   border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
     ol, ul {
     margin: 0;
   }
