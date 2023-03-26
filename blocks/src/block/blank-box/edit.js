@@ -36,8 +36,15 @@ export function BlankBoxEdit( props ) {
 		[ fontSize.class ]: fontSize.class,
 	} );
 
+	const styles = {
+		'--cocoon-custom-border-color': borderColor.color || undefined,
+		'--cocoon-custom-background-color': backgroundColor.color || undefined,
+		'--cocoon-custom-text-color': textColor.color || undefined,
+	};
+
 	const blockProps = useBlockProps( {
 		className: classes,
+		style: styles,
 	} );
 
 	return (

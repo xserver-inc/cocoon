@@ -49,6 +49,9 @@
   --cocoon-watery-yellow-color: #fff7cc;
   --cocoon-watery-red-color: #fdf2f2;
   --cocoon-watery-green-color: #ebf8f4;
+  --cocoon-custom-background-color: inherit;
+  --cocoon-custom-text-color: inherit;
+  --cocoon-custom-border-color: #ccc;
   --cocoon-default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   --cocoon-text-color: #333;
   --cocoon-pallid-text-color: #777;
@@ -3159,9 +3162,12 @@ label.screen-reader-text {
 .is-style-sticky-red,
 .is-style-sticky-blue,
 .is-style-sticky-green {
-  border: 3px solid var(--cocoon-grey-color);
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border: 3px solid var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
 }
 .blank-box ol, .is-style-blank-box-red ol,
 .is-style-blank-box-navy ol,

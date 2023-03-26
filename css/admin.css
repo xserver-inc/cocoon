@@ -57,6 +57,9 @@ body.wp-admin {
   --cocoon-watery-yellow-color: #fff7cc;
   --cocoon-watery-red-color: #fdf2f2;
   --cocoon-watery-green-color: #ebf8f4;
+  --cocoon-custom-background-color: inherit;
+  --cocoon-custom-text-color: inherit;
+  --cocoon-custom-border-color: #ccc;
   --cocoon-default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   --cocoon-text-color: #333;
   --cocoon-pallid-text-color: #777;
@@ -3352,9 +3355,12 @@ body.wp-admin {
 .admin-settings .demo .is-style-sticky-red,
 .admin-settings .demo .is-style-sticky-blue,
 .admin-settings .demo .is-style-sticky-green {
-  border: 3px solid var(--cocoon-grey-color);
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border: 3px solid var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
 }
 .admin-settings .demo .blank-box ol, .admin-settings .demo .is-style-blank-box-red ol,
 .admin-settings .demo .is-style-blank-box-navy ol,
@@ -11110,9 +11116,12 @@ body.wp-admin {
 .admin-settings .demo .is-style-sticky-red,
 .admin-settings .demo .is-style-sticky-blue,
 .admin-settings .demo .is-style-sticky-green {
-  border: 3px solid var(--cocoon-grey-color);
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border: 3px solid var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
 }
 .admin-settings .demo .blank-box ol, .admin-settings .demo .is-style-blank-box-red ol,
 .admin-settings .demo .is-style-blank-box-navy ol,
@@ -19597,9 +19606,12 @@ textarea[name="the_page_memo"] {
 .components-popover__content .is-style-sticky-red,
 .components-popover__content .is-style-sticky-blue,
 .components-popover__content .is-style-sticky-green {
-  border: 3px solid var(--cocoon-grey-color);
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border: 3px solid var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
 }
 .components-popover__content .blank-box ol, .components-popover__content .admin-settings .demo .is-style-blank-box-red ol, .admin-settings .demo .components-popover__content .is-style-blank-box-red ol,
 .components-popover__content .admin-settings .demo .is-style-blank-box-navy ol,
