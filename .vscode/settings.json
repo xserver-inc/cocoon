@@ -1,6 +1,9 @@
 {
   //"codic.case": "PascalCase",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
   "extensions.ignoreRecommendations": false,
   "terminal.integrated.profiles.osx": {
     "zsh": {
