@@ -6069,6 +6069,10 @@ figcaption {
   border-color: transparent;
 }
 
+.is-horizontal figure.wp-block-image {
+  margin: 0;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;
