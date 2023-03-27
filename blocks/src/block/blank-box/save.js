@@ -6,7 +6,7 @@ import {
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
   const {
     backgroundColor,
     textColor,
@@ -17,7 +17,10 @@ export default function save({ attributes }) {
     fontSize,
   } = attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
@@ -34,16 +37,18 @@ export default function save({ attributes }) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
-	const styles = {
-		'--cocoon-custom-background-color': backgroundColor || customBackgroundColor || undefined,
-		'--cocoon-custom-text-color': textColor || customTextColor || undefined,
-		'--cocoon-custom-border-color': borderColor || customBorderColor || undefined,
-	};
+  const styles = {
+    '--cocoon-custom-background-color':
+      backgroundColor || customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
+    '--cocoon-custom-border-color':
+      borderColor || customBorderColor || undefined,
+  };
 
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps.save( {
     className: className,
-		// style: styles,
-  });
+    style: styles,
+  } );
   return (
     <div { ...blockProps }>
       <InnerBlocks.Content />
