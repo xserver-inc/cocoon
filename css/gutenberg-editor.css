@@ -1527,3 +1527,8 @@ div.cocoon-render-dropdown select option[disabled] {
 .components-dropdown-menu__menu .components-button.has-icon {
   justify-content: flex-start;
 }
+
+div.wp-block .card-arrow .a-wrap::after {
+  content: '>';
+  font-family: monospace;
+}
