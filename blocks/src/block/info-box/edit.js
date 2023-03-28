@@ -1,28 +1,28 @@
 import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import {
+  InnerBlocks,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import classnames from 'classnames';
 
-
-export default function edit({ attributes, setAttributes, className }) {
+export default function edit( { attributes, setAttributes, className } ) {
   const { style } = attributes;
-  const classes = classnames('block-box',
-  {
+  const classes = classnames( 'block-box', {
     [ style ]: !! style,
     [ className ]: !! className,
-  }
-);;
-  const blockProps = useBlockProps({
+  } );
+  const blockProps = useBlockProps( {
     className: classes,
-  });
+  } );
 
   return (
     <Fragment>
       <InspectorControls>
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
           <SelectControl
             label={ __( 'タイプ', THEME_NAME ) }
             value={ style }
@@ -62,11 +62,10 @@ export default function edit({ attributes, setAttributes, className }) {
               },
             ] }
           />
-
         </PanelBody>
       </InspectorControls>
 
-      <div { ...blockProps} >
+      <div { ...blockProps }>
         <InnerBlocks />
       </div>
     </Fragment>

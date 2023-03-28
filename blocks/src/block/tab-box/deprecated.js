@@ -4,7 +4,12 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-import { THEME_NAME, BUTTON_BLOCK, CLICK_POINT_MSG, colorValueToSlug } from '../../helpers';
+import {
+  THEME_NAME,
+  BUTTON_BLOCK,
+  CLICK_POINT_MSG,
+  colorValueToSlug,
+} from '../../helpers';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -30,7 +35,7 @@ export const deprecated = [
     },
 
     migrate( attributes ) {
-    const { content, style, color } = attributes;
+      const { content, style, color } = attributes;
 
       return {
         content: content,
@@ -39,7 +44,7 @@ export const deprecated = [
         customBackgroundColor: undefined,
         textColor: undefined,
         customTextColor: undefined,
-        borderColor: colorValueToSlug(color),
+        borderColor: colorValueToSlug( color ),
         customBorderColor: undefined,
         fontSize: undefined,
         customFontSize: undefined,
@@ -47,16 +52,14 @@ export const deprecated = [
     },
 
     save( { attributes } ) {
-    const { content, style, color } = attributes;
-      const classes = classnames(
-        {
-          'blank-box': true,
-          'bb-tab': true,
-          [ style ]: !! style,
-          [ `bb-${ colorValueToSlug(color) }` ]: !! colorValueToSlug(color),
-          [ 'block-box' ]: true,
-        }
-      );
+      const { content, style, color } = attributes;
+      const classes = classnames( {
+        'blank-box': true,
+        'bb-tab': true,
+        [ style ]: !! style,
+        [ `bb-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
+        [ 'block-box' ]: true,
+      } );
       return (
         <div className={ classes }>
           <InnerBlocks.Content />

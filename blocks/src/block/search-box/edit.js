@@ -6,12 +6,12 @@ import classnames from 'classnames';
 
 const DEFAULT_MSG = __( 'キーワード', THEME_NAME );
 
-export default function edit({ attributes, setAttributes, className }) {
+export default function edit( { attributes, setAttributes, className } ) {
   const { content } = attributes;
-  const classes = classnames('search-form', 'block-box', className);
-  const blockProps = useBlockProps({
+  const classes = classnames( 'search-form', 'block-box', className );
+  const blockProps = useBlockProps( {
     className: classes,
-  });
+  } );
 
   return (
     <Fragment>
@@ -23,9 +23,7 @@ export default function edit({ attributes, setAttributes, className }) {
             placeholder={ DEFAULT_MSG }
           />
         </div>
-        <div className="sbtn">
-          { __( '検索', THEME_NAME ) }
-        </div>
+        <div className="sbtn">{ __( '検索', THEME_NAME ) }</div>
       </div>
     </Fragment>
   );

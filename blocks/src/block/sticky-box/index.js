@@ -20,7 +20,10 @@ export { metadata, name };
 export const settings = {
   title: __( '付箋風ボックス', THEME_NAME ),
   icon: 'button',
-  description: __( '目立つ濃いめの色で付箋風にメッセージを伝えるためのボックスです。', THEME_NAME ),
+  description: __(
+    '目立つ濃いめの色で付箋風にメッセージを伝えるためのボックスです。',
+    THEME_NAME
+  ),
 
   edit,
   save,

@@ -52,18 +52,14 @@ export const deprecated = [
 
     save( { attributes } ) {
       const { content, style, align } = attributes;
-      const classes = classnames(
-        {
-          [ MICRO_COPY_CLASS ]: true,
-          [ style ]: !! style,
-          [ 'block-box' ]: true,
-        }
-      );
+      const classes = classnames( {
+        [ MICRO_COPY_CLASS ]: true,
+        [ style ]: !! style,
+        [ 'block-box' ]: true,
+      } );
       return (
         <div className={ classes }>
-          <RichText.Content
-            value={ content }
-          />
+          <RichText.Content value={ content } />
         </div>
       );
     },

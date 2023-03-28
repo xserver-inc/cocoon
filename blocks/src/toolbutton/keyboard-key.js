@@ -17,18 +17,19 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: TITLE,
   tagName: 'span',
   className: 'keyboard-key',
-  edit({isActive, value, onChange}){
-    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
+  edit( { isActive, value, onChange } ) {
+    const onToggle = () =>
+      onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={<Icon icon={classic} size={32} />}
-          title={<span className="keyboard-key">{TITLE}</span>}
+          icon={ <Icon icon={ classic } size={ 32 } /> }
+          title={ <span className="keyboard-key">{ TITLE }</span> }
           onClick={ onToggle }
           isActive={ isActive }
         />
       </Fragment>
     );
-  }
+  },
 } );

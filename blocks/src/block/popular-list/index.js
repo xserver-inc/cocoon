@@ -26,12 +26,12 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __( '人気記事', THEME_NAME ),
-	icon: <FontAwesomeIcon icon={['fas', 'fire']} />,
-	description: __( '人気記事の一覧を表示します。', THEME_NAME ),
+  title: __( '人気記事', THEME_NAME ),
+  icon: <FontAwesomeIcon icon={ [ 'fas', 'fire' ] } />,
+  description: __( '人気記事の一覧を表示します。', THEME_NAME ),
 
-	edit,
-	save,
-	deprecated,
-	transforms,
+  edit,
+  save,
+  deprecated,
+  transforms,
 };

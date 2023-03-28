@@ -5,28 +5,34 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 const { RichText, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl, BaseControl, TextareaControl } = wp.components;
+const { PanelBody, SelectControl, BaseControl, TextareaControl } =
+  wp.components;
 import { Fragment } from '@wordpress/element';
 const BUTTON_BLOCK = ' button-block';
 
 registerBlockType( 'cocoon-blocks/button-wrap', {
-
   title: __( '囲みボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( 'アスリートタグ等のタグを変更できないリンクをボタン化します。', THEME_NAME ),
+  description: __(
+    'アスリートタグ等のタグを変更できないリンクをボタン化します。',
+    THEME_NAME
+  ),
 
   attributes: {
     content: {
       type: 'string',
-      default: __( 'こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。', THEME_NAME ),
+      default: __(
+        'こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。',
+        THEME_NAME
+      ),
     },
     tag: {
       type: 'string',
@@ -59,7 +65,6 @@ registerBlockType( 'cocoon-blocks/button-wrap', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( '囲みボタン設定', THEME_NAME ) }>
-
             <TextareaControl
               label={ __( 'リンクタグ・ショートコード', THEME_NAME ) }
               value={ tag }
@@ -165,19 +170,15 @@ registerBlockType( 'cocoon-blocks/button-wrap', {
                 },
               ] }
             />
-
           </PanelBody>
         </InspectorControls>
-        <span className={'button-wrap-msg'}>
-          <RichText
-            value={ content }
-          />
+        <span className={ 'button-wrap-msg' }>
+          <RichText value={ content } />
         </span>
         <div
-          className={color + size + BUTTON_BLOCK}
-          dangerouslySetInnerHTML={{__html: tag}}
-        >
-        </div>
+          className={ color + size + BUTTON_BLOCK }
+          dangerouslySetInnerHTML={ { __html: tag } }
+        ></div>
       </Fragment>
     );
   },
@@ -185,11 +186,9 @@ registerBlockType( 'cocoon-blocks/button-wrap', {
   save( { attributes } ) {
     const { content, color, size, tag } = attributes;
     return (
-      <div className={color + size + BUTTON_BLOCK}>
-        <RichText.Content
-          value={ tag }
-        />
+      <div className={ color + size + BUTTON_BLOCK }>
+        <RichText.Content value={ tag } />
       </div>
     );
-  }
+  },
 } );

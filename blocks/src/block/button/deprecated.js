@@ -4,7 +4,12 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-import { THEME_NAME, BUTTON_BLOCK, colorValueToSlug, keyColor } from '../../helpers';
+import {
+  THEME_NAME,
+  BUTTON_BLOCK,
+  colorValueToSlug,
+  keyColor,
+} from '../../helpers';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -53,7 +58,8 @@ export const deprecated = [
     },
 
     migrate( attributes ) {
-      const { content, color, size, url, target, isCircle, isShine, align } = attributes;
+      const { content, color, size, url, target, isCircle, isShine, align } =
+        attributes;
 
       return {
         content: content,
@@ -63,7 +69,7 @@ export const deprecated = [
         isCircle: isCircle,
         isShine: isShine,
         align: align,
-        backgroundColor: colorValueToSlug(color),
+        backgroundColor: colorValueToSlug( color ),
         customBackgroundColor: undefined,
         textColor: undefined,
         customTextColor: undefined,
@@ -75,26 +81,19 @@ export const deprecated = [
     },
 
     save( { attributes } ) {
-      const { content, color, size, url, target, isCircle, isShine } = attributes;
-      const classes = classnames(
-        {
-          'btn': true,
-          [ `btn-${ colorValueToSlug(color) }` ]: !! colorValueToSlug(color),
-          [ size ]: size,
-          [ 'btn-circle' ]: !! isCircle,
-          [ 'btn-shine' ]: !! isShine,
-        }
-      );
+      const { content, color, size, url, target, isCircle, isShine } =
+        attributes;
+      const classes = classnames( {
+        btn: true,
+        [ `btn-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
+        [ size ]: size,
+        [ 'btn-circle' ]: !! isCircle,
+        [ 'btn-shine' ]: !! isShine,
+      } );
       return (
-        <div className={BUTTON_BLOCK}>
-          <a
-            href={ url }
-            className={ classes }
-            target={ target }
-          >
-            <RichText.Content
-              value={ content }
-            />
+        <div className={ BUTTON_BLOCK }>
+          <a href={ url } className={ classes } target={ target }>
+            <RichText.Content value={ content } />
           </a>
         </div>
       );

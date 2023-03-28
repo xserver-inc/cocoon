@@ -3,11 +3,11 @@ import {
   RichText,
   getColorClassName,
   getFontSizeClass,
-  useBlockProps
+  useBlockProps,
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
   const {
     title,
     backgroundColor,
@@ -19,7 +19,10 @@ export default function save({ attributes }) {
     fontSize,
   } = attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const pointClass = getColorClassName( 'point-color', pointColor );
@@ -29,7 +32,7 @@ export default function save({ attributes }) {
     [ 'timeline-box' ]: true,
     [ 'cf' ]: true,
     [ 'block-box' ]: true,
-    'has-text-color': textColor ,
+    'has-text-color': textColor,
     'has-background': backgroundColor,
     'has-border-color': borderColor || customBorderColor,
     'has-point-color': pointColor || customPointColor,
@@ -40,20 +43,18 @@ export default function save({ attributes }) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps.save( {
     className: className,
-  });
+  } );
 
   return (
     <div { ...blockProps }>
       <div class="timeline-title">
-        <RichText.Content
-            value={ title }
-        />
+        <RichText.Content value={ title } />
       </div>
       <ul className="timeline">
         <InnerBlocks.Content />
       </ul>
     </div>
-  );  
+  );
 }

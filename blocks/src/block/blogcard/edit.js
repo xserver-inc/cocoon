@@ -1,28 +1,30 @@
 import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
-import { RichText, InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import {
+  RichText,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import classnames from 'classnames';
 
-
-export default function edit({ attributes, setAttributes, className }) {
+export default function edit( { attributes, setAttributes, className } ) {
   const { content, style } = attributes;
 
-  function onChangeContent(newContent){
+  function onChangeContent( newContent ) {
     setAttributes( { content: newContent } );
   }
 
-  const classes = classnames(style, className);
-  const blockProps = useBlockProps({
+  const classes = classnames( style, className );
+  const blockProps = useBlockProps( {
     className: classes,
-  });
+  } );
 
   return (
     <Fragment>
       <InspectorControls>
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
           <SelectControl
             label={ __( 'ラベル', THEME_NAME ) }
             value={ style }
@@ -82,7 +84,6 @@ export default function edit({ attributes, setAttributes, className }) {
               },
             ] }
           />
-
         </PanelBody>
       </InspectorControls>
 

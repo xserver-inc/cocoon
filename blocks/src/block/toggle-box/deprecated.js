@@ -42,7 +42,7 @@ export const deprecated = [
         customBackgroundColor: undefined,
         textColor: undefined,
         customTextColor: undefined,
-        borderColor: colorValueToSlug(color),
+        borderColor: colorValueToSlug( color ),
         customBorderColor: undefined,
         fontSize: undefined,
         customFontSize: undefined,
@@ -51,20 +51,20 @@ export const deprecated = [
 
     save( { attributes } ) {
       const { content, color, dateID } = attributes;
-      const classes = classnames(
-        {
-          'toggle-wrap': true,
-          [ `tb-${ colorValueToSlug(color) }` ]: !! colorValueToSlug(color),
-          [ 'block-box' ]: true,
-        }
-      );
+      const classes = classnames( {
+        'toggle-wrap': true,
+        [ `tb-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
+        [ 'block-box' ]: true,
+      } );
       return (
         <div className={ classes }>
-          <input id={"toggle-checkbox-" + dateID} className="toggle-checkbox" type="checkbox" />
-          <label className="toggle-button" for={"toggle-checkbox-" + dateID}>
-            <RichText.Content
-              value={ content }
-            />
+          <input
+            id={ 'toggle-checkbox-' + dateID }
+            className="toggle-checkbox"
+            type="checkbox"
+          />
+          <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+            <RichText.Content value={ content } />
           </label>
           <div className="toggle-content">
             <InnerBlocks.Content />

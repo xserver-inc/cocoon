@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
@@ -15,16 +15,18 @@ import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __( 'マイクロコピーバルーン', THEME_NAME );
 const MICRO_COPY_CLASS = ' micro-copy';
 
-function getCircleClass(isCircle) {
+function getCircleClass( isCircle ) {
   return isCircle ? ' mc-circle' : '';
 }
 
 registerBlockType( 'cocoon-blocks/micro-balloon', {
-
   title: __( 'マイクロバルーン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( 'コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。', THEME_NAME ),
+  description: __(
+    'コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。',
+    THEME_NAME
+  ),
 
   attributes: {
     content: {
@@ -58,7 +60,6 @@ registerBlockType( 'cocoon-blocks/micro-balloon', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
             <SelectControl
               label={ __( 'タイプ', THEME_NAME ) }
               value={ style }
@@ -108,11 +109,18 @@ registerBlockType( 'cocoon-blocks/micro-balloon', {
               checked={ isCircle }
               onChange={ ( value ) => setAttributes( { isCircle: value } ) }
             />
-
           </PanelBody>
         </InspectorControls>
 
-        <div className={style + color + getCircleClass(isCircle) + MICRO_COPY_CLASS + BLOCK_CLASS}>
+        <div
+          className={
+            style +
+            color +
+            getCircleClass( isCircle ) +
+            MICRO_COPY_CLASS +
+            BLOCK_CLASS
+          }
+        >
           <RichText
             value={ content }
             onChange={ ( value ) => setAttributes( { content: value } ) }
@@ -126,11 +134,17 @@ registerBlockType( 'cocoon-blocks/micro-balloon', {
     const { content, style, isCircle, color } = attributes;
     //let circleClass = isCircle ? ' mc-circle' : '';
     return (
-      <div className={style + color + getCircleClass(isCircle) + MICRO_COPY_CLASS + BLOCK_CLASS}>
-        <RichText.Content
-          value={ content }
-        />
+      <div
+        className={
+          style +
+          color +
+          getCircleClass( isCircle ) +
+          MICRO_COPY_CLASS +
+          BLOCK_CLASS
+        }
+      >
+        <RichText.Content value={ content } />
       </div>
     );
-  }
+  },
 } );

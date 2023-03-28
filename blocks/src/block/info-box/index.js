@@ -20,8 +20,11 @@ export { metadata, name };
 
 export const settings = {
   title: __( '案内ボックス', THEME_NAME ),
-  icon: <Icon icon={info} size={32} />,
-  description: __( 'ボックスの背景色により、直感的にメッセージ内容を伝えるためのボックスです。', THEME_NAME ),
+  icon: <Icon icon={ info } size={ 32 } />,
+  description: __(
+    'ボックスの背景色により、直感的にメッセージ内容を伝えるためのボックスです。',
+    THEME_NAME
+  ),
 
   edit,
   save,

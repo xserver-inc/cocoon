@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
@@ -16,22 +16,22 @@ const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 
 //classの取得
-function getClasses(style) {
-  const classes = classnames(
-    {
-      'blogcard-type': true,
-      [ style ]: !! style,
-    }
-  );
+function getClasses( style ) {
+  const classes = classnames( {
+    'blogcard-type': true,
+    [ style ]: !! style,
+  } );
   return classes;
 }
 
 registerBlockType( 'cocoon-blocks/blogcard', {
-
   title: __( 'ブログカード', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['far', 'address-card']} />,
+  icon: <FontAwesomeIcon icon={ [ 'far', 'address-card' ] } />,
   category: THEME_NAME + '-block',
-  description: __( 'ブログカード表示用の入力ブロックを表示します。URLは複数入力可能です。', THEME_NAME ),
+  description: __(
+    'ブログカード表示用の入力ブロックを表示します。URLは複数入力可能です。',
+    THEME_NAME
+  ),
 
   attributes: {
     content: {
@@ -51,7 +51,6 @@ registerBlockType( 'cocoon-blocks/blogcard', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
             <SelectControl
               label={ __( 'ラベル', THEME_NAME ) }
               value={ style }
@@ -95,11 +94,10 @@ registerBlockType( 'cocoon-blocks/blogcard', {
                 },
               ] }
             />
-
           </PanelBody>
         </InspectorControls>
 
-        <div className={ getClasses(style) }>
+        <div className={ getClasses( style ) }>
           <RichText
             onChange={ ( value ) => setAttributes( { content: value } ) }
             value={ content }
@@ -113,12 +111,9 @@ registerBlockType( 'cocoon-blocks/blogcard', {
   save( { attributes } ) {
     const { content, style } = attributes;
     return (
-      <div className={ getClasses(style) }>
-          <RichText.Content
-            value={ content }
-            multiline={"p"}
-          />
+      <div className={ getClasses( style ) }>
+        <RichText.Content value={ content } multiline={ 'p' } />
       </div>
     );
-  }
+  },
 } );

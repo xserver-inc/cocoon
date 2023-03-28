@@ -19,9 +19,9 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-  title: __('ランキング', THEME_NAME),
-  icon: <FontAwesomeIcon icon={['fas', 'crown']} />,
-  description: __('登録されているランキングを表示します。', THEME_NAME),
+  title: __( 'ランキング', THEME_NAME ),
+  icon: <FontAwesomeIcon icon={ [ 'fas', 'crown' ] } />,
+  description: __( '登録されているランキングを表示します。', THEME_NAME ),
 
   edit,
   save,
