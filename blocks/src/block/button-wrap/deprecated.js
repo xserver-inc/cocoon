@@ -4,7 +4,12 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-import { THEME_NAME, BUTTON_BLOCK, colorValueToSlug, keyColor } from '../../helpers';
+import {
+  THEME_NAME,
+  BUTTON_BLOCK,
+  colorValueToSlug,
+  keyColor,
+} from '../../helpers';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -17,7 +22,10 @@ export const deprecated = [
     attributes: {
       content: {
         type: 'string',
-        default: __( 'こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。', THEME_NAME ),
+        default: __(
+          'こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。',
+          THEME_NAME
+        ),
       },
       tag: {
         type: 'string',
@@ -52,7 +60,8 @@ export const deprecated = [
     },
 
     migrate( attributes ) {
-      const { content, tag, color, size, isCircle, isShine, align } = attributes;
+      const { content, tag, color, size, isCircle, isShine, align } =
+        attributes;
 
       return {
         content: content,
@@ -61,7 +70,7 @@ export const deprecated = [
         isCircle: isCircle,
         isShine: isShine,
         align: align,
-        backgroundColor: colorValueToSlug(color),
+        backgroundColor: colorValueToSlug( color ),
         customBackgroundColor: undefined,
         textColor: undefined,
         customTextColor: undefined,
@@ -73,22 +82,20 @@ export const deprecated = [
     },
 
     save( { attributes } ) {
-      const { content, tag, color, size, isCircle, isShine, align } = attributes;
-      const classes = classnames(
-        {
-          [ 'btn-wrap' ]: true,
-          [ `btn-wrap-${ colorValueToSlug(color) }` ]: !! colorValueToSlug(color),
-          [ size ]: size,
-          [ BUTTON_BLOCK ]: true,
-          [ 'btn-wrap-circle' ]: !! isCircle,
-          [ 'btn-wrap-shine' ]: !! isShine,
-        }
-      );
+      const { content, tag, color, size, isCircle, isShine, align } =
+        attributes;
+      const classes = classnames( {
+        [ 'btn-wrap' ]: true,
+        [ `btn-wrap-${ colorValueToSlug( color ) }` ]:
+          !! colorValueToSlug( color ),
+        [ size ]: size,
+        [ BUTTON_BLOCK ]: true,
+        [ 'btn-wrap-circle' ]: !! isCircle,
+        [ 'btn-wrap-shine' ]: !! isShine,
+      } );
       return (
         <div className={ classes }>
-          <RichText.Content
-            value={ tag }
-          />
+          <RichText.Content value={ tag } />
         </div>
       );
     },

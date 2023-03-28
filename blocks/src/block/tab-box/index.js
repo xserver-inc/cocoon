@@ -20,8 +20,11 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'タブボックス', THEME_NAME ),
-  icon: <Icon icon={file} size={32} />,
-  description: __( 'タブにメッセージ内容を伝えるための文字が書かれているボックスです。', THEME_NAME ),
+  icon: <Icon icon={ file } size={ 32 } />,
+  description: __(
+    'タブにメッセージ内容を伝えるための文字が書かれているボックスです。',
+    THEME_NAME
+  ),
 
   edit,
   save,

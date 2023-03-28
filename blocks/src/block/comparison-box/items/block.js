@@ -13,7 +13,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import {
   InnerBlocks,
   useBlockProps,
-  __experimentalUseInnerBlocksProps as useInnerBlocksProps
+  __experimentalUseInnerBlocksProps as useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { Fragment } from '@wordpress/element';
 import classnames from 'classnames';
@@ -23,43 +23,36 @@ const TEMPLATE = [ 'cocoon-blocks/iconlist-box' ];
 
 //左カラム
 registerBlockType( 'cocoon-blocks/comparison-left', {
-
   apiVersion: 2,
   title: __( '左側', THEME_NAME ),
-  parent: [
-    'cocoon-blocks/comparison-box',
-  ],
-  icon: <FontAwesomeIcon icon={['far', 'square']} />,
+  parent: [ 'cocoon-blocks/comparison-box' ],
+  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
   category: 'cocoon-block',
   description: __( '比較ボックスの左。', THEME_NAME ),
   supports: {
     inserter: false,
   },
 
-  edit( { attributes, setAttributes, className  } ) {
-
-    const innerBlocksProps = useInnerBlocksProps(  {
+  edit( { attributes, setAttributes, className } ) {
+    const innerBlocksProps = useInnerBlocksProps( {
       allowedBlocks: ALLOWED_BLOCKS,
       template: TEMPLATE,
     } );
 
-    return  <div { ...innerBlocksProps } />
+    return <div { ...innerBlocksProps } />;
   },
 
   save( { attributes } ) {
-    return <InnerBlocks.Content />
-  }
+    return <InnerBlocks.Content />;
+  },
 } );
 
 //右カラム
 registerBlockType( 'cocoon-blocks/comparison-right', {
-
   apiVersion: 2,
   title: __( '右側', THEME_NAME ),
-  parent: [
-    'cocoon-blocks/comparison-box',
-  ],
-  icon: <FontAwesomeIcon icon={['far', 'square']} />,
+  parent: [ 'cocoon-blocks/comparison-box' ],
+  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
   category: 'cocoon-block',
   description: __( '比較ボックスの右。', THEME_NAME ),
   supports: {
@@ -67,16 +60,15 @@ registerBlockType( 'cocoon-blocks/comparison-right', {
   },
 
   edit( { attributes, setAttributes } ) {
-
-    const innerBlocksProps = useInnerBlocksProps(  {
+    const innerBlocksProps = useInnerBlocksProps( {
       allowedBlocks: ALLOWED_BLOCKS,
       template: TEMPLATE,
     } );
 
-    return  <div { ...innerBlocksProps } />
+    return <div { ...innerBlocksProps } />;
   },
 
   save( { attributes } ) {
-    return <InnerBlocks.Content />
-  }
+    return <InnerBlocks.Content />;
+  },
 } );

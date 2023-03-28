@@ -5,8 +5,8 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 import {
-	registerBlockType,
-	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
+  registerBlockType,
+  unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 const cocoonBlocksPro = [];
@@ -44,71 +44,71 @@ import * as microBalloon from './micro/micro-balloon';
 import * as microText from './micro/micro-text';
 
 const cocoonBlocks = [
-	iconBox,
-	infoBox,
-	blankBox,
-	stickyBox,
-	tabBox,
-	balloon,
-	blogCard,
-	button,
-	buttonWrap,
-	toggleBox,
-	searchBox,
-	timeline,
-	timelineItem,
-	iconList,
-	faq,
-	ranking,
-	template,
-	boxMenu,
-	ad,
-	profile,
-	newlist,
-	popularlist,
-	infolist,
+  iconBox,
+  infoBox,
+  blankBox,
+  stickyBox,
+  tabBox,
+  balloon,
+  blogCard,
+  button,
+  buttonWrap,
+  toggleBox,
+  searchBox,
+  timeline,
+  timelineItem,
+  iconList,
+  faq,
+  ranking,
+  template,
+  boxMenu,
+  ad,
+  profile,
+  newlist,
+  popularlist,
+  infolist,
 
-	captionBox,
-	tabCaptionBox,
-	labelBox,
+  captionBox,
+  tabCaptionBox,
+  labelBox,
 
-	microBalloon,
-	microText,
+  microBalloon,
+  microText,
 ];
 
-export const __getCocoonBlocks = () => cocoonBlocks.concat(cocoonBlocksPro);
+export const __getCocoonBlocks = () => cocoonBlocks.concat( cocoonBlocksPro );
 
-const registerBlock = (block) => {
-	if (!block) {
-		return;
-	}
+const registerBlock = ( block ) => {
+  if ( ! block ) {
+    return;
+  }
 
-	let { metadata, settings, name } = block;
+  let { metadata, settings, name } = block;
 
-	// WP5.5未満の場合
-	let wpVersion = 0;
-	if (gbSettings['wpVersion']) {
-		wpVersion = gbSettings['wpVersion'];
-		// console.log(wpVersion);
-	}
-	//-RC版などの文字列が組まれる場合は取り除く
-	wpVersion = wpVersion.replace(/-.+$/, '');
-	if (compareVersions(wpVersion, '5.5') < 0) {
-		//nameを削除
-		delete metadata.name;
-		//カテゴリー等を追加
-		settings = {
-			...settings,
-			...metadata,
-		};
-	} else if (metadata) {
-		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata });
-	}
-	registerBlockType(name, settings);
+  // WP5.5未満の場合
+  let wpVersion = 0;
+  if ( gbSettings[ 'wpVersion' ] ) {
+    wpVersion = gbSettings[ 'wpVersion' ];
+    // console.log(wpVersion);
+  }
+  //-RC版などの文字列が組まれる場合は取り除く
+  wpVersion = wpVersion.replace( /-.+$/, '' );
+  if ( compareVersions( wpVersion, '5.5' ) < 0 ) {
+    //nameを削除
+    delete metadata.name;
+    //カテゴリー等を追加
+    settings = {
+      ...settings,
+      ...metadata,
+    };
+  } else if ( metadata ) {
+    unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
+  }
+  registerBlockType( name, settings );
 };
 
-export const registerCocoonBlocks = (blocks = __getCocoonBlocks()) => {
-	blocks.forEach(registerBlock);
+export const registerCocoonBlocks = ( blocks = __getCocoonBlocks() ) => {
+  blocks.forEach( registerBlock );
 };
 
 registerCocoonBlocks();
@@ -180,4 +180,3 @@ import './old/tab-caption-box/block.js';
 import './old/label-box/block.js';
 import './old/button/block.js';
 import './old/button-wrap/block.js';
-

@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
@@ -16,16 +16,18 @@ const DEFAULT_MSG = __( 'マイクロコピーバルーン', THEME_NAME );
 const MICRO_COPY_CLASS = ' micro-copy';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function getCircleClass(isCircle) {
+function getCircleClass( isCircle ) {
   return isCircle ? ' mc-circle' : '';
 }
 
 registerBlockType( 'cocoon-blocks/micro-balloon-1', {
-
   title: __( 'マイクロバルーン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( 'コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。', THEME_NAME ),
+  description: __(
+    'コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。',
+    THEME_NAME
+  ),
 
   attributes: {
     content: {
@@ -59,7 +61,6 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
             <SelectControl
               label={ __( 'タイプ', THEME_NAME ) }
               value={ style }
@@ -109,11 +110,19 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
               checked={ isCircle }
               onChange={ ( value ) => setAttributes( { isCircle: value } ) }
             />
-
           </PanelBody>
         </InspectorControls>
 
-        <div className={'micro-balloon' + style + color + getCircleClass(isCircle) + MICRO_COPY_CLASS + BLOCK_CLASS}>
+        <div
+          className={
+            'micro-balloon' +
+            style +
+            color +
+            getCircleClass( isCircle ) +
+            MICRO_COPY_CLASS +
+            BLOCK_CLASS
+          }
+        >
           <RichText
             value={ content }
             onChange={ ( value ) => setAttributes( { content: value } ) }
@@ -127,11 +136,18 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
     const { content, style, isCircle, color } = attributes;
     //let circleClass = isCircle ? ' mc-circle' : '';
     return (
-      <div className={'micro-balloon' + style + color + getCircleClass(isCircle) + MICRO_COPY_CLASS + BLOCK_CLASS}>
-        <RichText.Content
-          value={ content }
-        />
+      <div
+        className={
+          'micro-balloon' +
+          style +
+          color +
+          getCircleClass( isCircle ) +
+          MICRO_COPY_CLASS +
+          BLOCK_CLASS
+        }
+      >
+        <RichText.Content value={ content } />
       </div>
     );
-  }
+  },
 } );

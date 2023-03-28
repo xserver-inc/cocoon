@@ -8,7 +8,7 @@ import {
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
   const {
     name,
     id,
@@ -23,42 +23,41 @@ export default function save({ attributes }) {
     fontSize,
   } = attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
 
-  const classes = getBalloonClasses(id, style, position, iconstyle);
-  const blockProps = useBlockProps.save({
+  const classes = getBalloonClasses( id, style, position, iconstyle );
+  const blockProps = useBlockProps.save( {
     className: classes,
-  });
+  } );
 
   return (
     <div { ...blockProps }>
       <div className="speech-person">
         <figure className="speech-icon">
-          <img
-            src={ icon }
-            alt={ name }
-            className="speech-icon-image"
-          />
+          <img src={ icon } alt={ name } className="speech-icon-image" />
         </figure>
         <div className="speech-name">
-          <RichText.Content
-            value={ name }
-          />
+          <RichText.Content value={ name } />
         </div>
       </div>
-      <div className={ classnames( {
-        'speech-balloon': true,
-        'has-text-color': textColor,
-        'has-background': backgroundColor,
-        'has-border-color': borderColor || customBorderColor,
-        [ textClass ]: textClass,
-        [ backgroundClass ]: backgroundClass,
-        [ borderClass ]: borderClass,
-        [ fontSizeClass ]: fontSizeClass,
-      }) }>
+      <div
+        className={ classnames( {
+          'speech-balloon': true,
+          'has-text-color': textColor,
+          'has-background': backgroundColor,
+          'has-border-color': borderColor || customBorderColor,
+          [ textClass ]: textClass,
+          [ backgroundClass ]: backgroundClass,
+          [ borderClass ]: borderClass,
+          [ fontSizeClass ]: fontSizeClass,
+        } ) }
+      >
         <InnerBlocks.Content />
       </div>
     </div>

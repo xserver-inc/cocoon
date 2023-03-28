@@ -20,7 +20,10 @@ export default function save( props ) {
     fontSize,
   } = props.attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
@@ -35,25 +38,38 @@ export default function save( props ) {
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
-  });
-  const blockProps = useBlockProps.save({
+  } );
+  const blockProps = useBlockProps.save( {
     className: className,
-  });
+  } );
 
   return (
     <div { ...blockProps }>
-      <div className={
-        classnames('label-box-label', 'block-box-label', 'box-label', icon)
-      }>
-        <span className={
-          classnames('label-box-label-text', 'block-box-label-text', 'box-label-text')
-        }>
-          <RichText.Content
-            value={ content }
-          />
+      <div
+        className={ classnames(
+          'label-box-label',
+          'block-box-label',
+          'box-label',
+          icon
+        ) }
+      >
+        <span
+          className={ classnames(
+            'label-box-label-text',
+            'block-box-label-text',
+            'box-label-text'
+          ) }
+        >
+          <RichText.Content value={ content } />
         </span>
       </div>
-      <div className={classnames('label-box-content', 'block-box-content', 'box-content')}>
+      <div
+        className={ classnames(
+          'label-box-content',
+          'block-box-content',
+          'box-content'
+        ) }
+      >
         <InnerBlocks.Content />
       </div>
     </div>

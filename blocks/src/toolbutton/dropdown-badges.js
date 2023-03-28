@@ -14,33 +14,38 @@ import { Icon, tag } from '@wordpress/icons';
 import { orderBy } from 'lodash';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/badges';
 
-
-var isBadgeVisible = Number(gbSettings['isBadgeVisible'] ? gbSettings['isBadgeVisible'] : 0);
-if (isBadgeVisible) {
+var isBadgeVisible = Number(
+  gbSettings[ 'isBadgeVisible' ] ? gbSettings[ 'isBadgeVisible' ] : 0
+);
+if ( isBadgeVisible ) {
   registerFormatType( FORMAT_TYPE_NAME, {
     title: __( 'バッジ', THEME_NAME ),
     tagName: 'span',
     className: 'badges',
-    edit({isActive, value, onChange}){
-
+    edit( { isActive, value, onChange } ) {
       return (
         <BlockFormatControls>
           <div className="editor-format-toolbar block-editor-format-toolbar">
             <ToolbarGroup>
               <Slot name="Badge.ToolbarControls">
-                { ( fills ) => fills.length !== 0 &&
-                  <ToolbarDropdownMenu
-                    icon={<Icon icon={tag} size={32} />}
-                    label={__( 'バッジ', THEME_NAME )}
-                    className='badges'
-                    controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }
-                  />
+                { ( fills ) =>
+                  fills.length !== 0 && (
+                    <ToolbarDropdownMenu
+                      icon={ <Icon icon={ tag } size={ 32 } /> }
+                      label={ __( 'バッジ', THEME_NAME ) }
+                      className="badges"
+                      controls={ orderBy(
+                        fills.map( ( [ { props } ] ) => props ),
+                        'title'
+                      ) }
+                    />
+                  )
                 }
               </Slot>
             </ToolbarGroup>
           </div>
         </BlockFormatControls>
       );
-    }
+    },
   } );
 }

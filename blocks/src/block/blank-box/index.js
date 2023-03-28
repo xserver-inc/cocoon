@@ -20,8 +20,11 @@ export { metadata, name };
 
 export const settings = {
   title: __( '白抜きボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['far', 'square']} />,
-  description: __( 'コンテンツを囲むだけのブランクボックスを表示します。', THEME_NAME ),
+  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
+  description: __(
+    'コンテンツを囲むだけのブランクボックスを表示します。',
+    THEME_NAME
+  ),
 
   edit,
   save,

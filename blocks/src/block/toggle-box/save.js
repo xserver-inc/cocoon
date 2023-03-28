@@ -3,11 +3,11 @@ import {
   RichText,
   getColorClassName,
   getFontSizeClass,
-  useBlockProps
+  useBlockProps,
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
   const {
     content,
     dateID,
@@ -18,7 +18,10 @@ export default function save({ attributes }) {
     fontSize,
   } = attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
@@ -36,17 +39,19 @@ export default function save({ attributes }) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps.save( {
     className: className,
-  });
+  } );
 
   return (
     <div { ...blockProps }>
-      <input id={"toggle-checkbox-" + dateID} className="toggle-checkbox" type="checkbox" />
-      <label className="toggle-button" for={"toggle-checkbox-" + dateID}>
-        <RichText.Content
-          value={ content }
-        />
+      <input
+        id={ 'toggle-checkbox-' + dateID }
+        className="toggle-checkbox"
+        type="checkbox"
+      />
+      <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+        <RichText.Content value={ content } />
       </label>
       <div className="toggle-content">
         <InnerBlocks.Content />

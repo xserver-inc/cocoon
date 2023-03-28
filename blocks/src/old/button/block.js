@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -16,7 +16,6 @@ import { Fragment } from '@wordpress/element';
 const BUTTON_BLOCK = ' button-block';
 
 registerBlockType( 'cocoon-blocks/button', {
-
   title: __( 'ボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
@@ -65,7 +64,6 @@ registerBlockType( 'cocoon-blocks/button', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'ボタン設定', THEME_NAME ) }>
-
             <TextControl
               label={ __( 'URL', THEME_NAME ) }
               value={ url }
@@ -187,23 +185,17 @@ registerBlockType( 'cocoon-blocks/button', {
                 },
               ] }
             />
-
           </PanelBody>
         </InspectorControls>
 
-        <div className={BUTTON_BLOCK}>
-          <span
-            className={color + size}
-            href={ url }
-            target={ target }
-          >
+        <div className={ BUTTON_BLOCK }>
+          <span className={ color + size } href={ url } target={ target }>
             <RichText
               value={ content }
               onChange={ ( value ) => setAttributes( { content: value } ) }
             />
           </span>
         </div>
-
       </Fragment>
     );
   },
@@ -211,17 +203,11 @@ registerBlockType( 'cocoon-blocks/button', {
   save( { attributes } ) {
     const { content, color, size, url, target } = attributes;
     return (
-      <div className={BUTTON_BLOCK}>
-        <a
-          href={ url }
-          className={color + size}
-          target={ target }
-        >
-          <RichText.Content
-            value={ content }
-          />
+      <div className={ BUTTON_BLOCK }>
+        <a href={ url } className={ color + size } target={ target }>
+          <RichText.Content value={ content } />
         </a>
       </div>
     );
-  }
+  },
 } );

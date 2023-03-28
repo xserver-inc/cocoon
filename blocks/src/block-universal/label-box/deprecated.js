@@ -4,7 +4,12 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-import { THEME_NAME, BUTTON_BLOCK, getIconClass, colorValueToSlug } from '../../helpers';
+import {
+  THEME_NAME,
+  BUTTON_BLOCK,
+  getIconClass,
+  colorValueToSlug,
+} from '../../helpers';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -40,7 +45,7 @@ export const deprecated = [
         customBackgroundColor: undefined,
         textColor: undefined,
         customTextColor: undefined,
-        borderColor: colorValueToSlug(color),
+        borderColor: colorValueToSlug( color ),
         customBorderColor: undefined,
         fontSize: undefined,
         customFontSize: undefined,
@@ -49,20 +54,20 @@ export const deprecated = [
 
     save( { attributes } ) {
       const { content, color, icon } = attributes;
-      const classes = classnames(
-        {
-          [ CAPTION_BOX_CLASS ]: true,
-          [ `lb-${ colorValueToSlug(color) }` ]: !! colorValueToSlug(color),
-          [ 'block-box' ]: true,
-        }
-      );
+      const classes = classnames( {
+        [ CAPTION_BOX_CLASS ]: true,
+        [ `lb-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
+        [ 'block-box' ]: true,
+      } );
       return (
         <div className={ classes }>
-          <div className={'label-box-label block-box-label' + getIconClass(icon)}>
-            <span className={'label-box-label-text block-box-label-text'}>
-              <RichText.Content
-                value={ content }
-              />
+          <div
+            className={
+              'label-box-label block-box-label' + getIconClass( icon )
+            }
+          >
+            <span className={ 'label-box-label-text block-box-label-text' }>
+              <RichText.Content value={ content } />
             </span>
           </div>
           <div className="label-box-content">

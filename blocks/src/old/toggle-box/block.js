@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS, getDateID} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS, getDateID } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
@@ -15,11 +15,13 @@ import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __( 'トグルボックス見出し', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/toggle-box', {
-
   title: __( 'トグルボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( 'クリックすることでコンテンツ内容の表示を切り替えることができるボックスです。', THEME_NAME ),
+  description: __(
+    'クリックすることでコンテンツ内容の表示を切り替えることができるボックスです。',
+    THEME_NAME
+  ),
 
   attributes: {
     content: {
@@ -43,9 +45,9 @@ registerBlockType( 'cocoon-blocks/toggle-box', {
   edit( { attributes, setAttributes } ) {
     const { content, color, dateID } = attributes;
     //dateID = getDateID();
-    (dateID == '') ? setAttributes( { dateID: getDateID() } ) : dateID;
+    dateID == '' ? setAttributes( { dateID: getDateID() } ) : dateID;
 
-    function onChangeContent(newContent){
+    function onChangeContent( newContent ) {
       setAttributes( { content: newContent } );
     }
 
@@ -53,7 +55,6 @@ registerBlockType( 'cocoon-blocks/toggle-box', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
             <SelectControl
               label={ __( '色設定', THEME_NAME ) }
               value={ color }
@@ -81,13 +82,16 @@ registerBlockType( 'cocoon-blocks/toggle-box', {
                 },
               ] }
             />
-
           </PanelBody>
         </InspectorControls>
 
-        <div className={color + BLOCK_CLASS}>
-          <input id={"toggle-checkbox-" + dateID} className="toggle-checkbox" type="checkbox" />
-          <label className="toggle-button" for={"toggle-checkbox-" + dateID}>
+        <div className={ color + BLOCK_CLASS }>
+          <input
+            id={ 'toggle-checkbox-' + dateID }
+            className="toggle-checkbox"
+            type="checkbox"
+          />
+          <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
             <RichText
               value={ content }
               onChange={ onChangeContent }
@@ -105,17 +109,19 @@ registerBlockType( 'cocoon-blocks/toggle-box', {
   save( { attributes } ) {
     const { content, color, dateID } = attributes;
     return (
-      <div className={color + BLOCK_CLASS}>
-        <input id={"toggle-checkbox-" + dateID} className="toggle-checkbox" type="checkbox" />
-        <label className="toggle-button" for={"toggle-checkbox-" + dateID}>
-          <RichText.Content
-            value={ content }
-          />
+      <div className={ color + BLOCK_CLASS }>
+        <input
+          id={ 'toggle-checkbox-' + dateID }
+          className="toggle-checkbox"
+          type="checkbox"
+        />
+        <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+          <RichText.Content value={ content } />
         </label>
         <div className="toggle-content">
           <InnerBlocks.Content />
         </div>
       </div>
     );
-  }
+  },
 } );

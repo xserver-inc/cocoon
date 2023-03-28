@@ -18,24 +18,28 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: TITLE,
   tagName: 'span',
   className: 'marker',
-  edit({isActive, value, onChange}){
-    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));    
+  edit( { isActive, value, onChange } ) {
+    const onToggle = () =>
+      onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
     const shortcutType = 'primaryShift';
-    const shortcutCharacter ='y';
-
+    const shortcutCharacter = 'y';
 
     return (
       <Fragment>
-        <RichTextShortcut type={shortcutType} character={shortcutCharacter} onUse={onToggle}  />
+        <RichTextShortcut
+          type={ shortcutType }
+          character={ shortcutCharacter }
+          onUse={ onToggle }
+        />
         <MarkerToolbarButton
-          icon={<Icon icon={brush} size={32} />}
-          title={<span className="marker">{TITLE}</span>}
+          icon={ <Icon icon={ brush } size={ 32 } /> }
+          title={ <span className="marker">{ TITLE }</span> }
           onClick={ onToggle }
           isActive={ isActive }
-          shorcutType={shortcutType} 
-          shorcutCharacter={shortcutCharacter}
+          shorcutType={ shortcutType }
+          shorcutCharacter={ shortcutCharacter }
         />
       </Fragment>
     );
-  }
+  },
 } );

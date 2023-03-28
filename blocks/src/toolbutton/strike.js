@@ -17,18 +17,19 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: TITLE,
   tagName: 's',
   className: null,
-  edit({isActive, value, onChange}){
-    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
+  edit( { isActive, value, onChange } ) {
+    const onToggle = () =>
+      onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={<FontAwesomeIcon icon="strikethrough" />}
-          title={<s>{TITLE}</s>}
+          icon={ <FontAwesomeIcon icon="strikethrough" /> }
+          title={ <s>{ TITLE }</s> }
           onClick={ onToggle }
           isActive={ isActive }
         />
       </Fragment>
     );
-  }
+  },
 } );

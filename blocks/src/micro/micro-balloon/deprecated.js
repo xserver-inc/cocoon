@@ -48,7 +48,7 @@ export const deprecated = [
         type: style,
         isCircle: isCircle,
         align: align,
-        backgroundColor: colorValueToSlug(color),
+        backgroundColor: colorValueToSlug( color ),
         customBackgroundColor: undefined,
         textColor: undefined,
         customTextColor: undefined,
@@ -61,21 +61,17 @@ export const deprecated = [
 
     save( { attributes } ) {
       const { content, style, color, isCircle, align } = attributes;
-      const classes = classnames(
-        {
-          [ 'micro-balloon' ]: true,
-          [ style ]: !! style,
-          [ `mc-${ colorValueToSlug(color) }` ]: !! colorValueToSlug(color),
-          [ 'mc-circle' ]: !! isCircle,
-          [ MICRO_COPY_CLASS ]: true,
-          [ 'block-box' ]: true,
-        }
-      );
+      const classes = classnames( {
+        [ 'micro-balloon' ]: true,
+        [ style ]: !! style,
+        [ `mc-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
+        [ 'mc-circle' ]: !! isCircle,
+        [ MICRO_COPY_CLASS ]: true,
+        [ 'block-box' ]: true,
+      } );
       return (
         <div className={ classes }>
-          <RichText.Content
-            value={ content }
-          />
+          <RichText.Content value={ content } />
         </div>
       );
     },

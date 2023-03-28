@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS, isBalloonExist} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS, isBalloonExist } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
@@ -16,44 +16,48 @@ const { Button, PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
 
-const defaultIconUrl = gbSettings['speechBalloonDefaultIconUrl'] ? gbSettings['speechBalloonDefaultIconUrl'] : '';
+const defaultIconUrl = gbSettings[ 'speechBalloonDefaultIconUrl' ]
+  ? gbSettings[ 'speechBalloonDefaultIconUrl' ]
+  : '';
 
 let speechBalloons = gbSpeechBalloons;
 
-if (!isBalloonExist(speechBalloons)) {
-  speechBalloons = [{
-    name: '',
-    id: '0',
-    icon: defaultIconUrl,
-    style: 'cb',
-    position: 'l',
-    iconstyle: 'stn',
-    visible: '1',
-  }];
+if ( ! isBalloonExist( speechBalloons ) ) {
+  speechBalloons = [
+    {
+      name: '',
+      id: '0',
+      icon: defaultIconUrl,
+      style: 'cb',
+      position: 'l',
+      iconstyle: 'stn',
+      visible: '1',
+    },
+  ];
 }
 
 //classの取得
-function getClasses(index, style, position, iconstyle) {
-  const classes = classnames(
-    {
-      [ 'speech-wrap' ]: true,
-      [ `sb-id-${ speechBalloons[index].id }` ]: !! speechBalloons[index].id,
-      [ `sbs-${ style  }` ]: !! style ,
-      [ `sbp-${ position  }` ]: !! position ,
-      [ `sbis-${ iconstyle  }` ]: !! iconstyle ,
-      [ 'cf' ]: true,
-      [ 'block-box' ]: true,
-    }
-  );
+function getClasses( index, style, position, iconstyle ) {
+  const classes = classnames( {
+    [ 'speech-wrap' ]: true,
+    [ `sb-id-${ speechBalloons[ index ].id }` ]: !! speechBalloons[ index ].id,
+    [ `sbs-${ style }` ]: !! style,
+    [ `sbp-${ position }` ]: !! position,
+    [ `sbis-${ iconstyle }` ]: !! iconstyle,
+    [ 'cf' ]: true,
+    [ 'block-box' ]: true,
+  } );
   return classes;
 }
 
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
-
   title: __( '吹き出しEX', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( '登録されている吹き出しのオプションを変更できます。', THEME_NAME ),
+  description: __(
+    '登録されている吹き出しのオプションを変更できます。',
+    THEME_NAME
+  ),
   keywords: [ 'balloon', 'box' ],
 
   attributes: {
@@ -92,7 +96,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
 
   edit( { attributes, setAttributes } ) {
     var { name, index, style, position, iconstyle, icon, iconid } = attributes;
-    if (!speechBalloons[index]) {
+    if ( ! speechBalloons[ index ] ) {
       index = 0;
     }
 
@@ -101,34 +105,43 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
       // console.log(speechBalloons[index].icon);
       // console.log((icon === speechBalloons[index].icon) ? icon : speechBalloons[index].icon);
       return (
-        <Button className="image-button" onClick={ obj.open } style={ { padding: 0 } }>
-          <img src={ icon ? icon : speechBalloons[index].icon } alt={icon ? '' : speechBalloons[index].name} className={ `speech-icon-image wp-image-${ iconid }` } />
+        <Button
+          className="image-button"
+          onClick={ obj.open }
+          style={ { padding: 0 } }
+        >
+          <img
+            src={ icon ? icon : speechBalloons[ index ].icon }
+            alt={ icon ? '' : speechBalloons[ index ].name }
+            className={ `speech-icon-image wp-image-${ iconid }` }
+          />
         </Button>
       );
     };
 
     //console.log(speechBalloons);
     var balloons = [];
-    speechBalloons.map((balloon, index) => {
+    speechBalloons.map( ( balloon, index ) => {
       //console.log(balloon);
-      if (speechBalloons[index].visible == '1') {
-        balloons.push({
+      if ( speechBalloons[ index ].visible == '1' ) {
+        balloons.push( {
           value: index,
           label: balloon.title,
-        });
+        } );
       }
-    });
+    } );
     //console.log(balloons);
 
     return (
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
             <SelectControl
               label={ __( '人物', THEME_NAME ) }
               value={ index }
-              onChange={ ( value ) => setAttributes( { index: value, icon: '' } ) }
+              onChange={ ( value ) =>
+                setAttributes( { index: value, icon: '' } )
+              }
               options={ balloons }
             />
 
@@ -195,17 +208,17 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
             />
-
           </PanelBody>
         </InspectorControls>
 
-        <div
-          className={ getClasses(index, style, position, iconstyle) }>
+        <div className={ getClasses( index, style, position, iconstyle ) }>
           <div className="speech-person">
             <figure className="speech-icon">
               <MediaUpload
                 onSelect={ ( media ) => {
-                  let newicon = !! media.sizes.thumbnail ? media.sizes.thumbnail.url : media.url;
+                  let newicon = !! media.sizes.thumbnail
+                    ? media.sizes.thumbnail.url
+                    : media.url;
                   //console.log(newicon);
                   setAttributes( { icon: newicon, iconid: media.id } );
                 } }
@@ -216,8 +229,8 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
             </figure>
             <div className="speech-name">
               <RichText
-                value={ name ? name : speechBalloons[index].name }
-                placeholder={DEFAULT_NAME}
+                value={ name ? name : speechBalloons[ index ].name }
+                placeholder={ DEFAULT_NAME }
                 onChange={ ( value ) => setAttributes( { name: value } ) }
               />
             </div>
@@ -226,37 +239,35 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
             <InnerBlocks />
           </div>
         </div>
-
       </Fragment>
     );
   },
 
   save( { attributes } ) {
     var { name, index, style, position, iconstyle, icon } = attributes;
-    if (!speechBalloons[index]) {
+    if ( ! speechBalloons[ index ] ) {
       index = 0;
     }
     return (
-        <div
-          className={ getClasses(index, style, position, iconstyle) }>
-          <div className="speech-person">
-            <figure className="speech-icon">
-              <img
-                src={icon ? icon : speechBalloons[index].icon}
-                alt={icon ? '' : speechBalloons[index].name}
-                className="speech-icon-image"
-              />
-            </figure>
-            <div className="speech-name">
-              <RichText.Content
-                value={ name ? name : speechBalloons[index].name }
-              />
-            </div>
-          </div>
-          <div className="speech-balloon">
-            <InnerBlocks.Content />
+      <div className={ getClasses( index, style, position, iconstyle ) }>
+        <div className="speech-person">
+          <figure className="speech-icon">
+            <img
+              src={ icon ? icon : speechBalloons[ index ].icon }
+              alt={ icon ? '' : speechBalloons[ index ].name }
+              className="speech-icon-image"
+            />
+          </figure>
+          <div className="speech-name">
+            <RichText.Content
+              value={ name ? name : speechBalloons[ index ].name }
+            />
           </div>
         </div>
+        <div className="speech-balloon">
+          <InnerBlocks.Content />
+        </div>
+      </div>
     );
-  }
+  },
 } );

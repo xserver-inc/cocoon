@@ -17,18 +17,19 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: TITLE,
   tagName: 'span',
   className: 'bold-green',
-  edit({isActive, value, onChange}){
-    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
+  edit( { isActive, value, onChange } ) {
+    const onToggle = () =>
+      onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={<Icon icon={formatBold} size={32} />}
-          title={<span className="bold-green">{TITLE}</span>}
+          icon={ <Icon icon={ formatBold } size={ 32 } /> }
+          title={ <span className="bold-green">{ TITLE }</span> }
           onClick={ onToggle }
           isActive={ isActive }
         />
       </Fragment>
     );
-  }
+  },
 } );

@@ -20,8 +20,11 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'ラベルボックス', THEME_NAME ),
-  icon: <Icon icon={tag} size={32} /> ,
-  description: __( 'ボックスに「ラベル見出し」入力できる汎用ボックスです。', THEME_NAME ),
+  icon: <Icon icon={ tag } size={ 32 } />,
+  description: __(
+    'ボックスに「ラベル見出し」入力できる汎用ボックスです。',
+    THEME_NAME
+  ),
 
   edit,
   save,

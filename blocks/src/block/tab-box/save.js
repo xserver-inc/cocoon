@@ -16,7 +16,10 @@ export default function save( props ) {
     fontSize,
   } = props.attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
@@ -33,10 +36,10 @@ export default function save( props ) {
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
-  });
-  const blockProps = useBlockProps.save({
+  } );
+  const blockProps = useBlockProps.save( {
     className: className,
-  });
+  } );
 
   return (
     <div { ...blockProps }>

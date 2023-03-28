@@ -18,7 +18,10 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'ブログカード', THEME_NAME ),
-  description: __( 'ブログカード表示用の入力ブロックを表示します。URLは複数入力可能です。', THEME_NAME ),
+  description: __(
+    'ブログカード表示用の入力ブロックを表示します。URLは複数入力可能です。',
+    THEME_NAME
+  ),
 
   edit,
   save,

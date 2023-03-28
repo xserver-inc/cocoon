@@ -14,32 +14,38 @@ import { Icon, brush } from '@wordpress/icons';
 import { orderBy } from 'lodash';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/markers';
 
-var isMarkerVisible = Number(gbSettings['isMarkerVisible'] ? gbSettings['isMarkerVisible'] : 0);
-if (isMarkerVisible) {
+var isMarkerVisible = Number(
+  gbSettings[ 'isMarkerVisible' ] ? gbSettings[ 'isMarkerVisible' ] : 0
+);
+if ( isMarkerVisible ) {
   registerFormatType( FORMAT_TYPE_NAME, {
     title: __( 'マーカー', THEME_NAME ),
     tagName: 'span',
     className: 'markers',
-    edit({isActive, value, onChange}){
-
+    edit( { isActive, value, onChange } ) {
       return (
         <BlockFormatControls>
           <div className="editor-format-toolbar block-editor-format-toolbar">
             <ToolbarGroup>
               <Slot name="Marker.ToolbarControls">
-                { ( fills ) => fills.length !== 0 &&
-                  <ToolbarDropdownMenu
-                    icon={<Icon icon={brush} size={32} />}
-                    label={__( '文字', THEME_NAME )}
-                    className='letters'
-                    controls={ orderBy( fills.map( ( [ { props } ] ) => props ), 'title' ) }
-                  />
+                { ( fills ) =>
+                  fills.length !== 0 && (
+                    <ToolbarDropdownMenu
+                      icon={ <Icon icon={ brush } size={ 32 } /> }
+                      label={ __( '文字', THEME_NAME ) }
+                      className="letters"
+                      controls={ orderBy(
+                        fills.map( ( [ { props } ] ) => props ),
+                        'title'
+                      ) }
+                    />
+                  )
                 }
               </Slot>
             </ToolbarGroup>
           </div>
         </BlockFormatControls>
       );
-    }
+    },
   } );
 }

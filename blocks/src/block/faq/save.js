@@ -7,7 +7,7 @@ import {
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
   const {
     question,
     questionLabel,
@@ -22,7 +22,10 @@ export default function save({ attributes }) {
 
   const questionClass = getColorClassName( 'question-color', questionColor );
   const answerClass = getColorClassName( 'answer-color', answerColor );
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
@@ -44,40 +47,28 @@ export default function save({ attributes }) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps.save( {
     className: className,
-  });
+  } );
 
   return (
     <div { ...blockProps }>
-    <dl className="faq">
-      <dt
-        className="faq-question faq-item"
-      >
-        <div
-          className="faq-question-label faq-item-label"
-        >
-          { questionLabel }
-        </div>
-        <div
-          className="faq-question-content faq-item-content"
-        >
-          <RichText.Content value={ question } />
-        </div>
-      </dt>
-      <dd className="faq-answer faq-item">
-        <div
-          className="faq-answer-label faq-item-label"
-        >
-          { answerLabel }
-        </div>
-        <div
-          className="faq-answer-content faq-item-content"
-        >
-          <InnerBlocks.Content />
-        </div>
-      </dd>
-    </dl>
-  </div>
+      <dl className="faq">
+        <dt className="faq-question faq-item">
+          <div className="faq-question-label faq-item-label">
+            { questionLabel }
+          </div>
+          <div className="faq-question-content faq-item-content">
+            <RichText.Content value={ question } />
+          </div>
+        </dt>
+        <dd className="faq-answer faq-item">
+          <div className="faq-answer-label faq-item-label">{ answerLabel }</div>
+          <div className="faq-answer-content faq-item-content">
+            <InnerBlocks.Content />
+          </div>
+        </dd>
+      </dl>
+    </div>
   );
 }

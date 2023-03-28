@@ -12,21 +12,16 @@ import { registerBlockType } from '@wordpress/blocks';
 
 //左カラム
 registerBlockType( 'cocoon-blocks/affi', {
-
   title: __( 'アフィリエイトタグタグ', THEME_NAME ),
   icon: 'grid-view',
   category: THEME_NAME + '-shortcode',
   description: __( 'アフィリエイトタグ', THEME_NAME ),
 
   edit( { attributes, setAttributes } ) {
-    return (
-        '[affi id=1]'
-    );
+    return '[affi id=1]';
   },
 
   save( { attributes } ) {
-    return (
-      '[affi id=1]'
-    );
-  }
+    return '[affi id=1]';
+  },
 } );

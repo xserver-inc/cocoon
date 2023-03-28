@@ -20,8 +20,11 @@ export { metadata, name };
 
 export const settings = {
   title: __( '見出しボックス', THEME_NAME ),
-  icon: <Icon icon={calendar} size={32} />,
-  description: __( 'ボックス「見出し」を入力できる汎用ボックスです。', THEME_NAME ),
+  icon: <Icon icon={ calendar } size={ 32 } />,
+  description: __(
+    'ボックス「見出し」を入力できる汎用ボックスです。',
+    THEME_NAME
+  ),
 
   edit,
   save,

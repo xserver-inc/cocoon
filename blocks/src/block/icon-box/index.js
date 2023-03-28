@@ -20,8 +20,11 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'アイコンボックス', THEME_NAME ),
-  icon: <Icon icon={warning} size={32} />,
-  description: __( 'アイコンを用いて直感的にメッセージ内容を伝えるためのボックスです。', THEME_NAME ),
+  icon: <Icon icon={ warning } size={ 32 } />,
+  description: __(
+    'アイコンを用いて直感的にメッセージ内容を伝えるためのボックスです。',
+    THEME_NAME
+  ),
 
   edit,
   save,

@@ -1,4 +1,3 @@
-
 import { BUTTON_BLOCK } from '../../helpers';
 import {
   RichText,
@@ -8,7 +7,7 @@ import {
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
   const {
     tag,
     size,
@@ -21,7 +20,10 @@ export default function save({ attributes }) {
     fontSize,
   } = attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
@@ -42,15 +44,13 @@ export default function save({ attributes }) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps.save( {
     className: classes,
-  });
+  } );
 
   return (
     <div { ...blockProps }>
-      <RichText.Content
-        value={ tag }
-      />
+      <RichText.Content value={ tag } />
     </div>
   );
 }
