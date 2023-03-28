@@ -1852,10 +1852,3 @@ figcaption{
     border-color: transparent;
   }
 }
-
-//横並びブロックの表示ズレ修正
-.is-horizontal{
-  figure.wp-block-image{
-    margin: 0;
-  }
-}
