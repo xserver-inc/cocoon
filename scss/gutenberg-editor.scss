@@ -1258,3 +1258,8 @@ div.wp-block .card-arrow .a-wrap::after {
   content: '>';
   font-family: monospace;
 }
+
+//ブロックエディタータイトルのマージンボトム高さ調整
+.wp-block-post-title {
+  margin-bottom: 0.8em !important;
+}
