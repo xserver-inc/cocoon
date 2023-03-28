@@ -5964,9 +5964,6 @@ body.wp-admin {
   background-color: transparent;
   border-color: transparent;
 }
-.admin-settings .demo .is-horizontal figure.wp-block-image {
-  margin: 0;
-}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -13727,9 +13724,6 @@ body.wp-admin {
 .admin-settings .demo .wp-block-pullquote.has-background blockquote {
   background-color: transparent;
   border-color: transparent;
-}
-.admin-settings .demo .is-horizontal figure.wp-block-image {
-  margin: 0;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -22261,9 +22255,6 @@ textarea[name="the_page_memo"] {
 .components-popover__content .wp-block-pullquote.has-background blockquote {
   background-color: transparent;
   border-color: transparent;
-}
-.components-popover__content .is-horizontal figure.wp-block-image {
-  margin: 0;
 }
 .components-popover__content .red {
   margin: 0;

@@ -1253,8 +1253,24 @@ div.cocoon-render-dropdown {
   }
 }
 
-//ブロックエディターで新着・人気記事ブロックの矢印が化ける不具合修正
-div.wp-block .card-arrow .a-wrap::after {
-  content: '>';
-  font-family: monospace;
+//ブロックエディタータイトルのマージンボトム高さ調整
+.wp-block-post-title {
+  margin-bottom: 0.8em !important;
+}
+//ブロックエディタータイトルのマージントップ高さ調整
+div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
+  margin-top: 0;
+}
+
+//新着・人気記事ブロックの矢印アイコンフォントの文字化け修正
+.editor-styles-wrapper.font-awesome-5 .card-arrow .a-wrap::after{
+  font-family: 'Font Awesome 5 Free';
+}
+
+//画像ブロック配置が中央揃えにならない不具合修正
+.editor-styles-wrapper [data-type="core/image"].aligncenter{
+  display: table;
+  figcaption{
+    margin-top: 0 !important;
+  }
 }
