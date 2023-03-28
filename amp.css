@@ -2458,10 +2458,6 @@ label.screen-reader-text {
   margin-right: 22px;
 }
 
-.font-awesome-5 .card-arrow .a-wrap::after {
-  font-family: 'Font Awesome 5 Free';
-}
-
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
