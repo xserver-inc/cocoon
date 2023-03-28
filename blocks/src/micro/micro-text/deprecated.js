@@ -7,12 +7,17 @@
 import { THEME_NAME, BUTTON_BLOCK, colorValueToSlug } from '../../helpers';
 import classnames from 'classnames';
 
+import {
+  RichText,
+  getColorClassName,
+  useBlockProps,
+} from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-const { RichText } = wp.editor;
+
 const DEFAULT_MSG = __( 'マイクロコピーテキスト', THEME_NAME );
 const MICRO_COPY_CLASS = 'micro-copy';
 
-export const deprecated = [
+const v1 = [
   {
     attributes: {
       content: {
@@ -65,3 +70,37 @@ export const deprecated = [
     },
   },
 ];
+
+const v2 = {
+  save( { attributes } ) {
+    const { content, type, icon, textColor } = attributes;
+
+    const textClass = getColorClassName( 'color', textColor );
+
+    const className = classnames( {
+      [ 'micro-text' ]: true,
+      [ MICRO_COPY_CLASS ]: true,
+      [ type ]: !! type,
+      'has-text-color': textColor,
+      [ textClass ]: textClass,
+    } );
+    const blockProps = useBlockProps.save( {
+      className: className,
+    } );
+
+    return (
+      <div { ...blockProps }>
+        <span className="micro-text-content micro-content">
+          { icon && (
+            <span
+              className={ classnames( 'micro-text-icon', 'micro-icon', icon ) }
+            ></span>
+          ) }
+          <RichText.Content value={ content } />
+        </span>
+      </div>
+    );
+  },
+};
+
+export default [ v2, v1 ];

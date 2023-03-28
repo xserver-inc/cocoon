@@ -54,8 +54,17 @@ export function TimelineEdit( props ) {
     [ pointColor.class ]: pointColor.class,
     [ fontSize.class ]: fontSize.class,
   } );
+
+  const styles = {
+    '--cocoon-custom-border-color': borderColor.color || undefined,
+    '--cocoon-custom-background-color': backgroundColor.color || undefined,
+    '--cocoon-custom-text-color': textColor.color || undefined,
+    '--cocoon-custom-point-color': pointColor.color || undefined,
+  };
+
   const blockProps = useBlockProps( {
     className: classes,
+    style: styles,
   } );
 
   return (

@@ -12,6 +12,8 @@ export default function save( props ) {
     backgroundColor,
     textColor,
     borderColor,
+    customBackgroundColor,
+    customTextColor,
     customBorderColor,
     fontSize,
   } = props.attributes;
@@ -29,16 +31,26 @@ export default function save( props ) {
     'bb-tab': true,
     [ label ]: !! label,
     'block-box': true,
-    'has-text-color': textColor,
-    'has-background': backgroundColor,
+    'has-text-color': textColor || customTextColor,
+    'has-background': backgroundColor || customBackgroundColor,
     'has-border-color': borderColor || customBorderColor,
     [ textClass ]: textClass,
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
   } );
+
+  const styles = {
+    '--cocoon-custom-background-color':
+      backgroundColor || customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
+    '--cocoon-custom-border-color':
+      borderColor || customBorderColor || undefined,
+  };
+
   const blockProps = useBlockProps.save( {
     className: className,
+    style: styles,
   } );
 
   return (

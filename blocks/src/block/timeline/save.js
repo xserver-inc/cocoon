@@ -13,6 +13,8 @@ export default function save( { attributes } ) {
     backgroundColor,
     textColor,
     borderColor,
+    customBackgroundColor,
+    customTextColor,
     customBorderColor,
     pointColor,
     customPointColor,
@@ -32,8 +34,8 @@ export default function save( { attributes } ) {
     [ 'timeline-box' ]: true,
     [ 'cf' ]: true,
     [ 'block-box' ]: true,
-    'has-text-color': textColor,
-    'has-background': backgroundColor,
+    'has-text-color': textColor || customTextColor,
+    'has-background': backgroundColor || customBackgroundColor,
     'has-border-color': borderColor || customBorderColor,
     'has-point-color': pointColor || customPointColor,
     [ textClass ]: textClass,
@@ -43,8 +45,18 @@ export default function save( { attributes } ) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
+  const styles = {
+    '--cocoon-custom-background-color':
+      backgroundColor || customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
+    '--cocoon-custom-border-color':
+      borderColor || customBorderColor || undefined,
+    '--cocoon-custom-point-color': pointColor || customPointColor || undefined,
+  };
+
   const blockProps = useBlockProps.save( {
     className: className,
+    style: styles,
   } );
 
   return (

@@ -40,8 +40,16 @@ export function ButtonEdit( props ) {
   const classes = classnames( {
     [ BUTTON_BLOCK ]: true,
   } );
+
+  const styles = {
+    '--cocoon-custom-border-color': borderColor.color || undefined,
+    '--cocoon-custom-background-color': backgroundColor.color || undefined,
+    '--cocoon-custom-text-color': textColor.color || undefined,
+  };
+
   const blockProps = useBlockProps( className, {
     className: classes,
+    style: styles,
   } );
 
   return (

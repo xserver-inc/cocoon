@@ -14,6 +14,8 @@ export default function save( props ) {
     backgroundColor,
     textColor,
     borderColor,
+    customBackgroundColor,
+    customTextColor,
     customBorderColor,
     iconColor,
     customIconColor,
@@ -34,8 +36,8 @@ export default function save( props ) {
     'blank-box': true,
     [ icon ]: !! icon,
     'block-box': true,
-    'has-text-color': textColor,
-    'has-background': backgroundColor,
+    'has-text-color': textColor || customTextColor,
+    'has-background': backgroundColor || customBackgroundColor,
     'has-border-color': borderColor || customBorderColor,
     'has-icon-color': iconColor || customIconColor,
     [ textClass ]: textClass,
@@ -44,9 +46,21 @@ export default function save( props ) {
     [ iconClass ]: iconClass,
     [ fontSizeClass ]: fontSizeClass,
   } );
+
+  const styles = {
+    '--cocoon-custom-background-color':
+      backgroundColor || customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
+    '--cocoon-custom-border-color':
+      borderColor || customBorderColor || undefined,
+    '--cooon-custom-icon-color': iconColor || customIconColor || undefined,
+  };
+
   const iconListBlockProps = useBlockProps.save( {
     className: className,
+    style: styles,
   } );
+
   // const iconListTitleBlockProps = useBlockProps.save({
   //     className: 'iconlist-title',
   // });

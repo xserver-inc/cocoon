@@ -32,6 +32,12 @@
     "borderColor": {
       "type": "string"
     },
+    "customBackgroundColor": {
+      "type": "string"
+    },
+    "customTextColor": {
+      "type": "string"
+    },
     "customBorderColor": {
       "type": "string"
     },
