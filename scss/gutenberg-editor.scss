@@ -1253,12 +1253,6 @@ div.cocoon-render-dropdown {
   }
 }
 
-//ブロックエディターで新着・人気記事ブロックの矢印が化ける不具合修正
-div.wp-block .card-arrow .a-wrap::after {
-  content: '>';
-  font-family: monospace;
-}
-
 //ブロックエディタータイトルのマージンボトム高さ調整
 .wp-block-post-title {
   margin-bottom: 0.8em !important;

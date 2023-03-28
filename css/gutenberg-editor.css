@@ -1528,11 +1528,6 @@ div.cocoon-render-dropdown select option[disabled] {
   justify-content: flex-start;
 }
 
-div.wp-block .card-arrow .a-wrap::after {
-  content: '>';
-  font-family: monospace;
-}
-
 .wp-block-post-title {
   margin-bottom: 0.8em !important;
 }
