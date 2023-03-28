@@ -1532,6 +1532,10 @@ div.cocoon-render-dropdown select option[disabled] {
   margin-bottom: 0.8em !important;
 }
 
+div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
+  margin-top: 0;
+}
+
 .editor-styles-wrapper.font-awesome-5 .card-arrow .a-wrap::after {
   font-family: 'Font Awesome 5 Free';
 }
