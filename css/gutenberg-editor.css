@@ -1539,3 +1539,10 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .editor-styles-wrapper.font-awesome-5 .card-arrow .a-wrap::after {
   font-family: 'Font Awesome 5 Free';
 }
+
+.editor-styles-wrapper [data-type="core/image"].aligncenter {
+  display: table;
+}
+.editor-styles-wrapper [data-type="core/image"].aligncenter figcaption {
+  margin-top: 0 !important;
+}

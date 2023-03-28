@@ -1266,3 +1266,11 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .editor-styles-wrapper.font-awesome-5 .card-arrow .a-wrap::after{
   font-family: 'Font Awesome 5 Free';
 }
+
+//画像ブロック配置が中央揃えにならない不具合修正
+.editor-styles-wrapper [data-type="core/image"].aligncenter{
+  display: table;
+  figcaption{
+    margin-top: 0 !important;
+  }
+}
