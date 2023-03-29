@@ -49,7 +49,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
   fetch_updater_url(60), //JSONファイルのURL
   __FILE__,
-  'wp-cocoon-theme'
+  'cocoon-master'
 );
 
 //本文部分の冒頭を綺麗に抜粋する
