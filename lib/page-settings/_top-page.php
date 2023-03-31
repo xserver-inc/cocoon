@@ -158,118 +158,118 @@ endif;
 
 <!-- タブ機能の実装 -->
 <div id="tabs" class="tabs">
-<input id="tab-skin-input" type="radio" name="tab-input" checked="">
+  <input id="tab-skin-input" class="tab-input" type="radio" name="tab-input" checked="checked">
   <label for="tab-skin-input" id="tab-skin-label" class="tab-skin-label tab-label"><?php _e( 'スキン', THEME_NAME ) ?></label>
 
-  <input id="tab-all-input" type="radio" name="tab-input" checked="">
+  <input id="tab-all-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-all-input" id="tab-all-label" class="tab-all-label tab-label"><?php _e( '全体', THEME_NAME ) ?></label>
 
-  <input id="tab-theme-header-input" type="radio" name="tab-input" checked="">
+  <input id="tab-theme-header-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-theme-header-input" id="tab-theme-header-label" class="tab-theme-header-label tab-label"><?php _e( 'ヘッダー', THEME_NAME ) ?></label>
 
-  <input id="tab-ads-input" type="radio" name="tab-input" checked="">
+  <input id="tab-ads-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-ads-input" id="tab-ads-label" class="tab-ads-label tab-label"><?php _e( '広告', THEME_NAME ) ?></label>
 
-  <input id="tab-title-input" type="radio" name="tab-input" checked="">
+  <input id="tab-title-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-title-input" id="tab-title-label" class="tab-title-label tab-label"><?php _e( 'タイトル', THEME_NAME ) ?></label>
 
-  <input id="tab-seo-input" type="radio" name="tab-input" checked="">
+  <input id="tab-seo-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-seo-input" id="tab-seo-label" class="tab-seo-label tab-label"><?php _e( 'SEO', THEME_NAME ) ?></label>
 
-  <input id="tab-ogp-input" type="radio" name="tab-input" checked="">
+  <input id="tab-ogp-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-ogp-input" id="tab-ogp-label" class="tab-ogp-label tab-label"><?php _e( 'OGP', THEME_NAME ) ?></label>
 
-  <input id="tab-analytics-input" type="radio" name="tab-input" checked="">
+  <input id="tab-analytics-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-analytics-input" id="tab-analytics-label" class="tab-analytics-label tab-label"><?php _e( 'アクセス解析・認証', THEME_NAME ) ?></label>
 
-  <input id="tab-column-input" type="radio" name="tab-input" checked="">
+  <input id="tab-column-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-column-input" id="tab-column-label" class="tab-column-label tab-label"><?php _e( 'カラム', THEME_NAME ) ?></label>
 
-  <input id="tab-index-page-input" type="radio" name="tab-input" checked="">
+  <input id="tab-index-page-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-index-page-input" id="tab-index-page-label" class="tab-index-page-label tab-label"><?php _e( 'インデックス', THEME_NAME ) ?></label>
 
-  <input id="tab-single-page-input" type="radio" name="tab-input" checked="">
+  <input id="tab-single-page-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-single-page-input" id="tab-single-page-label" class="tab-single-page-label tab-label"><?php _e( '投稿', THEME_NAME ) ?></label>
 
-  <input id="tab-page-page-input" type="radio" name="tab-input" checked="">
+  <input id="tab-page-page-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-page-page-input" id="tab-page-page-label" class="tab-page-page-label tab-label"><?php _e( '固定ページ', THEME_NAME ) ?></label>
 
-  <input id="tab-content-page-input" type="radio" name="tab-input" checked="">
+  <input id="tab-content-page-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-content-page-input" id="tab-content-page-label" class="tab-content-page-label tab-label"><?php _e( '本文', THEME_NAME ) ?></label>
 
-  <input id="tab-toc-page-input" type="radio" name="tab-input" checked="">
+  <input id="tab-toc-page-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-toc-page-input" id="tab-toc-page-label" class="tab-toc-page-label tab-label"><?php _e( '目次', THEME_NAME ) ?></label>
 
-  <input id="tab-sns-share-input" type="radio" name="tab-input" checked="">
+  <input id="tab-sns-share-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-sns-share-input" id="tab-sns-share-label" class="tab-sns-share-label tab-label"><?php _e( 'SNSシェア', THEME_NAME ) ?></label>
 
-  <input id="tab-sns-follow-input" type="radio" name="tab-input" checked="">
+  <input id="tab-sns-follow-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-sns-follow-input" id="tab-sns-follow-label" class="tab-sns-follow-label tab-label"><?php _e( 'SNSフォロー', THEME_NAME ) ?></label>
 
-  <input id="tab-image-input" type="radio" name="tab-input" checked="">
+  <input id="tab-image-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-image-input" id="tab-image-label" class="tab-image-label tab-label"><?php _e( '画像', THEME_NAME ) ?></label>
 
-  <input id="tab-blog-card-input" type="radio" name="tab-input" checked="">
+  <input id="tab-blog-card-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-blog-card-input" id="tab-blog-card-label" class="tab-blog-card-label tab-label"><?php _e( 'ブログカード', THEME_NAME ) ?></label>
 
-  <input id="tab-code-highlight-input" type="radio" name="tab-input" checked="">
+  <input id="tab-code-highlight-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-code-highlight-input" id="tab-code-highlight-label" class="tab-code-highlight-label tab-label"><?php _e( 'コード', THEME_NAME ) ?></label>
 
-  <input id="tab-comment-input" type="radio" name="tab-input" checked="">
+  <input id="tab-comment-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-comment-input" id="tab-comment-label" class="tab-comment-label tab-label"><?php _e( 'コメント', THEME_NAME ) ?></label>
 
-  <input id="tab-notice-area-input" type="radio" name="tab-input" checked="">
+  <input id="tab-notice-area-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-notice-area-input" id="tab-notice-area-label" class="tab-notice-area-label tab-label"><?php _e( '通知', THEME_NAME ) ?></label>
 
-  <input id="tab-appeal-area-input" type="radio" name="tab-input" checked="">
+  <input id="tab-appeal-area-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-appeal-area-input" id="tab-appeal-area-label" class="tab-appeal-area-label tab-label"><?php _e( 'アピールエリア', THEME_NAME ) ?></label>
 
-  <input id="tab-recommended-input" type="radio" name="tab-input" checked="">
+  <input id="tab-recommended-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-recommended-input" id="tab-recommended-label" class="tab-recommended-label tab-label"><?php _e( 'おすすめカード', THEME_NAME ) ?></label>
 
-  <input id="tab-carousel-input" type="radio" name="tab-input" checked="">
+  <input id="tab-carousel-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-carousel-input" id="tab-carousel-label" class="tab-carousel-label tab-label"><?php _e( 'カルーセル', THEME_NAME ) ?></label>
 
-  <input id="tab-footer-input" type="radio" name="tab-input" checked="">
+  <input id="tab-footer-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-footer-input" id="tab-footer-label" class="tab-footer-label tab-label"><?php _e( 'フッター', THEME_NAME ) ?></label>
 
-  <input id="tab-buttons-input" type="radio" name="tab-input" checked="">
+  <input id="tab-buttons-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-buttons-input" id="tab-buttons-label" class="tab-buttons-label tab-label"><?php _e( 'ボタン', THEME_NAME ) ?></label>
 
-  <input id="tab-mobile-buttons-input" type="radio" name="tab-input" checked="">
+  <input id="tab-mobile-buttons-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-mobile-buttons-input" id="tab-mobile-buttons-label" class="tab-mobile-buttons-label tab-label"><?php _e( 'モバイル', THEME_NAME ) ?></label>
 
-  <input id="tab-page-404-input" type="radio" name="tab-input" checked="">
+  <input id="tab-page-404-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-page-404-input" id="tab-page-404-label" class="tab-page-404-label tab-label"><?php _e( '404ページ', THEME_NAME ) ?></label>
 
-  <input id="tab-amp-input" type="radio" name="tab-input" checked="">
+  <input id="tab-amp-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-amp-input" id="tab-amp-label" class="tab-amp-label tab-label"><?php _e( 'AMP', THEME_NAME ) ?></label>
 
-  <input id="tab-pwa-input" type="radio" name="tab-input" checked="">
+  <input id="tab-pwa-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-pwa-input" id="tab-pwa-label" class="tab-pwa-label tab-label"><?php _e( 'PWA', THEME_NAME ) ?></label>
 
-  <input id="tab-admin-input" type="radio" name="tab-input" checked="">
+  <input id="tab-admin-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-admin-input" id="tab-admin-label" class="tab-admin-label tab-label"><?php _e( '管理者画面', THEME_NAME ) ?></label>
 
-  <input id="tab-widget-input" type="radio" name="tab-input" checked="">
+  <input id="tab-widget-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-widget-input" id="tab-widget-label" class="tab-widget-label tab-label"><?php _e( 'ウィジェット', THEME_NAME ) ?></label>
 
-  <input id="tab-widget-area-input" type="radio" name="tab-input" checked="">
+  <input id="tab-widget-area-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-widget-area-input" id="tab-widget-area-label" class="tab-widget-area-label tab-label"><?php _e( 'ウィジェットエリア', THEME_NAME ) ?></label>
 
-  <input id="tab-editor-input" type="radio" name="tab-input" checked="">
+  <input id="tab-editor-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-editor-input" id="tab-editor-label" class="tab-editor-label tab-label"><?php _e( 'エディター', THEME_NAME ) ?></label>
 
-  <input id="tab-apis-input" type="radio" name="tab-input" checked="">
+  <input id="tab-apis-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-apis-input" id="tab-apis-label" class="tab-apis-label tab-label"><?php _e( 'API', THEME_NAME ) ?></label>
 
-  <input id="tab-others-input" type="radio" name="tab-input" checked="">
+  <input id="tab-others-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-others-input" id="tab-others-label" class="tab-others-label tab-label"><?php _e( 'その他', THEME_NAME ) ?></label>
 
-  <input id="tab-reset-input" type="radio" name="tab-input" checked="">
+  <input id="tab-reset-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-reset-input" id="tab-reset-label" class="tab-reset-label tab-label"><?php _e( 'リセット', THEME_NAME ) ?></label>
 
-  <input id="tab-about-input" type="radio" name="tab-input" checked="">
+  <input id="tab-about-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-about-input" id="tab-about-label" class="tab-about-label tab-label"><?php _e( 'テーマ情報', THEME_NAME ) ?></label>
 
 

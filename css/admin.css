@@ -18489,7 +18489,7 @@ form.admin-settings .postbox {
   display: none;
 }
 
-#tabs input {
+#tabs .tab-input {
   display: none;
 }
 #tabs .tab-label {
