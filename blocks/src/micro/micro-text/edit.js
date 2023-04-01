@@ -35,8 +35,14 @@ export function MicroTextEdit( props ) {
     'has-text-color': textColor.color,
     [ textColor.class ]: textColor.class,
   } );
+
+  const styles = {
+    '--cocoon-custom-text-color': textColor.color || undefined,
+  };
+
   const blockProps = useBlockProps( {
     className: classes,
+    style: styles,
   } );
 
   return (
@@ -113,7 +119,6 @@ export function MicroTextEdit( props ) {
 export default compose( [
   withColors( 'backgroundColor', {
     textColor: 'color',
-    borderColor: 'border-color',
   } ),
   withFontSizes( 'fontSize' ),
 ] )( MicroTextEdit );

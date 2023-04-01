@@ -44,8 +44,18 @@ export default function save( { attributes } ) {
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
   } );
+
+  const styles = {
+    '--cocoon-custom-background-color':
+      backgroundColor || customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
+    '--cocoon-custom-border-color':
+      borderColor || customBorderColor || undefined,
+  };
+
   const blockProps = useBlockProps.save( {
     className: className,
+    style: styles,
   } );
 
   return (

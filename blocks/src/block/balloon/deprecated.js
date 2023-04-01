@@ -9,15 +9,22 @@ import {
   BUTTON_BLOCK,
   CLICK_POINT_MSG,
   colorValueToSlug,
+  getBalloonClasses,
 } from '../../helpers';
 import classnames from 'classnames';
 
+import {
+  InnerBlocks,
+  RichText,
+  getColorClassName,
+  getFontSizeClass,
+  useBlockProps,
+} from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-const { InnerBlocks } = wp.editor;
 
 const { createBlock } = wp.blocks;
 
-export const deprecated = [
+const v1 = [
   {
     attributes: {
       content: {
@@ -62,3 +69,63 @@ export const deprecated = [
     },
   },
 ];
+
+const v2 = {
+  save( { attributes } ) {
+    const {
+      name,
+      id,
+      icon,
+      style,
+      position,
+      iconstyle,
+      backgroundColor,
+      textColor,
+      borderColor,
+      customBorderColor,
+      fontSize,
+    } = attributes;
+
+    const backgroundClass = getColorClassName(
+      'background-color',
+      backgroundColor
+    );
+    const textClass = getColorClassName( 'color', textColor );
+    const borderClass = getColorClassName( 'border-color', borderColor );
+    const fontSizeClass = getFontSizeClass( fontSize );
+
+    const classes = getBalloonClasses( id, style, position, iconstyle );
+    const blockProps = useBlockProps.save( {
+      className: classes,
+    } );
+
+    return (
+      <div { ...blockProps }>
+        <div className="speech-person">
+          <figure className="speech-icon">
+            <img src={ icon } alt={ name } className="speech-icon-image" />
+          </figure>
+          <div className="speech-name">
+            <RichText.Content value={ name } />
+          </div>
+        </div>
+        <div
+          className={ classnames( {
+            'speech-balloon': true,
+            'has-text-color': textColor,
+            'has-background': backgroundColor,
+            'has-border-color': borderColor || customBorderColor,
+            [ textClass ]: textClass,
+            [ backgroundClass ]: backgroundClass,
+            [ borderClass ]: borderClass,
+            [ fontSizeClass ]: fontSizeClass,
+          } ) }
+        >
+          <InnerBlocks.Content />
+        </div>
+      </div>
+    );
+  },
+};
+
+export default [ v2, v1 ];

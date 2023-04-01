@@ -19,6 +19,8 @@ export default function save( { attributes } ) {
     backgroundColor,
     textColor,
     borderColor,
+    customBackgroundColor,
+    customTextColor,
     customBorderColor,
     fontSize,
   } = attributes;
@@ -32,8 +34,18 @@ export default function save( { attributes } ) {
   const fontSizeClass = getFontSizeClass( fontSize );
 
   const classes = getBalloonClasses( id, style, position, iconstyle );
+
+  const styles = {
+    '--cocoon-custom-background-color':
+      backgroundColor || customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
+    '--cocoon-custom-border-color':
+      borderColor || customBorderColor || undefined,
+  };
+
   const blockProps = useBlockProps.save( {
     className: classes,
+    style: styles,
   } );
 
   return (
@@ -49,8 +61,8 @@ export default function save( { attributes } ) {
       <div
         className={ classnames( {
           'speech-balloon': true,
-          'has-text-color': textColor,
-          'has-background': backgroundColor,
+          'has-text-color': textColor || customTextColor,
+          'has-background': backgroundColor || customBackgroundColor,
           'has-border-color': borderColor || customBorderColor,
           [ textClass ]: textClass,
           [ backgroundClass ]: backgroundClass,

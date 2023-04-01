@@ -16,6 +16,8 @@ export default function save( { attributes } ) {
     backgroundColor,
     textColor,
     borderColor,
+    customBackgroundColor,
+    customTextColor,
     customBorderColor,
     fontSize,
   } = attributes;
@@ -35,8 +37,8 @@ export default function save( { attributes } ) {
     [ size ]: size,
     [ 'btn-wrap-circle' ]: !! isCircle,
     [ 'btn-wrap-shine' ]: !! isShine,
-    'has-text-color': textColor,
-    'has-background': backgroundColor,
+    'has-text-color': textColor || customTextColor,
+    'has-background': backgroundColor || customBackgroundColor,
     'has-border-color': borderColor || customBorderColor,
     [ textClass ]: textClass,
     [ backgroundClass ]: backgroundClass,
@@ -44,8 +46,17 @@ export default function save( { attributes } ) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
+  const styles = {
+    '--cocoon-custom-background-color':
+      backgroundColor || customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
+    '--cocoon-custom-border-color':
+      borderColor || customBorderColor || undefined,
+  };
+
   const blockProps = useBlockProps.save( {
     className: classes,
+    style: styles,
   } );
 
   return (
