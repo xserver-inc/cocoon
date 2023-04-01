@@ -3356,7 +3356,9 @@ body.wp-admin {
 .admin-settings .demo .is-style-sticky-blue,
 .admin-settings .demo .is-style-sticky-green {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border: 3px solid var(--cocoon-custom-border-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
@@ -3671,7 +3673,7 @@ body.wp-admin {
 .admin-settings .demo .bb-tab.is-style-sticky-red .bb-label,
 .admin-settings .demo .bb-tab.is-style-sticky-blue .bb-label,
 .admin-settings .demo .bb-tab.is-style-sticky-green .bb-label {
-  background-color: var(--cocoon-grey-color);
+  background-color: var(--cocoon-custom-border-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
@@ -4251,11 +4253,20 @@ body.wp-admin {
   bottom: 0;
   right: 0;
 }
+.admin-settings .demo .wp-block-cocoon-blocks-button-1 {
+  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a {
-  color: var(--cocoon-white-color);
-  background-color: #32373c;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--cocoon-custom-text-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-color: var(--cocoon-custom-border-color);
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
@@ -4265,7 +4276,6 @@ body.wp-admin {
   text-decoration: none;
   text-align: center;
   font-size: 14px;
-  border: 2px solid transparent;
   position: relative;
   transition: all 0.3s ease-in-out;
 }
@@ -6526,6 +6536,7 @@ body.wp-admin {
   font-size: 16px;
 }
 .admin-settings .demo .speech-wrap {
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   display: flex;
 }
 .admin-settings .demo .speech-person {
@@ -6546,8 +6557,11 @@ body.wp-admin {
   height: 100%;
   position: relative;
   padding: 10px;
-  background-color: var(--cocoon-white-color);
-  border: 2px solid var(--cocoon-basic-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  color: var(--cocoon-custom-text-color);
   border-radius: 6px;
   max-width: calc(100% - 14%);
 }
@@ -6562,7 +6576,9 @@ body.wp-admin {
   height: 0;
   left: -12px;
   top: 10px;
-  border-right: 12px solid var(--cocoon-basic-border-color);
+  border-right-width: 12px;
+  border-right-style: solid;
+  border-right-color: var(--cocoon-custom-border-color);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -6574,7 +6590,9 @@ body.wp-admin {
   height: 0;
   left: -9px;
   top: 10px;
-  border-right: 12px solid var(--cocoon-white-color);
+  border-right-width: 12px;
+  border-right-style: solid;
+  border-right-color: var(--cocoon-custom-background-color);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -11117,7 +11135,9 @@ body.wp-admin {
 .admin-settings .demo .is-style-sticky-blue,
 .admin-settings .demo .is-style-sticky-green {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border: 3px solid var(--cocoon-custom-border-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
@@ -11432,7 +11452,7 @@ body.wp-admin {
 .admin-settings .demo .bb-tab.is-style-sticky-red .bb-label,
 .admin-settings .demo .bb-tab.is-style-sticky-blue .bb-label,
 .admin-settings .demo .bb-tab.is-style-sticky-green .bb-label {
-  background-color: var(--cocoon-grey-color);
+  background-color: var(--cocoon-custom-border-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
@@ -12012,11 +12032,20 @@ body.wp-admin {
   bottom: 0;
   right: 0;
 }
+.admin-settings .demo .wp-block-cocoon-blocks-button-1 {
+  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a {
-  color: var(--cocoon-white-color);
-  background-color: #32373c;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--cocoon-custom-text-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-color: var(--cocoon-custom-border-color);
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
@@ -12026,7 +12055,6 @@ body.wp-admin {
   text-decoration: none;
   text-align: center;
   font-size: 14px;
-  border: 2px solid transparent;
   position: relative;
   transition: all 0.3s ease-in-out;
 }
@@ -14287,6 +14315,7 @@ body.wp-admin {
   font-size: 16px;
 }
 .admin-settings .demo .speech-wrap {
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   display: flex;
 }
 .admin-settings .demo .speech-person {
@@ -14307,8 +14336,11 @@ body.wp-admin {
   height: 100%;
   position: relative;
   padding: 10px;
-  background-color: var(--cocoon-white-color);
-  border: 2px solid var(--cocoon-basic-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  color: var(--cocoon-custom-text-color);
   border-radius: 6px;
   max-width: calc(100% - 14%);
 }
@@ -14323,7 +14355,9 @@ body.wp-admin {
   height: 0;
   left: -12px;
   top: 10px;
-  border-right: 12px solid var(--cocoon-basic-border-color);
+  border-right-width: 12px;
+  border-right-style: solid;
+  border-right-color: var(--cocoon-custom-border-color);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -14335,7 +14369,9 @@ body.wp-admin {
   height: 0;
   left: -9px;
   top: 10px;
-  border-right: 12px solid var(--cocoon-white-color);
+  border-right-width: 12px;
+  border-right-style: solid;
+  border-right-color: var(--cocoon-custom-background-color);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -19688,7 +19724,9 @@ textarea[name="the_page_memo"] {
 .components-popover__content .is-style-sticky-blue,
 .components-popover__content .is-style-sticky-green {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border: 3px solid var(--cocoon-custom-border-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
@@ -20043,7 +20081,7 @@ textarea[name="the_page_memo"] {
 .components-popover__content .bb-tab.is-style-sticky-red .bb-label,
 .components-popover__content .bb-tab.is-style-sticky-blue .bb-label,
 .components-popover__content .bb-tab.is-style-sticky-green .bb-label {
-  background-color: var(--cocoon-grey-color);
+  background-color: var(--cocoon-custom-border-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
@@ -20623,11 +20661,20 @@ textarea[name="the_page_memo"] {
   bottom: 0;
   right: 0;
 }
+.components-popover__content .wp-block-cocoon-blocks-button-1 {
+  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
 .components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a,
 .components-popover__content .btn-wrap > a,
 .components-popover__content .wp-block-freeform .btn-wrap > a {
-  color: var(--cocoon-white-color);
-  background-color: #32373c;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--cocoon-custom-text-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-color: var(--cocoon-custom-border-color);
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
@@ -20637,7 +20684,6 @@ textarea[name="the_page_memo"] {
   text-decoration: none;
   text-align: center;
   font-size: 14px;
-  border: 2px solid transparent;
   position: relative;
   transition: all 0.3s ease-in-out;
 }

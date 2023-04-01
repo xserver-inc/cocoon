@@ -3163,7 +3163,9 @@ label.screen-reader-text {
 .is-style-sticky-blue,
 .is-style-sticky-green {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border: 3px solid var(--cocoon-custom-border-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
@@ -3478,7 +3480,7 @@ label.screen-reader-text {
 .bb-tab.is-style-sticky-red .bb-label,
 .bb-tab.is-style-sticky-blue .bb-label,
 .bb-tab.is-style-sticky-green .bb-label {
-  background-color: var(--cocoon-grey-color);
+  background-color: var(--cocoon-custom-border-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
@@ -4073,11 +4075,21 @@ div.search-form {
   right: 0;
 }
 
+.wp-block-cocoon-blocks-button-1 {
+  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
+
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a {
-  color: var(--cocoon-white-color);
-  background-color: #32373c;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--cocoon-custom-text-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-color: var(--cocoon-custom-border-color);
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
@@ -4087,7 +4099,6 @@ div.search-form {
   text-decoration: none;
   text-align: center;
   font-size: 14px;
-  border: 2px solid transparent;
   position: relative;
   transition: all 0.3s ease-in-out;
 }
@@ -6715,6 +6726,7 @@ canvas, iframe, video,
 }
 
 .speech-wrap {
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   display: flex;
 }
 
@@ -6739,8 +6751,11 @@ div.speech-balloon {
   height: 100%;
   position: relative;
   padding: 10px;
-  background-color: var(--cocoon-white-color);
-  border: 2px solid var(--cocoon-basic-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  color: var(--cocoon-custom-text-color);
   border-radius: 6px;
   max-width: calc(100% - 14%);
 }
@@ -6757,7 +6772,9 @@ div.speech-balloon p {
   height: 0;
   left: -12px;
   top: 10px;
-  border-right: 12px solid var(--cocoon-basic-border-color);
+  border-right-width: 12px;
+  border-right-style: solid;
+  border-right-color: var(--cocoon-custom-border-color);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -6770,7 +6787,9 @@ div.speech-balloon p {
   height: 0;
   left: -9px;
   top: 10px;
-  border-right: 12px solid var(--cocoon-white-color);
+  border-right-width: 12px;
+  border-right-style: solid;
+  border-right-color: var(--cocoon-custom-background-color);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }

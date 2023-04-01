@@ -476,7 +476,9 @@ $bb_blue: #2ea9df;
 $bb_green: var(--cocoon-green-color);
 .blank-box{
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border: 3px solid var(--cocoon-custom-border-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
@@ -809,12 +811,21 @@ div.search-form{
   }
 }
 
+.wp-block-cocoon-blocks-button-1{
+  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
 
 .btn,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a{
-  color: var(--cocoon-white-color);
-  background-color: #32373c;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--cocoon-custom-text-color);
+  background-color: var(--cocoon-custom-background-color);;
+  border-color: var(--cocoon-custom-border-color);
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
@@ -824,7 +835,6 @@ div.search-form{
   text-decoration: none;
   text-align: center;
   font-size: 14px;
-  border: 2px solid transparent;
   position: relative;
   transition: $bgc_hover_anime;
 
