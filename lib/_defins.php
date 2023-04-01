@@ -83,7 +83,7 @@ global $_MENU_ICON;
 $_MENU_ICON = null;
 //モバイルフッターコピーボタン
 global $_MOBILE_COPY_BUTTON;
-$_MOBILE_COPY_BUTTON = null;
+$_MOBILE_COPY_BUTTON = false;
 
 // //モバイルフッターコピーボタン
 // global $_IS_HTTP_MINIFY;
