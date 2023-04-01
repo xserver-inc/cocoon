@@ -18486,18 +18486,22 @@ pre {
 form.admin-settings {
   margin-top: 2em;
 }
+form.admin-settings .button-primary {
+  margin: 1em 0;
+}
+form.admin-settings .postbox {
+  padding: 1em;
+  margin: 1em 0;
+}
 
 #tabs > div {
   display: none;
 }
 
-#tabs .tabs-nav {
-  border-bottom: 1px solid #999;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+#tabs .tab-input {
+  display: none;
 }
-#tabs > ul > li {
+#tabs .tab-label {
   background-color: #f1f1f1;
   cursor: pointer;
   display: inline-block !important;
@@ -18510,11 +18514,88 @@ form.admin-settings {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
-#tabs > ul > li:hover {
+#tabs .tab-label:hover {
   background-color: #fff;
 }
-#tabs > ul > li.selected {
+#tabs #tab-skin-input:checked ~ #tab-skin-label,
+#tabs #tab-all-input:checked ~ #tab-all-label,
+#tabs #tab-theme-header-input:checked ~ #tab-theme-header-label,
+#tabs #tab-ads-input:checked ~ #tab-ads-label,
+#tabs #tab-title-input:checked ~ #tab-title-label,
+#tabs #tab-seo-input:checked ~ #tab-seo-label,
+#tabs #tab-ogp-input:checked ~ #tab-ogp-label,
+#tabs #tab-analytics-input:checked ~ #tab-analytics-label,
+#tabs #tab-column-input:checked ~ #tab-column-label,
+#tabs #tab-index-page-input:checked ~ #tab-index-page-label,
+#tabs #tab-single-page-input:checked ~ #tab-single-page-label,
+#tabs #tab-page-page-input:checked ~ #tab-page-page-label,
+#tabs #tab-content-page-input:checked ~ #tab-content-page-label,
+#tabs #tab-toc-page-input:checked ~ #tab-toc-page-label,
+#tabs #tab-sns-share-input:checked ~ #tab-sns-share-label,
+#tabs #tab-sns-follow-input:checked ~ #tab-sns-follow-label,
+#tabs #tab-image-input:checked ~ #tab-image-label,
+#tabs #tab-blog-card-input:checked ~ #tab-blog-card-label,
+#tabs #tab-code-highlight-input:checked ~ #tab-code-highlight-label,
+#tabs #tab-comment-input:checked ~ #tab-comment-label,
+#tabs #tab-notice-area-input:checked ~ #tab-notice-area-label,
+#tabs #tab-appeal-area-input:checked ~ #tab-appeal-area-label,
+#tabs #tab-recommended-input:checked ~ #tab-recommended-label,
+#tabs #tab-carousel-input:checked ~ #tab-carousel-label,
+#tabs #tab-footer-input:checked ~ #tab-footer-label,
+#tabs #tab-buttons-input:checked ~ #tab-buttons-label,
+#tabs #tab-mobile-buttons-input:checked ~ #tab-mobile-buttons-label,
+#tabs #tab-page-404-input:checked ~ #tab-page-404-label,
+#tabs #tab-amp-input:checked ~ #tab-amp-label,
+#tabs #tab-pwa-input:checked ~ #tab-pwa-label,
+#tabs #tab-admin-input:checked ~ #tab-admin-label,
+#tabs #tab-widget-input:checked ~ #tab-widget-label,
+#tabs #tab-widget-area-input:checked ~ #tab-widget-area-label,
+#tabs #tab-editor-input:checked ~ #tab-editor-label,
+#tabs #tab-apis-input:checked ~ #tab-apis-label,
+#tabs #tab-others-input:checked ~ #tab-others-label,
+#tabs #tab-reset-input:checked ~ #tab-reset-label,
+#tabs #tab-about-input:checked ~ #tab-about-label {
   background-color: #fff;
+}
+#tabs #tab-skin-input:checked ~ #tab-skin-content,
+#tabs #tab-all-input:checked ~ #tab-all-content,
+#tabs #tab-theme-header-input:checked ~ #tab-theme-header-content,
+#tabs #tab-ads-input:checked ~ #tab-ads-content,
+#tabs #tab-title-input:checked ~ #tab-title-content,
+#tabs #tab-seo-input:checked ~ #tab-seo-content,
+#tabs #tab-ogp-input:checked ~ #tab-ogp-content,
+#tabs #tab-analytics-input:checked ~ #tab-analytics-content,
+#tabs #tab-column-input:checked ~ #tab-column-content,
+#tabs #tab-index-page-input:checked ~ #tab-index-page-content,
+#tabs #tab-single-page-input:checked ~ #tab-single-page-content,
+#tabs #tab-page-page-input:checked ~ #tab-page-page-content,
+#tabs #tab-content-page-input:checked ~ #tab-content-page-content,
+#tabs #tab-toc-page-input:checked ~ #tab-toc-page-content,
+#tabs #tab-sns-share-input:checked ~ #tab-sns-share-content,
+#tabs #tab-sns-follow-input:checked ~ #tab-sns-follow-content,
+#tabs #tab-image-input:checked ~ #tab-image-content,
+#tabs #tab-blog-card-input:checked ~ #tab-blog-card-content,
+#tabs #tab-code-highlight-input:checked ~ #tab-code-highlight-content,
+#tabs #tab-comment-input:checked ~ #tab-comment-content,
+#tabs #tab-notice-area-input:checked ~ #tab-notice-area-content,
+#tabs #tab-appeal-area-input:checked ~ #tab-appeal-area-content,
+#tabs #tab-recommended-input:checked ~ #tab-recommended-content,
+#tabs #tab-carousel-input:checked ~ #tab-carousel-content,
+#tabs #tab-footer-input:checked ~ #tab-footer-content,
+#tabs #tab-buttons-input:checked ~ #tab-buttons-content,
+#tabs #tab-mobile-buttons-input:checked ~ #tab-mobile-buttons-content,
+#tabs #tab-page-404-input:checked ~ #tab-page-404-content,
+#tabs #tab-amp-input:checked ~ #tab-amp-content,
+#tabs #tab-pwa-input:checked ~ #tab-pwa-content,
+#tabs #tab-admin-input:checked ~ #tab-admin-content,
+#tabs #tab-widget-input:checked ~ #tab-widget-content,
+#tabs #tab-widget-area-input:checked ~ #tab-widget-area-content,
+#tabs #tab-editor-input:checked ~ #tab-editor-content,
+#tabs #tab-apis-input:checked ~ #tab-apis-content,
+#tabs #tab-others-input:checked ~ #tab-others-content,
+#tabs #tab-reset-input:checked ~ #tab-reset-content,
+#tabs #tab-about-input:checked ~ #tab-about-content {
+  display: block;
 }
 #tabs input[type="text"], #tabs input[type="password"], #tabs input[type="search"], #tabs input[type="number"], #tabs textarea, #tabs select {
   border-color: #ddd;

@@ -56,27 +56,25 @@ function admin_print_styles_custom() {
     wp_enqueue_confirmation_before_publish();
   }
 
-  //_v(is_admin_php_page());
-  if (is_admin_php_page()/* || is_widgets_php_page()*/) {
-    //タブの読み込み
-    wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
-    wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
-  }
+  // //_v(is_admin_php_page());
+  // if (is_admin_php_page()/* || is_widgets_php_page()*/) {
+  //   //タブの読み込み
+  //   wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
+  //   wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
+  // }
 
-  if (is_admin_php_page()/*$pagenow == 'admin.php'*/) {
-    //設定変更CSSの読み込み
-    //wp_add_css_custome_to_inline_style();
+  if (is_admin_php_page()) {
     //IcoMoonの呼び出し
     wp_enqueue_style_icomoon();
 
-    $select_index = 0;
-    if (isset($_POST['select_index'])) {
-      $select_index = intval($_POST[SELECT_INDEX_NAME]);
-    }
-    $data = 'jQuery(document).ready( function() {
-         tabify("#tabs").select( '.$select_index.' );
-         });';
-    wp_add_inline_script( 'tab-js', $data, 'after' ) ;
+    // $select_index = 0;
+    // if (isset($_POST['select_index'])) {
+    //   $select_index = intval($_POST[SELECT_INDEX_NAME]);
+    // }
+    // $data = 'jQuery(document).ready( function() {
+    //      tabify("#tabs").select( '.$select_index.' );
+    //      });';
+    // wp_add_inline_script( 'tab-js', $data, 'after' ) ;
     //ソースコードハイライトリソースの読み込み
     wp_enqueue_highlight_js();
     //画像リンク拡大効果がLightboxのとき

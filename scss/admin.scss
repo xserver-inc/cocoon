@@ -180,6 +180,13 @@ body.wp-admin{
 
 form.admin-settings{
   margin-top: 2em;
+  .button-primary{
+    margin: 1em 0;
+  }
+  .postbox{
+    padding: 1em;
+    margin: 1em 0;
+  }
 }
 
 #tabs > div{
@@ -187,14 +194,18 @@ form.admin-settings{
 }
 
 #tabs{
-  .tabs-nav {
-    border-bottom: 1px solid #999;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  .tab-input{
+    display: none;
   }
 
-  > ul > li {
+  // .tabs-nav {
+  //   border-bottom: 1px solid #999;
+  //   list-style-type: none;
+  //   margin: 0;
+  //   padding: 0;
+  // }
+
+  .tab-label {
     background-color: rgb(241, 241, 241);
     cursor: pointer;
     display: inline-block !important;
@@ -210,9 +221,91 @@ form.admin-settings{
       background-color: #fff;
     }
 
-    &.selected{
-      background-color: #fff;
-    }
+    // &.selected{
+    //   background-color: #fff;
+    // }
+  }
+
+  #tab-skin-input:checked ~ #tab-skin-label,
+  #tab-all-input:checked ~ #tab-all-label,
+  #tab-theme-header-input:checked ~ #tab-theme-header-label,
+  #tab-ads-input:checked ~ #tab-ads-label,
+  #tab-title-input:checked ~ #tab-title-label,
+  #tab-seo-input:checked ~ #tab-seo-label,
+  #tab-ogp-input:checked ~ #tab-ogp-label,
+  #tab-analytics-input:checked ~ #tab-analytics-label,
+  #tab-column-input:checked ~ #tab-column-label,
+  #tab-index-page-input:checked ~ #tab-index-page-label,
+  #tab-single-page-input:checked ~ #tab-single-page-label,
+  #tab-page-page-input:checked ~ #tab-page-page-label,
+  #tab-content-page-input:checked ~ #tab-content-page-label,
+  #tab-toc-page-input:checked ~ #tab-toc-page-label,
+  #tab-sns-share-input:checked ~ #tab-sns-share-label,
+  #tab-sns-follow-input:checked ~ #tab-sns-follow-label,
+  #tab-image-input:checked ~ #tab-image-label,
+  #tab-blog-card-input:checked ~ #tab-blog-card-label,
+  #tab-code-highlight-input:checked ~ #tab-code-highlight-label,
+  #tab-comment-input:checked ~ #tab-comment-label,
+  #tab-notice-area-input:checked ~ #tab-notice-area-label,
+  #tab-appeal-area-input:checked ~ #tab-appeal-area-label,
+  #tab-recommended-input:checked ~ #tab-recommended-label,
+  #tab-carousel-input:checked ~ #tab-carousel-label,
+  #tab-footer-input:checked ~ #tab-footer-label,
+  #tab-buttons-input:checked ~ #tab-buttons-label,
+  #tab-mobile-buttons-input:checked ~ #tab-mobile-buttons-label,
+  #tab-page-404-input:checked ~ #tab-page-404-label,
+  #tab-amp-input:checked ~ #tab-amp-label,
+  #tab-pwa-input:checked ~ #tab-pwa-label,
+  #tab-admin-input:checked ~ #tab-admin-label,
+  #tab-widget-input:checked ~ #tab-widget-label,
+  #tab-widget-area-input:checked ~ #tab-widget-area-label,
+  #tab-editor-input:checked ~ #tab-editor-label,
+  #tab-apis-input:checked ~ #tab-apis-label,
+  #tab-others-input:checked ~ #tab-others-label,
+  #tab-reset-input:checked ~ #tab-reset-label,
+  #tab-about-input:checked ~ #tab-about-label {
+    background-color: #fff;
+  }
+
+  #tab-skin-input:checked ~ #tab-skin-content,
+  #tab-all-input:checked ~ #tab-all-content,
+  #tab-theme-header-input:checked ~ #tab-theme-header-content,
+  #tab-ads-input:checked ~ #tab-ads-content,
+  #tab-title-input:checked ~ #tab-title-content,
+  #tab-seo-input:checked ~ #tab-seo-content,
+  #tab-ogp-input:checked ~ #tab-ogp-content,
+  #tab-analytics-input:checked ~ #tab-analytics-content,
+  #tab-column-input:checked ~ #tab-column-content,
+  #tab-index-page-input:checked ~ #tab-index-page-content,
+  #tab-single-page-input:checked ~ #tab-single-page-content,
+  #tab-page-page-input:checked ~ #tab-page-page-content,
+  #tab-content-page-input:checked ~ #tab-content-page-content,
+  #tab-toc-page-input:checked ~ #tab-toc-page-content,
+  #tab-sns-share-input:checked ~ #tab-sns-share-content,
+  #tab-sns-follow-input:checked ~ #tab-sns-follow-content,
+  #tab-image-input:checked ~ #tab-image-content,
+  #tab-blog-card-input:checked ~ #tab-blog-card-content,
+  #tab-code-highlight-input:checked ~ #tab-code-highlight-content,
+  #tab-comment-input:checked ~ #tab-comment-content,
+  #tab-notice-area-input:checked ~ #tab-notice-area-content,
+  #tab-appeal-area-input:checked ~ #tab-appeal-area-content,
+  #tab-recommended-input:checked ~ #tab-recommended-content,
+  #tab-carousel-input:checked ~ #tab-carousel-content,
+  #tab-footer-input:checked ~ #tab-footer-content,
+  #tab-buttons-input:checked ~ #tab-buttons-content,
+  #tab-mobile-buttons-input:checked ~ #tab-mobile-buttons-content,
+  #tab-page-404-input:checked ~ #tab-page-404-content,
+  #tab-amp-input:checked ~ #tab-amp-content,
+  #tab-pwa-input:checked ~ #tab-pwa-content,
+  #tab-admin-input:checked ~ #tab-admin-content,
+  #tab-widget-input:checked ~ #tab-widget-content,
+  #tab-widget-area-input:checked ~ #tab-widget-area-content,
+  #tab-editor-input:checked ~ #tab-editor-content,
+  #tab-apis-input:checked ~ #tab-apis-content,
+  #tab-others-input:checked ~ #tab-others-content,
+  #tab-reset-input:checked ~ #tab-reset-content,
+  #tab-about-input:checked ~ #tab-about-content {
+    display: block;
   }
 
   input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{
