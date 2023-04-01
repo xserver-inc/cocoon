@@ -51,8 +51,17 @@ export function FAQEdit( props ) {
     [ fontSize.class ]: fontSize.class,
   } );
 
+  const styles = {
+    '--cocoon-custom-question-color': questionColor.color || undefined,
+    '--cocoon-custom-answer-color': answerColor.color || undefined,
+    '--cocoon-custom-border-color': borderColor.color || undefined,
+    '--cocoon-custom-background-color': backgroundColor.color || undefined,
+    '--cocoon-custom-text-color': textColor.color || undefined,
+  };
+
   const blockProps = useBlockProps( {
     className: classes,
+    style: styles,
   } );
 
   return (

@@ -41,6 +41,13 @@ export function ToggleBoxEdit( props ) {
     [ borderColor.class ]: borderColor.class,
     [ fontSize.class ]: fontSize.class,
   } );
+
+  const styles = {
+    '--cocoon-custom-border-color': borderColor.color || undefined,
+    '--cocoon-custom-background-color': backgroundColor.color || undefined,
+    '--cocoon-custom-text-color': textColor.color || undefined,
+  };
+
   const blockProps = useBlockProps( {
     className: classes,
   } );

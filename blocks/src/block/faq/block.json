@@ -32,6 +32,21 @@
     "borderColor": {
       "type": "string"
     },
+    "customQuestionColor": {
+      "type": "string"
+    },
+    "customAnswerColor": {
+      "type": "string"
+    },
+    "customBackgroundColor": {
+      "type": "string"
+    },
+    "customTextColor": {
+      "type": "string"
+    },
+    "customBorderColor": {
+      "type": "string"
+    },
     "fontSize": {
       "type": "string"
     }

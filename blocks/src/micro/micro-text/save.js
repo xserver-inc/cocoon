@@ -8,7 +8,7 @@ import classnames from 'classnames';
 const MICRO_COPY_CLASS = 'micro-copy';
 
 export default function save( { attributes } ) {
-  const { content, type, icon, textColor } = attributes;
+  const { content, type, icon, textColor, customTextColor } = attributes;
 
   const textClass = getColorClassName( 'color', textColor );
 
@@ -16,11 +16,17 @@ export default function save( { attributes } ) {
     [ 'micro-text' ]: true,
     [ MICRO_COPY_CLASS ]: true,
     [ type ]: !! type,
-    'has-text-color': textColor,
+    'has-text-color': textColor || customTextColor,
     [ textClass ]: textClass,
   } );
+
+  const styles = {
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
+  };
+
   const blockProps = useBlockProps.save( {
     className: className,
+    style: styles,
   } );
 
   return (
