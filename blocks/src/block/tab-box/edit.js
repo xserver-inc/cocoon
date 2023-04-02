@@ -29,7 +29,8 @@ export function TabBoxEdit( props ) {
     fontSize,
   } = props;
 
-  const { label } = attributes;
+  const { label, customBackgroundColor, customTextColor, customBorderColor } =
+    attributes;
 
   const classes = classnames( className, {
     'blank-box': true,
@@ -46,9 +47,9 @@ export function TabBoxEdit( props ) {
   } );
 
   const styles = {
-    '--cocoon-custom-border-color': borderColor.color || undefined,
-    '--cocoon-custom-background-color': backgroundColor.color || undefined,
-    '--cocoon-custom-text-color': textColor.color || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
   };
 
   const blockProps = useBlockProps( {
