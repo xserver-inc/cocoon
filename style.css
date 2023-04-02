@@ -4100,7 +4100,7 @@ div.search-form {
   right: 0;
 }
 
-.wp-block-cocoon-blocks-button-1 {
+.button-block {
   --cocoon-custom-background-color: var(--cocoon-text-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;

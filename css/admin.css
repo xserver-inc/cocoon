@@ -4253,7 +4253,7 @@ body.wp-admin {
   bottom: 0;
   right: 0;
 }
-.admin-settings .demo .wp-block-cocoon-blocks-button-1 {
+.admin-settings .demo .button-block {
   --cocoon-custom-background-color: var(--cocoon-text-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
@@ -12032,7 +12032,7 @@ body.wp-admin {
   bottom: 0;
   right: 0;
 }
-.admin-settings .demo .wp-block-cocoon-blocks-button-1 {
+.admin-settings .demo .button-block {
   --cocoon-custom-background-color: var(--cocoon-text-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
@@ -20661,7 +20661,7 @@ textarea[name="the_page_memo"] {
   bottom: 0;
   right: 0;
 }
-.components-popover__content .wp-block-cocoon-blocks-button-1 {
+.components-popover__content .button-block {
   --cocoon-custom-background-color: var(--cocoon-text-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
