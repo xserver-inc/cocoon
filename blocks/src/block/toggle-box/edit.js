@@ -50,6 +50,7 @@ export function ToggleBoxEdit( props ) {
 
   const blockProps = useBlockProps( {
     className: classes,
+    style: styles,
   } );
 
   dateID == '' ? setAttributes( { dateID: getDateID() } ) : dateID;
