@@ -37,7 +37,7 @@ export function ButtonEdit( props ) {
 
   const { content, size, url, target, isCircle, isShine } = attributes;
 
-  const classes = classnames( {
+  const classes = classnames( className, {
     [ BUTTON_BLOCK ]: true,
   } );
 
@@ -47,7 +47,7 @@ export function ButtonEdit( props ) {
     '--cocoon-custom-text-color': textColor.color || undefined,
   };
 
-  const blockProps = useBlockProps( className, {
+  const blockProps = useBlockProps( {
     className: classes,
     style: styles,
   } );
