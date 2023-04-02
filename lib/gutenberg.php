@@ -375,9 +375,11 @@ html .body .has-<?php echo $slug; ?>-background-color {
 html .body .has-<?php echo $slug; ?>-color {
     color: <?php echo $color; ?>;
 }
+/*
 html .body .has-<?php echo $slug; ?>-color .toggle-button::before {
     color: <?php echo $color; ?>;
 }
+*/
 html .body .has-<?php echo $slug; ?>-border-color {
     border-color: <?php echo $color; ?>;
 }
@@ -401,11 +403,12 @@ html .body .bb-tab.has-<?php echo $slug; ?>-border-color .bb-label{
     background-color: <?php echo $color; ?>;
 }
 <?php //アコーディオンボックス ?>
+/*
 html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-button,
 html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-button:before{
   color: <?php echo $color; ?>;
 }
-
+*/
 html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
     background-color: <?php echo $color; ?>;
 }
@@ -547,7 +550,7 @@ html .body .btn-wrap{
     font-size: 16px;
 }
 
-
+/*
 html .body .has-border-color .toggle-button{
     color: #fff;
 }
@@ -555,6 +558,7 @@ html .body .has-border-color .toggle-button{
 html .body .has-border-color .toggle-button::before{
     color: #fff;
 }
+*/
 
     <?php // フォントサイズ ?>
 html .body .btn-wrap.has-small-font-size > a {

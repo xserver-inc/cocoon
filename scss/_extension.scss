@@ -1457,12 +1457,26 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 $toggle_border_width: 2px;
+.toggle-box{
+  --cocoon-custom-background-color: var(--cocoon-xx-thin-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+}
+
+.has-border-color .toggle-button{
+  color: var(--cocoon-white-color);
+  background-color: var(--cocoon-custom-border-color);
+  &::before{
+    color: var(--cocoon-white-color);
+  }
+}
 .toggle-button {
   display: block;
   cursor: pointer;
   padding: 3px 10px;
   background-color: var(--cocoon-xx-thin-color);
-  border: $toggle_border_width solid var(--cocoon-basic-border-color);
+  border-width: $toggle_border_width;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
@@ -1505,7 +1519,11 @@ $toggle_border_width: 2px;
   height: 100%;
   transition: $bgc_hover_anime;
   padding: 1em;
-  border: $toggle_border_width solid var(--cocoon-basic-border-color);
+  color: var(--cocoon-custom-text-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-width: $toggle_border_width;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
   border-top-width: 0;
   border-bottom-left-radius: var(--cocoon-basic-border-radius);
   border-bottom-right-radius: var(--cocoon-basic-border-radius);
@@ -1513,7 +1531,9 @@ $toggle_border_width: 2px;
 
 @mixin toggle_color($color: var(--cocoon-blue-color)) {
   .toggle-button{
-    border: $toggle_border_width solid $color;
+    border-width: $toggle_border_width;
+    border-style: solid;
+    border-color: $color;
     background: $color;
     color: var(--cocoon-white-color);
     &::before{

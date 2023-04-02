@@ -5413,12 +5413,27 @@ html .body .label-box.has-white-background-color .box-content {
   overflow: hidden;
 }
 
+.toggle-box {
+  --cocoon-custom-background-color: var(--cocoon-xx-thin-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+}
+
+.has-border-color .toggle-button {
+  color: var(--cocoon-white-color);
+  background-color: var(--cocoon-custom-border-color);
+}
+.has-border-color .toggle-button::before {
+  color: var(--cocoon-white-color);
+}
+
 .toggle-button {
   display: block;
   cursor: pointer;
   padding: 3px 10px;
   background-color: var(--cocoon-xx-thin-color);
-  border: 2px solid var(--cocoon-basic-border-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
@@ -5459,14 +5474,20 @@ html .body .label-box.has-white-background-color .box-content {
   height: 100%;
   transition: all 0.3s ease-in-out;
   padding: 1em;
-  border: 2px solid var(--cocoon-basic-border-color);
+  color: var(--cocoon-custom-text-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
   border-top-width: 0;
   border-bottom-left-radius: var(--cocoon-basic-border-radius);
   border-bottom-right-radius: var(--cocoon-basic-border-radius);
 }
 
 .tb-red .toggle-button {
-  border: 2px solid var(--cocoon-red-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-red-color);
   background: var(--cocoon-red-color);
   color: var(--cocoon-white-color);
 }
@@ -5478,7 +5499,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-pink .toggle-button {
-  border: 2px solid var(--cocoon-pink-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-pink-color);
   background: var(--cocoon-pink-color);
   color: var(--cocoon-white-color);
 }
@@ -5490,7 +5513,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-purple .toggle-button {
-  border: 2px solid var(--cocoon-purple-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-purple-color);
   background: var(--cocoon-purple-color);
   color: var(--cocoon-white-color);
 }
@@ -5502,7 +5527,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-blue .toggle-button {
-  border: 2px solid var(--cocoon-blue-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-blue-color);
   background: var(--cocoon-blue-color);
   color: var(--cocoon-white-color);
 }
@@ -5514,7 +5541,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-green .toggle-button {
-  border: 2px solid var(--cocoon-green-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-green-color);
   background: var(--cocoon-green-color);
   color: var(--cocoon-white-color);
 }
@@ -5526,7 +5555,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-orange .toggle-button {
-  border: 2px solid var(--cocoon-orange-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-orange-color);
   background: var(--cocoon-orange-color);
   color: var(--cocoon-white-color);
 }
@@ -5538,7 +5569,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-yellow .toggle-button {
-  border: 2px solid var(--cocoon-yellow-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-yellow-color);
   background: var(--cocoon-yellow-color);
   color: var(--cocoon-white-color);
 }
@@ -5550,7 +5583,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-brown .toggle-button {
-  border: 2px solid var(--cocoon-brown-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-brown-color);
   background: var(--cocoon-brown-color);
   color: var(--cocoon-white-color);
 }
@@ -5562,7 +5597,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-grey .toggle-button {
-  border: 2px solid var(--cocoon-grey-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-grey-color);
   background: var(--cocoon-grey-color);
   color: var(--cocoon-white-color);
 }
@@ -5574,7 +5611,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-black .toggle-button {
-  border: 2px solid var(--cocoon-black-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-black-color);
   background: var(--cocoon-black-color);
   color: var(--cocoon-white-color);
 }
@@ -5586,7 +5625,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-deep .toggle-button {
-  border: 2px solid var(--cocoon-deep-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-deep-color);
   background: var(--cocoon-deep-color);
   color: var(--cocoon-white-color);
 }
@@ -5598,7 +5639,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-indigo .toggle-button {
-  border: 2px solid var(--cocoon-indigo-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-indigo-color);
   background: var(--cocoon-indigo-color);
   color: var(--cocoon-white-color);
 }
@@ -5610,7 +5653,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-light-blue .toggle-button {
-  border: 2px solid var(--cocoon-light-blue-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-light-blue-color);
   background: var(--cocoon-light-blue-color);
   color: var(--cocoon-white-color);
 }
@@ -5622,7 +5667,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-cyan .toggle-button {
-  border: 2px solid var(--cocoon-cyan-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-cyan-color);
   background: var(--cocoon-cyan-color);
   color: var(--cocoon-white-color);
 }
@@ -5634,7 +5681,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-teal .toggle-button {
-  border: 2px solid var(--cocoon-teal-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-teal-color);
   background: var(--cocoon-teal-color);
   color: var(--cocoon-white-color);
 }
@@ -5646,7 +5695,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-light-green .toggle-button {
-  border: 2px solid var(--cocoon-light-green-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-light-green-color);
   background: var(--cocoon-light-green-color);
   color: var(--cocoon-white-color);
 }
@@ -5658,7 +5709,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-lime .toggle-button {
-  border: 2px solid var(--cocoon-lime-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-lime-color);
   background: var(--cocoon-lime-color);
   color: var(--cocoon-white-color);
 }
@@ -5670,7 +5723,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-amber .toggle-button {
-  border: 2px solid var(--cocoon-amber-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-amber-color);
   background: var(--cocoon-amber-color);
   color: var(--cocoon-white-color);
 }
@@ -5682,7 +5737,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-deep-orange .toggle-button {
-  border: 2px solid var(--cocoon-deep-orange-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-deep-orange-color);
   background: var(--cocoon-deep-orange-color);
   color: var(--cocoon-white-color);
 }
@@ -5694,7 +5751,9 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .tb-white .toggle-button {
-  border: 2px solid var(--cocoon-white-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-white-color);
   background: var(--cocoon-white-color);
   color: var(--cocoon-white-color);
 }
