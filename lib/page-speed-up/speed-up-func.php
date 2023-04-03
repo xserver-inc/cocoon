@@ -200,20 +200,6 @@ function generate_baruba_js_scripts($tag){
         } else {//スクリプトファイルの場合
           $tag = $tags[$i];
           if (preg_match('#src=[\'"](.+)[\'"]#i', $tag, $n)) {
-            // $src = trim($n[1]);
-            // $script = '
-            //   //$("script[src=\''.$src.'\']").remove();
-
-            //   scriptTag = document.createElement("script");
-            //   // scriptTag.defer = true;
-            //   // scriptTag.async = true;
-            //   scriptTag.src = "'.$src.'";
-            //   //document.head.appendChild(scriptTag);
-            //   document.getElementsByTagName("body")[0].appendChild(scriptTag);
-            // '.PHP_EOL.PHP_EOL.PHP_EOL;
-            // //_v($script);
-            // echo $script;
-
             $src = get_query_removed_url($n[1]);
             if (includes_site_url($src)) {
               $src_file = url_to_local($src);

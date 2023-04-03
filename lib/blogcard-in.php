@@ -105,7 +105,7 @@ function url_to_internal_blogcard_tag($url){
 
 
     //サムネイルの取得（要160×90のサムネイル設定）
-    $thumbnail = get_the_post_thumbnail($id, get_internal_blogcard_thumbnail_size(), array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => '', 'loading' => 'lazy', 'decoding' => 'async'));
+    $thumbnail = get_the_post_thumbnail($id, get_internal_blogcard_thumbnail_size(), array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
 
   } elseif (is_home_url($url)){
     //トップページの場合

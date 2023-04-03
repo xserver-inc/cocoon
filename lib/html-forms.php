@@ -427,7 +427,7 @@ function generate_the_site_logo_tag($is_header = true){
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
-    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.' decoding="async">';
+    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'>';
   } else {
     $site_logo_tag = esc_html($site_logo_text);
   }
@@ -577,7 +577,7 @@ function generate_upload_image_tag($name, $value, $id = null){
   <input type="button" name="<?php echo $name; ?>_clear" value="<?php _e( 'クリア', THEME_NAME ) ?>" />
   <div id="<?php echo $thumb_id; ?>_thumbnail" class="uploded-thumbnail">
     <?php if ($value): ?>
-      <img src="<?php echo $value; ?>" alt="選択中の画像" loading="lazy" decoding="async">
+      <img src="<?php echo $value; ?>" alt="選択中の画像">
     <?php endif ?>
   </div>
   <?php if (0/*$value*/): ?>
@@ -633,7 +633,7 @@ function generate_upload_image_tag($name, $value, $id = null){
                   $("input:text[name='<?php echo $name; ?>']").val(file.attributes.sizes.full.url);
 
                   /* プレビュー用に選択されたサムネイル画像を表示 */
-                  $("#<?php echo $thumb_id; ?>_thumbnail").append('<img src="'+file.attributes.sizes.full.url+'" loading="lazy" decoding="async" />');
+                  $("#<?php echo $thumb_id; ?>_thumbnail").append('<img src="'+file.attributes.sizes.full.url+'" />');
 
               });
           });
@@ -1044,7 +1044,7 @@ function generate_popular_entries_tag($atts){
       $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
       $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
 
-      $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '', 'loading' => 'lazy', 'decoding' => 'async') );
+      $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '') );
       $pv = $post->sum_count;
 
       if ($post_thumbnail) {
@@ -1315,7 +1315,7 @@ function get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type){
   global $post;
   ob_start();
   if ( has_post_thumbnail() ){ // サムネイルを持っているときの処理
-    the_post_thumbnail( $thumb_size, array('alt' => '', 'loading' => 'lazy', 'decoding' => 'async') );
+    the_post_thumbnail( $thumb_size, array('alt' => '') );
   } else { // サムネイルを持っていないときの処理
     echo get_widget_entry_card_no_image_tag($type, $prefix);
   }
@@ -1558,7 +1558,7 @@ function get_widget_entry_card_link_tag($atts){
             } else {
               $size = THUMB320;
             }
-            $attr = array('loading' => 'lazy', 'decoding' => 'async');
+            $attr = array();
             $attr['class'] = $class;
 
             $thumbnail_tag = get_the_post_thumbnail( $object_id, $size, $attr );

@@ -846,7 +846,7 @@ function amazon_product_link_shortcode($atts){
       if ($is_catalog_image_visible && ($size != 'l') && $LargeImageUrl) {
         $image_l_tag =
           '<div class="amazon-item-thumb-l product-item-thumb-l image-content">'.
-            '<img src="'.esc_url($LargeImageUrl).'" alt="" width="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'" loading="lazy" decoding="async">'.
+            '<img src="'.esc_url($LargeImageUrl).'" alt="" width="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'">'.
           '</div>';
       }
       $swatchimages_tag = null;
@@ -878,9 +878,9 @@ function amazon_product_link_shortcode($atts){
 
           $tmp_tag .=
             '<div class="image-thumb swatch-image-thumb si-thumb'.esc_attr($display_none_class).'">'.
-              '<img src="'.esc_url($SwatchImageURL).'" alt="" width="'.esc_attr($SwatchImageWidth).'" height="'.esc_attr($SwatchImageHeight).'" loading="lazy" decoding="async">'.
+              '<img src="'.esc_url($SwatchImageURL).'" alt="" width="'.esc_attr($SwatchImageWidth).'" height="'.esc_attr($SwatchImageHeight).'">'.
               '<div class="image-content">'.
-              '<img src="'.esc_url($LargeImageURL).'" alt="" width="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'" loading="lazy" decoding="async">'.
+              '<img src="'.esc_url($LargeImageURL).'" alt="" width="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'">'.
               '</div>'.
             '</div>';
         }
@@ -891,7 +891,7 @@ function amazon_product_link_shortcode($atts){
         $image_only_class = ' amazon-item-image-only product-item-image-only no-icon';
       }
       $image_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-thumb-link product-item-thumb-link image-thumb'.esc_attr($image_only_class).'" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
-              '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image" loading="lazy" decoding="async">'.
+              '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image">'.
               $moshimo_amazon_impression_tag.
               $image_l_tag.
             '</a>'.

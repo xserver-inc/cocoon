@@ -22,7 +22,6 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     $size = $width.'x'.$height.' size-'.$width.'x'.$height;
     $attr = array(
       'class' => "attachment-$size eye-catch-image",
-      'decoding' => 'async',
     );
     //アイキャッチの表示
     if ($width && $height) {
@@ -36,7 +35,7 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     $size = get_image_width_and_height($url);
     $width = isset($size['width']) ? $size['width'] : 800;
     $height = isset($size['height']) ? $size['height'] : 600;
-    echo ' <img src="'.$url.'" width="'.$width.'" height="'.$height.'" alt="" decoding="async">';
+    echo ' <img src="'.$url.'" width="'.$width.'" height="'.$height.'" alt="">';
   }
   ?>
   <meta itemprop="url" content="<?php echo $url; ?>">
