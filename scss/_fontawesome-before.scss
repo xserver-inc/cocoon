@@ -213,38 +213,6 @@
   content: '\f007';
 }
 
-.iconlist-box{
-  border-color: transparent;
-
-  ul{
-    list-style: none;
-  }
-  ol{
-    li::before{
-      display: none;
-    }
-  }
-  &.list-none{
-    ul{
-      list-style: disc;
-    }
-    ol{
-      list-style: decimal;
-    }
-  }
-}
-.iconlist-box li::before{
-  font-family: FontAwesome;
-  margin-right: 0.4em;
-  margin-left: -1.4em;
-  position: absolute;
-}
-
-.iconlist-title{
-  font-weight: 700;
-  text-align: center;
-}
-
 .fab-check-circle::before,
 .list-check-circle li::before{
   content: '\f058';

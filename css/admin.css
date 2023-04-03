@@ -7950,6 +7950,41 @@ body.wp-admin {
   top: 24px;
   border-radius: 100%;
 }
+.admin-settings .demo .iconlist-box {
+  border-color: transparent;
+  --cocoon-custom-icon-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: transparent;
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+}
+.admin-settings .demo .iconlist-box.has-border-color li::before {
+  color: var(--cocoon-custom-icon-color);
+}
+.admin-settings .demo .iconlist-box ul {
+  list-style: none;
+}
+.admin-settings .demo .iconlist-box ol li::before {
+  display: none;
+}
+.admin-settings .demo .iconlist-box.list-none ul {
+  list-style: disc;
+}
+.admin-settings .demo .iconlist-box.list-none ol {
+  list-style: decimal;
+}
+.admin-settings .demo .iconlist-box li::before {
+  font-family: FontAwesome;
+  margin-right: 0.4em;
+  margin-left: -1.4em;
+  position: absolute;
+}
+.admin-settings .demo .iconlist-title {
+  font-weight: 700;
+  text-align: center;
+}
 .admin-settings .demo .ribbon {
   width: 80px;
   height: 80px;
@@ -8181,31 +8216,6 @@ body.wp-admin {
 }
 .admin-settings .demo .fab-user::before {
   content: '\f007';
-}
-.admin-settings .demo .iconlist-box {
-  border-color: transparent;
-}
-.admin-settings .demo .iconlist-box ul {
-  list-style: none;
-}
-.admin-settings .demo .iconlist-box ol li::before {
-  display: none;
-}
-.admin-settings .demo .iconlist-box.list-none ul {
-  list-style: disc;
-}
-.admin-settings .demo .iconlist-box.list-none ol {
-  list-style: decimal;
-}
-.admin-settings .demo .iconlist-box li::before {
-  font-family: FontAwesome;
-  margin-right: 0.4em;
-  margin-left: -1.4em;
-  position: absolute;
-}
-.admin-settings .demo .iconlist-title {
-  font-weight: 700;
-  text-align: center;
 }
 .admin-settings .demo .fab-check-circle::before,
 .admin-settings .demo .list-check-circle li::before {
@@ -15793,6 +15803,41 @@ body.wp-admin {
   top: 24px;
   border-radius: 100%;
 }
+.admin-settings .demo .iconlist-box {
+  border-color: transparent;
+  --cocoon-custom-icon-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: transparent;
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+}
+.admin-settings .demo .iconlist-box.has-border-color li::before {
+  color: var(--cocoon-custom-icon-color);
+}
+.admin-settings .demo .iconlist-box ul {
+  list-style: none;
+}
+.admin-settings .demo .iconlist-box ol li::before {
+  display: none;
+}
+.admin-settings .demo .iconlist-box.list-none ul {
+  list-style: disc;
+}
+.admin-settings .demo .iconlist-box.list-none ol {
+  list-style: decimal;
+}
+.admin-settings .demo .iconlist-box li::before {
+  font-family: FontAwesome;
+  margin-right: 0.4em;
+  margin-left: -1.4em;
+  position: absolute;
+}
+.admin-settings .demo .iconlist-title {
+  font-weight: 700;
+  text-align: center;
+}
 .admin-settings .demo .ribbon {
   width: 80px;
   height: 80px;
@@ -16024,31 +16069,6 @@ body.wp-admin {
 }
 .admin-settings .demo .fab-user::before {
   content: '\f007';
-}
-.admin-settings .demo .iconlist-box {
-  border-color: transparent;
-}
-.admin-settings .demo .iconlist-box ul {
-  list-style: none;
-}
-.admin-settings .demo .iconlist-box ol li::before {
-  display: none;
-}
-.admin-settings .demo .iconlist-box.list-none ul {
-  list-style: disc;
-}
-.admin-settings .demo .iconlist-box.list-none ol {
-  list-style: decimal;
-}
-.admin-settings .demo .iconlist-box li::before {
-  font-family: FontAwesome;
-  margin-right: 0.4em;
-  margin-left: -1.4em;
-  position: absolute;
-}
-.admin-settings .demo .iconlist-title {
-  font-weight: 700;
-  text-align: center;
 }
 .admin-settings .demo .fab-check-circle::before,
 .admin-settings .demo .list-check-circle li::before {
