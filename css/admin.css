@@ -7888,6 +7888,13 @@ body.wp-admin {
 .admin-settings .demo .timeline-box {
   padding: 16px 5px;
   overflow: auto;
+  --cocoon-custom-point-color:#6fc173;
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .timeline-box .timeline {
   list-style: none;
@@ -7937,7 +7944,7 @@ body.wp-admin {
   content: '';
   width: 12px;
   height: 12px;
-  background: #6fc173;
+  background: var(--cocoon-custom-point-color);
   position: absolute;
   left: 105px;
   top: 24px;
@@ -15724,6 +15731,13 @@ body.wp-admin {
 .admin-settings .demo .timeline-box {
   padding: 16px 5px;
   overflow: auto;
+  --cocoon-custom-point-color:#6fc173;
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .timeline-box .timeline {
   list-style: none;
@@ -15773,7 +15787,7 @@ body.wp-admin {
   content: '';
   width: 12px;
   height: 12px;
-  background: #6fc173;
+  background: var(--cocoon-custom-point-color);
   position: absolute;
   left: 105px;
   top: 24px;
