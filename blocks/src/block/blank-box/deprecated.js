@@ -21,51 +21,49 @@ import {
 
 const { createBlock } = wp.blocks;
 
-const v1 = [
-  {
-    attributes: {
-      content: {
-        type: 'string',
-        default: CLICK_POINT_MSG,
-      },
-      borderColor: {
-        type: 'string',
-        default: '',
-      },
+const v1 = {
+  attributes: {
+    content: {
+      type: 'string',
+      default: CLICK_POINT_MSG,
     },
-
-    migrate( attributes ) {
-      const { content, borderColor } = attributes;
-
-      return {
-        content: content,
-        backgroundColor: undefined,
-        customBackgroundColor: undefined,
-        textColor: undefined,
-        customTextColor: undefined,
-        borderColor: colorValueToSlug( borderColor ),
-        customBorderColor: undefined,
-        fontSize: undefined,
-        customFontSize: undefined,
-      };
-    },
-
-    save( { attributes } ) {
-      const { borderColor } = attributes;
-      const classes = classnames( {
-        'blank-box': true,
-        [ `bb-${ colorValueToSlug( borderColor ) }` ]:
-          !! colorValueToSlug( borderColor ),
-        [ 'block-box' ]: true,
-      } );
-      return (
-        <div className={ classes }>
-          <InnerBlocks.Content />
-        </div>
-      );
+    borderColor: {
+      type: 'string',
+      default: '',
     },
   },
-];
+
+  migrate( attributes ) {
+    const { content, borderColor } = attributes;
+
+    return {
+      content: content,
+      backgroundColor: undefined,
+      customBackgroundColor: undefined,
+      textColor: undefined,
+      customTextColor: undefined,
+      borderColor: colorValueToSlug( borderColor ),
+      customBorderColor: undefined,
+      fontSize: undefined,
+      customFontSize: undefined,
+    };
+  },
+
+  save( { attributes } ) {
+    const { borderColor } = attributes;
+    const classes = classnames( {
+      'blank-box': true,
+      [ `bb-${ colorValueToSlug( borderColor ) }` ]:
+        !! colorValueToSlug( borderColor ),
+      [ 'block-box' ]: true,
+    } );
+    return (
+      <div className={ classes }>
+        <InnerBlocks.Content />
+      </div>
+    );
+  },
+};
 
 const v2 = {
   save( { attributes } ) {

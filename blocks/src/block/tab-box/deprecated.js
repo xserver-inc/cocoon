@@ -22,57 +22,54 @@ import { __ } from '@wordpress/i18n';
 
 const { createBlock } = wp.blocks;
 
-const v1 = [
-  {
-    attributes: {
-      content: {
-        type: 'string',
-        default: CLICK_POINT_MSG,
-      },
-      style: {
-        type: 'string',
-        default: 'bb-check',
-      },
-      color: {
-        type: 'string',
-        default: '',
-      },
+const v1 = {
+  attributes: {
+    content: {
+      type: 'string',
+      default: CLICK_POINT_MSG,
     },
-
-    migrate( attributes ) {
-      const { content, style, color } = attributes;
-
-      return {
-        content: content,
-        label: style,
-        backgroundColor: undefined,
-        customBackgroundColor: undefined,
-        textColor: undefined,
-        customTextColor: undefined,
-        borderColor: colorValueToSlug( color ),
-        customBorderColor: undefined,
-        fontSize: undefined,
-        customFontSize: undefined,
-      };
+    style: {
+      type: 'string',
+      default: 'bb-check',
     },
-
-    save( { attributes } ) {
-      const { content, style, color } = attributes;
-      const classes = classnames( {
-        'blank-box': true,
-        'bb-tab': true,
-        [ style ]: !! style,
-        [ `bb-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
-        [ 'block-box' ]: true,
-      } );
-      return (
-        <div className={ classes }>
-          <InnerBlocks.Content />
-        </div>
-      );
+    color: {
+      type: 'string',
+      default: '',
     },
   },
-];
+
+  migrate( attributes ) {
+    const { content, style, color } = attributes;
+    return {
+      content: content,
+      label: style,
+      backgroundColor: undefined,
+      customBackgroundColor: undefined,
+      textColor: undefined,
+      customTextColor: undefined,
+      borderColor: colorValueToSlug( color ),
+      customBorderColor: undefined,
+      fontSize: undefined,
+      customFontSize: undefined,
+    };
+  },
+
+  save( { attributes } ) {
+    const { content, style, color } = attributes;
+    const classes = classnames( {
+      'blank-box': true,
+      'bb-tab': true,
+      [ style ]: !! style,
+      [ `bb-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
+      [ 'block-box' ]: true,
+    } );
+    return (
+      <div className={ classes }>
+        <InnerBlocks.Content />
+      </div>
+    );
+  },
+};
 
 const v2 = {
   save( props ) {
