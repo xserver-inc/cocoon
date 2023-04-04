@@ -4953,8 +4953,15 @@ div.search-form {
 ** キャプションボックス
 ************************************/
 .caption-box {
-  border: 2px solid var(--cocoon-current-background-color);
+  --cocoon-custom-border-color: var(--cocoon-current-background-color);
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
   border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
 }
 .caption-box.has-border-color .box-label {
   color: var(--cocoon-white-color);
@@ -4962,7 +4969,7 @@ div.search-form {
 
 .caption-box-label {
   padding: 0.2em 0.8em;
-  background-color: var(--cocoon-current-background-color);
+  background-color: var(--cocoon-custom-border-color);
 }
 
 .caption-box-content {
