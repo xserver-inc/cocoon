@@ -4453,6 +4453,10 @@ body.wp-admin {
 .admin-settings .demo .btn-caret-square-o-right:before, .admin-settings .demo .btn-wrap.btn-wrap-caret-square-o-right > a:before {
   content: "\f152";
 }
+.admin-settings .demo .micro-text {
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  color: var(--cocoon-custom-text-color);
+}
 .admin-settings .demo .micro-copy.alignleft {
   float: none;
   margin-right: 0;
@@ -12321,6 +12325,10 @@ body.wp-admin {
 }
 .admin-settings .demo .btn-caret-square-o-right:before, .admin-settings .demo .btn-wrap.btn-wrap-caret-square-o-right > a:before {
   content: "\f152";
+}
+.admin-settings .demo .micro-text {
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  color: var(--cocoon-custom-text-color);
 }
 .admin-settings .demo .micro-copy.alignleft {
   float: none;
@@ -21041,6 +21049,10 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .btn-caret-square-o-right:before, .components-popover__content .btn-wrap.btn-wrap-caret-square-o-right > a:before {
   content: "\f152";
+}
+.components-popover__content .micro-text {
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  color: var(--cocoon-custom-text-color);
 }
 .components-popover__content .micro-copy.alignleft {
   float: none;

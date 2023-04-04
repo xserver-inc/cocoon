@@ -420,6 +420,10 @@ html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
 html .body .iconlist-box.has-<?php echo $slug; ?>-icon-color li::before{
     color: <?php echo $color; ?>;
 }
+<?php //マイクロテキスト ?>
+.micro-text.has-<?php echo $slug; ?>-color {
+    color: <?php echo $color; ?>;
+}
 <?php //マイクロバルーン ?>
 html .body .micro-balloon.has-<?php echo $slug; ?>-color {
     color: <?php echo $color; ?>;

@@ -956,6 +956,12 @@ div.search-form{
 .btn-arrow-circle-o-right:before, .btn-wrap.btn-wrap-arrow-circle-o-right > a:before{content: "\f18e";}
 .btn-caret-square-o-right:before, .btn-wrap.btn-wrap-caret-square-o-right > a:before{content: "\f152";}
 
+.micro-text {
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  color: var(--cocoon-custom-text-color);
+}
+
+
 .micro-copy{
   &.alignleft{
     float: none;

@@ -4344,6 +4344,11 @@ div.search-form {
   content: "\f152";
 }
 
+.micro-text {
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  color: var(--cocoon-custom-text-color);
+}
+
 .micro-copy.alignleft {
   float: none;
   margin-right: 0;
