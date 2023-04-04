@@ -32,7 +32,16 @@ export function FAQEdit( props ) {
     fontSize,
   } = props;
 
-  const { question, questionLabel, answerLabel } = props.attributes;
+  const {
+    question,
+    questionLabel,
+    answerLabel,
+    customBackgroundColor,
+    customTextColor,
+    customBorderColor,
+    customQuestionColor,
+    customAnswerColor,
+  } = props.attributes;
 
   const classes = classnames( className, {
     'faq-wrap': true,
@@ -52,11 +61,11 @@ export function FAQEdit( props ) {
   } );
 
   const styles = {
-    '--cocoon-custom-question-color': questionColor.color || undefined,
-    '--cocoon-custom-answer-color': answerColor.color || undefined,
-    '--cocoon-custom-border-color': borderColor.color || undefined,
-    '--cocoon-custom-background-color': backgroundColor.color || undefined,
-    '--cocoon-custom-text-color': textColor.color || undefined,
+    '--cocoon-custom-question-color': customQuestionColor || undefined,
+    '--cocoon-custom-answer-color': customAnswerColor || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
   };
 
   const blockProps = useBlockProps( {
