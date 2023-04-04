@@ -21,68 +21,66 @@ import {
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-const v1 = [
-  {
-    attributes: {
-      title: {
-        type: 'string',
-        default: '',
-      },
-      iconColor: {
-        type: 'string',
-        default: '',
-      },
-      borderColor: {
-        type: 'string',
-        default: '',
-      },
-      icon: {
-        type: 'string',
-        default: 'list-caret-right',
-      },
+const v1 = {
+  attributes: {
+    title: {
+      type: 'string',
+      default: '',
     },
-
-    migrate( attributes ) {
-      const { title, icon, iconColor, borderColor } = attributes;
-
-      return {
-        title: title,
-        icon: icon,
-        backgroundColor: undefined,
-        customBackgroundColor: undefined,
-        textColor: undefined,
-        customTextColor: undefined,
-        borderColor: colorValueToSlug( borderColor ),
-        customBorderColor: undefined,
-        iconColor: colorValueToSlug( iconColor ),
-        customIconColor: undefined,
-        fontSize: undefined,
-        customFontSize: undefined,
-      };
+    iconColor: {
+      type: 'string',
+      default: '',
     },
-
-    save( { attributes } ) {
-      const { title, icon, iconColor, borderColor } = attributes;
-      const classes = classnames( {
-        'iconlist-box': true,
-        [ icon ]: !! icon,
-        [ `iic-${ colorValueToSlug( iconColor ) }` ]:
-          !! colorValueToSlug( iconColor ),
-        [ `blank-box bb-${ colorValueToSlug( borderColor ) }` ]:
-          !! colorValueToSlug( borderColor ),
-        [ 'block-box' ]: true,
-      } );
-      return (
-        <div className={ classes }>
-          <div className="iconlist-title">
-            <RichText.Content value={ title } />
-          </div>
-          <InnerBlocks.Content />
-        </div>
-      );
+    borderColor: {
+      type: 'string',
+      default: '',
+    },
+    icon: {
+      type: 'string',
+      default: 'list-caret-right',
     },
   },
-];
+
+  migrate( attributes ) {
+    const { title, icon, iconColor, borderColor } = attributes;
+
+    return {
+      title: title,
+      icon: icon,
+      backgroundColor: undefined,
+      customBackgroundColor: undefined,
+      textColor: undefined,
+      customTextColor: undefined,
+      borderColor: colorValueToSlug( borderColor ),
+      customBorderColor: undefined,
+      iconColor: colorValueToSlug( iconColor ),
+      customIconColor: undefined,
+      fontSize: undefined,
+      customFontSize: undefined,
+    };
+  },
+
+  save( { attributes } ) {
+    const { title, icon, iconColor, borderColor } = attributes;
+    const classes = classnames( {
+      'iconlist-box': true,
+      [ icon ]: !! icon,
+      [ `iic-${ colorValueToSlug( iconColor ) }` ]:
+        !! colorValueToSlug( iconColor ),
+      [ `blank-box bb-${ colorValueToSlug( borderColor ) }` ]:
+        !! colorValueToSlug( borderColor ),
+      [ 'block-box' ]: true,
+    } );
+    return (
+      <div className={ classes }>
+        <div className="iconlist-title">
+          <RichText.Content value={ title } />
+        </div>
+        <InnerBlocks.Content />
+      </div>
+    );
+  },
+};
 
 const v2 = {
   save( props ) {
