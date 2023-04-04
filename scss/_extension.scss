@@ -994,16 +994,25 @@ div.search-form{
 
 
 .micro-balloon {
+  --cocoon-custom-border-color: var(--cocoon-x-pallid-text-color);
+  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
 	position: relative;
-	background: var(--cocoon-white-color);
-  border: 1px solid var(--cocoon-x-pallid-text-color);
+	background: var(--cocoon-custom-background-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+
   border-radius: 4px;
   padding: 3px 12px;
   display: table;
   margin-bottom: 0.8em;
   font-size: 0.8em;
   &.has-background{
-    color: #fff;
+    color: var(--cocoon-white-color);
+  }
+  &.has-text-color{
+    color: var(--cocoon-custom-text-color);
   }
   &.aligncenter{
     margin-left: auto;
@@ -1020,7 +1029,8 @@ div.search-form{
 .micro-balloon:after, .micro-balloon:before {
   top: calc(100% - 1px);
 	left: 50%;
-	border: solid transparent;
+  border-style: solid;
+  border-color: transparent;
 	content: " ";
 	height: 0;
 	width: 0;
@@ -1029,12 +1039,12 @@ div.search-form{
 }
 
 .micro-balloon:after {
-	border-top-color: var(--cocoon-white-color);
+	border-top-color: var(--cocoon-custom-background-color);
 	border-width: 7px;
 	margin-left: -7px;
 }
 .micro-balloon:before {
-	border-top-color: var(--cocoon-x-pallid-text-color);
+	border-top-color: var(--cocoon-custom-border-color);
 	border-width: 8px;
 	margin-left: -8px;
 }
@@ -1055,11 +1065,11 @@ div.search-form{
 }
 
 .micro-bottom.micro-balloon:after {
-	border-bottom-color: var(--cocoon-white-color);
+	border-bottom-color: var(--cocoon-custom-background-color);
   border-top-color: transparent;
 }
 .micro-bottom.micro-balloon:before {
-  border-bottom-color: var(--cocoon-x-pallid-text-color);
+  border-bottom-color: var(--cocoon-custom-border-color);
   border-top-color: transparent;
 }
 

@@ -4481,9 +4481,14 @@ body.wp-admin {
   text-align: right;
 }
 .admin-settings .demo .micro-balloon {
+  --cocoon-custom-border-color: var(--cocoon-x-pallid-text-color);
+  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
   position: relative;
-  background: var(--cocoon-white-color);
-  border: 1px solid var(--cocoon-x-pallid-text-color);
+  background: var(--cocoon-custom-background-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
   border-radius: 4px;
   padding: 3px 12px;
   display: table;
@@ -4491,7 +4496,10 @@ body.wp-admin {
   font-size: 0.8em;
 }
 .admin-settings .demo .micro-balloon.has-background {
-  color: #fff;
+  color: var(--cocoon-white-color);
+}
+.admin-settings .demo .micro-balloon.has-text-color {
+  color: var(--cocoon-custom-text-color);
 }
 .admin-settings .demo .micro-balloon.aligncenter {
   margin-left: auto;
@@ -4507,7 +4515,8 @@ body.wp-admin {
 .admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before {
   top: calc(100% - 1px);
   left: 50%;
-  border: solid transparent;
+  border-style: solid;
+  border-color: transparent;
   content: " ";
   height: 0;
   width: 0;
@@ -4515,12 +4524,12 @@ body.wp-admin {
   pointer-events: none;
 }
 .admin-settings .demo .micro-balloon:after {
-  border-top-color: var(--cocoon-white-color);
+  border-top-color: var(--cocoon-custom-background-color);
   border-width: 7px;
   margin-left: -7px;
 }
 .admin-settings .demo .micro-balloon:before {
-  border-top-color: var(--cocoon-x-pallid-text-color);
+  border-top-color: var(--cocoon-custom-border-color);
   border-width: 8px;
   margin-left: -8px;
 }
@@ -4539,11 +4548,11 @@ body.wp-admin {
   top: auto;
 }
 .admin-settings .demo .micro-bottom.micro-balloon:after {
-  border-bottom-color: var(--cocoon-white-color);
+  border-bottom-color: var(--cocoon-custom-background-color);
   border-top-color: transparent;
 }
 .admin-settings .demo .micro-bottom.micro-balloon:before {
-  border-bottom-color: var(--cocoon-x-pallid-text-color);
+  border-bottom-color: var(--cocoon-custom-border-color);
   border-top-color: transparent;
 }
 .admin-settings .demo .micro-icon {
@@ -12341,9 +12350,14 @@ body.wp-admin {
   text-align: right;
 }
 .admin-settings .demo .micro-balloon {
+  --cocoon-custom-border-color: var(--cocoon-x-pallid-text-color);
+  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
   position: relative;
-  background: var(--cocoon-white-color);
-  border: 1px solid var(--cocoon-x-pallid-text-color);
+  background: var(--cocoon-custom-background-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
   border-radius: 4px;
   padding: 3px 12px;
   display: table;
@@ -12351,7 +12365,10 @@ body.wp-admin {
   font-size: 0.8em;
 }
 .admin-settings .demo .micro-balloon.has-background {
-  color: #fff;
+  color: var(--cocoon-white-color);
+}
+.admin-settings .demo .micro-balloon.has-text-color {
+  color: var(--cocoon-custom-text-color);
 }
 .admin-settings .demo .micro-balloon.aligncenter {
   margin-left: auto;
@@ -12367,7 +12384,8 @@ body.wp-admin {
 .admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before {
   top: calc(100% - 1px);
   left: 50%;
-  border: solid transparent;
+  border-style: solid;
+  border-color: transparent;
   content: " ";
   height: 0;
   width: 0;
@@ -12375,12 +12393,12 @@ body.wp-admin {
   pointer-events: none;
 }
 .admin-settings .demo .micro-balloon:after {
-  border-top-color: var(--cocoon-white-color);
+  border-top-color: var(--cocoon-custom-background-color);
   border-width: 7px;
   margin-left: -7px;
 }
 .admin-settings .demo .micro-balloon:before {
-  border-top-color: var(--cocoon-x-pallid-text-color);
+  border-top-color: var(--cocoon-custom-border-color);
   border-width: 8px;
   margin-left: -8px;
 }
@@ -12399,11 +12417,11 @@ body.wp-admin {
   top: auto;
 }
 .admin-settings .demo .micro-bottom.micro-balloon:after {
-  border-bottom-color: var(--cocoon-white-color);
+  border-bottom-color: var(--cocoon-custom-background-color);
   border-top-color: transparent;
 }
 .admin-settings .demo .micro-bottom.micro-balloon:before {
-  border-bottom-color: var(--cocoon-x-pallid-text-color);
+  border-bottom-color: var(--cocoon-custom-border-color);
   border-top-color: transparent;
 }
 .admin-settings .demo .micro-icon {
@@ -21052,9 +21070,14 @@ textarea[name="the_page_memo"] {
   text-align: right;
 }
 .components-popover__content .micro-balloon {
+  --cocoon-custom-border-color: var(--cocoon-x-pallid-text-color);
+  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
   position: relative;
-  background: var(--cocoon-white-color);
-  border: 1px solid var(--cocoon-x-pallid-text-color);
+  background: var(--cocoon-custom-background-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
   border-radius: 4px;
   padding: 3px 12px;
   display: table;
@@ -21062,7 +21085,10 @@ textarea[name="the_page_memo"] {
   font-size: 0.8em;
 }
 .components-popover__content .micro-balloon.has-background {
-  color: #fff;
+  color: var(--cocoon-white-color);
+}
+.components-popover__content .micro-balloon.has-text-color {
+  color: var(--cocoon-custom-text-color);
 }
 .components-popover__content .micro-balloon.aligncenter {
   margin-left: auto;
@@ -21078,7 +21104,8 @@ textarea[name="the_page_memo"] {
 .components-popover__content .micro-balloon:after, .components-popover__content .micro-balloon:before {
   top: calc(100% - 1px);
   left: 50%;
-  border: solid transparent;
+  border-style: solid;
+  border-color: transparent;
   content: " ";
   height: 0;
   width: 0;
@@ -21086,12 +21113,12 @@ textarea[name="the_page_memo"] {
   pointer-events: none;
 }
 .components-popover__content .micro-balloon:after {
-  border-top-color: var(--cocoon-white-color);
+  border-top-color: var(--cocoon-custom-background-color);
   border-width: 7px;
   margin-left: -7px;
 }
 .components-popover__content .micro-balloon:before {
-  border-top-color: var(--cocoon-x-pallid-text-color);
+  border-top-color: var(--cocoon-custom-border-color);
   border-width: 8px;
   margin-left: -8px;
 }
@@ -21110,11 +21137,11 @@ textarea[name="the_page_memo"] {
   top: auto;
 }
 .components-popover__content .micro-bottom.micro-balloon:after {
-  border-bottom-color: var(--cocoon-white-color);
+  border-bottom-color: var(--cocoon-custom-background-color);
   border-top-color: transparent;
 }
 .components-popover__content .micro-bottom.micro-balloon:before {
-  border-bottom-color: var(--cocoon-x-pallid-text-color);
+  border-bottom-color: var(--cocoon-custom-border-color);
   border-top-color: transparent;
 }
 .components-popover__content .micro-icon {
