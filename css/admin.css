@@ -6580,6 +6580,8 @@ body.wp-admin {
 }
 .admin-settings .demo .speech-wrap {
   --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
 }
 .admin-settings .demo .speech-person {
@@ -6652,13 +6654,17 @@ body.wp-admin {
 .admin-settings .demo .sbp-r .speech-balloon::before {
   right: -12px;
   left: auto;
-  border-left: 12px solid var(--cocoon-basic-border-color);
+  border-left-width: 12px;
+  border-left-style: solid;
+  border-left-color: var(--cocoon-custom-border-color);
   border-right: none;
 }
 .admin-settings .demo .sbp-r .speech-balloon::after {
   right: -9px;
   left: auto;
-  border-left: 12px solid var(--cocoon-white-color);
+  border-left-width: 12px;
+  border-left-style: solid;
+  border-left-color: var(--cocoon-custom-background-color);
   border-right: none;
 }
 .admin-settings .demo .sbis-sn .speech-icon-image {
@@ -6676,6 +6682,7 @@ body.wp-admin {
 .admin-settings .demo .sbs-flat .speech-balloon {
   background-color: #f1f1f1;
   border-color: #f1f1f1;
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .sbs-flat .speech-balloon::before, .admin-settings .demo .sbs-flat .speech-balloon::after {
   border-right-color: #f1f1f1;
@@ -6683,9 +6690,18 @@ body.wp-admin {
 }
 .admin-settings .demo .sbs-line .speech-balloon {
   border-width: 1px;
+  border-color: var(--cocoon-basic-border-color);
+  background-color: var(--cocoon-white-color);
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .sbs-line .speech-balloon::after {
   left: -10px;
+}
+.admin-settings .demo .sbs-line .speech-balloon::before {
+  border-right-color: var(--cocoon-basic-border-color);
+}
+.admin-settings .demo .sbs-line .speech-balloon::after {
+  border-right-color: var(--cocoon-white-color);
 }
 .admin-settings .demo .sbs-line.sbp-r .speech-balloon {
   background-color: #85e249;
@@ -6703,7 +6719,10 @@ body.wp-admin {
   margin-left: 46px;
 }
 .admin-settings .demo div.sbs-think .speech-balloon::before {
-  border: 2px solid var(--cocoon-basic-border-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
   left: -29px;
   top: 11px;
@@ -6711,7 +6730,10 @@ body.wp-admin {
   height: 20px;
 }
 .admin-settings .demo div.sbs-think .speech-balloon::after {
-  border: 2px solid var(--cocoon-basic-border-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
   left: -44px;
   top: 25px;
@@ -14474,6 +14496,8 @@ body.wp-admin {
 }
 .admin-settings .demo .speech-wrap {
   --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
 }
 .admin-settings .demo .speech-person {
@@ -14546,13 +14570,17 @@ body.wp-admin {
 .admin-settings .demo .sbp-r .speech-balloon::before {
   right: -12px;
   left: auto;
-  border-left: 12px solid var(--cocoon-basic-border-color);
+  border-left-width: 12px;
+  border-left-style: solid;
+  border-left-color: var(--cocoon-custom-border-color);
   border-right: none;
 }
 .admin-settings .demo .sbp-r .speech-balloon::after {
   right: -9px;
   left: auto;
-  border-left: 12px solid var(--cocoon-white-color);
+  border-left-width: 12px;
+  border-left-style: solid;
+  border-left-color: var(--cocoon-custom-background-color);
   border-right: none;
 }
 .admin-settings .demo .sbis-sn .speech-icon-image {
@@ -14570,6 +14598,7 @@ body.wp-admin {
 .admin-settings .demo .sbs-flat .speech-balloon {
   background-color: #f1f1f1;
   border-color: #f1f1f1;
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .sbs-flat .speech-balloon::before, .admin-settings .demo .sbs-flat .speech-balloon::after {
   border-right-color: #f1f1f1;
@@ -14577,9 +14606,18 @@ body.wp-admin {
 }
 .admin-settings .demo .sbs-line .speech-balloon {
   border-width: 1px;
+  border-color: var(--cocoon-basic-border-color);
+  background-color: var(--cocoon-white-color);
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .sbs-line .speech-balloon::after {
   left: -10px;
+}
+.admin-settings .demo .sbs-line .speech-balloon::before {
+  border-right-color: var(--cocoon-basic-border-color);
+}
+.admin-settings .demo .sbs-line .speech-balloon::after {
+  border-right-color: var(--cocoon-white-color);
 }
 .admin-settings .demo .sbs-line.sbp-r .speech-balloon {
   background-color: #85e249;
@@ -14597,7 +14635,10 @@ body.wp-admin {
   margin-left: 46px;
 }
 .admin-settings .demo div.sbs-think .speech-balloon::before {
-  border: 2px solid var(--cocoon-basic-border-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
   left: -29px;
   top: 11px;
@@ -14605,7 +14646,10 @@ body.wp-admin {
   height: 20px;
 }
 .admin-settings .demo div.sbs-think .speech-balloon::after {
-  border: 2px solid var(--cocoon-basic-border-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
   left: -44px;
   top: 25px;

@@ -6760,6 +6760,8 @@ canvas, iframe, video,
 
 .speech-wrap {
   --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
 }
 
@@ -6841,13 +6843,17 @@ div.speech-balloon p {
 .sbp-r .speech-balloon::before {
   right: -12px;
   left: auto;
-  border-left: 12px solid var(--cocoon-basic-border-color);
+  border-left-width: 12px;
+  border-left-style: solid;
+  border-left-color: var(--cocoon-custom-border-color);
   border-right: none;
 }
 .sbp-r .speech-balloon::after {
   right: -9px;
   left: auto;
-  border-left: 12px solid var(--cocoon-white-color);
+  border-left-width: 12px;
+  border-left-style: solid;
+  border-left-color: var(--cocoon-custom-background-color);
   border-right: none;
 }
 
@@ -6869,6 +6875,7 @@ div.speech-balloon p {
 .sbs-flat .speech-balloon {
   background-color: #f1f1f1;
   border-color: #f1f1f1;
+  color: var(--cocoon-text-color);
 }
 .sbs-flat .speech-balloon::before, .sbs-flat .speech-balloon::after {
   border-right-color: #f1f1f1;
@@ -6877,9 +6884,18 @@ div.speech-balloon p {
 
 .sbs-line .speech-balloon {
   border-width: 1px;
+  border-color: var(--cocoon-basic-border-color);
+  background-color: var(--cocoon-white-color);
+  color: var(--cocoon-text-color);
 }
 .sbs-line .speech-balloon::after {
   left: -10px;
+}
+.sbs-line .speech-balloon::before {
+  border-right-color: var(--cocoon-basic-border-color);
+}
+.sbs-line .speech-balloon::after {
+  border-right-color: var(--cocoon-white-color);
 }
 
 .sbs-line.sbp-r .speech-balloon {
@@ -6899,7 +6915,10 @@ div.sbs-think.sbp-l .speech-balloon {
   margin-left: 46px;
 }
 div.sbs-think .speech-balloon::before {
-  border: 2px solid var(--cocoon-basic-border-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
   left: -29px;
   top: 11px;
@@ -6907,7 +6926,10 @@ div.sbs-think .speech-balloon::before {
   height: 20px;
 }
 div.sbs-think .speech-balloon::after {
-  border: 2px solid var(--cocoon-basic-border-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
   left: -44px;
   top: 25px;

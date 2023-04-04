@@ -1318,8 +1318,6 @@ function get_block_color_palette_css_cache_url(){
 }
 endif;
 
-
-
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
 function get_image_width_and_height($image_url){
