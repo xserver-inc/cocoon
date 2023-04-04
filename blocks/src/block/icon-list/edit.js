@@ -66,7 +66,14 @@ export function IconListEdit( props ) {
     setFontSize,
   } = props;
 
-  const { title, icon } = attributes;
+  const {
+    title,
+    icon,
+    customBackgroundColor,
+    customTextColor,
+    customBorderColor,
+    customIconColor,
+  } = attributes;
 
   const classes = classnames( className, {
     'iconlist-box': true,
@@ -85,10 +92,10 @@ export function IconListEdit( props ) {
   } );
 
   const styles = {
-    '--cocoon-custom-border-color': borderColor.color || undefined,
-    '--cocoon-custom-background-color': backgroundColor.color || undefined,
-    '--cocoon-custom-text-color': textColor.color || undefined,
-    '--cocoon-custom-icon-color': iconColor.color || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-icon-color': customIconColor || undefined,
   };
 
   const blockProps = useBlockProps( {
