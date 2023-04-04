@@ -54,13 +54,21 @@ export function BalloonEdit( props ) {
     borderColor,
     setBorderColor,
     fontSize,
-    customBorderColor,
-    customBackgroundColor,
-    customTextColor,
   } = props;
 
-  let { name, index, id, icon, style, position, iconstyle, iconid } =
-    attributes;
+  let {
+    name,
+    index,
+    id,
+    icon,
+    style,
+    position,
+    iconstyle,
+    iconid,
+    customBackgroundColor,
+    customTextColor,
+    customBorderColor,
+  } = attributes;
 
   //新規作成時
   if ( ! icon && index == '0' && speechBalloons.length > 0 ) {
