@@ -20,66 +20,64 @@ const { createBlock } = wp.blocks;
 
 const DEFAULT_MSG = __( 'トグルボックス見出し', THEME_NAME );
 
-const v1 = [
-  {
-    attributes: {
-      content: {
-        type: 'string',
-        selector: 'div',
-        default: DEFAULT_MSG,
-      },
-      color: {
-        type: 'string',
-        default: '',
-      },
-      dateID: {
-        type: 'string',
-        default: '',
-      },
+const v1 = {
+  attributes: {
+    content: {
+      type: 'string',
+      selector: 'div',
+      default: DEFAULT_MSG,
     },
-
-    migrate( attributes ) {
-      const { content, color, dateID } = attributes;
-
-      return {
-        content: content,
-        dateID: dateID,
-        backgroundColor: undefined,
-        customBackgroundColor: undefined,
-        textColor: undefined,
-        customTextColor: undefined,
-        borderColor: colorValueToSlug( color ),
-        customBorderColor: undefined,
-        fontSize: undefined,
-        customFontSize: undefined,
-      };
+    color: {
+      type: 'string',
+      default: '',
     },
-
-    save( { attributes } ) {
-      const { content, color, dateID } = attributes;
-      const classes = classnames( {
-        'toggle-wrap': true,
-        [ `tb-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
-        [ 'block-box' ]: true,
-      } );
-      return (
-        <div className={ classes }>
-          <input
-            id={ 'toggle-checkbox-' + dateID }
-            className="toggle-checkbox"
-            type="checkbox"
-          />
-          <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
-            <RichText.Content value={ content } />
-          </label>
-          <div className="toggle-content">
-            <InnerBlocks.Content />
-          </div>
-        </div>
-      );
+    dateID: {
+      type: 'string',
+      default: '',
     },
   },
-];
+
+  migrate( attributes ) {
+    const { content, color, dateID } = attributes;
+
+    return {
+      content: content,
+      dateID: dateID,
+      backgroundColor: undefined,
+      customBackgroundColor: undefined,
+      textColor: undefined,
+      customTextColor: undefined,
+      borderColor: colorValueToSlug( color ),
+      customBorderColor: undefined,
+      fontSize: undefined,
+      customFontSize: undefined,
+    };
+  },
+
+  save( { attributes } ) {
+    const { content, color, dateID } = attributes;
+    const classes = classnames( {
+      'toggle-wrap': true,
+      [ `tb-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
+      [ 'block-box' ]: true,
+    } );
+    return (
+      <div className={ classes }>
+        <input
+          id={ 'toggle-checkbox-' + dateID }
+          className="toggle-checkbox"
+          type="checkbox"
+        />
+        <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+          <RichText.Content value={ content } />
+        </label>
+        <div className="toggle-content">
+          <InnerBlocks.Content />
+        </div>
+      </div>
+    );
+  },
+};
 
 const v2 = {
   save( { attributes } ) {
