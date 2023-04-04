@@ -25,7 +25,7 @@ export function MicroTextEdit( props ) {
   const { attributes, setAttributes, className, textColor, setTextColor } =
     props;
 
-  const { content, type, icon, customTextColor } = attributes;
+  const { content, type, icon } = attributes;
 
   const classes = classnames( className, {
     // [ 'wp-block' ]: true,
@@ -37,7 +37,7 @@ export function MicroTextEdit( props ) {
   } );
 
   const styles = {
-    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-text-color': textColor.color || undefined,
   };
 
   const blockProps = useBlockProps( {

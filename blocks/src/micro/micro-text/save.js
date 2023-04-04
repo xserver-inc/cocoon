@@ -21,7 +21,7 @@ export default function save( { attributes } ) {
   } );
 
   const styles = {
-    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
   };
 
   const blockProps = useBlockProps.save( {
