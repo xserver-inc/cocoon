@@ -36,11 +36,9 @@ export default function save( { attributes } ) {
   const classes = getBalloonClasses( id, style, position, iconstyle );
 
   const styles = {
-    '--cocoon-custom-background-color':
-      backgroundColor || customBackgroundColor || undefined,
-    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
-    '--cocoon-custom-border-color':
-      borderColor || customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
   };
 
   const blockProps = useBlockProps.save( {

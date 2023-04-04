@@ -54,6 +54,9 @@ export function BalloonEdit( props ) {
     borderColor,
     setBorderColor,
     fontSize,
+    customBorderColor,
+    customBackgroundColor,
+    customTextColor,
   } = props;
 
   let { name, index, id, icon, style, position, iconstyle, iconid } =
@@ -131,9 +134,9 @@ export function BalloonEdit( props ) {
   const classes = getBalloonClasses( id, style, position, iconstyle );
 
   const styles = {
-    '--cocoon-custom-border-color': borderColor.color || undefined,
-    '--cocoon-custom-background-color': backgroundColor.color || undefined,
-    '--cocoon-custom-text-color': textColor.color || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
   };
 
   const blockProps = useBlockProps( {
