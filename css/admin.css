@@ -5340,6 +5340,9 @@ body.wp-admin {
   background-color: #fff;
 }
 .admin-settings .demo .label-box {
+  --cocoon-custom-border-color: var(--cocoon-middle-thickness-color);
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
   border-width: 0;
 }
 .admin-settings .demo .label-box.block-box.has-background {
@@ -5354,7 +5357,11 @@ body.wp-admin {
 }
 .admin-settings .demo .label-box-content {
   margin-top: -0.9em;
-  border: 3px solid var(--cocoon-middle-thickness-color);
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
   padding: 1em 0.8em 0.4em;
   border-radius: var(--cocoon-middle-border-radius);
 }
@@ -13227,6 +13234,9 @@ body.wp-admin {
   background-color: #fff;
 }
 .admin-settings .demo .label-box {
+  --cocoon-custom-border-color: var(--cocoon-middle-thickness-color);
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
   border-width: 0;
 }
 .admin-settings .demo .label-box.block-box.has-background {
@@ -13241,7 +13251,11 @@ body.wp-admin {
 }
 .admin-settings .demo .label-box-content {
   margin-top: -0.9em;
-  border: 3px solid var(--cocoon-middle-thickness-color);
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
   padding: 1em 0.8em 0.4em;
   border-radius: var(--cocoon-middle-border-radius);
 }
@@ -21965,6 +21979,9 @@ textarea[name="the_page_memo"] {
   background-color: #fff;
 }
 .components-popover__content .label-box {
+  --cocoon-custom-border-color: var(--cocoon-middle-thickness-color);
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
   border-width: 0;
 }
 .components-popover__content .label-box.block-box.has-background {
@@ -21979,7 +21996,11 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .label-box-content {
   margin-top: -0.9em;
-  border: 3px solid var(--cocoon-middle-thickness-color);
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
   padding: 1em 0.8em 0.4em;
   border-radius: var(--cocoon-middle-border-radius);
 }
