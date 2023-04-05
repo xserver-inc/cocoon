@@ -413,8 +413,14 @@ html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
     background-color: <?php echo $color; ?>;
 }
 html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
-.toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
     border-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color .toggle-content{
+  background-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-content{
+  color: <?php echo $color; ?>;
 }
 <?php //アイコンリストボックス ?>
 html .body .iconlist-box.has-<?php echo $slug; ?>-icon-color li::before{
