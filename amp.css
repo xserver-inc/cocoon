@@ -6873,42 +6873,42 @@ div.speech-balloon p {
 }
 
 .sbs-flat .speech-balloon {
-  background-color: #f1f1f1;
-  border-color: #f1f1f1;
-  color: var(--cocoon-text-color);
+  background-color: #f1f1f1 !important;
+  border-color: #f1f1f1 !important;
+  color: var(--cocoon-text-color) !important;
 }
 .sbs-flat .speech-balloon::before, .sbs-flat .speech-balloon::after {
-  border-right-color: #f1f1f1;
-  border-left-color: #f1f1f1;
+  border-right-color: #f1f1f1 !important;
+  border-left-color: #f1f1f1 !important;
 }
 
 .sbs-line .speech-balloon {
   border-width: 1px;
-  border-color: var(--cocoon-basic-border-color);
-  background-color: var(--cocoon-white-color);
-  color: var(--cocoon-text-color);
+  border-color: var(--cocoon-basic-border-color) !important;
+  background-color: var(--cocoon-white-color) !important;
+  color: var(--cocoon-text-color) !important;
 }
 .sbs-line .speech-balloon::after {
   left: -10px;
 }
 .sbs-line .speech-balloon::before {
-  border-right-color: var(--cocoon-basic-border-color);
+  border-right-color: var(--cocoon-basic-border-color) !important;
 }
 .sbs-line .speech-balloon::after {
-  border-right-color: var(--cocoon-white-color);
+  border-right-color: var(--cocoon-white-color) !important;
 }
 
 .sbs-line.sbp-r .speech-balloon {
-  background-color: #85e249;
-  border-color: #85e249;
+  background-color: #85e249 !important;
+  border-color: #85e249 !important;
 }
 .sbs-line.sbp-r .speech-balloon::after {
   left: auto;
   right: -10px;
 }
 .sbs-line.sbp-r .speech-balloon::before, .sbs-line.sbp-r .speech-balloon::after {
-  border-right-color: #85e249;
-  border-left-color: #85e249;
+  border-right-color: #85e249 !important;
+  border-left-color: #85e249 !important;
 }
 
 div.sbs-think.sbp-l .speech-balloon {

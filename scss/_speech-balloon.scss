@@ -139,14 +139,14 @@ div.speech-balloon{
 ///////////////////////////////////////
 .sbs-flat{
   .speech-balloon{
-    background-color: #f1f1f1;
-    border-color: #f1f1f1;
-    color: var(--cocoon-text-color);
+    background-color: #f1f1f1 !important;
+    border-color: #f1f1f1 !important;
+    color: var(--cocoon-text-color) !important;
 
     &::before,
     &::after{
-      border-right-color: #f1f1f1;
-      border-left-color: #f1f1f1;
+      border-right-color: #f1f1f1 !important;
+      border-left-color: #f1f1f1 !important;
     }
   }
 }
@@ -154,26 +154,26 @@ div.speech-balloon{
 .sbs-line{
   .speech-balloon{
     border-width: 1px;
-    border-color: var(--cocoon-basic-border-color);
-    background-color: var(--cocoon-white-color);
-    color: var(--cocoon-text-color);
+    border-color: var(--cocoon-basic-border-color) !important;
+    background-color: var(--cocoon-white-color) !important;
+    color: var(--cocoon-text-color) !important;
 
     &::after{
       left: -10px;
     }
     &::before{
-      border-right-color: var(--cocoon-basic-border-color);
+      border-right-color: var(--cocoon-basic-border-color) !important;
     }
     &::after{
-      border-right-color: var(--cocoon-white-color);
+      border-right-color: var(--cocoon-white-color) !important;
     }
   }
 }
 
 .sbs-line.sbp-r{
   .speech-balloon{
-    background-color: #85e249;
-    border-color: #85e249;
+    background-color: #85e249 !important;
+    border-color: #85e249 !important;
 
     &::after{
       left: auto;
@@ -181,8 +181,8 @@ div.speech-balloon{
     }
     &::before,
     &::after{
-      border-right-color: #85e249;
-      border-left-color: #85e249;
+      border-right-color: #85e249 !important;
+      border-left-color: #85e249 !important;
     }
   }
 
