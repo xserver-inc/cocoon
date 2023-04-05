@@ -1274,3 +1274,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     margin-top: 0 !important;
   }
 }
+
+.btn-wrap-block a{
+  pointer-events: none;
+}
