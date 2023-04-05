@@ -5445,8 +5445,9 @@ body.wp-admin {
   overflow: hidden;
 }
 .admin-settings .demo .toggle-box {
-  --cocoon-custom-background-color: var(--cocoon-xx-thin-color);
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
 }
 .admin-settings .demo .has-border-color .toggle-button {
   color: var(--cocoon-white-color);
@@ -13361,8 +13362,9 @@ body.wp-admin {
   overflow: hidden;
 }
 .admin-settings .demo .toggle-box {
-  --cocoon-custom-background-color: var(--cocoon-xx-thin-color);
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
 }
 .admin-settings .demo .has-border-color .toggle-button {
   color: var(--cocoon-white-color);
@@ -22128,8 +22130,9 @@ textarea[name="the_page_memo"] {
   overflow: hidden;
 }
 .components-popover__content .toggle-box {
-  --cocoon-custom-background-color: var(--cocoon-xx-thin-color);
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
 }
 .components-popover__content .has-border-color .toggle-button {
   color: var(--cocoon-white-color);
