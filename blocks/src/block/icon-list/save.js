@@ -48,12 +48,10 @@ export default function save( props ) {
   } );
 
   const styles = {
-    '--cocoon-custom-background-color':
-      backgroundColor || customBackgroundColor || undefined,
-    '--cocoon-custom-text-color': textColor || customTextColor || undefined,
-    '--cocoon-custom-border-color':
-      borderColor || customBorderColor || undefined,
-    '--cooon-custom-icon-color': iconColor || customIconColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cooon-custom-icon-color': customIconColor || undefined,
   };
 
   const iconListBlockProps = useBlockProps.save( {

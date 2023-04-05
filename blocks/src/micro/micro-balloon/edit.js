@@ -36,7 +36,15 @@ export function MicroBalloonEdit( props ) {
     fontSize,
   } = props;
 
-  const { content, type, isCircle, icon } = attributes;
+  const {
+    content,
+    type,
+    isCircle,
+    icon,
+    customBackgroundColor,
+    customTextColor,
+    customBorderColor,
+  } = attributes;
 
   const classes = classnames( className, {
     [ 'micro-balloon' ]: true,
@@ -53,9 +61,9 @@ export function MicroBalloonEdit( props ) {
   } );
 
   const styles = {
-    '--cocoon-custom-border-color': borderColor.color || undefined,
-    '--cocoon-custom-background-color': backgroundColor.color || undefined,
-    '--cocoon-custom-text-color': textColor.color || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
   };
 
   const blockProps = useBlockProps( {

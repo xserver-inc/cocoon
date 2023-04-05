@@ -38,7 +38,14 @@ export function TimelineEdit( props ) {
     fontSize,
   } = props;
 
-  const { title, items } = attributes;
+  const {
+    title,
+    items,
+    customBackgroundColor,
+    customTextColor,
+    customBorderColor,
+    customPointColor,
+  } = attributes;
 
   const classes = classnames( className, {
     [ 'timeline-box' ]: true,
@@ -56,10 +63,10 @@ export function TimelineEdit( props ) {
   } );
 
   const styles = {
-    '--cocoon-custom-border-color': borderColor.color || undefined,
-    '--cocoon-custom-background-color': backgroundColor.color || undefined,
-    '--cocoon-custom-text-color': textColor.color || undefined,
-    '--cocoon-custom-point-color': pointColor.color || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-point-color': customPointColor || undefined,
   };
 
   const blockProps = useBlockProps( {

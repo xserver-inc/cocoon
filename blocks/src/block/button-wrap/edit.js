@@ -35,7 +35,15 @@ export function ButtonWrapEdit( props ) {
     setFontSize,
   } = props;
 
-  const { tag, size, isCircle, isShine } = attributes;
+  const {
+    tag,
+    size,
+    isCircle,
+    isShine,
+    customBackgroundColor,
+    customTextColor,
+    customBorderColor,
+  } = attributes;
 
   const classes = classnames( className, {
     [ 'btn-wrap' ]: true,
@@ -54,9 +62,9 @@ export function ButtonWrapEdit( props ) {
   } );
 
   const styles = {
-    '--cocoon-custom-border-color': borderColor.color || undefined,
-    '--cocoon-custom-background-color': backgroundColor.color || undefined,
-    '--cocoon-custom-text-color': textColor.color || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
   };
 
   const blockProps = useBlockProps( {

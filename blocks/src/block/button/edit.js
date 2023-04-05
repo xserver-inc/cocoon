@@ -35,16 +35,26 @@ export function ButtonEdit( props ) {
     setFontSize,
   } = props;
 
-  const { content, size, url, target, isCircle, isShine } = attributes;
+  const {
+    content,
+    size,
+    url,
+    target,
+    isCircle,
+    isShine,
+    customBackgroundColor,
+    customTextColor,
+    customBorderColor,
+  } = attributes;
 
   const classes = classnames( className, {
     [ BUTTON_BLOCK ]: true,
   } );
 
   const styles = {
-    '--cocoon-custom-border-color': borderColor.color || undefined,
-    '--cocoon-custom-background-color': backgroundColor.color || undefined,
-    '--cocoon-custom-text-color': textColor.color || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
   };
 
   const blockProps = useBlockProps( {
