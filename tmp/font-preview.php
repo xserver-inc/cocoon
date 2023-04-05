@@ -26,7 +26,7 @@ if ($site_text_color = get_site_text_color()) {
     _e('現在の太さ：', THEME_NAME);
     echo '</b>';
     echo get_site_font_weight();
-    $content = '<img src="https://im-cocoon.net/wp-content/uploads/site-font-weight.gif" alt="" loading="lazy" decoding="async"><br>'.__( '「文字の太さ」変更でフォントに合った太さに調整しよう。', THEME_NAME );
+    $content = '<img src="https://im-cocoon.net/wp-content/uploads/site-font-weight.gif" alt=""><br>'.__( '「文字の太さ」変更でフォントに合った太さに調整しよう。', THEME_NAME );
     generate_tooltip_tag($content);
     echo '<br><b>';
     _e('太さ見本：', THEME_NAME);

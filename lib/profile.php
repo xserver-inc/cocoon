@@ -103,7 +103,7 @@ function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $defaul
   if (get_the_author_upladed_avatar_url($user_id)) {
     $alt = !empty($alt) ? $alt : get_the_author_meta( 'display_name', $user_id );;
     $author_class = is_author( $user_id ) ? ' current-author' : '' ;
-    $avatar = "<img alt='" . esc_attr( $alt ) . "' src='" . esc_url( get_the_author_upladed_avatar_url($user_id) ) . "' class='avatar avatar-{$size}{$author_class} photo' height='{$size}' width='{$size}' loading='lazy' decoding='async' />";
+    $avatar = "<img alt='" . esc_attr( $alt ) . "' src='" . esc_url( get_the_author_upladed_avatar_url($user_id) ) . "' class='avatar avatar-{$size}{$author_class} photo' height='{$size}' width='{$size}' />";
   }
 
   return $avatar;
