@@ -467,6 +467,9 @@ html .body .tab-caption-box.has-<?php echo $slug; ?>-border-color .box-content{
 html .body .tab-caption-box.has-<?php echo $slug; ?>-background-color .box-content{
   background-color: <?php echo $color; ?>;
 }
+html .body .tab-caption-box.has-<?php echo $slug; ?>-color .box-content{
+  color: <?php echo $color; ?>;
+}
 <?php //ラベルボックス ?>
 html .body .label-box.has-<?php echo $slug; ?>-border-color .box-content{
   border-color: <?php echo $color; ?>;
