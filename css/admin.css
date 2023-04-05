@@ -5344,6 +5344,7 @@ body.wp-admin {
   --cocoon-custom-background-color: transparent;
   --cocoon-custom-text-color: var(--cocoon-text-color);
   border-width: 0;
+  color: var(--cocoon-custom-text-color);
 }
 .admin-settings .demo .label-box.block-box.has-background {
   background-color: transparent !important;
@@ -5361,7 +5362,6 @@ body.wp-admin {
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   padding: 1em 0.8em 0.4em;
   border-radius: var(--cocoon-middle-border-radius);
 }
@@ -13261,6 +13261,7 @@ body.wp-admin {
   --cocoon-custom-background-color: transparent;
   --cocoon-custom-text-color: var(--cocoon-text-color);
   border-width: 0;
+  color: var(--cocoon-custom-text-color);
 }
 .admin-settings .demo .label-box.block-box.has-background {
   background-color: transparent !important;
@@ -13278,7 +13279,6 @@ body.wp-admin {
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   padding: 1em 0.8em 0.4em;
   border-radius: var(--cocoon-middle-border-radius);
 }
@@ -22029,6 +22029,7 @@ textarea[name="the_page_memo"] {
   --cocoon-custom-background-color: transparent;
   --cocoon-custom-text-color: var(--cocoon-text-color);
   border-width: 0;
+  color: var(--cocoon-custom-text-color);
 }
 .components-popover__content .label-box.block-box.has-background {
   background-color: transparent !important;
@@ -22046,7 +22047,6 @@ textarea[name="the_page_memo"] {
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   padding: 1em 0.8em 0.4em;
   border-radius: var(--cocoon-middle-border-radius);
 }

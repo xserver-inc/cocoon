@@ -477,6 +477,9 @@ html .body .label-box.has-<?php echo $slug; ?>-border-color .box-content{
 html .body .label-box.has-<?php echo $slug; ?>-background-color .box-content{
   background-color: <?php echo $color; ?>;
 }
+html .body .label-box.has-<?php echo $slug; ?>-color .box-content{
+  color: <?php echo $color; ?>;
+}
 <?php //吹き出しボックス ?>
 html .body .speech-balloon.has-<?php echo $slug; ?>-background-color {
     background-color: <?php echo $color; ?>;

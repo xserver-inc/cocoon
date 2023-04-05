@@ -5345,6 +5345,7 @@ html .body .tab-caption-box.has-white-background-color .box-content {
   --cocoon-custom-background-color: transparent;
   --cocoon-custom-text-color: var(--cocoon-text-color);
   border-width: 0;
+  color: var(--cocoon-custom-text-color);
 }
 .label-box.block-box.has-background {
   background-color: transparent !important;
@@ -5364,7 +5365,6 @@ html .body .tab-caption-box.has-white-background-color .box-content {
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   padding: 1em 0.8em 0.4em;
   border-radius: var(--cocoon-middle-border-radius);
 }
