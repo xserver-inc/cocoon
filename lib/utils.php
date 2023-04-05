@@ -3549,3 +3549,10 @@ function replace_a_tags_to_span_tags( $html ) {
   return $html;
 }
 endif;
+
+//ブロックエディター画面かどうか
+if ( !function_exists( 'is_block_editor_page' ) ):
+function is_block_editor_page() {
+  return is_admin() && has_blocks();
+}
+endif;
