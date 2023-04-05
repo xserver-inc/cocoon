@@ -300,7 +300,8 @@ export function BalloonEdit( props ) {
             [ fontSize.class ]: fontSize.class,
           } ) }
         >
-          <InnerBlocks />
+          <InnerBlocks
+            placeholder={ __( 'セリフの入力', THEME_NAME ) } />
         </div>
       </div>
     </Fragment>
