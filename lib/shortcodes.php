@@ -431,8 +431,8 @@ function toc_shortcode( $atts, $content = null ) {
     'depth' => 0,
   ), $atts, 'toc_box'));
   if (is_singular() || is_category() || is_tag()) {
-    global $_TOC_WIDGET_OR_SHORTCODE_USE;
-    $_TOC_WIDGET_OR_SHORTCODE_USE = true;
+    global $_TOC_WIDGET_OR_SHORTCODE_USED;
+    $_TOC_WIDGET_OR_SHORTCODE_USED = true;
     $harray = array();
     $the_content = get_toc_expanded_content();
     return get_toc_tag($the_content, $harray, false, $depth);

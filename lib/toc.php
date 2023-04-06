@@ -234,14 +234,14 @@ add_filter('the_category_content', 'add_toc_before_1st_h2', get_toc_filter_prior
 add_filter('the_tag_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
-  global $_TOC_WIDGET_OR_SHORTCODE_USE;
+  global $_TOC_WIDGET_OR_SHORTCODE_USED;
 
   //Table of Contents Plusプラグインが有効な際は目次機能は無効
   if (class_exists( 'toc' )) {
     return $the_content;
   }
   //ページ上で目次が非表示設定（ショートコードも未使用）になっている場合
-  if (!is_total_the_page_toc_visible() && !$_TOC_WIDGET_OR_SHORTCODE_USE && !is_active_widget( false, false, 'toc', true )) {
+  if (!is_total_the_page_toc_visible() && !$_TOC_WIDGET_OR_SHORTCODE_USED && !is_active_widget( false, false, 'toc', true )) {
     return $the_content;
   }
 
@@ -315,6 +315,7 @@ endif;
 if ( !function_exists( 'is_the_page_toc_use' ) ):
 function is_the_page_toc_use(){
   global $_TOC_AVAILABLE_H_COUNT;
+  global $_TOC_WIDGET_USED_IN_SINGULAR_CONTENT_MIDDLE_WIDET_AREA;
   if (is_category()) {
     $cat_id = get_query_var('cat');
     $content = get_the_category_content($cat_id, true);
@@ -338,7 +339,12 @@ function is_the_page_toc_use(){
       is_toc_display_count_available($_TOC_AVAILABLE_H_COUNT)
     )
     //ショートコードで表示する場合
-    || ((is_singular() || is_category() || is_tag()) && preg_match('/\[toc.*?\]/', $content));
+    || ((is_singular() || is_category() || is_tag()) && (
+      //投稿・固定ページの本文中ウィジェットエリアで目次ウィジェットが使われているか
+      $_TOC_WIDGET_USED_IN_SINGULAR_CONTENT_MIDDLE_WIDET_AREA
+      //本文内で目次ウィジェットが使われているか
+      || preg_match('/\[toc.*?\]/', $content)
+    ));
 }
 endif;
 
@@ -368,3 +374,22 @@ function is_toc_display_count_available($h_count){
   return (intval($h_count) >= $display_count);
 }
 endif;
+
+//
+if ( !function_exists( 'is_toc_widget_used_in_singular_content_widget_area' ) ):
+  function is_toc_widget_used_in_singular_content_widget_area($widget_id) {
+     $widget_areas = wp_get_sidebars_widgets();
+     foreach ($widget_areas as $key => $widget_area) {
+        // _v($key);
+        if (isset($key) && (($key === 'single-content-middle') || ($key === 'page-content-middle'))) {
+           $widgets = $widget_area;
+           foreach ($widgets as $keyw => $widget) {
+              if ($widget === $widget_id) {
+                 return true;
+              }
+           }
+        }
+     }
+     return false;
+  }
+  endif;

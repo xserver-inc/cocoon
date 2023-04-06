@@ -37,12 +37,16 @@ class TOCWidgetItem extends WP_Widget {
 
       //目次が出力されている場合
       if ($html) {
+        //目次ウィジェット・ショートコードが使われているか
+        global $_TOC_WIDGET_OR_SHORTCODE_USED;
+        $_TOC_WIDGET_OR_SHORTCODE_USED = true;
+        //目次ウィジェットが投稿・固定ページ内の本文中ウィジェットエリアで使われているか
+        if (is_toc_widget_used_in_singular_content_widget_area($this->id)) {
+          global $_TOC_WIDGET_USED_IN_SINGULAR_CONTENT_MIDDLE_WIDET_AREA;
+          $_TOC_WIDGET_USED_IN_SINGULAR_CONTENT_MIDDLE_WIDET_AREA = true;
+        }
+
         echo $args['before_widget'];
-        // if (!is_null($title)) {
-        //   if (empty($title)) {
-        //     $title = __( '目次', THEME_NAME );
-        //   }
-        // }
         if ($title) {
           echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
         } ?>
