@@ -19,7 +19,7 @@ if (is_amp()) {
   ?>
 <!-- トップボタン -->
 <li class="top-menu-button menu-button">
-  <a class="go-to-top-common top-menu-a menu-button-in"<?php echo $on; ?>>
+  <a href="#" class="go-to-top-common top-menu-a menu-button-in"<?php echo $on; ?>>
     <span class="top-menu-icon menu-icon">
       <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
     </span>
