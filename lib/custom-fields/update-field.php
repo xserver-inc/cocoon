@@ -50,7 +50,7 @@ function update_custom_box_view() {
   #timestamp_mod_div { padding-top: 5px; line-height: 23px; }
   #timestamp_mod_div p { margin: 8px 0 6px; }
   #timestamp_mod_div input { border-width: 1px; border-style: solid; }
-  #timestamp_mod_div select { height: 21px; line-height: 14px; padding: 0; vertical-align: top;font-size: 12px; }
+  #timestamp_mod_div select { height: 21px; line-height: 14px; padding:0 24px 0 8px; vertical-align: top;font-size: 12px; }
   #aa_mod, #jj_mod, #hh_mod, #mn_mod { padding: 1px; font-size: 12px; }
   #jj_mod, #hh_mod, #mn_mod { width: 2em; }
   #aa_mod { width: 3.4em; }

@@ -63,9 +63,10 @@ function get_content_excerpt($content, $length = 120){
   $content = str_replace('&nbsp;', '', $content);//特殊文字の削除（今回はスペースのみ）
   $content = preg_replace('/\[.+?\]/i', '', $content); //ショートコードを取り除く
   $content = preg_replace(URL_REG, '', $content); //URLを取り除く
+  $content = str_replace(PHP_EOL, '', $content); //改行を取り除く
 
   //$lengthが整数じゃなかった場合の処理
-  if (!is_int($length)) {
+  if (!is_numeric($length)) {
     $length = 120;
   }
 
