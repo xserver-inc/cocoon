@@ -112,7 +112,7 @@ export function IconListEdit( props ) {
               { times( LIST_ICONS.length, ( index ) => {
                 return (
                   <Button
-                    isDefault
+                    variant="secondary"
                     isPrimary={ icon === LIST_ICONS[ index ].value }
                     className={ LIST_ICONS[ index ].label }
                     onClick={ () => {

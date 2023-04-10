@@ -70,7 +70,7 @@ export function MicroTextEdit( props ) {
               { times( ICONS.length, ( index ) => {
                 return (
                   <Button
-                    isDefault
+                    variant="secondary"
                     isPrimary={ icon === ICONS[ index ].value }
                     className={ ICONS[ index ].label }
                     onClick={ () => {
