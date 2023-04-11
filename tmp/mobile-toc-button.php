@@ -21,7 +21,7 @@ if (is_amp()) {
   ?>
 <!-- 目次へボタン -->
 <li class="toc-menu-button menu-button">
-  <a href="#" class="go-to-toc-common toc-menu-a menu-button-in"<?php echo $on; ?>>
+  <a href="#toc" class="go-to-toc-common toc-menu-a menu-button-in"<?php echo $on; ?>>
     <span class="toc-menu-icon menu-icon">
       <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
     </span>
