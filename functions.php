@@ -47,7 +47,7 @@ function fetch_updater_url( $new_sv_weight ) {
 require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-  fetch_updater_url(60), //JSONファイルのURL
+  fetch_updater_url(80), //JSONファイルのURL
   __FILE__,
   'cocoon-master'
 );
