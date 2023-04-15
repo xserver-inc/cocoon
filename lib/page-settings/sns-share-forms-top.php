@@ -96,7 +96,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <p><?php _e( 'シェアボタンを表示するページの切り替え。', THEME_NAME ) ?></p>
             <ul>
               <li>
-                <?php generate_checkbox_tag(OP_SNS_FRONT_PAGE_TOP_SHARE_BUTTONS_VISIBLE, is_sns_front_page_top_share_buttons_visible(), __( 'フロントページ', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_SNS_FRONT_PAGE_TOP_SHARE_BUTTONS_VISIBLE, is_sns_front_page_top_share_buttons_visible(), __( 'フロントページ', THEME_NAME ).__( '（インデックスページ）', THEME_NAME )); ?>
               </li>
               <li>
                 <?php generate_checkbox_tag(OP_SNS_SINGLE_TOP_SHARE_BUTTONS_VISIBLE, is_sns_single_top_share_buttons_visible(), __( '投稿', THEME_NAME )); ?>
