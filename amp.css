@@ -6679,9 +6679,7 @@ canvas, iframe, video,
   text-align: left;
 }
 .nwa .author-box .sns-follow-buttons {
-  display: block;
-  font-size: 1px;
-  font-size: 0;
+  justify-content: center;
 }
 .nwa .author-box .sns-follow-buttons a {
   display: inline-block;

@@ -6511,9 +6511,7 @@ body.wp-admin {
   text-align: left;
 }
 .admin-settings .demo .nwa .author-box .sns-follow-buttons {
-  display: block;
-  font-size: 1px;
-  font-size: 0;
+  justify-content: center;
 }
 .admin-settings .demo .nwa .author-box .sns-follow-buttons a {
   display: inline-block;
@@ -14428,9 +14426,7 @@ body.wp-admin {
   text-align: left;
 }
 .admin-settings .demo .nwa .author-box .sns-follow-buttons {
-  display: block;
-  font-size: 1px;
-  font-size: 0;
+  justify-content: center;
 }
 .admin-settings .demo .nwa .author-box .sns-follow-buttons a {
   display: inline-block;
