@@ -1363,6 +1363,7 @@ endif;
 //ウィジェットエントリーカードの日付
 if ( !function_exists( 'generate_widget_entry_card_date' ) ):
 function generate_widget_entry_card_date($prefix, $post_id = null){?>
+<?php do_action( 'widget_entry_card_date_before', $prefix, $post_id); ?>
 <div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date display-none">
   <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span><?php
     //更新日の取得
