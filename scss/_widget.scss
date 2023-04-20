@@ -110,24 +110,8 @@ label.screen-reader-text{
     }
   }
 
-  th {
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-bottom-color: var(--cocoon-x-thin-color);
-    border-left-color: var(--cocoon-x-thin-color);
-  }
-
   td {
-    text-align: center;
     padding: 0px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-bottom-color: var(--cocoon-x-thin-color);
-    border-left-color: var(--cocoon-x-thin-color);
 
     a{
       color: var(--cocoon-text-color);

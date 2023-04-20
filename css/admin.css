@@ -2687,23 +2687,8 @@ body.wp-admin {
 .admin-settings .demo .wp-calendar-table tr:nth-of-type(2n+1) {
   background-color: transparent;
 }
-.admin-settings .demo .wp-calendar-table th {
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-bottom-color: var(--cocoon-x-thin-color);
-  border-left-color: var(--cocoon-x-thin-color);
-}
 .admin-settings .demo .wp-calendar-table td {
-  text-align: center;
   padding: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-bottom-color: var(--cocoon-x-thin-color);
-  border-left-color: var(--cocoon-x-thin-color);
 }
 .admin-settings .demo .wp-calendar-table td a {
   color: var(--cocoon-text-color);
@@ -10602,23 +10587,8 @@ body.wp-admin {
 .admin-settings .demo .wp-calendar-table tr:nth-of-type(2n+1) {
   background-color: transparent;
 }
-.admin-settings .demo .wp-calendar-table th {
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-bottom-color: var(--cocoon-x-thin-color);
-  border-left-color: var(--cocoon-x-thin-color);
-}
 .admin-settings .demo .wp-calendar-table td {
-  text-align: center;
   padding: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-bottom-color: var(--cocoon-x-thin-color);
-  border-left-color: var(--cocoon-x-thin-color);
 }
 .admin-settings .demo .wp-calendar-table td a {
   color: var(--cocoon-text-color);
