@@ -1233,6 +1233,10 @@ p {
   max-width: 96% !important;
 }
 
+.page-type-full-wide {
+  max-width: 100% !important;
+}
+
 .block-editor-block-styles__item-preview .editor-styles-wrapper::before {
   display: none;
 }

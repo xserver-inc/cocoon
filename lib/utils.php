@@ -3474,7 +3474,13 @@ endif;
 //エディターでページタイプでスタイルを変更する用のclassを出力
 if ( !function_exists( 'get_editor_page_type_class' ) ):
 function get_editor_page_type_class(){
-  return is_singular_page_type_wide() ? ' page-type-wide' : '';
+  $page_type = '';
+  if (is_singular_page_type_wide()) {
+    $page_type = ' page-type-wide';
+  } elseif (is_singular_page_type_full_wide()) {
+    $page_type = ' page-type-full-wide';
+  }
+  return $page_type;
 }
 endif;
 

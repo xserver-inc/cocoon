@@ -888,6 +888,10 @@ p {
   max-width: 96% !important;
 }
 
+.page-type-full-wide{
+  max-width: 100% !important;
+}
+
 //ブロックエディターの背景画像問題の修正
 .block-editor-block-styles__item-preview .editor-styles-wrapper::before{
   // background-image: none !important;

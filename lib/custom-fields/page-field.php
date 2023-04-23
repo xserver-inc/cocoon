@@ -45,8 +45,10 @@ function page_custom_box_view(){
   //ページタイプ
   $options = array(
     'default' => __( 'デフォルト', THEME_NAME ),
+    'column1_full_wide' => __( '1カラム（フルワイド）', THEME_NAME ),
     'column1_wide' => __( '1カラム（広い）', THEME_NAME ),
     'column1_narrow' => __( '1カラム（狭い）', THEME_NAME ),
+    'content_only_full_wide' => __( '本文のみ（フルワイド）', THEME_NAME ),
     'content_only_wide' => __( '本文のみ（広い）', THEME_NAME ),
     'content_only_narrow' => __( '本文のみ（狭い）', THEME_NAME ),
   );
@@ -125,35 +127,49 @@ endif;
 //ページタイプはデフォルトか
 if ( !function_exists( 'is_singular_page_type_default' ) ):
 function is_singular_page_type_default(){
-  return get_singular_page_type() == 'default';
+  return get_singular_page_type() === 'default';
 }
 endif;
 
 //ページタイプは狭い1カラムか
 if ( !function_exists( 'is_singular_page_type_column1_narrow' ) ):
 function is_singular_page_type_column1_narrow(){
-  return get_singular_page_type() == 'column1_narrow';
+  return get_singular_page_type() === 'column1_narrow';
 }
 endif;
 
 //ページタイプは広い1カラムか
 if ( !function_exists( 'is_singular_page_type_column1_wide' ) ):
 function is_singular_page_type_column1_wide(){
-  return get_singular_page_type() == 'column1_wide';
+  return get_singular_page_type() === 'column1_wide';
+}
+endif;
+
+//ページタイプはフルワイド1カラムか
+if ( !function_exists( 'is_singular_page_type_column1_full_wide' ) ):
+function is_singular_page_type_column1_full_wide(){
+  return get_singular_page_type() === 'column1_full_wide';
 }
 endif;
 
 //ページタイプは狭い本文のみか
 if ( !function_exists( 'is_singular_page_type_content_only_narrow' ) ):
 function is_singular_page_type_content_only_narrow(){
-  return get_singular_page_type() == 'content_only_narrow';
+  return get_singular_page_type() === 'content_only_narrow';
 }
 endif;
 
 //ページタイプは広い本文のみか
 if ( !function_exists( 'is_singular_page_type_content_only_wide' ) ):
 function is_singular_page_type_content_only_wide(){
-  return get_singular_page_type() == 'content_only_wide';
+  return get_singular_page_type() === 'content_only_wide';
+}
+endif;
+
+//ページタイプは広い本文のみか
+if ( !function_exists( 'is_singular_page_type_content_only_full_wide' ) ):
+function is_singular_page_type_content_only_full_wide(){
+  return get_singular_page_type() === 'content_only_full_wide';
 }
 endif;
 
@@ -171,17 +187,24 @@ function is_singular_page_type_wide(){
 }
 endif;
 
+//ページタイプの表示幅はフルワイドか
+if ( !function_exists( 'is_singular_page_type_full_wide' ) ):
+function is_singular_page_type_full_wide(){
+  return is_singular_page_type_column1_full_wide() || is_singular_page_type_content_only_full_wide();
+}
+endif;
+
 //ページタイプは1カラムか
 if ( !function_exists( 'is_singular_page_type_column1' ) ):
 function is_singular_page_type_column1(){
-  return is_singular_page_type_column1_narrow() || is_singular_page_type_column1_wide();
+  return is_singular_page_type_column1_narrow() || is_singular_page_type_column1_wide() || is_singular_page_type_column1_full_wide();
 }
 endif;
 
 //ページタイプは本文のみか
 if ( !function_exists( 'is_singular_page_type_content_only' ) ):
 function is_singular_page_type_content_only(){
-  return is_singular_page_type_content_only_narrow() || is_singular_page_type_content_only_wide();
+  return is_singular_page_type_content_only_narrow() || is_singular_page_type_content_only_wide() || is_singular_page_type_content_only_full_wide();
 }
 endif;
 

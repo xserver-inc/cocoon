@@ -132,14 +132,13 @@ function body_class_additional($classes) {
 
   //投稿管理画面で「広い」が選択されている場合
   if (is_singular() && is_singular_page_type_wide()) {
-    //$add_no_sidebar = true;
     $classes[] = 'column-wide';
   }
 
-  // //サイドバーにウィジェットが入っていない場合
-  // if (!is_active_sidebar( 'sidebar' )) {
-  //   $add_no_sidebar = true;
-  // }
+  //投稿管理画面で「フルワイド」が選択されている場合
+  if (is_singular() && is_singular_page_type_full_wide()) {
+    $classes[] = 'column-full-wide';
+  }
 
   //ヘッダーが「センターロゴ」か「トップメニュー」か
   if (get_header_layout_type_top()) {
@@ -885,7 +884,7 @@ function get_additional_entry_card_classes($option = null){
   //フロントページタイプ
   if (is_front_page_type_index()) {
     $classes .= ' '.get_front_page_type_class();
-  } 
+  }
 
   //スマートフォンでエントリーカードを1カラムに
   if (!is_entry_card_type_entry_card() && is_smartphone_entry_card_1_column()) {

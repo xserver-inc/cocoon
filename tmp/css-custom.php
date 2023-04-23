@@ -445,6 +445,13 @@ $main_column_width = get_main_column_width();
   }
 }
 <?php endif ?>
+<?php //ページ設定でフルワイドの場合
+if (is_singular_page_type_full_wide()):
+ ?>
+.column-full-wide .content-in{
+  width: 100%;
+}
+<?php endif ?>
 <?php //選択文字色
 if ($selection_color = get_site_selection_color()): ?>
 *::selection {
