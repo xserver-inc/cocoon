@@ -372,8 +372,10 @@ a.site-name:hover {
 }
 
 .carousel-entry-card-title {
-  margin: 0;
+  margin: 0 0 0.6em 0;
   padding: 0.3em;
+  line-height: 1.25;
+  height: 4em;
 }
 
 .carousel .slick-arrow:before {
