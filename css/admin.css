@@ -16439,6 +16439,7 @@ body.wp-admin {
   display: inline-block;
 }
 .admin-settings .demo .carousel-entry-card-title {
+  margin-bottom: 0.6em;
   font-size: 16px;
   margin-top: 4px;
   height: 3.2em;
