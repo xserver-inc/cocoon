@@ -16666,6 +16666,7 @@ body.wp-admin {
   display: block;
   margin: 0;
   padding: 0;
+  width: calc(100% + 4px);
 }
 .admin-settings .demo .slick-list:focus {
   outline: none;
