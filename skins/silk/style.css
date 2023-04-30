@@ -387,6 +387,10 @@ a.site-name:hover {
   z-index: 2;
 }
 
+.slick-list {
+  width: calc(100% + 4px);
+}
+
 /* 記事一覧 */
 .index-tab-buttons .index-tab-button {
   padding: 9px 12px;
