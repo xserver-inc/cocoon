@@ -66,8 +66,8 @@ if($is_1_page):
     'total' => $wp_query->max_num_pages,
     'mid_size' => 2,
     'current' => ($paged ? $paged : 1),
-    'prev_text' => '<span class="fa fa-angle-left" aria-hidden="true"></span>',
-    'next_text' => '<span class="fa fa-angle-right" aria-hidden="true"></span>',
+    'prev_text' => '<span class="screen-reader-text">'.__( '前へ', THEME_NAME ).'</span><span class="fa fa-angle-left" aria-hidden="true"></span>',
+'next_text' => '<span class="screen-reader-text">'.__( '次へ', THEME_NAME ).'</span><span class="fa fa-angle-right" aria-hidden="true"></span>',
   )); ?>
 </div><!-- /.pagination -->
 <?php
