@@ -16667,7 +16667,6 @@ body.wp-admin {
 }
 .admin-settings .demo .slick-list {
   position: relative;
-  overflow: hidden;
   display: block;
   margin: 0;
   padding: 0;
@@ -16677,6 +16676,12 @@ body.wp-admin {
 }
 .admin-settings .demo .slick-list.dragging {
   cursor: pointer;
+}
+.admin-settings .demo .slick-list .a-wrap {
+  visibility: hidden;
+}
+.admin-settings .demo .slick-list .a-wrap.slick-active {
+  visibility: visible;
 }
 .admin-settings .demo .slick-slider .slick-track,
 .admin-settings .demo .slick-slider .slick-list {

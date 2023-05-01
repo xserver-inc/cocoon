@@ -9558,7 +9558,6 @@ input[name="tab_item"] {
 
 .slick-list {
   position: relative;
-  overflow: hidden;
   display: block;
   margin: 0;
   padding: 0;
@@ -9568,6 +9567,12 @@ input[name="tab_item"] {
 }
 .slick-list.dragging {
   cursor: pointer;
+}
+.slick-list .a-wrap {
+  visibility: hidden;
+}
+.slick-list .a-wrap.slick-active {
+  visibility: visible;
 }
 
 .slick-slider .slick-track,
