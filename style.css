@@ -9283,12 +9283,16 @@ input[type='submit'] {
 }
 .carousel-content .slick-track {
   display: flex;
+  padding: 10px 0;
 }
 .carousel-content .slick-slide {
   height: auto;
 }
 .carousel-content .a-wrap {
-  margin: 0 3px 3px;
+  margin: 0 6px 3px;
+}
+.carousel-content .a-wrap:first-child {
+  margin-left: 4px;
 }
 
 .carousel-entry-card-thumb {
@@ -9558,7 +9562,6 @@ input[name="tab_item"] {
   display: block;
   margin: 0;
   padding: 0;
-  width: calc(100% + 4px);
 }
 .slick-list:focus {
   outline: none;

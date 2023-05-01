@@ -29,13 +29,17 @@
 
   .slick-track{
     display: flex;
+    padding: 10px 0;
   }
   .slick-slide {
     height: auto;
     //display: block;
   }
   .a-wrap{
-    margin: 0 3px 3px;
+    margin: 0 6px 3px;
+    &:first-child{
+      margin-left: 4px;
+    }
   }
 }
 

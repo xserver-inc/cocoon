@@ -16427,12 +16427,16 @@ body.wp-admin {
 }
 .admin-settings .demo .carousel-content .slick-track {
   display: flex;
+  padding: 10px 0;
 }
 .admin-settings .demo .carousel-content .slick-slide {
   height: auto;
 }
 .admin-settings .demo .carousel-content .a-wrap {
-  margin: 0 3px 3px;
+  margin: 0 6px 3px;
+}
+.admin-settings .demo .carousel-content .a-wrap:first-child {
+  margin-left: 4px;
 }
 .admin-settings .demo .carousel-entry-card-thumb {
   float: none;
@@ -16667,7 +16671,6 @@ body.wp-admin {
   display: block;
   margin: 0;
   padding: 0;
-  width: calc(100% + 4px);
 }
 .admin-settings .demo .slick-list:focus {
   outline: none;
