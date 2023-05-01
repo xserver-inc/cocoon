@@ -16,7 +16,7 @@
 }
 .slick-list {
     position: relative;
-    // overflow: hidden;
+    overflow: hidden;
     display: block;
     margin: 0;
     padding: 0;
@@ -28,14 +28,6 @@
     &.dragging {
         cursor: pointer;
         //cursor: hand;
-    }
-
-    .a-wrap{
-        visibility: hidden;
-
-        &.slick-active{
-            visibility: visible;
-        }
     }
 }
 .slick-slider .slick-track,
