@@ -387,6 +387,10 @@ a.site-name:hover {
   z-index: 2;
 }
 
+.carousel .a-wrap:hover {
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
 /* 記事一覧 */
 .index-tab-buttons .index-tab-button {
   padding: 9px 12px;
