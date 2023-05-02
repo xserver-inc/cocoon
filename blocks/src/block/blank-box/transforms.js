@@ -13,7 +13,11 @@ export const transforms = {
       type: 'block',
       blocks: [ 'cocoon-blocks/tab-box-1' ],
       transform: ( attributes, innerBlocks ) => {
-        return createBlock( 'cocoon-blocks/tab-box-1', attributes, innerBlocks );
+        return createBlock(
+          'cocoon-blocks/tab-box-1',
+          attributes,
+          innerBlocks
+        );
       },
     },
     {

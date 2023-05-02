@@ -19,8 +19,11 @@ export { metadata, name };
 
 export const settings = {
   title: __( '囲みボタン', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={['fas', 'ticket-alt']} />,
-  description: __( 'アスリートタグ等のタグを変更できないリンクをボタン化します。', THEME_NAME ),
+  icon: <FontAwesomeIcon icon={ [ 'fas', 'ticket-alt' ] } />,
+  description: __(
+    'アスリートタグ等のタグを変更できないリンクをボタン化します。',
+    THEME_NAME
+  ),
 
   edit,
   save,

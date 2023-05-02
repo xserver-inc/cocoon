@@ -7,7 +7,7 @@ import {
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
   const {
     question,
     questionLabel,
@@ -17,12 +17,20 @@ export default function save({ attributes }) {
     backgroundColor,
     textColor,
     borderColor,
+    customQuestionColor,
+    customAnswerColor,
+    customBackgroundColor,
+    customTextColor,
+    customBorderColor,
     fontSize,
   } = attributes;
 
   const questionClass = getColorClassName( 'question-color', questionColor );
   const answerClass = getColorClassName( 'answer-color', answerColor );
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
@@ -31,11 +39,11 @@ export default function save({ attributes }) {
     'faq-wrap': true,
     'blank-box': true,
     'block-box': true,
-    'has-question-color': questionColor,
-    'has-answer-color': answerColor,
-    'has-text-color': textColor,
-    'has-background': backgroundColor,
-    'has-border-color': borderColor,
+    'has-question-color': questionColor || customQuestionColor,
+    'has-answer-color': answerColor || customAnswerColor,
+    'has-text-color': textColor || customTextColor,
+    'has-background': backgroundColor || customBackgroundColor,
+    'has-border-color': borderColor || customBorderColor,
     [ questionClass ]: questionClass,
     [ answerClass ]: answerClass,
     [ textClass ]: textClass,
@@ -44,40 +52,37 @@ export default function save({ attributes }) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
-  const blockProps = useBlockProps.save({
+  const styles = {
+    '--cocoon-custom-question-color': customQuestionColor || undefined,
+    '--cocoon-custom-answer-color': customAnswerColor || undefined,
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+  };
+
+  const blockProps = useBlockProps.save( {
     className: className,
-  });
+    style: styles,
+  } );
 
   return (
     <div { ...blockProps }>
-    <dl className="faq">
-      <dt
-        className="faq-question faq-item"
-      >
-        <div
-          className="faq-question-label faq-item-label"
-        >
-          { questionLabel }
-        </div>
-        <div
-          className="faq-question-content faq-item-content"
-        >
-          <RichText.Content value={ question } />
-        </div>
-      </dt>
-      <dd className="faq-answer faq-item">
-        <div
-          className="faq-answer-label faq-item-label"
-        >
-          { answerLabel }
-        </div>
-        <div
-          className="faq-answer-content faq-item-content"
-        >
-          <InnerBlocks.Content />
-        </div>
-      </dd>
-    </dl>
-  </div>
+      <dl className="faq">
+        <dt className="faq-question faq-item">
+          <div className="faq-question-label faq-item-label">
+            { questionLabel }
+          </div>
+          <div className="faq-question-content faq-item-content">
+            <RichText.Content value={ question } />
+          </div>
+        </dt>
+        <dd className="faq-answer faq-item">
+          <div className="faq-answer-label faq-item-label">{ answerLabel }</div>
+          <div className="faq-answer-content faq-item-content">
+            <InnerBlocks.Content />
+          </div>
+        </dd>
+      </dl>
+    </div>
   );
 }

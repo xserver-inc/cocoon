@@ -421,13 +421,14 @@ $form_padding: 11px;
 // タブボックス
 ///////////////////////////////////////////
 @mixin tabbox_label{
-  background-color: var(--cocoon-grey-color);
+  background-color: var(--cocoon-custom-border-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
   top: -1.8em;
   line-height: 1.8;
-  color: var(--cocoon-white-color);      left: -3px;
+  color: var(--cocoon-white-color);
+  left: -3px;
   border-radius: 6px 6px 0 0;
   padding: 0 1em 0 .8em;
 }

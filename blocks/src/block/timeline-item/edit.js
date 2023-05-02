@@ -3,12 +3,12 @@ import { __ } from '@wordpress/i18n';
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 import { Fragment } from '@wordpress/element';
 
-export default function edit({ attributes, setAttributes }) {
+export default function edit( { attributes, setAttributes } ) {
   const { title, label } = attributes;
 
-  const blockProps = useBlockProps({
-    className: "timeline-item cf",
-  });
+  const blockProps = useBlockProps( {
+    className: 'timeline-item cf',
+  } );
 
   return (
     <Fragment>

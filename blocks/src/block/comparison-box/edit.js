@@ -3,29 +3,28 @@ import { __ } from '@wordpress/i18n';
 import {
   InnerBlocks,
   useBlockProps,
-  __experimentalUseInnerBlocksProps as useInnerBlocksProps
+  __experimentalUseInnerBlocksProps as useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import classnames from 'classnames';
 
-const ALLOWED_BLOCKS = [ 'cocoon-blocks/comparison-left', 'cocoon-blocks/comparison-right' ];
+const ALLOWED_BLOCKS = [
+  'cocoon-blocks/comparison-left',
+  'cocoon-blocks/comparison-right',
+];
 const TEMPLATE = [
   [ 'cocoon-blocks/comparison-left' ],
-  [ 'cocoon-blocks/comparison-right' ]
+  [ 'cocoon-blocks/comparison-right' ],
 ];
 
-export default function edit({ attributes, setAttributes, className }) {
-  const classes = classnames(
-    'comparison-box',
-    'block-box',
-    {
-      [ className ]: !! className,
-    }
-  );
-  const blockProps = useBlockProps({
+export default function edit( { attributes, setAttributes, className } ) {
+  const classes = classnames( 'comparison-box', 'block-box', {
+    [ className ]: !! className,
+  } );
+  const blockProps = useBlockProps( {
     className: classes,
-  });
+  } );
 
   const innerBlocksProps = useInnerBlocksProps( blockProps, {
     allowedBlocks: ALLOWED_BLOCKS,
@@ -40,8 +39,7 @@ export default function edit({ attributes, setAttributes, className }) {
 
   return (
     <Fragment>
-
-      <div { ...blockProps} >
+      <div { ...blockProps }>
         <div { ...innerBlocksProps } />
       </div>
     </Fragment>

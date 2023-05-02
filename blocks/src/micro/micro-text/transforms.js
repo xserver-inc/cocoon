@@ -8,6 +8,6 @@ export const transforms = {
       transform: ( attributes ) => {
         return createBlock( 'cocoon-blocks/micro-balloon-2', attributes );
       },
-    }
-  ]
+    },
+  ],
 };

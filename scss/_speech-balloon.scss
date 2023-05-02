@@ -2,8 +2,9 @@
 // 吹き出しスタイル
 ///////////////////////////////////////
 .speech-wrap{
-  // margin-bottom: 1.2em;
-  //font-size: 16px;
+  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
 
 }
@@ -27,15 +28,14 @@
 }
 
 div.speech-balloon{
-  //display: block;
   height: 100%;
-  //display: table;
-  // margin-left: 100px;
-  // margin-right: 100px;
   position: relative;
   padding: 10px;
-  background-color: var(--cocoon-white-color);
-  border: 2px solid var(--cocoon-basic-border-color);
+  background-color:var(--cocoon-custom-background-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cocoon-custom-border-color);
+  color: var(--cocoon-custom-text-color);
   border-radius: 6px;
   max-width: calc(100% - 14%);
   p{
@@ -52,7 +52,9 @@ div.speech-balloon{
   height: 0;
   left: -12px;
   top: 10px;
-  border-right: 12px solid var(--cocoon-basic-border-color);
+  border-right-width: 12px;
+  border-right-style: solid;
+  border-right-color: var(--cocoon-custom-border-color);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -64,7 +66,9 @@ div.speech-balloon{
   height: 0;
   left: -9px;
   top: 10px;
-  border-right: 12px solid var(--cocoon-white-color);
+  border-right-width: 12px;
+  border-right-style: solid;
+  border-right-color: var(--cocoon-custom-background-color);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -90,13 +94,17 @@ div.speech-balloon{
   .speech-balloon::before{
     right: -12px;
     left: auto;
-    border-left: 12px solid var(--cocoon-basic-border-color);
+    border-left-width: 12px;
+    border-left-style: solid;
+    border-left-color: var(--cocoon-custom-border-color);
     border-right: none;
   }
   .speech-balloon::after{
     right: -9px;
     left: auto;
-    border-left: 12px solid var(--cocoon-white-color);
+    border-left-width: 12px;
+    border-left-style: solid;
+    border-left-color: var(--cocoon-custom-background-color);
     border-right: none;
   }
 
@@ -131,13 +139,14 @@ div.speech-balloon{
 ///////////////////////////////////////
 .sbs-flat{
   .speech-balloon{
-    background-color: #f1f1f1;
-    border-color: #f1f1f1;
+    background-color: #f1f1f1 !important;
+    border-color: #f1f1f1 !important;
+    color: var(--cocoon-text-color) !important;
 
     &::before,
     &::after{
-      border-right-color: #f1f1f1;
-      border-left-color: #f1f1f1;
+      border-right-color: #f1f1f1 !important;
+      border-left-color: #f1f1f1 !important;
     }
   }
 }
@@ -145,24 +154,26 @@ div.speech-balloon{
 .sbs-line{
   .speech-balloon{
     border-width: 1px;
-    // background-color: #85e249;
-    // border-color: #85e249;
+    border-color: var(--cocoon-basic-border-color) !important;
+    background-color: var(--cocoon-white-color) !important;
+    color: var(--cocoon-text-color) !important;
 
     &::after{
       left: -10px;
     }
-    // &::before,
-    // &::after{
-    //   border-right-color: #85e249;
-    //   border-left-color: #85e249;
-    // }
+    &::before{
+      border-right-color: var(--cocoon-basic-border-color) !important;
+    }
+    &::after{
+      border-right-color: var(--cocoon-white-color) !important;
+    }
   }
 }
 
 .sbs-line.sbp-r{
   .speech-balloon{
-    background-color: #85e249;
-    border-color: #85e249;
+    background-color: #85e249 !important;
+    border-color: #85e249 !important;
 
     &::after{
       left: auto;
@@ -170,8 +181,8 @@ div.speech-balloon{
     }
     &::before,
     &::after{
-      border-right-color: #85e249;
-      border-left-color: #85e249;
+      border-right-color: #85e249 !important;
+      border-left-color: #85e249 !important;
     }
   }
 
@@ -190,7 +201,10 @@ div.sbs-think{
   .speech-balloon{
 
     &::before {
-      border: 2px solid var(--cocoon-basic-border-color);
+      border-width: 2px;
+      border-style: solid;
+      border-color: var(--cocoon-custom-border-color);
+      background-color: var(--cocoon-custom-background-color);
       border-radius: 50%;
       left: -29px;
       top: 11px;
@@ -199,7 +213,10 @@ div.sbs-think{
     }
 
     &::after {
-      border: 2px solid var(--cocoon-basic-border-color);
+      border-width: 2px;
+      border-style: solid;
+      border-color: var(--cocoon-custom-border-color);
+      background-color: var(--cocoon-custom-background-color);
       border-radius: 50%;
       left: -44px;
       top: 25px;

@@ -28,7 +28,7 @@
     "borderColor": {
       "type": "string"
     },
-    "customBorderColor": {
+    "customTextColor": {
       "type": "string"
     },
     "fontSize": {

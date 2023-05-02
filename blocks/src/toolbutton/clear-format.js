@@ -15,23 +15,27 @@ import { map } from 'lodash';
 
 const TITLE = __( '書式のクリア', THEME_NAME );
 
-const isClearFormatVisible = Number(gbSettings['isClearFormatVisible'] ? gbSettings['isClearFormatVisible'] : 0);
+const isClearFormatVisible = Number(
+  gbSettings[ 'isClearFormatVisible' ]
+    ? gbSettings[ 'isClearFormatVisible' ]
+    : 0
+);
 
-if (isClearFormatVisible) {
+if ( isClearFormatVisible ) {
   registerFormatType( 'cocoon-blocks/clear-format', {
     title: TITLE,
     tagName: 'span',
     className: 'clear-format',
 
-    edit({ isActive, value, onChange }) {
+    edit( { isActive, value, onChange } ) {
       const onToggle = () => {
         const formatTypes = select( 'core/rich-text' ).getFormatTypes();
         if ( 0 < formatTypes.length ) {
           let newValue = value;
           map( formatTypes, ( activeFormat ) => {
             newValue = removeFormat( newValue, activeFormat.name );
-          });
-          onChange({ ...newValue });
+          } );
+          onChange( { ...newValue } );
         }
       };
 
@@ -43,6 +47,6 @@ if (isClearFormatVisible) {
           isActive={ isActive }
         />
       );
-    }
-  });
+    },
+  } );
 }

@@ -1,0 +1,43 @@
+
+.iconlist-box{
+  border-color: transparent;
+  --cocoon-custom-icon-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: transparent;
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+
+  &.has-border-color li::before{
+    color: var(--cocoon-custom-icon-color);
+  }
+
+  ul{
+    list-style: none;
+  }
+  ol{
+    li::before{
+      display: none;
+    }
+  }
+  &.list-none{
+    ul{
+      list-style: disc;
+    }
+    ol{
+      list-style: decimal;
+    }
+  }
+}
+.iconlist-box li::before{
+  font-family: FontAwesome;
+  margin-right: 0.4em;
+  margin-left: -1.4em;
+  position: absolute;
+}
+
+.iconlist-title{
+  font-weight: 700;
+  text-align: center;
+}

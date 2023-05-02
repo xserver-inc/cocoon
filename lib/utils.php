@@ -1318,8 +1318,6 @@ function get_block_color_palette_css_cache_url(){
 }
 endif;
 
-
-
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
 function get_image_width_and_height($image_url){
@@ -3555,5 +3553,12 @@ function replace_a_tags_to_span_tags( $html ) {
   $html = str_replace('<a ', '<span ', $html);
   $html = str_replace('</a>', '</span>', $html);
   return $html;
+}
+endif;
+
+//ブロックエディター画面かどうか
+if ( !function_exists( 'is_block_editor_page' ) ):
+function is_block_editor_page() {
+  return is_admin() && has_blocks();
 }
 endif;

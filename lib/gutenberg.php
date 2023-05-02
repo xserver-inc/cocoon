@@ -375,9 +375,11 @@ html .body .has-<?php echo $slug; ?>-background-color {
 html .body .has-<?php echo $slug; ?>-color {
     color: <?php echo $color; ?>;
 }
+/*
 html .body .has-<?php echo $slug; ?>-color .toggle-button::before {
     color: <?php echo $color; ?>;
 }
+*/
 html .body .has-<?php echo $slug; ?>-border-color {
     border-color: <?php echo $color; ?>;
 }
@@ -401,20 +403,31 @@ html .body .bb-tab.has-<?php echo $slug; ?>-border-color .bb-label{
     background-color: <?php echo $color; ?>;
 }
 <?php //アコーディオンボックス ?>
+/*
 html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-button,
 html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-button:before{
   color: <?php echo $color; ?>;
 }
-
+*/
 html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
     background-color: <?php echo $color; ?>;
 }
 html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
-.toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
     border-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color .toggle-content{
+  background-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-content{
+  color: <?php echo $color; ?>;
 }
 <?php //アイコンリストボックス ?>
 html .body .iconlist-box.has-<?php echo $slug; ?>-icon-color li::before{
+    color: <?php echo $color; ?>;
+}
+<?php //マイクロテキスト ?>
+.micro-text.has-<?php echo $slug; ?>-color {
     color: <?php echo $color; ?>;
 }
 <?php //マイクロバルーン ?>
@@ -460,12 +473,18 @@ html .body .tab-caption-box.has-<?php echo $slug; ?>-border-color .box-content{
 html .body .tab-caption-box.has-<?php echo $slug; ?>-background-color .box-content{
   background-color: <?php echo $color; ?>;
 }
+html .body .tab-caption-box.has-<?php echo $slug; ?>-color .box-content{
+  color: <?php echo $color; ?>;
+}
 <?php //ラベルボックス ?>
 html .body .label-box.has-<?php echo $slug; ?>-border-color .box-content{
   border-color: <?php echo $color; ?>;
 }
 html .body .label-box.has-<?php echo $slug; ?>-background-color .box-content{
   background-color: <?php echo $color; ?>;
+}
+html .body .label-box.has-<?php echo $slug; ?>-color .box-content{
+  color: <?php echo $color; ?>;
 }
 <?php //吹き出しボックス ?>
 html .body .speech-balloon.has-<?php echo $slug; ?>-background-color {
@@ -547,7 +566,7 @@ html .body .btn-wrap{
     font-size: 16px;
 }
 
-
+/*
 html .body .has-border-color .toggle-button{
     color: #fff;
 }
@@ -555,6 +574,7 @@ html .body .has-border-color .toggle-button{
 html .body .has-border-color .toggle-button::before{
     color: #fff;
 }
+*/
 
     <?php // フォントサイズ ?>
 html .body .btn-wrap.has-small-font-size > a {

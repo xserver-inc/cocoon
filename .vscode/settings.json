@@ -1,6 +1,9 @@
 {
   //"codic.case": "PascalCase",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
   "extensions.ignoreRecommendations": false,
   "terminal.integrated.profiles.osx": {
     "zsh": {
@@ -16,5 +19,12 @@
   },
   "prettier.configPath": ".prettierrc.js",
   "prettier.ignorePath": ".prettierignore",
-  "prettier.prettierPath": "node_modules/prettier"
+  "prettier.prettierPath": "node_modules/prettier",
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true
+  }
 }

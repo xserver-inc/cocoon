@@ -5,43 +5,58 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BUTTON_BLOCK, colorValueToSlug, keyColor } from '../../helpers';
+import {
+  THEME_NAME,
+  BUTTON_BLOCK,
+  colorValueToSlug,
+  keyColor,
+} from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { RichText, InspectorControls, PanelColorSettings, ContrastChecker } = wp.editor;
-const { PanelBody, SelectControl, BaseControl, TextareaControl, ToggleControl } = wp.components;
+const { RichText, InspectorControls, PanelColorSettings, ContrastChecker } =
+  wp.editor;
+const {
+  PanelBody,
+  SelectControl,
+  BaseControl,
+  TextareaControl,
+  ToggleControl,
+} = wp.components;
 import { Fragment } from '@wordpress/element';
 
 //classの取得
-function getClasses(color, size, isCircle, isShine) {
-  const classes = classnames(
-    {
-      [ 'btn-wrap' ]: true,
-      [ `btn-wrap-${ colorValueToSlug(color) }` ]: !! colorValueToSlug(color),
-      [ size ]: size,
-      [ BUTTON_BLOCK ]: true,
-      [ 'btn-wrap-circle' ]: !! isCircle,
-      [ 'btn-wrap-shine' ]: !! isShine,
-    }
-  );
+function getClasses( color, size, isCircle, isShine ) {
+  const classes = classnames( {
+    [ 'btn-wrap' ]: true,
+    [ `btn-wrap-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
+    [ size ]: size,
+    [ BUTTON_BLOCK ]: true,
+    [ 'btn-wrap-circle' ]: !! isCircle,
+    [ 'btn-wrap-shine' ]: !! isShine,
+  } );
   return classes;
 }
 
 registerBlockType( 'cocoon-blocks/button-wrap-1', {
-
   title: __( '囲みボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( 'アスリートタグ等のタグを変更できないリンクをボタン化します。', THEME_NAME ),
+  description: __(
+    'アスリートタグ等のタグを変更できないリンクをボタン化します。',
+    THEME_NAME
+  ),
   keywords: [ 'button', 'btn', 'wrap' ],
 
   attributes: {
     content: {
       type: 'string',
-      default: __( 'こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。', THEME_NAME ),
+      default: __(
+        'こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。',
+        THEME_NAME
+      ),
     },
     tag: {
       type: 'string',
@@ -75,7 +90,6 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( '囲みボタン設定', THEME_NAME ) }>
-
             <TextareaControl
               label={ __( 'リンクタグ・ショートコード', THEME_NAME ) }
               value={ tag }
@@ -113,7 +127,6 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
               checked={ isShine }
               onChange={ ( value ) => setAttributes( { isShine: value } ) }
             />
-
           </PanelBody>
 
           <PanelColorSettings
@@ -127,22 +140,16 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
               },
             ] }
           >
-            <ContrastChecker
-              color={ color }
-            />
+            <ContrastChecker color={ color } />
           </PanelColorSettings>
-
         </InspectorControls>
-        <span className={'button-wrap-msg'}>
-          <RichText
-            value={ content }
-          />
+        <span className={ 'button-wrap-msg' }>
+          <RichText value={ content } />
         </span>
         <div
-          className={ getClasses(color, size, isCircle, isShine) }
-          dangerouslySetInnerHTML={{__html: tag}}
-        >
-        </div>
+          className={ getClasses( color, size, isCircle, isShine ) }
+          dangerouslySetInnerHTML={ { __html: tag } }
+        ></div>
       </Fragment>
     );
   },
@@ -150,11 +157,9 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
   save( { attributes } ) {
     const { content, color, size, tag, isCircle, isShine } = attributes;
     return (
-      <div className={ getClasses(color, size, isCircle, isShine) }>
-        <RichText.Content
-          value={ tag }
-        />
+      <div className={ getClasses( color, size, isCircle, isShine ) }>
+        <RichText.Content value={ tag } />
       </div>
     );
-  }
+  },
 } );

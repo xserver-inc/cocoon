@@ -14,21 +14,22 @@ const FORMAT_TYPE_NAME = 'cocoon-blocks/badge-brown';
 const TITLE = __( '茶色', THEME_NAME );
 
 registerFormatType( FORMAT_TYPE_NAME, {
-  title:TITLE,
+  title: TITLE,
   tagName: 'span',
   className: 'badge-brown',
-  edit({isActive, value, onChange}){
-    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
+  edit( { isActive, value, onChange } ) {
+    const onToggle = () =>
+      onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
     return (
       <Fragment>
         <BadgeToolbarButton
-          icon={<Icon icon={tag} size={32} />}
-          title={<span className="badge-brown">{TITLE}</span>}
+          icon={ <Icon icon={ tag } size={ 32 } /> }
+          title={ <span className="badge-brown">{ TITLE }</span> }
           onClick={ onToggle }
           isActive={ isActive }
         />
       </Fragment>
     );
-  }
+  },
 } );

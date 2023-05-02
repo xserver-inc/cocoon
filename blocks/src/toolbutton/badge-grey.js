@@ -17,18 +17,19 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: TITLE,
   tagName: 'span',
   className: 'badge-grey',
-  edit({isActive, value, onChange}){
-    const onToggle = () => onChange(toggleFormat(value,{type:FORMAT_TYPE_NAME}));
+  edit( { isActive, value, onChange } ) {
+    const onToggle = () =>
+      onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
     return (
       <Fragment>
         <BadgeToolbarButton
-          icon={<Icon icon={tag} size={32} />}
-          title={<span className="badge-grey">{TITLE}</span>}
+          icon={ <Icon icon={ tag } size={ 32 } /> }
+          title={ <span className="badge-grey">{ TITLE }</span> }
           onClick={ onToggle }
           isActive={ isActive }
         />
       </Fragment>
     );
-  }
+  },
 } );

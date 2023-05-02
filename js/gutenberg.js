@@ -50,6 +50,7 @@ wp.domReady(function () {
     //グループボックスのスタイルプレビューに余計なstyle属性が入り込んでしまうのを削除
     //もっと良い方法があるのかもしれない
     jQuery('.block-editor-block-preview__content .wp-block-group').removeAttr('style');
+    jQuery('.btn-wrap-block a').attr('href', 'javascript: void(0)');
 
     // let parent = jQuery('.micro-copy').parent();
     // if (parent.hasClass('wp-block')) {

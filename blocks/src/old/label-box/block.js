@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS, ICONS, getIconClass} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS, ICONS, getIconClass } from '../../helpers';
 
 const { times } = lodash;
 import { __ } from '@wordpress/i18n';
@@ -17,11 +17,13 @@ const CAPTION_BOX_CLASS = 'label-box';
 const DEFAULT_MSG = __( '見出し', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/label-box', {
-
   title: __( 'ラベルボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( 'ボックスに「ラベル見出し」入力できる汎用ボックスです。', THEME_NAME ),
+  description: __(
+    'ボックスに「ラベル見出し」入力できる汎用ボックスです。',
+    THEME_NAME
+  ),
 
   attributes: {
     content: {
@@ -49,7 +51,6 @@ registerBlockType( 'cocoon-blocks/label-box', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
             <SelectControl
               label={ __( '色設定', THEME_NAME ) }
               value={ color }
@@ -83,25 +84,27 @@ registerBlockType( 'cocoon-blocks/label-box', {
                 { times( ICONS.length, ( index ) => {
                   return (
                     <Button
-                      isDefault
-                      isPrimary={ icon === ICONS[index].value }
-                      className={ICONS[index].label}
+                      variant="secondary"
+                      isPrimary={ icon === ICONS[ index ].value }
+                      className={ ICONS[ index ].label }
                       onClick={ () => {
-                        setAttributes( { icon: ICONS[index].value } );
+                        setAttributes( { icon: ICONS[ index ].value } );
                       } }
-                    >
-                    </Button>
+                    ></Button>
                   );
                 } ) }
               </div>
             </BaseControl>
-
           </PanelBody>
         </InspectorControls>
 
-        <div className={CAPTION_BOX_CLASS + color + BLOCK_CLASS}>
-          <div className={'label-box-label block-box-label' + getIconClass(icon)}>
-            <span className={'label-box-label-text block-box-label-text'}>
+        <div className={ CAPTION_BOX_CLASS + color + BLOCK_CLASS }>
+          <div
+            className={
+              'label-box-label block-box-label' + getIconClass( icon )
+            }
+          >
+            <span className={ 'label-box-label-text block-box-label-text' }>
               <RichText
                 value={ content }
                 onChange={ ( value ) => setAttributes( { content: value } ) }
@@ -120,12 +123,12 @@ registerBlockType( 'cocoon-blocks/label-box', {
   save( { attributes } ) {
     const { content, color, icon } = attributes;
     return (
-      <div className={CAPTION_BOX_CLASS + color + BLOCK_CLASS}>
-        <div className={'label-box-label block-box-label' + getIconClass(icon)}>
-          <span className={'label-box-label-text block-box-label-text'}>
-            <RichText.Content
-              value={ content }
-            />
+      <div className={ CAPTION_BOX_CLASS + color + BLOCK_CLASS }>
+        <div
+          className={ 'label-box-label block-box-label' + getIconClass( icon ) }
+        >
+          <span className={ 'label-box-label-text block-box-label-text' }>
+            <RichText.Content value={ content } />
           </span>
         </div>
         <div className="label-box-content">
@@ -133,5 +136,5 @@ registerBlockType( 'cocoon-blocks/label-box', {
         </div>
       </div>
     );
-  }
+  },
 } );

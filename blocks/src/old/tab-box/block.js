@@ -5,21 +5,26 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 const { InnerBlocks, RichText, InspectorControls } = wp.editor;
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
-const DEFAULT_MSG = __( 'こちらをクリックして設定変更。この入力は公開ページで反映されません。', THEME_NAME );
+const DEFAULT_MSG = __(
+  'こちらをクリックして設定変更。この入力は公開ページで反映されません。',
+  THEME_NAME
+);
 
 registerBlockType( 'cocoon-blocks/tab-box', {
-
   title: __( 'タブボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( 'タブにメッセージ内容を伝えるための文字が書かれているボックスです。', THEME_NAME ),
+  description: __(
+    'タブにメッセージ内容を伝えるための文字が書かれているボックスです。',
+    THEME_NAME
+  ),
 
   attributes: {
     content: {
@@ -60,7 +65,6 @@ registerBlockType( 'cocoon-blocks/tab-box', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
             <SelectControl
               label={ __( 'タイプ', THEME_NAME ) }
               value={ style }
@@ -160,16 +164,12 @@ registerBlockType( 'cocoon-blocks/tab-box', {
                 },
               ] }
             />
-
           </PanelBody>
         </InspectorControls>
 
-        <div className={attributes.style + attributes.color + BLOCK_CLASS}>
-          <span className={'box-block-msg'}>
-            <RichText
-              value={ content }
-              placeholder={ DEFAULT_MSG }
-            />
+        <div className={ attributes.style + attributes.color + BLOCK_CLASS }>
+          <span className={ 'box-block-msg' }>
+            <RichText value={ content } placeholder={ DEFAULT_MSG } />
           </span>
           <InnerBlocks />
         </div>
@@ -180,9 +180,9 @@ registerBlockType( 'cocoon-blocks/tab-box', {
   save( { attributes } ) {
     const { content } = attributes;
     return (
-      <div className={attributes.style + attributes.color + BLOCK_CLASS}>
+      <div className={ attributes.style + attributes.color + BLOCK_CLASS }>
         <InnerBlocks.Content />
       </div>
     );
-  }
+  },
 } );

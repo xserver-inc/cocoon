@@ -22,65 +22,67 @@ import { __ } from '@wordpress/i18n';
 //コンポーネントの読み込み
 import { Fragment } from '@wordpress/element';
 const { addFilter } = wp.hooks;
-const {
-  PanelBody,
-  SelectControl
-} = wp.components;
+const { PanelBody, SelectControl } = wp.components;
 const { InspectorControls } = wp.editor;
 const { createHigherOrderComponent } = wp.compose;
 
 //サイドバーパネルの見出し
 const TITLE = __( '言語', THEME_NAME );
 //基本オプション
-const baseOption = [
-  { label: __( '言語選択', THEME_NAME ), value: '' },
-];
+const baseOption = [ { label: __( '言語選択', THEME_NAME ), value: '' } ];
 //拡張するブロックと各オプション
 const myClassSetting = {
   'core/code': CODE_LANGUAGES,
 };
 
 //サイドバーの設定
-export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
+export const addBlockControl = createHigherOrderComponent( ( BlockEdit ) => {
   let selectOption = '';
   return ( props ) => {
-    const {
-      className,
-    } = props.attributes;
+    const { className } = props.attributes;
     //myClassSettingで指定したブロックかどうか判定
-    const isValidBlockType = (name) => {
-      const validBlockTypes = Object.keys(myClassSetting);
-      return validBlockTypes.includes(name);
+    const isValidBlockType = ( name ) => {
+      const validBlockTypes = Object.keys( myClassSetting );
+      return validBlockTypes.includes( name );
     };
     //指定したブロックが選択されたら表示
-    if (isValidBlockType(props.name) && props.isSelected) {
+    if ( isValidBlockType( props.name ) && props.isSelected ) {
       //baseOptionと結合後クラス名だけ抜き出して配列に
-      let myClassNames = baseOption.concat(myClassSetting[props.name]).map(({value}) => value);
+      let myClassNames = baseOption
+        .concat( myClassSetting[ props.name ] )
+        .map( ( { value } ) => value );
       //オプション選択されたクラス名があるか(複数の場合も想定)
       const myClassFind = () => {
-        if( !className ) return '';
+        if ( ! className ) return '';
         let myClassSort = myClassNames.slice();
         //クラス名の多い順に並べ替える
         myClassSort.sort(
-          (a, b) => b.trim().split(/\s+/).length - a.trim().split(/\s+/).length
+          ( a, b ) =>
+            b.trim().split( /\s+/ ).length - a.trim().split( /\s+/ ).length
         );
-        return myClassSort.find( (name) => {
-          const classArr = className.trim().split(/\s+/);
-          const searchArr = name.trim().split(/\s+/);
-          return searchArr.every((v) => classArr.includes(v));
-        } ) || '';
+        return (
+          myClassSort.find( ( name ) => {
+            const classArr = className.trim().split( /\s+/ );
+            const searchArr = name.trim().split( /\s+/ );
+            return searchArr.every( ( v ) => classArr.includes( v ) );
+          } ) || ''
+        );
       };
       //選択されたオプションを設定
       selectOption = myClassFind();
       //myClassSettingで複数のクラス名設定していた場合を想定して一旦くっつけて配列に戻す
-      myClassNames = myClassNames.join(' ').split(/\s+/);
+      myClassNames = myClassNames.join( ' ' ).split( /\s+/ );
       //SelectControlのoptionsに設定する用
-      const myClassOptions = baseOption.concat( myClassSetting[props.name]);
+      const myClassOptions = baseOption.concat( myClassSetting[ props.name ] );
       return (
         <Fragment>
           <BlockEdit { ...props } />
           <InspectorControls>
-            <PanelBody title={ TITLE } initialOpen={ true } className="my-classname-controle">
+            <PanelBody
+              title={ TITLE }
+              initialOpen={ true }
+              className="my-classname-controle"
+            >
               <SelectControl
                 value={ selectOption }
                 options={ myClassOptions }
@@ -91,18 +93,18 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                     // 付与されているclassを取り出す
                     let inputClassName = className;
                     // スペース区切りを配列に
-                    inputClassName = inputClassName.split(/\s+/);
+                    inputClassName = inputClassName.split( /\s+/ );
                     // 選択したオプション以外の自分用クラスを取り除く
                     let filterClassName = inputClassName.filter(
-                      (name) => !myClassNames.includes(name)
+                      ( name ) => ! myClassNames.includes( name )
                     );
                     // 新しく選択したオプションを追加
-                    filterClassName.push(changeOption);
+                    filterClassName.push( changeOption );
                     // 配列を文字列に
-                    newClassName = filterClassName.join(' ');
+                    newClassName = filterClassName.join( ' ' );
                   }
                   selectOption = changeOption;
-                  props.setAttributes({ className: newClassName });
+                  props.setAttributes( { className: newClassName } );
                 } }
               />
             </PanelBody>

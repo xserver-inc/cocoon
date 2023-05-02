@@ -172,12 +172,6 @@ function gutenberg_stylesheets_custom() {
 
     //WordPressバージョンが5.8以上の時
     if (is_wp_5_8_or_over()) {
-      // $style_url = PARENT_THEME_STYLE_CSS_URL;
-      // $keyframes_url = PARENT_THEME_KEYFRAMES_CSS_URL;
-      // $editor_style_url = get_template_directory_uri().'/editor-style.css';
-      // wp_enqueue_style( THEME_NAME . '-style', $style_url );
-      // wp_enqueue_style( THEME_NAME . '-keyframes-style', $keyframes_url );
-      // wp_enqueue_style( THEME_NAME . '-editor-style', $editor_style_url );
 
       wp_enqueue_style( THEME_NAME . '-gutenberg-content', get_template_directory_uri() . '/css/gutenberg-content.css' );
 

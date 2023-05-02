@@ -14,13 +14,18 @@ export default function save( props ) {
     backgroundColor,
     textColor,
     borderColor,
+    customBackgroundColor,
+    customTextColor,
     customBorderColor,
     iconColor,
     customIconColor,
     fontSize,
   } = props.attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const iconClass = getColorClassName( 'icon-color', iconColor );
@@ -31,8 +36,8 @@ export default function save( props ) {
     'blank-box': true,
     [ icon ]: !! icon,
     'block-box': true,
-    'has-text-color': textColor,
-    'has-background': backgroundColor,
+    'has-text-color': textColor || customTextColor,
+    'has-background': backgroundColor || customBackgroundColor,
     'has-border-color': borderColor || customBorderColor,
     'has-icon-color': iconColor || customIconColor,
     [ textClass ]: textClass,
@@ -40,19 +45,27 @@ export default function save( props ) {
     [ borderClass ]: borderClass,
     [ iconClass ]: iconClass,
     [ fontSizeClass ]: fontSizeClass,
-  });
-  const iconListBlockProps = useBlockProps.save({
-      className: className,
-  });
+  } );
+
+  const styles = {
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+    '--cooon-custom-icon-color': customIconColor || undefined,
+  };
+
+  const iconListBlockProps = useBlockProps.save( {
+    className: className,
+    style: styles,
+  } );
+
   // const iconListTitleBlockProps = useBlockProps.save({
   //     className: 'iconlist-title',
   // });
   return (
     <div { ...iconListBlockProps }>
-      <div className='iconlist-title'>
-        <RichText.Content
-          value={ title }
-        />
+      <div className="iconlist-title">
+        <RichText.Content value={ title } />
       </div>
       <InnerBlocks.Content />
     </div>

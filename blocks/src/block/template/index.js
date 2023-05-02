@@ -19,9 +19,9 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-  title: __('テンプレート', THEME_NAME),
-  icon: <FontAwesomeIcon icon={['far', 'file-alt']} />,
-  description: __('登録されているテンプレートを表示します。', THEME_NAME),
+  title: __( 'テンプレート', THEME_NAME ),
+  icon: <FontAwesomeIcon icon={ [ 'far', 'file-alt' ] } />,
+  description: __( '登録されているテンプレートを表示します。', THEME_NAME ),
 
   edit,
   save,

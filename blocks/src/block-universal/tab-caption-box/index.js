@@ -20,8 +20,11 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'タブ見出しボックス', THEME_NAME ),
-  icon: <Icon icon={archive} size={32} />,
-  description: __( 'ボックスに「タブ見出し」を入力できる汎用ボックスです。', THEME_NAME ),
+  icon: <Icon icon={ archive } size={ 32 } />,
+  description: __(
+    'ボックスに「タブ見出し」を入力できる汎用ボックスです。',
+    THEME_NAME
+  ),
 
   edit,
   save,

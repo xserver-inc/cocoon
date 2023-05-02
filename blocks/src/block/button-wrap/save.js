@@ -1,4 +1,3 @@
-
 import { BUTTON_BLOCK } from '../../helpers';
 import {
   RichText,
@@ -8,7 +7,7 @@ import {
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
   const {
     tag,
     size,
@@ -17,11 +16,16 @@ export default function save({ attributes }) {
     backgroundColor,
     textColor,
     borderColor,
+    customBackgroundColor,
+    customTextColor,
     customBorderColor,
     fontSize,
   } = attributes;
 
-  const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+  const backgroundClass = getColorClassName(
+    'background-color',
+    backgroundColor
+  );
   const textClass = getColorClassName( 'color', textColor );
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
@@ -33,8 +37,8 @@ export default function save({ attributes }) {
     [ size ]: size,
     [ 'btn-wrap-circle' ]: !! isCircle,
     [ 'btn-wrap-shine' ]: !! isShine,
-    'has-text-color': textColor,
-    'has-background': backgroundColor,
+    'has-text-color': textColor || customTextColor,
+    'has-background': backgroundColor || customBackgroundColor,
     'has-border-color': borderColor || customBorderColor,
     [ textClass ]: textClass,
     [ backgroundClass ]: backgroundClass,
@@ -42,15 +46,20 @@ export default function save({ attributes }) {
     [ fontSizeClass ]: fontSizeClass,
   } );
 
-  const blockProps = useBlockProps.save({
+  const styles = {
+    '--cocoon-custom-background-color': customBackgroundColor || undefined,
+    '--cocoon-custom-text-color': customTextColor || undefined,
+    '--cocoon-custom-border-color': customBorderColor || undefined,
+  };
+
+  const blockProps = useBlockProps.save( {
     className: classes,
-  });
+    style: styles,
+  } );
 
   return (
     <div { ...blockProps }>
-      <RichText.Content
-        value={ tag }
-      />
+      <RichText.Content value={ tag } />
     </div>
   );
 }

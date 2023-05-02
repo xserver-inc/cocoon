@@ -48,6 +48,9 @@
   --cocoon-watery-yellow-color: #fff7cc;
   --cocoon-watery-red-color: #fdf2f2;
   --cocoon-watery-green-color: #ebf8f4;
+  --cocoon-custom-background-color: inherit;
+  --cocoon-custom-text-color: inherit;
+  --cocoon-custom-border-color: #ccc;
   --cocoon-default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   --cocoon-text-color: #333;
   --cocoon-pallid-text-color: #777;
@@ -339,34 +342,6 @@
 
 .fab-user::before {
   content: '\f007';
-}
-
-.iconlist-box {
-  border-color: transparent;
-}
-.iconlist-box ul {
-  list-style: none;
-}
-.iconlist-box ol li::before {
-  display: none;
-}
-.iconlist-box.list-none ul {
-  list-style: disc;
-}
-.iconlist-box.list-none ol {
-  list-style: decimal;
-}
-
-.iconlist-box li::before {
-  font-family: FontAwesome;
-  margin-right: 0.4em;
-  margin-left: -1.4em;
-  position: absolute;
-}
-
-.iconlist-title {
-  font-weight: 700;
-  text-align: center;
 }
 
 .fab-check-circle::before,

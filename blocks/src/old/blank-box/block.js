@@ -5,7 +5,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, BLOCK_CLASS} from '../../helpers';
+import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
@@ -14,14 +14,19 @@ import { registerBlockType } from '@wordpress/blocks';
 const { InnerBlocks, RichText, InspectorControls } = wp.editor;
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
-const DEFAULT_MSG = __( 'こちらをクリックして設定変更。この入力は公開ページで反映されません。', THEME_NAME );
+const DEFAULT_MSG = __(
+  'こちらをクリックして設定変更。この入力は公開ページで反映されません。',
+  THEME_NAME
+);
 
 registerBlockType( 'cocoon-blocks/blank-box', {
-
   title: __( '白抜きボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
-  description: __( 'コンテンツを囲むだけのブランクボックスを表示します。', THEME_NAME ),
+  description: __(
+    'コンテンツを囲むだけのブランクボックスを表示します。',
+    THEME_NAME
+  ),
 
   attributes: {
     content: {
@@ -41,11 +46,11 @@ registerBlockType( 'cocoon-blocks/blank-box', {
   edit( { attributes, setAttributes } ) {
     const { content, style, alignment } = attributes;
 
-    function onChange(event){
-      setAttributes({style: event.target.value});
+    function onChange( event ) {
+      setAttributes( { style: event.target.value } );
     }
 
-    function onChangeContent(newContent){
+    function onChangeContent( newContent ) {
       setAttributes( { content: newContent } );
     }
 
@@ -53,7 +58,6 @@ registerBlockType( 'cocoon-blocks/blank-box', {
       <Fragment>
         <InspectorControls>
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-
             <SelectControl
               label={ __( 'タイプ', THEME_NAME ) }
               value={ style }
@@ -81,16 +85,12 @@ registerBlockType( 'cocoon-blocks/blank-box', {
                 },
               ] }
             />
-
           </PanelBody>
         </InspectorControls>
 
-        <div className={attributes.style + BLOCK_CLASS}>
-          <span className={'box-block-msg'}>
-            <RichText
-              value={ content }
-              placeholder={ DEFAULT_MSG }
-            />
+        <div className={ attributes.style + BLOCK_CLASS }>
+          <span className={ 'box-block-msg' }>
+            <RichText value={ content } placeholder={ DEFAULT_MSG } />
           </span>
           <InnerBlocks />
         </div>
@@ -101,9 +101,9 @@ registerBlockType( 'cocoon-blocks/blank-box', {
   save( { attributes } ) {
     const { content } = attributes;
     return (
-      <div className={attributes.style + BLOCK_CLASS}>
+      <div className={ attributes.style + BLOCK_CLASS }>
         <InnerBlocks.Content />
       </div>
     );
-  }
+  },
 } );
