@@ -8599,6 +8599,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal.large-thumb .card-title, .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   -webkit-line-clamp: 2;
+  height: 2.6em;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-content {
   max-height: 45%;
@@ -16499,6 +16500,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal.large-thumb .card-title, .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   -webkit-line-clamp: 2;
+  height: 2.6em;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-content {
   max-height: 45%;

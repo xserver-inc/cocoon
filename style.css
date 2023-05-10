@@ -9157,6 +9157,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .is-list-horizontal.large-thumb .card-title, .is-list-horizontal.large-thumb-on .card-title {
   -webkit-line-clamp: 2;
+  height: 2.6em;
 }
 .is-list-horizontal.large-thumb-on .card-content {
   max-height: 45%;
