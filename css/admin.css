@@ -8630,8 +8630,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next::before {
   background-color: rgba(0, 0, 0, 0.3);
-}
-.admin-settings .demo .is-list-horizontal .swiper-button-next::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -8681,8 +8679,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-prev::before {
   background-color: rgba(0, 0, 0, 0.3);
-}
-.admin-settings .demo .is-list-horizontal .swiper-button-prev::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -16576,8 +16572,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next::before {
   background-color: rgba(0, 0, 0, 0.3);
-}
-.admin-settings .demo .is-list-horizontal .swiper-button-next::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -16627,8 +16621,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-prev::before {
   background-color: rgba(0, 0, 0, 0.3);
-}
-.admin-settings .demo .is-list-horizontal .swiper-button-prev::before {
   position: absolute;
   top: 0;
   right: 0;

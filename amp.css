@@ -9163,8 +9163,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .is-list-horizontal .swiper-button-next::before {
   background-color: rgba(0, 0, 0, 0.3);
-}
-.is-list-horizontal .swiper-button-next::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -9214,8 +9212,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .is-list-horizontal .swiper-button-prev::before {
   background-color: rgba(0, 0, 0, 0.3);
-}
-.is-list-horizontal .swiper-button-prev::before {
   position: absolute;
   top: 0;
   right: 0;
