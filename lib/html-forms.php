@@ -1090,6 +1090,7 @@ function generate_popular_entries_tag($atts){
   endif; ?>
   <?php if ( $horizontal ) : ?>
     </div>
+      <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
   <?php endif; ?>
   </div>
@@ -1302,6 +1303,7 @@ function generate_widget_entries_tag($atts){
   <?php //wp_reset_query(); ?>
   <?php if ( $horizontal ) : ?>
     </div>
+      <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
   <?php endif; ?>
   </div>

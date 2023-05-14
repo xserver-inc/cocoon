@@ -229,6 +229,7 @@ if (!is_amp()): ?>
     slidesPerView: 'auto',
     spaceBetween: 4,
     navigation: {
+      prevEl: '.is-list-horizontal .swiper-button-prev',
       nextEl: '.is-list-horizontal .swiper-button-next',
     },
   });
