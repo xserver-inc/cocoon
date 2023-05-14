@@ -61,17 +61,11 @@
 
   .swiper-button-next {
     left: calc(100% - 62px);
-  }
-
-  .swiper-button-next {
     position: absolute;
     z-index: 1;
     top: 0;
     bottom: 0;
     margin: auto;
-  }
-
-  .swiper-button-next {
     display: grid;
     place-content: center;
     width: 50px;
@@ -119,17 +113,11 @@
 
   .swiper-button-prev {
     left: 22px;
-  }
-
-  .swiper-button-prev {
     position: absolute;
     z-index: 1;
     top: 0;
     bottom: 0;
     margin: auto;
-  }
-
-  .swiper-button-prev {
     /*
     Swiperの戻るボタンを表示する場合は子テーマのスタイルCSSに以下のように書く
     .is-list-horizontal .swiper-button-prev{
