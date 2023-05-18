@@ -225,19 +225,25 @@ function get_skin_option($name){
 }
 endif;
 
-//フォームの際のスキンオプションの取得
-if ( !function_exists( 'get_form_skin_option' ) ):
-function get_form_skin_option($name, $value = 1){
+//スキン制御があるか確認する
+if ( !function_exists( 'is_form_skin_option' ) ):
+function is_form_skin_option($name, $value = 1){
   global $_FORM_SKIN_OPTIONS;
   $name = str_replace('[]', '', $name);
   if (isset($_FORM_SKIN_OPTIONS[$name]) && is_array($_FORM_SKIN_OPTIONS[$name])) {
-    // _v([$name, $value, $_FORM_SKIN_OPTIONS[$name]]);
-    return in_array($value, $_FORM_SKIN_OPTIONS[$name]);
+    return true;
   }
   //スキンにより固定値がある場合は採用する
   if (isset($_FORM_SKIN_OPTIONS[$name])) {
-    return $_FORM_SKIN_OPTIONS[$name];
+    return true;
   }
+}
+endif;
+
+//get_form_skin_option→is_form_skin_optionに関数変更しても互換関係を保つためのエイリアス
+if ( !function_exists( 'get_form_skin_option' ) ):
+function get_form_skin_option($name, $value = 1){
+  return is_form_skin_option($name, $value);
 }
 endif;
 

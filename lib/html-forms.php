@@ -117,10 +117,7 @@ endif;
 add_filter( 'admin_input_form_tag', 'wrap_skin_control_tag', 10, 3 );
 if ( !function_exists( 'wrap_skin_control_tag' ) ):
 function wrap_skin_control_tag($tag, $name, $value = 1){
-  // if ($name == OP_EXCLUDE_WIDGET_CLASSES.'[]') {
-  //   _v((get_form_skin_option($name, $value)));
-  // }
-  if (get_form_skin_option($name, $value)) {
+  if (is_form_skin_option($name, $value)) {
     $tag = get_skin_control_tag($tag);
   }
   return $tag;
