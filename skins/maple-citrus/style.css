@@ -977,3 +977,17 @@ input[type="submit"]:hover {
 	border: none;
 	background: aliceblue;
 }
+
+/* カスタム色対応 */
+.speech-wrap,
+.toggle-box,
+.timeline-box,
+.iconlist-box,
+.faq-wrap,
+.caption-box,
+.tab-caption-box,
+.label-box,
+.micro-balloon,
+.micro-text{
+	--cocoon-custom-text-color: #6a859c;;
+}
