@@ -6857,43 +6857,62 @@ div.speech-balloon p {
   box-shadow: none;
 }
 
-.sbs-flat .speech-balloon {
-  background-color: #f1f1f1;
-  border-color: #f1f1f1;
-  color: var(--cocoon-text-color);
+.sbs-flat {
+  --cocoon-custom-background-color: #f1f1f1;
+  --cocoon-custom-border-color: #f1f1f1;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
 }
-.sbs-flat .speech-balloon::before, .sbs-flat .speech-balloon::after {
-  border-right-color: #f1f1f1;
-  border-left-color: #f1f1f1;
+.sbs-flat .speech-balloon {
+  background-color: var(--cocoon-custom-background-color);
+  border-color: var(--cocoon-custom-border-color);
+  color: var(--cocoon-custom-text-color);
+}
+.sbs-flat .speech-balloon::before {
+  border-right-color: var(--cocoon-custom-border-color);
+}
+.sbs-flat .speech-balloon::after {
+  border-right-color: var(--cocoon-custom-background-color);
 }
 
+.sbs-line {
+  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+}
 .sbs-line .speech-balloon {
   border-width: 1px;
-  border-color: var(--cocoon-basic-border-color);
-  background-color: var(--cocoon-white-color);
-  color: var(--cocoon-text-color);
+  background-color: var(--cocoon-custom-background-color);
+  border-color: var(--cocoon-custom-border-color);
+  color: var(--cocoon-custom-text-color);
 }
 .sbs-line .speech-balloon::after {
   left: -10px;
 }
 .sbs-line .speech-balloon::before {
-  border-right-color: var(--cocoon-basic-border-color);
+  border-right-color: var(--cocoon-custom-border-color);
 }
 .sbs-line .speech-balloon::after {
-  border-right-color: var(--cocoon-white-color);
+  border-right-color: var(--cocoon-custom-background-color);
 }
 
+.sbs-line.sbp-r {
+  --cocoon-custom-background-color: #85e249;
+  --cocoon-custom-border-color: #85e249;
+}
 .sbs-line.sbp-r .speech-balloon {
-  background-color: #85e249;
-  border-color: #85e249;
+  background-color: var(--cocoon-custom-background-color);
+  border-color: var(--cocoon-custom-border-color);
+  color: var(--cocoon-custom-text-color);
 }
 .sbs-line.sbp-r .speech-balloon::after {
   left: auto;
   right: -10px;
 }
-.sbs-line.sbp-r .speech-balloon::before, .sbs-line.sbp-r .speech-balloon::after {
-  border-right-color: #85e249;
-  border-left-color: #85e249;
+.sbs-line.sbp-r .speech-balloon::before {
+  border-right-color: var(--cocoon-custom-border-color);
+}
+.sbs-line.sbp-r .speech-balloon::after {
+  border-right-color: var(--cocoon-custom-background-color);
 }
 
 div.sbs-think.sbp-l .speech-balloon {
