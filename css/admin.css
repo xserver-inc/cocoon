@@ -4239,8 +4239,7 @@ body.wp-admin {
   right: 0;
 }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
-.admin-settings .demo .btn-wrap,
-.admin-settings .demo .button-block {
+.admin-settings .demo .btn-wrap {
   --cocoon-custom-background-color: var(--cocoon-text-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
@@ -12147,8 +12146,7 @@ body.wp-admin {
   right: 0;
 }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
-.admin-settings .demo .btn-wrap,
-.admin-settings .demo .button-block {
+.admin-settings .demo .btn-wrap {
   --cocoon-custom-background-color: var(--cocoon-text-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
@@ -20925,8 +20923,7 @@ textarea[name="the_page_memo"] {
   right: 0;
 }
 .components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a,
-.components-popover__content .btn-wrap,
-.components-popover__content .button-block {
+.components-popover__content .btn-wrap {
   --cocoon-custom-background-color: var(--cocoon-text-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
