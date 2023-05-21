@@ -892,12 +892,12 @@ a {
 /* -------------------------------------------
 / 『カレンダー』
 ------------------------------------------- */
-.wp-calendar-table   [id$="today"],
+.wp-calendar-table [id$="today"],
 #slide-in-wp-calendar #slide-in-today {
   background-color: #a4701a;
 }
 
-.wp-calendar-table   [id$="today"] a,
+.wp-calendar-table [id$="today"] a,
 #slide-in-wp-calendar #slide-in-today a {
   background-color: #cba350;
   color: black;
@@ -1260,4 +1260,18 @@ div.speech-balloon {
 .list-title-in::before,
 .list-title-in::after {
   background-color: #d3d3d3;
+}
+
+/* カスタム色対応 */
+.speech-wrap,
+.toggle-box,
+.timeline-box,
+.iconlist-box,
+.faq-wrap,
+.caption-box,
+.tab-caption-box,
+.label-box,
+.micro-balloon,
+.micro-text {
+  --cocoon-custom-text-color: #d3d3d3;
 }

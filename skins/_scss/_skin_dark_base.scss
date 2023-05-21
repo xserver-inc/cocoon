@@ -1278,3 +1278,16 @@ div.speech-balloon {
 .list-title-in::after{
   background-color: #d3d3d3;
 }
+/* カスタム色対応 */
+.speech-wrap,
+.toggle-box,
+.timeline-box,
+.iconlist-box,
+.faq-wrap,
+.caption-box,
+.tab-caption-box,
+.label-box,
+.micro-balloon,
+.micro-text{
+	--cocoon-custom-text-color: #d3d3d3;
+}
