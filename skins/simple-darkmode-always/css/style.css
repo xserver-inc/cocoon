@@ -52,7 +52,7 @@
   }
 
   .sbs-line.sbp-l .speech-balloon,
-.sbs-flat.sbp-l .speech-balloon {
+.sbs-flat.sbp-r .speech-balloon {
     background-color: var(--bg2);
     border-color: var(--text-main);
     border-width: 2px;
@@ -600,9 +600,13 @@ blockquote {
 .sbs-flat.sbp-l .speech-balloon::after {
   border-right-color: var(--bg2);
 }
+.sbs-flat.sbp-r .speech-balloon::after {
+    border-left-color: var(--bg2);
+  }
 
 .sbs-line.sbp-l .speech-balloon,
-.sbs-flat.sbp-l .speech-balloon {
+.sbs-flat.sbp-l .speech-balloon,
+.sbs-flat.sbp-r .speech-balloon {
   background-color: var(--bg2);
   border-color: var(--text-main);
   border-width: 2px;
@@ -619,4 +623,31 @@ a {
 
 a:hover {
   color: #f7a488;
+}
+
+/* カスタム色対応 */
+.speech-wrap,
+.toggle-box,
+.timeline-box,
+.iconlist-box,
+.faq-wrap,
+.caption-box,
+.tab-caption-box,
+.label-box,
+.micro-balloon,
+.micro-text{
+  --cocoon-custom-text-color: var(--text-main);
+}
+
+.info-list,
+.info-list .info-list-item-content-link,
+.widget_info_list{
+  color: var(--text-main);
+}
+
+.breadcrumb.sbp-main-before,
+.breadcrumb.sbp-footer-before,
+.breadcrumb.pbp-main-before,
+.breadcrumb.pbp-footer-before{
+  background-color: transparent;
 }
