@@ -157,7 +157,7 @@ div.speech-balloon{
 }
 
 .sbs-line{
-  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
   .speech-balloon{
