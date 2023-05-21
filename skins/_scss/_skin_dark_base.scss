@@ -1144,36 +1144,36 @@ pre {
 / 『吹き出し』
 ------------------------------------------- */
 .speech-icon img, .speech-icon amp-img {
-  border: 2px solid #f3f3f3;
+  border: 2px solid var(--cocoon-custom-border-color);
   background-color: #b6b6b6;
 }
 
 div.speech-balloon {
-  background-color: #191919;
-  border-color: #d3d3d3;
+  background-color: var(--cocoon-custom-background-color);
+  border-color: var(--cocoon-custom-border-color);
 }
 
 .sbs-flat .speech-balloon,
 .sbs-line.sbp-r .speech-balloon{
-  background-color: #191919;
+  background-color: var(--cocoon-custom-background-color);
 }
 
 .speech-balloon::before {
-  border-right-color: #d3d3d3;
+  border-right-color: var(--cocoon-custom-border-color);
 }
 
 .speech-balloon::after,
 .sbs-flat .speech-balloon::after {
-  border-right-color: #191919;
+  border-right-color: var(--cocoon-custom-background-color);
 }
 
 .sbp-r .speech-balloon::before {
-  border-left-color: #d3d3d3;
+  border-left-color: var(--cocoon-custom-border-color);
 }
 
 .sbp-r .speech-balloon::after,
 .sbs-line.sbp-r .speech-balloon::after {
-  border-left: 12px solid #191919;
+  border-left: 12px solid var(--cocoon-custom-background-color);
 }
 
 /* -------------------------------------------
@@ -1291,3 +1291,35 @@ div.speech-balloon {
 .micro-text{
 	--cocoon-custom-text-color: #d3d3d3;
 }
+
+.speech-wrap {
+  --cocoon-custom-background-color: #191919;
+  --cocoon-custom-text-color: #d3d3d3;
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+}
+
+// .sbs-line.sbp-l .speech-balloon:not(.has-background) {
+//   --cocoon-custom-background-color: #191919;
+// }
+
+.sbs-line.sbp-r .speech-balloon:not(.has-background) {
+  background-color: var(--cocoon-custom-background-color);
+}
+
+.sbs-line.sbp-r .speech-balloon:not(.has-background):not(.has-border-color){
+  --cocoon-custom-background-color: #191919;
+  --cocoon-custom-border-color: #85e249;
+}
+
+// div.speech-balloon:not(.has-text-color){
+//   --cocoon-custom-text-color: #191919;
+// }
+
+// .sbs-line.sbp-l div.speech-balloon:not(.has-text-color),
+// .sbs-think div.speech-balloon:not(.has-text-color){
+//   --cocoon-custom-text-color: #d3d3d3;
+// }
+
+// div.sbs-think .speech-balloon::before{
+//   --cocoon-custom-background-color: transparent;
+// }

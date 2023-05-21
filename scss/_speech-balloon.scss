@@ -157,7 +157,7 @@ div.speech-balloon{
 }
 
 .sbs-line{
-  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-background-color: transparent;
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
   .speech-balloon{
@@ -192,10 +192,10 @@ div.speech-balloon{
       right: -10px;
     }
     &::before{
-      border-right-color: var(--cocoon-custom-border-color);
+      border-left-color: var(--cocoon-custom-border-color);
     }
     &::after{
-      border-right-color: var(--cocoon-custom-background-color);
+      border-left-color: var(--cocoon-custom-background-color);
     }
   }
 
@@ -205,6 +205,7 @@ div.speech-balloon{
 // 考える吹き出し
 ///////////////////////////////////////
 div.sbs-think{
+  --cocoon-custom-background-color: transparent;
   &.sbp-l{
     // margin-right: 126px;
     .speech-balloon{

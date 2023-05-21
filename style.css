@@ -6900,7 +6900,7 @@ div.speech-balloon p {
 }
 
 .sbs-line {
-  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-background-color: transparent;
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
@@ -6934,12 +6934,15 @@ div.speech-balloon p {
   right: -10px;
 }
 .sbs-line.sbp-r .speech-balloon::before {
-  border-right-color: var(--cocoon-custom-border-color);
+  border-left-color: var(--cocoon-custom-border-color);
 }
 .sbs-line.sbp-r .speech-balloon::after {
-  border-right-color: var(--cocoon-custom-background-color);
+  border-left-color: var(--cocoon-custom-background-color);
 }
 
+div.sbs-think {
+  --cocoon-custom-background-color: transparent;
+}
 div.sbs-think.sbp-l .speech-balloon {
   margin-left: 46px;
 }
