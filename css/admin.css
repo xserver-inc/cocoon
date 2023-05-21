@@ -6681,7 +6681,7 @@ body.wp-admin {
   border-right-color: var(--cocoon-custom-background-color);
 }
 .admin-settings .demo .sbs-line {
-  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
@@ -14610,7 +14610,7 @@ body.wp-admin {
   border-right-color: var(--cocoon-custom-background-color);
 }
 .admin-settings .demo .sbs-line {
-  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-background-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
