@@ -8734,6 +8734,26 @@ body.wp-admin {
 .admin-settings .demo .info-list-item-content-link:hover {
   text-decoration: underline;
 }
+.admin-settings .demo .is-style-border-solid {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border: solid 2px #000;
+}
+.admin-settings .demo .is-style-border-double {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border: double 4px #000;
+}
+.admin-settings .demo .is-style-border-dashed {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border: dashed 2px #000;
+}
+.admin-settings .demo .is-style-border-dotted {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border: dotted 4px #000;
+}
 .admin-settings .demo .no-border {
   border: none;
 }
@@ -16662,6 +16682,26 @@ body.wp-admin {
 }
 .admin-settings .demo .info-list-item-content-link:hover {
   text-decoration: underline;
+}
+.admin-settings .demo .is-style-border-solid {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border: solid 2px #000;
+}
+.admin-settings .demo .is-style-border-double {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border: double 4px #000;
+}
+.admin-settings .demo .is-style-border-dashed {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border: dashed 2px #000;
+}
+.admin-settings .demo .is-style-border-dotted {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border: dotted 4px #000;
 }
 .admin-settings .demo .no-border {
   border: none;

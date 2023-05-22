@@ -27,7 +27,7 @@ function addCustomAttributes( settings ) {
       },
       extraBorder: {
         type: 'string',
-        default: 'p-border-default',
+        default: 'border-default',
       },
     } );
   }
@@ -78,24 +78,24 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
 
       const extraBorders = [
         {
-          style: 'p-border-default',
+          style: 'border-default',
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
-          style: 'p-border-01',
-          buttonText: '01',
+          style: 'border-solid',
+          buttonText: __( '実線', THEME_NAME ),
         },
         {
-          style: 'p-border-02',
-          buttonText: '02',
+          style: 'border-double',
+          buttonText: __( '二重線', THEME_NAME ),
         },
         {
-          style: 'p-border-03',
-          buttonText: '03',
+          style: 'border-dashed',
+          buttonText: __( 'ダッシュ', THEME_NAME ),
         },
         {
-          style: 'p-border-04',
-          buttonText: '04',
+          style: 'border-dotted',
+          buttonText: __( 'ドット', THEME_NAME ),
         },
       ];
 
@@ -105,7 +105,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         setAttributes( { extraStyle: 'p-style-default' } );
       }
       if ( extraBorder === null ) {
-        setAttributes( { extraBorder: 'p-border-default' } );
+        setAttributes( { extraBorder: 'border-default' } );
       }
 
       return (
