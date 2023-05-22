@@ -8736,23 +8736,28 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-border-solid {
   padding: 1em 1.5em;
-  margin: 2em 0;
   border: solid 2px #000;
 }
 .admin-settings .demo .is-style-border-double {
   padding: 1em 1.5em;
-  margin: 2em 0;
   border: double 4px #000;
 }
 .admin-settings .demo .is-style-border-dashed {
   padding: 1em 1.5em;
-  margin: 2em 0;
   border: dashed 2px #000;
 }
 .admin-settings .demo .is-style-border-dotted {
   padding: 1em 1.5em;
-  margin: 2em 0;
   border: dotted 4px #000;
+}
+.admin-settings .demo .is-style-p-style-01 {
+  padding: 1em 1.5em;
+  background-image: repeating-linear-gradient(-45deg, #f2f3f7 0, #f2f3f7 3px, transparent 3px, transparent 6px);
+}
+.admin-settings .demo .is-style-p-style-02 {
+  padding: 1em 1.5em;
+  background-image: linear-gradient(0deg, transparent 19px, #eae5e3 20px), linear-gradient(90deg, transparent 19px, #eae5e3 20px);
+  background-size: 20px 20px;
 }
 .admin-settings .demo .no-border {
   border: none;
@@ -16685,23 +16690,28 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-border-solid {
   padding: 1em 1.5em;
-  margin: 2em 0;
   border: solid 2px #000;
 }
 .admin-settings .demo .is-style-border-double {
   padding: 1em 1.5em;
-  margin: 2em 0;
   border: double 4px #000;
 }
 .admin-settings .demo .is-style-border-dashed {
   padding: 1em 1.5em;
-  margin: 2em 0;
   border: dashed 2px #000;
 }
 .admin-settings .demo .is-style-border-dotted {
   padding: 1em 1.5em;
-  margin: 2em 0;
   border: dotted 4px #000;
+}
+.admin-settings .demo .is-style-p-style-01 {
+  padding: 1em 1.5em;
+  background-image: repeating-linear-gradient(-45deg, #f2f3f7 0, #f2f3f7 3px, transparent 3px, transparent 6px);
+}
+.admin-settings .demo .is-style-p-style-02 {
+  padding: 1em 1.5em;
+  background-image: linear-gradient(0deg, transparent 19px, #eae5e3 20px), linear-gradient(90deg, transparent 19px, #eae5e3 20px);
+  background-size: 20px 20px;
 }
 .admin-settings .demo .no-border {
   border: none;
