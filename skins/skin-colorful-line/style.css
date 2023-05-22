@@ -658,14 +658,10 @@ a.page-numbers:hover:after{
 
 .toc ul.toc-list>li>a, .toc ol.toc-list>li>a {
     font-weight: bold;
-    padding: 0 0 0 2em;
 }
 
-.toc ul li a, .toc ol li a {
-  display: block;
+.toc ul li, .toc ol li {
   border-bottom: 1px solid rgba(0, 134, 171, 0.2);
-  margin-left: -30px;
-  padding-left: 2em;
 }
 
 .toc ul, .toc ol {
