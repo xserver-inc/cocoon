@@ -660,10 +660,6 @@ a.page-numbers:hover:after{
     font-weight: bold;
 }
 
-.toc ul li, .toc ol li {
-  border-bottom: 1px solid rgba(0, 134, 171, 0.2);
-}
-
 .toc ul, .toc ol {
   margin: 0px 0px 0px 4px;
 }
