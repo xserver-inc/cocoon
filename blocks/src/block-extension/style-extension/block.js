@@ -23,11 +23,11 @@ function addCustomAttributes( settings ) {
     settings.attributes = Object.assign( settings.attributes, {
       extraStyle: {
         type: 'string',
-        defaut: '',
+        defaut: 'p-style-default',
       },
       extraBorder: {
         type: 'string',
-        default: '',
+        default: 'border-default',
       },
     } );
   }
@@ -42,13 +42,12 @@ addFilter(
 // Edit拡張
 const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
   return ( props ) => {
-    console.log(props);
     if ( allowedBlocks.includes( props.name ) && props.isSelected ) {
       const { setAttributes, isSelected, attributes } = props;
 
       const extraStyles = [
         {
-          style: '',
+          style: 'p-style-default',
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
@@ -79,7 +78,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
 
       const extraBorders = [
         {
-          style: '',
+          style: 'border-default',
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
@@ -92,21 +91,21 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         },
         {
           style: 'border-dashed',
-          buttonText: __( '点線', THEME_NAME ),
+          buttonText: __( 'ダッシュ', THEME_NAME ),
         },
         {
           style: 'border-dotted',
-          buttonText: __( '破線', THEME_NAME ),
+          buttonText: __( 'ドット', THEME_NAME ),
         },
       ];
 
       const { className, extraStyle, extraBorder } = attributes;
 
       if ( extraStyle === null ) {
-        setAttributes( { extraStyle: '' } );
+        setAttributes( { extraStyle: 'p-style-default' } );
       }
       if ( extraBorder === null ) {
-        setAttributes( { extraBorder: '' } );
+        setAttributes( { extraBorder: 'border-default' } );
       }
 
       return (
@@ -200,12 +199,8 @@ const applyAttributesToBlock = createHigherOrderComponent(
             { ...props }
             className={ classnames(
               className,
-              {
-                ['is-style-' + extraStyle]: !! extraStyle,
-                ['is-style-' + extraBorder]:  !! extraBorder,
-                ['has-border']: !! extraBorder,
-                ['has-box-style']:  !! extraStyle,
-              }
+              'is-style-' + extraStyle,
+              'is-style-' + extraBorder
             ) }
           />
         );
@@ -230,12 +225,8 @@ const addCustomSave = ( props, blockType, attributes ) => {
 
     props.className = classnames(
       className,
-      {
-        ['is-style-' + extraStyle]: !! extraStyle,
-        ['is-style-' + extraBorder]:  !! extraBorder,
-        ['has-border']: !! extraBorder,
-        ['has-box-style']:  !! extraStyle,
-      }
+      'is-style-' + extraStyle,
+      'is-style-' + extraBorder
     );
 
     return Object.assign( props );
