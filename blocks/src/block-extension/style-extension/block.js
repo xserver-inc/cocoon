@@ -1,14 +1,8 @@
 import { addFilter } from '@wordpress/hooks';
-import { debounce, createHigherOrderComponent } from '@wordpress/compose';
+import { useDebounce, createHigherOrderComponent } from '@wordpress/compose';
 import { Fragment, useState } from '@wordpress/element';
 import { InspectorControls } from '@wordpress/block-editor';
-import {
-  PanelBody,
-  Button,
-  Popover,
-  BlockStylesPreviewPanel,
-  BlockStyles,
-} from '@wordpress/components';
+import { PanelBody, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 import classnames from 'classnames';
@@ -43,6 +37,7 @@ addFilter(
 const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
   return ( props ) => {
     if ( allowedBlocks.includes( props.name ) && props.isSelected ) {
+      const { setAttributes, isSelected, attributes } = props;
       const { className, extraStyle, extraBorder } = attributes;
 
       const extraStyles = [
@@ -113,21 +108,41 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                   <div className="block-editor-block-styles__variants">
                     { extraBorders.map( ( border ) => {
                       return (
-                        <Button
-                          className={ classnames(
-                            'block-editor-block-styles__item',
-                            {
-                              'is-active': border.style === extraBorder,
+                        <div class="__btnBox">
+                          <Button
+                            className={ classnames(
+                              'block-editor-block-styles__item',
+                              {
+                                'is-active': border.style === extraBorder,
+                              }
+                            ) }
+                            variant="secondary"
+                            label={ border.buttonText }
+                            onClick={ () =>
+                              setAttributes( { extraBorder: border.style } )
                             }
-                          ) }
-                          variant="secondary"
-                          label={ border.buttonText }
-                          onClick={ () =>
-                            setAttributes( { extraBorder: border.style } )
-                          }
-                        >
-                          { border.buttonText }
-                        </Button>
+                          >
+                          </Button>
+                          <label
+                            class="__labelBtn"
+                            data-selected={
+                              border.style === extraBorder ? true : false
+                            }
+                          >
+                            <span class="__prevWrap">
+                              <span
+                                class={ classnames( '__prev', {
+                                  [ 'is-style' + border.style ]:
+                                    !! border.style,
+                                  [ 'has-border' ]: border.style,
+                                } ) }
+                              ></span>
+                            </span>
+                            <span class="__prevTitle">
+                              { border.buttonText }
+                            </span>
+                          </label>
+                        </div>
                       );
                     } ) }
                   </div>
