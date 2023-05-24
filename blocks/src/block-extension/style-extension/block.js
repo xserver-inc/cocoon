@@ -47,7 +47,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
 
       const extraStyles = [
         {
-          style: 'p-style-default',
+          style: null,
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
@@ -78,7 +78,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
 
       const extraBorders = [
         {
-          style: 'border-default',
+          style: null,
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
