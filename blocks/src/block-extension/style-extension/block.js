@@ -43,7 +43,7 @@ addFilter(
 const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
   return ( props ) => {
     if ( allowedBlocks.includes( props.name ) && props.isSelected ) {
-      const { setAttributes, isSelected, attributes } = props;
+      const { className, extraStyle, extraBorder } = attributes;
 
       const extraStyles = [
         {
@@ -98,15 +98,6 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( 'ドット', THEME_NAME ),
         },
       ];
-
-      const { className, extraStyle, extraBorder } = attributes;
-
-      if ( extraStyle === null ) {
-        setAttributes( { extraStyle: 'p-style-default' } );
-      }
-      if ( extraBorder === null ) {
-        setAttributes( { extraBorder: 'border-default' } );
-      }
 
       return (
         <Fragment>
