@@ -198,8 +198,10 @@ const applyAttributesToBlock = createHigherOrderComponent(
           <BlockListBlock
             { ...props }
             className={ classnames( className, {
-              [ `is-style-${ extraStyle }` ]: extraStyle,
-              [ `is-style-${ extraBorder }` ]: extraBorder,
+              [ 'is-style' + extraStyle ]: !! extraStyle,
+              [ 'is-style' + extraBorder ]: !! extraBorder,
+              [ 'has-border' ]: extraBorder,
+              [ 'has-box-style' ]: extraStyle,
             } ) }
           />
         );
@@ -223,8 +225,10 @@ const addCustomSave = ( props, blockType, attributes ) => {
     const { extraStyle, extraBorder } = attributes;
 
     props.className = classnames( className, {
-      [ `is-style-${ extraStyle }` ]: extraStyle,
-      [ `is-style-${ extraBorder }` ]: extraBorder,
+      [ 'is-style' + extraStyle ]: !! extraStyle,
+      [ 'is-style' + extraBorder ]: !! extraBorder,
+      [ 'has-border' ]: extraBorder,
+      [ 'has-box-style' ]: extraStyle,
     } );
 
     return Object.assign( props );
