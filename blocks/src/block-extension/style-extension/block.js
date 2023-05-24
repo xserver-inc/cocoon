@@ -23,11 +23,11 @@ function addCustomAttributes( settings ) {
     settings.attributes = Object.assign( settings.attributes, {
       extraStyle: {
         type: 'string',
-        defaut: 'p-style-default',
+        defaut: '',
       },
       extraBorder: {
         type: 'string',
-        default: 'border-default',
+        default: '',
       },
     } );
   }
@@ -197,11 +197,10 @@ const applyAttributesToBlock = createHigherOrderComponent(
         return (
           <BlockListBlock
             { ...props }
-            className={ classnames(
-              className,
-              'is-style-' + extraStyle,
-              'is-style-' + extraBorder
-            ) }
+            className={ classnames( className, {
+              [ `is-style-${ extraStyle }` ]: extraStyle,
+              [ `is-style-${ extraBorder }` ]: extraBorder,
+            } ) }
           />
         );
       }
@@ -223,11 +222,10 @@ const addCustomSave = ( props, blockType, attributes ) => {
     const { className } = props;
     const { extraStyle, extraBorder } = attributes;
 
-    props.className = classnames(
-      className,
-      'is-style-' + extraStyle,
-      'is-style-' + extraBorder
-    );
+    props.className = classnames( className, {
+      [ `is-style-${ extraStyle }` ]: extraStyle,
+      [ `is-style-${ extraBorder }` ]: extraBorder,
+    } );
 
     return Object.assign( props );
   }
