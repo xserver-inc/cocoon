@@ -1350,8 +1350,6 @@ body.wp-admin {
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
-  font-size: 14px;
-  padding-top: 6px;
 }
 .admin-settings .demo .navi {
   background-color: var(--cocoon-white-color);
@@ -9279,8 +9277,6 @@ body.wp-admin {
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
-  font-size: 14px;
-  padding-top: 6px;
 }
 .admin-settings .demo .navi {
   background-color: var(--cocoon-white-color);
