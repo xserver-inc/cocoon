@@ -178,7 +178,7 @@ class CTABoxWidgetItem extends WP_Widget {
         'btn-orange' => __( 'オレンジ', THEME_NAME ),
         'btn-deep-orange' => __( 'ディープオレンジ', THEME_NAME ),
         'btn-brown' => __( '茶色', THEME_NAME ),
-        'btn-grey' => __( '藍色', THEME_NAME ),
+        'btn-grey' => __( '灰色', THEME_NAME ),
       );
       generate_selectbox_tag($this->get_field_name('button_color_class'), $options, $button_color_class);
       ?>
