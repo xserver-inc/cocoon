@@ -17,7 +17,7 @@ function addCustomAttributes( settings ) {
     settings.attributes = Object.assign( settings.attributes, {
       extraStyle: {
         type: 'string',
-        defaut: '',
+        default: '',
       },
       extraBorder: {
         type: 'string',
@@ -42,7 +42,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
 
       const extraStyles = [
         {
-          style: null,
+          style: '',
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
@@ -73,7 +73,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
 
       const extraBorders = [
         {
-          style: null,
+          style: '',
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
@@ -94,6 +94,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         },
       ];
 
+      var index = 0;
       return (
         <Fragment>
           <BlockEdit { ...props } />
@@ -106,7 +107,8 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
               >
                 <div className="block-editor-block-styles">
                   <div className="block-editor-block-styles__variants style-buttons">
-                    { extraBorders.map( ( border, index ) => {
+                    {extraBorders.map((border) => {
+                      index++;
                       return (
                         <div class="__btnBox">
                           <Button
@@ -123,8 +125,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                             onClick={ () =>
                               setAttributes( { extraBorder: border.style } )
                             }
-                          >
-                          </Button>
+                          ></Button>
                           <label
                             for={ 'cocoon-dorder-button-' + index }
                             class="__labelBtn"
@@ -156,24 +157,46 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                 initialOpen={ false }
               >
                 <div className="block-editor-block-styles">
-                  <div className="block-editor-block-styles__variants">
-                    { extraStyles.map( ( style ) => {
+                  <div className="block-editor-block-styles__variants style-buttons">
+                    {extraStyles.map((style) => {
+                      index++
                       return (
-                        <Button
-                          className={ classnames(
-                            'block-editor-block-styles__item',
-                            {
-                              'is-active': style.style === extraStyle,
+                        <div class="__btnBox">
+                          <Button
+                            id={ 'cocoon-dorder-button-' + index }
+                            className={ classnames(
+                              'display-none',
+                              'block-editor-block-styles__item',
+                              {
+                                'is-active': style.style === extraStyle,
+                              }
+                            ) }
+                            variant="secondary"
+                            label={ style.buttonText }
+                            onClick={ () =>
+                              setAttributes( { extraStyle: style.style } )
                             }
-                          ) }
-                          variant="secondary"
-                          label={ style.buttonText }
-                          onClick={ () =>
-                            setAttributes( { extraStyle: style.style } )
-                          }
-                        >
-                          { style.buttonText }
-                        </Button>
+                          ></Button>
+                          <label
+                            for={ 'cocoon-dorder-button-' + index }
+                            class="__labelBtn"
+                            data-selected={
+                              style.style === extraStyle ? true : false
+                            }
+                          >
+                            <span class="__prevWrap editor-styles-wrapper">
+                              <span
+                                className={ classnames( '__prev', {
+                                  [ 'is-style-' + style.style ]: !! style.style,
+                                  [ 'has-box-style' ]: style.style,
+                                } ) }
+                              ></span>
+                            </span>
+                            <span class="__prevTitle">
+                              { style.buttonText }
+                            </span>
+                          </label>
+                        </div>
                       );
                     } ) }
                   </div>
