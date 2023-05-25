@@ -105,7 +105,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                 initialOpen={ false }
               >
                 <div className="block-editor-block-styles">
-                  <div className="block-editor-block-styles__variants">
+                  <div className="block-editor-block-styles__variants style-buttons">
                     { extraBorders.map( ( border ) => {
                       return (
                         <div class="__btnBox">
@@ -129,7 +129,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                               border.style === extraBorder ? true : false
                             }
                           >
-                            <span class="__prevWrap">
+                            <span class="__prevWrap editor-styles-wrapper">
                               <span
                                 className={ classnames( '__prev', {
                                   [ 'is-style-' + border.style ]:

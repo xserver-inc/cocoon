@@ -1525,3 +1525,33 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .editor-styles-wrapper [data-type="core/image"].aligncenter figcaption {
   margin-top: 0 !important;
 }
+
+.style-buttons {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.style-buttons .__btnBox {
+  width: 48%;
+}
+.style-buttons .__labelBtn {
+  display: block;
+}
+.style-buttons .__prevWrap {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px #eceef0;
+  display: block;
+  padding: 6px;
+}
+.style-buttons .__prev {
+  height: 48px;
+  display: block;
+}
+.style-buttons .__prevTitle {
+  display: block;
+  font-size: 10px;
+  line-height: 1;
+  margin-top: 8px;
+  text-align: center;
+}

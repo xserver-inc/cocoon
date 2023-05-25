@@ -1283,3 +1283,35 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 // .btn-wrap-block a{
 //   pointer-events: none;
 // }
+
+.style-buttons{
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  // margin-right: -8px;
+  // padding-right: 8px;
+  .__btnBox{
+    width: 48%;
+  }
+  .__labelBtn {
+    display: block;
+  }
+  .__prevWrap {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px #eceef0;
+    display: block;
+    padding: 6px;
+  }
+  .__prev {
+    height: 48px;
+    display: block;
+  }
+  .__prevTitle {
+    display: block;
+    font-size: 10px;
+    line-height: 1;
+    margin-top: 8px;
+    text-align: center;
+  }
+}
