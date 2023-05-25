@@ -1,14 +1,8 @@
 import { addFilter } from '@wordpress/hooks';
-import { debounce, createHigherOrderComponent } from '@wordpress/compose';
+import { useDebounce, createHigherOrderComponent } from '@wordpress/compose';
 import { Fragment, useState } from '@wordpress/element';
 import { InspectorControls } from '@wordpress/block-editor';
-import {
-  PanelBody,
-  Button,
-  Popover,
-  BlockStylesPreviewPanel,
-  BlockStyles,
-} from '@wordpress/components';
+import { PanelBody, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 import classnames from 'classnames';
@@ -23,11 +17,11 @@ function addCustomAttributes( settings ) {
     settings.attributes = Object.assign( settings.attributes, {
       extraStyle: {
         type: 'string',
-        defaut: 'p-style-default',
+        defaut: '',
       },
       extraBorder: {
         type: 'string',
-        default: 'border-default',
+        default: '',
       },
     } );
   }
@@ -44,10 +38,11 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
   return ( props ) => {
     if ( allowedBlocks.includes( props.name ) && props.isSelected ) {
       const { setAttributes, isSelected, attributes } = props;
+      const { className, extraStyle, extraBorder } = attributes;
 
       const extraStyles = [
         {
-          style: 'p-style-default',
+          style: null,
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
@@ -78,7 +73,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
 
       const extraBorders = [
         {
-          style: 'border-default',
+          style: null,
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
@@ -99,15 +94,6 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         },
       ];
 
-      const { className, extraStyle, extraBorder } = attributes;
-
-      if ( extraStyle === null ) {
-        setAttributes( { extraStyle: 'p-style-default' } );
-      }
-      if ( extraBorder === null ) {
-        setAttributes( { extraBorder: 'border-default' } );
-      }
-
       return (
         <Fragment>
           <BlockEdit { ...props } />
@@ -122,21 +108,41 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                   <div className="block-editor-block-styles__variants">
                     { extraBorders.map( ( border ) => {
                       return (
-                        <Button
-                          className={ classnames(
-                            'block-editor-block-styles__item',
-                            {
-                              'is-active': border.style === extraBorder,
+                        <div class="__btnBox">
+                          <Button
+                            className={ classnames(
+                              'block-editor-block-styles__item',
+                              {
+                                'is-active': border.style === extraBorder,
+                              }
+                            ) }
+                            variant="secondary"
+                            label={ border.buttonText }
+                            onClick={ () =>
+                              setAttributes( { extraBorder: border.style } )
                             }
-                          ) }
-                          variant="secondary"
-                          label={ border.buttonText }
-                          onClick={ () =>
-                            setAttributes( { extraBorder: border.style } )
-                          }
-                        >
-                          { border.buttonText }
-                        </Button>
+                          >
+                          </Button>
+                          <label
+                            class="__labelBtn"
+                            data-selected={
+                              border.style === extraBorder ? true : false
+                            }
+                          >
+                            <span class="__prevWrap">
+                              <span
+                                class={ classnames( '__prev', {
+                                  [ 'is-style' + border.style ]:
+                                    !! border.style,
+                                  [ 'has-border' ]: border.style,
+                                } ) }
+                              ></span>
+                            </span>
+                            <span class="__prevTitle">
+                              { border.buttonText }
+                            </span>
+                          </label>
+                        </div>
                       );
                     } ) }
                   </div>
@@ -197,11 +203,12 @@ const applyAttributesToBlock = createHigherOrderComponent(
         return (
           <BlockListBlock
             { ...props }
-            className={ classnames(
-              className,
-              'is-style-' + extraStyle,
-              'is-style-' + extraBorder
-            ) }
+            className={ classnames( className, {
+              [ 'is-style' + extraStyle ]: !! extraStyle,
+              [ 'is-style' + extraBorder ]: !! extraBorder,
+              [ 'has-border' ]: extraBorder,
+              [ 'has-box-style' ]: extraStyle,
+            } ) }
           />
         );
       }
@@ -223,11 +230,12 @@ const addCustomSave = ( props, blockType, attributes ) => {
     const { className } = props;
     const { extraStyle, extraBorder } = attributes;
 
-    props.className = classnames(
-      className,
-      'is-style-' + extraStyle,
-      'is-style-' + extraBorder
-    );
+    props.className = classnames( className, {
+      [ 'is-style' + extraStyle ]: !! extraStyle,
+      [ 'is-style' + extraBorder ]: !! extraBorder,
+      [ 'has-border' ]: extraBorder,
+      [ 'has-box-style' ]: extraStyle,
+    } );
 
     return Object.assign( props );
   }
