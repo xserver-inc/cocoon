@@ -117,16 +117,9 @@ div.sidebar {
   display: none;
 }
 
-.mblt-header-mobile-buttons {
-  margin-top: 46px;
-}
 
-.mblt-footer-mobile-buttons {
-  margin-bottom: 50px;
-}
-
+.mblt-footer-mobile-buttons,
 .mblt-header-and-footer-mobile-buttons {
-  margin-top: 46px;
   margin-bottom: 50px;
 }
 
@@ -193,21 +186,7 @@ div.sidebar {
   display: block;
 }
 
-//管理バーとヘッダーモバイルボタンとの兼ね合い
-.admin-bar .mobile-header-menu-buttons {
-  margin-top: 32px;
-}
-
-.admin-bar.mblt-header-mobile-buttons,
-.admin-bar.mblt-header-and-footer-mobile-buttons {
-  margin-top: 32px;
-}
-
-.admin-bar .mobile-header-menu-buttons {
-  margin-top: 0;
-}
-
-.admin-bar.mblt-header-mobile-buttons,
-.admin-bar.mblt-header-and-footer-mobile-buttons {
-  margin-top: 0;
+// アドミンバーが表示されている場合は上に余白を取る
+html:has(.admin-bar.mblt-header-mobile-buttons ,.admin-bar.mblt-header-and-footer-mobile-buttons) {
+  margin-top: 53px!important;
 }
