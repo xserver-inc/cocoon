@@ -131,8 +131,8 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                           >
                             <span class="__prevWrap">
                               <span
-                                class={ classnames( '__prev', {
-                                  [ 'is-style' + border.style ]:
+                                className={ classnames( '__prev', {
+                                  [ 'is-style-' + border.style ]:
                                     !! border.style,
                                   [ 'has-border' ]: border.style,
                                 } ) }
@@ -204,8 +204,8 @@ const applyAttributesToBlock = createHigherOrderComponent(
           <BlockListBlock
             { ...props }
             className={ classnames( className, {
-              [ 'is-style' + extraStyle ]: !! extraStyle,
-              [ 'is-style' + extraBorder ]: !! extraBorder,
+              [ 'is-style-' + extraStyle ]: !! extraStyle,
+              [ 'is-style-' + extraBorder ]: !! extraBorder,
               [ 'has-border' ]: extraBorder,
               [ 'has-box-style' ]: extraStyle,
             } ) }
@@ -231,8 +231,8 @@ const addCustomSave = ( props, blockType, attributes ) => {
     const { extraStyle, extraBorder } = attributes;
 
     props.className = classnames( className, {
-      [ 'is-style' + extraStyle ]: !! extraStyle,
-      [ 'is-style' + extraBorder ]: !! extraBorder,
+      [ 'is-style-' + extraStyle ]: !! extraStyle,
+      [ 'is-style-' + extraBorder ]: !! extraBorder,
       [ 'has-border' ]: extraBorder,
       [ 'has-box-style' ]: extraStyle,
     } );
