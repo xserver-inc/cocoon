@@ -106,11 +106,13 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
               >
                 <div className="block-editor-block-styles">
                   <div className="block-editor-block-styles__variants style-buttons">
-                    { extraBorders.map( ( border ) => {
+                    { extraBorders.map( ( border, index ) => {
                       return (
                         <div class="__btnBox">
                           <Button
+                            id={ 'cocoon-dorder-button-' + index }
                             className={ classnames(
+                              'display-none',
                               'block-editor-block-styles__item',
                               {
                                 'is-active': border.style === extraBorder,
@@ -124,6 +126,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                           >
                           </Button>
                           <label
+                            for={ 'cocoon-dorder-button-' + index }
                             class="__labelBtn"
                             data-selected={
                               border.style === extraBorder ? true : false

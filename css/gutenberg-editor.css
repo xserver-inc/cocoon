@@ -1531,16 +1531,24 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
+.style-buttons .display-none {
+  display: none;
+}
 .style-buttons .__btnBox {
   width: 48%;
 }
 .style-buttons .__labelBtn {
   display: block;
+  padding: 4px;
+  border-radius: 3px;
+}
+.style-buttons .__labelBtn[data-selected=true] {
+  box-shadow: 0 0 0 1px #5e6670;
 }
 .style-buttons .__prevWrap {
   background: #fff;
   border-radius: 3px;
-  box-shadow: 0 0 0 1px #eceef0;
+  box-shadow: 0 0 0 1px #e5e8eb;
   display: block;
   padding: 6px;
 }

@@ -1288,18 +1288,24 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  // margin-right: -8px;
-  // padding-right: 8px;
+  .display-none{
+    display: none;
+  }
   .__btnBox{
     width: 48%;
   }
   .__labelBtn {
     display: block;
+    padding: 4px;
+    border-radius: 3px;
+    &[data-selected=true]{
+      box-shadow: 0 0 0 1px #5e6670;
+    }
   }
   .__prevWrap {
     background: #fff;
     border-radius: 3px;
-    box-shadow: 0 0 0 1px #eceef0;
+    box-shadow: 0 0 0 1px #e5e8eb;
     display: block;
     padding: 6px;
   }
