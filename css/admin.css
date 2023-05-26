@@ -2727,6 +2727,9 @@ body.wp-admin {
 .admin-settings .demo .border-partition .a-wrap:first-of-type {
   border-top: 2px dotted var(--cocoon-x-thin-color);
 }
+.admin-settings .demo .border-partition.swiper-horizontal .a-wrap {
+  border: 0;
+}
 .admin-settings .demo .border-square a {
   border-radius: var(--cocoon-basic-border-radius);
   border: 1px solid var(--cocoon-thin-color);
@@ -10653,6 +10656,9 @@ body.wp-admin {
 }
 .admin-settings .demo .border-partition .a-wrap:first-of-type {
   border-top: 2px dotted var(--cocoon-x-thin-color);
+}
+.admin-settings .demo .border-partition.swiper-horizontal .a-wrap {
+  border: 0;
 }
 .admin-settings .demo .border-square a {
   border-radius: var(--cocoon-basic-border-radius);
