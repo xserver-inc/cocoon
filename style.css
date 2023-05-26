@@ -10623,7 +10623,7 @@ _:-ms-lang(x), .mc-circle {
     display: block;
   }
 
-  html:has(.admin-bar.mblt-header-mobile-buttons, .admin-bar.mblt-header-and-footer-mobile-buttons) {
+  html:has(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
     margin-top: 53px !important;
   }
 }
