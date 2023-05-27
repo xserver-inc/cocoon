@@ -24,7 +24,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_AMP_ENABLE, is_amp_enable(), __("AMP機能を有効化する",THEME_NAME ));
+            generate_checkbox_tag(OP_AMP_ENABLE, is_amp_enable(), __('AMP機能を有効化する',THEME_NAME ).__('（非推奨）',THEME_NAME ));
             generate_tips_tag(__( '有効化することで、AMP機能が有効化され高速表示されます。※AMP対応するページは投稿・固定ページのみです。', THEME_NAME ));
             ?>
           </td>

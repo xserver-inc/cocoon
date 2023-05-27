@@ -173,6 +173,10 @@ label.screen-reader-text{
   }
 }
 
+.border-partition.swiper-horizontal .a-wrap {
+  border: 0;
+}
+
 .border-square a {
   border-radius: var(--cocoon-basic-border-radius);
   border: 1px solid var(--cocoon-thin-color);

@@ -850,8 +850,6 @@ img.emoji {
 .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
-  font-size: 14px;
-  padding-top: 6px;
 }
 
 /************************************
@@ -2442,6 +2440,10 @@ label.screen-reader-text {
 }
 .border-partition .a-wrap:first-of-type {
   border-top: 2px dotted var(--cocoon-x-thin-color);
+}
+
+.border-partition.swiper-horizontal .a-wrap {
+  border: 0;
 }
 
 .border-square a {
@@ -10603,16 +10605,8 @@ _:-ms-lang(x), .mc-circle {
     display: none;
   }
 
-  .mblt-header-mobile-buttons {
-    margin-top: 46px;
-  }
-
-  .mblt-footer-mobile-buttons {
-    margin-bottom: 50px;
-  }
-
+  .mblt-footer-mobile-buttons,
   .mblt-header-and-footer-mobile-buttons {
-    margin-top: 46px;
     margin-bottom: 50px;
   }
 
@@ -10664,22 +10658,8 @@ _:-ms-lang(x), .mc-circle {
     display: block;
   }
 
-  .admin-bar .mobile-header-menu-buttons {
-    margin-top: 32px;
-  }
-
-  .admin-bar.mblt-header-mobile-buttons,
-  .admin-bar.mblt-header-and-footer-mobile-buttons {
-    margin-top: 32px;
-  }
-
-  .admin-bar .mobile-header-menu-buttons {
-    margin-top: 0;
-  }
-
-  .admin-bar.mblt-header-mobile-buttons,
-  .admin-bar.mblt-header-and-footer-mobile-buttons {
-    margin-top: 0;
+  html:has(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
+    margin-top: 53px !important;
   }
 }
 @media screen and (max-width: 834px) {

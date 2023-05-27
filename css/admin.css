@@ -1350,8 +1350,6 @@ body.wp-admin {
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
-  font-size: 14px;
-  padding-top: 6px;
 }
 .admin-settings .demo .navi {
   background-color: var(--cocoon-white-color);
@@ -2728,6 +2726,9 @@ body.wp-admin {
 }
 .admin-settings .demo .border-partition .a-wrap:first-of-type {
   border-top: 2px dotted var(--cocoon-x-thin-color);
+}
+.admin-settings .demo .border-partition.swiper-horizontal .a-wrap {
+  border: 0;
 }
 .admin-settings .demo .border-square a {
   border-radius: var(--cocoon-basic-border-radius);
@@ -9304,8 +9305,6 @@ body.wp-admin {
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
-  font-size: 14px;
-  padding-top: 6px;
 }
 .admin-settings .demo .navi {
   background-color: var(--cocoon-white-color);
@@ -10682,6 +10681,9 @@ body.wp-admin {
 }
 .admin-settings .demo .border-partition .a-wrap:first-of-type {
   border-top: 2px dotted var(--cocoon-x-thin-color);
+}
+.admin-settings .demo .border-partition.swiper-horizontal .a-wrap {
+  border: 0;
 }
 .admin-settings .demo .border-square a {
   border-radius: var(--cocoon-basic-border-radius);
@@ -17775,14 +17777,8 @@ body.wp-admin {
   .admin-settings .demo .no-mobile-header-logo #header .logo-header {
     display: none;
   }
-  .admin-settings .demo .mblt-header-mobile-buttons {
-    margin-top: 46px;
-  }
-  .admin-settings .demo .mblt-footer-mobile-buttons {
-    margin-bottom: 50px;
-  }
+  .admin-settings .demo .mblt-footer-mobile-buttons,
   .admin-settings .demo .mblt-header-and-footer-mobile-buttons {
-    margin-top: 46px;
     margin-bottom: 50px;
   }
   .admin-settings .demo .scrollable-mobile-buttons {
@@ -17825,19 +17821,8 @@ body.wp-admin {
   .admin-settings .demo .slicknav_menu {
     display: block;
   }
-  .admin-settings .demo .admin-bar .mobile-header-menu-buttons {
-    margin-top: 32px;
-  }
-  .admin-settings .demo .admin-bar.mblt-header-mobile-buttons,
-  .admin-settings .demo .admin-bar.mblt-header-and-footer-mobile-buttons {
-    margin-top: 32px;
-  }
-  .admin-settings .demo .admin-bar .mobile-header-menu-buttons {
-    margin-top: 0;
-  }
-  .admin-settings .demo .admin-bar.mblt-header-mobile-buttons,
-  .admin-settings .demo .admin-bar.mblt-header-and-footer-mobile-buttons {
-    margin-top: 0;
+  .admin-settings .demo html:has(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
+    margin-top: 53px !important;
   }
 }
 @media screen and (max-width: 834px) {

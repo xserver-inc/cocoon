@@ -33,7 +33,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_PWA_ENABLE, is_pwa_enable(), __("PWAを有効化する",THEME_NAME ));
+            generate_checkbox_tag(OP_PWA_ENABLE, is_pwa_enable(), __("PWAを有効化する",THEME_NAME ).__('（非推奨）',THEME_NAME ));
             generate_tips_tag(__( '有効化することで、PWA機能が有効化されスマートフォンからサイトがアプリのように利用できます。', THEME_NAME ));
             ?>
             <div class="indent">
