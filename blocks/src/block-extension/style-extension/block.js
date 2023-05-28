@@ -74,7 +74,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( '角括弧', THEME_NAME ),
         },
         {
-          style: 'p-style-07',
+          style: 'cross-line',
           buttonText: __( '交差線', THEME_NAME ),
         },
         {
@@ -90,8 +90,84 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( 'クリップ', THEME_NAME ),
         },
         {
+          style: 'stapler-box',
+          buttonText: __( 'ホチキス', THEME_NAME ),
+        },
+        {
+          style: 'stapler-top-left-box',
+          buttonText: __( 'ホチキス左上', THEME_NAME ),
+        },
+        {
+          style: 'hole-punch-box',
+          buttonText: __( '穴あけパンチ', THEME_NAME ),
+        },
+        {
           style: 'handwritten-box',
           buttonText: __( '手書き風', THEME_NAME ),
+        },
+        {
+          style: 'border-top-box',
+          buttonText: __( '上線', THEME_NAME ),
+        },
+        {
+          style: 'border-left-box',
+          buttonText: __( '付箋', THEME_NAME ),
+        },
+        {
+          style: 'balloon-left-box',
+          buttonText: __( '左吹き出し', THEME_NAME ),
+        },
+        {
+          style: 'balloon-right-box',
+          buttonText: __( '右吹き出し', THEME_NAME ),
+        },
+        {
+          style: 'balloon-top-box',
+          buttonText: __( '上吹き出し', THEME_NAME ),
+        },
+        {
+          style: 'balloon-bottom-box',
+          buttonText: __( '下吹き出し', THEME_NAME ),
+        },
+        {
+          style: 'information-box',
+          buttonText: __( '情報', THEME_NAME ),
+        },
+        {
+          style: 'question-box',
+          buttonText: __( '質問', THEME_NAME ),
+        },
+        {
+          style: 'alert-box',
+          buttonText: __( 'アラート', THEME_NAME ),
+        },
+        {
+          style: 'memo-box',
+          buttonText: __( 'メモ', THEME_NAME ),
+        },
+        {
+          style: 'comment-box',
+          buttonText: __( 'コメント', THEME_NAME ),
+        },
+        {
+          style: 'ok-box',
+          buttonText: __( 'OK', THEME_NAME ),
+        },
+        {
+          style: 'ng-box',
+          buttonText: __( 'NG', THEME_NAME ),
+        },
+        {
+          style: 'good-box',
+          buttonText: __( 'グッド', THEME_NAME ),
+        },
+        {
+          style: 'bad-box',
+          buttonText: __( 'バッド', THEME_NAME ),
+        },
+        {
+          style: 'profile-box',
+          buttonText: __( 'プロフィール', THEME_NAME ),
         },
       ];
 
@@ -110,55 +186,67 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         },
         {
           style: 'border-dashed',
-          buttonText: __( 'ダッシュ', THEME_NAME ),
+          buttonText: __( '破線', THEME_NAME ),
         },
         {
           style: 'border-dotted',
-          buttonText: __( 'ドット', THEME_NAME ),
+          buttonText: __( '点線', THEME_NAME ),
         },
         {
           style: 'border-thin-and-thick',
           buttonText: __( '薄太', THEME_NAME ),
         },
         {
+          style: 'border-convex',
+          buttonText: __( '微凸', THEME_NAME ),
+        },
+        {
           style: 'border-radius-s-solid',
-          buttonText: __( '実線（角丸小）', THEME_NAME ),
+          buttonText: __( '実線(角丸小)', THEME_NAME ),
         },
         {
           style: 'border-radius-s-double',
-          buttonText: __( '二重線（角丸小）', THEME_NAME ),
+          buttonText: __( '二重線(角丸小)', THEME_NAME ),
         },
         {
           style: 'border-radius-s-dashed',
-          buttonText: __( 'ダッシュ（角丸小）', THEME_NAME ),
+          buttonText: __( '破線(角丸小)', THEME_NAME ),
         },
         {
           style: 'border-radius-s-dotted',
-          buttonText: __( 'ドット（角丸小）', THEME_NAME ),
+          buttonText: __( '点線(角丸小)', THEME_NAME ),
         },
         {
           style: 'border-radius-s-thin-and-thick',
-          buttonText: __( '薄太（角丸小）', THEME_NAME ),
+          buttonText: __( '薄太(角丸小)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-convex',
+          buttonText: __( '微凸(角丸小)', THEME_NAME ),
         },
         {
           style: 'border-radius-l-solid',
-          buttonText: __( '実線（角丸大）', THEME_NAME ),
+          buttonText: __( '実線(角丸大)', THEME_NAME ),
         },
         {
           style: 'border-radius-l-double',
-          buttonText: __( '二重線（角丸大）', THEME_NAME ),
+          buttonText: __( '二重線(角丸大)', THEME_NAME ),
         },
         {
           style: 'border-radius-l-dashed',
-          buttonText: __( 'ダッシュ（角丸大）', THEME_NAME ),
+          buttonText: __( '破線(角丸大)', THEME_NAME ),
         },
         {
           style: 'border-radius-l-dotted',
-          buttonText: __( 'ドット（角丸大）', THEME_NAME ),
+          buttonText: __( '点線(角丸大)', THEME_NAME ),
         },
         {
           style: 'border-radius-l-thin-and-thick',
-          buttonText: __( '薄太（角丸大）', THEME_NAME ),
+          buttonText: __( '薄太(角丸大)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-convex',
+          buttonText: __( '微凸(角丸大)', THEME_NAME ),
         },
       ];
 
@@ -173,12 +261,28 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                 title={ __( '[C] ボーダー設定', THEME_NAME ) }
                 initialOpen={ false }
               >
+                <div class="__clearBtn">
+                  <button
+                    type="button"
+                    class="components-button is-small"
+                    onClick={ () =>
+                      setAttributes( { extraBorder: '' } )
+                    }
+                  >
+                    <span class="dashicons dashicons-editor-removeformatting"></span>
+                    {__( 'ボーダーをクリア', THEME_NAME ) }
+                  </button>
+                </div>
                 <div className="block-editor-block-styles">
                   <div className="block-editor-block-styles__variants style-buttons">
                     {extraBorders.map((border) => {
                       index++;
                       return (
-                        <div class="__btnBox">
+                        <div
+                          className={classnames('__btnBox',
+                            {[ '__btnBoxDefault display-none' ]: ! border.style}
+                          )}
+                        >
                           <Button
                             id={ 'cocoon-dorder-button-' + index }
                             className={ classnames(
@@ -191,7 +295,13 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                             variant="secondary"
                             label={ border.buttonText }
                             onClick={ () =>
-                              setAttributes( { extraBorder: border.style } )
+                              {
+                                if (border.style === extraBorder) {
+                                  setAttributes( { extraBorder: '' } )
+                                } else {
+                                  setAttributes( { extraBorder: border.style } )
+                                }
+                              }
                             }
                           ></Button>
                           <label
@@ -219,17 +329,45 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                     } ) }
                   </div>
                 </div>
+                <div class="__clearBtn">
+                  <button
+                    type="button"
+                    class="components-button is-small"
+                    onClick={ () =>
+                      setAttributes( { extraBorder: '' } )
+                    }
+                  >
+                    <span class="dashicons dashicons-editor-removeformatting"></span>
+                    {__( 'ボーダーをクリア', THEME_NAME ) }
+                  </button>
+                </div>
               </PanelBody>
               <PanelBody
                 title={ __( '[C] スタイル', THEME_NAME ) }
                 initialOpen={ false }
               >
+                <div class="__clearBtn">
+                  <button
+                    type="button"
+                    class="components-button is-small"
+                    onClick={ () =>
+                      setAttributes( { extraStyle: '' } )
+                    }
+                  >
+                    <span class="dashicons dashicons-editor-removeformatting"></span>
+                    {__( 'スタイルをクリア', THEME_NAME ) }
+                  </button>
+                </div>
                 <div className="block-editor-block-styles">
                   <div className="block-editor-block-styles__variants style-buttons">
                     {extraStyles.map((style) => {
                       index++
                       return (
-                        <div class="__btnBox">
+                        <div
+                          className={classnames('__btnBox',
+                            {[ '__btnBoxDefault display-none' ]: ! style.style}
+                          )}
+                        >
                           <Button
                             id={ 'cocoon-dorder-button-' + index }
                             className={ classnames(
@@ -242,7 +380,13 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                             variant="secondary"
                             label={ style.buttonText }
                             onClick={ () =>
-                              setAttributes( { extraStyle: style.style } )
+                              {
+                                if (style.style === extraStyle) {
+                                  setAttributes( { extraStyle: '' } )
+                                } else {
+                                  setAttributes( { extraStyle: style.style } )
+                                }
+                              }
                             }
                           ></Button>
                           <label
@@ -268,6 +412,18 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                       );
                     } ) }
                   </div>
+                </div>
+                <div class="__clearBtn">
+                  <button
+                    type="button"
+                    class="components-button is-small"
+                    onClick={ () =>
+                      setAttributes( { extraStyle: '' } )
+                    }
+                  >
+                    <span class="dashicons dashicons-editor-removeformatting"></span>
+                    {__( 'スタイルをクリア', THEME_NAME ) }
+                  </button>
                 </div>
               </PanelBody>
             </InspectorControls>
