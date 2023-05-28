@@ -46,28 +46,52 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
-          style: 'p-style-01',
+          style: 'light-background-box',
+          buttonText: __( '薄背景', THEME_NAME ),
+        },
+        {
+          style: 'stripe-box',
           buttonText: __( 'ストライプ', THEME_NAME ),
         },
         {
-          style: 'p-style-02',
-          buttonText: __( '方眼', THEME_NAME ),
+          style: 'section-paper-box',
+          buttonText: __( '方眼紙', THEME_NAME ),
         },
         {
-          style: 'p-style-03',
-          buttonText: __( '角に折り目', THEME_NAME ),
+          style: 'checkered-box',
+          buttonText: __( 'チェック', THEME_NAME ),
         },
         {
-          style: 'p-style-04',
-          buttonText: __( 'スティッチ', THEME_NAME ),
+          style: 'stitch-box',
+          buttonText: __( 'ステッチ', THEME_NAME ),
         },
         {
-          style: 'p-style-05',
+          style: 'square-brackets-box',
           buttonText: __( 'かぎ括弧', THEME_NAME ),
         },
         {
-          style: 'p-style-06',
-          buttonText: __( 'かぎ括弧(大)', THEME_NAME ),
+          style: 'parenthetic-box',
+          buttonText: __( '角括弧', THEME_NAME ),
+        },
+        {
+          style: 'p-style-07',
+          buttonText: __( '交差線', THEME_NAME ),
+        },
+        {
+          style: 'p-style-08',
+          buttonText: __( 'ずれた二重線', THEME_NAME ),
+        },
+        {
+          style: 'triangle-box',
+          buttonText: __( '角三角', THEME_NAME ),
+        },
+        {
+          style: 'clip-box',
+          buttonText: __( 'クリップ', THEME_NAME ),
+        },
+        {
+          style: 'handwritten-box',
+          buttonText: __( '手書き風', THEME_NAME ),
         },
       ];
 
@@ -91,6 +115,50 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         {
           style: 'border-dotted',
           buttonText: __( 'ドット', THEME_NAME ),
+        },
+        {
+          style: 'border-thin-and-thick',
+          buttonText: __( '薄太', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-solid',
+          buttonText: __( '実線（角丸小）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-double',
+          buttonText: __( '二重線（角丸小）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-dashed',
+          buttonText: __( 'ダッシュ（角丸小）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-dotted',
+          buttonText: __( 'ドット（角丸小）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-thin-and-thick',
+          buttonText: __( '薄太（角丸小）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-solid',
+          buttonText: __( '実線（角丸大）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-double',
+          buttonText: __( '二重線（角丸大）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-dashed',
+          buttonText: __( 'ダッシュ（角丸大）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-dotted',
+          buttonText: __( 'ドット（角丸大）', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-thin-and-thick',
+          buttonText: __( '薄太（角丸大）', THEME_NAME ),
         },
       ];
 

@@ -1,3 +1,12 @@
+//ボックスのスタイル装飾
+.has-box-style{
+  padding: var(--cocoon-box-padding);
+}
+//ボックスのボーダー装飾
+.has-border{
+  padding: var(--cocoon-box-padding);
+}
+
 /*拡張クラスを追加するスタイルシート*/
 %badge{
   color: var(--cocoon-white-color);
