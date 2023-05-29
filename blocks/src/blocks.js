@@ -115,8 +115,13 @@ registerCocoonBlocks();
 
 //デフォルトブロックの拡張
 import './custom/code/block.js';
+
+// ボーダー拡張
 import './block-extension/style-extension/border01.js';
+
+// スタイル拡張
 import './block-extension/style-extension/style01.js';
+import './block-extension/style-extension/style02.js';
 
 //レイアウト
 import './layout/column-children/block.js';
