@@ -2077,6 +2077,10 @@ body.wp-admin {
   padding: 3px 5px;
   white-space: nowrap;
 }
+.admin-settings .demo .scrollable-table .has-fixed-layout th,
+.admin-settings .demo .scrollable-table .has-fixed-layout td {
+  white-space: normal;
+}
 .admin-settings .demo .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
@@ -10006,6 +10010,10 @@ body.wp-admin {
 .admin-settings .demo .scrollable-table td {
   padding: 3px 5px;
   white-space: nowrap;
+}
+.admin-settings .demo .scrollable-table .has-fixed-layout th,
+.admin-settings .demo .scrollable-table .has-fixed-layout td {
+  white-space: normal;
 }
 .admin-settings .demo .scrollable-table {
   overflow-x: auto !important;

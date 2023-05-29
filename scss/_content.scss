@@ -165,6 +165,12 @@ table {
   white-space: nowrap;
 }
 
+//テーブルブロックデフォルト機能の「表のセル幅を固定」を有効にした場合は横スクロール表示しない
+.scrollable-table .has-fixed-layout th,
+.scrollable-table .has-fixed-layout td {
+  white-space: normal;
+}
+
 .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;

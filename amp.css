@@ -1644,6 +1644,11 @@ table td {
   white-space: nowrap;
 }
 
+.scrollable-table .has-fixed-layout th,
+.scrollable-table .has-fixed-layout td {
+  white-space: normal;
+}
+
 .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
