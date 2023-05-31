@@ -7244,6 +7244,10 @@ body.wp-admin {
   font-family: FontAwesome;
   line-height: 100%;
 }
+.admin-settings .demo .font-awesome-5 .fb-like-balloon-body::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+}
 .admin-settings .demo .fb-like-balloon-button {
   background-color: #f3f3f3;
   width: 100px;
@@ -15177,6 +15181,10 @@ body.wp-admin {
   font-size: 50px;
   font-family: FontAwesome;
   line-height: 100%;
+}
+.admin-settings .demo .font-awesome-5 .fb-like-balloon-body::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
 }
 .admin-settings .demo .fb-like-balloon-button {
   background-color: #f3f3f3;
