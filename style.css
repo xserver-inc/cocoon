@@ -11584,7 +11584,7 @@ _:-ms-lang(x), .mc-circle {
   #container #notice-area-wrap,
   #container #notice-area,
   #container #appeal,
-  #container #recommended,
+  #container .recommended,
   #container #carousel,
   #container #go-to-top {
     display: none !important;

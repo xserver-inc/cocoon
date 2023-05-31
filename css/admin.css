@@ -18595,7 +18595,7 @@ body.wp-admin {
   .admin-settings .demo #container #notice-area-wrap,
   .admin-settings .demo #container #notice-area,
   .admin-settings .demo #container #appeal,
-  .admin-settings .demo #container #recommended,
+  .admin-settings .demo #container .recommended,
   .admin-settings .demo #container #carousel,
   .admin-settings .demo #container #go-to-top {
     display: none !important;

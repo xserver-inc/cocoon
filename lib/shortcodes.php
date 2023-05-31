@@ -653,7 +653,7 @@ function get_recommend_cards_tag($atts){
         );
         echo get_navi_card_list_tag($atts);
         ?>
-      </div><!-- /#recommended-in -->
+      </div><!-- /.recommended-in -->
     </div><!-- /.recommended -->
     <?php
     $tag = ob_get_clean();
