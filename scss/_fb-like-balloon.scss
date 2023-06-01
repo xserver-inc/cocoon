@@ -38,6 +38,10 @@ div.fb-like-mobile{
   font-family: FontAwesome;
   line-height: 100%;
 }
+.font-awesome-5 .fb-like-balloon-body::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+}
 .fb-like-balloon-button {
   background-color: #f3f3f3;
   width: 100px;

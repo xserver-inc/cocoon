@@ -193,55 +193,6 @@ span.btn-wrap {
   content: $bct-next + '  ' + $bct-next-text;
 }
 
-// .font-awesome-5{
-//   .bct-related::before,
-//   .blank-box.bb-ok::before,
-//   .blank-box.bb-point::before{
-//     font-family: "Font Awesome 5 Free";
-//     font-weight: 400;
-//   }
-//   .bb-ok::before{content: "\f111" + '  ' + $bb-ok-text;}
-
-//   .blank-box.bb-check::before,
-//   .blank-box.bb-comment::before,
-//   .blank-box.bb-tips::before,
-//   .blank-box.bb-pickup::before,
-//   .blank-box.bb-hint::before,
-//   .blank-box.bb-bookmark::before,
-//   .blank-box.bb-memo::before,
-//   .blank-box.bb-download::before,
-//   .blank-box.bb-break::before,
-//   .blank-box.bb-ng::before,
-//   .blank-box.bb-good::before,
-//   .blank-box.bb-bad::before,
-//   .blank-box.bb-profile::before,
-//   .bct-none::before,
-//   .bct-reference::before,
-//   .bct-reference-link::before,
-//   .bct-popular::before,
-//   .bct-pickup::before,
-//   .bct-check::before,
-//   .bct-together::before,
-//   .bct-detail::before,
-//   .bct-official::before,
-//   .bct-dl::before,
-//   .btn-wrap::before{
-//     font-family: "Font Awesome 5 Free";
-//     font-weight: 501;
-//   }
-//   .bb-memo::before{content: "\f303" + '  ' + $bb-memo-text;}
-
-//   .blank-box.bb-tab::before{
-//     font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
-//   }
-
-//   .blank-box.bb-amazon::before
-//   {
-//     font-family: "Font Awesome 5 Brands", Aharoni, "Arial Black", Impact, Arial, sans-serif;
-//     font-weight: 400;
-//   }
-// }
-
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
 .instagram-media {
   position: relative !important;

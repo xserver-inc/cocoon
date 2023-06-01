@@ -101,6 +101,10 @@
   .breadcrumb.pbp-footer-before{
     background-color: transparent;
   }
+
+  .toggle-box {
+    --cocoon-custom-background-color: transparent;
+  }
 }
 body {
   background-color: var(--bg4);

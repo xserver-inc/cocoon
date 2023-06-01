@@ -644,8 +644,8 @@ function get_recommend_cards_tag($atts){
     $class = $class ? ' '.$class : null;
     ?>
     <!-- Recommended -->
-    <div id="recommended" class="recommended cf<?php echo get_additional_recommend_cards_classes($style, $margin); ?>">
-      <div id="recommended-in" class="recommended-in<?php echo $wrap_class; ?><?php echo $class; ?> cf">
+    <div class="recommended cf<?php echo get_additional_recommend_cards_classes($style, $margin); ?>">
+      <div class="recommended-in<?php echo $wrap_class; ?><?php echo $class; ?> cf">
         <?php
         $atts = array(
           'name' => $name,
@@ -653,7 +653,7 @@ function get_recommend_cards_tag($atts){
         );
         echo get_navi_card_list_tag($atts);
         ?>
-      </div><!-- /#recommended-in -->
+      </div><!-- /.recommended-in -->
     </div><!-- /.recommended -->
     <?php
     $tag = ob_get_clean();

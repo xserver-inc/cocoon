@@ -1646,6 +1646,11 @@ table td {
   white-space: nowrap;
 }
 
+.scrollable-table .has-fixed-layout th,
+.scrollable-table .has-fixed-layout td {
+  white-space: normal;
+}
+
 .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
@@ -7515,6 +7520,11 @@ div.fb-like-mobile {
   font-size: 50px;
   font-family: FontAwesome;
   line-height: 100%;
+}
+
+.font-awesome-5 .fb-like-balloon-body::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
 }
 
 .fb-like-balloon-button {
