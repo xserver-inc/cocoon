@@ -593,7 +593,7 @@ span.post-date {
 .sidebar .cta-message {
     margin: 0.9em 0.7em 1.9em;
 }
-#recommended .widget-entry-card-title {
+.recommended .widget-entry-card-title {
     position: relative;
     top: 0;
     left: 0;

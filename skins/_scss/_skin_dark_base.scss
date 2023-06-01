@@ -1298,10 +1298,6 @@ div.speech-balloon {
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
 }
 
-// .sbs-line.sbp-l .speech-balloon:not(.has-background) {
-//   --cocoon-custom-background-color: #191919;
-// }
-
 .sbs-line.sbp-r .speech-balloon:not(.has-background) {
   background-color: var(--cocoon-custom-background-color);
 }
@@ -1311,15 +1307,6 @@ div.speech-balloon {
   --cocoon-custom-border-color: #85e249;
 }
 
-// div.speech-balloon:not(.has-text-color){
-//   --cocoon-custom-text-color: #191919;
-// }
-
-// .sbs-line.sbp-l div.speech-balloon:not(.has-text-color),
-// .sbs-think div.speech-balloon:not(.has-text-color){
-//   --cocoon-custom-text-color: #d3d3d3;
-// }
-
-// div.sbs-think .speech-balloon::before{
-//   --cocoon-custom-background-color: transparent;
-// }
+.toggle-box{
+  --cocoon-custom-background-color: transparent;
+}

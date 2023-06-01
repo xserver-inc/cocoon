@@ -17,11 +17,7 @@
 			https://rn.bex.jp/
 */
 
-.a-wrap:first-of-type{
-	border-top: 2px dotted #ddd;
-}
 .a-wrap{
-	border-bottom: 2px dotted #ddd;
 	margin:0;
 	padding: 4.5% 3.5%;
 }
@@ -49,7 +45,7 @@ article .blogcard-wrap,article .blogcard-wrap:first-of-type{
 .carousel{
 	padding:0 0 30px;
 }
-#recommended-in .a-wrap,.carousel .a-wrap,.rect-vertical-card .a-wrap{
+.recommended-in .a-wrap,.carousel .a-wrap,.rect-vertical-card .a-wrap{
 	border:none;
 }
 .rect-mini-card .a-wrap:first-of-type{

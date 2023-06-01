@@ -1290,3 +1290,7 @@ div.speech-balloon {
   --cocoon-custom-background-color: #191919;
   --cocoon-custom-border-color: #85e249;
 }
+
+.toggle-box {
+  --cocoon-custom-background-color: transparent;
+}

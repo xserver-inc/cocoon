@@ -2079,6 +2079,10 @@ body.wp-admin {
   padding: 3px 5px;
   white-space: nowrap;
 }
+.admin-settings .demo .scrollable-table .has-fixed-layout th,
+.admin-settings .demo .scrollable-table .has-fixed-layout td {
+  white-space: normal;
+}
 .admin-settings .demo .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
@@ -7247,6 +7251,10 @@ body.wp-admin {
   font-size: 50px;
   font-family: FontAwesome;
   line-height: 100%;
+}
+.admin-settings .demo .font-awesome-5 .fb-like-balloon-body::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
 }
 .admin-settings .demo .fb-like-balloon-button {
   background-color: #f3f3f3;
@@ -10394,6 +10402,10 @@ body.wp-admin {
   padding: 3px 5px;
   white-space: nowrap;
 }
+.admin-settings .demo .scrollable-table .has-fixed-layout th,
+.admin-settings .demo .scrollable-table .has-fixed-layout td {
+  white-space: normal;
+}
 .admin-settings .demo .scrollable-table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
@@ -15562,6 +15574,10 @@ body.wp-admin {
   font-size: 50px;
   font-family: FontAwesome;
   line-height: 100%;
+}
+.admin-settings .demo .font-awesome-5 .fb-like-balloon-body::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
 }
 .admin-settings .demo .fb-like-balloon-button {
   background-color: #f3f3f3;
@@ -19359,7 +19375,7 @@ body.wp-admin {
   .admin-settings .demo #container #notice-area-wrap,
   .admin-settings .demo #container #notice-area,
   .admin-settings .demo #container #appeal,
-  .admin-settings .demo #container #recommended,
+  .admin-settings .demo #container .recommended,
   .admin-settings .demo #container #carousel,
   .admin-settings .demo #container #go-to-top {
     display: none !important;
