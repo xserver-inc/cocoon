@@ -1,6 +1,3 @@
-.is-style-good-box::before,
-.is-style-bad-box::before,
-.is-style-profile-box::before,
 .is-style-comment-box::before,
 .is-style-ok-box::before,
 .comment-box::before,
@@ -43,71 +40,89 @@
 .search-form div.sbtn::after
  {
   font-family: "Font Awesome 5 Free";
-  font-weight: 400; }
+  font-weight: 400;
+}
 
 .is-style-comment-box::before,
 .comment-box::before {
-  content: "\f075"; }
+  content: "\f075";
+}
 
 .is-style-ok-box::before,
 .ok-box::before,
 .fab-ok::before,
 .bb-ok .bb-label .fa::before {
-  content: "\f111"; }
+  content: "\f111";
+}
 
 .fab-check-circle-o::before,
 .list-check-circle-o li::before {
-  content: '\f058'; }
+  content: '\f058';
+}
 
 .fab-check-square-o::before,
 .list-check-square-o li::before {
-  content: '\f14a'; }
+  content: '\f14a';
+}
 
 .fab-arrow-circle-o-right::before,
 .list-arrow-circle-o-right li::before {
-  content: '\f35a'; }
+  content: '\f35a';
+}
 
 .fab-play-circle-o::before,
 .list-play-circle-o li::before {
-  content: '\f144'; }
+  content: '\f144';
+}
 
 .fab-star-o::before,
 .list-star-o li::before {
-  content: '\f005'; }
+  content: '\f005';
+}
 
 .fab-heart-o::before,
 .list-heart-o li::before {
-  content: '\f004'; }
+  content: '\f004';
+}
 
 .fab-square-o::before,
 .list-square-o li::before {
-  content: '\f0c8'; }
+  content: '\f0c8';
+}
 
 .fab-circle-o::before,
 .list-circle-o li::before {
-  content: '\f111'; }
+  content: '\f111';
+}
 
 .fab-plus-square-o::before,
 .list-plus-square-o li::before {
-  content: '\f0fe'; }
+  content: '\f0fe';
+}
 
 .fab-minus-square-o::before,
 .list-minus-square-o li::before {
-  content: '\f146'; }
+  content: '\f146';
+}
 
 .fab-times-circle-o::before,
 .list-times-circle-o li::before {
-  content: '\f057'; }
+  content: '\f057';
+}
 
 .fab-window-close-o::before,
 .list-window-close-o li::before {
-  content: '\f410'; }
+  content: '\f410';
+}
 
 .is-style-information-box::before,
 .is-style-question-box::before,
 .is-style-alert-box::before,
 .is-style-memo-box::before,
 .is-style-ng-box::before,
+.is-style-good-box::before,
+.is-style-bad-box::before,
+.is-style-profile-box::before,
 .information-box::before,
 .information::before,
 .question-box::before,
@@ -219,22 +234,27 @@
 .slick-next.slick-arrow::before,
 .fa-exclamation-triangle::before {
   font-family: "Font Awesome 5 Free";
-  font-weight: 900; }
+  font-weight: 900;
+}
 
 .is-style-memo-box::before,
 .memo-box::before,
 .fab-pencil::before {
-  content: "\f303"; }
+  content: "\f303";
+}
 
 .bb-memo .fa::before {
-  content: "\f303"; }
+  content: "\f303";
+}
 
 .fab-cutlery::before {
-  content: "\f2e7"; }
+  content: "\f2e7";
+}
 
 .fab-window-close::before,
 .list-window-close li::before {
-  content: "\f410"; }
+  content: "\f410";
+}
 
 .blank-box.bb-amazon .fa::before,
 .fab-amazon::before,
@@ -243,4 +263,5 @@
 .fab-android::before,
 .fab-wordpress::before {
   font-family: "Font Awesome 5 Brands";
-  font-weight: 400; }
+  font-weight: 400;
+}
