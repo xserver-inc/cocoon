@@ -9568,7 +9568,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-stapler-box {
   position: relative;
   padding: 35px 20px 15px;
-  width: 90%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -9595,7 +9594,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-stapler-top-left-box {
   position: relative;
   padding: 20px 20px 20px 35px;
-  width: 90%;
   background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
@@ -9617,8 +9615,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-hole-punch-box {
   position: relative;
   padding: 40px 20px 15px;
-  width: 90%;
-  background-color: #fffffc;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
