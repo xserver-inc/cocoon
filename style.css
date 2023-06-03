@@ -9471,7 +9471,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-parenthetic-box::after,
 .is-style-parenthetic-box::before {
-  border-color: var(--cocoon-box-border-color);
+  border: 1px solid var(--cocoon-box-border-color);
   content: "";
   height: 100%;
   position: absolute;
@@ -9479,17 +9479,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 .is-style-parenthetic-box::before {
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-  border-top: 1px solid;
+  border-right-width: 0;
   bottom: 0;
   left: 0;
 }
 
 .is-style-parenthetic-box::after {
-  border-bottom: 1px solid;
-  border-right: 1px solid;
-  border-top: 1px solid;
+  border-left-width: 0;
   bottom: 0;
   right: 0;
 }
@@ -9593,7 +9589,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-stapler-box {
   position: relative;
   padding: 35px 20px 15px;
-  width: 90%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -9620,7 +9615,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-stapler-top-left-box {
   position: relative;
   padding: 20px 20px 20px 35px;
-  width: 90%;
   background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
@@ -9642,8 +9636,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-hole-punch-box {
   position: relative;
   padding: 40px 20px 15px;
-  width: 90%;
-  background-color: #fffffc;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
