@@ -2931,10 +2931,10 @@ body.wp-admin {
   line-height: normal;
 }
 .admin-settings .demo .has-box-style {
-  padding: var(--cocoon-box-padding);
+  padding: var(--cocoon-box-padding) !important;
 }
 .admin-settings .demo .has-border {
-  padding: var(--cocoon-box-padding);
+  padding: var(--cocoon-box-padding) !important;
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
@@ -3134,7 +3134,7 @@ body.wp-admin {
 .admin-settings .demo .memo-box,
 .admin-settings .demo .comment-box,
 .admin-settings .demo .common-icon-box {
-  padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px !important;
   border-radius: 4px;
   position: relative;
   display: block;
@@ -8968,7 +8968,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-stapler-box {
   position: relative;
-  padding: 35px 20px 15px;
+  padding: 35px 20px 15px !important;
   width: 90%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -8991,7 +8991,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-stapler-top-left-box {
   position: relative;
-  padding: 20px 20px 20px 35px;
+  padding: 20px 20px 20px 35px !important;
   width: 90%;
   background-color: #fff;
   color: #555555;
@@ -9011,7 +9011,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-hole-punch-box {
   position: relative;
-  padding: 40px 20px 15px;
+  padding: 40px 20px 15px !important;
   width: 90%;
   background-color: #fffffc;
   border: 1px solid #ccc;
@@ -11246,10 +11246,10 @@ body.wp-admin {
   line-height: normal;
 }
 .admin-settings .demo .has-box-style {
-  padding: var(--cocoon-box-padding);
+  padding: var(--cocoon-box-padding) !important;
 }
 .admin-settings .demo .has-border {
-  padding: var(--cocoon-box-padding);
+  padding: var(--cocoon-box-padding) !important;
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
@@ -11449,7 +11449,7 @@ body.wp-admin {
 .admin-settings .demo .memo-box,
 .admin-settings .demo .comment-box,
 .admin-settings .demo .common-icon-box {
-  padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px !important;
   border-radius: 4px;
   position: relative;
   display: block;
@@ -17283,7 +17283,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-stapler-box {
   position: relative;
-  padding: 35px 20px 15px;
+  padding: 35px 20px 15px !important;
   width: 90%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -17306,7 +17306,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-stapler-top-left-box {
   position: relative;
-  padding: 20px 20px 20px 35px;
+  padding: 20px 20px 20px 35px !important;
   width: 90%;
   background-color: #fff;
   color: #555555;
@@ -17326,7 +17326,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-hole-punch-box {
   position: relative;
-  padding: 40px 20px 15px;
+  padding: 40px 20px 15px !important;
   width: 90%;
   background-color: #fffffc;
   border: 1px solid #ccc;
@@ -20347,10 +20347,10 @@ textarea[name="the_page_memo"] {
   ************************************/
 }
 .components-popover__content .has-box-style {
-  padding: var(--cocoon-box-padding);
+  padding: var(--cocoon-box-padding) !important;
 }
 .components-popover__content .has-border {
-  padding: var(--cocoon-box-padding);
+  padding: var(--cocoon-box-padding) !important;
 }
 .components-popover__content .admin-settings .demo .badge, .admin-settings .demo .components-popover__content .badge,
 .components-popover__content .admin-settings .demo .ref,
@@ -20556,7 +20556,7 @@ textarea[name="the_page_memo"] {
 .components-popover__content .memo-box,
 .components-popover__content .comment-box,
 .components-popover__content .common-icon-box {
-  padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px !important;
   border-radius: 4px;
   position: relative;
   display: block;

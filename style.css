@@ -2682,11 +2682,11 @@ label.screen-reader-text {
 }
 
 .has-box-style {
-  padding: var(--cocoon-box-padding);
+  padding: var(--cocoon-box-padding) !important;
 }
 
 .has-border {
-  padding: var(--cocoon-box-padding);
+  padding: var(--cocoon-box-padding) !important;
 }
 
 /*拡張クラスを追加するスタイルシート*/
@@ -2945,7 +2945,7 @@ label.screen-reader-text {
 .memo-box,
 .comment-box,
 .common-icon-box {
-  padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px !important;
   border-radius: 4px;
   position: relative;
   display: block;
@@ -9582,7 +9582,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-stapler-box {
   position: relative;
-  padding: 35px 20px 15px;
+  padding: 35px 20px 15px !important;
   width: 90%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -9609,7 +9609,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-stapler-top-left-box {
   position: relative;
-  padding: 20px 20px 20px 35px;
+  padding: 20px 20px 20px 35px !important;
   width: 90%;
   background-color: #fff;
   color: #555555;
@@ -9631,7 +9631,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-hole-punch-box {
   position: relative;
-  padding: 40px 20px 15px;
+  padding: 40px 20px 15px !important;
   width: 90%;
   background-color: #fffffc;
   border: 1px solid #ccc;
