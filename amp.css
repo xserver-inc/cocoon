@@ -9557,14 +9557,14 @@ https://codepen.io/nxworld/pen/oLdoWb
   top: 0px;
   width: 10px;
   right: 20px;
-  border: 5px solid var(--cocoon-white-color);
+  border: 5px solid transparent;
+  background: inherit;
   z-index: 2;
 }
 
 .is-style-stapler-box {
   position: relative;
   padding: 35px 20px 15px !important;
-  width: 90%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -9591,7 +9591,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-stapler-top-left-box {
   position: relative;
   padding: 20px 20px 20px 35px !important;
-  width: 90%;
   background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
@@ -9613,8 +9612,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-hole-punch-box {
   position: relative;
   padding: 40px 20px 15px !important;
-  width: 90%;
-  background-color: #fffffc;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -9677,14 +9674,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-balloon-left-box::after {
   border-right-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-top: -8px;
+  border-width: 9px;
+  margin-top: -9px;
 }
 
 .is-style-balloon-left-box::before {
-  border-right-color: var(--cocoon-box-border-color);
-  border-width: 9px;
-  margin-top: -9px;
+  border-right-color: inherit;
+  border-width: 10px;
+  margin-top: -10px;
 }
 
 .is-style-balloon-right-box::after,
@@ -9695,14 +9692,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-balloon-right-box::after {
   border-left-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-top: -8px;
+  border-width: 9px;
+  margin-top: -9px;
 }
 
 .is-style-balloon-right-box::before {
-  border-left-color: var(--cocoon-box-border-color);
-  border-width: 9px;
-  margin-top: -9px;
+  border-left-color: inherit;
+  border-width: 10px;
+  margin-top: -10px;
 }
 
 .is-style-balloon-top-box::after,
@@ -9712,17 +9709,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 .is-style-balloon-top-box::after {
-  border-color: rgba(252, 242, 243, 0);
   border-bottom-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-left: -8px;
+  border-width: 9px;
+  margin-left: -9px;
 }
 
 .is-style-balloon-top-box::before {
-  border-color: rgba(0, 0, 0, 0);
-  border-bottom-color: var(--cocoon-box-border-color);
-  border-width: 9px;
-  margin-left: -9px;
+  border-bottom-color: inherit;
+  border-width: 10px;
+  margin-left: -10px;
 }
 
 .is-style-balloon-bottom-box::after,
@@ -9733,14 +9728,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-balloon-bottom-box::after {
   border-top-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-left: -8px;
+  border-width: 9px;
+  margin-left: -9px;
 }
 
 .is-style-balloon-bottom-box::before {
-  border-top-color: var(--cocoon-box-border-color);
-  border-width: 9px;
-  margin-left: -9px;
+  border-top-color: inherit;
+  border-width: 10px;
+  margin-left: -10px;
 }
 
 .no-border {
