@@ -173,7 +173,8 @@
  // ホチキス
 .is-style-stapler-box {
   position: relative;
-  padding: 35px 20px 15px;
+  padding: 35px 20px 15px !important;
+  width: 90%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -193,7 +194,8 @@
 // ホチキス左上
 .is-style-stapler-top-left-box {
   position: relative;
-  padding: 20px 20px 20px 35px;
+  padding: 20px 20px 20px 35px !important;
+  width: 90%;
   background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
@@ -214,7 +216,9 @@
 // 穴あけパンチ
 .is-style-hole-punch-box {
   position: relative;
-  padding: 40px 20px 15px;
+  padding: 40px 20px 15px !important;
+  width: 90%;
+  background-color: #fffffc;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -326,22 +330,10 @@
 }
 
 // 上吹き出し
-// .is-style-balloon-top-box {
-// 	position: relative;
-// 	background: var(--cocoon-white-color);
-// 	border: 1px solid var(--cocoon-box-border-color);
-//   border-radius: 4px;
-// }
 .is-style-balloon-top-box::after,
 .is-style-balloon-top-box::before {
 	bottom: 100%;
 	left: 50%;
-	// border: solid transparent;
-	// content: "";
-	// height: 0;
-	// width: 0;
-	// position: absolute;
-	// pointer-events: none;
 }
 
 .is-style-balloon-top-box::after {
@@ -358,22 +350,10 @@
 }
 
 // 下吹き出し
-// .is-style-balloon-bottom-box {
-// 	position: relative;
-// 	background: var(--cocoon-white-color);
-// 	border: 1px solid var(--cocoon-box-border-color);
-//   border-radius: 4px;
-// }
 .is-style-balloon-bottom-box::after,
 .is-style-balloon-bottom-box::before {
 	top: 100%;
 	left: 50%;
-	// border: solid transparent;
-	// content: "";
-	// height: 0;
-	// width: 0;
-	// position: absolute;
-	// pointer-events: none;
 }
 
 .is-style-balloon-bottom-box::after {
