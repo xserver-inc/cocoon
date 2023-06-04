@@ -9637,7 +9637,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-hole-punch-box {
   position: relative;
   padding: 40px 20px 15px !important;
-  background-color: #fffffc;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -11837,7 +11836,7 @@ _:-ms-lang(x), .mc-circle {
   .memo-box,
   .comment-box,
   .common-icon-box {
-    padding: 26px 6px 6px;
+    padding: 28px 6px 6px !important;
   }
 
   .is-style-information-box::before,
