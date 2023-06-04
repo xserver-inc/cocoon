@@ -2056,7 +2056,7 @@ body.wp-admin {
   -webkit-overflow-scrolling: touch;
   margin: 0;
 }
-.admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child {
+.admin-settings .demo .scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > *:first-child {
   background-color: #e9eff2;
   color: var(--cocoon-text-color);
   position: sticky;
@@ -9994,7 +9994,7 @@ body.wp-admin {
   -webkit-overflow-scrolling: touch;
   margin: 0;
 }
-.admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child {
+.admin-settings .demo .scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > *:first-child {
   background-color: #e9eff2;
   color: var(--cocoon-text-color);
   position: sticky;

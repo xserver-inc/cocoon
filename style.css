@@ -1644,7 +1644,7 @@ table td {
   -webkit-overflow-scrolling: touch;
   margin: 0;
 }
-.scrollable-table.stfc-sticky tr > *:first-child {
+.scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > *:first-child {
   background-color: #e9eff2;
   color: var(--cocoon-text-color);
   position: sticky;
