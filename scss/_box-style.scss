@@ -175,7 +175,7 @@
 .is-style-stapler-box {
   position: relative;
   --cocoon-box-padding: 35px 20px 15px;
-  // padding: 35px 20px 15px;
+  padding: 35px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -196,7 +196,7 @@
 .is-style-stapler-top-left-box {
   position: relative;
   --cocoon-box-padding: 20px 20px 20px 35px;
-  // padding: 20px 20px 20px 35px;
+  padding: 20px 20px 20px 35px;
   background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
@@ -218,7 +218,7 @@
 .is-style-hole-punch-box {
   position: relative;
   --cocoon-box-padding: 40px 20px 15px;
-  // padding: 40px 20px 15px;
+  padding: 40px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
