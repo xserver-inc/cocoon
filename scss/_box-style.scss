@@ -174,7 +174,7 @@
  // ホチキス
 .is-style-stapler-box {
   position: relative;
-  padding: 35px 20px 15px !important;
+  padding: 35px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -194,7 +194,7 @@
 // ホチキス左上
 .is-style-stapler-top-left-box {
   position: relative;
-  padding: 20px 20px 20px 35px !important;
+  padding: 20px 20px 20px 35px;
   background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
@@ -215,7 +215,7 @@
 // 穴あけパンチ
 .is-style-hole-punch-box {
   position: relative;
-  padding: 40px 20px 15px !important;
+  padding: 40px 20px 15px;
   // background-color: #fffffc;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
