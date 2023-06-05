@@ -279,12 +279,12 @@
 	border-right-color: var(--cocoon-white-color);
 	border-width: 9px;
 	margin-top: -9px;
-	// margin-top: -8px;
-  // width: 13px;
-  // height: 13px;
+	// margin-top: -9px;
+  // width: 14px;
+  // height: 14px;
   // background: inherit;
   // transform: rotate(45deg);
-  // left: -4px;
+  // left: -5px;
 }
 .is-style-balloon-left-box::before {
 	border-right-color: inherit;
@@ -303,6 +303,12 @@
 	border-left-color: var(--cocoon-white-color);
 	border-width: 9px;
 	margin-top: -9px;
+  // margin-top: -9px;
+  // width: 14px;
+  // height: 14px;
+  // background: inherit;
+  // transform: rotate(45deg);
+  // left: calc(100% - 12px);
 }
 .is-style-balloon-right-box::before {
 	border-left-color: inherit;
@@ -321,6 +327,12 @@
 	border-bottom-color: var(--cocoon-white-color);
 	border-width: 9px;
 	margin-left: -9px;
+  // width: 14px;
+  // height: 14px;
+  // background: inherit;
+  // transform: rotate(45deg);
+  // top: -5px;
+  // left: calc(50% - 9px);
 }
 .is-style-balloon-top-box::before {
 	border-bottom-color: inherit;
@@ -339,6 +351,12 @@
 	border-top-color: var(--cocoon-white-color);
 	border-width: 9px;
 	margin-left: -9px;
+  // width: 14px;
+  // height: 14px;
+  // background: inherit;
+  // transform: rotate(45deg);
+  // top: calc(100% - 12px);
+  // left: calc(50% - 9px);
 }
 .is-style-balloon-bottom-box::before {
 	border-top-color: inherit;
