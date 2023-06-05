@@ -3145,6 +3145,7 @@ body.wp-admin {
 .admin-settings .demo .comment-box,
 .admin-settings .demo .common-icon-box {
   --cocoon-box-padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
   display: block;
@@ -11465,6 +11466,7 @@ body.wp-admin {
 .admin-settings .demo .comment-box,
 .admin-settings .demo .common-icon-box {
   --cocoon-box-padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
   display: block;
@@ -20573,6 +20575,7 @@ textarea[name="the_page_memo"] {
 .components-popover__content .comment-box,
 .components-popover__content .common-icon-box {
   --cocoon-box-padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
   display: block;

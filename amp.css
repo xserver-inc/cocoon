@@ -2932,6 +2932,7 @@ label.screen-reader-text {
 .comment-box,
 .common-icon-box {
   --cocoon-box-padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
   display: block;
