@@ -57,9 +57,14 @@ export default function save( { attributes } ) {
     style: styles,
   } );
 
+  // rel属性の値をチェックして変換を行う
+  let tagCode;
+  if (!tag.includes(' rel="noopener')) {
+    tagCode = tag.replace(' target="_blank"', ' target="_blank" rel="noopener"');
+  }
   return (
     <div { ...blockProps }>
-      <RichText.Content value={ tag } />
+      <RichText.Content value={ tagCode } />
     </div>
   );
 }
