@@ -1,3 +1,12 @@
+//ボックスのスタイル装飾
+.has-box-style{
+  padding: var(--cocoon-box-padding) !important;
+}
+//ボックスのボーダー装飾
+.has-border{
+  padding: var(--cocoon-box-padding) !important;
+}
+
 /*拡張クラスを追加するスタイルシート*/
 %badge{
   color: var(--cocoon-white-color);
@@ -233,7 +242,7 @@ $marker_u_blue: $marker_blue;
 .comment-box,
 .common-icon-box{
   //background-color: #F4F3EB;
-  padding: 20px 20px 20px 72px;
+  padding: 20px 20px 20px 72px !important;
   border-radius: 4px;
   position: relative;
   display: block;

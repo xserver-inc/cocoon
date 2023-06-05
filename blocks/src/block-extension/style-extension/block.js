@@ -1,0 +1,498 @@
+import { addFilter } from '@wordpress/hooks';
+import { useDebounce, createHigherOrderComponent } from '@wordpress/compose';
+import { Fragment, useState } from '@wordpress/element';
+import { InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, Button } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+
+import classnames from 'classnames';
+import { THEME_NAME } from '../../helpers';
+
+// 拡張対象ブロック
+const allowedBlocks = [ 'core/paragraph' ];
+
+// custom attributesの追加
+function addCustomAttributes( settings ) {
+  if ( allowedBlocks.includes( settings.name ) ) {
+    settings.attributes = Object.assign( settings.attributes, {
+      extraStyle: {
+        type: 'string',
+        default: '',
+      },
+      extraBorder: {
+        type: 'string',
+        default: '',
+      },
+    } );
+  }
+  return settings;
+}
+addFilter(
+  'blocks.registerBlockType',
+  'cocoon-blocks/style-custom-attributes',
+  addCustomAttributes
+);
+
+// Edit拡張
+const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
+  return ( props ) => {
+    if ( allowedBlocks.includes( props.name ) && props.isSelected ) {
+      const { setAttributes, isSelected, attributes } = props;
+      const { className, extraStyle, extraBorder } = attributes;
+
+      const extraStyles = [
+        {
+          style: '',
+          buttonText: __( 'デフォルト', THEME_NAME ),
+        },
+        {
+          style: 'light-background-box',
+          buttonText: __( '薄背景', THEME_NAME ),
+        },
+        {
+          style: 'stripe-box',
+          buttonText: __( 'ストライプ', THEME_NAME ),
+        },
+        {
+          style: 'section-paper-box',
+          buttonText: __( '方眼紙', THEME_NAME ),
+        },
+        {
+          style: 'checkered-box',
+          buttonText: __( 'チェック', THEME_NAME ),
+        },
+        {
+          style: 'stitch-box',
+          buttonText: __( 'ステッチ', THEME_NAME ),
+        },
+        {
+          style: 'square-brackets-box',
+          buttonText: __( 'かぎ括弧', THEME_NAME ),
+        },
+        {
+          style: 'parenthetic-box',
+          buttonText: __( '角括弧', THEME_NAME ),
+        },
+        {
+          style: 'cross-line',
+          buttonText: __( '交差線', THEME_NAME ),
+        },
+        {
+          style: 'p-style-08',
+          buttonText: __( 'ずれた二重線', THEME_NAME ),
+        },
+        {
+          style: 'triangle-box',
+          buttonText: __( '角三角', THEME_NAME ),
+        },
+        {
+          style: 'clip-box',
+          buttonText: __( 'クリップ', THEME_NAME ),
+        },
+        {
+          style: 'stapler-box',
+          buttonText: __( 'ホチキス', THEME_NAME ),
+        },
+        {
+          style: 'stapler-top-left-box',
+          buttonText: __( 'ホチキス左上', THEME_NAME ),
+        },
+        {
+          style: 'hole-punch-box',
+          buttonText: __( '穴あけパンチ', THEME_NAME ),
+        },
+        {
+          style: 'handwritten-box',
+          buttonText: __( '手書き風', THEME_NAME ),
+        },
+        {
+          style: 'border-top-box',
+          buttonText: __( '上線', THEME_NAME ),
+        },
+        {
+          style: 'border-left-box',
+          buttonText: __( '付箋', THEME_NAME ),
+        },
+        {
+          style: 'balloon-left-box',
+          buttonText: __( '左吹き出し', THEME_NAME ),
+        },
+        {
+          style: 'balloon-right-box',
+          buttonText: __( '右吹き出し', THEME_NAME ),
+        },
+        {
+          style: 'balloon-top-box',
+          buttonText: __( '上吹き出し', THEME_NAME ),
+        },
+        {
+          style: 'balloon-bottom-box',
+          buttonText: __( '下吹き出し', THEME_NAME ),
+        },
+        {
+          style: 'information-box',
+          buttonText: __( '情報', THEME_NAME ),
+        },
+        {
+          style: 'question-box',
+          buttonText: __( '質問', THEME_NAME ),
+        },
+        {
+          style: 'alert-box',
+          buttonText: __( 'アラート', THEME_NAME ),
+        },
+        {
+          style: 'memo-box',
+          buttonText: __( 'メモ', THEME_NAME ),
+        },
+        {
+          style: 'comment-box',
+          buttonText: __( 'コメント', THEME_NAME ),
+        },
+        {
+          style: 'ok-box',
+          buttonText: __( 'OK', THEME_NAME ),
+        },
+        {
+          style: 'ng-box',
+          buttonText: __( 'NG', THEME_NAME ),
+        },
+        {
+          style: 'good-box',
+          buttonText: __( 'グッド', THEME_NAME ),
+        },
+        {
+          style: 'bad-box',
+          buttonText: __( 'バッド', THEME_NAME ),
+        },
+        {
+          style: 'profile-box',
+          buttonText: __( 'プロフィール', THEME_NAME ),
+        },
+      ];
+
+      const extraBorders = [
+        {
+          style: '',
+          buttonText: __( 'デフォルト', THEME_NAME ),
+        },
+        {
+          style: 'border-solid',
+          buttonText: __( '実線', THEME_NAME ),
+        },
+        {
+          style: 'border-double',
+          buttonText: __( '二重線', THEME_NAME ),
+        },
+        {
+          style: 'border-dashed',
+          buttonText: __( '破線', THEME_NAME ),
+        },
+        {
+          style: 'border-dotted',
+          buttonText: __( '点線', THEME_NAME ),
+        },
+        {
+          style: 'border-thin-and-thick',
+          buttonText: __( '薄太', THEME_NAME ),
+        },
+        {
+          style: 'border-convex',
+          buttonText: __( '微凸', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-solid',
+          buttonText: __( '実線(角丸小)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-double',
+          buttonText: __( '二重線(角丸小)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-dashed',
+          buttonText: __( '破線(角丸小)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-dotted',
+          buttonText: __( '点線(角丸小)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-thin-and-thick',
+          buttonText: __( '薄太(角丸小)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-s-convex',
+          buttonText: __( '微凸(角丸小)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-solid',
+          buttonText: __( '実線(角丸大)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-double',
+          buttonText: __( '二重線(角丸大)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-dashed',
+          buttonText: __( '破線(角丸大)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-dotted',
+          buttonText: __( '点線(角丸大)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-thin-and-thick',
+          buttonText: __( '薄太(角丸大)', THEME_NAME ),
+        },
+        {
+          style: 'border-radius-l-convex',
+          buttonText: __( '微凸(角丸大)', THEME_NAME ),
+        },
+      ];
+
+      var index = 0;
+      return (
+        <Fragment>
+          <BlockEdit { ...props } />
+
+          { isSelected && (
+            <InspectorControls>
+              <PanelBody
+                title={ __( '[C] ボーダー設定', THEME_NAME ) }
+                initialOpen={ false }
+              >
+                <div class="__clearBtn">
+                  <button
+                    type="button"
+                    class="components-button is-small"
+                    onClick={ () =>
+                      setAttributes( { extraBorder: '' } )
+                    }
+                  >
+                    <span class="dashicons dashicons-editor-removeformatting"></span>
+                    {__( 'ボーダーをクリア', THEME_NAME ) }
+                  </button>
+                </div>
+                <div className="block-editor-block-styles">
+                  <div className="block-editor-block-styles__variants style-buttons">
+                    {extraBorders.map((border) => {
+                      index++;
+                      return (
+                        <div
+                          className={classnames('__btnBox',
+                            {[ '__btnBoxDefault display-none' ]: ! border.style}
+                          )}
+                        >
+                          <Button
+                            id={ 'cocoon-dorder-button-' + index }
+                            className={ classnames(
+                              'display-none',
+                              'block-editor-block-styles__item',
+                              {
+                                'is-active': border.style === extraBorder,
+                              }
+                            ) }
+                            variant="secondary"
+                            label={ border.buttonText }
+                            onClick={ () =>
+                              {
+                                if (border.style === extraBorder) {
+                                  setAttributes( { extraBorder: '' } )
+                                } else {
+                                  setAttributes( { extraBorder: border.style } )
+                                }
+                              }
+                            }
+                          ></Button>
+                          <label
+                            for={ 'cocoon-dorder-button-' + index }
+                            class="__labelBtn"
+                            data-selected={
+                              border.style === extraBorder ? true : false
+                            }
+                          >
+                            <span class="__prevWrap editor-styles-wrapper">
+                              <span
+                                className={ classnames( '__prev', {
+                                  [ 'is-style-' + border.style ]:
+                                    !! border.style,
+                                  [ 'has-border' ]: border.style,
+                                } ) }
+                              ></span>
+                            </span>
+                            <span class="__prevTitle">
+                              { border.buttonText }
+                            </span>
+                          </label>
+                        </div>
+                      );
+                    } ) }
+                  </div>
+                </div>
+                <div class="__clearBtn">
+                  <button
+                    type="button"
+                    class="components-button is-small"
+                    onClick={ () =>
+                      setAttributes( { extraBorder: '' } )
+                    }
+                  >
+                    <span class="dashicons dashicons-editor-removeformatting"></span>
+                    {__( 'ボーダーをクリア', THEME_NAME ) }
+                  </button>
+                </div>
+              </PanelBody>
+              <PanelBody
+                title={ __( '[C] スタイル', THEME_NAME ) }
+                initialOpen={ false }
+              >
+                <div class="__clearBtn">
+                  <button
+                    type="button"
+                    class="components-button is-small"
+                    onClick={ () =>
+                      setAttributes( { extraStyle: '' } )
+                    }
+                  >
+                    <span class="dashicons dashicons-editor-removeformatting"></span>
+                    {__( 'スタイルをクリア', THEME_NAME ) }
+                  </button>
+                </div>
+                <div className="block-editor-block-styles">
+                  <div className="block-editor-block-styles__variants style-buttons">
+                    {extraStyles.map((style) => {
+                      index++
+                      return (
+                        <div
+                          className={classnames('__btnBox',
+                            {[ '__btnBoxDefault display-none' ]: ! style.style}
+                          )}
+                        >
+                          <Button
+                            id={ 'cocoon-dorder-button-' + index }
+                            className={ classnames(
+                              'display-none',
+                              'block-editor-block-styles__item',
+                              {
+                                'is-active': style.style === extraStyle,
+                              }
+                            ) }
+                            variant="secondary"
+                            label={ style.buttonText }
+                            onClick={ () =>
+                              {
+                                if (style.style === extraStyle) {
+                                  setAttributes( { extraStyle: '' } )
+                                } else {
+                                  setAttributes( { extraStyle: style.style } )
+                                }
+                              }
+                            }
+                          ></Button>
+                          <label
+                            for={ 'cocoon-dorder-button-' + index }
+                            class="__labelBtn"
+                            data-selected={
+                              style.style === extraStyle ? true : false
+                            }
+                          >
+                            <span class="__prevWrap editor-styles-wrapper">
+                              <span
+                                className={ classnames( '__prev', {
+                                  [ 'is-style-' + style.style ]: !! style.style,
+                                  [ 'has-box-style' ]: style.style,
+                                } ) }
+                              ></span>
+                            </span>
+                            <span class="__prevTitle">
+                              { style.buttonText }
+                            </span>
+                          </label>
+                        </div>
+                      );
+                    } ) }
+                  </div>
+                </div>
+                <div class="__clearBtn">
+                  <button
+                    type="button"
+                    class="components-button is-small"
+                    onClick={ () =>
+                      setAttributes( { extraStyle: '' } )
+                    }
+                  >
+                    <span class="dashicons dashicons-editor-removeformatting"></span>
+                    {__( 'スタイルをクリア', THEME_NAME ) }
+                  </button>
+                </div>
+              </PanelBody>
+            </InspectorControls>
+          ) }
+        </Fragment>
+      );
+    }
+
+    return <BlockEdit { ...props } />;
+  };
+}, 'addCustomEdit' );
+addFilter(
+  'editor.BlockEdit',
+  'cocoon-blocks/style-custom-edit',
+  addCustomEdit
+);
+
+// 親ブロックへのクラス適用
+const applyAttributesToBlock = createHigherOrderComponent(
+  ( BlockListBlock ) => {
+    return ( props ) => {
+      const { attributes, className, name, isValid } = props;
+
+      if ( isValid && allowedBlocks.includes( name ) ) {
+        const { extraStyle, extraBorder } = attributes;
+
+        return (
+          <BlockListBlock
+            { ...props }
+            className={ classnames( className, {
+              [ 'is-style-' + extraStyle ]: !! extraStyle,
+              [ 'is-style-' + extraBorder ]: !! extraBorder,
+              [ 'has-border' ]: extraBorder,
+              [ 'has-box-style' ]: extraStyle,
+            } ) }
+          />
+        );
+      }
+
+      return <BlockListBlock { ...props } />;
+    };
+  },
+  'applyAttributesToBlock'
+);
+addFilter(
+  'editor.BlockListBlock',
+  'cocoon-blocks/style-apply-attributes',
+  applyAttributesToBlock
+);
+
+// Save拡張
+const addCustomSave = ( props, blockType, attributes ) => {
+  if ( allowedBlocks.includes( blockType.name ) ) {
+    const { className } = props;
+    const { extraStyle, extraBorder } = attributes;
+
+    props.className = classnames( className, {
+      [ 'is-style-' + extraStyle ]: !! extraStyle,
+      [ 'is-style-' + extraBorder ]: !! extraBorder,
+      [ 'has-border' ]: extraBorder,
+      [ 'has-box-style' ]: extraStyle,
+    } );
+
+    return Object.assign( props );
+  }
+  return props;
+};
+addFilter(
+  'blocks.getSaveContent.extraProps',
+  'cocoon-blocks/style-custom-save',
+  addCustomSave
+);
