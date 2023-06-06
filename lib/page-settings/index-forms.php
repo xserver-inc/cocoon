@@ -229,7 +229,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             generate_checkbox_tag(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE , is_entry_card_post_comment_count_visible(), __( 'コメント数の表示', THEME_NAME ));
 
-            generate_tips_tag(__( 'エントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
+            generate_tips_tag(__( 'インデックスページのエントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
             ?>
           </td>
         </tr>

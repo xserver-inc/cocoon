@@ -262,7 +262,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             echo '<br>';
 
             generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_AUTHOR_VISIBLE , is_related_entry_card_post_author_visible(), __( '投稿者名の表示', THEME_NAME ));
-            generate_tips_tag(__( 'エントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
+            generate_tips_tag(__( '投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
             ?>
           </td>
         </tr>
