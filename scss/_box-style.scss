@@ -141,7 +141,7 @@
 
 // クリップ
 .is-style-clip-box {
-  background-color: var(--cocoon-white-color);
+  background-color: #191919;
   position: relative;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -197,7 +197,6 @@
   position: relative;
   --cocoon-box-padding: 20px 20px 20px 35px;
   padding: 20px 20px 20px 35px;
-  background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
