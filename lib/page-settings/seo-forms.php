@@ -112,7 +112,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'none' => __( '表示しない', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());
-            generate_tips_tag(__( '表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方が変わる可能性があります。', THEME_NAME ).__( '例えば「表示しない」と設定した場合、投稿・固定ページの「投稿日・更新日」はHTML出力されません。', THEME_NAME ));
+            generate_tips_tag(__( '表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方が変わる可能性があります。', THEME_NAME ));
             ?>
           </td>
         </tr>
