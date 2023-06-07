@@ -4084,7 +4084,7 @@ div.search-form {
   right: 0;
 }
 
-.btn, .ranking-item-link-buttons a,
+.button-block,
 .btn-wrap {
   --cocoon-custom-background-color: var(--cocoon-text-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
