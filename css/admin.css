@@ -4260,13 +4260,14 @@ body.wp-admin {
 }
 .admin-settings .demo .button-block,
 .admin-settings .demo .btn-wrap {
-  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-background-color: var(--cocoon-black-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
 }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
@@ -4289,6 +4290,9 @@ body.wp-admin {
 .admin-settings .demo .btn-wrap > a amp-img,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img {
   position: absolute;
+}
+.admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
+  padding: 7px 13px;
 }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before,
 .admin-settings .demo .btn:after,
@@ -4365,6 +4369,9 @@ body.wp-admin {
 }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover {
   color: var(--cocoon-text-color);
+}
+.admin-settings .demo .btn-black, .admin-settings .demo .btn-wrap.btn-wrap-black > a {
+  background-color: var(--cocoon-black-color);
 }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a {
   background-color: var(--cocoon-red-color);
@@ -12583,13 +12590,14 @@ body.wp-admin {
 }
 .admin-settings .demo .button-block,
 .admin-settings .demo .btn-wrap {
-  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-background-color: var(--cocoon-black-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
 }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
@@ -12612,6 +12620,9 @@ body.wp-admin {
 .admin-settings .demo .btn-wrap > a amp-img,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img {
   position: absolute;
+}
+.admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
+  padding: 7px 13px;
 }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before,
 .admin-settings .demo .btn:after,
@@ -12688,6 +12699,9 @@ body.wp-admin {
 }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover {
   color: var(--cocoon-text-color);
+}
+.admin-settings .demo .btn-black, .admin-settings .demo .btn-wrap.btn-wrap-black > a {
+  background-color: var(--cocoon-black-color);
 }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a {
   background-color: var(--cocoon-red-color);
@@ -21754,13 +21768,14 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .button-block,
 .components-popover__content .btn-wrap {
-  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-background-color: var(--cocoon-black-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: transparent;
 }
 .components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a,
 .components-popover__content .btn-wrap > a,
 .components-popover__content .wp-block-freeform .btn-wrap > a {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
@@ -21783,6 +21798,9 @@ textarea[name="the_page_memo"] {
 .components-popover__content .btn-wrap > a amp-img,
 .components-popover__content .wp-block-freeform .btn-wrap > a amp-img {
   position: absolute;
+}
+.components-popover__content .mce-content-body .btn-wrap a[data-mce-selected] {
+  padding: 7px 13px;
 }
 .components-popover__content .btn:before, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:before,
 .components-popover__content .btn:after,
@@ -21860,6 +21878,9 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content #container .btn-white:hover, .components-popover__content #container .btn-wrap.btn-wrap-white > a:hover {
   color: var(--cocoon-text-color);
+}
+.components-popover__content .btn-black, .components-popover__content .btn-wrap.btn-wrap-black > a {
+  background-color: var(--cocoon-black-color);
 }
 .components-popover__content .btn-red, .components-popover__content .admin-settings .demo .ranking-item-link a, .admin-settings .demo .ranking-item-link .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-red > a {
   background-color: var(--cocoon-red-color);

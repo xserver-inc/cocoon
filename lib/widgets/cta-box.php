@@ -161,6 +161,7 @@ class CTABoxWidgetItem extends WP_Widget {
       </label><br>
       <?php
       $options = array(
+        'btn-black' => __( '黒色', THEME_NAME ),
         'btn-red' => __( '赤色', THEME_NAME ),
         'btn-pink' => __( 'ピンク', THEME_NAME ),
         'btn-purple' => __( '紫色', THEME_NAME ),
