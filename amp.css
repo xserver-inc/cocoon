@@ -4094,10 +4094,8 @@ div.search-form {
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a {
-  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
-  border-color: transparent;
   color: var(--cocoon-custom-text-color);
   background-color: var(--cocoon-custom-background-color);
   border-color: var(--cocoon-custom-border-color);
@@ -6751,6 +6749,7 @@ canvas, iframe, video,
 
 .cta-button {
   margin-top: 1em;
+  --cocoon-custom-border-color: transparent;
 }
 
 .sidebar .cta-box {
