@@ -723,7 +723,7 @@ if ($mobile_site_font_size): ?>
     margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
   }
 }
-@media screen and (max-width:599px) {
+@media screen and (max-width:834px) {
   .column-wrap > div{
     margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
   }
