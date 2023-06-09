@@ -385,3 +385,8 @@ span.btn-wrap {
 .mce-content-body .btn-wrap a[data-mce-selected]{
   padding: 7px 13px;
 }
+
+//クラシックエディターで入力したボタンHTMLがブロックエディターで出力される時
+.wp-block-freeform.block-library-rich-text__tinymce .btn[class*="btn-"]{
+  color: var(--cocoon-white-color);
+}

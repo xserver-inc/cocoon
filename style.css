@@ -4116,6 +4116,10 @@ div.search-form {
   --cocoon-custom-border-color: transparent;
 }
 
+.btn[class*="btn-"], .ranking-item-link-buttons a[class*="btn-"] {
+  --cocoon-custom-border-color: transparent;
+}
+
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a {

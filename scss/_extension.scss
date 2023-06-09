@@ -834,6 +834,10 @@ div.search-form{
   --cocoon-custom-border-color: transparent;
 }
 
+.btn[class*="btn-"]{
+  --cocoon-custom-border-color: transparent;
+}
+
 .btn,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a{
