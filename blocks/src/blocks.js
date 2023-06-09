@@ -123,6 +123,9 @@ import './block-extension/style-extension/border01.js';
 import './block-extension/style-extension/style01.js';
 import './block-extension/style-extension/style02.js';
 
+// マージン拡張
+import './block-extension/style-extension/margin.js';
+
 //レイアウト
 import './layout/column-children/block.js';
 import './layout/column-2/block.js';
