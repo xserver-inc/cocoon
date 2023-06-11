@@ -30,7 +30,7 @@ class TOCWidgetItem extends WP_Widget {
     $depth = !empty($instance['depth']) ? $instance['depth'] : 0;
     $depth = apply_filters( 'toc_widget_depth', $depth, $instance, $this->id_base );
 
-    if ( is_singular() ){
+    if ( is_singular() && !is_plugin_fourm_page() ){
       $harray = array();
       $the_content = get_toc_expanded_content();
       $html = get_toc_tag($the_content, $harray, true, $depth);
