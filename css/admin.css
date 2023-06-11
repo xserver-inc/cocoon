@@ -7636,6 +7636,7 @@ body.wp-admin {
   position: relative;
 }
 .admin-settings .demo .ranking-item-link-buttons {
+  --cocoon-custom-border-color: transparent;
   margin-top: 6px;
 }
 .admin-settings .demo .ranking-item-link-buttons > div {
@@ -15969,6 +15970,7 @@ body.wp-admin {
   position: relative;
 }
 .admin-settings .demo .ranking-item-link-buttons {
+  --cocoon-custom-border-color: transparent;
   margin-top: 6px;
 }
 .admin-settings .demo .ranking-item-link-buttons > div {

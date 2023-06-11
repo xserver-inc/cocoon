@@ -7961,6 +7961,7 @@ div.fb-like-mobile {
 }
 
 .ranking-item-link-buttons {
+  --cocoon-custom-border-color: transparent;
   margin-top: 6px;
 }
 .ranking-item-link-buttons > div {
