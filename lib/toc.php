@@ -250,6 +250,7 @@ function add_toc_before_1st_h2($the_content){
   if (is_plugin_fourm_page()) {
     return $the_content;
   }
+
   //ページ上で目次が非表示設定（ショートコードも未使用）になっている場合
   if (!is_total_the_page_toc_visible() && !$_TOC_WIDGET_OR_SHORTCODE_USED && !is_active_widget( false, false, 'toc', true )) {
     return $the_content;
