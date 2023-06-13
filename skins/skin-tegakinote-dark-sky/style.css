@@ -2010,9 +2010,11 @@ div.speech-balloon {
 /* ブロック用 */
 .wp-block-search__button {
 	border: none;
-	color: rgba(var(--white-color), 1);
-	background: rgba(var(--primary-color), 1);
+	color: rgba(var(--black-color), 1);
+	background: rgba(var(--gray-color), 1);
 }
+
+.wp-block-search__button
 
 /* ウィジェット用 */
 .widget_search .search-edit {
