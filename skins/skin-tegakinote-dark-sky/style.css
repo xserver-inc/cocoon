@@ -45,7 +45,7 @@ body {
 	background-color: rgba(var(--black-color), 1);
 }
 
-div.speech-balloon, .block-box, .caption-box-content, .tab-caption-box-content, .iconlist-box, .iconlist-box li::before {
+div.speech-balloon, .block-box, .caption-box-content, .tab-caption-box-content, .iconlist-box, .iconlist-box.has-border-color li::before {
 	color: inherit;
 }
 
