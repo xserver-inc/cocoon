@@ -155,7 +155,9 @@ endif;
 define('OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE', 'related_entry_card_post_date_or_update_visible');
 if ( !function_exists( 'is_related_entry_card_post_date_or_update_visible' ) ):
 function is_related_entry_card_post_date_or_update_visible(){
-  return get_theme_option(OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE, 1);
+  // return get_theme_option(OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE, 1);
+  //ややこしいので表示にして廃止
+  return true;
 }
 endif;
 

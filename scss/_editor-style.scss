@@ -209,10 +209,6 @@ span.btn-wrap {
   text-align: center;
 }
 
-// .btn-wrap > a{
-//   pointer-events: none;
-// }
-
 .blank-box {
   &.bb-tab::before {
     @include tabbox_label;
@@ -382,4 +378,15 @@ span.btn-wrap {
 .has-huge-font-size,
 .has-larger-font-size {
   font-size: 42px;
+}
+
+
+//クラシックエディターで選択した時にパディングが縮む不安修正
+.mce-content-body .btn-wrap a[data-mce-selected]{
+  padding: 7px 13px;
+}
+
+//クラシックエディターで入力したボタンHTMLがブロックエディターで出力される時
+.wp-block-freeform.block-library-rich-text__tinymce .btn[class*="btn-"]{
+  color: var(--cocoon-white-color);
 }

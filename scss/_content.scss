@@ -137,14 +137,16 @@ table {
   margin: 0;
 
   //1列目を固定
-  &.stfc-sticky tr{
-    >*:first-child {
-      background-color: #e9eff2;
-      color: var(--cocoon-text-color);
-      position: sticky;
-      position: -webkit-sticky;
-      left: 0;
-      z-index: 2;
+  &.stfc-sticky table:not(.wp-calendar-table) {
+    tr{
+      >*:first-child {
+        background-color: #e9eff2;
+        color: var(--cocoon-text-color);
+        position: sticky;
+        position: -webkit-sticky;
+        left: 0;
+        z-index: 2;
+      }
     }
   }
 }

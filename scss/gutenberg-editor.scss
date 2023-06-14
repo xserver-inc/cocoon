@@ -1358,3 +1358,20 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     // padding: 4px 12px;
   }
 }
+
+.editor-post-title::after {
+  // margin-top: -2em;
+  color: rgb(51, 51, 51);
+  content: "文字数: " attr(data-title-count);
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 2;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background-color: #f7f7f7;
+  padding: 1px 8px;
+  border-radius: 5px;
+  border: 1px solid var(--cocoon-basic-border-color);
+}

@@ -963,6 +963,22 @@ function initialize_tinymce_styles($init_array) {
       'items' => array(
 
         array(
+          'title' => __( 'ブラック（小）', THEME_NAME ),
+          'inline' => 'a',
+          'classes' => 'btn btn-black'
+        ),
+        array(
+          'title' => __( 'ブラック（中）', THEME_NAME ),
+          'inline' => 'a',
+          'classes' => 'btn btn-black btn-m'
+        ),
+        array(
+          'title' => __( 'ブラック（大）', THEME_NAME ),
+          'inline' => 'a',
+          'classes' => 'btn btn-black btn-l',
+        ),
+
+        array(
           'title' => __( 'レッド（小）', THEME_NAME ),
           'inline' => 'a',
           'classes' => 'btn btn-red'
@@ -1256,6 +1272,24 @@ function initialize_tinymce_styles($init_array) {
     array(
       'title' => __( '囲みボタン', THEME_NAME ),
       'items' => array(
+
+        array(
+          'title' => __( 'ブラック（小）', THEME_NAME ),
+          'inline' => 'span',
+          'wrapper' => true,
+          'classes' => 'btn-wrap btn-wrap-black'
+        ),
+        array(
+          'title' => __( 'ブラック（中）', THEME_NAME ),
+          'inline' => 'span',
+          'wrapper' => true,
+          'classes' => 'btn-wrap btn-wrap-black btn-wrap-m'
+        ),
+        array(
+          'title' => __( 'ブラック（大）', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'btn-wrap btn-wrap-black btn-wrap-l',
+        ),
 
         array(
           'title' => __( 'レッド（小）', THEME_NAME ),

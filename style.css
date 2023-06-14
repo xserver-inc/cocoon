@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.6.0.3
+Version: 2.6.1.2
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -1646,7 +1646,7 @@ table td {
   -webkit-overflow-scrolling: touch;
   margin: 0;
 }
-.scrollable-table.stfc-sticky tr > *:first-child {
+.scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > *:first-child {
   background-color: #e9eff2;
   color: var(--cocoon-text-color);
   position: sticky;
@@ -2689,8 +2689,14 @@ label.screen-reader-text {
 .has-box-style {
   padding: var(--cocoon-box-padding);
 }
+.has-box-style.has-background {
+  padding: var(--cocoon-box-padding);
+}
 
 .has-border {
+  padding: var(--cocoon-box-padding);
+}
+.has-border.has-background {
   padding: var(--cocoon-box-padding);
 }
 
@@ -2950,6 +2956,7 @@ label.screen-reader-text {
 .memo-box,
 .comment-box,
 .common-icon-box {
+  --cocoon-box-padding: 20px 20px 20px 72px;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -4102,19 +4109,23 @@ div.search-form {
   right: 0;
 }
 
-.btn, .ranking-item-link-buttons a,
+.button-block,
 .btn-wrap {
-  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-background-color: var(--cocoon-black-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
+
+.btn[class*="btn-"], .ranking-item-link-buttons a[class*="btn-"] {
   --cocoon-custom-border-color: transparent;
 }
 
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
-  border-color: transparent;
   color: var(--cocoon-custom-text-color);
   background-color: var(--cocoon-custom-background-color);
   border-color: var(--cocoon-custom-border-color);
@@ -4134,6 +4145,10 @@ div.search-form {
 .btn-wrap > a amp-img,
 .wp-block-freeform .btn-wrap > a amp-img {
   position: absolute;
+}
+
+.mce-content-body .btn-wrap a[data-mce-selected] {
+  padding: 7px 13px;
 }
 
 .btn:before, .ranking-item-link-buttons a:before,
@@ -4221,6 +4236,10 @@ div.search-form {
 
 #container .btn-white:hover, #container .btn-wrap.btn-wrap-white > a:hover {
   color: var(--cocoon-text-color);
+}
+
+.btn-black, .btn-wrap.btn-wrap-black > a {
+  background-color: var(--cocoon-black-color);
 }
 
 .btn-red, .ranking-item-link a, .btn-wrap.btn-wrap-red > a {
@@ -6760,6 +6779,7 @@ canvas, iframe, video,
 
 .cta-button {
   margin-top: 1em;
+  --cocoon-custom-border-color: transparent;
 }
 
 .sidebar .cta-box {
@@ -7966,6 +7986,7 @@ div.fb-like-mobile {
 }
 
 .ranking-item-link-buttons {
+  --cocoon-custom-border-color: transparent;
   margin-top: 6px;
 }
 .ranking-item-link-buttons > div {
@@ -9471,7 +9492,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-parenthetic-box::after,
 .is-style-parenthetic-box::before {
-  border-color: var(--cocoon-box-border-color);
+  border: 1px solid var(--cocoon-box-border-color);
   content: "";
   height: 100%;
   position: absolute;
@@ -9479,17 +9500,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 .is-style-parenthetic-box::before {
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-  border-top: 1px solid;
+  border-right-width: 0;
   bottom: 0;
   left: 0;
 }
 
 .is-style-parenthetic-box::after {
-  border-bottom: 1px solid;
-  border-right: 1px solid;
-  border-top: 1px solid;
+  border-left-width: 0;
   bottom: 0;
   right: 0;
 }
@@ -9586,12 +9603,14 @@ https://codepen.io/nxworld/pen/oLdoWb
   top: 0px;
   width: 10px;
   right: 20px;
-  border: 5px solid var(--cocoon-white-color);
+  border: 5px solid transparent;
+  background: inherit;
   z-index: 2;
 }
 
 .is-style-stapler-box {
   position: relative;
+  --cocoon-box-padding: 35px 20px 15px;
   padding: 35px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -9618,8 +9637,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-stapler-top-left-box {
   position: relative;
+  --cocoon-box-padding: 20px 20px 20px 35px;
   padding: 20px 20px 20px 35px;
-  background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -9639,6 +9658,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-hole-punch-box {
   position: relative;
+  --cocoon-box-padding: 40px 20px 15px;
   padding: 40px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -9702,14 +9722,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-balloon-left-box::after {
   border-right-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-top: -8px;
+  border-width: 9px;
+  margin-top: -9px;
 }
 
 .is-style-balloon-left-box::before {
-  border-right-color: var(--cocoon-box-border-color);
-  border-width: 9px;
-  margin-top: -9px;
+  border-right-color: inherit;
+  border-width: 10px;
+  margin-top: -10px;
 }
 
 .is-style-balloon-right-box::after,
@@ -9720,14 +9740,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-balloon-right-box::after {
   border-left-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-top: -8px;
+  border-width: 9px;
+  margin-top: -9px;
 }
 
 .is-style-balloon-right-box::before {
-  border-left-color: var(--cocoon-box-border-color);
-  border-width: 9px;
-  margin-top: -9px;
+  border-left-color: inherit;
+  border-width: 10px;
+  margin-top: -10px;
 }
 
 .is-style-balloon-top-box::after,
@@ -9737,17 +9757,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 .is-style-balloon-top-box::after {
-  border-color: rgba(252, 242, 243, 0);
   border-bottom-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-left: -8px;
+  border-width: 9px;
+  margin-left: -9px;
 }
 
 .is-style-balloon-top-box::before {
-  border-color: rgba(0, 0, 0, 0);
-  border-bottom-color: var(--cocoon-box-border-color);
-  border-width: 9px;
-  margin-left: -9px;
+  border-bottom-color: inherit;
+  border-width: 10px;
+  margin-left: -10px;
 }
 
 .is-style-balloon-bottom-box::after,
@@ -9758,14 +9776,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-balloon-bottom-box::after {
   border-top-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-left: -8px;
+  border-width: 9px;
+  margin-left: -9px;
 }
 
 .is-style-balloon-bottom-box::before {
-  border-top-color: var(--cocoon-box-border-color);
-  border-width: 9px;
-  margin-left: -9px;
+  border-top-color: inherit;
+  border-width: 10px;
+  margin-left: -10px;
 }
 
 .no-border {
@@ -11841,7 +11859,7 @@ _:-ms-lang(x), .mc-circle {
   .memo-box,
   .comment-box,
   .common-icon-box {
-    padding: 26px 6px 6px;
+    padding: 28px 6px 6px;
   }
 
   .is-style-information-box::before,

@@ -251,18 +251,20 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             echo '</div>';
 
             generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE , is_related_entry_card_post_date_visible(), __( '投稿日の表示', THEME_NAME ));
-            //表示しないとき
-            $is_not_allowed = is_related_entry_card_post_date_visible();
-            $is_not_allowed = $is_not_allowed || !is_related_entry_card_post_update_visible();
-            echo '<div class="indent'.get_not_allowed_form_class(!$is_not_allowed, true).'">';
-              generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE , is_related_entry_card_post_date_or_update_visible(), __( '更新日が存在しない場合は投稿日を表示', THEME_NAME ));
-            echo '</div>';
+            echo '<br>';
+
+            // //表示しないとき
+            // $is_not_allowed = is_related_entry_card_post_date_visible();
+            // $is_not_allowed = $is_not_allowed || !is_related_entry_card_post_update_visible();
+            // echo '<div class="indent'.get_not_allowed_form_class(!$is_not_allowed, true).'">';
+            //   generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE , is_related_entry_card_post_date_or_update_visible(), __( '更新日が存在しない場合は投稿日を表示', THEME_NAME ));
+            // echo '</div>';
 
             generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_UPDATE_VISIBLE , is_related_entry_card_post_update_visible(), __( '更新日の表示', THEME_NAME ));
             echo '<br>';
 
             generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_AUTHOR_VISIBLE , is_related_entry_card_post_author_visible(), __( '投稿者名の表示', THEME_NAME ));
-            generate_tips_tag(__( 'エントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
+            generate_tips_tag(__( '投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
             ?>
           </td>
         </tr>

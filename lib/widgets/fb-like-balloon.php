@@ -33,7 +33,7 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
     $facebook_url = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : get_the_author_facebook_url();
 
     //classにwidgetと一意となるクラス名を追加する
-    if ( is_singular() && $facebook_url ): //投稿・固定ページのトップ表示
+    if ( is_singular() && $facebook_url ){ //投稿・固定ページのトップ表示
       echo $args['before_widget'];
       if ($title) {
         echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
@@ -42,8 +42,7 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
       set_query_var('_FACEBOOK_URL', $facebook_url);
       get_template_part('tmp/fb-like-balloon');
       echo $args['after_widget'];
-    endif;//is_singular ?>
-    <?php
+    }//is_singular
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;

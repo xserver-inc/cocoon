@@ -362,7 +362,7 @@ form.admin-settings{
 .str-count{
   margin-left: 10px;
   background-color: #f7f7f7;
-  padding: 1px 2px;
+  padding: 1px 8px;
   border-radius: 5px;
   border: 1px solid var(--cocoon-basic-border-color);
   font-weight: normal;
@@ -1050,6 +1050,7 @@ textarea[name="the_page_memo"]{
   background: #0071a1 !important;
   border-color: #0071a1 !important;
   color: #fff !important;
+  line-height: 2;
 }
 
 .demo .carousel{

@@ -229,13 +229,13 @@ if ( !function_exists( 'get_exclude_skins' ) ):
 function get_exclude_skins(){
   //除外するスキンのフォルダ名を追加していく
   $exclude_skins = array(
-    'veilnui-simplog-cyan',
-    'veilnui-simplog-deep-orange',
-    'veilnui-simplog-light-blue',
-    'veilnui-simplog-light-green',
-    'veilnui-simplog-lime',
-    'veilnui-simplog-purple',
-    'veilnui-simplog-yellow',
+    // 'veilnui-simplog-cyan',
+    // 'veilnui-simplog-deep-orange',
+    // 'veilnui-simplog-light-blue',
+    // 'veilnui-simplog-light-green',
+    // 'veilnui-simplog-lime',
+    // 'veilnui-simplog-purple',
+    // 'veilnui-simplog-yellow',
   );
   return apply_filters('get_exclude_skins', $exclude_skins);
 }

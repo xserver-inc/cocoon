@@ -998,6 +998,16 @@ select {
 /* -------------------------------------------
 / 『ボックス』
 ------------------------------------------- */
+.is-style-information-box,
+.is-style-question-box,
+.is-style-alert-box,
+.is-style-memo-box,
+.is-style-comment-box,
+.is-style-ok-box,
+.is-style-ng-box,
+.is-style-good-box,
+.is-style-bad-box,
+.is-style-profile-box,
 .information-box,
 .question-box,
 .alert-box,
@@ -1293,4 +1303,46 @@ div.speech-balloon {
 
 .toggle-box {
   --cocoon-custom-background-color: transparent;
+}
+
+.has-box-style,
+.has-border {
+  --cocoon-box-border-color: #ccc;
+}
+
+.is-style-border-thin-and-thick,
+.is-style-border-radius-s-thin-and-thick,
+.is-style-border-radius-l-thin-and-thick {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.is-style-light-background-box {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.is-style-stripe-box {
+  background-image: repeating-linear-gradient(-45deg, #333 0, #333 3px, transparent 3px, transparent 6px);
+}
+
+.is-style-checkered-box {
+  background-image: linear-gradient(90deg, rgba(232, 238, 236, 0.1) 50%, transparent 50%), linear-gradient(rgba(234, 236, 238, 0.1) 50%, transparent 50%);
+}
+
+.is-style-stitch-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+.is-style-border-top-box {
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.22);
+}
+
+.is-style-border-left-box {
+  box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.33);
+}
+
+[class^="is-style-balloon-"], [class*=" is-style-balloon-"] {
+  --cocoon-white-color: #191919;
+  background: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-box-border-color);
 }

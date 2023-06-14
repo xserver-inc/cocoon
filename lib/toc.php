@@ -188,6 +188,11 @@ endif;
 
 if ( !function_exists( 'is_total_the_page_toc_visible' ) ):
 function is_total_the_page_toc_visible(){
+  //プラグインのフォーラムページの場合
+  if (is_plugin_fourm_page()) {
+    return false;
+  }
+
   //投稿・固定・カテゴリー・タブページでない場合
   if (!is_singular() && !is_category() && !is_tag()) {
     return false;
@@ -240,6 +245,12 @@ function add_toc_before_1st_h2($the_content){
   if (class_exists( 'toc' )) {
     return $the_content;
   }
+
+  //プラグインのフォーラムページの場合は目次機能は無効
+  if (is_plugin_fourm_page()) {
+    return $the_content;
+  }
+
   //ページ上で目次が非表示設定（ショートコードも未使用）になっている場合
   if (!is_total_the_page_toc_visible() && !$_TOC_WIDGET_OR_SHORTCODE_USED && !is_active_widget( false, false, 'toc', true )) {
     return $the_content;

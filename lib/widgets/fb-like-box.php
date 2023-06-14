@@ -49,18 +49,20 @@ class FBLikeBoxWidgetItem extends WP_Widget {
       $line_id = get_the_author_line_id();
     }
 
-    echo $args['before_widget'];
-    if ($title) {
-      echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
-    }
+    if ( is_singular() && $facebook_url ){ //投稿・固定ページのトップ表示
+      echo $args['before_widget'];
+      if ($title) {
+        echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
+      }
 
-    set_query_var('_MESSAGE', $message);
-    set_query_var('_SUB_MESSAGE', $sub_message);
-    set_query_var('_FACEBOOK_URL', $facebook_url);
-    set_query_var('_TWITTER_ID', $twitter_id);
-    set_query_var('_LINE_ID', $line_id);
-    get_template_part('tmp/fb-like-box');
-    echo $args['after_widget'];
+      set_query_var('_MESSAGE', $message);
+      set_query_var('_SUB_MESSAGE', $sub_message);
+      set_query_var('_FACEBOOK_URL', $facebook_url);
+      set_query_var('_TWITTER_ID', $twitter_id);
+      set_query_var('_LINE_ID', $line_id);
+      get_template_part('tmp/fb-like-box');
+      echo $args['after_widget'];
+    }//is_singular
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;

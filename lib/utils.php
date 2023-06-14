@@ -1488,7 +1488,7 @@ endif;
 //wpForoが存在するか
 if ( !function_exists( 'is_wpforo_exist' ) ):
 function is_wpforo_exist(){
-  return class_exists('wpForo');
+  return function_exists('is_wpforo_page');
 }
 endif;
 

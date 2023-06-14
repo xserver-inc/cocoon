@@ -57,13 +57,46 @@ jQuery(document).ready(function($){
   });
   count_characters("#the_page_meta_description", ".meta-description-count");
 
-  //WordPressタイトルの文字数
-  $('#titlewrap').after('<div class="str-wp-title-cou" style="position:absolute;top:-23px;right:0;color:#666;background-color:#f7f7f7;padding:1px 2px;border-radius:5px;border:1px solid #ccc;"><?php _e( '文字数', THEME_NAME ); ?>:<span class="wp-title-count">0</span></div>');
-  $('#title').bind("keydown keyup keypress change",function(){
+  //WordPressタイトルの文字数（クラシックエディター）
+  if ($('#titlewrap')) {
+    $('#titlewrap').after('<div class="str-wp-title-count"><?php _e( '文字数', THEME_NAME ); ?>:<span class="wp-title-count">0</span></div>');
+    $('#title').bind("keydown keyup keypress change",function(){
+      count_characters('#title', '.wp-title-count');
+    });
     count_characters('#title', '.wp-title-count');
-  });
-  count_characters('#title', '.wp-title-count');
+  }
+
+
 });
+
+//ブロックエディタータイトルのカウント
+!function($) {
+  function countUp(element, h1) {
+      const text = "H1" === element.get(0).tagName ? h1.text() : h1.val();
+      element.attr("data-title-count", text.length)
+  }
+  window.addEventListener("load", (function() {
+    setTimeout((() => {
+      !function() {
+        let postTitle = $(".editor-post-title");
+        if (postTitle) {
+          if (0 < postTitle.length) {
+            h1 = "H1" === postTitle.get(0).tagName ? postTitle : postTitle.find("textarea");
+          } else {
+            postTitle = $("#titlewrap");
+            h1 = postTitle.find("input");
+          }
+          if (0 !== postTitle.length) {
+            countUp(postTitle, h1);
+            h1.bind("keydown keyup keypress change", (() => {
+              countUp(postTitle, h1);
+            }))
+          }
+        }
+      }()
+    }), 50)
+  }))
+}(window.jQuery);
 </script><?php
 }
 endif;

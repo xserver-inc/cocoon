@@ -2058,7 +2058,7 @@ body.wp-admin {
   -webkit-overflow-scrolling: touch;
   margin: 0;
 }
-.admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child {
+.admin-settings .demo .scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > *:first-child {
   background-color: #e9eff2;
   color: var(--cocoon-text-color);
   position: sticky;
@@ -2937,7 +2937,13 @@ body.wp-admin {
 .admin-settings .demo .has-box-style {
   padding: var(--cocoon-box-padding);
 }
+.admin-settings .demo .has-box-style.has-background {
+  padding: var(--cocoon-box-padding);
+}
 .admin-settings .demo .has-border {
+  padding: var(--cocoon-box-padding);
+}
+.admin-settings .demo .has-border.has-background {
   padding: var(--cocoon-box-padding);
 }
 .admin-settings .demo .badge,
@@ -3138,6 +3144,7 @@ body.wp-admin {
 .admin-settings .demo .memo-box,
 .admin-settings .demo .comment-box,
 .admin-settings .demo .common-icon-box {
+  --cocoon-box-padding: 20px 20px 20px 72px;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -4251,18 +4258,21 @@ body.wp-admin {
   bottom: 0;
   right: 0;
 }
-.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
+.admin-settings .demo .button-block,
 .admin-settings .demo .btn-wrap {
-  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-background-color: var(--cocoon-black-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
+.admin-settings .demo .btn[class*="btn-"], .admin-settings .demo .ranking-item-link-buttons a[class*="btn-"] {
   --cocoon-custom-border-color: transparent;
 }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
-  border-color: transparent;
   color: var(--cocoon-custom-text-color);
   background-color: var(--cocoon-custom-background-color);
   border-color: var(--cocoon-custom-border-color);
@@ -4282,6 +4292,9 @@ body.wp-admin {
 .admin-settings .demo .btn-wrap > a amp-img,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img {
   position: absolute;
+}
+.admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
+  padding: 7px 13px;
 }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before,
 .admin-settings .demo .btn:after,
@@ -4358,6 +4371,9 @@ body.wp-admin {
 }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover {
   color: var(--cocoon-text-color);
+}
+.admin-settings .demo .btn-black, .admin-settings .demo .btn-wrap.btn-wrap-black > a {
+  background-color: var(--cocoon-black-color);
 }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a {
   background-color: var(--cocoon-red-color);
@@ -6553,6 +6569,7 @@ body.wp-admin {
 }
 .admin-settings .demo .cta-button {
   margin-top: 1em;
+  --cocoon-custom-border-color: transparent;
 }
 .admin-settings .demo .sidebar .cta-box {
   font-size: 0.8em;
@@ -7619,6 +7636,7 @@ body.wp-admin {
   position: relative;
 }
 .admin-settings .demo .ranking-item-link-buttons {
+  --cocoon-custom-border-color: transparent;
   margin-top: 6px;
 }
 .admin-settings .demo .ranking-item-link-buttons > div {
@@ -8870,23 +8888,19 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-parenthetic-box::after,
 .admin-settings .demo .is-style-parenthetic-box::before {
-  border-color: var(--cocoon-box-border-color);
+  border: 1px solid var(--cocoon-box-border-color);
   content: "";
   height: 100%;
   position: absolute;
   width: 0.7em;
 }
 .admin-settings .demo .is-style-parenthetic-box::before {
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-  border-top: 1px solid;
+  border-right-width: 0;
   bottom: 0;
   left: 0;
 }
 .admin-settings .demo .is-style-parenthetic-box::after {
-  border-bottom: 1px solid;
-  border-right: 1px solid;
-  border-top: 1px solid;
+  border-left-width: 0;
   bottom: 0;
   right: 0;
 }
@@ -8971,11 +8985,13 @@ body.wp-admin {
   top: 0px;
   width: 10px;
   right: 20px;
-  border: 5px solid var(--cocoon-white-color);
+  border: 5px solid transparent;
+  background: inherit;
   z-index: 2;
 }
 .admin-settings .demo .is-style-stapler-box {
   position: relative;
+  --cocoon-box-padding: 35px 20px 15px;
   padding: 35px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -8998,8 +9014,8 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-stapler-top-left-box {
   position: relative;
+  --cocoon-box-padding: 20px 20px 20px 35px;
   padding: 20px 20px 20px 35px;
-  background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -9017,6 +9033,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-hole-punch-box {
   position: relative;
+  --cocoon-box-padding: 40px 20px 15px;
   padding: 40px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -9071,13 +9088,13 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-balloon-left-box::after {
   border-right-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-top: -8px;
-}
-.admin-settings .demo .is-style-balloon-left-box::before {
-  border-right-color: var(--cocoon-box-border-color);
   border-width: 9px;
   margin-top: -9px;
+}
+.admin-settings .demo .is-style-balloon-left-box::before {
+  border-right-color: inherit;
+  border-width: 10px;
+  margin-top: -10px;
 }
 .admin-settings .demo .is-style-balloon-right-box::after,
 .admin-settings .demo .is-style-balloon-right-box::before {
@@ -9086,13 +9103,13 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-balloon-right-box::after {
   border-left-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-top: -8px;
-}
-.admin-settings .demo .is-style-balloon-right-box::before {
-  border-left-color: var(--cocoon-box-border-color);
   border-width: 9px;
   margin-top: -9px;
+}
+.admin-settings .demo .is-style-balloon-right-box::before {
+  border-left-color: inherit;
+  border-width: 10px;
+  margin-top: -10px;
 }
 .admin-settings .demo .is-style-balloon-top-box::after,
 .admin-settings .demo .is-style-balloon-top-box::before {
@@ -9100,16 +9117,14 @@ body.wp-admin {
   left: 50%;
 }
 .admin-settings .demo .is-style-balloon-top-box::after {
-  border-color: rgba(252, 242, 243, 0);
   border-bottom-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-left: -8px;
-}
-.admin-settings .demo .is-style-balloon-top-box::before {
-  border-color: rgba(0, 0, 0, 0);
-  border-bottom-color: var(--cocoon-box-border-color);
   border-width: 9px;
   margin-left: -9px;
+}
+.admin-settings .demo .is-style-balloon-top-box::before {
+  border-bottom-color: inherit;
+  border-width: 10px;
+  margin-left: -10px;
 }
 .admin-settings .demo .is-style-balloon-bottom-box::after,
 .admin-settings .demo .is-style-balloon-bottom-box::before {
@@ -9118,13 +9133,13 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-balloon-bottom-box::after {
   border-top-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-left: -8px;
-}
-.admin-settings .demo .is-style-balloon-bottom-box::before {
-  border-top-color: var(--cocoon-box-border-color);
   border-width: 9px;
   margin-left: -9px;
+}
+.admin-settings .demo .is-style-balloon-bottom-box::before {
+  border-top-color: inherit;
+  border-width: 10px;
+  margin-left: -10px;
 }
 .admin-settings .demo .no-border {
   border: none;
@@ -10377,7 +10392,7 @@ body.wp-admin {
   -webkit-overflow-scrolling: touch;
   margin: 0;
 }
-.admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child {
+.admin-settings .demo .scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > *:first-child {
   background-color: #e9eff2;
   color: var(--cocoon-text-color);
   position: sticky;
@@ -11256,7 +11271,13 @@ body.wp-admin {
 .admin-settings .demo .has-box-style {
   padding: var(--cocoon-box-padding);
 }
+.admin-settings .demo .has-box-style.has-background {
+  padding: var(--cocoon-box-padding);
+}
 .admin-settings .demo .has-border {
+  padding: var(--cocoon-box-padding);
+}
+.admin-settings .demo .has-border.has-background {
   padding: var(--cocoon-box-padding);
 }
 .admin-settings .demo .badge,
@@ -11457,6 +11478,7 @@ body.wp-admin {
 .admin-settings .demo .memo-box,
 .admin-settings .demo .comment-box,
 .admin-settings .demo .common-icon-box {
+  --cocoon-box-padding: 20px 20px 20px 72px;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -12570,18 +12592,21 @@ body.wp-admin {
   bottom: 0;
   right: 0;
 }
-.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
+.admin-settings .demo .button-block,
 .admin-settings .demo .btn-wrap {
-  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-background-color: var(--cocoon-black-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
+.admin-settings .demo .btn[class*="btn-"], .admin-settings .demo .ranking-item-link-buttons a[class*="btn-"] {
   --cocoon-custom-border-color: transparent;
 }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
-  border-color: transparent;
   color: var(--cocoon-custom-text-color);
   background-color: var(--cocoon-custom-background-color);
   border-color: var(--cocoon-custom-border-color);
@@ -12601,6 +12626,9 @@ body.wp-admin {
 .admin-settings .demo .btn-wrap > a amp-img,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img {
   position: absolute;
+}
+.admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
+  padding: 7px 13px;
 }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before,
 .admin-settings .demo .btn:after,
@@ -12677,6 +12705,9 @@ body.wp-admin {
 }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover {
   color: var(--cocoon-text-color);
+}
+.admin-settings .demo .btn-black, .admin-settings .demo .btn-wrap.btn-wrap-black > a {
+  background-color: var(--cocoon-black-color);
 }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a {
   background-color: var(--cocoon-red-color);
@@ -14872,6 +14903,7 @@ body.wp-admin {
 }
 .admin-settings .demo .cta-button {
   margin-top: 1em;
+  --cocoon-custom-border-color: transparent;
 }
 .admin-settings .demo .sidebar .cta-box {
   font-size: 0.8em;
@@ -15938,6 +15970,7 @@ body.wp-admin {
   position: relative;
 }
 .admin-settings .demo .ranking-item-link-buttons {
+  --cocoon-custom-border-color: transparent;
   margin-top: 6px;
 }
 .admin-settings .demo .ranking-item-link-buttons > div {
@@ -17189,23 +17222,19 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-parenthetic-box::after,
 .admin-settings .demo .is-style-parenthetic-box::before {
-  border-color: var(--cocoon-box-border-color);
+  border: 1px solid var(--cocoon-box-border-color);
   content: "";
   height: 100%;
   position: absolute;
   width: 0.7em;
 }
 .admin-settings .demo .is-style-parenthetic-box::before {
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-  border-top: 1px solid;
+  border-right-width: 0;
   bottom: 0;
   left: 0;
 }
 .admin-settings .demo .is-style-parenthetic-box::after {
-  border-bottom: 1px solid;
-  border-right: 1px solid;
-  border-top: 1px solid;
+  border-left-width: 0;
   bottom: 0;
   right: 0;
 }
@@ -17290,11 +17319,13 @@ body.wp-admin {
   top: 0px;
   width: 10px;
   right: 20px;
-  border: 5px solid var(--cocoon-white-color);
+  border: 5px solid transparent;
+  background: inherit;
   z-index: 2;
 }
 .admin-settings .demo .is-style-stapler-box {
   position: relative;
+  --cocoon-box-padding: 35px 20px 15px;
   padding: 35px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -17317,8 +17348,8 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-stapler-top-left-box {
   position: relative;
+  --cocoon-box-padding: 20px 20px 20px 35px;
   padding: 20px 20px 20px 35px;
-  background-color: #fff;
   color: #555555;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -17336,6 +17367,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-hole-punch-box {
   position: relative;
+  --cocoon-box-padding: 40px 20px 15px;
   padding: 40px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -17390,13 +17422,13 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-balloon-left-box::after {
   border-right-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-top: -8px;
-}
-.admin-settings .demo .is-style-balloon-left-box::before {
-  border-right-color: var(--cocoon-box-border-color);
   border-width: 9px;
   margin-top: -9px;
+}
+.admin-settings .demo .is-style-balloon-left-box::before {
+  border-right-color: inherit;
+  border-width: 10px;
+  margin-top: -10px;
 }
 .admin-settings .demo .is-style-balloon-right-box::after,
 .admin-settings .demo .is-style-balloon-right-box::before {
@@ -17405,13 +17437,13 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-balloon-right-box::after {
   border-left-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-top: -8px;
-}
-.admin-settings .demo .is-style-balloon-right-box::before {
-  border-left-color: var(--cocoon-box-border-color);
   border-width: 9px;
   margin-top: -9px;
+}
+.admin-settings .demo .is-style-balloon-right-box::before {
+  border-left-color: inherit;
+  border-width: 10px;
+  margin-top: -10px;
 }
 .admin-settings .demo .is-style-balloon-top-box::after,
 .admin-settings .demo .is-style-balloon-top-box::before {
@@ -17419,16 +17451,14 @@ body.wp-admin {
   left: 50%;
 }
 .admin-settings .demo .is-style-balloon-top-box::after {
-  border-color: rgba(252, 242, 243, 0);
   border-bottom-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-left: -8px;
-}
-.admin-settings .demo .is-style-balloon-top-box::before {
-  border-color: rgba(0, 0, 0, 0);
-  border-bottom-color: var(--cocoon-box-border-color);
   border-width: 9px;
   margin-left: -9px;
+}
+.admin-settings .demo .is-style-balloon-top-box::before {
+  border-bottom-color: inherit;
+  border-width: 10px;
+  margin-left: -10px;
 }
 .admin-settings .demo .is-style-balloon-bottom-box::after,
 .admin-settings .demo .is-style-balloon-bottom-box::before {
@@ -17437,13 +17467,13 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-balloon-bottom-box::after {
   border-top-color: var(--cocoon-white-color);
-  border-width: 8px;
-  margin-left: -8px;
-}
-.admin-settings .demo .is-style-balloon-bottom-box::before {
-  border-top-color: var(--cocoon-box-border-color);
   border-width: 9px;
   margin-left: -9px;
+}
+.admin-settings .demo .is-style-balloon-bottom-box::before {
+  border-top-color: inherit;
+  border-width: 10px;
+  margin-left: -10px;
 }
 .admin-settings .demo .no-border {
   border: none;
@@ -19186,7 +19216,7 @@ body.wp-admin {
   .admin-settings .demo .memo-box,
   .admin-settings .demo .comment-box,
   .admin-settings .demo .common-icon-box {
-    padding: 26px 6px 6px;
+    padding: 28px 6px 6px;
   }
   .admin-settings .demo .is-style-information-box::before,
   .admin-settings .demo .is-style-question-box::before,
@@ -19745,7 +19775,7 @@ form.admin-settings .postbox {
 .str-count {
   margin-left: 10px;
   background-color: #f7f7f7;
-  padding: 1px 2px;
+  padding: 1px 8px;
   border-radius: 5px;
   border: 1px solid var(--cocoon-basic-border-color);
   font-weight: normal;
@@ -20357,7 +20387,13 @@ textarea[name="the_page_memo"] {
 .components-popover__content .has-box-style {
   padding: var(--cocoon-box-padding);
 }
+.components-popover__content .has-box-style.has-background {
+  padding: var(--cocoon-box-padding);
+}
 .components-popover__content .has-border {
+  padding: var(--cocoon-box-padding);
+}
+.components-popover__content .has-border.has-background {
   padding: var(--cocoon-box-padding);
 }
 .components-popover__content .admin-settings .demo .badge, .admin-settings .demo .components-popover__content .badge,
@@ -20564,6 +20600,7 @@ textarea[name="the_page_memo"] {
 .components-popover__content .memo-box,
 .components-popover__content .comment-box,
 .components-popover__content .common-icon-box {
+  --cocoon-box-padding: 20px 20px 20px 72px;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -21737,18 +21774,21 @@ textarea[name="the_page_memo"] {
   bottom: 0;
   right: 0;
 }
-.components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a,
+.components-popover__content .button-block,
 .components-popover__content .btn-wrap {
-  --cocoon-custom-background-color: var(--cocoon-text-color);
+  --cocoon-custom-background-color: var(--cocoon-black-color);
   --cocoon-custom-text-color: var(--cocoon-white-color);
+  --cocoon-custom-border-color: transparent;
+}
+.components-popover__content .btn[class*="btn-"], .components-popover__content .admin-settings .demo .ranking-item-link-buttons a[class*="btn-"], .admin-settings .demo .ranking-item-link-buttons .components-popover__content a[class*="btn-"] {
   --cocoon-custom-border-color: transparent;
 }
 .components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a,
 .components-popover__content .btn-wrap > a,
 .components-popover__content .wp-block-freeform .btn-wrap > a {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
-  border-color: transparent;
   color: var(--cocoon-custom-text-color);
   background-color: var(--cocoon-custom-background-color);
   border-color: var(--cocoon-custom-border-color);
@@ -21768,6 +21808,9 @@ textarea[name="the_page_memo"] {
 .components-popover__content .btn-wrap > a amp-img,
 .components-popover__content .wp-block-freeform .btn-wrap > a amp-img {
   position: absolute;
+}
+.components-popover__content .mce-content-body .btn-wrap a[data-mce-selected] {
+  padding: 7px 13px;
 }
 .components-popover__content .btn:before, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:before,
 .components-popover__content .btn:after,
@@ -21845,6 +21888,9 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content #container .btn-white:hover, .components-popover__content #container .btn-wrap.btn-wrap-white > a:hover {
   color: var(--cocoon-text-color);
+}
+.components-popover__content .btn-black, .components-popover__content .btn-wrap.btn-wrap-black > a {
+  background-color: var(--cocoon-black-color);
 }
 .components-popover__content .btn-red, .components-popover__content .admin-settings .demo .ranking-item-link a, .admin-settings .demo .ranking-item-link .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-red > a {
   background-color: var(--cocoon-red-color);
@@ -23678,6 +23724,7 @@ textarea[name="the_page_memo"] {
   background: #0071a1 !important;
   border-color: #0071a1 !important;
   color: #fff !important;
+  line-height: 2;
 }
 
 .demo .carousel {
