@@ -9576,7 +9576,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 .is-style-clip-box {
-  background-color: #191919;
+  background-color: var(--cocoon-white-color);
   position: relative;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
