@@ -45,6 +45,11 @@ body {
 	background-color: rgba(var(--black-color), 1);
 }
 
+/* .block-box, .caption-box-content, .tab-caption-box-content, .iconlist-box, .iconlist-box.has-border-color li::before, .timeline-box {
+	color: inherit;
+	color: var(--cocoon-custom-text-color);
+} */
+
 /* デフォルトリンク */
 a {
 	color: rgba(var(--primary-color-tegaki-note), 1);
@@ -80,7 +85,7 @@ a {
 }
 
 .a-wrap:hover, .navi-footer-in a:hover, .tagcloud a:hover, .widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover, .widget_block ul li a:hover {
-	background: rgba(var(--white-color), .5);	
+	background: rgba(var(--white-color), .5);
 }
 
 /************************
@@ -272,7 +277,7 @@ div:not(list-columns) .list:after {
 .article h2, .related-entry-heading, .comment-title,
 .article h2:before, .article h2:after,
 .related-entry-heading:before, .comment-title:before,
-.related-entry-heading:after, .comment-title:after { 
+.related-entry-heading:after, .comment-title:after {
 	border: solid 1px #777;
 }
 
@@ -291,7 +296,7 @@ div:not(list-columns) .list:after {
 
 .article h2:before, .article h2:after,
 .related-entry-heading:before, .comment-title:before,
-.related-entry-heading:after, .comment-title:after { 
+.related-entry-heading:after, .comment-title:after {
 	position: absolute;
 	content: "";
 	top: 0;
@@ -404,7 +409,7 @@ div:not(list-columns) .list:after {
 /* ロゴメニューボタン */
 .logo-menu-button {
 	line-height: initial;
-} 
+}
 
 /************************
 * メニュー
@@ -866,7 +871,7 @@ _:lang(ja)+_:-webkit-full-screen-document, .list-title-in:before, .list-title-in
 	padding:.3em .5em;
 	margin-right: .5em;
 	border-radius: 10px;
-	
+
 }
 
 .toc-list li ol li a, .widget_categories li > ul > li > a, .widget_nav_menu ul li a {
@@ -876,7 +881,7 @@ _:lang(ja)+_:-webkit-full-screen-document, .list-title-in:before, .list-title-in
 
 .toc-list > li a:hover, .widget_categories li a:hover, .widget_nav_menu ul li a:hover {
 	transform: translateX(4px);
-	
+
 }
 
 @media screen and (max-width: 834px) {
@@ -1391,7 +1396,14 @@ pre {
 /************************
 * 吹き出し
 ************************/
-div.speech-balloon {
+.speech-wrap{
+	--cocoon-custom-background-color: rgba(var(--black-color), 1);
+	--cocoon-custom-text-color: inherit;
+}
+.sbs-line.sbp-r .speech-balloon{
+	--cocoon-custom-text-color: #333;
+}
+/* div.speech-balloon {
 	background-color: rgba(var(--black-color), 1);
 }
 
@@ -1404,7 +1416,7 @@ div.speech-balloon {
 .sbs-flat .speech-balloon,
 .sbs-line.sbp-r .speech-balloon {
 	color: rgba(var(--black-color), 1);
-}
+} */
 
 /************************
 * ボタン
@@ -1424,6 +1436,19 @@ div.speech-balloon {
 	filter: brightness(115%);
 	box-shadow: 0 -3px 2px 0px rgba(var(--gray-color), .2), 0 -5px 5px -2px rgba(var(--gray-color), 1) inset;
 }
+
+.timeline-box,
+.iconlist-box,
+.iconlist-box.has-border-color li::before,
+.faq-wrap,
+.caption-box,
+.tab-caption-box,
+.label-box,
+.micro-text{
+	--cocoon-custom-text-color: inherit;
+}
+
+
 
 /************************
 * 丸ボタン
@@ -1460,7 +1485,7 @@ div.speech-balloon {
 	flex-flow: column;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 13px;	
+	margin-bottom: 13px;
 	background: rgba(var(--back-color), 1);
 	padding: 1em;
 	border-radius: 10px;
@@ -1740,11 +1765,11 @@ div.speech-balloon {
 		width: 65%;
 	}
 
-	.article-footer .sns-share-message, .article-footer .sns-follow-message {	
+	.article-footer .sns-share-message, .article-footer .sns-follow-message {
 		width: 35%;
 		margin-right: 1em;
 	}
-	
+
 }
 
 /* サイドバー・フッター用 */
@@ -1819,21 +1844,21 @@ div.speech-balloon {
 	background: rgba(var(--black-color), 1);
 }
 
-@media screen and (max-width: 480px) {	
+@media screen and (max-width: 480px) {
 	.main .author-thumb {
 		float: none;
 		margin-top: 0;
 		width: 100%;
 	}
-	
-	.main .widget_author_box .author-box {	
+
+	.main .widget_author_box .author-box {
 		text-align: center;
 	}
-	
+
 	.main .author-description {
 		text-align: left;
 	}
-	
+
 	.main .widget_author_box .author-box .author-content {
 		margin-left: 0;
 	}
@@ -1958,13 +1983,17 @@ div.speech-balloon {
 /************************
 * マイクロバルーン
 ************************/
-.micro-balloon {
+.micro-balloon{
+	--cocoon-custom-background-color: rgba(var(--black-color), 1);
+}
+/* .micro-balloon {
 	background: rgba(var(--black-color), 1);
 }
 
 .micro-balloon:after {
 	border-top-color: rgba(var(--black-color), 1);
-}
+} */
+
 
 /************************
 * CTAボックス
@@ -2006,9 +2035,11 @@ div.speech-balloon {
 /* ブロック用 */
 .wp-block-search__button {
 	border: none;
-	color: rgba(var(--white-color), 1);
-	background: rgba(var(--primary-color), 1);
+	color: rgba(var(--black-color), 1);
+	background: rgba(var(--gray-color), 1);
 }
+
+.wp-block-search__button
 
 /* ウィジェット用 */
 .widget_search .search-edit {
@@ -2139,7 +2170,7 @@ option {
 	border-style: solid;
 	border-width: 2px;
 }
- 
+
 .pagination .current {
 	color: rgba(var(--black-color), 1);
 	vertical-align:middle;
@@ -2244,4 +2275,63 @@ option {
 .snow-monkey-form .smf-action .smf-button-control__control:hover {
 	opacity: .6;
 	transition: all .3s;
+}
+
+/************************
+* 新着情報
+************************/
+.info-list-item-content-link{
+	color: rgba(var(--primary-color-tegaki-note), 1);
+}
+
+/************************
+* 段落ブロック
+************************/
+.has-box-style,
+.has-border{
+  --cocoon-box-border-color: rgba(var(--gray-color), 1);
+}
+
+.is-style-border-thin-and-thick,
+.is-style-border-radius-s-thin-and-thick,
+.is-style-border-radius-l-thin-and-thick {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.is-style-light-background-box{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.is-style-stripe-box {
+  background-image: repeating-linear-gradient(-45deg, #333 0, #333 3px, transparent 3px, transparent 6px);
+}
+
+.is-style-checkered-box {
+  background-image: linear-gradient(90deg, rgba(232, 238, 236, 0.1) 50%, transparent 50%), linear-gradient(rgba(234, 236, 238, 0.1) 50%, transparent 50%);
+}
+
+.is-style-stitch-box{
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+.is-style-border-top-box {
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.22);
+}
+
+.is-style-border-left-box {
+  box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.33);
+}
+
+[class^="is-style-balloon-"], [class*=" is-style-balloon-"] {
+  --cocoon-white-color: rgba(var(--black-color), 1);
+	background: var(--cocoon-white-color);
+	border: 1px solid var(--cocoon-box-border-color);
+}
+
+/************************
+* カレンダー
+************************/
+.wp-calendar-table :is(th, #today){
+	color: rgba(var(--black-color), 1);
 }
