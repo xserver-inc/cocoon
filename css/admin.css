@@ -9016,7 +9016,6 @@ body.wp-admin {
   position: relative;
   --cocoon-box-padding: 20px 20px 20px 35px;
   padding: 20px 20px 20px 35px;
-  color: #555555;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -17350,7 +17349,6 @@ body.wp-admin {
   position: relative;
   --cocoon-box-padding: 20px 20px 20px 35px;
   padding: 20px 20px 20px 35px;
-  color: #555555;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
 }
