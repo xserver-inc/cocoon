@@ -45,6 +45,10 @@ body {
 	background-color: rgba(var(--black-color), 1);
 }
 
+div.speech-balloon, .block-box, .caption-box-content, .tab-caption-box-content, .iconlist-box, .iconlist-box.has-border-color li::before {
+	color: inherit;
+}
+
 /* デフォルトリンク */
 a {
 	color: rgba(var(--primary-color-tegaki-note), 1);
@@ -2006,9 +2010,11 @@ div.speech-balloon {
 /* ブロック用 */
 .wp-block-search__button {
 	border: none;
-	color: rgba(var(--white-color), 1);
-	background: rgba(var(--primary-color), 1);
+	color: rgba(var(--black-color), 1);
+	background: rgba(var(--gray-color), 1);
 }
+
+.wp-block-search__button
 
 /* ウィジェット用 */
 .widget_search .search-edit {
