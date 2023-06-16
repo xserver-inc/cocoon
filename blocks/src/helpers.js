@@ -34,6 +34,7 @@ export const CLICK_POINT_MSG = __(
   'こちらをクリックして設定変更。この入力は公開ページで反映されません。',
   THEME_NAME
 );
+export const BLOCK_SERIES = 'cocoon-blocks';
 
 export const keyColor = gbColors[ 'keyColor' ];
 
