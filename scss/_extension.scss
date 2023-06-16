@@ -1889,3 +1889,11 @@ figcaption{
     border-color: transparent;
   }
 }
+
+//ブロックしたの余白
+//for width-のクラス
+@for $i from 0 through 20 {
+  .has-bottom-margin.is-style-bottom-margin-#{$i}em {
+    margin-bottom: $i * 1em !important;
+  }
+}

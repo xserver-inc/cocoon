@@ -6033,6 +6033,69 @@ body.wp-admin {
   background-color: transparent;
   border-color: transparent;
 }
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-0em {
+  margin-bottom: 0em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-1em {
+  margin-bottom: 1em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-2em {
+  margin-bottom: 2em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-3em {
+  margin-bottom: 3em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-4em {
+  margin-bottom: 4em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-5em {
+  margin-bottom: 5em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-6em {
+  margin-bottom: 6em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-7em {
+  margin-bottom: 7em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-8em {
+  margin-bottom: 8em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-9em {
+  margin-bottom: 9em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-10em {
+  margin-bottom: 10em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-11em {
+  margin-bottom: 11em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-12em {
+  margin-bottom: 12em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-13em {
+  margin-bottom: 13em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-14em {
+  margin-bottom: 14em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-15em {
+  margin-bottom: 15em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-16em {
+  margin-bottom: 16em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-17em {
+  margin-bottom: 17em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-18em {
+  margin-bottom: 18em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-19em {
+  margin-bottom: 19em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-20em {
+  margin-bottom: 20em !important;
+}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -14365,6 +14428,69 @@ body.wp-admin {
 .admin-settings .demo .wp-block-pullquote.has-background blockquote {
   background-color: transparent;
   border-color: transparent;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-0em {
+  margin-bottom: 0em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-1em {
+  margin-bottom: 1em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-2em {
+  margin-bottom: 2em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-3em {
+  margin-bottom: 3em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-4em {
+  margin-bottom: 4em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-5em {
+  margin-bottom: 5em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-6em {
+  margin-bottom: 6em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-7em {
+  margin-bottom: 7em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-8em {
+  margin-bottom: 8em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-9em {
+  margin-bottom: 9em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-10em {
+  margin-bottom: 10em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-11em {
+  margin-bottom: 11em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-12em {
+  margin-bottom: 12em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-13em {
+  margin-bottom: 13em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-14em {
+  margin-bottom: 14em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-15em {
+  margin-bottom: 15em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-16em {
+  margin-bottom: 16em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-17em {
+  margin-bottom: 17em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-18em {
+  margin-bottom: 18em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-19em {
+  margin-bottom: 19em !important;
+}
+.admin-settings .demo .has-bottom-margin.is-style-bottom-margin-20em {
+  margin-bottom: 20em !important;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -23547,6 +23673,69 @@ textarea[name="the_page_memo"] {
 .components-popover__content .wp-block-pullquote.has-background blockquote {
   background-color: transparent;
   border-color: transparent;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-0em {
+  margin-bottom: 0em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-1em {
+  margin-bottom: 1em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-2em {
+  margin-bottom: 2em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-3em {
+  margin-bottom: 3em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-4em {
+  margin-bottom: 4em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-5em {
+  margin-bottom: 5em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-6em {
+  margin-bottom: 6em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-7em {
+  margin-bottom: 7em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-8em {
+  margin-bottom: 8em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-9em {
+  margin-bottom: 9em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-10em {
+  margin-bottom: 10em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-11em {
+  margin-bottom: 11em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-12em {
+  margin-bottom: 12em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-13em {
+  margin-bottom: 13em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-14em {
+  margin-bottom: 14em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-15em {
+  margin-bottom: 15em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-16em {
+  margin-bottom: 16em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-17em {
+  margin-bottom: 17em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-18em {
+  margin-bottom: 18em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-19em {
+  margin-bottom: 19em !important;
+}
+.components-popover__content .has-bottom-margin.is-style-bottom-margin-20em {
+  margin-bottom: 20em !important;
 }
 .components-popover__content .red {
   margin: 0;
