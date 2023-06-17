@@ -2944,6 +2944,7 @@ function get_shortcode_removed_content($content){
   $removed_content = preg_replace('/\[rank.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[star.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[\[.*\]\]/', '', $removed_content);
+  $removed_content = apply_filters('get_shortcode_removed_content', $removed_content);
   return $removed_content;
 }
 endif;
