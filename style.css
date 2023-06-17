@@ -9872,6 +9872,35 @@ https://codepen.io/nxworld/pen/oLdoWb
   margin-left: -10px;
 }
 
+.is-style-enclosed-numeric-list {
+  counter-reset: list;
+  list-style-type: none;
+  padding: 0;
+}
+
+.is-style-enclosed-numeric-list li {
+  position: relative;
+  margin: 0.4em 0;
+  line-height: 1.6em;
+}
+
+.is-style-enclosed-numeric-list li:before {
+  counter-increment: list;
+  content: counter(list);
+  font-size: 14px;
+  font-family: 'arial narrow', sans-serif;
+  position: absolute;
+  left: -2em;
+  width: 1.6em;
+  height: 1.6em;
+  text-align: center;
+  color: var(--cocoon-white-color);
+  line-height: 1.6;
+  background: var(--cocoon-box-border-color);
+  border-radius: 50%;
+  top: calc(50% - (1.6em/2));
+}
+
 .no-border {
   border: none;
 }

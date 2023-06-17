@@ -1319,9 +1319,10 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     width: 100%;
 
     //リスト
-    .wp-block-list{
+    &.wp-block-list{
       padding: 0;
-      font-size: 8px;
+      margin-left: 1em;
+      font-size: 8px !important;
     }
 
     &.is-style-stapler-box::before,
@@ -1346,6 +1347,10 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     }
     &.is-style-hole-punch-box::before { left: 20%;}
     &.is-style-hole-punch-box::after { right: 20%;}
+
+
+    //リスト
+    &.is-style-enclosed-numeric-list li::before{font-size: 6px;}
   }
   .__prevTitle {
     display: block;

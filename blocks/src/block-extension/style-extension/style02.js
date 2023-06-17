@@ -42,8 +42,8 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
-          style: 'table-of-contents-list',
-          buttonText: __( '目次風', THEME_NAME ),
+          style: 'enclosed-numeric-list',
+          buttonText: __( '丸数字', THEME_NAME ),
         },
         {
           style: 'check-list',
@@ -60,10 +60,6 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         {
           style: 'cross-list',
           buttonText: __( 'バツ', THEME_NAME ),
-        },
-        {
-          style: 'enclosed-numeric-list',
-          buttonText: __( '丸数字', THEME_NAME ),
         },
         {
           style: 'annotation-list',
@@ -127,17 +123,15 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                             }
                           >
                             <span class="__prevWrap editor-styles-wrapper">
-                              <span
-                                className={ classnames( '__prev', {
+                              <ul
+                                className={ classnames( '__prev', 'wp-block-list', {
                                   [ 'is-style-' + style.style ]: !! style.style,
                                   [ 'has-box-style' ]: style.style,
                                 } ) }
                               >
-                                <ul className="wp-block-list">
                                   <li>aaa</li>
                                   <li>bbb</li>
-                                </ul>
-                              </span>
+                              </ul>
                             </span>
                             <span class="__prevTitle">
                               { style.buttonText }
