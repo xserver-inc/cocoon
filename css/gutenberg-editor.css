@@ -1198,7 +1198,7 @@ ol, ul {
   background-color: #fff;
 }
 
-.block-editor-inner-blocks .block-editor-block-list__layout :last-of-type {
+div .block-editor-block-list__layout :last-of-type {
   margin-bottom: 0;
 }
 

@@ -872,7 +872,7 @@ ol, ul {
 
 //Gutenbergエディター.block-editor-block-list__layoutの最後に
 //.block-list-appenderが来るので:last-child余白調整が入らないのを修正
-.block-editor-inner-blocks{
+div{
   .block-editor-block-list__layout{
     :last-of-type{
       margin-bottom: 0;

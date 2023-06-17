@@ -3165,18 +3165,6 @@ body.wp-admin {
 .admin-settings .demo .body .wp-block-gallery :last-child,
 .admin-settings .demo .body .block-box :last-child,
 .admin-settings .demo .body .blank-box :last-child,
-.admin-settings .demo .body .is-style-blank-box-red :last-child,
-.admin-settings .demo .body .is-style-blank-box-navy :last-child,
-.admin-settings .demo .body .is-style-blank-box-blue :last-child,
-.admin-settings .demo .body .is-style-blank-box-yellow :last-child,
-.admin-settings .demo .body .is-style-blank-box-green :last-child,
-.admin-settings .demo .body .is-style-blank-box-pink :last-child,
-.admin-settings .demo .body .is-style-blank-box-orange :last-child,
-.admin-settings .demo .body .is-style-sticky-gray :last-child,
-.admin-settings .demo .body .is-style-sticky-yellow :last-child,
-.admin-settings .demo .body .is-style-sticky-red :last-child,
-.admin-settings .demo .body .is-style-sticky-blue :last-child,
-.admin-settings .demo .body .is-style-sticky-green :last-child,
 .admin-settings .demo .body .common-icon-box :last-child,
 .admin-settings .demo .body .info-box :last-child,
 .admin-settings .demo .body .primary-box :last-child,
@@ -3349,17 +3337,7 @@ body.wp-admin {
 .admin-settings .demo #wpadminbar .alert::before {
   display: none;
 }
-.admin-settings .demo .blank-box, .admin-settings .demo .is-style-blank-box-red,
-.admin-settings .demo .is-style-blank-box-navy,
-.admin-settings .demo .is-style-blank-box-blue,
-.admin-settings .demo .is-style-blank-box-yellow,
-.admin-settings .demo .is-style-blank-box-green,
-.admin-settings .demo .is-style-blank-box-pink,
-.admin-settings .demo .is-style-blank-box-orange, .admin-settings .demo .is-style-sticky-gray,
-.admin-settings .demo .is-style-sticky-yellow,
-.admin-settings .demo .is-style-sticky-red,
-.admin-settings .demo .is-style-sticky-blue,
-.admin-settings .demo .is-style-sticky-green {
+.admin-settings .demo .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
   border-style: solid;
   border-width: 3px;
@@ -3369,315 +3347,75 @@ body.wp-admin {
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
 }
-.admin-settings .demo .blank-box ol, .admin-settings .demo .is-style-blank-box-red ol,
-.admin-settings .demo .is-style-blank-box-navy ol,
-.admin-settings .demo .is-style-blank-box-blue ol,
-.admin-settings .demo .is-style-blank-box-yellow ol,
-.admin-settings .demo .is-style-blank-box-green ol,
-.admin-settings .demo .is-style-blank-box-pink ol,
-.admin-settings .demo .is-style-blank-box-orange ol, .admin-settings .demo .is-style-sticky-gray ol,
-.admin-settings .demo .is-style-sticky-yellow ol,
-.admin-settings .demo .is-style-sticky-red ol,
-.admin-settings .demo .is-style-sticky-blue ol,
-.admin-settings .demo .is-style-sticky-green ol, .admin-settings .demo .blank-box ul, .admin-settings .demo .is-style-blank-box-red ul,
-.admin-settings .demo .is-style-blank-box-navy ul,
-.admin-settings .demo .is-style-blank-box-blue ul,
-.admin-settings .demo .is-style-blank-box-yellow ul,
-.admin-settings .demo .is-style-blank-box-green ul,
-.admin-settings .demo .is-style-blank-box-pink ul,
-.admin-settings .demo .is-style-blank-box-orange ul, .admin-settings .demo .is-style-sticky-gray ul,
-.admin-settings .demo .is-style-sticky-yellow ul,
-.admin-settings .demo .is-style-sticky-red ul,
-.admin-settings .demo .is-style-sticky-blue ul,
-.admin-settings .demo .is-style-sticky-green ul {
+.admin-settings .demo .blank-box ol, .admin-settings .demo .blank-box ul {
   margin: 0;
 }
-.admin-settings .demo .blank-box.bb-red, .admin-settings .demo .bb-red.is-style-blank-box-red,
-.admin-settings .demo .bb-red.is-style-blank-box-navy,
-.admin-settings .demo .bb-red.is-style-blank-box-blue,
-.admin-settings .demo .bb-red.is-style-blank-box-yellow,
-.admin-settings .demo .bb-red.is-style-blank-box-green,
-.admin-settings .demo .bb-red.is-style-blank-box-pink,
-.admin-settings .demo .bb-red.is-style-blank-box-orange, .admin-settings .demo .bb-red.is-style-sticky-gray,
-.admin-settings .demo .bb-red.is-style-sticky-yellow,
-.admin-settings .demo .bb-red.is-style-sticky-red,
-.admin-settings .demo .bb-red.is-style-sticky-blue,
-.admin-settings .demo .bb-red.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-red {
   border-color: var(--cocoon-red-color);
 }
-.admin-settings .demo .blank-box.bb-pink, .admin-settings .demo .bb-pink.is-style-blank-box-red,
-.admin-settings .demo .bb-pink.is-style-blank-box-navy,
-.admin-settings .demo .bb-pink.is-style-blank-box-blue,
-.admin-settings .demo .bb-pink.is-style-blank-box-yellow,
-.admin-settings .demo .bb-pink.is-style-blank-box-green,
-.admin-settings .demo .bb-pink.is-style-blank-box-pink,
-.admin-settings .demo .bb-pink.is-style-blank-box-orange, .admin-settings .demo .bb-pink.is-style-sticky-gray,
-.admin-settings .demo .bb-pink.is-style-sticky-yellow,
-.admin-settings .demo .bb-pink.is-style-sticky-red,
-.admin-settings .demo .bb-pink.is-style-sticky-blue,
-.admin-settings .demo .bb-pink.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-pink {
   border-color: var(--cocoon-pink-color);
 }
-.admin-settings .demo .blank-box.bb-purple, .admin-settings .demo .bb-purple.is-style-blank-box-red,
-.admin-settings .demo .bb-purple.is-style-blank-box-navy,
-.admin-settings .demo .bb-purple.is-style-blank-box-blue,
-.admin-settings .demo .bb-purple.is-style-blank-box-yellow,
-.admin-settings .demo .bb-purple.is-style-blank-box-green,
-.admin-settings .demo .bb-purple.is-style-blank-box-pink,
-.admin-settings .demo .bb-purple.is-style-blank-box-orange, .admin-settings .demo .bb-purple.is-style-sticky-gray,
-.admin-settings .demo .bb-purple.is-style-sticky-yellow,
-.admin-settings .demo .bb-purple.is-style-sticky-red,
-.admin-settings .demo .bb-purple.is-style-sticky-blue,
-.admin-settings .demo .bb-purple.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-purple {
   border-color: var(--cocoon-purple-color);
 }
-.admin-settings .demo .blank-box.bb-blue, .admin-settings .demo .bb-blue.is-style-blank-box-red,
-.admin-settings .demo .bb-blue.is-style-blank-box-navy,
-.admin-settings .demo .bb-blue.is-style-blank-box-blue,
-.admin-settings .demo .bb-blue.is-style-blank-box-yellow,
-.admin-settings .demo .bb-blue.is-style-blank-box-green,
-.admin-settings .demo .bb-blue.is-style-blank-box-pink,
-.admin-settings .demo .bb-blue.is-style-blank-box-orange, .admin-settings .demo .bb-blue.is-style-sticky-gray,
-.admin-settings .demo .bb-blue.is-style-sticky-yellow,
-.admin-settings .demo .bb-blue.is-style-sticky-red,
-.admin-settings .demo .bb-blue.is-style-sticky-blue,
-.admin-settings .demo .bb-blue.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-blue {
   border-color: var(--cocoon-blue-color);
 }
-.admin-settings .demo .blank-box.bb-green, .admin-settings .demo .bb-green.is-style-blank-box-red,
-.admin-settings .demo .bb-green.is-style-blank-box-navy,
-.admin-settings .demo .bb-green.is-style-blank-box-blue,
-.admin-settings .demo .bb-green.is-style-blank-box-yellow,
-.admin-settings .demo .bb-green.is-style-blank-box-green,
-.admin-settings .demo .bb-green.is-style-blank-box-pink,
-.admin-settings .demo .bb-green.is-style-blank-box-orange, .admin-settings .demo .bb-green.is-style-sticky-gray,
-.admin-settings .demo .bb-green.is-style-sticky-yellow,
-.admin-settings .demo .bb-green.is-style-sticky-red,
-.admin-settings .demo .bb-green.is-style-sticky-blue,
-.admin-settings .demo .bb-green.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-green {
   border-color: var(--cocoon-green-color);
 }
-.admin-settings .demo .blank-box.bb-orange, .admin-settings .demo .bb-orange.is-style-blank-box-red,
-.admin-settings .demo .bb-orange.is-style-blank-box-navy,
-.admin-settings .demo .bb-orange.is-style-blank-box-blue,
-.admin-settings .demo .bb-orange.is-style-blank-box-yellow,
-.admin-settings .demo .bb-orange.is-style-blank-box-green,
-.admin-settings .demo .bb-orange.is-style-blank-box-pink,
-.admin-settings .demo .bb-orange.is-style-blank-box-orange, .admin-settings .demo .bb-orange.is-style-sticky-gray,
-.admin-settings .demo .bb-orange.is-style-sticky-yellow,
-.admin-settings .demo .bb-orange.is-style-sticky-red,
-.admin-settings .demo .bb-orange.is-style-sticky-blue,
-.admin-settings .demo .bb-orange.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-orange {
   border-color: var(--cocoon-orange-color);
 }
-.admin-settings .demo .blank-box.bb-yellow, .admin-settings .demo .bb-yellow.is-style-blank-box-red,
-.admin-settings .demo .bb-yellow.is-style-blank-box-navy,
-.admin-settings .demo .bb-yellow.is-style-blank-box-blue,
-.admin-settings .demo .bb-yellow.is-style-blank-box-yellow,
-.admin-settings .demo .bb-yellow.is-style-blank-box-green,
-.admin-settings .demo .bb-yellow.is-style-blank-box-pink,
-.admin-settings .demo .bb-yellow.is-style-blank-box-orange, .admin-settings .demo .bb-yellow.is-style-sticky-gray,
-.admin-settings .demo .bb-yellow.is-style-sticky-yellow,
-.admin-settings .demo .bb-yellow.is-style-sticky-red,
-.admin-settings .demo .bb-yellow.is-style-sticky-blue,
-.admin-settings .demo .bb-yellow.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.admin-settings .demo .blank-box.bb-brown, .admin-settings .demo .bb-brown.is-style-blank-box-red,
-.admin-settings .demo .bb-brown.is-style-blank-box-navy,
-.admin-settings .demo .bb-brown.is-style-blank-box-blue,
-.admin-settings .demo .bb-brown.is-style-blank-box-yellow,
-.admin-settings .demo .bb-brown.is-style-blank-box-green,
-.admin-settings .demo .bb-brown.is-style-blank-box-pink,
-.admin-settings .demo .bb-brown.is-style-blank-box-orange, .admin-settings .demo .bb-brown.is-style-sticky-gray,
-.admin-settings .demo .bb-brown.is-style-sticky-yellow,
-.admin-settings .demo .bb-brown.is-style-sticky-red,
-.admin-settings .demo .bb-brown.is-style-sticky-blue,
-.admin-settings .demo .bb-brown.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-brown {
   border-color: var(--cocoon-brown-color);
 }
-.admin-settings .demo .blank-box.bb-grey, .admin-settings .demo .bb-grey.is-style-blank-box-red,
-.admin-settings .demo .bb-grey.is-style-blank-box-navy,
-.admin-settings .demo .bb-grey.is-style-blank-box-blue,
-.admin-settings .demo .bb-grey.is-style-blank-box-yellow,
-.admin-settings .demo .bb-grey.is-style-blank-box-green,
-.admin-settings .demo .bb-grey.is-style-blank-box-pink,
-.admin-settings .demo .bb-grey.is-style-blank-box-orange, .admin-settings .demo .bb-grey.is-style-sticky-gray,
-.admin-settings .demo .bb-grey.is-style-sticky-yellow,
-.admin-settings .demo .bb-grey.is-style-sticky-red,
-.admin-settings .demo .bb-grey.is-style-sticky-blue,
-.admin-settings .demo .bb-grey.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-grey {
   border-color: var(--cocoon-grey-color);
 }
-.admin-settings .demo .blank-box.bb-black, .admin-settings .demo .bb-black.is-style-blank-box-red,
-.admin-settings .demo .bb-black.is-style-blank-box-navy,
-.admin-settings .demo .bb-black.is-style-blank-box-blue,
-.admin-settings .demo .bb-black.is-style-blank-box-yellow,
-.admin-settings .demo .bb-black.is-style-blank-box-green,
-.admin-settings .demo .bb-black.is-style-blank-box-pink,
-.admin-settings .demo .bb-black.is-style-blank-box-orange, .admin-settings .demo .bb-black.is-style-sticky-gray,
-.admin-settings .demo .bb-black.is-style-sticky-yellow,
-.admin-settings .demo .bb-black.is-style-sticky-red,
-.admin-settings .demo .bb-black.is-style-sticky-blue,
-.admin-settings .demo .bb-black.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-black {
   border-color: var(--cocoon-black-color);
 }
-.admin-settings .demo .blank-box.bb-deep, .admin-settings .demo .bb-deep.is-style-blank-box-red,
-.admin-settings .demo .bb-deep.is-style-blank-box-navy,
-.admin-settings .demo .bb-deep.is-style-blank-box-blue,
-.admin-settings .demo .bb-deep.is-style-blank-box-yellow,
-.admin-settings .demo .bb-deep.is-style-blank-box-green,
-.admin-settings .demo .bb-deep.is-style-blank-box-pink,
-.admin-settings .demo .bb-deep.is-style-blank-box-orange, .admin-settings .demo .bb-deep.is-style-sticky-gray,
-.admin-settings .demo .bb-deep.is-style-sticky-yellow,
-.admin-settings .demo .bb-deep.is-style-sticky-red,
-.admin-settings .demo .bb-deep.is-style-sticky-blue,
-.admin-settings .demo .bb-deep.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-deep {
   border-color: var(--cocoon-deep-color);
 }
-.admin-settings .demo .blank-box.bb-indigo, .admin-settings .demo .bb-indigo.is-style-blank-box-red,
-.admin-settings .demo .bb-indigo.is-style-blank-box-navy,
-.admin-settings .demo .bb-indigo.is-style-blank-box-blue,
-.admin-settings .demo .bb-indigo.is-style-blank-box-yellow,
-.admin-settings .demo .bb-indigo.is-style-blank-box-green,
-.admin-settings .demo .bb-indigo.is-style-blank-box-pink,
-.admin-settings .demo .bb-indigo.is-style-blank-box-orange, .admin-settings .demo .bb-indigo.is-style-sticky-gray,
-.admin-settings .demo .bb-indigo.is-style-sticky-yellow,
-.admin-settings .demo .bb-indigo.is-style-sticky-red,
-.admin-settings .demo .bb-indigo.is-style-sticky-blue,
-.admin-settings .demo .bb-indigo.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-indigo {
   border-color: var(--cocoon-indigo-color);
 }
-.admin-settings .demo .blank-box.bb-light-blue, .admin-settings .demo .bb-light-blue.is-style-blank-box-red,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-navy,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-blue,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-yellow,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-green,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-pink,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-orange, .admin-settings .demo .bb-light-blue.is-style-sticky-gray,
-.admin-settings .demo .bb-light-blue.is-style-sticky-yellow,
-.admin-settings .demo .bb-light-blue.is-style-sticky-red,
-.admin-settings .demo .bb-light-blue.is-style-sticky-blue,
-.admin-settings .demo .bb-light-blue.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-light-blue {
   border-color: var(--cocoon-light-blue-color);
 }
-.admin-settings .demo .blank-box.bb-cyan, .admin-settings .demo .bb-cyan.is-style-blank-box-red,
-.admin-settings .demo .bb-cyan.is-style-blank-box-navy,
-.admin-settings .demo .bb-cyan.is-style-blank-box-blue,
-.admin-settings .demo .bb-cyan.is-style-blank-box-yellow,
-.admin-settings .demo .bb-cyan.is-style-blank-box-green,
-.admin-settings .demo .bb-cyan.is-style-blank-box-pink,
-.admin-settings .demo .bb-cyan.is-style-blank-box-orange, .admin-settings .demo .bb-cyan.is-style-sticky-gray,
-.admin-settings .demo .bb-cyan.is-style-sticky-yellow,
-.admin-settings .demo .bb-cyan.is-style-sticky-red,
-.admin-settings .demo .bb-cyan.is-style-sticky-blue,
-.admin-settings .demo .bb-cyan.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-cyan {
   border-color: var(--cocoon-cyan-color);
 }
-.admin-settings .demo .blank-box.bb-teal, .admin-settings .demo .bb-teal.is-style-blank-box-red,
-.admin-settings .demo .bb-teal.is-style-blank-box-navy,
-.admin-settings .demo .bb-teal.is-style-blank-box-blue,
-.admin-settings .demo .bb-teal.is-style-blank-box-yellow,
-.admin-settings .demo .bb-teal.is-style-blank-box-green,
-.admin-settings .demo .bb-teal.is-style-blank-box-pink,
-.admin-settings .demo .bb-teal.is-style-blank-box-orange, .admin-settings .demo .bb-teal.is-style-sticky-gray,
-.admin-settings .demo .bb-teal.is-style-sticky-yellow,
-.admin-settings .demo .bb-teal.is-style-sticky-red,
-.admin-settings .demo .bb-teal.is-style-sticky-blue,
-.admin-settings .demo .bb-teal.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-teal {
   border-color: var(--cocoon-teal-color);
 }
-.admin-settings .demo .blank-box.bb-light-green, .admin-settings .demo .bb-light-green.is-style-blank-box-red,
-.admin-settings .demo .bb-light-green.is-style-blank-box-navy,
-.admin-settings .demo .bb-light-green.is-style-blank-box-blue,
-.admin-settings .demo .bb-light-green.is-style-blank-box-yellow,
-.admin-settings .demo .bb-light-green.is-style-blank-box-green,
-.admin-settings .demo .bb-light-green.is-style-blank-box-pink,
-.admin-settings .demo .bb-light-green.is-style-blank-box-orange, .admin-settings .demo .bb-light-green.is-style-sticky-gray,
-.admin-settings .demo .bb-light-green.is-style-sticky-yellow,
-.admin-settings .demo .bb-light-green.is-style-sticky-red,
-.admin-settings .demo .bb-light-green.is-style-sticky-blue,
-.admin-settings .demo .bb-light-green.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-light-green {
   border-color: var(--cocoon-light-green-color);
 }
-.admin-settings .demo .blank-box.bb-lime, .admin-settings .demo .bb-lime.is-style-blank-box-red,
-.admin-settings .demo .bb-lime.is-style-blank-box-navy,
-.admin-settings .demo .bb-lime.is-style-blank-box-blue,
-.admin-settings .demo .bb-lime.is-style-blank-box-yellow,
-.admin-settings .demo .bb-lime.is-style-blank-box-green,
-.admin-settings .demo .bb-lime.is-style-blank-box-pink,
-.admin-settings .demo .bb-lime.is-style-blank-box-orange, .admin-settings .demo .bb-lime.is-style-sticky-gray,
-.admin-settings .demo .bb-lime.is-style-sticky-yellow,
-.admin-settings .demo .bb-lime.is-style-sticky-red,
-.admin-settings .demo .bb-lime.is-style-sticky-blue,
-.admin-settings .demo .bb-lime.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-lime {
   border-color: var(--cocoon-lime-color);
 }
-.admin-settings .demo .blank-box.bb-amber, .admin-settings .demo .bb-amber.is-style-blank-box-red,
-.admin-settings .demo .bb-amber.is-style-blank-box-navy,
-.admin-settings .demo .bb-amber.is-style-blank-box-blue,
-.admin-settings .demo .bb-amber.is-style-blank-box-yellow,
-.admin-settings .demo .bb-amber.is-style-blank-box-green,
-.admin-settings .demo .bb-amber.is-style-blank-box-pink,
-.admin-settings .demo .bb-amber.is-style-blank-box-orange, .admin-settings .demo .bb-amber.is-style-sticky-gray,
-.admin-settings .demo .bb-amber.is-style-sticky-yellow,
-.admin-settings .demo .bb-amber.is-style-sticky-red,
-.admin-settings .demo .bb-amber.is-style-sticky-blue,
-.admin-settings .demo .bb-amber.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-amber {
   border-color: var(--cocoon-amber-color);
 }
-.admin-settings .demo .blank-box.bb-deep-orange, .admin-settings .demo .bb-deep-orange.is-style-blank-box-red,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-navy,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-blue,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-yellow,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-green,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-pink,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-orange, .admin-settings .demo .bb-deep-orange.is-style-sticky-gray,
-.admin-settings .demo .bb-deep-orange.is-style-sticky-yellow,
-.admin-settings .demo .bb-deep-orange.is-style-sticky-red,
-.admin-settings .demo .bb-deep-orange.is-style-sticky-blue,
-.admin-settings .demo .bb-deep-orange.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-deep-orange {
   border-color: var(--cocoon-deep-orange-color);
 }
-.admin-settings .demo .blank-box.bb-white, .admin-settings .demo .bb-white.is-style-blank-box-red,
-.admin-settings .demo .bb-white.is-style-blank-box-navy,
-.admin-settings .demo .bb-white.is-style-blank-box-blue,
-.admin-settings .demo .bb-white.is-style-blank-box-yellow,
-.admin-settings .demo .bb-white.is-style-blank-box-green,
-.admin-settings .demo .bb-white.is-style-blank-box-pink,
-.admin-settings .demo .bb-white.is-style-blank-box-orange, .admin-settings .demo .bb-white.is-style-sticky-gray,
-.admin-settings .demo .bb-white.is-style-sticky-yellow,
-.admin-settings .demo .bb-white.is-style-sticky-red,
-.admin-settings .demo .bb-white.is-style-sticky-blue,
-.admin-settings .demo .bb-white.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-white {
   border-color: var(--cocoon-white-color);
 }
-.admin-settings .demo .blank-box.bb-tab, .admin-settings .demo .bb-tab.is-style-blank-box-red,
-.admin-settings .demo .bb-tab.is-style-blank-box-navy,
-.admin-settings .demo .bb-tab.is-style-blank-box-blue,
-.admin-settings .demo .bb-tab.is-style-blank-box-yellow,
-.admin-settings .demo .bb-tab.is-style-blank-box-green,
-.admin-settings .demo .bb-tab.is-style-blank-box-pink,
-.admin-settings .demo .bb-tab.is-style-blank-box-orange, .admin-settings .demo .bb-tab.is-style-sticky-gray,
-.admin-settings .demo .bb-tab.is-style-sticky-yellow,
-.admin-settings .demo .bb-tab.is-style-sticky-red,
-.admin-settings .demo .bb-tab.is-style-sticky-blue,
-.admin-settings .demo .bb-tab.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-tab {
   position: relative;
   margin-top: 2em;
   border-top-left-radius: 0;
 }
-.admin-settings .demo .blank-box.bb-tab .bb-label, .admin-settings .demo .bb-tab.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab .bb-label {
   background-color: var(--cocoon-custom-border-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
@@ -3689,424 +3427,153 @@ body.wp-admin {
   border-radius: 6px 6px 0 0;
   padding: 0 1em 0 .8em;
 }
-.admin-settings .demo .blank-box.bb-tab .bb-label .fa, .admin-settings .demo .bb-tab.is-style-blank-box-red .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-navy .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-blue .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-yellow .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-green .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-pink .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-orange .bb-label .fa, .admin-settings .demo .bb-tab.is-style-sticky-gray .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-sticky-yellow .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-sticky-red .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-sticky-blue .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-sticky-green .bb-label .fa {
+.admin-settings .demo .blank-box.bb-tab .bb-label .fa {
   margin-right: 6px;
 }
-.admin-settings .demo .blank-box.bb-tab.bb-red .bb-label, .admin-settings .demo .bb-tab.bb-red.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-red.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-red .bb-label {
   background-color: var(--cocoon-red-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-pink .bb-label, .admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-pink.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-pink .bb-label {
   background-color: var(--cocoon-pink-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-purple .bb-label, .admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-purple.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-purple .bb-label {
   background-color: var(--cocoon-purple-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-blue .bb-label, .admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-blue.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-blue .bb-label {
   background-color: var(--cocoon-blue-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-green .bb-label, .admin-settings .demo .bb-tab.bb-green.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-green.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-green .bb-label {
   background-color: var(--cocoon-green-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-orange .bb-label, .admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-orange.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-orange .bb-label {
   background-color: var(--cocoon-orange-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-yellow .bb-label, .admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-yellow .bb-label {
   background-color: var(--cocoon-yellow-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-brown .bb-label, .admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-brown.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-brown .bb-label {
   background-color: var(--cocoon-brown-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-grey .bb-label, .admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-grey.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-grey .bb-label {
   background-color: var(--cocoon-grey-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-black .bb-label, .admin-settings .demo .bb-tab.bb-black.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-black.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-black .bb-label {
   background-color: var(--cocoon-black-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-deep .bb-label, .admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-deep.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-deep .bb-label {
   background-color: var(--cocoon-deep-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-indigo .bb-label, .admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-indigo .bb-label {
   background-color: var(--cocoon-indigo-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-light-blue .bb-label, .admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-light-blue .bb-label {
   background-color: var(--cocoon-light-blue-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-cyan .bb-label, .admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-cyan .bb-label {
   background-color: var(--cocoon-cyan-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-teal .bb-label, .admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-teal.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-teal .bb-label {
   background-color: var(--cocoon-teal-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-light-green .bb-label, .admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-light-green .bb-label {
   background-color: var(--cocoon-light-green-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-lime .bb-label, .admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-lime.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-lime .bb-label {
   background-color: var(--cocoon-lime-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-amber .bb-label, .admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-amber.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-amber .bb-label {
   background-color: var(--cocoon-amber-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-deep-orange .bb-label, .admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-deep-orange .bb-label {
   background-color: var(--cocoon-deep-orange-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-white .bb-label, .admin-settings .demo .bb-tab.bb-white.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-white.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-white .bb-label {
   background-color: var(--cocoon-white-color);
 }
-.admin-settings .demo .blank-box.sticky, .admin-settings .demo .sticky.is-style-blank-box-red,
-.admin-settings .demo .sticky.is-style-blank-box-navy,
-.admin-settings .demo .sticky.is-style-blank-box-blue,
-.admin-settings .demo .sticky.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.is-style-blank-box-green,
-.admin-settings .demo .sticky.is-style-blank-box-pink,
-.admin-settings .demo .sticky.is-style-blank-box-orange, .admin-settings .demo .is-style-sticky-gray,
-.admin-settings .demo .is-style-sticky-yellow,
-.admin-settings .demo .is-style-sticky-red,
-.admin-settings .demo .is-style-sticky-blue,
-.admin-settings .demo .is-style-sticky-green, .admin-settings .demo .components-popover__content .is-style-sticky-gray, .components-popover__content .admin-settings .demo .is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .is-style-sticky-red,
-.components-popover__content .admin-settings .demo .is-style-sticky-red,
-.admin-settings .demo .components-popover__content .is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .is-style-sticky-green,
-.components-popover__content .admin-settings .demo .is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky {
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);
 }
-.admin-settings .demo .blank-box.sticky.st-yellow, .admin-settings .demo .sticky.st-yellow.is-style-blank-box-red,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-navy,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-blue,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-green,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-pink,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-orange, .admin-settings .demo .st-yellow.is-style-sticky-gray,
-.admin-settings .demo .st-yellow.is-style-sticky-yellow,
-.admin-settings .demo .st-yellow.is-style-sticky-red,
-.admin-settings .demo .st-yellow.is-style-sticky-blue,
-.admin-settings .demo .st-yellow.is-style-sticky-green, .admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-gray, .components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-green,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky.st-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.admin-settings .demo .blank-box.sticky.st-red, .admin-settings .demo .sticky.st-red.is-style-blank-box-red,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-navy,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-blue,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-green,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-pink,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-orange, .admin-settings .demo .st-red.is-style-sticky-gray,
-.admin-settings .demo .st-red.is-style-sticky-yellow,
-.admin-settings .demo .st-red.is-style-sticky-red,
-.admin-settings .demo .st-red.is-style-sticky-blue,
-.admin-settings .demo .st-red.is-style-sticky-green, .admin-settings .demo .components-popover__content .st-red.is-style-sticky-gray, .components-popover__content .admin-settings .demo .st-red.is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-green,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky.st-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.admin-settings .demo .blank-box.sticky.st-blue, .admin-settings .demo .sticky.st-blue.is-style-blank-box-red,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-navy,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-blue,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-green,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-pink,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-orange, .admin-settings .demo .st-blue.is-style-sticky-gray,
-.admin-settings .demo .st-blue.is-style-sticky-yellow,
-.admin-settings .demo .st-blue.is-style-sticky-red,
-.admin-settings .demo .st-blue.is-style-sticky-blue,
-.admin-settings .demo .st-blue.is-style-sticky-green, .admin-settings .demo .components-popover__content .st-blue.is-style-sticky-gray, .components-popover__content .admin-settings .demo .st-blue.is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-green,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky.st-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.admin-settings .demo .blank-box.sticky.st-green, .admin-settings .demo .sticky.st-green.is-style-blank-box-red,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-navy,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-blue,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-green,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-pink,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-orange, .admin-settings .demo .st-green.is-style-sticky-gray,
-.admin-settings .demo .st-green.is-style-sticky-yellow,
-.admin-settings .demo .st-green.is-style-sticky-red,
-.admin-settings .demo .st-green.is-style-sticky-blue,
-.admin-settings .demo .st-green.is-style-sticky-green, .admin-settings .demo .components-popover__content .st-green.is-style-sticky-gray, .components-popover__content .admin-settings .demo .st-green.is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-green,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky.st-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
-.admin-settings .demo .is-style-blank-box-red {
+.admin-settings .demo [class*="is-style-blank-box-"] {
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
+  padding: 1.2em 1em;
+  border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+}
+.admin-settings .demo [class*="is-style-blank-box-"] ol, .admin-settings .demo [class*="is-style-blank-box-"] ul {
+  margin: 0;
+}
+.admin-settings .demo :is(div, p).is-style-blank-box-red {
   border-color: var(--cocoon-red-color);
 }
-.admin-settings .demo .is-style-blank-box-pink {
+.admin-settings .demo :is(div, p).is-style-blank-box-pink {
   border-color: var(--cocoon-pink-color);
 }
-.admin-settings .demo .is-style-blank-box-navy {
+.admin-settings .demo :is(div, p).is-style-blank-box-navy {
   border-color: var(--cocoon-indigo-color);
 }
-.admin-settings .demo .is-style-blank-box-blue {
+.admin-settings .demo :is(div, p).is-style-blank-box-blue {
   border-color: var(--cocoon-blue-color);
 }
-.admin-settings .demo .is-style-blank-box-yellow {
+.admin-settings .demo :is(div, p).is-style-blank-box-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.admin-settings .demo .is-style-blank-box-green {
+.admin-settings .demo :is(div, p).is-style-blank-box-green {
   border-color: var(--cocoon-green-color);
 }
-.admin-settings .demo .is-style-blank-box-orange {
+.admin-settings .demo :is(div, p).is-style-blank-box-orange {
   border-color: var(--cocoon-orange-color);
 }
-.admin-settings .demo .is-style-sticky-yellow {
+.admin-settings .demo [class*="is-style-sticky-"] {
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
+  padding: 1.2em 1em;
+  border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+  border-width: 0 0 0 6px;
+  border-color: var(--cocoon-x-pallid-text-color);
+  background-color: var(--cocoon-xx-thin-color);
+}
+.admin-settings .demo [class*="is-style-sticky-"] ol, .admin-settings .demo [class*="is-style-sticky-"] ul {
+  margin: 0;
+}
+.admin-settings .demo :is(div, p).is-style-sticky-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.admin-settings .demo .is-style-sticky-red {
+.admin-settings .demo :is(div, p).is-style-sticky-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.admin-settings .demo .is-style-sticky-blue {
+.admin-settings .demo :is(div, p).is-style-sticky-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.admin-settings .demo .is-style-sticky-green {
+.admin-settings .demo :is(div, p).is-style-sticky-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
@@ -11498,18 +10965,6 @@ body.wp-admin {
 .admin-settings .demo .body .wp-block-gallery :last-child,
 .admin-settings .demo .body .block-box :last-child,
 .admin-settings .demo .body .blank-box :last-child,
-.admin-settings .demo .body .is-style-blank-box-red :last-child,
-.admin-settings .demo .body .is-style-blank-box-navy :last-child,
-.admin-settings .demo .body .is-style-blank-box-blue :last-child,
-.admin-settings .demo .body .is-style-blank-box-yellow :last-child,
-.admin-settings .demo .body .is-style-blank-box-green :last-child,
-.admin-settings .demo .body .is-style-blank-box-pink :last-child,
-.admin-settings .demo .body .is-style-blank-box-orange :last-child,
-.admin-settings .demo .body .is-style-sticky-gray :last-child,
-.admin-settings .demo .body .is-style-sticky-yellow :last-child,
-.admin-settings .demo .body .is-style-sticky-red :last-child,
-.admin-settings .demo .body .is-style-sticky-blue :last-child,
-.admin-settings .demo .body .is-style-sticky-green :last-child,
 .admin-settings .demo .body .common-icon-box :last-child,
 .admin-settings .demo .body .info-box :last-child,
 .admin-settings .demo .body .primary-box :last-child,
@@ -11682,17 +11137,7 @@ body.wp-admin {
 .admin-settings .demo #wpadminbar .alert::before {
   display: none;
 }
-.admin-settings .demo .blank-box, .admin-settings .demo .is-style-blank-box-red,
-.admin-settings .demo .is-style-blank-box-navy,
-.admin-settings .demo .is-style-blank-box-blue,
-.admin-settings .demo .is-style-blank-box-yellow,
-.admin-settings .demo .is-style-blank-box-green,
-.admin-settings .demo .is-style-blank-box-pink,
-.admin-settings .demo .is-style-blank-box-orange, .admin-settings .demo .is-style-sticky-gray,
-.admin-settings .demo .is-style-sticky-yellow,
-.admin-settings .demo .is-style-sticky-red,
-.admin-settings .demo .is-style-sticky-blue,
-.admin-settings .demo .is-style-sticky-green {
+.admin-settings .demo .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
   border-style: solid;
   border-width: 3px;
@@ -11702,315 +11147,75 @@ body.wp-admin {
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
 }
-.admin-settings .demo .blank-box ol, .admin-settings .demo .is-style-blank-box-red ol,
-.admin-settings .demo .is-style-blank-box-navy ol,
-.admin-settings .demo .is-style-blank-box-blue ol,
-.admin-settings .demo .is-style-blank-box-yellow ol,
-.admin-settings .demo .is-style-blank-box-green ol,
-.admin-settings .demo .is-style-blank-box-pink ol,
-.admin-settings .demo .is-style-blank-box-orange ol, .admin-settings .demo .is-style-sticky-gray ol,
-.admin-settings .demo .is-style-sticky-yellow ol,
-.admin-settings .demo .is-style-sticky-red ol,
-.admin-settings .demo .is-style-sticky-blue ol,
-.admin-settings .demo .is-style-sticky-green ol, .admin-settings .demo .blank-box ul, .admin-settings .demo .is-style-blank-box-red ul,
-.admin-settings .demo .is-style-blank-box-navy ul,
-.admin-settings .demo .is-style-blank-box-blue ul,
-.admin-settings .demo .is-style-blank-box-yellow ul,
-.admin-settings .demo .is-style-blank-box-green ul,
-.admin-settings .demo .is-style-blank-box-pink ul,
-.admin-settings .demo .is-style-blank-box-orange ul, .admin-settings .demo .is-style-sticky-gray ul,
-.admin-settings .demo .is-style-sticky-yellow ul,
-.admin-settings .demo .is-style-sticky-red ul,
-.admin-settings .demo .is-style-sticky-blue ul,
-.admin-settings .demo .is-style-sticky-green ul {
+.admin-settings .demo .blank-box ol, .admin-settings .demo .blank-box ul {
   margin: 0;
 }
-.admin-settings .demo .blank-box.bb-red, .admin-settings .demo .bb-red.is-style-blank-box-red,
-.admin-settings .demo .bb-red.is-style-blank-box-navy,
-.admin-settings .demo .bb-red.is-style-blank-box-blue,
-.admin-settings .demo .bb-red.is-style-blank-box-yellow,
-.admin-settings .demo .bb-red.is-style-blank-box-green,
-.admin-settings .demo .bb-red.is-style-blank-box-pink,
-.admin-settings .demo .bb-red.is-style-blank-box-orange, .admin-settings .demo .bb-red.is-style-sticky-gray,
-.admin-settings .demo .bb-red.is-style-sticky-yellow,
-.admin-settings .demo .bb-red.is-style-sticky-red,
-.admin-settings .demo .bb-red.is-style-sticky-blue,
-.admin-settings .demo .bb-red.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-red {
   border-color: var(--cocoon-red-color);
 }
-.admin-settings .demo .blank-box.bb-pink, .admin-settings .demo .bb-pink.is-style-blank-box-red,
-.admin-settings .demo .bb-pink.is-style-blank-box-navy,
-.admin-settings .demo .bb-pink.is-style-blank-box-blue,
-.admin-settings .demo .bb-pink.is-style-blank-box-yellow,
-.admin-settings .demo .bb-pink.is-style-blank-box-green,
-.admin-settings .demo .bb-pink.is-style-blank-box-pink,
-.admin-settings .demo .bb-pink.is-style-blank-box-orange, .admin-settings .demo .bb-pink.is-style-sticky-gray,
-.admin-settings .demo .bb-pink.is-style-sticky-yellow,
-.admin-settings .demo .bb-pink.is-style-sticky-red,
-.admin-settings .demo .bb-pink.is-style-sticky-blue,
-.admin-settings .demo .bb-pink.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-pink {
   border-color: var(--cocoon-pink-color);
 }
-.admin-settings .demo .blank-box.bb-purple, .admin-settings .demo .bb-purple.is-style-blank-box-red,
-.admin-settings .demo .bb-purple.is-style-blank-box-navy,
-.admin-settings .demo .bb-purple.is-style-blank-box-blue,
-.admin-settings .demo .bb-purple.is-style-blank-box-yellow,
-.admin-settings .demo .bb-purple.is-style-blank-box-green,
-.admin-settings .demo .bb-purple.is-style-blank-box-pink,
-.admin-settings .demo .bb-purple.is-style-blank-box-orange, .admin-settings .demo .bb-purple.is-style-sticky-gray,
-.admin-settings .demo .bb-purple.is-style-sticky-yellow,
-.admin-settings .demo .bb-purple.is-style-sticky-red,
-.admin-settings .demo .bb-purple.is-style-sticky-blue,
-.admin-settings .demo .bb-purple.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-purple {
   border-color: var(--cocoon-purple-color);
 }
-.admin-settings .demo .blank-box.bb-blue, .admin-settings .demo .bb-blue.is-style-blank-box-red,
-.admin-settings .demo .bb-blue.is-style-blank-box-navy,
-.admin-settings .demo .bb-blue.is-style-blank-box-blue,
-.admin-settings .demo .bb-blue.is-style-blank-box-yellow,
-.admin-settings .demo .bb-blue.is-style-blank-box-green,
-.admin-settings .demo .bb-blue.is-style-blank-box-pink,
-.admin-settings .demo .bb-blue.is-style-blank-box-orange, .admin-settings .demo .bb-blue.is-style-sticky-gray,
-.admin-settings .demo .bb-blue.is-style-sticky-yellow,
-.admin-settings .demo .bb-blue.is-style-sticky-red,
-.admin-settings .demo .bb-blue.is-style-sticky-blue,
-.admin-settings .demo .bb-blue.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-blue {
   border-color: var(--cocoon-blue-color);
 }
-.admin-settings .demo .blank-box.bb-green, .admin-settings .demo .bb-green.is-style-blank-box-red,
-.admin-settings .demo .bb-green.is-style-blank-box-navy,
-.admin-settings .demo .bb-green.is-style-blank-box-blue,
-.admin-settings .demo .bb-green.is-style-blank-box-yellow,
-.admin-settings .demo .bb-green.is-style-blank-box-green,
-.admin-settings .demo .bb-green.is-style-blank-box-pink,
-.admin-settings .demo .bb-green.is-style-blank-box-orange, .admin-settings .demo .bb-green.is-style-sticky-gray,
-.admin-settings .demo .bb-green.is-style-sticky-yellow,
-.admin-settings .demo .bb-green.is-style-sticky-red,
-.admin-settings .demo .bb-green.is-style-sticky-blue,
-.admin-settings .demo .bb-green.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-green {
   border-color: var(--cocoon-green-color);
 }
-.admin-settings .demo .blank-box.bb-orange, .admin-settings .demo .bb-orange.is-style-blank-box-red,
-.admin-settings .demo .bb-orange.is-style-blank-box-navy,
-.admin-settings .demo .bb-orange.is-style-blank-box-blue,
-.admin-settings .demo .bb-orange.is-style-blank-box-yellow,
-.admin-settings .demo .bb-orange.is-style-blank-box-green,
-.admin-settings .demo .bb-orange.is-style-blank-box-pink,
-.admin-settings .demo .bb-orange.is-style-blank-box-orange, .admin-settings .demo .bb-orange.is-style-sticky-gray,
-.admin-settings .demo .bb-orange.is-style-sticky-yellow,
-.admin-settings .demo .bb-orange.is-style-sticky-red,
-.admin-settings .demo .bb-orange.is-style-sticky-blue,
-.admin-settings .demo .bb-orange.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-orange {
   border-color: var(--cocoon-orange-color);
 }
-.admin-settings .demo .blank-box.bb-yellow, .admin-settings .demo .bb-yellow.is-style-blank-box-red,
-.admin-settings .demo .bb-yellow.is-style-blank-box-navy,
-.admin-settings .demo .bb-yellow.is-style-blank-box-blue,
-.admin-settings .demo .bb-yellow.is-style-blank-box-yellow,
-.admin-settings .demo .bb-yellow.is-style-blank-box-green,
-.admin-settings .demo .bb-yellow.is-style-blank-box-pink,
-.admin-settings .demo .bb-yellow.is-style-blank-box-orange, .admin-settings .demo .bb-yellow.is-style-sticky-gray,
-.admin-settings .demo .bb-yellow.is-style-sticky-yellow,
-.admin-settings .demo .bb-yellow.is-style-sticky-red,
-.admin-settings .demo .bb-yellow.is-style-sticky-blue,
-.admin-settings .demo .bb-yellow.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.admin-settings .demo .blank-box.bb-brown, .admin-settings .demo .bb-brown.is-style-blank-box-red,
-.admin-settings .demo .bb-brown.is-style-blank-box-navy,
-.admin-settings .demo .bb-brown.is-style-blank-box-blue,
-.admin-settings .demo .bb-brown.is-style-blank-box-yellow,
-.admin-settings .demo .bb-brown.is-style-blank-box-green,
-.admin-settings .demo .bb-brown.is-style-blank-box-pink,
-.admin-settings .demo .bb-brown.is-style-blank-box-orange, .admin-settings .demo .bb-brown.is-style-sticky-gray,
-.admin-settings .demo .bb-brown.is-style-sticky-yellow,
-.admin-settings .demo .bb-brown.is-style-sticky-red,
-.admin-settings .demo .bb-brown.is-style-sticky-blue,
-.admin-settings .demo .bb-brown.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-brown {
   border-color: var(--cocoon-brown-color);
 }
-.admin-settings .demo .blank-box.bb-grey, .admin-settings .demo .bb-grey.is-style-blank-box-red,
-.admin-settings .demo .bb-grey.is-style-blank-box-navy,
-.admin-settings .demo .bb-grey.is-style-blank-box-blue,
-.admin-settings .demo .bb-grey.is-style-blank-box-yellow,
-.admin-settings .demo .bb-grey.is-style-blank-box-green,
-.admin-settings .demo .bb-grey.is-style-blank-box-pink,
-.admin-settings .demo .bb-grey.is-style-blank-box-orange, .admin-settings .demo .bb-grey.is-style-sticky-gray,
-.admin-settings .demo .bb-grey.is-style-sticky-yellow,
-.admin-settings .demo .bb-grey.is-style-sticky-red,
-.admin-settings .demo .bb-grey.is-style-sticky-blue,
-.admin-settings .demo .bb-grey.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-grey {
   border-color: var(--cocoon-grey-color);
 }
-.admin-settings .demo .blank-box.bb-black, .admin-settings .demo .bb-black.is-style-blank-box-red,
-.admin-settings .demo .bb-black.is-style-blank-box-navy,
-.admin-settings .demo .bb-black.is-style-blank-box-blue,
-.admin-settings .demo .bb-black.is-style-blank-box-yellow,
-.admin-settings .demo .bb-black.is-style-blank-box-green,
-.admin-settings .demo .bb-black.is-style-blank-box-pink,
-.admin-settings .demo .bb-black.is-style-blank-box-orange, .admin-settings .demo .bb-black.is-style-sticky-gray,
-.admin-settings .demo .bb-black.is-style-sticky-yellow,
-.admin-settings .demo .bb-black.is-style-sticky-red,
-.admin-settings .demo .bb-black.is-style-sticky-blue,
-.admin-settings .demo .bb-black.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-black {
   border-color: var(--cocoon-black-color);
 }
-.admin-settings .demo .blank-box.bb-deep, .admin-settings .demo .bb-deep.is-style-blank-box-red,
-.admin-settings .demo .bb-deep.is-style-blank-box-navy,
-.admin-settings .demo .bb-deep.is-style-blank-box-blue,
-.admin-settings .demo .bb-deep.is-style-blank-box-yellow,
-.admin-settings .demo .bb-deep.is-style-blank-box-green,
-.admin-settings .demo .bb-deep.is-style-blank-box-pink,
-.admin-settings .demo .bb-deep.is-style-blank-box-orange, .admin-settings .demo .bb-deep.is-style-sticky-gray,
-.admin-settings .demo .bb-deep.is-style-sticky-yellow,
-.admin-settings .demo .bb-deep.is-style-sticky-red,
-.admin-settings .demo .bb-deep.is-style-sticky-blue,
-.admin-settings .demo .bb-deep.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-deep {
   border-color: var(--cocoon-deep-color);
 }
-.admin-settings .demo .blank-box.bb-indigo, .admin-settings .demo .bb-indigo.is-style-blank-box-red,
-.admin-settings .demo .bb-indigo.is-style-blank-box-navy,
-.admin-settings .demo .bb-indigo.is-style-blank-box-blue,
-.admin-settings .demo .bb-indigo.is-style-blank-box-yellow,
-.admin-settings .demo .bb-indigo.is-style-blank-box-green,
-.admin-settings .demo .bb-indigo.is-style-blank-box-pink,
-.admin-settings .demo .bb-indigo.is-style-blank-box-orange, .admin-settings .demo .bb-indigo.is-style-sticky-gray,
-.admin-settings .demo .bb-indigo.is-style-sticky-yellow,
-.admin-settings .demo .bb-indigo.is-style-sticky-red,
-.admin-settings .demo .bb-indigo.is-style-sticky-blue,
-.admin-settings .demo .bb-indigo.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-indigo {
   border-color: var(--cocoon-indigo-color);
 }
-.admin-settings .demo .blank-box.bb-light-blue, .admin-settings .demo .bb-light-blue.is-style-blank-box-red,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-navy,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-blue,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-yellow,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-green,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-pink,
-.admin-settings .demo .bb-light-blue.is-style-blank-box-orange, .admin-settings .demo .bb-light-blue.is-style-sticky-gray,
-.admin-settings .demo .bb-light-blue.is-style-sticky-yellow,
-.admin-settings .demo .bb-light-blue.is-style-sticky-red,
-.admin-settings .demo .bb-light-blue.is-style-sticky-blue,
-.admin-settings .demo .bb-light-blue.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-light-blue {
   border-color: var(--cocoon-light-blue-color);
 }
-.admin-settings .demo .blank-box.bb-cyan, .admin-settings .demo .bb-cyan.is-style-blank-box-red,
-.admin-settings .demo .bb-cyan.is-style-blank-box-navy,
-.admin-settings .demo .bb-cyan.is-style-blank-box-blue,
-.admin-settings .demo .bb-cyan.is-style-blank-box-yellow,
-.admin-settings .demo .bb-cyan.is-style-blank-box-green,
-.admin-settings .demo .bb-cyan.is-style-blank-box-pink,
-.admin-settings .demo .bb-cyan.is-style-blank-box-orange, .admin-settings .demo .bb-cyan.is-style-sticky-gray,
-.admin-settings .demo .bb-cyan.is-style-sticky-yellow,
-.admin-settings .demo .bb-cyan.is-style-sticky-red,
-.admin-settings .demo .bb-cyan.is-style-sticky-blue,
-.admin-settings .demo .bb-cyan.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-cyan {
   border-color: var(--cocoon-cyan-color);
 }
-.admin-settings .demo .blank-box.bb-teal, .admin-settings .demo .bb-teal.is-style-blank-box-red,
-.admin-settings .demo .bb-teal.is-style-blank-box-navy,
-.admin-settings .demo .bb-teal.is-style-blank-box-blue,
-.admin-settings .demo .bb-teal.is-style-blank-box-yellow,
-.admin-settings .demo .bb-teal.is-style-blank-box-green,
-.admin-settings .demo .bb-teal.is-style-blank-box-pink,
-.admin-settings .demo .bb-teal.is-style-blank-box-orange, .admin-settings .demo .bb-teal.is-style-sticky-gray,
-.admin-settings .demo .bb-teal.is-style-sticky-yellow,
-.admin-settings .demo .bb-teal.is-style-sticky-red,
-.admin-settings .demo .bb-teal.is-style-sticky-blue,
-.admin-settings .demo .bb-teal.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-teal {
   border-color: var(--cocoon-teal-color);
 }
-.admin-settings .demo .blank-box.bb-light-green, .admin-settings .demo .bb-light-green.is-style-blank-box-red,
-.admin-settings .demo .bb-light-green.is-style-blank-box-navy,
-.admin-settings .demo .bb-light-green.is-style-blank-box-blue,
-.admin-settings .demo .bb-light-green.is-style-blank-box-yellow,
-.admin-settings .demo .bb-light-green.is-style-blank-box-green,
-.admin-settings .demo .bb-light-green.is-style-blank-box-pink,
-.admin-settings .demo .bb-light-green.is-style-blank-box-orange, .admin-settings .demo .bb-light-green.is-style-sticky-gray,
-.admin-settings .demo .bb-light-green.is-style-sticky-yellow,
-.admin-settings .demo .bb-light-green.is-style-sticky-red,
-.admin-settings .demo .bb-light-green.is-style-sticky-blue,
-.admin-settings .demo .bb-light-green.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-light-green {
   border-color: var(--cocoon-light-green-color);
 }
-.admin-settings .demo .blank-box.bb-lime, .admin-settings .demo .bb-lime.is-style-blank-box-red,
-.admin-settings .demo .bb-lime.is-style-blank-box-navy,
-.admin-settings .demo .bb-lime.is-style-blank-box-blue,
-.admin-settings .demo .bb-lime.is-style-blank-box-yellow,
-.admin-settings .demo .bb-lime.is-style-blank-box-green,
-.admin-settings .demo .bb-lime.is-style-blank-box-pink,
-.admin-settings .demo .bb-lime.is-style-blank-box-orange, .admin-settings .demo .bb-lime.is-style-sticky-gray,
-.admin-settings .demo .bb-lime.is-style-sticky-yellow,
-.admin-settings .demo .bb-lime.is-style-sticky-red,
-.admin-settings .demo .bb-lime.is-style-sticky-blue,
-.admin-settings .demo .bb-lime.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-lime {
   border-color: var(--cocoon-lime-color);
 }
-.admin-settings .demo .blank-box.bb-amber, .admin-settings .demo .bb-amber.is-style-blank-box-red,
-.admin-settings .demo .bb-amber.is-style-blank-box-navy,
-.admin-settings .demo .bb-amber.is-style-blank-box-blue,
-.admin-settings .demo .bb-amber.is-style-blank-box-yellow,
-.admin-settings .demo .bb-amber.is-style-blank-box-green,
-.admin-settings .demo .bb-amber.is-style-blank-box-pink,
-.admin-settings .demo .bb-amber.is-style-blank-box-orange, .admin-settings .demo .bb-amber.is-style-sticky-gray,
-.admin-settings .demo .bb-amber.is-style-sticky-yellow,
-.admin-settings .demo .bb-amber.is-style-sticky-red,
-.admin-settings .demo .bb-amber.is-style-sticky-blue,
-.admin-settings .demo .bb-amber.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-amber {
   border-color: var(--cocoon-amber-color);
 }
-.admin-settings .demo .blank-box.bb-deep-orange, .admin-settings .demo .bb-deep-orange.is-style-blank-box-red,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-navy,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-blue,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-yellow,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-green,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-pink,
-.admin-settings .demo .bb-deep-orange.is-style-blank-box-orange, .admin-settings .demo .bb-deep-orange.is-style-sticky-gray,
-.admin-settings .demo .bb-deep-orange.is-style-sticky-yellow,
-.admin-settings .demo .bb-deep-orange.is-style-sticky-red,
-.admin-settings .demo .bb-deep-orange.is-style-sticky-blue,
-.admin-settings .demo .bb-deep-orange.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-deep-orange {
   border-color: var(--cocoon-deep-orange-color);
 }
-.admin-settings .demo .blank-box.bb-white, .admin-settings .demo .bb-white.is-style-blank-box-red,
-.admin-settings .demo .bb-white.is-style-blank-box-navy,
-.admin-settings .demo .bb-white.is-style-blank-box-blue,
-.admin-settings .demo .bb-white.is-style-blank-box-yellow,
-.admin-settings .demo .bb-white.is-style-blank-box-green,
-.admin-settings .demo .bb-white.is-style-blank-box-pink,
-.admin-settings .demo .bb-white.is-style-blank-box-orange, .admin-settings .demo .bb-white.is-style-sticky-gray,
-.admin-settings .demo .bb-white.is-style-sticky-yellow,
-.admin-settings .demo .bb-white.is-style-sticky-red,
-.admin-settings .demo .bb-white.is-style-sticky-blue,
-.admin-settings .demo .bb-white.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-white {
   border-color: var(--cocoon-white-color);
 }
-.admin-settings .demo .blank-box.bb-tab, .admin-settings .demo .bb-tab.is-style-blank-box-red,
-.admin-settings .demo .bb-tab.is-style-blank-box-navy,
-.admin-settings .demo .bb-tab.is-style-blank-box-blue,
-.admin-settings .demo .bb-tab.is-style-blank-box-yellow,
-.admin-settings .demo .bb-tab.is-style-blank-box-green,
-.admin-settings .demo .bb-tab.is-style-blank-box-pink,
-.admin-settings .demo .bb-tab.is-style-blank-box-orange, .admin-settings .demo .bb-tab.is-style-sticky-gray,
-.admin-settings .demo .bb-tab.is-style-sticky-yellow,
-.admin-settings .demo .bb-tab.is-style-sticky-red,
-.admin-settings .demo .bb-tab.is-style-sticky-blue,
-.admin-settings .demo .bb-tab.is-style-sticky-green {
+.admin-settings .demo .blank-box.bb-tab {
   position: relative;
   margin-top: 2em;
   border-top-left-radius: 0;
 }
-.admin-settings .demo .blank-box.bb-tab .bb-label, .admin-settings .demo .bb-tab.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab .bb-label {
   background-color: var(--cocoon-custom-border-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
@@ -12022,424 +11227,153 @@ body.wp-admin {
   border-radius: 6px 6px 0 0;
   padding: 0 1em 0 .8em;
 }
-.admin-settings .demo .blank-box.bb-tab .bb-label .fa, .admin-settings .demo .bb-tab.is-style-blank-box-red .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-navy .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-blue .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-yellow .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-green .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-pink .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-blank-box-orange .bb-label .fa, .admin-settings .demo .bb-tab.is-style-sticky-gray .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-sticky-yellow .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-sticky-red .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-sticky-blue .bb-label .fa,
-.admin-settings .demo .bb-tab.is-style-sticky-green .bb-label .fa {
+.admin-settings .demo .blank-box.bb-tab .bb-label .fa {
   margin-right: 6px;
 }
-.admin-settings .demo .blank-box.bb-tab.bb-red .bb-label, .admin-settings .demo .bb-tab.bb-red.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-red.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-red.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-red .bb-label {
   background-color: var(--cocoon-red-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-pink .bb-label, .admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-pink.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-pink.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-pink .bb-label {
   background-color: var(--cocoon-pink-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-purple .bb-label, .admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-purple.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-purple.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-purple .bb-label {
   background-color: var(--cocoon-purple-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-blue .bb-label, .admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-blue.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-blue.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-blue .bb-label {
   background-color: var(--cocoon-blue-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-green .bb-label, .admin-settings .demo .bb-tab.bb-green.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-green.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-green.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-green .bb-label {
   background-color: var(--cocoon-green-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-orange .bb-label, .admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-orange.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-orange.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-orange .bb-label {
   background-color: var(--cocoon-orange-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-yellow .bb-label, .admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-yellow.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-yellow .bb-label {
   background-color: var(--cocoon-yellow-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-brown .bb-label, .admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-brown.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-brown.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-brown .bb-label {
   background-color: var(--cocoon-brown-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-grey .bb-label, .admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-grey.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-grey.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-grey .bb-label {
   background-color: var(--cocoon-grey-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-black .bb-label, .admin-settings .demo .bb-tab.bb-black.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-black.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-black.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-black .bb-label {
   background-color: var(--cocoon-black-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-deep .bb-label, .admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-deep.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-deep.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-deep .bb-label {
   background-color: var(--cocoon-deep-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-indigo .bb-label, .admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-indigo.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-indigo .bb-label {
   background-color: var(--cocoon-indigo-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-light-blue .bb-label, .admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-light-blue.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-light-blue .bb-label {
   background-color: var(--cocoon-light-blue-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-cyan .bb-label, .admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-cyan.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-cyan .bb-label {
   background-color: var(--cocoon-cyan-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-teal .bb-label, .admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-teal.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-teal.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-teal .bb-label {
   background-color: var(--cocoon-teal-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-light-green .bb-label, .admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-light-green.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-light-green .bb-label {
   background-color: var(--cocoon-light-green-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-lime .bb-label, .admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-lime.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-lime.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-lime .bb-label {
   background-color: var(--cocoon-lime-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-amber .bb-label, .admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-amber.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-amber.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-amber .bb-label {
   background-color: var(--cocoon-amber-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-deep-orange .bb-label, .admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-deep-orange.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-deep-orange .bb-label {
   background-color: var(--cocoon-deep-orange-color);
 }
-.admin-settings .demo .blank-box.bb-tab.bb-white .bb-label, .admin-settings .demo .bb-tab.bb-white.is-style-blank-box-red .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-navy .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-green .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-pink .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-blank-box-orange .bb-label, .admin-settings .demo .bb-tab.bb-white.is-style-sticky-gray .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-sticky-yellow .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-sticky-red .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-sticky-blue .bb-label,
-.admin-settings .demo .bb-tab.bb-white.is-style-sticky-green .bb-label {
+.admin-settings .demo .blank-box.bb-tab.bb-white .bb-label {
   background-color: var(--cocoon-white-color);
 }
-.admin-settings .demo .blank-box.sticky, .admin-settings .demo .sticky.is-style-blank-box-red,
-.admin-settings .demo .sticky.is-style-blank-box-navy,
-.admin-settings .demo .sticky.is-style-blank-box-blue,
-.admin-settings .demo .sticky.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.is-style-blank-box-green,
-.admin-settings .demo .sticky.is-style-blank-box-pink,
-.admin-settings .demo .sticky.is-style-blank-box-orange, .admin-settings .demo .is-style-sticky-gray,
-.admin-settings .demo .is-style-sticky-yellow,
-.admin-settings .demo .is-style-sticky-red,
-.admin-settings .demo .is-style-sticky-blue,
-.admin-settings .demo .is-style-sticky-green, .admin-settings .demo .components-popover__content .is-style-sticky-gray, .components-popover__content .admin-settings .demo .is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .is-style-sticky-red,
-.components-popover__content .admin-settings .demo .is-style-sticky-red,
-.admin-settings .demo .components-popover__content .is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .is-style-sticky-green,
-.components-popover__content .admin-settings .demo .is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky {
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);
 }
-.admin-settings .demo .blank-box.sticky.st-yellow, .admin-settings .demo .sticky.st-yellow.is-style-blank-box-red,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-navy,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-blue,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-green,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-pink,
-.admin-settings .demo .sticky.st-yellow.is-style-blank-box-orange, .admin-settings .demo .st-yellow.is-style-sticky-gray,
-.admin-settings .demo .st-yellow.is-style-sticky-yellow,
-.admin-settings .demo .st-yellow.is-style-sticky-red,
-.admin-settings .demo .st-yellow.is-style-sticky-blue,
-.admin-settings .demo .st-yellow.is-style-sticky-green, .admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-gray, .components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-green,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky.st-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.admin-settings .demo .blank-box.sticky.st-red, .admin-settings .demo .sticky.st-red.is-style-blank-box-red,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-navy,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-blue,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-green,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-pink,
-.admin-settings .demo .sticky.st-red.is-style-blank-box-orange, .admin-settings .demo .st-red.is-style-sticky-gray,
-.admin-settings .demo .st-red.is-style-sticky-yellow,
-.admin-settings .demo .st-red.is-style-sticky-red,
-.admin-settings .demo .st-red.is-style-sticky-blue,
-.admin-settings .demo .st-red.is-style-sticky-green, .admin-settings .demo .components-popover__content .st-red.is-style-sticky-gray, .components-popover__content .admin-settings .demo .st-red.is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-green,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky.st-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.admin-settings .demo .blank-box.sticky.st-blue, .admin-settings .demo .sticky.st-blue.is-style-blank-box-red,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-navy,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-blue,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-green,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-pink,
-.admin-settings .demo .sticky.st-blue.is-style-blank-box-orange, .admin-settings .demo .st-blue.is-style-sticky-gray,
-.admin-settings .demo .st-blue.is-style-sticky-yellow,
-.admin-settings .demo .st-blue.is-style-sticky-red,
-.admin-settings .demo .st-blue.is-style-sticky-blue,
-.admin-settings .demo .st-blue.is-style-sticky-green, .admin-settings .demo .components-popover__content .st-blue.is-style-sticky-gray, .components-popover__content .admin-settings .demo .st-blue.is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-green,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky.st-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.admin-settings .demo .blank-box.sticky.st-green, .admin-settings .demo .sticky.st-green.is-style-blank-box-red,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-navy,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-blue,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-yellow,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-green,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-pink,
-.admin-settings .demo .sticky.st-green.is-style-blank-box-orange, .admin-settings .demo .st-green.is-style-sticky-gray,
-.admin-settings .demo .st-green.is-style-sticky-yellow,
-.admin-settings .demo .st-green.is-style-sticky-red,
-.admin-settings .demo .st-green.is-style-sticky-blue,
-.admin-settings .demo .st-green.is-style-sticky-green, .admin-settings .demo .components-popover__content .st-green.is-style-sticky-gray, .components-popover__content .admin-settings .demo .st-green.is-style-sticky-gray,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-green,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-green {
+.admin-settings .demo .blank-box.sticky.st-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
-.admin-settings .demo .is-style-blank-box-red {
+.admin-settings .demo [class*="is-style-blank-box-"] {
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
+  padding: 1.2em 1em;
+  border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+}
+.admin-settings .demo [class*="is-style-blank-box-"] ol, .admin-settings .demo [class*="is-style-blank-box-"] ul {
+  margin: 0;
+}
+.admin-settings .demo :is(div, p).is-style-blank-box-red {
   border-color: var(--cocoon-red-color);
 }
-.admin-settings .demo .is-style-blank-box-pink {
+.admin-settings .demo :is(div, p).is-style-blank-box-pink {
   border-color: var(--cocoon-pink-color);
 }
-.admin-settings .demo .is-style-blank-box-navy {
+.admin-settings .demo :is(div, p).is-style-blank-box-navy {
   border-color: var(--cocoon-indigo-color);
 }
-.admin-settings .demo .is-style-blank-box-blue {
+.admin-settings .demo :is(div, p).is-style-blank-box-blue {
   border-color: var(--cocoon-blue-color);
 }
-.admin-settings .demo .is-style-blank-box-yellow {
+.admin-settings .demo :is(div, p).is-style-blank-box-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.admin-settings .demo .is-style-blank-box-green {
+.admin-settings .demo :is(div, p).is-style-blank-box-green {
   border-color: var(--cocoon-green-color);
 }
-.admin-settings .demo .is-style-blank-box-orange {
+.admin-settings .demo :is(div, p).is-style-blank-box-orange {
   border-color: var(--cocoon-orange-color);
 }
-.admin-settings .demo .is-style-sticky-yellow {
+.admin-settings .demo [class*="is-style-sticky-"] {
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
+  padding: 1.2em 1em;
+  border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+  border-width: 0 0 0 6px;
+  border-color: var(--cocoon-x-pallid-text-color);
+  background-color: var(--cocoon-xx-thin-color);
+}
+.admin-settings .demo [class*="is-style-sticky-"] ol, .admin-settings .demo [class*="is-style-sticky-"] ul {
+  margin: 0;
+}
+.admin-settings .demo :is(div, p).is-style-sticky-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.admin-settings .demo .is-style-sticky-red {
+.admin-settings .demo :is(div, p).is-style-sticky-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.admin-settings .demo .is-style-sticky-blue {
+.admin-settings .demo :is(div, p).is-style-sticky-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.admin-settings .demo .is-style-sticky-green {
+.admin-settings .demo :is(div, p).is-style-sticky-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
@@ -19243,17 +18177,7 @@ body.wp-admin {
     border: none;
     width: auto;
   }
-  .admin-settings .demo .container .blank-box, .admin-settings .demo .container .is-style-blank-box-red,
-  .admin-settings .demo .container .is-style-blank-box-navy,
-  .admin-settings .demo .container .is-style-blank-box-blue,
-  .admin-settings .demo .container .is-style-blank-box-yellow,
-  .admin-settings .demo .container .is-style-blank-box-green,
-  .admin-settings .demo .container .is-style-blank-box-pink,
-  .admin-settings .demo .container .is-style-blank-box-orange, .admin-settings .demo .container .is-style-sticky-gray,
-  .admin-settings .demo .container .is-style-sticky-yellow,
-  .admin-settings .demo .container .is-style-sticky-red,
-  .admin-settings .demo .container .is-style-sticky-blue,
-  .admin-settings .demo .container .is-style-sticky-green {
+  .admin-settings .demo .container .blank-box {
     margin-left: 0;
     margin-right: 0;
   }
@@ -20619,18 +19543,6 @@ textarea[name="the_page_memo"] {
 .components-popover__content .body .wp-block-gallery :last-child,
 .components-popover__content .body .block-box :last-child,
 .components-popover__content .body .blank-box :last-child,
-.components-popover__content .body .is-style-blank-box-red :last-child,
-.components-popover__content .body .is-style-blank-box-navy :last-child,
-.components-popover__content .body .is-style-blank-box-blue :last-child,
-.components-popover__content .body .is-style-blank-box-yellow :last-child,
-.components-popover__content .body .is-style-blank-box-green :last-child,
-.components-popover__content .body .is-style-blank-box-pink :last-child,
-.components-popover__content .body .is-style-blank-box-orange :last-child,
-.components-popover__content .body .is-style-sticky-gray :last-child,
-.components-popover__content .body .is-style-sticky-yellow :last-child,
-.components-popover__content .body .is-style-sticky-red :last-child,
-.components-popover__content .body .is-style-sticky-blue :last-child,
-.components-popover__content .body .is-style-sticky-green :last-child,
 .components-popover__content .body .common-icon-box :last-child,
 .components-popover__content .body .info-box :last-child,
 .components-popover__content .body .primary-box :last-child,
@@ -20803,37 +19715,7 @@ textarea[name="the_page_memo"] {
 .components-popover__content #wpadminbar .alert::before {
   display: none;
 }
-.components-popover__content .blank-box, .components-popover__content .admin-settings .demo .is-style-blank-box-red, .admin-settings .demo .components-popover__content .is-style-blank-box-red,
-.components-popover__content .admin-settings .demo .is-style-blank-box-navy,
-.admin-settings .demo .components-popover__content .is-style-blank-box-navy,
-.components-popover__content .admin-settings .demo .is-style-blank-box-blue,
-.admin-settings .demo .components-popover__content .is-style-blank-box-blue,
-.components-popover__content .admin-settings .demo .is-style-blank-box-yellow,
-.admin-settings .demo .components-popover__content .is-style-blank-box-yellow,
-.components-popover__content .admin-settings .demo .is-style-blank-box-green,
-.admin-settings .demo .components-popover__content .is-style-blank-box-green,
-.components-popover__content .admin-settings .demo .is-style-blank-box-pink,
-.admin-settings .demo .components-popover__content .is-style-blank-box-pink,
-.components-popover__content .admin-settings .demo .is-style-blank-box-orange,
-.admin-settings .demo .components-popover__content .is-style-blank-box-orange, .components-popover__content .admin-settings .demo .is-style-sticky-gray, .admin-settings .demo .components-popover__content .is-style-sticky-gray,
-.components-popover__content .admin-settings .demo .is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .is-style-sticky-red,
-.admin-settings .demo .components-popover__content .is-style-sticky-red,
-.components-popover__content .admin-settings .demo .is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .is-style-sticky-green,
-.admin-settings .demo .components-popover__content .is-style-sticky-green, .components-popover__content .is-style-blank-box-red,
-.components-popover__content .is-style-blank-box-navy,
-.components-popover__content .is-style-blank-box-blue,
-.components-popover__content .is-style-blank-box-yellow,
-.components-popover__content .is-style-blank-box-green,
-.components-popover__content .is-style-blank-box-pink,
-.components-popover__content .is-style-blank-box-orange, .components-popover__content .is-style-sticky-gray,
-.components-popover__content .is-style-sticky-yellow,
-.components-popover__content .is-style-sticky-red,
-.components-popover__content .is-style-sticky-blue,
-.components-popover__content .is-style-sticky-green {
+.components-popover__content .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
   border-style: solid;
   border-width: 3px;
@@ -20843,355 +19725,75 @@ textarea[name="the_page_memo"] {
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
 }
-.components-popover__content .blank-box ol, .components-popover__content .admin-settings .demo .is-style-blank-box-red ol, .admin-settings .demo .components-popover__content .is-style-blank-box-red ol,
-.components-popover__content .admin-settings .demo .is-style-blank-box-navy ol,
-.admin-settings .demo .components-popover__content .is-style-blank-box-navy ol,
-.components-popover__content .admin-settings .demo .is-style-blank-box-blue ol,
-.admin-settings .demo .components-popover__content .is-style-blank-box-blue ol,
-.components-popover__content .admin-settings .demo .is-style-blank-box-yellow ol,
-.admin-settings .demo .components-popover__content .is-style-blank-box-yellow ol,
-.components-popover__content .admin-settings .demo .is-style-blank-box-green ol,
-.admin-settings .demo .components-popover__content .is-style-blank-box-green ol,
-.components-popover__content .admin-settings .demo .is-style-blank-box-pink ol,
-.admin-settings .demo .components-popover__content .is-style-blank-box-pink ol,
-.components-popover__content .admin-settings .demo .is-style-blank-box-orange ol,
-.admin-settings .demo .components-popover__content .is-style-blank-box-orange ol, .components-popover__content .admin-settings .demo .is-style-sticky-gray ol, .admin-settings .demo .components-popover__content .is-style-sticky-gray ol,
-.components-popover__content .admin-settings .demo .is-style-sticky-yellow ol,
-.admin-settings .demo .components-popover__content .is-style-sticky-yellow ol,
-.components-popover__content .admin-settings .demo .is-style-sticky-red ol,
-.admin-settings .demo .components-popover__content .is-style-sticky-red ol,
-.components-popover__content .admin-settings .demo .is-style-sticky-blue ol,
-.admin-settings .demo .components-popover__content .is-style-sticky-blue ol,
-.components-popover__content .admin-settings .demo .is-style-sticky-green ol,
-.admin-settings .demo .components-popover__content .is-style-sticky-green ol, .components-popover__content .is-style-blank-box-red ol,
-.components-popover__content .is-style-blank-box-navy ol,
-.components-popover__content .is-style-blank-box-blue ol,
-.components-popover__content .is-style-blank-box-yellow ol,
-.components-popover__content .is-style-blank-box-green ol,
-.components-popover__content .is-style-blank-box-pink ol,
-.components-popover__content .is-style-blank-box-orange ol, .components-popover__content .is-style-sticky-gray ol,
-.components-popover__content .is-style-sticky-yellow ol,
-.components-popover__content .is-style-sticky-red ol,
-.components-popover__content .is-style-sticky-blue ol,
-.components-popover__content .is-style-sticky-green ol, .components-popover__content .blank-box ul, .components-popover__content .admin-settings .demo .is-style-blank-box-red ul, .admin-settings .demo .components-popover__content .is-style-blank-box-red ul,
-.components-popover__content .admin-settings .demo .is-style-blank-box-navy ul,
-.admin-settings .demo .components-popover__content .is-style-blank-box-navy ul,
-.components-popover__content .admin-settings .demo .is-style-blank-box-blue ul,
-.admin-settings .demo .components-popover__content .is-style-blank-box-blue ul,
-.components-popover__content .admin-settings .demo .is-style-blank-box-yellow ul,
-.admin-settings .demo .components-popover__content .is-style-blank-box-yellow ul,
-.components-popover__content .admin-settings .demo .is-style-blank-box-green ul,
-.admin-settings .demo .components-popover__content .is-style-blank-box-green ul,
-.components-popover__content .admin-settings .demo .is-style-blank-box-pink ul,
-.admin-settings .demo .components-popover__content .is-style-blank-box-pink ul,
-.components-popover__content .admin-settings .demo .is-style-blank-box-orange ul,
-.admin-settings .demo .components-popover__content .is-style-blank-box-orange ul, .components-popover__content .admin-settings .demo .is-style-sticky-gray ul, .admin-settings .demo .components-popover__content .is-style-sticky-gray ul,
-.components-popover__content .admin-settings .demo .is-style-sticky-yellow ul,
-.admin-settings .demo .components-popover__content .is-style-sticky-yellow ul,
-.components-popover__content .admin-settings .demo .is-style-sticky-red ul,
-.admin-settings .demo .components-popover__content .is-style-sticky-red ul,
-.components-popover__content .admin-settings .demo .is-style-sticky-blue ul,
-.admin-settings .demo .components-popover__content .is-style-sticky-blue ul,
-.components-popover__content .admin-settings .demo .is-style-sticky-green ul,
-.admin-settings .demo .components-popover__content .is-style-sticky-green ul, .components-popover__content .is-style-blank-box-red ul,
-.components-popover__content .is-style-blank-box-navy ul,
-.components-popover__content .is-style-blank-box-blue ul,
-.components-popover__content .is-style-blank-box-yellow ul,
-.components-popover__content .is-style-blank-box-green ul,
-.components-popover__content .is-style-blank-box-pink ul,
-.components-popover__content .is-style-blank-box-orange ul, .components-popover__content .is-style-sticky-gray ul,
-.components-popover__content .is-style-sticky-yellow ul,
-.components-popover__content .is-style-sticky-red ul,
-.components-popover__content .is-style-sticky-blue ul,
-.components-popover__content .is-style-sticky-green ul {
+.components-popover__content .blank-box ol, .components-popover__content .blank-box ul {
   margin: 0;
 }
-.components-popover__content .blank-box.bb-red, .components-popover__content .bb-red.is-style-blank-box-red,
-.components-popover__content .bb-red.is-style-blank-box-navy,
-.components-popover__content .bb-red.is-style-blank-box-blue,
-.components-popover__content .bb-red.is-style-blank-box-yellow,
-.components-popover__content .bb-red.is-style-blank-box-green,
-.components-popover__content .bb-red.is-style-blank-box-pink,
-.components-popover__content .bb-red.is-style-blank-box-orange, .components-popover__content .bb-red.is-style-sticky-gray,
-.components-popover__content .bb-red.is-style-sticky-yellow,
-.components-popover__content .bb-red.is-style-sticky-red,
-.components-popover__content .bb-red.is-style-sticky-blue,
-.components-popover__content .bb-red.is-style-sticky-green {
+.components-popover__content .blank-box.bb-red {
   border-color: var(--cocoon-red-color);
 }
-.components-popover__content .blank-box.bb-pink, .components-popover__content .bb-pink.is-style-blank-box-red,
-.components-popover__content .bb-pink.is-style-blank-box-navy,
-.components-popover__content .bb-pink.is-style-blank-box-blue,
-.components-popover__content .bb-pink.is-style-blank-box-yellow,
-.components-popover__content .bb-pink.is-style-blank-box-green,
-.components-popover__content .bb-pink.is-style-blank-box-pink,
-.components-popover__content .bb-pink.is-style-blank-box-orange, .components-popover__content .bb-pink.is-style-sticky-gray,
-.components-popover__content .bb-pink.is-style-sticky-yellow,
-.components-popover__content .bb-pink.is-style-sticky-red,
-.components-popover__content .bb-pink.is-style-sticky-blue,
-.components-popover__content .bb-pink.is-style-sticky-green {
+.components-popover__content .blank-box.bb-pink {
   border-color: var(--cocoon-pink-color);
 }
-.components-popover__content .blank-box.bb-purple, .components-popover__content .bb-purple.is-style-blank-box-red,
-.components-popover__content .bb-purple.is-style-blank-box-navy,
-.components-popover__content .bb-purple.is-style-blank-box-blue,
-.components-popover__content .bb-purple.is-style-blank-box-yellow,
-.components-popover__content .bb-purple.is-style-blank-box-green,
-.components-popover__content .bb-purple.is-style-blank-box-pink,
-.components-popover__content .bb-purple.is-style-blank-box-orange, .components-popover__content .bb-purple.is-style-sticky-gray,
-.components-popover__content .bb-purple.is-style-sticky-yellow,
-.components-popover__content .bb-purple.is-style-sticky-red,
-.components-popover__content .bb-purple.is-style-sticky-blue,
-.components-popover__content .bb-purple.is-style-sticky-green {
+.components-popover__content .blank-box.bb-purple {
   border-color: var(--cocoon-purple-color);
 }
-.components-popover__content .blank-box.bb-blue, .components-popover__content .bb-blue.is-style-blank-box-red,
-.components-popover__content .bb-blue.is-style-blank-box-navy,
-.components-popover__content .bb-blue.is-style-blank-box-blue,
-.components-popover__content .bb-blue.is-style-blank-box-yellow,
-.components-popover__content .bb-blue.is-style-blank-box-green,
-.components-popover__content .bb-blue.is-style-blank-box-pink,
-.components-popover__content .bb-blue.is-style-blank-box-orange, .components-popover__content .bb-blue.is-style-sticky-gray,
-.components-popover__content .bb-blue.is-style-sticky-yellow,
-.components-popover__content .bb-blue.is-style-sticky-red,
-.components-popover__content .bb-blue.is-style-sticky-blue,
-.components-popover__content .bb-blue.is-style-sticky-green {
+.components-popover__content .blank-box.bb-blue {
   border-color: var(--cocoon-blue-color);
 }
-.components-popover__content .blank-box.bb-green, .components-popover__content .bb-green.is-style-blank-box-red,
-.components-popover__content .bb-green.is-style-blank-box-navy,
-.components-popover__content .bb-green.is-style-blank-box-blue,
-.components-popover__content .bb-green.is-style-blank-box-yellow,
-.components-popover__content .bb-green.is-style-blank-box-green,
-.components-popover__content .bb-green.is-style-blank-box-pink,
-.components-popover__content .bb-green.is-style-blank-box-orange, .components-popover__content .bb-green.is-style-sticky-gray,
-.components-popover__content .bb-green.is-style-sticky-yellow,
-.components-popover__content .bb-green.is-style-sticky-red,
-.components-popover__content .bb-green.is-style-sticky-blue,
-.components-popover__content .bb-green.is-style-sticky-green {
+.components-popover__content .blank-box.bb-green {
   border-color: var(--cocoon-green-color);
 }
-.components-popover__content .blank-box.bb-orange, .components-popover__content .bb-orange.is-style-blank-box-red,
-.components-popover__content .bb-orange.is-style-blank-box-navy,
-.components-popover__content .bb-orange.is-style-blank-box-blue,
-.components-popover__content .bb-orange.is-style-blank-box-yellow,
-.components-popover__content .bb-orange.is-style-blank-box-green,
-.components-popover__content .bb-orange.is-style-blank-box-pink,
-.components-popover__content .bb-orange.is-style-blank-box-orange, .components-popover__content .bb-orange.is-style-sticky-gray,
-.components-popover__content .bb-orange.is-style-sticky-yellow,
-.components-popover__content .bb-orange.is-style-sticky-red,
-.components-popover__content .bb-orange.is-style-sticky-blue,
-.components-popover__content .bb-orange.is-style-sticky-green {
+.components-popover__content .blank-box.bb-orange {
   border-color: var(--cocoon-orange-color);
 }
-.components-popover__content .blank-box.bb-yellow, .components-popover__content .bb-yellow.is-style-blank-box-red,
-.components-popover__content .bb-yellow.is-style-blank-box-navy,
-.components-popover__content .bb-yellow.is-style-blank-box-blue,
-.components-popover__content .bb-yellow.is-style-blank-box-yellow,
-.components-popover__content .bb-yellow.is-style-blank-box-green,
-.components-popover__content .bb-yellow.is-style-blank-box-pink,
-.components-popover__content .bb-yellow.is-style-blank-box-orange, .components-popover__content .bb-yellow.is-style-sticky-gray,
-.components-popover__content .bb-yellow.is-style-sticky-yellow,
-.components-popover__content .bb-yellow.is-style-sticky-red,
-.components-popover__content .bb-yellow.is-style-sticky-blue,
-.components-popover__content .bb-yellow.is-style-sticky-green {
+.components-popover__content .blank-box.bb-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.components-popover__content .blank-box.bb-brown, .components-popover__content .bb-brown.is-style-blank-box-red,
-.components-popover__content .bb-brown.is-style-blank-box-navy,
-.components-popover__content .bb-brown.is-style-blank-box-blue,
-.components-popover__content .bb-brown.is-style-blank-box-yellow,
-.components-popover__content .bb-brown.is-style-blank-box-green,
-.components-popover__content .bb-brown.is-style-blank-box-pink,
-.components-popover__content .bb-brown.is-style-blank-box-orange, .components-popover__content .bb-brown.is-style-sticky-gray,
-.components-popover__content .bb-brown.is-style-sticky-yellow,
-.components-popover__content .bb-brown.is-style-sticky-red,
-.components-popover__content .bb-brown.is-style-sticky-blue,
-.components-popover__content .bb-brown.is-style-sticky-green {
+.components-popover__content .blank-box.bb-brown {
   border-color: var(--cocoon-brown-color);
 }
-.components-popover__content .blank-box.bb-grey, .components-popover__content .bb-grey.is-style-blank-box-red,
-.components-popover__content .bb-grey.is-style-blank-box-navy,
-.components-popover__content .bb-grey.is-style-blank-box-blue,
-.components-popover__content .bb-grey.is-style-blank-box-yellow,
-.components-popover__content .bb-grey.is-style-blank-box-green,
-.components-popover__content .bb-grey.is-style-blank-box-pink,
-.components-popover__content .bb-grey.is-style-blank-box-orange, .components-popover__content .bb-grey.is-style-sticky-gray,
-.components-popover__content .bb-grey.is-style-sticky-yellow,
-.components-popover__content .bb-grey.is-style-sticky-red,
-.components-popover__content .bb-grey.is-style-sticky-blue,
-.components-popover__content .bb-grey.is-style-sticky-green {
+.components-popover__content .blank-box.bb-grey {
   border-color: var(--cocoon-grey-color);
 }
-.components-popover__content .blank-box.bb-black, .components-popover__content .bb-black.is-style-blank-box-red,
-.components-popover__content .bb-black.is-style-blank-box-navy,
-.components-popover__content .bb-black.is-style-blank-box-blue,
-.components-popover__content .bb-black.is-style-blank-box-yellow,
-.components-popover__content .bb-black.is-style-blank-box-green,
-.components-popover__content .bb-black.is-style-blank-box-pink,
-.components-popover__content .bb-black.is-style-blank-box-orange, .components-popover__content .bb-black.is-style-sticky-gray,
-.components-popover__content .bb-black.is-style-sticky-yellow,
-.components-popover__content .bb-black.is-style-sticky-red,
-.components-popover__content .bb-black.is-style-sticky-blue,
-.components-popover__content .bb-black.is-style-sticky-green {
+.components-popover__content .blank-box.bb-black {
   border-color: var(--cocoon-black-color);
 }
-.components-popover__content .blank-box.bb-deep, .components-popover__content .bb-deep.is-style-blank-box-red,
-.components-popover__content .bb-deep.is-style-blank-box-navy,
-.components-popover__content .bb-deep.is-style-blank-box-blue,
-.components-popover__content .bb-deep.is-style-blank-box-yellow,
-.components-popover__content .bb-deep.is-style-blank-box-green,
-.components-popover__content .bb-deep.is-style-blank-box-pink,
-.components-popover__content .bb-deep.is-style-blank-box-orange, .components-popover__content .bb-deep.is-style-sticky-gray,
-.components-popover__content .bb-deep.is-style-sticky-yellow,
-.components-popover__content .bb-deep.is-style-sticky-red,
-.components-popover__content .bb-deep.is-style-sticky-blue,
-.components-popover__content .bb-deep.is-style-sticky-green {
+.components-popover__content .blank-box.bb-deep {
   border-color: var(--cocoon-deep-color);
 }
-.components-popover__content .blank-box.bb-indigo, .components-popover__content .bb-indigo.is-style-blank-box-red,
-.components-popover__content .bb-indigo.is-style-blank-box-navy,
-.components-popover__content .bb-indigo.is-style-blank-box-blue,
-.components-popover__content .bb-indigo.is-style-blank-box-yellow,
-.components-popover__content .bb-indigo.is-style-blank-box-green,
-.components-popover__content .bb-indigo.is-style-blank-box-pink,
-.components-popover__content .bb-indigo.is-style-blank-box-orange, .components-popover__content .bb-indigo.is-style-sticky-gray,
-.components-popover__content .bb-indigo.is-style-sticky-yellow,
-.components-popover__content .bb-indigo.is-style-sticky-red,
-.components-popover__content .bb-indigo.is-style-sticky-blue,
-.components-popover__content .bb-indigo.is-style-sticky-green {
+.components-popover__content .blank-box.bb-indigo {
   border-color: var(--cocoon-indigo-color);
 }
-.components-popover__content .blank-box.bb-light-blue, .components-popover__content .bb-light-blue.is-style-blank-box-red,
-.components-popover__content .bb-light-blue.is-style-blank-box-navy,
-.components-popover__content .bb-light-blue.is-style-blank-box-blue,
-.components-popover__content .bb-light-blue.is-style-blank-box-yellow,
-.components-popover__content .bb-light-blue.is-style-blank-box-green,
-.components-popover__content .bb-light-blue.is-style-blank-box-pink,
-.components-popover__content .bb-light-blue.is-style-blank-box-orange, .components-popover__content .bb-light-blue.is-style-sticky-gray,
-.components-popover__content .bb-light-blue.is-style-sticky-yellow,
-.components-popover__content .bb-light-blue.is-style-sticky-red,
-.components-popover__content .bb-light-blue.is-style-sticky-blue,
-.components-popover__content .bb-light-blue.is-style-sticky-green {
+.components-popover__content .blank-box.bb-light-blue {
   border-color: var(--cocoon-light-blue-color);
 }
-.components-popover__content .blank-box.bb-cyan, .components-popover__content .bb-cyan.is-style-blank-box-red,
-.components-popover__content .bb-cyan.is-style-blank-box-navy,
-.components-popover__content .bb-cyan.is-style-blank-box-blue,
-.components-popover__content .bb-cyan.is-style-blank-box-yellow,
-.components-popover__content .bb-cyan.is-style-blank-box-green,
-.components-popover__content .bb-cyan.is-style-blank-box-pink,
-.components-popover__content .bb-cyan.is-style-blank-box-orange, .components-popover__content .bb-cyan.is-style-sticky-gray,
-.components-popover__content .bb-cyan.is-style-sticky-yellow,
-.components-popover__content .bb-cyan.is-style-sticky-red,
-.components-popover__content .bb-cyan.is-style-sticky-blue,
-.components-popover__content .bb-cyan.is-style-sticky-green {
+.components-popover__content .blank-box.bb-cyan {
   border-color: var(--cocoon-cyan-color);
 }
-.components-popover__content .blank-box.bb-teal, .components-popover__content .bb-teal.is-style-blank-box-red,
-.components-popover__content .bb-teal.is-style-blank-box-navy,
-.components-popover__content .bb-teal.is-style-blank-box-blue,
-.components-popover__content .bb-teal.is-style-blank-box-yellow,
-.components-popover__content .bb-teal.is-style-blank-box-green,
-.components-popover__content .bb-teal.is-style-blank-box-pink,
-.components-popover__content .bb-teal.is-style-blank-box-orange, .components-popover__content .bb-teal.is-style-sticky-gray,
-.components-popover__content .bb-teal.is-style-sticky-yellow,
-.components-popover__content .bb-teal.is-style-sticky-red,
-.components-popover__content .bb-teal.is-style-sticky-blue,
-.components-popover__content .bb-teal.is-style-sticky-green {
+.components-popover__content .blank-box.bb-teal {
   border-color: var(--cocoon-teal-color);
 }
-.components-popover__content .blank-box.bb-light-green, .components-popover__content .bb-light-green.is-style-blank-box-red,
-.components-popover__content .bb-light-green.is-style-blank-box-navy,
-.components-popover__content .bb-light-green.is-style-blank-box-blue,
-.components-popover__content .bb-light-green.is-style-blank-box-yellow,
-.components-popover__content .bb-light-green.is-style-blank-box-green,
-.components-popover__content .bb-light-green.is-style-blank-box-pink,
-.components-popover__content .bb-light-green.is-style-blank-box-orange, .components-popover__content .bb-light-green.is-style-sticky-gray,
-.components-popover__content .bb-light-green.is-style-sticky-yellow,
-.components-popover__content .bb-light-green.is-style-sticky-red,
-.components-popover__content .bb-light-green.is-style-sticky-blue,
-.components-popover__content .bb-light-green.is-style-sticky-green {
+.components-popover__content .blank-box.bb-light-green {
   border-color: var(--cocoon-light-green-color);
 }
-.components-popover__content .blank-box.bb-lime, .components-popover__content .bb-lime.is-style-blank-box-red,
-.components-popover__content .bb-lime.is-style-blank-box-navy,
-.components-popover__content .bb-lime.is-style-blank-box-blue,
-.components-popover__content .bb-lime.is-style-blank-box-yellow,
-.components-popover__content .bb-lime.is-style-blank-box-green,
-.components-popover__content .bb-lime.is-style-blank-box-pink,
-.components-popover__content .bb-lime.is-style-blank-box-orange, .components-popover__content .bb-lime.is-style-sticky-gray,
-.components-popover__content .bb-lime.is-style-sticky-yellow,
-.components-popover__content .bb-lime.is-style-sticky-red,
-.components-popover__content .bb-lime.is-style-sticky-blue,
-.components-popover__content .bb-lime.is-style-sticky-green {
+.components-popover__content .blank-box.bb-lime {
   border-color: var(--cocoon-lime-color);
 }
-.components-popover__content .blank-box.bb-amber, .components-popover__content .bb-amber.is-style-blank-box-red,
-.components-popover__content .bb-amber.is-style-blank-box-navy,
-.components-popover__content .bb-amber.is-style-blank-box-blue,
-.components-popover__content .bb-amber.is-style-blank-box-yellow,
-.components-popover__content .bb-amber.is-style-blank-box-green,
-.components-popover__content .bb-amber.is-style-blank-box-pink,
-.components-popover__content .bb-amber.is-style-blank-box-orange, .components-popover__content .bb-amber.is-style-sticky-gray,
-.components-popover__content .bb-amber.is-style-sticky-yellow,
-.components-popover__content .bb-amber.is-style-sticky-red,
-.components-popover__content .bb-amber.is-style-sticky-blue,
-.components-popover__content .bb-amber.is-style-sticky-green {
+.components-popover__content .blank-box.bb-amber {
   border-color: var(--cocoon-amber-color);
 }
-.components-popover__content .blank-box.bb-deep-orange, .components-popover__content .bb-deep-orange.is-style-blank-box-red,
-.components-popover__content .bb-deep-orange.is-style-blank-box-navy,
-.components-popover__content .bb-deep-orange.is-style-blank-box-blue,
-.components-popover__content .bb-deep-orange.is-style-blank-box-yellow,
-.components-popover__content .bb-deep-orange.is-style-blank-box-green,
-.components-popover__content .bb-deep-orange.is-style-blank-box-pink,
-.components-popover__content .bb-deep-orange.is-style-blank-box-orange, .components-popover__content .bb-deep-orange.is-style-sticky-gray,
-.components-popover__content .bb-deep-orange.is-style-sticky-yellow,
-.components-popover__content .bb-deep-orange.is-style-sticky-red,
-.components-popover__content .bb-deep-orange.is-style-sticky-blue,
-.components-popover__content .bb-deep-orange.is-style-sticky-green {
+.components-popover__content .blank-box.bb-deep-orange {
   border-color: var(--cocoon-deep-orange-color);
 }
-.components-popover__content .blank-box.bb-white, .components-popover__content .bb-white.is-style-blank-box-red,
-.components-popover__content .bb-white.is-style-blank-box-navy,
-.components-popover__content .bb-white.is-style-blank-box-blue,
-.components-popover__content .bb-white.is-style-blank-box-yellow,
-.components-popover__content .bb-white.is-style-blank-box-green,
-.components-popover__content .bb-white.is-style-blank-box-pink,
-.components-popover__content .bb-white.is-style-blank-box-orange, .components-popover__content .bb-white.is-style-sticky-gray,
-.components-popover__content .bb-white.is-style-sticky-yellow,
-.components-popover__content .bb-white.is-style-sticky-red,
-.components-popover__content .bb-white.is-style-sticky-blue,
-.components-popover__content .bb-white.is-style-sticky-green {
+.components-popover__content .blank-box.bb-white {
   border-color: var(--cocoon-white-color);
 }
-.components-popover__content .blank-box.bb-tab, .components-popover__content .bb-tab.is-style-blank-box-red,
-.components-popover__content .bb-tab.is-style-blank-box-navy,
-.components-popover__content .bb-tab.is-style-blank-box-blue,
-.components-popover__content .bb-tab.is-style-blank-box-yellow,
-.components-popover__content .bb-tab.is-style-blank-box-green,
-.components-popover__content .bb-tab.is-style-blank-box-pink,
-.components-popover__content .bb-tab.is-style-blank-box-orange, .components-popover__content .bb-tab.is-style-sticky-gray,
-.components-popover__content .bb-tab.is-style-sticky-yellow,
-.components-popover__content .bb-tab.is-style-sticky-red,
-.components-popover__content .bb-tab.is-style-sticky-blue,
-.components-popover__content .bb-tab.is-style-sticky-green {
+.components-popover__content .blank-box.bb-tab {
   position: relative;
   margin-top: 2em;
   border-top-left-radius: 0;
 }
-.components-popover__content .blank-box.bb-tab .bb-label, .components-popover__content .bb-tab.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab .bb-label {
   background-color: var(--cocoon-custom-border-color);
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
@@ -21203,424 +19805,153 @@ textarea[name="the_page_memo"] {
   border-radius: 6px 6px 0 0;
   padding: 0 1em 0 .8em;
 }
-.components-popover__content .blank-box.bb-tab .bb-label .fa, .components-popover__content .bb-tab.is-style-blank-box-red .bb-label .fa,
-.components-popover__content .bb-tab.is-style-blank-box-navy .bb-label .fa,
-.components-popover__content .bb-tab.is-style-blank-box-blue .bb-label .fa,
-.components-popover__content .bb-tab.is-style-blank-box-yellow .bb-label .fa,
-.components-popover__content .bb-tab.is-style-blank-box-green .bb-label .fa,
-.components-popover__content .bb-tab.is-style-blank-box-pink .bb-label .fa,
-.components-popover__content .bb-tab.is-style-blank-box-orange .bb-label .fa, .components-popover__content .bb-tab.is-style-sticky-gray .bb-label .fa,
-.components-popover__content .bb-tab.is-style-sticky-yellow .bb-label .fa,
-.components-popover__content .bb-tab.is-style-sticky-red .bb-label .fa,
-.components-popover__content .bb-tab.is-style-sticky-blue .bb-label .fa,
-.components-popover__content .bb-tab.is-style-sticky-green .bb-label .fa {
+.components-popover__content .blank-box.bb-tab .bb-label .fa {
   margin-right: 6px;
 }
-.components-popover__content .blank-box.bb-tab.bb-red .bb-label, .components-popover__content .bb-tab.bb-red.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-red.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-red.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-red .bb-label {
   background-color: var(--cocoon-red-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-pink .bb-label, .components-popover__content .bb-tab.bb-pink.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-pink.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-pink.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-pink .bb-label {
   background-color: var(--cocoon-pink-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-purple .bb-label, .components-popover__content .bb-tab.bb-purple.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-purple.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-purple.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-purple .bb-label {
   background-color: var(--cocoon-purple-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-blue .bb-label, .components-popover__content .bb-tab.bb-blue.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-blue.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-blue.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-blue .bb-label {
   background-color: var(--cocoon-blue-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-green .bb-label, .components-popover__content .bb-tab.bb-green.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-green.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-green.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-green .bb-label {
   background-color: var(--cocoon-green-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-orange .bb-label, .components-popover__content .bb-tab.bb-orange.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-orange.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-orange.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-orange .bb-label {
   background-color: var(--cocoon-orange-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-yellow .bb-label, .components-popover__content .bb-tab.bb-yellow.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-yellow.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-yellow.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-yellow .bb-label {
   background-color: var(--cocoon-yellow-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-brown .bb-label, .components-popover__content .bb-tab.bb-brown.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-brown.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-brown.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-brown .bb-label {
   background-color: var(--cocoon-brown-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-grey .bb-label, .components-popover__content .bb-tab.bb-grey.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-grey.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-grey.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-grey .bb-label {
   background-color: var(--cocoon-grey-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-black .bb-label, .components-popover__content .bb-tab.bb-black.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-black.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-black.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-black .bb-label {
   background-color: var(--cocoon-black-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-deep .bb-label, .components-popover__content .bb-tab.bb-deep.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-deep.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-deep.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-deep .bb-label {
   background-color: var(--cocoon-deep-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-indigo .bb-label, .components-popover__content .bb-tab.bb-indigo.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-indigo.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-indigo.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-indigo .bb-label {
   background-color: var(--cocoon-indigo-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-light-blue .bb-label, .components-popover__content .bb-tab.bb-light-blue.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-light-blue.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-light-blue.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-light-blue .bb-label {
   background-color: var(--cocoon-light-blue-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-cyan .bb-label, .components-popover__content .bb-tab.bb-cyan.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-cyan.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-cyan.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-cyan .bb-label {
   background-color: var(--cocoon-cyan-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-teal .bb-label, .components-popover__content .bb-tab.bb-teal.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-teal.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-teal.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-teal .bb-label {
   background-color: var(--cocoon-teal-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-light-green .bb-label, .components-popover__content .bb-tab.bb-light-green.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-light-green.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-light-green.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-light-green .bb-label {
   background-color: var(--cocoon-light-green-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-lime .bb-label, .components-popover__content .bb-tab.bb-lime.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-lime.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-lime.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-lime .bb-label {
   background-color: var(--cocoon-lime-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-amber .bb-label, .components-popover__content .bb-tab.bb-amber.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-amber.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-amber.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-amber .bb-label {
   background-color: var(--cocoon-amber-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-deep-orange .bb-label, .components-popover__content .bb-tab.bb-deep-orange.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-deep-orange.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-deep-orange.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-deep-orange .bb-label {
   background-color: var(--cocoon-deep-orange-color);
 }
-.components-popover__content .blank-box.bb-tab.bb-white .bb-label, .components-popover__content .bb-tab.bb-white.is-style-blank-box-red .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-blank-box-navy .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-blank-box-blue .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-blank-box-yellow .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-blank-box-green .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-blank-box-pink .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-blank-box-orange .bb-label, .components-popover__content .bb-tab.bb-white.is-style-sticky-gray .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-sticky-yellow .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-sticky-red .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-sticky-blue .bb-label,
-.components-popover__content .bb-tab.bb-white.is-style-sticky-green .bb-label {
+.components-popover__content .blank-box.bb-tab.bb-white .bb-label {
   background-color: var(--cocoon-white-color);
 }
-.components-popover__content .blank-box.sticky, .components-popover__content .admin-settings .demo .is-style-sticky-gray, .admin-settings .demo .components-popover__content .is-style-sticky-gray,
-.components-popover__content .admin-settings .demo .is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .is-style-sticky-red,
-.admin-settings .demo .components-popover__content .is-style-sticky-red,
-.components-popover__content .admin-settings .demo .is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .is-style-sticky-green,
-.admin-settings .demo .components-popover__content .is-style-sticky-green, .components-popover__content .sticky.is-style-blank-box-red,
-.components-popover__content .sticky.is-style-blank-box-navy,
-.components-popover__content .sticky.is-style-blank-box-blue,
-.components-popover__content .sticky.is-style-blank-box-yellow,
-.components-popover__content .sticky.is-style-blank-box-green,
-.components-popover__content .sticky.is-style-blank-box-pink,
-.components-popover__content .sticky.is-style-blank-box-orange, .components-popover__content .is-style-sticky-gray,
-.components-popover__content .is-style-sticky-yellow,
-.components-popover__content .is-style-sticky-red,
-.components-popover__content .is-style-sticky-blue,
-.components-popover__content .is-style-sticky-green {
+.components-popover__content .blank-box.sticky {
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);
 }
-.components-popover__content .blank-box.sticky.st-yellow, .components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-gray, .admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-gray,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-yellow.is-style-sticky-green,
-.admin-settings .demo .components-popover__content .st-yellow.is-style-sticky-green, .components-popover__content .sticky.st-yellow.is-style-blank-box-red,
-.components-popover__content .sticky.st-yellow.is-style-blank-box-navy,
-.components-popover__content .sticky.st-yellow.is-style-blank-box-blue,
-.components-popover__content .sticky.st-yellow.is-style-blank-box-yellow,
-.components-popover__content .sticky.st-yellow.is-style-blank-box-green,
-.components-popover__content .sticky.st-yellow.is-style-blank-box-pink,
-.components-popover__content .sticky.st-yellow.is-style-blank-box-orange, .components-popover__content .st-yellow.is-style-sticky-gray,
-.components-popover__content .st-yellow.is-style-sticky-yellow,
-.components-popover__content .st-yellow.is-style-sticky-red,
-.components-popover__content .st-yellow.is-style-sticky-blue,
-.components-popover__content .st-yellow.is-style-sticky-green {
+.components-popover__content .blank-box.sticky.st-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.components-popover__content .blank-box.sticky.st-red, .components-popover__content .admin-settings .demo .st-red.is-style-sticky-gray, .admin-settings .demo .components-popover__content .st-red.is-style-sticky-gray,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-red.is-style-sticky-green,
-.admin-settings .demo .components-popover__content .st-red.is-style-sticky-green, .components-popover__content .sticky.st-red.is-style-blank-box-red,
-.components-popover__content .sticky.st-red.is-style-blank-box-navy,
-.components-popover__content .sticky.st-red.is-style-blank-box-blue,
-.components-popover__content .sticky.st-red.is-style-blank-box-yellow,
-.components-popover__content .sticky.st-red.is-style-blank-box-green,
-.components-popover__content .sticky.st-red.is-style-blank-box-pink,
-.components-popover__content .sticky.st-red.is-style-blank-box-orange, .components-popover__content .st-red.is-style-sticky-gray,
-.components-popover__content .st-red.is-style-sticky-yellow,
-.components-popover__content .st-red.is-style-sticky-red,
-.components-popover__content .st-red.is-style-sticky-blue,
-.components-popover__content .st-red.is-style-sticky-green {
+.components-popover__content .blank-box.sticky.st-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.components-popover__content .blank-box.sticky.st-blue, .components-popover__content .admin-settings .demo .st-blue.is-style-sticky-gray, .admin-settings .demo .components-popover__content .st-blue.is-style-sticky-gray,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-blue.is-style-sticky-green,
-.admin-settings .demo .components-popover__content .st-blue.is-style-sticky-green, .components-popover__content .sticky.st-blue.is-style-blank-box-red,
-.components-popover__content .sticky.st-blue.is-style-blank-box-navy,
-.components-popover__content .sticky.st-blue.is-style-blank-box-blue,
-.components-popover__content .sticky.st-blue.is-style-blank-box-yellow,
-.components-popover__content .sticky.st-blue.is-style-blank-box-green,
-.components-popover__content .sticky.st-blue.is-style-blank-box-pink,
-.components-popover__content .sticky.st-blue.is-style-blank-box-orange, .components-popover__content .st-blue.is-style-sticky-gray,
-.components-popover__content .st-blue.is-style-sticky-yellow,
-.components-popover__content .st-blue.is-style-sticky-red,
-.components-popover__content .st-blue.is-style-sticky-blue,
-.components-popover__content .st-blue.is-style-sticky-green {
+.components-popover__content .blank-box.sticky.st-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.components-popover__content .blank-box.sticky.st-green, .components-popover__content .admin-settings .demo .st-green.is-style-sticky-gray, .admin-settings .demo .components-popover__content .st-green.is-style-sticky-gray,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-yellow,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-yellow,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-red,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-red,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-blue,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-blue,
-.components-popover__content .admin-settings .demo .st-green.is-style-sticky-green,
-.admin-settings .demo .components-popover__content .st-green.is-style-sticky-green, .components-popover__content .sticky.st-green.is-style-blank-box-red,
-.components-popover__content .sticky.st-green.is-style-blank-box-navy,
-.components-popover__content .sticky.st-green.is-style-blank-box-blue,
-.components-popover__content .sticky.st-green.is-style-blank-box-yellow,
-.components-popover__content .sticky.st-green.is-style-blank-box-green,
-.components-popover__content .sticky.st-green.is-style-blank-box-pink,
-.components-popover__content .sticky.st-green.is-style-blank-box-orange, .components-popover__content .st-green.is-style-sticky-gray,
-.components-popover__content .st-green.is-style-sticky-yellow,
-.components-popover__content .st-green.is-style-sticky-red,
-.components-popover__content .st-green.is-style-sticky-blue,
-.components-popover__content .st-green.is-style-sticky-green {
+.components-popover__content .blank-box.sticky.st-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
-.components-popover__content .is-style-blank-box-red {
+.components-popover__content [class*="is-style-blank-box-"] {
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
+  padding: 1.2em 1em;
+  border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+}
+.components-popover__content [class*="is-style-blank-box-"] ol, .components-popover__content [class*="is-style-blank-box-"] ul {
+  margin: 0;
+}
+.components-popover__content :is(div, p).is-style-blank-box-red {
   border-color: var(--cocoon-red-color);
 }
-.components-popover__content .is-style-blank-box-pink {
+.components-popover__content :is(div, p).is-style-blank-box-pink {
   border-color: var(--cocoon-pink-color);
 }
-.components-popover__content .is-style-blank-box-navy {
+.components-popover__content :is(div, p).is-style-blank-box-navy {
   border-color: var(--cocoon-indigo-color);
 }
-.components-popover__content .is-style-blank-box-blue {
+.components-popover__content :is(div, p).is-style-blank-box-blue {
   border-color: var(--cocoon-blue-color);
 }
-.components-popover__content .is-style-blank-box-yellow {
+.components-popover__content :is(div, p).is-style-blank-box-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.components-popover__content .is-style-blank-box-green {
+.components-popover__content :is(div, p).is-style-blank-box-green {
   border-color: var(--cocoon-green-color);
 }
-.components-popover__content .is-style-blank-box-orange {
+.components-popover__content :is(div, p).is-style-blank-box-orange {
   border-color: var(--cocoon-orange-color);
 }
-.components-popover__content .is-style-sticky-yellow {
+.components-popover__content [class*="is-style-sticky-"] {
+  --cocoon-custom-border-color: var(--cocoon-grey-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
+  padding: 1.2em 1em;
+  border-radius: var(--cocoon-basic-border-radius);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+  border-width: 0 0 0 6px;
+  border-color: var(--cocoon-x-pallid-text-color);
+  background-color: var(--cocoon-xx-thin-color);
+}
+.components-popover__content [class*="is-style-sticky-"] ol, .components-popover__content [class*="is-style-sticky-"] ul {
+  margin: 0;
+}
+.components-popover__content :is(div, p).is-style-sticky-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.components-popover__content .is-style-sticky-red {
+.components-popover__content :is(div, p).is-style-sticky-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.components-popover__content .is-style-sticky-blue {
+.components-popover__content :is(div, p).is-style-sticky-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.components-popover__content .is-style-sticky-green {
+.components-popover__content :is(div, p).is-style-sticky-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
