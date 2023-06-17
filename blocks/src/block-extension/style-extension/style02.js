@@ -132,7 +132,12 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                                   [ 'is-style-' + style.style ]: !! style.style,
                                   [ 'has-box-style' ]: style.style,
                                 } ) }
-                              ></span>
+                              >
+                                <ul className="wp-block-list">
+                                  <li>aaa</li>
+                                  <li>bbb</li>
+                                </ul>
+                              </span>
                             </span>
                             <span class="__prevTitle">
                               { style.buttonText }

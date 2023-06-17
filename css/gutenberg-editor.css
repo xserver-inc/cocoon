@@ -1562,6 +1562,10 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   padding: 10px !important;
   width: 100%;
 }
+.style-buttons .__prev .wp-block-list {
+  padding: 0;
+  font-size: 8px;
+}
 .style-buttons .__prev.is-style-stapler-box::before, .style-buttons .__prev.is-style-stapler-box::after {
   top: 5px;
   width: 10px;
