@@ -71,6 +71,7 @@
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
+  --cocoon-list-box-padding: 1.6em 2em 1.6em 3em;
   --cocoon-box-border-color: #47585c;
 }
 
@@ -1198,7 +1199,7 @@ ol, ul {
   background-color: #fff;
 }
 
-.block-editor-inner-blocks .block-editor-block-list__layout :last-of-type {
+div .block-editor-block-list__layout :last-of-type {
   margin-bottom: 0;
 }
 

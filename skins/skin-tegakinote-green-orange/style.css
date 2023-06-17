@@ -67,7 +67,7 @@ body {
 ・ウィジェット(.widget_*)
 ************************/
 .a-wrap:hover, .navi-footer-in a:hover, .tagcloud a:hover, .widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover, .widget_block ul li a:hover {
-	background: rgba(var(--back-color), 1);	
+	background: rgba(var(--back-color), 1);
 }
 
 /************************
@@ -79,6 +79,8 @@ body {
 .font-awesome-5 .toc-title::before,
 .font-awesome-5 blockquote::before,
 .font-awesome-5 blockquote::after,
+.font-awesome-5 .wp-block-quote::before,
+.font-awesome-5 .wp-block-quote::after,
 .font-awesome-5 .sns-share-message::before,
 .font-awesome-5 .sns-follow-message::before,
 .font-awesome-5 .related-entry-heading .sub-caption:before,
@@ -260,7 +262,7 @@ div:not(list-columns) .list:after {
 .article h2, .related-entry-heading, .comment-title,
 .article h2:before, .article h2:after,
 .related-entry-heading:before, .comment-title:before,
-.related-entry-heading:after, .comment-title:after { 
+.related-entry-heading:after, .comment-title:after {
 	border: solid 1px #777;
 }
 
@@ -279,7 +281,7 @@ div:not(list-columns) .list:after {
 
 .article h2:before, .article h2:after,
 .related-entry-heading:before, .comment-title:before,
-.related-entry-heading:after, .comment-title:after { 
+.related-entry-heading:after, .comment-title:after {
 	position: absolute;
 	content: "";
 	top: 0;
@@ -383,7 +385,7 @@ div:not(list-columns) .list:after {
 /* ロゴメニューボタン */
 .logo-menu-button {
 	line-height: initial;
-} 
+}
 
 /************************
 * メニュー
@@ -818,7 +820,7 @@ _:lang(ja)+_:-webkit-full-screen-document, .list-title-in:before, .list-title-in
 
 .toc-list > li a:hover, .widget_categories li a:hover, .widget_nav_menu ul li a:hover {
 	transform: translateX(4px);
-	
+
 }
 
 @media screen and (max-width: 834px) {
@@ -925,7 +927,6 @@ blockquote::before, blockquote::after {
 	font-family: FontAwesome;
 	font-size: 500%;
 	opacity: .5;
-	z-index: -1;
 }
 
 blockquote::before {
@@ -1265,7 +1266,7 @@ pre {
 	flex-flow: column;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 13px;	
+	margin-bottom: 13px;
 	background: rgba(var(--back-color), 1);
 	padding: 1em;
 	border-radius: 10px;
@@ -1548,11 +1549,11 @@ pre {
 		width: 65%;
 	}
 
-	.article-footer .sns-share-message, .article-footer .sns-follow-message {	
+	.article-footer .sns-share-message, .article-footer .sns-follow-message {
 		width: 35%;
 		margin-right: 1em;
 	}
-	
+
 }
 
 /* サイドバー・フッター用 */
@@ -1628,21 +1629,21 @@ pre {
 	background: rgba(var(--white-color), 1);
 }
 
-@media screen and (max-width: 480px) {	
+@media screen and (max-width: 480px) {
 	.main .author-thumb {
 		float: none;
 		margin-top: 0;
 		width: 100%;
 	}
-	
-	.main .widget_author_box .author-box {	
+
+	.main .widget_author_box .author-box {
 		text-align: center;
 	}
-	
+
 	.main .author-description {
 		text-align: left;
 	}
-	
+
 	.main .widget_author_box .author-box .author-content {
 		margin-left: 0;
 	}
@@ -1913,7 +1914,7 @@ input[type="submit"]:hover {
 	border-style: solid;
 	border-width: 2px;
 }
- 
+
 .pagination .current {
 	color: rgba(var(--white-color), 1);
 	vertical-align:middle;

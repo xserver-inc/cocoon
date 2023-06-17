@@ -97,6 +97,8 @@ a {
 .font-awesome-5 .toc-title::before,
 .font-awesome-5 blockquote::before,
 .font-awesome-5 blockquote::after,
+.font-awesome-5 .wp-block-quote::before,
+.font-awesome-5 .wp-block-quote::after,
 .font-awesome-5 .sns-share-message::before,
 .font-awesome-5 .sns-follow-message::before,
 .font-awesome-5 .related-entry-heading .sub-caption:before,
@@ -1020,7 +1022,6 @@ blockquote::before, blockquote::after {
 	font-family: FontAwesome;
 	font-size: 500%;
 	opacity: .5;
-	z-index: -1;
 }
 
 blockquote::before {
