@@ -1617,3 +1617,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   border-radius: 5px;
   border: 1px solid var(--cocoon-basic-border-color);
 }
+
+:is(ul, ol).wp-block-list .wp-block-list-item {
+  margin-bottom: 0.3em;
+}
