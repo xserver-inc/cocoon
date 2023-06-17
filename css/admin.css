@@ -2946,6 +2946,9 @@ body.wp-admin {
 .admin-settings .demo .has-border.has-background {
   padding: var(--cocoon-box-padding);
 }
+.admin-settings .demo .has-border.wp-block-list {
+  padding: 1.6em 2em 1.6em 3em;
+}
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
 .admin-settings .demo .reffer,
@@ -11341,6 +11344,9 @@ body.wp-admin {
 }
 .admin-settings .demo .has-border.has-background {
   padding: var(--cocoon-box-padding);
+}
+.admin-settings .demo .has-border.wp-block-list {
+  padding: 1.6em 2em 1.6em 3em;
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
@@ -20519,6 +20525,9 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .has-border.has-background {
   padding: var(--cocoon-box-padding);
+}
+.components-popover__content .has-border.wp-block-list {
+  padding: 1.6em 2em 1.6em 3em;
 }
 .components-popover__content .admin-settings .demo .badge, .admin-settings .demo .components-popover__content .badge,
 .components-popover__content .admin-settings .demo .ref,

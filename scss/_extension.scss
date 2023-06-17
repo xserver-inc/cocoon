@@ -11,6 +11,9 @@
   &.has-background{
     padding: var(--cocoon-box-padding);
   }
+  &.wp-block-list{
+    padding: 1.6em 2em 1.6em 3em;
+  }
 }
 
 /*拡張クラスを追加するスタイルシート*/
