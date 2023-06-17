@@ -11,8 +11,12 @@
   &.has-background{
     padding: var(--cocoon-box-padding);
   }
-  &.wp-block-list{
-    padding: 1.6em 2em 1.6em 3em;
+}
+
+:is(ul, ol).has-border{
+  padding: var(--cocoon-list-box-padding);
+  &.has-background{
+    padding: var(--cocoon-list-box-padding);
   }
 }
 

@@ -85,6 +85,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
+  --cocoon-list-box-padding: 1.6em 2em 1.6em 3em;
   --cocoon-box-border-color: #47585c;
 }
 
@@ -2699,8 +2700,12 @@ label.screen-reader-text {
 .has-border.has-background {
   padding: var(--cocoon-box-padding);
 }
-.has-border.wp-block-list {
-  padding: 1.6em 2em 1.6em 3em;
+
+:is(ul, ol).has-border {
+  padding: var(--cocoon-list-box-padding);
+}
+:is(ul, ol).has-border.has-background {
+  padding: var(--cocoon-list-box-padding);
 }
 
 /*拡張クラスを追加するスタイルシート*/
@@ -9946,6 +9951,49 @@ https://codepen.io/nxworld/pen/oLdoWb
   background-color: #eb9b6f;
   border-color: #ad3528;
   color: #583822;
+}
+
+.is-style-step-list {
+  counter-reset: list;
+  list-style-type: none;
+  padding: 0;
+}
+
+.is-style-step-list li {
+  position: relative;
+  margin: 0.4em 0;
+  line-height: 1.6em;
+}
+
+.is-style-step-list li:before {
+  counter-increment: list;
+  content: counter(list);
+  font-size: 14px;
+  font-family: 'arial narrow', sans-serif;
+  position: absolute;
+  left: -2.4em;
+  width: 1.6em;
+  height: 1.6em;
+  text-align: center;
+  line-height: 1.6;
+  background-color: var(--cocoon-white-color);
+  border: 2px solid var(--cocoon-box-border-color);
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.is-style-step-list li::after {
+  position: absolute;
+  top: 0;
+  bottom: -1em;
+  z-index: 90;
+  left: -1.15em;
+  border-left: 2px solid var(--cocoon-box-border-color);
+  content: "";
+}
+
+.is-style-step-list li:last-of-type::after {
+  display: none;
 }
 
 .no-border {

@@ -50,6 +50,10 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( '順位', THEME_NAME ),
         },
         {
+          style: 'step-list',
+          buttonText: __( 'ステップ', THEME_NAME ),
+        },
+        {
           style: 'check-list',
           buttonText: __( 'チェック', THEME_NAME ),
         },
@@ -135,6 +139,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                               >
                                   <li>aaa</li>
                                   <li>bbb</li>
+                                  <li>ccc</li>
                               </ul>
                             </span>
                             <span class="__prevTitle">

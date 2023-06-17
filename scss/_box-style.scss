@@ -399,7 +399,7 @@
   top: calc(50% - (1.6em/2));
 }
 
-//丸数字
+//順位
 .is-style-rank-list{
   counter-reset: list;
   list-style-type: none;
@@ -440,4 +440,47 @@
   background-color: #eb9b6f;
   border-color: #ad3528;
   color: #583822;
+}
+
+
+
+//ステップ
+.is-style-step-list{
+  counter-reset: list;
+  list-style-type: none;
+  padding: 0;
+}
+.is-style-step-list li{
+  position:relative;
+  margin: 0.4em 0;
+  line-height: 1.6em;
+}
+.is-style-step-list li:before{
+  counter-increment: list;
+  content: counter(list);
+  font-size: 14px;
+  font-family: 'arial narrow', sans-serif;
+  position: absolute;
+  left: -2.4em;
+  width: 1.6em;
+  height: 1.6em;
+  text-align: center;
+  line-height: 1.6;
+  background-color: var(--cocoon-white-color);
+  border: 2px solid var(--cocoon-box-border-color);
+  border-radius: 50%;
+  // top: calc(50% - (1.6em/2));
+  z-index: 100;
+}
+.is-style-step-list li::after {
+  position: absolute;
+  top: 0;
+  bottom: -1em;
+  z-index: 90;
+  left: -1.15em;
+  border-left: 2px solid var(--cocoon-box-border-color);
+  content: "";
+}
+.is-style-step-list li:last-of-type::after{
+  display: none;
 }

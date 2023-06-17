@@ -1563,7 +1563,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   width: 100%;
 }
 .style-buttons .__prev.wp-block-list {
-  padding: 0;
+  padding: 0 10px !important;
   margin-left: 1em;
   font-size: 8px !important;
 }
@@ -1591,8 +1591,15 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .style-buttons .__prev.is-style-hole-punch-box::after {
   right: 20%;
 }
-.style-buttons .__prev.is-style-enclosed-numeric-list li::before, .style-buttons .__prev.is-style-rank-list li::before {
+.style-buttons .__prev.is-style-enclosed-numeric-list li::before, .style-buttons .__prev.is-style-rank-list li::before, .style-buttons .__prev.is-style-step-list li::before {
   font-size: 6px;
+}
+.style-buttons .__prev.is-style-step-list li::before {
+  border-width: 1px;
+}
+.style-buttons .__prev.is-style-step-list li::after {
+  border-width: 1px;
+  left: -1.3em;
 }
 .style-buttons .__prevTitle {
   display: block;
