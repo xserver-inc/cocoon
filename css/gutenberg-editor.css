@@ -1591,7 +1591,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .style-buttons .__prev.is-style-hole-punch-box::after {
   right: 20%;
 }
-.style-buttons .__prev.is-style-enclosed-numeric-list li::before {
+.style-buttons .__prev.is-style-enclosed-numeric-list li::before, .style-buttons .__prev.is-style-rank-list li::before {
   font-size: 6px;
 }
 .style-buttons .__prevTitle {

@@ -46,6 +46,10 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( '丸数字', THEME_NAME ),
         },
         {
+          style: 'rank-list',
+          buttonText: __( '順位', THEME_NAME ),
+        },
+        {
           style: 'check-list',
           buttonText: __( 'チェック', THEME_NAME ),
         },

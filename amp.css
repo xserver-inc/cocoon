@@ -9865,15 +9865,62 @@ https://codepen.io/nxworld/pen/oLdoWb
   font-size: 14px;
   font-family: 'arial narrow', sans-serif;
   position: absolute;
-  left: -2em;
+  left: -2.4em;
   width: 1.6em;
   height: 1.6em;
   text-align: center;
   color: var(--cocoon-white-color);
   line-height: 1.6;
-  background: var(--cocoon-box-border-color);
+  background-color: var(--cocoon-box-border-color);
   border-radius: 50%;
   top: calc(50% - (1.6em/2));
+}
+
+.is-style-rank-list {
+  counter-reset: list;
+  list-style-type: none;
+  padding: 0;
+}
+
+.is-style-rank-list li {
+  position: relative;
+  margin: 0.4em 0;
+  line-height: 1.6em;
+}
+
+.is-style-rank-list li:before {
+  counter-increment: list;
+  content: counter(list);
+  font-size: 14px;
+  font-family: 'arial narrow', sans-serif;
+  position: absolute;
+  left: -2.4em;
+  width: 1.6em;
+  height: 1.6em;
+  text-align: center;
+  line-height: 1.6;
+  background-color: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-box-border-color);
+  border-radius: 50%;
+  top: calc(50% - (1.6em/2));
+}
+
+.is-style-rank-list li:nth-of-type(1):before {
+  background-color: #ffd700;
+  border-color: #daa520;
+  color: #8b4513;
+}
+
+.is-style-rank-list li:nth-of-type(2):before {
+  background-color: #dcdcdc;
+  border-color: #696969;
+  color: #444;
+}
+
+.is-style-rank-list li:nth-of-type(3):before {
+  background-color: #eb9b6f;
+  border-color: #ad3528;
+  color: #583822;
 }
 
 .no-border {

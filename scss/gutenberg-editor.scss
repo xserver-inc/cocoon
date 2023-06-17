@@ -1350,7 +1350,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 
 
     //リスト
-    &.is-style-enclosed-numeric-list li::before{font-size: 6px;}
+    &.is-style-enclosed-numeric-list li::before,
+    &.is-style-rank-list li::before{font-size: 6px;}
   }
   .__prevTitle {
     display: block;
