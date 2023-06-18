@@ -410,6 +410,7 @@ a:hover {
 }
 
 ol, ul {
+  padding: 1em;
   padding-left: 40px;
 }
 
@@ -9386,58 +9387,38 @@ https://codepen.io/nxworld/pen/oLdoWb
   margin-left: -10px;
 }
 
-.is-style-enclosed-numeric-list {
+:is(.is-style-enclosed-numeric-list, .is-style-rank-list, .is-style-step-list) {
   counter-reset: list;
   list-style-type: none;
-  padding: 0;
 }
-
-.is-style-enclosed-numeric-list li {
+:is(.is-style-enclosed-numeric-list, .is-style-rank-list, .is-style-step-list) li {
   position: relative;
   margin: 0.4em 0;
-  line-height: 1.6em;
+  line-height: 1.6;
+  padding-left: 1.8em;
+}
+:is(.is-style-enclosed-numeric-list, .is-style-rank-list, .is-style-step-list) li::before {
+  counter-increment: list;
+  content: counter(list);
+  font-size: 14px;
+  font-family: 'arial narrow', sans-serif;
+  width: 1.6em;
+  height: 1.6em;
+  left: 0;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  line-height: 1.6;
+  border-radius: 50%;
 }
 
 .is-style-enclosed-numeric-list li:before {
-  counter-increment: list;
-  content: counter(list);
-  font-size: 14px;
-  font-family: 'arial narrow', sans-serif;
-  position: absolute;
-  left: -2.4em;
-  width: 1.6em;
-  height: 1.6em;
-  text-align: center;
   color: var(--cocoon-white-color);
-  line-height: 1.6;
   background-color: var(--cocoon-box-border-color);
-  border-radius: 50%;
   top: calc(50% - (1.6em/2));
 }
 
-.is-style-rank-list {
-  counter-reset: list;
-  list-style-type: none;
-  padding: 0;
-}
-
-.is-style-rank-list li {
-  position: relative;
-  margin: 0.4em 0;
-  line-height: 1.6em;
-}
-
 .is-style-rank-list li:before {
-  counter-increment: list;
-  content: counter(list);
-  font-size: 14px;
-  font-family: 'arial narrow', sans-serif;
-  position: absolute;
-  left: -2.4em;
-  width: 1.6em;
-  height: 1.6em;
-  text-align: center;
-  line-height: 1.6;
   background-color: var(--cocoon-white-color);
   border: 1px solid var(--cocoon-box-border-color);
   border-radius: 50%;
@@ -9462,32 +9443,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   color: #583822;
 }
 
-.is-style-step-list {
-  counter-reset: list;
-  list-style-type: none;
-  padding: 0;
-}
-
-.is-style-step-list li {
-  position: relative;
-  margin: 0.4em 0;
-  line-height: 1.6em;
-}
-
 .is-style-step-list li:before {
-  counter-increment: list;
-  content: counter(list);
-  font-size: 14px;
-  font-family: 'arial narrow', sans-serif;
-  position: absolute;
-  left: -2.4em;
-  width: 1.6em;
-  height: 1.6em;
-  text-align: center;
-  line-height: 1.6;
   background-color: var(--cocoon-white-color);
   border: 2px solid var(--cocoon-box-border-color);
-  border-radius: 50%;
   z-index: 100;
 }
 
@@ -9496,13 +9454,35 @@ https://codepen.io/nxworld/pen/oLdoWb
   top: 0;
   bottom: -1em;
   z-index: 90;
-  left: -1.15em;
+  left: 0.7em;
   border-left: 2px solid var(--cocoon-box-border-color);
   content: "";
 }
 
 .is-style-step-list li:last-of-type::after {
   display: none;
+}
+
+:is(.is-style-check-list, .is-style-check-valid-list) {
+  list-style: none;
+}
+:is(.is-style-check-list, .is-style-check-valid-list) li {
+  padding-left: 1.6em;
+  position: relative;
+}
+:is(.is-style-check-list, .is-style-check-valid-list) li::before {
+  color: var(--cocoon-box-border-color);
+  display: block;
+  font-family: icomoon;
+  height: auto;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1em;
+}
+
+.is-style-check-list li::before {
+  content: "\ea10";
 }
 
 .no-border {

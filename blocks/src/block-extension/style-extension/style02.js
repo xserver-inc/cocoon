@@ -58,6 +58,14 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( 'チェック', THEME_NAME ),
         },
         {
+          style: 'check-valid-list',
+          buttonText: __( 'チェック有効', THEME_NAME ),
+        },
+        {
+          style: 'check-disabled-list',
+          buttonText: __( 'チェック無効', THEME_NAME ),
+        },
+        {
           style: 'circle-list',
           buttonText: __( 'マル', THEME_NAME ),
         },

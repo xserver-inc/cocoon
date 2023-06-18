@@ -1600,7 +1600,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 }
 .style-buttons .__prev.is-style-step-list li::after {
   border-width: 1px;
-  left: -1.3em;
+  left: 0.6em;
 }
 .style-buttons .__prevTitle {
   display: block;
