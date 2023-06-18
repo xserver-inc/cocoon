@@ -1356,10 +1356,14 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     &.is-style-step-list li::before{
       border-width: 1px;
     }
-    &.is-style-step-list li::after{
-      border-width: 1px;
-      left: 0.6em;
+    &.is-style-step-list li{
+      margin: 0.4em 0;
+      &::after{
+        border-width: 1px;
+        left: 0.6em;
+      }
     }
+
   }
   .__prevTitle {
     display: block;

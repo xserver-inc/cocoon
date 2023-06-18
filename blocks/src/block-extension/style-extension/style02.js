@@ -67,7 +67,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         },
         {
           style: 'circle-list',
-          buttonText: __( 'マル', THEME_NAME ),
+          buttonText: __( '丸', THEME_NAME ),
         },
         {
           style: 'triangle-list',

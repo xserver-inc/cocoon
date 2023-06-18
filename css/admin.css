@@ -8728,6 +8728,9 @@ body.wp-admin {
   border-color: #ad3528;
   color: #583822;
 }
+.admin-settings .demo .is-style-step-list li {
+  margin: 1em 0;
+}
 .admin-settings .demo .is-style-step-list li:before {
   background-color: var(--cocoon-white-color);
   border: 2px solid var(--cocoon-box-border-color);
@@ -8745,14 +8748,14 @@ body.wp-admin {
 .admin-settings .demo .is-style-step-list li:last-of-type::after {
   display: none;
 }
-.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list) {
+.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) {
   list-style: none;
 }
-.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list) li {
+.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) li {
   padding-left: 1.6em;
   position: relative;
 }
-.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list) li::before {
+.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) li::before {
   color: var(--cocoon-box-border-color);
   display: block;
   font-family: icomoon;
@@ -8764,6 +8767,24 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-check-list li::before {
   content: "\ea10";
+}
+.admin-settings .demo .is-style-check-valid-list li::before {
+  content: "\ea52";
+}
+.admin-settings .demo .is-style-check-disabled-list li::before {
+  content: "\ea53";
+}
+.admin-settings .demo .is-style-circle-list li::before {
+  content: "\ea56";
+  color: var(--cocoon-blue-color);
+}
+.admin-settings .demo .is-style-triangle-list li::before {
+  content: "\ea56";
+  color: var(--cocoon-amber-color);
+}
+.admin-settings .demo .is-style-cross-list li::before {
+  content: "\ea0f";
+  color: var(--cocoon-red-color);
 }
 .admin-settings .demo .no-border {
   border: none;
@@ -16685,6 +16706,9 @@ body.wp-admin {
   border-color: #ad3528;
   color: #583822;
 }
+.admin-settings .demo .is-style-step-list li {
+  margin: 1em 0;
+}
 .admin-settings .demo .is-style-step-list li:before {
   background-color: var(--cocoon-white-color);
   border: 2px solid var(--cocoon-box-border-color);
@@ -16702,14 +16726,14 @@ body.wp-admin {
 .admin-settings .demo .is-style-step-list li:last-of-type::after {
   display: none;
 }
-.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list) {
+.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) {
   list-style: none;
 }
-.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list) li {
+.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) li {
   padding-left: 1.6em;
   position: relative;
 }
-.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list) li::before {
+.admin-settings .demo :is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) li::before {
   color: var(--cocoon-box-border-color);
   display: block;
   font-family: icomoon;
@@ -16721,6 +16745,24 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-check-list li::before {
   content: "\ea10";
+}
+.admin-settings .demo .is-style-check-valid-list li::before {
+  content: "\ea52";
+}
+.admin-settings .demo .is-style-check-disabled-list li::before {
+  content: "\ea53";
+}
+.admin-settings .demo .is-style-circle-list li::before {
+  content: "\ea56";
+  color: var(--cocoon-blue-color);
+}
+.admin-settings .demo .is-style-triangle-list li::before {
+  content: "\ea56";
+  color: var(--cocoon-amber-color);
+}
+.admin-settings .demo .is-style-cross-list li::before {
+  content: "\ea0f";
+  color: var(--cocoon-red-color);
 }
 .admin-settings .demo .no-border {
   border: none;

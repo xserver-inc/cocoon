@@ -1598,6 +1598,9 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .style-buttons .__prev.is-style-step-list li::before {
   border-width: 1px;
 }
+.style-buttons .__prev.is-style-step-list li {
+  margin: 0.4em 0;
+}
 .style-buttons .__prev.is-style-step-list li::after {
   border-width: 1px;
   left: 0.6em;

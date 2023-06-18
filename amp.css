@@ -9418,6 +9418,10 @@ https://codepen.io/nxworld/pen/oLdoWb
   color: #583822;
 }
 
+.is-style-step-list li {
+  margin: 1em 0;
+}
+
 .is-style-step-list li:before {
   background-color: var(--cocoon-white-color);
   border: 2px solid var(--cocoon-box-border-color);
@@ -9438,14 +9442,14 @@ https://codepen.io/nxworld/pen/oLdoWb
   display: none;
 }
 
-:is(.is-style-check-list, .is-style-check-valid-list) {
+:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) {
   list-style: none;
 }
-:is(.is-style-check-list, .is-style-check-valid-list) li {
+:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) li {
   padding-left: 1.6em;
   position: relative;
 }
-:is(.is-style-check-list, .is-style-check-valid-list) li::before {
+:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) li::before {
   color: var(--cocoon-box-border-color);
   display: block;
   font-family: icomoon;
@@ -9458,6 +9462,29 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .is-style-check-list li::before {
   content: "\ea10";
+}
+
+.is-style-check-valid-list li::before {
+  content: "\ea52";
+}
+
+.is-style-check-disabled-list li::before {
+  content: "\ea53";
+}
+
+.is-style-circle-list li::before {
+  content: "\ea56";
+  color: var(--cocoon-blue-color);
+}
+
+.is-style-triangle-list li::before {
+  content: "\ea56";
+  color: var(--cocoon-amber-color);
+}
+
+.is-style-cross-list li::before {
+  content: "\ea0f";
+  color: var(--cocoon-red-color);
 }
 
 .no-border {
