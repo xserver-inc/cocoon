@@ -1641,3 +1641,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 :is(ul, ol).wp-block-list .wp-block-list-item {
   margin-bottom: 0.3em;
 }
+
+.components-range-control .components-base-control__label {
+  margin: 0.2em 0 1em;
+}

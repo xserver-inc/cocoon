@@ -48,22 +48,20 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
 
       var title = '';
       if ( props.name.includes( BLOCK_SERIES ) ) {
-        title = __( '余白', THEME_NAME );
+        title = __( 'ブロック下余白', THEME_NAME );
       } else {
-        title = __( '[C] 余白', THEME_NAME );
+        title = __( '[C] ブロック下余白', THEME_NAME );
       }
 
       function createLabel() {
-        var labelStr = __( 'ブロック下部', THEME_NAME ) + '\n';
+        var labelStr = '';
         if ( extraBottomMargin === '' ) {
-          labelStr += '(' + __( '未設定', THEME_NAME ) + ')';
+          labelStr += __( '未設定', THEME_NAME );
         } else {
           labelStr +=
-            '(' +
-            __( '文字の高さの', THEME_NAME ) +
+            __( '文字高の', THEME_NAME ) +
             extraBottomMargin.replace( 'em', '' ) +
-            __( '倍の余白が設定されました', THEME_NAME ) +
-            ')';
+            __( '倍の余白設定', THEME_NAME );
         }
         return labelStr;
       }
@@ -92,7 +90,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                       }
                     >
                       <span class="dashicons dashicons-editor-removeformatting"></span>
-                      { __( 'ブロック下部余白をクリア', THEME_NAME ) }
+                      { __( '余白をクリア', THEME_NAME ) }
                     </button>
                   </div>
                 }
@@ -104,7 +102,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                   } }
                   min={ 0 }
                   max={ 20 }
-                  step={ 0.1 }
+                  step={ 1 }
                   //allowReset={ true }
                   resetFallbackValue={ 0 }
                   initialPosition={ 0 }
