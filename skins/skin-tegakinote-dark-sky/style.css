@@ -1016,11 +1016,13 @@ blockquote {
 	box-shadow: 0 0 0px 5px rgba(var(--gray-color), 1) inset;
 	border: none;
 	overflow: hidden;
+	opacity: 0.99;
 }
 
 blockquote::before, blockquote::after {
 	font-family: FontAwesome;
 	font-size: 500%;
+	z-index: -1;
 	opacity: .5;
 }
 

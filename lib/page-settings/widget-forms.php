@@ -32,14 +32,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <ul>
               <?php
               foreach ($widgets as $class => $widget) {
-                // $checked = null;
-
-                // if (in_array($class, get_exclude_widget_classes())) {
-                //   $checked = ' checked="checked"';
-                // }
-                // echo '<li><input type="checkbox" name="'.OP_EXCLUDE_WIDGET_CLASSES.'[]" value="'.$class.'"'.$checked.'><b>' . $widget->name.'</b>：'.$widget->widget_options['description'].'</li>';
+                $description = '';
+                if (isset($widget->widget_options['description'])) {
+                  $description = $widget->widget_options['description'];
+                }
                 echo '<li>';
-                generate_checkbox_tag(OP_EXCLUDE_WIDGET_CLASSES.'[]', get_exclude_widget_classes(), '<b>'.$widget->name.'</b>:'.$widget->widget_options['description'], $class);
+                generate_checkbox_tag(OP_EXCLUDE_WIDGET_CLASSES.'[]', get_exclude_widget_classes(), '<b>'.$widget->name.'</b>:'.$description, $class);
                 echo '</li>';
               }
               ?>

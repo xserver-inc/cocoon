@@ -81,6 +81,7 @@ body.wp-admin {
   --cocoon-box-padding: 1em 1.5em;
   --cocoon-list-box-padding: 1.6em 2em 1.6em 3em;
   --cocoon-box-border-color: #47585c;
+  --cocoon-sns-color: var(--cocoon-text-color);
 }
 
 .faw::before {
@@ -129,10 +130,6 @@ body.wp-admin {
 
 .admin-settings .demo .entry-categories-tags {
   margin-bottom: 18px;
-}
-
-.admin-settings .demo .sns-share, .admin-settings .demo .sns-follow {
-  margin: 24px 0;
 }
 
 .admin-settings .demo .sns-share-message, .admin-settings .demo .sns-follow-message {
@@ -1683,195 +1680,103 @@ body.wp-admin {
   align-items: center;
 }
 .admin-settings .demo .sns-buttons a {
-  display: block;
-  background-color: var(--cocoon-text-color);
+  align-content: center;
+  align-items: center;
+  background-color: var(--cocoon-sns-color);
+  border-radius: var(--cocoon-basic-border-radius);
+  display: inline-flex;
+  font-size: 18px;
+  justify-content: center;
+  height: 45px;
+  margin-bottom: 8px;
+  position: relative;
   text-align: center;
+  width: 32%;
   color: var(--cocoon-white-color);
   text-decoration: none;
-  border-radius: var(--cocoon-basic-border-radius);
-  height: 45px;
 }
 .admin-settings .demo .sns-buttons a:hover {
   opacity: 0.7;
   color: var(--cocoon-white-color);
   transition: all 0.3s ease-in-out;
 }
-.admin-settings .demo .sns-share a, .admin-settings .demo .sns-follow a {
-  cursor: pointer;
-}
-.admin-settings .demo .bc-brand-color.sns-share .twitter-button, .admin-settings .demo .bc-brand-color.sns-follow .twitter-button {
-  background-color: var(--cocoon-twitter-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .facebook-button, .admin-settings .demo .bc-brand-color.sns-follow .facebook-button {
-  background-color: var(--cocoon-facebook-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .hatebu-button, .admin-settings .demo .bc-brand-color.sns-follow .hatebu-button {
-  background-color: var(--cocoon-hatebu-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .google-plus-button, .admin-settings .demo .bc-brand-color.sns-follow .google-plus-button {
-  background-color: var(--cocoon-google-plus-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .pocket-button, .admin-settings .demo .bc-brand-color.sns-follow .pocket-button {
-  background-color: var(--cocoon-pocket-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .line-button, .admin-settings .demo .bc-brand-color.sns-follow .line-button {
-  background-color: var(--cocoon-line-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .website-button, .admin-settings .demo .bc-brand-color.sns-follow .website-button {
-  background-color: var(--cocoon-website-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .instagram-button, .admin-settings .demo .bc-brand-color.sns-follow .instagram-button {
-  background-color: var(--cocoon-instagram-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color.sns-follow .pinterest-button {
-  background-color: var(--cocoon-pinterest-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .youtube-button, .admin-settings .demo .bc-brand-color.sns-follow .youtube-button {
-  background-color: var(--cocoon-youtube-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .tiktok-button, .admin-settings .demo .bc-brand-color.sns-follow .tiktok-button {
-  background-color: var(--cocoon-tiktok-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color.sns-follow .linkedin-button {
-  background-color: var(--cocoon-linkedin-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .note-button, .admin-settings .demo .bc-brand-color.sns-follow .note-button {
-  background-color: var(--cocoon-note-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .soundcloud-button, .admin-settings .demo .bc-brand-color.sns-follow .soundcloud-button {
-  background-color: var(--cocoon-soundcloud-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .flickr-button, .admin-settings .demo .bc-brand-color.sns-follow .flickr-button {
-  background-color: var(--cocoon-flickr-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .amazon-button, .admin-settings .demo .bc-brand-color.sns-follow .amazon-button {
-  background-color: var(--cocoon-amazon-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .twitch-button, .admin-settings .demo .bc-brand-color.sns-follow .twitch-button {
-  background-color: var(--cocoon-twitch-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color.sns-follow .rakuten-room-button {
-  background-color: var(--cocoon-rakuten-room-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .slack-button, .admin-settings .demo .bc-brand-color.sns-follow .slack-button {
-  background-color: var(--cocoon-slack-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .github-button, .admin-settings .demo .bc-brand-color.sns-follow .github-button {
-  background-color: var(--cocoon-github-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .codepen-button, .admin-settings .demo .bc-brand-color.sns-follow .codepen-button {
-  background-color: var(--cocoon-codepen-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .feedly-button, .admin-settings .demo .bc-brand-color.sns-follow .feedly-button {
-  background-color: var(--cocoon-feedly-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .rss-button, .admin-settings .demo .bc-brand-color.sns-follow .rss-button {
-  background-color: var(--cocoon-rss-color);
-}
-.admin-settings .demo .bc-brand-color-white.sns-share a, .admin-settings .demo .bc-brand-color-white.sns-follow a {
+.admin-settings .demo .bc-brand-color-white a {
   background-color: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-sns-color);
+  color: var(--cocoon-sns-color);
   font-weight: 500;
-  border: 1px solid var(--cocoon-text-color);
-  color: var(--cocoon-text-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share a:hover, .admin-settings .demo .bc-brand-color-white.sns-follow a:hover {
+.admin-settings .demo .bc-brand-color-white a:hover {
   opacity: 0.5;
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .twitter-button, .admin-settings .demo .bc-brand-color-white.sns-follow .twitter-button {
-  color: var(--cocoon-twitter-color);
-  border-color: var(--cocoon-twitter-color);
+.admin-settings .demo [class*="bc-brand-color"] .twitter-button {
+  --cocoon-sns-color: var(--cocoon-twitter-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .facebook-button, .admin-settings .demo .bc-brand-color-white.sns-follow .facebook-button {
-  color: var(--cocoon-facebook-color);
-  border-color: var(--cocoon-facebook-color);
+.admin-settings .demo [class*="bc-brand-color"] .facebook-button {
+  --cocoon-sns-color: var(--cocoon-facebook-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .hatebu-button, .admin-settings .demo .bc-brand-color-white.sns-follow .hatebu-button {
-  color: var(--cocoon-hatebu-color);
-  border-color: var(--cocoon-hatebu-color);
+.admin-settings .demo [class*="bc-brand-color"] .hatebu-button {
+  --cocoon-sns-color: var(--cocoon-hatebu-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .google-plus-button, .admin-settings .demo .bc-brand-color-white.sns-follow .google-plus-button {
-  color: var(--cocoon-google-plus-color);
-  border-color: var(--cocoon-google-plus-color);
+.admin-settings .demo [class*="bc-brand-color"] .google-plus-button {
+  --cocoon-sns-color: var(--cocoon-google-plus-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .pocket-button, .admin-settings .demo .bc-brand-color-white.sns-follow .pocket-button {
-  color: var(--cocoon-pocket-color);
-  border-color: var(--cocoon-pocket-color);
+.admin-settings .demo [class*="bc-brand-color"] .pocket-button {
+  --cocoon-sns-color: var(--cocoon-pocket-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .line-button, .admin-settings .demo .bc-brand-color-white.sns-follow .line-button {
-  color: var(--cocoon-line-color);
-  border-color: var(--cocoon-line-color);
+.admin-settings .demo [class*="bc-brand-color"] .line-button {
+  --cocoon-sns-color: var(--cocoon-line-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .website-button, .admin-settings .demo .bc-brand-color-white.sns-follow .website-button {
-  color: var(--cocoon-website-color);
-  border-color: var(--cocoon-website-color);
+.admin-settings .demo [class*="bc-brand-color"] .website-button {
+  --cocoon-sns-color: var(--cocoon-website-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .instagram-button, .admin-settings .demo .bc-brand-color-white.sns-follow .instagram-button {
-  color: var(--cocoon-instagram-color);
-  border-color: var(--cocoon-instagram-color);
+.admin-settings .demo [class*="bc-brand-color"] .instagram-button {
+  --cocoon-sns-color: var(--cocoon-instagram-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color-white.sns-follow .pinterest-button {
-  color: var(--cocoon-pinterest-color);
-  border-color: var(--cocoon-pinterest-color);
+.admin-settings .demo [class*="bc-brand-color"] .pinterest-button {
+  --cocoon-sns-color: var(--cocoon-pinterest-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .youtube-button, .admin-settings .demo .bc-brand-color-white.sns-follow .youtube-button {
-  color: var(--cocoon-youtube-color);
-  border-color: var(--cocoon-youtube-color);
+.admin-settings .demo [class*="bc-brand-color"] .youtube-button {
+  --cocoon-sns-color: var(--cocoon-youtube-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .tiktok-button, .admin-settings .demo .bc-brand-color-white.sns-follow .tiktok-button {
-  color: var(--cocoon-tiktok-color);
-  border-color: var(--cocoon-tiktok-color);
+.admin-settings .demo [class*="bc-brand-color"] .tiktok-button {
+  --cocoon-sns-color: var(--cocoon-tiktok-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color-white.sns-follow .linkedin-button {
-  color: var(--cocoon-linkedin-color);
-  border-color: var(--cocoon-linkedin-color);
+.admin-settings .demo [class*="bc-brand-color"] .linkedin-button {
+  --cocoon-sns-color: var(--cocoon-linkedin-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .note-button, .admin-settings .demo .bc-brand-color-white.sns-follow .note-button {
-  color: var(--cocoon-note-color);
-  border-color: var(--cocoon-note-color);
+.admin-settings .demo [class*="bc-brand-color"] .note-button {
+  --cocoon-sns-color: var(--cocoon-note-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .soundcloud-button, .admin-settings .demo .bc-brand-color-white.sns-follow .soundcloud-button {
-  color: var(--cocoon-soundcloud-color);
-  border-color: var(--cocoon-soundcloud-color);
+.admin-settings .demo [class*="bc-brand-color"] .soundcloud-button {
+  --cocoon-sns-color: var(--cocoon-soundcloud-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .soundcloud-button, .admin-settings .demo .bc-brand-color-white.sns-follow .soundcloud-button {
-  color: var(--cocoon-soundcloud-color);
-  border-color: var(--cocoon-soundcloud-color);
+.admin-settings .demo [class*="bc-brand-color"] .flickr-button {
+  --cocoon-sns-color: var(--cocoon-flickr-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .flickr-button, .admin-settings .demo .bc-brand-color-white.sns-follow .flickr-button {
-  color: var(--cocoon-flickr-color);
-  border-color: var(--cocoon-flickr-color);
+.admin-settings .demo [class*="bc-brand-color"] .amazon-button {
+  --cocoon-sns-color: var(--cocoon-amazon-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .amazon-button, .admin-settings .demo .bc-brand-color-white.sns-follow .amazon-button {
-  color: var(--cocoon-amazon-color);
-  border-color: var(--cocoon-amazon-color);
+.admin-settings .demo [class*="bc-brand-color"] .twitch-button {
+  --cocoon-sns-color: var(--cocoon-twitch-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .twitch-button, .admin-settings .demo .bc-brand-color-white.sns-follow .twitch-button {
-  color: var(--cocoon-twitch-color);
-  border-color: var(--cocoon-twitch-color);
+.admin-settings .demo [class*="bc-brand-color"] .rakuten-room-button {
+  --cocoon-sns-color: var(--cocoon-rakuten-room-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rakuten-room-button {
-  color: var(--cocoon-rakuten-room-color);
-  border-color: var(--cocoon-rakuten-room-color);
+.admin-settings .demo [class*="bc-brand-color"] .slack-button {
+  --cocoon-sns-color: var(--cocoon-slack-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .slack-button, .admin-settings .demo .bc-brand-color-white.sns-follow .slack-button {
-  color: var(--cocoon-slack-color);
-  border-color: var(--cocoon-slack-color);
+.admin-settings .demo [class*="bc-brand-color"] .github-button {
+  --cocoon-sns-color: var(--cocoon-github-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .github-button, .admin-settings .demo .bc-brand-color-white.sns-follow .github-button {
-  color: var(--cocoon-github-color);
-  border-color: var(--cocoon-github-color);
+.admin-settings .demo [class*="bc-brand-color"] .codepen-button {
+  --cocoon-sns-color: var(--cocoon-codepen-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .codepen-button, .admin-settings .demo .bc-brand-color-white.sns-follow .codepen-button {
-  color: var(--cocoon-codepen-color);
-  border-color: var(--cocoon-codepen-color);
+.admin-settings .demo [class*="bc-brand-color"] .feedly-button {
+  --cocoon-sns-color: var(--cocoon-feedly-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .feedly-button, .admin-settings .demo .bc-brand-color-white.sns-follow .feedly-button {
-  color: var(--cocoon-feedly-color);
-  border-color: var(--cocoon-feedly-color);
-}
-.admin-settings .demo .bc-brand-color-white.sns-share .rss-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rss-button {
-  color: var(--cocoon-rss-color);
-  border-color: var(--cocoon-rss-color);
+.admin-settings .demo [class*="bc-brand-color"] .rss-button {
+  --cocoon-sns-color: var(--cocoon-rss-color);
 }
 .admin-settings .demo .ss-top {
   margin-top: 0;
@@ -4062,326 +3967,6 @@ body.wp-admin {
 .admin-settings .demo .mc-circle {
   border-radius: 2em;
   background-clip: padding-box;
-}
-.admin-settings .demo .micro-balloon.mc-red {
-  background-color: var(--cocoon-red-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-red.micro-bottom::after {
-  border-bottom-color: var(--cocoon-red-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-red::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-red::after {
-  border-top-color: var(--cocoon-red-color);
-}
-.admin-settings .demo .micro-balloon.mc-pink {
-  background-color: var(--cocoon-pink-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-pink.micro-bottom::after {
-  border-bottom-color: var(--cocoon-pink-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-pink::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-pink::after {
-  border-top-color: var(--cocoon-pink-color);
-}
-.admin-settings .demo .micro-balloon.mc-purple {
-  background-color: var(--cocoon-purple-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-purple.micro-bottom::after {
-  border-bottom-color: var(--cocoon-purple-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-purple::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-purple::after {
-  border-top-color: var(--cocoon-purple-color);
-}
-.admin-settings .demo .micro-balloon.mc-blue {
-  background-color: var(--cocoon-blue-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-blue.micro-bottom::after {
-  border-bottom-color: var(--cocoon-blue-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-blue::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-blue::after {
-  border-top-color: var(--cocoon-blue-color);
-}
-.admin-settings .demo .micro-balloon.mc-green {
-  background-color: var(--cocoon-green-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-green.micro-bottom::after {
-  border-bottom-color: var(--cocoon-green-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-green::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-green::after {
-  border-top-color: var(--cocoon-green-color);
-}
-.admin-settings .demo .micro-balloon.mc-orange {
-  background-color: var(--cocoon-orange-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-orange.micro-bottom::after {
-  border-bottom-color: var(--cocoon-orange-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-orange::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-orange::after {
-  border-top-color: var(--cocoon-orange-color);
-}
-.admin-settings .demo .micro-balloon.mc-yellow {
-  background-color: var(--cocoon-yellow-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-yellow.micro-bottom::after {
-  border-bottom-color: var(--cocoon-yellow-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-yellow::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-yellow::after {
-  border-top-color: var(--cocoon-yellow-color);
-}
-.admin-settings .demo .micro-balloon.mc-brown {
-  background-color: var(--cocoon-brown-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-brown.micro-bottom::after {
-  border-bottom-color: var(--cocoon-brown-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-brown::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-brown::after {
-  border-top-color: var(--cocoon-brown-color);
-}
-.admin-settings .demo .micro-balloon.mc-grey {
-  background-color: var(--cocoon-grey-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-grey.micro-bottom::after {
-  border-bottom-color: var(--cocoon-grey-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-grey::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-grey::after {
-  border-top-color: var(--cocoon-grey-color);
-}
-.admin-settings .demo .micro-balloon.mc-black {
-  background-color: var(--cocoon-black-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-black.micro-bottom::after {
-  border-bottom-color: var(--cocoon-black-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-black::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-black::after {
-  border-top-color: var(--cocoon-black-color);
-}
-.admin-settings .demo .micro-balloon.mc-deep {
-  background-color: var(--cocoon-deep-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-deep.micro-bottom::after {
-  border-bottom-color: var(--cocoon-deep-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-deep::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-deep::after {
-  border-top-color: var(--cocoon-deep-color);
-}
-.admin-settings .demo .micro-balloon.mc-indigo {
-  background-color: var(--cocoon-indigo-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-indigo.micro-bottom::after {
-  border-bottom-color: var(--cocoon-indigo-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-indigo::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-indigo::after {
-  border-top-color: var(--cocoon-indigo-color);
-}
-.admin-settings .demo .micro-balloon.mc-light-blue {
-  background-color: var(--cocoon-light-blue-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-light-blue.micro-bottom::after {
-  border-bottom-color: var(--cocoon-light-blue-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-light-blue::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-light-blue::after {
-  border-top-color: var(--cocoon-light-blue-color);
-}
-.admin-settings .demo .micro-balloon.mc-cyan {
-  background-color: var(--cocoon-cyan-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-cyan.micro-bottom::after {
-  border-bottom-color: var(--cocoon-cyan-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-cyan::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-cyan::after {
-  border-top-color: var(--cocoon-cyan-color);
-}
-.admin-settings .demo .micro-balloon.mc-teal {
-  background-color: var(--cocoon-teal-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-teal.micro-bottom::after {
-  border-bottom-color: var(--cocoon-teal-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-teal::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-teal::after {
-  border-top-color: var(--cocoon-teal-color);
-}
-.admin-settings .demo .micro-balloon.mc-light-green {
-  background-color: var(--cocoon-light-green-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-light-green.micro-bottom::after {
-  border-bottom-color: var(--cocoon-light-green-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-light-green::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-light-green::after {
-  border-top-color: var(--cocoon-light-green-color);
-}
-.admin-settings .demo .micro-balloon.mc-lime {
-  background-color: var(--cocoon-lime-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-lime.micro-bottom::after {
-  border-bottom-color: var(--cocoon-lime-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-lime::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-lime::after {
-  border-top-color: var(--cocoon-lime-color);
-}
-.admin-settings .demo .micro-balloon.mc-amber {
-  background-color: var(--cocoon-amber-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-amber.micro-bottom::after {
-  border-bottom-color: var(--cocoon-amber-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-amber::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-amber::after {
-  border-top-color: var(--cocoon-amber-color);
-}
-.admin-settings .demo .micro-balloon.mc-deep-orange {
-  background-color: var(--cocoon-deep-orange-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-deep-orange.micro-bottom::after {
-  border-bottom-color: var(--cocoon-deep-orange-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-deep-orange::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-deep-orange::after {
-  border-top-color: var(--cocoon-deep-orange-color);
-}
-.admin-settings .demo .micro-balloon.mc-white {
-  background-color: var(--cocoon-white-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-white.micro-bottom::after {
-  border-bottom-color: var(--cocoon-white-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-white::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-white::after {
-  border-top-color: var(--cocoon-white-color);
 }
 .admin-settings .demo .blogcard-label {
   position: absolute;
@@ -9661,195 +9246,103 @@ body.wp-admin {
   align-items: center;
 }
 .admin-settings .demo .sns-buttons a {
-  display: block;
-  background-color: var(--cocoon-text-color);
+  align-content: center;
+  align-items: center;
+  background-color: var(--cocoon-sns-color);
+  border-radius: var(--cocoon-basic-border-radius);
+  display: inline-flex;
+  font-size: 18px;
+  justify-content: center;
+  height: 45px;
+  margin-bottom: 8px;
+  position: relative;
   text-align: center;
+  width: 32%;
   color: var(--cocoon-white-color);
   text-decoration: none;
-  border-radius: var(--cocoon-basic-border-radius);
-  height: 45px;
 }
 .admin-settings .demo .sns-buttons a:hover {
   opacity: 0.7;
   color: var(--cocoon-white-color);
   transition: all 0.3s ease-in-out;
 }
-.admin-settings .demo .sns-share a, .admin-settings .demo .sns-follow a {
-  cursor: pointer;
-}
-.admin-settings .demo .bc-brand-color.sns-share .twitter-button, .admin-settings .demo .bc-brand-color.sns-follow .twitter-button {
-  background-color: var(--cocoon-twitter-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .facebook-button, .admin-settings .demo .bc-brand-color.sns-follow .facebook-button {
-  background-color: var(--cocoon-facebook-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .hatebu-button, .admin-settings .demo .bc-brand-color.sns-follow .hatebu-button {
-  background-color: var(--cocoon-hatebu-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .google-plus-button, .admin-settings .demo .bc-brand-color.sns-follow .google-plus-button {
-  background-color: var(--cocoon-google-plus-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .pocket-button, .admin-settings .demo .bc-brand-color.sns-follow .pocket-button {
-  background-color: var(--cocoon-pocket-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .line-button, .admin-settings .demo .bc-brand-color.sns-follow .line-button {
-  background-color: var(--cocoon-line-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .website-button, .admin-settings .demo .bc-brand-color.sns-follow .website-button {
-  background-color: var(--cocoon-website-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .instagram-button, .admin-settings .demo .bc-brand-color.sns-follow .instagram-button {
-  background-color: var(--cocoon-instagram-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color.sns-follow .pinterest-button {
-  background-color: var(--cocoon-pinterest-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .youtube-button, .admin-settings .demo .bc-brand-color.sns-follow .youtube-button {
-  background-color: var(--cocoon-youtube-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .tiktok-button, .admin-settings .demo .bc-brand-color.sns-follow .tiktok-button {
-  background-color: var(--cocoon-tiktok-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color.sns-follow .linkedin-button {
-  background-color: var(--cocoon-linkedin-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .note-button, .admin-settings .demo .bc-brand-color.sns-follow .note-button {
-  background-color: var(--cocoon-note-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .soundcloud-button, .admin-settings .demo .bc-brand-color.sns-follow .soundcloud-button {
-  background-color: var(--cocoon-soundcloud-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .flickr-button, .admin-settings .demo .bc-brand-color.sns-follow .flickr-button {
-  background-color: var(--cocoon-flickr-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .amazon-button, .admin-settings .demo .bc-brand-color.sns-follow .amazon-button {
-  background-color: var(--cocoon-amazon-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .twitch-button, .admin-settings .demo .bc-brand-color.sns-follow .twitch-button {
-  background-color: var(--cocoon-twitch-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color.sns-follow .rakuten-room-button {
-  background-color: var(--cocoon-rakuten-room-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .slack-button, .admin-settings .demo .bc-brand-color.sns-follow .slack-button {
-  background-color: var(--cocoon-slack-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .github-button, .admin-settings .demo .bc-brand-color.sns-follow .github-button {
-  background-color: var(--cocoon-github-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .codepen-button, .admin-settings .demo .bc-brand-color.sns-follow .codepen-button {
-  background-color: var(--cocoon-codepen-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .feedly-button, .admin-settings .demo .bc-brand-color.sns-follow .feedly-button {
-  background-color: var(--cocoon-feedly-color);
-}
-.admin-settings .demo .bc-brand-color.sns-share .rss-button, .admin-settings .demo .bc-brand-color.sns-follow .rss-button {
-  background-color: var(--cocoon-rss-color);
-}
-.admin-settings .demo .bc-brand-color-white.sns-share a, .admin-settings .demo .bc-brand-color-white.sns-follow a {
+.admin-settings .demo .bc-brand-color-white a {
   background-color: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-sns-color);
+  color: var(--cocoon-sns-color);
   font-weight: 500;
-  border: 1px solid var(--cocoon-text-color);
-  color: var(--cocoon-text-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share a:hover, .admin-settings .demo .bc-brand-color-white.sns-follow a:hover {
+.admin-settings .demo .bc-brand-color-white a:hover {
   opacity: 0.5;
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .twitter-button, .admin-settings .demo .bc-brand-color-white.sns-follow .twitter-button {
-  color: var(--cocoon-twitter-color);
-  border-color: var(--cocoon-twitter-color);
+.admin-settings .demo [class*="bc-brand-color"] .twitter-button {
+  --cocoon-sns-color: var(--cocoon-twitter-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .facebook-button, .admin-settings .demo .bc-brand-color-white.sns-follow .facebook-button {
-  color: var(--cocoon-facebook-color);
-  border-color: var(--cocoon-facebook-color);
+.admin-settings .demo [class*="bc-brand-color"] .facebook-button {
+  --cocoon-sns-color: var(--cocoon-facebook-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .hatebu-button, .admin-settings .demo .bc-brand-color-white.sns-follow .hatebu-button {
-  color: var(--cocoon-hatebu-color);
-  border-color: var(--cocoon-hatebu-color);
+.admin-settings .demo [class*="bc-brand-color"] .hatebu-button {
+  --cocoon-sns-color: var(--cocoon-hatebu-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .google-plus-button, .admin-settings .demo .bc-brand-color-white.sns-follow .google-plus-button {
-  color: var(--cocoon-google-plus-color);
-  border-color: var(--cocoon-google-plus-color);
+.admin-settings .demo [class*="bc-brand-color"] .google-plus-button {
+  --cocoon-sns-color: var(--cocoon-google-plus-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .pocket-button, .admin-settings .demo .bc-brand-color-white.sns-follow .pocket-button {
-  color: var(--cocoon-pocket-color);
-  border-color: var(--cocoon-pocket-color);
+.admin-settings .demo [class*="bc-brand-color"] .pocket-button {
+  --cocoon-sns-color: var(--cocoon-pocket-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .line-button, .admin-settings .demo .bc-brand-color-white.sns-follow .line-button {
-  color: var(--cocoon-line-color);
-  border-color: var(--cocoon-line-color);
+.admin-settings .demo [class*="bc-brand-color"] .line-button {
+  --cocoon-sns-color: var(--cocoon-line-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .website-button, .admin-settings .demo .bc-brand-color-white.sns-follow .website-button {
-  color: var(--cocoon-website-color);
-  border-color: var(--cocoon-website-color);
+.admin-settings .demo [class*="bc-brand-color"] .website-button {
+  --cocoon-sns-color: var(--cocoon-website-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .instagram-button, .admin-settings .demo .bc-brand-color-white.sns-follow .instagram-button {
-  color: var(--cocoon-instagram-color);
-  border-color: var(--cocoon-instagram-color);
+.admin-settings .demo [class*="bc-brand-color"] .instagram-button {
+  --cocoon-sns-color: var(--cocoon-instagram-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color-white.sns-follow .pinterest-button {
-  color: var(--cocoon-pinterest-color);
-  border-color: var(--cocoon-pinterest-color);
+.admin-settings .demo [class*="bc-brand-color"] .pinterest-button {
+  --cocoon-sns-color: var(--cocoon-pinterest-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .youtube-button, .admin-settings .demo .bc-brand-color-white.sns-follow .youtube-button {
-  color: var(--cocoon-youtube-color);
-  border-color: var(--cocoon-youtube-color);
+.admin-settings .demo [class*="bc-brand-color"] .youtube-button {
+  --cocoon-sns-color: var(--cocoon-youtube-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .tiktok-button, .admin-settings .demo .bc-brand-color-white.sns-follow .tiktok-button {
-  color: var(--cocoon-tiktok-color);
-  border-color: var(--cocoon-tiktok-color);
+.admin-settings .demo [class*="bc-brand-color"] .tiktok-button {
+  --cocoon-sns-color: var(--cocoon-tiktok-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color-white.sns-follow .linkedin-button {
-  color: var(--cocoon-linkedin-color);
-  border-color: var(--cocoon-linkedin-color);
+.admin-settings .demo [class*="bc-brand-color"] .linkedin-button {
+  --cocoon-sns-color: var(--cocoon-linkedin-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .note-button, .admin-settings .demo .bc-brand-color-white.sns-follow .note-button {
-  color: var(--cocoon-note-color);
-  border-color: var(--cocoon-note-color);
+.admin-settings .demo [class*="bc-brand-color"] .note-button {
+  --cocoon-sns-color: var(--cocoon-note-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .soundcloud-button, .admin-settings .demo .bc-brand-color-white.sns-follow .soundcloud-button {
-  color: var(--cocoon-soundcloud-color);
-  border-color: var(--cocoon-soundcloud-color);
+.admin-settings .demo [class*="bc-brand-color"] .soundcloud-button {
+  --cocoon-sns-color: var(--cocoon-soundcloud-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .soundcloud-button, .admin-settings .demo .bc-brand-color-white.sns-follow .soundcloud-button {
-  color: var(--cocoon-soundcloud-color);
-  border-color: var(--cocoon-soundcloud-color);
+.admin-settings .demo [class*="bc-brand-color"] .flickr-button {
+  --cocoon-sns-color: var(--cocoon-flickr-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .flickr-button, .admin-settings .demo .bc-brand-color-white.sns-follow .flickr-button {
-  color: var(--cocoon-flickr-color);
-  border-color: var(--cocoon-flickr-color);
+.admin-settings .demo [class*="bc-brand-color"] .amazon-button {
+  --cocoon-sns-color: var(--cocoon-amazon-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .amazon-button, .admin-settings .demo .bc-brand-color-white.sns-follow .amazon-button {
-  color: var(--cocoon-amazon-color);
-  border-color: var(--cocoon-amazon-color);
+.admin-settings .demo [class*="bc-brand-color"] .twitch-button {
+  --cocoon-sns-color: var(--cocoon-twitch-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .twitch-button, .admin-settings .demo .bc-brand-color-white.sns-follow .twitch-button {
-  color: var(--cocoon-twitch-color);
-  border-color: var(--cocoon-twitch-color);
+.admin-settings .demo [class*="bc-brand-color"] .rakuten-room-button {
+  --cocoon-sns-color: var(--cocoon-rakuten-room-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rakuten-room-button {
-  color: var(--cocoon-rakuten-room-color);
-  border-color: var(--cocoon-rakuten-room-color);
+.admin-settings .demo [class*="bc-brand-color"] .slack-button {
+  --cocoon-sns-color: var(--cocoon-slack-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .slack-button, .admin-settings .demo .bc-brand-color-white.sns-follow .slack-button {
-  color: var(--cocoon-slack-color);
-  border-color: var(--cocoon-slack-color);
+.admin-settings .demo [class*="bc-brand-color"] .github-button {
+  --cocoon-sns-color: var(--cocoon-github-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .github-button, .admin-settings .demo .bc-brand-color-white.sns-follow .github-button {
-  color: var(--cocoon-github-color);
-  border-color: var(--cocoon-github-color);
+.admin-settings .demo [class*="bc-brand-color"] .codepen-button {
+  --cocoon-sns-color: var(--cocoon-codepen-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .codepen-button, .admin-settings .demo .bc-brand-color-white.sns-follow .codepen-button {
-  color: var(--cocoon-codepen-color);
-  border-color: var(--cocoon-codepen-color);
+.admin-settings .demo [class*="bc-brand-color"] .feedly-button {
+  --cocoon-sns-color: var(--cocoon-feedly-color);
 }
-.admin-settings .demo .bc-brand-color-white.sns-share .feedly-button, .admin-settings .demo .bc-brand-color-white.sns-follow .feedly-button {
-  color: var(--cocoon-feedly-color);
-  border-color: var(--cocoon-feedly-color);
-}
-.admin-settings .demo .bc-brand-color-white.sns-share .rss-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rss-button {
-  color: var(--cocoon-rss-color);
-  border-color: var(--cocoon-rss-color);
+.admin-settings .demo [class*="bc-brand-color"] .rss-button {
+  --cocoon-sns-color: var(--cocoon-rss-color);
 }
 .admin-settings .demo .ss-top {
   margin-top: 0;
@@ -12040,326 +11533,6 @@ body.wp-admin {
 .admin-settings .demo .mc-circle {
   border-radius: 2em;
   background-clip: padding-box;
-}
-.admin-settings .demo .micro-balloon.mc-red {
-  background-color: var(--cocoon-red-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-red.micro-bottom::after {
-  border-bottom-color: var(--cocoon-red-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-red::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-red::after {
-  border-top-color: var(--cocoon-red-color);
-}
-.admin-settings .demo .micro-balloon.mc-pink {
-  background-color: var(--cocoon-pink-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-pink.micro-bottom::after {
-  border-bottom-color: var(--cocoon-pink-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-pink::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-pink::after {
-  border-top-color: var(--cocoon-pink-color);
-}
-.admin-settings .demo .micro-balloon.mc-purple {
-  background-color: var(--cocoon-purple-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-purple.micro-bottom::after {
-  border-bottom-color: var(--cocoon-purple-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-purple::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-purple::after {
-  border-top-color: var(--cocoon-purple-color);
-}
-.admin-settings .demo .micro-balloon.mc-blue {
-  background-color: var(--cocoon-blue-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-blue.micro-bottom::after {
-  border-bottom-color: var(--cocoon-blue-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-blue::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-blue::after {
-  border-top-color: var(--cocoon-blue-color);
-}
-.admin-settings .demo .micro-balloon.mc-green {
-  background-color: var(--cocoon-green-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-green.micro-bottom::after {
-  border-bottom-color: var(--cocoon-green-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-green::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-green::after {
-  border-top-color: var(--cocoon-green-color);
-}
-.admin-settings .demo .micro-balloon.mc-orange {
-  background-color: var(--cocoon-orange-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-orange.micro-bottom::after {
-  border-bottom-color: var(--cocoon-orange-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-orange::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-orange::after {
-  border-top-color: var(--cocoon-orange-color);
-}
-.admin-settings .demo .micro-balloon.mc-yellow {
-  background-color: var(--cocoon-yellow-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-yellow.micro-bottom::after {
-  border-bottom-color: var(--cocoon-yellow-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-yellow::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-yellow::after {
-  border-top-color: var(--cocoon-yellow-color);
-}
-.admin-settings .demo .micro-balloon.mc-brown {
-  background-color: var(--cocoon-brown-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-brown.micro-bottom::after {
-  border-bottom-color: var(--cocoon-brown-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-brown::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-brown::after {
-  border-top-color: var(--cocoon-brown-color);
-}
-.admin-settings .demo .micro-balloon.mc-grey {
-  background-color: var(--cocoon-grey-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-grey.micro-bottom::after {
-  border-bottom-color: var(--cocoon-grey-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-grey::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-grey::after {
-  border-top-color: var(--cocoon-grey-color);
-}
-.admin-settings .demo .micro-balloon.mc-black {
-  background-color: var(--cocoon-black-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-black.micro-bottom::after {
-  border-bottom-color: var(--cocoon-black-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-black::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-black::after {
-  border-top-color: var(--cocoon-black-color);
-}
-.admin-settings .demo .micro-balloon.mc-deep {
-  background-color: var(--cocoon-deep-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-deep.micro-bottom::after {
-  border-bottom-color: var(--cocoon-deep-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-deep::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-deep::after {
-  border-top-color: var(--cocoon-deep-color);
-}
-.admin-settings .demo .micro-balloon.mc-indigo {
-  background-color: var(--cocoon-indigo-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-indigo.micro-bottom::after {
-  border-bottom-color: var(--cocoon-indigo-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-indigo::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-indigo::after {
-  border-top-color: var(--cocoon-indigo-color);
-}
-.admin-settings .demo .micro-balloon.mc-light-blue {
-  background-color: var(--cocoon-light-blue-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-light-blue.micro-bottom::after {
-  border-bottom-color: var(--cocoon-light-blue-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-light-blue::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-light-blue::after {
-  border-top-color: var(--cocoon-light-blue-color);
-}
-.admin-settings .demo .micro-balloon.mc-cyan {
-  background-color: var(--cocoon-cyan-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-cyan.micro-bottom::after {
-  border-bottom-color: var(--cocoon-cyan-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-cyan::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-cyan::after {
-  border-top-color: var(--cocoon-cyan-color);
-}
-.admin-settings .demo .micro-balloon.mc-teal {
-  background-color: var(--cocoon-teal-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-teal.micro-bottom::after {
-  border-bottom-color: var(--cocoon-teal-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-teal::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-teal::after {
-  border-top-color: var(--cocoon-teal-color);
-}
-.admin-settings .demo .micro-balloon.mc-light-green {
-  background-color: var(--cocoon-light-green-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-light-green.micro-bottom::after {
-  border-bottom-color: var(--cocoon-light-green-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-light-green::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-light-green::after {
-  border-top-color: var(--cocoon-light-green-color);
-}
-.admin-settings .demo .micro-balloon.mc-lime {
-  background-color: var(--cocoon-lime-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-lime.micro-bottom::after {
-  border-bottom-color: var(--cocoon-lime-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-lime::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-lime::after {
-  border-top-color: var(--cocoon-lime-color);
-}
-.admin-settings .demo .micro-balloon.mc-amber {
-  background-color: var(--cocoon-amber-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-amber.micro-bottom::after {
-  border-bottom-color: var(--cocoon-amber-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-amber::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-amber::after {
-  border-top-color: var(--cocoon-amber-color);
-}
-.admin-settings .demo .micro-balloon.mc-deep-orange {
-  background-color: var(--cocoon-deep-orange-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-deep-orange.micro-bottom::after {
-  border-bottom-color: var(--cocoon-deep-orange-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-deep-orange::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-deep-orange::after {
-  border-top-color: var(--cocoon-deep-orange-color);
-}
-.admin-settings .demo .micro-balloon.mc-white {
-  background-color: var(--cocoon-white-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.admin-settings .demo .micro-balloon.mc-white.micro-bottom::after {
-  border-bottom-color: var(--cocoon-white-color);
-  border-top-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-white::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.admin-settings .demo .micro-balloon.mc-white::after {
-  border-top-color: var(--cocoon-white-color);
 }
 .admin-settings .demo .blogcard-label {
   position: absolute;
@@ -20796,326 +19969,6 @@ textarea[name="the_page_memo"] {
 .components-popover__content .mc-circle {
   border-radius: 2em;
   background-clip: padding-box;
-}
-.components-popover__content .micro-balloon.mc-red {
-  background-color: var(--cocoon-red-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-red.micro-bottom::after {
-  border-bottom-color: var(--cocoon-red-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-red::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-red::after {
-  border-top-color: var(--cocoon-red-color);
-}
-.components-popover__content .micro-balloon.mc-pink {
-  background-color: var(--cocoon-pink-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-pink.micro-bottom::after {
-  border-bottom-color: var(--cocoon-pink-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-pink::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-pink::after {
-  border-top-color: var(--cocoon-pink-color);
-}
-.components-popover__content .micro-balloon.mc-purple {
-  background-color: var(--cocoon-purple-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-purple.micro-bottom::after {
-  border-bottom-color: var(--cocoon-purple-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-purple::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-purple::after {
-  border-top-color: var(--cocoon-purple-color);
-}
-.components-popover__content .micro-balloon.mc-blue {
-  background-color: var(--cocoon-blue-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-blue.micro-bottom::after {
-  border-bottom-color: var(--cocoon-blue-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-blue::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-blue::after {
-  border-top-color: var(--cocoon-blue-color);
-}
-.components-popover__content .micro-balloon.mc-green {
-  background-color: var(--cocoon-green-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-green.micro-bottom::after {
-  border-bottom-color: var(--cocoon-green-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-green::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-green::after {
-  border-top-color: var(--cocoon-green-color);
-}
-.components-popover__content .micro-balloon.mc-orange {
-  background-color: var(--cocoon-orange-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-orange.micro-bottom::after {
-  border-bottom-color: var(--cocoon-orange-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-orange::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-orange::after {
-  border-top-color: var(--cocoon-orange-color);
-}
-.components-popover__content .micro-balloon.mc-yellow {
-  background-color: var(--cocoon-yellow-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-yellow.micro-bottom::after {
-  border-bottom-color: var(--cocoon-yellow-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-yellow::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-yellow::after {
-  border-top-color: var(--cocoon-yellow-color);
-}
-.components-popover__content .micro-balloon.mc-brown {
-  background-color: var(--cocoon-brown-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-brown.micro-bottom::after {
-  border-bottom-color: var(--cocoon-brown-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-brown::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-brown::after {
-  border-top-color: var(--cocoon-brown-color);
-}
-.components-popover__content .micro-balloon.mc-grey {
-  background-color: var(--cocoon-grey-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-grey.micro-bottom::after {
-  border-bottom-color: var(--cocoon-grey-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-grey::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-grey::after {
-  border-top-color: var(--cocoon-grey-color);
-}
-.components-popover__content .micro-balloon.mc-black {
-  background-color: var(--cocoon-black-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-black.micro-bottom::after {
-  border-bottom-color: var(--cocoon-black-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-black::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-black::after {
-  border-top-color: var(--cocoon-black-color);
-}
-.components-popover__content .micro-balloon.mc-deep {
-  background-color: var(--cocoon-deep-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-deep.micro-bottom::after {
-  border-bottom-color: var(--cocoon-deep-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-deep::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-deep::after {
-  border-top-color: var(--cocoon-deep-color);
-}
-.components-popover__content .micro-balloon.mc-indigo {
-  background-color: var(--cocoon-indigo-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-indigo.micro-bottom::after {
-  border-bottom-color: var(--cocoon-indigo-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-indigo::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-indigo::after {
-  border-top-color: var(--cocoon-indigo-color);
-}
-.components-popover__content .micro-balloon.mc-light-blue {
-  background-color: var(--cocoon-light-blue-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-light-blue.micro-bottom::after {
-  border-bottom-color: var(--cocoon-light-blue-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-light-blue::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-light-blue::after {
-  border-top-color: var(--cocoon-light-blue-color);
-}
-.components-popover__content .micro-balloon.mc-cyan {
-  background-color: var(--cocoon-cyan-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-cyan.micro-bottom::after {
-  border-bottom-color: var(--cocoon-cyan-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-cyan::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-cyan::after {
-  border-top-color: var(--cocoon-cyan-color);
-}
-.components-popover__content .micro-balloon.mc-teal {
-  background-color: var(--cocoon-teal-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-teal.micro-bottom::after {
-  border-bottom-color: var(--cocoon-teal-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-teal::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-teal::after {
-  border-top-color: var(--cocoon-teal-color);
-}
-.components-popover__content .micro-balloon.mc-light-green {
-  background-color: var(--cocoon-light-green-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-light-green.micro-bottom::after {
-  border-bottom-color: var(--cocoon-light-green-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-light-green::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-light-green::after {
-  border-top-color: var(--cocoon-light-green-color);
-}
-.components-popover__content .micro-balloon.mc-lime {
-  background-color: var(--cocoon-lime-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-lime.micro-bottom::after {
-  border-bottom-color: var(--cocoon-lime-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-lime::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-lime::after {
-  border-top-color: var(--cocoon-lime-color);
-}
-.components-popover__content .micro-balloon.mc-amber {
-  background-color: var(--cocoon-amber-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-amber.micro-bottom::after {
-  border-bottom-color: var(--cocoon-amber-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-amber::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-amber::after {
-  border-top-color: var(--cocoon-amber-color);
-}
-.components-popover__content .micro-balloon.mc-deep-orange {
-  background-color: var(--cocoon-deep-orange-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-deep-orange.micro-bottom::after {
-  border-bottom-color: var(--cocoon-deep-orange-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-deep-orange::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-deep-orange::after {
-  border-top-color: var(--cocoon-deep-orange-color);
-}
-.components-popover__content .micro-balloon.mc-white {
-  background-color: var(--cocoon-white-color);
-  color: var(--cocoon-white-color);
-  border: none;
-}
-.components-popover__content .micro-balloon.mc-white.micro-bottom::after {
-  border-bottom-color: var(--cocoon-white-color);
-  border-top-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-white::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-.components-popover__content .micro-balloon.mc-white::after {
-  border-top-color: var(--cocoon-white-color);
 }
 .components-popover__content .blogcard-label {
   position: absolute;
