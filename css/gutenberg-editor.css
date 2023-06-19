@@ -72,6 +72,7 @@
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
   --cocoon-box-border-color: #47585c;
+  --cocoon-sns-color: var(--cocoon-text-color);
 }
 
 .faw::before {
