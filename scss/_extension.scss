@@ -1150,29 +1150,29 @@ div.search-form{
   }
 }
 
-.micro-balloon{
-  &.mc-red{@include micro_copycolor(var(--cocoon-red-color));}
-  &.mc-pink{@include micro_copycolor(var(--cocoon-pink-color));}
-  &.mc-purple{@include micro_copycolor(var(--cocoon-purple-color));}
-  &.mc-blue{@include micro_copycolor(var(--cocoon-blue-color));}
-  &.mc-green{@include micro_copycolor(var(--cocoon-green-color));}
-  &.mc-orange{@include micro_copycolor(var(--cocoon-orange-color));}
-  &.mc-yellow{@include micro_copycolor(var(--cocoon-yellow-color));}
-  &.mc-brown{@include micro_copycolor(var(--cocoon-brown-color));}
-  &.mc-grey{@include micro_copycolor(var(--cocoon-grey-color));}
-  &.mc-black{@include micro_copycolor(var(--cocoon-black-color));}
+// .micro-balloon{
+//   &.mc-red{@include micro_copycolor(var(--cocoon-red-color));}
+//   &.mc-pink{@include micro_copycolor(var(--cocoon-pink-color));}
+//   &.mc-purple{@include micro_copycolor(var(--cocoon-purple-color));}
+//   &.mc-blue{@include micro_copycolor(var(--cocoon-blue-color));}
+//   &.mc-green{@include micro_copycolor(var(--cocoon-green-color));}
+//   &.mc-orange{@include micro_copycolor(var(--cocoon-orange-color));}
+//   &.mc-yellow{@include micro_copycolor(var(--cocoon-yellow-color));}
+//   &.mc-brown{@include micro_copycolor(var(--cocoon-brown-color));}
+//   &.mc-grey{@include micro_copycolor(var(--cocoon-grey-color));}
+//   &.mc-black{@include micro_copycolor(var(--cocoon-black-color));}
 
-  &.mc-deep{@include micro_copycolor(var(--cocoon-deep-color));}
-  &.mc-indigo{@include micro_copycolor(var(--cocoon-indigo-color));}
-  &.mc-light-blue{@include micro_copycolor(var(--cocoon-light-blue-color));}
-  &.mc-cyan{@include micro_copycolor(var(--cocoon-cyan-color));}
-  &.mc-teal{@include micro_copycolor(var(--cocoon-teal-color));}
-  &.mc-light-green{@include micro_copycolor(var(--cocoon-light-green-color));}
-  &.mc-lime{@include micro_copycolor(var(--cocoon-lime-color));}
-  &.mc-amber{@include micro_copycolor(var(--cocoon-amber-color));}
-  &.mc-deep-orange{@include micro_copycolor(var(--cocoon-deep-orange-color));}
-  &.mc-white{@include micro_copycolor(var(--cocoon-white-color));}
-}
+//   &.mc-deep{@include micro_copycolor(var(--cocoon-deep-color));}
+//   &.mc-indigo{@include micro_copycolor(var(--cocoon-indigo-color));}
+//   &.mc-light-blue{@include micro_copycolor(var(--cocoon-light-blue-color));}
+//   &.mc-cyan{@include micro_copycolor(var(--cocoon-cyan-color));}
+//   &.mc-teal{@include micro_copycolor(var(--cocoon-teal-color));}
+//   &.mc-light-green{@include micro_copycolor(var(--cocoon-light-green-color));}
+//   &.mc-lime{@include micro_copycolor(var(--cocoon-lime-color));}
+//   &.mc-amber{@include micro_copycolor(var(--cocoon-amber-color));}
+//   &.mc-deep-orange{@include micro_copycolor(var(--cocoon-deep-orange-color));}
+//   &.mc-white{@include micro_copycolor(var(--cocoon-white-color));}
+// }
 
 
 .blogcard-label{
