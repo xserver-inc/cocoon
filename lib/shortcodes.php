@@ -530,7 +530,12 @@ function countdown_shortcode( $atts ){
     return TIME_ERROR_MESSAGE;
   }
   $to = strtotime($to);
-  return get_countdown_days($to).$unit;
+  $count = get_countdown_days($to);
+  if($count === "0") {
+    return "-";
+  }else{
+    return $count.$unit;
+  }
 }
 endif;
 
