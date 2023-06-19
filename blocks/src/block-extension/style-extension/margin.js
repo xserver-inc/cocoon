@@ -53,37 +53,60 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         title = __( '[C] 余白', THEME_NAME );
       }
 
+      function createLabel() {
+        var labelStr = __( 'ブロック下部', THEME_NAME ) + '\n';
+        if ( extraBottomMargin === '' ) {
+          labelStr += '(' + __( '未設定', THEME_NAME ) + ')';
+        } else {
+          labelStr +=
+            '(' +
+            __( '文字の高さの', THEME_NAME ) +
+            extraBottomMargin.replace( 'em', '' ) +
+            __( '倍の余白が設定されました', THEME_NAME ) +
+            ')';
+        }
+        return labelStr;
+      }
+
+      function createValue() {
+        if ( extraBottomMargin === '' ) {
+          return 0;
+        } else {
+          return extraBottomMargin;
+        }
+      }
+
       return (
         <Fragment>
           <BlockEdit { ...props } />
           { isSelected && (
             <InspectorControls>
               <PanelBody title={ title } initialOpen={ false }>
-                { /* <div class="__clearBtn">
-                  <button
-                    type="button"
-                    class="components-button is-small"
-                    onClick={ () => setAttributes( { extraBottomMargin: '' } ) }
-                  >
-                    <span class="dashicons dashicons-editor-removeformatting"></span>
-                    { __( 'ブロック下部余白をクリア', THEME_NAME ) }
-                  </button>
-                </div> */ }
+                {
+                  <div class="__clearBtn">
+                    <button
+                      type="button"
+                      class="components-button is-small"
+                      onClick={ () =>
+                        setAttributes( { extraBottomMargin: '' } )
+                      }
+                    >
+                      <span class="dashicons dashicons-editor-removeformatting"></span>
+                      { __( 'ブロック下部余白をクリア', THEME_NAME ) }
+                    </button>
+                  </div>
+                }
                 <RangeControl
-                  label={ __( 'ブロック下部', THEME_NAME ) }
-                  value={ extraBottomMargin }
+                  label={ createLabel() }
+                  value={ createValue() }
                   onChange={ ( value ) => {
-                    if ( value === -1 ) {
-                      setAttributes( { extraBottomMargin: '' } );
-                    } else {
-                      setAttributes( { extraBottomMargin: value + 'em' } );
-                    }
+                    setAttributes( { extraBottomMargin: value + 'em' } );
                   } }
-                  min={ -1 }
+                  min={ 0 }
                   max={ 20 }
                   step={ 0.1 }
-                  allowReset={ true }
-                  resetFallbackValue={ -1 }
+                  //allowReset={ true }
+                  resetFallbackValue={ 0 }
                   initialPosition={ 0 }
                   marks={ marks }
                 />
