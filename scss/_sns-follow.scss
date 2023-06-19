@@ -1,16 +1,6 @@
 /************************************
 ** SNSフォローボタン
 ************************************/
-.sns-follow{
-  @extend %margin_top_and_bottom_in_content;
-
-  //ボタンカラー
-  &{
-    @extend %sns_button_color;
-  }
-
-}
-
 .sns-follow-message{
   @extend %sns_message;
 }
