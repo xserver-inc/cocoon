@@ -60,7 +60,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         } else {
           labelStr +=
             __( '文字高の', THEME_NAME ) +
-            extraBottomMargin.replace( 'em', '' ) +
+            extraBottomMargin +
             __( '倍の余白設定', THEME_NAME );
         }
         return labelStr;
@@ -70,7 +70,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         if ( extraBottomMargin === '' ) {
           return 0;
         } else {
-          return extraBottomMargin;
+          return Number( extraBottomMargin );
         }
       }
 
@@ -98,7 +98,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                   label={ createLabel() }
                   value={ createValue() }
                   onChange={ ( value ) => {
-                    setAttributes( { extraBottomMargin: value + 'em' } );
+                    setAttributes( { extraBottomMargin: String( value ) } );
                   } }
                   min={ 0 }
                   max={ 20 }
@@ -137,7 +137,7 @@ const applyAttributesToBlock = createHigherOrderComponent(
           <BlockListBlock
             { ...props }
             className={ classnames( className, {
-              [ 'is-style-bottom-margin-' + extraBottomMargin ]:
+              [ 'is-style-bottom-margin-' + extraBottomMargin + 'em' ]:
                 !! extraBottomMargin,
               [ 'has-bottom-margin' ]: extraBottomMargin,
             } ) }
@@ -162,7 +162,8 @@ const addCustomSave = ( props, blockType, attributes ) => {
   const { extraBottomMargin } = attributes;
 
   props.className = classnames( className, {
-    [ 'is-style-bottom-margin-' + extraBottomMargin ]: !! extraBottomMargin,
+    [ 'is-style-bottom-margin-' + extraBottomMargin + 'em' ]:
+      !! extraBottomMargin,
     [ 'has-bottom-margin' ]: extraBottomMargin,
   } );
 
