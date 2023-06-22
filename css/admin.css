@@ -3960,6 +3960,326 @@ body.wp-admin {
   border-radius: 2em;
   background-clip: padding-box;
 }
+.admin-settings .demo .micro-balloon.mc-red {
+  background-color: var(--cocoon-red-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-red.micro-bottom::after {
+  border-bottom-color: var(--cocoon-red-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-red::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-red::after {
+  border-top-color: var(--cocoon-red-color);
+}
+.admin-settings .demo .micro-balloon.mc-pink {
+  background-color: var(--cocoon-pink-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-pink.micro-bottom::after {
+  border-bottom-color: var(--cocoon-pink-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-pink::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-pink::after {
+  border-top-color: var(--cocoon-pink-color);
+}
+.admin-settings .demo .micro-balloon.mc-purple {
+  background-color: var(--cocoon-purple-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-purple.micro-bottom::after {
+  border-bottom-color: var(--cocoon-purple-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-purple::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-purple::after {
+  border-top-color: var(--cocoon-purple-color);
+}
+.admin-settings .demo .micro-balloon.mc-blue {
+  background-color: var(--cocoon-blue-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-blue.micro-bottom::after {
+  border-bottom-color: var(--cocoon-blue-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-blue::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-blue::after {
+  border-top-color: var(--cocoon-blue-color);
+}
+.admin-settings .demo .micro-balloon.mc-green {
+  background-color: var(--cocoon-green-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-green.micro-bottom::after {
+  border-bottom-color: var(--cocoon-green-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-green::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-green::after {
+  border-top-color: var(--cocoon-green-color);
+}
+.admin-settings .demo .micro-balloon.mc-orange {
+  background-color: var(--cocoon-orange-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-orange.micro-bottom::after {
+  border-bottom-color: var(--cocoon-orange-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-orange::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-orange::after {
+  border-top-color: var(--cocoon-orange-color);
+}
+.admin-settings .demo .micro-balloon.mc-yellow {
+  background-color: var(--cocoon-yellow-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-yellow.micro-bottom::after {
+  border-bottom-color: var(--cocoon-yellow-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-yellow::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-yellow::after {
+  border-top-color: var(--cocoon-yellow-color);
+}
+.admin-settings .demo .micro-balloon.mc-brown {
+  background-color: var(--cocoon-brown-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-brown.micro-bottom::after {
+  border-bottom-color: var(--cocoon-brown-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-brown::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-brown::after {
+  border-top-color: var(--cocoon-brown-color);
+}
+.admin-settings .demo .micro-balloon.mc-grey {
+  background-color: var(--cocoon-grey-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-grey.micro-bottom::after {
+  border-bottom-color: var(--cocoon-grey-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-grey::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-grey::after {
+  border-top-color: var(--cocoon-grey-color);
+}
+.admin-settings .demo .micro-balloon.mc-black {
+  background-color: var(--cocoon-black-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-black.micro-bottom::after {
+  border-bottom-color: var(--cocoon-black-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-black::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-black::after {
+  border-top-color: var(--cocoon-black-color);
+}
+.admin-settings .demo .micro-balloon.mc-deep {
+  background-color: var(--cocoon-deep-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-deep.micro-bottom::after {
+  border-bottom-color: var(--cocoon-deep-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-deep::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-deep::after {
+  border-top-color: var(--cocoon-deep-color);
+}
+.admin-settings .demo .micro-balloon.mc-indigo {
+  background-color: var(--cocoon-indigo-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-indigo.micro-bottom::after {
+  border-bottom-color: var(--cocoon-indigo-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-indigo::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-indigo::after {
+  border-top-color: var(--cocoon-indigo-color);
+}
+.admin-settings .demo .micro-balloon.mc-light-blue {
+  background-color: var(--cocoon-light-blue-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-light-blue.micro-bottom::after {
+  border-bottom-color: var(--cocoon-light-blue-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-light-blue::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-light-blue::after {
+  border-top-color: var(--cocoon-light-blue-color);
+}
+.admin-settings .demo .micro-balloon.mc-cyan {
+  background-color: var(--cocoon-cyan-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-cyan.micro-bottom::after {
+  border-bottom-color: var(--cocoon-cyan-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-cyan::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-cyan::after {
+  border-top-color: var(--cocoon-cyan-color);
+}
+.admin-settings .demo .micro-balloon.mc-teal {
+  background-color: var(--cocoon-teal-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-teal.micro-bottom::after {
+  border-bottom-color: var(--cocoon-teal-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-teal::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-teal::after {
+  border-top-color: var(--cocoon-teal-color);
+}
+.admin-settings .demo .micro-balloon.mc-light-green {
+  background-color: var(--cocoon-light-green-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-light-green.micro-bottom::after {
+  border-bottom-color: var(--cocoon-light-green-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-light-green::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-light-green::after {
+  border-top-color: var(--cocoon-light-green-color);
+}
+.admin-settings .demo .micro-balloon.mc-lime {
+  background-color: var(--cocoon-lime-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-lime.micro-bottom::after {
+  border-bottom-color: var(--cocoon-lime-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-lime::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-lime::after {
+  border-top-color: var(--cocoon-lime-color);
+}
+.admin-settings .demo .micro-balloon.mc-amber {
+  background-color: var(--cocoon-amber-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-amber.micro-bottom::after {
+  border-bottom-color: var(--cocoon-amber-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-amber::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-amber::after {
+  border-top-color: var(--cocoon-amber-color);
+}
+.admin-settings .demo .micro-balloon.mc-deep-orange {
+  background-color: var(--cocoon-deep-orange-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-deep-orange.micro-bottom::after {
+  border-bottom-color: var(--cocoon-deep-orange-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-deep-orange::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-deep-orange::after {
+  border-top-color: var(--cocoon-deep-orange-color);
+}
+.admin-settings .demo .micro-balloon.mc-white {
+  background-color: var(--cocoon-white-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-white.micro-bottom::after {
+  border-bottom-color: var(--cocoon-white-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-white::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-white::after {
+  border-top-color: var(--cocoon-white-color);
+}
 .admin-settings .demo .blogcard-label {
   position: absolute;
   top: -18px;
@@ -11347,6 +11667,326 @@ body.wp-admin {
 .admin-settings .demo .mc-circle {
   border-radius: 2em;
   background-clip: padding-box;
+}
+.admin-settings .demo .micro-balloon.mc-red {
+  background-color: var(--cocoon-red-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-red.micro-bottom::after {
+  border-bottom-color: var(--cocoon-red-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-red::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-red::after {
+  border-top-color: var(--cocoon-red-color);
+}
+.admin-settings .demo .micro-balloon.mc-pink {
+  background-color: var(--cocoon-pink-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-pink.micro-bottom::after {
+  border-bottom-color: var(--cocoon-pink-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-pink::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-pink::after {
+  border-top-color: var(--cocoon-pink-color);
+}
+.admin-settings .demo .micro-balloon.mc-purple {
+  background-color: var(--cocoon-purple-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-purple.micro-bottom::after {
+  border-bottom-color: var(--cocoon-purple-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-purple::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-purple::after {
+  border-top-color: var(--cocoon-purple-color);
+}
+.admin-settings .demo .micro-balloon.mc-blue {
+  background-color: var(--cocoon-blue-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-blue.micro-bottom::after {
+  border-bottom-color: var(--cocoon-blue-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-blue::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-blue::after {
+  border-top-color: var(--cocoon-blue-color);
+}
+.admin-settings .demo .micro-balloon.mc-green {
+  background-color: var(--cocoon-green-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-green.micro-bottom::after {
+  border-bottom-color: var(--cocoon-green-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-green::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-green::after {
+  border-top-color: var(--cocoon-green-color);
+}
+.admin-settings .demo .micro-balloon.mc-orange {
+  background-color: var(--cocoon-orange-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-orange.micro-bottom::after {
+  border-bottom-color: var(--cocoon-orange-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-orange::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-orange::after {
+  border-top-color: var(--cocoon-orange-color);
+}
+.admin-settings .demo .micro-balloon.mc-yellow {
+  background-color: var(--cocoon-yellow-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-yellow.micro-bottom::after {
+  border-bottom-color: var(--cocoon-yellow-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-yellow::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-yellow::after {
+  border-top-color: var(--cocoon-yellow-color);
+}
+.admin-settings .demo .micro-balloon.mc-brown {
+  background-color: var(--cocoon-brown-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-brown.micro-bottom::after {
+  border-bottom-color: var(--cocoon-brown-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-brown::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-brown::after {
+  border-top-color: var(--cocoon-brown-color);
+}
+.admin-settings .demo .micro-balloon.mc-grey {
+  background-color: var(--cocoon-grey-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-grey.micro-bottom::after {
+  border-bottom-color: var(--cocoon-grey-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-grey::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-grey::after {
+  border-top-color: var(--cocoon-grey-color);
+}
+.admin-settings .demo .micro-balloon.mc-black {
+  background-color: var(--cocoon-black-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-black.micro-bottom::after {
+  border-bottom-color: var(--cocoon-black-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-black::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-black::after {
+  border-top-color: var(--cocoon-black-color);
+}
+.admin-settings .demo .micro-balloon.mc-deep {
+  background-color: var(--cocoon-deep-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-deep.micro-bottom::after {
+  border-bottom-color: var(--cocoon-deep-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-deep::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-deep::after {
+  border-top-color: var(--cocoon-deep-color);
+}
+.admin-settings .demo .micro-balloon.mc-indigo {
+  background-color: var(--cocoon-indigo-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-indigo.micro-bottom::after {
+  border-bottom-color: var(--cocoon-indigo-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-indigo::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-indigo::after {
+  border-top-color: var(--cocoon-indigo-color);
+}
+.admin-settings .demo .micro-balloon.mc-light-blue {
+  background-color: var(--cocoon-light-blue-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-light-blue.micro-bottom::after {
+  border-bottom-color: var(--cocoon-light-blue-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-light-blue::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-light-blue::after {
+  border-top-color: var(--cocoon-light-blue-color);
+}
+.admin-settings .demo .micro-balloon.mc-cyan {
+  background-color: var(--cocoon-cyan-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-cyan.micro-bottom::after {
+  border-bottom-color: var(--cocoon-cyan-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-cyan::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-cyan::after {
+  border-top-color: var(--cocoon-cyan-color);
+}
+.admin-settings .demo .micro-balloon.mc-teal {
+  background-color: var(--cocoon-teal-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-teal.micro-bottom::after {
+  border-bottom-color: var(--cocoon-teal-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-teal::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-teal::after {
+  border-top-color: var(--cocoon-teal-color);
+}
+.admin-settings .demo .micro-balloon.mc-light-green {
+  background-color: var(--cocoon-light-green-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-light-green.micro-bottom::after {
+  border-bottom-color: var(--cocoon-light-green-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-light-green::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-light-green::after {
+  border-top-color: var(--cocoon-light-green-color);
+}
+.admin-settings .demo .micro-balloon.mc-lime {
+  background-color: var(--cocoon-lime-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-lime.micro-bottom::after {
+  border-bottom-color: var(--cocoon-lime-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-lime::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-lime::after {
+  border-top-color: var(--cocoon-lime-color);
+}
+.admin-settings .demo .micro-balloon.mc-amber {
+  background-color: var(--cocoon-amber-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-amber.micro-bottom::after {
+  border-bottom-color: var(--cocoon-amber-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-amber::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-amber::after {
+  border-top-color: var(--cocoon-amber-color);
+}
+.admin-settings .demo .micro-balloon.mc-deep-orange {
+  background-color: var(--cocoon-deep-orange-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-deep-orange.micro-bottom::after {
+  border-bottom-color: var(--cocoon-deep-orange-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-deep-orange::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-deep-orange::after {
+  border-top-color: var(--cocoon-deep-orange-color);
+}
+.admin-settings .demo .micro-balloon.mc-white {
+  background-color: var(--cocoon-white-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.admin-settings .demo .micro-balloon.mc-white.micro-bottom::after {
+  border-bottom-color: var(--cocoon-white-color);
+  border-top-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-white::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.admin-settings .demo .micro-balloon.mc-white::after {
+  border-top-color: var(--cocoon-white-color);
 }
 .admin-settings .demo .blogcard-label {
   position: absolute;
@@ -19605,6 +20245,326 @@ textarea[name="the_page_memo"] {
 .components-popover__content .mc-circle {
   border-radius: 2em;
   background-clip: padding-box;
+}
+.components-popover__content .micro-balloon.mc-red {
+  background-color: var(--cocoon-red-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-red.micro-bottom::after {
+  border-bottom-color: var(--cocoon-red-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-red::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-red::after {
+  border-top-color: var(--cocoon-red-color);
+}
+.components-popover__content .micro-balloon.mc-pink {
+  background-color: var(--cocoon-pink-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-pink.micro-bottom::after {
+  border-bottom-color: var(--cocoon-pink-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-pink::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-pink::after {
+  border-top-color: var(--cocoon-pink-color);
+}
+.components-popover__content .micro-balloon.mc-purple {
+  background-color: var(--cocoon-purple-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-purple.micro-bottom::after {
+  border-bottom-color: var(--cocoon-purple-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-purple::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-purple::after {
+  border-top-color: var(--cocoon-purple-color);
+}
+.components-popover__content .micro-balloon.mc-blue {
+  background-color: var(--cocoon-blue-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-blue.micro-bottom::after {
+  border-bottom-color: var(--cocoon-blue-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-blue::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-blue::after {
+  border-top-color: var(--cocoon-blue-color);
+}
+.components-popover__content .micro-balloon.mc-green {
+  background-color: var(--cocoon-green-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-green.micro-bottom::after {
+  border-bottom-color: var(--cocoon-green-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-green::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-green::after {
+  border-top-color: var(--cocoon-green-color);
+}
+.components-popover__content .micro-balloon.mc-orange {
+  background-color: var(--cocoon-orange-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-orange.micro-bottom::after {
+  border-bottom-color: var(--cocoon-orange-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-orange::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-orange::after {
+  border-top-color: var(--cocoon-orange-color);
+}
+.components-popover__content .micro-balloon.mc-yellow {
+  background-color: var(--cocoon-yellow-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-yellow.micro-bottom::after {
+  border-bottom-color: var(--cocoon-yellow-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-yellow::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-yellow::after {
+  border-top-color: var(--cocoon-yellow-color);
+}
+.components-popover__content .micro-balloon.mc-brown {
+  background-color: var(--cocoon-brown-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-brown.micro-bottom::after {
+  border-bottom-color: var(--cocoon-brown-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-brown::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-brown::after {
+  border-top-color: var(--cocoon-brown-color);
+}
+.components-popover__content .micro-balloon.mc-grey {
+  background-color: var(--cocoon-grey-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-grey.micro-bottom::after {
+  border-bottom-color: var(--cocoon-grey-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-grey::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-grey::after {
+  border-top-color: var(--cocoon-grey-color);
+}
+.components-popover__content .micro-balloon.mc-black {
+  background-color: var(--cocoon-black-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-black.micro-bottom::after {
+  border-bottom-color: var(--cocoon-black-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-black::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-black::after {
+  border-top-color: var(--cocoon-black-color);
+}
+.components-popover__content .micro-balloon.mc-deep {
+  background-color: var(--cocoon-deep-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-deep.micro-bottom::after {
+  border-bottom-color: var(--cocoon-deep-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-deep::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-deep::after {
+  border-top-color: var(--cocoon-deep-color);
+}
+.components-popover__content .micro-balloon.mc-indigo {
+  background-color: var(--cocoon-indigo-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-indigo.micro-bottom::after {
+  border-bottom-color: var(--cocoon-indigo-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-indigo::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-indigo::after {
+  border-top-color: var(--cocoon-indigo-color);
+}
+.components-popover__content .micro-balloon.mc-light-blue {
+  background-color: var(--cocoon-light-blue-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-light-blue.micro-bottom::after {
+  border-bottom-color: var(--cocoon-light-blue-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-light-blue::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-light-blue::after {
+  border-top-color: var(--cocoon-light-blue-color);
+}
+.components-popover__content .micro-balloon.mc-cyan {
+  background-color: var(--cocoon-cyan-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-cyan.micro-bottom::after {
+  border-bottom-color: var(--cocoon-cyan-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-cyan::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-cyan::after {
+  border-top-color: var(--cocoon-cyan-color);
+}
+.components-popover__content .micro-balloon.mc-teal {
+  background-color: var(--cocoon-teal-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-teal.micro-bottom::after {
+  border-bottom-color: var(--cocoon-teal-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-teal::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-teal::after {
+  border-top-color: var(--cocoon-teal-color);
+}
+.components-popover__content .micro-balloon.mc-light-green {
+  background-color: var(--cocoon-light-green-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-light-green.micro-bottom::after {
+  border-bottom-color: var(--cocoon-light-green-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-light-green::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-light-green::after {
+  border-top-color: var(--cocoon-light-green-color);
+}
+.components-popover__content .micro-balloon.mc-lime {
+  background-color: var(--cocoon-lime-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-lime.micro-bottom::after {
+  border-bottom-color: var(--cocoon-lime-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-lime::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-lime::after {
+  border-top-color: var(--cocoon-lime-color);
+}
+.components-popover__content .micro-balloon.mc-amber {
+  background-color: var(--cocoon-amber-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-amber.micro-bottom::after {
+  border-bottom-color: var(--cocoon-amber-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-amber::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-amber::after {
+  border-top-color: var(--cocoon-amber-color);
+}
+.components-popover__content .micro-balloon.mc-deep-orange {
+  background-color: var(--cocoon-deep-orange-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-deep-orange.micro-bottom::after {
+  border-bottom-color: var(--cocoon-deep-orange-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-deep-orange::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-deep-orange::after {
+  border-top-color: var(--cocoon-deep-orange-color);
+}
+.components-popover__content .micro-balloon.mc-white {
+  background-color: var(--cocoon-white-color);
+  color: var(--cocoon-white-color);
+  border: none;
+}
+.components-popover__content .micro-balloon.mc-white.micro-bottom::after {
+  border-bottom-color: var(--cocoon-white-color);
+  border-top-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-white::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.components-popover__content .micro-balloon.mc-white::after {
+  border-top-color: var(--cocoon-white-color);
 }
 .components-popover__content .blogcard-label {
   position: absolute;
