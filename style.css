@@ -2897,6 +2897,7 @@ label.screen-reader-text {
 .body .column-left :last-child,
 .body .column-center :last-child,
 .body .column-right :last-child,
+.body .column-wrap :last-child,
 .body .timeline-box :last-child,
 .body .wp-block-cover :last-child,
 .body .blogcard-type :last-child,
