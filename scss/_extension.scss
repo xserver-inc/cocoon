@@ -1150,6 +1150,7 @@ div.search-form{
   }
 }
 
+//古いバージョンのブロックに対応
 .micro-balloon{
   &.mc-red{@include micro_copycolor(var(--cocoon-red-color));}
   &.mc-pink{@include micro_copycolor(var(--cocoon-pink-color));}
