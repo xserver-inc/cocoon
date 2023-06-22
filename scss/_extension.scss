@@ -848,11 +848,12 @@ div.search-form{
 .btn,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a{
+  --cocoon-custom-background-color: var(--cocoon-black-color)
   --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color);
-  background-color: var(--cocoon-custom-background-color);;
+  background-color: var(--cocoon-custom-background-color);
   border-color: var(--cocoon-custom-border-color);
   font-weight: bold;
   border-radius: 4px;
