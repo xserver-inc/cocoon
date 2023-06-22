@@ -1333,6 +1333,7 @@ div.search-form{
   }
 }
 
+//古いバージョンのブロックに対応
 .cb-red{@include caption_color(var(--cocoon-red-color));}
 .cb-pink{@include caption_color(var(--cocoon-pink-color));}
 .cb-purple{@include caption_color(var(--cocoon-purple-color));}
@@ -1399,6 +1400,7 @@ div.search-form{
   }
 }
 
+//古いバージョンのブロックに対応
 .tcb-red{@include caption_tab_color(var(--cocoon-red-color));}
 .tcb-pink{@include caption_tab_color(var(--cocoon-pink-color));}
 .tcb-purple{@include caption_tab_color(var(--cocoon-purple-color));}
@@ -1479,6 +1481,7 @@ html .body .tab-caption-box.has-white-background-color .box-content {
   }
 }
 
+//古いバージョンのブロックに対応
 .lb-red{@include label_color(var(--cocoon-red-color));}
 .lb-pink{@include label_color(var(--cocoon-pink-color));}
 .lb-purple{@include label_color(var(--cocoon-purple-color));}
