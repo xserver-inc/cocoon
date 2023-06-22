@@ -1333,27 +1333,28 @@ div.search-form{
   }
 }
 
-.cb-red{@include caption_color(var(--cocoon-red-color));}
-.cb-pink{@include caption_color(var(--cocoon-pink-color));}
-.cb-purple{@include caption_color(var(--cocoon-purple-color));}
-.cb-blue{@include caption_color(var(--cocoon-blue-color));}
-.cb-green{@include caption_color(var(--cocoon-green-color));}
-.cb-orange{@include caption_color(var(--cocoon-orange-color));}
-.cb-yellow{@include caption_color(var(--cocoon-yellow-color));}
-.cb-brown{@include caption_color(var(--cocoon-brown-color));}
-.cb-grey{@include caption_color(var(--cocoon-grey-color));}
-.cb-black{@include caption_color(var(--cocoon-black-color));}
+// クラシックエディター用のスタイルは不要
+// .cb-red{@include caption_color(var(--cocoon-red-color));}
+// .cb-pink{@include caption_color(var(--cocoon-pink-color));}
+// .cb-purple{@include caption_color(var(--cocoon-purple-color));}
+// .cb-blue{@include caption_color(var(--cocoon-blue-color));}
+// .cb-green{@include caption_color(var(--cocoon-green-color));}
+// .cb-orange{@include caption_color(var(--cocoon-orange-color));}
+// .cb-yellow{@include caption_color(var(--cocoon-yellow-color));}
+// .cb-brown{@include caption_color(var(--cocoon-brown-color));}
+// .cb-grey{@include caption_color(var(--cocoon-grey-color));}
+// .cb-black{@include caption_color(var(--cocoon-black-color));}
 
-.cb-deep{@include caption_color(var(--cocoon-deep-color));}
-.cb-indigo{@include caption_color(var(--cocoon-indigo-color));}
-.cb-light-blue{@include caption_color(var(--cocoon-light-blue-color));}
-.cb-cyan{@include caption_color(var(--cocoon-cyan-color));}
-.cb-teal{@include caption_color(var(--cocoon-teal-color));}
-.cb-light-green{@include caption_color(var(--cocoon-light-green-color));}
-.cb-lime{@include caption_color(var(--cocoon-lime-color));}
-.cb-amber{@include caption_color(var(--cocoon-amber-color));}
-.cb-deep-orange{@include caption_color(var(--cocoon-deep-orange-color));}
-.cb-white{@include caption_color(var(--cocoon-white-color));}
+// .cb-deep{@include caption_color(var(--cocoon-deep-color));}
+// .cb-indigo{@include caption_color(var(--cocoon-indigo-color));}
+// .cb-light-blue{@include caption_color(var(--cocoon-light-blue-color));}
+// .cb-cyan{@include caption_color(var(--cocoon-cyan-color));}
+// .cb-teal{@include caption_color(var(--cocoon-teal-color));}
+// .cb-light-green{@include caption_color(var(--cocoon-light-green-color));}
+// .cb-lime{@include caption_color(var(--cocoon-lime-color));}
+// .cb-amber{@include caption_color(var(--cocoon-amber-color));}
+// .cb-deep-orange{@include caption_color(var(--cocoon-deep-orange-color));}
+// .cb-white{@include caption_color(var(--cocoon-white-color));}
 
 /************************************
 ** キャプションタブボックス
@@ -1399,27 +1400,28 @@ div.search-form{
   }
 }
 
-.tcb-red{@include caption_tab_color(var(--cocoon-red-color));}
-.tcb-pink{@include caption_tab_color(var(--cocoon-pink-color));}
-.tcb-purple{@include caption_tab_color(var(--cocoon-purple-color));}
-.tcb-blue{@include caption_tab_color(var(--cocoon-blue-color));}
-.tcb-green{@include caption_tab_color(var(--cocoon-green-color));}
-.tcb-orange{@include caption_tab_color(var(--cocoon-orange-color));}
-.tcb-yellow{@include caption_tab_color(var(--cocoon-yellow-color));}
-.tcb-brown{@include caption_tab_color(var(--cocoon-brown-color));}
-.tcb-grey{@include caption_tab_color(var(--cocoon-grey-color));}
-.tcb-black{@include caption_tab_color(var(--cocoon-black-color));}
+// クラシックエディター用のスタイルは不要
+// .tcb-red{@include caption_tab_color(var(--cocoon-red-color));}
+// .tcb-pink{@include caption_tab_color(var(--cocoon-pink-color));}
+// .tcb-purple{@include caption_tab_color(var(--cocoon-purple-color));}
+// .tcb-blue{@include caption_tab_color(var(--cocoon-blue-color));}
+// .tcb-green{@include caption_tab_color(var(--cocoon-green-color));}
+// .tcb-orange{@include caption_tab_color(var(--cocoon-orange-color));}
+// .tcb-yellow{@include caption_tab_color(var(--cocoon-yellow-color));}
+// .tcb-brown{@include caption_tab_color(var(--cocoon-brown-color));}
+// .tcb-grey{@include caption_tab_color(var(--cocoon-grey-color));}
+// .tcb-black{@include caption_tab_color(var(--cocoon-black-color));}
 
-.tcb-deep{@include caption_tab_color(var(--cocoon-deep-color));}
-.tcb-indigo{@include caption_tab_color(var(--cocoon-indigo-color));}
-.tcb-light-blue{@include caption_tab_color(var(--cocoon-light-blue-color));}
-.tcb-cyan{@include caption_tab_color(var(--cocoon-cyan-color));}
-.tcb-teal{@include caption_tab_color(var(--cocoon-teal-color));}
-.tcb-light-green{@include caption_tab_color(var(--cocoon-light-green-color));}
-.tcb-lime{@include caption_tab_color(var(--cocoon-lime-color));}
-.tcb-amber{@include caption_tab_color(var(--cocoon-amber-color));}
-.tcb-deep-orange{@include caption_tab_color(var(--cocoon-deep-orange-color));}
-.tcb-white{@include caption_tab_color(var(--cocoon-white-color));}
+// .tcb-deep{@include caption_tab_color(var(--cocoon-deep-color));}
+// .tcb-indigo{@include caption_tab_color(var(--cocoon-indigo-color));}
+// .tcb-light-blue{@include caption_tab_color(var(--cocoon-light-blue-color));}
+// .tcb-cyan{@include caption_tab_color(var(--cocoon-cyan-color));}
+// .tcb-teal{@include caption_tab_color(var(--cocoon-teal-color));}
+// .tcb-light-green{@include caption_tab_color(var(--cocoon-light-green-color));}
+// .tcb-lime{@include caption_tab_color(var(--cocoon-lime-color));}
+// .tcb-amber{@include caption_tab_color(var(--cocoon-amber-color));}
+// .tcb-deep-orange{@include caption_tab_color(var(--cocoon-deep-orange-color));}
+// .tcb-white{@include caption_tab_color(var(--cocoon-white-color));}
 
 html .body .tab-caption-box.has-white-background-color .box-content {
   background-color: #fff;
@@ -1478,28 +1480,28 @@ html .body .tab-caption-box.has-white-background-color .box-content {
     border-color: $color;
   }
 }
+// クラシックエディター用のスタイルは不要
+// .lb-red{@include label_color(var(--cocoon-red-color));}
+// .lb-pink{@include label_color(var(--cocoon-pink-color));}
+// .lb-purple{@include label_color(var(--cocoon-purple-color));}
+// .lb-blue{@include label_color(var(--cocoon-blue-color));}
+// .lb-green{@include label_color(var(--cocoon-green-color));}
+// .lb-orange{@include label_color(var(--cocoon-orange-color));}
+// .lb-yellow{@include label_color(var(--cocoon-yellow-color));}
+// .lb-brown{@include label_color(var(--cocoon-brown-color));}
+// .lb-grey{@include label_color(var(--cocoon-grey-color));}
+// .lb-black{@include label_color(var(--cocoon-black-color));}
 
-.lb-red{@include label_color(var(--cocoon-red-color));}
-.lb-pink{@include label_color(var(--cocoon-pink-color));}
-.lb-purple{@include label_color(var(--cocoon-purple-color));}
-.lb-blue{@include label_color(var(--cocoon-blue-color));}
-.lb-green{@include label_color(var(--cocoon-green-color));}
-.lb-orange{@include label_color(var(--cocoon-orange-color));}
-.lb-yellow{@include label_color(var(--cocoon-yellow-color));}
-.lb-brown{@include label_color(var(--cocoon-brown-color));}
-.lb-grey{@include label_color(var(--cocoon-grey-color));}
-.lb-black{@include label_color(var(--cocoon-black-color));}
-
-.lb-deep{@include label_color(var(--cocoon-deep-color));}
-.lb-indigo{@include label_color(var(--cocoon-indigo-color));}
-.lb-light-blue{@include label_color(var(--cocoon-light-blue-color));}
-.lb-cyan{@include label_color(var(--cocoon-cyan-color));}
-.lb-teal{@include label_color(var(--cocoon-teal-color));}
-.lb-light-green{@include label_color(var(--cocoon-light-green-color));}
-.lb-lime{@include label_color(var(--cocoon-lime-color));}
-.lb-amber{@include label_color(var(--cocoon-amber-color));}
-.lb-deep-orange{@include label_color(var(--cocoon-deep-orange-color));}
-.lb-white{@include label_color(var(--cocoon-white-color));}
+// .lb-deep{@include label_color(var(--cocoon-deep-color));}
+// .lb-indigo{@include label_color(var(--cocoon-indigo-color));}
+// .lb-light-blue{@include label_color(var(--cocoon-light-blue-color));}
+// .lb-cyan{@include label_color(var(--cocoon-cyan-color));}
+// .lb-teal{@include label_color(var(--cocoon-teal-color));}
+// .lb-light-green{@include label_color(var(--cocoon-light-green-color));}
+// .lb-lime{@include label_color(var(--cocoon-lime-color));}
+// .lb-amber{@include label_color(var(--cocoon-amber-color));}
+// .lb-deep-orange{@include label_color(var(--cocoon-deep-orange-color));}
+// .lb-white{@include label_color(var(--cocoon-white-color));}
 
 html .body .label-box.has-white-background-color .box-content {
   background-color: var(--wp--preset--color--white) !important;
