@@ -4,20 +4,6 @@
 $menu_height: 60px;
 $sub_menu_width: 240px;
 $icon_height: 16px;
-// @mixin menu_item_has_children($unicode:''){
-//   position: relative;
-//   >a{
-//     &::after{
-//       @include fontawesome($unicode);
-//       font-family: FontAwesome;
-//       position: absolute;
-//       right: 3px;
-//       top: 0;
-//       font-size: 12px;
-//       //top: ($menu_height - $icon_height) / 2;
-//     }
-//   }
-// }
 
 .navi{
   background-color: var(--cocoon-white-color);
@@ -31,15 +17,7 @@ $icon_height: 16px;
   }
 }
 
-// //clingifyプラグインの不具合対応
-// .js-clingify-wrapper{
-//   z-index: 99999;
-// }
-
 .navi-in{
-  a{
-    position: relative;
-  }
   .has-icon{
     position: absolute;
     right: 6px;
@@ -108,9 +86,6 @@ $icon_height: 16px;
         width: auto;
       }
 
-      // .menu-item-has-children{
-      //   @include menu_item_has_children('\f105');
-      // }
       a{
         padding-left: 16px;
         padding-right: 16px;
@@ -127,16 +102,13 @@ $icon_height: 16px;
   }
 
   a{
+    position: relative;
     @include link_cancel;
     display: block;
     font-size: 16px;
     transition: $bgc_hover_anime;
     &:hover{
       @include bgc_hover;
-
-      >ul{
-        display: block;
-      }
     }
   }
 }

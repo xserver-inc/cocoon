@@ -7,32 +7,14 @@
 
 .date-tags{
   line-height: 0.8;
-  // margin-top: -8px;
   text-align: right;
-  // display: flex;
-  // flex-direction: row-reverse;
-  // .post-update{
-  //   margin-right: 0;
-  // }
-  // span:last-child{
-  //   margin-right: 0;
-  // }
   margin-bottom: 1em;
-  // text-align: right;
-  // position: absolute;
-  // right: 0;
-  // top: 0;
 }
 
 .post-date,
 .post-update,
 .post-author,
 .amp-back {
-  //@extend .entry-category;
   @extend %entry_category;
   margin-right: 8px;
-}
-
-.related-entry-post-date{
-  margin-right: 0;
 }

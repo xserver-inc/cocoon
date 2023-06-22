@@ -1159,11 +1159,6 @@ body.wp-admin {
 .admin-settings .demo .rect-vertical-card .related-entry-card-thumb {
   margin: 0;
 }
-.admin-settings .demo .ib-right .blogcard-thumbnail,
-.admin-settings .demo .eb-right .blogcard-thumbnail {
-  margin-right: 0;
-  margin-left: 1.4%;
-}
 .admin-settings .demo .no-thumbnail .card-thumb,
 .admin-settings .demo .no-thumbnail .widget-entry-card-pv {
   display: none;
@@ -1189,9 +1184,6 @@ body.wp-admin {
 .admin-settings .demo .no-thumbnail .entry-card-snippet,
 .admin-settings .demo .no-thumbnail .related-entry-card-snippet {
   max-height: 10.4em;
-}
-.admin-settings .demo .no-thumbnail .entry-card-day {
-  display: inline;
 }
 .admin-settings .demo .no-thumbnail .e-card-meta .e-card-categorys {
   display: inline;
@@ -1360,9 +1352,6 @@ body.wp-admin {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.admin-settings .demo .navi-in a {
-  position: relative;
-}
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
   right: 6px;
@@ -1428,6 +1417,7 @@ body.wp-admin {
   position: relative;
 }
 .admin-settings .demo .navi-in a {
+  position: relative;
   color: var(--cocoon-text-color);
   text-decoration: none;
   display: block;
@@ -1438,9 +1428,6 @@ body.wp-admin {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: var(--cocoon-text-color);
-}
-.admin-settings .demo .navi-in a:hover > ul {
-  display: block;
 }
 .admin-settings .demo .navi-in > .menu-mobile {
   display: none;
@@ -1563,17 +1550,11 @@ body.wp-admin {
   width: 100%;
   float: none;
 }
-.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-thumb img {
-  width: 100%;
-}
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-date, .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
-}
-.admin-settings .demo .ect-vertical-card.ect-tile-card .a-wrap {
-  margin: 0 0.25% 12px;
 }
 .admin-settings .demo .ect-vertical-card.ect-tile-card .entry-card-content {
   padding: 0;
@@ -1611,12 +1592,6 @@ body.wp-admin {
   width: 33%;
   display: inline-block;
 }
-.admin-settings .demo .ecb-entry-border .entry-card-wrap {
-  border: 1px solid var(--cocoon-basic-border-color);
-}
-.admin-settings .demo .entry-card-day span:last-child {
-  margin-right: 0;
-}
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-thumb,
 .admin-settings .demo .ect-big-card .card-thumb {
   float: none;
@@ -1639,9 +1614,6 @@ body.wp-admin {
 .admin-settings .demo .post-author,
 .admin-settings .demo .amp-back {
   margin-right: 8px;
-}
-.admin-settings .demo .related-entry-post-date {
-  margin-right: 0;
 }
 .admin-settings .demo .breadcrumb {
   margin: 1em .4em;
@@ -1828,16 +1800,6 @@ body.wp-admin {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
-}
-.admin-settings .demo .sns-share-buttons a {
-  width: 32%;
-  margin-bottom: 8px;
-  font-size: 18px;
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 .admin-settings .demo .sns-share-buttons a .button-caption {
   font-size: 16px;
@@ -2259,7 +2221,6 @@ body.wp-admin {
 }
 .admin-settings .demo .blogcard {
   padding: 1.6% 2.2% 2%;
-  border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
   line-height: 1.6;
   position: relative;
@@ -2312,6 +2273,7 @@ body.wp-admin {
 .admin-settings .demo .eb-right .blogcard-thumbnail {
   float: right;
   margin-left: 1.6%;
+  margin-right: 0;
 }
 .admin-settings .demo .ib-right .blogcard-content,
 .admin-settings .demo .eb-right .blogcard-content {
@@ -8867,11 +8829,6 @@ body.wp-admin {
 .admin-settings .demo .rect-vertical-card .related-entry-card-thumb {
   margin: 0;
 }
-.admin-settings .demo .ib-right .blogcard-thumbnail,
-.admin-settings .demo .eb-right .blogcard-thumbnail {
-  margin-right: 0;
-  margin-left: 1.4%;
-}
 .admin-settings .demo .no-thumbnail .card-thumb,
 .admin-settings .demo .no-thumbnail .widget-entry-card-pv {
   display: none;
@@ -8897,9 +8854,6 @@ body.wp-admin {
 .admin-settings .demo .no-thumbnail .entry-card-snippet,
 .admin-settings .demo .no-thumbnail .related-entry-card-snippet {
   max-height: 10.4em;
-}
-.admin-settings .demo .no-thumbnail .entry-card-day {
-  display: inline;
 }
 .admin-settings .demo .no-thumbnail .e-card-meta .e-card-categorys {
   display: inline;
@@ -9068,9 +9022,6 @@ body.wp-admin {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.admin-settings .demo .navi-in a {
-  position: relative;
-}
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
   right: 6px;
@@ -9136,6 +9087,7 @@ body.wp-admin {
   position: relative;
 }
 .admin-settings .demo .navi-in a {
+  position: relative;
   color: var(--cocoon-text-color);
   text-decoration: none;
   display: block;
@@ -9146,9 +9098,6 @@ body.wp-admin {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: var(--cocoon-text-color);
-}
-.admin-settings .demo .navi-in a:hover > ul {
-  display: block;
 }
 .admin-settings .demo .navi-in > .menu-mobile {
   display: none;
@@ -9271,17 +9220,11 @@ body.wp-admin {
   width: 100%;
   float: none;
 }
-.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-thumb img {
-  width: 100%;
-}
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-date, .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
-}
-.admin-settings .demo .ect-vertical-card.ect-tile-card .a-wrap {
-  margin: 0 0.25% 12px;
 }
 .admin-settings .demo .ect-vertical-card.ect-tile-card .entry-card-content {
   padding: 0;
@@ -9319,12 +9262,6 @@ body.wp-admin {
   width: 33%;
   display: inline-block;
 }
-.admin-settings .demo .ecb-entry-border .entry-card-wrap {
-  border: 1px solid var(--cocoon-basic-border-color);
-}
-.admin-settings .demo .entry-card-day span:last-child {
-  margin-right: 0;
-}
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-thumb,
 .admin-settings .demo .ect-big-card .card-thumb {
   float: none;
@@ -9347,9 +9284,6 @@ body.wp-admin {
 .admin-settings .demo .post-author,
 .admin-settings .demo .amp-back {
   margin-right: 8px;
-}
-.admin-settings .demo .related-entry-post-date {
-  margin-right: 0;
 }
 .admin-settings .demo .breadcrumb {
   margin: 1em .4em;
@@ -9536,16 +9470,6 @@ body.wp-admin {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
-}
-.admin-settings .demo .sns-share-buttons a {
-  width: 32%;
-  margin-bottom: 8px;
-  font-size: 18px;
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 .admin-settings .demo .sns-share-buttons a .button-caption {
   font-size: 16px;
@@ -9967,7 +9891,6 @@ body.wp-admin {
 }
 .admin-settings .demo .blogcard {
   padding: 1.6% 2.2% 2%;
-  border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
   line-height: 1.6;
   position: relative;
@@ -10020,6 +9943,7 @@ body.wp-admin {
 .admin-settings .demo .eb-right .blogcard-thumbnail {
   float: right;
   margin-left: 1.6%;
+  margin-right: 0;
 }
 .admin-settings .demo .ib-right .blogcard-content,
 .admin-settings .demo .eb-right .blogcard-content {
@@ -16500,7 +16424,6 @@ body.wp-admin {
   text-decoration: none;
   color: #333;
   border: solid 2px var(--cocoon-basic-border-color);
-  border-radius: 3px;
   transition: .4s;
   margin: 1em 0 2em;
   font-size: 16px;

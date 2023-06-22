@@ -632,12 +632,6 @@ img {
   margin: 0;
 }
 
-.ib-right .blogcard-thumbnail,
-.eb-right .blogcard-thumbnail {
-  margin-right: 0;
-  margin-left: 1.4%;
-}
-
 .no-thumbnail .card-thumb,
 .no-thumbnail .widget-entry-card-pv {
   display: none;
@@ -663,9 +657,6 @@ img {
 .no-thumbnail .entry-card-snippet,
 .no-thumbnail .related-entry-card-snippet {
   max-height: 10.4em;
-}
-.no-thumbnail .entry-card-day {
-  display: inline;
 }
 .no-thumbnail .e-card-meta .e-card-categorys {
   display: inline;
@@ -865,9 +856,6 @@ img.emoji {
   -webkit-box-orient: vertical;
 }
 
-.navi-in a {
-  position: relative;
-}
 .navi-in .has-icon {
   position: absolute;
   right: 6px;
@@ -933,6 +921,7 @@ img.emoji {
   position: relative;
 }
 .navi-in a {
+  position: relative;
   color: var(--cocoon-text-color);
   text-decoration: none;
   display: block;
@@ -943,9 +932,6 @@ img.emoji {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: var(--cocoon-text-color);
-}
-.navi-in a:hover > ul {
-  display: block;
 }
 
 /************************************
@@ -1095,17 +1081,11 @@ img.emoji {
   width: 100%;
   float: none;
 }
-.ect-vertical-card .entry-card-wrap .entry-card-thumb img {
-  width: 100%;
-}
 .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
 }
 .ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
-}
-.ect-vertical-card.ect-tile-card .a-wrap {
-  margin: 0 0.25% 12px;
 }
 .ect-vertical-card.ect-tile-card .entry-card-content {
   padding: 0;
@@ -1147,14 +1127,6 @@ img.emoji {
   display: inline-block;
 }
 
-.ecb-entry-border .entry-card-wrap {
-  border: 1px solid var(--cocoon-basic-border-color);
-}
-
-.entry-card-day span:last-child {
-  margin-right: 0;
-}
-
 .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-thumb,
 .ect-big-card .card-thumb {
   float: none;
@@ -1183,10 +1155,6 @@ img.emoji {
 .post-author,
 .amp-back {
   margin-right: 8px;
-}
-
-.related-entry-post-date {
-  margin-right: 0;
 }
 
 /************************************
@@ -1411,16 +1379,6 @@ img.emoji {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
-}
-.sns-share-buttons a {
-  width: 32%;
-  margin-bottom: 8px;
-  font-size: 18px;
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 .sns-share-buttons a .button-caption {
   font-size: 16px;
@@ -1925,7 +1883,6 @@ span.internal-icon {
 
 .blogcard {
   padding: 1.6% 2.2% 2%;
-  border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
   line-height: 1.6;
   position: relative;
@@ -1991,6 +1948,7 @@ img.blogcard-favicon-image {
 .eb-right .blogcard-thumbnail {
   float: right;
   margin-left: 1.6%;
+  margin-right: 0;
 }
 .ib-right .blogcard-content,
 .eb-right .blogcard-content {
@@ -9559,7 +9517,6 @@ input[name="tab_item"] {
   text-decoration: none;
   color: #333;
   border: solid 2px var(--cocoon-basic-border-color);
-  border-radius: 3px;
   transition: .4s;
   margin: 1em 0 2em;
   font-size: 16px;
