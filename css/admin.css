@@ -17546,7 +17546,6 @@ body.wp-admin {
   }
   .admin-settings .demo body {
     background-image: none !important;
-    background-break: transparent;
   }
 }
 .admin-settings .demo pre {
