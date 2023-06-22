@@ -161,11 +161,14 @@ const addCustomSave = ( props, blockType, attributes ) => {
   const { className } = props;
   const { extraBottomMargin } = attributes;
 
-  props.className = classnames( className, {
-    [ 'is-style-bottom-margin-' + extraBottomMargin + 'em' ]:
-      !! extraBottomMargin,
-    [ 'has-bottom-margin' ]: extraBottomMargin,
-  } );
+  if ( className || extraBottomMargin ) {
+    props.className = classnames( {
+      [ className ]: !! className,
+      [ 'is-style-bottom-margin-' + extraBottomMargin + 'em' ]:
+        !! extraBottomMargin,
+      [ 'has-bottom-margin' ]: extraBottomMargin,
+    } );
+  }
 
   return Object.assign( props );
 };

@@ -251,10 +251,13 @@ const addCustomSave = ( props, blockType, attributes ) => {
     const { className } = props;
     const { extraBorder } = attributes;
 
-    props.className = classnames( className, {
-      [ 'is-style-' + extraBorder ]: !! extraBorder,
-      [ 'has-border' ]: extraBorder,
-    } );
+    if ( className || extraBorder ) {
+      props.className = classnames( {
+        [ className ]: !! className,
+        [ 'is-style-' + extraBorder ]: !! extraBorder,
+        [ 'has-border' ]: extraBorder,
+      } );
+    }
 
     return Object.assign( props );
   }
