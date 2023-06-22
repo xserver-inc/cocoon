@@ -136,7 +136,8 @@ const applyAttributesToBlock = createHigherOrderComponent(
         return (
           <BlockListBlock
             { ...props }
-            className={ classnames( className, {
+            className={ classnames( {
+              [ className ]: !! className,
               [ 'is-style-bottom-margin-' + extraBottomMargin + 'em' ]:
                 !! extraBottomMargin,
               [ 'has-bottom-margin' ]: extraBottomMargin,

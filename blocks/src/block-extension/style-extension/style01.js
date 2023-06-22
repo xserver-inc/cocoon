@@ -277,7 +277,8 @@ const applyAttributesToBlock = createHigherOrderComponent(
         return (
           <BlockListBlock
             { ...props }
-            className={ classnames( className, {
+            className={ classnames( {
+              [ className ]: !! className,
               [ 'is-style-' + extraStyle ]: !! extraStyle,
               [ 'has-box-style' ]: extraStyle,
             } ) }
