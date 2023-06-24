@@ -1024,6 +1024,7 @@ body.wp-admin {
   border: 1px solid transparent;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
+  z-index: 0;
 }
 .admin-settings .demo .no-sidebar .content .main {
   margin: 0;
@@ -2765,13 +2766,11 @@ body.wp-admin {
   border-width: 9px;
   margin-left: -9px;
 }
-.admin-settings .demo .sidebar .sns-follow-buttons,
-.admin-settings .demo .footer .sns-follow-buttons {
+.admin-settings .demo .nwa .sns-follow-buttons {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.admin-settings .demo .sidebar .sns-follow-buttons a,
-.admin-settings .demo .footer .sns-follow-buttons a {
+.admin-settings .demo .nwa .sns-follow-buttons a {
   width: 49%;
   margin-right: 0;
 }
@@ -3017,31 +3016,30 @@ body.wp-admin {
   position: relative;
   display: block;
 }
-.admin-settings .demo .body blockquote :last-child,
-.admin-settings .demo .body .wp-block-media-text__content :last-child,
-.admin-settings .demo .body .wp-block-columns :last-child,
-.admin-settings .demo .body .column-left :last-child,
-.admin-settings .demo .body .column-center :last-child,
-.admin-settings .demo .body .column-right :last-child,
-.admin-settings .demo .body .column-wrap :last-child,
-.admin-settings .demo .body .timeline-box :last-child,
-.admin-settings .demo .body .wp-block-cover :last-child,
-.admin-settings .demo .body .blogcard-type :last-child,
-.admin-settings .demo .body .btn-wrap :last-child,
-.admin-settings .demo .body .wp-block-group :last-child,
-.admin-settings .demo .body .wp-block-gallery :last-child,
-.admin-settings .demo .body .block-box :last-child,
-.admin-settings .demo .body .blank-box :last-child,
-.admin-settings .demo .body .common-icon-box :last-child,
-.admin-settings .demo .body .info-box :last-child,
-.admin-settings .demo .body .primary-box :last-child,
-.admin-settings .demo .body .success-box :last-child,
-.admin-settings .demo .body .warning-box :last-child,
-.admin-settings .demo .body .danger-box :last-child,
-.admin-settings .demo .body .secondary-box :last-child,
-.admin-settings .demo .body .light-box :last-child,
-.admin-settings .demo .body .dark-box :last-child,
-.admin-settings .demo .body .toc :last-child {
+.admin-settings .demo .body blockquote > :last-child,
+.admin-settings .demo .body .wp-block-media-text__content > :last-child,
+.admin-settings .demo .body .wp-block-columns > :last-child,
+.admin-settings .demo .body .column-left > :last-child,
+.admin-settings .demo .body .column-center > :last-child,
+.admin-settings .demo .body .column-right > :last-child,
+.admin-settings .demo .body .timeline-box > :last-child,
+.admin-settings .demo .body .wp-block-cover > :last-child,
+.admin-settings .demo .body .blogcard-type > :last-child,
+.admin-settings .demo .body .btn-wrap > :last-child,
+.admin-settings .demo .body .wp-block-group > :last-child,
+.admin-settings .demo .body .wp-block-gallery > :last-child,
+.admin-settings .demo .body .block-box > :last-child,
+.admin-settings .demo .body .blank-box > :last-child,
+.admin-settings .demo .body .common-icon-box > :last-child,
+.admin-settings .demo .body .info-box > :last-child,
+.admin-settings .demo .body .primary-box > :last-child,
+.admin-settings .demo .body .success-box > :last-child,
+.admin-settings .demo .body .warning-box > :last-child,
+.admin-settings .demo .body .danger-box > :last-child,
+.admin-settings .demo .body .secondary-box > :last-child,
+.admin-settings .demo .body .light-box > :last-child,
+.admin-settings .demo .body .dark-box > :last-child,
+.admin-settings .demo .body .toc > :last-child {
   margin-bottom: 0;
 }
 .admin-settings .demo .body div.scrollable-table table,
@@ -5789,7 +5787,6 @@ body.wp-admin {
   min-width: 280px !important;
 }
 .admin-settings .demo .author-box {
-  border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
   line-height: 1.4;
   position: relative;
@@ -7825,9 +7822,6 @@ body.wp-admin {
   font-size: 0.8em;
   text-align: center;
 }
-.admin-settings .demo .recommended .card-snippet {
-  display: none;
-}
 .admin-settings .demo .recommended.rcs-image-only .card-content {
   display: none;
 }
@@ -7865,12 +7859,11 @@ body.wp-admin {
   color: var(--cocoon-text-color);
   padding: 6px 1.2em;
   background-color: rgba(255, 255, 255, 0.8);
-  transition: all .3s;
+  transition: all .5s;
   border-radius: 99px;
   font-size: 0.9em;
 }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title {
-  transition: all .5s;
   opacity: 0;
 }
 .admin-settings .demo .recommended.rcs-card-margin a {
@@ -7911,12 +7904,11 @@ body.wp-admin {
   display: block;
   padding: 0.5em 1em;
   text-decoration: none;
-  width: 100%;
   text-align: center;
   min-height: 100px;
   cursor: pointer;
   background: #fff;
-  width: calc(100%/4);
+  width: 25%;
   color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
@@ -8693,6 +8685,7 @@ body.wp-admin {
   border: 1px solid transparent;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
+  z-index: 0;
 }
 .admin-settings .demo .no-sidebar .content .main {
   margin: 0;
@@ -10434,13 +10427,11 @@ body.wp-admin {
   border-width: 9px;
   margin-left: -9px;
 }
-.admin-settings .demo .sidebar .sns-follow-buttons,
-.admin-settings .demo .footer .sns-follow-buttons {
+.admin-settings .demo .nwa .sns-follow-buttons {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.admin-settings .demo .sidebar .sns-follow-buttons a,
-.admin-settings .demo .footer .sns-follow-buttons a {
+.admin-settings .demo .nwa .sns-follow-buttons a {
   width: 49%;
   margin-right: 0;
 }
@@ -10686,31 +10677,30 @@ body.wp-admin {
   position: relative;
   display: block;
 }
-.admin-settings .demo .body blockquote :last-child,
-.admin-settings .demo .body .wp-block-media-text__content :last-child,
-.admin-settings .demo .body .wp-block-columns :last-child,
-.admin-settings .demo .body .column-left :last-child,
-.admin-settings .demo .body .column-center :last-child,
-.admin-settings .demo .body .column-right :last-child,
-.admin-settings .demo .body .column-wrap :last-child,
-.admin-settings .demo .body .timeline-box :last-child,
-.admin-settings .demo .body .wp-block-cover :last-child,
-.admin-settings .demo .body .blogcard-type :last-child,
-.admin-settings .demo .body .btn-wrap :last-child,
-.admin-settings .demo .body .wp-block-group :last-child,
-.admin-settings .demo .body .wp-block-gallery :last-child,
-.admin-settings .demo .body .block-box :last-child,
-.admin-settings .demo .body .blank-box :last-child,
-.admin-settings .demo .body .common-icon-box :last-child,
-.admin-settings .demo .body .info-box :last-child,
-.admin-settings .demo .body .primary-box :last-child,
-.admin-settings .demo .body .success-box :last-child,
-.admin-settings .demo .body .warning-box :last-child,
-.admin-settings .demo .body .danger-box :last-child,
-.admin-settings .demo .body .secondary-box :last-child,
-.admin-settings .demo .body .light-box :last-child,
-.admin-settings .demo .body .dark-box :last-child,
-.admin-settings .demo .body .toc :last-child {
+.admin-settings .demo .body blockquote > :last-child,
+.admin-settings .demo .body .wp-block-media-text__content > :last-child,
+.admin-settings .demo .body .wp-block-columns > :last-child,
+.admin-settings .demo .body .column-left > :last-child,
+.admin-settings .demo .body .column-center > :last-child,
+.admin-settings .demo .body .column-right > :last-child,
+.admin-settings .demo .body .timeline-box > :last-child,
+.admin-settings .demo .body .wp-block-cover > :last-child,
+.admin-settings .demo .body .blogcard-type > :last-child,
+.admin-settings .demo .body .btn-wrap > :last-child,
+.admin-settings .demo .body .wp-block-group > :last-child,
+.admin-settings .demo .body .wp-block-gallery > :last-child,
+.admin-settings .demo .body .block-box > :last-child,
+.admin-settings .demo .body .blank-box > :last-child,
+.admin-settings .demo .body .common-icon-box > :last-child,
+.admin-settings .demo .body .info-box > :last-child,
+.admin-settings .demo .body .primary-box > :last-child,
+.admin-settings .demo .body .success-box > :last-child,
+.admin-settings .demo .body .warning-box > :last-child,
+.admin-settings .demo .body .danger-box > :last-child,
+.admin-settings .demo .body .secondary-box > :last-child,
+.admin-settings .demo .body .light-box > :last-child,
+.admin-settings .demo .body .dark-box > :last-child,
+.admin-settings .demo .body .toc > :last-child {
   margin-bottom: 0;
 }
 .admin-settings .demo .body div.scrollable-table table,
@@ -13458,7 +13448,6 @@ body.wp-admin {
   min-width: 280px !important;
 }
 .admin-settings .demo .author-box {
-  border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
   line-height: 1.4;
   position: relative;
@@ -15494,9 +15483,6 @@ body.wp-admin {
   font-size: 0.8em;
   text-align: center;
 }
-.admin-settings .demo .recommended .card-snippet {
-  display: none;
-}
 .admin-settings .demo .recommended.rcs-image-only .card-content {
   display: none;
 }
@@ -15534,12 +15520,11 @@ body.wp-admin {
   color: var(--cocoon-text-color);
   padding: 6px 1.2em;
   background-color: rgba(255, 255, 255, 0.8);
-  transition: all .3s;
+  transition: all .5s;
   border-radius: 99px;
   font-size: 0.9em;
 }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title {
-  transition: all .5s;
   opacity: 0;
 }
 .admin-settings .demo .recommended.rcs-card-margin a {
@@ -15580,12 +15565,11 @@ body.wp-admin {
   display: block;
   padding: 0.5em 1em;
   text-decoration: none;
-  width: 100%;
   text-align: center;
   min-height: 100px;
   cursor: pointer;
   background: #fff;
-  width: calc(100%/4);
+  width: 25%;
   color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
@@ -17051,9 +17035,6 @@ body.wp-admin {
   /* ボーダーの色 */
   cursor: pointer;
   /* カーソルをポインターに */
-}
-.admin-settings .demo .main {
-  z-index: 0;
 }
 .admin-settings .demo .ad-index-bottom {
   position: relative;
@@ -19261,31 +19242,30 @@ textarea[name="the_page_memo"] {
   position: relative;
   display: block;
 }
-.components-popover__content .body blockquote :last-child,
-.components-popover__content .body .wp-block-media-text__content :last-child,
-.components-popover__content .body .wp-block-columns :last-child,
-.components-popover__content .body .column-left :last-child,
-.components-popover__content .body .column-center :last-child,
-.components-popover__content .body .column-right :last-child,
-.components-popover__content .body .column-wrap :last-child,
-.components-popover__content .body .timeline-box :last-child,
-.components-popover__content .body .wp-block-cover :last-child,
-.components-popover__content .body .blogcard-type :last-child,
-.components-popover__content .body .btn-wrap :last-child,
-.components-popover__content .body .wp-block-group :last-child,
-.components-popover__content .body .wp-block-gallery :last-child,
-.components-popover__content .body .block-box :last-child,
-.components-popover__content .body .blank-box :last-child,
-.components-popover__content .body .common-icon-box :last-child,
-.components-popover__content .body .info-box :last-child,
-.components-popover__content .body .primary-box :last-child,
-.components-popover__content .body .success-box :last-child,
-.components-popover__content .body .warning-box :last-child,
-.components-popover__content .body .danger-box :last-child,
-.components-popover__content .body .secondary-box :last-child,
-.components-popover__content .body .light-box :last-child,
-.components-popover__content .body .dark-box :last-child,
-.components-popover__content .body .toc :last-child {
+.components-popover__content .body blockquote > :last-child,
+.components-popover__content .body .wp-block-media-text__content > :last-child,
+.components-popover__content .body .wp-block-columns > :last-child,
+.components-popover__content .body .column-left > :last-child,
+.components-popover__content .body .column-center > :last-child,
+.components-popover__content .body .column-right > :last-child,
+.components-popover__content .body .timeline-box > :last-child,
+.components-popover__content .body .wp-block-cover > :last-child,
+.components-popover__content .body .blogcard-type > :last-child,
+.components-popover__content .body .btn-wrap > :last-child,
+.components-popover__content .body .wp-block-group > :last-child,
+.components-popover__content .body .wp-block-gallery > :last-child,
+.components-popover__content .body .block-box > :last-child,
+.components-popover__content .body .blank-box > :last-child,
+.components-popover__content .body .common-icon-box > :last-child,
+.components-popover__content .body .info-box > :last-child,
+.components-popover__content .body .primary-box > :last-child,
+.components-popover__content .body .success-box > :last-child,
+.components-popover__content .body .warning-box > :last-child,
+.components-popover__content .body .danger-box > :last-child,
+.components-popover__content .body .secondary-box > :last-child,
+.components-popover__content .body .light-box > :last-child,
+.components-popover__content .body .dark-box > :last-child,
+.components-popover__content .body .toc > :last-child {
   margin-bottom: 0;
 }
 .components-popover__content .body div.scrollable-table table,

@@ -2029,13 +2029,13 @@ div.speech-balloon {
   color: #484848;
 }
 
-.sbs-flat.sbp-r .speech-balloon::before,
-.sbs-flat.sbp-r .speech-balloon::after {
-  border-left-color: #f1f1f1;
+.sbs-flat.sbp-r .speech-balloon::before {
+  border-left-color: inherit;
 }
 
 .sbs-line.sbp-r .speech-balloon::after {
   right: -9px;
+  border-right-color: var(--cocoon-custom-background-color);
 }
 
 /* テーブル */
@@ -3200,4 +3200,80 @@ ol.toc-list > li > ol {
   .related-entry-card .cat-label {
     line-height: 1.8;
   }
+}
+
+
+/* カスタム色対応 */
+.silk-darkmode .speech-wrap,
+.silk-darkmode .toggle-box,
+.silk-darkmode .timeline-box,
+.silk-darkmode .iconlist-box,
+.silk-darkmode .faq-wrap,
+.silk-darkmode .caption-box,
+.silk-darkmode .tab-caption-box,
+.silk-darkmode .label-box,
+.silk-darkmode .micro-balloon,
+.silk-darkmode .micro-text {
+  --cocoon-custom-text-color: #d3d3d3;
+}
+
+.silk-darkmode .speech-wrap {
+  --cocoon-custom-background-color: #191919;
+  --cocoon-custom-text-color: #d3d3d3;
+  --cocoon-custom-border-color: var(--cocoon-basic-border-color);
+}
+
+.silk-darkmode .sbs-line.sbp-r .speech-balloon:not(.has-background) {
+  background-color: var(--cocoon-custom-background-color);
+}
+
+.silk-darkmode .sbs-line.sbp-r .speech-balloon:not(.has-background):not(.has-border-color) {
+  --cocoon-custom-background-color: #191919;
+  --cocoon-custom-border-color: #85e249;
+}
+
+.silk-darkmode .toggle-box {
+  --cocoon-custom-background-color: transparent;
+}
+
+.silk-darkmode .has-box-style,
+.silk-darkmode .has-border {
+  --cocoon-box-border-color: #ccc;
+}
+
+.silk-darkmode .is-style-border-thin-and-thick,
+.silk-darkmode .is-style-border-radius-s-thin-and-thick,
+.silk-darkmode .is-style-border-radius-l-thin-and-thick {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.silk-darkmode .is-style-light-background-box {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.silk-darkmode .is-style-stripe-box {
+  background-image: repeating-linear-gradient(-45deg, #333 0, #333 3px, transparent 3px, transparent 6px);
+}
+
+.silk-darkmode .is-style-checkered-box {
+  background-image: linear-gradient(90deg, rgba(232, 238, 236, 0.1) 50%, transparent 50%), linear-gradient(rgba(234, 236, 238, 0.1) 50%, transparent 50%);
+}
+
+.silk-darkmode .is-style-stitch-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+.silk-darkmode .is-style-border-top-box {
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.22);
+}
+
+.silk-darkmode .is-style-border-left-box {
+  box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.33);
+}
+
+.silk-darkmode [class^="is-style-balloon-"], [class*=" is-style-balloon-"] {
+  --cocoon-white-color: #191919;
+  background: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-box-border-color);
 }

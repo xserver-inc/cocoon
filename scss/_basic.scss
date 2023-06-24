@@ -86,13 +86,13 @@ hr{
 
 .main{
   width: $main_outer_width;
-  //margin-right: $between_main_and_sidebar;
-  //height: 100%;
-  //float: left;
   padding: 20px $main_padding_width;
   border: $main_border_width $main_border_style $transparent_border_color;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
+  //MacでChromeの際何度かページ遷移するとページャーがクリックできなくなる対応
+  //https://is.gd/pl1Rvs
+  z-index: 0;
 }
 
 .no-sidebar .content .main{

@@ -452,6 +452,7 @@ hr {
   border: 1px solid transparent;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
+  z-index: 0;
 }
 
 .no-sidebar .content .main {
@@ -2529,13 +2530,11 @@ label.screen-reader-text {
 /************************************
 ** フォーローボタウィジェット
 ************************************/
-.sidebar .sns-follow-buttons,
-.footer .sns-follow-buttons {
+.nwa .sns-follow-buttons {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.sidebar .sns-follow-buttons a,
-.footer .sns-follow-buttons a {
+.nwa .sns-follow-buttons a {
   width: 49%;
   margin-right: 0;
 }
@@ -2849,31 +2848,30 @@ label.screen-reader-text {
   display: block;
 }
 
-.body blockquote :last-child,
-.body .wp-block-media-text__content :last-child,
-.body .wp-block-columns :last-child,
-.body .column-left :last-child,
-.body .column-center :last-child,
-.body .column-right :last-child,
-.body .column-wrap :last-child,
-.body .timeline-box :last-child,
-.body .wp-block-cover :last-child,
-.body .blogcard-type :last-child,
-.body .btn-wrap :last-child,
-.body .wp-block-group :last-child,
-.body .wp-block-gallery :last-child,
-.body .block-box :last-child,
-.body .blank-box :last-child,
-.body .common-icon-box :last-child,
-.body .info-box :last-child,
-.body .primary-box :last-child,
-.body .success-box :last-child,
-.body .warning-box :last-child,
-.body .danger-box :last-child,
-.body .secondary-box :last-child,
-.body .light-box :last-child,
-.body .dark-box :last-child,
-.body .toc :last-child {
+.body blockquote > :last-child,
+.body .wp-block-media-text__content > :last-child,
+.body .wp-block-columns > :last-child,
+.body .column-left > :last-child,
+.body .column-center > :last-child,
+.body .column-right > :last-child,
+.body .timeline-box > :last-child,
+.body .wp-block-cover > :last-child,
+.body .blogcard-type > :last-child,
+.body .btn-wrap > :last-child,
+.body .wp-block-group > :last-child,
+.body .wp-block-gallery > :last-child,
+.body .block-box > :last-child,
+.body .blank-box > :last-child,
+.body .common-icon-box > :last-child,
+.body .info-box > :last-child,
+.body .primary-box > :last-child,
+.body .success-box > :last-child,
+.body .warning-box > :last-child,
+.body .danger-box > :last-child,
+.body .secondary-box > :last-child,
+.body .light-box > :last-child,
+.body .dark-box > :last-child,
+.body .toc > :last-child {
   margin-bottom: 0;
 }
 .body div.scrollable-table table,
@@ -6046,7 +6044,6 @@ canvas, iframe, video,
 ** プロフィールボックス
 ************************************/
 .author-box {
-  border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
   line-height: 1.4;
   position: relative;
@@ -8439,9 +8436,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   font-size: 0.8em;
   text-align: center;
 }
-.recommended .card-snippet {
-  display: none;
-}
 .recommended.rcs-image-only .card-content {
   display: none;
 }
@@ -8479,12 +8473,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   color: var(--cocoon-text-color);
   padding: 6px 1.2em;
   background-color: rgba(255, 255, 255, 0.8);
-  transition: all .3s;
+  transition: all .5s;
   border-radius: 99px;
   font-size: 0.9em;
 }
 .recommended.rcs-center-label-title .card-content:hover .card-title {
-  transition: all .5s;
   opacity: 0;
 }
 .recommended.rcs-card-margin a {
@@ -8528,12 +8521,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   display: block;
   padding: 0.5em 1em;
   text-decoration: none;
-  width: 100%;
   text-align: center;
   min-height: 100px;
   cursor: pointer;
   background: #fff;
-  width: calc(100%/4);
+  width: 25%;
   color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
@@ -10262,10 +10254,6 @@ twitter-widget {
   /* ボーダーの色 */
   cursor: pointer;
   /* カーソルをポインターに */
-}
-
-.main {
-  z-index: 0;
 }
 
 .ad-index-bottom {
