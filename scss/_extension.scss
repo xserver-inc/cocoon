@@ -283,14 +283,9 @@ $marker_u_blue: $marker_blue;
   .light-box,
   .dark-box,
   .toc{
-    >:last-child{
+    :last-child{
       margin-bottom: 0;
     }
-
-    // ol,
-    // ul{
-    //   margin: 0;
-    // }
   }
 
   div.scrollable-table,
