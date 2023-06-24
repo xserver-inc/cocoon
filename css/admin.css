@@ -2666,7 +2666,6 @@ body.wp-admin {
 }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content {
   margin-bottom: -4em;
-  transition: all 0.5s;
   opacity: 0;
 }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card {
@@ -3658,8 +3657,7 @@ body.wp-admin {
 }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
 .admin-settings .demo .btn-wrap > a:hover {
-  filter: opacity(0.7);
-  opacity: 1;
+  opacity: 0.7;
   color: var(--cocoon-white-color);
 }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after,
@@ -3694,7 +3692,6 @@ body.wp-admin {
 .admin-settings .demo .btn-circle,
 .admin-settings .demo .btn-wrap-circle > a {
   border-radius: 99px;
-  clip-path: border-box;
 }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a {
   color: var(--cocoon-text-color);
@@ -3762,9 +3759,6 @@ body.wp-admin {
 }
 .admin-settings .demo .btn-blue-grey, .admin-settings .demo .btn-wrap.btn-wrap-blue-grey > a {
   background-color: var(--cocoon-blue-gray-color);
-}
-.admin-settings .demo .btn-black, .admin-settings .demo .btn-wrap.btn-wrap-black > a {
-  background-color: var(--cocoon-black-color);
 }
 .admin-settings .demo .btn-arrow-right:before, .admin-settings .demo .btn-wrap.btn-wrap-arrow-right > a:before {
   content: "\f061";
@@ -5192,11 +5186,6 @@ body.wp-admin {
 .admin-settings .demo .is-style-accordion .faq-question {
   padding: .5em;
   margin: 0;
-}
-.admin-settings .demo .is-style-accordion .faq-answer {
-  padding: 1em .5em;
-}
-.admin-settings .demo .is-style-accordion .faq-question {
   cursor: pointer;
   position: relative;
   background-color: #e8ecef;
@@ -5210,6 +5199,9 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-accordion .faq-question.active::before {
   content: "-";
+}
+.admin-settings .demo .is-style-accordion .faq-answer {
+  padding: 1em .5em;
 }
 .admin-settings .demo .is-style-accordion.has-border-color .faq-question,
 .admin-settings .demo .is-style-accordion.has-border-color .faq-question-label {
@@ -7331,7 +7323,6 @@ body.wp-admin {
   border-radius: 100%;
 }
 .admin-settings .demo .iconlist-box {
-  border-color: transparent;
   --cocoon-custom-icon-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: transparent;
   --cocoon-custom-background-color: transparent;
@@ -7394,11 +7385,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-square .faq-answer-label {
   background-color: var(--cocoon-custom-answer-color);
-}
-.admin-settings .demo .is-style-square .faq-item-label {
-  font-size: 20px;
-  padding: 5px 8px;
-  height: 100%;
 }
 .admin-settings .demo .faq-item-content {
   flex: 1 1 auto;
@@ -7839,16 +7825,12 @@ body.wp-admin {
   align-items: center;
   height: 100%;
 }
-.admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content {
-  opacity: 1;
-}
 .admin-settings .demo .recommended.rcs-center-white-title .card-content {
   background: none;
   background-color: rgba(51, 51, 51, 0.3);
   transition: all .7s;
 }
 .admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content {
-  transition: all .7s;
   opacity: 0;
 }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content {
@@ -10327,7 +10309,6 @@ body.wp-admin {
 }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content {
   margin-bottom: -4em;
-  transition: all 0.5s;
   opacity: 0;
 }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card {
@@ -11319,8 +11300,7 @@ body.wp-admin {
 }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
 .admin-settings .demo .btn-wrap > a:hover {
-  filter: opacity(0.7);
-  opacity: 1;
+  opacity: 0.7;
   color: var(--cocoon-white-color);
 }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after,
@@ -11355,7 +11335,6 @@ body.wp-admin {
 .admin-settings .demo .btn-circle,
 .admin-settings .demo .btn-wrap-circle > a {
   border-radius: 99px;
-  clip-path: border-box;
 }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a {
   color: var(--cocoon-text-color);
@@ -11423,9 +11402,6 @@ body.wp-admin {
 }
 .admin-settings .demo .btn-blue-grey, .admin-settings .demo .btn-wrap.btn-wrap-blue-grey > a {
   background-color: var(--cocoon-blue-gray-color);
-}
-.admin-settings .demo .btn-black, .admin-settings .demo .btn-wrap.btn-wrap-black > a {
-  background-color: var(--cocoon-black-color);
 }
 .admin-settings .demo .btn-arrow-right:before, .admin-settings .demo .btn-wrap.btn-wrap-arrow-right > a:before {
   content: "\f061";
@@ -12853,11 +12829,6 @@ body.wp-admin {
 .admin-settings .demo .is-style-accordion .faq-question {
   padding: .5em;
   margin: 0;
-}
-.admin-settings .demo .is-style-accordion .faq-answer {
-  padding: 1em .5em;
-}
-.admin-settings .demo .is-style-accordion .faq-question {
   cursor: pointer;
   position: relative;
   background-color: #e8ecef;
@@ -12871,6 +12842,9 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-accordion .faq-question.active::before {
   content: "-";
+}
+.admin-settings .demo .is-style-accordion .faq-answer {
+  padding: 1em .5em;
 }
 .admin-settings .demo .is-style-accordion.has-border-color .faq-question,
 .admin-settings .demo .is-style-accordion.has-border-color .faq-question-label {
@@ -14992,7 +14966,6 @@ body.wp-admin {
   border-radius: 100%;
 }
 .admin-settings .demo .iconlist-box {
-  border-color: transparent;
   --cocoon-custom-icon-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: transparent;
   --cocoon-custom-background-color: transparent;
@@ -15055,11 +15028,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-square .faq-answer-label {
   background-color: var(--cocoon-custom-answer-color);
-}
-.admin-settings .demo .is-style-square .faq-item-label {
-  font-size: 20px;
-  padding: 5px 8px;
-  height: 100%;
 }
 .admin-settings .demo .faq-item-content {
   flex: 1 1 auto;
@@ -15500,16 +15468,12 @@ body.wp-admin {
   align-items: center;
   height: 100%;
 }
-.admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content {
-  opacity: 1;
-}
 .admin-settings .demo .recommended.rcs-center-white-title .card-content {
   background: none;
   background-color: rgba(51, 51, 51, 0.3);
   transition: all .7s;
 }
 .admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content {
-  transition: all .7s;
   opacity: 0;
 }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content {
@@ -16251,9 +16215,14 @@ body.wp-admin {
 .admin-settings .demo .carousel {
   margin-top: 10px;
   line-height: 1.1;
+  opacity: 0;
+  transition: all 1s ease-out;
 }
 .admin-settings .demo .carousel .slick-arrow:before {
   color: var(--cocoon-thin-color);
+}
+.admin-settings .demo .carousel .a-wrap {
+  padding: 0.2em 0.3em;
 }
 .admin-settings .demo .carousel-in {
   background-color: var(--cocoon-white-color);
@@ -16293,13 +16262,6 @@ body.wp-admin {
 }
 .admin-settings .demo .no-carousel .carousel {
   display: none;
-}
-.admin-settings .demo .carousel {
-  opacity: 0;
-  transition: all 1s ease-out;
-}
-.admin-settings .demo .carousel .a-wrap {
-  padding: 0.2em 0.3em;
 }
 .admin-settings .demo .carousel.loaded {
   opacity: 1;
@@ -19885,8 +19847,7 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .btn:hover, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover,
 .components-popover__content .btn-wrap > a:hover {
-  filter: opacity(0.7);
-  opacity: 1;
+  opacity: 0.7;
   color: var(--cocoon-white-color);
 }
 .components-popover__content .btn:hover::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover::after,
@@ -19921,7 +19882,6 @@ textarea[name="the_page_memo"] {
 .components-popover__content .btn-circle,
 .components-popover__content .btn-wrap-circle > a {
   border-radius: 99px;
-  clip-path: border-box;
 }
 .components-popover__content .btn-white, .components-popover__content .btn-wrap.btn-wrap-white > a {
   color: var(--cocoon-text-color);
@@ -19989,9 +19949,6 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .btn-blue-grey, .components-popover__content .btn-wrap.btn-wrap-blue-grey > a {
   background-color: var(--cocoon-blue-gray-color);
-}
-.components-popover__content .btn-black, .components-popover__content .btn-wrap.btn-wrap-black > a {
-  background-color: var(--cocoon-black-color);
 }
 .components-popover__content .btn-arrow-right:before, .components-popover__content .btn-wrap.btn-wrap-arrow-right > a:before {
   content: "\f061";
@@ -21419,11 +21376,6 @@ textarea[name="the_page_memo"] {
 .components-popover__content .is-style-accordion .faq-question {
   padding: .5em;
   margin: 0;
-}
-.components-popover__content .is-style-accordion .faq-answer {
-  padding: 1em .5em;
-}
-.components-popover__content .is-style-accordion .faq-question {
   cursor: pointer;
   position: relative;
   background-color: #e8ecef;
@@ -21437,6 +21389,9 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .is-style-accordion .faq-question.active::before {
   content: "-";
+}
+.components-popover__content .is-style-accordion .faq-answer {
+  padding: 1em .5em;
 }
 .components-popover__content .is-style-accordion.has-border-color .faq-question,
 .components-popover__content .is-style-accordion.has-border-color .faq-question-label {

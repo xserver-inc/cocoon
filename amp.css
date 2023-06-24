@@ -2388,7 +2388,6 @@ label.screen-reader-text {
 }
 .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content {
   margin-bottom: -4em;
-  transition: all 0.5s;
   opacity: 0;
 }
 .widget-entry-cards.large-thumb-on .e-card {
@@ -3552,8 +3551,7 @@ div.search-form {
 
 .btn:hover, .ranking-item-link-buttons a:hover,
 .btn-wrap > a:hover {
-  filter: opacity(0.7);
-  opacity: 1;
+  opacity: 0.7;
   color: var(--cocoon-white-color);
 }
 .btn:hover::after, .ranking-item-link-buttons a:hover::after,
@@ -3593,7 +3591,6 @@ div.search-form {
 .btn-circle,
 .btn-wrap-circle > a {
   border-radius: 99px;
-  clip-path: border-box;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a {
@@ -3683,10 +3680,6 @@ div.search-form {
 
 .btn-blue-grey, .btn-wrap.btn-wrap-blue-grey > a {
   background-color: var(--cocoon-blue-gray-color);
-}
-
-.btn-black, .btn-wrap.btn-wrap-black > a {
-  background-color: var(--cocoon-black-color);
 }
 
 .btn-arrow-right:before, .btn-wrap.btn-wrap-arrow-right > a:before {
@@ -5315,11 +5308,6 @@ figcaption {
 .is-style-accordion .faq-question {
   padding: .5em;
   margin: 0;
-}
-.is-style-accordion .faq-answer {
-  padding: 1em .5em;
-}
-.is-style-accordion .faq-question {
   cursor: pointer;
   position: relative;
   background-color: #e8ecef;
@@ -5333,6 +5321,9 @@ figcaption {
 }
 .is-style-accordion .faq-question.active::before {
   content: "-";
+}
+.is-style-accordion .faq-answer {
+  padding: 1em .5em;
 }
 .is-style-accordion.has-border-color .faq-question,
 .is-style-accordion.has-border-color .faq-question-label {
@@ -7793,7 +7784,6 @@ ul.timeline ul ul ul {
 }
 
 .iconlist-box {
-  border-color: transparent;
   --cocoon-custom-icon-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: transparent;
   --cocoon-custom-background-color: transparent;
@@ -7864,12 +7854,6 @@ ul.timeline ul ul ul {
 
 .is-style-square .faq-answer-label {
   background-color: var(--cocoon-custom-answer-color);
-}
-
-.is-style-square .faq-item-label {
-  font-size: 20px;
-  padding: 5px 8px;
-  height: 100%;
 }
 
 .faq-item-content {
@@ -8428,16 +8412,12 @@ https://codepen.io/nxworld/pen/oLdoWb
   align-items: center;
   height: 100%;
 }
-.recommended.rcs-center-title .a-wrap:hover .card-content {
-  opacity: 1;
-}
 .recommended.rcs-center-white-title .card-content {
   background: none;
   background-color: rgba(51, 51, 51, 0.3);
   transition: all .7s;
 }
 .recommended.rcs-center-white-title .a-wrap:hover .card-content {
-  transition: all .7s;
   opacity: 0;
 }
 .recommended.rcs-center-label-title .card-content {

@@ -4,13 +4,15 @@
 .carousel{
   margin-top: 10px;
   line-height: 1.1;
-
-  // .cat-label{
-  //   display: none;
-  // }
+  opacity: 0;
+  transition: all 1s ease-out;
 
   .slick-arrow:before{
     color: var(--cocoon-thin-color);
+  }
+
+  .a-wrap{
+    padding: 0.2em 0.3em;
   }
 }
 
@@ -71,16 +73,6 @@
 .no-carousel{
   .carousel{
     display: none;
-  }
-}
-
-
-.carousel{
-  opacity: 0;
-  transition: all 1s ease-out;
-  // animation: carousel-fade-in 1.5s ease-in-out;
-  .a-wrap{
-    padding: 0.2em 0.3em;
   }
 }
 

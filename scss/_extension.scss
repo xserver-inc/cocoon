@@ -907,8 +907,7 @@ div.search-form{
 
 .btn:hover,
 .btn-wrap > a:hover{
-  filter: opacity(0.7);
-  opacity: 1;
+  opacity: 0.7;
   color: var(--cocoon-white-color);
   &::after{
     right: -4px;
@@ -949,7 +948,6 @@ div.search-form{
 .btn-circle,
 .btn-wrap-circle > a{
   border-radius: 99px;
-  clip-path: border-box;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a{color: var(--cocoon-text-color);background-color: var(--cocoon-white-color);}
@@ -974,7 +972,7 @@ div.search-form{
 .btn-brown, .btn-wrap.btn-wrap-brown > a{background-color: var(--cocoon-brown-color);}
 .btn-grey, .btn-wrap.btn-wrap-grey > a{background-color: var(--cocoon-grey-color);}
 .btn-blue-grey, .btn-wrap.btn-wrap-blue-grey > a{background-color: var(--cocoon-blue-gray-color);}
-.btn-black, .btn-wrap.btn-wrap-black > a{background-color: var(--cocoon-black-color);}
+
 
 .btn-arrow-right:before, .btn-wrap.btn-wrap-arrow-right > a:before{content: "\f061";}
 .btn-chevron-right:before, .btn-wrap.btn-wrap-chevron-circle-right > a:before{content: "\f054";}
@@ -1687,11 +1685,6 @@ figcaption{
   .faq-question{
     padding: .5em;
     margin: 0;
-  }
-  .faq-answer{
-    padding: 1em .5em;
-  }
-  .faq-question{
     cursor: pointer;
     position: relative;
     background-color: #e8ecef;
@@ -1707,6 +1700,10 @@ figcaption{
     &.active::before{
       content: "-";
     }
+  }
+
+  .faq-answer{
+    padding: 1em .5em;
   }
 
   &.has-border-color{

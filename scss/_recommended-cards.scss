@@ -47,26 +47,16 @@
       align-items: center;
       height: 100%;
     }
-    .a-wrap:hover{
-      .card-content{
-        opacity: 1;
-      }
-    }
   }
   &.rcs-center-white-title{
     .card-content{
       background: none;
       background-color: rgba(51, 51, 51, 0.3);
       transition: all .7s;
-      // &:hover{
-      //   transition: all .3s;
-      //   opacity: 0;
-      // }
     }
 
     .a-wrap:hover{
       .card-content{
-        transition: all .7s;
         opacity: 0;
       }
     }
