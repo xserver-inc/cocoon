@@ -2388,6 +2388,7 @@ label.screen-reader-text {
 }
 .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content {
   margin-bottom: -4em;
+  transition: all 0.5s;
   opacity: 0;
 }
 .widget-entry-cards.large-thumb-on .e-card {
