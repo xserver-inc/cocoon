@@ -17063,6 +17063,10 @@ body.wp-admin {
   border-style: solid;
 }
 @media screen and (max-width: 1023px) {
+  .admin-settings .demo {
+    /* モバイルヘッダー高さ分、余白を設ける */
+    /* adminバーがある場合、その余白分を除いた余白とする */
+  }
   .admin-settings .demo .navi-footer {
     float: none;
     margin: 0;
@@ -17192,8 +17196,11 @@ body.wp-admin {
   .admin-settings .demo .slicknav_menu {
     display: block;
   }
-  .admin-settings .demo html:has(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
-    margin-top: 53px !important;
+  .admin-settings .demo body:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
+    margin-top: 53px;
+  }
+  .admin-settings .demo .admin-bar:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
+    margin-top: calc(53px - var(--wp-admin--admin-bar--height));
   }
 }
 @media screen and (max-width: 834px) {
