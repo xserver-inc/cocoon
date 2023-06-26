@@ -436,18 +436,10 @@ class Skin_Silk_Functions {
     }';
 
     //背景色
-    $site_background = get_site_background_color() ?: '#fff';
+    $site_background = get_site_background_color() ?: 'var(--cocoon-custom-background-color)';
     echo 'hr.is-style-cut-line::after,
     .iconlist-title {
       background: '.$site_background.';
-    }
-
-    .speech-balloon::after {
-      border-right-color: '.$site_background.';
-    }
-
-    .sbp-r .speech-balloon::after {
-      border-left-color: '.$site_background.';
     }
 
     .recent-comment-content::after {

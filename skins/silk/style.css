@@ -1985,14 +1985,17 @@ p code.hljs {
 }
 
 /* 吹き出し */
+.speech-wrap{
+  --cocoon-custom-background-color: #fff;
+  --cocoon-custom-border-color: #ddd;
+}
+
 .speech-icon img {
   border-width: 1px;
   border-color: #ddd;
 }
 
 div.speech-balloon {
-  background: transparent;
-  border-color: #ddd;
   border-radius: 4px;
 }
 
@@ -2000,7 +2003,7 @@ div.speech-balloon {
   left: -9px;
   top: 15px;
   border-width: 8px;
-  border-right-color: #ddd;
+  /* border-right-color: inherit; */
 }
 
 .speech-balloon::after {
@@ -2012,27 +2015,27 @@ div.speech-balloon {
 .sbp-r .speech-balloon::before {
   right: -9px;
   border-width: 8px;
-  border-left-color: #ddd;
+  /* border-left-color: inherit; */
 }
 
 .sbp-r .speech-balloon::after {
   right: -7px;
-  border-width: 8px;
+  /* border-width: 8px; */
 }
 
 .sbs-line .speech-balloon::after {
   left: -8px;
 }
-
+/*
 .sbs-flat .speech-balloon,
 .sbs-line.sbp-r .speech-balloon {
   color: #484848;
-}
+} */
 
-.sbs-flat.sbp-r .speech-balloon::before,
+/* .sbs-flat.sbp-r .speech-balloon::before,
 .sbs-flat.sbp-r .speech-balloon::after {
   border-left-color: #f1f1f1;
-}
+} */
 
 .sbs-line.sbp-r .speech-balloon::after {
   right: -9px;
