@@ -1381,3 +1381,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   border-radius: 5px;
   border: 1px solid var(--cocoon-basic-border-color);
 }
+
+.block-editor-iframe__body .editor-post-title::after{
+  display: none;
+}
