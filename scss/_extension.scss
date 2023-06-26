@@ -485,11 +485,8 @@ $bb_yellow: #fc9f4d;
 $bb_red: #d05a6e;
 $bb_blue: #2ea9df;
 $bb_green: var(--cocoon-green-color);
-@mixin blank_box{
+@mixin bace_box{
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
@@ -497,6 +494,12 @@ $bb_green: var(--cocoon-green-color);
   ol, ul {
     margin: 0;
   }
+  border-style: solid;
+}
+@mixin blank_box{
+  @include bace_box;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 @mixin sticky{
   border-width: 0 0 0 6px;
@@ -505,17 +508,6 @@ $bb_green: var(--cocoon-green-color);
 }
 .blank-box{
   @include blank_box;
-  // --cocoon-custom-border-color: var(--cocoon-grey-color);
-  // border-style: solid;
-  // border-width: 3px;
-  // border-color: var(--cocoon-custom-border-color);
-  // padding: 1.2em 1em;
-  // border-radius: var(--cocoon-basic-border-radius);
-  // background-color: var(--cocoon-custom-background-color);
-  // color: var(--cocoon-custom-text-color);
-  // ol, ul {
-  //   margin: 0;
-  // }
 
   &.bb-red{border-color: var(--cocoon-red-color);}
   &.bb-pink{border-color: var(--cocoon-pink-color);}
@@ -624,7 +616,7 @@ $bb_green: var(--cocoon-green-color);
 }
 
 [class*="is-style-sticky-"]{
-  @include blank_box;
+  @include bace_box;
   @include sticky;
 }
 
@@ -1611,6 +1603,7 @@ $toggle_border_width: 2px;
   }
 }
 
+//古いバージョンのブロックに対応
 .tb-red{@include toggle_color(var(--cocoon-red-color));}
 .tb-pink{@include toggle_color(var(--cocoon-pink-color));}
 .tb-purple{@include toggle_color(var(--cocoon-purple-color));}

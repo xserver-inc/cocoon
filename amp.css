@@ -3034,13 +3034,13 @@ label.screen-reader-text {
 
 .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 .blank-box ol, .blank-box ul {
   margin: 0;
@@ -3209,13 +3209,13 @@ label.screen-reader-text {
 
 [class*="is-style-blank-box-"] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 [class*="is-style-blank-box-"] ol, [class*="is-style-blank-box-"] ul {
   margin: 0;
@@ -3251,13 +3251,11 @@ label.screen-reader-text {
 
 [class*="is-style-sticky-"] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);

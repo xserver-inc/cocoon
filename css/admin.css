@@ -3204,13 +3204,13 @@ body.wp-admin {
 }
 .admin-settings .demo .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .blank-box ol, .admin-settings .demo .blank-box ul {
   margin: 0;
@@ -3378,13 +3378,13 @@ body.wp-admin {
 }
 .admin-settings .demo [class*="is-style-blank-box-"] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo [class*="is-style-blank-box-"] ol, .admin-settings .demo [class*="is-style-blank-box-"] ul {
   margin: 0;
@@ -3412,13 +3412,11 @@ body.wp-admin {
 }
 .admin-settings .demo [class*="is-style-sticky-"] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);
@@ -10848,13 +10846,13 @@ body.wp-admin {
 }
 .admin-settings .demo .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .blank-box ol, .admin-settings .demo .blank-box ul {
   margin: 0;
@@ -11022,13 +11020,13 @@ body.wp-admin {
 }
 .admin-settings .demo [class*="is-style-blank-box-"] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo [class*="is-style-blank-box-"] ol, .admin-settings .demo [class*="is-style-blank-box-"] ul {
   margin: 0;
@@ -11056,13 +11054,11 @@ body.wp-admin {
 }
 .admin-settings .demo [class*="is-style-sticky-"] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);
@@ -19401,13 +19397,13 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 .components-popover__content .blank-box ol, .components-popover__content .blank-box ul {
   margin: 0;
@@ -19575,13 +19571,13 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content [class*="is-style-blank-box-"] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-custom-border-color);
 }
 .components-popover__content [class*="is-style-blank-box-"] ol, .components-popover__content [class*="is-style-blank-box-"] ul {
   margin: 0;
@@ -19609,13 +19605,11 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content [class*="is-style-sticky-"] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
   padding: 1.2em 1em;
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+  border-style: solid;
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);
