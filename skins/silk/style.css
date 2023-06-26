@@ -2020,7 +2020,7 @@ div.speech-balloon {
 
 .sbp-r .speech-balloon::after {
   right: -7px;
-  /* border-width: 8px; */
+  border-width: 8px;
 }
 
 .sbs-line .speech-balloon::after {
@@ -2038,7 +2038,16 @@ div.speech-balloon {
 } */
 
 .sbs-line.sbp-r .speech-balloon::after {
-  right: -9px;
+  right: -7px;
+}
+
+.sbs-line.sbp-r .speech-balloon:not(.has-background):not(.has-border-color){
+  --cocoon-custom-border-color: #85e249;
+}
+
+.is-style-light-background-box,
+.is-style-stitch-box{
+  color: #333;
 }
 
 /* テーブル */

@@ -436,10 +436,76 @@ class Skin_Silk_Functions {
     }';
 
     //背景色
-    $site_background = get_site_background_color() ?: 'var(--cocoon-custom-background-color)';
+    $site_background = get_site_background_color() ?: 'var(--cocoon-custom-background-color, #fff)';
     echo 'hr.is-style-cut-line::after,
     .iconlist-title {
       background: '.$site_background.';
+    }
+
+    .info-list-item-content-link {
+      --cocoon-black-color: '.$site_color.';
+    }
+
+    .speech-wrap,
+    .sbs-line.sbp-r{
+      --cocoon-custom-background-color: '.$site_background.';
+      --cocoon-custom-text-color: inherit;
+    }
+
+    .body .speech-balloon::after {
+      border-right-color: '.$site_background.';
+    }
+    .sbp-r .speech-balloon::after {
+      border-left-color: '.$site_background.';
+    }
+    .sbs-line.sbp-r .speech-balloon::after {
+      border-left-color: '.$site_background.';
+    }
+
+    .micro-balloon{
+      --cocoon-custom-background-color: '.$site_background.';
+      --cocoon-custom-text-color: inherit;
+    }
+    .micro-balloon:after {
+      border-top-color: '.$site_background.';
+    }
+    .micro-bottom.micro-balloon:after {
+      border-bottom-color: '.$site_background.';
+    }
+
+    /* カスタム色対応 */
+    .speech-wrap,
+    .toggle-box,
+    .timeline-box,
+    .iconlist-box,
+    .faq-wrap,
+    .caption-box,
+    .tab-caption-box,
+    .label-box,
+    .micro-balloon,
+    .micro-text{
+      --cocoon-custom-text-color: '.$site_color.';
+    }
+
+    .sbs-line.sbp-r .speech-balloon:not(.has-background) {
+      background-color: '.$site_background.';
+    }
+
+    .is-style-clip-box {
+      --cocoon-white-color: '.$site_background.';
+      background-color: var(--cocoon-white-color);
+    }
+
+    [class^="is-style-balloon-"], [class*=" is-style-balloon-"] {
+      --cocoon-white-color: '.$site_background.';
+      background: var(--cocoon-white-color);
+      border: 1px solid var(--cocoon-box-border-color);
+    }
+
+    .timeline-title,
+    .tab-caption-box-label,
+    .caption-box-label{
+      color: #484848;
     }
 
     .recent-comment-content::after {
@@ -540,6 +606,46 @@ class Skin_Silk_Functions {
       .silk-darkmode-button i {
         display: block;
         font-size: 2em;
+      }
+
+      .silk-darkmode .toggle-box{
+        --cocoon-custom-background-color: transparent;
+      }
+
+      .silk-darkmode .has-box-style,
+      .silk-darkmode .has-border{
+        --cocoon-box-border-color: #ddd;
+      }
+
+      .silk-darkmode .is-style-border-thin-and-thick,
+      .silk-darkmode .is-style-border-radius-s-thin-and-thick,
+      .silk-darkmode .is-style-border-radius-l-thin-and-thick {
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .silk-darkmode .is-style-light-background-box{
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .silk-darkmode .is-style-stripe-box {
+        background-image: repeating-linear-gradient(-45deg, #333 0, #333 3px, transparent 3px, transparent 6px);
+      }
+
+      .silk-darkmode .is-style-checkered-box {
+        background-image: linear-gradient(90deg, rgba(232, 238, 236, 0.1) 50%, transparent 50%), linear-gradient(rgba(234, 236, 238, 0.1) 50%, transparent 50%);
+      }
+
+      .silk-darkmode .is-style-stitch-box{
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.2);
+      }
+
+      .silk-darkmode .is-style-border-top-box {
+        box-shadow: 0 3px 5px rgba(255, 255, 255, 0.22);
+      }
+
+      .silk-darkmode .is-style-border-left-box {
+        box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.33);
       }';
     }
 
