@@ -7,6 +7,12 @@
 
 //Font Awesomeのアイコン
 @import "fontawesome-before";
+
+//エディタースタイル
+@import "extension";
+@import "box-border";
+@import "box-style";
+
 .components-button.is-button{
   padding: 0 4px;
 }
