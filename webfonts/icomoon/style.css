@@ -23,6 +23,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-paw:before {
+  content: "\e907";
+}
+.icon-check-box:before {
+  content: "\e908";
+}
+.icon-check-box-none:before {
+  content: "\e909";
+}
+.icon-check:before {
+  content: "\e90a";
+}
+.icon-circle:before {
+  content: "\e90b";
+}
+.icon-ban:before {
+  content: "\e90d";
+}
+.icon-question:before {
+  content: "\e90f";
+}
+.icon-info:before {
+  content: "\e910";
+}
+.icon-speech-balloon:before {
+  content: "\e911";
+}
+.icon-thumb-up:before {
+  content: "\e918";
+}
+.icon-thumb-down:before {
+  content: "\e91a";
+}
+.icon-triangle:before {
+  content: "\e91b";
+}
+.icon-user-man:before {
+  content: "\e91d";
+}
+.icon-user-women:before {
+  content: "\e91e";
+}
+.icon-warning:before {
+  content: "\e921";
+}
+.icon-cross:before {
+  content: "\e922";
+}
 .icon-tiktok-logo:before {
   content: "\e906";
 }
@@ -146,53 +194,11 @@
 .icon-twitch-logo:before {
   content: "\ea9f";
 }
-.icon-bubble2:before {
-  content: "\e96e";
-}
-.icon-star-empty:before {
-  content: "\e9d7";
-}
-.icon-star-half:before {
-  content: "\e9d8";
-}
-.icon-star-full:before {
-  content: "\e9d9";
-}
 .icon-heart:before {
   content: "\e9da";
 }
 .icon-heart-broken:before {
   content: "\e9db";
-}
-.icon-warning:before {
-  content: "\ea07";
-}
-.icon-notification:before {
-  content: "\ea08";
-}
-.icon-question:before {
-  content: "\ea09";
-}
-.icon-info:before {
-  content: "\ea0c";
-}
-.icon-blocked:before {
-  content: "\ea0e";
-}
-.icon-cross:before {
-  content: "\ea0f";
-}
-.icon-checkmark:before {
-  content: "\ea10";
-}
-.icon-checkbox-checked:before {
-  content: "\ea52";
-}
-.icon-checkbox-unchecked:before {
-  content: "\ea53";
-}
-.icon-radio-unchecked:before {
-  content: "\ea56";
 }
 .icon-copy:before {
   content: "\e901";
