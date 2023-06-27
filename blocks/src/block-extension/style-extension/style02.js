@@ -78,8 +78,52 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( 'バツ', THEME_NAME ),
         },
         {
-          style: 'annotation-list',
-          buttonText: __( '注釈', THEME_NAME ),
+          style: 'info-list',
+          buttonText: __( '情報', THEME_NAME ),
+        },
+        {
+          style: 'question-list',
+          buttonText: __( '疑問', THEME_NAME ),
+        },
+        {
+          style: 'warning-list',
+          buttonText: __( '警告', THEME_NAME ),
+        },
+        {
+          style: 'paw-list',
+          buttonText: __( '肉球', THEME_NAME ),
+        },
+        {
+          style: 'thumb-up-list',
+          buttonText: __( 'サムアップ', THEME_NAME ),
+        },
+        {
+          style: 'thumb-down-list',
+          buttonText: __( 'サムダウン', THEME_NAME ),
+        },
+        {
+          style: 'comment-list',
+          buttonText: __( 'コメント', THEME_NAME ),
+        },
+        {
+          style: 'user-man-list',
+          buttonText: __( '男性', THEME_NAME ),
+        },
+        {
+          style: 'user-woman-list',
+          buttonText: __( '女性', THEME_NAME ),
+        },
+        {
+          style: 'heart-list',
+          buttonText: __( 'ハート', THEME_NAME ),
+        },
+        {
+          style: 'heart-broken-list',
+          buttonText: __( 'ハートブレイク', THEME_NAME ),
+        },
+        {
+          style: 'ban-list',
+          buttonText: __( '禁止', THEME_NAME ),
         },
       ];
 

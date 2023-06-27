@@ -9049,14 +9049,14 @@ https://codepen.io/nxworld/pen/oLdoWb
   display: none;
 }
 
-:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) {
+:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list, .is-style-info-list, .is-style-question-list, .is-style-warning-list, .is-style-paw-list, .is-style-thumb-up-list, .is-style-thumb-down-list, .is-style-ban-list, .is-style-user-man-list, .is-style-user-woman-list, .is-style-comment-list, .is-style-heart-list, .is-style-heart-broken-list) {
   list-style: none;
 }
-:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) li {
+:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list, .is-style-info-list, .is-style-question-list, .is-style-warning-list, .is-style-paw-list, .is-style-thumb-up-list, .is-style-thumb-down-list, .is-style-ban-list, .is-style-user-man-list, .is-style-user-woman-list, .is-style-comment-list, .is-style-heart-list, .is-style-heart-broken-list) li {
   padding-left: 1.6em;
   position: relative;
 }
-:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list) li::before {
+:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list, .is-style-info-list, .is-style-question-list, .is-style-warning-list, .is-style-paw-list, .is-style-thumb-up-list, .is-style-thumb-down-list, .is-style-ban-list, .is-style-user-man-list, .is-style-user-woman-list, .is-style-comment-list, .is-style-heart-list, .is-style-heart-broken-list) li::before {
   color: var(--cocoon-box-border-color);
   display: block;
   font-family: icomoon;
@@ -9092,6 +9092,65 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-style-cross-list li::before {
   content: "\e922";
   color: #ff7043;
+}
+
+.is-style-info-list li::before {
+  content: "\e910";
+  color: #4fc3f7;
+}
+
+.is-style-question-list li::before {
+  content: "\e90f";
+  color: #ffca28;
+}
+
+.is-style-warning-list li::before {
+  content: "\e921";
+  color: #ff7043;
+}
+
+.is-style-paw-list li::before {
+  content: "\e907";
+  color: #946243;
+}
+
+.is-style-thumb-up-list li::before {
+  content: "\e918";
+  color: #4db6ac;
+}
+
+.is-style-thumb-down-list li::before {
+  content: "\e91a";
+  color: #ee6e73;
+}
+
+.is-style-ban-list li::before {
+  content: "\e90d";
+  color: #ff7043;
+}
+
+.is-style-user-man-list li::before {
+  content: "\e91d";
+  color: #7986cb;
+}
+
+.is-style-user-woman-list li::before {
+  content: "\e91e";
+  color: #ee6e73;
+}
+
+.is-style-comment-list li::before {
+  content: "\e911";
+}
+
+.is-style-heart-list li::before {
+  content: "\e9da";
+  color: #ef5350;
+}
+
+.is-style-heart-broken-list li::before {
+  content: "\e9db";
+  color: #ef5350;
 }
 
 .no-border {

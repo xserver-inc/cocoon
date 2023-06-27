@@ -447,7 +447,7 @@
 }
 
 //アイコンリスト
-:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list){
+:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list, .is-style-info-list, .is-style-question-list, .is-style-warning-list, .is-style-paw-list, .is-style-thumb-up-list, .is-style-thumb-down-list, .is-style-ban-list, .is-style-user-man-list, .is-style-user-woman-list, .is-style-comment-list, .is-style-heart-list, .is-style-heart-broken-list){
   list-style: none;
   li{
     padding-left: 1.6em;
@@ -491,3 +491,63 @@
   content: "\e922";
   color: #ff7043;
 }
+//情報
+.is-style-info-list li::before{
+  content: "\e910";
+  color: #4fc3f7;
+}
+//疑問
+.is-style-question-list li::before{
+  content: "\e90f";
+  color: #ffca28;
+}
+//警告
+.is-style-warning-list li::before{
+  content: "\e921";
+  color: #ff7043;
+}
+//肉球
+.is-style-paw-list li::before{
+  content: "\e907";
+  color: #946243;
+}
+//サムアップ
+.is-style-thumb-up-list li::before{
+  content: "\e918";
+  color: #4db6ac;
+}
+//サムダウン
+.is-style-thumb-down-list li::before{
+  content: "\e91a";
+  color: #ee6e73;
+}
+//禁止
+.is-style-ban-list li::before{
+  content: "\e90d";
+  color: #ff7043;
+}
+//男性
+.is-style-user-man-list li::before{
+  content: "\e91d";
+  color: #7986cb;
+}
+//女性
+.is-style-user-woman-list li::before{
+  content: "\e91e";
+  color: #ee6e73;
+}
+//コメント
+.is-style-comment-list li::before{
+  content: "\e911";
+}
+//ハート
+.is-style-heart-list li::before{
+  content: "\e9da";
+  color: #ef5350;
+}
+//ハートブレイク
+.is-style-heart-broken-list li::before{
+  content: "\e9db";
+  color: #ef5350;
+}
+

@@ -71,7 +71,7 @@
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
-  --cocoon-list-box-padding: 1.6em 2em 1.6em 3em;
+  --cocoon-list-box-padding: 4% 6% 4% 8%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
@@ -1568,6 +1568,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   padding: 0 10px !important;
   margin-left: 1em;
   font-size: 8px !important;
+  line-height: 1.6;
 }
 .style-buttons .__prev.is-style-stapler-box::before, .style-buttons .__prev.is-style-stapler-box::after {
   top: 5px;
