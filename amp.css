@@ -8394,6 +8394,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   font-size: 0.8em;
   text-align: center;
 }
+.recommended .card-snippet {
+  display: none;
+}
 .recommended.rcs-image-only .card-content {
   display: none;
 }

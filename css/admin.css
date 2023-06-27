@@ -7807,6 +7807,9 @@ body.wp-admin {
   font-size: 0.8em;
   text-align: center;
 }
+.admin-settings .demo .recommended .card-snippet {
+  display: none;
+}
 .admin-settings .demo .recommended.rcs-image-only .card-content {
   display: none;
 }
@@ -15448,6 +15451,9 @@ body.wp-admin {
 .admin-settings .demo .recommended .card-content {
   font-size: 0.8em;
   text-align: center;
+}
+.admin-settings .demo .recommended .card-snippet {
+  display: none;
 }
 .admin-settings .demo .recommended.rcs-image-only .card-content {
   display: none;
