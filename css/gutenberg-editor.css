@@ -1593,8 +1593,17 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .style-buttons .__prev.is-style-hole-punch-box::after {
   right: 20%;
 }
-.style-buttons .__prev.is-style-enclosed-numeric-list li::before, .style-buttons .__prev.is-style-rank-list li::before, .style-buttons .__prev.is-style-step-list li::before {
+.style-buttons .__prev.wp-block-list {
+  margin-top: 0.4em;
+}
+.style-buttons .__prev:is(.is-style-enclosed-numeric-list, .is-style-rank-list, .is-style-step-list) li {
+  margin: 0;
+}
+.style-buttons .__prev:is(.is-style-enclosed-numeric-list, .is-style-rank-list, .is-style-step-list) li::before {
   font-size: 6px;
+  line-height: 1;
+  width: 1.7em;
+  height: 1.7em;
 }
 .style-buttons .__prev.is-style-step-list li::before {
   border-width: 1px;

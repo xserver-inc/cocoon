@@ -1350,9 +1350,20 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 
 
     //リスト
-    &.is-style-enclosed-numeric-list li::before,
-    &.is-style-rank-list li::before,
-    &.is-style-step-list li::before{font-size: 6px;}
+    &.wp-block-list{
+      margin-top: 0.4em;
+    }
+    &:is(.is-style-enclosed-numeric-list, .is-style-rank-list, .is-style-step-list){
+      li{
+        margin: 0;
+        &::before{
+          font-size: 6px;
+          line-height: 1;
+          width: 1.7em;
+          height: 1.7em;
+        }
+      }
+    }
     &.is-style-step-list li::before{
       border-width: 1px;
     }

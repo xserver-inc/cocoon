@@ -8351,25 +8351,25 @@ body.wp-admin {
   width: 1em;
 }
 .admin-settings .demo .is-style-check-list li::before {
-  content: "\ea10";
+  content: "\e90a";
 }
 .admin-settings .demo .is-style-check-valid-list li::before {
-  content: "\ea52";
+  content: "\e908";
 }
 .admin-settings .demo .is-style-check-disabled-list li::before {
-  content: "\ea53";
+  content: "\e909";
 }
 .admin-settings .demo .is-style-circle-list li::before {
-  content: "\ea56";
-  color: var(--cocoon-blue-color);
+  content: "\e90b";
+  color: #9ccc65;
 }
 .admin-settings .demo .is-style-triangle-list li::before {
-  content: "\ea56";
-  color: var(--cocoon-amber-color);
+  content: "\e91b";
+  color: #ffca28;
 }
 .admin-settings .demo .is-style-cross-list li::before {
-  content: "\ea0f";
-  color: var(--cocoon-red-color);
+  content: "\e922";
+  color: #ff7043;
 }
 .admin-settings .demo .no-border {
   border: none;
@@ -15917,25 +15917,25 @@ body.wp-admin {
   width: 1em;
 }
 .admin-settings .demo .is-style-check-list li::before {
-  content: "\ea10";
+  content: "\e90a";
 }
 .admin-settings .demo .is-style-check-valid-list li::before {
-  content: "\ea52";
+  content: "\e908";
 }
 .admin-settings .demo .is-style-check-disabled-list li::before {
-  content: "\ea53";
+  content: "\e909";
 }
 .admin-settings .demo .is-style-circle-list li::before {
-  content: "\ea56";
-  color: var(--cocoon-blue-color);
+  content: "\e90b";
+  color: #9ccc65;
 }
 .admin-settings .demo .is-style-triangle-list li::before {
-  content: "\ea56";
-  color: var(--cocoon-amber-color);
+  content: "\e91b";
+  color: #ffca28;
 }
 .admin-settings .demo .is-style-cross-list li::before {
-  content: "\ea0f";
-  color: var(--cocoon-red-color);
+  content: "\e922";
+  color: #ff7043;
 }
 .admin-settings .demo .no-border {
   border: none;
