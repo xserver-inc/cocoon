@@ -79,7 +79,7 @@ body.wp-admin {
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
-  --cocoon-list-box-padding: 1.6em 2em 1.6em 3em;
+  --cocoon-list-box-padding: 3% 4% 3% 6%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
@@ -3437,25 +3437,25 @@ body.wp-admin {
 .admin-settings .demo [class*="is-style-blank-box-"] ol, .admin-settings .demo [class*="is-style-blank-box-"] ul {
   margin: 0;
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-red {
+.admin-settings .demo .is-style-blank-box-red {
   border-color: var(--cocoon-red-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-pink {
+.admin-settings .demo .is-style-blank-box-pink {
   border-color: var(--cocoon-pink-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-navy {
+.admin-settings .demo .is-style-blank-box-navy {
   border-color: var(--cocoon-indigo-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-blue {
+.admin-settings .demo .is-style-blank-box-blue {
   border-color: var(--cocoon-blue-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-yellow {
+.admin-settings .demo .is-style-blank-box-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-green {
+.admin-settings .demo .is-style-blank-box-green {
   border-color: var(--cocoon-green-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-orange {
+.admin-settings .demo .is-style-blank-box-orange {
   border-color: var(--cocoon-orange-color);
 }
 .admin-settings .demo [class*="is-style-sticky-"] {
@@ -3474,19 +3474,19 @@ body.wp-admin {
 .admin-settings .demo [class*="is-style-sticky-"] ol, .admin-settings .demo [class*="is-style-sticky-"] ul {
   margin: 0;
 }
-.admin-settings .demo :is(div, p).is-style-sticky-yellow {
+.admin-settings .demo .is-style-sticky-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.admin-settings .demo :is(div, p).is-style-sticky-red {
+.admin-settings .demo .is-style-sticky-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.admin-settings .demo :is(div, p).is-style-sticky-blue {
+.admin-settings .demo .is-style-sticky-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.admin-settings .demo :is(div, p).is-style-sticky-green {
+.admin-settings .demo .is-style-sticky-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
@@ -11050,25 +11050,25 @@ body.wp-admin {
 .admin-settings .demo [class*="is-style-blank-box-"] ol, .admin-settings .demo [class*="is-style-blank-box-"] ul {
   margin: 0;
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-red {
+.admin-settings .demo .is-style-blank-box-red {
   border-color: var(--cocoon-red-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-pink {
+.admin-settings .demo .is-style-blank-box-pink {
   border-color: var(--cocoon-pink-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-navy {
+.admin-settings .demo .is-style-blank-box-navy {
   border-color: var(--cocoon-indigo-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-blue {
+.admin-settings .demo .is-style-blank-box-blue {
   border-color: var(--cocoon-blue-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-yellow {
+.admin-settings .demo .is-style-blank-box-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-green {
+.admin-settings .demo .is-style-blank-box-green {
   border-color: var(--cocoon-green-color);
 }
-.admin-settings .demo :is(div, p).is-style-blank-box-orange {
+.admin-settings .demo .is-style-blank-box-orange {
   border-color: var(--cocoon-orange-color);
 }
 .admin-settings .demo [class*="is-style-sticky-"] {
@@ -11087,19 +11087,19 @@ body.wp-admin {
 .admin-settings .demo [class*="is-style-sticky-"] ol, .admin-settings .demo [class*="is-style-sticky-"] ul {
   margin: 0;
 }
-.admin-settings .demo :is(div, p).is-style-sticky-yellow {
+.admin-settings .demo .is-style-sticky-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.admin-settings .demo :is(div, p).is-style-sticky-red {
+.admin-settings .demo .is-style-sticky-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.admin-settings .demo :is(div, p).is-style-sticky-blue {
+.admin-settings .demo .is-style-sticky-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.admin-settings .demo :is(div, p).is-style-sticky-green {
+.admin-settings .demo .is-style-sticky-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
@@ -19532,25 +19532,25 @@ textarea[name="the_page_memo"] {
 .components-popover__content [class*="is-style-blank-box-"] ol, .components-popover__content [class*="is-style-blank-box-"] ul {
   margin: 0;
 }
-.components-popover__content :is(div, p).is-style-blank-box-red {
+.components-popover__content .is-style-blank-box-red {
   border-color: var(--cocoon-red-color);
 }
-.components-popover__content :is(div, p).is-style-blank-box-pink {
+.components-popover__content .is-style-blank-box-pink {
   border-color: var(--cocoon-pink-color);
 }
-.components-popover__content :is(div, p).is-style-blank-box-navy {
+.components-popover__content .is-style-blank-box-navy {
   border-color: var(--cocoon-indigo-color);
 }
-.components-popover__content :is(div, p).is-style-blank-box-blue {
+.components-popover__content .is-style-blank-box-blue {
   border-color: var(--cocoon-blue-color);
 }
-.components-popover__content :is(div, p).is-style-blank-box-yellow {
+.components-popover__content .is-style-blank-box-yellow {
   border-color: var(--cocoon-yellow-color);
 }
-.components-popover__content :is(div, p).is-style-blank-box-green {
+.components-popover__content .is-style-blank-box-green {
   border-color: var(--cocoon-green-color);
 }
-.components-popover__content :is(div, p).is-style-blank-box-orange {
+.components-popover__content .is-style-blank-box-orange {
   border-color: var(--cocoon-orange-color);
 }
 .components-popover__content [class*="is-style-sticky-"] {
@@ -19569,19 +19569,19 @@ textarea[name="the_page_memo"] {
 .components-popover__content [class*="is-style-sticky-"] ol, .components-popover__content [class*="is-style-sticky-"] ul {
   margin: 0;
 }
-.components-popover__content :is(div, p).is-style-sticky-yellow {
+.components-popover__content .is-style-sticky-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
-.components-popover__content :is(div, p).is-style-sticky-red {
+.components-popover__content .is-style-sticky-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
-.components-popover__content :is(div, p).is-style-sticky-blue {
+.components-popover__content .is-style-sticky-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
-.components-popover__content :is(div, p).is-style-sticky-green {
+.components-popover__content .is-style-sticky-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }

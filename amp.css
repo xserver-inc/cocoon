@@ -71,7 +71,7 @@
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
-  --cocoon-list-box-padding: 1.6em 2em 1.6em 3em;
+  --cocoon-list-box-padding: 3% 4% 3% 6%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
@@ -3274,31 +3274,31 @@ label.screen-reader-text {
   margin: 0;
 }
 
-:is(div, p).is-style-blank-box-red {
+.is-style-blank-box-red {
   border-color: var(--cocoon-red-color);
 }
 
-:is(div, p).is-style-blank-box-pink {
+.is-style-blank-box-pink {
   border-color: var(--cocoon-pink-color);
 }
 
-:is(div, p).is-style-blank-box-navy {
+.is-style-blank-box-navy {
   border-color: var(--cocoon-indigo-color);
 }
 
-:is(div, p).is-style-blank-box-blue {
+.is-style-blank-box-blue {
   border-color: var(--cocoon-blue-color);
 }
 
-:is(div, p).is-style-blank-box-yellow {
+.is-style-blank-box-yellow {
   border-color: var(--cocoon-yellow-color);
 }
 
-:is(div, p).is-style-blank-box-green {
+.is-style-blank-box-green {
   border-color: var(--cocoon-green-color);
 }
 
-:is(div, p).is-style-blank-box-orange {
+.is-style-blank-box-orange {
   border-color: var(--cocoon-orange-color);
 }
 
@@ -3319,22 +3319,22 @@ label.screen-reader-text {
   margin: 0;
 }
 
-:is(div, p).is-style-sticky-yellow {
+.is-style-sticky-yellow {
   border-color: #FFA103;
   background-color: #ffeac7;
 }
 
-:is(div, p).is-style-sticky-red {
+.is-style-sticky-red {
   border-color: #CD3740;
   background-color: #F5DADC;
 }
 
-:is(div, p).is-style-sticky-blue {
+.is-style-sticky-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
 }
 
-:is(div, p).is-style-sticky-green {
+.is-style-sticky-green {
   border-color: #028760;
   background-color: #CBEFE4;
 }
