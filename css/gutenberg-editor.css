@@ -135,6 +135,59 @@
   max-width: 840px;
 }
 
+.article dd {
+  margin-left: 40px;
+}
+.article ul li,
+.article ol li {
+  margin: 0.2em;
+}
+.article .wp-block-gallery ul {
+  padding-left: 0;
+}
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  line-height: 1.25;
+  font-weight: bold;
+}
+.article h4,
+.article h5,
+.article h6 {
+  font-size: 20px;
+  padding: 9px 10px;
+}
+.article h2 {
+  font-size: 24px;
+  padding: 25px;
+  background-color: var(--cocoon-xx-thin-color);
+  border-radius: var(--cocoon-badge-border-radius);
+}
+.article h3 {
+  border-left: 7px solid var(--cocoon-middle-thickness-color);
+  border-right: 1px solid var(--cocoon-thin-color);
+  border-top: 1px solid var(--cocoon-thin-color);
+  border-bottom: 1px solid var(--cocoon-thin-color);
+  font-size: 22px;
+  padding: 12px 20px;
+}
+.article h4 {
+  border-top: 2px solid var(--cocoon-thin-color);
+  border-bottom: 2px solid var(--cocoon-thin-color);
+}
+.article h5 {
+  border-bottom: 2px solid var(--cocoon-thin-color);
+}
+.article h6 {
+  border-bottom: 1px solid var(--cocoon-thin-color);
+}
+.article .column-wrap h1, .article .column-wrap h2, .article .column-wrap h3, .article .column-wrap h4, .article .column-wrap h5, .article .column-wrap h6 {
+  margin-top: 0;
+}
+
 [class*="fab-"]::before {
   font-family: FontAwesome;
 }

@@ -5,6 +5,11 @@
 //theme.json
 @import "gutenberg-editor-after-theme-json";
 
+//見出しなど
+.article{
+  @import "article";
+}
+
 //Font Awesomeのアイコン
 @import "fontawesome-before";
 
