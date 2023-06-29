@@ -1285,6 +1285,19 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   }
 }
 
+//メディアライブラリに適用されたのを打ち消す
+.media-modal-content{
+  .search-form{
+    margin: 0 !important;
+    display: block !important;
+    max-width: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+}
+
 // //ブロックエディターの囲みブロック内のリンクを無効化する
 // .btn-wrap-block a{
 //   pointer-events: none;

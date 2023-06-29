@@ -173,8 +173,6 @@ function gutenberg_stylesheets_custom() {
     //WordPressバージョンが5.8以上の時
     if (is_wp_5_8_or_over()) {
 
-      wp_enqueue_style( THEME_NAME . '-gutenberg-content', get_template_directory_uri() . '/css/gutenberg-content.css' );
-
       //カラーパレットスタイル
       $css = get_block_editor_color_palette_css();
       $file = get_block_color_palette_css_cache_file();

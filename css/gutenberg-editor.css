@@ -4921,6 +4921,16 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   margin-top: 0 !important;
 }
 
+.media-modal-content .search-form {
+  margin: 0 !important;
+  display: block !important;
+  max-width: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
 .style-buttons {
   box-sizing: border-box;
   display: flex;
