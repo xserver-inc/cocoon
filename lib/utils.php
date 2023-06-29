@@ -2041,9 +2041,8 @@ function is_user_agent_live_writer(){
 }
 endif;
 
-//タブレットをモバイルとしないモバイル判定関数
+//ユーザーエージェントがボットかどうか
 if ( !function_exists( 'is_useragent_robot' ) ):
-//スマホ表示分岐
 function is_useragent_robot(){
   $useragents = array(
     // 'Googlebot', //http://www.google.com/bot.html

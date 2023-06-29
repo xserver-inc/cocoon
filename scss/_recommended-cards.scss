@@ -26,10 +26,9 @@
     font-size: 0.8em;
     text-align: center;
   }
-  .card-snippet{
+  .card-snippet {
     display: none;
   }
-
   &.rcs-image-only{
     .card-content{
       display: none;
@@ -43,23 +42,12 @@
       bottom: 0;
       text-align: center;
       opacity: 1;
-      //background-color: rgba(51, 51, 51, 0.3);
       font-size: 1em;
       max-height: none;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100%;
-      //font-weight: 700;
-      // .card-title{
-      //   display:table-cell;
-      //   vertical-align:middle;
-      // }
-    }
-    .a-wrap:hover{
-      .card-content{
-        opacity: 1;
-      }
     }
   }
   &.rcs-center-white-title{
@@ -67,22 +55,16 @@
       background: none;
       background-color: rgba(51, 51, 51, 0.3);
       transition: all .7s;
-      // &:hover{
-      //   transition: all .3s;
-      //   opacity: 0;
-      // }
     }
 
     .a-wrap:hover{
       .card-content{
-        transition: all .7s;
         opacity: 0;
       }
     }
   }
   &.rcs-center-label-title{
     .card-content{
-      //background-color: rgba(51, 51, 51, 0);
       padding: 0;
       background: transparent;
 
@@ -90,14 +72,12 @@
         color: var(--cocoon-text-color);
         padding: 6px 1.2em;
         background-color: rgba(255, 255, 255, 0.8);
-        transition: all .3s;
+        transition: all .5s;
         border-radius: 99px;
         font-size: 0.9em;
       }
       &:hover{
         .card-title{
-          transition: all .5s;
-          //margin-top: 1500px;
           opacity: 0;
         }
       }

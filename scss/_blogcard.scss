@@ -10,11 +10,9 @@
 
 .blogcard{
   @include card_padding;
-  border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
   line-height: 1.6;
   position: relative;
-  // margin-bottom: 1.2em;
 }
 
 .blogcard-thumbnail{
@@ -90,6 +88,7 @@ img.blogcard-favicon-image{
   .blogcard-thumbnail{
     float: right;
     margin-left: $thumb_content_margin;
+    margin-right: 0;
   }
 
   .blogcard-content{

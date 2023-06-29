@@ -27,18 +27,6 @@ if ( get_google_search_console_id() ): ?>
 <meta name="google-site-verification" content="<?php echo get_google_search_console_id() ?>" />
 <!-- /Google Search Console -->
 <?php endif;//Google Search Console終了 ?>
-<?php //Clarityコードの表示
-if ( get_clarity_project_id() ): ?>
-<!-- Clarity -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "<?php echo get_clarity_project_id() ?>");
-</script>
-<!-- /Clarity -->
-<?php endif;//Clarity終了 ?>
 <?php //preconnect dns-prefetch
 $domains = list_text_to_array(get_pre_acquisition_list());
 if ($domains) {
@@ -57,17 +45,6 @@ foreach ($domains as $domain): ?>
 <link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>" crossorigin>
 <?php endif; ?>
-
-<?php //Google Tag Manager
-if (is_analytics() && $tracking_id = get_google_tag_manager_tracking_id()): ?>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','<?php echo $tracking_id; ?>');</script>
-<!-- End Google Tag Manager -->
-<?php endif //Google Tag Manager終了 ?>
 <?php //WordPressが出力するヘッダー情報
 wp_head();
 ?>

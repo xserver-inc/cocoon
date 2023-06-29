@@ -313,6 +313,7 @@ const addCustomSave = ( props, blockType, attributes ) => {
       } );
     }
 
+
     return Object.assign( props );
   }
   return props;

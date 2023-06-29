@@ -28,14 +28,11 @@
   padding: 5px 8px;
   height: 100%;
 }
+
 .is-style-square .faq-answer-label{
   background-color: var(--cocoon-custom-answer-color);
 }
-.is-style-square .faq-item-label{
-  font-size: 20px;
-  padding: 5px 8px;
-  height: 100%;
-}
+
 .faq-item-content{
   flex: 1 1 auto;
   width: calc(60%);

@@ -14,12 +14,6 @@
   cursor: pointer; /* カーソルをポインターに */
 }
 
-//MacでChromeの際何度か提示遷移するとページャーがクリックできなくなる対応
-//https://is.gd/pl1Rvs
-.main {
-  z-index: 0;
-}
-
 .ad-index-bottom {
   position: relative;
   z-index: -1;

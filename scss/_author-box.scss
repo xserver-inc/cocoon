@@ -2,11 +2,7 @@
 ** プロフィールボックス
 ************************************/
 .author-box{
-  border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
-  // margin-bottom: 1.2em;
-  //padding: 1.2% 1.6%;
-  //display: flex;
   line-height: 1.4;
   position: relative;
   @include card_padding;

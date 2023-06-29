@@ -7,6 +7,13 @@
 
 //Font Awesomeのアイコン
 @import "fontawesome-before";
+
+//エディタースタイル
+@import "extension";
+@import "extension-layout";
+@import "box-border";
+@import "box-style";
+
 .components-button.is-button{
   padding: 0 4px;
 }
@@ -1279,6 +1286,19 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   }
 }
 
+//メディアライブラリに適用されたのを打ち消す
+.media-modal-content{
+  .search-form{
+    margin: 0 !important;
+    display: block !important;
+    max-width: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+}
+
 // //ブロックエディターの囲みブロック内のリンクを無効化する
 // .btn-wrap-block a{
 //   pointer-events: none;
@@ -1414,10 +1434,9 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   border: 1px solid var(--cocoon-basic-border-color);
 }
 
-:is(ul, ol).wp-block-list .wp-block-list-item{
-  margin-bottom: 0.3em;
-}
-
 .components-range-control .components-base-control__label{
   margin: 0.2em 0 1em;
+}
+.block-editor-iframe__body .editor-post-title::after{
+  display: none;
 }

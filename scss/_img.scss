@@ -59,24 +59,16 @@ img{
   margin: 0;
 }
 
-.ib-right .blogcard-thumbnail,
-.eb-right .blogcard-thumbnail{
-  margin-right: 0;
-  margin-left: 1.4%;
-}
-
 ///////////////////////////////////////
 // サムネイル非表示
 ///////////////////////////////////////
 .no-thumbnail{
   .card-thumb,
-  //.blogcard-thumbnail,
   .widget-entry-card-pv{
     display: none;
   }
 
   .card-content,
-  //.blogcard-wrap .blogcard .blogcard-content,
   .widget-entry-cards .widget-entry-card-content,
   .rect-mini-card .related-entry-card-content{
     margin: 0;
@@ -101,10 +93,6 @@ img{
   .entry-card-snippet,
   .related-entry-card-snippet{
     max-height: #{8 * 1.3}em;
-  }
-
-  .entry-card-day{
-    display: inline;
   }
 
   .e-card-meta .e-card-categorys{
