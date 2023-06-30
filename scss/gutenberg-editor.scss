@@ -5,12 +5,18 @@
 //theme.json
 @import "gutenberg-editor-after-theme-json";
 
+//見出しなど
+.article{
+  @import "article";
+}
+
 //Font Awesomeのアイコン
 @import "fontawesome-before";
 
 //エディタースタイル
 @import "extension";
 @import "extension-layout";
+@import "faq";
 @import "box-border";
 @import "box-style";
 
@@ -359,41 +365,9 @@ ul{
   padding: 8px;
 }
 
-// .block-editor-block-list__layout *{
-//   box-sizing: border-box;
-// }
-
-// table{
-//   width: 90% !important;
-// }
-
-/* wp-includes/css/dist/block-library/theme.css
-.wp-block-separator:not(.is-style-wide):not(.is-style-dots){
-    max-width:100px;
-}
-*/
-
-/* wp-includes/css/dist/block-library/editor.css
-.wp-block-table__cell-content{
-    padding:.5em;
-}
-*/
-
-/* wp-includes/css/dist/block-library/editor.css
-.editor-rich-text__tinymce>p:first-child{
-    margin-top:0;
-}
-*/
-
 .wp-block-quote__citation {
   font-style: italic;
 }
-
-/* wp-includes/css/dist/block-library/editor.css
-.editor-block-list__block[data-align=center] {
-    text-align: center
-}
-*/
 
 .wp-block {
   &.editor-block-list__block[data-align=center] {
@@ -877,15 +851,15 @@ ol, ul {
   background-color: #fff;
 }
 
-//Gutenbergエディター.block-editor-block-list__layoutの最後に
-//.block-list-appenderが来るので:last-child余白調整が入らないのを修正
-div{
-  .block-editor-block-list__layout{
-    :last-of-type{
-      margin-bottom: 0;
-    }
-  }
-}
+// //Gutenbergエディター.block-editor-block-list__layoutの最後に
+// //.block-list-appenderが来るので:last-child余白調整が入らないのを修正
+// div{
+//   .block-editor-block-list__layout{
+//     :last-of-type{
+//       margin-bottom: 0;
+//     }
+//   }
+// }
 
 p {
   margin-top: 0;
@@ -1285,24 +1259,6 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     margin-top: 0 !important;
   }
 }
-
-//メディアライブラリに適用されたのを打ち消す
-.media-modal-content{
-  .search-form{
-    margin: 0 !important;
-    display: block !important;
-    max-width: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    border: none !important;
-    padding: 0 !important;
-  }
-}
-
-// //ブロックエディターの囲みブロック内のリンクを無効化する
-// .btn-wrap-block a{
-//   pointer-events: none;
-// }
 
 .style-buttons{
   box-sizing: border-box;
