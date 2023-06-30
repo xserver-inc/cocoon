@@ -6358,9 +6358,6 @@ div.speech-balloon p {
   border-left-color: var(--cocoon-custom-background-color);
 }
 
-div.sbs-think {
-  --cocoon-custom-background-color: transparent;
-}
 div.sbs-think.sbp-l .speech-balloon {
   margin-left: 46px;
 }
