@@ -165,6 +165,26 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           style: 'profile-box',
           buttonText: __( 'プロフィール', THEME_NAME ),
         },
+        {
+          style: 'sticky-gray',
+          buttonText: __( '付箋灰', THEME_NAME ),
+        },
+        {
+          style: 'sticky-yellow',
+          buttonText: __( '付箋黄', THEME_NAME ),
+        },
+        {
+          style: 'sticky-red',
+          buttonText: __( '付箋赤', THEME_NAME ),
+        },
+        {
+          style: 'sticky-blue',
+          buttonText: __( '付箋青', THEME_NAME ),
+        },
+        {
+          style: 'sticky-green',
+          buttonText: __( '付箋黄', THEME_NAME ),
+        },
       ];
 
       return (
