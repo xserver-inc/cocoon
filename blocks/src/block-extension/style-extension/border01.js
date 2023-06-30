@@ -113,6 +113,42 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           style: 'border-radius-l-convex',
           buttonText: __( '微凸(角丸大)', THEME_NAME ),
         },
+        {
+          style: 'blank-box-gray',
+          buttonText: __( '白抜き灰', THEME_NAME ),
+        },
+        {
+          style: 'blank-box-red',
+          buttonText: __( '白抜き赤', THEME_NAME ),
+        },
+        {
+          style: 'blank-box-pink',
+          buttonText: __( '白抜きピンク', THEME_NAME ),
+        },
+        {
+          style: 'blank-box-navy',
+          buttonText: __( '白抜き紺', THEME_NAME ),
+        },
+        {
+          style: 'blank-box-blue',
+          buttonText: __( '白抜き青', THEME_NAME ),
+        },
+        {
+          style: 'blank-box-purple',
+          buttonText: __( '白抜き紫', THEME_NAME ),
+        },
+        {
+          style: 'blank-box-orange',
+          buttonText: __( '白抜きオレンジ', THEME_NAME ),
+        },
+        {
+          style: 'blank-box-yellow',
+          buttonText: __( '白抜き黄', THEME_NAME ),
+        },
+        {
+          style: 'blank-box-green',
+          buttonText: __( '白抜き緑', THEME_NAME ),
+        },
       ];
 
       return (

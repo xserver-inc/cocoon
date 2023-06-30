@@ -202,10 +202,6 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( '付箋灰', THEME_NAME ),
         },
         {
-          style: 'sticky-yellow',
-          buttonText: __( '付箋黄', THEME_NAME ),
-        },
-        {
           style: 'sticky-red',
           buttonText: __( '付箋赤', THEME_NAME ),
         },
@@ -214,8 +210,12 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( '付箋青', THEME_NAME ),
         },
         {
-          style: 'sticky-green',
+          style: 'sticky-yellow',
           buttonText: __( '付箋黄', THEME_NAME ),
+        },
+        {
+          style: 'sticky-green',
+          buttonText: __( '付箋緑', THEME_NAME ),
         },
       ];
 
