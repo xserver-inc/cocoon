@@ -166,6 +166,38 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( 'プロフィール', THEME_NAME ),
         },
         {
+          style: 'primary-box',
+          buttonText: __( 'プライマリー', THEME_NAME ),
+        },
+        {
+          style: 'success-box',
+          buttonText: __( 'サクセス', THEME_NAME ),
+        },
+        {
+          style: 'info-box',
+          buttonText: __( 'インフォ', THEME_NAME ),
+        },
+        {
+          style: 'warning-box',
+          buttonText: __( 'ワーニング', THEME_NAME ),
+        },
+        {
+          style: 'danger-box',
+          buttonText: __( 'デンジャー', THEME_NAME ),
+        },
+        {
+          style: 'secondary-box',
+          buttonText: __( 'セカンダリー', THEME_NAME ),
+        },
+        {
+          style: 'light-box',
+          buttonText: __( 'ライト', THEME_NAME ),
+        },
+        {
+          style: 'dark-box',
+          buttonText: __( 'ダーク', THEME_NAME ),
+        },
+        {
           style: 'sticky-gray',
           buttonText: __( '付箋灰', THEME_NAME ),
         },
