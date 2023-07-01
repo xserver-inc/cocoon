@@ -3574,7 +3574,6 @@ body.wp-admin {
 .admin-settings .demo .media-modal-content .search-form {
   margin: 0 !important;
   display: block !important;
-  max-width: auto !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   border: none !important;
@@ -8320,7 +8319,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-stapler-top-left-box {
   position: relative;
-  --cocoon-box-padding: 20px 20px 20px 35px;
   padding: 20px 20px 20px 35px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -8338,7 +8336,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-hole-punch-box {
   position: relative;
-  --cocoon-box-padding: 40px 20px 15px;
   padding: 40px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -11216,7 +11213,6 @@ body.wp-admin {
 .admin-settings .demo .media-modal-content .search-form {
   margin: 0 !important;
   display: block !important;
-  max-width: auto !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   border: none !important;
@@ -15962,7 +15958,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-stapler-top-left-box {
   position: relative;
-  --cocoon-box-padding: 20px 20px 20px 35px;
   padding: 20px 20px 20px 35px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -15980,7 +15975,6 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-hole-punch-box {
   position: relative;
-  --cocoon-box-padding: 40px 20px 15px;
   padding: 40px 20px 15px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
@@ -19767,7 +19761,6 @@ textarea[name="the_page_memo"] {
 .components-popover__content .media-modal-content .search-form {
   margin: 0 !important;
   display: block !important;
-  max-width: auto !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   border: none !important;
