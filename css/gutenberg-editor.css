@@ -1501,7 +1501,6 @@ div.search-form {
 .media-modal-content .search-form {
   margin: 0 !important;
   display: block !important;
-  max-width: auto !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   border: none !important;

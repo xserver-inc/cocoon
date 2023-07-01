@@ -3459,7 +3459,6 @@ div.search-form {
 .media-modal-content .search-form {
   margin: 0 !important;
   display: block !important;
-  max-width: auto !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   border: none !important;
@@ -6333,9 +6332,6 @@ div.speech-balloon p {
   border-left-color: var(--cocoon-custom-background-color);
 }
 
-div.sbs-think {
-  --cocoon-custom-background-color: transparent;
-}
 div.sbs-think.sbp-l .speech-balloon {
   margin-left: 46px;
 }
