@@ -2047,15 +2047,17 @@ pre {
 /* ウィジェット用 */
 .widget_search .search-edit {
 	width: 92%;
+	height: 50px;
 }
 
 .search-submit {
-	top: 4px;
+	top: 0;
 	right: 0;
 	border: none;
 	color: rgba(var(--black-color), 1);
 	background: rgba(var(--primary-color-tegaki-note), 1);
-	padding: .5em .6em;
+	width: 50px;
+	height: 50px;
 }
 
 /* モバイルメニューボタン用 */
