@@ -181,7 +181,7 @@ function change_script_tag_attrs( $tag, $handle, $src ) {
     //'code-highlight-js',
   );
   $crossorigin_anonymouses = array(
-    'barba-js-polyfill',
+    //
   );
 
   if ( in_array( $handle, $async_defers ) ) {

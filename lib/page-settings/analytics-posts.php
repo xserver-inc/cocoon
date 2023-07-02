@@ -13,27 +13,14 @@ update_theme_option(OP_ANALYTICS_ADMIN_INCLUDE);
 //Google Tag ManagerのトラッキングID
 update_theme_option(OP_GOOGLE_TAG_MANAGER_TRACKING_ID);
 
-//Google Tag ManagerのAMPトラッキングID
-update_theme_option(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID);
-
 //GA4測定ID
 update_theme_option(OP_GA4_TRACKING_ID);
-
-//ユニバーサルアナリティクスID
-update_theme_option(OP_GOOGLE_ANALYTICS_TRACKING_ID);
-
-//Google Analyticsのスクリプト
-update_theme_option(OP_GOOGLE_ANALYTICS_SCRIPT);
 
 //Google Search Console ID
 update_theme_option(OP_GOOGLE_SEARCH_CONSOLE_ID);
 
 //Clarity ID
 update_theme_option(OP_CLARITY_PROJECT_ID);
-
-//PtengineのトラッキングID
-update_theme_option(OP_PTENGINE_TRACKING_ID);
-
 
 //その他のアクセス解析<head></head>内タグ
 update_theme_option(OP_OTHER_ANALYTICS_HEAD_TAGS);

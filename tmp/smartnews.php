@@ -163,25 +163,25 @@ do_action( 'rss_tag_pre', 'rss2' );
 		}
     ?>
 		<media:thumbnail url="<?php echo $thumbnail; ?>" />
-		<?php //AnalyticsトラッキングID
-		$tracking_id = get_google_analytics_tracking_id();
-		if (!$tracking_id) {
-			$tracking_id = 'UA-XXXXXX';
-		}
-		?>
-		<snf:analytics><![CDATA[
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', '<?php echo $tracking_id; ?>', '<?php echo get_the_site_domain(); ?>');
-        ga('require', 'displayfeatures');
-        ga('set', 'referrer', 'http://www.smartnews.com/');
-        ga('send', 'pageview', '<?php echo str_replace(home_url(), '', get_permalink()); ?>');
-    </script>
-    ]]>
-    </snf:analytics>
+		<?php //Googleアナリティクス4トラッキングID
+		$tracking_id = get_ga4_tracking_id();
+		if ($tracking_id): ?>
+			<snf:analytics ><![CDATA[
+				<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tracking_id; ?>"></script>
+				<script>
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+
+						gtag('config', '<?php echo $tracking_id; ?>',{'page_path':'<?php echo str_replace(home_url(), '', get_permalink()); ?>',
+						'page_referrer':'http://www.smartnews.com/',
+						'campaign_source':'SmartNews',
+						'campaign_medium':'app'
+						});
+				</script>
+				]]>
+			</snf:analytics>
+		<?php endif; ?>
 	</item>
 	<?php endwhile; ?>
 </channel>

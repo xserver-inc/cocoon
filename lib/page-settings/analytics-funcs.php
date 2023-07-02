@@ -23,41 +23,11 @@ function get_google_tag_manager_tracking_id(){
 }
 endif;
 
-//Google Tag ManagerのAMPトラッキングID
-define('OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID', 'google_tag_manager_amp_tracking_id');
-if ( !function_exists( 'get_google_tag_manager_amp_tracking_id' ) ):
-function get_google_tag_manager_amp_tracking_id(){
-  return get_theme_option(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID);
-}
-endif;
-
 //GA4測定ID
 define('OP_GA4_TRACKING_ID', 'ga4_tracking_id');
 if ( !function_exists( 'get_ga4_tracking_id' ) ):
 function get_ga4_tracking_id(){
   return get_theme_option(OP_GA4_TRACKING_ID);
-}
-endif;
-
-//ユニバーサルアナリティクスID
-define('OP_GOOGLE_ANALYTICS_TRACKING_ID', 'google_analytics_tracking_id');
-if ( !function_exists( 'get_google_analytics_tracking_id' ) ):
-function get_google_analytics_tracking_id(){
-  return get_theme_option(OP_GOOGLE_ANALYTICS_TRACKING_ID);
-}
-endif;
-
-//Google Analyticsのスクリプト
-define('OP_GOOGLE_ANALYTICS_SCRIPT', 'google_analytics_script');
-if ( !function_exists( 'get_google_analytics_script' ) ):
-function get_google_analytics_script(){
-  return 'gtag.js';
-  // return get_theme_option(OP_GOOGLE_ANALYTICS_SCRIPT, 'gtag.js');
-}
-endif;
-if ( !function_exists( 'is_google_analytics_script_gtag_js' ) ):
-function is_google_analytics_script_gtag_js(){
-  return get_google_analytics_script() == 'gtag.js';
 }
 endif;
 
@@ -74,14 +44,6 @@ define('OP_CLARITY_PROJECT_ID', 'clarity_project_id');
 if ( !function_exists( 'get_clarity_project_id' ) ):
 function get_clarity_project_id(){
   return get_theme_option(OP_CLARITY_PROJECT_ID);
-}
-endif;
-
-//PtengineのID
-define('OP_PTENGINE_TRACKING_ID', 'ptengine_tracking_id');
-if ( !function_exists( 'get_ptengine_tracking_id' ) ):
-function get_ptengine_tracking_id(){
-  return get_theme_option(OP_PTENGINE_TRACKING_ID);
 }
 endif;
 
