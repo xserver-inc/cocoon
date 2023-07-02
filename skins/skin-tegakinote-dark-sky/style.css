@@ -2042,8 +2042,6 @@ pre {
 	background: rgba(var(--gray-color), 1);
 }
 
-.wp-block-search__button
-
 /* ウィジェット用 */
 .widget_search .search-edit {
 	width: 92%;
