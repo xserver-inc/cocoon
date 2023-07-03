@@ -11,17 +11,20 @@ if ( !defined( 'ABSPATH' ) ) exit;
 $cat_ids = get_index_list_category_ids();
 //インデックスリスト用のクラス取得
 $list_classes = get_index_list_classes();
+
+//選択可能なカテゴリ数
+$cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
 ?>
 
 <div id="index-tab-wrap" class="index-tab-wrap <?php echo get_front_page_type_class(); ?>">
   <input id="index-tab-1" type="radio" name="tab_item" checked>
-  <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
+  <?php for ($i=0; $i < count($cat_ids) && $i < $cat_count; $i++):
   $number = $i + 2; ?>
   <input id="index-tab-<?php echo $number; ?>" type="radio" name="tab_item">
   <?php endfor; ?>
   <div class="index-tab-buttons">
     <label class="index-tab-button" for="index-tab-1"><?php echo apply_filters('new_entries_caption', __( '新着記事', THEME_NAME )); ?></label>
-    <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
+    <?php for ($i=0; $i < count($cat_ids) && $i < $cat_count; $i++):
     $number = $i + 2;
     $cat_id = $cat_ids[$i]; ?>
         <?php if (is_category_exist($cat_id)): ?>
@@ -38,7 +41,7 @@ $list_classes = get_index_list_classes();
       get_template_part('tmp/pagination');
        ?>
   </div>
-  <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
+  <?php for ($i=0; $i < count($cat_ids) && $i < $cat_count; $i++):
  //var_dump($cat_ids);
   $number = $i + 2;
   $cat_id = $cat_ids[$i];
