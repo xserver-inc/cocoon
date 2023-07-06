@@ -9,7 +9,7 @@ import classnames from 'classnames';
 import { THEME_NAME } from '../../helpers';
 
 // 拡張対象ブロック
-const allowedBlocks = [ 'core/paragraph', 'core/list' ];
+const allowedBlocks = [ 'core/paragraph', 'core/list', 'core/group' ];
 
 // custom attributesの追加
 function addCustomAttributes( settings ) {
