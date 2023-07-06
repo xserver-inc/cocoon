@@ -72,16 +72,11 @@ class RelatedEntryWidgetItem extends WP_Widget {
     //classにwidgetと一意となるクラス名を追加する
     if ( is_single() && get_category_ids() ):
       echo $args['before_widget'];
-      if (!is_null($title)) {
+      if ($title) {
         echo $args['before_title'];
-        if ($title) {
-          echo $title;//タイトルが設定されている場合は使用する
-        } else {
-          _e( '関連記事', THEME_NAME );
-        }
+        echo $title;//タイトルが設定されている場合は使用する
         echo $args['after_title'];
       }
-      //_v($exclude_cat_ids);
 
       if ($taxonomy == 'category') {
         //カテゴリーの時はタグを空にする
@@ -139,7 +134,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){
       $instance = array(
-        'title'   => '',
+        'title'   => __( '関連記事', THEME_NAME ),
         'entry_count' => EC_DEFAULT,
         'entry_type'  => ET_DEFAULT,
         'taxonomy'  => 'category',
@@ -149,7 +144,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
         'exclude_cat_ids' => array(),
       );
     }
-    $title   = '';
+    $title = __( '関連記事', THEME_NAME );
     $entry_count = EC_DEFAULT;
     $entry_type  = ET_DEFAULT;
     $taxonomy = 'category';

@@ -42,8 +42,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
     $instance['title'] = strip_tags(isset($new_instance['title']) ? $new_instance['title'] : '');
     $instance['label'] = isset($new_instance['label']) ? $new_instance['label'] : '';
     $instance['is_image_circle'] = !empty($new_instance['is_image_circle']);
-    //_v($instance);
-      return $instance;
+    return $instance;
   }
   function form($instance) {
     if(empty($instance)){//notice回避

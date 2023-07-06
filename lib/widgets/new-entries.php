@@ -50,21 +50,14 @@ class NewEntryWidgetItem extends WP_Widget {
               ($widget_mode == WM_DEFAULT) ||
               //「表示モード」が「カテゴリー別新着記事」のとき
               ( ($widget_mode == 'category') && get_category_ids() ) ):
+
       echo $args['before_widget'];
-      if (!is_null($title)) {
+
+      if ($title) {
         echo $args['before_title'];
-        if ($title) {
-          echo $title;//タイトルが設定されている場合は使用する
-        } else {
-          if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
-            echo apply_filters('new_entries_caption', __( '新着記事', THEME_NAME ));;
-          } else {
-            _e( 'カテゴリー別新着記事', THEME_NAME );
-          }
-        }
+        echo $title;//タイトルが設定されている場合は使用する
         echo $args['after_title'];
       }
-
 
       //引数配列のセット
       $atts = array(
@@ -106,6 +99,7 @@ class NewEntryWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){
       $instance = array(
+        'title' => __( '新着記事', THEME_NAME ),
         'widget_mode' => WM_DEFAULT,
         'title'   => '',
         'entry_count' => EC_DEFAULT,
@@ -118,7 +112,7 @@ class NewEntryWidgetItem extends WP_Widget {
       );
     }
     $widget_mode = WM_DEFAULT;
-    $title   = '';
+    $title   = '新着記事';
     $entry_count = EC_DEFAULT;
     $entry_type  = ET_DEFAULT;
     $is_sticky_visible  = 1;
