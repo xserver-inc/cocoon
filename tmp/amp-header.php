@@ -59,8 +59,8 @@ if( includes_string($all_content, 'class="amp-form') ) {
   echo '<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>'.PHP_EOL;
 }
 
-//AMP Analytics・Google Tag Manager用のライブラリ
-if ( is_analytics() && (get_google_analytics_tracking_id() || get_google_tag_manager_tracking_id() || get_ga4_tracking_id()) )  {
+//AMP Analytics用のライブラリ
+if ( is_analytics() && get_ga4_tracking_id() )  {
   echo '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'.PHP_EOL;
 }
 
@@ -129,9 +129,6 @@ if (!is_site_font_family_local()) {
 
   <?php //トップに戻るの<body>直後コード
   get_template_part('tmp/amp-button-go-to-top-in-body') ?>
-
-  <?php //AMP用のGoogle Tag Managerコード
-  get_template_part('tmp/amp-tagmanager') ?>
 
   <?php //AMP用のAnalyticsコード
   get_template_part('tmp/amp-analytics') ?>

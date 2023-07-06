@@ -104,9 +104,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   </div><!-- #container -->
 
-  <?php //barba.js処理
-  get_template_part('tmp/footer-barba-js');?>
-
 </body>
 
 </html>

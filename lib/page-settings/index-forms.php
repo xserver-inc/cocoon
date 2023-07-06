@@ -41,7 +41,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- フロントページ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_FRONT_PAGE_TYPE, __( 'フロントページタイプ', THEME_NAME ).__( '（β版）', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_FRONT_PAGE_TYPE, __( 'フロントページタイプ', THEME_NAME )); ?>
           </th>
           <td>
             <?php

@@ -200,7 +200,6 @@ input::placeholder,input:-ms-input-placeholder,input::-ms-input-placeholder {
     border-radius: 4px;
     font-size: 14px;
     line-height: 2;
-    color: lightseagreen;
     width: 100%;
 }
 
