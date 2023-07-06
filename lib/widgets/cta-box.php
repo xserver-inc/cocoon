@@ -52,7 +52,7 @@ class CTABoxWidgetItem extends WP_Widget {
     set_query_var('_BUTTON_URL', $button_url);
     set_query_var('_BUTTON_COLOR_CLASS', $button_color_class);
 
-    get_template_part('tmp/cta-box');
+    cocoon_template_part('tmp/cta-box');
 
     echo $args['after_widget'];
   }

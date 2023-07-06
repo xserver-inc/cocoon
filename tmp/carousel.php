@@ -43,7 +43,7 @@ $query = new WP_Query( $args );
     <div class="carousel-content cf">
       <?php while ($query -> have_posts()) : $query -> the_post(); ?>
         <?php //カルーセルカードの取得
-        get_template_part('tmp/carousel-entry-card'); ?>
+        cocoon_template_part('tmp/carousel-entry-card'); ?>
       <?php endwhile;?>
     </div>
   </div>

@@ -16,7 +16,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <meta name="format-detection" content="telephone=no">
 
 <?php //ヘッドタグ内挿入用のアクセス解析用テンプレート
-get_template_part('tmp/head-analytics'); ?>
+cocoon_template_part('tmp/head-analytics'); ?>
 <?php //AMPの案内タグを出力
 if ( has_amp_page() ): ?>
 <link rel="amphtml" href="<?php echo get_amp_permalink(); ?>">
@@ -50,22 +50,22 @@ wp_head();
 ?>
 
 <?php //カスタムフィールドの挿入（カスタムフィールド名：head_custom
-get_template_part('tmp/head-custom-field'); ?>
+cocoon_template_part('tmp/head-custom-field'); ?>
 
 <?php //headで読み込む必要があるJavaScript
-get_template_part('tmp/head-javascript'); ?>
+cocoon_template_part('tmp/head-javascript'); ?>
 
 <?php //PWAスクリプト
-get_template_part('tmp/head-pwa'); ?>
+cocoon_template_part('tmp/head-pwa'); ?>
 
 <?php //ヘッドタグ内挿入用のユーザー用テンプレート
-get_template_part('tmp-user/head-insert'); ?>
+cocoon_template_part('tmp-user/head-insert'); ?>
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage" data-barba="wrapper">
+<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
 <?php //body最初に挿入するアクセス解析ヘッダータグの取得
-  get_template_part('tmp/body-top-analytics'); ?>
+  cocoon_template_part('tmp/body-top-analytics'); ?>
 
 <?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
-get_template_part('tmp/body-top'); ?>
+cocoon_template_part('tmp/body-top'); ?>

@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <div class="demo">
             <?php //テンプレートの読み込み
               if (is_sns_follow_buttons_visible())
-                get_template_part('/tmp/sns-follow-buttons'); ?>
+                cocoon_template_part('/tmp/sns-follow-buttons'); ?>
             </div>
           </td>
         </tr>

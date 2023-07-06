@@ -33,10 +33,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
     if ($title) {
       echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
     }
-    //set_query_var('_WIDGET_NAME', $label);
-    //get_template_part('tmp/author-box');
-    // if (!is_bbpress_page()) {
-    // }
+
     generate_author_box_tag(null, $label, $is_image_circle);
     echo $args['after_widget'];
   }

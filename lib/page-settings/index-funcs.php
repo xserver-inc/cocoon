@@ -330,11 +330,11 @@ function get_category_index_list_entry_card_tag($categories, $count){
       $count++;
       //エントリーカウントをテンプレートファイルに渡す
       set_query_var('count', $count);
-      get_template_part('tmp/entry-card');
+      cocoon_template_part('tmp/entry-card');
     } // 繰り返し処理終了
     $count = 0;
   } else { // ここから記事が見つからなかった場合の処理
-    get_template_part('tmp/list-not-found-posts');
+    cocoon_template_part('tmp/list-not-found-posts');
   }
   wp_reset_postdata();
   return ob_get_clean();

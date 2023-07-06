@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 
   <div class="footer-bottom-content">
-     <?php get_template_part('tmp/navi-footer') ?>
+     <?php cocoon_template_part('tmp/navi-footer') ?>
 
     <div class="source-org copyright"><?php echo get_the_site_credit(); ?></div>
   </div>

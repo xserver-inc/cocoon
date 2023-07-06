@@ -17,22 +17,22 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   }?>
 
   <?php //ユーザーカスタマイズ用
-  get_template_part('tmp-user/body-top-insert'); ?>
+  cocoon_template_part('tmp-user/body-top-insert'); ?>
 
   <?php //サイトヘッダー
-  get_template_part('tmp/header-container'); ?>
+  cocoon_template_part('tmp/header-container'); ?>
 
   <?php //通知エリア
-  get_template_part('tmp/notice'); ?>
+  cocoon_template_part('tmp/notice'); ?>
 
   <?php //アピールエリア
-  get_template_part('tmp/appeal'); ?>
+  cocoon_template_part('tmp/appeal'); ?>
 
   <?php //おすすめカード
-  get_template_part('tmp/recommended-cards'); ?>
+  cocoon_template_part('tmp/recommended-cards'); ?>
 
   <?php //カルーセル
-  get_template_part('tmp/carousel'); ?>
+  cocoon_template_part('tmp/carousel'); ?>
 
   <?php
   ////////////////////////////
@@ -48,16 +48,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   <?php //投稿パンくずリストがメイン手前の場合
   if ((is_single() || is_category()) && is_single_breadcrumbs_position_main_before()){
-    get_template_part('tmp/breadcrumbs');
+    cocoon_template_part('tmp/breadcrumbs');
   } ?>
 
   <?php //固定ページパンくずリストがメイン手前の場合
   if (is_page() && is_page_breadcrumbs_position_main_before()){
-    get_template_part('tmp/breadcrumbs-page');
+    cocoon_template_part('tmp/breadcrumbs-page');
   } ?>
 
   <?php //メインカラム手前に挿入するユーザー用テンプレート
-  get_template_part('tmp-user/main-before'); ?>
+  cocoon_template_part('tmp-user/main-before'); ?>
 
   <div id="content" class="content cf">
 

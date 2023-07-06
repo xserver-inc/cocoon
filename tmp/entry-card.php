@@ -46,7 +46,7 @@ if (is_front_page_type_index()) {
       <?php do_action( 'entry_card_snippet_after', get_the_ID() ); ?>
       <?php //PVエリアの表示
       if (is_admin_index_pv_visible() && is_user_administrator() || apply_filters('public_page_entry_card_pv_visible', false)) {
-        get_template_part('tmp/admin-pv');
+        cocoon_template_part('tmp/admin-pv');
       } ?>
       <div class="entry-card-meta card-meta e-card-meta">
         <div class="entry-card-info e-card-info">

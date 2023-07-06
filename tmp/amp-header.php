@@ -23,9 +23,9 @@ generate_meta_description_tag() ?>
 generate_meta_keywords_tag() ?>
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <?php if ( is_facebook_ogp_enable() ) //Facebook OGPタグ挿入がオンのとき
-get_template_part('tmp/header-ogp');//Facebook OGP用のタグテンプレート?>
+cocoon_template_part('tmp/header-ogp');//Facebook OGP用のタグテンプレート?>
 <?php if ( is_twitter_card_enable() ) //Twitterカードタグ挿入がオンのとき
-get_template_part('tmp/header-twitter-card');//Twitterカード用のタグテンプレート?>
+cocoon_template_part('tmp/header-twitter-card');//Twitterカード用のタグテンプレート?>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <?php
 //投稿・固定ページのページ内容全てを取得する
@@ -88,9 +88,9 @@ if (!is_site_font_family_local()) {
 ?>
 <?php //JSON-LDの読み込み
 if (is_json_ld_tag_enable()) {
-  get_template_part('tmp/json-ld');
+  cocoon_template_part('tmp/json-ld');
   if (is_the_page_review_enable()) {
-    get_template_part('tmp/json-ld-review');
+    cocoon_template_part('tmp/json-ld-review');
   }
 }?>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -99,16 +99,16 @@ if (is_json_ld_tag_enable()) {
   generate_style_amp_custom_tag(); ?>
 
 <?php //AdSense AMP自動広告の</head>手前コード
-get_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
+cocoon_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
 
 <?php //LinkSwitchの</head>手前コード
-get_template_part('tmp/ad-amp-linkswitch-in-head') ?>
+cocoon_template_part('tmp/ad-amp-linkswitch-in-head') ?>
 
 <?php //トップに戻るの</head>手前コード
-get_template_part('tmp/amp-button-go-to-top-in-head') ?>
+cocoon_template_part('tmp/amp-button-go-to-top-in-head') ?>
 
 <?php //ユーザーカスタマイズ用
-get_template_part('tmp-user/amp-head-insert'); ?>
+cocoon_template_part('tmp-user/amp-head-insert'); ?>
 
 <?php //WEBフォント読み込み
 //Font Awesomeのスタイルの読み込み
@@ -122,19 +122,19 @@ if (!is_site_font_family_local()) {
 <body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage" data-amp-auto-lightbox-disable="">
 
   <?php //AdSense AMP自動広告の<body>直後コード
-  get_template_part('tmp/ad-amp-auto-adsense-in-body') ?>
+  cocoon_template_part('tmp/ad-amp-auto-adsense-in-body') ?>
 
   <?php //LinkSwitchの<body>直後コード
-  get_template_part('tmp/ad-amp-linkswitch-in-body') ?>
+  cocoon_template_part('tmp/ad-amp-linkswitch-in-body') ?>
 
   <?php //トップに戻るの<body>直後コード
-  get_template_part('tmp/amp-button-go-to-top-in-body') ?>
+  cocoon_template_part('tmp/amp-button-go-to-top-in-body') ?>
 
   <?php //AMP用のAnalyticsコード
-  get_template_part('tmp/amp-analytics') ?>
+  cocoon_template_part('tmp/amp-analytics') ?>
 
   <?php //ユーザーカスタマイズ用
-  get_template_part('tmp-user/amp-body-top-insert'); ?>
+  cocoon_template_part('tmp-user/amp-body-top-insert'); ?>
 
   <?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
-  get_template_part('tmp/body-top'); ?>
+  cocoon_template_part('tmp/body-top'); ?>

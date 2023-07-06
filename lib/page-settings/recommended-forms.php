@@ -18,7 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_recommended_cards', true)): ?>
       <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
       <div class="demo recommended-cards-demo" style="">
-        <?php get_template_part('tmp/recommended-cards') ?>
+        <?php cocoon_template_part('tmp/recommended-cards') ?>
       </div>
       <?php
       generate_tips_tag(__( 'デモの表示は実際の表示と多少変わる可能性があります。', THEME_NAME ));

@@ -19,7 +19,7 @@ if (is_related_entries_visible()): ?>
   </h2>
   <div class="related-list">
   <?php //関連記事
-    get_template_part('tmp/related-list');
+    cocoon_template_part('tmp/related-list');
   ?>
   </div>
 </aside>

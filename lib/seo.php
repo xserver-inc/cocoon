@@ -587,15 +587,11 @@ if ( !function_exists( 'the_json_ld_tag' ) ):
 function the_json_ld_tag() {
   if (is_singular() && is_json_ld_tag_enable()) {
     echo '<!-- '.THEME_NAME_CAMEL.' JSON-LD -->'.PHP_EOL;
-    get_template_part('tmp/json-ld');
+    cocoon_template_part('tmp/json-ld');
     if (is_the_page_review_enable()) {
       echo '<!-- '.THEME_NAME_CAMEL.' Review JSON-LD -->'.PHP_EOL;
-      get_template_part('tmp/json-ld-review');
+      cocoon_template_part('tmp/json-ld-review');
     }
-    // if (apply_filters('cocoon_json_ld_faq_visible', true)) {
-    //   echo '<!-- '.THEME_NAME_CAMEL.' FAQ JSON-LD -->'.PHP_EOL;
-    //   get_template_part('tmp/json-ld-faq');
-    // }
   }
 }
 endif;

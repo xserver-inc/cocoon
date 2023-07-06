@@ -12,10 +12,10 @@ if (!is_amp() && (is_mobile_button_layout_type_footer_mobile_buttons() || is_mob
 <?php
 if (has_nav_menu( NAV_MENU_FOOTER_MOBILE_BUTTONS )) {
   //モバイルフッターメニュー
-  get_template_part( 'tmp/mobile-footer-custom-navi-buttons' );
+  cocoon_template_part( 'tmp/mobile-footer-custom-navi-buttons' );
 } else {
   //デフォルトモバイルボタン
-  get_template_part( 'tmp/mobile-footer-default-buttons' );
+  cocoon_template_part( 'tmp/mobile-footer-default-buttons' );
 }
 ?>
 

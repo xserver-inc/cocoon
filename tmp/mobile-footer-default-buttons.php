@@ -12,34 +12,34 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <?php //ヘッダー・フッターモバイルボタン双方を表示している場合
   if (is_mobile_button_layout_type_header_and_footer_mobile_buttons()): ?>
     <?php //ホームメニュー
-    get_template_part( 'tmp/mobile-home-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-home-button' ); ?>
 
     <?php //シェアメニュー
-    get_template_part( 'tmp/mobile-share-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-share-button' ); ?>
 
     <?php //目次メニュー
-    get_template_part( 'tmp/mobile-toc-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-toc-button' ); ?>
 
     <?php //トップメニュー
-    get_template_part( 'tmp/mobile-top-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-top-button' ); ?>
 
     <?php //サイドバーメニュー
-    get_template_part( 'tmp/mobile-sidebar-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-sidebar-button' ); ?>
   <?php else: ?>
     <?php //ナビメニュー
-    get_template_part( 'tmp/mobile-navi-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-navi-button' ); ?>
 
     <?php //ホームメニュー
-    get_template_part( 'tmp/mobile-home-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-home-button' ); ?>
 
     <?php //検索メニュー
-    get_template_part( 'tmp/mobile-search-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-search-button' ); ?>
 
     <?php //トップメニュー
-    get_template_part( 'tmp/mobile-top-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-top-button' ); ?>
 
     <?php //サイドバーメニュー
-    get_template_part( 'tmp/mobile-sidebar-button' ); ?>
+    cocoon_template_part( 'tmp/mobile-sidebar-button' ); ?>
   <?php endif; ?>
 
 </ul>

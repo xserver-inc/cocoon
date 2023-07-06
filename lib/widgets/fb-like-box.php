@@ -60,7 +60,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
       set_query_var('_FACEBOOK_URL', $facebook_url);
       set_query_var('_TWITTER_ID', $twitter_id);
       set_query_var('_LINE_ID', $line_id);
-      get_template_part('tmp/fb-like-box');
+      cocoon_template_part('tmp/fb-like-box');
       echo $args['after_widget'];
     }//is_singular
   }

@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <div class="demo">
-              <?php get_template_part('comments'); ?>
+              <?php cocoon_template_part('comments'); ?>
             </div>
             <?php generate_tips_tag(__( 'デモはランダム表示です。', THEME_NAME )); ?>
           </td>

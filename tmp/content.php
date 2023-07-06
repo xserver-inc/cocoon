@@ -30,7 +30,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
       <?php //タイトル上のカテゴリー・タグ
       if (is_category_tag_display_position_title_top() && is_single()) {
-        get_template_part('tmp/categories-tags');
+        cocoon_template_part('tmp/categories-tags');
       } ?>
 
       <header class="article-header entry-header">
@@ -60,7 +60,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php endif; ?>
 
         <?php //アイキャッチ挿入
-        get_template_part('tmp/eye-catch');
+        cocoon_template_part('tmp/eye-catch');
 
         do_action('singular_eye_catch_after');
         ?>
@@ -79,11 +79,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
         <?php //投稿日と更新日テンプレート
-        get_template_part('tmp/date-tags'); ?>
+        cocoon_template_part('tmp/date-tags'); ?>
 
         <?php //本文上のカテゴリー・タグ
         if (is_category_tag_display_position_content_top() && is_single()) {
-          get_template_part('tmp/categories-tags');
+          cocoon_template_part('tmp/categories-tags');
         } ?>
 
         <?php if (is_content_read_time_visible() && is_the_page_read_time_visible() && !is_plugin_fourm_page()): ?>
@@ -120,7 +120,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       do_action('singular_entry_content_after'); ?>
 
       <?php //マルチページ用のページャーリンク
-      get_template_part('tmp/pager-page-links'); ?>
+      cocoon_template_part('tmp/pager-page-links'); ?>
 
       <footer class="article-footer entry-footer">
 
@@ -136,12 +136,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
         <?php //本文下ページ送りナビ
         if (is_post_navi_position_under_content() && is_single()) {
-          get_template_part('tmp/pager-post-navi');
+          cocoon_template_part('tmp/pager-post-navi');
         } ?>
 
         <?php //本文下のカテゴリー・タグ
         if (is_category_tag_display_position_content_bottom() && is_single()) {
-          get_template_part('tmp/categories-tags');
+          cocoon_template_part('tmp/categories-tags');
         } ?>
 
         <?php //本文下の広告表示
@@ -206,7 +206,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php endif; ?>
 
         <?php //投稿者等表示用のテンプレート
-        get_template_part('tmp/footer-meta'); ?>
+        cocoon_template_part('tmp/footer-meta'); ?>
 
         <!-- publisher設定 -->
         <?php

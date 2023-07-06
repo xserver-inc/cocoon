@@ -33,12 +33,12 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
     <?php endfor; ?>
   </div>
   <div class="tab-cont tb1">
-      <?php get_template_part('tmp/list-index'); ?>
+      <?php cocoon_template_part('tmp/list-index'); ?>
       <?php
       ////////////////////////////
       //ページネーション
       ////////////////////////////
-      get_template_part('tmp/pagination');
+      cocoon_template_part('tmp/pagination');
        ?>
   </div>
   <?php for ($i=0; $i < count($cat_ids) && $i < $cat_count; $i++):
@@ -74,7 +74,7 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
                     $count++;
                     //エントリーカウントをテンプレートファイルに渡す
                     set_query_var('count', $count);
-                    get_template_part('tmp/entry-card');
+                    cocoon_template_part('tmp/entry-card');
                     ?>
             <?php endforeach; wp_reset_postdata();
             $count = 0; ?>

@@ -40,7 +40,7 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
       }
       set_query_var('_FACEBOOK_PAGE_LIKE_TEXT', $text);
       set_query_var('_FACEBOOK_URL', $facebook_url);
-      get_template_part('tmp/fb-like-balloon');
+      cocoon_template_part('tmp/fb-like-balloon');
       echo $args['after_widget'];
     }//is_singular
   }

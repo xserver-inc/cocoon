@@ -98,7 +98,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
               </div>
               <div style="width: auto">
-                <?php get_template_part('tmp/font-preview'); ?>
+                <?php cocoon_template_part('tmp/font-preview'); ?>
               </div>
             </div>
           </td>

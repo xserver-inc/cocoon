@@ -24,7 +24,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-search'; ?>
     <label class="display-none" id="search-menu-close" for="search-menu-input"></label>
     <div id="search-menu-content" class="search-menu-content">
       <?php //検索フォーム
-      get_template_part('searchform') ?>
+      cocoon_template_part('searchform') ?>
     </div>
   </li>
 <?php endif ?>

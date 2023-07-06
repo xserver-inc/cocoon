@@ -14,7 +14,7 @@ if (apply_filters('cocoon_template_part_related_list', true)) {
     <?php if( $query -> have_posts() && !empty($args) ): //関連記事があるとき?>
     <?php while ($query -> have_posts()) : $query -> the_post(); ?>
       <?php //関連記事表示タイプ
-      get_template_part('tmp/related-entry-card'); ?>
+      cocoon_template_part('tmp/related-entry-card'); ?>
     <?php endwhile;?>
 
     <?php else:?>

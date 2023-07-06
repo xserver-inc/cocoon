@@ -13,7 +13,7 @@ $count = get_index_category_entry_card_count();
 ?>
 <div id="list-wrap" class="list-wrap <?php echo get_front_page_type_class(); ?>">
   <!-- 新着記事 -->
-  <?php get_template_part('tmp/list-new-entries'); ?>
+  <?php cocoon_template_part('tmp/list-new-entries'); ?>
 
   <?php //広告表示
   //インデックスミドルに広告を表示してよいかの判別

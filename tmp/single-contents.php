@@ -12,18 +12,18 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ///////////////////////////////////////?>
 <?php //パンくずリストがメイントップの場合
 if (is_single_breadcrumbs_position_main_top()){
-  get_template_part('tmp/breadcrumbs');
+  cocoon_template_part('tmp/breadcrumbs');
 } ?>
 
 <?php //本文テンプレート
-get_template_part('tmp/content') ?>
+cocoon_template_part('tmp/content') ?>
 
 
 <div class="under-entry-content">
 
   <?php //関連記事上ページ送りナビ
   if (is_post_navi_position_over_related()) {
-    get_template_part('tmp/pager-post-navi');
+    cocoon_template_part('tmp/pager-post-navi');
   } ?>
 
   <?php //投稿関連記事上ウイジェット
@@ -31,7 +31,7 @@ get_template_part('tmp/content') ?>
     <?php dynamic_sidebar( 'above-single-related-entries' ); ?>
   <?php endif; ?>
 
-  <?php get_template_part('tmp/related-entries'); //関連記事 ?>
+  <?php cocoon_template_part('tmp/related-entries'); //関連記事 ?>
 
   <?php //関連記事下の広告表示
   if (is_ad_pos_below_related_posts_visible() && is_all_adsenses_visible()){
@@ -45,7 +45,7 @@ get_template_part('tmp/content') ?>
 
   <?php //ページ送りナビ
   if (is_post_navi_position_under_related()) {
-    get_template_part('tmp/pager-post-navi');
+    cocoon_template_part('tmp/pager-post-navi');
   } ?>
 
   <?php //コメント上ウイジェット
@@ -65,15 +65,15 @@ get_template_part('tmp/content') ?>
 
   <?php //コメント下ページ送りナビ
   if (is_post_navi_position_under_comment()) {
-    get_template_part('tmp/pager-post-navi');
+    cocoon_template_part('tmp/pager-post-navi');
   } ?>
 
 </div>
 
 <?php //パンくずリストがメインボトムの場合
 if (is_single_breadcrumbs_position_main_bottom()){
-  get_template_part('tmp/breadcrumbs');
+  cocoon_template_part('tmp/breadcrumbs');
 } ?>
 
 <?php //メインカラム追従領域
-get_template_part('tmp/main-scroll'); ?>
+cocoon_template_part('tmp/main-scroll'); ?>

@@ -10,12 +10,12 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if (!is_amp()) {
    get_header();
  } else {
-   get_template_part('tmp/amp-header');
+   cocoon_template_part('tmp/amp-header');
  }
 ?>
 
 
 <?php //固定ページ内容
-get_template_part('tmp/page-contents'); ?>
+cocoon_template_part('tmp/page-contents'); ?>
 
 <?php get_footer(); ?>

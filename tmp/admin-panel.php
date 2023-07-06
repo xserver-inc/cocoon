@@ -18,7 +18,7 @@ if (is_user_administrator()
 
   <?php //PVエリアの表示
   if (is_singular()) {
-    get_template_part('tmp/admin-pv');
+    cocoon_template_part('tmp/admin-pv');
   }
    ?>
 

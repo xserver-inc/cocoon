@@ -9,5 +9,5 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <h1 id="archive-title" class="archive-title"><?php echo get_archive_chapter_text(); ?></h1>
 <?php if (is_search()){
-  get_template_part('searchform');
+  cocoon_template_part('searchform');
 } ?>

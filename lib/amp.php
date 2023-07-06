@@ -579,7 +579,7 @@ endif;
 if ( !function_exists( 'get_template_part_amp' ) ):
 function get_template_part_amp($template_name){
   ob_start();//バッファリング
-  get_template_part($template_name);//テンプレートの呼び出し
+  cocoon_template_part($template_name);//テンプレートの呼び出し
   $template = ob_get_clean();//テンプレート内容を変数に代入
   $template = convert_content_for_amp($template);
   echo $template;
@@ -615,7 +615,7 @@ function add_ads_before_1st_h2_in_amp($the_content) {
   if ( is_amp() ) {//AMPの時のみ有効
     //広告（AdSense）タグを記入
     ob_start();//バッファリング
-    get_template_part('ad-amp');//広告貼り付け用に作成したテンプレート
+    cocoon_template_part('ad-amp');//広告貼り付け用に作成したテンプレート
     $ad_template = ob_get_clean();
     $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
     if ( $h2result ) {//H2見出しが本文中にある場合のみ
@@ -660,14 +660,14 @@ function get_the_singular_content(){
   $all_content = null;
 
   ob_start();//バッファリング
-  get_template_part('tmp/body-top');//bodyタグ直下から本文まで
+  cocoon_template_part('tmp/body-top');//bodyタグ直下から本文まで
   $body_top_content = ob_get_clean();
 
   ob_start();//バッファリング
   if (is_single()) {
-    get_template_part('tmp/single-contents');
+    cocoon_template_part('tmp/single-contents');
   } else {
-    get_template_part('tmp/page-contents');
+    cocoon_template_part('tmp/page-contents');
   }
   $body_content = ob_get_clean();
 
@@ -687,24 +687,24 @@ function get_the_singular_content(){
   $footer_content = ob_get_clean();
 
   ob_start();//バッファリング
-  get_template_part('tmp/amp-footer-insert');
+  cocoon_template_part('tmp/amp-footer-insert');
   $footer_insert = ob_get_clean();
 
   //モバイルメニューボタン
   //モバイルフッターボタンのみ
   if (is_mobile_button_layout_type_footer_mobile_buttons()) {
     ob_start();
-    get_template_part('tmp/mobile-footer-menu-buttons');
+    cocoon_template_part('tmp/mobile-footer-menu-buttons');
     $mobile_menu_buttons = ob_get_clean();
   } elseif //モバイルヘッダーボタンのみ
   (is_mobile_button_layout_type_header_mobile_buttons()) {
     ob_start();
-    get_template_part('tmp/mobile-header-menu-buttons');
+    cocoon_template_part('tmp/mobile-header-menu-buttons');
     $mobile_menu_buttons = ob_get_clean();
   } else {//ヘッダーとフッター双方のモバイルボタン
     ob_start();
-    get_template_part('tmp/mobile-header-menu-buttons');
-    get_template_part('tmp/mobile-footer-menu-buttons');
+    cocoon_template_part('tmp/mobile-header-menu-buttons');
+    cocoon_template_part('tmp/mobile-footer-menu-buttons');
     $mobile_menu_buttons = ob_get_clean();
   }
 
@@ -767,7 +767,7 @@ function generate_style_amp_custom_tag(){?>
   //カスタマイザーのスタイル
   ///////////////////////////////////////////
   ob_start();//バッファリング
-  get_template_part('tmp/css-custom');//カスタムテンプレートの呼び出し
+  cocoon_template_part('tmp/css-custom');//カスタムテンプレートの呼び出し
   $css_custom = ob_get_clean();
   $css_all .= apply_filters( 'amp_custum_css', $css_custom );
 

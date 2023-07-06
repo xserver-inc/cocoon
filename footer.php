@@ -28,12 +28,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <?php //投稿パンくずリストがフッター手前の場合
     if ((is_single() || is_category()) && is_single_breadcrumbs_position_footer_before()){
-      get_template_part('tmp/breadcrumbs');
+      cocoon_template_part('tmp/breadcrumbs');
     } ?>
 
     <?php //固定ページパンくずリストがフッター手前の場合
     if (is_page() && is_page_breadcrumbs_position_footer_before()){
-      get_template_part('tmp/breadcrumbs-page');
+      cocoon_template_part('tmp/breadcrumbs-page');
     } ?>
 
     <footer id="footer" class="footer footer-container nwa" itemscope itemtype="https://schema.org/WPFooter">
@@ -70,23 +70,23 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php endif ?>
 
         <?php //フッターの最下部（フッターメニューやクレジットなど）
-        get_template_part('tmp/footer-bottom'); ?>
+        cocoon_template_part('tmp/footer-bottom'); ?>
 
       </div>
 
     </footer>
 
     <?php //管理者用パネル
-    get_template_part('tmp/admin-panel'); ?>
+    cocoon_template_part('tmp/admin-panel'); ?>
 
     <?php //モバイルヘッダーメニューボタン
-    get_template_part('tmp/mobile-header-menu-buttons'); ?>
+    cocoon_template_part('tmp/mobile-header-menu-buttons'); ?>
 
     <?php //モバイルフッターメニューボタン
-    get_template_part('tmp/mobile-footer-menu-buttons'); ?>
+    cocoon_template_part('tmp/mobile-footer-menu-buttons'); ?>
 
     <?php //トップへ戻るボタンテンプレート
-    get_template_part('tmp/button-go-to-top'); ?>
+    cocoon_template_part('tmp/button-go-to-top'); ?>
 
     <?php if (!is_amp()) {
       //再利用用にフッターコードを取得
@@ -100,7 +100,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     } ?>
 
     <?php //フッターで読み込むscriptをまとめたもの
-    get_template_part('tmp/footer-scripts');?>
+    cocoon_template_part('tmp/footer-scripts');?>
 
   </div><!-- #container -->
 

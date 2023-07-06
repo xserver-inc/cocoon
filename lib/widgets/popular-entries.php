@@ -90,8 +90,6 @@ class PopularEntryWidgetItem extends WP_Widget {
         echo $args['after_title'];
       }
 
-
-      //get_template_part('tmp/popular-entries');
       $atts = array(
         'days' => $count_days,
         'entry_count' => $entry_count,

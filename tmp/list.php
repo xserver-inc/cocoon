@@ -15,22 +15,22 @@ if ( is_category() ){
   //カテゴリーページのパンくずリスト
   ////////////////////////////
   if (is_single_breadcrumbs_position_main_top()) {
-    get_template_part('tmp/breadcrumbs');
+    cocoon_template_part('tmp/breadcrumbs');
   }
 
   ////////////////////////////
   //カテゴリーページのコンテンツ
   ////////////////////////////
   if (!is_paged()) {
-    get_template_part('tmp/category-content');
+    cocoon_template_part('tmp/category-content');
   } else {
-    get_template_part('tmp/list-title');
+    cocoon_template_part('tmp/list-title');
   }
 } elseif ( (is_tag() || is_tax()) && !is_paged() ) {
-  get_template_part('tmp/tag-content');
+  cocoon_template_part('tmp/tag-content');
 } elseif (!is_home()) {
   //それ以外
-  get_template_part('tmp/list-title');
+  cocoon_template_part('tmp/list-title');
 }
 
 ////////////////////////////
@@ -61,13 +61,13 @@ if (is_sns_top_share_buttons_visible() &&
 
 <?php
   if (is_front_top_page() && is_front_page_type_tab_index()) {
-    get_template_part('tmp/list-tab-index');
+    cocoon_template_part('tmp/list-tab-index');
   } elseif (is_front_top_page() && is_front_page_type_category()) {
-    get_template_part('tmp/list-category');
+    cocoon_template_part('tmp/list-category');
   } elseif ((is_front_top_page() && is_front_page_type_category_2_columns()) || is_front_top_page() && is_front_page_type_category_3_columns()) {
-    get_template_part('tmp/list-category-columns');
+    cocoon_template_part('tmp/list-category-columns');
   } else {
-    get_template_part('tmp/list-index');
+    cocoon_template_part('tmp/list-index');
   }
 ?>
 
@@ -127,17 +127,17 @@ if (is_sns_follow_buttons_visible() && !is_paged() &&
 //ページネーション
 ////////////////////////////
 if (is_front_page_type_index() || !is_front_top_page()) {
-  get_template_part('tmp/pagination');
+  cocoon_template_part('tmp/pagination');
 }
 
 ////////////////////////////
 //カテゴリーページのパンくずリスト
 ////////////////////////////
 if (is_category() && is_single_breadcrumbs_position_main_bottom()){
-  get_template_part('tmp/breadcrumbs');
+  cocoon_template_part('tmp/breadcrumbs');
 }
 
 ////////////////////////////
 //メインカラム追従領域
 ////////////////////////////
-get_template_part('tmp/main-scroll'); ?>
+cocoon_template_part('tmp/main-scroll'); ?>

@@ -287,7 +287,7 @@ endif;
 //domain.com/?feed=smartnewsで表示
 if ( !function_exists( 'smartnews_feed' ) ):
 function smartnews_feed() {
-  get_template_part('/tmp/smartnews');
+  cocoon_template_part('/tmp/smartnews');
 }
 endif;
 

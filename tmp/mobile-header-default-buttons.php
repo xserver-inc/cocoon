@@ -12,16 +12,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <?php
   if (has_nav_menu( NAV_MENU_HEADER )) {
     //ナビメニュー
-    get_template_part( 'tmp/mobile-navi-button' );
+    cocoon_template_part( 'tmp/mobile-navi-button' );
   } else {
     //フォローボタン
-    get_template_part( 'tmp/mobile-home-button' );
+    cocoon_template_part( 'tmp/mobile-home-button' );
   } ?>
 
   <?php //ロゴメニュー
-  get_template_part( 'tmp/mobile-logo-button' ); ?>
+  cocoon_template_part( 'tmp/mobile-logo-button' ); ?>
 
   <?php //検索メニュー
-  get_template_part( 'tmp/mobile-search-button' ); ?>
+  cocoon_template_part( 'tmp/mobile-search-button' ); ?>
 
 </ul>

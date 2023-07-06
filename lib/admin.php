@@ -795,7 +795,7 @@ function get_sanitize_preview_template_part($slug, $name = null){
   // global $_THEME_OPTIONS;
   // _v($_THEME_OPTIONS);
   ob_start();
-  get_template_part($slug, $name);
+  cocoon_template_part($slug, $name);
   $tag = ob_get_clean();
   $tag = preg_replace('{<form.+?</form>}is', '', $tag);
   $tag = change_fa($tag);

@@ -8,11 +8,11 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php //パンくずリストがメイントップの場合
 if (is_page_breadcrumbs_position_main_top()){
-  get_template_part('tmp/breadcrumbs-page');
+  cocoon_template_part('tmp/breadcrumbs-page');
 } ?>
 
 <?php //本文の表示
-get_template_part('tmp/content') ?>
+cocoon_template_part('tmp/content') ?>
 
 <?php //コメントを表示する場合
 if (is_page_comment_visible()) {
@@ -21,8 +21,8 @@ if (is_page_comment_visible()) {
 
 <?php //パンくずリストがメインボトムの場合
 if (is_page_breadcrumbs_position_main_bottom()){
-  get_template_part('tmp/breadcrumbs-page');
+  cocoon_template_part('tmp/breadcrumbs-page');
 } ?>
 
 <?php //メインカラム追従領域
-get_template_part('tmp/main-scroll'); ?>
+cocoon_template_part('tmp/main-scroll'); ?>

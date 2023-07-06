@@ -13,7 +13,7 @@ if ( is_facebook_ogp_enable() && !is_wpforo_plugin_page() ) {
 }
 if ( !function_exists( 'the_facebook_ogp_tag' ) ):
 function the_facebook_ogp_tag() {
-  get_template_part('tmp/header-ogp');
+  cocoon_template_part('tmp/header-ogp');
 }
 endif;
 
@@ -23,7 +23,7 @@ if ( is_twitter_card_enable() && !is_wpforo_plugin_page() ) {
 }
 if ( !function_exists( 'the_twitter_card_tag' ) ):
 function the_twitter_card_tag() {
-  get_template_part('tmp/header-twitter-card');
+  cocoon_template_part('tmp/header-twitter-card');
 }
 endif;
 

@@ -15,7 +15,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
         <?php //キャッチフレーズがヘッダー上部のとき
         if (is_tagline_position_header_top()) {
-           get_template_part('tmp/header-tagline');
+           cocoon_template_part('tmp/header-tagline');
         } ?>
 
         <?php //ロゴ前にコードを挿入するためのアクションフック
@@ -29,13 +29,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
         <?php //キャッチフレーズがヘッダー下部のとき
         if (is_tagline_position_header_bottom()) {
-           get_template_part('tmp/header-tagline');
+           cocoon_template_part('tmp/header-tagline');
         } ?>
 
       </div>
 
     </header>
 
-    <?php get_template_part('tmp/navi'); ?>
+    <?php cocoon_template_part('tmp/navi'); ?>
   </div><!-- /.header-container-in -->
 </div><!-- /.header-container -->
