@@ -27,7 +27,7 @@ class ClassicTextWidget extends WP_Widget {
 			$text = apply_filters( 'widget_classic_text', $widget_text, $instance, $this );
 
 			echo $args['before_widget'];
-			if ( ! empty( $title ) ) :
+			if ( $title ) :
 				echo $args['before_title'] . $title . $args['after_title'];
 			endif; ?>
 				<div class="classic-text-widget"><?php echo !empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?></div>

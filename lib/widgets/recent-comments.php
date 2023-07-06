@@ -25,7 +25,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
     extract( $args );
 
     //タイトル名を取得
-    $title = apply_filters( 'widget_recent_comment_title', empty($instance['title']) ? __( '最近のコメント', THEME_NAME ) : $instance['title'] );
+    $title = apply_filters( 'widget_recent_comment_title', empty($instance['title']) ? '' : $instance['title'] );
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //コメント表示数
     $count = apply_filters( 'widget_recent_comment_count', empty($instance['count']) ? 5 : absint( $instance['count'] ) );
@@ -38,16 +38,11 @@ class RecentCommentsWidgetItem extends WP_Widget {
       <?php //classにwidgetと一意となるクラス名を追加する ?>
       <?php echo $args['before_widget']; ?>
         <?php
-        if (!is_null($title)) {
+        if ($title) {
           echo $args['before_title'];
-          if ($title) {
-            echo $title;//タイトルが設定されている場合は使用する
-          } else {
-            echo __( '最近のコメント', THEME_NAME );
-          }
+          echo $title;//タイトルが設定されている場合は使用する
           echo $args['after_title'];
         }
-
         ?>
           <?php
           $comments_args = array(
@@ -129,13 +124,13 @@ class RecentCommentsWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){//notice回避
       $instance = array(
-        'title' => null,
+        'title' => __( '最近のコメント', THEME_NAME ),
         'count' => 5,
         'str_count' => 100,
         'author_not_in' => false,
       );
     }
-    $title = esc_attr($instance['title']);
+    $title = isset($instance['title']) ? esc_attr($instance['title']) : __( '最近のコメント', THEME_NAME );
     $count = esc_attr($instance['count']);
     $str_count = esc_attr($instance['str_count']);
     $author_not_in = esc_attr($instance['author_not_in']);

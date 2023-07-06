@@ -33,10 +33,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
     if ($title) {
       echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
     }
-    //set_query_var('_WIDGET_NAME', $label);
-    //get_template_part('tmp/author-box');
-    // if (!is_bbpress_page()) {
-    // }
+
     generate_author_box_tag(null, $label, $is_image_circle);
     echo $args['after_widget'];
   }
@@ -45,8 +42,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
     $instance['title'] = strip_tags(isset($new_instance['title']) ? $new_instance['title'] : '');
     $instance['label'] = isset($new_instance['label']) ? $new_instance['label'] : '';
     $instance['is_image_circle'] = !empty($new_instance['is_image_circle']);
-    //_v($instance);
-      return $instance;
+    return $instance;
   }
   function form($instance) {
     if(empty($instance)){//notice回避

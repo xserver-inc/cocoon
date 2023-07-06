@@ -23,16 +23,14 @@ class SocialFollowWidgetItem extends WP_Widget {
   }
   function widget($args, $instance) {
     extract( $args );
-    $title_popular = apply_filters( 'widget_title_social_follow', $instance['title_social_follow'] );
+    $title_popular = apply_filters( 'widget_title_social_follow', empty($instance['title_social_follow']) ? '' : $instance['title_social_follow'] );
     $title_popular = apply_filters( 'widget_title', $title_popular, $instance, $this->id_base );
+
     echo $args['before_widget'];
-    if (!is_null($title_popular)) {
+
+    if ($title_popular) {
       echo $args['before_title'];
-      if ($title_popular) {
-        echo $title_popular;
-      } else {
-        echo __( 'SNSフォローボタン', THEME_NAME );
-      }
+      echo $title_popular;
       echo $args['after_title'];
     }
 
@@ -48,14 +46,14 @@ class SocialFollowWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){
       $instance = array(
-        'title_social_follow' => null,
+        'title_social_follow' => __( 'SNSフォローボタン', THEME_NAME ),
       );
     }
-    $title_social_follow = esc_attr($instance['title_social_follow']);
+    $title_social_follow = isset($instance['title_social_follow']) ? esc_attr($instance['title_social_follow']) : __( 'SNSフォローボタン', THEME_NAME );
     ?>
     <p>
        <label for="<?php echo $this->get_field_id('title_social_follow'); ?>">
-        <?php _e( 'SNSフォローボタンのタイトル', THEME_NAME ) ?>
+        <?php _e( 'タイトル', THEME_NAME ) ?>
        </label>
        <input class="widefat" id="<?php echo $this->get_field_id('title_social_follow'); ?>" name="<?php echo $this->get_field_name('title_social_follow'); ?>" type="text" value="<?php echo $title_social_follow; ?>" />
     </p>

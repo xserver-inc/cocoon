@@ -276,23 +276,3 @@ function is_index_middle_ad_visible($count){
   }
 }
 endif;
-
-//[ad]ショートコードに対して広告を表示する
-// add_filter('the_content', 'replace_ad_shortcode_to_advertisement');
-// if ( !function_exists( 'replace_ad_shortcode_to_advertisement' ) ):
-// function replace_ad_shortcode_to_advertisement($the_content){
-//   //[ad]機能が有効な時
-//   if (is_ad_shortcode_enable()) {
-//     $ad_shortcode = '[ad]';
-//     //本文にショートコードが含まれている場合
-//     if (includes_string($the_content, $ad_shortcode)) {
-//       ob_start();//バッファリング
-//       get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
-//       //get_template_part('tmp/ad');//通常ページ用広告コード
-//       $ad_template = ob_get_clean();
-//       $the_content = preg_replace('{^(<p>)?'.preg_quote($ad_shortcode).'(</p>)?$}m', $ad_template, $the_content);
-//     }
-//   }
-//   return $the_content;
-// }
-// endif;

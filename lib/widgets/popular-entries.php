@@ -76,22 +76,12 @@ class PopularEntryWidgetItem extends WP_Widget {
                //「表示モード」が「カテゴリー別人気記事」のとき
                ( ($widget_mode == 'category') && get_category_ids() ) ):
       echo $args['before_widget'];
-      if (!is_null($title)) {
+      if ($title) {
         echo $args['before_title'];
-        if ($title) {
-          echo $title;//タイトルが設定されている場合は使用する
-        } else {
-          if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
-            _e( '人気記事', THEME_NAME );
-          } else {
-            _e( 'カテゴリー別人気記事', THEME_NAME );
-          }
-        }
+        echo $title;//タイトルが設定されている場合は使用する
         echo $args['after_title'];
       }
 
-
-      //get_template_part('tmp/popular-entries');
       $atts = array(
         'days' => $count_days,
         'entry_count' => $entry_count,
@@ -143,6 +133,7 @@ class PopularEntryWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){
       $instance = array(
+        'title' => __( '人気記事', THEME_NAME ),
         'widget_mode' => WM_DEFAULT,
         'title' => '',
         'entry_count' => EC_DEFAULT,
@@ -158,7 +149,7 @@ class PopularEntryWidgetItem extends WP_Widget {
       );
     }
     $widget_mode = isset($instance['widget_mode']) ? esc_attr($instance['widget_mode']) : WM_DEFAULT;
-    $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
+    $title = isset($instance['title']) ? esc_attr($instance['title']) : __( '人気記事', THEME_NAME );
     $entry_count = isset($instance['entry_count']) ? esc_attr($instance['entry_count']) : EC_DEFAULT;
     $entry_type = isset($instance['entry_type']) ? esc_attr($instance['entry_type']) : ET_DEFAULT;
     $count_days = isset($instance['count_days']) ? esc_attr($instance['count_days']) : PCD_DEFAULT;
