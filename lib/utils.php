@@ -2893,10 +2893,38 @@ function get_time_to_content_read($content){
 }
 endif;
 
+//内部URLからカテゴリーオブジェクトを取得する
+if ( !function_exists( 'url_to_category_object' ) ):
+function url_to_category_object($url){
+  //タグのベースURLの正規表現
+  $category_base = get_option('category_base');
+  $category_base = $category_base ? preg_quote($category_base, '/') : 'category';
+  $quoteed_category_base = preg_quote($category_base);
+  $reg = '{/'.$quoteed_category_base.'/([^/]+)|/\?cat\=([^&]+)}';
+  preg_match($reg, $url, $m);
+  $slug = null;
+  if (isset($m[1]) && $m[1]) {
+    $slug = $m[1];
+    //カテゴリーの取得
+    if ($slug) {
+      $category = get_category_by_slug($slug);
+      if ($category) {
+        return $category;
+      }
+    }
+  } elseif (isset($m[2]) && $m[2]) {
+    $cat_id = $m[2];
+    $category = get_category($cat_id);
+    if ($category) {
+      return $category;
+    }
+  }
+}
+endif;
+
 //内部URLからタグオブジェクトを取得する
 if ( !function_exists( 'url_to_tag_object' ) ):
 function url_to_tag_object($url){
-  // var_dump($url);
   //タグのベースURLの正規表現
   $tag_base = get_option('tag_base');
   $tag_base = $tag_base ? preg_quote($tag_base, '/') : 'tag';
@@ -2916,23 +2944,6 @@ function url_to_tag_object($url){
       return $tag;
     }
   }
-
-
-  // $tag_base = get_option('tag_base');
-  // $tag_base = $tag_base ? preg_quote($tag_base, '/') : 'tag';
-  // $tag_base_reg = '/'.preg_quote(home_url('/'), '/').'(.+\/)*'.$tag_base.'\/'.'/';
-
-  // $removed_url = get_query_removed_url($url);
-  // $tag_slug = preg_replace($tag_base_reg, '', $removed_url);
-  // //置換が行われた場合
-  // if ($removed_url != $tag_slug) {
-  //   $tag_slug = preg_replace('{/.+}', '', $tag_slug);
-  //   $tags = get_tags(array('slug' => $tag_slug));
-  //   if (isset($tags[0])) {
-  //     $tag = $tags[0];
-  //     return $tag;
-  //   }
-  // }
 }
 endif;
 
