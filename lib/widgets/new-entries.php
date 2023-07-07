@@ -99,9 +99,8 @@ class NewEntryWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){
       $instance = array(
-        'title' => __( '新着記事', THEME_NAME ),
         'widget_mode' => WM_DEFAULT,
-        'title'   => '',
+        'title' => __( '新着記事', THEME_NAME ),
         'entry_count' => EC_DEFAULT,
         'entry_type'  => ET_DEFAULT,
         'is_horizontal'  => 0,
