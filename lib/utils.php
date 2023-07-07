@@ -3572,3 +3572,14 @@ function is_block_editor_page() {
   return is_admin() && has_blocks();
 }
 endif;
+
+
+
+//barba.jsスクリプトの読み込み（子テーマカスタマイズ時にエラーがないようにするためのエイリアス）
+if ( !function_exists( 'wp_enqueue_script_barba_js' ) ):
+function wp_enqueue_script_barba_js(){}
+endif;
+//barba.jsのネームスペース（子テーマカスタマイズ時にエラーがないようにするためのエイリアス）
+if ( !function_exists( 'get_barba_name_space' ) ):
+function get_barba_name_space(){}
+endif;
