@@ -421,7 +421,11 @@ function generate_the_site_logo_tag($is_header = true){
     $home_url = apply_filters('footer_site_logo_url', $home_url);
     $site_logo_text = apply_filters('footer_site_logo_text', $site_logo_text);
   }
-  $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
+  $itemprop = null;
+  if (!$logo_url) {
+    $itemprop = ' itemprop="name about"';
+  }
+  $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text"'.$itemprop.'>';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
     $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'><meta itemprop="name about" content="' . esc_attr($site_logo_text) . '">';
