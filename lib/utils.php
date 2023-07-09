@@ -3594,3 +3594,7 @@ endif;
 if ( !function_exists( 'get_barba_name_space' ) ):
 function get_barba_name_space(){}
 endif;
+//文字列内のスクリプトをbarba.js用に取り出して出力する（子テーマカスタマイズ時にエラーがないようにするためのエイリアス）
+if ( !function_exists( 'generate_baruba_js_scripts' ) ):
+function generate_baruba_js_scripts($tag){}
+endif;
