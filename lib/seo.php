@@ -630,16 +630,22 @@ if ( !function_exists( 'get_the_snippet' ) ):
 function get_the_snippet($content, $length = 70, $post_id = null) {
   global $post;
 
+  $description = null;
+  if ($post_id) {
+    $post = get_post($post_id);
+  }
   //抜粋（投稿編集画面）の取得
-  if ($post) {
+  if ($post && ($post->ID == $post_id)) {
     $description = $post->post_excerpt;
   }
 
   //SEO設定のディスクリプション取得
-  if (!$description && $post) {
-    $description = get_the_page_meta_description($post->ID);
-  } elseif ($post_id){
-    $description = get_the_page_meta_description($post_id);
+  if (!$description) {
+    if ($post_id) {
+      $description = get_the_page_meta_description($post_id);
+    } elseif ($post && isset($post->ID)) {
+      $description = get_the_page_meta_description($post->ID);
+    }
   }
 
   //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
