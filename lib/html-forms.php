@@ -1002,6 +1002,7 @@ function generate_popular_entries_tag($atts){
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
+    'snippet' => 0,
     'author' => null,
     'post_type' => 'post',
     'horizontal' => 0,
@@ -1014,7 +1015,7 @@ function generate_popular_entries_tag($atts){
   }
 
 
-  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type);
+  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type, $snippet);
 
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   $atts = array(
@@ -1054,6 +1055,13 @@ function generate_popular_entries_tag($atts){
         $post_thumbnail_img = get_original_image_tag($no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
       }
 
+      //スニペット表示
+      $snippet_tag = '';
+      //「大きなサムネイル」や「タイトルを重ねた大きなサムネイル」の時はスニペットを表示させない
+      if ($snippet && isset($post->ID) && isset($post->post_content) && $entry_type !== ET_LARGE_THUMB && $entry_type !== ET_LARGE_THUMB_ON) {
+        $snippet_tag = '<div class="popular-entry-card-snippet widget-entry-card-snippet card-snippet">'.get_the_snippet($post->post_content, get_entry_card_excerpt_max_length(), $post->ID).'</div>';
+      }
+
       $pv_tag = null;
       if ($pv_visible){
         $pv_text = $pv == '1' ? $pv.' view' : $pv.' views';
@@ -1071,7 +1079,8 @@ function generate_popular_entries_tag($atts){
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
-        <span class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></span>
+        <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
+        <?php echo $snippet_tag; ?>
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
         <?php endif ?>
