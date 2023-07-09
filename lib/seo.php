@@ -627,20 +627,24 @@ endif;
 
 //本文抜粋を取得する関数
 if ( !function_exists( 'get_the_snippet' ) ):
-function get_the_snippet($content, $length = 70) {
+function get_the_snippet($content, $length = 70, $post_id = null) {
   global $post;
 
   //抜粋（投稿編集画面）の取得
-  $description = $post->post_excerpt;
+  if ($post) {
+    $description = $post->post_excerpt;
+  }
 
   //SEO設定のディスクリプション取得
-  if (!$description) {
+  if (!$description && $post) {
     $description = get_the_page_meta_description($post->ID);
+  } elseif ($post_id){
+    $description = get_the_page_meta_description($post_id);
   }
 
   //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
   if (!$description) {
-    $description = get_the_all_in_one_seo_pack_meta_description();
+    $description = get_the_all_in_one_seo_pack_meta_description($post_id);
   }
 
   //SEO設定のディスクリプションがない場合は「抜粋」を取得
