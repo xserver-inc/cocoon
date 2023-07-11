@@ -148,6 +148,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             //ヘッダー背景画像の固定
             generate_checkbox_tag(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED, is_header_background_attachment_fixed(), __( 'ヘッダー背景画像の固定', THEME_NAME ));
             generate_tips_tag(__( 'ヘッダーに設定した背景画像を背景に固定します。上下にスクロールしたときに背景画像が背景に対して移動しなくなります。', THEME_NAME ));
+
+            //ヘッダーのサイズを背景画像のアスペクト比率にするか
+            generate_checkbox_tag(OP_HEADER_SIZE_BACKGROUND_IMAGE_ASPECT_RATIO, is_header_size_background_image_aspect_ratio(), __( '背景画像の全てを表示', THEME_NAME ));
+            generate_tips_tag(__( 'ヘッダーのサイズを「ヘッダー背景画像」に設定した画像の縦横比サイズに合わせて表示させます。', THEME_NAME ).__( 'これにより背景画像が隠れることなく表示されます。', THEME_NAME ).__( '「ヘッダーレイアウト」設定が「センターロゴ」時のみ。', THEME_NAME ).__( 'ヘッダー設定にある「高さ」や「高さ（モバイル）」の値は無効になります。', THEME_NAME ));
             ?>
           </td>
         </tr>

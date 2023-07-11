@@ -14,8 +14,14 @@ function get_header_layout_type(){
   return get_theme_option(OP_HEADER_LAYOUT_TYPE, 'center_logo');
 }
 endif;
+//is_header_layout_type_topのエイリアス（関数カスタマイズ時のエラー回避用）
 if ( !function_exists( 'get_header_layout_type_top' ) ):
 function get_header_layout_type_top(){
+  return is_header_layout_type_top();
+}
+endif;
+if ( !function_exists( 'is_header_layout_type_top' ) ):
+function is_header_layout_type_top(){
   switch (get_header_layout_type()) {
     case 'top_menu':
     case 'top_menu_right':
@@ -27,9 +33,15 @@ function get_header_layout_type_top(){
   return false;
 }
 endif;
+//is_header_layout_type_center_logoのエイリアス（関数カスタマイズ時のエラー回避用）
 if ( !function_exists( 'get_header_layout_type_center_logo' ) ):
 function get_header_layout_type_center_logo(){
-  return !get_header_layout_type_top();
+  return is_header_layout_type_center_logo();
+}
+endif;
+if ( !function_exists( 'is_header_layout_type_center_logo' ) ):
+function is_header_layout_type_center_logo(){
+  return !is_header_layout_type_top();
 }
 endif;
 
@@ -117,6 +129,14 @@ define('OP_HEADER_BACKGROUND_ATTACHMENT_FIXED', 'header_background_attachment_fi
 if ( !function_exists( 'is_header_background_attachment_fixed' ) ):
 function is_header_background_attachment_fixed(){
   return get_theme_option(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED);
+}
+endif;
+
+//ヘッダーのサイズを背景画像のアスペクト比率にするか
+define('OP_HEADER_SIZE_BACKGROUND_IMAGE_ASPECT_RATIO', 'header_size_background_image_aspect_ratio');
+if ( !function_exists( 'is_header_size_background_image_aspect_ratio' ) ):
+function is_header_size_background_image_aspect_ratio(){
+  return get_theme_option(OP_HEADER_SIZE_BACKGROUND_IMAGE_ASPECT_RATIO);
 }
 endif;
 

@@ -141,7 +141,7 @@ function body_class_additional($classes) {
   }
 
   //ヘッダーが「センターロゴ」か「トップメニュー」か
-  if (get_header_layout_type_top()) {
+  if (is_header_layout_type_top()) {
     $classes[] = 'hlt-top-menu-wrap';
   } else {
     $classes[] = 'hlt-center-logo-wrap';

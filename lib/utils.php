@@ -653,7 +653,7 @@ function wp_enqueue_clingify(){
       $selector = '.header-container';
       $detached_classes = get_additional_header_container_classes();
       $options = null;
-      if (get_header_layout_type_center_logo()) {
+      if (is_header_layout_type_center_logo()) {
         $options = '
         detached : function() {
           $(".header-container-in").removeClass().addClass("header-container-in'.$detached_classes.'");
@@ -1318,10 +1318,10 @@ endif;
 if ( !function_exists( 'get_image_width_and_height' ) ):
 function get_image_width_and_height($image_url){
 
-    //相対パスの場合はURLを追加
-    if (preg_match('{^/wp-content/uploads/}', $image_url)) {
-      $image_url = site_url() . $image_url;
-    }
+  //相対パスの場合はURLを追加
+  if (preg_match('{^/wp-content/uploads/}', $image_url)) {
+    $image_url = site_url() . $image_url;
+  }
 
   //URLにサイトアドレスが含まれていない場合
   if (!includes_site_url($image_url)) {
