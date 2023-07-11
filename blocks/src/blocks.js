@@ -122,6 +122,7 @@ import './block-extension/style-extension/border01.js';
 // スタイル拡張
 import './block-extension/style-extension/style01.js';
 import './block-extension/style-extension/style02.js';
+import './block-extension/style-extension/style03.js';
 
 // マージン拡張
 import './block-extension/style-extension/margin.js';
