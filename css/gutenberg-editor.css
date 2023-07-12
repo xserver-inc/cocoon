@@ -5472,3 +5472,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .block-editor-iframe__body .editor-post-title::after {
   display: none;
 }
+
+.body .wp-block li {
+  margin: 0.2em 0;
+}
