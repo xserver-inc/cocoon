@@ -72,7 +72,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'Google Analytics設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'Google Analyticsの解析タグの設定です。', THEME_NAME ) ?><?php _e( 'GA4解析とユニバーサルアナリティクス解析の共存は可能です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'Google Analyticsの解析タグの設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
