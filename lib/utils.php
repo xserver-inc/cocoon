@@ -3586,15 +3586,33 @@ endif;
 
 
 
-//barba.jsスクリプトの読み込み（子テーマカスタマイズ時にエラーがないようにするためのエイリアス）
+
+
+////////////////////////////////////////////////////
+// 以下子テーマカスタマイズ時にエラーがないようにするためのエイリアス
+////////////////////////////////////////////////////
+//barba.jsスクリプトの読み込み
 if ( !function_exists( 'wp_enqueue_script_barba_js' ) ):
 function wp_enqueue_script_barba_js(){}
 endif;
-//barba.jsのネームスペース（子テーマカスタマイズ時にエラーがないようにするためのエイリアス）
+//barba.jsのネームスペース
 if ( !function_exists( 'get_barba_name_space' ) ):
 function get_barba_name_space(){}
 endif;
-//文字列内のスクリプトをbarba.js用に取り出して出力する（子テーマカスタマイズ時にエラーがないようにするためのエイリアス）
+//文字列内のスクリプトをbarba.js用に取り出して出力する
 if ( !function_exists( 'generate_baruba_js_scripts' ) ):
 function generate_baruba_js_scripts($tag){}
+endif;
+//ユニバーサルアナリティクスID
+define('OP_GOOGLE_ANALYTICS_TRACKING_ID', 'google_analytics_tracking_id');
+if ( !function_exists( 'get_google_analytics_tracking_id' ) ):
+function get_google_analytics_tracking_id(){}
+endif;
+//Google Analyticsのスクリプト
+define('OP_GOOGLE_ANALYTICS_SCRIPT', 'google_analytics_script');
+if ( !function_exists( 'get_google_analytics_script' ) ):
+function get_google_analytics_script(){}
+endif;
+if ( !function_exists( 'is_google_analytics_script_gtag_js' ) ):
+function is_google_analytics_script_gtag_js(){}
 endif;
