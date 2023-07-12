@@ -369,10 +369,12 @@
 ///////////////////////////////////////////
 // リストブロックスタイル
 ///////////////////////////////////////////
-:is(.is-style-enclosed-numeric-list, .is-style-rank-list, .is-style-step-list){
+// :is(.is-style-numeric-list-enclosed, .is-style-numeric-list-rank, .is-style-numeric-list-step)
+[class*="is-style-numeric-list-"]{
   counter-reset: list;
   list-style-type: none;
-  li{
+  margin-left: 20px;
+  >li{
     position:relative;
     margin: 0.4em 0;
     line-height: 1.6;
@@ -393,45 +395,43 @@
     }
   }
 }
-.is-style-enclosed-numeric-list li:before{
+.is-style-numeric-list-enclosed > li:before{
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-box-border-color);
-  top: calc(50% - (1.6em/2));
 }
 
 //順位
-.is-style-rank-list li:before{
+.is-style-numeric-list-rank > li:before{
   background-color: var(--cocoon-white-color);
   border: 1px solid var(--cocoon-box-border-color);
   border-radius: 50%;
-  top: calc(50% - (1.6em/2));
 }
-.is-style-rank-list li:nth-of-type(1):before{
+.is-style-numeric-list-rank > li:nth-of-type(1):before{
   background-color: #ffd700;
   border-color: #daa520;
   color: #8b4513;
 }
-.is-style-rank-list li:nth-of-type(2):before{
+.is-style-numeric-list-rank > li:nth-of-type(2):before{
   background-color: #dcdcdc;
   border-color: #696969;
   color: #444;
 }
-.is-style-rank-list li:nth-of-type(3):before{
+.is-style-numeric-list-rank > li:nth-of-type(3):before{
   background-color: #eb9b6f;
   border-color: #ad3528;
   color: #583822;
 }
 
 //ステップ
-.is-style-step-list li{
+.is-style-numeric-list-step > li{
   margin: 1em 0;
 }
-.is-style-step-list li:before{
+.is-style-numeric-list-step > li:before{
   background-color: var(--cocoon-white-color);
   border: 2px solid var(--cocoon-box-border-color);
   z-index: 100;
 }
-.is-style-step-list li::after {
+.is-style-numeric-list-step > li::after {
   position: absolute;
   top: 0;
   bottom: -1em;
@@ -440,22 +440,24 @@
   border-left: 2px solid var(--cocoon-box-border-color);
   content: "";
 }
-.is-style-step-list li:last-of-type::after{
+.is-style-numeric-list-step > li:last-of-type::after{
   display: none;
 }
 
 //アイコンリスト
-:is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list, .is-style-info-list, .is-style-question-list, .is-style-warning-list, .is-style-paw-list, .is-style-thumb-up-list, .is-style-thumb-down-list, .is-style-ban-list, .is-style-user-man-list, .is-style-user-woman-list, .is-style-comment-list, .is-style-heart-list, .is-style-heart-broken-list){
+// :is(.is-style-icon-list-check, .is-style-icon-list-check-valid, .is-style-icon-list-check-disabled, .is-style-icon-list-circle, .is-style-icon-list-triangle, .is-style-icon-list-cross, .is-style-icon-list-info, .is-style-icon-list-question, .is-style-icon-list-warning, .is-style-icon-list-paw, .is-style-icon-list-thumb-up, .is-style-icon-list-thumb-down, .is-style-icon-list-ban, .is-style-icon-list-user-man, .is-style-icon-list-user-woman, .is-style-icon-list-comment, .is-style-icon-list-heart, .is-style-icon-list-heart-broken)
+[class*="is-style-icon-list-"]{
   list-style: none;
-  .wp-block-list{
-    list-style: none;
-    padding-left: 20px;
-  }
-  li{
+  margin-left: 20px;
+  // .wp-block-list{
+  //   list-style: none;
+  //   padding-left: 20px;
+  // }
+  >li{
     padding-left: 1.6em;
     position: relative;
   }
-  li::before{
+  >li::before{
     color: var(--cocoon-box-border-color);
     display: block;
     font-family: icomoon;
@@ -467,88 +469,88 @@
   }
 }
 //チェック
-.is-style-check-list li::before{
+.is-style-icon-list-check > li::before{
   content: "\e90a";
 }
 //チェック有効
-.is-style-check-valid-list li::before{
+.is-style-icon-list-check-valid > li::before{
   content: "\e908";
 }
 //チェック無効
-.is-style-check-disabled-list li::before{
+.is-style-icon-list-check-disabled > li::before{
   content: "\e909";
 }
 //丸
-.is-style-circle-list li::before{
+.is-style-icon-list-circle > li::before{
   content: "\e90b";
   color: #9ccc65;
 }
 //三角
-.is-style-triangle-list li::before{
+.is-style-icon-list-triangle > li::before{
   content: "\e91b";
   color: #ffca28;
 }
 //バツ
-.is-style-cross-list li::before{
+.is-style-icon-list-cross > li::before{
   content: "\e922";
   color: #ff7043;
 }
 //情報
-.is-style-info-list li::before{
+.is-style-icon-list-info > li::before{
   content: "\e910";
   color: #4fc3f7;
 }
 //疑問
-.is-style-question-list li::before{
+.is-style-icon-list-question > li::before{
   content: "\e90f";
   color: #ffca28;
 }
 //警告
-.is-style-warning-list li::before{
+.is-style-icon-list-warning > li::before{
   content: "\e921";
   color: #ff7043;
 }
 //肉球
-.is-style-paw-list li::before{
+.is-style-icon-list-paw > li::before{
   content: "\e907";
   color: #946243;
 }
 //サムアップ
-.is-style-thumb-up-list li::before{
+.is-style-icon-list-thumb-up > li::before{
   content: "\e918";
   color: #4db6ac;
 }
 //サムダウン
-.is-style-thumb-down-list li::before{
+.is-style-icon-list-thumb-down > li::before{
   content: "\e91a";
   color: #ee6e73;
 }
 //禁止
-.is-style-ban-list li::before{
+.is-style-icon-list-ban > li::before{
   content: "\e90d";
   color: #ff7043;
 }
 //男性
-.is-style-user-man-list li::before{
+.is-style-icon-list-user-man > li::before{
   content: "\e91d";
   color: #7986cb;
 }
 //女性
-.is-style-user-woman-list li::before{
+.is-style-icon-list-user-woman > li::before{
   content: "\e91e";
   color: #ee6e73;
 }
 //コメント
-.is-style-comment-list li::before{
+.is-style-icon-list-comment > li::before{
   content: "\e911";
 }
 //ハート
-.is-style-heart-list li::before{
+.is-style-icon-list-heart > li::before{
   content: "\e9da";
   color: #ef5350;
 }
 //ハートブレイク
-.is-style-heart-broken-list li::before{
+.is-style-icon-list-heart-broken > li::before{
   content: "\e9db";
   color: #ef5350;
 }

@@ -42,87 +42,87 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           buttonText: __( 'デフォルト', THEME_NAME ),
         },
         {
-          style: 'enclosed-numeric-list',
+          style: 'numeric-list-enclosed',
           buttonText: __( '丸数字', THEME_NAME ),
         },
         {
-          style: 'rank-list',
+          style: 'numeric-list-rank',
           buttonText: __( '順位', THEME_NAME ),
         },
         {
-          style: 'step-list',
+          style: 'numeric-list-step',
           buttonText: __( 'ステップ', THEME_NAME ),
         },
         {
-          style: 'check-list',
+          style: 'icon-list-check',
           buttonText: __( 'チェック', THEME_NAME ),
         },
         {
-          style: 'check-valid-list',
+          style: 'icon-list-check-valid',
           buttonText: __( 'チェック有効', THEME_NAME ),
         },
         {
-          style: 'check-disabled-list',
+          style: 'icon-list-check-disabled',
           buttonText: __( 'チェック無効', THEME_NAME ),
         },
         {
-          style: 'circle-list',
+          style: 'icon-list-circle',
           buttonText: __( '丸', THEME_NAME ),
         },
         {
-          style: 'triangle-list',
+          style: 'icon-list-triangle',
           buttonText: __( '三角', THEME_NAME ),
         },
         {
-          style: 'cross-list',
+          style: 'icon-list-cross',
           buttonText: __( 'バツ', THEME_NAME ),
         },
         {
-          style: 'info-list',
+          style: 'icon-list-info',
           buttonText: __( '情報', THEME_NAME ),
         },
         {
-          style: 'question-list',
+          style: 'icon-list-question',
           buttonText: __( '疑問', THEME_NAME ),
         },
         {
-          style: 'warning-list',
+          style: 'icon-list-warning',
           buttonText: __( '警告', THEME_NAME ),
         },
         {
-          style: 'paw-list',
+          style: 'icon-list-paw',
           buttonText: __( '肉球', THEME_NAME ),
         },
         {
-          style: 'thumb-up-list',
+          style: 'icon-list-thumb-up',
           buttonText: __( 'サムアップ', THEME_NAME ),
         },
         {
-          style: 'thumb-down-list',
+          style: 'icon-list-thumb-down',
           buttonText: __( 'サムダウン', THEME_NAME ),
         },
         {
-          style: 'comment-list',
+          style: 'icon-list-comment',
           buttonText: __( 'コメント', THEME_NAME ),
         },
         {
-          style: 'user-man-list',
+          style: 'icon-list-user-man',
           buttonText: __( '男性', THEME_NAME ),
         },
         {
-          style: 'user-woman-list',
+          style: 'icon-list-user-woman',
           buttonText: __( '女性', THEME_NAME ),
         },
         {
-          style: 'heart-list',
+          style: 'icon-list-heart',
           buttonText: __( 'ハート', THEME_NAME ),
         },
         {
-          style: 'heart-broken-list',
+          style: 'icon-list-heart-broken',
           buttonText: __( 'ハートブレイク', THEME_NAME ),
         },
         {
-          style: 'ban-list',
+          style: 'icon-list-ban',
           buttonText: __( '禁止', THEME_NAME ),
         },
       ];

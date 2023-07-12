@@ -1330,7 +1330,9 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     &.wp-block-list{
       margin-top: 0.4em;
     }
-    &:is(.is-style-enclosed-numeric-list, .is-style-rank-list, .is-style-step-list){
+    // &:is(.is-style-numeric-list-enclosed, .is-style-numeric-list-rank, .is-style-numeric-list-step)
+    &[class*="is-style-numeric-list-"]
+    {
       li{
         margin: 0;
         &::before{
@@ -1341,11 +1343,11 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
         }
       }
     }
-    &.is-style-step-list li::before{
+    &.is-style-numeric-list-step li::before{
       border-width: 1px;
     }
-    &.is-style-step-list li{
-      margin: 0.4em 0;
+    &.is-style-numeric-list-step li{
+      // margin: 0.4em 0;
       &::after{
         border-width: 1px;
         left: 0.6em;
