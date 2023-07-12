@@ -447,6 +447,10 @@
 //アイコンリスト
 :is(.is-style-check-list, .is-style-check-valid-list, .is-style-check-disabled-list, .is-style-circle-list, .is-style-triangle-list, .is-style-cross-list, .is-style-info-list, .is-style-question-list, .is-style-warning-list, .is-style-paw-list, .is-style-thumb-up-list, .is-style-thumb-down-list, .is-style-ban-list, .is-style-user-man-list, .is-style-user-woman-list, .is-style-comment-list, .is-style-heart-list, .is-style-heart-broken-list){
   list-style: none;
+  .wp-block-list{
+    list-style: none;
+    padding-left: 20px;
+  }
   li{
     padding-left: 1.6em;
     position: relative;
