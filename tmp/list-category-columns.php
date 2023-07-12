@@ -48,10 +48,15 @@ $count = get_index_category_entry_card_count();
         </h1>
         <div class="list">
           <?php
+          $type = ET_DEFAULT;
+          //[Cocoon設定]→[インデックス]→枠線の表示「カードの枠線を表示する」が有効になっている場合は枠線を表示する
+          if (is_entry_card_border_visible()) {
+            $type = ET_BORDER_SQUARE;
+          }
           $atts = array(
             'entry_count' => apply_filters('index_widget_entry_card_count', $count, $cat_id),
             'cat_ids' => $cat_id,
-            'type' => apply_filters('index_widget_entry_card_type', ET_DEFAULT, $cat_id),
+            'type' => apply_filters('index_widget_entry_card_type', $type, $cat_id),
             'arrow' => apply_filters('index_widget_entry_card_arrow', 1, $cat_id),
             'sticky' => 0,
             'include_children' => 1,

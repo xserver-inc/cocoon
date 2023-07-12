@@ -140,7 +140,7 @@ body.public-page{
 }
 <?php endif ?>
 <?php //ヘッダーの高さ
-if (get_header_layout_type_center_logo() && get_header_area_height()): ?>
+if (is_header_layout_type_center_logo() && get_header_area_height()): ?>
 .header .header-in{
   min-height: <?php echo get_header_area_height(); ?>px;
 }
@@ -973,3 +973,23 @@ if (!is_admin() && isset($locale) && !preg_match('/^ja/', $locale)): ?>
   content: "<?php _e('続きの記事', THEME_NAME); ?>";
 }
 <?php endif ?>
+<?php //ヘッダーのサイズを背景画像のアスペクト比率にするか
+$image_url = get_header_background_image_url();
+if ($image_url && is_header_size_background_image_aspect_ratio() && is_header_layout_type_center_logo()):
+  $size = get_image_width_and_height($image_url);
+  $width = isset($size['width']) ? $size['width'] : 0;
+  $height = isset($size['height']) ? $size['height'] : 0; ?>
+  <?php //サイズを取得できた時
+  if (isset($width) && isset($height)): ?>
+    .header {
+      aspect-ratio: <?php echo $width; ?> / <?php echo $height; ?>;
+      background-position: top center;
+      display: flex;
+      align-items: center;
+    }
+    <?php //高さ設定の無効化 ?>
+    .header .header-in {
+      min-height: 0 !important;
+    }
+  <?php endif; ?>
+<?php endif; ?>

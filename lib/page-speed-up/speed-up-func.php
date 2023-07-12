@@ -182,37 +182,3 @@ EOF;
   return stripslashes_deep(get_theme_option(OP_PRE_ACQUISITION_LIST, $list));
 }
 endif;
-
-
-//文字列内のスクリプトをbarba.js用に取り出して出力する
-if ( !function_exists( 'generate_baruba_js_scripts' ) ):
-function generate_baruba_js_scripts($tag){
-  if (preg_match_all('#<script[^>]*?>([\s\S.]*?)</script>#i', $tag, $m)) {
-    //_v($m);
-    if (isset($m[1]) && $m[1]) {
-      $tags = $m[0];
-      $codes = $m[1];
-      $i = 0;
-      foreach ($codes as $code) {
-        if ($code) {//コードの場合
-          //_v($code);
-          echo $code.PHP_EOL.PHP_EOL.PHP_EOL;
-        } else {//スクリプトファイルの場合
-          $tag = $tags[$i];
-          if (preg_match('#src=[\'"](.+)[\'"]#i', $tag, $n)) {
-            $src = get_query_removed_url($n[1]);
-            if (includes_site_url($src)) {
-              $src_file = url_to_local($src);
-              if (file_exists($src_file)) {
-                $script = wp_filesystem_get_contents($src_file);
-                echo $script.PHP_EOL.PHP_EOL.PHP_EOL;
-              }
-            }
-          }
-        }
-        $i++;
-      }
-    }
-  }
-}
-endif;

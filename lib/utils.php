@@ -653,7 +653,7 @@ function wp_enqueue_clingify(){
       $selector = '.header-container';
       $detached_classes = get_additional_header_container_classes();
       $options = null;
-      if (get_header_layout_type_center_logo()) {
+      if (is_header_layout_type_center_logo()) {
         $options = '
         detached : function() {
           $(".header-container-in").removeClass().addClass("header-container-in'.$detached_classes.'");
@@ -1318,10 +1318,10 @@ endif;
 if ( !function_exists( 'get_image_width_and_height' ) ):
 function get_image_width_and_height($image_url){
 
-    //相対パスの場合はURLを追加
-    if (preg_match('{^/wp-content/uploads/}', $image_url)) {
-      $image_url = site_url() . $image_url;
-    }
+  //相対パスの場合はURLを追加
+  if (preg_match('{^/wp-content/uploads/}', $image_url)) {
+    $image_url = site_url() . $image_url;
+  }
 
   //URLにサイトアドレスが含まれていない場合
   if (!includes_site_url($image_url)) {
@@ -2893,10 +2893,38 @@ function get_time_to_content_read($content){
 }
 endif;
 
+//内部URLからカテゴリーオブジェクトを取得する
+if ( !function_exists( 'url_to_category_object' ) ):
+function url_to_category_object($url){
+  //タグのベースURLの正規表現
+  $category_base = get_option('category_base');
+  $category_base = $category_base ? preg_quote($category_base, '/') : 'category';
+  $quoteed_category_base = preg_quote($category_base);
+  $reg = '{/'.$quoteed_category_base.'/([^/]+)|/\?cat\=([^&]+)}';
+  preg_match($reg, $url, $m);
+  $slug = null;
+  if (isset($m[1]) && $m[1]) {
+    $slug = $m[1];
+    //カテゴリーの取得
+    if ($slug) {
+      $category = get_category_by_slug($slug);
+      if ($category) {
+        return $category;
+      }
+    }
+  } elseif (isset($m[2]) && $m[2]) {
+    $cat_id = $m[2];
+    $category = get_category($cat_id);
+    if ($category) {
+      return $category;
+    }
+  }
+}
+endif;
+
 //内部URLからタグオブジェクトを取得する
 if ( !function_exists( 'url_to_tag_object' ) ):
 function url_to_tag_object($url){
-  // var_dump($url);
   //タグのベースURLの正規表現
   $tag_base = get_option('tag_base');
   $tag_base = $tag_base ? preg_quote($tag_base, '/') : 'tag';
@@ -2916,23 +2944,6 @@ function url_to_tag_object($url){
       return $tag;
     }
   }
-
-
-  // $tag_base = get_option('tag_base');
-  // $tag_base = $tag_base ? preg_quote($tag_base, '/') : 'tag';
-  // $tag_base_reg = '/'.preg_quote(home_url('/'), '/').'(.+\/)*'.$tag_base.'\/'.'/';
-
-  // $removed_url = get_query_removed_url($url);
-  // $tag_slug = preg_replace($tag_base_reg, '', $removed_url);
-  // //置換が行われた場合
-  // if ($removed_url != $tag_slug) {
-  //   $tag_slug = preg_replace('{/.+}', '', $tag_slug);
-  //   $tags = get_tags(array('slug' => $tag_slug));
-  //   if (isset($tags[0])) {
-  //     $tag = $tags[0];
-  //     return $tag;
-  //   }
-  // }
 }
 endif;
 
@@ -3596,4 +3607,37 @@ if ( !function_exists( 'is_block_editor_page' ) ):
 function is_block_editor_page() {
   return is_admin() && has_blocks();
 }
+endif;
+
+
+
+
+
+////////////////////////////////////////////////////
+// 以下子テーマカスタマイズ時にエラーがないようにするためのエイリアス
+////////////////////////////////////////////////////
+//barba.jsスクリプトの読み込み
+if ( !function_exists( 'wp_enqueue_script_barba_js' ) ):
+function wp_enqueue_script_barba_js(){}
+endif;
+//barba.jsのネームスペース
+if ( !function_exists( 'get_barba_name_space' ) ):
+function get_barba_name_space(){}
+endif;
+//文字列内のスクリプトをbarba.js用に取り出して出力する
+if ( !function_exists( 'generate_baruba_js_scripts' ) ):
+function generate_baruba_js_scripts($tag){}
+endif;
+//ユニバーサルアナリティクスID
+define('OP_GOOGLE_ANALYTICS_TRACKING_ID', 'google_analytics_tracking_id');
+if ( !function_exists( 'get_google_analytics_tracking_id' ) ):
+function get_google_analytics_tracking_id(){}
+endif;
+//Google Analyticsのスクリプト
+define('OP_GOOGLE_ANALYTICS_SCRIPT', 'google_analytics_script');
+if ( !function_exists( 'get_google_analytics_script' ) ):
+function get_google_analytics_script(){}
+endif;
+if ( !function_exists( 'is_google_analytics_script_gtag_js' ) ):
+function is_google_analytics_script_gtag_js(){}
 endif;

@@ -133,9 +133,8 @@ class PopularEntryWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){
       $instance = array(
-        'title' => __( '人気記事', THEME_NAME ),
         'widget_mode' => WM_DEFAULT,
-        'title' => '',
+        'title' => __( '人気記事', THEME_NAME ),
         'entry_count' => EC_DEFAULT,
         'entry_type' => ET_DEFAULT,
         'count_days' => PCD_DEFAULT,

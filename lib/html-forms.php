@@ -421,7 +421,11 @@ function generate_the_site_logo_tag($is_header = true){
     $home_url = apply_filters('footer_site_logo_url', $home_url);
     $site_logo_text = apply_filters('footer_site_logo_text', $site_logo_text);
   }
-  $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
+  $itemprop = null;
+  if (!$logo_url) {
+    $itemprop = ' itemprop="name about"';
+  }
+  $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text"'.$itemprop.'>';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
     $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'><meta itemprop="name about" content="' . esc_attr($site_logo_text) . '">';
@@ -998,6 +1002,7 @@ function generate_popular_entries_tag($atts){
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
+    'snippet' => 0,
     'author' => null,
     'post_type' => 'post',
     'horizontal' => 0,
@@ -1010,7 +1015,7 @@ function generate_popular_entries_tag($atts){
   }
 
 
-  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type);
+  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type, $snippet);
 
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   $atts = array(
@@ -1050,6 +1055,13 @@ function generate_popular_entries_tag($atts){
         $post_thumbnail_img = get_original_image_tag($no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
       }
 
+      //スニペット表示
+      $snippet_tag = '';
+      //「タイトルを重ねた大きなサムネイル」の時はスニペットを表示させない
+      if ($snippet && isset($post->ID) && isset($post->post_content) && $entry_type !== ET_LARGE_THUMB_ON) {
+        $snippet_tag = '<div class="popular-entry-card-snippet widget-entry-card-snippet card-snippet">'.get_the_snippet($post->post_content, get_entry_card_excerpt_max_length(), $post->ID).'</div>';
+      }
+
       $pv_tag = null;
       if ($pv_visible){
         $pv_text = $pv == '1' ? $pv.' view' : $pv.' views';
@@ -1067,7 +1079,8 @@ function generate_popular_entries_tag($atts){
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
-        <span class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></span>
+        <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
+        <?php echo $snippet_tag; ?>
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
         <?php endif ?>
@@ -1665,13 +1678,30 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
     }
     $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
   }
-  elseif ($object == 'post_tag' || $object == 'custom') {//カスタムメニュー
-    //タグページのアイキャッチを取得
-    $tag_obj = url_to_tag_object($url);
-    if ($tag_obj && isset($tag_obj->term_id)) {
-      $image_url = get_the_tag_eye_catch_url($tag_obj->term_id);
-      $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
+  elseif ($object == 'post_tag'){//タグアイキャッチの取得
+    $image_url = get_the_tag_eye_catch_url($object_id);
+    $thumb_id = attachment_url_to_postid( $image_url );
+    $thumb_img = wp_get_attachment_image_src($thumb_id, $thumb_size);
+    if (isset($thumb_img[0]) && $thumb_img[0]) {
+      $image_url = $thumb_img[0];
     }
+    $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
+  }
+  elseif ($object == 'custom') {//カスタムメニュー
+    //カテゴリーページのアイキャッチを取得
+    $category_obj = url_to_category_object($url);
+    if ($category_obj && isset($category_obj->term_id)) {
+      $image_url = get_the_category_eye_catch_url($category_obj->term_id);
+      $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
+    } else {
+      //タグページのアイキャッチを取得
+      $tag_obj = url_to_tag_object($url);
+      if ($tag_obj && isset($tag_obj->term_id)) {
+        $image_url = get_the_tag_eye_catch_url($tag_obj->term_id);
+        $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
+      }
+    }
+
   }
 
   if (!$image_attributes) {//アイキャッチがない場合
@@ -1761,7 +1791,7 @@ function generate_info_list_tag($atts){
       <div class="info-list-item">
         <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
         <div class="info-list-item-meta">
-          <span class="info-list-item-date"><?php the_time(get_option('date_format')); ?></span><span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
+          <span class="info-list-item-date"><?php the_time(get_site_date_format()); ?></span><span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
         </div>
       </div>
     <?php endwhile; ?>

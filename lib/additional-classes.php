@@ -141,7 +141,7 @@ function body_class_additional($classes) {
   }
 
   //ヘッダーが「センターロゴ」か「トップメニュー」か
-  if (get_header_layout_type_top()) {
+  if (is_header_layout_type_top()) {
     $classes[] = 'hlt-top-menu-wrap';
   } else {
     $classes[] = 'hlt-center-logo-wrap';
@@ -338,7 +338,7 @@ function body_class_additional($classes) {
   }
 
   //ヘッダーモバイルボタン表示時にサイトロゴを表示しない場合
-  if (!is_mobile_header_logo_visible() && is_mobile_button_layout_type_mobile_buttons() && !is_amp()) {
+  if (!is_mobile_header_logo_visible() && is_mobile_button_layout_type_mobile_buttons_top() && !is_amp()) {
     $classes[] = 'no-mobile-header-logo';
   }
 

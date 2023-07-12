@@ -46,6 +46,12 @@ function is_mobile_button_layout_type_mobile_buttons(){
     is_mobile_button_layout_type_header_and_footer_mobile_buttons();
 }
 endif;
+if ( !function_exists( 'is_mobile_button_layout_type_mobile_buttons_top' ) ):
+function is_mobile_button_layout_type_mobile_buttons_top(){
+  return is_mobile_button_layout_type_header_mobile_buttons() ||
+    is_mobile_button_layout_type_header_and_footer_mobile_buttons();
+}
+endif;
 
 if ( !function_exists( 'is_slicknav_visible' ) ):
 function is_slicknav_visible(){

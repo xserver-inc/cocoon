@@ -37,6 +37,9 @@ update_theme_option(OP_HEADER_BACKGROUND_IMAGE_URL);
 //ヘッダー背景を固定にするか
 update_theme_option(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED);
 
+//ヘッダーのサイズを背景画像のアスペクト比率にするか
+update_theme_option(OP_HEADER_SIZE_BACKGROUND_IMAGE_ASPECT_RATIO);
+
 //ヘッダー全体の背景色
 update_theme_option(OP_HEADER_CONTAINER_BACKGROUND_COLOR);
 

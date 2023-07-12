@@ -327,7 +327,7 @@ function get_all_access_count($post_id = null){
 endif;
 
 if ( !function_exists( 'wrap_joined_wp_posts_query' ) ):
-function wrap_joined_wp_posts_query($query, $limit, $author, $post_type){
+function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet = 0){
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
@@ -336,9 +336,12 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type){
   if ($author) {
     $author_query = ' AND post_author = '.esc_sql($author);
   }
-  // $post_type = 'post';
+  // $snippet_column = '';
+  // if ($snippet) {
+  //   $snippet_column = 'post_content, ';
+  // }
   $query = "
-    SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
+    SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, post_content, comment_count FROM (
       {$query}
     ) AS {$ranks_posts}
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
@@ -356,7 +359,7 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAULT, $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array(), $children = 0, $author = null, $post_type = 'post'){
+function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAULT, $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array(), $children = 0, $author = null, $post_type = 'post', $snippet = 0){
   //カテゴリー配列を文字列に変換
   $cat_ids = is_array($cat_ids) ? $cat_ids : array();
   $cats = implode(',', $cat_ids);
@@ -407,12 +410,10 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
 
   global $wpdb;
   $access_table = ACCESSES_TABLE_NAME;
-  // $post_type = 'post';
   $date = get_current_db_date();
 
 
   $where = " WHERE {$access_table}.post_type = '$post_type' ".PHP_EOL;
-  // _v($where);
   if ($days != 'all') {
     $date_before = get_current_db_date_before($days);
     $where .= " AND {$access_table}.date BETWEEN '$date_before' AND '$date' ".PHP_EOL;
@@ -421,7 +422,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   if (is_ids_exist($exclude_post_ids)) {
     $where .= " AND {$access_table}.post_id NOT IN(".implode(',', $exclude_post_ids).") ".PHP_EOL;
   }
-  //3180, 3234
+
   if (!is_numeric($limit)) {
     $limit = 5;
   }
@@ -434,7 +435,6 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     //カテゴリー指定
     if (is_ids_exist($cat_ids)) {
       $cat_ids = implode(',', $cat_ids);
-      //$where .= " AND {$term_relationships}.term_taxonomy_id IN ({$cat_ids}) ".PHP_EOL;
       $where .= " AND {$term_taxonomy}.term_id IN ({$cat_ids}) ".PHP_EOL;
     }
     //除外カテゴリー指定
@@ -448,8 +448,6 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     }
 
     $where .= " AND {$term_taxonomy}.taxonomy = 'category' ".PHP_EOL;
-    // //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する
-    // $where = str_replace('WHERE', 'AND', $where);
     $query = "
       SELECT {$joined_table}.post_id, SUM({$joined_table}.count) AS sum_count, {$joined_table}.term_taxonomy_id, {$joined_table}.taxonomy
         FROM (
@@ -469,7 +467,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     ";
     //_v($query);
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type);
+    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
   } else {
     $query = "
       SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
@@ -478,10 +476,12 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
         ORDER BY sum_count DESC
     ";
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type);
+    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
   }
 
   $records = $wpdb->get_results( $query );
+  // _v($query);
+  // _v($records);
 
   if (is_access_count_cache_enable() && $records) {
     set_transient( $transient_id, $records, 60 * get_access_count_cache_interval() );
