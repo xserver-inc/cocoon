@@ -338,7 +338,7 @@ function body_class_additional($classes) {
   }
 
   //ヘッダーモバイルボタン表示時にサイトロゴを表示しない場合
-  if (!is_mobile_header_logo_visible() && is_mobile_button_layout_type_mobile_buttons() && !is_amp()) {
+  if (!is_mobile_header_logo_visible() && is_mobile_button_layout_type_mobile_buttons_top() && !is_amp()) {
     $classes[] = 'no-mobile-header-logo';
   }
 
