@@ -13,7 +13,7 @@ $temp_options = $_THEME_OPTIONS;
 //スキン用のfunctions.phpがある場合
 $php_file_path = url_to_local(get_skin_php_url());
 if (file_exists($php_file_path)) {
-require_once $php_file_path;
+  require_once $php_file_path;
 }
 
 //スキン制御がある場合は配列をマージ
