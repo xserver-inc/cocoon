@@ -635,7 +635,7 @@ function get_the_snippet($content, $length = 70, $post_id = null) {
     $post = get_post($post_id);
   }
   //抜粋（投稿編集画面）の取得
-  if ($post && ($post->ID == $post_id)) {
+  if ($post) {
     $description = $post->post_excerpt;
   }
 
