@@ -40,7 +40,12 @@ if (file_exists($csv_file_path)) {
     if(isset($line[0]) && isset($line[1])){
       $name = trim($line[0]);
       $value = trim($line[1]);
-      if (includes_string($value, ',')) {
+      //配列オプション名
+      $array_opsion_mames = array(
+        'exclude_widget_classes',
+        'exclude_widget_area_ids',
+      );
+      if (in_array($name, $array_opsion_mames) && includes_string($value, ',')) {
         $value = explode(',', $value);
       }
       $_THEME_OPTIONS[$name] = $value;
