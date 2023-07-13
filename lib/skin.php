@@ -13,7 +13,7 @@ $temp_options = $_THEME_OPTIONS;
 //スキン用のfunctions.phpがある場合
 $php_file_path = url_to_local(get_skin_php_url());
 if (file_exists($php_file_path)) {
-require_once $php_file_path;
+  require_once $php_file_path;
 }
 
 //スキン制御がある場合は配列をマージ
@@ -40,6 +40,14 @@ if (file_exists($csv_file_path)) {
     if(isset($line[0]) && isset($line[1])){
       $name = trim($line[0]);
       $value = trim($line[1]);
+      //配列オプション名
+      $array_opsion_mames = array(
+        'exclude_widget_classes',
+        'exclude_widget_area_ids',
+      );
+      if (in_array($name, $array_opsion_mames) && includes_string($value, ',')) {
+        $value = explode(',', $value);
+      }
       $_THEME_OPTIONS[$name] = $value;
     }
   }
@@ -54,5 +62,3 @@ if (file_exists($json_file_path)) {
     $_THEME_OPTIONS = array_merge($_THEME_OPTIONS, $json_options);
   }
 }
-
-

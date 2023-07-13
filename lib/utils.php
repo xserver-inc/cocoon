@@ -873,21 +873,6 @@ function wp_enqueue_jquery_masonry(){
 }
 endif;
 
-// //数式表示用
-// if ( !function_exists( 'wp_enqueue_mathjax' ) ):
-// function wp_enqueue_mathjax(){
-//   if ( is_formula_enable()) {
-//     wp_enqueue_script( 'mathjax', '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML', array(), false, false );
-//     $data = minify_js('
-//       MathJax.Hub.Config({
-//         TeX: { equationNumbers: { autoNumber: "all" } }
-//       });
-//     ');
-//     wp_add_inline_script( 'mathjax', $data, 'after' ) ;
-//   }
-// }
-// endif;
-
 //投稿画面ポスト時の確認ダイアログ
 if ( !function_exists( 'wp_enqueue_confirmation_before_publish' ) ):
 function wp_enqueue_confirmation_before_publish(){
@@ -1911,8 +1896,6 @@ function get_file_contents($file){
 }
 endif;
 
-// _v(ABSPATH);
-// include_once(ABSPATH.'wp-admin/includes/file.php');
 if (!defined('FS_CHMOD_FILE')) {
   define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
 }
@@ -2512,14 +2495,6 @@ endif;
 
 //人間感覚の年の取得
 if ( !function_exists( 'get_human_years_ago' ) ):
-// function get_human_years_ago( $from, $unit = '' ) {
-//   $to    = date('Ymd');
-//   $from  = date('Ymd', $from);
-//   $years = floor(($to - $from) / 10000);
-
-//   $since = sprintf('%s'.$unit, $years);
-//   return $since;
-// }
 function get_human_years_ago( $from, $unit = '' ) {
   $from = new DateTime(date('Y-m-d', $from));
   $to = new DateTime('today');
@@ -2557,7 +2532,6 @@ if ( !function_exists( 'add_meta_box_custom_post_types' ) ):
 function add_meta_box_custom_post_types($id, $title, $callback, $screen = null, $context = 'advanced', $priority = 'default', $callback_args = null){
   $post_types = get_custum_post_types();
   foreach ($post_types as $post_type) {
-    //_v($post_type);
     add_meta_box($id, $title, $callback, $post_type, $context, $priority, $callback_args);
   }
 }
@@ -2739,7 +2713,6 @@ endif;
 if ( !function_exists( 'add_code_to_htaccess' ) ):
 function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
 
-  //$resoce_file = 'browser-cache.conf';
   //設定ファイルが存在しない場合
   if (!file_exists($resoce_file)) {
     return ;
@@ -2803,7 +2776,6 @@ function remove_code_from_htacccess($reg){
         $current_code = $m[0];
         //正規表現で見つかったブラウザキャッシュコードを正規表現で削除
         $last_htaccess = str_replace($current_code, '', $current_htaccess);
-        //_v($last_htaccess);
         //ブラウザキャッシュを削除したコードを.htaccessファイルに書き込む
         wp_filesystem_put_contents(
           get_abs_htaccess_file(),
@@ -2876,7 +2848,6 @@ function get_http_content($url){
     return $body;
   } catch (Exception $e) {
     return false;
-    //echo $e->getMessage();
   }
 }
 endif;
@@ -3098,15 +3069,13 @@ if ( !function_exists( 'get_abs_home_path' ) ):
 function get_abs_home_path(){
   $site_url = get_site_url(null, '/');
   $home_url = get_home_url(null, '/');
-  // _v($site_url);
-  // _v($home_url);
+
   if ($site_url == $home_url) {
     return ABSPATH;
   } else {
     if (includes_string($site_url, $home_url)) {
       $dir = str_replace($home_url, '', $site_url);
-      // _v($dir);
-      // _v(preg_quote($dir, '/'));
+
       $home_path = preg_replace('/'.preg_quote($dir, '/').'$/', '', ABSPATH);
       return $home_path;
     } else {
