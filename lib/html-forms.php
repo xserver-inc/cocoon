@@ -118,7 +118,19 @@ add_filter( 'admin_input_form_tag', 'wrap_skin_control_tag', 10, 3 );
 if ( !function_exists( 'wrap_skin_control_tag' ) ):
 function wrap_skin_control_tag($tag, $name, $value = 1){
   if (is_form_skin_option($name, $value)) {
-    $tag = get_skin_control_tag($tag);
+    global $_FORM_SKIN_OPTIONS;
+    $name = str_replace('[]', '', $name);
+    // _v($_FORM_SKIN_OPTIONS);
+    // _v($name);
+    // _v($value);
+    //値が配列だった場合配列だけをスキン制御タグで囲む
+    if (isset($_FORM_SKIN_OPTIONS[$name]) && is_array($_FORM_SKIN_OPTIONS[$name]) && in_array(trim($value), $_FORM_SKIN_OPTIONS[$name])) {
+      $tag = get_skin_control_tag($tag);
+    }
+    //値が文字列だった場合スキン制御タグで囲む
+    elseif (isset($_FORM_SKIN_OPTIONS[$name]) && is_string($_FORM_SKIN_OPTIONS[$name])){
+      $tag = get_skin_control_tag($tag);
+    }
   }
   return $tag;
 }
