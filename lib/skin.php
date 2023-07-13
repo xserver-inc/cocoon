@@ -40,6 +40,9 @@ if (file_exists($csv_file_path)) {
     if(isset($line[0]) && isset($line[1])){
       $name = trim($line[0]);
       $value = trim($line[1]);
+      if (includes_string($value, ',')) {
+        $value = explode(',', $value);
+      }
       $_THEME_OPTIONS[$name] = $value;
     }
   }
@@ -54,5 +57,3 @@ if (file_exists($json_file_path)) {
     $_THEME_OPTIONS = array_merge($_THEME_OPTIONS, $json_options);
   }
 }
-
-
