@@ -123,13 +123,15 @@ function wrap_skin_control_tag($tag, $name, $value = 1){
     // _v($_FORM_SKIN_OPTIONS);
     // _v($name);
     // _v($value);
-    //値が配列だった場合配列だけをスキン制御タグで囲む
-    if (isset($_FORM_SKIN_OPTIONS[$name]) && is_array($_FORM_SKIN_OPTIONS[$name]) && in_array(trim($value), $_FORM_SKIN_OPTIONS[$name])) {
-      $tag = get_skin_control_tag($tag);
-    }
-    //値が文字列だった場合スキン制御タグで囲む
-    elseif (isset($_FORM_SKIN_OPTIONS[$name]) && is_string($_FORM_SKIN_OPTIONS[$name])){
-      $tag = get_skin_control_tag($tag);
+    if (isset($_FORM_SKIN_OPTIONS[$name])) {
+      //値が配列だった場合配列だけをスキン制御タグで囲む
+      if (is_array($_FORM_SKIN_OPTIONS[$name]) && in_array(trim($value), $_FORM_SKIN_OPTIONS[$name])) {
+        $tag = get_skin_control_tag($tag);
+      }
+      //値が文字列・数字だった場合スキン制御タグで囲む
+      elseif (is_string($_FORM_SKIN_OPTIONS[$name]) || is_numeric($_FORM_SKIN_OPTIONS[$name])){
+        $tag = get_skin_control_tag($tag);
+      }
     }
   }
   return $tag;
