@@ -85,7 +85,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
-  --cocoon-list-box-padding: 3% 4% 3% 6%;
+  --cocoon-list-padding: 1% 2% 1% 3%;
+  --cocoon-list-borderd-padding: 2% 3% 2% 4%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
@@ -2587,11 +2588,22 @@ label.screen-reader-text {
   padding: var(--cocoon-box-padding);
 }
 
+.has-list-style {
+  padding: var(--cocoon-list-padding);
+}
+.has-list-style.has-background {
+  padding: var(--cocoon-list-borderd-padding);
+}
+
+.wp-block .has-list-style {
+  padding: var(--cocoon-list-padding);
+}
+
 :is(ul, ol).has-border {
-  padding: var(--cocoon-list-box-padding);
+  padding: var(--cocoon-list-borderd-padding);
 }
 :is(ul, ol).has-border.has-background {
-  padding: var(--cocoon-list-box-padding);
+  padding: var(--cocoon-list-borderd-padding);
 }
 
 /*拡張クラスを追加するスタイルシート*/
@@ -2850,7 +2862,6 @@ label.screen-reader-text {
 .memo-box,
 .comment-box,
 .common-icon-box {
-  --cocoon-box-padding: 20px 20px 20px 72px;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -9246,7 +9257,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 [class*="is-style-numeric-list-"] {
   counter-reset: list;
   list-style-type: none;
-  margin-left: 20px;
 }
 [class*="is-style-numeric-list-"] > li {
   position: relative;
@@ -9330,7 +9340,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 [class*="is-style-icon-list-"] {
   list-style: none;
-  margin-left: 20px;
 }
 [class*="is-style-icon-list-"] > li {
   padding-left: 1.6em;

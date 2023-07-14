@@ -186,7 +186,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                               <ul
                                 className={ classnames( '__prev', 'wp-block-list', {
                                   [ 'is-style-' + style.style ]: !! style.style,
-                                  [ 'has-box-style' ]: style.style,
+                                  [ 'has-list-style' ]: style.style,
                                 } ) }
                               >
                                   <li>aaa</li>
@@ -244,7 +244,7 @@ const applyAttributesToBlock = createHigherOrderComponent(
             className={ classnames( {
               [ className ]: !! className,
               [ 'is-style-' + extraStyle ]: !! extraStyle,
-              [ 'has-box-style' ]: extraStyle,
+              [ 'has-list-style' ]: extraStyle,
             } ) }
           />
         );
@@ -271,7 +271,7 @@ const addCustomSave = ( props, blockType, attributes ) => {
       props.className = classnames( {
         [ className ]: !! className,
         [ 'is-style-' + extraStyle ]: !! extraStyle,
-        [ 'has-box-style' ]: extraStyle,
+        [ 'has-list-style' ]: extraStyle,
       } );
     }
 

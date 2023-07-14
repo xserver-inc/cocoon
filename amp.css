@@ -71,7 +71,8 @@
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
-  --cocoon-list-box-padding: 3% 4% 3% 6%;
+  --cocoon-list-padding: 0.2% 0.4% 0.2% 0.6%;
+  --cocoon-list-borderd-padding: 3% 4% 3% 6%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
@@ -2562,11 +2563,22 @@ label.screen-reader-text {
   padding: var(--cocoon-box-padding);
 }
 
+.has-list-style {
+  padding: var(--cocoon-list-padding);
+}
+.has-list-style.has-background {
+  padding: var(--cocoon-list-borderd-padding);
+}
+
+.wp-block .has-list-style {
+  padding: var(--cocoon-list-padding);
+}
+
 :is(ul, ol).has-border {
-  padding: var(--cocoon-list-box-padding);
+  padding: var(--cocoon-list-borderd-padding);
 }
 :is(ul, ol).has-border.has-background {
-  padding: var(--cocoon-list-box-padding);
+  padding: var(--cocoon-list-borderd-padding);
 }
 
 /*拡張クラスを追加するスタイルシート*/
@@ -2825,7 +2837,6 @@ label.screen-reader-text {
 .memo-box,
 .comment-box,
 .common-icon-box {
-  --cocoon-box-padding: 20px 20px 20px 72px;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -9221,7 +9232,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 [class*="is-style-numeric-list-"] {
   counter-reset: list;
   list-style-type: none;
-  margin-left: 20px;
 }
 [class*="is-style-numeric-list-"] > li {
   position: relative;
@@ -9305,7 +9315,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 [class*="is-style-icon-list-"] {
   list-style: none;
-  margin-left: 20px;
 }
 [class*="is-style-icon-list-"] > li {
   padding-left: 1.6em;

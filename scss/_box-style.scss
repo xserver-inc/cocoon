@@ -372,7 +372,7 @@
 [class*="is-style-numeric-list-"]{
   counter-reset: list;
   list-style-type: none;
-  margin-left: 20px;
+  // margin-left: 20px;
   >li{
     position:relative;
     margin: 0.4em 0;
@@ -399,9 +399,7 @@
 .iconlist-box {
   [class*="is-style-numeric-list-"],
   [class*="is-style-icon-list-"]{
-    // padding: var(--cocoon-list-box-padding);
     li{
-      // padding-left: .8em;
       &::before{
         margin-left: 0;
       }
@@ -462,7 +460,7 @@
 // :is(.is-style-icon-list-check, .is-style-icon-list-check-valid, .is-style-icon-list-check-disabled, .is-style-icon-list-circle, .is-style-icon-list-triangle, .is-style-icon-list-cross, .is-style-icon-list-info, .is-style-icon-list-question, .is-style-icon-list-warning, .is-style-icon-list-paw, .is-style-icon-list-thumb-up, .is-style-icon-list-thumb-down, .is-style-icon-list-ban, .is-style-icon-list-user-man, .is-style-icon-list-user-woman, .is-style-icon-list-comment, .is-style-icon-list-heart, .is-style-icon-list-heart-broken)
 [class*="is-style-icon-list-"]{
   list-style: none;
-  margin-left: 20px;
+  // margin-left: 20px;
 
   >li{
     padding-left: 1.6em;
@@ -481,15 +479,6 @@
     width: 1em;
   }
 }
-//アイコンリストブロック内のリストブロックアイテムスタイルの調整
-// .iconlist-box {
-//   [class*="is-style-icon-list-"]{
-//     padding: var(--cocoon-list-box-padding);
-//     li{
-//       padding-left: 0;
-//     }
-//   }
-// }
 
 //チェック
 .is-style-icon-list-check > li::before{

@@ -13,10 +13,21 @@
   }
 }
 
-:is(ul, ol).has-border{
-  padding: var(--cocoon-list-box-padding);
+.has-list-style{
+  padding: var(--cocoon-list-padding);
   &.has-background{
-    padding: var(--cocoon-list-box-padding);
+    padding: var(--cocoon-list-borderd-padding);
+  }
+}
+.wp-block{
+  .has-list-style{
+    padding: var(--cocoon-list-padding);
+  }
+}
+:is(ul, ol).has-border{
+  padding: var(--cocoon-list-borderd-padding);
+  &.has-background{
+    padding: var(--cocoon-list-borderd-padding);
   }
 }
 
@@ -255,7 +266,6 @@ $marker_u_blue: $marker_blue;
 .comment-box,
 .common-icon-box{
   //background-color: #F4F3EB;
-  --cocoon-box-padding: 20px 20px 20px 72px;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
