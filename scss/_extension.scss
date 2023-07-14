@@ -16,7 +16,7 @@
 .has-list-style{
   padding: var(--cocoon-list-padding);
   &.has-background{
-    padding: var(--cocoon-list-borderd-padding);
+    padding: var(--cocoon-list-wide-padding);
   }
 }
 .wp-block{
@@ -25,9 +25,9 @@
   }
 }
 :is(ul, ol).has-border{
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
   &.has-background{
-    padding: var(--cocoon-list-borderd-padding);
+    padding: var(--cocoon-list-wide-padding);
   }
 }
 

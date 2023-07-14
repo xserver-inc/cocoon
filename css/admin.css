@@ -79,8 +79,8 @@ body.wp-admin {
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
-  --cocoon-list-padding: 0.2% 0.4% 0.2% 0.6%;
-  --cocoon-list-borderd-padding: 3% 4% 3% 6%;
+  --cocoon-list-padding: 1% 2% 1% 3%;
+  --cocoon-list-wide-padding: 2% 3% 2% 4%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
@@ -2819,16 +2819,16 @@ body.wp-admin {
   padding: var(--cocoon-list-padding);
 }
 .admin-settings .demo .has-list-style.has-background {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .admin-settings .demo .wp-block .has-list-style {
   padding: var(--cocoon-list-padding);
 }
 .admin-settings .demo :is(ul, ol).has-border {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .admin-settings .demo :is(ul, ol).has-border.has-background {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
@@ -10697,16 +10697,16 @@ body.wp-admin {
   padding: var(--cocoon-list-padding);
 }
 .admin-settings .demo .has-list-style.has-background {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .admin-settings .demo .wp-block .has-list-style {
   padding: var(--cocoon-list-padding);
 }
 .admin-settings .demo :is(ul, ol).has-border {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .admin-settings .demo :is(ul, ol).has-border.has-background {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .admin-settings .demo .badge,
 .admin-settings .demo .ref,
@@ -19477,16 +19477,16 @@ textarea[name="the_page_memo"] {
   padding: var(--cocoon-list-padding);
 }
 .components-popover__content .has-list-style.has-background {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .components-popover__content .wp-block .has-list-style {
   padding: var(--cocoon-list-padding);
 }
 .components-popover__content :is(ul, ol).has-border {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .components-popover__content :is(ul, ol).has-border.has-background {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 .components-popover__content .admin-settings .demo .badge, .admin-settings .demo .components-popover__content .badge,
 .components-popover__content .admin-settings .demo .ref,

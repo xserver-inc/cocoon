@@ -72,7 +72,7 @@
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
   --cocoon-list-padding: 0.2% 0.4% 0.2% 0.6%;
-  --cocoon-list-borderd-padding: 3% 4% 3% 6%;
+  --cocoon-list-wide-padding: 3% 4% 3% 6%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
@@ -2567,7 +2567,7 @@ label.screen-reader-text {
   padding: var(--cocoon-list-padding);
 }
 .has-list-style.has-background {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 
 .wp-block .has-list-style {
@@ -2575,10 +2575,10 @@ label.screen-reader-text {
 }
 
 :is(ul, ol).has-border {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 :is(ul, ol).has-border.has-background {
-  padding: var(--cocoon-list-borderd-padding);
+  padding: var(--cocoon-list-wide-padding);
 }
 
 /*拡張クラスを追加するスタイルシート*/
