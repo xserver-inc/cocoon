@@ -7231,6 +7231,9 @@ div.fb-like-mobile {
 .share-menu-content .button-caption {
   display: none;
 }
+.share-menu-content .comment-button {
+  display: none;
+}
 
 .follow-menu-content .sns-buttons {
   justify-content: space-around;

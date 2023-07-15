@@ -316,6 +316,11 @@
   .button-caption {
     display: none;
   }
+
+  //コメントボタンは非表示
+  .comment-button {
+    display:none ;
+  }
 }
 
 .follow-menu-content {

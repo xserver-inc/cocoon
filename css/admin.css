@@ -6865,6 +6865,9 @@ body.wp-admin {
 .admin-settings .demo .share-menu-content .button-caption {
   display: none;
 }
+.admin-settings .demo .share-menu-content .comment-button {
+  display: none;
+}
 .admin-settings .demo .follow-menu-content .sns-buttons {
   justify-content: space-around;
 }
@@ -14502,6 +14505,9 @@ body.wp-admin {
   color: var(--cocoon-white-color);
 }
 .admin-settings .demo .share-menu-content .button-caption {
+  display: none;
+}
+.admin-settings .demo .share-menu-content .comment-button {
   display: none;
 }
 .admin-settings .demo .follow-menu-content .sns-buttons {
