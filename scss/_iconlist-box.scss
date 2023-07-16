@@ -15,11 +15,11 @@
   ul{
     list-style: none;
   }
-  ol{
-    li::before{
-      display: none;
-    }
-  }
+  // ol{
+  //   li::before{
+  //     display: none;
+  //   }
+  // }
   &.list-none{
     ul{
       list-style: disc;

@@ -7926,9 +7926,6 @@ ul.timeline ul ul ul {
 .iconlist-box ul {
   list-style: none;
 }
-.iconlist-box ol li::before {
-  display: none;
-}
 .iconlist-box.list-none ul {
   list-style: disc;
 }
