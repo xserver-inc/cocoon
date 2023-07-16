@@ -625,22 +625,23 @@ endif;
 if ( !function_exists( 'get_the_snippet' ) ):
 function get_the_snippet($content, $length = 70, $post_id = null) {
   global $post;
+  $tmp_post = $post;
 
   $description = null;
   if ($post_id) {
-    $post = get_post($post_id);
+    $tmp_post = get_post($post_id);
   }
   //抜粋（投稿編集画面）の取得
-  if ($post) {
-    $description = $post->post_excerpt;
+  if ($tmp_post) {
+    $description = $tmp_post->post_excerpt;
   }
 
   //SEO設定のディスクリプション取得
   if (!$description) {
     if ($post_id) {
       $description = get_the_page_meta_description($post_id);
-    } elseif ($post && isset($post->ID)) {
-      $description = get_the_page_meta_description($post->ID);
+    } elseif ($tmp_post && isset($tmp_post->ID)) {
+      $description = get_the_page_meta_description($tmp_post->ID);
     }
   }
 
@@ -655,7 +656,7 @@ function get_the_snippet($content, $length = 70, $post_id = null) {
     $description = str_replace('<', '&lt;', $description);
     $description = str_replace('>', '&gt;', $description);
   }
-  return apply_filters( 'get_the_snippet', $description, $post );
+  return apply_filters( 'get_the_snippet', $description, $tmp_post );
 }
 endif;
 
