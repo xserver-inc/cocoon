@@ -5156,3 +5156,13 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .block-editor-iframe__body .editor-post-title::after {
   display: none;
 }
+
+.block-editor-block-list__block.blogcard-type {
+  line-height: 3;
+}
+.block-editor-block-list__block.blogcard-type p {
+  margin: 0;
+}
+.block-editor-block-list__block.blogcard-type br {
+  display: initial !important;
+}

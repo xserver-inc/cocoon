@@ -30,6 +30,7 @@ endif;
 //本文中の外部URLをはてなブログカードタグに変更する
 if ( !function_exists( 'url_to_external_blog_card' ) ):
 function url_to_external_blog_card($the_content) {
+  // return $the_content;
   // //ブロックエディターのブログカード用の本文整形
   // $the_content = fix_blogcard_content($the_content);
   //1行にURLのみが期待されている行（URL）を全て$mに取得

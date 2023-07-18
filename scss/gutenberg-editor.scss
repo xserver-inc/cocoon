@@ -1355,3 +1355,20 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .block-editor-iframe__body .editor-post-title::after{
   display: none;
 }
+
+// [data-type="cocoon-blocks/blogcard"]{
+//   [data-rich-text-line-break="true"]{
+//     display: none;
+//   }
+// }
+
+//pのブロンカードURL入力と、brのブログカードURL入力の表示を均一化
+.block-editor-block-list__block.blogcard-type{
+  p{
+    margin: 0;
+  }
+  br{
+    display: initial !important;
+  }
+  line-height: 3;
+}

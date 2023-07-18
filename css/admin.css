@@ -2310,6 +2310,9 @@ body.wp-admin {
   margin-right: 31.6%;
   margin-left: 0;
 }
+.admin-settings .demo .blogcard-type br {
+  display: none;
+}
 .admin-settings .demo .toc {
   border: 1px solid var(--cocoon-basic-border-color);
   font-size: 0.9em;
@@ -9951,6 +9954,9 @@ body.wp-admin {
 .admin-settings .demo .nwa .eb-right .blogcard-content {
   margin-right: 31.6%;
   margin-left: 0;
+}
+.admin-settings .demo .blogcard-type br {
+  display: none;
 }
 .admin-settings .demo .toc {
   border: 1px solid var(--cocoon-basic-border-color);
