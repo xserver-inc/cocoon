@@ -104,17 +104,13 @@ if (!is_amp()): ?>
           'width': '100%',
         });
 
-        // $("#header-container").animate({
-        //   'top': '0'
-        // }, 500);
-
         admin_height = 0;
         if ($('#wpadminbar').length) {
           admin_height = $('#wpadminbar').outerHeight();
         }
 
         $("#header-container").animate({
-        'top': admin_height
+          'top': admin_height
         }, 500);
       }
     }
