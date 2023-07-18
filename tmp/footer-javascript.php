@@ -104,14 +104,15 @@ if (!is_amp()): ?>
           'width': '100%',
         });
 
-        admin_height = 0;
-        if ($('#wpadminbar').length) {
-          admin_height = $('#wpadminbar').outerHeight();
-        }
+        const wpadminbar = document.getElementById('wpadminbar');
+        const headerContainerTop = wpadminbar ? wpadminbar.clientHeight : 0;
 
-        $("#header-container").animate({
-          'top': admin_height
-        }, 500);
+        $('#header-container').animate(
+          {
+            top: headerContainerTop,
+          },
+          500
+        );
       }
     }
 
