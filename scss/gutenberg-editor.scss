@@ -1372,3 +1372,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   }
   line-height: 3;
 }
+
+//WordPress 6.3の仕様変更対応
+.components-button.display-none{
+  display: none !important;
+}
