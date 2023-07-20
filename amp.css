@@ -71,8 +71,8 @@
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
-  --cocoon-list-padding: 0.2% 0.4% 0.2% 0.6%;
-  --cocoon-list-wide-padding: 3% 4% 3% 6%;
+  --cocoon-list-padding: 1% 2% 1% 3%;
+  --cocoon-list-wide-padding: 3% 5% 3% 7%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
@@ -7907,9 +7907,6 @@ ul.timeline ul ul ul {
 }
 .iconlist-box ul {
   list-style: none;
-}
-.iconlist-box ol li::before {
-  display: none;
 }
 .iconlist-box.list-none ul {
   list-style: disc;

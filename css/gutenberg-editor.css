@@ -72,7 +72,7 @@
   --cocoon-middle-border-radius: 8px;
   --cocoon-box-padding: 1em 1.5em;
   --cocoon-list-padding: 1% 2% 1% 3%;
-  --cocoon-list-wide-padding: 2% 3% 2% 4%;
+  --cocoon-list-wide-padding: 3% 5% 3% 7%;
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
 }
