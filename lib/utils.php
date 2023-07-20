@@ -2596,9 +2596,13 @@ function get_singular_sns_share_image_url(){
   } else if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
     $image_id = get_post_thumbnail_id();
     $image = wp_get_attachment_image_src( $image_id, 'full');
-    $sns_image_url = $image[0];
+    if (isset($image[0])) {
+      $sns_image_url = $image[0];
+    }
   } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive() && is_auto_post_thumbnail_enable()) {//投稿にアイキャッチは無いが画像がある場合の処理
-    $sns_image_url = $image[2];
+    if (isset($image[2])) {
+      $sns_image_url = $image[2];
+    }
   } else if ( $no_image_url = get_no_image_url() ){//NO IMAGEが設定されている場合
     $sns_image_url = $no_image_url;
   } else if ( $ogp_home_image_url = get_ogp_home_image_url() ){//ホームイメージが設定されている場合
@@ -2619,22 +2623,25 @@ function get_singular_eyecatch_image_url(){
   if ( isset( $post->post_content ) ){
     $content = $post->post_content;
   }
+  $eyecatch_image_url = NO_IMAGE_LARGE;
   //投稿にイメージがあるか調べるための正規表現
   $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
   if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
     $image_id = get_post_thumbnail_id();
     $image = wp_get_attachment_image_src( $image_id, 'full');
-    $eyecatch_image_url = $image[0];
+    if (isset($image[0])) {
+      $eyecatch_image_url = $image[0];
+    }
   } else if ($singular_sns_image_url = get_singular_sns_image_url()) {
     $eyecatch_image_url = $singular_sns_image_url;
   } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive() && is_auto_post_thumbnail_enable()) {//投稿にサムネイルは無いが画像がある場合の処理
-    $eyecatch_image_url = $image[2];
+    if (isset($image[2])) {
+      $eyecatch_image_url = $image[2];
+    }
   } else if ( $no_image_url = get_no_image_url() ){//NO IMAGEが設定されている場合
     $eyecatch_image_url = $no_image_url;
   } else if ( $ogp_home_image_url = get_ogp_home_image_url() ){//ホームイメージが設定されている場合
     $eyecatch_image_url = $ogp_home_image_url;
-  } else {
-    $eyecatch_image_url = NO_IMAGE_LARGE;
   }
   return apply_filters('get_singular_eyecatch_image_url', $eyecatch_image_url);
 }

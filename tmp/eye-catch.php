@@ -16,10 +16,17 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     $thumbnail_id = get_post_thumbnail_id();
     // fullサイズの画像内容を取得（引数にfullをセット）
     $eye_img = wp_get_attachment_image_src( $thumbnail_id , 'full' );
-    $url = $eye_img[0];
-    $width = $eye_img[1];
-    $height = $eye_img[2];
+    $url = '';
+    $width = 0;
+    $height = 0;
     $size = $width.'x'.$height.' size-'.$width.'x'.$height;
+    if (isset($eye_img[0]) && isset($eye_img[1]) && isset($eye_img[2])) {
+      $url = $eye_img[0];
+      $width = $eye_img[1];
+      $height = $eye_img[2];
+      $size = $width.'x'.$height.' size-'.$width.'x'.$height;
+    }
+
     $attr = array(
       'class' => "attachment-$size eye-catch-image",
     );
