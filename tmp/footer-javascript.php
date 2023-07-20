@@ -38,7 +38,7 @@ if (!is_amp()): ?>
 
   <?php //コピーシェアボタン用のスクリプト
   global $_MOBILE_COPY_BUTTON;
-  if ((is_top_copy_share_button_visible() || is_bottom_copy_share_button_visible()) && $_MOBILE_COPY_BUTTON): ?>
+  if ($_MOBILE_COPY_BUTTON): ?>
   <div class="copy-info"><?php _e('タイトルとURLをコピーしました', THEME_NAME); ?></div>
   <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
   <script>
