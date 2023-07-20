@@ -101,3 +101,9 @@ img.blogcard-favicon-image{
 .nwa{
   @include blog_card_834;
 }
+
+.blogcard-type{
+  br{
+    display: none;
+  }
+}

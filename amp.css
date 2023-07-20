@@ -1965,6 +1965,10 @@ img.blogcard-favicon-image {
   margin-left: 0;
 }
 
+.blogcard-type br {
+  display: none;
+}
+
 /************************************
 ** 目次
 ************************************/

@@ -1403,3 +1403,19 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .body .wp-block li{
   margin: 0.2em 0;
 }
+
+//pのブロンカードURL入力と、brのブログカードURL入力の表示を均一化
+.block-editor-block-list__block.blogcard-type{
+  p{
+    margin: 0;
+  }
+  br{
+    display: initial !important;
+  }
+  line-height: 3;
+}
+
+//WordPress 6.3の仕様変更対応
+.components-button.display-none{
+  display: none !important;
+}

@@ -104,9 +104,15 @@ if (!is_amp()): ?>
           'width': '100%',
         });
 
-        $("#header-container").animate({
-          'top': '0'
-        }, 500);
+        const wpadminbar = document.getElementById('wpadminbar');
+        const headerContainerTop = wpadminbar ? wpadminbar.clientHeight : 0;
+
+        $('#header-container').animate(
+          {
+            top: headerContainerTop,
+          },
+          500
+        );
       }
     }
 

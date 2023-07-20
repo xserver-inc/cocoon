@@ -5518,3 +5518,17 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .body .wp-block li {
   margin: 0.2em 0;
 }
+
+.block-editor-block-list__block.blogcard-type {
+  line-height: 3;
+}
+.block-editor-block-list__block.blogcard-type p {
+  margin: 0;
+}
+.block-editor-block-list__block.blogcard-type br {
+  display: initial !important;
+}
+
+.components-button.display-none {
+  display: none !important;
+}
