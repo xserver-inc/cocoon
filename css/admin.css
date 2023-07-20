@@ -1663,13 +1663,12 @@ body.wp-admin {
   position: relative;
   text-align: center;
   width: 32%;
+  transition: all 0.3s ease-in-out;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
 .admin-settings .demo .sns-buttons a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .bc-brand-color-white a {
   background-color: var(--cocoon-white-color);
@@ -9308,13 +9307,12 @@ body.wp-admin {
   position: relative;
   text-align: center;
   width: 32%;
+  transition: all 0.3s ease-in-out;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
 .admin-settings .demo .sns-buttons a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .bc-brand-color-white a {
   background-color: var(--cocoon-white-color);
