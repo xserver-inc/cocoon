@@ -190,12 +190,12 @@ function logging_page_access($post_id = null, $post_type = 'post'){
 
       if ($record) {
         //アクセスカウントの連続カウント防止
-        //if (($record->last_ip != $last_ip) || DEBUG_MODE) {
+        if (($record->last_ip != $last_ip) || DEBUG_MODE) {
           $post_id = $record->id;
           $posts['last_ip'] = $last_ip;
           $posts['count'] = intval($record->count) + 1;
           $res = update_accesses_record($post_id, $posts);
-        //}
+        }
       } else {
         $posts['post_id'] = $post_id;
         $posts['date'] = $date;
