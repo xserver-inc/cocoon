@@ -9236,6 +9236,10 @@ pre {
     position: static;
   }
 
+  .ba-fixed.header {
+    background-position: top center;
+  }
+
   .ba-fixed.header,
   .ba-fixed.appeal {
     background-attachment: scroll;

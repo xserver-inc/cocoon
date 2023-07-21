@@ -17111,6 +17111,9 @@ body.wp-admin {
   .admin-settings .demo .sidebar-scroll {
     position: static;
   }
+  .admin-settings .demo .ba-fixed.header {
+    background-position: top center;
+  }
   .admin-settings .demo .ba-fixed.header,
   .admin-settings .demo .ba-fixed.appeal {
     background-attachment: scroll;
