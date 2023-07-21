@@ -991,5 +991,9 @@ if ($image_url && is_header_size_background_image_aspect_ratio() && is_header_la
     .header .header-in {
       min-height: 0 !important;
     }
+    <?php //ヘッダー背景画像が固定されていてサイズをアスペクト比にする場合はアドミンバーの高さを考慮 ?>
+    .header.ba-fixed{
+      background-position: 0 var(--wp-admin--admin-bar--height);
+    }
   <?php endif; ?>
 <?php endif; ?>
