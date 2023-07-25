@@ -1784,14 +1784,23 @@ endif;
 //インフォリスト生成タグ
 if ( !function_exists( 'generate_info_list_tag' ) ):
 function generate_info_list_tag($atts){
-  extract(shortcode_atts($atts, $atts));
+  extract(shortcode_atts(array(
+    'count' => 5,
+    'cats' => 'all',
+    'caption' => __( '新着情報', THEME_NAME ),
+    'frame' => 1,
+    'divider' => 1,
+    'modified' => 0,
+  ), $atts));
+
   $args = array(
     'cat' => $cats,
     'no_found_rows' => true,
     'ignore_sticky_posts' => true,
     'posts_per_page' => $count,
-
   );
+
+  //更新日順
   if ($modified) {
     $args += array(
       'orderby' => 'modified',
