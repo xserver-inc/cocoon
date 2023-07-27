@@ -47,6 +47,18 @@ function cocoon_blocks_cgb_block_assets()
 
 	//Font Awesome
 	if (apply_filters('cocoon_blocks_wp_enqueue_script_fontawesome', true)) {
+		//これを読み込んでおかないと以下のブロック等のアイコンが表示されなくなる
+    // ・白抜ボックス
+    // ・囲みボタン
+    // ・ランキング
+    // ・テンプレート
+    // ・ボックスメニュー
+    // ・広告
+    // ・プロフィールボックス
+    // ・タブ見出しボックス
+    // ・新着記事
+    // ・人気記事
+    // ・新着情報
 		wp_enqueue_script(
 			'cocoon_blocks-fontawesome5-js',
 			'https://use.fontawesome.com/releases/v5.6.3/js/all.js',
