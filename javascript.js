@@ -157,10 +157,11 @@
 
   function drawerCloser(selecter, checkbox) {
     $(selecter).click(function () {
-      const href = $(this).attr('href');
-      if (href.match(/#/)) {
-        $(checkbox).prop('checked', false);
-      }
+      $(checkbox).prop('checked', false);
+      // const href = $(this).attr('href');
+      // if (href.match(/#/)) {
+      //   $(checkbox).prop('checked', false);
+      // }
     })
   }
 
