@@ -1382,3 +1382,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .blogcard-type .rich-text{
   white-space: initial !important;
 }
+
+//グループボックスの上下揃えのデフォルトを中央揃えに（エディター画面）
+.is-layout-flex{
+  align-items: center;
+}
