@@ -334,7 +334,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
 <!-- 投稿情報表示 -->
-<div id="table" class="postbox">
+<div id="post-info" class="postbox">
   <h2 class="hndle"><?php _e( '投稿情報表示設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

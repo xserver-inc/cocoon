@@ -146,7 +146,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
 <!-- 全体画像 -->
-<div id="no-image-page" class="postbox">
+<div id="every-images" class="postbox">
   <h2 class="hndle"><?php _e( '全体画像設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

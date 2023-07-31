@@ -474,7 +474,7 @@ endif;
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('settings');?>">
 <input type="hidden" id="<?php echo SELECT_INDEX_NAME; ?>" name="<?php echo SELECT_INDEX_NAME; ?>" value="<?php echo ($_POST && $_POST[SELECT_INDEX_NAME] ? $_POST[SELECT_INDEX_NAME] : 0); ?>">
 
-<?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
+<?php submit_button(__( '変更をまとめて保存', THEME_NAME ), 'primary', "submit-2"); ?>
 
 
 </form>

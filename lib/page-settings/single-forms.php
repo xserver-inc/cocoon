@@ -79,7 +79,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
 <!-- 関連記事 -->
-<div id="single-page" class="postbox">
+<div id="single-relation" class="postbox">
   <h2 class="hndle"><?php _e( '関連記事設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -276,7 +276,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 <!-- ページ送りナビ -->
-<div id="single-page" class="postbox">
+<div id="single-nav" class="postbox">
   <h2 class="hndle"><?php _e( 'ページ送りナビ設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -390,7 +390,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 <!-- コメント -->
-<div id="single-page" class="postbox">
+<div id="single-comment" class="postbox">
   <h2 class="hndle"><?php _e( 'コメント設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -418,7 +418,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 <!-- パンくずリスト -->
-<div id="single-page" class="postbox">
+<div id="single-bread" class="postbox">
   <h2 class="hndle"><?php _e( 'パンくずリスト設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

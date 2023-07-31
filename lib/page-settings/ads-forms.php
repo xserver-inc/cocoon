@@ -49,7 +49,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 <!-- アドセンス設定 -->
-<div id="ads" class="postbox">
+<div id="adsense" class="postbox">
   <h2 class="hndle"><?php _e( 'アドセンス設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

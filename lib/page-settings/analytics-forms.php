@@ -128,7 +128,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
 <!-- Clarity設定 -->
-<div id="gsc" class="postbox">
+<div id="clarity" class="postbox">
   <h2 class="hndle"><?php _e( 'Clarity設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

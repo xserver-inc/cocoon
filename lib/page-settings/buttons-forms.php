@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <div class="metabox-holder">
 
 <!-- トップへ戻るボタン -->
-<div id="toc" class="postbox">
+<div id="go-to-top" class="postbox">
   <h2 class="hndle"><?php _e( 'トップへ戻るボタン設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <div class="metabox-holder">
 
 <!-- コメント -->
-<div id="page-page" class="postbox">
+<div id="page-comment" class="postbox">
   <h2 class="hndle"><?php _e( 'コメント設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -37,7 +37,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 <!-- パンくずリスト -->
-<div id="page-page" class="postbox">
+<div id="page-bread" class="postbox">
   <h2 class="hndle"><?php _e( 'パンくずリスト設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 ?>
 <!-- ブログカード関連ヘルプ -->
-<div id="single-page" class="postbox">
+<div id="blogcard-help" class="postbox">
   <h2 class="hndle"><?php _e( 'ブログカード関連ヘルプ', THEME_NAME ) ?></h2>
   <div class="inside">
 
