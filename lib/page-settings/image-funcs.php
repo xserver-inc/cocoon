@@ -293,10 +293,40 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
   }
   //サイズ指定がある場合はカテゴリーURLを取得
   if ($width && $height) {
+
+    //カスタムタクソノミのタームページに設定されているアイキャッチを取得する
+    $taxonomies = get_taxonomies();
+    if ($taxonomies) {
+      // 各タクソノミ名を確認
+      foreach ( $taxonomies as $taxonomy ) {
+        $terms = get_the_terms( $id, $taxonomy );
+        // タームがある場合
+        if ( $terms && ! is_wp_error( $terms ) ) {
+          // 各タームに対して
+          foreach ( $terms as $term ) {
+            $term_id = $term->term_id;
+            $url = get_the_tag_eye_catch_url($term_id);
+            continue;
+          }
+      }
+      }
+    }
+    // var_dump($taxonomies);
+
+
+    //タグページのアイキャッチ画像取得
+    //get_the_tags() 関数を使用して、現在の投稿に関連付けられたタグを取得
+    $tags = get_the_tags();
+    if ($tags && isset($tags[0])) {
+      $tag = $tags[0];
+      $tag_id = $tag->term_id;
+      $url = get_the_tag_eye_catch_url($tag_id);
+    }
+
     $cat_url = null;
     $cat = get_the_category($id);
 
-    // //カテゴリー画像取得
+    //カテゴリページのアイキャッチ画像取得
     if ($cat && isset($cat[0])) {
       $cat_url = get_the_category_eye_catch_url($cat[0]->cat_ID);
       if ($cat_url) {
@@ -306,42 +336,13 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
 
     //メインカテゴリーが設定してある場合
     $main_cat_id = get_the_page_main_category($id);
-    // $test_page_id = 752;
-    // if ($id == $test_page_id) {
-    //   _v('id='.$id);
-    //   _v('mid='.$main_cat_id);
-    // }
 
     if ($main_cat_id && in_category($main_cat_id, $id)) {
       $cat_url = get_the_category_eye_catch_url($main_cat_id);
 
-      // if ($id == $test_page_id) {
-      //   _v('cat_url='.$cat_url);
-      //   _v($cat_url);
-      // }
-
       if ($cat_url) {
         $url = get_image_sized_url($cat_url, $width, $height);
       }
-      // else {
-      //   switch ($width) {
-      //     case 120:
-      //       $url = NO_IMAGE_120;
-      //       break;
-      //     case 150:
-      //       $url = NO_IMAGE_150;
-      //       break;
-      //     case 160:
-      //       $url = NO_IMAGE_160;
-      //       break;
-      //     case 320:
-      //       $url = NO_IMAGE_320;
-      //       break;
-      //     default:
-      //       $url = NO_IMAGE_LARGE;
-      //       break;
-      //   }
-      // }
     }
 
   }
