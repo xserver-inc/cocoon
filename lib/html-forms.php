@@ -518,7 +518,6 @@ function generate_main_column_ad_detail_setting_forms($name, $value, $label_name
         echo '<span>'.__( '個まで', THEME_NAME ).'</span>';
         echo '<br>';
         echo '<span>'.__( '※-1で全てのH2見出し手前に広告を挿入', THEME_NAME ).'</span>';
-        echo '</span>';
       echo '</br>';
     }
     ?>
