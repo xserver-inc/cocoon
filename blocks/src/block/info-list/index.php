@@ -24,6 +24,7 @@ function render_block_cocoon_block_info_list($attributes, $content)
 		'caption' => $attributes['caption'],
 		'frame' => $attributes['showFrame'] ? 1 : 0,
 		'divider' => $attributes['showDivider'] ? 1 : 0,
+		'modified' => $attributes['modified'] ? 1 : 0,
 	];
 
 	ob_start();
