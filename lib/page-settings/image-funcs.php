@@ -297,18 +297,32 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
     //カスタムタクソノミのタームページに設定されているアイキャッチを取得する
     $taxonomies = get_taxonomies();
     if ($taxonomies) {
+      $ex_taxonomies = [
+        'category',
+        'post_tag',
+        'nav_menu',
+        'link_category',
+        'post_format',
+        'wp_theme',
+        'wp_template_part_area',
+      ];
       // 各タクソノミ名を確認
       foreach ( $taxonomies as $taxonomy ) {
         $terms = get_the_terms( $id, $taxonomy );
-        // タームがある場合
-        if ( $terms && ! is_wp_error( $terms ) ) {
-          // 各タームに対して
-          foreach ( $terms as $term ) {
-            $term_id = $term->term_id;
-            $url = get_the_tag_eye_catch_url($term_id);
-            continue;
+        //WordPressで一般的に使われるようなタクソノミは除外
+        if (!in_array($taxonomy, $ex_taxonomies)) {
+          //タームがある場合
+          if ( $terms && ! is_wp_error( $terms ) ) {
+            //各タームに対して
+            foreach ( $terms as $term ) {
+              $term_id = $term->term_id;
+              $url = get_the_tag_eye_catch_url($term_id);
+              if ($url) {
+                continue;
+              }
+            }
           }
-      }
+        }
       }
     }
     // var_dump($taxonomies);
