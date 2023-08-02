@@ -55,53 +55,47 @@ $help_text = __( '取得方法', THEME_NAME );
 
             echo '<div'.get_not_allowed_form_class(get_amazon_api_access_key_id() && get_amazon_api_secret_key() && get_amazon_associate_tracking_id()).'>';
 
-            generate_checkbox_tag(OP_AMAZON_ITEM_CATALOG_IMAGE_VISIBLE , is_amazon_item_catalog_image_visible(), __( 'カタログ写真を表示する', THEME_NAME ));
-            generate_tips_tag(__( 'サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-shortcode-catalog-option/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/catalog.gif'));
+              generate_checkbox_tag(OP_AMAZON_ITEM_CATALOG_IMAGE_VISIBLE , is_amazon_item_catalog_image_visible(), __( 'カタログ写真を表示する', THEME_NAME ));
+              generate_tips_tag(__( 'サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-shortcode-catalog-option/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/catalog.gif'));
 
-            generate_checkbox_tag(OP_AMAZON_ITEM_PRICE_VISIBLE , is_amazon_item_price_visible(), __( '価格を表示する', THEME_NAME ));
+              generate_checkbox_tag(OP_AMAZON_ITEM_PRICE_VISIBLE , is_amazon_item_price_visible(), __( '価格を表示する', THEME_NAME ));
 
-            echo '<div class="indent'.get_not_allowed_form_class(is_amazon_item_price_visible(), true).'">';
-            $options = array(
-              'price' => __( '標準価格', THEME_NAME ),
-              'in_stock' => __( '在庫価格（デフォルト）', THEME_NAME ),
-              'lowest_price' => __( '最安値', THEME_NAME ),
-              'highest_price' => __( '最高値', THEME_NAME ),
-            );
-            generate_radiobox_tag(OP_AMAZON_ITEM_PRICE_TYPE, $options, get_amazon_item_price_type());
+              echo '<div class="indent'.get_not_allowed_form_class(is_amazon_item_price_visible(), true).'">';
+                $options = array(
+                  'price' => __( '標準価格', THEME_NAME ),
+                  'in_stock' => __( '在庫価格（デフォルト）', THEME_NAME ),
+                  'lowest_price' => __( '最安値', THEME_NAME ),
+                  'highest_price' => __( '最高値', THEME_NAME ),
+                );
+                generate_radiobox_tag(OP_AMAZON_ITEM_PRICE_TYPE, $options, get_amazon_item_price_type());
+              echo '</div>';
+
+
+              generate_tips_tag(__( 'データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-price.png'));
+
+
+              generate_checkbox_tag(OP_AMAZON_ITEM_DESCRIPTION_VISIBLE , is_amazon_item_description_visible(), __( '説明文を表示する', THEME_NAME ));
+              generate_tips_tag(__( 'Amazon側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-item-description.png'));
+
+
+              generate_checkbox_tag(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_VISIBLE , is_amazon_item_customer_reviews_visible(), __( 'レビューを表示する', THEME_NAME ));
+              echo '<br>';
+              generate_textbox_tag(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_TEXT, get_amazon_item_customer_reviews_text(), __( 'レビューページへのリンクテキストを入力', THEME_NAME ));
+              generate_tips_tag(__( 'レビューページへのリンクを表示します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-review-link/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-review.png'));
+
+              generate_checkbox_tag(OP_AMAZON_ITEM_LOGO_VISIBLE , is_amazon_item_logo_visible(), __( 'ロゴを表示する', THEME_NAME ));
+              generate_tips_tag(__( 'Amazon商品リンクのロゴの表示切り替え。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-logo.png'));
+
+              generate_checkbox_tag(OP_AMAZON_SEARCH_BUTTON_VISIBLE , is_amazon_search_button_visible(), __( 'Amazon検索ボタンを表示する', THEME_NAME ));
+              generate_tips_tag(__( 'Amazonのキーワード検索ボタンを表示するか。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-buttonns.png'));
+
+              generate_textbox_tag(OP_AMAZON_SEARCH_BUTTON_TEXT, get_amazon_search_button_text(), '');
+              generate_tips_tag(__( 'Amazonの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_AMAZON_BUTTON_SEARCH_TO_DETAIL , is_amazon_button_search_to_detail(), __( '検索ボタンのリンク先を詳細ページにする', THEME_NAME ));
+              generate_tips_tag(__( 'Amazon検索ボタンのリンクURLを商品詳細ページにするか。', THEME_NAME ));
+
             echo '</div>';
-
-            // echo '<div class="indent'.get_not_allowed_form_class(is_amazon_item_price_visible(), true).'">';
-            // generate_checkbox_tag(OP_AMAZON_ITEM_LOWEST_PRICE_VISIBLE , is_amazon_item_lowest_price_visible(), __( '最安価格を表示する', THEME_NAME ));
-            // echo '</div>';
-            // echo '<div class="indent'.get_not_allowed_form_class(is_amazon_item_price_visible(), true).'">';
-            //   generate_checkbox_tag(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE , is_amazon_item_stock_price_visible(), __( 'Amazon在庫価格を表示する', THEME_NAME ));
-            // echo '</div>';
-
-            generate_tips_tag(__( 'データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-price.png'));
-
-
-            generate_checkbox_tag(OP_AMAZON_ITEM_DESCRIPTION_VISIBLE , is_amazon_item_description_visible(), __( '説明文を表示する', THEME_NAME ));
-            generate_tips_tag(__( 'Amazon側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-item-description.png'));
-
-
-            generate_checkbox_tag(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_VISIBLE , is_amazon_item_customer_reviews_visible(), __( 'レビューを表示する', THEME_NAME ));
-            echo '<br>';
-            generate_textbox_tag(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_TEXT, get_amazon_item_customer_reviews_text(), __( 'レビューページへのリンクテキストを入力', THEME_NAME ));
-            generate_tips_tag(__( 'レビューページへのリンクを表示します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-review-link/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-review.png'));
-
-            generate_checkbox_tag(OP_AMAZON_ITEM_LOGO_VISIBLE , is_amazon_item_logo_visible(), __( 'ロゴを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'Amazon商品リンクのロゴの表示切り替え。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-logo.png'));
-
-            generate_checkbox_tag(OP_AMAZON_SEARCH_BUTTON_VISIBLE , is_amazon_search_button_visible(), __( 'Amazon検索ボタンを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'Amazonのキーワード検索ボタンを表示するか。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-buttonns.png'));
-
-            generate_textbox_tag(OP_AMAZON_SEARCH_BUTTON_TEXT, get_amazon_search_button_text(), '');
-            generate_tips_tag(__( 'Amazonの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
-
-            generate_checkbox_tag(OP_AMAZON_BUTTON_SEARCH_TO_DETAIL , is_amazon_button_search_to_detail(), __( '検索ボタンのリンク先を詳細ページにする', THEME_NAME ));
-            generate_tips_tag(__( 'Amazon検索ボタンのリンクURLを商品詳細ページにするか。', THEME_NAME ));
-
-            echo '<div>';
             ?>
 
           </td>
@@ -134,32 +128,31 @@ $help_text = __( '取得方法', THEME_NAME );
 
             echo '<div'.get_not_allowed_form_class(get_rakuten_affiliate_id()).'>';
 
+              $options = array(
+                'standard' => __( '楽天標準ソート順', THEME_NAME ),
+                '-affiliateRate' => __( 'アフィリエイト料率順（高い順）', THEME_NAME ),
+                '+itemPrice' => __( '価格順（安い順）', THEME_NAME ),
+                '-itemPrice' => __( '価格順（高い順）', THEME_NAME ),
+              );
+              generate_radiobox_tag(OP_GET_RAKUTEN_API_SORT, $options, get_rakuten_api_sort(), __( '商品並び替え優先度', THEME_NAME ));
+              generate_tips_tag(__( '同一商品番号の商品が複数あった場合の表示優先度です。', THEME_NAME ));
 
-            $options = array(
-              'standard' => __( '楽天標準ソート順', THEME_NAME ),
-              '-affiliateRate' => __( 'アフィリエイト料率順（高い順）', THEME_NAME ),
-              '+itemPrice' => __( '価格順（安い順）', THEME_NAME ),
-              '-itemPrice' => __( '価格順（高い順）', THEME_NAME ),
-            );
-            generate_radiobox_tag(OP_GET_RAKUTEN_API_SORT, $options, get_rakuten_api_sort(), __( '商品並び替え優先度', THEME_NAME ));
-            generate_tips_tag(__( '同一商品番号の商品が複数あった場合の表示優先度です。', THEME_NAME ));
+              generate_checkbox_tag(OP_RAKUTEN_ITEM_PRICE_VISIBLE , is_rakuten_item_price_visible(), __( '価格を表示する', THEME_NAME ));
+              generate_tips_tag(__( 'データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rakuten-price.png'));
 
-            generate_checkbox_tag(OP_RAKUTEN_ITEM_PRICE_VISIBLE , is_rakuten_item_price_visible(), __( '価格を表示する', THEME_NAME ));
-            generate_tips_tag(__( 'データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rakuten-price.png'));
+              generate_checkbox_tag(OP_RAKUTEN_ITEM_LOGO_VISIBLE , is_rakuten_item_logo_visible(), __( 'ロゴを表示する', THEME_NAME ));
+              generate_tips_tag(__( '楽天商品リンクのロゴの表示切り替え。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rakuten-logo.png'));
 
-            generate_checkbox_tag(OP_RAKUTEN_ITEM_LOGO_VISIBLE , is_rakuten_item_logo_visible(), __( 'ロゴを表示する', THEME_NAME ));
-            generate_tips_tag(__( '楽天商品リンクのロゴの表示切り替え。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rakuten-logo.png'));
+              generate_checkbox_tag(OP_RAKUTEN_SEARCH_BUTTON_VISIBLE , is_rakuten_search_button_visible(), __( '楽天検索ボタンを表示する', THEME_NAME ));
+              generate_tips_tag(__( '楽天のキーワード検索ボタンを表示するか。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rakuten-buttons.png'));
 
-            generate_checkbox_tag(OP_RAKUTEN_SEARCH_BUTTON_VISIBLE , is_rakuten_search_button_visible(), __( '楽天検索ボタンを表示する', THEME_NAME ));
-            generate_tips_tag(__( '楽天のキーワード検索ボタンを表示するか。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rakuten-buttons.png'));
+              generate_textbox_tag(OP_RAKUTEN_SEARCH_BUTTON_TEXT, get_rakuten_search_button_text(), '');
+              generate_tips_tag(__( '楽天の検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
 
-            generate_textbox_tag(OP_RAKUTEN_SEARCH_BUTTON_TEXT, get_rakuten_search_button_text(), '');
-            generate_tips_tag(__( '楽天の検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
+              generate_checkbox_tag(OP_RAKUTEN_BUTTON_SEARCH_TO_DETAIL , is_rakuten_button_search_to_detail(), __( '検索ボタンのリンク先を詳細ページにする', THEME_NAME ));
+              generate_tips_tag(__( '楽天検索ボタンのリンク先URLを商品詳細ページにするか。', THEME_NAME ));
 
-            generate_checkbox_tag(OP_RAKUTEN_BUTTON_SEARCH_TO_DETAIL , is_rakuten_button_search_to_detail(), __( '検索ボタンのリンク先を詳細ページにする', THEME_NAME ));
-            generate_tips_tag(__( '楽天検索ボタンのリンク先URLを商品詳細ページにするか。', THEME_NAME ));
-
-            echo '<div>';
+            echo '</div>';
             ?>
           </td>
         </tr>
@@ -187,13 +180,13 @@ $help_text = __( '取得方法', THEME_NAME );
 
             echo '<div'.get_not_allowed_form_class(get_yahoo_valuecommerce_sid() && get_yahoo_valuecommerce_pid()).'>';
 
-            generate_checkbox_tag(OP_YAHOO_SEARCH_BUTTON_VISIBLE , is_yahoo_search_button_visible(), __( 'Yahoo!検索ボタンを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'Yahoo!のキーワード検索ボタンを表示するか。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/yahoo-button.png'));
+              generate_checkbox_tag(OP_YAHOO_SEARCH_BUTTON_VISIBLE , is_yahoo_search_button_visible(), __( 'Yahoo!検索ボタンを表示する', THEME_NAME ));
+              generate_tips_tag(__( 'Yahoo!のキーワード検索ボタンを表示するか。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/yahoo-button.png'));
 
-            generate_textbox_tag(OP_YAHOO_SEARCH_BUTTON_TEXT, get_yahoo_search_button_text(), '');
-            generate_tips_tag(__( 'Yahoo!ショッピングの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
+              generate_textbox_tag(OP_YAHOO_SEARCH_BUTTON_TEXT, get_yahoo_search_button_text(), '');
+              generate_tips_tag(__( 'Yahoo!ショッピングの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
 
-            echo '<div>';
+            echo '</div>';
             ?>
           </td>
         </tr>
@@ -218,13 +211,13 @@ $help_text = __( '取得方法', THEME_NAME );
 
             echo '<div'.get_not_allowed_form_class(get_dmm_affiliate_id()).'>';
 
-            generate_checkbox_tag(OP_DMM_SEARCH_BUTTON_VISIBLE , is_dmm_search_button_visible(), __( 'DMM検索ボタンを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'DMMのキーワード検索ボタンを表示するか。', THEME_NAME ));
+              generate_checkbox_tag(OP_DMM_SEARCH_BUTTON_VISIBLE , is_dmm_search_button_visible(), __( 'DMM検索ボタンを表示する', THEME_NAME ));
+              generate_tips_tag(__( 'DMMのキーワード検索ボタンを表示するか。', THEME_NAME ));
 
-            generate_textbox_tag(OP_DMM_SEARCH_BUTTON_TEXT, get_dmm_search_button_text(), '');
-            generate_tips_tag(__( 'DMMの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
+              generate_textbox_tag(OP_DMM_SEARCH_BUTTON_TEXT, get_dmm_search_button_text(), '');
+              generate_tips_tag(__( 'DMMの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
 
-            echo '<div>';
+            echo '</div>';
             ?>
           </td>
         </tr>
@@ -255,8 +248,6 @@ $help_text = __( '取得方法', THEME_NAME );
             echo '<br>';
             generate_textbox_tag(OP_MOSHIMO_YAHOO_ID, get_moshimo_yahoo_id(), '');
             generate_tips_tag(__( 'もしもアフィリエイトのYahoo!ショッピングIDを入力してください。', THEME_NAME ).__( '未入力の場合はデフォルトのリンクが出力されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-yahoo-a_id/', $help_text));
-
-
             ?>
           </td>
         </tr>

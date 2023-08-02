@@ -18491,6 +18491,10 @@ select option.fa:before {
   margin-right: 5px;
 }
 
+.category-check-list-root > li > ul {
+  padding-left: 0 !important;
+}
+
 .list-content,
 .tabs .tab-content,
 .tabs .tagcloud-list,

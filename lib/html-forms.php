@@ -518,7 +518,8 @@ function generate_main_column_ad_detail_setting_forms($name, $value, $label_name
         echo '<span>'.__( '個まで', THEME_NAME ).'</span>';
         echo '<br>';
         echo '<span>'.__( '※-1で全てのH2見出し手前に広告を挿入', THEME_NAME ).'</span>';
-      echo '</br>';
+        echo '</div>';
+      echo '</div>';
     }
     ?>
     </div>
@@ -705,10 +706,15 @@ function generate_hierarchical_category_check_list( $cat, $name, $checks, $width
     $width = $width.'px';
   }
   echo '<div class="tab-content category-check-list '.$name.'-list" style="width: '.$width.';">';
+
+  echo '<ul class="category-check-list-root"><li>'; echo "\n";
+
   hierarchical_category_check_list( $cat, $name, $checks );
+
   echo '</div>';
 
   $res = ob_get_clean();
+
   echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
@@ -723,7 +729,7 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
 
   $next = get_categories('hide_empty=false&orderby=name&order=ASC&parent=' . $cat);
 
-  if( $next ) :
+  if( $next ) {
     foreach( $next as $cat ) :
       $checked = '';
 
@@ -734,8 +740,7 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
       echo '<ul><li><input type="checkbox" name="'.$name.'[]" id="'.$id.'" value="'.$cat->term_id.'"'.$checked.'><label for="'.$id.'">' . $cat->name . '</label>';
       hierarchical_category_check_list( $cat->term_id, $name, $checks );
     endforeach;
-  endif;
-
+  };
   echo '</li></ul>'; echo "\n";
 }
 endif;
