@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //テーブル内にレコードが存在するとき
-if (!is_item_rankings_record_empty()) {
+if (!is_item_rankings_record_empty() && is_admin_post_page()) {
   add_action('admin_init', 'add_item_rankings_dropdown');
   add_action('admin_head', 'generate_item_rankings');
 }
