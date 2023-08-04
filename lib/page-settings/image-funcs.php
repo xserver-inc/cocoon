@@ -296,6 +296,7 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
 
     //カスタムタクソノミのタームページに設定されているアイキャッチを取得する
     $taxonomies = get_taxonomies();
+    //除外するタクソノミ
     if ($taxonomies) {
       $ex_taxonomies = [
         'category',
@@ -316,8 +317,9 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
             //各タームに対して
             foreach ( $terms as $term ) {
               $term_id = $term->term_id;
-              $url = get_the_tag_eye_catch_url($term_id);
-              if ($url) {
+              $term_url = get_the_tag_eye_catch_url($term_id);
+              if ($term_url) {
+                $url = get_image_sized_url($term_url, $width, $height);
                 continue;
               }
             }
@@ -325,8 +327,6 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
         }
       }
     }
-    // var_dump($taxonomies);
-
 
     //タグページのアイキャッチ画像取得
     //get_the_tags() 関数を使用して、現在の投稿に関連付けられたタグを取得
@@ -334,7 +334,10 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
     if ($tags && isset($tags[0])) {
       $tag = $tags[0];
       $tag_id = $tag->term_id;
-      $url = get_the_tag_eye_catch_url($tag_id);
+      $tag_url = get_the_tag_eye_catch_url($tag_id);
+      if ($tag_url) {
+        $url = get_image_sized_url($tag_url, $width, $height);
+      }
     }
 
     $cat_url = null;
