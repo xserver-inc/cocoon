@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //テーブル内にレコードが存在するとき
-if (!is_function_texts_record_empty()) {
+if (!is_function_texts_record_empty() && is_admin_post_page()) {
   add_action('admin_init', 'add_function_texts_dropdown');
   add_action('admin_head', 'generate_function_texts_is');
 }
