@@ -272,6 +272,17 @@ endif;
   <input id="tab-about-input" value="tab-about-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-about-input" id="tab-about-label" class="tab-about-label tab-label"><?php _e( 'テーマ情報', THEME_NAME ) ?></label>
 
+  <?php //デフォルト状態の場合は何も処理せず最初のスキンタブを選択する
+  if ($_POST && isset($_POST['tab-input'])): ?>
+  <script>
+    //できるだけ早くタブを選択するためにDOMの読み込みを待つのをコメントアウト
+    // document.addEventListener("DOMContentLoaded", function() {
+      //前回選択していたタブを選択
+      document.getElementById('<?php echo esc_html($_POST['tab-input']); ?>').checked = true;
+    // });
+  </script>
+  <?php endif; ?>
+
 
   <?php //スキン制御変数のクリアとバックアップ
   clear_global_skin_theme_options(); ?>
@@ -480,17 +491,6 @@ endif;
 
 </form>
 </div>
-
-<?php //デフォルト状態の場合は何も処理せず最初のスキンタブを選択する
-if ($_POST && isset($_POST['tab-input'])): ?>
-<script>
-  //できるだけ早くタブを選択するためにDOMの読み込みを待つのをコメントアウト
-  // document.addEventListener("DOMContentLoaded", function() {
-    //前回選択していたタブを選択
-    document.getElementById('<?php echo $_POST['tab-input']; ?>').checked = true;
-  // });
-</script>
-<?php endif; ?>
 
 <style>
   <?php get_template_part('tmp/css-custom'); ?>
