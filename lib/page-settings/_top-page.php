@@ -115,6 +115,13 @@ if( $is_post_ok ):
 
 endif;
 
+///////////////////////////////////////
+// 入力フォーム
+///////////////////////////////////////
+?>
+<div class="wrap admin-settings">
+<h1><?php _e( SETTING_NAME_TOP, THEME_NAME ) ?></h1>
+<?php
 //画面に「設定は保存されました」メッセージを表示
 $is_reset_ok = isset($_GET['reset']) && $_GET['reset'];
 if ($is_post_ok || $is_reset_ok):
@@ -141,14 +148,7 @@ if ($is_post_ok || $is_reset_ok):
 </div>
 <?php
 endif;
-
-
-///////////////////////////////////////
-// 入力フォーム
-///////////////////////////////////////
 ?>
-<div class="wrap admin-settings">
-<h1><?php _e( SETTING_NAME_TOP, THEME_NAME ) ?></h1>
 <p><?php _e( 'Cocoonの設定全般についてはマニュアルを参照してください。', THEME_NAME ) ?><a href="https://wp-cocoon.com/manual/" target="_blank" rel="noopener"><?php echo change_fa('<span class="fa fa-book" aria-hidden="true">'); ?></span>
 <?php _e( 'テーマ利用マニュアル', THEME_NAME ) ?></a></p>
 <?php //var_dump($_POST) ?>
