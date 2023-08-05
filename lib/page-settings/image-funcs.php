@@ -204,23 +204,23 @@ function get_image_sized_url($url, $w, $h){
 }
 endif;
 if ( !function_exists( 'get_no_image_large_url' ) ):
-function get_no_image_large_url($id = null){
+function get_no_image_large_url($id = null, $is_singular = true){
   if ($no_image_url = get_no_image_url()) {
     $res = $no_image_url;
   } else {
     $res = NO_IMAGE_LARGE;
   }
-  return apply_filters('get_sized_no_image_url', $res, null, null, $id);
+  return apply_filters('get_sized_no_image_url', $res, null, null, $id, $is_singular);
 }
 endif;
 if ( !function_exists( 'get_no_image_320x180_url' ) ):
-function get_no_image_320x180_url($id = null){
+function get_no_image_320x180_url($id = null, $is_singular = true){
   if ($no_image_url = get_no_image_url()) {
     $res = get_image_sized_url($no_image_url, THUMB320WIDTH, get_thumbnail_height(THUMB320WIDTH));
   } else {
     $res = NO_IMAGE_320;
   }
-  return apply_filters('get_sized_no_image_url', $res, THUMB320WIDTH, get_thumbnail_height(THUMB320WIDTH), $id);
+  return apply_filters('get_sized_no_image_url', $res, THUMB320WIDTH, get_thumbnail_height(THUMB320WIDTH), $id, $is_singular);
 }
 endif;
 if ( !function_exists( 'get_no_image_320x180_file' ) ):
@@ -228,14 +228,24 @@ function get_no_image_320x180_file(){
   return url_to_local(get_no_image_320x180_url());
 }
 endif;
+if ( !function_exists( 'get_absolutely_no_image_320x180_url' ) ):
+function get_absolutely_no_image_320x180_url($id = null){
+  if ($no_image_url = get_no_image_url()) {
+    $res = get_image_sized_url($no_image_url, THUMB320WIDTH, get_thumbnail_height(THUMB320WIDTH));
+  } else {
+    $res = NO_IMAGE_320;
+  }
+  return $res;
+}
+endif;
 if ( !function_exists( 'get_no_image_160x90_url' ) ):
-function get_no_image_160x90_url($id = null){
+function get_no_image_160x90_url($id = null, $is_singular = true){
   if ($no_image_url = get_no_image_url()) {
     $res = get_image_sized_url($no_image_url, THUMB160WIDTH, get_thumbnail_height(THUMB160WIDTH));
   } else {
     $res = NO_IMAGE_160;
   }
-  return apply_filters('get_sized_no_image_url', $res, THUMB160WIDTH, get_thumbnail_height(THUMB160WIDTH), $id);
+  return apply_filters('get_sized_no_image_url', $res, THUMB160WIDTH, get_thumbnail_height(THUMB160WIDTH), $id, $is_singular);
 }
 endif;
 if ( !function_exists( 'get_no_image_160x90_file' ) ):
@@ -244,13 +254,13 @@ function get_no_image_160x90_file(){
 }
 endif;
 if ( !function_exists( 'get_no_image_120x68_url' ) ):
-function get_no_image_120x68_url($id = null){
+function get_no_image_120x68_url($id = null, $is_singular = true){
   if ($no_image_url = get_no_image_url()) {
     $res = get_image_sized_url($no_image_url, THUMB120WIDTH, get_thumbnail_height(THUMB120WIDTH));
   } else {
     $res = NO_IMAGE_120;
   }
-  return apply_filters('get_sized_no_image_url', $res, THUMB120WIDTH, get_thumbnail_height(THUMB120WIDTH), $id);
+  return apply_filters('get_sized_no_image_url', $res, THUMB120WIDTH, get_thumbnail_height(THUMB120WIDTH), $id, $is_singular);
 }
 endif;
 if ( !function_exists( 'get_no_image_120x68_file' ) ):
@@ -259,13 +269,13 @@ function get_no_image_120x68_file(){
 }
 endif;
 if ( !function_exists( 'get_no_image_150x150_url' ) ):
-function get_no_image_150x150_url($id = null){
+function get_no_image_150x150_url($id = null, $is_singular = true){
   if ($no_image_url = get_no_image_url()) {
     $res = get_image_sized_url($no_image_url, THUMB150WIDTH, get_square_thumbnail_height(THUMB150WIDTH));
   } else {
     $res = NO_IMAGE_150;
   }
-  return apply_filters('get_sized_no_image_url', $res, THUMB150WIDTH, get_square_thumbnail_height(THUMB150WIDTH), $id);
+  return apply_filters('get_sized_no_image_url', $res, THUMB150WIDTH, get_square_thumbnail_height(THUMB150WIDTH), $id, $is_singular);
 }
 endif;
 if ( !function_exists( 'get_no_image_150x150_file' ) ):
@@ -285,9 +295,12 @@ endif;
 
 //アイキャッチ画像が存在しない場合はカテゴリーの画像を利用
 //画像サイズが存在しない場合は、[large]画像を使用
-add_filter('get_sized_no_image_url', 'get_categorized_no_image_url', 10, 4);
+add_filter('get_sized_no_image_url', 'get_categorized_no_image_url', 10, 5);
 if ( !function_exists( 'get_categorized_no_image_url' ) ):
-function get_categorized_no_image_url($url, $width = null, $height = null, $id = null){
+function get_categorized_no_image_url($url, $width = null, $height = null, $id = null, $is_singular = true){
+  if (!$is_singular) {
+    return $url;
+  }
   if (!$id) {
     $id = get_the_ID();
   }

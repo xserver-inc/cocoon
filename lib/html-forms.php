@@ -1722,14 +1722,15 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
 
   }
 
-  if (!$image_attributes) {//アイキャッチがない場合
+  //アイキャッチがない場合
+  if (!$image_attributes) {
     $image_attributes = array();
     if ($is_large_image_use) {
-      $image_attributes[0] = get_no_image_320x180_url();
+      $image_attributes[0] = get_no_image_320x180_url($object_id, false); //postするタイプのページではない引数を追加
       $image_attributes[1] = THUMB320WIDTH_DEF;
       $image_attributes[2] = THUMB320HEIGHT_DEF;
     } else {
-      $image_attributes[0] = get_no_image_120x68_url();
+      $image_attributes[0] = get_no_image_120x68_url($object_id, false); //postするタイプのページではない引数を追加
       $image_attributes[1] = THUMB120WIDTH_DEF;
       $image_attributes[2] = THUMB120HEIGHT_DEF;
     }
