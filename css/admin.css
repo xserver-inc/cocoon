@@ -2422,8 +2422,7 @@ body.wp-admin {
   display: flex;
   justify-content: center;
 }
-.admin-settings .demo .nwa .ranking-item-name-text,
-.admin-settings .demo .nwa .widget_item_ranking .main-widget-label {
+.admin-settings .demo .nwa .ranking-item-name-text {
   font-size: 20px;
 }
 .admin-settings .demo .nwa .ranking-item-description p {
@@ -10066,8 +10065,7 @@ body.wp-admin {
   display: flex;
   justify-content: center;
 }
-.admin-settings .demo .nwa .ranking-item-name-text,
-.admin-settings .demo .nwa .widget_item_ranking .main-widget-label {
+.admin-settings .demo .nwa .ranking-item-name-text {
   font-size: 20px;
 }
 .admin-settings .demo .nwa .ranking-item-description p {

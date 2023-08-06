@@ -58,22 +58,6 @@ function register_main_scroll_widget_area(){
 endif;
 register_main_scroll_widget_area();
 
-// if ( !function_exists( 'register_above_single_breadcrubs_widget_area' ) ):
-// function register_above_single_breadcrubs_widget_area(){
-//   register_sidebars(1,
-//     array(
-//     'name' => __( '投稿パンくずリスト上', THEME_NAME ),
-//     'id' => 'above-single-breadcrumbs',
-//     'description' => __( '投稿のパンくずリスト上に表示されるウイジェット。', THEME_NAME ),
-//     'before_widget' => '<div id="%1$s" class="widget widget-above-single-breadcrumbs %2$s">',
-//     'after_widget' => '</div>',
-//     'before_title' => '<div class="widget-above-single-breadcrumbs-title main-widget-label">',
-//     'after_title' => '</div>',
-//   ));
-// }
-// endif;
-// register_above_single_breadcrubs_widget_area();
-
 if ( !function_exists( 'register_above_single_content_title_widget_area' ) ):
 function register_above_single_content_title_widget_area(){
   register_sidebars(1,
