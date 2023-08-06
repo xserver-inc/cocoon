@@ -1683,6 +1683,7 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
   //大きなサムネイル画像を使用する場合
   $image_attributes = array();
   $post_types = get_custum_post_types();
+  //投稿ページ・固定ページ・カスタム投稿ページ
   if ($object == 'post' || $object == 'page' || in_array($object, $post_types)) {
     $thumbnail_id = get_post_thumbnail_id($object_id);
     $image_attributes = wp_get_attachment_image_src($thumbnail_id, $thumb_size);
