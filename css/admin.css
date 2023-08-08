@@ -1861,7 +1861,7 @@ body.wp-admin {
   margin-right: 0.4em;
 }
 .admin-settings .demo .ctdt-one-row > div {
-  display: inline-block;
+  display: inline;
 }
 .admin-settings .demo .ctdt-category-only .entry-tags {
   display: none;
@@ -9504,7 +9504,7 @@ body.wp-admin {
   margin-right: 0.4em;
 }
 .admin-settings .demo .ctdt-one-row > div {
-  display: inline-block;
+  display: inline;
 }
 .admin-settings .demo .ctdt-category-only .entry-tags {
   display: none;
