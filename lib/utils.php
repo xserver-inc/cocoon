@@ -2433,7 +2433,7 @@ endif;
 if ( !function_exists( 'get_human_time_diff_advance' ) ):
 function get_human_time_diff_advance( $from, $to = '' ) {
   if ( empty($to) )
-      $to = time();
+      $to = date_i18n('U');
   $diff = (int) abs($to - $from);
   // 条件: 3600秒 = 1時間以下なら (元のまま)
   if ($diff <= 3600) {
