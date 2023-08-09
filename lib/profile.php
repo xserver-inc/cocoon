@@ -87,9 +87,9 @@ function update_avatar_to_user_profile($user_id) {
 endif;
 
 //プロフィール画像を変更する
-add_filter( 'get_avatar' , 'get_uploaded_user_profile_avatar' , 100000 , 5 );//Ultimate Memberプラグインと干渉するため100000にした
+add_filter( 'get_avatar' , 'get_uploaded_user_profile_avatar' , 100000 , 6 );//Ultimate Memberプラグインと干渉するため100000にした
 if ( !function_exists( 'get_uploaded_user_profile_avatar' ) ):
-function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $default, $alt ) {
+function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $default, $alt, $args ) {
   if ( is_numeric( $id_or_email ) )
     $user_id = (int) $id_or_email;
   elseif ( is_string( $id_or_email ) && ( $user = get_user_by( 'email', $id_or_email ) ) )
@@ -97,7 +97,7 @@ function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $defaul
   elseif ( is_object( $id_or_email ) && ! empty( $id_or_email->user_id ) )
     $user_id = (int) $id_or_email->user_id;
 
-  if ( empty( $user_id ) )
+  if ( empty( $user_id ) || $args['force_default'] == true)
     return $avatar;
 
   if (get_the_author_upladed_avatar_url($user_id)) {
