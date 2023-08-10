@@ -106,7 +106,7 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 
 [【電子書籍対応】Cocoon 楽天商品リンクブックマークレット（ものぐさ WEB ノート）](https://web.monogusa-note.com/cocoon-rakuten-bookmarklet)
 
-## プルリクエストでのご協力
+## プルリクエストでのご協力（プルリクがあった順）
 
 [technote-space](https://github.com/technote-space)
 
@@ -137,3 +137,7 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 [mirumi](https://github.com/mirumirumi)
 
 [vic322](https://github.com/vic322)
+
+[mtdkei](https://github.com/mtdkei)
+
+[HaruInoue](https://github.com/HaruInoue)
