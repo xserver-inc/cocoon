@@ -684,10 +684,6 @@ img.emoji {
   margin: 0;
 }
 
-img[class*="wp-image-"][style*="height\:"] {
-  height: auto !important;
-}
-
 /************************************
 ** ヘッダー
 ************************************/
