@@ -1208,6 +1208,9 @@ body.wp-admin {
 .admin-settings .demo .wp-block-image figcaption {
   margin: 0;
 }
+.admin-settings .demo img[class*="wp-image-"][style*="height\:"] {
+  height: auto !important;
+}
 .admin-settings .demo .header {
   height: 100%;
   flex-shrink: 0;
@@ -8850,6 +8853,9 @@ body.wp-admin {
 }
 .admin-settings .demo .wp-block-image figcaption {
   margin: 0;
+}
+.admin-settings .demo img[class*="wp-image-"][style*="height\:"] {
+  height: auto !important;
 }
 .admin-settings .demo .header {
   height: 100%;
