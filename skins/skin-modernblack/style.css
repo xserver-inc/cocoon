@@ -585,3 +585,12 @@ blockquote::after {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 }
+
+/************************************
+** モバイルサイズでのヘッダーのボーダー表示対策
+************************************/
+@media screen and (max-width: 1023px) {
+  .header-container {
+    border-top: 0;
+  }
+}
