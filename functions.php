@@ -491,3 +491,18 @@ add_filter('oembed_providers', function ($providers){
   }
   return $providers;
 });
+
+//WordPress6.3から画像ブロックの表示比率が崩れる不具合の対応コード追加（WordPress側で対応されたら解除する）
+//参考：https://github.com/WordPress/gutenberg/issues/53555#issuecomment-1675107104
+add_filter( 'render_block_core/image', __NAMESPACE__ . '\fix_img_v63', 10, 2 );
+function fix_img_v63( $block_content, $block ) {
+	$attrs = $block['attrs'] ?? [];
+	$w = $attrs['width'] ?? '';
+	$h = $attrs['height'] ?? '';
+	if ( $w && $h ) {
+		$size_style    = "width:{$w}px;height:{$h}px";
+		$ratio         = "{$w}/{$h}";
+		$block_content = str_replace( $size_style, "aspect-ratio:{$ratio}", $block_content );
+	}
+	return $block_content;
+}
