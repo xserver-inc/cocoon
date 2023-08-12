@@ -17475,9 +17475,6 @@ body.wp-admin {
     margin-left: 10px;
     margin-right: 10px;
   }
-  .admin-settings .demo .article .wp-block-columns :nth-child(odd):nth-last-child(2) {
-    margin-bottom: 0;
-  }
   .admin-settings .demo .fb-like-balloon-body {
     margin-right: 100px;
     font-size: 1em;

@@ -10805,10 +10805,6 @@ _:-ms-lang(x), .mc-circle {
     margin-right: 10px;
   }
 
-  .article .wp-block-columns :nth-child(odd):nth-last-child(2) {
-    margin-bottom: 0;
-  }
-
   /************************************
   ** Facebookページを「いいね！」するエリアのスタイル
   ************************************/
