@@ -9,7 +9,7 @@ function org_theme_add_editor_styles() {
 }
 add_action( 'enqueue_block_editor_assets', 'org_theme_add_editor_styles' );
 
-//スキン制御
+//スキン制御  
 global $_THEME_OPTIONS;
 $_THEME_OPTIONS =
 array(
@@ -36,10 +36,35 @@ function css_custom() {
 	}';
 }
 
-// Googleフォント読み込み
+/*******************************
+* WEBフォント設定
+*******************************/
+// Googleフォント読み込み（非同期化）
 add_action('wp_head', 'adds_head');
 function adds_head() {
-echo '<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Kiwi+Maru&family=Klee+One&family=Zen+Kaku+Gothic+New&family=Zen+Maru+Gothic&family=Zen+Kurenaido&display=swap" rel="stylesheet">'."\n";
+    $font_family = get_theme_mod('font_pattern_control', 'font_klee');
+    $font_url = generate_font_url($font_family);
+    echo '<link href="' . esc_url($font_url) . '" rel="preload" as="style">'."\n";
+    echo '<link href="' . esc_url($font_url) . '" rel="stylesheet" media="print" onload="this.media=\'all\'">'."\n";
+}
+
+// フォントのURLを生成する関数
+function generate_font_url($font_family) {
+    $font_families = array(
+        'font_klee' =>'Klee+One:wght@600&display=swap',
+        'font_kaisei_decol' => 'Kaisei+Decol:wght@700&display=swap',
+        'font_zen_kusenaido' => 'Zen+Kurenaido&display=swap',
+        'font_zen_kaku_gothic' => 'Zen+Kaku+Gothic+New:wght@500&display=swap',
+        'font_zen_maru_gothic' => 'Zen+Maru+Gothic:wght@500&display=swap',
+        'font_kiwi' => 'Kiwi+Maru:wght@500&display=swap',
+        'font_none' => '', // 読み込むフォントがない場合は空文字にする
+    );
+
+    if (isset($font_families[$font_family]) && $font_family !== 'font_none') {
+        return 'https://fonts.googleapis.com/css2?family=' . $font_families[$font_family];
+    }
+
+    return ''; // 該当するフォントが見つからない場合も空文字にする
 }
 
 /*******************************
@@ -59,7 +84,8 @@ function font_pattern($wp_customize) {
 	$wp_customize->add_setting(
 		'font_pattern_control',
 		array(
-			'default' => 'font_klee'
+			'default' => 'font_klee',
+			'sanitize_callback' => 'font_pattern_control_sanitize'// オプションの値を検証するためのコールバック
 		)
 	);
 	$wp_customize->add_control(
@@ -76,6 +102,7 @@ function font_pattern($wp_customize) {
 				'font_zen_kaku_gothic' => 'ZEN角ゴシック',
 				'font_zen_maru_gothic' => 'ZEN丸ゴシック',
 				'font_kiwi' => 'キウイ丸',
+				'font_kaisei_decol' => '解星デコール',
 				'font_none' => '設定なし',
 			),
 		)
@@ -103,10 +130,26 @@ function font_css() {
 		$style_font = '"Zen Maru Gothic", sans-serif';
 	} elseif (get_theme_mod('font_pattern_control','font_klee') === 'font_kiwi') {
 		$style_font = '"Kiwi Maru", sans-serif';
+	} elseif (get_theme_mod('font_pattern_control','font_klee') === 'font_kaisei_decol') {
+		$style_font = '"Kaisei Decol", sans-serif';
 	} else {
 		$style_font = 'inherit';
 	}
 	echo sprintf($style_template, $style_font);
+}
+
+// オプションの値を検証するコールバック
+function font_pattern_control_sanitize($input) {
+    $valid_options = array(
+        'font_klee',
+        'font_kaisei_decol',
+        'font_zen_kusenaido',
+        'font_zen_maru_gothic',
+        'font_kiwi',
+        'font_kaisei_decol',
+        'font_none',
+    );
+    return in_array($input, $valid_options, true) ? $input : 'font_klee';
 }
 
 /*******************************
@@ -126,7 +169,8 @@ function bg_pattern($wp_customize) {
 	$wp_customize->add_setting(
 		'bg_image_control',
 		array(
-			'default' => 'bg_grid'
+			'default' => 'bg_grid',
+			'sanitize_callback' => 'bg_pattern_control_sanitize'// オプションの値を検証するためのコールバック
 		)
 	);
 	$wp_customize->add_control(
@@ -179,6 +223,23 @@ function bg_image_css() {
 	}
 	echo sprintf($style_template, $style_image, $style_size);
 }
+	
+// オプションの値を検証するためのコールバック関数
+	function bg_pattern_control_sanitize($input) {
+    $valid_options = array(
+        'bg_grid',
+        'bg_grid_paper',
+        'bg_line',
+        'bg_dot',
+        'bg_img_none'
+    );
+
+    if (in_array($input, $valid_options, true)) {
+        return $input;
+    } else {
+        return 'bg_grid'; // デフォルト値を設定
+    }
+}
 
 /*******************************
 * カスタマイザーで
@@ -197,7 +258,8 @@ function logo_text_dot($wp_customize) {
 	$wp_customize->add_setting(
 		'logo_text_dot_control',
 		array(
-			'default' => 'dot_point'
+			'default' => 'dot_point',
+			'sanitize_callback' => 'logo_text_dot_control_sanitize', // オプションの値を検証するためのコールバック
 		)
 	);
 	$wp_customize->add_control(
@@ -226,7 +288,8 @@ function logo_text_dot($wp_customize) {
 		$wp_customize->add_setting(
 		'logo_text_dot_potision',
 		array(
-			'default' => 'dot_under'
+			'default' => 'dot_under',
+			'sanitize_callback' => 'logo_text_dot_position_sanitize', // オプションの値を検証するためのコールバック
 		)
 	);
 	$wp_customize->add_control(
@@ -289,4 +352,41 @@ function logo_text_dot_css() {
 		$style_position = 'over left'; 
 	}
 	echo sprintf($style_template, $style_value, $style_value, $style_position, $style_position);
+}
+
+// オプションの値を検証するためのコールバック関数（ロゴテキストの傍点デザイン）
+function logo_text_dot_control_sanitize($input) {
+    $valid_options = array(
+        'dot_point',
+        'dot_point_open',
+        'dot_circle',
+        'dot_circle_open',
+        'dot_double_circle',
+        'dot_double_circle_open',
+        'dot_triangle',
+        'dot_triangle_open',
+        'dot_sesame',
+        'dot_sesame_open',
+        'dot_none',
+    );
+
+    if (in_array($input, $valid_options, true)) {
+        return $input;
+    } else {
+        return 'dot_point'; // デフォルト値を設定
+    }
+}
+
+// オプションの値を検証するためのコールバック関数（ロゴテキストの傍点位置）
+function logo_text_dot_position_sanitize($input) {
+    $valid_options = array(
+        'dot_under',
+        'dot_over',
+    );
+
+    if (in_array($input, $valid_options, true)) {
+        return $input;
+    } else {
+        return 'dot_under'; // デフォルト値を設定
+    }
 }

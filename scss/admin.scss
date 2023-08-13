@@ -480,6 +480,14 @@ select option.fa{
   }
 }
 
+.category-check-list-root{
+  >li{
+    >ul{
+      padding-left: 0 !important;
+    }
+  }
+}
+
 .list-content,
 .tabs .tab-content,
 .tabs .tagcloud-list,

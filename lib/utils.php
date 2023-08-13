@@ -2433,54 +2433,54 @@ endif;
 if ( !function_exists( 'get_human_time_diff_advance' ) ):
 function get_human_time_diff_advance( $from, $to = '' ) {
   if ( empty($to) )
-      $to = time();
+    $to = date_i18n('U');
   $diff = (int) abs($to - $from);
   // 条件: 3600秒 = 1時間以下なら (元のまま)
   if ($diff <= 3600) {
-      $mins = floor($diff / 60);
-      if ($mins <= 1) {
-          $mins = 1;
-      }
-      $since = sprintf(_n('%s min', '%s mins', $mins), $mins);
+    $mins = floor($diff / 60);
+    if ($mins <= 1) {
+      $mins = 1;
+    }
+    $since = sprintf(_n('%s min', '%s mins', $mins), $mins);
   }
   // 条件: 86400秒 = 24時間以下かつ、3600秒 = 1時間以上なら (元のまま)
   else if (($diff <= 86400) && ($diff > 3600)) {
-      $hours = floor($diff / 3600);
-      if ($hours <= 1) {
-          $hours = 1;
-      }
-      $since = sprintf(_n('%s hour', '%s hours', $hours), $hours);
+    $hours = floor($diff / 3600);
+    if ($hours <= 1) {
+      $hours = 1;
+    }
+    $since = sprintf(_n('%s hour', '%s hours', $hours), $hours);
   }
   // 条件: 604800秒 = 7日以下かつ、86400秒 = 24時間以上なら (条件追加)
   elseif (($diff <= 604800) && ($diff > 86400)) {
-      $days = floor($diff / 86400);
-      if ($days <= 1) {
-          $days = 1;
-      }
-      $since = sprintf(_n('%s day', '%s days', $days), $days);
+    $days = floor($diff / 86400);
+    if ($days <= 1) {
+      $days = 1;
+    }
+    $since = sprintf(_n('%s day', '%s days', $days), $days);
   }
   // 条件: 2678400秒 = 31日以下かつ、2678400秒 = 7日以上なら (条件追加)
   elseif (($diff <= 2678400) && ($diff > 604800) ) {
-      $weeks = floor($diff / 604800);
-      if ($weeks <= 1) {
-          $weeks = 1;
-      }
-      $since = sprintf(_n('%s週間', '%s週間', $weeks), $weeks);
+    $weeks = floor($diff / 604800);
+    if ($weeks <= 1) {
+      $weeks = 1;
+    }
+    $since = sprintf(_n('%s週間', '%s週間', $weeks), $weeks);
   }
   // 条件: 31536000秒 = 365日以下かつ、2678400秒 = 31日以上なら (条件追加)
   elseif (($diff <= 31536000) && ($diff > 2678400) ) {
-      $months = floor($diff / 2678400);
-      if ($months <= 1) {
-          $months = 1;
-      }
-      $since = sprintf(_n('%sヶ月', '%sヶ月', $months), $months);
+    $months = floor($diff / 2678400);
+    if ($months <= 1) {
+      $months = 1;
+    }
+    $since = sprintf(_n('%sヶ月', '%sヶ月', $months), $months);
   }
   // 条件: 31536000秒 = 365日以上なら (条件追加)
   elseif ($diff >= 31536000) {
     $years = floor($diff / 31536000);
     $months = floor(($diff % 31536000) / 2678400);
     if ($years <= 1) {
-        $years = 1;
+      $years = 1;
     }
     //3年以上経っている場合は年だけでOK
     if (($months == 0) || ($years >= 3)) {
@@ -2596,9 +2596,13 @@ function get_singular_sns_share_image_url(){
   } else if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
     $image_id = get_post_thumbnail_id();
     $image = wp_get_attachment_image_src( $image_id, 'full');
-    $sns_image_url = $image[0];
+    if (isset($image[0])) {
+      $sns_image_url = $image[0];
+    }
   } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive() && is_auto_post_thumbnail_enable()) {//投稿にアイキャッチは無いが画像がある場合の処理
-    $sns_image_url = $image[2];
+    if (isset($image[2])) {
+      $sns_image_url = $image[2];
+    }
   } else if ( $no_image_url = get_no_image_url() ){//NO IMAGEが設定されている場合
     $sns_image_url = $no_image_url;
   } else if ( $ogp_home_image_url = get_ogp_home_image_url() ){//ホームイメージが設定されている場合
@@ -2619,22 +2623,25 @@ function get_singular_eyecatch_image_url(){
   if ( isset( $post->post_content ) ){
     $content = $post->post_content;
   }
+  $eyecatch_image_url = NO_IMAGE_LARGE;
   //投稿にイメージがあるか調べるための正規表現
   $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
   if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
     $image_id = get_post_thumbnail_id();
     $image = wp_get_attachment_image_src( $image_id, 'full');
-    $eyecatch_image_url = $image[0];
+    if (isset($image[0])) {
+      $eyecatch_image_url = $image[0];
+    }
   } else if ($singular_sns_image_url = get_singular_sns_image_url()) {
     $eyecatch_image_url = $singular_sns_image_url;
   } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive() && is_auto_post_thumbnail_enable()) {//投稿にサムネイルは無いが画像がある場合の処理
-    $eyecatch_image_url = $image[2];
+    if (isset($image[2])) {
+      $eyecatch_image_url = $image[2];
+    }
   } else if ( $no_image_url = get_no_image_url() ){//NO IMAGEが設定されている場合
     $eyecatch_image_url = $no_image_url;
   } else if ( $ogp_home_image_url = get_ogp_home_image_url() ){//ホームイメージが設定されている場合
     $eyecatch_image_url = $ogp_home_image_url;
-  } else {
-    $eyecatch_image_url = NO_IMAGE_LARGE;
   }
   return apply_filters('get_singular_eyecatch_image_url', $eyecatch_image_url);
 }

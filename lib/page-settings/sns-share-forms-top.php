@@ -110,6 +110,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li>
                 <?php generate_checkbox_tag(OP_SNS_TAG_TOP_SHARE_BUTTONS_VISIBLE, is_sns_tag_top_share_buttons_visible(), __( 'タグ', THEME_NAME )); ?>
               </li>
+            </ul>
             <p><?php _e( 'シェアボタンを表示するページを選択してください。', THEME_NAME );echo get_help_page_tag('https://wp-cocoon.com/sns-button-display-switching/'); ?></p>
           </td>
         </tr>

@@ -286,7 +286,7 @@ $marker_u_blue: $marker_blue;
   .wp-block-cover,
   .blogcard-type,
   .btn-wrap,
-  .wp-block-group,
+  .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between),
   .wp-block-gallery,
   .block-box,
   .blank-box,

@@ -184,11 +184,9 @@ endif;
 //タクソノミーがcategoryもしくはpost_tagの場合はpost_tagに統一。その他はカスタム分類のタクソノミー。
 $taxonomy = (isset($_GET['taxonomy']) && $_GET['taxonomy'] !== 'category') ? wp_unslash($_GET['taxonomy']) : 'post_tag';
 add_action ( $taxonomy.'_edit_form_fields', 'extra_tag_fields');
-// add_action ( 'post_tag_edit_form_fields', 'extra_tag_fields');
 if ( !function_exists( 'extra_tag_fields' ) ):
 function extra_tag_fields( $tag ) {
     $tag_id = $tag->term_id;
-    //$tag_meta = get_the_tag_meta($tag_id);
 ?>
 <tr class="form-field term-title-wrap">
   <th><label for="title"><?php _e( 'タグタイトル', THEME_NAME ) ?></label></th>

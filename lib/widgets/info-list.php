@@ -35,6 +35,8 @@ class InfoListWidgetItem extends WP_Widget {
     //水平表示
     $is_frame = apply_filters( 'info_list_widget_is_frame', empty($instance['is_frame']) ? 0 : 1 );
     $is_divider = apply_filters( 'info_list_widget_is_divider', empty($instance['is_divider']) ? 0 : 1 );
+    //更新日順
+    $modified = apply_filters( 'info_list_widget_mo$modified', empty($instance['modified']) ? 0 : 1 );
     //カテゴリーID
     $cat_ids = empty($instance['cat_ids']) ? array() : $instance['cat_ids'];
     $cat_ids = apply_filters( 'info_list_widget_cat_ids', $cat_ids, $instance, $this->id_base );
@@ -58,6 +60,7 @@ class InfoListWidgetItem extends WP_Widget {
       'count' => $count,
       'frame' => $is_frame,
       'divider' => $is_divider,
+      'modified' => $modified,
       'cats' => $cats,
     );
     //新着記事リストの作成
@@ -77,6 +80,7 @@ class InfoListWidgetItem extends WP_Widget {
 
     $instance['is_frame'] = !empty($new_instance['is_frame']) ? 1 : 0;
     $instance['is_divider'] = !empty($new_instance['is_divider']) ? 1 : 0;
+    $instance['modified'] = !empty($new_instance['modified']) ? 1 : 0;
 
     if (isset($new_instance['cat_ids'])){
       $instance['cat_ids'] = $new_instance['cat_ids'];
@@ -94,6 +98,7 @@ class InfoListWidgetItem extends WP_Widget {
         'count' => EC_DEFAULT,
         'is_frame'  => 1,
         'is_divider'  => 1,
+        'modified'  => 0,
         'cat_ids' => array(),
       );
     }
@@ -108,6 +113,7 @@ class InfoListWidgetItem extends WP_Widget {
       $count = esc_attr($instance['count']);
     $is_frame = empty($instance['is_frame']) ? 0 : 1;
     $is_divider = empty($instance['is_divider']) ? 0 : 1;
+    $modified = empty($instance['modified']) ? 0 : 1;
     $cat_ids = isset($instance['cat_ids']) ? $instance['cat_ids'] : array();
     ?>
     <?php //タイトル入力フォーム ?>
@@ -141,6 +147,12 @@ class InfoListWidgetItem extends WP_Widget {
     <p>
       <?php
         generate_checkbox_tag($this->get_field_name('is_divider') , $is_divider, __( '仕切り線表示', THEME_NAME ));
+      ?>
+    </p>
+    <?php //更新日順に並び替え ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('modified') , $modified, __( '更新日順に並び替え', THEME_NAME ));
       ?>
     </p>
     <?php //表示カテゴリー ?>

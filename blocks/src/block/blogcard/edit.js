@@ -90,7 +90,10 @@ export default function edit( { attributes, setAttributes, className } ) {
       <div { ...blockProps }>
         <RichText
           onChange={ onChangeContent }
-          value={ content.replace( /\s/g, '' ) }
+          value={ content
+            .replace( /^\s+/, '' )
+            .replace( /\s+$/, '' )
+          }
           // multiline="p"
         />
       </div>

@@ -996,6 +996,7 @@ function get_info_list_shortcode($atts){
     'caption' => __( '新着情報', THEME_NAME ),
     'frame' => 1,
     'divider' => 1,
+    'modified' => 0,
   ), $atts, 'info_list'));
 
   //カテゴリーを配列化
@@ -1010,6 +1011,7 @@ function get_info_list_shortcode($atts){
     'caption' => $caption,
     'frame' => $frame,
     'divider' => $divider,
+    'modified' => $modified,
   );
   ob_start();
   generate_info_list_tag($atts);

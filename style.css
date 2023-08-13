@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.6.2.8
+Version: 2.6.4.4
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -1218,13 +1218,12 @@ img.emoji {
   position: relative;
   text-align: center;
   width: 32%;
+  transition: all 0.3s ease-in-out;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
 .sns-buttons a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
-  transition: all 0.3s ease-in-out;
 }
 
 .bc-brand-color-white a {
@@ -1460,7 +1459,7 @@ pre {
 }
 
 .ctdt-one-row > div {
-  display: inline-block;
+  display: inline;
 }
 
 .ctdt-category-only .entry-tags {
@@ -2137,8 +2136,7 @@ img.blogcard-favicon-image {
   justify-content: center;
 }
 
-.nwa .ranking-item-name-text,
-.nwa .widget_item_ranking .main-widget-label {
+.nwa .ranking-item-name-text {
   font-size: 20px;
 }
 
@@ -2882,7 +2880,7 @@ label.screen-reader-text {
 .body .wp-block-cover :last-child,
 .body .blogcard-type :last-child,
 .body .btn-wrap :last-child,
-.body .wp-block-group :last-child,
+.body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
 .body .wp-block-gallery :last-child,
 .body .block-box :last-child,
 .body .blank-box :last-child,
@@ -7215,7 +7213,7 @@ div.fb-like-mobile {
   overflow: hidden;
 }
 .logo-menu-button img {
-  max-height: 44px;
+  max-height: 50px;
   display: block;
   margin: 0 auto;
 }
@@ -10660,6 +10658,10 @@ _:-ms-lang(x), .mc-circle {
     position: static;
   }
 
+  .ba-fixed.header {
+    background-position: top center;
+  }
+
   .ba-fixed.header,
   .ba-fixed.appeal {
     background-attachment: scroll;
@@ -11094,10 +11096,6 @@ _:-ms-lang(x), .mc-circle {
   .wwa .box-menus {
     margin-left: 10px;
     margin-right: 10px;
-  }
-
-  .article .wp-block-columns :nth-child(odd):nth-last-child(2) {
-    margin-bottom: 0;
   }
 
   /************************************

@@ -42,7 +42,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php if (false): ?>
 <!-- ダッシュボードメッセージ -->
-<div id="admin" class="postbox">
+<div id="admin-dashboard" class="postbox">
   <h2 class="hndle"><?php _e( 'ダッシュボードメッセージ', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -73,7 +73,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php endif; ?>
 
 <!-- 投稿一覧設定 -->
-<div id="admin" class="postbox">
+<div id="admin-single-index" class="postbox">
   <h2 class="hndle"><?php _e( '投稿一覧設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

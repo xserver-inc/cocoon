@@ -1666,13 +1666,12 @@ body.wp-admin {
   position: relative;
   text-align: center;
   width: 32%;
+  transition: all 0.3s ease-in-out;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
 .admin-settings .demo .sns-buttons a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .bc-brand-color-white a {
   background-color: var(--cocoon-white-color);
@@ -1865,7 +1864,7 @@ body.wp-admin {
   margin-right: 0.4em;
 }
 .admin-settings .demo .ctdt-one-row > div {
-  display: inline-block;
+  display: inline;
 }
 .admin-settings .demo .ctdt-category-only .entry-tags {
   display: none;
@@ -2426,8 +2425,7 @@ body.wp-admin {
   display: flex;
   justify-content: center;
 }
-.admin-settings .demo .nwa .ranking-item-name-text,
-.admin-settings .demo .nwa .widget_item_ranking .main-widget-label {
+.admin-settings .demo .nwa .ranking-item-name-text {
   font-size: 20px;
 }
 .admin-settings .demo .nwa .ranking-item-description p {
@@ -3046,7 +3044,7 @@ body.wp-admin {
 .admin-settings .demo .body .wp-block-cover :last-child,
 .admin-settings .demo .body .blogcard-type :last-child,
 .admin-settings .demo .body .btn-wrap :last-child,
-.admin-settings .demo .body .wp-block-group :last-child,
+.admin-settings .demo .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
 .admin-settings .demo .body .wp-block-gallery :last-child,
 .admin-settings .demo .body .block-box :last-child,
 .admin-settings .demo .body .blank-box :last-child,
@@ -6813,7 +6811,7 @@ body.wp-admin {
   overflow: hidden;
 }
 .admin-settings .demo .logo-menu-button img {
-  max-height: 44px;
+  max-height: 50px;
   display: block;
   margin: 0 auto;
 }
@@ -9547,13 +9545,12 @@ body.wp-admin {
   position: relative;
   text-align: center;
   width: 32%;
+  transition: all 0.3s ease-in-out;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
 .admin-settings .demo .sns-buttons a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .bc-brand-color-white a {
   background-color: var(--cocoon-white-color);
@@ -9746,7 +9743,7 @@ body.wp-admin {
   margin-right: 0.4em;
 }
 .admin-settings .demo .ctdt-one-row > div {
-  display: inline-block;
+  display: inline;
 }
 .admin-settings .demo .ctdt-category-only .entry-tags {
   display: none;
@@ -10307,8 +10304,7 @@ body.wp-admin {
   display: flex;
   justify-content: center;
 }
-.admin-settings .demo .nwa .ranking-item-name-text,
-.admin-settings .demo .nwa .widget_item_ranking .main-widget-label {
+.admin-settings .demo .nwa .ranking-item-name-text {
   font-size: 20px;
 }
 .admin-settings .demo .nwa .ranking-item-description p {
@@ -10927,7 +10923,7 @@ body.wp-admin {
 .admin-settings .demo .body .wp-block-cover :last-child,
 .admin-settings .demo .body .blogcard-type :last-child,
 .admin-settings .demo .body .btn-wrap :last-child,
-.admin-settings .demo .body .wp-block-group :last-child,
+.admin-settings .demo .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
 .admin-settings .demo .body .wp-block-gallery :last-child,
 .admin-settings .demo .body .block-box :last-child,
 .admin-settings .demo .body .blank-box :last-child,
@@ -14694,7 +14690,7 @@ body.wp-admin {
   overflow: hidden;
 }
 .admin-settings .demo .logo-menu-button img {
-  max-height: 44px;
+  max-height: 50px;
   display: block;
   margin: 0 auto;
 }
@@ -17587,6 +17583,9 @@ body.wp-admin {
   .admin-settings .demo .sidebar-scroll {
     position: static;
   }
+  .admin-settings .demo .ba-fixed.header {
+    background-position: top center;
+  }
   .admin-settings .demo .ba-fixed.header,
   .admin-settings .demo .ba-fixed.appeal {
     background-attachment: scroll;
@@ -17949,9 +17948,6 @@ body.wp-admin {
   .admin-settings .demo .wwa .box-menus {
     margin-left: 10px;
     margin-right: 10px;
-  }
-  .admin-settings .demo .article .wp-block-columns :nth-child(odd):nth-last-child(2) {
-    margin-bottom: 0;
   }
   .admin-settings .demo .fb-like-balloon-body {
     margin-right: 100px;
@@ -18964,6 +18960,10 @@ select option.fa:before {
   margin-right: 5px;
 }
 
+.category-check-list-root > li > ul {
+  padding-left: 0 !important;
+}
+
 .list-content,
 .tabs .tab-content,
 .tabs .tagcloud-list,
@@ -19713,7 +19713,7 @@ textarea[name="the_page_memo"] {
 .components-popover__content .body .wp-block-cover :last-child,
 .components-popover__content .body .blogcard-type :last-child,
 .components-popover__content .body .btn-wrap :last-child,
-.components-popover__content .body .wp-block-group :last-child,
+.components-popover__content .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
 .components-popover__content .body .wp-block-gallery :last-child,
 .components-popover__content .body .block-box :last-child,
 .components-popover__content .body .blank-box :last-child,

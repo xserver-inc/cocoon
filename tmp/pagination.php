@@ -35,7 +35,7 @@ if($is_1_page) {
     $url = get_pagenum_link($next_page_num);
     //$url = get_query_removed_url($url);
     // var_dump($url);
-    echo '<div class="pagination-next"><a href="'.esc_url($url).'" class="pagination-next-link key-btn">'.__( '次のページ', THEME_NAME ).'</a></div>';
+    echo '<div class="pagination-next"><a href="'.esc_url($url).'" class="pagination-next-link key-btn">'.apply_filters('pagination_next_link_caption', __( '次のページ', THEME_NAME )).'</a></div>';
   }
 
 }

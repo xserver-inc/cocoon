@@ -157,12 +157,11 @@
 
   function drawerCloser(selecter, checkbox) {
     $(selecter).click(function () {
-      href = $(this).attr('href');
-      url = location.href;
-      url = url.replace(/#.*$/, '');
-      if ((href.indexOf(url) != -1) && href.match(/#/)) {
-        $(checkbox).prop('checked', false);
-      }
+      $(checkbox).prop('checked', false);
+      // const href = $(this).attr('href');
+      // if (href.match(/#/)) {
+      //   $(checkbox).prop('checked', false);
+      // }
     })
   }
 
@@ -173,7 +172,6 @@
   drawerCloser('#slide-in-sidebar a', '#sidebar-menu-input');
 
   //モバイルヘッダーメニューのロゴ処理
-  //console.log($('.mobile-menu-buttons'));
   $('.mobile-menu-buttons').each(function () {
     if ($(this).has('.logo-menu-button').length) {
       $(this).addClass('has-logo-button');

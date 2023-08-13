@@ -7,8 +7,10 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-add_action('admin_init', 'add_shortcodes_dropdown');
-add_action('admin_head', 'generate_shortcodes_js');
+if ( is_admin_post_page()) {
+  add_action('admin_init', 'add_shortcodes_dropdown');
+  add_action('admin_head', 'generate_shortcodes_js');
+}
 
 if ( !function_exists( 'add_shortcodes_dropdown' ) ):
 function add_shortcodes_dropdown(){

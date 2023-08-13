@@ -1419,3 +1419,13 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .components-button.display-none{
   display: none !important;
 }
+
+//ブログカードブロック内のpタグの余計な余白を削除
+.blogcard-type .rich-text{
+  white-space: initial !important;
+}
+
+//グループボックスの上下揃えのデフォルトを中央揃えに（エディター画面）
+.is-layout-flex{
+  align-items: center;
+}

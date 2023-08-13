@@ -90,7 +90,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 <!-- 日付の設定 -->
-<div id="seo-head" class="postbox">
+<div id="seo-date" class="postbox">
   <h2 class="hndle"><?php _e( '日付の設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

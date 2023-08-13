@@ -32,6 +32,10 @@
     "showDivider": {
       "type": "boolean",
       "default": true
+    },
+    "modified": {
+      "type": "boolean",
+      "default": false
     }
   },
   "example": {},

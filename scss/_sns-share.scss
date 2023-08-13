@@ -6,13 +6,6 @@
   align-items: center;
 
   a{
-    // display: block;
-    // background-color: var(--cocoon-text-color);
-    // text-align: center;
-    // @include link_cancel(var(--cocoon-white-color));
-    // border-radius: var(--cocoon-basic-border-radius);
-    // height: 45px;
-
     align-content: center;
     align-items: center;
     background-color: var(--cocoon-sns-color);
@@ -25,12 +18,11 @@
     position: relative;
     text-align: center;
     width: 32%;
+    transition: $bgc_hover_anime;
     @include link_cancel(var(--cocoon-white-color));
 
     &:hover{
       opacity: 0.7;
-      color: var(--cocoon-white-color);
-      transition: $bgc_hover_anime;
     }
   }
 }

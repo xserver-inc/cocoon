@@ -619,6 +619,7 @@ if (!$entry_content_margin_hight) {
   $entry_content_margin_hight = OP_ENTRY_CONTENT_MARGIN_HIGHT_DEFAULT;
 } ?>
 .entry-content > *,
+.mce-content-body > *,
 .article p,
 .demo .entry-content p,
 .article dl,
@@ -990,6 +991,10 @@ if ($image_url && is_header_size_background_image_aspect_ratio() && is_header_la
     <?php //高さ設定の無効化 ?>
     .header .header-in {
       min-height: 0 !important;
+    }
+    <?php //ヘッダー背景画像が固定されていてサイズをアスペクト比にする場合はアドミンバーの高さを考慮 ?>
+    .ba-fixed{
+      background-position: 0 var(--wp-admin--admin-bar--height);
     }
   <?php endif; ?>
 <?php endif; ?>
