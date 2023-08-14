@@ -73,7 +73,7 @@ jQuery(document).ready(function($){
 !function($) {
   function countUp(element, h1) {
       const text = "H1" === element.get(0).tagName ? h1.text() : h1.val();
-      element.attr("data-title-count", text.length)
+      element.attr("data-title-count", text.trim().length)
   }
   window.addEventListener("load", (function() {
     setTimeout((() => {
