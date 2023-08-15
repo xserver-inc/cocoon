@@ -10,12 +10,7 @@
 */
 
 /* Cocoon skin m-tomato */
-body {
-	background:#fff url("https://im-cocoon.net/wp-content/uploads/bg-m-tomato.jpg") no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-}
-body::before {
+.body:not(.editor-styles-wrapper)::before {
 	content: "";
 	display: block;
 	position: fixed;
@@ -72,7 +67,7 @@ body::before {
 	border-bottom: 3px solid #dcdcdc;
 	line-height:1.2;
 }
-.article h1::after {
+.article:not(.admin-page) h1::after {
 	position: absolute;
 	content:"";
 	display: block;

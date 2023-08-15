@@ -1912,3 +1912,8 @@ figcaption{
     margin-bottom: $i * 1em !important;
   }
 }
+
+//ソースコードブロックでコードが改行される不具合修正
+.wp-block-code code {
+    white-space: pre;
+}

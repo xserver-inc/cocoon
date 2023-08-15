@@ -5438,6 +5438,9 @@ body.wp-admin {
 .admin-settings .demo .has-bottom-margin.is-style-bottom-margin-20em {
   margin-bottom: 20em !important;
 }
+.admin-settings .demo .wp-block-code code {
+  white-space: pre;
+}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -13316,6 +13319,9 @@ body.wp-admin {
 }
 .admin-settings .demo .has-bottom-margin.is-style-bottom-margin-20em {
   margin-bottom: 20em !important;
+}
+.admin-settings .demo .wp-block-code code {
+  white-space: pre;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -22107,6 +22113,9 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .has-bottom-margin.is-style-bottom-margin-20em {
   margin-bottom: 20em !important;
+}
+.components-popover__content .wp-block-code code {
+  white-space: pre;
 }
 .components-popover__content .red {
   margin: 0;

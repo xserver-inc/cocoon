@@ -5608,6 +5608,10 @@ figcaption {
   margin-bottom: 20em !important;
 }
 
+.wp-block-code code {
+  white-space: pre;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;

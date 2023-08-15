@@ -1,6 +1,6 @@
 /*
   Skin Name: Metal Styles
-  Description: シンプルな1カラムスキン。文章メインのサイトなどに。
+  Description: シンプルな1カラムスキン。文章メインのサイトなどに。1カラムスキンなのでサイドバーなどは利用できません。
   Skin URI: https://matometaru.com/post-2419/
   Author: まとめたる
   Author URI: https://matometaru.com/
@@ -143,14 +143,14 @@ body {
 	letter-spacing: .05em;
 }
 
-.article h1 {
+.article:not(.admin-page) h1 {
 	position: relative;
 	text-align: center;
 	padding: 20px;
 	font-size: 30px;
 }
 
-.article h1:after {
+.article:not(.admin-page) h1::after {
 	content: "";
 	position: absolute;
 	width: 100px;
@@ -312,7 +312,7 @@ body {
 		font-size: 20px;
 	}
 
-	.article h1:after {
+	.article:not(.admin-page) h1::after {
 		width: 100px;
 		height: 3px;
 	}

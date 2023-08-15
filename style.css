@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.6.4.4
+Version: 2.6.4.5
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -5631,6 +5631,10 @@ figcaption {
 
 .has-bottom-margin.is-style-bottom-margin-20em {
   margin-bottom: 20em !important;
+}
+
+.wp-block-code code {
+  white-space: pre;
 }
 
 .column-wrap {
