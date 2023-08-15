@@ -1884,3 +1884,8 @@ figcaption{
     border-color: transparent;
   }
 }
+
+//ソースコードブロックでコードが改行される不具合修正
+.wp-block-code code {
+    white-space: pre;
+}

@@ -3539,6 +3539,10 @@ figcaption {
   border-color: transparent;
 }
 
+.wp-block-code code {
+  white-space: pre;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;
