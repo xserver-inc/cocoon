@@ -30,9 +30,22 @@ wp.domReady(function () {
   //https://wp-cocoon.com/community/cocoon-theme/
   setInterval(function(){
     //ブロックエディターのラップ要素に必要なクラスを追加する
-    let writingFlow = jQuery('#editor .block-editor-writing-flow');
+    const wrapClass = '.block-editor-writing-flow';
+    const addClasses = 'cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']
+    let writingFlow = jQuery(wrapClass);
     if (!writingFlow.hasClass('article')) {
-      writingFlow.addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
+      writingFlow.addClass(addClasses);
+    }
+    let iframe = jQuery('iframe[name="editor-canvas"]');
+    // console.log(iframe);
+    if (iframe.length > 0) {
+      let iframeContent = iframe.contents();
+      // console.log(iframeContent);
+      let element = iframeContent.find('.is-root-container');
+      // console.log(element);
+      if (!element.hasClass('article')) {
+        element.addClass(addClasses);
+      }
     }
 
     //グループボックスのスタイルプレビューに余計なstyle属性が入り込んでしまうのを削除
