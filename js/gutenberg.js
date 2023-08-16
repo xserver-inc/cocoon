@@ -5,23 +5,6 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-//  console.log('1');
-document.addEventListener('DOMContentLoaded', function() {
-  // add classes
-  const addClasses = function () {
-    // console.log('2');
-    // console.log(jQuery('.block-editor-writing-flow'));
-    // add body class
-    // jQuery('#editor .block-editor-writing-flow').wrap('<div>');
-    // jQuery('#editor .block-editor-writing-flow').parent().addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
-
-    jQuery('#editor .block-editor-writing-flow').addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
-    // console.log(jQuery('#editor .block-editor-writing-flow'));
-  };
-  setTimeout(addClasses, 1000);
-
-});
-
 wp.domReady(function () {
   // subscribe switch editor mode
   wp.data.subscribe(function (selector, listener) {
@@ -46,6 +29,11 @@ wp.domReady(function () {
   //もしWordPressフックを使った方法や、もうちょっと綺麗なjQueryの書き方があればフォーラムで教えていただければ幸いです。
   //https://wp-cocoon.com/community/cocoon-theme/
   setInterval(function(){
+    //ブロックエディターのラップ要素に必要なクラスを追加する
+    let writingFlow = jQuery('#editor .block-editor-writing-flow');
+    if (!writingFlow.hasClass('article')) {
+      writingFlow.addClass('cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']);
+    }
 
     //グループボックスのスタイルプレビューに余計なstyle属性が入り込んでしまうのを削除
     //もっと良い方法があるのかもしれない
