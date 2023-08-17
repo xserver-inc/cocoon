@@ -144,6 +144,14 @@
 .article ol li {
   margin: 0.2em;
 }
+.article ul ul, .article ul ol,
+.article ol ul,
+.article ol ol {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
 .article .wp-block-gallery ul {
   padding-left: 0;
 }
@@ -5543,4 +5551,9 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 
 .is-layout-flex {
   align-items: center;
+}
+
+.wp-block-list .wp-block-list {
+  padding-top: 0;
+  padding-bottom: 0;
 }

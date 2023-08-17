@@ -1429,3 +1429,12 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .is-layout-flex{
   align-items: center;
 }
+
+
+
+.wp-block-list{
+  .wp-block-list{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

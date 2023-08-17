@@ -1994,6 +1994,14 @@ body.wp-admin {
 .admin-settings .demo .article ol li {
   margin: 0.2em;
 }
+.admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol,
+.admin-settings .demo .article ol ul,
+.admin-settings .demo .article ol ol {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
 .admin-settings .demo .article .wp-block-gallery ul {
   padding-left: 0;
 }
@@ -9875,6 +9883,14 @@ body.wp-admin {
 .admin-settings .demo .article ul li,
 .admin-settings .demo .article ol li {
   margin: 0.2em;
+}
+.admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol,
+.admin-settings .demo .article ol ul,
+.admin-settings .demo .article ol ol {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
 }
 .admin-settings .demo .article .wp-block-gallery ul {
   padding-left: 0;
