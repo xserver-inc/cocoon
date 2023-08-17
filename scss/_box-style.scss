@@ -399,7 +399,7 @@
 .iconlist-box {
   [class*="is-style-numeric-list-"],
   [class*="is-style-icon-list-"]{
-    li{
+    >li{
       &::before{
         margin-left: 0;
       }

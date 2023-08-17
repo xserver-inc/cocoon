@@ -8562,8 +8562,8 @@ body.wp-admin {
   line-height: 1.6;
   border-radius: 50%;
 }
-.admin-settings .demo .iconlist-box [class*="is-style-numeric-list-"] li::before,
-.admin-settings .demo .iconlist-box [class*="is-style-icon-list-"] li::before {
+.admin-settings .demo .iconlist-box [class*="is-style-numeric-list-"] > li::before,
+.admin-settings .demo .iconlist-box [class*="is-style-icon-list-"] > li::before {
   margin-left: 0;
 }
 .admin-settings .demo .is-style-numeric-list-enclosed > li:before {
@@ -16452,8 +16452,8 @@ body.wp-admin {
   line-height: 1.6;
   border-radius: 50%;
 }
-.admin-settings .demo .iconlist-box [class*="is-style-numeric-list-"] li::before,
-.admin-settings .demo .iconlist-box [class*="is-style-icon-list-"] li::before {
+.admin-settings .demo .iconlist-box [class*="is-style-numeric-list-"] > li::before,
+.admin-settings .demo .iconlist-box [class*="is-style-icon-list-"] > li::before {
   margin-left: 0;
 }
 .admin-settings .demo .is-style-numeric-list-enclosed > li:before {

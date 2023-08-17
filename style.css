@@ -9294,8 +9294,8 @@ https://codepen.io/nxworld/pen/oLdoWb
   border-radius: 50%;
 }
 
-.iconlist-box [class*="is-style-numeric-list-"] li::before,
-.iconlist-box [class*="is-style-icon-list-"] li::before {
+.iconlist-box [class*="is-style-numeric-list-"] > li::before,
+.iconlist-box [class*="is-style-icon-list-"] > li::before {
   margin-left: 0;
 }
 
