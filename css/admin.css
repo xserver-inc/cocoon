@@ -21752,6 +21752,6 @@ textarea[name="the_page_memo"] {
   margin-bottom: 1em;
 }
 
-.wp-picker-container .button[style*="ackground-color"] .wp-color-result-text {
+.wp-picker-container .button[style*="background-color"] .wp-color-result-text {
   color: red;
 }
