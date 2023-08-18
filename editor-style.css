@@ -466,3 +466,7 @@ span.btn-wrap {
 .wp-block-freeform.block-library-rich-text__tinymce .btn[class*="btn-"] {
   color: var(--cocoon-white-color);
 }
+
+.mce-content-body .blogcard-type br {
+  display: initial;
+}
