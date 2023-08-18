@@ -1072,3 +1072,8 @@ textarea[name="the_page_memo"]{
 .demo .ranking-item{
   margin-bottom: 1em;
 }
+
+//カラーピッカーで色が選択されているかどうかを分かりやすく文字を赤色にするコード
+.wp-picker-container .button[style*="ackground-color"] .wp-color-result-text {
+  color: red;
+}
