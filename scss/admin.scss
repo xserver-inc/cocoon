@@ -1073,7 +1073,9 @@ textarea[name="the_page_memo"]{
   margin-bottom: 1em;
 }
 
-//管理画面のカラーピッカーで色が選択されているかどうかを分かりやすく文字を赤色に変更
-.wp-picker-container .button[style*="background-color"] .wp-color-result-text {
-  color: red;
+//管理画面のカラーピッカーで色が選択されているかどうかを分かりやすく選択色を透明に変更
+.wp-picker-container .wp-color-result:not([style*="background-color"]) {
+  background-image: linear-gradient(45deg,#c3c4c7 25%,transparent 25%,transparent 75%,#c3c4c7 75%,#c3c4c7),linear-gradient(45deg,#c3c4c7 25%,transparent 25%,transparent 75%,#c3c4c7 75%,#c3c4c7);
+  background-position: 0 0,10px 10px;
+  background-size: 20px 20px;
 }
