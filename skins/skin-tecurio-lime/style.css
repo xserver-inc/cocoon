@@ -356,8 +356,6 @@ background-image: linear-gradient( 165deg, #FFF720 0%, #3CD500 20%);
 .toc ul li a, .toc ol li a {
     display: block;
 /*    border-bottom: 1px dashed #a8e812;*/
-    margin-left: -20px;
-    padding-left: 20px;
 }
 .toc ul.toc-list>li, .toc ol.toc-list>li {
     margin-top: 1em;
