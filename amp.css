@@ -9572,9 +9572,6 @@ pre {
     font-size: 22px;
   }
 
-  .header-container-in.hlt-top-menu {
-    display: block;
-  }
   .header-container-in.hlt-top-menu .header .header-in,
   .header-container-in.hlt-top-menu .header .logo-text {
     display: block;

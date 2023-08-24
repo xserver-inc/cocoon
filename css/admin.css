@@ -17392,9 +17392,6 @@ body.wp-admin {
   .admin-settings .demo #header .site-name-text {
     font-size: 22px;
   }
-  .admin-settings .demo .header-container-in.hlt-top-menu {
-    display: block;
-  }
   .admin-settings .demo .header-container-in.hlt-top-menu .header .header-in,
   .admin-settings .demo .header-container-in.hlt-top-menu .header .logo-text {
     display: block;
