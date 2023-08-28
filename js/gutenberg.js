@@ -50,13 +50,14 @@ wp.domReady(function () {
       let iframeHead = iframe.contents().find("head");
 
       if (iframeHead.has("#font-awesome-style-css-iframe").length == 0) {
+        const templateUrl = gbSettings['templateUrl'];
         if (gbSettings['siteIconFont'].trim() == 'font-awesome-4') {
           // Font Awesome4の場合
           // リンクタグを作成
           let link1 = $("<link>", {
             rel: "stylesheet",
             id: "font-awesome-style-css-iframe",
-            href: "https://cocoon.jp/wp-content/themes/cocoon-master/webfonts/fontawesome/css/font-awesome.min.css",
+            href: templateUrl + "/webfonts/fontawesome/css/font-awesome.min.css",
             media: "all"
           });
 
@@ -69,13 +70,13 @@ wp.domReady(function () {
           let link1 = $("<link>", {
             rel: "stylesheet",
             id: "font-awesome-style-css-iframe",
-            href: "https://cocoon.jp/wp-content/themes/cocoon-master/webfonts/fontawesome5/css/all.min.css",
+            href: templateUrl + "/webfonts/fontawesome5/css/all.min.css",
             media: "all"
           });
           let link2 = $("<link>", {
             rel: "stylesheet",
             id: "font-awesome5-update-style-css-iframe",
-            href: "https://cocoon.jp/wp-content/themes/cocoon-master/css/fontawesome5.css",
+            href: templateUrl + "/css/fontawesome5.css",
             media: "all"
           });
 
