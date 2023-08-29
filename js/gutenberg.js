@@ -37,14 +37,53 @@ wp.domReady(function () {
       writingFlow.addClass(addClasses);
     }
     let iframe = jQuery('iframe[name="editor-canvas"]');
-    // console.log(iframe);
+
     if (iframe.length > 0) {
       let iframeContent = iframe.contents();
-      // console.log(iframeContent);
       let element = iframeContent.find('.is-root-container');
-      // console.log(element);
+
       if (!element.hasClass('article')) {
         element.addClass(addClasses);
+      }
+
+      //ヘッダーにFont Awesome様を挿入する
+      let iframeHead = iframe.contents().find("head");
+
+      if (iframeHead.has("#font-awesome-style-css-iframe").length == 0) {
+        const templateUrl = gbSettings['templateUrl'];
+        if (gbSettings['siteIconFont'].trim() == 'font-awesome-4') {
+          // Font Awesome4の場合
+          // リンクタグを作成
+          let link1 = $("<link>", {
+            rel: "stylesheet",
+            id: "font-awesome-style-css-iframe",
+            href: templateUrl + "/webfonts/fontawesome/css/font-awesome.min.css",
+            media: "all"
+          });
+
+          // リンクタグをiframe内のhead要素に挿入
+          iframeHead.append(link1);
+        } else {
+          // Font Awesome5の場合
+
+          // リンクタグを作成
+          let link1 = $("<link>", {
+            rel: "stylesheet",
+            id: "font-awesome-style-css-iframe",
+            href: templateUrl + "/webfonts/fontawesome5/css/all.min.css",
+            media: "all"
+          });
+          let link2 = $("<link>", {
+            rel: "stylesheet",
+            id: "font-awesome5-update-style-css-iframe",
+            href: templateUrl + "/css/fontawesome5.css",
+            media: "all"
+          });
+
+          // リンクタグをiframe内のhead要素に挿入
+          iframeHead.append(link1);
+          iframeHead.append(link2);
+        }
       }
     }
 
@@ -55,7 +94,7 @@ wp.domReady(function () {
       event.preventDefault();
     });
 
-  },1000);
+  },2000);
 
   setInterval(function(){
     jQuery("button:contains('HTML挿入')").addClass('html-insert-button cocoon-donation-privilege');

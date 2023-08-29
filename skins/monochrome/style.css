@@ -883,15 +883,6 @@ a.page-numbers:hover:after {
 .toc ul.toc-list > li > a,
 .toc ol.toc-list > li > a {
 	font-weight: bold;
-	padding: 0 0 0 2em;
-}
-
-.toc ul li a,
-.toc ol li a {
-	display: block;
-	border-bottom: 1px solid #9da5a0;
-	margin-left: -30px;
-	padding-left: 2em;
 }
 
 .toc ul,

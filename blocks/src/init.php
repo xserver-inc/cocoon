@@ -173,6 +173,7 @@ function cocoon_blocks_cgb_editor_assets()
 		'pageTypeClass' => get_editor_page_type_class(),
 		'isDebugMode' => DEBUG_MODE,
 		'wpVersion' => $wp_version,
+		'templateUrl' => get_template_directory_uri(),
 	];
 
 	// _v(is_block_editor_template_shortcode_dropdown_visible());
