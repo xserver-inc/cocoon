@@ -40,7 +40,11 @@ function get_related_wp_query_args(){
   if (!$post) {
     $post = get_random_posts(1);
   }
+
+  //配列の初期化
   $args = array();
+  $set_args = array();
+
   if ($post && isset($post->ID)) {
     $set_args = get_common_related_args($post->ID);
 
