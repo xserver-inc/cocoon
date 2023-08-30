@@ -40,21 +40,17 @@ if (!is_amp()): ?>
   global $_MOBILE_COPY_BUTTON;
   if ($_MOBILE_COPY_BUTTON): ?>
   <div class="copy-info"><?php _e('タイトルとURLをコピーしました', THEME_NAME); ?></div>
-  <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
   <script>
   (function($){
     selector = '.copy-button';//clipboardで使う要素を指定
     $(selector).click(function(event){
       //クリック動作をキャンセル
       event.preventDefault();
-    });
-
-    //クリップボード動作
-    var clipboard = new Clipboard(selector);
-    clipboard.on('success', function(e) {
-      $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
-
-      e.clearSelection();
+      //クリップボード動作
+      navigator.clipboard.writeText($(selector).attr('data-clipboard-text')).then(
+        () => {
+          $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+        });
     });
   })(jQuery);
   </script>
