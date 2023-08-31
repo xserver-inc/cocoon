@@ -93,7 +93,6 @@ export default function edit( { attributes, setAttributes, className } ) {
           value={ content
             .replace( /^\s+/, '' )
             .replace( /\s+$/, '' )
-            .replace( / /g, '' )
           }
           // multiline="p"
         />

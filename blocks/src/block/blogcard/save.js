@@ -20,7 +20,6 @@ export default function save( { attributes } ) {
           .replace( /<br>/g, '\n<br>\n' )
           .replace( /^/g, '\n' )
           .replace( /$/g, '\n' )
-          .replace( / /g, '' )
           .replace( /\n\n/g, '\n' )
           // console.log(content);
           //改行や空白なら変更（置換）してもいいけど文章内容やタグを変更するとエラーになるので注意!
