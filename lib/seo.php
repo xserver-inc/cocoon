@@ -134,31 +134,55 @@ function is_noindex_page(){
 endif;
 
 
-//noindexページを出力する
-add_action( 'wp_head', 'the_noindex_follow_tag' );
-if ( !function_exists( 'the_noindex_follow_tag' ) ):
-function the_noindex_follow_tag(){
-  $tag = null;
-  if (is_noindex_page()) {
-    $tag .= '<meta name="robots" content="noindex,follow">'.PHP_EOL;
+// //noindexページを出力する
+// add_action( 'wp_head', 'the_noindex_follow_tag' );
+// if ( !function_exists( 'the_noindex_follow_tag' ) ):
+// function the_noindex_follow_tag(){
+//   $tag = null;
+//   if (is_noindex_page()) {
+//     $tag .= '<meta name="robots" content="noindex,follow">'.PHP_EOL;
+//   } elseif (is_singular()) {
+//     if ( is_the_page_noindex() && is_the_page_nofollow()) {
+//       $tag = '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
+//     } elseif ( is_the_page_noindex() ) {
+//       $tag = '<meta name="robots" content="noindex">'.PHP_EOL;
+//     } elseif ( is_the_page_nofollow() ) {
+//       $tag = '<meta name="robots" content="nofollow">'.PHP_EOL;
+//     }
+//   }
+//   if ($tag) {
+//     //var_dump($tag);
+//     $tag = '<!-- '.THEME_NAME_CAMEL.' noindex nofollow -->'.PHP_EOL.$tag;
+//     echo $tag;
+//   }
+// }
+// endif;
+
+// noindex, nofollow関係はwp_robotsフックに任せる
+add_filter( 'wp_robots', 'wp_robots_tag_custom' );
+if ( !function_exists( 'wp_robots_tag_custom' ) ):
+function wp_robots_tag_custom( array $robots ) {
+  if ( is_noindex_page() ) {
+    $robots['noindex'] = true;
+    $robots['follow'] = true;
+    $robots['max-image-preview'] = false;
   } elseif (is_singular()) {
     if ( is_the_page_noindex() && is_the_page_nofollow()) {
-      $tag = '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
+      $robots['noindex'] = true;
+      $robots['nofollow'] = true;
+      $robots['max-image-preview'] = false;
     } elseif ( is_the_page_noindex() ) {
-      $tag = '<meta name="robots" content="noindex">'.PHP_EOL;
+      $robots['noindex'] = true;
+      $robots['max-image-preview'] = false;
     } elseif ( is_the_page_nofollow() ) {
-      $tag = '<meta name="robots" content="nofollow">'.PHP_EOL;
+      $robots['nofollow'] = true;
     }
   }
-  if ($tag) {
-    //var_dump($tag);
-    $tag = '<!-- '.THEME_NAME_CAMEL.' noindex nofollow -->'.PHP_EOL.$tag;
-    echo $tag;
-  }
+  return $robots;
 }
 endif;
 
-////ページネーションと分割ページ（マルチページ）タグを出力
+//ページネーションと分割ページ（マルチページ）タグを出力
 if ( is_prev_next_enable() ) {
   //デフォルトのrel="next"/"prev"を消す
   remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
