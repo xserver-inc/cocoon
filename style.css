@@ -10405,7 +10405,6 @@ _:-ms-lang(x), .mc-circle {
     bottom: auto;
     justify-content: space-around;
     min-width: 46px;
-    z-index: 3;
     box-shadow: 0 0 5px darkgrey;
   }
 
