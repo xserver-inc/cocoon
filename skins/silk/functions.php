@@ -1294,19 +1294,6 @@ class Skin_Silk_Functions {
               });
           });
 
-
-				  // let clip = new Clipboard(".code-copy", {
-					//   target: function (trigger) {
-					// 	  return trigger.nextElementSibling;
-					//   },
-				  // });
-				  // clip.on("success", function(event) {
-          //   let info = $(".copy-info").text();
-					//   $(".copy-info").text("コードをコピーしました").fadeIn(500).delay(1000).fadeOut(500, function() {
-          //     $(".copy-info").text(info);
-          //   });
-					//   event.clearSelection();
-				  // });
 			  })(jQuery);
 		  </script>
     <?php }
