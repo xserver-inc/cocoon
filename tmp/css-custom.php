@@ -67,6 +67,9 @@ table th,
 .ranking-item{
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
 }
+.scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > :first-child{
+  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.1); ?>
+}
 table tr:nth-of-type(2n+1),
 .page-numbers.dots,
 .a-wrap:hover,
