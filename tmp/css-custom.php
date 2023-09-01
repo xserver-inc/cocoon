@@ -158,26 +158,29 @@ if (get_header_background_image_url()): ?>
 }
 <?php endif ?>
 <?php //ヘッダー全体背景色
-if (get_header_container_background_color()): ?>
+if ($header_container_background_color = get_header_container_background_color()): ?>
 #header-container,
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu{
-  background-color: <?php echo get_header_container_background_color(); ?>;
+  background-color: <?php echo $header_container_background_color; ?>;
 }
-.header,
-.header .site-name-text,
-#navi .navi-in a,
-#navi .navi-in a:hover{
-  color: #fff;
-}
+  <?php //ヘッダー全体背景色が濃い場合は白文字にする
+  if (is_dark_hexcolor($header_container_background_color)): ?>
+  .header,
+  .header .site-name-text,
+  #navi .navi-in a,
+  #navi .navi-in a:hover{
+    color: #fff;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //ヘッダー全体文字色
-if (get_header_container_text_color()): ?>
+if ($header_container_text_color = get_header_container_text_color()): ?>
 .header,
 .header .site-name-text,
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: <?php echo get_header_container_text_color(); ?>;
+  color: <?php echo $header_container_text_color; ?>;
 }
 <?php endif ?>
 <?php //ヘッダー背景色
