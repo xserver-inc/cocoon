@@ -51,8 +51,8 @@ table th,
   background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.1); ?>;
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
 }
-table th,
-table td,
+.entry-content table th,
+.entry-content table td,
 .page-numbers,
 .page-numbers.dots,
 .tagcloud a,
