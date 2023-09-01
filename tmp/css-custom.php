@@ -104,7 +104,7 @@ table tr:nth-of-type(2n+1),
   <?php endif; ?>
 <?php endif ?>
 <?php //サイトキー文字色
-if (get_site_key_text_color()): ?>
+if ($site_key_text_color = get_site_key_text_color()): ?>
 .header,
 .header .site-name-text,
 #navi .navi-in a,
@@ -118,7 +118,7 @@ if (get_site_key_text_color()): ?>
 .blogcard-type .blogcard::before,
 #footer,
 #footer a{
-  color: <?php echo get_site_key_text_color(); ?>;
+  color: <?php echo $site_key_text_color; ?>;
 }
 <?php endif ?>
 <?php //サイト文字色
@@ -184,16 +184,23 @@ if ($header_container_text_color = get_header_container_text_color()): ?>
 }
 <?php endif ?>
 <?php //ヘッダー背景色
-if (get_header_background_color()): ?>
+if ($header_background_color = get_header_background_color()): ?>
 .header{
-  background-color: <?php echo get_header_background_color(); ?>;
+  background-color: <?php echo $header_background_color; ?>;
 }
+  <?php //ヘッダー背景色が濃い場合は白文字にする
+  if (is_dark_hexcolor($header_background_color)): ?>
+  .header,
+  .header .site-name-text{
+    color: #fff;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //ヘッダー文字色
-if (get_header_text_color()): ?>
+if ($header_text_color = get_header_text_color()): ?>
 .header,
 .header .site-name-text{
-  color: <?php echo get_header_text_color(); ?>;
+  color: <?php echo $header_text_color; ?>;
 }
 <?php endif ?>
 <?php //グローバルナビ背景色
