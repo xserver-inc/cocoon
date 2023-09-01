@@ -204,21 +204,24 @@ if ($header_text_color = get_header_text_color()): ?>
 }
 <?php endif ?>
 <?php //グローバルナビ背景色
-if (get_global_navi_background_color()): ?>
+if ($global_navi_background_color = get_global_navi_background_color()): ?>
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu{
-  background-color: <?php echo get_global_navi_background_color(); ?>;
+  background-color: <?php echo $global_navi_background_color; ?>;
 }
-#navi .navi-in a,
-#navi .navi-in a:hover{
-  color: #fff;
-}
+  <?php //グローバルナビ背景色が濃い場合は白文字にする
+  if (is_dark_hexcolor($global_navi_background_color)): ?>
+  #navi .navi-in a,
+  #navi .navi-in a:hover{
+    color: #fff;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //グローバルナビ文字色
-if (get_global_navi_text_color()): ?>
+if ($global_navi_text_color = get_global_navi_text_color()): ?>
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: <?php echo get_global_navi_text_color(); ?>;
+  color: <?php echo $global_navi_text_color; ?>;
 }
 <?php endif ?>
 <?php //グローバルナビホバー背景色

@@ -3578,7 +3578,8 @@ function is_dark_hexcolor($hexcolor) {
   $luminance = ($r + $g + $b) / 3;
 
   // しきい値（この値は調整可能、0から255の範囲）
-  $threshold = 128;
+  // $threshold = 128; //半分
+  $threshold = 162;
 
   // 輝度がしきい値より低いかどうかを返す
   return $luminance < $threshold;
