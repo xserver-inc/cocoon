@@ -3560,6 +3560,31 @@ function is_block_editor_page() {
 }
 endif;
 
+//HTMLで使用するヘックスカラーが暗い色かどうか（）
+if ( !function_exists( 'is_dark_hexcolor' ) ):
+function is_dark_hexcolor($hexcolor) {
+  if (!$hexcolor || (strlen($hexcolor) !== 7)) {
+    return false;
+  }
+  // カラーコードから"#"を削除
+  $hexcolor = ltrim($hexcolor, '#');
+
+  // 16進数のカラーコードを10進数のRGB値に変換
+  $r = hexdec(substr($hexcolor, 0, 2));
+  $g = hexdec(substr($hexcolor, 2, 2));
+  $b = hexdec(substr($hexcolor, 4, 2));
+
+  // 平均輝度を計算
+  $luminance = ($r + $g + $b) / 3;
+
+  // しきい値（この値は調整可能、0から255の範囲）
+  $threshold = 128;
+
+  // 輝度がしきい値より低いかどうかを返す
+  return $luminance < $threshold;
+}
+endif;
+
 
 
 

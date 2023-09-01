@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php //サイトキー色
-if (get_site_key_color()): ?>
+if ($site_key_color = get_site_key_color()): ?>
 #header-container,
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu,
@@ -21,7 +21,7 @@ if (get_site_key_color()): ?>
 .demo .cat-label,
 .blogcard-type .blogcard-label,
 #footer{
-  background-color: <?php echo get_site_key_color(); ?>;
+  background-color: <?php echo $site_key_color; ?>;
 }
 #navi .navi-in a:hover,
 #footer a:hover{
@@ -33,23 +33,23 @@ if (get_site_key_color()): ?>
 .article h6,
 .cat-link,
 .tag-link{
-  border-color: <?php echo get_site_key_color(); ?>;
+  border-color: <?php echo $site_key_color; ?>;
 }
 blockquote::before, blockquote::after,
 .pager-post-navi a.a-wrap::before {
-  color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+  color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>;
 }
 blockquote,
 .key-btn {
-  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
-  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.05); ?>;
+  border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>;
 }
 pre,
 .pager-links span,
 table th,
 .pagination .current {
-  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.1); ?>;
-  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.1); ?>;
+  border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>;
 }
 .body table th,
 .body table td,
@@ -65,10 +65,10 @@ table th,
 .author-box,
 .comment-reply-link,
 .ranking-item{
-  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
+  border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>
 }
 .scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > :first-child{
-  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.1); ?>
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.1); ?>
 }
 table tr:nth-of-type(2n+1),
 .page-numbers.dots,
@@ -86,19 +86,22 @@ table tr:nth-of-type(2n+1),
 /*.cat-link:hover,*/
 .tag-link:hover,
 .tagcloud a:hover{
-  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.05); ?>;
 }
-.header,
-.header .site-name-text,
-#navi .navi-in a,
-#navi .navi-in a:hover,
-.article h2,
-.sidebar h2,
-.sidebar h3,
-#footer,
-#footer a{
-  color: #fff;
-}
+  <?php //サイトキーカラーが濃い場合は白文字にする
+  if (is_dark_hexcolor($site_key_color)): ?>
+  .header,
+  .header .site-name-text,
+  #navi .navi-in a,
+  #navi .navi-in a:hover,
+  .article h2,
+  .sidebar h2,
+  .sidebar h3,
+  #footer,
+  #footer a{
+    color: #fff;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //サイトキー文字色
 if (get_site_key_text_color()): ?>
