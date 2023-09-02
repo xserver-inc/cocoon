@@ -40,22 +40,44 @@ if (!is_amp()): ?>
   global $_MOBILE_COPY_BUTTON;
   if ($_MOBILE_COPY_BUTTON): ?>
   <div class="copy-info"><?php _e('タイトルとURLをコピーしました', THEME_NAME); ?></div>
-  <script>
-  (function($){
-    selector = '.copy-button';//clipboardで使う要素を指定
-    $(selector).click(function(event){
-      //クリック動作をキャンセル
-      event.preventDefault();
-      //クリップボード動作
-      navigator.clipboard.writeText($(selector).attr('data-clipboard-text')).then(
-        () => {
-          $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+    <?php //https環境ではブラウザのクリップボードAPIを利用する
+    if (is_ssl()): ?>
+      <script>
+      (function($){
+        const selector = '.copy-button';//clipboardで使う要素を指定
+        $(selector).click(function(event){
+          //クリック動作をキャンセル
+          event.preventDefault();
+          //クリップボード動作
+          navigator.clipboard.writeText($(selector).attr('data-clipboard-text')).then(
+            () => {
+              $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+            });
         });
-    });
-  })(jQuery);
-  </script>
-  <?php endif //コピーシェアボタン用のスクリプト ?>
+      })(jQuery);
+      </script>
+    <?php else: // httpの際?>
+      <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+      <script>
+      (function($){
+        const selector = '.copy-button';//clipboardで使う要素を指定
+        $(selector).click(function(event){
+          //クリック動作をキャンセル
+          event.preventDefault();
+        });
 
+        //クリップボード動作
+        const clipboard = new Clipboard(selector);
+        clipboard.on('success', function(e) {
+          $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+
+          e.clearSelection();
+        });
+      })(jQuery);
+      </script>
+    <?php endif; ?>
+
+  <?php endif //コピーシェアボタン用のスクリプト ?>
 
   <?php //カルーセルが表示されている時
   if (false && is_carousel_visible() && get_carousel_category_ids()): ?>
