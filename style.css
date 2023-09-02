@@ -1216,6 +1216,7 @@ img.emoji {
   text-align: center;
   width: 32%;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
