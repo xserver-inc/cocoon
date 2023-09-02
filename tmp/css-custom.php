@@ -51,8 +51,8 @@ table th,
   background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.1); ?>;
   border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>;
 }
-.body table th,
-.body table td,
+table:not(.has-border-color) th,
+table:not(.has-border-color) td,
 .page-numbers,
 .page-numbers.dots,
 .tagcloud a,
