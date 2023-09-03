@@ -134,29 +134,29 @@ function is_noindex_page(){
 endif;
 
 
-// //noindexページを出力する
+//noindexページを出力する
 // add_action( 'wp_head', 'the_noindex_follow_tag' );
-// if ( !function_exists( 'the_noindex_follow_tag' ) ):
-// function the_noindex_follow_tag(){
-//   $tag = null;
-//   if (is_noindex_page()) {
-//     $tag .= '<meta name="robots" content="noindex,follow">'.PHP_EOL;
-//   } elseif (is_singular()) {
-//     if ( is_the_page_noindex() && is_the_page_nofollow()) {
-//       $tag = '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
-//     } elseif ( is_the_page_noindex() ) {
-//       $tag = '<meta name="robots" content="noindex">'.PHP_EOL;
-//     } elseif ( is_the_page_nofollow() ) {
-//       $tag = '<meta name="robots" content="nofollow">'.PHP_EOL;
-//     }
-//   }
-//   if ($tag) {
-//     //var_dump($tag);
-//     $tag = '<!-- '.THEME_NAME_CAMEL.' noindex nofollow -->'.PHP_EOL.$tag;
-//     echo $tag;
-//   }
-// }
-// endif;
+if ( !function_exists( 'the_noindex_follow_tag' ) ):
+function the_noindex_follow_tag(){
+  // $tag = null;
+  // if (is_noindex_page()) {
+  //   $tag .= '<meta name="robots" content="noindex,follow">'.PHP_EOL;
+  // } elseif (is_singular()) {
+  //   if ( is_the_page_noindex() && is_the_page_nofollow()) {
+  //     $tag = '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
+  //   } elseif ( is_the_page_noindex() ) {
+  //     $tag = '<meta name="robots" content="noindex">'.PHP_EOL;
+  //   } elseif ( is_the_page_nofollow() ) {
+  //     $tag = '<meta name="robots" content="nofollow">'.PHP_EOL;
+  //   }
+  // }
+  // if ($tag) {
+  //   //var_dump($tag);
+  //   $tag = '<!-- '.THEME_NAME_CAMEL.' noindex nofollow -->'.PHP_EOL.$tag;
+  //   echo $tag;
+  // }
+}
+endif;
 
 // noindex, nofollow関係はwp_robotsフックに任せる
 add_filter( 'wp_robots', 'wp_robots_tag_custom' );
