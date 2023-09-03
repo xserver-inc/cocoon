@@ -162,22 +162,26 @@ endif;
 add_filter( 'wp_robots', 'wp_robots_tag_custom' );
 if ( !function_exists( 'wp_robots_tag_custom' ) ):
 function wp_robots_tag_custom( array $robots ) {
-  if ( is_noindex_page() ) {
-    $robots['noindex'] = true;
-    $robots['follow'] = true;
-    $robots['max-image-preview'] = false;
-  } elseif (is_singular()) {
-    if ( is_the_page_noindex() && is_the_page_nofollow()) {
+  // WordPress 設定 > 表示設定で「検索エンジンがサイトをインデックスしないようにする」が無効（デフォルト）の場合はテーマのnoindex設定をする
+  if (get_option( 'blog_public' )) {
+    if ( is_noindex_page() ) {
       $robots['noindex'] = true;
-      $robots['nofollow'] = true;
+      $robots['follow'] = true;
       $robots['max-image-preview'] = false;
-    } elseif ( is_the_page_noindex() ) {
-      $robots['noindex'] = true;
-      $robots['max-image-preview'] = false;
-    } elseif ( is_the_page_nofollow() ) {
-      $robots['nofollow'] = true;
+    } elseif (is_singular()) {
+      if ( is_the_page_noindex() && is_the_page_nofollow()) {
+        $robots['noindex'] = true;
+        $robots['nofollow'] = true;
+        $robots['max-image-preview'] = false;
+      } elseif ( is_the_page_noindex() ) {
+        $robots['noindex'] = true;
+        $robots['max-image-preview'] = false;
+      } elseif ( is_the_page_nofollow() ) {
+        $robots['nofollow'] = true;
+      }
     }
   }
+
   return $robots;
 }
 endif;
