@@ -87,8 +87,6 @@ function fn_minify_css($input, $comment = 0, $quote = 2) {
         }
         $prev = $part;
     }
-    //高速化でCSSを縮小化した場合、疑似クラス前の必要なスペースが削除されてしまう不具合に対応（ライブラリを変更するまでの暫定措置）
-    $output = str_replace(':where(', ' :where(', $output);
     return trim($output);
 }
 
