@@ -123,7 +123,8 @@ table {
   }
 
   &:not(.has-border-color) {
-    :where(th, td) {
+    // :where(th, td) {
+    th, td {
       border: 1px solid var(--cocoon-x-thin-color);
       padding: 6px;
     }
