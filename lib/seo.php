@@ -175,6 +175,7 @@ function wp_robots_tag_custom( array $robots ) {
         $robots['max-image-preview'] = false;
       } elseif ( is_the_page_noindex() ) {
         $robots['noindex'] = true;
+        $robots['follow'] = true;
         $robots['max-image-preview'] = false;
       } elseif ( is_the_page_nofollow() ) {
         $robots['nofollow'] = true;
