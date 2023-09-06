@@ -46,6 +46,7 @@ blockquote,
 }
 pre,
 .pager-links span,
+.scrollable-table table th,
 table th,
 .pagination .current {
   background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.1); ?>;
