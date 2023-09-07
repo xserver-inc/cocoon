@@ -40,14 +40,11 @@ add_action( 'wp_footer','insert_custom_js', 9999 );
 if ( !function_exists( 'insert_custom_js' ) ):
 function insert_custom_js() {
   if ( is_singular() ) {
-    if ( have_posts() ) : while ( have_posts() ) : the_post();
-      $custom_js = get_post_meta(get_the_ID(), '_custom_js', true) ;
-      if ($custom_js) {
-        echo '<!-- '.THEME_NAME.' Custom JS -->'.PHP_EOL;
-        echo '<script type="text/javascript">' . $custom_js . '</script>'.PHP_EOL;
-      }
-    endwhile; endif;
-    rewind_posts();
+    $custom_js = get_post_meta(get_the_ID(), '_custom_js', true);
+    if ($custom_js) {
+      echo '<!-- '.THEME_NAME.' Custom JS -->'.PHP_EOL;
+      echo '<script type="text/javascript">' . $custom_js . '</script>'.PHP_EOL;
+    }
   }
 }
 endif;
