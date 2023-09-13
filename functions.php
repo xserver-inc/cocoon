@@ -63,7 +63,9 @@ function get_content_excerpt($content, $length = 120){
   $content = str_replace('&nbsp;', '', $content);//特殊文字の削除（今回はスペースのみ）
   $content = preg_replace('/\[.+?\]/i', '', $content); //ショートコードを取り除く
   $content = preg_replace(URL_REG, '', $content); //URLを取り除く
-  $content = preg_replace('/\s/','',$content); //半角スペースやタブ、改行を取り除く
+  // $content = preg_replace('/　/', ' ', $content); // 全角スペースを半角スペースに変換する
+  $content = preg_replace('/\s+/', ' ', $content); // 連続するスペースを1つにまとめる
+  $content = trim($content); // 先頭と末尾から空白文字を取り除く
   $content = html_entity_decode($content); //HTML エンティティを対応する文字に変換する
 
   //$lengthが整数じゃなかった場合の処理
