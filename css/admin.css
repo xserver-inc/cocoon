@@ -1917,7 +1917,7 @@ body.wp-admin {
 .admin-settings .demo table tr:nth-of-type(2n+1) {
   background-color: var(--cocoon-xxx-thin-color);
 }
-.admin-settings .demo table:not(.has-border-color) th, .admin-settings .demo table:not(.has-border-color) td {
+.admin-settings .demo table:not(.has-border-color) :where(th, td) {
   border: 1px solid var(--cocoon-x-thin-color);
   padding: 6px;
 }
@@ -9563,7 +9563,7 @@ body.wp-admin {
 .admin-settings .demo table tr:nth-of-type(2n+1) {
   background-color: var(--cocoon-xxx-thin-color);
 }
-.admin-settings .demo table:not(.has-border-color) th, .admin-settings .demo table:not(.has-border-color) td {
+.admin-settings .demo table:not(.has-border-color) :where(th, td) {
   border: 1px solid var(--cocoon-x-thin-color);
   padding: 6px;
 }
