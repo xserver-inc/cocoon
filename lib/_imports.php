@@ -47,16 +47,6 @@ require_once $path . '/minify-master/src/Exceptions/FileImportException.php';
 require_once $path . '/minify-master/src/Exceptions/IOException.php';
 require_once $path . '/path-converter-master/src/ConverterInterface.php';
 require_once $path . '/path-converter-master/src/Converter.php';
-// use MatthiasMullie\Minify;
-// function minify_css(...$lot) {
-//   $css = '';
-//   foreach ($lot as $css_source) {
-//       $css .= $css_source;
-//   }
-//   $minifier = new Minify\CSS($css);
-//   $css_minify = $minifier->minify();
-//   return $css_minify;
-// }
 require_once abspath(__FILE__).'php-html-css-js-minifier-new.php'; //HTML・CSS・JavaScript縮小化ライブラリ
 require_once abspath(__FILE__).'page-settings/all-funcs.php';        //全体設定関数
 require_once abspath(__FILE__).'page-settings/header-funcs.php';     //ヘッダー設定関数
