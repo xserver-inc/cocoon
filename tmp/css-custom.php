@@ -68,9 +68,15 @@ table:not(.has-border-color) td,
 .ranking-item{
   border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>
 }
+/*
 .scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > :first-child{
-  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.1); ?>
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 1); ?>;
+  <?php //サイトキーカラーが濃い場合は白文字にする
+  if (is_dark_hexcolor($site_key_color)): ?>
+    color: #fff;
+  <?php endif; ?>
 }
+*/
 table tr:nth-of-type(2n+1),
 .page-numbers.dots,
 .a-wrap:hover,
