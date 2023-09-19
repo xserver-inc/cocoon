@@ -122,10 +122,11 @@ table {
     // }
   }
 
-  th,
-  td{
-    border: 1px solid var(--cocoon-x-thin-color);
-    padding: 6px;
+  &:not(.has-border-color) {
+    :where(th, td) {
+      border: 1px solid var(--cocoon-x-thin-color);
+      padding: 6px;
+    }
   }
 }
 

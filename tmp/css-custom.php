@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php //サイトキー色
-if (get_site_key_color()): ?>
+if ($site_key_color = get_site_key_color()): ?>
 #header-container,
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu,
@@ -21,7 +21,7 @@ if (get_site_key_color()): ?>
 .demo .cat-label,
 .blogcard-type .blogcard-label,
 #footer{
-  background-color: <?php echo get_site_key_color(); ?>;
+  background-color: <?php echo $site_key_color; ?>;
 }
 #navi .navi-in a:hover,
 #footer a:hover{
@@ -33,26 +33,27 @@ if (get_site_key_color()): ?>
 .article h6,
 .cat-link,
 .tag-link{
-  border-color: <?php echo get_site_key_color(); ?>;
+  border-color: <?php echo $site_key_color; ?>;
 }
 blockquote::before, blockquote::after,
 .pager-post-navi a.a-wrap::before {
-  color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+  color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>;
 }
 blockquote,
 .key-btn {
-  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
-  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.05); ?>;
+  border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>;
 }
 pre,
 .pager-links span,
+.scrollable-table table th,
 table th,
 .pagination .current {
-  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.1); ?>;
-  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.1); ?>;
+  border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>;
 }
-table th,
-table td,
+table:not(.has-border-color) th,
+table:not(.has-border-color) td,
 .page-numbers,
 .page-numbers.dots,
 .tagcloud a,
@@ -65,8 +66,17 @@ table td,
 .author-box,
 .comment-reply-link,
 .ranking-item{
-  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
+  border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>
 }
+/*
+.scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > :first-child{
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 1); ?>;
+  <?php //サイトキーカラーが濃い場合は白文字にする
+  if (is_dark_hexcolor($site_key_color)): ?>
+    color: #fff;
+  <?php endif; ?>
+}
+*/
 table tr:nth-of-type(2n+1),
 .page-numbers.dots,
 .a-wrap:hover,
@@ -83,22 +93,25 @@ table tr:nth-of-type(2n+1),
 /*.cat-link:hover,*/
 .tag-link:hover,
 .tagcloud a:hover{
-  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
+  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.05); ?>;
 }
-.header,
-.header .site-name-text,
-#navi .navi-in a,
-#navi .navi-in a:hover,
-.article h2,
-.sidebar h2,
-.sidebar h3,
-#footer,
-#footer a{
-  color: #fff;
-}
+  <?php //サイトキーカラーが濃い場合は白文字にする
+  if (is_dark_hexcolor($site_key_color)): ?>
+  .header,
+  .header .site-name-text,
+  #navi .navi-in a,
+  #navi .navi-in a:hover,
+  .article h2,
+  .sidebar h2,
+  .sidebar h3,
+  #footer,
+  #footer a{
+    color: #fff;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //サイトキー文字色
-if (get_site_key_text_color()): ?>
+if ($site_key_text_color = get_site_key_text_color()): ?>
 .header,
 .header .site-name-text,
 #navi .navi-in a,
@@ -112,7 +125,7 @@ if (get_site_key_text_color()): ?>
 .blogcard-type .blogcard::before,
 #footer,
 #footer a{
-  color: <?php echo get_site_key_text_color(); ?>;
+  color: <?php echo $site_key_text_color; ?>;
 }
 <?php endif ?>
 <?php //サイト文字色
@@ -152,57 +165,70 @@ if (get_header_background_image_url()): ?>
 }
 <?php endif ?>
 <?php //ヘッダー全体背景色
-if (get_header_container_background_color()): ?>
+if ($header_container_background_color = get_header_container_background_color()): ?>
 #header-container,
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu{
-  background-color: <?php echo get_header_container_background_color(); ?>;
+  background-color: <?php echo $header_container_background_color; ?>;
 }
-.header,
-.header .site-name-text,
-#navi .navi-in a,
-#navi .navi-in a:hover{
-  color: #fff;
-}
+  <?php //ヘッダー全体背景色が濃い場合は白文字にする
+  if (is_dark_hexcolor($header_container_background_color)): ?>
+  .header,
+  .header .site-name-text,
+  #navi .navi-in a,
+  #navi .navi-in a:hover{
+    color: #fff;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //ヘッダー全体文字色
-if (get_header_container_text_color()): ?>
+if ($header_container_text_color = get_header_container_text_color()): ?>
 .header,
 .header .site-name-text,
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: <?php echo get_header_container_text_color(); ?>;
+  color: <?php echo $header_container_text_color; ?>;
 }
 <?php endif ?>
 <?php //ヘッダー背景色
-if (get_header_background_color()): ?>
+if ($header_background_color = get_header_background_color()): ?>
 .header{
-  background-color: <?php echo get_header_background_color(); ?>;
+  background-color: <?php echo $header_background_color; ?>;
 }
+  <?php //ヘッダー背景色が濃い場合は白文字にする
+  if (is_dark_hexcolor($header_background_color)): ?>
+  .header,
+  .header .site-name-text{
+    color: #fff;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //ヘッダー文字色
-if (get_header_text_color()): ?>
+if ($header_text_color = get_header_text_color()): ?>
 .header,
 .header .site-name-text{
-  color: <?php echo get_header_text_color(); ?>;
+  color: <?php echo $header_text_color; ?>;
 }
 <?php endif ?>
 <?php //グローバルナビ背景色
-if (get_global_navi_background_color()): ?>
+if ($global_navi_background_color = get_global_navi_background_color()): ?>
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu{
-  background-color: <?php echo get_global_navi_background_color(); ?>;
+  background-color: <?php echo $global_navi_background_color; ?>;
 }
-#navi .navi-in a,
-#navi .navi-in a:hover{
-  color: #fff;
-}
+  <?php //グローバルナビ背景色が濃い場合は白文字にする
+  if (is_dark_hexcolor($global_navi_background_color)): ?>
+  #navi .navi-in a,
+  #navi .navi-in a:hover{
+    color: #fff;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //グローバルナビ文字色
-if (get_global_navi_text_color()): ?>
+if ($global_navi_text_color = get_global_navi_text_color()): ?>
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: <?php echo get_global_navi_text_color(); ?>;
+  color: <?php echo $global_navi_text_color; ?>;
 }
 <?php endif ?>
 <?php //グローバルナビホバー背景色

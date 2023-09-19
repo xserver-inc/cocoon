@@ -19,6 +19,7 @@
     text-align: center;
     width: 32%;
     transition: $bgc_hover_anime;
+    cursor: pointer;
     @include link_cancel(var(--cocoon-white-color));
 
     &:hover{

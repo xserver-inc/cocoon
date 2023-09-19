@@ -731,7 +731,7 @@ function get_box_menu_tag($atts){
     $classes = implode(' ', $menu->classes);
     $icon_tag = '<div class="fa fa-star" aria-hidden="true"></div>';
     //画像URLの場合
-    if (preg_match('/(https?)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\.(jpg|jpeg|gif|png)/', $attr_title)) {
+    if (preg_match('/(https?)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\.(jpg|jpeg|gif|png|webp)/', $attr_title)) {
       $img_url = $attr_title;
       $icon_tag = '<img src="'.esc_url($img_url).'" alt="'.esc_attr($title).'" />';
     } //アイコンフォントの場合

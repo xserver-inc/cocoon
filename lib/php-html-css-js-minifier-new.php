@@ -334,9 +334,20 @@ function fn_minify_js_union($input) {
  * ----------------------
  */
 
+// function minify_css(...$lot) {
+//     return fn_minify_css(...$lot);
+// }
+use MatthiasMullie\Minify;
 function minify_css(...$lot) {
-    return fn_minify_css(...$lot);
+    $css = '';
+    foreach ($lot as $css_source) {
+        $css .= $css_source;
+    }
+    $minifier = new Minify\CSS($css);
+    $css_minify = $minifier->minify();
+    return $css_minify;
 }
+
 
 function minify_html(...$lot) {
     return fn_minify_html(...$lot);

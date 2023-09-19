@@ -19,7 +19,6 @@ wp.domReady(function () {
   }(function () {
       return wp.data.select('core/edit-post').getEditorMode();
   }, function () {
-      setTimeout(addClasses, 1);
   }));
 });
 

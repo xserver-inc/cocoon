@@ -1276,16 +1276,39 @@ class Skin_Silk_Functions {
   //clipboard.js
   public function clipboard_js() {
     if ($this->is_highlight()) { ?>
-		  <script>
+      <?php //https環境ではブラウザのクリップボードAPIを利用する
+      if (is_ssl()): ?>
+        <script>
+          (function ($) {
+            $(".wp-block-code").wrap('<div class="code-wrap"></div>').before('<button class="code-copy"><i class="<?php echo $this->fa; ?> fa-copy"></i></button>');
+
+            const selector = '.code-copy';//clipboardで使う要素を指定
+            $(selector).click(function(event){
+              //クリック動作をキャンセル
+              event.preventDefault();
+
+              navigator.clipboard.writeText($(selector).parent().text()).then(
+                () => {
+                  const info = $(".copy-info").text();
+                  $(".copy-info").text("コードをコピーしました").fadeIn(500).delay(1000).fadeOut(500, function() {
+                    $(".copy-info").text(info);
+                  });
+                });
+            });
+
+          })(jQuery);
+        </script>
+      <?php else: // httpの際 ?>
+        <script>
 			  (function ($) {
 				  $(".wp-block-code").wrap('<div class="code-wrap"></div>').before('<button class="code-copy"><i class="<?php echo $this->fa; ?> fa-copy"></i></button>');
-				  let clip = new Clipboard(".code-copy", {
+				  const clip = new Clipboard(".code-copy", {
 					  target: function (trigger) {
 						  return trigger.nextElementSibling;
 					  },
 				  });
 				  clip.on("success", function(event) {
-            let info = $(".copy-info").text();
+            const info = $(".copy-info").text();
 					  $(".copy-info").text("コードをコピーしました").fadeIn(500).delay(1000).fadeOut(500, function() {
               $(".copy-info").text(info);
             });
@@ -1293,6 +1316,8 @@ class Skin_Silk_Functions {
 				  });
 			  })(jQuery);
 		  </script>
+      <?php endif; ?>
+
     <?php }
   }
 

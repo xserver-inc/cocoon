@@ -297,7 +297,7 @@ function extra_category_fields( $cat ) {
 
     //noindex
     generate_checkbox_tag('the_category_noindex' , $the_category_noindex, __( 'インデックスしない（noindex）', THEME_NAME ));
-    generate_howto_tag(__( 'このページが検索エンジンにインデックスされないようにメタタグを設定します。', THEME_NAME ).__( 'Cocoon設定の「SEO」タブにあるカテゴリーのnoindex設定が優先されます。', THEME_NAME ), 'the_category_noindex');
+    generate_howto_tag(__( 'このページが検索エンジンにインデックスされないようにメタタグを設定します。', THEME_NAME ).__( 'こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢カテゴリーページをnoindexとする」設定を有効にしている場合はそちらが優先されます。', THEME_NAME ), 'the_category_noindex');
     ?>
   </td>
 </tr>

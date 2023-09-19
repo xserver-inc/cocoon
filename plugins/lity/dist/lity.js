@@ -1,6 +1,6 @@
-/*! Lity - v2.2.2 - 2017-07-17
+/*! Lity - v2.4.1 - 2020-04-26
 * http://sorgalla.com/lity/
-* Copyright (c) 2015-2017 Jan Sorgalla; Licensed MIT */
+* Copyright (c) 2015-2020 Jan Sorgalla; Licensed MIT */
 (function(window, factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], function($) {
@@ -134,7 +134,7 @@
     }
 
     function error(msg) {
-        return $('<span class="lity-error"/>').append(msg);
+        return $('<span class="lity-error"></span>').append(msg);
     }
 
     function imageHandler(target, instance) {
@@ -176,7 +176,7 @@
             return false;
         }
 
-        placeholder = $('<i style="display:none !important"/>');
+        placeholder = $('<i style="display:none !important"></i>');
         hasHideClass = el.hasClass('lity-hide');
 
         instance
@@ -293,7 +293,7 @@
     }
 
     function iframeHandler(target) {
-        return '<div class="lity-iframe-container"><iframe frameborder="0" allowfullscreen src="' + target + '"/></div>';
+        return '<div class="lity-iframe-container"><iframe frameborder="0" allowfullscreen allow="autoplay; fullscreen" src="' + target + '"/></div>';
     }
 
     function winHeight() {
@@ -627,7 +627,7 @@
         }
     }
 
-    lity.version  = '2.2.2';
+    lity.version  = '2.4.1';
     lity.options  = $.proxy(settings, lity, _defaultOptions);
     lity.handlers = $.proxy(settings, lity, _defaultOptions.handlers);
     lity.current  = currentInstance;
