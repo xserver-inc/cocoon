@@ -10,10 +10,14 @@ $icon_height: 16px;
 
   .item-label,
   .item-description{
-    display: -webkit-box;
+    // display: -webkit-box;
+    // overflow: hidden;
+    // -webkit-line-clamp: 1;
+    // -webkit-box-orient: vertical;
+
     overflow: hidden;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
