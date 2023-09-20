@@ -826,10 +826,9 @@ img.emoji {
 }
 .navi .item-label,
 .navi .item-description {
-  display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .navi-in .has-icon {

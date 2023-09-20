@@ -1348,10 +1348,9 @@ body.wp-admin {
 }
 .admin-settings .demo .navi .item-label,
 .admin-settings .demo .navi .item-description {
-  display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
@@ -8994,10 +8993,9 @@ body.wp-admin {
 }
 .admin-settings .demo .navi .item-label,
 .admin-settings .demo .navi .item-description {
-  display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
