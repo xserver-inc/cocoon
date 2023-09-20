@@ -857,10 +857,6 @@ img.emoji {
   -webkit-box-orient: vertical;
 }
 
-::-webkit-full-page-media .navi .item-label, :future .navi .item-label, :root .class_name .navi .item-label {
-  display: block;
-}
-
 .navi-in .has-icon {
   position: absolute;
   right: 6px;

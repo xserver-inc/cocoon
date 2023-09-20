@@ -17,16 +17,6 @@ $icon_height: 16px;
   }
 }
 
-// SafariでFont Awesomeメニューに表示させようとすると不具合が出るのに対応
-// https://wp-cocoon.com/community/postid/73950/
-::-webkit-full-page-media, :future, :root .class_name{
-  .navi{
-    .item-label{
-      display: block;
-    }
-  }
-}
-
 .navi-in{
   .has-icon{
     position: absolute;

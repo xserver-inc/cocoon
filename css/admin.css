@@ -1353,9 +1353,6 @@ body.wp-admin {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.admin-settings .demo ::-webkit-full-page-media .navi .item-label, .admin-settings .demo :future .navi .item-label, .admin-settings .demo :root .class_name .navi .item-label {
-  display: block;
-}
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
   right: 6px;
@@ -9001,9 +8998,6 @@ body.wp-admin {
   overflow: hidden;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-}
-.admin-settings .demo ::-webkit-full-page-media .navi .item-label, .admin-settings .demo :future .navi .item-label, .admin-settings .demo :root .class_name .navi .item-label {
-  display: block;
 }
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
