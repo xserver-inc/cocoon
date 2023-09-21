@@ -1287,7 +1287,7 @@ class Skin_Silk_Functions {
               //クリック動作をキャンセル
               event.preventDefault();
 
-              navigator.clipboard.writeText($(selector).parent().text()).then(
+              navigator.clipboard.writeText($(this).parent().text()).then(
                 () => {
                   const info = $(".copy-info").text();
                   $(".copy-info").text("コードをコピーしました").fadeIn(500).delay(1000).fadeOut(500, function() {
