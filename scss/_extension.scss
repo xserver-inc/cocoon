@@ -860,6 +860,21 @@ div.search-form{
   padding: 7px 13px;
 }
 
+.btn{
+  &.cocoon-block-button__width-25{
+    width: 25%;
+  }
+  &.cocoon-block-button__width-50{
+    width: 50%;
+  }
+  &.cocoon-block-button__width-75{
+    width: 75%;
+  }
+  &.cocoon-block-button__width-100{
+    width: 100%;
+  }
+}
+
 .btn:before,
 .btn:after,
 .btn-wrap > a:before,
@@ -889,6 +904,19 @@ div.search-form{
     right: 0;
     font-size: 20px;
   }
+}
+
+.alignleft .btn-l.has-custom-width{
+  margin-right: auto;
+}
+
+.aligncenter .btn-l.has-custom-width{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignright .btn-l.has-custom-width{
+  margin-left: auto;
 }
 
 .btn:hover,

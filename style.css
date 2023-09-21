@@ -3541,6 +3541,19 @@ div.search-form {
   padding: 7px 13px;
 }
 
+.btn.cocoon-block-button__width-25, .ranking-item-link-buttons a.cocoon-block-button__width-25 {
+  width: 25%;
+}
+.btn.cocoon-block-button__width-50, .ranking-item-link-buttons a.cocoon-block-button__width-50 {
+  width: 50%;
+}
+.btn.cocoon-block-button__width-75, .ranking-item-link-buttons a.cocoon-block-button__width-75 {
+  width: 75%;
+}
+.btn.cocoon-block-button__width-100, .ranking-item-link-buttons a.cocoon-block-button__width-100 {
+  width: 100%;
+}
+
 .btn:before, .ranking-item-link-buttons a:before,
 .btn:after,
 .ranking-item-link-buttons a:after,
@@ -3571,6 +3584,19 @@ div.search-form {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+
+.alignleft .btn-l.has-custom-width, .alignleft .ranking-item-link-buttons a.has-custom-width, .ranking-item-link-buttons .alignleft a.has-custom-width {
+  margin-right: auto;
+}
+
+.aligncenter .btn-l.has-custom-width, .aligncenter .ranking-item-link-buttons a.has-custom-width, .ranking-item-link-buttons .aligncenter a.has-custom-width {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignright .btn-l.has-custom-width, .alignright .ranking-item-link-buttons a.has-custom-width, .ranking-item-link-buttons .alignright a.has-custom-width {
+  margin-left: auto;
 }
 
 .btn:hover, .ranking-item-link-buttons a:hover,
