@@ -188,7 +188,9 @@ function css_url_to_css_minify_code( $url ) {
           !preg_match('{https?://}i', $match) &&
           //URIスキームの指定ではない
           //url(data:XXXXX)形式でない
-          !preg_match('{data:}i', $match)
+          !preg_match('{data:}i', $match) &&
+          //url(#XXXX)形式でない
+          !preg_match('{url\(#\w+?\)}i', $match)
         ) {
           //url(xxxxx)をurl(http://xxxxx)に変更
           $url = str_replace('url(', 'url('.$dir_url, $match);
@@ -198,6 +200,7 @@ function css_url_to_css_minify_code( $url ) {
         }
       }//foreach
     }//$res && $m[0]
+
   }//WP_Filesystem
   return apply_filters('css_url_to_css_minify_code', $css, $url);
 }
