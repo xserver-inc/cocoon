@@ -72,7 +72,7 @@ export function ButtonEdit( props ) {
     return (
       <PanelBody title={ __( '幅設定', THEME_NAME ) }>
         <ButtonGroup aria-label={ __( 'ボタン幅', THEME_NAME ) }>
-          { [ 25, 50, 75, 100 ].map( ( widthValue ) => {
+          { [ '25', '50', '75', '100' ].map( ( widthValue ) => {
             return (
               <Button
                 key={ widthValue }
