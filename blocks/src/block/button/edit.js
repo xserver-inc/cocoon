@@ -14,6 +14,8 @@ import {
   SelectControl,
   TextControl,
   ToggleControl,
+  Button,
+  ButtonGroup,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { compose } from '@wordpress/compose';
@@ -45,6 +47,7 @@ export function ButtonEdit( props ) {
     customBackgroundColor,
     customTextColor,
     customBorderColor,
+    width,
   } = attributes;
 
   const classes = classnames( className, {
@@ -56,6 +59,35 @@ export function ButtonEdit( props ) {
     '--cocoon-custom-background-color': customBackgroundColor || undefined,
     '--cocoon-custom-text-color': customTextColor || undefined,
   };
+
+  function WidthPanel( { selectedWidth, setAttributes } ) {
+    function handleChange( newWidth ) {
+      // Check if we are toggling the width off
+      const width = selectedWidth === newWidth ? undefined : newWidth;
+
+      // Update attributes
+      setAttributes( { width } );
+    }
+
+    return (
+      <PanelBody title={ __( '幅設定', THEME_NAME ) }>
+        <ButtonGroup aria-label={ __( 'ボタン幅', THEME_NAME ) }>
+          { [ 25, 50, 75, 100 ].map( ( widthValue ) => {
+            return (
+              <Button
+                key={ widthValue }
+                isSmall
+                isPrimary={ widthValue === selectedWidth }
+                onClick={ () => handleChange( widthValue ) }
+              >
+                { widthValue }%
+              </Button>
+            );
+          } ) }
+        </ButtonGroup>
+      </PanelBody>
+    );
+  }
 
   const blockProps = useBlockProps( {
     className: classes,
@@ -121,6 +153,8 @@ export function ButtonEdit( props ) {
           />
         </PanelBody>
 
+        <WidthPanel selectedWidth={ width } setAttributes={ setAttributes } />
+
         <PanelBody
           title={ __( '文字サイズ', THEME_NAME ) }
           className="blocks-font-size"
@@ -170,6 +204,8 @@ export function ButtonEdit( props ) {
             [ textColor.class ]: textColor.class,
             [ borderColor.class ]: borderColor.class,
             [ fontSize.class ]: fontSize.class,
+            [ 'has-custom-width' ]: width,
+            [ `cocoon-block-button__width-${ width }` ]: width,
           } ) }
           href={ url }
           target={ target }
