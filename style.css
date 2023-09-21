@@ -1737,8 +1737,8 @@ span.internal-icon {
   border: 1px solid var(--cocoon-basic-border-color);
 }
 
-.no-post-date .post-date,
-.no-post-update .post-update,
+.no-post-date .article-header .post-date,
+.no-post-update .article-header .post-update,
 .no-post-author .author-info {
   display: none;
 }

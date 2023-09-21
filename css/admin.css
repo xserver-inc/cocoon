@@ -2101,8 +2101,8 @@ body.wp-admin {
   background-color: var(--cocoon-xxx-thin-color);
   border: 1px solid var(--cocoon-basic-border-color);
 }
-.admin-settings .demo .no-post-date .post-date,
-.admin-settings .demo .no-post-update .post-update,
+.admin-settings .demo .no-post-date .article-header .post-date,
+.admin-settings .demo .no-post-update .article-header .post-update,
 .admin-settings .demo .no-post-author .author-info {
   display: none;
 }
@@ -9768,8 +9768,8 @@ body.wp-admin {
   background-color: var(--cocoon-xxx-thin-color);
   border: 1px solid var(--cocoon-basic-border-color);
 }
-.admin-settings .demo .no-post-date .post-date,
-.admin-settings .demo .no-post-update .post-update,
+.admin-settings .demo .no-post-date .article-header .post-date,
+.admin-settings .demo .no-post-update .article-header .post-update,
 .admin-settings .demo .no-post-author .author-info {
   display: none;
 }
