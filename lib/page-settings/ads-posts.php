@@ -124,6 +124,18 @@ update_theme_option(OP_AD_SHORTCODE_FORMAT);
 //[ad]ショートコード広告ラベル表示
 update_theme_option(OP_AD_SHORTCODE_LABEL_VISIBLE);
 
+//投稿ページにPRラベル表示
+update_theme_option(OP_PR_LABEL_SINGLE_VISIBLE);
+//固定ページにPRラベル表示
+update_theme_option(OP_PR_LABEL_PAGE_VISIBLE);
+//PRラベル（小）表示
+update_theme_option(OP_PR_LABEL_SMALL_VISIBLE);
+//PRラベル（大）表示
+update_theme_option(OP_PR_LABEL_LARGE_VISIBLE);
+//PRラベル（小）キャプション
+update_theme_option(OP_PR_LABEL_SMALL_CAPTION);
+//PRラベル（大）キャプション
+update_theme_option(OP_PR_LABEL_LARGE_CAPTION);
 
 //LinkSwitch有効
 update_theme_option(OP_AD_LINKSWITCH_ENABLE);
