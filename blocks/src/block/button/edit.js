@@ -1,4 +1,5 @@
 import { THEME_NAME, BUTTON_BLOCK } from '../../helpers';
+import { WidthPanel } from '../../components';
 import { __ } from '@wordpress/i18n';
 import {
   InspectorControls,
@@ -14,8 +15,6 @@ import {
   SelectControl,
   TextControl,
   ToggleControl,
-  Button,
-  ButtonGroup,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { compose } from '@wordpress/compose';
@@ -59,35 +58,6 @@ export function ButtonEdit( props ) {
     '--cocoon-custom-background-color': customBackgroundColor || undefined,
     '--cocoon-custom-text-color': customTextColor || undefined,
   };
-
-  function WidthPanel( { selectedWidth, setAttributes } ) {
-    function handleChange( newWidth ) {
-      // Check if we are toggling the width off
-      const width = selectedWidth === newWidth ? undefined : newWidth;
-
-      // Update attributes
-      setAttributes( { width } );
-    }
-
-    return (
-      <PanelBody title={ __( '幅設定', THEME_NAME ) }>
-        <ButtonGroup aria-label={ __( 'ボタン幅', THEME_NAME ) }>
-          { [ '25', '50', '75', '100' ].map( ( widthValue ) => {
-            return (
-              <Button
-                key={ widthValue }
-                isSmall
-                isPrimary={ widthValue === selectedWidth }
-                onClick={ () => handleChange( widthValue ) }
-              >
-                { widthValue }%
-              </Button>
-            );
-          } ) }
-        </ButtonGroup>
-      </PanelBody>
-    );
-  }
 
   const blockProps = useBlockProps( {
     className: classes,
