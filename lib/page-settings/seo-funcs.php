@@ -148,11 +148,13 @@ function get_the_date_tags(){
       $date_tags = null;
       //更新日があるとき
       if ($update_time && !$is_reservation_post) {
-        $date_tags .= $time_update_date_tag;
-        //投稿日（time）
+        //投稿日
         $date_tags .= $span_post_date_tag;
+
+        //更新日
+        $date_tags .= $time_update_date_tag;
       } else {
-        //投稿日（time）
+        //投稿日
         $date_tags .= $time_post_date_tag;
       }
 
