@@ -20,6 +20,7 @@ export default function save( { attributes } ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    width,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -44,6 +45,8 @@ export default function save( { attributes } ) {
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
+    [ 'has-custom-width' ]: width,
+    [ `cocoon-block-button__width-${ width }` ]: width,
   } );
 
   const styles = {
@@ -59,8 +62,11 @@ export default function save( { attributes } ) {
 
   // rel属性の値をチェックして変換を行う
   let tagCode;
-  if (!tag.includes(' rel="noopener')) {
-    tagCode = tag.replace(' target="_blank"', ' target="_blank" rel="noopener"');
+  if ( ! tag.includes( ' rel="noopener' ) ) {
+    tagCode = tag.replace(
+      ' target="_blank"',
+      ' target="_blank" rel="noopener"'
+    );
   }
   return (
     <div { ...blockProps }>

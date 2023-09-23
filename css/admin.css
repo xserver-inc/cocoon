@@ -3624,6 +3624,9 @@ body.wp-admin {
 .admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
 }
+.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a {
+  margin: 0;
+}
 .admin-settings .demo .btn.cocoon-block-button__width-25, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-25 {
   width: 25%;
 }
@@ -3634,6 +3637,21 @@ body.wp-admin {
   width: 75%;
 }
 .admin-settings .demo .btn.cocoon-block-button__width-100, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-100 {
+  width: 100%;
+}
+.admin-settings .demo .btn-wrap {
+  margin: 0;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-25 a {
+  width: 25%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-50 a {
+  width: 50%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-75 a {
+  width: 75%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-100 a {
   width: 100%;
 }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before,
@@ -3665,14 +3683,17 @@ body.wp-admin {
   right: 0;
   font-size: 20px;
 }
-.admin-settings .demo .alignleft .btn-l.has-custom-width, .admin-settings .demo .alignleft .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignleft a.has-custom-width {
+.admin-settings .demo .alignleft .btn-l.has-custom-width, .admin-settings .demo .alignleft .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignleft a.has-custom-width,
+.admin-settings .demo .alignleft.btn-wrap-l.has-custom-width a {
   margin-right: auto;
 }
-.admin-settings .demo .aligncenter .btn-l.has-custom-width, .admin-settings .demo .aligncenter .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .aligncenter a.has-custom-width {
+.admin-settings .demo .aligncenter .btn-l.has-custom-width, .admin-settings .demo .aligncenter .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .aligncenter a.has-custom-width,
+.admin-settings .demo .aligncenter.btn-wrap-l.has-custom-width a {
   margin-left: auto;
   margin-right: auto;
 }
-.admin-settings .demo .alignright .btn-l.has-custom-width, .admin-settings .demo .alignright .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignright a.has-custom-width {
+.admin-settings .demo .alignright .btn-l.has-custom-width, .admin-settings .demo .alignright .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignright a.has-custom-width,
+.admin-settings .demo .alignright.btn-wrap-l.has-custom-width a {
   margin-left: auto;
 }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
@@ -11291,6 +11312,9 @@ body.wp-admin {
 .admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
 }
+.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a {
+  margin: 0;
+}
 .admin-settings .demo .btn.cocoon-block-button__width-25, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-25 {
   width: 25%;
 }
@@ -11301,6 +11325,21 @@ body.wp-admin {
   width: 75%;
 }
 .admin-settings .demo .btn.cocoon-block-button__width-100, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-100 {
+  width: 100%;
+}
+.admin-settings .demo .btn-wrap {
+  margin: 0;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-25 a {
+  width: 25%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-50 a {
+  width: 50%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-75 a {
+  width: 75%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-100 a {
   width: 100%;
 }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before,
@@ -11332,14 +11371,17 @@ body.wp-admin {
   right: 0;
   font-size: 20px;
 }
-.admin-settings .demo .alignleft .btn-l.has-custom-width, .admin-settings .demo .alignleft .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignleft a.has-custom-width {
+.admin-settings .demo .alignleft .btn-l.has-custom-width, .admin-settings .demo .alignleft .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignleft a.has-custom-width,
+.admin-settings .demo .alignleft.btn-wrap-l.has-custom-width a {
   margin-right: auto;
 }
-.admin-settings .demo .aligncenter .btn-l.has-custom-width, .admin-settings .demo .aligncenter .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .aligncenter a.has-custom-width {
+.admin-settings .demo .aligncenter .btn-l.has-custom-width, .admin-settings .demo .aligncenter .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .aligncenter a.has-custom-width,
+.admin-settings .demo .aligncenter.btn-wrap-l.has-custom-width a {
   margin-left: auto;
   margin-right: auto;
 }
-.admin-settings .demo .alignright .btn-l.has-custom-width, .admin-settings .demo .alignright .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignright a.has-custom-width {
+.admin-settings .demo .alignright .btn-l.has-custom-width, .admin-settings .demo .alignright .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignright a.has-custom-width,
+.admin-settings .demo .alignright.btn-wrap-l.has-custom-width a {
   margin-left: auto;
 }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
@@ -19867,6 +19909,9 @@ textarea[name="the_page_memo"] {
 .components-popover__content .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
 }
+.components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a {
+  margin: 0;
+}
 .components-popover__content .btn.cocoon-block-button__width-25, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-25, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a.cocoon-block-button__width-25 {
   width: 25%;
 }
@@ -19877,6 +19922,21 @@ textarea[name="the_page_memo"] {
   width: 75%;
 }
 .components-popover__content .btn.cocoon-block-button__width-100, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-100, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a.cocoon-block-button__width-100 {
+  width: 100%;
+}
+.components-popover__content .btn-wrap {
+  margin: 0;
+}
+.components-popover__content .btn-wrap.cocoon-block-button__width-25 a {
+  width: 25%;
+}
+.components-popover__content .btn-wrap.cocoon-block-button__width-50 a {
+  width: 50%;
+}
+.components-popover__content .btn-wrap.cocoon-block-button__width-75 a {
+  width: 75%;
+}
+.components-popover__content .btn-wrap.cocoon-block-button__width-100 a {
   width: 100%;
 }
 .components-popover__content .btn:before, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:before,
@@ -19909,14 +19969,17 @@ textarea[name="the_page_memo"] {
   right: 0;
   font-size: 20px;
 }
-.components-popover__content .alignleft .btn-l.has-custom-width, .components-popover__content .alignleft .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .alignleft a.has-custom-width {
+.components-popover__content .alignleft .btn-l.has-custom-width, .components-popover__content .alignleft .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .alignleft a.has-custom-width,
+.components-popover__content .alignleft.btn-wrap-l.has-custom-width a {
   margin-right: auto;
 }
-.components-popover__content .aligncenter .btn-l.has-custom-width, .components-popover__content .aligncenter .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .aligncenter a.has-custom-width {
+.components-popover__content .aligncenter .btn-l.has-custom-width, .components-popover__content .aligncenter .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .aligncenter a.has-custom-width,
+.components-popover__content .aligncenter.btn-wrap-l.has-custom-width a {
   margin-left: auto;
   margin-right: auto;
 }
-.components-popover__content .alignright .btn-l.has-custom-width, .components-popover__content .alignright .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .alignright a.has-custom-width {
+.components-popover__content .alignright .btn-l.has-custom-width, .components-popover__content .alignright .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .alignright a.has-custom-width,
+.components-popover__content .alignright.btn-wrap-l.has-custom-width a {
   margin-left: auto;
 }
 .components-popover__content .btn:hover, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover,

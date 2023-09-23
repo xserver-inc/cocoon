@@ -50,6 +50,9 @@
     },
     "customFontSize": {
       "type": "string"
+    },
+    "width": {
+      "type": "string"
     }
   },
   "example": {
