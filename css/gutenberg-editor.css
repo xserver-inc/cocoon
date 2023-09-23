@@ -1557,6 +1557,9 @@ div.search-form {
   padding: 7px 13px;
 }
 
+.btn {
+  margin: 0;
+}
 .btn.cocoon-block-button__width-25 {
   width: 25%;
 }
@@ -1567,6 +1570,22 @@ div.search-form {
   width: 75%;
 }
 .btn.cocoon-block-button__width-100 {
+  width: 100%;
+}
+
+.btn-wrap {
+  margin: 0;
+}
+.btn-wrap.cocoon-block-button__width-25 a {
+  width: 25%;
+}
+.btn-wrap.cocoon-block-button__width-50 a {
+  width: 50%;
+}
+.btn-wrap.cocoon-block-button__width-75 a {
+  width: 75%;
+}
+.btn-wrap.cocoon-block-button__width-100 a {
   width: 100%;
 }
 
@@ -1601,16 +1620,19 @@ div.search-form {
   font-size: 20px;
 }
 
-.alignleft .btn-l.has-custom-width {
+.alignleft .btn-l.has-custom-width,
+.alignleft.btn-wrap-l.has-custom-width a {
   margin-right: auto;
 }
 
-.aligncenter .btn-l.has-custom-width {
+.aligncenter .btn-l.has-custom-width,
+.aligncenter.btn-wrap-l.has-custom-width a {
   margin-left: auto;
   margin-right: auto;
 }
 
-.alignright .btn-l.has-custom-width {
+.alignright .btn-l.has-custom-width,
+.alignright.btn-wrap-l.has-custom-width a {
   margin-left: auto;
 }
 
