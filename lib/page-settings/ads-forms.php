@@ -259,10 +259,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- PR表記設定 -->
 <div id="exclude-pr-label" class="postbox">
-<h2 class="hndle"><?php _e( 'PR表記除外設定', THEME_NAME ) ?></h2>
+<h2 class="hndle"><?php _e( 'PR表記設定', THEME_NAME ) ?></h2>
 <div class="inside">
 
-  <p><?php _e( '消費者庁の景品表示法の改正（通称：ステルスマーケティング規制）に対応するための「広告表記（PR表記）」に関する設定です。', THEME_NAME ) ?></p>
+  <p><?php _e( '消費者庁の景品表示法の指定告示（通称：ステマ規制）に対応するための「PR表記」に関する設定です。', THEME_NAME ) ?></p>
 
   <table class="form-table">
     <tbody>
