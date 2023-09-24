@@ -51,24 +51,14 @@
 
 .pr-label-s{
   position: absolute;
-  top: 0.3em;
-  right: 0.3em;
+  top: 0;
+  left: 0;
   border: 1px solid $transpalent_black_bgc;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--cocoon-text-color);
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1px 8px;
-  max-width: 20%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.date-tags .pr-label-s{
-  position: relative;
-  top: initial;
-  right: initial;
-  margin-right: 1em;
+  padding: 2px 12px;
+  border-radius: var(--cocoon-badge-border-radius);
 }
 
 .pr-label-l{

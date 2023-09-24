@@ -1020,7 +1020,7 @@ body.wp-admin {
 }
 .admin-settings .demo .main {
   width: 860px;
-  padding: 20px 29px;
+  padding: 36px 29px;
   border: 1px solid transparent;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
@@ -1502,23 +1502,14 @@ body.wp-admin {
 }
 .admin-settings .demo .pr-label-s {
   position: absolute;
-  top: 0.3em;
-  right: 0.3em;
+  top: 0;
+  left: 0;
   border: 1px solid rgba(51, 51, 51, 0.7);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--cocoon-text-color);
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1px 8px;
-  max-width: 20%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.admin-settings .demo .date-tags .pr-label-s {
-  position: relative;
-  top: initial;
-  right: initial;
-  margin-right: 1em;
+  padding: 2px 12px;
+  border-radius: var(--cocoon-badge-border-radius);
 }
 .admin-settings .demo .pr-label-l {
   border: 1px solid rgba(51, 51, 51, 0.7);
@@ -8739,7 +8730,7 @@ body.wp-admin {
 }
 .admin-settings .demo .main {
   width: 860px;
-  padding: 20px 29px;
+  padding: 36px 29px;
   border: 1px solid transparent;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
@@ -9221,23 +9212,14 @@ body.wp-admin {
 }
 .admin-settings .demo .pr-label-s {
   position: absolute;
-  top: 0.3em;
-  right: 0.3em;
+  top: 0;
+  left: 0;
   border: 1px solid rgba(51, 51, 51, 0.7);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--cocoon-text-color);
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1px 8px;
-  max-width: 20%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.admin-settings .demo .date-tags .pr-label-s {
-  position: relative;
-  top: initial;
-  right: initial;
-  margin-right: 1em;
+  padding: 2px 12px;
+  border-radius: var(--cocoon-badge-border-radius);
 }
 .admin-settings .demo .pr-label-l {
   border: 1px solid rgba(51, 51, 51, 0.7);
@@ -17369,9 +17351,12 @@ body.wp-admin {
   }
   .admin-settings .demo main.main,
   .admin-settings .demo div.sidebar {
-    padding: 16px;
-    margin: 10px 0;
+    padding: 22px 16px;
+    margin: 12px 0;
     border-width: 0;
+  }
+  .admin-settings .demo .pr-label-s {
+    margin-left: 6px;
   }
   .admin-settings .demo .article ul,
   .admin-settings .demo .article ol {

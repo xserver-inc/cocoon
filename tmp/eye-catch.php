@@ -54,11 +54,6 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     the_nolink_category(null, apply_filters('is_eyecatch_category_label_visible', true)); //カテゴリーラベルの取得
   }
 
-  //PRラベルの表示
-  if (is_small_pr_labels_visible()) {
-    generate_small_pr_label_tag(); //PR表記出力
-  }
-
   //アイキャッチにキャプションが設定されているとき
   if (is_eyecatch_caption_visible() && isset(get_post( get_post_thumbnail_id() )->post_excerpt)) {
     $eye_catch_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
