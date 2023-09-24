@@ -443,7 +443,7 @@ function is_ad_shortcode_label_visible(){
 }
 endif;
 
-//投稿ページにPRラベル表示
+//投稿ページにPR表記表示
 define('OP_PR_LABEL_SINGLE_VISIBLE', 'pr_label_single_visible');
 if ( !function_exists( 'is_pr_label_single_visible' ) ):
 function is_pr_label_single_visible(){
@@ -451,7 +451,7 @@ function is_pr_label_single_visible(){
 }
 endif;
 
-//固定ページにPRラベル表示
+//固定ページにPR表記表示
 define('OP_PR_LABEL_PAGE_VISIBLE', 'pr_label_page_visible');
 if ( !function_exists( 'is_pr_label_page_visible' ) ):
 function is_pr_label_page_visible(){
@@ -459,7 +459,7 @@ function is_pr_label_page_visible(){
 }
 endif;
 
-//PRラベル（小）表示
+//PR表記（小）表示
 define('OP_PR_LABEL_SMALL_VISIBLE', 'pr_label_small_visible');
 if ( !function_exists( 'is_pr_label_small_visible' ) ):
 function is_pr_label_small_visible(){
@@ -467,7 +467,7 @@ function is_pr_label_small_visible(){
 }
 endif;
 
-//PRラベル（大）表示
+//PR表記（大）表示
 define('OP_PR_LABEL_LARGE_VISIBLE', 'pr_label_large_visible');
 if ( !function_exists( 'is_pr_label_large_visible' ) ):
 function is_pr_label_large_visible(){
@@ -475,19 +475,35 @@ function is_pr_label_large_visible(){
 }
 endif;
 
-//PRラベル（小）キャプション
+//PR表記（小）キャプション
 define('OP_PR_LABEL_SMALL_CAPTION', 'pr_label_small_caption');
 if ( !function_exists( 'get_pr_label_small_caption' ) ):
 function get_pr_label_small_caption(){
-  return get_theme_option(OP_PR_LABEL_SMALL_CAPTION, __( 'PR', THEME_NAME ));
+  return get_theme_option(OP_PR_LABEL_SMALL_CAPTION, PR_LABEL_SMALL_CAPTION);
 }
 endif;
 
-//PRラベル（大）キャプション
+//PR表記（大）キャプション
 define('OP_PR_LABEL_LARGE_CAPTION', 'pr_label_large_caption');
 if ( !function_exists( 'get_pr_label_large_caption' ) ):
 function get_pr_label_large_caption(){
-  return get_theme_option(OP_PR_LABEL_LARGE_CAPTION, __( '記事内に広告が含まれています。', THEME_NAME ));
+  return get_theme_option(OP_PR_LABEL_LARGE_CAPTION, PR_LABEL_LARGE_CAPTION);
+}
+endif;
+
+//PR表記除外記事ID
+define('OP_PR_LABEL_EXCLUDE_POST_IDS', 'pr_label_exclude_post_ids');
+if ( !function_exists( 'get_pr_label_exclude_post_ids' ) ):
+function get_pr_label_exclude_post_ids(){
+  return get_theme_option(OP_PR_LABEL_EXCLUDE_POST_IDS);
+}
+endif;
+
+//PR表記除外カテゴリーID
+define('OP_PR_LABEL_EXCLUDE_CATEGORY_IDS', 'pr_label_exclude_category_ids');
+if ( !function_exists( 'get_pr_label_exclude_category_ids' ) ):
+function get_pr_label_exclude_category_ids(){
+  return get_theme_option(OP_PR_LABEL_EXCLUDE_CATEGORY_IDS, array());
 }
 endif;
 

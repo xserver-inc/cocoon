@@ -108,6 +108,11 @@ define('AD_FORMAT_SINGLE_RECTANGLE', 'single-rectangle'); //シングルレク�
 define('AD_FORMAT_DABBLE_RECTANGLE', 'dabble-rectangle'); //ダブルレクタングル
 //広告ユニット以外
 define('DATA_AD_FORMAT_FLUID', 'fluid'); //記事中広告
+
+//PR表記
+define('PR_LABEL_SMALL_CAPTION', __( 'PR', THEME_NAME ));
+define('PR_LABEL_LARGE_CAPTION', __( '記事内に広告が含まれています。', THEME_NAME ));
+
 //ナビゲーションメニュー
 define('NAV_MENU_HEADER', 'navi-header');
 define('NAV_MENU_HEADER_MOBILE', 'navi-mobile');
