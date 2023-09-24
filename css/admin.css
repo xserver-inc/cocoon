@@ -1502,8 +1502,8 @@ body.wp-admin {
 }
 .admin-settings .demo .pr-label-s {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 3px;
+  left: 3px;
   border: 1px solid rgba(51, 51, 51, 0.7);
   font-size: 12px;
   color: var(--cocoon-text-color);
@@ -9212,8 +9212,8 @@ body.wp-admin {
 }
 .admin-settings .demo .pr-label-s {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 3px;
+  left: 3px;
   border: 1px solid rgba(51, 51, 51, 0.7);
   font-size: 12px;
   color: var(--cocoon-text-color);
@@ -17356,7 +17356,8 @@ body.wp-admin {
     border-width: 0;
   }
   .admin-settings .demo .pr-label-s {
-    margin-left: 6px;
+    left: 6px;
+    padding: 1px 8px;
   }
   .admin-settings .demo .article ul,
   .admin-settings .demo .article ol {
