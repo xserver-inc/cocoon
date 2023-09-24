@@ -256,6 +256,102 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
+
+<!-- PR表記設定 -->
+<div id="exclude-pr-label" class="postbox">
+<h2 class="hndle"><?php _e( 'PR表記除外設定', THEME_NAME ) ?></h2>
+<div class="inside">
+
+  <p><?php _e( '消費者庁の景品表示法の改正（通称：ステルスマーケティング規制）に対応するための「広告表記（PR表記）」に関する設定です。', THEME_NAME ) ?></p>
+
+  <table class="form-table">
+    <tbody>
+      <!-- 自動挿入ページ -->
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag(OP_PR_LABEL_SINGLE_VISIBLE, __( '自動挿入ページ', THEME_NAME )); ?>
+        </th>
+        <td>
+          <?php
+            generate_checkbox_tag(OP_PR_LABEL_SINGLE_VISIBLE, is_pr_label_single_visible(), __( '全ての投稿ページ', THEME_NAME ));
+            generate_tips_tag(__('全投稿ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。', THEME_NAME));
+
+            generate_checkbox_tag(OP_PR_LABEL_PAGE_VISIBLE, is_pr_label_page_visible(), __( '全ての固定ページ', THEME_NAME ));
+            generate_tips_tag(__('全固定ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。', THEME_NAME));
+          ?>
+        </td>
+      </tr>
+
+      <!-- 自動挿入エリア -->
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag(OP_PR_LABEL_SMALL_VISIBLE, __( '自動挿入エリア', THEME_NAME )); ?>
+        </th>
+        <td>
+          <?php
+            generate_checkbox_tag(OP_PR_LABEL_SMALL_VISIBLE, is_pr_label_small_visible(), __( 'アイキャッチ', THEME_NAME ).__( '（小）', THEME_NAME ));
+            generate_tips_tag(__('投稿ページのアイキャッチ右上に「PR表記」を表示します。', THEME_NAME).__('設定でアイキャッチが非表示になっている場合は日付の前に表示します。', THEME_NAME));
+
+            generate_checkbox_tag(OP_PR_LABEL_LARGE_VISIBLE, is_pr_label_large_visible(), __( '本文の上', THEME_NAME ).__( '（大）', THEME_NAME ));
+            generate_tips_tag(__('記事本文の上部に「PR表記」を挿入します。', THEME_NAME));
+          ?>
+        </td>
+      </tr>
+
+      <!-- 表示テキスト -->
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag(OP_PR_LABEL_SMALL_CAPTION, __( '表示テキスト', THEME_NAME )); ?>
+        </th>
+        <td>
+          <?php
+            //テキスト（小
+            generate_label_tag(OP_PR_LABEL_SMALL_CAPTION, __('テキスト（小）', THEME_NAME) );
+            echo '<br>';
+            generate_textbox_tag(OP_PR_LABEL_SMALL_CAPTION, get_pr_label_small_caption(), __( PR_LABEL_SMALL_CAPTION, THEME_NAME ));
+            generate_tips_tag(__( 'アイキャッチに表示される「PR表記」の文言を入力してください。', THEME_NAME ));
+
+            //テキスト（大）
+            generate_label_tag(OP_PR_LABEL_LARGE_CAPTION, __('テキスト（大）', THEME_NAME) );
+            echo '<br>';
+            generate_textbox_tag(OP_PR_LABEL_LARGE_CAPTION, get_pr_label_large_caption(), PR_LABEL_LARGE_CAPTION);
+            generate_tips_tag(__( '記事本文上に表示される「PR表記」の文言を入力してください。', THEME_NAME ));
+          ?>
+        </td>
+      </tr>
+
+      <!-- PR表記除外記事ID -->
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag(OP_PR_LABEL_EXCLUDE_POST_IDS, __( '除外記事ID', THEME_NAME )); ?>
+        </th>
+        <td>
+          <?php
+          generate_textbox_tag(OP_PR_LABEL_EXCLUDE_POST_IDS, get_pr_label_exclude_post_ids(), __( '例：111,222,3333', THEME_NAME ));
+          generate_tips_tag(__( '「PR表記」を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。', THEME_NAME ));
+          ?>
+        </td>
+      </tr>
+
+      <!-- PR表記除外カテゴリーID -->
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag(OP_PR_LABEL_EXCLUDE_CATEGORY_IDS, __( '除外カテゴリー', THEME_NAME )); ?>
+        </th>
+        <td>
+          <?php
+          generate_hierarchical_category_check_list( 0, OP_PR_LABEL_EXCLUDE_CATEGORY_IDS, get_pr_label_exclude_category_ids(), 300 );
+          generate_tips_tag(__( '「PR表記」を非表示にするカテゴリーを選択してください。', THEME_NAME ));
+          ?>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
 <!-- バリューコマース -->
 <div id="valuecommerce-ads" class="postbox">
   <h2 class="hndle"><?php _e( 'バリューコマース', THEME_NAME ) ?></h2>
