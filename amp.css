@@ -1015,6 +1015,7 @@ img.emoji {
   position: relative;
   top: initial;
   right: initial;
+  margin-right: 1em;
 }
 
 .pr-label-l {
@@ -1025,6 +1026,7 @@ img.emoji {
   padding: 1em;
   text-align: center;
   border-radius: var(--cocoon-badge-border-radius);
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 

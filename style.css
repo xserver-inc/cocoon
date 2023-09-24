@@ -1040,6 +1040,7 @@ img.emoji {
   position: relative;
   top: initial;
   right: initial;
+  margin-right: 1em;
 }
 
 .pr-label-l {

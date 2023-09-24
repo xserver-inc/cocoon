@@ -1518,6 +1518,7 @@ body.wp-admin {
   position: relative;
   top: initial;
   right: initial;
+  margin-right: 1em;
 }
 .admin-settings .demo .pr-label-l {
   border: 1px solid rgba(51, 51, 51, 0.7);
@@ -9236,6 +9237,7 @@ body.wp-admin {
   position: relative;
   top: initial;
   right: initial;
+  margin-right: 1em;
 }
 .admin-settings .demo .pr-label-l {
   border: 1px solid rgba(51, 51, 51, 0.7);
