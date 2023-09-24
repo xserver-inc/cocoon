@@ -9,6 +9,12 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 $display_none = is_seo_date_type_none() && !is_amp() ? ' display-none' : null; ?>
 <div class="date-tags<?php echo $display_none; ?>">
+  <?php //アイキャッチ表示がされてない場合のPR表記
+  if ((!is_eyecatch_visible() || !has_post_thumbnail())
+    && is_small_pr_labels_visible()
+  ){
+    generate_small_pr_label_tag(); //PR表記出力
+  }?>
   <?php //投稿日と更新日タグの取得
   echo get_the_date_tags(); ?>
 

@@ -91,6 +91,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 '.sprintf(__( 'この記事は<span class="bold">約%s分</span>で読めます。', THEME_NAME ), get_time_to_content_read(get_the_content())); ?></div>
         <?php endif; ?>
 
+        <?php //PR表記大の出力
+        if (is_large_pr_labels_visible()) {
+          generate_large_pr_label_tag();
+        } ?>
+
          <?php //本文上の広告表示
         if (is_ad_pos_content_top_visible() && is_all_adsenses_visible()){
           get_template_part_with_ad_format(get_ad_pos_content_top_format(), 'ad-content-top', is_ad_pos_content_top_label_visible());

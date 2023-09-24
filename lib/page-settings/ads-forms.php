@@ -276,7 +276,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_PR_LABEL_SINGLE_VISIBLE, is_pr_label_single_visible(), __( '全ての投稿ページ', THEME_NAME ));
             generate_tips_tag(__('全投稿ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。', THEME_NAME));
 
-            generate_checkbox_tag(OP_PR_LABEL_PAGE_VISIBLE, is_pr_label_page_visible(), __( '全ての投稿ページ', THEME_NAME ));
+            generate_checkbox_tag(OP_PR_LABEL_PAGE_VISIBLE, is_pr_label_page_visible(), __( '全ての固定ページ', THEME_NAME ));
             generate_tips_tag(__('全固定ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。', THEME_NAME));
           ?>
         </td>

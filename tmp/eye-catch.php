@@ -48,9 +48,15 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
   <meta itemprop="url" content="<?php echo $url; ?>">
   <meta itemprop="width" content="<?php echo $width; ?>">
   <meta itemprop="height" content="<?php echo $height; ?>">
-  <?php //アイキャッチラベルの表示
+  <?php
+  //アイキャッチラベルの表示
   if (is_eyecatch_label_visible() && is_single()) {
     the_nolink_category(null, apply_filters('is_eyecatch_category_label_visible', true)); //カテゴリーラベルの取得
+  }
+
+  //PRラベルの表示
+  if (is_small_pr_labels_visible()) {
+    generate_small_pr_label_tag(); //PR表記出力
   }
 
   //アイキャッチにキャプションが設定されているとき

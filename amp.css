@@ -990,10 +990,42 @@ img.emoji {
   color: var(--cocoon-white-color);
   background-color: rgba(51, 51, 51, 0.7);
   padding: 1px 5px;
-  max-width: 80%;
+  max-width: 70%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.pr-label-s {
+  position: absolute;
+  top: 0.3em;
+  right: 0.3em;
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  font-size: 11px;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1px 8px;
+  max-width: 20%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.date-tags .pr-label-s {
+  position: relative;
+  top: initial;
+  right: initial;
+}
+
+.pr-label-l {
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  font-size: .8em;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  text-align: center;
+  border-radius: var(--cocoon-badge-border-radius);
+  margin-bottom: 1em;
 }
 
 .entry-card-content {
