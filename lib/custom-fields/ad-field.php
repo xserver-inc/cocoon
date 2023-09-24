@@ -27,9 +27,13 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'view_ad_custom_box' ) ):
 function view_ad_custom_box(){
-  //広告を表示する
+  //広告を除外する
   generate_checkbox_tag('the_page_ads_novisible' , is_the_page_ads_novisible(), __( '広告を除外する', THEME_NAME ));
   generate_howto_tag(__( 'ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリーごとの設定も行えます。', THEME_NAME ), 'the_page_ads_novisible');
+
+  //PR表記を除外する
+  generate_checkbox_tag('the_page_pr_labels_novisible' , is_the_page_pr_labels_novisible(), __( 'PR表記を除外する', THEME_NAME ));
+  generate_howto_tag(__( 'Cocoon設定で「PR表記」を有効にしていたとしても、この除外オプションを有効にすれば非表示になります。', THEME_NAME ), 'the_page_pr_labels_novisible');
 }
 endif;
 
@@ -44,11 +48,17 @@ function ad_custom_box_save_data(){
   $the_page_ads_novisible_key = 'the_page_ads_novisible';
   add_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible, true);
   update_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible);
-
+  //Simplicity互換
   if (is_migrate_from_simplicity()) {
     add_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible, true);
     update_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible);
   }
+
+  //PR表記の除外
+  $the_page_pr_labels_novisible = !empty($_POST['the_page_pr_labels_novisible']) ? 1 : 0;
+  $the_page_pr_labels_novisible_key = 'the_page_pr_labels_novisible';
+  add_post_meta($id, $the_page_pr_labels_novisible_key, $the_page_pr_labels_novisible, true);
+  update_post_meta($id, $the_page_pr_labels_novisible_key, $the_page_pr_labels_novisible);
 
 }
 endif;
@@ -76,3 +86,24 @@ function is_the_page_ads_visible(){
   return !is_the_page_ads_novisible();
 }
 endif;
+
+
+//PR表記を除外しているか
+if ( !function_exists( 'is_the_page_pr_labels_novisible' ) ):
+function is_the_page_pr_labels_novisible(){
+  $value = 0;
+  if (is_singular() || is_admin()) {
+    $value = get_post_meta(get_the_ID(), 'the_page_pr_labels_novisible', true);
+  }
+  return $value;
+}
+endif;
+
+
+//PR表記を表示するか
+if ( !function_exists( 'is_the_page_pr_labels_visible' ) ):
+function is_the_page_pr_labels_visible(){
+  return !is_the_page_pr_labels_novisible();
+}
+endif;
+
