@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-09-25T15:22:12+00:00\n"
-"PO-Revision-Date: 2023-09-25 15:25\n"
+"PO-Revision-Date: 2023-09-25 15:38\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1709,11 +1709,11 @@ msgstr "Toggle display of ads on this page (such as AdSense). You can also confi
 
 #: lib/custom-fields/ad-field.php:35
 msgid "PR表記を除外する"
-msgstr ""
+msgstr "Exclude PR notations"
 
 #: lib/custom-fields/ad-field.php:36
 msgid "Cocoon設定で「PR表記」を有効にしていたとしても、この除外オプションを有効にすれば非表示になります。"
-msgstr ""
+msgstr "Even if \"PR Notation\" is enabled in Cocoon settings, it will be hidden if this exclusion option is enabled."
 
 #: lib/custom-fields/amp-field.php:17
 #: lib/custom-fields/amp-field.php:18
@@ -4201,83 +4201,83 @@ msgstr "If you enter [ad] or insert \"ad block\" in the text, the ad set in \"ad
 
 #: lib/page-settings/ads-forms.php:262
 msgid "PR表記設定"
-msgstr ""
+msgstr "PR notation setting"
 
 #: lib/page-settings/ads-forms.php:265
 msgid "消費者庁の景品表示法の指定告示（通称：ステマ規制）に対応するための「PR表記」に関する設定です。"
-msgstr ""
+msgstr "This is a setting for \"PR notation\" to comply with the Consumer Affairs Agency's Notice of Designation under the Act against Unjustifiable Premiums and Misleading Representations."
 
 #: lib/page-settings/ads-forms.php:272
 msgid "自動挿入ページ"
-msgstr ""
+msgstr "Auto insert pages"
 
 #: lib/page-settings/ads-forms.php:276
 msgid "全ての投稿ページ"
-msgstr ""
+msgstr "All posted pages"
 
 #: lib/page-settings/ads-forms.php:277
 msgid "全投稿ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。"
-msgstr ""
+msgstr "Insert \"PR notation\" in the location set in the \"Auto Insert Area\" on all post pages."
 
 #: lib/page-settings/ads-forms.php:279
 msgid "全ての固定ページ"
-msgstr ""
+msgstr "All fixed pages"
 
 #: lib/page-settings/ads-forms.php:280
 msgid "全固定ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。"
-msgstr ""
+msgstr "Insert \"PR notation\" in the location set in the \"Auto Insert Area\" on all fixed pages."
 
 #: lib/page-settings/ads-forms.php:288
 msgid "自動挿入エリア"
-msgstr ""
+msgstr "Auto Insert Area"
 
 #: lib/page-settings/ads-forms.php:292
 msgid "メインカラム左上"
-msgstr ""
+msgstr "Main column top left"
 
 #: lib/page-settings/ads-forms.php:292
 msgid "（小）"
-msgstr ""
+msgstr "(Small)"
 
 #: lib/page-settings/ads-forms.php:293
 msgid "メインカラムの左上に「PR表記」を表示します。"
-msgstr ""
+msgstr "Insert a \"PR notation\" in the top left corner of the main column."
 
 #: lib/page-settings/ads-forms.php:295
 msgid "本文の上"
-msgstr ""
+msgstr "Top of the article body"
 
 #: lib/page-settings/ads-forms.php:295
 msgid "（大）"
-msgstr ""
+msgstr "(Large)"
 
 #: lib/page-settings/ads-forms.php:296
 msgid "記事本文の上部に「PR表記」を挿入します。"
-msgstr ""
+msgstr "Insert a \"PR notation\" at the top of the article body."
 
 #: lib/page-settings/ads-forms.php:304
 msgid "表示テキスト"
-msgstr ""
+msgstr "Displayed text"
 
 #: lib/page-settings/ads-forms.php:309
 msgid "テキスト（小）"
-msgstr ""
+msgstr "Text (Small)"
 
 #: lib/page-settings/ads-forms.php:312
 msgid "メインカラム左上に表示される「PR表記」の文言を入力してください。"
-msgstr ""
+msgstr "Enter the text for the \"PR notation\" that will appear in the top left corner of the main column."
 
 #: lib/page-settings/ads-forms.php:315
 msgid "テキスト（大）"
-msgstr ""
+msgstr "Text (Large)"
 
 #: lib/page-settings/ads-forms.php:318
 msgid "記事本文上に表示される「PR表記」の文言を入力してください。"
-msgstr ""
+msgstr "Enter the text for the \"PR notation\" that will appear at the top of the article body."
 
 #: lib/page-settings/ads-forms.php:326
 msgid "除外記事ID"
-msgstr ""
+msgstr "Excluded article ID"
 
 #: lib/page-settings/ads-forms.php:330
 #: lib/page-settings/ads-forms.php:407
@@ -4286,7 +4286,7 @@ msgstr "Example: 111, 222, 3333"
 
 #: lib/page-settings/ads-forms.php:331
 msgid "「PR表記」を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
-msgstr ""
+msgstr "Specify the IDs of the posts and fixed pages for which you want to hide \"PR notation\" by separating them with , (comma)."
 
 #: lib/page-settings/ads-forms.php:339
 #: lib/page-settings/index-forms.php:242
@@ -4296,7 +4296,7 @@ msgstr "Excluded categories"
 
 #: lib/page-settings/ads-forms.php:344
 msgid "「PR表記」を非表示にするカテゴリーを選択してください。"
-msgstr ""
+msgstr "Specify the categories for which you want to hide the \"PR notation\"."
 
 #: lib/page-settings/ads-forms.php:357
 msgid "バリューコマース"
@@ -11733,7 +11733,7 @@ msgstr ""
 
 #: lib/_defins.php:114
 msgid "記事内に広告が含まれています。"
-msgstr ""
+msgstr "This article contains advertisements."
 
 #: lib/_defins.php:146
 #: lib/_defins.php:167
