@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-23T15:35:13+00:00\n"
-"PO-Revision-Date: 2023-09-23 16:12\n"
+"POT-Creation-Date: 2023-09-25T15:22:12+00:00\n"
+"PO-Revision-Date: 2023-09-25 15:25\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1706,6 +1706,14 @@ msgstr "광고 제외"
 #: lib/custom-fields/ad-field.php:32
 msgid "ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリーごとの設定も行えます。"
 msgstr "페이지의 광고(AdSense등) 표시 상태를 바꿉니다. 또한 광고 설정에서 각 카테고리에 대한 설정을 바꿀 수 있습니다."
+
+#: lib/custom-fields/ad-field.php:35
+msgid "PR表記を除外する"
+msgstr ""
+
+#: lib/custom-fields/ad-field.php:36
+msgid "Cocoon設定で「PR表記」を有効にしていたとしても、この除外オプションを有効にすれば非表示になります。"
+msgstr ""
 
 #: lib/custom-fields/amp-field.php:17
 #: lib/custom-fields/amp-field.php:18
@@ -4191,67 +4199,162 @@ msgstr ""
 msgid "本文内に[ad]と入力したり「広告ブロック」を挿入した場合、その部分に「広告コード」に設定してある広告を表示します。"
 msgstr ""
 
-#: lib/page-settings/ads-forms.php:261
-msgid "バリューコマース"
-msgstr "밸류커머스"
-
-#: lib/page-settings/ads-forms.php:264
-msgid "バリューコマース関連の広告設定です。"
-msgstr "밸류커머스와 관련된 광고 설정입니다."
-
-#: lib/page-settings/ads-forms.php:271
-msgid "LinkSwitch"
+#: lib/page-settings/ads-forms.php:262
+msgid "PR表記設定"
 msgstr ""
 
-#: lib/page-settings/ads-forms.php:275
-msgid "LinkSwitchを有効にする"
-msgstr "LinkSwitch 활성화"
+#: lib/page-settings/ads-forms.php:265
+msgid "消費者庁の景品表示法の指定告示（通称：ステマ規制）に対応するための「PR表記」に関する設定です。"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:272
+msgid "自動挿入ページ"
+msgstr ""
 
 #: lib/page-settings/ads-forms.php:276
-msgid "バリューコマースのLinkSwitch機能を有効にするか。LinkSwitch IDが入力されている必要があります。"
-msgstr "밸류커머스의 Link Switch 기능을 활성화하시겠습니까? LinkSwitch ID가 입력되어있어야합니다."
-
-#: lib/page-settings/ads-forms.php:279
-msgid "LinkSwitch ID"
+msgid "全ての投稿ページ"
 msgstr ""
 
-#: lib/page-settings/ads-forms.php:281
-msgid "LinkSwitch IDの入力"
-msgstr "LinkSwitch ID 입력"
+#: lib/page-settings/ads-forms.php:277
+msgid "全投稿ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。"
+msgstr ""
 
-#: lib/page-settings/ads-forms.php:282
-msgid "バリューコマースの「便利ツール」メニューの「LinkSwitch」からIDを取得してください。"
-msgstr "밸류커머스의 \"LinkSwitch\"의  \"Handy tools\" 메뉴에서 ID를 얻으세요."
+#: lib/page-settings/ads-forms.php:279
+msgid "全ての固定ページ"
+msgstr ""
 
-#: lib/page-settings/ads-forms.php:283
-msgid "LinkSwitchタグから取得できるIDを入力してください。"
-msgstr "Link Switch 태그에서 얻을 수 있는 아이디를 입력하세요."
+#: lib/page-settings/ads-forms.php:280
+msgid "全固定ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。"
+msgstr ""
 
-#: lib/page-settings/ads-forms.php:297
-msgid "広告除外設定"
-msgstr "광고 제외 설정"
+#: lib/page-settings/ads-forms.php:288
+msgid "自動挿入エリア"
+msgstr ""
 
-#: lib/page-settings/ads-forms.php:300
-msgid "広告を表示したくないページやカテゴリーの設定です。"
-msgstr "광고를 표시하지 않을 페이지 또는 카테고리를 설정합니다."
+#: lib/page-settings/ads-forms.php:292
+msgid "メインカラム左上"
+msgstr ""
 
-#: lib/page-settings/ads-forms.php:307
-msgid "広告除外記事ID"
-msgstr "광고 제외 글 ID"
+#: lib/page-settings/ads-forms.php:292
+msgid "（小）"
+msgstr ""
 
-#: lib/page-settings/ads-forms.php:311
+#: lib/page-settings/ads-forms.php:293
+msgid "メインカラムの左上に「PR表記」を表示します。"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:295
+msgid "本文の上"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:295
+msgid "（大）"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:296
+msgid "記事本文の上部に「PR表記」を挿入します。"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:304
+msgid "表示テキスト"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:309
+msgid "テキスト（小）"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:312
+msgid "メインカラム左上に表示される「PR表記」の文言を入力してください。"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:315
+msgid "テキスト（大）"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:318
+msgid "記事本文上に表示される「PR表記」の文言を入力してください。"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:326
+msgid "除外記事ID"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:330
+#: lib/page-settings/ads-forms.php:407
 msgid "例：111,222,3333"
 msgstr "예시: 111,222,3333"
 
-#: lib/page-settings/ads-forms.php:312
+#: lib/page-settings/ads-forms.php:331
+msgid "「PR表記」を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:339
+#: lib/page-settings/index-forms.php:242
+#: lib/page-settings/single-forms.php:366
+msgid "除外カテゴリー"
+msgstr "제외 카테고리"
+
+#: lib/page-settings/ads-forms.php:344
+msgid "「PR表記」を非表示にするカテゴリーを選択してください。"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:357
+msgid "バリューコマース"
+msgstr "밸류커머스"
+
+#: lib/page-settings/ads-forms.php:360
+msgid "バリューコマース関連の広告設定です。"
+msgstr "밸류커머스와 관련된 광고 설정입니다."
+
+#: lib/page-settings/ads-forms.php:367
+msgid "LinkSwitch"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:371
+msgid "LinkSwitchを有効にする"
+msgstr "LinkSwitch 활성화"
+
+#: lib/page-settings/ads-forms.php:372
+msgid "バリューコマースのLinkSwitch機能を有効にするか。LinkSwitch IDが入力されている必要があります。"
+msgstr "밸류커머스의 Link Switch 기능을 활성화하시겠습니까? LinkSwitch ID가 입력되어있어야합니다."
+
+#: lib/page-settings/ads-forms.php:375
+msgid "LinkSwitch ID"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:377
+msgid "LinkSwitch IDの入力"
+msgstr "LinkSwitch ID 입력"
+
+#: lib/page-settings/ads-forms.php:378
+msgid "バリューコマースの「便利ツール」メニューの「LinkSwitch」からIDを取得してください。"
+msgstr "밸류커머스의 \"LinkSwitch\"의  \"Handy tools\" 메뉴에서 ID를 얻으세요."
+
+#: lib/page-settings/ads-forms.php:379
+msgid "LinkSwitchタグから取得できるIDを入力してください。"
+msgstr "Link Switch 태그에서 얻을 수 있는 아이디를 입력하세요."
+
+#: lib/page-settings/ads-forms.php:393
+msgid "広告除外設定"
+msgstr "광고 제외 설정"
+
+#: lib/page-settings/ads-forms.php:396
+msgid "広告を表示したくないページやカテゴリーの設定です。"
+msgstr "광고를 표시하지 않을 페이지 또는 카테고리를 설정합니다."
+
+#: lib/page-settings/ads-forms.php:403
+msgid "広告除外記事ID"
+msgstr "광고 제외 글 ID"
+
+#: lib/page-settings/ads-forms.php:408
 msgid "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr "광고를 숨길 글/페이지의 ID를 지정합니다. ID를 쉼표로 구분합니다."
 
-#: lib/page-settings/ads-forms.php:320
+#: lib/page-settings/ads-forms.php:416
 msgid "広告除外カテゴリー"
 msgstr "광고 제외 카테고리"
 
-#: lib/page-settings/ads-forms.php:326
+#: lib/page-settings/ads-forms.php:422
 msgid "広告を非表示にするカテゴリーを選択してください。"
 msgstr "광고를 숨길 카테고리를 설정합니다."
 
@@ -7435,11 +7538,6 @@ msgstr "댓글 수 표시"
 #: lib/page-settings/index-forms.php:234
 msgid "インデックスページのエントリーカードに投稿関連情報を表示するかどうか。"
 msgstr ""
-
-#: lib/page-settings/index-forms.php:242
-#: lib/page-settings/single-forms.php:366
-msgid "除外カテゴリー"
-msgstr "제외 카테고리"
 
 #: lib/page-settings/index-forms.php:247
 msgid "アーカイブ（インデックスリスト・新着関連記事ウィジェット等）に表示させたくないカテゴリーを選択してください。"
@@ -10800,48 +10898,48 @@ msgstr "캠페인 중에 표시할 콘텐츠를 입력하세요."
 msgid "キャンペーン期間中のみ表示"
 msgstr "캠페인 기간 동안만 표시"
 
-#: lib/utils.php:792
+#: lib/utils.php:804
 msgid "スクロールできます"
 msgstr "스크롤 가능"
 
-#: lib/utils.php:880
+#: lib/utils.php:892
 msgid "公開"
 msgstr "공개"
 
-#: lib/utils.php:881
+#: lib/utils.php:893
 msgid "記事を公開してもよろしいですか？"
 msgstr "이 글을 공개하시겠습니까?"
 
-#: lib/utils.php:2444
+#: lib/utils.php:2456
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 
-#: lib/utils.php:2452
+#: lib/utils.php:2464
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 
-#: lib/utils.php:2460
+#: lib/utils.php:2472
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 
-#: lib/utils.php:2468
+#: lib/utils.php:2480
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 
-#: lib/utils.php:2476
+#: lib/utils.php:2488
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 
-#: lib/utils.php:2487
+#: lib/utils.php:2499
 msgid "%s年"
 msgstr "%s년"
 
-#: lib/utils.php:2489
+#: lib/utils.php:2501
 msgid "%s年%sヶ月"
 msgstr "%s년 %s월"
 
@@ -11625,65 +11723,73 @@ msgstr "예: Cocoon 설정에서 \"H2 까지\"로 설정된 경우 이 위젯에
 msgid "設定"
 msgstr "설정"
 
-#: lib/_defins.php:141
-#: lib/_defins.php:162
-#: lib/_defins.php:173
-#: lib/_defins.php:186
+#: lib/_defins.php:113
+msgid "PR"
+msgstr ""
+
+#: lib/_defins.php:114
+msgid "記事内に広告が含まれています。"
+msgstr ""
+
+#: lib/_defins.php:146
+#: lib/_defins.php:167
+#: lib/_defins.php:178
+#: lib/_defins.php:191
 msgid "オート（AdSenseにおまかせ）"
 msgstr "자동 (AdSense)"
 
-#: lib/_defins.php:142
-#: lib/_defins.php:163
-#: lib/_defins.php:174
-#: lib/_defins.php:187
+#: lib/_defins.php:147
+#: lib/_defins.php:168
+#: lib/_defins.php:179
+#: lib/_defins.php:192
 msgid "バナー"
 msgstr "배너"
 
-#: lib/_defins.php:143
-#: lib/_defins.php:175
-#: lib/_defins.php:188
+#: lib/_defins.php:148
+#: lib/_defins.php:180
+#: lib/_defins.php:193
 msgid "レスポンシブレクタングル"
 msgstr "반응형 사각형"
 
-#: lib/_defins.php:144
-#: lib/_defins.php:176
-#: lib/_defins.php:189
+#: lib/_defins.php:149
+#: lib/_defins.php:181
+#: lib/_defins.php:194
 msgid "シングルレクタングル"
 msgstr "단일 사각형"
 
-#: lib/_defins.php:145
-#: lib/_defins.php:177
+#: lib/_defins.php:150
+#: lib/_defins.php:182
 msgid "ダブルレクタングル"
 msgstr "더블 사각형"
 
-#: lib/_defins.php:146
-#: lib/_defins.php:179
+#: lib/_defins.php:151
+#: lib/_defins.php:184
 msgid "記事内広告"
 msgstr "본문내 광고"
 
-#: lib/_defins.php:164
+#: lib/_defins.php:169
 msgid "レクタングル"
 msgstr "사각형"
 
-#: lib/_defins.php:165
-#: lib/_defins.php:178
+#: lib/_defins.php:170
+#: lib/_defins.php:183
 msgid "ラージスカイスクレイパー"
 msgstr "대형 스카이스크래퍼"
 
-#: lib/_defins.php:172
-#: lib/_defins.php:185
+#: lib/_defins.php:177
+#: lib/_defins.php:190
 msgid "広告コードをそのまま表示"
 msgstr "광고 코드를 그대로 표시"
 
-#: lib/_defins.php:300
+#: lib/_defins.php:305
 msgid "本当に削除してもいいですか？"
 msgstr "정말 삭제하시겠습니까?"
 
-#: lib/_defins.php:321
+#: lib/_defins.php:326
 msgid "www.amazon.co.jp"
 msgstr ""
 
-#: lib/_defins.php:324
+#: lib/_defins.php:329
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "상품을 가져오지 못했습니다. 존재하지 않는 ASIN을 지정했을 수 있습니다."
 
