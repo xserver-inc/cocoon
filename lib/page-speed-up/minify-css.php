@@ -107,8 +107,10 @@ function tag_code_to_minify_css($buffer) {
           if (empty($css_inline_code)) {
             continue;
           }
-          //最終出力縮小化CSSコードに縮小化したCSSコードを加える
-          $last_minfified_css .= minify_css($css_inline_code);
+          // //最終出力縮小化CSSコードに縮小化したCSSコードを加える
+          // $last_minfified_css .= minify_css($css_inline_code);
+          //最終出力縮小化CSSコードにCSSコードを加える
+          $last_minfified_css .= $css_inline_code;
           //ヘッダー出力コードからstyleタグを削除
           $buffer = str_replace($tag, '', $buffer);
           //_v($match);
@@ -120,7 +122,7 @@ function tag_code_to_minify_css($buffer) {
 
     //縮小化したCSSをデータの最後に付け加える
     if ($last_minfified_css) {
-      $buffer = $buffer.PHP_EOL.'<style>'.$last_minfified_css.'</style>';
+      $buffer = $buffer.PHP_EOL.'<style>'.minify_css($last_minfified_css).'</style>';
     }
 
     ///////////////////////////////////////
