@@ -26,8 +26,11 @@ jobs:
         git config user.email "github.action@noreply.com"
 
         git add $SAVE_FULL_PATH
-        git commit -m "POT Regenerated"
-        git push
+        DIFF_COUNT=$(git diff --cached --numstat | wc -l)
+        if [ $DIFF_COUNT -ne 0 ]; then
+          git commit -m "POT Regenerated"
+          git push
+        fi
       env:
         SAVE_DIR: 'languages'
         DOMAIN: 'cocoon'
