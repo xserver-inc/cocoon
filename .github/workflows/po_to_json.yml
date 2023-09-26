@@ -1,4 +1,4 @@
-name: Convert POT to JSON
+name: Convert PO to JSON
 on:
   workflow_dispatch:
   push:
@@ -7,7 +7,7 @@ on:
       - 'languages/*.po'
 
 jobs:
-  WP_POT_TO_JSON:
+  WP_PO_TO_JSON:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -29,8 +29,13 @@ jobs:
         git config user.name "GitHub Action"
         git config user.email "github.action@noreply.com"
 
+        git pull
+
         git add *-cocoon-blocks-js.json
-        git commit -m "POT JSON Regenerated"
-        git push
+        DIFF_COUNT=$(git diff --cached --numstat | wc -l)
+        if [ $DIFF_COUNT -ne 0 ]; then
+          git commit -m "PO JSON Regenerated"
+          git push
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
