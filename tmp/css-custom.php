@@ -54,6 +54,8 @@ table th,
 }
 table:not(.has-border-color) th,
 table:not(.has-border-color) td,
+table:not(.has-border-color) thead,
+table:not(.has-border-color) tfoot,
 .page-numbers,
 .page-numbers.dots,
 .tagcloud a,
