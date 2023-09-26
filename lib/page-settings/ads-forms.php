@@ -262,7 +262,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <h2 class="hndle"><?php _e( 'PR表記設定', THEME_NAME ) ?></h2>
 <div class="inside">
 
-  <p><?php _e( '消費者庁の景品表示法の指定告示（通称：ステマ規制）に対応するための「PR表記」に関する設定です。', THEME_NAME ) ?></p>
+  <p><?php _e( '消費者庁の景品表示法の指定告示（通称：ステマ規制）に対応するための「PR表記」に関する設定です。', THEME_NAME );
+           echo get_help_page_tag('https://wp-cocoon.com/pr-label/') ?></p>
 
   <table class="form-table">
     <tbody>
@@ -290,10 +291,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <td>
           <?php
             generate_checkbox_tag(OP_PR_LABEL_SMALL_VISIBLE, is_pr_label_small_visible(), __( 'メインカラム左上', THEME_NAME ).__( '（小）', THEME_NAME ));
-            generate_tips_tag(__('メインカラムの左上に「PR表記」を表示します。', THEME_NAME));
+            generate_tips_tag(__('メインカラムの左上に「PR表記」を表示します。', THEME_NAME).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/pr-small.png'));
 
             generate_checkbox_tag(OP_PR_LABEL_LARGE_VISIBLE, is_pr_label_large_visible(), __( '本文の上', THEME_NAME ).__( '（大）', THEME_NAME ));
-            generate_tips_tag(__('記事本文の上部に「PR表記」を挿入します。', THEME_NAME));
+            generate_tips_tag(__('記事本文の上部に「PR表記」を挿入します。', THEME_NAME).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/pr-large.png'));
           ?>
         </td>
       </tr>
@@ -309,13 +310,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_label_tag(OP_PR_LABEL_SMALL_CAPTION, __('テキスト（小）', THEME_NAME) );
             echo '<br>';
             generate_textbox_tag(OP_PR_LABEL_SMALL_CAPTION, get_pr_label_small_caption(), __( PR_LABEL_SMALL_CAPTION, THEME_NAME ));
-            generate_tips_tag(__( 'メインカラム左上に表示される「PR表記」の文言を入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'メインカラム左上に表示される「PR表記」の文言を入力してください。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/pr-small.png'));
 
             //テキスト（大）
             generate_label_tag(OP_PR_LABEL_LARGE_CAPTION, __('テキスト（大）', THEME_NAME) );
             echo '<br>';
             generate_textbox_tag(OP_PR_LABEL_LARGE_CAPTION, get_pr_label_large_caption(), PR_LABEL_LARGE_CAPTION);
-            generate_tips_tag(__( '記事本文上に表示される「PR表記」の文言を入力してください。', THEME_NAME ));
+            generate_tips_tag(__( '記事本文上に表示される「PR表記」の文言を入力してください。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/pr-large.png'));
           ?>
         </td>
       </tr>
