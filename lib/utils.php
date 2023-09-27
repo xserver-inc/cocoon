@@ -107,7 +107,7 @@ function generate_small_pr_label_tag(){
 endif;
 
 
-//PR表記大の出力
+//PR表記（大）の出力
 if ( !function_exists( 'generate_large_pr_label_tag' ) ):
 function generate_large_pr_label_tag(){
   if (apply_filters( 'is_large_pr_label_visible', true )) {

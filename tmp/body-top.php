@@ -66,7 +66,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <main id="main" class="main<?php echo get_additional_main_classes(); ?>" itemscope itemtype="https://schema.org/Blog">
 
         <?php
-        //PRラベルの表示
+        //PRラベル（小）の表示
         if (is_small_pr_labels_visible()) {
           generate_small_pr_label_tag(); //PR表記出力
         } ?>

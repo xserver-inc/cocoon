@@ -27,7 +27,7 @@ if ($eye_catch_url || $content): ?>
     <?php //タグシェアボタン
     get_template_part('tmp/tag-sns-share-top'); ?>
 
-    <?php //PR表記大の出力
+    <?php //PR表記（大）の出力
     if (is_large_pr_labels_visible()) {
       generate_large_pr_label_tag();
     } ?>
