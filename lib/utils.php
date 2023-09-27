@@ -1365,10 +1365,27 @@ function is_admin_post_php_page(){
 }
 endif;
 
+//テーマ設定テキストテンプレートページか
+if ( !function_exists( 'is_admin_theme_func_text_php_page' ) ):
+function is_admin_theme_func_text_php_page(){
+  global $pagenow;
+  $is_func_text = isset($_GET['page']) && $_GET['page'] == 'theme-func-text';
+  return $pagenow == 'admin.php' && $is_func_text;
+}
+endif;
+
+//カテゴリ・タグ・カスタム分類編集ページか
+if ( !function_exists( 'is_admin_term_php_page' ) ):
+function is_admin_term_php_page(){
+  global $pagenow;
+  return $pagenow == 'term.php';
+}
+endif;
+
 //投稿・新規作成ページかどうか
 if ( !function_exists( 'is_admin_post_page' ) ):
 function is_admin_post_page(){
-  return is_admin_post_new_php_page() || is_admin_post_php_page();
+  return is_admin_post_new_php_page() || is_admin_post_php_page() || is_admin_theme_func_text_php_page() || is_admin_term_php_page();
 }
 endif;
 
