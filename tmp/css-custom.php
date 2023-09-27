@@ -346,7 +346,8 @@ if (get_main_column_width()): ?>
 <?php //パディング
 if (get_main_column_padding()): ?>
 .main{
-  padding: 20px <?php echo get_main_column_padding(); ?>px;
+  padding-left: <?php echo get_main_column_padding(); ?>px;
+  padding-right: <?php echo get_main_column_padding(); ?>px;
 }
 <?php endif ?>
 <?php //枠線の幅
@@ -375,7 +376,8 @@ if (get_sidebar_width()): ?>
 <?php //パディング
 if (get_sidebar_padding()): ?>
 .sidebar{
-  padding: 19px <?php echo get_sidebar_padding(); ?>px;
+  padding-left: <?php echo get_sidebar_padding(); ?>px;
+  padding-right: <?php echo get_sidebar_padding(); ?>px;
 }
 <?php endif ?>
 <?php //枠線の幅
