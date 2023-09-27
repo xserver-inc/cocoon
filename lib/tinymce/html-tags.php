@@ -7,10 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_admin_post_page()) {
-  add_action('admin_init', 'add_html_tags_dropdown');
-  add_action('admin_head', 'generate_html_tags_is');
-}
+add_action('admin_init', 'add_html_tags_dropdown');
+add_action('admin_head', 'generate_html_tags_is');
 
 if ( !function_exists( 'add_html_tags_dropdown' ) ):
 function add_html_tags_dropdown(){

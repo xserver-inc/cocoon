@@ -7,13 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-
-if (is_admin_post_page()) {
-  add_filter( 'mce_buttons_2', 'add_insert_html_button' );
-  add_filter( 'mce_external_plugins', 'add_insert_html_button_plugin' );
-}
-
 // ビジュアルエディタにHTMLを直挿入するためのボタンを追加
+add_filter( 'mce_buttons_2', 'add_insert_html_button' );
 if ( !function_exists( 'add_insert_html_button' ) ):
 function add_insert_html_button( $buttons ) {
   $buttons[] = 'button_insert_html';
@@ -22,6 +17,7 @@ function add_insert_html_button( $buttons ) {
 endif;
 
 //ビジュアルエディターにHTML挿入ボタン動作を行うJavaScriptを追加する
+add_filter( 'mce_external_plugins', 'add_insert_html_button_plugin' );
 if ( !function_exists( 'add_insert_html_button_plugin' ) ):
 function add_insert_html_button_plugin( $plugin_array ) {
   $plugin_array['custom_button_script'] =  get_template_directory_uri() . "/js/button-insert-html.js";

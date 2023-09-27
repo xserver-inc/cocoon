@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //テーブル内にレコードが存在するとき
-if (!is_speech_balloons_record_empty() && is_admin_post_page()) {
+if (!is_speech_balloons_record_empty()) {
   add_action('admin_init', 'add_speech_balloons_dropdown');
   add_action('admin_head', 'generate_speech_balloons_js');
 }
