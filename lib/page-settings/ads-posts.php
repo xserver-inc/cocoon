@@ -128,6 +128,10 @@ update_theme_option(OP_AD_SHORTCODE_LABEL_VISIBLE);
 update_theme_option(OP_PR_LABEL_SINGLE_VISIBLE);
 //固定ページにPR表記表示
 update_theme_option(OP_PR_LABEL_PAGE_VISIBLE);
+//カテゴリーページにPR表記表示
+update_theme_option(OP_PR_LABEL_CATEGORY_PAGE_VISIBLE);
+//タグページにPR表記表示
+update_theme_option(OP_PR_LABEL_TAG_PAGE_VISIBLE);
 //PR表記（小）表示
 update_theme_option(OP_PR_LABEL_SMALL_VISIBLE);
 //PR表記（大）表示
@@ -140,6 +144,8 @@ update_theme_option(OP_PR_LABEL_LARGE_CAPTION);
 update_theme_option(OP_PR_LABEL_EXCLUDE_POST_IDS);
 //PR表記除外カテゴリーID
 update_theme_option(OP_PR_LABEL_EXCLUDE_CATEGORY_IDS);
+//PR表記除外タグID
+update_theme_option(OP_PR_LABEL_EXCLUDE_TAG_IDS);
 
 //LinkSwitch有効
 update_theme_option(OP_AD_LINKSWITCH_ENABLE);

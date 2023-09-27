@@ -5,13 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-if ( !defined( 'ABSPATH' ) ) exit;
-
-//PRラベルの表示
-if (is_small_pr_labels_visible()) {
-  generate_small_pr_label_tag(); //PR表記出力
-}
-?>
+if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting" data-clarity-region="article">
   <?php
