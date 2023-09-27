@@ -301,10 +301,10 @@ if ( !function_exists( 'is_pr_labels_visible' ) ):
       (!$post_ids_empty && is_single( $post_ids ))//投稿ページの除外
       || (!$post_ids_empty && is_page( $post_ids )) //個別ページの除外
       //カテゴリーの除外
-      || (!$tag_ids_empty && is_single() && in_tag( $tag_ids )) //投稿ページの除外
-      || (!$tag_ids_empty && is_tag( $tag_ids )) //カテゴリーアーカイブページの除外
+      || (!$tag_ids_empty && is_single() && in_category( $category_ids )) //投稿ページの除外
+      || (!$category_ids_empty && is_category( $category_ids )) //カテゴリーアーカイブページの除外
       //タグの除外
-      || (!$tag_ids_empty && is_single() && in_tag( $tag_ids )) //投稿ページの除外
+      || (!$tag_ids_empty && is_single() && has_tag( $tag_ids )) //投稿ページの除外
       || (!$tag_ids_empty && is_tag( $tag_ids )) //カテゴリーアーカイブページの除外
     );
 
