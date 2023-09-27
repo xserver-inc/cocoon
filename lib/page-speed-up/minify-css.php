@@ -175,11 +175,14 @@ function css_url_to_css_minify_code( $url ) {
     //CSS内容を縮小化して書式を統一化する
     $css = minify_css($css);
 
-    //urlにシングルコーテーションやダブルコーテーションが含まれている場合は削除
-    $css = preg_replace('{url\([\'"](.+?)[\'"]\)}', 'url($1)', $css);
+    // //urlにシングルコーテーションやダブルコーテーションが含まれている場合は削除
+    // $css = preg_replace('{url\([\'"](.+?)[\'"]\)}', 'url($1)', $css);
     //url(./xxxxxx)をurl(xxxxxx)に統一化
-    $css = str_replace('url(./', 'url(', $css);
-    $css = str_replace('url(/', 'url(', $css);
+    $searches = ['url(./', 'url(/','url("./', 'url("/', "url('./", "url('/"];
+    $replases = ['url(',   'url(', 'url("',   'url("',  "url('",   "url('"];
+    $css = str_replace($searches, $replases, $css);
+    // $css = str_replace('url(./', 'url(', $css);
+    // $css = str_replace('url(/', 'url(', $css);
 
     $pattern = '{url\((.+?)\)}i';
     $subject = $css;
