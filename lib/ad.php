@@ -324,12 +324,15 @@ if ( !function_exists( 'is_pr_labels_visible' ) ):
       && is_pr_label_small_visible() //PR表記小が有効
       &&
       (
-        (is_pr_label_single_visible() && is_single() && is_the_page_pr_label_type_default()) //投稿ページ
-        || (is_pr_label_page_visible() && is_page() && is_the_page_pr_label_type_default()) //固定ページ
+        (is_pr_label_single_visible() && is_single()) //投稿ページ
+        || (is_pr_label_page_visible() && is_page()) //固定ページ
+        // (is_pr_label_single_visible() && is_single() && is_the_page_pr_label_type_default()) //投稿ページ
+        // || (is_pr_label_page_visible() && is_page() && is_the_page_pr_label_type_default()) //固定ページ
         || (is_pr_label_category_page_visible() && is_category()) //カテゴリーページ
         || (is_pr_label_tag_page_visible() && is_tag()) //タグページ
       )
-      || (is_the_page_pr_labels_visible() && is_singular()) //記事で表示設定をしている場合ファーム条件で表示
+      && is_the_page_pr_labels_visible(); //ページで除外していない場合
+      // || (is_the_page_pr_labels_visible() && is_singular()) //記事で表示設定をしている場合ファーム条件で表示
     ;
   }
   endif;
@@ -342,12 +345,14 @@ if ( !function_exists( 'is_pr_labels_visible' ) ):
       && is_pr_label_large_visible() //PR表記小が有効
       &&
       (
-        (is_pr_label_single_visible() && is_single() && is_the_page_pr_label_type_default()) //投稿ページ
-        || (is_pr_label_page_visible() && is_page() && is_the_page_pr_label_type_default()) //固定ページ
+        (is_pr_label_single_visible() && is_single()) //投稿ページ
+        || (is_pr_label_page_visible() && is_page()) //固定ページ
+        // (is_pr_label_single_visible() && is_single() && is_the_page_pr_label_type_default()) //投稿ページ
+        // || (is_pr_label_page_visible() && is_page() && is_the_page_pr_label_type_default()) //固定ページ
         || (is_pr_label_category_page_visible() && is_category()) //カテゴリーページ
         || (is_pr_label_tag_page_visible() && is_tag()) //タグページ
       )
-      || (is_the_page_pr_labels_visible() && is_singular()) //記事で表示設定をしている場合ファーム条件で表示
+      // || (is_the_page_pr_labels_visible() && is_singular()) //記事で表示設定をしている場合ファーム条件で表示
     ;
 
   }
