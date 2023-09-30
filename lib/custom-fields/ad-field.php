@@ -147,7 +147,7 @@ endif;
 //PRラベルタイプ
 if ( !function_exists( 'get_the_pr_label_type' ) ):
 function get_the_pr_label_type(){
-  $type = trim(get_post_meta(get_the_ID(), 'the_pr_label_type', 'defalt'));
+  $type = trim(get_post_meta(get_the_ID(), 'the_pr_label_type', true));
   //旧オプションの値を取得して有効の場合は無効にして上書き
   $pr_labels_novisible = is_the_page_pr_labels_novisible();
   if ($pr_labels_novisible) {
