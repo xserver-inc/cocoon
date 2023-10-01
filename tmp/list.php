@@ -33,13 +33,6 @@ if ( is_category() ){
   get_template_part('tmp/list-title');
 }
 
-//PR表記（大）の出力
-if ((is_category() || is_tag() || is_tax()) && !is_paged()) {
-  if (is_large_pr_labels_visible()) {
-    generate_large_pr_label_tag();
-  }
-}
-
 ////////////////////////////
 //インデックストップ広告
 ////////////////////////////
