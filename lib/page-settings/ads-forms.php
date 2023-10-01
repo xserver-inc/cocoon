@@ -348,7 +348,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <td>
           <?php
           generate_hierarchical_category_check_list( 0, OP_PR_LABEL_EXCLUDE_CATEGORY_IDS, get_pr_label_exclude_category_ids(), 300 );
-          generate_tips_tag(__( '「PR表記」を非表示にするカテゴリーを選択してください。', THEME_NAME ));
+          generate_tips_tag(__( '「PR表記」を非表示にするカテゴリーを選択してください。', THEME_NAME ).__( '除外したカテゴリーに属する投稿ページもまとめて非表示になります。', THEME_NAME ));
           ?>
         </td>
       </tr>
@@ -362,7 +362,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <td>
           <?php
           generate_textbox_tag(OP_PR_LABEL_EXCLUDE_TAG_IDS, get_pr_label_exclude_tag_ids(), __( '例：111,222,3333', THEME_NAME ));
-          generate_tips_tag(__( '「PR表記」を非表示にするタグページのIDを,（カンマ）区切りで指定してください。', THEME_NAME ));
+          generate_tips_tag(__( '「PR表記」を非表示にするタグページのIDを,（カンマ）区切りで指定してください。', THEME_NAME ).__( '除外したタグに属する投稿ページもまとめて非表示になります。', THEME_NAME ));
           ?>
         </td>
       </tr>
