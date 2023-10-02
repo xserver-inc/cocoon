@@ -37,16 +37,18 @@ require_once abspath(__FILE__).'related-entries.php';   //関連記事関係の�
 require_once abspath(__FILE__).'walkers.php';  //Walker_Nav_Menuまとめ
 require_once abspath(__FILE__).'plugins.php';   //プラグイン関係の関数
 //CSS・JavaScript縮小化ライブラリ
-$path = get_template_directory() . '/plugins/minify';
-require_once $path . '/minify-master/src/Minify.php';
-require_once $path . '/minify-master/src/CSS.php';
-require_once $path . '/minify-master/src/JS.php';
-require_once $path . '/minify-master/src/Exception.php';
-require_once $path . '/minify-master/src/Exceptions/BasicException.php';
-require_once $path . '/minify-master/src/Exceptions/FileImportException.php';
-require_once $path . '/minify-master/src/Exceptions/IOException.php';
-require_once $path . '/path-converter-master/src/ConverterInterface.php';
-require_once $path . '/path-converter-master/src/Converter.php';
+if (!class_exists('MatthiasMullie\Minify\Minify')) {
+  $path = get_template_directory() . '/plugins/minify';
+  require_once $path . '/minify-master/src/Minify.php';
+  require_once $path . '/minify-master/src/CSS.php';
+  require_once $path . '/minify-master/src/JS.php';
+  require_once $path . '/minify-master/src/Exception.php';
+  require_once $path . '/minify-master/src/Exceptions/BasicException.php';
+  require_once $path . '/minify-master/src/Exceptions/FileImportException.php';
+  require_once $path . '/minify-master/src/Exceptions/IOException.php';
+  require_once $path . '/path-converter-master/src/ConverterInterface.php';
+  require_once $path . '/path-converter-master/src/Converter.php';
+}
 require_once abspath(__FILE__).'php-html-css-js-minifier-new.php'; //HTML・CSS・JavaScript縮小化ライブラリ
 require_once abspath(__FILE__).'page-settings/all-funcs.php';        //全体設定関数
 require_once abspath(__FILE__).'page-settings/header-funcs.php';     //ヘッダー設定関数
