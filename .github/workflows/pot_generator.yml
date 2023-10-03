@@ -19,14 +19,18 @@ jobs:
         sudo mv wp-cli.phar /usr/bin/wp
 
         # Regenerate POT file
-        wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --exclude="languages/*,plugins/*,blocks/dist/*,node_modules/*" --skip-audit --ignore-domain
-        
+        # wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --exclude="languages/*,plugins/*,blocks/dist/*,node_modules/*" --skip-audit
+        wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --include="blocks/src/*,lib/*,functions.php,comments.php,searchform.php" --skip-audit --ignore-domain
+
         git config user.name "GitHub Action"
         git config user.email "github.action@noreply.com"
-        
+
         git add $SAVE_FULL_PATH
-        git commit -m "POT Regenerated"
-        git push
+        DIFF_COUNT=$(git diff --cached --numstat | wc -l)
+        if [ $DIFF_COUNT -ne 0 ]; then
+          git commit -m "POT Regenerated"
+          git push
+        fi
       env:
         SAVE_DIR: 'languages'
         DOMAIN: 'cocoon'

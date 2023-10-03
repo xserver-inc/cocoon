@@ -22,6 +22,7 @@ export default function save( { attributes } ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    width,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -64,6 +65,8 @@ export default function save( { attributes } ) {
           [ backgroundClass ]: backgroundClass,
           [ borderClass ]: borderClass,
           [ fontSizeClass ]: fontSizeClass,
+          [ 'has-custom-width' ]: width,
+          [ `cocoon-block-button__width-${ width }` ]: width,
         } ) }
         target={ target }
         rel="noopener"

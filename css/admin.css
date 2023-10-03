@@ -1023,7 +1023,7 @@ body.wp-admin {
 }
 .admin-settings .demo .main {
   width: 860px;
-  padding: 20px 29px;
+  padding: 36px 29px;
   border: 1px solid transparent;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
@@ -1498,10 +1498,32 @@ body.wp-admin {
   color: var(--cocoon-white-color);
   background-color: rgba(51, 51, 51, 0.7);
   padding: 1px 5px;
-  max-width: 80%;
+  max-width: 70%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.admin-settings .demo .pr-label-s {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  font-size: 12px;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px 12px;
+  border-radius: var(--cocoon-badge-border-radius);
+}
+.admin-settings .demo .pr-label-l {
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  font-size: .8em;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  text-align: center;
+  border-radius: var(--cocoon-badge-border-radius);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .admin-settings .demo .entry-card-content {
   margin-left: 330px;
@@ -2112,8 +2134,8 @@ body.wp-admin {
   background-color: var(--cocoon-xxx-thin-color);
   border: 1px solid var(--cocoon-basic-border-color);
 }
-.admin-settings .demo .no-post-date .post-date,
-.admin-settings .demo .no-post-update .post-update,
+.admin-settings .demo .no-post-date .article-header .post-date,
+.admin-settings .demo .no-post-update .article-header .post-update,
 .admin-settings .demo .no-post-author .author-info {
   display: none;
 }
@@ -3652,6 +3674,36 @@ body.wp-admin {
 .admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
 }
+.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a {
+  margin: 0;
+}
+.admin-settings .demo .btn.cocoon-block-button__width-25, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-25 {
+  width: 25%;
+}
+.admin-settings .demo .btn.cocoon-block-button__width-50, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-50 {
+  width: 50%;
+}
+.admin-settings .demo .btn.cocoon-block-button__width-75, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-75 {
+  width: 75%;
+}
+.admin-settings .demo .btn.cocoon-block-button__width-100, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-100 {
+  width: 100%;
+}
+.admin-settings .demo .btn-wrap {
+  margin: 0;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-25 a {
+  width: 25%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-50 a {
+  width: 50%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-75 a {
+  width: 75%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-100 a {
+  width: 100%;
+}
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before,
 .admin-settings .demo .btn:after,
 .admin-settings .demo .ranking-item-link-buttons a:after,
@@ -3680,6 +3732,19 @@ body.wp-admin {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+.admin-settings .demo .alignleft .btn-l.has-custom-width, .admin-settings .demo .alignleft .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignleft a.has-custom-width,
+.admin-settings .demo .alignleft.btn-wrap-l.has-custom-width a {
+  margin-right: auto;
+}
+.admin-settings .demo .aligncenter .btn-l.has-custom-width, .admin-settings .demo .aligncenter .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .aligncenter a.has-custom-width,
+.admin-settings .demo .aligncenter.btn-wrap-l.has-custom-width a {
+  margin-left: auto;
+  margin-right: auto;
+}
+.admin-settings .demo .alignright .btn-l.has-custom-width, .admin-settings .demo .alignright .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignright a.has-custom-width,
+.admin-settings .demo .alignright.btn-wrap-l.has-custom-width a {
+  margin-left: auto;
 }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
 .admin-settings .demo .btn-wrap > a:hover {
@@ -8912,7 +8977,7 @@ body.wp-admin {
 }
 .admin-settings .demo .main {
   width: 860px;
-  padding: 20px 29px;
+  padding: 36px 29px;
   border: 1px solid transparent;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
@@ -9387,10 +9452,32 @@ body.wp-admin {
   color: var(--cocoon-white-color);
   background-color: rgba(51, 51, 51, 0.7);
   padding: 1px 5px;
-  max-width: 80%;
+  max-width: 70%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.admin-settings .demo .pr-label-s {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  font-size: 12px;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px 12px;
+  border-radius: var(--cocoon-badge-border-radius);
+}
+.admin-settings .demo .pr-label-l {
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  font-size: .8em;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  text-align: center;
+  border-radius: var(--cocoon-badge-border-radius);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .admin-settings .demo .entry-card-content {
   margin-left: 330px;
@@ -10001,8 +10088,8 @@ body.wp-admin {
   background-color: var(--cocoon-xxx-thin-color);
   border: 1px solid var(--cocoon-basic-border-color);
 }
-.admin-settings .demo .no-post-date .post-date,
-.admin-settings .demo .no-post-update .post-update,
+.admin-settings .demo .no-post-date .article-header .post-date,
+.admin-settings .demo .no-post-update .article-header .post-update,
 .admin-settings .demo .no-post-author .author-info {
   display: none;
 }
@@ -11541,6 +11628,36 @@ body.wp-admin {
 .admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
 }
+.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a {
+  margin: 0;
+}
+.admin-settings .demo .btn.cocoon-block-button__width-25, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-25 {
+  width: 25%;
+}
+.admin-settings .demo .btn.cocoon-block-button__width-50, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-50 {
+  width: 50%;
+}
+.admin-settings .demo .btn.cocoon-block-button__width-75, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-75 {
+  width: 75%;
+}
+.admin-settings .demo .btn.cocoon-block-button__width-100, .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-100 {
+  width: 100%;
+}
+.admin-settings .demo .btn-wrap {
+  margin: 0;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-25 a {
+  width: 25%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-50 a {
+  width: 50%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-75 a {
+  width: 75%;
+}
+.admin-settings .demo .btn-wrap.cocoon-block-button__width-100 a {
+  width: 100%;
+}
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before,
 .admin-settings .demo .btn:after,
 .admin-settings .demo .ranking-item-link-buttons a:after,
@@ -11569,6 +11686,19 @@ body.wp-admin {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+.admin-settings .demo .alignleft .btn-l.has-custom-width, .admin-settings .demo .alignleft .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignleft a.has-custom-width,
+.admin-settings .demo .alignleft.btn-wrap-l.has-custom-width a {
+  margin-right: auto;
+}
+.admin-settings .demo .aligncenter .btn-l.has-custom-width, .admin-settings .demo .aligncenter .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .aligncenter a.has-custom-width,
+.admin-settings .demo .aligncenter.btn-wrap-l.has-custom-width a {
+  margin-left: auto;
+  margin-right: auto;
+}
+.admin-settings .demo .alignright .btn-l.has-custom-width, .admin-settings .demo .alignright .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .alignright a.has-custom-width,
+.admin-settings .demo .alignright.btn-wrap-l.has-custom-width a {
+  margin-left: auto;
 }
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
 .admin-settings .demo .btn-wrap > a:hover {
@@ -17711,9 +17841,13 @@ body.wp-admin {
   }
   .admin-settings .demo main.main,
   .admin-settings .demo div.sidebar {
-    padding: 16px;
-    margin: 10px 0;
+    padding: 32px 16px;
+    margin: 12px 0;
     border-width: 0;
+  }
+  .admin-settings .demo .pr-label-s {
+    left: 6px;
+    padding: 1px 8px;
   }
   .admin-settings .demo .article ul,
   .admin-settings .demo .article ol {
@@ -20330,6 +20464,36 @@ textarea[name="the_page_memo"] {
 .components-popover__content .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
 }
+.components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a {
+  margin: 0;
+}
+.components-popover__content .btn.cocoon-block-button__width-25, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-25, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a.cocoon-block-button__width-25 {
+  width: 25%;
+}
+.components-popover__content .btn.cocoon-block-button__width-50, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-50, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a.cocoon-block-button__width-50 {
+  width: 50%;
+}
+.components-popover__content .btn.cocoon-block-button__width-75, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-75, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a.cocoon-block-button__width-75 {
+  width: 75%;
+}
+.components-popover__content .btn.cocoon-block-button__width-100, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a.cocoon-block-button__width-100, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a.cocoon-block-button__width-100 {
+  width: 100%;
+}
+.components-popover__content .btn-wrap {
+  margin: 0;
+}
+.components-popover__content .btn-wrap.cocoon-block-button__width-25 a {
+  width: 25%;
+}
+.components-popover__content .btn-wrap.cocoon-block-button__width-50 a {
+  width: 50%;
+}
+.components-popover__content .btn-wrap.cocoon-block-button__width-75 a {
+  width: 75%;
+}
+.components-popover__content .btn-wrap.cocoon-block-button__width-100 a {
+  width: 100%;
+}
 .components-popover__content .btn:before, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:before,
 .components-popover__content .btn:after,
 .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:after,
@@ -20359,6 +20523,19 @@ textarea[name="the_page_memo"] {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+.components-popover__content .alignleft .btn-l.has-custom-width, .components-popover__content .alignleft .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .alignleft a.has-custom-width,
+.components-popover__content .alignleft.btn-wrap-l.has-custom-width a {
+  margin-right: auto;
+}
+.components-popover__content .aligncenter .btn-l.has-custom-width, .components-popover__content .aligncenter .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .aligncenter a.has-custom-width,
+.components-popover__content .aligncenter.btn-wrap-l.has-custom-width a {
+  margin-left: auto;
+  margin-right: auto;
+}
+.components-popover__content .alignright .btn-l.has-custom-width, .components-popover__content .alignright .admin-settings .demo .ranking-item-link-buttons a.has-custom-width, .admin-settings .demo .ranking-item-link-buttons .components-popover__content .alignright a.has-custom-width,
+.components-popover__content .alignright.btn-wrap-l.has-custom-width a {
+  margin-left: auto;
 }
 .components-popover__content .btn:hover, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover,
 .components-popover__content .btn-wrap > a:hover {

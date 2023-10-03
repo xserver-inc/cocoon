@@ -1,4 +1,5 @@
 import { THEME_NAME, BUTTON_BLOCK } from '../../helpers';
+import { WidthPanel } from '../../components';
 import { __ } from '@wordpress/i18n';
 import {
   InspectorControls,
@@ -43,6 +44,7 @@ export function ButtonWrapEdit( props ) {
     customBackgroundColor,
     customTextColor,
     customBorderColor,
+    width,
   } = attributes;
 
   const classes = classnames( className, {
@@ -59,6 +61,8 @@ export function ButtonWrapEdit( props ) {
     [ textColor.class ]: textColor.class,
     [ borderColor.class ]: borderColor.class,
     [ fontSize.class ]: fontSize.class,
+    [ 'has-custom-width' ]: width,
+    [ `cocoon-block-button__width-${ width }` ]: width,
   } );
 
   const styles = {
@@ -115,6 +119,8 @@ export function ButtonWrapEdit( props ) {
             onChange={ ( value ) => setAttributes( { isShine: value } ) }
           />
         </PanelBody>
+
+        <WidthPanel selectedWidth={ width } setAttributes={ setAttributes } />
 
         <PanelBody
           title={ __( '文字サイズ', THEME_NAME ) }

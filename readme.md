@@ -141,3 +141,5 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 [mtdkei](https://github.com/mtdkei)
 
 [HaruInoue](https://github.com/HaruInoue)
+
+[Chigusa](https://github.com/chigusa-web)

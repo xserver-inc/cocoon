@@ -78,14 +78,6 @@ function get_the_nolink_category($id = null, $is_visible = true){
   if ($main_cat_id && in_category($main_cat_id, $id)) {
     $category = get_category($main_cat_id);
   }
-  // var_dump($id);
-  // var_dump($main_cat_id);
-  // var_dump($category->cat_ID);
-
-  // //メインカテゴリーがない場合は先頭のカテゴリーを適用
-  // if ( !$category ) {
-  //   $category = $categories[0];
-  // }
 
   //カテゴリーラベル制御用のフック
   $category = apply_filters('get_the_nolink_category', $category, $categories);
@@ -101,6 +93,26 @@ if ( !function_exists( 'the_nolink_category' ) ):
 function the_nolink_category($id = null, $is_visible = true){
   $is_visible = apply_filters( 'is_category_label_visible', $is_visible );
   echo get_the_nolink_category($id, $is_visible);
+}
+endif;
+
+
+//PR表記小の出力
+if ( !function_exists( 'generate_small_pr_label_tag' ) ):
+function generate_small_pr_label_tag(){
+  if (apply_filters( 'is_small_pr_label_visible', true )) {
+    echo '<span class="pr-label pr-label-s">'.get_pr_label_small_caption().'</span>'; //PR表記出力
+  }
+}
+endif;
+
+
+//PR表記（大）の出力
+if ( !function_exists( 'generate_large_pr_label_tag' ) ):
+function generate_large_pr_label_tag(){
+  if (apply_filters( 'is_large_pr_label_visible', true )) {
+    echo '<div class="pr-label pr-label-l">'.get_pr_label_large_caption().'</div>'; //PR表記出力
+  }
 }
 endif;
 
@@ -1353,10 +1365,27 @@ function is_admin_post_php_page(){
 }
 endif;
 
+//テーマ設定テキストテンプレートページか
+if ( !function_exists( 'is_admin_theme_func_text_php_page' ) ):
+function is_admin_theme_func_text_php_page(){
+  global $pagenow;
+  $is_func_text = isset($_GET['page']) && $_GET['page'] == 'theme-func-text';
+  return $pagenow == 'admin.php' && $is_func_text;
+}
+endif;
+
+//カテゴリ・タグ・カスタム分類編集ページか
+if ( !function_exists( 'is_admin_term_php_page' ) ):
+function is_admin_term_php_page(){
+  global $pagenow;
+  return $pagenow == 'term.php';
+}
+endif;
+
 //投稿・新規作成ページかどうか
 if ( !function_exists( 'is_admin_post_page' ) ):
 function is_admin_post_page(){
-  return is_admin_post_new_php_page() || is_admin_post_php_page();
+  return is_admin_post_new_php_page() || is_admin_post_php_page() || is_admin_theme_func_text_php_page() || is_admin_term_php_page();
 }
 endif;
 

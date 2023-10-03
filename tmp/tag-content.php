@@ -26,6 +26,12 @@ if ($eye_catch_url || $content): ?>
     <?php endif ?>
     <?php //タグシェアボタン
     cocoon_template_part('tmp/tag-sns-share-top'); ?>
+
+    <?php //PR表記（大）の出力
+    if (is_large_pr_labels_visible()) {
+      generate_large_pr_label_tag();
+    } ?>
+
   </header>
   <?php if ($content): ?>
     <div class="tag-page-content entry-content">
@@ -37,5 +43,14 @@ if ($eye_catch_url || $content): ?>
   <?php //タグタイトル
   cocoon_template_part('tmp/list-title');
   //タグシェアボタン
+<<<<<<< HEAD
   cocoon_template_part('tmp/tag-sns-share-top'); ?>
+=======
+  get_template_part('tmp/tag-sns-share-top'); ?>
+
+  <?php //PR表記（大）の出力
+  if (is_large_pr_labels_visible()) {
+    generate_large_pr_label_tag();
+  } ?>
+>>>>>>> master
 <?php endif ?>

@@ -1,0 +1,41 @@
+name: Convert PO to JSON
+on:
+  workflow_dispatch:
+  push:
+    branches: translation_master
+    paths:
+      - 'languages/*.po'
+
+jobs:
+  WP_PO_TO_JSON:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      id: setup_node_id
+      with:
+        node-version: 14
+        cache: npm
+    - name: install po2json
+      run: npm install po2json --save
+    - name: run po2json
+      shell: bash
+      run: |
+        THEME_ROOT="/home/runner/work/cocoon/cocoon"
+        LANGUAGES_PATH="$THEME_ROOT/languages"
+        cd $LANGUAGES_PATH
+        ls *.po | sed -r 's/.po//g' | xargs -I LOCALE ${THEME_ROOT}/node_modules/po2json/bin/po2json -f jed1.x ${LANGUAGES_PATH}/LOCALE.po ${LANGUAGES_PATH}/cocoon-LOCALE-cocoon-blocks-js.json
+
+        git config user.name "GitHub Action"
+        git config user.email "github.action@noreply.com"
+
+        git pull
+
+        git add *-cocoon-blocks-js.json
+        DIFF_COUNT=$(git diff --cached --numstat | wc -l)
+        if [ $DIFF_COUNT -ne 0 ]; then
+          git commit -m "PO JSON Regenerated"
+          git push
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

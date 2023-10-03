@@ -108,6 +108,11 @@ define('AD_FORMAT_SINGLE_RECTANGLE', 'single-rectangle'); //シングルレク�
 define('AD_FORMAT_DABBLE_RECTANGLE', 'dabble-rectangle'); //ダブルレクタングル
 //広告ユニット以外
 define('DATA_AD_FORMAT_FLUID', 'fluid'); //記事中広告
+
+//PR表記
+define('PR_LABEL_SMALL_CAPTION', __( 'PR', THEME_NAME ));
+define('PR_LABEL_LARGE_CAPTION', __( '記事内に広告が含まれています。', THEME_NAME ));
+
 //ナビゲーションメニュー
 define('NAV_MENU_HEADER', 'navi-header');
 define('NAV_MENU_HEADER_MOBILE', 'navi-mobile');
@@ -228,6 +233,9 @@ define('NO_IMAGE_120', get_template_directory_uri().'/images/no-image-120.png');
 define('NO_IMAGE_150', get_template_directory_uri().'/images/no-image-150.png');
 define('NO_IMAGE_LARGE', get_template_directory_uri().'/images/no-image-large.png');
 define('NO_IMAGE_RSS', get_template_directory_uri().'/images/no-image-rss.png');
+
+//画像と判別するファイル拡張子（正規表現用）
+define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp');
 
 ///////////////////////////////////////
 // キャッシュ

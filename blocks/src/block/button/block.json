@@ -52,6 +52,9 @@
     },
     "fontSize": {
       "type": "string"
+    },
+    "width": {
+      "type": "string"
     }
   },
   "example": {

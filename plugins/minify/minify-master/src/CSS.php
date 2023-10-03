@@ -440,8 +440,8 @@ class CSS extends Minify
                 // attempting to interpret GET-params makes no sense, so let's discard them for awhile
                 $params = strrchr($url, '?');
                 $url = $params ? substr($url, 0, -strlen($params)) : $url;
-                //#パラメーターを外す
-                $params = preg_replace('/#.*?(&|$)/', '', $params);
+                //URLに含まれる#パラメーターを除外（#xxxのようなID指定のみの場合は除外しない）
+                $params = preg_replace('/(?<!^)#.*?(&|$)/', '', $params);
 
                 // fix relative url
                 $url = $converter->convert($url);

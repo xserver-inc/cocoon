@@ -426,7 +426,7 @@ hr {
 
 .main {
   width: 860px;
-  padding: 20px 29px;
+  padding: 36px 29px;
   border: 1px solid transparent;
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
@@ -993,10 +993,34 @@ img.emoji {
   color: var(--cocoon-white-color);
   background-color: rgba(51, 51, 51, 0.7);
   padding: 1px 5px;
-  max-width: 80%;
+  max-width: 70%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.pr-label-s {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  font-size: 12px;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px 12px;
+  border-radius: var(--cocoon-badge-border-radius);
+}
+
+.pr-label-l {
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  font-size: .8em;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  text-align: center;
+  border-radius: var(--cocoon-badge-border-radius);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .entry-card-content {
@@ -1723,8 +1747,8 @@ span.internal-icon {
   border: 1px solid var(--cocoon-basic-border-color);
 }
 
-.no-post-date .post-date,
-.no-post-update .post-update,
+.no-post-date .article-header .post-date,
+.no-post-update .article-header .post-update,
 .no-post-author .author-info {
   display: none;
 }
@@ -3548,6 +3572,38 @@ div.search-form {
   padding: 7px 13px;
 }
 
+.btn, .ranking-item-link-buttons a {
+  margin: 0;
+}
+.btn.cocoon-block-button__width-25, .ranking-item-link-buttons a.cocoon-block-button__width-25 {
+  width: 25%;
+}
+.btn.cocoon-block-button__width-50, .ranking-item-link-buttons a.cocoon-block-button__width-50 {
+  width: 50%;
+}
+.btn.cocoon-block-button__width-75, .ranking-item-link-buttons a.cocoon-block-button__width-75 {
+  width: 75%;
+}
+.btn.cocoon-block-button__width-100, .ranking-item-link-buttons a.cocoon-block-button__width-100 {
+  width: 100%;
+}
+
+.btn-wrap {
+  margin: 0;
+}
+.btn-wrap.cocoon-block-button__width-25 a {
+  width: 25%;
+}
+.btn-wrap.cocoon-block-button__width-50 a {
+  width: 50%;
+}
+.btn-wrap.cocoon-block-button__width-75 a {
+  width: 75%;
+}
+.btn-wrap.cocoon-block-button__width-100 a {
+  width: 100%;
+}
+
 .btn:before, .ranking-item-link-buttons a:before,
 .btn:after,
 .ranking-item-link-buttons a:after,
@@ -3578,6 +3634,22 @@ div.search-form {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+
+.alignleft .btn-l.has-custom-width, .alignleft .ranking-item-link-buttons a.has-custom-width, .ranking-item-link-buttons .alignleft a.has-custom-width,
+.alignleft.btn-wrap-l.has-custom-width a {
+  margin-right: auto;
+}
+
+.aligncenter .btn-l.has-custom-width, .aligncenter .ranking-item-link-buttons a.has-custom-width, .ranking-item-link-buttons .aligncenter a.has-custom-width,
+.aligncenter.btn-wrap-l.has-custom-width a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignright .btn-l.has-custom-width, .alignright .ranking-item-link-buttons a.has-custom-width, .ranking-item-link-buttons .alignright a.has-custom-width,
+.alignright.btn-wrap-l.has-custom-width a {
+  margin-left: auto;
 }
 
 .btn:hover, .ranking-item-link-buttons a:hover,
@@ -9661,9 +9733,14 @@ pre {
 
   main.main,
   div.sidebar {
-    padding: 16px;
-    margin: 10px 0;
+    padding: 32px 16px;
+    margin: 12px 0;
     border-width: 0;
+  }
+
+  .pr-label-s {
+    left: 6px;
+    padding: 1px 8px;
   }
 
   .article ul,

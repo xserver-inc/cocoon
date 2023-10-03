@@ -276,3 +276,84 @@ function is_index_middle_ad_visible($count){
   }
 }
 endif;
+
+
+//PR表記が表示可能かどうか
+if ( !function_exists( 'is_pr_labels_visible' ) ):
+  function is_pr_labels_visible(){
+    //投稿・固定ページ除外
+    $tmp_post_ids = get_pr_label_exclude_post_ids();
+    $post_ids = explode(',', $tmp_post_ids);
+    $post_ids_empty = empty($tmp_post_ids);
+
+    //カテゴリーページ除外
+    $category_ids = get_pr_label_exclude_category_ids();
+    $category_ids_empty = empty($category_ids);
+
+    //タグページ除外
+    $tmp_tag_ids = get_pr_label_exclude_tag_ids();
+    $tag_ids = explode(',', $tmp_tag_ids);
+    $tag_ids_empty = empty($tmp_tag_ids);
+
+    //PR表記の除外（いずれかがあてはまれば表示しない）
+    $is_exclude_ids = (
+      //記事の除外
+      (!$post_ids_empty && is_single( $post_ids ))//投稿ページの除外
+      || (!$post_ids_empty && is_page( $post_ids )) //個別ページの除外
+      //カテゴリーの除外
+      || (!$category_ids_empty && is_single() && in_category( $category_ids )) //投稿ページの除外
+      || (!$category_ids_empty && is_category( $category_ids )) //カテゴリーアーカイブページの除外
+      //タグの除外
+      || (!$tag_ids_empty && is_single() && has_tag( $tag_ids )) //投稿ページの除外
+      || (!$tag_ids_empty && is_tag( $tag_ids )) //カテゴリーアーカイブページの除外
+    );
+
+    // _v(is_the_page_pr_labels_visible() && is_singular());
+    return !$is_exclude_ids //除外ページでない場合PR表記を表示
+      && (is_pr_label_single_visible() || is_pr_label_page_visible() || is_pr_label_category_page_visible() || is_pr_label_tag_page_visible()) //投稿・固定・カテゴリー・タグページの場合
+      && (is_pr_label_small_visible() || is_pr_label_large_visible()) //PR表記小・大が有効の場合
+    ;
+  }
+  endif;
+
+
+  //PR表記小が表示可能かどうか
+  if ( !function_exists( 'is_small_pr_labels_visible' ) ):
+  function is_small_pr_labels_visible(){
+    return is_pr_labels_visible() //除外ページでないかどうか
+      && is_pr_label_small_visible() //PR表記小が有効
+      &&
+      (
+        (is_pr_label_single_visible() && is_single()) //投稿ページ
+        || (is_pr_label_page_visible() && is_page()) //固定ページ
+        // (is_pr_label_single_visible() && is_single() && is_the_page_pr_label_type_default()) //投稿ページ
+        // || (is_pr_label_page_visible() && is_page() && is_the_page_pr_label_type_default()) //固定ページ
+        || (is_pr_label_category_page_visible() && is_category()) //カテゴリーページ
+        || (is_pr_label_tag_page_visible() && is_tag()) //タグページ
+      )
+      && is_the_page_pr_labels_visible(); //ページで除外していない場合
+      // || (is_the_page_pr_labels_visible() && is_singular()) //記事で表示設定をしている場合ファーム条件で表示
+    ;
+  }
+  endif;
+
+
+  //PR表記大が表示可能かどうか
+  if ( !function_exists( 'is_large_pr_labels_visible' ) ):
+  function is_large_pr_labels_visible(){
+    return is_pr_labels_visible() //除外ページでないかどうか
+      && is_pr_label_large_visible() //PR表記小が有効
+      &&
+      (
+        (is_pr_label_single_visible() && is_single()) //投稿ページ
+        || (is_pr_label_page_visible() && is_page()) //固定ページ
+        // (is_pr_label_single_visible() && is_single() && is_the_page_pr_label_type_default()) //投稿ページ
+        // || (is_pr_label_page_visible() && is_page() && is_the_page_pr_label_type_default()) //固定ページ
+        || (is_pr_label_category_page_visible() && is_category()) //カテゴリーページ
+        || (is_pr_label_tag_page_visible() && is_tag()) //タグページ
+      )
+      // || (is_the_page_pr_labels_visible() && is_singular()) //記事で表示設定をしている場合ファーム条件で表示
+    ;
+
+  }
+  endif;

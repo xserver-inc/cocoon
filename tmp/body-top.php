@@ -64,3 +64,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <div id="content-in" class="content-in wrap">
 
         <main id="main" class="main<?php echo get_additional_main_classes(); ?>" itemscope itemtype="https://schema.org/Blog">
+
+        <?php
+        //PRラベル（小）の表示
+        if (is_small_pr_labels_visible()) {
+          generate_small_pr_label_tag(); //PR表記出力
+        } ?>

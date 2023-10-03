@@ -43,10 +43,34 @@
   color: var(--cocoon-white-color);
   background-color: $transpalent_black_bgc;
   padding: 1px 5px;
-  max-width: 80%;
+  max-width: 70%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.pr-label-s{
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border: 1px solid $transpalent_black_bgc;
+  font-size: 12px;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px 12px;
+  border-radius: var(--cocoon-badge-border-radius);
+}
+
+.pr-label-l{
+  border: 1px solid $transpalent_black_bgc;
+  font-size: .8em;
+  color: var(--cocoon-text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  text-align: center;
+  border-radius: var(--cocoon-badge-border-radius);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .entry-card-content{
