@@ -234,6 +234,9 @@ define('NO_IMAGE_150', get_template_directory_uri().'/images/no-image-150.png');
 define('NO_IMAGE_LARGE', get_template_directory_uri().'/images/no-image-large.png');
 define('NO_IMAGE_RSS', get_template_directory_uri().'/images/no-image-rss.png');
 
+//画像と判別するファイル拡張子（正規表現用）
+define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp');
+
 ///////////////////////////////////////
 // キャッシュ
 ///////////////////////////////////////

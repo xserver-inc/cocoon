@@ -39,9 +39,12 @@ function add_lightbox_property( $content ) {
   //既に適用させているところは処理しない
   if ( is_lightbox_plugin_exist($content) )
     return $content;
+
+  //画像用の正規表現
+  $img_reg = IMAGE_RECOGNITION_EXTENSIONS_REG;
   //Aタグを正規表現で置換
   $content = preg_replace(
-    '/<a([^>]+?(\.jpe?g|\.png|\.gif)[\'\"][^>]*?)>([\s\w\W\d]+?)<\/a>/i',//Aタグの正規表現
+    '/<a([^>]+?('.$img_reg.')[\'\"][^>]*?)>([\s\w\W\d]+?)<\/a>/i',//Aタグの正規表現
     '<a${1} data-lightbox="image-set">${3}</a>',//置換する
     $content );//投稿本文（置換する文章）
 
@@ -68,7 +71,7 @@ function add_lity_property( $content ) {
     return $content;
 
   //画像用の正規表現
-  $img_reg = '\.jpe?g|\.png|\.gif|\.gif';
+  $img_reg = IMAGE_RECOGNITION_EXTENSIONS_REG;
   //YouTube用の正規表現
   $youtube_reg = '\/\/www\.youtube\.com\/watch\?v=[^"]+';
   //Viemo用の正規表現
@@ -120,7 +123,7 @@ function add_spotlight_property( $content ) {
     return $content;
 
   //画像用の正規表現
-  $img_reg = '\.jpe?g|\.png|\.gif|\.gif';
+  $img_reg = IMAGE_RECOGNITION_EXTENSIONS_REG;
   $res = preg_match_all('/(<a([^>]+?('.$img_reg.')[\'\"][^>]*?)>)([\s\w\W\d]+?)<\/a>/i', $content, $m);
   if ($res && isset($m[1])) {
     //$alls = $m[0];
