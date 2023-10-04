@@ -30,7 +30,7 @@ if ( is_any_sns_follow_buttons_exist()
   <?php endif; ?>
 
   <?php if ( get_the_author_twitter_url($user_id) )://Twitterフォローボタンを表示するか ?>
-    <a href="<?php echo esc_url(get_the_author_twitter_url($user_id)); //TwitterフォローIDの取得?>" class="sns-button follow-button twitter-button twitter-follow-button-sq" target="_blank" title="<?php _e( 'Twitterをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Twitterをフォロー', THEME_NAME ) ?>"><span class="icon-twitter-logo"></span></a>
+    <a href="<?php echo esc_url(get_the_author_twitter_url($user_id)); //TwitterフォローIDの取得?>" class="sns-button follow-button twitter-button twitter-follow-button-sq x-corp-button x-corp-follow-button-sq" target="_blank" title="<?php _e( 'Xをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Xをフォロー', THEME_NAME ) ?>"><span class="icon-x-corp-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_facebook_url($user_id) )://Facebookフォローボタンを表示するか ?>
