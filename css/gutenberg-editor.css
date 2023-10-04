@@ -2397,6 +2397,7 @@ div.search-form {
 
 .button-block {
   float: none;
+  margin: 0;
 }
 .button-block.alignleft {
   text-align: left;

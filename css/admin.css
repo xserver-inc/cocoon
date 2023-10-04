@@ -4391,6 +4391,7 @@ body.wp-admin {
 }
 .admin-settings .demo .button-block {
   float: none;
+  margin: 0;
 }
 .admin-settings .demo .button-block.alignleft {
   text-align: left;
@@ -12101,6 +12102,7 @@ body.wp-admin {
 }
 .admin-settings .demo .button-block {
   float: none;
+  margin: 0;
 }
 .admin-settings .demo .button-block.alignleft {
   text-align: left;
@@ -20703,6 +20705,7 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .button-block {
   float: none;
+  margin: 0;
 }
 .components-popover__content .button-block.alignleft {
   text-align: left;
