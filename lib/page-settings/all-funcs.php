@@ -90,7 +90,14 @@ function is_site_icon_font_font_awesome_4(){
 endif;
 if ( !function_exists( 'is_site_icon_font_font_awesome_5' ) ):
 function is_site_icon_font_font_awesome_5(){
-  return get_site_icon_font() == 'font_awesome_5';
+  return
+   (get_site_icon_font() == 'font_awesome_5')
+    || (
+      //Cocoon設定ページ
+      is_admin_cocoon_settings_page()
+      //スキン制御でFont Awesome 5になっている場合
+      || get_env_info_option_value(OP_SITE_ICON_FONT, 'font_awesome_4') === 'font_awesome_5'
+    );
 }
 endif;
 if ( !function_exists( 'get_site_icon_font_class' ) ):

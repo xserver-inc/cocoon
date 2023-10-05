@@ -1374,6 +1374,15 @@ function is_admin_theme_func_text_php_page(){
 }
 endif;
 
+//Cocoon設定ページか
+if ( !function_exists( 'is_admin_cocoon_settings_page' ) ):
+function is_admin_cocoon_settings_page(){
+  global $pagenow;
+  $is_cocoon_settings = isset($_GET['page']) && $_GET['page'] == 'theme-settings';
+  return $pagenow == 'admin.php' && $is_cocoon_settings;
+}
+endif;
+
 //カテゴリ・タグ・カスタム分類編集ページか
 if ( !function_exists( 'is_admin_term_php_page' ) ):
 function is_admin_term_php_page(){
@@ -3302,10 +3311,9 @@ function is_ios() {
 if ( !function_exists( 'change_fa' ) ):
 function change_fa($buffer){
   if (
-    is_site_icon_font_font_awesome_5() &&
-    preg_match_all('/<([a-z]+ [^>]*?class=")((fa fa-[a-z\-]+)[^"]*?)("[^>]*?)>/i', $buffer, $m)
+    is_site_icon_font_font_awesome_5()
+    && preg_match_all('/<([a-z]+ [^>]*?class=")((fa fa-[a-z\-]+)[^"]*?)("[^>]*?)>/i', $buffer, $m)
   ) {
-    //_v($m);
     $fa4_alls = $m[0];
     $befores = $m[1];
     $classes = $m[2];
