@@ -14,7 +14,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   <div class="sns-share-buttons sns-buttons">
     <?php if ( is_twitter_share_button_visible($option) )://Twitterボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_twitter_share_url()); ?>" class="sns-button share-button twitter-button twitter-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Twitterでシェア', THEME_NAME ) ?>"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><span class="share-count twitter-share-count"><?php echo get_twitter_count(); ?></span></a>
+      <a href="<?php echo esc_url(get_twitter_share_url()); ?>" class="sns-button share-button twitter-button twitter-share-button-sq x-corp-button x-corp-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Xでシェア', THEME_NAME ) ?>"><span class="social-icon icon-x-corp"></span><span class="button-caption"><?php _e( 'X', THEME_NAME ) ?></span><span class="share-count twitter-share-count x-share-count"><?php echo get_twitter_count(); ?></span></a>
     <?php endif; ?>
 
     <?php if ( is_facebook_share_button_visible($option) )://Facebookボタンを表示するか ?>

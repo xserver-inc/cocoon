@@ -23,74 +23,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-tiktok-logo:before {
-  content: "\e906";
+.icon-x-corp-logo:before {
+  content: "\e907";
 }
 .icon-note-logo:before {
   content: "\e905";
 }
-.icon-rakuten-logo:before {
-  content: "\e903";
-}
-.icon-rakuten-room-logo:before {
-  content: "\e904";
-}
-.icon-slack-logo:before {
-  content: "\e900";
-}
-.icon-amp-logo2:before {
-  content: "\e93c";
-}
 .icon-amp-logo:before {
   content: "\e93b";
-}
-.icon-feedly-logo:before {
-  content: "\e92e";
-}
-.icon-flickr-logo:before {
-  content: "\e92f";
-}
-.icon-google-plus-logo:before {
-  content: "\e930";
-}
-.icon-hatebu-logo:before {
-  content: "\e931";
-}
-.icon-line-logo:before {
-  content: "\e935";
-}
-.icon-pinterest-logo:before {
-  content: "\e936";
-}
-.icon-push7-logo:before {
-  content: "\e937";
-}
-.icon-rss-logo:before {
-  content: "\e938";
-}
-.icon-twitter-logo:before {
-  content: "\e939";
-}
-.icon-youtube-logo:before {
-  content: "\e93a";
-}
-.icon-push7:before {
-  content: "\e90e";
-}
-.icon-evernote:before {
-  content: "\e912";
-}
-.icon-feedly:before {
-  content: "\e913";
-}
-.icon-pocket:before {
-  content: "\e914";
-}
-.icon-line:before {
-  content: "\e915";
-}
-.icon-hatena:before {
-  content: "\e916";
 }
 .icon-facebook-logo:before {
   content: "\e92d";
@@ -145,6 +85,75 @@
 }
 .icon-twitch-logo:before {
   content: "\ea9f";
+}
+.icon-x-corp:before {
+  content: "\e917";
+}
+.icon-tiktok-logo:before {
+  content: "\e906";
+}
+.icon-rakuten-logo:before {
+  content: "\e903";
+}
+.icon-rakuten-room-logo:before {
+  content: "\e904";
+}
+.icon-slack-logo:before {
+  content: "\e900";
+}
+.icon-amp-logo2:before {
+  content: "\e93c";
+}
+.icon-feedly-logo:before {
+  content: "\e92e";
+}
+.icon-flickr-logo:before {
+  content: "\e92f";
+}
+.icon-google-plus-logo:before {
+  content: "\e930";
+}
+.icon-hatebu-logo:before {
+  content: "\e931";
+}
+.icon-line-logo:before {
+  content: "\e935";
+}
+.icon-pinterest-logo:before {
+  content: "\e936";
+}
+.icon-push7-logo:before {
+  content: "\e937";
+}
+.icon-rss-logo:before {
+  content: "\e938";
+}
+.icon-twitter-logo:before {
+  content: "\e939";
+}
+.icon-youtube-logo:before {
+  content: "\e93a";
+}
+.icon-push7:before {
+  content: "\e90e";
+}
+.icon-evernote:before {
+  content: "\e912";
+}
+.icon-feedly:before {
+  content: "\e913";
+}
+.icon-pocket:before {
+  content: "\e914";
+}
+.icon-line:before {
+  content: "\e915";
+}
+.icon-hatena:before {
+  content: "\e916";
+}
+.icon-hatena:before {
+  content: "\e916";
 }
 .icon-copy:before {
   content: "\e901";
