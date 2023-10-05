@@ -25,3 +25,15 @@ function get_wp_theme_info($file){
   }
 }
 endif;
+
+//環境情報に出力する値（スキン制御値考慮）
+if ( !function_exists( 'get_env_info_option_value' ) ):
+function get_env_info_option_value($key, $default = 0){
+  $value = get_theme_option($key, $default);
+  if (is_form_skin_option($key)) {
+    global $_FORM_SKIN_OPTIONS;
+    $value = $_FORM_SKIN_OPTIONS[$key];
+  }
+  return $value;
+}
+endif;

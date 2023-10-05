@@ -113,14 +113,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       }
     }
 
+
     //Cocoon設定
-    $all .= __( 'Gutenberg：', THEME_NAME ).intval(is_gutenberg_editor_enable()).PHP_EOL;
-    $all .= __( 'AMP：', THEME_NAME ).intval(is_amp_enable()).PHP_EOL;
-    $all .= __( 'PWA：', THEME_NAME ).intval(is_pwa_enable()).PHP_EOL;
-    $all .= __( 'Font Awesome：', THEME_NAME ).str_replace('font_awesome_', '', get_site_icon_font()).PHP_EOL;
-    $all .= __( 'Auto Post Thumbnail：', THEME_NAME ).intval(is_auto_post_thumbnail_enable()).PHP_EOL;
-    $all .= __( 'Retina：', THEME_NAME ).intval(is_retina_thumbnail_enable()).PHP_EOL;
-    $all .= __( 'ホームイメージ：', THEME_NAME ).get_remove_home_url(get_ogp_home_image_url()).PHP_EOL;
+    $all .= __( 'Gutenberg：', THEME_NAME ).intval(get_env_info_option_value(OP_GUTENBERG_EDITOR_ENABLE, 1)).PHP_EOL;
+    $all .= __( 'AMP：', THEME_NAME ).intval(get_env_info_option_value(OP_AMP_ENABLE)).PHP_EOL;
+    $all .= __( 'PWA：', THEME_NAME ).intval(get_env_info_option_value(OP_PWA_ENABLE)).PHP_EOL;
+    $all .= __( 'Font Awesome：', THEME_NAME ).str_replace('font_awesome_', '', get_env_info_option_value(OP_SITE_ICON_FONT, 'font_awesome_4')).PHP_EOL;
+    $all .= __( 'Auto Post Thumbnail：', THEME_NAME ).intval(get_env_info_option_value(OP_AUTO_POST_THUMBNAIL_ENABLE)).PHP_EOL;
+    $all .= __( 'Retina：', THEME_NAME ).intval(get_env_info_option_value(OP_RETINA_THUMBNAIL_ENABLE)).PHP_EOL;
+    $all .= __( 'ホームイメージ：', THEME_NAME ).get_remove_home_url(get_env_info_option_value(OP_OGP_HOME_IMAGE_URL, OGP_HOME_IMAGE_URL_DEFAULT)).PHP_EOL;
     $all .= $sep;
 
     //高速化設定
