@@ -139,7 +139,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'font_awesome_4' => __( 'Font Awesome 4', THEME_NAME ),
+              SITE_ICON_FONT_DEFAULT => __( 'Font Awesome 4', THEME_NAME ),
               'font_awesome_5' => __( 'Font Awesome 5', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SITE_ICON_FONT, $options, get_site_icon_font());
