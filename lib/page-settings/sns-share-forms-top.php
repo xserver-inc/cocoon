@@ -52,7 +52,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <p><?php _e( '個々のシェアボタンの表示切り替え。', THEME_NAME ) ?></p>
             <ul>
               <li>
-                <?php generate_checkbox_tag(OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE, is_top_twitter_share_button_visible(), __( 'Twitter', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE, is_top_twitter_share_button_visible(), __( 'X（旧Twitter）', THEME_NAME )); ?>
               </li>
               <li>
                 <?php generate_checkbox_tag(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE, is_top_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>

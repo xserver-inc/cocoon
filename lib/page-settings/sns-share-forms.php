@@ -16,11 +16,11 @@ require_once abspath(__FILE__).'sns-share-forms-top.php';
 require_once abspath(__FILE__).'sns-share-forms-bottom.php';
 ?>
 
-<!-- ツイート設定 -->
+<!-- Ｘポスト設定 -->
 <div id="sns-share-twitter" class="postbox">
-  <h2 class="hndle"><?php _e( 'ツイート設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'Ｘポスト設定', THEME_NAME ) ?></h2>
   <div class="inside">
-    <p><?php _e( 'Twitter上でのツイート動作の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'X（旧Twitter）上でのポスト動作の設定です。', THEME_NAME ) ?></p>
     <table class="form-table">
       <tbody>
 
@@ -31,8 +31,8 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_TWITTER_ID_INCLUDE, is_twitter_id_include(), __( 'ツイートにメンションを含める', THEME_NAME ));
-            generate_tips_tag(__( 'シェアされたツイートに著者のTwitter IDを含める。', THEME_NAME ));
+            generate_checkbox_tag( OP_TWITTER_ID_INCLUDE, is_twitter_id_include(), __( 'ポストにメンションを含める', THEME_NAME ));
+            generate_tips_tag(__( 'シェアされたポストに著者のＸ IDを含める。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -44,8 +44,8 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_TWITTER_RELATED_FOLLOW_ENABLE, is_twitter_related_follow_enable(), __( 'ツイート後にフォローを促す', THEME_NAME ));
-            generate_tips_tag(__( 'ツイート後に著者のフォローボタンを表示します。', THEME_NAME ));
+            generate_checkbox_tag( OP_TWITTER_RELATED_FOLLOW_ENABLE, is_twitter_related_follow_enable(), __( 'ポスト後にフォローを促す', THEME_NAME ));
+            generate_tips_tag(__( 'ポスト後に著者のフォローボタンを表示します。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -59,7 +59,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
           <td>
             <?php
             generate_textbox_tag(OP_TWITTER_HASH_TAG, get_twitter_hash_tag(), '#wpcocoon '.__( '#ハッシュタグ', THEME_NAME ));
-            generate_tips_tag(__( 'ツイート時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力も可能です。URLやタイトルを含めて140文字を超える場合は正常動作しない可能性もあります。', THEME_NAME ));
+            generate_tips_tag(__( 'ポスト時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力も可能です。URLやタイトルを含めて140文字を超える場合は正常動作しない可能性もあります。', THEME_NAME ));
 
             ?>
           </td>

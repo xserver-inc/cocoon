@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'OGP設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'OGPとは「Open Graph protocol」の略称です。 FacebookやTwitterなどのSNSでシェアされた際に、そのページのタイトル・URL・概要・アイキャッチ画像（サムネイル）を意図した通りに正しく表示させる仕組みです。', THEME_NAME ) ?></p>
+    <p><?php _e( 'OGPとは「Open Graph protocol」の略称です。 FacebookやXなどのSNSでシェアされた際に、そのページのタイトル・URL・概要・アイキャッチ画像（サムネイル）を意図した通りに正しく表示させる仕組みです。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>

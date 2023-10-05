@@ -132,7 +132,7 @@ add_filter('user_contactmethods', 'user_contactmethods_custom');
 if ( !function_exists( 'user_contactmethods_custom' ) ):
 function user_contactmethods_custom($prof_items){
   //項目の追加
-  $prof_items['twitter_url'] = __( 'Twitter URL', THEME_NAME );
+  $prof_items['twitter_url'] = __( 'X（旧Twitter） URL', THEME_NAME );
   $prof_items['facebook_url'] = __( 'Facebook URL', THEME_NAME );
   //$prof_items['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
   $prof_items['hatebu_url'] = __( 'はてブ URL', THEME_NAME );
