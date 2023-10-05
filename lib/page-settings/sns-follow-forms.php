@@ -69,7 +69,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <p><?php _e( '以下のアカウントURLを設定する場合は、プロフィールページから設定してください。', THEME_NAME ) ?>(<a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>)</p>
             <ul class="list-style-disc">
               <li><?php _e( 'ウェブサイト', THEME_NAME ) ?></li>
-              <li><?php _e( 'Twitter', THEME_NAME ) ?></li>
+              <li><?php _e( 'X（旧Twitter）', THEME_NAME ) ?></li>
               <li><?php _e( 'Facebook', THEME_NAME ) ?></li>
               <!-- <li><?php _e( 'Google+', THEME_NAME ) ?></li> -->
               <li><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>

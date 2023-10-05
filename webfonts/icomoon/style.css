@@ -200,6 +200,12 @@
 .icon-heart-broken:before {
   content: "\e9db";
 }
+.icon-x-corp-logo:before {
+  content: "\e90c";
+}
+.icon-x-corp:before {
+  content: "\e917";
+}
 .icon-copy:before {
   content: "\e901";
 }

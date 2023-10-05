@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-  --cocoon-twitter-color: #1da1f2;
+  --cocoon-twitter-color: #000000;
   --cocoon-facebook-color: #3b5998;
   --cocoon-hatebu-color: #2c6ebd;
   --cocoon-google-plus-color: #dd4b39;
@@ -2428,6 +2428,7 @@ div.search-form {
 
 .button-block {
   float: none;
+  margin: 0;
 }
 .button-block.alignleft {
   text-align: left;
