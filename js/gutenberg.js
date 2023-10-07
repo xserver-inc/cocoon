@@ -45,45 +45,45 @@ wp.domReady(function () {
         element.addClass(addClasses);
       }
 
-      //ヘッダーにFont Awesome様を挿入する
-      let iframeHead = iframe.contents().find("head");
+      // //ヘッダーにFont Awesome様を挿入する
+      // let iframeHead = iframe.contents().find("head");
 
-      if (iframeHead.has("#font-awesome-style-css-iframe").length == 0) {
-        const templateUrl = gbSettings['templateUrl'];
-        if (gbSettings['siteIconFont'].trim() == 'font-awesome-4') {
-          // Font Awesome4の場合
-          // リンクタグを作成
-          let link1 = $("<link>", {
-            rel: "stylesheet",
-            id: "font-awesome-style-css-iframe",
-            href: templateUrl + "/webfonts/fontawesome/css/font-awesome.min.css",
-            media: "all"
-          });
+      // if (iframeHead.has("#font-awesome-style-css-iframe").length == 0) {
+      //   const templateUrl = gbSettings['templateUrl'];
+      //   if (gbSettings['siteIconFont'].trim() == 'font-awesome-4') {
+      //     // Font Awesome4の場合
+      //     // リンクタグを作成
+      //     let link1 = $("<link>", {
+      //       rel: "stylesheet",
+      //       id: "font-awesome-style-css-iframe",
+      //       href: templateUrl + "/webfonts/fontawesome/css/font-awesome.min.css",
+      //       media: "all"
+      //     });
 
-          // リンクタグをiframe内のhead要素に挿入
-          iframeHead.append(link1);
-        } else {
-          // Font Awesome5の場合
+      //     // リンクタグをiframe内のhead要素に挿入
+      //     iframeHead.append(link1);
+      //   } else {
+      //     // Font Awesome5の場合
 
-          // リンクタグを作成
-          let link1 = $("<link>", {
-            rel: "stylesheet",
-            id: "font-awesome-style-css-iframe",
-            href: templateUrl + "/webfonts/fontawesome5/css/all.min.css",
-            media: "all"
-          });
-          let link2 = $("<link>", {
-            rel: "stylesheet",
-            id: "font-awesome5-update-style-css-iframe",
-            href: templateUrl + "/css/fontawesome5.css",
-            media: "all"
-          });
+      //     // リンクタグを作成
+      //     let link1 = $("<link>", {
+      //       rel: "stylesheet",
+      //       id: "font-awesome-style-css-iframe",
+      //       href: templateUrl + "/webfonts/fontawesome5/css/all.min.css",
+      //       media: "all"
+      //     });
+      //     let link2 = $("<link>", {
+      //       rel: "stylesheet",
+      //       id: "font-awesome5-update-style-css-iframe",
+      //       href: templateUrl + "/css/fontawesome5.css",
+      //       media: "all"
+      //     });
 
-          // リンクタグをiframe内のhead要素に挿入
-          iframeHead.append(link1);
-          iframeHead.append(link2);
-        }
-      }
+      //     // リンクタグをiframe内のhead要素に挿入
+      //     iframeHead.append(link1);
+      //     iframeHead.append(link2);
+      //   }
+      // }
     }
 
     //グループボックスのスタイルプレビューに余計なstyle属性が入り込んでしまうのを削除
