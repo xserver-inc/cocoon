@@ -310,6 +310,7 @@ if ( !function_exists( 'is_pr_labels_visible' ) ):
 
     // _v(is_the_page_pr_labels_visible() && is_singular());
     return !$is_exclude_ids //除外ページでない場合PR表記を表示
+      && !is_attachment() //添付ファイルページでない場合
       && (is_pr_label_single_visible() || is_pr_label_page_visible() || is_pr_label_category_page_visible() || is_pr_label_tag_page_visible()) //投稿・固定・カテゴリー・タグページの場合
       && (is_pr_label_small_visible() || is_pr_label_large_visible()) //PR表記小・大が有効の場合
     ;
