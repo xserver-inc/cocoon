@@ -1,10 +1,6 @@
 name: Convert PO to MO
 on:
   workflow_dispatch:
-  push:
-    branches: translation_master
-    paths:
-      - 'languages/*.po'
 
 jobs:
   WP_PO_TO_MO:
