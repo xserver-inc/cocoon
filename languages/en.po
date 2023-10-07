@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-25T15:22:12+00:00\n"
-"PO-Revision-Date: 2023-09-25 15:38\n"
+"POT-Creation-Date: 2023-10-07T05:58:05+00:00\n"
+"PO-Revision-Date: 2023-10-07 06:03\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -40,27 +40,27 @@ msgstr "yhira"
 msgid "https://nelog.jp/"
 msgstr "https://nelog.jp/"
 
-#: blocks/src/init.php:292
+#: blocks/src/init.php:293
 msgid "Cocoonブロック"
 msgstr "Cocoon blocks"
 
-#: blocks/src/init.php:297
+#: blocks/src/init.php:298
 msgid "Cocoon汎用ブロック"
 msgstr "Cocoon generic blocks"
 
-#: blocks/src/init.php:302
+#: blocks/src/init.php:303
 msgid "Cocoonマイクロコピー"
 msgstr "Cocoon micro copy"
 
-#: blocks/src/init.php:307
+#: blocks/src/init.php:308
 msgid "Cocoonレイアウト"
 msgstr "Cocoon layout"
 
-#: blocks/src/init.php:312
+#: blocks/src/init.php:313
 msgid "Cocoonショートコード"
 msgstr "Cocoon short codes"
 
-#: blocks/src/init.php:317
+#: blocks/src/init.php:318
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon old block editor (not recommended)"
 
@@ -2034,8 +2034,8 @@ msgid "SNS画像"
 msgstr "Social media image"
 
 #: lib/custom-fields/sns-image-field.php:33
-msgid "FacebookやTwitterなど、SNSでシェアする画像を設定します。未設定の場合はアイキャッチが利用されます。"
-msgstr "Set an image to share on social media, such as Facebook and Twitter. If no image is set, the eye-catching image will be used."
+msgid "FacebookやXなど、SNSでシェアする画像を設定します。未設定の場合はアイキャッチが利用されます。"
+msgstr "Set the image to be shared on social networking sites such as Facebook and X. If not set, eye catches will be used."
 
 #: lib/custom-fields/update-field.php:16
 #: lib/custom-fields/update-field.php:17
@@ -3582,59 +3582,59 @@ msgstr "Part-time job"
 msgid "functions.phpサイズ："
 msgstr "functions.php Size："
 
-#: lib/page-settings/about-forms.php:117
+#: lib/page-settings/about-forms.php:118
 msgid "Gutenberg："
 msgstr "Gutenberg:"
 
-#: lib/page-settings/about-forms.php:118
+#: lib/page-settings/about-forms.php:119
 msgid "AMP："
 msgstr "AMP:"
 
-#: lib/page-settings/about-forms.php:119
+#: lib/page-settings/about-forms.php:120
 msgid "PWA："
 msgstr "PWA:"
 
-#: lib/page-settings/about-forms.php:120
+#: lib/page-settings/about-forms.php:121
 msgid "Font Awesome："
 msgstr "Font Awesome:"
 
-#: lib/page-settings/about-forms.php:121
+#: lib/page-settings/about-forms.php:122
 msgid "Auto Post Thumbnail："
 msgstr "Auto post thumbnail:"
 
-#: lib/page-settings/about-forms.php:122
+#: lib/page-settings/about-forms.php:123
 msgid "Retina："
 msgstr "Retina:"
 
-#: lib/page-settings/about-forms.php:123
+#: lib/page-settings/about-forms.php:124
 msgid "ホームイメージ："
 msgstr "Home image:"
 
-#: lib/page-settings/about-forms.php:127
+#: lib/page-settings/about-forms.php:128
 msgid "ブラウザキャッシュ有効化："
 msgstr "Enable browser cache:"
 
-#: lib/page-settings/about-forms.php:128
+#: lib/page-settings/about-forms.php:129
 msgid "HTML縮小化："
 msgstr "Optimize HTML code:"
 
-#: lib/page-settings/about-forms.php:129
+#: lib/page-settings/about-forms.php:130
 msgid "CSS縮小化："
 msgstr "Optimize CSS code:"
 
-#: lib/page-settings/about-forms.php:130
+#: lib/page-settings/about-forms.php:131
 msgid "JavaScript縮小化："
 msgstr "Optimize JavaScript:"
 
-#: lib/page-settings/about-forms.php:131
+#: lib/page-settings/about-forms.php:132
 msgid "Lazy Load："
 msgstr "Lazy Load:"
 
-#: lib/page-settings/about-forms.php:138
+#: lib/page-settings/about-forms.php:139
 msgid "利用中のプラグイン："
 msgstr "Plugins in use:"
 
-#: lib/page-settings/about-forms.php:151
+#: lib/page-settings/about-forms.php:152
 msgid "不具合報告の際には以下の情報を添えてもらうと助かります。"
 msgstr "It is helpful to attach the following information when reporting an issue."
 
@@ -4207,154 +4207,188 @@ msgstr "PR notation setting"
 msgid "消費者庁の景品表示法の指定告示（通称：ステマ規制）に対応するための「PR表記」に関する設定です。"
 msgstr "This is a setting for \"PR notation\" to comply with the Consumer Affairs Agency's Notice of Designation under the Act against Unjustifiable Premiums and Misleading Representations."
 
-#: lib/page-settings/ads-forms.php:272
+#: lib/page-settings/ads-forms.php:273
 msgid "自動挿入ページ"
 msgstr "Auto insert pages"
 
-#: lib/page-settings/ads-forms.php:276
+#: lib/page-settings/ads-forms.php:277
 msgid "全ての投稿ページ"
 msgstr "All posted pages"
 
-#: lib/page-settings/ads-forms.php:277
+#: lib/page-settings/ads-forms.php:278
 msgid "全投稿ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。"
 msgstr "Insert \"PR notation\" in the location set in the \"Auto Insert Area\" on all post pages."
 
-#: lib/page-settings/ads-forms.php:279
+#: lib/page-settings/ads-forms.php:280
 msgid "全ての固定ページ"
 msgstr "All fixed pages"
 
-#: lib/page-settings/ads-forms.php:280
+#: lib/page-settings/ads-forms.php:281
 msgid "全固定ページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。"
 msgstr "Insert \"PR notation\" in the location set in the \"Auto Insert Area\" on all fixed pages."
 
-#: lib/page-settings/ads-forms.php:288
-msgid "自動挿入エリア"
-msgstr "Auto Insert Area"
+#: lib/page-settings/ads-forms.php:283
+msgid "全てのカテゴリーページ"
+msgstr "All category pages"
 
-#: lib/page-settings/ads-forms.php:292
+#: lib/page-settings/ads-forms.php:284
+msgid "全カテゴリーページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。"
+msgstr "Insert \"PR notation\" in the location set in the \"Auto Insert Area\" on all category pages."
+
+#: lib/page-settings/ads-forms.php:286
+msgid "全てのタグページ"
+msgstr "All tag pages"
+
+#: lib/page-settings/ads-forms.php:287
+msgid "全タグページで「自動挿入エリア」で設定した場所に「PR表記」を挿入します。"
+msgstr "Insert \"PR notation\" in the location set in the \"Auto Insert Area\" on all tag pages."
+
+#: lib/page-settings/ads-forms.php:295
+msgid "自動挿入エリア"
+msgstr "Auto insert area"
+
+#: lib/page-settings/ads-forms.php:299
 msgid "メインカラム左上"
 msgstr "Main column top left"
 
-#: lib/page-settings/ads-forms.php:292
+#: lib/page-settings/ads-forms.php:299
 msgid "（小）"
 msgstr "(Small)"
 
-#: lib/page-settings/ads-forms.php:293
+#: lib/page-settings/ads-forms.php:300
 msgid "メインカラムの左上に「PR表記」を表示します。"
 msgstr "Insert a \"PR notation\" in the top left corner of the main column."
 
-#: lib/page-settings/ads-forms.php:295
+#: lib/page-settings/ads-forms.php:302
 msgid "本文の上"
 msgstr "Top of the article body"
 
-#: lib/page-settings/ads-forms.php:295
+#: lib/page-settings/ads-forms.php:302
 msgid "（大）"
 msgstr "(Large)"
 
-#: lib/page-settings/ads-forms.php:296
+#: lib/page-settings/ads-forms.php:303
 msgid "記事本文の上部に「PR表記」を挿入します。"
 msgstr "Insert a \"PR notation\" at the top of the article body."
 
-#: lib/page-settings/ads-forms.php:304
+#: lib/page-settings/ads-forms.php:311
 msgid "表示テキスト"
 msgstr "Displayed text"
 
-#: lib/page-settings/ads-forms.php:309
+#: lib/page-settings/ads-forms.php:316
 msgid "テキスト（小）"
 msgstr "Text (Small)"
 
-#: lib/page-settings/ads-forms.php:312
+#: lib/page-settings/ads-forms.php:319
 msgid "メインカラム左上に表示される「PR表記」の文言を入力してください。"
 msgstr "Enter the text for the \"PR notation\" that will appear in the top left corner of the main column."
 
-#: lib/page-settings/ads-forms.php:315
+#: lib/page-settings/ads-forms.php:322
 msgid "テキスト（大）"
 msgstr "Text (Large)"
 
-#: lib/page-settings/ads-forms.php:318
+#: lib/page-settings/ads-forms.php:325
 msgid "記事本文上に表示される「PR表記」の文言を入力してください。"
 msgstr "Enter the text for the \"PR notation\" that will appear at the top of the article body."
 
-#: lib/page-settings/ads-forms.php:326
+#: lib/page-settings/ads-forms.php:333
 msgid "除外記事ID"
 msgstr "Excluded article ID"
 
-#: lib/page-settings/ads-forms.php:330
-#: lib/page-settings/ads-forms.php:407
+#: lib/page-settings/ads-forms.php:337
+#: lib/page-settings/ads-forms.php:364
+#: lib/page-settings/ads-forms.php:427
 msgid "例：111,222,3333"
 msgstr "Example: 111, 222, 3333"
 
-#: lib/page-settings/ads-forms.php:331
+#: lib/page-settings/ads-forms.php:338
 msgid "「PR表記」を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr "Specify the IDs of the posts and fixed pages for which you want to hide \"PR notation\" by separating them with , (comma)."
 
-#: lib/page-settings/ads-forms.php:339
+#: lib/page-settings/ads-forms.php:346
 #: lib/page-settings/index-forms.php:242
 #: lib/page-settings/single-forms.php:366
 msgid "除外カテゴリー"
 msgstr "Excluded categories"
 
-#: lib/page-settings/ads-forms.php:344
+#: lib/page-settings/ads-forms.php:351
 msgid "「PR表記」を非表示にするカテゴリーを選択してください。"
 msgstr "Specify the categories for which you want to hide the \"PR notation\"."
 
-#: lib/page-settings/ads-forms.php:357
+#: lib/page-settings/ads-forms.php:351
+#: lib/page-settings/ads-forms.php:442
+msgid "除外したカテゴリーに属する投稿ページもまとめて非表示になります。"
+msgstr "Posts belong to the excluded categories will also be hidden."
+
+#: lib/page-settings/ads-forms.php:360
+msgid "除外タグID"
+msgstr "Excluded tags"
+
+#: lib/page-settings/ads-forms.php:365
+msgid "「PR表記」を非表示にするタグページのIDを,（カンマ）区切りで指定してください。"
+msgstr "Specify the IDs of the tags for which you want to hide \"PR notation\" by separating them with , (comma)."
+
+#: lib/page-settings/ads-forms.php:365
+msgid "除外したタグに属する投稿ページもまとめて非表示になります。"
+msgstr "Posts belong to the excluded tags will also be hidden."
+
+#: lib/page-settings/ads-forms.php:377
 msgid "バリューコマース"
 msgstr "Value Commerce"
 
-#: lib/page-settings/ads-forms.php:360
+#: lib/page-settings/ads-forms.php:380
 msgid "バリューコマース関連の広告設定です。"
 msgstr "The ad settings related to Value Commerce."
 
-#: lib/page-settings/ads-forms.php:367
+#: lib/page-settings/ads-forms.php:387
 msgid "LinkSwitch"
 msgstr ""
 
-#: lib/page-settings/ads-forms.php:371
+#: lib/page-settings/ads-forms.php:391
 msgid "LinkSwitchを有効にする"
 msgstr "Enable LinkSwitch"
 
-#: lib/page-settings/ads-forms.php:372
+#: lib/page-settings/ads-forms.php:392
 msgid "バリューコマースのLinkSwitch機能を有効にするか。LinkSwitch IDが入力されている必要があります。"
 msgstr "Do you want to enable the LinkSwitch feature of Value Commerce? The LinkSwitch ID must be entered."
 
-#: lib/page-settings/ads-forms.php:375
+#: lib/page-settings/ads-forms.php:395
 msgid "LinkSwitch ID"
 msgstr ""
 
-#: lib/page-settings/ads-forms.php:377
+#: lib/page-settings/ads-forms.php:397
 msgid "LinkSwitch IDの入力"
 msgstr "Enter LinkSwitch ID"
 
-#: lib/page-settings/ads-forms.php:378
+#: lib/page-settings/ads-forms.php:398
 msgid "バリューコマースの「便利ツール」メニューの「LinkSwitch」からIDを取得してください。"
 msgstr "Get the ID from \"LinkSwitch\" in the \"Handy tools\" menu of Value Commerce."
 
-#: lib/page-settings/ads-forms.php:379
+#: lib/page-settings/ads-forms.php:399
 msgid "LinkSwitchタグから取得できるIDを入力してください。"
 msgstr "Enter the ID that can be obtained from the LinkSwitch tag."
 
-#: lib/page-settings/ads-forms.php:393
+#: lib/page-settings/ads-forms.php:413
 msgid "広告除外設定"
 msgstr "Ad exclusion settings"
 
-#: lib/page-settings/ads-forms.php:396
+#: lib/page-settings/ads-forms.php:416
 msgid "広告を表示したくないページやカテゴリーの設定です。"
 msgstr "This is for setting pages or categories for which you do not want to display ads."
 
-#: lib/page-settings/ads-forms.php:403
+#: lib/page-settings/ads-forms.php:423
 msgid "広告除外記事ID"
 msgstr "Ad exclusion article IDs"
 
-#: lib/page-settings/ads-forms.php:408
+#: lib/page-settings/ads-forms.php:428
 msgid "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr "Specifies the IDs of posts/pages for which you want to hide ads. Separate the IDs with a comma."
 
-#: lib/page-settings/ads-forms.php:416
+#: lib/page-settings/ads-forms.php:436
 msgid "広告除外カテゴリー"
 msgstr "Ad exclusion category"
 
-#: lib/page-settings/ads-forms.php:422
+#: lib/page-settings/ads-forms.php:442
 msgid "広告を非表示にするカテゴリーを選択してください。"
 msgstr "Select a category for which you want to hide ads."
 
@@ -4702,7 +4736,7 @@ msgstr "Enter the date format to be used for the entire theme (initial values: Y
 msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
 msgstr "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">Description of the date and time format</a>"
 
-#: lib/page-settings/all-funcs.php:250
+#: lib/page-settings/all-funcs.php:258
 msgid "Y.m.d"
 msgstr ""
 
@@ -7738,8 +7772,8 @@ msgid "OGP設定"
 msgstr "OGP settings"
 
 #: lib/page-settings/ogp-forms.php:16
-msgid "OGPとは「Open Graph protocol」の略称です。 FacebookやTwitterなどのSNSでシェアされた際に、そのページのタイトル・URL・概要・アイキャッチ画像（サムネイル）を意図した通りに正しく表示させる仕組みです。"
-msgstr "OGP is an abbreviation for \"Open Graph Protocol\". When shared in social media such as Facebook and Twitter, it is a mechanism used to correctly display the title, URL, outline, eye-catching image (thumbnail) of the page as intended."
+msgid "OGPとは「Open Graph protocol」の略称です。 FacebookやXなどのSNSでシェアされた際に、そのページのタイトル・URL・概要・アイキャッチ画像（サムネイル）を意図した通りに正しく表示させる仕組みです。"
+msgstr "OGP is an abbreviation for \"Open Graph protocol. It is a mechanism to correctly display the title, URL, summary, and eye-catching image (thumbnail) of a page as intended when it is shared on social networking services such as Facebook and X."
 
 #: lib/page-settings/ogp-forms.php:24
 msgid "OGPの有効化"
@@ -8743,8 +8777,8 @@ msgstr "Website"
 #: lib/page-settings/sns-follow-forms.php:72
 #: lib/page-settings/sns-share-forms-bottom.php:68
 #: lib/page-settings/sns-share-forms-top.php:55
-msgid "Twitter"
-msgstr ""
+msgid "X（旧Twitter）"
+msgstr "X (formerly Twitter)"
 
 #: lib/page-settings/sns-follow-forms.php:73
 #: lib/page-settings/sns-share-forms-bottom.php:71
@@ -9187,36 +9221,36 @@ msgid "トップシェアボタンのシェア数表示を切り替えます。"
 msgstr "Toggle display share count on top share buttons."
 
 #: lib/page-settings/sns-share-forms.php:21
-msgid "ツイート設定"
-msgstr "Tweet settings"
+msgid "Ｘポスト設定"
+msgstr "X post setting"
 
 #: lib/page-settings/sns-share-forms.php:23
-msgid "Twitter上でのツイート動作の設定です。"
-msgstr "Sets the tweet action in Twitter."
+msgid "X（旧Twitter）上でのポスト動作の設定です。"
+msgstr "Setting for X (formerly Twitter)."
 
 #: lib/page-settings/sns-share-forms.php:30
 msgid "メンション"
 msgstr "Mentions"
 
 #: lib/page-settings/sns-share-forms.php:34
-msgid "ツイートにメンションを含める"
-msgstr "Include mentions in tweets"
+msgid "ポストにメンションを含める"
+msgstr "Include mentions in the post"
 
 #: lib/page-settings/sns-share-forms.php:35
-msgid "シェアされたツイートに著者のTwitter IDを含める。"
-msgstr "Include the author's Twitter ID in shared tweets."
+msgid "シェアされたポストに著者のＸ IDを含める。"
+msgstr "Include the author's X ID in the shared post."
 
 #: lib/page-settings/sns-share-forms.php:43
 msgid "プロモーション"
 msgstr "Promotion"
 
 #: lib/page-settings/sns-share-forms.php:47
-msgid "ツイート後にフォローを促す"
-msgstr "Invite visitors to follow after tweet"
+msgid "ポスト後にフォローを促す"
+msgstr "Prompt for follow after post."
 
 #: lib/page-settings/sns-share-forms.php:48
-msgid "ツイート後に著者のフォローボタンを表示します。"
-msgstr "Displays a follow author button after tweets."
+msgid "ポスト後に著者のフォローボタンを表示します。"
+msgstr "Display follow button for author after post."
 
 #: lib/page-settings/sns-share-forms.php:57
 msgid "ハッシュタグ"
@@ -9227,8 +9261,8 @@ msgid "#ハッシュタグ"
 msgstr "#hashtag"
 
 #: lib/page-settings/sns-share-forms.php:62
-msgid "ツイート時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力も可能です。URLやタイトルを含めて140文字を超える場合は正常動作しない可能性もあります。"
-msgstr "Enter a hashtag that includes the tweet time. You can enter multiple hashtags, separated by a space. Tweets may not work normally if the number of characters including the URL and title exceeds 140."
+msgid "ポスト時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力も可能です。URLやタイトルを含めて140文字を超える場合は正常動作しない可能性もあります。"
+msgstr "Please enter a hashtag to include when posting. Multiple tags can be entered by separating them with a single space, but if they exceed 140 characters including URLs and titles, they may not work properly."
 
 #: lib/page-settings/sns-share-forms.php:79
 msgid "Facebook設定"
@@ -10328,38 +10362,38 @@ msgstr "Site acceleration"
 msgid "サイト表示スピードの高速化設定を行います。"
 msgstr "The setting for acceleration of the site display speed."
 
-#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:56
+#: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:56
 msgid "View details"
 msgstr ""
 
-#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:79
+#: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:79
 msgid "More information about %s"
 msgstr ""
 
-#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:130
+#: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:130
 msgid "Check for updates"
 msgstr ""
 
-#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:217
+#: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:217
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr ""
 
-#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:219
+#: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:219
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr ""
 
-#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:221
+#: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:221
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr ""
 
-#: lib/plugin-update-checker/Puc/v5p0/Plugin/Ui.php:227
+#: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:227
 msgid "Unknown update checker status \"%s\""
 msgstr ""
 
-#: lib/plugin-update-checker/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
+#: lib/plugin-update-checker/Puc/v5p2/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
 msgstr ""
 
@@ -10578,8 +10612,8 @@ msgid "updatedショートコードは投稿・固定ページ以外では利用
 msgstr "updated short codes can only be used on posts and fixed pages."
 
 #: lib/sns-follow.php:135
-msgid "Twitter URL"
-msgstr ""
+msgid "X（旧Twitter） URL"
+msgstr "X (formerly Twitter) URL"
 
 #: lib/sns-follow.php:136
 msgid "Facebook URL"
@@ -10909,41 +10943,41 @@ msgstr "Publish"
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure you want to publish the page?"
 
-#: lib/utils.php:2456
+#: lib/utils.php:2482
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2464
+#: lib/utils.php:2490
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2472
+#: lib/utils.php:2498
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2480
+#: lib/utils.php:2506
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s weeks"
 msgstr[1] ""
 
-#: lib/utils.php:2488
+#: lib/utils.php:2514
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s months"
 msgstr[1] "%s months"
 
-#: lib/utils.php:2499
+#: lib/utils.php:2525
 msgid "%s年"
 msgstr "%s years"
 
-#: lib/utils.php:2501
+#: lib/utils.php:2527
 msgid "%s年%sヶ月"
 msgstr "%s years and %s months"
 
@@ -11785,15 +11819,15 @@ msgstr "Large skyscraper"
 msgid "広告コードをそのまま表示"
 msgstr "The ad code will appear as is"
 
-#: lib/_defins.php:305
+#: lib/_defins.php:313
 msgid "本当に削除してもいいですか？"
 msgstr "Do you really want to delete it?"
 
-#: lib/_defins.php:326
+#: lib/_defins.php:334
 msgid "www.amazon.co.jp"
 msgstr ""
 
-#: lib/_defins.php:329
+#: lib/_defins.php:337
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "The product could not be retrieved. You may have specified an ASIN that does not exist."
 
