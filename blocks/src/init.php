@@ -46,6 +46,7 @@ function cocoon_blocks_cgb_block_assets()
 	);
 
 	//Font Awesome
+	wp_enqueue_style_font_awesome();
 	if (apply_filters('cocoon_blocks_wp_enqueue_script_fontawesome', true)) {
 		//これを読み込んでおかないと以下のブロック等のアイコンが表示されなくなる
     // ・白抜ボックス

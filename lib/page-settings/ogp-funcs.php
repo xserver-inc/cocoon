@@ -44,8 +44,8 @@ endif;
 define('OP_OGP_HOME_IMAGE_URL', 'ogp_home_image_url');
 if ( !function_exists( 'get_ogp_home_image_url' ) ):
 function get_ogp_home_image_url(){
-  $def_url = get_template_directory_uri().'/screenshot.jpg';
-  $url = get_theme_option(OP_OGP_HOME_IMAGE_URL, $def_url);
+  // $def_url = get_template_directory_uri().'/screenshot.jpg';
+  $url = get_theme_option(OP_OGP_HOME_IMAGE_URL, OGP_HOME_IMAGE_URL_DEFAULT);
   $url = trim($url);
   if (empty($url)) {
     $url = $def_url;

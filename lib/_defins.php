@@ -237,6 +237,11 @@ define('NO_IMAGE_RSS', get_template_directory_uri().'/images/no-image-rss.png');
 //画像と判別するファイル拡張子（正規表現用）
 define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp');
 
+//OGPホームイメージURLデフォルト
+define('OGP_HOME_IMAGE_URL_DEFAULT', get_template_directory_uri().'/screenshot.jpg');
+//サイトアイコンフォントデフォルト
+define('SITE_ICON_FONT_DEFAULT', 'font_awesome_4');
+
 ///////////////////////////////////////
 // キャッシュ
 ///////////////////////////////////////
