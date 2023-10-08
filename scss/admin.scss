@@ -311,8 +311,34 @@ form.admin-settings{
   input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{
     border-color: #ddd;
   }
+
+  & input {
+    &:where(:not(:focus-visible)) {
+      &:invalid {
+        animation: shake-x 1s;
+        background-color: rgba(255, 0, 0, 0.2);
+        border-color: red;
+      }
+    }
+  }
 }
 
+@keyframes shake-x {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    translate: -4px 0;
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    translate: 4px 0;
+  }
+}
 
 .col-2{
   display: flex;
