@@ -1016,14 +1016,14 @@ function get_update_time($format = null, $post_id = null) {
   if (empty($format)) {
     $format = get_site_date_format();
   }
-  $mtime = get_post_modified_time('Ymd', false, $post_id);
+  $mtime = get_the_modified_time('Ymd', $post_id);
   $ptime = get_the_time('Ymd', $post_id);
   if ($ptime > $mtime) {
     return get_the_time($format, $post_id);
   } elseif ($ptime === $mtime) {
     return null;
   } else {
-    return get_post_modified_time($format, false, $post_id);
+    return get_the_modified_time($format, $post_id);
   }
 }
 endif;
