@@ -48,14 +48,10 @@ if ($eye_catch_url || $content): ?>
   <?php //カテゴリータイトル
   cocoon_template_part('tmp/list-title');
   //カテゴリシェアボタン
-<<<<<<< HEAD
   cocoon_template_part('tmp/category-sns-share-top'); ?>
-=======
-  get_template_part('tmp/category-sns-share-top'); ?>
 
   <?php //PR表記（大）の出力
   if (is_large_pr_labels_visible()) {
     generate_large_pr_label_tag();
   } ?>
->>>>>>> master
 <?php endif ?>
