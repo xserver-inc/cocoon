@@ -998,6 +998,21 @@ body.wp-admin {
 .admin-settings .demo ul {
   list-style-type: disc;
 }
+.admin-settings .demo dd {
+  margin-left: 40px;
+}
+.admin-settings .demo ul li,
+.admin-settings .demo ol li {
+  margin: 0.2em;
+}
+.admin-settings .demo ul ul, .admin-settings .demo ul ol,
+.admin-settings .demo ol ul,
+.admin-settings .demo ol ol {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
 .admin-settings .demo hr {
   color: var(--cocoon-current-background-color);
 }
@@ -2008,21 +2023,6 @@ body.wp-admin {
 .admin-settings .demo .article {
   margin-bottom: 2em;
 }
-.admin-settings .demo .article dd {
-  margin-left: 40px;
-}
-.admin-settings .demo .article ul li,
-.admin-settings .demo .article ol li {
-  margin: 0.2em;
-}
-.admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol,
-.admin-settings .demo .article ol ul,
-.admin-settings .demo .article ol ol {
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 0;
-}
 .admin-settings .demo .article .wp-block-gallery ul {
   padding-left: 0;
 }
@@ -2850,9 +2850,6 @@ body.wp-admin {
 }
 .admin-settings .demo .has-list-style.has-background {
   padding: var(--cocoon-list-wide-padding);
-}
-.admin-settings .demo .wp-block .has-list-style {
-  padding: var(--cocoon-list-padding);
 }
 .admin-settings .demo :is(ul, ol).has-border {
   padding: var(--cocoon-list-wide-padding);
@@ -8953,6 +8950,21 @@ body.wp-admin {
 .admin-settings .demo ul {
   list-style-type: disc;
 }
+.admin-settings .demo dd {
+  margin-left: 40px;
+}
+.admin-settings .demo ul li,
+.admin-settings .demo ol li {
+  margin: 0.2em;
+}
+.admin-settings .demo ul ul, .admin-settings .demo ul ol,
+.admin-settings .demo ol ul,
+.admin-settings .demo ol ol {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
 .admin-settings .demo hr {
   color: var(--cocoon-current-background-color);
 }
@@ -9963,21 +9975,6 @@ body.wp-admin {
 .admin-settings .demo .article {
   margin-bottom: 2em;
 }
-.admin-settings .demo .article dd {
-  margin-left: 40px;
-}
-.admin-settings .demo .article ul li,
-.admin-settings .demo .article ol li {
-  margin: 0.2em;
-}
-.admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol,
-.admin-settings .demo .article ol ul,
-.admin-settings .demo .article ol ol {
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 0;
-}
 .admin-settings .demo .article .wp-block-gallery ul {
   padding-left: 0;
 }
@@ -10805,9 +10802,6 @@ body.wp-admin {
 }
 .admin-settings .demo .has-list-style.has-background {
   padding: var(--cocoon-list-wide-padding);
-}
-.admin-settings .demo .wp-block .has-list-style {
-  padding: var(--cocoon-list-padding);
 }
 .admin-settings .demo :is(ul, ol).has-border {
   padding: var(--cocoon-list-wide-padding);
@@ -19656,9 +19650,6 @@ textarea[name="the_page_memo"] {
 }
 .components-popover__content .has-list-style.has-background {
   padding: var(--cocoon-list-wide-padding);
-}
-.components-popover__content .wp-block .has-list-style {
-  padding: var(--cocoon-list-padding);
 }
 .components-popover__content :is(ul, ol).has-border {
   padding: var(--cocoon-list-wide-padding);

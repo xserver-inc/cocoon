@@ -391,6 +391,23 @@ ul {
   list-style-type: disc;
 }
 
+dd {
+  margin-left: 40px;
+}
+
+ul li,
+ol li {
+  margin: 0.2em;
+}
+ul ul, ul ol,
+ol ul,
+ol ol {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+
 hr {
   color: var(--cocoon-current-background-color);
 }
@@ -1603,21 +1620,6 @@ figure.wp-block-table.alignright table {
 .article {
   margin-bottom: 2em;
 }
-.article dd {
-  margin-left: 40px;
-}
-.article ul li,
-.article ol li {
-  margin: 0.2em;
-}
-.article ul ul, .article ul ol,
-.article ol ul,
-.article ol ol {
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 0;
-}
 .article .wp-block-gallery ul {
   padding-left: 0;
 }
@@ -2601,10 +2603,6 @@ label.screen-reader-text {
 }
 .has-list-style.has-background {
   padding: var(--cocoon-list-wide-padding);
-}
-
-.wp-block .has-list-style {
-  padding: var(--cocoon-list-padding);
 }
 
 :is(ul, ol).has-border {
