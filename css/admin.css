@@ -2851,13 +2851,10 @@ body.wp-admin {
 .admin-settings .demo .has-list-style.has-background {
   padding: var(--cocoon-list-wide-padding);
 }
-.admin-settings .demo .wp-block .has-list-style {
-  padding: var(--cocoon-list-padding);
-}
-.admin-settings .demo :is(ul, ol).has-border {
+.admin-settings .demo .body :is(ul, ol).has-border {
   padding: var(--cocoon-list-wide-padding);
 }
-.admin-settings .demo :is(ul, ol).has-border.has-background {
+.admin-settings .demo .body :is(ul, ol).has-border.has-background {
   padding: var(--cocoon-list-wide-padding);
 }
 .admin-settings .demo .badge,
@@ -10806,13 +10803,10 @@ body.wp-admin {
 .admin-settings .demo .has-list-style.has-background {
   padding: var(--cocoon-list-wide-padding);
 }
-.admin-settings .demo .wp-block .has-list-style {
-  padding: var(--cocoon-list-padding);
-}
-.admin-settings .demo :is(ul, ol).has-border {
+.admin-settings .demo .body :is(ul, ol).has-border {
   padding: var(--cocoon-list-wide-padding);
 }
-.admin-settings .demo :is(ul, ol).has-border.has-background {
+.admin-settings .demo .body :is(ul, ol).has-border.has-background {
   padding: var(--cocoon-list-wide-padding);
 }
 .admin-settings .demo .badge,
@@ -19657,13 +19651,10 @@ textarea[name="the_page_memo"] {
 .components-popover__content .has-list-style.has-background {
   padding: var(--cocoon-list-wide-padding);
 }
-.components-popover__content .wp-block .has-list-style {
-  padding: var(--cocoon-list-padding);
-}
-.components-popover__content :is(ul, ol).has-border {
+.components-popover__content .body :is(ul, ol).has-border {
   padding: var(--cocoon-list-wide-padding);
 }
-.components-popover__content :is(ul, ol).has-border.has-background {
+.components-popover__content .body :is(ul, ol).has-border.has-background {
   padding: var(--cocoon-list-wide-padding);
 }
 .components-popover__content .admin-settings .demo .badge, .admin-settings .demo .components-popover__content .badge,

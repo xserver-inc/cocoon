@@ -19,12 +19,12 @@
     padding: var(--cocoon-list-wide-padding);
   }
 }
-.wp-block{
-  .has-list-style{
-    padding: var(--cocoon-list-padding);
-  }
-}
-:is(ul, ol).has-border{
+// .wp-block{
+//   .has-list-style{
+//     padding: var(--cocoon-list-padding);
+//   }
+// }
+.body :is(ul, ol).has-border{
   padding: var(--cocoon-list-wide-padding);
   &.has-background{
     padding: var(--cocoon-list-wide-padding);
