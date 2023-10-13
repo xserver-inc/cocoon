@@ -52,25 +52,6 @@ ul{
   list-style-type: disc;
 }
 
-dd{
-  margin-left: 40px;
-}
-
-ul,
-ol{
-
-  li{
-    margin: 0.2em;
-  }
-
-  ul, ol{
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-  }
-}
-
 hr{
   color: var(--cocoon-current-background-color);
 }
