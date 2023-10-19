@@ -45,7 +45,7 @@ function fetch_updater_url( $new_sv_weight ) {
 
 //アップデートチェックの初期化
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-add_action( 'admin_init', function() {
+add_action( 'init', function() {
     require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
     $myUpdateChecker = PucFactory::buildUpdateChecker(
         fetch_updater_url(100), //JSONファイルのURL
