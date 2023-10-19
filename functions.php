@@ -44,13 +44,16 @@ function fetch_updater_url( $new_sv_weight ) {
 }
 
 //アップデートチェックの初期化
-require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-$myUpdateChecker = PucFactory::buildUpdateChecker(
-  fetch_updater_url(100), //JSONファイルのURL
-  __FILE__,
-  'cocoon-master'
-);
+add_action( 'init', function() {
+    require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
+    $myUpdateChecker = PucFactory::buildUpdateChecker(
+        fetch_updater_url(100), //JSONファイルのURL
+        __FILE__,
+        'cocoon-master'
+    );
+});
+
 
 //本文部分の冒頭を綺麗に抜粋する
 if ( !function_exists( 'get_content_excerpt' ) ):
