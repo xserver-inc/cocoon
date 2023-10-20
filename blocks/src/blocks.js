@@ -8,7 +8,7 @@ import {
   registerBlockType,
   unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
-import compareVersions from 'compare-versions';
+import { compareVersions } from 'compare-versions';
 const cocoonBlocksPro = [];
 
 //構造化したブロック
