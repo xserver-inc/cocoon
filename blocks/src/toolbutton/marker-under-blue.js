@@ -10,7 +10,7 @@ import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextShortcut } from '@wordpress/block-editor';
-import { Icon, minus } from '@wordpress/icons';
+import { Icon, reset } from '@wordpress/icons';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/marker-under-blue';
 const TITLE = __( '青色アンダーラインマーカー', THEME_NAME );
 
@@ -33,7 +33,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
           onUse={ onToggle }
         />
         <MarkerToolbarButton
-          icon={ <Icon icon={ minus } size={ 32 } /> }
+          icon={ <Icon icon={ reset } size={ 32 } /> }
           title={ <span className="marker-under-blue">{ TITLE }</span> }
           onClick={ onToggle }
           isActive={ isActive }
