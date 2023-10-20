@@ -89,25 +89,17 @@ if (is_admin()) {
 }
 function cocoon_blocks_cgb_editor_assets()
 {
+
+  $asset_file = require get_template_directory() . '/blocks/dist/blocks.build.asset.php';
 	// phpcs:ignore
 	// Scripts.
 	wp_enqueue_script(
 		'cocoon-blocks-js', // Handle.
 		get_template_directory_uri() . '/blocks/dist/blocks.build.js',
 		//plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		[
-			'lodash',
-			'react',
-			'wp-block-editor',
-			'wp-components',
-			'wp-blocks',
-			'wp-compose',
-			'wp-element',
-			'wp-editor',
-			'wp-polyfill',
-			'wp-rich-text',
-			'wp-i18n',
-		] // const xxx = wp.xxx型式の古い記述で有効 // Dependencies, defined above.
+    $asset_file['dependencies'],
+    // const xxx = wp.xxx型式の古い記述で有効 // Dependencies, defined above.
+    $asset_file['version']
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		// true // Enqueue the script in the footer.
 	);
