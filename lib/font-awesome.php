@@ -7,11 +7,23 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+//$_POSTを考慮したget_site_icon_font
+if ( !function_exists( 'get_site_icon_font_in_post' ) ):
+function get_site_icon_font_in_post(){
+  $site_icon_font = get_site_icon_font();
+  //Cocoon設定ページ用に$_POST['site_icon_font']の値でget_site_icon_fontを判断する（設定保存が終わる前にヘッダーでFont Awesome CSSが読み込まれてしまうため）
+  if (is_admin_cocoon_settings_page() && $_POST && isset($_POST['site_icon_font'])) {
+    $site_icon_font = $_POST['site_icon_font'];
+  }
+  return $site_icon_font;
+}
+endif;
+
 //サイトアイコンフォントのURLを取得
 if ( !function_exists( 'get_site_icon_font_url' ) ):
 function get_site_icon_font_url(){
   $url = FONT_AWESOME_4_URL;
-  switch (get_site_icon_font()) {
+  switch (get_site_icon_font_in_post()) {
     case 'font_awesome_5':
       $url = FONT_AWESOME_5_URL;
       break;
@@ -24,7 +36,7 @@ endif;
 if ( !function_exists( 'get_site_icon_font_cdn_url' ) ):
 function get_site_icon_font_cdn_url(){
   $url = FONT_AWESOME_4_CDN_URL;
-  switch (get_site_icon_font()) {
+  switch (get_site_icon_font_in_post()) {
     case 'font_awesome_5':
       $url = FONT_AWESOME_5_CDN_URL;
       break;
