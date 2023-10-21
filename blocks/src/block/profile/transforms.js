@@ -1,1 +1,5 @@
-export const transforms = {};
+import deprecated from "../ranking/deprecated";
+
+const transforms = {};
+
+export default transforms;
