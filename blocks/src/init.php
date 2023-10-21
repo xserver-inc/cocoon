@@ -376,7 +376,9 @@ if (!function_exists('register_block_type_args_custom')):
 				"default" => "",
 			)
 		);
-		$args['attributes'] = array_merge($args['attributes'], $extra_attributes);
+		if (isset($args['attributes']) && is_array($args['attributes'])) {
+			$args['attributes'] = array_merge($args['attributes'], $extra_attributes);
+		}
 
 		return $args;
 	}
