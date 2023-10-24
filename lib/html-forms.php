@@ -1261,8 +1261,6 @@ function generate_widget_entries_tag($atts){
       );
     }
     if ($tag_ids) {
-      // _v($taxonomy);
-      // _v($tag_ids);
       $tax_querys[] = array(
         'taxonomy' => 'post_tag',
         'terms' => $tag_ids,
@@ -1276,9 +1274,7 @@ function generate_widget_entries_tag($atts){
         'relation' => 'AND'
       )
     );
-    //_v($tax_querys);
   }
-  // _v($args);
   $thumb_size = get_widget_entries_thumbnail_size($type);
 
   if ($random) {
@@ -1780,7 +1776,16 @@ function get_navi_card_wrap_tag($atts){
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
+    'horizontal' => 0,
   ), $atts));
+
+  //Swiperスクリプトコードを呼び出すかどうか
+  global $_IS_SWIPER_ENABLE;
+  if ($horizontal) {
+    $_IS_SWIPER_ENABLE = true;
+    $tag = '<div class="swiper-wrapper">'.$tag.'</div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
+  }
+
   $navi_card_class = get_additional_widget_entry_cards_classes($atts);
   $tag = '<div class="navi-entry-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
   return $tag;

@@ -577,6 +577,7 @@ function get_navi_card_list_tag($atts){
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
+    'horizontal' => 0,
   ), $atts, 'navi_list'));
 
   if (is_admin() && !is_admin_php_page()) {
@@ -588,7 +589,6 @@ function get_navi_card_list_tag($atts){
   if (!$menu_items) {
     return;
   }
-  // _v($menu_items);
 
   foreach ($menu_items as $menu):
     //画像情報の取得
@@ -614,6 +614,7 @@ function get_navi_card_list_tag($atts){
       'classes' => $classes,
       'object' => $object,
       'object_id' => $object_id,
+      'horizontal' => $horizontal,
     );
     $tag .= get_widget_entry_card_link_tag($atts);
 
@@ -627,6 +628,7 @@ function get_navi_card_list_tag($atts){
       'bold' => $bold,
       'arrow' => $arrow,
       'class' => $class,
+      'horizontal' => $horizontal,
     );
     $tag = get_navi_card_wrap_tag($atts);
   }
