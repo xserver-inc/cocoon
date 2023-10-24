@@ -2476,7 +2476,7 @@ body.wp-admin {
 .admin-settings .demo .tagcloud a {
   border: 1px solid var(--cocoon-x-thin-color);
   border-radius: 2px;
-  color: #555;
+  color: var(--cocoon-text-color);
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;
@@ -10427,7 +10427,7 @@ body.wp-admin {
 .admin-settings .demo .tagcloud a {
   border: 1px solid var(--cocoon-x-thin-color);
   border-radius: 2px;
-  color: #555;
+  color: var(--cocoon-text-color);
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;
@@ -22461,7 +22461,7 @@ textarea[name="the_page_memo"] {
 .tagcloud .admin-tag {
   border: 1px solid var(--cocoon-x-thin-color);
   border-radius: 2px;
-  color: #555;
+  color: var(--cocoon-text-color);
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;

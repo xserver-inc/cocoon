@@ -350,7 +350,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 @mixin tagcloud_a {
   border: 1px solid var(--cocoon-x-thin-color);
   border-radius: 2px;
-  color: #555;
+  color: var(--cocoon-text-color);
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;
