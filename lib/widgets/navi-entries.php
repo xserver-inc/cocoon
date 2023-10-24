@@ -30,6 +30,8 @@ class NaviEntryWidgetItem extends WP_Widget {
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //表示タイプ
     $entry_type = apply_filters( 'navi_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    //水平表示
+    $is_horizontal = apply_filters( 'navi_entries_widget_is_horizontal', empty($instance['is_horizontal']) ? 0 : 1 );
     //タイトルの太さ
     $is_bold = apply_filters( 'navi_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : 1 );
     //矢印表示
@@ -47,6 +49,7 @@ class NaviEntryWidgetItem extends WP_Widget {
     $atts = array(
       'name' => $name,
       'type' => $entry_type,
+      'horizontal' => $is_horizontal,
       'bold' => $is_bold,
       'arrow' => $is_arrow_visible,
     );
@@ -59,6 +62,7 @@ class NaviEntryWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
+    $instance['is_horizontal'] = !empty($new_instance['is_horizontal']) ? 1 : 0;
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['name'] = strip_tags($new_instance['name']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
@@ -72,6 +76,7 @@ class NaviEntryWidgetItem extends WP_Widget {
         'title'   => '',
         'name'   => '',
         'entry_type'  => ET_DEFAULT,
+        'is_horizontal'  => 0,
         'is_bold'  => 0,
         'is_arrow_visible'  => 0,
       );
@@ -85,6 +90,7 @@ class NaviEntryWidgetItem extends WP_Widget {
       $name = esc_attr($instance['name']);
     if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
+    $is_horizontal = empty($instance['is_horizontal']) ? 0 : 1;
     $is_bold = empty($instance['is_bold']) ? 0 : 1;
     $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
 
@@ -117,6 +123,13 @@ class NaviEntryWidgetItem extends WP_Widget {
       echo '<br>';
       $options = get_widget_entry_type_options();
       generate_radiobox_tag($this->get_field_name('entry_type'), $options, $entry_type);
+      ?>
+    </p>
+    <?php //横型表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横型表示', THEME_NAME ));
+        _e( '（「大きなサムネイル」との使用がお勧め）', THEME_NAME )
       ?>
     </p>
     <?php //タイトルを太字にする ?>
