@@ -22511,3 +22511,9 @@ textarea[name="the_page_memo"] {
   background-position: 0 0,10px 10px;
   background-size: 20px 20px;
 }
+
+@media screen and (max-width: 480px) {
+  div.widget {
+    margin: 0 !important;
+  }
+}
