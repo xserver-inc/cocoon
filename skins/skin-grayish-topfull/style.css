@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://cocoon-grayish.na2-factory.com/wp-content/uploads/skin-grayish-top.jpg
-  Version: 1.0.4
+  Version: 1.0.5
   Priority: 9999000000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -99,8 +99,8 @@
   /* author-description border */
   /* --skin-grayish-site-main-hover: var(--LtBlue_T0); */
 
-  /* 薄い青　Navi−menu ３階層目のメニュー背景色・Commentボタン・投稿下ナビ背景色・TagCloud hover背景色・ 
-  　コンテンツ下ウィジットの背景色・エントリーカードのテキストhover　*/
+  /* 薄い青　Navi−menu ３階層目のメニュー背景色・Commentボタン・TagCloud hover背景色・ 
+  　エントリーカードのテキストhover　*/
   /* --skin-grayish-site-main-thin: var(--LtBlue_T70); */
 
   /* 一番薄い青　目次・　記事下のSNSボタン背景のストライプの青系・ページネーションボタン・author-box背景色 */
@@ -158,6 +158,7 @@
   /* フロントページ カテゴリーごとの疑似要素の表示 */
   --listColumns_Category_displayOn: none;
   --listColumns_Category_23cols: 0rem;
+
 }
 
 /****************************** Common ******************************/
@@ -193,10 +194,12 @@ a,
 }
 
 /* add img aspect-ratio: 16/9 */
-.a-wrap figure img,
+.a-wrap:not(.recent-comment-link, .rss-entry-card-link) figure img,
 .fb-like-box img {
   aspect-ratio: 16 / 9;
 }
+
+
 
 .skin-grayish .admin-panel a,
 .skin-grayish .admin-panel .a-wrap {
@@ -250,16 +253,31 @@ a:hover {
 }
 
 /* Navi menu */
-/* メニュー最上位階層 */
-.skin-grayish .navi-in>ul {
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+/* メニュー最上位階層 Front*/
+.skin-grayish.front-top-page .navi-in>ul {
+  /* flex-wrap: nowrap; */
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   /* height: 56px; */
-  height: var(--topHeaderNavisize);
-  gap: 8px;
+  /* height: var(--topHeaderNavisize); */
+  height: 100%;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+  padding: 0px min(1.43vw, 80px);
+}
+
+.skin-grayish:not(.front-top-page) .navi-in>ul {
+  /* flex-wrap: nowrap; */
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  /* height: 56px; */
+  /* height: var(--topHeaderNavisize); */
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
 }
 
 
@@ -271,7 +289,7 @@ a:hover {
   padding: 16px min(0.78vw, 16px);
 }
 
-.skin-grayish .navi-in>ul>li {
+.skin-grayish.front-top-page .navi-in>ul>li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -282,7 +300,26 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100%;
+  /* height: 100%; */
+  /* height: 56px; */
+  height: var(--topHeaderNavisize);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 40px;
+}
+
+.skin-grayish:not(.front-top-page) .navi-in>ul>li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* height: 100%; */
   /* height: 56px; */
   padding-top: 8px;
   padding-bottom: 8px;
@@ -540,7 +577,8 @@ a:hover {
   visibility: visible !important;
   position: relative;
   top: 0 !important;
-  gap: min(1.56vw, 20px);
+  gap: min(1.56vw, 18px);
+  z-index: 1;
 }
 
 .skin-grayish .navi-in>ul li.header-snsicon-submenu>ul>li {
@@ -581,7 +619,6 @@ a:hover {
 }
 
 .skin-grayish .header-in .site-name-text {
-  /* display: inline-block; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -765,7 +802,7 @@ a:hover {
           justify-content: flex-start;
   height: auto;
   background-image: none;
-  width: 40%;
+  /* width: 40%; */
 }
 
 .skin-grayish:not(.front-top-page) .header .header-in {
@@ -793,7 +830,7 @@ a:hover {
 .skin-grayish:not(.front-top-page) .navi {
   height: auto;
   position: relative;
-  width: 60%;
+  /* width: 60%; */
 }
 
 .skin-grayish:not(.front-top-page) #navi-in {
@@ -809,6 +846,7 @@ a:hover {
 
 .skin-grayish:not(.front-top-page) .header .header-in .logo-image {
   padding: 4px 0;
+  /* margin-right: 10px; */
 }
 
 .skin-grayish:not(.front-top-page) .header .header-in .logo-image a {
@@ -845,8 +883,9 @@ a:hover {
 /* ロゴimg使用の場合 fit-content -> safari NG*/
 .skin-grayish:not(.front-top-page) .header-in .logo-header img {
   width: auto;
-  height: clamp(32px, 3.125vw, 100%);
-  min-height: 0vw;
+  /* height: clamp(32px, 3.125vw, 100%);
+  min-height: 0vw; */
+  height: 100%;
 }
 
 /*============== Top Image : LargeSize ==============*/
@@ -1060,13 +1099,8 @@ a:hover {
   padding-bottom: 3rem;
 }
 
-/* .skin-grayish.front-top-page .front-page-type-category .list-columns .list-column:last-of-type {
-  padding-bottom: 5rem;
-} */
-
 
 .skin-grayish.front-top-page .front-page-type-category .list-columns {
-  /* margin-bottom: 2rem; */
   margin-bottom: 0rem;
 }
 
@@ -1201,10 +1235,15 @@ a:hover {
   display: grid;
   place-content: center;
   grid-template-rows: auto;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  -webkit-column-gap: 4px;
+     -moz-column-gap: 4px;
+          column-gap: 4px;
+  row-gap: 4px;
 }
 
-.skin-grayish .ect-3-columns .entry-card-wrap {
+/* .skin-grayish .ect-3-columns .entry-card-wrap, */
+.skin-grayish .ect-3-columns>* {
   width: 100%;
 }
 
@@ -2250,36 +2289,23 @@ a:hover {
 }
 
 /* 付箋風Box */
-.blank-box.sticky {
+:is([class*="is-style-sticky-"], .blank-box.sticky) {
   border-width: 0 0 0 0;
   border-color: unset;
+  border-left: solid 6px var(--LtGray_T0);
   background-color: var(--LtGray_T70);
   padding: 1.2em 1.6em;
   position: relative;
 }
 
 
-.blank-box.sticky::before {
-  display: block;
-  content: "";
-  background-color: var(--LtGray_T0);
-  -webkit-clip-path: inset(0 0 0 0);
-          clip-path: inset(0 0 0 0);
-  width: 6px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.blank-box.sticky::after {
+:is([class*="is-style-sticky-"], .blank-box.sticky)::before {
   display: block;
   content: "";
   background-color: var(--white);
   -webkit-clip-path: inset(0 0 0 0);
           clip-path: inset(0 0 0 0);
-  width: 10px;
+  width: 4px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -2287,36 +2313,24 @@ a:hover {
   z-index: 1;
 }
 
-.blank-box.sticky.st-yellow {
+:is(.is-style-sticky-yellow, .blank-box.sticky.st-yellow) {
+  border-left: solid 6px var(--Blk_Yellow_T0);
   background-color: var(--Blk_Yellow_T50);
 }
 
-.blank-box.sticky.st-yellow::before {
-  background-color: var(--Blk_Yellow_T0);
-}
-
-.blank-box.sticky.st-red {
+:is(.is-style-sticky-red, .blank-box.sticky.st-red) {
+  border-left: solid 6px var(--Blk_Pink_T0);
   background-color: var(--Blk_Pink_T50);
 }
 
-.blank-box.sticky.st-red::before {
-  background-color: var(--Blk_Pink_T0);
-}
-
-.blank-box.sticky.st-blue {
+:is(.is-style-sticky-blue, .blank-box.sticky.st-blue) {
+  border-left: solid 6px var(--LtBlue_T0);
   background-color: var(--LtBlue_T50);
 }
 
-.blank-box.sticky.st-blue::before {
-  background-color: var(--LtBlue_T0);
-}
-
-.blank-box.sticky.st-green {
+:is(.is-style-sticky-green, .blank-box.sticky.st-green) {
+  border-left: solid 6px var(--Blk_Green_T0);
   background-color: var(--Blk_Green_T50);
-}
-
-.blank-box.sticky.st-green::before {
-  background-color: var(--Blk_Green_T0);
 }
 
 
@@ -2382,14 +2396,14 @@ a:hover {
 .skin-grayish .blogcard {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 200px auto;
+  grid-template-columns: 200px auto auto;
   row-gap: 1em;
   -webkit-column-gap: 1em;
      -moz-column-gap: 1em;
           column-gap: 1em;
   border: solid 1px var(--LtGray_T30);
   width: 100%;
-  padding: 1.5em 1em;
+  padding: 1em;
   position: relative;
 }
 
@@ -2406,7 +2420,7 @@ a:hover {
   max-height: -moz-max-content;
   max-height: max-content;
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 2 / 4;
   margin: 0;
   position: relative;
 }
@@ -2426,20 +2440,31 @@ a:hover {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: auto;
+  /* height: auto; */
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 0.4em 2.4em;
-  position: absolute;
-  bottom: 2em;
-  right: 1.4em;
+  position: relative;
+  bottom: 0;
+  grid-row: 2;
+  grid-column: 3;
+  align-self: flex-end;
+  justify-self: flex-end;
   z-index: 1;
 }
 
-
+.skin-grayish .blogcard::after,
+.skin-grayish .blogcard-footer::after {
+  display: none;
+}
 
 .skin-grayish .blogcard-footer {
   font-size: 0.8em;
   grid-row: 2;
   grid-column: 1 / 3;
+  text-align: left;
+  align-self: end;
 }
 
 .skin-grayish .blogcard .blogcard-favicon {
@@ -2467,7 +2492,7 @@ a:hover {
   font-size: 10px;
   color: var(--LtBlue_S30);
   grid-row: 2;
-  grid-column: 2;
+  grid-column: 1 / 4;
   margin-top: 2px;
 }
 
@@ -2477,27 +2502,23 @@ a:hover {
 }
 
 .skin-grayish .external-blogcard .blogcard-footer {
-  grid-column: 1;
+  grid-column: 1 / 3;
   margin-top: 1em;
 }
 
 /* 内部カードの日付を動かす */
-.skin-grayish .blogcard.internal-blogcard {
+.skin-grayish .internal-blogcard {
   grid-template-rows: auto auto auto;
   row-gap: 0.7em;
   -webkit-column-gap: 1em;
      -moz-column-gap: 1em;
           column-gap: 1em;
-  padding: 1.5em 1em 1em;
 }
 
-.skin-grayish .blogcard.internal-blogcard::before {
+.skin-grayish .internal-blogcard::before {
   position: relative;
   grid-row: 3;
-  grid-column: 2;
-  justify-self: flex-end;
-  bottom: unset;
-  right: unset;
+  grid-column: 3;
 }
 
 
@@ -2528,9 +2549,8 @@ a:hover {
 }
 
 .skin-grayish .internal-blogcard .blogcard-site {
-  font-size: 0.8em;
   grid-row: 3;
-  grid-column: 1;
+  grid-column: 1 / 3;
 }
 
 
@@ -2681,7 +2701,6 @@ div.search-form {
 .timeline-box .timeline-item-snippet .iconlist-box ul {
   list-style: none;
 }
-
 
 
 /* 引用（コアブロック） */
@@ -2963,6 +2982,7 @@ blockquote cite {
   display: none;
 }
 
+
 .skin-grayish .pager-post-navi a.prev-post,
 .skin-grayish .pager-post-navi a.next-post {
   position: relative;
@@ -2970,6 +2990,14 @@ blockquote cite {
   padding-left: 0;
   padding-right: 0;
   line-height: 1.4;
+}
+
+.skin-grayish .pager-post-navi a.next-post {
+  width: 100%;
+}
+
+.skin-grayish .pager-post-navi a.prev-post+a.next-post {
+  width: 48%;
 }
 
 .skin-grayish .pager-post-navi a .iconfont {
@@ -2982,43 +3010,52 @@ blockquote cite {
 }
 
 .skin-grayish .pager-post-navi .a-wrap:hover {
-  background-color: var(--skin-grayish-site-main-thin);
+  background-color: transparent;
   translate: 0% -6px;
 }
 
-.skin-grayish .pager-post-navi img {
-  vertical-align: bottom;
+.skin-grayish .pager-post-navi .next-post-thumb,
+.skin-grayish .pager-post-navi .prev-post-thumb {
+  display: block;
+  position: relative;
 }
 
-.skin-grayish .pager-post-navi a.prev-post::before,
-.skin-grayish .pager-post-navi a.next-post::before {
+.skin-grayish .pager-post-navi .next-post-thumb::before,
+.skin-grayish .pager-post-navi .prev-post-thumb::before {
   display: block;
-  content: "Prev";
+  content: "";
   color: var(--skin-grayish-cat-txt);
   font-size: 1em;
   background-color: var(--skin-grayish-site-sub-color);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  /* height: 1.4em; */
   padding: 0.2em;
   position: absolute;
   top: 0;
   z-index: 5;
-
 }
 
-.skin-grayish .pager-post-navi a.prev-post::before {
+.skin-grayish .pager-post-navi .prev-post-thumb::before {
   content: "Prev";
   left: 0;
-
 }
 
-.skin-grayish .pager-post-navi a.next-post::before {
+.skin-grayish .pager-post-navi .next-post-thumb::before {
   content: "Next";
   right: 0;
 }
 
+
+.skin-grayish .pager-post-navi a.prev-post .prev-post-title {
+  margin-right: 4px;
+  margin-left: 8px;
+}
+
+.skin-grayish .pager-post-navi a.next-post .next-post-title {
+  margin-right: 8px;
+  margin-left: 4px;
+}
 
 
 /*============== Sidebar : LargeSize ==============*/
@@ -3198,11 +3235,16 @@ blockquote cite {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  margin-top: 0;
   padding: 1rem 8px;
+}
+
+/* 835px以上 */
+.skin-grayish .footer-widgets {
   position: relative;
 }
 
-.skin-grayish .footer-bottom::before {
+.skin-grayish .footer-widgets::before {
   display: block;
   content: "";
   background-color: var(--skin-grayish-site-main-hover);
@@ -3210,11 +3252,12 @@ blockquote cite {
   height: 1px;
   margin: 0 calc(50% - 50vw);
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 1;
 
 }
+
 
 .skin-grayish .footer-bottom-logo {
   float: unset;
@@ -3240,6 +3283,7 @@ blockquote cite {
   scale: 1.0;
   -webkit-transition: scale 0.3s, color 0.3s ease-in-out;
   transition: scale 0.3s, color 0.3s ease-in-out;
+  margin-right: -0.4rem;
 }
 
 .skin-grayish .footer-bottom-logo img {
@@ -3334,24 +3378,6 @@ blockquote cite {
   color: var(--skin-grayish-site-sub-color);
 }
 
-
-.skin-grayish .search-edit,
-.skin-grayish input[type="text"],
-.skin-grayish input[type="password"],
-.skin-grayish input[type="date"],
-.skin-grayish input[type="datetime"],
-.skin-grayish input[type="email"],
-.skin-grayish input[type="number"],
-.skin-grayish input[type="search"],
-.skin-grayish input[type="tel"],
-.skin-grayish input[type="time"],
-.skin-grayish input[type="url"],
-.skin-grayish textarea,
-.skin-grayish select {
-  border: 1px solid var(--LtGray_T0) !important;
-  border-radius: 0 !important;
-}
-
 /* Archives, Category 選択矢印の消去 */
 .skin-grayish :where(.widget_categories, .widget_archive) select {
   -webkit-appearance: none;
@@ -3365,7 +3391,6 @@ blockquote cite {
   display: grid;
   grid-template-rows: 80px auto auto auto auto;
   grid-template-columns: 1fr;
-  /* row-gap: 1em; */
   width: 100%;
   padding: 2em 1em;
   background-color: var(--white);
@@ -3434,7 +3459,6 @@ blockquote cite {
   color: var(--skin-grayish-author-description-txt);
   font-size: 14px;
   border-top: 1px dashed var(--skin-grayish-site-main-hover);
-  /* margin-top: 1em; */
   margin-top: 0.5em;
   margin-bottom: 1em;
   position: relative;
@@ -3604,10 +3628,22 @@ blockquote cite {
   opacity: 1;
 }
 
-/* エディタ内　Box Menu */
-.box-menu-box .box-menu .box-menu-icon img {
+/* Box Menu アイコン使用 */
+.box-menu .box-menu-icon {
+  font-size: 30px;
+  color: var(--skin-grayish-site-sub-color);
+}
+
+.box-menu-icon img {
+  /* max-width: 30px; */
+  max-height: 30px;
+}
+
+/* Cocoonブロック　Box Menu アイコン&画像 */
+.box-menu-box .box-menu .box-menu-icon * {
   margin: 10px 0;
 }
+
 
 /* Facebook */
 .skin-grayish .fb-like-content {
@@ -3744,6 +3780,343 @@ blockquote cite {
 .ranking-box .ranking-item-link-buttons a {
   padding: 8px 20px;
 }
+
+/* ランキング,CTA,box-menu footerにウィジェットで置かれた時の背景 */
+.footer .cta-box,
+.ranking-item,
+.box-menu,
+.toc-widget-box,
+.wp-calendar-table {
+  background-color: var(--white_A90);
+}
+
+.footer .cta-button .btn {
+  background-color: var(--LtGray_T70);
+  border: solid 1px var(--LtGray_T70);
+}
+
+
+/* ブログカード 縦表示 Cocoonレイアウトブロック使用時2,3も + WPコア カラム・メディアとテキストも対象とする */
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard {
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  row-gap: 1em;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+  text-align: center;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard::before,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard::before,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard::before,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard::before,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard::before {
+  width: 100%;
+  padding: .6em 0em;
+  grid-row: 4;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content::before,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-content::before,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content::before,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content::before,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content::before {
+  font-size: min(3.125vw, 12px);
+  min-height: 0vw;
+  padding: .4em 2em;
+  bottom: -10px;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-thumbnail,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-thumbnail,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-thumbnail,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-thumbnail,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-thumbnail {
+  width: 100%;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-content,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content {
+  grid-row: 2;
+  grid-column: 1;
+  text-align: left;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-title,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-title,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-title,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-title,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-title {
+  font-size: 1.0em;
+  line-height: 1.4;
+  margin-bottom: 10px;
+
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-footer,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-footer,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-footer,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.external-blogcard .blogcard-footer,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.external-blogcard .blogcard-footer {
+  grid-row: 3;
+  grid-column: 1;
+  margin-top: 0;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.external-blogcard .blogcard-site,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.external-blogcard .blogcard-site,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.external-blogcard .blogcard-site,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.external-blogcard .blogcard-site,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.external-blogcard .blogcard-site {
+  margin-top: 0;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-date,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-date,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-date,
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-domain,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-domain,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-domain,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-date,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-domain,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-date,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-domain {
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.internal-blogcard,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard {
+  grid-template-rows: auto auto auto auto;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard::before,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.internal-blogcard::before,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard::before,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard::before,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard::before {
+  grid-row: 5;
+  grid-column: 1;
+  justify-self: center;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard .blogcard-footer .blogcard-date {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard .blogcard-footer .blogcard-site {
+  grid-row: 4;
+  grid-column: 1;
+  margin-bottom: 0;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content .blogcard-snippet,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content .blogcard-snippet {
+  font-size: 0.8em;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard-label,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard-label,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard-label,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard-label,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard-label {
+  font-size: 12px;
+  left: 0.6em;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard-footer,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard-footer,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard-footer,
+.skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard-footer,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard-footer {
+  text-align: left;
+}
+
+/* プロフィールボックス　エディタでカラム、インデックスミドルウィジェット時など縦表示にする */
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box {
+  display: grid;
+  grid-template-rows: 100px auto auto auto !important;
+  grid-template-columns: 1fr !important;
+  -webkit-column-gap: 0em !important;
+     -moz-column-gap: 0em !important;
+          column-gap: 0em !important;
+  width: 100% !important;
+  padding: 2em 1em !important;
+  background-color: var(--white) !important;
+  border: none !important;
+  border-radius: 0% !important;
+  position: relative !important;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-widget-name,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-widget-name,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-widget-name,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-widget-name {
+  color: var(--LtGray_T0);
+  font-size: 12px;
+  grid-row: 2 !important;
+  grid-column: 1 !important;
+  align-self: center !important;
+  justify-self: center !important;
+  margin-top: 0 !important;
+  padding-top: 2em !important;
+  padding-bottom: 1.2em !important;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-thumb,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-thumb,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-thumb,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-thumb {
+  float: none;
+  grid-row: 1 !important;
+  grid-column: 1 !important;
+  justify-self: center !important;
+  width: 80px !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-thumb img,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-thumb img,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-thumb img,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-thumb img {
+  border-radius: 99%;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-content,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-content,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-content,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-content {
+  display: contents;
+  justify-self: center;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-name,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name {
+  font-size: 16px;
+  grid-row: 2 !important;
+  grid-column: 1 !important;
+  align-self: flex-start !important;
+  justify-self: center !important;
+  text-align: left !important;
+  margin-bottom: 0em !important;
+  padding-top: 0em !important;
+  padding-bottom: 1em !important;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name a,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-name a,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name a,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name a {
+  color: var(--skin-grayish-site-sub-color);
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name a:hover,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-name a:hover,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name a:hover,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name a:hover {
+  color: var(--skin-grayish-site-main-hover);
+  text-decoration: underline;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-description,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-description,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-description,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-description {
+  grid-row: 4 !important;
+  grid-column: 1 / 3 !important;
+  color: var(--skin-grayish-author-description-txt);
+  font-size: 14px !important;
+  border-top: 1px dashed var(--skin-grayish-site-main-hover) !important;
+  border-left: 0px !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0em !important;
+  padding: 1em 0 0 0 !important;
+  position: relative !important;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-follows,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-follows,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-follows,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-follows {
+  grid-row: 5 !important;
+  grid-column: 1 / 3 !important;
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box p,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box p,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box p,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box p {
+  margin-top: 0.3em !important;
+  padding: 0 0 1.5em 0 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .sns-follow-buttons,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .sns-follow-buttons,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .sns-follow-buttons,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .sns-follow-buttons {
+  -ms-flex-wrap: wrap !important;
+      flex-wrap: wrap !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .sns-follow-buttons a.follow-button,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .sns-follow-buttons a.follow-button,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .sns-follow-buttons a.follow-button,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .sns-follow-buttons a.follow-button {
+  border: 0 !important;
+  color: var(--skin-grayish-site-sub-color);
+}
+
+.skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .sns-follow-buttons a.follow-button:hover,
+.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .sns-follow-buttons a.follow-button:hover,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .sns-follow-buttons a.follow-button:hover,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .sns-follow-buttons a.follow-button:hover {
+  background-color: transparent;
+}
+
 
 /* スクロールヒント table カレンダーを表示するとカレンダーにもついてたので限定 */
 .skin-grayish :where(.wp-block-table, .under-entry-content .related-list) .scroll-hint-icon {
@@ -3917,7 +4290,7 @@ blockquote cite {
   display: grid;
   place-content: center;
   grid-template-rows: auto auto auto;
-  grid-template-columns: auto auto;
+  grid-template-columns: minmax(auto, 180px) minmax(500px, 1fr);
   row-gap: 0;
   -webkit-column-gap: 2.5em;
      -moz-column-gap: 2.5em;
@@ -3931,10 +4304,20 @@ blockquote cite {
   position: relative;
 }
 
-.main .author-box {
+:where(.content-top) .author-box {
+  grid-template-columns: minmax(auto, 150px) 1fr;
+  width: 100%;
+  background-color: var(--white);
+
+}
+
+:where(.main) .author-box {
+  grid-template-columns: minmax(auto, 150px) 1fr;
   padding: 2em;
   background-color: var(--white);
+  width: 100%;
 }
+
 
 :where(.main, .sidebar, .content-top) .author-box::before, .author-box::after {
   display: block;
@@ -4028,8 +4411,8 @@ blockquote cite {
   padding: 4px 0;
 }
 
-.skin-grayish .footer-widgets img,
-.skin-grayish .footer-widgets-mobile img {
+.skin-grayish .footer-widgets .widget_media_image img,
+.skin-grayish .footer-widgets-mobile .widget_media_image img {
   width: 100%;
 }
 
@@ -4052,6 +4435,7 @@ blockquote cite {
 .skin-grayish .carousel .slick-arrow:before {
   color: var(--skin-grayish-site-sub-color);
 }
+
 
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
@@ -4162,6 +4546,15 @@ blockquote cite {
 
   .skin-grayish .article-header .sns-share-buttons a {
     margin-bottom: 0;
+  }
+
+}
+
+/*1279px以下*/
+@media screen and (max-width: 1279px) {
+  .skin-grayish:not(.front-top-page) .header-in .logo-header img {
+    height: clamp(32px, 3.75vw, 100%);
+    min-height: 0vw;
   }
 
 }
@@ -4702,10 +5095,9 @@ blockquote cite {
     width: 100%;
   }
 
-  .skin-grayish .navi-footer {
+  /* .skin-grayish .navi-footer {
     padding: 1rem 0;
-
-  }
+  } */
 
   .skin-grayish .navi-footer-in>.menu-footer li.menu-item {
     width: auto;
@@ -4723,6 +5115,162 @@ blockquote cite {
   /* ウィジェット コンテンツ上部Profileボックス */
   .skin-grayish .content-top .widget_author_box {
     padding: 2rem 28px;
+  }
+
+  /* footer ウィジェット */
+  /* ブログカード 横型 */
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 200px auto;
+    row-gap: 1em;
+    -webkit-column-gap: 1em;
+       -moz-column-gap: 1em;
+            column-gap: 1em;
+    border: solid 1px var(--LtGray_T30);
+    width: 100%;
+    position: relative;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-thumbnail {
+    grid-row: 1;
+    grid-column: 1;
+    width: 200px;
+    float: none;
+    margin: 0;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-content {
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+    grid-row: 1;
+    grid-column: 2;
+    margin: 0;
+    position: relative;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-content .blogcard-snippet {
+    line-height: 1.4;
+    letter-spacing: .14em;
+    text-align: left;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard::before {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: auto;
+    padding: 0.4em 2.4em;
+    position: absolute;
+    bottom: 1.4em;
+    right: 1.4em;
+    top: unset;
+    left: unset;
+    z-index: 1;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-favicon {
+    margin-top: 0;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-favicon img {
+    vertical-align: middle;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-site {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-date {
+    font-size: 10px;
+    color: var(--LtBlue_S30);
+    grid-row: 2;
+    grid-column: 2;
+    margin-top: 2px;
+  }
+
+  /* 外部カード */
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard.external-blogcard .blogcard-content::before {
+    bottom: -2.5rem;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard.external-blogcard .blogcard-footer {
+    grid-row: 2;
+    grid-column: 1;
+    margin-top: 1em;
+  }
+
+  /* 内部カードの日付を動かす */
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard.internal-blogcard {
+    grid-template-rows: auto auto auto;
+    row-gap: 0.7em;
+    -webkit-column-gap: 1em;
+       -moz-column-gap: 1em;
+            column-gap: 1em;
+    padding: 1em;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard.internal-blogcard::before {
+    position: relative;
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: flex-end;
+    bottom: unset;
+    right: unset;
+  }
+
+
+  .skin-grayish .footer-widgets .internal-blogcard .blogcard-date {
+    float: none;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .skin-grayish .footer-widgets .internal-blogcard .blogcard-date .blogcard-post-date {
+    position: relative;
+  }
+
+  .skin-grayish .footer-widgets .internal-blogcard .blogcard-date .blogcard-post-date::before {
+    display: block;
+    content: "\f1da";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    left: -1.5em;
+    z-index: 1;
+  }
+
+  .skin-grayish .footer-widgets .internal-blogcard .blogcard-footer {
+    display: contents;
+  }
+
+  .skin-grayish .footer-widgets .internal-blogcard .blogcard-site {
+    font-size: 0.8em;
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard.internal-blogcard .blogcard-footer .blogcard-site {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard.internal-blogcard .blogcard-footer .blogcard-date {
+    grid-row: 2;
+    grid-column: 2;
+    margin-top: 2px;
   }
 }
 
@@ -4833,7 +5381,7 @@ blockquote cite {
 
   /* 一覧のカード表示 2カラム */
   .skin-grayish .ect-vertical-card {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* MORE リンクボタン & index page 次のページも同様 */
@@ -4999,66 +5547,64 @@ blockquote cite {
     margin-top: 0;
   }
 
+  /* プロフィールボックス main,content-bottom, content-top 縦表示 */
   :where(.main, .content-bottom, .content-top) .author-box {
     grid-template-rows: 100px auto auto auto;
-    grid-template-columns: 100px auto;
-    width: 100%;
+    grid-template-columns: 1fr;
+    -webkit-column-gap: 0em;
+       -moz-column-gap: 0em;
+            column-gap: 0em;
+    padding: 2em 1em;
+  }
+
+  :where(.content-bottom) .author-box {
     padding: 2em;
-    -webkit-column-gap: 1.5em;
-       -moz-column-gap: 1.5em;
-            column-gap: 1.5em;
   }
 
-  :where(.main, .content-bottom, .content-top) .author-box .author-widget-name {
-    grid-row: 1 / 2;
-    grid-column: 2;
-    align-self: center;
-    justify-self: flex-start;
-    padding-top: 50px;
-  }
-
-
-  .skin-grayish :where(.main, .content-bottom, .content-top) .author-box .author-thumb {
-    float: none;
-    grid-row: 1 / 3;
-    grid-column: 1;
-    justify-self: flex-start;
-    margin: 0;
-  }
-
-  :where(.main, .content-bottom, .content-top) .author-box .author-content {
-    justify-self: center;
-  }
 
   :where(.main, .content-bottom, .content-top) .author-box .author-content .author-name {
-    grid-row: 1;
-    grid-column: 2;
+    grid-row: 2;
+    grid-column: 1;
     align-self: flex-start;
-    justify-self: flex-start;
+    justify-self: center;
     text-align: left;
-    padding-top: 2rem;
+    padding-top: 0;
+    padding-bottom: 1em;
+  }
+
+  .skin-grayish :where(.main, .content-bottom, .content-top) .author-box .author-thumb {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    width: 80px;
   }
 
   :where(.main, .content-bottom, .content-top) .author-box .author-content .author-description {
-    font-size: 12px;
     grid-row: 3;
-    grid-column: 1 / 3;
-    padding-left: 0;
-    border-left: none;
+    grid-column: 1;
+    margin-top: .5em;
+    padding: 1em 0 0 0;
+    border-left: 0px;
     border-top: 1px dashed var(--skin-grayish-site-main-hover);
-    margin-top: 1.2rem;
+  }
+
+  :where(.main, .content-bottom, .content-top) .author-box .author-widget-name {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+    padding-top: 2em;
+    padding-bottom: 1.2em;
   }
 
   :where(.main, .content-bottom, .content-top) .author-box .author-follows {
     grid-row: 4;
-    grid-column: 1 / 3;
-    padding-left: 0;
-    border-left: none;
+    grid-column: 1;
+    justify-self: center;
+    border-left: 0px;
+    padding-left: 0rem;
   }
 
-  :where(.main, .content-bottom, .content-top) .author-box p {
-    margin-top: 1.2em;
-  }
 
   /* 投稿下関連記事 */
   .skin-grayish .under-entry-content .related-list .related-entry-card-wrap {
@@ -5077,27 +5623,106 @@ blockquote cite {
     padding: 1em;
   }
 
-  .skin-grayish .blogcard::before {
-    bottom: 1.4em;
-  }
 
   .skin-grayish .blogcard .blogcard-thumbnail {
     width: min(25vw, 160px);
   }
 
   .skin-grayish .blogcard .blogcard-title {
+    text-align: left;
     margin-bottom: 10px;
   }
 
   .skin-grayish .blogcard .blogcard-date,
   .skin-grayish .blogcard .blogcard-domain {
     font-size: 10px;
+    overflow-wrap: anywhere;
   }
 
   .skin-grayish .blogcard .blogcard-content::before {
     padding: .6em 2.4em;
     bottom: -16px;
   }
+
+  /* .sidebar-menu-contentのブログカード */
+  .skin-grayish .sidebar-menu-content .blogcard,
+  :is(.wp-block-columns, .wp-block-media-text) .blogcard {
+    grid-template-columns: 1fr;
+  }
+
+  .skin-grayish .sidebar-menu-content .blogcard .blogcard-thumbnail,
+  :is(.wp-block-columns, .wp-block-media-text) .blogcard .blogcard-thumbnail {
+    width: 100%;
+  }
+
+  /* Cocoonレイアウト仕様時　ブログカード */
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard .blogcard-content {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard .blogcard-title {
+    font-size: 0.9em;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard .blogcard-footer .blogcard-site {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard .blogcard-footer .blogcard-date {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard {
+    row-gap: 0.7em;
+    -webkit-column-gap: 1em;
+       -moz-column-gap: 1em;
+            column-gap: 1em;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard::before {
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: flex-end;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.4em 2.4em;
+    bottom: unset;
+    right: unset;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard::before {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: auto;
+    padding: 0.4em 2.4em;
+    position: absolute;
+    top: unset;
+    left: unset;
+    bottom: 1.4em;
+    right: 1.4em;
+    z-index: 1;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard {
+    grid-template-rows: auto auto;
+    row-gap: 1em;
+    -webkit-column-gap: 1em;
+       -moz-column-gap: 1em;
+            column-gap: 1em;
+  }
+
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard .blogcard-footer {
+    grid-row: 2;
+    grid-column: 1;
+    margin-top: 1em;
+  }
+
 
 
   /* ウィジェット コンテンツ上部Profileボックス */
@@ -5109,6 +5734,26 @@ blockquote cite {
   .carousel {
     margin-bottom: 0rem;
   }
+
+  /****************************** Footer  ******************************/
+  .skin-grayish .footer-widgets-mobile {
+    position: relative;
+  }
+
+  /* 835px以上 */
+  .skin-grayish .footer-widgets-mobile::before {
+    display: block;
+    content: "";
+    background-color: var(--skin-grayish-site-main-hover);
+    width: 100vw;
+    height: 1px;
+    margin: 0 calc(50% - 50vw);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
 
 }
 
@@ -5170,17 +5815,20 @@ blockquote cite {
        -moz-column-gap: 8px;
             column-gap: 8px;
     text-align: center;
-    padding: 1.5em 1em 0.5em 1em;
   }
 
   .skin-grayish .blogcard::before {
     width: 100%;
-    padding: .4em 0em;
+    padding: .6em 0em;
     position: relative;
     top: 0;
     left: 0;
     right: unset;
     bottom: unset;
+    grid-row: 4;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
   }
 
 
@@ -5202,7 +5850,6 @@ blockquote cite {
   .skin-grayish .blogcard .blogcard-content {
     grid-row: 2;
     grid-column: 1;
-    text-align: justify;
   }
 
   .skin-grayish .blogcard .blogcard-title {
@@ -5210,7 +5857,8 @@ blockquote cite {
     line-height: 1.4;
   }
 
-  .skin-grayish .external-blogcard .blogcard-footer {
+  .skin-grayish .external-blogcard .blogcard-footer,
+  .skin-grayish :where(.footer-widgets, #sidebar) .blogcard.external-blogcard .blogcard-footer {
     grid-row: 3;
     grid-column: 1;
     margin-top: 0;
@@ -5222,7 +5870,6 @@ blockquote cite {
 
   .skin-grayish .blogcard.internal-blogcard {
     grid-template-rows: auto auto auto auto;
-    padding: 1.5em 1em 0.1em 1em;
   }
 
   .skin-grayish .blogcard.internal-blogcard::before {
@@ -5251,10 +5898,72 @@ blockquote cite {
     left: 0.6em;
   }
 
+  /* Cocoonレイアウト仕様時　ブログカード */
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard {
+    row-gap: 1em;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard::before {
+    width: 100%;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard {
+    grid-template-rows: auto auto auto;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard .blogcard-content {
+    grid-row: 2;
+    grid-column: 1;
+    text-align: justify;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard .blogcard-footer {
+    grid-row: 3;
+    grid-column: 1;
+    margin-top: 0;
+  }
+
+  :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard::before {
+    width: 100%;
+    padding: .4em 0em;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: unset;
+    bottom: 1.4em;
+  }
+
+
   /* 記事内ページャー */
   .skin-grayish .pager-links.pager-prev-next .post-page-numbers {
     width: 44%;
   }
+
+  /* 投稿下　ページ送り */
+  .skin-grayish .pager-post-navi {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
+  }
+
+  .skin-grayish .pager-post-navi .next-post-thumb::before,
+  .skin-grayish .pager-post-navi .prev-post-thumb::before {
+    font-size: 10px;
+
+  }
+
+
+  .skin-grayish .pager-post-navi a.prev-post,
+  .skin-grayish .pager-post-navi a.next-post {
+    width: 100%;
+  }
+
+  .skin-grayish .pager-post-navi a.prev-post+a.next-post {
+    width: 100%;
+  }
+
 
 }
 
@@ -5312,60 +6021,12 @@ blockquote cite {
     padding: 0 1rem;
   }
 
-  :where(.main, .content-bottom, .content-top) .author-box {
-    grid-template-rows: 100px auto auto auto;
-    grid-template-columns: auto;
-    -webkit-column-gap: 0em;
-       -moz-column-gap: 0em;
-            column-gap: 0em;
-    padding: 2em;
-  }
-
-  :where(.main, .content-bottom, .content-top) .author-box .author-content .author-name {
-    grid-row: 2;
-    grid-column: 1;
-    align-self: flex-start;
-    justify-self: center;
-    text-align: left;
-    padding-top: 0;
-    padding-bottom: 1em;
-  }
-
-  .skin-grayish :where(.main, .content-bottom, .content-top) .author-box .author-thumb {
-    grid-row: 1;
-    grid-column: 1;
-    justify-self: center;
-    width: 80px;
-  }
-
-  :where(.main, .content-bottom, .content-top) .author-box .author-content .author-description {
-    grid-row: 3;
-    grid-column: 1;
-    padding-left: 0;
-    margin-top: 0rem;
-
-  }
-
-  :where(.main, .content-bottom, .content-top) .author-box .author-widget-name {
-    grid-row: 2;
-    grid-column: 1;
-    align-self: center;
-    justify-self: center;
-    padding-top: 2em;
-    padding-bottom: 1.2em;
-  }
-
-  :where(.main, .content-bottom, .content-top) .author-box .author-follows {
-    grid-row: 4;
-    grid-column: 1;
-    justify-self: center;
-  }
 
   /****************************** Content 投稿・固定ページの本文 ******************************/
 
-  /* 一覧のカード表示 2カラム */
+  /* 一覧のカード表示 1カラム */
   .skin-grayish .ect-vertical-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .skin-grayish .article-header .entry-title {
@@ -5439,7 +6100,6 @@ blockquote cite {
   :is(.is-style-ng-box, .ng-box)::before,
   :is(.is-style-bad-box, .bad-box)::before,
   :is(.is-style-profile-box, .profile-box)::before {
-    /* left: 1.5em; */
     left: 1em;
   }
 
@@ -5496,19 +6156,6 @@ blockquote cite {
     font-size: 16px;
   }
 
-  /* 投稿下　ページ送り */
-  .skin-grayish .pager-post-navi {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 8px;
-  }
-
-  .skin-grayish .pager-post-navi a.prev-post,
-  .skin-grayish .pager-post-navi a.next-post {
-    width: 100%;
-  }
 
   /* 投稿下関連記事 */
   .skin-grayish .under-entry-content .related-list .related-entry-card-wrap {
@@ -5527,29 +6174,6 @@ blockquote cite {
     gap: 0.8em;
   }
 
-  /* Blog card */
-  .skin-grayish .blogcard {
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 1fr;
-    row-gap: 1em;
-    -webkit-column-gap: 8px;
-       -moz-column-gap: 8px;
-            column-gap: 8px;
-    text-align: center;
-    padding: 1.5em 1em 0.5em 1em;
-  }
-
-  .skin-grayish .blogcard::before {
-    width: 100%;
-    padding: .4em 0em;
-    position: relative;
-    top: 0;
-    left: 0;
-    right: unset;
-    bottom: unset;
-  }
-
-
   .skin-grayish .blogcard .blogcard-content::before {
     font-size: min(3.125vw, 12px);
     min-height: 0vw;
@@ -5561,20 +6185,6 @@ blockquote cite {
     bottom: -1.5rem;
   }
 
-  .skin-grayish .blogcard .blogcard-thumbnail {
-    width: 100%;
-  }
-
-  .skin-grayish .blogcard .blogcard-content {
-    grid-row: 2;
-    grid-column: 1;
-    text-align: justify;
-  }
-
-  .skin-grayish .blogcard .blogcard-title {
-    font-size: 1.0em;
-    line-height: 1.4;
-  }
 
   .skin-grayish .external-blogcard .blogcard-footer {
     grid-row: 3;
@@ -5586,10 +6196,6 @@ blockquote cite {
     margin-top: 0;
   }
 
-  .skin-grayish .blogcard.internal-blogcard {
-    grid-template-rows: auto auto auto auto;
-    padding: 1.5em 1em 0.1em 1em;
-  }
 
   .skin-grayish .blogcard.internal-blogcard::before {
     grid-row: 5;
@@ -5608,9 +6214,9 @@ blockquote cite {
     margin-bottom: 0;
   }
 
-  .skin-grayish .blogcard .blogcard-content .blogcard-snippet {
+  /* .skin-grayish .blogcard .blogcard-content .blogcard-snippet {
     font-size: 10px;
-  }
+  } */
 
   .skin-grayish .blogcard-label {
     font-size: 12px;
@@ -5633,13 +6239,4 @@ blockquote cite {
   }
 
 
-}
-
-/*320px以下*/
-@media screen and (max-width: 320px) {
-
-  /* BlogカードのReadMore表示しない */
-  .skin-grayish .blogcard .blogcard-content::before {
-    display: none;
-  }
 }

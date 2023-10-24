@@ -67,6 +67,7 @@ related_entry_card_post_author_visible,0
 ,,related_entry_card_post_date_visible,0
 ,,-------投稿 ページ送りナビ
 post_navi_visible,1
+post_navi_type,default
 post_navi_border_visible,0
 single_breadcrumbs_position,main_before
 ,,-------固定ページ
@@ -104,7 +105,7 @@ sns_tag_follow_buttons_visible,
 sns_follow_button_color,monochrome
 sns_follow_buttons_count_visible,0
 ,,-------画像 デフォルト
-eyecatch_visible,1
+,,eyecatch_visible,1
 eyecatch_label_visible,1
 eyecatch_center_enable,0
 eyecatch_width_100_percent_enable,0
@@ -116,6 +117,7 @@ internal_blogcard_thumbnail_style,left
 internal_blogcard_date_type,up_date
 external_blogcard_thumbnail_style,left
 ,,-------通知エリアの背景とテキストカラー
+notice_type,warning
 notice_area_background_color,
 notice_area_text_color,
 ,,-------アピールエリア

@@ -162,7 +162,6 @@ endif;
 add_action('wp_enqueue_scripts', 'enqueue_skin_grayish_google_fonts');
 add_action('enqueue_block_editor_assets', 'enqueue_skin_grayish_google_fonts');
 
-
 // -----------------------------------------------------------------------------
 // テーマカスタマイザー　タイトル：見出しのGoogleFontの選択を可能に：
 // ゆうそうとさんの てがきノートスキン (https://usort.jp/cocoon/)を参考にさせていただきました
@@ -185,6 +184,7 @@ if (!function_exists('skin_grayish_font_customize')) :
         'title'    => '全体：英字フォント設定',
         'panel'    => 'font_pat_panel',
         'priority' => 1000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/site-title-set/" target="_blank">英字フォントの適用箇所についてはこちらを参照</a>',
       )
     );
 
@@ -359,8 +359,11 @@ if (!function_exists('skin_grayish_color_customize')) :
         'title'    => '全体：カラー設定',
         'panel'    => 'font_pat_panel',
         'priority' => 2000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-th-color/" target="_blank">各カラーの適用箇所についてはこちらを参照</a>',
       )
     );
+
+
     //テキストカラー --LtGray_S50
     $wp_customize->add_setting('colorpicker_text_gray_S50', array(
       'default' => '#535252',
@@ -379,6 +382,8 @@ if (!function_exists('skin_grayish_color_customize')) :
         )
       )
     );
+
+
     //メイン --LtBlue_T0
     $wp_customize->add_setting('colorpicker_main_blue_T0', array(
       'default' => '#AAC2D2',
@@ -408,7 +413,7 @@ if (!function_exists('skin_grayish_color_customize')) :
         'colorpicker_main_blue_T70',
         array(
           'label'    => 'メイン 薄い青色',
-          'description' => 'グローバルナビの3階層目の背景色、<br>投稿下のPrev/Nextホバー時背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。
+          'description' => 'グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。
           <br>※空欄の場合はデフォルト値になります。',
           'section'  => 'color_pat_section',
           'settings' => 'colorpicker_main_blue_T70',
@@ -472,6 +477,8 @@ if (!function_exists('skin_grayish_color_customize')) :
   }
 endif;
 add_action('customize_register', 'skin_grayish_color_customize');
+
+
 
 // head内にCSSを追加　CSS変数の上書き
 if (!function_exists('skin_grayish_color_customize_css')) :
@@ -605,6 +612,8 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         'title'    => 'フロントページ設定：ヘッダー',
         'panel'    => 'font_pat_panel',
         'priority' => 4000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-pcheader/" target="_blank">グローバルナビの高さ等変更についてはこちらを参照</a><br><br><a href="https://cocoon-grayish.na2-factory.com/manual-top-mv/" target="_blank">メインビジュアルについてはこちらを参照</a><br><br><a href="https://cocoon-grayish.na2-factory.com/manual-pc-menu/" target="_blank">グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照</a>',
+
       )
     );
 
@@ -763,10 +772,11 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
       )
     );
 
+
     // SNSフォローボタンの表示
     $settings_data = array(
       array(
-        'label'       => 'Twitter フォローボタンを表示',
+        'label'       => 'X（旧Twitter）フォローボタンを表示',
         'setting_name' => 'twitter',
       ),
       array(
@@ -1101,6 +1111,7 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         'title'    => '全体：テキスト変更',
         'panel'    => 'font_pat_panel',
         'priority' => 3000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-contents-text/" target="_blank">テキスト変更についてはこちらを参照</a><br><br>',
       )
     );
     // New Postを好きなテキストに変更できる
@@ -1328,6 +1339,7 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
         'title' => 'フロントページ以外の設定:ヘッダー',
         'panel' => 'font_pat_panel',
         'priority' => 5000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-pcheader/" target="_blank">グローバルナビの高さ等変更についてはこちらを参照</a><br><br>',
       )
     );
     //ロゴの高さ
@@ -1491,7 +1503,7 @@ endif;
 
 // -----------------------------------------------------------------------------
 // テーマカスタマイザー　コンテンツ下部ウィジェットの設定：
-// プロフィールBoxの背景画像とオーバーレイ調整を設定可能
+// プロフィールボックスの背景画像とオーバーレイ調整を設定可能
 // -----------------------------------------------------------------------------
 if (!function_exists('skin_grayish_profbox_customize')) :
   function skin_grayish_profbox_customize($wp_customize)
@@ -1499,13 +1511,14 @@ if (!function_exists('skin_grayish_profbox_customize')) :
     $wp_customize->add_section(
       'under_contents_section',
       array(
-        'title' => 'コンテンツ下部ウィジェット：プロフィールBOX',
+        'title' => 'コンテンツ下部ウィジェット：プロフィールボックス',
         'panel' => 'font_pat_panel',
         'priority' => 7500,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-profbox/" target="_blank">プロフィールボックスの設定についてはこちらを参照</a>',
       )
     );
 
-    //プロフィールBoxの白オーバーレイ 透明度の設定　
+    //プロフィールボックスの白オーバーレイ 透明度の設定　
     $wp_customize->add_setting('undercon_profbg_overlay_alpha', array(
       'default' => 'undercon_profbg_overlay_alpha_5',
       'sanitize_callback' => 'skin_grayish_sanitize_select',
@@ -1514,7 +1527,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
       $wp_customize,
       'undercon_profbg_overlay_alpha',
       array(
-        'label' => 'プロフィールBOXの背景画像の白オーバーレイ不透明度調整',
+        'label' => 'プロフィールボックスの背景画像の白オーバーレイ不透明度調整',
         'description' => '値が大きくなるほど白色が濃くなります。',
         'section' => 'under_contents_section',
         'settings' => 'undercon_profbg_overlay_alpha',
@@ -1551,7 +1564,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
           'section'     => 'under_contents_section',  // 紐づけるセクションIDを指定
           'settings'    => 'undercon_profbg_image',  // 紐づける設定IDを指定
           'label'       => '画像アップロード',
-          'description' => 'プロフィールBOXの背景に設定したい画像を選択'
+          'description' => 'プロフィールボックスの背景に設定したい画像を選択'
         )
       )
     );
@@ -1559,7 +1572,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
 endif;
 add_action('customize_register', 'skin_grayish_profbox_customize');
 
-// プロフィールBox背景 白オーバーレイ
+// プロフィールボックス背景 白オーバーレイ
 add_action('wp_head', 'skin_grayish_profboxbg_whovlay');
 if (!function_exists('skin_grayish_profboxbg_whovlay')) :
   function skin_grayish_profboxbg_whovlay()
@@ -1601,7 +1614,7 @@ if (!function_exists('skin_grayish_profboxbg_whovlay')) :
 
 endif;
 
-// プロフィールBoxの背景画像を設定
+// プロフィールボックスの背景画像を設定
 add_action('wp_head', 'skin_grayish_profboxbg_img');
 if (!function_exists('skin_grayish_profboxbg_img')) :
   function skin_grayish_profboxbg_img()
@@ -1634,6 +1647,7 @@ if (!function_exists('skin_grayish_mobile_customize')) :
         'title'    => 'モバイル設定',
         'panel'    => 'font_pat_panel',
         'priority' => 8000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-sp-menu/" target="_blank">ヘッダー・フッターモバイルボタンの設定についてはこちらを参照</a>',
       )
     );
     // ヘッダーモバイルボタンの背景色設定
