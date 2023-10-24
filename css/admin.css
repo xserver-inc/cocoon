@@ -1561,6 +1561,9 @@ body.wp-admin {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.admin-settings .demo .post-comment-count .comment-icon {
+  margin-right: 3px;
+}
 .admin-settings .demo .ect-vertical-card {
   display: flex;
   flex-wrap: wrap;
@@ -2493,6 +2496,9 @@ body.wp-admin {
 }
 .admin-settings .demo .tagcloud a .tag-caption {
   word-break: break-all;
+}
+.admin-settings .demo .tagcloud a .tag-caption .tax-icon {
+  margin-right: 0.4em;
 }
 .admin-settings .demo .tagcloud a .tag-link-count {
   margin-left: 8px;
@@ -9512,6 +9518,9 @@ body.wp-admin {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.admin-settings .demo .post-comment-count .comment-icon {
+  margin-right: 3px;
+}
 .admin-settings .demo .ect-vertical-card {
   display: flex;
   flex-wrap: wrap;
@@ -10444,6 +10453,9 @@ body.wp-admin {
 }
 .admin-settings .demo .tagcloud a .tag-caption {
   word-break: break-all;
+}
+.admin-settings .demo .tagcloud a .tag-caption .tax-icon {
+  margin-right: 0.4em;
 }
 .admin-settings .demo .tagcloud a .tag-link-count {
   margin-left: 8px;
@@ -22479,6 +22491,9 @@ textarea[name="the_page_memo"] {
 }
 .tagcloud .admin-tag .tag-caption {
   word-break: break-all;
+}
+.tagcloud .admin-tag .tag-caption .tax-icon {
+  margin-right: 0.4em;
 }
 .tagcloud .admin-tag .tag-link-count {
   margin-left: 8px;

@@ -1091,6 +1091,10 @@ img.emoji {
   justify-content: space-between;
 }
 
+.post-comment-count .comment-icon {
+  margin-right: 3px;
+}
+
 /************************************
 ** エントリーカードタイプ
 ************************************/
@@ -2215,6 +2219,9 @@ label.screen-reader-text {
 }
 .tagcloud a .tag-caption {
   word-break: break-all;
+}
+.tagcloud a .tag-caption .tax-icon {
+  margin-right: 0.4em;
 }
 .tagcloud a .tag-link-count {
   margin-left: 8px;
