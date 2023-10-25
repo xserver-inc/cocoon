@@ -5711,6 +5711,9 @@ body.wp-admin {
   display: inline;
   padding: 5px 8px;
 }
+.admin-settings .demo .comment-reply-link .comment-icon {
+  margin-right: 3px;
+}
 .admin-settings .demo .comment-page-link {
   text-align: center;
 }
@@ -13670,6 +13673,9 @@ body.wp-admin {
   font-size: 14px;
   display: inline;
   padding: 5px 8px;
+}
+.admin-settings .demo .comment-reply-link .comment-icon {
+  margin-right: 3px;
 }
 .admin-settings .demo .comment-page-link {
   text-align: center;

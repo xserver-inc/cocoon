@@ -5932,6 +5932,9 @@ figcaption {
   display: inline;
   padding: 5px 8px;
 }
+.comment-reply-link .comment-icon {
+  margin-right: 3px;
+}
 
 .comment-page-link {
   text-align: center;
