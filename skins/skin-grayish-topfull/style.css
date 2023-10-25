@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://cocoon-grayish.na2-factory.com/wp-content/uploads/skin-grayish-top.jpg
-  Version: 1.0.5
+  Version: 1.0.6
   Priority: 9999000000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -3690,27 +3690,38 @@ blockquote cite {
 }
 
 /* Ranking */
-:where(.ranking-box, .item-ranking-box) .ranking-item-name-text {
+
+:where(.ranking-box, .item-ranking-box, .ranking-items) .ranking-item-name-text,
+.nwa .ranking-item-name-text {
   font-size: 18px;
   font-weight: normal;
+  line-height: 1.4;
 }
 
-:where(.ranking-box, .item-ranking-box) .rating-star {
+:where(.ranking-items .ranking-item > *) {
+  line-height: 1.4;
+
+}
+
+:where(.ranking-box, .item-ranking-box, .ranking-items) .rating-star {
   font-size: 0.8em;
 }
 
 .item-ranking-box [class*="-crown"]::after,
-.ranking-box [class*="-crown"]::after {
+.ranking-box [class*="-crown"]::after,
+.ranking-items [class*="-crown"]::after {
   display: none;
 }
 
 .item-ranking-box [class*="-crown"],
-.ranking-box [class*="-crown"] {
+.ranking-box [class*="-crown"],
+.ranking-items [class*="-crown"] {
   border-bottom: 0px;
 }
 
 .item-ranking-box :is(.g-crown, .s-crown, .c-crown)::before,
-.ranking-box :where(.g-crown, .s-crown, .c-crown)::before {
+.ranking-box :where(.g-crown, .s-crown, .c-crown)::before,
+.ranking-items :where(.g-crown, .s-crown, .c-crown)::before {
   display: block;
   content: "";
   width: 20px;
@@ -3724,32 +3735,34 @@ blockquote cite {
 }
 
 
-:where(.ranking-box, .item-ranking-box) .g-crown::before {
+:where(.ranking-box, .item-ranking-box, .ranking-items) .g-crown::before {
   -webkit-filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
           filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
 }
 
-:where(.ranking-box, .item-ranking-box) .s-crown::before {
+:where(.ranking-box, .item-ranking-box, .ranking-items) .s-crown::before {
   -webkit-filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
           filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
 }
 
-:where(.ranking-box, .item-ranking-box) .c-crown::before {
+:where(.ranking-box, .item-ranking-box, .ranking-items) .c-crown::before {
   -webkit-filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
           filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
 }
 
 .item-ranking-box :where(.g-crown, .s-crown, .c-crown),
-.ranking-box :where(.g-crown, .s-crown, .c-crown) {
+.ranking-box :where(.g-crown, .s-crown, .c-crown),
+.ranking-items :where(.g-crown, .s-crown, .c-crown) {
   border-left: none;
 }
 
 .item-ranking-box :where(.g-crown-circle, .s-crown-circle, .c-crown-circle),
-.ranking-box :where(.g-crown-circle, .s-crown-circle, .c-crown-circle) {
+.ranking-box :where(.g-crown-circle, .s-crown-circle, .c-crown-circle),
+.ranking-items :where(.g-crown-circle, .s-crown-circle, .c-crown-circle) {
   display: none;
 }
 
-:where(.ranking-box, .item-ranking-box) .ranking-item-link-buttons a {
+:where(.ranking-box, .item-ranking-box, .ranking-items) .ranking-item-link-buttons a {
   color: var(--skin-grayish-site-name-txt);
   font-size: 16px;
   font-weight: normal;
@@ -3758,27 +3771,32 @@ blockquote cite {
 
 }
 
-:where(.ranking-box, .item-ranking-box) .ranking-item-link-buttons a::after {
+:where(.ranking-box, .item-ranking-box, .ranking-items) .ranking-item-link-buttons a::after {
   display: none;
 }
 
-:where(.ranking-box, .item-ranking-box) .ranking-item-link-buttons .ranking-item-detail a {
+:where(.ranking-box, .item-ranking-box, .ranking-items) .ranking-item-link-buttons .ranking-item-detail a {
   border: solid 1px var(--skin-grayish-site-main-thin);
   background-color: var(--skin-grayish-site-main-thin);
 
 }
 
-:where(.ranking-box, .item-ranking-box) .ranking-item-link-buttons .ranking-item-link a {
+:where(.ranking-box, .item-ranking-box, .ranking-items) .ranking-item-link-buttons .ranking-item-link a {
   border: solid 1px var(--LtGray_T70);
   background-color: var(--LtGray_T70);
 }
 
-.ranking-box .ranking-item-img-desc p {
+:where(.ranking-box, .ranking-items) .ranking-item-img-desc p {
   font-size: 14px;
+  margin-bottom: 0px;
 }
 
-.ranking-box .ranking-item-link-buttons a {
+:where(.ranking-box, .ranking-items) .ranking-item-link-buttons a {
   padding: 8px 20px;
+}
+
+.ranking-item-img-desc {
+  margin-bottom: 12px;
 }
 
 /* ランキング,CTA,box-menu footerにウィジェットで置かれた時の背景 */
@@ -4118,8 +4136,9 @@ blockquote cite {
 }
 
 
-/* スクロールヒント table カレンダーを表示するとカレンダーにもついてたので限定 */
-.skin-grayish :where(.wp-block-table, .under-entry-content .related-list) .scroll-hint-icon {
+/* スクロールヒント  for table */
+
+.skin-grayish .scroll-hint-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4195,10 +4214,6 @@ blockquote cite {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 2.5rem;
 }
 
 /* コンテンツ下部タイトル */
@@ -4401,6 +4416,25 @@ blockquote cite {
   grid-column: 2;
 }
 
+/* content-bottomのプロフィールボックスの直後のウィジェットにのみ余白 */
+.skin-grayish .content-bottom .widget_author_box+.widget-content-bottom {
+  padding-top: 2.5rem;
+}
+
+/* content-bottomのプロフィールボックスの直後のウィジェットが人気記事の場合は多めの余白 */
+.skin-grayish .content-bottom .widget_author_box+.widget-content-bottom.widget_popular_entries {
+  padding-top: 4.5rem;
+}
+
+/* Front content-bottomの最初がプロフィールボックス以外のときは上に余白が必要 */
+.skin-grayish.front-top-page .content-bottom .content-bottom-in .widget-content-bottom:first-child:not(.widget_author_box) {
+  padding-top: 2.5rem;
+}
+
+/* Front content-bottomの最初が人気記事の場合は多めの余白が必要 */
+.skin-grayish.front-top-page .content-bottom .content-bottom-in .widget-content-bottom:first-child.widget_popular_entries {
+  padding-top: 4.5rem;
+}
 
 
 /*============== Widget Footer : LargeSize ==============*/
@@ -4847,7 +4881,7 @@ blockquote cite {
     padding-top: 0px;
   }
 
-  /* コンテンツ下部人気記事 トップ */
+  /* コンテンツ下部人気記事 Front*/
   .skin-grayish.front-top-page .content-bottom .widget_popular_entries {
     padding-top: 3.5rem;
   }
@@ -4856,6 +4890,18 @@ blockquote cite {
   .skin-grayish .content-bottom .widget_popular_entries {
     padding-top: 2.5rem;
   }
+
+
+  /* content-bottomのプロフィールボックスの直後のウィジェットが人気記事の場合は多めの余白 */
+  .skin-grayish .content-bottom .widget_author_box+.widget-content-bottom.widget_popular_entries {
+    padding-top: 3.5rem;
+  }
+
+  /* Front content-bottomの最初が人気記事の場合は多めの余白が必要 */
+  .skin-grayish.front-top-page .content-bottom .content-bottom-in .widget-content-bottom:first-child.widget_popular_entries {
+    padding-top: 3.5rem;
+  }
+
 
   /* コンテンツ上部 余白削除*/
   .skin-grayish .content-top .content-top-in {
