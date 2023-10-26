@@ -19,7 +19,7 @@
     }
   }
   ol:not(.has-list-style){
-    li::before{
+    >li::before{
       display: none;
     }
   }

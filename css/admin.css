@@ -7507,7 +7507,7 @@ body.wp-admin {
 .admin-settings .demo .iconlist-box ul li::before {
   display: initial;
 }
-.admin-settings .demo .iconlist-box ol:not(.has-list-style) li::before {
+.admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
 }
 .admin-settings .demo .iconlist-box.list-none ul {
@@ -15476,7 +15476,7 @@ body.wp-admin {
 .admin-settings .demo .iconlist-box ul li::before {
   display: initial;
 }
-.admin-settings .demo .iconlist-box ol:not(.has-list-style) li::before {
+.admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
 }
 .admin-settings .demo .iconlist-box.list-none ul {
