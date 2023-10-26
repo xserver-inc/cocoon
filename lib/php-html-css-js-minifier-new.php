@@ -353,6 +353,15 @@ function minify_html(...$lot) {
     return fn_minify_html(...$lot);
 }
 
+// function minify_js(...$lot) {
+//     return fn_minify_js(...$lot);
+// }
 function minify_js(...$lot) {
-    return fn_minify_js(...$lot);
+    $js = '';
+    foreach ($lot as $js_source) {
+        $js .= $js_source;
+    }
+    $minifier = new Minify\JS($js);
+    $js_minify = $minifier->minify();
+    return $js_minify;
 }
