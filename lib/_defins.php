@@ -293,9 +293,10 @@ define('FONT_AWESOME_5_SOLID_WOFF2_URL', get_template_directory_uri().'/webfonts
 //Font Awesome5アップデート
 define('FONT_AWESOME_5_UPDATE_URL', get_template_directory_uri().'/css/fontawesome5.css');
 //IcoMoonフォント
-define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
-define('FONT_ICOMOON_WOFF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff');
-define('FONT_ICOMOON_TTF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf');
+define('FONT_ICOMOON_UPDATED_VERSION_URL_QUERY', '?v=2.6.8');
+define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
+define('FONT_ICOMOON_WOFF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
+define('FONT_ICOMOON_TTF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
 
 //親テーマのJavaScript
 define('THEME_JS_URL', get_template_directory_uri() . '/javascript.js');
