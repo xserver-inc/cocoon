@@ -519,6 +519,10 @@ border-bottom:4px solid #5572ff;
     padding-bottom: 20px;
 }
 
+[class*="bc-brand-color"] .follow-button {
+  background-color: var(--cocoon-sns-color);
+}
+
 .sns-follow.bc-brand-color > .sns-follow-buttons a {
     width: 51%;
     height: 1.7em;
