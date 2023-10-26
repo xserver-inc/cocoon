@@ -14,12 +14,15 @@
 
   ul{
     list-style: none;
+    li::before{
+      display: initial;
+    }
   }
-  // ol{
-  //   li::before{
-  //     display: none;
-  //   }
-  // }
+  ol:not(.has-list-style){
+    li::before{
+      display: none;
+    }
+  }
   &.list-none{
     ul{
       list-style: disc;

@@ -7999,6 +7999,12 @@ ul.timeline ul ul ul {
 .iconlist-box ul {
   list-style: none;
 }
+.iconlist-box ul li::before {
+  display: initial;
+}
+.iconlist-box ol:not(.has-list-style) li::before {
+  display: none;
+}
 .iconlist-box.list-none ul {
   list-style: disc;
 }
