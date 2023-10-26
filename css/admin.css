@@ -992,7 +992,6 @@ body.wp-admin {
   color: inherit;
 }
 .admin-settings .demo ol, .admin-settings .demo ul {
-  padding: 1em;
   padding-left: 40px;
 }
 .admin-settings .demo ul {
@@ -8961,7 +8960,6 @@ body.wp-admin {
   color: inherit;
 }
 .admin-settings .demo ol, .admin-settings .demo ul {
-  padding: 1em;
   padding-left: 40px;
 }
 .admin-settings .demo ul {
