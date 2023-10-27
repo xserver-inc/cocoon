@@ -8,7 +8,7 @@
   Author URI: https://na2-factory.com/
   Screenshot URI: https://cocoon-grayish.na2-factory.com/wp-content/uploads/skin-grayish-top.jpg
   Version: 1.0.6
-  Priority: 9999000000
+  Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
   Visibility: false
@@ -93,13 +93,13 @@
   /* author-description  */
   /* --skin-grayish-author-description-txt: var(--LtGray_S50); */
 
-  /* メイン 青　サイトタイトル（テキスト時) hover・ a:hover・.author-name a・Navi−menu 
+  /* メイン 青　サイトタイトル（テキスト時) hover・ a:hover・.author-name a・Navi−menu
   テキスト下線アニメーション hover・Front NewPost・カテゴリタイトル下border */
   /* Navi−menu テキスト下線アニメーション hover・Front NewPost・カテゴリタイトル下border */
   /* author-description border */
   /* --skin-grayish-site-main-hover: var(--LtBlue_T0); */
 
-  /* 薄い青　Navi−menu ３階層目のメニュー背景色・Commentボタン・TagCloud hover背景色・ 
+  /* 薄い青　Navi−menu ３階層目のメニュー背景色・Commentボタン・TagCloud hover背景色・
   　エントリーカードのテキストhover　*/
   /* --skin-grayish-site-main-thin: var(--LtBlue_T70); */
 
