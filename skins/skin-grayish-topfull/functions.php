@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) exit;
 // -----------------------------------------------------------------------------
 // site_font_size
 
-// font_awesome_5 default 
+// font_awesome_5 default
 if (!function_exists('get_site_icon_font')) :
   function get_site_icon_font()
   {
@@ -677,12 +677,12 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
           'settings' => 'top_navibg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'top_navibg_alpha_5' => '0.5（デフォルト）',
             'top_navibg_alpha_0' => '0（背景色なし)',
             'top_navibg_alpha_1' => '0.1',
             'top_navibg_alpha_2' => '0.2',
             'top_navibg_alpha_3' => '0.3',
             'top_navibg_alpha_4' => '0.4',
+            'top_navibg_alpha_5' => '0.5（デフォルト）',
             'top_navibg_alpha_6' => '0.6',
             'top_navibg_alpha_7' => '0.7',
             'top_navibg_alpha_8' => '0.8',
@@ -939,7 +939,7 @@ if (!function_exists('skin_grayish_top_header_navibg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1313,7 +1313,7 @@ if (!function_exists('customize_more_button_caption')) :
   }
 endif;
 
-// フロントページ・インデックスページのNextボタン 
+// フロントページ・インデックスページのNextボタン
 add_filter('pagination_next_link_caption', 'skin_grayish_nextbutton_text');
 if (!function_exists('skin_grayish_nextbutton_text')) :
   function skin_grayish_nextbutton_text()
@@ -1470,7 +1470,7 @@ if (!function_exists('skin_grayish_ohter_headerbg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1843,7 +1843,7 @@ if (!function_exists('skin_grayish_mobile_headerbg')) :
       $style_opacity = '0.5';
     }
 
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1958,7 +1958,7 @@ if (!function_exists('skin_grayish_mobile_footerbg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
