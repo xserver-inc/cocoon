@@ -42,69 +42,81 @@ const PCNaviIn = document.querySelector(".skin-grayish #navi-in");
 // front-top-page
 const frontHeader = document.querySelector(".skin-grayish.front-top-page .header-container");
 
+// submenuがあるかどうか
+const PCsubmenu = document.querySelectorAll(".skin-grayish .navi-in>ul>li:not(.header-snsicon-submenu)>.sub-menu");
+const numberOfElements = PCsubmenu.length;
 
 // OtherPage target make
 const otherPageHeader = document.querySelector(".skin-grayish:not(.front-top-page) .header-container");
 
 const otherPageHeaderTarget = () => {
-  if (!otherPageHeader) return;
+  if (!otherPageHeader) return 'false';
 
   const otherPageHeader_siblings = otherPageHeader.parentNode.children;
 
-  const excludedIds = ['wpadminbar', 'header-container']; // 対象外にしたいID
+  const targetClassName = 'header-container';
+  const index = Array.from(otherPageHeader_siblings).findIndex(element => element.classList.contains(targetClassName));
+
+  // const excludedIds = ['wpadminbar', 'header-container']; // 対象外にしたいID
   const excludedTagName = "SCRIPT"; // 対象外にしたいタグ名
 
   const otherPageHeader_filteredSiblings = Array.from(otherPageHeader_siblings).filter(function (element) {
     return (
-      excludedIds.indexOf(element.id) === -1 &&
+      // excludedIds.indexOf(element.id) === -1 &&
       element.tagName !== excludedTagName
     );
   });
 
+  const index_noscript = Array.from(otherPageHeader_filteredSiblings).findIndex(element => element.classList.contains(targetClassName));
 
-  const otherPageHeader_firstSibling = otherPageHeader_filteredSiblings[0];
+  // header-containerの次に交差対象があるかどうか
+  if (otherPageHeader_filteredSiblings.length > index_noscript) {
 
-  const otherPageHeader_firstSibling_classNames = otherPageHeader_firstSibling.classList;
-  const otherPageHeader_firstSibling_classNameArray = Array.from(otherPageHeader_firstSibling_classNames);
-  const otherPageHeader_firstSibling_joinedClassNames = otherPageHeader_firstSibling_classNameArray.join('.');
+    const otherPageHeader_firstSibling = otherPageHeader_filteredSiblings[index_noscript + 1];
+    const otherPageHeader_firstSibling_classNames = otherPageHeader_firstSibling.classList;
+    const otherPageHeader_firstSibling_classNameArray = Array.from(otherPageHeader_firstSibling_classNames);
+    const otherPageHeader_firstSibling_joinedClassNames = otherPageHeader_firstSibling_classNameArray.join('.');
+
+    // for content
+    if (otherPageHeader_firstSibling_classNameArray[0] === 'content') {
+
+      const other_archivePage = document.querySelector(".skin-grayish.archive"); //cat, tag, day
+      const other_searchPage = document.querySelector(".skin-grayish.search");
+      const other_homePage = document.querySelector(".skin-grayish.home"); //newpost
+      const other_404Page = document.querySelector(".skin-grayish.error404"); //404
+
+      const other_postPage = document.querySelector(".skin-grayish.single"); //hoken post
+      const other_pagePage = document.querySelector(".skin-grayish.page"); //hoken page
 
 
-  // for content
-  if (otherPageHeader_firstSibling_classNameArray[0] === 'content') {
+      let otherPage_title;
 
-    const other_archivePage = document.querySelector(".skin-grayish.archive"); //cat, tag, day
-    const other_searchPage = document.querySelector(".skin-grayish.search");
-    const other_homePage = document.querySelector(".skin-grayish.home"); //newpost 
-    const other_404Page = document.querySelector(".skin-grayish.error404"); //404
+      if (other_archivePage || other_searchPage) {
+        // archive, Search result
+        otherPage_title = ".archive-title";
 
-    const other_postPage = document.querySelector(".skin-grayish.single"); //hoken post
-    const other_pagePage = document.querySelector(".skin-grayish.page"); //hoken page
+      } else if (other_homePage) {
+        otherPage_title = ".content .list:first-child a";
 
+      } else if (other_404Page || other_postPage || other_pagePage) {
+        //404,hoken post & page
+        otherPage_title = ".entry-title";
 
-    let otherPage_title;
+      } else {
+        //other
+        otherPage_title = ".content";
+      }
 
-    if (other_archivePage || other_searchPage) {
-      // archive, Search result
-      otherPage_title = ".archive-title";
-
-    } else if (other_homePage) {
-      otherPage_title = ".content .list:first-child a";
-
-    } else if (other_404Page || other_postPage || other_pagePage) {
-      //404,hoken post & page
-      otherPage_title = ".entry-title";
+      return '.skin-grayish:not(.front-top-page) ' + otherPage_title;
 
     } else {
-      //other
-      otherPage_title = ".content";
+
+      return '.skin-grayish:not(.front-top-page) ' + '.' + otherPageHeader_firstSibling_joinedClassNames;
+
     }
 
-    return '.skin-grayish:not(.front-top-page) ' + otherPage_title;
-
   } else {
-
-    return '.skin-grayish:not(.front-top-page) ' + '.' + otherPageHeader_firstSibling_joinedClassNames;
-
+    return 'false'; // 交差対象がないケースではsubmenu表示関数は動作しない。
   }
 
 };
@@ -125,6 +137,9 @@ function headerSubmenuOffChange(e) {
     if (frontHeader) {
       FrontHeaderObserve(PCNaviIn, frontHeader);
     } else {
+
+      if (otherPageHeaderTarget() === 'false') return; // 交差対象がないケースではsubmenu表示関数は動作しない。
+
       const otherPageHeaderItem = document.querySelector(otherPageHeaderTarget());
       // console.log(otherPageHeaderItem);
 
@@ -133,8 +148,9 @@ function headerSubmenuOffChange(e) {
   }
   mediaQueryList1023.addEventListener("change", headerSubmenuOffChange);
 }
-headerSubmenuOffChange(mediaQueryList1023);
-
+if (numberOfElements > 0) {
+  headerSubmenuOffChange(mediaQueryList1023);
+}
 
 // ---------------------------------------------
 // 投稿or固定ページのSNSシェアボタン
@@ -164,7 +180,8 @@ const scrolDispOff_snsshare = (dispOffSection, targetItem) => {
 
   const options = {
     root: null,
-    rootMargin: "0%",
+    // rootMargin: "0%",
+    rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
     threshold: 0
   };
 
@@ -334,3 +351,60 @@ if (listColumns_Category || listColumns_Category2col || listColumns_Category3col
   listColumns_CategoryType_childChk();
 }
 
+
+// ---------------------------------------------
+// Front以外のページについて（PC時）
+// グローバルメニューの折り返し時にメニューの高さを変更する
+// ---------------------------------------------
+const PCotherHeader = document.querySelector(".skin-grayish:not(.front-top-page) #header-in");
+
+const PCotherNaviIn = document.querySelector(".skin-grayish:not(.front-top-page) .navi-in .menu-top.menu-header.menu-pc");
+
+const PCotherNaviInList = document.querySelectorAll(".skin-grayish:not(.front-top-page) .navi-in>ul>li");
+
+const otherPageHeaderWrap = () => {
+  if (!PCotherNaviIn || !PCotherHeader) return;
+
+  const PCotherHeader_Height = PCotherHeader.clientHeight;
+  const PCotherNaviIn_Height = PCotherNaviIn.clientHeight;
+  // console.log("PCotherHeader_Height: " + PCotherHeader_Height);
+  // console.log("PCotherNaviIn_Height: " + PCotherNaviIn_Height);
+
+  if (PCotherNaviIn_Height > PCotherHeader_Height) {
+    // Naviの方がHeaderより高いとき : flex wrapしたとき
+    PCotherNaviInList.forEach((item) => {
+      item.style.height = 'auto';
+    });
+  } else {
+    PCotherNaviInList.forEach((item) => {
+      item.style.height = '100%';
+    });
+  }
+};
+const otherNavi_HeightResize = (flag) => {
+  if (flag === 'true') {
+    window.addEventListener('load', otherPageHeaderWrap);
+    window.addEventListener('resize', otherPageHeaderWrap);
+    otherPageHeaderWrap();
+  } else {
+    // 指定サイズ以下ではイベント削除
+    window.removeEventListener('load', otherPageHeaderWrap);
+    window.removeEventListener('resize', otherPageHeaderWrap);
+  }
+};
+
+function otherNaviIn_Ctrl(e) {
+  if (e.matches) {
+    otherNavi_HeightResize('false');
+
+  } else {
+    otherNavi_HeightResize('true');
+
+  }
+  mediaQueryList1023.addEventListener("change", otherNaviIn_Ctrl);
+
+}
+
+if (PCotherHeader && PCotherNaviIn) {
+  otherNaviIn_Ctrl(mediaQueryList1023);
+}

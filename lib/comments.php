@@ -135,7 +135,7 @@ endif;
 add_filter( 'comment_reply_link', 'comment_reply_link_custom' );
 if ( !function_exists( 'comment_reply_link_custom' ) ):
 function comment_reply_link_custom($tag){
-  $tag = preg_replace('#<a .+?>#', '$0<span class="fa fa-comment-o"></span> ', $tag);
+  $tag = preg_replace('#<a .+?>#', '$0<span class="fa fa-comment-o comment-icon"></span>', $tag);
   return $tag;
 }
 endif;

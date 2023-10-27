@@ -77,9 +77,9 @@
   font-size: 14px;
   display: inline;
   padding: 5px 8px;
-  // &:before{
-  //   content: '\f0e5';
-  // }
+  .comment-icon{
+    margin-right: 3px;
+  }
 }
 
 //コメントのページネーション

@@ -51,9 +51,9 @@ if (
         ?>
           <li class="header-snsicon-submenu__listitem">
             <a href="<?php echo esc_url(get_the_author_twitter_url($user_id)); //TwitterフォローIDの取得
-                      ?>" class="" target="_blank" title="<?php _e('Twitterをフォロー', THEME_NAME) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e('Twitterをフォロー', THEME_NAME) ?>">
+                      ?>" class="" target="_blank" title="<?php _e('Xをフォロー', THEME_NAME) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e('Xをフォロー', THEME_NAME) ?>">
               <div class="caption-wrap">
-                <div class="item-label"><span class="icon-twitter"></span></div>
+                <div class="item-label"><span class="icon-x-corp-logo"></span></div>
               </div>
             </a>
           </li>

@@ -383,7 +383,6 @@ a:hover {
 }
 
 ol, ul {
-  padding: 1em;
   padding-left: 40px;
 }
 
@@ -1064,6 +1063,10 @@ img.emoji {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.post-comment-count .comment-icon {
+  margin-right: 3px;
 }
 
 /************************************
@@ -1761,6 +1764,9 @@ span.internal-icon {
   margin: 0 3%;
   margin-bottom: 1em;
 }
+.read-time .hourglass-half-icon {
+  margin-right: 3px;
+}
 
 .eye-catch-wrap {
   display: flex;
@@ -2173,7 +2179,7 @@ label.screen-reader-text {
 .tagcloud a {
   border: 1px solid var(--cocoon-x-thin-color);
   border-radius: 2px;
-  color: #555;
+  color: var(--cocoon-text-color);
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;
@@ -2190,6 +2196,9 @@ label.screen-reader-text {
 }
 .tagcloud a .tag-caption {
   word-break: break-all;
+}
+.tagcloud a .tag-caption .tax-icon {
+  margin-right: 0.4em;
 }
 .tagcloud a .tag-link-count {
   margin-left: 8px;
@@ -5922,6 +5931,9 @@ figcaption {
   display: inline;
   padding: 5px 8px;
 }
+.comment-reply-link .comment-icon {
+  margin-right: 3px;
+}
 
 .comment-page-link {
   text-align: center;
@@ -7985,6 +7997,12 @@ ul.timeline ul ul ul {
 }
 .iconlist-box ul {
   list-style: none;
+}
+.iconlist-box ul li::before {
+  display: initial;
+}
+.iconlist-box ol:not(.has-list-style) > li::before {
+  display: none;
 }
 .iconlist-box.list-none ul {
   list-style: disc;

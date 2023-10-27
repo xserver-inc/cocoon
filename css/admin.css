@@ -992,7 +992,6 @@ body.wp-admin {
   color: inherit;
 }
 .admin-settings .demo ol, .admin-settings .demo ul {
-  padding: 1em;
   padding-left: 40px;
 }
 .admin-settings .demo ul {
@@ -1560,6 +1559,9 @@ body.wp-admin {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.admin-settings .demo .post-comment-count .comment-icon {
+  margin-right: 3px;
 }
 .admin-settings .demo .ect-vertical-card {
   display: flex;
@@ -2147,6 +2149,9 @@ body.wp-admin {
   margin: 0 3%;
   margin-bottom: 1em;
 }
+.admin-settings .demo .read-time .hourglass-half-icon {
+  margin-right: 3px;
+}
 .admin-settings .demo .eye-catch-wrap {
   display: flex;
 }
@@ -2476,7 +2481,7 @@ body.wp-admin {
 .admin-settings .demo .tagcloud a {
   border: 1px solid var(--cocoon-x-thin-color);
   border-radius: 2px;
-  color: #555;
+  color: var(--cocoon-text-color);
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;
@@ -2493,6 +2498,9 @@ body.wp-admin {
 }
 .admin-settings .demo .tagcloud a .tag-caption {
   word-break: break-all;
+}
+.admin-settings .demo .tagcloud a .tag-caption .tax-icon {
+  margin-right: 0.4em;
 }
 .admin-settings .demo .tagcloud a .tag-link-count {
   margin-left: 8px;
@@ -5702,6 +5710,9 @@ body.wp-admin {
   display: inline;
   padding: 5px 8px;
 }
+.admin-settings .demo .comment-reply-link .comment-icon {
+  margin-right: 3px;
+}
 .admin-settings .demo .comment-page-link {
   text-align: center;
 }
@@ -7491,6 +7502,12 @@ body.wp-admin {
 }
 .admin-settings .demo .iconlist-box ul {
   list-style: none;
+}
+.admin-settings .demo .iconlist-box ul li::before {
+  display: initial;
+}
+.admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
+  display: none;
 }
 .admin-settings .demo .iconlist-box.list-none ul {
   list-style: disc;
@@ -8943,7 +8960,6 @@ body.wp-admin {
   color: inherit;
 }
 .admin-settings .demo ol, .admin-settings .demo ul {
-  padding: 1em;
   padding-left: 40px;
 }
 .admin-settings .demo ul {
@@ -9511,6 +9527,9 @@ body.wp-admin {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.admin-settings .demo .post-comment-count .comment-icon {
+  margin-right: 3px;
 }
 .admin-settings .demo .ect-vertical-card {
   display: flex;
@@ -10098,6 +10117,9 @@ body.wp-admin {
   margin: 0 3%;
   margin-bottom: 1em;
 }
+.admin-settings .demo .read-time .hourglass-half-icon {
+  margin-right: 3px;
+}
 .admin-settings .demo .eye-catch-wrap {
   display: flex;
 }
@@ -10427,7 +10449,7 @@ body.wp-admin {
 .admin-settings .demo .tagcloud a {
   border: 1px solid var(--cocoon-x-thin-color);
   border-radius: 2px;
-  color: #555;
+  color: var(--cocoon-text-color);
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;
@@ -10444,6 +10466,9 @@ body.wp-admin {
 }
 .admin-settings .demo .tagcloud a .tag-caption {
   word-break: break-all;
+}
+.admin-settings .demo .tagcloud a .tag-caption .tax-icon {
+  margin-right: 0.4em;
 }
 .admin-settings .demo .tagcloud a .tag-link-count {
   margin-left: 8px;
@@ -13653,6 +13678,9 @@ body.wp-admin {
   display: inline;
   padding: 5px 8px;
 }
+.admin-settings .demo .comment-reply-link .comment-icon {
+  margin-right: 3px;
+}
 .admin-settings .demo .comment-page-link {
   text-align: center;
 }
@@ -15442,6 +15470,12 @@ body.wp-admin {
 }
 .admin-settings .demo .iconlist-box ul {
   list-style: none;
+}
+.admin-settings .demo .iconlist-box ul li::before {
+  display: initial;
+}
+.admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
+  display: none;
 }
 .admin-settings .demo .iconlist-box.list-none ul {
   list-style: disc;
@@ -19044,6 +19078,7 @@ form.admin-settings .postbox {
 .uploded-thumbnail img {
   max-width: 400px;
   height: auto;
+  width: 100%;
 }
 
 .tooltip {
@@ -22460,7 +22495,7 @@ textarea[name="the_page_memo"] {
 .tagcloud .admin-tag {
   border: 1px solid var(--cocoon-x-thin-color);
   border-radius: 2px;
-  color: #555;
+  color: var(--cocoon-text-color);
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;
@@ -22478,6 +22513,9 @@ textarea[name="the_page_memo"] {
 }
 .tagcloud .admin-tag .tag-caption {
   word-break: break-all;
+}
+.tagcloud .admin-tag .tag-caption .tax-icon {
+  margin-right: 0.4em;
 }
 .tagcloud .admin-tag .tag-link-count {
   margin-left: 8px;
@@ -22509,4 +22547,10 @@ textarea[name="the_page_memo"] {
   background-image: linear-gradient(45deg, #c3c4c7 25%, transparent 25%, transparent 75%, #c3c4c7 75%, #c3c4c7), linear-gradient(45deg, #c3c4c7 25%, transparent 25%, transparent 75%, #c3c4c7 75%, #c3c4c7);
   background-position: 0 0,10px 10px;
   background-size: 20px 20px;
+}
+
+@media screen and (max-width: 480px) {
+  div.widget {
+    margin: 0 !important;
+  }
 }
