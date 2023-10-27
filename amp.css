@@ -8759,6 +8759,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .is-list-horizontal .card-title {
   font-size: 16px;
+}
+.is-list-horizontal .card-title,
+.is-list-horizontal .card-snippet {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -8777,6 +8780,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
+}
+.is-list-horizontal .swiper-wrapper {
+  height: initial;
 }
 .is-list-horizontal .swiper-button-next,
 .is-list-horizontal .swiper-button-prev {

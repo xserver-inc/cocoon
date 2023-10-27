@@ -8125,6 +8125,9 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .card-title {
   font-size: 16px;
+}
+.admin-settings .demo .is-list-horizontal .card-title,
+.admin-settings .demo .is-list-horizontal .card-snippet {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -8143,6 +8146,9 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
+}
+.admin-settings .demo .is-list-horizontal .swiper-wrapper {
+  height: initial;
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next,
 .admin-settings .demo .is-list-horizontal .swiper-button-prev {
@@ -16093,6 +16099,9 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .card-title {
   font-size: 16px;
+}
+.admin-settings .demo .is-list-horizontal .card-title,
+.admin-settings .demo .is-list-horizontal .card-snippet {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -16111,6 +16120,9 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
   font-size: 14px;
+}
+.admin-settings .demo .is-list-horizontal .swiper-wrapper {
+  height: initial;
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next,
 .admin-settings .demo .is-list-horizontal .swiper-button-prev {
