@@ -1569,7 +1569,7 @@ pre {
 
 /* ブランドカラー */
 .bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
-	color: #1da1f2;
+	color: var(--cocoon-twitter-color);
 }
 
 .bc-brand-color.sns-share .facebook-button, .bc-brand-color.sns-follow .facebook-button {
@@ -1666,7 +1666,7 @@ pre {
 }
 
 .bc-brand-color-white.sns-share .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
-	-webkit-text-stroke: 1px #1da1f2;
+	-webkit-text-stroke: 1px var(--cocoon-twitter-color);
 }
 
 .bc-brand-color-white.sns-share .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {

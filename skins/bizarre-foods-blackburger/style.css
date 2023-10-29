@@ -681,7 +681,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.twitter-button {
-    color: #1da1f2;
+    color: var(--cocoon-twitter-color);
 }
 
 .bc-brand-color a.facebook-button {
