@@ -265,14 +265,16 @@ $marker_u_blue: $marker_blue;
 .memo-box,
 .comment-box,
 .common-icon-box{
-  //background-color: #F4F3EB;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
   display: block;
-  // margin-bottom: 1.2em;
-  //overflow: hidden;
+
+  &.has-background{
+    padding: 20px 20px 20px 72px;
+  }
 }
+
 
 .body {
   blockquote,

@@ -2880,6 +2880,27 @@ label.screen-reader-text {
   position: relative;
   display: block;
 }
+.is-style-information-box.has-background,
+.is-style-question-box.has-background,
+.is-style-alert-box.has-background,
+.is-style-memo-box.has-background,
+.is-style-comment-box.has-background,
+.is-style-ok-box.has-background,
+.is-style-ng-box.has-background,
+.is-style-good-box.has-background,
+.is-style-bad-box.has-background,
+.is-style-profile-box.has-background,
+.information-box.has-background,
+.question-box.has-background,
+.alert-box.has-background,
+.information.has-background,
+.question.has-background,
+.alert.has-background,
+.memo-box.has-background,
+.comment-box.has-background,
+.common-icon-box.has-background {
+  padding: 20px 20px 20px 72px;
+}
 
 .body blockquote :last-child,
 .body .wp-block-media-text__content :last-child,

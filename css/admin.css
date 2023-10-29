@@ -3068,6 +3068,27 @@ body.wp-admin {
   position: relative;
   display: block;
 }
+.admin-settings .demo .is-style-information-box.has-background,
+.admin-settings .demo .is-style-question-box.has-background,
+.admin-settings .demo .is-style-alert-box.has-background,
+.admin-settings .demo .is-style-memo-box.has-background,
+.admin-settings .demo .is-style-comment-box.has-background,
+.admin-settings .demo .is-style-ok-box.has-background,
+.admin-settings .demo .is-style-ng-box.has-background,
+.admin-settings .demo .is-style-good-box.has-background,
+.admin-settings .demo .is-style-bad-box.has-background,
+.admin-settings .demo .is-style-profile-box.has-background,
+.admin-settings .demo .information-box.has-background,
+.admin-settings .demo .question-box.has-background,
+.admin-settings .demo .alert-box.has-background,
+.admin-settings .demo .information.has-background,
+.admin-settings .demo .question.has-background,
+.admin-settings .demo .alert.has-background,
+.admin-settings .demo .memo-box.has-background,
+.admin-settings .demo .comment-box.has-background,
+.admin-settings .demo .common-icon-box.has-background {
+  padding: 20px 20px 20px 72px;
+}
 .admin-settings .demo .body blockquote :last-child,
 .admin-settings .demo .body .wp-block-media-text__content :last-child,
 .admin-settings .demo .body .wp-block-columns :last-child,
@@ -11041,6 +11062,27 @@ body.wp-admin {
   border-radius: 4px;
   position: relative;
   display: block;
+}
+.admin-settings .demo .is-style-information-box.has-background,
+.admin-settings .demo .is-style-question-box.has-background,
+.admin-settings .demo .is-style-alert-box.has-background,
+.admin-settings .demo .is-style-memo-box.has-background,
+.admin-settings .demo .is-style-comment-box.has-background,
+.admin-settings .demo .is-style-ok-box.has-background,
+.admin-settings .demo .is-style-ng-box.has-background,
+.admin-settings .demo .is-style-good-box.has-background,
+.admin-settings .demo .is-style-bad-box.has-background,
+.admin-settings .demo .is-style-profile-box.has-background,
+.admin-settings .demo .information-box.has-background,
+.admin-settings .demo .question-box.has-background,
+.admin-settings .demo .alert-box.has-background,
+.admin-settings .demo .information.has-background,
+.admin-settings .demo .question.has-background,
+.admin-settings .demo .alert.has-background,
+.admin-settings .demo .memo-box.has-background,
+.admin-settings .demo .comment-box.has-background,
+.admin-settings .demo .common-icon-box.has-background {
+  padding: 20px 20px 20px 72px;
 }
 .admin-settings .demo .body blockquote :last-child,
 .admin-settings .demo .body .wp-block-media-text__content :last-child,
@@ -19910,6 +19952,27 @@ textarea[name="the_page_memo"] {
   border-radius: 4px;
   position: relative;
   display: block;
+}
+.components-popover__content .is-style-information-box.has-background,
+.components-popover__content .is-style-question-box.has-background,
+.components-popover__content .is-style-alert-box.has-background,
+.components-popover__content .is-style-memo-box.has-background,
+.components-popover__content .is-style-comment-box.has-background,
+.components-popover__content .is-style-ok-box.has-background,
+.components-popover__content .is-style-ng-box.has-background,
+.components-popover__content .is-style-good-box.has-background,
+.components-popover__content .is-style-bad-box.has-background,
+.components-popover__content .is-style-profile-box.has-background,
+.components-popover__content .information-box.has-background,
+.components-popover__content .question-box.has-background,
+.components-popover__content .alert-box.has-background,
+.components-popover__content .information.has-background,
+.components-popover__content .question.has-background,
+.components-popover__content .alert.has-background,
+.components-popover__content .memo-box.has-background,
+.components-popover__content .comment-box.has-background,
+.components-popover__content .common-icon-box.has-background {
+  padding: 20px 20px 20px 72px;
 }
 .components-popover__content .body blockquote :last-child,
 .components-popover__content .body .wp-block-media-text__content :last-child,
