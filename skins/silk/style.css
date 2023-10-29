@@ -1341,7 +1341,7 @@ p code.hljs {
 .memo-box,
 .comment-box,
 .common-icon-box {
-  padding: 1em;
+  padding: 1em !important;
   border-width: 2px;
   border-radius: 2px;
 }

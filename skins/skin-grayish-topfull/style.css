@@ -2135,7 +2135,7 @@ a:hover {
 :is(.is-style-profile-box, .profile-box) {
   border-radius: 0;
   background-color: var(--LtGray_T90);
-  padding: 24px 20px;
+  padding: 24px 20px !important;
 }
 
 :is(.is-style-information-box, .information-box, .information)::before,
