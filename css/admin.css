@@ -1706,7 +1706,7 @@ body.wp-admin {
 .admin-settings .demo .bc-brand-color-white a:hover {
   opacity: 0.5;
 }
-.admin-settings .demo [class*="bc-brand-color"] .twitter-button {
+.admin-settings .demo [class*="bc-brand-color"] .x-corp-button {
   --cocoon-sns-color: var(--cocoon-twitter-color);
 }
 .admin-settings .demo [class*="bc-brand-color"] .facebook-button {
@@ -9701,7 +9701,7 @@ body.wp-admin {
 .admin-settings .demo .bc-brand-color-white a:hover {
   opacity: 0.5;
 }
-.admin-settings .demo [class*="bc-brand-color"] .twitter-button {
+.admin-settings .demo [class*="bc-brand-color"] .x-corp-button {
   --cocoon-sns-color: var(--cocoon-twitter-color);
 }
 .admin-settings .demo [class*="bc-brand-color"] .facebook-button {

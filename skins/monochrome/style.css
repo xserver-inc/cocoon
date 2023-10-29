@@ -1343,14 +1343,14 @@ table tr:nth-of-type(2n) {
 }
 
 /* ■ twitter ■ */
-.author-box .twitter-button {
+.author-box .x-corp-button {
 	border: 1px solid var(--cocoon-twitter-color) !important;
 	color: var(--cocoon-twitter-color) !important;
 }
-.author-box .twitter-button:after {
+.author-box .x-corp-button:after {
 	box-shadow: 0 0 0 2px var(--cocoon-twitter-color);
 }
-.author-box .twitter-button:hover {
+.author-box .x-corp-button:hover {
 	background-color: var(--cocoon-twitter-color) !important;
 }
 

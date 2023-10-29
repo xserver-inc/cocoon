@@ -445,8 +445,8 @@ blockquote::after {
 	background-color: #444;
 }
 
-.bc-brand-color.sns-share .twitter-button,
-.bc-brand-color.sns-follow .twitter-button {
+.bc-brand-color.sns-share .x-corp-button,
+.bc-brand-color.sns-follow .x-corp-button {
 	background-color: #34aaf3;
 }
 

@@ -1332,7 +1332,7 @@ pre {
 }
 
 /* ブランドカラー */
-.bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
+.bc-brand-color.sns-share .x-corp-button, .bc-brand-color.sns-follow .x-corp-button {
 	color: var(--cocoon-twitter-color);
 }
 
@@ -1429,7 +1429,7 @@ pre {
 	-webkit-text-stroke: 1px rgba(var(--black-color), 1);
 }
 
-.bc-brand-color-white.sns-share .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
+.bc-brand-color-white.sns-share .x-corp-button, .bc-brand-color-white.sns-follow .x-corp-button {
 	-webkit-text-stroke: 1px var(--cocoon-twitter-color);
 }
 

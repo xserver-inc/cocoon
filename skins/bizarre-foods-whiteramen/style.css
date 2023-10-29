@@ -685,7 +685,7 @@ a.tag-link {
     border:none;
 }
 
-.bc-brand-color a.twitter-button {
+.bc-brand-color a.x-corp-button {
     color: var(--cocoon-twitter-color);
 }
 

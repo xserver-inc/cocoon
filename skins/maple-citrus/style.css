@@ -424,16 +424,16 @@ input[type="submit"] {
 }
 
 /* Twitter */
-.bc-brand-color-white.sns-share .twitter-button,
-.bc-brand-color-white.sns-follow .twitter-button {
+.bc-brand-color-white.sns-share .x-corp-button,
+.bc-brand-color-white.sns-follow .x-corp-button {
 	border: 1px solid #7fbfff; /* 枠線色 */
 	color: #7fbfff; /* 文字色 */
 }
-.bc-brand-color-white.sns-share .twitter-button:hover, .bc-brand-color-white.sns-follow .twitter-button:hover,
+.bc-brand-color-white.sns-share .x-corp-button:hover, .bc-brand-color-white.sns-follow .x-corp-button:hover,
 /* color */
-.bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button,
+.bc-brand-color.sns-share .x-corp-button, .bc-brand-color.sns-follow .x-corp-button,
 /* profile */
-.author-box .sns-follow-buttons a.follow-button.twitter-button {
+.author-box .sns-follow-buttons a.follow-button.x-corp-button {
 	background-color: #7fbfff;
 }
 /* Facebook */

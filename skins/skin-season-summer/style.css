@@ -540,7 +540,7 @@ article .tag-link:hover {
 .author-box .website-button {
 	background-color: #47555c !important;
 }
-.author-box .twitter-button {
+.author-box .x-corp-button {
 	background-color: var(--cocoon-twitter-color) !important;
 }
 .author-box .facebook-button {

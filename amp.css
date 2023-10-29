@@ -1238,7 +1238,7 @@ img.emoji {
   opacity: 0.5;
 }
 
-[class*="bc-brand-color"] .twitter-button {
+[class*="bc-brand-color"] .x-corp-button {
   --cocoon-sns-color: var(--cocoon-twitter-color);
 }
 
