@@ -658,13 +658,15 @@ body.public-page,.content .main, .navi {
   opacity:1;
 }
 
-.bc-brand-color.sns-share.ss-top .copy-button, .bc-brand-color.sns-share.ss-bottom .copy-button {
+.bc-brand-color.sns-share.ss-top .copy-button, .bc-brand-color.sns-share.ss-bottom .copy-button,
+.bc-brand-color.sns-share.ss-top .comment-button, .bc-brand-color.sns-share.ss-bottom .comment-button {
 	background-color: #fff;
    color: #333;
 	border:solid 2px #333;
 }
 
-.bc-brand-color.sns-share.ss-top .copy-button:hover, .bc-brand-color.sns-share.ss-bottom .copy-button:hover {
+.bc-brand-color.sns-share.ss-top .copy-button:hover, .bc-brand-color.sns-share.ss-bottom .copy-button:hover,
+.bc-brand-color.sns-share.ss-top .comment-button:hover, .bc-brand-color.sns-share.ss-bottom .comment-button:hover {
    background-color: #333;
 	color: #fff;
 	opacity:1;
