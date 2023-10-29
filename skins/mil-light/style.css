@@ -111,8 +111,8 @@ strong {
     color: #606060;
 }
 .bc-brand-color-white.sns-share .x-corp-button, .bc-brand-color-white.sns-follow .x-corp-button {
-    color: #69b4e0;
-    border-color: #69b4e0;
+    color: #606060;
+    border-color: #606060;
 }
 .bc-brand-color-white.sns-share .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
     color: #5a71a2;
@@ -139,7 +139,7 @@ strong {
     border-color: #258abf;
 }
 .bc-brand-color.sns-share .x-corp-button, .bc-brand-color.sns-follow .x-corp-button {
-    background-color: #5ea8d4;
+    background-color: #505050;
 }
 .bc-brand-color.sns-share .facebook-button, .bc-brand-color.sns-follow .facebook-button {
     background-color: #5a71a2;
