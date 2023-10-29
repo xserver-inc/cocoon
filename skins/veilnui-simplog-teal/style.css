@@ -255,7 +255,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .x-corp-button,
 #slide-in-sidebar .widget_author_box .author-box .x-corp-button {
-  background-color: #1DA1F2;
+  background-color: var(--cocoon-twitter-color);
 }
 #sidebar .widget_author_box .author-box .facebook-button,
 #slide-in-sidebar .widget_author_box .author-box .facebook-button {
