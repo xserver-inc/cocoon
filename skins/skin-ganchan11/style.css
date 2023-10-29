@@ -585,14 +585,14 @@ body.public-page,.content .main, .navi {
 }
 
 /*SNSボタン*/
-.bc-brand-color.sns-share.ss-top .twitter-button, .bc-brand-color.sns-share.ss-bottom .twitter-button {
+.bc-brand-color.sns-share.ss-top .x-corp-button, .bc-brand-color.sns-share.ss-bottom .x-corp-button {
    background-color: #fff;
-   color: #1da1f2;
-	border:solid 2px #1da1f2;
+   color: var(--cocoon-twitter-color);
+	border:solid 2px var(--cocoon-twitter-color);
 }
 
-.bc-brand-color.sns-share.ss-top .twitter-button:hover, .bc-brand-color.sns-share.ss-bottom .twitter-button:hover {
-   background-color: #1da1f2;
+.bc-brand-color.sns-share.ss-top .x-corp-button:hover, .bc-brand-color.sns-share.ss-bottom .x-corp-button:hover {
+   background-color: var(--cocoon-twitter-color);
    color: #fff;
 	opacity:1;
 }
