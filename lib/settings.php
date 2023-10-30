@@ -150,6 +150,12 @@ function visual_editor_stylesheets_custom($stylesheets) {
         add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
       );
     }
+    // fontの指定がgoogle fontの場合
+    if ( ! is_site_font_family_local() ) {
+        array_push($stylesheets,
+            add_file_ver_to_css_js( get_site_font_source_url() ),
+        );
+    }
   }
 
   //_v($stylesheets);
@@ -191,10 +197,6 @@ function gutenberg_stylesheets_custom() {
           !is_exclude_skin(get_skin_url(), get_editor_exclude_skins())) {
         wp_enqueue_style( THEME_NAME . '-skin-style', get_skin_url() );
       }
-
-      //カスタムスタイル
-      $cache_file_url = get_theme_css_cache_file_url();
-      wp_enqueue_style( THEME_NAME . '-css-cache-style', $cache_file_url );
 
       //子テーマがある場合
       if (is_child_theme()) {
@@ -257,7 +259,7 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
       $path = url_to_local( $item );
       if ( empty( $path ) ) {
         $response = wp_remote_get( $item );
-        if ( ! is_wp_error( $response ) ) {
+        if ( ! is_wp_error( $response ) && wp_remote_retrieve_response_code( $response ) === 200 ) {
           $styles[] = array(
             'css' => wp_remote_retrieve_body( $response ),
           );
