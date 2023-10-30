@@ -343,9 +343,12 @@ function minify_css(...$lot) {
     foreach ($lot as $css_source) {
         $css .= $css_source;
     }
-    $minifier = new Minify\CSS($css);
-    $css_minify = $minifier->minify();
-    return $css_minify;
+    //公開ページのみ縮小化
+    if (!is_admin()) {
+        $minifier = new Minify\CSS($css);
+        $css = $minifier->minify();
+    }
+    return $css;
 }
 
 
@@ -353,6 +356,18 @@ function minify_html(...$lot) {
     return fn_minify_html(...$lot);
 }
 
+// function minify_js(...$lot) {
+//     return fn_minify_js(...$lot);
+// }
 function minify_js(...$lot) {
-    return fn_minify_js(...$lot);
+    $js = '';
+    foreach ($lot as $js_source) {
+        $js .= $js_source;
+    }
+    //公開ページのみ縮小化
+    if (!is_admin()) {
+        $minifier = new Minify\JS($js);
+        $js = $minifier->minify();
+    }
+    return $js;
 }
