@@ -13,6 +13,9 @@
 //Font Awesomeのアイコン
 @import "fontawesome-before";
 
+//フォントの設定
+@import "font";
+
 //エディタースタイル
 @import "extension";
 @import "extension-layout";
@@ -782,11 +785,6 @@ ol, ul {
 //WordPress 5.4からの吹き出しの不具合対応
 .speech-wrap .components-button{
   height: auto;
-}
-
-.body,
-.body p{
-  font-size: 18px;
 }
 
 //ブロックエディタータイトル余白の修正
