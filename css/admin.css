@@ -821,124 +821,216 @@ body.wp-admin {
 .admin-settings .demo .fz-12px {
   font-size: 12px;
 }
+.admin-settings .demo .wp-admin-fz-12px .editor-styles-wrapper {
+  font-size: 12px;
+}
 .admin-settings .demo .fz-13px {
+  font-size: 13px;
+}
+.admin-settings .demo .wp-admin-fz-13px .editor-styles-wrapper {
   font-size: 13px;
 }
 .admin-settings .demo .fz-14px {
   font-size: 14px;
 }
+.admin-settings .demo .wp-admin-fz-14px .editor-styles-wrapper {
+  font-size: 14px;
+}
 .admin-settings .demo .fz-15px {
+  font-size: 15px;
+}
+.admin-settings .demo .wp-admin-fz-15px .editor-styles-wrapper {
   font-size: 15px;
 }
 .admin-settings .demo .fz-16px {
   font-size: 16px;
 }
+.admin-settings .demo .wp-admin-fz-16px .editor-styles-wrapper {
+  font-size: 16px;
+}
 .admin-settings .demo .fz-17px {
+  font-size: 17px;
+}
+.admin-settings .demo .wp-admin-fz-17px .editor-styles-wrapper {
   font-size: 17px;
 }
 .admin-settings .demo .fz-18px {
   font-size: 18px;
 }
+.admin-settings .demo .wp-admin-fz-18px .editor-styles-wrapper {
+  font-size: 18px;
+}
 .admin-settings .demo .fz-19px {
+  font-size: 19px;
+}
+.admin-settings .demo .wp-admin-fz-19px .editor-styles-wrapper {
   font-size: 19px;
 }
 .admin-settings .demo .fz-20px {
   font-size: 20px;
 }
+.admin-settings .demo .wp-admin-fz-20px .editor-styles-wrapper {
+  font-size: 20px;
+}
 .admin-settings .demo .fz-21px {
+  font-size: 21px;
+}
+.admin-settings .demo .wp-admin-fz-21px .editor-styles-wrapper {
   font-size: 21px;
 }
 .admin-settings .demo .fz-22px {
   font-size: 22px;
 }
+.admin-settings .demo .wp-admin-fz-22px .editor-styles-wrapper {
+  font-size: 22px;
+}
 .admin-settings .demo .fz-24px {
+  font-size: 24px;
+}
+.admin-settings .demo .wp-admin-fz-24px .editor-styles-wrapper {
   font-size: 24px;
 }
 .admin-settings .demo .fz-28px {
   font-size: 28px;
 }
+.admin-settings .demo .wp-admin-fz-28px .editor-styles-wrapper {
+  font-size: 28px;
+}
 .admin-settings .demo .fz-32px {
+  font-size: 32px;
+}
+.admin-settings .demo .wp-admin-fz-32px .editor-styles-wrapper {
   font-size: 32px;
 }
 .admin-settings .demo .fz-36px {
   font-size: 36px;
 }
+.admin-settings .demo .wp-admin-fz-36px .editor-styles-wrapper {
+  font-size: 36px;
+}
 .admin-settings .demo .fz-40px {
+  font-size: 40px;
+}
+.admin-settings .demo .wp-admin-fz-40px .editor-styles-wrapper {
   font-size: 40px;
 }
 .admin-settings .demo .fz-44px {
   font-size: 44px;
 }
+.admin-settings .demo .wp-admin-fz-44px .editor-styles-wrapper {
+  font-size: 44px;
+}
 .admin-settings .demo .fz-48px {
+  font-size: 48px;
+}
+.admin-settings .demo .wp-admin-fz-48px .editor-styles-wrapper {
   font-size: 48px;
 }
 .admin-settings .demo .fw-100 {
   font-weight: 100;
 }
+.admin-settings .demo .wp-admin-fw-100 .editor-styles-wrapper {
+  font-weight: 100;
+}
 .admin-settings .demo .fw-200 {
+  font-weight: 200;
+}
+.admin-settings .demo .wp-admin-fw-200 .editor-styles-wrapper {
   font-weight: 200;
 }
 .admin-settings .demo .fw-300 {
   font-weight: 300;
 }
+.admin-settings .demo .wp-admin-fw-300 .editor-styles-wrapper {
+  font-weight: 300;
+}
 .admin-settings .demo .fw-400 {
+  font-weight: 400;
+}
+.admin-settings .demo .wp-admin-fw-400 .editor-styles-wrapper {
   font-weight: 400;
 }
 .admin-settings .demo .fw-500 {
   font-weight: 500;
 }
+.admin-settings .demo .wp-admin-fw-500 .editor-styles-wrapper {
+  font-weight: 500;
+}
 .admin-settings .demo .fw-600 {
+  font-weight: 600;
+}
+.admin-settings .demo .wp-admin-fw-600 .editor-styles-wrapper {
   font-weight: 600;
 }
 .admin-settings .demo .fw-700 {
   font-weight: 700;
 }
+.admin-settings .demo .wp-admin-fw-700 .editor-styles-wrapper {
+  font-weight: 700;
+}
 .admin-settings .demo .fw-800 {
+  font-weight: 800;
+}
+.admin-settings .demo .wp-admin-fw-800 .editor-styles-wrapper {
   font-weight: 800;
 }
 .admin-settings .demo .fw-900 {
   font-weight: 900;
 }
+.admin-settings .demo .wp-admin-fw-900 .editor-styles-wrapper {
+  font-weight: 900;
+}
 .admin-settings .demo .ff-meiryo,
-.admin-settings .demo .wf-loading body {
+.admin-settings .demo .wf-loading body,
+.admin-settings .demo .wp-admin-ff-meiryo .editor-styles-wrapper {
   font-family: Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
-.admin-settings .demo .ff-yu-gothic {
+.admin-settings .demo .ff-yu-gothic,
+.admin-settings .demo .wp-admin-ff-yu-gothic .editor-styles-wrapper {
   font-family: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
-.admin-settings .demo .ff-ms-pgothic {
+.admin-settings .demo .ff-ms-pgothic,
+.admin-settings .demo .wp-admin-ff-ms-pgothic .editor-styles-wrapper {
   font-family: "MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 .admin-settings .demo .ff-noto-sans-jp,
-.admin-settings .demo .wf-active .ff-noto-sans-jp {
+.admin-settings .demo .wf-active .ff-noto-sans-jp,
+.admin-settings .demo .wp-admin-ff-noto-sans-jp .editor-styles-wrapper {
   font-family: "Noto Sans JP" ,sans-serif;
 }
 .admin-settings .demo .ff-noto-serif-jp,
-.admin-settings .demo .wf-active .ff-noto-serif-jp {
+.admin-settings .demo .wf-active .ff-noto-serif-jp,
+.admin-settings .demo .wp-admin-ff-noto-serif-jp .editor-styles-wrapper {
   font-family: "Noto Serif JP" ,sans-serif;
 }
 .admin-settings .demo .ff-mplus-1p,
-.admin-settings .demo .wf-active .ff-mplus-1p {
+.admin-settings .demo .wf-active .ff-mplus-1p,
+.admin-settings .demo .wp-admin-ff-mplus-1p .editor-styles-wrapper {
   font-family: "M PLUS 1p" ,sans-serif;
 }
 .admin-settings .demo .ff-rounded-mplus-1c,
-.admin-settings .demo .wf-active .ff-rounded-mplus-1c {
+.admin-settings .demo .wf-active .ff-rounded-mplus-1c,
+.admin-settings .demo .wp-admin-ff-rounded-mplus-1c .editor-styles-wrapper {
   font-family: "M PLUS Rounded 1c" ,sans-serif;
 }
 .admin-settings .demo .ff-kosugi,
-.admin-settings .demo .wf-active .ff-kosugi {
+.admin-settings .demo .wf-active .ff-kosugi,
+.admin-settings .demo .wp-admin-ff-kosugi .editor-styles-wrapper {
   font-family: "Kosugi" ,sans-serif;
 }
 .admin-settings .demo .ff-kosugi-maru,
-.admin-settings .demo .wf-active .ff-kosugi-maru {
+.admin-settings .demo .wf-active .ff-kosugi-maru,
+.admin-settings .demo .wp-admin-ff-kosugi-maru .editor-styles-wrapper {
   font-family: "Kosugi Maru" ,sans-serif;
 }
 .admin-settings .demo .ff-sawarabi-gothic,
-.admin-settings .demo .wf-active .ff-sawarabi-gothic {
+.admin-settings .demo .wf-active .ff-sawarabi-gothic,
+.admin-settings .demo .wp-admin-ff-sawarabi-gothic .editor-styles-wrapper {
   font-family: "Sawarabi Gothic" ,sans-serif;
 }
 .admin-settings .demo .ff-sawarabi-mincho,
-.admin-settings .demo .wf-active .ff-sawarabi-mincho {
+.admin-settings .demo .wf-active .ff-sawarabi-mincho,
+.admin-settings .demo .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho" ,sans-serif;
 }
 .admin-settings .demo .sub-caption {
@@ -8816,124 +8908,216 @@ body.wp-admin {
 .admin-settings .demo .fz-12px {
   font-size: 12px;
 }
+.admin-settings .demo .wp-admin-fz-12px .editor-styles-wrapper {
+  font-size: 12px;
+}
 .admin-settings .demo .fz-13px {
+  font-size: 13px;
+}
+.admin-settings .demo .wp-admin-fz-13px .editor-styles-wrapper {
   font-size: 13px;
 }
 .admin-settings .demo .fz-14px {
   font-size: 14px;
 }
+.admin-settings .demo .wp-admin-fz-14px .editor-styles-wrapper {
+  font-size: 14px;
+}
 .admin-settings .demo .fz-15px {
+  font-size: 15px;
+}
+.admin-settings .demo .wp-admin-fz-15px .editor-styles-wrapper {
   font-size: 15px;
 }
 .admin-settings .demo .fz-16px {
   font-size: 16px;
 }
+.admin-settings .demo .wp-admin-fz-16px .editor-styles-wrapper {
+  font-size: 16px;
+}
 .admin-settings .demo .fz-17px {
+  font-size: 17px;
+}
+.admin-settings .demo .wp-admin-fz-17px .editor-styles-wrapper {
   font-size: 17px;
 }
 .admin-settings .demo .fz-18px {
   font-size: 18px;
 }
+.admin-settings .demo .wp-admin-fz-18px .editor-styles-wrapper {
+  font-size: 18px;
+}
 .admin-settings .demo .fz-19px {
+  font-size: 19px;
+}
+.admin-settings .demo .wp-admin-fz-19px .editor-styles-wrapper {
   font-size: 19px;
 }
 .admin-settings .demo .fz-20px {
   font-size: 20px;
 }
+.admin-settings .demo .wp-admin-fz-20px .editor-styles-wrapper {
+  font-size: 20px;
+}
 .admin-settings .demo .fz-21px {
+  font-size: 21px;
+}
+.admin-settings .demo .wp-admin-fz-21px .editor-styles-wrapper {
   font-size: 21px;
 }
 .admin-settings .demo .fz-22px {
   font-size: 22px;
 }
+.admin-settings .demo .wp-admin-fz-22px .editor-styles-wrapper {
+  font-size: 22px;
+}
 .admin-settings .demo .fz-24px {
+  font-size: 24px;
+}
+.admin-settings .demo .wp-admin-fz-24px .editor-styles-wrapper {
   font-size: 24px;
 }
 .admin-settings .demo .fz-28px {
   font-size: 28px;
 }
+.admin-settings .demo .wp-admin-fz-28px .editor-styles-wrapper {
+  font-size: 28px;
+}
 .admin-settings .demo .fz-32px {
+  font-size: 32px;
+}
+.admin-settings .demo .wp-admin-fz-32px .editor-styles-wrapper {
   font-size: 32px;
 }
 .admin-settings .demo .fz-36px {
   font-size: 36px;
 }
+.admin-settings .demo .wp-admin-fz-36px .editor-styles-wrapper {
+  font-size: 36px;
+}
 .admin-settings .demo .fz-40px {
+  font-size: 40px;
+}
+.admin-settings .demo .wp-admin-fz-40px .editor-styles-wrapper {
   font-size: 40px;
 }
 .admin-settings .demo .fz-44px {
   font-size: 44px;
 }
+.admin-settings .demo .wp-admin-fz-44px .editor-styles-wrapper {
+  font-size: 44px;
+}
 .admin-settings .demo .fz-48px {
+  font-size: 48px;
+}
+.admin-settings .demo .wp-admin-fz-48px .editor-styles-wrapper {
   font-size: 48px;
 }
 .admin-settings .demo .fw-100 {
   font-weight: 100;
 }
+.admin-settings .demo .wp-admin-fw-100 .editor-styles-wrapper {
+  font-weight: 100;
+}
 .admin-settings .demo .fw-200 {
+  font-weight: 200;
+}
+.admin-settings .demo .wp-admin-fw-200 .editor-styles-wrapper {
   font-weight: 200;
 }
 .admin-settings .demo .fw-300 {
   font-weight: 300;
 }
+.admin-settings .demo .wp-admin-fw-300 .editor-styles-wrapper {
+  font-weight: 300;
+}
 .admin-settings .demo .fw-400 {
+  font-weight: 400;
+}
+.admin-settings .demo .wp-admin-fw-400 .editor-styles-wrapper {
   font-weight: 400;
 }
 .admin-settings .demo .fw-500 {
   font-weight: 500;
 }
+.admin-settings .demo .wp-admin-fw-500 .editor-styles-wrapper {
+  font-weight: 500;
+}
 .admin-settings .demo .fw-600 {
+  font-weight: 600;
+}
+.admin-settings .demo .wp-admin-fw-600 .editor-styles-wrapper {
   font-weight: 600;
 }
 .admin-settings .demo .fw-700 {
   font-weight: 700;
 }
+.admin-settings .demo .wp-admin-fw-700 .editor-styles-wrapper {
+  font-weight: 700;
+}
 .admin-settings .demo .fw-800 {
+  font-weight: 800;
+}
+.admin-settings .demo .wp-admin-fw-800 .editor-styles-wrapper {
   font-weight: 800;
 }
 .admin-settings .demo .fw-900 {
   font-weight: 900;
 }
+.admin-settings .demo .wp-admin-fw-900 .editor-styles-wrapper {
+  font-weight: 900;
+}
 .admin-settings .demo .ff-meiryo,
-.admin-settings .demo .wf-loading body {
+.admin-settings .demo .wf-loading body,
+.admin-settings .demo .wp-admin-ff-meiryo .editor-styles-wrapper {
   font-family: Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
-.admin-settings .demo .ff-yu-gothic {
+.admin-settings .demo .ff-yu-gothic,
+.admin-settings .demo .wp-admin-ff-yu-gothic .editor-styles-wrapper {
   font-family: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
-.admin-settings .demo .ff-ms-pgothic {
+.admin-settings .demo .ff-ms-pgothic,
+.admin-settings .demo .wp-admin-ff-ms-pgothic .editor-styles-wrapper {
   font-family: "MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 .admin-settings .demo .ff-noto-sans-jp,
-.admin-settings .demo .wf-active .ff-noto-sans-jp {
+.admin-settings .demo .wf-active .ff-noto-sans-jp,
+.admin-settings .demo .wp-admin-ff-noto-sans-jp .editor-styles-wrapper {
   font-family: "Noto Sans JP" ,sans-serif;
 }
 .admin-settings .demo .ff-noto-serif-jp,
-.admin-settings .demo .wf-active .ff-noto-serif-jp {
+.admin-settings .demo .wf-active .ff-noto-serif-jp,
+.admin-settings .demo .wp-admin-ff-noto-serif-jp .editor-styles-wrapper {
   font-family: "Noto Serif JP" ,sans-serif;
 }
 .admin-settings .demo .ff-mplus-1p,
-.admin-settings .demo .wf-active .ff-mplus-1p {
+.admin-settings .demo .wf-active .ff-mplus-1p,
+.admin-settings .demo .wp-admin-ff-mplus-1p .editor-styles-wrapper {
   font-family: "M PLUS 1p" ,sans-serif;
 }
 .admin-settings .demo .ff-rounded-mplus-1c,
-.admin-settings .demo .wf-active .ff-rounded-mplus-1c {
+.admin-settings .demo .wf-active .ff-rounded-mplus-1c,
+.admin-settings .demo .wp-admin-ff-rounded-mplus-1c .editor-styles-wrapper {
   font-family: "M PLUS Rounded 1c" ,sans-serif;
 }
 .admin-settings .demo .ff-kosugi,
-.admin-settings .demo .wf-active .ff-kosugi {
+.admin-settings .demo .wf-active .ff-kosugi,
+.admin-settings .demo .wp-admin-ff-kosugi .editor-styles-wrapper {
   font-family: "Kosugi" ,sans-serif;
 }
 .admin-settings .demo .ff-kosugi-maru,
-.admin-settings .demo .wf-active .ff-kosugi-maru {
+.admin-settings .demo .wf-active .ff-kosugi-maru,
+.admin-settings .demo .wp-admin-ff-kosugi-maru .editor-styles-wrapper {
   font-family: "Kosugi Maru" ,sans-serif;
 }
 .admin-settings .demo .ff-sawarabi-gothic,
-.admin-settings .demo .wf-active .ff-sawarabi-gothic {
+.admin-settings .demo .wf-active .ff-sawarabi-gothic,
+.admin-settings .demo .wp-admin-ff-sawarabi-gothic .editor-styles-wrapper {
   font-family: "Sawarabi Gothic" ,sans-serif;
 }
 .admin-settings .demo .ff-sawarabi-mincho,
-.admin-settings .demo .wf-active .ff-sawarabi-mincho {
+.admin-settings .demo .wf-active .ff-sawarabi-mincho,
+.admin-settings .demo .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho" ,sans-serif;
 }
 .admin-settings .demo .sub-caption {
@@ -22432,124 +22616,216 @@ textarea[name="the_page_memo"] {
 .components-popover__content .fz-12px {
   font-size: 12px;
 }
+.components-popover__content .wp-admin-fz-12px .editor-styles-wrapper {
+  font-size: 12px;
+}
 .components-popover__content .fz-13px {
+  font-size: 13px;
+}
+.components-popover__content .wp-admin-fz-13px .editor-styles-wrapper {
   font-size: 13px;
 }
 .components-popover__content .fz-14px {
   font-size: 14px;
 }
+.components-popover__content .wp-admin-fz-14px .editor-styles-wrapper {
+  font-size: 14px;
+}
 .components-popover__content .fz-15px {
+  font-size: 15px;
+}
+.components-popover__content .wp-admin-fz-15px .editor-styles-wrapper {
   font-size: 15px;
 }
 .components-popover__content .fz-16px {
   font-size: 16px;
 }
+.components-popover__content .wp-admin-fz-16px .editor-styles-wrapper {
+  font-size: 16px;
+}
 .components-popover__content .fz-17px {
+  font-size: 17px;
+}
+.components-popover__content .wp-admin-fz-17px .editor-styles-wrapper {
   font-size: 17px;
 }
 .components-popover__content .fz-18px {
   font-size: 18px;
 }
+.components-popover__content .wp-admin-fz-18px .editor-styles-wrapper {
+  font-size: 18px;
+}
 .components-popover__content .fz-19px {
+  font-size: 19px;
+}
+.components-popover__content .wp-admin-fz-19px .editor-styles-wrapper {
   font-size: 19px;
 }
 .components-popover__content .fz-20px {
   font-size: 20px;
 }
+.components-popover__content .wp-admin-fz-20px .editor-styles-wrapper {
+  font-size: 20px;
+}
 .components-popover__content .fz-21px {
+  font-size: 21px;
+}
+.components-popover__content .wp-admin-fz-21px .editor-styles-wrapper {
   font-size: 21px;
 }
 .components-popover__content .fz-22px {
   font-size: 22px;
 }
+.components-popover__content .wp-admin-fz-22px .editor-styles-wrapper {
+  font-size: 22px;
+}
 .components-popover__content .fz-24px {
+  font-size: 24px;
+}
+.components-popover__content .wp-admin-fz-24px .editor-styles-wrapper {
   font-size: 24px;
 }
 .components-popover__content .fz-28px {
   font-size: 28px;
 }
+.components-popover__content .wp-admin-fz-28px .editor-styles-wrapper {
+  font-size: 28px;
+}
 .components-popover__content .fz-32px {
+  font-size: 32px;
+}
+.components-popover__content .wp-admin-fz-32px .editor-styles-wrapper {
   font-size: 32px;
 }
 .components-popover__content .fz-36px {
   font-size: 36px;
 }
+.components-popover__content .wp-admin-fz-36px .editor-styles-wrapper {
+  font-size: 36px;
+}
 .components-popover__content .fz-40px {
+  font-size: 40px;
+}
+.components-popover__content .wp-admin-fz-40px .editor-styles-wrapper {
   font-size: 40px;
 }
 .components-popover__content .fz-44px {
   font-size: 44px;
 }
+.components-popover__content .wp-admin-fz-44px .editor-styles-wrapper {
+  font-size: 44px;
+}
 .components-popover__content .fz-48px {
+  font-size: 48px;
+}
+.components-popover__content .wp-admin-fz-48px .editor-styles-wrapper {
   font-size: 48px;
 }
 .components-popover__content .fw-100 {
   font-weight: 100;
 }
+.components-popover__content .wp-admin-fw-100 .editor-styles-wrapper {
+  font-weight: 100;
+}
 .components-popover__content .fw-200 {
+  font-weight: 200;
+}
+.components-popover__content .wp-admin-fw-200 .editor-styles-wrapper {
   font-weight: 200;
 }
 .components-popover__content .fw-300 {
   font-weight: 300;
 }
+.components-popover__content .wp-admin-fw-300 .editor-styles-wrapper {
+  font-weight: 300;
+}
 .components-popover__content .fw-400 {
+  font-weight: 400;
+}
+.components-popover__content .wp-admin-fw-400 .editor-styles-wrapper {
   font-weight: 400;
 }
 .components-popover__content .fw-500 {
   font-weight: 500;
 }
+.components-popover__content .wp-admin-fw-500 .editor-styles-wrapper {
+  font-weight: 500;
+}
 .components-popover__content .fw-600 {
+  font-weight: 600;
+}
+.components-popover__content .wp-admin-fw-600 .editor-styles-wrapper {
   font-weight: 600;
 }
 .components-popover__content .fw-700 {
   font-weight: 700;
 }
+.components-popover__content .wp-admin-fw-700 .editor-styles-wrapper {
+  font-weight: 700;
+}
 .components-popover__content .fw-800 {
+  font-weight: 800;
+}
+.components-popover__content .wp-admin-fw-800 .editor-styles-wrapper {
   font-weight: 800;
 }
 .components-popover__content .fw-900 {
   font-weight: 900;
 }
+.components-popover__content .wp-admin-fw-900 .editor-styles-wrapper {
+  font-weight: 900;
+}
 .components-popover__content .ff-meiryo,
-.components-popover__content .wf-loading body {
+.components-popover__content .wf-loading body,
+.components-popover__content .wp-admin-ff-meiryo .editor-styles-wrapper {
   font-family: Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
-.components-popover__content .ff-yu-gothic {
+.components-popover__content .ff-yu-gothic,
+.components-popover__content .wp-admin-ff-yu-gothic .editor-styles-wrapper {
   font-family: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
-.components-popover__content .ff-ms-pgothic {
+.components-popover__content .ff-ms-pgothic,
+.components-popover__content .wp-admin-ff-ms-pgothic .editor-styles-wrapper {
   font-family: "MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 .components-popover__content .ff-noto-sans-jp,
-.components-popover__content .wf-active .ff-noto-sans-jp {
+.components-popover__content .wf-active .ff-noto-sans-jp,
+.components-popover__content .wp-admin-ff-noto-sans-jp .editor-styles-wrapper {
   font-family: "Noto Sans JP" ,sans-serif;
 }
 .components-popover__content .ff-noto-serif-jp,
-.components-popover__content .wf-active .ff-noto-serif-jp {
+.components-popover__content .wf-active .ff-noto-serif-jp,
+.components-popover__content .wp-admin-ff-noto-serif-jp .editor-styles-wrapper {
   font-family: "Noto Serif JP" ,sans-serif;
 }
 .components-popover__content .ff-mplus-1p,
-.components-popover__content .wf-active .ff-mplus-1p {
+.components-popover__content .wf-active .ff-mplus-1p,
+.components-popover__content .wp-admin-ff-mplus-1p .editor-styles-wrapper {
   font-family: "M PLUS 1p" ,sans-serif;
 }
 .components-popover__content .ff-rounded-mplus-1c,
-.components-popover__content .wf-active .ff-rounded-mplus-1c {
+.components-popover__content .wf-active .ff-rounded-mplus-1c,
+.components-popover__content .wp-admin-ff-rounded-mplus-1c .editor-styles-wrapper {
   font-family: "M PLUS Rounded 1c" ,sans-serif;
 }
 .components-popover__content .ff-kosugi,
-.components-popover__content .wf-active .ff-kosugi {
+.components-popover__content .wf-active .ff-kosugi,
+.components-popover__content .wp-admin-ff-kosugi .editor-styles-wrapper {
   font-family: "Kosugi" ,sans-serif;
 }
 .components-popover__content .ff-kosugi-maru,
-.components-popover__content .wf-active .ff-kosugi-maru {
+.components-popover__content .wf-active .ff-kosugi-maru,
+.components-popover__content .wp-admin-ff-kosugi-maru .editor-styles-wrapper {
   font-family: "Kosugi Maru" ,sans-serif;
 }
 .components-popover__content .ff-sawarabi-gothic,
-.components-popover__content .wf-active .ff-sawarabi-gothic {
+.components-popover__content .wf-active .ff-sawarabi-gothic,
+.components-popover__content .wp-admin-ff-sawarabi-gothic .editor-styles-wrapper {
   font-family: "Sawarabi Gothic" ,sans-serif;
 }
 .components-popover__content .ff-sawarabi-mincho,
-.components-popover__content .wf-active .ff-sawarabi-mincho {
+.components-popover__content .wf-active .ff-sawarabi-mincho,
+.components-popover__content .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho" ,sans-serif;
 }
 .components-popover__content .sub-caption {
