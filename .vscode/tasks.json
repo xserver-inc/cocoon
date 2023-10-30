@@ -4,25 +4,31 @@
     {
       "label": "npm start",
       "type": "shell",
-      "command": "cd blocks && npm run-script start",
+      "command": "cd blocks && npm run start",
       "problemMatcher": []
     },
     {
       "label": "npm build",
       "type": "shell",
-      "command": "cd blocks && npm run-script build",
+      "command": "cd blocks && npm run build",
       "problemMatcher": []
     },
     {
-      "label": "npm eject",
+      "label": "npm lint:js",
       "type": "shell",
-      "command": "cd blocks && npm run-script eject",
+      "command": "cd blocks && npm run lint:js",
+      "problemMatcher": []
+    },
+    {
+      "label": "npm lint:css",
+      "type": "shell",
+      "command": "cd blocks && npm run lint:css",
       "problemMatcher": []
     },
     {
       "label": "npm install",
       "type": "shell",
-      "command": "npm install && npm audit fix && cd blocks && npm install && npm audit fix",
+      "command": "cd blocks && npm install",
       "problemMatcher": []
     }
   ]
