@@ -353,18 +353,15 @@ addFilter(
 const addCustomSave = ( props, blockType, attributes ) => {
   if ( allowedBlocks.includes( blockType.name ) ) {
     const { className } = props;
-    const { extraStyle, extraBorder } = attributes;
+    const { extraStyle } = attributes;
 
-    if ( className || extraStyle || extraBorder ) {
+    if ( className || extraStyle ) {
       props.className = classnames( {
         [ className ]: !! className,
         [ 'is-style-' + extraStyle ]: !! extraStyle,
-        [ 'is-style-' + extraBorder ]: !! extraBorder,
-        [ 'has-border' ]: extraBorder,
         [ 'has-box-style' ]: extraStyle,
       } );
     }
-
 
     return Object.assign( props );
   }
