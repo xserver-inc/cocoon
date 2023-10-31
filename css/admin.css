@@ -18722,7 +18722,28 @@ body.wp-admin {
   .admin-settings .demo .memo-box,
   .admin-settings .demo .comment-box,
   .admin-settings .demo .common-icon-box {
-    padding: 28px 6px 6px;
+    padding: 28px 12px 12px;
+  }
+  .admin-settings .demo .is-style-information-box.has-background,
+  .admin-settings .demo .is-style-question-box.has-background,
+  .admin-settings .demo .is-style-alert-box.has-background,
+  .admin-settings .demo .is-style-memo-box.has-background,
+  .admin-settings .demo .is-style-comment-box.has-background,
+  .admin-settings .demo .is-style-ok-box.has-background,
+  .admin-settings .demo .is-style-ng-box.has-background,
+  .admin-settings .demo .is-style-good-box.has-background,
+  .admin-settings .demo .is-style-bad-box.has-background,
+  .admin-settings .demo .is-style-profile-box.has-background,
+  .admin-settings .demo .information-box.has-background,
+  .admin-settings .demo .question-box.has-background,
+  .admin-settings .demo .alert-box.has-background,
+  .admin-settings .demo .information.has-background,
+  .admin-settings .demo .question.has-background,
+  .admin-settings .demo .alert.has-background,
+  .admin-settings .demo .memo-box.has-background,
+  .admin-settings .demo .comment-box.has-background,
+  .admin-settings .demo .common-icon-box.has-background {
+    padding: 28px 12px 12px;
   }
   .admin-settings .demo .is-style-information-box::before,
   .admin-settings .demo .is-style-question-box::before,
