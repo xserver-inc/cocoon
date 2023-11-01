@@ -103,18 +103,24 @@ function visual_editor_stylesheets_custom($stylesheets) {
   if (is_visual_editor_style_enable()) {
     $style_url = PARENT_THEME_STYLE_CSS_URL;
     $keyframes_url = PARENT_THEME_KEYFRAMES_CSS_URL;
-    $editor_style_url = get_template_directory_uri().'/editor-style.css';
     $css = get_block_editor_color_palette_css();
     $file = get_visual_color_palette_css_cache_file();
     $color_file_url = get_visual_color_palette_css_cache_url();
     wp_filesystem_put_contents($file, $css);
     array_push($stylesheets,
-      // add_file_ver_to_css_js(get_site_icon_font_url()),
       add_file_ver_to_css_js($style_url),
       add_file_ver_to_css_js($keyframes_url),
-      add_file_ver_to_css_js($editor_style_url),
       add_file_ver_to_css_js($color_file_url)
     );
+
+    //親テーマを選択している場合
+    if (!is_child_theme()) {
+      $editor_style_url = get_template_directory_uri().'/editor-style.css';
+
+      array_push($stylesheets,
+        add_file_ver_to_css_js($editor_style_url),
+      );
+    }
 
     //ブロックエディターを利用しているとき
     if (!use_gutenberg_editor()) {
@@ -147,7 +153,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     if (is_child_theme()) {
       array_push($stylesheets,
         add_file_ver_to_css_js(CHILD_THEME_STYLE_CSS_URL),
-        add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
+        // add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
       );
     }
     // fontの指定がgoogle fontの場合
