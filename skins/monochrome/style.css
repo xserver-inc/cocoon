@@ -1343,15 +1343,15 @@ table tr:nth-of-type(2n) {
 }
 
 /* ■ twitter ■ */
-.author-box .twitter-button {
-	border: 1px solid #1da1f2 !important;
-	color: #1da1f2 !important;
+.author-box .x-corp-button {
+	border: 1px solid var(--cocoon-twitter-color) !important;
+	color: var(--cocoon-twitter-color) !important;
 }
-.author-box .twitter-button:after {
-	box-shadow: 0 0 0 2px #1da1f2;
+.author-box .x-corp-button:after {
+	box-shadow: 0 0 0 2px var(--cocoon-twitter-color);
 }
-.author-box .twitter-button:hover {
-	background-color: #1da1f2 !important;
+.author-box .x-corp-button:hover {
+	background-color: var(--cocoon-twitter-color) !important;
 }
 
 /* ■ feedly ■ */

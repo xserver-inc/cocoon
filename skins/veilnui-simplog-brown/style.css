@@ -253,9 +253,9 @@ body {
 #slide-in-sidebar .widget_author_box .author-box .website-button {
   background-color: #002561;
 }
-#sidebar .widget_author_box .author-box .twitter-button,
-#slide-in-sidebar .widget_author_box .author-box .twitter-button {
-  background-color: #1DA1F2;
+#sidebar .widget_author_box .author-box .x-corp-button,
+#slide-in-sidebar .widget_author_box .author-box .x-corp-button {
+  background-color: var(--cocoon-twitter-color);
 }
 #sidebar .widget_author_box .author-box .facebook-button,
 #slide-in-sidebar .widget_author_box .author-box .facebook-button {

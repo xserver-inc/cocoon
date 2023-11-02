@@ -598,6 +598,297 @@
   content: "\f1b0";
 }
 
+.fz-12px {
+  font-size: 12px;
+}
+
+.wp-admin-fz-12px .editor-styles-wrapper {
+  font-size: 12px;
+}
+
+.fz-13px {
+  font-size: 13px;
+}
+
+.wp-admin-fz-13px .editor-styles-wrapper {
+  font-size: 13px;
+}
+
+.fz-14px {
+  font-size: 14px;
+}
+
+.wp-admin-fz-14px .editor-styles-wrapper {
+  font-size: 14px;
+}
+
+.fz-15px {
+  font-size: 15px;
+}
+
+.wp-admin-fz-15px .editor-styles-wrapper {
+  font-size: 15px;
+}
+
+.fz-16px {
+  font-size: 16px;
+}
+
+.wp-admin-fz-16px .editor-styles-wrapper {
+  font-size: 16px;
+}
+
+.fz-17px {
+  font-size: 17px;
+}
+
+.wp-admin-fz-17px .editor-styles-wrapper {
+  font-size: 17px;
+}
+
+.fz-18px {
+  font-size: 18px;
+}
+
+.wp-admin-fz-18px .editor-styles-wrapper {
+  font-size: 18px;
+}
+
+.fz-19px {
+  font-size: 19px;
+}
+
+.wp-admin-fz-19px .editor-styles-wrapper {
+  font-size: 19px;
+}
+
+.fz-20px {
+  font-size: 20px;
+}
+
+.wp-admin-fz-20px .editor-styles-wrapper {
+  font-size: 20px;
+}
+
+.fz-21px {
+  font-size: 21px;
+}
+
+.wp-admin-fz-21px .editor-styles-wrapper {
+  font-size: 21px;
+}
+
+.fz-22px {
+  font-size: 22px;
+}
+
+.wp-admin-fz-22px .editor-styles-wrapper {
+  font-size: 22px;
+}
+
+.fz-24px {
+  font-size: 24px;
+}
+
+.wp-admin-fz-24px .editor-styles-wrapper {
+  font-size: 24px;
+}
+
+.fz-28px {
+  font-size: 28px;
+}
+
+.wp-admin-fz-28px .editor-styles-wrapper {
+  font-size: 28px;
+}
+
+.fz-32px {
+  font-size: 32px;
+}
+
+.wp-admin-fz-32px .editor-styles-wrapper {
+  font-size: 32px;
+}
+
+.fz-36px {
+  font-size: 36px;
+}
+
+.wp-admin-fz-36px .editor-styles-wrapper {
+  font-size: 36px;
+}
+
+.fz-40px {
+  font-size: 40px;
+}
+
+.wp-admin-fz-40px .editor-styles-wrapper {
+  font-size: 40px;
+}
+
+.fz-44px {
+  font-size: 44px;
+}
+
+.wp-admin-fz-44px .editor-styles-wrapper {
+  font-size: 44px;
+}
+
+.fz-48px {
+  font-size: 48px;
+}
+
+.wp-admin-fz-48px .editor-styles-wrapper {
+  font-size: 48px;
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+
+.wp-admin-fw-100 .editor-styles-wrapper {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.wp-admin-fw-200 .editor-styles-wrapper {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.wp-admin-fw-300 .editor-styles-wrapper {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.wp-admin-fw-400 .editor-styles-wrapper {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.wp-admin-fw-500 .editor-styles-wrapper {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.wp-admin-fw-600 .editor-styles-wrapper {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.wp-admin-fw-700 .editor-styles-wrapper {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.wp-admin-fw-800 .editor-styles-wrapper {
+  font-weight: 800;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.wp-admin-fw-900 .editor-styles-wrapper {
+  font-weight: 900;
+}
+
+.ff-meiryo,
+.wf-loading body,
+.wp-admin-ff-meiryo .editor-styles-wrapper {
+  font-family: Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+
+.ff-yu-gothic,
+.wp-admin-ff-yu-gothic .editor-styles-wrapper {
+  font-family: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+
+.ff-ms-pgothic,
+.wp-admin-ff-ms-pgothic .editor-styles-wrapper {
+  font-family: "MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+.ff-noto-sans-jp,
+.wf-active .ff-noto-sans-jp,
+.wp-admin-ff-noto-sans-jp .editor-styles-wrapper {
+  font-family: "Noto Sans JP" ,sans-serif;
+}
+
+.ff-noto-serif-jp,
+.wf-active .ff-noto-serif-jp,
+.wp-admin-ff-noto-serif-jp .editor-styles-wrapper {
+  font-family: "Noto Serif JP" ,sans-serif;
+}
+
+.ff-mplus-1p,
+.wf-active .ff-mplus-1p,
+.wp-admin-ff-mplus-1p .editor-styles-wrapper {
+  font-family: "M PLUS 1p" ,sans-serif;
+}
+
+.ff-rounded-mplus-1c,
+.wf-active .ff-rounded-mplus-1c,
+.wp-admin-ff-rounded-mplus-1c .editor-styles-wrapper {
+  font-family: "M PLUS Rounded 1c" ,sans-serif;
+}
+
+.ff-kosugi,
+.wf-active .ff-kosugi,
+.wp-admin-ff-kosugi .editor-styles-wrapper {
+  font-family: "Kosugi" ,sans-serif;
+}
+
+.ff-kosugi-maru,
+.wf-active .ff-kosugi-maru,
+.wp-admin-ff-kosugi-maru .editor-styles-wrapper {
+  font-family: "Kosugi Maru" ,sans-serif;
+}
+
+.ff-sawarabi-gothic,
+.wf-active .ff-sawarabi-gothic,
+.wp-admin-ff-sawarabi-gothic .editor-styles-wrapper {
+  font-family: "Sawarabi Gothic" ,sans-serif;
+}
+
+.ff-sawarabi-mincho,
+.wf-active .ff-sawarabi-mincho,
+.wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
+  font-family: "Sawarabi Mincho" ,sans-serif;
+}
+
+.sub-caption {
+  font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", var(--cocoon-default-font);
+  font-weight: 400;
+  font-size: 0.75em;
+  opacity: 0.5;
+}
+
+span.sub-caption {
+  opacity: 0.8;
+}
+
 .has-box-style {
   padding: var(--cocoon-box-padding);
 }
@@ -886,6 +1177,27 @@
   border-radius: 4px;
   position: relative;
   display: block;
+}
+.is-style-information-box.has-background,
+.is-style-question-box.has-background,
+.is-style-alert-box.has-background,
+.is-style-memo-box.has-background,
+.is-style-comment-box.has-background,
+.is-style-ok-box.has-background,
+.is-style-ng-box.has-background,
+.is-style-good-box.has-background,
+.is-style-bad-box.has-background,
+.is-style-profile-box.has-background,
+.information-box.has-background,
+.question-box.has-background,
+.alert-box.has-background,
+.information.has-background,
+.question.has-background,
+.alert.has-background,
+.memo-box.has-background,
+.comment-box.has-background,
+.common-icon-box.has-background {
+  padding: 20px 20px 20px 72px;
 }
 
 .body blockquote :last-child,
@@ -5074,11 +5386,6 @@ ol, ul {
 
 .speech-wrap .components-button {
   height: auto;
-}
-
-.body,
-.body p {
-  font-size: 18px;
 }
 
 .block-editor-editor-skeleton__body .editor-post-title {

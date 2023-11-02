@@ -6,7 +6,7 @@
   Author URI: https://haiji-blog.com/
   Screenshot URI:https://im-cocoon.net/wp-content/uploads/hygiene.png
   Version: 1.1.5
-  Priority: 9940000000
+  Priority: 9190000000
 */
 
 /*以下にスタイルシートを記入してください1*/
@@ -392,7 +392,7 @@ border-bottom:4px solid #5572ff;
   color: #888888;
 }
 
-.twitter-share-count::after {
+.x-corp-share-count::after {
   content: 'SHARE';
 }
 .googleplus-share-count::after{
@@ -566,13 +566,13 @@ border-bottom:4px solid #5572ff;
 .author-box .sns-follow-buttons a.follow-button:hover .icon-home-logo{
   color: #002561;
 }
-.bc-brand-color-white.sns-follow .twitter-button,
-.author-box .sns-follow-buttons a.follow-button.twitter-button{
-  filter: drop-shadow(1px 1px 1px #1da1f2)
+.bc-brand-color-white.sns-follow .x-corp-button,
+.author-box .sns-follow-buttons a.follow-button.x-corp-button{
+  filter: drop-shadow(1px 1px 1px #000000)
 }
-.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-twitter-logo,
-.author-box .sns-follow-buttons a.follow-button:hover .icon-twitter-logo{
-  color: #1da1f2;
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-x-corp-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-x-corp-logo{
+  color: #000000;
 }
 .bc-brand-color-white.sns-follow .facebook-button,
 .author-box .sns-follow-buttons a.follow-button.facebook-button {

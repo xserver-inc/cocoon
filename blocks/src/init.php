@@ -68,6 +68,17 @@ function cocoon_blocks_cgb_block_assets()
 			true
 		);
 	}
+
+  //Google Fonts
+  wp_enqueue_google_fonts();
+
+  //サイトフォントの設定を反映するクラスを付与
+  add_filter( 'admin_body_class', function($classes){
+    $classes .= ' wp-admin-'.get_site_font_family_class();
+    $classes .= ' wp-admin-'.get_site_font_size_class();
+    $classes .= ' wp-admin-'.get_site_font_weight_class();
+    return $classes;
+  });
 }
 
 /**

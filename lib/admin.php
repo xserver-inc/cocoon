@@ -781,6 +781,9 @@ function tiny_mce_before_init_custom( $mceInit ) {
     if (get_site_font_size_class()) {
       $mceInit['body_class'] .= ' '.get_site_font_size_class();
     }
+    if (get_site_font_weight_class()) {
+      $mceInit['body_class'] .= ' '.get_site_font_weight_class();
+    }
   }
 
 

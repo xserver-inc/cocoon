@@ -7,7 +7,7 @@
   Author URI: https://dateqa.com/cocoon/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-silk.png
   Version: 2.8.2
-  Priority: 9500001000
+  Priority: 8000001000
 */
 
 /* マテリアル */
@@ -1341,7 +1341,7 @@ p code.hljs {
 .memo-box,
 .comment-box,
 .common-icon-box {
-  padding: 1em;
+  padding: 1em !important;
   border-width: 2px;
   border-radius: 2px;
 }

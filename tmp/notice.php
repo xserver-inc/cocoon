@@ -21,7 +21,7 @@ if ($url):
   <?php endif ?>
 
     <div id="notice-area" class="notice-area nt-<?php echo get_notice_type(); ?>">
-      <?php echo $msg; ?>
+      <span class="notice-area-message"><?php echo $msg; ?></span>
     </div>
 
   <?php //aリンクの閉じタグ
