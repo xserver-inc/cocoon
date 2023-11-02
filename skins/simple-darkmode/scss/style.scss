@@ -22,6 +22,9 @@
   // ダークモード用スタイルシート
   @include mixin.prefers_dark_style();
 
+  // ダークモード用カスタム色
+  @include mixin.prefers_dark_skin();
+
 }
 
 body {

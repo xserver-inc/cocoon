@@ -19,7 +19,7 @@ $key-dark-color: #44abab;
 $bg-color: #f4f5f7;
 $accent-color-primary: #deabc4;
 $accent-color-secondary: #ddccaa;
-var(--cocoon-white-color): #fff;
+$cocoon-white-color: #fff;
 $black: #333;
 
 /* 全体 */
@@ -32,7 +32,7 @@ body {
 .main,
 .sidebar {
     // background-color: $bg-color;
-    background-color: var(--cocoon-white-color);
+    background-color: $cocoon-white-color;
 }
 
 /* ヘッダー・グローバルナビ */
@@ -41,7 +41,7 @@ body {
 }
 
 #navi .navi-in a {
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
 }
 
 #navi .navi-in > .menu-header .sub-menu {
@@ -59,7 +59,7 @@ body {
 }
 
 .header-container {
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
     background-color: $key-color;
 }
 
@@ -73,11 +73,11 @@ body {
 
 /* サイト名・キャッチフレーズ */
 .site-name-text {
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
 }
 
 .site-name-text:hover {
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
 }
 
 /* 見出し */
@@ -85,7 +85,7 @@ body {
     margin: 5px 0;
     padding: 20px 25px;
     background-color: $key-color;
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
     font-size: 22px;
     border-radius: 0.5em;
 }
@@ -115,7 +115,7 @@ body {
 .sidebar h2,
 .sidebar h3 {
     padding: 10px;
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
     background-color: $key-color;
     border: none;
     text-align: center;
@@ -218,7 +218,7 @@ select {
 }
 
 .a-wrap:hover {
-    // background-color: var(--cocoon-white-color);
+    // background-color: $cocoon-white-color;
     background-color: $key-light-color;
     -webkit-transform: translateY(-2px);
     -ms-transform: translateY(-2px);
@@ -293,7 +293,7 @@ select {
 input[type='submit'] {
     padding: 10px;
     background: $key-color;
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
     font-size: 14px;
     border: none;
     border-radius: 0.5em;
@@ -354,7 +354,7 @@ table tr:nth-child(even) {
 
 .pagination .current {
     background-color: $key-color;
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
 }
 
 .page-numbers.dots {
@@ -364,7 +364,7 @@ table tr:nth-child(even) {
 
 .pagination a:hover {
     background-color: $key-color;
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
 }
 
 /* 引用 */
@@ -384,7 +384,7 @@ blockquote::after {
 .footer {
     padding-top: 30px;
     padding-bottom: 35px;
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
     background-color: $key-color;
 }
 
@@ -401,11 +401,11 @@ blockquote::after {
 }
 
 .navi-footer-in a {
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
 }
 
 .navi-footer-in a:hover {
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
     background-color: $key-mid-color;
 }
 
@@ -417,14 +417,14 @@ blockquote::after {
 .go-to-top-button {
     width: 45px;
     height: 45px;
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
     background-color: $key-dark-color;
     border-radius: 50%;
     transition: all 0.3s;
 }
 
 .go-to-top-button:hover {
-    color: var(--cocoon-white-color);
+    color: $cocoon-white-color;
     background-color: $key-mid-color;
 }
 

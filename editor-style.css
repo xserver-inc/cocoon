@@ -89,7 +89,7 @@
   font-weight: 400;
 }
 .body.font-awesome-5 .bb-ok::before {
-  content: "  OK";
+  content: "\f111   OK";
 }
 .body.font-awesome-5 .blank-box.bb-check::before,
 .body.font-awesome-5 .blank-box.bb-comment::before,
@@ -121,7 +121,7 @@
   font-weight: 501;
 }
 .body.font-awesome-5 .bb-memo::before {
-  content: "  MEMO";
+  content: "\f249   MEMO";
 }
 .body.font-awesome-5 .blank-box.bb-tab::before {
   font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
@@ -213,7 +213,7 @@ span.btn-wrap {
 .btn-wrap::before {
   font-family: FontAwesome;
   color: #DBB004;
-  content: '\f146';
+  content: "\f146";
 }
 
 .blogcard-type::before {
@@ -238,55 +238,55 @@ span.btn-wrap {
 }
 
 .blogcard-type.bct-none::before {
-  content: "  ラベルなし";
+  content: "\f0c8   ラベルなし";
 }
 
 .blogcard-type.bct-related::before {
-  content: "  関連記事";
+  content: "\f15c   関連記事";
 }
 
 .blogcard-type.bct-reference::before {
-  content: "  参考記事";
+  content: "\f19d   参考記事";
 }
 
 .blogcard-type.bct-reference-link::before {
-  content: "  参考リンク";
+  content: "\f19d   参考リンク";
 }
 
 .blogcard-type.bct-popular::before {
-  content: "  人気記事";
+  content: "\f005   人気記事";
 }
 
 .blogcard-type.bct-pickup::before {
-  content: "  ピックアップ";
+  content: "\f005   ピックアップ";
 }
 
 .blogcard-type.bct-check::before {
-  content: "  チェック";
+  content: "\f00c   チェック";
 }
 
 .blogcard-type.bct-together::before {
-  content: "  あわせて読みたい";
+  content: "\f02d   あわせて読みたい";
 }
 
 .blogcard-type.bct-detail::before {
-  content: "  詳細はこちら";
+  content: "\f15c   詳細はこちら";
 }
 
 .blogcard-type.bct-official::before {
-  content: "  公式サイト";
+  content: "\f024   公式サイト";
 }
 
 .blogcard-type.bct-dl::before {
-  content: "  ダウンロード";
+  content: "\f019   ダウンロード";
 }
 
 .blogcard-type.bct-prev::before {
-  content: "  前回の記事";
+  content: "\f137   前回の記事";
 }
 
 .blogcard-type.bct-next::before {
-  content: "  続きの記事";
+  content: "\f138   続きの記事";
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
@@ -314,7 +314,7 @@ span.btn-wrap {
   color: var(--cocoon-white-color);
   left: -3px;
   border-radius: 6px 6px 0 0;
-  padding: 0 1em 0 .8em;
+  padding: 0 1em 0 0.8em;
   font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif;
 }
 .blank-box.bb-red::before {
@@ -379,67 +379,67 @@ span.btn-wrap {
 }
 
 .bb-check::before {
-  content: "  CHECK";
+  content: "\f00c   CHECK";
 }
 
 .bb-comment::before {
-  content: "  COMMENT";
+  content: "\f075   COMMENT";
 }
 
 .bb-point::before {
-  content: "  POINT";
+  content: "\f0eb   POINT";
 }
 
 .bb-tips::before {
-  content: "  TIPS";
+  content: "\f19d   TIPS";
 }
 
 .bb-hint::before {
-  content: "  HINT";
+  content: "\f0f3   HINT";
 }
 
 .bb-pickup::before {
-  content: "  PICKUP";
+  content: "\f005   PICKUP";
 }
 
 .bb-bookmark::before {
-  content: "  BOOKMARK";
+  content: "\f02e   BOOKMARK";
 }
 
 .bb-memo::before {
-  content: "  MEMO";
+  content: "\f249   MEMO";
 }
 
 .bb-download::before {
-  content: "  DOWNLOAD";
+  content: "\f019   DOWNLOAD";
 }
 
 .bb-break::before {
-  content: "  BREAK";
+  content: "\f0f4   BREAK";
 }
 
 .bb-amazon::before {
-  content: "  AMAZON";
+  content: "\f270   AMAZON";
 }
 
 .bb-ok::before {
-  content: "  OK";
+  content: "\f10c   OK";
 }
 
 .bb-ng::before {
-  content: "  NG";
+  content: "\f00d   NG";
 }
 
 .bb-good::before {
-  content: "  GOOD";
+  content: "\f164   GOOD";
 }
 
 .bb-bad::before {
-  content: "  BAD";
+  content: "\f165   BAD";
 }
 
 .bb-profile::before {
-  content: "  PROFILE";
+  content: "\f007   PROFILE";
 }
 
 .has-small-font-size {
@@ -463,7 +463,7 @@ span.btn-wrap {
   padding: 7px 13px;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce .btn[class*="btn-"] {
+.wp-block-freeform.block-library-rich-text__tinymce .btn[class*=btn-] {
   color: var(--cocoon-white-color);
 }
 

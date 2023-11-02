@@ -103,12 +103,12 @@ div.mobile-menu-buttons .menu-button:hover,
 
 .cat-item a::before {
   font-family: FontAwesome;
-  content: '\f0da';
+  content: "\f0da";
   margin-right: 6px;
 }
 
 .cat-item .children a::before {
-  content: '\f105';
+  content: "\f105";
 }
 
 .font-awesome-5 .cat-item a::before {
@@ -116,7 +116,7 @@ div.mobile-menu-buttons .menu-button:hover,
   font-weight: 900;
 }
 .font-awesome-5 .cat-item .children a::before {
-  content: '\f105';
+  content: "\f105";
 }
 
 .post-count {
@@ -193,7 +193,7 @@ div.mobile-menu-buttons .menu-button:hover,
   background-color: rgba(255, 255, 255, 0.2);
 }
 .navi ul .sub-menu a .sub-caption {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .navi-in > ul .sub-menu {

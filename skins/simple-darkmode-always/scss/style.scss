@@ -4,3 +4,4 @@
 // ダークモード用のカスタムプロパティとスタイルシートを読み込み
 @include mixin.prefers_dark_root();
 @include mixin.prefers_dark_style();
+@include mixin.prefers_dark_skin();

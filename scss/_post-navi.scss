@@ -1,4 +1,4 @@
-
+@use "sass:math";
 /************************************
 ** 投稿ナビ
 ************************************/
@@ -29,7 +29,7 @@ $pn_margin_width: 10px;
 
     &.prev-post{
       flex-direction: row;
-      padding-left: $pn_margin_width / 2;
+      padding-left: math.div($pn_margin_width, 2);
 
 
      .prev-post-title{
@@ -39,7 +39,7 @@ $pn_margin_width: 10px;
 
     &.next-post{
       flex-direction: row-reverse;
-      padding-right: $pn_margin_width / 2;
+      padding-right: math.div($pn_margin_width, 2);
 
       .next-post-title{
         margin-right: $pn_margin_width;
