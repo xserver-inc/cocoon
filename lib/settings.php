@@ -113,8 +113,8 @@ function visual_editor_stylesheets_custom($stylesheets) {
       add_file_ver_to_css_js($color_file_url)
     );
 
-    //親テーマを選択している場合
-    if (!is_child_theme()) {
+    //親テーマを選択している場合もしくはブロックエディターの時editor-style.cssを読み込む
+    if (!is_child_theme() || use_gutenberg_editor()) {
       $editor_style_url = get_template_directory_uri().'/editor-style.css';
 
       array_push($stylesheets,
@@ -153,7 +153,12 @@ function visual_editor_stylesheets_custom($stylesheets) {
     if (is_child_theme()) {
       array_push($stylesheets,
         add_file_ver_to_css_js(CHILD_THEME_STYLE_CSS_URL),
-        // add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
+      );
+    }
+    //ブロックエディターの時editor-style.cssを読み込む
+    if (is_child_theme() && use_gutenberg_editor()) {
+      array_push($stylesheets,
+        add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
       );
     }
     // fontの指定がgoogle fontの場合
@@ -164,7 +169,6 @@ function visual_editor_stylesheets_custom($stylesheets) {
     }
   }
 
-  //_v($stylesheets);
   return $stylesheets;
 }
 endif;
