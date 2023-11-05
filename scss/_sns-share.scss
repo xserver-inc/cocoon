@@ -180,9 +180,12 @@
       display: block;
       font-size: 16px;
       margin: 0;
-      &.button-caption{
-        font-size: 12px;
-      }
+    }
+    .social-icon.button-caption {
+      font-size: 12px;
+    }
+    .button-caption.button-caption {
+      font-size: 12px;
     }
   }
 

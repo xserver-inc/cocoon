@@ -513,9 +513,9 @@ body {
   background-color: #90CAF9;
   color: white;
 }
-#sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"], #sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"] a,
-#slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"],
-#slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"] a {
+#sidebar .widget_calendar .wp-calendar-table tbody tr td [id$=today], #sidebar .widget_calendar .wp-calendar-table tbody tr td [id$=today] a,
+#slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$=today],
+#slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$=today] a {
   background-color: #42A5F5;
   color: white;
 }
@@ -658,7 +658,7 @@ body {
   background-color: #E3F2FD;
 }
 
-#main .post-password-form input[type="password"] {
+#main .post-password-form input[type=password] {
   border-radius: 0;
   border: none;
   border-top-left-radius: 4px;
@@ -666,11 +666,11 @@ body {
   border-bottom: solid #42A5F5 1px;
   background-color: transparent;
 }
-#main .post-password-form input[type="password"]:focus {
+#main .post-password-form input[type=password]:focus {
   transition: all 0.3s ease;
   background-color: #E3F2FD;
 }
-#main .post-password-form input[type="submit"] {
+#main .post-password-form input[type=submit] {
   margin: 1em 0;
   display: inline-block;
   background-color: #42A5F5;
@@ -844,7 +844,7 @@ blockquote cite {
   background-color: #90CAF9;
   color: white;
 }
-#main .wp-block-calendar .wp-calendar-table tbody tr td [id$="today"], #main .wp-block-calendar .wp-calendar-table tbody tr td [id$="today"] a {
+#main .wp-block-calendar .wp-calendar-table tbody tr td [id$=today], #main .wp-block-calendar .wp-calendar-table tbody tr td [id$=today] a {
   background-color: #42A5F5;
   color: white;
 }

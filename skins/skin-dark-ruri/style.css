@@ -111,7 +111,7 @@ body {
   z-index: -1;
   top: 0;
   left: 0;
-  transition: .4s;
+  transition: 0.4s;
   background-image: linear-gradient(135deg, #1d1b1b, #1d1b1b 70%, #0c244c 70%, #0c244c 100%, transparent 0);
   border: 2px outset #332f2f;
 }
@@ -144,7 +144,7 @@ body {
   z-index: -1;
   top: 0;
   left: 0;
-  transition: .4s;
+  transition: 0.4s;
   background-image: linear-gradient(45deg, #0c244c, #0c244c 50%, #1d1b1b 50%, #1d1b1b 100%, transparent 0);
   border: 2px outset #332f2f;
 }
@@ -238,7 +238,7 @@ body {
 
 .article .toc .toc-content {
   margin: 3px 0px;
-  padding: .2em 1.4em 1.4em;
+  padding: 0.2em 1.4em 1.4em;
   border-radius: 4px;
   border-top: 2px solid;
   border-left: 2px solid;
@@ -277,9 +277,9 @@ body {
 
 .article h3::after {
   position: absolute;
-  top: .5em;
-  left: .3em;
-  content: '';
+  top: 0.5em;
+  left: 0.3em;
+  content: "";
   width: 6px;
   height: -webkit-calc(100% - 1em);
   height: calc(100% - 1.1em);
@@ -302,7 +302,7 @@ body {
 .article h4::before,
 .article h4::after {
   position: absolute;
-  content: '';
+  content: "";
 }
 
 .article h4::before {
@@ -339,7 +339,7 @@ body {
   position: absolute;
   top: 14px;
   left: 6px;
-  content: '';
+  content: "";
   width: 9px;
   height: 9px;
   background-color: #1b51ad;
@@ -370,9 +370,9 @@ body {
 .sidebar h2::before,
 .sidebar h3::before {
   position: absolute;
-  top: .3em;
-  left: .7em;
-  content: '';
+  top: 0.3em;
+  left: 0.7em;
+  content: "";
   width: 12px;
   height: 22px;
   background-color: #1b51ad;
@@ -387,8 +387,8 @@ body {
 .sidebar h3::after {
   position: absolute;
   top: 1.2em;
-  left: .3em;
-  content: '';
+  left: 0.3em;
+  content: "";
   width: 12px;
   height: 22px;
   background-color: #e0861a;
@@ -413,7 +413,7 @@ body {
   text-decoration: none;
   outline: none;
   color: #ccc;
-  transition: all .3s;
+  transition: all 0.3s;
   box-sizing: border-box;
   background-image: linear-gradient(135deg, #3d3939, #0c0c0c 100%, transparent 0);
   border: 1px outset #403d3d;
@@ -428,8 +428,8 @@ body {
   bottom: -1px;
   left: -1px;
   z-index: 2;
-  content: '';
-  transition: all .3s;
+  content: "";
+  transition: all 0.3s;
 }
 
 .page-numbers::before {
@@ -480,12 +480,12 @@ body {
 / 『送信系ボタン』
 ------------------------------------------- */
 .comment-btn,
-.container input[type='submit'] {
+.container input[type=submit] {
   display: block;
   width: 60%;
   border: 1px outset #332f2f;
   border-radius: 6px;
-  transition: .4s;
+  transition: 0.4s;
   margin: auto;
   color: #ccc;
   box-shadow: 0 2px 4px rgba(82, 76, 76, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
@@ -493,13 +493,13 @@ body {
 }
 
 .comment-btn:hover,
-.container input[type='submit']:hover {
+.container input[type=submit]:hover {
   color: #ccc;
   background-color: #1b51ad;
   border: 1px outset #aaaaaa;
 }
 
-input[type='submit'] {
+input[type=submit] {
   font-size: 22px;
 }
 
@@ -560,7 +560,7 @@ table tr:nth-of-type(2n) {
 .widget-entry-card .card-thumb img,
 .carousel-entry-card .card-thumb img {
   transform: none;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .widget-entry-cards .a-wrap:hover .widget-entry-card .card-thumb img,
@@ -574,7 +574,7 @@ table tr:nth-of-type(2n) {
   box-shadow: 0px 2px 0px #191919;
   color: #ccc;
   box-sizing: border-box;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .recent-comments .a-wrap:hover {
@@ -604,7 +604,7 @@ table tr:nth-of-type(2n) {
 .widget_block .wp-block-latest-posts li a {
   color: #d3d3d3;
   border-bottom: 1px solid #050505;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   box-shadow: 0 2px 0 #282727;
 }
 
@@ -654,9 +654,9 @@ table tr:nth-of-type(2n) {
 .cat-item .cf::after {
   content: "";
   position: absolute;
-  top: calc(40%);
+  top: 40%;
   left: 4px;
-  content: '';
+  content: "";
   width: 4px;
   height: 4px;
   background-color: rgba(224, 134, 26, 0.6);
@@ -727,7 +727,7 @@ blockquote:before {
 }
 
 blockquote:after {
-  content: '';
+  content: "";
   left: 0;
   top: 0;
   border-width: 0 0 60px 60px;
@@ -746,7 +746,7 @@ blockquote p {
 / 『人気記事ランキング』
 ------------------------------------------- */
 /* ----- 標準のランキングを隠す ----- */
-.widget-entry-cards.ranking-visible [class*="no-"] .card-thumb::before {
+.widget-entry-cards.ranking-visible [class*=no-] .card-thumb::before {
   background: none;
 }
 
@@ -757,7 +757,7 @@ blockquote p {
   top: -5px;
   left: -8px;
   line-height: 30px;
-  opacity: .9;
+  opacity: 0.9;
   text-align: center;
   font-size: 18px;
   width: 32px;
@@ -785,7 +785,7 @@ blockquote p {
   border-right: 22px solid transparent;
   border-bottom: 22px solid transparent;
   border-left: 22px solid #ccc;
-  opacity: .6;
+  opacity: 0.6;
   top: 0;
   left: 0;
   position: absolute;
@@ -799,7 +799,7 @@ blockquote p {
   border-right: 32px solid transparent;
   border-bottom: 32px solid transparent;
   border-left: 32px solid #ccc;
-  opacity: .6;
+  opacity: 0.6;
   top: 0;
   left: 0;
   position: absolute;
@@ -892,12 +892,12 @@ a {
 /* -------------------------------------------
 / 『カレンダー』
 ------------------------------------------- */
-.wp-calendar-table [id$="today"],
+.wp-calendar-table [id$=today],
 #slide-in-wp-calendar #slide-in-today {
   background-color: #a4701a;
 }
 
-.wp-calendar-table [id$="today"] a,
+.wp-calendar-table [id$=today] a,
 #slide-in-wp-calendar #slide-in-today a {
   background-color: #cba350;
   color: black;
@@ -958,7 +958,7 @@ select {
 / 『インデックスカードタイプ』
 ------------------------------------------- */
 .ect-vertical-card.ect-tile-card .a-wrap {
-  margin: 0 .55% 12px;
+  margin: 0 0.55% 12px;
 }
 
 .ect-vertical-card.ect-tile-card .card-snippet {
@@ -1043,11 +1043,11 @@ select {
   opacity: 0.85;
 }
 
-span[class^="marker"] {
+span[class^=marker] {
   color: #595858;
 }
 
-span[class^="marker-under"] {
+span[class^=marker-under] {
   color: #d3d3d3;
 }
 
@@ -1227,7 +1227,7 @@ div.speech-balloon {
   text-shadow: #191919 3px 0 0, #191919 2px 1px 0, #191919 2px 2px 0, #191919 2px 3px 0, #191919 1px 3px 0, #191919 0 3px 0, #191919 -1px 3px 0, #191919 -2px 2px 0, #191919 -3px 1px 0, #191919 -3px 0 0, #191919 -3px -1px 0, #191919 -3px -2px 0, #191919 -2px -2px 0, #191919 -1px -3px 0, #191919 0 -3px 0, #191919 1px -3px 0, #191919 2px -2px 0, #191919 2px -2px 0, #191919 3px -1px 0;
 }
 
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select {
   color: #333 !important;
 }
 
@@ -1253,7 +1253,7 @@ div.speech-balloon {
 /* -------------------------------------------
 / 『追加修正』
 ------------------------------------------- */
-#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] {
+#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-1], #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-2], #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-3], #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-4] {
   background: none #e5e4e6;
   border: 1px solid #e5e4e6;
   color: #404453;
@@ -1337,7 +1337,7 @@ div.speech-balloon {
   box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.33);
 }
 
-[class^="is-style-balloon-"], [class*=" is-style-balloon-"] {
+[class^=is-style-balloon-], [class*=" is-style-balloon-"] {
   --cocoon-white-color: #191919;
   background: var(--cocoon-white-color);
   border: 1px solid var(--cocoon-box-border-color);

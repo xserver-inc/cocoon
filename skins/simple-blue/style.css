@@ -12,7 +12,7 @@
 /*以下にスタイルシートを記入してください*/
 /* 全体 */
 body {
-  font-family: Avenir, 'Helvetica neue', Helvetica, 'Segoe UI', '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+  font-family: Avenir, "Helvetica neue", Helvetica, "Segoe UI", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
   background-color: #f4f5f7;
 }
 
@@ -97,7 +97,7 @@ body {
 }
 
 .article h5:after {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   height: 4px;
@@ -129,7 +129,7 @@ body {
 }
 
 /* 検索ボタン */
-input[type='text'].search-edit {
+input[type=text].search-edit {
   font-size: 16px;
   border-radius: 46px;
 }
@@ -185,7 +185,7 @@ input[type='text'].search-edit {
     color: $key_color3;
 } */
 /* コメント送信ボタン */
-input[type='submit'] {
+input[type=submit] {
   padding: 10px;
   background: #3399cc;
   color: #fff;
@@ -286,11 +286,9 @@ table th {
     display: flex;
     align-items: center;
   }
-
   .header .header-in {
     min-height: 80px;
   }
-
   .sidebar h2,
   .sidebar h3 {
     font-size: 16px;
@@ -300,11 +298,9 @@ table th {
   .article h2 {
     padding: 0.6em 0.2em;
   }
-
   .article h3 {
     padding: 0.4em 1em;
   }
-
   .footer {
     padding-top: 25px;
     padding-bottom: 30px;
