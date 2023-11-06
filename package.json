@@ -30,7 +30,7 @@
   },
   "scripts": {
     "watch": "gulp watch",
-    "start": "cd blocks && npm run script start",
+    "start": "cd blocks && npm run start",
     "prod": "gulp",
     "build": "gulp && cd blocks && npm run build",
     "po2json": "run-script-os",
