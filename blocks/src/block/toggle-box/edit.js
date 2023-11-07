@@ -9,8 +9,8 @@ import {
   withFontSizes,
   useBlockProps,
 } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
-import { compose } from '@wordpress/compose';
+import { Fragment, useEffect } from '@wordpress/element';
+import { compose, useInstanceId } from '@wordpress/compose';
 import classnames from 'classnames';
 
 export function ToggleBoxEdit( props ) {
@@ -59,7 +59,10 @@ export function ToggleBoxEdit( props ) {
     style: styles,
   } );
 
-  dateID == '' ? setAttributes( { dateID: getDateID() } ) : dateID;
+  const instanceId = useInstanceId(ToggleBoxEdit);
+  useEffect(() => {
+    setAttributes( { dateID: getDateID() + instanceId } )
+  }, [instanceId]);
 
   return (
     <Fragment>
