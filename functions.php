@@ -393,7 +393,9 @@ add_action('init', function () {
 
 //wpForoで添付画像をイメージリンクにする
 add_filter('wpforo_body_text_filter', function ($text){
-define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp');
+  if ( ! defined('IMAGE_RECOGNITION_EXTENSIONS_REG') ) {
+    define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp');
+  }
   $text = preg_replace('#(<div id="wpfa-\d+?" class="wpforo-attached-file"><a class="wpforo-default-attachment" .*?href="(.+?('.IMAGE_RECOGNITION_EXTENSIONS_REG.'))".*?>).+?(</a></div>)#i', '$1<i class="fas fa-paperclip paperclip"></i><img alt="" src="$2" />$4', $text);
   return $text;
 });
