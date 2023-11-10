@@ -171,6 +171,9 @@ function fn_minify_html($input, $comment = 2, $quote = 1) {
             //codeタグの場合は処理しない
             if (includes_string($part, '<code')) {
                 $output .= $part;
+            } elseif ( includes_string($part, '<script') ) {
+	            //scriptタグの場合はjsの圧縮を行う
+	            $output .= fn_minify_js($part);
             } else {
                 $output .= fn_minify_html_union($part, $quote);
             }
