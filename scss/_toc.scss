@@ -143,8 +143,3 @@
 .toc-center {
   margin: 1em auto;
 }
-
-//サイドバーやフッターウィジェットで目次ウィジェットタイトルを表示させている場合はデフォルトの目次タイトルを表示しない
-.nwa .widget_toc .widget-title + .toc-widget-box .toc-title {
-  display: none;
-}
