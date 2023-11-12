@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) exit;
 // -----------------------------------------------------------------------------
 // site_font_size
 
-// font_awesome_5 default 
+// font_awesome_5 default
 if (!function_exists('get_site_icon_font')) :
   function get_site_icon_font()
   {
@@ -939,7 +939,7 @@ if (!function_exists('skin_grayish_top_header_navibg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1313,7 +1313,7 @@ if (!function_exists('customize_more_button_caption')) :
   }
 endif;
 
-// フロントページ・インデックスページのNextボタン 
+// フロントページ・インデックスページのNextボタン
 add_filter('pagination_next_link_caption', 'skin_grayish_nextbutton_text');
 if (!function_exists('skin_grayish_nextbutton_text')) :
   function skin_grayish_nextbutton_text()
@@ -1470,7 +1470,7 @@ if (!function_exists('skin_grayish_ohter_headerbg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1843,7 +1843,7 @@ if (!function_exists('skin_grayish_mobile_headerbg')) :
       $style_opacity = '0.5';
     }
 
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1958,7 +1958,7 @@ if (!function_exists('skin_grayish_mobile_footerbg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -2073,7 +2073,7 @@ if (!function_exists('wp_enqueue_scrollhint_skinadd')) :
         //ScrollHintスクリプトの呼び出し
         wp_enqueue_script('scrollhint-js', get_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array('jquery'), false, true);
       }
-      $data = minify_js('
+      $data = '
           (function($){
             new ScrollHint(".skin-grayish .under-entry-content .related-list", {
               suggestiveShadow: false,
@@ -2082,7 +2082,7 @@ if (!function_exists('wp_enqueue_scrollhint_skinadd')) :
               }
             });
           })(jQuery);
-        ');
+        ';
       wp_add_inline_script('scrollhint-js', $data, 'after');
     }
   }

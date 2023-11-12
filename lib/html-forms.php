@@ -458,7 +458,7 @@ function generate_color_picker_tag($name, $value, $label){
   <p><label for="<?php echo $name; ?>"><?php echo $label; ?></label></p>
   <p><input type="text" name="<?php echo $name; ?>" value="<?php echo esc_html($value); ?>" ></p>
   <?php wp_enqueue_script( 'wp-color-picker' );
-  $data = minify_js('(function( $ ) {
+  $data = '(function( $ ) {
         var options = {
             defaultColor: false,
             change: function(event, ui){},
@@ -467,7 +467,7 @@ function generate_color_picker_tag($name, $value, $label){
             palettes: true
         };
         $("input:text[name=\''.$name.'\']").wpColorPicker(options);
-    })( jQuery );');
+    })( jQuery );';
     wp_add_inline_script( 'wp-color-picker', $data, 'after' ) ;
 
     $res = ob_get_clean();
