@@ -1550,11 +1550,11 @@ if (!function_exists('skin_grayish_profbox_customize')) :
     // 画像のアップロード
     $wp_customize->add_setting(
       'undercon_profbg_image',
-      array(
-        'default'           => get_theme_mod('undercon_profbg_image'), // これを入れないとアップロードした画像のプレビューが消えてしまう
-        // 'priority'          => 1000,
-        'sanitize_callback' => 'esc_url_raw'
-      )
+      // array(
+      //   'default'           => get_theme_mod('undercon_profbg_image'), // これを入れないとアップロードした画像のプレビューが消えてしまう
+      //   // 'priority'          => 1000,
+      //   'sanitize_callback' => 'esc_url_raw'
+      // )
     );
     $wp_customize->add_control(
       new WP_Customize_Image_Control(
