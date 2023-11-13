@@ -34,6 +34,10 @@
     },
     "fontSize": {
       "type": "string"
+    },
+    "notNestedStyle": {
+      "type": "boolean",
+      "default": true
     }
   },
   "example": {

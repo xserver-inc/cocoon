@@ -18,6 +18,7 @@ export default function save( { attributes } ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    notNestedStyle,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -39,6 +40,7 @@ export default function save( { attributes } ) {
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
+    'not-nested-style': notNestedStyle,
   } );
 
   const styles = {
@@ -48,7 +50,7 @@ export default function save( { attributes } ) {
   };
 
   const blockProps = useBlockProps.save( {
-    className: className,
+    className,
     style: styles,
   } );
 
@@ -59,7 +61,7 @@ export default function save( { attributes } ) {
         className="toggle-checkbox"
         type="checkbox"
       />
-      <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+      <label className="toggle-button" htmlFor={ 'toggle-checkbox-' + dateID }>
         <RichText.Content value={ content } />
       </label>
       <div className="toggle-content">

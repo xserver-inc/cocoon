@@ -33,6 +33,7 @@ export function ToggleBoxEdit( props ) {
     customBackgroundColor,
     customTextColor,
     customBorderColor,
+    notNestedStyle,
   } = attributes;
 
   const classes = classnames( className, {
@@ -46,6 +47,7 @@ export function ToggleBoxEdit( props ) {
     [ textColor.class ]: textColor.class,
     [ borderColor.class ]: borderColor.class,
     [ fontSize.class ]: fontSize.class,
+    'not-nested-style': notNestedStyle,
   } );
 
   const styles = {
@@ -59,10 +61,10 @@ export function ToggleBoxEdit( props ) {
     style: styles,
   } );
 
-  const instanceId = useInstanceId(ToggleBoxEdit);
-  useEffect(() => {
-    setAttributes( { dateID: getDateID() + instanceId } )
-  }, [instanceId]);
+  const instanceId = useInstanceId( ToggleBoxEdit );
+  useEffect( () => {
+    setAttributes( { dateID: getDateID() + instanceId } );
+  }, [ instanceId ] );
 
   return (
     <Fragment>
@@ -96,7 +98,10 @@ export function ToggleBoxEdit( props ) {
           className="toggle-checkbox"
           type="checkbox"
         />
-        <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+        <label
+          className="toggle-button"
+          htmlFor={ 'toggle-checkbox-' + dateID }
+        >
           <RichText
             value={ content }
             onChange={ ( value ) => setAttributes( { content: value } ) }

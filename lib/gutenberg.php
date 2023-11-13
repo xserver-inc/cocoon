@@ -409,18 +409,32 @@ html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-button:before{
   color: <?php echo $color; ?>;
 }
 */
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-button{
     background-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-button,
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-content{
     border-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color:not(.not-nested-style) .toggle-content{
   background-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-color:not(.not-nested-style) .toggle-content{
   color: <?php echo $color; ?>;
+}
+
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-button{
+background-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-button,
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-content{
+border-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color.not-nested-style > .toggle-content{
+background-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-color.not-nested-style > .toggle-content{
+color: <?php echo $color; ?>;
 }
 <?php //アイコンリストボックス ?>
 html .body .iconlist-box.has-<?php echo $slug; ?>-icon-color li::before{
