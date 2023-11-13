@@ -208,6 +208,10 @@ function gutenberg_stylesheets_custom() {
         wp_enqueue_style( THEME_NAME . '-skin-style', get_skin_url() );
       }
 
+      //カスタムスタイル
+      $cache_file_url = get_theme_css_cache_file_url();
+      wp_enqueue_style( THEME_NAME . '-css-cache-style', $cache_file_url );
+
       //子テーマがある場合
       if (is_child_theme()) {
         wp_enqueue_style( THEME_NAME . '-child-style', CHILD_THEME_STYLE_CSS_URL );
