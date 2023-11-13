@@ -439,8 +439,8 @@ table th,
 }
 
 /*ソースコード*/
-pre.wp-block-code,
-pre {
+pre.wp-block-code:where(:not(.hljs)),
+pre:where(:not(.hljs)) {
   color: var(--text-main);
   background-color: var(--bg1);
 }
