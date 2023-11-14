@@ -677,12 +677,12 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
           'settings' => 'top_navibg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'top_navibg_alpha_5' => '0.5（デフォルト）',
             'top_navibg_alpha_0' => '0（背景色なし)',
             'top_navibg_alpha_1' => '0.1',
             'top_navibg_alpha_2' => '0.2',
             'top_navibg_alpha_3' => '0.3',
             'top_navibg_alpha_4' => '0.4',
+            'top_navibg_alpha_5' => '0.5（デフォルト）',
             'top_navibg_alpha_6' => '0.6',
             'top_navibg_alpha_7' => '0.7',
             'top_navibg_alpha_8' => '0.8',
@@ -734,12 +734,12 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
           'settings' => 'topmv_whovlay_select',
           'type'     => 'select',
           'choices'  => array(
-            'topmv_whoverlay_5' => '0.5（デフォルト）',
             'topmv_whoverlay_0' => 'OFF',
             'topmv_whoverlay_1' => '0.1',
             'topmv_whoverlay_2' => '0.2',
             'topmv_whoverlay_3' => '0.3',
             'topmv_whoverlay_4' => '0.4',
+            'topmv_whoverlay_5' => '0.5（デフォルト）',
             'topmv_whoverlay_6' => '0.6',
             'topmv_whoverlay_7' => '0.7',
             'topmv_whoverlay_8' => '0.8',
@@ -1397,12 +1397,12 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
         'settings' => 'ohter_headerbg_alpha',
         'type' => 'select',
         'choices' => array(
-          'ohter_headerbg_alpha_5' => '0.5（デフォルト）',
           'ohter_headerbg_alpha_0' => '0（背景色なし)',
           'ohter_headerbg_alpha_1' => '0.1',
           'ohter_headerbg_alpha_2' => '0.2',
           'ohter_headerbg_alpha_3' => '0.3',
           'ohter_headerbg_alpha_4' => '0.4',
+          'ohter_headerbg_alpha_5' => '0.5（デフォルト）',
           'ohter_headerbg_alpha_6' => '0.6',
           'ohter_headerbg_alpha_7' => '0.7',
           'ohter_headerbg_alpha_8' => '0.8',
@@ -1533,12 +1533,12 @@ if (!function_exists('skin_grayish_profbox_customize')) :
         'settings' => 'undercon_profbg_overlay_alpha',
         'type' => 'select',
         'choices' => array(
-          'undercon_profbg_overlay_alpha_5' => '0.5（デフォルト）',
           'undercon_profbg_overlay_alpha_0' => '0（白色なし)',
           'undercon_profbg_overlay_alpha_1' => '0.1',
           'undercon_profbg_overlay_alpha_2' => '0.2',
           'undercon_profbg_overlay_alpha_3' => '0.3',
           'undercon_profbg_overlay_alpha_4' => '0.4',
+          'undercon_profbg_overlay_alpha_5' => '0.5（デフォルト）',
           'undercon_profbg_overlay_alpha_6' => '0.6',
           'undercon_profbg_overlay_alpha_7' => '0.7',
           'undercon_profbg_overlay_alpha_8' => '0.8',
@@ -1550,11 +1550,11 @@ if (!function_exists('skin_grayish_profbox_customize')) :
     // 画像のアップロード
     $wp_customize->add_setting(
       'undercon_profbg_image',
-      array(
-        'default'           => get_theme_mod('undercon_profbg_image'), // これを入れないとアップロードした画像のプレビューが消えてしまう
-        // 'priority'          => 1000,
-        'sanitize_callback' => 'esc_url_raw'
-      )
+      // array(
+      //   'default'           => get_theme_mod('undercon_profbg_image'), // これを入れないとアップロードした画像のプレビューが消えてしまう
+      //   // 'priority'          => 1000,
+      //   'sanitize_callback' => 'esc_url_raw'
+      // )
     );
     $wp_customize->add_control(
       new WP_Customize_Image_Control(
@@ -1687,12 +1687,12 @@ if (!function_exists('skin_grayish_mobile_customize')) :
           'settings' => 'mobile_headerbg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'mobile_headerbg_alpha_5' => '0.5（デフォルト）',
             'mobile_headerbg_alpha_0' => '0（背景色なし)',
             'mobile_headerbg_alpha_1' => '0.1',
             'mobile_headerbg_alpha_2' => '0.2',
             'mobile_headerbg_alpha_3' => '0.3',
             'mobile_headerbg_alpha_4' => '0.4',
+            'mobile_headerbg_alpha_5' => '0.5（デフォルト）',
             'mobile_headerbg_alpha_6' => '0.6',
             'mobile_headerbg_alpha_7' => '0.7',
             'mobile_headerbg_alpha_8' => '0.8',
@@ -1785,12 +1785,12 @@ if (!function_exists('skin_grayish_mobile_customize')) :
           'settings' => 'mobile_footerbg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'mobile_footerbg_alpha_5' => '0.5（デフォルト）',
             'mobile_footerbg_alpha_0' => '0（背景色なし)',
             'mobile_footerbg_alpha_1' => '0.1',
             'mobile_footerbg_alpha_2' => '0.2',
             'mobile_footerbg_alpha_3' => '0.3',
             'mobile_footerbg_alpha_4' => '0.4',
+            'mobile_footerbg_alpha_5' => '0.5（デフォルト）',
             'mobile_footerbg_alpha_6' => '0.6',
             'mobile_footerbg_alpha_7' => '0.7',
             'mobile_footerbg_alpha_8' => '0.8',
