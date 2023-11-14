@@ -1,0 +1,42 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/navicard",
+  "category": "cocoon-block",
+  "keywords": ["navi", "card"],
+
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": "-1"
+    },
+    "classNames": {
+      "type": "string",
+      "default": ""
+    },
+    "menuName": {
+      "type": "string",
+      "default": ""
+    },
+    "menuType": {
+      "type": "string",
+      "default": ""
+    },
+    "bold": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrow": {
+      "type": "boolean",
+      "default": false
+    },
+    "horizontal": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}
