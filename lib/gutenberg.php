@@ -422,20 +422,6 @@ html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color:not(.not-neste
 html .body .toggle-wrap.has-<?php echo $slug; ?>-color:not(.not-nested-style) .toggle-content{
   color: <?php echo $color; ?>;
 }
-
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-button{
-background-color: <?php echo $color; ?>;
-}
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-button,
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-content{
-border-color: <?php echo $color; ?>;
-}
-html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color.not-nested-style > .toggle-content{
-background-color: <?php echo $color; ?>;
-}
-html .body .toggle-wrap.has-<?php echo $slug; ?>-color.not-nested-style > .toggle-content{
-color: <?php echo $color; ?>;
-}
 <?php //アイコンリストボックス ?>
 html .body .iconlist-box.has-<?php echo $slug; ?>-icon-color li::before{
     color: <?php echo $color; ?>;
@@ -579,7 +565,6 @@ html .body .btn-wrap{
     border-color: transparent !important;
     font-size: 16px;
 }
-
 /*
 html .body .has-border-color .toggle-button{
     color: #fff;
@@ -604,6 +589,42 @@ html .body .btn-wrap.has-huge-font-size > a,
 html .body .btn-wrap.has-larger-font-size > a {
   font-size: 42px;
 }
+<?php // 各ブロックのネスト時のスタイル ?>
+<?php // デフォルト時のスタイル ?>
+html .body .toggle-wrap.not-nested-style {
+background-color: transparent;
+}
+html .body .toggle-wrap.not-nested-style > .toggle-button {
+color: var(--cocoon-custom-text-color);
+}
+html .body .toggle-wrap.has-border-color.not-nested-style > .toggle-button {
+color: var(--cocoon-white-color);
+background-color: var(--cocoon-custom-border-color);
+}
+html .body .toggle-wrap.has-border-color.not-nested-style > .toggle-button::before {
+    color: var(--cocoon-white-color);
+}
+    <?php
+    // 各ブロックのネスト時のスタイル
+    foreach ($colors as $color):
+        $slug = $color['slug'];
+        $color = $color['color'];
+    ?>
+<?php //アコーディオンボックス ?>
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-button{
+background-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-button,
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color.not-nested-style > .toggle-content{
+border-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color.not-nested-style > .toggle-content{
+background-color: <?php echo $color; ?>;
+}
+html .body .toggle-wrap.has-<?php echo $slug; ?>-color.not-nested-style > .toggle-content {
+color: <?php echo $color; ?>;
+}
+    <?php endforeach; ?>
     <?php
     $css = ob_get_clean();
     return $css;
