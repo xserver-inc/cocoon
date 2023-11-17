@@ -11,6 +11,7 @@ import {
 } from '@wordpress/block-editor';
 import { Fragment, useEffect } from '@wordpress/element';
 import { compose, useInstanceId } from '@wordpress/compose';
+import { useSelect } from '@wordpress/data';
 import classnames from 'classnames';
 
 export function ToggleBoxEdit( props ) {
@@ -25,6 +26,7 @@ export function ToggleBoxEdit( props ) {
     borderColor,
     setBorderColor,
     fontSize,
+    clientId,
   } = props;
 
   const {
@@ -35,6 +37,28 @@ export function ToggleBoxEdit( props ) {
     customBorderColor,
     notNestedStyle,
   } = attributes;
+
+  // 親ブロックのnotNestedStyleがfalseかどうかを判定
+  const isParentNestedStyle = useSelect( ( select ) => {
+    const parentBlocks =
+      select( 'core/block-editor' ).getBlockParents( clientId );
+    for ( const parentClientId of parentBlocks ) {
+      const parentBlock =
+        select( 'core/block-editor' ).getBlock( parentClientId );
+      if (
+        parentBlock.name === props.name &&
+        parentBlock.attributes.notNestedStyle === false
+      ) {
+        return true;
+      }
+    }
+    return false;
+  } );
+
+  // 親ブロックのnotNestedStyleがfalseの場合はnotNestedStyleをfalseにする
+  if ( isParentNestedStyle && notNestedStyle ) {
+    setAttributes( { notNestedStyle: false } );
+  }
 
   const classes = classnames( className, {
     'toggle-wrap': true,
