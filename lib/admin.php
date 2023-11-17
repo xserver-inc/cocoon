@@ -590,6 +590,11 @@ function custmuize_load_edit_php(){
 }
 endif;
 
+//テーマ変更時にテーマカスタマイザーCSSファイルの書き出し
+add_action( 'after_switch_theme', function() {
+  put_theme_css_cache_file();
+});
+
 //投稿管理画面のヘッダーカスタマイズ
 add_action( 'admin_head-post-new.php', 'add_head_post_custum' );
 add_action( 'admin_head-post.php', 'add_head_post_custum' );
