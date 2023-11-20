@@ -506,7 +506,7 @@ $bb_blue: #2ea9df;
 $bb_green: var(--cocoon-green-color);
 @mixin bace_box{
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
