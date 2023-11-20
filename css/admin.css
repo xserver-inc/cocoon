@@ -2829,7 +2829,7 @@ body.wp-admin {
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
   background: #b37036;
 }
-.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb {
+.admin-settings .demo .widget-entry-cards.ranking-visible .a-wrap {
   counter-increment: p-rank;
 }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before {
@@ -10913,7 +10913,7 @@ body.wp-admin {
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
   background: #b37036;
 }
-.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb {
+.admin-settings .demo .widget-entry-cards.ranking-visible .a-wrap {
   counter-increment: p-rank;
 }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before {

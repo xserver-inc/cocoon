@@ -2582,7 +2582,7 @@ label.screen-reader-text {
 .widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
   background: #b37036;
 }
-.widget-entry-cards.ranking-visible .card-thumb {
+.widget-entry-cards.ranking-visible .a-wrap {
   counter-increment: p-rank;
 }
 .widget-entry-cards.ranking-visible .card-thumb::before {
