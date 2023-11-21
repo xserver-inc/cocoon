@@ -169,7 +169,7 @@ html {
 .skin-grayish {
   letter-spacing: .16rem;
   -webkit-font-feature-settings: 'palt';
-          font-feature-settings: 'palt';
+  font-feature-settings: 'palt';
   overflow-x: hidden;
 }
 
@@ -182,7 +182,7 @@ html {
 /* img add */
 .skin-grayish img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 
@@ -256,27 +256,27 @@ a:hover {
 .skin-grayish.front-top-page .navi-in>ul {
   /* flex-wrap: nowrap; */
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   /* height: 56px; */
   /* height: var(--topHeaderNavisize); */
   height: 100%;
   -webkit-column-gap: 8px;
-     -moz-column-gap: 8px;
-          column-gap: 8px;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
   padding: 0px min(1.43vw, 80px);
 }
 
 .skin-grayish:not(.front-top-page) .navi-in>ul {
   /* flex-wrap: nowrap; */
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   /* height: 56px; */
   /* height: var(--topHeaderNavisize); */
   -webkit-column-gap: 8px;
-     -moz-column-gap: 8px;
-          column-gap: 8px;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
 }
 
 
@@ -294,11 +294,11 @@ a:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   /* height: 100%; */
   /* height: 56px; */
   height: var(--topHeaderNavisize);
@@ -313,11 +313,11 @@ a:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   /* height: 100%; */
   /* height: 56px; */
   padding-top: 8px;
@@ -329,8 +329,8 @@ a:hover {
 .skin-grayish .navi-in>ul>li>a>.caption-wrap {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -361,8 +361,8 @@ a:hover {
 
 .skin-grayish .navi-footer-in>.menu-footer {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 0.5em 1.6em;
 }
 
@@ -410,8 +410,8 @@ a:hover {
 .skin-grayish .navi-in>ul>li>.sub-menu>li>a>.caption-wrap {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -484,9 +484,9 @@ a:hover {
   bottom: 3px;
   left: 0;
   -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: left;
-          transform-origin: left;
+  transform-origin: left;
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
@@ -518,7 +518,7 @@ a:hover {
 .skin-grayish .navi-in a:hover>.caption-wrap::before,
 .skin-grayish .navi-footer-in a:hover::before {
   -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 /* naviの３階層目は詳細が書いてあってもflexにしない */
@@ -565,10 +565,10 @@ a:hover {
   display: flex !important;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   background-color: transparent !important;
   min-width: 0 !important;
   width: auto;
@@ -622,11 +622,11 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 64px;
   font-weight: 200;
   letter-spacing: 0.4rem;
@@ -669,13 +669,13 @@ a:hover {
   left: 5%;
   right: 5%;
   -webkit-transform: translateY(900%);
-          transform: translateY(900%);
+  transform: translateY(900%);
   opacity: 0;
 }
 
 #gnavi-search-menu-input:checked~#gnavi-search-menu-content {
   -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  transform: translateX(0%);
   opacity: 1;
 }
 
@@ -712,7 +712,7 @@ a:hover {
   rotate: -45deg;
   z-index: 1;
   -webkit-animation: topmv_scroll 2.5s infinite;
-          animation: topmv_scroll 2.5s infinite;
+  animation: topmv_scroll 2.5s infinite;
 }
 
 @-webkit-keyframes topmv_scroll {
@@ -778,14 +778,14 @@ a:hover {
 .skin-grayish:not(.front-top-page) .header-container-in.hlt-center-logo-top-menu {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   padding: 0px min(1.43vw, 80px);
 }
 
@@ -794,11 +794,11 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   height: auto;
   background-image: none;
   /* width: 40%; */
@@ -814,11 +814,11 @@ a:hover {
 
 .skin-grayish:not(.front-top-page) .navi-in>ul {
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
 }
 
@@ -853,8 +853,8 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .skin-grayish:not(.front-top-page) .header .header-in .site-name-text {
@@ -899,8 +899,8 @@ a:hover {
 
 .skin-grayish.front-top-page .header .header-in {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: var(--skin-grayish-site-name-txt);
   height: 100%;
   position: relative;
@@ -1143,11 +1143,11 @@ a:hover {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .skin-grayish.front-top-page .list-columns.fpt-2-columns .widget-entry-cards figure {
@@ -1236,8 +1236,8 @@ a:hover {
   grid-template-rows: auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   -webkit-column-gap: 4px;
-     -moz-column-gap: 4px;
-          column-gap: 4px;
+  -moz-column-gap: 4px;
+  column-gap: 4px;
   row-gap: 4px;
 }
 
@@ -1290,11 +1290,11 @@ a:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   gap: 8px;
 }
 
@@ -1359,14 +1359,14 @@ a:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: var(--LtGray_T70);
   border: none;
   border-radius: 0px;
@@ -1497,13 +1497,13 @@ a:hover {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 48px;
 }
@@ -1563,37 +1563,37 @@ a:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 /* skin独自の並び替え　ウィジット設置　＆ 広告 & ステマ規制などを考慮する */
 .skin-grayish .article-header .entry-title {
   -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  -ms-flex-order: 1;
+  order: 1;
   margin: 16px 0;
 }
 
 /* レビュー表示（記事内設定）　review-rating */
 .skin-grayish .article-header .review-rating {
   -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  -ms-flex-order: 2;
+  order: 2;
 }
 
 /* タイトル下の広告表示 adsens Cocoon設定 */
 .skin-grayish .article-header .ad-area.ad-below-title {
   -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
+  -ms-flex-order: 3;
+  order: 3;
 }
 
 /* 投稿＆固定ページタイトル下ウィジェット  */
 .skin-grayish .article-header :where(.widget-below-page-content-title, .widget-below-single-content-title) {
   -webkit-box-ordinal-group: 5;
-      -ms-flex-order: 4;
-          order: 4;
+  -ms-flex-order: 4;
+  order: 4;
 }
 
 .skin-grayish .article-header .date-tags {
@@ -1601,15 +1601,15 @@ a:hover {
   text-align: left;
   margin-bottom: 0.6em;
   -webkit-box-ordinal-group: 6;
-      -ms-flex-order: 5;
-          order: 5;
+  -ms-flex-order: 5;
+  order: 5;
 }
 
 /* アイキャッチ周り */
 .skin-grayish .article-header .eye-catch-wrap {
   -webkit-box-ordinal-group: 7;
-      -ms-flex-order: 6;
-          order: 6;
+  -ms-flex-order: 6;
+  order: 6;
 }
 
 /* SNSシェア */
@@ -1618,31 +1618,31 @@ a:hover {
 /* この記事は何分で読めます　read-time */
 .skin-grayish .article-header .read-time {
   -webkit-box-ordinal-group: 9;
-      -ms-flex-order: 8;
-          order: 8;
+  -ms-flex-order: 8;
+  order: 8;
   margin-top: 1em;
 }
 
 /* PR表記大の出力 */
 .skin-grayish .article-header .pr-label.pr-label-l {
   -webkit-box-ordinal-group: 10;
-      -ms-flex-order: 9;
-          order: 9;
+  -ms-flex-order: 9;
+  order: 9;
 }
 
 /* 本文上の広告表示 adsens ad-content-top */
 .skin-grayish .article-header .ad-area.ad-content-top {
   -webkit-box-ordinal-group: 11;
-      -ms-flex-order: 10;
-          order: 10;
+  -ms-flex-order: 10;
+  order: 10;
 }
 
 
 /* 投稿本文上ウィジェット 投稿＆固定ページ */
 .skin-grayish .article-header :where(.widget-page-content-top, .widget-single-content-top) {
   -webkit-box-ordinal-group: 12;
-      -ms-flex-order: 11;
-          order: 11;
+  -ms-flex-order: 11;
+  order: 11;
 }
 
 
@@ -1653,8 +1653,8 @@ a:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
   gap: 0.6em;
 
 }
@@ -1685,7 +1685,7 @@ a:hover {
   position: fixed;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   z-index: 10;
   opacity: 0;
   visibility: hidden;
@@ -1721,7 +1721,7 @@ a:hover {
 .skin-grayish .share-menu-content .sns-buttons,
 .skin-grayish .follow-menu-content .sns-buttons {
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -1756,13 +1756,13 @@ a:hover {
 .skin-grayish .article-header .sns-share-buttons {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 1rem 0;
   gap: 0.2rem;
 }
@@ -1771,7 +1771,7 @@ a:hover {
 .skin-grayish .article-header .sns-share-buttons a {
   color: var(--cocoon-sns-color);
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
@@ -1780,7 +1780,7 @@ a:hover {
 
 .skin-grayish .article-header .sns-share-buttons a:hover {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* toc 目次 */
@@ -1863,7 +1863,7 @@ a:hover {
   background-repeat: no-repeat;
   background-size: 100%;
   -webkit-filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
-          filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
+  filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
   bottom: unset;
   width: 0.7em;
   height: 0.7em;
@@ -2095,7 +2095,7 @@ a:hover {
   background-repeat: no-repeat;
   background-size: 100%;
   -webkit-filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
-          filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
+  filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
   width: 0.9em;
   height: 0.9em;
   position: absolute;
@@ -2303,7 +2303,7 @@ a:hover {
   content: "";
   background-color: var(--white);
   -webkit-clip-path: inset(0 0 0 0);
-          clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
   width: 4px;
   height: 100%;
   position: absolute;
@@ -2398,8 +2398,8 @@ a:hover {
   grid-template-columns: 200px auto auto;
   row-gap: 1em;
   -webkit-column-gap: 1em;
-     -moz-column-gap: 1em;
-          column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
   border: solid 1px var(--LtGray_T30);
   width: 100%;
   padding: 1em;
@@ -2477,14 +2477,14 @@ a:hover {
 .skin-grayish .blogcard .blogcard-site {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .skin-grayish .blogcard .blogcard-date {
@@ -2510,8 +2510,8 @@ a:hover {
   grid-template-rows: auto auto auto;
   row-gap: 0.7em;
   -webkit-column-gap: 1em;
-     -moz-column-gap: 1em;
-          column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
 }
 
 .skin-grayish .internal-blogcard::before {
@@ -2524,8 +2524,8 @@ a:hover {
 .skin-grayish .internal-blogcard .blogcard-date {
   float: none;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .skin-grayish .internal-blogcard .blogcard-date .blogcard-post-date {
@@ -2663,8 +2663,8 @@ div.search-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-left: 2em;
   position: relative;
 }
@@ -2771,6 +2771,15 @@ blockquote cite {
   background: unset;
 }
 
+/* リスト（コアブロック）スタイル微調整 */
+[class*=is-style-numeric-list-]>li::before {
+  letter-spacing: 0;
+}
+
+.is-style-numeric-list-step>li:before {
+  line-height: 1.5;
+}
+
 /* article-footer */
 .skin-grayish .article-footer .entry-categories .cat-link {
   color: var(--cocoon-white-color);
@@ -2808,8 +2817,8 @@ blockquote cite {
 .skin-grayish .article-footer .sns-share-buttons,
 .skin-grayish .article-footer .sns-follow-buttons {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-image: linear-gradient(-45deg, #fff 25%, var(--skin-grayish-gradient) 25%, var(--skin-grayish-gradient) 50%, #fff 50%, #fff 75%, var(--skin-grayish-gradient) 75%, var(--skin-grayish-gradient));
   background-size: 8px 8px;
   padding: 1rem 0;
@@ -2818,7 +2827,7 @@ blockquote cite {
 
 .skin-grayish .article-footer .sns-buttons {
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .skin-grayish .article-footer .sns-buttons a {
@@ -2897,16 +2906,16 @@ blockquote cite {
 /* 投稿下関連記事 横スクロール表示に変更 (only CSS) */
 .skin-grayish .under-entry-content .related-list {
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .skin-grayish .under-entry-content .related-list .related-entry-card-wrap {
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   width: 28.5%;
 }
 
@@ -2963,14 +2972,14 @@ blockquote cite {
 .skin-grayish .pager-post-navi {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   width: 100%;
   padding: 1rem 0;
   border-top: 1px dashed var(--skin-grayish-site-main-hover);
@@ -3225,14 +3234,14 @@ blockquote cite {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   margin-top: 0;
   padding: 1rem 8px;
@@ -3264,8 +3273,8 @@ blockquote cite {
   width: -moz-fit-content;
   width: fit-content;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   padding: 1rem 0;
   position: relative;
 }
@@ -3297,8 +3306,8 @@ blockquote cite {
   width: -moz-fit-content;
   width: fit-content;
   -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
+  -ms-flex: auto;
+  flex: auto;
   position: relative;
   text-align: center;
 
@@ -3318,7 +3327,7 @@ blockquote cite {
   position: fixed;
   right: 16px;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
@@ -3335,7 +3344,7 @@ blockquote cite {
 
 .skin-grayish .go-to-top-button:hover {
   -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .skin-grayish .go-to-top-button.go-to-top-button-icon-font span {
@@ -3350,7 +3359,7 @@ blockquote cite {
   right: 0;
   top: 15%;
   -webkit-transform: scale(1) rotate(45deg);
-          transform: scale(1) rotate(45deg);
+  transform: scale(1) rotate(45deg);
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
@@ -3361,7 +3370,7 @@ blockquote cite {
 
 .skin-grayish .go-to-top-button.go-to-top-button-icon-font span:hover {
   -webkit-transform: scale(1.1) rotate(45deg);
-          transform: scale(1.1) rotate(45deg);
+  transform: scale(1.1) rotate(45deg);
 
 }
 
@@ -3380,8 +3389,8 @@ blockquote cite {
 /* Archives, Category 選択矢印の消去 */
 .skin-grayish :where(.widget_categories, .widget_archive) select {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: var(--white);
 }
 
@@ -3480,10 +3489,10 @@ blockquote cite {
 .author-box .sns-follow-buttons,
 .skin-grayish .article-footer .author-box .sns-follow-buttons {
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   background-image: none;
   padding: 0;
 }
@@ -3546,8 +3555,8 @@ blockquote cite {
 
 .skin-grayish .widget_sns_follow_buttons .sns-follow-buttons {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-image: none;
   padding: 0;
 }
@@ -3593,7 +3602,7 @@ blockquote cite {
 /* Box Menu */
 .box-menu {
   -webkit-box-shadow: inset 1px 1px 0 0 var(--LtGray_T50), 1px 1px 0 0 var(--LtGray_T50), 1px 0 0 0 var(--LtGray_T50), 0 1px 0 0 var(--LtGray_T50);
-          box-shadow: inset 1px 1px 0 0 var(--LtGray_T50), 1px 1px 0 0 var(--LtGray_T50), 1px 0 0 0 var(--LtGray_T50), 0 1px 0 0 var(--LtGray_T50);
+  box-shadow: inset 1px 1px 0 0 var(--LtGray_T50), 1px 1px 0 0 var(--LtGray_T50), 1px 0 0 0 var(--LtGray_T50), 0 1px 0 0 var(--LtGray_T50);
   background-image: none;
   -webkit-transition: -webkit-box-shadow .3s ease-in-out;
   transition: -webkit-box-shadow .3s ease-in-out;
@@ -3619,7 +3628,7 @@ blockquote cite {
 
 .box-menu:hover {
   -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   color: var(--skin-grayish-site-main-hover);
 }
 
@@ -3736,17 +3745,17 @@ blockquote cite {
 
 :where(.ranking-box, .item-ranking-box, .ranking-items) .g-crown::before {
   -webkit-filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
-          filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
+  filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
 }
 
 :where(.ranking-box, .item-ranking-box, .ranking-items) .s-crown::before {
   -webkit-filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
-          filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
+  filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
 }
 
 :where(.ranking-box, .item-ranking-box, .ranking-items) .c-crown::before {
   -webkit-filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
-          filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
+  filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
 }
 
 .item-ranking-box :where(.g-crown, .s-crown, .c-crown),
@@ -3823,8 +3832,8 @@ blockquote cite {
   grid-template-columns: 1fr;
   row-gap: 1em;
   -webkit-column-gap: 8px;
-     -moz-column-gap: 8px;
-          column-gap: 8px;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
   text-align: center;
 }
 
@@ -3985,8 +3994,8 @@ blockquote cite {
   grid-template-rows: 100px auto auto auto !important;
   grid-template-columns: 1fr !important;
   -webkit-column-gap: 0em !important;
-     -moz-column-gap: 0em !important;
-          column-gap: 0em !important;
+  -moz-column-gap: 0em !important;
+  column-gap: 0em !important;
   width: 100% !important;
   padding: 2em 1em !important;
   background-color: var(--white) !important;
@@ -4111,10 +4120,10 @@ blockquote cite {
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .sns-follow-buttons,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .sns-follow-buttons {
   -ms-flex-wrap: wrap !important;
-      flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
   -webkit-box-pack: center !important;
-      -ms-flex-pack: center !important;
-          justify-content: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
   background-image: none !important;
   padding: 0 !important;
 }
@@ -4143,14 +4152,14 @@ blockquote cite {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: var(--skin-grayish-cat-back);
   width: 80px;
   border-radius: 99%;
@@ -4211,8 +4220,8 @@ blockquote cite {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 /* コンテンツ下部タイトル */
@@ -4250,14 +4259,14 @@ blockquote cite {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0;
   padding: 2rem 0 6rem;
   position: relative;
@@ -4307,8 +4316,8 @@ blockquote cite {
   grid-template-columns: minmax(auto, 180px) minmax(500px, 1fr);
   row-gap: 0;
   -webkit-column-gap: 2.5em;
-     -moz-column-gap: 2.5em;
-          column-gap: 2.5em;
+  -moz-column-gap: 2.5em;
+  column-gap: 2.5em;
   background-color: var(--white_A90);
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -4456,8 +4465,8 @@ blockquote cite {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -4483,10 +4492,10 @@ blockquote cite {
     position: static;
     top: unset;
     -webkit-transform: none;
-            transform: none;
+    transform: none;
     -webkit-box-ordinal-group: 8;
-        -ms-flex-order: 7;
-            order: 7;
+    -ms-flex-order: 7;
+    order: 7;
     opacity: 1;
     visibility: visible;
   }
@@ -4494,13 +4503,13 @@ blockquote cite {
   .skin-grayish .article-header .sns-share-buttons {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     padding: 1rem 0;
     gap: 1rem;
   }
@@ -4544,7 +4553,7 @@ blockquote cite {
 
   .skin-grayish:not(.front-top-page) .content .content-in {
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
 
   /* header SNS button vertical -> horizontal */
@@ -4554,10 +4563,10 @@ blockquote cite {
     position: static;
     top: unset;
     -webkit-transform: none;
-            transform: none;
+    transform: none;
     -webkit-box-ordinal-group: 8;
-        -ms-flex-order: 7;
-            order: 7;
+    -ms-flex-order: 7;
+    order: 7;
     opacity: 1;
     visibility: visible;
   }
@@ -4565,13 +4574,13 @@ blockquote cite {
   .skin-grayish .article-header .sns-share-buttons {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     padding: 1rem 0;
     gap: 1rem;
 
@@ -4617,14 +4626,14 @@ blockquote cite {
   .skin-grayish:not(.front-top-page) .header-container-in.hlt-center-logo-top-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     padding: 8px min(1.43vw, 80px);
     height: 50px;
   }
@@ -4642,11 +4651,11 @@ blockquote cite {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
 
   .skin-grayish:not(.front-top-page) .header {
@@ -4713,8 +4722,8 @@ blockquote cite {
   .skin-grayish.front-top-page .fpt-columns {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .skin-grayish.front-top-page .fpt-3-columns>* {
@@ -4760,16 +4769,16 @@ blockquote cite {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
   }
 
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards .a-wrap {
@@ -4782,11 +4791,11 @@ blockquote cite {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards .widget-entry-card figure {
@@ -4808,8 +4817,8 @@ blockquote cite {
   .skin-grayish .front-page-type-category-2-columns .list-columns {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 
   /* インデックス　カテゴリーごとの場合、2つめ背景色つける （3カラム,　2カラムはここではつけない 834px）*/
@@ -4918,15 +4927,15 @@ blockquote cite {
   /* モバイルヘッダーボタン メニューに2個以上設定されていたら元のspace-aroundに戻す jsで処理 */
   .skin-grayish .mobile-header-menu-buttons {
     -webkit-box-pack: var(--mobileHeaderMenu_justifySet);
-        -ms-flex-pack: var(--mobileHeaderMenu_justifySet);
-            justify-content: var(--mobileHeaderMenu_justifySet);
+    -ms-flex-pack: var(--mobileHeaderMenu_justifySet);
+    justify-content: var(--mobileHeaderMenu_justifySet);
   }
 
   .skin-grayish .mobile-header-menu-buttons.mobile-menu-buttons {
     background: transparent;
     background-color: var(--mobileHeaderBgColor);
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
     height: 50px;
     margin: 0;
     padding: 0;
@@ -4945,11 +4954,11 @@ blockquote cite {
 
   .skin-grayish .mobile-menu-buttons {
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     background-color: var(--mobileFooterBgColor);
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
   }
 
   .skin-grayish .mobile-menu-buttons .menu-caption {
@@ -5102,10 +5111,10 @@ blockquote cite {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 1em;
     padding-left: 0;
   }
@@ -5170,8 +5179,8 @@ blockquote cite {
     grid-template-columns: 200px auto;
     row-gap: 1em;
     -webkit-column-gap: 1em;
-       -moz-column-gap: 1em;
-            column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
     border: solid 1px var(--LtGray_T30);
     width: 100%;
     position: relative;
@@ -5226,14 +5235,14 @@ blockquote cite {
   .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-site {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-date {
@@ -5260,8 +5269,8 @@ blockquote cite {
     grid-template-rows: auto auto auto;
     row-gap: 0.7em;
     -webkit-column-gap: 1em;
-       -moz-column-gap: 1em;
-            column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
     padding: 1em;
   }
 
@@ -5278,8 +5287,8 @@ blockquote cite {
   .skin-grayish .footer-widgets .internal-blogcard .blogcard-date {
     float: none;
     -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
   }
 
   .skin-grayish .footer-widgets .internal-blogcard .blogcard-date .blogcard-post-date {
@@ -5408,8 +5417,8 @@ blockquote cite {
   .skin-grayish .navi-footer-in>.menu-footer li.menu-item:not(.header-snsicon-submenu) {
     width: auto;
     -webkit-box-flex: unset;
-        -ms-flex: unset;
-            flex: unset;
+    -ms-flex: unset;
+    flex: unset;
   }
 
   /* Category Label */
@@ -5458,8 +5467,8 @@ blockquote cite {
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column {
@@ -5505,11 +5514,11 @@ blockquote cite {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 
   .skin-grayish.front-top-page .list-columns.fpt-3-columns .widget-entry-cards figure {
@@ -5548,14 +5557,14 @@ blockquote cite {
   .skin-grayish :is(.front-page-type-category) .list-columns .list-column .entry-card {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
   }
 
   .skin-grayish :is(.front-page-type-category) .list-columns .list-column .entry-card-title {
@@ -5597,8 +5606,8 @@ blockquote cite {
     grid-template-rows: 100px auto auto auto;
     grid-template-columns: 1fr;
     -webkit-column-gap: 0em;
-       -moz-column-gap: 0em;
-            column-gap: 0em;
+    -moz-column-gap: 0em;
+    column-gap: 0em;
     padding: 2em 1em;
   }
 
@@ -5723,8 +5732,8 @@ blockquote cite {
   :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard {
     row-gap: 0.7em;
     -webkit-column-gap: 1em;
-       -moz-column-gap: 1em;
-            column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
   }
 
   :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard::before {
@@ -5757,8 +5766,8 @@ blockquote cite {
     grid-template-rows: auto auto;
     row-gap: 1em;
     -webkit-column-gap: 1em;
-       -moz-column-gap: 1em;
-            column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
   }
 
 
@@ -5857,8 +5866,8 @@ blockquote cite {
     grid-template-columns: 1fr;
     row-gap: 1em;
     -webkit-column-gap: 8px;
-       -moz-column-gap: 8px;
-            column-gap: 8px;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
     text-align: center;
   }
 
@@ -5988,8 +5997,8 @@ blockquote cite {
   .skin-grayish .pager-post-navi {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     gap: 16px;
   }
 
@@ -6214,8 +6223,8 @@ blockquote cite {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     gap: 0.8em;
   }
 
