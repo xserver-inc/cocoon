@@ -2582,7 +2582,7 @@ label.screen-reader-text {
 .widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
   background: #b37036;
 }
-.widget-entry-cards.ranking-visible .card-thumb {
+.widget-entry-cards.ranking-visible .a-wrap {
   counter-increment: p-rank;
 }
 .widget-entry-cards.ranking-visible .card-thumb::before {
@@ -3225,7 +3225,7 @@ label.screen-reader-text {
 
 .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -3400,7 +3400,7 @@ label.screen-reader-text {
 
 [class*=is-style-blank-box-] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -3446,7 +3446,7 @@ label.screen-reader-text {
 
 [class*=is-style-sticky-] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);

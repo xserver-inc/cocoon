@@ -304,9 +304,11 @@ label.screen-reader-text{
     background: #b37036;
   }
 
-  .card-thumb{
+  .a-wrap{
     counter-increment: p-rank;
+  }
 
+  .card-thumb{
     &::before{
       content: counter(p-rank);
       position: absolute;

@@ -2829,7 +2829,7 @@ body.wp-admin {
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
   background: #b37036;
 }
-.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb {
+.admin-settings .demo .widget-entry-cards.ranking-visible .a-wrap {
   counter-increment: p-rank;
 }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before {
@@ -3366,7 +3366,7 @@ body.wp-admin {
 }
 .admin-settings .demo .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -3540,7 +3540,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=is-style-blank-box-] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -3577,7 +3577,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=is-style-sticky-] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -10913,7 +10913,7 @@ body.wp-admin {
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
   background: #b37036;
 }
-.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb {
+.admin-settings .demo .widget-entry-cards.ranking-visible .a-wrap {
   counter-increment: p-rank;
 }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before {
@@ -11450,7 +11450,7 @@ body.wp-admin {
 }
 .admin-settings .demo .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -11624,7 +11624,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=is-style-blank-box-] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -11661,7 +11661,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=is-style-sticky-] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -20347,7 +20347,7 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content .blank-box {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -20521,7 +20521,7 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content [class*=is-style-blank-box-] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -20558,7 +20558,7 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content [class*=is-style-sticky-] {
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
