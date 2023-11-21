@@ -36,6 +36,9 @@ export function ToggleBoxEdit( props ) {
     customTextColor,
     customBorderColor,
     notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = attributes;
 
   // 親ブロックのnotNestedStyleがfalseかどうかを判定
@@ -60,6 +63,12 @@ export function ToggleBoxEdit( props ) {
     setAttributes( { notNestedStyle: false } );
   }
 
+  useEffect( () => {
+    setAttributes( { backgroundColorValue: backgroundColor.color } );
+    setAttributes( { textColorValue: textColor.color } );
+    setAttributes( { borderColorValue: borderColor.color } );
+  }, [ borderColor, backgroundColor, textColor ] );
+
   const classes = classnames( className, {
     'toggle-wrap': true,
     'toggle-box': true,
@@ -72,6 +81,7 @@ export function ToggleBoxEdit( props ) {
     [ borderColor.class ]: borderColor.class,
     [ fontSize.class ]: fontSize.class,
     'not-nested-style': notNestedStyle,
+    'cocoon-block-toggle': true,
   } );
 
   const styles = {
@@ -79,6 +89,12 @@ export function ToggleBoxEdit( props ) {
     '--cocoon-custom-background-color': customBackgroundColor || undefined,
     '--cocoon-custom-text-color': customTextColor || undefined,
   };
+
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
 
   const blockProps = useBlockProps( {
     className: classes,

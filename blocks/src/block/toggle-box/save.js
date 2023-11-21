@@ -19,6 +19,9 @@ export default function save( { attributes } ) {
     customBorderColor,
     fontSize,
     notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -41,6 +44,7 @@ export default function save( { attributes } ) {
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
     'not-nested-style': notNestedStyle,
+    'cocoon-block-toggle': true,
   } );
 
   const styles = {
@@ -48,6 +52,12 @@ export default function save( { attributes } ) {
     '--cocoon-custom-text-color': customTextColor || undefined,
     '--cocoon-custom-border-color': customBorderColor || undefined,
   };
+
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
 
   const blockProps = useBlockProps.save( {
     className,
