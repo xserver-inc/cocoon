@@ -14,9 +14,19 @@ document.getElementsByTagName('body')[0].setAttribute('ontouchstart', '');
 let headerObserver;
 let flagHeaderObserver;
 
-const FrontHeaderObserve = (ActiveElement, targetItem) => {
+// PC navi
+const PCNaviIn = document.querySelector(".skin-grayish #navi-in");
+
+// submenuがあるかどうか
+const PCsubmenu = document.querySelectorAll(".skin-grayish .navi-in>ul>li:not(.header-snsicon-submenu)>.sub-menu");
+const numberOfElements = PCsubmenu.length;
+
+// bodyを監視してスクロールされたことを検知する
+const body_border = 100;
+
+const AllPageBodyObserve = (ActiveElement) => {
   const headerElement = ActiveElement;
-  const targetElement = targetItem;
+  const targetElement = document.body;
 
   if (!headerElement || !targetElement) return;
 
@@ -31,94 +41,14 @@ const FrontHeaderObserve = (ActiveElement, targetItem) => {
       );
     }
   };
-  headerObserver = new IntersectionObserver(observeHandler);
+  const options = {
+    root: null,
+    rootMargin: `${body_border}px 0px ${document.body.clientHeight}px 0px`,
+    threshold: 1
+  };
+
+  headerObserver = new IntersectionObserver(observeHandler, options);
   headerObserver.observe(targetElement);
-};
-
-
-// PC navi
-const PCNaviIn = document.querySelector(".skin-grayish #navi-in");
-
-// front-top-page
-const frontHeader = document.querySelector(".skin-grayish.front-top-page .header-container");
-
-// submenuがあるかどうか
-const PCsubmenu = document.querySelectorAll(".skin-grayish .navi-in>ul>li:not(.header-snsicon-submenu)>.sub-menu");
-const numberOfElements = PCsubmenu.length;
-
-// OtherPage target make
-const otherPageHeader = document.querySelector(".skin-grayish:not(.front-top-page) .header-container");
-
-const otherPageHeaderTarget = () => {
-  if (!otherPageHeader) return 'false';
-
-  const otherPageHeader_siblings = otherPageHeader.parentNode.children;
-
-  const targetClassName = 'header-container';
-  const index = Array.from(otherPageHeader_siblings).findIndex(element => element.classList.contains(targetClassName));
-
-  // const excludedIds = ['wpadminbar', 'header-container']; // 対象外にしたいID
-  const excludedTagName = "SCRIPT"; // 対象外にしたいタグ名
-
-  const otherPageHeader_filteredSiblings = Array.from(otherPageHeader_siblings).filter(function (element) {
-    return (
-      // excludedIds.indexOf(element.id) === -1 &&
-      element.tagName !== excludedTagName
-    );
-  });
-
-  const index_noscript = Array.from(otherPageHeader_filteredSiblings).findIndex(element => element.classList.contains(targetClassName));
-
-  // header-containerの次に交差対象があるかどうか
-  if (otherPageHeader_filteredSiblings.length > index_noscript) {
-
-    const otherPageHeader_firstSibling = otherPageHeader_filteredSiblings[index_noscript + 1];
-    const otherPageHeader_firstSibling_classNames = otherPageHeader_firstSibling.classList;
-    const otherPageHeader_firstSibling_classNameArray = Array.from(otherPageHeader_firstSibling_classNames);
-    const otherPageHeader_firstSibling_joinedClassNames = otherPageHeader_firstSibling_classNameArray.join('.');
-
-    // for content
-    if (otherPageHeader_firstSibling_classNameArray[0] === 'content') {
-
-      const other_archivePage = document.querySelector(".skin-grayish.archive"); //cat, tag, day
-      const other_searchPage = document.querySelector(".skin-grayish.search");
-      const other_homePage = document.querySelector(".skin-grayish.home"); //newpost
-      const other_404Page = document.querySelector(".skin-grayish.error404"); //404
-
-      const other_postPage = document.querySelector(".skin-grayish.single"); //hoken post
-      const other_pagePage = document.querySelector(".skin-grayish.page"); //hoken page
-
-
-      let otherPage_title;
-
-      if (other_archivePage || other_searchPage) {
-        // archive, Search result
-        otherPage_title = ".archive-title";
-
-      } else if (other_homePage) {
-        otherPage_title = ".content .list:first-child a";
-
-      } else if (other_404Page || other_postPage || other_pagePage) {
-        //404,hoken post & page
-        otherPage_title = ".entry-title";
-
-      } else {
-        //other
-        otherPage_title = ".content";
-      }
-
-      return '.skin-grayish:not(.front-top-page) ' + otherPage_title;
-
-    } else {
-
-      return '.skin-grayish:not(.front-top-page) ' + '.' + otherPageHeader_firstSibling_joinedClassNames;
-
-    }
-
-  } else {
-    return 'false'; // 交差対象がないケースではsubmenu表示関数は動作しない。
-  }
-
 };
 
 
@@ -134,17 +64,8 @@ function headerSubmenuOffChange(e) {
   } else {
     flagHeaderObserver = 'true';
 
-    if (frontHeader) {
-      FrontHeaderObserve(PCNaviIn, frontHeader);
-    } else {
+    AllPageBodyObserve(PCNaviIn);
 
-      if (otherPageHeaderTarget() === 'false') return; // 交差対象がないケースではsubmenu表示関数は動作しない。
-
-      const otherPageHeaderItem = document.querySelector(otherPageHeaderTarget());
-      // console.log(otherPageHeaderItem);
-
-      FrontHeaderObserve(PCNaviIn, otherPageHeaderItem);
-    }
   }
   mediaQueryList1023.addEventListener("change", headerSubmenuOffChange);
 }
