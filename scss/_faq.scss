@@ -21,7 +21,7 @@
   font-size: 24px;
   margin-right: 0.6em;
 }
-.is-style-square .faq-item-label{
+.is-style-square:not(.not-nested-style) .faq-item-label{
   color: #fff !important;
   background-color: var(--cocoon-custom-question-color);
   font-size: 20px;
@@ -29,7 +29,7 @@
   height: 100%;
 }
 
-.is-style-square .faq-answer-label{
+.is-style-square:not(.not-nested-style) .faq-answer-label{
   background-color: var(--cocoon-custom-answer-color);
 }
 

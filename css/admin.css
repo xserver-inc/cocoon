@@ -5390,7 +5390,7 @@ body.wp-admin {
 .admin-settings .demo .is-style-accordion {
   padding: 0;
 }
-.admin-settings .demo .is-style-accordion .faq-question {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style) .faq-question {
   padding: 0.5em;
   margin: 0;
   cursor: pointer;
@@ -5398,20 +5398,20 @@ body.wp-admin {
   background-color: #e8ecef;
   border-color: var(--cocoon-three-d-border-colors);
 }
-.admin-settings .demo .is-style-accordion .faq-question::before {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style) .faq-question::before {
   content: "+";
   position: absolute;
   right: 1em;
   opacity: 0.5;
 }
-.admin-settings .demo .is-style-accordion .faq-question.active::before {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style) .faq-question.active::before {
   content: "-";
 }
-.admin-settings .demo .is-style-accordion .faq-answer {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style) .faq-answer {
   padding: 1em 0.5em;
 }
-.admin-settings .demo .is-style-accordion.has-border-color .faq-question,
-.admin-settings .demo .is-style-accordion.has-border-color .faq-question-label {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style).has-border-color .faq-question,
+.admin-settings .demo .is-style-accordion:not(.not-nested-style).has-border-color .faq-question-label {
   color: var(--cocoon-white-color);
   border: none;
 }
@@ -7655,14 +7655,14 @@ body.wp-admin {
   font-size: 24px;
   margin-right: 0.6em;
 }
-.admin-settings .demo .is-style-square .faq-item-label {
+.admin-settings .demo .is-style-square:not(.not-nested-style) .faq-item-label {
   color: #fff !important;
   background-color: var(--cocoon-custom-question-color);
   font-size: 20px;
   padding: 5px 8px;
   height: 100%;
 }
-.admin-settings .demo .is-style-square .faq-answer-label {
+.admin-settings .demo .is-style-square:not(.not-nested-style) .faq-answer-label {
   background-color: var(--cocoon-custom-answer-color);
 }
 .admin-settings .demo .faq-item-content {
@@ -13474,7 +13474,7 @@ body.wp-admin {
 .admin-settings .demo .is-style-accordion {
   padding: 0;
 }
-.admin-settings .demo .is-style-accordion .faq-question {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style) .faq-question {
   padding: 0.5em;
   margin: 0;
   cursor: pointer;
@@ -13482,20 +13482,20 @@ body.wp-admin {
   background-color: #e8ecef;
   border-color: var(--cocoon-three-d-border-colors);
 }
-.admin-settings .demo .is-style-accordion .faq-question::before {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style) .faq-question::before {
   content: "+";
   position: absolute;
   right: 1em;
   opacity: 0.5;
 }
-.admin-settings .demo .is-style-accordion .faq-question.active::before {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style) .faq-question.active::before {
   content: "-";
 }
-.admin-settings .demo .is-style-accordion .faq-answer {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style) .faq-answer {
   padding: 1em 0.5em;
 }
-.admin-settings .demo .is-style-accordion.has-border-color .faq-question,
-.admin-settings .demo .is-style-accordion.has-border-color .faq-question-label {
+.admin-settings .demo .is-style-accordion:not(.not-nested-style).has-border-color .faq-question,
+.admin-settings .demo .is-style-accordion:not(.not-nested-style).has-border-color .faq-question-label {
   color: var(--cocoon-white-color);
   border: none;
 }
@@ -15739,14 +15739,14 @@ body.wp-admin {
   font-size: 24px;
   margin-right: 0.6em;
 }
-.admin-settings .demo .is-style-square .faq-item-label {
+.admin-settings .demo .is-style-square:not(.not-nested-style) .faq-item-label {
   color: #fff !important;
   background-color: var(--cocoon-custom-question-color);
   font-size: 20px;
   padding: 5px 8px;
   height: 100%;
 }
-.admin-settings .demo .is-style-square .faq-answer-label {
+.admin-settings .demo .is-style-square:not(.not-nested-style) .faq-answer-label {
   background-color: var(--cocoon-custom-answer-color);
 }
 .admin-settings .demo .faq-item-content {
@@ -22372,7 +22372,7 @@ textarea[name=the_page_memo] {
 .components-popover__content .is-style-accordion {
   padding: 0;
 }
-.components-popover__content .is-style-accordion .faq-question {
+.components-popover__content .is-style-accordion:not(.not-nested-style) .faq-question {
   padding: 0.5em;
   margin: 0;
   cursor: pointer;
@@ -22380,20 +22380,20 @@ textarea[name=the_page_memo] {
   background-color: #e8ecef;
   border-color: var(--cocoon-three-d-border-colors);
 }
-.components-popover__content .is-style-accordion .faq-question::before {
+.components-popover__content .is-style-accordion:not(.not-nested-style) .faq-question::before {
   content: "+";
   position: absolute;
   right: 1em;
   opacity: 0.5;
 }
-.components-popover__content .is-style-accordion .faq-question.active::before {
+.components-popover__content .is-style-accordion:not(.not-nested-style) .faq-question.active::before {
   content: "-";
 }
-.components-popover__content .is-style-accordion .faq-answer {
+.components-popover__content .is-style-accordion:not(.not-nested-style) .faq-answer {
   padding: 1em 0.5em;
 }
-.components-popover__content .is-style-accordion.has-border-color .faq-question,
-.components-popover__content .is-style-accordion.has-border-color .faq-question-label {
+.components-popover__content .is-style-accordion:not(.not-nested-style).has-border-color .faq-question,
+.components-popover__content .is-style-accordion:not(.not-nested-style).has-border-color .faq-question-label {
   color: var(--cocoon-white-color);
   border: none;
 }

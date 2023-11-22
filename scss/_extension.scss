@@ -1741,35 +1741,38 @@ figcaption{
 .is-style-accordion{
   padding: 0;
 
-  .faq-question{
-    padding: .5em;
-    margin: 0;
-    cursor: pointer;
-    position: relative;
-    background-color: #e8ecef;
-    border-color: var(--cocoon-three-d-border-colors);
+  &:not(.not-nested-style) {
 
-    &::before{
-      content: "+";
-      position: absolute;
-      right: 1em;
-      opacity: 0.5;
+    .faq-question{
+      padding: .5em;
+      margin: 0;
+      cursor: pointer;
+      position: relative;
+      background-color: #e8ecef;
+      border-color: var(--cocoon-three-d-border-colors);
+
+      &::before{
+        content: "+";
+        position: absolute;
+        right: 1em;
+        opacity: 0.5;
+      }
+
+      &.active::before{
+        content: "-";
+      }
     }
 
-    &.active::before{
-      content: "-";
+    .faq-answer{
+      padding: 1em .5em;
     }
-  }
 
-  .faq-answer{
-    padding: 1em .5em;
-  }
-
-  &.has-border-color{
-    .faq-question,
-    .faq-question-label{
-      color: var(--cocoon-white-color);
-      border: none;
+    &.has-border-color{
+      .faq-question,
+      .faq-question-label{
+        color: var(--cocoon-white-color);
+        border: none;
+      }
     }
   }
 }
