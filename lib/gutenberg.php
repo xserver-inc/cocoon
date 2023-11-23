@@ -409,17 +409,17 @@ html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-button:before{
   color: <?php echo $color; ?>;
 }
 */
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-button{
     background-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-button,
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-content{
     border-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color:not(.not-nested-style) .toggle-content{
   background-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-color:not(.not-nested-style) .toggle-content{
   color: <?php echo $color; ?>;
 }
 <?php //アイコンリストボックス ?>
@@ -565,7 +565,6 @@ html .body .btn-wrap{
     border-color: transparent !important;
     font-size: 16px;
 }
-
 /*
 html .body .has-border-color .toggle-button{
     color: #fff;
@@ -589,6 +588,29 @@ html .body .btn-wrap.has-large-font-size > a {
 html .body .btn-wrap.has-huge-font-size > a,
 html .body .btn-wrap.has-larger-font-size > a {
   font-size: 42px;
+}
+<?php // 各ブロックのネスト時のスタイル ?>
+<?php // アコーディオンボックス ?>
+.cocoon-block-toggle.not-nested-style {
+    background-color: transparent!important;
+}
+.cocoon-block-toggle.not-nested-style > .toggle-button,
+.cocoon-block-toggle.not-nested-style > .toggle-content{
+    color: var(--cocoon-custom-text-color);
+    border-color: var(--cocoon-custom-border-color);
+}
+.cocoon-block-toggle.not-nested-style > .toggle-button{
+    background-color: var(--cocoon-xx-thin-color);
+}
+.cocoon-block-toggle.not-nested-style > .toggle-content{
+    background-color: var(--cocoon-custom-background-color);
+}
+.cocoon-block-toggle.has-border-color.not-nested-style > .toggle-button {
+    color: var(--cocoon-white-color);
+    background-color: var(--cocoon-custom-border-color);
+}
+.cocoon-block-toggle.has-border-color.not-nested-style > .toggle-button::before {
+    color: var(--cocoon-white-color);
 }
     <?php
     $css = ob_get_clean();

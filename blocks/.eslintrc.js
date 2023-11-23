@@ -1,4 +1,4 @@
-const defaultConfig = require('@wordpress/scripts/config/.eslintrc.js');
+const defaultConfig = require( '@wordpress/scripts/config/.eslintrc.js' );
 
 module.exports = {
   ...defaultConfig,
@@ -7,6 +7,7 @@ module.exports = {
   },
   rules: {
     'react-hooks/rules-of-hooks': 0,
+    'jsdoc/check-tag-names': 0,
+    '@wordpress/i18n-text-domain': 0,
   },
 };
-

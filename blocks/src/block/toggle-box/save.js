@@ -18,6 +18,10 @@ export default function save( { attributes } ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -39,6 +43,8 @@ export default function save( { attributes } ) {
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
+    'not-nested-style': notNestedStyle,
+    'cocoon-block-toggle': true,
   } );
 
   const styles = {
@@ -47,8 +53,14 @@ export default function save( { attributes } ) {
     '--cocoon-custom-border-color': customBorderColor || undefined,
   };
 
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
+
   const blockProps = useBlockProps.save( {
-    className: className,
+    className,
     style: styles,
   } );
 
@@ -59,7 +71,7 @@ export default function save( { attributes } ) {
         className="toggle-checkbox"
         type="checkbox"
       />
-      <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+      <label className="toggle-button" htmlFor={ 'toggle-checkbox-' + dateID }>
         <RichText.Content value={ content } />
       </label>
       <div className="toggle-content">

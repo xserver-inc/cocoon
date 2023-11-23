@@ -1591,7 +1591,7 @@ $toggle_border_width: 2px;
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
 
-.has-border-color .toggle-button{
+.has-border-color:not(.not-nested-style) .toggle-button{
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
   &::before{
