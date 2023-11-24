@@ -1011,7 +1011,8 @@ a:hover {
 }
 
 /* Front Page Entry Card no-snipet */
-.skin-grayish.front-top-page .entry-card-snippet {
+/* フロントページデフォルトの際はスニペットを表示する */
+.skin-grayish.front-top-page:not(.fpt-default) .entry-card-snippet {
   display: none;
 }
 
