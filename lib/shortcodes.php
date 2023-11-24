@@ -810,7 +810,7 @@ function get_rss_feed_tag( $atts ) {
       endif;
       $feed_url = $item->get_permalink();
       $feed_title = str_replace(["\r\n", "\r", "\n"], '', $item->get_title());
-      $feed_date = $item->get_date('Y.m.d');
+      $feed_date = $item->get_date(get_site_date_format());
       $feed_text = mb_substr(strip_tags($item->get_content()), 0, 110);
 
       $feed_content .= '<a href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'"'.get_rel_by_target($target).'>';
