@@ -8156,6 +8156,7 @@ body.wp-admin {
 }
 .admin-settings .demo .box-menus {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .admin-settings .demo .box-menus * {
@@ -16239,6 +16240,7 @@ body.wp-admin {
 }
 .admin-settings .demo .box-menus {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .admin-settings .demo .box-menus * {
