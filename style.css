@@ -8822,7 +8822,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .box-menus {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 .box-menus * {
