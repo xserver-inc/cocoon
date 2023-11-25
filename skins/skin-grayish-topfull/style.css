@@ -1011,10 +1011,11 @@ a:hover {
 }
 
 /* Front Page Entry Card no-snipet */
-.skin-grayish.front-top-page .entry-card-snippet {
-  display: none;
+.front-top-page .front-page-type-category .entry-card-snippet,
+.front-top-page .front-page-type-category-2-columns .entry-card-snippet,
+.front-top-page .front-page-type-category-3-columns .entry-card-snippet {
+  display:none;
 }
-
 /* front new post title  */
 /* インデックス　カテゴリごとを選択時のカテゴリタイトル装飾用 */
 .skin-grayish .list-new-entries h1,
