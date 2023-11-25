@@ -147,23 +147,6 @@ function body_class_additional($classes) {
     $classes[] = 'hlt-center-logo-wrap';
   }
 
-  //フロントページタイプ
-  if (is_front_top_page() ) {
-    if (is_front_page_type_tab_index()) {
-      $classes[] = 'fpt-tab-index';
-    } elseif (is_front_page_type_category()) {
-      $classes[] = 'fpt-category';
-    } elseif ((is_front_page_type_category_2_columns())) {
-      $classes[] = 'fpt-category-2-columns';
-    } elseif (is_front_page_type_category_3_columns()) {
-      $classes[] = 'fpt-category-3-columns';
-    } else {
-      $classes[] = 'fpt-default';
-    }
-  }
-
-
-
   //エントリーカードタイプ
   $classes[] = 'ect-'.replace_value_to_class(get_entry_card_type()).'-wrap';
 
