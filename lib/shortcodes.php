@@ -821,7 +821,7 @@ function get_rss_feed_tag( $atts ) {
       $feed_content .= '<div class="rss-entry-card-content widget-entry-card-content card-content">';
       $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">' . esc_html($feed_title) . '</div>';
       if ($desc) {
-        $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '…</div>';
+        $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '</div>';
       }
       if ($date) {
         $feed_content .= '<div class="rss-entry-card-date widget-entry-card-date">
