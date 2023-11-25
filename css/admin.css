@@ -8156,7 +8156,6 @@ body.wp-admin {
 }
 .admin-settings .demo .box-menus {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 .admin-settings .demo .box-menus * {
@@ -8175,9 +8174,6 @@ body.wp-admin {
   color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
-}
-.admin-settings .demo .box-menu:last-child {
-  margin-right: auto;
 }
 .admin-settings .demo .box-menu:hover {
   color: var(--cocoon-x-pallid-text-color);
@@ -16240,7 +16236,6 @@ body.wp-admin {
 }
 .admin-settings .demo .box-menus {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 .admin-settings .demo .box-menus * {
@@ -16259,9 +16254,6 @@ body.wp-admin {
   color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
-}
-.admin-settings .demo .box-menu:last-child {
-  margin-right: auto;
 }
 .admin-settings .demo .box-menu:hover {
   color: var(--cocoon-x-pallid-text-color);

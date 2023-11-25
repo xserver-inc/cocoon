@@ -8797,7 +8797,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .box-menus {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 .box-menus * {
@@ -8817,9 +8816,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
-}
-.box-menu:last-child {
-  margin-right: auto;
 }
 .box-menu:hover {
   color: var(--cocoon-x-pallid-text-color);
