@@ -7749,6 +7749,12 @@ body.wp-admin {
 .admin-settings .demo html[lang=en] .ribbon-top-left span {
   font-size: 7px;
 }
+.admin-settings .demo html[lang=en] .ribbon-top-left::before {
+  right: 8px;
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left::after {
+  bottom: 10px;
+}
 .admin-settings .demo .border-square .ribbon-top-left {
   top: -13px;
   left: -13px;
@@ -15831,6 +15837,12 @@ body.wp-admin {
 }
 .admin-settings .demo html[lang=en] .ribbon-top-left span {
   font-size: 7px;
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left::before {
+  right: 8px;
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left::after {
+  bottom: 10px;
 }
 .admin-settings .demo .border-square .ribbon-top-left {
   top: -13px;

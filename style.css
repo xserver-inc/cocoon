@@ -8318,6 +8318,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 html[lang=en] .ribbon-top-left span {
   font-size: 7px;
 }
+html[lang=en] .ribbon-top-left::before {
+  right: 8px;
+}
+html[lang=en] .ribbon-top-left::after {
+  bottom: 10px;
+}
 
 .border-square .ribbon-top-left {
   top: -13px;

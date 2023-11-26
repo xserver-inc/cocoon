@@ -79,8 +79,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 
-html[lang="en"] .ribbon-top-left span{
-  font-size: 7px;
+html[lang="en"] .ribbon-top-left {
+  span{
+    font-size: 7px;
+  }
+  &::before{
+    right: 8px;
+  }
+  &::after{
+    bottom: 10px;
+  }
 }
 
 // .navi-card-box .ribbon-top-left {
