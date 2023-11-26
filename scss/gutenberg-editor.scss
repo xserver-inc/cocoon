@@ -1436,3 +1436,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     padding-bottom: 0;
   }
 }
+
+//エディターページではswiperが有効でないため自前で余白を入れる
+.is-list-horizontal .a-wrap {
+  margin-right: 4px;
+}

@@ -8306,7 +8306,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   right: 4px;
 }
 .ribbon-top-left::after {
-  bottom: 4px;
+  bottom: 5px;
   left: 1px;
 }
 .ribbon-top-left span {

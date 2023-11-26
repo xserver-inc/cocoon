@@ -5913,3 +5913,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   padding-top: 0;
   padding-bottom: 0;
 }
+
+.is-list-horizontal .a-wrap {
+  margin-right: 4px;
+}

@@ -7738,7 +7738,7 @@ body.wp-admin {
   right: 4px;
 }
 .admin-settings .demo .ribbon-top-left::after {
-  bottom: 4px;
+  bottom: 5px;
   left: 1px;
 }
 .admin-settings .demo .ribbon-top-left span {
@@ -15827,7 +15827,7 @@ body.wp-admin {
   right: 4px;
 }
 .admin-settings .demo .ribbon-top-left::after {
-  bottom: 4px;
+  bottom: 5px;
   left: 1px;
 }
 .admin-settings .demo .ribbon-top-left span {
