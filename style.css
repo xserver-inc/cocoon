@@ -2576,6 +2576,12 @@ label.screen-reader-text {
 .widget-entry-cards.large-thumb-on .e-card {
   position: relative;
 }
+.widget-entry-cards.large-thumb-on .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 .widget-entry-cards.large-thumb-on .card-content {
   margin: 0;
   position: absolute;
@@ -2584,12 +2590,14 @@ label.screen-reader-text {
   padding: 0.6em;
   background: linear-gradient(180deg, transparent, #555);
   color: var(--cocoon-white-color);
-  max-height: 40%;
-  overflow: hidden;
   transition: all 0.5s;
 }
 .widget-entry-cards.large-thumb-on .card-snippet {
   margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 /************************************

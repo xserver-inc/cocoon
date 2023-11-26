@@ -267,6 +267,13 @@ label.screen-reader-text{
     position: relative;
   }
 
+  .card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
   .card-content{
     margin: 0;
     position: absolute;
@@ -275,14 +282,17 @@ label.screen-reader-text{
     padding: .6em;
     background: linear-gradient(180deg, transparent, #555);
     color: var(--cocoon-white-color);
-    max-height: 40%;
-    overflow: hidden;
+    // max-height: 40%;
     transition: all 0.5s;
   }
 
 
   .card-snippet{
     margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 }
 
