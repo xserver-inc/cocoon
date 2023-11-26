@@ -7746,6 +7746,9 @@ body.wp-admin {
   top: 18px;
   transform: rotate(-45deg);
 }
+.admin-settings .demo html[lang=en] .ribbon-top-left span {
+  font-size: 7px;
+}
 .admin-settings .demo .border-square .ribbon-top-left {
   top: -13px;
   left: -13px;
@@ -15825,6 +15828,9 @@ body.wp-admin {
   right: -45px;
   top: 18px;
   transform: rotate(-45deg);
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left span {
+  font-size: 7px;
 }
 .admin-settings .demo .border-square .ribbon-top-left {
   top: -13px;

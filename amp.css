@@ -8290,6 +8290,10 @@ https://codepen.io/nxworld/pen/oLdoWb
   transform: rotate(-45deg);
 }
 
+html[lang=en] .ribbon-top-left span {
+  font-size: 7px;
+}
+
 .border-square .ribbon-top-left {
   top: -13px;
   left: -13px;
