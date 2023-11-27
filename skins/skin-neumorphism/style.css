@@ -573,7 +573,7 @@ pre,blockquote,.recommended.rcs-center-white-title .card-content,.fb-like-box,.s
     box-shadow: none;
 }
 /*ボーダー打消し*/
-pre,blockquote,.entry-content .toc-center,.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select,.article h2, .article h3, .article h4, .article h5, .article h6,.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn, .border-square a, .author-box,.tagcloud a,.list-more-button,.ranking-item, .timeline-box,.toggle-button,.toggle-checkbox:checked ~ .toggle-content,.search-form div.sform,.wp-block-cocoon-blocks-icon-box,.attachment-thumbnail,.comment-reply-link,.index-tab-buttons .index-tab-button,.speech-icon img, .speech-icon amp-img{
+pre,blockquote,.entry-content .toc-center,.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select,.article h2, .article h3, .article h4, .article h5, .article h6,.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn, .border-square .a-wrap, .author-box,.tagcloud a,.list-more-button,.ranking-item, .timeline-box,.toggle-button,.toggle-checkbox:checked ~ .toggle-content,.search-form div.sform,.wp-block-cocoon-blocks-icon-box,.attachment-thumbnail,.comment-reply-link,.index-tab-buttons .index-tab-button,.speech-icon img, .speech-icon amp-img{
     border: none!important;
 }
 /*文字影打消し*/

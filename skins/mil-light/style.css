@@ -46,7 +46,7 @@ strong {
 .index-tab-buttons .index-tab-button {
     background-color: #fcfaf8;
 }
-.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn, .index-tab-buttons .index-tab-button, .border-square a, .author-box {
+.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn, .index-tab-buttons .index-tab-button, .border-square .a-wrap, .author-box {
     border-color: #ebe9e8 #e5e2e0 #e9e6e2 #e3e1de;
 }
 .list-more-button {
@@ -561,7 +561,7 @@ span.post-date {
 .widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
     background: #c99a72;
 }
-.widget-entry-cards.border-square a {
+.widget-entry-cards.border-square .a-wrap {
     border: solid 2.3px #f5f1eb;
 }
 .widget-entry-cards.card-large-image .widget-entry-card-content {

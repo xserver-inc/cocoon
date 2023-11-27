@@ -48,7 +48,7 @@ body.body,  #main.main, #sidebar.sidebar, .blogcard-label, .blogcard, .index-tab
 .blogcard,
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"],
 input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, .list-more-button, .ecb-entry-border .entry-card-wrap,
-.recb-entry-border .related-entry-card-wrap, .border-square a, .border-partition a, .border-partition a:first-of-type, .post-navi-default.post-navi-border a,
+.recb-entry-border .related-entry-card-wrap, .border-square .a-wrap, .border-partition .a-wrap, .border-partition a:first-of-type, .post-navi-default.post-navi-border a,
 .pager-post-navi.post-navi-square.post-navi-border a, .ccb-carousel-border .a-wrap{
   border-color: '.colorcode_to_rgb_css_code(get_site_text_color(),0.3).';
 }

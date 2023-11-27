@@ -2472,7 +2472,7 @@ label.screen-reader-text {
   border: 0;
 }
 
-.border-square a {
+.border-square .a-wrap {
   border-radius: var(--cocoon-basic-border-radius);
   border: 1px solid var(--cocoon-thin-color);
 }
