@@ -18032,10 +18032,6 @@ body.wp-admin {
   }
   .admin-settings .demo .mobile-menu-buttons {
     display: flex;
-    align-items: stretch;
-  }
-  .admin-settings .demo .mobile-menu-buttons > li {
-    padding-top: 3px;
   }
   .admin-settings .demo .mobile-header-menu-buttons {
     top: 0;
@@ -18100,10 +18096,10 @@ body.wp-admin {
     display: block;
   }
   .admin-settings .demo body:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
-    margin-top: 53px;
+    margin-top: 50px;
   }
   .admin-settings .demo .admin-bar:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
-    margin-top: calc(53px - var(--wp-admin--admin-bar--height));
+    margin-top: calc(50px - var(--wp-admin--admin-bar--height));
   }
 }
 @media screen and (max-width: 834px) {
