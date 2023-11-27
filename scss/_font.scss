@@ -106,3 +106,15 @@ span.sub-caption{
   opacity: 0.8;
 }
 
+//英字設定の場合のナビカードリボンのフォントサイズ
+html[lang="en"] .ribbon-top-left {
+  span{
+    font-size: 7px;
+  }
+  &::before{
+    right: 8px;
+  }
+  &::after{
+    bottom: 10px;
+  }
+}

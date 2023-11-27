@@ -1042,6 +1042,15 @@ body.wp-admin {
 .admin-settings .demo span.sub-caption {
   opacity: 0.8;
 }
+.admin-settings .demo html[lang=en] .ribbon-top-left span {
+  font-size: 7px;
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left::before {
+  right: 8px;
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left::after {
+  bottom: 10px;
+}
 .admin-settings .demo * {
   padding: 0;
   margin: 0;
@@ -7754,15 +7763,6 @@ body.wp-admin {
   top: 18px;
   transform: rotate(-45deg);
 }
-.admin-settings .demo html[lang=en] .ribbon-top-left span {
-  font-size: 7px;
-}
-.admin-settings .demo html[lang=en] .ribbon-top-left::before {
-  right: 8px;
-}
-.admin-settings .demo html[lang=en] .ribbon-top-left::after {
-  bottom: 10px;
-}
 .admin-settings .demo .border-square .ribbon-top-left {
   top: -13px;
   left: -13px;
@@ -9137,6 +9137,15 @@ body.wp-admin {
 }
 .admin-settings .demo span.sub-caption {
   opacity: 0.8;
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left span {
+  font-size: 7px;
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left::before {
+  right: 8px;
+}
+.admin-settings .demo html[lang=en] .ribbon-top-left::after {
+  bottom: 10px;
 }
 .admin-settings .demo * {
   padding: 0;
@@ -15849,15 +15858,6 @@ body.wp-admin {
   right: -45px;
   top: 18px;
   transform: rotate(-45deg);
-}
-.admin-settings .demo html[lang=en] .ribbon-top-left span {
-  font-size: 7px;
-}
-.admin-settings .demo html[lang=en] .ribbon-top-left::before {
-  right: 8px;
-}
-.admin-settings .demo html[lang=en] .ribbon-top-left::after {
-  bottom: 10px;
 }
 .admin-settings .demo .border-square .ribbon-top-left {
   top: -13px;
@@ -22857,6 +22857,15 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content span.sub-caption {
   opacity: 0.8;
+}
+.components-popover__content html[lang=en] .ribbon-top-left span {
+  font-size: 7px;
+}
+.components-popover__content html[lang=en] .ribbon-top-left::before {
+  right: 8px;
+}
+.components-popover__content html[lang=en] .ribbon-top-left::after {
+  bottom: 10px;
 }
 
 .tagcloud {

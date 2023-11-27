@@ -889,6 +889,16 @@ span.sub-caption {
   opacity: 0.8;
 }
 
+html[lang=en] .ribbon-top-left span {
+  font-size: 7px;
+}
+html[lang=en] .ribbon-top-left::before {
+  right: 8px;
+}
+html[lang=en] .ribbon-top-left::after {
+  bottom: 10px;
+}
+
 .has-box-style {
   padding: var(--cocoon-box-padding);
 }
