@@ -8264,7 +8264,6 @@ body.wp-admin {
   height: 2.6em;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-content {
-  max-height: 45%;
   overflow: hidden;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {
@@ -16361,7 +16360,6 @@ body.wp-admin {
   height: 2.6em;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-content {
-  max-height: 45%;
   overflow: hidden;
 }
 .admin-settings .demo .is-list-horizontal.large-thumb-on .card-title {

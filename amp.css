@@ -8917,7 +8917,6 @@ html[lang=en] .ribbon-top-left::after {
   height: 2.6em;
 }
 .is-list-horizontal.large-thumb-on .card-content {
-  max-height: 45%;
   overflow: hidden;
 }
 .is-list-horizontal.large-thumb-on .card-title {
