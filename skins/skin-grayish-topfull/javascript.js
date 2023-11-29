@@ -153,16 +153,47 @@ if (footerOffItem) {
 // その他の子要素を削除（検索ボタン対策）
 // ---------------------------------------------
 const mobileHeaderMenu = document.querySelector('.skin-grayish .mobile-header-menu-buttons');
+
+const mobileHeaderMenuFront = document.querySelector('.skin-grayish.front-top-page .mobile-header-menu-buttons');
 // to functions.php
 const mobileHeaderMenuChild = document.querySelectorAll('.skin-grayish.front-top-page .mobile-header-menu-buttons > li:not(:first-child)');
+
+// for front-page
 const mobileHeaderMenu_onlymenu = () => {
-  if (mobileHeaderMenu && mobileHeaderMenuChild_remove_flg === 'on') {
+  if (mobileHeaderMenuChild_remove_flg === 'on') {
     mobileHeaderMenuChild.forEach(liItem => {
       liItem.remove();
     });
+    document.documentElement.style.setProperty('--mobileHeaderMenuBtn_width', `70px`);
+
+  } else if (mobileHeaderMenuChild_remove_flg === 'off') {
+    if (mobileHeaderMenuChild.length < 1) {
+      document.documentElement.style.setProperty('--mobileHeaderMenuOtherBtn_width', `70px`);
+    } else {
+      document.documentElement.style.setProperty('--mobileHeaderMenuOtherBtn_width', `100%`);
+    }
   }
 };
-mobileHeaderMenu_onlymenu();
+if (mobileHeaderMenuFront) {
+  mobileHeaderMenu_onlymenu();
+}
+// for other-page menu-num
+const mobileHeaderMenuOther = document.querySelector('.skin-grayish:not(.front-top-page) .mobile-header-menu-buttons');
+const mobileHeaderMenuChildOther = document.querySelectorAll('.skin-grayish:not(.front-top-page) .mobile-header-menu-buttons > li');
+const mobileHeaderMenuChildOther_num = mobileHeaderMenuChildOther.length;
+
+const mobileHeaderMenuOther_onlyone = () => {
+  if (mobileHeaderMenuOther) {
+    if (mobileHeaderMenuChildOther_num < 2) {
+      document.documentElement.style.setProperty('--mobileHeaderMenuOtherBtn_width', `70px`);
+    } else {
+      document.documentElement.style.setProperty('--mobileHeaderMenuOtherBtn_width', `100%`);
+    }
+  }
+};
+if (mobileHeaderMenuOther) {
+  mobileHeaderMenuOther_onlyone();
+}
 // ---------------------------------------------
 // 画面幅1023px以下のモバイルヘッダーメニュー
 // メニューが一つだけの場合は左端に表示flex-start

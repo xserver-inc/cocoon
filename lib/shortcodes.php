@@ -406,7 +406,6 @@ function yago_shortcode( $atts ){
 }
 endif;
 
-
 //星ショートコード
 if (!shortcode_exists('star')) {
   add_shortcode('star', 'rating_star_shortcode');
@@ -792,86 +791,64 @@ function get_rss_feed_tag( $atts ) {
   //Cache処理（かなり簡易的なもの）
   $transient_id = 'ree_feed_'.md5($feed_url.'_'.$count.'_'.$img_url.'_'.$target.'_'.$desc.'_'.$date.'_'.$type.'_'.$bold.'_'.$arrow.'_'.$class);
   $feed_contents = get_transient( $transient_id );
-  if ($feed_contents) {
-    return $feed_contents;
-  } else {
+
+  //キャッシュが存在しない場合URLから取得
+  if (!$feed_contents) {
     $rss = fetch_feed( $feed_url );
-  }
-  if ( !is_wp_error( $rss ) ) {
-    $maxitems = $rss->get_item_quantity( $feed_count );
-    $rss_items = $rss->get_items( 0, $maxitems );
-    foreach ( $rss_items as $item ) :
-      $first_img = '';
-      if ( preg_match( '/<img.+?src=[\'"]([^\'"]+?)[\'"].*?>/msi', $item->get_content(), $matches )) $first_img = $matches[1];
-      if ( !empty( $first_img ) ) :
-        $feed_img = esc_attr( $first_img );
-      else:
-        $feed_img = $img_url;
-      endif;
-      $feed_url = $item->get_permalink();
-      $feed_title = str_replace(["\r\n", "\r", "\n"], '', $item->get_title());
-      $feed_date = $item->get_date('Y.m.d');
-      $feed_text = mb_substr(strip_tags($item->get_content()), 0, 110);
+    if ( !is_wp_error( $rss ) ) {
+      $maxitems = $rss->get_item_quantity( $feed_count );
+      $rss_items = $rss->get_items( 0, $maxitems );
+      foreach ( $rss_items as $item ) :
+        $first_img = '';
+        if ( preg_match( '/<img.+?src=[\'"]([^\'"]+?)[\'"].*?>/msi', $item->get_content(), $matches )) $first_img = $matches[1];
+        if ( !empty( $first_img ) ) :
+          $feed_img = esc_attr( $first_img );
+        else:
+          $feed_img = $img_url;
+        endif;
+        $feed_url = $item->get_permalink();
+        $feed_title = str_replace(["\r\n", "\r", "\n"], '', $item->get_title());
+        $feed_date = $item->get_date(get_site_date_format());
+        $feed_text = get_content_excerpt(strip_tags($item->get_content()), get_entry_card_excerpt_max_length());
 
-      $feed_content .= '<a href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'"'.get_rel_by_target($target).'>';
-      $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
-      $feed_content .= '<figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">';
-      $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';
-      $feed_content .= '</figure>';
-      $feed_content .= '<div class="rss-entry-card-content widget-entry-card-content card-content">';
-      $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">' . esc_html($feed_title) . '</div>';
-      if ($desc) {
-        $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '…</div>';
-      }
-      if ($date) {
-        $feed_content .= '<div class="rss-entry-card-date widget-entry-card-date">
-        <span class="rss-entry-card-post-date widget-entry-card-post-date post-date">' . esc_html($feed_date) . '</span>
-      </div>';
-      }
-      $feed_content .= '</div>';//card-content
-      $feed_content .= '</div>';
-      $feed_content .= '</a>';
-    endforeach;
-  } else {
-    $feed_content = '<p>RSSフィードを取得できません</p>';
-  }
-  // $add_class = null;
-  // if ($class) {
-  //   $add_class = ' '.$class;
-  // }
+        $feed_content .= '<a href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'"'.get_rel_by_target($target).'>';
+        $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
+        $feed_content .= '<figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">';
+        $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';
+        $feed_content .= '</figure>';
+        $feed_content .= '<div class="rss-entry-card-content widget-entry-card-content card-content">';
+        $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">' . esc_html($feed_title) . '</div>';
+        if ($desc) {
+          $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '</div>';
+        }
+        if ($date) {
+          $feed_content .= '<div class="rss-entry-card-date widget-entry-card-date">
+          <span class="rss-entry-card-post-date widget-entry-card-post-date post-date">' . esc_html($feed_date) . '</span>
+        </div>';
+        }
+        $feed_content .= '</div>';
+        $feed_content .= '</div>';
+        $feed_content .= '</a>';
+      endforeach;
+    } else {
+      $feed_content = '<p>RSSフィードを取得できません</p>';
+    }
 
-// _v($arrow);
-// _v($type);
-  $atts = array(
-    'type' => $type,
-    'bold' => $bold,
-    'arrow' => $arrow,
-    'class' => $class,
-  );
-  $card_class = get_additional_widget_entry_cards_classes($atts);
-  $feed_contents = '<div class="rss-entry-cards widget-entry-cards'.$card_class.' no-icon">' . $feed_content . '</div>';
-  set_transient($transient_id, $feed_contents, 60 * intval($cache_minute));
+    $atts = array(
+      'type' => $type,
+      'bold' => $bold,
+      'arrow' => $arrow,
+      'class' => $class,
+    );
+    $card_class = get_additional_widget_entry_cards_classes($atts);
+    $feed_contents = '<div class="rss-entry-cards widget-entry-cards'.$card_class.' no-icon">' . $feed_content . '</div>';
+    set_transient($transient_id, $feed_contents, 60 * intval($cache_minute));
+  }
 
   return apply_filters( 'get_rss_feed_tag',  $feed_contents);
 
 }
 endif;
-
-
-// //数式
-// add_shortcode('formula', 'formula_shortcode');
-// if ( !function_exists( 'formula_shortcode' ) ):
-// function formula_shortcode( $atts, $content = null ) {
-//   extract( shortcode_atts( array(
-//     'class' => null, //拡張クラス
-//   ), $atts, 'formula' ) );
-//   if ($class) {
-//     $class = ' '.$class;
-//   }
-//   return '<figure class="tex2jax_process'.$class.'">'.$content.'</figure>';
-// }
-// endif;
-
 
 //キャンペーン（指定期間中のみ表示）
 add_shortcode('campaign', 'campaign_shortcode');
@@ -986,7 +963,6 @@ function ad_shortcode( $atts ) {
   }
 }
 endif;
-
 
 //インフォリストショートコード
 add_shortcode('info_list', 'get_info_list_shortcode');

@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.6.9
+Version: 2.6.9.1
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -474,6 +474,16 @@ select, .search-edit {
 
 span.sub-caption {
   opacity: 0.8;
+}
+
+html[lang=en] .ribbon-top-left span {
+  font-size: 7px;
+}
+html[lang=en] .ribbon-top-left::before {
+  right: 8px;
+}
+html[lang=en] .ribbon-top-left::after {
+  bottom: 10px;
 }
 
 /************************************
@@ -2493,11 +2503,11 @@ label.screen-reader-text {
   border-top: 2px dotted var(--cocoon-x-thin-color);
 }
 
-.border-partition.swiper-horizontal .a-wrap {
+.border-partition.is-list-horizontal .a-wrap {
   border: 0;
 }
 
-.border-square a {
+.border-square .a-wrap {
   border-radius: var(--cocoon-basic-border-radius);
   border: 1px solid var(--cocoon-thin-color);
 }
@@ -2576,6 +2586,12 @@ label.screen-reader-text {
 .widget-entry-cards.large-thumb-on .e-card {
   position: relative;
 }
+.widget-entry-cards.large-thumb-on .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 .widget-entry-cards.large-thumb-on .card-content {
   margin: 0;
   position: absolute;
@@ -2584,12 +2600,14 @@ label.screen-reader-text {
   padding: 0.6em;
   background: linear-gradient(180deg, transparent, #555);
   color: var(--cocoon-white-color);
-  max-height: 40%;
-  overflow: hidden;
   transition: all 0.5s;
 }
 .widget-entry-cards.large-thumb-on .card-snippet {
   margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 /************************************
@@ -8306,7 +8324,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   right: 4px;
 }
 .ribbon-top-left::after {
-  bottom: 4px;
+  bottom: 5px;
   left: 1px;
 }
 .ribbon-top-left span {
@@ -8822,7 +8840,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .box-menus {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 .box-menus * {
@@ -8842,9 +8859,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
-}
-.box-menu:last-child {
-  margin-right: auto;
 }
 .box-menu:hover {
   color: var(--cocoon-x-pallid-text-color);
@@ -8928,7 +8942,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   height: 2.6em;
 }
 .is-list-horizontal.large-thumb-on .card-content {
-  max-height: 45%;
   overflow: hidden;
 }
 .is-list-horizontal.large-thumb-on .card-title {
@@ -10893,10 +10906,6 @@ _:-ms-lang(x), .mc-circle {
   }
   .mobile-menu-buttons {
     display: flex;
-    align-items: stretch;
-  }
-  .mobile-menu-buttons > li {
-    padding-top: 3px;
   }
   .mobile-header-menu-buttons {
     top: 0;
@@ -10962,11 +10971,11 @@ _:-ms-lang(x), .mc-circle {
   }
   /* モバイルヘッダー高さ分、余白を設ける */
   body:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
-    margin-top: 53px;
+    margin-top: 50px;
   }
   /* adminバーがある場合、その余白分を除いた余白とする */
   .admin-bar:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
-    margin-top: calc(53px - var(--wp-admin--admin-bar--height));
+    margin-top: calc(50px - var(--wp-admin--admin-bar--height));
   }
 }
 @media screen and (max-width: 834px) {

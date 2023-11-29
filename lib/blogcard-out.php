@@ -239,7 +239,7 @@ function url_to_external_ogp_blogcard_tag($url){
 
   $image = strip_tags($image);
 
-  $snippet = get_content_excerpt( $snippet, 160 );
+  $snippet = get_content_excerpt($snippet, get_entry_card_excerpt_max_length());
   $snippet = strip_tags($snippet);
   if ($user_snippet) {
     $snippet = $user_snippet;

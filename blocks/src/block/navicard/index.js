@@ -20,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'ナビカード', THEME_NAME ),
-  //icon: <FontAwesomeIcon icon={ [ 'fas', 'crown' ] } />,
+  icon: <FontAwesomeIcon icon={ [ 'fas', 'bars' ] } />,
   description: __( '登録されているメニューからナビカードを表示します。', THEME_NAME ),
 
   edit,

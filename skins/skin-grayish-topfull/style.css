@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://cocoon-grayish.na2-factory.com/wp-content/uploads/skin-grayish-top.jpg
-  Version: 1.0.7
+  Version: 1.0.8
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -157,6 +157,12 @@
   /* フロントページ カテゴリーごとの疑似要素の表示 */
   --listColumns_Category_displayOn: none;
   --listColumns_Category_23cols: 0rem;
+
+  /* ヘッダーモバイルボタン　ロゴ以外でボタン一つのみの場合は幅を70px指定 */
+  /* フロントページ用 */
+  --mobileHeaderMenuBtn_width: 70px;
+  /* フロントページ以外用 */
+  --mobileHeaderMenuOtherBtn_width: 70px;
 
 }
 
@@ -1011,7 +1017,9 @@ a:hover {
 }
 
 /* Front Page Entry Card no-snipet */
-.skin-grayish.front-top-page .entry-card-snippet {
+.front-top-page .front-page-type-category .entry-card-snippet,
+.front-top-page .front-page-type-category-2-columns .entry-card-snippet,
+.front-top-page .front-page-type-category-3-columns .entry-card-snippet {
   display: none;
 }
 
@@ -4943,6 +4951,16 @@ blockquote cite {
 
   .skin-grayish.front-top-page .mobile-header-menu-buttons.mobile-menu-buttons {
     background-color: var(--mobileTopHeaderBgColor);
+  }
+
+  /* ヘッダーモバイルボタン　ロゴなしのケース：フロントページにボタン一つのみの場合は幅を指定する */
+  .skin-grayish.front-top-page .mobile-header-menu-buttons.mobile-menu-buttons:not(.has-logo-button) .menu-button {
+    width: var(--mobileHeaderMenuBtn_width);
+  }
+
+  /* ヘッダーモバイルボタン　ロゴなしのケース：フロントページ以外にボタン一つのみの場合は幅を指定する */
+  .skin-grayish:not(.front-top-page) .mobile-header-menu-buttons.mobile-menu-buttons:not(.has-logo-button) .menu-button {
+    width: var(--mobileHeaderMenuOtherBtn_width);
   }
 
   .skin-grayish .mobile-header-menu-buttons.mobile-menu-buttons .logo-menu-button.menu-button {
