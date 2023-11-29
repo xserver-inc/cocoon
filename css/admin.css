@@ -6186,25 +6186,25 @@ body.wp-admin {
   margin-top: 1em;
   --cocoon-custom-border-color: transparent;
 }
-.admin-settings .demo .sidebar .cta-box {
+.admin-settings .demo .nwa .cta-box {
   font-size: 0.8em;
 }
-.admin-settings .demo .sidebar .cta-heading {
+.admin-settings .demo .nwa .cta-heading {
   font-size: 20px;
   padding: 8px;
 }
-.admin-settings .demo .sidebar .cta-left-and-right .cta-content,
-.admin-settings .demo .sidebar .cta-right-and-left .cta-content {
+.admin-settings .demo .nwa .cta-left-and-right .cta-content,
+.admin-settings .demo .nwa .cta-right-and-left .cta-content {
   display: block;
 }
-.admin-settings .demo .sidebar .cta-left-and-right .cta-content div,
-.admin-settings .demo .sidebar .cta-right-and-left .cta-content div {
+.admin-settings .demo .nwa .cta-left-and-right .cta-content div,
+.admin-settings .demo .nwa .cta-right-and-left .cta-content div {
   width: 100%;
 }
-.admin-settings .demo .sidebar .cta-message {
+.admin-settings .demo .nwa .cta-message {
   margin-top: 1em;
 }
-.admin-settings .demo .sidebar .cta-button .btn-l, .admin-settings .demo .sidebar .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .sidebar .cta-button a {
+.admin-settings .demo .nwa .cta-button .btn-l, .admin-settings .demo .nwa .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
 }
@@ -14282,25 +14282,25 @@ body.wp-admin {
   margin-top: 1em;
   --cocoon-custom-border-color: transparent;
 }
-.admin-settings .demo .sidebar .cta-box {
+.admin-settings .demo .nwa .cta-box {
   font-size: 0.8em;
 }
-.admin-settings .demo .sidebar .cta-heading {
+.admin-settings .demo .nwa .cta-heading {
   font-size: 20px;
   padding: 8px;
 }
-.admin-settings .demo .sidebar .cta-left-and-right .cta-content,
-.admin-settings .demo .sidebar .cta-right-and-left .cta-content {
+.admin-settings .demo .nwa .cta-left-and-right .cta-content,
+.admin-settings .demo .nwa .cta-right-and-left .cta-content {
   display: block;
 }
-.admin-settings .demo .sidebar .cta-left-and-right .cta-content div,
-.admin-settings .demo .sidebar .cta-right-and-left .cta-content div {
+.admin-settings .demo .nwa .cta-left-and-right .cta-content div,
+.admin-settings .demo .nwa .cta-right-and-left .cta-content div {
   width: 100%;
 }
-.admin-settings .demo .sidebar .cta-message {
+.admin-settings .demo .nwa .cta-message {
   margin-top: 1em;
 }
-.admin-settings .demo .sidebar .cta-button .btn-l, .admin-settings .demo .sidebar .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .sidebar .cta-button a {
+.admin-settings .demo .nwa .cta-button .btn-l, .admin-settings .demo .nwa .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
 }
