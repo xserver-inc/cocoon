@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.6.9.2\n"
+"Project-Id-Version: Cocoon 2.6.9.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-12-03T14:43:48+00:00\n"
+"POT-Creation-Date: 2023-11-29T13:09:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 
@@ -286,6 +286,8 @@ msgstr ""
 #: lib/page-settings/sns-share-forms-bottom.php:95
 #: lib/page-settings/sns-share-forms-top.php:82
 #: lib/page-settings/_top-page.php:219
+#: tmp/mobile-comments-button.php:12
+#: tmp/sns-share-buttons.php:51
 #: blocks/src/block-extension/style-extension/style01.js:146
 #: blocks/src/block-extension/style-extension/style02.js:106
 #: blocks/src/block/icon-box/deprecated.js:102
@@ -604,6 +606,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:307
 #: lib/admin-tinymce-qtag.php:1662
+#: tmp/css-custom.php:939
+#: tmp/css-custom.php:986
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
@@ -634,6 +638,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:457
 #: lib/admin-tinymce-qtag.php:1668
+#: tmp/css-custom.php:935
+#: tmp/css-custom.php:983
 #: blocks/src/block/blogcard/deprecated.js:85
 #: blocks/src/block/blogcard/edit.js:67
 #: blocks/src/block/tab-box/edit.js:91
@@ -650,6 +656,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:547
 #: lib/admin-tinymce-qtag.php:1680
+#: tmp/css-custom.php:955
+#: tmp/css-custom.php:998
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:75
 #: blocks/src/block/tab-box/edit.js:103
@@ -1096,6 +1104,8 @@ msgstr ""
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
+#: tmp/css-custom.php:919
+#: tmp/css-custom.php:971
 #: blocks/src/block/blogcard/deprecated.js:57
 #: blocks/src/block/blogcard/edit.js:39
 #: blocks/src/old/blogcard-class/block.js:65
@@ -1103,6 +1113,8 @@ msgid "関連記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1632
+#: tmp/css-custom.php:923
+#: tmp/css-custom.php:974
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:43
 #: blocks/src/old/blogcard-class/block.js:69
@@ -1110,6 +1122,8 @@ msgid "参考記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1638
+#: tmp/css-custom.php:927
+#: tmp/css-custom.php:977
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:47
 msgid "参考リンク"
@@ -1121,6 +1135,8 @@ msgstr ""
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
+#: tmp/css-custom.php:931
+#: tmp/css-custom.php:980
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:51
 #: blocks/src/block/popular-list/index.js:29
@@ -1129,6 +1145,8 @@ msgid "人気記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1650
+#: tmp/css-custom.php:943
+#: tmp/css-custom.php:989
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:55
 #: blocks/src/old/blogcard-class/block.js:77
@@ -1137,6 +1155,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1656
 #: lib/widgets/cta-box.php:34
+#: tmp/css-custom.php:947
+#: tmp/css-custom.php:992
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:59
 #: blocks/src/old/blogcard-class/block.js:81
@@ -1144,6 +1164,8 @@ msgid "詳細はこちら"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1674
+#: tmp/css-custom.php:951
+#: tmp/css-custom.php:995
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:71
 #: blocks/src/old/blogcard-class/block.js:93
@@ -1151,11 +1173,15 @@ msgid "公式サイト"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1686
+#: tmp/css-custom.php:959
+#: tmp/css-custom.php:1001
 #: blocks/src/block/blogcard/edit.js:79
 msgid "前回の記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1692
+#: tmp/css-custom.php:963
+#: tmp/css-custom.php:1004
 #: blocks/src/block/blogcard/edit.js:83
 msgid "続きの記事"
 msgstr ""
@@ -1214,6 +1240,7 @@ msgid "管理メニュー"
 msgstr ""
 
 #: lib/admin.php:377
+#: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr ""
 
@@ -1244,6 +1271,7 @@ msgid "ウィジェット"
 msgstr ""
 
 #: lib/admin.php:426
+#: tmp/mobile-navi-button.php:21
 #: blocks/src/block/navicard/edit.js:149
 msgid "メニュー"
 msgstr ""
@@ -1456,7 +1484,7 @@ msgstr ""
 #: blocks/src/block/blank-box/edit.js:66
 #: blocks/src/block/button-wrap/edit.js:141
 #: blocks/src/block/button/edit.js:144
-#: blocks/src/block/faq/edit.js:173
+#: blocks/src/block/faq/edit.js:119
 #: blocks/src/block/icon-list/edit.js:144
 #: blocks/src/block/tab-box/edit.js:146
 #: blocks/src/block/timeline/edit.js:99
@@ -1542,7 +1570,7 @@ msgstr ""
 #: blocks/src/block/blank-box/edit.js:71
 #: blocks/src/block/button-wrap/edit.js:146
 #: blocks/src/block/button/edit.js:149
-#: blocks/src/block/faq/edit.js:178
+#: blocks/src/block/faq/edit.js:124
 #: blocks/src/block/icon-list/edit.js:149
 #: blocks/src/block/tab-box/edit.js:151
 #: blocks/src/block/timeline/edit.js:104
@@ -2622,6 +2650,8 @@ msgstr ""
 
 #: lib/html-tooltips.php:111
 #: lib/html-tooltips.php:125
+#: tmp/admin-panel.php:71
+#: tmp/admin-panel.php:80
 msgid "ja"
 msgstr ""
 
@@ -2892,6 +2922,7 @@ msgstr ""
 #: lib/page-func-text/list.php:52
 #: lib/page-item-ranking/list.php:63
 #: lib/page-speech-balloon/list.php:73
+#: tmp/admin-panel.php:35
 msgid "編集"
 msgstr ""
 
@@ -4114,6 +4145,7 @@ msgid "インデックスページの表示位置"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:128
+#: tmp/mobile-top-button.php:26
 msgid "トップ"
 msgstr ""
 
@@ -4826,14 +4858,17 @@ msgid "AMPバリデーター"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:102
+#: tmp/admin-panel.php:53
 msgid "Google AMPテスト"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:103
+#: tmp/admin-panel.php:56
 msgid "The AMP Validator"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:104
+#: tmp/admin-panel.php:59
 msgid "AMPBench"
 msgstr ""
 
@@ -6038,7 +6073,7 @@ msgstr ""
 #: blocks/src/block/blank-box/edit.js:61
 #: blocks/src/block/button-wrap/edit.js:151
 #: blocks/src/block/button/edit.js:154
-#: blocks/src/block/faq/edit.js:168
+#: blocks/src/block/faq/edit.js:114
 #: blocks/src/block/icon-list/edit.js:139
 #: blocks/src/block/timeline/edit.js:109
 #: blocks/src/block/toggle-box/edit.js:116
@@ -7259,6 +7294,8 @@ msgstr ""
 #: lib/page-settings/image-forms.php:210
 #: lib/widgets/new-entries.php:19
 #: lib/widgets/new-entries.php:103
+#: tmp/list-new-entries.php:16
+#: tmp/list-tab-index.php:26
 #: blocks/src/block/new-list/index.js:29
 msgid "新着記事"
 msgstr ""
@@ -8344,6 +8381,7 @@ msgid "画像や動画、ファイルなどの添付ページをnoindex設定に
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:73
+#: tmp/admin-panel.php:80
 msgid "構造化データ"
 msgstr ""
 
@@ -8785,6 +8823,7 @@ msgstr ""
 #: lib/page-settings/sns-follow-forms.php:73
 #: lib/page-settings/sns-share-forms-bottom.php:71
 #: lib/page-settings/sns-share-forms-top.php:58
+#: tmp/sns-share-buttons.php:21
 msgid "Facebook"
 msgstr ""
 
@@ -8805,6 +8844,7 @@ msgstr ""
 #: lib/page-settings/sns-follow-forms.php:77
 #: lib/page-settings/sns-share-forms-bottom.php:86
 #: lib/page-settings/sns-share-forms-top.php:73
+#: tmp/sns-share-buttons.php:37
 msgid "Pinterest"
 msgstr ""
 
@@ -8815,6 +8855,7 @@ msgstr ""
 #: lib/page-settings/sns-follow-forms.php:79
 #: lib/page-settings/sns-share-forms-bottom.php:89
 #: lib/page-settings/sns-share-forms-top.php:76
+#: tmp/sns-share-buttons.php:41
 msgid "LinkedIn"
 msgstr ""
 
@@ -8827,6 +8868,8 @@ msgid "Flickr"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:82
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:170
+#: tmp/sns-follow-buttons.php:85
 msgid "Amazon欲しい物リスト"
 msgstr ""
 
@@ -9074,6 +9117,7 @@ msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:80
 #: lib/page-settings/sns-share-forms-top.php:67
+#: tmp/sns-share-buttons.php:29
 msgid "Pocket"
 msgstr ""
 
@@ -10686,6 +10730,7 @@ msgid "CodePen URL"
 msgstr ""
 
 #: lib/sns.php:17
+#: tmp/header-ogp.php:79
 msgid "ja_JP"
 msgstr ""
 
@@ -10753,6 +10798,7 @@ msgid "3カラム"
 msgstr ""
 
 #: lib/tinymce/html-tags.php:116
+#: tmp/mobile-search-button.php:22
 #: blocks/src/block/search-box/block.js:58
 #: blocks/src/block/search-box/block.js:71
 #: blocks/src/block/search-box/deprecated.js:47
@@ -10984,6 +11030,7 @@ msgid "%s年%sヶ月"
 msgstr ""
 
 #: lib/widget-areas.php:17
+#: tmp/mobile-sidebar-button.php:21
 msgid "サイドバー"
 msgstr ""
 
@@ -11322,7 +11369,7 @@ msgid "CTA見出し"
 msgstr ""
 
 #: lib/widgets/cta-box.php:113
-msgid "画像とメッセージのレイアウト（サイドバー・フッター以外）"
+msgid "画像とメッセージのレイアウト（サイドバー以外）"
 msgstr ""
 
 #: lib/widgets/cta-box.php:117
@@ -11762,7 +11809,7 @@ msgid "例：Cocoon設定で「h2見出しまで」と設定されている場�
 msgstr ""
 
 #: lib/_defins.php:46
-#: blocks/src/block/faq/edit.js:127
+#: blocks/src/block/faq/edit.js:79
 msgid "設定"
 msgstr ""
 
@@ -12018,6 +12065,354 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:2081
 msgid "横スクロールできます"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:54
+#: tmp/sns-follow-buttons.php:33
+msgid "Xをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:66
+#: tmp/sns-follow-buttons.php:37
+msgid "Facebookをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:79
+#: tmp/sns-follow-buttons.php:41
+msgid "はてブをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:92
+#: tmp/sns-follow-buttons.php:49
+msgid "Instagramをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:105
+#: tmp/sns-follow-buttons.php:77
+msgid "Pinterestをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:118
+#: tmp/sns-follow-buttons.php:53
+msgid "YouTubeをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:131
+#: tmp/sns-follow-buttons.php:61
+msgid "LinkedInをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:144
+#: tmp/sns-follow-buttons.php:65
+msgid "noteをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:157
+#: tmp/sns-follow-buttons.php:73
+msgid "Flickrをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:170
+#: tmp/sns-follow-buttons.php:85
+msgid "Amazonほしい物リストをチェック"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:183
+#: tmp/sns-follow-buttons.php:89
+msgid "Twitchをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:196
+#: tmp/sns-follow-buttons.php:93
+msgid "楽天ROOMをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:209
+#: tmp/sns-follow-buttons.php:97
+msgid "Slackをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:222
+#: tmp/sns-follow-buttons.php:101
+msgid "GitHubをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:235
+#: tmp/sns-follow-buttons.php:105
+msgid "CodePenをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:248
+#: tmp/sns-follow-buttons.php:57
+msgid "TikTokをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:261
+#: tmp/sns-follow-buttons.php:69
+msgid "SoundCloudをフォロー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:274
+#: tmp/sns-follow-buttons.php:81
+msgid "LINE@をフォロー"
+msgstr ""
+
+#. Template Name of the theme
+msgid "bbPress - Create Topic"
+msgstr ""
+
+#. Template Name of the theme
+msgid "bbPress - Forums (Index)"
+msgstr ""
+
+#: tmp/admin-panel.php:39
+msgid "WLWで編集"
+msgstr ""
+
+#: tmp/admin-panel.php:48
+msgid "AMPページへ"
+msgstr ""
+
+#: tmp/admin-panel.php:71
+msgid "ページスピード"
+msgstr ""
+
+#: tmp/admin-panel.php:74
+msgid "GTmetrix"
+msgstr ""
+
+#: tmp/admin-panel.php:77
+msgid "モバイルフレンドリー"
+msgstr ""
+
+#: tmp/admin-panel.php:83
+msgid "HTML5"
+msgstr ""
+
+#: tmp/admin-panel.php:86
+msgid "アウトライン"
+msgstr ""
+
+#: tmp/admin-panel.php:89
+msgid "SEOチェキ"
+msgstr ""
+
+#: tmp/admin-panel.php:92
+msgid "ツイート検索"
+msgstr ""
+
+#: tmp/admin-panel.php:104
+msgid "レスポンシブテスト"
+msgstr ""
+
+#: tmp/admin-panel.php:107
+msgid "Sizzy"
+msgstr ""
+
+#: tmp/admin-panel.php:111
+msgid "Resolution Test"
+msgstr ""
+
+#: tmp/admin-pv.php:23
+msgid "本日:"
+msgstr ""
+
+#: tmp/admin-pv.php:27
+msgid "週:"
+msgstr ""
+
+#: tmp/admin-pv.php:31
+msgid "月:"
+msgstr ""
+
+#: tmp/admin-pv.php:35
+msgid "全体:"
+msgstr ""
+
+#: tmp/admin-pv.php:45
+msgid "Jetpackの統計"
+msgstr ""
+
+#: tmp/breadcrumbs-page.php:13
+#: tmp/breadcrumbs.php:28
+#: tmp/mobile-home-button.php:19
+msgid "ホーム"
+msgstr ""
+
+#: tmp/button-go-to-top.php:11
+msgid "トップへ戻る"
+msgstr ""
+
+#: tmp/content.php:91
+msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
+msgstr ""
+
+#: tmp/css-custom.php:915
+msgid "ラベルなし"
+msgstr ""
+
+#: tmp/date-tags.php:18
+msgid "通常ページへ"
+msgstr ""
+
+#: tmp/fb-like-balloon.php:28
+#: tmp/fb-like-box.php:29
+msgid "いいね！"
+msgstr ""
+
+#: tmp/fb-like-box.php:36
+msgid "@%sさんをフォロー"
+msgstr ""
+
+#: tmp/fb-like-box.php:46
+msgid "友だち追加"
+msgstr ""
+
+#: tmp/font-preview.php:17
+msgid "フォントプレビュー"
+msgstr ""
+
+#: tmp/font-preview.php:23
+msgid "吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで初めて人間というものを見た。"
+msgstr ""
+
+#: tmp/font-preview.php:26
+msgid "現在の太さ："
+msgstr ""
+
+#: tmp/font-preview.php:29
+msgid "「文字の太さ」変更でフォントに合った太さに調整しよう。"
+msgstr ""
+
+#: tmp/font-preview.php:32
+msgid "太さ見本："
+msgstr ""
+
+#: tmp/font-preview.php:39
+msgid "利用可："
+msgstr ""
+
+#: tmp/font-preview.php:53
+msgid "（WEBフォント）"
+msgstr ""
+
+#: tmp/footer-javascript.php:42
+msgid "タイトルとURLをコピーしました"
+msgstr ""
+
+#: tmp/list-category-columns.php:76
+#: tmp/list-category.php:47
+#: tmp/list-new-entries.php:23
+#: tmp/list-tab-index.php:84
+msgid "もっと見る"
+msgstr ""
+
+#: tmp/list-not-found-posts.php:9
+msgid "投稿が見つかりませんでした。"
+msgstr ""
+
+#: tmp/mobile-follow-button.php:20
+msgid "フォロー"
+msgstr ""
+
+#: tmp/mobile-next-button.php:20
+#: tmp/pager-page-links.php:17
+#: tmp/pagination.php:70
+msgid "次へ"
+msgstr ""
+
+#: tmp/mobile-prev-button.php:20
+#: tmp/pager-page-links.php:16
+#: tmp/pagination.php:69
+msgid "前へ"
+msgstr ""
+
+#: tmp/mobile-share-button.php:22
+msgid "シェア"
+msgstr ""
+
+#: tmp/mobile-toc-button.php:28
+msgid "目次へ"
+msgstr ""
+
+#: tmp/pagination.php:38
+msgid "次のページ"
+msgstr ""
+
+#: tmp/related-list.php:21
+msgid "関連記事は見つかりませんでした。"
+msgstr ""
+
+#: tmp/sns-follow-buttons.php:29
+msgid "著者サイト"
+msgstr ""
+
+#: tmp/sns-follow-buttons.php:29
+msgid "著作サイトをチェック"
+msgstr ""
+
+#: tmp/sns-follow-buttons.php:45
+msgid "Google＋をフォロー"
+msgstr ""
+
+#: tmp/sns-follow-buttons.php:109
+msgid "feedlyで更新情報を購読"
+msgstr ""
+
+#: tmp/sns-follow-buttons.php:113
+msgid "RSSで更新情報を購読"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:17
+msgid "Xでシェア"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:17
+msgid "X"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:21
+msgid "Facebookでシェア"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:25
+msgid "はてブでブックマーク"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:25
+msgid "はてブ"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:29
+msgid "Pocketに保存"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:33
+msgid "LINEでシェア"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:33
+msgid "LINE"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:37
+msgid "Pinterestでシェア"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:41
+msgid "LinkedInでシェア"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:47
+msgid "タイトルとURLをコピーする"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:47
+msgid "コピー"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:51
+msgid "コメントする"
 msgstr ""
 
 #: blocks/src/block-extension/style-extension/border01.js:46
@@ -12437,7 +12832,7 @@ msgstr ""
 #: blocks/src/block/blank-box/edit.js:58
 #: blocks/src/block/button-wrap/edit.js:138
 #: blocks/src/block/button/edit.js:141
-#: blocks/src/block/faq/edit.js:155
+#: blocks/src/block/faq/edit.js:101
 #: blocks/src/block/icon-list/edit.js:131
 #: blocks/src/block/tab-box/edit.js:138
 #: blocks/src/block/timeline/edit.js:91
@@ -12701,36 +13096,36 @@ msgstr ""
 msgid "比較ボックスの右。"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:130
+#: blocks/src/block/faq/edit.js:80
 msgid "質問ラベル"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:134
+#: blocks/src/block/faq/edit.js:83
 msgid "Q"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:138
-#: blocks/src/block/faq/edit.js:149
+#: blocks/src/block/faq/edit.js:87
+#: blocks/src/block/faq/edit.js:95
 msgid "※2文字以下推奨"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:143
+#: blocks/src/block/faq/edit.js:90
 msgid "回答ラベル"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:147
+#: blocks/src/block/faq/edit.js:93
 msgid "A"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:158
+#: blocks/src/block/faq/edit.js:104
 msgid "質問ラベル色"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:163
+#: blocks/src/block/faq/edit.js:109
 msgid "回答ラベル色"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:197
+#: blocks/src/block/faq/edit.js:143
 msgid "質問を入力してください…"
 msgstr ""
 
