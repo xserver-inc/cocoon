@@ -378,6 +378,9 @@ body.wp-admin {
   ** 新着記事ウィジェット（デフォルト）
   ************************************/
   /************************************
+  ** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
+  ************************************/
+  /************************************
   ** 新着記事ウィジェット（大きなサムネイル）
   ************************************/
   /************************************
@@ -625,6 +628,9 @@ body.wp-admin {
   /*カレンダー*/
   /************************************
   ** 新着記事ウィジェット（デフォルト）
+  ************************************/
+  /************************************
+  ** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
   ************************************/
   /************************************
   ** 新着記事ウィジェット（大きなサムネイル）
@@ -2769,6 +2775,18 @@ body.wp-admin {
 }
 .admin-settings .demo .font-awesome-5 .card-arrow .a-wrap::after {
   font-family: "Font Awesome 5 Free";
+}
+.admin-settings .demo .widget-entry-cards:not(.large-thumb-on) .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.admin-settings .demo .widget-entry-cards:not(.large-thumb-on) .card-snippet {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
@@ -10865,6 +10883,18 @@ body.wp-admin {
 }
 .admin-settings .demo .font-awesome-5 .card-arrow .a-wrap::after {
   font-family: "Font Awesome 5 Free";
+}
+.admin-settings .demo .widget-entry-cards:not(.large-thumb-on) .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.admin-settings .demo .widget-entry-cards:not(.large-thumb-on) .card-snippet {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;

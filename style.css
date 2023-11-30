@@ -2539,6 +2539,22 @@ label.screen-reader-text {
 }
 
 /************************************
+** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
+************************************/
+.widget-entry-cards:not(.large-thumb-on) .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.widget-entry-cards:not(.large-thumb-on) .card-snippet {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+/************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
 .widget-entry-cards.card-large-image .a-wrap {
