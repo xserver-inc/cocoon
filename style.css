@@ -9056,7 +9056,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 .info-list-item-content-link {
-  color: var(--cocoon-black-color);
+  color: var(--cocoon-text-color);
   text-decoration: none;
 }
 .info-list-item-content-link:hover {

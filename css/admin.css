@@ -8369,7 +8369,7 @@ body.wp-admin {
   border-radius: 2px;
 }
 .admin-settings .demo .info-list-item-content-link {
-  color: var(--cocoon-black-color);
+  color: var(--cocoon-text-color);
   text-decoration: none;
 }
 .admin-settings .demo .info-list-item-content-link:hover {
@@ -16465,7 +16465,7 @@ body.wp-admin {
   border-radius: 2px;
 }
 .admin-settings .demo .info-list-item-content-link {
-  color: var(--cocoon-black-color);
+  color: var(--cocoon-text-color);
   text-decoration: none;
 }
 .admin-settings .demo .info-list-item-content-link:hover {
