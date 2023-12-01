@@ -6515,25 +6515,25 @@ canvas, iframe, video,
   --cocoon-custom-border-color: transparent;
 }
 
-.sidebar .cta-box {
+.nwa .cta-box {
   font-size: 0.8em;
 }
-.sidebar .cta-heading {
+.nwa .cta-heading {
   font-size: 20px;
   padding: 8px;
 }
-.sidebar .cta-left-and-right .cta-content,
-.sidebar .cta-right-and-left .cta-content {
+.nwa .cta-left-and-right .cta-content,
+.nwa .cta-right-and-left .cta-content {
   display: block;
 }
-.sidebar .cta-left-and-right .cta-content div,
-.sidebar .cta-right-and-left .cta-content div {
+.nwa .cta-left-and-right .cta-content div,
+.nwa .cta-right-and-left .cta-content div {
   width: 100%;
 }
-.sidebar .cta-message {
+.nwa .cta-message {
   margin-top: 1em;
 }
-.sidebar .cta-button .btn-l, .sidebar .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .sidebar .cta-button a {
+.nwa .cta-button .btn-l, .nwa .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
 }
@@ -9056,7 +9056,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 .info-list-item-content-link {
-  color: var(--cocoon-black-color);
+  color: var(--cocoon-text-color);
   text-decoration: none;
 }
 .info-list-item-content-link:hover {
