@@ -5581,7 +5581,7 @@ figcaption {
 .is-style-accordion {
   padding: 0;
 }
-.is-style-accordion .faq-question {
+.is-style-accordion:not(.not-nested-style) .faq-question {
   padding: 0.5em;
   margin: 0;
   cursor: pointer;
@@ -5589,20 +5589,20 @@ figcaption {
   background-color: #e8ecef;
   border-color: var(--cocoon-three-d-border-colors);
 }
-.is-style-accordion .faq-question::before {
+.is-style-accordion:not(.not-nested-style) .faq-question::before {
   content: "+";
   position: absolute;
   right: 1em;
   opacity: 0.5;
 }
-.is-style-accordion .faq-question.active::before {
+.is-style-accordion:not(.not-nested-style) .faq-question.active::before {
   content: "-";
 }
-.is-style-accordion .faq-answer {
+.is-style-accordion:not(.not-nested-style) .faq-answer {
   padding: 1em 0.5em;
 }
-.is-style-accordion.has-border-color .faq-question,
-.is-style-accordion.has-border-color .faq-question-label {
+.is-style-accordion:not(.not-nested-style).has-border-color .faq-question,
+.is-style-accordion:not(.not-nested-style).has-border-color .faq-question-label {
   color: var(--cocoon-white-color);
   border: none;
 }
@@ -8209,7 +8209,7 @@ ul.timeline ul ul ul {
   margin-right: 0.6em;
 }
 
-.is-style-square .faq-item-label {
+.is-style-square:not(.not-nested-style) .faq-item-label {
   color: #fff !important;
   background-color: var(--cocoon-custom-question-color);
   font-size: 20px;
@@ -8217,7 +8217,7 @@ ul.timeline ul ul ul {
   height: 100%;
 }
 
-.is-style-square .faq-answer-label {
+.is-style-square:not(.not-nested-style) .faq-answer-label {
   background-color: var(--cocoon-custom-answer-color);
 }
 

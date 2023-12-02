@@ -23,6 +23,12 @@ export default function save( { attributes } ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    notNestedStyle,
+    questionColorValue,
+    answerColorValue,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = attributes;
 
   const questionClass = getColorClassName( 'question-color', questionColor );
@@ -50,6 +56,8 @@ export default function save( { attributes } ) {
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
+    'not-nested-style': notNestedStyle,
+    'cocoon-block-faq': true,
   } );
 
   const styles = {
@@ -60,8 +68,16 @@ export default function save( { attributes } ) {
     '--cocoon-custom-border-color': customBorderColor || undefined,
   };
 
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-question-color' ] = questionColorValue;
+    styles[ '--cocoon-custom-answer-color' ] = answerColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+  }
+
   const blockProps = useBlockProps.save( {
-    className: className,
+    className,
     style: styles,
   } );
 
