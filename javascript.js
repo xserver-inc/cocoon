@@ -183,8 +183,8 @@
   });
 
   //FAQボックスのアコーディオン化用
-  $('.is-style-accordion .faq-answer').hide();
-  $('.is-style-accordion .faq-question').click(function () {
+  $('.is-style-accordion > .faq > .faq-answer').hide();
+  $('.is-style-accordion > .faq > .faq-question').click(function () {
     $(this).next('.is-style-accordion .faq-answer').slideToggle();
     $(this).toggleClass('active');
   });

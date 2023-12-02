@@ -49,6 +49,25 @@
     },
     "fontSize": {
       "type": "string"
+    },
+    "notNestedStyle": {
+      "type": "boolean",
+      "default": true
+    },
+    "questionColorValue": {
+      "type": "string"
+    },
+    "answerColorValue": {
+      "type": "string"
+    },
+    "backgroundColorValue": {
+      "type": "string"
+    },
+    "textColorValue": {
+      "type": "string"
+    },
+    "borderColorValue": {
+      "type": "string"
     }
   },
   "example": {
