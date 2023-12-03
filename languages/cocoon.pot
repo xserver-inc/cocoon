@@ -2,16 +2,16 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.6.7.2\n"
+"Project-Id-Version: Cocoon 2.6.9.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-10-07T05:58:05+00:00\n"
+"POT-Creation-Date: 2023-12-03T14:43:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.8.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 
 #. Theme Name of the theme
 msgid "Cocoon"
@@ -33,27 +33,27 @@ msgstr ""
 msgid "https://nelog.jp/"
 msgstr ""
 
-#: blocks/src/init.php:293
+#: blocks/src/init.php:296
 msgid "Cocoonブロック"
 msgstr ""
 
-#: blocks/src/init.php:298
+#: blocks/src/init.php:301
 msgid "Cocoon汎用ブロック"
 msgstr ""
 
-#: blocks/src/init.php:303
+#: blocks/src/init.php:306
 msgid "Cocoonマイクロコピー"
 msgstr ""
 
-#: blocks/src/init.php:308
+#: blocks/src/init.php:311
 msgid "Cocoonレイアウト"
 msgstr ""
 
-#: blocks/src/init.php:313
+#: blocks/src/init.php:316
 msgid "Cocoonショートコード"
 msgstr ""
 
-#: blocks/src/init.php:318
+#: blocks/src/init.php:321
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr ""
 
@@ -75,15 +75,15 @@ msgstr ""
 msgid "コメントを書き込む"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:154
 msgid "キーワード指定なし"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:385
 msgid "角型ラベル"
 msgstr ""
 
-#: functions.php:386
+#: functions.php:389
 msgid "アコーディオン"
 msgstr ""
 
@@ -269,7 +269,7 @@ msgstr ""
 #: lib/custom-fields/memo-field.php:17
 #: lib/custom-fields/memo-field.php:18
 #: lib/custom-fields/memo-field.php:21
-#: blocks/src/block-extension/style-extension/block.js:146
+#: blocks/src/block-extension/style-extension/style01.js:142
 #: blocks/src/block/icon-box/deprecated.js:98
 #: blocks/src/block/icon-box/edit.js:45
 #: blocks/src/block/tab-box/edit.js:99
@@ -286,7 +286,8 @@ msgstr ""
 #: lib/page-settings/sns-share-forms-bottom.php:95
 #: lib/page-settings/sns-share-forms-top.php:82
 #: lib/page-settings/_top-page.php:219
-#: blocks/src/block-extension/style-extension/block.js:150
+#: blocks/src/block-extension/style-extension/style01.js:146
+#: blocks/src/block-extension/style-extension/style02.js:106
 #: blocks/src/block/icon-box/deprecated.js:102
 #: blocks/src/block/icon-box/edit.js:49
 #: blocks/src/block/tab-box/edit.js:75
@@ -299,7 +300,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:639
 #: lib/block-editor-styles-group.php:57
 #: lib/block-editor-styles-paragraph.php:92
-#: blocks/src/block-extension/style-extension/block.js:154
+#: blocks/src/block-extension/style-extension/style01.js:150
 #: blocks/src/block/icon-box/deprecated.js:106
 #: blocks/src/block/icon-box/edit.js:53
 #: blocks/src/block/tab-box/edit.js:115
@@ -312,7 +313,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:670
 #: lib/block-editor-styles-group.php:65
 #: lib/block-editor-styles-paragraph.php:100
-#: blocks/src/block-extension/style-extension/block.js:158
+#: blocks/src/block-extension/style-extension/style01.js:154
 #: blocks/src/block/icon-box/deprecated.js:110
 #: blocks/src/block/icon-box/edit.js:57
 #: blocks/src/block/tab-box/edit.js:119
@@ -350,7 +351,7 @@ msgstr ""
 #: lib/block-editor-styles-group.php:89
 #: lib/block-editor-styles-paragraph.php:124
 #: lib/widgets/author-box.php:19
-#: blocks/src/block-extension/style-extension/block.js:170
+#: blocks/src/block-extension/style-extension/style01.js:166
 #: blocks/src/block/icon-box/deprecated.js:122
 #: blocks/src/block/icon-box/edit.js:69
 #: blocks/src/block/tab-box/edit.js:131
@@ -603,7 +604,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:307
 #: lib/admin-tinymce-qtag.php:1662
-#: blocks/src/block-extension/style-extension/block.js:62
+#: blocks/src/block-extension/style-extension/style01.js:58
+#: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
 #: blocks/src/block/blogcard/edit.js:63
 #: blocks/src/block/tab-box/edit.js:71
@@ -1216,7 +1218,7 @@ msgid "ダッシュボード"
 msgstr ""
 
 #: lib/admin.php:384
-#: lib/shortcodes.php:465
+#: lib/shortcodes.php:464
 msgid "投稿一覧"
 msgstr ""
 
@@ -1242,6 +1244,7 @@ msgid "ウィジェット"
 msgstr ""
 
 #: lib/admin.php:426
+#: blocks/src/block/navicard/edit.js:149
 msgid "メニュー"
 msgstr ""
 
@@ -1315,13 +1318,13 @@ msgstr ""
 msgid "キャッシュ削除"
 msgstr ""
 
-#: lib/admin.php:643
+#: lib/admin.php:648
 #: blocks/src/block/info-list/edit.js:63
 msgid "カテゴリー検索"
 msgstr ""
 
-#: lib/admin.php:703
-#: lib/admin.php:717
+#: lib/admin.php:708
+#: lib/admin.php:722
 msgid "Excerpt"
 msgstr ""
 
@@ -1453,11 +1456,11 @@ msgstr ""
 #: blocks/src/block/blank-box/edit.js:66
 #: blocks/src/block/button-wrap/edit.js:141
 #: blocks/src/block/button/edit.js:144
-#: blocks/src/block/faq/edit.js:119
+#: blocks/src/block/faq/edit.js:173
 #: blocks/src/block/icon-list/edit.js:144
 #: blocks/src/block/tab-box/edit.js:146
 #: blocks/src/block/timeline/edit.js:99
-#: blocks/src/block/toggle-box/edit.js:76
+#: blocks/src/block/toggle-box/edit.js:121
 #: blocks/src/micro/micro-balloon/edit.js:125
 msgid "背景色"
 msgstr ""
@@ -1469,7 +1472,7 @@ msgstr ""
 
 #: lib/block-editor-styles-list.php:41
 #: lib/block-editor-styles-paragraph.php:41
-#: blocks/src/block-extension/style-extension/block.js:78
+#: blocks/src/block-extension/style-extension/style01.js:74
 msgid "交差線"
 msgstr ""
 
@@ -1539,11 +1542,11 @@ msgstr ""
 #: blocks/src/block/blank-box/edit.js:71
 #: blocks/src/block/button-wrap/edit.js:146
 #: blocks/src/block/button/edit.js:149
-#: blocks/src/block/faq/edit.js:124
+#: blocks/src/block/faq/edit.js:178
 #: blocks/src/block/icon-list/edit.js:149
 #: blocks/src/block/tab-box/edit.js:151
 #: blocks/src/block/timeline/edit.js:104
-#: blocks/src/block/toggle-box/edit.js:81
+#: blocks/src/block/toggle-box/edit.js:126
 #: blocks/src/micro/micro-balloon/edit.js:130
 #: blocks/src/micro/micro-text/edit.js:93
 msgid "文字色"
@@ -1781,9 +1784,10 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:43
 #: lib/page-settings/single-forms.php:327
 #: lib/page-speech-balloon/form.php:90
-#: lib/settings.php:545
-#: blocks/src/block-extension/style-extension/block.js:46
-#: blocks/src/block-extension/style-extension/block.js:177
+#: lib/settings.php:558
+#: blocks/src/block-extension/style-extension/border01.js:42
+#: blocks/src/block-extension/style-extension/style01.js:42
+#: blocks/src/block-extension/style-extension/style02.js:42
 #: blocks/src/block/balloon/edit.js:183
 #: blocks/src/old/balloon-ex-fix1/block.js:164
 #: blocks/src/old/balloon-ex-v2/block.js:85
@@ -2430,7 +2434,7 @@ msgstr ""
 #: lib/page-settings/sns-share-forms-top.php:105
 #: lib/page-settings/toc-forms.php:62
 #: lib/page-settings/_top-page.php:195
-#: lib/shortcodes.php:459
+#: lib/shortcodes.php:458
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
 msgstr ""
@@ -2515,70 +2519,70 @@ msgstr ""
 msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
-#: lib/html-forms.php:1328
-#: lib/html-forms.php:1840
+#: lib/html-forms.php:1324
+#: lib/html-forms.php:1845
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1457
+#: lib/html-forms.php:1453
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1475
+#: lib/html-forms.php:1471
 msgid "未登録のユーザーさん"
 msgstr ""
 
-#: lib/html-forms.php:1485
+#: lib/html-forms.php:1481
 msgid "未登録のユーザーさんです。"
 msgstr ""
 
-#: lib/html-forms.php:1487
+#: lib/html-forms.php:1483
 msgid "ログイン・登録はこちら→"
 msgstr ""
 
-#: lib/html-forms.php:1489
+#: lib/html-forms.php:1485
 msgid "ログインページ"
 msgstr ""
 
-#: lib/html-forms.php:1494
+#: lib/html-forms.php:1490
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr ""
 
-#: lib/html-forms.php:1494
+#: lib/html-forms.php:1490
 msgid "プロフィール設定画面"
 msgstr ""
 
-#: lib/html-forms.php:1494
+#: lib/html-forms.php:1490
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr ""
 
-#: lib/html-forms.php:1524
+#: lib/html-forms.php:1520
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1750
+#: lib/html-forms.php:1746
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1753
+#: lib/html-forms.php:1749
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1756
+#: lib/html-forms.php:1752
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1759
+#: lib/html-forms.php:1755
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1762
+#: lib/html-forms.php:1758
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1796
-#: lib/shortcodes.php:996
+#: lib/html-forms.php:1801
+#: lib/shortcodes.php:974
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -2803,7 +2807,7 @@ msgstr ""
 #: lib/widgets/fb-like-box.php:99
 #: lib/widgets/item-ranking.php:64
 #: lib/widgets/mobile-text.php:73
-#: lib/widgets/navi-entries.php:95
+#: lib/widgets/navi-entries.php:101
 #: lib/widgets/pc-text.php:72
 #: lib/widgets/recent-comments.php:141
 #: lib/widgets/recommended-cards.php:87
@@ -4730,7 +4734,7 @@ msgstr ""
 msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
 msgstr ""
 
-#: lib/page-settings/all-funcs.php:258
+#: lib/page-settings/all-funcs.php:250
 msgid "Y.m.d"
 msgstr ""
 
@@ -5812,7 +5816,7 @@ msgstr ""
 #: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:121
 #: lib/page-settings/sns-share-forms-top.php:108
-#: lib/shortcodes.php:471
+#: lib/shortcodes.php:470
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
 msgstr ""
@@ -6034,10 +6038,10 @@ msgstr ""
 #: blocks/src/block/blank-box/edit.js:61
 #: blocks/src/block/button-wrap/edit.js:151
 #: blocks/src/block/button/edit.js:154
-#: blocks/src/block/faq/edit.js:114
+#: blocks/src/block/faq/edit.js:168
 #: blocks/src/block/icon-list/edit.js:139
 #: blocks/src/block/timeline/edit.js:109
-#: blocks/src/block/toggle-box/edit.js:71
+#: blocks/src/block/toggle-box/edit.js:116
 #: blocks/src/micro/micro-balloon/edit.js:135
 msgid "ボーダー色"
 msgstr ""
@@ -7589,12 +7593,12 @@ msgid "ボタンを表示しない（ミドルメニューのみ）"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:34
-#: lib/settings.php:293
+#: lib/settings.php:309
 msgid "ヘッダーモバイルボタン"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:35
-#: lib/settings.php:295
+#: lib/settings.php:311
 msgid "フッターモバイルボタン"
 msgstr ""
 
@@ -8186,6 +8190,7 @@ msgstr ""
 
 #: lib/page-settings/recommended-forms.php:61
 #: blocks/src/block/box-menu/edit.js:40
+#: blocks/src/block/navicard/edit.js:43
 #: blocks/src/block/profile/edit.js:32
 #: blocks/src/block/ranking/edit.js:27
 #: blocks/src/block/template/edit.js:27
@@ -8468,10 +8473,11 @@ msgstr ""
 
 #: lib/page-settings/single-forms.php:156
 #: lib/page-settings/single-forms.php:322
-#: lib/widgets/navi-entries.php:116
+#: lib/widgets/navi-entries.php:122
 #: lib/widgets/new-entries.php:161
 #: lib/widgets/popular-entries.php:189
 #: lib/widgets/related-entries.php:182
+#: blocks/src/block/navicard/edit.js:101
 #: blocks/src/block/new-list/edit.js:133
 #: blocks/src/block/popular-list/edit.js:213
 msgid "表示タイプ"
@@ -10417,75 +10423,75 @@ msgstr ""
 msgid "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。"
 msgstr ""
 
-#: lib/settings.php:291
+#: lib/settings.php:307
 msgid "ヘッダーメニュー"
 msgstr ""
 
-#: lib/settings.php:292
+#: lib/settings.php:308
 msgid "ヘッダーモバイルメニュー"
 msgstr ""
 
-#: lib/settings.php:294
+#: lib/settings.php:310
 msgid "フッターメニュー"
 msgstr ""
 
-#: lib/settings.php:296
+#: lib/settings.php:312
 msgid "モバイルスライドインメニュー"
 msgstr ""
 
-#: lib/settings.php:544
+#: lib/settings.php:557
 msgid "通常のカード表示"
 msgstr ""
 
-#: lib/settings.php:547
+#: lib/settings.php:560
 msgid "カードの上下に破線の区切り線が表示されます。"
 msgstr ""
 
-#: lib/settings.php:548
+#: lib/settings.php:561
 msgid "区切り線"
 msgstr ""
 
-#: lib/settings.php:548
+#: lib/settings.php:561
 msgid "（縦型表示時のみ）"
 msgstr ""
 
-#: lib/settings.php:550
+#: lib/settings.php:563
 msgid "カード自体を罫線で囲みます。"
 msgstr ""
 
-#: lib/settings.php:551
+#: lib/settings.php:564
 msgid "囲み枠"
 msgstr ""
 
-#: lib/settings.php:553
+#: lib/settings.php:566
 msgid "大きなサムネイル画像の下にタイトルを表示します。"
 msgstr ""
 
-#: lib/settings.php:554
+#: lib/settings.php:567
 msgid "大きなサムネイル"
 msgstr ""
 
-#: lib/settings.php:556
+#: lib/settings.php:569
 msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
 msgstr ""
 
-#: lib/settings.php:557
+#: lib/settings.php:570
 msgid "タイトルを重ねた大きなサムネイル"
 msgstr ""
 
-#: lib/settings.php:566
+#: lib/settings.php:579
 msgid "画像のみ"
 msgstr ""
 
-#: lib/settings.php:567
+#: lib/settings.php:580
 msgid "画像中央に白文字タイトル"
 msgstr ""
 
-#: lib/settings.php:568
+#: lib/settings.php:581
 msgid "画像中央にラベルでタイトル"
 msgstr ""
 
-#: lib/settings.php:569
+#: lib/settings.php:582
 msgid "画像下段を黒背景にしタイトルを重ねる"
 msgstr ""
 
@@ -10599,11 +10605,11 @@ msgstr ""
 msgid "歳"
 msgstr ""
 
-#: lib/shortcodes.php:477
+#: lib/shortcodes.php:476
 msgid "月別アーカイブ"
 msgstr ""
 
-#: lib/shortcodes.php:967
+#: lib/shortcodes.php:946
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr ""
 
@@ -10813,7 +10819,7 @@ msgstr ""
 
 #: lib/tinymce/shortcodes.php:80
 #: lib/widgets/box-menus.php:80
-#: lib/widgets/navi-entries.php:102
+#: lib/widgets/navi-entries.php:108
 #: lib/widgets/recommended-cards.php:94
 #: blocks/src/toolbutton/dropdown-shortcodes.js:65
 msgid "メニュー名"
@@ -10927,53 +10933,53 @@ msgstr ""
 msgid "キャンペーン期間中のみ表示"
 msgstr ""
 
-#: lib/utils.php:804
+#: lib/utils.php:801
 msgid "スクロールできます"
 msgstr ""
 
-#: lib/utils.php:892
+#: lib/utils.php:889
 msgid "公開"
 msgstr ""
 
-#: lib/utils.php:893
+#: lib/utils.php:890
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:2482
+#: lib/utils.php:2479
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2490
+#: lib/utils.php:2487
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2498
+#: lib/utils.php:2495
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2506
+#: lib/utils.php:2503
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2514
+#: lib/utils.php:2511
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2525
+#: lib/utils.php:2522
 msgid "%s年"
 msgstr ""
 
-#: lib/utils.php:2527
+#: lib/utils.php:2524
 msgid "%s年%sヶ月"
 msgstr ""
 
@@ -11316,7 +11322,7 @@ msgid "CTA見出し"
 msgstr ""
 
 #: lib/widgets/cta-box.php:113
-msgid "画像とメッセージのレイアウト（サイドバー以外）"
+msgid "画像とメッセージのレイアウト（サイドバー・フッター以外）"
 msgstr ""
 
 #: lib/widgets/cta-box.php:117
@@ -11559,6 +11565,7 @@ msgid "テキスト"
 msgstr ""
 
 #: lib/widgets/navi-entries.php:19
+#: blocks/src/block/navicard/index.js:22
 msgid "ナビカード"
 msgstr ""
 
@@ -11566,14 +11573,28 @@ msgstr ""
 msgid "ナビカードリストを表示するウィジェットです。"
 msgstr ""
 
-#: lib/widgets/navi-entries.php:125
+#: lib/widgets/navi-entries.php:131
+#: lib/widgets/new-entries.php:170
+#: lib/widgets/popular-entries.php:225
+#: lib/widgets/related-entries.php:203
+msgid "横型表示"
+msgstr ""
+
+#: lib/widgets/navi-entries.php:132
+#: lib/widgets/new-entries.php:171
+#: lib/widgets/popular-entries.php:226
+#: lib/widgets/related-entries.php:204
+msgid "（「大きなサムネイル」との使用がお勧め）"
+msgstr ""
+
+#: lib/widgets/navi-entries.php:138
 #: lib/widgets/new-entries.php:177
 #: lib/widgets/popular-entries.php:232
 #: lib/widgets/related-entries.php:210
 msgid "タイトルを太字にする"
 msgstr ""
 
-#: lib/widgets/navi-entries.php:131
+#: lib/widgets/navi-entries.php:144
 #: lib/widgets/new-entries.php:183
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
@@ -11594,18 +11615,6 @@ msgstr ""
 
 #: lib/widgets/new-entries.php:147
 msgid "新着記事のタイトル"
-msgstr ""
-
-#: lib/widgets/new-entries.php:170
-#: lib/widgets/popular-entries.php:225
-#: lib/widgets/related-entries.php:203
-msgid "横型表示"
-msgstr ""
-
-#: lib/widgets/new-entries.php:171
-#: lib/widgets/popular-entries.php:226
-#: lib/widgets/related-entries.php:204
-msgid "（「大きなサムネイル」との使用がお勧め）"
 msgstr ""
 
 #: lib/widgets/new-entries.php:189
@@ -11753,7 +11762,7 @@ msgid "例：Cocoon設定で「h2見出しまで」と設定されている場�
 msgstr ""
 
 #: lib/_defins.php:46
-#: blocks/src/block/faq/edit.js:79
+#: blocks/src/block/faq/edit.js:127
 msgid "設定"
 msgstr ""
 
@@ -11815,15 +11824,15 @@ msgstr ""
 msgid "広告コードをそのまま表示"
 msgstr ""
 
-#: lib/_defins.php:313
+#: lib/_defins.php:314
 msgid "本当に削除してもいいですか？"
 msgstr ""
 
-#: lib/_defins.php:334
+#: lib/_defins.php:335
 msgid "www.amazon.co.jp"
 msgstr ""
 
-#: lib/_defins.php:337
+#: lib/_defins.php:338
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr ""
 
@@ -11903,190 +11912,486 @@ msgstr ""
 msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適応する）</small>"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:50
-msgid "薄背景"
+#: skins/skin-grayish-topfull/functions.php:2013
+msgid "サイトテキストグレー"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:54
-msgid "ストライプ"
+#: skins/skin-grayish-topfull/functions.php:2014
+msgid "ライトグレーT0"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:58
-msgid "方眼紙"
+#: skins/skin-grayish-topfull/functions.php:2015
+msgid "ライトブルーT0"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:66
-msgid "ステッチ"
+#: skins/skin-grayish-topfull/functions.php:2016
+msgid "ライトブルーT70"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:70
-msgid "かぎ括弧"
+#: skins/skin-grayish-topfull/functions.php:2017
+msgid "ライトブルーT90"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:74
-msgid "角括弧"
+#: skins/skin-grayish-topfull/functions.php:2018
+msgid "シェイドブルーS30"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:82
-msgid "ずれた二重線"
+#: skins/skin-grayish-topfull/functions.php:2019
+msgid "シェイドブルーS50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:86
-msgid "角三角"
+#: skins/skin-grayish-topfull/functions.php:2020
+msgid "PinkT0"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:90
-msgid "クリップ"
+#: skins/skin-grayish-topfull/functions.php:2021
+msgid "PinkT50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:94
-msgid "ホチキス"
+#: skins/skin-grayish-topfull/functions.php:2022
+msgid "PinkT90"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:98
-msgid "ホチキス左上"
+#: skins/skin-grayish-topfull/functions.php:2023
+msgid "PinkS50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:102
-msgid "穴あけパンチ"
+#: skins/skin-grayish-topfull/functions.php:2024
+msgid "RedT0"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:106
-msgid "手書き風"
+#: skins/skin-grayish-topfull/functions.php:2025
+msgid "RedT50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:110
-msgid "上線"
+#: skins/skin-grayish-topfull/functions.php:2026
+msgid "YellowT0"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:114
-msgid "付箋"
+#: skins/skin-grayish-topfull/functions.php:2027
+msgid "YellowT50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:118
-msgid "左吹き出し"
+#: skins/skin-grayish-topfull/functions.php:2028
+msgid "YellowT90"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:122
-msgid "右吹き出し"
+#: skins/skin-grayish-topfull/functions.php:2029
+msgid "YellowS50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:126
-msgid "上吹き出し"
+#: skins/skin-grayish-topfull/functions.php:2030
+msgid "BeigeT0"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:130
-msgid "下吹き出し"
+#: skins/skin-grayish-topfull/functions.php:2031
+msgid "BeigeT50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:134
-msgid "情報"
+#: skins/skin-grayish-topfull/functions.php:2032
+msgid "BeigeT90"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:138
-msgid "質問"
+#: skins/skin-grayish-topfull/functions.php:2033
+msgid "BeigeS50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:142
-msgid "アラート"
+#: skins/skin-grayish-topfull/functions.php:2034
+msgid "GreenT0"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:162
-msgid "グッド"
+#: skins/skin-grayish-topfull/functions.php:2035
+msgid "GreenT50"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:166
-msgid "バッド"
+#: skins/skin-grayish-topfull/functions.php:2036
+msgid "GreenT90"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:181
+#: skins/skin-grayish-topfull/functions.php:2037
+msgid "GreenS30"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:2038
+msgid "GreenS50"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:2081
+msgid "横スクロールできます"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:46
 msgid "実線"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:185
+#: blocks/src/block-extension/style-extension/border01.js:50
 msgid "二重線"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:189
+#: blocks/src/block-extension/style-extension/border01.js:54
 msgid "破線"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:193
+#: blocks/src/block-extension/style-extension/border01.js:58
 msgid "点線"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:197
+#: blocks/src/block-extension/style-extension/border01.js:62
 msgid "薄太"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:201
+#: blocks/src/block-extension/style-extension/border01.js:66
 msgid "微凸"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:205
+#: blocks/src/block-extension/style-extension/border01.js:70
 msgid "実線(角丸小)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:209
+#: blocks/src/block-extension/style-extension/border01.js:74
 msgid "二重線(角丸小)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:213
+#: blocks/src/block-extension/style-extension/border01.js:78
 msgid "破線(角丸小)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:217
+#: blocks/src/block-extension/style-extension/border01.js:82
 msgid "点線(角丸小)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:221
+#: blocks/src/block-extension/style-extension/border01.js:86
 msgid "薄太(角丸小)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:225
+#: blocks/src/block-extension/style-extension/border01.js:90
 msgid "微凸(角丸小)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:229
+#: blocks/src/block-extension/style-extension/border01.js:94
 msgid "実線(角丸大)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:233
+#: blocks/src/block-extension/style-extension/border01.js:98
 msgid "二重線(角丸大)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:237
+#: blocks/src/block-extension/style-extension/border01.js:102
 msgid "破線(角丸大)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:241
+#: blocks/src/block-extension/style-extension/border01.js:106
 msgid "点線(角丸大)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:245
+#: blocks/src/block-extension/style-extension/border01.js:110
 msgid "薄太(角丸大)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:249
+#: blocks/src/block-extension/style-extension/border01.js:114
 msgid "微凸(角丸大)"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:261
+#: blocks/src/block-extension/style-extension/border01.js:118
+msgid "白抜き灰"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:122
+msgid "白抜き赤"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:126
+msgid "白抜きピンク"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:130
+msgid "白抜き紺"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:134
+msgid "白抜き青"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:138
+msgid "白抜き紫"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:142
+msgid "白抜きオレンジ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:146
+msgid "白抜き黄"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:150
+msgid "白抜き緑"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/border01.js:161
 msgid "[C] ボーダー設定"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:273
-#: blocks/src/block-extension/style-extension/block.js:341
+#: blocks/src/block-extension/style-extension/border01.js:171
+#: blocks/src/block-extension/style-extension/border01.js:234
 msgid "ボーダーをクリア"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:346
+#: blocks/src/block-extension/style-extension/margin.js:51
+msgid "ブロック下余白"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/margin.js:53
+msgid "[C] ブロック下余白"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/margin.js:59
+msgid "未設定"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/margin.js:62
+msgid "文字高の"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/margin.js:64
+msgid "倍の余白設定"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/margin.js:93
+msgid "余白をクリア"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:46
+msgid "薄背景"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:50
+msgid "ストライプ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:54
+msgid "方眼紙"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:62
+msgid "ステッチ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:66
+msgid "かぎ括弧"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:70
+msgid "角括弧"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:78
+msgid "ずれた二重線"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:82
+msgid "角三角"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:86
+msgid "クリップ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:90
+msgid "ホチキス"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:94
+msgid "ホチキス左上"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:98
+msgid "穴あけパンチ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:102
+msgid "手書き風"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:106
+msgid "上線"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:110
+msgid "付箋"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:114
+msgid "左吹き出し"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:118
+msgid "右吹き出し"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:122
+msgid "上吹き出し"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:126
+msgid "下吹き出し"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:130
+#: blocks/src/block-extension/style-extension/style02.js:82
+msgid "情報"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:134
+msgid "質問"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:138
+msgid "アラート"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:158
+msgid "グッド"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:162
+msgid "バッド"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:170
+msgid "プライマリー"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:174
+msgid "サクセス"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:178
+msgid "インフォ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:182
+msgid "ワーニング"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:186
+msgid "デンジャー"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:190
+msgid "セカンダリー"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:194
+msgid "ライト"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:198
+msgid "ダーク"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:202
+msgid "付箋灰"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:206
+msgid "付箋赤"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:210
+msgid "付箋青"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:214
+msgid "付箋黄"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:218
+msgid "付箋緑"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style01.js:229
+#: blocks/src/block-extension/style-extension/style02.js:137
 msgid "[C] スタイル"
 msgstr ""
 
-#: blocks/src/block-extension/style-extension/block.js:358
-#: blocks/src/block-extension/style-extension/block.js:425
+#: blocks/src/block-extension/style-extension/style01.js:239
+#: blocks/src/block-extension/style-extension/style01.js:301
+#: blocks/src/block-extension/style-extension/style02.js:147
+#: blocks/src/block-extension/style-extension/style02.js:213
 msgid "スタイルをクリア"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:46
+msgid "丸数字"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:50
+msgid "順位"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:54
+msgid "ステップ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:62
+msgid "チェック有効"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:66
+msgid "チェック無効"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:70
+msgid "丸"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:74
+msgid "三角"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:78
+msgid "バツ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:86
+msgid "疑問"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:90
+msgid "警告"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:94
+msgid "肉球"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:98
+msgid "サムアップ"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:102
+msgid "サムダウン"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:110
+msgid "男性"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:114
+msgid "女性"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:118
+msgid "ハート"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:122
+msgid "ハートブレイク"
+msgstr ""
+
+#: blocks/src/block-extension/style-extension/style02.js:126
+msgid "禁止"
 msgstr ""
 
 #: blocks/src/block-universal/caption-box/edit.js:69
@@ -12132,11 +12437,11 @@ msgstr ""
 #: blocks/src/block/blank-box/edit.js:58
 #: blocks/src/block/button-wrap/edit.js:138
 #: blocks/src/block/button/edit.js:141
-#: blocks/src/block/faq/edit.js:101
+#: blocks/src/block/faq/edit.js:155
 #: blocks/src/block/icon-list/edit.js:131
 #: blocks/src/block/tab-box/edit.js:138
 #: blocks/src/block/timeline/edit.js:91
-#: blocks/src/block/toggle-box/edit.js:68
+#: blocks/src/block/toggle-box/edit.js:113
 #: blocks/src/micro/micro-balloon/edit.js:122
 #: blocks/src/micro/micro-text/edit.js:90
 #: blocks/src/old/button-1/block.js:141
@@ -12396,36 +12701,36 @@ msgstr ""
 msgid "比較ボックスの右。"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:80
+#: blocks/src/block/faq/edit.js:130
 msgid "質問ラベル"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:83
+#: blocks/src/block/faq/edit.js:134
 msgid "Q"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:87
-#: blocks/src/block/faq/edit.js:95
+#: blocks/src/block/faq/edit.js:138
+#: blocks/src/block/faq/edit.js:149
 msgid "※2文字以下推奨"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:90
+#: blocks/src/block/faq/edit.js:143
 msgid "回答ラベル"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:93
+#: blocks/src/block/faq/edit.js:147
 msgid "A"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:104
+#: blocks/src/block/faq/edit.js:158
 msgid "質問ラベル色"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:109
+#: blocks/src/block/faq/edit.js:163
 msgid "回答ラベル色"
 msgstr ""
 
-#: blocks/src/block/faq/edit.js:143
+#: blocks/src/block/faq/edit.js:197
 msgid "質問を入力してください…"
 msgstr ""
 
@@ -12492,6 +12797,7 @@ msgid "表示するカテゴリーをカンマ区切りで指定"
 msgstr ""
 
 #: blocks/src/block/info-list/edit.js:87
+#: blocks/src/block/navicard/edit.js:99
 #: blocks/src/block/new-list/edit.js:123
 #: blocks/src/block/popular-list/edit.js:196
 msgid "基本設定"
@@ -12517,6 +12823,76 @@ msgstr ""
 msgid "新着情報の一覧を表示します。"
 msgstr ""
 
+#: blocks/src/block/navicard/edit.js:63
+msgid "ダッシュボードメニューの「外観」→「メニュー」からメニューを作成してください。"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:68
+msgid "メニューが登録されていません。"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:70
+msgid "メニューを選択してください。"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:106
+#: blocks/src/block/new-list/edit.js:138
+#: blocks/src/block/popular-list/edit.js:218
+msgid "通常のリスト"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:110
+#: blocks/src/block/new-list/edit.js:142
+#: blocks/src/block/popular-list/edit.js:222
+msgid "カードの上下に区切り線を入れる"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:110
+#: blocks/src/block/new-list/edit.js:142
+#: blocks/src/block/popular-list/edit.js:222
+msgid "（縦型表示のみ）"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:114
+#: blocks/src/block/new-list/edit.js:146
+#: blocks/src/block/popular-list/edit.js:226
+msgid "カードに枠線を表示する"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:118
+#: blocks/src/block/new-list/edit.js:150
+#: blocks/src/block/popular-list/edit.js:230
+msgid "大きなサムネイル表示"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:122
+#: blocks/src/block/new-list/edit.js:154
+#: blocks/src/block/popular-list/edit.js:234
+msgid "大きなサムネイルにタイトルを重ねる"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:129
+#: blocks/src/block/new-list/edit.js:200
+#: blocks/src/block/popular-list/edit.js:241
+msgid "記事タイトルを太字にする"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:134
+#: blocks/src/block/new-list/edit.js:205
+#: blocks/src/block/popular-list/edit.js:246
+msgid "カードに矢印を表示する"
+msgstr ""
+
+#: blocks/src/block/navicard/edit.js:139
+#: blocks/src/block/new-list/edit.js:210
+#: blocks/src/block/popular-list/edit.js:251
+msgid "横並び表示"
+msgstr ""
+
+#: blocks/src/block/navicard/index.js:24
+msgid "登録されているメニューからナビカードを表示します。"
+msgstr ""
+
 #: blocks/src/block/new-list/edit.js:83
 #: blocks/src/block/popular-list/edit.js:82
 msgid "表示カテゴリー選択"
@@ -12530,31 +12906,6 @@ msgstr ""
 #: blocks/src/block/new-list/edit.js:125
 #: blocks/src/block/popular-list/edit.js:198
 msgid "表示する記事の数"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:138
-#: blocks/src/block/popular-list/edit.js:218
-msgid "通常のリスト"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:142
-#: blocks/src/block/popular-list/edit.js:222
-msgid "カードの上下に区切り線を入れる"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:146
-#: blocks/src/block/popular-list/edit.js:226
-msgid "カードに枠線を表示する"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:150
-#: blocks/src/block/popular-list/edit.js:230
-msgid "大きなサムネイル表示"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:154
-#: blocks/src/block/popular-list/edit.js:234
-msgid "大きなサムネイルにタイトルを重ねる"
 msgstr ""
 
 #: blocks/src/block/new-list/edit.js:160
@@ -12583,21 +12934,6 @@ msgstr ""
 
 #: blocks/src/block/new-list/edit.js:192
 msgid "読み飛ばし"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:200
-#: blocks/src/block/popular-list/edit.js:241
-msgid "記事タイトルを太字にする"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:205
-#: blocks/src/block/popular-list/edit.js:246
-msgid "カードに矢印を表示する"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:210
-#: blocks/src/block/popular-list/edit.js:251
-msgid "横並び表示"
 msgstr ""
 
 #: blocks/src/block/new-list/edit.js:217
@@ -12779,7 +13115,7 @@ msgstr ""
 msgid "時系列を表現するためのブロックです。"
 msgstr ""
 
-#: blocks/src/block/toggle-box/deprecated.js:21
+#: blocks/src/block/toggle-box/deprecated.js:19
 #: blocks/src/old/toggle-box/block.js:15
 msgid "トグルボックス見出し"
 msgstr ""
@@ -12814,362 +13150,362 @@ msgstr ""
 msgid "こちらをクリックして設定変更。この入力は公開ページで反映されません。"
 msgstr ""
 
-#: blocks/src/helpers.js:257
+#: blocks/src/helpers.js:258
 msgid "fab-info-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:261
+#: blocks/src/helpers.js:262
 msgid "fab-question-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:265
+#: blocks/src/helpers.js:266
 msgid "fab-exclamation-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:269
+#: blocks/src/helpers.js:270
 msgid "fab-pencil"
 msgstr ""
 
-#: blocks/src/helpers.js:273
+#: blocks/src/helpers.js:274
 msgid "fab-edit"
 msgstr ""
 
-#: blocks/src/helpers.js:277
+#: blocks/src/helpers.js:278
 msgid "fab-comment"
 msgstr ""
 
-#: blocks/src/helpers.js:281
+#: blocks/src/helpers.js:282
 msgid "fab-ok"
 msgstr ""
 
-#: blocks/src/helpers.js:285
+#: blocks/src/helpers.js:286
 msgid "fab-bad"
 msgstr ""
 
-#: blocks/src/helpers.js:289
+#: blocks/src/helpers.js:290
 msgid "fab-thumbs-up"
 msgstr ""
 
-#: blocks/src/helpers.js:293
+#: blocks/src/helpers.js:294
 msgid "fab-thumbs-down"
 msgstr ""
 
-#: blocks/src/helpers.js:297
-#: blocks/src/helpers.js:472
+#: blocks/src/helpers.js:298
+#: blocks/src/helpers.js:473
 msgid "fab-check"
 msgstr ""
 
-#: blocks/src/helpers.js:301
-#: blocks/src/helpers.js:536
+#: blocks/src/helpers.js:302
+#: blocks/src/helpers.js:537
 msgid "fab-star"
 msgstr ""
 
-#: blocks/src/helpers.js:305
+#: blocks/src/helpers.js:306
 msgid "fab-bell"
 msgstr ""
 
-#: blocks/src/helpers.js:309
+#: blocks/src/helpers.js:310
 msgid "fab-trophy"
 msgstr ""
 
-#: blocks/src/helpers.js:313
+#: blocks/src/helpers.js:314
 msgid "fab-lightbulb"
 msgstr ""
 
-#: blocks/src/helpers.js:317
+#: blocks/src/helpers.js:318
 msgid "fab-graduation-cap"
 msgstr ""
 
-#: blocks/src/helpers.js:321
+#: blocks/src/helpers.js:322
 msgid "fab-bolt"
 msgstr ""
 
-#: blocks/src/helpers.js:325
+#: blocks/src/helpers.js:326
 msgid "fab-bookmark"
 msgstr ""
 
-#: blocks/src/helpers.js:329
+#: blocks/src/helpers.js:330
 msgid "fab-book"
 msgstr ""
 
-#: blocks/src/helpers.js:333
+#: blocks/src/helpers.js:334
 msgid "fab-download"
 msgstr ""
 
-#: blocks/src/helpers.js:337
+#: blocks/src/helpers.js:338
 msgid "fab-coffee"
 msgstr ""
 
-#: blocks/src/helpers.js:341
+#: blocks/src/helpers.js:342
 msgid "fab-amazon"
 msgstr ""
 
-#: blocks/src/helpers.js:345
+#: blocks/src/helpers.js:346
 msgid "fab-user"
 msgstr ""
 
-#: blocks/src/helpers.js:349
+#: blocks/src/helpers.js:350
 msgid "fab-envelope"
 msgstr ""
 
-#: blocks/src/helpers.js:353
+#: blocks/src/helpers.js:354
 msgid "fab-flag"
 msgstr ""
 
-#: blocks/src/helpers.js:357
+#: blocks/src/helpers.js:358
 msgid "fab-ban"
 msgstr ""
 
-#: blocks/src/helpers.js:361
+#: blocks/src/helpers.js:362
 msgid "fab-calendar"
 msgstr ""
 
-#: blocks/src/helpers.js:365
+#: blocks/src/helpers.js:366
 msgid "fab-clock"
 msgstr ""
 
-#: blocks/src/helpers.js:369
+#: blocks/src/helpers.js:370
 msgid "fab-cutlery"
 msgstr ""
 
-#: blocks/src/helpers.js:373
-#: blocks/src/helpers.js:544
+#: blocks/src/helpers.js:374
+#: blocks/src/helpers.js:545
 msgid "fab-heart"
 msgstr ""
 
-#: blocks/src/helpers.js:377
+#: blocks/src/helpers.js:378
 msgid "fab-camera"
 msgstr ""
 
-#: blocks/src/helpers.js:381
+#: blocks/src/helpers.js:382
 msgid "fab-search"
 msgstr ""
 
-#: blocks/src/helpers.js:385
+#: blocks/src/helpers.js:386
 msgid "fab-file-text"
 msgstr ""
 
-#: blocks/src/helpers.js:389
+#: blocks/src/helpers.js:390
 msgid "fab-folder"
 msgstr ""
 
-#: blocks/src/helpers.js:393
+#: blocks/src/helpers.js:394
 msgid "fab-tag"
 msgstr ""
 
-#: blocks/src/helpers.js:397
+#: blocks/src/helpers.js:398
 msgid "fab-car"
 msgstr ""
 
-#: blocks/src/helpers.js:401
+#: blocks/src/helpers.js:402
 msgid "fab-truck"
 msgstr ""
 
-#: blocks/src/helpers.js:405
+#: blocks/src/helpers.js:406
 msgid "fab-bicycle"
 msgstr ""
 
-#: blocks/src/helpers.js:409
+#: blocks/src/helpers.js:410
 msgid "fab-motorcycle"
 msgstr ""
 
-#: blocks/src/helpers.js:413
+#: blocks/src/helpers.js:414
 msgid "fab-bus"
 msgstr ""
 
-#: blocks/src/helpers.js:417
+#: blocks/src/helpers.js:418
 msgid "fab-plane"
 msgstr ""
 
-#: blocks/src/helpers.js:421
+#: blocks/src/helpers.js:422
 msgid "fab-train"
 msgstr ""
 
-#: blocks/src/helpers.js:425
+#: blocks/src/helpers.js:426
 msgid "fab-subway"
 msgstr ""
 
-#: blocks/src/helpers.js:429
+#: blocks/src/helpers.js:430
 msgid "fab-taxi"
 msgstr ""
 
-#: blocks/src/helpers.js:433
+#: blocks/src/helpers.js:434
 msgid "fab-ship"
 msgstr ""
 
-#: blocks/src/helpers.js:437
+#: blocks/src/helpers.js:438
 msgid "fab-jpy"
 msgstr ""
 
-#: blocks/src/helpers.js:441
+#: blocks/src/helpers.js:442
 msgid "fab-usd"
 msgstr ""
 
-#: blocks/src/helpers.js:445
+#: blocks/src/helpers.js:446
 msgid "fab-eur"
 msgstr ""
 
-#: blocks/src/helpers.js:449
+#: blocks/src/helpers.js:450
 msgid "fab-btc"
 msgstr ""
 
-#: blocks/src/helpers.js:453
+#: blocks/src/helpers.js:454
 msgid "fab-apple"
 msgstr ""
 
-#: blocks/src/helpers.js:457
+#: blocks/src/helpers.js:458
 msgid "fab-android"
 msgstr ""
 
-#: blocks/src/helpers.js:461
+#: blocks/src/helpers.js:462
 msgid "fab-wordpress"
 msgstr ""
 
-#: blocks/src/helpers.js:468
+#: blocks/src/helpers.js:469
 msgid "fab-caret-right"
 msgstr ""
 
-#: blocks/src/helpers.js:476
+#: blocks/src/helpers.js:477
 msgid "fab-check-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:480
+#: blocks/src/helpers.js:481
 msgid "fab-check-circle-o"
 msgstr ""
 
-#: blocks/src/helpers.js:484
+#: blocks/src/helpers.js:485
 msgid "fab-check-square"
 msgstr ""
 
-#: blocks/src/helpers.js:488
+#: blocks/src/helpers.js:489
 msgid "fab-check-square-o"
 msgstr ""
 
-#: blocks/src/helpers.js:492
+#: blocks/src/helpers.js:493
 msgid "fab-caret-square-o-right"
 msgstr ""
 
-#: blocks/src/helpers.js:496
+#: blocks/src/helpers.js:497
 msgid "fab-arrow-right"
 msgstr ""
 
-#: blocks/src/helpers.js:500
+#: blocks/src/helpers.js:501
 msgid "fab-angle-right"
 msgstr ""
 
-#: blocks/src/helpers.js:504
+#: blocks/src/helpers.js:505
 msgid "fab-angle-double-right"
 msgstr ""
 
-#: blocks/src/helpers.js:508
+#: blocks/src/helpers.js:509
 msgid "fab-arrow-circle-right"
 msgstr ""
 
-#: blocks/src/helpers.js:512
+#: blocks/src/helpers.js:513
 msgid "fab-arrow-circle-o-right"
 msgstr ""
 
-#: blocks/src/helpers.js:516
+#: blocks/src/helpers.js:517
 msgid "fab-play-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:520
+#: blocks/src/helpers.js:521
 msgid "fab-play-circle-o"
 msgstr ""
 
-#: blocks/src/helpers.js:524
+#: blocks/src/helpers.js:525
 msgid "fab-chevron-right"
 msgstr ""
 
-#: blocks/src/helpers.js:528
+#: blocks/src/helpers.js:529
 msgid "fab-chevron-circle-right"
 msgstr ""
 
-#: blocks/src/helpers.js:532
+#: blocks/src/helpers.js:533
 msgid "fab-hand-o-right"
 msgstr ""
 
-#: blocks/src/helpers.js:540
+#: blocks/src/helpers.js:541
 msgid "fab-star-o"
 msgstr ""
 
-#: blocks/src/helpers.js:548
+#: blocks/src/helpers.js:549
 msgid "fab-heart-o"
 msgstr ""
 
-#: blocks/src/helpers.js:552
+#: blocks/src/helpers.js:553
 msgid "fab-square"
 msgstr ""
 
-#: blocks/src/helpers.js:556
+#: blocks/src/helpers.js:557
 msgid "fab-square-o"
 msgstr ""
 
-#: blocks/src/helpers.js:560
+#: blocks/src/helpers.js:561
 msgid "fab-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:564
+#: blocks/src/helpers.js:565
 msgid "fab-circle-o"
 msgstr ""
 
-#: blocks/src/helpers.js:568
+#: blocks/src/helpers.js:569
 msgid "fab-dot-circle-o"
 msgstr ""
 
-#: blocks/src/helpers.js:572
+#: blocks/src/helpers.js:573
 msgid "fab-plus"
 msgstr ""
 
-#: blocks/src/helpers.js:576
+#: blocks/src/helpers.js:577
 msgid "fab-plus-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:580
+#: blocks/src/helpers.js:581
 msgid "fab-plus-square"
 msgstr ""
 
-#: blocks/src/helpers.js:584
+#: blocks/src/helpers.js:585
 msgid "fab-plus-square-o"
 msgstr ""
 
-#: blocks/src/helpers.js:588
+#: blocks/src/helpers.js:589
 msgid "fab-minus"
 msgstr ""
 
-#: blocks/src/helpers.js:592
+#: blocks/src/helpers.js:593
 msgid "fab-minus-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:596
+#: blocks/src/helpers.js:597
 msgid "fab-minus-square"
 msgstr ""
 
-#: blocks/src/helpers.js:600
+#: blocks/src/helpers.js:601
 msgid "fab-minus-square-o"
 msgstr ""
 
-#: blocks/src/helpers.js:604
+#: blocks/src/helpers.js:605
 msgid "fab-times"
 msgstr ""
 
-#: blocks/src/helpers.js:608
+#: blocks/src/helpers.js:609
 msgid "fab-times-circle"
 msgstr ""
 
-#: blocks/src/helpers.js:612
+#: blocks/src/helpers.js:613
 msgid "fab-times-circle-o"
 msgstr ""
 
-#: blocks/src/helpers.js:616
+#: blocks/src/helpers.js:617
 msgid "fab-window-close"
 msgstr ""
 
-#: blocks/src/helpers.js:620
+#: blocks/src/helpers.js:621
 msgid "fab-window-close-o"
 msgstr ""
 
-#: blocks/src/helpers.js:624
+#: blocks/src/helpers.js:625
 msgid "fab-paw"
 msgstr ""
 
@@ -13534,6 +13870,16 @@ msgstr ""
 #: blocks/src/block/info-list/block.json
 msgctxt "block keyword"
 msgid "info"
+msgstr ""
+
+#: blocks/src/block/navicard/block.json
+msgctxt "block keyword"
+msgid "navi"
+msgstr ""
+
+#: blocks/src/block/navicard/block.json
+msgctxt "block keyword"
+msgid "card"
 msgstr ""
 
 #: blocks/src/block/new-list/block.json
