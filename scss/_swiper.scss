@@ -23,10 +23,15 @@
 
   .card-title {
     font-size: 16px;
+  }
+
+  .card-title,
+  .card-snippet{
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+
   }
 
   // .card-content{
@@ -49,13 +54,16 @@
 
   &.large-thumb-on {
     .card-content {
-      max-height: 45%;
       overflow: hidden;
     }
 
     .card-title {
       font-size: 14px;
     }
+  }
+
+  .swiper-wrapper{
+    height: initial;
   }
 
   .swiper-button-next,

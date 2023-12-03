@@ -4,7 +4,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-import { THEME_NAME, BUTTON_BLOCK, colorValueToSlug } from '../../helpers';
+import { THEME_NAME, colorValueToSlug } from '../../helpers';
 import classnames from 'classnames';
 
 import {
@@ -15,8 +15,6 @@ import {
   useBlockProps,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-
-const { createBlock } = wp.blocks;
 
 const DEFAULT_MSG = __( 'トグルボックス見出し', THEME_NAME );
 
@@ -41,8 +39,8 @@ const v1 = {
     const { content, color, dateID } = attributes;
 
     return {
-      content: content,
-      dateID: dateID,
+      content,
+      dateID,
       backgroundColor: undefined,
       customBackgroundColor: undefined,
       textColor: undefined,
@@ -51,6 +49,7 @@ const v1 = {
       customBorderColor: undefined,
       fontSize: undefined,
       customFontSize: undefined,
+      notNestedStyle: false,
     };
   },
 
@@ -59,7 +58,7 @@ const v1 = {
     const classes = classnames( {
       'toggle-wrap': true,
       [ `tb-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
-      [ 'block-box' ]: true,
+      'block-box': true,
     } );
     return (
       <div className={ classes }>
@@ -68,7 +67,10 @@ const v1 = {
           className="toggle-checkbox"
           type="checkbox"
         />
-        <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+        <label
+          className="toggle-button"
+          htmlFor={ 'toggle-checkbox-' + dateID }
+        >
           <RichText.Content value={ content } />
         </label>
         <div className="toggle-content">
@@ -80,6 +82,12 @@ const v1 = {
 };
 
 const v2 = {
+  migrate( attributes ) {
+    return {
+      ...attributes,
+      notNestedStyle: false,
+    };
+  },
   save( { attributes } ) {
     const {
       content,
@@ -113,7 +121,7 @@ const v2 = {
     } );
 
     const blockProps = useBlockProps.save( {
-      className: className,
+      className,
     } );
 
     return (
@@ -123,7 +131,10 @@ const v2 = {
           className="toggle-checkbox"
           type="checkbox"
         />
-        <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+        <label
+          className="toggle-button"
+          htmlFor={ 'toggle-checkbox-' + dateID }
+        >
           <RichText.Content value={ content } />
         </label>
         <div className="toggle-content">
@@ -134,4 +145,109 @@ const v2 = {
   },
 };
 
-export default [ v2, v1 ];
+const v3 = {
+  attributes: {
+    content: {
+      type: 'string',
+      selector: 'div',
+      default: 'アコーディオン見出し',
+    },
+    dateID: {
+      type: 'string',
+      default: '',
+    },
+    backgroundColor: {
+      type: 'string',
+    },
+    textColor: {
+      type: 'string',
+    },
+    borderColor: {
+      type: 'string',
+    },
+    customBackgroundColor: {
+      type: 'string',
+    },
+    customTextColor: {
+      type: 'string',
+    },
+    customBorderColor: {
+      type: 'string',
+    },
+    fontSize: {
+      type: 'string',
+    },
+  },
+  migrate( attributes ) {
+    return {
+      ...attributes,
+      notNestedStyle: false,
+    };
+  },
+  save( { attributes } ) {
+    const {
+      content,
+      dateID,
+      backgroundColor,
+      textColor,
+      borderColor,
+      customBackgroundColor,
+      customTextColor,
+      customBorderColor,
+      fontSize,
+    } = attributes;
+
+    const backgroundClass = getColorClassName(
+      'background-color',
+      backgroundColor
+    );
+    const textClass = getColorClassName( 'color', textColor );
+    const borderClass = getColorClassName( 'border-color', borderColor );
+    const fontSizeClass = getFontSizeClass( fontSize );
+
+    const className = classnames( {
+      'toggle-wrap': true,
+      'toggle-box': true,
+      'block-box': true,
+      'has-text-color': textColor || customTextColor,
+      'has-background': backgroundColor || customBackgroundColor,
+      'has-border-color': borderColor || customBorderColor,
+      [ textClass ]: textClass,
+      [ backgroundClass ]: backgroundClass,
+      [ borderClass ]: borderClass,
+      [ fontSizeClass ]: fontSizeClass,
+    } );
+
+    const styles = {
+      '--cocoon-custom-background-color': customBackgroundColor || undefined,
+      '--cocoon-custom-text-color': customTextColor || undefined,
+      '--cocoon-custom-border-color': customBorderColor || undefined,
+    };
+
+    const blockProps = useBlockProps.save( {
+      className,
+      style: styles,
+    } );
+
+    return (
+      <div { ...blockProps }>
+        <input
+          id={ 'toggle-checkbox-' + dateID }
+          className="toggle-checkbox"
+          type="checkbox"
+        />
+        <label
+          className="toggle-button"
+          htmlFor={ 'toggle-checkbox-' + dateID }
+        >
+          <RichText.Content value={ content } />
+        </label>
+        <div className="toggle-content">
+          <InnerBlocks.Content />
+        </div>
+      </div>
+    );
+  },
+};
+
+export default [ v3, v2, v1 ];

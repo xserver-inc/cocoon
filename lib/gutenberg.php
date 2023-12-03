@@ -409,17 +409,17 @@ html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-button:before{
   color: <?php echo $color; ?>;
 }
 */
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-button{
     background-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
-html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-button,
+html .body .toggle-wrap.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .toggle-content{
     border-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-background-color:not(.not-nested-style) .toggle-content{
   background-color: <?php echo $color; ?>;
 }
-html .body .toggle-wrap.has-<?php echo $slug; ?>-color .toggle-content{
+html .body .toggle-wrap.has-<?php echo $slug; ?>-color:not(.not-nested-style) .toggle-content{
   color: <?php echo $color; ?>;
 }
 <?php //アイコンリストボックス ?>
@@ -530,23 +530,23 @@ html .body .timeline-box.has-<?php echo $slug; ?>-point-color .timeline-item::be
   background-color: <?php echo $color; ?>;
 }
 <?php //FAQ ?>
-.has-<?php echo $slug; ?>-border-color.is-style-accordion .faq-question {
+.has-<?php echo $slug; ?>-border-color.is-style-accordion:not(.not-nested-style) .faq-question {
   background-color: <?php echo $color; ?>;
 }
-html .body .has-<?php echo $slug; ?>-question-color .faq-question-label{
+html .body .has-<?php echo $slug; ?>-question-color:not(.not-nested-style) .faq-question-label{
   color: <?php echo $color; ?>;
 }
-html .body .has-<?php echo $slug; ?>-question-color.has-border-color .faq-question-label{
+html .body .has-<?php echo $slug; ?>-question-color.has-border-color:not(.not-nested-style) .faq-question-label{
   color: <?php echo $color; ?>;
 }
-html .body .has-<?php echo $slug; ?>-answer-color .faq-answer-label{
+html .body .has-<?php echo $slug; ?>-answer-color:not(.not-nested-style) .faq-answer-label{
   color: <?php echo $color; ?>;
 }
-html .body .is-style-square.has-<?php echo $slug; ?>-question-color .faq-question-label{
+html .body .is-style-square.has-<?php echo $slug; ?>-question-color:not(.not-nested-style) .faq-question-label{
   color: #fff;
   background-color: <?php echo $color; ?>;
 }
-html .body .is-style-square.has-<?php echo $slug; ?>-answer-color .faq-answer-label{
+html .body .is-style-square.has-<?php echo $slug; ?>-answer-color:not(.not-nested-style) .faq-answer-label{
   color: #fff;
   background-color: <?php echo $color; ?>;
 }
@@ -565,7 +565,6 @@ html .body .btn-wrap{
     border-color: transparent !important;
     font-size: 16px;
 }
-
 /*
 html .body .has-border-color .toggle-button{
     color: #fff;
@@ -590,6 +589,74 @@ html .body .btn-wrap.has-huge-font-size > a,
 html .body .btn-wrap.has-larger-font-size > a {
   font-size: 42px;
 }
+<?php // 各ブロックのネスト時のスタイル ?>
+<?php // アコーディオンボックス ?>
+.cocoon-block-toggle.not-nested-style {
+    background-color: transparent!important;
+}
+.cocoon-block-toggle.not-nested-style > .toggle-button,
+.cocoon-block-toggle.not-nested-style > .toggle-content{
+    color: var(--cocoon-custom-text-color);
+    border-color: var(--cocoon-custom-border-color);
+}
+.cocoon-block-toggle.not-nested-style > .toggle-button{
+    background-color: var(--cocoon-xx-thin-color);
+}
+.cocoon-block-toggle.not-nested-style > .toggle-content{
+    background-color: var(--cocoon-custom-background-color);
+}
+.cocoon-block-toggle.has-border-color.not-nested-style > .toggle-button {
+    color: var(--cocoon-white-color);
+    background-color: var(--cocoon-custom-border-color);
+}
+.cocoon-block-toggle.has-border-color.not-nested-style > .toggle-button::before {
+    color: var(--cocoon-white-color);
+}
+<?php //FAQ ?>
+.cocoon-block-faq.not-nested-style {
+    background-color: var(--cocoon-custom-background-color) !important;
+    border-color: var(--cocoon-custom-border-color) !important;
+    color: var(--cocoon-custom-text-color);
+}
+.cocoon-block-faq.is-style-square.not-nested-style > .faq > * > .faq-item-label{
+    color: #fff !important;
+    background-color: var(--cocoon-custom-question-color);
+    font-size: 20px;
+    padding: 5px 8px;
+    height: 100%;
+}
+.cocoon-block-faq.is-style-square.not-nested-style > .faq > * > .faq-answer-label{
+    background-color: var(--cocoon-custom-answer-color);
+}
+.cocoon-block-faq.is-style-accordion.not-nested-style > .faq > .faq-question {
+    padding: .5em;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    background-color: #e8ecef;
+    border-color: var(--cocoon-three-d-border-colors);
+}
+.cocoon-block-faq.is-style-accordion.not-nested-style > .faq > .faq-question::before {
+    content: "+";
+    position: absolute;
+    right: 1em;
+    opacity: 0.5;
+}
+.cocoon-block-faq.is-style-accordion.not-nested-style > .faq > .faq-question.active::before {
+    content: "-";
+}
+.cocoon-block-faq.is-style-accordion.not-nested-style > .faq > .faq-answer {
+    padding: 1em .5em;
+}
+.cocoon-block-faq.is-style-accordion.has-border-color.not-nested-style > .faq > .faq-question {
+    color: var(--cocoon-white-color);
+    border: none;
+    background-color: var(--cocoon-custom-border-color);
+}
+.cocoon-block-faq.is-style-accordion.has-border-color.not-nested-style:not(.has-question-color) > .faq > .faq-question .faq-question-label {
+    color: var(--cocoon-white-color);
+}
+
     <?php
     $css = ob_get_clean();
     return $css;

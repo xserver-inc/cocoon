@@ -6,7 +6,7 @@
   Author URI: https://ponhiro.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-season-winter.png
   Version: 1.0.2
-  Priority: 9870004000
+  Priority: 9150004000
 */
 /*以下にスタイルシートを記入してください*/
 
@@ -533,8 +533,8 @@ article .tag-link:hover {
 .author-box .website-button {
 	background-color: #47555c !important;
 }
-.author-box .twitter-button {
-	background-color: #1da1f2 !important;
+.author-box .x-corp-button {
+	background-color: var(--cocoon-twitter-color) !important;
 }
 .author-box .facebook-button {
 	background-color: #3b5998 !important;

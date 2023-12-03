@@ -30,7 +30,8 @@
 		},
 		"color": {
 			"defaultPalette": true,
-			"custom": true
+			"custom": true,
+			"link": true
 		}
 	}
 }

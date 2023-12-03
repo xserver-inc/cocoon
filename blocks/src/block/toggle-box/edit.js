@@ -9,8 +9,9 @@ import {
   withFontSizes,
   useBlockProps,
 } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
-import { compose } from '@wordpress/compose';
+import { Fragment, useEffect } from '@wordpress/element';
+import { compose, useInstanceId } from '@wordpress/compose';
+import { useSelect } from '@wordpress/data';
 import classnames from 'classnames';
 
 export function ToggleBoxEdit( props ) {
@@ -25,6 +26,7 @@ export function ToggleBoxEdit( props ) {
     borderColor,
     setBorderColor,
     fontSize,
+    clientId,
   } = props;
 
   const {
@@ -33,7 +35,39 @@ export function ToggleBoxEdit( props ) {
     customBackgroundColor,
     customTextColor,
     customBorderColor,
+    notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = attributes;
+
+  // 親ブロックのnotNestedStyleがfalseかどうかを判定
+  const isParentNestedStyle = useSelect( ( select ) => {
+    const parentBlocks =
+      select( 'core/block-editor' ).getBlockParents( clientId );
+    for ( const parentClientId of parentBlocks ) {
+      const parentBlock =
+        select( 'core/block-editor' ).getBlock( parentClientId );
+      if (
+        parentBlock.name === props.name &&
+        parentBlock.attributes.notNestedStyle === false
+      ) {
+        return true;
+      }
+    }
+    return false;
+  } );
+
+  // 親ブロックのnotNestedStyleがfalseの場合はnotNestedStyleをfalseにする
+  if ( isParentNestedStyle && notNestedStyle ) {
+    setAttributes( { notNestedStyle: false } );
+  }
+
+  useEffect( () => {
+    setAttributes( { backgroundColorValue: backgroundColor.color } );
+    setAttributes( { textColorValue: textColor.color } );
+    setAttributes( { borderColorValue: borderColor.color } );
+  }, [ borderColor, backgroundColor, textColor ] );
 
   const classes = classnames( className, {
     'toggle-wrap': true,
@@ -46,6 +80,8 @@ export function ToggleBoxEdit( props ) {
     [ textColor.class ]: textColor.class,
     [ borderColor.class ]: borderColor.class,
     [ fontSize.class ]: fontSize.class,
+    'not-nested-style': notNestedStyle,
+    'cocoon-block-toggle': true,
   } );
 
   const styles = {
@@ -54,12 +90,21 @@ export function ToggleBoxEdit( props ) {
     '--cocoon-custom-text-color': customTextColor || undefined,
   };
 
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
+
   const blockProps = useBlockProps( {
     className: classes,
     style: styles,
   } );
 
-  dateID == '' ? setAttributes( { dateID: getDateID() } ) : dateID;
+  const instanceId = useInstanceId( ToggleBoxEdit );
+  useEffect( () => {
+    setAttributes( { dateID: getDateID() + instanceId } );
+  }, [ instanceId ] );
 
   return (
     <Fragment>
@@ -93,7 +138,10 @@ export function ToggleBoxEdit( props ) {
           className="toggle-checkbox"
           type="checkbox"
         />
-        <label className="toggle-button" for={ 'toggle-checkbox-' + dateID }>
+        <label
+          className="toggle-button"
+          htmlFor={ 'toggle-checkbox-' + dateID }
+        >
           <RichText
             value={ content }
             onChange={ ( value ) => setAttributes( { content: value } ) }

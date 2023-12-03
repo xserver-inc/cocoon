@@ -68,7 +68,7 @@ https://codepen.io/nxworld/pen/oLdoWb
     right: 4px;
   }
   &::after {
-    bottom: 4px;
+    bottom: 5px;
     left: 1px;
   }
   span {
@@ -77,11 +77,6 @@ https://codepen.io/nxworld/pen/oLdoWb
     transform: rotate(-45deg);
   }
 }
-
-// .navi-card-box .ribbon-top-left {
-//   top: -3px;
-//   left: -3px;
-// }
 
 .border-square .ribbon-top-left {
   top: -13px;

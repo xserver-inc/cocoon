@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) exit;
 // -----------------------------------------------------------------------------
 // site_font_size
 
-// font_awesome_5 default 
+// font_awesome_5 default
 if (!function_exists('get_site_icon_font')) :
   function get_site_icon_font()
   {
@@ -162,7 +162,6 @@ endif;
 add_action('wp_enqueue_scripts', 'enqueue_skin_grayish_google_fonts');
 add_action('enqueue_block_editor_assets', 'enqueue_skin_grayish_google_fonts');
 
-
 // -----------------------------------------------------------------------------
 // テーマカスタマイザー　タイトル：見出しのGoogleFontの選択を可能に：
 // ゆうそうとさんの てがきノートスキン (https://usort.jp/cocoon/)を参考にさせていただきました
@@ -185,6 +184,7 @@ if (!function_exists('skin_grayish_font_customize')) :
         'title'    => '全体：英字フォント設定',
         'panel'    => 'font_pat_panel',
         'priority' => 1000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/site-title-set/" target="_blank">英字フォントの適用箇所についてはこちらを参照</a>',
       )
     );
 
@@ -359,8 +359,11 @@ if (!function_exists('skin_grayish_color_customize')) :
         'title'    => '全体：カラー設定',
         'panel'    => 'font_pat_panel',
         'priority' => 2000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-th-color/" target="_blank">各カラーの適用箇所についてはこちらを参照</a>',
       )
     );
+
+
     //テキストカラー --LtGray_S50
     $wp_customize->add_setting('colorpicker_text_gray_S50', array(
       'default' => '#535252',
@@ -379,6 +382,8 @@ if (!function_exists('skin_grayish_color_customize')) :
         )
       )
     );
+
+
     //メイン --LtBlue_T0
     $wp_customize->add_setting('colorpicker_main_blue_T0', array(
       'default' => '#AAC2D2',
@@ -408,7 +413,7 @@ if (!function_exists('skin_grayish_color_customize')) :
         'colorpicker_main_blue_T70',
         array(
           'label'    => 'メイン 薄い青色',
-          'description' => 'グローバルナビの3階層目の背景色、<br>投稿下のPrev/Nextホバー時背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。
+          'description' => 'グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。
           <br>※空欄の場合はデフォルト値になります。',
           'section'  => 'color_pat_section',
           'settings' => 'colorpicker_main_blue_T70',
@@ -472,6 +477,8 @@ if (!function_exists('skin_grayish_color_customize')) :
   }
 endif;
 add_action('customize_register', 'skin_grayish_color_customize');
+
+
 
 // head内にCSSを追加　CSS変数の上書き
 if (!function_exists('skin_grayish_color_customize_css')) :
@@ -605,6 +612,8 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         'title'    => 'フロントページ設定：ヘッダー',
         'panel'    => 'font_pat_panel',
         'priority' => 4000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-pcheader/" target="_blank">グローバルナビの高さ等変更についてはこちらを参照</a><br><br><a href="https://cocoon-grayish.na2-factory.com/manual-top-mv/" target="_blank">メインビジュアルについてはこちらを参照</a><br><br><a href="https://cocoon-grayish.na2-factory.com/manual-pc-menu/" target="_blank">グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照</a>',
+
       )
     );
 
@@ -668,12 +677,12 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
           'settings' => 'top_navibg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'top_navibg_alpha_5' => '0.5（デフォルト）',
             'top_navibg_alpha_0' => '0（背景色なし)',
             'top_navibg_alpha_1' => '0.1',
             'top_navibg_alpha_2' => '0.2',
             'top_navibg_alpha_3' => '0.3',
             'top_navibg_alpha_4' => '0.4',
+            'top_navibg_alpha_5' => '0.5（デフォルト）',
             'top_navibg_alpha_6' => '0.6',
             'top_navibg_alpha_7' => '0.7',
             'top_navibg_alpha_8' => '0.8',
@@ -725,12 +734,12 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
           'settings' => 'topmv_whovlay_select',
           'type'     => 'select',
           'choices'  => array(
-            'topmv_whoverlay_5' => '0.5（デフォルト）',
             'topmv_whoverlay_0' => 'OFF',
             'topmv_whoverlay_1' => '0.1',
             'topmv_whoverlay_2' => '0.2',
             'topmv_whoverlay_3' => '0.3',
             'topmv_whoverlay_4' => '0.4',
+            'topmv_whoverlay_5' => '0.5（デフォルト）',
             'topmv_whoverlay_6' => '0.6',
             'topmv_whoverlay_7' => '0.7',
             'topmv_whoverlay_8' => '0.8',
@@ -763,10 +772,11 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
       )
     );
 
+
     // SNSフォローボタンの表示
     $settings_data = array(
       array(
-        'label'       => 'Twitter フォローボタンを表示',
+        'label'       => 'X（旧Twitter）フォローボタンを表示',
         'setting_name' => 'twitter',
       ),
       array(
@@ -929,7 +939,7 @@ if (!function_exists('skin_grayish_top_header_navibg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1101,6 +1111,7 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         'title'    => '全体：テキスト変更',
         'panel'    => 'font_pat_panel',
         'priority' => 3000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-contents-text/" target="_blank">テキスト変更についてはこちらを参照</a><br><br>',
       )
     );
     // New Postを好きなテキストに変更できる
@@ -1302,7 +1313,7 @@ if (!function_exists('customize_more_button_caption')) :
   }
 endif;
 
-// フロントページ・インデックスページのNextボタン 
+// フロントページ・インデックスページのNextボタン
 add_filter('pagination_next_link_caption', 'skin_grayish_nextbutton_text');
 if (!function_exists('skin_grayish_nextbutton_text')) :
   function skin_grayish_nextbutton_text()
@@ -1328,6 +1339,7 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
         'title' => 'フロントページ以外の設定:ヘッダー',
         'panel' => 'font_pat_panel',
         'priority' => 5000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-pcheader/" target="_blank">グローバルナビの高さ等変更についてはこちらを参照</a><br><br>',
       )
     );
     //ロゴの高さ
@@ -1385,12 +1397,12 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
         'settings' => 'ohter_headerbg_alpha',
         'type' => 'select',
         'choices' => array(
-          'ohter_headerbg_alpha_5' => '0.5（デフォルト）',
           'ohter_headerbg_alpha_0' => '0（背景色なし)',
           'ohter_headerbg_alpha_1' => '0.1',
           'ohter_headerbg_alpha_2' => '0.2',
           'ohter_headerbg_alpha_3' => '0.3',
           'ohter_headerbg_alpha_4' => '0.4',
+          'ohter_headerbg_alpha_5' => '0.5（デフォルト）',
           'ohter_headerbg_alpha_6' => '0.6',
           'ohter_headerbg_alpha_7' => '0.7',
           'ohter_headerbg_alpha_8' => '0.8',
@@ -1458,7 +1470,7 @@ if (!function_exists('skin_grayish_ohter_headerbg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1491,7 +1503,7 @@ endif;
 
 // -----------------------------------------------------------------------------
 // テーマカスタマイザー　コンテンツ下部ウィジェットの設定：
-// プロフィールBoxの背景画像とオーバーレイ調整を設定可能
+// プロフィールボックスの背景画像とオーバーレイ調整を設定可能
 // -----------------------------------------------------------------------------
 if (!function_exists('skin_grayish_profbox_customize')) :
   function skin_grayish_profbox_customize($wp_customize)
@@ -1499,13 +1511,14 @@ if (!function_exists('skin_grayish_profbox_customize')) :
     $wp_customize->add_section(
       'under_contents_section',
       array(
-        'title' => 'コンテンツ下部ウィジェット：プロフィールBOX',
+        'title' => 'コンテンツ下部ウィジェット：プロフィールボックス',
         'panel' => 'font_pat_panel',
         'priority' => 7500,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-profbox/" target="_blank">プロフィールボックスの設定についてはこちらを参照</a>',
       )
     );
 
-    //プロフィールBoxの白オーバーレイ 透明度の設定　
+    //プロフィールボックスの白オーバーレイ 透明度の設定　
     $wp_customize->add_setting('undercon_profbg_overlay_alpha', array(
       'default' => 'undercon_profbg_overlay_alpha_5',
       'sanitize_callback' => 'skin_grayish_sanitize_select',
@@ -1514,18 +1527,18 @@ if (!function_exists('skin_grayish_profbox_customize')) :
       $wp_customize,
       'undercon_profbg_overlay_alpha',
       array(
-        'label' => 'プロフィールBOXの背景画像の白オーバーレイ不透明度調整',
+        'label' => 'プロフィールボックスの背景画像の白オーバーレイ不透明度調整',
         'description' => '値が大きくなるほど白色が濃くなります。',
         'section' => 'under_contents_section',
         'settings' => 'undercon_profbg_overlay_alpha',
         'type' => 'select',
         'choices' => array(
-          'undercon_profbg_overlay_alpha_5' => '0.5（デフォルト）',
           'undercon_profbg_overlay_alpha_0' => '0（白色なし)',
           'undercon_profbg_overlay_alpha_1' => '0.1',
           'undercon_profbg_overlay_alpha_2' => '0.2',
           'undercon_profbg_overlay_alpha_3' => '0.3',
           'undercon_profbg_overlay_alpha_4' => '0.4',
+          'undercon_profbg_overlay_alpha_5' => '0.5（デフォルト）',
           'undercon_profbg_overlay_alpha_6' => '0.6',
           'undercon_profbg_overlay_alpha_7' => '0.7',
           'undercon_profbg_overlay_alpha_8' => '0.8',
@@ -1537,11 +1550,11 @@ if (!function_exists('skin_grayish_profbox_customize')) :
     // 画像のアップロード
     $wp_customize->add_setting(
       'undercon_profbg_image',
-      array(
-        'default'           => get_theme_mod('undercon_profbg_image'), // これを入れないとアップロードした画像のプレビューが消えてしまう
-        // 'priority'          => 1000,
-        'sanitize_callback' => 'esc_url_raw'
-      )
+      // array(
+      //   'default'           => get_theme_mod('undercon_profbg_image'), // これを入れないとアップロードした画像のプレビューが消えてしまう
+      //   // 'priority'          => 1000,
+      //   'sanitize_callback' => 'esc_url_raw'
+      // )
     );
     $wp_customize->add_control(
       new WP_Customize_Image_Control(
@@ -1551,7 +1564,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
           'section'     => 'under_contents_section',  // 紐づけるセクションIDを指定
           'settings'    => 'undercon_profbg_image',  // 紐づける設定IDを指定
           'label'       => '画像アップロード',
-          'description' => 'プロフィールBOXの背景に設定したい画像を選択'
+          'description' => 'プロフィールボックスの背景に設定したい画像を選択'
         )
       )
     );
@@ -1559,7 +1572,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
 endif;
 add_action('customize_register', 'skin_grayish_profbox_customize');
 
-// プロフィールBox背景 白オーバーレイ
+// プロフィールボックス背景 白オーバーレイ
 add_action('wp_head', 'skin_grayish_profboxbg_whovlay');
 if (!function_exists('skin_grayish_profboxbg_whovlay')) :
   function skin_grayish_profboxbg_whovlay()
@@ -1601,7 +1614,7 @@ if (!function_exists('skin_grayish_profboxbg_whovlay')) :
 
 endif;
 
-// プロフィールBoxの背景画像を設定
+// プロフィールボックスの背景画像を設定
 add_action('wp_head', 'skin_grayish_profboxbg_img');
 if (!function_exists('skin_grayish_profboxbg_img')) :
   function skin_grayish_profboxbg_img()
@@ -1634,6 +1647,7 @@ if (!function_exists('skin_grayish_mobile_customize')) :
         'title'    => 'モバイル設定',
         'panel'    => 'font_pat_panel',
         'priority' => 8000,
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-sp-menu/" target="_blank">ヘッダー・フッターモバイルボタンの設定についてはこちらを参照</a>',
       )
     );
     // ヘッダーモバイルボタンの背景色設定
@@ -1673,12 +1687,12 @@ if (!function_exists('skin_grayish_mobile_customize')) :
           'settings' => 'mobile_headerbg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'mobile_headerbg_alpha_5' => '0.5（デフォルト）',
             'mobile_headerbg_alpha_0' => '0（背景色なし)',
             'mobile_headerbg_alpha_1' => '0.1',
             'mobile_headerbg_alpha_2' => '0.2',
             'mobile_headerbg_alpha_3' => '0.3',
             'mobile_headerbg_alpha_4' => '0.4',
+            'mobile_headerbg_alpha_5' => '0.5（デフォルト）',
             'mobile_headerbg_alpha_6' => '0.6',
             'mobile_headerbg_alpha_7' => '0.7',
             'mobile_headerbg_alpha_8' => '0.8',
@@ -1771,12 +1785,12 @@ if (!function_exists('skin_grayish_mobile_customize')) :
           'settings' => 'mobile_footerbg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'mobile_footerbg_alpha_5' => '0.5（デフォルト）',
             'mobile_footerbg_alpha_0' => '0（背景色なし)',
             'mobile_footerbg_alpha_1' => '0.1',
             'mobile_footerbg_alpha_2' => '0.2',
             'mobile_footerbg_alpha_3' => '0.3',
             'mobile_footerbg_alpha_4' => '0.4',
+            'mobile_footerbg_alpha_5' => '0.5（デフォルト）',
             'mobile_footerbg_alpha_6' => '0.6',
             'mobile_footerbg_alpha_7' => '0.7',
             'mobile_footerbg_alpha_8' => '0.8',
@@ -1829,7 +1843,7 @@ if (!function_exists('skin_grayish_mobile_headerbg')) :
       $style_opacity = '0.5';
     }
 
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -1944,7 +1958,7 @@ if (!function_exists('skin_grayish_mobile_footerbg')) :
     } else {
       $style_opacity = '0.5';
     }
-    // hex to dec 
+    // hex to dec
     $style_rgba = '';
     $style_rgba = color_code($hex_navi_bgcolor, $style_opacity);
 
@@ -2059,7 +2073,7 @@ if (!function_exists('wp_enqueue_scrollhint_skinadd')) :
         //ScrollHintスクリプトの呼び出し
         wp_enqueue_script('scrollhint-js', get_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array('jquery'), false, true);
       }
-      $data = minify_js('
+      $data = '
           (function($){
             new ScrollHint(".skin-grayish .under-entry-content .related-list", {
               suggestiveShadow: false,
@@ -2068,7 +2082,7 @@ if (!function_exists('wp_enqueue_scrollhint_skinadd')) :
               }
             });
           })(jQuery);
-        ');
+        ';
       wp_add_inline_script('scrollhint-js', $data, 'after');
     }
   }

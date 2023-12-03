@@ -173,11 +173,11 @@ label.screen-reader-text{
   }
 }
 
-.border-partition.swiper-horizontal .a-wrap {
+.border-partition.is-list-horizontal .a-wrap {
   border: 0;
 }
 
-.border-square a {
+.border-square .a-wrap {
   border-radius: var(--cocoon-basic-border-radius);
   border: 1px solid var(--cocoon-thin-color);
 }
@@ -208,6 +208,26 @@ label.screen-reader-text{
 .font-awesome-5 .card-arrow .a-wrap::after{
   font-family: 'Font Awesome 5 Free';
 }
+
+/************************************
+** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
+************************************/
+.widget-entry-cards:not(.large-thumb-on){
+  .card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+
+  .card-snippet{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+}
+
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
@@ -267,6 +287,13 @@ label.screen-reader-text{
     position: relative;
   }
 
+  .card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
   .card-content{
     margin: 0;
     position: absolute;
@@ -275,14 +302,17 @@ label.screen-reader-text{
     padding: .6em;
     background: linear-gradient(180deg, transparent, #555);
     color: var(--cocoon-white-color);
-    max-height: 40%;
-    overflow: hidden;
+    // max-height: 40%;
     transition: all 0.5s;
   }
 
 
   .card-snippet{
     margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 }
 
@@ -304,9 +334,11 @@ label.screen-reader-text{
     background: #b37036;
   }
 
-  .card-thumb{
+  .a-wrap{
     counter-increment: p-rank;
+  }
 
+  .card-thumb{
     &::before{
       content: counter(p-rank);
       position: absolute;

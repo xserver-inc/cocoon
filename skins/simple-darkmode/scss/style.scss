@@ -22,6 +22,9 @@
   // ダークモード用スタイルシート
   @include mixin.prefers_dark_style();
 
+  // ダークモード用カスタム色
+  @include mixin.prefers_dark_skin();
+
 }
 
 body {
@@ -279,8 +282,8 @@ table th,
   background-color: var(--bg1);
 }
 /*ソースコード*/
-pre.wp-block-code,
-pre{
+pre.wp-block-code:where(:not(.hljs)),
+pre:where(:not(.hljs)) {
   color: var(--text-main);
   background-color: var(--bg1);
 }

@@ -19,11 +19,20 @@
   },
   "devDependencies": {
     "@prettier/plugin-php": "^0.19.1",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
     "po2json": "^0.4.5",
     "prettier": "npm:wp-prettier@^2.6.2",
-    "run-script-os": "^1.1.6"
+    "run-script-os": "^1.1.6",
+    "sass": "^1.69.5"
   },
   "scripts": {
+    "watch": "gulp watch",
+    "start": "cd blocks && npm run start",
+    "prod": "gulp",
+    "build": "gulp && cd blocks && npm run build",
     "po2json": "run-script-os",
     "po2json:windows": "po2json -f jed1.x languages/%npm_config_locale%.po languages/cocoon-%npm_config_locale%-cocoon-blocks-js.json",
     "po2json:nix": "./node_modules/po2json/bin/po2json -f jed1.x languages/${npm_config_locale}.po languages/cocoon-${npm_config_locale}-cocoon-blocks-js.json"

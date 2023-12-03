@@ -1,3 +1,4 @@
+@use "sass:math";
 /************************************
 ** グローバルメニュー
 ************************************/
@@ -60,7 +61,7 @@ $icon_height: 16px;
       }
 
       >a>.caption-wrap{
-        line-height: $menu_height / 2.8;
+        line-height: math.div($menu_height, 2.8);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

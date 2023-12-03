@@ -265,14 +265,16 @@ $marker_u_blue: $marker_blue;
 .memo-box,
 .comment-box,
 .common-icon-box{
-  //background-color: #F4F3EB;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
   display: block;
-  // margin-bottom: 1.2em;
-  //overflow: hidden;
+
+  &.has-background{
+    padding: 20px 20px 20px 72px;
+  }
 }
+
 
 .body {
   blockquote,
@@ -504,7 +506,7 @@ $bb_blue: #2ea9df;
 $bb_green: var(--cocoon-green-color);
 @mixin bace_box{
   --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: 1.2em 1em;
+  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
@@ -1589,7 +1591,7 @@ $toggle_border_width: 2px;
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
 
-.has-border-color .toggle-button{
+.has-border-color:not(.not-nested-style) .toggle-button{
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
   &::before{
@@ -1739,35 +1741,38 @@ figcaption{
 .is-style-accordion{
   padding: 0;
 
-  .faq-question{
-    padding: .5em;
-    margin: 0;
-    cursor: pointer;
-    position: relative;
-    background-color: #e8ecef;
-    border-color: var(--cocoon-three-d-border-colors);
+  &:not(.not-nested-style) {
 
-    &::before{
-      content: "+";
-      position: absolute;
-      right: 1em;
-      opacity: 0.5;
+    .faq-question{
+      padding: .5em;
+      margin: 0;
+      cursor: pointer;
+      position: relative;
+      background-color: #e8ecef;
+      border-color: var(--cocoon-three-d-border-colors);
+
+      &::before{
+        content: "+";
+        position: absolute;
+        right: 1em;
+        opacity: 0.5;
+      }
+
+      &.active::before{
+        content: "-";
+      }
     }
 
-    &.active::before{
-      content: "-";
+    .faq-answer{
+      padding: 1em .5em;
     }
-  }
 
-  .faq-answer{
-    padding: 1em .5em;
-  }
-
-  &.has-border-color{
-    .faq-question,
-    .faq-question-label{
-      color: var(--cocoon-white-color);
-      border: none;
+    &.has-border-color{
+      .faq-question,
+      .faq-question-label{
+        color: var(--cocoon-white-color);
+        border: none;
+      }
     }
   }
 }

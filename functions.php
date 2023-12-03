@@ -44,13 +44,16 @@ function fetch_updater_url( $new_sv_weight ) {
 }
 
 //アップデートチェックの初期化
-require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-$myUpdateChecker = PucFactory::buildUpdateChecker(
-  fetch_updater_url(100), //JSONファイルのURL
-  __FILE__,
-  'cocoon-master'
-);
+add_action( 'init', function() {
+    require_once abspath(__FILE__).'lib/plugin-update-checker/plugin-update-checker.php';
+    $myUpdateChecker = PucFactory::buildUpdateChecker(
+        fetch_updater_url(100), //JSONファイルのURL
+        __FILE__,
+        'cocoon-master'
+    );
+});
+
 
 //本文部分の冒頭を綺麗に抜粋する
 if ( !function_exists( 'get_content_excerpt' ) ):
@@ -390,7 +393,6 @@ add_action('init', function () {
 
 //wpForoで添付画像をイメージリンクにする
 add_filter('wpforo_body_text_filter', function ($text){
-define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp');
   $text = preg_replace('#(<div id="wpfa-\d+?" class="wpforo-attached-file"><a class="wpforo-default-attachment" .*?href="(.+?('.IMAGE_RECOGNITION_EXTENSIONS_REG.'))".*?>).+?(</a></div>)#i', '$1<i class="fas fa-paperclip paperclip"></i><img alt="" src="$2" />$4', $text);
   return $text;
 });

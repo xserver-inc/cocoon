@@ -24,51 +24,106 @@
     --underline:rgba(255, 255, 0, 0.801);
     --underline-red:#ff2f33;
   }
-
   .marker {
     background: yellow;
     color: #1c1a1a;
   }
-
   .keyboard-key {
     box-shadow: 1px 2px 2px #6e6e6e;
   }
-
   /*ダークモード時の吹き出し*/
   .sbs-line.sbp-r .speech-balloon {
     background-color: var(--bg2);
     border-color: #85e249;
     border-width: 2px;
   }
-
   .sbs-line.sbp-r .speech-balloon::after,
-.sbs-stn.sbp-r .speech-balloon::after {
+  .sbs-stn.sbp-r .speech-balloon::after {
     border-left-color: var(--bg2);
   }
-
   .sbs-line.sbp-l .speech-balloon::after,
-.sbs-flat.sbp-l .speech-balloon::after {
+  .sbs-flat.sbp-l .speech-balloon::after {
     border-right-color: var(--bg2);
   }
-
+  .sbs-flat.sbp-r .speech-balloon::after {
+    border-left-color: var(--bg2);
+  }
   .sbs-line.sbp-l .speech-balloon,
-.sbs-flat.sbp-r .speech-balloon {
+  .sbs-flat.sbp-l .speech-balloon,
+  .sbs-flat.sbp-r .speech-balloon {
     background-color: var(--bg2);
     border-color: var(--text-main);
     border-width: 2px;
   }
-
   .sns-buttons a {
     background-color: #585858;
   }
-
   /*リンクの色変更*/
   a {
     color: #99ccff;
   }
-
   a:hover {
     color: #f7a488;
+  }
+  /* カスタム色対応 */
+  .speech-wrap,
+  .toggle-box,
+  .timeline-box,
+  .iconlist-box,
+  .faq-wrap,
+  .caption-box,
+  .tab-caption-box,
+  .label-box,
+  .micro-balloon,
+  .micro-text {
+    --cocoon-custom-text-color: var(--text-main);
+  }
+  .info-list,
+  .info-list .info-list-item-content-link,
+  .widget_info_list {
+    color: var(--text-main);
+  }
+  .breadcrumb.sbp-main-before,
+  .breadcrumb.sbp-footer-before,
+  .breadcrumb.pbp-main-before,
+  .breadcrumb.pbp-footer-before {
+    background-color: transparent;
+  }
+  .toggle-box {
+    --cocoon-custom-background-color: transparent;
+  }
+  .has-box-style,
+  .has-border {
+    --cocoon-box-border-color: #ccc;
+  }
+  .is-style-border-thin-and-thick,
+  .is-style-border-radius-s-thin-and-thick,
+  .is-style-border-radius-l-thin-and-thick {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .is-style-light-background-box {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .is-style-stripe-box {
+    background-image: repeating-linear-gradient(-45deg, #333 0, #333 3px, transparent 3px, transparent 6px);
+  }
+  .is-style-checkered-box {
+    background-image: linear-gradient(90deg, rgba(232, 238, 236, 0.1) 50%, transparent 50%), linear-gradient(rgba(234, 236, 238, 0.1) 50%, transparent 50%);
+  }
+  .is-style-stitch-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.2);
+  }
+  .is-style-border-top-box {
+    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.22);
+  }
+  .is-style-border-left-box {
+    box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.33);
+  }
+  [class^=is-style-balloon-], [class*=" is-style-balloon-"] {
+    --cocoon-white-color: var(--bg3);
+    background: var(--cocoon-white-color);
+    border: 1px solid var(--cocoon-box-border-color);
   }
 }
 body {
@@ -384,8 +439,8 @@ table th,
 }
 
 /*ソースコード*/
-pre.wp-block-code,
-pre {
+pre.wp-block-code:where(:not(.hljs)),
+pre:where(:not(.hljs)) {
   color: var(--text-main);
   background-color: var(--bg1);
 }
@@ -600,9 +655,10 @@ blockquote {
 .sbs-flat.sbp-l .speech-balloon::after {
   border-right-color: var(--bg2);
 }
+
 .sbs-flat.sbp-r .speech-balloon::after {
-    border-left-color: var(--bg2);
-  }
+  border-left-color: var(--bg2);
+}
 
 .sbs-line.sbp-l .speech-balloon,
 .sbs-flat.sbp-l .speech-balloon,
@@ -635,20 +691,20 @@ a:hover {
 .tab-caption-box,
 .label-box,
 .micro-balloon,
-.micro-text{
+.micro-text {
   --cocoon-custom-text-color: var(--text-main);
 }
 
 .info-list,
 .info-list .info-list-item-content-link,
-.widget_info_list{
+.widget_info_list {
   color: var(--text-main);
 }
 
 .breadcrumb.sbp-main-before,
 .breadcrumb.sbp-footer-before,
 .breadcrumb.pbp-main-before,
-.breadcrumb.pbp-footer-before{
+.breadcrumb.pbp-footer-before {
   background-color: transparent;
 }
 
@@ -657,7 +713,7 @@ a:hover {
 }
 
 .has-box-style,
-.has-border{
+.has-border {
   --cocoon-box-border-color: #ccc;
 }
 
@@ -667,7 +723,7 @@ a:hover {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-.is-style-light-background-box{
+.is-style-light-background-box {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -679,7 +735,7 @@ a:hover {
   background-image: linear-gradient(90deg, rgba(232, 238, 236, 0.1) 50%, transparent 50%), linear-gradient(rgba(234, 236, 238, 0.1) 50%, transparent 50%);
 }
 
-.is-style-stitch-box{
+.is-style-stitch-box {
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.2);
 }
@@ -692,8 +748,8 @@ a:hover {
   box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.33);
 }
 
-[class^="is-style-balloon-"], [class*=" is-style-balloon-"] {
+[class^=is-style-balloon-], [class*=" is-style-balloon-"] {
   --cocoon-white-color: var(--bg3);
-	background: var(--cocoon-white-color);
-	border: 1px solid var(--cocoon-box-border-color);
+  background: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-box-border-color);
 }

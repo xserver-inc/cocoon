@@ -171,6 +171,9 @@ function fn_minify_html($input, $comment = 2, $quote = 1) {
             //codeタグの場合は処理しない
             if (includes_string($part, '<code')) {
                 $output .= $part;
+            } elseif ( includes_string($part, '<script') ) {
+	            //scriptタグの場合はjsの圧縮を行う
+	            $output .= fn_minify_js($part);
             } else {
                 $output .= fn_minify_html_union($part, $quote);
             }
@@ -343,9 +346,12 @@ function minify_css(...$lot) {
     foreach ($lot as $css_source) {
         $css .= $css_source;
     }
-    $minifier = new Minify\CSS($css);
-    $css_minify = $minifier->minify();
-    return $css_minify;
+    //公開ページのみ縮小化
+    if (!is_admin()) {
+        $minifier = new Minify\CSS($css);
+        $css = $minifier->minify();
+    }
+    return $css;
 }
 
 
@@ -353,6 +359,18 @@ function minify_html(...$lot) {
     return fn_minify_html(...$lot);
 }
 
+// function minify_js(...$lot) {
+//     return fn_minify_js(...$lot);
+// }
 function minify_js(...$lot) {
-    return fn_minify_js(...$lot);
+    $js = '';
+    foreach ($lot as $js_source) {
+        $js .= $js_source;
+    }
+    //公開ページのみ縮小化
+    if (!is_admin()) {
+        $minifier = new Minify\JS($js);
+        $js = $minifier->minify();
+    }
+    return $js;
 }

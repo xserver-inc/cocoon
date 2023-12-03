@@ -6,7 +6,7 @@
   Author URI: https://wp-cocoon.com/mil-light/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/mil-light.png
   Version: 1.0.1
-  Priority: 9700001000
+  Priority: 8400001000
 */
 
 body {
@@ -46,7 +46,7 @@ strong {
 .index-tab-buttons .index-tab-button {
     background-color: #fcfaf8;
 }
-.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn, .index-tab-buttons .index-tab-button, .border-square a, .author-box {
+.blogcard, .ecb-entry-border .entry-card-wrap, .page-numbers, .pagination-next-link, .comment-btn, .index-tab-buttons .index-tab-button, .border-square .a-wrap, .author-box {
     border-color: #ebe9e8 #e5e2e0 #e9e6e2 #e3e1de;
 }
 .list-more-button {
@@ -110,9 +110,9 @@ strong {
     border: 2.3px solid #606060;
     color: #606060;
 }
-.bc-brand-color-white.sns-share .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
-    color: #69b4e0;
-    border-color: #69b4e0;
+.bc-brand-color-white.sns-share .x-corp-button, .bc-brand-color-white.sns-follow .x-corp-button {
+    color: #606060;
+    border-color: #606060;
 }
 .bc-brand-color-white.sns-share .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
     color: #5a71a2;
@@ -138,8 +138,8 @@ strong {
     color: #258abf;
     border-color: #258abf;
 }
-.bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
-    background-color: #5ea8d4;
+.bc-brand-color.sns-share .x-corp-button, .bc-brand-color.sns-follow .x-corp-button {
+    background-color: #505050;
 }
 .bc-brand-color.sns-share .facebook-button, .bc-brand-color.sns-follow .facebook-button {
     background-color: #5a71a2;
@@ -561,7 +561,7 @@ span.post-date {
 .widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
     background: #c99a72;
 }
-.widget-entry-cards.border-square a {
+.widget-entry-cards.border-square .a-wrap {
     border: solid 2.3px #f5f1eb;
 }
 .widget-entry-cards.card-large-image .widget-entry-card-content {

@@ -7,7 +7,7 @@
   Author URI: https://nelog.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/like-simplicity.png
   Version: 1.0.1
-  Priority: 9880010000
+  Priority: 8900020000
 */
 /*以下にスタイルシートを記入してください*/
 body {
@@ -22,7 +22,7 @@ body {
 .main,
 .navi,
 .sidebar,
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -71,7 +71,6 @@ body {
   .article h1, .entry h2 a, #archive-title, .article h2, .article h3, .article h4, .article h5 .article h6, .article h3, #comment-area h2, #related-entries h2 {
     font-size: 20px;
   }
-
   .article h2 {
     margin: 40px 0;
     padding: 14px;

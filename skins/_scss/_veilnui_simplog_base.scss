@@ -369,7 +369,7 @@ body {
     }
 
     // 囲み枠
-    .border-square a {
+    .border-square .a-wrap {
       border: solid $main-color-midium 1px;
     }
 
@@ -398,8 +398,8 @@ body {
         background-color: #002561;
       }
 
-      .twitter-button {
-        background-color: #1DA1F2;
+      .x-corp-button {
+        background-color: var(--cocoon-twitter-color);
       }
 
       .facebook-button {
@@ -510,7 +510,7 @@ body {
     }
 
     // 囲み枠
-    .border-square a {
+    .border-square .a-wrap {
       border: solid $main-color-midium 1px;
     }
 
@@ -553,7 +553,7 @@ body {
     }
 
     // 囲み枠
-    .border-square a {
+    .border-square .a-wrap {
       border: solid $main-color-midium 1px;
     }
 
@@ -622,7 +622,7 @@ body {
     }
 
     // 囲み枠
-    .border-square a {
+    .border-square .a-wrap {
       border: solid $main-color-midium 1px;
     }
 

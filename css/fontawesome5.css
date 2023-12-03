@@ -37,8 +37,7 @@
 .list-times-circle-o li::before,
 .fab-window-close-o::before,
 .list-window-close-o li::before,
-.search-form div.sbtn::after
- {
+.search-form div.sbtn::after {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
@@ -57,62 +56,62 @@
 
 .fab-check-circle-o::before,
 .list-check-circle-o li::before {
-  content: '\f058';
+  content: "\f058";
 }
 
 .fab-check-square-o::before,
 .list-check-square-o li::before {
-  content: '\f14a';
+  content: "\f14a";
 }
 
 .fab-arrow-circle-o-right::before,
 .list-arrow-circle-o-right li::before {
-  content: '\f35a';
+  content: "\f35a";
 }
 
 .fab-play-circle-o::before,
 .list-play-circle-o li::before {
-  content: '\f144';
+  content: "\f144";
 }
 
 .fab-star-o::before,
 .list-star-o li::before {
-  content: '\f005';
+  content: "\f005";
 }
 
 .fab-heart-o::before,
 .list-heart-o li::before {
-  content: '\f004';
+  content: "\f004";
 }
 
 .fab-square-o::before,
 .list-square-o li::before {
-  content: '\f0c8';
+  content: "\f0c8";
 }
 
 .fab-circle-o::before,
 .list-circle-o li::before {
-  content: '\f111';
+  content: "\f111";
 }
 
 .fab-plus-square-o::before,
 .list-plus-square-o li::before {
-  content: '\f0fe';
+  content: "\f0fe";
 }
 
 .fab-minus-square-o::before,
 .list-minus-square-o li::before {
-  content: '\f146';
+  content: "\f146";
 }
 
 .fab-times-circle-o::before,
 .list-times-circle-o li::before {
-  content: '\f057';
+  content: "\f057";
 }
 
 .fab-window-close-o::before,
 .list-window-close-o li::before {
-  content: '\f410';
+  content: "\f410";
 }
 
 .is-style-information-box::before,

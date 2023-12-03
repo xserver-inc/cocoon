@@ -8,7 +8,7 @@ import {
   registerBlockType,
   unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
-import compareVersions from 'compare-versions';
+import { compareVersions } from 'compare-versions';
 const cocoonBlocksPro = [];
 
 //構造化したブロック
@@ -35,6 +35,7 @@ import * as profile from './block/profile';
 import * as newlist from './block/new-list';
 import * as popularlist from './block/popular-list';
 import * as infolist from './block/info-list';
+import * as navicard from './block/navicard';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -67,6 +68,7 @@ const cocoonBlocks = [
   newlist,
   popularlist,
   infolist,
+  navicard,
 
   captionBox,
   tabCaptionBox,

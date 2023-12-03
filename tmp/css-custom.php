@@ -24,7 +24,7 @@ if ($site_key_color = get_site_key_color()): ?>
   background-color: <?php echo $site_key_color; ?>;
 }
 #navi .navi-in a:hover,
-#footer a:hover{
+#footer a:not(.sns-button):hover{
   background-color: rgba(255, 255, 255, 0.2);
 }
 .article h3,
@@ -107,7 +107,7 @@ table tr:nth-of-type(2n+1),
   .sidebar h2,
   .sidebar h3,
   #footer,
-  #footer a{
+  #footer a:not(.sns-button){
     color: #fff;
   }
   <?php endif; ?>
@@ -126,14 +126,14 @@ if ($site_key_text_color = get_site_key_text_color()): ?>
 .cat-label,
 .blogcard-type .blogcard::before,
 #footer,
-#footer a{
+#footer a:not(.sns-button){
   color: <?php echo $site_key_text_color; ?>;
 }
 <?php endif ?>
 <?php //サイト文字色
 if($site_text_color = get_site_text_color()): ?>
 body{
-  color: <?php echo $site_text_color; ?>;
+  --cocoon-text-color: <?php echo $site_text_color; ?>;
 }
 <?php endif; ?>
 <?php //サイト背景色
@@ -413,7 +413,7 @@ if (is_clumns_changed() && !is_admin()): ?>
 }
 <?php endif ?>
 <?php //レスポンシブ
-$responsive_width = get_site_wrap_width();
+$responsive_width = intval(get_site_wrap_width()) - 1;
 //次のブレークポイント（1023px）より幅が狭い場合はブレークポイントの値にする
 if ($responsive_width <= 1023) {
   $responsive_width = 1023;
@@ -619,7 +619,7 @@ if ($footer_background_color = get_footer_background_color()): ?>
 <?php //フッター文字色
 if ($footer_text_color = get_footer_text_color()): ?>
 #footer,
-#footer a,
+#footer a:not(.sns-button),
 .footer-title {
   color: <?php echo $footer_text_color; ?>;
 }

@@ -13,6 +13,9 @@
 //Font Awesomeのアイコン
 @import "fontawesome-before";
 
+//フォントの設定
+@import "font";
+
 //エディタースタイル
 @import "extension";
 @import "extension-layout";
@@ -784,11 +787,6 @@ ol, ul {
   height: auto;
 }
 
-.body,
-.body p{
-  font-size: 18px;
-}
-
 //ブロックエディタータイトル余白の修正
 .block-editor-editor-skeleton__body {
   .editor-post-title{
@@ -1400,7 +1398,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   display: none;
 }
 
-.body .wp-block li{
+.body .wp-block:not(.wp-block-group) li{
   margin: 0.2em 0;
 }
 
@@ -1437,4 +1435,9 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     padding-top: 0;
     padding-bottom: 0;
   }
+}
+
+//エディターページではswiperが有効でないため自前で余白を入れる
+.is-list-horizontal .a-wrap {
+  margin-right: 4px;
 }

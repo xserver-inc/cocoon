@@ -227,8 +227,8 @@ body {
 #slide-in-sidebar .widget_navi_entries .border-partition a:first-of-type {
   border-top: solid #26A69A 1px;
 }
-#sidebar .widget_navi_entries .border-square a,
-#slide-in-sidebar .widget_navi_entries .border-square a {
+#sidebar .widget_navi_entries .border-square .a-wrap,
+#slide-in-sidebar .widget_navi_entries .border-square .a-wrap {
   border: solid #26A69A 1px;
 }
 #sidebar .widget_navi_entries .card-large-image a:hover,
@@ -253,9 +253,9 @@ body {
 #slide-in-sidebar .widget_author_box .author-box .website-button {
   background-color: #002561;
 }
-#sidebar .widget_author_box .author-box .twitter-button,
-#slide-in-sidebar .widget_author_box .author-box .twitter-button {
-  background-color: #1DA1F2;
+#sidebar .widget_author_box .author-box .x-corp-button,
+#slide-in-sidebar .widget_author_box .author-box .x-corp-button {
+  background-color: var(--cocoon-twitter-color);
 }
 #sidebar .widget_author_box .author-box .facebook-button,
 #slide-in-sidebar .widget_author_box .author-box .facebook-button {
@@ -354,8 +354,8 @@ body {
 #slide-in-sidebar .widget_popular_entries .border-partition a:first-of-type {
   border-top: solid #26A69A 1px;
 }
-#sidebar .widget_popular_entries .border-square a,
-#slide-in-sidebar .widget_popular_entries .border-square a {
+#sidebar .widget_popular_entries .border-square .a-wrap,
+#slide-in-sidebar .widget_popular_entries .border-square .a-wrap {
   border: solid #26A69A 1px;
 }
 #sidebar .widget_popular_entries .card-large-image a:hover,
@@ -386,8 +386,8 @@ body {
 #slide-in-sidebar .widget_new_entries .border-partition a:first-of-type {
   border-top: solid #26A69A 1px;
 }
-#sidebar .widget_new_entries .border-square a,
-#slide-in-sidebar .widget_new_entries .border-square a {
+#sidebar .widget_new_entries .border-square .a-wrap,
+#slide-in-sidebar .widget_new_entries .border-square .a-wrap {
   border: solid #26A69A 1px;
 }
 #sidebar .widget_new_entries .card-large-image a:hover,
@@ -437,8 +437,8 @@ body {
 #slide-in-sidebar .widget_related_entries .border-partition a:first-of-type {
   border-top: solid #26A69A 1px;
 }
-#sidebar .widget_related_entries .border-square a,
-#slide-in-sidebar .widget_related_entries .border-square a {
+#sidebar .widget_related_entries .border-square .a-wrap,
+#slide-in-sidebar .widget_related_entries .border-square .a-wrap {
   border: solid #26A69A 1px;
 }
 #sidebar .widget_related_entries .card-large-image a:hover,
@@ -513,9 +513,9 @@ body {
   background-color: #80CBC4;
   color: white;
 }
-#sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"], #sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"] a,
-#slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"],
-#slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$="today"] a {
+#sidebar .widget_calendar .wp-calendar-table tbody tr td [id$=today], #sidebar .widget_calendar .wp-calendar-table tbody tr td [id$=today] a,
+#slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$=today],
+#slide-in-sidebar .widget_calendar .wp-calendar-table tbody tr td [id$=today] a {
   background-color: #26A69A;
   color: white;
 }
@@ -658,7 +658,7 @@ body {
   background-color: #E0F2F1;
 }
 
-#main .post-password-form input[type="password"] {
+#main .post-password-form input[type=password] {
   border-radius: 0;
   border: none;
   border-top-left-radius: 4px;
@@ -666,11 +666,11 @@ body {
   border-bottom: solid #26A69A 1px;
   background-color: transparent;
 }
-#main .post-password-form input[type="password"]:focus {
+#main .post-password-form input[type=password]:focus {
   transition: all 0.3s ease;
   background-color: #E0F2F1;
 }
-#main .post-password-form input[type="submit"] {
+#main .post-password-form input[type=submit] {
   margin: 1em 0;
   display: inline-block;
   background-color: #26A69A;
@@ -844,7 +844,7 @@ blockquote cite {
   background-color: #80CBC4;
   color: white;
 }
-#main .wp-block-calendar .wp-calendar-table tbody tr td [id$="today"], #main .wp-block-calendar .wp-calendar-table tbody tr td [id$="today"] a {
+#main .wp-block-calendar .wp-calendar-table tbody tr td [id$=today], #main .wp-block-calendar .wp-calendar-table tbody tr td [id$=today] a {
   background-color: #26A69A;
   color: white;
 }

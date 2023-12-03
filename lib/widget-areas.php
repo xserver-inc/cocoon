@@ -51,7 +51,7 @@ function register_main_scroll_widget_area(){
     'description' => __( 'メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-main-scroll %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h2 class="widget-main-scroll-title main-widget-label">',
+    'before_title' => '<h2 class="widget-main-scroll-title main-widget-label widget-title">',
     'after_title' => '</h2>',
   ));
 }
@@ -67,7 +67,7 @@ function register_above_single_content_title_widget_area(){
     'description' => __( '投稿タイトル上に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-above-single-content-title %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-above-single-content-title-title main-widget-label">',
+    'before_title' => '<div class="widget-above-single-content-title-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -83,7 +83,7 @@ function register_below_single_content_title_widget_area(){
     'description' => __( '投稿タイトル下に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-below-single-content-title %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-below-single-content-title-title main-widget-label">',
+    'before_title' => '<div class="widget-below-single-content-title-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -99,7 +99,7 @@ function register_single_content_top_widget_area(){
     'description' => __( '投稿本文上に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-single-content-top %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-single-content-top-title main-widget-label">',
+    'before_title' => '<div class="widget-single-content-top-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -115,7 +115,7 @@ function register_single_content_middle_widget_area(){
     'description' => __( '投稿本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-single-content-middle %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-single-content-middle-title main-widget-label">',
+    'before_title' => '<div class="widget-single-content-middle-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -131,7 +131,7 @@ function register_single_content_bottom_widget_area(){
     'description' => __( '投稿本文下に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-single-content-bottom %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-single-content-bottom-title main-widget-label">',
+    'before_title' => '<div class="widget-single-content-bottom-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -147,7 +147,7 @@ function register_abobe_single_sns_buttons_widget_area(){
     'description' => __( '投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表示している場合は、広告の下になります。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-above-single-sns-buttons %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-above-single-sns-buttons-title main-widget-label">',
+    'before_title' => '<div class="widget-above-single-sns-buttons-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -163,7 +163,7 @@ function register_below_single_sns_buttons_widget_area(){
     'description' => __( '投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-below-sns-buttons %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-below-sns-buttons-title main-widget-label">',
+    'before_title' => '<div class="widget-below-sns-buttons-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -179,7 +179,7 @@ register_sidebars(1,
   'description' => __( '関連記事の上に表示されるウイジェット。', THEME_NAME ),
   'before_widget' => '<div id="%1$s" class="widget widget-above-related-entries %2$s">',
   'after_widget' => '</div>',
-  'before_title' => '<h2 class="widget-above-related-entries-title main-widget-label">',
+  'before_title' => '<h2 class="widget-above-related-entries-title main-widget-label widget-title">',
   'after_title' => '</h2>',
 ));
 }
@@ -195,7 +195,7 @@ register_sidebars(1,
   'description' => __( '関連記事の下（広告を表示している場合はその下）に表示されるウイジェット。', THEME_NAME ),
   'before_widget' => '<div id="%1$s" class="widget widget-below-related-entries %2$s">',
   'after_widget' => '</div>',
-  'before_title' => '<h2 class="widget-below-related-entries-title main-widget-label">',
+  'before_title' => '<h2 class="widget-below-related-entries-title main-widget-label widget-title">',
   'after_title' => '</h2>',
 ));
 }
@@ -211,7 +211,7 @@ register_sidebars(1,
   'description' => __( 'コメントエリアの上に表示されるウイジェット。', THEME_NAME ),
   'before_widget' => '<div id="%1$s" class="widget above-single-comment-aria %2$s">',
   'after_widget' => '</div>',
-  'before_title' => '<h2 class="above-single-comment-aria-title main-widget-label">',
+  'before_title' => '<h2 class="above-single-comment-aria-title main-widget-label widget-title">',
   'after_title' => '</h2>',
 ));
 }
@@ -227,7 +227,7 @@ register_sidebars(1,
   'description' => __( 'コメントフォームの下に表示されるウイジェット。', THEME_NAME ),
   'before_widget' => '<div id="%1$s" class="widget widget-below-comment-form %2$s">',
   'after_widget' => '</div>',
-  'before_title' => '<h2 class="widget-below-comment-form-title main-widget-label">',
+  'before_title' => '<h2 class="widget-below-comment-form-title main-widget-label widget-title">',
   'after_title' => '</h2>',
 ));
 }
@@ -243,7 +243,7 @@ function register_above_page_content_title_widget_area(){
     'description' => __( '固定ページタイトル上に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-above-page-content-title %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-above-page-content-title-title main-widget-label">',
+    'before_title' => '<div class="widget-above-page-content-title-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -259,7 +259,7 @@ function register_below_page_content_title_widget_area(){
     'description' => __( '固定ページタイトル下に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-below-page-content-title %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-below-page-content-title-title main-widget-label">',
+    'before_title' => '<div class="widget-below-page-content-title-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -275,7 +275,7 @@ function register_page_content_top_widget_area(){
     'description' => __( '固定ページ本文上に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-page-content-top %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-page-content-top-title main-widget-label">',
+    'before_title' => '<div class="widget-page-content-top-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -291,7 +291,7 @@ function register_page_content_middle_widget_area(){
     'description' => __( '固定ページ本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-page-content-middle %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-page-content-middle-title main-widget-label">',
+    'before_title' => '<div class="widget-page-content-middle-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -307,7 +307,7 @@ register_sidebars(1,
   'description' => __( '固定ページ本文下に表示されるウイジェット。', THEME_NAME ),
   'before_widget' => '<div id="%1$s" class="widget widget-page-content-bottom %2$s">',
   'after_widget' => '</div>',
-  'before_title' => '<div class="widget-page-content-bottom-title main-widget-label">',
+  'before_title' => '<div class="widget-page-content-bottom-title main-widget-label widget-title">',
   'after_title' => '</div>',
 ));
 }
@@ -324,7 +324,7 @@ function register_above_page_sns_buttonwidget_area(){
     'description' => __( '固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表示している場合は、広告の下になります。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-above-page-sns-buttons %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-above-page-sns-buttons-title main-widget-label">',
+    'before_title' => '<div class="widget-above-page-sns-buttons-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -340,7 +340,7 @@ function register_below_page_sns_buttons_widget_area(){
     'description' => __( '固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-below-page-sns-buttons %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-below-page-sns-buttons-title main-widget-label">',
+    'before_title' => '<div class="widget-below-page-sns-buttons-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -356,7 +356,7 @@ function register_index_top_widget_area(){
     'description' => __( 'インデックスリストのトップに表示されるウイジェット。広告が表示されているときは広告の下に表示されます。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-index-top %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<div class="widget-index-top-title main-widget-label">',
+    'before_title' => '<div class="widget-index-top-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -372,7 +372,7 @@ function register_index_middle_widget_area(){
     'description' => __( 'インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-index-middle %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<div class="widget-index-middle-title main-widget-label">',
+    'before_title' => '<div class="widget-index-middle-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -388,7 +388,7 @@ function register_index_bottom_widget_area(){
     'description' => __( 'インデックスリストのボトムに表示されるウイジェット。広告が表示されているときは広告の下に表示されます。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-index-bottom %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<div class="widget-index-bottom-title main-widget-label">',
+    'before_title' => '<div class="widget-index-bottom-title main-widget-label widget-title">',
     'after_title' => '</div>',
   ));
 }
@@ -404,7 +404,7 @@ function register_content_top_widget_area(){
     'description' => __( 'メインカラムとサイドバーの上部エリア。グローバルメニューの下にもなります。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-content-top %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h2 class="widget-content-top-title main-widget-label">',
+    'before_title' => '<h2 class="widget-content-top-title main-widget-label widget-title">',
     'after_title' => '</h2>',
   ));
 }
@@ -420,7 +420,7 @@ function register_content_bottom_widget_area(){
     'description' => __( 'メインカラムとサイドバーの下部エリア。フッターの上になります。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-content-bottom %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h2 class="widget-content-bottom-title main-widget-label">',
+    'before_title' => '<h2 class="widget-content-bottom-title main-widget-label widget-title">',
     'after_title' => '</h2>',
   ));
 }
@@ -436,7 +436,7 @@ function register_footer_left_widget_area(){
     'description' => __( 'フッター左側のウィジットエリアです。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-footer-left %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h3 class="widget-footer-left-title footer-title">',
+    'before_title' => '<h3 class="widget-footer-left-title footer-title widget-title">',
     'after_title' => '</h3>',
   ));
 }
@@ -452,7 +452,7 @@ register_sidebars(1,
   'description' => __( 'フッター中間のウィジットエリアです。', THEME_NAME ),
   'before_widget' => '<aside id="%1$s" class="widget widget-footer-center %2$s">',
   'after_widget' => '</aside>',
-  'before_title' => '<h3 class="widget-footer-center-title footer-title">',
+  'before_title' => '<h3 class="widget-footer-center-title footer-title widget-title">',
   'after_title' => '</h3>',
 ));
 }
@@ -468,7 +468,7 @@ function register_footer_right_widget_area(){
     'description' => __( 'フッター右側フッター中のウィジットエリアです。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-footer-right %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h3 class="widget-footer-right-title footer-title">',
+    'before_title' => '<h3 class="widget-footer-right-title footer-title widget-title">',
     'after_title' => '</h3>',
   ));
 
@@ -485,7 +485,7 @@ function register_footer_mobile_widget_area(){
     'description' => __( 'モバイルで表示するウィジットエリアです。834px以下で表示されます。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-footer-mobile %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h3 class="widget-footer-mobile-title footer-title">',
+    'before_title' => '<h3 class="widget-footer-mobile-title footer-title widget-title">',
     'after_title' => '</h3>',
   ));
 
@@ -502,7 +502,7 @@ function register_404_page_widget_area(){
     'description' => __( '404ページをカスタマイズするためのウィジットエリアです。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-404-page %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-404-page-title">',
+    'before_title' => '<div class="widget-404-page-title widget-title">',
     'after_title' => '</div>',
   ));
 }

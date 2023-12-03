@@ -1,6 +1,6 @@
 const { createBlock } = wp.blocks;
 
-export const transforms = {
+const transforms = {
   to: [
     {
       type: 'block',
@@ -32,3 +32,5 @@ export const transforms = {
     },
   ],
 };
+
+export default transforms;

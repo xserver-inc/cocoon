@@ -6,7 +6,7 @@
   Author URI: https://haiji-blog.com/
   Screenshot URI:https://im-cocoon.net/wp-content/uploads/hygiene.png
   Version: 1.1.5
-  Priority: 9940000000
+  Priority: 9190000000
 */
 
 /*以下にスタイルシートを記入してください1*/
@@ -364,8 +364,8 @@ border-bottom:4px solid #5572ff;
   font-size: 35px;
   transition: all 0.5s ease;
 }
-.sns-share-buttons a:hover .icon-twitter{
-  color: #8cbdff;
+.sns-share-buttons a:hover .icon-x-corp{
+  color: #666666;
 }
 .sns-share-buttons a:hover .icon-facebook{
   color: #686af5;
@@ -386,9 +386,13 @@ border-bottom:4px solid #5572ff;
 }
 .sns-share-buttons a:hover .icon-line::after{
   display: none;
+
+}.sns-share-buttons a:hover .icon-copy,
+.sns-share-buttons a:hover .icon-comment{
+  color: #888888;
 }
 
-.twitter-share-count::after {
+.x-corp-share-count::after {
   content: 'SHARE';
 }
 .googleplus-share-count::after{
@@ -434,9 +438,9 @@ border-bottom:4px solid #5572ff;
   display: block;
 }
 
-.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-twitter,
- .bc-brand-color.sns-share .sns-share-buttons a .share-count.twitter-share-count{
-  filter: drop-shadow(1px 1px 1px #1aa1f2);
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-x-corp,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.x-corp-share-count{
+  filter: drop-shadow(1px 1px 1px #000000);
 }
 .bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-facebook,
  .bc-brand-color.sns-share .sns-share-buttons a .share-count.facebook-share-count{
@@ -479,6 +483,13 @@ border-bottom:4px solid #5572ff;
 .copy-share-count::after {
   content: 'COPY';
 }
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-comment,
+.bc-brand-color.sns-share .sns-share-buttons a .share-count.comment-share-count{
+  filter: drop-shadow(1px 1px 1px #333);
+}
+.comment-share-count::after {
+  content: 'COMMENT';
+}
 
 
 
@@ -506,6 +517,10 @@ border-bottom:4px solid #5572ff;
   background: linear-gradient(225deg, #f5f2ff 10px, #dffffe);
     margin-bottom: 30px;
     padding-bottom: 20px;
+}
+
+[class*="bc-brand-color"] .follow-button {
+  background-color: var(--cocoon-sns-color);
 }
 
 .sns-follow.bc-brand-color > .sns-follow-buttons a {
@@ -551,13 +566,13 @@ border-bottom:4px solid #5572ff;
 .author-box .sns-follow-buttons a.follow-button:hover .icon-home-logo{
   color: #002561;
 }
-.bc-brand-color-white.sns-follow .twitter-button,
-.author-box .sns-follow-buttons a.follow-button.twitter-button{
-  filter: drop-shadow(1px 1px 1px #1da1f2)
+.bc-brand-color-white.sns-follow .x-corp-button,
+.author-box .sns-follow-buttons a.follow-button.x-corp-button{
+  filter: drop-shadow(1px 1px 1px #000000)
 }
-.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-twitter-logo,
-.author-box .sns-follow-buttons a.follow-button:hover .icon-twitter-logo{
-  color: #1da1f2;
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-x-corp-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-x-corp-logo{
+  color: #000000;
 }
 .bc-brand-color-white.sns-follow .facebook-button,
 .author-box .sns-follow-buttons a.follow-button.facebook-button {

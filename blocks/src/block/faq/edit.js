@@ -10,8 +10,9 @@ import {
   useBlockProps,
 } from '@wordpress/block-editor';
 import { BaseControl, PanelBody, TextControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
+import { Fragment, useEffect } from '@wordpress/element';
 import { compose } from '@wordpress/compose';
+import { useSelect } from '@wordpress/data';
 import classnames from 'classnames';
 
 export function FAQEdit( props ) {
@@ -30,6 +31,7 @@ export function FAQEdit( props ) {
     borderColor,
     setBorderColor,
     fontSize,
+    clientId,
   } = props;
 
   const {
@@ -41,7 +43,43 @@ export function FAQEdit( props ) {
     customBorderColor,
     customQuestionColor,
     customAnswerColor,
+    notNestedStyle,
+    questionColorValue,
+    answerColorValue,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = props.attributes;
+
+  // 親ブロックのnotNestedStyleがfalseかどうかを判定
+  const isParentNestedStyle = useSelect( ( select ) => {
+    const parentBlocks =
+      select( 'core/block-editor' ).getBlockParents( clientId );
+    for ( const parentClientId of parentBlocks ) {
+      const parentBlock =
+        select( 'core/block-editor' ).getBlock( parentClientId );
+      if (
+        parentBlock.name === props.name &&
+        parentBlock.attributes.notNestedStyle === false
+      ) {
+        return true;
+      }
+    }
+    return false;
+  } );
+
+  // 親ブロックのnotNestedStyleがfalseの場合はnotNestedStyleをfalseにする
+  if ( isParentNestedStyle && notNestedStyle ) {
+    setAttributes( { notNestedStyle: false } );
+  }
+
+  useEffect( () => {
+    setAttributes( { questionColorValue: questionColor.color } );
+    setAttributes( { answerColorValue: answerColor.color } );
+    setAttributes( { backgroundColorValue: backgroundColor.color } );
+    setAttributes( { textColorValue: textColor.color } );
+    setAttributes( { borderColorValue: borderColor.color } );
+  }, [ questionColor, answerColor, borderColor, backgroundColor, textColor ] );
 
   const classes = classnames( className, {
     'faq-wrap': true,
@@ -58,6 +96,8 @@ export function FAQEdit( props ) {
     [ textColor.class ]: textColor.class,
     [ borderColor.class ]: borderColor.class,
     [ fontSize.class ]: fontSize.class,
+    'not-nested-style': notNestedStyle,
+    'cocoon-block-faq': true,
   } );
 
   const styles = {
@@ -68,6 +108,14 @@ export function FAQEdit( props ) {
     '--cocoon-custom-text-color': customTextColor || undefined,
   };
 
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-question-color' ] = questionColorValue;
+    styles[ '--cocoon-custom-answer-color' ] = answerColorValue;
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
+
   const blockProps = useBlockProps( {
     className: classes,
     style: styles,
@@ -77,7 +125,10 @@ export function FAQEdit( props ) {
     <Fragment>
       <InspectorControls>
         <PanelBody title={ __( '設定', THEME_NAME ) }>
-          <BaseControl label={ __( '質問ラベル', THEME_NAME ) }>
+          <BaseControl
+            id="questionLabel"
+            label={ __( '質問ラベル', THEME_NAME ) }
+          >
             <TextControl
               value={ questionLabel }
               placeholder={ __( 'Q', THEME_NAME ) }
@@ -87,7 +138,10 @@ export function FAQEdit( props ) {
               help={ __( '※2文字以下推奨', THEME_NAME ) }
             />
           </BaseControl>
-          <BaseControl label={ __( '回答ラベル', THEME_NAME ) }>
+          <BaseControl
+            id="answerLabel"
+            label={ __( '回答ラベル', THEME_NAME ) }
+          >
             <TextControl
               value={ answerLabel }
               placeholder={ __( 'A', THEME_NAME ) }

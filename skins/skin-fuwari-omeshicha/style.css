@@ -7,7 +7,7 @@
   Author URI: https://mizutama.blog/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-fuwari-omeshicha.png
   Version: 1.1
-  Priority: 9890001000
+  Priority: 9160002000
 */
 /************************************
 ** 基本
@@ -232,7 +232,6 @@ table th {
 ** ブログカード
 ************************************/
 .blogcard-wrap .blogcard {
-	padding: 1.2% 2%;
 	border: 1px solid #aec9cc;
 	background-color: #fcfdfd;
 }

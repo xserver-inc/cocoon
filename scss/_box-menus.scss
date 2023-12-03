@@ -1,8 +1,6 @@
 .box-menus{
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  // margin: 18px 0;
   *{
     line-height: 1.6;
     margin: 0;
@@ -21,9 +19,6 @@
   color: var(--cocoon-x-pallid-text-color);
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
-  &:last-child{
-    margin-right: auto;
-  }
 
   &:hover{
     color: var(--cocoon-x-pallid-text-color);

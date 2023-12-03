@@ -110,7 +110,7 @@ class CTABoxWidgetItem extends WP_Widget {
     <?php //レイアウト?>
     <p>
       <label for="<?php echo $this->get_field_id('layout'); ?>">
-        <?php _e( '画像とメッセージのレイアウト（サイドバー以外）', THEME_NAME ) ?>
+        <?php _e( '画像とメッセージのレイアウト（サイドバー・フッター以外）', THEME_NAME ) ?>
       </label><br>
       <?php
       $options = array(
