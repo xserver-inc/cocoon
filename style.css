@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.6.9.1
+Version: 2.6.9.2
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -2536,6 +2536,22 @@ label.screen-reader-text {
 
 .font-awesome-5 .card-arrow .a-wrap::after {
   font-family: "Font Awesome 5 Free";
+}
+
+/************************************
+** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
+************************************/
+.widget-entry-cards:not(.large-thumb-on) .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.widget-entry-cards:not(.large-thumb-on) .card-snippet {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 /************************************
