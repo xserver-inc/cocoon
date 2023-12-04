@@ -526,7 +526,7 @@ html .body .sbs-think .speech-balloon.has-<?php echo $slug; ?>-border-color::bef
   border-color: <?php echo $color; ?>;
 }
 <?php //タイムライン ?>
-html .body .timeline-box.has-<?php echo $slug; ?>-point-color .timeline-item::before{
+html .body .timeline-box.has-<?php echo $slug; ?>-point-color:not(.not-nested-style) .timeline-item::before{
   background-color: <?php echo $color; ?>;
 }
 <?php //FAQ ?>
@@ -655,6 +655,12 @@ html .body .btn-wrap.has-larger-font-size > a {
 }
 .cocoon-block-faq.is-style-accordion.has-border-color.not-nested-style:not(.has-question-color) > .faq > .faq-question .faq-question-label {
     color: var(--cocoon-white-color);
+}
+<?php //タイムライン ?>
+.cocoon-block-timeline.not-nested-style {
+    background-color: var(--cocoon-custom-background-color)!important;
+    color: var(--cocoon-custom-text-color);
+    border-color: var(--cocoon-custom-border-color);
 }
 
     <?php
