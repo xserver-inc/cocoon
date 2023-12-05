@@ -19,6 +19,11 @@ export default function save( { attributes } ) {
     pointColor,
     customPointColor,
     fontSize,
+    notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
+    pointColorValue,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -31,9 +36,9 @@ export default function save( { attributes } ) {
   const fontSizeClass = getFontSizeClass( fontSize );
 
   const className = classnames( {
-    [ 'timeline-box' ]: true,
-    [ 'cf' ]: true,
-    [ 'block-box' ]: true,
+    'timeline-box': true,
+    'cf': true,// eslint-disable-line prettier/prettier
+    'block-box': true,
     'has-text-color': textColor || customTextColor,
     'has-background': backgroundColor || customBackgroundColor,
     'has-border-color': borderColor || customBorderColor,
@@ -43,6 +48,8 @@ export default function save( { attributes } ) {
     [ borderClass ]: borderClass,
     [ pointClass ]: pointClass,
     [ fontSizeClass ]: fontSizeClass,
+    'not-nested-style': notNestedStyle,
+    'cocoon-block-timeline': true,
   } );
 
   const styles = {
@@ -52,14 +59,21 @@ export default function save( { attributes } ) {
     '--cocoon-custom-point-color': customPointColor || undefined,
   };
 
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+    styles[ '--cocoon-custom-point-color' ] = pointColorValue;
+  }
+
   const blockProps = useBlockProps.save( {
-    className: className,
+    className,
     style: styles,
   } );
 
   return (
     <div { ...blockProps }>
-      <div class="timeline-title">
+      <div className="timeline-title">
         <RichText.Content value={ title } />
       </div>
       <ul className="timeline">

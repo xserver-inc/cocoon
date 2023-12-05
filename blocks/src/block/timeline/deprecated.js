@@ -4,12 +4,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-import {
-  THEME_NAME,
-  BUTTON_BLOCK,
-  CLICK_POINT_MSG,
-  colorValueToSlug,
-} from '../../helpers';
+import { colorValueToSlug } from '../../helpers';
 import classnames from 'classnames';
 
 import {
@@ -19,7 +14,6 @@ import {
   getFontSizeClass,
   useBlockProps,
 } from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
 
 const v1 = {
   attributes: {
@@ -45,8 +39,8 @@ const v1 = {
     const { title, icon, iconColor, borderColor } = attributes;
 
     return {
-      title: title,
-      icon: icon,
+      title,
+      icon,
       backgroundColor: undefined,
       customBackgroundColor: undefined,
       textColor: undefined,
@@ -69,7 +63,7 @@ const v1 = {
         !! colorValueToSlug( iconColor ),
       [ `blank-box bb-${ colorValueToSlug( borderColor ) }` ]:
         !! colorValueToSlug( borderColor ),
-      [ 'block-box' ]: true,
+      'block-box': true,
     } );
     return (
       <div className={ classes }>
@@ -105,9 +99,9 @@ const v2 = {
     const fontSizeClass = getFontSizeClass( fontSize );
 
     const className = classnames( {
-      [ 'timeline-box' ]: true,
-      [ 'cf' ]: true,
-      [ 'block-box' ]: true,
+      'timeline-box': true,
+      cf: true,
+      'block-box': true,
       'has-text-color': textColor,
       'has-background': backgroundColor,
       'has-border-color': borderColor || customBorderColor,
@@ -120,12 +114,12 @@ const v2 = {
     } );
 
     const blockProps = useBlockProps.save( {
-      className: className,
+      className,
     } );
 
     return (
       <div { ...blockProps }>
-        <div class="timeline-title">
+        <div className="timeline-title">
           <RichText.Content value={ title } />
         </div>
         <ul className="timeline">
@@ -136,4 +130,127 @@ const v2 = {
   },
 };
 
-export default [ v2, v1 ];
+const v3 = {
+  attributes: {
+    title: {
+      type: 'string',
+      default: 'タイムラインのタイトル',
+    },
+    items: {
+      type: 'number',
+      default: 1,
+    },
+    backgroundColor: {
+      type: 'string',
+    },
+    textColor: {
+      type: 'string',
+    },
+    borderColor: {
+      type: 'string',
+    },
+    customBackgroundColor: {
+      type: 'string',
+    },
+    customTextColor: {
+      type: 'string',
+    },
+    customBorderColor: {
+      type: 'string',
+    },
+    pointColor: {
+      type: 'string',
+    },
+    customPointColor: {
+      type: 'string',
+    },
+    fontSize: {
+      type: 'string',
+    },
+    notNestedStyle: {
+      type: 'boolean',
+      default: true,
+    },
+    backgroundColorValue: {
+      type: 'string',
+    },
+    textColorValue: {
+      type: 'string',
+    },
+    borderColorValue: {
+      type: 'string',
+    },
+    pointColorValue: {
+      type: 'string',
+    },
+  },
+  migrate( attributes ) {
+    return {
+      ...attributes,
+      notNestedStyle: false,
+    };
+  },
+  save( { attributes } ) {
+    const {
+      title,
+      backgroundColor,
+      textColor,
+      borderColor,
+      customBackgroundColor,
+      customTextColor,
+      customBorderColor,
+      pointColor,
+      customPointColor,
+      fontSize,
+    } = attributes;
+
+    const backgroundClass = getColorClassName(
+      'background-color',
+      backgroundColor
+    );
+    const textClass = getColorClassName( 'color', textColor );
+    const borderClass = getColorClassName( 'border-color', borderColor );
+    const pointClass = getColorClassName( 'point-color', pointColor );
+    const fontSizeClass = getFontSizeClass( fontSize );
+
+    const className = classnames( {
+      'timeline-box': true,
+      cf: true,
+      'block-box': true,
+      'has-text-color': textColor || customTextColor,
+      'has-background': backgroundColor || customBackgroundColor,
+      'has-border-color': borderColor || customBorderColor,
+      'has-point-color': pointColor || customPointColor,
+      [ textClass ]: textClass,
+      [ backgroundClass ]: backgroundClass,
+      [ borderClass ]: borderClass,
+      [ pointClass ]: pointClass,
+      [ fontSizeClass ]: fontSizeClass,
+    } );
+
+    const styles = {
+      '--cocoon-custom-background-color': customBackgroundColor || undefined,
+      '--cocoon-custom-text-color': customTextColor || undefined,
+      '--cocoon-custom-border-color': customBorderColor || undefined,
+      '--cocoon-custom-point-color': customPointColor || undefined,
+    };
+
+    const blockProps = useBlockProps.save( {
+      className,
+      style: styles,
+    } );
+
+    return (
+      <div { ...blockProps }>
+        <div className="timeline-title">
+          <RichText.Content value={ title } />
+        </div>
+        <ul className="timeline">
+          <InnerBlocks.Content />
+        </ul>
+      </div>
+    );
+  },
+};
+
+export default [ v3, v2, v1 ];
