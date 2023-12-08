@@ -10,8 +10,9 @@ import {
   useBlockProps,
 } from '@wordpress/block-editor';
 import { PanelBody, BaseControl, Button } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
+import { Fragment, useEffect } from '@wordpress/element';
 import { compose } from '@wordpress/compose';
+import { useSelect } from '@wordpress/data';
 import classnames from 'classnames';
 import { times } from 'lodash';
 
@@ -30,6 +31,7 @@ export function TabCaptionBoxEdit( props ) {
     borderColor,
     setBorderColor,
     fontSize,
+    clientId,
   } = props;
 
   const {
@@ -38,7 +40,39 @@ export function TabCaptionBoxEdit( props ) {
     customBackgroundColor,
     customTextColor,
     customBorderColor,
+    notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = attributes;
+
+  // 親ブロックのnotNestedStyleがfalseかどうかを判定
+  const isParentNestedStyle = useSelect( ( select ) => {
+    const parentBlocks =
+      select( 'core/block-editor' ).getBlockParents( clientId );
+    for ( const parentClientId of parentBlocks ) {
+      const parentBlock =
+        select( 'core/block-editor' ).getBlock( parentClientId );
+      if (
+        parentBlock.name === props.name &&
+        parentBlock.attributes.notNestedStyle === false
+      ) {
+        return true;
+      }
+    }
+    return false;
+  } );
+
+  // 親ブロックのnotNestedStyleがfalseの場合はnotNestedStyleをfalseにする
+  if ( isParentNestedStyle && notNestedStyle ) {
+    setAttributes( { notNestedStyle: false } );
+  }
+
+  useEffect( () => {
+    setAttributes( { backgroundColorValue: backgroundColor.color } );
+    setAttributes( { textColorValue: textColor.color } );
+    setAttributes( { borderColorValue: borderColor.color } );
+  }, [ backgroundColor, textColor, borderColor ] );
 
   const classes = classnames( className, {
     [ CAPTION_BOX_CLASS ]: true,
@@ -50,6 +84,8 @@ export function TabCaptionBoxEdit( props ) {
     [ textColor.class ]: textColor.class,
     [ borderColor.class ]: borderColor.class,
     [ fontSize.class ]: fontSize.class,
+    'not-nested-style': notNestedStyle,
+    'cocoon-block-tab-caption-box': true,
   } );
 
   const styles = {
@@ -57,6 +93,12 @@ export function TabCaptionBoxEdit( props ) {
     '--cocoon-custom-background-color': customBackgroundColor || undefined,
     '--cocoon-custom-text-color': customTextColor || undefined,
   };
+
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
 
   const blockProps = useBlockProps( {
     className: classes,
@@ -67,7 +109,10 @@ export function TabCaptionBoxEdit( props ) {
     <Fragment>
       <InspectorControls>
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-          <BaseControl label={ __( 'アイコン', THEME_NAME ) }>
+          <BaseControl
+            id="tabCaptionBoxIcon"
+            label={ __( 'アイコン', THEME_NAME ) }
+          >
             <div className="icon-setting-buttons">
               { times( ICONS.length, ( index ) => {
                 return (

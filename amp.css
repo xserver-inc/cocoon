@@ -4806,7 +4806,7 @@ div.search-form {
 .tab-caption-box.block-box.has-background {
   background-color: transparent !important;
 }
-.tab-caption-box.has-border-color .box-label {
+.tab-caption-box.has-border-color:not(.not-nested-style) .box-label {
   color: var(--cocoon-white-color);
 }
 
