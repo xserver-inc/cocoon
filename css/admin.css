@@ -1552,7 +1552,6 @@ body.wp-admin {
   flex-wrap: wrap;
   justify-content: flex-end;
   text-align: center;
-  margin: 0;
 }
 .admin-settings .demo .navi-footer-in > .menu-footer li {
   width: 120px;
@@ -9660,7 +9659,6 @@ body.wp-admin {
   flex-wrap: wrap;
   justify-content: flex-end;
   text-align: center;
-  margin: 0;
 }
 .admin-settings .demo .navi-footer-in > .menu-footer li {
   width: 120px;
