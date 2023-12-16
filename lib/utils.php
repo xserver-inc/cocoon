@@ -715,6 +715,7 @@ function wp_enqueue_slick(){
                   infinite: true,
                   slidesToShow: 6,
                   slidesToScroll: 6,
+                  respondTo: "slider",
                   responsive: [
                       {
                         breakpoint: 1241,
