@@ -166,24 +166,28 @@ body{
 
   }
 
-  &.sbp-l{
-    .speech-balloon{
-      margin-left: 10px;
-    }
-  }
-  &.sbp-r{
-    .speech-balloon{
-      margin-right: 10px;
+  &:not(.not-nested-style) {
 
-      &::before{
-        right: -7px;
-        left: auto;
-        border-left-width: 7px;
+    &.sbp-l{
+      .speech-balloon{
+        margin-left: 10px;
       }
-      &::after{
-        border-left-width: 7px;
-        right: -5px;
-        left: auto;
+    }
+
+    &.sbp-r{
+      .speech-balloon{
+        margin-right: 10px;
+
+        &::before{
+          right: -7px;
+          left: auto;
+          border-left-width: 7px;
+        }
+        &::after{
+          border-left-width: 7px;
+          right: -5px;
+          left: auto;
+        }
       }
     }
   }
@@ -193,7 +197,7 @@ body{
 ///////////////////////////////////////
 // 考える吹き出し
 ///////////////////////////////////////
-.speech-wrap.sbs-think{
+.speech-wrap.sbs-think:not(.not-nested-style) {
   &.sbp-l{
     .speech-balloon{
       margin-left: 28px;
@@ -223,7 +227,7 @@ body{
   }
 }
 
-.speech-wrap.sbs-think.sbp-r{
+.speech-wrap.sbs-think.sbp-r:not(.not-nested-style) {
   .speech-balloon{
     //margin-left: 0;
     margin-right: 28px;
@@ -238,6 +242,76 @@ body{
       border: 2px solid var(--cocoon-basic-border-color);
       left: auto;
       right: -27px;
+    }
+  }
+}
+
+///////////////////////////////////////
+// 吹き出し スタイル継承なし
+///////////////////////////////////////
+.cocoon-block-balloon.not-nested-style {
+  &.sbs-line > .speech-balloon::after {
+    left: -5px;
+  }
+
+  &.sbp-l > .speech-balloon {
+    margin-left: 10px;
+  }
+
+  &.sbp-r > .speech-balloon,
+  &.sbp-r.sbs-line > .speech-balloon {
+    margin-right: 10px;
+
+    &::before{
+      right: -7px;
+      left: auto;
+      border-left-width: 7px;
+    }
+
+    &::after{
+      border-left-width: 7px;
+      right: -5px;
+      left: auto;
+    }
+  }
+
+  // 考える吹き出し
+  &.sbs-think {
+     > .speech-balloon{
+      &::before {
+        top: 4px;
+        left: -19px;
+        width: 12px;
+        height: 12px;
+      }
+
+      &::after {
+        top: 16px;
+        width: 6px;
+        height: 6px;
+        left: -27px;
+      }
+    }
+    &.sbp-l > .speech-balloon{
+      margin-left: 28px;
+    }
+
+    &.sbp-r > .speech-balloon{
+      margin-right: 28px;
+
+      &::before,
+      &::after{
+        border-width: 2px;
+        left: auto;
+      }
+
+      &::before {
+        right: -19px;
+      }
+
+      &::after {
+        right: -27px;
+      }
     }
   }
 }

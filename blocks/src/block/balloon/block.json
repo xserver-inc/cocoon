@@ -57,6 +57,19 @@
     },
     "fontSize": {
       "type": "string"
+    },
+    "notNestedStyle": {
+      "type": "boolean",
+      "default": true
+    },
+    "backgroundColorValue": {
+      "type": "string"
+    },
+    "textColorValue": {
+      "type": "string"
+    },
+    "borderColorValue": {
+      "type": "string"
     }
   },
   "example": {
