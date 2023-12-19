@@ -7513,7 +7513,7 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-button:hover .menu-button-in {
   opacity: 0.8;
 }
-.mobile-menu-buttons .ad-area {
+.mobile-menu-buttons .widget:has(.ad-area) {
   display: none;
 }
 .mobile-menu-buttons .menu-content {

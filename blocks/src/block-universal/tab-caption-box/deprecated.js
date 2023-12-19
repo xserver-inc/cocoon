@@ -54,6 +54,7 @@ const v1 = {
       customBorderColor: undefined,
       fontSize: undefined,
       customFontSize: undefined,
+      notNestedStyle: false,
     };
   },
 
@@ -84,6 +85,12 @@ const v1 = {
 };
 
 const v2 = {
+  migrate( attributes ) {
+    return {
+      ...attributes,
+      notNestedStyle: false,
+    };
+  },
   save( props ) {
     const {
       content,
