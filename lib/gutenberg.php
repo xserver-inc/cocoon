@@ -477,13 +477,13 @@ html .body .tab-caption-box.has-<?php echo $slug; ?>-color:not(.not-nested-style
   color: <?php echo $color; ?>;
 }
 <?php //ラベルボックス ?>
-html .body .label-box.has-<?php echo $slug; ?>-border-color .box-content{
+html .body .label-box.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .box-content{
   border-color: <?php echo $color; ?>;
 }
-html .body .label-box.has-<?php echo $slug; ?>-background-color .box-content{
+html .body .label-box.has-<?php echo $slug; ?>-background-color:not(.not-nested-style) .box-content{
   background-color: <?php echo $color; ?>;
 }
-html .body .label-box.has-<?php echo $slug; ?>-color .box-content{
+html .body .label-box.has-<?php echo $slug; ?>-color:not(.not-nested-style) .box-content{
   color: <?php echo $color; ?>;
 }
 <?php //吹き出しボックス ?>
@@ -668,6 +668,18 @@ html .body .btn-wrap.has-larger-font-size > a {
 }
 .cocoon-block-tab-caption-box.has-border-color.not-nested-style > .box-label{
     color: var(--cocoon-white-color);
+}
+<?php //ラベルボックス ?>
+.cocoon-block-label-box.not-nested-style {
+    background-color:transparent;
+}
+.cocoon-block-label-box.not-nested-style > .label-box-label {
+    color: var(--cocoon-custom-text-color);
+}
+.cocoon-block-label-box.not-nested-style > .box-content {
+    border-color: var(--cocoon-custom-border-color);
+    background-color: var(--cocoon-custom-background-color);
+    color: var(--cocoon-custom-text-color);
 }
     <?php
     $css = ob_get_clean();
