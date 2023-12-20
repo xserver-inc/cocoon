@@ -4596,7 +4596,7 @@ body.wp-admin {
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
 }
-.admin-settings .demo .caption-box.has-border-color .box-label {
+.admin-settings .demo .caption-box.has-border-color:not(.not-nested-style) .box-label {
   color: var(--cocoon-white-color);
 }
 .admin-settings .demo .caption-box-label {
@@ -12794,7 +12794,7 @@ body.wp-admin {
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
 }
-.admin-settings .demo .caption-box.has-border-color .box-label {
+.admin-settings .demo .caption-box.has-border-color:not(.not-nested-style) .box-label {
   color: var(--cocoon-white-color);
 }
 .admin-settings .demo .caption-box-label {
@@ -21821,7 +21821,7 @@ textarea[name=the_page_memo] {
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
 }
-.components-popover__content .caption-box.has-border-color .box-label {
+.components-popover__content .caption-box.has-border-color:not(.not-nested-style) .box-label {
   color: var(--cocoon-white-color);
 }
 .components-popover__content .caption-box-label {
