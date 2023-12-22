@@ -52,6 +52,8 @@ function new_entries_shortcode($atts) {
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
+    'ex_posts' => null,
+    'ex_cats' => null,
   ), $atts, 'new_list'));
 
   //カテゴリーを配列化
@@ -63,6 +65,16 @@ function new_entries_shortcode($atts) {
   $tag_ids = array();
   if ($tags && $tags != 'all') {
     $tag_ids = explode(',', $tags);
+  }
+  //除外投稿
+  $exclude_post_ids = array();
+  if ($ex_posts) {
+    $exclude_post_ids = explode(',', $ex_posts);
+  }
+  //除外カテゴリー
+  $exclude_cat_ids = array();
+  if ($ex_cats) {
+    $exclude_cat_ids = explode(',', $ex_cats);
   }
   //引数配列のセット
   $atts = array(
@@ -85,6 +97,8 @@ function new_entries_shortcode($atts) {
     'author' => $author,
     'offset' => $offset,
     'horizontal' => $horizontal,
+    'ex_posts' => $exclude_post_ids,
+    'ex_cats' => $exclude_cat_ids,
   );
   ob_start();
   generate_widget_entries_tag($atts);
