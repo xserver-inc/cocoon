@@ -75,7 +75,7 @@ div.speech-balloon{
 
 .sbp-l{
   // margin-right: 100px;
-  .speech-balloon{
+  &:not(.not-nested-style) .speech-balloon{
     margin-left: 20px;
   }
 }
@@ -84,28 +84,29 @@ div.speech-balloon{
 .sbp-r{
   flex-direction: row-reverse;
   // margin-left: 100px;
+  &:not(.not-nested-style){
+    .speech-balloon{
+      margin-right: 20px;
+      //margin-left: auto;
+    }
 
-  .speech-balloon{
-    margin-right: 20px;
-    //margin-left: auto;
-  }
-
-  /* アイコンを右に表示 */
-  .speech-balloon::before{
-    right: -12px;
-    left: auto;
-    border-left-width: 12px;
-    border-left-style: solid;
-    border-left-color: var(--cocoon-custom-border-color);
-    border-right: none;
-  }
-  .speech-balloon::after{
-    right: -9px;
-    left: auto;
-    border-left-width: 12px;
-    border-left-style: solid;
-    border-left-color: var(--cocoon-custom-background-color);
-    border-right: none;
+    /* アイコンを右に表示 */
+    .speech-balloon::before{
+      right: -12px;
+      left: auto;
+      border-left-width: 12px;
+      border-left-style: solid;
+      border-left-color: var(--cocoon-custom-border-color);
+      border-right: none;
+    }
+    .speech-balloon::after{
+      right: -9px;
+      left: auto;
+      border-left-width: 12px;
+      border-left-style: solid;
+      border-left-color: var(--cocoon-custom-background-color);
+      border-right: none;
+    }
   }
 
 }
@@ -114,7 +115,7 @@ div.speech-balloon{
 // アイコンスタイル
 ///////////////////////////////////////
 .sbis-sn{
-  .speech-icon-image{
+  &:not(.not-nested-style) .speech-icon-image{
     border-radius: 0;
     border-style: none;
     box-shadow: none;
@@ -122,13 +123,13 @@ div.speech-balloon{
 }
 
 .sbis-sb{
-  .speech-icon-image{
+  &:not(.not-nested-style) .speech-icon-image{
     border-radius: 0;
   }
 }
 
 .sbis-cn{
-  .speech-icon-image{
+  &:not(.not-nested-style) .speech-icon-image{
     border-style: none;
     box-shadow: none;
   }
@@ -141,7 +142,7 @@ div.speech-balloon{
   --cocoon-custom-background-color: #f1f1f1;
   --cocoon-custom-border-color: #f1f1f1;
   --cocoon-custom-text-color: var(--cocoon-text-color);
-  .speech-balloon{
+  &:not(.not-nested-style) .speech-balloon{
     background-color: var(--cocoon-custom-background-color);
     border-color: var(--cocoon-custom-border-color);
     color: var(--cocoon-custom-text-color);
@@ -160,7 +161,7 @@ div.speech-balloon{
   --cocoon-custom-background-color: var(--cocoon-white-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
-  .speech-balloon{
+  &:not(.not-nested-style) .speech-balloon{
     border-width: 1px;
     background-color: var(--cocoon-custom-background-color);
     border-color: var(--cocoon-custom-border-color);
@@ -182,7 +183,7 @@ div.speech-balloon{
   --cocoon-custom-background-color: #85e249;
   --cocoon-custom-border-color: #85e249;
   // --cocoon-custom-text-color: var(--cocoon-text-color);
-  .speech-balloon{
+  &:not(.not-nested-style) .speech-balloon{
     background-color: var(--cocoon-custom-background-color);
     border-color: var(--cocoon-custom-border-color);
     color: var(--cocoon-custom-text-color);
@@ -208,11 +209,11 @@ div.sbs-think{
   // --cocoon-custom-background-color: transparent;
   &.sbp-l{
     // margin-right: 126px;
-    .speech-balloon{
+    &:not(.not-nested-style) .speech-balloon{
       margin-left: 46px;
     }
   }
-  .speech-balloon{
+  &:not(.not-nested-style) .speech-balloon{
 
     &::before {
       border-width: 2px;
@@ -241,7 +242,7 @@ div.sbs-think{
 }
 .sbs-think.sbp-r{
   // margin-left: 126px;
-  .speech-balloon{
+  &:not(.not-nested-style) .speech-balloon{
     margin-right: 46px;
 
     &::before {
@@ -252,6 +253,124 @@ div.sbs-think{
     &::after {
       left: auto;
       right: -44px;
+    }
+  }
+}
+
+///////////////////////////////////////
+// スタイル継承なし
+///////////////////////////////////////
+.cocoon-block-balloon.not-nested-style {
+  // アイコンスタイル 四角(枠線なし)
+  &.sbis-sn > .speech-person .speech-icon-image {
+    border-radius: 0;
+    border-style: none;
+    box-shadow: none;
+  }
+  // アイコンスタイル 四角(枠線なし)
+  &.sbis-sb > .speech-person .speech-icon-image {
+    border-radius: 0;
+  }
+  // アイコンスタイル 丸(枠線なし)
+  &.sbis-cn > .speech-person .speech-icon-image {
+    border-style: none;
+    box-shadow: none;
+  }
+  // 吹き出し 左配置
+  &.sbp-l  > .speech-balloon {
+    margin-left: 20px;
+  }
+  // 吹き出し 右配置
+  &.sbp-r  > .speech-balloon {
+    margin-right: 20px;
+    &::before,
+    &::after {
+      left: auto;
+      border-left-width: 12px;
+      border-left-style: solid;
+      border-right: none;
+    }
+    &::before {
+      right: -12px;
+      border-left-color: var(--cocoon-custom-border-color);
+    }
+    &::after {
+      right: -9px;
+      border-left-color: var(--cocoon-custom-background-color);
+    }
+  }
+  // 吹き出し フラット
+  &.sbs-flat > .speech-balloon {
+    &::before {
+      border-right-color: var(--cocoon-custom-border-color);
+    }
+    &::after {
+      border-right-color: var(--cocoon-custom-background-color);
+    }
+  }
+  // 吹き出し LINE風
+  &.sbs-line{
+    > .speech-balloon {
+    border-width: 1px;
+      &::before {
+        border-right-color: var(--cocoon-custom-border-color);
+      }
+      &::after {
+        left: -10px;
+        border-right-color: var(--cocoon-custom-background-color);
+      }
+    }
+    // 吹き出し LINE風 右配置
+    &.sbp-r > .speech-balloon {
+      &::before {
+        border-left-color: var(--cocoon-custom-border-color);
+      }
+      &::after {
+        left: auto;
+        right: -10px;
+        border-left-color: var(--cocoon-custom-background-color);
+      }
+    }
+  }
+  // 吹き出し 考え事
+  &.sbs-think {
+    > .speech-balloon {
+      &::before,
+      &::after {
+        border-width: 2px;
+        border-style: solid;
+        border-color: var(--cocoon-custom-border-color);
+        background-color: var(--cocoon-custom-background-color);
+        border-radius: 50%;
+      }
+      &::before {
+        left: -29px;
+        top: 11px;
+        width: 20px;
+        height: 20px;
+      }
+      &::after {
+        left: -44px;
+        top: 25px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    // 吹き出し 考え事 左配置
+    &.sbp-l > .speech-balloon {
+      margin-left: 46px;
+    }
+    // 吹き出し 考え事 右配置
+    &.sbp-r > .speech-balloon {
+      margin-right: 46px;
+      &::before{
+        left: auto;
+        right: -29px;
+      }
+      &::after {
+        left: auto;
+        right: -44px;
+      }
     }
   }
 }
