@@ -23,6 +23,10 @@ export default function save( { attributes } ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -33,13 +37,25 @@ export default function save( { attributes } ) {
   const borderClass = getColorClassName( 'border-color', borderColor );
   const fontSizeClass = getFontSizeClass( fontSize );
 
-  const classes = getBalloonClasses( id, style, position, iconstyle );
+  const classes = classnames(
+    getBalloonClasses( id, style, position, iconstyle ),
+    {
+      'not-nested-style': notNestedStyle,
+      'cocoon-block-balloon': true,
+    }
+  );
 
   const styles = {
     '--cocoon-custom-background-color': customBackgroundColor || undefined,
     '--cocoon-custom-text-color': customTextColor || undefined,
     '--cocoon-custom-border-color': customBorderColor || undefined,
   };
+
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
 
   const blockProps = useBlockProps.save( {
     className: classes,

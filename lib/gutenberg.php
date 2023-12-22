@@ -487,42 +487,42 @@ html .body .label-box.has-<?php echo $slug; ?>-color:not(.not-nested-style) .box
   color: <?php echo $color; ?>;
 }
 <?php //吹き出しボックス ?>
-html .body .speech-balloon.has-<?php echo $slug; ?>-background-color {
+html .body .speech-wrap:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-background-color {
     background-color: <?php echo $color; ?>;
 }
-html .body .speech-balloon.has-text-color.has-<?php echo $slug; ?>-color {
+html .body .speech-wrap:not(.not-nested-style) .speech-balloon.has-text-color.has-<?php echo $slug; ?>-color {
     color: <?php echo $color; ?>;
 }
-html .body .speech-balloon.has-<?php echo $slug; ?>-border-color {
+html .body .speech-wrap:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-border-color {
     border-color: <?php echo $color; ?>;
 }
-html .body .sbp-l .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
+html .body .speech-wrap.sbp-l:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
   border-right-color: <?php echo $color; ?>;
 }
-html .body .sbp-r .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
+html .body .speech-wrap.sbp-r:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
   border-left-color: <?php echo $color; ?>;
 }
-html .body .sbp-l .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
+html .body .speech-wrap.sbp-l:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
   border-right-color: <?php echo $color; ?>;
 }
-html .body .sbp-r .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
+html .body .speech-wrap.sbp-r:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
   border-left-color: <?php echo $color; ?>;
 }
-html .body .sbs-line.sbp-r .speech-balloon.has-<?php echo $slug; ?>-background-color{
+html .body .speech-wrap.sbs-line.sbp-r:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-background-color{
   background-color: <?php echo $color; ?>;
 }
-html .body .sbs-line.sbp-r .speech-balloon.has-<?php echo $slug; ?>-border-color{
+html .body .speech-wrap.sbs-line.sbp-r:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-border-color{
   border-color: <?php echo $color; ?>;
 }
-html .body .speech-wraphtml .body .sbs-think .speech-balloon.has-<?php echo $slug; ?>-border-color::before,
-html .body .speech-wrap.sbs-think .speech-balloon.has-<?php echo $slug; ?>-border-color::after{
+html .body .speech-wrap.sbs-think:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-border-color::before,
+html .body .speech-wrap.sbs-think:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-border-color::after{
   border-color: <?php echo $color; ?>;
 }
-html .body .sbs-think .speech-balloon.has-<?php echo $slug; ?>-background-color::before,
-html .body .sbs-think .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
+html .body .speech-wrap.sbs-think:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-background-color::before,
+html .body .speech-wrap.sbs-think:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
   background-color: <?php echo $color; ?>;
 }
-html .body .sbs-think .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
+html .body .speech-wrap.sbs-think:not(.not-nested-style) .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
   border-color: <?php echo $color; ?>;
 }
 <?php //タイムライン ?>
@@ -663,10 +663,10 @@ html .body .btn-wrap.has-larger-font-size > a {
     border-color: var(--cocoon-custom-border-color);
 }
 <?php //タブ見出しボックス ?>
-.cocoon-block-tab-caption-box.not-nested-style > .box-label{
+.cocoon-block-tab-caption-box.not-nested-style > .box-label {
     color: var(--cocoon-custom-text-color);
 }
-.cocoon-block-tab-caption-box.has-border-color.not-nested-style > .box-label{
+.cocoon-block-tab-caption-box.has-border-color.not-nested-style > .box-label {
     color: var(--cocoon-white-color);
 }
 <?php //ラベルボックス ?>
@@ -679,6 +679,12 @@ html .body .btn-wrap.has-larger-font-size > a {
 .cocoon-block-label-box.not-nested-style > .box-content {
     border-color: var(--cocoon-custom-border-color);
     background-color: var(--cocoon-custom-background-color);
+    color: var(--cocoon-custom-text-color);
+}
+<?php //吹き出しボックス ?>
+.cocoon-block-balloon.not-nested-style > .speech-balloon {
+    background-color:var(--cocoon-custom-background-color);
+    border-color: var(--cocoon-custom-border-color);
     color: var(--cocoon-custom-text-color);
 }
     <?php

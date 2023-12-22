@@ -35,12 +35,11 @@ const v1 = {
       default: '',
     },
   },
-
   migrate( attributes ) {
     const { content, borderColor } = attributes;
 
     return {
-      content: content,
+      content,
       backgroundColor: undefined,
       customBackgroundColor: undefined,
       textColor: undefined,
@@ -49,6 +48,7 @@ const v1 = {
       customBorderColor: undefined,
       fontSize: undefined,
       customFontSize: undefined,
+      notNestedStyle: false,
     };
   },
 
@@ -58,7 +58,7 @@ const v1 = {
       'blank-box': true,
       [ `bb-${ colorValueToSlug( borderColor ) }` ]:
         !! colorValueToSlug( borderColor ),
-      [ 'block-box' ]: true,
+      'block-box': true,
     } );
     return (
       <div className={ classes }>
@@ -69,6 +69,12 @@ const v1 = {
 };
 
 const v2 = {
+  migrate( attributes ) {
+    return {
+      ...attributes,
+      notNestedStyle: false,
+    };
+  },
   save( { attributes } ) {
     const {
       name,
@@ -126,4 +132,133 @@ const v2 = {
   },
 };
 
-export default [ v2, v1 ];
+const v3 = {
+  attributes: {
+    name: {
+      type: 'string',
+      default: '',
+    },
+    index: {
+      type: 'string',
+      default: '0',
+    },
+    id: {
+      type: 'string',
+      default: '',
+    },
+    icon: {
+      type: 'string',
+      default: '',
+    },
+    style: {
+      type: 'string',
+      default: 'stn',
+    },
+    position: {
+      type: 'string',
+      default: 'l',
+    },
+    iconstyle: {
+      type: 'string',
+      default: 'cb',
+    },
+    iconid: {
+      type: 'number',
+      default: 0,
+    },
+    backgroundColor: {
+      type: 'string',
+    },
+    textColor: {
+      type: 'string',
+    },
+    borderColor: {
+      type: 'string',
+    },
+    customBackgroundColor: {
+      type: 'string',
+    },
+    customTextColor: {
+      type: 'string',
+    },
+    customBorderColor: {
+      type: 'string',
+    },
+    fontSize: {
+      type: 'string',
+    },
+  },
+  migrate( attributes ) {
+    return {
+      ...attributes,
+      notNestedStyle: false,
+    };
+  },
+  save( { attributes } ) {
+    const {
+      name,
+      id,
+      icon,
+      style,
+      position,
+      iconstyle,
+      backgroundColor,
+      textColor,
+      borderColor,
+      customBackgroundColor,
+      customTextColor,
+      customBorderColor,
+      fontSize,
+    } = attributes;
+
+    const backgroundClass = getColorClassName(
+      'background-color',
+      backgroundColor
+    );
+    const textClass = getColorClassName( 'color', textColor );
+    const borderClass = getColorClassName( 'border-color', borderColor );
+    const fontSizeClass = getFontSizeClass( fontSize );
+
+    const classes = getBalloonClasses( id, style, position, iconstyle );
+
+    const styles = {
+      '--cocoon-custom-background-color': customBackgroundColor || undefined,
+      '--cocoon-custom-text-color': customTextColor || undefined,
+      '--cocoon-custom-border-color': customBorderColor || undefined,
+    };
+
+    const blockProps = useBlockProps.save( {
+      className: classes,
+      style: styles,
+    } );
+
+    return (
+      <div { ...blockProps }>
+        <div className="speech-person">
+          <figure className="speech-icon">
+            <img src={ icon } alt={ name } className="speech-icon-image" />
+          </figure>
+          <div className="speech-name">
+            <RichText.Content value={ name } />
+          </div>
+        </div>
+        <div
+          className={ classnames( {
+            'speech-balloon': true,
+            'has-text-color': textColor || customTextColor,
+            'has-background': backgroundColor || customBackgroundColor,
+            'has-border-color': borderColor || customBorderColor,
+            [ textClass ]: textClass,
+            [ backgroundClass ]: backgroundClass,
+            [ borderClass ]: borderClass,
+            [ fontSizeClass ]: fontSizeClass,
+          } ) }
+        >
+          <InnerBlocks.Content />
+        </div>
+      </div>
+    );
+  },
+};
+
+export default [ v3, v2, v1 ];

@@ -251,6 +251,9 @@ div #carousel-in{
 div.speech-balloon{
   background-color: var(--bg2);
 }
+.cocoon-block-balloon.not-nested-style {
+  --cocoon-custom-background-color: var(--bg2);
+}
 .rating-number{
  color: var(--text-main);
 }

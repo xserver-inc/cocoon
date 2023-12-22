@@ -16,14 +16,15 @@ import {
   useBlockProps,
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, Button } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
+import { Fragment, useEffect } from '@wordpress/element';
 import { compose } from '@wordpress/compose';
+import { useSelect } from '@wordpress/data';
 import classnames from 'classnames';
 
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
 
-const defaultIconUrl = gbSettings[ 'speechBalloonDefaultIconUrl' ]
-  ? gbSettings[ 'speechBalloonDefaultIconUrl' ]
+const defaultIconUrl = gbSettings.speechBalloonDefaultIconUrl
+  ? gbSettings.speechBalloonDefaultIconUrl
   : '';
 
 let speechBalloons = gbSpeechBalloons;
@@ -54,6 +55,7 @@ export function BalloonEdit( props ) {
     borderColor,
     setBorderColor,
     fontSize,
+    clientId,
   } = props;
 
   let {
@@ -68,6 +70,10 @@ export function BalloonEdit( props ) {
     customBackgroundColor,
     customTextColor,
     customBorderColor,
+    notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = attributes;
 
   //新規作成時
@@ -84,13 +90,13 @@ export function BalloonEdit( props ) {
           name = balloon.name;
         }
         setAttributes( {
-          name: name,
-          index: index,
-          id: id,
-          icon: icon,
-          style: style,
-          position: position,
-          iconstyle: iconstyle,
+          name,
+          index,
+          id,
+          icon,
+          style,
+          position,
+          iconstyle,
         } );
         return true;
       }
@@ -128,7 +134,7 @@ export function BalloonEdit( props ) {
     );
   };
 
-  var balloons = [];
+  const balloons = [];
   speechBalloons.map( ( balloon, index ) => {
     //console.log(balloon);
     if ( speechBalloons[ index ].visible == '1' ) {
@@ -139,13 +145,53 @@ export function BalloonEdit( props ) {
     }
   } );
 
-  const classes = getBalloonClasses( id, style, position, iconstyle );
+  // 親ブロックのnotNestedStyleがfalseかどうかを判定
+  const isParentNestedStyle = useSelect( ( select ) => {
+    const parentBlocks =
+      select( 'core/block-editor' ).getBlockParents( clientId );
+    for ( const parentClientId of parentBlocks ) {
+      const parentBlock =
+        select( 'core/block-editor' ).getBlock( parentClientId );
+      if (
+        parentBlock.name === props.name &&
+        parentBlock.attributes.notNestedStyle === false
+      ) {
+        return true;
+      }
+    }
+    return false;
+  } );
+
+  // 親ブロックのnotNestedStyleがfalseの場合はnotNestedStyleをfalseにする
+  if ( isParentNestedStyle && notNestedStyle ) {
+    setAttributes( { notNestedStyle: false } );
+  }
+
+  useEffect( () => {
+    setAttributes( { backgroundColorValue: backgroundColor.color } );
+    setAttributes( { textColorValue: textColor.color } );
+    setAttributes( { borderColorValue: borderColor.color } );
+  }, [ backgroundColor, textColor, borderColor ] );
+
+  const classes = classnames(
+    getBalloonClasses( id, style, position, iconstyle ),
+    {
+      'not-nested-style': notNestedStyle,
+      'cocoon-block-balloon': true,
+    }
+  );
 
   const styles = {
     '--cocoon-custom-border-color': customBorderColor || undefined,
     '--cocoon-custom-background-color': customBackgroundColor || undefined,
     '--cocoon-custom-text-color': customTextColor || undefined,
   };
+
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
 
   const blockProps = useBlockProps( {
     className: classes,
@@ -266,7 +312,7 @@ export function BalloonEdit( props ) {
           <figure className="speech-icon">
             <MediaUpload
               onSelect={ ( media ) => {
-                let newicon = !! media.sizes.thumbnail
+                const newicon = !! media.sizes.thumbnail
                   ? media.sizes.thumbnail.url
                   : media.url;
                 //console.log(newicon);
@@ -300,8 +346,7 @@ export function BalloonEdit( props ) {
             [ fontSize.class ]: fontSize.class,
           } ) }
         >
-          <InnerBlocks
-            placeholder={ __( 'セリフの入力', THEME_NAME ) } />
+          <InnerBlocks placeholder={ __( 'セリフの入力', THEME_NAME ) } />
         </div>
       </div>
     </Fragment>
