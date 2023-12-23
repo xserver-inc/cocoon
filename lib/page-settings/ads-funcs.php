@@ -443,6 +443,22 @@ function is_ad_shortcode_label_visible(){
 }
 endif;
 
+//ads.txtを更新する
+define('OP_AD_ADS_TXT_ENABLE', 'ad_ads_txt_enable');
+if ( !function_exists( 'is_ad_ads_txt_enable' ) ):
+function is_ad_ads_txt_enable(){
+  return get_theme_option(OP_AD_ADS_TXT_ENABLE, 0);
+}
+endif;
+
+//ads.txt内容
+define('OP_AD_ADS_TXT_CONTENT', 'ad_ads_txt_content');
+if ( !function_exists( 'get_ad_ads_txt_content' ) ):
+function get_ad_ads_txt_content(){
+  return get_theme_option(OP_AD_ADS_TXT_CONTENT, '');
+}
+endif;
+
 //投稿ページにPR表記表示
 define('OP_PR_LABEL_SINGLE_VISIBLE', 'pr_label_single_visible');
 if ( !function_exists( 'is_pr_label_single_visible' ) ):
@@ -569,5 +585,16 @@ define('OP_AD_EXCLUDE_CATEGORY_IDS', 'ad_exclude_category_ids');
 if ( !function_exists( 'get_ad_exclude_category_ids' ) ):
 function get_ad_exclude_category_ids(){
   return get_theme_option(OP_AD_EXCLUDE_CATEGORY_IDS, array());
+}
+endif;
+
+//ads.txtの出力
+if ( !function_exists( 'put_ads_txt_file' ) ):
+function put_ads_txt_file(){
+  if (is_ad_ads_txt_enable()) {
+    $ads_txt_content = trim(get_ad_ads_txt_content());
+    $file_path = get_home_path() . 'ads.txt';
+    file_put_contents($file_path, $ads_txt_content);
+  }
 }
 endif;

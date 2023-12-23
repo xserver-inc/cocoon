@@ -249,6 +249,25 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- ads.txt -->
+        <tr>
+          <th scope="row">
+            <label for="<?php echo OP_AD_ADS_TXT_CONTENT; ?>"><?php _e( 'ads.txt編集', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <?php
+            //ads.txtの更新を有効化するか
+            generate_checkbox_tag(OP_AD_ADS_TXT_ENABLE , is_ad_ads_txt_enable(), __( 'ads.txtの更新を有効にする', THEME_NAME ));
+            generate_br_tag();
+            generate_br_tag();
+
+            //ads.txtの編集
+            generate_textarea_tag(OP_AD_ADS_TXT_CONTENT, get_ad_ads_txt_content(), __( 'ads.txtの内容を入力', THEME_NAME )) ;
+            generate_tips_tag(__( 'ads.txt（アズテキスト）とは、Webの広告枠の販売者を厳密に管理し、偽の広告枠が広告主に提供されるのを防ぐためのテキストファイルです。ads.txtの設置は必須ではありませんが、運営しているサイトのなりすましによる広告収入減などを防ぐ効果が見込まれます。', THEME_NAME ).__( 'Google AdSenseを利用している場合、ads.txtを設置していないと警告が届くことがあります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>

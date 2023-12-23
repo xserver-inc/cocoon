@@ -124,6 +124,11 @@ update_theme_option(OP_AD_SHORTCODE_FORMAT);
 //[ad]ショートコード広告ラベル表示
 update_theme_option(OP_AD_SHORTCODE_LABEL_VISIBLE);
 
+//ads.txtを更新する
+update_theme_option(OP_AD_ADS_TXT_ENABLE);
+//ads.txt内容
+update_theme_option(OP_AD_ADS_TXT_CONTENT);
+
 //投稿ページにPR表記表示
 update_theme_option(OP_PR_LABEL_SINGLE_VISIBLE);
 //固定ページにPR表記表示

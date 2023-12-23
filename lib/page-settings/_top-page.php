@@ -111,6 +111,11 @@ if( $is_post_ok ):
   ///////////////////////////////////////
   put_theme_css_cache_file();
 
+  ///////////////////////////////////////
+  // ads.txtの出力
+  ///////////////////////////////////////
+  put_ads_txt_file();
+
   do_action('cocoon_settings_after_save');
 
 endif;
