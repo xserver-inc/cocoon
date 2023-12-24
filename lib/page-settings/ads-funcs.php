@@ -455,7 +455,12 @@ endif;
 define('OP_AD_ADS_TXT_CONTENT', 'ad_ads_txt_content');
 if ( !function_exists( 'get_ad_ads_txt_content' ) ):
 function get_ad_ads_txt_content(){
-  return get_theme_option(OP_AD_ADS_TXT_CONTENT, '');
+  $ads_txt_content = '';
+  $file_path = get_home_path() . 'ads.txt';
+  if (file_exists($file_path)){
+    $ads_txt_content = file_get_contents($file_path);
+  }
+  return $ads_txt_content;
 }
 endif;
 
@@ -592,9 +597,10 @@ endif;
 if ( !function_exists( 'put_ads_txt_file' ) ):
 function put_ads_txt_file(){
   if (is_ad_ads_txt_enable()) {
-    $ads_txt_content = trim(get_ad_ads_txt_content());
+    $ads_txt_content = get_theme_option(OP_AD_ADS_TXT_CONTENT, '');
+    $ads_txt_content = trim($ads_txt_content);
     $file_path = get_home_path() . 'ads.txt';
-    file_put_contents($file_path, $ads_txt_content);
+    wp_filesystem_put_contents($file_path, $ads_txt_content);
   }
 }
 endif;
