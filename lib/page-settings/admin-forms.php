@@ -237,6 +237,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <?php if (false): ?>
         <!-- AMPエリアの表示  -->
         <tr>
           <th scope="row">
@@ -261,6 +262,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             </div>
           </td>
         </tr>
+        <?php endif; ?>
+
 
         <!-- チェックツールエリアの表示  -->
         <tr>

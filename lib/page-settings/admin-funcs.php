@@ -196,7 +196,8 @@ endif;
 define('OP_ADMIN_PANEL_AMP_AREA_VISIBLE', 'admin_panel_amp_area_visible');
 if ( !function_exists( 'is_admin_panel_amp_area_visible' ) ):
 function is_admin_panel_amp_area_visible(){
-  return get_theme_option(OP_ADMIN_PANEL_AMP_AREA_VISIBLE, 1);
+  return false;
+  // return get_theme_option(OP_ADMIN_PANEL_AMP_AREA_VISIBLE, 1);
 }
 endif;
 
@@ -204,7 +205,8 @@ endif;
 define('OP_ADMIN_GOOGLE_AMP_TEST_VISIBLE', 'admin_google_amp_test_visible');
 if ( !function_exists( 'is_admin_google_amp_test_visible' ) ):
 function is_admin_google_amp_test_visible(){
-  return get_theme_option(OP_ADMIN_GOOGLE_AMP_TEST_VISIBLE, 1);
+  return false;
+  // return get_theme_option(OP_ADMIN_GOOGLE_AMP_TEST_VISIBLE, 1);
 }
 endif;
 
@@ -212,7 +214,8 @@ endif;
 define('OP_ADMIN_THE_AMP_VALIDATOR_VISIBLE', 'admin_the_amp_validator_visible');
 if ( !function_exists( 'is_admin_the_amp_validator_visible' ) ):
 function is_admin_the_amp_validator_visible(){
-  return get_theme_option(OP_ADMIN_THE_AMP_VALIDATOR_VISIBLE, 1);
+  return false;
+  // return get_theme_option(OP_ADMIN_THE_AMP_VALIDATOR_VISIBLE, 1);
 }
 endif;
 
@@ -220,7 +223,8 @@ endif;
 define('OP_ADMIN_AMPBENCH_VISIBLE', 'admin_ampbench_visible');
 if ( !function_exists( 'is_admin_ampbench_visible' ) ):
 function is_admin_ampbench_visible(){
-  return false;//get_theme_option(OP_ADMIN_AMPBENCH_VISIBLE, 1);
+  return false;
+  // return get_theme_option(OP_ADMIN_AMPBENCH_VISIBLE, 1);
 }
 endif;
 

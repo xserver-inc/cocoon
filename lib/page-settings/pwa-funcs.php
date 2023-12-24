@@ -11,7 +11,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_PWA_ENABLE', 'pwa_enable');
 if ( !function_exists( 'is_pwa_enable' ) ):
 function is_pwa_enable(){
-  return get_theme_option(OP_PWA_ENABLE);
+  return false;
+  // return get_theme_option(OP_PWA_ENABLE);
 }
 endif;
 
