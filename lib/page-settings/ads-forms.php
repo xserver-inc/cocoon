@@ -263,8 +263,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             //ads.txtの編集
             generate_textarea_tag(OP_AD_ADS_TXT_CONTENT, get_ad_ads_txt_content(), __( 'ads.txtの内容を入力', THEME_NAME )) ;
-            generate_tips_tag(__( 'ads.txt（アズテキスト）とは、Webの広告枠の販売者を厳密に管理し、偽の広告枠が広告主に提供されるのを防ぐためのテキストファイルです。ads.txtの設置は必須ではありませんが、運営しているサイトのなりすましによる広告収入減などを防ぐ効果が見込まれます。', THEME_NAME ).__( 'Google AdSenseを利用している場合、ads.txtを設置していないと警告が届くことがあります。', THEME_NAME ));
+            generate_tips_tag(__( 'ads.txt（アズテキスト）とは、Webの広告枠の販売者を厳密に管理し、偽の広告枠が広告主に提供されるのを防ぐためのテキストファイルです。', THEME_NAME ).__( 'Adsenseのみなどを除く第三者（他社）広告との併用配信をする際は設置が必須です。', THEME_NAME ));
             ?>
+            <p><a href="https://marisachi426.com/adplus/for-beginners/google-adsense/what-is-ads-txta-thorough-explanation-of-how-to-install-and-how-to-install-it/" class="help-page" target="_blank" rel="noopener"><span class="fa fa-question-circle" aria-hidden="true"></span> ads.txtとは？</a></p>
           </td>
         </tr>
 
