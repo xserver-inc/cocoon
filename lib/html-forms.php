@@ -1157,6 +1157,8 @@ function generate_widget_entries_tag($atts){
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
+    'ex_posts' => null,
+    'ex_cats' => null,
   ), $atts));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1276,6 +1278,19 @@ function generate_widget_entries_tag($atts){
     );
   }
   $thumb_size = get_widget_entries_thumbnail_size($type);
+
+  //除外記事ショートコードオプション
+  if ($ex_posts) {
+    $args += array(
+      'post__not_in' => $ex_posts,
+    );
+  }
+  //除外カテゴリーショートコードオプション
+  if ($ex_cats) {
+    $args += array(
+      'category__not_in' => $ex_cats,
+    );
+  }
 
   if ($random) {
     $args = apply_filters('widget_related_entries_args', $args);

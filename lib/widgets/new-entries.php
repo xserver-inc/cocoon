@@ -37,11 +37,28 @@ class NewEntryWidgetItem extends WP_Widget {
     $is_arrow_visible = apply_filters( 'new_entries_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : 1 );
     $is_sticky_visible = apply_filters( 'new_entries_widget_is_sticky_visible', empty($instance['is_sticky_visible']) ? 0 : 1 );
     $is_modified_enable = apply_filters( 'new_entries_widget_is_modified_enable', empty($instance['is_modified_enable']) ? 0 : 1 );
+    //除外投稿IDを取得
+    $exclude_post_ids = empty($instance['exclude_post_ids']) ? '' : $instance['exclude_post_ids'];
+    $exclude_post_ids = apply_filters( 'new_entries_widget_exclude_post_ids', $exclude_post_ids, $instance, $this->id_base );
+    //除外カテゴリーIDを取得
+    $exclude_cat_ids = empty($instance['exclude_cat_ids']) ? array() : $instance['exclude_cat_ids'];
+    $exclude_cat_ids = apply_filters( 'new_entries_widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
 
     //現在のカテゴリーを取得
     $categories = array();
     if ($widget_mode == 'category') {
       $categories = get_category_ids();//カテゴリ配列の取得
+    }
+    //除外投稿ID配列のサニタイズ
+    $exclude_post_ids = comma_text_to_array($exclude_post_ids);
+
+    //除外カテゴリー配列のサニタイズ
+    if (empty($exclude_cat_ids)) {
+      $exclude_cat_ids = array();
+    } else {
+      if (!is_array($exclude_cat_ids)) {
+        $exclude_cat_ids = explode(',', $exclude_cat_ids);
+      }
     }
 
 
@@ -69,10 +86,11 @@ class NewEntryWidgetItem extends WP_Widget {
         'arrow' => $is_arrow_visible,
         'sticky' => $is_sticky_visible,
         'modified' => $is_modified_enable,
+        'ex_posts' => $exclude_post_ids,
+        'ex_cats' => $exclude_cat_ids,
       );
       //新着記事リストの作成
       generate_widget_entries_tag($atts);
-      //generate_widget_entries_tag($entry_count, $entry_type, $categories);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>
@@ -94,6 +112,15 @@ class NewEntryWidgetItem extends WP_Widget {
     $instance['is_arrow_visible'] = !empty($new_instance['is_arrow_visible']) ? 1 : 0;
     $instance['is_sticky_visible'] = !empty($new_instance['is_sticky_visible']) ? 1 : 0;
     $instance['is_modified_enable'] = !empty($new_instance['is_modified_enable']) ? 1 : 0;
+
+    if (isset($new_instance['exclude_post_ids']))
+      $instance['exclude_post_ids'] = strip_tags($new_instance['exclude_post_ids']);
+    if (isset($new_instance['exclude_cat_ids'])){
+      $instance['exclude_cat_ids'] = $new_instance['exclude_cat_ids'];
+    } else {
+      $instance['exclude_cat_ids'] = array();
+    }
+
     return $instance;
   }
   function form($instance) {
@@ -108,6 +135,8 @@ class NewEntryWidgetItem extends WP_Widget {
         'is_arrow_visible'  => 0,
         'is_sticky_visible'  => 1,
         'is_modified_enable'  => 0,
+        'exclude_post_ids' => '',
+        'exclude_cat_ids' => array()
       );
     }
     $widget_mode = WM_DEFAULT;
@@ -128,6 +157,8 @@ class NewEntryWidgetItem extends WP_Widget {
     $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
     $is_sticky_visible = empty($instance['is_sticky_visible']) ? 0 : 1;
     $is_modified_enable = empty($instance['is_modified_enable']) ? 0 : 1;
+    $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : '';
+    $exclude_cat_ids = isset($instance['exclude_cat_ids']) ? $instance['exclude_cat_ids'] : array();
     ?>
     <?php //ウィジェットモード（全てか、カテゴリー別か） ?>
     <p>
@@ -194,6 +225,20 @@ class NewEntryWidgetItem extends WP_Widget {
       <?php
         generate_checkbox_tag($this->get_field_name('is_modified_enable') , $is_modified_enable, __( '更新日順に並び替え', THEME_NAME ));
       ?>
+    </p>
+    <?php //除外投稿ID ?>
+    <p>
+      <label for="<?php echo $this->get_field_id('exclude_post_ids'); ?>">
+        <?php _e( '除外投稿ID（カンマ区切りでIDを入力してください）', THEME_NAME ) ?>
+      </label>
+      <input class="widefat" id="<?php echo $this->get_field_id('exclude_post_ids'); ?>" name="<?php echo $this->get_field_name('exclude_post_ids'); ?>" type="text" value="<?php echo $exclude_post_ids; ?>" />
+    </p>
+    <p>
+    <?php //除外カテゴリー ?>
+      <label>
+        <?php _e( '除外カテゴリー（除外するものを選択してください）', THEME_NAME ) ?>
+      </label>
+      <?php echo generate_hierarchical_category_check_list(0, $this->get_field_name('exclude_cat_ids'), $exclude_cat_ids); ?>
     </p>
     <?php
   }
