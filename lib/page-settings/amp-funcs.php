@@ -11,7 +11,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_AMP_ENABLE', 'amp_enable');
 if ( !function_exists( 'is_amp_enable' ) ):
 function is_amp_enable(){
-  return get_theme_option(OP_AMP_ENABLE);
+  return false;
+  // return get_theme_option(OP_AMP_ENABLE);
 }
 endif;
 
