@@ -1502,7 +1502,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
           }
 
         } elseif (is_user_logged_in()) {
-          echo __( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="/wp-admin/user-edit.php?user_id='.get_the_author_meta( 'ID' ).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME );
+          echo __( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="' . home_url() . '/wp-admin/user-edit.php?user_id='.get_the_author_meta( 'ID' ).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME );
         }
         ?>
 
