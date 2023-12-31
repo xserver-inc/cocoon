@@ -56,6 +56,11 @@ function new_entries_shortcode($atts) {
     'ex_cats' => null,
   ), $atts, 'new_list'));
 
+  //countオプションに異常値が入っていた場合
+  if (!is_numeric($count) || (is_numeric($count) && intval($count)) > 0) {
+    $count = 5;
+  }
+
   //カテゴリーを配列化
   $cat_ids = array();
   if ($cats && $cats != 'all') {
@@ -131,6 +136,11 @@ function popular_entries_shortcode($atts) {
     'post_type' => 'post',
     'horizontal' => 0,
   ), $atts, 'popular_list'));
+
+  //countオプションに異常値が入っていた場合
+  if (!is_numeric($count) || (is_numeric($count) && intval($count)) > 0) {
+    $count = 5;
+  }
 
   //表示カテゴリー
   $cat_ids = array();
@@ -990,6 +1000,11 @@ function get_info_list_shortcode($atts){
     'divider' => 1,
     'modified' => 0,
   ), $atts, 'info_list'));
+
+  //countオプションに異常値が入っていた場合
+  if (!is_numeric($count) || (is_numeric($count) && intval($count)) > 0) {
+    $count = 5;
+  }
 
   //カテゴリーを配列化
   $cat_ids = array();
