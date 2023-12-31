@@ -67,7 +67,7 @@ if ( is_comment_allow() || have_comments() ): ?>
   if (is_comment_open()) {
     if (!is_amp()) {
       if (is_comment_form_display_type_toggle_button()) {?>
-        <button id="comment-reply-btn" class="comment-btn key-btn"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></button>
+        <button type="button" id="comment-reply-btn" class="comment-btn key-btn"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></button>
       <?php }
       //通常ページ
       comment_form($args);
