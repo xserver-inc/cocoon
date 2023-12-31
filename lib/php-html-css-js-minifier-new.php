@@ -171,28 +171,20 @@ function fn_minify_html($input, $comment = 2, $quote = 1) {
             //codeタグの場合は処理しない
             if (includes_string($part, '<code')) {
                 $output .= $part;
-            } elseif ( includes_string($part, '<script') ) {
-	            //scriptタグの場合はjsの圧縮を行う
-	            $output .= fn_minify_js($part);
+            // } elseif ( includes_string($part, '<script') ) {
+	        //     //scriptタグの場合はjsの圧縮を行う
+	        //     $output .= minify_js($part);
             } else {
                 $output .= fn_minify_html_union($part, $quote);
             }
-            // if (includes_string($part, '<pre') || includes_string($part, '<code')) {
-            //     _v($output);
-            // }
         } else if ($part[0] === '&' && substr($part, -1) === ';' && $part !== '&lt;' && $part !== '&gt;' && $part !== '&amp;') {
             $output .= html_entity_decode($part); // Evaluate HTML entit(y|ies)
         } else {
             $output .= preg_replace('#\s+#', ' ', $part);
         }
         $prev = $part;
-        // if (preg_match('/<pre .+<\/pre>/is', $output, $m) && ($i < 1)) {
-        //     _v($m[0]);
-        // }
     }
-    // if (preg_match('/<pre .+<\/pre>/is', $output, $m)) {
-    //     _v($m[0]);
-    // }
+
     $output = str_replace(' </', '</', $output);
     // Force space with `&#x0020;` and line–break with `&#x000A;`
     return str_ireplace(array('&#x0020;', '&#x20;', '&#x000A;', '&#xA;'), array(' ', ' ', "\n", "\n"), trim($output));
