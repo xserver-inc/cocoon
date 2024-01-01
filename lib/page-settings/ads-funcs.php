@@ -600,7 +600,15 @@ function put_ads_txt_file(){
     $ads_txt_content = get_theme_option(OP_AD_ADS_TXT_CONTENT, '');
     $ads_txt_content = trim($ads_txt_content);
     $file_path = get_home_path() . 'ads.txt';
-    wp_filesystem_put_contents($file_path, $ads_txt_content);
+    if ($ads_txt_content) {
+      wp_filesystem_put_contents($file_path, $ads_txt_content);
+    } else {
+      //ads.txtの内容が空の場合はファイルを削除する
+      //参考：https://wp-cocoon.com/community/postid/76180/
+      if (file_exists($file_path)) {
+        unlink($file_path);
+      }
+    }
   }
 }
 endif;
