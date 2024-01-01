@@ -57,7 +57,7 @@ function new_entries_shortcode($atts) {
   ), $atts, 'new_list'));
 
   //countオプションに異常値が入っていた場合
-  if (!is_numeric($count) || (is_numeric($count) && intval($count)) > 0) {
+  if (!is_numeric($count) || (is_numeric($count) && (intval($count)) <= 0)) {
     $count = 5;
   }
 
@@ -138,7 +138,7 @@ function popular_entries_shortcode($atts) {
   ), $atts, 'popular_list'));
 
   //countオプションに異常値が入っていた場合
-  if (!is_numeric($count) || (is_numeric($count) && intval($count)) > 0) {
+  if (!is_numeric($count) || (is_numeric($count) && (intval($count)) <= 0)) {
     $count = 5;
   }
 
@@ -1002,7 +1002,7 @@ function get_info_list_shortcode($atts){
   ), $atts, 'info_list'));
 
   //countオプションに異常値が入っていた場合
-  if (!is_numeric($count) || (is_numeric($count) && intval($count)) > 0) {
+  if (!is_numeric($count) || (is_numeric($count) && (intval($count)) <= 0)) {
     $count = 5;
   }
 
