@@ -33,3 +33,6 @@ update_theme_option(OP_ATTACHMENT_PAGE_NOINDEX);
 
 //JSON-LDを出力する
 update_theme_option(OP_JSON_LD_TAG_ENABLE);
+
+//メタディスクリプションのリファラ
+update_theme_option(OP_META_REFERRER_CONTENT);
