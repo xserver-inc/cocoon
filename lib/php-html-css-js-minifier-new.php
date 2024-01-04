@@ -175,7 +175,7 @@ function fn_minify_html($input, $comment = 2, $quote = 1) {
 	        //     //scriptタグの場合はjsの圧縮を行う
 	        //     $output .= minify_js($part);
             } else {
-                $output .= fn_minify_html_union($part, $quote);
+                $output .= minify_js($part);
             }
         } else if ($part[0] === '&' && substr($part, -1) === ';' && $part !== '&lt;' && $part !== '&gt;' && $part !== '&amp;') {
             $output .= html_entity_decode($part); // Evaluate HTML entit(y|ies)
