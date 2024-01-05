@@ -44,11 +44,16 @@
 .list-times-circle-o li::before,
 .fab-window-close-o::before,
 .list-window-close-o li::before,
+.fa-picture-o:before,
 .search-form div.sbtn::after
 // .comment-reply-link::before
 {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
+}
+
+.fa-picture-o:before {
+  content: "\f03e";
 }
 
 .is-style-comment-box::before,
