@@ -167,17 +167,18 @@ function fn_minify_html($input, $comment = 2, $quote = 1) {
             }
             continue;
         }
-        if ($part[0] === '<' && substr($part, -1) === '>') {
-            //codeタグの場合は処理しない
-            if (includes_string($part, '<code')) {
-                $output .= $part;
-            // } elseif ( includes_string($part, '<script') ) {
-	        //     //scriptタグの場合はjsの圧縮を行う
-	        //     $output .= minify_js($part);
-            } else {
-                $output .= minify_js($part);
-            }
-        } else if ($part[0] === '&' && substr($part, -1) === ';' && $part !== '&lt;' && $part !== '&gt;' && $part !== '&amp;') {
+        // if ($part[0] === '<' && substr($part, -1) === '>') {
+        //     //codeタグの場合は処理しない
+        //     if (includes_string($part, '<code')) {
+        //         $output .= $part;
+        //     // } elseif ( includes_string($part, '<script') ) {
+	    //     //     //scriptタグの場合はjsの圧縮を行う
+	    //     //     $output .= minify_js($part);
+        //     } else {
+        //         $output .= minify_js($part);
+        //     }
+        // } else
+        if ($part[0] === '&' && substr($part, -1) === ';' && $part !== '&lt;' && $part !== '&gt;' && $part !== '&amp;') {
             $output .= html_entity_decode($part); // Evaluate HTML entit(y|ies)
         } else {
             $output .= preg_replace('#\s+#', ' ', $part);
