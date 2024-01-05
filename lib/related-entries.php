@@ -122,6 +122,14 @@ function get_additional_related_wp_query_args($args) {
     }
   }
 
+  //除外カテゴリーの処理を追加
+  $exclude_category_ids = get_archive_exclude_category_ids();
+  if ($exclude_category_ids && is_array($exclude_category_ids)) {
+    $args += array(
+      'category__not_in' => $exclude_category_ids,
+    );
+  }
+
   return apply_filters('get_additional_related_wp_query_args', $args);
 }
 endif;

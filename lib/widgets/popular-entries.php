@@ -181,7 +181,7 @@ class PopularEntryWidgetItem extends WP_Widget {
       <label for="<?php echo $this->get_field_id('entry_count'); ?>">
         <?php _e( '表示数（半角数字）', THEME_NAME ) ?>
       </label>
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="number" value="<?php echo $entry_count ? $entry_count : EC_DEFAULT; ?>" />
+      <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="number" value="<?php echo $entry_count ? $entry_count : EC_DEFAULT; ?>" min="1" />
     </p>
     <?php //表示タイプ ?>
     <p>

@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="referrer" content="<?php echo apply_filters('cocoon_meta_referrer_content', 'no-referrer-when-downgrade'); ?>">
+<meta name="referrer" content="<?php echo apply_filters('cocoon_meta_referrer_content', get_meta_referrer_content()); ?>">
 <meta name="format-detection" content="telephone=no">
 
 <?php //ヘッドタグ内挿入用のアクセス解析用テンプレート

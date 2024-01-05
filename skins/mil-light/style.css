@@ -495,10 +495,6 @@ span.post-date {
     display: inline;
     padding: 0 7px 3px 7px;
 }
-.header-container-in.hlt-top-menu {
-    background-color: #fffcf9;
-    opacity: 0.95;
-}
 .header-container-in.hlt-top-menu #navi {
     margin: 0.3em auto 1em;
 }

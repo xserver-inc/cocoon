@@ -89,6 +89,52 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
+
+<!-- メタタグ設定 -->
+<div id="seo-referrer" class="postbox">
+  <h2 class="hndle"><?php _e( 'メタタグ設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+
+    <p><?php _e( 'headタグ内のmetaタグに関する設定です。', THEME_NAME ) ?><?php _e( 'よくわからない場合は設定を変更しないことを推奨します。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- リファラー  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_META_REFERRER_CONTENT, __( 'リファラー', THEME_NAME ) ); ?>
+          </th>
+          <td>
+
+            <?php
+            $options = array(
+              'no-referrer' => __( 'no-referrer', THEME_NAME ).__( '（リファラー情報を送らない）', THEME_NAME ),
+              'no-referrer-when-downgrade' => __( 'no-referrer-when-downgrade', THEME_NAME ).__( '（ASPにリファラーを送りたい場合はこちらを推奨）', THEME_NAME ),
+              'same-origin' => __( 'same-origin', THEME_NAME ),
+              'origin' => __( 'origin', THEME_NAME ),
+              'strict-origin' => __( 'strict-origin', THEME_NAME ),
+              'origin-when-cross-origin' => __( 'origin-when-cross-origin', THEME_NAME ),
+              'strict-origin-when-cross-origin' => __( 'strict-origin-when-cross-origin', THEME_NAME ).__( '（ブラウザデフォルト）', THEME_NAME ),
+              'unsafe-url' => __( 'unsafe-url', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_META_REFERRER_CONTENT, $options, get_meta_referrer_content());
+            generate_tips_tag(__( 'メタタグでのリファラーの振る舞いを設定します。', THEME_NAME ).__( '以前のブラウザデフォルトはno-referrer-when-downgradeでしたが、2020年以降はstrict-origin-when-cross-originがデフォルトとなりました。', THEME_NAME ));
+            ?>
+
+            <p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Referrer-Policy" class="help-page" target="_blank" rel="noopener"><span class="fa fa-question-circle" aria-hidden="true"></span> リファラーポリシー</a></p>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 <!-- 日付の設定 -->
 <div id="seo-date" class="postbox">
   <h2 class="hndle"><?php _e( '日付の設定', THEME_NAME ) ?></h2>

@@ -135,7 +135,7 @@ class InfoListWidgetItem extends WP_Widget {
       <label for="<?php echo $this->get_field_id('count'); ?>">
         <?php _e( '表示数（半角数字）', THEME_NAME ) ?>
       </label>
-      <input class="widefat" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" type="number" value="<?php echo $count ? $count : EC_DEFAULT; ?>" />
+      <input class="widefat" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" type="number" value="<?php echo $count ? $count : EC_DEFAULT; ?>" min="1" />
     </p>
     <?php //枠線表示 ?>
     <p>

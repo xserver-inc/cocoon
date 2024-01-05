@@ -171,3 +171,11 @@ function is_json_ld_tag_enable(){
   return get_theme_option(OP_JSON_LD_TAG_ENABLE, 1);
 }
 endif;
+
+//メタディスクリプションのリファラ
+define('OP_META_REFERRER_CONTENT', 'meta_referrer_content');
+if ( !function_exists( 'get_meta_referrer_content' ) ):
+function get_meta_referrer_content(){
+  return get_theme_option(OP_META_REFERRER_CONTENT, 'no-referrer-when-downgrade');
+}
+endif;
