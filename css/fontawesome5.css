@@ -42,10 +42,6 @@
   font-weight: 400;
 }
 
-.fa-picture-o:before {
-  content: "\f03e";
-}
-
 .is-style-comment-box::before,
 .comment-box::before {
   content: "\f075";
