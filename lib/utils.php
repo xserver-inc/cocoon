@@ -969,8 +969,6 @@ function wp_add_css_custome_to_inline_style(){
     //スキンを使用しない場合
     wp_add_inline_style( THEME_NAME.'-style', $css_custom );
   }
-
-
 }
 endif;
 
