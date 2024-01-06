@@ -1370,6 +1370,15 @@ function is_admin_theme_func_text_php_page(){
 }
 endif;
 
+//Jetpackの統計ページか
+if ( !function_exists( 'is_admin_jetpack_stats_page' ) ):
+function is_admin_jetpack_stats_page(){
+  global $pagenow;
+  $is_stats_text = isset($_GET['page']) && $_GET['page'] == 'stats';
+  return $pagenow == 'admin.php' && $is_stats_text;
+}
+endif;
+
 //Cocoon設定ページか
 if ( !function_exists( 'is_admin_cocoon_settings_page' ) ):
 function is_admin_cocoon_settings_page(){
