@@ -969,8 +969,6 @@ function wp_add_css_custome_to_inline_style(){
     //スキンを使用しない場合
     wp_add_inline_style( THEME_NAME.'-style', $css_custom );
   }
-
-
 }
 endif;
 
@@ -1369,6 +1367,15 @@ function is_admin_theme_func_text_php_page(){
   global $pagenow;
   $is_func_text = isset($_GET['page']) && $_GET['page'] == 'theme-func-text';
   return $pagenow == 'admin.php' && $is_func_text;
+}
+endif;
+
+//Jetpackの統計ページか
+if ( !function_exists( 'is_admin_jetpack_stats_page' ) ):
+function is_admin_jetpack_stats_page(){
+  global $pagenow;
+  $is_stats_text = isset($_GET['page']) && $_GET['page'] == 'stats';
+  return $pagenow == 'admin.php' && $is_stats_text;
 }
 endif;
 

@@ -320,7 +320,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_textbox_tag(OP_SITE_DATE_FORMAT, get_site_date_format(), '');
-            generate_tips_tag(__( 'テーマ全体に使われている日付のフォーマット形式を入力してください（初期値：Y.m.d）。', THEME_NAME ));
+            generate_tips_tag(__( 'テーマが使用する日付のフォーマット形式を入力してください（初期値：Y.m.d）。', THEME_NAME ));
             ?>
             <p><?php _e( '<a href="https://ja.wordpress.org/support/article/formatting-date-and-time/">日付と時刻の書式の解説</a>', THEME_NAME ) ?></p>
           </td>

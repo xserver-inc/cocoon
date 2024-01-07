@@ -48,8 +48,6 @@ function code_minify_call_back($html) {
   ///////////////////////////////////////
   //Alt属性がないIMGタグにalt=""を追加する
   $html = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt${1}>', $html);
-  // //画像タグの border="0"を削除する
-  // $html = str_replace(' border="0"', '', $html);
 
   //wpForoのHTML5エラー
   if (is_wpforo_exist()) {
@@ -168,6 +166,10 @@ endif;
 if ( !function_exists( 'wp_head_minify' ) ):
 function wp_head_minify($html) {
 
+  if (is_admin()) {
+    return $html;
+  }
+
   //ヘッダーコードのCSS縮小化
   if (is_css_minify_enable()) {
     $html = tag_code_to_minify_css($html);
@@ -191,7 +193,11 @@ endif;
 
 if ( !function_exists( 'wp_footer_minify' ) ):
 function wp_footer_minify($html) {
-  //_v($html);
+
+  if (is_admin()) {
+    return $html;
+  }
+
   //フッターコードのCSS縮小化
   if (is_css_minify_enable()) {
     $html = tag_code_to_minify_css($html);
@@ -226,7 +232,7 @@ endif;
 if ( !function_exists( 'convert_lazy_load_tag' ) ):
 function convert_lazy_load_tag($the_content, $media){
   //AMP・アクセス解析ページでは実行しない
-  if (is_amp() || is_analytics_access_php_page() || is_feed()) {
+  if (is_amp() || is_analytics_access_php_page() || is_feed() || is_admin()) {
     return $the_content;
   }
 
@@ -346,37 +352,3 @@ function convert_all_lazy_load_tag($html){
   return $html;
 }
 endif;
-
-//サムネイル画像のLazy Load置換
-// add_filter('post_thumbnail_html', 'post_lazy_load_thumbnail_html', 10, 5);
-// if ( !function_exists( 'post_lazy_load_thumbnail_html' ) ):
-// function post_lazy_load_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr){
-//   // _v($html);
-//   //WordPress5.5のLazy Load環境が有効か
-//   if (is_wp_lazy_load_valid()
-//     //管理画面では動作させない
-//     && !is_admin()
-//     //投稿のアイキャッチの場合は'thumb160'のような
-//     //文字列ではなく配列が入るので除外
-//     && !is_array($size)
-//     //既に標準のLazy Loadが入っている場合は実行しない
-//     && !includes_string($html, ' loading="lazy"')
-//   ) {
-//     $html = convert_all_lazy_load_tag($html);
-//   }
-//   return $html;
-// }
-// endif;
-
-// //アバター画像のLazy Load置換
-// add_filter('get_avatar', 'get_avatar_lazy_load_thumbnail_html');
-// if ( !function_exists( 'get_avatar_lazy_load_thumbnail_html' ) ):
-// function get_avatar_lazy_load_thumbnail_html($avatar){
-//   // _v($avatar);
-//   //WordPress5.5のLazy Load環境が有効か
-//   if (is_wp_lazy_load_valid()) {
-//     $avatar = convert_all_lazy_load_tag($avatar);
-//   };
-//   return $avatar;
-// }
-// endif;

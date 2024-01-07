@@ -16,6 +16,11 @@ function admin_print_styles_custom() {
     echo '<style>#toplevel_page_jetpack{display:none;}</style>';
   }
 
+  //JetPackの統計ページでない時
+  //これをしないとなぜか以下のような不具合が出る
+  //https://wp-cocoon.com/community/postid/76360/
+  if (is_admin_jetpack_stats_page()) return;
+
   //管理用スタイル
   wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
 
@@ -30,19 +35,11 @@ function admin_print_styles_custom() {
 
   //メディアアップローダの javascript API
   wp_enqueue_media();
-  // wp_enqueue_script( 'media-widgets' );
-  // wp_enqueue_script( 'media-upload');
-  //_v("ha");
 
   ///////////////////////////////////
   //Swiper
   ///////////////////////////////////
   wp_enqueue_swiper();
-
-  //wp_enqueue_script( 'tab-js-jquery', 'https://code.jquery.com/jquery.min.js');
-
-  //global $pagenow;
-  //var_dump($pagenow);
 
   ///////////////////////////////////////
   // 管理画面でのJavaScript読み込み
@@ -56,25 +53,10 @@ function admin_print_styles_custom() {
     wp_enqueue_confirmation_before_publish();
   }
 
-  // //_v(is_admin_php_page());
-  // if (is_admin_php_page()/* || is_widgets_php_page()*/) {
-  //   //タブの読み込み
-  //   wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
-  //   wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
-  // }
-
   if (is_admin_php_page()) {
     //IcoMoonの呼び出し
     wp_enqueue_style_icomoon();
 
-    // $select_index = 0;
-    // if (isset($_POST['select_index'])) {
-    //   $select_index = intval($_POST[SELECT_INDEX_NAME]);
-    // }
-    // $data = 'jQuery(document).ready( function() {
-    //      tabify("#tabs").select( '.$select_index.' );
-    //      });';
-    // wp_add_inline_script( 'tab-js', $data, 'after' ) ;
     //ソースコードハイライトリソースの読み込み
     wp_enqueue_highlight_js();
     //画像リンク拡大効果がLightboxのとき
@@ -87,37 +69,12 @@ function admin_print_styles_custom() {
     wp_enqueue_spotlight();
     //カルーセル用
     wp_enqueue_slick();
-    //ツリー型モバイルボタン（iframeで読み込むので不要）
-    //wp_enqueue_slicknav();
     //タイルカード
     wp_enqueue_jquery_masonry();
 
     //Google Fonts
     wp_enqueue_google_fonts();
-
-    // wp_enqueue_script( 'wp-color-picker' );
-
-    // //作成した javascript
-    // wp_enqueue_script( 'mediauploader' );
-
-    // ///////////////////////////////////
-    // //ソースコードのハイライト表示
-    // ///////////////////////////////////
-    // if ( is_code_highlight_enable() ){
-    //   echo '<link rel="stylesheet" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
-    //   echo '<script src="'.get_template_directory_uri().'/plugins/highlight-js/highlight.min.js"></script>'.PHP_EOL;
-    //   echo '<script type="text/javascript">
-    //     (function($){
-    //      $("'.get_code_highlight_css_selector().'").each(function(i, block) {
-    //       hljs.highlightBlock(block);
-    //      });
-    //     })(jQuery);
-    //     </script>';
-    // }
   }
-
-  //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
-  //echo '<style>.column-thumbnail{width:80px;}</style>'.PHP_EOL;
 }
 endif;
 
