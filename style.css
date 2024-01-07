@@ -4645,7 +4645,7 @@ div.search-form {
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
 }
-.caption-box.has-border-color .box-label {
+.caption-box.has-border-color:not(.not-nested-style) .box-label {
   color: var(--cocoon-white-color);
 }
 

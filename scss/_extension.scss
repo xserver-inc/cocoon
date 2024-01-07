@@ -1366,7 +1366,7 @@ div.search-form{
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
-  &.has-border-color .box-label{
+  &.has-border-color:not(.not-nested-style) .box-label{
     color: var(--cocoon-white-color);
   }
 }

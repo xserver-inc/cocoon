@@ -20,6 +20,10 @@ export default function save( props ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    notNestedStyle,
+    backgroundColorValue,
+    textColorValue,
+    borderColorValue,
   } = props.attributes;
 
   const backgroundClass = getColorClassName(
@@ -40,6 +44,8 @@ export default function save( props ) {
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
+    'not-nested-style': notNestedStyle,
+    'cocoon-block-caption-box': true,
   } );
 
   const styles = {
@@ -48,8 +54,14 @@ export default function save( props ) {
     '--cocoon-custom-border-color': customBorderColor || undefined,
   };
 
+  if ( notNestedStyle ) {
+    styles[ '--cocoon-custom-border-color' ] = borderColorValue;
+    styles[ '--cocoon-custom-background-color' ] = backgroundColorValue;
+    styles[ '--cocoon-custom-text-color' ] = textColorValue;
+  }
+
   const blockProps = useBlockProps.save( {
-    className: className,
+    className,
     style: styles,
   } );
 

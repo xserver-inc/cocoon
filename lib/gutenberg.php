@@ -460,7 +460,7 @@ html .body .micro-balloon.micro-bottom.has-<?php echo $slug; ?>-border-color::be
   border-bottom-color: <?php echo $color; ?>;
 }
 <?php //見出しボックス ?>
-html .body .caption-box.has-<?php echo $slug; ?>-border-color .box-label{
+html .body .caption-box.has-<?php echo $slug; ?>-border-color:not(.not-nested-style) .box-label{
   background-color: <?php echo $color; ?>;
 }
 <?php //タブ見出しボックス ?>
@@ -686,6 +686,18 @@ html .body .btn-wrap.has-larger-font-size > a {
     background-color:var(--cocoon-custom-background-color);
     border-color: var(--cocoon-custom-border-color);
     color: var(--cocoon-custom-text-color);
+}
+<?php //見出しボックス ?>
+.cocoon-block-caption-box.not-nested-style {
+    background-color: var(--cocoon-custom-background-color) !important;
+    border-color: var(--cocoon-custom-border-color) !important;
+    color: var(--cocoon-custom-text-color) !important;
+}
+.cocoon-block-caption-box.not-nested-style > .box-label{
+    background-color: var(--cocoon-custom-border-color);
+}
+.cocoon-block-caption-box.has-border-color.not-nested-style > .box-label{
+    color: var(--cocoon-white-color);
 }
     <?php
     $css = ob_get_clean();
