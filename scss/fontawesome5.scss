@@ -45,8 +45,8 @@
 .fab-window-close-o::before,
 .list-window-close-o li::before,
 .fa-picture-o:before,
+.fa-share-square-o::before,
 .search-form div.sbtn::after
-// .comment-reply-link::before
 {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
@@ -54,6 +54,10 @@
 
 .fa-picture-o:before{
   content: '\f03e';
+}
+
+.fa-share-square-o::before {
+  content: '\f14d';
 }
 
 .is-style-comment-box::before,
@@ -239,10 +243,25 @@
 .search-form div.sbtn:before,
 .slick-prev.slick-arrow::before,
 .slick-next.slick-arrow::before,
-.fa-exclamation-triangle::before
+.fa-exclamation-triangle::before,
+.fa-external-link::before,
+.fa-level-up::before,
+.fa-sign-out::before
 {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+}
+
+.fa-external-link::before {
+  content:'\f35d';
+}
+
+.fa-level-up::before {
+  content: '\f3bf';
+}
+
+.fa-sign-out::before {
+  content: '\f2f5';
 }
 
 .is-style-memo-box::before,
