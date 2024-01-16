@@ -100,7 +100,7 @@ const v2 = {
 
     const className = classnames( {
       'timeline-box': true,
-      cf: true,
+      'cf': true,// eslint-disable-line prettier/prettier
       'block-box': true,
       'has-text-color': textColor,
       'has-background': backgroundColor,
@@ -215,7 +215,7 @@ const v3 = {
 
     const className = classnames( {
       'timeline-box': true,
-      cf: true,
+      'cf': true,// eslint-disable-line prettier/prettier
       'block-box': true,
       'has-text-color': textColor || customTextColor,
       'has-background': backgroundColor || customBackgroundColor,

@@ -7,6 +7,7 @@
 
 import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComments } from '@fortawesome/free-regular-svg-icons';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -19,12 +20,12 @@ const DEFAULT_NAME = __( '未入力', THEME_NAME );
 //classの取得
 function getClasses( index, style, position, iconstyle ) {
   const classes = classnames( {
-    [ 'speech-wrap' ]: true,
+    'speech-wrap': true,
     [ `sbs-${ style }` ]: !! style,
     [ `sbp-${ position }` ]: !! position,
     [ `sbis-${ iconstyle }` ]: !! iconstyle,
-    [ 'cf' ]: true,
-    [ 'block-box' ]: true,
+    'cf': true,// eslint-disable-line prettier/prettier
+    'block-box': true,
   } );
   return classes;
 }
@@ -54,7 +55,7 @@ function getBalloonName( id ) {
 
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
   title: __( '吹き出しEX', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'far', 'comments' ] } />,
+  icon: <FontAwesomeIcon icon={ faComments } />,
   category: THEME_NAME + '-block',
   description: __(
     '登録されている吹き出しのオプションを変更できます。',
@@ -126,7 +127,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
     };
 
     //console.log(gbSpeechBalloons);
-    var balloons = [];
+    const balloons = [];
     gbSpeechBalloons.map( ( balloon, index ) => {
       //console.log(balloon);
       if ( gbSpeechBalloons[ index ].visible == '1' ) {
@@ -225,7 +226,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
             <figure className="speech-icon">
               <MediaUpload
                 onSelect={ ( media ) => {
-                  let newicon = !! media.sizes.thumbnail
+                  const newicon = !! media.sizes.thumbnail
                     ? media.sizes.thumbnail.url
                     : media.url;
                   //console.log(newicon);

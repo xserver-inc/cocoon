@@ -10,6 +10,7 @@ import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStrikethrough } from '@fortawesome/free-solid-svg-icons';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/strike';
 const TITLE = __( '打ち消し線（訂正）', THEME_NAME );
 
@@ -24,7 +25,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <LetterToolbarButton
-          icon={ <FontAwesomeIcon icon="strikethrough" /> }
+          icon={ <FontAwesomeIcon icon={ faStrikethrough } /> }
           title={ <s>{ TITLE }</s> }
           onClick={ onToggle }
           isActive={ isActive }

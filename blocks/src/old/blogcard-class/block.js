@@ -7,6 +7,7 @@
 
 import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAddressCard } from '@fortawesome/free-regular-svg-icons';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -26,7 +27,7 @@ function getClasses( style ) {
 
 registerBlockType( 'cocoon-blocks/blogcard', {
   title: __( 'ブログカード', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'far', 'address-card' ] } />,
+  icon: <FontAwesomeIcon icon={ faAddressCard } />,
   category: THEME_NAME + '-block',
   description: __(
     'ブログカード表示用の入力ブロックを表示します。URLは複数入力可能です。',

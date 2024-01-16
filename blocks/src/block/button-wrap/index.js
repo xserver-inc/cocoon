@@ -8,6 +8,7 @@
 import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTicketAlt } from '@fortawesome/free-solid-svg-icons';
 
 import edit from './edit';
 import save from './save';
@@ -19,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '囲みボタン', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'fas', 'ticket-alt' ] } />,
+  icon: <FontAwesomeIcon icon={ faTicketAlt } />,
   description: __(
     'アスリートタグ等のタグを変更できないリンクをボタン化します。',
     THEME_NAME

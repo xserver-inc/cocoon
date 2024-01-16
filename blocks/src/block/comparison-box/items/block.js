@@ -7,6 +7,7 @@
 
 import { THEME_NAME } from '../../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquare } from '@fortawesome/free-regular-svg-icons';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
@@ -26,7 +27,7 @@ registerBlockType( 'cocoon-blocks/comparison-left', {
   apiVersion: 2,
   title: __( '左側', THEME_NAME ),
   parent: [ 'cocoon-blocks/comparison-box' ],
-  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
+  icon: <FontAwesomeIcon icon={ faSquare } />,
   category: 'cocoon-block',
   description: __( '比較ボックスの左。', THEME_NAME ),
   supports: {
@@ -52,7 +53,7 @@ registerBlockType( 'cocoon-blocks/comparison-right', {
   apiVersion: 2,
   title: __( '右側', THEME_NAME ),
   parent: [ 'cocoon-blocks/comparison-box' ],
-  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
+  icon: <FontAwesomeIcon icon={ faSquare } />,
   category: 'cocoon-block',
   description: __( '比較ボックスの右。', THEME_NAME ),
   supports: {

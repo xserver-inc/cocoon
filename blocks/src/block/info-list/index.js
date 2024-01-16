@@ -10,6 +10,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
 
 /**
  * Internal dependencies
@@ -27,7 +28,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '新着情報', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'far', 'file-alt' ] } />,
+  icon: <FontAwesomeIcon icon={ faFileAlt } />,
   description: __( '新着情報の一覧を表示します。', THEME_NAME ),
 
   edit,

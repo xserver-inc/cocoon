@@ -9,7 +9,8 @@ function render_ranking_list($attributes, $content) {
     echo '<div class="'.$classes.'">';
     generate_item_ranking_tag($id);
     echo '</div>';
-    return ob_get_clean();
+    $html = ob_get_clean();
+    return change_fa( $html );
   }
 }
 
