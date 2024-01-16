@@ -93,3 +93,11 @@
 .no-sidebar .content-in{
   display: block;
 }
+
+///////////////////////////////////////
+// モバイルのサイドバーを下までスクロールすると動かなくなる問題対応
+// https://wp-cocoon.com/community/postid/76508/
+///////////////////////////////////////
+.body:has(#navi-menu-input:checked, #sidebar-menu-input:checked) {
+  overflow:hidden;
+}

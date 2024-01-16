@@ -2574,6 +2574,9 @@ body.wp-admin {
 .admin-settings .demo .no-sidebar .content-in {
   display: block;
 }
+.admin-settings .demo .body:has(#navi-menu-input:checked, #sidebar-menu-input:checked) {
+  overflow: hidden;
+}
 .admin-settings .demo label.screen-reader-text {
   display: none;
 }
@@ -10771,6 +10774,9 @@ body.wp-admin {
 }
 .admin-settings .demo .no-sidebar .content-in {
   display: block;
+}
+.admin-settings .demo .body:has(#navi-menu-input:checked, #sidebar-menu-input:checked) {
+  overflow: hidden;
 }
 .admin-settings .demo label.screen-reader-text {
   display: none;

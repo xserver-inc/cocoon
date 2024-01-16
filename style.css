@@ -2310,6 +2310,10 @@ img.blogcard-favicon-image {
   display: block;
 }
 
+.body:has(#navi-menu-input:checked, #sidebar-menu-input:checked) {
+  overflow: hidden;
+}
+
 /************************************
 ** ウィジェット
 ************************************/
