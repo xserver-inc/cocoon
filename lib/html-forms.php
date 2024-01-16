@@ -1462,13 +1462,16 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
             } else {
               //$name = get_the_author_posts_link($user_id);
               $user = get_userdata( $user_id );
-              $name = sprintf( '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
-                esc_url( get_author_posts_url( $user->ID, $user->user_nicename ) ),
-                /* translators: %s: author's display name */
-                esc_attr( sprintf( __( 'Posts by %s' ), $user->display_name ) ),
-                $user->display_name
-              );
-              //_v($user);
+              if ($user) {
+                $name = sprintf( '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
+                  esc_url( get_author_posts_url( $user->ID, $user->user_nicename ) ),
+                  /* translators: %s: author's display name */
+                  esc_attr( sprintf( __( 'Posts by %s' ), $user->display_name ) ),
+                  $user->display_name
+                );
+              } else {
+                $name = __( 'NO USER' );
+              }
             }
           } else {
             $author_display_name = strip_tags(get_the_author_display_name($user_id));
