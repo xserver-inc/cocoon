@@ -10,6 +10,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 
 /**
  * Internal dependencies
@@ -27,7 +28,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '新着記事', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'far', 'newspaper' ] } />,
+  icon: <FontAwesomeIcon icon={ faNewspaper } />,
   description: __( '新着記事の一覧を表示します。', THEME_NAME ),
 
   edit,

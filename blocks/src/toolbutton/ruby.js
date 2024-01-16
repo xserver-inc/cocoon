@@ -20,9 +20,10 @@ import {
   RichTextShortcut,
 } from '@wordpress/block-editor';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 const isRubyVisible = Number(
-  gbSettings[ 'isRubyVisible' ] ? gbSettings[ 'isRubyVisible' ] : 0
+  gbSettings.isRubyVisible ? gbSettings.isRubyVisible : 0
 );
 
 if ( isRubyVisible ) {
@@ -81,7 +82,7 @@ if ( isRubyVisible ) {
       // @see keycodes/src/index.js
       const shortcutType = 'primaryAlt';
       const shortcutCharacter = 'r';
-      const icon = <FontAwesomeIcon icon={ [ 'fas', 'ellipsis-h' ] } />;
+      const icon = <FontAwesomeIcon icon={ faEllipsisH } />;
       return (
         <Fragment>
           <RichTextShortcut

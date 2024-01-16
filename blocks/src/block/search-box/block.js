@@ -7,6 +7,7 @@
 
 import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -19,15 +20,15 @@ const DEFAULT_MSG = __( 'キーワード', THEME_NAME );
 //classの取得
 function getClasses() {
   const classes = classnames( {
-    [ 'search-form' ]: true,
-    [ 'block-box' ]: true,
+    'search-form': true,
+    'block-box': true,
   } );
   return classes;
 }
 
 registerBlockType( 'cocoon-blocks/search-box', {
   title: __( '検索案内', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'fas', 'search' ] } />,
+  icon: <FontAwesomeIcon icon={ faSearch } />,
   category: THEME_NAME + '-block',
   description: __(
     '訪問者に検索を促すためのボックスです。検索をクリックすることで検索結果へ跳びます（※AMPページ以外）。',

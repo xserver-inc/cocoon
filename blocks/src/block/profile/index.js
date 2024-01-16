@@ -8,6 +8,7 @@
 import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faIdCard } from '@fortawesome/free-regular-svg-icons';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +21,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'プロフィールボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'far', 'id-card' ] } />,
+  icon: <FontAwesomeIcon icon={ faIdCard } />,
   description: __( 'プロフィールを表示します。', THEME_NAME ),
 
   edit,

@@ -8,6 +8,7 @@
 import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquare } from '@fortawesome/free-regular-svg-icons';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +21,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '白抜きボックス', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
+  icon: <FontAwesomeIcon icon={ faSquare } />,
   description: __(
     'コンテンツを囲むだけのブランクボックスを表示します。',
     THEME_NAME

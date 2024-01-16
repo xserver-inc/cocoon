@@ -12,20 +12,21 @@ import { registerFormatType, insert } from '@wordpress/rich-text';
 import { BlockFormatControls } from '@wordpress/block-editor';
 import { Slot, ToolbarGroup, ToolbarDropdownMenu } from '@wordpress/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import { orderBy } from 'lodash';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/rankings';
 
-var isRankingVisible = Number(
-  gbSettings[ 'isRankingVisible' ] ? gbSettings[ 'isRankingVisible' ] : 0
+const isRankingVisible = Number(
+  gbSettings.isRankingVisible ? gbSettings.isRankingVisible : 0
 );
 if ( isRankingVisible ) {
   gbItemRankings.map( ( rank, index ) => {
-    var name = 'ranking-' + rank.id;
-    var title = rank.title;
-    var formatType = 'cocoon-blocks/' + name;
+    const name = 'ranking-' + rank.id;
+    const title = rank.title;
+    const formatType = 'cocoon-blocks/' + name;
     if ( rank.visible == '1' ) {
       registerFormatType( formatType, {
-        title: title,
+        title,
         tagName: name,
         className: null,
         edit( { value, onChange } ) {
@@ -66,7 +67,7 @@ if ( isRankingVisible ) {
                 { ( fills ) =>
                   fills.length !== 0 && (
                     <ToolbarDropdownMenu
-                      icon={ <FontAwesomeIcon icon={ [ 'fas', 'crown' ] } /> }
+                      icon={ <FontAwesomeIcon icon={ faCrown } /> }
                       label={ __( 'ランキング', THEME_NAME ) }
                       className="rankings"
                       controls={ orderBy(

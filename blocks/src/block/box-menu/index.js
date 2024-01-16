@@ -8,6 +8,7 @@
 import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThLarge } from '@fortawesome/free-solid-svg-icons';
 
 import edit from './edit';
 import save from './save';
@@ -20,7 +21,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'ボックスメニュー', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'fas', 'th-large' ] } />,
+  icon: <FontAwesomeIcon icon={ faThLarge } />,
   description: __( '登録されているボックスメニューを表示します。', THEME_NAME ),
 
   edit,

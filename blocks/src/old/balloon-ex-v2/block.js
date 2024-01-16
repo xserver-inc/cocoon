@@ -7,6 +7,7 @@
 
 import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComments } from '@fortawesome/free-regular-svg-icons';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
@@ -17,7 +18,7 @@ const DEFAULT_NAME = __( '未入力', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
   title: __( '吹き出しEX', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'far', 'comments' ] } />,
+  icon: <FontAwesomeIcon icon={ faComments } />,
   category: THEME_NAME + '-block',
   description: __(
     '登録されている吹き出しのオプションを変更できます。',
@@ -52,7 +53,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
     const { name, index, style, position, iconstyle } = attributes;
 
     //console.log(gbSpeechBalloons);
-    var balloons = [];
+    const balloons = [];
     gbSpeechBalloons.map( ( balloon, index ) => {
       //console.log(balloon);
       if ( gbSpeechBalloons[ index ].visible == '1' ) {

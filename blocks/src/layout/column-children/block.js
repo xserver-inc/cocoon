@@ -7,6 +7,7 @@
 
 import { THEME_NAME, LAYOUT_BLOCK_CLASS } from '../../helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
@@ -19,7 +20,7 @@ registerBlockType( 'cocoon-blocks/column-left', {
   apiVersion: 2,
   title: __( '左カラム', THEME_NAME ),
   parent: [ 'cocoon-blocks/column-2', 'cocoon-blocks/column-3' ],
-  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
+  icon: <FontAwesomeIcon icon={ faSquare } />,
   category: THEME_NAME + '-layout',
   description: __( 'カラム左側に表示される内容内容を入力。', THEME_NAME ),
   supports: {
@@ -29,7 +30,7 @@ registerBlockType( 'cocoon-blocks/column-left', {
 
   edit( { className } ) {
     const classes = classnames( className, {
-      [ 'column-left' ]: true,
+      'column-left': true,
     } );
 
     const blockProps = useBlockProps( {
@@ -47,7 +48,7 @@ registerBlockType( 'cocoon-blocks/column-left', {
 
   save( { className } ) {
     const classes = classnames( className, {
-      [ 'column-left' ]: true,
+      'column-left': true,
     } );
 
     const blockProps = useBlockProps.save( {
@@ -67,7 +68,7 @@ registerBlockType( 'cocoon-blocks/column-center', {
   apiVersion: 2,
   title: __( '中央カラム', THEME_NAME ),
   parent: [ 'cocoon-blocks/column-2', 'cocoon-blocks/column-3' ],
-  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
+  icon: <FontAwesomeIcon icon={ faSquare } />,
   category: THEME_NAME + '-layout',
   description: __( 'カラム中央に表示される内容内容を入力。', THEME_NAME ),
   supports: {
@@ -77,7 +78,7 @@ registerBlockType( 'cocoon-blocks/column-center', {
 
   edit( { className } ) {
     const classes = classnames( className, {
-      [ 'column-center' ]: true,
+      'column-center': true,
     } );
 
     const blockProps = useBlockProps( {
@@ -95,7 +96,7 @@ registerBlockType( 'cocoon-blocks/column-center', {
 
   save( { className } ) {
     const classes = classnames( className, {
-      [ 'column-center' ]: true,
+      'column-center': true,
     } );
 
     const blockProps = useBlockProps.save( {
@@ -115,7 +116,7 @@ registerBlockType( 'cocoon-blocks/column-right', {
   apiVersion: 2,
   title: __( '右カラム', THEME_NAME ),
   parent: [ 'cocoon-blocks/column-2', 'cocoon-blocks/column-3' ],
-  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
+  icon: <FontAwesomeIcon icon={ faSquare } />,
   category: THEME_NAME + '-layout',
   description: __( 'カラム右側に表示される内容内容を入力。', THEME_NAME ),
   supports: {
@@ -125,7 +126,7 @@ registerBlockType( 'cocoon-blocks/column-right', {
 
   edit( { className } ) {
     const classes = classnames( className, {
-      [ 'column-right' ]: true,
+      'column-right': true,
     } );
 
     const blockProps = useBlockProps( {
@@ -143,7 +144,7 @@ registerBlockType( 'cocoon-blocks/column-right', {
 
   save( { className } ) {
     const classes = classnames( className, {
-      [ 'column-right' ]: true,
+      'column-right': true,
     } );
 
     const blockProps = useBlockProps.save( {

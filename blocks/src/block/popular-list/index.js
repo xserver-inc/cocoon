@@ -10,6 +10,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFire } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * Internal dependencies
@@ -27,7 +28,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( '人気記事', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'fas', 'fire' ] } />,
+  icon: <FontAwesomeIcon icon={ faFire } />,
   description: __( '人気記事の一覧を表示します。', THEME_NAME ),
 
   edit,

@@ -8,6 +8,7 @@
 import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquare } from '@fortawesome/free-regular-svg-icons';
 
 import edit from './edit';
 import save from './save';
@@ -19,7 +20,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'タイムラインアイテム', THEME_NAME ),
-  icon: <FontAwesomeIcon icon={ [ 'far', 'square' ] } />,
+  icon: <FontAwesomeIcon icon={ faSquare } />,
   description: __( 'カラム左側に表示される内容内容を入力。', THEME_NAME ),
 
   edit,
