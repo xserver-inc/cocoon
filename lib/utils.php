@@ -1513,10 +1513,13 @@ endif;
 //wpforoのページかどうか
 if ( !function_exists( 'is_wpforo_plugin_page' ) ):
 function is_wpforo_plugin_page($url = ''){
-  if (is_wpforo_exist()) {
+  if (is_wpforo_exist() && !is_admin()) {
     //functions-template.phpファイルから
     if (
-         is_wpforo_page($url)
+        if (!$url) {
+          $url = get_the_permalink();
+        }
+        is_wpforo_page($url)
       ) {
       return true;
     }
