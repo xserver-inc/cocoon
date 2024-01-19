@@ -1514,11 +1514,11 @@ endif;
 if ( !function_exists( 'is_wpforo_plugin_page' ) ):
 function is_wpforo_plugin_page($url = ''){
   if (is_wpforo_exist() && !is_admin()) {
+    if (!$url) {
+      $url = get_the_permalink();
+    }
     //functions-template.phpファイルから
     if (
-        if (!$url) {
-          $url = get_the_permalink();
-        }
         is_wpforo_page($url)
       ) {
       return true;
