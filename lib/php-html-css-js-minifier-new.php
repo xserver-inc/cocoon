@@ -342,7 +342,7 @@ function minify_css(...$lot) {
         $css .= $css_source;
     }
     //公開ページのみ縮小化
-    if (!is_admin()) {
+    if (!is_admin() && !is_user_logged_in()) {
         $minifier = new Minify\CSS($css);
         $css = $minifier->minify();
     }
@@ -350,8 +350,15 @@ function minify_css(...$lot) {
 }
 
 
+// function minify_html(...$lot) {
+//     return fn_minify_html(...$lot);
+// }
 function minify_html(...$lot) {
-    return fn_minify_html(...$lot);
+    $html = [...$lot];
+    if (!is_admin() && !is_user_logged_in()) {
+        $html = fn_minify_html($html);
+    }
+    return $html;
 }
 
 // function minify_js(...$lot) {
@@ -363,7 +370,7 @@ function minify_js(...$lot) {
         $js .= $js_source;
     }
     //公開ページのみ縮小化
-    if (!is_admin()) {
+    if (!is_admin() && !is_user_logged_in()) {
         $minifier = new Minify\JS($js);
         $js = $minifier->minify();
     }
