@@ -17,7 +17,6 @@ if (is_admin_panel_pv_area_visible()): ?>
         by Jetpack
       <?php endif ?>
     </span>
-    <?php ob_start(); ?>
     <span class="fa fa-bar-chart fa-fw" aria-hidden="true"></span>
     <span class="today-pv">
       <span class="today-pv-label"><?php _e( '本日:', THEME_NAME ) ?></span>
@@ -35,7 +34,6 @@ if (is_admin_panel_pv_area_visible()): ?>
       <span class="all-pv-label"><?php _e( '全体:', THEME_NAME ) ?></span>
       <span class="all-pv-count"><?php echo get_all_pv(); ?></span>
     </span>
-    <?php echo minify_html(ob_get_clean()); ?>
     <?php //Jetpackチャート表示
     if ((get_admin_panel_pv_type() == 'jetpack')
         //Jetpackが有効の場合
