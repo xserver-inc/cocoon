@@ -350,9 +350,14 @@ function minify_css(...$lot) {
 }
 
 
+// function minify_html(...$lot) {
+//     return fn_minify_html(...$lot);
+// }
 function minify_html(...$lot) {
-    return fn_minify_html(...$lot);
+    $html = [...$lot];
+    return fn_minify_html($html);
 }
+
 
 // function minify_js(...$lot) {
 //     return fn_minify_js(...$lot);
