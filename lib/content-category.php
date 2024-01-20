@@ -242,22 +242,22 @@ function extra_category_fields( $cat ) {
   </td>
 </tr>
 <tr class="form-field term-title-wrap">
-  <th><label for="title"><?php _e( 'カテゴリータイトル', THEME_NAME ) ?></label></th>
+  <th><label for="title"><?php _e( 'タイトル', THEME_NAME ) ?></label></th>
   <td>
     <?php
     $the_category_title = get_the_category_title($cat_id, false);
     ?>
-    <input type="text" name="the_category_title" id="title" size="25" value="<?php echo esc_attr($the_category_title) ?>" placeholder="<?php _e( 'カテゴリーページのタイトル', THEME_NAME ) ?>" />
-    <p class="description"><?php _e( 'カテゴリーページのタイトルを指定します。カテゴリーページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
+    <input type="text" name="the_category_title" id="title" size="25" value="<?php echo esc_attr($the_category_title) ?>" placeholder="<?php _e( 'ページのタイトル', THEME_NAME ) ?>" />
+    <p class="description"><?php _e( 'このページのタイトルを指定します。ページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-content-wrap">
-  <th><label for="content"><?php _e( 'カテゴリー本文', THEME_NAME ) ?></label></th>
+  <th><label for="content"><?php _e( '本文', THEME_NAME ) ?></label></th>
   <td><?php
     $the_category_content = get_the_category_content($cat_id, true);
     generate_visuel_editor_tag('the_category_content', $the_category_content, 'content');
    ?>
-    <p class="description"><?php _e( 'カテゴリーページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'このページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
    </td>
 </tr>
 <tr class="form-field term-eye-catch-wrap">
@@ -276,7 +276,7 @@ function extra_category_fields( $cat ) {
     $the_category_meta_description = get_the_category_meta_description($cat_id);
     generate_textarea_tag('the_category_meta_description', $the_category_meta_description, __( 'カテゴリーページの説明文を入力してください', THEME_NAME ), 3) ;
      ?>
-    <p class="description"><?php _e( 'カテゴリーページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'このページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-meta-keywords-wrap">
@@ -286,7 +286,7 @@ function extra_category_fields( $cat ) {
     $the_category_meta_keywords = get_the_category_meta_keywords($cat_id);
     ?>
     <input type="text" name="the_category_meta_keywords" id="keywords" size="25" value="<?php echo esc_attr($the_category_meta_keywords) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
-    <p class="description"><?php _e( 'カテゴリーページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'このページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-noindex-wrap">

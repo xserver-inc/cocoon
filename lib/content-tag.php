@@ -189,22 +189,22 @@ function extra_tag_fields( $tag ) {
     $tag_id = $tag->term_id;
 ?>
 <tr class="form-field term-title-wrap">
-  <th><label for="title"><?php _e( 'タグタイトル', THEME_NAME ) ?></label></th>
+  <th><label for="title"><?php _e( 'タイトル', THEME_NAME ) ?></label></th>
   <td>
     <?php
     $the_tag_title = get_the_tag_title($tag_id, false);
     ?>
-    <input type="text" name="the_tag_title" id="title" size="25" value="<?php echo esc_attr($the_tag_title) ?>" placeholder="<?php _e( 'タグページのタイトル', THEME_NAME ) ?>" />
-    <p class="description"><?php _e( 'タグページのタイトルを指定します。タグページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
+    <input type="text" name="the_tag_title" id="title" size="25" value="<?php echo esc_attr($the_tag_title) ?>" placeholder="<?php _e( 'ページのタイトル', THEME_NAME ) ?>" />
+    <p class="description"><?php _e( 'このページのタイトルを指定します。ページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-content-wrap">
-  <th><label for="content"><?php _e( 'タグ本文', THEME_NAME ) ?></label></th>
+  <th><label for="content"><?php _e( '本文', THEME_NAME ) ?></label></th>
   <td><?php
     $the_tag_content = get_the_tag_content($tag_id, true);
     generate_visuel_editor_tag('the_tag_content', $the_tag_content, 'content');
     ?>
-    <p class="description"><?php _e( 'タグページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'ページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
     </td>
 </tr>
 <tr class="form-field term-eye-catch-wrap">
@@ -221,9 +221,9 @@ function extra_tag_fields( $tag ) {
   <td>
     <?php
     $the_tag_meta_description = get_the_tag_meta_description($tag_id);
-    generate_textarea_tag('the_tag_meta_description', $the_tag_meta_description, __( 'タグページの説明文を入力してください', THEME_NAME ), 3) ;
+    generate_textarea_tag('the_tag_meta_description', $the_tag_meta_description, __( 'ページの説明文を入力してください', THEME_NAME ), 3) ;
       ?>
-    <p class="description"><?php _e( 'タグページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'ページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-meta-keywords-wrap">
@@ -233,7 +233,7 @@ function extra_tag_fields( $tag ) {
     $the_tag_meta_keywords = get_the_tag_meta_keywords($tag_id);
     ?>
     <input type="text" name="the_tag_meta_keywords" id="keywords" size="25" value="<?php echo esc_attr($the_tag_meta_keywords) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
-    <p class="description"><?php _e( 'タグページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
+    <p class="description"><?php _e( 'このページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-noindex-wrap">
@@ -241,11 +241,10 @@ function extra_tag_fields( $tag ) {
   <td>
     <?php
     $the_tag_noindex = get_the_tag_noindex($tag_id);
-    // _v($tag_id);
 
     //noindex
     generate_checkbox_tag('the_tag_noindex' , $the_tag_noindex, __( 'インデックスしない（noindex）', THEME_NAME ));
-    generate_howto_tag(__( 'このページが検索エンジンにインデックスされないようにメタタグを設定します。', THEME_NAME ).__( 'こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢タグページをnoindexとする」設定を有効にしている場合はそちらが優先されます。', THEME_NAME ), 'the_tag_noindex');
+    generate_howto_tag(__( 'このページが検索エンジンにインデックスされないようにメタタグを設定します。', THEME_NAME ).__( 'こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢タグページをnoindexとする」設定を有効にしている場合はそちらが優先されます。', THEME_NAME ).__( '※カスタム投稿のカテゴリーなったとしても公開ページはタグとして認識されます。', THEME_NAME ), 'the_tag_noindex');
     ?>
   </td>
 </tr>
