@@ -39,7 +39,8 @@ endif;
 define('OP_HTML_MINIFY_ENABLE', 'html_minify_enable');
 if ( !function_exists( 'is_html_minify_enable' ) ):
 function is_html_minify_enable(){
-  return get_theme_option(OP_HTML_MINIFY_ENABLE);
+  return false;
+  // return get_theme_option(OP_HTML_MINIFY_ENABLE);
 }
 endif;
 
