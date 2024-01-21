@@ -43,7 +43,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '縮小化', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'HTML、CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図ります。AMPページも縮小化されます。', THEME_NAME ) ?></p>
+    <p><?php _e( 'CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図ります。AMPページも縮小化されます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
