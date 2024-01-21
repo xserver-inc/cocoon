@@ -153,6 +153,8 @@ function fn_minify_css_union($input) {
 }
 
 function fn_minify_html($input, $comment = 2, $quote = 1) {
+    //ログイン画面でプラグインなどが増えてHTMLが多くなると画面が真っ白になるのでis_user_logged_in()は必須
+    if (!is_admin() && is_user_logged_in()) return $input;
     if (!is_string($input) || !$input = n(trim($input))) return $input;
     $output = $prev = "";
     foreach (fn_minify(array(MINIFY_COMMENT_HTML, MINIFY_HTML_KEEP, MINIFY_HTML, MINIFY_HTML_ENT), $input) as $part) {
@@ -342,7 +344,7 @@ function minify_css(...$lot) {
         $css .= $css_source;
     }
     //公開ページのみ縮小化
-    if (!is_admin()) {
+    if (!is_admin() && is_user_logged_in()) {
         $minifier = new Minify\CSS($css);
         $css = $minifier->minify();
     }
@@ -353,6 +355,28 @@ function minify_css(...$lot) {
 function minify_html(...$lot) {
     return fn_minify_html(...$lot);
 }
+// function minify_html(...$lot) {
+//     $html = [...$lot];
+//     // var_dump($html);
+//     if (!is_admin() && is_user_logged_in()) {
+//         $html = fn_minify_html($html);
+//     }
+//     return $html;
+// }
+// function minify_html($html) {
+//     return fn_minify_html($html);
+// }
+// function minify_html(...$lot) {
+//     $html = '';
+//     foreach ($lot as $html_source) {
+//         $html .= $html_source;
+//     }
+//     if (!is_admin()) {
+//         $html = fn_minify_html($html);
+//     }
+//     return $html;
+// }
+
 
 // function minify_js(...$lot) {
 //     return fn_minify_js(...$lot);
@@ -363,7 +387,7 @@ function minify_js(...$lot) {
         $js .= $js_source;
     }
     //公開ページのみ縮小化
-    if (!is_admin()) {
+    if (!is_admin() && is_user_logged_in()) {
         $minifier = new Minify\JS($js);
         $js = $minifier->minify();
     }

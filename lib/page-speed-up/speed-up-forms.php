@@ -48,7 +48,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-      <?php if (false): ?>
         <!-- HTML縮小化  -->
         <tr>
           <th scope="row">
@@ -67,8 +66,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             </div> -->
           </td>
         </tr>
-      <?php endif; ?>
-
 
         <!-- CSS縮小化  -->
         <tr>
