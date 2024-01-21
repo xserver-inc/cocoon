@@ -2693,7 +2693,7 @@ div.search-form {
   float: none;
 }
 
-.timeline-box .timeline-item:before {
+.timeline-item:before {
   background-color: var(--LtBlue_S30);
   width: 9px;
   height: 9px;

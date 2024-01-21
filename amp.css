@@ -8240,6 +8240,10 @@ ul.timeline ul ul ul {
   border-radius: 100%;
 }
 
+.has-point-color .timeline-item:before {
+  background: var(--cocoon-custom-point-color);
+}
+
 .iconlist-box {
   --cocoon-custom-icon-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: transparent;

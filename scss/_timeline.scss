@@ -69,4 +69,7 @@ ul.timeline ul ul ul {
     top: 24px;
     border-radius: 100%;
   }
+  .has-point-color .timeline-item:before {
+    background: var(--cocoon-custom-point-color);
+  }
 //}
