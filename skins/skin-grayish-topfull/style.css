@@ -2648,6 +2648,9 @@ div.search-form {
 }
 
 /* タイムライン */
+.cocoon-block-timeline.not-nested-style{
+  --cocoon-custom-background-color: var(--LtBlue_T90);
+}
 .timeline-box {
   border: none;
   background-color: var(--LtBlue_T90);
