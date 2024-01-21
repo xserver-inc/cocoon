@@ -2607,7 +2607,8 @@ div.search-form {
 }
 
 /* ラベルBox */
-.label-box .label-box-content {
+.label-box.not-nested-style:not(.has-border-color) > .box-content,
+.label-box > .label-box-content {
   border-radius: 0;
   border: 1px solid var(--LtGray_T30);
 }
