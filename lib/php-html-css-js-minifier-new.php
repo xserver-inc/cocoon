@@ -344,7 +344,7 @@ function minify_css(...$lot) {
         $css .= $css_source;
     }
     //公開ページのみ縮小化
-    if (!is_admin() && is_user_logged_in()) {
+    if (!is_admin()) {
         $minifier = new Minify\CSS($css);
         $css = $minifier->minify();
     }
@@ -352,30 +352,31 @@ function minify_css(...$lot) {
 }
 
 
-function minify_html(...$lot) {
-    return fn_minify_html(...$lot);
+// function minify_html(...$lot) {
+//     return fn_minify_html(...$lot);
+// }
+function minify_html($html) {
+    // 改行やタブ、余分なスペースを削除
+    $search = array(
+        '/\>[^\S ]+/s',     // タグの後の空白を削除
+        '/[^\S ]+\</s',     // タグの前の空白を削除
+        '/(\s)+/s',         // 連続する空白を一つに
+        '/<!--(.|\s)*?-->/' // HTMLコメントを削除
+    );
+
+    $replace = array(
+        '>',
+        '<',
+        '\\1',
+        ''
+    );
+
+    if (!is_admin()) {
+        $html = preg_replace($search, $replace, $html);
+    }
+
+    return $html;
 }
-// function minify_html(...$lot) {
-//     $html = [...$lot];
-//     // var_dump($html);
-//     if (!is_admin() && is_user_logged_in()) {
-//         $html = fn_minify_html($html);
-//     }
-//     return $html;
-// }
-// function minify_html($html) {
-//     return fn_minify_html($html);
-// }
-// function minify_html(...$lot) {
-//     $html = '';
-//     foreach ($lot as $html_source) {
-//         $html .= $html_source;
-//     }
-//     if (!is_admin()) {
-//         $html = fn_minify_html($html);
-//     }
-//     return $html;
-// }
 
 
 // function minify_js(...$lot) {
@@ -387,7 +388,7 @@ function minify_js(...$lot) {
         $js .= $js_source;
     }
     //公開ページのみ縮小化
-    if (!is_admin() && is_user_logged_in()) {
+    if (!is_admin()) {
         $minifier = new Minify\JS($js);
         $js = $minifier->minify();
     }
