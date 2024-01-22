@@ -42,7 +42,7 @@ if (is_user_administrator()
   <?php endif ?>
 
   <?php //AMPエリアの表示
-  if (is_admin_panel_amp_area_visible() && is_singular() && has_amp_page()): ?>
+  if (is_admin_panel_amp_area_visible() && is_singular() && has_amp_page() && is_amp_enable()): ?>
     <div class="admin-amp">
       <span class="icon-amp-logo2"></span>
       <a href="<?php echo get_amp_permalink(); ?> "><?php _e( 'AMPページへ', THEME_NAME ) ?></a>

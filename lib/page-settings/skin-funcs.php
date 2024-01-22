@@ -188,12 +188,13 @@ function get_skin_infos(){
           if (preg_match('/Visibility: *(.+)/i', $css, $m)) {
             $visibility = str_to_bool(trim($m[1]));
           }
-          //AMP記述がある場合
-          $amp = true;
-          if (preg_match('/AMP: *(.+)/i', $css, $m)) {
-            $amp = str_to_bool(trim($m[1]));
+          if (is_pwa_enable()) {
+            //AMP記述がある場合
+            $amp = true;
+            if (preg_match('/AMP: *(.+)/i', $css, $m)) {
+              $amp = str_to_bool(trim($m[1]));
+            }
           }
-
 
           $file_url = local_to_url($style_css_file);
           $dir_url = local_to_url($dir);

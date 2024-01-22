@@ -43,12 +43,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '縮小化', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図ります。AMPページも縮小化されます。', THEME_NAME ) ?></p>
+    <p><?php _e( 'CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図ります。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
 
-      <?php if (false): ?>
+      <?php if (is_html_minify_enable()): ?>
         <!-- HTML縮小化  -->
         <tr>
           <th scope="row">
@@ -59,12 +59,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_HTML_MINIFY_ENABLE , is_html_minify_enable(), __( 'HTMLを縮小化する', THEME_NAME ));
             generate_tips_tag(__( 'HTMLの余分な改行や余白を削除することによりソースコードのサイズを減らします。', THEME_NAME ));
             ?>
+
+            <?php if (is_amp_enable()): ?>
             <!-- <div class="indent">
               <?php
               generate_checkbox_tag(OP_HTML_MINIFY_AMP_ENABLE , is_html_minify_amp_enable(), __( 'AMPページのHTMLも縮小化', THEME_NAME ));
               generate_tips_tag(__( 'AMPページのソースコードを縮小化します。', THEME_NAME ));
                ?>
             </div> -->
+            <?php endif; ?>
+
           </td>
         </tr>
       <?php endif; ?>

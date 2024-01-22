@@ -116,8 +116,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     //Cocoon設定
     $all .= __( 'Gutenberg：', THEME_NAME ).intval(get_env_info_option_value(OP_GUTENBERG_EDITOR_ENABLE, 1)).PHP_EOL;
-    $all .= __( 'AMP：', THEME_NAME ).intval(get_env_info_option_value(OP_AMP_ENABLE)).PHP_EOL;
-    $all .= __( 'PWA：', THEME_NAME ).intval(get_env_info_option_value(OP_PWA_ENABLE)).PHP_EOL;
+    if (is_amp_enable()) {
+      $all .= __( 'AMP：', THEME_NAME ).intval(get_env_info_option_value(OP_AMP_ENABLE)).PHP_EOL;
+    }
+    if (is_pwa_enable()) {
+      $all .= __( 'PWA：', THEME_NAME ).intval(get_env_info_option_value(OP_PWA_ENABLE)).PHP_EOL;
+    }
     $all .= __( 'Font Awesome：', THEME_NAME ).str_replace('font_awesome_', '', get_env_info_option_value(OP_SITE_ICON_FONT, SITE_ICON_FONT_DEFAULT)).PHP_EOL;
     $all .= __( 'Auto Post Thumbnail：', THEME_NAME ).intval(get_env_info_option_value(OP_AUTO_POST_THUMBNAIL_ENABLE)).PHP_EOL;
     $all .= __( 'Retina：', THEME_NAME ).intval(get_env_info_option_value(OP_RETINA_THUMBNAIL_ENABLE)).PHP_EOL;

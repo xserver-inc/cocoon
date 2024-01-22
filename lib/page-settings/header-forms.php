@@ -113,7 +113,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             _e( ' × ', THEME_NAME );
             _e( '高さ：', THEME_NAME );
             generate_number_tag(OP_THE_SITE_LOGO_HEIGHT,  get_the_site_logo_height(), '', 0, 800);
-            generate_tips_tag(__( 'ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません（AMP用の幅と高さ属性は出力されます）。', THEME_NAME ));
+            generate_tips_tag(__( 'ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。', THEME_NAME ));
             ?>
           </td>
         </tr>

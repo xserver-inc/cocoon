@@ -830,10 +830,12 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   checked(in_array('is_404', $checks));
   echo '><label for="'.$id.'">' . __( '404ページ', THEME_NAME ) . '</label></li>';
 
-  $id = $name.'_'.'is_amp';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_amp" id="'.$id.'" ';
-  checked(in_array('is_amp', $checks));
-  echo '><label for="'.$id.'">' . __( 'AMPページ', THEME_NAME ) . '</label></li>';
+  if (is_amp_enable()) {
+    $id = $name.'_'.'is_amp';
+    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_amp" id="'.$id.'" ';
+    checked(in_array('is_amp', $checks));
+    echo '><label for="'.$id.'">' . __( 'AMPページ', THEME_NAME ) . '</label></li>';
+  }
 
   if (is_wpforo_exist()) {
     $id = $name.'_'.'is_wpforo_plugin_page';

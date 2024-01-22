@@ -71,6 +71,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+
+        <?php if (is_amp_enable()): ?>
         <!-- AMP  -->
         <tr>
           <th scope="row">
@@ -83,6 +85,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
+        <?php endif; ?>
+
 
         <!-- Amazon API  -->
         <tr>

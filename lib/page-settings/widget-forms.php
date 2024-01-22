@@ -16,7 +16,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-        <!-- AMP除外カテゴリーID -->
+        <!-- 除外ウィジェット -->
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_EXCLUDE_WIDGET_CLASSES, __( '除外ウィジェット', THEME_NAME )); ?>
@@ -24,10 +24,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
               $widgets = $GLOBALS['wp_widget_factory']->widgets;
-              //_v($widgets);
-              // echo '<pre>';
-              // var_dump($widgets);
-              // echo '</pre>';
             ?>
             <ul>
               <?php

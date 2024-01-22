@@ -247,12 +247,14 @@ endif;
   <input id="tab-page-404-input" value="tab-page-404-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-page-404-input" id="tab-page-404-label" class="tab-page-404-label tab-label"><?php _e( '404ページ', THEME_NAME ) ?></label>
 
-  <?php if (false): ?>
+  <?php if (is_amp_enable()): ?>
   <input id="tab-amp-input" value="tab-amp-input" class="tab-input" type="radio" name="tab-input">
   <label for="tab-amp-input" id="tab-amp-label" class="tab-amp-label tab-label"><?php _e( 'AMP', THEME_NAME ) ?></label>
+  <?php endif; ?>
 
-  <input id="tab-pwa-input" value="tab-pwa-input" class="tab-input" type="radio" name="tab-input">
-  <label for="tab-pwa-input" id="tab-pwa-label" class="tab-pwa-label tab-label"><?php _e( 'PWA', THEME_NAME ) ?></label>
+  <?php if (is_pwa_enable()): ?>
+    <input id="tab-pwa-input" value="tab-pwa-input" class="tab-input" type="radio" name="tab-input">
+    <label for="tab-pwa-input" id="tab-pwa-label" class="tab-pwa-label tab-label"><?php _e( 'PWA', THEME_NAME ) ?></label>
   <?php endif; ?>
 
   <input id="tab-admin-input" value="tab-admin-input" class="tab-input" type="radio" name="tab-input">
@@ -435,12 +437,14 @@ endif;
     <?php require_once abspath(__FILE__).'404-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
-  <?php if (false): ?>
+  <?php if (is_amp_enable()): ?>
    <!-- AMP -->
   <div id="tab-amp-content" class="amp metabox-holder">
     <?php require_once abspath(__FILE__).'amp-forms.php'; ?>
   </div><!-- /.metabox-holder -->
+  <?php endif; ?>
 
+  <?php if (is_pwa_enable()): ?>
   <!-- PWA -->
   <div id="tab-pwa-content" class="pwa metabox-holder">
     <?php require_once abspath(__FILE__).'pwa-forms.php'; ?>

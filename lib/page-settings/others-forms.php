@@ -52,7 +52,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_MIGRATE_FROM_SIMPLICITY , is_migrate_from_simplicity(), __( 'Simplicityから投稿設定を引き継ぐ', THEME_NAME ));
-            generate_tips_tag(__( 'Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」「AMP除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。', THEME_NAME ));
+            generate_tips_tag(__( 'Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。', THEME_NAME ));
             ?>
           </td>
         </tr>
