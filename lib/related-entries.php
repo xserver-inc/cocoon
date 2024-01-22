@@ -59,7 +59,9 @@ function get_related_wp_query_args(){
   $exclude_post_ids = get_archive_exclude_post_ids();
   if ($exclude_post_ids && is_array($exclude_post_ids)) {
     foreach ($exclude_post_ids as $exclude_post_id) {
-      array_push($set_args['post__not_in'], $exclude_post_id);
+      if (isset($set_args['post__not_in']) && is_array($set_args['post__not_in'])) {
+        array_push($set_args['post__not_in'], $exclude_post_id);
+      }
     }
   }
 
