@@ -192,9 +192,6 @@ endif;
 //本文中のURLをブログカードタグに変更する
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
-  // //ブロックエディターのブログカード用の本文整形
-  // $the_content = fix_blogcard_content($the_content);
-  //_v($the_content);
   $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?(<\/a>)?(<\/p>)?/im', $the_content,$m);
   //_v($m);
   foreach ($m[0] as $match) {
@@ -210,13 +207,12 @@ function url_to_internal_blogcard($the_content) {
     if (includes_wpforo_url($url)) {
       continue;
     }
-
     $tag = url_to_internal_blogcard_tag($url);
 
 
     if ( !$tag ) continue;//IDを取得できない場合はループを飛ばす
     //本文中のURLをブログカードタグで置換
-    $the_content = preg_replace('{^'.preg_quote($match, '{}').'}im', $tag , $the_content, 1);
+    $the_content = preg_replace('{^'.preg_quote($match, '{}').'}im', "\n".$tag , $the_content, 1);
     wp_reset_postdata();
 
   }

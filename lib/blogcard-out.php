@@ -59,7 +59,7 @@ function url_to_external_blog_card($the_content) {
     if ( !$tag ) continue;
 
     //本文中のURLをブログカードタグで置換
-    $the_content = preg_replace('{^'.preg_quote($match, '{}').'}im', $tag , $the_content, 1);
+    $the_content = preg_replace('{^'.preg_quote($match, '{}').'}im', "\n".$tag , $the_content, 1);
   }
   //ブログカード無効化の解除
   $the_content = cancel_blog_card_deactivation($the_content);
