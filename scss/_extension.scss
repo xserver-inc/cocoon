@@ -1446,6 +1446,9 @@ div.search-form{
   border-radius: var(--cocoon-middle-border-radius);
   border-top-left-radius: 0;
 }
+.has-border-color > .tab-caption-box-content{
+  border-color: var(--cocoon-custom-border-color);
+}
 @mixin caption_tab_color($color: var(--cocoon-red-color)) {
   .tab-caption-box-label{
     background-color: $color;

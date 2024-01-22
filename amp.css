@@ -4834,6 +4834,10 @@ div.search-form {
   border-top-left-radius: 0;
 }
 
+.has-border-color > .tab-caption-box-content {
+  border-color: var(--cocoon-custom-border-color);
+}
+
 .tcb-red .tab-caption-box-label {
   background-color: var(--cocoon-red-color);
   color: var(--cocoon-white-color);
