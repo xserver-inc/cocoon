@@ -1551,6 +1551,11 @@ img.emoji {
   z-index: 2;
 }
 
+.article-header .sns-share:not(:has(.sns-button)),
+.article-footer .sns-share:not(:has(.sns-button)) {
+  display: none;
+}
+
 /************************************
 ** 内容
 ************************************/

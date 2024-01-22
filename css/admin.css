@@ -1968,6 +1968,10 @@ body.wp-admin {
   box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
   z-index: 2;
 }
+.admin-settings .demo .article-header .sns-share:not(:has(.sns-button)),
+.admin-settings .demo .article-footer .sns-share:not(:has(.sns-button)) {
+  display: none;
+}
 .admin-settings .demo .content {
   margin-top: 24px;
 }
@@ -10174,6 +10178,10 @@ body.wp-admin {
   opacity: 0.8;
   box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
   z-index: 2;
+}
+.admin-settings .demo .article-header .sns-share:not(:has(.sns-button)),
+.admin-settings .demo .article-footer .sns-share:not(:has(.sns-button)) {
+  display: none;
 }
 .admin-settings .demo .content {
   margin-top: 24px;
