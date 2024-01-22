@@ -153,8 +153,6 @@ function fn_minify_css_union($input) {
 }
 
 function fn_minify_html($input, $comment = 2, $quote = 1) {
-    //ログイン画面でプラグインなどが増えてHTMLが多くなると画面が真っ白になるのでis_user_logged_in()は必須
-    if (!is_admin() && is_user_logged_in()) return $input;
     if (!is_string($input) || !$input = n(trim($input))) return $input;
     $output = $prev = "";
     foreach (fn_minify(array(MINIFY_COMMENT_HTML, MINIFY_HTML_KEEP, MINIFY_HTML, MINIFY_HTML_ENT), $input) as $part) {
@@ -371,9 +369,7 @@ function minify_html($html) {
         ''
     );
 
-    if (!is_admin()) {
-        $html = preg_replace($search, $replace, $html);
-    }
+    $html = preg_replace($search, $replace, $html);
 
     return $html;
 }
