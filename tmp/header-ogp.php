@@ -55,14 +55,14 @@ echo '<meta property="og:description" content="'; echo esc_attr($description); e
 echo '<meta property="og:title" content="'; echo esc_attr($title); echo '">';echo "\n";//ブログのタイトルを表示
 echo '<meta property="og:url" content="'; echo esc_url($url); echo '">';echo "\n";//ブログのURLを表示取る
 
+$ogp_home_image = get_ogp_home_image_url();
+$ogp_image = $ogp_home_image ? $ogp_home_image : get_no_image_url();
 if (is_singular()){//単一記事ページの場合
-  if ($ogp_image = get_singular_sns_share_image_url()) {
-    echo '<meta property="og:image" content="'.esc_url($ogp_image).'">';echo "\n";
-  }
+  $ogp_image = get_singular_sns_share_image_url();
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
   if (is_category() && !is_paged() && $eye_catch = get_the_category_eye_catch_url(get_query_var('cat'))) {
     $ogp_image = $eye_catch;
-  } elseif (is_tag() && !is_paged() && $eye_catch = get_the_tag_eye_catch_url(get_queried_object_id())) {
+  } elseif ((is_tag()) && !is_paged() && $eye_catch = get_the_tag_eye_catch_url(get_queried_object_id())) {
     $ogp_image = $eye_catch;
   } elseif ( get_ogp_home_image_url() ) {
     $ogp_image = get_ogp_home_image_url();
@@ -71,9 +71,10 @@ if (is_singular()){//単一記事ページの場合
       $ogp_image = get_the_site_logo_url();
     }
   }
-  if ( !empty($ogp_image) ) {//使えそうな$ogp_imageがある場合
-    echo '<meta property="og:image" content="'.esc_url($ogp_image).'">';echo "\n";
-  }
+}
+$ogp_image = apply_filters('ogp_card_ogp_image', $ogp_image);
+if ( !empty($ogp_image) ) {//使えそうな$ogp_imageがある場合
+  echo '<meta property="og:image" content="'.esc_url($ogp_image).'">';echo "\n";
 }
 ?>
 <meta property="og:site_name" content="<?php echo esc_attr(get_bloginfo('name')); ?>">
