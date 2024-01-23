@@ -50,7 +50,7 @@ if (is_singular()){//単一記事ページの場合
 
 $title = apply_filters('sns_card_title', $title);
 $title = apply_filters('ogp_card_title', $title);
-$title = apply_filters('ogp_card_description', $description);
+$description = apply_filters('ogp_card_description', $description);
 echo '<meta property="og:description" content="'; echo esc_attr($description); echo '">';echo "\n";//ブログの説明文を表示
 echo '<meta property="og:title" content="'; echo esc_attr($title); echo '">';echo "\n";//ブログのタイトルを表示
 echo '<meta property="og:url" content="'; echo esc_url($url); echo '">';echo "\n";//ブログのURLを表示取る
