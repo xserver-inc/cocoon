@@ -475,7 +475,7 @@ endif;
 //メタディスクリプション文の取得
 if ( !function_exists( 'get_meta_description_text' ) ):
 function get_meta_description_text(){
-  $description = get_bloginfo('description');;
+  $description = '';
   if (is_front_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
