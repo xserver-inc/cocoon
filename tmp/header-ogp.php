@@ -37,7 +37,7 @@ if (is_singular()){//単一記事ページの場合
     $url = generate_canonical_url();
   }
 
-  if ( is_tag() ) {//タグ用設定
+  if ( is_tag() || is_tax() ) {//タグ用設定
     $description = get_tag_meta_description();
     if ($tag_title =  get_the_tag_title(get_queried_object_id())) {
       $title = $tag_title;
