@@ -62,7 +62,7 @@ if (is_singular()){//単一記事ページの場合
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
   if (is_category() && !is_paged() && $eye_catch = get_the_category_eye_catch_url(get_query_var('cat'))) {
     $ogp_image = $eye_catch;
-  } elseif (is_tag() && !is_paged() && $eye_catch = get_the_tag_eye_catch_url(get_queried_object_id())) {
+  } elseif ((is_tag() || is_tax()) && !is_paged() && $eye_catch = get_the_tag_eye_catch_url(get_queried_object_id())) {
     $ogp_image = $eye_catch;
   } elseif ( get_ogp_home_image_url() ) {
     $ogp_image = get_ogp_home_image_url();
