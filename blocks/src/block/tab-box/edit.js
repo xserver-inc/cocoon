@@ -138,7 +138,7 @@ export function TabBoxEdit( props ) {
           title={ __( '色設定', THEME_NAME ) }
           colorSettings={ [
             {
-              label: __( '枠の色', THEME_NAME ),
+              label: __( 'ボーダー色', THEME_NAME ),
               onChange: setBorderColor,
               value: borderColor.color,
             },
