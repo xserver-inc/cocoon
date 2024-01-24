@@ -4784,6 +4784,9 @@ body.wp-admin {
   border-radius: var(--cocoon-middle-border-radius);
   border-top-left-radius: 0;
 }
+.admin-settings .demo .has-border-color > .tab-caption-box-label {
+  background-color: var(--cocoon-custom-border-color);
+}
 .admin-settings .demo .has-border-color > .tab-caption-box-content {
   border-color: var(--cocoon-custom-border-color);
 }
@@ -12994,6 +12997,9 @@ body.wp-admin {
   padding: 0.4em 0.8em;
   border-radius: var(--cocoon-middle-border-radius);
   border-top-left-radius: 0;
+}
+.admin-settings .demo .has-border-color > .tab-caption-box-label {
+  background-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .has-border-color > .tab-caption-box-content {
   border-color: var(--cocoon-custom-border-color);
@@ -22027,6 +22033,9 @@ textarea[name=the_page_memo] {
   padding: 0.4em 0.8em;
   border-radius: var(--cocoon-middle-border-radius);
   border-top-left-radius: 0;
+}
+.components-popover__content .has-border-color > .tab-caption-box-label {
+  background-color: var(--cocoon-custom-border-color);
 }
 .components-popover__content .has-border-color > .tab-caption-box-content {
   border-color: var(--cocoon-custom-border-color);

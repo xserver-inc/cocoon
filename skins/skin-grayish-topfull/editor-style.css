@@ -45,7 +45,6 @@
 
 .editor-styles-wrapper .tab-caption-box-label {
 	--cocoon-custom-text-color: var(--white);
-	--cocoon-custom-border-color: var(--LtBlue_S30) !important;
 	color: var(--cocoon-custom-text-color);
 	background-color: var(--cocoon-custom-border-color);
 }
