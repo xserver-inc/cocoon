@@ -661,10 +661,10 @@ html .body .btn-wrap.has-larger-font-size > a {
     border-color: var(--cocoon-custom-border-color);
 }
 <?php //タブ見出しボックス ?>
-.has-border-color.not-nested-style > tab-caption-box-label {
+.cocoon-block-tab-caption-box.not-nested-style > .box-label {
     color: var(--cocoon-custom-text-color);
 }
-.has-border-color.not-nested-style > tab-caption-box-label {
+.cocoon-block-tab-caption-box.has-border-color.not-nested-style > .box-label {
     color: var(--cocoon-white-color);
 }
 <?php //ラベルボックス ?>
