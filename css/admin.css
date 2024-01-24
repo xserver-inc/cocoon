@@ -5071,6 +5071,9 @@ body.wp-admin {
   color: var(--cocoon-x-pallid-text-color);
   opacity: 0.3;
 }
+.admin-settings .demo .not-nested-style > .toggle-button {
+  color: var(--cocoon-text-color);
+}
 .admin-settings .demo .has-border-color .toggle-button::before {
   opacity: 0.6;
 }
@@ -13284,6 +13287,9 @@ body.wp-admin {
   font-size: 0.8em;
   color: var(--cocoon-x-pallid-text-color);
   opacity: 0.3;
+}
+.admin-settings .demo .not-nested-style > .toggle-button {
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .has-border-color .toggle-button::before {
   opacity: 0.6;
@@ -22320,6 +22326,9 @@ textarea[name=the_page_memo] {
   font-size: 0.8em;
   color: var(--cocoon-x-pallid-text-color);
   opacity: 0.3;
+}
+.components-popover__content .not-nested-style > .toggle-button {
+  color: var(--cocoon-text-color);
 }
 .components-popover__content .has-border-color .toggle-button::before {
   opacity: 0.6;
