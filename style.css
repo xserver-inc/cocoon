@@ -4852,10 +4852,6 @@ div.search-form {
   border-top-right-radius: var(--cocoon-middle-border-radius);
 }
 
-.not-nested-style > .tab-caption-box-label {
-  color: var(--cocoon-text-color);
-}
-
 .tab-caption-box-content {
   margin-top: -3px;
   border-width: 3px;
