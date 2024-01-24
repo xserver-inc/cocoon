@@ -594,15 +594,13 @@ html .body .btn-wrap.has-larger-font-size > a {
 .cocoon-block-toggle.not-nested-style {
     background-color: transparent!important;
 }
-.cocoon-block-toggle.not-nested-style > .toggle-button,
-.cocoon-block-toggle.not-nested-style > .toggle-content{
+.has-text-color.not-nested-style > .toggle-button{
     color: var(--cocoon-custom-text-color);
+}
+.has-border-color.not-nested-style > .toggle-content{
     border-color: var(--cocoon-custom-border-color);
 }
-.cocoon-block-toggle.not-nested-style > .toggle-button{
-    background-color: var(--cocoon-xx-thin-color);
-}
-.cocoon-block-toggle.not-nested-style > .toggle-content{
+.has-background-color.not-nested-style > .toggle-content{
     background-color: var(--cocoon-custom-background-color);
 }
 .cocoon-block-toggle.has-border-color.not-nested-style > .toggle-button {
