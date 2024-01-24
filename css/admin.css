@@ -5063,6 +5063,7 @@ body.wp-admin {
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
   margin: 0;
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .toggle-button::before {
   content: "\f067";
@@ -13278,6 +13279,7 @@ body.wp-admin {
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
   margin: 0;
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .toggle-button::before {
   content: "\f067";
@@ -22315,6 +22317,7 @@ textarea[name=the_page_memo] {
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
   margin: 0;
+  color: var(--cocoon-text-color);
 }
 .components-popover__content .toggle-button::before {
   content: "\f067";

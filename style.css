@@ -5199,6 +5199,7 @@ html .body .label-box.has-white-background-color .box-content {
   border-radius: var(--cocoon-basic-border-radius);
   position: relative;
   margin: 0;
+  color: var(--cocoon-text-color);
 }
 .toggle-button::before {
   content: "\f067";
