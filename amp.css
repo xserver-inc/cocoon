@@ -8255,7 +8255,7 @@ ul.timeline ul ul ul {
   border-radius: 100%;
 }
 
-.has-point-color .timeline-item:before {
+.has-point-color > .timeline > .timeline-item:before {
   background: var(--cocoon-custom-point-color);
 }
 

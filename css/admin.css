@@ -7738,7 +7738,7 @@ body.wp-admin {
   top: 24px;
   border-radius: 100%;
 }
-.admin-settings .demo .has-point-color .timeline-item:before {
+.admin-settings .demo .has-point-color > .timeline > .timeline-item:before {
   background: var(--cocoon-custom-point-color);
 }
 .admin-settings .demo .iconlist-box {
@@ -15954,7 +15954,7 @@ body.wp-admin {
   top: 24px;
   border-radius: 100%;
 }
-.admin-settings .demo .has-point-color .timeline-item:before {
+.admin-settings .demo .has-point-color > .timeline > .timeline-item:before {
   background: var(--cocoon-custom-point-color);
 }
 .admin-settings .demo .iconlist-box {
