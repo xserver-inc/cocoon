@@ -1618,7 +1618,6 @@ $toggle_border_width: 2px;
   position: relative;
   margin: 0;
 
-
   &::before{
     content: '\f067';
     font-family: FontAwesome;
@@ -1627,11 +1626,6 @@ $toggle_border_width: 2px;
     color: var(--cocoon-x-pallid-text-color);
     opacity: 0.3;
   }
-}
-
-
-.not-nested-style > .toggle-button{
-  color: var(--cocoon-text-color);
 }
 
 .has-border-color .toggle-button::before{

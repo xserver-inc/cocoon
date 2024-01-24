@@ -3337,10 +3337,6 @@ html .body .label-box.has-white-background-color .box-content {
   opacity: 0.3;
 }
 
-.not-nested-style > .toggle-button {
-  color: var(--cocoon-text-color);
-}
-
 .has-border-color .toggle-button::before {
   opacity: 0.6;
 }
