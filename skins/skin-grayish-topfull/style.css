@@ -2596,12 +2596,13 @@ div.search-form {
 }
 
 /* 見出しbox アイコンが選べる */
-.caption-box {
+.caption-box,
+.caption-box.not-nested-style:not(.has-border-color) {
   border: 1px solid var(--LtGray_T30);
 }
 
-.caption-box.not-nested-style:not(.has-border-color) > .caption-box-label,
-.caption-box > .caption-box-label {
+.caption-box > .caption-box-label,
+.caption-box.not-nested-style:not(.has-border-color) > .caption-box-label {
   background-color: var(--LtGray_T0);
   color: var(--white);
 }
