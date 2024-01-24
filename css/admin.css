@@ -4772,6 +4772,7 @@ body.wp-admin {
   display: inline-block;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .tab-caption-box-content {
   margin-top: -3px;
@@ -12989,6 +12990,7 @@ body.wp-admin {
   display: inline-block;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
+  color: var(--cocoon-text-color);
 }
 .admin-settings .demo .tab-caption-box-content {
   margin-top: -3px;
@@ -22028,6 +22030,7 @@ textarea[name=the_page_memo] {
   display: inline-block;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
+  color: var(--cocoon-text-color);
 }
 .components-popover__content .tab-caption-box-content {
   margin-top: -3px;

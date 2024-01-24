@@ -4825,6 +4825,7 @@ div.search-form {
   display: inline-block;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
+  color: var(--cocoon-text-color);
 }
 
 .tab-caption-box-content {
