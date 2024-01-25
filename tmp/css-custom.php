@@ -70,15 +70,7 @@ table:not(.has-border-color) tfoot,
 .ranking-item{
   border-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.5); ?>
 }
-/*
-.scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > :first-child{
-  background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 1); ?>;
-  <?php //サイトキーカラーが濃い場合は白文字にする
-  if (is_dark_hexcolor($site_key_color)): ?>
-    color: #fff;
-  <?php endif; ?>
-}
-*/
+
 table tr:nth-of-type(2n+1),
 .page-numbers.dots,
 .a-wrap:hover,
@@ -97,20 +89,19 @@ table tr:nth-of-type(2n+1),
 .tagcloud a:hover{
   background-color: <?php echo colorcode_to_rgb_css_code($site_key_color, 0.05); ?>;
 }
-  <?php //サイトキーカラーが濃い場合は白文字にする
-  if (is_dark_hexcolor($site_key_color)): ?>
-  .header,
-  .header .site-name-text,
-  #navi .navi-in a,
-  #navi .navi-in a:hover,
-  .article h2,
-  .sidebar h2,
-  .sidebar h3,
-  #footer,
-  #footer a:not(.sns-button){
-    color: #fff;
-  }
-  <?php endif; ?>
+
+.header,
+.header .site-name-text,
+#navi .navi-in a,
+#navi .navi-in a:hover,
+.article h2,
+.sidebar h2,
+.sidebar h3,
+#footer,
+#footer a:not(.sns-button){
+  color: #fff;
+}
+
 <?php endif ?>
 <?php //サイトキー文字色
 if ($site_key_text_color = get_site_key_text_color()): ?>
@@ -173,15 +164,14 @@ if ($header_container_background_color = get_header_container_background_color()
 #navi .navi-in > .menu-header .sub-menu{
   background-color: <?php echo $header_container_background_color; ?>;
 }
-  <?php //ヘッダー全体背景色が濃い場合は白文字にする
-  if (is_dark_hexcolor($header_container_background_color)): ?>
-  .header,
-  .header .site-name-text,
-  #navi .navi-in a,
-  #navi .navi-in a:hover{
-    color: #fff;
-  }
-  <?php endif; ?>
+
+.header,
+.header .site-name-text,
+#navi .navi-in a,
+#navi .navi-in a:hover{
+  color: #fff;
+}
+
 <?php endif ?>
 <?php //ヘッダー全体文字色
 if ($header_container_text_color = get_header_container_text_color()): ?>
@@ -197,13 +187,12 @@ if ($header_background_color = get_header_background_color()): ?>
 .header{
   background-color: <?php echo $header_background_color; ?>;
 }
-  <?php //ヘッダー背景色が濃い場合は白文字にする
-  if (is_dark_hexcolor($header_background_color)): ?>
-  .header,
-  .header .site-name-text{
-    color: #fff;
-  }
-  <?php endif; ?>
+
+.header,
+.header .site-name-text{
+  color: #fff;
+}
+
 <?php endif ?>
 <?php //ヘッダー文字色
 if ($header_text_color = get_header_text_color()): ?>
@@ -218,13 +207,12 @@ if ($global_navi_background_color = get_global_navi_background_color()): ?>
 #navi .navi-in > .menu-header .sub-menu{
   background-color: <?php echo $global_navi_background_color; ?>;
 }
-  <?php //グローバルナビ背景色が濃い場合は白文字にする
-  if (is_dark_hexcolor($global_navi_background_color)): ?>
-  #navi .navi-in a,
-  #navi .navi-in a:hover{
-    color: #fff;
-  }
-  <?php endif; ?>
+
+#navi .navi-in a,
+#navi .navi-in a:hover{
+  color: #fff;
+}
+
 <?php endif ?>
 <?php //グローバルナビ文字色
 if ($global_navi_text_color = get_global_navi_text_color()): ?>
