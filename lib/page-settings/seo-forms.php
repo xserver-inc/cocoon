@@ -120,7 +120,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'unsafe-url' => __( 'unsafe-url', THEME_NAME ),
             );
             generate_radiobox_tag(OP_META_REFERRER_CONTENT, $options, get_meta_referrer_content());
-            generate_tips_tag(__( 'メタタグでのリファラーの振る舞いを設定します。', THEME_NAME ).__( '以前のブラウザデフォルトはno-referrer-when-downgradeでしたが、2020年以降はstrict-origin-when-cross-originがデフォルトとなりました。', THEME_NAME ));
+            generate_tips_tag(__( 'メタタグでのリファラーの振る舞いを設定します。', THEME_NAME ).__( '以前のブラウザデフォルトはno-referrer-when-downgradeでしたが、2020年以降はstrict-origin-when-cross-originがデフォルトとなりました。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/referrer-policy/'));
             ?>
 
             <p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Referrer-Policy" class="help-page" target="_blank" rel="noopener"><span class="fa fa-question-circle" aria-hidden="true"></span> リファラーポリシー</a></p>

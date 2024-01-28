@@ -263,7 +263,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             //ads.txtの編集
             generate_textarea_tag(OP_AD_ADS_TXT_CONTENT, get_ad_ads_txt_content(), __( 'ads.txtの内容を入力', THEME_NAME )) ;
-            generate_tips_tag(__( 'ads.txt（アズテキスト）とは、Webの広告枠の販売者を厳密に管理し、偽の広告枠が広告主に提供されるのを防ぐためのテキストファイルです。', THEME_NAME ).__( 'Adsenseのみなどを除く第三者（他社）広告との併用配信をする際は設置が必須です。', THEME_NAME ));
+            generate_tips_tag(__( 'ads.txt（アズテキスト）とは、Webの広告枠の販売者を厳密に管理し、偽の広告枠が広告主に提供されるのを防ぐためのテキストファイルです。', THEME_NAME ).__( 'Adsenseのみなどを除く第三者（他社）広告との併用配信をする際は設置が必須です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/ads-txt/'));
             ?>
             <p><a href="https://support.google.com/adsense/answer/12171612" class="help-page" target="_blank" rel="noopener"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php _e( 'ads.txtガイド', THEME_NAME ) ?></a></p>
           </td>
