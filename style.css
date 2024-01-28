@@ -1234,12 +1234,25 @@ img.emoji {
   display: inline-block;
   margin-bottom: 12px;
 }
+.ect-vertical-card .entry-card-wrap .entry-card {
+  display: flex;
+  flex-direction: column;
+}
 .ect-vertical-card .entry-card-wrap .entry-card-thumb {
   width: 100%;
   float: none;
 }
 .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
+}
+.ect-vertical-card .entry-card-wrap .entry-card-meta {
+  margin-top: auto;
+  padding-top: 5px;
+  position: unset;
 }
 .ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;

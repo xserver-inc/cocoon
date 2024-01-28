@@ -1679,12 +1679,25 @@ body.wp-admin {
   display: inline-block;
   margin-bottom: 12px;
 }
+.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card {
+  display: flex;
+  flex-direction: column;
+}
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-thumb {
   width: 100%;
   float: none;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
+}
+.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-meta {
+  margin-top: auto;
+  padding-top: 5px;
+  position: unset;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-date, .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
@@ -9908,12 +9921,25 @@ body.wp-admin {
   display: inline-block;
   margin-bottom: 12px;
 }
+.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card {
+  display: flex;
+  flex-direction: column;
+}
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-thumb {
   width: 100%;
   float: none;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
+}
+.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-meta {
+  margin-top: auto;
+  padding-top: 5px;
+  position: unset;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-date, .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;

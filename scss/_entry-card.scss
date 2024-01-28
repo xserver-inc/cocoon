@@ -149,13 +149,31 @@
     width: 49.5%;
     display: inline-block;
     margin-bottom: 12px;
+
+    .entry-card{
+      display: flex;
+      flex-direction: column;
+    }
+
     .entry-card-thumb{
       width: 100%;
       float: none;
     }
+
     .entry-card-content{
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding-bottom: 0;
     }
+
+    .entry-card-meta {
+      margin-top: auto;
+      padding-top: 5px;
+      position: unset;
+    }
+
     .post-date, .post-update{
       margin-right: 0;
     }
