@@ -6,9 +6,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<!-- ボトムシェアボタン -->
+<!-- ボトムシェアボタン設定 -->
 <div id="sns-share-bottom" class="postbox">
-  <h2 class="hndle"><?php _e( 'ボトムシェアボタン', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'ボトムシェアボタン設定', THEME_NAME ) ?></h2>
   <div class="inside">
     <p><?php _e( 'ボトムシェアボタンの表示に関する設定です。', THEME_NAME ) ?></p>
     <table class="form-table">
