@@ -1268,6 +1268,7 @@ body.wp-admin {
 .admin-settings .demo .ect-vertical-card .entry-card-thumb,
 .admin-settings .demo .rect-vertical-card .related-entry-card-thumb {
   margin: 0;
+  flex-shrink: 0;
 }
 .admin-settings .demo .no-thumbnail .card-thumb,
 .admin-settings .demo .no-thumbnail .widget-entry-card-pv {
@@ -9510,6 +9511,7 @@ body.wp-admin {
 .admin-settings .demo .ect-vertical-card .entry-card-thumb,
 .admin-settings .demo .rect-vertical-card .related-entry-card-thumb {
   margin: 0;
+  flex-shrink: 0;
 }
 .admin-settings .demo .no-thumbnail .card-thumb,
 .admin-settings .demo .no-thumbnail .widget-entry-card-pv {
