@@ -8987,71 +8987,71 @@ body.wp-admin {
   width: 1em;
 }
 .admin-settings .demo .is-style-icon-list-check > li::before {
-  content: "\e90a";
+  content: "\e90a" !important;
 }
 .admin-settings .demo .is-style-icon-list-check-valid > li::before {
-  content: "\e908";
+  content: "\e908" !important;
 }
 .admin-settings .demo .is-style-icon-list-check-disabled > li::before {
-  content: "\e909";
+  content: "\e909" !important;
 }
 .admin-settings .demo .is-style-icon-list-circle > li::before {
-  content: "\e90b";
+  content: "\e90b" !important;
   color: #9ccc65 !important;
 }
 .admin-settings .demo .is-style-icon-list-triangle > li::before {
-  content: "\e91b";
+  content: "\e91b" !important;
   color: #ffca28 !important;
 }
 .admin-settings .demo .is-style-icon-list-cross > li::before {
-  content: "\e922";
+  content: "\e922" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-info > li::before {
-  content: "\e910";
+  content: "\e910" !important;
   color: #4fc3f7 !important;
 }
 .admin-settings .demo .is-style-icon-list-question > li::before {
-  content: "\e90f";
+  content: "\e90f" !important;
   color: #ffca28 !important;
 }
 .admin-settings .demo .is-style-icon-list-warning > li::before {
-  content: "\e921";
+  content: "\e921" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-paw > li::before {
-  content: "\e907";
+  content: "\e907" !important;
   color: #946243 !important;
 }
 .admin-settings .demo .is-style-icon-list-thumb-up > li::before {
-  content: "\e918";
+  content: "\e918" !important;
   color: #4db6ac !important;
 }
 .admin-settings .demo .is-style-icon-list-thumb-down > li::before {
-  content: "\e91a";
+  content: "\e91a" !important;
   color: #ee6e73 !important;
 }
 .admin-settings .demo .is-style-icon-list-ban > li::before {
-  content: "\e90d";
+  content: "\e90d" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-user-man > li::before {
-  content: "\e91d";
+  content: "\e91d" !important;
   color: #7986cb !important;
 }
 .admin-settings .demo .is-style-icon-list-user-woman > li::before {
-  content: "\e91e";
+  content: "\e91e" !important;
   color: #ee6e73 !important;
 }
 .admin-settings .demo .is-style-icon-list-comment > li::before {
-  content: "\e911";
+  content: "\e911" !important;
 }
 .admin-settings .demo .is-style-icon-list-heart > li::before {
-  content: "\e9da";
+  content: "\e9da" !important;
   color: #ef5350 !important;
 }
 .admin-settings .demo .is-style-icon-list-heart-broken > li::before {
-  content: "\e9db";
+  content: "\e9db" !important;
   color: #ef5350 !important;
 }
 .admin-settings .demo .no-border {
@@ -17229,71 +17229,71 @@ body.wp-admin {
   width: 1em;
 }
 .admin-settings .demo .is-style-icon-list-check > li::before {
-  content: "\e90a";
+  content: "\e90a" !important;
 }
 .admin-settings .demo .is-style-icon-list-check-valid > li::before {
-  content: "\e908";
+  content: "\e908" !important;
 }
 .admin-settings .demo .is-style-icon-list-check-disabled > li::before {
-  content: "\e909";
+  content: "\e909" !important;
 }
 .admin-settings .demo .is-style-icon-list-circle > li::before {
-  content: "\e90b";
+  content: "\e90b" !important;
   color: #9ccc65 !important;
 }
 .admin-settings .demo .is-style-icon-list-triangle > li::before {
-  content: "\e91b";
+  content: "\e91b" !important;
   color: #ffca28 !important;
 }
 .admin-settings .demo .is-style-icon-list-cross > li::before {
-  content: "\e922";
+  content: "\e922" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-info > li::before {
-  content: "\e910";
+  content: "\e910" !important;
   color: #4fc3f7 !important;
 }
 .admin-settings .demo .is-style-icon-list-question > li::before {
-  content: "\e90f";
+  content: "\e90f" !important;
   color: #ffca28 !important;
 }
 .admin-settings .demo .is-style-icon-list-warning > li::before {
-  content: "\e921";
+  content: "\e921" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-paw > li::before {
-  content: "\e907";
+  content: "\e907" !important;
   color: #946243 !important;
 }
 .admin-settings .demo .is-style-icon-list-thumb-up > li::before {
-  content: "\e918";
+  content: "\e918" !important;
   color: #4db6ac !important;
 }
 .admin-settings .demo .is-style-icon-list-thumb-down > li::before {
-  content: "\e91a";
+  content: "\e91a" !important;
   color: #ee6e73 !important;
 }
 .admin-settings .demo .is-style-icon-list-ban > li::before {
-  content: "\e90d";
+  content: "\e90d" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-user-man > li::before {
-  content: "\e91d";
+  content: "\e91d" !important;
   color: #7986cb !important;
 }
 .admin-settings .demo .is-style-icon-list-user-woman > li::before {
-  content: "\e91e";
+  content: "\e91e" !important;
   color: #ee6e73 !important;
 }
 .admin-settings .demo .is-style-icon-list-comment > li::before {
-  content: "\e911";
+  content: "\e911" !important;
 }
 .admin-settings .demo .is-style-icon-list-heart > li::before {
-  content: "\e9da";
+  content: "\e9da" !important;
   color: #ef5350 !important;
 }
 .admin-settings .demo .is-style-icon-list-heart-broken > li::before {
-  content: "\e9db";
+  content: "\e9db" !important;
   color: #ef5350 !important;
 }
 .admin-settings .demo .no-border {
