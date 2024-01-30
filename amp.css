@@ -788,6 +788,7 @@ img.emoji {
 }
 .wp-block-image figcaption {
   margin: 0;
+  word-break: break-all;
 }
 
 /************************************

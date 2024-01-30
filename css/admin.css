@@ -1317,6 +1317,7 @@ body.wp-admin {
 }
 .admin-settings .demo .wp-block-image figcaption {
   margin: 0;
+  word-break: break-all;
 }
 .admin-settings .demo .header {
   height: 100%;
@@ -9560,6 +9561,7 @@ body.wp-admin {
 }
 .admin-settings .demo .wp-block-image figcaption {
   margin: 0;
+  word-break: break-all;
 }
 .admin-settings .demo .header {
   height: 100%;
