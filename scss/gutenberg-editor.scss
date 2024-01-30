@@ -1372,14 +1372,10 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   text-align: center;
   button{
     border: 1px solid var(--cocoon-box-border-color);
-    // border-radius: 4px;
-    // display: inline-block;
-    // padding: 4px 12px;
   }
 }
 
 .editor-post-title::after {
-  // margin-top: -2em;
   color: rgb(51, 51, 51);
   content: "文字数: " attr(data-title-count);
   display: inline-block;
