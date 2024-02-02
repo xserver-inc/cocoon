@@ -43,3 +43,8 @@ twitter-widget {
 body:has(#spotlight.show) .header {
   background-image: none;
 }
+
+// reCAPTCHAのバッジの位置調整
+.grecaptcha-badge {
+  bottom: 60px !important;
+}

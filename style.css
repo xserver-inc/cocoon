@@ -10858,6 +10858,10 @@ body:has(#spotlight.show) .header {
   background-image: none;
 }
 
+.grecaptcha-badge {
+  bottom: 60px !important;
+}
+
 /**
  * Cocoon WordPress Theme
  * @author: yhira

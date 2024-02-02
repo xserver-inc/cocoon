@@ -18156,6 +18156,9 @@ body.wp-admin {
 .admin-settings .demo body:has(#spotlight.show) .header {
   background-image: none;
 }
+.admin-settings .demo .grecaptcha-badge {
+  bottom: 60px !important;
+}
 .admin-settings .demo .video-click {
   cursor: pointer;
 }
