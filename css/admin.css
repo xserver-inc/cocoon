@@ -18153,6 +18153,9 @@ body.wp-admin {
 .admin-settings .demo .scroll-hint-icon-wrap {
   z-index: 3;
 }
+.admin-settings .demo body:has(#spotlight.show) .header {
+  background-image: none;
+}
 .admin-settings .demo .video-click {
   cursor: pointer;
 }

@@ -35,3 +35,11 @@ twitter-widget {
 .scroll-hint-icon-wrap {
   z-index: 3;
 }
+
+// ・Cocoon設定＞ヘッダー＞ヘッダー背景画像で、画像を設定している場合
+// ・Cocoon設定＞画像＞画像の拡大効果で、Spotlight選択時
+// 投稿や固定ページなどで画像にリンクの設定をし、画像を拡大させたときに
+// Spotlightのヘッダーメニューが背景画像と重なり見えづらくなる対策
+body:has(#spotlight.show) .header {
+  background-image: none;
+}

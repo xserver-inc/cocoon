@@ -10854,6 +10854,10 @@ twitter-widget {
   z-index: 3;
 }
 
+body:has(#spotlight.show) .header {
+  background-image: none;
+}
+
 /**
  * Cocoon WordPress Theme
  * @author: yhira
