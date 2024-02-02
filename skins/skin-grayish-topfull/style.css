@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 1.0.8
+  Version: 1.0.9
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -174,7 +174,6 @@ html {
 
 .skin-grayish {
   letter-spacing: .16rem;
-  -webkit-font-feature-settings: 'palt';
   font-feature-settings: 'palt';
   overflow-x: hidden;
 }
@@ -185,8 +184,8 @@ html {
 
 }
 
-/* img add */
-.skin-grayish img {
+/* img add -> v1.0.9 .skin-grayish nouse */
+img {
   -o-object-fit: cover;
   object-fit: cover;
   vertical-align: bottom;
@@ -261,13 +260,10 @@ a:hover {
 /* メニュー最上位階層 Front*/
 .skin-grayish.front-top-page .navi-in>ul {
   /* flex-wrap: nowrap; */
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
   /* height: 56px; */
   /* height: var(--topHeaderNavisize); */
   height: 100%;
-  -webkit-column-gap: 8px;
   -moz-column-gap: 8px;
   column-gap: 8px;
   padding: 0px min(1.43vw, 80px);
@@ -275,19 +271,15 @@ a:hover {
 
 .skin-grayish:not(.front-top-page) .navi-in>ul {
   /* flex-wrap: nowrap; */
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
   /* height: 56px; */
   /* height: var(--topHeaderNavisize); */
-  -webkit-column-gap: 8px;
   -moz-column-gap: 8px;
   column-gap: 8px;
 }
 
 
 .skin-grayish .navi-in>ul li {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: auto;
@@ -295,15 +287,8 @@ a:hover {
 }
 
 .skin-grayish.front-top-page .navi-in>ul>li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   /* height: 100%; */
   /* height: 56px; */
@@ -314,15 +299,8 @@ a:hover {
 }
 
 .skin-grayish:not(.front-top-page) .navi-in>ul>li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   /* height: 100%; */
   /* height: 56px; */
@@ -333,11 +311,7 @@ a:hover {
 
 /* メニュー最上位階層に含まれるリンクの文字列について */
 .skin-grayish .navi-in>ul>li>a>.caption-wrap {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -366,8 +340,6 @@ a:hover {
 }
 
 .skin-grayish .navi-footer-in>.menu-footer {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   gap: 0.5em 1.6em;
 }
@@ -409,16 +381,13 @@ a:hover {
   top: 100%;
   opacity: 0;
   visibility: hidden;
-}
+  transition: opacity .5s, visibility .5s ease-in-out;
 
+}
 
 /* メニュー2階層のリンク文字列について */
 .skin-grayish .navi-in>ul>li>.sub-menu>li>a>.caption-wrap {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 160px;
@@ -427,10 +396,9 @@ a:hover {
 
 /* .sns-share[data-scroldisp=off] */
 .skin-grayish .navi-in[data-active=false]>ul>li:hover>.sub-menu {
+  /* .skin-grayish .navi-in>ul>li:hover>.sub-menu { */
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity .5s, visibility .5s ease-in-out;
-  transition: opacity .5s, visibility .5s ease-in-out;
 }
 
 .skin-grayish .navi-in>ul .sub-menu li {
@@ -473,7 +441,6 @@ a:hover {
 }
 
 .skin-grayish .navi-footer-in a {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -489,14 +456,9 @@ a:hover {
   position: absolute;
   bottom: 3px;
   left: 0;
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transform-origin: left;
   transform-origin: left;
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 .skin-grayish .navi-in>ul>li>.sub-menu>li>.sub-menu a {
@@ -505,7 +467,6 @@ a:hover {
 
 .skin-grayish .navi-in>ul li .sub-menu ul .caption-wrap {
   font-size: 0.8em;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 152px;
@@ -523,7 +484,6 @@ a:hover {
 
 .skin-grayish .navi-in a:hover>.caption-wrap::before,
 .skin-grayish .navi-footer-in a:hover::before {
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
@@ -538,7 +498,6 @@ a:hover {
 .skin-grayish .navi-in .search-menu-icon {
   display: inline-block;
   scale: 1.0;
-  -webkit-transition: scale .3s ease-in-out;
   transition: scale .3s ease-in-out;
 }
 
@@ -566,14 +525,8 @@ a:hover {
 }
 
 .skin-grayish .navi-in>ul li.header-snsicon-submenu>ul {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
   display: flex !important;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   background-color: transparent !important;
   min-width: 0 !important;
@@ -594,7 +547,6 @@ a:hover {
   font-size: 16px !important;
   padding: 0 !important;
   scale: 1.0;
-  -webkit-transition: scale .3s ease-in-out;
   transition: scale .3s ease-in-out;
 }
 
@@ -624,14 +576,8 @@ a:hover {
 }
 
 .skin-grayish .header-in .site-name-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   font-size: 64px;
   font-weight: 200;
@@ -639,7 +585,6 @@ a:hover {
   line-height: 1.5;
   width: 100%;
   scale: 1.0;
-  -webkit-transition: scale 0.3s, color 0.3s ease-in-out;
   transition: scale 0.3s, color 0.3s ease-in-out;
 }
 
@@ -659,28 +604,22 @@ a:hover {
   width: 100%;
   height: 100%;
   background: black;
-  -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }
 
 #gnavi-search-menu-content {
-  -webkit-transition: -webkit-transform .5s ease-in-out;
-  transition: -webkit-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
-  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
   position: fixed;
   top: 40%;
   z-index: 99;
   width: 90%;
   left: 5%;
   right: 5%;
-  -webkit-transform: translateY(900%);
   transform: translateY(900%);
   opacity: 0;
 }
 
 #gnavi-search-menu-input:checked~#gnavi-search-menu-content {
-  -webkit-transform: translateX(0%);
   transform: translateX(0%);
   opacity: 1;
 }
@@ -717,26 +656,7 @@ a:hover {
   margin: auto;
   rotate: -45deg;
   z-index: 1;
-  -webkit-animation: topmv_scroll 2.5s infinite;
   animation: topmv_scroll 2.5s infinite;
-}
-
-@-webkit-keyframes topmv_scroll {
-  from {
-    translate: 0px -50px;
-  }
-
-  80% {
-    translate: 0px 0px;
-  }
-
-  from, 80%, 100% {
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 1;
-  }
 }
 
 @keyframes topmv_scroll {
@@ -769,7 +689,6 @@ a:hover {
 
 .skin-grayish:not(.front-top-page) .header-container {
   background-color: var(--ohterHeaderBgColor);
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -782,28 +701,15 @@ a:hover {
 
 
 .skin-grayish:not(.front-top-page) .header-container-in.hlt-center-logo-top-menu {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
   padding: 0px min(1.43vw, 80px);
 }
 
-.skin-grayish:not(.front-top-page) .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.skin-grayish:not(.front-top-page) .container .header-container .header {
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   height: auto;
   background-image: none;
@@ -812,18 +718,13 @@ a:hover {
 
 .skin-grayish:not(.front-top-page) .header .header-in {
   min-height: 0;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0;
 }
 
 .skin-grayish:not(.front-top-page) .navi-in>ul {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   height: 100%;
 }
@@ -855,18 +756,13 @@ a:hover {
 }
 
 .skin-grayish:not(.front-top-page) .header .header-in .logo-image a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
 .skin-grayish:not(.front-top-page) .header .header-in .site-name-text {
   font-size: clamp(20px, 1.95vw, 32px);
   min-height: 0vw;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -896,7 +792,7 @@ a:hover {
 /*============== Top Image : LargeSize ==============*/
 /*-------------- Front --------------*/
 
-.skin-grayish.front-top-page .header {
+.skin-grayish.front-top-page .container .header-container .header {
   height: 100vh;
   min-height: 550px;
   background-size: cover;
@@ -904,8 +800,6 @@ a:hover {
 }
 
 .skin-grayish.front-top-page .header .header-in {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   color: var(--skin-grayish-site-name-txt);
   height: 100%;
@@ -916,7 +810,7 @@ a:hover {
 
 
 /* 背景の画像にオーバーレイ */
-.skin-grayish.front-top-page .header::before {
+.skin-grayish.front-top-page .container .header-container .header::before {
   display: block;
   content: "";
   background: var(--white);
@@ -932,7 +826,7 @@ a:hover {
 
 }
 
-.skin-grayish.front-top-page .header::after {
+.skin-grayish.front-top-page .container .header-container .header::after {
   display: block;
   content: "";
   background-image: url(images/svg-icon/polka-dots-wh.svg);
@@ -1038,7 +932,6 @@ a:hover {
   display: block;
   content: "New Post";
   color: var(--skin-grayish-site-main-hover);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: 2em;
@@ -1146,15 +1039,8 @@ a:hover {
 
 /* インデックスでカテゴリーごと(2カラム)を選択時 */
 .skin-grayish.front-top-page .list-columns.fpt-2-columns .widget-entry-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1221,7 +1107,6 @@ a:hover {
   content: "Popular Post";
   color: var(--skin-grayish-site-main-hover);
   font-size: 48px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: 2em;
@@ -1243,7 +1128,6 @@ a:hover {
   place-content: center;
   grid-template-rows: auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  -webkit-column-gap: 4px;
   -moz-column-gap: 4px;
   column-gap: 4px;
   row-gap: 4px;
@@ -1255,7 +1139,6 @@ a:hover {
 }
 
 .skin-grayish .entry-card-wrap.a-wrap {
-  -webkit-transition: scale .3s ease-in-out;
   transition: scale .3s ease-in-out;
 }
 
@@ -1273,12 +1156,12 @@ a:hover {
   overflow: hidden;
 }
 
+
 .skin-grayish .entry-card-wrap.a-wrap .entry-card-thumb img,
 .skin-grayish .related-entry-card-wrap.a-wrap .related-entry-card-thumb img,
 .skin-grayish .widget-entry-card-link.a-wrap .widget-entry-card-thumb img,
 .skin-grayish .carousel-entry-card-wrap.a-wrap .carousel-entry-card-thumb img {
   scale: 1.0;
-  -webkit-transition: scale .3s ease-in-out;
   transition: scale .3s ease-in-out;
 }
 
@@ -1293,15 +1176,8 @@ a:hover {
 /* ----- front new post entry-card article ----- */
 .skin-grayish .entry-card,
 .skin-grayish .entry-card .entry-card-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
   gap: 8px;
 }
@@ -1362,18 +1238,9 @@ a:hover {
 }
 
 .skin-grayish .index-tab-buttons .index-tab-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background-color: var(--LtGray_T70);
   border: none;
@@ -1441,7 +1308,6 @@ a:hover {
   opacity: 1;
   position: relative;
   text-decoration: none;
-  -webkit-transition: background-color .3s, border .7s ease-in-out;
   transition: background-color .3s, border .7s ease-in-out;
 }
 
@@ -1460,7 +1326,6 @@ a:hover {
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-transition: top .7s, left .7s ease-in-out;
   transition: top .7s, left .7s ease-in-out;
   z-index: -100;
 }
@@ -1500,17 +1365,9 @@ a:hover {
 
 /* 記事内ページャー 数字 */
 .skin-grayish .pager-links.pager-numbers {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 48px;
@@ -1566,41 +1423,28 @@ a:hover {
 
 
 .skin-grayish .article-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 /* skin独自の並び替え　ウィジット設置　＆ 広告 & ステマ規制などを考慮する */
 .skin-grayish .article-header .entry-title {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
   order: 1;
   margin: 16px 0;
 }
 
 /* レビュー表示（記事内設定）　review-rating */
 .skin-grayish .article-header .review-rating {
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
   order: 2;
 }
 
 /* タイトル下の広告表示 adsens Cocoon設定 */
 .skin-grayish .article-header .ad-area.ad-below-title {
-  -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
   order: 3;
 }
 
 /* 投稿＆固定ページタイトル下ウィジェット  */
 .skin-grayish .article-header :where(.widget-below-page-content-title, .widget-below-single-content-title) {
-  -webkit-box-ordinal-group: 5;
-  -ms-flex-order: 4;
   order: 4;
 }
 
@@ -1608,15 +1452,11 @@ a:hover {
   color: var(--skin-grayish-site-sub-color);
   text-align: left;
   margin-bottom: 0.6em;
-  -webkit-box-ordinal-group: 6;
-  -ms-flex-order: 5;
   order: 5;
 }
 
 /* アイキャッチ周り */
 .skin-grayish .article-header .eye-catch-wrap {
-  -webkit-box-ordinal-group: 7;
-  -ms-flex-order: 6;
   order: 6;
 }
 
@@ -1625,43 +1465,30 @@ a:hover {
 
 /* この記事は何分で読めます　read-time */
 .skin-grayish .article-header .read-time {
-  -webkit-box-ordinal-group: 9;
-  -ms-flex-order: 8;
   order: 8;
   margin-top: 1em;
 }
 
 /* PR表記大の出力 */
 .skin-grayish .article-header .pr-label.pr-label-l {
-  -webkit-box-ordinal-group: 10;
-  -ms-flex-order: 9;
   order: 9;
 }
 
 /* 本文上の広告表示 adsens ad-content-top */
 .skin-grayish .article-header .ad-area.ad-content-top {
-  -webkit-box-ordinal-group: 11;
-  -ms-flex-order: 10;
   order: 10;
 }
 
 
 /* 投稿本文上ウィジェット 投稿＆固定ページ */
 .skin-grayish .article-header :where(.widget-page-content-top, .widget-single-content-top) {
-  -webkit-box-ordinal-group: 12;
-  -ms-flex-order: 11;
   order: 11;
 }
 
 
 /*-------------- 投稿の調整 --------------*/
 .skin-grayish.single-post .article-header .eye-catch-wrap .eye-catch {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
   gap: 0.6em;
 
@@ -1671,7 +1498,6 @@ a:hover {
   display: inline-block;
   font-size: 14px;
   border: 0;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 2px 8px;
@@ -1692,12 +1518,10 @@ a:hover {
   left: min(1.71vw, 60px);
   position: fixed;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 10;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity .5s, visibility .5s ease-in-out;
   transition: opacity .5s, visibility .5s ease-in-out;
 
 }
@@ -1728,7 +1552,6 @@ a:hover {
 /* モバイルメニューのアイコンを綺麗に並べる */
 .skin-grayish .share-menu-content .sns-buttons,
 .skin-grayish .follow-menu-content .sns-buttons {
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -1762,14 +1585,8 @@ a:hover {
 
 /* SNSボタンを縦方向に並べる */
 .skin-grayish .article-header .sns-share-buttons {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   padding: 1rem 0;
   gap: 0.2rem;
@@ -1778,16 +1595,11 @@ a:hover {
 /* 各アイコンにホバー時の拡大アニメーション */
 .skin-grayish .article-header .sns-share-buttons a {
   color: var(--cocoon-sns-color);
-  -webkit-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 .skin-grayish .article-header .sns-share-buttons a:hover {
-  -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
 
@@ -1829,7 +1641,6 @@ a:hover {
   font-weight: normal;
   letter-spacing: .04rem;
   margin: 0;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -1870,7 +1681,6 @@ a:hover {
   background-image: url(images/svg-icon/mat-check.svg);
   background-repeat: no-repeat;
   background-size: 100%;
-  -webkit-filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
   filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
   bottom: unset;
   width: 0.7em;
@@ -2085,6 +1895,7 @@ a:hover {
   bottom: 0;
   left: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 
@@ -2102,7 +1913,6 @@ a:hover {
   background-image: url(images/svg-icon/mat-check.svg);
   background-repeat: no-repeat;
   background-size: 100%;
-  -webkit-filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
   filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
   width: 0.9em;
   height: 0.9em;
@@ -2405,7 +2215,6 @@ a:hover {
   grid-template-rows: auto auto;
   grid-template-columns: 200px auto auto;
   row-gap: 1em;
-  -webkit-column-gap: 1em;
   -moz-column-gap: 1em;
   column-gap: 1em;
   border: solid 1px var(--LtGray_T30);
@@ -2423,7 +2232,6 @@ a:hover {
 }
 
 .skin-grayish .blogcard .blogcard-content {
-  max-height: -webkit-max-content;
   max-height: -moz-max-content;
   max-height: max-content;
   grid-row: 1;
@@ -2444,11 +2252,9 @@ a:hover {
   color: var(--white);
   font-size: 12px;
   background-color: var(--LtGray_T30);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   /* height: auto; */
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 0.4em 2.4em;
@@ -2483,15 +2289,8 @@ a:hover {
 }
 
 .skin-grayish .blogcard .blogcard-site {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -2517,7 +2316,6 @@ a:hover {
 .skin-grayish .internal-blogcard {
   grid-template-rows: auto auto auto;
   row-gap: 0.7em;
-  -webkit-column-gap: 1em;
   -moz-column-gap: 1em;
   column-gap: 1em;
 }
@@ -2531,8 +2329,6 @@ a:hover {
 
 .skin-grayish .internal-blogcard .blogcard-date {
   float: none;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
@@ -2601,15 +2397,15 @@ div.search-form {
   border: 1px solid var(--LtGray_T30);
 }
 
-.caption-box > .caption-box-label,
-.caption-box.not-nested-style:not(.has-border-color) > .caption-box-label {
+.caption-box>.caption-box-label,
+.caption-box.not-nested-style:not(.has-border-color)>.caption-box-label {
   background-color: var(--LtGray_T0);
   color: var(--white);
 }
 
 /* ラベルBox */
-.label-box.not-nested-style:not(.has-border-color) > .box-content,
-.label-box > .label-box-content {
+.label-box.not-nested-style:not(.has-border-color)>.box-content,
+.label-box>.label-box-content {
   border-radius: 0;
   border: 1px solid var(--LtGray_T30);
 }
@@ -2651,9 +2447,10 @@ div.search-form {
 }
 
 /* タイムライン */
-.cocoon-block-timeline.not-nested-style{
+.cocoon-block-timeline.not-nested-style {
   --cocoon-custom-background-color: var(--LtBlue_T90);
 }
+
 .timeline-box {
   border: none;
   background-color: var(--LtBlue_T90);
@@ -2672,12 +2469,7 @@ div.search-form {
 }
 
 .timeline-box .timeline-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 2em;
   position: relative;
@@ -2690,7 +2482,6 @@ div.search-form {
 
 .timeline-box .timeline-item-label {
   color: var(--LtBlue_S30);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding-top: 14px;
@@ -2776,6 +2567,8 @@ blockquote cite {
   border-top: none;
 }
 
+
+
 /* テーブルブロック（コアブロック） */
 
 /* レスポンシブtableの時、scroll-hint libのシャドウ消す */
@@ -2830,8 +2623,6 @@ blockquote cite {
 
 .skin-grayish .article-footer .sns-share-buttons,
 .skin-grayish .article-footer .sns-follow-buttons {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   background-image: linear-gradient(-45deg, #fff 25%, var(--skin-grayish-gradient) 25%, var(--skin-grayish-gradient) 50%, #fff 50%, #fff 75%, var(--skin-grayish-gradient) 75%, var(--skin-grayish-gradient));
   background-size: 8px 8px;
@@ -2840,7 +2631,6 @@ blockquote cite {
 }
 
 .skin-grayish .article-footer .sns-buttons {
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -2861,7 +2651,6 @@ blockquote cite {
 .skin-grayish .article-footer .sns-follow-message {
   color: var(--skin-grayish-site-sub-color);
   font-weight: 500;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
@@ -2919,16 +2708,12 @@ blockquote cite {
 
 /* 投稿下関連記事 横スクロール表示に変更 (only CSS) */
 .skin-grayish .under-entry-content .related-list {
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   overflow-x: auto;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
 .skin-grayish .under-entry-content .related-list .related-entry-card-wrap {
-  -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 28.5%;
 }
@@ -2984,15 +2769,8 @@ blockquote cite {
 
 /* 投稿下　ページ送り */
 .skin-grayish .pager-post-navi {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
   width: 100%;
   padding: 1rem 0;
@@ -3049,7 +2827,6 @@ blockquote cite {
   color: var(--skin-grayish-cat-txt);
   font-size: 1em;
   background-color: var(--skin-grayish-site-sub-color);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.2em;
@@ -3243,18 +3020,9 @@ blockquote cite {
 }
 
 .skin-grayish .footer-bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   margin-top: 0;
@@ -3283,11 +3051,8 @@ blockquote cite {
 
 .skin-grayish .footer-bottom-logo {
   float: unset;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
   flex: 1;
   padding: 1rem 0;
   position: relative;
@@ -3303,7 +3068,6 @@ blockquote cite {
   min-height: 0vw;
   letter-spacing: 0.4rem;
   scale: 1.0;
-  -webkit-transition: scale 0.3s, color 0.3s ease-in-out;
   transition: scale 0.3s, color 0.3s ease-in-out;
   margin-right: -0.4rem;
 }
@@ -3316,11 +3080,8 @@ blockquote cite {
 
 .skin-grayish .footer-bottom-content {
   float: unset;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
   flex: auto;
   position: relative;
   text-align: center;
@@ -3340,12 +3101,8 @@ blockquote cite {
   height: 56px;
   position: fixed;
   right: 16px;
-  -webkit-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
   width: 56px;
   z-index: 120;
 }
@@ -3357,7 +3114,6 @@ blockquote cite {
 }
 
 .skin-grayish .go-to-top-button:hover {
-  -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
@@ -3372,18 +3128,13 @@ blockquote cite {
   position: absolute;
   right: 0;
   top: 15%;
-  -webkit-transform: scale(1) rotate(45deg);
   transform: scale(1) rotate(45deg);
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
   width: 15px;
   z-index: 125;
 }
 
 .skin-grayish .go-to-top-button.go-to-top-button-icon-font span:hover {
-  -webkit-transform: scale(1.1) rotate(45deg);
   transform: scale(1.1) rotate(45deg);
 
 }
@@ -3419,17 +3170,20 @@ blockquote cite {
   border: none;
   border-radius: 0%;
   position: relative;
+  line-height: 1.4 !important;
 }
 
 .author-box .author-widget-name {
   color: var(--LtGray_T0);
   font-size: 12px;
+  font-weight: 400;
   grid-row: 3;
   grid-column: 1;
   align-self: center;
   justify-self: center;
   margin-top: -1em;
   padding-bottom: 1em;
+  overflow-wrap: anywhere;
 }
 
 
@@ -3439,12 +3193,12 @@ blockquote cite {
   grid-column: 1;
   justify-self: center;
   width: 80px;
-  aspect-ratio: 1 / 1;
   margin: 0;
 }
 
 .author-box .author-thumb img {
   border-radius: 99%;
+  aspect-ratio: 1 / 1;
 }
 
 .author-box .author-content {
@@ -3458,16 +3212,21 @@ blockquote cite {
   grid-column: 1;
   align-self: center;
   justify-self: center;
-  text-align: left;
+  /* text-align: left; */
   margin-bottom: 0em;
   padding-top: 1em;
-  padding-bottom: 1em;
+  /* padding-bottom: 1em; */
+  text-align: center;
+  width: 100%;
 }
 
 .author-box .author-name a {
+  display: inline-block;
   color: var(--skin-grayish-site-sub-color);
   font-weight: normal;
   text-decoration: none;
+  padding-bottom: 1em;
+  overflow-wrap: anywhere;
 }
 
 .author-box .author-name a:hover {
@@ -3477,35 +3236,37 @@ blockquote cite {
 
 .author-box .author-description {
   grid-row: 4;
-  grid-column: 1 / 3;
+  grid-column: 1;
   color: var(--skin-grayish-author-description-txt);
   font-size: 14px;
   border-top: 1px dashed var(--skin-grayish-site-main-hover);
   margin-top: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 0em;
   position: relative;
 }
 
 .author-box .author-follows {
-  grid-row: 5;
-  grid-column: 1 / 3;
+  /* grid-row: 5;
+  grid-column: 1; */
   padding-left: 0;
   border-left: none;
 }
 
+.sidebar .author-description:has(> .author-follows):not(:has(>p)) {
+  padding-top: 1em;
+}
+
 .author-box p {
   margin-top: 0.3em;
-  padding: 1em 0 0 0;
+  padding: 1em 0;
   line-height: 1.7;
   margin-bottom: 0 !important;
+  overflow-wrap: anywhere;
 }
 
 .author-box .sns-follow-buttons,
 .skin-grayish .article-footer .author-box .sns-follow-buttons {
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   background-image: none;
   padding: 0;
@@ -3517,6 +3278,13 @@ blockquote cite {
 
 .skin-grayish .article-footer .author-box .sns-follow a {
   margin: 0;
+}
+
+.skin-grayish .article-footer .author-box .sns-follow-buttons a.follow-button {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 4px;
+  margin-right: 4px
 }
 
 
@@ -3568,8 +3336,6 @@ blockquote cite {
 }
 
 .skin-grayish .widget_sns_follow_buttons .sns-follow-buttons {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   background-image: none;
   padding: 0;
@@ -3615,13 +3381,9 @@ blockquote cite {
 
 /* Box Menu */
 .box-menu {
-  -webkit-box-shadow: inset 1px 1px 0 0 var(--LtGray_T50), 1px 1px 0 0 var(--LtGray_T50), 1px 0 0 0 var(--LtGray_T50), 0 1px 0 0 var(--LtGray_T50);
   box-shadow: inset 1px 1px 0 0 var(--LtGray_T50), 1px 1px 0 0 var(--LtGray_T50), 1px 0 0 0 var(--LtGray_T50), 0 1px 0 0 var(--LtGray_T50);
   background-image: none;
-  -webkit-transition: -webkit-box-shadow .3s ease-in-out;
-  transition: -webkit-box-shadow .3s ease-in-out;
   transition: box-shadow .3s ease-in-out;
-  transition: box-shadow .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
   position: relative;
 }
 
@@ -3636,12 +3398,10 @@ blockquote cite {
   left: 0;
   z-index: -1;
   opacity: 0;
-  -webkit-transition: opacity .5s ease-in-out;
   transition: opacity .5s ease-in-out;
 }
 
 .box-menu:hover {
-  -webkit-box-shadow: none !important;
   box-shadow: none !important;
   color: var(--skin-grayish-site-main-hover);
 }
@@ -3689,6 +3449,7 @@ blockquote cite {
 
 .skin-grayish :where(.comment-author, .recent-comment-avatar) img {
   border-radius: 99%;
+  aspect-ratio: 1 / 1;
 }
 
 .skin-grayish .comment-meta {
@@ -3758,17 +3519,14 @@ blockquote cite {
 
 
 :where(.ranking-box, .item-ranking-box, .ranking-items) .g-crown::before {
-  -webkit-filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
   filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
 }
 
 :where(.ranking-box, .item-ranking-box, .ranking-items) .s-crown::before {
-  -webkit-filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
   filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
 }
 
 :where(.ranking-box, .item-ranking-box, .ranking-items) .c-crown::before {
-  -webkit-filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
   filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
 }
 
@@ -3838,21 +3596,20 @@ blockquote cite {
 
 /* ブログカード 縦表示 Cocoonレイアウトブロック使用時2,3も + WPコア カラム・メディアとテキストも対象とする */
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard {
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr;
   row-gap: 1em;
-  -webkit-column-gap: 8px;
   -moz-column-gap: 8px;
   column-gap: 8px;
   text-align: center;
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard::before,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard::before,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard::before,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard::before,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard::before,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard::before {
@@ -3865,7 +3622,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content::before,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-content::before,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-content::before,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content::before,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content::before,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content::before {
@@ -3876,7 +3633,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-thumbnail,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-thumbnail,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-thumbnail,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-thumbnail,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-thumbnail,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-thumbnail {
@@ -3884,7 +3641,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-content,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-content,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content {
@@ -3894,7 +3651,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-title,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-title,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-title,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-title,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-title,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-title {
@@ -3905,7 +3662,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-footer,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-footer,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-footer,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-footer,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.external-blogcard .blogcard-footer,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.external-blogcard .blogcard-footer {
@@ -3915,7 +3672,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.external-blogcard .blogcard-site,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.external-blogcard .blogcard-site,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.external-blogcard .blogcard-site,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.external-blogcard .blogcard-site,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.external-blogcard .blogcard-site,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.external-blogcard .blogcard-site {
@@ -3923,10 +3680,10 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-date,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-date,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-date,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-date,
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-domain,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-domain,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-domain,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-domain,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-date,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-domain,
@@ -3938,7 +3695,7 @@ blockquote cite {
 
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.internal-blogcard,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.internal-blogcard,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard {
@@ -3946,7 +3703,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard::before,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.internal-blogcard::before,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.internal-blogcard::before,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard::before,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard::before,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard::before {
@@ -3956,7 +3713,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard .blogcard-footer .blogcard-date {
@@ -3965,7 +3722,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard .blogcard-footer .blogcard-site {
@@ -3975,7 +3732,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content .blogcard-snippet,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content .blogcard-snippet {
@@ -3983,7 +3740,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard-label,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard-label,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard-label,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard-label,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard-label,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard-label {
@@ -3992,7 +3749,7 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard-footer,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .blogcard-footer,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard-footer,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard-footer,
 .skin-grayish :where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard-footer,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard-footer {
@@ -4001,13 +3758,13 @@ blockquote cite {
 
 /* プロフィールボックス　エディタでカラム、インデックスミドルウィジェット時など縦表示にする */
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box,
+.skin-grayish .footer .author-box,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box {
   display: grid;
-  grid-template-rows: 100px auto auto auto !important;
+  grid-template-rows: 100px auto auto auto auto !important;
   grid-template-columns: 1fr !important;
-  -webkit-column-gap: 0em !important;
   -moz-column-gap: 0em !important;
   column-gap: 0em !important;
   width: 100% !important;
@@ -4019,23 +3776,25 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-widget-name,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-widget-name,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-widget-name,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-widget-name,
+.skin-grayish .footer .author-box .author-widget-name,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-widget-name {
   color: var(--LtGray_T0);
   font-size: 12px;
-  grid-row: 2 !important;
+  grid-row: 3 !important;
   grid-column: 1 !important;
   align-self: center !important;
   justify-self: center !important;
-  margin-top: 0 !important;
-  padding-top: 2em !important;
+  margin-top: -1em !important;
+  padding-top: 0em !important;
   padding-bottom: 1.2em !important;
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-thumb,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-thumb,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-thumb,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-thumb,
+.skin-grayish .footer .author-box .author-thumb,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-thumb {
   float: none;
   grid-row: 1 !important;
@@ -4047,58 +3806,68 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-thumb img,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-thumb img,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-thumb img,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-thumb img,
+.skin-grayish .footer .author-box .author-thumb img,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-thumb img {
   border-radius: 99%;
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-content,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-content,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-content,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-content,
+.skin-grayish .footer .author-box .author-content,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-content {
   display: contents;
   justify-self: center;
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-name,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-name,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name,
+.skin-grayish .footer .author-box .author-name,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name {
   font-size: 16px;
   grid-row: 2 !important;
   grid-column: 1 !important;
   align-self: flex-start !important;
   justify-self: center !important;
-  text-align: left !important;
   margin-bottom: 0em !important;
   padding-top: 0em !important;
-  padding-bottom: 1em !important;
+  padding-bottom: 0em !important;
+  text-align: center !important;
+  width: 100% !important;
+
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name a,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-name a,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-name a,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name a,
+.skin-grayish .footer .author-box .author-name a,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name a {
   color: var(--skin-grayish-site-sub-color);
   font-weight: normal;
   text-decoration: none;
+  display: block;
+  width: 100%;
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name a:hover,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-name a:hover,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-name a:hover,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name a:hover,
+.skin-grayish .footer .author-box .author-name a:hover,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name a:hover {
   color: var(--skin-grayish-site-main-hover);
   text-decoration: underline;
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-description,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-description,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-description,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-description,
+.skin-grayish .footer .author-box .author-description,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-description {
   grid-row: 4 !important;
-  grid-column: 1 / 3 !important;
+  grid-column: 1 !important;
   color: var(--skin-grayish-author-description-txt);
   font-size: 14px !important;
   border-top: 1px dashed var(--skin-grayish-site-main-hover) !important;
@@ -4110,18 +3879,21 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-follows,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .author-follows,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-follows,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-follows,
+.skin-grayish .footer .author-box .author-follows,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-follows {
+  /* for editor */
   grid-row: 5 !important;
-  grid-column: 1 / 3 !important;
+  grid-column: 1 !important;
   padding-left: 0 !important;
   border-left: none !important;
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box p,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box p,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box p,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box p,
+.skin-grayish .footer .author-box p,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box p {
   margin-top: 0.3em !important;
   padding: 0 0 1.5em 0 !important;
@@ -4130,29 +3902,29 @@ blockquote cite {
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .sns-follow-buttons,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .sns-follow-buttons,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .sns-follow-buttons,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .sns-follow-buttons,
+.skin-grayish .footer .author-box .sns-follow-buttons,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .sns-follow-buttons {
-  -ms-flex-wrap: wrap !important;
   flex-wrap: wrap !important;
-  -webkit-box-pack: center !important;
-  -ms-flex-pack: center !important;
   justify-content: center !important;
   background-image: none !important;
   padding: 0 !important;
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .sns-follow-buttons a.follow-button,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .sns-follow-buttons a.follow-button,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .sns-follow-buttons a.follow-button,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .sns-follow-buttons a.follow-button,
+.skin-grayish .footer .author-box .sns-follow-buttons a.follow-button,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .sns-follow-buttons a.follow-button {
   border: 0 !important;
   color: var(--skin-grayish-site-sub-color);
 }
 
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .sns-follow-buttons a.follow-button:hover,
-.skin-grayish:not(.front-top-page).home .widget-index-middle .author-box .sns-follow-buttons a.follow-button:hover,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .sns-follow-buttons a.follow-button:hover,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .sns-follow-buttons a.follow-button:hover,
+.skin-grayish .footer .author-box .sns-follow-buttons a.follow-button:hover,
 :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .sns-follow-buttons a.follow-button:hover {
   background-color: transparent;
 }
@@ -4161,18 +3933,9 @@ blockquote cite {
 /* スクロールヒント  for table */
 
 .skin-grayish .scroll-hint-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background-color: var(--skin-grayish-cat-back);
   width: 80px;
@@ -4229,12 +3992,7 @@ blockquote cite {
 }
 
 .skin-grayish .content-bottom .widget-content-bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -4268,18 +4026,9 @@ blockquote cite {
 /* コンテンツ下部Profileボックス */
 .skin-grayish .content-bottom .widget_author_box,
 .skin-grayish .content-top .widget_author_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin: 0;
   padding: 2rem 0 6rem;
@@ -4326,14 +4075,12 @@ blockquote cite {
 :where(.main, .content-bottom, .content-top) .author-box {
   display: grid;
   place-content: center;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto;
   grid-template-columns: minmax(auto, 180px) minmax(500px, 1fr);
   row-gap: 0;
-  -webkit-column-gap: 2.5em;
   -moz-column-gap: 2.5em;
   column-gap: 2.5em;
   background-color: var(--white_A90);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 4em;
@@ -4385,23 +4132,22 @@ blockquote cite {
 }
 
 :where(.main, .content-bottom, .content-top) .author-box .author-follows {
-  padding-left: 2rem;
-  border-left: 1px dashed var(--skin-grayish-site-main-hover);
-  grid-row-start: 2;
-  grid-row-end: 4;
+  padding-left: 0rem;
+  border-left: 0px dashed var(--skin-grayish-site-main-hover);
+  grid-row: 3;
   grid-column: 2;
 }
+
+
 
 :where(.main, .content-bottom, .content-top) .author-box .author-widget-name {
   color: var(--LtGray_T0);
   font-size: 12px;
-  grid-row: 1/3;
   grid-column: 1;
   justify-self: center;
   align-self: flex-start;
-  margin-top: 0;
-  padding-top: 150px;
-
+  margin-top: -1em;
+  grid-row: 2 / span 1;
 }
 
 .skin-grayish :where(.main, .content-bottom, .content-top) .author-box .author-thumb {
@@ -4409,7 +4155,7 @@ blockquote cite {
   float: none;
   margin-top: 0;
   margin-right: 0;
-  grid-row: 1/3;
+  grid-row: 1;
   grid-column: 1;
   justify-self: center;
   align-self: flex-start;
@@ -4421,11 +4167,12 @@ blockquote cite {
 
 :where(.main, .content-bottom, .content-top) .author-box .author-content .author-name {
   align-self: flex-start;
-  grid-row: 1/3;
+  grid-row: 1;
   grid-column: 1;
   text-align: center;
   margin-bottom: 0px;
   padding-top: 120px;
+  padding-bottom: 0em;
 }
 
 :where(.main, .content-bottom, .content-top) .author-box .author-content .author-description {
@@ -4434,7 +4181,7 @@ blockquote cite {
   border-left: 1px dashed var(--skin-grayish-site-main-hover);
   margin: 0px;
   padding-left: 2rem;
-  grid-row: 1;
+  grid-row: 1/3;
   grid-column: 2;
 }
 
@@ -4474,12 +4221,7 @@ blockquote cite {
 
 /****************************** Coccon設定カルーセルのスタイル ******************************/
 .skin-grayish .carousel-entry-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
 }
@@ -4490,6 +4232,11 @@ blockquote cite {
 
 .skin-grayish .carousel .slick-arrow:before {
   color: var(--skin-grayish-site-sub-color);
+}
+
+/* for spotlight */
+body:has(#spotlight.show) .header {
+  background-image: none;
 }
 
 
@@ -4505,24 +4252,15 @@ blockquote cite {
     left: unset;
     position: static;
     top: unset;
-    -webkit-transform: none;
     transform: none;
-    -webkit-box-ordinal-group: 8;
-    -ms-flex-order: 7;
     order: 7;
     opacity: 1;
     visibility: visible;
   }
 
   .skin-grayish .article-header .sns-share-buttons {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     padding: 1rem 0;
     gap: 1rem;
@@ -4551,7 +4289,6 @@ blockquote cite {
 
 
   .skin-grayish:not(.front-top-page) .header .header-in.wrap {
-    width: -webkit-fit-content !important;
     width: -moz-fit-content !important;
     width: fit-content !important;
   }
@@ -4566,7 +4303,6 @@ blockquote cite {
   }
 
   .skin-grayish:not(.front-top-page) .content .content-in {
-    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
 
@@ -4576,24 +4312,15 @@ blockquote cite {
     left: unset;
     position: static;
     top: unset;
-    -webkit-transform: none;
     transform: none;
-    -webkit-box-ordinal-group: 8;
-    -ms-flex-order: 7;
     order: 7;
     opacity: 1;
     visibility: visible;
   }
 
   .skin-grayish .article-header .sns-share-buttons {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     padding: 1rem 0;
     gap: 1rem;
@@ -4638,15 +4365,8 @@ blockquote cite {
   }
 
   .skin-grayish:not(.front-top-page) .header-container-in.hlt-center-logo-top-menu {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     padding: 8px min(1.43vw, 80px);
     height: 50px;
@@ -4656,23 +4376,16 @@ blockquote cite {
     padding: 0.5rem;
   }
 
-  .skin-grayish.front-top-page .header {
+  .skin-grayish.front-top-page .container .header-container .header {
     height: 100svh;
     min-height: 420px;
     background-size: cover;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
   }
 
-  .skin-grayish:not(.front-top-page) .header {
+  .skin-grayish:not(.front-top-page) .container .header-container .header {
     display: none;
   }
 
@@ -4690,24 +4403,6 @@ blockquote cite {
     width: 16px;
     height: 16px;
     bottom: 70px;
-  }
-
-  @-webkit-keyframes topmv_scroll {
-    from {
-      translate: 0px 0px;
-    }
-
-    80% {
-      translate: 0px 40px;
-    }
-
-    from, 80%, 100% {
-      opacity: 0;
-    }
-
-    40% {
-      opacity: 1;
-    }
   }
 
   @keyframes topmv_scroll {
@@ -4734,9 +4429,6 @@ blockquote cite {
   }
 
   .skin-grayish.front-top-page .fpt-columns {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
 
@@ -4778,20 +4470,10 @@ blockquote cite {
   }
 
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
   }
 
@@ -4800,15 +4482,8 @@ blockquote cite {
   }
 
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards .widget-entry-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
   }
 
@@ -4829,9 +4504,6 @@ blockquote cite {
 
   /* インデックス　カテゴリーごと（2カラム） */
   .skin-grayish .front-page-type-category-2-columns .list-columns {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
   }
 
@@ -4879,7 +4551,6 @@ blockquote cite {
     display: block;
     content: "Category";
     color: var(--skin-grayish-site-main-hover);
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     height: 2em;
@@ -4940,15 +4611,12 @@ blockquote cite {
 
   /* モバイルヘッダーボタン メニューに2個以上設定されていたら元のspace-aroundに戻す jsで処理 */
   .skin-grayish .mobile-header-menu-buttons {
-    -webkit-box-pack: var(--mobileHeaderMenu_justifySet);
-    -ms-flex-pack: var(--mobileHeaderMenu_justifySet);
     justify-content: var(--mobileHeaderMenu_justifySet);
   }
 
   .skin-grayish .mobile-header-menu-buttons.mobile-menu-buttons {
     background: transparent;
     background-color: var(--mobileHeaderBgColor);
-    -webkit-box-shadow: none;
     box-shadow: none;
     height: 50px;
     margin: 0;
@@ -4960,28 +4628,24 @@ blockquote cite {
   }
 
   /* ヘッダーモバイルボタン　ロゴなしのケース：フロントページにボタン一つのみの場合は幅を指定する */
-  .skin-grayish.front-top-page .mobile-header-menu-buttons.mobile-menu-buttons:not(.has-logo-button) .menu-button {
+  .skin-grayish.front-top-page .mobile-header-menu-buttons.mobile-menu-buttons:not(.has-logo-button)>.menu-button {
     width: var(--mobileHeaderMenuBtn_width);
   }
 
   /* ヘッダーモバイルボタン　ロゴなしのケース：フロントページ以外にボタン一つのみの場合は幅を指定する */
-  .skin-grayish:not(.front-top-page) .mobile-header-menu-buttons.mobile-menu-buttons:not(.has-logo-button) .menu-button {
+  .skin-grayish:not(.front-top-page) .mobile-header-menu-buttons.mobile-menu-buttons:not(.has-logo-button)>.menu-button {
     width: var(--mobileHeaderMenuOtherBtn_width);
   }
 
   .skin-grayish .mobile-header-menu-buttons.mobile-menu-buttons .logo-menu-button.menu-button {
     line-height: inherit;
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
 
   .skin-grayish .mobile-menu-buttons {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     background-color: var(--mobileFooterBgColor);
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
 
@@ -4998,10 +4662,7 @@ blockquote cite {
   /* モバイルフッターメニュー */
   .skin-grayish #navi-menu-input:checked~#navi-menu-content,
   #sidebar-menu-input:checked~#sidebar-menu-content {
-    -webkit-transition: -webkit-transform .5s ease-in-out;
-    transition: -webkit-transform .5s ease-in-out;
     transition: transform .5s ease-in-out;
-    transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
   }
 
   /* ロゴ表示あり：テキストの場合　英字フォントを当てる : テーマカスタマイザーに移動*/
@@ -5069,14 +4730,12 @@ blockquote cite {
 
   .skin-grayish .menu-content .menu-drawer a {
     translate: 0%;
-    -webkit-transition: translate .3s ease-in-out;
     transition: translate .3s ease-in-out;
   }
 
   .skin-grayish .menu-content .menu-drawer a:hover {
     background-color: transparent;
     translate: 0% -10%;
-    -webkit-transition: translate .3s ease-in-out;
     transition: translate .3s ease-in-out;
   }
 
@@ -5130,14 +4789,8 @@ blockquote cite {
   }
 
   .skin-grayish .menu-content .menu-drawer>li.header-snsicon-submenu>.sub-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 1em;
     padding-left: 0;
@@ -5191,7 +4844,8 @@ blockquote cite {
   }
 
   /* ウィジェット コンテンツ上部Profileボックス */
-  .skin-grayish .content-top .widget_author_box {
+  .skin-grayish .content-top .widget_author_box,
+  .skin-grayish .content-top :where(.text-pc, .text-mobile, .custom-html-widget):has(.author-box) {
     padding: 2rem 28px;
   }
 
@@ -5202,7 +4856,6 @@ blockquote cite {
     grid-template-rows: auto auto;
     grid-template-columns: 200px auto;
     row-gap: 1em;
-    -webkit-column-gap: 1em;
     -moz-column-gap: 1em;
     column-gap: 1em;
     border: solid 1px var(--LtGray_T30);
@@ -5219,7 +4872,6 @@ blockquote cite {
   }
 
   .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-content {
-    max-height: -webkit-max-content;
     max-height: -moz-max-content;
     max-height: max-content;
     grid-row: 1;
@@ -5235,7 +4887,6 @@ blockquote cite {
   }
 
   .skin-grayish :where(.footer-widgets, #sidebar) .blogcard::before {
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     height: auto;
@@ -5257,15 +4908,8 @@ blockquote cite {
   }
 
   .skin-grayish :where(.footer-widgets, #sidebar) .blogcard .blogcard-site {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -5292,7 +4936,6 @@ blockquote cite {
   .skin-grayish :where(.footer-widgets, #sidebar) .blogcard.internal-blogcard {
     grid-template-rows: auto auto auto;
     row-gap: 0.7em;
-    -webkit-column-gap: 1em;
     -moz-column-gap: 1em;
     column-gap: 1em;
     padding: 1em;
@@ -5310,8 +4953,6 @@ blockquote cite {
 
   .skin-grayish .footer-widgets .internal-blogcard .blogcard-date {
     float: none;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
     justify-content: flex-end;
   }
 
@@ -5354,7 +4995,7 @@ blockquote cite {
 
 /*画面幅1023px以下 かつ　画面の高さ 500px以下　MV調整*/
 @media screen and (max-width: 1023px) and (max-height: 500px) {
-  .skin-grayish.front-top-page .header {
+  .skin-grayish.front-top-page .container .header-container .header {
     min-height: 300px;
   }
 
@@ -5379,24 +5020,6 @@ blockquote cite {
     width: 12px;
     height: 12px;
     bottom: 3.5rem;
-  }
-
-  @-webkit-keyframes topmv_scroll {
-    from {
-      translate: 0px 0px;
-    }
-
-    80% {
-      translate: 0px 20px;
-    }
-
-    from, 80%, 100% {
-      opacity: 0;
-    }
-
-    40% {
-      opacity: 1;
-    }
   }
 
   @keyframes topmv_scroll {
@@ -5440,8 +5063,6 @@ blockquote cite {
 
   .skin-grayish .navi-footer-in>.menu-footer li.menu-item:not(.header-snsicon-submenu) {
     width: auto;
-    -webkit-box-flex: unset;
-    -ms-flex: unset;
     flex: unset;
   }
 
@@ -5489,9 +5110,6 @@ blockquote cite {
 
   /* インデックス　カテゴリーごと（3カラム）の時 カテゴリーの記事の並びを変える */
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
 
@@ -5515,7 +5133,6 @@ blockquote cite {
     display: block;
     content: "Category";
     color: var(--skin-grayish-site-main-hover);
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     height: 2em;
@@ -5533,15 +5150,8 @@ blockquote cite {
 
 
   .skin-grayish.front-top-page .list-columns.fpt-3-columns .widget-entry-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
   }
 
@@ -5579,15 +5189,8 @@ blockquote cite {
 
   /* カテゴリーごと　カテゴリ記事の表示を横並びにする */
   .skin-grayish :is(.front-page-type-category) .list-columns .list-column .entry-card {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
   }
 
@@ -5627,12 +5230,12 @@ blockquote cite {
 
   /* プロフィールボックス main,content-bottom, content-top 縦表示 */
   :where(.main, .content-bottom, .content-top) .author-box {
-    grid-template-rows: 100px auto auto auto;
+    grid-template-rows: 100px auto auto auto auto;
     grid-template-columns: 1fr;
-    -webkit-column-gap: 0em;
     -moz-column-gap: 0em;
     column-gap: 0em;
     padding: 2em 1em;
+    width: 100%;
   }
 
   :where(.content-bottom) .author-box {
@@ -5645,10 +5248,12 @@ blockquote cite {
     grid-column: 1;
     align-self: flex-start;
     justify-self: center;
-    text-align: left;
     padding-top: 0;
-    padding-bottom: 1em;
+    padding-bottom: 0em;
+    width: 100%;
+    text-align: center;
   }
+
 
   .skin-grayish :where(.main, .content-bottom, .content-top) .author-box .author-thumb {
     grid-row: 1;
@@ -5658,7 +5263,7 @@ blockquote cite {
   }
 
   :where(.main, .content-bottom, .content-top) .author-box .author-content .author-description {
-    grid-row: 3;
+    grid-row: 4;
     grid-column: 1;
     margin-top: .5em;
     padding: 1em 0 0 0;
@@ -5667,22 +5272,43 @@ blockquote cite {
   }
 
   :where(.main, .content-bottom, .content-top) .author-box .author-widget-name {
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 1;
     align-self: center;
     justify-self: center;
-    padding-top: 2em;
-    padding-bottom: 1.2em;
+    margin-top: -1em;
+    padding-top: 0;
+    padding-bottom: 1em;
   }
 
+  .skin-grayish .content-top .author-box .author-widget-name {
+    padding-top: 0;
+  }
+
+  .skin-grayish .content-bottom .author-box .author-widget-name {
+    padding-top: 0;
+  }
+
+
+
   :where(.main, .content-bottom, .content-top) .author-box .author-follows {
-    grid-row: 4;
+    grid-row: 5;
     grid-column: 1;
     justify-self: center;
     border-left: 0px;
     padding-left: 0rem;
   }
 
+  :where(.main, .content-bottom, .content-top) .author-box .author-follows .sns-follow-buttons,
+  .skin-grayish .article-footer .author-box .sns-follow-buttons {
+    justify-content: center;
+  }
+
+
+  :where(.main, .content-bottom, .content-top) .author-box .author-content .author-name a {
+    display: block;
+    width: 100%;
+  }
 
   /* 投稿下関連記事 */
   .skin-grayish .under-entry-content .related-list .related-entry-card-wrap {
@@ -5755,7 +5381,6 @@ blockquote cite {
 
   :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.internal-blogcard {
     row-gap: 0.7em;
-    -webkit-column-gap: 1em;
     -moz-column-gap: 1em;
     column-gap: 1em;
   }
@@ -5764,7 +5389,6 @@ blockquote cite {
     grid-row: 3;
     grid-column: 2;
     justify-self: flex-end;
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     padding: 0.4em 2.4em;
@@ -5773,7 +5397,6 @@ blockquote cite {
   }
 
   :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard::before {
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     height: auto;
@@ -5789,7 +5412,6 @@ blockquote cite {
   :is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3) .blogcard.external-blogcard {
     grid-template-rows: auto auto;
     row-gap: 1em;
-    -webkit-column-gap: 1em;
     -moz-column-gap: 1em;
     column-gap: 1em;
   }
@@ -5889,7 +5511,6 @@ blockquote cite {
     grid-template-rows: auto auto auto;
     grid-template-columns: 1fr;
     row-gap: 1em;
-    -webkit-column-gap: 8px;
     -moz-column-gap: 8px;
     column-gap: 8px;
     text-align: center;
@@ -6019,9 +5640,6 @@ blockquote cite {
 
   /* 投稿下　ページ送り */
   .skin-grayish .pager-post-navi {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     gap: 16px;
   }
@@ -6242,12 +5860,7 @@ blockquote cite {
 
   /* Ranking */
   .ranking-box .ranking-item-link-buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     gap: 0.8em;
   }
