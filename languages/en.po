@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-03T13:23:39+00:00\n"
-"PO-Revision-Date: 2024-02-03 13:26\n"
+"PO-Revision-Date: 2024-02-03 14:41\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -4248,7 +4248,7 @@ msgstr "Installation is required when serving in combination with third-party (o
 
 #: lib/page-settings/ads-forms.php:268
 msgid "ads.txtガイド"
-msgstr ""
+msgstr "ads.txt guide"
 
 #: lib/page-settings/ads-forms.php:282
 msgid "PR表記設定"
@@ -6662,7 +6662,7 @@ msgstr "Character counter display for titles, etc."
 
 #: lib/page-settings/editor-forms.php:55
 msgid "タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。"
-msgstr ""
+msgstr "Displays the character count for titles, SEO titles and meta descriptions."
 
 #: lib/page-settings/editor-forms.php:63
 msgid "エディター色"
@@ -7022,7 +7022,7 @@ msgstr "Height:"
 
 #: lib/page-settings/header-forms.php:116
 msgid "ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。"
-msgstr ""
+msgstr "Specifies the horizontal and vertical dimensions of the logo. This is for Retina support, etc., of the logo. Leave blank if it is not necessary to specify the size. If \"Header layout\" is not set to \"Center logo\", the logo size will not be changed."
 
 #: lib/page-settings/header-forms.php:123
 msgid "キャッチフレーズの配置"
@@ -7668,7 +7668,7 @@ msgstr "Header and footer mobile button"
 
 #: lib/page-settings/mobile-buttons-forms.php:41
 msgid "モバイルメニュー等を表示するための設定を行います。1024px未満で表示されます。"
-msgstr ""
+msgstr "Make settings to display mobile menus, etc. It will be displayed below 1024px."
 
 #: lib/page-settings/mobile-buttons-forms.php:52
 msgid "モバイルボタン"
@@ -7704,7 +7704,7 @@ msgstr "Global navigation menu color"
 
 #: lib/page-settings/navi-forms.php:17
 msgid "グローバルナビ背景色"
-msgstr ""
+msgstr "Global navigation backgroundできますか color"
 
 #: lib/page-settings/navi-forms.php:18
 msgid "グローバルナビ全体の背景色を選択します。"
@@ -7948,7 +7948,7 @@ msgstr "Inherit post settings from Simplicity"
 
 #: lib/page-settings/others-forms.php:55
 msgid "Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。"
-msgstr ""
+msgstr "Use the Post meta information available from Simplicity. For example, the \"SEO Settings\" and \"Ad Exclusions\" items on the post screen. Settings such as the theme customizer cannot be migrated."
 
 #: lib/page-settings/others-forms.php:63
 msgid "日本語スラッグ"
@@ -8848,7 +8848,7 @@ msgstr "Introduction of original skins on the Cocoon site"
 
 #: lib/page-settings/sns-follow-forms.php:13
 msgid "フォローボタン設定"
-msgstr ""
+msgstr "Follow button settings"
 
 #: lib/page-settings/sns-follow-forms.php:15
 msgid "フォローボタンの表示に関する設定です。"
@@ -9160,7 +9160,7 @@ msgstr "Follow"
 
 #: lib/page-settings/sns-share-forms-bottom.php:11
 msgid "ボトムシェアボタン設定"
-msgstr ""
+msgstr "Bottom share button settings"
 
 #: lib/page-settings/sns-share-forms-bottom.php:13
 msgid "ボトムシェアボタンの表示に関する設定です。"
@@ -9318,7 +9318,7 @@ msgstr "Toggle display share count on bottom share buttons."
 
 #: lib/page-settings/sns-share-forms-top.php:11
 msgid "トップシェアボタン設定"
-msgstr ""
+msgstr "Top share button settings"
 
 #: lib/page-settings/sns-share-forms-top.php:13
 msgid "トップシェアボタンの表示に関する設定です。"
@@ -9877,7 +9877,7 @@ msgstr "The HTML tags in h2-h6 headings are output as is."
 
 #: lib/page-settings/widget-area-forms.php:11
 msgid "ウィジェットエリア設定"
-msgstr ""
+msgstr "Widget area settings"
 
 #: lib/page-settings/widget-area-forms.php:14
 msgid "使用しないウィジェットエリアを表示しないようにする設定です。"
@@ -9889,7 +9889,7 @@ msgstr "Excluded widget area"
 
 #: lib/page-settings/widget-forms.php:11
 msgid "ウィジェット設定"
-msgstr ""
+msgstr "Widget settings"
 
 #: lib/page-settings/widget-forms.php:14
 msgid "使用しないウィジェットを表示しないようにする設定です。"
@@ -10316,7 +10316,7 @@ msgstr "Optimize"
 
 #: lib/page-speed-up/speed-up-forms.php:46
 msgid "CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図ります。"
-msgstr ""
+msgstr "By reducing the size of the CSS, and JavaScript, the transfer size is reduced, speeding up browsing."
 
 #: lib/page-speed-up/speed-up-forms.php:55
 msgid "HTML縮小化"
