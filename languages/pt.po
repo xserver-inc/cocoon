@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-01-22T13:17:21+00:00\n"
-"PO-Revision-Date: 2024-01-22 13:22\n"
+"PO-Revision-Date: 2024-02-03 13:14\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -11958,7 +11958,7 @@ msgstr ""
 
 #: lib/_defins.php:335
 msgid "www.amazon.co.jp"
-msgstr ""
+msgstr "www.amazon.com"
 
 #: lib/_defins.php:338
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
