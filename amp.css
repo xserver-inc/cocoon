@@ -5169,12 +5169,16 @@ html .body .label-box.has-white-background-color .box-content {
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
 
-.has-border-color:not(.not-nested-style) .toggle-button {
+.has-border-color:not(.not-nested-style) > .toggle-button {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
 }
-.has-border-color:not(.not-nested-style) .toggle-button::before {
+.has-border-color:not(.not-nested-style) > .toggle-button::before {
   color: var(--cocoon-white-color);
+}
+
+.has-border-color > .toggle-button {
+  border-color: var(--cocoon-custom-border-color);
 }
 
 .toggle-button {

@@ -5059,12 +5059,15 @@ body.wp-admin {
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
-.admin-settings .demo .has-border-color:not(.not-nested-style) .toggle-button {
+.admin-settings .demo .has-border-color:not(.not-nested-style) > .toggle-button {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
 }
-.admin-settings .demo .has-border-color:not(.not-nested-style) .toggle-button::before {
+.admin-settings .demo .has-border-color:not(.not-nested-style) > .toggle-button::before {
   color: var(--cocoon-white-color);
+}
+.admin-settings .demo .has-border-color > .toggle-button {
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .toggle-button {
   display: block;
@@ -13303,12 +13306,15 @@ body.wp-admin {
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
-.admin-settings .demo .has-border-color:not(.not-nested-style) .toggle-button {
+.admin-settings .demo .has-border-color:not(.not-nested-style) > .toggle-button {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
 }
-.admin-settings .demo .has-border-color:not(.not-nested-style) .toggle-button::before {
+.admin-settings .demo .has-border-color:not(.not-nested-style) > .toggle-button::before {
   color: var(--cocoon-white-color);
+}
+.admin-settings .demo .has-border-color > .toggle-button {
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .toggle-button {
   display: block;
@@ -22360,12 +22366,15 @@ textarea[name=the_page_memo] {
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
-.components-popover__content .has-border-color:not(.not-nested-style) .toggle-button {
+.components-popover__content .has-border-color:not(.not-nested-style) > .toggle-button {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
 }
-.components-popover__content .has-border-color:not(.not-nested-style) .toggle-button::before {
+.components-popover__content .has-border-color:not(.not-nested-style) > .toggle-button::before {
   color: var(--cocoon-white-color);
+}
+.components-popover__content .has-border-color > .toggle-button {
+  border-color: var(--cocoon-custom-border-color);
 }
 .components-popover__content .toggle-button {
   display: block;

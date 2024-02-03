@@ -2543,7 +2543,7 @@ blockquote cite {
 }
 
 /* アコーディオン */
-.toggle-box .toggle-button {
+.toggle-button {
   color: var(--LtBlue_S30);
   padding: 8px 10px;
   border: solid 1px var(--LtBlue_S30);
@@ -2551,7 +2551,7 @@ blockquote cite {
   background-color: var(--LtGray_T90);
 }
 
-.toggle-box .toggle-button::before {
+.toggle-button::before {
   display: inline-block;
   content: "\f078";
   color: currentColor;
