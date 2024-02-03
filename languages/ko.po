@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-01-22T13:17:21+00:00\n"
-"PO-Revision-Date: 2024-01-22 13:22\n"
+"PO-Revision-Date: 2024-01-26 14:01\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. Theme Name of the theme
 msgid "Cocoon"
-msgstr ""
+msgstr "Cocoon"
 
 #. Theme URI of the theme
 msgid "https://wp-cocoon.com/"
@@ -34,7 +34,7 @@ msgstr "SEO, 속도, 모바일 퍼스트에 최적화된 무료 테마."
 
 #. Author of the theme
 msgid "わいひら"
-msgstr ""
+msgstr "わいひら"
 
 #. Author URI of the theme
 msgid "https://nelog.jp/"
@@ -329,7 +329,7 @@ msgstr ""
 #: blocks/src/block/test-box/deprecated.js:110
 #: blocks/src/old/tab-box/block.js:123
 msgid "NG"
-msgstr ""
+msgstr "NG"
 
 #: lib/admin-tinymce-qtag.php:210
 #: lib/admin-tinymce-qtag.php:701
@@ -341,7 +341,7 @@ msgstr ""
 #: blocks/src/block/test-box/deprecated.js:114
 #: blocks/src/old/tab-box/block.js:127
 msgid "GOOD"
-msgstr ""
+msgstr "GOOD"
 
 #: lib/admin-tinymce-qtag.php:215
 #: lib/admin-tinymce-qtag.php:732
@@ -353,7 +353,7 @@ msgstr ""
 #: blocks/src/block/test-box/deprecated.js:118
 #: blocks/src/old/tab-box/block.js:131
 msgid "BAD"
-msgstr ""
+msgstr "BAD"
 
 #: lib/admin-tinymce-qtag.php:220
 #: lib/admin-tinymce-qtag.php:763
@@ -1533,7 +1533,7 @@ msgstr "(수정)"
 
 #: lib/comments.php:78
 msgid "Y/m/d(D)"
-msgstr ""
+msgstr "Y/m/d(D)"
 
 #: lib/comments.php:85
 msgid "H:i:s"
@@ -1621,12 +1621,12 @@ msgstr "제목"
 #: lib/content-category.php:250
 #: lib/content-tag.php:197
 msgid "ページのタイトル"
-msgstr ""
+msgstr "페이지 제목"
 
 #: lib/content-category.php:251
 #: lib/content-tag.php:198
 msgid "このページのタイトルを指定します。ページのタイトルタグにここで入力したテキストが適用されます。"
-msgstr ""
+msgstr "이 페이지의 제목을 지정합니다. 페이지의 타이틀 태그에 여기 입력한 텍스트가 적용됩니다."
 
 #: lib/content-category.php:255
 #: lib/content-tag.php:202
@@ -1636,7 +1636,7 @@ msgstr "본문"
 
 #: lib/content-category.php:260
 msgid "このページで表示されるメインコンテンツを入力してください。"
-msgstr ""
+msgstr "이 페이지에서 표시할 메인 콘텐츠를 입력해주세요."
 
 #: lib/content-category.php:269
 #: lib/content-tag.php:216
@@ -1657,7 +1657,7 @@ msgstr "카테고리 페이지에 대한 설명을 입력하세요."
 
 #: lib/content-category.php:279
 msgid "このページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。"
-msgstr ""
+msgstr "이 페이지의 설명을 입력합니다. 여기에 입력된 텍스트는 메타 디스크립션 태그에 이용됩니다."
 
 #: lib/content-category.php:283
 #: lib/content-tag.php:230
@@ -1676,12 +1676,12 @@ msgstr "키워드1, 키워드2, 키워드3"
 #: lib/content-category.php:289
 #: lib/content-tag.php:236
 msgid "このページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。"
-msgstr ""
+msgstr "이 페이지의 메타 키워드를 쉼표로 구분하여 입력해주세요. ※현재는 큰 의미가 없는 설정입니다."
 
 #: lib/content-category.php:293
 #: lib/content-tag.php:240
 msgid "noindex"
-msgstr ""
+msgstr "noindex"
 
 #: lib/content-category.php:299
 #: lib/content-tag.php:246
@@ -1713,7 +1713,7 @@ msgstr "기본적으로 태그 설정 목록 테이블에 설명문을 표시하
 
 #: lib/content-tag.php:207
 msgid "ページで表示されるメインコンテンツを入力してください。"
-msgstr ""
+msgstr "페이지에 표시할 메인 콘텐츠를 입력해주세요."
 
 #: lib/content-tag.php:224
 msgid "ページの説明文を入力してください"
