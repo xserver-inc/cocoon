@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-22T13:17:21+00:00\n"
-"PO-Revision-Date: 2024-02-03 13:14\n"
+"POT-Creation-Date: 2024-02-03T13:23:39+00:00\n"
+"PO-Revision-Date: 2024-02-03 13:26\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -270,7 +270,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:190
 #: lib/admin-tinymce-qtag.php:517
-#: lib/admin.php:152
+#: lib/admin.php:155
 #: lib/block-editor-styles-group.php:41
 #: lib/block-editor-styles-paragraph.php:76
 #: lib/custom-fields/memo-field.php:17
@@ -613,8 +613,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:307
 #: lib/admin-tinymce-qtag.php:1662
-#: tmp/css-custom.php:939
-#: tmp/css-custom.php:986
+#: tmp/css-custom.php:927
+#: tmp/css-custom.php:974
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
@@ -645,8 +645,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:457
 #: lib/admin-tinymce-qtag.php:1668
-#: tmp/css-custom.php:935
-#: tmp/css-custom.php:983
+#: tmp/css-custom.php:923
+#: tmp/css-custom.php:971
 #: blocks/src/block/blogcard/deprecated.js:85
 #: blocks/src/block/blogcard/edit.js:67
 #: blocks/src/block/tab-box/edit.js:91
@@ -663,8 +663,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:547
 #: lib/admin-tinymce-qtag.php:1680
-#: tmp/css-custom.php:955
-#: tmp/css-custom.php:998
+#: tmp/css-custom.php:943
+#: tmp/css-custom.php:986
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:75
 #: blocks/src/block/tab-box/edit.js:103
@@ -798,7 +798,7 @@ msgid "吹き出し（下）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:962
-#: lib/page-settings/editor-forms.php:97
+#: lib/page-settings/editor-forms.php:110
 #: lib/page-settings/_top-page.php:242
 #: blocks/src/block/button/deprecated.js:29
 #: blocks/src/block/button/index.js:20
@@ -1111,8 +1111,8 @@ msgstr ""
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
-#: tmp/css-custom.php:919
-#: tmp/css-custom.php:971
+#: tmp/css-custom.php:907
+#: tmp/css-custom.php:959
 #: blocks/src/block/blogcard/deprecated.js:57
 #: blocks/src/block/blogcard/edit.js:39
 #: blocks/src/old/blogcard-class/block.js:66
@@ -1120,8 +1120,8 @@ msgid "関連記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1632
-#: tmp/css-custom.php:923
-#: tmp/css-custom.php:974
+#: tmp/css-custom.php:911
+#: tmp/css-custom.php:962
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:43
 #: blocks/src/old/blogcard-class/block.js:70
@@ -1129,8 +1129,8 @@ msgid "参考記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1638
-#: tmp/css-custom.php:927
-#: tmp/css-custom.php:977
+#: tmp/css-custom.php:915
+#: tmp/css-custom.php:965
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:47
 msgid "参考リンク"
@@ -1142,8 +1142,8 @@ msgstr ""
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
-#: tmp/css-custom.php:931
-#: tmp/css-custom.php:980
+#: tmp/css-custom.php:919
+#: tmp/css-custom.php:968
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:51
 #: blocks/src/block/popular-list/index.js:30
@@ -1152,8 +1152,8 @@ msgid "人気記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1650
-#: tmp/css-custom.php:943
-#: tmp/css-custom.php:989
+#: tmp/css-custom.php:931
+#: tmp/css-custom.php:977
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:55
 #: blocks/src/old/blogcard-class/block.js:78
@@ -1162,8 +1162,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1656
 #: lib/widgets/cta-box.php:34
-#: tmp/css-custom.php:947
-#: tmp/css-custom.php:992
+#: tmp/css-custom.php:935
+#: tmp/css-custom.php:980
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:59
 #: blocks/src/old/blogcard-class/block.js:82
@@ -1171,8 +1171,8 @@ msgid "詳細はこちら"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1674
-#: tmp/css-custom.php:951
-#: tmp/css-custom.php:995
+#: tmp/css-custom.php:939
+#: tmp/css-custom.php:983
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:71
 #: blocks/src/old/blogcard-class/block.js:94
@@ -1180,15 +1180,15 @@ msgid "公式サイト"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1686
-#: tmp/css-custom.php:959
-#: tmp/css-custom.php:1001
+#: tmp/css-custom.php:947
+#: tmp/css-custom.php:989
 #: blocks/src/block/blogcard/edit.js:79
 msgid "前回の記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1692
-#: tmp/css-custom.php:963
-#: tmp/css-custom.php:1004
+#: tmp/css-custom.php:951
+#: tmp/css-custom.php:992
 #: blocks/src/block/blogcard/edit.js:83
 msgid "続きの記事"
 msgstr ""
@@ -1197,101 +1197,101 @@ msgstr ""
 msgid "商品リンクの追加"
 msgstr ""
 
-#: lib/admin.php:132
+#: lib/admin.php:135
 msgid "ID"
 msgstr ""
 
-#: lib/admin.php:137
+#: lib/admin.php:140
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:116
 #: lib/custom-fields/seo-field.php:126
 msgid "文字数"
 msgstr ""
 
-#: lib/admin.php:142
+#: lib/admin.php:145
 msgid "PV"
 msgstr ""
 
-#: lib/admin.php:147
+#: lib/admin.php:150
 #: lib/content-category.php:264
 #: lib/content-tag.php:211
 msgid "アイキャッチ"
 msgstr ""
 
-#: lib/admin.php:185
+#: lib/admin.php:188
 msgid "　題："
 msgstr ""
 
-#: lib/admin.php:193
+#: lib/admin.php:196
 msgid "本文："
 msgstr ""
 
-#: lib/admin.php:215
+#: lib/admin.php:218
 msgid "日："
 msgstr ""
 
-#: lib/admin.php:223
+#: lib/admin.php:226
 msgid "週："
 msgstr ""
 
-#: lib/admin.php:231
+#: lib/admin.php:234
 msgid "月："
 msgstr ""
 
-#: lib/admin.php:239
+#: lib/admin.php:242
 msgid "全："
 msgstr ""
 
-#: lib/admin.php:322
+#: lib/admin.php:325
 msgid "管理メニュー"
 msgstr ""
 
-#: lib/admin.php:334
+#: lib/admin.php:337
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr ""
 
-#: lib/admin.php:341
+#: lib/admin.php:344
 #: lib/shortcodes.php:488
 msgid "投稿一覧"
 msgstr ""
 
-#: lib/admin.php:348
+#: lib/admin.php:351
 msgid "固定ページ一覧"
 msgstr ""
 
-#: lib/admin.php:355
+#: lib/admin.php:358
 msgid "メディア一覧"
 msgstr ""
 
-#: lib/admin.php:362
+#: lib/admin.php:365
 msgid "テーマ"
 msgstr ""
 
-#: lib/admin.php:369
+#: lib/admin.php:372
 msgid "カスタマイズ"
 msgstr ""
 
-#: lib/admin.php:376
-#: lib/page-settings/_top-page.php:262
+#: lib/admin.php:379
+#: lib/page-settings/_top-page.php:264
 msgid "ウィジェット"
 msgstr ""
 
-#: lib/admin.php:383
+#: lib/admin.php:386
 #: tmp/mobile-navi-button.php:21
 #: blocks/src/block/navicard/edit.js:149
 msgid "メニュー"
 msgstr ""
 
-#: lib/admin.php:390
+#: lib/admin.php:393
 msgid "テーマの編集"
 msgstr ""
 
-#: lib/admin.php:397
+#: lib/admin.php:400
 msgid "プラグイン一覧"
 msgstr ""
 
-#: lib/admin.php:412
+#: lib/admin.php:415
 #: lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37
 #: lib/tinymce/speech-balloons.php:50
@@ -1302,7 +1302,7 @@ msgstr ""
 msgid "吹き出し"
 msgstr ""
 
-#: lib/admin.php:419
+#: lib/admin.php:422
 #: lib/original-menu.php:30
 #: lib/tinymce/function-texts.php:49
 #: blocks/src/block/template/edit.js:108
@@ -1312,7 +1312,7 @@ msgstr ""
 msgid "テンプレート"
 msgstr ""
 
-#: lib/admin.php:426
+#: lib/admin.php:429
 #: lib/original-menu.php:33
 #: lib/tinymce/affiliate-tags.php:48
 #: blocks/src/shortcode/affi/block.js:18
@@ -1320,12 +1320,12 @@ msgstr ""
 msgid "アフィリエイトタグ"
 msgstr ""
 
-#: lib/admin.php:433
+#: lib/admin.php:436
 #: lib/original-menu.php:36
 msgid "ランキング作成"
 msgstr ""
 
-#: lib/admin.php:440
+#: lib/admin.php:443
 #: lib/original-menu.php:39
 #: lib/page-access/access-forms.php:14
 #: lib/page-access/access-forms.php:26
@@ -1333,19 +1333,19 @@ msgstr ""
 msgid "アクセス集計"
 msgstr ""
 
-#: lib/admin.php:447
+#: lib/admin.php:450
 #: lib/original-menu.php:42
 msgid "高速化"
 msgstr ""
 
-#: lib/admin.php:454
+#: lib/admin.php:457
 #: lib/original-menu.php:45
 #: lib/page-backup/backup-forms.php:24
 #: lib/page-backup/_top-page.php:40
 msgid "バックアップ"
 msgstr "Cópias de segurança"
 
-#: lib/admin.php:461
+#: lib/admin.php:464
 #: lib/original-menu.php:48
 #: lib/page-cache/cache-forms.php:14
 #: lib/page-cache/_top-page.php:63
@@ -1353,13 +1353,13 @@ msgstr "Cópias de segurança"
 msgid "キャッシュ削除"
 msgstr ""
 
-#: lib/admin.php:605
+#: lib/admin.php:608
 #: blocks/src/block/info-list/edit.js:63
 msgid "カテゴリー検索"
 msgstr ""
 
-#: lib/admin.php:665
-#: lib/admin.php:679
+#: lib/admin.php:668
+#: lib/admin.php:682
 msgid "Excerpt"
 msgstr ""
 
@@ -1482,7 +1482,7 @@ msgstr ""
 #: lib/page-settings/all-forms.php:160
 #: lib/page-settings/appeal-forms.php:90
 #: lib/page-settings/buttons-forms.php:83
-#: lib/page-settings/editor-forms.php:54
+#: lib/page-settings/editor-forms.php:67
 #: lib/page-settings/pwa-forms.php:131
 #: blocks/src/block-universal/caption-box/edit.js:142
 #: blocks/src/block-universal/label-box/edit.js:142
@@ -1569,7 +1569,7 @@ msgstr ""
 #: lib/content-category.php:236
 #: lib/page-settings/all-forms.php:94
 #: lib/page-settings/buttons-forms.php:86
-#: lib/page-settings/editor-forms.php:58
+#: lib/page-settings/editor-forms.php:71
 #: blocks/src/block-universal/caption-box/edit.js:147
 #: blocks/src/block-universal/label-box/edit.js:147
 #: blocks/src/block-universal/tab-caption-box/edit.js:150
@@ -1758,19 +1758,19 @@ msgstr ""
 msgid "Cocoon設定で「PR表記」を有効にしていたとしても、この除外オプションを有効にすれば非表示になります。"
 msgstr ""
 
-#: lib/custom-fields/amp-field.php:17
-#: lib/custom-fields/amp-field.php:18
+#: lib/custom-fields/amp-field.php:19
 #: lib/custom-fields/amp-field.php:20
-#: lib/page-cache/cache-forms.php:77
+#: lib/custom-fields/amp-field.php:22
+#: lib/page-cache/cache-forms.php:79
 #: lib/page-settings/_top-page.php:252
 msgid "AMP"
 msgstr ""
 
-#: lib/custom-fields/amp-field.php:31
+#: lib/custom-fields/amp-field.php:33
 msgid "AMPページを生成しない"
 msgstr ""
 
-#: lib/custom-fields/amp-field.php:32
+#: lib/custom-fields/amp-field.php:34
 msgid "AMP(Accelerated Mobile Pages)ページを生成して、モバイル端末に最適化するかを切り替えます。"
 msgstr ""
 
@@ -1800,7 +1800,7 @@ msgstr ""
 
 #: lib/custom-fields/other-field.php:17
 #: lib/custom-fields/other-field.php:20
-#: lib/page-settings/_top-page.php:274
+#: lib/page-settings/_top-page.php:276
 msgid "その他"
 msgstr "Outro"
 
@@ -2215,32 +2215,32 @@ msgid "淡い緑"
 msgstr ""
 
 #: lib/gutenberg.php:180
-#: lib/page-settings/editor-forms.php:177
+#: lib/page-settings/editor-forms.php:190
 msgid "拡張色A"
 msgstr ""
 
 #: lib/gutenberg.php:185
-#: lib/page-settings/editor-forms.php:178
+#: lib/page-settings/editor-forms.php:191
 msgid "拡張色B"
 msgstr ""
 
 #: lib/gutenberg.php:190
-#: lib/page-settings/editor-forms.php:179
+#: lib/page-settings/editor-forms.php:192
 msgid "拡張色C"
 msgstr ""
 
 #: lib/gutenberg.php:195
-#: lib/page-settings/editor-forms.php:180
+#: lib/page-settings/editor-forms.php:193
 msgid "拡張色D"
 msgstr ""
 
 #: lib/gutenberg.php:200
-#: lib/page-settings/editor-forms.php:181
+#: lib/page-settings/editor-forms.php:194
 msgid "拡張色E"
 msgstr ""
 
 #: lib/gutenberg.php:205
-#: lib/page-settings/editor-forms.php:182
+#: lib/page-settings/editor-forms.php:195
 msgid "拡張色F"
 msgstr ""
 
@@ -2511,127 +2511,127 @@ msgstr ""
 msgid "404ページ"
 msgstr ""
 
-#: lib/html-forms.php:836
+#: lib/html-forms.php:837
 msgid "AMPページ"
 msgstr ""
 
-#: lib/html-forms.php:842
+#: lib/html-forms.php:844
 msgid "wpForoページ"
 msgstr ""
 
-#: lib/html-forms.php:849
+#: lib/html-forms.php:851
 msgid "bbPressページ"
 msgstr ""
 
-#: lib/html-forms.php:856
+#: lib/html-forms.php:858
 msgid "BuddyPressページ"
 msgstr ""
 
-#: lib/html-forms.php:863
+#: lib/html-forms.php:865
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr ""
 
-#: lib/html-forms.php:909
+#: lib/html-forms.php:911
 msgid "投稿ID入力"
 msgstr ""
 
-#: lib/html-forms.php:910
-#: lib/html-forms.php:930
-#: lib/html-forms.php:950
+#: lib/html-forms.php:912
+#: lib/html-forms.php:932
+#: lib/html-forms.php:952
 msgid "例：111,222,333"
 msgstr ""
 
-#: lib/html-forms.php:911
+#: lib/html-forms.php:913
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:929
+#: lib/html-forms.php:931
 msgid "固定ページID入力"
 msgstr ""
 
-#: lib/html-forms.php:931
+#: lib/html-forms.php:933
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:949
+#: lib/html-forms.php:951
 msgid "タグID入力"
 msgstr ""
 
-#: lib/html-forms.php:951
+#: lib/html-forms.php:953
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:1117
+#: lib/html-forms.php:1119
 msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
-#: lib/html-forms.php:1339
-#: lib/html-forms.php:1863
+#: lib/html-forms.php:1341
+#: lib/html-forms.php:1865
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1469
+#: lib/html-forms.php:1471
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1473
+#: lib/html-forms.php:1475
 msgid "NO USER"
 msgstr ""
 
-#: lib/html-forms.php:1489
+#: lib/html-forms.php:1491
 msgid "未登録のユーザーさん"
 msgstr ""
 
-#: lib/html-forms.php:1499
+#: lib/html-forms.php:1501
 msgid "未登録のユーザーさんです。"
 msgstr ""
 
-#: lib/html-forms.php:1501
+#: lib/html-forms.php:1503
 msgid "ログイン・登録はこちら→"
 msgstr ""
 
-#: lib/html-forms.php:1503
+#: lib/html-forms.php:1505
 msgid "ログインページ"
 msgstr ""
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1510
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr ""
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1510
 msgid "プロフィール設定画面"
 msgstr ""
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1510
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr ""
 
-#: lib/html-forms.php:1538
+#: lib/html-forms.php:1540
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1764
+#: lib/html-forms.php:1766
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1767
+#: lib/html-forms.php:1769
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1770
+#: lib/html-forms.php:1772
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1773
+#: lib/html-forms.php:1775
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1776
+#: lib/html-forms.php:1778
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1819
+#: lib/html-forms.php:1821
 #: lib/shortcodes.php:998
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -3089,35 +3089,35 @@ msgstr ""
 msgid "外部ブログカードのOGP情報キャッシュを削除します。"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:80
+#: lib/page-cache/cache-forms.php:82
 msgid "AMPキャッシュの削除"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:82
+#: lib/page-cache/cache-forms.php:84
 msgid "AMPページの全キャッシュを削除します。"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:90
+#: lib/page-cache/cache-forms.php:94
 msgid "Amazon API"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:93
+#: lib/page-cache/cache-forms.php:97
 msgid "Amazon APIキャッシュの削除"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:95
+#: lib/page-cache/cache-forms.php:99
 msgid "Amazonの商品情報全キャッシュを削除します。全てのキャッシュを削除すると、Amazon APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正常表示されます。"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:103
+#: lib/page-cache/cache-forms.php:107
 msgid "楽天 API"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:106
+#: lib/page-cache/cache-forms.php:110
 msgid "楽天APIキャッシュの削除"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:108
+#: lib/page-cache/cache-forms.php:112
 msgid "楽天商品情報の全キャッシュを削除します。全てのキャッシュを削除すると、楽天APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正常表示されます。"
 msgstr ""
 
@@ -3612,55 +3612,55 @@ msgstr ""
 msgid "Gutenberg："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:119
+#: lib/page-settings/about-forms.php:120
 msgid "AMP："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:120
+#: lib/page-settings/about-forms.php:123
 msgid "PWA："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:121
+#: lib/page-settings/about-forms.php:125
 msgid "Font Awesome："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:122
+#: lib/page-settings/about-forms.php:126
 msgid "Auto Post Thumbnail："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:123
+#: lib/page-settings/about-forms.php:127
 msgid "Retina："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:124
+#: lib/page-settings/about-forms.php:128
 msgid "ホームイメージ："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:128
+#: lib/page-settings/about-forms.php:132
 msgid "ブラウザキャッシュ有効化："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:129
+#: lib/page-settings/about-forms.php:133
 msgid "HTML縮小化："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:130
+#: lib/page-settings/about-forms.php:134
 msgid "CSS縮小化："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:131
+#: lib/page-settings/about-forms.php:135
 msgid "JavaScript縮小化："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:132
+#: lib/page-settings/about-forms.php:136
 msgid "Lazy Load："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:139
+#: lib/page-settings/about-forms.php:143
 msgid "利用中のプラグイン："
 msgstr ""
 
-#: lib/page-settings/about-forms.php:152
+#: lib/page-settings/about-forms.php:156
 msgid "不具合報告の際には以下の情報を添えてもらうと助かります。"
 msgstr ""
 
@@ -4244,6 +4244,10 @@ msgstr ""
 
 #: lib/page-settings/ads-forms.php:266
 msgid "Adsenseのみなどを除く第三者（他社）広告との併用配信をする際は設置が必須です。"
+msgstr ""
+
+#: lib/page-settings/ads-forms.php:268
+msgid "ads.txtガイド"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:282
@@ -5874,7 +5878,7 @@ msgid "カテゴリー"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:80
-#: lib/page-settings/editor-forms.php:67
+#: lib/page-settings/editor-forms.php:80
 #: lib/page-settings/single-forms.php:130
 #: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:124
@@ -6086,12 +6090,16 @@ msgstr ""
 
 #: lib/page-settings/column-forms.php:80
 #: lib/page-settings/column-forms.php:150
+#: blocks/src/block-universal/caption-box/edit.js:137
+#: blocks/src/block-universal/label-box/edit.js:137
+#: blocks/src/block-universal/tab-caption-box/edit.js:140
 #: blocks/src/block/balloon/edit.js:301
 #: blocks/src/block/blank-box/edit.js:61
 #: blocks/src/block/button-wrap/edit.js:151
 #: blocks/src/block/button/edit.js:154
 #: blocks/src/block/faq/edit.js:168
 #: blocks/src/block/icon-list/edit.js:139
+#: blocks/src/block/tab-box/edit.js:141
 #: blocks/src/block/timeline/edit.js:154
 #: blocks/src/block/toggle-box/edit.js:116
 #: blocks/src/micro/micro-balloon/edit.js:135
@@ -6645,171 +6653,171 @@ msgid "無効にするとWordPressデフォルトのエディターになりま�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:50
+msgid "文字カウンター"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:54
+msgid "タイトル等の文字数カウンター表示"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:55
+msgid "タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:63
 msgid "エディター色"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:56
+#: lib/page-settings/editor-forms.php:69
 msgid "エディターの背景色を指定します。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:59
+#: lib/page-settings/editor-forms.php:72
 msgid "エディターのテキスト色を指定します。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:71
+#: lib/page-settings/editor-forms.php:84
 msgid "タグ選択をチェックリスト形式にする"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:73
+#: lib/page-settings/editor-forms.php:86
 msgid "エディターでチェックリストを選択する形でタグを選択する様に変更します。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:87
+#: lib/page-settings/editor-forms.php:100
 msgid "ブロックエディター設定"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:92
+#: lib/page-settings/editor-forms.php:105
 msgid "ブロックエディターのみに適用される設定です。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:101
+#: lib/page-settings/editor-forms.php:114
 msgid "「ふりがな（ルビ）」ボタン表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:102
+#: lib/page-settings/editor-forms.php:115
 msgid "Cocoonの「ルビ」ボタン表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:106
+#: lib/page-settings/editor-forms.php:119
 msgid "「書式のクリア」ボタン表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:107
+#: lib/page-settings/editor-forms.php:120
 msgid "Cocoonの「書式のクリア」表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:115
+#: lib/page-settings/editor-forms.php:128
 msgid "スタイルドロップダウン"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:119
+#: lib/page-settings/editor-forms.php:132
 msgid "文字スタイル表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:120
+#: lib/page-settings/editor-forms.php:133
 msgid "ツールバーの文字スタイルドロップダウンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:122
+#: lib/page-settings/editor-forms.php:135
 msgid "マーカー表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:123
+#: lib/page-settings/editor-forms.php:136
 msgid "ツールバーのマーカースタイルドロップダウンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:125
+#: lib/page-settings/editor-forms.php:138
 msgid "バッジ表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:126
+#: lib/page-settings/editor-forms.php:139
 msgid "ツールバーのバッジスタイルドロップダウンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:128
+#: lib/page-settings/editor-forms.php:141
 msgid "文字サイズ表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:129
+#: lib/page-settings/editor-forms.php:142
 msgid "ツールバーの文字サイズスタイルドロップダウンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:137
+#: lib/page-settings/editor-forms.php:150
 msgid "ショートコードドロップダウン"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:141
+#: lib/page-settings/editor-forms.php:154
 msgid "汎用ショートコード表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:142
+#: lib/page-settings/editor-forms.php:155
 msgid "ツールバーの汎用ショートコードドロップダウンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:144
+#: lib/page-settings/editor-forms.php:157
 msgid "テンプレート表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:145
+#: lib/page-settings/editor-forms.php:158
 msgid "ツールバーのテンプレートショートコードドロップダウンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:147
+#: lib/page-settings/editor-forms.php:160
 msgid "アフィリエイト表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:148
+#: lib/page-settings/editor-forms.php:161
 msgid "ツールバーのアフィリエイトショートコードドロップダウンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:150
+#: lib/page-settings/editor-forms.php:163
 #: lib/widgets/popular-entries.php:213
 msgid "ランキング表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:151
+#: lib/page-settings/editor-forms.php:164
 msgid "ツールバーのランキングショートコードドロップダウンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:160
+#: lib/page-settings/editor-forms.php:173
 msgid "ブロックオプション"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:164
+#: lib/page-settings/editor-forms.php:177
 msgid "スタイル表示"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:165
+#: lib/page-settings/editor-forms.php:178
 msgid "ブロックエディターのスタイルオプションを表示するか。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:173
+#: lib/page-settings/editor-forms.php:186
 msgid "拡張カラーパレット色"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:184
+#: lib/page-settings/editor-forms.php:197
 msgid "任意のカラーパレット色を設定できます。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:201
+#: lib/page-settings/editor-forms.php:214
 msgid "旧エディター設定"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:206
+#: lib/page-settings/editor-forms.php:219
 msgid "ビジュアルエディター用の設定です。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:210
-msgid "文字カウンター"
-msgstr ""
-
-#: lib/page-settings/editor-forms.php:214
-msgid "タイトル等の文字数カウンター表示"
-msgstr ""
-
-#: lib/page-settings/editor-forms.php:215
-msgid "タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。※ブロックエディターではタイトル文字数は表示されません。"
-msgstr ""
-
-#: lib/page-settings/editor-forms.php:223
+#: lib/page-settings/editor-forms.php:224
 msgid "確認ダイアログ"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:227
+#: lib/page-settings/editor-forms.php:228
 msgid "ページ公開前に確認アラートを出す"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:228
+#: lib/page-settings/editor-forms.php:229
 msgid "記事を投稿する前に確認ダイアログを表示します。※旧エディター用の設定"
 msgstr ""
 
@@ -7013,7 +7021,7 @@ msgid "高さ："
 msgstr ""
 
 #: lib/page-settings/header-forms.php:116
-msgid "ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません（AMP用の幅と高さ属性は出力されます）。"
+msgid "ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:123
@@ -7526,7 +7534,6 @@ msgid "一覧リストを表示する順番を設定します。"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:134
-#: lib/page-settings/ogp-forms.php:96
 msgid "カードタイプ"
 msgstr ""
 
@@ -7660,7 +7667,7 @@ msgid "ヘッダー・フッターモバイルボタン"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:41
-msgid "モバイルメニュー等を表示するための設定を行います。1024px未満で表示されます。※「トップボタン」はAMPページでは表示されません。"
+msgid "モバイルメニュー等を表示するための設定を行います。1024px未満で表示されます。"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:52
@@ -7696,7 +7703,7 @@ msgid "グローバルナビメニュー色"
 msgstr ""
 
 #: lib/page-settings/navi-forms.php:17
-msgid "グローバルナビ色"
+msgid "グローバルナビ背景色"
 msgstr ""
 
 #: lib/page-settings/navi-forms.php:18
@@ -7940,7 +7947,7 @@ msgid "Simplicityから投稿設定を引き継ぐ"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:55
-msgid "Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」「AMP除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。"
+msgid "Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:63
@@ -8296,7 +8303,7 @@ msgid "全テーマ設定の内容をリセットします。リセットを行�
 msgstr ""
 
 #: lib/page-settings/reset-forms.php:25
-#: lib/page-settings/_top-page.php:277
+#: lib/page-settings/_top-page.php:279
 msgid "リセット"
 msgstr ""
 
@@ -8840,7 +8847,7 @@ msgid "オリジナルスキンのCocoonサイト紹介について"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:13
-msgid "フォローボタン"
+msgid "フォローボタン設定"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:15
@@ -9152,7 +9159,7 @@ msgid "をフォローする"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:11
-msgid "ボトムシェアボタン"
+msgid "ボトムシェアボタン設定"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:13
@@ -9310,7 +9317,7 @@ msgid "ボトムシェアボタンのシェア数表示を切り替えます。"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-top.php:11
-msgid "トップシェアボタン"
+msgid "トップシェアボタン設定"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-top.php:13
@@ -9869,7 +9876,7 @@ msgid "h2-h6見出し内のHTMLタグをそのまま出力します。"
 msgstr ""
 
 #: lib/page-settings/widget-area-forms.php:11
-msgid "ウィジェットエリア表示"
+msgid "ウィジェットエリア設定"
 msgstr ""
 
 #: lib/page-settings/widget-area-forms.php:14
@@ -9881,7 +9888,7 @@ msgid "除外ウィジェットエリア"
 msgstr ""
 
 #: lib/page-settings/widget-forms.php:11
-msgid "ウィジェット表示"
+msgid "ウィジェット設定"
 msgstr ""
 
 #: lib/page-settings/widget-forms.php:14
@@ -9909,7 +9916,7 @@ msgid "テーマ利用マニュアル"
 msgstr ""
 
 #: lib/page-settings/_top-page.php:162
-#: lib/page-settings/_top-page.php:498
+#: lib/page-settings/_top-page.php:502
 msgid "変更をまとめて保存"
 msgstr ""
 
@@ -9978,27 +9985,27 @@ msgstr ""
 msgid "モバイル"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:255
+#: lib/page-settings/_top-page.php:257
 msgid "PWA"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:259
+#: lib/page-settings/_top-page.php:261
 msgid "管理者画面"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:265
+#: lib/page-settings/_top-page.php:267
 msgid "ウィジェットエリア"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:268
+#: lib/page-settings/_top-page.php:270
 msgid "エディター"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:271
+#: lib/page-settings/_top-page.php:273
 msgid "API"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:280
+#: lib/page-settings/_top-page.php:282
 msgid "テーマ情報"
 msgstr ""
 
@@ -10308,7 +10315,7 @@ msgid "縮小化"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:46
-msgid "CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図ります。AMPページも縮小化されます。"
+msgid "CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図ります。"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:55
@@ -10323,159 +10330,159 @@ msgstr ""
 msgid "HTMLの余分な改行や余白を削除することによりソースコードのサイズを減らします。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:64
+#: lib/page-speed-up/speed-up-forms.php:66
 msgid "AMPページのHTMLも縮小化"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:65
+#: lib/page-speed-up/speed-up-forms.php:67
 msgid "AMPページのソースコードを縮小化します。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:76
+#: lib/page-speed-up/speed-up-forms.php:80
 msgid "CSS縮小化"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:80
+#: lib/page-speed-up/speed-up-forms.php:84
 msgid "CSSを縮小化する"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:81
+#: lib/page-speed-up/speed-up-forms.php:85
 msgid "CSSの余分な改行や余白を削除することによりソースコードのサイズを減らします。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:83
+#: lib/page-speed-up/speed-up-forms.php:87
 msgid "縮小化除外CSSファイルの文字列を入力"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:84
+#: lib/page-speed-up/speed-up-forms.php:88
 msgid "縮小化しないCSSファイルのパス、もしくはパスの一部を改行で区切って入力してください。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:85
+#: lib/page-speed-up/speed-up-forms.php:89
 msgid "プラグインCSSを除外する例：/plugins/plugin-folder-name/"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:94
+#: lib/page-speed-up/speed-up-forms.php:98
 msgid "JavaScript縮小化"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:98
+#: lib/page-speed-up/speed-up-forms.php:102
 msgid "JavaScriptを縮小化する"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:99
+#: lib/page-speed-up/speed-up-forms.php:103
 msgid "JavaScript（jQuery）の余分な改行や余白を削除することによりソースコードのサイズを減らします。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:101
+#: lib/page-speed-up/speed-up-forms.php:105
 msgid "縮小化除外JavaScriptファイルの文字列を入力"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:102
+#: lib/page-speed-up/speed-up-forms.php:106
 msgid "縮小化しないJavaScriptファイルのパス、もしくはパスの一部を改行で区切って入力してください。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:103
+#: lib/page-speed-up/speed-up-forms.php:107
 msgid "プラグインJavaScriptを除外する例：/plugins/plugin-folder-name/"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:118
+#: lib/page-speed-up/speed-up-forms.php:122
 msgid "Lazy Load設定"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:121
+#: lib/page-speed-up/speed-up-forms.php:125
 msgid "サイトの画像を遅延読み込み表示する設定です。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:129
+#: lib/page-speed-up/speed-up-forms.php:133
 msgid "遅延読み込み"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:133
+#: lib/page-speed-up/speed-up-forms.php:137
 msgid "Lazy Loadを有効にする"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:134
+#: lib/page-speed-up/speed-up-forms.php:138
 msgid "WordPress 5.5からLazy Loadが標準機能になりました。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:134
+#: lib/page-speed-up/speed-up-forms.php:138
 msgid "この機能を有効化すると標準Lazy Loadではカバーしていないエリアの画像の対応をします。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:134
+#: lib/page-speed-up/speed-up-forms.php:138
 msgid "例：新着・人気・カルーセル・おすすめカード・ナビカードのNO IMAGEサムネイル等"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:137
+#: lib/page-speed-up/speed-up-forms.php:141
 msgid "除外文字列を入力"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:138
+#: lib/page-speed-up/speed-up-forms.php:142
 msgid "Lazy Loadを行いたくない場合は、該当するimgタグに含まれている文字列を改行区切りで入力してください。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:138
+#: lib/page-speed-up/speed-up-forms.php:142
 msgid "ただしWordPress標準のLazy Loadの除外には対応していません。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:139
+#: lib/page-speed-up/speed-up-forms.php:143
 msgid "今後のWordPressの動向次第では、CocoonのLazy Load機能は廃止するかもしれません。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:148
+#: lib/page-speed-up/speed-up-forms.php:152
 msgid "Googleフォント"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:152
+#: lib/page-speed-up/speed-up-forms.php:156
 msgid "Googleフォントの非同期読み込みを有効にする"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:153
+#: lib/page-speed-up/speed-up-forms.php:157
 msgid "サイズが大きくなりがちなGoogleフォントを非同期読み込みしてページ表示を高速化します。ただし、JavaScript（Web Font Loader）によりフォントが正常に読み込まれるまでは、多少タイムラグがあります。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:170
+#: lib/page-speed-up/speed-up-forms.php:174
 msgid "スクリプト読み込み設定"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:173
+#: lib/page-speed-up/speed-up-forms.php:177
 msgid "JavaScriptの読み込み方式を変更する設定です。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:182
+#: lib/page-speed-up/speed-up-forms.php:186
 msgid "スクリプト"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:186
+#: lib/page-speed-up/speed-up-forms.php:190
 msgid "JavaScriptをフッターで読み込む"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:187
+#: lib/page-speed-up/speed-up-forms.php:191
 msgid "JavaScriptファイルのレンダリングブロックを避けるためにフッターでjsファイルを読み込みます。プラグインが正常に動作しない場合は、無効にしてください。ただしレンダリングブロックが発生するので、速さは犠牲になります。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:206
+#: lib/page-speed-up/speed-up-forms.php:210
 msgid "事前読み込み設定"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:209
+#: lib/page-speed-up/speed-up-forms.php:213
 msgid "画像やスクリプト等のリソースの事前読み込み設定です。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:217
+#: lib/page-speed-up/speed-up-forms.php:221
 msgid "事前読み込み"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:221
+#: lib/page-speed-up/speed-up-forms.php:225
 msgid "事前読込ドメインを入力"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:222
+#: lib/page-speed-up/speed-up-forms.php:226
 msgid "linkタグでdns-prefetchとpreconnectを用いて、外部リソース読み込みの高速化を行います。"
 msgstr ""
 
-#: lib/page-speed-up/speed-up-forms.php:222
+#: lib/page-speed-up/speed-up-forms.php:226
 msgid "よくわからない場合は、デフォルトのままご利用ください。"
 msgstr ""
 
@@ -10809,7 +10816,7 @@ msgid "CodePen URL"
 msgstr ""
 
 #: lib/sns.php:17
-#: tmp/header-ogp.php:80
+#: tmp/header-ogp.php:81
 msgid "ja_JP"
 msgstr ""
 
@@ -12328,7 +12335,7 @@ msgstr "Voltar ao início"
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr ""
 
-#: tmp/css-custom.php:915
+#: tmp/css-custom.php:903
 msgid "ラベルなし"
 msgstr ""
 
@@ -12934,13 +12941,6 @@ msgstr ""
 #: blocks/src/old/tab-caption-box/block.js:56
 #: blocks/src/old/toggle-box/block.js:59
 msgid "色設定"
-msgstr ""
-
-#: blocks/src/block-universal/caption-box/edit.js:137
-#: blocks/src/block-universal/label-box/edit.js:137
-#: blocks/src/block-universal/tab-caption-box/edit.js:140
-#: blocks/src/block/tab-box/edit.js:141
-msgid "枠の色"
 msgstr ""
 
 #: blocks/src/block-universal/caption-box/index.js:22
