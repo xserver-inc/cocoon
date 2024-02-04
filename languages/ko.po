@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-03T13:23:39+00:00\n"
-"PO-Revision-Date: 2024-02-03 13:26\n"
+"PO-Revision-Date: 2024-02-04 01:46\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -26,7 +26,7 @@ msgstr "Cocoon"
 
 #. Theme URI of the theme
 msgid "https://wp-cocoon.com/"
-msgstr ""
+msgstr "https://wp-cocoon.com/"
 
 #. Description of the theme
 msgid "SEO・高速化・モバイルファースト最適化済みの無料テーマ。"
@@ -38,7 +38,7 @@ msgstr "わいひら"
 
 #. Author URI of the theme
 msgid "https://nelog.jp/"
-msgstr ""
+msgstr "https://nelog.jp/"
 
 #: blocks/src/init.php:275
 msgid "Cocoonブロック"
