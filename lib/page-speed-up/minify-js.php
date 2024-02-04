@@ -73,6 +73,8 @@ function tag_code_to_minify_js($buffer) {
               || includes_string($url, '/plugins/ip-geo-block/')
               //wpForo除外
               || includes_string($url, '/plugins/wpforo/')
+              //Quiz Maker除外
+              || includes_string($url, '/plugins/quiz-maker/')
               //wpForoなどでも使われるエディターのスクリプト
               || includes_string($url, '/wp-includes/js/tinymce/')
               //wpForo（1.9.1.2以下）

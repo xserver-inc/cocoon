@@ -57,6 +57,7 @@ img{
 .ect-vertical-card .entry-card-thumb,
 .rect-vertical-card .related-entry-card-thumb{
   margin: 0;
+  flex-shrink:0;
 }
 
 ///////////////////////////////////////
@@ -123,5 +124,6 @@ img.emoji {
   }
   figcaption{
     margin: 0;
+    word-break: break-all;
   }
 }

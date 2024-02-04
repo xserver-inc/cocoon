@@ -15,6 +15,9 @@ function admin_print_styles_custom() {
   if (!is_user_administrator()) {
     echo '<style>#toplevel_page_jetpack{display:none;}</style>';
   }
+  if (is_admin_post_page() && !is_admin_editor_counter_visible()) {
+    echo '<style>.editor-post-title::after{display:none !important;}</style>';
+  }
 
   //JetPackの統計ページでない時
   //これをしないとなぜか以下のような不具合が出る

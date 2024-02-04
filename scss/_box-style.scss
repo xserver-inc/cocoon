@@ -457,7 +457,6 @@
 }
 
 //アイコンリスト
-// :is(.is-style-icon-list-check, .is-style-icon-list-check-valid, .is-style-icon-list-check-disabled, .is-style-icon-list-circle, .is-style-icon-list-triangle, .is-style-icon-list-cross, .is-style-icon-list-info, .is-style-icon-list-question, .is-style-icon-list-warning, .is-style-icon-list-paw, .is-style-icon-list-thumb-up, .is-style-icon-list-thumb-down, .is-style-icon-list-ban, .is-style-icon-list-user-man, .is-style-icon-list-user-woman, .is-style-icon-list-comment, .is-style-icon-list-heart, .is-style-icon-list-heart-broken)
 [class*="is-style-icon-list-"]{
   list-style: none;
   // margin-left: 20px;
@@ -482,88 +481,88 @@
 
 //チェック
 .is-style-icon-list-check > li::before{
-  content: "\e90a";
+  content: "\e90a" !important;
 }
 //チェック有効
 .is-style-icon-list-check-valid > li::before{
-  content: "\e908";
+  content: "\e908" !important;
 }
 //チェック無効
 .is-style-icon-list-check-disabled > li::before{
-  content: "\e909";
+  content: "\e909" !important;
 }
 //丸
 .is-style-icon-list-circle > li::before{
-  content: "\e90b";
+  content: "\e90b" !important;
   color: #9ccc65 !important;
 }
 //三角
 .is-style-icon-list-triangle > li::before{
-  content: "\e91b";
+  content: "\e91b" !important;
   color: #ffca28 !important;
 }
 //バツ
 .is-style-icon-list-cross > li::before{
-  content: "\e922";
+  content: "\e922" !important;
   color: #ff7043 !important;
 }
 //情報
 .is-style-icon-list-info > li::before{
-  content: "\e910";
+  content: "\e910" !important;
   color: #4fc3f7 !important;
 }
 //疑問
 .is-style-icon-list-question > li::before{
-  content: "\e90f";
+  content: "\e90f" !important;
   color: #ffca28 !important;
 }
 //警告
 .is-style-icon-list-warning > li::before{
-  content: "\e921";
+  content: "\e921" !important;
   color: #ff7043 !important;
 }
 //肉球
 .is-style-icon-list-paw > li::before{
-  content: "\e907";
+  content: "\e907" !important;
   color: #946243 !important;
 }
 //サムアップ
 .is-style-icon-list-thumb-up > li::before{
-  content: "\e918";
+  content: "\e918" !important;
   color: #4db6ac !important;
 }
 //サムダウン
 .is-style-icon-list-thumb-down > li::before{
-  content: "\e91a";
+  content: "\e91a" !important;
   color: #ee6e73 !important;
 }
 //禁止
 .is-style-icon-list-ban > li::before{
-  content: "\e90d";
+  content: "\e90d" !important;
   color: #ff7043 !important;
 }
 //男性
 .is-style-icon-list-user-man > li::before{
-  content: "\e91d";
+  content: "\e91d" !important;
   color: #7986cb !important;
 }
 //女性
 .is-style-icon-list-user-woman > li::before{
-  content: "\e91e";
+  content: "\e91e" !important;
   color: #ee6e73 !important;
 }
 //コメント
 .is-style-icon-list-comment > li::before{
-  content: "\e911";
+  content: "\e911" !important;
 }
 //ハート
 .is-style-icon-list-heart > li::before{
-  content: "\e9da";
+  content: "\e9da" !important;
   color: #ef5350 !important;
 }
 //ハートブレイク
 .is-style-icon-list-heart-broken > li::before{
-  content: "\e9db";
+  content: "\e9db" !important;
   color: #ef5350 !important;
 }
 

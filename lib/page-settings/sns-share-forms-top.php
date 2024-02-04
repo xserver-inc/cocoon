@@ -6,9 +6,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<!-- トップシェアボタン -->
+<!-- トップシェアボタン設定 -->
 <div id="sns-share-top" class="postbox">
-  <h2 class="hndle"><?php _e( 'トップシェアボタン', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'トップシェアボタン設定', THEME_NAME ) ?></h2>
   <div class="inside">
     <p><?php _e( 'トップシェアボタンの表示に関する設定です。', THEME_NAME ) ?></p>
     <table class="form-table">

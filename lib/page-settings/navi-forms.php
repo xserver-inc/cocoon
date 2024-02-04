@@ -14,7 +14,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_GLOBAL_NAVI_BACKGROUND_COLOR,  get_global_navi_background_color(), __( 'グローバルナビ色', THEME_NAME ));
+            generate_color_picker_tag(OP_GLOBAL_NAVI_BACKGROUND_COLOR,  get_global_navi_background_color(), __( 'グローバルナビ背景色', THEME_NAME ));
             generate_tips_tag(__( 'グローバルナビ全体の背景色を選択します。', THEME_NAME ));
 
             generate_color_picker_tag(OP_GLOBAL_NAVI_TEXT_COLOR,  get_global_navi_text_color(), __( 'グローバルナビ文字色', THEME_NAME ));

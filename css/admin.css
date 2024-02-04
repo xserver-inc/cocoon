@@ -1268,6 +1268,7 @@ body.wp-admin {
 .admin-settings .demo .ect-vertical-card .entry-card-thumb,
 .admin-settings .demo .rect-vertical-card .related-entry-card-thumb {
   margin: 0;
+  flex-shrink: 0;
 }
 .admin-settings .demo .no-thumbnail .card-thumb,
 .admin-settings .demo .no-thumbnail .widget-entry-card-pv {
@@ -1316,6 +1317,7 @@ body.wp-admin {
 }
 .admin-settings .demo .wp-block-image figcaption {
   margin: 0;
+  word-break: break-all;
 }
 .admin-settings .demo .header {
   height: 100%;
@@ -1679,12 +1681,25 @@ body.wp-admin {
   display: inline-block;
   margin-bottom: 12px;
 }
+.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card {
+  display: flex;
+  flex-direction: column;
+}
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-thumb {
   width: 100%;
   float: none;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
+}
+.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-meta {
+  margin-top: auto;
+  padding-top: 5px;
+  position: unset;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-date, .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
@@ -5044,12 +5059,15 @@ body.wp-admin {
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
-.admin-settings .demo .has-border-color:not(.not-nested-style) .toggle-button {
+.admin-settings .demo .has-border-color:not(.not-nested-style) > .toggle-button {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
 }
-.admin-settings .demo .has-border-color:not(.not-nested-style) .toggle-button::before {
+.admin-settings .demo .has-border-color:not(.not-nested-style) > .toggle-button::before {
   color: var(--cocoon-white-color);
+}
+.admin-settings .demo .has-border-color > .toggle-button {
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .toggle-button {
   display: block;
@@ -5785,6 +5803,10 @@ body.wp-admin {
 .admin-settings .demo .rect-mini-card .related-entry-card-snippet {
   display: none;
 }
+.admin-settings .demo .rect-vertical-card .related-entry-card {
+  display: flex;
+  flex-direction: column;
+}
 .admin-settings .demo .rect-vertical-card .related-list {
   display: flex;
   flex-wrap: wrap;
@@ -5802,9 +5824,18 @@ body.wp-admin {
 }
 .admin-settings .demo .rect-vertical-card .related-entry-card-content {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
 }
 .admin-settings .demo .rect-vertical-card .related-entry-card-title {
   font-size: 16px;
+}
+.admin-settings .demo .rect-vertical-card .related-entry-card-meta {
+  margin-top: auto;
+  padding-top: 5px;
+  position: unset;
 }
 .admin-settings .demo .rect-vertical-card-3 .related-entry-card-wrap {
   width: 33%;
@@ -8961,71 +8992,71 @@ body.wp-admin {
   width: 1em;
 }
 .admin-settings .demo .is-style-icon-list-check > li::before {
-  content: "\e90a";
+  content: "\e90a" !important;
 }
 .admin-settings .demo .is-style-icon-list-check-valid > li::before {
-  content: "\e908";
+  content: "\e908" !important;
 }
 .admin-settings .demo .is-style-icon-list-check-disabled > li::before {
-  content: "\e909";
+  content: "\e909" !important;
 }
 .admin-settings .demo .is-style-icon-list-circle > li::before {
-  content: "\e90b";
+  content: "\e90b" !important;
   color: #9ccc65 !important;
 }
 .admin-settings .demo .is-style-icon-list-triangle > li::before {
-  content: "\e91b";
+  content: "\e91b" !important;
   color: #ffca28 !important;
 }
 .admin-settings .demo .is-style-icon-list-cross > li::before {
-  content: "\e922";
+  content: "\e922" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-info > li::before {
-  content: "\e910";
+  content: "\e910" !important;
   color: #4fc3f7 !important;
 }
 .admin-settings .demo .is-style-icon-list-question > li::before {
-  content: "\e90f";
+  content: "\e90f" !important;
   color: #ffca28 !important;
 }
 .admin-settings .demo .is-style-icon-list-warning > li::before {
-  content: "\e921";
+  content: "\e921" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-paw > li::before {
-  content: "\e907";
+  content: "\e907" !important;
   color: #946243 !important;
 }
 .admin-settings .demo .is-style-icon-list-thumb-up > li::before {
-  content: "\e918";
+  content: "\e918" !important;
   color: #4db6ac !important;
 }
 .admin-settings .demo .is-style-icon-list-thumb-down > li::before {
-  content: "\e91a";
+  content: "\e91a" !important;
   color: #ee6e73 !important;
 }
 .admin-settings .demo .is-style-icon-list-ban > li::before {
-  content: "\e90d";
+  content: "\e90d" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-user-man > li::before {
-  content: "\e91d";
+  content: "\e91d" !important;
   color: #7986cb !important;
 }
 .admin-settings .demo .is-style-icon-list-user-woman > li::before {
-  content: "\e91e";
+  content: "\e91e" !important;
   color: #ee6e73 !important;
 }
 .admin-settings .demo .is-style-icon-list-comment > li::before {
-  content: "\e911";
+  content: "\e911" !important;
 }
 .admin-settings .demo .is-style-icon-list-heart > li::before {
-  content: "\e9da";
+  content: "\e9da" !important;
   color: #ef5350 !important;
 }
 .admin-settings .demo .is-style-icon-list-heart-broken > li::before {
-  content: "\e9db";
+  content: "\e9db" !important;
   color: #ef5350 !important;
 }
 .admin-settings .demo .no-border {
@@ -9484,6 +9515,7 @@ body.wp-admin {
 .admin-settings .demo .ect-vertical-card .entry-card-thumb,
 .admin-settings .demo .rect-vertical-card .related-entry-card-thumb {
   margin: 0;
+  flex-shrink: 0;
 }
 .admin-settings .demo .no-thumbnail .card-thumb,
 .admin-settings .demo .no-thumbnail .widget-entry-card-pv {
@@ -9532,6 +9564,7 @@ body.wp-admin {
 }
 .admin-settings .demo .wp-block-image figcaption {
   margin: 0;
+  word-break: break-all;
 }
 .admin-settings .demo .header {
   height: 100%;
@@ -9895,12 +9928,25 @@ body.wp-admin {
   display: inline-block;
   margin-bottom: 12px;
 }
+.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card {
+  display: flex;
+  flex-direction: column;
+}
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-thumb {
   width: 100%;
   float: none;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
+}
+.admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card-meta {
+  margin-top: auto;
+  padding-top: 5px;
+  position: unset;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-date, .admin-settings .demo .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
@@ -13260,12 +13306,15 @@ body.wp-admin {
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
-.admin-settings .demo .has-border-color:not(.not-nested-style) .toggle-button {
+.admin-settings .demo .has-border-color:not(.not-nested-style) > .toggle-button {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
 }
-.admin-settings .demo .has-border-color:not(.not-nested-style) .toggle-button::before {
+.admin-settings .demo .has-border-color:not(.not-nested-style) > .toggle-button::before {
   color: var(--cocoon-white-color);
+}
+.admin-settings .demo .has-border-color > .toggle-button {
+  border-color: var(--cocoon-custom-border-color);
 }
 .admin-settings .demo .toggle-button {
   display: block;
@@ -14001,6 +14050,10 @@ body.wp-admin {
 .admin-settings .demo .rect-mini-card .related-entry-card-snippet {
   display: none;
 }
+.admin-settings .demo .rect-vertical-card .related-entry-card {
+  display: flex;
+  flex-direction: column;
+}
 .admin-settings .demo .rect-vertical-card .related-list {
   display: flex;
   flex-wrap: wrap;
@@ -14018,9 +14071,18 @@ body.wp-admin {
 }
 .admin-settings .demo .rect-vertical-card .related-entry-card-content {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
 }
 .admin-settings .demo .rect-vertical-card .related-entry-card-title {
   font-size: 16px;
+}
+.admin-settings .demo .rect-vertical-card .related-entry-card-meta {
+  margin-top: auto;
+  padding-top: 5px;
+  position: unset;
 }
 .admin-settings .demo .rect-vertical-card-3 .related-entry-card-wrap {
   width: 33%;
@@ -17177,71 +17239,71 @@ body.wp-admin {
   width: 1em;
 }
 .admin-settings .demo .is-style-icon-list-check > li::before {
-  content: "\e90a";
+  content: "\e90a" !important;
 }
 .admin-settings .demo .is-style-icon-list-check-valid > li::before {
-  content: "\e908";
+  content: "\e908" !important;
 }
 .admin-settings .demo .is-style-icon-list-check-disabled > li::before {
-  content: "\e909";
+  content: "\e909" !important;
 }
 .admin-settings .demo .is-style-icon-list-circle > li::before {
-  content: "\e90b";
+  content: "\e90b" !important;
   color: #9ccc65 !important;
 }
 .admin-settings .demo .is-style-icon-list-triangle > li::before {
-  content: "\e91b";
+  content: "\e91b" !important;
   color: #ffca28 !important;
 }
 .admin-settings .demo .is-style-icon-list-cross > li::before {
-  content: "\e922";
+  content: "\e922" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-info > li::before {
-  content: "\e910";
+  content: "\e910" !important;
   color: #4fc3f7 !important;
 }
 .admin-settings .demo .is-style-icon-list-question > li::before {
-  content: "\e90f";
+  content: "\e90f" !important;
   color: #ffca28 !important;
 }
 .admin-settings .demo .is-style-icon-list-warning > li::before {
-  content: "\e921";
+  content: "\e921" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-paw > li::before {
-  content: "\e907";
+  content: "\e907" !important;
   color: #946243 !important;
 }
 .admin-settings .demo .is-style-icon-list-thumb-up > li::before {
-  content: "\e918";
+  content: "\e918" !important;
   color: #4db6ac !important;
 }
 .admin-settings .demo .is-style-icon-list-thumb-down > li::before {
-  content: "\e91a";
+  content: "\e91a" !important;
   color: #ee6e73 !important;
 }
 .admin-settings .demo .is-style-icon-list-ban > li::before {
-  content: "\e90d";
+  content: "\e90d" !important;
   color: #ff7043 !important;
 }
 .admin-settings .demo .is-style-icon-list-user-man > li::before {
-  content: "\e91d";
+  content: "\e91d" !important;
   color: #7986cb !important;
 }
 .admin-settings .demo .is-style-icon-list-user-woman > li::before {
-  content: "\e91e";
+  content: "\e91e" !important;
   color: #ee6e73 !important;
 }
 .admin-settings .demo .is-style-icon-list-comment > li::before {
-  content: "\e911";
+  content: "\e911" !important;
 }
 .admin-settings .demo .is-style-icon-list-heart > li::before {
-  content: "\e9da";
+  content: "\e9da" !important;
   color: #ef5350 !important;
 }
 .admin-settings .demo .is-style-icon-list-heart-broken > li::before {
-  content: "\e9db";
+  content: "\e9db" !important;
   color: #ef5350 !important;
 }
 .admin-settings .demo .no-border {
@@ -18096,6 +18158,12 @@ body.wp-admin {
 }
 .admin-settings .demo .scroll-hint-icon-wrap {
   z-index: 3;
+}
+.admin-settings .demo body:has(#spotlight.show) .header {
+  background-image: none;
+}
+.admin-settings .demo .grecaptcha-badge {
+  bottom: 60px !important;
 }
 .admin-settings .demo .video-click {
   cursor: pointer;
@@ -22298,12 +22366,15 @@ textarea[name=the_page_memo] {
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
-.components-popover__content .has-border-color:not(.not-nested-style) .toggle-button {
+.components-popover__content .has-border-color:not(.not-nested-style) > .toggle-button {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
 }
-.components-popover__content .has-border-color:not(.not-nested-style) .toggle-button::before {
+.components-popover__content .has-border-color:not(.not-nested-style) > .toggle-button::before {
   color: var(--cocoon-white-color);
+}
+.components-popover__content .has-border-color > .toggle-button {
+  border-color: var(--cocoon-custom-border-color);
 }
 .components-popover__content .toggle-button {
   display: block;

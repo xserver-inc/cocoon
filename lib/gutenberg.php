@@ -687,9 +687,9 @@ html .body .btn-wrap.has-larger-font-size > a {
 }
 <?php //見出しボックス ?>
 .cocoon-block-caption-box.not-nested-style {
-    background-color: var(--cocoon-custom-background-color) !important;
-    border-color: var(--cocoon-custom-border-color) !important;
-    color: var(--cocoon-custom-text-color) !important;
+    background-color: var(--cocoon-custom-background-color);
+    border-color: var(--cocoon-custom-border-color);
+    color: var(--cocoon-custom-text-color);
 }
 .cocoon-block-caption-box.not-nested-style > .box-label{
     background-color: var(--cocoon-custom-border-color);

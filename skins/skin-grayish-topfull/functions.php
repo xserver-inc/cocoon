@@ -961,7 +961,7 @@ if (!function_exists('skin_grayish_topmv_dot')) :
   {
     $style_template = '
 		<style>
-.body.skin-grayish.front-top-page .header::after {
+.body.skin-grayish.front-top-page .container .header-container .header::after {
           opacity: %s;
             visibility: %s;
 			}
@@ -991,7 +991,7 @@ if (!function_exists('skin_grayish_topmv_whovlay')) :
   {
     $style_template = '
 		<style>
-.body.skin-grayish.front-top-page .header::before {
+.body.skin-grayish.front-top-page .container .header-container .header::before {
           opacity: %s;
             visibility: %s;
 			}
@@ -2087,3 +2087,23 @@ if (!function_exists('wp_enqueue_scrollhint_skinadd')) :
     }
   }
 endif;
+
+// add for プロフィールBox move profile-follows
+add_filter('code_minify_call_back', function ($html) {
+
+  // 説明文のエリアにSNSボタンを移動
+  $pattern = '/<div class="author-description">(.*?)<\/div>\s*<div class="profile-follows author-follows">(.*?)<\/div>/s';
+  $replacement = '<div class="author-description">$1<div class="profile-follows author-follows">$2</div></div>';
+
+  return preg_replace($pattern, $replacement, $html);
+});
+
+
+// add for プロフィールBox move author-widget-name
+add_filter('code_minify_call_back', function ($html) {
+
+  $pattern_aft = '/<div class="author-box border-element no-icon cf">\s*<div class="author-widget-name">(.*?)<\/div>\s*<figure(.*?)<\/figure>\s*<div class="author-content">\s*<div class="author-name">\s*<a(.*?)<\/a>\s*<\/div>\s*<div class="author-description">(.*?)<\/div>\s*<\/div>\s*<\/div>/s';
+  $replacement_aft = '<div class="author-box border-element no-icon cf"><figure$2</figure><div class="author-content"><div class="author-name"><a$3</a><div class="author-widget-name">$1</div></div><div class="author-description">$4</div></div></div>';
+
+  return preg_replace($pattern_aft, $replacement_aft, $html);
+});

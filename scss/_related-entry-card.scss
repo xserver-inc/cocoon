@@ -73,11 +73,17 @@
 ** 縦型カード
 ************************************/
 .rect-vertical-card{
+  .related-entry-card {
+    display: flex;
+    flex-direction: column;
+  }
+
   .related-list{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
   .related-entry-card-wrap{
     padding: 5px;
   }
@@ -92,11 +98,20 @@
 
   .related-entry-card-content{
     margin: 0;
-    //padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 0;
   }
 
   .related-entry-card-title{
     font-size: 16px;
+  }
+
+  .related-entry-card-meta {
+    margin-top: auto;
+    padding-top: 5px;
+    position: unset;
   }
 }
 

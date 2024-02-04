@@ -44,6 +44,19 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- 文字カウンター -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE, __('文字カウンター', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE , is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
+            generate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- エディター色 -->
         <tr>
           <th scope="row">
@@ -204,18 +217,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <table class="form-table">
     <tbody>
     <p><?php _e( 'ビジュアルエディター用の設定です。', THEME_NAME ) ?></p>
-        <!-- 文字カウンター -->
-        <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE, __('文字カウンター', THEME_NAME) ); ?>
-          </th>
-          <td>
-            <?php
-            generate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE , is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
-            generate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。※ブロックエディターではタイトル文字数は表示されません。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
 
         <!-- 確認ダイアログ -->
         <tr>

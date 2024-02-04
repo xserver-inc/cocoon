@@ -8,9 +8,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <div class="metabox-holder">
 
-<!-- フォローボタン -->
+<!-- フォローボタン設定 -->
 <div id="sns-follow" class="postbox">
-  <h2 class="hndle"><?php _e( 'フォローボタン', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'フォローボタン設定', THEME_NAME ) ?></h2>
   <div class="inside">
     <p><?php _e( 'フォローボタンの表示に関する設定です。', THEME_NAME ) ?></p>
     <table class="form-table">

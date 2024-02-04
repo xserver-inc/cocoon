@@ -8,7 +8,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- ウィジェット設定 -->
 <div id="widget-page" class="postbox">
-  <h2 class="hndle"><?php _e( 'ウィジェット表示', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'ウィジェット設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php _e( '使用しないウィジェットを表示しないようにする設定です。', THEME_NAME ); ?><?php echo get_help_page_tag('https://wp-cocoon.com/unregister-widget/'); ?></p>

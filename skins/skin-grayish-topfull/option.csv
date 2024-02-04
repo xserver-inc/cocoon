@@ -107,8 +107,8 @@ sns_follow_buttons_count_visible,0
 ,,-------画像 デフォルト
 ,,eyecatch_visible,1
 eyecatch_label_visible,1
-eyecatch_center_enable,0
-eyecatch_width_100_percent_enable,0
+,,eyecatch_center_enable,0
+,,eyecatch_width_100_percent_enable,0
 ,,eyecatch_caption_visible,0
 ,,auto_post_thumbnail_enable,0
 image_wrap_effect,none

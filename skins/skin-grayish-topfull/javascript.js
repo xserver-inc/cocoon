@@ -13,6 +13,7 @@ document.getElementsByTagName('body')[0].setAttribute('ontouchstart', '');
 // ---------------------------------------------
 let headerObserver;
 let flagHeaderObserver;
+let bodyClientHeight;
 
 // PC navi
 const PCNaviIn = document.querySelector(".skin-grayish #navi-in");
@@ -20,19 +21,25 @@ const PCNaviIn = document.querySelector(".skin-grayish #navi-in");
 // submenuがあるかどうか
 const PCsubmenu = document.querySelectorAll(".skin-grayish .navi-in>ul>li:not(.header-snsicon-submenu)>.sub-menu");
 const numberOfElements = PCsubmenu.length;
+const submenuArray = Array.from(PCsubmenu);
 
 // bodyを監視してスクロールされたことを検知する
-const body_border = 100;
+const body_border = 300;
 
 const AllPageBodyObserve = (ActiveElement) => {
   const headerElement = ActiveElement;
   const targetElement = document.body;
+  const body_clientHeight = targetElement.clientHeight;
 
   if (!headerElement || !targetElement) return;
 
   const observeHandler = (entries, obs) => {
     if (flagHeaderObserver === 'false') {
       obs.unobserve(entries[0].target);
+      headerElement.setAttribute(
+        "data-active", "false"
+      );
+
     } else {
 
       headerElement.setAttribute(
@@ -43,14 +50,62 @@ const AllPageBodyObserve = (ActiveElement) => {
   };
   const options = {
     root: null,
-    rootMargin: `${body_border}px 0px ${document.body.clientHeight}px 0px`,
+    rootMargin: `${body_border}px 0px ${body_clientHeight}px 0px`,
     threshold: 1
   };
 
+  if (headerObserver) {
+    headerObserver.disconnect();
+  }
   headerObserver = new IntersectionObserver(observeHandler, options);
   headerObserver.observe(targetElement);
 };
 
+// submenuが画面右端からはみ出る場合の処理
+const PCsubmenuRightCare = (event) => {
+  const windowWidth = window.innerWidth;
+
+  submenuArray.forEach((submenuItem, index) => {
+    const itemRect = submenuItem.getBoundingClientRect();
+    const itemAnchorElement = submenuItem.querySelector('li > a');
+    if (itemAnchorElement) {
+      const itemComputedStyle = window.getComputedStyle(itemAnchorElement);
+      const itemPaddingLeft = parseFloat(itemComputedStyle.paddingLeft);
+      const itemPaddingRight = parseFloat(itemComputedStyle.paddingRight);
+
+      const itemRectRight = itemRect.right + (itemPaddingRight * 4);
+      const itemWidthTwice = (itemRect.width * 1.2) + itemPaddingLeft + itemPaddingRight;
+
+      if (itemRectRight > windowWidth) {
+        submenuItem.style.left = 'auto';
+      } else {
+        if ((windowWidth - itemRectRight) > itemWidthTwice) {
+          submenuItem.style.left = '';
+        }
+      }
+    }
+  });
+}
+
+let PCsubmenuRightCare_waitTimer;
+const ResizePCsubmenuRightCare = (event) => {
+  clearTimeout(PCsubmenuRightCare_waitTimer);
+  PCsubmenuRightCare_waitTimer = setTimeout(function () {
+    PCsubmenuRightCare(event);
+  }, 100);
+
+}
+const loadPCsubmenuRightCare = (event) => {
+  PCsubmenuRightCare(event);
+};
+
+let AllPageBodyObserve_waitTimer;
+const ResizeAllPageBodyObserve = () => {
+  clearTimeout(AllPageBodyObserve_waitTimer);
+  AllPageBodyObserve_waitTimer = setTimeout(function () {
+    AllPageBodyObserve(PCNaviIn);
+  }, 100);
+}
 
 // ---------------------------------------------
 // 画面幅1023px以下ではIntersectionObserver監視しないようにする
@@ -60,11 +115,19 @@ const mediaQueryList1023 = window.matchMedia('(max-width: 1023px)');
 function headerSubmenuOffChange(e) {
   if (e.matches) {
     flagHeaderObserver = 'false';
+    window.removeEventListener('load', loadPCsubmenuRightCare);
+    window.removeEventListener('resize', ResizePCsubmenuRightCare);
+    window.removeEventListener('load', AllPageBodyObserve(PCNaviIn));
+    window.removeEventListener('resize', ResizeAllPageBodyObserve);
 
   } else {
     flagHeaderObserver = 'true';
-
-    AllPageBodyObserve(PCNaviIn);
+    window.addEventListener('load', loadPCsubmenuRightCare);
+    window.addEventListener('resize', ResizePCsubmenuRightCare);
+    window.addEventListener('load', AllPageBodyObserve(PCNaviIn));
+    window.addEventListener('resize', ResizeAllPageBodyObserve);
+    ResizeAllPageBodyObserve();
+    loadPCsubmenuRightCare();
 
   }
   mediaQueryList1023.addEventListener("change", headerSubmenuOffChange);
