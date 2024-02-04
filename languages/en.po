@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-03T13:23:39+00:00\n"
-"PO-Revision-Date: 2024-02-03 14:41\n"
+"PO-Revision-Date: 2024-02-04 02:47\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -7704,7 +7704,7 @@ msgstr "Global navigation menu color"
 
 #: lib/page-settings/navi-forms.php:17
 msgid "グローバルナビ背景色"
-msgstr "Global navigation backgroundできますか color"
+msgstr "Global navigation background color"
 
 #: lib/page-settings/navi-forms.php:18
 msgid "グローバルナビ全体の背景色を選択します。"
