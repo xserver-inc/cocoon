@@ -54,15 +54,21 @@ label.screen-reader-text{
           @include bgc_hover;
         }
 
-        .post-count{
-          display: block;
-          float: right;
-        }
+        // .post-count{
+        //   display: block;
+        //   float: right;
+        // }
       }
 
     }
   }
 
+}
+
+.widget_categories ul li a .post-count,
+.widget_archive ul li a .post-count {
+  display: block;
+  float: right;
 }
 
 .widget_recent_comments{
