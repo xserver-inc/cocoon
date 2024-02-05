@@ -22,7 +22,7 @@ $root_text = apply_filters('breadcrumbs_page_root_text', $root_text);
     $page = get_post($par_id);
     $post_title = $page->post_title;
     $post_title = apply_filters('breadcrumbs_page_title', $post_title, $page);
-    ?><div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><a href="<?php echo esc_url(get_page_link( $par_id ));?>" itemprop="item"><span itemprop="name" class="breadcrumb-caption"><?php echo esc_html($post_title); ?></span></a><meta itemprop="position" content="<?php echo $count; ?>" /><?php echo (count($per_ids) == $count && !is_page_breadcrumbs_include_post()) ? '' : '<span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span>' ?></div>
+    ?><div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw" aria-hidden="true"></span><a href="<?php echo esc_url(get_page_link( $par_id ));?>" itemprop="item"><span itemprop="name" class="breadcrumb-caption"><?php echo esc_html($post_title); ?></span></a><meta itemprop="position" content="<?php echo $count; ?>" /><?php echo (count($per_ids) < $count && !is_page_breadcrumbs_include_post()) ? '' : '<span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span>' ?></div>
   <?php } ?>
   <?php //ページタイトルを含める場合
   if (is_page_breadcrumbs_include_post()):
