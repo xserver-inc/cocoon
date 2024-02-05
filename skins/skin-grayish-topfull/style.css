@@ -226,6 +226,15 @@ a:hover {
   color: var(--skin-grayish-a-wrap-txt);
 }
 
+.skin-grayish #navi-in .search-menu-button .search-edit,
+.skin-grayish .mobile-menu-buttons .navi-menu-content .menu-drawer>.search-menu-button .search-edit {
+  font-family: var(--cocoon-default-font);
+}
+
+.skin-grayish .mobile-menu-buttons .navi-menu-content .menu-drawer>.search-menu-button .search-edit {
+  font-size: 16px;
+}
+
 
 /****************************** Header ******************************/
 /*============== Navi Menu : LargeSize ==============*/
