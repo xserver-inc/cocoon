@@ -236,7 +236,7 @@ if (get_global_navi_menu_width()): ?>
 <?php //グローバルナビサブメニュー幅
 if (get_global_navi_sub_menu_width()): ?>
 #navi .navi-in > ul .sub-menu{
-  min-width: <?php echo get_global_navi_sub_menu_width(); ?>px;
+  width: <?php echo get_global_navi_sub_menu_width(); ?>px;
 }
 #navi .navi-in > ul .sub-menu ul{
   left: <?php echo get_global_navi_sub_menu_width(); ?>px;

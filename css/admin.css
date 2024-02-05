@@ -1507,7 +1507,7 @@ body.wp-admin {
   display: none;
   position: absolute;
   margin: 0;
-  min-width: 240px;
+  width: 240px;
   list-style: none;
   padding: 0;
   background-color: var(--cocoon-xxx-thin-color);
@@ -9748,7 +9748,7 @@ body.wp-admin {
   display: none;
   position: absolute;
   margin: 0;
-  min-width: 240px;
+  width: 240px;
   list-style: none;
   padding: 0;
   background-color: var(--cocoon-xxx-thin-color);
