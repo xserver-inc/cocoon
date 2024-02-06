@@ -420,12 +420,14 @@ a:hover {
   font-size: clamp(12px, 1.17vw, 14px);
   min-height: 0vw;
   padding: 8px;
+  width: 100%;
 }
 
 /* メニュー３階層のとき・・・ */
 .skin-grayish .navi-in>ul li .sub-menu ul {
   display: block;
   background-color: var(--skin-grayish-site-main-thin);
+  width: 100%;
   left: 0;
   right: 0;
   top: auto;
