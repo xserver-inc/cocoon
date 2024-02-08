@@ -23,6 +23,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-mastodon-logo:before {
+  content: "\e927";
+}
+.icon-mastodon:before {
+  content: "\e928";
+}
 .icon-bluesky-logo:before {
   content: "\e925";
 }
