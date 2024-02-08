@@ -5963,8 +5963,13 @@ figcaption {
 /************************************
 ** SNSフォローボタン
 ************************************/
+.sns-follow-buttons {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 .sns-follow-buttons a {
-  width: 100%;
+  width: 40px;
+  height: 40px;
   margin-right: 8px;
   margin-bottom: 8px;
   font-size: 30px;
@@ -6446,10 +6451,6 @@ canvas, iframe, video,
 }
 .author-box .sns-follow-message {
   display: none;
-}
-.author-box .sns-follow-buttons {
-  flex-wrap: wrap;
-  justify-content: flex-start;
 }
 .author-box .sns-follow-buttons a.follow-button {
   font-size: 18px;

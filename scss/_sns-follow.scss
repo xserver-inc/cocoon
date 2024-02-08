@@ -6,9 +6,12 @@
 }
 
 .sns-follow-buttons{
+  flex-wrap: wrap;
+  justify-content: flex-start;
 
   a{
-    width: 100%;
+    width: 40px;
+    height: 40px;
     margin-right: 8px;
     margin-bottom: $sns_button_margin_bottom;
     font-size: 30px;
