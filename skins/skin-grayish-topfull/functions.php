@@ -780,6 +780,10 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         'setting_name' => 'twitter',
       ),
       array(
+        'label'       => 'Mastodon フォローボタンを表示',
+        'setting_name' => 'mastodon',
+      ),
+      array(
         'label'       => 'Bluesky フォローボタンを表示',
         'setting_name' => 'bluesky',
       ),
@@ -1076,6 +1080,7 @@ if (!function_exists('skin_grayish_gnavi_snsbtn')) :
     global $skin_gnavi_snsbtn_On;
     $skin_gnavi_snsbtn_options = array(
       'gnavi_sns_twitter' => get_theme_mod('snsbtn_select_twitter', 'snsbtn_select_Off'),
+      'gnavi_sns_mastodon' => get_theme_mod('snsbtn_select_mastodon', 'snsbtn_select_Off'),
       'gnavi_sns_bluesky' => get_theme_mod('snsbtn_select_bluesky', 'snsbtn_select_Off'),
       'gnavi_sns_misskey' => get_theme_mod('snsbtn_select_misskey', 'snsbtn_select_Off'),
       'gnavi_sns_facebook' => get_theme_mod('snsbtn_select_facebook', 'snsbtn_select_Off'),

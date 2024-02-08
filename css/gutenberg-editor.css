@@ -1,8 +1,9 @@
 @charset "UTF-8";
 :root {
   --cocoon-twitter-color: #000000;
-  --cocoon-misskey-color: #b4e900;
+  --cocoon-mastodon-color: #6364FF;
   --cocoon-bluesky-color: #0085ff;
+  --cocoon-misskey-color: #b4e900;
   --cocoon-facebook-color: #3b5998;
   --cocoon-hatebu-color: #2c6ebd;
   --cocoon-google-plus-color: #dd4b39;

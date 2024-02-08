@@ -33,6 +33,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo esc_url(get_the_author_twitter_url($user_id)); //TwitterフォローIDの取得?>" class="sns-button follow-button twitter-button twitter-follow-button-sq x-corp-button x-corp-follow-button-sq" target="_blank" title="<?php _e( 'Xをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Xをフォロー', THEME_NAME ) ?>"><span class="icon-x-corp-logo"></span></a>
   <?php endif; ?>
 
+  <?php if ( get_the_author_mastodon_url($user_id) )://Mastodonフォローボタンを表示するか ?>
+    <a href="<?php echo esc_url(get_the_author_mastodon_url($user_id)); //MastodonフォローIDの取得?>" class="sns-button follow-button mastodon-button mastodon-follow-button-sq" target="_blank" title="<?php _e( 'Mastodonをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Mastodonをフォロー', THEME_NAME ) ?>"><span class="icon-mastodon-logo"></span></a>
+  <?php endif; ?>
+
   <?php if ( get_the_author_bluesky_url($user_id) )://Blueskyフォローボタンを表示するか ?>
     <a href="<?php echo esc_url(get_the_author_bluesky_url($user_id)); //BlueskyフォローIDの取得?>" class="sns-button follow-button bluesky-button bluesky-follow-button-sq" target="_blank" title="<?php _e( 'Blueskyをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Blueskyをフォロー', THEME_NAME ) ?>"><span class="icon-bluesky-logo"></span></a>
   <?php endif; ?>

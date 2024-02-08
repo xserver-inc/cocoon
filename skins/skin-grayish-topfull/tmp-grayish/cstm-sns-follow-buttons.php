@@ -24,6 +24,7 @@ if (
 
   // プロフィール欄に入力　かつ　カスタマイザーONの組み合わせが１つもなければリストは出力しない
   $skin_gnavi_nooutput = (($skin_gnavi_snsbtn_options['gnavi_sns_twitter'] === 'snsbtn_select_On') && get_the_author_twitter_url($user_id)) ||
+    (($skin_gnavi_snsbtn_options['gnavi_sns_mastodon'] === 'snsbtn_select_On') && get_the_author_mastodon_url($user_id)) ||
     (($skin_gnavi_snsbtn_options['gnavi_sns_bluesky'] === 'snsbtn_select_On') && get_the_author_bluesky_url($user_id)) ||
     (($skin_gnavi_snsbtn_options['gnavi_sns_misskey'] === 'snsbtn_select_On') && get_the_author_misskey_url($user_id)) ||
     (($skin_gnavi_snsbtn_options['gnavi_sns_facebook'] === 'snsbtn_select_On') && get_the_author_facebook_url($user_id)) ||
@@ -56,6 +57,19 @@ if (
                       ?>" class="" target="_blank" title="<?php _e('Xをフォロー', THEME_NAME) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e('Xをフォロー', THEME_NAME) ?>">
               <div class="caption-wrap">
                 <div class="item-label"><span class="icon-x-corp-logo"></span></div>
+              </div>
+            </a>
+          </li>
+        <?php endif; ?>
+
+        <?php if (($skin_gnavi_snsbtn_options['gnavi_sns_mastodon'] === 'snsbtn_select_On') && get_the_author_mastodon_url($user_id)) : //Mastodonフォローボタンを表示するか
+        ?>
+          <li class="header-snsicon-submenu__listitem">
+            <a href="<?php echo esc_url(get_the_author_mastodon_url($user_id)); //MastodonフォローIDの取得
+                      ?>" class="" target="_blank" title="<?php _e('Mastodonをフォロー', THEME_NAME) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e('Mastodonをフォロー', THEME_NAME) ?>">
+              <div class="caption-wrap">
+                <div class="item-label"><span class="icon-mastodon"></span>
+                </div>
               </div>
             </a>
           </li>

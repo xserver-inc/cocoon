@@ -133,6 +133,7 @@ if ( !function_exists( 'user_contactmethods_custom' ) ):
 function user_contactmethods_custom($prof_items){
   //項目の追加
   $prof_items['twitter_url'] = __( 'X（旧Twitter） URL', THEME_NAME );
+  $prof_items['mastodon_url'] = __( 'Mastodon URL', THEME_NAME );
   $prof_items['bluesky_url'] = __( 'Bluesky URL', THEME_NAME );
   $prof_items['misskey_url'] = __( 'Misskfy URL', THEME_NAME );
   $prof_items['facebook_url'] = __( 'Facebook URL', THEME_NAME );
@@ -243,6 +244,14 @@ function get_the_author_twitter_id($url = null){
   if ($res && $m && $m[1]) {
     return $m[1];
   }
+}
+endif;
+
+//プロフィール画面で設定したMastodon URLの取得
+if ( !function_exists( 'get_the_author_mastodon_url' ) ):
+function get_the_author_mastodon_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('mastodon_url', $user_id));
 }
 endif;
 
@@ -427,6 +436,7 @@ if ( !function_exists( 'is_author_follow_buttons_exits' ) ):
 function is_author_follow_buttons_exits(){
   return get_the_author_website_url()
          || get_the_author_twitter_url()
+         || get_the_author_mastodon_url()
          || get_the_author_bluesky_url()
          || get_the_author_misskey_url()
          || get_the_author_facebook_url()
