@@ -510,3 +510,22 @@ function fix_img_v63( $block_content, $block ) {
 	}
 	return $block_content;
 }
+
+
+//ダッシュボードにブロックパターンメニューを追加
+add_action('admin_menu', 'add_reuse_block_menu_page');
+if ( !function_exists( 'add_reuse_block_menu_page' ) ):
+function add_reuse_block_menu_page() {
+  if (is_admin()) {
+    add_menu_page(
+      __( 'ブロックパターン', THEME_NAME ),
+      __( 'ブロックパターン', THEME_NAME ),
+      'manage_options',
+      'edit.php?post_type=wp_block',
+      '',
+      'dashicons-image-rotate',
+      26
+    );
+  }
+}
+endif;

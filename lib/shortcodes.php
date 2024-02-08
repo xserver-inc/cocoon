@@ -1027,3 +1027,27 @@ function get_info_list_shortcode($atts){
   return apply_filters('get_info_list_tag', $tag);
 }
 endif;
+
+//ブロックパターン
+add_shortcode('reuse', 'get_block_pattern_shortcode');
+add_shortcode('pattern', 'get_block_pattern_shortcode');
+if ( !function_exists( 'get_block_pattern_shortcode' ) ):
+function get_block_pattern_shortcode($atts) {
+  extract(shortcode_atts(
+    array(
+      'id' => null,
+    ),
+    $atts
+  ));
+
+  $content = null;
+  if (isset($id)) {
+    $reuse = get_post($atts['id']);
+    if (isset($reuse)) {
+      $content = apply_filters('the_content', $reuse->post_content);
+    }
+  }
+
+  return $content;
+}
+endif;
