@@ -1044,7 +1044,7 @@ function get_block_pattern_shortcode($atts) {
   if (isset($id)) {
     $reuse = get_post($atts['id']);
     if (isset($reuse)) {
-      $content = apply_filters('the_content', $reuse->post_content);
+      $content = $reuse->post_content;
     }
   }
 
