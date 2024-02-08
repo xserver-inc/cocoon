@@ -33,6 +33,14 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo esc_url(get_the_author_twitter_url($user_id)); //TwitterフォローIDの取得?>" class="sns-button follow-button twitter-button twitter-follow-button-sq x-corp-button x-corp-follow-button-sq" target="_blank" title="<?php _e( 'Xをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Xをフォロー', THEME_NAME ) ?>"><span class="icon-x-corp-logo"></span></a>
   <?php endif; ?>
 
+  <?php if ( get_the_author_bluesky_url($user_id) )://Blueskyフォローボタンを表示するか ?>
+    <a href="<?php echo esc_url(get_the_author_bluesky_url($user_id)); //BlueskyフォローIDの取得?>" class="sns-button follow-button bluesky-button bluesky-follow-button-sq" target="_blank" title="<?php _e( 'Blueskyをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Blueskyをフォロー', THEME_NAME ) ?>"><span class="icon-bluesky-logo"></span></a>
+  <?php endif; ?>
+
+  <?php if ( get_the_author_misskey_url($user_id) )://Misskeyフォローボタンを表示するか ?>
+    <a href="<?php echo esc_url(get_the_author_misskey_url($user_id)); //MisskeyフォローIDの取得?>" class="sns-button follow-button misskey-button misskey-follow-button-sq" target="_blank" title="<?php _e( 'Misskeyをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Misskeyをフォロー', THEME_NAME ) ?>"><span class="icon-misskey-logo"></span></a>
+  <?php endif; ?>
+
   <?php if ( get_the_author_facebook_url($user_id) )://Facebookフォローボタンを表示するか ?>
     <a href="<?php echo esc_url(get_the_author_facebook_url($user_id)); //FacebookフォローIDの取得?>" class="sns-button follow-button facebook-button facebook-follow-button-sq" target="_blank" title="<?php _e( 'Facebookをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Facebookをフォロー', THEME_NAME ) ?>"><span class="icon-facebook-logo"></span></a>
   <?php endif; ?>

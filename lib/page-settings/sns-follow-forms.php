@@ -70,6 +70,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <ul class="list-style-disc">
               <li><?php _e( 'ウェブサイト', THEME_NAME ) ?></li>
               <li><?php _e( 'X（旧Twitter）', THEME_NAME ) ?></li>
+              <li><?php _e( 'Bluesky', THEME_NAME ) ?></li>
+              <li><?php _e( 'Misskey', THEME_NAME ) ?></li>
               <li><?php _e( 'Facebook', THEME_NAME ) ?></li>
               <!-- <li><?php _e( 'Google+', THEME_NAME ) ?></li> -->
               <li><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>

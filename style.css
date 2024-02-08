@@ -15,6 +15,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 :root {
   --cocoon-twitter-color: #000000;
+  --cocoon-misskey-color: #b4e900;
+  --cocoon-bluesky-color: #0085ff;
   --cocoon-facebook-color: #3b5998;
   --cocoon-hatebu-color: #2c6ebd;
   --cocoon-google-plus-color: #dd4b39;
@@ -1407,6 +1409,14 @@ img.emoji {
 
 [class*=bc-brand-color] .x-corp-button {
   --cocoon-sns-color: var(--cocoon-twitter-color);
+}
+
+[class*=bc-brand-color] .bluesky-button {
+  --cocoon-sns-color: var(--cocoon-bluesky-color);
+}
+
+[class*=bc-brand-color] .misskey-button {
+  --cocoon-sns-color: var(--cocoon-misskey-color);
 }
 
 [class*=bc-brand-color] .facebook-button {

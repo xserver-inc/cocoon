@@ -47,6 +47,14 @@
   --cocoon-sns-color: var(--cocoon-twitter-color);
 }
 
+[class*="bc-brand-color"] .bluesky-button {
+  --cocoon-sns-color: var(--cocoon-bluesky-color);
+}
+
+[class*="bc-brand-color"] .misskey-button {
+  --cocoon-sns-color: var(--cocoon-misskey-color);
+}
+
 [class*="bc-brand-color"] .facebook-button {
   --cocoon-sns-color: var(--cocoon-facebook-color);
 }
