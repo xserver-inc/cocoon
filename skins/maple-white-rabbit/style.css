@@ -652,15 +652,15 @@ border: 1px solid #ffbf7f; /* 枠線色 */
 }
 /* Misskey */
 .bc-brand-color-white.sns-share .misskey-button, .bc-brand-color-white.sns-follow .misskey-button {
-	border: 1px solid #d2f166; /* 枠線色 */
-	color: #d2f166; /* 文字色 */
+	border: 1px solid #c0e292; /* 枠線色 */
+	color: #c0e292; /* 文字色 */
 }
 .bc-brand-color-white.sns-share .misskey-button:hover, .bc-brand-color-white.sns-follow .misskey-button:hover,
 /* color */
 .bc-brand-color.sns-share .misskey-button, .bc-brand-color.sns-follow .misskey-button,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.misskey-button {
-	background-color: #d2f166;
+	background-color: #c0e292;
 }
 /* Tiktok */
 .bc-brand-color-white.sns-share .tiktok-button, .bc-brand-color-white.sns-follow .tiktok-button {

@@ -127,8 +127,8 @@ strong {
     border-color: #66b5ff;
 }
 .bc-brand-color-white.sns-share .misskey-button, .bc-brand-color-white.sns-follow .misskey-button {
-    color: #d2f166;
-    border-color: #d2f166;
+    color: #c0e292;
+    border-color: #c0e292;
 }
 .bc-brand-color-white.sns-share .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
     color: #5a71a2;
@@ -236,7 +236,7 @@ strong {
     background-color: #a1a2ff;
 }
 .bc-brand-color.sns-share .misskey-button, .bc-brand-color.sns-follow .misskey-button {
-    background-color: #d2f166;
+    background-color: #c0e292;
 }
 .sns-follow-buttons a {
     border-radius: 7px;
