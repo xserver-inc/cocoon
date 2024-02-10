@@ -1487,14 +1487,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ linkedin ■ */
 .author-box .linkedin-button {
-	border: 1px solid #0077b5 !important;
-	color: #0077b5 !important;
+	border: 1px solid var(--cocoon-linkedin-color) !important;
+	color: var(--cocoon-linkedin-color) !important;
 }
 .author-box .linkedin-button:after {
-	box-shadow: 0 0 0 2px #0077b5;
+	box-shadow: 0 0 0 2px var(--cocoon-linkedin-color);
 }
 .author-box .linkedin-button:hover {
-	background-color: #0077b5 !important;
+	background-color: var(--cocoon-linkedin-color) !important;
 }
 
 /* ■ flickr ■ */

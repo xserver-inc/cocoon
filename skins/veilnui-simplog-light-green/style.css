@@ -275,7 +275,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .linkedin-button,
 #slide-in-sidebar .widget_author_box .author-box .linkedin-button {
-  background-color: #0077B5;
+  background-color: var(--cocoon-linkedin-color);
 }
 #sidebar .widget_author_box .author-box .note-button,
 #slide-in-sidebar .widget_author_box .author-box .note-button {

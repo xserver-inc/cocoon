@@ -686,12 +686,12 @@ body.public-page,.content .main, .navi {
 
 .bc-brand-color.sns-share.ss-top .linkedin-button, .bc-brand-color.sns-share.ss-bottom .linkedin-button {
 	background-color: #fff;
-   color: #0077b5;
-	border:solid 2px #0077b5;
+   color: var(--cocoon-linkedin-color);
+	border:solid 2px var(--cocoon-linkedin-color);
 }
 
 .bc-brand-color.sns-share.ss-top .linkedin-button:hover, .bc-brand-color.sns-share.ss-bottom .linkedin-button:hover {
-   background-color: #0077b5;
+   background-color: var(--cocoon-linkedin-color);
 	color: #fff;
 	opacity:1;
 }

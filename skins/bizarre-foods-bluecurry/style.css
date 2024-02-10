@@ -701,7 +701,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.linkedin-button {
-    color: #0077b5;
+    color: var(--cocoon-linkedin-color);
 }
 
 .bc-brand-color a.note-button {

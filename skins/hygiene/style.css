@@ -470,7 +470,7 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-linkedin,
 .bc-brand-color.sns-share .sns-share-buttons a .share-count.linkedin-share-count{
-  filter: drop-shadow(1px 1px 1px #0077b5);
+  filter: drop-shadow(1px 1px 1px var(--cocoon-linkedin-color));
 }
 .linkedin-share-count::after {
   content: 'SHARE';
@@ -615,11 +615,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .youtube-button,
 .author-box .sns-follow-buttons a.follow-button.linkedin-button{
-  filter: drop-shadow(1px 1px 1px #0077b5);
+  filter: drop-shadow(1px 1px 1px var(--cocoon-linkedin-color));
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-linkedin-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-linkedin-logo{
-  color: #0077b5;
+  color: var(--cocoon-linkedin-color);
 }
 .bc-brand-color-white.sns-follow .note-button,
 .author-box .sns-follow-buttons a.follow-button.note-button{

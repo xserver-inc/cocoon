@@ -552,7 +552,7 @@ article .tag-link:hover {
 	background-color: #ef1515 !important;
 }
 .author-box .linkedin-button {
-	background-color: #0077b5 !important;
+	background-color: var(--cocoon-linkedin-color) !important;
 }
 .author-box .note-button {
 	background-color: #41c9b4 !important;
