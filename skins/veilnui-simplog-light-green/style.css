@@ -271,7 +271,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .youtube-button,
 #slide-in-sidebar .widget_author_box .author-box .youtube-button {
-  background-color: var(--cocoon-youtube-color:)
+  background-color: #CD201F;
 }
 #sidebar .widget_author_box .author-box .linkedin-button,
 #slide-in-sidebar .widget_author_box .author-box .linkedin-button {
