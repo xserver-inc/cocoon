@@ -195,7 +195,7 @@ body {
 }
 #sidebar .widget_sns_follow_buttons .sns-follow .feedly-button:hover,
 #slide-in-sidebar .widget_sns_follow_buttons .sns-follow .feedly-button:hover {
-  background-color: #2BB24C;
+  background-color: var(--cocoon-feedly-color);
   opacity: 0.7;
 }
 #sidebar .widget_sns_follow_buttons .sns-follow .rss-button:hover,
@@ -319,7 +319,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .feedly-button,
 #slide-in-sidebar .widget_author_box .author-box .feedly-button {
-  background-color: #2BB24C;
+  background-color: var(--cocoon-feedly-color);
 }
 #sidebar .widget_author_box .author-box .rss-button,
 #slide-in-sidebar .widget_author_box .author-box .rss-button {

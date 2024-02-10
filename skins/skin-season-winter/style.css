@@ -582,7 +582,7 @@ article .tag-link:hover {
 	background-color: #333 !important;
 }
 .author-box .feedly-button {
-	background-color: #2bb24c !important;
+	background-color: var(--cocoon-feedly-color) !important;
 }
 .author-box .rss-button {
 	background-color: #f26522 !important;

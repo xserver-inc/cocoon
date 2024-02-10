@@ -746,7 +746,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.feedly-button {
-    color:#2bb24c;
+    color:var(--cocoon-feedly-color);
 }
 
 .bc-brand-color a.rss-button {

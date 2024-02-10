@@ -1355,14 +1355,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ feedly ■ */
 .author-box .feedly-button {
-	border: 1px solid #2bb24c !important;
-	color: #2bb24c !important;
+	border: 1px solid var(--cocoon-feedly-color) !important;
+	color: var(--cocoon-feedly-color) !important;
 }
 .author-box .feedly-button:after {
-	box-shadow: 0 0 0 2px #2bb24c;
+	box-shadow: 0 0 0 2px var(--cocoon-feedly-color);
 }
 .author-box .feedly-button:hover {
-	background-color: #2bb24c !important;
+	background-color: var(--cocoon-feedly-color) !important;
 }
 
 /* ■ rss ■ */
