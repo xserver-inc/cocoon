@@ -11239,7 +11239,7 @@ _:-ms-lang(x), .mc-circle {
     width: 32.5%;
   }
   .sns-follow-buttons {
-    gap: 1%;
+    column-gap: 1%;
   }
   .sns-follow-buttons a {
     margin-right: 0;

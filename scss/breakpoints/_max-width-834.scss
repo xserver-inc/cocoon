@@ -71,7 +71,7 @@ table {
 .sns-follow-buttons {
   // flex-wrap: wrap;
   // justify-content: space-around;
-  gap: 1%;
+  column-gap: 1%;
 
   a {
     margin-right: 0;
