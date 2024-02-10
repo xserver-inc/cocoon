@@ -1493,6 +1493,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
          ?>
       </div>
       <div class="author-description">
+        <p>
         <?php
         if ($description) {
           echo apply_filters( 'the_author_box_description', $description, $user_id );
@@ -1510,6 +1511,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
           echo __( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="' . home_url() . '/wp-admin/user-edit.php?user_id='.get_the_author_meta( 'ID' ).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME );
         }
         ?>
+        </p>
 
       </div>
       <?php if ($user_id): ?>

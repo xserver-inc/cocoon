@@ -1799,6 +1799,11 @@ body.wp-admin {
 .admin-settings .demo .sns-buttons {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  row-gap: 10px;
+  column-gap: 6px;
+  margin-bottom: 2em;
 }
 .admin-settings .demo .sns-buttons a {
   align-content: center;
@@ -1809,12 +1814,12 @@ body.wp-admin {
   font-size: 18px;
   justify-content: center;
   height: 45px;
-  margin-bottom: 8px;
   position: relative;
   text-align: center;
   width: 32%;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  margin: 0 !important;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
@@ -1918,14 +1923,32 @@ body.wp-admin {
 .admin-settings .demo .sns-share.ss-col-1 a {
   width: 100%;
 }
+.admin-settings .demo .sns-share.ss-col-2 .sns-buttons {
+  column-gap: 1%;
+}
 .admin-settings .demo .sns-share.ss-col-2 a {
-  width: 49%;
+  width: 49.5%;
+}
+.admin-settings .demo .sns-share.ss-col-3 .sns-buttons {
+  column-gap: 0.75%;
+}
+.admin-settings .demo .sns-share.ss-col-3 a {
+  width: 32.5%;
+}
+.admin-settings .demo .sns-share.ss-col-4 .sns-buttons {
+  column-gap: 1.3333333333%;
 }
 .admin-settings .demo .sns-share.ss-col-4 a {
   width: 24%;
 }
+.admin-settings .demo .sns-share.ss-col-5 .sns-buttons {
+  column-gap: 1.25%;
+}
 .admin-settings .demo .sns-share.ss-col-5 a {
   width: 19%;
+}
+.admin-settings .demo .sns-share.ss-col-6 .sns-buttons {
+  column-gap: 0.8%;
 }
 .admin-settings .demo .sns-share.ss-col-6 a {
   width: 16%;
@@ -1956,11 +1979,6 @@ body.wp-admin {
 }
 .admin-settings .demo .sns-share.ss-high-and-low-cl a {
   flex-direction: column-reverse;
-}
-.admin-settings .demo .sns-share-buttons {
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
 }
 .admin-settings .demo .sns-share-buttons a .button-caption {
   font-size: 16px;
@@ -2958,13 +2976,11 @@ body.wp-admin {
   border-width: 9px;
   margin-left: -9px;
 }
-.admin-settings .demo .nwa .sns-follow-buttons {
-  flex-wrap: wrap;
-  justify-content: space-between;
+.admin-settings .demo .nwa .sns-follow-buttons .sns-buttons {
+  column-gap: 1%;
 }
 .admin-settings .demo .nwa .sns-follow-buttons a {
-  width: 49%;
-  margin-right: 0;
+  width: 48%;
 }
 .admin-settings .demo .widget_mobile_text,
 .admin-settings .demo .widget_mobile_ad {
@@ -5750,15 +5766,9 @@ body.wp-admin {
 .admin-settings .demo .wp-block-media-text__content {
   padding: 0 1em;
 }
-.admin-settings .demo .sns-follow-buttons {
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
 .admin-settings .demo .sns-follow-buttons a {
   width: 40px;
   height: 40px;
-  margin-right: 8px;
-  margin-bottom: 8px;
   font-size: 30px;
   display: flex;
   align-items: center;
@@ -6161,19 +6171,20 @@ body.wp-admin {
 .admin-settings .demo .author-box .sns-follow-message {
   display: none;
 }
+.admin-settings .demo .author-box .sns-follow-buttons {
+  margin-bottom: 0;
+}
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button {
   font-size: 18px;
-  width: 24px;
-  height: 24px;
-  margin-bottom: 4px;
-  margin-right: 4px;
+  width: 26px;
+  height: 26px;
   background-color: transparent;
   color: var(--cocoon-x-pallid-text-color);
   border: 1px solid var(--cocoon-basic-border-color);
   border-radius: 2px;
 }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button:hover {
-  background-color: var(--cocoon-xxx-thin-color);
+  opacity: 0.6;
 }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button .follow-count {
   display: none;
@@ -6210,12 +6221,8 @@ body.wp-admin {
 .admin-settings .demo .nwa .author-box .author-description {
   text-align: left;
 }
-.admin-settings .demo .nwa .author-box .sns-follow-buttons {
-  justify-content: center;
-}
 .admin-settings .demo .nwa .author-box .sns-follow-buttons a {
   display: inline-block;
-  margin: 2px;
 }
 .admin-settings .demo .cta-box {
   background-color: #444;
@@ -7312,9 +7319,6 @@ body.wp-admin {
   text-align: center;
   font-size: 2em;
 }
-.admin-settings .demo .share-menu-content .sns-buttons {
-  justify-content: space-around;
-}
 .admin-settings .demo .share-menu-content .sns-buttons .share-count {
   color: var(--cocoon-white-color);
 }
@@ -7323,9 +7327,6 @@ body.wp-admin {
 }
 .admin-settings .demo .share-menu-content .comment-button {
   display: none;
-}
-.admin-settings .demo .follow-menu-content .sns-buttons {
-  justify-content: space-around;
 }
 .admin-settings .demo .follow-menu-content .sns-buttons a {
   width: 24%;
@@ -10050,6 +10051,11 @@ body.wp-admin {
 .admin-settings .demo .sns-buttons {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  row-gap: 10px;
+  column-gap: 6px;
+  margin-bottom: 2em;
 }
 .admin-settings .demo .sns-buttons a {
   align-content: center;
@@ -10060,12 +10066,12 @@ body.wp-admin {
   font-size: 18px;
   justify-content: center;
   height: 45px;
-  margin-bottom: 8px;
   position: relative;
   text-align: center;
   width: 32%;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  margin: 0 !important;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
@@ -10169,14 +10175,32 @@ body.wp-admin {
 .admin-settings .demo .sns-share.ss-col-1 a {
   width: 100%;
 }
+.admin-settings .demo .sns-share.ss-col-2 .sns-buttons {
+  column-gap: 1%;
+}
 .admin-settings .demo .sns-share.ss-col-2 a {
-  width: 49%;
+  width: 49.5%;
+}
+.admin-settings .demo .sns-share.ss-col-3 .sns-buttons {
+  column-gap: 0.75%;
+}
+.admin-settings .demo .sns-share.ss-col-3 a {
+  width: 32.5%;
+}
+.admin-settings .demo .sns-share.ss-col-4 .sns-buttons {
+  column-gap: 1.3333333333%;
 }
 .admin-settings .demo .sns-share.ss-col-4 a {
   width: 24%;
 }
+.admin-settings .demo .sns-share.ss-col-5 .sns-buttons {
+  column-gap: 1.25%;
+}
 .admin-settings .demo .sns-share.ss-col-5 a {
   width: 19%;
+}
+.admin-settings .demo .sns-share.ss-col-6 .sns-buttons {
+  column-gap: 0.8%;
 }
 .admin-settings .demo .sns-share.ss-col-6 a {
   width: 16%;
@@ -10207,11 +10231,6 @@ body.wp-admin {
 }
 .admin-settings .demo .sns-share.ss-high-and-low-cl a {
   flex-direction: column-reverse;
-}
-.admin-settings .demo .sns-share-buttons {
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
 }
 .admin-settings .demo .sns-share-buttons a .button-caption {
   font-size: 16px;
@@ -11209,13 +11228,11 @@ body.wp-admin {
   border-width: 9px;
   margin-left: -9px;
 }
-.admin-settings .demo .nwa .sns-follow-buttons {
-  flex-wrap: wrap;
-  justify-content: space-between;
+.admin-settings .demo .nwa .sns-follow-buttons .sns-buttons {
+  column-gap: 1%;
 }
 .admin-settings .demo .nwa .sns-follow-buttons a {
-  width: 49%;
-  margin-right: 0;
+  width: 48%;
 }
 .admin-settings .demo .widget_mobile_text,
 .admin-settings .demo .widget_mobile_ad {
@@ -14001,15 +14018,9 @@ body.wp-admin {
 .admin-settings .demo .wp-block-media-text__content {
   padding: 0 1em;
 }
-.admin-settings .demo .sns-follow-buttons {
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
 .admin-settings .demo .sns-follow-buttons a {
   width: 40px;
   height: 40px;
-  margin-right: 8px;
-  margin-bottom: 8px;
   font-size: 30px;
   display: flex;
   align-items: center;
@@ -14412,19 +14423,20 @@ body.wp-admin {
 .admin-settings .demo .author-box .sns-follow-message {
   display: none;
 }
+.admin-settings .demo .author-box .sns-follow-buttons {
+  margin-bottom: 0;
+}
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button {
   font-size: 18px;
-  width: 24px;
-  height: 24px;
-  margin-bottom: 4px;
-  margin-right: 4px;
+  width: 26px;
+  height: 26px;
   background-color: transparent;
   color: var(--cocoon-x-pallid-text-color);
   border: 1px solid var(--cocoon-basic-border-color);
   border-radius: 2px;
 }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button:hover {
-  background-color: var(--cocoon-xxx-thin-color);
+  opacity: 0.6;
 }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button .follow-count {
   display: none;
@@ -14461,12 +14473,8 @@ body.wp-admin {
 .admin-settings .demo .nwa .author-box .author-description {
   text-align: left;
 }
-.admin-settings .demo .nwa .author-box .sns-follow-buttons {
-  justify-content: center;
-}
 .admin-settings .demo .nwa .author-box .sns-follow-buttons a {
   display: inline-block;
-  margin: 2px;
 }
 .admin-settings .demo .cta-box {
   background-color: #444;
@@ -15563,9 +15571,6 @@ body.wp-admin {
   text-align: center;
   font-size: 2em;
 }
-.admin-settings .demo .share-menu-content .sns-buttons {
-  justify-content: space-around;
-}
 .admin-settings .demo .share-menu-content .sns-buttons .share-count {
   color: var(--cocoon-white-color);
 }
@@ -15574,9 +15579,6 @@ body.wp-admin {
 }
 .admin-settings .demo .share-menu-content .comment-button {
   display: none;
-}
-.admin-settings .demo .follow-menu-content .sns-buttons {
-  justify-content: space-around;
 }
 .admin-settings .demo .follow-menu-content .sns-buttons a {
   width: 24%;
@@ -18504,17 +18506,20 @@ body.wp-admin {
     font-size: 14px;
     margin-left: 4px;
   }
+  .admin-settings .demo .sns-share.ss-top.ss-col-6 .sns-buttons,
+  .admin-settings .demo .sns-share.ss-bottom.ss-col-6 .sns-buttons {
+    column-gap: 0.75%;
+  }
   .admin-settings .demo .sns-share.ss-top.ss-col-6 a,
   .admin-settings .demo .sns-share.ss-bottom.ss-col-6 a {
-    width: 32%;
+    width: 32.5%;
   }
   .admin-settings .demo .sns-follow-buttons {
-    flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 1%;
   }
   .admin-settings .demo .sns-follow-buttons a {
     margin-right: 0;
-    width: 48%;
+    width: 49.5%;
   }
   .admin-settings .demo .rect-vertical-card .related-entry-card-wrap {
     width: 49%;

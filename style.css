@@ -1375,6 +1375,11 @@ img.emoji {
 .sns-buttons {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  row-gap: 10px;
+  column-gap: 6px;
+  margin-bottom: 2em;
 }
 .sns-buttons a {
   align-content: center;
@@ -1385,12 +1390,12 @@ img.emoji {
   font-size: 18px;
   justify-content: center;
   height: 45px;
-  margin-bottom: 8px;
   position: relative;
   text-align: center;
   width: 32%;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  margin: 0 !important;
   color: var(--cocoon-white-color);
   text-decoration: none;
 }
@@ -1523,14 +1528,32 @@ img.emoji {
 .sns-share.ss-col-1 a {
   width: 100%;
 }
+.sns-share.ss-col-2 .sns-buttons {
+  column-gap: 1%;
+}
 .sns-share.ss-col-2 a {
-  width: 49%;
+  width: 49.5%;
+}
+.sns-share.ss-col-3 .sns-buttons {
+  column-gap: 0.75%;
+}
+.sns-share.ss-col-3 a {
+  width: 32.5%;
+}
+.sns-share.ss-col-4 .sns-buttons {
+  column-gap: 1.3333333333%;
 }
 .sns-share.ss-col-4 a {
   width: 24%;
 }
+.sns-share.ss-col-5 .sns-buttons {
+  column-gap: 1.25%;
+}
 .sns-share.ss-col-5 a {
   width: 19%;
+}
+.sns-share.ss-col-6 .sns-buttons {
+  column-gap: 0.8%;
 }
 .sns-share.ss-col-6 a {
   width: 16%;
@@ -1563,11 +1586,6 @@ img.emoji {
   flex-direction: column-reverse;
 }
 
-.sns-share-buttons {
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
-}
 .sns-share-buttons a .button-caption {
   font-size: 16px;
   margin-left: 10px;
@@ -2754,13 +2772,11 @@ label.screen-reader-text {
 /************************************
 ** フォーローボタウィジェット
 ************************************/
-.nwa .sns-follow-buttons {
-  flex-wrap: wrap;
-  justify-content: space-between;
+.nwa .sns-follow-buttons .sns-buttons {
+  column-gap: 1%;
 }
 .nwa .sns-follow-buttons a {
-  width: 49%;
-  margin-right: 0;
+  width: 48%;
 }
 
 .widget_mobile_text,
@@ -5993,15 +6009,9 @@ figcaption {
 /************************************
 ** SNSフォローボタン
 ************************************/
-.sns-follow-buttons {
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
 .sns-follow-buttons a {
   width: 40px;
   height: 40px;
-  margin-right: 8px;
-  margin-bottom: 8px;
   font-size: 30px;
   display: flex;
   align-items: center;
@@ -6482,19 +6492,20 @@ canvas, iframe, video,
 .author-box .sns-follow-message {
   display: none;
 }
+.author-box .sns-follow-buttons {
+  margin-bottom: 0;
+}
 .author-box .sns-follow-buttons a.follow-button {
   font-size: 18px;
-  width: 24px;
-  height: 24px;
-  margin-bottom: 4px;
-  margin-right: 4px;
+  width: 26px;
+  height: 26px;
   background-color: transparent;
   color: var(--cocoon-x-pallid-text-color);
   border: 1px solid var(--cocoon-basic-border-color);
   border-radius: 2px;
 }
 .author-box .sns-follow-buttons a.follow-button:hover {
-  background-color: var(--cocoon-xxx-thin-color);
+  opacity: 0.6;
 }
 .author-box .sns-follow-buttons a.follow-button .follow-count {
   display: none;
@@ -6535,12 +6546,8 @@ canvas, iframe, video,
 .nwa .author-box .author-description {
   text-align: left;
 }
-.nwa .author-box .sns-follow-buttons {
-  justify-content: center;
-}
 .nwa .author-box .sns-follow-buttons a {
   display: inline-block;
-  margin: 2px;
 }
 
 /************************************
@@ -7764,9 +7771,6 @@ div.fb-like-mobile {
   font-size: 2em;
 }
 
-.share-menu-content .sns-buttons {
-  justify-content: space-around;
-}
 .share-menu-content .sns-buttons .share-count {
   color: var(--cocoon-white-color);
 }
@@ -7777,9 +7781,6 @@ div.fb-like-mobile {
   display: none;
 }
 
-.follow-menu-content .sns-buttons {
-  justify-content: space-around;
-}
 .follow-menu-content .sns-buttons a {
   width: 24%;
 }
@@ -11228,17 +11229,20 @@ _:-ms-lang(x), .mc-circle {
     font-size: 14px;
     margin-left: 4px;
   }
+  .sns-share.ss-top.ss-col-6 .sns-buttons,
+  .sns-share.ss-bottom.ss-col-6 .sns-buttons {
+    column-gap: 0.75%;
+  }
   .sns-share.ss-top.ss-col-6 a,
   .sns-share.ss-bottom.ss-col-6 a {
-    width: 32%;
+    width: 32.5%;
   }
   .sns-follow-buttons {
-    flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 1%;
   }
   .sns-follow-buttons a {
     margin-right: 0;
-    width: 48%;
+    width: 49.5%;
   }
   /************************************
   ** 関連記事

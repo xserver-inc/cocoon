@@ -435,12 +435,14 @@ label.screen-reader-text{
 ************************************/
 .nwa{
   .sns-follow-buttons{
-    flex-wrap: wrap;
-    justify-content: space-between;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    .sns-buttons{
+      column-gap: 1%;
+    }
 
     a{
-      width: 49%;
-      margin-right: 0;
+      width: 48%;
     }
   }
 }

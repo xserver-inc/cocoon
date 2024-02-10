@@ -4,6 +4,12 @@
 .sns-buttons{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  row-gap: 10px;
+  column-gap: 6px;
+  margin-bottom: 2em;
+
 
   a{
     align-content: center;
@@ -14,12 +20,13 @@
     font-size: 18px;//
     justify-content: center;
     height: 45px;
-    margin-bottom: 8px;
+    // margin-bottom: 8px;
     position: relative;
     text-align: center;
     width: 32%;
     transition: $bgc_hover_anime;
     cursor: pointer;
+    margin: 0 !important;//スキンやカスタマイズ対策
     @include link_cancel(var(--cocoon-white-color));
 
     &:hover{
@@ -162,24 +169,49 @@
     width: 100%;
   }
 
-  &.ss-col-2 a{
-    width: 49%;
+  &.ss-col-2 {
+    .sns-buttons{
+      column-gap: 1%;
+    }
+    a{
+      width: 49.5%;
+    }
   }
 
-  &.ss-col-3 a{
-
+  &.ss-col-3 {
+    .sns-buttons{
+      column-gap: calc(1.5%/2);
+    }
+    a{
+      width: 32.5%;
+    }
   }
 
-  &.ss-col-4 a{
-    width: 24%;
+  &.ss-col-4 {
+    .sns-buttons{
+      column-gap: calc(4%/3);
+    }
+    a{
+      width: 24%;
+    }
   }
 
-  &.ss-col-5 a{
-    width: 19%;
+  &.ss-col-5 {
+    .sns-buttons{
+      column-gap: calc(5%/4);
+    }
+    a{
+      width: 19%;
+    }
   }
 
-  &.ss-col-6 a{
-    width: 16%;
+  &.ss-col-6 {
+    .sns-buttons{
+      column-gap: calc(4%/5);
+    }
+    a{
+      width: 16%;
+    }
   }
 
   %high_and_low{
@@ -223,9 +255,15 @@
 $sns_button_margin_bottom: 8px;
 
 .sns-share-buttons{
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
+  // flex-wrap: wrap;
+  // // justify-content: space-around;
+  // align-content: center;
+  // gap: 4px;
+
+  // &::after {
+  //   content: '';
+  //   width: 100%;
+  // }
 
   a{
     // width: 32%;

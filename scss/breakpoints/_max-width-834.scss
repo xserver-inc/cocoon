@@ -56,19 +56,26 @@ table {
   }
 }
 
-.sns-share.ss-top.ss-col-6 a,
-.sns-share.ss-bottom.ss-col-6 a {
-  width: 32%;
+.sns-share.ss-top.ss-col-6,
+.sns-share.ss-bottom.ss-col-6 {
+  .sns-buttons{
+    column-gap: calc(1.5%/2);
+  }
+  a {
+    width: 32.5%;
+  }
+
 }
 
 //フォローボタン
 .sns-follow-buttons {
-  flex-wrap: wrap;
-  justify-content: space-around;
+  // flex-wrap: wrap;
+  // justify-content: space-around;
+  gap: 1%;
 
   a {
     margin-right: 0;
-    width: 48%;
+    width: 49.5%;
   }
 }
 
