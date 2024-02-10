@@ -303,7 +303,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .twitch-button,
 #slide-in-sidebar .widget_author_box .author-box .twitch-button {
-  background-color: #6441A4;
+  background-color: var(--cocoon-twitch-color);
 }
 #sidebar .widget_author_box .author-box .rakuten-room-button,
 #slide-in-sidebar .widget_author_box .author-box .rakuten-room-button {
