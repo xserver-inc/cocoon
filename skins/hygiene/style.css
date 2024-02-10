@@ -575,11 +575,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .facebook-button,
 .author-box .sns-follow-buttons a.follow-button.facebook-button {
-  filter: drop-shadow(1px 1px 1px #3b5998)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-facebook-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-facebook-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-facebook-logo{
-  color: #3b5998;
+  color: var(--cocoon-facebook-color);
 }
 .bc-brand-color-white.sns-follow .hatebu-button,
 .author-box .sns-follow-buttons a.follow-button.hatebu-button {

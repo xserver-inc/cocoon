@@ -599,12 +599,12 @@ body.public-page,.content .main, .navi {
 
 .bc-brand-color.sns-share.ss-top .facebook-button, .bc-brand-color.sns-share.ss-bottom .facebook-button {
    background-color: #fff;
-   color: #3b5998;
-	border:solid 2px #3b5998;
+   color: var(--cocoon-facebook-color);
+	border:solid 2px var(--cocoon-facebook-color);
 }
 
 .bc-brand-color.sns-share.ss-top .facebook-button:hover, .bc-brand-color.sns-share.ss-bottom .facebook-button:hover {
-   background-color: #3b5998;
+   background-color: var(--cocoon-facebook-color);
    color: #fff;
 	opacity:1;
 }

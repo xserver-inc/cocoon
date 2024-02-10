@@ -685,7 +685,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.facebook-button {
-    color:#3b5998;
+    color:var(--cocoon-facebook-color);
 }
 
 .bc-brand-color a.hatebu-button {

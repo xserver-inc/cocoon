@@ -1379,14 +1379,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ facebook ■ */
 .author-box .facebook-button {
-	border: 1px solid #3b5998 !important;
-	color: #3b5998 !important;
+	border: 1px solid var(--cocoon-facebook-color) !important;
+	color: var(--cocoon-facebook-color) !important;
 }
 .author-box .facebook-button:after {
-	box-shadow: 0 0 0 2px #3b5998;
+	box-shadow: 0 0 0 2px var(--cocoon-facebook-color);
 }
 .author-box .facebook-button:hover {
-	background-color: #3b5998 !important;
+	background-color: var(--cocoon-facebook-color) !important;
 }
 
 /* ■ line ■ */

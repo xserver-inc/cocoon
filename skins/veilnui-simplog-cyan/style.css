@@ -259,7 +259,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .facebook-button,
 #slide-in-sidebar .widget_author_box .author-box .facebook-button {
-  background-color: #3B5998;
+  background-color: var(--cocoon-facebook-color);
 }
 #sidebar .widget_author_box .author-box .hatebu-button,
 #slide-in-sidebar .widget_author_box .author-box .hatebu-button {

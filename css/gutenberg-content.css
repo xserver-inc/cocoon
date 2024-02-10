@@ -1,7 +1,6 @@
 :root {
-  --cocoon-twitter-color: var(--cocoon-twitter-color);
-  --cocoon-facebook-color: #3b5998;
-  --cocoon-hatebu-color: #2c6ebd;
+  --cocoon-twitter-color: #000000;
+  --cocoon-facebook-color: #2c6ebd;
   --cocoon-google-plus-color: #dd4b39;
   --cocoon-pocket-color: #ef4056;
   --cocoon-line-color: #00c300;

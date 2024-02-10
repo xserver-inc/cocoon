@@ -536,7 +536,7 @@ article .tag-link:hover{
 	background-color: var(--cocoon-twitter-color) !important;
 }
 .author-box .facebook-button {
-	background-color: #3b5998 !important;
+	background-color: var(--cocoon-facebook-color) !important;
 }
 .author-box .hatebu-button {
 	background-color: #2c6ebd !important;
