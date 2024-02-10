@@ -689,6 +689,14 @@ a.tag-link {
     color: var(--cocoon-twitter-color);
 }
 
+.bc-brand-color a.mastodon-button {
+    color:var(--cocoon-mastodon-color);
+}
+
+.bc-brand-color a.misskey-button {
+    color:var(--cocoon-misskey-color);
+}
+
 .bc-brand-color a.facebook-button {
     color:var(--cocoon-facebook-color);
 }
