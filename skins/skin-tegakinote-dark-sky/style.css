@@ -1572,72 +1572,88 @@ pre {
 	color: var(--cocoon-twitter-color);
 }
 
+.bc-brand-color.sns-share .mastodon-button, .bc-brand-color.sns-follow .mastodon-button {
+	color: var( --cocoon-mastodon-color);
+}
+
+.bc-brand-color.sns-share .bluesky-button, .bc-brand-color.sns-follow .bluesky-button {
+	color: var( --cocoon-bluesky-color);
+}
+
+.bc-brand-color.sns-share .misskey-button, .bc-brand-color.sns-follow .misskey-button {
+	color: var( --cocoon-misskey-color);
+}
+
 .bc-brand-color.sns-share .facebook-button, .bc-brand-color.sns-follow .facebook-button {
-	color: #3b5998;
+	color: var( --cocoon-facebook-color);
 }
 
 .bc-brand-color.sns-share .hatebu-button, .bc-brand-color.sns-follow .hatebu-button {
-	color: #2c6ebd;
+	color: var( --cocoon-hatebu-color);
 }
 
 .bc-brand-color.sns-share .google-plus-button, .bc-brand-color.sns-follow .google-plus-button {
-	color: #dd4b39;
+	color: var( --cocoon-google-plus-color);
 }
 
 .bc-brand-color.sns-share .pocket-button, .bc-brand-color.sns-follow .pocket-button {
-	color: #ef4056;
+	color: var( --cocoon-pocket-color);
 }
 
 .bc-brand-color.sns-share .line-button, .bc-brand-color.sns-follow .line-button {
-	color: #00c300;
+	color: var( --cocoon-line-color);
 }
 
 .bc-brand-color.sns-share .website-button, .bc-brand-color.sns-follow .website-button {
-	color: #002561;
+	color: var( --cocoon-website-color);
 }
 
 .bc-brand-color.sns-share .instagram-button, .bc-brand-color.sns-follow .instagram-button {
-	color: #405de6;
+	color: var( --cocoon-instagram-color);
 }
 
 .bc-brand-color.sns-share .pinterest-button, .bc-brand-color.sns-follow .pinterest-button {
-	color: #bd081c;
+	color: var( --cocoon-pinterest-color);
 }
 
 .bc-brand-color.sns-share .youtube-button, .bc-brand-color.sns-follow .youtube-button {
-	color: #cd201f;
+	color: var( --cocoon-youtube-color);
 }
 
 .bc-brand-color.sns-share .linkedin-button, .bc-brand-color.sns-follow .linkedin-button {
-	color: #0077b5;
+	color: var( --cocoon-linkedin-color);
 }
 
 .bc-brand-color.sns-share .note-button, .bc-brand-color.sns-follow .note-button {
-	color: rgba(var(--black-color), 1);
+	color: var( --cocoon-note-color);
 }
 
 .bc-brand-color.sns-share .soundcloud-button, .bc-brand-color.sns-follow .soundcloud-button {
-	color: #ff8800;
+	color: var( --cocoon-soundcloud-color);
 }
 
 .bc-brand-color.sns-share .flickr-button, .bc-brand-color.sns-follow .flickr-button {
-	color: #111;
+	color: var( --cocoon-flickr-color);
 }
 
 .bc-brand-color.sns-share .amazon-button, .bc-brand-color.sns-follow .amazon-button {
-	color: #ff9900;
+	color: var( --cocoon-amazon-color);
 }
 
 .bc-brand-color.sns-share .twitch-button, .bc-brand-color.sns-follow .twitch-button {
-	color: #6441a4;
+	color: var( --cocoon-twitch-color);
 }
 
 .bc-brand-color.sns-share .rakuten-room-button, .bc-brand-color.sns-follow .rakuten-room-button {
-	color: #c61e79;
+	color: var( --cocoon-rakuten-room-color);
 }
 
 .bc-brand-color.sns-share .slack-button, .bc-brand-color.sns-follow .slack-button {
-	color: #e01563;
+	color: var( --cocoon-slack-color);
+}
+
+.bc-brand-color.sns-share .github-button, .bc-brand-color.sns-follow .github-button {
+	color: var( --cocoon-github-color);
 }
 
 .bc-brand-color.sns-share .github-button, .bc-brand-color.sns-follow .github-button {
@@ -1645,15 +1661,15 @@ pre {
 }
 
 .bc-brand-color.sns-share .codepen-button, .bc-brand-color.sns-follow .codepen-button {
-	color: rgba(var(--black-color), 1);
+	color: var( --cocoon-codepen-color);
 }
 
 .bc-brand-color.sns-share .feedly-button, .bc-brand-color.sns-follow .feedly-button {
-	color: #2bb24c;
+	color: var( --cocoon-feedly-color);
 }
 
 .bc-brand-color.sns-share .rss-button, .bc-brand-color.sns-follow .rss-button {
-	color: #f26522;
+	color: var( --cocoon-rss-color);
 }
 
 /* ブランドカラー(白抜き) */
@@ -1669,88 +1685,100 @@ pre {
 	-webkit-text-stroke: 1px var(--cocoon-twitter-color);
 }
 
+.bc-brand-color-white.sns-share .mastodon-button, .bc-brand-color-white.sns-follow .mastodon-button {
+	-webkit-text-stroke: 1px var( --cocoon-mastodon-color);
+}
+
+.bc-brand-color-white.sns-share .bluesky-button, .bc-brand-color-white.sns-follow .bluesky-button {
+	-webkit-text-stroke: 1px var( --cocoon-bluesky-color);
+}
+
+.bc-brand-color-white.sns-share .misskey-button, .bc-brand-color-white.sns-follow .misskey-button {
+	-webkit-text-stroke: 1px var( --cocoon-misskey-color);
+}
+
 .bc-brand-color-white.sns-share .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
-	-webkit-text-stroke: 1px #3b5998;
+	-webkit-text-stroke: 1px var( --cocoon-facebook-color);
 }
 
 .bc-brand-color-white.sns-share .hatebu-button, .bc-brand-color-white.sns-follow .hatebu-button {
-	-webkit-text-stroke: 1px #2c6ebd;
+	-webkit-text-stroke: 1px var( --cocoon-hatebu-color);
 }
 
 .bc-brand-color-white.sns-share .google-plus-button, .bc-brand-color-white.sns-follow .google-plus-button {
-	-webkit-text-stroke: 1px #dd4b39;
+	-webkit-text-stroke: 1px  var( --cocoon-google-plus-color);
 }
 
 .bc-brand-color-white.sns-share .pocket-button, .bc-brand-color-white.sns-follow .pocket-button {
-	-webkit-text-stroke: 1px #ef4056;
+	-webkit-text-stroke: 1px var( --cocoon-pocket-color);
 }
 
 .bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
-	-webkit-text-stroke: 1px #00c300;
+	-webkit-text-stroke: 1px var( --cocoon-line-color);
 }
 
 .bc-brand-color-white.sns-share .website-button, .bc-brand-color-white.sns-follow .website-button {
-	-webkit-text-stroke: 1px #002561;
+	-webkit-text-stroke: 1px var( --cocoon-website-color);
 }
 
 .bc-brand-color-white.sns-share .instagram-button, .bc-brand-color-white.sns-follow .instagram-button {
-	-webkit-text-stroke: 1px #405de6;
+	-webkit-text-stroke: 1px var( --cocoon-instagram-color);
 }
 
 .bc-brand-color-white.sns-share .pinterest-button, .bc-brand-color-white.sns-follow .pinterest-button {
-	-webkit-text-stroke: 1px #bd081c;
+	-webkit-text-stroke: 1px var( --cocoon-pinterest-color);
 }
 
 .bc-brand-color-white.sns-share .youtube-button, .bc-brand-color-white.sns-follow .youtube-button {
-	-webkit-text-stroke: 1px #cd201f;
+	-webkit-text-stroke: 1px var( --cocoon-youtube-color);
 }
 
 .bc-brand-color-white.sns-share .linkedin-button, .bc-brand-color-white.sns-follow .linkedin-button {
-	-webkit-text-stroke: 1px #0077b5;
+	-webkit-text-stroke: 1px var( --cocoon-linkedin-color);
 }
 
 .bc-brand-color-white.sns-share .note-button, .bc-brand-color-white.sns-follow .note-button {
-	-webkit-text-stroke: 1px rgba(var(--black-color), 1);
+	-webkit-text-stroke: 1px var( --cocoon-note-color);
 }
 
 .bc-brand-color-white.sns-share .soundcloud-button, .bc-brand-color-white.sns-follow .soundcloud-button {
-	-webkit-text-stroke: 1px #ff8800;
+	-webkit-text-stroke: 1px var( --cocoon-soundcloud-color);
 }
 
 .bc-brand-color-white.sns-share .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
-	-webkit-text-stroke: 1px #111;
+	-webkit-text-stroke: 1px var( --cocoon-flickr-color);
 }
 
 .bc-brand-color-white.sns-share .amazon-button, .bc-brand-color-white.sns-follow .amazon-button {
-	-webkit-text-stroke: 1px #ff9900;
+	-webkit-text-stroke: 1px var( --cocoon-amazon-color);
 }
 
 .bc-brand-color-white.sns-share .twitch-button, .bc-brand-color-white.sns-follow .twitch-button {
-	-webkit-text-stroke: 1px #6441a4;
+	-webkit-text-stroke: 1px var( --cocoon-twitch-color);
 }
 
 .bc-brand-color-white.sns-share .rakuten-room-button, .bc-brand-color-white.sns-follow .rakuten-room-button {
-	-webkit-text-stroke: 1px #c61e79;
+	-webkit-text-stroke: 1px var( --cocoon-rakuten-room-color);
 }
 
 .bc-brand-color-white.sns-share .slack-button, .bc-brand-color-white.sns-follow .slack-button {
-	-webkit-text-stroke: 1px #e01563;
+	-webkit-text-stroke: 1px var( --cocoon-slack-color);
 }
 
 .bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button {
-	-webkit-text-stroke: 1px #4078c0;
+	-webkit-text-stroke: 1px var( --cocoon-github-color);
 }
 
 .bc-brand-color-white.sns-share .codepen-button, .bc-brand-color-white.sns-follow .codepen-button {
-	-webkit-text-stroke: 1px rgba(var(--black-color), 1);
+	-webkit-text-stroke: 1px var( --cocoon-codepen-color);
 }
 
 .bc-brand-color-white.sns-share .feedly-button, .bc-brand-color-white.sns-follow .feedly-button {
-	-webkit-text-stroke: 1px #2bb24c;
+	-webkit-text-stroke: 1px var( --cocoon-feedly-color);
 }
 
 .bc-brand-color-white.sns-share .rss-button, .bc-brand-color-white.sns-follow .rss-button {
-	-webkit-text-stroke: 1px #f26522;
+	-webkit-text-stroke: 1px var( --cocoon-rss-color);
 }
 
 /* メインコンテンツ用 */
