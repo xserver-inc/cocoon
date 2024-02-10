@@ -311,7 +311,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .github-button,
 #slide-in-sidebar .widget_author_box .author-box .github-button {
-  background-color: #4078C0;
+  background-color: var(--cocoon-github-color);
 }
 #sidebar .widget_author_box .author-box .codepen-button,
 #slide-in-sidebar .widget_author_box .author-box .codepen-button {

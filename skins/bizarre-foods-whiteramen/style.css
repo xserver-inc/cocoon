@@ -742,7 +742,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.github-button {
-    color: #4078c0;
+    color: var(--cocoon-github-color);
 }
 
 .bc-brand-color a.feedly-button {

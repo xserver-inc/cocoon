@@ -549,13 +549,13 @@ table th {
 }
 /* Github */
 .bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button{
-	border: 1px solid #4078c0; /* 枠線色 */
-	color: #4078c0; /* 文字色 */
+	border: 1px solid var(--cocoon-github-color); /* 枠線色 */
+	color: var(--cocoon-github-color); /* 文字色 */
 }
 .bc-brand-color-white.sns-share .github-button:hover, .bc-brand-color-white.sns-follow .github-button:hover,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.github-button{
-	background-color: #4078c0; /* 枠線色 */
+	background-color: var(--cocoon-github-color); /* 枠線色 */
 	color: #fff; /* 文字色 */
 }
 /* Amazon */

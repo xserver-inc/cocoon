@@ -1657,7 +1657,7 @@ pre {
 }
 
 .bc-brand-color.sns-share .github-button, .bc-brand-color.sns-follow .github-button {
-	color: #4078c0;
+	color: var(--cocoon-github-color);
 }
 
 .bc-brand-color.sns-share .codepen-button, .bc-brand-color.sns-follow .codepen-button {

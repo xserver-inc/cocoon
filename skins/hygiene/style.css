@@ -679,11 +679,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .github-button,
 .author-box .sns-follow-buttons a.follow-button.github-button{
-  filter: drop-shadow(1px 1px 1px #4078c0)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-github-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-github-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-github-logo{
-  color: #4078c0;
+  color: var(--cocoon-github-color);
 }
 .bc-brand-color-white.sns-follow .codepen-button,
 .author-box .sns-follow-buttons a.follow-button.codepen-button{
