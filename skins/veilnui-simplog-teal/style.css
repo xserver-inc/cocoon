@@ -200,7 +200,7 @@ body {
 }
 #sidebar .widget_sns_follow_buttons .sns-follow .rss-button:hover,
 #slide-in-sidebar .widget_sns_follow_buttons .sns-follow .rss-button:hover {
-  background-color: #F26522;
+  background-color: var(--cocoon-rss-color);
   opacity: 0.7;
 }
 #sidebar .widget_navi_entries a,
@@ -323,7 +323,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .rss-button,
 #slide-in-sidebar .widget_author_box .author-box .rss-button {
-  background-color: #F26522;
+  background-color: var(--cocoon-rss-color);
 }
 #sidebar .widget_item_ranking .border-element,
 #slide-in-sidebar .widget_item_ranking .border-element {

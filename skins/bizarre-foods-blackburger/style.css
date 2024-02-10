@@ -745,7 +745,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.rss-button {
-    color:#f26522;
+    color:var(--cocoon-rss-color);
 }
 
 .sns-share-message, .sns-follow-message,span.related-entry-main-heading.main-caption,.comment-title{

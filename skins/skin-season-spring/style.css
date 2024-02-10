@@ -584,7 +584,7 @@ article .tag-link:hover{
 	background-color: var(--cocoon-feedly-color) !important;
 }
 .author-box .rss-button {
-	background-color: #f26522 !important;
+	background-color: var(--cocoon-rss-color) !important;
 }
 /************************************
 ** SNS

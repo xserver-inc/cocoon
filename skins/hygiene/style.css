@@ -703,11 +703,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .rss-button,
 .author-box .sns-follow-buttons a.follow-button.rss-button {
-  filter: drop-shadow(1px 1px 1px #f26522)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-rss-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-rss-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-rss-logo{
-  color: #f26522;
+  color: var(--cocoon-rss-color);
 }
 
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover span{
