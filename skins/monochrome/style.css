@@ -1439,14 +1439,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ note ■ */
 .author-box .note-button {
-	border: 1px solid #41c9b4 !important;
-	color: #41c9b4 !important;
+	border: 1px solid var(--cocoon-note-color) !important;
+	color: var(--cocoon-note-color) !important;
 }
 .author-box .note-button:after {
-	box-shadow: 0 0 0 2px #41c9b4;
+	box-shadow: 0 0 0 2px var(--cocoon-note-color);
 }
 .author-box .note-button:hover {
-	background-color: #41c9b4 !important;
+	background-color: var(--cocoon-note-color) !important;
 }
 
 /* ■ hatebu ■ */

@@ -555,7 +555,7 @@ article .tag-link:hover {
 	background-color: var(--cocoon-linkedin-color) !important;
 }
 .author-box .note-button {
-	background-color: #41c9b4 !important;
+	background-color: var(--cocoon-note-color) !important;
 }
 .author-box .flickr-button {
 	background-color: #0063dc !important;

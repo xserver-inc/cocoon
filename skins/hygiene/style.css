@@ -623,11 +623,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .note-button,
 .author-box .sns-follow-buttons a.follow-button.note-button{
-  filter: drop-shadow(1px 1px 1px #41c9b4);
+  filter: drop-shadow(1px 1px 1px var(--cocoon-note-color));
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-note-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-note-logo{
-  color: #41c9b4;
+  color: var(--cocoon-note-color);
 }
 .bc-brand-color-white.sns-follow .flickr-button,
 .author-box .sns-follow-buttons a.follow-button.flickr-button{

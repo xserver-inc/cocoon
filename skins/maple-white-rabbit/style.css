@@ -477,7 +477,7 @@ table th {
 
 /* LINE */
 .bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
-	border: 1px solid #41c9b4; /* 枠線色 */
+	border: 1px solid var(--cocoon-note-color); /* 枠線色 */
 	color: #03c8a8; /* 文字色 */
 }
 .bc-brand-color-white.sns-share .line-button:hover, .bc-brand-color-white.sns-follow .line-button:hover,
@@ -485,7 +485,7 @@ table th {
 .bc-brand-color.sns-share .line-button, .bc-brand-color.sns-follow .line-button,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.line-button{
-	background-color: #41c9b4;
+	background-color: var(--cocoon-note-color);
 	color: #fff;
 }
 /* コピーボタン */

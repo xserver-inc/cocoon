@@ -710,7 +710,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.note-button {
-    color: #41c9b4;
+    color: var(--cocoon-note-color);
 }
 
 .bc-brand-color a.flickr-button {
