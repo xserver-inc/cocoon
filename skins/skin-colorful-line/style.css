@@ -1134,14 +1134,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ github ■ */
 .author-box .github-button {
-  border: 1px solid #333 !important;
-  color: #333 !important;
+  border: 1px solid var(--cocoon-github-color) !important;
+  color: var(--cocoon-github-color) !important;
 }
 .author-box .github-button:after{
-  box-shadow: 0 0 0 2px #333;
+  box-shadow: 0 0 0 2px var(--cocoon-github-color);
 }
 .author-box .github-button:hover{
-  background-color: #333 !important;
+  background-color: var(--cocoon-github-color) !important;
 }
 
 /* ■ codepen ■ */
