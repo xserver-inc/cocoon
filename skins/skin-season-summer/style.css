@@ -550,7 +550,7 @@ article .tag-link:hover {
 	background-color: var(--cocoon-hatebu-color) !important;
 }
 .author-box .google-plus-button {
-	background-color: #dd4b39 !important;
+	background-color: var(--cocoon-google-plus-color) !important;
 }
 .author-box .instagram-button {
 	background: #e1306c !important;

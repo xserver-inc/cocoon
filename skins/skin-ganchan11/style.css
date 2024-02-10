@@ -622,12 +622,12 @@ body.public-page,.content .main, .navi {
 
 .bc-brand-color.sns-share.ss-top .google-plus-button, .bc-brand-color.sns-share.ss-bottom .google-plus-button {
 	background-color: #fff;
-   color: #dd4b39;
-	border:solid 2px #dd4b39;
+   color: var(--cocoon-google-plus-color);
+	border:solid 2px var(--cocoon-google-plus-color);
 }
 
 .bc-brand-color.sns-share.ss-top .google-plus-button:hover, .bc-brand-color.sns-share.ss-bottom .google-plus-button:hover {
-   background-color: #dd4b39;
+   background-color: var(--cocoon-google-plus-color);
    color: #fff;
 	opacity:1;
 }

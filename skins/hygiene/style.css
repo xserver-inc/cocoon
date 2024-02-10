@@ -591,11 +591,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .google-plus-button,
 .author-box .sns-follow-buttons a.follow-button.google-plus-button {
-  filter: drop-shadow(1px 1px 1px #dd4b39)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-google-plus-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-google-plus-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-google-plus-logo{
-  color: #dd4b39;
+  color: var(--cocoon-google-plus-color);
 }
 .bc-brand-color-white.sns-follow .instagram-button,
 .author-box .sns-follow-buttons a.follow-button.instagram-button{
