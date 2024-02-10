@@ -315,7 +315,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .codepen-button,
 #slide-in-sidebar .widget_author_box .author-box .codepen-button {
-  background-color: #333333;
+  background-color: var(--cocoon-codepen-color);
 }
 #sidebar .widget_author_box .author-box .feedly-button,
 #slide-in-sidebar .widget_author_box .author-box .feedly-button {

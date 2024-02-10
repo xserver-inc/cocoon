@@ -1146,14 +1146,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ codepen ■ */
 .author-box .codepen-button {
-  border: 1px solid #333 !important;
-  color: #333 !important;
+  border: 1px solid var(--cocoon-codepen-color) !important;
+  color: var(--cocoon-codepen-color) !important;
 }
 .author-box .codepen-button:after{
-  box-shadow: 0 0 0 2px #333;
+  box-shadow: 0 0 0 2px var(--cocoon-codepen-color);
 }
 .author-box .codepen-button:hover{
-  background-color: #333 !important;
+  background-color: var(--cocoon-codepen-color) !important;
 }
 
 /* ■ soundcloud ■ */
