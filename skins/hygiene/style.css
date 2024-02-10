@@ -611,7 +611,7 @@ border-bottom:4px solid #5572ff;
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-youtube-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-youtube-logo{
-  color: #cd201f;
+  color: var(--cocoon-youtube-color:)
 }
 .bc-brand-color-white.sns-follow .youtube-button,
 .author-box .sns-follow-buttons a.follow-button.linkedin-button{
