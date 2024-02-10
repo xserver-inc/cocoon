@@ -663,11 +663,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .rakuten-room-button,
 .author-box .sns-follow-buttons a.follow-button.rakuten-room-button{
-  filter: drop-shadow(1px 1px 1px #c61e79);
+  filter: drop-shadow(1px 1px 1px var(--cocoon-rakuten-room-color));
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-rakuten-room-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-rakuten-room-logo{
-  color: #c61e79;
+  color: var(--cocoon-rakuten-room-color);
 }
 .bc-brand-color-white.sns-follow .slack-button,
 .author-box .sns-follow-buttons a.follow-button.slack-button{

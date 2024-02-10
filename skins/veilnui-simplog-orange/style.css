@@ -307,7 +307,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .rakuten-room-button,
 #slide-in-sidebar .widget_author_box .author-box .rakuten-room-button {
-  background-color: #C61E79;
+  background-color: var(--cocoon-rakuten-room-color);
 }
 #sidebar .widget_author_box .author-box .github-button,
 #slide-in-sidebar .widget_author_box .author-box .github-button {

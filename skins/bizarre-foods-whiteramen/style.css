@@ -734,7 +734,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.rakuten-room-button {
-    color: #c61e79;
+    color: var(--cocoon-rakuten-room-color);
 }
 
 .bc-brand-color a.slack-button {
