@@ -1158,14 +1158,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ soundcloud ■ */
 .author-box .soundcloud-button {
-  border: 1px solid #ff8800 !important;
-  color: #ff8800 !important;
+  border: 1px solid var(--cocoon-soundcloud-color) !important;
+  color: var(--cocoon-soundcloud-color) !important;
 }
 .author-box .soundcloud-button:after{
-  box-shadow: 0 0 0 2px #ff8800;
+  box-shadow: 0 0 0 2px var(--cocoon-soundcloud-color);
 }
 .author-box .soundcloud-button:hover{
-  background-color: #ff8800 !important;
+  background-color: var(--cocoon-soundcloud-color) !important;
 }
 
 /* ■ pocket ■ */
