@@ -1122,14 +1122,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ slack ■ */
 .author-box .slack-button {
-  border: 1px solid #e01563 !important;
-  color: #e01563 !important;
+  border: 1px solid var(--cocoon-slack-color) !important;
+  color: var(--cocoon-slack-color) !important;
 }
 .author-box .slack-button:after{
-  box-shadow: 0 0 0 2px #e01563;
+  box-shadow: 0 0 0 2px var(--cocoon-slack-color);
 }
 .author-box .slack-button:hover{
-  background-color: #e01563 !important;
+  background-color: var(--cocoon-slack-color) !important;
 }
 
 /* ■ github ■ */

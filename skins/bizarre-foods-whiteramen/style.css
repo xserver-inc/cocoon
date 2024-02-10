@@ -738,7 +738,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.slack-button {
-    color: #e01563;
+    color: var(--cocoon-slack-color);
 }
 
 .bc-brand-color a.github-button {

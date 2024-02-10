@@ -572,7 +572,7 @@ article .tag-link:hover{
 	background-color: #c42e7f !important;
 }
 .author-box .slack-button {
-	background-color: #e01563 !important;
+	background-color: var(--cocoon-slack-color) !important;
 }
 .author-box .github-button {
 	background-color: #333 !important;
