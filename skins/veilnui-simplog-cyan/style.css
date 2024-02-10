@@ -283,7 +283,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .flickr-button,
 #slide-in-sidebar .widget_author_box .author-box .flickr-button {
-  background-color: #111111;
+  background-color: var(--cocoon-flickr-color);
 }
 #sidebar .widget_author_box .author-box .pinterest-button,
 #slide-in-sidebar .widget_author_box .author-box .pinterest-button {

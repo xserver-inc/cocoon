@@ -709,7 +709,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.flickr-button {
-    color: #111;
+    color: var(--cocoon-flickr-color);
 }
 
 .bc-brand-color a.pinterest-button {
