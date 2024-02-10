@@ -636,12 +636,12 @@ body.public-page,.content .main, .navi {
 
 .bc-brand-color.sns-share.ss-top .pocket-button, .bc-brand-color.sns-share.ss-bottom .pocket-button {
   background-color: #fff;
-   color: #ef4056;
-  border:solid 2px #ef4056;
+   color: var(--cocoon-pocket-color);
+  border:solid 2px var(--cocoon-pocket-color);
 }
 
 .bc-brand-color.sns-share.ss-top .pocket-button:hover, .bc-brand-color.sns-share.ss-bottom .pocket-button:hover {
-   background-color: #ef4056;
+   background-color: var(--cocoon-pocket-color);
    color: #fff;
   opacity:1;
 }

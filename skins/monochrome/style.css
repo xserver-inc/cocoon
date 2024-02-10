@@ -1583,14 +1583,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ pocket ■ */
 .author-box .pocket-button {
-	border: 1px solid #ef4056 !important;
-	color: #ef4056 !important;
+	border: 1px solid var(--cocoon-pocket-color) !important;
+	color: var(--cocoon-pocket-color) !important;
 }
 .author-box .pocket-button:after {
-	box-shadow: 0 0 0 2px #ef4056;
+	box-shadow: 0 0 0 2px var(--cocoon-pocket-color);
 }
 .author-box .pocket-button:hover {
-	background-color: #ef4056 !important;
+	background-color: var(--cocoon-pocket-color) !important;
 }
 
 /* ■ Font Awesome5用 ■ */

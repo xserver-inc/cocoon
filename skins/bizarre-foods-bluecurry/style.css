@@ -717,7 +717,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.pocket-button {
-    color:#ef4056;
+    color:var(--cocoon-pocket-color);
 }
 
 .bc-brand-color a.line-button {
