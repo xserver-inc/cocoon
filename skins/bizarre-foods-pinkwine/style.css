@@ -697,7 +697,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.youtube-button {
-    color: #cd201f;
+    color: var(--cocoon-youtube-color);
 }
 
 .bc-brand-color a.linkedin-button {

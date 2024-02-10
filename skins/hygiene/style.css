@@ -607,11 +607,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .youtube-button,
 .author-box .sns-follow-buttons a.follow-button.youtube-button{
-  filter: drop-shadow(1px 1px 1px #cd201f)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-youtube-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-youtube-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-youtube-logo{
-  color: #cd201f;
+  color: var(--cocoon-youtube-color);
 }
 .bc-brand-color-white.sns-follow .youtube-button,
 .author-box .sns-follow-buttons a.follow-button.linkedin-button{
