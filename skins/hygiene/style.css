@@ -583,11 +583,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .hatebu-button,
 .author-box .sns-follow-buttons a.follow-button.hatebu-button {
-  filter: drop-shadow(1px 1px 1px #2c6ebd)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-hatebu-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-hatebu-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-hatebu-logo{
-  color: #2c6ebd;
+  color: var(--cocoon-hatebu-color);
 }
 .bc-brand-color-white.sns-follow .google-plus-button,
 .author-box .sns-follow-buttons a.follow-button.google-plus-button {

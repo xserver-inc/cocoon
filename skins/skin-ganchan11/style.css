@@ -611,11 +611,11 @@ body.public-page,.content .main, .navi {
 
 .bc-brand-color.sns-share.ss-top .hatebu-button, .bc-brand-color.sns-share.ss-bottom .hatebu-button {
 	background-color: #fff;
-   color: #2c6ebd;
-	border:solid 2px #2c6ebd;
+   color: var(--cocoon-hatebu-color);
+	border:solid 2px var(--cocoon-hatebu-color);
 }
 .bc-brand-color.sns-share.ss-top .hatebu-button:hover, .bc-brand-color.sns-share.ss-bottom .hatebu-button:hover {
-   background-color: #2c6ebd;
+   background-color: var(--cocoon-hatebu-color);
    color: #fff;
 	opacity:1;
 }

@@ -263,7 +263,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .hatebu-button,
 #slide-in-sidebar .widget_author_box .author-box .hatebu-button {
-  background-color: #2C6EBD;
+  background-color: var(--cocoon-hatebu-color);
 }
 #sidebar .widget_author_box .author-box .instagram-button,
 #slide-in-sidebar .widget_author_box .author-box .instagram-button {

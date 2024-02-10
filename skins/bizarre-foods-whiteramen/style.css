@@ -694,7 +694,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.hatebu-button {
-    color:#2c6ebd;
+    color:var(--cocoon-hatebu-color);
 }
 
 .bc-brand-color a.instagram-button {
