@@ -599,11 +599,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .instagram-button,
 .author-box .sns-follow-buttons a.follow-button.instagram-button{
-  filter: drop-shadow(1px 1px 1px #405de6)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-instagram-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-instagram-new,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-instagram-new{
-  color: #405de6;
+  color: var(--cocoon-instagram-color);
 }
 .bc-brand-color-white.sns-follow .youtube-button,
 .author-box .sns-follow-buttons a.follow-button.youtube-button{

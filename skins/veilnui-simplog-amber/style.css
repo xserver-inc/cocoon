@@ -267,7 +267,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .instagram-button,
 #slide-in-sidebar .widget_author_box .author-box .instagram-button {
-  background-color: #405DE6;
+  background-color: var(--cocoon-instagram-color);
 }
 #sidebar .widget_author_box .author-box .youtube-button,
 #slide-in-sidebar .widget_author_box .author-box .youtube-button {

@@ -693,7 +693,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.instagram-button {
-    color: #405de6;
+    color: var(--cocoon-instagram-color);
 }
 
 .bc-brand-color a.youtube-button {

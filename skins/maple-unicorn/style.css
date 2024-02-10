@@ -674,14 +674,14 @@ input[type="submit"] {
 /* flicker */
 .bc-brand-color-white.sns-share .flickr-button,
 .bc-brand-color-white.sns-follow .flickr-button {
-	color: #405de6;
-	border-color: #405de6;
+	color: var(--cocoon-instagram-color);
+	border-color: var(--cocoon-instagram-color);
 }
 .bc-brand-color-white.sns-share .flickr-button:hover, .bc-brand-color-white.sns-follow .flickr-button:hover,
 .bc-brand-color.sns-share .flickr-button, .bc-brand-color.sns-follow .flickr-button,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.flickr-button {
-	background-color: #405de6;
+	background-color: var(--cocoon-instagram-color);
 }
 
 /* Mastodon */
