@@ -285,7 +285,7 @@
   background: #f79901;
 }
 .shoplinkrakuten a {
-  background: #bf0000;
+  background: var(--cocoon-rakuten-color);
 }
 .shoplinkyahoo a {
   background: #e60033;
@@ -310,7 +310,7 @@
   background: #0074c1;
 }
 .shoplinkrakukobo a {
-  background: #bf0000;
+  background: var(--cocoon-rakuten-color);
 }
 .shoplinkbk1 a {
   background: #0085cd;

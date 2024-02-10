@@ -6819,7 +6819,7 @@ body.wp-admin {
   background: #f79901;
 }
 .admin-settings .demo .shoplinkrakuten a {
-  background: #bf0000;
+  background: var(--cocoon-rakuten-color);
 }
 .admin-settings .demo .shoplinkyahoo a {
   background: #e60033;
@@ -6844,7 +6844,7 @@ body.wp-admin {
   background: #0074c1;
 }
 .admin-settings .demo .shoplinkrakukobo a {
-  background: #bf0000;
+  background: var(--cocoon-rakuten-color);
 }
 .admin-settings .demo .shoplinkbk1 a {
   background: #0085cd;
@@ -15071,7 +15071,7 @@ body.wp-admin {
   background: #f79901;
 }
 .admin-settings .demo .shoplinkrakuten a {
-  background: #bf0000;
+  background: var(--cocoon-rakuten-color);
 }
 .admin-settings .demo .shoplinkyahoo a {
   background: #e60033;
@@ -15096,7 +15096,7 @@ body.wp-admin {
   background: #0074c1;
 }
 .admin-settings .demo .shoplinkrakukobo a {
-  background: #bf0000;
+  background: var(--cocoon-rakuten-color);
 }
 .admin-settings .demo .shoplinkbk1 a {
   background: #0085cd;
@@ -20207,7 +20207,7 @@ textarea[name=the_page_memo] {
 }
 
 .rakuten-badge {
-  background-color: #bf0000;
+  background-color: var(--cocoon-rakuten-color);
 }
 
 .moshimo-badge {

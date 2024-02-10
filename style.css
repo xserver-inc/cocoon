@@ -7198,7 +7198,7 @@ div.sbs-think:not(.not-nested-style) .speech-balloon::after {
 }
 
 .shoplinkrakuten a {
-  background: #bf0000;
+  background: var(--cocoon-rakuten-color);
 }
 
 .shoplinkyahoo a {
@@ -7231,7 +7231,7 @@ div.sbs-think:not(.not-nested-style) .speech-balloon::after {
 }
 
 .shoplinkrakukobo a {
-  background: #bf0000;
+  background: var(--cocoon-rakuten-color);
 }
 
 .shoplinkbk1 a {
