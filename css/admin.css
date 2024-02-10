@@ -1803,6 +1803,7 @@ body.wp-admin {
   align-content: center;
   row-gap: 10px;
   column-gap: 6px;
+  margin-top: 0.3em;
   margin-bottom: 2em;
 }
 .admin-settings .demo .sns-buttons a {
@@ -10055,6 +10056,7 @@ body.wp-admin {
   align-content: center;
   row-gap: 10px;
   column-gap: 6px;
+  margin-top: 0.3em;
   margin-bottom: 2em;
 }
 .admin-settings .demo .sns-buttons a {

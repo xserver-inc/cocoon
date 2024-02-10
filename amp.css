@@ -1354,6 +1354,7 @@ img.emoji {
   align-content: center;
   row-gap: 10px;
   column-gap: 6px;
+  margin-top: 0.3em;
   margin-bottom: 2em;
 }
 .sns-buttons a {
