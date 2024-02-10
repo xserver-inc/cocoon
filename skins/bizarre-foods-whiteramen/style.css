@@ -726,7 +726,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.line-button {
-    color:#00c300;
+    color:var(--cocoon-line-color);
 }
 
 .bc-brand-color a.amazon-button {

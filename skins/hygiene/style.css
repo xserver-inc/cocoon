@@ -647,11 +647,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .line-button,
 .author-box .sns-follow-buttons a.follow-button.line-button{
-  filter: drop-shadow(1px 1px 1px #00c300)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-line-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-line-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-line-logo{
-  color: #00c300;
+  color: var(--cocoon-line-color);
 }
 .bc-brand-color-white.sns-follow .amazon-button,
 .author-box .sns-follow-buttons a.follow-button.amazon-button {

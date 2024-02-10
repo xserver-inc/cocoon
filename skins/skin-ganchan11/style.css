@@ -646,12 +646,12 @@ body.public-page,.content .main, .navi {
 
 .bc-brand-color.sns-share.ss-top .line-button, .bc-brand-color.sns-share.ss-bottom .line-button {
 	background-color: #fff;
-   color: #00c300;
-	border:solid 2px #00c300;
+   color: var(--cocoon-line-color);
+	border:solid 2px var(--cocoon-line-color);
 }
 
 .bc-brand-color.sns-share.ss-top .line-button:hover, .bc-brand-color.sns-share.ss-bottom .line-button:hover {
-   background-color: #00c300;
+   background-color: var(--cocoon-line-color);
 	color: #fff;
 	opacity:1;
 }

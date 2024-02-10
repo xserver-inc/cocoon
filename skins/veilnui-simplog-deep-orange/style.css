@@ -291,7 +291,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .line-button,
 #slide-in-sidebar .widget_author_box .author-box .line-button {
-  background-color: #00C300;
+  background-color: var(--cocoon-line-color);
 }
 #sidebar .widget_author_box .author-box .slack-button,
 #slide-in-sidebar .widget_author_box .author-box .slack-button {

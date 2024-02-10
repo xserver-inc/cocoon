@@ -563,7 +563,7 @@ article .tag-link:hover{
 	background-color: #bd081c !important;
 }
 .author-box .line-button {
-	background-color: #00c300 !important;
+	background-color: var(--cocoon-line-color) !important;
 }
 .author-box .amazon-button {
 	background-color: #ff9900 !important;
