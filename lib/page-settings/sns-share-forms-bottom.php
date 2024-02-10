@@ -68,6 +68,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 <?php generate_checkbox_tag(OP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE, is_bottom_twitter_share_button_visible(), __( 'X（旧Twitter）', THEME_NAME )); ?>
               </li>
               <li>
+                <?php generate_checkbox_tag(OP_BOTTOM_MASTODON_SHARE_BUTTON_VISIBLE, is_bottom_mastodon_share_button_visible(), __( 'Mastodon', THEME_NAME )); ?>
+              </li>
+              <li>
+                <?php generate_checkbox_tag(OP_BOTTOM_MISSKEY_SHARE_BUTTON_VISIBLE, is_bottom_misskey_share_button_visible(), __( 'Misskey', THEME_NAME )); ?>
+              </li>
+              <li>
                 <?php generate_checkbox_tag(OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE, is_bottom_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
               </li>
               <li>

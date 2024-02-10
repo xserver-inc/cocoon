@@ -17,6 +17,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <a href="<?php echo esc_url(get_twitter_share_url()); ?>" class="sns-button share-button twitter-button twitter-share-button-sq x-corp-button x-corp-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Xでシェア', THEME_NAME ) ?>"><span class="social-icon icon-x-corp"></span><span class="button-caption"><?php _e( 'X', THEME_NAME ) ?></span><span class="share-count twitter-share-count x-share-count"><?php echo get_twitter_count(); ?></span></a>
     <?php endif; ?>
 
+    <?php if ( is_mastodon_share_button_visible($option) )://Mastodonボタンを表示するか ?>
+      <a href="<?php echo esc_url(get_mastodon_share_url()); ?>" class="sns-button share-button mastodon-button mastodon-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Mastodonでシェア', THEME_NAME ) ?>"><span class="social-icon icon-mastodon"></span><span class="button-caption"><?php _e( 'Mastodon', THEME_NAME ) ?></span><span class="share-count mastodon-share-count"><?php echo get_mastodon_count(); ?></span></a>
+    <?php endif; ?>
+
+    <?php if ( is_misskey_share_button_visible($option) )://Misskeyボタンを表示するか ?>
+      <a href="<?php echo esc_url(get_misskey_share_url()); ?>" class="sns-button share-button misskey-button misskey-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Misskeyでシェア', THEME_NAME ) ?>"><span class="social-icon icon-misskey"></span><span class="button-caption"><?php _e( 'Misskey', THEME_NAME ) ?></span><span class="share-count misskey-share-count"><?php echo get_misskey_count(); ?></span></a>
+    <?php endif; ?>
+
     <?php if ( is_facebook_share_button_visible($option) )://Facebookボタンを表示するか ?>
       <a href="<?php echo esc_url(get_facebook_share_url()); ?>" class="sns-button share-button facebook-button facebook-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Facebookでシェア', THEME_NAME ) ?>"><span class="social-icon icon-facebook"></span><span class="button-caption"><?php _e( 'Facebook', THEME_NAME ) ?></span><span class="share-count facebook-share-count"><?php echo get_facebook_count(); ?></span></a>
     <?php endif; ?>

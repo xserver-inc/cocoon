@@ -161,6 +161,20 @@ function fetch_facebook_count($url = null) {
 }
 endif;
 
+//Mastodonカウントの取得（取得方法が出てきた時・カスタマイズ用）
+if ( !function_exists( 'get_mastodon_count' ) ):
+function get_mastodon_count($url = null) {
+  return '';
+}
+endif;
+
+//Misskeyカウントの取得（取得方法が出てきた時・カスタマイズ用）
+if ( !function_exists( 'get_misskey_count' ) ):
+function get_misskey_count($url = null) {
+  return '';
+}
+endif;
+
 //Facebookカウントの取得
 if ( !function_exists( 'get_facebook_count' ) ):
 function get_facebook_count($url = null) {
@@ -481,6 +495,20 @@ function get_twitter_share_url(){
 }
 endif;
 
+//MastodonのシェアURLを取得
+if ( !function_exists( 'get_mastodon_share_url' ) ):
+function get_mastodon_share_url(){
+  return '//www.addtoany.com/add_to/mastodon?linkurl='.urlencode( get_share_page_url() ).'&linkname='.urlencode( get_share_page_title() );
+}
+endif;
+
+//MisskeyのシェアURLを取得
+if ( !function_exists( 'get_misskey_share_url' ) ):
+function get_misskey_share_url(){
+  return 'misskey-hub.net/share/?text='.urlencode( get_share_page_title() ).'&url='.urlencode( get_share_page_url() ).'&visibility=public&localOnly=0';
+}
+endif;
+
 //FacebookのシェアURLを取得
 if ( !function_exists( 'get_facebook_share_url' ) ):
 function get_facebook_share_url(){
@@ -564,6 +592,26 @@ function is_twitter_share_button_visible($option){
          (is_top_twitter_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
   return apply_filters('is_twitter_share_button_visible', $res, $option);
+}
+endif;
+
+//Mastodonシェアボタンを表示するか
+if ( !function_exists( 'is_mastodon_share_button_visible' ) ):
+function is_mastodon_share_button_visible($option){
+  $res = (is_bottom_mastodon_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_mastodon_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
+  return apply_filters('is_mastodon_share_button_visible', $res, $option);
+}
+endif;
+
+//Misskeyシェアボタンを表示するか
+if ( !function_exists( 'is_misskey_share_button_visible' ) ):
+function is_misskey_share_button_visible($option){
+  $res = (is_bottom_misskey_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_misskey_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
+  return apply_filters('is_misskey_share_button_visible', $res, $option);
 }
 endif;
 

@@ -13,6 +13,10 @@ update_theme_option(OP_SNS_BOTTOM_SHARE_BUTTONS_VISIBLE);
 update_theme_option(OP_SNS_BOTTOM_SHARE_MESSAGE);
 //Twitterシェアボタンの表示
 update_theme_option(OP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE);
+//Mastodonシェアボタンの表示
+update_theme_option(OP_BOTTOM_MASTODON_SHARE_BUTTON_VISIBLE);
+//Misskeyシェアボタンの表示
+update_theme_option(OP_BOTTOM_MISSKEY_SHARE_BUTTON_VISIBLE);
 //Facebookシェアボタンの表示
 update_theme_option(OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE);
 //はてなブックマークシェアボタンの表示

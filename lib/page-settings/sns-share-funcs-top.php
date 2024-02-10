@@ -35,6 +35,22 @@ function is_top_twitter_share_button_visible(){
 }
 endif;
 
+//Mastodonシェアボタンの表示
+define('OP_TOP_MASTODON_SHARE_BUTTON_VISIBLE', 'top_mastodon_share_button_visible');
+if ( !function_exists( 'is_top_mastodon_share_button_visible' ) ):
+function is_top_mastodon_share_button_visible(){
+  return get_theme_option(OP_TOP_MASTODON_SHARE_BUTTON_VISIBLE);
+}
+endif;
+
+//Misskeyシェアボタンの表示
+define('OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE', 'top_misskey_share_button_visible');
+if ( !function_exists( 'is_top_misskey_share_button_visible' ) ):
+function is_top_misskey_share_button_visible(){
+  return get_theme_option(OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE);
+}
+endif;
+
 //Facebookシェアボタンの表示
 define('OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE', 'top_facebook_share_button_visible');
 if ( !function_exists( 'is_top_facebook_share_button_visible' ) ):
