@@ -535,6 +535,15 @@ article .tag-link:hover{
 .author-box .x-corp-button {
 	background-color: var(--cocoon-twitter-color) !important;
 }
+.author-box .mastodon-button {
+	background-color: var(--cocoon-mastodon-color) !important;
+}
+.author-box .bluesky-button {
+	background-color: var(--cocoon-bluesky-color) !important;
+}
+.author-box .misskey-button {
+	background-color: var(--cocoon-misskey-color) !important;
+}
 .author-box .facebook-button {
 	background-color: var(--cocoon-facebook-color) !important;
 }
@@ -550,11 +559,17 @@ article .tag-link:hover{
 .author-box .youtube-button {
 	background-color: #ef1515 !important;
 }
+.author-box .tiktok-button {
+	background-color: var(--cocoon-tiktok-color) !important;
+}
 .author-box .linkedin-button {
 	background-color: var(--cocoon-linkedin-color) !important;
 }
 .author-box .note-button {
 	background-color: var(--cocoon-note-color) !important;
+}
+.author-box .soundcloud-button {
+	background-color: var(--cocoon-soundcloud-color) !important;
 }
 .author-box .flickr-button {
 	background-color: #0063dc !important;
@@ -567,6 +582,9 @@ article .tag-link:hover{
 }
 .author-box .amazon-button {
 	background-color: var(--cocoon-amazon-color) !important;
+}
+.author-box .twitch-button {
+	background-color: var(--cocoon-twitch-color) !important;
 }
 .author-box .rakuten-room-button {
 	background-color: #c42e7f !important;
