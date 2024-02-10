@@ -1427,14 +1427,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ pinterest ■ */
 .author-box .pinterest-button {
-	border: 1px solid #bd081c !important;
-	color: #bd081c !important;
+	border: 1px solid var(--cocoon-pinterest-color) !important;
+	color: var(--cocoon-pinterest-color) !important;
 }
 .author-box .pinterest-button:after {
-	box-shadow: 0 0 0 2px #bd081c;
+	box-shadow: 0 0 0 2px var(--cocoon-pinterest-color);
 }
 .author-box .pinterest-button:hover {
-	background-color: #bd081c !important;
+	background-color: var(--cocoon-pinterest-color) !important;
 }
 
 /* ■ note ■ */

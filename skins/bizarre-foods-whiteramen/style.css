@@ -718,7 +718,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.pinterest-button {
-    color: #bd081c;
+    color: var(--cocoon-pinterest-color);
 }
 
 .bc-brand-color a.pocket-button {

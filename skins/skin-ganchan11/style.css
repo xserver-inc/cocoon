@@ -672,12 +672,12 @@ body.public-page,.content .main, .navi {
 
 .bc-brand-color.sns-share.ss-top .pinterest-button, .bc-brand-color.sns-share.ss-bottom .pinterest-button {
 	background-color: #fff;
-   color: #bd081c;
-	border:solid 2px #bd081c;
+   color: var(--cocoon-pinterest-color);
+	border:solid 2px var(--cocoon-pinterest-color);
 }
 
 .bc-brand-color.sns-share.ss-top .pinterest-button:hover, .bc-brand-color.sns-share.ss-bottom .pinterest-button:hover {
-   background-color: #bd081c;
+   background-color: var(--cocoon-pinterest-color);
 	color: #fff;
 	opacity:1;
 }

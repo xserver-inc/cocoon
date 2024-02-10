@@ -463,7 +463,7 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-pinterest,
 .bc-brand-color.sns-share .sns-share-buttons a .share-count.pinterest-share-count{
-  filter: drop-shadow(1px 1px 1px #bd081c);
+  filter: drop-shadow(1px 1px 1px var(--cocoon-pinterest-color));
 }
 .pinterest-share-count::after {
   content: 'PIN';
@@ -639,11 +639,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .pinterest-button,
 .author-box .sns-follow-buttons a.follow-button.pinterest-button{
-  filter: drop-shadow(1px 1px 1px #bd081c)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-pinterest-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-pinterest-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-pinterest-logo{
-  color: #bd081c;
+  color: var(--cocoon-pinterest-color);
 }
 .bc-brand-color-white.sns-follow .line-button,
 .author-box .sns-follow-buttons a.follow-button.line-button{

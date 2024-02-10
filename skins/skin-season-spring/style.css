@@ -560,7 +560,7 @@ article .tag-link:hover{
 	background-color: #0063dc !important;
 }
 .author-box .pinterest-button {
-	background-color: #bd081c !important;
+	background-color: var(--cocoon-pinterest-color) !important;
 }
 .author-box .line-button {
 	background-color: var(--cocoon-line-color) !important;
