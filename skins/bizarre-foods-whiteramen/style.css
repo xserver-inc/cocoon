@@ -730,7 +730,7 @@ a.tag-link {
 }
 
 .bc-brand-color a.amazon-button {
-    color: #ff9900;
+    color: var(--cocoon-amazon-color);
 }
 
 .bc-brand-color a.rakuten-room-button {

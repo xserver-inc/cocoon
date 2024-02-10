@@ -1098,14 +1098,14 @@ table tr:nth-of-type(2n) {
 
 /* ■ amazon ■ */
 .author-box .amazon-button {
-  border: 1px solid #ff9900 !important;
-  color: #ff9900 !important;
+  border: 1px solid var(--cocoon-amazon-color) !important;
+  color: var(--cocoon-amazon-color) !important;
 }
 .author-box .amazon-button:after{
-  box-shadow: 0 0 0 2px #ff9900;
+  box-shadow: 0 0 0 2px var(--cocoon-amazon-color);
 }
 .author-box .amazon-button:hover{
-  background-color: #ff9900 !important;
+  background-color: var(--cocoon-amazon-color) !important;
 }
 
 /* ■ rakuten-room ■ */

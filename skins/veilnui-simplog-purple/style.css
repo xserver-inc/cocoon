@@ -299,7 +299,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .amazon-button,
 #slide-in-sidebar .widget_author_box .author-box .amazon-button {
-  background-color: #FF9900;
+  background-color: var(--cocoon-amazon-color);
 }
 #sidebar .widget_author_box .author-box .twitch-button,
 #slide-in-sidebar .widget_author_box .author-box .twitch-button {

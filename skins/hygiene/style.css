@@ -655,11 +655,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .amazon-button,
 .author-box .sns-follow-buttons a.follow-button.amazon-button {
-  filter: drop-shadow(1px 1px 1px #ff9900)
+  filter: drop-shadow(1px 1px 1px var(--cocoon-amazon-color))
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-amazon-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-amazon-logo{
-  color: #ff9900;
+  color: var(--cocoon-amazon-color);
 }
 .bc-brand-color-white.sns-follow .rakuten-room-button,
 .author-box .sns-follow-buttons a.follow-button.rakuten-room-button{
