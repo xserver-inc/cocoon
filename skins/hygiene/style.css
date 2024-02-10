@@ -559,11 +559,11 @@ border-bottom:4px solid #5572ff;
 }
 .bc-brand-color-white.sns-follow .website-button,
 .author-box .sns-follow-buttons a.follow-button.website-button{
-  filter: drop-shadow(1px 1px 1px #002561);
+  filter: drop-shadow(1px 1px 1px var(--cocoon-website-color));
 }
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-home-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-home-logo{
-  color: #002561;
+  color: var(--cocoon-website-color);
 }
 .bc-brand-color-white.sns-follow .x-corp-button,
 .author-box .sns-follow-buttons a.follow-button.x-corp-button{

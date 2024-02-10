@@ -251,7 +251,7 @@ body {
 }
 #sidebar .widget_author_box .author-box .website-button,
 #slide-in-sidebar .widget_author_box .author-box .website-button {
-  background-color: #002561;
+  background-color: var(--cocoon-website-color);
 }
 #sidebar .widget_author_box .author-box .x-corp-button,
 #slide-in-sidebar .widget_author_box .author-box .x-corp-button {
