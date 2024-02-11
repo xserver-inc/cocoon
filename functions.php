@@ -518,8 +518,8 @@ if ( !function_exists( 'add_reuse_block_menu_page' ) ):
 function add_reuse_block_menu_page() {
   if (is_admin()) {
     add_menu_page(
-      __( 'ブロックパターン', THEME_NAME ),
-      __( 'ブロックパターン', THEME_NAME ),
+      __( 'パターン', THEME_NAME ),
+      __( 'パターン', THEME_NAME ),
       'manage_options',
       'edit.php?post_type=wp_block',
       '',
