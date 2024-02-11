@@ -1029,7 +1029,7 @@ function get_info_list_shortcode($atts){
 endif;
 
 //ブロックパターン
-add_shortcode('reuse', 'get_block_pattern_shortcode');
+// add_shortcode('reuse', 'get_block_pattern_shortcode');
 add_shortcode('pattern', 'get_block_pattern_shortcode');
 if ( !function_exists( 'get_block_pattern_shortcode' ) ):
 function get_block_pattern_shortcode($atts) {
