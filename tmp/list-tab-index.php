@@ -16,7 +16,7 @@ $list_classes = get_index_list_classes();
 $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
 ?>
 
-<div id="index-tab-wrap" class="index-tab-wrap <?php echo get_front_page_type_class(); ?>">
+<div id="index-tab-wrap" class="index-tab-wrap list-wrap <?php echo get_front_page_type_class(); ?>">
   <input id="index-tab-1" type="radio" name="tab_item" checked>
   <?php for ($i=0; $i < count($cat_ids) && $i < $cat_count; $i++):
   $number = $i + 2; ?>

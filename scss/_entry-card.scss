@@ -6,7 +6,7 @@
   display: block;
   color: var(--cocoon-text-color);
   padding: 1.5%;
-  margin-bottom: 3%;
+  // margin-bottom: 3%;
   transition: $bgc_hover_anime;
 
   &:hover {
@@ -130,7 +130,8 @@
 .fpt-columns{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: calc(1%/2);
 }
 
 .post-comment-count .comment-icon{
@@ -140,15 +141,29 @@
 /************************************
 ** エントリーカードタイプ
 ************************************/
-.ect-vertical-card{
+//基本形
+.list{
   display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+//フロントページカラム下の調整
+#list,
+.list-wrap{
+  margin-bottom: 3em;
+}
+//縦型
+.ect-vertical-card{
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 1%;
+
 
   .entry-card-wrap{
     width: 49.5%;
     display: inline-block;
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
 
     .entry-card{
       display: flex;
@@ -204,7 +219,8 @@
 }
 
 .ect-3-columns{
-  justify-content: space-around;
+  // justify-content: space-around;
+  column-gap: calc(1% / 2);
   .entry-card-wrap{
     width: 33%;
     padding: 7px;
@@ -232,4 +248,8 @@
     margin:0
   }
 
+}
+
+.body .list .widget-entry-cards{
+  margin-bottom: 0;
 }

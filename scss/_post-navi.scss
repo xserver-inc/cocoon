@@ -56,6 +56,14 @@ $pn_margin_width: 10px;
   }
 }
 
+.prev-post-title,
+.next-post-title{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 .post-navi-square a{
   height: auto;
 }

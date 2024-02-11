@@ -1,6 +1,12 @@
 /************************************
 ** 関連記事
 ************************************/
+.related-list{
+  display: flex;
+  flex-direction: column;
+  row-gap: .8em;
+  margin-bottom: 2em;
+}
 .related-entry-card{
   @extend %card;
 
@@ -44,8 +50,9 @@
 .rect-mini-card{
   .related-list{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    column-gap: 1%;
   }
   .related-entry-card-wrap{
     width: 49.5%;
@@ -73,15 +80,16 @@
 ** 縦型カード
 ************************************/
 .rect-vertical-card{
+
+  .related-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1%;
+  }
+
   .related-entry-card {
     display: flex;
     flex-direction: column;
-  }
-
-  .related-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
   }
 
   .related-entry-card-wrap{
@@ -116,12 +124,18 @@
 }
 
 .rect-vertical-card-3{
+  .related-list{
+    column-gap: calc(1%/2);
+  }
   .related-entry-card-wrap{
     width: 33%;
   }
 }
 
 .rect-vertical-card-4{
+  .related-list{
+    column-gap: calc(2%/3);
+  }
   .related-entry-card-wrap{
     width: 24.5%;
   }

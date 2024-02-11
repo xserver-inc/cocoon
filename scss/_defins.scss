@@ -154,6 +154,10 @@ $bgc_hover_anime: all .3s ease-in-out;
   margin: 0 0 5px 0;
   line-height: 1.6;
   font-weight: bold;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 %card_snippet{

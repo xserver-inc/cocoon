@@ -113,6 +113,10 @@ body.wp-admin {
   margin: 0 0 5px 0;
   line-height: 1.6;
   font-weight: bold;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .admin-settings .demo .related-entry-card-snippet, .admin-settings .demo .entry-card-snippet {
@@ -1582,7 +1586,6 @@ body.wp-admin {
   display: block;
   color: var(--cocoon-text-color);
   padding: 1.5%;
-  margin-bottom: 3%;
   transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .a-wrap:hover {
@@ -1669,20 +1672,30 @@ body.wp-admin {
 .admin-settings .demo .fpt-columns {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 0.5%;
 }
 .admin-settings .demo .post-comment-count .comment-icon {
   margin-right: 3px;
 }
-.admin-settings .demo .ect-vertical-card {
+.admin-settings .demo .list {
   display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+.admin-settings .demo #list,
+.admin-settings .demo .list-wrap {
+  margin-bottom: 3em;
+}
+.admin-settings .demo .ect-vertical-card {
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 1%;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap {
   width: 49.5%;
   display: inline-block;
-  margin-bottom: 12px;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card {
   display: flex;
@@ -1726,7 +1739,7 @@ body.wp-admin {
   display: inline-block;
 }
 .admin-settings .demo .ect-3-columns {
-  justify-content: space-around;
+  column-gap: 0.5%;
 }
 .admin-settings .demo .ect-3-columns .entry-card-wrap {
   width: 33%;
@@ -1751,6 +1764,9 @@ body.wp-admin {
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-content,
 .admin-settings .demo .ect-big-card .card-content {
   margin: 0;
+}
+.admin-settings .demo .body .list .widget-entry-cards {
+  margin-bottom: 0;
 }
 .admin-settings .demo .entry-date {
   margin-left: 3px;
@@ -5790,6 +5806,12 @@ body.wp-admin {
 .admin-settings .demo .fbc-hide .follow-count {
   display: none;
 }
+.admin-settings .demo .related-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8em;
+  margin-bottom: 2em;
+}
 .admin-settings .demo .related-entry-card .cat-label {
   font-size: 9px;
 }
@@ -5806,8 +5828,9 @@ body.wp-admin {
 }
 .admin-settings .demo .rect-mini-card .related-list {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  column-gap: 1%;
 }
 .admin-settings .demo .rect-mini-card .related-entry-card-wrap {
   width: 49.5%;
@@ -5825,14 +5848,14 @@ body.wp-admin {
 .admin-settings .demo .rect-mini-card .related-entry-card-snippet {
   display: none;
 }
+.admin-settings .demo .rect-vertical-card .related-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1%;
+}
 .admin-settings .demo .rect-vertical-card .related-entry-card {
   display: flex;
   flex-direction: column;
-}
-.admin-settings .demo .rect-vertical-card .related-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
 .admin-settings .demo .rect-vertical-card .related-entry-card-wrap {
   padding: 5px;
@@ -5859,8 +5882,14 @@ body.wp-admin {
   padding-top: 5px;
   position: unset;
 }
+.admin-settings .demo .rect-vertical-card-3 .related-list {
+  column-gap: 0.5%;
+}
 .admin-settings .demo .rect-vertical-card-3 .related-entry-card-wrap {
   width: 33%;
+}
+.admin-settings .demo .rect-vertical-card-4 .related-list {
+  column-gap: 0.6666666667%;
 }
 .admin-settings .demo .rect-vertical-card-4 .related-entry-card-wrap {
   width: 24.5%;
@@ -6063,6 +6092,13 @@ body.wp-admin {
   font-size: 50px;
   text-align: center;
   color: var(--cocoon-middle-thickness-color);
+}
+.admin-settings .demo .prev-post-title,
+.admin-settings .demo .next-post-title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .admin-settings .demo .post-navi-square a {
   height: auto;
@@ -9835,7 +9871,6 @@ body.wp-admin {
   display: block;
   color: var(--cocoon-text-color);
   padding: 1.5%;
-  margin-bottom: 3%;
   transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .a-wrap:hover {
@@ -9922,20 +9957,30 @@ body.wp-admin {
 .admin-settings .demo .fpt-columns {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 0.5%;
 }
 .admin-settings .demo .post-comment-count .comment-icon {
   margin-right: 3px;
 }
-.admin-settings .demo .ect-vertical-card {
+.admin-settings .demo .list {
   display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+.admin-settings .demo #list,
+.admin-settings .demo .list-wrap {
+  margin-bottom: 3em;
+}
+.admin-settings .demo .ect-vertical-card {
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 1%;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap {
   width: 49.5%;
   display: inline-block;
-  margin-bottom: 12px;
 }
 .admin-settings .demo .ect-vertical-card .entry-card-wrap .entry-card {
   display: flex;
@@ -9979,7 +10024,7 @@ body.wp-admin {
   display: inline-block;
 }
 .admin-settings .demo .ect-3-columns {
-  justify-content: space-around;
+  column-gap: 0.5%;
 }
 .admin-settings .demo .ect-3-columns .entry-card-wrap {
   width: 33%;
@@ -10004,6 +10049,9 @@ body.wp-admin {
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-content,
 .admin-settings .demo .ect-big-card .card-content {
   margin: 0;
+}
+.admin-settings .demo .body .list .widget-entry-cards {
+  margin-bottom: 0;
 }
 .admin-settings .demo .entry-date {
   margin-left: 3px;
@@ -14043,6 +14091,12 @@ body.wp-admin {
 .admin-settings .demo .fbc-hide .follow-count {
   display: none;
 }
+.admin-settings .demo .related-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8em;
+  margin-bottom: 2em;
+}
 .admin-settings .demo .related-entry-card .cat-label {
   font-size: 9px;
 }
@@ -14059,8 +14113,9 @@ body.wp-admin {
 }
 .admin-settings .demo .rect-mini-card .related-list {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  column-gap: 1%;
 }
 .admin-settings .demo .rect-mini-card .related-entry-card-wrap {
   width: 49.5%;
@@ -14078,14 +14133,14 @@ body.wp-admin {
 .admin-settings .demo .rect-mini-card .related-entry-card-snippet {
   display: none;
 }
+.admin-settings .demo .rect-vertical-card .related-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1%;
+}
 .admin-settings .demo .rect-vertical-card .related-entry-card {
   display: flex;
   flex-direction: column;
-}
-.admin-settings .demo .rect-vertical-card .related-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
 .admin-settings .demo .rect-vertical-card .related-entry-card-wrap {
   padding: 5px;
@@ -14112,8 +14167,14 @@ body.wp-admin {
   padding-top: 5px;
   position: unset;
 }
+.admin-settings .demo .rect-vertical-card-3 .related-list {
+  column-gap: 0.5%;
+}
 .admin-settings .demo .rect-vertical-card-3 .related-entry-card-wrap {
   width: 33%;
+}
+.admin-settings .demo .rect-vertical-card-4 .related-list {
+  column-gap: 0.6666666667%;
 }
 .admin-settings .demo .rect-vertical-card-4 .related-entry-card-wrap {
   width: 24.5%;
@@ -14316,6 +14377,13 @@ body.wp-admin {
   font-size: 50px;
   text-align: center;
   color: var(--cocoon-middle-thickness-color);
+}
+.admin-settings .demo .prev-post-title,
+.admin-settings .demo .next-post-title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .admin-settings .demo .post-navi-square a {
   height: auto;
@@ -18523,11 +18591,11 @@ body.wp-admin {
     margin-right: 0;
     width: 49.5%;
   }
-  .admin-settings .demo .rect-vertical-card .related-entry-card-wrap {
-    width: 49%;
+  .admin-settings .demo .rect-vertical-card .related-list {
+    column-gap: 1%;
   }
-  .admin-settings .demo .rect-mini-card .related-entry-card-wrap {
-    margin-bottom: 10px;
+  .admin-settings .demo .rect-vertical-card .related-entry-card-wrap {
+    width: 49.5%;
   }
   .admin-settings .demo .rect-mini-card .cat-label {
     font-size: 8px;
@@ -19027,9 +19095,6 @@ body.wp-admin {
   }
   .admin-settings .demo .blogcard-snippet {
     font-size: 0.74em;
-  }
-  .admin-settings .demo .ect-vertical-card .entry-card-wrap {
-    margin-bottom: 8px;
   }
   .admin-settings .demo .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap {
     display: block;

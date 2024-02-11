@@ -119,6 +119,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   margin: 0 0 5px 0;
   line-height: 1.6;
   font-weight: bold;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .related-entry-card-snippet, .entry-card-snippet {
@@ -1119,7 +1123,6 @@ img.emoji {
   display: block;
   color: var(--cocoon-text-color);
   padding: 1.5%;
-  margin-bottom: 3%;
   transition: all 0.3s ease-in-out;
 }
 .a-wrap:hover {
@@ -1219,7 +1222,8 @@ img.emoji {
 .fpt-columns {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 0.5%;
 }
 
 .post-comment-count .comment-icon {
@@ -1229,15 +1233,26 @@ img.emoji {
 /************************************
 ** エントリーカードタイプ
 ************************************/
-.ect-vertical-card {
+.list {
   display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+#list,
+.list-wrap {
+  margin-bottom: 3em;
+}
+
+.ect-vertical-card {
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 1%;
 }
 .ect-vertical-card .entry-card-wrap {
   width: 49.5%;
   display: inline-block;
-  margin-bottom: 12px;
 }
 .ect-vertical-card .entry-card-wrap .entry-card {
   display: flex;
@@ -1283,7 +1298,7 @@ img.emoji {
 }
 
 .ect-3-columns {
-  justify-content: space-around;
+  column-gap: 0.5%;
 }
 .ect-3-columns .entry-card-wrap {
   width: 33%;
@@ -1310,6 +1325,10 @@ img.emoji {
 .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-content,
 .ect-big-card .card-content {
   margin: 0;
+}
+
+.body .list .widget-entry-cards {
+  margin-bottom: 0;
 }
 
 /************************************
@@ -6038,6 +6057,13 @@ figcaption {
 /************************************
 ** 関連記事
 ************************************/
+.related-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8em;
+  margin-bottom: 2em;
+}
+
 .related-entry-card .cat-label {
   font-size: 9px;
 }
@@ -6062,8 +6088,9 @@ figcaption {
 ************************************/
 .rect-mini-card .related-list {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  column-gap: 1%;
 }
 .rect-mini-card .related-entry-card-wrap {
   width: 49.5%;
@@ -6085,14 +6112,14 @@ figcaption {
 /************************************
 ** 縦型カード
 ************************************/
+.rect-vertical-card .related-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1%;
+}
 .rect-vertical-card .related-entry-card {
   display: flex;
   flex-direction: column;
-}
-.rect-vertical-card .related-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
 .rect-vertical-card .related-entry-card-wrap {
   padding: 5px;
@@ -6120,10 +6147,16 @@ figcaption {
   position: unset;
 }
 
+.rect-vertical-card-3 .related-list {
+  column-gap: 0.5%;
+}
 .rect-vertical-card-3 .related-entry-card-wrap {
   width: 33%;
 }
 
+.rect-vertical-card-4 .related-list {
+  column-gap: 0.6666666667%;
+}
 .rect-vertical-card-4 .related-entry-card-wrap {
   width: 24.5%;
 }
@@ -6361,6 +6394,14 @@ figcaption {
   font-size: 50px;
   text-align: center;
   color: var(--cocoon-middle-thickness-color);
+}
+
+.prev-post-title,
+.next-post-title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .post-navi-square a {
@@ -11248,11 +11289,11 @@ _:-ms-lang(x), .mc-circle {
   /************************************
   ** 関連記事
   ************************************/
-  .rect-vertical-card .related-entry-card-wrap {
-    width: 49%;
+  .rect-vertical-card .related-list {
+    column-gap: 1%;
   }
-  .rect-mini-card .related-entry-card-wrap {
-    margin-bottom: 10px;
+  .rect-vertical-card .related-entry-card-wrap {
+    width: 49.5%;
   }
   .rect-mini-card .cat-label {
     font-size: 8px;
@@ -11753,9 +11794,6 @@ _:-ms-lang(x), .mc-circle {
   }
   .blogcard-snippet {
     font-size: 0.74em;
-  }
-  .ect-vertical-card .entry-card-wrap {
-    margin-bottom: 8px;
   }
   .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap {
     display: block;

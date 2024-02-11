@@ -83,15 +83,15 @@ table {
 ** 関連記事
 ************************************/
 .rect-vertical-card {
+  .related-list{
+    column-gap: 1%;
+  }
   .related-entry-card-wrap {
-    width: 49%;
+    width: 49.5%;
   }
 }
 
 .rect-mini-card {
-  .related-entry-card-wrap {
-    margin-bottom: 10px;
-  }
 
   .cat-label {
     font-size: 8px;
