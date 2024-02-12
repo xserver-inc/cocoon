@@ -6258,9 +6258,6 @@ body.wp-admin {
 .admin-settings .demo .nwa .author-box .author-description {
   text-align: left;
 }
-.admin-settings .demo .nwa .author-box .sns-follow-buttons a {
-  display: inline-block;
-}
 .admin-settings .demo .cta-box {
   background-color: #444;
   color: #fff;
@@ -14542,9 +14539,6 @@ body.wp-admin {
 }
 .admin-settings .demo .nwa .author-box .author-description {
   text-align: left;
-}
-.admin-settings .demo .nwa .author-box .sns-follow-buttons a {
-  display: inline-block;
 }
 .admin-settings .demo .cta-box {
   background-color: #444;
