@@ -145,3 +145,5 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 [Chigusa](https://github.com/chigusa-web)
 
 [xs-khosomi](https://github.com/xs-khosomi)
+
+[MizuiMiduki](https://github.com/MizuiMiduki)
