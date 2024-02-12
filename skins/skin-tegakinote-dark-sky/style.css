@@ -2370,5 +2370,5 @@ option {
 /* フォローボタンが重なる不具合を修正 */
 .sns-follow-buttons,
 .nwa .sns-follow-buttons {
-	column-gap: 3%;
+	column-gap: 8px;
 }
