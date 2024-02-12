@@ -238,6 +238,11 @@ body {
 #sidebar .widget_author_box .author-box,
 #slide-in-sidebar .widget_author_box .author-box {
   border-color: #5C6BC0;
+  /* mastodon */
+  /* bluesky */
+  /* misskey */
+  /* tiktok */
+  /* soundcloud */
 }
 #sidebar .widget_author_box .author-box .author-widget-name,
 #slide-in-sidebar .widget_author_box .author-box .author-widget-name {
@@ -324,6 +329,26 @@ body {
 #sidebar .widget_author_box .author-box .rss-button,
 #slide-in-sidebar .widget_author_box .author-box .rss-button {
   background-color: var(--cocoon-rss-color);
+}
+#sidebar .widget_author_box .author-box .mastodon-button,
+#slide-in-sidebar .widget_author_box .author-box .mastodon-button {
+  background-color: var(--cocoon-mastodon-color);
+}
+#sidebar .widget_author_box .author-box .bluesky-button,
+#slide-in-sidebar .widget_author_box .author-box .bluesky-button {
+  background-color: var(--cocoon-bluesky-color);
+}
+#sidebar .widget_author_box .author-box .misskey-button,
+#slide-in-sidebar .widget_author_box .author-box .misskey-button {
+  background-color: var(--cocoon-misskey-color);
+}
+#sidebar .widget_author_box .author-box .tiktok-button,
+#slide-in-sidebar .widget_author_box .author-box .tiktok-button {
+  background-color: var(--cocoon-tiktok-color);
+}
+#sidebar .widget_author_box .author-box .soundcloud-button,
+#slide-in-sidebar .widget_author_box .author-box .soundcloud-button {
+  background-color: var(--cocoon-soundcloud-color);
 }
 #sidebar .widget_item_ranking .border-element,
 #slide-in-sidebar .widget_item_ranking .border-element {
