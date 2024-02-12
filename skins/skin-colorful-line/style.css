@@ -1179,6 +1179,84 @@ table tr:nth-of-type(2n) {
 .author-box .pocket-button:hover{
   background-color: var(--cocoon-pocket-color) !important;
 }
+/* Mastodon */
+
+.author-box .mastodon-button {
+  border: 1px solid var(--cocoon-mastodon-color)!important;
+  color: var(--cocoon-mastodon-color)!important;
+}
+
+.author-box .mastodon-button:after {
+  box-shadow: 0 0 0 2px var(--cocoon-mastodon-color);
+}
+
+.author-box .mastodon-button:hover {
+  background-color: var(--cocoon-mastodon-color) !important;
+}
+
+
+/* bluesky */
+
+.author-box .bluesky-button {
+  border: 1px solid var(--cocoon-bluesky-color)!important;
+  color: var(--cocoon-bluesky-color)!important;
+}
+
+.author-box .bluesky-button:after {
+  box-shadow: 0 0 0 2px var(--cocoon-bluesky-color);
+}
+
+.author-box .bluesky-button:hover {
+  background-color: var(--cocoon-bluesky-color) !important;
+}
+
+
+/* misskey */
+
+.author-box .misskey-button {
+  border: 1px solid var(--cocoon-misskey-color)!important;
+  color: var(--cocoon-misskey-color)!important;
+}
+
+.author-box .misskey-button:after {
+  box-shadow: 0 0 0 2px var(--cocoon-misskey-color);
+}
+
+.author-box .misskey-button:hover {
+  background-color: var(--cocoon-misskey-color) !important;
+}
+
+
+/* tiktok */
+
+.author-box .tiktok-button {
+  border: 1px solid var(--cocoon-tiktok-color)!important;
+  color: var(--cocoon-tiktok-color)!important;
+}
+
+.author-box .tiktok-button:after {
+  box-shadow: 0 0 0 2px var(--cocoon-tiktok-color);
+}
+
+.author-box .tiktok-button:hover {
+  background-color: var(--cocoon-tiktok-color) !important;
+}
+
+
+/* twitch */
+
+.author-box .twitch-button {
+  border: 1px solid var(--cocoon-twitch-color)!important;
+  color: var(--cocoon-twitch-color)!important;
+}
+
+.author-box .twitch-button:after {
+  box-shadow: 0 0 0 2px var(--cocoon-twitch-color);
+}
+
+.author-box .twitch-button:hover {
+  background-color: var(--cocoon-twitch-color)!important;
+}
 
 /* ■ Font Awesome5用 ■ */
 .font-awesome-5 blockquote::before,
