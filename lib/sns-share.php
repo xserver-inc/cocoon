@@ -505,7 +505,7 @@ endif;
 //MisskeyのシェアURLを取得
 if ( !function_exists( 'get_misskey_share_url' ) ):
 function get_misskey_share_url(){
-  return 'misskey-hub.net/share/?text='.urlencode( get_share_page_title() ).'&url='.urlencode( get_share_page_url() ).'&visibility=public&localOnly=0';
+  return '//misskey-hub.net/share/?text='.urlencode( get_share_page_title() ).'&url='.urlencode( get_share_page_url() ).'&visibility=public&localOnly=0';
 }
 endif;
 
