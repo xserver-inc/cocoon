@@ -2050,3 +2050,9 @@ input[type="submit"]:hover {
 	opacity: .6;
 	transition: all .3s;
 }
+
+/* フォローボタンが重なる不具合を修正 */
+.sns-follow-buttons,
+.nwa .sns-follow-buttons {
+	column-gap: 3%;
+}

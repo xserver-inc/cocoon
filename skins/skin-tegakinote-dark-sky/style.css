@@ -2366,3 +2366,9 @@ option {
 .wp-calendar-table :is(th, #today){
 	color: rgba(var(--black-color), 1);
 }
+
+/* フォローボタンが重なる不具合を修正 */
+.sns-follow-buttons,
+.nwa .sns-follow-buttons {
+	column-gap: 3%;
+}
