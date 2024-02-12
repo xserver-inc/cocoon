@@ -135,7 +135,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['twitter_url'] = __( 'X（旧Twitter） URL', THEME_NAME );
   $prof_items['mastodon_url'] = __( 'Mastodon URL', THEME_NAME );
   $prof_items['bluesky_url'] = __( 'Bluesky URL', THEME_NAME );
-  $prof_items['misskey_url'] = __( 'Misskfy URL', THEME_NAME );
+  $prof_items['misskey_url'] = __( 'Misskey URL', THEME_NAME );
   $prof_items['facebook_url'] = __( 'Facebook URL', THEME_NAME );
   //$prof_items['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
   $prof_items['hatebu_url'] = __( 'はてブ URL', THEME_NAME );
