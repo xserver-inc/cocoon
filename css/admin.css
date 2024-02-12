@@ -2993,7 +2993,7 @@ body.wp-admin {
   border-width: 9px;
   margin-left: -9px;
 }
-.admin-settings .demo .nwa .sns-follow-buttons .sns-buttons {
+.admin-settings .demo .nwa .sns-follow-buttons {
   column-gap: 1%;
 }
 .admin-settings .demo .nwa .sns-follow-buttons a {
@@ -11278,7 +11278,7 @@ body.wp-admin {
   border-width: 9px;
   margin-left: -9px;
 }
-.admin-settings .demo .nwa .sns-follow-buttons .sns-buttons {
+.admin-settings .demo .nwa .sns-follow-buttons {
   column-gap: 1%;
 }
 .admin-settings .demo .nwa .sns-follow-buttons a {

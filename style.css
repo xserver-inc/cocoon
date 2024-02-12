@@ -2792,7 +2792,7 @@ label.screen-reader-text {
 /************************************
 ** フォーローボタウィジェット
 ************************************/
-.nwa .sns-follow-buttons .sns-buttons {
+.nwa .sns-follow-buttons {
   column-gap: 1%;
 }
 .nwa .sns-follow-buttons a {
