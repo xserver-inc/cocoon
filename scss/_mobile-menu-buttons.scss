@@ -39,7 +39,7 @@
 
     >a {
       display: block;
-      @include link_cancel;
+      @include link_cancel(var(--cocoon-black-color));
     }
 
     &:hover .menu-button-in {

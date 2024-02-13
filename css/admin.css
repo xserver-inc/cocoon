@@ -7200,7 +7200,7 @@ body.wp-admin {
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a {
   display: block;
-  color: var(--cocoon-text-color);
+  color: var(--cocoon-black-color);
   text-decoration: none;
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover .menu-button-in {
@@ -15482,7 +15482,7 @@ body.wp-admin {
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a {
   display: block;
-  color: var(--cocoon-text-color);
+  color: var(--cocoon-black-color);
   text-decoration: none;
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover .menu-button-in {

@@ -7640,7 +7640,7 @@ div.fb-like-mobile {
 }
 .mobile-menu-buttons .menu-button > a {
   display: block;
-  color: var(--cocoon-text-color);
+  color: var(--cocoon-black-color);
   text-decoration: none;
 }
 .mobile-menu-buttons .menu-button:hover .menu-button-in {
