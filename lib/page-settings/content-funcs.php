@@ -223,8 +223,8 @@ endif;
 
 //横スクロールレスポンシブテーブル用の要素の追加
 if (is_responsive_table_enable()) {
-  add_filter('the_content', 'add_responsive_table_tag');
-  add_filter('the_category_tag_content', 'add_responsive_table_tag');
+  add_filter('the_content', 'add_responsive_table_tag', 11);
+  add_filter('the_category_tag_content', 'add_responsive_table_tag', 11);
 }
 if ( !function_exists( 'add_responsive_table_tag' ) ):
 function add_responsive_table_tag($the_content) {
