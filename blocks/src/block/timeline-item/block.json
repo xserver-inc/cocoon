@@ -14,11 +14,10 @@
       "default": "タイトル"
     }
   },
-  "supports": {
-    "inserter": false
-  },
   "example": {},
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "inserter": false,
+    "lock": false
   }
 }
