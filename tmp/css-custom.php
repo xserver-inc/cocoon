@@ -123,7 +123,7 @@ if ($site_key_text_color = get_site_key_text_color()): ?>
 <?php endif ?>
 <?php //サイト文字色
 if($site_text_color = get_site_text_color()): ?>
-body{
+body.public-page{
   --cocoon-text-color: <?php echo $site_text_color; ?>;
 }
 <?php endif; ?>
