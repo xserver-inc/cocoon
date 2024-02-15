@@ -5126,16 +5126,12 @@ ul{
 .wp-block .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
   max-width: none;
 }
-.wp-block .wp-block-table__cell-content {
-  padding: 0;
-}
 .wp-block .wp-block-quote .editor-rich-text__tinymce > p:first-child {
   margin: 1em 0;
 }
 
 .wp-block .wp-block-table__cell-content {
   min-width: 50px;
-  padding: 8px;
 }
 
 .wp-block-quote__citation {
