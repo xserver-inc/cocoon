@@ -1761,6 +1761,9 @@ table tr:nth-of-type(2n+1) {
 table:not(.has-border-color) :where(th, td) {
   border: 1px solid var(--cocoon-x-thin-color);
 }
+table:has(.s-circle, .d-circle, .triangle, .cross) td {
+  height: 60px;
+}
 
 .s-circle:before,
 .d-circle:before,
@@ -1822,7 +1825,6 @@ table:not(.has-border-color) :where(th, td) {
 
 .scrollable-table th,
 .scrollable-table td {
-  padding: 3px 5px;
   white-space: nowrap;
 }
 

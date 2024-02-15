@@ -134,6 +134,10 @@ table {
       // padding: 6px;
     }
   }
+
+  &:has(.s-circle, .d-circle, .triangle, .cross) td{
+    height: 60px;
+  }
 }
 
 //比較表
@@ -207,7 +211,7 @@ table {
 
 .scrollable-table th,
 .scrollable-table td{
-  padding: 3px 5px;
+  // padding: 3px 5px;
   white-space: nowrap;
 }
 

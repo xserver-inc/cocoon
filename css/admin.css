@@ -2124,6 +2124,9 @@ body.wp-admin {
 .admin-settings .demo table:not(.has-border-color) :where(th, td) {
   border: 1px solid var(--cocoon-x-thin-color);
 }
+.admin-settings .demo table:has(.s-circle, .d-circle, .triangle, .cross) td {
+  height: 60px;
+}
 .admin-settings .demo .s-circle:before,
 .admin-settings .demo .d-circle:before,
 .admin-settings .demo .triangle:before,
@@ -2176,7 +2179,6 @@ body.wp-admin {
 }
 .admin-settings .demo .scrollable-table th,
 .admin-settings .demo .scrollable-table td {
-  padding: 3px 5px;
   white-space: nowrap;
 }
 .admin-settings .demo .scrollable-table .has-fixed-layout th,
@@ -10441,6 +10443,9 @@ body.wp-admin {
 .admin-settings .demo table:not(.has-border-color) :where(th, td) {
   border: 1px solid var(--cocoon-x-thin-color);
 }
+.admin-settings .demo table:has(.s-circle, .d-circle, .triangle, .cross) td {
+  height: 60px;
+}
 .admin-settings .demo .s-circle:before,
 .admin-settings .demo .d-circle:before,
 .admin-settings .demo .triangle:before,
@@ -10493,7 +10498,6 @@ body.wp-admin {
 }
 .admin-settings .demo .scrollable-table th,
 .admin-settings .demo .scrollable-table td {
-  padding: 3px 5px;
   white-space: nowrap;
 }
 .admin-settings .demo .scrollable-table .has-fixed-layout th,
