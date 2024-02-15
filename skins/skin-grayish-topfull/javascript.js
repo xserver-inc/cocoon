@@ -11,9 +11,6 @@ document.getElementsByTagName('body')[0].setAttribute('ontouchstart', '');
 // Front,Archives,Other
 // .skin-grayish .navi-in>ul>li>.sub-menu
 // ---------------------------------------------
-let headerObserver;
-let flagHeaderObserver;
-let bodyClientHeight;
 
 // PC navi
 const PCNaviIn = document.querySelector(".skin-grayish #navi-in");
@@ -23,43 +20,24 @@ const PCsubmenu = document.querySelectorAll(".skin-grayish .navi-in>ul>li:not(.h
 const numberOfElements = PCsubmenu.length;
 const submenuArray = Array.from(PCsubmenu);
 
-// bodyを監視してスクロールされたことを検知する
-const body_border = 300;
-
-const AllPageBodyObserve = (ActiveElement) => {
+// submenu Scrolltype
+const AllPageSubmenuScrolltype = (ActiveElement) => {
   const headerElement = ActiveElement;
-  const targetElement = document.body;
-  const body_clientHeight = targetElement.clientHeight;
+  const scrollPosition = window.scrollY;
+  const scrollThreshold = 300;
 
-  if (!headerElement || !targetElement) return;
+  if (scrollPosition > scrollThreshold) {
+    headerElement.setAttribute(
+      "data-active", "ture"
+    );
 
-  const observeHandler = (entries, obs) => {
-    if (flagHeaderObserver === 'false') {
-      obs.unobserve(entries[0].target);
-      headerElement.setAttribute(
-        "data-active", "false"
-      );
-
-    } else {
-
-      headerElement.setAttribute(
-        "data-active",
-        String(!entries[0].isIntersecting)
-      );
-    }
-  };
-  const options = {
-    root: null,
-    rootMargin: `${body_border}px 0px ${body_clientHeight}px 0px`,
-    threshold: 1
-  };
-
-  if (headerObserver) {
-    headerObserver.disconnect();
+  } else {
+    headerElement.setAttribute(
+      "data-active", "false"
+    );
   }
-  headerObserver = new IntersectionObserver(observeHandler, options);
-  headerObserver.observe(targetElement);
 };
+
 
 // submenuが画面右端からはみ出る場合の処理
 const PCsubmenuRightCare = (event) => {
@@ -99,13 +77,9 @@ const loadPCsubmenuRightCare = (event) => {
   PCsubmenuRightCare(event);
 };
 
-let AllPageBodyObserve_waitTimer;
-const ResizeAllPageBodyObserve = () => {
-  clearTimeout(AllPageBodyObserve_waitTimer);
-  AllPageBodyObserve_waitTimer = setTimeout(function () {
-    AllPageBodyObserve(PCNaviIn);
-  }, 100);
-}
+const SubmenuScrolltype = () => {
+  AllPageSubmenuScrolltype(PCNaviIn);
+};
 
 // ---------------------------------------------
 // 画面幅1023px以下ではIntersectionObserver監視しないようにする
@@ -114,20 +88,17 @@ const ResizeAllPageBodyObserve = () => {
 const mediaQueryList1023 = window.matchMedia('(max-width: 1023px)');
 function headerSubmenuOffChange(e) {
   if (e.matches) {
-    flagHeaderObserver = 'false';
     window.removeEventListener('load', loadPCsubmenuRightCare);
     window.removeEventListener('resize', ResizePCsubmenuRightCare);
-    window.removeEventListener('load', AllPageBodyObserve(PCNaviIn));
-    window.removeEventListener('resize', ResizeAllPageBodyObserve);
+    window.removeEventListener('scroll', SubmenuScrolltype);
 
   } else {
-    flagHeaderObserver = 'true';
     window.addEventListener('load', loadPCsubmenuRightCare);
     window.addEventListener('resize', ResizePCsubmenuRightCare);
-    window.addEventListener('load', AllPageBodyObserve(PCNaviIn));
-    window.addEventListener('resize', ResizeAllPageBodyObserve);
-    ResizeAllPageBodyObserve();
+    window.addEventListener('scroll', SubmenuScrolltype);
+
     loadPCsubmenuRightCare();
+    SubmenuScrolltype();
 
   }
   mediaQueryList1023.addEventListener("change", headerSubmenuOffChange);

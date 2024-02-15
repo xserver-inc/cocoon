@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 1.0.9
+  Version: 1.0.10
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1563,6 +1563,7 @@ a:hover {
 /* モバイルメニューのアイコンを綺麗に並べる */
 .skin-grayish .share-menu-content .sns-buttons,
 .skin-grayish .follow-menu-content .sns-buttons {
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -3283,6 +3284,10 @@ blockquote cite {
   padding: 0;
 }
 
+.nwa .author-box .sns-follow-buttons {
+  justify-content: center;
+}
+
 .skin-grayish .article-footer .author-box .sns-follow {
   padding: 0;
 }
@@ -3302,6 +3307,9 @@ blockquote cite {
 .author-box .sns-follow-buttons a.follow-button {
   border: 0;
   color: var(--skin-grayish-site-sub-color);
+}
+
+.author-box .sns-follow-buttons a.follow-button:hover {
   background-color: transparent;
 }
 
