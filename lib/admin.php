@@ -313,6 +313,37 @@ function sort_term_columns($columns) {
 }
 endif;
 
+
+
+
+//パターン管理画面にIDカラムを設置する
+add_filter('manage_edit-wp_block_columns', 'add_wp_block_columns');
+if ( !function_exists( 'add_wp_block_columns' ) ):
+function add_wp_block_columns($columns){
+  $index = 5; // 追加位置
+
+  return array_merge(
+    array_slice($columns, 0, $index),
+    array('shortcode' => 'ショートコード'),
+    array_slice($columns, $index)
+  );
+}
+endif;
+
+//ショートコード管理画面にIDを表示
+add_action('manage_wp_block_posts_custom_column', 'add_wp_block_custom_fields', 10, 2);
+if ( !function_exists( 'add_wp_block_custom_fields' ) ):
+function add_wp_block_custom_fields($column_name, $term_id){
+  if ( 'shortcode' === $column_name ) {
+    $thum = '<input type="text" size="16" value="[pattern id=&quot;'.esc_attr($term_id).'&quot;]">';
+  }
+
+  if ( isset($thum) && $thum ) {
+    echo $thum;
+  }
+}
+endif;
+
 //管理ツールバーにメニュー追加
 if (is_admin_tool_menu_visible() && is_user_administrator()) {
   add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
