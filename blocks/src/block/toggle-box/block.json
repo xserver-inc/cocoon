@@ -64,7 +64,6 @@
   },
   "supports": {
     "reusable": false,
-    "anchor": true,
-    "multiple": false
+    "anchor": true
   }
 }
