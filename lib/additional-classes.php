@@ -80,38 +80,6 @@ function body_class_additional($classes) {
   //フォントウエイト
   $classes[] = get_site_font_weight_class();
 
-  // //サイドバー表示設定
-  // $add_no_sidebar = false;
-  // //var_dump(get_sidebar_display_type());
-  // switch (get_sidebar_display_type()) {
-  //   case 'no_display_all':
-  //     $add_no_sidebar = true;
-  //     break;
-  //   case 'no_display_front_page':
-  //     if (is_front_page() && !is_home()) {
-  //       $add_no_sidebar = true;
-  //     }
-  //     break;
-  //   case 'no_display_index_pages':
-  //     if (!is_singular()) {
-  //       $add_no_sidebar = true;
-  //     }
-  //     break;
-  //   case 'no_display_pages':
-  //     if (is_page()) {
-  //       $add_no_sidebar = true;
-  //     }
-  //     break;
-  //   case 'no_display_singles':
-  //     if (is_single()) {
-  //       $add_no_sidebar = true;
-  //     }
-  //     break;
-  //   default:
-
-  //     break;
-  // }
-
   //投稿管理画面で「1カラム」が選択されている場合
   if (is_singular() && is_singular_page_type_column1()) {
     //$add_no_sidebar = true;
@@ -349,6 +317,9 @@ function body_class_additional($classes) {
   if (is_header_fixed()) {
     $classes[] = 'is-header-fixed';
   }
+
+  //サムネイルアスペクト比
+  $classes[] = 'thumb-'.replace_value_to_class(get_thumbnail_image_type());
 
   return apply_filters('body_class_additional', $classes);
 }//body_class_additional

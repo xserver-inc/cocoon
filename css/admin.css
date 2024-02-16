@@ -293,6 +293,7 @@ body.wp-admin {
   /*ボーダー（太線）*/
   /*シャドー*/
   /*シャドーペーパー*/
+  /* サムネイルアスペクト比 */
   /************************************
   ** ヘッダー
   ************************************/
@@ -545,6 +546,7 @@ body.wp-admin {
   /*ボーダー（太線）*/
   /*シャドー*/
   /*シャドーペーパー*/
+  /* サムネイルアスペクト比 */
   /************************************
   ** ヘッダー
   ************************************/
@@ -1325,6 +1327,35 @@ body.wp-admin {
 .admin-settings .demo .wp-block-image figcaption {
   margin: 0;
   word-break: break-all;
+}
+.admin-settings .demo .thumb-wide {
+  --card-ratio: 16 / 9;
+}
+.admin-settings .demo .thumb-golden-ratio {
+  --card-ratio: 8 / 5;
+}
+.admin-settings .demo .thumb-postcard {
+  --card-ratio: 3 / 2;
+}
+.admin-settings .demo .thumb-silver-ratio {
+  --card-ratio: 7 / 5;
+}
+.admin-settings .demo .thumb-standard {
+  --card-ratio: 4 / 3;
+}
+.admin-settings .demo .thumb-square,
+.admin-settings .demo .post-navi-square {
+  --card-ratio: 1 / 1;
+}
+.admin-settings .demo .ect-tile-card,
+.admin-settings .demo .ect-big-card,
+.admin-settings .demo .ect-big-card-first .a-wrap:first-child {
+  --card-ratio: auto;
+}
+.admin-settings .demo .blogcard-thumbnail img,
+.admin-settings .demo .card-thumb img {
+  aspect-ratio: var(--card-ratio);
+  object-fit: cover;
 }
 .admin-settings .demo .header {
   height: 100%;
@@ -9644,6 +9675,35 @@ body.wp-admin {
 .admin-settings .demo .wp-block-image figcaption {
   margin: 0;
   word-break: break-all;
+}
+.admin-settings .demo .thumb-wide {
+  --card-ratio: 16 / 9;
+}
+.admin-settings .demo .thumb-golden-ratio {
+  --card-ratio: 8 / 5;
+}
+.admin-settings .demo .thumb-postcard {
+  --card-ratio: 3 / 2;
+}
+.admin-settings .demo .thumb-silver-ratio {
+  --card-ratio: 7 / 5;
+}
+.admin-settings .demo .thumb-standard {
+  --card-ratio: 4 / 3;
+}
+.admin-settings .demo .thumb-square,
+.admin-settings .demo .post-navi-square {
+  --card-ratio: 1 / 1;
+}
+.admin-settings .demo .ect-tile-card,
+.admin-settings .demo .ect-big-card,
+.admin-settings .demo .ect-big-card-first .a-wrap:first-child {
+  --card-ratio: auto;
+}
+.admin-settings .demo .blogcard-thumbnail img,
+.admin-settings .demo .card-thumb img {
+  aspect-ratio: var(--card-ratio);
+  object-fit: cover;
 }
 .admin-settings .demo .header {
   height: 100%;

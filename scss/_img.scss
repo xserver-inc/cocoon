@@ -127,3 +127,41 @@ img.emoji {
     word-break: break-all;
   }
 }
+
+/* サムネイルアスペクト比 */
+.thumb-wide {
+  --card-ratio: 16 / 9;
+}
+
+.thumb-golden-ratio {
+  --card-ratio: 8 / 5;
+}
+
+.thumb-postcard {
+  --card-ratio: 3 / 2;
+}
+
+.thumb-silver-ratio {
+  --card-ratio: 7 / 5;
+}
+
+.thumb-standard {
+  --card-ratio: 4 / 3;
+}
+
+.thumb-square,
+.post-navi-square {
+  --card-ratio: 1 / 1;
+}
+
+.ect-tile-card,
+.ect-big-card,
+.ect-big-card-first .a-wrap:first-child{
+  --card-ratio: auto;
+}
+
+.blogcard-thumbnail img,
+.card-thumb img {
+  aspect-ratio: var(--card-ratio);
+  object-fit: cover;
+}
