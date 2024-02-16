@@ -23,13 +23,8 @@ add_theme_support('post-thumbnails');
 ///////////////////////////////////////////
 // サムネイルサイズ
 ///////////////////////////////////////////
-//100px 管理画面記事リスト一覧のサムネイル
-define('THUMB100', 'thumb100');
-define('THUMB100WIDTH', get_square_thumbnail_width(100));
-define('THUMB100HEIGHT', get_square_thumbnail_height(THUMB100WIDTH));
-add_image_size(THUMB100, THUMB100WIDTH, THUMB100HEIGHT, true);
 
-//150px正方形 ページ送りナビ、Facebookバルーン
+//150px正方形 ページ送りナビ、Facebookバルーン、管理画面投稿一覧サムネイル
 define('W150', 150);
 define('THUMB150', 'thumb150');
 define('THUMB150WIDTH', get_square_thumbnail_width(W150));
