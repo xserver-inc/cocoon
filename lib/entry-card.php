@@ -49,16 +49,9 @@ function get_entry_card_thumbnail_size($count){
   switch (get_entry_card_type()) {
     case 'big_card_first':
       $thumbnail_size = get_big_card_first_thumbnail_size($count);
-      // if ($count == 1) {
-      //   $thumbnail_size = 'large';
-      // } else {
-      //   $thumbnail_size = THUMB320;
-      // }
-      // _v($thumbnail_size);
       break;
     case 'big_card':
       $thumbnail_size = get_big_card_thumbnail_size();
-      // $thumbnail_size = 'large';
       break;
     case 'vertical_card_2':
       $thumbnail_size = get_vertical_card_2_thumbnail_size();

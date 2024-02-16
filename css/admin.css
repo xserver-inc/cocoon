@@ -1349,7 +1349,7 @@ body.wp-admin {
 }
 .admin-settings .demo .ect-tile-card,
 .admin-settings .demo .ect-big-card,
-.admin-settings .demo .ect-big-card-first .a-wrap:first-child {
+.admin-settings .demo .ec-big-card-first {
   --card-ratio: auto;
 }
 .admin-settings .demo .blogcard-thumbnail img,
@@ -9697,7 +9697,7 @@ body.wp-admin {
 }
 .admin-settings .demo .ect-tile-card,
 .admin-settings .demo .ect-big-card,
-.admin-settings .demo .ect-big-card-first .a-wrap:first-child {
+.admin-settings .demo .ec-big-card-first {
   --card-ratio: auto;
 }
 .admin-settings .demo .blogcard-thumbnail img,

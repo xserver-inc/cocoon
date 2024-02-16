@@ -122,6 +122,21 @@ function is_entry_card_type_entry_card(){
   return get_entry_card_type() == 'entry_card';
 }
 endif;
+if ( !function_exists( 'is_entry_card_type_big_card_first' ) ):
+function is_entry_card_type_big_card_first(){
+  return get_entry_card_type() == 'big_card_first';
+}
+endif;
+if ( !function_exists( 'is_entry_card_type_big_card' ) ):
+function is_entry_card_type_big_card(){
+  return get_entry_card_type() == 'big_card';
+}
+endif;
+if ( !function_exists( 'is_entry_card_type_big_card' ) ):
+function is_entry_card_type_big_card(){
+  return get_entry_card_type() == 'big_card';
+}
+endif;
 if ( !function_exists( 'is_entry_card_type_vertical_card_2' ) ):
 function is_entry_card_type_vertical_card_2(){
   return get_entry_card_type() == 'vertical_card_2';

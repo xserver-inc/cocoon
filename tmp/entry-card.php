@@ -10,9 +10,13 @@ $article_id_attr = null;
 if (is_front_page_type_index()) {
   $article_id_attr = ' id="post-'.get_the_ID().'"';
 }
+$classes = '';
+if (is_entry_card_type_big_card_first() && $count === 1) {
+  $classes = ' ec-big-card-first';
+}
 ?>
 
-<a href="<?php echo esc_url(get_the_permalink()); ?>" class="entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(get_the_title()); ?>">
+<a href="<?php echo esc_url(get_the_permalink()); ?>" class="entry-card-wrap a-wrap border-element<?php echo $classes; ?> cf" title="<?php echo esc_attr(get_the_title()); ?>">
   <article<?php echo $article_id_attr; ?> <?php post_class( array('post-'.get_the_ID(), 'entry-card','e-card', 'cf') ); ?>>
     <figure class="entry-card-thumb card-thumb e-card-thumb">
       <?php
