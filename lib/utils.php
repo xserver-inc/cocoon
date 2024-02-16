@@ -3525,6 +3525,13 @@ function is_wp_6_1_or_over(){
 }
 endif;
 
+//WordPressバージョンが6.5以上かどうか
+if ( !function_exists( 'is_wp_6_5_or_over' ) ):
+function is_wp_6_5_or_over(){
+  return get_bloginfo('version') >= '6.5';
+}
+endif;
+
 //WordPress5.5からのLazy Loadが有効な環境かどうか
 if ( !function_exists( 'is_wp_lazy_load_valid' ) ):
 function is_wp_lazy_load_valid(){

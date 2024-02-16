@@ -516,7 +516,7 @@ function fix_img_v63( $block_content, $block ) {
 add_action('admin_menu', 'add_reuse_block_menu_page');
 if ( !function_exists( 'add_reuse_block_menu_page' ) ):
 function add_reuse_block_menu_page() {
-  if (is_admin()) {
+  if (is_admin() && !is_wp_6_5_or_over()) {
     add_menu_page(
       __( 'パターン', THEME_NAME ),
       __( 'パターン', THEME_NAME ),
