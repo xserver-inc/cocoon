@@ -2446,12 +2446,14 @@ endif;
 //ショートコードの値をサニタイズする
 if ( !function_exists( 'sanitize_shortcode_value' ) ):
 function sanitize_shortcode_value($value){
-  $value = strip_tags($value);
-  $value = esc_html(trim($value));
-  $value = str_replace('"', '', $value);
-  $value = str_replace("'", '', $value);
-  $value = str_replace('[', '', $value);
-  $value = str_replace(']', '', $value);
+  if ($value) {
+    $value = strip_tags($value);
+    $value = esc_html(trim($value));
+    $value = str_replace('"', '', $value);
+    $value = str_replace("'", '', $value);
+    $value = str_replace('[', '', $value);
+    $value = str_replace(']', '', $value);
+  }
   return $value;
 }
 endif;
