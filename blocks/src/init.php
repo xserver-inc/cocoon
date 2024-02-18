@@ -404,5 +404,5 @@ require_once abspath(__FILE__) . 'micro/micro-text/index.php';
 //  Gutenbergメニュー追加
 //******************************************************************************
 add_action('enqueue_block_editor_assets', function() {
-	wp_enqueue_script('table-decorations-js', get_template_directory_uri() . '/js/table-decorations.js');
+	wp_enqueue_script('table-decorations-js', get_template_directory_uri() . '/js/background-icons.js');
 });

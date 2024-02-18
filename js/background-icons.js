@@ -2,7 +2,7 @@
 
   const { Fragment, createElement } = wp.element;
   const { registerFormatType, toggleFormat } = wp.richText;
-  const { RichTextToolbarButton, RichTextShortcut, BlockFormatControls } = wp.editor;
+  const { BlockFormatControls } = wp.editor;
   const { __ } = wp.i18n;
   const { Fill, Slot, Toolbar, ToolbarButton, DropdownMenu } = wp.components;
   const { displayShortcut } = wp.keycodes;
@@ -10,9 +10,9 @@
 
   const el = createElement;
 
-  function CeltisRichTextToolbarButton( { name, shortcutType, shortcutCharacter, ...props } ) {
+  function CocoonRichTextToolbarButton( { name, shortcutType, shortcutCharacter, ...props } ) {
     let shortcut;
-    let fillName = 'CeltisToolbarControls';
+    let fillName = 'CocoonToolbarControls';
 
     if ( name ) {
       fillName += `.${ name }`;
@@ -34,7 +34,7 @@
   };
 
   // 専用のドロップダウン用ボタンとメニューを登録
-  registerFormatType( 'celtis/dropdown', {
+  registerFormatType( 'cocoon/dropdown', {
     title: 'buttons',
     tagName: 'dropdown',
     className: null,
@@ -48,12 +48,12 @@
             el( Toolbar,
               {},
               el( Slot,
-                { name: 'CeltisToolbarControls' },
+                { name: 'CocoonToolbarControls' },
                 (fills) => {
                   return ( fills.length !== 0 &&
                     el( DropdownMenu,
                       { icon: 'marker',
-                        label: 'Celtis Buttons',
+                        label: __( '背景アイコン', 'cocoon' ),
                         hasArrowIndicator: true,
                         position: 'bottom left',
                         controls : orderBy( fills.map( ( [ { props } ] ) => props ), 'title'),
@@ -76,7 +76,7 @@
   tagTypes.push({ tag: 'span', class: 'cross',    title: __( '×', 'cocoon' ), icon: 'edit' });
 
   tagTypes.map( (idx) => {
-    let type = 'celtis/richtext-' + idx.tag;
+    let type = 'cocoon/richtext-' + idx.tag;
     if (idx.class !== null) {
       type += '-' + idx.class;
     }
@@ -89,8 +89,8 @@
         return (
           el( Fragment,
             {},
-            // RichTextToolbarButtonからCeltisRichTextToolbarButtonへ登録先変更
-            el( CeltisRichTextToolbarButton,
+            // RichTextToolbarButtonからCocoonRichTextToolbarButtonへ登録先変更
+            el( CocoonRichTextToolbarButton,
               { icon: idx.icon,
                 title: idx.title,
                 isActive: isActive,
