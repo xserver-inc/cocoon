@@ -5944,3 +5944,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .is-list-horizontal .a-wrap {
   margin-right: 4px;
 }
+
+.edit-post-visual-editor {
+  background-color: #fff;
+}
