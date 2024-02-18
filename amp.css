@@ -1300,8 +1300,11 @@ img.emoji {
 .ect-vertical-card.ect-tile-card .card-meta {
   position: static;
 }
+.ect-vertical-card.ect-tile-card {
+  column-gap: initial;
+}
 .ect-vertical-card.ect-tile-card .a-wrap {
-  margin: 0 0.16666% 12px;
+  margin: 0 0.16666% 0;
 }
 
 .ect-2-columns > *,
