@@ -855,7 +855,7 @@ function wp_enqueue_jquery_masonry(){
       wp_enqueue_script('jquery-masonry');
 
       $common_code = '
-        $("#list.ect-tile-card").masonry({
+        $(".ect-tile-card").masonry({
           itemSelector: ".entry-card-wrap",
           isAnimated: false
         });
