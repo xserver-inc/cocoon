@@ -27,7 +27,7 @@ endif;
 define('OP_AD_CODE', 'ad_code');
 if ( !function_exists( 'get_ad_code' ) ):
 function get_ad_code(){
-  return stripslashes_deep(get_theme_option(OP_AD_CODE));
+  return stripslashes_deep(get_theme_option(OP_AD_CODE, ''));
 }
 endif;
 
@@ -532,7 +532,7 @@ endif;
 define('OP_PR_LABEL_EXCLUDE_POST_IDS', 'pr_label_exclude_post_ids');
 if ( !function_exists( 'get_pr_label_exclude_post_ids' ) ):
 function get_pr_label_exclude_post_ids(){
-  return get_theme_option(OP_PR_LABEL_EXCLUDE_POST_IDS);
+  return get_theme_option(OP_PR_LABEL_EXCLUDE_POST_IDS, '');
 }
 endif;
 
@@ -548,7 +548,7 @@ endif;
 define('OP_PR_LABEL_EXCLUDE_TAG_IDS', 'pr_label_exclude_tag_ids');
 if ( !function_exists( 'get_pr_label_exclude_tag_ids' ) ):
 function get_pr_label_exclude_tag_ids(){
-  return get_theme_option(OP_PR_LABEL_EXCLUDE_TAG_IDS);
+  return get_theme_option(OP_PR_LABEL_EXCLUDE_TAG_IDS, '');
 }
 endif;
 
@@ -581,7 +581,7 @@ endif;
 define('OP_AD_EXCLUDE_POST_IDS', 'ad_exclude_post_ids');
 if ( !function_exists( 'get_ad_exclude_post_ids' ) ):
 function get_ad_exclude_post_ids(){
-  return get_theme_option(OP_AD_EXCLUDE_POST_IDS);
+  return get_theme_option(OP_AD_EXCLUDE_POST_IDS, '');
 }
 endif;
 
