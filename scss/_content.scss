@@ -135,7 +135,7 @@ table {
     }
   }
 
-  &:has(.s-circle, .d-circle, .triangle, .cross) td{
+  :is(th, td):has(.s-circle, .d-circle, .triangle, .cross){
     height: 60px;
   }
 }

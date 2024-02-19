@@ -2155,7 +2155,7 @@ body.wp-admin {
 .admin-settings .demo table:not(.has-border-color) :where(th, td) {
   border: 1px solid var(--cocoon-x-thin-color);
 }
-.admin-settings .demo table:has(.s-circle, .d-circle, .triangle, .cross) td {
+.admin-settings .demo table :is(th, td):has(.s-circle, .d-circle, .triangle, .cross) {
   height: 60px;
 }
 .admin-settings .demo .s-circle:before,
@@ -10503,7 +10503,7 @@ body.wp-admin {
 .admin-settings .demo table:not(.has-border-color) :where(th, td) {
   border: 1px solid var(--cocoon-x-thin-color);
 }
-.admin-settings .demo table:has(.s-circle, .d-circle, .triangle, .cross) td {
+.admin-settings .demo table :is(th, td):has(.s-circle, .d-circle, .triangle, .cross) {
   height: 60px;
 }
 .admin-settings .demo .s-circle:before,
