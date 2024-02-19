@@ -92,6 +92,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --cocoon-list-wide-padding: min(3%, 24px) min(5%, 40px) min(3%, 24px) min(7%, 56px);
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
+  --card-ratio: 16/9;
 }
 
 .faw::before {

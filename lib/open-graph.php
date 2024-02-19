@@ -122,7 +122,16 @@ class OpenGraphGetter implements Iterator
     // if (get_option('WPLANG') == 'ja') {
     //   mb_language("Japanese");
     // }
-    $HTML = @mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
+
+    // mb_encode_numericentityを使用するための変換オプションを設定
+    $convmap = array(
+      0x80, 0xFFFF, 0, 0xFFFF
+    );
+
+    // UTF-8エンコーディングを指定して、数値エンティティに変換
+    $HTML = @mb_encode_numericentity($HTML, $convmap, 'UTF-8');
+
+    // $HTML = @mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
     //$HTML = mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8');
     if (!$HTML) {
       return false;

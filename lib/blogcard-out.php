@@ -178,11 +178,14 @@ function url_to_external_ogp_blogcard_tag($url){
     if ( $ogp == false ) {
       $ogp = 'error';
     } else {
-      //キャッシュ画像の取得
-      $res = fetch_card_image($ogp->image, $url);
 
-      if ( $res ) {
-        $ogp->image = $res;
+      if (isset($ogp->image) && empty($ogp->image)) {
+        //キャッシュ画像の取得
+        $res = fetch_card_image($ogp->image, $url);
+
+        if ( $res ) {
+          $ogp->image = $res;
+        }
       }
 
       if ( isset( $ogp->title ) && $ogp->title )
