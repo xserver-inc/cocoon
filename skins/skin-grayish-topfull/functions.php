@@ -276,6 +276,10 @@ if (!function_exists('skin_grayish_font_css')) :
       $style_font = 'inherit';
     }
     echo sprintf($style_template, $style_font);
+    // CSS変数で出力
+    echo '<style>:root {--skin-grayish-style-font: ' . $style_font . ';
+                        --skin-get-site-font: ' . $cocoon_site_font . ', var(--skin-grayish-default-font),sans-serif' . ';
+          }</style>';
   }
 endif;
 
@@ -318,6 +322,13 @@ if (!function_exists('skin_grayish_font_blkeditor')) :
 
     $style_fontfamily_amazon = sprintf($style_template_amazon, $style_font);
     wp_add_inline_style('wp-block-editor', $style_fontfamily_amazon);
+    // ブロックエディタの中にもCSS変数で出力
+    $style_fontfamily_cstm =
+      '
+      :root {--skin-grayish-style-font: ' . $style_font . ';
+        --skin-get-site-font: ' . $cocoon_site_font . ', var(--skin-grayish-default-font),sans-serif' . ';
+        }	';
+    wp_add_inline_style('wp-block-editor', $style_fontfamily_cstm);
   }
 endif;
 add_action('enqueue_block_editor_assets', 'skin_grayish_font_blkeditor');

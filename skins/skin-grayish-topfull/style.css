@@ -1300,6 +1300,34 @@ a:hover {
   display: none;
 }
 
+/* フロントページタイプ　v2.7.0.3 カテゴリー毎のときにlist-wrap下にmargin-bottomが入っているのを消す
+   ただしmainの最後の要素だったときのみ */
+
+.skin-grayish .main .list-wrap.front-page-type-category-2-columns:last-child,
+.skin-grayish .main .list-wrap.front-page-type-category-3-columns:last-child,
+.skin-grayish .main .list-wrap.front-page-type-category:last-child {
+  margin-bottom: 0;
+}
+
+.skin-grayish .main .list-wrap.front-page-type-category-2-columns .list-columns,
+.skin-grayish .main .list-wrap.front-page-type-category-3-columns .list-columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  -moz-column-gap: 1%;
+       column-gap: 1%;
+}
+
+.skin-grayish .main .list-wrap.front-page-type-category-3-columns .list-columns {
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+}
+
+.skin-grayish .main .list-wrap.front-page-type-category-3-columns .list-columns .card-arrow .card-content {
+  margin-right: 0;
+}
+
 /* MORE リンクボタン & index page 次のページも同様*/
 /* comment ボタンも同様*/
 
@@ -4491,6 +4519,8 @@ body:has(#spotlight.show) .header {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    -moz-column-gap: 4%;
+         column-gap: 4%;
   }
 
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards .a-wrap {
@@ -5164,6 +5194,9 @@ body:has(#spotlight.show) .header {
     padding-top: 1rem;
   }
 
+  .skin-grayish.front-top-page .list-columns.fpt-2-columns .widget-entry-card-content {
+    margin-right: 0;
+  }
 
   .skin-grayish.front-top-page .list-columns.fpt-3-columns .widget-entry-card {
     display: flex;
@@ -5182,6 +5215,11 @@ body:has(#spotlight.show) .header {
     margin-left: 8px;
     margin-right: 16px;
   }
+
+  .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards .widget-entry-card .widget-entry-card-content {
+    margin-right: 0;
+  }
+
 
   .skin-grayish :is(.front-page-type-category-3-columns, .front-page-type-category-2-columns) .list-columns .list-column .widget-entry-cards .a-wrap {
     width: 100%;
@@ -5451,6 +5489,11 @@ body:has(#spotlight.show) .header {
     margin-bottom: 0rem;
   }
 
+  .skin-grayish.front-top-page .content .main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   /****************************** Footer  ******************************/
   .skin-grayish .footer-widgets-mobile {
     position: relative;
@@ -5706,6 +5749,7 @@ body:has(#spotlight.show) .header {
     top: -1.2em;
 
   }
+
 
   /* 新着 & カテゴリータイトル */
   .skin-grayish .list-new-entries .list-title-in,
