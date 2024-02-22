@@ -1116,3 +1116,8 @@ textarea[name="the_page_memo"]{
     margin: 0 !important;
   }
 }
+
+//WordPressデフォルトのタグ（post_tag）1ランページでは親を選択するドロップダウンを表示しない
+.taxonomy-post_tag .term-parent-wrap{
+  display: none;
+}

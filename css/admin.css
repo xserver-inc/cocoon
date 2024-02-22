@@ -23524,3 +23524,6 @@ textarea[name=the_page_memo] {
     margin: 0 !important;
   }
 }
+.taxonomy-post_tag .term-parent-wrap {
+  display: none;
+}
