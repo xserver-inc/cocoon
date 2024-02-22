@@ -23524,3 +23524,7 @@ textarea[name=the_page_memo] {
     margin: 0 !important;
   }
 }
+.taxonomy-post_tag .term-parent-wrap,
+.post-type-post .editor-post-taxonomies__hierarchical-terms-input + .components-base-control:has(#inspector-select-control-2) {
+  display: none;
+}
