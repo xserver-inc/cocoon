@@ -1116,10 +1116,3 @@ textarea[name="the_page_memo"]{
     margin: 0 !important;
   }
 }
-
-//WordPressデフォルトのタグ（post_tag）一覧ページでは親を選択するドロップダウンを表示しない
-.taxonomy-post_tag .term-parent-wrap,
-//投稿ページのタグ選択画面では親を選択するドロップダウンを表示しない
-.post-type-post .editor-post-taxonomies__hierarchical-terms-input + .components-base-control:has(#inspector-select-control-2){
-  display: none;
-}
