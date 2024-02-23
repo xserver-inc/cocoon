@@ -83,7 +83,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             generate_checkbox_tag(OP_EDITOR_TAG_CHECK_LIST_ENABLE , is_editor_tag_check_list_enable(), __( 'タグ選択をチェックリスト形式にする', THEME_NAME ));
             generate_image_preview_tag('https://im-cocoon.net/wp-content/uploads/tag-check-box.png');
-            generate_tips_tag(__( 'エディターでチェックリストを選択する形でタグを選択する様に変更します。', THEME_NAME ).__( '※タグ編集画面やエディターのタグオプション上で階層構造形式になります。', THEME_NAME ));
+            generate_tips_tag(__( 'エディターでチェックリストを選択する形でタグを選択する様に変更します。', THEME_NAME ));
             ?>
           </td>
         </tr>
