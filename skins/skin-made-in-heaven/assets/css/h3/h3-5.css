@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* 下線(メイン・薄) */
+
+.article h3 {
+  border-bottom: 2px solid var(--hover-color);
+  display: block;
+  padding: 10px 0 8px;
+}
+
+.article h3:before {
+  background: var(--main-color);
+  bottom: -2px;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 30%;
+}

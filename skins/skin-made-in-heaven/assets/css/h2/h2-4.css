@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* ステッチ */
+
+.article h2,
+.main .article .widget-title,
+.main .under-entry-content h2 {
+  background-color: var(--main-color);
+  color: var(--text-color)!important;
+  padding: 20px 25px!important;
+}
+
+.article h2:before,
+.main .article .widget-title:before,
+.main .under-entry-content h2:before {
+  border: dashed 1px var(--text-color);
+  bottom: auto;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  height: calc(100% - 8px);
+  left: 4px;
+  position: absolute;
+  right: auto;
+  top: 4px;
+  width: calc(100% - 8px);
+}

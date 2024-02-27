@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* カメラ */
+
+.parapara {
+  animation-delay: 1.5s;
+  animation-duration: 0.3s;
+  animation-fill-mode: backwards;
+  animation-name: parapara;
+  animation-timing-function: steps(4);
+  background-color: var(--title-color);
+  height: 250px;
+  mask-image: url(../../img/camera.svg);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  width: 250px;
+}
+
+@keyframes parapara {
+  100% {
+    mask-position: -1000px 0;
+  }
+}

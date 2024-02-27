@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* ハート */
+
+.cp-spinner {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 48px;
+  position: relative;
+  width: 48px;
+}
+
+.cp-heart {
+  animation: cp-heart-animate 2s ease-in-out infinite;
+}
+
+.cp-heart:before {
+  background-color: var(--main-color);
+  border-radius: 12px 12px 0 0;
+  box-sizing: border-box;
+  content: '';
+  display: inline-block;
+  height: 35px;
+  left: 8px;
+  position: absolute;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 24px;
+}
+
+.cp-heart:after {
+  background-color: var(--main-color);
+  border-radius: 12px 12px 0 0;
+  box-sizing: border-box;
+  content: '';
+  display: inline-block;
+  height: 35px;
+  position: absolute;
+  right: 8px;
+  top: 0;
+  transform: rotate(45deg);
+  width: 24px;
+}
+
+@keyframes cp-heart-animate {
+  0% {
+    transform: scale(.9);
+    transform-origin: center;
+  }
+  15% {
+    transform: scale(1.4);
+    transform-origin: center;
+  }
+  30% {
+    transform: scale(.9);
+    transform-origin: center;
+  }
+  45% {
+    transform: scale(1.4);
+    transform-origin: center;
+  }
+  100%,
+  60% {
+    transform: scale(.9);
+    transform-origin: center;
+  }
+}

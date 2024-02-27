@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* 左縦線(2色) */
+
+aside.widget .widget-title {
+  border-left: 10px solid var(--hover-color);
+  padding: 10px;
+}
+
+aside.widget .widget-title:before {
+  background-color: var(--main-color);
+  bottom: 0;
+  content: '';
+  height: 50%;
+  left: -10px;
+  position: absolute;
+  top: 0;
+  width: 10px;
+}

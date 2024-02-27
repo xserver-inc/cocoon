@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/* 下線(メイン・グレー) */
+
+aside.widget .widget-title {
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 14px;
+}
+
+aside.widget .widget-title:before {
+  background: var(--main-color);
+  bottom: -1px;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 30%;
+}

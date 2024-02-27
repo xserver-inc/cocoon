@@ -1,0 +1,382 @@
+@charset "UTF-8";
+
+/*******************************************************************************
+**
+**  オリジナルCSS
+**
+*******************************************************************************/
+
+
+/*******************************************************************************
+**  インラインボタン
+*******************************************************************************/
+
+.hvn-btn {
+  background-color: var(--white-bgcolor);
+  border: 1px solid var(--main-color);
+  box-shadow: var(--shadow-color);
+  display: block;
+  font-size: var(--cocoon-text-size-s);
+  line-height: 40px;
+  text-align: center;
+}
+
+.hvn-btn:hover {
+  background-color: var(--hover-color);
+  color: var(--cocoon-text-color);
+}
+
+.hvn-btn a,
+a:has(.hvn-btn) {
+  text-decoration: none;
+  color: unset;
+}
+
+.hvn-btn .anchor-icon,
+a:has(.hvn-btn) .anchor-icon {
+  display: none;
+}
+
+.body td:has(.hvn-btn) {
+  padding: 10px;
+}
+
+
+/*******************************************************************************
+**  タイムライン(ステップ)
+*******************************************************************************/
+
+.is-style-hvn-timeline-step.timeline-box .timeline {
+  padding: 0;
+}
+
+.is-style-hvn-timeline-step .timeline-item {
+  border-left: 0!important;
+}
+
+.is-style-hvn-timeline-step .timeline-item:last-of-type .timeline-item-content {
+  border-color: transparent;
+}
+
+.is-style-hvn-timeline-step .timeline-item:before {
+  border-radius: 50%;
+  color: var(--text-color);
+  content: 'STEP\a' counter(step);
+  counter-increment: step;
+  display: grid;
+  font-size: 12px;
+  height: 40px;
+  left: 0;
+  line-height: 1.2;
+  place-content: center;
+  text-align: center;
+  top: 0;
+  width: 40px;
+}
+
+.is-style-hvn-timeline-step .timeline-item-label {
+  display: none;
+}
+
+.is-style-hvn-timeline-step .timeline-item-content {
+  border-left: 3px solid #eee;
+  float: none;
+  margin: 0px 0 0 20px;
+  padding: 0 0 var(--padding15) 35px;
+  width: calc(100% - 20px);
+}
+
+
+/*******************************************************************************
+**  タイムライン(ビッグ)
+*******************************************************************************/
+
+.is-style-hvn-timeline-big.timeline-box .timeline {
+  padding: 0;
+}
+
+.is-style-hvn-timeline-big .timeline-item {
+  border-left: 0!important;
+  border-top: 1px dotted var(--border-color);
+}
+
+.is-style-hvn-timeline-big .timeline-item:first-of-type {
+  border: 0;
+}
+
+.is-style-hvn-timeline-big .timeline-item:first-of-type:before {
+  content: none;
+}
+
+.is-style-hvn-timeline-big .timeline-item:before {
+  background-color: var(--border-color);
+  border: 13px solid var(--white-bgcolor);
+  border-radius: 0;
+  border-top-color: transparent;
+  content: '';
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 0;
+}
+
+.is-style-hvn-timeline-big .timeline-item-label {
+  display: none;
+}
+
+.is-style-hvn-timeline-big .timeline-item-title {
+  text-align: center;
+}
+
+.is-style-hvn-timeline-big .timeline-item-content {
+  border-left: 0;
+  float: none;
+  padding: var(--gap30) 0 var(--padding15) 0;
+  width: 100%;
+}
+
+.is-style-hvn-timeline-big .timeline-item-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.is-style-hvn-timeline-big .timeline-item-content:before {
+  color: var(--main-color);
+  content: 'STEP\a' counter(step);
+  counter-increment: step;
+  line-height: 1;
+  text-align: center;
+}
+
+.is-style-hvn-timeline-big .timeline-item:first-of-type .timeline-item-content {
+  padding-top: 0;
+}
+
+.is-style-hvn-timeline-big .timeline-item:last-of-type .timeline-item-content {
+  padding-bottom: 0;
+}
+
+.is-style-hvn-timeline-big .timeline-item-content:after {
+  content: none;
+}
+
+
+/*******************************************************************************
+**  タイムライン(ボックス)
+*******************************************************************************/
+
+.is-style-hvn-timeline-box.timeline-box .timeline {
+  padding: 0;
+}
+
+.is-style-hvn-timeline-box.timeline-box {
+  border: 0;
+  padding: 0;
+}
+
+.timeline-box .timeline {
+  counter-reset: step;
+}
+
+.is-style-hvn-timeline-box .timeline .timeline-item {
+  border: 1px solid var(--border-color);
+  margin-bottom: var(--gap30)!important;
+  overflow: unset;
+  padding: var(--padding15);
+}
+
+.is-style-hvn-timeline-box .timeline .timeline-item:last-of-type {
+  margin-bottom: 0!important;
+}
+
+.is-style-hvn-timeline-box .timeline-item:before {
+  background-color: transparent;
+  border-radius: 0;
+  color: var(--main-color);
+  content: counter(step);
+  counter-increment: step;
+  font-weight: bold;
+  height: unset;
+  left: var(--padding15);
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+}
+
+.is-style-hvn-timeline-box .timeline-item-label {
+  display: none;
+}
+
+.is-style-hvn-timeline-box .timeline-item-content {
+  border-left: 1px solid var(--border-color);
+  float: none;
+  margin: 0 0 0 40px;
+  padding: 0 0 0 var(--padding15);
+  width: calc(100% - 40px);
+}
+
+.is-style-hvn-timeline-box .timeline-item-content:before {
+  background-color: transparent;
+  border: 13px solid transparent;
+  border-radius: 0;
+  border-top-color: var(--border-color);
+  bottom: -36px;
+  content: '';
+  height: 0;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 0;
+}
+
+.is-style-hvn-timeline-box .timeline-item:last-of-type .timeline-item-content:before {
+  content: none;
+}
+
+
+/*******************************************************************************
+**  タイムライン(スケジュール)
+*******************************************************************************/
+
+.hvn-timeline .timeline-item {
+  display: list-item;
+}
+
+.hvn-timeline .timeline-item-label {
+  font-weight: normal;
+  line-height: 1.8;
+  padding: 0 20px 0 0;
+}
+
+.hvn-timeline .timeline-item:before {
+  background-color: var(--white-bgcolor);
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  font-family: 'Font Awesome 5 Free';
+  font-size: 12px;
+  font-weight: 900;
+  height: 20px;
+  line-height: 20px;
+  left: 100px;
+  text-align: center;
+  top: 0;
+  width: 20px;
+}
+
+.hvn-timeline .timeline-item-content {
+  padding: 0 0 var(--padding15) 20px;
+}
+
+.hvn-timeline .timeline-item:last-of-type,
+.hvn-timeline .timeline-item:last-of-type .timeline-item-content {
+  border-color: transparent!important;
+}
+
+@media (width <=480px) {
+  .hvn-timeline .timeline > li.timeline-item {
+    border-color: #eee;
+    margin-left: 10px;
+  }
+  .hvn-timeline .timeline-item:before {
+    left: -13px;
+  }
+  .hvn-timeline .timeline-item-label {
+    padding: 0 0 0 20px;
+  }
+  .hvn-timeline .timeline-item-content {
+    padding: 5px 0 5px 20px;
+  }
+}
+
+
+/*******************************************************************************
+**  コピーボタン
+*******************************************************************************/
+
+pre {
+  font-family: "Menlo", "Consolas", "monaco", "monospace", "ＭＳ ゴシック", sans-serif;
+}
+
+.pre-wrap {
+  position: relative;
+}
+
+.pre-wrap pre {
+  margin: 0;
+}
+
+.pre-wrap:hover .code-copy {
+  opacity: 1;
+  transition: all 0.3s ease-out!important;
+}
+
+.code-copy {
+  background-color: var(--main-color);
+  border: 0;
+  border-radius: 2px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: var(--cocoon-text-size-s);
+  line-height: 1.8;
+  opacity: 0;
+  padding: 0 1em;
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  z-index: 1;
+}
+
+
+/*******************************************************************************
+**  リボン(NEWマーク)
+*******************************************************************************/
+
+.widget-entry-cards.ranking-visible .a-wrap:before,
+.a-wrap:has(.ribbon):before,
+.list .a-wrap:has(.new-post):before,
+.list .a-wrap:has(.up-post):before {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  content: 'NEW';
+  display: block;
+  font-size: var(--cocoon-text-size-s);
+  line-height: 20px;
+  left: 0;
+  padding: 0 4px;
+  position: absolute;
+  text-align: center;
+  top: -5px;
+  width: 42px;
+  z-index: 1;
+}
+
+.widget-entry-cards.ranking-visible .a-wrap:after,
+.a-wrap:has(.ribbon):after,
+.list .a-wrap:has(.new-post):after,
+.list .a-wrap:has(.up-post):after {
+  border-bottom: 5px solid #555;
+  border-right: 5px solid transparent;
+  content: '';
+  left: 50px;
+  margin: 0;
+  position: absolute;
+  right: unset;
+  top: -5px;
+}
+
+.list .a-wrap:has(.up-post):before {
+  content: 'UP';
+}
+
+
+/*******************************************************************************
+**  いいねボタン
+*******************************************************************************/
+
+.body .widget-entry-cards .like {
+  display: none;
+}

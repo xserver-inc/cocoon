@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* 付箋(ストライプ) */
+
+.article h2,
+.main .article .widget-title,
+.main .under-entry-content h2 {
+  background: linear-gradient(135deg, transparent 25%, var(--hover-color) 26%, var(--hover-color) 50%, transparent 51%, transparent 75%, var(--hover-color) 76%, var(--hover-color));
+  background-size: 4px 4px;
+  border-left: 10px solid var(--main-color);
+  padding: 20px 15px!important;
+}

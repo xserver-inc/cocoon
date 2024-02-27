@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* 左縦線(2色) */
+
+.article h2,
+.main .article .widget-title,
+.main .under-entry-content h2 {
+  border-left: 10px solid var(--hover-color);
+  padding: 20px 25px 20px 15px!important;
+}
+
+.article h2::before,
+.main .article .widget-title::before,
+.main .under-entry-content h2::before {
+  background-color: var(--main-color);
+  bottom: 0px;
+  content: "";
+  height: 50%;
+  left: -10px;
+  position: absolute;
+  top: 0px;
+  width: 10px;
+}

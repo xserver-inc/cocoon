@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+/* 標準(左縦線) */
+
+.article h4 {
+  border-left: 10px solid var(--hover-color);
+  padding: 10px 25px 10px 15px;
+}

@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* 付箋(章番) */
+
+.article h2 {
+  background: linear-gradient(135deg, transparent 25%, var(--hover-color) 26%, var(--hover-color) 50%, transparent 51%, transparent 75%, var(--hover-color) 76%, var(--hover-color));
+  background-size: 4px 4px;
+  padding: 19px 14px 19px 15px!important;
+}
+
+.article h2 {
+  border: 1px solid var(--main-color);
+  border-left-width: 50px;
+  counter-increment: number;
+}
+
+.article h2:before {
+  color: var(--text-color);
+  content: counter(number, decimal-leading-zero);
+  font-style: italic;
+  left: -50px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  z-index: 1;
+}
+
+.main .article .widget-title,
+.main .under-entry-content h2 {
+  background: linear-gradient(135deg, transparent 25%, var(--hover-color) 26%, var(--hover-color) 50%, transparent 51%, transparent 75%, var(--hover-color) 76%, var(--hover-color));
+  background-size: 4px 4px;
+  border-left: 10px solid var(--main-color);
+  padding: 20px 20px 20px 10px!important;
+}
+
+.toc-list > li {
+  counter-increment: toc-number 1;
+  padding-left: 1.8em;
+}
+
+.toc-list > li::before {
+  background-color: var(--main-color);
+  border-radius: 100%;
+  color: var(--text-color)!important;
+  content: counter(toc-number);
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.6em;
+  text-align: center;
+  top: 4px;
+  width: 1.6em;
+}
+
+.hvn-scroll-toc .sidebar-scroll .toc-list > li::before {
+  background-color: var(--hover-color);
+}
+
+.hvn-scroll-toc .sidebar-scroll .toc-list > li.current::before {
+  background-color: var(--main-color);
+}

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* 下線(ストライプ) */
+
+aside.widget .widget-title {
+  padding: 0 0 15px;
+}
+
+aside.widget .widget-title:before {
+  background: linear-gradient(135deg, transparent 25%, var(--main-color) 26%, var(--main-color) 50%, transparent 51%, transparent 75%, var(--main-color) 76%, var(--main-color));
+  background-size: 4px 4px;
+  bottom: 0;
+  content: '';
+  height: 4px;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}

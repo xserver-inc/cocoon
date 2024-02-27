@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* チェックアイコン */
+
+.article h4 {
+  border: 0;
+  padding: 10px 25px;
+  position: relative;
+}
+
+.article h4:before {
+  color: var(--main-color);
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

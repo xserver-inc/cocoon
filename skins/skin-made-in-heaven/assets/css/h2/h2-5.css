@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* 吹き出し */
+
+.article h2,
+.main .article .widget-title,
+.main .under-entry-content h2 {
+  background-color: var(--main-color);
+  color: var(--text-color)!important;
+  padding: 20px 25px!important;
+}
+
+.article h2:before,
+.main .article .widget-title:before,
+.main .under-entry-content h2:before {
+  background-color: var(--main-color);
+  bottom: -10px;
+  clip-path: polygon(0 0,100% 0, 50% 100%);
+  content: '';
+  height: 11px;
+  left: 30px;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 22px;
+}

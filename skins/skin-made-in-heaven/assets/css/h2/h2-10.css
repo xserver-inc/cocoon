@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/* 上下線 */
+
+.article h2,
+.main .article .widget-title,
+.main .under-entry-content h2 {
+  border-bottom: 2px solid var(--main-color);
+  border-top: 2px solid var(--main-color);
+  padding: 18px 25px !important;
+}

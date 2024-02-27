@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+/* 左縦線 */
+
+aside.widget .widget-title {
+  border-left: 10px solid var(--main-color);
+  padding: 10px;
+}

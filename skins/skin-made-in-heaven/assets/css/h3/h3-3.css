@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/* 下線(グラデーション) */
+
+.article h3 {
+  padding: 10px 0;
+}
+
+.article h3:after {
+  background: linear-gradient(to right, var(--main-color), transparent);
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}

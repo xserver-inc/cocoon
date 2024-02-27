@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+/* 標準(下点線) */
+
+aside.widget .widget-title {
+  border-bottom: 3px dotted var(--main-color);
+  padding: 0 0 12px;
+}

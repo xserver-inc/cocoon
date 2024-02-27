@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+/* 下線 */
+
+.article h3 {
+  border-bottom: 2px solid var(--main-color);
+  padding: 10px 0 8px 0;
+}

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* 下線(章番) */
+
+.main .article .widget-title,
+.main .under-entry-content h2 {
+  background-color: var(--hover-color);
+  border-left: 10px solid var(--main-color);
+  padding: 20px 10px;
+}
+
+.article h2 {
+  align-items: flex-end;
+  border-bottom: 5px solid var(--hover-color);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  counter-increment: number 1;
+  display: flex;
+  min-height: 70px;
+  padding: 0px 20px 5px;
+}
+
+.article h2::before {
+  font-family: Arial;
+  bottom: -28px;
+  color: var(--hover-color);
+  content: counter(number, decimal-leading-zero);
+  font-size: 90px;
+  font-style: italic;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.toc-list > li {
+  counter-increment: toc-number 1;
+  padding-left: 1.8em;
+}
+
+.toc-list > li::before {
+  background-color: var(--main-color);
+  border-radius: 100%;
+  color: var(--text-color)!important;
+  content: counter(toc-number);
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.6em;
+  text-align: center;
+  top: 4px;
+  width: 1.6em;
+}
+
+.hvn-scroll-toc .sidebar-scroll .toc-list > li::before {
+  background-color: var(--hover-color);
+}
+
+.hvn-scroll-toc .sidebar-scroll .toc-list > li.current::before {
+  background-color: var(--main-color);
+}

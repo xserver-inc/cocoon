@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/* 塗りつぶし */
+
+aside.widget .widget-title {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  margin: 0!important;
+  padding: 10px var(--main-padding);
+}

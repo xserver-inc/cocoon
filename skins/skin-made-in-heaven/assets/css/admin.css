@@ -1,0 +1,426 @@
+@charset "UTF-8";
+
+/*******************************************************************************
+**
+**  カスタマイザー
+**
+*******************************************************************************/
+
+#customize-theme-controls #accordion-panel-hvn_cocoon .accordion-section-title:before {
+  color: #e589a2;
+  content: '\f487';
+  font-family: 'dashicons';
+  font-weight: normal;
+}
+
+
+/*******************************************************************************
+**  スライドオプション
+*******************************************************************************/
+
+#customize-control-hvn_header_fade_setting,
+#customize-control-hvn_header_animation_setting {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#customize-control-hvn_header_fade_setting .description,
+#customize-control-hvn_header_animation_setting .description {
+  width: 100%;
+}
+
+#customize-control-hvn_header_fade_setting .customize-inside-control-row,
+#customize-control-hvn_header_animation_setting .customize-inside-control-row {
+  margin: 0;
+}
+
+#customize-control-hvn_header_fade_setting input,
+#customize-control-hvn_header_animation_setting input {
+  display: none;
+}
+
+#customize-control-hvn_header_fade_setting label,
+#customize-control-hvn_header_animation_setting label {
+  color: #007cba;
+  padding: 5px 10px;
+  box-shadow: inset 1px 1px 0 0 #007cba, 1px 1px 0 0 #007cba, 1px 0 0 0 #007cba, 0 1px 0 0 #007cba;
+}
+
+#customize-control-hvn_header_fade_setting input:checked ~ label,
+#customize-control-hvn_header_animation_setting input:checked ~ label {
+  background-color: #007cba;
+  color: #fff;
+}
+
+
+/*******************************************************************************
+**  エラー表示
+*******************************************************************************/
+
+
+/* スライドインメニュータイトル */
+
+#_customize-input-hvn_mobile_text_setting:invalid,
+
+/* 「もっと見る」テキスト */
+
+#_customize-input-hvn_button_more_setting:invalid,
+
+/* 「次のページ」テキスト */
+
+#_customize-input-hvn_button_next_setting:invalid,
+
+/* パンくずリストテキスト */
+
+#_customize-input-hvn_breadcrumbs_setting:invalid,
+
+/* NEWマーク表示日数 */
+
+#_customize-input-hvn_index_new_setting:invalid,
+
+/* テキストサイズ */
+
+#_customize-input-hvn_appea_font_size_setting:invalid,
+
+/* 不透明度 */
+
+#_customize-input-hvn_header_opacity_setting:invalid {
+  animation: shake-x 1s;
+  background-color: rgba(255 0 0 / 0.2);
+  border-color: red;
+}
+
+@keyframes shake-x {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-4px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(4px);
+    ;
+  }
+}
+
+
+/*******************************************************************************
+**  見出し
+*******************************************************************************/
+
+
+/* 基本カラー */
+
+#customize-control-hvn_main_color_setting:before,
+#customize-control-header_background_color:before,
+#customize-control-hvn_h2_css_setting:before,
+
+/* 拡張 */
+
+#customize-control-hvn_front_loading_setting:before,
+#customize-control-entry_card_type:before,
+#customize-control-hvn_button_more_setting:before,
+#customize-control-hvn_index_new_setting:before,
+#customize-control-hvn_prof_setting:before,
+
+/* 動画・スライドヘッダー */
+
+#customize-control-the_site_logo_url:before,
+#customize-control-hvn_header_setting:before,
+#customize-control-hvn_header_fade_setting:before,
+#customize-control-hvn_header_filter_setting:before,
+#customize-control-hvn_header_color_setting:before {
+  background-color: #fff;
+  border-bottom: 1px solid #dcdcde;
+  border-top: 1px solid #dcdcde;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 15px calc(50% - 50vw);
+  padding: 10px calc(50vw - 50%);
+}
+
+#customize-control-hvn_main_color_setting:before {
+  content: '■ 基本カラー';
+}
+
+#customize-control-header_background_color:before {
+  content: '■ 個別カラー';
+}
+
+#customize-control-hvn_h2_css_setting:before {
+  content: '■ 見出しデザイン';
+}
+
+#customize-control-hvn_front_loading_setting:before {
+  content: '■ ローディング画面';
+}
+
+#customize-control-entry_card_type:before {
+  content: '■ フロントページ';
+}
+
+#customize-control-hvn_button_more_setting:before {
+  content: '■ ボタン';
+}
+
+#customize-control-hvn_index_new_setting:before {
+  content: '■ オプション';
+}
+
+#customize-control-hvn_prof_setting:before {
+  content: '■ プロフィール';
+}
+
+#customize-control-the_site_logo_url:before {
+  content: '■ ヘッダーロゴ';
+}
+
+#customize-control-hvn_header_setting:before {
+  content: '■ メインビジュアル';
+}
+
+#customize-control-hvn_header_fade_setting:before {
+  content: '■ スライドオプション';
+}
+
+#customize-control-hvn_header_filter_setting:before {
+  content: '■ フィルター';
+}
+
+#customize-control-hvn_header_color_setting:before {
+  content: '■ オーバーレイ';
+}
+
+
+/*******************************************************************************
+**
+**  ダッシュボード
+**
+*******************************************************************************/
+
+
+/* Cocoonアイコン */
+
+.menu-top.toplevel_page_theme-settings .wp-menu-image img {
+  display: none;
+}
+
+.menu-top.toplevel_page_theme-settings .wp-menu-image:before {
+  color: #e589a2!important;
+  content: '\f487';
+}
+
+
+/* 投稿一覧ステータス */
+
+.wp-admin.post-type-post .status-future {
+  background-color: #E0F7FA;
+}
+
+.wp-admin.post-type-post .status-draft {
+  background-color: #FFEBEE;
+}
+
+.wp-admin.post-type-post .status-sticky {
+  background-color: #F1F8E9;
+}
+
+
+/*******************************************************************************
+**
+**  Cocoon設定
+**
+*******************************************************************************/
+
+#tabs #tab-all-label,
+#tabs #tab-theme-header-label,
+#tabs #tab-column-label,
+#tabs #tab-page-page-label,
+#tabs #tab-blog-card-label,
+#tabs #tab-code-highlight-label,
+#tabs #tab-carousel-label,
+#tabs #tab-footer-label,
+#tabs #tab-buttons-label,
+#tabs #tab-mobile-buttons-label,
+#tabs #tab-page-404-label,
+#tabs #tab-widget-label,
+#tabs #tab-widget-area-label,
+#tabs #tab-reset-label {
+  display: none!important;
+}
+
+
+/* 広告 */
+
+#tab-ads-content tr:nth-of-type(3) td label[for=pr_label_small_caption],
+#tab-ads-content tr:nth-of-type(3) td label[for=pr_label_small_caption] + br,
+#exclude-pr-label tr:nth-child(2),
+#exclude-pr-label .skin-control,
+#exclude-pr-label .skin-control + .tips {
+  display: none;
+}
+
+
+/* インデックス */
+
+#tab-index-page-content tr:nth-child(1) td label[for="front_page_type"],
+#tab-index-page-content tr:nth-child(1) td label[for="front_page_type"] + ul,
+#tab-index-page-content tr:nth-child(1) td .tips:first-of-type,
+#tab-index-page-content tr:nth-child(1) td .toggle:last-of-type {
+  display: none;
+}
+
+#tab-index-page-content tr:nth-child(2),
+#tab-index-page-content tr:nth-child(3),
+#tab-index-page-content tr:nth-child(4),
+#tab-index-page-content tr:nth-child(5),
+#tab-index-page-content tr:nth-child(6) {
+  display: none;
+}
+
+#tab-index-page-content .skin-control,
+#tab-index-page-content .skin-control + br {
+  display: none;
+}
+
+
+/* 投稿 */
+
+#cat-tag-page,
+#single-relation,
+#single-bread {
+  display: none;
+}
+
+#single-nav tr:nth-child(1),
+#single-nav tr:nth-child(2),
+#single-nav tr:nth-child(3),
+#single-nav tr:nth-child(4),
+#single-nav tr:nth-child(6) {
+  display: none;
+}
+
+
+/* 本文 */
+
+#entry-content-page {
+  display: none;
+}
+
+#external-link tr:nth-child(1),
+#internal-link tr:nth-child(1),
+#internal-link tr:nth-child(4),
+#internal-link tr:nth-child(5) {
+  display: none;
+}
+
+#post-info tr:nth-child(1) {
+  display: none;
+}
+
+
+/* 目次 */
+
+#tab-toc-page-content .skin-control,
+#tab-toc-page-content .skin-control + br {
+  display: none;
+}
+
+#tab-toc-page-content tr:nth-child(1),
+#tab-toc-page-content tr:nth-child(5),
+#tab-toc-page-content tr:nth-child(6),
+#tab-toc-page-content tr:nth-child(7),
+#tab-toc-page-content tr:nth-child(8),
+#tab-toc-page-content tr:nth-child(9),
+#tab-toc-page-content tr:nth-child(11) {
+  display: none;
+}
+
+
+/* SNSシェア */
+
+#sns-share-top {
+  display: none;
+}
+
+#sns-share-bottom tr:nth-child(1),
+#sns-share-bottom tr:nth-child(2),
+#sns-share-bottom tr:nth-child(5),
+#sns-share-bottom tr:nth-child(6),
+#sns-share-bottom tr:nth-child(7),
+#sns-share-bottom tr:nth-child(8),
+#sns-share-bottom tr:nth-child(9) {
+  display: none;
+}
+
+
+/* SNSフォロー */
+
+#tab-sns-follow-content tr:nth-child(1),
+#tab-sns-follow-content tr:nth-child(5),
+#tab-sns-follow-content tr:nth-child(8),
+#tab-sns-follow-content tr:nth-child(10) {
+  display: none;
+}
+
+
+/* 画像 */
+
+#content-image tr:nth-child(1),
+#content-image tr:nth-child(4),
+#content-image tr:nth-child(5) {
+  display: none;
+}
+
+#content-image tr:nth-child(2) .indent {
+  display: none;
+}
+
+
+/* コメント */
+
+#tab-comment-content .skin-control,
+#tab-comment-content .skin-control + .tips {
+  display: none;
+}
+
+#tab-comment-content tr:nth-child(1),
+#tab-comment-content tr:nth-child(3),
+#tab-comment-content tr:nth-child(5) {
+  display: none;
+}
+
+
+/* アピールエリア */
+
+#tab-appeal-area-content tr:nth-child(11) {
+  display: none;
+}
+
+
+/* おすすめカード */
+
+#tab-recommended-content tr:nth-child(3),
+#tab-recommended-content tr:nth-child(4),
+#tab-recommended-content tr:nth-child(5) {
+  display: none;
+}
+
+
+/* エディター */
+
+#tab-editor-content tr:nth-child(2) {
+  display: none;
+}
+
+
+/* テーマ情報 */
+
+#tab-about-content pre {
+  display: none;
+}
