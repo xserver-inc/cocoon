@@ -1170,9 +1170,7 @@ span.fas.fa-history:before {
 *******************************************************************************/
 
 .body .sns-buttons {
-  flex-wrap: wrap;
   gap: 5px!important;
-  justify-content: center;
   margin: 0;
 }
 
@@ -2301,10 +2299,6 @@ aside.widget .widget-title {
   margin-top: var(--padding15);
 }
 
-.author-box .sns-follow-buttons {
-  justify-content: unset;
-}
-
 .author-box .sns-follow-buttons a.follow-button {
   background-color: unset!important;
   border: 1px solid var(--cocoon-text-color);
@@ -2344,10 +2338,6 @@ aside.widget .widget-title {
 .nwa .author-box .author-content {
   border: 0;
   padding: var(--padding15) var(--main-padding) var(--gap30);
-}
-
-.nwa .author-box .sns-follow-buttons {
-  justify-content: center;
 }
 
 
