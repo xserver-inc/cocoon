@@ -5,15 +5,16 @@
  Description: 基本デザインを整えたシンプルなデザインです。
  Author: chu-ya
  Screenshot URI:
- Version: 1.0.0
+ Version: 0.0.1
  Priority: 6900001000
-  Visibility: false
+ Visibility: false
 */
 
 
 /*******************************************************************************
 **
-**  履歴: 0.0 2023-06-01  新規作成
+**  履歴: 0.0.0 2023-06-01  新規作成
+**        0.0.1 2023-02-28  バグ対策
 **
 *******************************************************************************/
 
@@ -2862,6 +2863,10 @@ aside.widget select {
   padding: 0;
 }
 
+.navi-menu-close-button .fa-times:before {
+  content: '\f060';
+}
+
 
 /*******************************************************************************
 **  検索
@@ -2971,6 +2976,7 @@ table tr:nth-of-type(2n+1),
   border-color: var(--border-color)!important;
   font-size: 16px;
   padding: 3px 5px;
+  word-break: break-all;
 }
 
 .wp-block-table.is-style-stripes {
@@ -3016,6 +3022,10 @@ table tr:nth-of-type(2n+1),
 **  アイコンボックス
 *******************************************************************************/
 
+.is-style-profile-box,
+.profile-box,
+.is-style-comment-box,
+.comment-box,
 blockquote {
   background-color: #f9f9f9;
   border: 0;
