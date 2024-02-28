@@ -1410,6 +1410,7 @@ img.emoji {
   align-items: center;
   flex-wrap: wrap;
   align-content: center;
+  justify-content: center;
   row-gap: 10px;
   column-gap: 6px;
   margin-top: 0.3em;
@@ -2847,6 +2848,9 @@ label.screen-reader-text {
 /************************************
 ** フォーローボタウィジェット
 ************************************/
+.nwa .author-box .sns-follow-buttons {
+  justify-content: center;
+}
 .nwa .sns-follow-buttons {
   column-gap: 1%;
 }
@@ -6591,6 +6595,7 @@ canvas, iframe, video,
 }
 .author-box .sns-follow-buttons {
   margin-bottom: 0;
+  justify-content: initial;
 }
 .author-box .sns-follow-buttons a.follow-button {
   font-size: 18px;

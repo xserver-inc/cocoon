@@ -434,6 +434,10 @@ label.screen-reader-text{
 ** フォーローボタウィジェット
 ************************************/
 .nwa{
+  .author-box .sns-follow-buttons{
+    justify-content: center;
+  }
+
   .sns-follow-buttons{
     column-gap: 1%;
 
