@@ -36,6 +36,8 @@ import * as newlist from './block/new-list';
 import * as popularlist from './block/popular-list';
 import * as infolist from './block/info-list';
 import * as navicard from './block/navicard';
+import * as tab from './block/tab';
+import * as tabItem from './block/tab-item';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -69,6 +71,8 @@ const cocoonBlocks = [
   popularlist,
   infolist,
   navicard,
+  tab,
+  tabItem,
 
   captionBox,
   tabCaptionBox,
