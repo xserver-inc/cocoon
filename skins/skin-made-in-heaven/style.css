@@ -5,7 +5,7 @@
  Description: 基本デザインを整えたシンプルなデザインです。
  Author: chu-ya
  Screenshot URI:
- Version: 0.0.2
+ Version: 0.0.1
  Priority: 6900001000
  Visibility: false
 */
@@ -15,7 +15,6 @@
 **
 **  履歴: 0.0.0 2023-06-01  新規作成
 **        0.0.1 2023-02-28  バグ対策
-**        0.0.2 2023-02-29  バグ対策
 **
 *******************************************************************************/
 
@@ -698,6 +697,15 @@ span.fas.fa-history:before {
 
 .e-card-info {
   gap: 5px;
+}
+
+
+/* 先頭固定表示 */
+
+.front-page-type-index .a-wrap:has(.sticky),
+.front-page-type-tab-index .tb1 .a-wrap:has(.sticky),
+.body:not(.front-top-page) .a-wrap:has(.sticky) {
+  display: none;
 }
 
 
@@ -1840,14 +1848,11 @@ aside.widget .widget-title {
 
 .body .blogcard-title,
 .body .e-card .card-title {
-  display: -webkit-box;
   font-size: 16px!important;
   font-weight: bold;
   line-height: 1.4;
   margin: 0;
   text-align: left;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--title-line)!important;
 }
 
@@ -3166,7 +3171,7 @@ blockquote:after {
   border-radius: 0;
   font-size: var(--cocoon-text-size-s);
   left: -1px;
-  padding: 0 var(--padding15);
+  padding: 0 1em;
 }
 
 .blank-box.bb-tab {
@@ -3199,7 +3204,7 @@ blockquote:after {
   font-size: var(--cocoon-text-size-s);
   left: auto;
   line-height: 1.8;
-  padding: 0 var(--padding15);
+  padding: 0 1em;
   top: -0.9em;
 }
 
@@ -3349,9 +3354,6 @@ blockquote:after {
 /*******************************************************************************
 **  見出しボックス
 *******************************************************************************/
-.block-box-label::before {
-  margin-right: 6px;
-}
 
 .caption-box {
   border-color: var(--border-color);
@@ -3384,9 +3386,9 @@ blockquote:after {
   border-radius: 0;
   color: #fff!important;
   font-size: var(--cocoon-text-size-s);
-  padding: 0 var(--padding15);
+  padding: 0 1em;
   position: absolute;
-  top: calc(-1.8em + 1px);
+  top: -1.8em;
 }
 
 .tab-caption-box-content {
@@ -3401,16 +3403,33 @@ blockquote:after {
 *******************************************************************************/
 
 .label-box-label {
-  --cocoon-white-color: var(--white-bgcolor);
-  display: inline;
   font-size: var(--cocoon-text-size-s);
   font-weight: normal;
-  margin: 0 var(--padding15);
-  padding: 0;
+  margin: 0;
+  padding: 0 1em;
+  text-shadow: unset;
+}
+
+.label-box-label-text {
+  padding: 0 1em;
+  position: relative;
+  z-index: 1;
+}
+
+.label-box-label-text:after {
+  border-top: 1px solid var(--white-bgcolor);
+  bottom: 13px;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
 .label-box-content {
   border-width: 1px;
+  margin-top: -14px;
   padding: var(--padding15);
 }
 
