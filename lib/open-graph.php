@@ -120,8 +120,8 @@ class OpenGraphGetter implements Iterator
     // //対処法1：http://qiita.com/kobake@github/items/3c5d09f9584a8786339d
     // //対処法2：http://nplll.com/archives/2011/06/_domdocumentloadhtml.php
 
-    $HTML = @mb_convert_encoding($HTML,'UTF-8', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
-    //$HTML = mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8');
+    // $HTML = @mb_convert_encoding($HTML,'UTF-8', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
+    $HTML = @mb_convert_encoding($HTML, 'HTML-ENTITIES', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
     if (!$HTML) {
       return false;
     }
