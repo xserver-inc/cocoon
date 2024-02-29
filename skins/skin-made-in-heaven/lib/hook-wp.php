@@ -254,10 +254,8 @@ add_filter('widget_text', 'do_shortcode');
 add_filter('widget_title', function($title) {
   $title = str_replace('[', '<', $title);
   $title = str_replace(']', '>', $title);
-  $title = str_replace('&#8216;', "'", $title);
-  $title = str_replace('&#8217;', "'", $title);
-  $title = str_replace('&#8221;', '"', $title);
-  $title = str_replace('&#8220;', '"', $title);
+  $title = str_replace('&#039;', "'", $title);
+  $title = str_replace('&quot;', '"', $title);
 
   return $title;
 });
