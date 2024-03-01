@@ -5,7 +5,7 @@
  Description: 基本デザインを整えたシンプルなデザインです。
  Author: chu-ya
  Screenshot URI:
- Version: 0.0.2
+ Version: 0.0.3
  Priority: 6900001000
  Visibility: false
 */
@@ -16,6 +16,10 @@
 **  履歴: 0.0.0 2023-06-01  新規作成
 **        0.0.1 2023-02-28  バグ対策
 **        0.0.2 2023-02-29  バグ対策
+**        0.0.3 2023-03-01  テキストを除外対象から削除
+**                          ウィジェットエリアSNSボタン下を除外対象から削除
+**                          テキスト、新着情報のCSS変更
+**                          最近のコメント、最近の投稿のCSSを追加
 **
 *******************************************************************************/
 
@@ -1321,8 +1325,8 @@ span.fas.fa-history:before {
   background-color: var(--hover-color);
   border: 5px solid #fff;
   box-shadow: var(--shadow-color);
+  height: 100%;
   margin: 0 0 var(--padding15);
-  overflow: hidden;
 }
 
 
@@ -1710,7 +1714,7 @@ span.fas.fa-history:before {
 **
 *******************************************************************************/
 
-.body aside.widget:not(.widget_common_ad, .widget_text, .widget_search) {
+.body aside.widget:not(.widget_search) {
   background-color: var(--white-bgcolor);
   border-radius: var(--border-radius10);
   overflow: hidden;
@@ -1722,7 +1726,7 @@ span.fas.fa-history:before {
   padding: 0;
 }
 
-.body aside.widget:not(.widget_common_ad, .widget_text) > div,
+.body aside.widget > div,
 .body aside.widget > ul {
   margin: var(--gap30) var(--main-padding);
 }
@@ -2512,11 +2516,7 @@ aside.widget .widget-title {
 }
 
 .info-list-item {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
   line-height: 1.8;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -2530,22 +2530,18 @@ aside.widget .widget-title {
 }
 
 .info-list-item-content {
-  margin-bottom: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin-bottom: 5px;
 }
 
 .info-list-item-meta {
-  flex-shrink: 0;
-  font-size: 16px;
-  line-height: 1.8;
+  color: var(--s-text-color);
+  font-size: var(--cocoon-text-size-s);
+  line-height: 1;
   opacity: 1;
+  text-align: right;
 }
 
 .info-list-item-date {
-  color: var(--s-text-color);
-  font-size: var(--cocoon-text-size-s);
   margin: 0;
 }
 
@@ -2664,21 +2660,6 @@ aside.widget .widget-title {
 aside.widget select {
   margin: var(--gap30) var(--main-padding);
   width: calc(100% - var(--main-padding) * 2);
-}
-
-
-/*******************************************************************************
-**  カスタムHTML
-*******************************************************************************/
-
-.body aside.widget_text:has(.widget-title) {
-  background-color: var(--white-bgcolor);
-  border-radius: var(--border-radius10);
-  overflow: hidden;
-}
-
-.body aside.widget_text:has(.widget-title) > div {
-  margin: var(--gap30) var(--main-padding);
 }
 
 
@@ -2888,6 +2869,61 @@ aside.widget select {
 .posts-not-found {
   color: var(--title-color);
   width: 100%;
+}
+
+
+/*******************************************************************************
+**  最近の投稿
+*******************************************************************************/
+
+.body .widget_recent_comments ul,
+.body .widget_recent_entries ul {
+  gap: var(--padding15);
+}
+
+.widget_recent_comments li,
+.widget_recent_entries li {
+  border-bottom: 1px dotted var(--border-color);
+  border-bottom: 1px dotted var(--border-color);
+  padding-bottom: var(--padding15);
+}
+
+.widget_recent_comments li:last-child,
+.widget_recent_entries li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.widget_recent_entries ul li a {
+  padding: 0;
+  background-color: unset!important;
+}
+
+.widget_recent_entries .post-date {
+  display: block;
+  margin-top: 5px!important;
+  text-align: right;
+}
+
+.widget_recent_entries .post-date:before {
+  content: '\f017';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 3px;
+}
+
+
+/*******************************************************************************
+**  最近のコメント
+*******************************************************************************/
+
+.widget_recent_comments a {
+  text-decoration: none;
+  color: var(--cocoon-text-color);
+}
+
+.widget_recent_comments li {
+  display: block;
+  padding-top: 0;
 }
 
 
@@ -3349,6 +3385,7 @@ blockquote:after {
 /*******************************************************************************
 **  見出しボックス
 *******************************************************************************/
+
 .block-box-label::before {
   margin-right: 6px;
 }
