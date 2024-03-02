@@ -9,7 +9,7 @@ if (!function_exists('hvn_menu_setting')):
 function hvn_menu_setting($name) {
   $data = array();
 
-  $file = HVN_SKIN_URL . "assets/css/{$name}/{$name}.csv";
+  $file = get_theme_file_uri(HVN_SKIN . "assets/css/{$name}/{$name}.csv");
   if (($fp = fopen($file, 'r')) !== false) {
     while (($line = fgetcsv($fp))) {
       $data["$line[0]"] = "$line[1]";
@@ -77,18 +77,18 @@ function hvn_h2_h4_css() {
   for ($i=2; $i<=4; $i++) {
     $no = get_theme_mod("hvn_h{$i}_css_setting", '0');
     if ($no) {
-      $h_url = HVN_SKIN_URL . "assets/css/h{$i}/h{$i}-{$no}.css";
+      $h_url = get_theme_file_uri(HVN_SKIN . "assets/css/h{$i}/h{$i}-{$no}.css");
       wp_enqueue_style("hvn-h{$i}-style", $h_url);
     }
   }
 
   $widget = get_theme_mod('hvn_widget_css_setting', '0');
   if ($widget) {
-    $widget_url = HVN_SKIN_URL . "assets/css/w/w-{$widget}.css";
+    $widget_url = get_theme_file_uri(HVN_SKIN . "assets/css/w/w-{$widget}.css");
     wp_enqueue_style('hvn-widget-style', $widget_url);
   }
 
-  wp_enqueue_style('hvn-original-style', HVN_SKIN_URL . 'assets/css/original.css');
+  wp_enqueue_style('hvn-original-style', get_theme_file_uri(HVN_SKIN . 'assets/css/original.css'));
 }
 endif;
 
@@ -187,7 +187,7 @@ function hvn_custom_css() {
   $load = get_theme_mod('hvn_front_loading_setting', 'none');
 
   if (is_front_top_page() && $load != 'none') {
-    $load_url = HVN_SKIN_URL . "assets/css/l/{$load}.css";
+    $load_url = get_theme_file_uri(HVN_SKIN . "assets/css/l/{$load}.css");
     wp_enqueue_style('hvn-load-style', $load_url);
   }
 

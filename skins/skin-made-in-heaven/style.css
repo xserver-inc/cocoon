@@ -5,7 +5,7 @@
  Description: 基本デザインを整えたシンプルなデザインです。
  Author: chu-ya
  Screenshot URI:
- Version: 0.0.3
+ Version: 0.0.4
  Priority: 6900001000
  Visibility: false
 */
@@ -20,6 +20,7 @@
 **                          ウィジェットエリアSNSボタン下を除外対象から削除
 **                          テキスト、新着情報のCSS変更
 **                          最近のコメント、最近の投稿のCSSを追加
+**        0.0.4 2023-03-02  バグ対策
 **
 *******************************************************************************/
 
@@ -419,10 +420,10 @@ img {
 
 .ba-fixed.appeal:before {
   background-image: inherit;
-  background-size: cover;
   background-position: top center;
+  background-size: cover;
   content: '';
-  height: 100svh;
+  height: 100vh;
   left: 0px;
   position: fixed;
   top: 0px;
@@ -694,7 +695,7 @@ img {
 }
 
 span.fas.fa-history:before {
-  content: "\f2f1";
+  content: '\f2f1';
 }
 
 
@@ -1235,27 +1236,27 @@ span.fas.fa-history:before {
 }
 
 .icon-mastodon-logo:before {
-  content: "\e928";
+  content: '\e928';
 }
 
 .icon-misskey-logo:before {
-  content: "\e924";
+  content: '\e924';
 }
 
 .icon-facebook-logo:before {
-  content: "\e919";
+  content: '\e919';
 }
 
 .icon-hatebu-logo:before {
-  content: "\e916";
+  content: '\e916';
 }
 
 .icon-linkedin-logo:before {
-  content: "\eacb";
+  content: '\eacb';
 }
 
 .icon-line-logo:before {
-  content: "\e915";
+  content: '\e915';
 }
 
 .icon-pinterest-logo:before {
@@ -2224,7 +2225,7 @@ aside.widget .widget-title {
 }
 
 .widget-entry-card-pv:before {
-  content: "\f080";
+  content: '\f080';
   font-family: 'Font Awesome 5 Free';
   margin-right: 3px;
 }

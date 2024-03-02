@@ -13,7 +13,7 @@ add_action('customize_register', function($wp_customize) {
       'priority'  => 300,
     )
   );
-  wp_enqueue_style('hvn-admin', HVN_SKIN_URL . 'assets/css/admin.css');
+  wp_enqueue_style('hvn-admin', get_theme_file_uri(HVN_SKIN . 'assets/css/admin.css'));
 
   hvn_color($wp_customize);
   hvn_main($wp_customize);
@@ -265,8 +265,8 @@ add_filter('widget_title', function($title) {
 //  Gutenbergエディターメニュー追加
 //******************************************************************************
 add_action('enqueue_block_editor_assets', function() {
-  wp_enqueue_script('hvn-richtext', HVN_SKIN_URL . 'assets/js/richtext.js');
-  wp_enqueue_script('hvn-block', HVN_SKIN_URL . 'assets/js/block.js', [], false, true);
+  wp_enqueue_script('hvn-richtext', get_theme_file_uri(HVN_SKIN . 'assets/js/richtext.js'));
+  wp_enqueue_script('hvn-block', get_theme_file_uri(HVN_SKIN . 'assets/js/block.js'), [], false, true);
 });
 
 
@@ -295,7 +295,7 @@ add_action('admin_footer', function() {
   if (is_gutenberg_editor_enable() && ($pagenow == 'post.php' || $pagenow == 'post-new.php')) {
     hvn_h2_h4_css();
   }
-  wp_enqueue_style('hvn-admin', HVN_SKIN_URL . 'assets/css/admin.css');
+  wp_enqueue_style('hvn-admin', get_theme_file_uri(HVN_SKIN . 'assets/css/admin.css'));
 }, 999);
 
 
@@ -313,7 +313,7 @@ add_filter('editor_stylesheets', function($stylesheets) {
   if (!is_gutenberg_editor_enable()) {
     for ($i=2; $i<=4; $i++) {
       $no = get_theme_mod("hvn_h{$i}_css_setting", '1');
-      $h_url = HVN_SKIN_URL . "assets/css/h{$i}/h{$i}-{$no}.css";
+      $h_url = get_theme_file_uri(HVN_SKIN . "assets/css/h{$i}/h{$i}-{$no}.css");
       array_push($stylesheets , $h_url);
     }
   }
