@@ -4,10 +4,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // ベーススキン・・・スタイルを適応するスキン。実際に表示されるスキン（当スキンはフェイドインを追加するのみ）
 class SkinRaku {
     // DBに保存するためのオプション名
-    const BASE_SKIN_OPTION_NAME   = 'raku_base_skin_url'; 
-    const FADEIN_TYPE_OPTION_NAME = 'raku_fadein_type'; 
+    const BASE_SKIN_OPTION_NAME   = 'raku_base_skin_url';
+    const FADEIN_TYPE_OPTION_NAME = 'raku_fadein_type';
     // スキン
-    const MYSKIN = 'raku-add-fadein'; 
+    const MYSKIN = 'raku-add-fadein';
     // ベーススキンの各種URL
     private $skin_base           = '';
     private $skin_base_keyframes = '';
@@ -85,7 +85,7 @@ class SkinRaku {
         /*----------------------------------------------------
         lib\utils.php(307,316,329,978)
         ----------------------------------------------------*/
-        add_action('wp_enqueue_scripts', [$this, 'wp_enqueue_style_theme_skin_style_keyframes'], 1 );
+        add_action('wp_enqueue_scripts_before_skin_style', [$this, 'wp_enqueue_style_theme_skin_style_keyframes'], 1 );
         /*----------------------------------------------------
          管理画面用のみの処理
         ----------------------------------------------------*/
@@ -208,7 +208,7 @@ class SkinRaku {
          307
         ----------------------------------------------------*/
         // wp_enqueue_style( THEME_NAME.'-base-skin-style', $this->skin_base );
-        wp_enqueue_style( THEME_NAME.'-base-skin-style', $this->skin_base, array( THEME_NAME.'-style' ) );
+        wp_enqueue_style( THEME_NAME.'-base-skin-style', $this->skin_base, array() );
         /*----------------------------------------------------
          316
         ----------------------------------------------------*/
@@ -237,7 +237,7 @@ class SkinRaku {
         }
         */
     }
-    
+
     //スキンのkeyframes.css URLを取得
     private function get_theme_skin_keyframes_url(){
         $keyframes_url = str_replace('style.css', 'keyframes.css', $this->skin_base);
@@ -259,7 +259,7 @@ class SkinRaku {
     ?>
 <script>
 (function ($) {
-    $(document).ready(function() { 
+    $(document).ready(function() {
         const skin_url_list = $('#skin .form-table [name="skin_url"]');
         /*----------------------------------------------------
          追加する「フェイドイン」用HTMLを作成
