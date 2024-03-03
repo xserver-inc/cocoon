@@ -1079,7 +1079,7 @@ function generate_popular_entries_tag($atts){
       $snippet_tag = '';
       //「タイトルを重ねた大きなサムネイル」の時はスニペットを表示させない
       if ($snippet && isset($post->ID) && isset($post->post_content) && $entry_type !== ET_LARGE_THUMB_ON) {
-        $snippet_tag = '<div class="popular-entry-card-snippet widget-entry-card-snippet card-snippet">'.get_the_snippet($post->post_content, get_entry_card_excerpt_max_length(), $post->ID).'</div>';
+        $snippet_tag = '<div class="popular-entry-card-snippet widget-entry-card-snippet card-snippet">'.get_the_snippet(get_post($post->ID)->post_content, get_entry_card_excerpt_max_length(), $post->ID).'</div>';
       }
 
       $pv_tag = null;
