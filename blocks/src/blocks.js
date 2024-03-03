@@ -175,6 +175,9 @@ import './toolbutton/dropdown-templates.js';
 import './toolbutton/dropdown-affiliates.js';
 import './toolbutton/dropdown-rankings.js';
 
+//背景アイコン
+import './toolbutton/background-icons.js';
+
 //旧バージョン（現在は非表示）
 //ブロックエディター出現時の情報のないときに誤って作成したもの
 //出来れば同一ブロックに統一して統合したいけど、やり方がよくわかっていない。

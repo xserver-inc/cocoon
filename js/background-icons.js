@@ -1,3 +1,4 @@
+// JSXで記述してコンパイルしたので今後このファイルは不要（いずれ削除）
 (function() {
 
   const { Fragment, createElement } = wp.element;

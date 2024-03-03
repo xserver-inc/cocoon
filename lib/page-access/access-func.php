@@ -341,7 +341,7 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
   //   $snippet_column = 'post_content, ';
   // }
   $query = "
-    SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, LEFT(post_content, 1000) AS post_content, comment_count FROM (
+    SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
     ) AS {$ranks_posts}
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
