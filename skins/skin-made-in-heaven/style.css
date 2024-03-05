@@ -4,8 +4,8 @@
  Skin Name: メイド・イン・ヘブン
  Description: 基本デザインを整えたシンプルなデザインです。
  Author: chu-ya
- Screenshot URI:
- Version: 0.0.4
+ Screenshot URI:https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
+ Version: 0.0.5
  Priority: 6900001000
  Visibility: false
 */
@@ -21,6 +21,8 @@
 **                          テキスト、新着情報のCSS変更
 **                          最近のコメント、最近の投稿のCSSを追加
 **        0.0.4 2023-03-02  バグ対策
+**        0.0.5 2023-03-03  ラベルボックス、ブログカードのラベルのCSS変更
+**                          固定ページ一覧にスラッグ、投稿のステータス背景付けを追加
 **
 *******************************************************************************/
 
@@ -3235,6 +3237,7 @@ blockquote:after {
   color: var(--cocoon-text-color);
   font-size: var(--cocoon-text-size-s);
   left: auto;
+  letter-spacing: normal;
   line-height: 1.8;
   padding: 0 var(--padding15);
   top: -0.9em;
@@ -3440,7 +3443,6 @@ blockquote:after {
 
 .label-box-label {
   --cocoon-white-color: var(--white-bgcolor);
-  display: inline;
   font-size: var(--cocoon-text-size-s);
   font-weight: normal;
   margin: 0 var(--padding15);

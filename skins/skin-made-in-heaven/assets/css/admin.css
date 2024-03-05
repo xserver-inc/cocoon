@@ -216,13 +216,15 @@
 }
 
 
-/* 投稿一覧ステータス */
+/* 投稿、固定ページ一覧ステータス */
 
-.wp-admin.post-type-post .status-future {
+.wp-admin.post-type-post .status-future,
+.wp-admin.post-type-page .status-future {
   background-color: #E0F7FA;
 }
 
-.wp-admin.post-type-post .status-draft {
+.wp-admin.post-type-post .status-draft,
+.wp-admin.post-type-page .status-draft {
   background-color: #FFEBEE;
 }
 

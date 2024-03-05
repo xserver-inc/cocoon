@@ -51,6 +51,23 @@ add_filter('post_date_column_time', function($h_time, $post) {
 }, 10, 2);
 
 
+add_filter('manage_pages_columns', function($columns) {
+  $columns['slug'] = 'スラッグ';
+  return $columns;
+});
+
+
+add_action('manage_pages_custom_column', function($column_name, $post_id) {
+  switch($column_name) {
+    case 'slug':
+      $post = get_post($post_id);
+      $slug = $post->post_name;
+      echo esc_attr(urldecode($slug));
+      break;
+  }
+}, 10, 2);
+
+
 //******************************************************************************
 //　ダッシュボード投稿一覧に追加
 //******************************************************************************
