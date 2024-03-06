@@ -5,7 +5,7 @@
  Description: 基本デザインを整えたシンプルなデザインです。
  Author: chu-ya
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.0.5
+ Version: 0.0.6
  Priority: 6900001000
  Visibility: false
 */
@@ -23,6 +23,7 @@
 **        0.0.4 2023-03-02  バグ対策
 **        0.0.5 2023-03-03  ラベルボックス、ブログカードのラベルのCSS変更
 **                          固定ページ一覧にスラッグ、投稿のステータス背景付けを追加
+**        0.0.6 2023-03-06  バグ対策
 **
 *******************************************************************************/
 
@@ -886,7 +887,7 @@ span.fas.fa-history:before {
 .entry-categories-tags .entry-tags {
   display: flex;
   gap: 5px;
-  margin-bottom: var(--padding15);
+  margin-bottom: var(--gap30);
 }
 
 
@@ -1209,8 +1210,13 @@ span.fas.fa-history:before {
   margin-bottom: 0;
 }
 
-.article-footer:has(.sns-follow) .sns-share {
-  margin-bottom: var(--padding15);
+.article-footer .sns-share,
+.article-footer .sns-follow {
+  margin-bottom: var(--gap30);
+}
+
+.article-footer > div:nth-last-child(3) {
+  margin-bottom: 0;
 }
 
 
@@ -1486,6 +1492,7 @@ span.fas.fa-history:before {
 }
 
 .comment-author .fn {
+  color: var(--cocoon-text-color);
   display: block;
   font-weight: bold;
   font-size: unset;
@@ -2249,8 +2256,9 @@ aside.widget .widget-title {
 
 .author-box {
   align-items: center;
-  border: 1px solid var(--border-color);
+  border: 0;
   display: flex;
+  margin: 0!important;
   padding: var(--padding15);
 }
 
@@ -2292,13 +2300,17 @@ aside.widget .widget-title {
   margin: 0;
 }
 
-.author-box p {
-  margin-top: var(--padding15);
+.body .author-box p {
+  margin: var(--padding15) 0 0 0;
   line-height: 1.4;
 }
 
 .profile-follows {
   margin-top: var(--padding15);
+}
+
+.author-box .sns-follow {
+  margin-bottom: 0;
 }
 
 .author-box .sns-follow-buttons a.follow-button {
@@ -2324,9 +2336,13 @@ aside.widget .widget-title {
   border: 0;
   border-radius: var(--border-radius10);
   display: block;
-  margin: 0!important;
   overflow: hidden;
   padding: 0;
+}
+
+.body .main .author-box {
+  border: 1px solid var(--border-color);
+  border-radius: 0;
 }
 
 .nwa .author-box .author-thumb {
@@ -2660,7 +2676,7 @@ aside.widget .widget-title {
   outline: 0;
 }
 
-aside.widget select {
+aside.widget > select {
   margin: var(--gap30) var(--main-padding);
   width: calc(100% - var(--main-padding) * 2);
 }
@@ -2958,6 +2974,19 @@ aside.widget select {
   position: relative;
   text-align: left;
   z-index: 0;
+}
+
+
+/*******************************************************************************
+**  リスト
+*******************************************************************************/
+
+.body .has-list-style {
+  padding: 0 var(--padding15);
+}
+
+.body :is(ul, ol):not(.has-list-style).has-border {
+  padding-left: 40px;
 }
 
 
@@ -3551,7 +3580,7 @@ blockquote:after {
     border-radius: var(--border-radius100);
     box-shadow: var(--shadow-color)
   }
-  .body:not(.front-top-page) .article:has(.entry-tags, .article-footer .sns-follow) .entry-content {
+  .body:not(.front-top-page) .article:has(.entry-tags, .article-footer .sns-follow, .article-footer .widget) .entry-content {
     border-bottom: 1px dotted #ccc;
     margin-bottom: var(--gap30);
     padding-bottom: var(--gap30);
@@ -3565,7 +3594,7 @@ blockquote:after {
   .logo-header img {
     max-height: 50px;
   }
-  .body:not(.front-top-page) .article:has(.entry-tags, .article-footer .sns-button, .article-footer .sns-follow) .entry-content {
+  .body:not(.front-top-page) .article:has(.entry-tags, .article-footer .sns-button, .article-footer .widget) .entry-content {
     border-bottom: 1px dotted #ccc;
     margin-bottom: var(--gap30);
     padding-bottom: var(--gap30);
