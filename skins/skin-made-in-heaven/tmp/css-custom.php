@@ -442,7 +442,7 @@ if ((get_theme_mod('entry_card_type') == 'vertical_card_3'
   padding: var(--gap30) calc(50vw - 50%);
 }
 
-.front-top-page.no-sidebar:not(:has(.widget-index-bottom, .widget-content-bottom)) #footer {
+.front-top-page.no-sidebar:not(:has(.ad-index-bottom, .widget-index-bottom, .widget-content-bottom)) #footer {
   margin-top: 0;
 }
 

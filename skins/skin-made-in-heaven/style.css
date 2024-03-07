@@ -4,8 +4,9 @@
  Skin Name: メイド・イン・ヘブン
  Description: 基本デザインを整えたシンプルなデザインです。
  Author: chu-ya
+ Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.0.6
+ Version: 0.0.7
  Priority: 6900001000
  Visibility: false
 */
@@ -24,6 +25,9 @@
 **        0.0.5 2023-03-03  ラベルボックス、ブログカードのラベルのCSS変更
 **                          固定ページ一覧にスラッグ、投稿のステータス背景付けを追加
 **        0.0.6 2023-03-06  バグ対策
+**        0.0.7 2023-03-07  広告の表示位置のCSS追加
+**                          アイコンボックスのCSS追加
+**                          バグ対策
 **
 *******************************************************************************/
 
@@ -650,6 +654,13 @@ img {
   margin-right: 3px;
 }
 
+.body .ad-area.ad-index-top,
+.body .ad-area.ad-index-bottom,
+.body .ad-area.ad-sidebar-top,
+.body .ad-area.ad-sidebar-bottom {
+  margin-bottom: 0;
+}
+
 
 /*******************************************************************************
 **
@@ -1053,10 +1064,6 @@ span.fas.fa-history:before {
   gap: var(--padding15);
   grid-template-columns: repeat(var(--column), minmax(0, 1fr));
   margin: 0;
-}
-
-.body .related-entries {
-  margin-bottom: 0;
 }
 
 .body .related-entry-card-thumb {
@@ -1667,7 +1674,7 @@ span.fas.fa-history:before {
 
 /*******************************************************************************
 **  サイドバースクロール追従
-/*******************************************************************************/
+*******************************************************************************/
 
 .sidebar-scroll {
   display: grid;
@@ -1677,7 +1684,7 @@ span.fas.fa-history:before {
 
 /*******************************************************************************
 **  コンテンツ上部、下部
-/*******************************************************************************/
+*******************************************************************************/
 
 .content-top,
 .content-bottom {
@@ -1694,7 +1701,7 @@ span.fas.fa-history:before {
 
 /*******************************************************************************
 **  フッター左、中、右
-/*******************************************************************************/
+*******************************************************************************/
 
 .footer-widgets:after {
   content: none;
@@ -1715,6 +1722,16 @@ span.fas.fa-history:before {
   gap: var(--gap30);
   padding: 0;
   width: 100%;
+}
+
+
+/*******************************************************************************
+**  インデックスミドル
+*******************************************************************************/
+
+.ect-2-columns > *,
+.ect-3-columns > * {
+  width: unset;
 }
 
 
@@ -2256,9 +2273,7 @@ aside.widget .widget-title {
 
 .author-box {
   align-items: center;
-  border: 0;
   display: flex;
-  margin: 0!important;
   padding: var(--padding15);
 }
 
@@ -2336,13 +2351,15 @@ aside.widget .widget-title {
   border: 0;
   border-radius: var(--border-radius10);
   display: block;
+  margin: 0;
   overflow: hidden;
   padding: 0;
 }
 
-.body .main .author-box {
+.body .main :not(.widget-index-top, .widget-index-bottom) .author-box {
   border: 1px solid var(--border-color);
   border-radius: 0;
+  margin-bottom: var(--gap30);
 }
 
 .nwa .author-box .author-thumb {
@@ -2362,6 +2379,12 @@ aside.widget .widget-title {
 /*******************************************************************************
 **  [C]ボックスメニュー
 *******************************************************************************/
+
+.no-sidebar .widget-index-top .box-menu,
+.no-sidebar .widget-index-bottom .box-menu,
+.wwa .box-menu {
+  width: 15%;
+}
 
 .body .box-menus {
   border: 1px solid transparent;
@@ -3580,7 +3603,7 @@ blockquote:after {
     border-radius: var(--border-radius100);
     box-shadow: var(--shadow-color)
   }
-  .body:not(.front-top-page) .article:has(.entry-tags, .article-footer .sns-follow, .article-footer .widget) .entry-content {
+  .body:not(.front-top-page) .article:has(.ad-area, .entry-tags, .article-footer .sns-follow, .article-footer .widget) .entry-content {
     border-bottom: 1px dotted #ccc;
     margin-bottom: var(--gap30);
     padding-bottom: var(--gap30);
@@ -3631,5 +3654,8 @@ blockquote:after {
   .body.no-sp-snippet .card-snippet,
   .body.no-sp-snippet .blogcard-snippet {
     display: none!important;
+  }
+  .body .widget-index-middle.widget_author_box .author-box {
+    border: 0;
   }
 }
