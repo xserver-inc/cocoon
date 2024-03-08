@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.0.7
+ Version: 0.0.8
  Priority: 6900001000
  Visibility: false
 */
@@ -29,6 +29,7 @@
 **        0.0.7 2023-03-07  広告の表示位置のCSS追加
 **                          アイコンボックスのCSS追加
 **                          バグ対策
+**        0.0.8 2023-03-08  バグ対策
 **
 *******************************************************************************/
 
@@ -2384,7 +2385,7 @@ aside.widget .widget-title {
 .no-sidebar .widget-index-top .box-menu,
 .no-sidebar .widget-index-bottom .box-menu,
 .wwa .box-menu {
-  width: 15%;
+  width: calc(100% / 6);
 }
 
 .body .box-menus {
@@ -3640,6 +3641,9 @@ blockquote:after {
   }
    :where(.footer-left, .footer-center, .footer-right):not(:has(.widget)) {
     display: none!important;
+  }
+  .body .box-menus .box-menu {
+    width: 50%;
   }
 }
 
