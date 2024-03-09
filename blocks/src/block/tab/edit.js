@@ -14,6 +14,7 @@ import { PanelBody, Button, TextControl, __experimentalDivider as Divider, } fro
 import { Fragment, useEffect, RawHTML, useState } from '@wordpress/element';
 import { useSelect, useDispatch} from '@wordpress/data';
 import { compose } from '@wordpress/compose';
+import {createBlock} from '@wordpress/blocks';
 import classnames from 'classnames';
 import memoize from 'memize';
 import { times } from 'lodash';
@@ -47,9 +48,11 @@ export function TabEdit( props ) {
     return times( items, () => [ 'core/paragraph', {placeholder: "Tab Content"} ] );
   } );
 
-  // useEffectで扱う変数
-  const [sourceIdx, setSourceIdx] = useState(0);
-  const [targetIdx, setTargetIdx] = useState(0);
+  // useEffectで扱う変数・関数
+  const [sourceIdx, setSourceIdx] = useState(-1);
+  const [targetIdx, setTargetIdx] = useState(-1);
+  const [removeIdx, setRemoveIdx] = useState(-1);
+  const [addIdx, setAddIdx] = useState(-1);
   const { replaceInnerBlocks } = useDispatch('core/block-editor');
 
   // InnerBlocksを取得
@@ -60,43 +63,75 @@ export function TabEdit( props ) {
   useEffect(() => {
     //console.log("sourceIdx " + sourceIdx);
     //console.log("targetIdx " + targetIdx);
+    //console.log("removeIdx " + removeIdx);
+    //console.log("addIdx " + addIdx);
 
-    // タブの移動がない場合はどちらも0がセットされている
-    if (sourceIdx === targetIdx) {
-      return;
+    // 入れ替え処理
+    if (sourceIdx != -1 && targetIdx != -1) {
+      // InnerBlocksを取得
+      const innerBlocks = getInnerBlocks(clientId);
+      //console.log(innerBlocks);
+
+      // ソースブロックの情報を退避
+      const sourceBlock = innerBlocks[sourceIdx];
+      const sourceAttributes = sourceBlock.attributes;
+      const sourceContent = sourceBlock.content;
+
+      // ターゲットブロックの退避
+      const targetBlock = innerBlocks[targetIdx];
+      const targetAttributes = targetBlock.attributes;
+      const targetContent = targetBlock.content;
+
+      // ターゲット→ソース
+      innerBlocks[sourceIdx] = targetBlock;
+      innerBlocks[sourceIdx].atrributes = targetAttributes;
+      innerBlocks[sourceIdx].content = targetContent;
+
+      // ソース→ターゲット
+      innerBlocks[targetIdx] = sourceBlock;
+      innerBlocks[targetIdx].attributes = sourceAttributes;
+      innerBlocks[targetIdx].content = sourceContent;
+
+      // 再レンダリング
+      replaceInnerBlocks(clientId, innerBlocks, false);
+
+      // indexをリセット
+      setSourceIdx(-1);
+      setTargetIdx(-1);
     }
 
-    // InnerBlocksを取得
-    const innerBlocks = getInnerBlocks(clientId);
-    //console.log(innerBlocks);
+    // 削除処理
+    if (removeIdx != -1) {
+      // InnerBlocksを取得
+      const innerBlocks = getInnerBlocks(clientId);
 
-    // ソースブロックの情報を退避
-    const sourceBlock = innerBlocks[sourceIdx];
-    const sourceAttributes = sourceBlock.attributes;
-    const sourceContent = sourceBlock.content;
+      // 指定したブロックを削除
+      innerBlocks.splice(removeIdx, 1);
 
-    // ターゲットブロックの退避
-    const targetBlock = innerBlocks[targetIdx];
-    const targetAttributes = targetBlock.attributes;
-    const targetContent = targetBlock.content;
+      // 再レンダリング
+      replaceInnerBlocks(clientId, innerBlocks, false);
 
-    // ターゲット→ソース
-    innerBlocks[sourceIdx] = targetBlock;
-    innerBlocks[sourceIdx].atrributes = targetAttributes;
-    innerBlocks[sourceIdx].content = targetContent;
+      // indexをリセット
+      setRemoveIdx(-1);
+    }
 
-    // ソース→ターゲット
-    innerBlocks[targetIdx] = sourceBlock;
-    innerBlocks[targetIdx].attributes = sourceAttributes;
-    innerBlocks[targetIdx].content = sourceContent;
+    // 追加処理
+    if (addIdx != -1) {
+      // InnerBlocksを取得
+      const innerBlocks = getInnerBlocks(clientId);
 
-    // 再レンダリング
-    replaceInnerBlocks(clientId, innerBlocks, false);
+      // 新規ブロックを生成
+      const newBlock = createBlock('core/paragraph', {placeholder: "Tab Content"});
+      innerBlocks.push(newBlock);
 
-    // indexをリセット
-    setSourceIdx(0);
-    setTargetIdx(0);
-  },[clientId, sourceIdx, targetIdx]);
+      // 再レンダリング
+      replaceInnerBlocks(clientId, innerBlocks, false);
+
+      // indexをリセット
+      setAddIdx(-1);
+    }
+
+  },[clientId, sourceIdx, targetIdx, removeIdx, addIdx]);
 
   // タブラベルの配列を入れ替える
   function replaceArrayElements(array, targetIdx, sourceIdx) {
@@ -111,17 +146,19 @@ export function TabEdit( props ) {
 
   // タブ追加処理
   function addTab() {
+    //console.log("addTab");
     var tabLabels = [];
 
     tabLabels = tabLabelsArray.concat("tab label");
-    console.log(tabLabels);
+
+    setAddIdx(1);
     setAttributes({tabLabelsArray: tabLabels});
   }
 
   // タブラベル変更処理
   function changeTabLabel(index, value) {
     var tabLabels = tabLabelsArray.concat();
-    console.log(tabLabels);
+    //console.log(tabLabels);
 
     tabLabels[index] = value;
     setAttributes({tabLabelsArray: tabLabels});
@@ -130,15 +167,17 @@ export function TabEdit( props ) {
   // タブ削除処理
   function deleteTab (index) {
     var tabLabels = tabLabelsArray.concat();
-    console.log(tabLabels);
+    //console.log(tabLabels);
 
     if (tabLabels.length <= 1) {
       return;
     }
-    console.log('deleteTab: ' + index)
+    //console.log('deleteTab: ' + index)
 
     tabLabels.splice(index, 1);
-    console.log(tabLabels);
+    //console.log(tabLabels);
+
+    setRemoveIdx(index);
     setAttributes({tabLabelsArray: tabLabels});
   }
 
