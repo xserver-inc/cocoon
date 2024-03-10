@@ -6,13 +6,15 @@ global $_THEME_OPTIONS;
 global $_MOBILE_COPY_BUTTON;
 global $_HVN_EYECATCH;
 
+$skin_url = str_replace('style.css', '', get_skin_url());
+define('HVN_SKIN_URL', $skin_url);
 define('HVN_SKIN', '/skins/skin-made-in-heaven/');
 
 
 //******************************************************************************
 //  関数定義
 //******************************************************************************
-$path = url_to_local(get_theme_file_uri(HVN_SKIN . '/lib/*.php'));
+$path = url_to_local(HVN_SKIN_URL) . 'lib/*.php';
 $files = glob($path);
 foreach ($files as $file) {
   require_once($file);

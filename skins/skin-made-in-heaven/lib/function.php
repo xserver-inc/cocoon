@@ -9,7 +9,7 @@ if (!function_exists('hvn_menu_setting')):
 function hvn_menu_setting($name) {
   $data = array();
 
-  $file = get_theme_file_uri(HVN_SKIN . "assets/css/{$name}/{$name}.csv");
+  $file = url_to_local(get_theme_file_uri(HVN_SKIN . "assets/css/{$name}/{$name}.csv"));
   if (($fp = fopen($file, 'r')) !== false) {
     while (($line = fgetcsv($fp))) {
       $data["$line[0]"] = "$line[1]";
@@ -88,7 +88,7 @@ function hvn_h2_h4_css() {
     wp_enqueue_style('hvn-widget-style', $widget_url);
   }
 
-  wp_enqueue_style('hvn-original-style', get_theme_file_uri(HVN_SKIN . 'assets/css/original.css'));
+  wp_enqueue_style('hvn-original-style', HVN_SKIN_URL . 'assets/css/original.css');
 }
 endif;
 

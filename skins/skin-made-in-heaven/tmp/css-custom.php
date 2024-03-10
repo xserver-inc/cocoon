@@ -926,7 +926,7 @@ switch($no) {
   case 1:
   case 2:
   case 3:
-    $url = get_theme_file_uri(HVN_SKIN . 'assets/img/' . $no . '.gif');
+    $url = HVN_SKIN_URL . 'assets/img/' . $no . '.gif';
     $url = "url({$url})";
     break;
 
