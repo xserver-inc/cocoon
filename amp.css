@@ -8468,6 +8468,9 @@ ul.timeline ul ul ul {
   font-weight: 700;
   text-align: center;
 }
+.iconlist-title:empty {
+  display: none;
+}
 
 .faq-wrap {
   --cocoon-custom-question-color:#b7282e;

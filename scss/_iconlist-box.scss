@@ -42,4 +42,7 @@
 .iconlist-title{
   font-weight: 700;
   text-align: center;
+  &:empty {
+    display: none;
+  }
 }
