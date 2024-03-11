@@ -4048,6 +4048,7 @@ figcaption {
   justify-content: space-between;
   position: relative;
   margin: 0;
+  gap: 1%;
 }
 .column-wrap > div {
   width: 49.5%;
