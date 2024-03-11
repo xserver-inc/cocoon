@@ -6413,6 +6413,9 @@ body.wp-admin {
   text-align: center;
   font-size: 13px;
 }
+.admin-settings .demo .speech-name:empty {
+  display: none;
+}
 .admin-settings .demo div.speech-balloon {
   height: 100%;
   position: relative;
@@ -14769,6 +14772,9 @@ body.wp-admin {
 .admin-settings .demo .speech-name {
   text-align: center;
   font-size: 13px;
+}
+.admin-settings .demo .speech-name:empty {
+  display: none;
 }
 .admin-settings .demo div.speech-balloon {
   height: 100%;

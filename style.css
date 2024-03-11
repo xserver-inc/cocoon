@@ -6770,6 +6770,9 @@ canvas, iframe, video,
   text-align: center;
   font-size: 13px;
 }
+.speech-name:empty {
+  display: none;
+}
 
 div.speech-balloon {
   height: 100%;
