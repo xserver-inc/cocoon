@@ -158,7 +158,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
           { isSelected && (
             <InspectorControls>
               <PanelBody
-                title={ __( '[C] ボーダー設定', THEME_NAME ) }
+                title={ __( '[C] ボーダー', THEME_NAME ) }
                 initialOpen={ false }
               >
                 <div class="__clearBtn">
