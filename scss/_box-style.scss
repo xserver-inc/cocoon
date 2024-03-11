@@ -371,7 +371,7 @@
 // :is(.is-style-numeric-list-enclosed, .is-style-numeric-list-rank, .is-style-numeric-list-step)
 [class*="is-style-numeric-list-"]{
   counter-reset: list;
-  list-style-type: none;
+  list-style-type: none !important;
   // margin-left: 20px;
   >li{
     position:relative;
@@ -458,8 +458,7 @@
 
 //アイコンリスト
 [class*="is-style-icon-list-"]{
-  list-style: none;
-  // margin-left: 20px;
+  list-style: none !important;
 
   >li{
     padding-left: 1.6em;

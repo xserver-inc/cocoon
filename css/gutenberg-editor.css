@@ -4638,7 +4638,7 @@ figcaption {
 
 [class*=is-style-numeric-list-] {
   counter-reset: list;
-  list-style-type: none;
+  list-style-type: none !important;
 }
 [class*=is-style-numeric-list-] > li {
   position: relative;
@@ -4721,7 +4721,7 @@ figcaption {
 }
 
 [class*=is-style-icon-list-] {
-  list-style: none;
+  list-style: none !important;
 }
 [class*=is-style-icon-list-] > li {
   padding-left: 1.6em;
