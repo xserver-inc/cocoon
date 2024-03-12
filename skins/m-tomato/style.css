@@ -241,14 +241,15 @@ h3.widget-title:before {
 	border: dashed 3px #ffdbb7;
 	border-radius: 3px;
 }
-.article ul li {
+.article ul:not(.has-list-style) li {
 	line-height: 1;
 	padding:0.6em 0.6em 0.6em 15px;
 	color:#454545;
 	list-style-type: none!important;
 	text-shadow: 1px 1px 1px #fff;
+	position: relative;
 }
-.article ul li::before {
+.article ul:not(.has-list-style) li::before {
 	position: absolute;
 	font-family: FontAwesome;
 	content:"\f046";
@@ -256,13 +257,22 @@ h3.widget-title:before {
 	font-weight: 700;
 	color:#ff6347;
 	line-height: 0.8em;
+	left: -18px;
 	text-shadow: 1px 1px 1px #fff;
 }
-.article ul li ul {
+.article ul:not(.has-list-style) li ul {
 	padding: 0.5em 1em 0.5em 2.3em;
 	margin: 0.5em 0;
 	border:none;
 	border-radius: 0px;
+}
+.iconlist-box {
+	padding: 0;
+}
+
+.iconlist-box li::before {
+	margin-right: 0;
+	margin-left: 0;
 }
 .article ul.snsb {
 	padding: 10px;
