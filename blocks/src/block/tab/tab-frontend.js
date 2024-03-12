@@ -1,7 +1,13 @@
 // obtain tab labels from DOM
 const tabLabels = document.querySelectorAll('.tab-label');
 // obtain tab contents from DOM
-const tabContents = document.querySelectorAll('.tab-content');
+const tabContentGroup = document.getElementsByClassName('tab-content-group')[0];
+const tabContents = tabContentGroup.children;
+
+// add tab-content class
+for (index = 0; index < tabLabels.length; index++) {
+  tabContents[index].classList.add("tab-content");
+}
 
 // select first tab
 if (tabLabels.length > 0) {
@@ -20,13 +26,12 @@ function tabChanged(e) {
   tabLabels.forEach((tabLabel) => {
     tabLabel.classList.remove("is-active");
   });
-  tabContents.forEach((tabContent) => {
-    tabContent.classList.remove("is-active");
-  });
+  for (index = 0; index < tabLabels.length; index++) {
+    tabContents[index].classList.remove("is-active");
+  }
 
   // check which label is clicked
   const target = e.target;
-
   var index;
   for (index = 0; index < tabLabels.length; index++) {
     if (target === tabLabels[index]) {
