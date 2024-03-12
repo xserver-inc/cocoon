@@ -3869,7 +3869,8 @@ div.search-form {
 
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a,
-.wp-block-freeform .btn-wrap > a {
+.wp-block-freeform .btn-wrap > a,
+[class*=inline-button-] {
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -3889,8 +3890,56 @@ div.search-form {
 }
 .btn amp-img, .ranking-item-link-buttons a amp-img,
 .btn-wrap > a amp-img,
-.wp-block-freeform .btn-wrap > a amp-img {
+.wp-block-freeform .btn-wrap > a amp-img,
+[class*=inline-button-] amp-img {
   position: absolute;
+}
+
+[class*=inline-button-]:hover {
+  opacity: 0.7;
+}
+
+.inline-button-black {
+  border-color: #333;
+}
+
+.inline-button-red {
+  border-color: #e60033;
+  background-color: #e60033;
+}
+
+.inline-button-blue {
+  border-color: #0095d9;
+  background-color: #0095d9;
+}
+
+.inline-button-green {
+  border-color: #007b43;
+  background-color: #007b43;
+}
+
+[class*=inline-button-white-] {
+  background-color: #fff;
+}
+
+.inline-button-white-black {
+  color: #333;
+  border-color: #333;
+}
+
+.inline-button-white-red {
+  color: #e60033;
+  border-color: #e60033;
+}
+
+.inline-button-white-blue {
+  color: #0095d9;
+  border-color: #0095d9;
+}
+
+.inline-button-white-green {
+  color: #007b43;
+  border-color: #007b43;
 }
 
 .mce-content-body .btn-wrap a[data-mce-selected] {

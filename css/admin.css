@@ -3930,7 +3930,8 @@ body.wp-admin {
 }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
-.admin-settings .demo .wp-block-freeform .btn-wrap > a {
+.admin-settings .demo .wp-block-freeform .btn-wrap > a,
+.admin-settings .demo [class*=inline-button-] {
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -3950,8 +3951,46 @@ body.wp-admin {
 }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img,
 .admin-settings .demo .btn-wrap > a amp-img,
-.admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img {
+.admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img,
+.admin-settings .demo [class*=inline-button-] amp-img {
   position: absolute;
+}
+.admin-settings .demo [class*=inline-button-]:hover {
+  opacity: 0.7;
+}
+.admin-settings .demo .inline-button-black {
+  border-color: #333;
+}
+.admin-settings .demo .inline-button-red {
+  border-color: #e60033;
+  background-color: #e60033;
+}
+.admin-settings .demo .inline-button-blue {
+  border-color: #0095d9;
+  background-color: #0095d9;
+}
+.admin-settings .demo .inline-button-green {
+  border-color: #007b43;
+  background-color: #007b43;
+}
+.admin-settings .demo [class*=inline-button-white-] {
+  background-color: #fff;
+}
+.admin-settings .demo .inline-button-white-black {
+  color: #333;
+  border-color: #333;
+}
+.admin-settings .demo .inline-button-white-red {
+  color: #e60033;
+  border-color: #e60033;
+}
+.admin-settings .demo .inline-button-white-blue {
+  color: #0095d9;
+  border-color: #0095d9;
+}
+.admin-settings .demo .inline-button-white-green {
+  color: #007b43;
+  border-color: #007b43;
 }
 .admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
@@ -12290,7 +12329,8 @@ body.wp-admin {
 }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
-.admin-settings .demo .wp-block-freeform .btn-wrap > a {
+.admin-settings .demo .wp-block-freeform .btn-wrap > a,
+.admin-settings .demo [class*=inline-button-] {
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -12310,8 +12350,46 @@ body.wp-admin {
 }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img,
 .admin-settings .demo .btn-wrap > a amp-img,
-.admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img {
+.admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img,
+.admin-settings .demo [class*=inline-button-] amp-img {
   position: absolute;
+}
+.admin-settings .demo [class*=inline-button-]:hover {
+  opacity: 0.7;
+}
+.admin-settings .demo .inline-button-black {
+  border-color: #333;
+}
+.admin-settings .demo .inline-button-red {
+  border-color: #e60033;
+  background-color: #e60033;
+}
+.admin-settings .demo .inline-button-blue {
+  border-color: #0095d9;
+  background-color: #0095d9;
+}
+.admin-settings .demo .inline-button-green {
+  border-color: #007b43;
+  background-color: #007b43;
+}
+.admin-settings .demo [class*=inline-button-white-] {
+  background-color: #fff;
+}
+.admin-settings .demo .inline-button-white-black {
+  color: #333;
+  border-color: #333;
+}
+.admin-settings .demo .inline-button-white-red {
+  color: #e60033;
+  border-color: #e60033;
+}
+.admin-settings .demo .inline-button-white-blue {
+  color: #0095d9;
+  border-color: #0095d9;
+}
+.admin-settings .demo .inline-button-white-green {
+  color: #007b43;
+  border-color: #007b43;
 }
 .admin-settings .demo .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
@@ -21366,7 +21444,8 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a,
 .components-popover__content .btn-wrap > a,
-.components-popover__content .wp-block-freeform .btn-wrap > a {
+.components-popover__content .wp-block-freeform .btn-wrap > a,
+.components-popover__content [class*=inline-button-] {
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -21386,8 +21465,46 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content .btn amp-img, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a amp-img,
 .components-popover__content .btn-wrap > a amp-img,
-.components-popover__content .wp-block-freeform .btn-wrap > a amp-img {
+.components-popover__content .wp-block-freeform .btn-wrap > a amp-img,
+.components-popover__content [class*=inline-button-] amp-img {
   position: absolute;
+}
+.components-popover__content [class*=inline-button-]:hover {
+  opacity: 0.7;
+}
+.components-popover__content .inline-button-black {
+  border-color: #333;
+}
+.components-popover__content .inline-button-red {
+  border-color: #e60033;
+  background-color: #e60033;
+}
+.components-popover__content .inline-button-blue {
+  border-color: #0095d9;
+  background-color: #0095d9;
+}
+.components-popover__content .inline-button-green {
+  border-color: #007b43;
+  background-color: #007b43;
+}
+.components-popover__content [class*=inline-button-white-] {
+  background-color: #fff;
+}
+.components-popover__content .inline-button-white-black {
+  color: #333;
+  border-color: #333;
+}
+.components-popover__content .inline-button-white-red {
+  color: #e60033;
+  border-color: #e60033;
+}
+.components-popover__content .inline-button-white-blue {
+  color: #0095d9;
+  border-color: #0095d9;
+}
+.components-popover__content .inline-button-white-green {
+  color: #007b43;
+  border-color: #007b43;
 }
 .components-popover__content .mce-content-body .btn-wrap a[data-mce-selected] {
   padding: 7px 13px;
