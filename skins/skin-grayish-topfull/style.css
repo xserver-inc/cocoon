@@ -2733,6 +2733,13 @@ blockquote cite {
   margin: 0;
 }
 
+/* 24.03.09 */
+.skin-grayish .article-footer .widget .sns-follow-buttons {
+  row-gap: 10px;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
+}
+
 /* entry-content end 記事の終了の線 */
 .skin-grayish .content .main .entry-content {
   border-bottom: solid 1px var(--skin-grayish-site-main-hover);
