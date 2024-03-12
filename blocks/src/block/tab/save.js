@@ -56,7 +56,7 @@ export default function save( {attributes}) {
         </div>
         <ul className="tab-label-group">
           {tabLabelsArray.map((label, index) => {
-            return (<li class="tab-label"><RawHTML>{label}</RawHTML></li>);
+            return (<li class={"tab-label " + "tab-label-" + index}><RawHTML>{label}</RawHTML></li>);
           })}
         </ul>
         <div className="tab-content-group">
