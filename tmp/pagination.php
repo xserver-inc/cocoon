@@ -48,7 +48,7 @@ if($is_1_page):
   $paginate_base = get_pagenum_link(1);
   if(strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()){
     $paginate_format = '';
-    $paginate_base = add_query_arg('paged','%#%');
+    $paginate_base = add_query_arg('paged','%#%', get_requested_url());
   }
   else{
     $pagenum_link = html_entity_decode( get_pagenum_link() );

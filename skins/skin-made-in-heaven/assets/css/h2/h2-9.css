@@ -15,7 +15,7 @@
   border: dashed 1px var(--main-color);
   inset: 4px auto auto 4px;
   box-sizing: border-box;
-  content: "";
+  content: '';
   display: block;
   height: calc(100% - 8px);
   position: absolute;

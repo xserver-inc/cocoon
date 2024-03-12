@@ -25,6 +25,9 @@
 .speech-name{
   text-align: center;
   font-size: 13px;
+  &:empty{
+    display: none;
+  }
 }
 
 div.speech-balloon{

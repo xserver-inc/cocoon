@@ -743,8 +743,8 @@ if ($mobile_site_font_size): ?>
   }
 }
 @media screen and (max-width:834px) {
-  .column-wrap > div{
-    margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+  .container .column-wrap{
+    gap: <?php echo $entry_content_margin_hight; ?>em;
   }
 }
 .article .micro-top{

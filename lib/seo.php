@@ -679,7 +679,7 @@ function get_the_snippet($content, $length = 70, $post_id = null) {
     $description = get_the_all_in_one_seo_pack_meta_description($post_id);
   }
 
-  //SEO設定のディスクリプションがない場合は「抜粋」を取得
+  //SEO設定のディスクリプションがない場合は「本文からの自動生成抜粋」を取得
   if (!$description) {
     $description = get_content_excerpt($content, $length);
     $description = str_replace('<', '&lt;', $description);

@@ -14,7 +14,7 @@
 .main .under-entry-content h2::before {
   background-color: var(--main-color);
   bottom: 0px;
-  content: "";
+  content: '';
   height: 50%;
   left: -10px;
   position: absolute;

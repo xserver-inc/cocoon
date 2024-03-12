@@ -72,7 +72,7 @@ endif;
 //投稿ポストで読み込まれた$_POSTは空なのでupladed_avatarとprofile_page_urlが空手上書きされる
 //↓https://wp-cocoon.com/wp-content/uploads/2022/11/profile_update.png
 // add_action('profile_update', 'update_avatar_to_user_profile');
-add_action('personal_options_update', 'update_avatar_to_user_profile');
+add_action('edit_user_profile_update', 'update_avatar_to_user_profile');
 if ( !function_exists( 'update_avatar_to_user_profile' ) ):
 function update_avatar_to_user_profile($user_id) {
   if ( current_user_can('edit_user',$user_id) || is_user_administrator() ){

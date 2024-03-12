@@ -1048,6 +1048,6 @@ function get_block_pattern_shortcode($atts) {
     }
   }
 
-  return $content;
+  return do_blocks($content);
 }
 endif;

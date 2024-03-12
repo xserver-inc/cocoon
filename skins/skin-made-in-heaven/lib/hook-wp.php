@@ -51,6 +51,23 @@ add_filter('post_date_column_time', function($h_time, $post) {
 }, 10, 2);
 
 
+add_filter('manage_pages_columns', function($columns) {
+  $columns['slug'] = 'スラッグ';
+  return $columns;
+});
+
+
+add_action('manage_pages_custom_column', function($column_name, $post_id) {
+  switch($column_name) {
+    case 'slug':
+      $post = get_post($post_id);
+      $slug = $post->post_name;
+      echo esc_attr(urldecode($slug));
+      break;
+  }
+}, 10, 2);
+
+
 //******************************************************************************
 //　ダッシュボード投稿一覧に追加
 //******************************************************************************
@@ -254,10 +271,8 @@ add_filter('widget_text', 'do_shortcode');
 add_filter('widget_title', function($title) {
   $title = str_replace('[', '<', $title);
   $title = str_replace(']', '>', $title);
-  $title = str_replace('&#8216;', "'", $title);
-  $title = str_replace('&#8217;', "'", $title);
-  $title = str_replace('&#8221;', '"', $title);
-  $title = str_replace('&#8220;', '"', $title);
+  $title = str_replace('&#039;', "'", $title);
+  $title = str_replace('&quot;', '"', $title);
 
   return $title;
 });
@@ -267,7 +282,7 @@ add_filter('widget_title', function($title) {
 //  Gutenbergエディターメニュー追加
 //******************************************************************************
 add_action('enqueue_block_editor_assets', function() {
-  wp_enqueue_script('hvn-richtext', HVN_SKIN_URL . 'assets/js/richtext.js');
+  wp_enqueue_script('hvn-richtext', HVN_SKIN_URL  . 'assets/js/richtext.js');
   wp_enqueue_script('hvn-block', HVN_SKIN_URL . 'assets/js/block.js', [], false, true);
 });
 
@@ -315,7 +330,7 @@ add_filter('editor_stylesheets', function($stylesheets) {
   if (!is_gutenberg_editor_enable()) {
     for ($i=2; $i<=4; $i++) {
       $no = get_theme_mod("hvn_h{$i}_css_setting", '1');
-      $h_url = HVN_SKIN_URL . "assets/css/h{$i}/h{$i}-{$no}.css";
+      $h_url = get_theme_file_uri(HVN_SKIN . "assets/css/h{$i}/h{$i}-{$no}.css");
       array_push($stylesheets , $h_url);
     }
   }

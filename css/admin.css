@@ -5842,6 +5842,7 @@ body.wp-admin {
   justify-content: space-between;
   position: relative;
   margin: 0;
+  gap: 1%;
 }
 .admin-settings .demo .column-wrap > div {
   width: 49.5%;
@@ -6441,6 +6442,9 @@ body.wp-admin {
 .admin-settings .demo .speech-name {
   text-align: center;
   font-size: 13px;
+}
+.admin-settings .demo .speech-name:empty {
+  display: none;
 }
 .admin-settings .demo div.speech-balloon {
   height: 100%;
@@ -7955,6 +7959,9 @@ body.wp-admin {
   font-weight: 700;
   text-align: center;
 }
+.admin-settings .demo .iconlist-title:empty {
+  display: none;
+}
 .admin-settings .demo .faq-wrap {
   --cocoon-custom-question-color:#b7282e;
   --cocoon-custom-answer-color:#007bbb;
@@ -9048,7 +9055,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=is-style-numeric-list-] {
   counter-reset: list;
-  list-style-type: none;
+  list-style-type: none !important;
 }
 .admin-settings .demo [class*=is-style-numeric-list-] > li {
   position: relative;
@@ -9120,7 +9127,7 @@ body.wp-admin {
   display: none;
 }
 .admin-settings .demo [class*=is-style-icon-list-] {
-  list-style: none;
+  list-style: none !important;
 }
 .admin-settings .demo [class*=is-style-icon-list-] > li {
   padding-left: 1.6em;
@@ -14225,6 +14232,7 @@ body.wp-admin {
   justify-content: space-between;
   position: relative;
   margin: 0;
+  gap: 1%;
 }
 .admin-settings .demo .column-wrap > div {
   width: 49.5%;
@@ -14824,6 +14832,9 @@ body.wp-admin {
 .admin-settings .demo .speech-name {
   text-align: center;
   font-size: 13px;
+}
+.admin-settings .demo .speech-name:empty {
+  display: none;
 }
 .admin-settings .demo div.speech-balloon {
   height: 100%;
@@ -16338,6 +16349,9 @@ body.wp-admin {
   font-weight: 700;
   text-align: center;
 }
+.admin-settings .demo .iconlist-title:empty {
+  display: none;
+}
 .admin-settings .demo .faq-wrap {
   --cocoon-custom-question-color:#b7282e;
   --cocoon-custom-answer-color:#007bbb;
@@ -17431,7 +17445,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=is-style-numeric-list-] {
   counter-reset: list;
-  list-style-type: none;
+  list-style-type: none !important;
 }
 .admin-settings .demo [class*=is-style-numeric-list-] > li {
   position: relative;
@@ -17503,7 +17517,7 @@ body.wp-admin {
   display: none;
 }
 .admin-settings .demo [class*=is-style-icon-list-] {
-  list-style: none;
+  list-style: none !important;
 }
 .admin-settings .demo [class*=is-style-icon-list-] > li {
   padding-left: 1.6em;

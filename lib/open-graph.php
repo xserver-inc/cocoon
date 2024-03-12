@@ -119,9 +119,12 @@ class OpenGraphGetter implements Iterator
     // //UTF-8ページの文字化け問題
     // //対処法1：http://qiita.com/kobake@github/items/3c5d09f9584a8786339d
     // //対処法2：http://nplll.com/archives/2011/06/_domdocumentloadhtml.php
+    // $HTML = @mb_convert_encoding($HTML, 'HTML-ENTITIES', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
 
-    $HTML = @mb_convert_encoding($HTML,'UTF-8', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
-    //$HTML = mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8');
+    // 上記の方法で新しいPHPの仕様で非推奨になったため、以下の方法を選択
+    // //対処法3：https://wp-cocoon.com/community/postid/77632/
+    $HTML = mb_convert_encoding($HTML, 'UTF-8', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
+    $HTML = mb_encode_numericentity($HTML, [0x80, 0x10FFFF, 0, 0x1FFFFF], 'UTF-8');
     if (!$HTML) {
       return false;
     }

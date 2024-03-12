@@ -4080,6 +4080,7 @@ figcaption {
   justify-content: space-between;
   position: relative;
   margin: 0;
+  gap: 1%;
 }
 .column-wrap > div {
   width: 49.5%;
@@ -4228,6 +4229,9 @@ figcaption {
 .iconlist-title {
   font-weight: 700;
   text-align: center;
+}
+.iconlist-title:empty {
+  display: none;
 }
 
 .is-style-border-solid {
@@ -4669,7 +4673,7 @@ figcaption {
 
 [class*=is-style-numeric-list-] {
   counter-reset: list;
-  list-style-type: none;
+  list-style-type: none !important;
 }
 [class*=is-style-numeric-list-] > li {
   position: relative;
@@ -4752,7 +4756,7 @@ figcaption {
 }
 
 [class*=is-style-icon-list-] {
-  list-style: none;
+  list-style: none !important;
 }
 [class*=is-style-icon-list-] > li {
   padding-left: 1.6em;

@@ -48,7 +48,7 @@ function memo_custom_box_save_data($post_id){
 endif;
 
 
-//広告を除外しているか
+//メモ記入欄を取得
 if ( !function_exists( 'get_the_page_memo' ) ):
 function get_the_page_memo($post_id = null){
   if (!$post_id) {

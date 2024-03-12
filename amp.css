@@ -6068,6 +6068,7 @@ figcaption {
   justify-content: space-between;
   position: relative;
   margin: 0;
+  gap: 1%;
 }
 .column-wrap > div {
   width: 49.5%;
@@ -6775,6 +6776,9 @@ canvas, iframe, video,
 .speech-name {
   text-align: center;
   font-size: 13px;
+}
+.speech-name:empty {
+  display: none;
 }
 
 div.speech-balloon {
@@ -8499,6 +8503,9 @@ ul.timeline ul ul ul {
   font-weight: 700;
   text-align: center;
 }
+.iconlist-title:empty {
+  display: none;
+}
 
 .faq-wrap {
   --cocoon-custom-question-color:#b7282e;
@@ -9808,7 +9815,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 [class*=is-style-numeric-list-] {
   counter-reset: list;
-  list-style-type: none;
+  list-style-type: none !important;
 }
 [class*=is-style-numeric-list-] > li {
   position: relative;
@@ -9891,7 +9898,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 
 [class*=is-style-icon-list-] {
-  list-style: none;
+  list-style: none !important;
 }
 [class*=is-style-icon-list-] > li {
   padding-left: 1.6em;

@@ -442,7 +442,7 @@ if ((get_theme_mod('entry_card_type') == 'vertical_card_3'
   padding: var(--gap30) calc(50vw - 50%);
 }
 
-.front-top-page.no-sidebar:not(:has(.widget-index-bottom, .widget-content-bottom)) #footer {
+.front-top-page.no-sidebar:not(:has(.ad-index-bottom, .widget-index-bottom, .widget-content-bottom)) #footer {
   margin-top: 0;
 }
 
@@ -926,7 +926,8 @@ switch($no) {
   case 1:
   case 2:
   case 3:
-    $url = 'url(' . HVN_SKIN_URL . 'assets/img/' . $no . '.gif)';
+    $url = HVN_SKIN_URL . 'assets/img/' . $no . '.gif';
+    $url = "url({$url})";
     break;
 
   case 4:
