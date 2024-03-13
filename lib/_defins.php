@@ -235,7 +235,7 @@ define('NO_IMAGE_LARGE', get_template_directory_uri().'/images/no-image-large.pn
 define('NO_IMAGE_RSS', get_template_directory_uri().'/images/no-image-rss.png');
 
 //画像と判別するファイル拡張子（正規表現用）
-define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp');
+define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp|\.avif');
 
 //OGPホームイメージURLデフォルト
 define('OGP_HOME_IMAGE_URL_DEFAULT', get_template_directory_uri().'/screenshot.jpg');
