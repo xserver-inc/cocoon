@@ -17,7 +17,6 @@
   "example": {},
   "supports": {
     "anchor": true,
-    "inserter": false,
-    "lock": false
+    "inserter": false
   }
 }
