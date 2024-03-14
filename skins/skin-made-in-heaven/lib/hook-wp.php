@@ -282,7 +282,6 @@ add_filter('widget_title', function($title) {
 //  Gutenbergエディターメニュー追加
 //******************************************************************************
 add_action('enqueue_block_editor_assets', function() {
-  wp_enqueue_script('hvn-richtext', HVN_SKIN_URL  . 'assets/js/richtext.js');
   wp_enqueue_script('hvn-block', HVN_SKIN_URL . 'assets/js/block.js', [], false, true);
 });
 

@@ -184,9 +184,10 @@ $_THEME_OPTIONS = array(
 
 // コード
   'code_highlight_enable' => 1,
-  'code_row_number_enable' => 1,
+  'code_row_number_enable' => 0,
   'code_highlight_package' => 'light',
   'code_highlight_style' => 'tomorrow-night-bright',
+  'code_highlight_css_selector' => '.entry-content pre',
 
 // コメント
   'comment_display_type' => 'default',
