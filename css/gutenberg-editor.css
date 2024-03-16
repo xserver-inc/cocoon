@@ -1933,6 +1933,7 @@ div.search-form {
 
 [class*=inline-button-white-] {
   background-color: #fff;
+  border-width: 1px;
 }
 
 .inline-button-white-black {

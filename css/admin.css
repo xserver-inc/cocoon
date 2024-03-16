@@ -3975,6 +3975,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=inline-button-white-] {
   background-color: #fff;
+  border-width: 1px;
 }
 .admin-settings .demo .inline-button-white-black {
   color: var(--cocoon-black-color);
@@ -12374,6 +12375,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=inline-button-white-] {
   background-color: #fff;
+  border-width: 1px;
 }
 .admin-settings .demo .inline-button-white-black {
   color: var(--cocoon-black-color);
@@ -21489,6 +21491,7 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content [class*=inline-button-white-] {
   background-color: #fff;
+  border-width: 1px;
 }
 .components-popover__content .inline-button-white-black {
   color: var(--cocoon-black-color);
