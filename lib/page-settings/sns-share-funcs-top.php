@@ -43,6 +43,14 @@ function is_top_mastodon_share_button_visible(){
 }
 endif;
 
+//Blueskyシェアボタンの表示
+define('OP_TOP_BLUESKY_SHARE_BUTTON_VISIBLE', 'top_bluesky_share_button_visible');
+if ( !function_exists( 'is_top_bluesky_share_button_visible' ) ):
+function is_top_bluesky_share_button_visible(){
+  return get_theme_option(OP_TOP_BLUESKY_SHARE_BUTTON_VISIBLE);
+}
+endif;
+
 //Misskeyシェアボタンの表示
 define('OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE', 'top_misskey_share_button_visible');
 if ( !function_exists( 'is_top_misskey_share_button_visible' ) ):

@@ -168,6 +168,13 @@ function get_mastodon_count($url = null) {
 }
 endif;
 
+//Blueskyカウントの取得（取得方法が出てきた時・カスタマイズ用）
+if ( !function_exists( 'get_bluesky_count' ) ):
+function get_bluesky_count($url = null) {
+  return '';
+}
+endif;
+
 //Misskeyカウントの取得（取得方法が出てきた時・カスタマイズ用）
 if ( !function_exists( 'get_misskey_count' ) ):
 function get_misskey_count($url = null) {
@@ -502,6 +509,13 @@ function get_mastodon_share_url(){
 }
 endif;
 
+//BlueskyのシェアURLを取得
+if ( !function_exists( 'get_bluesky_share_url' ) ):
+function get_bluesky_share_url(){
+  return '//bsky.app/intent/compose?text='.urlencode( get_share_page_url() ).' '.urlencode( get_share_page_title() );
+}
+endif;
+
 //MisskeyのシェアURLを取得
 if ( !function_exists( 'get_misskey_share_url' ) ):
 function get_misskey_share_url(){
@@ -604,6 +618,17 @@ function is_mastodon_share_button_visible($option){
   return apply_filters('is_mastodon_share_button_visible', $res, $option);
 }
 endif;
+
+//Blueskyシェアボタンを表示するか
+if ( !function_exists( 'is_bluesky_share_button_visible' ) ):
+function is_bluesky_share_button_visible($option){
+  $res = (is_bottom_bluesky_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_bluesky_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
+  return apply_filters('is_bluesky_share_button_visible', $res, $option);
+}
+endif;
+
 
 //Misskeyシェアボタンを表示するか
 if ( !function_exists( 'is_misskey_share_button_visible' ) ):
