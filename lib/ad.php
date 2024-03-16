@@ -348,7 +348,7 @@ if ( !function_exists( 'is_pr_labels_visible' ) ):
         || (is_pr_label_category_page_visible() && is_category()) //カテゴリーページ
         || (is_pr_label_tag_page_visible() && is_tag()) //タグページ
       )
-      || is_the_page_pr_labels_visible() //ページで除外していない場合
+      && is_the_page_pr_labels_visible() //ページで除外していない場合
     ;
 
   }
