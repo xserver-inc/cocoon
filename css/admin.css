@@ -7285,7 +7285,6 @@ body.wp-admin {
   color: var(--cocoon-black-color);
   background: var(--cocoon-white-color);
   box-shadow: 0 0 5px darkgrey;
-  font-size: 19px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -7304,6 +7303,7 @@ body.wp-admin {
   text-align: center;
   width: 100%;
   display: block;
+  font-size: 19px;
 }
 .admin-settings .demo .mobile-menu-buttons .menu-caption {
   font-size: 9px;
@@ -15685,7 +15685,6 @@ body.wp-admin {
   color: var(--cocoon-black-color);
   background: var(--cocoon-white-color);
   box-shadow: 0 0 5px darkgrey;
-  font-size: 19px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -15704,6 +15703,7 @@ body.wp-admin {
   text-align: center;
   width: 100%;
   display: block;
+  font-size: 19px;
 }
 .admin-settings .demo .mobile-menu-buttons .menu-caption {
   font-size: 9px;
