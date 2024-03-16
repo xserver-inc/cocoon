@@ -7289,7 +7289,7 @@ body.wp-admin {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -15689,7 +15689,7 @@ body.wp-admin {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 0;
   margin: 0;
   list-style: none;
