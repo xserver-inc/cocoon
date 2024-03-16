@@ -24,7 +24,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
     return (
       <Fragment>
         <BadgeToolbarButton
-          icon={ <Icon icon={ button } size={ 32 } /> }
+          icon="button"
           title={ <span className="inline-button-red">{ TITLE }</span> }
           onClick={ onToggle }
           isActive={ isActive }
