@@ -512,7 +512,7 @@ endif;
 //BlueskyのシェアURLを取得
 if ( !function_exists( 'get_bluesky_share_url' ) ):
 function get_bluesky_share_url(){
-  return '//bsky.app/intent/compose?text='.urlencode( get_share_page_url() ).' '.urlencode( get_share_page_title() );
+  return '//bsky.app/intent/compose?text='.urlencode( get_share_page_title() ).' '.urlencode( get_share_page_url() );
 }
 endif;
 
