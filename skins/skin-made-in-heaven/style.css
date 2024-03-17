@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.0.10
+ Version: 0.0.11
  Priority: 6900001000
  Visibility: false
 */
@@ -36,6 +36,7 @@
 **                            [C]最近のコメントの変更
 **                            モバイルSNSシェア、SNSフォローボタンを白抜きに変更
 **                            バグ対策
+**        0.0.11  2023-03-15  タブ一覧のカテゴリーごと表示数修正
 **
 *******************************************************************************/
 
@@ -540,7 +541,8 @@ img {
   background-color: transparent;
   border: 0;
   border-radius: 0;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--gap30);
   margin: 0;
   padding: 0;
@@ -555,7 +557,6 @@ img {
   background-color: var(--white-bgcolor);
   border-radius: var(--border-radius10);
   display: block;
-  overflow: clip;
   padding: var(--gap30) var(--main-padding);
 }
 
@@ -612,9 +613,10 @@ img {
 }
 
 .footer-in {
-  padding: var(--gap30) 10px 0;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var( --gap30);
+  padding: var(--gap30) 10px 0;
 }
 
 .footer-bottom {
@@ -675,6 +677,7 @@ img {
 *******************************************************************************/
 
 .body .content .list {
+  align-items: start;
   display: grid;
   gap: var(--gap30);
   grid-template-columns: repeat(var(--column), minmax(0, 1fr));
@@ -903,8 +906,9 @@ span.fas.fa-history:before {
 
 .entry-categories-tags .entry-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: var(--gap30);
+  margin-bottom: 0;
 }
 
 
@@ -1116,8 +1120,8 @@ span.fas.fa-history:before {
   background-clip: padding-box;
   background-color: var(--gray-bgcolor);
   border: 0;
-  border-bottom: 4px double #ccc;
-  border-top: 4px double #ccc;
+  border-bottom: 4px double var(--border-color);
+  border-top: 4px double var(--border-color);
   padding: var(--main-padding);
 }
 
@@ -1225,11 +1229,7 @@ span.fas.fa-history:before {
 
 .article-footer .sns-share,
 .article-footer .sns-follow {
-  margin-bottom: var(--gap30);
-}
-
-.article-footer > div:nth-last-child(3) {
-  margin-bottom: 0;
+  margin-top: var(--gap30);
 }
 
 
@@ -1258,6 +1258,10 @@ span.fas.fa-history:before {
 
 .icon-mastodon-logo:before {
   content: '\e928';
+}
+
+.icon-bluesky-logo:before {
+  content: "\e923";
 }
 
 .icon-misskey-logo:before {
@@ -1290,6 +1294,7 @@ span.fas.fa-history:before {
 
 .icon-x-corp-logo,
 .icon-mastodon-logo,
+.icon-bluesky-logo,
 .icon-misskey-logo,
 .icon-facebook-logo,
 .icon-hatebu-logo,
@@ -1481,7 +1486,7 @@ span.fas.fa-history:before {
 }
 
 
-/* 返信 */
+/* 返信ボタン */
 
 .comment-reply-link {
   background-color: var(--white-bgcolor);
@@ -1540,6 +1545,25 @@ span.fas.fa-history:before {
 
 .body .comment-respond .form-submit {
   margin-top: var(--gap30);
+}
+
+.commets-list li .comment-respond {
+  margin-bottom: var(--gap30);
+}
+
+.body:has(.commets-list li .comment-respond) .commets-list > li:last-of-type {
+  margin-bottom: 0;
+}
+
+
+/* 分割ページ用 */
+
+.comment-page-link {
+  margin-bottom: var(--gap30);
+}
+
+.comment-page-link :is(.prev, .next) {
+  display: none;
 }
 
 
@@ -1605,10 +1629,6 @@ span.fas.fa-history:before {
 
 #navi-in .menu-top.menu-mobile {
   display: none;
-}
-
-.menu-drawer .menu-item:before {
-  content: none;
 }
 
 
@@ -1683,7 +1703,8 @@ span.fas.fa-history:before {
 *******************************************************************************/
 
 .sidebar-scroll {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--gap30);
 }
 
@@ -1699,7 +1720,8 @@ span.fas.fa-history:before {
 
 .content-top-in,
 .content-bottom-in {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--gap30);
   padding: 0 10px;
 }
@@ -1716,8 +1738,8 @@ span.fas.fa-history:before {
 .footer-widgets {
   display: grid;
   gap: var(--gap30);
-  margin: 0;
   grid-template-columns: repeat(var(--column), minmax(0, 1fr));
+  margin: 0;
 }
 
 .body .footer-left,
@@ -1763,7 +1785,8 @@ span.fas.fa-history:before {
 }
 
 .body .widget > ul {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 5px;
   padding: 0;
 }
@@ -2156,7 +2179,8 @@ aside.widget .widget-title {
   background-color: unset;
   border: 1px solid var(--border-color);
   color: unset;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--padding15);
   padding: var(--padding15);
 }
@@ -2430,8 +2454,9 @@ aside.widget .widget-title {
 
 .ranking-items {
   border: 1px solid var(--border-color);
-  display: grid;
-  gap: var(--gap30);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding15);
   line-height: 1.8;
   padding: var(--padding15);
 }
@@ -2439,10 +2464,11 @@ aside.widget .widget-title {
 .ranking-item {
   border: 0;
   border-bottom: 1px dotted var(--border-color);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--padding15);
   margin: 0!important;
-  padding: 0 0 var(--gap30);
+  padding: 0 0 var(--padding15);
 }
 
 .ranking-item:last-child {
@@ -2552,7 +2578,8 @@ aside.widget .widget-title {
 *******************************************************************************/
 
 .info-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--padding15);
   padding: 0;
 }
@@ -2697,8 +2724,13 @@ aside.widget .widget-title {
 
 .body .widget .recent-comments {
   margin: var(--padding15) var(--main-padding);
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted var(--border-color);
   padding-bottom: var(--padding15);
+}
+
+.body div.widget .recent-comments {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .body .widget .recent-comments:first-of-type {
@@ -2729,10 +2761,10 @@ aside.widget_categories select {
   width: calc(100% - var(--main-padding) * 2);
 }
 
-.widget_archive li,
-.widget_categories li,
-.widget_pages li {
-  overflow: hidden;
+.body .widget_archive li,
+.body .widget_categories li,
+.body .widget_pages li {
+  margin: 0;
 }
 
 
@@ -2791,10 +2823,6 @@ aside.widget_categories select {
 **  動画
 *******************************************************************************/
 
-.widget_media_video {
-  overflow: hidden;
-}
-
 .widget_media_video .wp-video {
   width: auto!important;
 }
@@ -2805,7 +2833,8 @@ aside.widget_categories select {
 *******************************************************************************/
 
 .widget .children {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 5px;
   margin: 5px 0 0;
 }
@@ -2873,6 +2902,14 @@ aside.widget_categories select {
 /*******************************************************************************
 **  モバイルメニュー、ナビゲーションメニュー
 *******************************************************************************/
+
+.body .widget_nav_menu ul {
+  padding-left: 0;
+}
+
+.navi-menu-content .widget {
+  overflow: hidden;
+}
 
 .body .navi-menu-content .menu-drawer {
   display: block;
@@ -3457,7 +3494,9 @@ blockquote:after {
 .search-form > div {
   border-color: var(--border-color);
   border-radius: 0;
+  font-size: 16px;
   margin-left: 0;
+  padding: 5px;
 }
 
 .search-form div.sbtn {
@@ -3475,6 +3514,8 @@ blockquote:after {
 
 .search-form div.sbtn::after {
   color: var(--cocoon-text-color);
+  font-size: 25px;
+  margin: 0;
 }
 
 
@@ -3696,7 +3737,7 @@ blockquote:after {
     box-shadow: var(--shadow-color)
   }
   .body:not(.front-top-page) .article:has(.ad-area, .entry-tags, .article-footer .sns-follow, .article-footer .widget) .entry-content {
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 1px dotted var(--border-color);
     margin-bottom: var(--gap30);
     padding-bottom: var(--gap30);
   }
@@ -3710,7 +3751,7 @@ blockquote:after {
     max-height: 50px;
   }
   .body:not(.front-top-page) .article:has(.entry-tags, .article-footer .sns-button, .article-footer .widget) .entry-content {
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 1px dotted var(--border-color);
     margin-bottom: var(--gap30);
     padding-bottom: var(--gap30);
   }
@@ -3735,8 +3776,8 @@ blockquote:after {
   .body .box-menus .box-menu {
     width: 50%;
   }
-  .container .column-wrap {
-    gap: var(--gap30)!important;
+  .body .container .column-wrap {
+    gap: var(--gap30);
   }
   .article :is(ul, ol) {
     padding-left: 40px;

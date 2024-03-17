@@ -6,11 +6,8 @@ if (!defined('ABSPATH')) exit;
 //  タブ一覧表示件数変更
 //******************************************************************************
 add_filter('list_category_tab_args', function($args, $cat_id) {
-  $args['posts_per_page'] = 8;
-  if (is_entry_card_type_vertical_card_3()) {
-    $args['posts_per_page'] = 9;
-  }
-
+  $args['posts_per_page'] = 12;
+ 
   return $args;
 }, 10, 2);
 
@@ -73,9 +70,8 @@ add_filter('body_class_additional', function($classes) {
 //  SNSシェアボタン変更
 //******************************************************************************
 add_filter('get_additional_sns_share_button_classes', function($classes) {
-  if (strpos($classes, SS_MOBILE) !== false) {
-    $classes = str_replace('bc-brand-color', 'bc-brand-color-white', $classes);
-  }
+  $classes = str_replace('bc-brand-color ', 'bc-brand-color-white ', $classes);
+
   return $classes;
 });
 
@@ -84,9 +80,8 @@ add_filter('get_additional_sns_share_button_classes', function($classes) {
 //  SNSフォローボタン変更
 //******************************************************************************
 add_filter('get_additional_sns_follow_button_classes', function($classes) {
-  if (strpos($classes, SF_MOBILE) !== false) {
-    $classes = str_replace('bc-brand-color', 'bc-brand-color-white', $classes);
-  }
+  $classes = str_replace('bc-brand-color ', 'bc-brand-color-white ', $classes);
+
   return $classes;
 });
 

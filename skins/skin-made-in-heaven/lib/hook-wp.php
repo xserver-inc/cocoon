@@ -28,10 +28,7 @@ add_action('admin_bar_menu', function($wp_admin_bar) {
   $wp_admin_bar->remove_menu('my-account');
   $wp_admin_bar->remove_menu('wp-logo');
   $wp_admin_bar->remove_menu('search');
-}, 999);
 
-
-add_action('admin_bar_menu', function($wp_admin_bar) {
   if (is_admin_tool_menu_visible() && is_user_administrator()) {
     $wp_admin_bar->add_menu(array(
       'parent'  => 'dashboard_menu',

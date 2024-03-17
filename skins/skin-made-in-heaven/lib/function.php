@@ -274,7 +274,7 @@ function hvn_add_header() {
   // Scrollボタン
   $scroll = get_theme_mod('hvn_header_scroll_setting');
   if ($scroll && $html) {
-    $html .= '<div class="scrolldown scrolldown' . $scroll .'"><div>Scroll</div></div>';
+    $html .= '<div class="scrolldown scrolldown' . $scroll .'"><span>Scroll</span></div>';
   }
 
   return $html;
