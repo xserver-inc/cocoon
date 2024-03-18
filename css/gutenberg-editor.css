@@ -1935,6 +1935,9 @@ div.search-form {
   background-color: #fff;
   border-width: 1px;
 }
+[class*=inline-button-white-]:hover {
+  opacity: 0.3;
+}
 
 .inline-button-white-black {
   color: var(--cocoon-black-color);
