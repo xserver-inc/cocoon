@@ -36,15 +36,6 @@ if (is_admin()) {
 function cocoon_blocks_cgb_block_assets()
 {
 	// phpcs:ignore
-	// Styles.
-	wp_enqueue_style(
-		'cocoon_blocks-cgb-style-css', // Handle.
-		get_template_directory_uri() . '/blocks/dist/blocks.style.build.css',
-		//plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		['wp-block-editor', 'wp-editor'] // Dependency to include the CSS after it.
-		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
-	);
-
 	//Font Awesome
 	wp_enqueue_style_font_awesome();
 
@@ -236,15 +227,6 @@ function cocoon_blocks_cgb_editor_assets()
 		'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
 		'gbCodeLanguages', //任意のオブジェクト名
 		get_block_editor_code_languages() //カラーパレット
-	);
-
-	// Styles.
-	wp_enqueue_style(
-		'cocoon_blocks-cgb-block-editor-css', // Handle.
-		get_template_directory_uri() . '/blocks/dist/blocks.editor.build.css',
-		//plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		['wp-edit-blocks'] // Dependency to include the CSS after it.
-		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 }
 
