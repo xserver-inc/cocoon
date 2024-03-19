@@ -6376,6 +6376,7 @@ figcaption {
 
 .comment-page-link {
   text-align: center;
+  margin: 24px 0;
 }
 .comment-page-link .page-numbers {
   width: auto;

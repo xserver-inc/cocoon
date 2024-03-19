@@ -6072,6 +6072,7 @@ body.wp-admin {
 }
 .admin-settings .demo .comment-page-link {
   text-align: center;
+  margin: 24px 0;
 }
 .admin-settings .demo .comment-page-link .page-numbers {
   width: auto;
@@ -14475,6 +14476,7 @@ body.wp-admin {
 }
 .admin-settings .demo .comment-page-link {
   text-align: center;
+  margin: 24px 0;
 }
 .admin-settings .demo .comment-page-link .page-numbers {
   width: auto;
