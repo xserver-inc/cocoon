@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.0.11
+ Version: 0.0.12
  Priority: 6900001000
  Visibility: false
 */
@@ -37,6 +37,8 @@
 **                            モバイルSNSシェア、SNSフォローボタンを白抜きに変更
 **                            バグ対策
 **        0.0.11  2023-03-15  タブ一覧のカテゴリーごと表示数修正
+**        0.0.12  2023-03-17  コメント分割ページのCSS修正
+**                            バグ対策
 **
 *******************************************************************************/
 
@@ -1537,29 +1539,30 @@ span.fas.fa-history:before {
 }
 
 
-/* 返信 */
+/* コメントボタン */
 
+.body .comment-btn,
+.body .comment-respond .form-submit,
 .body .comment-respond {
-  margin-bottom: 0;
+  margin: var(--gap30) 0 0 0;
 }
 
-.body .comment-respond .form-submit {
-  margin-top: var(--gap30);
-}
+
+/* 返信フォーム */
 
 .commets-list li .comment-respond {
   margin-bottom: var(--gap30);
 }
 
-.body:has(.commets-list li .comment-respond) .commets-list > li:last-of-type {
+.body .commets-list > li:last-of-type {
   margin-bottom: 0;
 }
 
 
-/* 分割ページ用 */
+/* 分割ページボタン */
 
-.comment-page-link {
-  margin-bottom: var(--gap30);
+.comment-page-link:has(.page-numbers) {
+  margin: var(--gap30) 0 0 0;
 }
 
 .comment-page-link :is(.prev, .next) {
@@ -3461,6 +3464,10 @@ blockquote:after {
   width: 35px;
 }
 
+.is-style-square :is(.faq-question-content, .faq-item-content) {
+  padding-top: 5px;
+}
+
 .is-style-accordion:not(.not-nested-style) .faq-question {
   background-color: #eee;
   color: #333;
@@ -3601,16 +3608,31 @@ blockquote:after {
 *******************************************************************************/
 
 .label-box-label {
-  --cocoon-white-color: var(--white-bgcolor);
+  display: inline-flex;
   font-size: var(--cocoon-text-size-s);
   font-weight: normal;
   margin: 0 var(--padding15);
-  padding: 0;
+  padding: 0 var(--padding15);
+  position: relative;
+  text-shadow: none;
+  z-index: 1;
 }
 
 .label-box-content {
   border-width: 1px;
   padding: var(--padding15);
+}
+
+.label-box-label:after {
+  background-color: var(--white-bgcolor);
+  content: '';
+  display: block;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: calc((1.8em - 3px) / 2);
+  width: 100%;
+  z-index: -1;
 }
 
 
