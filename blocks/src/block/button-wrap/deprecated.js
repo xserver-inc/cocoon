@@ -54,9 +54,6 @@ export const v1 = {
     align: {
       type: 'string',
     },
-    align: {
-      type: 'string',
-    },
   },
   supports: {
     align: [ 'left', 'center', 'right' ],
