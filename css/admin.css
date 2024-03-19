@@ -1003,7 +1003,7 @@ body.wp-admin {
 }
 .admin-settings .demo .ff-yu-gothic,
 .admin-settings .demo .wp-admin-ff-yu-gothic .editor-styles-wrapper {
-  font-family: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-family: YuGothic, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 .admin-settings .demo .ff-ms-pgothic,
 .admin-settings .demo .wp-admin-ff-ms-pgothic .editor-styles-wrapper {
@@ -9406,7 +9406,7 @@ body.wp-admin {
 }
 .admin-settings .demo .ff-yu-gothic,
 .admin-settings .demo .wp-admin-ff-yu-gothic .editor-styles-wrapper {
-  font-family: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-family: YuGothic, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 .admin-settings .demo .ff-ms-pgothic,
 .admin-settings .demo .wp-admin-ff-ms-pgothic .editor-styles-wrapper {
@@ -23545,7 +23545,7 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content .ff-yu-gothic,
 .components-popover__content .wp-admin-ff-yu-gothic .editor-styles-wrapper {
-  font-family: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-family: YuGothic, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 .components-popover__content .ff-ms-pgothic,
 .components-popover__content .wp-admin-ff-ms-pgothic .editor-styles-wrapper {
