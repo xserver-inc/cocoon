@@ -428,6 +428,15 @@ add_filter('option_date_format', function($option){
 });
 
 
+add_filter('option_time_format', function($option){
+  if (!is_admin()) {
+    $option = 'H:i';
+  }
+
+  return $option;
+});
+
+
 //******************************************************************************
 //  NEWマーク追加
 //******************************************************************************
