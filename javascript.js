@@ -127,7 +127,8 @@
   }
 
   //コメントボタンがクリックされたとき
-  $('#comment-reply-btn, .comment-reply-link').click(function () {
+  const clickEventType = ((window.ontouchstart !== null) ? 'click' : 'touchend');
+  $(document).on(clickEventType,'#comment-reply-btn, .comment-reply-link', function() {
     $('#comment-reply-btn').slideUp();
     const respond = document.getElementById('respond');
     const styles = { inset: 'auto', position: 'static', visibility: 'visible' };
