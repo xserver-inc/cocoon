@@ -743,24 +743,25 @@ select {
 }
 
 .pager-numbers .page-numbers.current,
-.pagination .current {
+.pagination .current,
+.comment-page-link .current {
 	background: 0 0;
 	border: 0;
 	color: white;
 	font-size: 110%;
 	background-color: #333333;
-	border-radius: 50%;
+	border-radius: 99px;
 }
 
 .page-numbers.dots {
-	border-radius: 50%;
+	border-radius: 99px;
 	border: 1px solid #333333;
 }
 
 a .page-numbers:not(.page-prev-next),
 a.page-numbers {
 	text-align: center;
-	border-radius: 50%;
+	border-radius: 99px;
 	position: relative;
 	z-index: 1;
 	background: rgba(255, 255, 255, 0.1);
@@ -787,7 +788,7 @@ a.page-numbers:after {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	border-radius: 50%;
+	border-radius: 99px;
 	content: "";
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
