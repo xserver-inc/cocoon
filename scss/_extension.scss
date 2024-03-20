@@ -879,8 +879,15 @@ div.search-form{
   }
 }
 
-[class*="inline-button-"]:hover{
-  opacity: .7;
+[class*="inline-button-"]{
+  &:hover{
+    opacity: .7;
+  }
+
+  a{
+    color: inherit;
+    text-decoration:none;
+  }
 }
 
 .inline-button-black{
