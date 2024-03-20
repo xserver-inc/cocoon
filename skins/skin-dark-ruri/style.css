@@ -456,13 +456,18 @@ body {
   transform: scale(1);
 }
 
-.pagination .current {
+.pagination .current,
+.comment-page-link .current {
   color: #e0861a;
   background: none;
   border: 1px outset #403d3d;
   background-image: linear-gradient(135deg, #3d3939, #0c0c0c 100%, transparent 0);
   font-size: 120%;
   border-radius: 50%;
+}
+
+.prev.page-numbers {
+  border-radius: 10px;
 }
 
 /* -------------------------------------------
