@@ -115,7 +115,7 @@ if (!function_exists('skin_get_site_font_family')) :
         return 'Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans"';
         break;
       case 'yu_gothic':
-        return '"Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans"';
+        return 'YuGothic, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans"';
         break;
       case 'ms_pgothic':
         return '"MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans"';
