@@ -8,41 +8,6 @@
 
 
 /*******************************************************************************
-**  インラインボタン
-*******************************************************************************/
-
-.hvn-btn {
-  background-color: var(--white-bgcolor);
-  border: 1px solid var(--main-color);
-  box-shadow: var(--shadow-color);
-  display: block;
-  font-size: var(--cocoon-text-size-s);
-  line-height: 40px;
-  text-align: center;
-}
-
-.hvn-btn:hover {
-  background-color: var(--hover-color);
-  color: var(--cocoon-text-color);
-}
-
-.hvn-btn a,
-a:has(.hvn-btn) {
-  text-decoration: none;
-  color: unset;
-}
-
-.hvn-btn .anchor-icon,
-a:has(.hvn-btn) .anchor-icon {
-  display: none;
-}
-
-.body td:has(.hvn-btn) {
-  padding: 10px;
-}
-
-
-/*******************************************************************************
 **  タイムライン(ステップ)
 *******************************************************************************/
 
@@ -298,7 +263,9 @@ a:has(.hvn-btn) .anchor-icon {
 *******************************************************************************/
 
 pre {
+  border: 0;
   font-family: "Menlo", "Consolas", "monaco", "monospace", "ＭＳ ゴシック", sans-serif;
+  padding: var(--padding15)!important;
 }
 
 .pre-wrap {

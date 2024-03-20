@@ -213,26 +213,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php //投稿者等表示用のテンプレート
         cocoon_template_part('tmp/footer-meta'); ?>
 
-        <!-- publisher設定 -->
-        <?php
-        $home_image_url = get_amp_logo_image_url();
-        $size = get_image_width_and_height($home_image_url);
-        $width = isset($size['width']) ? $size['width'] : 600;
-        $height = isset($size['height']) ? $size['height'] : 60;
-
-        $sizes = calc_publisher_image_sizes($width, $height);
-        $width = $sizes ? $sizes['width'] : 600;
-        $height = $sizes ? $sizes['height'] : 60;
-         ?>
-        <div class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-              <img src="<?php echo $home_image_url; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" alt="">
-              <meta itemprop="url" content="<?php echo $home_image_url; ?>">
-              <meta itemprop="width" content="<?php echo $width; ?>">
-              <meta itemprop="height" content="<?php echo $height; ?>">
-            </div>
-            <div itemprop="name"><?php bloginfo('name'); ?></div>
-        </div>
       </footer>
 
     <?php

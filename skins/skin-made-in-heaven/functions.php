@@ -6,7 +6,14 @@ global $_THEME_OPTIONS;
 global $_MOBILE_COPY_BUTTON;
 global $_HVN_EYECATCH;
 
-$skin_url = str_replace('style.css', '', get_skin_url());
+$skin_url = get_skin_url();
+// ふわっと追加
+if (strpos($skin_url, 'raku-add-fadein') !== false) {
+  $skin_url = get_theme_option('raku_base_skin_url');
+}
+
+$skin_url = str_replace('style.css', '', $skin_url);
+
 define('HVN_SKIN_URL', $skin_url);
 define('HVN_SKIN', '/skins/skin-made-in-heaven/');
 
@@ -184,9 +191,10 @@ $_THEME_OPTIONS = array(
 
 // コード
   'code_highlight_enable' => 1,
-  'code_row_number_enable' => 1,
+  'code_row_number_enable' => 0,
   'code_highlight_package' => 'light',
   'code_highlight_style' => 'tomorrow-night-bright',
+  'code_highlight_css_selector' => '.entry-content pre',
 
 // コメント
   'comment_display_type' => 'default',

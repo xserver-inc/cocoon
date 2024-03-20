@@ -37,6 +37,11 @@ if (!is_bottom_mastodon_share_button_visible()) {
   $css_arr[] = '.share-menu-content .mastodon-button';
 }
 
+// Bluesky
+if (!is_bottom_bluesky_share_button_visible()) {
+  $css_arr[] = '.share-menu-content .bluesky-button';
+}
+
 // Misskey
 if (!is_bottom_misskey_share_button_visible()) {
   $css_arr[] = '.share-menu-content .misskey-button';
@@ -808,7 +813,7 @@ echo <<< EOF
   z-index: 1;
 }
 
-.scrolldown div{
+.scrolldown span{
   cursor: pointer;
 }
 
@@ -825,7 +830,9 @@ switch(get_theme_mod('hvn_header_scroll_setting')) {
   animation: pathmove 1.4s ease-in-out infinite;
   background-color: #fff;
   content: '';
+  display:block;
   height: 50px;
+  left: 50%;
   opacity: 0;
   position: absolute;
   top: 0;

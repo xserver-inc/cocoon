@@ -54,6 +54,20 @@ export function TimelineEdit( props ) {
     pointColorValue,
   } = attributes;
 
+  // インターブロックの数を取得
+  const innerBlockIds = useSelect( ( select ) =>
+    select( 'core/block-editor' )
+      .getBlocks( clientId )
+      .map( ( block ) => block.clientId )
+  );
+
+  // インターブロックの数が変わったらitemsを更新
+  useEffect( () => {
+    if ( items !== innerBlockIds.length ) {
+      setAttributes( { items: innerBlockIds.length } );
+    }
+  }, [ innerBlockIds.length ] );
+
   // 親ブロックのnotNestedStyleがfalseかどうかを判定
   const isParentNestedStyle = useSelect( ( select ) => {
     const parentBlocks =

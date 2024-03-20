@@ -167,6 +167,16 @@ import './toolbutton/badge-yellow.js';
 import './toolbutton/badge-brown.js';
 import './toolbutton/badge-grey.js';
 
+//インラインボタン
+import './toolbutton/button-black.js';
+import './toolbutton/button-red.js';
+import './toolbutton/button-blue.js';
+import './toolbutton/button-green.js';
+import './toolbutton/button-white-black.js';
+import './toolbutton/button-white-red.js';
+import './toolbutton/button-white-blue.js';
+import './toolbutton/button-white-green.js';
+
 //ドロップダウン
 import './toolbutton/dropdown-letters.js';
 import './toolbutton/dropdown-markers.js';

@@ -28,10 +28,7 @@ add_action('admin_bar_menu', function($wp_admin_bar) {
   $wp_admin_bar->remove_menu('my-account');
   $wp_admin_bar->remove_menu('wp-logo');
   $wp_admin_bar->remove_menu('search');
-}, 999);
 
-
-add_action('admin_bar_menu', function($wp_admin_bar) {
   if (is_admin_tool_menu_visible() && is_user_administrator()) {
     $wp_admin_bar->add_menu(array(
       'parent'  => 'dashboard_menu',
@@ -282,7 +279,6 @@ add_filter('widget_title', function($title) {
 //  Gutenbergエディターメニュー追加
 //******************************************************************************
 add_action('enqueue_block_editor_assets', function() {
-  wp_enqueue_script('hvn-richtext', HVN_SKIN_URL  . 'assets/js/richtext.js');
   wp_enqueue_script('hvn-block', HVN_SKIN_URL . 'assets/js/block.js', [], false, true);
 });
 
@@ -426,6 +422,15 @@ add_filter('get_calendar', function($html) {
 add_filter('option_date_format', function($option){
   if (!is_admin()) {
     $option = get_site_date_format();
+  }
+
+  return $option;
+});
+
+
+add_filter('option_time_format', function($option){
+  if (!is_admin()) {
+    $option = 'H:i';
   }
 
   return $option;

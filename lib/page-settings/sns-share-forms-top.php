@@ -58,6 +58,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 <?php generate_checkbox_tag(OP_TOP_MASTODON_SHARE_BUTTON_VISIBLE, is_top_mastodon_share_button_visible(), __( 'Mastodon', THEME_NAME )); ?>
               </li>
               <li>
+                <?php generate_checkbox_tag(OP_TOP_BLUESKY_SHARE_BUTTON_VISIBLE, is_top_bluesky_share_button_visible(), __( 'Bluesky', THEME_NAME )); ?>
+              </li>
+              <li>
                 <?php generate_checkbox_tag(OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE, is_top_misskey_share_button_visible(), __( 'Misskey', THEME_NAME )); ?>
               </li>
               <li>

@@ -21,6 +21,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <a href="<?php echo esc_url(get_mastodon_share_url()); ?>" class="sns-button share-button mastodon-button mastodon-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Mastodonでシェア', THEME_NAME ) ?>"><span class="social-icon icon-mastodon"></span><span class="button-caption"><?php _e( 'Mastodon', THEME_NAME ) ?></span><span class="share-count mastodon-share-count"><?php echo get_mastodon_count(); ?></span></a>
     <?php endif; ?>
 
+    <?php if ( is_bluesky_share_button_visible($option) )://Blueskyボタンを表示するか ?>
+      <a href="<?php echo esc_url(get_bluesky_share_url()); ?>" class="sns-button share-button bluesky-button bluesky-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Blueskyでシェア', THEME_NAME ) ?>"><span class="social-icon icon-bluesky"></span><span class="button-caption"><?php _e( 'Bluesky', THEME_NAME ) ?></span><span class="share-count bluesky-share-count"><?php echo get_bluesky_count(); ?></span></a>
+    <?php endif; ?>
+
     <?php if ( is_misskey_share_button_visible($option) )://Misskeyボタンを表示するか ?>
       <a href="<?php echo esc_url(get_misskey_share_url()); ?>" class="sns-button share-button misskey-button misskey-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Misskeyでシェア', THEME_NAME ) ?>"><span class="social-icon icon-misskey"></span><span class="button-caption"><?php _e( 'Misskey', THEME_NAME ) ?></span><span class="share-count misskey-share-count"><?php echo get_misskey_count(); ?></span></a>
     <?php endif; ?>

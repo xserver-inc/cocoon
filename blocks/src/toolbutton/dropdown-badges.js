@@ -19,7 +19,7 @@ var isBadgeVisible = Number(
 );
 if ( isBadgeVisible ) {
   registerFormatType( FORMAT_TYPE_NAME, {
-    title: __( 'バッジ', THEME_NAME ),
+    title: __( 'インラインタグ', THEME_NAME ),
     tagName: 'span',
     className: 'badges',
     edit( { isActive, value, onChange } ) {
@@ -32,7 +32,7 @@ if ( isBadgeVisible ) {
                   fills.length !== 0 && (
                     <ToolbarDropdownMenu
                       icon={ <Icon icon={ tag } size={ 32 } /> }
-                      label={ __( 'バッジ', THEME_NAME ) }
+                      label={ __( 'インラインタグ', THEME_NAME ) }
                       className="badges"
                       controls={ orderBy(
                         fills.map( ( [ { props } ] ) => props ),

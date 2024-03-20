@@ -203,70 +203,6 @@ h3.widget-title:before {
 	display: none;
 }
 
-
-.article ul {
-	position: relative;
-	padding: 0.5em 1em 0.5em 2.3em;
-	margin:2em auto;
-	background:#d5ebff;
-	box-shadow: 0 0 0 10px #d5ebff;
-	border: dashed 3px #fff;
-	border-radius: 5px;
-  width: 96%;
-}
-.article ul:not(.has-list-style) li {
-	line-height: 1.5;
-	padding:0.6em 0.6em 0.6em 15px;
-	list-style-type: none!important;
-	text-shadow: 1px 1px 1px #fff;
-	position: relative;
-}
-.article ul:not(.has-list-style) li:before {
-	position: absolute;
-	font-family: FontAwesome;
-	content:"\f00c";
-	font-size: 1.5em;
-	font-weight: bold;
-	color:#24ade2;
-	line-height: 0.8em;
-	left: -18px;
-	text-shadow: 1px 1px 1px #fff;
-}
-.article ul li ul {
-	padding: 0.5em 1em 0.5em 2.3em;
-	margin: 0.5em 0;
-	border:none;
-	border-radius: 0px;
-}
-.iconlist-box {
-	padding: 0;
-}
-
-.iconlist-box li::before {
-	margin-right: 0;
-	margin-left: 0;
-}
-.article ul.snsb {
-	padding: 10px;
-	margin:2em 0 ;
-}
-.article ul.snsp {
-	padding: 0;
-	margin:1em 0 ;
-}
-.article ul.snsb li {
-	line-height: 1;
-	padding:0;
-	color:#454545;
-	list-style-type: none!important;
-	text-shadow: none;
-}
-.article ul.snsb li:before ,
-.article ul.snsp li:before {
-	content:"";
-}
-
-
 .entry-large-thumb img {
   -webkit-filter: blur(2px);
   filter: blur(2px);
@@ -350,8 +286,7 @@ h3.widget-title:before {
 }
 
 .font-awesome-5 h5:before,
-.font-awesome-5 .article h5::before,
-.font-awesome-5 .article ul li:before{
+.font-awesome-5 .article h5::before{
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 }

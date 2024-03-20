@@ -1,5 +1,3 @@
-import deprecated from "../template/deprecated";
-
 const { createBlock } = wp.blocks;
 
 const transforms = {

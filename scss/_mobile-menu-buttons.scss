@@ -2,12 +2,11 @@
   color: var(--cocoon-black-color);
   background: var(--cocoon-white-color);
   box-shadow: 0 0 5px darkgrey;
-  font-size: 19px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -24,6 +23,7 @@
     text-align: center;
     width: 100%;
     display: block;
+    font-size: 19px;
   }
 
   .menu-caption {

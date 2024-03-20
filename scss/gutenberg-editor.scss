@@ -1446,3 +1446,14 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .edit-post-visual-editor{
   background-color: #fff;
 }
+
+//ツールボタンのインラインボタンドロップダウンの余白設定
+.components-button [class*="inline-button-"]{
+  // margin: 2px 0 !important;
+  padding: 4px 8px !important;
+}
+
+//WordPress6.5からブロックエディタータイトル上の余白が大きくなるのを修正
+.editor-editor-canvas__post-title-wrapper{
+  margin-top: 0 !important;
+}

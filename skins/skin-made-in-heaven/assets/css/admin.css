@@ -142,6 +142,7 @@
   font-weight: bold;
   margin: 15px calc(50% - 50vw);
   padding: 10px calc(50vw - 50%);
+  width: 100%;
 }
 
 #customize-control-hvn_main_color_setting:before {

@@ -146,6 +146,9 @@ background-image: linear-gradient( 165deg, #ffe259 0%, #ffa751 20%);
 .sidebar-menu-content{
 	background-color: transparent;
 }
+.sidebar .toc .toc-title {
+  display: none;
+}
 /* モバイルボタン */
 .mobile-menu-buttons, .navi-menu-close-button{
 	background-image: linear-gradient( 135deg, #ffe259 10%, #ffa751 100%);
@@ -390,7 +393,7 @@ background-image: linear-gradient( 165deg, #ffe259 0%, #ffa751 20%);
     padding: 1em 1.5em 1em 1em;
     opacity: 1;
 }
-.toc ul, .toc ol {
+.body .toc ul, .body .toc ol {
     padding-left: 1.8em;
 }
 .toc .toc-content{
@@ -421,7 +424,7 @@ background-image: linear-gradient( 165deg, #ffe259 0%, #ffa751 20%);
     content: '\f022';
     margin-right: 0.5em;
 }*/
-#sidebar .toc .toc-content, #sidebar .toc .toc-contetn, #sidebar-menu-content .toc .toc-content, #sidebar-menu-content .toc .toc-contetn {
+#sidebar .toc .toc-content, #sidebar-menu-content .toc .toc-content {
 	height: auto;
 	opacity: 1;
 	border:none;
@@ -438,10 +441,6 @@ background-image: linear-gradient( 165deg, #ffe259 0%, #ffa751 20%);
 	.toc ul, .toc ol {
     padding-left: .8em;
   }
-	#sidebar-menu-content .toc ul, #sidebar-menu-content .toc ol {
-    padding-left: 1.2em;
-  }
-
 }
 
 ul.mobile-footer-menu-buttons.mobile-menu-buttons .menu-button-in > span, ul.mobile-footer-menu-buttons.mobile-menu-buttons .menu-button-in > a {

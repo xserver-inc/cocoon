@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.7.1.6
+Version: 2.7.1.9
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -417,7 +417,7 @@ select, .search-edit {
 
 .ff-yu-gothic,
 .wp-admin-ff-yu-gothic .editor-styles-wrapper {
-  font-family: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-family: YuGothic, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 
 .ff-ms-pgothic,
@@ -3894,7 +3894,8 @@ div.search-form {
 
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a,
-.wp-block-freeform .btn-wrap > a {
+.wp-block-freeform .btn-wrap > a,
+[class*=inline-button-] {
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -3914,8 +3915,60 @@ div.search-form {
 }
 .btn amp-img, .ranking-item-link-buttons a amp-img,
 .btn-wrap > a amp-img,
-.wp-block-freeform .btn-wrap > a amp-img {
+.wp-block-freeform .btn-wrap > a amp-img,
+[class*=inline-button-] amp-img {
   position: absolute;
+}
+
+[class*=inline-button-]:hover {
+  opacity: 0.7;
+}
+
+.inline-button-black {
+  border-color: var(--cocoon-black-color);
+}
+
+.inline-button-red {
+  border-color: var(--cocoon-red-color);
+  background-color: var(--cocoon-red-color);
+}
+
+.inline-button-blue {
+  border-color: var(--cocoon-blue-color);
+  background-color: var(--cocoon-blue-color);
+}
+
+.inline-button-green {
+  border-color: var(--cocoon-teal-color);
+  background-color: var(--cocoon-teal-color);
+}
+
+[class*=inline-button-white-] {
+  background-color: #fff;
+  border-width: 1px;
+}
+[class*=inline-button-white-]:hover {
+  opacity: 0.3;
+}
+
+.inline-button-white-black {
+  color: var(--cocoon-black-color);
+  border-color: var(--cocoon-black-color);
+}
+
+.inline-button-white-red {
+  color: var(--cocoon-red-color);
+  border-color: var(--cocoon-red-color);
+}
+
+.inline-button-white-blue {
+  color: var(--cocoon-blue-color);
+  border-color: var(--cocoon-blue-color);
+}
+
+.inline-button-white-green {
+  color: var(--cocoon-teal-color);
+  border-color: var(--cocoon-teal-color);
 }
 
 .mce-content-body .btn-wrap a[data-mce-selected] {
@@ -6355,6 +6408,7 @@ figcaption {
 
 .comment-page-link {
   text-align: center;
+  margin: 24px 0;
 }
 .comment-page-link .page-numbers {
   width: auto;
@@ -7729,12 +7783,11 @@ div.fb-like-mobile {
   color: var(--cocoon-black-color);
   background: var(--cocoon-white-color);
   box-shadow: 0 0 5px darkgrey;
-  font-size: 19px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -7748,6 +7801,7 @@ div.fb-like-mobile {
   text-align: center;
   width: 100%;
   display: block;
+  font-size: 19px;
 }
 .mobile-menu-buttons .menu-caption {
   font-size: 9px;
