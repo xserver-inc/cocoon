@@ -2191,7 +2191,8 @@ option {
 ・一覧ページの「もっと見る」ボタン(.list-more-button)
 ・コメントのボタン(.comment-btn)
 ************************/
-.pagination .page-numbers {
+.pagination .page-numbers,
+.comment-page-link .page-numbers {
 	text-shadow: 0px 0px 1px rgba(var(--black-color), 1);
 	transition: all 235ms ease-out 0s;
 	color: rgba(var(--gray-color), 1);
@@ -2202,7 +2203,8 @@ option {
 	border-width: 2px;
 }
 
-.pagination .current {
+.pagination .current,
+.comment-page-link .current {
 	color: rgba(var(--black-color), 1);
 	vertical-align:middle;
 	background: rgba(var(--primary-color-tegaki-note), 1);
