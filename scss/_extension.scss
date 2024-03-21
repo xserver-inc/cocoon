@@ -1652,7 +1652,7 @@ html .body .label-box.has-white-background-color .box-content {
 
 $toggle_border_width: 2px;
 .toggle-box{
-  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-background-color: transparent;
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
