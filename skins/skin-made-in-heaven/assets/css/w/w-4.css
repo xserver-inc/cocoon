@@ -5,8 +5,7 @@
 aside.widget .widget-title {
   display: inline-block;
   left: 50%;
-  margin: var(--gap30) 0 0 0!important;
-  padding: 0 90px 0;
+  padding: 0 55px 0;
   transform: translateX(-50%);
 }
 
@@ -23,10 +22,8 @@ aside.widget .widget-title:after {
 
 aside.widget .widget-title:before {
   left: 0;
-  margin-left: var(--main-padding);
 }
 
 aside.widget .widget-title:after {
   right: 0;
-  margin-right: var(--main-padding);
 }

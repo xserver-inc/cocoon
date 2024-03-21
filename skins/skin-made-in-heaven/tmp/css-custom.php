@@ -603,6 +603,7 @@ if (get_theme_mod('hvn_swiper_auto_setting')) {
 .body .content-top aside.widget_navi_entries:has(.swiper) {
   background-color: transparent;
   border-radius: 0;
+  padding: 0;
 }
 
 .body .content-top aside.widget_navi_entries:has(.swiper) .widget-title {

@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.0.13
+ Version: 0.0.14
  Priority: 6900001000
  Visibility: false
 */
@@ -40,6 +40,7 @@
 **        0.0.12  2023-03-17  コメント分割ページのCSS修正
 **                            バグ対策
 **        0.0.13  2023-03-19  時刻フォーマットの変更
+**        0.0.14  2023-03-20  ウィジェットのCSS修正
 **
 *******************************************************************************/
 
@@ -911,7 +912,7 @@ span.fas.fa-history:before {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: 0;
+  margin-bottom: var(--gap30);
 }
 
 
@@ -1071,6 +1072,10 @@ span.fas.fa-history:before {
 /*******************************************************************************
 **  関連記事
 *******************************************************************************/
+
+.body .under-entry-content > *:last-child {
+  margin-bottom: 0;
+}
 
 .body .related-list {
   display: grid;
@@ -1232,7 +1237,7 @@ span.fas.fa-history:before {
 
 .article-footer .sns-share,
 .article-footer .sns-follow {
-  margin-top: var(--gap30);
+  margin: var(--gap30) 0;
 }
 
 
@@ -1246,6 +1251,10 @@ span.fas.fa-history:before {
   color: var(--cocoon-text-color);
   opacity: 1;
   padding: var(--padding15);
+}
+
+.article-footer > div:nth-last-child(2) {
+  margin-bottom: 0;
 }
 
 
@@ -1773,19 +1782,14 @@ span.fas.fa-history:before {
 **
 *******************************************************************************/
 
+.body aside.widget {
+  margin: 0;
+}
+
 .body aside.widget:not(.widget_search) {
   background-color: var(--white-bgcolor);
   border-radius: var(--border-radius10);
-}
-
-.body aside.widget {
-  margin: 0;
-  padding: 0;
-}
-
-.body aside.widget > div,
-.body aside.widget > ul {
-  margin: var(--gap30) var(--main-padding);
+  padding: var(--gap30) var(--main-padding);
 }
 
 .body .widget > ul {
@@ -1839,10 +1843,13 @@ aside.widget .widget-title {
   font-size: 16px;
   font-weight: bold;
   line-height: 1.8;
-  margin: var(--gap30) var(--main-padding);
-  max-width: 100%;
+  margin: 0 0 var(--gap30) 0;
   padding: 0;
   position: relative;
+}
+
+.body .widget .widget-entry-cards {
+  margin-bottom: 0;
 }
 
 
@@ -2294,6 +2301,10 @@ aside.widget .widget-title {
 **  [C]プロフィール
 *******************************************************************************/
 
+.widget .author-box {
+  margin-bottom: 0;
+}
+
 .nwa.widget_author_box .widget-title,
 .nwa .widget_author_box .widget-title,
 .author-widget-name {
@@ -2373,7 +2384,7 @@ aside.widget .widget-title {
 }
 
 .body .nwa .widget_author_box {
-  padding: 0;
+  padding: 0!important;
 }
 
 .body .nwa .widget_author_box .author-box {
@@ -2417,8 +2428,8 @@ aside.widget .widget-title {
   width: calc(100% / 6);
 }
 
-.body .box-menus {
-  border: 1px solid transparent;
+.body .widget .box-menus {
+  margin-bottom: 0;
 }
 
 .box-menu {
@@ -2727,7 +2738,7 @@ aside.widget .widget-title {
 }
 
 .body .widget .recent-comments {
-  margin: var(--padding15) var(--main-padding);
+  margin: var(--padding15) 0;
   border-bottom: 1px dotted var(--border-color);
   padding-bottom: var(--padding15);
 }
@@ -2738,11 +2749,11 @@ aside.widget .widget-title {
 }
 
 .body .widget .recent-comments:first-of-type {
-  margin-top: var(--gap30);
+  margin-top: 0;
 }
 
 .body .widget .recent-comments:last-of-type {
-  margin-bottom: var(--gap30);
+  margin-bottom: 0;
   padding-bottom: 0;
   border: 0;
 }
@@ -2757,12 +2768,6 @@ aside.widget .widget-title {
   display: block;
   color: var(--cocoon-text-color);
   outline: 0;
-}
-
-aside.widget_archive select,
-aside.widget_categories select {
-  margin: var(--gap30) var(--main-padding);
-  width: calc(100% - var(--main-padding) * 2);
 }
 
 .body .widget_archive li,
@@ -2820,15 +2825,6 @@ aside.widget_categories select {
 
 .calendar_wrap i:before {
   margin: 0 3px;
-}
-
-
-/*******************************************************************************
-**  動画
-*******************************************************************************/
-
-.widget_media_video .wp-video {
-  width: auto!important;
 }
 
 
@@ -3434,7 +3430,6 @@ blockquote:after {
 
 .toggle-checkbox:checked ~ .toggle-content {
   border: 0;
-  background-color: unset;
   padding: var(--padding15);
 }
 
@@ -3707,17 +3702,12 @@ blockquote:after {
 **  wpForo
 *******************************************************************************/
 
-.widget .wpforo-widget-wrap .wpforo-widget-content {
-  margin: var(--gap30) var(--main-padding)!important;
-  padding: 0!important;
-}
-
 .widget .wpforo-widget-wrap {
   margin: 0!important;
 }
 
 .body .wpforo-widget-wrap .wpforo-widget-content {
-  padding: 0!important
+  padding: 0!important;
 }
 
 .body .wpforo-widget-wrap .wpforo-widget-content li:first-child {
