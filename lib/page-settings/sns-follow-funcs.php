@@ -102,13 +102,13 @@ endif;
 define('OP_SNS_DEFAULT_FOLLOW_USER', 'sns_default_follow_user');
 if ( !function_exists( 'get_sns_default_follow_user' ) ):
 function get_sns_default_follow_user(){
-  $user_id = wp_get_current_user()->ID;//ユーザーを取得できない時は0になる
-  if ($user_id === 0) {
-    if (get_user_by('ID', 1)) {
-      $user_id = 1; //WordPressインストール初期時の管理者ユーザーのID
-    }
+  $user_id = get_theme_option(OP_SNS_DEFAULT_FOLLOW_USER);
+  // デフォルトユーザー保存なし?
+  if (!$user_id) {
+    // 管理ユーザーを取得
+    $user_id = get_users('role=administrator')[0]->ID;
   }
-  return get_theme_option(OP_SNS_DEFAULT_FOLLOW_USER, $user_id);
+  return $user_id;
 }
 endif;
 
