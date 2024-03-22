@@ -7,9 +7,8 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.0.14
+ Version: 0.0.15
  Priority: 6900001000
- Visibility: false
 */
 
 
@@ -41,6 +40,7 @@
 **                            バグ対策
 **        0.0.13  2023-03-19  時刻フォーマットの変更
 **        0.0.14  2023-03-20  ウィジェットのCSS修正
+**        0.0.15  2023-03-22  コメントページャのCSS修正
 **
 *******************************************************************************/
 
@@ -793,6 +793,7 @@ span.fas.fa-history:before {
   display: block;
   font-size: var(--cocoon-text-size-s)!important;
   font-weight: normal;
+  height: 40px;
   line-height: 40px;
   margin: 0;
   padding: 0!important;
@@ -814,13 +815,13 @@ span.fas.fa-history:before {
 .list-more-button:hover,
 .pagination-next-link:hover,
 .pagination a:hover,
-.pagination .current {
+.comment-page-link a:hover {
   background-color: var(--hover-color);
   color: var(--cocoon-text-color);
   opacity: 1;
 }
 
-.page-numbers.current {
+.body .page-numbers.current {
   background-color: var(--main-color);
   color: var(--text-color);
   opacity: 1;
@@ -855,15 +856,16 @@ span.fas.fa-history:before {
   display: none;
 }
 
-.page-numbers {
+.body .page-numbers {
   background-color: var(--white-bgcolor);
   border: 1px solid var(--main-color);
   border-radius: var(--border-radius100);
   box-shadow: var(--shadow-color);
   font-size: var(--cocoon-text-size-s);
-  height: unset;
+  height: 40px;
   line-height: 40px;
   margin: 0;
+  padding: 0;
   transition: none!important;
   width: 40px;
 }

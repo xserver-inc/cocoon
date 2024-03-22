@@ -127,7 +127,7 @@ for ($i=1; $i<=$tab_cnt + 1; $i++) {
 }
 echo <<< EOF
   background-color: var(--main-color);
-  bottom: -10px;
+  bottom: -11px;
   clip-path: polygon(0 0,100% 0, 50% 100%);
   content: '';
   height: 11px;
@@ -171,6 +171,7 @@ echo <<< EOF
   color: var(--cocoon-text-color);
   font-size: var(--cocoon-text-size-s);
   font-weight: unset!important;
+  height: 40px;
   line-height: 40px;
   margin: 0;
   padding: 0;
