@@ -1428,6 +1428,10 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
   if ($id && get_userdata( $id )) {
     $user_id = $id;
   }
+  //WordPressインストール初期時でユーザーが取得できないとき
+  if ($user_id === 0) {
+    # code...
+  }
 
   ?>
   <div class="author-box border-element no-icon cf">
@@ -1505,8 +1509,9 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
             $msg .= __( 'ログインページ', THEME_NAME );
             $msg .= '</a>';
             echo wpautop($msg);
+          } else {//WordPressインストール初期時のユーザーID。未ログインでCocoon設定を保存していない時
+            echo wpautop(__( '未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。', THEME_NAME ));
           }
-
         } elseif (is_user_logged_in()) {
           echo wpautop(__( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="' . home_url() . '/wp-admin/user-edit.php?user_id='.get_the_author_meta( 'ID' ).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME ));
         }
