@@ -1449,7 +1449,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
     <div class="author-content">
       <div class="author-name">
         <?php
-        if (isset($user_id) && $user_id) {
+        if ($user_id) {
           $description = get_the_author_description_text($user_id);
           //$description = trim(get_the_author_description_text());
           if (empty($description)) {
@@ -1499,7 +1499,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
       </div>
       <div class="author-description">
         <?php
-        if (isset($description) && $description) {
+        if ($description) {
           echo apply_filters( 'the_author_box_description', $description, $user_id );
         } elseif (!$user_id) {
           if (is_buddypress_exist()) {
