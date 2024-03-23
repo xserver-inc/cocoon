@@ -6018,3 +6018,9 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .editor-editor-canvas__post-title-wrapper {
   margin-top: 0 !important;
 }
+
+.timeline-item-label .rich-text {
+  overflow: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap !important;
+}
