@@ -104,7 +104,7 @@ if ( !function_exists( 'get_sns_default_follow_user' ) ):
 function get_sns_default_follow_user(){
   $user_id = get_theme_option(OP_SNS_DEFAULT_FOLLOW_USER);
   // デフォルトユーザー保存なし?
-  if (!$user_id) {
+  if (!get_userdata($user_id)) {
     // 管理ユーザーを取得
     $user_id = get_users('role=administrator')[0]->ID;
   }
