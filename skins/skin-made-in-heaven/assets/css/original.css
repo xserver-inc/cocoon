@@ -177,7 +177,7 @@
 }
 
 .is-style-hvn-timeline-box .timeline-item-content {
-  border-left: 1px solid var(--border-color);
+  border-left: 1px dashed var(--border-color);
   float: none;
   margin: 0 0 0 40px;
   padding: 0 0 0 var(--padding15);

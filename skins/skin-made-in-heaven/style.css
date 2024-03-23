@@ -7,8 +7,9 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.0.15
+ Version: 0.0.16
  Priority: 6900001000
+ Visibility: false
 */
 
 
@@ -41,6 +42,7 @@
 **        0.0.13  2023-03-19  時刻フォーマットの変更
 **        0.0.14  2023-03-20  ウィジェットのCSS修正
 **        0.0.15  2023-03-22  コメントページャのCSS修正
+**        0.0.16  2023-03-23  アイコンボックスのCSS修正
 **
 *******************************************************************************/
 
@@ -3192,22 +3194,23 @@ blockquote {
   border: 0;
   border-radius: 0;
   color: #333;
-  padding: var(--padding15) var(--padding15) var(--padding15) 50px;
+  padding: var(--padding15) var(--padding15) var(--padding15) calc(1em + var(--padding15) * 3);
 }
 
 blockquote:before {
-  border-right: 1px solid #999;
+  border-right: 1px dashed #999;
   color: #999;
   content: '\f10d';
+  display: grid;
   font-family: 'Font Awesome 5 Free';
   font-size: 16px;
   font-weight: 900;
   inset: 0;
-  height: fit-content;
   line-height: 1;
-  margin: auto 0;
+  margin: var(--padding15) 0;
+  place-content: center;
   text-align: center;
-  width: 35px;
+  width: calc(1em + var(--padding15) * 2);
 }
 
 blockquote:after {
@@ -3236,7 +3239,7 @@ blockquote:after {
   border-radius: 0;
   border-width: 0;
   color: #333;
-  padding: var(--padding15) var(--padding15) var(--padding15) 50px;
+  padding: var(--padding15) var(--padding15) var(--padding15) calc(1em + var(--padding15) * 3);
 }
 
 .is-style-information-box:before,
@@ -3258,13 +3261,14 @@ blockquote:after {
 .memo-box:before,
 .comment-box:before,
 .common-icon-box:before {
-  border-right: 1px solid;
+  border-right: 1px dashed;
+  display: grid;
   font-size: 16px;
-  height: fit-content;
   inset: 0;
-  margin: auto 0;
+  margin: var(--padding15) 0;
   padding: 0;
-  width: 35px;
+  place-content: center;
+  width: calc(1em + var(--padding15) * 2);
 }
 
 .is-style-alert-box:before,
