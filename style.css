@@ -8487,6 +8487,9 @@ ul.timeline ul ul ul {
   text-align: right;
   padding-right: 1em;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .timeline-item-title {

@@ -7917,6 +7917,9 @@ body.wp-admin {
   text-align: right;
   padding-right: 1em;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .admin-settings .demo .timeline-item-title {
   font-weight: bold;
@@ -16325,6 +16328,9 @@ body.wp-admin {
   text-align: right;
   padding-right: 1em;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .admin-settings .demo .timeline-item-title {
   font-weight: bold;
