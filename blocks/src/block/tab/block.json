@@ -5,35 +5,9 @@
   "keywords": [ "tab" ],
 
   "attributes": {
-    "title": {
-      "type": "string",
-      "default": "タブのタイトル"
-    },
     "tabLabelsArray": {
       "type": "array",
       "default": []
-    },
-    "needUpdate": {
-      "type": "boolean",
-      "default": false
-    },
-    "backgroundColor": {
-      "type": "string"
-    },
-    "textColor": {
-      "type": "string"
-    },
-    "borderColor": {
-      "type": "string"
-    },
-    "customBackgroundColor": {
-      "type": "string"
-    },
-    "customTextColor": {
-      "type": "string"
-    },
-    "customBorderColor": {
-      "type": "string"
     }
   },
   "example": {
