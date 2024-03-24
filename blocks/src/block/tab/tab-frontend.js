@@ -5,9 +5,9 @@ const tabContentGroup = document.getElementsByClassName('tab-content-group')[0];
 const tabContents = tabContentGroup.children;
 
 // add tab-content class
-for (index = 0; index < tabLabels.length; index++) {
-  tabContents[index].classList.add("tab-content");
-}
+// for (index = 0; index < tabLabels.length; index++) {
+//   tabContents[index].classList.add("tab-content");
+// }
 
 // select first tab
 if (tabLabels.length > 0) {
