@@ -794,7 +794,7 @@ span.fas.fa-history:before {
   display: block;
   font-size: var(--cocoon-text-size-s)!important;
   font-weight: normal;
-  height: 40px;
+  min-height: 40px;
   line-height: 40px;
   margin: 0;
   padding: 0!important;
