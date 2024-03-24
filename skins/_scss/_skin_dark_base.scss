@@ -422,7 +422,7 @@ body {
   box-sizing: border-box;
   background-image: linear-gradient(135deg,#3d3939,#0c0c0c 100%,transparent 0);
   border: 1px outset #403d3d;
-  border-radius: 50%;
+  border-radius: 99px;
 }
 
 .page-numbers::before,
@@ -449,27 +449,60 @@ body {
   transform: scale(1, 0);
 }
 
-.pagination a:hover{
-  border-radius: 50%;
+.pagination a:hover,
+.comment-page-link a:hover{
+  border-radius: 99px;
   color:$sub;
 }
 
 .pagination a:hover::after,
-.pagination a:hover::before {
-  border-radius: 50%;
+.pagination a:hover::before,
+.comment-page-link a:hover::after,
+.comment-page-link a:hover::before {
+  border-radius: 99px;
   color:$sub;
   transform: scale(1);
 }
 
-.pagination .current{
+.pagination .current,
+.comment-page-link .current{
   color: $sub;
   background:none;
   border: 1px outset #403d3d;
   background-image: linear-gradient(135deg,#3d3939,#0c0c0c 100%,transparent 0);
   font-size: 120%;
-  border-radius: 50%;
+  border-radius: 99px;
 }
 
+.prev.page-numbers{
+  border-radius: 99px;
+}
+
+.comment-page-link :is(.prev,.next) {
+  display:none;
+}
+
+.comment-page-link .page-numbers {
+  height: 46px;
+  line-height: 46px;
+  padding: unset;
+  width: 46px;
+}
+
+@media screen and (max-width: 480px) {
+  .comment-page-link .page-numbers {
+    height: 34px;
+    line-height: 34px;
+    width: 34px;
+  }
+}
+
+.comment-page-link {
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
 /* -------------------------------------------
 / 『マルチページ』
 ------------------------------------------- */

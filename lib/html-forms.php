@@ -1421,12 +1421,17 @@ endif;
 //プロフィールボックス生成関数
 if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0){
+  $description = '';
   $user_id = get_the_author_meta( 'ID' );
   if (!$user_id || !is_singular()) {
     $user_id = get_sns_default_follow_user();
   }
   if ($id && get_userdata( $id )) {
     $user_id = $id;
+  }
+  //WordPressインストール初期時でユーザーが取得できないとき
+  if ($user_id === 0) {
+    # code...
   }
 
   ?>
@@ -1505,8 +1510,9 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
             $msg .= __( 'ログインページ', THEME_NAME );
             $msg .= '</a>';
             echo wpautop($msg);
+          } else {//WordPressインストール初期時のユーザーID。未ログインでCocoon設定を保存していない時
+            echo wpautop(__( '未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。', THEME_NAME ));
           }
-
         } elseif (is_user_logged_in()) {
           echo wpautop(__( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="' . home_url() . '/wp-admin/user-edit.php?user_id='.get_the_author_meta( 'ID' ).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME ));
         }

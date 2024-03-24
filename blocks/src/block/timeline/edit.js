@@ -63,7 +63,10 @@ export function TimelineEdit( props ) {
 
   // インターブロックの数が変わったらitemsを更新
   useEffect( () => {
-    if ( items !== innerBlockIds.length ) {
+    if (
+      ( items !== innerBlockIds.length )
+      && ( innerBlockIds.length > 0 ) // タイムラインアイテムが0になることはないので除外
+    ) {
       setAttributes( { items: innerBlockIds.length } );
     }
   }, [ innerBlockIds.length ] );

@@ -3958,6 +3958,10 @@ body.wp-admin {
 .admin-settings .demo [class*=inline-button-]:hover {
   opacity: 0.7;
 }
+.admin-settings .demo [class*=inline-button-] a {
+  color: inherit;
+  text-decoration: none;
+}
 .admin-settings .demo .inline-button-black {
   border-color: var(--cocoon-black-color);
 }
@@ -5209,7 +5213,7 @@ body.wp-admin {
   overflow: hidden;
 }
 .admin-settings .demo .toggle-box {
-  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-background-color: transparent;
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
@@ -7943,6 +7947,9 @@ body.wp-admin {
   text-align: right;
   padding-right: 1em;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .admin-settings .demo .timeline-item-title {
   font-weight: bold;
@@ -12392,6 +12399,10 @@ body.wp-admin {
 .admin-settings .demo [class*=inline-button-]:hover {
   opacity: 0.7;
 }
+.admin-settings .demo [class*=inline-button-] a {
+  color: inherit;
+  text-decoration: none;
+}
 .admin-settings .demo .inline-button-black {
   border-color: var(--cocoon-black-color);
 }
@@ -13643,7 +13654,7 @@ body.wp-admin {
   overflow: hidden;
 }
 .admin-settings .demo .toggle-box {
-  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-background-color: transparent;
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
@@ -16377,6 +16388,9 @@ body.wp-admin {
   text-align: right;
   padding-right: 1em;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .admin-settings .demo .timeline-item-title {
   font-weight: bold;
@@ -21542,6 +21556,10 @@ textarea[name=the_page_memo] {
 .components-popover__content [class*=inline-button-]:hover {
   opacity: 0.7;
 }
+.components-popover__content [class*=inline-button-] a {
+  color: inherit;
+  text-decoration: none;
+}
 .components-popover__content .inline-button-black {
   border-color: var(--cocoon-black-color);
 }
@@ -22794,7 +22812,7 @@ textarea[name=the_page_memo] {
   overflow: hidden;
 }
 .components-popover__content .toggle-box {
-  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-background-color: transparent;
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }

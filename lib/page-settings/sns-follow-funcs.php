@@ -102,7 +102,13 @@ endif;
 define('OP_SNS_DEFAULT_FOLLOW_USER', 'sns_default_follow_user');
 if ( !function_exists( 'get_sns_default_follow_user' ) ):
 function get_sns_default_follow_user(){
-  return get_theme_option(OP_SNS_DEFAULT_FOLLOW_USER, wp_get_current_user()->ID);
+  $user_id = get_theme_option(OP_SNS_DEFAULT_FOLLOW_USER);
+  // デフォルトユーザー保存なし?
+  if (!get_userdata($user_id)) {
+    // 管理ユーザーを取得
+    $user_id = get_users('role=administrator')[0]->ID;
+  }
+  return $user_id;
 }
 endif;
 

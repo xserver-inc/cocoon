@@ -190,6 +190,10 @@ a.new-entry-card-link.widget-entry-card-link.a-wrap {
   color: var(--text-main);
 }
 
+.page-numbers.current {
+  background-color: #757575;
+}
+
 .pagination-next-link:hover,
 .key-btn:hover {
   color: var(--text-main);

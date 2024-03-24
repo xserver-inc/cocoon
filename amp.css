@@ -3898,6 +3898,10 @@ div.search-form {
 [class*=inline-button-]:hover {
   opacity: 0.7;
 }
+[class*=inline-button-] a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .inline-button-black {
   border-color: var(--cocoon-black-color);
@@ -5347,7 +5351,7 @@ html .body .label-box.has-white-background-color .box-content {
 }
 
 .toggle-box {
-  --cocoon-custom-background-color: var(--cocoon-white-color);
+  --cocoon-custom-background-color: transparent;
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   --cocoon-custom-text-color: var(--cocoon-text-color);
 }
@@ -8490,6 +8494,9 @@ ul.timeline ul ul ul {
   text-align: right;
   padding-right: 1em;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .timeline-item-title {
