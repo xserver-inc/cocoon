@@ -215,7 +215,7 @@ export default function edit( props ) {
     // タブコンテンツ入れ替え
     setTargetIdx(index + 1);
     setSourceIdx(index);
-  
+
     setAttributes({tabLabelsArray: tabLabels});
   }
 
@@ -226,7 +226,7 @@ export default function edit( props ) {
     const innerBlocks = getInnerBlocks(clientId);
 
     innerBlocks.map((innerBlock, idx) => {
-      console.log(innerBlock);
+      // console.log(innerBlock);
     });
   }
 
@@ -261,7 +261,7 @@ export default function edit( props ) {
       <div { ...blockProps }>
         <ul className="tab-label-group">
           {tabLabelsArray.map((label, index) => {
-            return (<li class={"tab-label " + "tab-label-" + index + (tabIdx === index ? " is-active" : " ")} onClick={() => {updateTabIdx(index)}}><RawHTML>{label}</RawHTML></li>);
+            return (<li class={"tab-label " + "tab-label-" + index/* + (tabIdx === index ? " is-active" : " ")*/} /*onClick={() => {updateTabIdx(index)}}*/><RawHTML>{label}</RawHTML></li>);
           })}
           <Button className="tab-add-button" onClick={() => {addTab()}}>+</Button>
         </ul>

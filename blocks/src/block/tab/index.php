@@ -1,4 +1,15 @@
 <?php
+if( !function_exists('wp_enqueue_tab_frontend_script')) :
+function wp_enqueue_tab_frontend_script() {
+  wp_enqueue_script(
+    'tab-frontend',
+    get_template_directory_uri() . '/blocks/src/block/tab/tab-frontend.js',
+    array('wp-blocks'),
+    null,
+    false
+  );
+}
+endif;
 
 if( function_exists('register_block_type')) {
   add_action( 'init', 'register_block_cocoon_tab', 99 );
@@ -7,13 +18,7 @@ if( function_exists('register_block_type')) {
       __DIR__, array(
         'render_callback' => function( $attributes, $content) {
           if (!is_admin()) {
-            wp_enqueue_script(
-              'tab-frontend',
-              get_template_directory_uri() . '/blocks/src/block/tab/tab-frontend.js',
-              array('wp-blocks'),
-              null,
-              false
-            );
+            wp_enqueue_tab_frontend_script();
 
             return $content;
           }
@@ -22,3 +27,8 @@ if( function_exists('register_block_type')) {
     );
   }
 }
+
+//ブロックエディター画面でスクリプトを読み込む
+add_action('enqueue_block_editor_assets', function(){
+  wp_enqueue_tab_frontend_script();
+});
