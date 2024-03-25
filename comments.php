@@ -27,9 +27,14 @@ if ( is_comment_allow() || have_comments() ): ?>
         wp_list_comments($args); //コメント一覧を表示 ?>
         </ol>
 
+        <?php
+        $pagination = paginate_comments_links();
+        if (!empty($pagination)): ?>
         <div class="comment-page-link">
           <?php paginate_comments_links(); //コメントが多い場合、ページャーを表示 ?>
         </div>
+        <?php endif; ?>
+
     <?php
     endif; ?>
   </section>
