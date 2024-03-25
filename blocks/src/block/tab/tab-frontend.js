@@ -45,19 +45,20 @@
 // }
 
 (function($){
+  //ブロックエディター画面でもHTML要素がすべて読み込まれてからコードを実行する（できれば、setInterval使いたくない）
   setInterval(function(){
     $('.cocoon-block-tab').each(function( i, block ) {
       const isActive = $(block).find('.is-active');
-      //タブにアクティブが何も設定されていない時
+      //タブにアクティブが何も設定されていない時（最初に読み込んだ時）
       if (isActive.length === 0) {
         const label = $(block).find('.tab-label');
         if (label) {
-          //最初のラベルアクティブに
+          //最初のラベルをアクティブに
           label.eq(0).addClass('is-active');
         }
         const content = $(block).find('.tab-content');
         if (content) {
-          //最初のラベルをアクティブに
+          //最初の内容をアクティブに
           content.eq(0).addClass('is-active');
         }
       }
