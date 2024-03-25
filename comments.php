@@ -63,8 +63,9 @@ if ( is_comment_allow() || have_comments() ): ?>
     ) . '</p>'.$comment_info_msg_tag,
     'comment_notes_before' => '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span>'. ( $req ? $required_text : '' ) . '</p>'.$comment_info_msg_tag,
   );
-  echo '<aside class="comment-form">';
+
   if (is_comment_open()) {
+     echo '<aside class="comment-form">';
     if (!is_amp()) {
       if (is_comment_form_display_type_toggle_button()) {?>
         <button type="button" id="comment-reply-btn" class="comment-btn key-btn"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></button>
@@ -77,12 +78,8 @@ if ( is_comment_allow() || have_comments() ): ?>
       <a class="comment-btn" href="<?php echo get_permalink().'#comment-area'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
       <?php
     }
+      echo '</aside>';
   }
-
-
-
-  echo '</aside>';
-
   ?>
 </div><!-- /.comment area -->
 <?php endif ?>
