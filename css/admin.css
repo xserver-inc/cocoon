@@ -1493,6 +1493,23 @@ body.wp-admin {
   height: 40px;
   line-height: 16px;
 }
+.admin-settings .demo .header.ba-fixed,
+.admin-settings .demo .appeal.ba-fixed {
+  clip-path: inset(0 0 0 0);
+}
+.admin-settings .demo .header.ba-fixed:before,
+.admin-settings .demo .appeal.ba-fixed:before {
+  background-image: inherit;
+  background-position: top center;
+  background-size: cover;
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
 .admin-settings .demo .navi {
   background-color: var(--cocoon-white-color);
 }
@@ -9933,6 +9950,23 @@ body.wp-admin {
 .admin-settings .demo .cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
+}
+.admin-settings .demo .header.ba-fixed,
+.admin-settings .demo .appeal.ba-fixed {
+  clip-path: inset(0 0 0 0);
+}
+.admin-settings .demo .header.ba-fixed:before,
+.admin-settings .demo .appeal.ba-fixed:before {
+  background-image: inherit;
+  background-position: top center;
+  background-size: cover;
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 .admin-settings .demo .navi {
   background-color: var(--cocoon-white-color);
