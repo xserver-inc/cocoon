@@ -3967,7 +3967,7 @@ div.search-form {
 }
 
 [class*=inline-button-white-] {
-  background-color: #fff;
+  background-color: transparent;
   border-width: 1px;
 }
 [class*=inline-button-white-]:hover {
