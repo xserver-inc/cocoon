@@ -27,8 +27,3 @@ if( function_exists('register_block_type')) {
     );
   }
 }
-
-//ブロックエディター画面でスクリプトを読み込む
-add_action('enqueue_block_editor_assets', function(){
-  wp_enqueue_tab_frontend_script();
-});

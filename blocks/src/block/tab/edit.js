@@ -2,22 +2,14 @@ import { THEME_NAME } from '../../helpers';
 import { __ } from '@wordpress/i18n';
 import {
   InnerBlocks,
-  RichText,
   InspectorControls,
   useBlockProps,
-  useInnerBlocksProps,
-  withColors,
-  withFontSizes,
-  PanelColorSettings,
 } from '@wordpress/block-editor';
 import { PanelBody, Button, TextControl, __experimentalDivider as Divider, } from '@wordpress/components';
 import { Fragment, useEffect, RawHTML, useState } from '@wordpress/element';
-import { useSelect, useDispatch} from '@wordpress/data';
-import { compose } from '@wordpress/compose';
+import { useDispatch} from '@wordpress/data';
 import {createBlock} from '@wordpress/blocks';
 import classnames from 'classnames';
-import memoize from 'memize';
-import { times } from 'lodash';
 
 const ALLOWED_BLOCKS = [ 'cocoon-blocks/tab-item' ];
 
@@ -33,20 +25,14 @@ export default function edit( props ) {
     tabLabelsArray,
   } = attributes;
 
-  // タブの数だけコンテンツブロックを生成
-  const getItemsTemplate = memoize( ( items ) => {
-    return times( items, () => [ 'cocoon-blocks/tab-item' ] );
-  } );
-
-  // Tabの制御
-  const [tabIdx, setTabIdx] = useState(0);
-
   // useEffectで扱う変数・関数
   const [sourceIdx, setSourceIdx] = useState(-1);
   const [targetIdx, setTargetIdx] = useState(-1);
   const [removeIdx, setRemoveIdx] = useState(-1);
   const [addIdx, setAddIdx] = useState(-1);
+  const [tabIdx, setTabIdx] = useState(0);
   const { replaceInnerBlocks } = useDispatch('core/block-editor');
+  const { updateBlockAttributes } = useDispatch( 'core/block-editor' );
 
   // InnerBlocksを取得
   function getInnerBlocks(clientId) {
@@ -106,6 +92,9 @@ export default function edit( props ) {
 
       // indexをリセット
       setRemoveIdx(-1);
+
+      // 先頭を選択
+      setTabIdx(0);
     }
 
     // 追加処理
@@ -123,9 +112,29 @@ export default function edit( props ) {
 
       // indexをリセット
       setAddIdx(-1);
+
+      // 末尾を選択
+      setTabIdx(innerBlocks.length - 1);
     }
 
-  },[clientId, sourceIdx, targetIdx, removeIdx, addIdx]);
+    // タブ選択
+    {
+      const innerBlocks = getInnerBlocks(clientId);
+
+      innerBlocks.map((innerBlock, index) => {
+        if (tabIdx == index) {
+          updateBlockAttributes(innerBlock.clientId, {
+            isActive: true
+          });
+        }
+        else {
+          updateBlockAttributes(innerBlock.clientId, {
+            isActive: false
+          });
+        }
+      });
+    }
+  },[clientId, sourceIdx, targetIdx, removeIdx, addIdx, tabIdx]);
 
   // タブラベルの配列を入れ替える
   function replaceArrayElements(array, targetIdx, sourceIdx) {
@@ -261,14 +270,13 @@ export default function edit( props ) {
       <div { ...blockProps }>
         <ul className="tab-label-group">
           {tabLabelsArray.map((label, index) => {
-            return (<li class={"tab-label " + "tab-label-" + index/* + (tabIdx === index ? " is-active" : " ")*/} /*onClick={() => {updateTabIdx(index)}}*/><RawHTML>{label}</RawHTML></li>);
+            return (<li class={"tab-label " + "tab-label-" + index + (tabIdx === index ? " is-active" : " ")} onClick={() => {updateTabIdx(index)}}><RawHTML>{label}</RawHTML></li>);
           })}
           <Button className="tab-add-button" onClick={() => {addTab()}}>+</Button>
         </ul>
         <div className="tab-content-group">
             <InnerBlocks
               allowedBlocks={ ALLOWED_BLOCKS }
-              //template={getItemsTemplate(tabLabelsArray.length)}
               templateLock='insert'
             />
         </div>

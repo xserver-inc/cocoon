@@ -3,7 +3,6 @@
   "name": "cocoon-blocks/tab",
   "category": "cocoon-block",
   "keywords": [ "tab" ],
-
   "attributes": {
     "tabLabelsArray": {
       "type": "array",
