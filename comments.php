@@ -28,8 +28,7 @@ if ( is_comment_open() || have_comments() ): ?>
         </ol>
 
         <?php
-        $pagination = paginate_comments_links();
-        if (!empty($pagination)): ?>
+        if (get_comment_pages_count() > 1): ?>
         <div class="comment-page-link">
           <?php paginate_comments_links(); //コメントが多い場合、ページャーを表示 ?>
         </div>
