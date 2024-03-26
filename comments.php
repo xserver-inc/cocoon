@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if ( is_comment_allow() || have_comments() ): ?>
+if ( is_comment_open() || have_comments() ): ?>
 <!-- comment area -->
 <div id="comment-area" class="comment-area<?php echo get_additional_comment_area_classes(); ?>">
   <section class="comment-list">
