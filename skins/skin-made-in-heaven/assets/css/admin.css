@@ -13,6 +13,12 @@
   font-weight: normal;
 }
 
+.wp-customizer #_customize-input-entry_card_type,
+.wp-customizer #_customize-input-front_page_type,
+.wp-customizer select[id*="-hvn_"] {
+  max-width: unset;
+}
+
 
 /*******************************************************************************
 **  スライドオプション

@@ -13,9 +13,10 @@ if (strpos($skin_url, 'raku-add-fadein') !== false) {
 }
 
 $skin_url = str_replace('style.css', '', $skin_url);
+$skin_name = basename($skin_url);
 
 define('HVN_SKIN_URL', $skin_url);
-define('HVN_SKIN', '/skins/skin-made-in-heaven/');
+define('HVN_SKIN', "/skins/{$skin_name}/");
 
 
 //******************************************************************************
