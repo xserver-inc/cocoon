@@ -74,7 +74,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             //ヘッダー背景画像の固定
             generate_checkbox_tag(OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED, is_appeal_area_background_attachment_fixed(), __( 'アピールエリア背景画像の固定', THEME_NAME ));
-            generate_tips_tag(__( 'アピールエリアに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。', THEME_NAME ).__( '※iOSでは動作しません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/appeal-area-background-image-setting/'));
+            generate_tips_tag(__( 'アピールエリアに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/appeal-area-background-image-setting/'));
             ?>
           </td>
         </tr>

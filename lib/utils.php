@@ -139,15 +139,21 @@ function the_tag_links(){
 }
 endif;
 
-
 //コメントが許可されているか
-if ( !function_exists( 'is_comment_allow' ) ):
-function is_comment_allow(){
+if ( !function_exists( 'is_comment_open' ) ):
+function is_comment_open(){
   global $post;
   if ( isset($post->comment_status) ) {
     return $post->comment_status == 'open';
   }
   return false;
+}
+endif;
+
+//コメントが許可されているか（is_comment_openのエイリアス）
+if ( !function_exists( 'is_comment_allow' ) ):
+function is_comment_allow(){
+  return is_comment_open();
 }
 endif;
 
@@ -3151,17 +3157,6 @@ function fix_blogcard_content($the_content){
   $the_content = preg_replace('{<p> +}', '<p>', $the_content);
   $the_content = preg_replace('{ +</p>}', '</p>', $the_content);
   return $the_content;
-}
-endif;
-
-//コメントが許可されているか
-if ( !function_exists( 'is_comment_open' ) ):
-function is_comment_open(){
-  global $post;
-  if ( isset($post->comment_status) ) {
-    return $post->comment_status == 'open';
-  }
-  return false;
 }
 endif;
 

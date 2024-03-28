@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if ( is_comment_allow() || have_comments() ): ?>
+if ( is_comment_open() || have_comments() ): ?>
 <!-- comment area -->
 <div id="comment-area" class="comment-area<?php echo get_additional_comment_area_classes(); ?>">
   <section class="comment-list">
@@ -27,9 +27,13 @@ if ( is_comment_allow() || have_comments() ): ?>
         wp_list_comments($args); //コメント一覧を表示 ?>
         </ol>
 
+        <?php
+        if (get_comment_pages_count() > 1): ?>
         <div class="comment-page-link">
           <?php paginate_comments_links(); //コメントが多い場合、ページャーを表示 ?>
         </div>
+        <?php endif; ?>
+
     <?php
     endif; ?>
   </section>

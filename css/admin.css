@@ -3995,7 +3995,7 @@ body.wp-admin {
   background-color: var(--cocoon-teal-color);
 }
 .admin-settings .demo [class*=inline-button-white-] {
-  background-color: #fff;
+  background-color: transparent;
   border-width: 1px;
 }
 .admin-settings .demo [class*=inline-button-white-]:hover {
@@ -12454,7 +12454,7 @@ body.wp-admin {
   background-color: var(--cocoon-teal-color);
 }
 .admin-settings .demo [class*=inline-button-white-] {
-  background-color: #fff;
+  background-color: transparent;
   border-width: 1px;
 }
 .admin-settings .demo [class*=inline-button-white-]:hover {
@@ -21612,7 +21612,7 @@ textarea[name=the_page_memo] {
   background-color: var(--cocoon-teal-color);
 }
 .components-popover__content [class*=inline-button-white-] {
-  background-color: #fff;
+  background-color: transparent;
   border-width: 1px;
 }
 .components-popover__content [class*=inline-button-white-]:hover {
