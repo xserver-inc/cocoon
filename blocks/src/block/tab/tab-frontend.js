@@ -29,9 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     $(this).addClass('is-active');
     //内容をアクティブにする
     const index = $(this).index();
-    console.log(this);
-    console.log(tabBlock.find('.tab-content').eq(index));
-    console.log(index);
     tabBlock.find('.tab-content').eq(index).addClass('is-active');
   });
 });
