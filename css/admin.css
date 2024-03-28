@@ -5885,6 +5885,7 @@ body.wp-admin {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   margin: 0;
+  cursor: pointer;
 }
 .admin-settings .demo .tab-label-group .tab-label.is-active {
   background-color: #333;
@@ -14343,6 +14344,7 @@ body.wp-admin {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   margin: 0;
+  cursor: pointer;
 }
 .admin-settings .demo .tab-label-group .tab-label.is-active {
   background-color: #333;
@@ -23501,6 +23503,7 @@ textarea[name=the_page_memo] {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   margin: 0;
+  cursor: pointer;
 }
 .components-popover__content .tab-label-group .tab-label.is-active {
   background-color: #333;

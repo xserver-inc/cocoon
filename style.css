@@ -6146,6 +6146,7 @@ figcaption {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   margin: 0;
+  cursor: pointer;
 }
 .tab-label-group .tab-label.is-active {
   background-color: #333;
