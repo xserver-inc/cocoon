@@ -984,7 +984,7 @@ if (!function_exists('skin_grayish_topmv_dot')) :
   {
     $style_template = '
 		<style>
-.body.skin-grayish.front-top-page .container .header-container .header::after {
+.body.skin-grayish.front-top-page .container .header-container .header .grayish_topmv_dot {
           opacity: %s;
             visibility: %s;
 			}
@@ -1014,7 +1014,7 @@ if (!function_exists('skin_grayish_topmv_whovlay')) :
   {
     $style_template = '
 		<style>
-.body.skin-grayish.front-top-page .container .header-container .header::before {
+.body.skin-grayish.front-top-page .container .header-container .header .grayish_topmv_whovlay {
           opacity: %s;
             visibility: %s;
 			}
@@ -2132,4 +2132,17 @@ add_filter('code_minify_call_back', function ($html) {
   $replacement_aft = '<div class="author-box border-element no-icon cf"><figure$2</figure><div class="author-content"><div class="author-name"><a$3</a><div class="author-widget-name">$1</div></div><div class="author-description">$4</div></div></div>';
 
   return preg_replace($pattern_aft, $replacement_aft, $html);
+});
+
+// front page header
+add_filter("cocoon_part__tmp/header-container", function ($content) {
+  if (is_front_top_page()) {
+    $pattern_aft = '/<header id="header" class="header(.*?)>\s*<div id="header-in" class="header-in wrap cf"(.*?)>\s*<\/div>\s*<\/header>/s';
+    $replacement_aft = '<header id="header" class="header$1><div class="grayish_topmv_whovlay"></div><div class="grayish_topmv_dot"></div><div id="header-in" class="header-in wrap cf"$2></div></header>';
+
+    return preg_replace($pattern_aft, $replacement_aft, $content);
+  } else {
+
+    return $content;
+  }
 });

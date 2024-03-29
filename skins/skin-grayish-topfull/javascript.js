@@ -394,3 +394,46 @@ function otherNaviIn_Ctrl(e) {
 if (PCotherHeader && PCotherNaviIn) {
   otherNaviIn_Ctrl(mediaQueryList1023);
 }
+
+// ---------------------------------------------
+// 検索フォーム（PC時）
+// ---------------------------------------------
+
+const menuContent = document.querySelector(".js-searchMenuDialog-content");
+const menuOpen = document.querySelector(".js-searchMenuDialog-open");
+const menuClose = document.querySelector(".js-searchMenuDialog-close");
+const menuCloseBack = document.querySelector(".js-searchMenuDialog-back");
+const menuContentSearch = document.getElementById("gnavi-search-menu-content");
+
+//
+if (menuOpen) {
+  menuOpen.addEventListener("click", async () => {
+    menuContent.removeAttribute("style");
+    menuContent.showModal();
+
+  });
+}
+const closeMenu = () => {
+  menuContent.close();
+};
+menuClose.addEventListener("click", closeMenu);
+menuCloseBack.addEventListener("click", closeMenu);
+
+menuContent.addEventListener("close", async (e) => {
+  await waitDialogAnimation(e.target)
+  menuContent.style.display = "none";
+})
+
+const waitDialogAnimation = (dialog) => Promise.allSettled(
+  Array.from(dialog.getAnimations()).map(animation => animation.finished)
+);
+menuContentSearch.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
+
+mediaQueryList1023.addEventListener('change', (e) => {
+  if (e.matches) {
+    // 画面幅が1023px以下になったときにmenuContentを閉じる
+    menuContent.close();
+  }
+});

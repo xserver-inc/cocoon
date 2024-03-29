@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 1.0.10
+  Version: 1.0.11
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -522,7 +522,8 @@ a:hover {
 
 .skin-grayish .navi-in .gnavi-search-menu-content .search-box {
   width: min(39vw, 480px);
-  margin-inline: auto;
+  /* margin-inline: auto; */
+  margin: 0;
 }
 
 /* ヘッダーメニューの検索ボックス前にSNSアイコンを表示したい時 */
@@ -619,25 +620,166 @@ a:hover {
 }
 
 #gnavi-search-menu-content {
-  transition: transform .5s ease-in-out;
-  position: fixed;
-  top: 40%;
-  z-index: 99;
-  width: 90%;
-  left: 5%;
-  right: 5%;
-  transform: translateY(900%);
-  opacity: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1em;
 }
 
-#gnavi-search-menu-input:checked~#gnavi-search-menu-content {
-  transform: translateX(0%);
-  opacity: 1;
-}
-
-#gnavi-search-menu-input:checked~#gnavi-search-menu-close {
+.searchMenuDialog {
   display: block;
-  opacity: .5;
+  position: fixed;
+  inset-inline: 0;
+  inset-block: 0;
+
+  animation-name: search_fadeOut;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+dialog[open] {
+  animation-name: search_fadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+dialog[open] #gnavi-search-menu-content {
+  animation-name: search_menu-In;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+dialog[open] .searchMenuDialog_close.grayish-btn {
+  animation-name: search_fadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes search_menu-In {
+  from {
+    transform: translateY(200px);
+  }
+
+  100% {
+    transform: translateY(0px);
+
+  }
+}
+
+@keyframes search_fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+
+  }
+}
+
+@keyframes search_fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* 検索ボタン アクセシビリティ対応 */
+.skin-grayish .grayish-btn {
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  height: 40px;
+  line-height: 1;
+  position: relative;
+  top: -1px;
+}
+
+.searchMenuDialog_close.grayish-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  position: static;
+  top: unset;
+}
+
+.searchMenuDialog_close.grayish-btn .searchMenuDialog_closemark {
+  display: inline-block;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.searchMenuDialog_close.grayish-btn .searchMenuDialog_closemark::before,
+.searchMenuDialog_close.grayish-btn .searchMenuDialog_closemark::after {
+  display: inline-block;
+  content: "";
+  background-color: var(--white);
+  width: 20px;
+  height: 1px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  rotate: 45deg;
+}
+
+.searchMenuDialog_close.grayish-btn .searchMenuDialog_closemark::after {
+  position: absolute;
+  rotate: -45deg;
+  top: 50%;
+}
+
+.skin-grayish .searchMenuDialog {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  background-color: transparent;
+  border: none;
+  scrollbar-width: none;
+  overscroll-behavior: contain;
+
+}
+
+.skin-grayish .searchMenuDialog::-webkit-scrollbar {
+  display: none;
+}
+
+.skin-grayish .searchMenuDialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.skin-grayish .searchMenuDialog_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% + 1px);
+  padding: 24px;
+  position: relative;
+}
+
+.skin-grayish .gnavi-search-menu-content.sponly-search-menu {
+  display: none;
 }
 
 /* 画面下にスクロール促しアニメーションを追加 Frontのみ*/
@@ -819,11 +961,10 @@ a:hover {
 }
 
 
-
+/* v1.0.11 beforeをやめる */
 /* 背景の画像にオーバーレイ */
-.skin-grayish.front-top-page .container .header-container .header::before {
+.skin-grayish.front-top-page .container .header-container .header .grayish_topmv_whovlay {
   display: block;
-  content: "";
   background: var(--white);
   width: 100%;
   height: 100%;
@@ -833,13 +974,10 @@ a:hover {
   z-index: 0;
   opacity: 0.5;
   visibility: visible;
-
-
 }
 
-.skin-grayish.front-top-page .container .header-container .header::after {
+.skin-grayish.front-top-page .container .header-container .header .grayish_topmv_dot {
   display: block;
-  content: "";
   background-image: url(images/svg-icon/polka-dots-wh.svg);
   background-repeat: repeat;
   background-size: 4px;
@@ -851,8 +989,17 @@ a:hover {
   z-index: 1;
   opacity: 0.7;
   visibility: visible;
-
 }
+
+.skin-grayish:not(.front-top-page) .container .header-container .header.ba-fixed::before {
+  display: none;
+}
+
+.skin-grayish:not(.front-top-page) .container .header-container .header.ba-fixed {
+  -webkit-clip-path: none;
+          clip-path: none;
+}
+
 
 /* ロゴの表示位置の調整 -> センタリングにしておく */
 .skin-grayish.front-top-page .header .header-in .logo-image {
@@ -4386,6 +4533,12 @@ body:has(#spotlight.show) .header {
     margin-bottom: 0;
   }
 
+  /* for Large Tablet */
+  .skin-grayish .searchMenuDialog_wrapper {
+    justify-content: flex-start;
+    padding-top: 20%;
+  }
+
 }
 
 /*1279px以下*/
@@ -5048,6 +5201,15 @@ body:has(#spotlight.show) .header {
     grid-column: 2;
     margin-top: 2px;
   }
+
+  .skin-grayish .gnavi-search-menu-content.sponly-search-menu {
+    display: block;
+  }
+
+  .skin-grayish .gnavi-search-menu-open.grayish-btn {
+    display: none;
+  }
+
 }
 
 /*画面幅1023px以下 かつ　画面の高さ 500px以下　MV調整*/

@@ -14,15 +14,22 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-search'; ?>
 <?php if (!is_amp() || (is_amp() && is_ssl())) : ?>
   <!-- 検索ボタン -->
   <li class="search-menu-button menu-button">
-    <input autocomplete="off" id="gnavi-search-menu-input" type="checkbox" class="display-none">
-    <label id="gnavi-search-menu-open" class="menu-open menu-button-in" for="gnavi-search-menu-input">
+    <dialog class="searchMenuDialog js-searchMenuDialog-content" style="display: none;">
+      <div class="searchMenuDialog_wrapper js-searchMenuDialog-back">
+        <div id="gnavi-search-menu-content" class="gnavi-search-menu-content">
+          <?php //検索フォーム
+          get_template_part('searchform') ?>
+        </div>
+        <button type="button" class="searchMenuDialog_close js-searchMenuDialog-close grayish-btn"><span class="searchMenuDialog_closemark" aria-label="検索フォームを閉じる">閉じる</span></button>
+      </div>
+    </dialog>
+    <button type="button" class="gnavi-search-menu-open grayish-btn js-searchMenuDialog-open" aria-label="検索フォームを開く">
       <span class="search-menu-icon menu-icon">
         <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
       </span>
       <span class="search-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __('', THEME_NAME); ?></span>
-    </label>
-    <label class="display-none" id="gnavi-search-menu-close" for="gnavi-search-menu-input"></label>
-    <div id="gnavi-search-menu-content" class="gnavi-search-menu-content">
+    </button>
+    <div class="gnavi-search-menu-content sponly-search-menu">
       <?php //検索フォーム
       get_template_part('searchform') ?>
     </div>
