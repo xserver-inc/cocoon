@@ -255,9 +255,7 @@ div.mce-content-body {
 .timeline-box{
   overflow: auto;
   .timeline,
-  .block-editor-inner-blocks,
-  .block-editor-block-list__layout,
-  li{
+  .block-editor-inner-blocks{
     overflow: auto;
   }
   .timeline .block-editor-inner-blocks .block-editor-block-list__layout li{

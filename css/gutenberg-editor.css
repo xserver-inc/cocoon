@@ -5094,9 +5094,7 @@ div.mce-content-body {
   overflow: auto;
 }
 .timeline-box .timeline,
-.timeline-box .block-editor-inner-blocks,
-.timeline-box .block-editor-block-list__layout,
-.timeline-box li {
+.timeline-box .block-editor-inner-blocks {
   overflow: auto;
 }
 .timeline-box .timeline .block-editor-inner-blocks .block-editor-block-list__layout li {
