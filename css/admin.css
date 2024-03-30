@@ -8679,7 +8679,7 @@ body.wp-admin {
   padding: 20px;
 }
 .admin-settings .demo .info-list.is-style-frame-border {
-  border: 1px solid var(--cocoon-basic-border-color);
+  border: 1px solid;
   border-color: var(--cocoon-three-d-border-colors);
   border-radius: var(--cocoon-basic-border-radius);
 }
@@ -17107,7 +17107,7 @@ body.wp-admin {
   padding: 20px;
 }
 .admin-settings .demo .info-list.is-style-frame-border {
-  border: 1px solid var(--cocoon-basic-border-color);
+  border: 1px solid;
   border-color: var(--cocoon-three-d-border-colors);
   border-radius: var(--cocoon-basic-border-radius);
 }
