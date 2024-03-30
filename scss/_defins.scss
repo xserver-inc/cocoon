@@ -388,8 +388,9 @@ $form_padding: 11px;
   padding: $form_padding;
   border: 1px solid var(--cocoon-basic-border-color);
   border-radius: var(--cocoon-basic-border-radius);
-  font-size: var(--cocoon-default-text-size);
+  font-size: inherit;
   width: 100%;
+  color: inherit;
 }
 
 ///////////////////////////////////////////
