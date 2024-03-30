@@ -66,4 +66,7 @@
 ///////////////////////////////////////
 .nwa{
   @include cta_box_nallow;
+  .cta-box{
+    font-size: 0.8em;
+  }
 }

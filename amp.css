@@ -2447,8 +2447,9 @@ img.blogcard-favicon-image {
   font-size: 20px;
 }
 
-.nwa .ranking-item-description p {
-  font-size: 0.9em;
+.nwa .ranking-item-description {
+  margin-top: 1em;
+  font-size: 0.8em;
 }
 
 .nwa .blogcard-wrap {
@@ -6777,9 +6778,6 @@ canvas, iframe, video,
   --cocoon-custom-border-color: transparent;
 }
 
-.nwa .cta-box {
-  font-size: 0.8em;
-}
 .nwa .cta-heading {
   font-size: 20px;
   padding: 8px;
@@ -6798,6 +6796,9 @@ canvas, iframe, video,
 .nwa .cta-button .btn-l, .nwa .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
+}
+.nwa .cta-box {
+  font-size: 0.8em;
 }
 
 .speech-wrap {
@@ -7974,7 +7975,6 @@ div.fb-like-mobile {
   line-height: 1.4;
 }
 .ranking-items p {
-  font-size: 18px;
   margin-top: 0;
 }
 
@@ -10370,9 +10370,6 @@ pre {
     max-width: none;
     flex-direction: column;
   }
-  .cta-box {
-    font-size: 0.8em;
-  }
   .cta-heading {
     font-size: 20px;
     padding: 8px;
@@ -10800,6 +10797,9 @@ pre {
   }
   .menu-content {
     max-width: 84%;
+  }
+  .ranking-item-description {
+    margin-top: 1em;
   }
   .ranking-item-img-desc,
   .ranking-item-link-buttons {

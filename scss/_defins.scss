@@ -251,9 +251,6 @@ $bgc_hover_anime: all .3s ease-in-out;
 // CTAボックス
 ///////////////////////////////////////
 @mixin cta_box_nallow{
-  .cta-box{
-    font-size: 0.8em;
-  }
   .cta-heading{
     font-size: 20px;
     padding: 8px;

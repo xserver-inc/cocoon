@@ -2718,8 +2718,9 @@ body.wp-admin {
 .admin-settings .demo .nwa .ranking-item-name-text {
   font-size: 20px;
 }
-.admin-settings .demo .nwa .ranking-item-description p {
-  font-size: 0.9em;
+.admin-settings .demo .nwa .ranking-item-description {
+  margin-top: 1em;
+  font-size: 0.8em;
 }
 .admin-settings .demo .nwa .blogcard-wrap {
   width: auto;
@@ -6437,9 +6438,6 @@ body.wp-admin {
   margin-top: 1em;
   --cocoon-custom-border-color: transparent;
 }
-.admin-settings .demo .nwa .cta-box {
-  font-size: 0.8em;
-}
 .admin-settings .demo .nwa .cta-heading {
   font-size: 20px;
   padding: 8px;
@@ -6458,6 +6456,9 @@ body.wp-admin {
 .admin-settings .demo .nwa .cta-button .btn-l, .admin-settings .demo .nwa .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
+}
+.admin-settings .demo .nwa .cta-box {
+  font-size: 0.8em;
 }
 .admin-settings .demo .speech-wrap {
   --cocoon-custom-background-color: var(--cocoon-white-color);
@@ -7516,7 +7517,6 @@ body.wp-admin {
   line-height: 1.4;
 }
 .admin-settings .demo .ranking-items p {
-  font-size: 18px;
   margin-top: 0;
 }
 .admin-settings .demo .ranking-item, .admin-settings .demo .timeline-box {
@@ -11146,8 +11146,9 @@ body.wp-admin {
 .admin-settings .demo .nwa .ranking-item-name-text {
   font-size: 20px;
 }
-.admin-settings .demo .nwa .ranking-item-description p {
-  font-size: 0.9em;
+.admin-settings .demo .nwa .ranking-item-description {
+  margin-top: 1em;
+  font-size: 0.8em;
 }
 .admin-settings .demo .nwa .blogcard-wrap {
   width: auto;
@@ -14865,9 +14866,6 @@ body.wp-admin {
   margin-top: 1em;
   --cocoon-custom-border-color: transparent;
 }
-.admin-settings .demo .nwa .cta-box {
-  font-size: 0.8em;
-}
 .admin-settings .demo .nwa .cta-heading {
   font-size: 20px;
   padding: 8px;
@@ -14886,6 +14884,9 @@ body.wp-admin {
 .admin-settings .demo .nwa .cta-button .btn-l, .admin-settings .demo .nwa .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
+}
+.admin-settings .demo .nwa .cta-box {
+  font-size: 0.8em;
 }
 .admin-settings .demo .speech-wrap {
   --cocoon-custom-background-color: var(--cocoon-white-color);
@@ -15944,7 +15945,6 @@ body.wp-admin {
   line-height: 1.4;
 }
 .admin-settings .demo .ranking-items p {
-  font-size: 18px;
   margin-top: 0;
 }
 .admin-settings .demo .ranking-item, .admin-settings .demo .timeline-box {
@@ -18924,9 +18924,6 @@ body.wp-admin {
     max-width: none;
     flex-direction: column;
   }
-  .admin-settings .demo .cta-box {
-    font-size: 0.8em;
-  }
   .admin-settings .demo .cta-heading {
     font-size: 20px;
     padding: 8px;
@@ -19353,6 +19350,9 @@ body.wp-admin {
   }
   .admin-settings .demo .menu-content {
     max-width: 84%;
+  }
+  .admin-settings .demo .ranking-item-description {
+    margin-top: 1em;
   }
   .admin-settings .demo .ranking-item-img-desc,
   .admin-settings .demo .ranking-item-link-buttons {
