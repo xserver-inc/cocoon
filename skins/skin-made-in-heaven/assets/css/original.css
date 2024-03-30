@@ -74,7 +74,7 @@
 }
 
 .is-style-hvn-timeline-big .timeline-item:before {
-  background-color: var(--border-color);
+  background-color: var(--border-color)!important;
   border: 13px solid var(--white-bgcolor);
   border-radius: 0;
   border-top-color: transparent;
@@ -158,7 +158,7 @@
 }
 
 .is-style-hvn-timeline-box .timeline-item:before {
-  background-color: transparent;
+  background-color: transparent!important;
   border-radius: 0;
   color: var(--main-color);
   content: counter(step);
@@ -218,7 +218,7 @@
 }
 
 .hvn-timeline .timeline-item:before {
-  background-color: var(--white-bgcolor);
+  background-color: var(--white-bgcolor)!important;
   border: 2px solid var(--main-color);
   color: var(--main-color);
   font-family: 'Font Awesome 5 Free';

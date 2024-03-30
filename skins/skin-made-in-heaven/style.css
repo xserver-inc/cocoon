@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.1.0
+ Version: 0.1.1
  Priority: 6900001000
 */
 
@@ -43,6 +43,11 @@
 **        0.0.15  2023-03-22  コメントページャのCSS修正
 **        0.0.16  2023-03-23  アイコンボックスのCSS修正
 **        0.1.0   2023-03-27  改善
+**        0.1.1   2023-03-30  placeholderのCSS追加
+**                            [C]ランキングのCSS追加
+**                            [C]プロフィールのCSS修正
+**                            検索案内のCSS修正
+**                            タイムラインのCSS修正
 **
 *******************************************************************************/
 
@@ -274,6 +279,10 @@ img {
 
 .cat-label {
   display: none;
+}
+
+::placeholder {
+  color: var(--cocoon-thin-color);
 }
 
 
@@ -2309,7 +2318,7 @@ aside.widget .widget-title {
 **  [C]プロフィール
 *******************************************************************************/
 
-.widget .author-box {
+.body .widget .author-box {
   margin-bottom: 0;
 }
 
@@ -2519,6 +2528,10 @@ aside.widget .widget-title {
   margin: 0;
   max-width: unset;
   padding: 0;
+}
+
+.ranking-item-image-tag {
+  text-align: center;
 }
 
 .nwa .ranking-item-img-desc a {
@@ -3500,8 +3513,9 @@ blockquote:after {
 **  検索案内
 *******************************************************************************/
 
-.search-form {
+div.search-form {
   gap: 10px;
+  margin-top: var(--gap30);
 }
 
 .search-form > div {
@@ -3555,6 +3569,7 @@ blockquote:after {
 
 .timeline-item:before {
   background-color: var(--main-color);
+  top: 22px;
 }
 
 
@@ -3808,6 +3823,9 @@ blockquote:after {
 }
 
 @media (width <=480px) {
+  .timeline > li.timeline-item {
+    border-left: 3px solid #eee;
+  }
   .timeline-item-label {
     padding-left: var(--padding15);
   }
