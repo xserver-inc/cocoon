@@ -192,6 +192,37 @@ $help_text = __( '取得方法', THEME_NAME );
         </tr>
 
 
+        <!-- メルカリ -->
+        <tr>
+          <th scope="row">
+            <?php
+            generate_label_tag('', __('メルカリ', THEME_NAME) );
+            ?>
+          </th>
+          <td>
+            <?php
+            generate_label_tag(OP_MERCARI_AFFILIATE_ID, __( 'メルカリアンバサダーID', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_MERCARI_AFFILIATE_ID, get_mercari_affiliate_id(), '');
+            echo '<br>';
+
+            generate_tips_tag(__( 'mercariアフィリエイトの「アフィリエイトID」をを取得してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mercari-search-button/', $help_text));
+
+
+            echo '<div'.get_not_allowed_form_class(get_mercari_affiliate_id()).'>';
+
+              generate_checkbox_tag(OP_MERCARI_SEARCH_BUTTON_VISIBLE , is_mercari_search_button_visible(), __( 'メルカリ検索ボタンを表示する', THEME_NAME ));
+              generate_tips_tag(__( 'メルカリのキーワード検索ボタンを表示するか。', THEME_NAME ));
+
+              generate_textbox_tag(OP_MERCARI_SEARCH_BUTTON_TEXT, get_mercari_search_button_text(), '');
+              generate_tips_tag(__( 'メルカリの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
+
+            echo '</div>';
+            ?>
+          </td>
+        </tr>
+
+
         <!-- DMM -->
         <tr>
           <th scope="row">

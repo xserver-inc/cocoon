@@ -45,7 +45,7 @@ endif;
 //もしもアフィリエイトでAmazon検索用のURLを生成する
 if ( !function_exists( 'get_moshimo_amazon_search_url' ) ):
 function get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id){
-  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062&url='.urlencode(get_amazon_search_url($keyword));
+  return 'https://af.moshimo.com/af/c/click?a_id='.trim($moshimo_amazon_id).'&p_id=170&pc_id=185&pl_id=4062&url='.urlencode(get_amazon_search_url($keyword));
 }
 endif;
 
@@ -57,7 +57,7 @@ function get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id, $ng_k
     $nitem = '%3Fnitem='.implode('%2B', $ng_keywords);
   }
   $decoded_url = 'https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F'.$nitem;
-  return 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc='.$decoded_url.'&m='.$decoded_url;
+  return 'https://hb.afl.rakuten.co.jp/hgc/'.trim($rakuten_affiliate_id).'/?pc='.$decoded_url.'&m='.$decoded_url;
 }
 endif;
 
@@ -75,14 +75,14 @@ endif;
 //もしもアフィリエイトの楽天検索用のURL生成
 if ( !function_exists( 'get_moshimo_rakuten_search_url' ) ):
 function get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id, $ng_keywords){
-  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword, $ng_keywords));
+  return 'https://af.moshimo.com/af/c/click?a_id='.trim($moshimo_rakuten_id).'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword, $ng_keywords));
 }
 endif;
 
 //バリューコマースのYahoo!検索用のURL生成
 if ( !function_exists( 'get_valucomace_yahoo_search_url' ) ):
 function get_valucomace_yahoo_search_url($keyword, $sid, $pid){
-  return 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.urlencode($keyword);
+  return 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.trim($sid).'&pid='.trim($pid).'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.urlencode($keyword);
 }
 endif;
 
@@ -96,14 +96,21 @@ endif;
 //もしもアフィリエイトのYahoo!ショッピング検索用のURL生成
 if ( !function_exists( 'get_moshimo_yahoo_search_url' ) ):
 function get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id){
-  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_yahoo_id.'&p_id=1225&pc_id=1925&pl_id=18502&url='.urlencode(get_yahoo_search_url($keyword));
+  return 'https://af.moshimo.com/af/c/click?a_id='.trim($moshimo_yahoo_id).'&p_id=1225&pc_id=1925&pl_id=18502&url='.urlencode(get_yahoo_search_url($keyword));
+}
+endif;
+
+//メルカリ検索用のURL生成
+if ( !function_exists( 'get_mercari_search_url' ) ):
+function get_mercari_search_url($keyword, $mercari_affiliate_id){
+  return 'https://jp.mercari.com/search?afid='.trim($mercari_affiliate_id).'&keyword='.urlencode($keyword);
 }
 endif;
 
 //DMM検索用のURL生成
 if ( !function_exists( 'get_dmm_search_url' ) ):
 function get_dmm_search_url($keyword, $dmm_affiliate_id){
-  return 'https://al.dmm.com/?lurl=https%3A%2F%2Fwww.dmm.com%2Fsearch%2F%3D%2Fsearchstr%3D'.urlencode($keyword).'%2Fanalyze%3DV1ECCVYAUQQ_%2Flimit%3D30%2Fsort%3Drankprofile%2F&af_id='.$dmm_affiliate_id.'&ch=link_tool&ch_id=link';
+  return 'https://al.dmm.com/?lurl=https%3A%2F%2Fwww.dmm.com%2Fsearch%2F%3D%2Fsearchstr%3D'.urlencode($keyword).'%2Fanalyze%3DV1ECCVYAUQQ_%2Flimit%3D30%2Fsort%3Drankprofile%2F&af_id='.trim($dmm_affiliate_id).'&ch=link_tool&ch_id=link';
 }
 endif;
 
@@ -298,6 +305,18 @@ function get_search_buttons_tag($args){
         '</div>';
     }
 
+    //メルカリボタンの取得
+    $mercari_tag = null;
+    if ($mercari_affiliate_id && is_mercari_search_button_visible() && $mercari) {
+
+      $mercari_url = get_mercari_search_url($keyword, $mercari_affiliate_id);
+
+      $mercari_tag =
+        '<div class="shoplinkmercari">'.
+          '<a href="'.esc_url($mercari_url).'" target="_blank" rel="nofollow noopener">'.get_mercari_search_button_text().'</a>'.
+        '</div>';
+    }
+
     //DMMボタンの取得
     $dmm_tag = null;
     if ($dmm_affiliate_id && is_dmm_search_button_visible() && $dmm) {
@@ -310,8 +329,6 @@ function get_search_buttons_tag($args){
         '</div>';
     }
 
-    // var_dump($dmm_affiliate_id);
-    // var_dump($dmm_tag);
 
     //ボタン2の作成
     $button2_tag = get_additional_button_tag($btn2_url, $btn2_text, $btn2_tag, 'btn2');
@@ -325,6 +342,7 @@ function get_search_buttons_tag($args){
         $amazon_btn_tag.
         $rakuten_btn_tag.
         $yahoo_tag.
+        $mercari_tag.
         $dmm_tag.
         $button2_tag.
         $button3_tag.
