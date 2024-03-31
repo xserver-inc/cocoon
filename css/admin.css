@@ -18924,25 +18924,6 @@ body.wp-admin {
     max-width: none;
     flex-direction: column;
   }
-  .admin-settings .demo .cta-heading {
-    font-size: 20px;
-    padding: 8px;
-  }
-  .admin-settings .demo .cta-left-and-right .cta-content,
-  .admin-settings .demo .cta-right-and-left .cta-content {
-    display: block;
-  }
-  .admin-settings .demo .cta-left-and-right .cta-content div,
-  .admin-settings .demo .cta-right-and-left .cta-content div {
-    width: 100%;
-  }
-  .admin-settings .demo .cta-message {
-    margin-top: 1em;
-  }
-  .admin-settings .demo .cta-button .btn-l, .admin-settings .demo .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .cta-button a {
-    padding: 1em;
-    font-size: 16px;
-  }
   .admin-settings .demo .sbp-l {
     margin-right: auto;
   }
@@ -19350,6 +19331,25 @@ body.wp-admin {
   }
   .admin-settings .demo .menu-content {
     max-width: 84%;
+  }
+  .admin-settings .demo .cta-heading {
+    font-size: 20px;
+    padding: 8px;
+  }
+  .admin-settings .demo .cta-left-and-right .cta-content,
+  .admin-settings .demo .cta-right-and-left .cta-content {
+    display: block;
+  }
+  .admin-settings .demo .cta-left-and-right .cta-content div,
+  .admin-settings .demo .cta-right-and-left .cta-content div {
+    width: 100%;
+  }
+  .admin-settings .demo .cta-message {
+    margin-top: 1em;
+  }
+  .admin-settings .demo .cta-button .btn-l, .admin-settings .demo .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .cta-button a {
+    padding: 1em;
+    font-size: 16px;
   }
   .admin-settings .demo .ranking-item-description {
     margin-top: 1em;

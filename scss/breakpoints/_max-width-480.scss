@@ -329,6 +329,11 @@ body{
   max-width: 84%;
 }
 
+///////////////////////////////////////
+// CTAボックス
+///////////////////////////////////////
+@include cta_box_nallow;
+
 //ランキングウィジェット
 .ranking-item-description{
   margin-top: 1em;

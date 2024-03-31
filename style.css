@@ -11503,25 +11503,6 @@ _:-ms-lang(x), .mc-circle {
     max-width: none;
     flex-direction: column;
   }
-  .cta-heading {
-    font-size: 20px;
-    padding: 8px;
-  }
-  .cta-left-and-right .cta-content,
-  .cta-right-and-left .cta-content {
-    display: block;
-  }
-  .cta-left-and-right .cta-content div,
-  .cta-right-and-left .cta-content div {
-    width: 100%;
-  }
-  .cta-message {
-    margin-top: 1em;
-  }
-  .cta-button .btn-l, .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .cta-button a {
-    padding: 1em;
-    font-size: 16px;
-  }
   .sbp-l {
     margin-right: auto;
   }
@@ -11930,6 +11911,25 @@ _:-ms-lang(x), .mc-circle {
   }
   .menu-content {
     max-width: 84%;
+  }
+  .cta-heading {
+    font-size: 20px;
+    padding: 8px;
+  }
+  .cta-left-and-right .cta-content,
+  .cta-right-and-left .cta-content {
+    display: block;
+  }
+  .cta-left-and-right .cta-content div,
+  .cta-right-and-left .cta-content div {
+    width: 100%;
+  }
+  .cta-message {
+    margin-top: 1em;
+  }
+  .cta-button .btn-l, .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .cta-button a {
+    padding: 1em;
+    font-size: 16px;
   }
   .ranking-item-description {
     margin-top: 1em;
