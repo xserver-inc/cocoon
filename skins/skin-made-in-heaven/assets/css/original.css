@@ -21,6 +21,7 @@
 
 .is-style-hvn-timeline-step .timeline-item:last-of-type .timeline-item-content {
   border-color: transparent;
+  padding-bottom: 0;
 }
 
 .is-style-hvn-timeline-step .timeline-item:before {
@@ -46,9 +47,9 @@
 .is-style-hvn-timeline-step .timeline-item-content {
   border-left: 3px solid #eee;
   float: none;
-  margin: 0px 0 0 20px;
+  margin: 0px 0 0 19px;
   padding: 0 0 var(--padding15) 35px;
-  width: calc(100% - 20px);
+  width: calc(100% - 19px);
 }
 
 
@@ -102,17 +103,11 @@
   width: 100%;
 }
 
-.is-style-hvn-timeline-big .timeline-item-content {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-}
-
 .is-style-hvn-timeline-big .timeline-item-content:before {
   color: var(--main-color);
   content: 'STEP\a' counter(step);
   counter-increment: step;
-  line-height: 1;
+  display: block;
   text-align: center;
 }
 
@@ -150,7 +145,7 @@
   border: 1px solid var(--border-color);
   margin-bottom: var(--gap30)!important;
   overflow: unset;
-  padding: var(--padding15);
+  padding: var(--padding15) var(--padding15) var(--padding15) calc(1em + var(--padding15) * 3 - 1px);
 }
 
 .is-style-hvn-timeline-box .timeline .timeline-item:last-of-type {
@@ -160,16 +155,18 @@
 .is-style-hvn-timeline-box .timeline-item:before {
   background-color: transparent!important;
   border-radius: 0;
+  border-right: 1px dashed #ccc;
   color: var(--main-color);
   content: counter(step);
   counter-increment: step;
+  display: grid;
   font-weight: bold;
   height: unset;
-  left: var(--padding15);
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25px;
+  font-size: 16px;
+  inset: 0;
+  margin: var(--padding15) 0;
+  place-content: center;
+  width: calc(1em + var(--padding15) * 2 - 1px);
 }
 
 .is-style-hvn-timeline-box .timeline-item-label {
@@ -177,11 +174,10 @@
 }
 
 .is-style-hvn-timeline-box .timeline-item-content {
-  border-left: 1px dashed var(--border-color);
+  border: 0;
   float: none;
-  margin: 0 0 0 40px;
-  padding: 0 0 0 var(--padding15);
-  width: calc(100% - 40px);
+  padding: 0!important;
+  width: 100%;
 }
 
 .is-style-hvn-timeline-box .timeline-item-content:before {
@@ -204,17 +200,34 @@
 
 
 /*******************************************************************************
+**  タイムライン(ミニ)
+*******************************************************************************/
+
+.is-style-hvn-timeline-mini .timeline-item-content:before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  left: 106px;
+  top: 23px;
+  background-color: var(--white-bgcolor);
+  position: absolute;
+  border-radius: 100%;
+}
+
+@media (width <=480px) {
+  .is-style-hvn-timeline-mini .timeline-item-content:before {
+    left: -7px;
+  }
+}
+
+
+/*******************************************************************************
 **  タイムライン(スケジュール)
 *******************************************************************************/
 
 .hvn-timeline .timeline-item {
   display: list-item;
-}
-
-.hvn-timeline .timeline-item-label {
-  font-weight: normal;
-  line-height: 1.8;
-  padding: 0 20px 0 0;
 }
 
 .hvn-timeline .timeline-item:before {
@@ -226,34 +239,15 @@
   font-weight: 900;
   height: 20px;
   line-height: 20px;
-  left: 100px;
+  left: 99px;
   text-align: center;
-  top: 0;
+  top: 15px;
   width: 20px;
 }
 
-.hvn-timeline .timeline-item-content {
-  padding: 0 0 var(--padding15) 20px;
-}
-
-.hvn-timeline .timeline-item:last-of-type,
-.hvn-timeline .timeline-item:last-of-type .timeline-item-content {
-  border-color: transparent!important;
-}
-
 @media (width <=480px) {
-  .hvn-timeline .timeline > li.timeline-item {
-    border-color: #eee;
-    margin-left: 10px;
-  }
   .hvn-timeline .timeline-item:before {
     left: -13px;
-  }
-  .hvn-timeline .timeline-item-label {
-    padding: 0 0 0 20px;
-  }
-  .hvn-timeline .timeline-item-content {
-    padding: 5px 0 5px 20px;
   }
 }
 

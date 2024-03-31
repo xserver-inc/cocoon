@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.1.1
+ Version: 0.1.2
  Priority: 6900001000
 */
 
@@ -48,6 +48,9 @@
 **                            [C]プロフィールのCSS修正
 **                            検索案内のCSS修正
 **                            タイムラインのCSS修正
+**        0.1.2   2023-03-31  タイムラインのCSS修正
+**                            FAQのCSS修正
+**                            タイムライン(ミニ)を追加
 **
 *******************************************************************************/
 
@@ -3433,7 +3436,6 @@ blockquote:after {
 
 .toggle-wrap {
   border: 1px solid var(--border-color);
-  line-height: 24px!important;
 }
 
 .toggle-button {
@@ -3474,22 +3476,25 @@ blockquote:after {
 
 /* FAQ */
 
+.body .faq {
+  line-height: 1.8;
+}
+
 .faq-wrap.is-style-accordion {
   padding: 0;
 }
 
-.is-style-square .faq-item-label {
+.body .faq .faq-item-label {
+  font-weight: bold;
+  font-size: unset;
+  margin-right: 0.5em;
+  padding: 0;
   text-align: center;
-  width: 35px;
-}
-
-.is-style-square :is(.faq-question-content, .faq-item-content) {
-  padding-top: 5px;
+  width: 1.8em;
 }
 
 .is-style-accordion:not(.not-nested-style) .faq-question {
   background-color: #eee;
-  color: #333;
   padding: var(--padding15)!important;
 }
 
@@ -3555,7 +3560,7 @@ div.search-form {
 }
 
 .timeline-item-label {
-  padding: var(--padding15) var(--padding15) 0 0;
+  padding: var(--padding15) 20px 0 0;
 }
 
 .timeline-title {
@@ -3564,12 +3569,19 @@ div.search-form {
 
 .timeline-item-content {
   border-color: #eee;
-  padding: var(--padding15) 0 var(--padding15) var(--padding15);
+  padding: var(--padding15) 0 0 20px;
 }
 
 .timeline-item:before {
   background-color: var(--main-color);
-  top: 22px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  left: 103px;
+}
+
+.timeline-item:last-of-type .timeline-item-content {
+  padding-bottom: var(--padding15);
 }
 
 
@@ -3823,16 +3835,20 @@ div.search-form {
 }
 
 @media (width <=480px) {
+  .timeline-box .timeline {
+    padding-left: 19px;
+  }
   .timeline > li.timeline-item {
     border-left: 3px solid #eee;
   }
-  .timeline-item-label {
-    padding-left: var(--padding15);
-  }
   .timeline-item:before {
-    height: 12px;
-    left: -8px;
-    width: 12px;
+    left: -10px;
+  }
+  .timeline-item-label {
+    padding-left: 20px;
+  }
+  .timeline-item-label:empty {
+    display: none;
   }
   .body.no-sp-snippet .card-snippet,
   .body.no-sp-snippet .blogcard-snippet {

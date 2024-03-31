@@ -1,4 +1,9 @@
 wp.blocks.registerBlockStyle('cocoon-blocks/timeline', {
+  name: 'hvn-timeline-mini',
+  label: 'ミニ'
+});
+
+wp.blocks.registerBlockStyle('cocoon-blocks/timeline', {
   name: 'hvn-timeline-step',
   label: 'ステップ'
 });
