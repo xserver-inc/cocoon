@@ -7952,7 +7952,6 @@ body.wp-admin {
   content: "";
   width: 12px;
   height: 12px;
-  background: var(--cocoon-custom-point-color);
   position: absolute;
   left: 105px;
   top: 24px;
@@ -16380,7 +16379,6 @@ body.wp-admin {
   content: "";
   width: 12px;
   height: 12px;
-  background: var(--cocoon-custom-point-color);
   position: absolute;
   left: 105px;
   top: 24px;
