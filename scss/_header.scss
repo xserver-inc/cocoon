@@ -178,23 +178,3 @@ $slim_height: 40px;
     line-height: 16px;
   }
 }
-
-//背景画像の固定がiOSで動作しない不具合を修正
-.header.ba-fixed,
-.appeal.ba-fixed {
-  clip-path: inset(0 0 0 0);
-}
-
-.header.ba-fixed:before,
-.appeal.ba-fixed:before {
-  background-image: inherit;
-  background-position: top center;
-  background-size: cover;
-  content: '';
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
