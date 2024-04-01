@@ -8010,9 +8010,6 @@ body.wp-admin {
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
 }
-.admin-settings .demo .faq {
-  line-height: 24px;
-}
 .admin-settings .demo .faq-item {
   display: flex;
 }
@@ -16436,9 +16433,6 @@ body.wp-admin {
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
-}
-.admin-settings .demo .faq {
-  line-height: 24px;
 }
 .admin-settings .demo .faq-item {
   display: flex;

@@ -4166,10 +4166,6 @@ figcaption {
   color: var(--cocoon-custom-text-color);
 }
 
-.faq {
-  line-height: 24px;
-}
-
 .faq-item {
   display: flex;
 }
