@@ -13,6 +13,11 @@ import classnames from 'classnames';
 
 const ALLOWED_BLOCKS = [ 'cocoon-blocks/tab-item' ];
 
+const TEMPLATE = [
+  [ 'cocoon-blocks/tab-item', {isActive: true}],
+  [ 'cocoon-blocks/tab-item']
+];
+
 export default function edit( props ) {
   const {
     clientId,
@@ -104,7 +109,6 @@ export default function edit( props ) {
 
       // 新規ブロックを生成
       const newBlock = createBlock('cocoon-blocks/tab-item');
-      //const newBlock = createBlock('core/paragraph');
       innerBlocks.push(newBlock);
 
       // 再レンダリング
@@ -152,7 +156,7 @@ export default function edit( props ) {
     //console.log("addTab");
     var tabLabels = [];
 
-    tabLabels = tabLabelsArray.concat("tab label");
+    tabLabels = tabLabelsArray.concat(__('タブ', THEME_NAME) + (tabLabelsArray.length + 1));
 
     setAddIdx(1);
     setAttributes({tabLabelsArray: tabLabels});
@@ -255,7 +259,7 @@ export default function edit( props ) {
           {tabLabelsArray.map((label, index) => {
             return (
               <div className={"tab-setting tab-setting-" + index}>
-                <TextControl label={"tab " + (index + 1)} value={label} onChange={ (value) => changeTabLabel(index, value)}/>
+                <TextControl label={__('タブ', THEME_NAME) + (index + 1)} value={label} onChange={ (value) => changeTabLabel(index, value)}/>
                 <Button disabled={tabLabelsArray.length > 1 ? false : true} onClick={() => {deleteTab(index)}}>{__('タブ削除', THEME_NAME)}</Button>
                 <Button disabled={index === 0 ? true : false} onClick={() => moveTabUp(index)}>{__('上に移動', THEME_NAME)}</Button>
                 <Button disabled={(index + 1) === tabLabelsArray.length ? true : false} onClick={() => {moveTabDown(index)}}>{__('下に移動', THEME_NAME)}</Button>
@@ -277,6 +281,7 @@ export default function edit( props ) {
         <div className="tab-content-group">
             <InnerBlocks
               allowedBlocks={ ALLOWED_BLOCKS }
+              template={ TEMPLATE }
               templateLock='insert'
             />
         </div>
