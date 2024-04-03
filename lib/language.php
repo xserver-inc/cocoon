@@ -23,10 +23,11 @@ if (preg_match('/^ja/', $locale)){
 } elseif (preg_match('/^pt/', $locale)) {
   //言語の最初の文字がptだったら全てpt.moを呼び出す（ポルトガル語）
   $locale = 'pt';
-} elseif (preg_match('/^ko_/', $locale)) {
-  //言語の最初の文字がkoだったら全てko.moを呼び出す（韓国語）
-  $locale = 'ko';
 }
+// elseif (preg_match('/^ko_/', $locale)) {
+//   //言語の最初の文字がkoだったら全てko.moを呼び出す（韓国語）
+//   $locale = 'ko';
+// }
 
 //親テーマの翻訳ディレクトリ
 $language_dir = get_template_directory() . '/languages';
