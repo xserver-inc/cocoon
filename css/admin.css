@@ -3966,6 +3966,7 @@ body.wp-admin {
 }
 .admin-settings .demo .inline-button-black {
   border-color: var(--cocoon-black-color);
+  background-color: var(--cocoon-black-color);
 }
 .admin-settings .demo .inline-button-red {
   border-color: var(--cocoon-red-color);
@@ -12374,6 +12375,7 @@ body.wp-admin {
 }
 .admin-settings .demo .inline-button-black {
   border-color: var(--cocoon-black-color);
+  background-color: var(--cocoon-black-color);
 }
 .admin-settings .demo .inline-button-red {
   border-color: var(--cocoon-red-color);
@@ -21497,6 +21499,7 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content .inline-button-black {
   border-color: var(--cocoon-black-color);
+  background-color: var(--cocoon-black-color);
 }
 .components-popover__content .inline-button-red {
   border-color: var(--cocoon-red-color);

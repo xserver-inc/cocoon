@@ -1918,6 +1918,7 @@ div.search-form {
 
 .inline-button-black {
   border-color: var(--cocoon-black-color);
+  background-color: var(--cocoon-black-color);
 }
 
 .inline-button-red {
