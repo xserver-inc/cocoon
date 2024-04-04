@@ -19,10 +19,11 @@ if (preg_match('/^ja/', $locale)){
 //   //言語の最初の文字がdeだったら全てde.moを呼び出す（ドイツ語）
 //   $locale = 'de';
 // }
-elseif (preg_match('/^fr/', $locale)) {
-  //言語の最初の文字がfrだったら全てfr.moを呼び出す（フランス語）
-  $locale = 'fr';
-} elseif (preg_match('/^pt/', $locale)) {
+// elseif (preg_match('/^fr/', $locale)) {
+//   //言語の最初の文字がfrだったら全てfr.moを呼び出す（フランス語）
+//   $locale = 'fr';
+// }
+elseif (preg_match('/^pt/', $locale)) {
   //言語の最初の文字がptだったら全てpt.moを呼び出す（ポルトガル語）
   $locale = 'pt';
 }
