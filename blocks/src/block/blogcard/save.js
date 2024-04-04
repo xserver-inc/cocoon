@@ -17,7 +17,7 @@ export default function save( { attributes } ) {
           .replace( /<\/p>$/g, '</p>\n' )
           .replace( /\s+<p>/g, '\n<p>' )
           .replace( /<\p>\s+/g, '<p>\n' )
-          .replace( /<br>/g, '\n<br>\n' )
+          // .replace( /<br>/g, '\n<br>\n' )
           .replace( /^/g, '\n' )
           .replace( /$/g, '\n' )
           .replace( /\n /g, '\n' )
