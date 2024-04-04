@@ -8,13 +8,13 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 global $locale;
-//_v($locale);
-if (preg_match('/^ja/', $locale)){
-  //日本語環境では何もしない
-} elseif (preg_match('/^en/', $locale)) {
-  //言語の最初の文字がenだったら全てen.moを呼び出す（英語）
-  $locale = 'en';
-}
+
+// if (preg_match('/^ja/', $locale)){
+//   //日本語環境では何もしない
+// } elseif (preg_match('/^en/', $locale)) {
+//   //言語の最初の文字がenだったら全てen.moを呼び出す（英語）
+//   $locale = 'en';
+// }
 // elseif (preg_match('/^de/', $locale)) {
 //   //言語の最初の文字がdeだったら全てde.moを呼び出す（ドイツ語）
 //   $locale = 'de';
