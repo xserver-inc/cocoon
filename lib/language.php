@@ -14,10 +14,12 @@ if (preg_match('/^ja/', $locale)){
 } elseif (preg_match('/^en/', $locale)) {
   //言語の最初の文字がenだったら全てen.moを呼び出す（英語）
   $locale = 'en';
-} elseif (preg_match('/^de/', $locale)) {
-  //言語の最初の文字がdeだったら全てde.moを呼び出す（ドイツ語）
-  $locale = 'de';
-} elseif (preg_match('/^fr/', $locale)) {
+}
+// elseif (preg_match('/^de/', $locale)) {
+//   //言語の最初の文字がdeだったら全てde.moを呼び出す（ドイツ語）
+//   $locale = 'de';
+// }
+elseif (preg_match('/^fr/', $locale)) {
   //言語の最初の文字がfrだったら全てfr.moを呼び出す（フランス語）
   $locale = 'fr';
 } elseif (preg_match('/^pt/', $locale)) {
