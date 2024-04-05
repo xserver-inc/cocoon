@@ -11,6 +11,7 @@ import classnames from 'classnames';
 
 export default function edit( { attributes, setAttributes, className } ) {
   const { content, style } = attributes;
+  // console.log(content);
 
   function onChangeContent( newContent ) {
     setAttributes( { content: newContent } );
@@ -93,6 +94,7 @@ export default function edit( { attributes, setAttributes, className } ) {
           value={ content
             .replace( /^\s+/, '' )
             .replace( /\s+$/, '' )
+            .replace( /\n(<br>\n)+/g, '<br>' )
           }
           // multiline="p"
         />
