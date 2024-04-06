@@ -6,7 +6,7 @@
   "attributes": {
     "tabLabelsArray": {
       "type": "array",
-      "default": ["タブ 1", "タブ 2"]
+      "default": ["Tab 1", "Tab 2"]
     }
   },
   "example": {

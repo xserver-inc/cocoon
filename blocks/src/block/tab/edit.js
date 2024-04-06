@@ -156,7 +156,7 @@ export default function edit( props ) {
     //console.log("addTab");
     var tabLabels = [];
 
-    tabLabels = tabLabelsArray.concat(__('タブ', THEME_NAME) + ' ' + (tabLabelsArray.length + 1));
+    tabLabels = tabLabelsArray.concat(__('Tab', THEME_NAME) + ' ' + (tabLabelsArray.length + 1));
 
     setAddIdx(1);
     setAttributes({tabLabelsArray: tabLabels});
