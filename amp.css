@@ -166,8 +166,6 @@
   border-radius: var(--cocoon-basic-border-radius);
   font-size: inherit;
   width: 100%;
-  color: inherit;
-  background-color: inherit;
 }
 
 .fz-12px {
