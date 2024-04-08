@@ -289,6 +289,8 @@ function convert_lazy_load_tag($the_content, $media){
         includes_string($match, 'header-site-logo-image')
         // //アイキャッチ
         // || includes_string($match, ' eye-catch-image ')
+        //モバイルのサイトロゴ
+        || includes_string($match, 'site-logo-image')
         //Jetpackの統計グラフ
         || (is_user_logged_in() && includes_string($match, 'admin-bar-hours-scale'))
       ) {
