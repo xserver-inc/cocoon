@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-03T13:23:39+00:00\n"
-"PO-Revision-Date: 2024-02-04 01:46\n"
+"PO-Revision-Date: 2024-04-06 12:44\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1717,11 +1717,11 @@ msgstr "페이지에 표시할 메인 콘텐츠를 입력해주세요."
 
 #: lib/content-tag.php:224
 msgid "ページの説明文を入力してください"
-msgstr ""
+msgstr "페이지의 설명문을 입력해주세요"
 
 #: lib/content-tag.php:226
 msgid "ページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。"
-msgstr ""
+msgstr "페이지의 설명을 입력합니다. 여기에 입력한 텍스트는 메타 디스크립션 태그에 이용됩니다."
 
 #: lib/content-tag.php:247
 msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢タグページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
@@ -1729,7 +1729,7 @@ msgstr "이 설정을 비활성화 하더라도 Coocon 설정의 SEO 탭에 있�
 
 #: lib/content-tag.php:247
 msgid "※カスタム投稿のカテゴリーなったとしても公開ページはタグとして認識されます。"
-msgstr ""
+msgstr "※커스텀 게시의 카테고리가 된다 하여도 공개 페이지는 태그로 인식됩니다."
 
 #: lib/custom-fields/ad-field.php:17
 #: lib/custom-fields/ad-field.php:18
@@ -2303,7 +2303,7 @@ msgstr ""
 
 #: lib/gutenberg.php:278
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: lib/gutenberg.php:282
 msgid "JavaScript"
@@ -2319,7 +2319,7 @@ msgstr ""
 
 #: lib/gutenberg.php:294
 msgid "Objective C"
-msgstr ""
+msgstr "Objective C"
 
 #: lib/gutenberg.php:298
 msgid "PHP"
@@ -2659,7 +2659,7 @@ msgstr ""
 
 #: lib/html-tooltips.php:87
 msgid "Color Hunt"
-msgstr ""
+msgstr "Color Hunt"
 
 #: lib/html-tooltips.php:109
 #: lib/html-tooltips.php:123
@@ -4229,27 +4229,27 @@ msgstr "본문 내에 [ad]라고 입력하거나 「광고 블록」을 삽입�
 
 #: lib/page-settings/ads-forms.php:255
 msgid "ads.txt編集"
-msgstr ""
+msgstr "ads.txt 편집"
 
 #: lib/page-settings/ads-forms.php:260
 msgid "ads.txtの更新を有効にする"
-msgstr ""
+msgstr "ads.txt의 수정 사항을 활성화"
 
 #: lib/page-settings/ads-forms.php:265
 msgid "ads.txtの内容を入力"
-msgstr ""
+msgstr "ads.txt의 내용 입력"
 
 #: lib/page-settings/ads-forms.php:266
 msgid "ads.txt（アズテキスト）とは、Webの広告枠の販売者を厳密に管理し、偽の広告枠が広告主に提供されるのを防ぐためのテキストファイルです。"
-msgstr ""
+msgstr "ads.txt(애드 텍스트)란 웹의 광고틀의 판매자를 엄밀히 관리하고, 가짜 광고틀이 광고주에게 제공되는 것을 막기 위한 텍스트 파일입니다."
 
 #: lib/page-settings/ads-forms.php:266
 msgid "Adsenseのみなどを除く第三者（他社）広告との併用配信をする際は設置が必須です。"
-msgstr ""
+msgstr "Adsense를 제외한 제삼자(타사) 광고와 함께 사용을 할 때는 필수입니다."
 
 #: lib/page-settings/ads-forms.php:268
 msgid "ads.txtガイド"
-msgstr ""
+msgstr "ads.txt 가이드"
 
 #: lib/page-settings/ads-forms.php:282
 msgid "PR表記設定"
@@ -4544,47 +4544,47 @@ msgstr "전체 사이트에 적용할 폰트를 선택합니다."
 
 #: lib/page-settings/all-forms.php:78
 msgid "12px"
-msgstr ""
+msgstr "12px"
 
 #: lib/page-settings/all-forms.php:79
 msgid "13px"
-msgstr ""
+msgstr "13px"
 
 #: lib/page-settings/all-forms.php:80
 msgid "14px"
-msgstr ""
+msgstr "14px"
 
 #: lib/page-settings/all-forms.php:81
 msgid "15px"
-msgstr ""
+msgstr "15px"
 
 #: lib/page-settings/all-forms.php:82
 msgid "16px"
-msgstr ""
+msgstr "16px"
 
 #: lib/page-settings/all-forms.php:83
 msgid "17px"
-msgstr ""
+msgstr "17px"
 
 #: lib/page-settings/all-forms.php:84
 msgid "18px"
-msgstr ""
+msgstr "18px"
 
 #: lib/page-settings/all-forms.php:85
 msgid "19px"
-msgstr ""
+msgstr "19px"
 
 #: lib/page-settings/all-forms.php:86
 msgid "20px"
-msgstr ""
+msgstr "20px"
 
 #: lib/page-settings/all-forms.php:87
 msgid "21px"
-msgstr ""
+msgstr "21px"
 
 #: lib/page-settings/all-forms.php:88
 msgid "22px"
-msgstr ""
+msgstr "22px"
 
 #: lib/page-settings/all-forms.php:90
 #: blocks/src/block/button-wrap/edit.js:126
@@ -4782,7 +4782,7 @@ msgstr "날짜 형식"
 
 #: lib/page-settings/all-forms.php:323
 msgid "テーマが使用する日付のフォーマット形式を入力してください（初期値：Y.m.d）。"
-msgstr ""
+msgstr "테마가 사용하는 날짜의 형식을 입력해주세요 (기본: Y.m.d)."
 
 #: lib/page-settings/all-forms.php:325
 msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
@@ -6663,7 +6663,7 @@ msgstr "제목 등의 글자수 카운터 표시"
 
 #: lib/page-settings/editor-forms.php:55
 msgid "タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。"
-msgstr ""
+msgstr "타이틀이나 SEO 타이틀, 메타 디스크립션의 문자수를 표시합니다."
 
 #: lib/page-settings/editor-forms.php:63
 msgid "エディター色"
@@ -7023,7 +7023,7 @@ msgstr "높이: "
 
 #: lib/page-settings/header-forms.php:116
 msgid "ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。"
-msgstr ""
+msgstr "로고의 가로 세로 폭을 지정합니다. 로고의 Retina 디스플레이 대응 등에 사용합니다. 크기 설정이 필요 없는 경우는 빈 칸으로 두세요. 헤더 레이아웃이 중앙 로고가 아니면 로고 사이즈가 변경되지 않습니다."
 
 #: lib/page-settings/header-forms.php:123
 msgid "キャッチフレーズの配置"
@@ -7669,7 +7669,7 @@ msgstr "헤더ㆍ푸터 모바일 버튼"
 
 #: lib/page-settings/mobile-buttons-forms.php:41
 msgid "モバイルメニュー等を表示するための設定を行います。1024px未満で表示されます。"
-msgstr ""
+msgstr "모바일 메뉴 등을 표시하기 위한 설정을 합니다. 1024px 미만으로 표시됩니다."
 
 #: lib/page-settings/mobile-buttons-forms.php:52
 msgid "モバイルボタン"
@@ -7705,7 +7705,7 @@ msgstr "전역 네비 메뉴 색"
 
 #: lib/page-settings/navi-forms.php:17
 msgid "グローバルナビ背景色"
-msgstr ""
+msgstr "전역 네비 배경 색"
 
 #: lib/page-settings/navi-forms.php:18
 msgid "グローバルナビ全体の背景色を選択します。"
@@ -7949,7 +7949,7 @@ msgstr "Simplicity로부터 글 설정 이어받기"
 
 #: lib/page-settings/others-forms.php:55
 msgid "Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。"
-msgstr ""
+msgstr "Simplicity에서 이용 가능한 Post meta 정보를 이용합니다. 예를 들면 글 발행 화면의 「SEO 설정」 「광고 제외」 항목등. ※테마 커스터마이즈등의 설정은 할 수 없습니다."
 
 #: lib/page-settings/others-forms.php:63
 msgid "日本語スラッグ"
@@ -7977,7 +7977,7 @@ msgstr ""
 
 #: lib/page-settings/others-forms.php:100
 msgid "jQuery Core 3.6.1"
-msgstr ""
+msgstr "JQuery Core 3.6.1"
 
 #: lib/page-settings/others-forms.php:101
 msgid "jQuery Core 2.2.4"
@@ -8005,7 +8005,7 @@ msgstr "JQuery Migrate"
 
 #: lib/page-settings/others-forms.php:120
 msgid "jQuery Migrate 3.3.2"
-msgstr ""
+msgstr "JQuery Migrate 3.3.2"
 
 #: lib/page-settings/others-forms.php:121
 msgid "jQuery Migrate 1.4.1"
@@ -8419,19 +8419,19 @@ msgstr "구조화 데이터의 JSON-LD 정보를 헤더에 출력하시겠습니
 
 #: lib/page-settings/seo-forms.php:95
 msgid "メタタグ設定"
-msgstr ""
+msgstr "메타 태그 설정"
 
 #: lib/page-settings/seo-forms.php:99
 msgid "headタグ内のmetaタグに関する設定です。"
-msgstr ""
+msgstr "head 태그 내의 meta 태그에 관련된 설정입니다."
 
 #: lib/page-settings/seo-forms.php:99
 msgid "よくわからない場合は設定を変更しないことを推奨します。"
-msgstr ""
+msgstr "잘 알지 못하는 경우에는 변경하지 않는 것을 권장합니다."
 
 #: lib/page-settings/seo-forms.php:107
 msgid "リファラー"
-msgstr ""
+msgstr "리퍼러"
 
 #: lib/page-settings/seo-forms.php:113
 msgid "no-referrer"
@@ -8439,7 +8439,7 @@ msgstr ""
 
 #: lib/page-settings/seo-forms.php:113
 msgid "（リファラー情報を送らない）"
-msgstr ""
+msgstr "(리퍼러 정보를 보내지 않음)"
 
 #: lib/page-settings/seo-forms.php:114
 msgid "no-referrer-when-downgrade"
@@ -8447,7 +8447,7 @@ msgstr ""
 
 #: lib/page-settings/seo-forms.php:114
 msgid "（ASPにリファラーを送りたい場合はこちらを推奨）"
-msgstr ""
+msgstr "(ASP에 리퍼러를 보내고 싶은 경우는 이쪽을 권장)"
 
 #: lib/page-settings/seo-forms.php:115
 msgid "same-origin"
@@ -8471,7 +8471,7 @@ msgstr ""
 
 #: lib/page-settings/seo-forms.php:119
 msgid "（ブラウザデフォルト）"
-msgstr ""
+msgstr "(브라우저 기본)"
 
 #: lib/page-settings/seo-forms.php:120
 msgid "unsafe-url"
@@ -8479,11 +8479,11 @@ msgstr ""
 
 #: lib/page-settings/seo-forms.php:123
 msgid "メタタグでのリファラーの振る舞いを設定します。"
-msgstr ""
+msgstr "메타 태그의 리퍼러의 작동 방식을 설정합니다."
 
 #: lib/page-settings/seo-forms.php:123
 msgid "以前のブラウザデフォルトはno-referrer-when-downgradeでしたが、2020年以降はstrict-origin-when-cross-originがデフォルトとなりました。"
-msgstr ""
+msgstr "예전 브라우저의 기본값은 no-referrer-when-downgrade였지만 2020년 이후에는 strict-origin-when-cross-origin이 기본값이 되었습니다."
 
 #: lib/page-settings/seo-forms.php:140
 msgid "日付の設定"
@@ -8850,7 +8850,7 @@ msgstr "오리지널 스킨의  Cocoon 사이트 소개에 관해"
 
 #: lib/page-settings/sns-follow-forms.php:13
 msgid "フォローボタン設定"
-msgstr ""
+msgstr "팔로우 버튼 설정"
 
 #: lib/page-settings/sns-follow-forms.php:15
 msgid "フォローボタンの表示に関する設定です。"
@@ -9162,7 +9162,7 @@ msgstr "를 팔로우"
 
 #: lib/page-settings/sns-share-forms-bottom.php:11
 msgid "ボトムシェアボタン設定"
-msgstr ""
+msgstr "하단 공유 버튼 설정"
 
 #: lib/page-settings/sns-share-forms-bottom.php:13
 msgid "ボトムシェアボタンの表示に関する設定です。"
@@ -9320,7 +9320,7 @@ msgstr "하단 공유 버튼의 공유 표시 여부를 지정합니다."
 
 #: lib/page-settings/sns-share-forms-top.php:11
 msgid "トップシェアボタン設定"
-msgstr ""
+msgstr "상단 공유 버튼 설정"
 
 #: lib/page-settings/sns-share-forms-top.php:13
 msgid "トップシェアボタンの表示に関する設定です。"
@@ -9879,7 +9879,7 @@ msgstr "h2~h6 헤딩 내의 HTML 태그를 그대로 출력합니다."
 
 #: lib/page-settings/widget-area-forms.php:11
 msgid "ウィジェットエリア設定"
-msgstr ""
+msgstr "위젯 영역 표시"
 
 #: lib/page-settings/widget-area-forms.php:14
 msgid "使用しないウィジェットエリアを表示しないようにする設定です。"
@@ -9891,7 +9891,7 @@ msgstr "제외 위젯 영역"
 
 #: lib/page-settings/widget-forms.php:11
 msgid "ウィジェット設定"
-msgstr ""
+msgstr "위젯 설정"
 
 #: lib/page-settings/widget-forms.php:14
 msgid "使用しないウィジェットを表示しないようにする設定です。"
@@ -10318,7 +10318,7 @@ msgstr "축소화"
 
 #: lib/page-speed-up/speed-up-forms.php:46
 msgid "CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図ります。"
-msgstr ""
+msgstr "CSS, Java Script를 축소하여 전송 사이즈를 줄이고 속도를 높입니다."
 
 #: lib/page-speed-up/speed-up-forms.php:55
 msgid "HTML縮小化"
@@ -10629,7 +10629,7 @@ msgstr "이미지 하단을 검은 배경으로 해서 제목 겹치기"
 
 #: lib/shortcodes-amazon.php:188
 msgid "us-west-2"
-msgstr ""
+msgstr "us-west-2"
 
 #: lib/shortcodes-amazon.php:270
 msgid "webservices.amazon.co.jp"
@@ -11567,7 +11567,7 @@ msgstr "페이스북 페이지 URL"
 #: lib/widgets/fb-like-balloon.php:89
 #: lib/widgets/fb-like-box.php:125
 msgid "https://www.facebook.com/XXXXXXX"
-msgstr ""
+msgstr "https://www.facebook.com/XXXXXXX"
 
 #: lib/widgets/fb-like-balloon.php:90
 msgid "※未入力だとプロフィールページで設定されているものを利用。"
@@ -11607,7 +11607,7 @@ msgstr "트위터 ID (@은 불필요)"
 #: lib/widgets/fb-like-box.php:133
 #: lib/widgets/fb-like-box.php:141
 msgid "XXXXXXX"
-msgstr ""
+msgstr "XXXXXXX"
 
 #: lib/widgets/fb-like-box.php:134
 #: lib/widgets/fb-like-box.php:142
@@ -12155,7 +12155,7 @@ msgstr "갈 스크롤 가능"
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:54
 #: tmp/sns-follow-buttons.php:33
 msgid "Xをフォロー"
-msgstr ""
+msgstr "X 팔로우"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:66
 #: tmp/sns-follow-buttons.php:37
@@ -12200,17 +12200,17 @@ msgstr "플리커 팔로우"
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:170
 #: tmp/sns-follow-buttons.php:85
 msgid "Amazonほしい物リストをチェック"
-msgstr ""
+msgstr "아마존 위시 리스트 체크"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:183
 #: tmp/sns-follow-buttons.php:89
 msgid "Twitchをフォロー"
-msgstr ""
+msgstr "트위치 팔로우"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:196
 #: tmp/sns-follow-buttons.php:93
 msgid "楽天ROOMをフォロー"
-msgstr ""
+msgstr "라쿠텐 ROOM 팔로우"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:209
 #: tmp/sns-follow-buttons.php:97
@@ -12230,7 +12230,7 @@ msgstr "CodePen 팔로우"
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:248
 #: tmp/sns-follow-buttons.php:57
 msgid "TikTokをフォロー"
-msgstr ""
+msgstr "틱톡 팔로우"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:261
 #: tmp/sns-follow-buttons.php:69
@@ -12434,7 +12434,7 @@ msgstr "작성자 웹사이트"
 
 #: tmp/sns-follow-buttons.php:29
 msgid "著作サイトをチェック"
-msgstr ""
+msgstr "저작 사이트 확인"
 
 #: tmp/sns-follow-buttons.php:45
 msgid "Google＋をフォロー"
@@ -12446,11 +12446,11 @@ msgstr "feedly로 새 글 구독"
 
 #: tmp/sns-follow-buttons.php:113
 msgid "RSSで更新情報を購読"
-msgstr ""
+msgstr "RSS에서 업데이트 구독"
 
 #: tmp/sns-share-buttons.php:17
 msgid "Xでシェア"
-msgstr ""
+msgstr "X에 공유"
 
 #: tmp/sns-share-buttons.php:17
 msgid "X"
@@ -12458,11 +12458,11 @@ msgstr ""
 
 #: tmp/sns-share-buttons.php:21
 msgid "Facebookでシェア"
-msgstr ""
+msgstr "페이스북에 공유"
 
 #: tmp/sns-share-buttons.php:25
 msgid "はてブでブックマーク"
-msgstr ""
+msgstr "하테나 북마크에 북마크하기"
 
 #: tmp/sns-share-buttons.php:25
 msgid "はてブ"
@@ -12470,11 +12470,11 @@ msgstr "하테나 북마크"
 
 #: tmp/sns-share-buttons.php:29
 msgid "Pocketに保存"
-msgstr ""
+msgstr "Pocket에 저장"
 
 #: tmp/sns-share-buttons.php:33
 msgid "LINEでシェア"
-msgstr ""
+msgstr "라인에 공유"
 
 #: tmp/sns-share-buttons.php:33
 msgid "LINE"
@@ -12482,15 +12482,15 @@ msgstr ""
 
 #: tmp/sns-share-buttons.php:37
 msgid "Pinterestでシェア"
-msgstr ""
+msgstr "핀터레스트에 공유"
 
 #: tmp/sns-share-buttons.php:41
 msgid "LinkedInでシェア"
-msgstr ""
+msgstr "링크드인에 공유"
 
 #: tmp/sns-share-buttons.php:47
 msgid "タイトルとURLをコピーする"
-msgstr ""
+msgstr "제목 및 URL 복사"
 
 #: tmp/sns-share-buttons.php:47
 msgid "コピー"
@@ -12498,7 +12498,7 @@ msgstr "복사"
 
 #: tmp/sns-share-buttons.php:51
 msgid "コメントする"
-msgstr ""
+msgstr "댓글 남기기"
 
 #: blocks/src/block-extension/style-extension/border01.js:46
 msgid "実線"
@@ -12998,7 +12998,7 @@ msgstr "말풍선 색 설정"
 
 #: blocks/src/block/balloon/edit.js:349
 msgid "セリフの入力"
-msgstr ""
+msgstr "문장 입력"
 
 #: blocks/src/block/balloon/index.js:38
 #: blocks/src/old/balloon-ex-fix1/block.js:60
@@ -13996,15 +13996,15 @@ msgstr "열 비율입니다."
 
 #: blocks/src/layout/column-2/block.js:107
 msgid "1:1（｜□｜□｜）"
-msgstr ""
+msgstr "1:1（｜□｜□｜）"
 
 #: blocks/src/layout/column-2/block.js:111
 msgid "1:2（｜□｜□□｜）"
-msgstr ""
+msgstr "1:2（｜□｜□□｜）"
 
 #: blocks/src/layout/column-2/block.js:115
 msgid "2:1（｜□□｜□｜）"
-msgstr ""
+msgstr "2:1（｜□□｜□｜）"
 
 #: blocks/src/layout/column-2/block.js:119
 msgid "1:3（｜□｜□□□｜））"
