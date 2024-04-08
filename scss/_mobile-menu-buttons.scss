@@ -35,7 +35,7 @@
 
   .menu-button {
     position: relative;
-    // width: 100%;
+    width: 100%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -71,37 +71,13 @@
   text-align: center;
   font-weight: 900;
   line-height: 50px;
-  // min-width: 200px;
+  min-width: 200px;
   overflow: hidden;
 
   img {
     max-height: 50px;
     display: block;
     margin: 0 auto;
-  }
-}
-
-.mobile-menu-buttons {
-  display: flex;
-  align-items: stretch;
-}
-
-.mobile-header-menu-buttons {
-  top: 0;
-  bottom: auto;
-  justify-content: space-between;
-  min-width: 46px;
-  // z-index: 3;
-  box-shadow: 0 0 5px darkgrey;
-}
-
-.has-logo-button {
-  .menu-button:not(.logo-menu-button) {
-    width: 70px;
-  }
-
-  .logo-menu-button {
-    flex-grow: 99;
   }
 }
 
