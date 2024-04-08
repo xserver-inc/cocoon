@@ -789,7 +789,6 @@ body.wp-admin {
   /************************************
   ** カルーセルの非表示設定
   ************************************/
-  /* Cocoonのリンクボタンカスタマイズ */
   /* Slider */
   /*
     Mobile Menu Core Style
@@ -17875,9 +17874,6 @@ body.wp-admin {
 .admin-settings .demo #index-tab-4:checked ~ .tab-cont.tb4 {
   display: block;
   animation: tab-index-show 0.3s ease-in;
-}
-.admin-settings .demo .btn-wrap-circle > a {
-  background: #999;
 }
 .admin-settings .demo .list-title {
   text-align: center;

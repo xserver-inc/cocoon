@@ -10337,11 +10337,6 @@ input[name=tab_item] {
   animation: tab-index-show 0.3s ease-in;
 }
 
-/* Cocoonのリンクボタンカスタマイズ */
-.btn-wrap-circle > a {
-  background: #999;
-}
-
 .list-title {
   text-align: center;
   font-size: 18px;
