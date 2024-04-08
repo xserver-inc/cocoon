@@ -7762,6 +7762,9 @@ div.fb-like-mobile {
   position: relative;
   width: 100%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .mobile-menu-buttons .menu-button > a {
   display: block;
@@ -10145,6 +10148,7 @@ pre {
   }
   .mobile-menu-buttons {
     display: flex;
+    align-items: stretch;
   }
   .mobile-header-menu-buttons {
     top: 0;

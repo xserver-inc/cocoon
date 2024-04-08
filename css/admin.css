@@ -7324,6 +7324,9 @@ body.wp-admin {
   position: relative;
   width: 100%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a {
   display: block;
@@ -15733,6 +15736,9 @@ body.wp-admin {
   position: relative;
   width: 100%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a {
   display: block;
@@ -18676,6 +18682,7 @@ body.wp-admin {
   }
   .admin-settings .demo .mobile-menu-buttons {
     display: flex;
+    align-items: stretch;
   }
   .admin-settings .demo .mobile-header-menu-buttons {
     top: 0;
