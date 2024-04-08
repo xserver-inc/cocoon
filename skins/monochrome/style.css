@@ -1210,21 +1210,12 @@ table tr:nth-of-type(2n) {
 /* □■-----------------------------------------------------
 / 『モバイルメニュー』
 -----------------------------------------------------■□ */
-/* .mobile-header-menu-buttons.mobile-menu-buttons > li:nth-of-type(3n + 1),
-.mobile-footer-menu-buttons.mobile-menu-buttons > li:nth-of-type(3n + 1) {
-	background-color: #e9e9e9;
-	color: #333333;
+.mobile-menu-buttons > .menu-button,
+.mobile-menu-buttons > .menu-button > a{
+	background-color: #333333;
+	color: #e9e9e9;
 }
-.mobile-header-menu-buttons.mobile-menu-buttons > li:nth-of-type(3n + 2),
-.mobile-footer-menu-buttons.mobile-menu-buttons > li:nth-of-type(3n + 2) {
-	background-color: #e9e9e9;
-	color: #333333;
-}
-.mobile-header-menu-buttons.mobile-menu-buttons > li:nth-of-type(3n + 3),
-.mobile-footer-menu-buttons.mobile-menu-buttons > li:nth-of-type(3n + 3) {
-	background-color: #e9e9e9;
-	color: #333333;
-} */
+/*
 .mobile-header-menu-buttons.mobile-menu-buttons > li:nth-of-type(3n + 1) {
 	background-color: #333333;
 	color: #e9e9e9;
@@ -1240,7 +1231,7 @@ table tr:nth-of-type(2n) {
 .mobile-footer-menu-buttons.mobile-menu-buttons > li {
 	background-color: #e9e9e9;
 	color: #333333;
-}
+} */
 
 .menu-drawer a {
 	background-color: #333333;
