@@ -7766,6 +7766,7 @@ div.fb-like-mobile {
   margin: 0;
   list-style: none;
   display: none;
+  justify-content: space-between;
   align-items: center;
   line-height: 1.4;
   min-height: 50px;
@@ -7785,7 +7786,7 @@ div.fb-like-mobile {
 }
 .mobile-menu-buttons .menu-button {
   position: relative;
-  width: 100%;
+  width: 70px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -7809,6 +7810,9 @@ div.fb-like-mobile {
 .mobile-footer-menu-buttons {
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
+}
+.mobile-footer-menu-buttons .menu-button {
+  width: 100%;
 }
 
 .logo-menu-button {
@@ -11281,12 +11285,8 @@ _:-ms-lang(x), .mc-circle {
   .mobile-header-menu-buttons {
     top: 0;
     bottom: auto;
-    justify-content: space-around;
     min-width: 46px;
     box-shadow: 0 0 5px darkgrey;
-  }
-  .has-logo-button .menu-button {
-    width: 70px;
   }
   .has-logo-button .logo-menu-button {
     flex-grow: 99;

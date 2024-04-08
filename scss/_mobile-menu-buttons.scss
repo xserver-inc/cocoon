@@ -12,6 +12,7 @@
   list-style: none;
 
   display: none;
+  justify-content: space-between;
   align-items: center;
 
   line-height: 1.4;
@@ -35,7 +36,7 @@
 
   .menu-button {
     position: relative;
-    width: 100%;
+    width: 70px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -65,6 +66,9 @@
 .mobile-footer-menu-buttons {
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
+  .menu-button{
+    width: 100%;
+  }
 }
 
 .logo-menu-button {
