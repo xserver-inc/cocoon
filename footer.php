@@ -79,9 +79,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php //管理者用パネル
     cocoon_template_part('tmp/admin-panel'); ?>
 
-    <?php //モバイルヘッダーメニューボタン
-    cocoon_template_part('tmp/mobile-header-menu-buttons'); ?>
-
     <?php //モバイルフッターメニューボタン
     cocoon_template_part('tmp/mobile-footer-menu-buttons'); ?>
 

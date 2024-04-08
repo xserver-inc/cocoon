@@ -16,6 +16,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       do_action( 'wp_body_open' );
   }?>
 
+  <?php //モバイルヘッダーメニューボタン
+  cocoon_template_part('tmp/mobile-header-menu-buttons'); ?>
+
   <?php //ユーザーカスタマイズ用
   cocoon_template_part('tmp-user/body-top-insert'); ?>
 
