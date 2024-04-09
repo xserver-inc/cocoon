@@ -7275,7 +7275,6 @@ body.wp-admin {
   margin: 0;
   list-style: none;
   display: none;
-  justify-content: space-between;
   align-items: center;
   line-height: 1.4;
   min-height: 50px;
@@ -7295,7 +7294,7 @@ body.wp-admin {
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button {
   position: relative;
-  width: 70px;
+  width: 100%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -7318,9 +7317,6 @@ body.wp-admin {
 .admin-settings .demo .mobile-footer-menu-buttons {
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
-}
-.admin-settings .demo .mobile-footer-menu-buttons .menu-button {
-  width: 100%;
 }
 .admin-settings .demo .logo-menu-button {
   text-align: center;
@@ -15715,7 +15711,6 @@ body.wp-admin {
   margin: 0;
   list-style: none;
   display: none;
-  justify-content: space-between;
   align-items: center;
   line-height: 1.4;
   min-height: 50px;
@@ -15735,7 +15730,7 @@ body.wp-admin {
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button {
   position: relative;
-  width: 70px;
+  width: 100%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -15758,9 +15753,6 @@ body.wp-admin {
 .admin-settings .demo .mobile-footer-menu-buttons {
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
-}
-.admin-settings .demo .mobile-footer-menu-buttons .menu-button {
-  width: 100%;
 }
 .admin-settings .demo .logo-menu-button {
   text-align: center;
@@ -18743,8 +18735,12 @@ body.wp-admin {
   .admin-settings .demo .mobile-header-menu-buttons {
     top: 0;
     bottom: auto;
+    justify-content: space-around;
     min-width: 46px;
     box-shadow: 0 0 5px darkgrey;
+  }
+  .admin-settings .demo .has-logo-button .menu-button {
+    width: 70px;
   }
   .admin-settings .demo .has-logo-button .logo-menu-button {
     flex-grow: 99;
