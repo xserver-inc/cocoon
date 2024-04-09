@@ -4195,6 +4195,7 @@ figcaption {
 
 .faq-question {
   margin-bottom: 1.8em;
+  align-items: center;
 }
 
 .faq-question-label {
@@ -4207,6 +4208,10 @@ figcaption {
 
 .faq .faq-answer {
   margin-left: 0;
+}
+
+.faq-answer-content {
+  margin-top: 6px;
 }
 
 .faq-answer-label {

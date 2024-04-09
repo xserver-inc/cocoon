@@ -8023,6 +8023,7 @@ body.wp-admin {
 }
 .admin-settings .demo .faq-question {
   margin-bottom: 1.8em;
+  align-items: center;
 }
 .admin-settings .demo .faq-question-label {
   color: var(--cocoon-custom-question-color);
@@ -8032,6 +8033,9 @@ body.wp-admin {
 }
 .admin-settings .demo .faq .faq-answer {
   margin-left: 0;
+}
+.admin-settings .demo .faq-answer-content {
+  margin-top: 6px;
 }
 .admin-settings .demo .faq-answer-label {
   color: var(--cocoon-custom-answer-color);
@@ -16439,6 +16443,7 @@ body.wp-admin {
 }
 .admin-settings .demo .faq-question {
   margin-bottom: 1.8em;
+  align-items: center;
 }
 .admin-settings .demo .faq-question-label {
   color: var(--cocoon-custom-question-color);
@@ -16448,6 +16453,9 @@ body.wp-admin {
 }
 .admin-settings .demo .faq .faq-answer {
   margin-left: 0;
+}
+.admin-settings .demo .faq-answer-content {
+  margin-top: 6px;
 }
 .admin-settings .demo .faq-answer-label {
   color: var(--cocoon-custom-answer-color);

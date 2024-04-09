@@ -1821,6 +1821,7 @@ figcaption{
       position: relative;
       background-color: #e8ecef;
       border-color: var(--cocoon-three-d-border-colors);
+      // align-items: center;
 
       &::before{
         content: "+";
