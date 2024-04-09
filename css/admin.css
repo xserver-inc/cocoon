@@ -8030,6 +8030,7 @@ body.wp-admin {
 }
 .admin-settings .demo .faq-question-content {
   font-weight: 700;
+  margin-right: 30px;
 }
 .admin-settings .demo .faq .faq-answer {
   margin-left: 0;
@@ -16450,6 +16451,7 @@ body.wp-admin {
 }
 .admin-settings .demo .faq-question-content {
   font-weight: 700;
+  margin-right: 30px;
 }
 .admin-settings .demo .faq .faq-answer {
   margin-left: 0;
