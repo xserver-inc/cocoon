@@ -4072,6 +4072,10 @@ figcaption {
   white-space: pre;
 }
 
+.tab-block .tab-label-group {
+  padding-left: 0;
+}
+
 .tab-label-group {
   list-style: none !important;
   display: flex;
@@ -4079,6 +4083,8 @@ figcaption {
   padding: 0;
   margin: 0 !important;
   font-size: 13px;
+  overflow: auto;
+  white-space: nowrap;
 }
 .tab-label-group .tab-label {
   background-color: #f3f3f3;

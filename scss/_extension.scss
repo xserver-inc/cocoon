@@ -2003,6 +2003,10 @@ figcaption{
     white-space: pre;
 }
 
+.tab-block .tab-label-group{
+  padding-left: 0;
+}
+
 //タブブロック
 .tab-label-group{
   list-style: none !important;
@@ -2011,6 +2015,8 @@ figcaption{
   padding: 0;
   margin: 0 !important;
   font-size: 13px;
+  overflow: auto;
+  white-space:nowrap;
 
   .tab-label{
     background-color: #f3f3f3;
