@@ -1237,6 +1237,7 @@ html[lang=en] .ribbon-top-left::after {
 .body .secondary-box :last-child,
 .body .light-box :last-child,
 .body .dark-box :last-child,
+.body .tab-content :last-child,
 .body .toc :last-child {
   margin-bottom: 0;
 }

@@ -3368,6 +3368,7 @@ body.wp-admin {
 .admin-settings .demo .body .secondary-box :last-child,
 .admin-settings .demo .body .light-box :last-child,
 .admin-settings .demo .body .dark-box :last-child,
+.admin-settings .demo .body .tab-content :last-child,
 .admin-settings .demo .body .toc :last-child {
   margin-bottom: 0;
 }
@@ -11842,6 +11843,7 @@ body.wp-admin {
 .admin-settings .demo .body .secondary-box :last-child,
 .admin-settings .demo .body .light-box :last-child,
 .admin-settings .demo .body .dark-box :last-child,
+.admin-settings .demo .body .tab-content :last-child,
 .admin-settings .demo .body .toc :last-child {
   margin-bottom: 0;
 }
@@ -21029,6 +21031,7 @@ textarea[name=the_page_memo] {
 .components-popover__content .body .secondary-box :last-child,
 .components-popover__content .body .light-box :last-child,
 .components-popover__content .body .dark-box :last-child,
+.components-popover__content .body .tab-content :last-child,
 .components-popover__content .body .toc :last-child {
   margin-bottom: 0;
 }

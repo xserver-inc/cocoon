@@ -3250,6 +3250,7 @@ label.screen-reader-text {
 .body .secondary-box :last-child,
 .body .light-box :last-child,
 .body .dark-box :last-child,
+.body .tab-content :last-child,
 .body .toc :last-child {
   margin-bottom: 0;
 }
