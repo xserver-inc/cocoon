@@ -4981,7 +4981,10 @@ body:has(#spotlight.show) .header {
 
   /* 検索BOX */
   .skin-grayish .menu-content .menu-drawer .search-menu-button {
+    display: block;
     width: 100%;
+    align-items: unset;
+    justify-content: unset;
   }
 
   .skin-grayish .menu-content .menu-drawer .search-menu-button .search-menu-icon,

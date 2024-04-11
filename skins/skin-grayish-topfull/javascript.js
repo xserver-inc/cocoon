@@ -399,10 +399,10 @@ if (PCotherHeader && PCotherNaviIn) {
 // 検索フォーム（PC時）
 // ---------------------------------------------
 
-const menuContent = document.querySelector(".js-searchMenuDialog-content");
-const menuOpen = document.querySelector(".js-searchMenuDialog-open");
-const menuClose = document.querySelector(".js-searchMenuDialog-close");
-const menuCloseBack = document.querySelector(".js-searchMenuDialog-back");
+const menuContent = document.querySelector(".header-container .navi .js-searchMenuDialog-content");
+const menuOpen = document.querySelector(".header-container .navi .js-searchMenuDialog-open");
+const menuClose = document.querySelector(".header-container .navi .js-searchMenuDialog-close");
+const menuCloseBack = document.querySelector(".header-container .navi .js-searchMenuDialog-back");
 const menuContentSearch = document.getElementById("gnavi-search-menu-content");
 
 //
