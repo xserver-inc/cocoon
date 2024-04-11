@@ -44,15 +44,25 @@ class CTABoxWidgetItem extends WP_Widget {
       echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
     }
 
-    set_query_var('_HEADING', $heading);
-    set_query_var('_IMAGE_URL', $image_url);
-    set_query_var('_MESSAGE', $message);
-    set_query_var('_LAYOUT', $layout);
-    set_query_var('_BUTTON_TEXT', $button_text);
-    set_query_var('_BUTTON_URL', $button_url);
-    set_query_var('_BUTTON_COLOR_CLASS', $button_color_class);
+    // set_query_var('_HEADING', $heading);
+    // set_query_var('_IMAGE_URL', $image_url);
+    // set_query_var('_MESSAGE', $message);
+    // set_query_var('_LAYOUT', $layout);
+    // set_query_var('_BUTTON_TEXT', $button_text);
+    // set_query_var('_BUTTON_URL', $button_url);
+    // set_query_var('_BUTTON_COLOR_CLASS', $button_color_class);
 
-    cocoon_template_part('tmp/cta-box');
+    // cocoon_template_part('tmp/cta-box');
+    $atts = array(
+      'heading' => $heading,
+      'image_url' => $image_url,
+      'message' => $message,
+      'layout' => $layout,
+      'button_text' => $button_text,
+      'button_url' => $button_url,
+      'button_color' => $button_color_class,
+    );
+    echo get_cta_tag($atts);
 
     echo $args['after_widget'];
   }

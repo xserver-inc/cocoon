@@ -1051,3 +1051,33 @@ function get_block_pattern_shortcode($atts) {
   return do_blocks($content);
 }
 endif;
+
+//CTAショートコード（主にCTAブロック用）
+add_shortcode('cta', 'get_cta_tag');
+if ( !function_exists( 'get_cta_tag' ) ):
+function get_cta_tag($atts){
+  extract(shortcode_atts(array(
+    'heading' => __( '見出し', THEME_NAME ),
+    'image_url' => get_original_image_tag(get_no_image_large_url(), THUMB_LARGE_NO_IMAGE_WIDTH, THUMB_LARGE_NO_IMAGE_HEIGHT, 'no-image cta-no-image', ''),
+    'message' => __( '訴求メッセージ', THEME_NAME ),
+    'layout' => 'cta-top-and-bottom',
+    'button_text' => __( '詳細はこちら', THEME_NAME ),
+    'button_url' => './',
+    'button_color' => 'btn-red',
+  ), $atts, 'cta'));
+
+  set_query_var('_HEADING', $heading);
+  set_query_var('_IMAGE_URL', $image_url);
+  set_query_var('_MESSAGE', $message);
+  set_query_var('_LAYOUT', $layout);
+  set_query_var('_BUTTON_TEXT', $button_text);
+  set_query_var('_BUTTON_URL', $button_url);
+  set_query_var('_BUTTON_COLOR_CLASS', $button_color);
+
+  ob_start();
+  cocoon_template_part('tmp/cta-box');
+  $tag = ob_get_clean();
+
+  return apply_filters('get_cta_tag', $tag);
+}
+endif;
