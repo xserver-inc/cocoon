@@ -89,6 +89,15 @@ update_theme_option(OP_YAHOO_SEARCH_BUTTON_VISIBLE);
 //Yahoo!検索ボタンテキスト
 update_theme_option(OP_YAHOO_SEARCH_BUTTON_TEXT);
 
+//メルカリアフィリエイトID
+update_theme_option(OP_MERCARI_AFFILIATE_ID);
+
+//メルカリ検索ボタンを表示する
+update_theme_option(OP_MERCARI_SEARCH_BUTTON_VISIBLE);
+
+//メルカリ検索ボタン文字
+update_theme_option(OP_MERCARI_SEARCH_BUTTON_TEXT);
+
 //DMMアフィリエイトID
 update_theme_option(OP_DMM_AFFILIATE_ID);
 

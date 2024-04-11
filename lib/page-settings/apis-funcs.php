@@ -231,6 +231,31 @@ function get_yahoo_search_button_text(){
 }
 endif;
 
+//メルカリアフィリエイトID
+define('OP_MERCARI_AFFILIATE_ID', 'mercari_affiliate_id');
+if ( !function_exists( 'get_mercari_affiliate_id' ) ):
+function get_mercari_affiliate_id(){
+  return get_theme_option(OP_MERCARI_AFFILIATE_ID);
+}
+endif;
+
+//メルカリ検索ボタンを表示する
+define('OP_MERCARI_SEARCH_BUTTON_VISIBLE', 'mercari_search_button_visible');
+if ( !function_exists( 'is_mercari_search_button_visible' ) ):
+function is_mercari_search_button_visible(){
+  return get_theme_option(OP_MERCARI_SEARCH_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//メルカリ検索ボタン文字
+define('OP_MERCARI_SEARCH_BUTTON_TEXT', 'mercari_search_button_text');
+if ( !function_exists( 'get_mercari_search_button_text' ) ):
+function get_mercari_search_button_text(){
+  return stripslashes_deep(get_theme_option(OP_MERCARI_SEARCH_BUTTON_TEXT, __( 'メルカリ', THEME_NAME )));
+}
+endif;
+
+
 //DMMアフィリエイトID
 define('OP_DMM_AFFILIATE_ID', 'dmm_affiliate_id');
 if ( !function_exists( 'get_dmm_affiliate_id' ) ):

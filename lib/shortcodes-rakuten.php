@@ -26,6 +26,7 @@ function rakuten_product_link_shortcode($atts){
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
+    'mercari' => 1,
     'dmm' => 1,
     'border' => 1,
     'logo' => null,
@@ -77,6 +78,8 @@ function rakuten_product_link_shortcode($atts){
   $sid = trim(get_yahoo_valuecommerce_sid());
   //Yahoo!バリューコマースPID
   $pid = trim(get_yahoo_valuecommerce_pid());
+  //メルカリアフィリエイトID
+  $mercari_affiliate_id = trim(get_mercari_affiliate_id());
   //DMMアフィリエイトID
   $dmm_affiliate_id = trim(get_dmm_affiliate_id());
 
@@ -337,6 +340,7 @@ function rakuten_product_link_shortcode($atts){
             'rakuten_affiliate_id' => $rakuten_affiliate_id,
             'sid' => $sid,
             'pid' => $pid,
+            'mercari_affiliate_id' => $mercari_affiliate_id,
             'dmm_affiliate_id' => $dmm_affiliate_id,
             'moshimo_amazon_id' => $moshimo_amazon_id,
             'moshimo_rakuten_id' => $moshimo_rakuten_id,
@@ -344,6 +348,7 @@ function rakuten_product_link_shortcode($atts){
             'amazon' => $amazon,
             'rakuten' => $rakuten,
             'yahoo' => $yahoo,
+            'mercari' => $mercari,
             'dmm' => $dmm,
             'amazon_page_url' => null,
             'rakuten_page_url' => $affiliateUrl,

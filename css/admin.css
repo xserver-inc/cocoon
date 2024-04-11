@@ -6957,6 +6957,9 @@ body.wp-admin {
   background: #e60033;
   position: relative;
 }
+.admin-settings .demo .shoplinkmercari a {
+  background: #4dc9ff;
+}
 .admin-settings .demo .shoplinkdmm a {
   background: #00bcd4;
 }
@@ -15391,6 +15394,9 @@ body.wp-admin {
 .admin-settings .demo .shoplinkyahoo a {
   background: #e60033;
   position: relative;
+}
+.admin-settings .demo .shoplinkmercari a {
+  background: #4dc9ff;
 }
 .admin-settings .demo .shoplinkdmm a {
   background: #00bcd4;
