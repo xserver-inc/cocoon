@@ -453,26 +453,6 @@ img {
 }
 
 
-/* 背景画像固定 */
-
-.ba-fixed.appeal {
-  clip-path: inset(0 0 0 0);
-}
-
-.ba-fixed.appeal:before {
-  background-image: inherit;
-  background-position: top center;
-  background-size: cover;
-  content: '';
-  height: 100vh;
-  left: 0px;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  z-index: -1;
-}
-
-
 /*******************************************************************************
 **
 **  おすすめカード

@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/tab",
+  "category": "cocoon-block",
+  "keywords": [ "tab" ],
+  "attributes": {
+    "tabLabelsArray": {
+      "type": "array",
+      "default": ["Tab 1", "Tab 2"]
+    }
+  },
+  "example": {
+  },
+  "supports": {
+    "anchor": true,
+    "lock": false
+  }
+}

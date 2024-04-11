@@ -1,0 +1,17 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/tab-item",
+  "category": "cocoon-block",
+  "parent": ["cocoon-blocks/tab"],
+  "attributes": {
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "example": {},
+  "supports": {
+    "anchor": false,
+    "lock": false
+  }
+}

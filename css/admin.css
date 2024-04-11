@@ -5827,6 +5827,37 @@ body.wp-admin {
 .admin-settings .demo .wp-block-code code {
   white-space: pre;
 }
+.admin-settings .demo .tab-label-group {
+  list-style: none !important;
+  display: flex;
+  gap: 2px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+}
+.admin-settings .demo .tab-label-group .tab-label {
+  background-color: #f3f3f3;
+  padding: 0.5em 1.5em;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  margin: 0;
+  cursor: pointer;
+}
+.admin-settings .demo .tab-label-group .tab-label.is-active {
+  background-color: #333;
+  color: #fff;
+}
+.admin-settings .demo .tab-content-group {
+  border: 1px solid #ddd;
+  padding: 1.2em;
+  border-radius: 2px;
+}
+.admin-settings .demo .tab-content-group .tab-content {
+  display: none;
+}
+.admin-settings .demo .tab-content-group .tab-content.is-active {
+  display: block;
+}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -14264,6 +14295,37 @@ body.wp-admin {
 }
 .admin-settings .demo .wp-block-code code {
   white-space: pre;
+}
+.admin-settings .demo .tab-label-group {
+  list-style: none !important;
+  display: flex;
+  gap: 2px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+}
+.admin-settings .demo .tab-label-group .tab-label {
+  background-color: #f3f3f3;
+  padding: 0.5em 1.5em;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  margin: 0;
+  cursor: pointer;
+}
+.admin-settings .demo .tab-label-group .tab-label.is-active {
+  background-color: #333;
+  color: #fff;
+}
+.admin-settings .demo .tab-content-group {
+  border: 1px solid #ddd;
+  padding: 1.2em;
+  border-radius: 2px;
+}
+.admin-settings .demo .tab-content-group .tab-content {
+  display: none;
+}
+.admin-settings .demo .tab-content-group .tab-content.is-active {
+  display: block;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -23416,6 +23478,37 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content .wp-block-code code {
   white-space: pre;
+}
+.components-popover__content .tab-label-group {
+  list-style: none !important;
+  display: flex;
+  gap: 2px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+}
+.components-popover__content .tab-label-group .tab-label {
+  background-color: #f3f3f3;
+  padding: 0.5em 1.5em;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  margin: 0;
+  cursor: pointer;
+}
+.components-popover__content .tab-label-group .tab-label.is-active {
+  background-color: #333;
+  color: #fff;
+}
+.components-popover__content .tab-content-group {
+  border: 1px solid #ddd;
+  padding: 1.2em;
+  border-radius: 2px;
+}
+.components-popover__content .tab-content-group .tab-content {
+  display: none;
+}
+.components-popover__content .tab-content-group .tab-content.is-active {
+  display: block;
 }
 .components-popover__content .red {
   margin: 0;

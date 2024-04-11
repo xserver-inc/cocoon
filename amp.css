@@ -6061,6 +6061,39 @@ figcaption {
   white-space: pre;
 }
 
+.tab-label-group {
+  list-style: none !important;
+  display: flex;
+  gap: 2px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+}
+.tab-label-group .tab-label {
+  background-color: #f3f3f3;
+  padding: 0.5em 1.5em;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  margin: 0;
+  cursor: pointer;
+}
+.tab-label-group .tab-label.is-active {
+  background-color: #333;
+  color: #fff;
+}
+
+.tab-content-group {
+  border: 1px solid #ddd;
+  padding: 1.2em;
+  border-radius: 2px;
+}
+.tab-content-group .tab-content {
+  display: none;
+}
+.tab-content-group .tab-content.is-active {
+  display: block;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;
