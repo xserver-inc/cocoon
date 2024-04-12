@@ -1,0 +1,37 @@
+//タブブロック
+.tab-label-group{
+  list-style: none !important;
+  display: flex;
+  gap: 3px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+  overflow: auto;
+  white-space:nowrap;
+
+  .tab-label{
+    background-color: var(--cocoon-tab-label-color);
+    padding: .4em 1.5em;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin: 0;
+    cursor: pointer;
+
+    &.is-active{
+      background-color: var( --cocoon-tab-label-active-color);
+      color: var(--cocoon-white-color);
+    }
+  }
+}
+
+.tab-content-group{
+  border: 1px solid var(--cocoon-basic-border-color);
+  padding: 1.2em;
+  border-radius: 2px;
+  .tab-content{
+    display: none;
+    &.is-active{
+      display: block;
+    }
+  }
+}

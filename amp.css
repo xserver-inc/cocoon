@@ -70,6 +70,8 @@
   --cocoon-xxx-thin-color: #fafbfc;
   --cocoon-current-background-color: #eee;
   --cocoon-select-background-color: #d8eaf2;
+  --cocoon-tab-label-color: #f2f2f2;
+  --cocoon-tab-label-active-color: #404453;
   --cocoon-basic-border-radius: 4px;
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
@@ -6066,41 +6068,6 @@ figcaption {
   padding-left: 0;
 }
 
-.tab-label-group {
-  list-style: none !important;
-  display: flex;
-  gap: 2px;
-  padding: 0;
-  margin: 0 !important;
-  font-size: 13px;
-  overflow: auto;
-  white-space: nowrap;
-}
-.tab-label-group .tab-label {
-  background-color: #f3f3f3;
-  padding: 0.5em 1.5em;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  margin: 0;
-  cursor: pointer;
-}
-.tab-label-group .tab-label.is-active {
-  background-color: #333;
-  color: #fff;
-}
-
-.tab-content-group {
-  border: 1px solid #ddd;
-  padding: 1.2em;
-  border-radius: 2px;
-}
-.tab-content-group .tab-content {
-  display: none;
-}
-.tab-content-group .tab-content.is-active {
-  display: block;
-}
-
 .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -8668,6 +8635,41 @@ ul.timeline ul ul ul {
 .faq-wrap.is-style-accordion.has-border-color.not-nested-style > .faq > .faq-question {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
+}
+
+.tab-label-group {
+  list-style: none !important;
+  display: flex;
+  gap: 3px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+  overflow: auto;
+  white-space: nowrap;
+}
+.tab-label-group .tab-label {
+  background-color: var(--cocoon-tab-label-color);
+  padding: 0.4em 1.5em;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0;
+  cursor: pointer;
+}
+.tab-label-group .tab-label.is-active {
+  background-color: var(--cocoon-tab-label-active-color);
+  color: var(--cocoon-white-color);
+}
+
+.tab-content-group {
+  border: 1px solid var(--cocoon-basic-border-color);
+  padding: 1.2em;
+  border-radius: 2px;
+}
+.tab-content-group .tab-content {
+  display: none;
+}
+.tab-content-group .tab-content.is-active {
+  display: block;
 }
 
 /*Cocoon用記事ボックス*/

@@ -70,6 +70,8 @@
   --cocoon-xxx-thin-color: #fafbfc;
   --cocoon-current-background-color: #eee;
   --cocoon-select-background-color: #d8eaf2;
+  --cocoon-tab-label-color: #f2f2f2;
+  --cocoon-tab-label-active-color: #404453;
   --cocoon-basic-border-radius: 4px;
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
@@ -4075,41 +4077,6 @@ figcaption {
 
 .tab-block .tab-label-group {
   padding-left: 0;
-}
-
-.tab-label-group {
-  list-style: none !important;
-  display: flex;
-  gap: 2px;
-  padding: 0;
-  margin: 0 !important;
-  font-size: 13px;
-  overflow: auto;
-  white-space: nowrap;
-}
-.tab-label-group .tab-label {
-  background-color: #f3f3f3;
-  padding: 0.5em 1.5em;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  margin: 0;
-  cursor: pointer;
-}
-.tab-label-group .tab-label.is-active {
-  background-color: #333;
-  color: #fff;
-}
-
-.tab-content-group {
-  border: 1px solid #ddd;
-  padding: 1.2em;
-  border-radius: 2px;
-}
-.tab-content-group .tab-content {
-  display: none;
-}
-.tab-content-group .tab-content.is-active {
-  display: block;
 }
 
 .column-wrap {

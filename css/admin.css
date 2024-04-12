@@ -78,6 +78,8 @@ body.wp-admin {
   --cocoon-xxx-thin-color: #fafbfc;
   --cocoon-current-background-color: #eee;
   --cocoon-select-background-color: #d8eaf2;
+  --cocoon-tab-label-color: #f2f2f2;
+  --cocoon-tab-label-active-color: #404453;
   --cocoon-basic-border-radius: 4px;
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
@@ -5831,39 +5833,6 @@ body.wp-admin {
 .admin-settings .demo .tab-block .tab-label-group {
   padding-left: 0;
 }
-.admin-settings .demo .tab-label-group {
-  list-style: none !important;
-  display: flex;
-  gap: 2px;
-  padding: 0;
-  margin: 0 !important;
-  font-size: 13px;
-  overflow: auto;
-  white-space: nowrap;
-}
-.admin-settings .demo .tab-label-group .tab-label {
-  background-color: #f3f3f3;
-  padding: 0.5em 1.5em;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  margin: 0;
-  cursor: pointer;
-}
-.admin-settings .demo .tab-label-group .tab-label.is-active {
-  background-color: #333;
-  color: #fff;
-}
-.admin-settings .demo .tab-content-group {
-  border: 1px solid #ddd;
-  padding: 1.2em;
-  border-radius: 2px;
-}
-.admin-settings .demo .tab-content-group .tab-content {
-  display: none;
-}
-.admin-settings .demo .tab-content-group .tab-content.is-active {
-  display: block;
-}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -8094,6 +8063,39 @@ body.wp-admin {
 .admin-settings .demo .faq-wrap.is-style-accordion.has-border-color.not-nested-style > .faq > .faq-question {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
+}
+.admin-settings .demo .tab-label-group {
+  list-style: none !important;
+  display: flex;
+  gap: 3px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+  overflow: auto;
+  white-space: nowrap;
+}
+.admin-settings .demo .tab-label-group .tab-label {
+  background-color: var(--cocoon-tab-label-color);
+  padding: 0.4em 1.5em;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0;
+  cursor: pointer;
+}
+.admin-settings .demo .tab-label-group .tab-label.is-active {
+  background-color: var(--cocoon-tab-label-active-color);
+  color: var(--cocoon-white-color);
+}
+.admin-settings .demo .tab-content-group {
+  border: 1px solid var(--cocoon-basic-border-color);
+  padding: 1.2em;
+  border-radius: 2px;
+}
+.admin-settings .demo .tab-content-group .tab-content {
+  display: none;
+}
+.admin-settings .demo .tab-content-group .tab-content.is-active {
+  display: block;
 }
 .admin-settings .demo .ribbon {
   width: 80px;
@@ -14306,39 +14308,6 @@ body.wp-admin {
 .admin-settings .demo .tab-block .tab-label-group {
   padding-left: 0;
 }
-.admin-settings .demo .tab-label-group {
-  list-style: none !important;
-  display: flex;
-  gap: 2px;
-  padding: 0;
-  margin: 0 !important;
-  font-size: 13px;
-  overflow: auto;
-  white-space: nowrap;
-}
-.admin-settings .demo .tab-label-group .tab-label {
-  background-color: #f3f3f3;
-  padding: 0.5em 1.5em;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  margin: 0;
-  cursor: pointer;
-}
-.admin-settings .demo .tab-label-group .tab-label.is-active {
-  background-color: #333;
-  color: #fff;
-}
-.admin-settings .demo .tab-content-group {
-  border: 1px solid #ddd;
-  padding: 1.2em;
-  border-radius: 2px;
-}
-.admin-settings .demo .tab-content-group .tab-content {
-  display: none;
-}
-.admin-settings .demo .tab-content-group .tab-content.is-active {
-  display: block;
-}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -16570,6 +16539,39 @@ body.wp-admin {
   color: var(--cocoon-white-color);
   background-color: var(--cocoon-custom-border-color);
 }
+.admin-settings .demo .tab-label-group {
+  list-style: none !important;
+  display: flex;
+  gap: 3px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+  overflow: auto;
+  white-space: nowrap;
+}
+.admin-settings .demo .tab-label-group .tab-label {
+  background-color: var(--cocoon-tab-label-color);
+  padding: 0.4em 1.5em;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0;
+  cursor: pointer;
+}
+.admin-settings .demo .tab-label-group .tab-label.is-active {
+  background-color: var(--cocoon-tab-label-active-color);
+  color: var(--cocoon-white-color);
+}
+.admin-settings .demo .tab-content-group {
+  border: 1px solid var(--cocoon-basic-border-color);
+  padding: 1.2em;
+  border-radius: 2px;
+}
+.admin-settings .demo .tab-content-group .tab-content {
+  display: none;
+}
+.admin-settings .demo .tab-content-group .tab-content.is-active {
+  display: block;
+}
 .admin-settings .demo .ribbon {
   width: 80px;
   height: 80px;
@@ -17967,7 +17969,7 @@ body.wp-admin {
   margin: 2px;
   border-radius: 4px;
   background-color: var(--cocoon-white-color);
-  border: 1px solid #eee;
+  border: 1px solid var(--cocoon-thin-color);
   width: 100%;
   text-align: center;
 }
@@ -17975,9 +17977,9 @@ body.wp-admin {
 .admin-settings .demo #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-2],
 .admin-settings .demo #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-3],
 .admin-settings .demo #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-4] {
-  background: none #404453;
-  border: 1px solid #404453;
-  color: #fff;
+  background: none var(--cocoon-tab-label-active-color);
+  border: 1px solid var(--cocoon-tab-label-active-color);
+  color: var(--cocoon-white-color);
   font-weight: 700;
 }
 .admin-settings .demo .tab-cont,
@@ -23497,39 +23499,6 @@ textarea[name=the_page_memo] {
 }
 .components-popover__content .tab-block .tab-label-group {
   padding-left: 0;
-}
-.components-popover__content .tab-label-group {
-  list-style: none !important;
-  display: flex;
-  gap: 2px;
-  padding: 0;
-  margin: 0 !important;
-  font-size: 13px;
-  overflow: auto;
-  white-space: nowrap;
-}
-.components-popover__content .tab-label-group .tab-label {
-  background-color: #f3f3f3;
-  padding: 0.5em 1.5em;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  margin: 0;
-  cursor: pointer;
-}
-.components-popover__content .tab-label-group .tab-label.is-active {
-  background-color: #333;
-  color: #fff;
-}
-.components-popover__content .tab-content-group {
-  border: 1px solid #ddd;
-  padding: 1.2em;
-  border-radius: 2px;
-}
-.components-popover__content .tab-content-group .tab-content {
-  display: none;
-}
-.components-popover__content .tab-content-group .tab-content.is-active {
-  display: block;
 }
 .components-popover__content .red {
   margin: 0;

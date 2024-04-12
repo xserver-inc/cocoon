@@ -17,7 +17,7 @@
   margin: 2px;
   border-radius: 4px;
   background-color: var(--cocoon-white-color);
-  border: 1px solid #eee;
+  border: 1px solid var(--cocoon-thin-color);
   // min-width: calc(100% / 4);
   width: 100%;
   text-align: center;
@@ -32,9 +32,9 @@
 // #index-tab-8:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-8"],
 //.index-tab-buttons .index-tab-button:hover
 {
-  background: none #404453;
-  border: 1px solid #404453;
-  color: #fff;
+  background: none var(--cocoon-tab-label-active-color);
+  border: 1px solid var(--cocoon-tab-label-active-color);
+  color: var(--cocoon-white-color);
   font-weight: 700;
   // //background: #aaa;
   // z-index: 4;

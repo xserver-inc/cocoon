@@ -84,6 +84,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --cocoon-xxx-thin-color: #fafbfc;
   --cocoon-current-background-color: #eee;
   --cocoon-select-background-color: #d8eaf2;
+  --cocoon-tab-label-color: #f2f2f2;
+  --cocoon-tab-label-active-color: #404453;
   --cocoon-basic-border-radius: 4px;
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
@@ -6091,41 +6093,6 @@ figcaption {
   padding-left: 0;
 }
 
-.tab-label-group {
-  list-style: none !important;
-  display: flex;
-  gap: 2px;
-  padding: 0;
-  margin: 0 !important;
-  font-size: 13px;
-  overflow: auto;
-  white-space: nowrap;
-}
-.tab-label-group .tab-label {
-  background-color: #f3f3f3;
-  padding: 0.5em 1.5em;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  margin: 0;
-  cursor: pointer;
-}
-.tab-label-group .tab-label.is-active {
-  background-color: #333;
-  color: #fff;
-}
-
-.tab-content-group {
-  border: 1px solid #ddd;
-  padding: 1.2em;
-  border-radius: 2px;
-}
-.tab-content-group .tab-content {
-  display: none;
-}
-.tab-content-group .tab-content.is-active {
-  display: block;
-}
-
 .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -8695,6 +8662,41 @@ ul.timeline ul ul ul {
   background-color: var(--cocoon-custom-border-color);
 }
 
+.tab-label-group {
+  list-style: none !important;
+  display: flex;
+  gap: 3px;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 13px;
+  overflow: auto;
+  white-space: nowrap;
+}
+.tab-label-group .tab-label {
+  background-color: var(--cocoon-tab-label-color);
+  padding: 0.4em 1.5em;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0;
+  cursor: pointer;
+}
+.tab-label-group .tab-label.is-active {
+  background-color: var(--cocoon-tab-label-active-color);
+  color: var(--cocoon-white-color);
+}
+
+.tab-content-group {
+  border: 1px solid var(--cocoon-basic-border-color);
+  padding: 1.2em;
+  border-radius: 2px;
+}
+.tab-content-group .tab-content {
+  display: none;
+}
+.tab-content-group .tab-content.is-active {
+  display: block;
+}
+
 /*Cocoon用記事ボックス*/
 /* リボン部分 */
 /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
@@ -10369,7 +10371,7 @@ input[type=submit] {
   margin: 2px;
   border-radius: 4px;
   background-color: var(--cocoon-white-color);
-  border: 1px solid #eee;
+  border: 1px solid var(--cocoon-thin-color);
   width: 100%;
   text-align: center;
 }
@@ -10378,9 +10380,9 @@ input[type=submit] {
 #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-2],
 #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-3],
 #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for=index-tab-4] {
-  background: none #404453;
-  border: 1px solid #404453;
-  color: #fff;
+  background: none var(--cocoon-tab-label-active-color);
+  border: 1px solid var(--cocoon-tab-label-active-color);
+  color: var(--cocoon-white-color);
   font-weight: 700;
 }
 
