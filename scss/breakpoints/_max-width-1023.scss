@@ -94,20 +94,32 @@ div.sidebar {
 .mobile-header-menu-buttons {
   top: 0;
   bottom: auto;
-  justify-content: space-around;
+  justify-content: space-between;
   min-width: 46px;
   // z-index: 3;
   box-shadow: 0 0 5px darkgrey;
 }
 
-.has-logo-button {
-  .menu-button {
-    width: 70px;
-  }
+.logo-menu-button{
+  // flex: 1;
+  flex-grow: 1;
+}
+// .has-logo-button {
+//   .menu-button {
+//     width: 70px;
+//   }
 
-  .logo-menu-button {
-    flex-grow: 99;
-    // flex-shrink: 0;
+//   .logo-menu-button {
+//     flex-grow: 99;
+//     // flex-shrink: 0;
+//   }
+// }
+
+.mobile-footer-menu-buttons{
+  justify-content: space-around;
+
+  .menu-button{
+    width: 100%;
   }
 }
 

@@ -7334,7 +7334,7 @@ body.wp-admin {
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button {
   position: relative;
-  width: 100%;
+  width: 70px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -15809,7 +15809,7 @@ body.wp-admin {
 }
 .admin-settings .demo .mobile-menu-buttons .menu-button {
   position: relative;
-  width: 100%;
+  width: 70px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -18813,15 +18813,18 @@ body.wp-admin {
   .admin-settings .demo .mobile-header-menu-buttons {
     top: 0;
     bottom: auto;
-    justify-content: space-around;
+    justify-content: space-between;
     min-width: 46px;
     box-shadow: 0 0 5px darkgrey;
   }
-  .admin-settings .demo .has-logo-button .menu-button {
-    width: 70px;
+  .admin-settings .demo .logo-menu-button {
+    flex-grow: 1;
   }
-  .admin-settings .demo .has-logo-button .logo-menu-button {
-    flex-grow: 99;
+  .admin-settings .demo .mobile-footer-menu-buttons {
+    justify-content: space-around;
+  }
+  .admin-settings .demo .mobile-footer-menu-buttons .menu-button {
+    width: 100%;
   }
   .admin-settings .demo .no-mobile-sidebar .sidebar,
   .admin-settings .demo .mobile-button-fmb .go-to-top-button,
