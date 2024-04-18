@@ -63,6 +63,9 @@ function page_custom_box_view(){
   generate_checkbox_tag('the_page_toc_novisible' , is_the_page_toc_novisible(), __( '目次を表示しない', THEME_NAME ));
   generate_howto_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ), 'the_page_toc_novisible');
 
+  //ページタイトル表示
+  generate_checkbox_tag('the_page_title_novisible' , is_page_title_novisible(), __( 'タイトルを表示しない', THEME_NAME ));
+  generate_howto_tag(__( 'このページにタイトル表示するかを切り替えます。', THEME_NAME ), 'the_page_title_novisible');
 }
 endif;
 
@@ -99,11 +102,11 @@ function page_custom_box_save_data(){
   add_post_meta($id, $the_page_toc_novisible_key, $the_page_toc_novisible, true);
   update_post_meta($id, $the_page_toc_novisible_key, $the_page_toc_novisible);
 
-  // //目次表示
-  // $the_page_toc_visible = !empty($_POST['the_page_toc_visible']) ? 1 : 0;
-  // $the_page_toc_visible_key = 'the_page_toc_visible';
-  // add_post_meta($id, $the_page_toc_visible_key, $the_page_toc_visible, true);
-  // update_post_meta($id, $the_page_toc_visible_key, $the_page_toc_visible);
+  //タイトル表示
+  $the_page_title_novisible = !empty($_POST['the_page_title_novisible']) ? 1 : 0;
+  $the_page_title_novisible_key = 'the_page_title_novisible';
+  add_post_meta($id, $the_page_title_novisible_key, $the_page_title_novisible, true);
+  update_post_meta($id, $the_page_title_novisible_key, $the_page_title_novisible);
 }
 endif;
 
@@ -236,16 +239,18 @@ function is_the_page_toc_visible(){
 }
 endif;
 
-// //このページで目次を表示するか
-// if ( !function_exists( 'is_the_page_toc_visible' ) ):
-// function is_the_page_toc_visible(){
-//   $value = get_post_meta(get_the_ID(), 'the_page_toc_visible', true);
-//   //初回利用時は1を返す
-//   if (is_field_checkbox_value_default($value)) {
-//     $value = 1;
-//   }
-//   return $value;
-// }
-// endif;
+//このページでタイトルを非表示か
+if (!function_exists('is_page_title_novisible')):
+function is_page_title_novisible() {
+  return get_post_meta(get_the_ID(), 'the_page_title_novisible', true);
+}
+endif;
+
+//このページでタイトルを表示するか
+if (!function_exists('is_page_title_visible')):
+function is_page_title_visible() {
+  return !is_page_title_novisible();
+}
+endif;
 
 

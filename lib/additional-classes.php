@@ -321,6 +321,11 @@ function body_class_additional($classes) {
   //サムネイルアスペクト比
   $classes[] = 'thumb-'.replace_value_to_class(get_thumbnail_image_type());
 
+  //ページ設定でタイトルを非表示としたとき
+  if (!is_page_title_visible()) {
+    $classes[] = 'no-page-title';
+  }
+
   return apply_filters('body_class_additional', $classes);
 }//body_class_additional
 endif;
@@ -330,10 +335,6 @@ endif;
 if ( !function_exists( 'get_additional_main_classes' ) ):
 function get_additional_main_classes($option = null){
   $classes = null;
-  // //サイドバーにウィジェットが入っていない場合
-  // if (!is_active_sidebar( 'sidebar' )) {
-  //   $classes .= ' no-sidebar';
-  // }
 
   if ($option) {
     $classes .= ' '.trim($option);

@@ -2052,6 +2052,10 @@ span.internal-icon {
   margin-right: 3px;
 }
 
+.no-page-title .entry-title {
+  display: none;
+}
+
 .eye-catch-wrap {
   display: flex;
 }

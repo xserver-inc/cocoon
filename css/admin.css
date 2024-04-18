@@ -2395,6 +2395,9 @@ body.wp-admin {
 .admin-settings .demo .read-time .hourglass-half-icon {
   margin-right: 3px;
 }
+.admin-settings .demo .no-page-title .entry-title {
+  display: none;
+}
 .admin-settings .demo .eye-catch-wrap {
   display: flex;
 }
@@ -10869,6 +10872,9 @@ body.wp-admin {
 }
 .admin-settings .demo .read-time .hourglass-half-icon {
   margin-right: 3px;
+}
+.admin-settings .demo .no-page-title .entry-title {
+  display: none;
 }
 .admin-settings .demo .eye-catch-wrap {
   display: flex;

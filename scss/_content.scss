@@ -414,3 +414,10 @@ span.internal-icon{
     margin-right: 3px;
   }
 }
+
+///////////////////////////////////////
+// タイトルを表示しない
+///////////////////////////////////////
+.no-page-title .entry-title {
+  display: none;
+}
