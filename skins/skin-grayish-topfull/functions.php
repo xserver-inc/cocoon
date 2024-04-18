@@ -1994,7 +1994,7 @@ if (!function_exists('skin_grayish_mobile_footerbg')) :
         --mobileFooterBgColor: <?php echo $style_rgba ?>;
       }
     </style>
-<?php
+    <?php
 
   }
 endif;
@@ -2146,3 +2146,31 @@ add_filter("cocoon_part__tmp/header-container", function ($content) {
     return $content;
   }
 });
+
+// mobile-header-menu-buttons 
+add_action(
+  "cocoon_part_after__tmp/mobile-header-menu-buttons",
+  "mobile_header_buttons_set"
+);
+
+if (!function_exists('mobile_header_buttons_set')) :
+  function mobile_header_buttons_set()
+  {
+    if (is_front_top_page()) {
+
+      // frontのみ　JSを実行
+    ?>
+      <script>
+        const mobileHeaderMenuChild_top = document.querySelectorAll('.skin-grayish.front-top-page .mobile-header-menu-buttons > li:not(:first-child)');
+        if (mobileHeaderMenuChild_remove_flg === 'on') {
+          if (mobileHeaderMenuChild_top.length > 0) {
+            mobileHeaderMenuChild_top.forEach(liItem => {
+              liItem.remove();
+            });
+          }
+        }
+      </script>
+<?php
+    }
+  }
+endif;

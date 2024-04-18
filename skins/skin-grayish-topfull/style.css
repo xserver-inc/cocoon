@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 1.0.11
+  Version: 1.0.12
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -130,7 +130,8 @@
   --skin-grayish-default-font: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
   /* モバイルヘッダーメニューが一つか複数かでレイアウト変更 js使用 初期値 */
-  --mobileHeaderMenu_justifySet: space-around;
+  /* --mobileHeaderMenu_justifySet: space-around; */
+  /* --mobileHeaderMenu_justifySet: flex-start; */
 
   /* トップページのヘッダーグローバルナビサイズ */
   --topHeaderNavisize: 56px;
@@ -2776,6 +2777,259 @@ blockquote cite {
   line-height: 1.5;
 }
 
+/* -------- v1.0.12 Tab Block add start -------- */
+/* スキンデフォルトスタイル */
+.tab-label-group .tab-label {
+  font-family: var(--skin-grayish-style-font);
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 0.8em 1.5em;
+  position: relative;
+}
+
+.tab-content-group {
+  border: 0px solid #ddd;
+  padding: 1.2em;
+  border-radius: 0px;
+  background-color: var(--white);
+}
+
+.tab-label-group {
+  overflow-x: auto;
+  overflow-y: visible;
+  gap: 0;
+  background-color: var(--white);
+}
+
+.tab-label-group .tab-label {
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: var(--white);
+  color: var(--LtGray_T0);
+  transition: color .4s;
+}
+
+.tab-label-group .tab-label.is-active {
+  background-color: var(--white);
+  color: var(--LtGray_S50);
+}
+
+.tab-label-group .tab-label.is-active::after {
+  background-color: var(--skin-grayish-site-main-hover);
+}
+
+.tab-label-group .tab-label::after {
+  display: block;
+  content: "";
+  background-color: transparent;
+  background-color: var(--LtGray_T50);
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+[class*="gray-tab-style"] .tab-content-group {
+  border: none;
+}
+
+[class*="gray-tab-style"] .tab-label-group .tab-label::after {
+  display: none;
+}
+
+/* オプション：１カラム フロントページ向け */
+/* オプション：フォントサイズ 16px -> 10pxへレスポンシブ */
+.gray-tab-label-font .tab-label-group .tab-label {
+  font-size: clamp(0.625rem, 0.6136rem + 0.4545vw, 1rem);
+}
+
+
+/* オプション：均等配置 ver */
+.gray-tab-label-equal .tab-label-group {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.gray-tab-label-equal .tab-label-group .tab-label {
+  flex: 1;
+  text-align: center;
+}
+
+/* オプション：均等配置 PC時のみセンター ver */
+.gray-tab-label-equal.--pc-center .tab-label-group {
+  justify-content: center;
+}
+
+.gray-tab-label-equal.--pc-center .tab-label-group .tab-label {
+  flex: 0 0 25%;
+}
+
+/* スタイル１：線 upper-type */
+.gray-tab-style-up .tab-label-group .tab-label.is-active::after {
+  background-color: var(--skin-grayish-site-main-hover);
+}
+
+.gray-tab-style-up .tab-label-group .tab-label::after {
+  display: block;
+  content: "";
+  background-color: transparent;
+  background-color: var(--LtGray_T50);
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: unset;
+}
+
+
+/* スタイル２：ラベルと背景色付き */
+.gray-tab-style .tab-content-group {
+  background-color: var(--LtBlue_T90);
+}
+
+.gray-tab-style .tab-label-group .tab-label {
+  padding: 0.5em 1.5em;
+  background-color: var(--white);
+  transition: background-color .4s;
+
+}
+
+.gray-tab-style .tab-label-group .tab-label.is-active {
+  background-color: var(--LtBlue_T70);
+  color: var(--LtGray_S50);
+}
+
+.gray-tab-style .tab-label-group .tab-label.is-active::after {
+  background-color: var(--LtBlue_T0);
+}
+
+.gray-tab-style .tab-label-group .tab-label::after {
+  display: block;
+  content: "";
+  background-color: transparent;
+  background-color: var(--LtGray_T50);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: unset;
+}
+
+/* スタイル3：ライン */
+.gray-tab-style-line .tab-content-group {
+  border-top: 1px solid var(--LtGray_T70);
+  border-bottom: 1px solid var(--LtGray_T70);
+  background-color: var(--white);
+}
+
+.gray-tab-style-line .tab-label-group {
+  padding-bottom: 0.5em;
+}
+
+.gray-tab-style-line .tab-label-group .tab-label {
+  padding: 0.5em 1.5em;
+  background-color: var(--white);
+  color: var(--LtGray_T30);
+  transition: color .4s;
+
+}
+
+.gray-tab-style-line .tab-label-group .tab-label.is-active {
+  color: var(--LtGray_S50);
+}
+
+.gray-tab-style-line .tab-label-group .tab-label::before {
+  display: block;
+  content: "";
+  background-color: var(--LtGray_T70);
+  width: 1px;
+  height: 1.5ch;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+.gray-tab-style-line .tab-label-group .tab-label:first-child::before {
+  display: none;
+}
+
+/* スタイル4：ラベルの端が円タイプ */
+.gray-tab-style-cir {
+  background-color: var(--Blk_Beige_T70);
+}
+
+.gray-tab-style-cir .tab-content-group {
+  border-top: 1px solid var(--Blk_Beige_T0);
+  background-color: var(--Blk_Beige_T70);
+}
+
+.gray-tab-style-cir .tab-label-group {
+  background-color: var(--Blk_Beige_T70);
+  row-gap: 8px;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  padding: 2em 1em;
+}
+
+.gray-tab-style-cir .tab-label-group .tab-label {
+  padding: 0.5em 1.5em;
+  background-color: var(--white);
+  border-radius: 30px 30px;
+  border: 1px solid var(--Blk_Beige_S50);
+  color: var(--Blk_Beige_S50);
+  transition: background-color .4s, color .4s;
+}
+
+.gray-tab-style-cir .tab-label-group .tab-label.is-active {
+  background-color: var(--Blk_Beige_S50);
+  color: var(--white);
+}
+
+
+/* tab box for .nwa */
+/* even */
+.nwa .gray-tab-label-equal .tab-label-group {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  row-gap: 4px;
+}
+
+/* odd (Max 3想定) */
+.nwa .gray-tab-label-equal.--odd .tab-label-group {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  row-gap: 4px;
+}
+
+.nwa .gray-tab-label-equal .tab-label-group .tab-label {
+  font-size: 12px;
+}
+
+/* ラインタイプ　かつ even */
+.nwa .gray-tab-style-line.gray-tab-label-equal:not(.--odd) .tab-label-group .tab-label:nth-child(odd)::before {
+  display: none;
+}
+
+/* ラインタイプ　かつ --odd */
+.nwa .gray-tab-style-line.gray-tab-label-equal.--odd .tab-label-group .tab-label:nth-child(3n+1)::before {
+  display: none;
+}
+
+
+/* -------- Tab Block add end -------- */
+
 /* article-footer */
 .skin-grayish .article-footer .entry-categories .cat-link {
   color: var(--cocoon-white-color);
@@ -4820,9 +5074,9 @@ body:has(#spotlight.show) .header {
   }
 
   /* モバイルヘッダーボタン メニューに2個以上設定されていたら元のspace-aroundに戻す jsで処理 */
-  .skin-grayish .mobile-header-menu-buttons {
+  /* .skin-grayish .mobile-header-menu-buttons {
     justify-content: var(--mobileHeaderMenu_justifySet);
-  }
+  } */
 
   .skin-grayish .mobile-header-menu-buttons.mobile-menu-buttons {
     background: transparent;
@@ -5212,6 +5466,38 @@ body:has(#spotlight.show) .header {
   .skin-grayish .gnavi-search-menu-open.grayish-btn {
     display: none;
   }
+
+  /* tab box for front */
+  /* even */
+  .gray-tab-label-equal .tab-label-group {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    row-gap: 4px;
+  }
+
+  /* odd (Max 3想定) */
+  .gray-tab-label-equal.--odd .tab-label-group {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    row-gap: 4px;
+  }
+
+  .gray-tab-label-equal .tab-label-group .tab-label {
+    font-size: clamp(0.75rem, 0.6397rem + 0.3676vw, 0.875rem);
+  }
+
+  /* ラインタイプ　かつ even */
+  .gray-tab-style-line.gray-tab-label-equal:not(.--odd) .tab-label-group .tab-label:nth-child(odd)::before {
+    display: none;
+  }
+
+  /* ラインタイプ　かつ --odd */
+  .gray-tab-style-line.gray-tab-label-equal.--odd .tab-label-group .tab-label:nth-child(3n+1)::before {
+    display: none;
+  }
+
 
 }
 
