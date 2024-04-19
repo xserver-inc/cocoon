@@ -20,6 +20,21 @@ function hvn_header($wp_customize) {
 
 
   // コントロール
+  $wp_customize->add_setting('hvn_label1_header_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label1_header_section',
+      array(
+        'label'       => '■ ヘッダーロゴ',
+        'section'     => 'hvn_header_section',
+        'settings'    => 'hvn_label1_header_section',
+        'type'        => 'hidden',
+      )
+    )
+  );
+
+
   $wp_customize->add_setting('the_site_logo_url');
   $wp_customize->add_control(
     new WP_Customize_Image_Control(
@@ -45,6 +60,21 @@ function hvn_header($wp_customize) {
         'section' => 'hvn_header_section',
         'settings'=> 'hvn_header_logo_setting',
         'type'    => 'checkbox',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_label2_header_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label2_header_section',
+      array(
+        'label'       => '■ メインビジュアル',
+        'section'     => 'hvn_header_section',
+        'settings'    => 'hvn_label2_header_section',
+        'type'        => 'hidden',
       )
     )
   );
@@ -194,6 +224,21 @@ function hvn_header($wp_customize) {
   }
 
 
+  $wp_customize->add_setting('hvn_label3_header_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label3_header_section',
+      array(
+        'label'       => '■ スライドオプション',
+        'section'     => 'hvn_header_section',
+        'settings'    => 'hvn_label3_header_section',
+        'type'        => 'hidden',
+      )
+    )
+  );
+
+
   $wp_customize->add_setting('hvn_header_fade_setting', array('default' => 'fade'));
   $wp_customize->add_control(
     new WP_Customize_Control(
@@ -236,6 +281,21 @@ function hvn_header($wp_customize) {
   );
 
 
+  $wp_customize->add_setting('hvn_label4_header_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label4_header_section',
+      array(
+        'label'       => '■ フィルター',
+        'section'     => 'hvn_header_section',
+        'settings'    => 'hvn_label4_header_section',
+        'type'        => 'hidden',
+      )
+    )
+  );
+
+
   $wp_customize->add_setting('hvn_header_filter_setting', array('default' => '0'));
   $wp_customize->add_control(
     new WP_Customize_Control(
@@ -252,6 +312,21 @@ function hvn_header($wp_customize) {
           '3' => '走査線横',
           '4' => 'モノクロ',
         )
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_label5_header_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label5_header_section',
+      array(
+        'label'       => '■ オーバーレイ',
+        'section'     => 'hvn_header_section',
+        'settings'    => 'hvn_label5_header_section',
+        'type'        => 'hidden',
       )
     )
   );

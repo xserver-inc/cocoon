@@ -8,5 +8,12 @@
   background: linear-gradient(135deg, transparent 25%, var(--hover-color) 26%, var(--hover-color) 50%, transparent 51%, transparent 75%, var(--hover-color) 76%, var(--hover-color));
   background-size: 4px 4px;
   border-left: 10px solid var(--main-color);
+  color: #333;
   padding: 20px 15px!important;
+}
+
+.hvn-dark .article h2,
+.hvn-dark .main .article .widget-title,
+.hvn-dark .main .under-entry-content h2 {
+  color: var(--cocoon-text-color);
 }

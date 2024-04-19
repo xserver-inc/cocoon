@@ -206,6 +206,25 @@ endif;
 
 
 //******************************************************************************
+//  エディターCSS追加
+//******************************************************************************
+if (!function_exists('hvn_editor_css')):
+function hvn_editor_css() {
+  ob_start();
+  cocoon_template_part(HVN_SKIN . 'tmp/css-editor');
+
+  $css = ob_get_clean();
+  if ($css) {
+    $handle = 'hvn-editor';
+    wp_register_style($handle, false, array());
+    wp_enqueue_style($handle);
+    wp_add_inline_style($handle, $css);
+  }
+}
+endif;
+
+
+//******************************************************************************
 //  メインビジュアル追加
 //******************************************************************************
 if (!function_exists('hvn_add_header')):
@@ -376,10 +395,28 @@ endif;
 //******************************************************************************
 if (!function_exists('get_notice_area_message')):
 function get_notice_area_message() {
+  global $_HVN_NOTICE;
+
+  $_HVN_NOTICE = false;
+
   $msg = stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE));
+
+
   if (!is_admin()) {
     $msg = str_replace('[', '<', $msg);
     $msg = str_replace(']', '>', $msg);
+
+    $msg_array =  explode(',' ,$msg);
+
+    if (count($msg_array) > 1) {
+      $_HVN_NOTICE = true;
+      $html = null;
+
+      for ($i=0;$i<count($msg_array); $i++) {
+        $html .= "<div class=swiper-slide>{$msg_array[$i]}</div>";
+      }
+      $msg = "<div class=swiper><div class=swiper-wrapper>{$html}</div></div>";
+    }
   }
 
   return $msg;

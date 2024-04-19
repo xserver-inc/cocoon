@@ -18,6 +18,7 @@ add_action('customize_register', function($wp_customize) {
   hvn_color($wp_customize);
   hvn_main($wp_customize);
   hvn_header($wp_customize);
+  hvn_editor($wp_customize);
 });
 
 
@@ -268,8 +269,10 @@ add_filter('widget_text', 'do_shortcode');
 add_filter('widget_title', function($title) {
   $title = str_replace('[', '<', $title);
   $title = str_replace(']', '>', $title);
-  $title = str_replace('&#039;', "'", $title);
-  $title = str_replace('&quot;', '"', $title);
+  $title = str_replace('&#8216;', "'", $title);
+  $title = str_replace('&#8217;', "'", $title);
+  $title = str_replace('&#8221;', '"', $title);
+  $title = str_replace('&#8220;', '"', $title);
 
   return $title;
 });
@@ -287,12 +290,9 @@ add_action('enqueue_block_editor_assets', function() {
 //  CSS、ライブラリ追加
 //******************************************************************************
 add_action('wp_enqueue_scripts', function() {
-  if (get_theme_mod('hvn_like_setting')) {
-    wp_enqueue_script('cookie', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js', ['jquery-migrate'], false, true);
-  }
-
   hvn_h2_h4_css();
   hvn_color_css();
+  hvn_editor_css();
   hvn_custom_css();
   wp_dequeue_style('scrollhint-style');
 }, 999);
@@ -307,6 +307,7 @@ add_action('admin_footer', function() {
   // エディター画面
   if (is_gutenberg_editor_enable() && ($pagenow == 'post.php' || $pagenow == 'post-new.php')) {
     hvn_h2_h4_css();
+    hvn_editor_css();
   }
   wp_enqueue_style('hvn-admin', HVN_SKIN_URL . 'assets/css/admin.css');
 }, 999);
@@ -352,32 +353,54 @@ add_action('wp_body_open', function() {
 add_action('wp_head', function() {
   global $_THEME_OPTIONS;
 
+  // サイト開設年
   $yymmdd = get_theme_mod('hvn_site_date_setting');
   if ($yymmdd) {
     list($yy, $mm, $dd) = explode('-', $yymmdd);
     $_THEME_OPTIONS['site_initiation_year'] = $yy;
   }
+
   $_THEME_OPTIONS['front_page_type'] = get_theme_mod('front_page_type', 'index');
   $_THEME_OPTIONS['entry_card_type'] = get_theme_mod('entry_card_type', 'entry_card');
 
-  // タイルカード除外
-  if ((get_theme_mod('entry_card_type') == 'tile_card_2')
-   || (get_theme_mod('entry_card_type') == 'tile_card_3')) {
-    remove_theme_mod('entry_card_type');
-  }
-
   // サイドバー変更
-  if ((get_theme_mod('entry_card_type') == 'vertical_card_3')
-   || (get_theme_mod('front_page_type') == 'category_3_columns')) {
+  if ((get_entry_card_type() == 'vertical_card_3')
+   || (get_front_page_type() == 'category_3_columns')) {
       $_THEME_OPTIONS['sidebar_display_type'] = 'no_display_index_pages';
   } else {
     // 3列解除
-    if (get_theme_mod('entry_card_type') == 'vertical_card_3') {
+    if (get_entry_card_type() == 'vertical_card_3') {
       remove_theme_mod('entry_card_type');
     }
-    if (get_theme_mod('front_page_type') == 'category_3_columns') {
+    if (get_front_page_type() == 'category_3_columns') {
       remove_theme_mod('front_page_type');
     }
+  }
+
+  switch(get_entry_card_type()) {
+    case 'title_card_2':
+    case 'tile_card_3':
+      remove_theme_mod('entry_card_type');
+      break;
+
+    case 'big_card':
+      if (get_theme_mod('hvn_card_expansion_setting')) {
+        $_THEME_OPTIONS['entry_card_snippet_visible'] = 1;
+      }
+      break;
+
+    case 'big_card_first':
+    case 'vertical_card_2':
+      if (get_theme_mod('hvn_card_expansion_setting')) {
+        if (strpos(get_front_page_type(), 'category') !== false) {
+          // 新着記事数変更
+          $_THEME_OPTIONS['index_new_entry_card_count'] = 5;
+
+          // カテゴリーごと記事数変更
+          $_THEME_OPTIONS['index_category_entry_card_count'] = 5;
+        }
+      }
+      break;
   }
 }, 999);
 
@@ -481,3 +504,23 @@ add_filter('wp_nav_menu', function($nav_menu, $args) {
 
   return $nav_menu;
 }, 10,2);
+
+
+//******************************************************************************
+//  インラインボタン変更
+//******************************************************************************
+add_filter('render_block', function($block_content) {
+  $btn_circle = null;
+  $btn_shine  = null;
+
+  if (get_theme_mod('hvn_inline_button_set1_setting')) {
+    $btn_circle = 'btn-circle';
+  }
+
+  if (get_theme_mod('hvn_inline_button_set2_setting')) {
+    $btn_shine = 'btn-shine';
+  }
+
+  $block_content = preg_replace('/class="(inline-button)/', "class=\"$btn_circle $btn_shine $1", $block_content);
+  return $block_content;
+});

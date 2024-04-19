@@ -48,10 +48,12 @@ add_filter('pagination_next_link_caption', function($caption) {
 
 add_filter('breadcrumbs_single_root_text', 'breadcrumbs_root_text_custom');
 add_filter('breadcrumbs_page_root_text', 'breadcrumbs_root_text_custom');
+
+if (!function_exists('breadcrumbs_root_text_custom')):
 function breadcrumbs_root_text_custom(){
   return get_theme_mod('hvn_breadcrumbs_setting', 'ホーム');
 }
-
+endif;
 
 //******************************************************************************
 //  bodyクラス追加
@@ -200,9 +202,11 @@ add_filter('cocoon_part__tmp/body-top', function($content) {
 //******************************************************************************
 add_action('cocoon_part_after__tmp/footer-javascript', function() {
   global $_IS_SWIPER_ENABLE;
+  global $_HVN_NOTICE;
 
   if ((!$_IS_SWIPER_ENABLE)
-   && (hvn_image_count() > 1  && get_theme_mod('hvn_header_setting') == 'image' && is_front_top_page())) {
+   && (($_HVN_NOTICE)
+    || (hvn_image_count() > 1  && get_theme_mod('hvn_header_setting') == 'image' && is_front_top_page()))) {
     echo <<< EOF
     <link rel='stylesheet' id='swiper-style-css' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css' />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -221,11 +225,13 @@ EOF;
 //  オリジナルレイアウト変更
 //******************************************************************************
 add_filter('cocoon_part__tmp/list-category-columns', function($content) {
-  if (is_entry_card_type_vertical_card_2()
-   || is_entry_card_type_vertical_card_3()) {
-    ob_start();
-    cocoon_template_part(HVN_SKIN . 'tmp/list-category-columns');
-    $content = ob_get_clean();
+  if (get_theme_mod('hvn_card_expansion_setting')) {
+    if (is_entry_card_type_vertical_card_2()
+     || is_entry_card_type_vertical_card_3()) {
+      ob_start();
+      cocoon_template_part(HVN_SKIN . 'tmp/list-category-columns');
+      $content = ob_get_clean();
+    }
   }
 
   return $content;
@@ -245,4 +251,67 @@ add_filter('cocoon_part__tmp/list', function($content) {
     $content = str_replace('<div id="list-columns"', $html . '<div id="list-columns"', $content);
   }
   return $content;
+});
+
+
+//******************************************************************************
+//  カテゴリーごと(2、3カード)縦型カード
+//******************************************************************************
+add_filter('index_widget_entry_card_type', function($type, $cat_id) {
+  if (get_theme_mod('hvn_categoties_card_setting')) {
+    $type = 'large_thumb';
+  }
+  return $type;
+}, 2, 10);
+
+
+//******************************************************************************
+//  プロフィールのSNSフォローを非表示
+//******************************************************************************
+add_filter('cocoon_part__tmp/sns-follow-buttons', function($content) {
+  if (get_theme_mod('hvn_profile_follows_setting')) {
+    if (get_query_var('option') == 'sf-profile') {
+      $content = null;
+    }
+  }
+  return $content;
+});
+
+
+//******************************************************************************
+//  ダークモード
+//******************************************************************************
+add_filter('cocoon_part__tmp/footer-bottom', function($content) {
+  $html = <<<EOF
+<span class="hvn-dark-switch">
+  <input type="checkbox" name="hvn-dark" id="hvn-dark">
+  <label for="hvn-dark"></label>
+</span>
+EOF;
+  $content =  preg_replace('/(class="source-org copyright">.*)<\/div>/', "$1$html</div>", $content);
+  return $content; 
+});
+
+
+//******************************************************************************
+//  タイトルとURLをコピー
+//******************************************************************************
+add_filter('cocoon_part__tmp/sns-share-buttons', function($content) {
+  $before ='/data-clipboard-text=".*" title/';
+  $after = 'data-clipboard-text="<a href=' . get_the_permalink() . '>' . get_share_page_title() . '</a>" title';
+  $content = preg_replace($before, $after, $content);
+
+  return $content;
+});
+
+
+//******************************************************************************
+//  エントリーカードにリボンを追加
+//******************************************************************************
+add_action('entry_card_snippet_after',function($post_ID) {
+  $memo = get_post_meta($post_ID, 'the_page_memo', true);
+  preg_match('/ribbon-color-[1-5]/', $memo,$class);
+  if ($class) {
+    echo '<div class="ribbon ribbon-top-left ' . $class[0] . '"></div>';
+  }
 });

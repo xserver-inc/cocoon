@@ -21,39 +21,63 @@
 
 
 /*******************************************************************************
-**  スライドオプション
+**  ラジオボタン
 *******************************************************************************/
 
 #customize-control-hvn_header_fade_setting,
-#customize-control-hvn_header_animation_setting {
+#customize-control-hvn_header_animation_setting,
+#customize-control-hvn_numeric_list_set2_setting,
+#customize-control-hvn_icon_box_set1_setting,
+#customize-control-hvn_tab_box_set1_setting,
+#customize-control-hvn_faq_set1_setting {
   display: flex;
   flex-wrap: wrap;
 }
 
 #customize-control-hvn_header_fade_setting .description,
-#customize-control-hvn_header_animation_setting .description {
+#customize-control-hvn_header_animation_setting .description,
+#customize-control-hvn_numeric_list_set2_setting .description,
+#customize-control-hvn_icon_box_set1_setting .description,
+#customize-control-hvn_tab_box_set1_setting .description,
+#customize-control-hvn_faq_set1_setting .description {
   width: 100%;
 }
 
 #customize-control-hvn_header_fade_setting .customize-inside-control-row,
-#customize-control-hvn_header_animation_setting .customize-inside-control-row {
+#customize-control-hvn_header_animation_setting .customize-inside-control-row,
+#customize-control-hvn_numeric_list_set2_setting .customize-inside-control-row,
+#customize-control-hvn_icon_box_set1_setting .customize-inside-control-row,
+#customize-control-hvn_tab_box_set1_setting .customize-inside-control-row,
+#customize-control-hvn_faq_set1_setting .customize-inside-control-row {
   margin: 0;
 }
 
 #customize-control-hvn_header_fade_setting input,
-#customize-control-hvn_header_animation_setting input {
+#customize-control-hvn_header_animation_setting input,
+#customize-control-hvn_numeric_list_set2_setting input,
+#customize-control-hvn_icon_box_set1_setting input,
+#customize-control-hvn_tab_box_set1_setting input,
+#customize-control-hvn_faq_set1_setting input {
   display: none;
 }
 
 #customize-control-hvn_header_fade_setting label,
-#customize-control-hvn_header_animation_setting label {
+#customize-control-hvn_header_animation_setting label,
+#customize-control-hvn_numeric_list_set2_setting label,
+#customize-control-hvn_icon_box_set1_setting label,
+#customize-control-hvn_tab_box_set1_setting label,
+#customize-control-hvn_faq_set1_setting label {
+  box-shadow: inset 1px 1px 0 0 #007cba, 1px 1px 0 0 #007cba, 1px 0 0 0 #007cba, 0 1px 0 0 #007cba;
   color: #007cba;
   padding: 5px 10px;
-  box-shadow: inset 1px 1px 0 0 #007cba, 1px 1px 0 0 #007cba, 1px 0 0 0 #007cba, 0 1px 0 0 #007cba;
 }
 
 #customize-control-hvn_header_fade_setting input:checked ~ label,
-#customize-control-hvn_header_animation_setting input:checked ~ label {
+#customize-control-hvn_header_animation_setting input:checked ~ label,
+#customize-control-hvn_numeric_list_set2_setting input:checked ~ label,
+#customize-control-hvn_icon_box_set1_setting input:checked ~ label,
+#customize-control-hvn_tab_box_set1_setting input:checked ~ label,
+#customize-control-hvn_faq_set1_setting input:checked ~ label {
   background-color: #007cba;
   color: #fff;
 }
@@ -118,28 +142,7 @@
 **  見出し
 *******************************************************************************/
 
-
-/* 基本カラー */
-
-#customize-control-hvn_main_color_setting:before,
-#customize-control-header_background_color:before,
-#customize-control-hvn_h2_css_setting:before,
-
-/* 拡張 */
-
-#customize-control-hvn_front_loading_setting:before,
-#customize-control-entry_card_type:before,
-#customize-control-hvn_button_more_setting:before,
-#customize-control-hvn_index_new_setting:before,
-#customize-control-hvn_prof_setting:before,
-
-/* 動画・スライドヘッダー */
-
-#customize-control-the_site_logo_url:before,
-#customize-control-hvn_header_setting:before,
-#customize-control-hvn_header_fade_setting:before,
-#customize-control-hvn_header_filter_setting:before,
-#customize-control-hvn_header_color_setting:before {
+.customize-control-hidden label {
   background-color: #fff;
   border-bottom: 1px solid #dcdcde;
   border-top: 1px solid #dcdcde;
@@ -151,56 +154,15 @@
   width: 100%;
 }
 
-#customize-control-hvn_main_color_setting:before {
-  content: '■ 基本カラー';
-}
 
-#customize-control-header_background_color:before {
-  content: '■ 個別カラー';
-}
+/*******************************************************************************
+**  エディター
+*******************************************************************************/
 
-#customize-control-hvn_h2_css_setting:before {
-  content: '■ 見出しデザイン';
-}
-
-#customize-control-hvn_front_loading_setting:before {
-  content: '■ ローディング画面';
-}
-
-#customize-control-entry_card_type:before {
-  content: '■ フロントページ';
-}
-
-#customize-control-hvn_button_more_setting:before {
-  content: '■ ボタン';
-}
-
-#customize-control-hvn_index_new_setting:before {
-  content: '■ オプション';
-}
-
-#customize-control-hvn_prof_setting:before {
-  content: '■ プロフィール';
-}
-
-#customize-control-the_site_logo_url:before {
-  content: '■ ヘッダーロゴ';
-}
-
-#customize-control-hvn_header_setting:before {
-  content: '■ メインビジュアル';
-}
-
-#customize-control-hvn_header_fade_setting:before {
-  content: '■ スライドオプション';
-}
-
-#customize-control-hvn_header_filter_setting:before {
-  content: '■ フィルター';
-}
-
-#customize-control-hvn_header_color_setting:before {
-  content: '■ オーバーレイ';
+[id*="customize-control-hvn_marker_color"],
+[id*="customize-control-hvn_inline_button_color"] {
+  display: flex;
+  gap: 15px;
 }
 
 
@@ -414,10 +376,13 @@
 
 /* おすすめカード */
 
-#tab-recommended-content tr:nth-child(3),
 #tab-recommended-content tr:nth-child(4),
-#tab-recommended-content tr:nth-child(5) {
+ #tab-recommended-content tr:nth-child(5) {
   display: none;
+}
+
+#tab-recommended-content tr:nth-child(3) li:nth-child(n+3) {
+  display:none;
 }
 
 

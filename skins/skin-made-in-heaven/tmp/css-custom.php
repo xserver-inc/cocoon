@@ -6,6 +6,70 @@ global $_HVN_OPTION;
 
 
 //******************************************************************************
+//  ダークモード
+//******************************************************************************
+echo <<< EOF
+.body {
+  visibility: hidden;
+}
+
+.hvn-dark {
+  --appeal-bgcolor: 51, 51, 51;
+  --body-rgb-color: 51, 51, 51;
+  --body-color: #333;
+  --cocoon-text-color: #ccc;
+  --gray-bgcolor: #555;
+  --hover-color: rgba(255, 255, 255, 0.2);
+  --title-color: var(--cocoon-text-color);
+  --white-bgcolor: #444;
+}
+
+.hvn-dark .author-thumb img {
+  background-color: var(--main-color);
+}
+
+.hvn-dark #footer {
+  background-color: var(--hover-color);
+}
+
+.hvn-dark .footer-bottom,
+.hvn-dark .footer-bottom a,
+.hvn-dark .footer-bottom a:hover {
+  border-color: var(--cocoon-text-color);
+  color: var(--cocoon-text-color);
+}
+
+.hvn-dark .navi-footer-in > .menu-footer li,
+.hvn-dark .navi-footer-in > .menu-footer li:last-child,
+.hvn-dark .footer .footer-in .footer-bottom-content {
+  border-color: var(--cocoon-text-color);
+}
+
+.hvn-dark-switch {
+  display: inline-block;
+  margin-left: 5px;
+  width: fit-content;
+}
+
+#hvn-dark {
+  display: none;
+}
+
+.hvn-dark-switch label:before {
+  content: '\\f186';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+}
+
+#hvn-dark:checked + label:before {
+  color: #fff176;
+  font-weight: 900;
+}
+
+EOF;
+
+
+//******************************************************************************
 //  ブログカードスニペット非表示
 //******************************************************************************
 if (!is_entry_card_snippet_visible()) {
@@ -25,95 +89,52 @@ EOF;
 //******************************************************************************
 //  モバイルSNSシェアボタン
 //******************************************************************************
-$css_arr = [];
+$css = [];
+$count = 0;
+$css_arr = [
+  ['is_bottom_twitter_share_button_visible'   ,'.twitter-button'],
+  ['is_bottom_mastodon_share_button_visible'  ,'.mastodon-button'],
+  ['is_bottom_bluesky_share_button_visible'   ,'.bluesky-button'],
+  ['is_bottom_misskey_share_button_visible'   ,'.misskey-button'],
+  ['is_bottom_facebook_share_button_visible'  ,'.facebook-button'],
+  ['is_bottom_hatebu_share_button_visible'    ,'.hatebu-button'],
+  ['is_bottom_pocket_share_button_visible'    ,'.pocket-button'],
+  ['is_bottom_line_at_share_button_visible'   ,'.line-button'],
+  ['is_bottom_pinterest_share_button_visible' ,'.pinterest-button'],
+  ['is_bottom_linkedin_share_button_visible'  ,'.linkedin-button'],
+  ['is_bottom_copy_share_button_visible'      ,'.copy-button']
+];
 
-// Twitter
-if (!is_bottom_twitter_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .twitter-button';
-}
-
-// Mastodon
-if (!is_bottom_mastodon_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .mastodon-button';
-}
-
-// Bluesky
-if (!is_bottom_bluesky_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .bluesky-button';
-}
-
-// Misskey
-if (!is_bottom_misskey_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .misskey-button';
-}
-
-// Facebook
-if (!is_bottom_facebook_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .facebook-button';
-}
-
-// はてなブックマーク
-if (!is_bottom_hatebu_share_button_visible()) {
-  $css_arr[] ='.share-menu-content .hatebu-button';
-}
-
-// Pocket
-if (!is_bottom_pocket_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .pocket-button';
-}
-
-// LINE@
-if (!is_bottom_line_at_share_button_visible()) {
-  $css_arr[] ='.share-menu-content .line-button';
-}
-
-// Pinterest
-if (!is_bottom_pinterest_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .pinterest-button';
-}
-
-// LinkedIn
-if (!is_bottom_linkedin_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .linkedin-button';
-}
-
-// タイトルとURLをコピー
-if (!is_bottom_copy_share_button_visible()) {
-  $css_arr[] = '.share-menu-content .copy-button';
-}
-
-if (!empty($css_arr)) {
-  $css = implode(',', $css_arr) ;
-  echo $css . "{display: none;}\n";
-  if (count($css_arr) == 8) {
-    echo <<< EOF
-.share-menu-button {
-  display: none;
-}
-
-EOF;
+for ($i=0;$i < count($css_arr);$i++){
+  $func = $css_arr[$i][0];
+  if ($func()) {
+    $count ++;
+  }else {
+    $css[] = $css_arr[$i][1];
   }
+}
+
+if ($count) {
+  $css = implode(',', $css) ;
+  echo ".share-menu-content :is({$css}){ display: none; }\n";
+}else{
+  echo ".body .share-menu-button { display: none; }\n";
 }
 
 
 //******************************************************************************
 //  タブ一覧
 //******************************************************************************
-function hvn_delimiter($i, $max) {
-  if ($i == ($max + 1)) {
-    echo "{\n";
-  } else {
-    echo ",\n";
-  }
-}
-
+$id_array = [];
 $tab_cnt = apply_filters('cocoon_index_max_category_tab_count', 3);
 
 for ($i=1; $i<=$tab_cnt + 1; $i++) {
-  echo "#index-tab-{$i}:checked ~ .index-tab-buttons .index-tab-button[for='index-tab-{$i}']";
-  hvn_delimiter($i ,$tab_cnt);
+  $id_array [$i - 1] = "#index-tab-{$i}:checked ~ .index-tab-buttons .index-tab-button[for='index-tab-{$i}']";
 }
+$id = implode(',', $id_array ) ;
+
 echo <<< EOF
+{$id} {
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
   color: var(--text-color);
@@ -122,10 +143,12 @@ echo <<< EOF
 EOF;
 
 for ($i=1; $i<=$tab_cnt + 1; $i++) {
-  echo "#index-tab-{$i}:checked ~ .index-tab-buttons .index-tab-button[for='index-tab-{$i}']:before";
-  hvn_delimiter($i, $tab_cnt);
+  $id_array [$i - 1] = "#index-tab-{$i}:checked ~ .index-tab-buttons .index-tab-button[for='index-tab-{$i}']:before";
 }
+$id = implode(',', $id_array ) ;
+
 echo <<< EOF
+{$id} {
   background-color: var(--main-color);
   bottom: -11px;
   clip-path: polygon(0 0,100% 0, 50% 100%);
@@ -140,10 +163,12 @@ echo <<< EOF
 EOF;
 
 for ($i=1; $i<=$tab_cnt + 1; $i++) {
-  echo "#index-tab-{$i}:checked ~ .tab-cont.tb{$i}";
-  hvn_delimiter($i, $tab_cnt);
+  $id_array [$i - 1] = "#index-tab-{$i}:checked ~ .tab-cont.tb{$i}";
 }
+$id = implode(',', $id_array ) ;
+
 echo <<< EOF
+{$id} {
   animation: none;
   display: flex;
   flex-direction: column;
@@ -167,14 +192,14 @@ echo <<< EOF
   border: 1px solid var(--main-color);
   border-radius: 0;
   box-shadow: var(--shadow-color);
-  display: block;
   color: var(--cocoon-text-color);
+  display: grid;
   font-size: var(--cocoon-text-size-s);
   font-weight: unset!important;
   height: 40px;
-  line-height: 40px;
   margin: 0;
-  padding: 0;
+  padding: 0 var(--padding15);
+  place-content: center;
   position: relative;
   text-align: center;
   width: 100%;
@@ -245,8 +270,13 @@ if (!get_theme_mod('hvn_border_setting', true)) {
 .body .list .e-card {
   background-color: transparent;
   border-radius: 0;
-  padding: 0!important;
+  padding: 0;
   overflow: unset;
+}
+
+.body .list:is(.list.big-card, .ect-big-card) {
+  background-color: transparent;
+  padding: 0;
 }
 
 EOF;
@@ -267,7 +297,7 @@ EOF;
 //******************************************************************************
 $color = get_footer_background_color();
 if ($color == null || $color == "#ffffff") {
-  $color = 'ffffff';
+  $color = '#ffffff';
 }
 
 if (is_dark_hexcolor($color)) {
@@ -288,6 +318,10 @@ echo <<< EOF
 .navi-footer-in > .menu-footer li:last-child,
 .footer .footer-in .footer-bottom-content {
   border-color: {$color};
+}
+
+.hvn-dark-switch label:before {
+  color: {$color};
 }
 
 EOF;
@@ -347,10 +381,6 @@ EOF;
 if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') != 'none')) {
   if (!is_admin()) {
     echo <<< EOF
-body {
-  visibility: hidden;
-}
-
 .loader-bg {
   background-color: var(--body-color);
   display: grid;
@@ -371,9 +401,45 @@ EOF;
 //******************************************************************************
 //  オリジナルレイアウト
 //******************************************************************************
-if ((is_front_page_type_category_2_columns() || is_front_page_type_category_3_columns())
- && (is_entry_card_type_vertical_card_2() || is_entry_card_type_vertical_card_3())) {
- echo <<< EOF
+
+
+//******************************************************************************
+//  拡張タイプ
+//******************************************************************************
+if (get_theme_mod('hvn_card_expansion_setting')) {
+
+  // カード2列
+  $css1 =<<< EOF
+.list {
+  --column: 2;
+}
+
+@media (width <=834px)  {
+  .list {
+    --column: 1;
+  }
+}
+
+EOF;
+
+  // 大きなカード(先頭のみ)
+  $css2 =<<< EOF
+.front-top-page .list .a-wrap:first-child {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+@media (width <=834px)  {
+  .front-top-page .list .a-wrap:first-child {
+    grid-column: unset;
+    grid-row: unset;
+  }
+}
+
+EOF;
+
+  // 縦型カード2、3列+カテゴリーごと(2、3カラム)
+  $css3 =<<< EOF
 .body .list-new-entries .card-content,
 .body .list-popular .card-content {
   padding: 0 0 var(--gap30)!important;
@@ -425,24 +491,84 @@ if ((is_front_page_type_category_2_columns() || is_front_page_type_category_3_co
 }
 
 EOF;
+
+  // 大きなカード
+  $css4 =<<< EOF
+.list:is(.list.big-card, .ect-big-card) {
+  background-color: var(--white-bgcolor);
+  padding: var(--gap30) var(--main-padding);
+  border-radius: var(--border-radius10);
+}
+
+.list:is(.list.big-card, .ect-big-card) .a-wrap .entry-card {
+  border-bottom: 1px dotted var(--border-color);
+  border-radius: 0;
+  padding: 0 0 var(--gap30) 0;
+}
+
+.list:is(.list.big-card, .ect-big-card) .a-wrap:last-child .entry-card {
+  border: 0;
+  padding-bottom: 0;
+}
+
+.list:is(.list.big-card, .ect-big-card) .a-wrap:hover img {
+  transform: unset;
+}
+
+EOF;
+
+  // カードタイプ
+  $card = [
+    'entry_card'      => 0,
+    'big_card_first'  => 1,
+    'big_card'        => 2,
+    'vertical_card_2' => 3,
+    'vertical_card_3' => 4
+  ];
+
+  // フロントページタイプ
+  $type = [
+    'index'               => 0,
+    'tab_index'           => 1,
+    'category'            => 2,
+    'category_2_columns'  => 3,
+    'category_3_columns'  => 4
+  ];
+
+  // CSS
+  $css_array = [
+    [1, 1, 1, 1, 1],
+    [0, 0, 2, 2, 2],
+    [5, 5, 5, 5, 5],
+    [0, 0, 3, 4, 4],
+    [0, 0, 0, 4, 4]
+  ];
+
+  $css =[ 0, $css1, $css1 . $css2, $css2, $css3, $css4];
+  $no = $css_array[$card[get_entry_card_type()]][$type[get_front_page_type()]];
+
+  if ($no) {
+    echo $css[$no];
+  }
 }
 
 
 //******************************************************************************
 //  カテゴリーごと背景色
 //******************************************************************************
-if ((get_theme_mod('entry_card_type') == 'vertical_card_3'
- || get_theme_mod('front_page_type') == 'category_3_columns')
-  && get_theme_mod('hvn_category_color_setting')) {
-  $color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
-  $rgb = hvn_color_mix_rgb($color, 0.25);
+if (get_theme_mod('hvn_category_color_setting')) {
+  if (is_entry_card_type_vertical_card_3()
+   || is_front_page_type_category_3_columns()) {
+    $color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
+    $rgb = hvn_color_mix_rgb($color, 0.25);
 
-  echo <<< EOF
+    echo <<< EOF
 :root {
   --category-color: {$rgb['red']}, {$rgb['green']}, {$rgb['blue']};
 }
 
 .front-top-page.no-sidebar #list-columns {
+  --title-color: #333;
   background-color: rgb(var(--category-color), 1);
   margin: 0 calc(50% - 50vw);
   padding: var(--gap30) calc(50vw - 50%);
@@ -458,8 +584,17 @@ if ((get_theme_mod('entry_card_type') == 'vertical_card_3'
 }
 
 EOF;
-  if (get_theme_mod('hvn_header_wave_setting')) {
-    echo <<< EOF
+    if (!get_theme_mod('hvn_border_setting', true)) {
+      echo <<< EOF
+.hvn-dark #list-columns {
+  --cocoon-text-color: #333;
+}
+
+EOF;
+    }
+
+    if (get_theme_mod('hvn_header_wave_setting')) {
+      echo <<< EOF
 .hvn-wave-category {
   --body-rgb-color: var(--category-color);
   display: block;
@@ -470,6 +605,7 @@ EOF;
 }
 
 EOF;
+    }
   }
 }
 
@@ -488,6 +624,51 @@ if (get_theme_mod('hvn_front_none_setting')) {
 EOF;
 }
 
+//******************************************************************************
+//  目次スタイル
+//******************************************************************************
+switch(get_theme_mod('hvn_toc_style_setting')) {
+  case 1:
+    echo <<< EOF
+.main .toc {
+  padding: 0;
+}
+
+.main .toc-title {
+  background-color: var(--border-color);
+  border: 0;
+  color: #333;
+  margin: 0;
+  padding: var(--padding15);
+}
+
+.main .toc-content {
+  padding: var(--gap30) var(--main-padding);
+}
+
+EOF;
+
+    break;
+
+  case 2:
+    echo <<< EOF
+.main .toc {
+  background-clip: padding-box;
+  background-color: var(--gray-bgcolor);
+  border: 0;
+  border-bottom: 4px double var(--border-color);
+  border-top: 4px double var(--border-color);
+}
+
+.main .toc-title {
+  border:0;
+  margin-bottom:0;
+}
+
+EOF;
+    break;
+}
+
 
 //******************************************************************************
 //  目次ハイライト
@@ -500,6 +681,97 @@ if (get_theme_mod('hvn_toc_setting')) {
 
 .hvn-scroll-toc .sidebar-scroll .toc-content li:before {
   color: var(--hover-color);
+}
+
+EOF;
+}
+
+
+//******************************************************************************
+//  目次ボタン
+//******************************************************************************
+if (get_theme_mod('hvn_toc_fix_setting')) {
+  echo <<< EOF
+.hvn-modal {
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+#hvn-open:checked + .hvn-modal {
+  animation:hvn-animation .3s;
+  display:block;
+}
+
+.hvn-content-wrap {
+  background-color: var(--white-bgcolor);
+  border: 0;
+  overflow-y: auto;
+  padding: var(--gap30);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  z-index: 2;
+}
+
+#hvn-toc .hvn-title {
+  border-bottom: 1px dotted var(--border-color);
+  margin-bottom: var(--gap30);
+  padding: 0 0 var(--padding15);
+  text-align: center;
+}
+
+.hvn-background {
+  background-color: rgba(0, 0, 0, .50);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.hvn-open-btn {
+  align-items: center;
+  background-color: var(--white-bgcolor);
+  border-radius: var(--border-radius100);
+  border: 1px solid var(--main-color);
+  bottom: 110px;
+  box-shadow: var(--shadow-color);
+  color: var(--main-color);
+  display: grid;
+  height: 50px;
+  place-content: center;
+  position: fixed;
+  right: var(--gap30);
+  visibility: hidden;
+  width: 50px;
+  z-index: 999;
+}
+
+.hvn-open-btn.active{
+  visibility: visible;
+}
+
+@keyframes hvn-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (width <=1023px) {
+  #hvn-toc {
+    display: none;
+  }
 }
 
 EOF;
@@ -668,6 +940,96 @@ if ($_HVN_EYECATCH) {
   right: -5px;
   top: -5px;
   z-index: 0;
+}
+
+EOF;
+}
+
+
+//******************************************************************************
+//  アコーディオン化
+//******************************************************************************
+if (get_theme_mod('hvn_accordion_setting')) {
+  echo <<< EOF
+.body :is(.widget_pages, .body .widget_archive, .widget_categories) ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.body :is(.widget_pages, .widget_archive, .widget_categories)  a {
+  background-color: unset;
+  border-radius: 0;
+  border-top: 1px dotted #ccc;
+  color: var(--cocoon-text-color);
+  justify-content: unset;
+  padding: 3px 5px;
+}
+
+.body :is(.widget_pages, .widget_archive, .widget_categories) > ul > li:first-of-type > a {
+  border: 0;
+}
+
+:is(.widget_pages, .widget_archive, .widget_categories) .children a {
+  padding-left: calc(1.5em + 5px);
+}
+
+:is(.widget_pages, .widget_archive, .widget_categories) ul:not(.children) > li > a:before {
+  content: '\\f07b';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+:is(.widget_pages, .widget_archive, .widget_categories, .widget_tag_cloud) button {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: grid;
+  height: 20px;
+  place-content: center;
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  transition: .3s;
+  width: 20px;
+}
+
+:is(.widget_pages, .widget_archive, .widget_categories, .widget_tag_cloud) button:before {
+  color: #ccc;
+  content: '\\f078';
+  display: block;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 5px;
+  font-weight: bold;
+  transition: transform .3s;
+}
+
+:is(.widget_pages, .widget_archive, .widget_categories, .widget_tag_cloud) button.active:before {
+  transform: rotate(-180deg);
+}
+
+.widget_categories .post-count,
+.widget_archive .post-count {
+  margin-left:auto;
+  padding-right: 2em;
+}
+
+.sidebar .widget_tag_cloud .close,
+.sidebar .widget_tag_cloud .tagcloud a {
+  width: 100%;
+}
+
+.widget_tag_cloud .close {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.widget_tag_cloud button {
+  margin-top: 5px;
+  position: unset;
+  width: 100%;
 }
 
 EOF;

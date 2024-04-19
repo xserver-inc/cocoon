@@ -5,6 +5,7 @@ if (!defined('ABSPATH')) exit;
 global $_THEME_OPTIONS;
 global $_MOBILE_COPY_BUTTON;
 global $_HVN_EYECATCH;
+global $_HVN_NOTICE;
 
 $skin_url = get_skin_url();
 // ふわっと追加
@@ -54,7 +55,7 @@ $_THEME_OPTIONS = array(
   'site_background_color' => '',
   'site_background_image_url' => '',
   'align_site_width' => 0,
-  'site_link_color' => '',
+  'site_link_color' => '#1e88e5',
   'site_selection_color' =>'',
   'site_selection_background_color' => '',
   'sidebar_position' => 'sidebar_right',
@@ -204,7 +205,6 @@ $_THEME_OPTIONS = array(
   'comment_form_display_type' => 'toggle_button',
 
 // おすすめカード
-  'recommended_cards_style' => 'large_thumb_on',
   'recommended_cards_margin_enable' => 1,
   'recommended_cards_area_both_sides_margin_enable' => 1,
 

@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 0.1.3
+ Version: 1.0.1
  Priority: 6900001000
 */
 
@@ -52,6 +52,26 @@
 **                            FAQのCSS修正
 **                            タイムライン(ミニ)を追加
 **        0.1.3   2023-04-01  バグ対策
+**        1.0.0   2023-04-18  カスタマイザーエディターを追加
+**                            タイムライン(ライン)を追加
+**                            見出しデザインH2(塗りつぶしアクセント)を追加
+**                            見出しデザインH3(角括弧)を追加
+**                            FAQのCSS修正
+**                            大きなカードのCSS修正
+**                            「いいね」ボタンをLocalStorageに変更
+**                            拡張タイプを追加
+**                            目次スタイルを追加
+**                            アコーディオン化を追加
+**                            カテゴリーごと(2、3カード)縦型カードを追加
+**                            プロフィールのSNSフォローを非表示を追加
+**                            目次ボタンを追加
+**                            ダークモードを追加
+**                            タイトルとURLをコピーを変更
+**                            通知メッセージ複数表示を追加
+**                            エントリーカードにリボンを追加
+**                            タブのCSS追加
+**                            プルクオートのCSS追加
+**        1.0.1   2023-04-19  バグ対策
 **
 *******************************************************************************/
 
@@ -65,9 +85,9 @@
   --cocoon-badge-border-radius: 0;
   --cocoon-basic-border-radius: 0;
   --cocoon-middle-border-radius: 0;
-  --cocoon-middle-thickness-color: var( --border-color);
-  --cocoon-thin-color: var( --border-color);
-  --cocoon-three-d-border-colors: var( --border-color);
+  --cocoon-middle-thickness-color: var(--border-color);
+  --cocoon-thin-color: var(--border-color);
+  --cocoon-three-d-border-colors: var(--border-color);
   --cocoon-text-size-s: 14px;
   --cocoon-list-padding: 0;
   --cocoon-list-wide-padding: var(--padding15) var(--padding15) var(--padding15) 40px;
@@ -116,6 +136,10 @@
 .footer,
 .ect-3-columns {
   --column: 3;
+}
+
+.fpt-columns .list {
+  --column: 1;
 }
 
 .fpt-2-columns {
@@ -414,12 +438,17 @@ img {
   opacity: 1;
 }
 
-.notice-area-link .notice-area:after {
+.notice-area-link .swiper-slide:after,
+.notice-area-link:not(:has(.swiper)) .notice-area-message:after {
   background-color: rgb(255 255 255 / 40%);
   border-radius: 100px;
   content: '詳細はこちら';
   margin-left: 5px;
   padding: 3px 10px;
+}
+
+.notice-area-message .swiper {
+  height: 40px;
 }
 
 
@@ -450,6 +479,26 @@ img {
   background-color: rgb(var(--appeal-bgcolor), 0.85);
   border-radius: var(--border-radius10);
   padding: var(--gap30) var(--main-padding);
+}
+
+
+/* 背景画像固定 */
+
+.ba-fixed.appeal {
+  clip-path: inset(0 0 0 0);
+}
+
+.ba-fixed.appeal:before {
+  background-image: inherit;
+  background-position: top center;
+  background-size: cover;
+  content: '';
+  height: 100vh;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
 }
 
 
@@ -488,6 +537,17 @@ img {
 
 .body .recommended .navi-entry-cards .a-wrap:nth-of-type(n+5) {
   display: none;
+}
+
+
+/* 画像のみ */
+
+.body .recommended.rcs-image-only .card-title {
+  display: none;
+}
+
+.body .recommended.rcs-image-only .card-content {
+  background-color: unset!important;
 }
 
 
@@ -618,7 +678,7 @@ img {
 .footer-in {
   display: flex;
   flex-direction: column;
-  gap: var( --gap30);
+  gap: var(--gap30);
   padding: var(--gap30) 10px 0;
 }
 
@@ -789,13 +849,13 @@ span.fas.fa-history:before {
   border-radius: var(--border-radius100);
   box-shadow: var(--shadow-color);
   color: unset;
-  display: block;
+  display: grid;
   font-size: var(--cocoon-text-size-s)!important;
   font-weight: normal;
-  min-height: 40px;
-  line-height: 40px;
   margin: 0;
+  min-height: 40px;
   padding: 0!important;
+  place-content: center;
   transition: none!important;
 }
 
@@ -1126,12 +1186,8 @@ span.fas.fa-history:before {
 }
 
 .main .toc {
-  background-clip: padding-box;
-  background-color: var(--gray-bgcolor);
-  border: 0;
-  border-bottom: 4px double var(--border-color);
-  border-top: 4px double var(--border-color);
-  padding: var(--main-padding);
+  border: 1px solid var(--border-color);
+  padding: var(--gap30) var(--main-padding);
 }
 
 .main .widget_toc .main-widget-label {
@@ -1143,8 +1199,10 @@ span.fas.fa-history:before {
 }
 
 .main .toc-title {
+  border-bottom: 1px dotted var(--border-color);
   display: block;
-  font-size: unset;
+  font-size: 16px;
+  margin-bottom: var(--gap30);
   padding: 0 0 var(--padding15);
 }
 
@@ -1621,6 +1679,10 @@ span.fas.fa-history:before {
 **
 *******************************************************************************/
 
+.mobile-menu-buttons {
+  color: var(--cocoon-text-color);
+}
+
 .mobile-menu-buttons .menu-button > a,
 .mobile-menu-buttons .menu-caption,
 .mobile-menu-buttons .menu-icon {
@@ -1707,7 +1769,7 @@ span.fas.fa-history:before {
 **
 *******************************************************************************/
 
- :is(.content-top, .content-bottom, .sidebar-scroll, .footer-widgets):not(:has(.widget)) {
+:is(.content-top, .content-bottom, .sidebar-scroll, .footer-widgets):not(:has(.widget)) {
   display: none!important;
 }
 
@@ -1841,6 +1903,7 @@ aside.widget .widget-title {
   background-color: unset;
   border-top-left-radius: var(--border-radius10);
   border-top-right-radius: var(--border-radius10);
+  color: var(--cocoon-text-color);
   font-size: 16px;
   font-weight: bold;
   line-height: 1.8;
@@ -1943,14 +2006,12 @@ aside.widget .widget-title {
 }
 
 .front-top-page .ect-big-card-first .a-wrap:first-child .card-title,
-.body .ect-big-card .card-title,
 .body .ect-vertical-card .card-title,
 .body .large-thumb .card-title {
   height: calc(1.4em * var(--title-line));
 }
 
 .front-top-page .ect-big-card-first .a-wrap:first-child .card-snippet,
-.ect-big-card .card-snippet,
 .ect-vertical-card .card-snippet,
 .large-thumb .card-snippet {
   border-top: 3px dotted var(--border-color);
@@ -2019,7 +2080,8 @@ aside.widget .widget-title {
 }
 
 .body .large-thumb-on .card-title {
-  color: #fff;
+  background-color: unset!important;
+  color: #fff!important;
   height: unset!important;
   margin: 0 10px;
 }
@@ -2032,10 +2094,6 @@ aside.widget .widget-title {
 /*******************************************************************************
 **  横型表示
 *******************************************************************************/
-
-.body .swiper {
-  padding: 0 1px;
-}
 
 .swiper-wrapper {
   margin: 0;
@@ -2344,7 +2402,7 @@ aside.widget .widget-title {
 }
 
 .author-box .author-name a {
-  color: unset;
+  color: var(--cocoon-text-color);
   font-size: 16px;
   line-height: 1.8;
   text-decoration: none;
@@ -2373,7 +2431,7 @@ aside.widget .widget-title {
   background-color: unset!important;
   border: 1px solid var(--cocoon-text-color);
   border-radius: 0;
-  color: unset;
+  color: var(--cocoon-text-color);
   display: flex;
   height: 30px;
   opacity: 1!important;
@@ -2702,20 +2760,20 @@ aside.widget .widget-title {
 
 .comment-content,
 .recent-comment-content {
+  background-color: var(--gray-bgcolor);
+  border: 0;
+  border-radius: 0;
   font-size: 16px;
   line-height: 1.8;
   margin-top: 10px;
-  background-color: var(--gray-bgcolor);
   padding: var(--padding15);
-  border: 0;
-  border-radius: 0;
   position: relative;
 }
 
 .recent-comment-article {
   color: var(--s-text-color);
-  margin-top: 5px;
   font-size: var(--cocoon-text-size-s);
+  margin-top: 5px;
   line-height: 1.4;
 }
 
@@ -2723,11 +2781,11 @@ aside.widget .widget-title {
 .recent-comment-content:before {
   border: 10px solid transparent;
   border-bottom-color: var(--gray-bgcolor);
-  position: absolute;
   content: '';
-  top: -20px;
-  margin: 0;
   left: 10px;
+  margin: 0;
+  position: absolute;
+  top: -20px;
 }
 
 .recent-comment-content:after {
@@ -2743,8 +2801,8 @@ aside.widget .widget-title {
 }
 
 .body .widget .recent-comments {
-  margin: var(--padding15) 0;
   border-bottom: 1px dotted var(--border-color);
+  margin: var(--padding15) 0;
   padding-bottom: var(--padding15);
 }
 
@@ -2758,9 +2816,9 @@ aside.widget .widget-title {
 }
 
 .body .widget .recent-comments:last-of-type {
+  border: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  border: 0;
 }
 
 
@@ -2770,8 +2828,8 @@ aside.widget .widget-title {
 
 .widget select {
   background-color: unset;
-  display: block;
   color: var(--cocoon-text-color);
+  display: block;
   outline: 0;
 }
 
@@ -2779,6 +2837,7 @@ aside.widget .widget-title {
 .body .widget_categories li,
 .body .widget_pages li {
   margin: 0;
+  position: relative;
 }
 
 
@@ -2807,8 +2866,8 @@ aside.widget .widget-title {
 
 .body .wp-calendar-table td,
 .wp-calendar-table th {
-  padding: 0!important;
   line-height: calc(1.8em + 6px);
+  padding: 0!important;
 }
 
 .wp-calendar-table td a,
@@ -2866,7 +2925,7 @@ aside.widget .widget-title {
 .body .widget_categories a:hover,
 .body .widget_tag_cloud a:hover,
 .body .widget_pages a:hover {
-  background-color: var(--hover-color);
+  background-color: var(--hover-color)!important;
 }
 
 .tag-link,
@@ -2956,7 +3015,7 @@ aside.widget .widget-title {
 **  検索
 *******************************************************************************/
 
- :placeholder {
+:placeholder {
   color: transparent;
 }
 
@@ -3109,10 +3168,6 @@ aside.widget .widget-title {
   margin-bottom: 0;
 }
 
-table {
-  border-collapse: collapse!important;
-}
-
 figure.wp-block-table table,
 .body table {
   width: 100%;
@@ -3186,38 +3241,34 @@ table tr:nth-of-type(2n+1),
 **  アイコンボックス
 *******************************************************************************/
 
+blockquote,
+.is-style-comment-box,
 .is-style-profile-box,
 .profile-box,
-.is-style-comment-box,
-.comment-box,
-blockquote {
+.comment-box {
+  border-color: #ccc;
   background-color: #f9f9f9;
-  border: 0;
-  border-radius: 0;
-  color: #333;
-  padding: var(--padding15) var(--padding15) var(--padding15) calc(1em + var(--padding15) * 3);
 }
 
 blockquote:before {
-  border-right: 1px dashed #999;
-  color: #999;
   content: '\f10d';
-  display: grid;
-  font-family: 'Font Awesome 5 Free';
-  font-size: 16px;
   font-weight: 900;
-  inset: 0;
-  line-height: 1;
-  margin: var(--padding15) 0;
-  place-content: center;
-  text-align: center;
-  width: calc(1em + var(--padding15) * 2);
 }
 
 blockquote:after {
   content: none;
 }
 
+blockquote:before,
+.is-style-comment-box:before,
+.is-style-profile-box:before,
+.profile-box:before,
+.comment-box:before {
+  border-color: #ccc;
+  color: #ccc;
+}
+
+blockquote,
 .is-style-information-box,
 .is-style-question-box,
 .is-style-alert-box,
@@ -3231,11 +3282,6 @@ blockquote:after {
 .information-box,
 .question-box,
 .alert-box,
-.information,
-.question,
-.alert,
-.memo-box,
-.comment-box,
 .common-icon-box {
   border-radius: 0;
   border-width: 0;
@@ -3243,6 +3289,7 @@ blockquote:after {
   padding: var(--padding15) var(--padding15) var(--padding15) calc(1em + var(--padding15) * 3);
 }
 
+blockquote:before,
 .is-style-information-box:before,
 .is-style-question-box:before,
 .is-style-alert-box:before,
@@ -3256,16 +3303,13 @@ blockquote:after {
 .information-box:before,
 .question-box:before,
 .alert-box:before,
-.information:before,
-.question:before,
-.alert:before,
-.memo-box:before,
-.comment-box:before,
 .common-icon-box:before {
   border-right: 1px dashed;
   display: grid;
+  font-family: 'Font Awesome 5 Free';
   font-size: 16px;
   inset: 0;
+  line-height: 1.8;
   margin: var(--padding15) 0;
   padding: 0;
   place-content: center;
@@ -3342,12 +3386,14 @@ blockquote:after {
   font-family: unset;
 }
 
-.blank-box.bb-tab:before,
+.blank-box.bb-tab::before,
 .blank-box.bb-tab .bb-label {
   border-radius: 0;
   font-size: var(--cocoon-text-size-s);
+  line-height: 25px;
   left: -1px;
   padding: 0 var(--padding15);
+  top: -25.5px;
 }
 
 .blank-box.bb-tab {
@@ -3378,11 +3424,11 @@ blockquote:after {
   border-radius: 0;
   color: var(--cocoon-text-color);
   font-size: var(--cocoon-text-size-s);
-  left: auto;
+  left: 14px;
   letter-spacing: normal;
-  line-height: 1.8;
+  line-height: 25px;
   padding: 0 var(--padding15);
-  top: -0.9em;
+  top: -12.5px;
 }
 
 .body .blogcard-thumbnail {
@@ -3395,8 +3441,14 @@ blockquote:after {
 **  アイコンリスト
 *******************************************************************************/
 
-.body .iconlist-box {
+.iconlist-box {
   padding-left: 0;
+}
+
+.iconlist-box:has(.iconlist-title:empty) {
+  --cocoon-custom-border-color: transparent;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .body .iconlist-box :is(ul, ol) {
@@ -3420,7 +3472,7 @@ blockquote:after {
 }
 
 .toggle-button {
-  background-color: #eee;
+  background-color: var(--border-color);
   border: 0;
   color: #333;
   padding: var(--padding15);
@@ -3457,8 +3509,8 @@ blockquote:after {
 
 /* FAQ */
 
-.body .faq {
-  line-height: 1.8;
+.faq-wrap:not(.is-style-square, .is-style-accordion) {
+  --cocoon-custom-border-color: transparent;
 }
 
 .faq-wrap.is-style-accordion {
@@ -3466,21 +3518,25 @@ blockquote:after {
 }
 
 .body .faq .faq-item-label {
+  font-size: 16px!important;
   font-weight: bold;
-  font-size: unset!important;
   margin-right: 0.5em;
   padding: 0!important;
   text-align: center;
-  width: 1.8em;
+  width: 1.8em!important;
+}
+
+.faq-item-content {
+  margin: 0;
 }
 
 .is-style-accordion .faq-question {
-  background-color: #eee!important;
-  padding: var(--padding15)!important;
+  background-color: var(--border-color);
 }
 
-.is-style-accordion .faq-answer {
-  padding: var(--padding15)!important;
+.is-style-accordion .faq-item {
+  color: #333;
+  padding: var(--padding15);
 }
 
 .is-style-accordion .faq-question:before {
@@ -3555,10 +3611,10 @@ div.search-form {
 
 .timeline-item:before {
   background-color: var(--main-color);
-  top: 20px;
-  width: 16px;
   height: 16px;
   left: 103px;
+  top: 20px;
+  width: 16px;
 }
 
 .timeline-item:last-of-type .timeline-item-content {
@@ -3575,13 +3631,14 @@ div.search-form {
 }
 
 .caption-box {
-  border-color: var(--border-color);
+  --cocoon-custom-border-color: var(--border-color);
+  border-color: var(--cocoon-custom-border-color);
   border-width: 1px;
-  line-height: 24px!important;
 }
 
-.caption-box-label {
-  background-color: #eee;
+.caption-box .caption-box-label,
+.caption-box.not-nested-style:not(.has-border-color) .caption-box-label {
+  background-color: var(--border-color);
   color: #333;
   padding: var(--padding15);
 }
@@ -3604,10 +3661,11 @@ div.search-form {
 .tab-caption-box-label {
   border-radius: 0;
   color: #fff!important;
+  display: block;
   font-size: var(--cocoon-text-size-s);
+  line-height: 25px;
   padding: 0 var(--padding15);
-  position: absolute;
-  top: calc(-1.8em + 1px);
+  width: fit-content;
 }
 
 .tab-caption-box-content {
@@ -3621,32 +3679,28 @@ div.search-form {
 **  ラベルボックス
 *******************************************************************************/
 
+.label-box {
+  position: relative;
+}
+
 .label-box-label {
-  display: inline-flex;
+  background-color: var(--white-bgcolor);
+  display: block;
   font-size: var(--cocoon-text-size-s);
   font-weight: normal;
+  line-height: 25px;
   margin: 0 var(--padding15);
   padding: 0 var(--padding15);
-  position: relative;
+  position: absolute;
   text-shadow: none;
-  z-index: 1;
+  top: -12.5px;
+  width: fit-content;
 }
 
 .label-box-content {
   border-width: 1px;
+  margin: calc(12.5px + var(--gap30)) 0 0 0;
   padding: var(--padding15);
-}
-
-.label-box-label:after {
-  background-color: var(--white-bgcolor);
-  content: '';
-  display: block;
-  height: 3px;
-  left: 0;
-  position: absolute;
-  top: calc((1.8em - 3px) / 2);
-  width: 100%;
-  z-index: -1;
 }
 
 
@@ -3673,6 +3727,19 @@ div.search-form {
 
 
 /*******************************************************************************
+**  インラインボタン
+*******************************************************************************/
+
+[class*=inline-button] {
+  display: inline-flex;
+}
+
+[class*=inline-button-white-] {
+  border-width: 2px;
+}
+
+
+/*******************************************************************************
 **  テキスト
 *******************************************************************************/
 
@@ -3681,9 +3748,10 @@ div.search-form {
 
 .keyboard-key {
   background-color: var(--white-bgcolor);
+  box-shadow: none;
   color: var(--cocoon-text-color);
-  border-radius: 0;
   font-size: 16px;
+  margin: 0 3px;
 }
 
 
@@ -3726,6 +3794,71 @@ div.search-form {
 
 
 /*******************************************************************************
+**  インラインコード
+*******************************************************************************/
+
+:not(pre) > code {
+  background: #f7f7f7;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  color: var(--cocoon-text-color);
+  font-family: Menlo, Consolas, sans-serif;
+  letter-spacing: 0;
+  margin: 0 3px;
+  padding: 1px 3px;
+}
+
+
+/*******************************************************************************
+**  プルクオート
+*******************************************************************************/
+
+.wp-block-pullquote {
+  font-size: 16px;
+  padding: 0;
+  text-align: unset;
+}
+
+.wp-block-pullquote blockquote:before,
+.wp-block-pullquote blockquote:after {
+  box-sizing: border-box;
+  height: 46px;
+  margin: 0;
+  position: absolute;
+  width: 46px;
+}
+
+.wp-block-pullquote blockquote {
+  background-color: #f9f9f9!important;
+  border: 0;
+}
+
+.wp-block-pullquote blockquote:before {
+  background-color: unset;
+  border-left: 1px solid var(--main-color)!important;
+  border-right: 0!important;
+  border-top: 1px solid var(--main-color)!important;
+  color: var(--main-color)!important;
+}
+
+.wp-block-pullquote blockquote:after {
+  border-bottom: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
+  bottom: 0;
+  content: '';
+  display: block;
+  right: 0;
+}
+
+.wp-block-pullquote cite {
+  color: var(--s-text-color);
+  display: block;
+  font-size: var(--cocoon-text-size-s);
+  text-align: right;
+}
+
+
+/*******************************************************************************
 **  wpForo
 *******************************************************************************/
 
@@ -3742,12 +3875,48 @@ div.search-form {
 }
 
 .body .wpforo-widget-wrap .wpforo-widget-content li:last-child {
-  padding-bottom: 0!important;
   border-bottom: 0;
+  padding-bottom: 0!important;
 }
 
 .body .wpforo-widget-wrap .wpforo-widget-content li {
   padding: var(--padding15) 0!important;
+}
+
+
+/*******************************************************************************
+**  タブ
+*******************************************************************************/
+
+.tab-label-group {
+  gap: 0;
+  padding-bottom: var(--gap30);
+}
+
+.tab-label-group .tab-label {
+  background-color: transparent;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+  color: var(--cocoon-text-color);
+  display: grid;
+  font-size: var(--cocoon-text-size-s);
+  font-weight: unset;
+  height: 40px;
+  padding: 0 var(--padding15);
+  place-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.tab-label-group .tab-label.is-active {
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
+.tab-content-group {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
 }
 
 
@@ -3758,21 +3927,21 @@ div.search-form {
 *******************************************************************************/
 
 @media (width >1023px) {
-  .sns-share {
+  .article-footer .sns-share {
+    height: fit-content;
     inset: 0 0 0 var(--gap30);
     margin: auto 0!important;
-    height: fit-content;
     position: fixed;
     width: fit-content;
     z-index: 1;
   }
-  .sns-share-message {
+  .article-footer .sns-share-message {
     display: none;
   }
-  .sns-share .sns-buttons {
+  .article-footer .sns-share .sns-buttons {
     flex-direction: column;
   }
-  .sns-share .sns-button {
+  .article-footer .sns-share .sns-button {
     border-radius: var(--border-radius100);
     box-shadow: var(--shadow-color)
   }
@@ -3803,8 +3972,8 @@ div.search-form {
     display: block;
   }
   .navi-footer-in > .menu-footer li.menu-item {
-    width: 100%;
     margin: 0;
+    width: 100%;
   }
   .scrollable-table th,
   .scrollable-table td {

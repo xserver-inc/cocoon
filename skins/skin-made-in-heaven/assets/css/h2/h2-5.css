@@ -15,7 +15,7 @@
 .main .under-entry-content h2:before {
   background-color: var(--main-color);
   bottom: -10px;
-  clip-path: polygon(0 0,100% 0, 50% 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
   content: '';
   height: 11px;
   left: 30px;

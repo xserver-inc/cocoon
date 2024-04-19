@@ -20,6 +20,21 @@ function hvn_color($wp_customize) {
 
 
   // コントロール
+  $wp_customize->add_setting('hvn_label1_decoration_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label1_decoration_section',
+      array(
+        'label'       => '■ 基本カラー',
+        'section'     => 'hvn_decoration_section',
+        'settings'    => 'hvn_label1_decoration_section',
+        'type'        => 'hidden',
+      )
+    )
+  );
+
+
   $wp_customize->add_setting('hvn_main_color_setting', array('default' => HVN_MAIN_COLOR));
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
@@ -57,6 +72,21 @@ function hvn_color($wp_customize) {
         'description' => 'テキストカラー',
         'section'     => 'hvn_decoration_section',
         'settings'    => 'hvn_text_color_setting',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_label2_decoration_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label2_decoration_section',
+      array(
+        'label'       => '■ 個別カラー',
+        'section'     => 'hvn_decoration_section',
+        'settings'    => 'hvn_label2_decoration_section',
+        'type'        => 'hidden',
       )
     )
   );
@@ -127,6 +157,21 @@ function hvn_color($wp_customize) {
         'description' => 'フッター背景カラー',
         'section'     => 'hvn_decoration_section',
         'settings'    => 'footer_background_color',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_label3_decoration_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label3_decoration_section',
+      array(
+        'label'       => '■ 見出しデザイン',
+        'section'     => 'hvn_decoration_section',
+        'settings'    => 'hvn_label1_decoration_section',
+        'type'        => 'hidden',
       )
     )
   );

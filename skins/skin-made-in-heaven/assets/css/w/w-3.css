@@ -4,5 +4,6 @@
 
 aside.widget .widget-title {
   border-left: 10px solid var(--main-color);
+  border-radius: 0;
   padding: 10px;
 }

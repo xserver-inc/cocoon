@@ -1,18 +1,20 @@
 @charset "UTF-8";
 
-/* 標準(付箋) */
+/* 塗りつぶし(アクセント) */
 
 .article h2,
 .main .article .widget-title,
 .main .under-entry-content h2 {
   background-color: var(--hover-color);
-  border-left: 10px solid var(--main-color);
+  border: 2px solid #333;
+  box-shadow: 6px 6px #333;
   color: #333;
-  padding: 20px 15px!important;
+  outline: 4px solid var(--white-bgcolor);
+  padding: 18px 23px!important;
 }
 
 .hvn-dark .article h2,
 .hvn-dark .main .article .widget-title,
 .hvn-dark .main .under-entry-content h2 {
-  color: var(--cocoon-text-color);
+  color : var(--cocoon-text-color);
 }

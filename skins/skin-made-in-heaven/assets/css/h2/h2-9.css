@@ -6,15 +6,22 @@
 .main .article .widget-title,
 .main .under-entry-content h2 {
   background-color: var(--hover-color);
+  color: #333;
   padding: 20px 25px!important;
+}
+
+.hvn-dark .article h2,
+.hvn-dark .main .article .widget-title,
+.hvn-dark .main .under-entry-content h2 {
+  color: var(--cocoon-text-color);
 }
 
 .article h2::before,
 .main .article .widget-title::before,
 .main .under-entry-content h2::before {
   border: dashed 1px var(--main-color);
-  inset: 4px auto auto 4px;
   box-sizing: border-box;
+  inset: 4px auto auto 4px;
   content: '';
   display: block;
   height: calc(100% - 8px);
