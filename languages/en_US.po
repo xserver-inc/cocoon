@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-04-20T02:13:15+00:00\n"
-"PO-Revision-Date: 2024-04-20 02:17\n"
+"PO-Revision-Date: 2024-04-20 03:20\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -103,7 +103,7 @@ msgstr "Accordion"
 #: functions.php:522
 #: lib/admin.php:403
 msgid "パターン"
-msgstr ""
+msgstr "Patterns"
 
 #: lib/admin-tinymce-qtag.php:24
 #: lib/tinymce/html-tags.php:136
@@ -5321,7 +5321,7 @@ msgstr "Enter the text to be displayed on the Yahoo! Shopping search button."
 #: lib/page-settings/apis-forms.php:199
 #: lib/page-settings/apis-funcs.php:254
 msgid "メルカリ"
-msgstr ""
+msgstr "mercari"
 
 #: lib/page-settings/apis-forms.php:204
 msgid "メルカリアンバサダーID"
@@ -8965,21 +8965,21 @@ msgstr "X (formerly Twitter)"
 #: lib/page-settings/sns-share-forms-top.php:58
 #: tmp/sns-share-buttons.php:21
 msgid "Mastodon"
-msgstr ""
+msgstr "Mastodon"
 
 #: lib/page-settings/sns-follow-forms.php:74
 #: lib/page-settings/sns-share-forms-bottom.php:74
 #: lib/page-settings/sns-share-forms-top.php:61
 #: tmp/sns-share-buttons.php:25
 msgid "Bluesky"
-msgstr ""
+msgstr "Bluesky"
 
 #: lib/page-settings/sns-follow-forms.php:75
 #: lib/page-settings/sns-share-forms-bottom.php:77
 #: lib/page-settings/sns-share-forms-top.php:64
 #: tmp/sns-share-buttons.php:29
 msgid "Misskey"
-msgstr ""
+msgstr "Misskey"
 
 #: lib/page-settings/sns-follow-forms.php:76
 #: lib/page-settings/sns-share-forms-bottom.php:80
@@ -12348,7 +12348,7 @@ msgstr "Follow LINE@"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
-msgstr ""
+msgstr "Logout"
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
@@ -12730,7 +12730,7 @@ msgstr "Green outline"
 
 #: blocks/src/block-extension/style-extension/border01.js:161
 msgid "[C] ボーダー"
-msgstr ""
+msgstr "[C] Border"
 
 #: blocks/src/block-extension/style-extension/border01.js:171
 #: blocks/src/block-extension/style-extension/border01.js:234
@@ -13675,7 +13675,7 @@ msgstr ""
 
 #: blocks/src/block/tab/edit.js:159
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #: blocks/src/block/tab/edit.js:258
 msgid "タブ設定"
