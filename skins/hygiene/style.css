@@ -1,9 +1,10 @@
 /*
   Skin Name: Hygiene
   Description:Cocoonらしさを薄めて、所々に青系とピンク系を基調としたグラデーションを取り入れたスキン。
-  Author: ハイジ
+  Author: ごー
+   Skin URI: https://go-blogs.com/cocoon/coccon-skin-hygiene/
   Screenshot URI:https://im-cocoon.net/wp-content/uploads/hygiene.png
-  Version: 1.1.5
+  Version: 1.1.6
   Priority: 9190000000
 */
 
@@ -268,12 +269,6 @@ border-bottom:4px solid #5572ff;
     font-family: serif;
     color: #9e9e9e;
 }
-
-
-
-
-
-
 /* HACK: シェアをかっこよく！ */
 .sns-share-message, .sns-share-buttons, .bc-brand-color-white.sns-share .sns-share-buttons a,
  .bc-brand-color.sns-share .sns-share-buttons a {
@@ -287,7 +282,8 @@ border-bottom:4px solid #5572ff;
 }
 .sns-share-buttons {
     text-align: center;
-    display: block;
+    margin-top: 0;
+    padding: 1em .5em;
 }
 .sns-buttons .sns-share-buttons{
   text-align: center;
@@ -301,13 +297,11 @@ border-bottom:4px solid #5572ff;
 }
 
 .sns-share .sns-share-buttons a {
-    flex-direction: unset;
     overflow: hidden;
-    height: 50px!important;
-    width: 45px!important;
+    height: 50px;
+    width: 55px;
     border: 1px solid #25125d;
     position: relative;
-    display: inline-block;
     text-decoration: none;
 }
 
@@ -329,16 +323,7 @@ border-bottom:4px solid #5572ff;
 .sns-share .sns-share-buttons a .button-caption.button-caption {
         display: none;
   }
-.sns-share-buttons a .share-count {
-    font-family: Arial, sans-serif;
-    right: 0px;
-    bottom: 0px;
-    font-size: 10px;
-    line-height: 3em;
-    margin: 0px!important;
-    position: relative;
-    color: #25125d;
-}
+
 
 .bc-brand-color .sns-share-buttons a .share-count,
 .bc-brand-color-white .sns-share-buttons a .share-count{
@@ -406,10 +391,7 @@ border-bottom:4px solid #5572ff;
   font-size: 28px;
   color: unset;
 }
-.bc-brand-color-white.sns-share .sns-share-buttons a {
-  border: none;
-  /*height: 63px!important;*/
-}
+
 .bc-brand-color-white.sns-share .sns-share-buttons a:hover .share-count,
 .bc-brand-color.sns-share .sns-share-buttons a:hover .share-count{
   color: transparent!important;
@@ -422,9 +404,16 @@ border-bottom:4px solid #5572ff;
   background: unset;
   font-size: 28px;
 }
-.bc-brand-color.sns-share .sns-share-buttons a {
+.bc-brand-color-white.sns-share .sns-share-buttons a,.bc-brand-color.sns-share .sns-share-buttons a {
   border: none;
-  /*height: 63px!important;*/
+  height: 70px;
+}
+.bc-brand-color-white.sns-share .sns-share-buttons a .share-count,.bc-brand-color.sns-share .sns-share-buttons a .share-count{
+  right: 50%;
+    transform: translatex(50%);
+    font-size: 9px;
+  font-weight: bold;
+
 }
 .bc-brand-color-white.sns-share .sns-share-buttons a:hover .social-icon{
   transform: rotate(720deg)scale(1.3);
@@ -492,17 +481,24 @@ border-bottom:4px solid #5572ff;
 
 
 
-.bc-brand-color.sns-share .sns-share-buttons a .share-count{
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-}
+
 
 .sns-share.sbc-hide a .social-icon {
   height: 45px;
   line-height: 42px;
 }
-
+/* モノクロ選択時 */
+.bc-monochrome .sns-share-buttons a{
+  display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+.bc-monochrome .sns-share-buttons a .share-count{
+  font-size: 9px;
+    color: #25125d;
+    right: 50%;
+    transform: translateX(50%);
+}
 /* HACK: フォローボタンをカッコよく！ */
 .sidebar .sns-follow-buttons, .footer .sns-follow-buttons{
   justify-content: center;
@@ -803,6 +799,15 @@ border-bottom:4px solid #5572ff;
 
 .sns-share-buttons a:hover .icon-mastodon {
   color: var(--cocoon-mastodon-color);
+}
+
+/* bluesky */
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-bluesky {
+  filter: drop-shadow(1px 1px 1px var(--cocoon-bluesky-color));
+}
+
+.sns-share-buttons a:hover .icon-bluesky {
+  color: var(--cocoon-bluesky-color);
 }
 
 /* misskey */
