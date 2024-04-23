@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-03T13:23:39+00:00\n"
-"PO-Revision-Date: 2024-04-06 12:44\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"POT-Creation-Date: 2024-04-20T02:13:15+00:00\n"
+"PO-Revision-Date: 2024-04-20 02:17\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
 "X-Crowdin-Project-ID: 568447\n"
@@ -21,64 +21,69 @@ msgstr ""
 "Language: ko_KR\n"
 
 #. Theme Name of the theme
+#: style.css
 msgid "Cocoon"
 msgstr "Cocoon"
 
 #. Theme URI of the theme
+#: style.css
 msgid "https://wp-cocoon.com/"
 msgstr "https://wp-cocoon.com/"
 
 #. Description of the theme
+#: style.css
 msgid "SEO・高速化・モバイルファースト最適化済みの無料テーマ。"
 msgstr "SEO, 속도, 모바일 퍼스트에 최적화된 무료 테마."
 
 #. Author of the theme
+#: style.css
 msgid "わいひら"
 msgstr "わいひら"
 
 #. Author URI of the theme
+#: style.css
 msgid "https://nelog.jp/"
 msgstr "https://nelog.jp/"
 
-#: blocks/src/init.php:275
+#: blocks/src/init.php:257
 msgid "Cocoonブロック"
 msgstr "Cocoon 블록"
 
-#: blocks/src/init.php:280
+#: blocks/src/init.php:262
 msgid "Cocoon汎用ブロック"
 msgstr "Cocoon 범용 블록"
 
-#: blocks/src/init.php:285
+#: blocks/src/init.php:267
 msgid "Cocoonマイクロコピー"
 msgstr "Cocoon 마이크로 카피"
 
-#: blocks/src/init.php:290
+#: blocks/src/init.php:272
 msgid "Cocoonレイアウト"
 msgstr "Cocoon 레이아웃"
 
-#: blocks/src/init.php:295
+#: blocks/src/init.php:277
 msgid "Cocoonショートコード"
 msgstr "Cocoon 숏 코드"
 
-#: blocks/src/init.php:300
+#: blocks/src/init.php:282
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon 이전 블록 에디터 (비추천)"
 
-#: comments.php:43
+#: comments.php:47
 msgid "Required fields are marked %s"
 msgstr ""
 
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL
-#: comments.php:59
+#: comments.php:63
 msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:68
 msgid "Your email address will not be published."
 msgstr "이메일은 공개되지 않습니다."
 
-#: comments.php:70
-#: comments.php:77
+#: comments.php:75
+#: comments.php:82
 msgid "コメントを書き込む"
 msgstr "댓글 작성"
 
@@ -93,6 +98,12 @@ msgstr "사각형 라벨"
 #: functions.php:389
 msgid "アコーディオン"
 msgstr "아코디언 박스"
+
+#: functions.php:521
+#: functions.php:522
+#: lib/admin.php:403
+msgid "パターン"
+msgstr "패턴"
 
 #: lib/admin-tinymce-qtag.php:24
 #: lib/tinymce/html-tags.php:136
@@ -134,8 +145,6 @@ msgstr "취소선"
 
 #: lib/admin-tinymce-qtag.php:32
 #: lib/admin-tinymce-qtag.php:826
-#: blocks/src/toolbutton/dropdown-badges.js:22
-#: blocks/src/toolbutton/dropdown-badges.js:35
 msgid "バッジ"
 msgstr "배지"
 
@@ -290,11 +299,11 @@ msgstr "메모"
 #: lib/block-editor-styles-group.php:49
 #: lib/block-editor-styles-paragraph.php:84
 #: lib/page-settings/comment-funcs.php:32
-#: lib/page-settings/sns-share-forms-bottom.php:95
-#: lib/page-settings/sns-share-forms-top.php:82
+#: lib/page-settings/sns-share-forms-bottom.php:104
+#: lib/page-settings/sns-share-forms-top.php:91
 #: lib/page-settings/_top-page.php:224
 #: tmp/mobile-comments-button.php:12
-#: tmp/sns-share-buttons.php:51
+#: tmp/sns-share-buttons.php:63
 #: blocks/src/block-extension/style-extension/style01.js:146
 #: blocks/src/block-extension/style-extension/style02.js:106
 #: blocks/src/block/icon-box/deprecated.js:102
@@ -460,7 +469,7 @@ msgstr "박스 (빈 상자)"
 #: lib/admin-tinymce-qtag.php:766
 #: lib/admin-tinymce-qtag.php:799
 #: lib/gutenberg.php:105
-#: lib/widgets/cta-box.php:182
+#: lib/widgets/cta-box.php:192
 #: blocks/src/block/sticky-box/deprecated.js:87
 #: blocks/src/block/sticky-box/edit.js:33
 #: blocks/src/old/tab-box/block.js:147
@@ -487,7 +496,7 @@ msgstr "회색"
 #: lib/admin-tinymce-qtag.php:771
 #: lib/admin-tinymce-qtag.php:804
 #: lib/gutenberg.php:80
-#: lib/widgets/cta-box.php:177
+#: lib/widgets/cta-box.php:187
 #: blocks/src/block/sticky-box/deprecated.js:91
 #: blocks/src/block/sticky-box/edit.js:37
 #: blocks/src/old/blank-box/block.js:72
@@ -521,7 +530,7 @@ msgstr "노랑"
 #: lib/admin-tinymce-qtag.php:776
 #: lib/admin-tinymce-qtag.php:809
 #: lib/gutenberg.php:20
-#: lib/widgets/cta-box.php:165
+#: lib/widgets/cta-box.php:175
 #: blocks/src/block/sticky-box/deprecated.js:95
 #: blocks/src/block/sticky-box/edit.js:41
 #: blocks/src/old/blank-box/block.js:76
@@ -533,6 +542,8 @@ msgstr "노랑"
 #: blocks/src/old/tab-caption-box/block.js:70
 #: blocks/src/old/toggle-box/block.js:73
 #: blocks/src/toolbutton/badge-red.js:14
+#: blocks/src/toolbutton/button-red.js:14
+#: blocks/src/toolbutton/button-white-red.js:14
 #: blocks/src/toolbutton/red.js:14
 msgid "赤色"
 msgstr "빨강"
@@ -556,7 +567,7 @@ msgstr "빨강"
 #: lib/admin-tinymce-qtag.php:781
 #: lib/admin-tinymce-qtag.php:814
 #: lib/gutenberg.php:45
-#: lib/widgets/cta-box.php:170
+#: lib/widgets/cta-box.php:180
 #: blocks/src/block/sticky-box/deprecated.js:99
 #: blocks/src/block/sticky-box/edit.js:45
 #: blocks/src/old/blank-box/block.js:80
@@ -569,6 +580,8 @@ msgstr "빨강"
 #: blocks/src/old/toggle-box/block.js:77
 #: blocks/src/toolbutton/badge-blue.js:14
 #: blocks/src/toolbutton/blue.js:14
+#: blocks/src/toolbutton/button-blue.js:14
+#: blocks/src/toolbutton/button-white-blue.js:14
 msgid "青色"
 msgstr "파랑"
 
@@ -591,7 +604,7 @@ msgstr "파랑"
 #: lib/admin-tinymce-qtag.php:786
 #: lib/admin-tinymce-qtag.php:819
 #: lib/gutenberg.php:65
-#: lib/widgets/cta-box.php:174
+#: lib/widgets/cta-box.php:184
 #: blocks/src/block/sticky-box/deprecated.js:103
 #: blocks/src/block/sticky-box/edit.js:49
 #: blocks/src/old/blank-box/block.js:84
@@ -603,6 +616,8 @@ msgstr "파랑"
 #: blocks/src/old/tab-caption-box/block.js:78
 #: blocks/src/old/toggle-box/block.js:81
 #: blocks/src/toolbutton/badge-green.js:14
+#: blocks/src/toolbutton/button-green.js:14
+#: blocks/src/toolbutton/button-white-green.js:14
 #: blocks/src/toolbutton/green.js:14
 msgid "緑色"
 msgstr "초록"
@@ -618,7 +633,7 @@ msgstr "박스 (탭)"
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
-#: blocks/src/block/blogcard/edit.js:63
+#: blocks/src/block/blogcard/edit.js:64
 #: blocks/src/block/tab-box/edit.js:71
 #: blocks/src/old/blogcard-class/block.js:86
 #: blocks/src/old/tab-box/block.js:75
@@ -648,7 +663,7 @@ msgstr "힌트"
 #: tmp/css-custom.php:923
 #: tmp/css-custom.php:971
 #: blocks/src/block/blogcard/deprecated.js:85
-#: blocks/src/block/blogcard/edit.js:67
+#: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
 #: blocks/src/old/blogcard-class/block.js:90
 #: blocks/src/old/tab-box/block.js:95
@@ -666,7 +681,7 @@ msgstr "북마크"
 #: tmp/css-custom.php:943
 #: tmp/css-custom.php:986
 #: blocks/src/block/blogcard/deprecated.js:93
-#: blocks/src/block/blogcard/edit.js:75
+#: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
 #: blocks/src/old/tab-box/block.js:107
 msgid "ダウンロード"
@@ -692,7 +707,7 @@ msgstr "박스 (포스트잇)"
 
 #: lib/admin-tinymce-qtag.php:829
 #: lib/gutenberg.php:90
-#: lib/widgets/cta-box.php:179
+#: lib/widgets/cta-box.php:189
 #: blocks/src/old/button-wrap/block.js:137
 #: blocks/src/old/button/block.js:152
 #: blocks/src/toolbutton/badge-orange.js:14
@@ -707,7 +722,7 @@ msgstr "빨강"
 
 #: lib/admin-tinymce-qtag.php:839
 #: lib/gutenberg.php:25
-#: lib/widgets/cta-box.php:166
+#: lib/widgets/cta-box.php:176
 #: blocks/src/old/button-wrap/block.js:85
 #: blocks/src/old/button/block.js:100
 #: blocks/src/toolbutton/badge-pink.js:14
@@ -1114,7 +1129,7 @@ msgstr "블로그 카드 레이블 포장"
 #: tmp/css-custom.php:907
 #: tmp/css-custom.php:959
 #: blocks/src/block/blogcard/deprecated.js:57
-#: blocks/src/block/blogcard/edit.js:39
+#: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:66
 msgid "関連記事"
 msgstr "관련 글"
@@ -1123,7 +1138,7 @@ msgstr "관련 글"
 #: tmp/css-custom.php:911
 #: tmp/css-custom.php:962
 #: blocks/src/block/blogcard/deprecated.js:61
-#: blocks/src/block/blogcard/edit.js:43
+#: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:70
 msgid "参考記事"
 msgstr "참고 글"
@@ -1132,7 +1147,7 @@ msgstr "참고 글"
 #: tmp/css-custom.php:915
 #: tmp/css-custom.php:965
 #: blocks/src/block/blogcard/deprecated.js:65
-#: blocks/src/block/blogcard/edit.js:47
+#: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
 msgstr "연관 링크"
 
@@ -1145,8 +1160,8 @@ msgstr "연관 링크"
 #: tmp/css-custom.php:919
 #: tmp/css-custom.php:968
 #: blocks/src/block/blogcard/deprecated.js:69
-#: blocks/src/block/blogcard/edit.js:51
-#: blocks/src/block/popular-list/index.js:30
+#: blocks/src/block/blogcard/edit.js:52
+#: blocks/src/block/popular-list/index.js:28
 #: blocks/src/old/blogcard-class/block.js:74
 msgid "人気記事"
 msgstr "인기 글"
@@ -1155,17 +1170,18 @@ msgstr "인기 글"
 #: tmp/css-custom.php:931
 #: tmp/css-custom.php:977
 #: blocks/src/block/blogcard/deprecated.js:73
-#: blocks/src/block/blogcard/edit.js:55
+#: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:78
 msgid "あわせて読みたい"
 msgstr "같이 보기"
 
 #: lib/admin-tinymce-qtag.php:1656
+#: lib/shortcodes.php:1064
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
 #: blocks/src/block/blogcard/deprecated.js:77
-#: blocks/src/block/blogcard/edit.js:59
+#: blocks/src/block/blogcard/edit.js:60
 #: blocks/src/old/blogcard-class/block.js:82
 msgid "詳細はこちら"
 msgstr "자세히"
@@ -1174,7 +1190,7 @@ msgstr "자세히"
 #: tmp/css-custom.php:939
 #: tmp/css-custom.php:983
 #: blocks/src/block/blogcard/deprecated.js:89
-#: blocks/src/block/blogcard/edit.js:71
+#: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:94
 msgid "公式サイト"
 msgstr "공식 사이트"
@@ -1182,14 +1198,14 @@ msgstr "공식 사이트"
 #: lib/admin-tinymce-qtag.php:1686
 #: tmp/css-custom.php:947
 #: tmp/css-custom.php:989
-#: blocks/src/block/blogcard/edit.js:79
+#: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr "이전 글"
 
 #: lib/admin-tinymce-qtag.php:1692
 #: tmp/css-custom.php:951
 #: tmp/css-custom.php:992
-#: blocks/src/block/blogcard/edit.js:83
+#: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr "다음 글"
 
@@ -1242,56 +1258,56 @@ msgstr "월: "
 msgid "全："
 msgstr "전체: "
 
-#: lib/admin.php:325
+#: lib/admin.php:356
 msgid "管理メニュー"
 msgstr "관리 메뉴"
 
-#: lib/admin.php:337
+#: lib/admin.php:368
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr "대시보드"
 
-#: lib/admin.php:344
+#: lib/admin.php:375
 #: lib/shortcodes.php:488
 msgid "投稿一覧"
 msgstr "글 목록"
 
-#: lib/admin.php:351
+#: lib/admin.php:382
 msgid "固定ページ一覧"
 msgstr "페이지 목록"
 
-#: lib/admin.php:358
+#: lib/admin.php:389
 msgid "メディア一覧"
 msgstr "미디어 목록"
 
-#: lib/admin.php:365
+#: lib/admin.php:396
 msgid "テーマ"
 msgstr "테마"
 
-#: lib/admin.php:372
+#: lib/admin.php:410
 msgid "カスタマイズ"
 msgstr "커스터마이즈"
 
-#: lib/admin.php:379
+#: lib/admin.php:417
 #: lib/page-settings/_top-page.php:264
 msgid "ウィジェット"
 msgstr "위젯"
 
-#: lib/admin.php:386
+#: lib/admin.php:424
 #: tmp/mobile-navi-button.php:21
 #: blocks/src/block/navicard/edit.js:149
 msgid "メニュー"
 msgstr "메뉴"
 
-#: lib/admin.php:393
+#: lib/admin.php:431
 msgid "テーマの編集"
 msgstr "테마 편집"
 
-#: lib/admin.php:400
+#: lib/admin.php:438
 msgid "プラグイン一覧"
 msgstr "플러그인"
 
-#: lib/admin.php:415
+#: lib/admin.php:453
 #: lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37
 #: lib/tinymce/speech-balloons.php:50
@@ -1302,17 +1318,17 @@ msgstr "플러그인"
 msgid "吹き出し"
 msgstr "말풍선"
 
-#: lib/admin.php:422
+#: lib/admin.php:460
 #: lib/original-menu.php:30
 #: lib/tinymce/function-texts.php:49
 #: blocks/src/block/template/edit.js:108
-#: blocks/src/block/template/index.js:23
+#: blocks/src/block/template/index.js:21
 #: blocks/src/toolbutton/dropdown-templates.js:57
 #: blocks/src/toolbutton/dropdown-templates.js:70
 msgid "テンプレート"
 msgstr "템플릿"
 
-#: lib/admin.php:429
+#: lib/admin.php:467
 #: lib/original-menu.php:33
 #: lib/tinymce/affiliate-tags.php:48
 #: blocks/src/shortcode/affi/block.js:18
@@ -1320,12 +1336,12 @@ msgstr "템플릿"
 msgid "アフィリエイトタグ"
 msgstr "제휴 태그"
 
-#: lib/admin.php:436
+#: lib/admin.php:474
 #: lib/original-menu.php:36
 msgid "ランキング作成"
 msgstr "랭킹 생성"
 
-#: lib/admin.php:443
+#: lib/admin.php:481
 #: lib/original-menu.php:39
 #: lib/page-access/access-forms.php:14
 #: lib/page-access/access-forms.php:26
@@ -1333,33 +1349,33 @@ msgstr "랭킹 생성"
 msgid "アクセス集計"
 msgstr "접속 집계"
 
-#: lib/admin.php:450
+#: lib/admin.php:488
 #: lib/original-menu.php:42
 msgid "高速化"
 msgstr "고속화"
 
-#: lib/admin.php:457
+#: lib/admin.php:495
 #: lib/original-menu.php:45
 #: lib/page-backup/backup-forms.php:24
 #: lib/page-backup/_top-page.php:40
 msgid "バックアップ"
 msgstr "백업"
 
-#: lib/admin.php:464
+#: lib/admin.php:502
 #: lib/original-menu.php:48
 #: lib/page-cache/cache-forms.php:14
 #: lib/page-cache/_top-page.php:63
-#: lib/shortcodes-product-func.php:350
+#: lib/shortcodes-product-func.php:368
 msgid "キャッシュ削除"
 msgstr "캐시 삭제"
 
-#: lib/admin.php:608
+#: lib/admin.php:646
 #: blocks/src/block/info-list/edit.js:63
 msgid "カテゴリー検索"
 msgstr "카테고리 검색"
 
-#: lib/admin.php:668
-#: lib/admin.php:682
+#: lib/admin.php:706
+#: lib/admin.php:720
 msgid "Excerpt"
 msgstr ""
 
@@ -1494,7 +1510,7 @@ msgstr "테두리"
 #: blocks/src/block/faq/edit.js:173
 #: blocks/src/block/icon-list/edit.js:144
 #: blocks/src/block/tab-box/edit.js:146
-#: blocks/src/block/timeline/edit.js:144
+#: blocks/src/block/timeline/edit.js:161
 #: blocks/src/block/toggle-box/edit.js:121
 #: blocks/src/micro/micro-balloon/edit.js:125
 msgid "背景色"
@@ -1580,7 +1596,7 @@ msgstr "카테고리 색을 설정합니다."
 #: blocks/src/block/faq/edit.js:178
 #: blocks/src/block/icon-list/edit.js:149
 #: blocks/src/block/tab-box/edit.js:151
-#: blocks/src/block/timeline/edit.js:149
+#: blocks/src/block/timeline/edit.js:166
 #: blocks/src/block/toggle-box/edit.js:126
 #: blocks/src/micro/micro-balloon/edit.js:130
 #: blocks/src/micro/micro-text/edit.js:93
@@ -1600,7 +1616,7 @@ msgstr "카테고리의 글자색을 지정합니다. 입력하지 않은 경우
 #: lib/page-speech-balloon/form.php:49
 #: lib/widgets/author-box.php:68
 #: lib/widgets/box-menus.php:73
-#: lib/widgets/cta-box.php:99
+#: lib/widgets/cta-box.php:109
 #: lib/widgets/fb-like-balloon.php:69
 #: lib/widgets/fb-like-box.php:99
 #: lib/widgets/item-ranking.php:64
@@ -1614,7 +1630,7 @@ msgstr "카테고리의 글자색을 지정합니다. 입력하지 않은 경우
 #: blocks/src/block/timeline-item/deprecated.js:24
 #: blocks/src/block/timeline-item/deprecated.js:48
 #: blocks/src/block/timeline-item/edit.js:28
-#: blocks/src/block/timeline/edit.js:168
+#: blocks/src/block/timeline/edit.js:185
 msgid "タイトル"
 msgstr "제목"
 
@@ -1737,7 +1753,7 @@ msgstr "※커스텀 게시의 카테고리가 된다 하여도 공개 페이지
 #: lib/page-settings/_top-page.php:176
 #: lib/widgets/ad.php:19
 #: blocks/src/block/ad/edit.js:25
-#: blocks/src/block/ad/index.js:23
+#: blocks/src/block/ad/index.js:21
 #: blocks/src/toolbutton/dropdown-shortcodes.js:42
 msgid "広告"
 msgstr "광고"
@@ -1831,7 +1847,7 @@ msgstr "페이지 설정"
 #: lib/page-settings/comment-forms.php:43
 #: lib/page-settings/single-forms.php:327
 #: lib/page-speech-balloon/form.php:90
-#: lib/settings.php:558
+#: lib/settings.php:553
 #: blocks/src/block-extension/style-extension/border01.js:42
 #: blocks/src/block-extension/style-extension/style01.js:42
 #: blocks/src/block-extension/style-extension/style02.js:42
@@ -1902,18 +1918,26 @@ msgid "このページの表示状態を設定します。「本文のみ」表�
 msgstr "이 페이지의 표시 상태를 설정합니다. \"본문만\"표시는 랜딩 페이지(LP) 등에서 해 주세요."
 
 #: lib/custom-fields/page-field.php:59
+msgid "タイトルを表示しない"
+msgstr ""
+
+#: lib/custom-fields/page-field.php:60
+msgid "このページに記事タイトルを表示するかを切り替えます。"
+msgstr ""
+
+#: lib/custom-fields/page-field.php:63
 msgid "読む時間を表示しない"
 msgstr "예상 읽기 시간 표시 안 함"
 
-#: lib/custom-fields/page-field.php:60
+#: lib/custom-fields/page-field.php:64
 msgid "このページに「記事を読む時間」を表示するかを切り替えます。"
 msgstr "이 페이지에서 예상 글 읽기 시간 표시 여부를 설정합니다."
 
-#: lib/custom-fields/page-field.php:63
+#: lib/custom-fields/page-field.php:67
 msgid "目次を表示しない"
 msgstr "목차 숨기기"
 
-#: lib/custom-fields/page-field.php:64
+#: lib/custom-fields/page-field.php:68
 msgid "このページに目次を表示するかを切り替えます。"
 msgstr "이 페이지의 목차 표시 여부를 설정합니다."
 
@@ -2124,7 +2148,7 @@ msgstr "월"
 
 #: lib/custom-fields/update-field.php:99
 #: lib/custom-fields/update-field.php:101
-#: lib/page-settings/apis-forms.php:263
+#: lib/page-settings/apis-forms.php:294
 msgid "日"
 msgstr "일"
 
@@ -2138,7 +2162,7 @@ msgid "キーカラー"
 msgstr "메인 색상"
 
 #: lib/gutenberg.php:30
-#: lib/widgets/cta-box.php:167
+#: lib/widgets/cta-box.php:177
 #: blocks/src/toolbutton/badge-purple.js:14
 msgid "紫色"
 msgstr "보라색"
@@ -2168,7 +2192,7 @@ msgid "黄緑色"
 msgstr "연두색"
 
 #: lib/gutenberg.php:75
-#: lib/widgets/cta-box.php:176
+#: lib/widgets/cta-box.php:186
 #: blocks/src/old/button-wrap/block.js:125
 #: blocks/src/old/button/block.js:140
 msgid "ライム"
@@ -2179,14 +2203,14 @@ msgid "アンバー"
 msgstr "호박색"
 
 #: lib/gutenberg.php:95
-#: lib/widgets/cta-box.php:180
+#: lib/widgets/cta-box.php:190
 #: blocks/src/old/button-wrap/block.js:141
 #: blocks/src/old/button/block.js:156
 msgid "ディープオレンジ"
 msgstr "딥 오렌지"
 
 #: lib/gutenberg.php:100
-#: lib/widgets/cta-box.php:181
+#: lib/widgets/cta-box.php:191
 #: blocks/src/toolbutton/badge-brown.js:14
 msgid "茶色"
 msgstr "갈색"
@@ -2467,18 +2491,18 @@ msgid "トップページのみ"
 msgstr "탑 페이지만"
 
 #: lib/html-forms.php:796
-#: lib/page-settings/sns-follow-forms.php:107
-#: lib/page-settings/sns-share-forms-bottom.php:115
-#: lib/page-settings/sns-share-forms-top.php:102
+#: lib/page-settings/sns-follow-forms.php:110
+#: lib/page-settings/sns-share-forms-bottom.php:124
+#: lib/page-settings/sns-share-forms-top.php:111
 #: lib/page-settings/_top-page.php:197
 #: lib/widgets/display-widgets.php:167
 msgid "投稿"
 msgstr "글"
 
 #: lib/html-forms.php:801
-#: lib/page-settings/sns-follow-forms.php:110
-#: lib/page-settings/sns-share-forms-bottom.php:118
-#: lib/page-settings/sns-share-forms-top.php:105
+#: lib/page-settings/sns-follow-forms.php:113
+#: lib/page-settings/sns-share-forms-bottom.php:127
+#: lib/page-settings/sns-share-forms-top.php:114
 #: lib/page-settings/toc-forms.php:62
 #: lib/page-settings/_top-page.php:200
 #: lib/shortcodes.php:482
@@ -2567,77 +2591,81 @@ msgid "人気記事は見つかりませんでした。"
 msgstr "인기글을 찾을 수 없습니다."
 
 #: lib/html-forms.php:1341
-#: lib/html-forms.php:1865
+#: lib/html-forms.php:1872
 msgid "記事は見つかりませんでした。"
 msgstr "글을 찾을 수 없습니다."
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1471
+#: lib/html-forms.php:1476
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1475
+#: lib/html-forms.php:1480
 msgid "NO USER"
 msgstr ""
 
-#: lib/html-forms.php:1491
+#: lib/html-forms.php:1496
 msgid "未登録のユーザーさん"
 msgstr "미가입 사용자"
 
-#: lib/html-forms.php:1501
+#: lib/html-forms.php:1506
 msgid "未登録のユーザーさんです。"
 msgstr "가입하지 않은 사용자입니다."
 
-#: lib/html-forms.php:1503
+#: lib/html-forms.php:1508
 msgid "ログイン・登録はこちら→"
 msgstr "로그인ㆍ가입하려면 여기를 클릭 →"
 
-#: lib/html-forms.php:1505
+#: lib/html-forms.php:1510
 msgid "ログインページ"
 msgstr "로그인 페이지"
 
-#: lib/html-forms.php:1510
+#: lib/html-forms.php:1514
+msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
+msgstr ""
+
+#: lib/html-forms.php:1517
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "프로필 설정 화면에서 프로필 내용을 변경할 수 있습니다 →"
 
-#: lib/html-forms.php:1510
+#: lib/html-forms.php:1517
 msgid "プロフィール設定画面"
 msgstr "프로필 설정 화면"
 
-#: lib/html-forms.php:1510
+#: lib/html-forms.php:1517
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "※이 메시지는 로그인 사용자에게만 표시됩니다."
 
-#: lib/html-forms.php:1540
+#: lib/html-forms.php:1547
 msgid "管理者用エラーメッセージ"
 msgstr "관리자용 오류 메시지"
 
-#: lib/html-forms.php:1766
+#: lib/html-forms.php:1773
 msgid "おすすめ"
 msgstr "추천"
 
-#: lib/html-forms.php:1769
+#: lib/html-forms.php:1776
 msgid "新着"
 msgstr "새글"
 
-#: lib/html-forms.php:1772
+#: lib/html-forms.php:1779
 msgid "注目"
 msgstr "주목"
 
-#: lib/html-forms.php:1775
+#: lib/html-forms.php:1782
 msgid "必見"
 msgstr "필독"
 
-#: lib/html-forms.php:1778
+#: lib/html-forms.php:1785
 msgid "お得"
 msgstr "이득"
 
-#: lib/html-forms.php:1821
+#: lib/html-forms.php:1828
 #: lib/shortcodes.php:998
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
-#: blocks/src/block/info-list/index.js:30
+#: blocks/src/block/info-list/index.js:28
 msgid "新着情報"
 msgstr "새 글"
 
@@ -2759,7 +2787,7 @@ msgid "3時間"
 msgstr "3시간"
 
 #: lib/page-access/access-forms.php:65
-#: lib/page-settings/sns-follow-forms.php:243
+#: lib/page-settings/sns-follow-forms.php:246
 #: lib/page-settings/sns-share-forms.php:175
 msgid "6時間"
 msgstr "6시간"
@@ -2769,18 +2797,18 @@ msgid "9時間"
 msgstr "9시간"
 
 #: lib/page-access/access-forms.php:67
-#: lib/page-settings/sns-follow-forms.php:244
+#: lib/page-settings/sns-follow-forms.php:247
 #: lib/page-settings/sns-share-forms.php:178
 msgid "12時間"
 msgstr "12시간"
 
 #: lib/page-access/access-forms.php:68
-#: lib/page-settings/sns-follow-forms.php:245
+#: lib/page-settings/sns-follow-forms.php:248
 msgid "18時間"
 msgstr "18시간"
 
 #: lib/page-access/access-forms.php:69
-#: lib/page-settings/sns-follow-forms.php:246
+#: lib/page-settings/sns-follow-forms.php:249
 #: lib/page-settings/sns-share-forms.php:181
 msgid "24時間"
 msgstr "24시간"
@@ -3252,7 +3280,7 @@ msgstr "평가:"
 #: lib/page-settings/image-forms.php:129
 #: lib/page-settings/skin-forms.php:36
 #: blocks/src/block/blogcard/deprecated.js:53
-#: blocks/src/block/blogcard/edit.js:35
+#: blocks/src/block/blogcard/edit.js:36
 #: blocks/src/old/blogcard-class/block.js:62
 msgid "なし"
 msgstr "없음"
@@ -3372,12 +3400,12 @@ msgid "アイテムを上に移動"
 msgstr "항목을 위로 이동"
 
 #: lib/page-item-ranking/item-ranking-func.php:351
-#: lib/shortcodes-amazon.php:418
-#: lib/shortcodes-amazon.php:421
-#: lib/shortcodes-amazon.php:424
-#: lib/shortcodes-rakuten.php:36
-#: lib/shortcodes-rakuten.php:39
-#: lib/shortcodes-rakuten.php:42
+#: lib/shortcodes-amazon.php:419
+#: lib/shortcodes-amazon.php:422
+#: lib/shortcodes-amazon.php:425
+#: lib/shortcodes-rakuten.php:37
+#: lib/shortcodes-rakuten.php:40
+#: lib/shortcodes-rakuten.php:43
 msgid "詳細ページ"
 msgstr "상세 페이지"
 
@@ -3439,7 +3467,7 @@ msgstr "항목 수가 설정되지 않았습니다."
 #: lib/widgets/item-ranking.php:19
 #: lib/widgets/item-ranking.php:71
 #: blocks/src/block/ranking/edit.js:110
-#: blocks/src/block/ranking/index.js:23
+#: blocks/src/block/ranking/index.js:21
 #: blocks/src/toolbutton/dropdown-rankings.js:58
 #: blocks/src/toolbutton/dropdown-rankings.js:71
 msgid "ランキング"
@@ -5077,7 +5105,7 @@ msgstr "Amazon 필수"
 #: lib/page-settings/apis-forms.php:50
 #: lib/page-settings/apis-forms.php:116
 #: lib/page-settings/apis-forms.php:123
-#: lib/page-settings/apis-forms.php:234
+#: lib/page-settings/apis-forms.php:265
 msgid "もしも必須"
 msgstr "모시모 필수"
 
@@ -5293,124 +5321,149 @@ msgstr "Yahoo! 쇼핑 검색 버튼에 표시할 텍스트를 입력하세요."
 
 #: lib/page-settings/apis-forms.php:199
 #: lib/page-settings/apis-funcs.php:254
-msgid "DMM"
+msgid "メルカリ"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:204
+msgid "メルカリアンバサダーID"
+msgstr ""
+
+#: lib/page-settings/apis-forms.php:209
+msgid "mercariアフィリエイトの「アフィリエイトID」をを取得してください。"
+msgstr ""
+
+#: lib/page-settings/apis-forms.php:214
+msgid "メルカリ検索ボタンを表示する"
+msgstr ""
+
+#: lib/page-settings/apis-forms.php:215
+msgid "メルカリのキーワード検索ボタンを表示するか。"
+msgstr ""
+
+#: lib/page-settings/apis-forms.php:218
+msgid "メルカリの検索ボタンに表示するテキストを入力してください。"
+msgstr ""
+
+#: lib/page-settings/apis-forms.php:230
+#: lib/page-settings/apis-funcs.php:279
+msgid "DMM"
+msgstr ""
+
+#: lib/page-settings/apis-forms.php:235
 msgid "DMMアフィリエイトID"
 msgstr "DMM 제휴 ID"
 
-#: lib/page-settings/apis-forms.php:209
+#: lib/page-settings/apis-forms.php:240
 msgid "DMMアフィリエイトの「アフィリエイトID」をを取得してください。"
 msgstr "모시모 계열사의 라쿠텐 ID를 입력하십시오."
 
-#: lib/page-settings/apis-forms.php:214
+#: lib/page-settings/apis-forms.php:245
 msgid "DMM検索ボタンを表示する"
 msgstr "DMM 검색 버튼 표시"
 
-#: lib/page-settings/apis-forms.php:215
+#: lib/page-settings/apis-forms.php:246
 msgid "DMMのキーワード検索ボタンを表示するか。"
 msgstr "DMM 키워드 검색 버튼을 표시하겠습니까?"
 
-#: lib/page-settings/apis-forms.php:218
+#: lib/page-settings/apis-forms.php:249
 msgid "DMMの検索ボタンに表示するテキストを入力してください。"
 msgstr "Amazon 검색 버튼에 표시할 텍스트를 입력하십시오."
 
-#: lib/page-settings/apis-forms.php:229
+#: lib/page-settings/apis-forms.php:260
 msgid "もしもアフィリエイト"
 msgstr "모시모 제휴"
 
-#: lib/page-settings/apis-forms.php:233
+#: lib/page-settings/apis-forms.php:264
 msgid "リンクをもしもアフィリエイトを経由にする"
 msgstr "링크를 모시모 제휴를 경유"
 
-#: lib/page-settings/apis-forms.php:235
+#: lib/page-settings/apis-forms.php:266
 msgid "もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月23日の<a href=\"https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f\" target=\"_blank\" rel=\"noopener\">PA-APIの仕様変更</a>により、APIが生成するリンクから売上が発生しないとAPIが利用できなくなりました。ですので、<span class=\"red\">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります</span>。AmazonのAPIを利用したい場合は、この機能は有効にしないことをおすすめします。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。"
 msgstr "모시모 제휴를 통해 아마존 링크를 올려 보상을 받습니다. [중요] 2019년 1월 23일의 <a href=\"https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f\" target=\"_blank\" rel=\"noopener\">PA-API 정책 변경</a>을 통해 API에 의해 생성된 링크에서 매출이 발생하지 않으면 API를 더 이상 사용할 수 없습니다.<span class=\"red\">따라서, 만약 당신이 모시모 제휴를 통해 링크한다면 그 API는 30일 이내에 더 이상 제공되지 않을 수 있습니다.</span> Amazon API를 사용하려면 이 기능을 사용하지 않도록 설정하는 것이 좋습니다. PA-API 제한을 없앨 수 없는 경우 라쿠텐 제품 링크를 사용하세요."
 
-#: lib/page-settings/apis-forms.php:237
+#: lib/page-settings/apis-forms.php:268
 msgid "Amazon a_id"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:240
+#: lib/page-settings/apis-forms.php:271
 msgid "もしもアフィリエイトのAmazon IDを入力してください。"
 msgstr "모시모 제휴의 Amazon ID를 입력하세요. "
 
-#: lib/page-settings/apis-forms.php:240
-#: lib/page-settings/apis-forms.php:245
-#: lib/page-settings/apis-forms.php:250
+#: lib/page-settings/apis-forms.php:271
+#: lib/page-settings/apis-forms.php:276
+#: lib/page-settings/apis-forms.php:281
 msgid "未入力の場合はデフォルトのリンクが出力されます。"
 msgstr "공백으로 두면 기본 링크가 출력됩니다."
 
-#: lib/page-settings/apis-forms.php:242
+#: lib/page-settings/apis-forms.php:273
 msgid "楽天 a_id"
 msgstr "라쿠텐 a_id"
 
-#: lib/page-settings/apis-forms.php:245
+#: lib/page-settings/apis-forms.php:276
 msgid "もしもアフィリエイトの楽天IDを入力してください。"
 msgstr "모시모 제휴의 라쿠텐 ID를 입력하세요. "
 
-#: lib/page-settings/apis-forms.php:247
+#: lib/page-settings/apis-forms.php:278
 msgid "Yahoo!ショッピング a_id"
 msgstr "Yahoo! 쇼핑 a_id"
 
-#: lib/page-settings/apis-forms.php:250
+#: lib/page-settings/apis-forms.php:281
 msgid "もしもアフィリエイトのYahoo!ショッピングIDを入力してください。"
 msgstr "모시모 제휴의 Yahoo! 쇼핑 ID를 입력하세요. "
 
-#: lib/page-settings/apis-forms.php:258
+#: lib/page-settings/apis-forms.php:289
 msgid "楽天キャッシュの保存期間"
 msgstr "라쿠텐 캐시 보관 기간"
 
-#: lib/page-settings/apis-forms.php:264
+#: lib/page-settings/apis-forms.php:295
 msgid "APIキャッシュのリフレッシュ間隔を設定します。1～3650日の間隔を選べます。間隔が短いほどAPIのリクエスト制限にかかる可能性が高くなりますのでご注意ください。アクセス数の多いサイトは長めに設定しておくことをおすすめします。"
 msgstr "API 캐시의 새로 고침 간격을 설정하세요. 1~3650일 중에서 선택할 수 있습니다. 간격이 짧을수록 API 요청 한계에 도달할 확률이 높다는 점을 명심하세요. 액세스 수가 많은 사이트는 더 긴 간격을 설정하는 것이 좋습니다."
 
-#: lib/page-settings/apis-forms.php:264
+#: lib/page-settings/apis-forms.php:295
 msgid "Amazon APIのキャッシュは利用規約により24時間で更新されます。"
 msgstr "Amazon API의 캐시는 이용 약관에 따라 24시간마다 갱신됩니다."
 
-#: lib/page-settings/apis-forms.php:273
+#: lib/page-settings/apis-forms.php:304
 msgid "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:273
+#: lib/page-settings/apis-forms.php:304
 msgid "Amazon.co.jp Product Advertising API ライセンス契約"
 msgstr "Amazon.co.jp 제품 광고 API 사용권 계약"
 
-#: lib/page-settings/apis-forms.php:274
+#: lib/page-settings/apis-forms.php:305
 msgid "https://affiliate.amazon.co.jp/help/topic/t32/"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:274
+#: lib/page-settings/apis-forms.php:305
 msgid "Product Advertising API (PA-API) の利用ガイドライン"
 msgstr "PA-API(Product Advertising API) 사용 지침"
 
-#: lib/page-settings/apis-forms.php:275
+#: lib/page-settings/apis-forms.php:306
 msgid "https://webservice.rakuten.co.jp/guide/rule"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:275
+#: lib/page-settings/apis-forms.php:306
 msgid "楽天ウェブサービス規約"
 msgstr "라쿠텐 웹 서비스 약관"
 
-#: lib/page-settings/apis-forms.php:284
+#: lib/page-settings/apis-forms.php:315
 msgid "エラー設定"
 msgstr "에러 설정"
 
-#: lib/page-settings/apis-forms.php:287
+#: lib/page-settings/apis-forms.php:318
 msgid "APIに関するエラー通知の設定です。"
 msgstr "API 관련 오류 알림에 대한 설정입니다."
 
-#: lib/page-settings/apis-forms.php:295
+#: lib/page-settings/apis-forms.php:326
 msgid "メール通知"
 msgstr "이메일 알림"
 
-#: lib/page-settings/apis-forms.php:300
+#: lib/page-settings/apis-forms.php:331
 msgid "商品リンク切れ情報をメールで送信する"
 msgstr "손상된 제품 링크 정보를 이메일로 전송"
 
-#: lib/page-settings/apis-forms.php:301
+#: lib/page-settings/apis-forms.php:332
 msgid "APIで商品情報を取得できなかった際に、WordPressに登録されているメール宛にエラーメッセージを送信します。※メール送信は数分遅れる可能性もあります。"
 msgstr "API로 제품 정보를 얻을 수 없을 때 워드프레스에 등록된 이메일로 오류 메시지를 보냅니다. ※이메일 발송은 몇 분 정도 지연될 수 있습니다."
 
@@ -5499,10 +5552,6 @@ msgstr "어필 영역 배경 이미지 고정"
 #: lib/page-settings/appeal-forms.php:77
 msgid "アピールエリアに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。"
 msgstr "어필 영역의 배경 이미지를 고정합니다. 위아래로 스크롤해도 배경 사진이 움직이지 않도록 합니다."
-
-#: lib/page-settings/appeal-forms.php:77
-msgid "※iOSでは動作しません。"
-msgstr "※iOS에서는 작동하지 않습니다."
 
 #: lib/page-settings/appeal-forms.php:85
 msgid "エリア背景色"
@@ -5870,9 +5919,9 @@ msgstr "으로 집계한 인기글을 포함"
 #: lib/page-settings/carousel-forms.php:76
 #: lib/page-settings/single-forms.php:129
 #: lib/page-settings/single-forms.php:358
-#: lib/page-settings/sns-follow-forms.php:113
-#: lib/page-settings/sns-share-forms-bottom.php:121
-#: lib/page-settings/sns-share-forms-top.php:108
+#: lib/page-settings/sns-follow-forms.php:116
+#: lib/page-settings/sns-share-forms-bottom.php:130
+#: lib/page-settings/sns-share-forms-top.php:117
 #: lib/shortcodes.php:494
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
@@ -5881,9 +5930,9 @@ msgstr "카테고리"
 #: lib/page-settings/carousel-forms.php:80
 #: lib/page-settings/editor-forms.php:80
 #: lib/page-settings/single-forms.php:130
-#: lib/page-settings/sns-follow-forms.php:116
-#: lib/page-settings/sns-share-forms-bottom.php:124
-#: lib/page-settings/sns-share-forms-top.php:111
+#: lib/page-settings/sns-follow-forms.php:119
+#: lib/page-settings/sns-share-forms-bottom.php:133
+#: lib/page-settings/sns-share-forms-top.php:120
 #: lib/tinymce/html-tags.php:45
 #: lib/widgets/display-widgets.php:173
 #: blocks/src/block/new-list/edit.js:107
@@ -6101,7 +6150,7 @@ msgstr "콘텐츠 테두리 색"
 #: blocks/src/block/faq/edit.js:168
 #: blocks/src/block/icon-list/edit.js:139
 #: blocks/src/block/tab-box/edit.js:141
-#: blocks/src/block/timeline/edit.js:154
+#: blocks/src/block/timeline/edit.js:171
 #: blocks/src/block/toggle-box/edit.js:116
 #: blocks/src/micro/micro-balloon/edit.js:135
 msgid "ボーダー色"
@@ -6201,6 +6250,7 @@ msgstr "댓글 목록 헤딩"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
+#: lib/shortcodes.php:1060
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
 #: blocks/src/block-universal/label-box/deprecated.js:25
@@ -6685,6 +6735,10 @@ msgstr "태그 선택을 체크 리스트 형식으로 변환"
 msgid "エディターでチェックリストを選択する形でタグを選択する様に変更します。"
 msgstr "편집기에서 체크 리스트를 선택하는 것으로 태그를 선택하도록 변경합니다."
 
+#: lib/page-settings/editor-forms.php:86
+msgid "※タグ編集画面やエディターのタグオプション上で階層構造形式になります。"
+msgstr "※태그 편집 화면이나 에디터의 태그 옵션 상에서 계층 구조 형식이 됩니다."
+
 #: lib/page-settings/editor-forms.php:100
 msgid "ブロックエディター設定"
 msgstr "블록 에디터 설정"
@@ -7057,10 +7111,6 @@ msgstr "헤더 배경 이미지 고정"
 msgid "PC画面でヘッダー背景に設定した画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。"
 msgstr "PC화면에 헤더 배경에 설정된 이미지를 고정합니다.  상하로 스크롤을 할 때 배경 사진이 이동하지 않습니다."
 
-#: lib/page-settings/header-forms.php:150
-msgid "但しモバイル画面では固定は解除されます。"
-msgstr "다만 모바일 화면에서는 고정되지 않습니다."
-
 #: lib/page-settings/header-forms.php:153
 msgid "背景画像の全てを表示"
 msgstr "배경 사진 전체 표시"
@@ -7322,7 +7372,7 @@ msgstr "새 글 위젯의 썸네일."
 #: lib/widgets/new-entries.php:130
 #: tmp/list-new-entries.php:16
 #: tmp/list-tab-index.php:26
-#: blocks/src/block/new-list/index.js:30
+#: blocks/src/block/new-list/index.js:28
 msgid "新着記事"
 msgstr "새 글"
 
@@ -7602,7 +7652,7 @@ msgid "省略文字列"
 msgstr "생략 문자열"
 
 #: lib/page-settings/index-forms.php:195
-#: lib/page-settings/index-funcs.php:189
+#: lib/page-settings/index-funcs.php:204
 msgid "..."
 msgstr ""
 
@@ -7654,12 +7704,12 @@ msgid "ボタンを表示しない（ミドルメニューのみ）"
 msgstr "버튼 숨기기 (미들 메뉴만)"
 
 #: lib/page-settings/mobile-buttons-forms.php:34
-#: lib/settings.php:309
+#: lib/settings.php:304
 msgid "ヘッダーモバイルボタン"
 msgstr "헤더 모바일 버튼"
 
 #: lib/page-settings/mobile-buttons-forms.php:35
-#: lib/settings.php:311
+#: lib/settings.php:306
 msgid "フッターモバイルボタン"
 msgstr "푸터 모바일 버튼"
 
@@ -8897,7 +8947,7 @@ msgid "以下のアカウントURLを設定する場合は、プロフィール�
 msgstr "아래의 어카운트 URL을 설정하는 경우는 프로필 페이지에서 설정해 주세요. "
 
 #: lib/page-settings/sns-follow-forms.php:69
-#: lib/page-settings/sns-follow-forms.php:89
+#: lib/page-settings/sns-follow-forms.php:92
 #: lib/widgets/author-box.php:88
 msgid "あなたのプロフィール"
 msgstr "당신의 프로필"
@@ -8916,243 +8966,264 @@ msgstr "X(구 Twitter)"
 #: lib/page-settings/sns-share-forms-bottom.php:71
 #: lib/page-settings/sns-share-forms-top.php:58
 #: tmp/sns-share-buttons.php:21
+msgid "Mastodon"
+msgstr "Mastodon"
+
+#: lib/page-settings/sns-follow-forms.php:74
+#: lib/page-settings/sns-share-forms-bottom.php:74
+#: lib/page-settings/sns-share-forms-top.php:61
+#: tmp/sns-share-buttons.php:25
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: lib/page-settings/sns-follow-forms.php:75
+#: lib/page-settings/sns-share-forms-bottom.php:77
+#: lib/page-settings/sns-share-forms-top.php:64
+#: tmp/sns-share-buttons.php:29
+msgid "Misskey"
+msgstr "Misskey"
+
+#: lib/page-settings/sns-follow-forms.php:76
+#: lib/page-settings/sns-share-forms-bottom.php:80
+#: lib/page-settings/sns-share-forms-top.php:67
+#: tmp/sns-share-buttons.php:33
 msgid "Facebook"
 msgstr "페이스북"
 
-#: lib/page-settings/sns-follow-forms.php:74
+#: lib/page-settings/sns-follow-forms.php:77
 msgid "Google+"
 msgstr "구글+"
 
-#: lib/page-settings/sns-follow-forms.php:75
-#: lib/page-settings/sns-share-forms-bottom.php:74
-#: lib/page-settings/sns-share-forms-top.php:61
+#: lib/page-settings/sns-follow-forms.php:78
+#: lib/page-settings/sns-share-forms-bottom.php:83
+#: lib/page-settings/sns-share-forms-top.php:70
 msgid "はてなブックマーク"
 msgstr "하테나 북마크"
 
-#: lib/page-settings/sns-follow-forms.php:76
+#: lib/page-settings/sns-follow-forms.php:79
 msgid "Instagram"
 msgstr "인스타그램"
 
-#: lib/page-settings/sns-follow-forms.php:77
-#: lib/page-settings/sns-share-forms-bottom.php:86
-#: lib/page-settings/sns-share-forms-top.php:73
-#: tmp/sns-share-buttons.php:37
+#: lib/page-settings/sns-follow-forms.php:80
+#: lib/page-settings/sns-share-forms-bottom.php:95
+#: lib/page-settings/sns-share-forms-top.php:82
+#: tmp/sns-share-buttons.php:49
 msgid "Pinterest"
 msgstr ""
 
-#: lib/page-settings/sns-follow-forms.php:78
+#: lib/page-settings/sns-follow-forms.php:81
 msgid "YouTube"
 msgstr "유튜브"
 
-#: lib/page-settings/sns-follow-forms.php:79
-#: lib/page-settings/sns-share-forms-bottom.php:89
-#: lib/page-settings/sns-share-forms-top.php:76
-#: tmp/sns-share-buttons.php:41
+#: lib/page-settings/sns-follow-forms.php:82
+#: lib/page-settings/sns-share-forms-bottom.php:98
+#: lib/page-settings/sns-share-forms-top.php:85
+#: tmp/sns-share-buttons.php:53
 msgid "LinkedIn"
 msgstr ""
 
-#: lib/page-settings/sns-follow-forms.php:80
+#: lib/page-settings/sns-follow-forms.php:83
 msgid "note"
 msgstr ""
 
-#: lib/page-settings/sns-follow-forms.php:81
+#: lib/page-settings/sns-follow-forms.php:84
 msgid "Flickr"
 msgstr ""
 
-#: lib/page-settings/sns-follow-forms.php:82
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:170
-#: tmp/sns-follow-buttons.php:85
+#: lib/page-settings/sns-follow-forms.php:85
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:212
+#: tmp/sns-follow-buttons.php:97
 msgid "Amazon欲しい物リスト"
 msgstr "아마존 위시리스트"
 
-#: lib/page-settings/sns-follow-forms.php:83
+#: lib/page-settings/sns-follow-forms.php:86
 msgid "Twitch"
 msgstr ""
 
-#: lib/page-settings/sns-follow-forms.php:84
+#: lib/page-settings/sns-follow-forms.php:87
 msgid "楽天ROOM"
 msgstr "라쿠텐 ROOM"
 
-#: lib/page-settings/sns-follow-forms.php:85
+#: lib/page-settings/sns-follow-forms.php:88
 msgid "Slack"
 msgstr ""
 
-#: lib/page-settings/sns-follow-forms.php:86
+#: lib/page-settings/sns-follow-forms.php:89
 msgid "GitHub"
 msgstr ""
 
-#: lib/page-settings/sns-follow-forms.php:87
+#: lib/page-settings/sns-follow-forms.php:90
 msgid "CodePen"
 msgstr ""
 
-#: lib/page-settings/sns-follow-forms.php:89
+#: lib/page-settings/sns-follow-forms.php:92
 msgid "から設定"
 msgstr "에서 설정"
 
-#: lib/page-settings/sns-follow-forms.php:90
+#: lib/page-settings/sns-follow-forms.php:93
 msgid "現ログインユーザーのSNSフォローページを設定します。"
 msgstr "현재 로그인 유저의 SNS 팔로우 페이지를 설정합니다."
 
-#: lib/page-settings/sns-follow-forms.php:98
-#: lib/page-settings/sns-share-forms-bottom.php:106
-#: lib/page-settings/sns-share-forms-top.php:93
+#: lib/page-settings/sns-follow-forms.php:101
+#: lib/page-settings/sns-share-forms-bottom.php:115
+#: lib/page-settings/sns-share-forms-top.php:102
 #: lib/page-settings/toc-forms.php:56
 msgid "表示ページ"
 msgstr "표시 페이지"
 
-#: lib/page-settings/sns-follow-forms.php:101
+#: lib/page-settings/sns-follow-forms.php:104
 msgid "フォローボタンを表示するページの切り替え。"
 msgstr "팔로우 버튼을 표시할 페이지의 전환"
 
-#: lib/page-settings/sns-follow-forms.php:104
-#: lib/page-settings/sns-share-forms-bottom.php:112
-#: lib/page-settings/sns-share-forms-top.php:99
+#: lib/page-settings/sns-follow-forms.php:107
+#: lib/page-settings/sns-share-forms-bottom.php:121
+#: lib/page-settings/sns-share-forms-top.php:108
 msgid "フロントページ"
 msgstr "프런트 페이지"
 
-#: lib/page-settings/sns-follow-forms.php:104
-#: lib/page-settings/sns-share-forms-bottom.php:112
-#: lib/page-settings/sns-share-forms-top.php:99
+#: lib/page-settings/sns-follow-forms.php:107
+#: lib/page-settings/sns-share-forms-bottom.php:121
+#: lib/page-settings/sns-share-forms-top.php:108
 msgid "（インデックスページ）"
 msgstr "(인덱스 페이지)"
 
-#: lib/page-settings/sns-follow-forms.php:119
+#: lib/page-settings/sns-follow-forms.php:122
 msgid "フォローボタンを表示するページを選択してください。"
 msgstr "팔로우 버튼을 표시할 페이지를 선택해 주세요."
 
-#: lib/page-settings/sns-follow-forms.php:126
+#: lib/page-settings/sns-follow-forms.php:129
 msgid "feedlyの表示"
 msgstr "feedly 표시"
 
-#: lib/page-settings/sns-follow-forms.php:130
+#: lib/page-settings/sns-follow-forms.php:133
 msgid "feedlyフォローボタンを表示する"
 msgstr "feedly 팔로우 버튼 표시"
 
-#: lib/page-settings/sns-follow-forms.php:131
+#: lib/page-settings/sns-follow-forms.php:134
 msgid "feedlyフォローボタンを表示します。"
 msgstr "feedly 팔로우 버튼을 표시합니다."
 
-#: lib/page-settings/sns-follow-forms.php:139
+#: lib/page-settings/sns-follow-forms.php:142
 msgid "RSSの表示"
 msgstr "RSS 표시"
 
-#: lib/page-settings/sns-follow-forms.php:143
+#: lib/page-settings/sns-follow-forms.php:146
 msgid "RSS購読ボタンを表示する"
 msgstr "RSS 구독 버튼 표시"
 
-#: lib/page-settings/sns-follow-forms.php:144
+#: lib/page-settings/sns-follow-forms.php:147
 msgid "RSS購読用のボタンを表示します。"
 msgstr "RSS 구독 버튼을 표시합니다."
 
-#: lib/page-settings/sns-follow-forms.php:153
-#: lib/page-settings/sns-share-forms-bottom.php:135
-#: lib/page-settings/sns-share-forms-top.php:122
+#: lib/page-settings/sns-follow-forms.php:156
+#: lib/page-settings/sns-share-forms-bottom.php:144
+#: lib/page-settings/sns-share-forms-top.php:131
 msgid "ボタンカラー"
 msgstr "버튼 색"
 
-#: lib/page-settings/sns-follow-forms.php:158
-#: lib/page-settings/sns-share-forms-bottom.php:140
-#: lib/page-settings/sns-share-forms-top.php:127
+#: lib/page-settings/sns-follow-forms.php:161
+#: lib/page-settings/sns-share-forms-bottom.php:149
+#: lib/page-settings/sns-share-forms-top.php:136
 msgid "モノクロ"
 msgstr "모노크롬"
 
-#: lib/page-settings/sns-follow-forms.php:159
-#: lib/page-settings/sns-share-forms-bottom.php:141
-#: lib/page-settings/sns-share-forms-top.php:128
+#: lib/page-settings/sns-follow-forms.php:162
+#: lib/page-settings/sns-share-forms-bottom.php:150
+#: lib/page-settings/sns-share-forms-top.php:137
 msgid "ブランドカラー"
 msgstr "브랜드 컬러"
 
-#: lib/page-settings/sns-follow-forms.php:160
-#: lib/page-settings/sns-share-forms-bottom.php:142
-#: lib/page-settings/sns-share-forms-top.php:129
+#: lib/page-settings/sns-follow-forms.php:163
+#: lib/page-settings/sns-share-forms-bottom.php:151
+#: lib/page-settings/sns-share-forms-top.php:138
 msgid "ブランドカラー（白抜き）"
 msgstr "브랜드 컬러 (흰색)"
 
-#: lib/page-settings/sns-follow-forms.php:163
+#: lib/page-settings/sns-follow-forms.php:166
 msgid "シェアボタンの配色を選択してください。"
 msgstr "공유 버튼의 색을 설정해 주세요."
 
-#: lib/page-settings/sns-follow-forms.php:171
+#: lib/page-settings/sns-follow-forms.php:174
 msgid "デフォルトユーザー"
 msgstr "기본 유저"
 
-#: lib/page-settings/sns-follow-forms.php:176
+#: lib/page-settings/sns-follow-forms.php:179
 msgid "投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。"
 msgstr "글ㆍ페이지 이외에 팔로우 버튼을 표시할 유저를 선택해 주세요."
 
-#: lib/page-settings/sns-follow-forms.php:184
+#: lib/page-settings/sns-follow-forms.php:187
 msgid "フォロー数の表示"
 msgstr "팔로우 수 표시"
 
-#: lib/page-settings/sns-follow-forms.php:188
+#: lib/page-settings/sns-follow-forms.php:191
 msgid "フォロー数を表示する"
 msgstr "팔로우 수 표시하기"
 
-#: lib/page-settings/sns-follow-forms.php:189
+#: lib/page-settings/sns-follow-forms.php:192
 msgid "本文下やウィジェットなどのフォロー数表示を切り替えます。"
 msgstr "본문 아래나 위젯 등에 팔로우 수 표시 여부를 설정합니다."
 
-#: lib/page-settings/sns-follow-forms.php:197
+#: lib/page-settings/sns-follow-forms.php:200
 msgid "feedly購読者数"
 msgstr "feedly 구독자 수"
 
-#: lib/page-settings/sns-follow-forms.php:202
+#: lib/page-settings/sns-follow-forms.php:205
 msgid "feedlyは購読者情報がエラーで取得できない場合があります。その際には、こちらで設定された購読者数が表示されます。"
 msgstr "feedly는 구독자 정보를 오류로 인해 가져오지 못할 수도 있습니다. 그 때는 여기에 설정된 구독자수가 표시됩니다."
 
-#: lib/page-settings/sns-follow-forms.php:216
+#: lib/page-settings/sns-follow-forms.php:219
 #: lib/page-settings/sns-share-forms.php:143
 msgid "キャッシュ設定"
 msgstr "캐시 설정"
 
-#: lib/page-settings/sns-follow-forms.php:218
+#: lib/page-settings/sns-follow-forms.php:221
 msgid "フォロー数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示スピードを多少なりともあげることができます。"
 msgstr "팔로우 수를 가져올 때의 캐시 이용 설정입니다. 캐시를 사용시 페이지 표시 속도가 조금 증가할 수 있습니다."
 
-#: lib/page-settings/sns-follow-forms.php:225
+#: lib/page-settings/sns-follow-forms.php:228
 #: lib/page-settings/sns-share-forms.php:152
 msgid "キャッシュの有効化"
 msgstr "캐시 활성화"
 
-#: lib/page-settings/sns-follow-forms.php:229
+#: lib/page-settings/sns-follow-forms.php:232
 #: lib/page-settings/sns-share-forms.php:156
 msgid "キャッシュを有効にする"
 msgstr "캐시 활성화하기"
 
-#: lib/page-settings/sns-follow-forms.php:230
+#: lib/page-settings/sns-follow-forms.php:233
 #: lib/page-settings/sns-share-forms.php:157
 msgid "SNSシェア数をキャッシュ化することでページ表示スピードの短縮化を図ります。"
 msgstr "SNS 공유 수를 캐시화 해서 페이지 표시 속도를 높입니다."
 
-#: lib/page-settings/sns-follow-forms.php:238
+#: lib/page-settings/sns-follow-forms.php:241
 #: lib/page-settings/sns-share-forms.php:165
 msgid "キャッシュ間隔"
 msgstr "캐시 간격"
 
-#: lib/page-settings/sns-follow-forms.php:247
+#: lib/page-settings/sns-follow-forms.php:250
 #: lib/page-settings/sns-share-forms.php:182
 msgid "2日間"
 msgstr "2일"
 
-#: lib/page-settings/sns-follow-forms.php:248
+#: lib/page-settings/sns-follow-forms.php:251
 #: lib/page-settings/sns-share-forms.php:183
 msgid "3日間"
 msgstr "3일"
 
-#: lib/page-settings/sns-follow-forms.php:251
+#: lib/page-settings/sns-follow-forms.php:254
 #: lib/page-settings/sns-share-forms.php:186
 msgid "キャッシュの取得間隔を設定します。間隔が狭いほど更新は増えますがサーバー負担は増えます（主に相手サーバー）。"
 msgstr "캐시를 가져오는 간격을 설정합니다. 간격이 작을수록 갱신 빈도는 증가하지만 서버 부담은 증가합니다(주로 상대 서버)."
 
-#: lib/page-settings/sns-follow-forms.php:260
+#: lib/page-settings/sns-follow-forms.php:263
 msgid "別スキームフォロー数"
 msgstr "다른 스키마 팔로우 수"
 
-#: lib/page-settings/sns-follow-forms.php:265
+#: lib/page-settings/sns-follow-forms.php:268
 msgid "別スキームのSNSフォロー数をキャッシュする"
 msgstr "다른 스카마의 SNS 팔로우 수를 캐시하기"
 
-#: lib/page-settings/sns-follow-forms.php:266
+#: lib/page-settings/sns-follow-forms.php:269
 msgid "httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。相手サーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。"
 msgstr "https 사이트라면 http 사이트였을 때의 공유 수를 가져올지 여부입니다(http의 경우는 https). 상대 서버에 배의 부하를 거는 것과, 가져오는데 시간이 걸리기 때문에 캐시를 활성화하지 않으면 이용할 수 없는 기능입니다."
 
@@ -9202,119 +9273,119 @@ msgstr "표시 여부"
 msgid "個々のシェアボタンの表示切り替え。"
 msgstr "공유 버튼별 표시 여부"
 
-#: lib/page-settings/sns-share-forms-bottom.php:77
-#: lib/page-settings/sns-share-forms-top.php:64
+#: lib/page-settings/sns-share-forms-bottom.php:86
+#: lib/page-settings/sns-share-forms-top.php:73
 msgid "Google"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:80
-#: lib/page-settings/sns-share-forms-top.php:67
-#: tmp/sns-share-buttons.php:29
+#: lib/page-settings/sns-share-forms-bottom.php:89
+#: lib/page-settings/sns-share-forms-top.php:76
+#: tmp/sns-share-buttons.php:41
 msgid "Pocket"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:83
-#: lib/page-settings/sns-share-forms-top.php:70
-msgid "LINE@"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:92
 #: lib/page-settings/sns-share-forms-top.php:79
+msgid "LINE@"
+msgstr ""
+
+#: lib/page-settings/sns-share-forms-bottom.php:101
+#: lib/page-settings/sns-share-forms-top.php:88
 msgid "タイトルとURLをコピー"
 msgstr "제목 및 URL 복사"
 
-#: lib/page-settings/sns-share-forms-bottom.php:98
+#: lib/page-settings/sns-share-forms-bottom.php:107
 msgid "シェアボタンを選択してください。"
 msgstr "공유 버튼을 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-bottom.php:109
-#: lib/page-settings/sns-share-forms-top.php:96
+#: lib/page-settings/sns-share-forms-bottom.php:118
+#: lib/page-settings/sns-share-forms-top.php:105
 msgid "シェアボタンを表示するページの切り替え。"
 msgstr "공유 버튼을 표시할 페이지 선택"
 
-#: lib/page-settings/sns-share-forms-bottom.php:127
-#: lib/page-settings/sns-share-forms-top.php:114
+#: lib/page-settings/sns-share-forms-bottom.php:136
+#: lib/page-settings/sns-share-forms-top.php:123
 msgid "シェアボタンを表示するページを選択してください。"
 msgstr "공유 버튼을 표시할 페이지를 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-bottom.php:145
+#: lib/page-settings/sns-share-forms-bottom.php:154
 msgid "ボトムシェアボタンの配色を選択してください。"
 msgstr "하단 공유 버튼의 색을 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-bottom.php:153
-#: lib/page-settings/sns-share-forms-top.php:142
+#: lib/page-settings/sns-share-forms-bottom.php:162
+#: lib/page-settings/sns-share-forms-top.php:151
 msgid "カラム数"
 msgstr "칼럼 수"
 
-#: lib/page-settings/sns-share-forms-bottom.php:158
-#: lib/page-settings/sns-share-forms-top.php:147
+#: lib/page-settings/sns-share-forms-bottom.php:167
+#: lib/page-settings/sns-share-forms-top.php:156
 msgid "1列"
 msgstr "1 열"
 
-#: lib/page-settings/sns-share-forms-bottom.php:159
-#: lib/page-settings/sns-share-forms-top.php:148
+#: lib/page-settings/sns-share-forms-bottom.php:168
+#: lib/page-settings/sns-share-forms-top.php:157
 msgid "2列"
 msgstr "2 열"
 
-#: lib/page-settings/sns-share-forms-bottom.php:160
-#: lib/page-settings/sns-share-forms-top.php:149
+#: lib/page-settings/sns-share-forms-bottom.php:169
+#: lib/page-settings/sns-share-forms-top.php:158
 msgid "3列"
 msgstr "3 열"
 
-#: lib/page-settings/sns-share-forms-bottom.php:161
-#: lib/page-settings/sns-share-forms-top.php:150
+#: lib/page-settings/sns-share-forms-bottom.php:170
+#: lib/page-settings/sns-share-forms-top.php:159
 msgid "4列"
 msgstr "4 열"
 
-#: lib/page-settings/sns-share-forms-bottom.php:162
-#: lib/page-settings/sns-share-forms-top.php:151
+#: lib/page-settings/sns-share-forms-bottom.php:171
+#: lib/page-settings/sns-share-forms-top.php:160
 msgid "5列"
 msgstr "5 열"
 
-#: lib/page-settings/sns-share-forms-bottom.php:163
-#: lib/page-settings/sns-share-forms-top.php:152
+#: lib/page-settings/sns-share-forms-bottom.php:172
+#: lib/page-settings/sns-share-forms-top.php:161
 msgid "6列"
 msgstr "6 열"
 
-#: lib/page-settings/sns-share-forms-bottom.php:166
+#: lib/page-settings/sns-share-forms-bottom.php:175
 msgid "ボトムシェアボタンのカラム数を選択してください。"
 msgstr "하단 공유 버튼의 칼럼 수를 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-bottom.php:174
-#: lib/page-settings/sns-share-forms-top.php:164
+#: lib/page-settings/sns-share-forms-bottom.php:183
+#: lib/page-settings/sns-share-forms-top.php:173
 msgid "ロゴ・キャプション配置"
 msgstr "로고ㆍ캡션 배치"
 
-#: lib/page-settings/sns-share-forms-bottom.php:179
-#: lib/page-settings/sns-share-forms-top.php:169
+#: lib/page-settings/sns-share-forms-bottom.php:188
+#: lib/page-settings/sns-share-forms-top.php:178
 msgid "ロゴ・キャプション 左右"
 msgstr "로고ㆍ캡션 좌우"
 
-#: lib/page-settings/sns-share-forms-bottom.php:180
-#: lib/page-settings/sns-share-forms-top.php:170
+#: lib/page-settings/sns-share-forms-bottom.php:189
+#: lib/page-settings/sns-share-forms-top.php:179
 msgid "ロゴ・キャプション 上下"
 msgstr "로고ㆍ캡션 상하"
 
-#: lib/page-settings/sns-share-forms-bottom.php:181
-#: lib/page-settings/sns-share-forms-top.php:171
+#: lib/page-settings/sns-share-forms-bottom.php:190
+#: lib/page-settings/sns-share-forms-top.php:180
 msgid "キャプション・ロゴ 上下"
 msgstr "캡션ㆍ로고 상하"
 
-#: lib/page-settings/sns-share-forms-bottom.php:184
+#: lib/page-settings/sns-share-forms-bottom.php:193
 msgid "ボトムシェアボタンのロゴとキャプションの配置を選択してください。"
 msgstr "하단 공유 버튼의 로고와 캡션의 배치를 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-bottom.php:192
-#: lib/page-settings/sns-share-forms-top.php:182
+#: lib/page-settings/sns-share-forms-bottom.php:201
+#: lib/page-settings/sns-share-forms-top.php:191
 msgid "シェア数の表示"
 msgstr "공유 수 표시"
 
-#: lib/page-settings/sns-share-forms-bottom.php:196
-#: lib/page-settings/sns-share-forms-top.php:186
+#: lib/page-settings/sns-share-forms-bottom.php:205
+#: lib/page-settings/sns-share-forms-top.php:195
 msgid "シェア数を表示"
 msgstr "공유 수를 표시합니다."
 
-#: lib/page-settings/sns-share-forms-bottom.php:197
+#: lib/page-settings/sns-share-forms-bottom.php:206
 msgid "ボトムシェアボタンのシェア数表示を切り替えます。"
 msgstr "하단 공유 버튼의 공유 표시 여부를 지정합니다."
 
@@ -9338,23 +9409,23 @@ msgstr "메인 칼럼 상단 공유 버튼 표시"
 msgid "トップシェアボタンの表示を切り替えます。"
 msgstr "상단 공유 버튼의 표시 여부를 지정합니다."
 
-#: lib/page-settings/sns-share-forms-top.php:85
+#: lib/page-settings/sns-share-forms-top.php:94
 msgid "表示するシェアボタンを選択してください。"
 msgstr "표시할 공유 버튼을 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-top.php:132
+#: lib/page-settings/sns-share-forms-top.php:141
 msgid "トップシェアボタンの配色を選択してください。"
 msgstr "상단 공유 버튼의 색을 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-top.php:155
+#: lib/page-settings/sns-share-forms-top.php:164
 msgid "トップシェアボタンのカラム数を選択してください。"
 msgstr "상단 공유 버튼의 칼럼 수를 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-top.php:174
+#: lib/page-settings/sns-share-forms-top.php:183
 msgid "トップシェアボタンのロゴとキャプションの配置を選択してください。"
 msgstr "상단 공유 버튼의 로고와 캡션의 배치를 선택해 주세요."
 
-#: lib/page-settings/sns-share-forms-top.php:187
+#: lib/page-settings/sns-share-forms-top.php:196
 msgid "トップシェアボタンのシェア数表示を切り替えます。"
 msgstr "상단 공유 버튼의 공유 수 표시 여부를 지정합니다."
 
@@ -10555,75 +10626,75 @@ msgstr "프로필 페이지 URL"
 msgid "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。"
 msgstr "프로필 정보가 입력되어 있는 페이지 URL을 입력해 주세요. 프로필 이름 링크가 프로필 페이지로 변경됩니다. 입력하지 않는 경우에는 작성자의 아카이브 페이지로 링크 됩니다."
 
-#: lib/settings.php:307
+#: lib/settings.php:302
 msgid "ヘッダーメニュー"
 msgstr "헤더 메뉴"
 
-#: lib/settings.php:308
+#: lib/settings.php:303
 msgid "ヘッダーモバイルメニュー"
 msgstr "헤더 모바일 메뉴"
 
-#: lib/settings.php:310
+#: lib/settings.php:305
 msgid "フッターメニュー"
 msgstr "푸터 메뉴"
 
-#: lib/settings.php:312
+#: lib/settings.php:307
 msgid "モバイルスライドインメニュー"
 msgstr "모바일 슬라이더 메뉴"
 
-#: lib/settings.php:557
+#: lib/settings.php:552
 msgid "通常のカード表示"
 msgstr "일반 카드 표시"
 
-#: lib/settings.php:560
+#: lib/settings.php:555
 msgid "カードの上下に破線の区切り線が表示されます。"
 msgstr "카드의 위아래에 구분선이 표시됩니다."
 
-#: lib/settings.php:561
+#: lib/settings.php:556
 msgid "区切り線"
 msgstr "구분선"
 
-#: lib/settings.php:561
+#: lib/settings.php:556
 msgid "（縦型表示時のみ）"
 msgstr "(세로형 표시 시에만)"
 
-#: lib/settings.php:563
+#: lib/settings.php:558
 msgid "カード自体を罫線で囲みます。"
 msgstr "테두리로 카드 감싸기"
 
-#: lib/settings.php:564
+#: lib/settings.php:559
 msgid "囲み枠"
 msgstr "테두리로 감싸기"
 
-#: lib/settings.php:566
+#: lib/settings.php:561
 msgid "大きなサムネイル画像の下にタイトルを表示します。"
 msgstr "큰 썸네일 사진 아래에 제목을 표시합니다."
 
-#: lib/settings.php:567
+#: lib/settings.php:562
 msgid "大きなサムネイル"
 msgstr "큰 썸네일"
 
-#: lib/settings.php:569
+#: lib/settings.php:564
 msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
 msgstr "큰 썸네일 사진 하단에 제목을 겹칩니다."
 
-#: lib/settings.php:570
+#: lib/settings.php:565
 msgid "タイトルを重ねた大きなサムネイル"
 msgstr "제목을 큰 썸네일과 겹치기"
 
-#: lib/settings.php:579
+#: lib/settings.php:574
 msgid "画像のみ"
 msgstr "사진만"
 
-#: lib/settings.php:580
+#: lib/settings.php:575
 msgid "画像中央に白文字タイトル"
 msgstr "사진 중앙에 흰색 제목"
 
-#: lib/settings.php:581
+#: lib/settings.php:576
 msgid "画像中央にラベルでタイトル"
 msgstr "사진 중앙에 라벨 제목"
 
-#: lib/settings.php:582
+#: lib/settings.php:577
 msgid "画像下段を黒背景にしタイトルを重ねる"
 msgstr "이미지 하단을 검은 배경으로 해서 제목 겹치기"
 
@@ -10635,91 +10706,91 @@ msgstr "us-west-2"
 msgid "webservices.amazon.co.jp"
 msgstr "webservices.amazon.com"
 
-#: lib/shortcodes-amazon.php:467
+#: lib/shortcodes-amazon.php:470
 msgid "Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定されていません。「Cocoon設定」の「API」タブから入力してください。"
 msgstr "Amazon API의 액세스 키 또는 개인 키 또는 트래킹 ID가 설정되어 있지 않습니다. Cocoon 설정의 API 탭에서 입력해 주세요."
 
-#: lib/shortcodes-amazon.php:473
+#: lib/shortcodes-amazon.php:476
 msgid "Amazon商品リンクショートコード内にASINが入力されていません。"
 msgstr "Amazon 상품 링크 숏 코드 내에 ASIN이 입력되어 있지 않습니다."
 
-#: lib/shortcodes-amazon.php:484
+#: lib/shortcodes-amazon.php:487
 msgid "503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。サーバーの「php.ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してください。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。"
 msgstr "503 에러. 이 에러는 PA-API 의 액세스 제한을 초과한 경우나 정검 등으로 인해 요청에 응답할 수 없는 경우에 출력되는 에러 코드입니다. 서버의 \"php.ini 설정\"의 \"allow_url_fopen\" 항목이 \"ON\"으로 되어있는지 확인하세요. 이 에러가 자주 발생하는 경우 API 설정 항목에 있는 캐시 저장 기간을 길게 설정하는 것이 좋습니다."
 
-#: lib/shortcodes-amazon.php:497
+#: lib/shortcodes-amazon.php:500
 msgid "アイテムを取得できませんでした。"
 msgstr "아이템을 가져오지 못했습니다."
 
-#: lib/shortcodes-amazon.php:499
+#: lib/shortcodes-amazon.php:502
 msgid "このエラーメッセージは\"サイト管理者のみ\"に表示されています。"
 msgstr "이 오류 메시지는 \"사이트 관리자만\" 표시되어 있습니다."
 
-#: lib/shortcodes-amazon.php:973
+#: lib/shortcodes-amazon.php:978
 msgid "Amazon商品取得エラー"
 msgstr "아마존 상품 가져오기 에러"
 
-#: lib/shortcodes-amazon.php:975
+#: lib/shortcodes-amazon.php:980
 msgid "Amazon商品リンクが取得できませんでした。"
 msgstr "아마존 상품 링크를 가져올 수 없습니다."
 
-#: lib/shortcodes-amazon.php:989
+#: lib/shortcodes-amazon.php:994
 msgid "Amazonで詳細を見る"
 msgstr "아아존에서 자세히 보기"
 
-#: lib/shortcodes-product-func.php:363
+#: lib/shortcodes-product-func.php:381
 msgid "（"
 msgstr "("
 
-#: lib/shortcodes-product-func.php:363
+#: lib/shortcodes-product-func.php:381
 msgid "時点"
 msgstr "시간"
 
-#: lib/shortcodes-product-func.php:363
+#: lib/shortcodes-product-func.php:381
 msgid "）"
 msgstr ")"
 
-#: lib/shortcodes-product-func.php:431
+#: lib/shortcodes-product-func.php:449
 msgid "楽天で詳細を見る"
 msgstr "라쿠텐에서 자세히 보기"
 
-#: lib/shortcodes-rakuten.php:95
+#: lib/shortcodes-rakuten.php:98
 msgid "「楽天アプリケーションID」もしくは「楽天アフィリエイトID」が設定されていません。「Cocoon設定」の「API」タブから入力してください。"
 msgstr "\"라쿠텐 애플리케이션 ID\"혹은 \"라쿠텐 제휴 ID\"가 설정되어 있지 않습니다. Cocoon 설정의 API 탭에서 입력해 주세요."
 
-#: lib/shortcodes-rakuten.php:101
+#: lib/shortcodes-rakuten.php:104
 msgid "id, no, searchオプションのいずれかが入力されていません。"
 msgstr "id, no, search 옵션 중 하나가 입력되지 않았습니다."
 
-#: lib/shortcodes-rakuten.php:181
+#: lib/shortcodes-rakuten.php:184
 msgid "Y/m/d H:i"
 msgstr ""
 
-#: lib/shortcodes-rakuten.php:385
+#: lib/shortcodes-rakuten.php:390
 msgid "料率："
 msgstr "요율:"
 
-#: lib/shortcodes-rakuten.php:453
+#: lib/shortcodes-rakuten.php:458
 msgid "商品が見つかりませんでした。"
 msgstr "상품을 찾을 수 없습니다."
 
-#: lib/shortcodes-rakuten.php:468
+#: lib/shortcodes-rakuten.php:473
 msgid "ショートコードの値が正しく記入されていない可能性があります。"
 msgstr "숏 코드 값이 올바르게 입력되어 있지 않을 가능성이 있습니다."
 
-#: lib/shortcodes-rakuten.php:478
+#: lib/shortcodes-rakuten.php:483
 msgid "Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いた後、リロードすると商品リンクが表示される可能性があります。"
 msgstr "Bad Request가 반환되었습니다. 요청 제한을 받았을 수 있습니다. 잠시 후 새로 고침하면 상품 링크가 표시될 수 있습니다."
 
-#: lib/shortcodes-rakuten.php:485
+#: lib/shortcodes-rakuten.php:490
 msgid "JSONを取得できませんでした。接続環境に問題がある可能性があります。"
 msgstr "JSON을 가져오지 못했습니다. 연결에 문제가 있을 수 있습니다."
 
-#: lib/shortcodes-rakuten.php:511
+#: lib/shortcodes-rakuten.php:516
 msgid "楽天商品取得エラー"
 msgstr "라쿠텐 상품 가져오기 오류"
 
-#: lib/shortcodes-rakuten.php:513
+#: lib/shortcodes-rakuten.php:518
 msgid "楽天商品リンクが取得できませんでした。"
 msgstr "라쿠텐 상품 링크를 가져오지 못했습니다."
 
@@ -10745,75 +10816,91 @@ msgstr "월별 아카이브"
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "updated 숏 코드는 글, 고정 페이지 이외에서는 이용할 수 없습니다."
 
+#: lib/shortcodes.php:1062
+msgid "訴求メッセージ"
+msgstr ""
+
 #: lib/sns-follow.php:135
 msgid "X（旧Twitter） URL"
 msgstr "X(구 Twitter) URL"
 
 #: lib/sns-follow.php:136
+msgid "Mastodon URL"
+msgstr "Mastodon URL"
+
+#: lib/sns-follow.php:137
+msgid "Bluesky URL"
+msgstr "Bluesky URL"
+
+#: lib/sns-follow.php:138
+msgid "Misskey URL"
+msgstr "Misskey URL"
+
+#: lib/sns-follow.php:139
 msgid "Facebook URL"
 msgstr ""
 
-#: lib/sns-follow.php:138
+#: lib/sns-follow.php:141
 msgid "はてブ URL"
 msgstr "하테나 북마크 URL"
 
-#: lib/sns-follow.php:139
+#: lib/sns-follow.php:142
 msgid "Instagram URL"
 msgstr ""
 
-#: lib/sns-follow.php:140
+#: lib/sns-follow.php:143
 msgid "Pinterest URL"
 msgstr ""
 
-#: lib/sns-follow.php:141
+#: lib/sns-follow.php:144
 msgid "YouTube URL"
 msgstr ""
 
-#: lib/sns-follow.php:142
+#: lib/sns-follow.php:145
 msgid "TikTok URL"
 msgstr ""
 
-#: lib/sns-follow.php:143
+#: lib/sns-follow.php:146
 msgid "LinkedIn URL"
 msgstr ""
 
-#: lib/sns-follow.php:144
+#: lib/sns-follow.php:147
 msgid "note URL"
 msgstr ""
 
-#: lib/sns-follow.php:145
+#: lib/sns-follow.php:148
 msgid "SoundCloud URL"
 msgstr ""
 
-#: lib/sns-follow.php:146
+#: lib/sns-follow.php:149
 msgid "Flickr URL"
 msgstr ""
 
-#: lib/sns-follow.php:147
+#: lib/sns-follow.php:150
 msgid "LINE@ URL"
 msgstr ""
 
-#: lib/sns-follow.php:148
+#: lib/sns-follow.php:151
 msgid "Amazon URL"
 msgstr ""
 
-#: lib/sns-follow.php:149
+#: lib/sns-follow.php:152
 msgid "Twitch URL"
 msgstr ""
 
-#: lib/sns-follow.php:150
+#: lib/sns-follow.php:153
 msgid "楽天 ROOM URL"
 msgstr "라쿠텐 ROOM URL"
 
-#: lib/sns-follow.php:151
+#: lib/sns-follow.php:154
 msgid "Slack URL"
 msgstr ""
 
-#: lib/sns-follow.php:152
+#: lib/sns-follow.php:155
 msgid "GitHub URL"
 msgstr "Github URL"
 
-#: lib/sns-follow.php:153
+#: lib/sns-follow.php:156
 msgid "CodePen URL"
 msgstr ""
 
@@ -10848,7 +10935,6 @@ msgstr "오른쪽에 입력할 내용"
 
 #: lib/tinymce/html-tags.php:51
 #: lib/tinymce/shortcodes.php:103
-#: blocks/src/block/search-box/block.js:18
 #: blocks/src/block/search-box/deprecated.js:14
 #: blocks/src/block/search-box/edit.js:7
 #: blocks/src/toolbutton/dropdown-shortcodes.js:80
@@ -10887,8 +10973,6 @@ msgstr "3열"
 
 #: lib/tinymce/html-tags.php:116
 #: tmp/mobile-search-button.php:22
-#: blocks/src/block/search-box/block.js:59
-#: blocks/src/block/search-box/block.js:72
 #: blocks/src/block/search-box/deprecated.js:47
 #: blocks/src/block/search-box/deprecated.js:60
 #: blocks/src/block/search-box/edit.js:26
@@ -10970,7 +11054,7 @@ msgid "この記事を書いた人"
 msgstr "작성자"
 
 #: lib/tinymce/shortcodes.php:96
-#: blocks/src/block/profile/index.js:23
+#: blocks/src/block/profile/index.js:21
 #: blocks/src/toolbutton/dropdown-shortcodes.js:72
 msgid "プロフィールボックス"
 msgstr "프로필 박스"
@@ -11067,48 +11151,48 @@ msgstr "캠페인 중에 표시할 콘텐츠를 입력하세요."
 msgid "キャンペーン期間中のみ表示"
 msgstr "캠페인 기간 동안만 표시"
 
-#: lib/utils.php:802
+#: lib/utils.php:808
 msgid "スクロールできます"
 msgstr "스크롤 가능"
 
-#: lib/utils.php:890
+#: lib/utils.php:896
 msgid "公開"
 msgstr "공개"
 
-#: lib/utils.php:891
+#: lib/utils.php:897
 msgid "記事を公開してもよろしいですか？"
 msgstr "이 글을 공개하시겠습니까?"
 
-#: lib/utils.php:2487
+#: lib/utils.php:2495
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 
-#: lib/utils.php:2495
+#: lib/utils.php:2503
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 
-#: lib/utils.php:2503
+#: lib/utils.php:2511
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 
-#: lib/utils.php:2511
+#: lib/utils.php:2519
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 
-#: lib/utils.php:2519
+#: lib/utils.php:2527
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s개월"
 
-#: lib/utils.php:2530
+#: lib/utils.php:2538
 msgid "%s年"
 msgstr "%s년"
 
-#: lib/utils.php:2532
+#: lib/utils.php:2540
 msgid "%s年%sヶ月"
 msgstr "%s년 %s월"
 
@@ -11408,7 +11492,7 @@ msgstr "프로필 이미지ㆍ정보나 팔로우 버튼은 프로필 페이지�
 
 #: lib/widgets/box-menus.php:19
 #: blocks/src/block/box-menu/edit.js:107
-#: blocks/src/block/box-menu/index.js:23
+#: blocks/src/block/box-menu/index.js:21
 msgid "ボックスメニュー"
 msgstr "박스 메뉴"
 
@@ -11433,7 +11517,7 @@ msgid "内容："
 msgstr "내용 :"
 
 #: lib/widgets/classic-text.php:65
-#: lib/widgets/cta-box.php:141
+#: lib/widgets/cta-box.php:151
 #: lib/widgets/mobile-text.php:83
 #: lib/widgets/pc-text.php:82
 msgid "自動的に段落を追加する"
@@ -11447,75 +11531,77 @@ msgstr "CTA 박스"
 msgid "コール・トゥ・アクションで訪問者にとってもらいたい行動を促すウィジェットです。"
 msgstr "콜 투 액션으로 방문객에게 받고 싶은 행동을 요청하는 위젯입니다."
 
-#: lib/widgets/cta-box.php:106
+#: lib/widgets/cta-box.php:116
 msgid "CTA見出し"
 msgstr "CTA 헤딩"
 
-#: lib/widgets/cta-box.php:113
+#: lib/widgets/cta-box.php:123
 msgid "画像とメッセージのレイアウト（サイドバー・フッター以外）"
 msgstr "이미지와 메시지의 레이아웃(사이드바 및 푸터 이외)"
 
-#: lib/widgets/cta-box.php:117
+#: lib/widgets/cta-box.php:127
 msgid "画像・メッセージを上下に配置"
 msgstr "이미지ㆍ메시지를 위아래로 배치"
 
-#: lib/widgets/cta-box.php:118
+#: lib/widgets/cta-box.php:128
 msgid "画像・メッセージを左右に配置"
 msgstr "이미지ㆍ메시지를 좌우로 배치"
 
-#: lib/widgets/cta-box.php:119
+#: lib/widgets/cta-box.php:129
 msgid "メッセージ・画像を左右に配置"
 msgstr "메시지ㆍ이미지를 좌우로 배치"
 
-#: lib/widgets/cta-box.php:127
+#: lib/widgets/cta-box.php:137
 msgid "CTA画像（選択ボタンが動作しない場合は再読み込み）"
 msgstr "CTA 이미지(선택 버튼이 작동하지 않는 경우에는 다시 읽기)"
 
-#: lib/widgets/cta-box.php:138
+#: lib/widgets/cta-box.php:148
 msgid "CTAメッセージ"
 msgstr "CTA 메시지"
 
-#: lib/widgets/cta-box.php:146
+#: lib/widgets/cta-box.php:156
 msgid "CTAボタンテキスト"
 msgstr "CTA 버튼 텍스트"
 
-#: lib/widgets/cta-box.php:153
+#: lib/widgets/cta-box.php:163
 msgid "CTAボタンURL"
 msgstr "CTA 버튼 URL"
 
-#: lib/widgets/cta-box.php:160
+#: lib/widgets/cta-box.php:170
 msgid "CTAボタン色"
 msgstr "CTA 버튼 색"
 
-#: lib/widgets/cta-box.php:164
+#: lib/widgets/cta-box.php:174
+#: blocks/src/toolbutton/button-black.js:14
+#: blocks/src/toolbutton/button-white-black.js:14
 msgid "黒色"
 msgstr "검은색"
 
-#: lib/widgets/cta-box.php:168
+#: lib/widgets/cta-box.php:178
 msgid "深紫"
 msgstr "진보라"
 
-#: lib/widgets/cta-box.php:169
+#: lib/widgets/cta-box.php:179
 msgid "紺色（インディゴ）"
 msgstr "네이비 블루 (인디고)"
 
-#: lib/widgets/cta-box.php:171
+#: lib/widgets/cta-box.php:181
 msgid "水色"
 msgstr "하늘색"
 
-#: lib/widgets/cta-box.php:172
+#: lib/widgets/cta-box.php:182
 msgid "明るい青（シアン）"
 msgstr "밝은 파랑 (시안)"
 
-#: lib/widgets/cta-box.php:173
+#: lib/widgets/cta-box.php:183
 msgid "緑色がかった青（ティール）"
 msgstr "청록색 (틸)"
 
-#: lib/widgets/cta-box.php:175
+#: lib/widgets/cta-box.php:185
 msgid "明るい緑"
 msgstr "밝은 초록"
 
-#: lib/widgets/cta-box.php:178
+#: lib/widgets/cta-box.php:188
 msgid "琥珀色（アンバー）"
 msgstr "호박색 (앰버)"
 
@@ -11695,7 +11781,7 @@ msgid "テキスト"
 msgstr "텍스트"
 
 #: lib/widgets/navi-entries.php:19
-#: blocks/src/block/navicard/index.js:23
+#: blocks/src/block/navicard/index.js:21
 msgid "ナビカード"
 msgstr "네비 카드"
 
@@ -12044,203 +12130,222 @@ msgstr "글 내의 제목<br><small>(선택한 4개의 색상을 순서대로 �
 msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適応する）</small>"
 msgstr "사이드바 내의 제모<br><small>(선택한 4개의 색상을 순서대로 적용함)</small>"
 
-#: skins/skin-grayish-topfull/functions.php:2013
+#: skins/skin-grayish-topfull/functions.php:2039
 msgid "サイトテキストグレー"
 msgstr "사이트 텍스트 회색"
 
-#: skins/skin-grayish-topfull/functions.php:2014
+#: skins/skin-grayish-topfull/functions.php:2040
 msgid "ライトグレーT0"
 msgstr "라이트 그레이 T0"
 
-#: skins/skin-grayish-topfull/functions.php:2015
+#: skins/skin-grayish-topfull/functions.php:2041
 msgid "ライトブルーT0"
 msgstr "라이트 블루 T0"
 
-#: skins/skin-grayish-topfull/functions.php:2016
+#: skins/skin-grayish-topfull/functions.php:2042
 msgid "ライトブルーT70"
 msgstr "라이트 블루 T70"
 
-#: skins/skin-grayish-topfull/functions.php:2017
+#: skins/skin-grayish-topfull/functions.php:2043
 msgid "ライトブルーT90"
 msgstr "라이트 블루 T90"
 
-#: skins/skin-grayish-topfull/functions.php:2018
+#: skins/skin-grayish-topfull/functions.php:2044
 msgid "シェイドブルーS30"
 msgstr "쉐이드 블루 S30"
 
-#: skins/skin-grayish-topfull/functions.php:2019
+#: skins/skin-grayish-topfull/functions.php:2045
 msgid "シェイドブルーS50"
 msgstr "쉐이드 블루 S50"
 
-#: skins/skin-grayish-topfull/functions.php:2020
+#: skins/skin-grayish-topfull/functions.php:2046
 msgid "PinkT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2021
+#: skins/skin-grayish-topfull/functions.php:2047
 msgid "PinkT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2022
+#: skins/skin-grayish-topfull/functions.php:2048
 msgid "PinkT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2023
+#: skins/skin-grayish-topfull/functions.php:2049
 msgid "PinkS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2024
+#: skins/skin-grayish-topfull/functions.php:2050
 msgid "RedT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2025
+#: skins/skin-grayish-topfull/functions.php:2051
 msgid "RedT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2026
+#: skins/skin-grayish-topfull/functions.php:2052
 msgid "YellowT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2027
+#: skins/skin-grayish-topfull/functions.php:2053
 msgid "YellowT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2028
+#: skins/skin-grayish-topfull/functions.php:2054
 msgid "YellowT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2029
+#: skins/skin-grayish-topfull/functions.php:2055
 msgid "YellowS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2030
+#: skins/skin-grayish-topfull/functions.php:2056
 msgid "BeigeT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2031
+#: skins/skin-grayish-topfull/functions.php:2057
 msgid "BeigeT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2032
+#: skins/skin-grayish-topfull/functions.php:2058
 msgid "BeigeT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2033
+#: skins/skin-grayish-topfull/functions.php:2059
 msgid "BeigeS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2034
+#: skins/skin-grayish-topfull/functions.php:2060
 msgid "GreenT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2035
+#: skins/skin-grayish-topfull/functions.php:2061
 msgid "GreenT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2036
+#: skins/skin-grayish-topfull/functions.php:2062
 msgid "GreenT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2037
+#: skins/skin-grayish-topfull/functions.php:2063
 msgid "GreenS30"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2038
+#: skins/skin-grayish-topfull/functions.php:2064
 msgid "GreenS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2081
+#: skins/skin-grayish-topfull/functions.php:2107
 msgid "横スクロールできます"
 msgstr "갈 스크롤 가능"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:54
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:57
 #: tmp/sns-follow-buttons.php:33
 msgid "Xをフォロー"
 msgstr "X 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:66
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:69
 #: tmp/sns-follow-buttons.php:37
+msgid "Mastodonをフォロー"
+msgstr "Mastodon 팔로우"
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:82
+#: tmp/sns-follow-buttons.php:41
+msgid "Blueskyをフォロー"
+msgstr "Bluesky 팔로우"
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:95
+#: tmp/sns-follow-buttons.php:45
+msgid "Misskeyをフォロー"
+msgstr "Misskey 팔로우"
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:108
+#: tmp/sns-follow-buttons.php:49
 msgid "Facebookをフォロー"
 msgstr "페이스북 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:79
-#: tmp/sns-follow-buttons.php:41
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:121
+#: tmp/sns-follow-buttons.php:53
 msgid "はてブをフォロー"
 msgstr "하테나 북마크 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:92
-#: tmp/sns-follow-buttons.php:49
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:134
+#: tmp/sns-follow-buttons.php:61
 msgid "Instagramをフォロー"
 msgstr "인스타그램 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:105
-#: tmp/sns-follow-buttons.php:77
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:147
+#: tmp/sns-follow-buttons.php:89
 msgid "Pinterestをフォロー"
 msgstr "Pinterest 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:118
-#: tmp/sns-follow-buttons.php:53
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:160
+#: tmp/sns-follow-buttons.php:65
 msgid "YouTubeをフォロー"
 msgstr "유튜브 구독"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:131
-#: tmp/sns-follow-buttons.php:61
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:173
+#: tmp/sns-follow-buttons.php:73
 msgid "LinkedInをフォロー"
 msgstr "LinkedIn 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:144
-#: tmp/sns-follow-buttons.php:65
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:186
+#: tmp/sns-follow-buttons.php:77
 msgid "noteをフォロー"
 msgstr "note 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:157
-#: tmp/sns-follow-buttons.php:73
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:199
+#: tmp/sns-follow-buttons.php:85
 msgid "Flickrをフォロー"
 msgstr "플리커 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:170
-#: tmp/sns-follow-buttons.php:85
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:212
+#: tmp/sns-follow-buttons.php:97
 msgid "Amazonほしい物リストをチェック"
 msgstr "아마존 위시 리스트 체크"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:183
-#: tmp/sns-follow-buttons.php:89
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:225
+#: tmp/sns-follow-buttons.php:101
 msgid "Twitchをフォロー"
 msgstr "트위치 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:196
-#: tmp/sns-follow-buttons.php:93
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:238
+#: tmp/sns-follow-buttons.php:105
 msgid "楽天ROOMをフォロー"
 msgstr "라쿠텐 ROOM 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:209
-#: tmp/sns-follow-buttons.php:97
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:251
+#: tmp/sns-follow-buttons.php:109
 msgid "Slackをフォロー"
 msgstr "Slack 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:222
-#: tmp/sns-follow-buttons.php:101
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:264
+#: tmp/sns-follow-buttons.php:113
 msgid "GitHubをフォロー"
 msgstr "GitHub 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:235
-#: tmp/sns-follow-buttons.php:105
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:277
+#: tmp/sns-follow-buttons.php:117
 msgid "CodePenをフォロー"
 msgstr "CodePen 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:248
-#: tmp/sns-follow-buttons.php:57
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:290
+#: tmp/sns-follow-buttons.php:69
 msgid "TikTokをフォロー"
 msgstr "틱톡 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:261
-#: tmp/sns-follow-buttons.php:69
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:303
+#: tmp/sns-follow-buttons.php:81
 msgid "SoundCloudをフォロー"
 msgstr "사운드 클라우드 팔로우"
 
-#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:274
-#: tmp/sns-follow-buttons.php:81
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:316
+#: tmp/sns-follow-buttons.php:93
 msgid "LINE@をフォロー"
 msgstr "LINE@ 팔로우"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:37
+msgid "ログアウト"
+msgstr "로그아웃"
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
@@ -12436,15 +12541,15 @@ msgstr "작성자 웹사이트"
 msgid "著作サイトをチェック"
 msgstr "저작 사이트 확인"
 
-#: tmp/sns-follow-buttons.php:45
+#: tmp/sns-follow-buttons.php:57
 msgid "Google＋をフォロー"
 msgstr "Google+ 팔로우"
 
-#: tmp/sns-follow-buttons.php:109
+#: tmp/sns-follow-buttons.php:121
 msgid "feedlyで更新情報を購読"
 msgstr "feedly로 새 글 구독"
 
-#: tmp/sns-follow-buttons.php:113
+#: tmp/sns-follow-buttons.php:125
 msgid "RSSで更新情報を購読"
 msgstr "RSS에서 업데이트 구독"
 
@@ -12457,46 +12562,58 @@ msgid "X"
 msgstr ""
 
 #: tmp/sns-share-buttons.php:21
+msgid "Mastodonでシェア"
+msgstr "Mastodon에 공유"
+
+#: tmp/sns-share-buttons.php:25
+msgid "Blueskyでシェア"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:29
+msgid "Misskeyでシェア"
+msgstr "Misskey에 공유"
+
+#: tmp/sns-share-buttons.php:33
 msgid "Facebookでシェア"
 msgstr "페이스북에 공유"
 
-#: tmp/sns-share-buttons.php:25
+#: tmp/sns-share-buttons.php:37
 msgid "はてブでブックマーク"
 msgstr "하테나 북마크에 북마크하기"
 
-#: tmp/sns-share-buttons.php:25
+#: tmp/sns-share-buttons.php:37
 msgid "はてブ"
 msgstr "하테나 북마크"
 
-#: tmp/sns-share-buttons.php:29
+#: tmp/sns-share-buttons.php:41
 msgid "Pocketに保存"
 msgstr "Pocket에 저장"
 
-#: tmp/sns-share-buttons.php:33
+#: tmp/sns-share-buttons.php:45
 msgid "LINEでシェア"
 msgstr "라인에 공유"
 
-#: tmp/sns-share-buttons.php:33
+#: tmp/sns-share-buttons.php:45
 msgid "LINE"
 msgstr ""
 
-#: tmp/sns-share-buttons.php:37
+#: tmp/sns-share-buttons.php:49
 msgid "Pinterestでシェア"
 msgstr "핀터레스트에 공유"
 
-#: tmp/sns-share-buttons.php:41
+#: tmp/sns-share-buttons.php:53
 msgid "LinkedInでシェア"
 msgstr "링크드인에 공유"
 
-#: tmp/sns-share-buttons.php:47
+#: tmp/sns-share-buttons.php:59
 msgid "タイトルとURLをコピーする"
 msgstr "제목 및 URL 복사"
 
-#: tmp/sns-share-buttons.php:47
+#: tmp/sns-share-buttons.php:59
 msgid "コピー"
 msgstr "복사"
 
-#: tmp/sns-share-buttons.php:51
+#: tmp/sns-share-buttons.php:63
 msgid "コメントする"
 msgstr "댓글 남기기"
 
@@ -12609,8 +12726,8 @@ msgid "白抜き緑"
 msgstr "밑색 빼기 초록"
 
 #: blocks/src/block-extension/style-extension/border01.js:161
-msgid "[C] ボーダー設定"
-msgstr "[C] 테두리 설정"
+msgid "[C] ボーダー"
+msgstr ""
 
 #: blocks/src/block-extension/style-extension/border01.js:171
 #: blocks/src/block-extension/style-extension/border01.js:234
@@ -12879,7 +12996,7 @@ msgstr "금지"
 #: blocks/src/block-universal/tab-caption-box/edit.js:111
 #: blocks/src/block/balloon/edit.js:204
 #: blocks/src/block/blogcard/deprecated.js:45
-#: blocks/src/block/blogcard/edit.js:27
+#: blocks/src/block/blogcard/edit.js:28
 #: blocks/src/block/icon-box/deprecated.js:78
 #: blocks/src/block/icon-box/edit.js:25
 #: blocks/src/block/icon-list/edit.js:109
@@ -12889,7 +13006,7 @@ msgstr "금지"
 #: blocks/src/block/sticky-box/edit.js:25
 #: blocks/src/block/tab-box/edit.js:63
 #: blocks/src/block/test-box/deprecated.js:78
-#: blocks/src/block/timeline/edit.js:125
+#: blocks/src/block/timeline/edit.js:142
 #: blocks/src/layout/column-2/block.js:99
 #: blocks/src/micro/micro-balloon/edit.js:77
 #: blocks/src/micro/micro-text/edit.js:51
@@ -12920,7 +13037,7 @@ msgstr "스타일 설정"
 #: blocks/src/block/faq/edit.js:155
 #: blocks/src/block/icon-list/edit.js:131
 #: blocks/src/block/tab-box/edit.js:138
-#: blocks/src/block/timeline/edit.js:136
+#: blocks/src/block/timeline/edit.js:153
 #: blocks/src/block/toggle-box/edit.js:113
 #: blocks/src/micro/micro-balloon/edit.js:122
 #: blocks/src/micro/micro-text/edit.js:90
@@ -12978,7 +13095,7 @@ msgstr "광고가 숨겨져 있습니다."
 msgid "[ad]ショートコードが無効です。"
 msgstr "[ad]숏코드가 유효하지 않습니다."
 
-#: blocks/src/block/ad/index.js:25
+#: blocks/src/block/ad/index.js:23
 msgid "広告を表示します。"
 msgstr "광고를 표시합니다."
 
@@ -13018,7 +13135,7 @@ msgid "コンテンツを囲むだけのブランクボックスを表示しま�
 msgstr "오직 콘텐츠를 포함하기 위한 빈 박스 표시"
 
 #: blocks/src/block/blogcard/deprecated.js:47
-#: blocks/src/block/blogcard/edit.js:29
+#: blocks/src/block/blogcard/edit.js:30
 #: blocks/src/block/profile/edit.js:87
 #: blocks/src/block/tab-box/edit.js:65
 #: blocks/src/block/timeline-item/deprecated.js:20
@@ -13053,7 +13170,7 @@ msgstr "또는 등록되어 있는 박스 메뉴를 표시하도록 설정해 �
 msgid "ボックスメニューを選択してください。"
 msgstr "박스 메뉴를 선택하세요."
 
-#: blocks/src/block/box-menu/index.js:25
+#: blocks/src/block/box-menu/index.js:23
 msgid "登録されているボックスメニューを表示します。"
 msgstr "등록된 박스 메뉴를 표시합니다."
 
@@ -13158,11 +13275,11 @@ msgstr "현재 탭에서 열기"
 msgid "一般的なリンクボタンを作成します。"
 msgstr "일반 링크 버튼을 만듭니다."
 
-#: blocks/src/block/comparison-box/index.js:23
+#: blocks/src/block/comparison-box/index.js:21
 msgid "比較ボックス"
 msgstr "비교 박스"
 
-#: blocks/src/block/comparison-box/index.js:25
+#: blocks/src/block/comparison-box/index.js:23
 msgid "2つの商品（サービス）の比較用の装飾です。"
 msgstr "2개의 상품(서비스)의 비교용 장식입니다."
 
@@ -13207,11 +13324,11 @@ msgstr "답변 라벨 색"
 msgid "質問を入力してください…"
 msgstr "질문을 입력해 주세요."
 
-#: blocks/src/block/faq/index.js:21
+#: blocks/src/block/faq/index.js:20
 msgid "FAQ"
 msgstr ""
 
-#: blocks/src/block/faq/index.js:36
+#: blocks/src/block/faq/index.js:35
 msgid "よくある質問と回答。"
 msgstr "자주 뭍는 질문과 답변"
 
@@ -13292,7 +13409,7 @@ msgstr "필터"
 msgid "全カテゴリー表示"
 msgstr "모든 카테고리 표시"
 
-#: blocks/src/block/info-list/index.js:32
+#: blocks/src/block/info-list/index.js:30
 msgid "新着情報の一覧を表示します。"
 msgstr "새 글 목록을 표시합니다."
 
@@ -13362,7 +13479,7 @@ msgstr "카드에 화살표 표시하기"
 msgid "横並び表示"
 msgstr "가로로 표시"
 
-#: blocks/src/block/navicard/index.js:25
+#: blocks/src/block/navicard/index.js:23
 msgid "登録されているメニューからナビカードを表示します。"
 msgstr "등록되어 있는 메뉴에서 내비게이션 카드를 표시합니다."
 
@@ -13434,7 +13551,7 @@ msgstr "검색 그룹"
 msgid "投稿ユーザ"
 msgstr "게시자"
 
-#: blocks/src/block/new-list/index.js:32
+#: blocks/src/block/new-list/index.js:30
 msgid "新着記事の一覧を表示します。"
 msgstr "새 글 목록을 표시합니다."
 
@@ -13474,7 +13591,7 @@ msgstr "PV 수 표시"
 msgid "除外投稿(ID)"
 msgstr "제외 게시물(ID)"
 
-#: blocks/src/block/popular-list/index.js:32
+#: blocks/src/block/popular-list/index.js:30
 msgid "人気記事の一覧を表示します。"
 msgstr "인기 글 목록을 표시합니다."
 
@@ -13490,7 +13607,7 @@ msgstr "사용자를 선택해주세요."
 msgid "ユーザー"
 msgstr "사용자"
 
-#: blocks/src/block/profile/index.js:25
+#: blocks/src/block/profile/index.js:23
 msgid "プロフィールを表示します。"
 msgstr "프로필을 표시합니다."
 
@@ -13515,16 +13632,14 @@ msgstr "유효한 랭킹이 등록되어 있지 않습니다."
 msgid "もしくは登録されているランキングを表示設定にしてください。。"
 msgstr "또는 등록되어 있는 랭킹이 표시되도록 설정해 주세요."
 
-#: blocks/src/block/ranking/index.js:25
+#: blocks/src/block/ranking/index.js:23
 msgid "登録されているランキングを表示します。"
 msgstr "등록된 랭킹을 표시합니다."
 
-#: blocks/src/block/search-box/block.js:30
 #: blocks/src/block/search-box/index.js:21
 msgid "検索案内"
 msgstr "검색 안내"
 
-#: blocks/src/block/search-box/block.js:33
 #: blocks/src/block/search-box/index.js:23
 msgid "訪問者に検索を促すためのボックスです。検索をクリックすることで検索結果へ跳びます（※AMPページ以外）。"
 msgstr "방문자에게 검색을 유도하기 위한 박스입니다. 검색을 클릭하는 것으로 검색 결과로 이동합니다(※AMP 페이지 외)."
@@ -13547,6 +13662,47 @@ msgstr "탭 박스"
 msgid "タブにメッセージ内容を伝えるための文字が書かれているボックスです。"
 msgstr "탭에 메시지 내용을 전하기 위한 글자가 적혀 있는 박스입니다."
 
+#: blocks/src/block/tab-item/index.js:21
+msgid "タブアイテム"
+msgstr ""
+
+#: blocks/src/block/tab-item/index.js:23
+msgid "タブのコンテンツ"
+msgstr ""
+
+#: blocks/src/block/tab/edit.js:159
+msgid "Tab"
+msgstr ""
+
+#: blocks/src/block/tab/edit.js:258
+msgid "タブ設定"
+msgstr ""
+
+#: blocks/src/block/tab/edit.js:262
+#: blocks/src/block/tab/index.js:22
+msgid "タブ"
+msgstr ""
+
+#: blocks/src/block/tab/edit.js:263
+msgid "タブ削除"
+msgstr ""
+
+#: blocks/src/block/tab/edit.js:264
+msgid "上に移動"
+msgstr ""
+
+#: blocks/src/block/tab/edit.js:265
+msgid "下に移動"
+msgstr ""
+
+#: blocks/src/block/tab/edit.js:270
+msgid "タブ追加"
+msgstr ""
+
+#: blocks/src/block/tab/index.js:24
+msgid "表示する内容をタブで切り替えることができるボックスです。"
+msgstr ""
+
 #: blocks/src/block/template/edit.js:56
 msgid "ダッシュボードメニューの「Cocoon設定」→「テンプレート」からテンプレートを作成してください。"
 msgstr "대시보드 메뉴의 Cocoon 설정→템플릿에서 템플릿을 생성하세요."
@@ -13567,7 +13723,7 @@ msgstr "또는 등록되어 있는 템플릿을 표시되도록 설정해 주세
 msgid "テンプレートを選択してください。"
 msgstr "템플릿을 선택해주세요."
 
-#: blocks/src/block/template/index.js:25
+#: blocks/src/block/template/index.js:23
 msgid "登録されているテンプレートを表示します。"
 msgstr "등록된 템플릿을 표시합니다."
 
@@ -13576,11 +13732,11 @@ msgstr "등록된 템플릿을 표시합니다."
 msgid "カラム左側に表示される内容内容を入力。"
 msgstr "열의 왼쪽에 표시할 내용을 입력하세요."
 
-#: blocks/src/block/timeline/edit.js:127
+#: blocks/src/block/timeline/edit.js:144
 msgid "アイテム数"
 msgstr "목록 개수"
 
-#: blocks/src/block/timeline/edit.js:139
+#: blocks/src/block/timeline/edit.js:156
 msgid "ポイント色"
 msgstr "포인트 색"
 
@@ -14141,6 +14297,26 @@ msgstr "클릭으로 내용을 표시하거나 숨길 수 있는 박스입니다
 msgid "アフィリエイトタグタグ"
 msgstr "제휴 태그"
 
+#: blocks/src/toolbutton/background-icons.js:54
+msgid "背景アイコン"
+msgstr "배경 아이콘"
+
+#: blocks/src/toolbutton/background-icons.js:71
+msgid "◎"
+msgstr ""
+
+#: blocks/src/toolbutton/background-icons.js:72
+msgid "○"
+msgstr ""
+
+#: blocks/src/toolbutton/background-icons.js:73
+msgid "△"
+msgstr ""
+
+#: blocks/src/toolbutton/background-icons.js:74
+msgid "×"
+msgstr ""
+
 #: blocks/src/toolbutton/bold.js:15
 msgid "太字（boldクラス指定）"
 msgstr "굵게 (bold 클래스 지정)"
@@ -14152,6 +14328,11 @@ msgstr "서식 클리어"
 #: blocks/src/toolbutton/dropdown-affiliates.js:57
 msgid "アフィリエイト"
 msgstr "제휴"
+
+#: blocks/src/toolbutton/dropdown-badges.js:22
+#: blocks/src/toolbutton/dropdown-badges.js:35
+msgid "インラインタグ"
+msgstr ""
 
 #: blocks/src/toolbutton/dropdown-letters.js:25
 #: blocks/src/toolbutton/dropdown-letters.js:38
@@ -14267,6 +14448,7 @@ msgstr ""
 
 #: blocks/src/block-universal/tab-caption-box/block.json
 #: blocks/src/block/tab-box/block.json
+#: blocks/src/block/tab/block.json
 msgctxt "block keyword"
 msgid "tab"
 msgstr ""
