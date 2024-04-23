@@ -206,7 +206,7 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_textbox_tag(OP_MERCARI_AFFILIATE_ID, get_mercari_affiliate_id(), '');
             echo '<br>';
 
-            generate_tips_tag(__( 'mercariアフィリエイトの「アフィリエイトID」をを取得してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mercari-search-button/', $help_text));
+            generate_tips_tag(__( 'メルカリの「アンバサダーID」をを取得してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mercari-search-button/', $help_text));
 
 
             echo '<div'.get_not_allowed_form_class(get_mercari_affiliate_id()).'>';

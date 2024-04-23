@@ -2066,6 +2066,9 @@ endif;
 //ユーザーエージェントがボットかどうか
 if ( !function_exists( 'is_useragent_robot' ) ):
 function is_useragent_robot(){
+  if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+    return false;
+  }
   $useragents = array(
     // 'Googlebot', //http://www.google.com/bot.html
     // 'YPBot', //http://www.yellowpages.com/about/legal/crawl
@@ -3327,6 +3330,9 @@ endif;
 //iOSかどうかを判定する
 //https://net-viz.info/archives/409/
 function is_ios() {
+  if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+    return false;
+  }
   $is_ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
   global $is_iphone;
   if ($is_iphone || $is_ipad) {
