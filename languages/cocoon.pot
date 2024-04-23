@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-23T10:18:18+00:00\n"
+"POT-Creation-Date: 2024-04-23T10:32:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 
@@ -5322,7 +5322,7 @@ msgid "メルカリアンバサダーID"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:209
-msgid "メルカリの「アンバサダーID」をを取得してください。"
+msgid "メルカリの「アンバサダーID」を取得してください。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:214
@@ -12340,6 +12340,14 @@ msgstr ""
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:316
 #: tmp/sns-follow-buttons.php:93
 msgid "LINE@をフォロー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:329
+msgid "スキンカラー1"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:330
+msgid "スキンカラー2"
 msgstr ""
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:37
