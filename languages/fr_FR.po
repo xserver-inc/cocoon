@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-20T02:13:15+00:00\n"
-"PO-Revision-Date: 2024-04-20 02:17\n"
+"POT-Creation-Date: 2024-04-23T10:32:23+00:00\n"
+"PO-Revision-Date: 2024-04-23 12:00\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -5328,7 +5328,7 @@ msgid "メルカリアンバサダーID"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:209
-msgid "mercariアフィリエイトの「アフィリエイトID」をを取得してください。"
+msgid "メルカリの「アンバサダーID」を取得してください。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:214
@@ -11161,41 +11161,41 @@ msgstr ""
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:2495
+#: lib/utils.php:2498
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2503
+#: lib/utils.php:2506
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2511
+#: lib/utils.php:2514
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2519
+#: lib/utils.php:2522
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2527
+#: lib/utils.php:2530
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2538
+#: lib/utils.php:2541
 msgid "%s年"
 msgstr ""
 
-#: lib/utils.php:2540
+#: lib/utils.php:2543
 msgid "%s年%sヶ月"
 msgstr ""
 
@@ -12344,6 +12344,14 @@ msgstr ""
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:316
 #: tmp/sns-follow-buttons.php:93
 msgid "LINE@をフォロー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:329
+msgid "スキンカラー1"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:330
+msgid "スキンカラー2"
 msgstr ""
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:37
