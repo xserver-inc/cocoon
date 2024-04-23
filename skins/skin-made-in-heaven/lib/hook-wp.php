@@ -524,3 +524,109 @@ add_filter('render_block', function($block_content) {
   $block_content = preg_replace('/class="(inline-button)/', "class=\"$btn_circle $btn_shine $1", $block_content);
   return $block_content;
 });
+
+
+//******************************************************************************
+//  コメントフォーム追加
+//******************************************************************************
+
+// コメントフォーム追加
+add_action('comment_form_field_comment', function($content) {
+  $icon = 3;
+  $html = null;
+
+  if (get_theme_mod('hvn_comment_setting') && is_user_logged_in()){
+    for ($i=1; $i<=$icon; $i++) {
+      $checked = null;
+      if ($i == 1) {
+        $checked = 'checked';
+      }
+      $img = get_theme_mod("hvn_comment_img{$i}_setting");
+      if ($img) {
+        $url = wp_get_attachment_url($img);
+        $html  .= <<< EOF
+<div class="hvn-comment-icon">
+  <figure><img src="{$url}"></figure>
+  <input type="radio" name="post-icon" value="{$i}" {$checked}>
+</div>
+EOF;
+      }
+    }
+    if ($html) {
+      $html = "<label>アイコン</label><div class=hvn-comment>{$html}</div>";
+    }
+  }
+
+  return $html . $content;
+});
+
+
+// カスタムフィールド出力
+add_action('comment_post', function($comment_id) {
+  if (get_theme_mod('hvn_comment_setting') && is_user_logged_in()) {
+    $post_icon = esc_attr($_POST['post-icon']);
+    add_comment_meta($comment_id, 'post-icon', $post_icon, true);
+  }
+});
+
+
+// コメントメタカスタムフィールド追加
+add_action('add_meta_boxes_comment', function() {
+ add_meta_box('hvn-comment-title', 'カスタムフィールド' , 'comment_meta_post_icon', 'comment', 'normal', 'high');
+});
+
+
+function comment_meta_post_icon($comment) {
+  $post_icon = get_comment_meta($comment->comment_ID, 'post-icon', true);
+
+  $html = <<<EOF
+<p>
+  <label for="post-icon">アイコン番号:</label>
+  <input type="text" name="post-icon" value="{$post_icon}"  class="widefat" />
+</p>
+EOF;
+
+  echo $html;
+}
+
+
+// コメントを編集カスタムフィールド更新
+add_action('edit_comment', function($comment_id) {
+  if (isset($_POST['post-icon'])) {
+    update_comment_meta($comment_id, 'post-icon', esc_attr($_POST['post-icon']));
+  }
+});
+
+
+// コメント一覧にカスタムフィールド追加
+add_filter('manage_edit-comments_columns', function($columns) {
+  $columns['post-icon'] = "アイコン番号";
+
+  return $columns;
+});
+
+
+add_action('manage_comments_custom_column', function($column_name, $comment_id) {
+  if ($column_name == 'post-icon') {
+    $post_icon = get_comment_meta($comment_id, 'post-icon', true);
+    echo esc_attr($post_icon);
+  }
+},10, 2);
+
+
+// アバター変更
+add_filter('get_avatar' , function($avatar, $comment) {
+  if (get_theme_mod('hvn_comment_setting')) {
+    if (!is_admin() && isset($comment->comment_ID)) {
+      $no = get_comment_meta($comment->comment_ID, 'post-icon',true);
+      if ($no) {
+        $img = wp_get_attachment_url(get_theme_mod("hvn_comment_img{$no}_setting"));
+        if ($img) {
+          $avatar = "<img src={$img} class=avatar>";
+        }
+      }
+    }
+  }
+
+  return $avatar;
+}, 100001, 2);
