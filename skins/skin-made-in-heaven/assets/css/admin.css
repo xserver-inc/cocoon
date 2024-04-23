@@ -343,8 +343,7 @@
 /* 画像 */
 
 #content-image tr:nth-child(1),
-#content-image tr:nth-child(4),
-#content-image tr:nth-child(5) {
+#content-image tr:nth-child(4) {
   display: none;
 }
 
@@ -377,12 +376,12 @@
 /* おすすめカード */
 
 #tab-recommended-content tr:nth-child(4),
- #tab-recommended-content tr:nth-child(5) {
+#tab-recommended-content tr:nth-child(5) {
   display: none;
 }
 
 #tab-recommended-content tr:nth-child(3) li:nth-child(n+3) {
-  display:none;
+  display: none;
 }
 
 

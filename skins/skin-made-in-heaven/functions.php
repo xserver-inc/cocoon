@@ -175,7 +175,6 @@ $_THEME_OPTIONS = array(
   'eyecatch_width_100_percent_enable' => 1,
   'eyecatch_caption_visible' => 0,
   'image_wrap_effect' => 'none',
-  'image_zoom_effect' => 'none',
 
 // ブログカード
   'internal_blogcard_enable' => 1,
