@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-04-23T10:32:23+00:00\n"
-"PO-Revision-Date: 2024-04-23 12:00\n"
+"PO-Revision-Date: 2024-04-24 03:18\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -38,7 +38,7 @@ msgstr ""
 #. Author of the theme
 #: style.css
 msgid "わいひら"
-msgstr ""
+msgstr "わいひら（yhira）"
 
 #. Author URI of the theme
 #: style.css
@@ -113,7 +113,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:25
 #: lib/admin-tinymce-qtag.php:81
 msgid "太字"
-msgstr ""
+msgstr "粗體"
 
 #: lib/admin-tinymce-qtag.php:26
 #: lib/admin-tinymce-qtag.php:86
@@ -781,14 +781,14 @@ msgstr ""
 #: lib/page-settings/blogcard-out-forms.php:72
 #: blocks/src/block/comparison-box/items/block.js:28
 msgid "左側"
-msgstr ""
+msgstr "左側"
 
 #: lib/admin-tinymce-qtag.php:887
 #: lib/admin-tinymce-qtag.php:907
 #: lib/admin-tinymce-qtag.php:927
 #: lib/admin-tinymce-qtag.php:948
 msgid "中央"
-msgstr ""
+msgstr "中央"
 
 #: lib/admin-tinymce-qtag.php:892
 #: lib/admin-tinymce-qtag.php:912
@@ -798,7 +798,7 @@ msgstr ""
 #: lib/page-settings/blogcard-out-forms.php:73
 #: blocks/src/block/comparison-box/items/block.js:54
 msgid "右側"
-msgstr ""
+msgstr "右側"
 
 #: lib/admin-tinymce-qtag.php:899
 msgid "テキスト（下）"
@@ -1132,7 +1132,7 @@ msgstr ""
 #: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:66
 msgid "関連記事"
-msgstr ""
+msgstr "相關文章"
 
 #: lib/admin-tinymce-qtag.php:1632
 #: tmp/css-custom.php:911
@@ -1141,7 +1141,7 @@ msgstr ""
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:70
 msgid "参考記事"
-msgstr ""
+msgstr "參考資料"
 
 #: lib/admin-tinymce-qtag.php:1638
 #: tmp/css-custom.php:915
@@ -1164,7 +1164,7 @@ msgstr ""
 #: blocks/src/block/popular-list/index.js:28
 #: blocks/src/old/blogcard-class/block.js:74
 msgid "人気記事"
-msgstr ""
+msgstr "熱門文章"
 
 #: lib/admin-tinymce-qtag.php:1650
 #: tmp/css-custom.php:931
@@ -1840,7 +1840,7 @@ msgstr ""
 #: lib/custom-fields/page-field.php:19
 #: lib/custom-fields/page-field.php:21
 msgid "ページ設定"
-msgstr ""
+msgstr "頁面設定"
 
 #: lib/custom-fields/page-field.php:34
 #: lib/custom-fields/page-field.php:47
@@ -1867,7 +1867,7 @@ msgstr ""
 
 #: lib/custom-fields/page-field.php:40
 msgid "メインカテゴリー"
-msgstr ""
+msgstr "主要分類"
 
 #: lib/custom-fields/page-field.php:41
 msgid "このページで優先するカテゴリーを選択します。"
@@ -13579,7 +13579,7 @@ msgstr ""
 
 #: blocks/src/block/popular-list/edit.js:175
 msgid "半年"
-msgstr ""
+msgstr "半年"
 
 #: blocks/src/block/popular-list/edit.js:205
 msgid "全期間集計"
@@ -14309,19 +14309,19 @@ msgstr ""
 
 #: blocks/src/toolbutton/background-icons.js:71
 msgid "◎"
-msgstr ""
+msgstr "◎"
 
 #: blocks/src/toolbutton/background-icons.js:72
 msgid "○"
-msgstr ""
+msgstr "○"
 
 #: blocks/src/toolbutton/background-icons.js:73
 msgid "△"
-msgstr ""
+msgstr "△"
 
 #: blocks/src/toolbutton/background-icons.js:74
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: blocks/src/toolbutton/bold.js:15
 msgid "太字（boldクラス指定）"
@@ -14344,11 +14344,11 @@ msgstr ""
 #: blocks/src/toolbutton/dropdown-letters.js:38
 #: blocks/src/toolbutton/dropdown-markers.js:35
 msgid "文字"
-msgstr ""
+msgstr "字元"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:79
 msgid "Amazonリンク"
-msgstr ""
+msgstr "Amazon 連結"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:86
 msgid "Amazonリンク（商品名変更）"
@@ -14357,7 +14357,7 @@ msgstr ""
 #: blocks/src/toolbutton/dropdown-shortcodes.js:88
 #: blocks/src/toolbutton/dropdown-shortcodes.js:115
 msgid "商品名"
-msgstr ""
+msgstr "商品名稱"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:97
 msgid "Amazonリンク（ボタン非表示）"
