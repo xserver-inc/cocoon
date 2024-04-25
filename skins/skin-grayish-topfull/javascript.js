@@ -182,6 +182,77 @@ if (footerOffItem) {
 }
 
 // ---------------------------------------------
+// 画面幅1023px以下のモバイルヘッダーメニュー
+// カスタマイザーでFrontのみメニューボタンのみにするとき、
+// その他の子要素を削除（検索ボタン対策）
+// ---------------------------------------------
+const mobileHeaderMenu = document.querySelector('.skin-grayish .mobile-header-menu-buttons');
+
+const mobileHeaderMenuFront = document.querySelector('.skin-grayish.front-top-page .mobile-header-menu-buttons');
+// to functions.php
+const mobileHeaderMenuChild = document.querySelectorAll('.skin-grayish.front-top-page .mobile-header-menu-buttons > li:not(:first-child)');
+
+// for front-page
+const mobileHeaderMenu_onlymenu = () => {
+  if (mobileHeaderMenuChild_remove_flg === 'on') {
+    mobileHeaderMenuChild.forEach(liItem => {
+      liItem.remove();
+    });
+    document.documentElement.style.setProperty('--mobileHeaderMenuBtn_width', `70px`);
+
+  } else if (mobileHeaderMenuChild_remove_flg === 'off') {
+    if (mobileHeaderMenuChild.length < 1) {
+      document.documentElement.style.setProperty('--mobileHeaderMenuOtherBtn_width', `70px`);
+    } else {
+      document.documentElement.style.setProperty('--mobileHeaderMenuOtherBtn_width', `100%`);
+    }
+  }
+};
+if (mobileHeaderMenuFront) {
+  mobileHeaderMenu_onlymenu();
+}
+// for other-page menu-num
+const mobileHeaderMenuOther = document.querySelector('.skin-grayish:not(.front-top-page) .mobile-header-menu-buttons');
+const mobileHeaderMenuChildOther = document.querySelectorAll('.skin-grayish:not(.front-top-page) .mobile-header-menu-buttons > li');
+const mobileHeaderMenuChildOther_num = mobileHeaderMenuChildOther.length;
+
+const mobileHeaderMenuOther_onlyone = () => {
+  if (mobileHeaderMenuOther) {
+    if (mobileHeaderMenuChildOther_num < 2) {
+      document.documentElement.style.setProperty('--mobileHeaderMenuOtherBtn_width', `70px`);
+    } else {
+      document.documentElement.style.setProperty('--mobileHeaderMenuOtherBtn_width', `100%`);
+    }
+  }
+};
+if (mobileHeaderMenuOther) {
+  mobileHeaderMenuOther_onlyone();
+}
+// ---------------------------------------------
+// 画面幅1023px以下のモバイルヘッダーメニュー
+// メニューが一つだけの場合は左端に表示flex-start
+// 2つ以上はspace-aroundに変える（親テーマの設定）
+// ---------------------------------------------
+const mobileHeaderMenu_justifySet = () => {
+
+  if (mobileHeaderMenu) {
+    const mobileHeaderMenuCount = mobileHeaderMenu.childElementCount;
+
+    if (mobileHeaderMenuCount < 2) {
+      document.documentElement.style.setProperty('--mobileHeaderMenu_justifySet', `flex-start`);
+    } else {
+      document.documentElement.style.setProperty('--mobileHeaderMenu_justifySet', `space-around`);
+
+    }
+  } else { //モバイルメニューない時デフォルト
+    document.documentElement.style.setProperty('--mobileHeaderMenu_justifySet', `space-around`);
+  }
+
+};
+
+mobileHeaderMenu_justifySet();
+
+// ---------------------------------------------
 // breadcrumb 画面幅834px　〜　1400px以下
 // ---------------------------------------------
 const mediaQueryList834to1400 = window.matchMedia('(min-width: 835px) and (max-width: 1400px)');
@@ -345,33 +416,24 @@ if (menuOpen) {
 const closeMenu = () => {
   menuContent.close();
 };
-if (menuClose) {
-  menuClose.addEventListener("click", closeMenu);
-}
-if (menuCloseBack) {
-  menuCloseBack.addEventListener("click", closeMenu);
-}
-if (menuContent) {
-  menuContent.addEventListener("close", async (e) => {
-    await waitDialogAnimation(e.target)
-    menuContent.style.display = "none";
-  })
-}
+menuClose.addEventListener("click", closeMenu);
+menuCloseBack.addEventListener("click", closeMenu);
+
+menuContent.addEventListener("close", async (e) => {
+  await waitDialogAnimation(e.target)
+  menuContent.style.display = "none";
+})
 
 const waitDialogAnimation = (dialog) => Promise.allSettled(
   Array.from(dialog.getAnimations()).map(animation => animation.finished)
 );
-if (menuContentSearch) {
-  menuContentSearch.addEventListener('click', (event) => {
-    event.stopPropagation();
-  });
-}
+menuContentSearch.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
 
 mediaQueryList1023.addEventListener('change', (e) => {
   if (e.matches) {
     // 画面幅が1023px以下になったときにmenuContentを閉じる
-    if (menuContent) {
-      menuContent.close();
-    }
+    menuContent.close();
   }
 });
