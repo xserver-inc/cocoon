@@ -301,9 +301,9 @@ if ($color == null || $color == "#ffffff") {
 }
 
 if (is_dark_hexcolor($color)) {
-  $color = '#fff';
+  $color = '#ffffff';
 } else {
-  $color = '#333';
+  $color = '#333333';
 }
 
 echo <<< EOF
@@ -1090,6 +1090,169 @@ EOF;
 }
 
 
+
+//******************************************************************************
+//
+//  オプション
+//
+//******************************************************************************
+
+if ($_HVN_OPTION) {
+
+//******************************************************************************
+//  余白を変更
+//******************************************************************************
+  if (get_theme_mod('hvn_margin_option_setting')) {
+    echo <<< EOF
+.body.error404 .main,
+.body.page .main,
+.body.single .main,
+.archive .entry-content,
+.menu-content .menu-drawer,
+.body :where(.content, .sidebar, .footer) .widget {
+  --main-padding: 5px;
+}
+
+EOF;
+  }
+
+
+//******************************************************************************
+//  カテゴリー波線カラー
+//******************************************************************************
+  $color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
+  $color = get_theme_mod('hvn_wave_color_category_setting', $color);
+  $rgb = hvn_color_mix_rgb($color, 0.25);
+
+  echo <<< EOF
+:root {
+  --category-color: {$rgb['red']}, {$rgb['green']}, {$rgb['blue']};
+}
+
+EOF;
+
+
+//******************************************************************************
+//  メインビジュアル波線非表示
+//******************************************************************************
+  if (get_theme_mod('hvn_main_wave_option_setting')) {
+    echo <<< EOF
+.hvn .hvn-wave-main {
+  display: none;
+}
+
+EOF;
+  }
+
+
+//******************************************************************************
+//  カテゴリーごと波線非表示
+//******************************************************************************
+  if (get_theme_mod('hvn_category_wave_option_setting')) {
+    echo <<< EOF
+.hvn .hvn-wave-category {
+  display: none;
+}
+
+EOF;
+  }
+
+
+//******************************************************************************
+//  ヘッダーロゴ非表示
+//******************************************************************************
+  if (get_theme_mod('hvn_header_option_setting')) {
+    echo <<< EOF
+.front-top-page .header {
+  display: none;
+}
+
+EOF;
+  }
+
+
+//******************************************************************************
+//  タイトル・説明文表示
+//******************************************************************************
+  if (get_theme_mod('hvn_tcheck_option_setting')) {
+    $n_title= get_theme_mod('hvn_title_new_option_setting' ,'NewPost');
+    $n_sub  = get_theme_mod('hvn_title_new_sub_option_setting' ,'新着・更新された記事です');
+
+    $p_title= get_theme_mod('hvn_title_popular_option_setting' ,'Popular');
+    $p_sub  = get_theme_mod('hvn_title_popular_sub_option_setting' ,'本日読まれている記事です');
+
+    $c_title= get_theme_mod('hvn_title_category_option_setting' ,'カテゴリーごと');
+    $c_sub  = get_theme_mod('hvn_title_category_sub_option_setting' ,'カテゴリーから記事を探す');
+
+    echo <<< EOF
+:root {
+  --main-font-size: 40px;
+  --sub-font-size: 14px;
+}
+
+.hvn .list-new-entries-title,
+.hvn .list-popular-title {
+  display: none;
+}
+
+.hvn .list-new-entries:before,
+.hvn .list-columns:before {
+  color: var(--title-color);
+  font-size: var(--main-font-size);
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.hvn .list-new-entries:before {
+  content: "{$n_title}";
+}
+
+.hvn .list-columns.list-popular:before {
+  content: "{$p_title}";
+}
+
+.hvn .list-columns:before {
+  content: "{$c_title}";
+}
+
+.hvn .list-new-entries:after,
+.hvn .list-columns:after {
+  color: var(--title-color);
+  font-size: var(--sub-font-size);
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: calc(var(--main-font-size) * 1.8);
+}
+
+.hvn .list-new-entries:after {
+  content: "{$n_sub}";
+}
+
+.hvn .list-columns.list-popular:after {
+  content: "{$p_sub}";
+}
+
+.hvn .list-columns:after {
+  content: "{$c_sub}";
+}
+
+.hvn .list-new-entries,
+.hvn .list-columns {
+  padding-top: calc((var(--main-font-size) + var(--sub-font-size)) * 1.8 + var(--gap30))!important;
+}
+
+EOF;
+  }
+
+}
+
+
 //******************************************************************************
 //
 //  メインビジュアル
@@ -1153,6 +1316,8 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_header_setting', 'none') == 'none') return;
 
+$color = get_theme_mod('hvn_scroll_color_option_setting', '#ffffff');
+
 echo <<< EOF
 :root {
   --height: calc(100svh - var(--ah));
@@ -1188,7 +1353,7 @@ echo <<< EOF
 }
 
 .hvn-header .message {
-  color: #fff;
+  color: {$color};
   font-weight: bold;
   display: grid;
   inset: 0;
@@ -1200,7 +1365,7 @@ echo <<< EOF
 }
 
 .scrolldown {
-  color: #fff;
+  color: {$color};
   height: fit-content;
   inset: 0;
   letter-spacing: 0.05em;
@@ -1225,9 +1390,9 @@ switch(get_theme_mod('hvn_header_scroll_setting')) {
     echo <<< EOF
 .scrolldown:after {
   animation: pathmove 1.4s ease-in-out infinite;
-  background-color: #fff;
+  background-color: {$color};
   content: '';
-  display:block;
+  display: block;
   height: 50px;
   left: 50%;
   opacity: 0;
@@ -1287,7 +1452,7 @@ EOF;
 if (get_theme_mod('hvn_header_vertival_setting')) {
   echo <<< EOF
 .message div {
-  border: 1px solid #fff;
+  border: 1px solid {$color};
   padding: 1em 0;
   text-align: center;
   text-orientation: upright;

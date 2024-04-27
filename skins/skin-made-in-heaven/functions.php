@@ -6,6 +6,7 @@ global $_THEME_OPTIONS;
 global $_MOBILE_COPY_BUTTON;
 global $_HVN_EYECATCH;
 global $_HVN_NOTICE;
+global $_HVN_OPTION;
 
 $skin_url = get_skin_url();
 // ふわっと追加

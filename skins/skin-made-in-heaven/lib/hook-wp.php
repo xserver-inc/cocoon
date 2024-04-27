@@ -6,10 +6,12 @@ if (!defined('ABSPATH')) exit;
 //  カスタマイザー追加
 //******************************************************************************
 add_action('customize_register', function($wp_customize) {
+  global $_HVN_OPTION;
+
   $wp_customize->add_panel(
     'hvn_cocoon',
     array(
-      'title'     => 'Cocoon拡張設定',
+      'title'     => 'メイド・イン・ヘブン設定',
       'priority'  => 300,
     )
   );
@@ -19,6 +21,9 @@ add_action('customize_register', function($wp_customize) {
   hvn_main($wp_customize);
   hvn_header($wp_customize);
   hvn_editor($wp_customize);
+  if ($_HVN_OPTION) {
+    hvn_option($wp_customize);
+  }
 });
 
 
