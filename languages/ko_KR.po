@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-04-23T10:32:23+00:00\n"
-"PO-Revision-Date: 2024-04-23 12:00\n"
+"PO-Revision-Date: 2024-04-28 14:53\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -5322,15 +5322,15 @@ msgstr "Yahoo! 쇼핑 검색 버튼에 표시할 텍스트를 입력하세요."
 #: lib/page-settings/apis-forms.php:199
 #: lib/page-settings/apis-funcs.php:254
 msgid "メルカリ"
-msgstr ""
+msgstr "메루카리"
 
 #: lib/page-settings/apis-forms.php:204
 msgid "メルカリアンバサダーID"
-msgstr ""
+msgstr "메루카리 앰버서더 ID"
 
 #: lib/page-settings/apis-forms.php:209
 msgid "メルカリの「アンバサダーID」を取得してください。"
-msgstr ""
+msgstr "메루카리의 앰버서더ID를 만들어주세요."
 
 #: lib/page-settings/apis-forms.php:214
 msgid "メルカリ検索ボタンを表示する"
@@ -12345,11 +12345,11 @@ msgstr "LINE@ 팔로우"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:329
 msgid "スキンカラー1"
-msgstr ""
+msgstr "스킨 색상 1"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:330
 msgid "スキンカラー2"
-msgstr ""
+msgstr "스킨 색상 2"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
@@ -12575,7 +12575,7 @@ msgstr "Mastodon에 공유"
 
 #: tmp/sns-share-buttons.php:25
 msgid "Blueskyでシェア"
-msgstr ""
+msgstr "Bluesky에 공유"
 
 #: tmp/sns-share-buttons.php:29
 msgid "Misskeyでシェア"
@@ -12735,7 +12735,7 @@ msgstr "밑색 빼기 초록"
 
 #: blocks/src/block-extension/style-extension/border01.js:161
 msgid "[C] ボーダー"
-msgstr ""
+msgstr "[C] 테두리"
 
 #: blocks/src/block-extension/style-extension/border01.js:171
 #: blocks/src/block-extension/style-extension/border01.js:234
@@ -13672,15 +13672,15 @@ msgstr "탭에 메시지 내용을 전하기 위한 글자가 적혀 있는 박�
 
 #: blocks/src/block/tab-item/index.js:21
 msgid "タブアイテム"
-msgstr ""
+msgstr "탭 요소"
 
 #: blocks/src/block/tab-item/index.js:23
 msgid "タブのコンテンツ"
-msgstr ""
+msgstr "탭 콘텐츠"
 
 #: blocks/src/block/tab/edit.js:159
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #: blocks/src/block/tab/edit.js:258
 msgid "タブ設定"
@@ -14311,19 +14311,19 @@ msgstr "배경 아이콘"
 
 #: blocks/src/toolbutton/background-icons.js:71
 msgid "◎"
-msgstr ""
+msgstr "◎"
 
 #: blocks/src/toolbutton/background-icons.js:72
 msgid "○"
-msgstr ""
+msgstr "○"
 
 #: blocks/src/toolbutton/background-icons.js:73
 msgid "△"
-msgstr ""
+msgstr "△"
 
 #: blocks/src/toolbutton/background-icons.js:74
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: blocks/src/toolbutton/bold.js:15
 msgid "太字（boldクラス指定）"
@@ -14340,7 +14340,7 @@ msgstr "제휴"
 #: blocks/src/toolbutton/dropdown-badges.js:22
 #: blocks/src/toolbutton/dropdown-badges.js:35
 msgid "インラインタグ"
-msgstr ""
+msgstr "인라인 태그"
 
 #: blocks/src/toolbutton/dropdown-letters.js:25
 #: blocks/src/toolbutton/dropdown-letters.js:38
