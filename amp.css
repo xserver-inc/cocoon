@@ -7776,6 +7776,7 @@ div.fb-like-mobile {
   text-align: center;
   font-weight: 900;
   line-height: 50px;
+  width: auto;
   overflow: hidden;
 }
 .logo-menu-button img {
