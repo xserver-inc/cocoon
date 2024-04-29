@@ -318,24 +318,6 @@ add_action('entry_card_snippet_after',function($post_ID) {
 
 
 //******************************************************************************
-//  カラーパレット追加
-//******************************************************************************
-add_filter('block_editor_color_palette_colors', function($colors) {
-  $main_color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
-  $rgb = hvn_color_mix_rgb($main_color, 0.15);
-  $hover_color = $rgb['hex'];
-
-  $add_colors = array(
-    array('name' => __('スキンカラー1' , THEME_NAME), 'slug' => 'hvn-main-color' , 'color' => $main_color),
-    array('name' => __('スキンカラー2' , THEME_NAME), 'slug' => 'hvn-hover-color', 'color' => $hover_color),
-  );
-  $colors = array_merge($colors, $add_colors);
-
-  return $colors;
-});
-
-
-//******************************************************************************
 //  SNSシェアコメントボタン表示
 //******************************************************************************
 add_filter('is_comment_share_button_visible', function($res, $option) {
