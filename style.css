@@ -7807,6 +7807,7 @@ div.fb-like-mobile {
   max-height: 50px;
   display: block;
   margin: 0 auto;
+  width: auto;
 }
 
 .fa.menu-icon {

@@ -7340,6 +7340,7 @@ body.wp-admin {
   max-height: 50px;
   display: block;
   margin: 0 auto;
+  width: auto;
 }
 .admin-settings .demo .fa.menu-icon {
   font: inherit;
@@ -15818,6 +15819,7 @@ body.wp-admin {
   max-height: 50px;
   display: block;
   margin: 0 auto;
+  width: auto;
 }
 .admin-settings .demo .fa.menu-icon {
   font: inherit;
