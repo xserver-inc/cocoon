@@ -34,30 +34,35 @@
 // });
 
 document.addEventListener('DOMContentLoaded', function() {
-  var cocoonBlocks = document.querySelectorAll('.cocoon-block-tab');
-  cocoonBlocks.forEach(function(block) {
-    var isActive = block.querySelector('.is-active');
-    // タブにアクティブが何も設定されていない時
-    if (!isActive) {
-      var label = block.querySelector('.tab-label');
-      if (label) {
-        // 最初のラベルアクティブに
-        label.classList.add('is-active');
+  function firstTabActive($selector) {
+    const cocoonBlocks = document.querySelectorAll($selector);
+    cocoonBlocks.forEach(function(block) {
+      const isActive = block.querySelector('.is-active');
+      // タブにアクティブが何も設定されていない時
+      if (!isActive) {
+        const label = block.querySelector('.tab-label');
+        if (label) {
+          // 最初のラベルアクティブに
+          label.classList.add('is-active');
+        }
+        const content = block.querySelector('.tab-content');
+        if (content) {
+          // 最初のラベルをアクティブに
+          content.classList.add('is-active');
+        }
       }
-      var content = block.querySelector('.tab-content');
-      if (content) {
-        // 最初のラベルをアクティブに
-        content.classList.add('is-active');
-      }
-    }
-  });
+    });
+  }
+
+  //ページ読み込み時3ブロックの最初のタブをアクティブにする
+  firstTabActive('.cocoon-block-tab');
 
   // タブのラベル要素をクリックしたとき
-  var tabLabels = document.querySelectorAll('.tab-label');
+  const tabLabels = document.querySelectorAll('.tab-label');
   tabLabels.forEach(function(label) {
     label.addEventListener('click', function() {
       // タブラベルのクリックからタブブロック要素を取得する
-      var tabBlock = this.parentElement.parentElement;
+      const tabBlock = this.parentElement.parentElement;
       // アクティブを削除する
       tabBlock.querySelectorAll('.tab-label').forEach(function(lbl) {
         lbl.classList.remove('is-active');
@@ -69,8 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
       // ラベルをアクティブにする
       this.classList.add('is-active');
       // 内容をアクティブにする
-      var index = Array.from(tabBlock.querySelectorAll('.tab-label')).indexOf(this);
+      const index = Array.from(tabBlock.querySelectorAll('.tab-label')).indexOf(this);
       tabBlock.querySelectorAll('.tab-content')[index].classList.add('is-active');
+      firstTabActive('.tab-content.is-active');
+
     });
   });
 });
