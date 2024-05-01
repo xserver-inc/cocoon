@@ -405,15 +405,20 @@ endif;
 if (!function_exists('get_notice_area_message')):
 function get_notice_area_message() {
   global $_HVN_NOTICE;
+  global $_THEME_OPTIONS;
 
   $_HVN_NOTICE = false;
 
   $msg = stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE));
 
-
   if (!is_admin()) {
-    $msg = str_replace('[', '<', $msg);
-    $msg = str_replace(']', '>', $msg);
+    if (strpos($msg, '[pattern ') !== false) {
+      $msg = do_shortcode($msg);
+
+      if (strpos($msg, 'href=') !== false) {
+        $_THEME_OPTIONS['notice_area_url'] = '';
+      }
+    }
 
     $msg_array =  explode(',' ,$msg);
 
