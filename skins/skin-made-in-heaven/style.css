@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.2.0
+ Version: 2.2.1
  Priority: 6900001000
 */
 
@@ -83,6 +83,7 @@
 **                            カスタマイザーオプションを追加
 **        2.1.1   2024-04-29  カラーパレットを削除
 **        2.2.0   2024-05-01  通知メッセージにpatternショートコード許可
+**        2.2.1   2024-05-02  バグ対策
 **
 *******************************************************************************/
 
@@ -1772,6 +1773,7 @@ span.fas.fa-history:before {
   align-items: center;
   color: var(--s-text-color);
   display: flex;
+  flex-wrap: wrap;
   font-size: var(--cocoon-text-size-s);
   margin: 0;
 }
@@ -3557,8 +3559,11 @@ blockquote:before,
 }
 
 .is-style-accordion .faq-item {
-  color: #333;
   padding: var(--padding15);
+}
+
+.is-style-accordion .faq-question {
+  color: #333;
 }
 
 .is-style-accordion .faq-question:before {

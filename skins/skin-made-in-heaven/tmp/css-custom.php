@@ -476,7 +476,7 @@ EOF;
 }
 
 .front-top-page .post-update:before {
-  content: '\\f1da';
+  content: '\\f2f1';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   margin-right: 3px;
