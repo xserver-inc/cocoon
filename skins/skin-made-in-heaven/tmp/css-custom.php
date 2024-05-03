@@ -1570,9 +1570,11 @@ if ($zoom != '0') {
 
 @keyframes zoom {
   0% {
+    filter: blur(3px);
     transform: scale(var(--s-zoom));
   }
   100% {
+    filter: blur(0);
     transform: scale(var(--e-zoom));
   }
 }

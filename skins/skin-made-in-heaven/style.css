@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.2.1
+ Version: 2.2.2
  Priority: 6900001000
 */
 
@@ -84,6 +84,7 @@
 **        2.1.1   2024-04-29  カラーパレットを削除
 **        2.2.0   2024-05-01  通知メッセージにpatternショートコード許可
 **        2.2.1   2024-05-02  バグ対策
+**        2.2.2   2024-05-03  バグ対策
 **
 *******************************************************************************/
 
@@ -2955,15 +2956,18 @@ aside.widget .widget-title {
 .tag-link,
 .list-item-caption,
 .tag-caption,
-.widget_pages a {
+.body .widget_pages a {
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.tag-link,
-.body .widget_pages a {
-  display: block;
+
+/* サイトマップ */
+
+.sitemap .list-item-caption {
+  white-space: unset;
 }
 
 
@@ -3499,7 +3503,7 @@ blockquote:before,
   background-color: var(--border-color);
   border: 0;
   color: #333;
-  padding: var(--padding15);
+  padding: var(--padding15) calc(var(--padding15) + 1em) var(--padding15) var(--padding15);
 }
 
 .toggle-button:hover {
@@ -3515,17 +3519,24 @@ blockquote:before,
   padding: var(--padding15);
 }
 
+.is-style-accordion .faq-question:before,
 .toggle-button:before {
+  align-items: center;
   color: unset;
   content: '\f107';
+  display: flex;
   font-family: 'Font Awesome 5 Free';
   font-size: 16px;
+  font-weight: 900;
+  height: 100%;
   margin: 0;
   opacity: 1!important;
   position: absolute;
   right: 1em;
+  top: 0;
 }
 
+.is-style-accordion .faq-question.active:before,
 .toggle-checkbox:checked ~ .toggle-button:before {
   content: '\f106';
 }
@@ -3559,22 +3570,11 @@ blockquote:before,
 }
 
 .is-style-accordion .faq-item {
-  padding: var(--padding15);
+  padding: var(--padding15) calc(var(--padding15) + 1em) var(--padding15) var(--padding15);
 }
 
 .is-style-accordion .faq-question {
   color: #333;
-}
-
-.is-style-accordion .faq-question:before {
-  content: '\f107'!important;
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  opacity: 1!important;
-}
-
-.is-style-accordion .faq-question.active:before {
-  content: '\f106'!important;
 }
 
 
