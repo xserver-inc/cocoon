@@ -3028,21 +3028,6 @@ blockquote cite {
   display: none;
 }
 
-/* サイドバーpadding */
-.skin-grayish .sidebar-menu-content .sidebar.nwa {
-  padding: 32px 8px;
-}
-
-.nwa .tab-content-group {
-  padding: 1.2em 0;
-}
-
-.nwa .gray-tab-style-cir .tab-content-group,
-.nwa .footer-widgets .tab-content-group,
-.nwa .footer-widgets-mobile .tab-content-group {
-  padding: 1.2em 0.8em;
-}
-
 
 /* -------- Tab Block add end -------- */
 
@@ -3528,10 +3513,6 @@ blockquote cite {
 
 .skin-grayish .footer-bottom-logo .logo-text {
   text-align: left;
-}
-
-.skin-grayish .footer-bottom-logo .logo-text .site-name-text-link {
-  padding: 0;
 }
 
 .skin-grayish .footer-bottom-logo .site-name-text {
@@ -5304,7 +5285,6 @@ body:has(#spotlight.show) .header {
   .skin-grayish .footer-bottom-logo {
     padding: 1rem 0;
     width: 100%;
-    line-height: 1.4;
   }
 
   .skin-grayish .footer-bottom-logo .logo-text {
