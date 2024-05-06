@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.2.2
+ Version: 2.3.0
  Priority: 6900001000
 */
 
@@ -85,6 +85,10 @@
 **        2.2.0   2024-05-01  通知メッセージにpatternショートコード許可
 **        2.2.1   2024-05-02  バグ対策
 **        2.2.2   2024-05-03  バグ対策
+**        2.3.0   2024-05-05  タグクラウドドロップダウン表示を追加
+**                            インデックスページソートを追加
+**                            通知エリア固定を追加
+**                            比較ボックスパターンを追加
 **
 *******************************************************************************/
 

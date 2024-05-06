@@ -326,3 +326,68 @@ add_filter('is_comment_share_button_visible', function($res, $option) {
   }
   return $res;
 }, 10, 2);
+
+
+//******************************************************************************
+//  一覧ページに表示順フォームを追加
+//******************************************************************************
+add_action('cocoon_part_before__tmp/list-index', function() {
+  if (!is_home() || !get_theme_mod('hvn_orderby_option_setting')) return;
+
+  $orderby = isset($_GET['orderby-switch']) ? esc_html($_GET['orderby-switch']) : null;
+  if (isset($_COOKIE['orderby-switch'])) {
+    $orderby = $_COOKIE['orderby-switch'];
+  }
+
+  ob_start();
+?>
+<div class="orderby">
+  <span class="sort-title"><i class="fas fa-sort-amount-down"></i>並び替え</span>
+  <span class="sort-select">
+    <select id="orderby-switch" class="orderby-switch-dropdown" onchange="document.cookie = this.options[this.selectedIndex].value+';path=/';window.document.location.href =location.href;">
+      <option value="orderby-switch="         <?php the_option_selected($orderby, '');          ?>>新着順</option>
+      <option value="orderby-switch=modified" <?php the_option_selected($orderby, 'modified');  ?>>更新順</option>
+      <option value="orderby-switch=popular"  <?php the_option_selected($orderby, 'popular');   ?>>人気順</option>
+    </select>
+  </span>
+</div>
+<?php
+  echo  ob_get_clean();
+});
+
+
+//******************************************************************************
+//  表示順を設定
+//******************************************************************************
+add_action('pre_get_posts',function($query) {
+  // 一覧ページのみ並び替え
+  if (is_admin() || !is_home() || !$query->is_main_query()) {
+    return;
+  }
+
+  // cooki更新
+  $ck = isset($_COOKIE['orderby-switch']) ? $_COOKIE['orderby-switch'] : null;
+  if (isset($_GET['orderby-switch'])) {
+    setcookie('orderby-switch', esc_html($_GET['orderby-switch']), time() + 60 * 60 * 24,'/');
+  }
+
+  // 順序設定
+  $gt = isset($_GET['orderby-switch']) ? $_GET['orderby-switch'] : null;
+  $st = empty($ck) ? $gt : $ck;
+
+  switch($st) {
+    // 人気順
+    case 'popular':
+      $records = get_access_ranking_records('all', 3000, 'post');
+      $post_ids = array();
+      foreach ($records as $post) {
+        $post_ids[] = $post->ID;
+      }
+      $query->set('post__in', $post_ids);
+      $query->set('orderby', 'post__in');
+      break;
+
+    default:
+      $query->set('orderby', $st);
+  }
+});

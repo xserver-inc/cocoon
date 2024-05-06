@@ -49,6 +49,22 @@ function hvn_option($wp_customize) {
     )
   );
 
+
+  $wp_customize->add_setting('hvn_orderby_option_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_orderby_option_setting',
+      array(
+        'label'     => '並び替え選択',
+        'section'   => 'hvn_option_section',
+        'settings'  => 'hvn_orderby_option_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
   $wp_customize->add_setting('hvn_label2_option_section');
   $wp_customize->add_control(
     new WP_Customize_Control(
@@ -152,6 +168,21 @@ function hvn_option($wp_customize) {
         'label'     => 'ヘッダーロゴ非表示',
         'section'   => 'hvn_option_section',
         'settings'  => 'hvn_header_option_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_tcheck_option_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_tcheck_option_setting',
+      array(
+        'label'     => 'タイトル変更',
+        'section'   => 'hvn_option_section',
+        'settings'  => 'hvn_tcheck_option_setting',
         'type'      => 'checkbox',
       )
     )
@@ -282,21 +313,6 @@ function hvn_option($wp_customize) {
         'input_attrs' => array(
           'required'  => '',
         )
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_tcheck_option_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_tcheck_option_setting',
-      array(
-        'label'     => 'タイトル変更',
-        'section'   => 'hvn_option_section',
-        'settings'  => 'hvn_tcheck_option_setting',
-        'type'      => 'checkbox',
       )
     )
   );

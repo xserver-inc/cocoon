@@ -779,6 +779,21 @@ EOF;
 
 
 //******************************************************************************
+//  通知エリア固定
+//******************************************************************************
+if (get_theme_mod('hvn_notice_setting')) {
+  echo <<< EOF
+.notice-area {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+EOF;
+}
+
+
+//******************************************************************************
 //  いいねボタン
 //******************************************************************************
 if (get_theme_mod('hvn_like_setting')) {
@@ -1113,6 +1128,45 @@ if ($_HVN_OPTION) {
   --main-padding: 5px;
 }
 
+EOF;
+  }
+
+
+//******************************************************************************
+//  並び替え選択
+//******************************************************************************
+  if (get_theme_mod('hvn_orderby_option_setting')) {
+    echo <<< EOF
+.orderby {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.orderby .sort-select {
+  background-color: #fff;
+}
+
+.hvn-dark .orderby .sort-select {
+  background-color: transparent;
+}
+
+.orderby select {
+  background-color: unset;
+  color: var(--cocoon-text-color);
+  display: block;
+  outline: 0;
+  width: fit-content;
+}
+
+.sort-title {
+  color: var(--cocoon-text-color);
+}
+
+.sort-title i {
+  margin-right: 3px;
+}
 EOF;
   }
 
@@ -1523,7 +1577,6 @@ if ($color && $opacity) {
 } else {
   $color = 'unset';
 }
-
 
 // 文字サイズ
 $font_size = get_theme_mod('hvn_appea_font_size_setting', 40);
