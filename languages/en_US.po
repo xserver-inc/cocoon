@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-20T02:13:15+00:00\n"
-"PO-Revision-Date: 2024-04-20 03:20\n"
+"POT-Creation-Date: 2024-05-08T11:51:37+00:00\n"
+"PO-Revision-Date: 2024-05-08 13:01\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -5328,7 +5328,7 @@ msgid "メルカリアンバサダーID"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:209
-msgid "mercariアフィリエイトの「アフィリエイトID」をを取得してください。"
+msgid "メルカリの「アンバサダーID」を取得してください。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:214
@@ -10824,15 +10824,15 @@ msgstr "X (formerly Twitter) URL"
 
 #: lib/sns-follow.php:136
 msgid "Mastodon URL"
-msgstr ""
+msgstr "Mastodon URL"
 
 #: lib/sns-follow.php:137
 msgid "Bluesky URL"
-msgstr ""
+msgstr "Bluesky URL"
 
 #: lib/sns-follow.php:138
 msgid "Misskey URL"
-msgstr ""
+msgstr "Misskey URL"
 
 #: lib/sns-follow.php:139
 msgid "Facebook URL"
@@ -11161,41 +11161,41 @@ msgstr "Publish"
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure you want to publish the page?"
 
-#: lib/utils.php:2495
+#: lib/utils.php:2498
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s min"
 msgstr[1] "%s min"
 
-#: lib/utils.php:2503
+#: lib/utils.php:2506
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s hour"
 msgstr[1] "%s hour"
 
-#: lib/utils.php:2511
+#: lib/utils.php:2514
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s day"
 msgstr[1] "%s day"
 
-#: lib/utils.php:2519
+#: lib/utils.php:2522
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s week"
 msgstr[1] "%s weeks"
 
-#: lib/utils.php:2527
+#: lib/utils.php:2530
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s months"
 msgstr[1] "%s months"
 
-#: lib/utils.php:2538
+#: lib/utils.php:2541
 msgid "%s年"
 msgstr "%s years"
 
-#: lib/utils.php:2540
+#: lib/utils.php:2543
 msgid "%s年%sヶ月"
 msgstr "%s years and %s months"
 
@@ -11229,7 +11229,7 @@ msgid "投稿タイトル上"
 msgstr "Above post title"
 
 #: lib/widget-areas.php:67
-msgid "投稿タイトル上に表示されるウイジェット。"
+msgid "投稿タイトル上に表示されるウィジェット。"
 msgstr "Widgets are displayed above the post title."
 
 #: lib/widget-areas.php:81
@@ -11237,7 +11237,7 @@ msgid "投稿タイトル下"
 msgstr "Below post title"
 
 #: lib/widget-areas.php:83
-msgid "投稿タイトル下に表示されるウイジェット。"
+msgid "投稿タイトル下に表示されるウィジェット。"
 msgstr "Widgets are displayed below the post title."
 
 #: lib/widget-areas.php:97
@@ -11245,7 +11245,7 @@ msgid "投稿本文上"
 msgstr "Above post body text"
 
 #: lib/widget-areas.php:99
-msgid "投稿本文上に表示されるウイジェット。"
+msgid "投稿本文上に表示されるウィジェット。"
 msgstr "Widgets are displayed above the body text in a post."
 
 #: lib/widget-areas.php:113
@@ -11253,7 +11253,7 @@ msgid "投稿本文中"
 msgstr "In post body text"
 
 #: lib/widget-areas.php:115
-msgid "投稿本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
+msgid "投稿本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "Widgets are displayed in the body text in a post. They are displayed above the first H2 tag in the body text. If ads are displayed, widgets will be displayed below the ads."
 
 #: lib/widget-areas.php:129
@@ -11261,7 +11261,7 @@ msgid "投稿本文下"
 msgstr "Below post body text"
 
 #: lib/widget-areas.php:131
-msgid "投稿本文下に表示されるウイジェット。"
+msgid "投稿本文下に表示されるウィジェット。"
 msgstr "Widgets are displayed below the body text in a post."
 
 #: lib/widget-areas.php:145
@@ -11269,7 +11269,7 @@ msgid "投稿SNSボタン上"
 msgstr "Above social media buttons in a post"
 
 #: lib/widget-areas.php:147
-msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表示している場合は、広告の下になります。"
+msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "Widgets are displayed above the social media buttons at the very bottom of the main column of a post."
 
 #: lib/widget-areas.php:161
@@ -11277,7 +11277,7 @@ msgid "投稿SNSボタン下"
 msgstr "Below social media buttons in a post"
 
 #: lib/widget-areas.php:163
-msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
+msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "Widgets are displayed below the social media buttons at the very bottom of the main column of a post."
 
 #: lib/widget-areas.php:177
@@ -11285,7 +11285,7 @@ msgid "投稿関連記事上"
 msgstr "Related Articles"
 
 #: lib/widget-areas.php:179
-msgid "関連記事の上に表示されるウイジェット。"
+msgid "関連記事の上に表示されるウィジェット。"
 msgstr "Widget displayed above related articles."
 
 #: lib/widget-areas.php:193
@@ -11293,7 +11293,7 @@ msgid "投稿関連記事下"
 msgstr "Below related articles in a post"
 
 #: lib/widget-areas.php:195
-msgid "関連記事の下（広告を表示している場合はその下）に表示されるウイジェット。"
+msgid "関連記事の下（広告を表示している場合はその下）に表示されるウィジェット。"
 msgstr "Widgets are displayed below related articles (if ads are displayed, the widgets will be displayed below the ads)."
 
 #: lib/widget-areas.php:209
@@ -11301,7 +11301,7 @@ msgid "投稿コメント上"
 msgstr "Above comment"
 
 #: lib/widget-areas.php:211
-msgid "コメントエリアの上に表示されるウイジェット。"
+msgid "コメントエリアの上に表示されるウィジェット。"
 msgstr "The widget displayed above the comment field."
 
 #: lib/widget-areas.php:225
@@ -11309,7 +11309,7 @@ msgid "投稿コメント下"
 msgstr "Below comment"
 
 #: lib/widget-areas.php:227
-msgid "コメントフォームの下に表示されるウイジェット。"
+msgid "コメントフォームの下に表示されるウィジェット。"
 msgstr "Widgets are displayed below the comment form."
 
 #: lib/widget-areas.php:241
@@ -11317,7 +11317,7 @@ msgid "固定ページタイトル上"
 msgstr "Above page title"
 
 #: lib/widget-areas.php:243
-msgid "固定ページタイトル上に表示されるウイジェット。"
+msgid "固定ページタイトル上に表示されるウィジェット。"
 msgstr "Widgets are displayed above the page title."
 
 #: lib/widget-areas.php:257
@@ -11325,7 +11325,7 @@ msgid "固定ページタイトル下"
 msgstr "Below page title"
 
 #: lib/widget-areas.php:259
-msgid "固定ページタイトル下に表示されるウイジェット。"
+msgid "固定ページタイトル下に表示されるウィジェット。"
 msgstr "Widgets are displayed below the page title."
 
 #: lib/widget-areas.php:273
@@ -11333,7 +11333,7 @@ msgid "固定ページ本文上"
 msgstr "Above page body text"
 
 #: lib/widget-areas.php:275
-msgid "固定ページ本文上に表示されるウイジェット。"
+msgid "固定ページ本文上に表示されるウィジェット。"
 msgstr "Widgets are displayed above the body text in a page."
 
 #: lib/widget-areas.php:289
@@ -11341,7 +11341,7 @@ msgid "固定ページ本文中"
 msgstr "In the page body text"
 
 #: lib/widget-areas.php:291
-msgid "固定ページ本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
+msgid "固定ページ本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "Widgets are displayed in the body text in a page. They are displayed above the first H2 tag in the body text. If ads are displayed, widgets will be displayed below the ads."
 
 #: lib/widget-areas.php:305
@@ -11349,15 +11349,15 @@ msgid "固定ページ本文下"
 msgstr "Below page body text"
 
 #: lib/widget-areas.php:307
-msgid "固定ページ本文下に表示されるウイジェット。"
-msgstr "Widgets are displayed below the body text in a page."
+msgid "固定ページ本文下に表示されるウィジェット。"
+msgstr "Widgets are displayed above the body text in a page."
 
 #: lib/widget-areas.php:322
 msgid "固定ページSNSボタン上"
 msgstr "Above social media buttons in a page"
 
 #: lib/widget-areas.php:324
-msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表示している場合は、広告の下になります。"
+msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "Widgets are displayed above the social media buttons at the very bottom of the main column of a page. If ads are displayed, widgets will be displayed below the ads."
 
 #: lib/widget-areas.php:338
@@ -11365,7 +11365,7 @@ msgid "固定ページSNSボタン下"
 msgstr "Below social media buttons in a page"
 
 #: lib/widget-areas.php:340
-msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
+msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "Widgets are displayed below the social media buttons at the very bottom of the main column of a page."
 
 #: lib/widget-areas.php:354
@@ -11373,7 +11373,7 @@ msgid "インデックスリストトップ"
 msgstr "Top of index lists"
 
 #: lib/widget-areas.php:356
-msgid "インデックスリストのトップに表示されるウイジェット。広告が表示されているときは広告の下に表示されます。"
+msgid "インデックスリストのトップに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "Widgets are displayed at the top of index lists. If ads are displayed, widgets will be displayed below the ads."
 
 #: lib/widget-areas.php:370
@@ -11381,7 +11381,7 @@ msgid "インデックスリストミドル"
 msgstr "Middle of the index lists"
 
 #: lib/widget-areas.php:372
-msgid "インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
+msgid "インデックスリストの3つ目下に表示されるウィジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
 msgstr "Widgets are displayed below the third index list. This feature is only enabled when \"Thumbnail card\" is set for \"List style\". If ads are displayed, widgets will be displayed below the ads."
 
 #: lib/widget-areas.php:386
@@ -11389,7 +11389,7 @@ msgid "インデックスリストボトム"
 msgstr "Bottom of index lists"
 
 #: lib/widget-areas.php:388
-msgid "インデックスリストのボトムに表示されるウイジェット。広告が表示されているときは広告の下に表示されます。"
+msgid "インデックスリストのボトムに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "Widgets are displayed at the bottom of index lists. If ads are displayed, widgets will be displayed below the ads."
 
 #: lib/widget-areas.php:402
@@ -12346,7 +12346,7 @@ msgstr "Follow SoundCloud"
 msgid "LINE@をフォロー"
 msgstr "Follow LINE@"
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:37
+#: skins/skin-made-in-heaven/lib/hook-wp.php:42
 msgid "ログアウト"
 msgstr "Logout"
 
@@ -14318,6 +14318,14 @@ msgstr ""
 
 #: blocks/src/toolbutton/background-icons.js:74
 msgid "×"
+msgstr ""
+
+#: blocks/src/toolbutton/background-icons.js:75
+msgid "✓"
+msgstr ""
+
+#: blocks/src/toolbutton/background-icons.js:76
+msgid "？"
 msgstr ""
 
 #: blocks/src/toolbutton/bold.js:15

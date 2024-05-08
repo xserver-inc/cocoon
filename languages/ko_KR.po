@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-20T02:13:15+00:00\n"
-"PO-Revision-Date: 2024-04-20 02:17\n"
+"POT-Creation-Date: 2024-05-08T11:51:37+00:00\n"
+"PO-Revision-Date: 2024-05-08 13:00\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -5322,15 +5322,15 @@ msgstr "Yahoo! 쇼핑 검색 버튼에 표시할 텍스트를 입력하세요."
 #: lib/page-settings/apis-forms.php:199
 #: lib/page-settings/apis-funcs.php:254
 msgid "メルカリ"
-msgstr ""
+msgstr "메루카리"
 
 #: lib/page-settings/apis-forms.php:204
 msgid "メルカリアンバサダーID"
-msgstr ""
+msgstr "메루카리 앰버서더 ID"
 
 #: lib/page-settings/apis-forms.php:209
-msgid "mercariアフィリエイトの「アフィリエイトID」をを取得してください。"
-msgstr ""
+msgid "メルカリの「アンバサダーID」を取得してください。"
+msgstr "메루카리의 앰버서더ID를 만들어주세요."
 
 #: lib/page-settings/apis-forms.php:214
 msgid "メルカリ検索ボタンを表示する"
@@ -11163,36 +11163,36 @@ msgstr "공개"
 msgid "記事を公開してもよろしいですか？"
 msgstr "이 글을 공개하시겠습니까?"
 
-#: lib/utils.php:2495
+#: lib/utils.php:2498
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 
-#: lib/utils.php:2503
+#: lib/utils.php:2506
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 
-#: lib/utils.php:2511
+#: lib/utils.php:2514
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 
-#: lib/utils.php:2519
+#: lib/utils.php:2522
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 
-#: lib/utils.php:2527
+#: lib/utils.php:2530
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s개월"
 
-#: lib/utils.php:2538
+#: lib/utils.php:2541
 msgid "%s年"
 msgstr "%s년"
 
-#: lib/utils.php:2540
+#: lib/utils.php:2543
 msgid "%s年%sヶ月"
 msgstr "%s년 %s월"
 
@@ -11226,7 +11226,7 @@ msgid "投稿タイトル上"
 msgstr "글 제목 상단"
 
 #: lib/widget-areas.php:67
-msgid "投稿タイトル上に表示されるウイジェット。"
+msgid "投稿タイトル上に表示されるウィジェット。"
 msgstr "글 제목 상단에 표시되는 위젯."
 
 #: lib/widget-areas.php:81
@@ -11234,15 +11234,15 @@ msgid "投稿タイトル下"
 msgstr "글 제목 하단"
 
 #: lib/widget-areas.php:83
-msgid "投稿タイトル下に表示されるウイジェット。"
-msgstr "글 제목 하단에 표시되는 위젯."
+msgid "投稿タイトル下に表示されるウィジェット。"
+msgstr "글 제목 상단에 표시되는 위젯."
 
 #: lib/widget-areas.php:97
 msgid "投稿本文上"
 msgstr "글 본문 상단"
 
 #: lib/widget-areas.php:99
-msgid "投稿本文上に表示されるウイジェット。"
+msgid "投稿本文上に表示されるウィジェット。"
 msgstr "글 본문 상단에 표시되는 위젯."
 
 #: lib/widget-areas.php:113
@@ -11250,7 +11250,7 @@ msgid "投稿本文中"
 msgstr "글 본문 중간"
 
 #: lib/widget-areas.php:115
-msgid "投稿本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
+msgid "投稿本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "글 본문 중간에 표시되는 위젯. 글 중 첫번째 H2 태그 바로 앞에 표시됩니다. 광고가 표시되어 있을 경우에는 광고 하단에 표시됩니다."
 
 #: lib/widget-areas.php:129
@@ -11258,15 +11258,15 @@ msgid "投稿本文下"
 msgstr "글 본문 하단"
 
 #: lib/widget-areas.php:131
-msgid "投稿本文下に表示されるウイジェット。"
-msgstr "글 본문 하단에 표시되는 위젯."
+msgid "投稿本文下に表示されるウィジェット。"
+msgstr "글 본문 상단에 표시되는 위젯."
 
 #: lib/widget-areas.php:145
 msgid "投稿SNSボタン上"
 msgstr "글 SNS 버튼 상단"
 
 #: lib/widget-areas.php:147
-msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表示している場合は、広告の下になります。"
+msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "글 메인 칼럼의 맨 아래 SNS 버튼 위에 표시되는 위젯. 광고를 표시하고 있는 경우 광고 하단에 표시합니다."
 
 #: lib/widget-areas.php:161
@@ -11274,7 +11274,7 @@ msgid "投稿SNSボタン下"
 msgstr "글 SNS 버튼 하단"
 
 #: lib/widget-areas.php:163
-msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
+msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "글 메인 칼럼의 맨 아래 SNS 버튼 아래에 표시되는 위젯."
 
 #: lib/widget-areas.php:177
@@ -11282,7 +11282,7 @@ msgid "投稿関連記事上"
 msgstr "관련 글 상단"
 
 #: lib/widget-areas.php:179
-msgid "関連記事の上に表示されるウイジェット。"
+msgid "関連記事の上に表示されるウィジェット。"
 msgstr "관련 글 위에 표시되는 위젯."
 
 #: lib/widget-areas.php:193
@@ -11290,7 +11290,7 @@ msgid "投稿関連記事下"
 msgstr "관련 글 하단"
 
 #: lib/widget-areas.php:195
-msgid "関連記事の下（広告を表示している場合はその下）に表示されるウイジェット。"
+msgid "関連記事の下（広告を表示している場合はその下）に表示されるウィジェット。"
 msgstr "관련 글 아래(광고를 표시하는 경우는 그 아래)에 표시되는 위젯."
 
 #: lib/widget-areas.php:209
@@ -11298,7 +11298,7 @@ msgid "投稿コメント上"
 msgstr "댓글 상단"
 
 #: lib/widget-areas.php:211
-msgid "コメントエリアの上に表示されるウイジェット。"
+msgid "コメントエリアの上に表示されるウィジェット。"
 msgstr "댓글 위에 표시되는 위젯."
 
 #: lib/widget-areas.php:225
@@ -11306,7 +11306,7 @@ msgid "投稿コメント下"
 msgstr "댓글 하단"
 
 #: lib/widget-areas.php:227
-msgid "コメントフォームの下に表示されるウイジェット。"
+msgid "コメントフォームの下に表示されるウィジェット。"
 msgstr "댓글 아래에 표시되는 위젯."
 
 #: lib/widget-areas.php:241
@@ -11314,7 +11314,7 @@ msgid "固定ページタイトル上"
 msgstr "페이지 제목 상단"
 
 #: lib/widget-areas.php:243
-msgid "固定ページタイトル上に表示されるウイジェット。"
+msgid "固定ページタイトル上に表示されるウィジェット。"
 msgstr "페이지 제목 상단에 표시되는 위젯."
 
 #: lib/widget-areas.php:257
@@ -11322,15 +11322,15 @@ msgid "固定ページタイトル下"
 msgstr "페이지 제목 하단"
 
 #: lib/widget-areas.php:259
-msgid "固定ページタイトル下に表示されるウイジェット。"
-msgstr "페이지 제목 하단에 표시되는 위젯."
+msgid "固定ページタイトル下に表示されるウィジェット。"
+msgstr "페이지 제목 상단에 표시되는 위젯."
 
 #: lib/widget-areas.php:273
 msgid "固定ページ本文上"
 msgstr "페이지 본문 상단"
 
 #: lib/widget-areas.php:275
-msgid "固定ページ本文上に表示されるウイジェット。"
+msgid "固定ページ本文上に表示されるウィジェット。"
 msgstr "페이지 본문 상단에 표시되는 위젯."
 
 #: lib/widget-areas.php:289
@@ -11338,7 +11338,7 @@ msgid "固定ページ本文中"
 msgstr "페이지 본문 중간"
 
 #: lib/widget-areas.php:291
-msgid "固定ページ本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
+msgid "固定ページ本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "페이지 본문 중간에 표시되는 위젯. 글 중 첫번째 H2 태그 바로 앞에 표시됩니다. 광고가 표시되어 있을 경우에는 광고 하단에 표시됩니다."
 
 #: lib/widget-areas.php:305
@@ -11346,15 +11346,15 @@ msgid "固定ページ本文下"
 msgstr "페이지 본문 하단"
 
 #: lib/widget-areas.php:307
-msgid "固定ページ本文下に表示されるウイジェット。"
-msgstr "페이지 본문 하단에 표시되는 위젯."
+msgid "固定ページ本文下に表示されるウィジェット。"
+msgstr "페이지 본문 상단에 표시되는 위젯."
 
 #: lib/widget-areas.php:322
 msgid "固定ページSNSボタン上"
 msgstr "페이지 SNS 버튼 상단"
 
 #: lib/widget-areas.php:324
-msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表示している場合は、広告の下になります。"
+msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "페이지 메인 칼럼의 맨 아래 SNS 버튼 위에 표시되는 위젯. 광고를 표시하고 있는 경우 광고 하단에 표시합니다."
 
 #: lib/widget-areas.php:338
@@ -11362,7 +11362,7 @@ msgid "固定ページSNSボタン下"
 msgstr "페이지 SNS 버튼 하단"
 
 #: lib/widget-areas.php:340
-msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
+msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "페이지 메인 칼럼의 맨 아래 SNS 버튼 아래에 표시되는 위젯."
 
 #: lib/widget-areas.php:354
@@ -11370,7 +11370,7 @@ msgid "インデックスリストトップ"
 msgstr "인덱스 리스트 상단"
 
 #: lib/widget-areas.php:356
-msgid "インデックスリストのトップに表示されるウイジェット。広告が表示されているときは広告の下に表示されます。"
+msgid "インデックスリストのトップに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "인덱스 리스트의 위에 표시되는 위젯. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
 
 #: lib/widget-areas.php:370
@@ -11378,7 +11378,7 @@ msgid "インデックスリストミドル"
 msgstr "인덱스 리스트 중간"
 
 #: lib/widget-areas.php:372
-msgid "インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
+msgid "インデックスリストの3つ目下に表示されるウィジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
 msgstr "인덱스 리스트의 세번째 항목 아래에 표시되는 위젯.  리스트의 스타일이 \"썸네일 카드\"일 때만 가능한 설정입니다. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
 
 #: lib/widget-areas.php:386
@@ -11386,7 +11386,7 @@ msgid "インデックスリストボトム"
 msgstr "인덱스 리스트 하단"
 
 #: lib/widget-areas.php:388
-msgid "インデックスリストのボトムに表示されるウイジェット。広告が表示されているときは広告の下に表示されます。"
+msgid "インデックスリストのボトムに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "인덱스 리스트의 아래에 표시되는 위젯. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
 
 #: lib/widget-areas.php:402
@@ -12343,7 +12343,7 @@ msgstr "사운드 클라우드 팔로우"
 msgid "LINE@をフォロー"
 msgstr "LINE@ 팔로우"
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:37
+#: skins/skin-made-in-heaven/lib/hook-wp.php:42
 msgid "ログアウト"
 msgstr "로그아웃"
 
@@ -12567,7 +12567,7 @@ msgstr "Mastodon에 공유"
 
 #: tmp/sns-share-buttons.php:25
 msgid "Blueskyでシェア"
-msgstr ""
+msgstr "Bluesky에 공유"
 
 #: tmp/sns-share-buttons.php:29
 msgid "Misskeyでシェア"
@@ -12727,7 +12727,7 @@ msgstr "밑색 빼기 초록"
 
 #: blocks/src/block-extension/style-extension/border01.js:161
 msgid "[C] ボーダー"
-msgstr ""
+msgstr "[C] 테두리"
 
 #: blocks/src/block-extension/style-extension/border01.js:171
 #: blocks/src/block-extension/style-extension/border01.js:234
@@ -13664,15 +13664,15 @@ msgstr "탭에 메시지 내용을 전하기 위한 글자가 적혀 있는 박�
 
 #: blocks/src/block/tab-item/index.js:21
 msgid "タブアイテム"
-msgstr ""
+msgstr "탭 요소"
 
 #: blocks/src/block/tab-item/index.js:23
 msgid "タブのコンテンツ"
-msgstr ""
+msgstr "탭 콘텐츠"
 
 #: blocks/src/block/tab/edit.js:159
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #: blocks/src/block/tab/edit.js:258
 msgid "タブ設定"
@@ -14303,18 +14303,26 @@ msgstr "배경 아이콘"
 
 #: blocks/src/toolbutton/background-icons.js:71
 msgid "◎"
-msgstr ""
+msgstr "◎"
 
 #: blocks/src/toolbutton/background-icons.js:72
 msgid "○"
-msgstr ""
+msgstr "○"
 
 #: blocks/src/toolbutton/background-icons.js:73
 msgid "△"
-msgstr ""
+msgstr "△"
 
 #: blocks/src/toolbutton/background-icons.js:74
 msgid "×"
+msgstr "×"
+
+#: blocks/src/toolbutton/background-icons.js:75
+msgid "✓"
+msgstr ""
+
+#: blocks/src/toolbutton/background-icons.js:76
+msgid "？"
 msgstr ""
 
 #: blocks/src/toolbutton/bold.js:15
@@ -14332,7 +14340,7 @@ msgstr "제휴"
 #: blocks/src/toolbutton/dropdown-badges.js:22
 #: blocks/src/toolbutton/dropdown-badges.js:35
 msgid "インラインタグ"
-msgstr ""
+msgstr "인라인 태그"
 
 #: blocks/src/toolbutton/dropdown-letters.js:25
 #: blocks/src/toolbutton/dropdown-letters.js:38
