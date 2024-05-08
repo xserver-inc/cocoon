@@ -11184,7 +11184,6 @@ msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
-
 #: lib/utils.php:2530
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
