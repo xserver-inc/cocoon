@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-23T10:32:23+00:00\n"
-"PO-Revision-Date: 2024-04-28 14:53\n"
+"POT-Creation-Date: 2024-05-08T11:51:37+00:00\n"
+"PO-Revision-Date: 2024-05-08 11:53\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -11226,168 +11226,168 @@ msgid "投稿タイトル上"
 msgstr "글 제목 상단"
 
 #: lib/widget-areas.php:67
-msgid "投稿タイトル上に表示されるウイジェット。"
-msgstr "글 제목 상단에 표시되는 위젯."
+msgid "投稿タイトル上に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:81
 msgid "投稿タイトル下"
 msgstr "글 제목 하단"
 
 #: lib/widget-areas.php:83
-msgid "投稿タイトル下に表示されるウイジェット。"
-msgstr "글 제목 하단에 표시되는 위젯."
+msgid "投稿タイトル下に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:97
 msgid "投稿本文上"
 msgstr "글 본문 상단"
 
 #: lib/widget-areas.php:99
-msgid "投稿本文上に表示されるウイジェット。"
-msgstr "글 본문 상단에 표시되는 위젯."
+msgid "投稿本文上に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:113
 msgid "投稿本文中"
 msgstr "글 본문 중간"
 
 #: lib/widget-areas.php:115
-msgid "投稿本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
-msgstr "글 본문 중간에 표시되는 위젯. 글 중 첫번째 H2 태그 바로 앞에 표시됩니다. 광고가 표시되어 있을 경우에는 광고 하단에 표시됩니다."
+msgid "投稿本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
+msgstr ""
 
 #: lib/widget-areas.php:129
 msgid "投稿本文下"
 msgstr "글 본문 하단"
 
 #: lib/widget-areas.php:131
-msgid "投稿本文下に表示されるウイジェット。"
-msgstr "글 본문 하단에 표시되는 위젯."
+msgid "投稿本文下に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:145
 msgid "投稿SNSボタン上"
 msgstr "글 SNS 버튼 상단"
 
 #: lib/widget-areas.php:147
-msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表示している場合は、広告の下になります。"
-msgstr "글 메인 칼럼의 맨 아래 SNS 버튼 위에 표시되는 위젯. 광고를 표시하고 있는 경우 광고 하단에 표시합니다."
+msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
+msgstr ""
 
 #: lib/widget-areas.php:161
 msgid "投稿SNSボタン下"
 msgstr "글 SNS 버튼 하단"
 
 #: lib/widget-areas.php:163
-msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
-msgstr "글 메인 칼럼의 맨 아래 SNS 버튼 아래에 표시되는 위젯."
+msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:177
 msgid "投稿関連記事上"
 msgstr "관련 글 상단"
 
 #: lib/widget-areas.php:179
-msgid "関連記事の上に表示されるウイジェット。"
-msgstr "관련 글 위에 표시되는 위젯."
+msgid "関連記事の上に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:193
 msgid "投稿関連記事下"
 msgstr "관련 글 하단"
 
 #: lib/widget-areas.php:195
-msgid "関連記事の下（広告を表示している場合はその下）に表示されるウイジェット。"
-msgstr "관련 글 아래(광고를 표시하는 경우는 그 아래)에 표시되는 위젯."
+msgid "関連記事の下（広告を表示している場合はその下）に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:209
 msgid "投稿コメント上"
 msgstr "댓글 상단"
 
 #: lib/widget-areas.php:211
-msgid "コメントエリアの上に表示されるウイジェット。"
-msgstr "댓글 위에 표시되는 위젯."
+msgid "コメントエリアの上に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:225
 msgid "投稿コメント下"
 msgstr "댓글 하단"
 
 #: lib/widget-areas.php:227
-msgid "コメントフォームの下に表示されるウイジェット。"
-msgstr "댓글 아래에 표시되는 위젯."
+msgid "コメントフォームの下に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:241
 msgid "固定ページタイトル上"
 msgstr "페이지 제목 상단"
 
 #: lib/widget-areas.php:243
-msgid "固定ページタイトル上に表示されるウイジェット。"
-msgstr "페이지 제목 상단에 표시되는 위젯."
+msgid "固定ページタイトル上に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:257
 msgid "固定ページタイトル下"
 msgstr "페이지 제목 하단"
 
 #: lib/widget-areas.php:259
-msgid "固定ページタイトル下に表示されるウイジェット。"
-msgstr "페이지 제목 하단에 표시되는 위젯."
+msgid "固定ページタイトル下に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:273
 msgid "固定ページ本文上"
 msgstr "페이지 본문 상단"
 
 #: lib/widget-areas.php:275
-msgid "固定ページ本文上に表示されるウイジェット。"
-msgstr "페이지 본문 상단에 표시되는 위젯."
+msgid "固定ページ本文上に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:289
 msgid "固定ページ本文中"
 msgstr "페이지 본문 중간"
 
 #: lib/widget-areas.php:291
-msgid "固定ページ本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
-msgstr "페이지 본문 중간에 표시되는 위젯. 글 중 첫번째 H2 태그 바로 앞에 표시됩니다. 광고가 표시되어 있을 경우에는 광고 하단에 표시됩니다."
+msgid "固定ページ本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
+msgstr ""
 
 #: lib/widget-areas.php:305
 msgid "固定ページ本文下"
 msgstr "페이지 본문 하단"
 
 #: lib/widget-areas.php:307
-msgid "固定ページ本文下に表示されるウイジェット。"
-msgstr "페이지 본문 하단에 표시되는 위젯."
+msgid "固定ページ本文下に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:322
 msgid "固定ページSNSボタン上"
 msgstr "페이지 SNS 버튼 상단"
 
 #: lib/widget-areas.php:324
-msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表示している場合は、広告の下になります。"
-msgstr "페이지 메인 칼럼의 맨 아래 SNS 버튼 위에 표시되는 위젯. 광고를 표시하고 있는 경우 광고 하단에 표시합니다."
+msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
+msgstr ""
 
 #: lib/widget-areas.php:338
 msgid "固定ページSNSボタン下"
 msgstr "페이지 SNS 버튼 하단"
 
 #: lib/widget-areas.php:340
-msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
-msgstr "페이지 메인 칼럼의 맨 아래 SNS 버튼 아래에 표시되는 위젯."
+msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
+msgstr ""
 
 #: lib/widget-areas.php:354
 msgid "インデックスリストトップ"
 msgstr "인덱스 리스트 상단"
 
 #: lib/widget-areas.php:356
-msgid "インデックスリストのトップに表示されるウイジェット。広告が表示されているときは広告の下に表示されます。"
-msgstr "인덱스 리스트의 위에 표시되는 위젯. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
+msgid "インデックスリストのトップに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
+msgstr ""
 
 #: lib/widget-areas.php:370
 msgid "インデックスリストミドル"
 msgstr "인덱스 리스트 중간"
 
 #: lib/widget-areas.php:372
-msgid "インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
-msgstr "인덱스 리스트의 세번째 항목 아래에 표시되는 위젯.  리스트의 스타일이 \"썸네일 카드\"일 때만 가능한 설정입니다. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
+msgid "インデックスリストの3つ目下に表示されるウィジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
+msgstr ""
 
 #: lib/widget-areas.php:386
 msgid "インデックスリストボトム"
 msgstr "인덱스 리스트 하단"
 
 #: lib/widget-areas.php:388
-msgid "インデックスリストのボトムに表示されるウイジェット。広告が表示されているときは広告の下に表示されます。"
-msgstr "인덱스 리스트의 아래에 표시되는 위젯. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
+msgid "インデックスリストのボトムに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
+msgstr ""
 
 #: lib/widget-areas.php:402
 msgid "コンテンツ上部"
@@ -12343,15 +12343,7 @@ msgstr "사운드 클라우드 팔로우"
 msgid "LINE@をフォロー"
 msgstr "LINE@ 팔로우"
 
-#: skins/skin-made-in-heaven/lib/hook-cocoon.php:329
-msgid "スキンカラー1"
-msgstr "스킨 색상 1"
-
-#: skins/skin-made-in-heaven/lib/hook-cocoon.php:330
-msgid "スキンカラー2"
-msgstr "스킨 색상 2"
-
-#: skins/skin-made-in-heaven/lib/hook-wp.php:37
+#: skins/skin-made-in-heaven/lib/hook-wp.php:42
 msgid "ログアウト"
 msgstr "로그아웃"
 
@@ -14324,6 +14316,14 @@ msgstr "△"
 #: blocks/src/toolbutton/background-icons.js:74
 msgid "×"
 msgstr "×"
+
+#: blocks/src/toolbutton/background-icons.js:75
+msgid "✓"
+msgstr ""
+
+#: blocks/src/toolbutton/background-icons.js:76
+msgid "？"
+msgstr ""
 
 #: blocks/src/toolbutton/bold.js:15
 msgid "太字（boldクラス指定）"
