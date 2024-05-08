@@ -35,7 +35,10 @@ function hvn_color($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_main_color_setting', array('default' => HVN_MAIN_COLOR));
+  $wp_customize->add_setting('hvn_main_color_setting', array(
+    'default' => HVN_MAIN_COLOR,
+    'sanitize_callback' => 'hvn_sanitize_color',
+  ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
@@ -49,7 +52,10 @@ function hvn_color($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_body_color_setting', array('default' => HVN_BODY_COLOR));
+  $wp_customize->add_setting('hvn_body_color_setting', array(
+    'default' => HVN_BODY_COLOR,
+    'sanitize_callback' => 'hvn_sanitize_color',
+  ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
@@ -63,7 +69,10 @@ function hvn_color($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_text_color_setting', array('default' => HVN_TEXT_COLOR));
+  $wp_customize->add_setting('hvn_text_color_setting', array(
+    'default' => HVN_TEXT_COLOR,
+    'sanitize_callback' => 'hvn_sanitize_color',
+  ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,

@@ -42,7 +42,15 @@ endif;
 // テキスト
 if (!function_exists('hvn_sanitize_text')):
 function hvn_sanitize_text($text, $setting) {
-  return ($text ? $text : $setting->default);
+  return ($text ? strip_tags($text) : $setting->default);
+}
+endif;
+
+
+// パレット
+if (!function_exists('hvn_sanitize_color')):
+function hvn_sanitize_color($color, $setting) {
+  return (sanitize_hex_color($color) ? $color : $setting->default);
 }
 endif;
 
@@ -270,6 +278,7 @@ function hvn_add_header() {
   // タイトルテキスト
   $msg = get_theme_mod('hvn_header_message_setting');
   if ($msg) {
+    $msg = do_shortcode($msg);
     $msg = "<div class=message><div>{$msg}</div></div>";
   }
 
@@ -396,15 +405,20 @@ endif;
 if (!function_exists('get_notice_area_message')):
 function get_notice_area_message() {
   global $_HVN_NOTICE;
+  global $_THEME_OPTIONS;
 
   $_HVN_NOTICE = false;
 
   $msg = stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE));
 
-
   if (!is_admin()) {
-    $msg = str_replace('[', '<', $msg);
-    $msg = str_replace(']', '>', $msg);
+    if (strpos($msg, '[pattern ') !== false) {
+      $msg = do_shortcode($msg);
+
+      if (strpos($msg, 'href=') !== false) {
+        $_THEME_OPTIONS['notice_area_url'] = '';
+      }
+    }
 
     $msg_array =  explode(',' ,$msg);
 

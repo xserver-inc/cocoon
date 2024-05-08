@@ -22,7 +22,7 @@ body {
 ** main
 ************************************/
 .single #main {
-	padding: 1em 3em;
+	padding: 2em 3em;
 }
 /************************************
 ** p
@@ -1058,7 +1058,7 @@ input[type='submit']:hover {
 /*480px以下*/
 @media screen and (max-width: 480px) {
 .single #main {
-	padding: 0 1em;
+	padding: 2em 1em;
 }
 .article h1 {
 	padding: 0.5em 0 0;

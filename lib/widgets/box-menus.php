@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//ボックスメニューウイジェットの追加
+//ボックスメニューウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -19,7 +19,7 @@ class BoxMenuWidgetItem extends WP_Widget {
       WIDGET_NAME_PREFIX.__( 'ボックスメニュー', THEME_NAME ),
       array('description' => __( 'アイコンつきメニューを表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
-    );//ウイジェット名
+    );//ウィジェット名
   }
   function widget($args, $instance) {
     extract( $args );

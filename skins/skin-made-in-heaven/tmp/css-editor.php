@@ -71,6 +71,7 @@ if (get_theme_mod('hvn_inline_button_set3_setting')) {
   height: 100%;
   left: -2px;
   margin: 0;
+  pointer-events: none;
   position: absolute;
   top: -1px;
   width: calc(100% + 4px);

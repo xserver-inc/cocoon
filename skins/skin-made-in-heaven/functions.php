@@ -6,6 +6,7 @@ global $_THEME_OPTIONS;
 global $_MOBILE_COPY_BUTTON;
 global $_HVN_EYECATCH;
 global $_HVN_NOTICE;
+global $_HVN_OPTION;
 
 $skin_url = get_skin_url();
 // ふわっと追加
@@ -175,7 +176,6 @@ $_THEME_OPTIONS = array(
   'eyecatch_width_100_percent_enable' => 1,
   'eyecatch_caption_visible' => 0,
   'image_wrap_effect' => 'none',
-  'image_zoom_effect' => 'none',
 
 // ブログカード
   'internal_blogcard_enable' => 1,

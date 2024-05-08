@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//Facebookページ「いいね！」ウイジェットの追加
+//Facebookページ「いいね！」ウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -19,7 +19,7 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
       'facebook_page_like',
-      WIDGET_NAME_PREFIX.__( 'Facebookバルーン', THEME_NAME ), //ウイジェット名
+      WIDGET_NAME_PREFIX.__( 'Facebookバルーン', THEME_NAME ), //ウィジェット名
       array('description' => __( '投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタンを表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );

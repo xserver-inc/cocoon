@@ -6,10 +6,12 @@ if (!defined('ABSPATH')) exit;
 //  カスタマイザー追加
 //******************************************************************************
 add_action('customize_register', function($wp_customize) {
+  global $_HVN_OPTION;
+
   $wp_customize->add_panel(
     'hvn_cocoon',
     array(
-      'title'     => 'Cocoon拡張設定',
+      'title'     => 'メイド・イン・ヘブン設定',
       'priority'  => 300,
     )
   );
@@ -19,6 +21,9 @@ add_action('customize_register', function($wp_customize) {
   hvn_main($wp_customize);
   hvn_header($wp_customize);
   hvn_editor($wp_customize);
+  if ($_HVN_OPTION) {
+    hvn_option($wp_customize);
+  }
 });
 
 
@@ -255,12 +260,6 @@ add_action('pre_get_posts', function($query) {
 add_filter('posts_search_orderby', function($search_orderby, $wp_query) {
   return 'post_date desc';
 }, 10, 2);
-
-
-//******************************************************************************
-//  ウィジェットでショートコード実行許可
-//******************************************************************************
-add_filter('widget_text', 'do_shortcode');
 
 
 //******************************************************************************
@@ -630,3 +629,75 @@ add_filter('get_avatar' , function($avatar, $comment) {
 
   return $avatar;
 }, 100001, 2);
+
+
+//******************************************************************************
+//  独自パターン追加
+//******************************************************************************
+add_action('init',function() {
+  $file = url_to_local(get_theme_file_uri(HVN_SKIN . "assets/pattern/compare-box.json"));
+  $json =  json_decode(file_get_contents($file), true);
+  register_block_pattern(
+    'hvn-pattern',
+    $json,
+  );
+});
+
+
+//******************************************************************************
+//  タグクラウドにパラメータ追加
+//******************************************************************************
+add_filter('in_widget_form', function($widget, $return, $instance) {
+  if ($widget->id_base == 'tag_cloud') {
+    $f_id   = $widget->get_field_id('drop');
+    $f_name = $widget->get_field_name('drop');
+    echo "<p><input type=checkbox class=widefat name={$f_name}" .  checked(isset($instance['drop']), true, false) . "><label for={$f_id}>ドロップダウンで表示</label></p>";
+  }
+}, 10, 3);
+
+
+//******************************************************************************
+//  設定フォーム更新
+//******************************************************************************
+add_filter('widget_update_callback', function($instance, $new_instance, $old_instance, $this_widget) {
+  $instance['drop'] = $new_instance['drop'];
+
+  return $instance;
+}, 10, 4);
+
+
+//******************************************************************************
+//  設定値を追加
+//******************************************************************************
+add_filter('widget_tag_cloud_args', function($args, $instance) {
+  $args['drop'] = isset($instance['drop']) ? $instance['drop'] : '';
+
+  return $args;
+},2,10);
+
+
+//******************************************************************************
+//  タグクラウド独自表示
+//******************************************************************************
+add_filter('wp_tag_cloud', function($return, $args) {
+  if (isset($args['drop']) && $args['drop'] == 'on'){
+    $id = get_query_var('tag_id');
+    $tags = get_tags(array('orderby'=> 'count', 'order' => 'DESC'));
+
+    ob_start();
+    echo '<select onchange="document.location.href=this.options[this.selectedIndex].value;"><option value="" selected="selected">タグを選択</option>';
+
+    if ($tags) {
+      foreach($tags as $tag) {
+        $count = $args["show_count"] ? " &nbsp;({$tag->count})" : '';
+?>
+<option value="<?php echo get_tag_link($tag->term_id); ?>" <?php selected($tag->term_id, $id); ?>><?php echo $tag->name; ?><?php echo $count; ?></option>
+<?php
+      }
+    }
+    echo '</select>';
+    $return = ob_get_clean();
+  }
+
+  return $return;
+},2,10);

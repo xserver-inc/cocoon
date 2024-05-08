@@ -440,26 +440,11 @@ pre {
 **  ブログカード
 *******************************************************************************/
 
-.is-style-hvn-text .blogcard-label,
-.is-style-hvn-text .blogcard-thumbnail,
-.is-style-hvn-text .blogcard-footer {
-  display: none;
-}
-
 .is-style-hvn-text .blogcard-wrap.a-wrap {
   align-items: center;
   display: flex;
   gap: 5px;
   margin: 0;
-}
-
-.is-style-hvn-text .blogcard {
-  border: 0;
-  padding: 0;
-}
-
-.is-style-hvn-text .blogcard-content {
-  padding: 0;
 }
 
 .is-style-hvn-text .blogcard-title {
@@ -488,4 +473,48 @@ pre {
 
 .is-style-hvn-text .internal-blogcard-wrap:before {
   content: '\f15c';
+}
+
+
+/*******************************************************************************
+**  比較ボックス
+*******************************************************************************/
+
+.compare-box {
+  gap: 0!important;
+}
+
+.compare-box.column-wrap > div {
+  width: 100%;
+}
+
+.compare-box .iconlist-box {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.compare-box .iconlist-title {
+  color: #fff;
+  padding: 15px;
+}
+
+.compare-box .column-left {
+  background-color: #f0f9fc;
+}
+
+.compare-box .column-left .iconlist-title {
+  background-color: #6fc7e1;
+}
+
+.compare-box .column-right {
+  background-color: #fff6f2;
+}
+
+.compare-box .column-right .iconlist-title {
+  background-color: #ffa883;
+}
+
+.body .compare-box ul {
+  padding: 15px 15px 15px 40px;
 }

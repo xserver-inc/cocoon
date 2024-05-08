@@ -99,7 +99,10 @@ function hvn_header($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_header_message_setting');
+  $wp_customize->add_setting('hvn_header_message_setting', array(
+    'default' => '',
+    'sanitize_callback' => 'hvn_sanitize_text',
+  ));
   $wp_customize->add_control(
     new WP_Customize_Control(
       $wp_customize,

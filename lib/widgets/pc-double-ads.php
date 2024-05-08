@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//パソコン用ダブルレクタングル広告ウイジェットの追加
+//パソコン用ダブルレクタングル広告ウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -15,7 +15,7 @@ if ( !class_exists( 'PcDoubleAdsWidgetItem' ) ):
 class PcDoubleAdsWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
-      'pc_double_ads', //ウイジェット名
+      'pc_double_ads', //ウィジェット名
       WIDGET_NAME_PREFIX.__( 'PC用ダブルレクタングル広告', THEME_NAME ),
       array('description' => __( 'パソコンのみで表示されるダブルレクタングル広告ウィジェットです。834pxより大きな画面で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )

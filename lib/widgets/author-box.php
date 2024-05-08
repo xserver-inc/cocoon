@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//プロフィールウイジェットの追加
+//プロフィールウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -16,7 +16,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
       'author_box',
-      WIDGET_NAME_PREFIX.__( 'プロフィール', THEME_NAME ),//ウイジェット名
+      WIDGET_NAME_PREFIX.__( 'プロフィール', THEME_NAME ),//ウィジェット名
       array('description' => __( '記事を書いた著者のプロフィール情報を表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );

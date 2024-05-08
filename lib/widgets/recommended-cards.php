@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//おすすめカードウイジェットの追加
+//おすすめカードウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -19,7 +19,7 @@ class RecommendedCardWidgetItem extends WP_Widget {
       WIDGET_NAME_PREFIX.__( 'おすすめカード', THEME_NAME ),
       array('description' => __( 'おすすめカード一覧を表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
-    );//ウイジェット名
+    );//ウィジェット名
   }
   function widget($args, $instance) {
     extract( $args );
