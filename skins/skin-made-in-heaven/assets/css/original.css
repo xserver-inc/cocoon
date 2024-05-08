@@ -440,26 +440,11 @@ pre {
 **  ブログカード
 *******************************************************************************/
 
-.is-style-hvn-text .blogcard-label,
-.is-style-hvn-text .blogcard-thumbnail,
-.is-style-hvn-text .blogcard-footer {
-  display: none;
-}
-
 .is-style-hvn-text .blogcard-wrap.a-wrap {
   align-items: center;
   display: flex;
   gap: 5px;
   margin: 0;
-}
-
-.is-style-hvn-text .blogcard {
-  border: 0;
-  padding: 0;
-}
-
-.is-style-hvn-text .blogcard-content {
-  padding: 0;
 }
 
 .is-style-hvn-text .blogcard-title {

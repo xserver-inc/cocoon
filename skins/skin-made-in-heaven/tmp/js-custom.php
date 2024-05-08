@@ -587,11 +587,11 @@ if ($_HVN_NOTICE) {
 const noticeSwiper = new Swiper(".notice-area-message .swiper",{
   loop: true,
   direction: "vertical",
-    autoplay: {
-        delay: 8000,
-    },
+  autoplay: {
+    delay: 8000,
+  },
   speed: 2000, 
-});</script>
+});
 
 EOF;
 }
@@ -603,19 +603,6 @@ EOF;
 if (get_theme_mod('hvn_toc_fix_setting')) {
   $html = do_shortcode('[toc]');
   echo <<< EOF
-<div id="hvn-toc">
-  <label for="hvn-open" class="hvn-open-btn"><i class="fas fa-list"></i></label>
-  <input type="radio" id="hvn-close" class="display-none" name="hvn-trigger">
-  <input type="radio" id="hvn-open"  class="display-none" name="hvn-trigger">
-  <div class="hvn-modal">
-    <div class="hvn-content-wrap">
-      <div class="hvn-title">目次</div>
-      {$html}
-    </div>
-    <label for="hvn-close"><div class="hvn-background"></div></label>
-  </div>
-</div>
-<script>
 (function($) {
   if (!($('.main .toc').length)) {
     return;
@@ -625,7 +612,20 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
     $('#hvn-close').prop('checked',true);
   });
 })(jQuery);
-</script>
 
 EOF;
 }
+
+
+//******************************************************************************
+//  ブログスタイル
+//******************************************************************************
+echo <<< EOF
+(function($) {
+  $('.is-style-hvn-text').each(function(){
+    $('.blogcard-wrap', this).html($('.blogcard-title', this));
+    
+  });
+})(jQuery);
+
+EOF;

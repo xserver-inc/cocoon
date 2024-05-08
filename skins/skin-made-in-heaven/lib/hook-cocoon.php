@@ -298,7 +298,7 @@ EOF;
 //******************************************************************************
 add_filter('cocoon_part__tmp/sns-share-buttons', function($content) {
   $before ='/data-clipboard-text=".*" title/';
-  $after = 'data-clipboard-text="<a href=' . get_the_permalink() . '>' . get_share_page_title() . '</a>" title';
+  $after = 'data-clipboard-text="&lt;a href=' . get_the_permalink() . '&gt;' . get_share_page_title() . '&lt;/a&gt;" title';
   $content = preg_replace($before, $after, $content);
 
   return $content;
@@ -389,5 +389,30 @@ add_action('pre_get_posts',function($query) {
 
     default:
       $query->set('orderby', $st);
+  }
+});
+
+
+//******************************************************************************
+//  目次ボタン追加
+//******************************************************************************
+add_action('cocoon_part_after__tmp/button-go-to-top', function() {
+  if (get_theme_mod('hvn_toc_fix_setting')) {
+    $html = do_shortcode('[toc]');
+    echo <<< EOF
+<div id="hvn-toc">
+  <label for="hvn-open" class="hvn-open-btn"><i class="fas fa-list"></i></label>
+  <input type="radio" id="hvn-close" class="display-none" name="hvn-trigger">
+  <input type="radio" id="hvn-open"  class="display-none" name="hvn-trigger">
+  <div class="hvn-modal">
+    <div class="hvn-content-wrap">
+      <div class="hvn-title">目次</div>
+      {$html}
+    </div>
+    <label for="hvn-close"><div class="hvn-background"></div></label>
+  </div>
+</div>
+
+EOF;
   }
 });

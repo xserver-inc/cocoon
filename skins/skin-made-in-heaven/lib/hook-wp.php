@@ -689,9 +689,9 @@ add_filter('wp_tag_cloud', function($return, $args) {
 
     if ($tags) {
       foreach($tags as $tag) {
-        $count = $args["show_count"] ? "({$tag->count})" : '';
+        $count = $args["show_count"] ? " &nbsp;({$tag->count})" : '';
 ?>
-<option value="<?php echo get_tag_link($tag->term_id); ?>" <?php selected($tag->term_id, $id); ?>><?php echo $tag->name; ?>&nbsp;<?php echo $count; ?></option>
+<option value="<?php echo get_tag_link($tag->term_id); ?>" <?php selected($tag->term_id, $id); ?>><?php echo $tag->name; ?><?php echo $count; ?></option>
 <?php
       }
     }
