@@ -588,7 +588,7 @@ a.prev-post:hover::before,a.next-post:hover::before{
 	color: #454545;
 }
 
-/* ------- ウィジット系 ------- */
+/* ------- ウィジェット系 ------- */
 /* 検索欄 */
 .search-edit, input[type="text"]
 	,input[type="password"]
@@ -643,7 +643,7 @@ a.popular-entry-card-link{
 .widget-entry-cards.ranking-visible .widget-entry-card-thumb::before{
 	background-color: #94e7a5;
 }
-/* コメント欄（ウィジット） */
+/* コメント欄（ウィジェット） */
 .widget_recent_comments .a-wrap{
 	margin-bottom: 0;
 	padding-top: 5px;
@@ -662,7 +662,7 @@ a.popular-entry-card-link{
 .recent-comment-content{
 	font-size: .8em;
 }
-/* ランキング（ウィジット） */
+/* ランキング（ウィジェット） */
 #sidebar .ranking-item-link-buttons a,
 #sidebar-menu-content .ranking-item-link-buttons a{
 	padding: 5px 0;
@@ -700,7 +700,7 @@ a.popular-entry-card-link{
 	background-color: #85c6f4;
 }
 
-/* メニューウィジット */
+/* メニューウィジェット */
 #sidebar ul.menu li a, #sidebar-menu-content ul.menu li a{
 	background-color: #faf7ef;
 	margin-bottom: 8px;

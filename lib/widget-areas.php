@@ -16,7 +16,7 @@ function register_sidebar_widget_area(){
     array(
     'name' => __( 'サイドバー', THEME_NAME ),
     'id' => 'sidebar',
-    'description' => __( 'サイドバーのウィジットエリアです。ウィジェットを入れていない場合は1カラム表示になります。', THEME_NAME ),
+    'description' => __( 'サイドバーのウィジェットエリアです。ウィジェットを入れていない場合は1カラム表示になります。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-sidebar widget-sidebar-standard %2$s">',
     'after_widget' => '</aside>',
     'before_title'  => '<h3 class="widget-sidebar-title widget-title">',
@@ -433,7 +433,7 @@ function register_footer_left_widget_area(){
     array(
     'name' => __( 'フッター左', THEME_NAME ),
     'id' => 'footer-left',
-    'description' => __( 'フッター左側のウィジットエリアです。', THEME_NAME ),
+    'description' => __( 'フッター左側のウィジェットエリアです。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-footer-left %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-footer-left-title footer-title widget-title">',
@@ -449,7 +449,7 @@ register_sidebars(1,
   array(
   'id' => 'footer-center',
   'name' => __( 'フッター中', THEME_NAME ),
-  'description' => __( 'フッター中間のウィジットエリアです。', THEME_NAME ),
+  'description' => __( 'フッター中間のウィジェットエリアです。', THEME_NAME ),
   'before_widget' => '<aside id="%1$s" class="widget widget-footer-center %2$s">',
   'after_widget' => '</aside>',
   'before_title' => '<h3 class="widget-footer-center-title footer-title widget-title">',
@@ -465,7 +465,7 @@ function register_footer_right_widget_area(){
     array(
     'name' => __( 'フッター右', THEME_NAME ),
     'id' => 'footer-right',
-    'description' => __( 'フッター右側フッター中のウィジットエリアです。', THEME_NAME ),
+    'description' => __( 'フッター右側フッター中のウィジェットエリアです。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-footer-right %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-footer-right-title footer-title widget-title">',
@@ -482,7 +482,7 @@ function register_footer_mobile_widget_area(){
     array(
     'name' => __( 'フッター（モバイル用）', THEME_NAME ),
     'id' => 'footer-mobile',
-    'description' => __( 'モバイルで表示するウィジットエリアです。834px以下で表示されます。', THEME_NAME ),
+    'description' => __( 'モバイルで表示するウィジェットエリアです。834px以下で表示されます。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-footer-mobile %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-footer-mobile-title footer-title widget-title">',
@@ -499,7 +499,7 @@ function register_404_page_widget_area(){
     array(
     'name' => __( '404ページ', THEME_NAME ),
     'id' => '404-page',
-    'description' => __( '404ページをカスタマイズするためのウィジットエリアです。', THEME_NAME ),
+    'description' => __( '404ページをカスタマイズするためのウィジェットエリアです。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-404-page %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<div class="widget-404-page-title widget-title">',

@@ -1372,7 +1372,7 @@ dialog[open] .searchMenuDialog_close.grayish-btn {
   padding-bottom: 0;
 }
 
-/* インデックスミドルウィジット対策 */
+/* インデックスミドルウィジェット対策 */
 .skin-grayish .ect-vertical-card .widget-index-middle {
   width: 100%;
 }
@@ -1614,7 +1614,7 @@ dialog[open] .searchMenuDialog_close.grayish-btn {
   flex-direction: column;
 }
 
-/* skin独自の並び替え　ウィジット設置　＆ 広告 & ステマ規制などを考慮する */
+/* skin独自の並び替え　ウィジェット設置　＆ 広告 & ステマ規制などを考慮する */
 .skin-grayish .article-header .entry-title {
   order: 1;
   margin: 16px 0;
@@ -3405,7 +3405,7 @@ blockquote cite {
   height: 1.85em;
 }
 
-/* サイドバースクロールに設置した最初のウィジット */
+/* サイドバースクロールに設置した最初のウィジェット */
 /* Admin bar考慮  */
 .skin-grayish .widget-sidebar-scroll:first-child {
   padding-top: var(--ohterHeaderLogosize);
@@ -3784,7 +3784,7 @@ blockquote cite {
   color: var(--skin-grayish-site-main-hover);
 }
 
-/* タグウィジット */
+/* タグウィジェット */
 .skin-grayish .widget_tag_cloud .tagcloud a {
   border: 0;
 }
@@ -3794,12 +3794,12 @@ blockquote cite {
   background-color: var(--skin-grayish-site-main-thin);
 }
 
-/* タグウィジット アイコンカラー */
+/* タグウィジェット アイコンカラー */
 .skin-grayish .widget_tag_cloud .tag-caption>span::before {
   color: var(--skin-grayish-site-sub-color);
 }
 
-/* SNSfollowウィジット */
+/* SNSfollowウィジェット */
 .skin-grayish .widget_sns_follow_buttons .sns-follow-buttons a {
   font-size: 24px;
   width: 40px;
@@ -4441,7 +4441,7 @@ blockquote cite {
   font-size: 12px;
 }
 
-/* ウィジット等の横並び Swiperのボタン */
+/* ウィジェット等の横並び Swiperのボタン */
 .is-list-horizontal .swiper-button-next, .is-list-horizontal .swiper-button-prev {
   background-color: var(--skin-grayish-site-main-hover);
   opacity: 0.8;
@@ -4455,7 +4455,7 @@ blockquote cite {
 
 
 /*============== Widget Contents Bottom : LargeSize ==============*/
-/* フッター上のコンテンツ下ウィジット */
+/* フッター上のコンテンツ下ウィジェット */
 /*-------------- Front --------------*/
 .skin-grayish .content-bottom {
   margin: 0;
@@ -5052,7 +5052,7 @@ body:has(#spotlight.show) .header {
     font-size: 16px;
   }
 
-  /* サイドバースクロールに設置した最初のウィジット */
+  /* サイドバースクロールに設置した最初のウィジェット */
   .skin-grayish .widget-sidebar-scroll:first-child,
   .skin-grayish.admin-bar .widget-sidebar-scroll:first-child {
     padding-top: 0px;
@@ -5865,7 +5865,7 @@ body:has(#spotlight.show) .header {
     width: 38.5%;
   }
 
-  /* コンテンツ下に人気記事ウィジットで横並びしたときに必要っぽい */
+  /* コンテンツ下に人気記事ウィジェットで横並びしたときに必要っぽい */
   .skin-grayish .content-bottom .swiper {
     width: 100%;
   }
