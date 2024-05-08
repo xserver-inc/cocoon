@@ -8655,6 +8655,7 @@ body.wp-admin {
 .admin-settings .demo .is-list-horizontal {
   display: flex;
   flex-direction: row;
+  position: relative;
   /* カードのサムネイル幅200px */
 }
 .admin-settings .demo .is-list-horizontal .widget-entry-card-link {
@@ -17149,6 +17150,7 @@ body.wp-admin {
 .admin-settings .demo .is-list-horizontal {
   display: flex;
   flex-direction: row;
+  position: relative;
   /* カードのサムネイル幅200px */
 }
 .admin-settings .demo .is-list-horizontal .widget-entry-card-link {
