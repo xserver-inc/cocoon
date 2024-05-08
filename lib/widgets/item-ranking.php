@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//アイテムランキングウイジェットの追加
+//アイテムランキングウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -16,7 +16,7 @@ class ItemRankingWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
       'item_ranking',
-      WIDGET_NAME_PREFIX.__( 'ランキング', THEME_NAME ),//ウイジェット名
+      WIDGET_NAME_PREFIX.__( 'ランキング', THEME_NAME ),//ウィジェット名
       array('description' => __( '商品・サービスのランキングを表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );

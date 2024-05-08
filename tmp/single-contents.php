@@ -26,7 +26,7 @@ cocoon_template_part('tmp/content') ?>
     cocoon_template_part('tmp/pager-post-navi');
   } ?>
 
-  <?php //投稿関連記事上ウイジェット
+  <?php //投稿関連記事上ウィジェット
   if ( is_active_sidebar( 'above-single-related-entries' ) ): ?>
     <?php dynamic_sidebar( 'above-single-related-entries' ); ?>
   <?php endif; ?>
@@ -38,7 +38,7 @@ cocoon_template_part('tmp/content') ?>
     get_template_part_with_ad_format(get_ad_pos_below_related_posts_format(), 'ad-below-related-posts', is_ad_pos_below_related_posts_label_visible());
   }; ?>
 
-  <?php //投稿関連記事下ウイジェット
+  <?php //投稿関連記事下ウィジェット
   if ( is_active_sidebar( 'below-single-related-entries' ) ): ?>
     <?php dynamic_sidebar( 'below-single-related-entries' ); ?>
   <?php endif; ?>
@@ -48,7 +48,7 @@ cocoon_template_part('tmp/content') ?>
     cocoon_template_part('tmp/pager-post-navi');
   } ?>
 
-  <?php //コメント上ウイジェット
+  <?php //コメント上ウィジェット
   if ( is_active_sidebar( 'above-single-comment-aria' ) ): ?>
     <?php dynamic_sidebar( 'above-single-comment-aria' ); ?>
   <?php endif; ?>
@@ -58,7 +58,7 @@ cocoon_template_part('tmp/content') ?>
     comments_template(); //コメントテンプレート
   } ?>
 
-  <?php //コメントフォーム下ウイジェット
+  <?php //コメントフォーム下ウィジェット
   if ( is_active_sidebar( 'below-single-comment-form' ) ): ?>
     <?php dynamic_sidebar( 'below-single-comment-form' ); ?>
   <?php endif; ?>

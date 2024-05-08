@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//ナビカードウイジェットの追加
+//ナビカードウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -19,7 +19,7 @@ class NaviEntryWidgetItem extends WP_Widget {
       WIDGET_NAME_PREFIX.__( 'ナビカード', THEME_NAME ),
       array('description' => __( 'ナビカードリストを表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
-    );//ウイジェット名
+    );//ウィジェット名
   }
   function widget($args, $instance) {
     extract( $args );

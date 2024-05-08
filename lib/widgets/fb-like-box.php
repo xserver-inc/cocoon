@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//プロフィールウイジェットの追加
+//プロフィールウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -18,7 +18,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
       'fb_like_box',
-      WIDGET_NAME_PREFIX.__( 'Facebookボックス', THEME_NAME ),//ウイジェット名
+      WIDGET_NAME_PREFIX.__( 'Facebookボックス', THEME_NAME ),//ウィジェット名
       array('description' => __( '「この記事が気に入ったらいいね！しよう」ウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );

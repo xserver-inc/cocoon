@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//モバイル用広告ウイジェットの追加
+//モバイル用広告ウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -16,7 +16,7 @@ class AdWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
       'common_ad',
-      WIDGET_NAME_PREFIX.__( '広告', THEME_NAME ), //ウイジェット名
+      WIDGET_NAME_PREFIX.__( '広告', THEME_NAME ), //ウィジェット名
       array('description' => __( 'パソコンとモバイル端末両方に表示される広告ウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );

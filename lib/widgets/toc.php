@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//アイテムランキングウイジェットの追加
+//アイテムランキングウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -16,7 +16,7 @@ class TOCWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
       'toc',
-      WIDGET_NAME_PREFIX.__( '目次', THEME_NAME ),//ウイジェット名
+      WIDGET_NAME_PREFIX.__( '目次', THEME_NAME ),//ウィジェット名
       array('description' => __( '目次リンクを表示するだけのウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );
