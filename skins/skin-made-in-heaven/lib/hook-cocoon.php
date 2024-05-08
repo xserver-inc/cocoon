@@ -298,7 +298,7 @@ EOF;
 //******************************************************************************
 add_filter('cocoon_part__tmp/sns-share-buttons', function($content) {
   $before ='/data-clipboard-text=".*" title/';
-  $after = 'data-clipboard-text="<a href=' . get_the_permalink() . '>' . get_share_page_title() . '</a>" title';
+  $after = 'data-clipboard-text="&lt;a href=' . get_the_permalink() . '&gt;' . get_share_page_title() . '&lt;/a&gt;" title';
   $content = preg_replace($before, $after, $content);
 
   return $content;
@@ -313,5 +313,106 @@ add_action('entry_card_snippet_after',function($post_ID) {
   preg_match('/ribbon-color-[1-5]/', $memo,$class);
   if ($class) {
     echo '<div class="ribbon ribbon-top-left ' . $class[0] . '"></div>';
+  }
+});
+
+
+//******************************************************************************
+//  SNSシェアコメントボタン表示
+//******************************************************************************
+add_filter('is_comment_share_button_visible', function($res, $option) {
+  if (!is_single_comment_visible()) {
+    $res = false;
+  }
+  return $res;
+}, 10, 2);
+
+
+//******************************************************************************
+//  一覧ページに表示順フォームを追加
+//******************************************************************************
+add_action('cocoon_part_before__tmp/list-index', function() {
+  if (!is_home() || !get_theme_mod('hvn_orderby_option_setting')) return;
+
+  $orderby = isset($_GET['orderby-switch']) ? esc_html($_GET['orderby-switch']) : null;
+  if (isset($_COOKIE['orderby-switch'])) {
+    $orderby = $_COOKIE['orderby-switch'];
+  }
+
+  ob_start();
+?>
+<div class="orderby">
+  <span class="sort-title"><i class="fas fa-sort-amount-down"></i>並び替え</span>
+  <span class="sort-select">
+    <select id="orderby-switch" class="orderby-switch-dropdown" onchange="document.cookie = this.options[this.selectedIndex].value+';path=/';window.document.location.href =location.href;">
+      <option value="orderby-switch="         <?php the_option_selected($orderby, '');          ?>>新着順</option>
+      <option value="orderby-switch=modified" <?php the_option_selected($orderby, 'modified');  ?>>更新順</option>
+      <option value="orderby-switch=popular"  <?php the_option_selected($orderby, 'popular');   ?>>人気順</option>
+    </select>
+  </span>
+</div>
+<?php
+  echo  ob_get_clean();
+});
+
+
+//******************************************************************************
+//  表示順を設定
+//******************************************************************************
+add_action('pre_get_posts',function($query) {
+  // 一覧ページのみ並び替え
+  if (is_admin() || !is_home() || !$query->is_main_query()) {
+    return;
+  }
+
+  // cooki更新
+  $ck = isset($_COOKIE['orderby-switch']) ? $_COOKIE['orderby-switch'] : null;
+  if (isset($_GET['orderby-switch'])) {
+    setcookie('orderby-switch', esc_html($_GET['orderby-switch']), time() + 60 * 60 * 24,'/');
+  }
+
+  // 順序設定
+  $gt = isset($_GET['orderby-switch']) ? $_GET['orderby-switch'] : null;
+  $st = empty($ck) ? $gt : $ck;
+
+  switch($st) {
+    // 人気順
+    case 'popular':
+      $records = get_access_ranking_records('all', 3000, 'post');
+      $post_ids = array();
+      foreach ($records as $post) {
+        $post_ids[] = $post->ID;
+      }
+      $query->set('post__in', $post_ids);
+      $query->set('orderby', 'post__in');
+      break;
+
+    default:
+      $query->set('orderby', $st);
+  }
+});
+
+
+//******************************************************************************
+//  目次ボタン追加
+//******************************************************************************
+add_action('cocoon_part_after__tmp/button-go-to-top', function() {
+  if (get_theme_mod('hvn_toc_fix_setting')) {
+    $html = do_shortcode('[toc]');
+    echo <<< EOF
+<div id="hvn-toc">
+  <label for="hvn-open" class="hvn-open-btn"><i class="fas fa-list"></i></label>
+  <input type="radio" id="hvn-close" class="display-none" name="hvn-trigger">
+  <input type="radio" id="hvn-open"  class="display-none" name="hvn-trigger">
+  <div class="hvn-modal">
+    <div class="hvn-content-wrap">
+      <div class="hvn-title">目次</div>
+      {$html}
+    </div>
+    <label for="hvn-close"><div class="hvn-background"></div></label>
+  </div>
+</div>
+
+EOF;
   }
 });

@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//人気エントリーウイジェットの追加
+//人気エントリーウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -21,7 +21,7 @@ class PopularEntryWidgetItem extends WP_Widget {
       WIDGET_NAME_PREFIX.__( '人気記事', THEME_NAME ),
       array('description' => __( '人気記事リストをサムネイルつきで表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
-    );//ウイジェット名
+    );//ウィジェット名
   }
   function widget($args, $instance) {
     extract( $args );

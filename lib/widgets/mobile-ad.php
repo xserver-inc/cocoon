@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//モバイル用広告ウイジェットの追加
+//モバイル用広告ウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -16,7 +16,7 @@ class MobileAdWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
       'mobile_ad',
-      WIDGET_NAME_PREFIX.__( '広告（モバイル用）', THEME_NAME ), //ウイジェット名
+      WIDGET_NAME_PREFIX.__( '広告（モバイル用）', THEME_NAME ), //ウィジェット名
       array('description' => __( 'モバイルのみで表示される広告ウィジェットです。834px以下で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );

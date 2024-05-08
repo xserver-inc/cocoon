@@ -18,12 +18,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         get_template_part_with_ad_format(get_ad_pos_above_title_format(), 'ad-above-title', is_ad_pos_above_title_label_visible());
       }; ?>
 
-      <?php //投稿タイトル上ウイジェット
+      <?php //投稿タイトル上ウィジェット
       if ( is_single() && is_active_sidebar( 'above-single-content-title' ) ): ?>
         <?php dynamic_sidebar( 'above-single-content-title' ); ?>
       <?php endif; ?>
 
-      <?php //固定ページタイトル上ウイジェット
+      <?php //固定ページタイトル上ウィジェット
       if ( is_page() && is_active_sidebar( 'above-page-content-title' ) ): ?>
         <?php dynamic_sidebar( 'above-page-content-title' ); ?>
       <?php endif; ?>
@@ -50,12 +50,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title', is_ad_pos_below_title_label_visible());
         }; ?>
 
-        <?php //投稿タイトル下ウイジェット
+        <?php //投稿タイトル下ウィジェット
         if ( is_single() && is_active_sidebar( 'below-single-content-title' ) ): ?>
           <?php dynamic_sidebar( 'below-single-content-title' ); ?>
         <?php endif; ?>
 
-        <?php //固定ページタイトル下ウイジェット
+        <?php //固定ページタイトル下ウィジェット
         if ( is_page() && is_active_sidebar( 'below-page-content-title' ) ): ?>
           <?php dynamic_sidebar( 'below-page-content-title' ); ?>
         <?php endif; ?>
@@ -101,12 +101,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           get_template_part_with_ad_format(get_ad_pos_content_top_format(), 'ad-content-top', is_ad_pos_content_top_label_visible());
         }; ?>
 
-        <?php //投稿本文上ウイジェット
+        <?php //投稿本文上ウィジェット
         if ( is_single() && is_active_sidebar( 'single-content-top' ) ): ?>
           <?php dynamic_sidebar( 'single-content-top' ); ?>
         <?php endif; ?>
 
-        <?php //固定ページ本文上ウイジェット
+        <?php //固定ページ本文上ウィジェット
         if ( is_page() && is_active_sidebar( 'page-content-top' ) ): ?>
           <?php dynamic_sidebar( 'page-content-top' ); ?>
         <?php endif; ?>
@@ -129,12 +129,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
       <footer class="article-footer entry-footer">
 
-        <?php //投稿本文下ウイジェット
+        <?php //投稿本文下ウィジェット
         if ( is_single() && is_active_sidebar( 'single-content-bottom' ) ): ?>
           <?php dynamic_sidebar( 'single-content-bottom' ); ?>
         <?php endif; ?>
 
-        <?php //固定ページ本文下ウイジェット
+        <?php //固定ページ本文下ウィジェット
         if ( is_page() && is_active_sidebar( 'page-content-bottom' ) ): ?>
           <?php dynamic_sidebar( 'page-content-bottom' ); ?>
         <?php endif; ?>
@@ -160,12 +160,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           get_template_part_with_ad_format(get_ad_pos_above_sns_buttons_format(), 'ad-above-sns-buttons', is_ad_pos_above_sns_buttons_label_visible());
         }; ?>
 
-        <?php //投稿SNSボタン上ウイジェット
+        <?php //投稿SNSボタン上ウィジェット
         if ( is_single() && is_active_sidebar( 'above-single-sns-buttons' ) ): ?>
           <?php dynamic_sidebar( 'above-single-sns-buttons' ); ?>
         <?php endif; ?>
 
-        <?php //固定ページSNSボタン上ウイジェット
+        <?php //固定ページSNSボタン上ウィジェット
         if ( is_page() && is_active_sidebar( 'above-page-sns-buttons' ) ): ?>
           <?php dynamic_sidebar( 'above-page-sns-buttons' ); ?>
         <?php endif; ?>
@@ -200,12 +200,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           get_template_part_with_ad_format(get_ad_pos_below_sns_buttons_format(), 'ad-below-sns-buttons', is_ad_pos_below_sns_buttons_label_visible());
         }; ?>
 
-        <?php //投稿SNSボタン下ウイジェット
+        <?php //投稿SNSボタン下ウィジェット
         if ( is_single() && is_active_sidebar( 'below-single-sns-buttons' ) ): ?>
           <?php dynamic_sidebar( 'below-single-sns-buttons' ); ?>
         <?php endif; ?>
 
-        <?php //固定ページSNSボタン下ウイジェット
+        <?php //固定ページSNSボタン下ウィジェット
         if ( is_page() && is_active_sidebar( 'below-page-sns-buttons' ) ): ?>
           <?php dynamic_sidebar( 'below-page-sns-buttons' ); ?>
         <?php endif; ?>

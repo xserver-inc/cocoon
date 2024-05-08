@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//モバイル用テキストウイジェットの追加
+//モバイル用テキストウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -19,7 +19,7 @@ class MobileTextWidgetItem extends WP_Widget {
       WIDGET_NAME_PREFIX.__( 'テキスト（モバイル用）', THEME_NAME ),
       array('description' => __( 'モバイルのみで表示されるテキストウィジェットです。834px以下で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
-    );//ウイジェット名
+    );//ウィジェット名
   }
   function widget($args, $instance) {
     extract( $args );

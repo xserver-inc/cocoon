@@ -22,7 +22,7 @@
 }
 
 .hvn-dark .article h2 {
-  border-color: #696969;
+  --hover-color: var(--main-color);
 }
 
 .article h2::before {

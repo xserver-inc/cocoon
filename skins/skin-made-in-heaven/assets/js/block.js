@@ -34,3 +34,9 @@ wp.blocks.registerBlockStyle('cocoon-blocks/tab', {
   name: 'hvn-tab-line',
   label: '下線'
 });
+
+
+wp.blocks.registerBlockStyle('cocoon-blocks/blogcard', {
+  name: 'hvn-text',
+  label: 'テキスト'
+});

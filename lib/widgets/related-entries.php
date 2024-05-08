@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//新着エントリーウイジェットの追加
+//新着エントリーウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -19,7 +19,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
       WIDGET_NAME_PREFIX.__( '関連記事', THEME_NAME ),
       array('description' => __( '関連記事リストをサムネイルつきで表示するウィジェットです。投稿ページのみ表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
-    );//ウイジェット名
+    );//ウィジェット名
   }
   function widget($args, $instance) {
     extract( $args );

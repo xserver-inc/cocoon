@@ -22,7 +22,7 @@ if ($size) {
   $w = $size['width'];
   $h = $size['height'];
   if ($w && $h) {
-    $width_attr = ' widht="'.$w.'"';
+    $width_attr = ' width="'.$w.'"';
     $height_attr = ' height="'.$h.'"';
   }
 }

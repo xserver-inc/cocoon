@@ -72,6 +72,9 @@ const tagTypes = [
   { tag: 'span', class: 's-circle', title: __( '○', THEME_NAME ), icon: 'edit' },
   { tag: 'span', class: 'triangle', title: __( '△', THEME_NAME ), icon: 'edit' },
   { tag: 'span', class: 'cross', title: __( '×', THEME_NAME ), icon: 'edit' },
+  { tag: 'span', class: 'b-check', title: __( '✓', THEME_NAME ), icon: 'edit' },
+  { tag: 'span', class: 'b-question', title: __( '？', THEME_NAME ), icon: 'edit' },
+  // { tag: 'span', class: 'b-none', title: __( '-', THEME_NAME ), icon: 'edit' },
 ];
 
 tagTypes.forEach(({ tag, class: className, title, icon }) => {

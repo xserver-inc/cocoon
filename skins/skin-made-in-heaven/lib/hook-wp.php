@@ -6,10 +6,12 @@ if (!defined('ABSPATH')) exit;
 //  カスタマイザー追加
 //******************************************************************************
 add_action('customize_register', function($wp_customize) {
+  global $_HVN_OPTION;
+
   $wp_customize->add_panel(
     'hvn_cocoon',
     array(
-      'title'     => 'Cocoon拡張設定',
+      'title'     => 'メイド・イン・ヘブン設定',
       'priority'  => 300,
     )
   );
@@ -19,6 +21,9 @@ add_action('customize_register', function($wp_customize) {
   hvn_main($wp_customize);
   hvn_header($wp_customize);
   hvn_editor($wp_customize);
+  if ($_HVN_OPTION) {
+    hvn_option($wp_customize);
+  }
 });
 
 
@@ -255,12 +260,6 @@ add_action('pre_get_posts', function($query) {
 add_filter('posts_search_orderby', function($search_orderby, $wp_query) {
   return 'post_date desc';
 }, 10, 2);
-
-
-//******************************************************************************
-//  ウィジェットでショートコード実行許可
-//******************************************************************************
-add_filter('widget_text', 'do_shortcode');
 
 
 //******************************************************************************
@@ -524,3 +523,181 @@ add_filter('render_block', function($block_content) {
   $block_content = preg_replace('/class="(inline-button)/', "class=\"$btn_circle $btn_shine $1", $block_content);
   return $block_content;
 });
+
+
+//******************************************************************************
+//  コメントフォーム追加
+//******************************************************************************
+
+// コメントフォーム追加
+add_action('comment_form_field_comment', function($content) {
+  $icon = 3;
+  $html = null;
+
+  if (get_theme_mod('hvn_comment_setting') && is_user_logged_in()){
+    for ($i=1; $i<=$icon; $i++) {
+      $checked = null;
+      if ($i == 1) {
+        $checked = 'checked';
+      }
+      $img = get_theme_mod("hvn_comment_img{$i}_setting");
+      if ($img) {
+        $url = wp_get_attachment_url($img);
+        $html  .= <<< EOF
+<div class="hvn-comment-icon">
+  <figure><img src="{$url}"></figure>
+  <input type="radio" name="post-icon" value="{$i}" {$checked}>
+</div>
+EOF;
+      }
+    }
+    if ($html) {
+      $html = "<label>アイコン</label><div class=hvn-comment>{$html}</div>";
+    }
+  }
+
+  return $html . $content;
+});
+
+
+// カスタムフィールド出力
+add_action('comment_post', function($comment_id) {
+  if (get_theme_mod('hvn_comment_setting') && is_user_logged_in()) {
+    $post_icon = esc_attr($_POST['post-icon']);
+    add_comment_meta($comment_id, 'post-icon', $post_icon, true);
+  }
+});
+
+
+// コメントメタカスタムフィールド追加
+add_action('add_meta_boxes_comment', function() {
+ add_meta_box('hvn-comment-title', 'カスタムフィールド' , 'comment_meta_post_icon', 'comment', 'normal', 'high');
+});
+
+
+function comment_meta_post_icon($comment) {
+  $post_icon = get_comment_meta($comment->comment_ID, 'post-icon', true);
+
+  $html = <<<EOF
+<p>
+  <label for="post-icon">アイコン番号:</label>
+  <input type="text" name="post-icon" value="{$post_icon}"  class="widefat" />
+</p>
+EOF;
+
+  echo $html;
+}
+
+
+// コメントを編集カスタムフィールド更新
+add_action('edit_comment', function($comment_id) {
+  if (isset($_POST['post-icon'])) {
+    update_comment_meta($comment_id, 'post-icon', esc_attr($_POST['post-icon']));
+  }
+});
+
+
+// コメント一覧にカスタムフィールド追加
+add_filter('manage_edit-comments_columns', function($columns) {
+  $columns['post-icon'] = "アイコン番号";
+
+  return $columns;
+});
+
+
+add_action('manage_comments_custom_column', function($column_name, $comment_id) {
+  if ($column_name == 'post-icon') {
+    $post_icon = get_comment_meta($comment_id, 'post-icon', true);
+    echo esc_attr($post_icon);
+  }
+},10, 2);
+
+
+// アバター変更
+add_filter('get_avatar' , function($avatar, $comment) {
+  if (get_theme_mod('hvn_comment_setting')) {
+    if (!is_admin() && isset($comment->comment_ID)) {
+      $no = get_comment_meta($comment->comment_ID, 'post-icon',true);
+      if ($no) {
+        $img = wp_get_attachment_url(get_theme_mod("hvn_comment_img{$no}_setting"));
+        if ($img) {
+          $avatar = "<img src={$img} class=avatar>";
+        }
+      }
+    }
+  }
+
+  return $avatar;
+}, 100001, 2);
+
+
+//******************************************************************************
+//  独自パターン追加
+//******************************************************************************
+add_action('init',function() {
+  $file = url_to_local(get_theme_file_uri(HVN_SKIN . "assets/pattern/compare-box.json"));
+  $json =  json_decode(file_get_contents($file), true);
+  register_block_pattern(
+    'hvn-pattern',
+    $json,
+  );
+});
+
+
+//******************************************************************************
+//  タグクラウドにパラメータ追加
+//******************************************************************************
+add_filter('in_widget_form', function($widget, $return, $instance) {
+  if ($widget->id_base == 'tag_cloud') {
+    $f_id   = $widget->get_field_id('drop');
+    $f_name = $widget->get_field_name('drop');
+    echo "<p><input type=checkbox class=widefat name={$f_name}" .  checked(isset($instance['drop']), true, false) . "><label for={$f_id}>ドロップダウンで表示</label></p>";
+  }
+}, 10, 3);
+
+
+//******************************************************************************
+//  設定フォーム更新
+//******************************************************************************
+add_filter('widget_update_callback', function($instance, $new_instance, $old_instance, $this_widget) {
+  $instance['drop'] = $new_instance['drop'];
+
+  return $instance;
+}, 10, 4);
+
+
+//******************************************************************************
+//  設定値を追加
+//******************************************************************************
+add_filter('widget_tag_cloud_args', function($args, $instance) {
+  $args['drop'] = isset($instance['drop']) ? $instance['drop'] : '';
+
+  return $args;
+},2,10);
+
+
+//******************************************************************************
+//  タグクラウド独自表示
+//******************************************************************************
+add_filter('wp_tag_cloud', function($return, $args) {
+  if (isset($args['drop']) && $args['drop'] == 'on'){
+    $id = get_query_var('tag_id');
+    $tags = get_tags(array('orderby'=> 'count', 'order' => 'DESC'));
+
+    ob_start();
+    echo '<select onchange="document.location.href=this.options[this.selectedIndex].value;"><option value="" selected="selected">タグを選択</option>';
+
+    if ($tags) {
+      foreach($tags as $tag) {
+        $count = $args["show_count"] ? " &nbsp;({$tag->count})" : '';
+?>
+<option value="<?php echo get_tag_link($tag->term_id); ?>" <?php selected($tag->term_id, $id); ?>><?php echo $tag->name; ?><?php echo $count; ?></option>
+<?php
+      }
+    }
+    echo '</select>';
+    $return = ob_get_clean();
+  }
+
+  return $return;
+},2,10);

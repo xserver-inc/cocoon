@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//最近のコメントウイジェット
+//最近のコメントウィジェット
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -16,7 +16,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
       'recent_comments',
-      WIDGET_NAME_PREFIX.__( '最近のコメント', THEME_NAME ),//ウイジェット名
+      WIDGET_NAME_PREFIX.__( '最近のコメント', THEME_NAME ),//ウィジェット名
       array('description' => __( '最近投稿されたコメントを表示するウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );

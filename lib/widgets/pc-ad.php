@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//パソコン用広告ウイジェットの追加
+//パソコン用広告ウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -15,7 +15,7 @@ if ( !class_exists( 'PcAdWidgetItem' ) ):
 class PcAdWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
-      'pc_ad', //ウイジェット名
+      'pc_ad', //ウィジェット名
       WIDGET_NAME_PREFIX.__( '広告（PC用）', THEME_NAME ),
       array('description' => __( 'パソコンのみで表示される広告ウィジェットです。834pxより大きな画面で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
