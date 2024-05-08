@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-08T11:51:37+00:00\n"
-"PO-Revision-Date: 2024-05-08 13:01\n"
+"POT-Creation-Date: 2024-05-08T15:18:11+00:00\n"
+"PO-Revision-Date: 2024-05-08 15:22\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -11205,8 +11205,8 @@ msgid "サイドバー"
 msgstr "Sidebar"
 
 #: lib/widget-areas.php:19
-msgid "サイドバーのウィジットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
-msgstr "This is a sidebar widget area. If a widget is not inserted, 1-column display will be used."
+msgid "サイドバーのウィジェットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
+msgstr ""
 
 #: lib/widget-areas.php:33
 msgid "サイドバースクロール追従"
@@ -11413,36 +11413,36 @@ msgid "フッター左"
 msgstr "Left of the footer"
 
 #: lib/widget-areas.php:436
-msgid "フッター左側のウィジットエリアです。"
-msgstr "Widget area is displayed on the left side of the footer."
+msgid "フッター左側のウィジェットエリアです。"
+msgstr ""
 
 #: lib/widget-areas.php:451
 msgid "フッター中"
 msgstr "Center of the footer"
 
 #: lib/widget-areas.php:452
-msgid "フッター中間のウィジットエリアです。"
-msgstr "Widget area is displayed in the center of the footer."
+msgid "フッター中間のウィジェットエリアです。"
+msgstr ""
 
 #: lib/widget-areas.php:466
 msgid "フッター右"
 msgstr "Right of the footer"
 
 #: lib/widget-areas.php:468
-msgid "フッター右側フッター中のウィジットエリアです。"
-msgstr "Widget area is displayed on the right side of the footer."
+msgid "フッター右側フッター中のウィジェットエリアです。"
+msgstr ""
 
 #: lib/widget-areas.php:483
 msgid "フッター（モバイル用）"
 msgstr "Footer (for mobile)"
 
 #: lib/widget-areas.php:485
-msgid "モバイルで表示するウィジットエリアです。834px以下で表示されます。"
-msgstr "Widget area is displayed on mobile devices. It is displayed at 834 px or less."
+msgid "モバイルで表示するウィジェットエリアです。834px以下で表示されます。"
+msgstr ""
 
 #: lib/widget-areas.php:502
-msgid "404ページをカスタマイズするためのウィジットエリアです。"
-msgstr "Widget area for customizing 404 pages."
+msgid "404ページをカスタマイズするためのウィジェットエリアです。"
+msgstr ""
 
 #: lib/widgets/ad.php:20
 msgid "パソコンとモバイル端末両方に表示される広告ウィジェットです。"

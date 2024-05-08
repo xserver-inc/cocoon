@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-08T11:51:37+00:00\n"
-"PO-Revision-Date: 2024-05-08 13:00\n"
+"POT-Creation-Date: 2024-05-08T15:18:11+00:00\n"
+"PO-Revision-Date: 2024-05-08 15:22\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -11202,8 +11202,8 @@ msgid "サイドバー"
 msgstr "사이드바"
 
 #: lib/widget-areas.php:19
-msgid "サイドバーのウィジットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
-msgstr "사이드바 위젯 영역입니다. 위젯을 넣지 않은 경우 1열 표시가 됩니다."
+msgid "サイドバーのウィジェットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
+msgstr ""
 
 #: lib/widget-areas.php:33
 msgid "サイドバースクロール追従"
@@ -11410,36 +11410,36 @@ msgid "フッター左"
 msgstr "푸터 왼쪽"
 
 #: lib/widget-areas.php:436
-msgid "フッター左側のウィジットエリアです。"
-msgstr "푸터 왼쪽의 위젯 영역입니다."
+msgid "フッター左側のウィジェットエリアです。"
+msgstr ""
 
 #: lib/widget-areas.php:451
 msgid "フッター中"
 msgstr "푸터 중간"
 
 #: lib/widget-areas.php:452
-msgid "フッター中間のウィジットエリアです。"
-msgstr "푸터 중간의 위젯 영역입니다."
+msgid "フッター中間のウィジェットエリアです。"
+msgstr ""
 
 #: lib/widget-areas.php:466
 msgid "フッター右"
 msgstr "푸터 오른쪽"
 
 #: lib/widget-areas.php:468
-msgid "フッター右側フッター中のウィジットエリアです。"
-msgstr "푸터 오른쪽의 위젯 영역입니다."
+msgid "フッター右側フッター中のウィジェットエリアです。"
+msgstr ""
 
 #: lib/widget-areas.php:483
 msgid "フッター（モバイル用）"
 msgstr "푸터 (모바일용)"
 
 #: lib/widget-areas.php:485
-msgid "モバイルで表示するウィジットエリアです。834px以下で表示されます。"
-msgstr "모바일에서 보이는 위젯 영역입니다. 834px 이하에서 표시됩니다."
+msgid "モバイルで表示するウィジェットエリアです。834px以下で表示されます。"
+msgstr ""
 
 #: lib/widget-areas.php:502
-msgid "404ページをカスタマイズするためのウィジットエリアです。"
-msgstr "404페이지를 커스터마이징 하기 위한 위젯 영역입니다."
+msgid "404ページをカスタマイズするためのウィジェットエリアです。"
+msgstr ""
 
 #: lib/widgets/ad.php:20
 msgid "パソコンとモバイル端末両方に表示される広告ウィジェットです。"
