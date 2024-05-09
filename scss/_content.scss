@@ -158,6 +158,7 @@ table {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 40px;
+  pointer-events: none;
 }
 
 .s-circle:before {

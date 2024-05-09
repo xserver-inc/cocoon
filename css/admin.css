@@ -2177,6 +2177,7 @@ body.wp-admin {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 40px;
+  pointer-events: none;
 }
 .admin-settings .demo .s-circle:before {
   background-color: #00bcd4;
@@ -10672,6 +10673,7 @@ body.wp-admin {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 40px;
+  pointer-events: none;
 }
 .admin-settings .demo .s-circle:before {
   background-color: #00bcd4;
