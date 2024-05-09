@@ -17,7 +17,7 @@ for ($i=0; $i<count($marker); $i++) {
     if (get_theme_mod('hvn_marker_color_set1_setting')) {
       echo <<< EOF
 .marker{$marker[$i][0]} {
-  background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100%;!important;
+  background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100%!important;
   background-color: unset!important;
 }
 

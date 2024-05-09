@@ -105,20 +105,19 @@ $css_arr = [
   ['is_bottom_copy_share_button_visible'      ,'.copy-button']
 ];
 
-for ($i=0;$i < count($css_arr);$i++){
+for ($i=0; $i<count($css_arr); $i++){
   $func = $css_arr[$i][0];
-  if ($func()) {
+  if (!$func()) {
     $count ++;
-  }else {
     $css[] = $css_arr[$i][1];
   }
 }
 
-if ($count) {
-  $css = implode(',', $css) ;
-  echo ".share-menu-content :is({$css}){ display: none; }\n";
-}else{
+if ($count == count($css_arr)) {
   echo ".body .share-menu-button { display: none; }\n";
+} else if ($css) {
+  $css = implode(',', $css);
+  echo ".share-menu-content :is({$css}){ display: none; }\n";
 }
 
 
