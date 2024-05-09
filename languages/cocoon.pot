@@ -11201,7 +11201,7 @@ msgid "サイドバー"
 msgstr ""
 
 #: lib/widget-areas.php:19
-msgid "サイドバーのウィジットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
+msgid "サイドバーのウィジェットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
 msgstr ""
 
 #: lib/widget-areas.php:33
@@ -11409,7 +11409,7 @@ msgid "フッター左"
 msgstr ""
 
 #: lib/widget-areas.php:436
-msgid "フッター左側のウィジットエリアです。"
+msgid "フッター左側のウィジェットエリアです。"
 msgstr ""
 
 #: lib/widget-areas.php:451
@@ -11417,7 +11417,7 @@ msgid "フッター中"
 msgstr ""
 
 #: lib/widget-areas.php:452
-msgid "フッター中間のウィジットエリアです。"
+msgid "フッター中間のウィジェットエリアです。"
 msgstr ""
 
 #: lib/widget-areas.php:466
@@ -11425,7 +11425,7 @@ msgid "フッター右"
 msgstr ""
 
 #: lib/widget-areas.php:468
-msgid "フッター右側フッター中のウィジットエリアです。"
+msgid "フッター右側フッター中のウィジェットエリアです。"
 msgstr ""
 
 #: lib/widget-areas.php:483
@@ -11433,11 +11433,11 @@ msgid "フッター（モバイル用）"
 msgstr ""
 
 #: lib/widget-areas.php:485
-msgid "モバイルで表示するウィジットエリアです。834px以下で表示されます。"
+msgid "モバイルで表示するウィジェットエリアです。834px以下で表示されます。"
 msgstr ""
 
 #: lib/widget-areas.php:502
-msgid "404ページをカスタマイズするためのウィジットエリアです。"
+msgid "404ページをカスタマイズするためのウィジェットエリアです。"
 msgstr ""
 
 #: lib/widgets/ad.php:20

@@ -1,6 +1,6 @@
 <?php
 ///////////////////////////////////////////////////
-//新着情報ウイジェットの追加
+//新着情報ウィジェットの追加
 ///////////////////////////////////////////////////
 /**
  * Cocoon WordPress Theme
@@ -19,7 +19,7 @@ class InfoListWidgetItem extends WP_Widget {
       WIDGET_NAME_PREFIX.__( '新着情報', THEME_NAME ),
       array('description' => __( '最近書かれた記事のタイトルリストを表示します。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
-    );//ウイジェット名
+    );//ウィジェット名
   }
   function widget($args, $instance) {
     extract( $args );
