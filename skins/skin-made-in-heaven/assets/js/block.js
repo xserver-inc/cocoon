@@ -23,20 +23,22 @@ wp.blocks.registerBlockStyle('cocoon-blocks/timeline', {
   label: 'ボックス'
 });
 
-
 wp.blocks.registerBlockStyle('cocoon-blocks/tab', {
   name: 'hvn-tab-balloon',
   label: '吹き出し'
 });
-
 
 wp.blocks.registerBlockStyle('cocoon-blocks/tab', {
   name: 'hvn-tab-line',
   label: '下線'
 });
 
-
 wp.blocks.registerBlockStyle('cocoon-blocks/blogcard', {
   name: 'hvn-text',
   label: 'テキスト'
+});
+
+wp.blocks.registerBlockStyle('cocoon-blocks/caption-box-1', {
+  name: 'accordion',
+  label: 'アコーディオン'
 });

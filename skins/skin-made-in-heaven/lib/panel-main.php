@@ -176,7 +176,7 @@ function hvn_main($wp_customize) {
       $wp_customize,
       'hvn_categoties_card_setting',
       array(
-        'label'     => 'カテゴリーごと(2、3カード)縦型カード',
+        'label'     => 'カテゴリーごと(2、3カラム)縦型カード',
         'section'   => 'hvn_main_section',
         'settings'  => 'hvn_categoties_card_setting',
         'type'      => 'checkbox',

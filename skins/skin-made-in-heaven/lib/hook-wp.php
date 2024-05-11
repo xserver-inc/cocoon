@@ -635,12 +635,17 @@ add_filter('get_avatar' , function($avatar, $comment) {
 //  独自パターン追加
 //******************************************************************************
 add_action('init',function() {
-  $file = url_to_local(get_theme_file_uri(HVN_SKIN . "assets/pattern/compare-box.json"));
-  $json =  json_decode(file_get_contents($file), true);
-  register_block_pattern(
-    'hvn-pattern',
-    $json,
-  );
+  $path = url_to_local(HVN_SKIN_URL) . "assets/pattern/*.json";
+  $files = glob($path);
+
+  foreach ($files as $i => $file) {
+    $json =  json_decode(file_get_contents($file), true);
+    register_block_pattern(
+      "heaven/pattern{$i}",
+      $json,
+    );
+  }
+  register_block_pattern_category('heaven', ['label' => 'メイド・イン・ヘブン']);
 });
 
 

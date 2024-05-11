@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.3.2
+ Version: 2.4.0
  Priority: 6900001000
 */
 
@@ -90,7 +90,9 @@
 **                            通知エリア固定を追加
 **                            比較ボックスパターンを追加
 **        2.3.1   2024-05-08  バグ対策
-**        2.3.2   2024-05-08  バグ対策
+**        2.3.2   2024-05-09  バグ対策
+**        2.4.0   2024-05-11  パターンにカテゴリー追加
+**                            見出しボックスにアコーディオン追加
 **
 *******************************************************************************/
 
@@ -3525,6 +3527,7 @@ blockquote:before,
   padding: var(--padding15);
 }
 
+.is-style-accordion .caption-box-label:after,
 .is-style-accordion .faq-question:before,
 .toggle-button:before {
   align-items: center;
@@ -3542,6 +3545,7 @@ blockquote:before,
   top: 0;
 }
 
+.is-style-accordion .caption-box-label.active:after,
 .is-style-accordion .faq-question.active:before,
 .toggle-checkbox:checked ~ .toggle-button:before {
   content: '\f106';
@@ -3575,8 +3579,10 @@ blockquote:before,
   background-color: var(--border-color);
 }
 
+.is-style-accordion .caption-box-label,
 .is-style-accordion .faq-item {
-  padding: var(--padding15) calc(var(--padding15) + 1em) var(--padding15) var(--padding15);
+  cursor: pointer;
+  padding: var(--padding15) calc(var(--padding15) + 1em) var(--padding15) var(--padding15)!important;
 }
 
 .is-style-accordion .faq-question {
@@ -3674,6 +3680,7 @@ div.search-form {
   background-color: var(--border-color);
   color: #333;
   padding: var(--padding15);
+  position: relative;
 }
 
 .caption-box-content {

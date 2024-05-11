@@ -629,3 +629,18 @@ echo <<< EOF
 })(jQuery);
 
 EOF;
+
+
+//******************************************************************************
+//  見出しボックスアコーディオン
+//******************************************************************************
+echo <<< EOF
+(function($) {
+  $('.is-style-accordion.cocoon-block-caption-box > .caption-box-content').hide();
+  $('.is-style-accordion.cocoon-block-caption-box > .caption-box-label').click(function() {
+    $(this).next('.caption-box-content').toggle();
+    $(this).toggleClass('active');
+  });
+})(jQuery);
+
+EOF;
