@@ -543,57 +543,5 @@ function hvn_main($wp_customize) {
       )
     )
   );
-
-
-  $wp_customize->add_setting('hvn_label7_main_section');
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_label7_main_section',
-      array(
-        'label'       => '■ コメント',
-        'section'     => 'hvn_main_section',
-        'settings'    => 'hvn_label7_main_section',
-        'type'        => 'hidden',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_comment_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_comment_setting',
-      array(
-        'label'     => 'コメントアイコン選択・表示',
-        'section'   => 'hvn_main_section',
-        'settings'  => 'hvn_comment_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  for ($i=1; $i<=3; $i++) {
-    $label = null;
-    if ($i == 1) {
-      $label = '画像';
-    }
-    $wp_customize->add_setting('hvn_comment_img' . $i . '_setting');
-    $wp_customize->add_control(
-      new WP_Customize_Media_Control(
-        $wp_customize,
-        'hvn_comment_img' . $i . '_setting',
-        array(
-          'label'       => $label,
-          'description' => '画像[' . $i . ']',
-          'section'     => 'hvn_main_section',
-          'settings'    => 'hvn_comment_img'. $i . '_setting',
-          'mime_type'   => 'image',
-        )
-      )
-    );
-  }
 }
 endif;

@@ -50,6 +50,32 @@ function hvn_option($wp_customize) {
   );
 
 
+  $label_array = [
+    'wide'          => '9:6',
+    'golden_ratio'  => '約5:8',
+    'postcard'      => '2:3',
+    'silver_ratio'  => '約5:7',
+    'standard'      => '3:4',
+    'square'        => '1:1'
+  ];
+  $thumb = get_theme_mod('thumbnail_image_type', 'wide');
+  $label = $label_array[$thumb];
+
+  $wp_customize->add_setting('hvn_thumb_option_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_thumb_option_setting',
+      array(
+        'label'     => 'サムネイル画像の比率('. $label . ')に従う',
+        'section'   => 'hvn_option_section',
+        'settings'  => 'hvn_thumb_option_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
   $wp_customize->add_setting('hvn_orderby_option_setting', array('default' => false));
   $wp_customize->add_control(
     new WP_Customize_Control(
@@ -316,5 +342,58 @@ function hvn_option($wp_customize) {
       )
     )
   );
+
+
+  $wp_customize->add_setting('hvn_label4_option_section');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_label4_option_section',
+      array(
+        'label'       => '■ コメント',
+        'section'     => 'hvn_option_section',
+        'settings'    => 'hvn_label4_option_section',
+        'type'        => 'hidden',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_comment_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_comment_setting',
+      array(
+        'label'     => 'コメントアイコン選択・表示',
+        'section'   => 'hvn_option_section',
+        'settings'  => 'hvn_comment_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
+  for ($i=1; $i<=3; $i++) {
+    $label = null;
+    if ($i == 1) {
+      $label = '画像';
+    }
+    $wp_customize->add_setting('hvn_comment_img' . $i . '_setting');
+    $wp_customize->add_control(
+      new WP_Customize_Media_Control(
+        $wp_customize,
+        'hvn_comment_img' . $i . '_setting',
+        array(
+          'label'       => $label,
+          'description' => '画像[' . $i . ']',
+          'section'     => 'hvn_option_section',
+          'settings'    => 'hvn_comment_img'. $i . '_setting',
+          'mime_type'   => 'image',
+        )
+      )
+    );
+  }
+
 }
 endif;

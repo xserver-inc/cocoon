@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.4.0
+ Version: 2.5.0
  Priority: 6900001000
 */
 
@@ -93,6 +93,8 @@
 **        2.3.2   2024-05-09  バグ対策
 **        2.4.0   2024-05-11  パターンにカテゴリー追加
 **                            見出しボックスにアコーディオン追加
+**        2.5.0   2024-05-14  サムネイル画像の比率に従うを追加
+**                            コメントアイコンをオプションメニューに変更
 **
 *******************************************************************************/
 
@@ -1178,21 +1180,7 @@ span.fas.fa-history:before {
 }
 
 .body .related-entry-card-thumb {
-  width: unset;
-}
-
-
-/* エントリーカード */
-
-.related-list .e-card {
-  border-bottom: 1px dotted var(--border-color);
-  border-top: 0;
-  padding-bottom: var(--padding15);
-}
-
-.related-list .a-wrap:last-of-type .e-card {
-  border-bottom: 0;
-  padding: 0;
+  width: var(--thumb-width);
 }
 
 
@@ -1201,6 +1189,11 @@ span.fas.fa-history:before {
 .body .rect-mini-card .related-list .e-card {
   border: 1px solid var(--cocoon-three-d-border-colors);
   padding: var(--padding15);
+}
+
+
+.body .e-card .card-content.related-entry-card-content {
+  padding-bottom: 0;
 }
 
 
@@ -1426,10 +1419,10 @@ span.fas.fa-history:before {
   aspect-ratio: 1 / 1;
   background-color: var(--hover-color);
   flex-shrink: 0;
-  height: var(--thumb-width);
+  align-self: flex-start;
   margin: 0!important;
   overflow: hidden;
-  width: unset;
+  width: var(--thumb-width);
 }
 
 .a-wrap:hover img {
@@ -2761,8 +2754,9 @@ aside.widget .widget-title {
   margin: var(--gap30) var(--main-padding);
 }
 
-.recent-comments figure {
-  height: unset;
+.body .recent-comments figure {
+  aspect-ratio: 1 / 1;
+  width: unset;
 }
 
 .recent-comments .avatar {
@@ -3469,7 +3463,6 @@ blockquote:before,
 
 .body .blogcard-thumbnail {
   box-shadow: 0 0 0 1px #f0f0f0;
-  width: unset;
 }
 
 
