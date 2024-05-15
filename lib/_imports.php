@@ -136,11 +136,12 @@ if (apply_filters('cocoon_youtube_speed_up_enable', false)) {
 }
 require_once abspath(__FILE__).'font-awesome.php'; //Font Awesome
 require_once abspath(__FILE__).'admin.php'; //管理者機能
-if ( function_exists( 'register_block_style' ) && is_block_editor_style_block_option_visible() ){
+if ( function_exists( 'register_block_style' ) && is_block_editor_style_block_option_visible() && is_gutenberg_editor_enable() ){
   // require_once abspath(__FILE__).'block-editor-styles-paragraph.php'; //ブロックエディタースタイル（段落）
   // require_once abspath(__FILE__).'block-editor-styles-list.php'; //ブロックエディタースタイル（リスト）
   require_once abspath(__FILE__).'block-editor-styles-group.php'; //ブロックエディタースタイル（グループ）
   require_once abspath(__FILE__).'block-editor-styles-image.php'; //ブロックエディタースタイル（画像）
+  require_once abspath(__FILE__).'block-editor-styles-faq.php'; //ブロックエディタースタイル（FAQ）
 }
 
 //Cocoon Blocks

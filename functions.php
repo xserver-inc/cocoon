@@ -376,21 +376,6 @@ function remove_no_archive_pages_from_widget_recent_entries($args){
 }
 endif;
 
-
-
-add_action('init', function () {
-  //FAQ
-  register_block_style('cocoon-blocks/faq', array(
-    'name' => 'square',
-    'label' => __('角型ラベル', THEME_NAME),
-  ));
-  register_block_style('cocoon-blocks/faq', array(
-    'name' => 'accordion',
-    'label' => __('アコーディオン', THEME_NAME),
-  ));
-});
-
-
 //wpForoで添付画像をイメージリンクにする
 add_filter('wpforo_body_text_filter', function ($text){
   $text = preg_replace('#(<div id="wpfa-\d+?" class="wpforo-attached-file"><a class="wpforo-default-attachment" .*?href="(.+?('.IMAGE_RECOGNITION_EXTENSIONS_REG.'))".*?>).+?(</a></div>)#i', '$1<i class="fas fa-paperclip paperclip"></i><img alt="" src="$2" />$4', $text);

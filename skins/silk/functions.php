@@ -241,17 +241,19 @@ class Skin_Silk_Functions {
     //サイトアイコンフォント設定
     $this->fa = $this->fa_class();
 
-    //ブロックスタイル
-    $blockstyles = apply_filters('silk_block_styles', self::BLOCK_STYLES);
-    foreach ($blockstyles as $blockstyle) {
-      register_block_style($blockstyle['name'], $blockstyle['properties']);
-    }
+    if (is_gutenberg_editor_enable()) {
+      //ブロックスタイル
+      $blockstyles = apply_filters('silk_block_styles', self::BLOCK_STYLES);
+      foreach ($blockstyles as $blockstyle) {
+        register_block_style($blockstyle['name'], $blockstyle['properties']);
+      }
 
-    //ブログカードスタイル削除
-    if (!SILK_BLOGCARD) {
-      unregister_block_style('cocoon-blocks/blogcard', 'normal-card');
-      unregister_block_style('cocoon-blocks/blogcard', 'columns-card');
-      unregister_block_style('cocoon-blocks/blogcard', 'text');
+      //ブログカードスタイル削除
+      if (!SILK_BLOGCARD) {
+        unregister_block_style('cocoon-blocks/blogcard', 'normal-card');
+        unregister_block_style('cocoon-blocks/blogcard', 'columns-card');
+        unregister_block_style('cocoon-blocks/blogcard', 'text');
+      }
     }
 
     //公式ブロックパターン削除

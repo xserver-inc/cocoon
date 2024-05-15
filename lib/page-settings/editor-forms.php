@@ -18,6 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
+        <?php if (!is_classicpress()): ?>
         <!-- Gutenberg -->
         <tr>
           <th scope="row">
@@ -29,6 +30,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__( '無効化することで旧ビジュアルエディター形式で投稿画面が表示されます。', THEME_NAME ));
             ?>
           </td>
+        <?php endif; ?>
+
         </tr>
 
         <!-- エディタースタイル -->

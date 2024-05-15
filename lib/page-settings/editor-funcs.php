@@ -7,10 +7,22 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+
+//CMSのClassicPressが有効かどうか
+if ( !function_exists( 'is_classicpress' ) ):
+function is_classicpress(){
+  return function_exists( 'classicpress_version' ) && function_exists( 'classicpress_version_short' );
+}
+endif;
+
 //Gutenbergエディターの有効化
 define('OP_GUTENBERG_EDITOR_ENABLE', 'gutenberg_editor_enable');
 if ( !function_exists( 'is_gutenberg_editor_enable' ) ):
 function is_gutenberg_editor_enable(){
+  //CMSがClassicPressだった場合は無効
+  if (is_classicpress()) {
+    return false;
+  }
   return get_theme_option(OP_GUTENBERG_EDITOR_ENABLE, 1);
 }
 endif;
