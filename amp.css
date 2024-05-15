@@ -521,6 +521,10 @@ a:hover {
   color: inherit;
 }
 
+a:not([href]) .anchor-icon {
+  display: none;
+}
+
 ol, ul {
   padding-left: 40px;
 }

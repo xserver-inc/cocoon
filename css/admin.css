@@ -1109,6 +1109,9 @@ body.wp-admin {
 .has-text-color .admin-settings .demo a {
   color: inherit;
 }
+.admin-settings .demo a:not([href]) .anchor-icon {
+  display: none;
+}
 .admin-settings .demo ol, .admin-settings .demo ul {
   padding-left: 40px;
 }
@@ -9604,6 +9607,9 @@ body.wp-admin {
 }
 .has-text-color .admin-settings .demo a {
   color: inherit;
+}
+.admin-settings .demo a:not([href]) .anchor-icon {
+  display: none;
 }
 .admin-settings .demo ol, .admin-settings .demo ul {
   padding-left: 40px;
