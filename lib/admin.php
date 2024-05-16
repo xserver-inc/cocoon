@@ -396,13 +396,15 @@ function customize_admin_bar_menu($wp_admin_bar){
     'title'  => __( 'テーマ', THEME_NAME ), // ラベル
     'href'   => admin_url('themes.php') // ページURL
   ));
-  $wp_admin_bar->add_menu(array(
-    'parent' => 'dashboard_menu', // 親メニューID
-    'id'   => 'dashboard_menu-patterns', // 子メニューID
-    'meta'   => array(),
-    'title'  => __( 'パターン', THEME_NAME ), // ラベル
-    'href'   => admin_url('edit.php?post_type=wp_block') // ページURL
-  ));
+  if (!is_classicpress()) {
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-patterns', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( 'パターン', THEME_NAME ), // ラベル
+      'href'   => admin_url('edit.php?post_type=wp_block') // ページURL
+    ));
+  }
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-customize', // 子メニューID
