@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.add('is-active');
       // 内容をアクティブにする
       const index = Array.from(tabBlock.querySelectorAll('.tab-label')).indexOf(this);
-      const tabGroup = tabBlock.querySelectorAll('.tab-content-group')[0];
-      if (tabGroup) {
-        tabGroup.children[index].classList.add('is-active');
+      const tabContentGroup = tabBlock.querySelectorAll('.tab-content-group')[0];
+      if (tabContentGroup) {
+        tabContentGroup.children[index].classList.add('is-active');
         firstTabActive('.tab-content.is-active');
       }
     });
