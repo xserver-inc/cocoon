@@ -475,6 +475,21 @@ pre {
   content: '\f15c';
 }
 
+.hvn-blogcard .blogcard {
+  border: 0;
+  padding: 0;
+}
+
+.hvn-blogcard .blogcard-title {
+  color: #333;
+}
+
+.hvn-blogcard .blogcard-footer {
+  bottom: 0;
+  right: 0;
+  width: calc(100% - var(--thumb-width) - var(--padding15));
+}
+
 
 /*******************************************************************************
 **  比較ボックス
