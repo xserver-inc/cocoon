@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.6.0
+ Version: 2.6.1
  Priority: 6900001000
 */
 
@@ -97,6 +97,7 @@
 **                            コメントアイコンをオプションメニューに変更
 **        2.5.1   2024-05-15  オプション定義をdefineに変更
 **        2.6.0   2024-05-20  汎用ブロック内のブログカードのCSS追加
+**        2.6.1   2024-05-21  バグ対策
 **
 *******************************************************************************/
 
@@ -1192,7 +1193,6 @@ span.fas.fa-history:before {
   border: 1px solid var(--cocoon-three-d-border-colors);
   padding: var(--padding15);
 }
-
 
 .body .e-card .card-content.related-entry-card-content {
   padding-bottom: 0;
@@ -3461,10 +3461,6 @@ blockquote:before,
   line-height: 25px;
   padding: 0 var(--padding15);
   top: -12.5px;
-}
-
-.body .blogcard-thumbnail {
-  box-shadow: 0 0 0 1px #f0f0f0;
 }
 
 
