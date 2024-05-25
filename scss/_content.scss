@@ -135,8 +135,23 @@ table {
     }
   }
 
-  :is(th, td):has(.s-circle, .d-circle, .triangle, .cross, .b-question, .b-check){
+  // :is(th, td):has(.s-circle, .d-circle, .triangle, .cross, .b-question, .b-check){
+  //   height: 60px;
+  //   min-width: 80px;
+  // }
+
+}
+//:is(th, td):has(.s-circle, .d-circle, .triangle, .cross, .b-question, .b-check)
+//上記のようなCSSセレクターだとブロックエディターで不要な.editor-styles-wrapperがついてしまうため以下のように記入
+th, td{
+  &:has(.s-circle),
+  &:has(.d-circle),
+  &:has(.triangle),
+  &:has(.cross),
+  &:has(.b-question),
+  &:has(.b-check){
     height: 60px;
+    min-width: 80px;
   }
 }
 
