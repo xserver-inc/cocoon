@@ -135,7 +135,7 @@ table {
     }
   }
 
-  :is(th, td):has(.s-circle, .d-circle, .triangle, .cross){
+  :is(th, td):has(.s-circle, .d-circle, .triangle, .cross, .b-question, .b-check){
     height: 60px;
   }
 }

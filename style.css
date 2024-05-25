@@ -1807,7 +1807,7 @@ table tr:nth-of-type(2n+1) {
 table:not(.has-border-color) :where(th, td) {
   border: 1px solid var(--cocoon-x-thin-color);
 }
-table :is(th, td):has(.s-circle, .d-circle, .triangle, .cross) {
+table :is(th, td):has(.s-circle, .d-circle, .triangle, .cross, .b-question, .b-check) {
   height: 60px;
 }
 
