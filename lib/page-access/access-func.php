@@ -440,7 +440,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     //除外カテゴリー指定
     if (is_ids_exist($exclude_cat_ids)) {
       //空の配列を取り除く
-      $exclude_cat_ids = array_filter($exclude_cat_ids, "strlen");
+      $exclude_cat_ids = array_filter($exclude_cat_ids, "is_numeric");
       //カンマ区切りにする
       $ex_cat_ids = implode(',', $exclude_cat_ids);
       $ex_cat_ids = preg_replace('/,$/', '', $ex_cat_ids);
