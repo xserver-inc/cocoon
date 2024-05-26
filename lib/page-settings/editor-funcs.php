@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //CMSのClassicPressが有効かどうか
 if ( !function_exists( 'is_classicpress' ) ):
 function is_classicpress(){
-  return function_exists( 'classicpress_version' ) && function_exists( 'classicpress_version_short' );
+  return function_exists( 'classicpress_version' );
 }
 endif;
 
