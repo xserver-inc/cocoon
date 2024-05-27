@@ -40,7 +40,7 @@ if (!function_exists('add_header_spsearchform')) :
     get_template_part('skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button');
     $searchform = ob_get_contents();
     ob_end_clean();
-    if ($args->theme_location == NAV_MENU_HEADER) {
+    if (($args->theme_location == NAV_MENU_HEADER) || ($args->theme_location == NAV_MENU_MOBILE_SLIDE_IN)) {
       $navi .= $searchform;
     }
     return $navi;
