@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 1.0.12
+  Version: 1.0.13
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -699,8 +699,8 @@ dialog[open] .searchMenuDialog_close.grayish-btn {
   border: none;
   text-decoration: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
   height: 40px;
   line-height: 1;
@@ -998,7 +998,7 @@ dialog[open] .searchMenuDialog_close.grayish-btn {
 
 .skin-grayish:not(.front-top-page) .container .header-container .header.ba-fixed {
   -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
 }
 
 
@@ -1464,12 +1464,12 @@ dialog[open] .searchMenuDialog_close.grayish-btn {
   flex-wrap: wrap;
   justify-content: flex-start;
   -moz-column-gap: 1%;
-       column-gap: 1%;
+  column-gap: 1%;
 }
 
 .skin-grayish .main .list-wrap.front-page-type-category-3-columns .list-columns {
   -moz-column-gap: 5%;
-       column-gap: 5%;
+  column-gap: 5%;
 }
 
 .skin-grayish .main .list-wrap.front-page-type-category-3-columns .list-columns .card-arrow .card-content {
@@ -2978,7 +2978,7 @@ blockquote cite {
   background-color: var(--Blk_Beige_T70);
   row-gap: 8px;
   -moz-column-gap: 4px;
-       column-gap: 4px;
+  column-gap: 4px;
   padding: 2em 1em;
 }
 
@@ -3154,7 +3154,7 @@ blockquote cite {
 .skin-grayish .article-footer .widget .sns-follow-buttons {
   row-gap: 10px;
   -moz-column-gap: 6px;
-       column-gap: 6px;
+  column-gap: 6px;
 }
 
 /* entry-content end 記事の終了の線 */
@@ -4958,7 +4958,7 @@ body:has(#spotlight.show) .header {
     justify-content: flex-start;
     align-items: flex-start;
     -moz-column-gap: 4%;
-         column-gap: 4%;
+    column-gap: 4%;
   }
 
   .skin-grayish .front-page-type-category-3-columns .list-columns .list-column .widget-entry-cards .a-wrap {
@@ -5760,13 +5760,13 @@ body:has(#spotlight.show) .header {
   /* v2.7.0.4 */
   .skin-grayish .sns-share.ss-top.ss-col-6 .sns-buttons {
     -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
     row-gap: 0.5rem;
   }
 
   .skin-grayish .sns-share.ss-bottom.ss-col-6 .sns-buttons {
     -moz-column-gap: 1.625rem;
-         column-gap: 1.625rem;
+    column-gap: 1.625rem;
   }
 
   /* 投稿下　Profileボックスのスタイル */
