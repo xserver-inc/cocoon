@@ -32,7 +32,7 @@ if ( isMarkerVisible ) {
                   fills.length !== 0 && (
                     <ToolbarDropdownMenu
                       icon={ <Icon icon={ brush } size={ 32 } /> }
-                      label={ __( '文字', THEME_NAME ) }
+                      label={ __( 'マーカー', THEME_NAME ) }
                       className="letters"
                       controls={ orderBy(
                         fills.map( ( [ { props } ] ) => props ),
