@@ -529,3 +529,53 @@ pre {
 .body .compare-box ul {
   padding: 15px 15px 15px 40px;
 }
+
+
+/*******************************************************************************
+**  新着・人気記事カラム
+*******************************************************************************/
+
+.is-style-2-columns {
+  --column: 2;
+}
+
+.is-style-3-columns {
+  --column: 3;
+}
+
+@media (width <=834px) {
+  .is-style-3-columns {
+    --column: 2;
+  }
+}
+
+@media (width <=480px) {
+  .is-style-2-columns,
+  .is-style-3-columns {
+    --column: 1;
+  }
+}
+
+:is(.is-style-2-columns, .is-style-3-columns) .widget-entry-cards:not(.swiper) {
+  display: grid;
+  grid-template-columns: repeat(var(--column), minmax(0, 1fr));
+}
+
+
+/* 区切り線 */
+
+:is(.is-style-2-columns, .is-style-3-columns) .border-partition {
+  gap: var(--gap30);
+}
+
+.body :is(.is-style-2-columns, .is-style-3-columns) .border-partition .a-wrap {
+  border: 0!important;
+  padding-bottom: 0;
+}
+
+
+/* 大きなサムネイル */
+
+:is(.is-style-2-columns, .is-style-3-columns) .card-large-image .a-wrap {
+  max-width: unset;
+}

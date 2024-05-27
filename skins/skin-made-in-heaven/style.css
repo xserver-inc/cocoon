@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.6.1
+ Version: 2.7.0
  Priority: 6900001000
 */
 
@@ -98,6 +98,7 @@
 **        2.5.1   2024-05-15  オプション定義をdefineに変更
 **        2.6.0   2024-05-20  汎用ブロック内のブログカードのCSS追加
 **        2.6.1   2024-05-21  バグ対策
+**        2.7.0   2024-05-26  新着・人気記事、ナビカードスタイル追加
 **
 *******************************************************************************/
 
@@ -1985,6 +1986,7 @@ aside.widget .widget-title {
   background-color: var(--white-bgcolor);
   display: flex;
   gap: var(--padding15);
+  height: 100%;
   overflow: hidden;
   width: 100%;
 }
@@ -2049,7 +2051,7 @@ aside.widget .widget-title {
 .widget-entry-cards:not(.swiper) {
   display: flex;
   flex-direction: column;
-  gap: var(--padding15);
+  gap: var(--gap30);
 }
 
 .body .widget-entry-card .card-content {
@@ -2061,9 +2063,12 @@ aside.widget .widget-title {
 **  区切り線
 *******************************************************************************/
 
+.body .border-partition {
+  gap: var(--padding15);
+}
+
 .border-partition:not(.swiper) .a-wrap {
   border-bottom: 1px dotted var(--border-color)!important;
-  border-top: 0;
   padding-bottom: var(--padding15);
 }
 
