@@ -42,7 +42,7 @@ endif;
 // テキスト
 if (!function_exists('hvn_sanitize_text')):
 function hvn_sanitize_text($text, $setting) {
-  return ($text ? strip_tags($text) : $setting->default);
+  return ($text ? $text : $setting->default);
 }
 endif;
 
@@ -434,6 +434,28 @@ function get_notice_area_message() {
   }
 
   return $msg;
+}
+endif;
+
+
+//******************************************************************************
+//  カスタマイザーラベル出力
+//******************************************************************************
+if (!function_exists('hvn_panel_label')):
+function hvn_panel_label($wp_customize, $section, $label, $no) {
+  $wp_customize->add_setting("hvn_label{$no}_{$section}_section");
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      "hvn_label{$no}_{$section}_section",
+      array(
+        'label'       => "■ {$label}",
+        'section'     => "hvn_{$section}_section",
+        'settings'    => "hvn_label{$no}_{$section}_section",
+        'type'        => 'hidden',
+      )
+    )
+  );
 }
 endif;
 

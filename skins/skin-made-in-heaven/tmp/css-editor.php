@@ -3,6 +3,22 @@ if (!defined('ABSPATH')) exit;
 
 
 //******************************************************************************
+//  文字
+//******************************************************************************
+$text = ['red', 'blue' , 'green'];
+
+for ($i=0; $i<count($text); $i++) {
+  $color = get_theme_mod("hvn_rich_text_color{$i}_setting");
+  if ($color) {
+    echo <<< EOF
+.{$text[$i]},.bold-{$text[$i]} {color: {$color}!important;}
+
+EOF;
+  }
+}
+
+
+//******************************************************************************
 //  マーカー
 //******************************************************************************
 $marker = [
@@ -25,6 +41,7 @@ for ($i=0; $i<count($marker); $i++) {
   background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100% 0.5em!important;
   background-color: unset!important;
 }
+
 EOF;
     } else {
       echo <<< EOF
@@ -37,9 +54,25 @@ EOF;
 }
 
 EOF;
-
     }
   }
+}
+
+
+//******************************************************************************
+//  バッジ
+//******************************************************************************
+$b_class = ['orange', 'red', 'pink', 'purple', 'blue', 'green', 'yellow', 'brown', 'grey'];
+
+$css = null;
+for ($i=0; $i<count($b_class); $i++) {
+  $color = get_theme_mod("hvn_badge_color{$i}_setting");
+  if ($color) {
+    $css .= "--cocoon-{$b_class[$i]}-color:{$color};";
+  }
+}
+if ($css) {
+  echo '[class*="badge"] {' . $css . '}';
 }
 
 
@@ -62,6 +95,7 @@ if ($css) {
 
 if (get_theme_mod('hvn_inline_button_set3_setting')) {
   echo <<< EOF
+
 [class*="inline-button"]:not([class*="inline-button-white-"]):after{
   --shadow: 3px;
   border-radius: inherit;
@@ -76,8 +110,8 @@ if (get_theme_mod('hvn_inline_button_set3_setting')) {
   top: -1px;
   width: calc(100% + 4px);
 }
-EOF;
 
+EOF;
 }
 
 
@@ -148,6 +182,7 @@ switch($no) {
   border-width: 1px!important;
   color: var(--cocoon-text-color);
 }
+
 EOF;
 
     break;

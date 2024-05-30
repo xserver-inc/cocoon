@@ -1098,8 +1098,8 @@ if (get_theme_mod('hvn_comment_setting')) {
   object-fit: cover;
   height: 100%;
 }
-EOF;
 
+EOF;
 }
 
 
@@ -1179,46 +1179,6 @@ EOF;
 
 .sort-title i {
   margin-right: 3px;
-}
-EOF;
-  }
-
-
-//******************************************************************************
-//  カテゴリー波線カラー
-//******************************************************************************
-  $color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
-  $color = get_theme_mod('hvn_wave_color_category_setting', $color);
-  $rgb = hvn_color_mix_rgb($color, 0.25);
-
-  echo <<< EOF
-:root {
-  --category-color: {$rgb['red']}, {$rgb['green']}, {$rgb['blue']};
-}
-
-EOF;
-
-
-//******************************************************************************
-//  メインビジュアル波線非表示
-//******************************************************************************
-  if (get_theme_mod('hvn_main_wave_option_setting')) {
-    echo <<< EOF
-.hvn .hvn-wave-main {
-  display: none;
-}
-
-EOF;
-  }
-
-
-//******************************************************************************
-//  カテゴリーごと波線非表示
-//******************************************************************************
-  if (get_theme_mod('hvn_category_wave_option_setting')) {
-    echo <<< EOF
-.hvn .hvn-wave-category {
-  display: none;
 }
 
 EOF;
@@ -1383,8 +1343,6 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_header_setting', 'none') == 'none') return;
 
-$color = get_theme_mod('hvn_scroll_color_option_setting', '#ffffff');
-
 echo <<< EOF
 :root {
   --height: calc(100svh - var(--ah));
@@ -1420,7 +1378,7 @@ echo <<< EOF
 }
 
 .hvn-header .message {
-  color: {$color};
+  color: #fff;
   font-weight: bold;
   display: grid;
   inset: 0;
@@ -1432,7 +1390,7 @@ echo <<< EOF
 }
 
 .scrolldown {
-  color: {$color};
+  color: #fff;
   height: fit-content;
   inset: 0;
   letter-spacing: 0.05em;
@@ -1457,7 +1415,7 @@ switch(get_theme_mod('hvn_header_scroll_setting')) {
     echo <<< EOF
 .scrolldown:after {
   animation: pathmove 1.4s ease-in-out infinite;
-  background-color: {$color};
+  background-color: #fff;
   content: '';
   display: block;
   height: 50px;
@@ -1519,7 +1477,7 @@ EOF;
 if (get_theme_mod('hvn_header_vertival_setting')) {
   echo <<< EOF
 .message div {
-  border: 1px solid {$color};
+  border: 1px solid #fff;
   padding: 1em 0;
   text-align: center;
   text-orientation: upright;

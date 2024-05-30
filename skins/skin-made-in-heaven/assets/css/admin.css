@@ -131,11 +131,16 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
 /*******************************************************************************
 **  エディター
 *******************************************************************************/
-
+[id*="customize-control-hvn_rich_text_color"],
 [id*="customize-control-hvn_marker_color"],
+[id*="customize-control-hvn_badge_color"],
 [id*="customize-control-hvn_inline_button_color"] {
   display: flex;
   gap: 15px;
+}
+
+[id*="customize-control-hvn_badge_color"] .description {
+  width: 55px;
 }
 
 

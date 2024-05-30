@@ -7,10 +7,11 @@ if (!defined('ABSPATH')) exit;
 //******************************************************************************
 if (!function_exists('hvn_option')):
 function hvn_option($wp_customize) {
+  $section = 'option';
 
   // セクション
   $wp_customize->add_section(
-    'hvn_option_section',
+    "hvn_{$section}_section",
     array(
       'title'     => 'オプション',
       'panel'     => 'hvn_cocoon',
@@ -20,20 +21,7 @@ function hvn_option($wp_customize) {
 
 
   // コントロール
-  $wp_customize->add_setting('hvn_label1_option_section');
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_label1_option_section',
-      array(
-        'label'       => '■ 全体',
-        'section'     => 'hvn_option_section',
-        'settings'    => 'hvn_label1_option_section',
-        'type'        => 'hidden',
-      )
-    )
-  );
-
+  hvn_panel_label($wp_customize, $section, '全体', 1);
 
   $wp_customize->add_setting('hvn_margin_option_setting', array('default' => false));
   $wp_customize->add_control(
@@ -42,34 +30,8 @@ function hvn_option($wp_customize) {
       'hvn_margin_option_setting',
       array(
         'label'     => '余白を変更',
-        'section'   => 'hvn_option_section',
+        'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_margin_option_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $label_array = [
-    'wide'          => '9:6',
-    'golden_ratio'  => '約5:8',
-    'postcard'      => '2:3',
-    'silver_ratio'  => '約5:7',
-    'standard'      => '3:4',
-    'square'        => '1:1'
-  ];
-  $thumb = get_theme_mod('thumbnail_image_type', 'wide');
-  $label = $label_array[$thumb];
-
-  $wp_customize->add_setting('hvn_thumb_option_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_thumb_option_setting',
-      array(
-        'label'     => 'サムネイル画像の比率('. $label . ')に従う',
-        'section'   => 'hvn_option_section',
-        'settings'  => 'hvn_thumb_option_setting',
         'type'      => 'checkbox',
       )
     )
@@ -83,7 +45,7 @@ function hvn_option($wp_customize) {
       'hvn_orderby_option_setting',
       array(
         'label'     => '並び替え選択',
-        'section'   => 'hvn_option_section',
+        'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_orderby_option_setting',
         'type'      => 'checkbox',
       )
@@ -91,99 +53,7 @@ function hvn_option($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_label2_option_section');
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_label2_option_section',
-      array(
-        'label'       => '■ メインビジュアル',
-        'section'     => 'hvn_option_section',
-        'settings'    => 'hvn_label2_option_section',
-        'type'        => 'hidden',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_scroll_color_option_setting', array(
-    'default' => '#ffffff',
-    'sanitize_callback' => 'hvn_sanitize_color',
-  ));
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'hvn_scroll_color_option_setting',
-      array(
-        'description' => 'テキストカラー',
-        'section'     => 'hvn_option_section',
-        'settings'    => 'hvn_scroll_color_option_setting',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_wave_color_category_setting', array(
-    'default' => get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR),
-    'sanitize_callback' => 'hvn_sanitize_color',
-  ));
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'hvn_wave_color_category_setting',
-      array(
-        'description' => 'カテゴリー波線カラー',
-        'section'     => 'hvn_option_section',
-        'settings'    => 'hvn_wave_color_category_setting',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_main_wave_option_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_main_wave_option_setting',
-      array(
-        'label'     => 'メインビジュアル波線非表示',
-        'section'   => 'hvn_option_section',
-        'settings'  => 'hvn_main_wave_option_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_category_wave_option_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_category_wave_option_setting',
-      array(
-        'label'     => 'カテゴリーごと波線非表示',
-        'section'   => 'hvn_option_section',
-        'settings'  => 'hvn_category_wave_option_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_label3_option_section');
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_label3_option_section',
-      array(
-        'label'       => '■ フロントページ',
-        'section'     => 'hvn_option_section',
-        'settings'    => 'hvn_label3_option_section',
-        'type'        => 'hidden',
-      )
-    )
-  );
-
+  hvn_panel_label($wp_customize, $section, 'フロントページ', 2);
 
   $wp_customize->add_setting('hvn_header_option_setting', array('default' => false));
   $wp_customize->add_control(
@@ -192,7 +62,7 @@ function hvn_option($wp_customize) {
       'hvn_header_option_setting',
       array(
         'label'     => 'ヘッダーロゴ非表示',
-        'section'   => 'hvn_option_section',
+        'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_header_option_setting',
         'type'      => 'checkbox',
       )
@@ -207,7 +77,7 @@ function hvn_option($wp_customize) {
       'hvn_tcheck_option_setting',
       array(
         'label'     => 'タイトル変更',
-        'section'   => 'hvn_option_section',
+        'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_tcheck_option_setting',
         'type'      => 'checkbox',
       )
@@ -226,7 +96,7 @@ function hvn_option($wp_customize) {
       array(
         'label'       => '新着記事',
         'description' => 'タイトル',
-        'section'     => 'hvn_option_section',
+        'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_title_new_option_setting',
         'type'        => 'text',
         'input_attrs' => array(
@@ -247,7 +117,7 @@ function hvn_option($wp_customize) {
       'hvn_title_new_sub_option_setting',
       array(
         'description' => '説明文',
-        'section'     => 'hvn_option_section',
+        'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_title_new_sub_option_setting',
         'type'        => 'text',
         'input_attrs' => array(
@@ -269,7 +139,7 @@ function hvn_option($wp_customize) {
       array(
         'label'       => '人気記事',
         'description' => 'タイトル',
-        'section'     => 'hvn_option_section',
+        'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_title_popular_option_setting',
         'type'        => 'text',
         'input_attrs' => array(
@@ -290,7 +160,7 @@ function hvn_option($wp_customize) {
       'hvn_title_popular_sub_option_setting',
       array(
         'description' => '説明文',
-        'section'     => 'hvn_option_section',
+        'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_title_popular_sub_option_setting',
         'type'        => 'text',
         'input_attrs' => array(
@@ -312,7 +182,7 @@ function hvn_option($wp_customize) {
       array(
         'label'       => 'カテゴリーごと',
         'description' => 'タイトル',
-        'section'     => 'hvn_option_section',
+        'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_title_category_option_setting',
         'type'        => 'text',
         'input_attrs' => array(
@@ -333,7 +203,7 @@ function hvn_option($wp_customize) {
       'hvn_title_category_sub_option_setting',
       array(
         'description' => '説明文',
-        'section'     => 'hvn_option_section',
+        'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_title_category_sub_option_setting',
         'type'        => 'text',
         'input_attrs' => array(
@@ -344,20 +214,7 @@ function hvn_option($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_label4_option_section');
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_label4_option_section',
-      array(
-        'label'       => '■ コメント',
-        'section'     => 'hvn_option_section',
-        'settings'    => 'hvn_label4_option_section',
-        'type'        => 'hidden',
-      )
-    )
-  );
-
+  hvn_panel_label($wp_customize, $section, 'コメント', 3);
 
   $wp_customize->add_setting('hvn_comment_setting', array('default' => false));
   $wp_customize->add_control(
@@ -366,7 +223,7 @@ function hvn_option($wp_customize) {
       'hvn_comment_setting',
       array(
         'label'     => 'コメントアイコン選択・表示',
-        'section'   => 'hvn_option_section',
+        'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_comment_setting',
         'type'      => 'checkbox',
       )
@@ -387,13 +244,12 @@ function hvn_option($wp_customize) {
         array(
           'label'       => $label,
           'description' => '画像[' . $i . ']',
-          'section'     => 'hvn_option_section',
+          'section'     => "hvn_{$section}_section",
           'settings'    => 'hvn_comment_img'. $i . '_setting',
           'mime_type'   => 'image',
         )
       )
     );
   }
-
 }
 endif;
