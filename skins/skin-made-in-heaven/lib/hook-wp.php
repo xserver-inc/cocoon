@@ -688,7 +688,7 @@ add_filter('wp_tag_cloud', function($return, $args) {
     $tags = get_tags(array('orderby'=> 'count', 'order' => 'DESC'));
 
     ob_start();
-    echo '<select onchange="document.location.href=this.options[this.selectedIndex].value;"><option value="" selected="selected">タグを選択</option>';
+    echo '<select aria-label="選択" onchange="document.location.href=this.options[this.selectedIndex].value;"><option value="" selected="selected">タグを選択</option>';
 
     if ($tags) {
       foreach($tags as $tag) {

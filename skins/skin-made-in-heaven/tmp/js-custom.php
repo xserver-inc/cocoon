@@ -520,7 +520,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
 (function($) {
   $(".widget").each(function() {
     $('.children', this).hide();
-　  $('.children', this).before('<button class="sub-item"></button>');
+　  $('.children', this).before('<button class="sub-item" aria-label="カテゴリー"></button>');
 
     $('.sub-item', this).click(function() {
       $(this).next('ul').slideToggle(300);
@@ -537,7 +537,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
   $('.sidebar .widget_tag_cloud').each(function() {
     if ($('.tag-link-position-' + (no + 1), this).length) {
       $('.tag-link-position-' + no, this).nextUntil().wrapAll('<div class="close">');
-      $(this).append('<button class="sub-item"></button>');
+      $(this).append('<button class="sub-item" aria-label="もっと見る"></button>');
 
       $('.close', this).hide();
       $('button', this).click(function() {

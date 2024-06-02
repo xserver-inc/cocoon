@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.8.0
+ Version: 2.8.1
  Priority: 6900001000
 */
 
@@ -100,6 +100,7 @@
 **        2.6.1   2024-05-21  バグ対策
 **        2.7.0   2024-05-26  新着・人気記事、ナビカードスタイル追加
 **        2.8.0   2024-05-29  仕様変更
+**        2.8.1   2024-05-31  改善
 **
 *******************************************************************************/
 
@@ -740,6 +741,14 @@ img {
 
 .copyright {
   margin: 0;
+}
+
+.navi-footer-in > ul li:before {
+  content: none;
+}
+
+.navi-footer-in > ul li {
+  font-weight: normal;
 }
 
 
@@ -3046,6 +3055,10 @@ aside.widget .widget-title {
 
 .navi-menu-close-button .fa-times:before {
   content: '\f060';
+}
+
+.widget_nav_menu li {
+  display: list-item;
 }
 
 
