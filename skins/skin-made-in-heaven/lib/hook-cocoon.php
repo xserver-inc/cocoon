@@ -332,14 +332,15 @@ add_filter('is_comment_share_button_visible', function($res, $option) {
 //  一覧ページに表示順フォームを追加
 //******************************************************************************
 add_action('cocoon_part_before__tmp/list-index', function() {
-  if (!is_home() || !get_theme_mod('hvn_orderby_option_setting')) return;
+  if (defined('HVN_OPTION') && HVN_OPTION) {
+    if (!is_home() || !get_theme_mod('hvn_orderby_option_setting')) return;
 
-  $orderby = isset($_GET['orderby-switch']) ? esc_html($_GET['orderby-switch']) : null;
-  if (isset($_COOKIE['orderby-switch'])) {
-    $orderby = $_COOKIE['orderby-switch'];
-  }
+    $orderby = isset($_GET['orderby-switch']) ? esc_html($_GET['orderby-switch']) : null;
+    if (isset($_COOKIE['orderby-switch'])) {
+      $orderby = $_COOKIE['orderby-switch'];
+    }
 
-  ob_start();
+    ob_start();
 ?>
 <div class="orderby">
   <span class="sort-title"><i class="fas fa-sort-amount-down"></i>並び替え</span>
@@ -352,7 +353,8 @@ add_action('cocoon_part_before__tmp/list-index', function() {
   </span>
 </div>
 <?php
-  echo  ob_get_clean();
+    echo  ob_get_clean();
+  }
 });
 
 

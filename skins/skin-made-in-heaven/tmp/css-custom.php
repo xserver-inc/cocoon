@@ -1071,46 +1071,12 @@ EOF;
 
 
 //******************************************************************************
-//  コメント
-//******************************************************************************
-if (get_theme_mod('hvn_comment_setting')) {
-  echo <<< EOF
-.hvn-comment {
-  display: flex;
-  gap: 5px;
-}
-
-.hvn-comment-icon {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-
-}
-
-
-.hvn-comment figure {
-  aspect-ratio: 1 / 1;
-  width: 50px;
-}
-
-
-.hvn-comment img {
-  object-fit: cover;
-  height: 100%;
-}
-
-EOF;
-}
-
-
-
-//******************************************************************************
 //
 //  オプション
 //
 //******************************************************************************
 
-if (defined('HVN_OPTION') && HVN_OPTION){
+if (defined('HVN_OPTION') && HVN_OPTION) {
 
 //******************************************************************************
 //  余白を変更
@@ -1277,6 +1243,37 @@ EOF;
 EOF;
   }
 
+//******************************************************************************
+//  コメント
+//******************************************************************************
+  if (get_theme_mod('hvn_comment_setting')) {
+    echo <<< EOF
+.hvn-comment {
+  display: flex;
+  gap: 5px;
+}
+
+.hvn-comment-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
+
+
+.hvn-comment figure {
+  aspect-ratio: 1 / 1;
+  width: 50px;
+}
+
+
+.hvn-comment img {
+  object-fit: cover;
+  height: 100%;
+}
+
+EOF;
+  }
 }
 
 

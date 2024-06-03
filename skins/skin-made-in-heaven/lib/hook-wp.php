@@ -613,13 +613,15 @@ add_action('manage_comments_custom_column', function($column_name, $comment_id) 
 
 // アバター変更
 add_filter('get_avatar' , function($avatar, $comment) {
-  if (get_theme_mod('hvn_comment_setting')) {
-    if (!is_admin() && isset($comment->comment_ID)) {
-      $no = get_comment_meta($comment->comment_ID, 'post-icon',true);
-      if ($no) {
-        $img = wp_get_attachment_url(get_theme_mod("hvn_comment_img{$no}_setting"));
-        if ($img) {
-          $avatar = "<img src={$img} class=avatar>";
+  if (defined('HVN_OPTION') && HVN_OPTION) {
+    if (get_theme_mod('hvn_comment_setting')) {
+      if (!is_admin() && isset($comment->comment_ID)) {
+        $no = get_comment_meta($comment->comment_ID, 'post-icon',true);
+        if ($no) {
+          $img = wp_get_attachment_url(get_theme_mod("hvn_comment_img{$no}_setting"));
+          if ($img) {
+            $avatar = "<img src={$img} class=avatar>";
+          }
         }
       }
     }

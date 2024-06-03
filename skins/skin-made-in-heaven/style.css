@@ -100,7 +100,7 @@
 **        2.6.1   2024-05-21  バグ対策
 **        2.7.0   2024-05-26  新着・人気記事、ナビカードスタイル追加
 **        2.8.0   2024-05-29  仕様変更
-**        2.8.1   2024-05-31  改善
+**        2.8.1   2024-06-03  改善
 **
 *******************************************************************************/
 
@@ -733,6 +733,7 @@ img {
 
 .navi-footer-in > .menu-footer {
   margin-bottom: var(--padding15);
+  row-gap: 5px;
 }
 
 .navi-footer-in a:hover {
@@ -749,6 +750,10 @@ img {
 
 .navi-footer-in > ul li {
   font-weight: normal;
+}
+
+.footer-bottom a {
+  line-height: 1.4;
 }
 
 
