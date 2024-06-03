@@ -1437,6 +1437,25 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
         ),
       )
     ));
+
+    // フロントページ以外のヘッダーロゴを別にしたいとき　画像のアップロード
+    $wp_customize->add_setting('otherpage_logo_image', array(
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(
+      new WP_Customize_Image_Control(
+        $wp_customize,
+        'otherpage_logo_image',
+        array(
+          'section'     => 'other_section',  // 紐づけるセクションIDを指定
+          'settings'    => 'otherpage_logo_image',  // 紐づける設定IDを指定
+          'label'       => '【PC】フロントページ以外のヘッダーロゴ画像アップロード',
+          'description' => 'ロゴをフロントページと別画像にしたいとき設定します。'
+        )
+      )
+    );
   }
 
 endif;
@@ -1826,6 +1845,25 @@ if (!function_exists('skin_grayish_mobile_customize')) :
         )
       )
     );
+
+    // モバイル時：ヘッダーのロゴを別ファイルにしたいとき　画像のアップロード
+    $wp_customize->add_setting('mobile_header_logo_image', array(
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(
+      new WP_Customize_Image_Control(
+        $wp_customize,
+        'mobile_header_logo_image',
+        array(
+          'section'     => 'mobile_section',  // 紐づけるセクションIDを指定
+          'settings'    => 'mobile_header_logo_image',  // 紐づける設定IDを指定
+          'label'       => 'モバイル時のヘッダーロゴ画像アップロード',
+          'description' => 'モバイル時のロゴを別画像にしたいとき設定します。'
+        )
+      )
+    );
   }
 endif;
 add_action('customize_register', 'skin_grayish_mobile_customize');
@@ -2174,3 +2212,83 @@ if (!function_exists('mobile_header_buttons_set')) :
     }
   }
 endif;
+
+// 親テーマの関数使用　画像の幅と高さを取得
+if (!function_exists('get_image_dimensions')) :
+  function get_image_dimensions($image_url)
+  {
+    $size = get_image_width_and_height($image_url);
+    if (!$size) {
+      return null;
+    }
+    $width_attr = null;
+    $height_attr = null;
+    $w = $size['width'];
+    $h = $size['height'];
+    if ($w && $h) {
+      $width_attr = ' width="' . $w . '"';
+      $height_attr = ' height="' . $h . '"';
+    }
+    return array('width' => $width_attr, 'height' => $height_attr);
+  }
+endif;
+// PC：フロントページ以外は、ロゴを別ファイルにしたいとき
+add_filter(
+  'the_site_logo_tag',
+  function ($all_tag, $is_header, $home_url, $site_logo_text) {
+    if (!is_front_top_page() && $is_header) {
+      if (get_theme_mod('otherpage_logo_image')) {
+        $new_logo_url = get_theme_mod('otherpage_logo_image');
+        // $new_logo_urlが存在するか確認->画像の幅と高さを取得し変更
+        $dimensions = get_image_dimensions($new_logo_url);
+        if ($dimensions !== null && $dimensions['width'] !== null && $dimensions['height'] !== null) {
+          // $new_logo_urlが存在する
+          $width_attr = $dimensions['width'];
+          $height_attr = $dimensions['height'];
+
+          $new_logo_tag = '<img src="' . esc_url($new_logo_url) . '" alt="' . esc_attr($site_logo_text) . '"' . $width_attr .  $height_attr . '>';
+          $all_tag_pat = '/<(div|h1) class="logo logo-header logo-image"><a href="(.*?)" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text">(.*?)<meta itemprop="name about" content="(.*?)"><\/span><\/a><\/(div|h1)>/s';
+          $all_tag_replacement = function ($matches) use ($home_url, $new_logo_tag) {
+            $tag = $matches[1];  // マッチしたタグ（divまたはh1）
+            return '<' . $tag . ' class="logo logo-header logo-image"><a href="' . esc_url($home_url) . '" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text">' . $new_logo_tag . '<meta itemprop="name about" content="' . $matches[4] . '"></span></a></' . $tag . '>';
+          };
+
+          $all_tag = preg_replace_callback($all_tag_pat, $all_tag_replacement, $all_tag);
+          return $all_tag;
+        } else {
+          // $new_logo_urlが存在しない
+          return $all_tag;
+        }
+      }
+      return $all_tag;
+    }
+    return $all_tag;
+  },
+  10,
+  6
+);
+// モバイル時：ヘッダーのロゴを別ファイルにしたいとき
+add_filter("cocoon_part__tmp/mobile-logo-button", function ($content) {
+  if (get_theme_mod('mobile_header_logo_image')) {
+    $new_logo_url = get_theme_mod('mobile_header_logo_image');
+    // $new_logo_urlが存在するか確認->画像の幅と高さを取得し変更
+    $dimensions = get_image_dimensions($new_logo_url);
+    if ($dimensions !== null && $dimensions['width'] !== null && $dimensions['height'] !== null) {
+      // $new_logo_urlが存在する
+      // for alt
+      $site_logo_text = apply_filters('site_logo_text', get_bloginfo('name'));
+
+      // 画像の幅と高さを取得
+      $width_attr = $dimensions['width'];
+      $height_attr = $dimensions['height'];
+
+      $pattern_aft = '/<a href="(.*?)" class="menu-button-in">(.*?)<\/a>/s';
+      $replacement_aft = '<a href="$1" class="menu-button-in"><img class="site-logo-image" src="' . esc_url($new_logo_url) . '" alt="' . esc_attr($site_logo_text) . '"' . $width_attr .  $height_attr . '></a>';
+      return preg_replace($pattern_aft, $replacement_aft, $content);
+    } else {
+      // $new_logo_urlが存在しない
+      return $content;
+    }
+  }
+  return $content;
+});
