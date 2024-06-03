@@ -36,7 +36,7 @@ if ($image_url && file_exists($image_file)) {
   $width = $size ? $size['width'] : 800;
   $height = $size ? $size['height'] : 800;
   //サムネイルの幅が小さすぎる場合は仕様（696px以上）に合わせる
-  if ($width < 696) {
+  if (($width > 0) && ($width < 696)) {
     $height = round($height * (696/$width));
     $width = 696;
   }
