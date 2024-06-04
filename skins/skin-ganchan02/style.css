@@ -57,7 +57,8 @@ main.main {
 @media screen and (max-width: 834px){
 
 main.main, div.sidebar {
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .entry-title, .archive-title {
