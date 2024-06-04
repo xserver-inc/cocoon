@@ -164,7 +164,10 @@ $icon_box_class = [
   ['.ng-box'                  ,'#dd5454'],
   ['.good-box'                ,'#98e093'],
   ['.bad-box'                 ,'#eb6980'],
-  ['.profile-box'             ,'#cccccc']
+  ['.profile-box'             ,'#cccccc'],
+  ['.information'             ,'#87cefa'],
+  ['.question'                ,'#ffe766'],
+  ['.alert'                   ,'#f6b9b9']
 ];
 
 $id_array = [];
