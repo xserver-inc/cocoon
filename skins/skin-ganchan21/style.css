@@ -544,7 +544,8 @@ height:1px;
 }
 
 main.main, div.sidebar {
-    padding: 10px;
+    padding-left: 10px;
+		padding-right: 10px;
     margin: 10px 0 10px 0;
 }
 
