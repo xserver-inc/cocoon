@@ -7422,6 +7422,7 @@ body.wp-admin {
 .admin-settings .demo #slide-in-sidebar {
   display: block;
   margin: 0;
+  padding-top: 0;
 }
 .admin-settings .demo .search-menu-content,
 .admin-settings .demo .share-menu-content,
@@ -15922,6 +15923,7 @@ body.wp-admin {
 .admin-settings .demo #slide-in-sidebar {
   display: block;
   margin: 0;
+  padding-top: 0;
 }
 .admin-settings .demo .search-menu-content,
 .admin-settings .demo .share-menu-content,
