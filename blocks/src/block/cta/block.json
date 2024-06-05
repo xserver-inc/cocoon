@@ -1,0 +1,50 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/cta",
+  "category": "cocoon-block",
+  "keywords": ["cta", "box"],
+
+  "attributes": {
+    "classNames": {
+      "type": "string",
+      "default": ""
+    },
+    "header": {
+      "type": "string",
+      "default": ""
+    },
+    "layout": {
+      "type": "string",
+      "default": "cta-left-and-right"
+    },
+    "image": {
+      "type": "string",
+      "default": ""
+    },
+    "message": {
+      "type": "string",
+      "default": ""
+    },
+    "autoParagraph": {
+      "type": "boolean",
+      "default": false
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonURL": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": "btn-red"
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}
