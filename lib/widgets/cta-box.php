@@ -35,34 +35,26 @@ class CTABoxWidgetItem extends WP_Widget {
     $button_url = !empty( $instance['button_url'] ) ? $instance['button_url'] : '';
     $button_color_class = !empty( $instance['button_color_class'] ) ? $instance['button_color_class'] : 'btn-red';
 
-    if ($filter) {
-      $message = wpautop($message);
-    }
+    // if ($filter) {
+    //   $message = wpautop($message);
+    // }
 
     echo $args['before_widget'];
     if ($title) {
       echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
     }
 
-    // set_query_var('_HEADING', $heading);
-    // set_query_var('_IMAGE_URL', $image_url);
-    // set_query_var('_MESSAGE', $message);
-    // set_query_var('_LAYOUT', $layout);
-    // set_query_var('_BUTTON_TEXT', $button_text);
-    // set_query_var('_BUTTON_URL', $button_url);
-    // set_query_var('_BUTTON_COLOR_CLASS', $button_color_class);
-
     // cocoon_template_part('tmp/cta-box');
     $atts = array(
       'heading' => $heading,
-      'image_url' => $image_url,
-      'message' => $message,
       'layout' => $layout,
+      'image_url' => $image_url,
+      'filter' => $filter,
       'button_text' => $button_text,
       'button_url' => $button_url,
       'button_color' => $button_color_class,
     );
-    echo get_cta_tag($atts);
+    echo get_cta_tag($atts, $message);
 
     echo $args['after_widget'];
   }
@@ -87,7 +79,7 @@ class CTABoxWidgetItem extends WP_Widget {
         'layout' => null,
         'image_url' => null,
         'message' => null,
-        'filter' => null,
+        'filter' => 1,
         'button_text' => null,
         'button_url' => null,
         'button_color_class' => 'btn-red',
@@ -148,7 +140,7 @@ class CTABoxWidgetItem extends WP_Widget {
         <?php _e( 'CTAメッセージ', THEME_NAME ) ?>
       </label>
       <textarea class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" cols="20" rows="6"><?php echo $message; ?></textarea>
-      <input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox"<?php checked( $filter );//_v($filter) ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e( '自動的に段落を追加する', THEME_NAME ) ?></label>
+      <input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox"<?php checked( $filter ); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e( '自動的に段落を追加する', THEME_NAME ) ?></label>
     </p>
     <?php //ボタンテキスト ?>
     <p>
