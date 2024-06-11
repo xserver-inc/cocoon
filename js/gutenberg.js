@@ -30,21 +30,33 @@ wp.domReady(function () {
   setInterval(function(){
     //ブロックエディターのラップ要素に必要なクラスを追加する
     const wrapClass = '.block-editor-writing-flow';
-    const addClasses = 'cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass'];
-    let writingFlow = jQuery(wrapClass);
-    if (!writingFlow.hasClass('article')) {
-      writingFlow.addClass(addClasses);
+    // const addClasses = 'cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass'];
+
+    let addClasses = ['cocoon-block-wrap', 'body', 'article', 'admin-page'];
+    if (gbSettings['siteIconFont']) {
+      addClasses.push(gbSettings['siteIconFont'].replace(/\s/g, ""));
     }
-    let iframe = jQuery('iframe[name="editor-canvas"]');
+    if (gbSettings['pageTypeClass']) {
+      addClasses.push(gbSettings['pageTypeClass'].replace(/\s/g, ""));
+    }
+
+    let writingFlow = document.querySelector(wrapClass);
+
+    if (writingFlow && !writingFlow.classList.contains('article')) {
+      writingFlow.classList.add(...addClasses);
+    }
+
+    let iframe = document.querySelectorAll('iframe[name="editor-canvas"]');
 
     if (iframe.length > 0) {
-      let iframeContent = iframe.contents();
-      let element = iframeContent.find('.is-root-container');
+      let iframeContent = iframe[0].contentDocument || iframe[0].contentWindow.document;
+      let element = iframeContent.querySelector('.is-root-container');
 
-      if (!element.hasClass('article')) {
-        element.addClass(addClasses);
+      if (element && !element.classList.contains('article')) {
+        element.classList.add(...addClasses);
       }
     }
+
 
     //グループボックスのスタイルプレビューに余計なstyle属性が入り込んでしまうのを削除
     //もっと良い方法があるのかもしれない
