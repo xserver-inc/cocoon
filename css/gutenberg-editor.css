@@ -6059,3 +6059,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   overflow: auto;
   white-space: nowrap !important;
 }
+
+.article {
+  margin-bottom: 0;
+}
