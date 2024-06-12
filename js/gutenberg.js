@@ -5,23 +5,6 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-wp.domReady(function () {
-  // subscribe switch editor mode
-  wp.data.subscribe(function (selector, listener) {
-    let previousValue = selector();
-    return function () {
-      let selectedValue = selector();
-      if (selectedValue !== previousValue) {
-        previousValue = selectedValue;
-        listener(selectedValue);
-      }
-    };
-  }(function () {
-      return wp.data.select('core/edit-post').getEditorMode();
-  }, function () {
-  }));
-});
-
 (function($){
   //タイマーを使ったあまり美しくない方法
   //tiny_mce_before_initフック引数配列のbody_classがなかったもので。
