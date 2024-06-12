@@ -6061,5 +6061,5 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 }
 
 .article {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }

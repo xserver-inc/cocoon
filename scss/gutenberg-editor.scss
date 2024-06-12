@@ -1464,5 +1464,5 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 
 //パターンエディターに余計なスクロールバーが出る不具合修正
 .article{
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
