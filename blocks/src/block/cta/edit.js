@@ -8,16 +8,23 @@ import {
   TextControl,
   TextareaControl,
   CheckboxControl,
+  Button,
+  BaseControl,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { ServerSideRender } from '@wordpress/editor';
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import classnames from 'classnames';
+import { get } from 'lodash';
+
+const ALLOWED_MEDIA_TYPES = [ 'image' ];
 
 export default function edit( props ) {
   const { attributes, setAttributes, className } = props;
   const {
     header,
     layout,
+    mediaId,
     image,
     message,
     autoParagraph,
@@ -33,7 +40,18 @@ export default function edit( props ) {
   setAttributes( { classNames: classes } );
 
   const getCtaContent = () => {
+    // mediaIdから画像URLを取得する
+    const media = wp.data.select( 'core' ).getMedia( mediaId );
+    const url = get( media, [ 'source_url' ] );
+    setAttributes( { image: url } );
+
     return <ServerSideRender block={ props.name } attributes={ attributes } />;
+  };
+
+  const onRemoveImage = () => {
+    setAttributes( {
+      mediaId: undefined,
+    } );
   };
 
   return (
@@ -68,11 +86,32 @@ export default function edit( props ) {
               ] }
               onChange={ ( value ) => setAttributes( { layout: value } ) }
             />
-            <TextControl
+            <BaseControl
               label={ __( 'CTA画像', THEME_NAME ) }
-              value={ image }
-              onChange={ ( value ) => setAttributes( { image: value } ) }
-            />
+              __nextHasNoMarginBottom={ true }
+            >
+              <MediaUploadCheck>
+                <MediaUpload
+                  onSelect={ ( media ) =>
+                    setAttributes( { mediaId: media.id } )
+                  }
+                  allowedTypes={ ALLOWED_MEDIA_TYPES }
+                  value={ mediaId }
+                  render={ ( { open } ) => (
+                    <Button onClick={ open }>
+                      { __( '画像を選択', THEME_NAME ) }
+                    </Button>
+                  ) }
+                />
+              </MediaUploadCheck>
+              { !! mediaId && (
+                <MediaUploadCheck>
+                  <Button onClick={ onRemoveImage }>
+                    { __( '画像を削除', THEME_NAME ) }
+                  </Button>
+                </MediaUploadCheck>
+              ) }
+            </BaseControl>
             <TextareaControl
               label={ __( 'CTAメッセージ', THEME_NAME ) }
               value={ message }
