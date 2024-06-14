@@ -1161,6 +1161,7 @@ function generate_widget_entries_tag($atts){
     'horizontal' => 0,
     'ex_posts' => null,
     'ex_cats' => null,
+    'ordered_posts' => null,
   ), $atts));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1291,6 +1292,15 @@ function generate_widget_entries_tag($atts){
   if ($ex_cats) {
     $args += array(
       'category__not_in' => $ex_cats,
+    );
+  }
+  //順序付きポスト
+  if ($ordered_posts) {
+    $args = array(
+      // 'post_type' => 'post', // 投稿タイプを指定
+      'ignore_sticky_posts' => true,
+      'post__in'  => $ordered_posts, // post__inで投稿IDを指定
+      'orderby'   => 'post__in', // 指定したID順にソート
     );
   }
 

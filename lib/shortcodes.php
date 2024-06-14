@@ -54,6 +54,7 @@ function new_entries_shortcode($atts) {
     'horizontal' => 0,
     'ex_posts' => null,
     'ex_cats' => null,
+    'ordered_posts' => null,
   ), $atts, 'new_list'));
 
   //countオプションに異常値が入っていた場合
@@ -81,6 +82,11 @@ function new_entries_shortcode($atts) {
   if ($ex_cats) {
     $exclude_cat_ids = explode(',', $ex_cats);
   }
+  //順序付きポスト
+  $ordered_post_ids = array();
+  if ($ordered_posts) {
+    $ordered_post_ids = explode(',', $ordered_posts);
+  }
   //引数配列のセット
   $atts = array(
     'entry_count' => $count,
@@ -104,6 +110,8 @@ function new_entries_shortcode($atts) {
     'horizontal' => $horizontal,
     'ex_posts' => $exclude_post_ids,
     'ex_cats' => $exclude_cat_ids,
+    'ordered_posts' => $ordered_post_ids,
+    'author' => $author,
   );
   ob_start();
   generate_widget_entries_tag($atts);
