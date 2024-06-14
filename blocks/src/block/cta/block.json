@@ -5,6 +5,10 @@
   "keywords": ["cta", "box"],
 
   "attributes": {
+    "initialized": {
+      "type": "boolean",
+      "default": false
+    },
     "classNames": {
       "type": "string",
       "default": ""
