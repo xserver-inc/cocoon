@@ -191,7 +191,7 @@
   });
 
   //モバイルサイドバー表示時にサイドバーを移動する・モバイルサイドバーを閉じる時に元の位置に戻す
-  $('#sidebar-menu-input').change(function () {
+  $(document).on("change", '#sidebar-menu-input', function () {
     if ($(this).prop('checked')) {
       $('#sidebar').appendTo('#sidebar-menu-content');
       $('#sidebar').attr('id', 'slide-in-sidebar');

@@ -503,8 +503,8 @@ if ( !function_exists( 'add_reuse_block_menu_page' ) ):
 function add_reuse_block_menu_page() {
   if (is_admin() && !is_wp_6_5_or_over() && !is_classicpress()) {
     add_menu_page(
-      __( 'パターン', THEME_NAME ),
-      __( 'パターン', THEME_NAME ),
+      __( 'パターン一覧', THEME_NAME ),
+      __( 'パターン一覧', THEME_NAME ),
       'manage_options',
       'edit.php?post_type=wp_block',
       '',

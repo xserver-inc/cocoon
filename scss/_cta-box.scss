@@ -15,26 +15,20 @@
 }
 
 .cta-content{
-  display: block;
-  // display: flex;
-  // flex-direction: column;
-  // flex-wrap: nowrap;
-  // justify-content: space-between;
-  // div{
-  //   width: 100%;
-  // }
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .cta-left-and-right,
 .cta-right-and-left {
   .cta-content{
-    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
 
     div{
-      width: 49%;
+      width: 100%;
     }
 
     .cta-message{

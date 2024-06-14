@@ -5,23 +5,6 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-wp.domReady(function () {
-  // subscribe switch editor mode
-  wp.data.subscribe(function (selector, listener) {
-    let previousValue = selector();
-    return function () {
-      let selectedValue = selector();
-      if (selectedValue !== previousValue) {
-        previousValue = selectedValue;
-        listener(selectedValue);
-      }
-    };
-  }(function () {
-      return wp.data.select('core/edit-post').getEditorMode();
-  }, function () {
-  }));
-});
-
 (function($){
   //タイマーを使ったあまり美しくない方法
   //tiny_mce_before_initフック引数配列のbody_classがなかったもので。
@@ -30,61 +13,33 @@ wp.domReady(function () {
   setInterval(function(){
     //ブロックエディターのラップ要素に必要なクラスを追加する
     const wrapClass = '.block-editor-writing-flow';
-    const addClasses = 'cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass']
-    let writingFlow = jQuery(wrapClass);
-    if (!writingFlow.hasClass('article')) {
-      writingFlow.addClass(addClasses);
+    // const addClasses = 'cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass'];
+
+    let addClasses = ['cocoon-block-wrap', 'body', 'article', 'admin-page'];
+    if (gbSettings['siteIconFont']) {
+      addClasses.push(gbSettings['siteIconFont'].replace(/\s/g, ""));
     }
-    let iframe = jQuery('iframe[name="editor-canvas"]');
+    if (gbSettings['pageTypeClass']) {
+      addClasses.push(gbSettings['pageTypeClass'].replace(/\s/g, ""));
+    }
+
+    let writingFlow = document.querySelector(wrapClass);
+
+    if (writingFlow && !writingFlow.classList.contains('article')) {
+      writingFlow.classList.add(...addClasses);
+    }
+
+    let iframe = document.querySelectorAll('iframe[name="editor-canvas"]');
 
     if (iframe.length > 0) {
-      let iframeContent = iframe.contents();
-      let element = iframeContent.find('.is-root-container');
+      let iframeContent = iframe[0].contentDocument || iframe[0].contentWindow.document;
+      let element = iframeContent.querySelector('.is-root-container');
 
-      if (!element.hasClass('article')) {
-        element.addClass(addClasses);
+      if (element && !element.classList.contains('article')) {
+        element.classList.add(...addClasses);
       }
-
-      // //ヘッダーにFont Awesome様を挿入する
-      // let iframeHead = iframe.contents().find("head");
-
-      // if (iframeHead.has("#font-awesome-style-css-iframe").length == 0) {
-      //   const templateUrl = gbSettings['templateUrl'];
-      //   if (gbSettings['siteIconFont'].trim() == 'font-awesome-4') {
-      //     // Font Awesome4の場合
-      //     // リンクタグを作成
-      //     let link1 = $("<link>", {
-      //       rel: "stylesheet",
-      //       id: "font-awesome-style-css-iframe",
-      //       href: templateUrl + "/webfonts/fontawesome/css/font-awesome.min.css",
-      //       media: "all"
-      //     });
-
-      //     // リンクタグをiframe内のhead要素に挿入
-      //     iframeHead.append(link1);
-      //   } else {
-      //     // Font Awesome5の場合
-
-      //     // リンクタグを作成
-      //     let link1 = $("<link>", {
-      //       rel: "stylesheet",
-      //       id: "font-awesome-style-css-iframe",
-      //       href: templateUrl + "/webfonts/fontawesome5/css/all.min.css",
-      //       media: "all"
-      //     });
-      //     let link2 = $("<link>", {
-      //       rel: "stylesheet",
-      //       id: "font-awesome5-update-style-css-iframe",
-      //       href: templateUrl + "/css/fontawesome5.css",
-      //       media: "all"
-      //     });
-
-      //     // リンクタグをiframe内のhead要素に挿入
-      //     iframeHead.append(link1);
-      //     iframeHead.append(link2);
-      //   }
-      // }
     }
+
 
     //グループボックスのスタイルプレビューに余計なstyle属性が入り込んでしまうのを削除
     //もっと良い方法があるのかもしれない

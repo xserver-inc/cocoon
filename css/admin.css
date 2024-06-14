@@ -6394,18 +6394,19 @@ body.wp-admin {
   font-weight: bold;
 }
 .admin-settings .demo .cta-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 .admin-settings .demo .cta-left-and-right .cta-content,
 .admin-settings .demo .cta-right-and-left .cta-content {
-  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 .admin-settings .demo .cta-left-and-right .cta-content div,
 .admin-settings .demo .cta-right-and-left .cta-content div {
-  width: 49%;
+  width: 100%;
 }
 .admin-settings .demo .cta-left-and-right .cta-content .cta-message p:first-child,
 .admin-settings .demo .cta-right-and-left .cta-content .cta-message p:first-child {
@@ -6427,11 +6428,7 @@ body.wp-admin {
 }
 .admin-settings .demo .nwa .cta-left-and-right .cta-content,
 .admin-settings .demo .nwa .cta-right-and-left .cta-content {
-  display: block;
-}
-.admin-settings .demo .nwa .cta-left-and-right .cta-content div,
-.admin-settings .demo .nwa .cta-right-and-left .cta-content div {
-  width: 100%;
+  flex-direction: column;
 }
 .admin-settings .demo .nwa .cta-message {
   margin-top: 1em;
@@ -14895,18 +14892,19 @@ body.wp-admin {
   font-weight: bold;
 }
 .admin-settings .demo .cta-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 .admin-settings .demo .cta-left-and-right .cta-content,
 .admin-settings .demo .cta-right-and-left .cta-content {
-  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 .admin-settings .demo .cta-left-and-right .cta-content div,
 .admin-settings .demo .cta-right-and-left .cta-content div {
-  width: 49%;
+  width: 100%;
 }
 .admin-settings .demo .cta-left-and-right .cta-content .cta-message p:first-child,
 .admin-settings .demo .cta-right-and-left .cta-content .cta-message p:first-child {
@@ -14928,11 +14926,7 @@ body.wp-admin {
 }
 .admin-settings .demo .nwa .cta-left-and-right .cta-content,
 .admin-settings .demo .nwa .cta-right-and-left .cta-content {
-  display: block;
-}
-.admin-settings .demo .nwa .cta-left-and-right .cta-content div,
-.admin-settings .demo .nwa .cta-right-and-left .cta-content div {
-  width: 100%;
+  flex-direction: column;
 }
 .admin-settings .demo .nwa .cta-message {
   margin-top: 1em;
@@ -19485,11 +19479,7 @@ body.wp-admin {
   }
   .admin-settings .demo .cta-left-and-right .cta-content,
   .admin-settings .demo .cta-right-and-left .cta-content {
-    display: block;
-  }
-  .admin-settings .demo .cta-left-and-right .cta-content div,
-  .admin-settings .demo .cta-right-and-left .cta-content div {
-    width: 100%;
+    flex-direction: column;
   }
   .admin-settings .demo .cta-message {
     margin-top: 1em;
@@ -19993,7 +19983,7 @@ pre {
 
 /*記事一覧の投稿ID幅*/
 .column-post-id {
-  width: 42px;
+  width: 56px;
 }
 
 /*記事一覧の文字数幅*/

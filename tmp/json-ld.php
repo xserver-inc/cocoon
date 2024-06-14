@@ -35,6 +35,25 @@ if ($image_url && file_exists($image_file)) {
   $size = get_image_width_and_height($image_url);
   $width = $size ? $size['width'] : 800;
   $height = $size ? $size['height'] : 800;
+  //画像サイズが取得できない場合
+  if (($width === 0) || ($height === 0)) {
+    //アイキャッチ画像のIDを取得
+    $post_thumbnail_id = get_post_thumbnail_id();
+
+    if ($post_thumbnail_id){
+      //アイキャッチ画像のメタデータを取得
+      $metadata = wp_get_attachment_metadata($post_thumbnail_id);
+
+      if ($metadata){
+        //幅と高さを取得
+        if (isset($metadata['width']) && isset($metadata['height'])){
+          $width = $metadata['width'];
+          $height = $metadata['height'];
+        }
+      }
+    }
+
+  }
   //サムネイルの幅が小さすぎる場合は仕様（696px以上）に合わせる
   if (($width > 0) && ($width < 696)) {
     $height = round($height * (696/$width));

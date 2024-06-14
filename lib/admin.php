@@ -401,7 +401,7 @@ function customize_admin_bar_menu($wp_admin_bar){
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-patterns', // 子メニューID
       'meta'   => array(),
-      'title'  => __( 'パターン', THEME_NAME ), // ラベル
+      'title'  => __( 'パターン一覧', THEME_NAME ), // ラベル
       'href'   => admin_url('edit.php?post_type=wp_block') // ページURL
     ));
   }

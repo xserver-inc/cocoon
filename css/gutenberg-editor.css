@@ -143,6 +143,10 @@
   max-width: 840px;
 }
 
+.wp-site-blocks .wp-block {
+  max-width: none !important;
+}
+
 .article dd {
   margin-left: 40px;
 }
@@ -6054,4 +6058,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .timeline-item-label .rich-text {
   overflow: auto;
   white-space: nowrap !important;
+}
+
+.article {
+  margin-bottom: 0 !important;
 }
