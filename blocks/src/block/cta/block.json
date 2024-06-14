@@ -17,6 +17,10 @@
       "type": "string",
       "default": "cta-left-and-right"
     },
+    "mediaId": {
+      "type": "string",
+      "default": ""
+    },
     "image": {
       "type": "string",
       "default": ""
@@ -27,7 +31,7 @@
     },
     "autoParagraph": {
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "buttonText": {
       "type": "string",
