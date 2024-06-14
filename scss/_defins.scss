@@ -259,17 +259,8 @@ $bgc_hover_anime: all .3s ease-in-out;
   .cta-left-and-right,
   .cta-right-and-left {
     .cta-content{
-      display: block;
-      //flex-direction: column;
-
-      div{
-        width: 100%;
-      }
+      flex-direction: column;
     }
-  }
-
-  .cta-message{
-    margin-top: 1em;
   }
 
   .cta-button{

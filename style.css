@@ -6759,19 +6759,20 @@ canvas, iframe, video,
 }
 
 .cta-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .cta-left-and-right .cta-content,
 .cta-right-and-left .cta-content {
-  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 .cta-left-and-right .cta-content div,
 .cta-right-and-left .cta-content div {
-  width: 49%;
+  width: 100%;
 }
 .cta-left-and-right .cta-content .cta-message p:first-child,
 .cta-right-and-left .cta-content .cta-message p:first-child {
@@ -6797,14 +6798,7 @@ canvas, iframe, video,
 }
 .nwa .cta-left-and-right .cta-content,
 .nwa .cta-right-and-left .cta-content {
-  display: block;
-}
-.nwa .cta-left-and-right .cta-content div,
-.nwa .cta-right-and-left .cta-content div {
-  width: 100%;
-}
-.nwa .cta-message {
-  margin-top: 1em;
+  flex-direction: column;
 }
 .nwa .cta-button .btn-l, .nwa .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
@@ -12004,14 +11998,7 @@ _:-ms-lang(x), .mc-circle {
   }
   .cta-left-and-right .cta-content,
   .cta-right-and-left .cta-content {
-    display: block;
-  }
-  .cta-left-and-right .cta-content div,
-  .cta-right-and-left .cta-content div {
-    width: 100%;
-  }
-  .cta-message {
-    margin-top: 1em;
+    flex-direction: column;
   }
   .cta-button .btn-l, .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .cta-button a {
     padding: 1em;
