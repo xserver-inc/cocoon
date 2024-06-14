@@ -6430,9 +6430,6 @@ body.wp-admin {
 .admin-settings .demo .nwa .cta-right-and-left .cta-content {
   flex-direction: column;
 }
-.admin-settings .demo .nwa .cta-message {
-  margin-top: 1em;
-}
 .admin-settings .demo .nwa .cta-button .btn-l, .admin-settings .demo .nwa .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
@@ -14928,9 +14925,6 @@ body.wp-admin {
 .admin-settings .demo .nwa .cta-right-and-left .cta-content {
   flex-direction: column;
 }
-.admin-settings .demo .nwa .cta-message {
-  margin-top: 1em;
-}
 .admin-settings .demo .nwa .cta-button .btn-l, .admin-settings .demo .nwa .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
@@ -19480,9 +19474,6 @@ body.wp-admin {
   .admin-settings .demo .cta-left-and-right .cta-content,
   .admin-settings .demo .cta-right-and-left .cta-content {
     flex-direction: column;
-  }
-  .admin-settings .demo .cta-message {
-    margin-top: 1em;
   }
   .admin-settings .demo .cta-button .btn-l, .admin-settings .demo .cta-button .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .cta-button a {
     padding: 1em;

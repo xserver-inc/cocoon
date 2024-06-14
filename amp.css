@@ -6775,9 +6775,6 @@ canvas, iframe, video,
 .nwa .cta-right-and-left .cta-content {
   flex-direction: column;
 }
-.nwa .cta-message {
-  margin-top: 1em;
-}
 .nwa .cta-button .btn-l, .nwa .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .nwa .cta-button a {
   padding: 1em;
   font-size: 16px;
@@ -10874,9 +10871,6 @@ pre {
   .cta-left-and-right .cta-content,
   .cta-right-and-left .cta-content {
     flex-direction: column;
-  }
-  .cta-message {
-    margin-top: 1em;
   }
   .cta-button .btn-l, .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .cta-button a {
     padding: 1em;
