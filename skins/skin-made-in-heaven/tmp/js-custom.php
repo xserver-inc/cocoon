@@ -4,6 +4,9 @@ if (!defined('ABSPATH')) exit;
 global $_IS_SWIPER_ENABLE;
 global $_HVN_NOTICE;
 
+$n = HVN_COUNT;
+$button = '<button class="sub-item" aria-label="もっと見る"></button>';
+
 
 //******************************************************************************
 //  ローディング画面
@@ -161,6 +164,7 @@ if (get_theme_mod('hvn_toc_setting')) {
   // 見出し判定位置調整(font-size)
   const val = 50;
   let footerTop;
+  let lastBodyHeight = 0;
 
   // 表示対象の目次取得
   const Tocs = $('.sidebar-scroll .toc-widget-box li:not(.display-none) > a');
@@ -185,10 +189,15 @@ if (get_theme_mod('hvn_toc_setting')) {
     // 最後の章の下位置を設定
     footerTop = $('.article').offset().top;
     Pos[i - 1].bottom = footerTop + $('.article').height();
+    lastBodyHeight = $('body').height();
   }
 
   // ハイライト表示
   function currentCheck() {
+    if ($('body').height() != lastBodyHeight) {
+      init();
+    }
+
     let windowScrollTop = $(window).scrollTop();
     Tocs.parent().removeClass('current');
 
@@ -391,7 +400,7 @@ echo <<< EOF
   const size_835 = window.matchMedia("(min-width: ${size_835}px)");
   const size_481 = window.matchMedia("(min-width: ${size_481}px)");
 
-  // 835以上
+  // 835px以上?
   const size_835Listener = (event) => {
     if (event.matches) {
       $(".footer").addClass('nwa');
@@ -520,7 +529,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
 (function($) {
   $(".widget").each(function() {
     $('.children', this).hide();
-　  $('.children', this).before('<button class="sub-item" aria-label="カテゴリー"></button>');
+　  $('.children', this).before('{$button}');
 
     $('.sub-item', this).click(function() {
       $(this).next('ul').slideToggle(300);
@@ -532,19 +541,20 @@ if (get_theme_mod('hvn_accordion_setting')) {
 
 // タグクラウド
 (function($) {
-  var no = 10;
+  var n = {$n};
 
   $('.sidebar .widget_tag_cloud').each(function() {
-    if ($('.tag-link-position-' + (no + 1), this).length) {
-      $('.tag-link-position-' + no, this).nextUntil().wrapAll('<div class="close">');
-      $(this).append('<button class="sub-item" aria-label="もっと見る"></button>');
-
-      $('.close', this).hide();
-      $('button', this).click(function() {
-        $(this).parent().find('.close').slideToggle(300);
-        $(this).toggleClass('active');
-      });
+    var elm = $('.tagcloud a', this);
+    var c   = elm.length;
+    if (c > n) {
+      elm.slice(${n}).hide();
+      $(this).append('{$button}');
     }
+
+    $('button', this).click(function() {
+      elm.slice(${n}).slideToggle(300);
+      $(this).toggleClass('active');
+    });
   });
 })(jQuery);
 
@@ -644,3 +654,49 @@ echo <<< EOF
 })(jQuery);
 
 EOF;
+
+
+//******************************************************************************
+//  目次省略表示
+//******************************************************************************
+switch(get_theme_mod('hvn_toc_hidden_setting')) {
+  case '1':
+    echo <<< EOF
+(function($) {
+  var n = ${n}
+
+  var elm = $('.main .toc-content li');
+  var c = elm.length;
+  if (c > n) {
+    elm.slice({$n}).hide();
+    $('.main .toc-content').append('{$button}');
+  }
+
+  $('.toc button').click(function() {
+    elm.slice({$n}).slideToggle(300);
+    $(this).toggleClass('active');
+  });
+})(jQuery);
+
+EOF;
+    break;
+
+  case '2':
+    echo <<< EOF
+(function($) {
+  var elm = $('.main .toc-content ul ul');
+  var c = elm.length;
+  if (c > 0) {
+    elm.hide();
+    $('.main .toc-content').append('{$button}');
+  }
+
+  $('.toc button').click(function() {
+    elm.slideToggle(300);
+    $(this).toggleClass('active');
+  });
+})(jQuery);
+
+EOF;
+    break;
+}

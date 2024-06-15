@@ -262,6 +262,26 @@ function hvn_main($wp_customize) {
   );
 
 
+  $wp_customize->add_setting('hvn_toc_hidden_setting', array('default' => '0'));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_toc_hidden_setting',
+      array(
+        'description' => '省略表示',
+        'section'     => "hvn_{$section}_section",
+        'settings'    => 'hvn_toc_hidden_setting',
+        'type'        => 'select',
+        'choices' => array(
+          '0'     => 'なし',
+          '1'     => (HVN_COUNT + 1) . '行以上',
+          '2'     => '見出しH3',
+        )
+      )
+    )
+  );
+
+
   $wp_customize->add_setting('hvn_toc_setting', array('default' => false));
   $wp_customize->add_control(
     new WP_Customize_Control(
@@ -317,21 +337,6 @@ function hvn_main($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_notice_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_notice_setting',
-      array(
-        'label'     => '通知エリア固定',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_notice_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
   $wp_customize->add_setting('hvn_like_setting', array('default' => false));
   $wp_customize->add_control(
     new WP_Customize_Control(
@@ -341,36 +346,6 @@ function hvn_main($wp_customize) {
         'label'     => 'いいねボタン',
         'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_like_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_star_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_star_setting',
-      array(
-        'label'     => '評価・ランキングハート',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_star_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_swiper_auto_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_swiper_auto_setting',
-      array(
-        'label'     => 'オートプレイ',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_swiper_auto_setting',
         'type'      => 'checkbox',
       )
     )
@@ -392,6 +367,21 @@ function hvn_main($wp_customize) {
   );
 
 
+  $wp_customize->add_setting('hvn_swiper_auto_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_swiper_auto_setting',
+      array(
+        'label'     => 'オートプレイ',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_swiper_auto_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
   $wp_customize->add_setting('hvn_accordion_setting', array('default' => false));
   $wp_customize->add_control(
     new WP_Customize_Control(
@@ -401,6 +391,36 @@ function hvn_main($wp_customize) {
         'label'     => 'アコーディオン化',
         'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_accordion_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_notice_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_notice_setting',
+      array(
+        'label'     => '通知エリア固定',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_notice_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_star_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_star_setting',
+      array(
+        'label'     => '評価・ランキングハート',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_star_setting',
         'type'      => 'checkbox',
       )
     )
@@ -450,21 +470,6 @@ function hvn_main($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_profile_follows_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_profile_follows_setting',
-      array(
-        'label'     => 'プロフィールのSNSフォローを非表示',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_profile_follows_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
   $wp_customize->add_setting('hvn_site_date_setting');
   $wp_customize->add_control(
     new WP_Customize_Media_Control(
@@ -489,6 +494,21 @@ function hvn_main($wp_customize) {
         'label'     => 'サイト開設経過日数',
         'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_site_date_onoff_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_profile_follows_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_profile_follows_setting',
+      array(
+        'label'     => 'プロフィールのSNSフォローを非表示',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_profile_follows_setting',
         'type'      => 'checkbox',
       )
     )

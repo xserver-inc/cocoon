@@ -706,3 +706,35 @@ add_filter('wp_tag_cloud', function($return, $args) {
 
   return $return;
 },2,10);
+
+
+//******************************************************************************
+//  タイムラインのタイトルHTMLタグ変更
+//******************************************************************************
+add_filter('render_block_cocoon-blocks/timeline', function($content, $block) {
+  if (preg_match('/hvn-h[2-6]/', $content, $matches)) {
+    $h = str_replace('hvn-', '', $matches[0]);
+    $before = '/<div class="timeline-item-title">(.*)<\/div><div class="timeline-item-snippet/';
+    $after = '<' . $h . ' class="timeline-item-title">$1</' . $h . '><div class="timeline-item-snippet';
+
+    $content = preg_replace($before, $after, $content);
+  }
+
+  return $content;
+}, 10, 2);
+
+
+//******************************************************************************
+//  FAQの質問HTMLタグ変更
+//******************************************************************************
+add_filter('render_block_cocoon-blocks/faq', function($content, $block) {
+  if (preg_match('/hvn-h[2-6]/', $content, $matches)) {
+    $h = str_replace('hvn-', '', $matches[0]);
+    $before = ['/<div class="faq-question-content faq-item-content">(.*)<\/div><\/dt>/s', '/<dl(.*?)\/dl>/s', '/<dt(.*?)\/dt>/s', '/<dd(.*?)\/dd>/s'];
+    $after  = ['<' . $h . ' class="faq-question-content faq-item-content">$1</' . $h . '></dt>', '<div$1/div>', '<div$1/div>', '<div$1/div>'];
+
+    $content = preg_replace($before, $after, $content);
+}
+
+  return $content;
+}, 10, 2);
