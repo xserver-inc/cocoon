@@ -22,6 +22,7 @@ const ALLOWED_MEDIA_TYPES = [ 'image' ];
 export default function edit( props ) {
   const { attributes, setAttributes, className } = props;
   const {
+    initialized,
     header,
     layout,
     mediaId,
@@ -39,19 +40,35 @@ export default function edit( props ) {
   } );
   setAttributes( { classNames: classes } );
 
-  const getCtaContent = () => {
-    // mediaIdから画像URLを取得する
-    const media = wp.data.select( 'core' ).getMedia( mediaId );
-    const url = get( media, [ 'source_url' ] );
-    setAttributes( { image: url } );
+  // ブロック追加時の初回だけ初期値を流し込む
+  if ( initialized === false ) {
+    setAttributes( {
+      initialized: true,
+      header: __( 'CTA見出し', THEME_NAME ),
+      mediaId: undefined,
+      image: undefined,
+      message: __( 'ここに訴求メッセージを入力してください', THEME_NAME ),
+      buttonText: __( 'この記事を読む', THEME_NAME ),
+      buttonURL: './',
+    } );
+    return;
+  }
 
-    return <ServerSideRender block={ props.name } attributes={ attributes } />;
-  };
-
+  // CTA画像削除
   const onRemoveImage = () => {
     setAttributes( {
       mediaId: undefined,
+      image: undefined,
     } );
+  };
+
+  // CTA画像選択
+  const onSelectImage = ( media ) => {
+    setAttributes( { mediaId: media.id, image: media.url } );
+  };
+
+  const getCtaContent = () => {
+    return <ServerSideRender block={ props.name } attributes={ attributes } />;
   };
 
   return (
@@ -63,11 +80,13 @@ export default function edit( props ) {
             initialOpen={ true }
           >
             <TextControl
+              className={ 'cta-text-control cta-header-text-control' }
               label={ __( 'CTA見出し', THEME_NAME ) }
               value={ header }
               onChange={ ( value ) => setAttributes( { header: value } ) }
             />
             <SelectControl
+              className={ 'cta-select-control cta-image-layout-select-control' }
               label={ __( '画像とメッセージのレイアウト', THEME_NAME ) }
               value={ layout }
               options={ [
@@ -87,37 +106,51 @@ export default function edit( props ) {
               onChange={ ( value ) => setAttributes( { layout: value } ) }
             />
             <BaseControl
+              className={ 'cta-base-control cta-image-base-control' }
               label={ __( 'CTA画像', THEME_NAME ) }
               __nextHasNoMarginBottom={ true }
             >
-              <MediaUploadCheck>
-                <MediaUpload
-                  onSelect={ ( media ) =>
-                    setAttributes( { mediaId: media.id } )
-                  }
-                  allowedTypes={ ALLOWED_MEDIA_TYPES }
-                  value={ mediaId }
-                  render={ ( { open } ) => (
-                    <Button onClick={ open }>
-                      { __( '画像を選択', THEME_NAME ) }
-                    </Button>
-                  ) }
-                />
-              </MediaUploadCheck>
-              { !! mediaId && (
-                <MediaUploadCheck>
-                  <Button onClick={ onRemoveImage }>
-                    { __( '画像を削除', THEME_NAME ) }
-                  </Button>
-                </MediaUploadCheck>
-              ) }
+              { <img src={ image } className="cta-image" alt="" /> }
             </BaseControl>
+            <MediaUploadCheck>
+              <MediaUpload
+                onSelect={ onSelectImage }
+                allowedTypes={ ALLOWED_MEDIA_TYPES }
+                value={ mediaId }
+                render={ ( { open } ) => (
+                  <Button
+                    onClick={ open }
+                    variant="secondary"
+                    className={ 'cta-btn cta-image-select-btn' }
+                  >
+                    { mediaId
+                      ? __( '置換', THEME_NAME )
+                      : __( '選択', THEME_NAME ) }
+                  </Button>
+                ) }
+              />
+            </MediaUploadCheck>
+            { !! mediaId && (
+              <MediaUploadCheck>
+                <Button
+                  onClick={ onRemoveImage }
+                  variant="secondary"
+                  className="cta-btn cta-image-remove-btn"
+                >
+                  { __( '削除', THEME_NAME ) }
+                </Button>
+              </MediaUploadCheck>
+            ) }
             <TextareaControl
+              className={ 'cta-textarea-control cta-message-textarea-control' }
               label={ __( 'CTAメッセージ', THEME_NAME ) }
               value={ message }
               onChange={ ( value ) => setAttributes( { message: value } ) }
             />
             <CheckboxControl
+              className={
+                'cta-checkbox-control cta-paragraph-checkbox-control'
+              }
               label={ __( '自動的に段落を追加する', THEME_NAME ) }
               checked={ autoParagraph }
               onChange={ ( value ) =>
@@ -125,16 +158,19 @@ export default function edit( props ) {
               }
             />
             <TextControl
+              className={ 'cta-text-control cta-button-text-control' }
               label={ __( 'CTAボタンテキスト', THEME_NAME ) }
               value={ buttonText }
               onChange={ ( value ) => setAttributes( { buttonText: value } ) }
             />
             <TextControl
+              className={ 'cta-text-control cta-button-url-text-control' }
               label={ __( 'CTAボタンURL', THEME_NAME ) }
               value={ buttonURL }
               onChange={ ( value ) => setAttributes( { buttonURL: value } ) }
             />
             <SelectControl
+              className={ 'cta-select-control cta-button-color-select-control' }
               label={ __( 'CTAボタン色', THEME_NAME ) }
               value={ buttonColor }
               options={ [
