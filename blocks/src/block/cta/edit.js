@@ -47,7 +47,7 @@ export default function edit( props ) {
       header: __( 'CTA見出し', THEME_NAME ),
       mediaId: undefined,
       image: undefined,
-      message: __( 'ここに訴求メッセージを入力してください', THEME_NAME ),
+      message: __( 'ここに訴求メッセージを入力してください。', THEME_NAME ),
       buttonText: __( 'この記事を読む', THEME_NAME ),
       buttonURL: './',
     } );
