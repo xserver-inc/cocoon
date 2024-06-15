@@ -19,7 +19,7 @@ export { metadata, name };
 
 export const settings = {
   title: __( 'CTA', THEME_NAME ),
-  // icon: <FontAwesomeIcon icon={ faIdCard } />,
+  icon: 'megaphone',
   description: __( 'コールトゥアクションボックスを表示します。', THEME_NAME ),
 
   edit,
