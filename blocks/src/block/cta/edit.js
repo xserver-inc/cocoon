@@ -40,6 +40,8 @@ export default function edit( props ) {
   } );
   setAttributes( { classNames: classes } );
 
+  console.log( attributes );
+
   // ブロック追加時の初回だけ初期値を流し込む
   if ( initialized === false ) {
     setAttributes( {
@@ -111,36 +113,36 @@ export default function edit( props ) {
               __nextHasNoMarginBottom={ true }
             >
               { <img src={ image } className="cta-image" alt="" /> }
-            </BaseControl>
-            <MediaUploadCheck>
-              <MediaUpload
-                onSelect={ onSelectImage }
-                allowedTypes={ ALLOWED_MEDIA_TYPES }
-                value={ mediaId }
-                render={ ( { open } ) => (
-                  <Button
-                    onClick={ open }
-                    variant="secondary"
-                    className={ 'cta-btn cta-image-select-btn' }
-                  >
-                    { mediaId
-                      ? __( '置換', THEME_NAME )
-                      : __( '選択', THEME_NAME ) }
-                  </Button>
-                ) }
-              />
-            </MediaUploadCheck>
-            { !! mediaId && (
               <MediaUploadCheck>
-                <Button
-                  onClick={ onRemoveImage }
-                  variant="secondary"
-                  className="cta-btn cta-image-remove-btn"
-                >
-                  { __( '削除', THEME_NAME ) }
-                </Button>
+                <MediaUpload
+                  onSelect={ onSelectImage }
+                  allowedTypes={ ALLOWED_MEDIA_TYPES }
+                  value={ mediaId }
+                  render={ ( { open } ) => (
+                    <Button
+                      onClick={ open }
+                      variant="secondary"
+                      className={ 'cta-btn cta-image-select-btn' }
+                    >
+                      { typeof mediaId === 'undefined'
+                        ? __( '選択', THEME_NAME )
+                        : __( '置換', THEME_NAME ) }
+                    </Button>
+                  ) }
+                />
               </MediaUploadCheck>
-            ) }
+              { typeof mediaId !== 'undefined' && (
+                <MediaUploadCheck>
+                  <Button
+                    onClick={ onRemoveImage }
+                    variant="secondary"
+                    className="cta-btn cta-image-remove-btn"
+                  >
+                    { __( '削除', THEME_NAME ) }
+                  </Button>
+                </MediaUploadCheck>
+              ) }
+            </BaseControl>
             <TextareaControl
               className={ 'cta-textarea-control cta-message-textarea-control' }
               label={ __( 'CTAメッセージ', THEME_NAME ) }
