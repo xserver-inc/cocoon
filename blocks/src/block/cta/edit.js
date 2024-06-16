@@ -15,7 +15,6 @@ import { Fragment } from '@wordpress/element';
 import { ServerSideRender } from '@wordpress/editor';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import classnames from 'classnames';
-import { get } from 'lodash';
 
 const ALLOWED_MEDIA_TYPES = [ 'image' ];
 
@@ -39,8 +38,6 @@ export default function edit( props ) {
     [ attributes.className ]: !! attributes.className,
   } );
   setAttributes( { classNames: classes } );
-
-  console.log( attributes );
 
   // ブロック追加時の初回だけ初期値を流し込む
   if ( initialized === false ) {
