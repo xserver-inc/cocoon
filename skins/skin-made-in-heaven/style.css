@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.9.0
+ Version: 2.9.1
  Priority: 6900001000
 */
 
@@ -105,6 +105,7 @@
 **        2.9.0   2024-06-15  目次省略表示を追加
 **                            タイムラインのタイトルHTMLタグ変更
 **                            FAQの質問HTMLタグ変更
+**        2.9.1   2024-06-16  バグ対策
 **
 *******************************************************************************/
 
@@ -3594,6 +3595,7 @@ blockquote:before,
 
 .faq-question {
   margin-bottom: var(--gap30);
+  align-items: unset;
 }
 
 .faq-wrap:not(.is-style-square, .is-style-accordion) {
@@ -3607,6 +3609,7 @@ blockquote:before,
 .body .faq .faq-item-label {
   font-size: 16px!important;
   font-weight: bold;
+  height: 100%;
   margin-right: 0.5em;
   padding: 0!important;
   text-align: center;
