@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@prettier/plugin-php": "^0.19.1",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
