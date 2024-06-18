@@ -31,9 +31,9 @@ function add_quicktags_to_text_editor() {
       QTags.addButton('qt-strike','<?php _e( '打ち消し線', THEME_NAME ); ?>','<span class="strike">','</span>');
       QTags.addButton('qt-badge','<?php _e( 'バッジ', THEME_NAME ); ?>','<span class="badge">','</span>');
       QTags.addButton('qt-keyboard-key','<?php _e( 'キーボード', THEME_NAME ); ?>','<span class="keyboard-key">','</span>');
-      QTags.addButton('qt-information','<?php _e( '補足情報(i)', THEME_NAME ); ?>','<div class="information-box">','</div>');
-      QTags.addButton('qt-question','<?php _e( '補足情報(?)', THEME_NAME ); ?>','<div class="question-box">','</div>');
-      QTags.addButton('qt-alert','<?php _e( '補足情報(!)', THEME_NAME ); ?>','<div class="alert-box">','</div>');
+      QTags.addButton('qt-information','<?php _e( '情報(i)', THEME_NAME ); ?>','<div class="information-box">','</div>');
+      QTags.addButton('qt-question','<?php _e( '質問(?)', THEME_NAME ); ?>','<div class="question-box">','</div>');
+      QTags.addButton('qt-alert','<?php _e( 'アラート(!)', THEME_NAME ); ?>','<div class="alert-box">','</div>');
       QTags.addButton('qt-sp-primary','<?php _e( 'primary', THEME_NAME ); ?>','<div class="primary-box">','</div>');
       QTags.addButton('qt-sp-success','<?php _e( 'success', THEME_NAME ); ?>','<div class="success-box">','</div>');
       QTags.addButton('qt-sp-info','info','<div class="info-box">','</div>');
@@ -172,17 +172,17 @@ function initialize_tinymce_styles($init_array) {
       'title' => __( 'ボックス（アイコン）', THEME_NAME ),
       'items' => array(
         array(
-          'title' => __( '補足情報(i)', THEME_NAME ),
+          'title' => __( '情報(i)', THEME_NAME ),
           'block' => 'div',
           'classes' => 'information-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(?)', THEME_NAME ),
+          'title' => __( '質問(?)', THEME_NAME ),
           'block' => 'div',
           'classes' => 'question-box common-icon-box'
         ),
         array(
-          'title' => __( '注意喚起(!)', THEME_NAME ),
+          'title' => __( 'アラート(!)', THEME_NAME ),
           'block' => 'div',
           'classes' => 'alert-box common-icon-box'
         ),
@@ -237,12 +237,12 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'secondary-box'
         ),
         array(
-          'title' => __( 'サクセス（薄い緑）', THEME_NAME ),
+          'title' => __( 'サクセス（薄い緑色）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'success-box'
         ),
         array(
-          'title' => __( 'インフォ（薄い青）', THEME_NAME ),
+          'title' => __( 'インフォ（薄い青色）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'info-box'
         ),

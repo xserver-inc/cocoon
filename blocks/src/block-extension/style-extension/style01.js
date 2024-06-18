@@ -155,11 +155,11 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
         },
         {
           style: 'good-box',
-          buttonText: __( 'グッド', THEME_NAME ),
+          buttonText: __( 'GOOD', THEME_NAME ),
         },
         {
           style: 'bad-box',
-          buttonText: __( 'バッド', THEME_NAME ),
+          buttonText: __( 'BAD', THEME_NAME ),
         },
         {
           style: 'profile-box',
