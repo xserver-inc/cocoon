@@ -6063,3 +6063,12 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .article {
   margin-bottom: 0 !important;
 }
+
+.cta-btn-group {
+  display: flex;
+  gap: 6px;
+}
+.cta-btn-group .cta-btn {
+  width: 100%;
+  justify-content: center;
+}
