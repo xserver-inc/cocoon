@@ -1056,7 +1056,7 @@ function get_block_pattern_shortcode($atts) {
     }
   }
 
-  return do_blocks($content);
+  return do_shortcode(do_blocks($content));
 }
 endif;
 
