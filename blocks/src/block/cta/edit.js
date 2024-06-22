@@ -44,8 +44,8 @@ export default function edit( props ) {
     setAttributes( {
       initialized: true,
       header: __( 'CTA見出し', THEME_NAME ),
-      mediaId: undefined,
-      image: undefined,
+      mediaId: '',
+      image: '',
       message: __( 'ここに訴求メッセージを入力してください。', THEME_NAME ),
       buttonText: __( 'この記事を読む', THEME_NAME ),
       buttonURL: './',
@@ -56,14 +56,14 @@ export default function edit( props ) {
   // CTA画像削除
   const onRemoveImage = () => {
     setAttributes( {
-      mediaId: undefined,
-      image: undefined,
+      mediaId: '',
+      image: '',
     } );
   };
 
   // CTA画像選択
   const onSelectImage = ( media ) => {
-    setAttributes( { mediaId: media.id, image: media.url } );
+    setAttributes( { mediaId: String( media.id ), image: media.url } );
   };
 
   const getCtaContent = () => {
@@ -121,14 +121,14 @@ export default function edit( props ) {
                       variant="secondary"
                       className={ 'cta-btn cta-image-select-btn' }
                     >
-                      { typeof mediaId === 'undefined'
+                      { mediaId === ''
                         ? __( '選択', THEME_NAME )
                         : __( '置換', THEME_NAME ) }
                     </Button>
                   ) }
                 />
               </MediaUploadCheck>
-              { typeof mediaId !== 'undefined' && (
+              { mediaId !== '' && (
                 <MediaUploadCheck>
                   <Button
                     onClick={ onRemoveImage }
