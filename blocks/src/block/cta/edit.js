@@ -80,7 +80,7 @@ export default function edit( props ) {
           >
             <TextControl
               className={ 'cta-text-control cta-header-text-control' }
-              label={ __( 'CTA見出し', THEME_NAME ) }
+              label={ __( '見出し', THEME_NAME ) }
               value={ header }
               onChange={ ( value ) => setAttributes( { header: value } ) }
             />
@@ -106,7 +106,7 @@ export default function edit( props ) {
             />
             <BaseControl
               className={ 'cta-base-control cta-image-base-control' }
-              label={ __( 'CTA画像', THEME_NAME ) }
+              label={ __( '画像', THEME_NAME ) }
               __nextHasNoMarginBottom={ true }
             >
               { <img src={ image } className="cta-image" alt="" /> }
@@ -145,7 +145,7 @@ export default function edit( props ) {
             </BaseControl>
             <TextareaControl
               className={ 'cta-textarea-control cta-message-textarea-control' }
-              label={ __( 'CTAメッセージ', THEME_NAME ) }
+              label={ __( 'メッセージ', THEME_NAME ) }
               value={ message }
               onChange={ ( value ) => setAttributes( { message: value } ) }
             />
@@ -161,19 +161,19 @@ export default function edit( props ) {
             />
             <TextControl
               className={ 'cta-text-control cta-button-text-control' }
-              label={ __( 'CTAボタンテキスト', THEME_NAME ) }
+              label={ __( 'ボタンテキスト', THEME_NAME ) }
               value={ buttonText }
               onChange={ ( value ) => setAttributes( { buttonText: value } ) }
             />
             <TextControl
               className={ 'cta-text-control cta-button-url-text-control' }
-              label={ __( 'CTAボタンURL', THEME_NAME ) }
+              label={ __( 'ボタンURL', THEME_NAME ) }
               value={ buttonURL }
               onChange={ ( value ) => setAttributes( { buttonURL: value } ) }
             />
             <SelectControl
               className={ 'cta-select-control cta-button-color-select-control' }
-              label={ __( 'CTAボタン色', THEME_NAME ) }
+              label={ __( 'ボタン色', THEME_NAME ) }
               value={ buttonColor }
               options={ [
                 { label: __( '黒色', THEME_NAME ), value: 'btn-black' },
