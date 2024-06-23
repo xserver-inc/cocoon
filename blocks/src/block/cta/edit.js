@@ -110,35 +110,38 @@ export default function edit( props ) {
               __nextHasNoMarginBottom={ true }
             >
               { <img src={ image } className="cta-image" alt="" /> }
-              <MediaUploadCheck>
-                <MediaUpload
-                  onSelect={ onSelectImage }
-                  allowedTypes={ ALLOWED_MEDIA_TYPES }
-                  value={ mediaId }
-                  render={ ( { open } ) => (
-                    <Button
-                      onClick={ open }
-                      variant="secondary"
-                      className={ 'cta-btn cta-image-select-btn' }
-                    >
-                      { mediaId === ''
-                        ? __( '選択', THEME_NAME )
-                        : __( '置換', THEME_NAME ) }
-                    </Button>
-                  ) }
-                />
-              </MediaUploadCheck>
-              { mediaId !== '' && (
+              <div className="cta-btn-group">
                 <MediaUploadCheck>
-                  <Button
-                    onClick={ onRemoveImage }
-                    variant="secondary"
-                    className="cta-btn cta-image-remove-btn"
-                  >
-                    { __( '削除', THEME_NAME ) }
-                  </Button>
+                  <MediaUpload
+                    onSelect={ onSelectImage }
+                    allowedTypes={ ALLOWED_MEDIA_TYPES }
+                    value={ mediaId }
+                    render={ ( { open } ) => (
+                      <Button
+                        onClick={ open }
+                        variant="secondary"
+                        className={ 'cta-btn cta-image-select-btn' }
+                      >
+                        { mediaId === ''
+                          ? __( '選択', THEME_NAME )
+                          : __( '置換', THEME_NAME ) }
+                      </Button>
+                    ) }
+                  />
                 </MediaUploadCheck>
-              ) }
+                { mediaId !== '' && (
+                  <MediaUploadCheck>
+                    <Button
+                      onClick={ onRemoveImage }
+                      variant="secondary"
+                      className="cta-btn cta-image-remove-btn"
+                    >
+                      { __( '削除', THEME_NAME ) }
+                    </Button>
+                  </MediaUploadCheck>
+                ) }
+              </div>
+
             </BaseControl>
             <TextareaControl
               className={ 'cta-textarea-control cta-message-textarea-control' }

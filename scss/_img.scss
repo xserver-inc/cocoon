@@ -20,8 +20,8 @@ img{
 ** 画像の囲み効果
 ************************************/
 /*ボーダー*/
-.iwe-border img,
-.iwe-border amp-img{
+.iwe-border img:not(.cta-image),
+.iwe-border amp-img:not(.cta-image){
   border: 1px solid var(--cocoon-basic-border-color);
   //box-shadow: 0 0 1px rgba(0,0,0,.6);
 }

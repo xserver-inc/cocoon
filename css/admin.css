@@ -1255,8 +1255,8 @@ body.wp-admin {
 .admin-settings .demo .circle-image img {
   border-radius: 50%;
 }
-.admin-settings .demo .iwe-border img,
-.admin-settings .demo .iwe-border amp-img {
+.admin-settings .demo .iwe-border img:not(.cta-image),
+.admin-settings .demo .iwe-border amp-img:not(.cta-image) {
   border: 1px solid var(--cocoon-basic-border-color);
 }
 .admin-settings .demo .iwe-border-bold img,
@@ -9750,8 +9750,8 @@ body.wp-admin {
 .admin-settings .demo .circle-image img {
   border-radius: 50%;
 }
-.admin-settings .demo .iwe-border img,
-.admin-settings .demo .iwe-border amp-img {
+.admin-settings .demo .iwe-border img:not(.cta-image),
+.admin-settings .demo .iwe-border amp-img:not(.cta-image) {
   border: 1px solid var(--cocoon-basic-border-color);
 }
 .admin-settings .demo .iwe-border-bold img,
