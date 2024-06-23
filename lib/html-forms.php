@@ -1218,11 +1218,6 @@ function generate_widget_entries_tag($atts){
       $args['post__not_in'] = $exclude_post_ids;
     }
   }
-  if ($post_type) {
-    $args += array(
-      'post_type' => explode(',', $post_type)
-    );
-  }
   if ($random && $modified) {
     $args += array(
       'orderby' => array('rand', 'modified'),
@@ -1296,11 +1291,17 @@ function generate_widget_entries_tag($atts){
   }
   //順序付きポスト
   if ($ordered_posts) {
+    $post_type = 'post,page';// デフォルトでpost_typeは投稿と固定ページ
     $args = array(
-      // 'post_type' => 'post', // 投稿タイプを指定
       'ignore_sticky_posts' => true,
       'post__in'  => $ordered_posts, // post__inで投稿IDを指定
       'orderby'   => 'post__in', // 指定したID順にソート
+    );
+  }
+  //投稿タイプ
+  if ($post_type) {
+    $args += array(
+      'post_type' => explode(',', $post_type)
     );
   }
 

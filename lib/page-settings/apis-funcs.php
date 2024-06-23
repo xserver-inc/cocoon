@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_AMAZON_API_ACCESS_KEY_ID', 'amazon_api_access_key_id');
 if ( !function_exists( 'get_amazon_api_access_key_id' ) ):
 function get_amazon_api_access_key_id(){
-  return get_theme_option(OP_AMAZON_API_ACCESS_KEY_ID);
+  return get_theme_option(OP_AMAZON_API_ACCESS_KEY_ID, '');
 }
 endif;
 
@@ -19,7 +19,7 @@ endif;
 define('OP_AMAZON_API_SECRET_KEY', 'amazon_api_secret_key');
 if ( !function_exists( 'get_amazon_api_secret_key' ) ):
 function get_amazon_api_secret_key(){
-  return get_theme_option(OP_AMAZON_API_SECRET_KEY);
+  return get_theme_option(OP_AMAZON_API_SECRET_KEY, '');
 }
 endif;
 
@@ -28,7 +28,7 @@ define('OP_AMAZON_ASSOCIATE_TRACKING_ID', 'amazon_associate_tracking_id');
 if ( !function_exists( 'get_amazon_associate_tracking_id' ) ):
 function get_amazon_associate_tracking_id($tracking_id = null){
   //Cocoon設定で入力されているものを取得
-  $id = get_theme_option(OP_AMAZON_ASSOCIATE_TRACKING_ID);
+  $id = get_theme_option(OP_AMAZON_ASSOCIATE_TRACKING_ID, '');
 
   //個別のトラッキングIDショートコード
   if ($tracking_id) {
@@ -139,7 +139,7 @@ endif;
 define('OP_RAKUTEN_APPLICATION_ID', 'rakuten_application_id');
 if ( !function_exists( 'get_rakuten_application_id' ) ):
 function get_rakuten_application_id(){
-  return get_theme_option(OP_RAKUTEN_APPLICATION_ID);
+  return get_theme_option(OP_RAKUTEN_APPLICATION_ID, '');
 }
 endif;
 
@@ -147,7 +147,7 @@ endif;
 define('OP_RAKUTEN_AFFILIATE_ID', 'rakuten_affiliate_id');
 if ( !function_exists( 'get_rakuten_affiliate_id' ) ):
 function get_rakuten_affiliate_id(){
-  return get_theme_option(OP_RAKUTEN_AFFILIATE_ID);
+  return get_theme_option(OP_RAKUTEN_AFFILIATE_ID, '');
 }
 endif;
 
@@ -203,7 +203,7 @@ endif;
 define('OP_YAHOO_VALUECOMMERCE_SID', 'yahoo_valuecommerce_sid');
 if ( !function_exists( 'get_yahoo_valuecommerce_sid' ) ):
 function get_yahoo_valuecommerce_sid(){
-  return get_theme_option(OP_YAHOO_VALUECOMMERCE_SID);
+  return get_theme_option(OP_YAHOO_VALUECOMMERCE_SID, '');
 }
 endif;
 
@@ -211,7 +211,7 @@ endif;
 define('OP_YAHOO_VALUECOMMERCE_PID', 'yahoo_valuecommerce_pid');
 if ( !function_exists( 'get_yahoo_valuecommerce_pid' ) ):
 function get_yahoo_valuecommerce_pid(){
-  return get_theme_option(OP_YAHOO_VALUECOMMERCE_PID);
+  return get_theme_option(OP_YAHOO_VALUECOMMERCE_PID, '');
 }
 endif;
 
@@ -235,7 +235,7 @@ endif;
 define('OP_MERCARI_AFFILIATE_ID', 'mercari_affiliate_id');
 if ( !function_exists( 'get_mercari_affiliate_id' ) ):
 function get_mercari_affiliate_id(){
-  return get_theme_option(OP_MERCARI_AFFILIATE_ID);
+  return get_theme_option(OP_MERCARI_AFFILIATE_ID, '');
 }
 endif;
 
@@ -260,7 +260,7 @@ endif;
 define('OP_DMM_AFFILIATE_ID', 'dmm_affiliate_id');
 if ( !function_exists( 'get_dmm_affiliate_id' ) ):
 function get_dmm_affiliate_id(){
-  return get_theme_option(OP_DMM_AFFILIATE_ID);
+  return get_theme_option(OP_DMM_AFFILIATE_ID, '');
 }
 endif;
 
@@ -292,7 +292,7 @@ endif;
 define('OP_MOSHIMO_AMAZON_ID', 'moshimo_amazon_id');
 if ( !function_exists( 'get_moshimo_amazon_id' ) ):
 function get_moshimo_amazon_id(){
-  return get_theme_option(OP_MOSHIMO_AMAZON_ID);
+  return get_theme_option(OP_MOSHIMO_AMAZON_ID, '');
 }
 endif;
 
@@ -300,7 +300,7 @@ endif;
 define('OP_MOSHIMO_RAKUTEN_ID', 'moshimo_rakuten_id');
 if ( !function_exists( 'get_moshimo_rakuten_id' ) ):
 function get_moshimo_rakuten_id(){
-  return get_theme_option(OP_MOSHIMO_RAKUTEN_ID);
+  return get_theme_option(OP_MOSHIMO_RAKUTEN_ID, '');
 }
 endif;
 
@@ -308,7 +308,7 @@ endif;
 define('OP_MOSHIMO_YAHOO_ID', 'moshimo_yahoo_id');
 if ( !function_exists( 'get_moshimo_yahoo_id' ) ):
 function get_moshimo_yahoo_id(){
-  return get_theme_option(OP_MOSHIMO_YAHOO_ID);
+  return get_theme_option(OP_MOSHIMO_YAHOO_ID, '');
 }
 endif;
 

@@ -629,13 +629,14 @@ switch(get_theme_mod('hvn_toc_style_setting')) {
   case 1:
     echo <<< EOF
 .main .toc {
+  border: 1px solid var(--main-color);
   padding: 0;
 }
 
 .main .toc-title {
-  background-color: var(--border-color);
+  background-color: var(--main-color);
   border: 0;
-  color: #333;
+  color: var(--text-color);
   margin: 0;
   padding: var(--padding15);
 }
@@ -708,9 +709,10 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
 .hvn-content-wrap {
   background-color: var(--white-bgcolor);
   border: 0;
+  left: 50%;
+  max-height: 80%;
   overflow-y: auto;
   padding: var(--gap30);
-  left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -994,7 +996,21 @@ if (get_theme_mod('hvn_accordion_setting')) {
   margin-right: 0.5em;
 }
 
-:is(.widget_pages, .widget_archive, .widget_categories, .widget_tag_cloud) button {
+.widget_categories .post-count,
+.widget_archive .post-count {
+  margin-left:auto;
+  padding-right: 2em;
+}
+
+.sidebar .widget_tag_cloud .tagcloud a {
+  width: 100%;
+}
+
+EOF;
+}
+
+echo <<< EOF
+button.sub-item {
   background-color: transparent;
   border: 1px solid #ccc;
   cursor: pointer;
@@ -1008,7 +1024,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
   width: 20px;
 }
 
-:is(.widget_pages, .widget_archive, .widget_categories, .widget_tag_cloud) button:before {
+button.sub-item:before {
   color: #ccc;
   content: '\\f078';
   display: block;
@@ -1018,35 +1034,18 @@ if (get_theme_mod('hvn_accordion_setting')) {
   transition: transform .3s;
 }
 
-:is(.widget_pages, .widget_archive, .widget_categories, .widget_tag_cloud) button.active:before {
+button.sub-item.active:before {
   transform: rotate(-180deg);
 }
 
-.widget_categories .post-count,
-.widget_archive .post-count {
-  margin-left:auto;
-  padding-right: 2em;
-}
-
-.sidebar .widget_tag_cloud .close,
-.sidebar .widget_tag_cloud .tagcloud a {
-  width: 100%;
-}
-
-.widget_tag_cloud .close {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.widget_tag_cloud button {
+.toc button.sub-item,
+.widget_tag_cloud button.sub-item {
   margin-top: 5px;
   position: unset;
   width: 100%;
 }
 
 EOF;
-}
 
 
 //******************************************************************************

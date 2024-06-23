@@ -30,15 +30,15 @@ export default function edit( { attributes, setAttributes, className } ) {
             options={ [
               {
                 value: 'information-box',
-                label: __( '補足情報(i)', THEME_NAME ),
+                label: __( '情報(i)', THEME_NAME ),
               },
               {
                 value: 'question-box',
-                label: __( '補足情報(?)', THEME_NAME ),
+                label: __( '質問(?)', THEME_NAME ),
               },
               {
                 value: 'alert-box',
-                label: __( '補足情報(!)', THEME_NAME ),
+                label: __( 'アラート(!)', THEME_NAME ),
               },
               {
                 value: 'memo-box',

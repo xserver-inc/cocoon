@@ -18,6 +18,7 @@ $skin_name = basename($skin_url);
 
 define('HVN_SKIN_URL', $skin_url);
 define('HVN_SKIN', "/skins/{$skin_name}/");
+define('HVN_COUNT', 10);
 
 
 //******************************************************************************

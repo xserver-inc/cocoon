@@ -38,11 +38,11 @@ export default function edit( { attributes, setAttributes, className } ) {
               },
               {
                 value: 'info-box',
-                label: __( 'インフォ（薄い青）', THEME_NAME ),
+                label: __( 'インフォ（薄い青色）', THEME_NAME ),
               },
               {
                 value: 'success-box',
-                label: __( 'サクセス（薄い緑）', THEME_NAME ),
+                label: __( 'サクセス（薄い緑色）', THEME_NAME ),
               },
               {
                 value: 'warning-box',

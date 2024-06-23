@@ -14,7 +14,7 @@ register_block_style(
   'core/group',
   array(
     'name'  => 'information-box',
-    'label' => __( '補足情報(i)', THEME_NAME ),
+    'label' => __( '情報(i)', THEME_NAME ),
   )
 );
 
@@ -22,7 +22,7 @@ register_block_style(
   'core/group',
   array(
     'name'  => 'question-box',
-    'label' => __( '補足情報(?)', THEME_NAME ),
+    'label' => __( '質問(?)', THEME_NAME ),
   )
 );
 
@@ -30,7 +30,7 @@ register_block_style(
   'core/group',
   array(
     'name'  => 'alert-box',
-    'label' => __( '補足情報(!)', THEME_NAME ),
+    'label' => __( 'アラート(!)', THEME_NAME ),
   )
 );
 
@@ -113,7 +113,7 @@ register_block_style(
   'core/group',
   array(
     'name'  => 'info-box',
-    'label' => __( 'インフォ（薄い青）', THEME_NAME ),
+    'label' => __( 'インフォ（薄い青色）', THEME_NAME ),
   )
 );
 
@@ -121,7 +121,7 @@ register_block_style(
   'core/group',
   array(
     'name'  => 'success-box',
-    'label' => __( 'サクセス（薄い緑）', THEME_NAME ),
+    'label' => __( 'サクセス（薄い緑色）', THEME_NAME ),
   )
 );
 

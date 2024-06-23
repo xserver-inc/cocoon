@@ -114,7 +114,7 @@ function get_cocoon_editor_color_palette_colors(){
     array(
         'name' => __( '白', THEME_NAME ),
         'slug' => 'cocoon-white',
-        'color' => '#fffffb',
+        'color' => '#ffffff',
     ),
     array(
         'name' => __( '淡い青', THEME_NAME ),

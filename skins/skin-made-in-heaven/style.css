@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.8.2
+ Version: 2.9.1
  Priority: 6900001000
 */
 
@@ -102,6 +102,10 @@
 **        2.8.0   2024-05-29  仕様変更
 **        2.8.1   2024-06-03  改善
 **        2.8.2   2024-06-04  バグ対策
+**        2.9.0   2024-06-15  目次省略表示を追加
+**                            タイムラインのタイトルHTMLタグ変更
+**                            FAQの質問HTMLタグ変更
+**        2.9.1   2024-06-16  バグ対策
 **
 *******************************************************************************/
 
@@ -326,8 +330,13 @@ pre::-webkit-scrollbar,
   height: 10px;
 }
 
+.hvn-content-wrap::-webkit-scrollbar {
+  width: 10px;
+}
+
 pre::-webkit-scrollbar-thumb,
-.scrollable-table::-webkit-scrollbar-thumb {
+.scrollable-table::-webkit-scrollbar-thumb,
+.hvn-content-wrap::-webkit-scrollbar-thumb {
   background-color: #ccc;
 }
 
@@ -566,7 +575,7 @@ img {
 
 .body .recommended.rcs-card-margin .a-wrap {
   margin: 0!important;
-  max-width: calc((100% - var(--gap30) * (var(--column) - 1)) / var(--column));
+  max-width: calc((100% - var(--gap) * (var(--column) - 1)) / var(--column));
 }
 
 .body .large-thumb-on .a-wrap figure {
@@ -1248,6 +1257,10 @@ span.fas.fa-history:before {
   font-size: 16px;
   margin-bottom: var(--gap30);
   padding: 0 0 var(--padding15);
+}
+
+.main .toc-list {
+  margin-bottom: 0;
 }
 
 .toc .toc-list ul {
@@ -3580,6 +3593,11 @@ blockquote:before,
 
 /* FAQ */
 
+.faq-question {
+  margin-bottom: var(--gap30);
+  align-items: unset;
+}
+
 .faq-wrap:not(.is-style-square, .is-style-accordion) {
   --cocoon-custom-border-color: transparent;
 }
@@ -3591,6 +3609,7 @@ blockquote:before,
 .body .faq .faq-item-label {
   font-size: 16px!important;
   font-weight: bold;
+  height: 100%;
   margin-right: 0.5em;
   padding: 0!important;
   text-align: center;
@@ -3684,6 +3703,28 @@ div.search-form {
 
 .timeline-item:last-of-type .timeline-item-content {
   padding-bottom: var(--padding15);
+}
+
+.body .faq .faq-question-content,
+.body .timeline .timeline-item-title {
+  background: unset;
+  border: 0;
+  box-shadow: unset;
+  color: unset!important;
+  display: block;
+  font-size: unset;
+  line-height: unset;
+  margin: unset;
+  min-height: unset;
+  outline: unset;
+  padding: 0!important;
+  position: relative;
+  text-align: unset;
+}
+
+.body .timeline .timeline-item-title:before,
+.body .timeline .timeline-item-title:after {
+  content: none;
 }
 
 
