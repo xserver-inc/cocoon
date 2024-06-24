@@ -105,7 +105,7 @@ class CTABoxWidgetItem extends WP_Widget {
     <?php //見出し ?>
     <p>
       <label for="<?php echo $this->get_field_id('heading'); ?>">
-        <?php _e( 'CTA見出し', THEME_NAME ) ?>
+        <?php _e( '見出し', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('heading'); ?>" name="<?php echo $this->get_field_name('heading'); ?>" type="text" value="<?php echo $heading; ?>" />
     </p>
@@ -137,7 +137,7 @@ class CTABoxWidgetItem extends WP_Widget {
     <?php //メッセージ?>
     <p>
       <label for="<?php echo $this->get_field_id('message'); ?>">
-        <?php _e( 'CTAメッセージ', THEME_NAME ) ?>
+        <?php _e( 'メッセージ', THEME_NAME ) ?>
       </label>
       <textarea class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" cols="20" rows="6"><?php echo $message; ?></textarea>
       <input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox"<?php checked( $filter ); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e( '自動的に段落を追加する', THEME_NAME ) ?></label>
@@ -145,21 +145,21 @@ class CTABoxWidgetItem extends WP_Widget {
     <?php //ボタンテキスト ?>
     <p>
       <label for="<?php echo $this->get_field_id('button_text'); ?>">
-        <?php _e( 'CTAボタンテキスト', THEME_NAME ) ?>
+        <?php _e( 'ボタンテキスト', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('button_text'); ?>" name="<?php echo $this->get_field_name('button_text'); ?>" type="text" value="<?php echo $button_text; ?>" />
     </p>
     <?php //ボタンURL ?>
     <p>
       <label for="<?php echo $this->get_field_id('button_url'); ?>">
-        <?php _e( 'CTAボタンURL', THEME_NAME ) ?>
+        <?php _e( 'ボタンURL', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('button_url'); ?>" name="<?php echo $this->get_field_name('button_url'); ?>" type="text" value="<?php echo $button_url; ?>" />
     </p>
     <?php //ボタン色 ?>
     <p>
       <label for="<?php echo $this->get_field_id('button_color_class'); ?>">
-        <?php _e( 'CTAボタン色', THEME_NAME ) ?>
+        <?php _e( 'ボタン色', THEME_NAME ) ?>
       </label><br>
       <?php
       $options = array(

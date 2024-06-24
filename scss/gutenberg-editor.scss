@@ -1466,3 +1466,22 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .article{
   margin-bottom: 0 !important;
 }
+
+//CTAブロック
+// .cta-base-control{
+//   position: relative;
+// }
+.cta-btn-group{
+  display: flex;
+  gap: 6px;
+  // padding: 12px;
+  // position: absolute;
+  // width: 100%;
+  // bottom: 0;
+  .cta-btn{
+    width: 100%;
+    justify-content: center;
+    // background-color: #fff;
+    // opacity: 0.99;
+  }
+}
