@@ -221,6 +221,7 @@ switch($no) {
     echo <<< EOF
 .blank-box.bb-tab,
 .tab-caption-box-content {
+  margin-top: calc(var(--gap30) + 12.5px);
   padding-top: calc(var(--padding15) + 12.5px);
 }
 
