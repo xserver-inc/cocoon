@@ -73,10 +73,13 @@ body:not(:has(#_customize-input-hvn_comment_setting:checked)) [id*="customize-co
   display: none;
 }
 
+
 /* タイトル */
+
 body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="customize-control-hvn_title"] {
   display: none;
 }
+
 
 /*******************************************************************************
 **  エラー表示
@@ -86,7 +89,6 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
 /* カラーピッカー */
 
 .wp-color-picker.iris-error,
-
 [id*="_customize-input-hvn_"]:invalid {
   animation: shake-x 1s;
   background-color: rgba(255 0 0 / 0.2);
@@ -131,6 +133,7 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
 /*******************************************************************************
 **  エディター
 *******************************************************************************/
+
 [id*="customize-control-hvn_rich_text_color"],
 [id*="customize-control-hvn_marker_color"],
 [id*="customize-control-hvn_badge_color"],
@@ -165,6 +168,10 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
 
 /* 投稿、固定ページ一覧ステータス */
 
+.wp-admin.post-type-post .status-sticky {
+  background-color: #F1F8E9;
+}
+
 .wp-admin.post-type-post .status-future,
 .wp-admin.post-type-page .status-future {
   background-color: #E0F7FA;
@@ -173,10 +180,6 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
 .wp-admin.post-type-post .status-draft,
 .wp-admin.post-type-page .status-draft {
   background-color: #FFEBEE;
-}
-
-.wp-admin.post-type-post .status-sticky {
-  background-color: #F1F8E9;
 }
 
 

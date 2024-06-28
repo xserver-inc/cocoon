@@ -143,23 +143,26 @@ add_action('quick_edit_custom_box', function($column_name, $post_type) {
     $print_nonce = FALSE;
     wp_nonce_field('quick_edit_action', $post_type . '_edit_nonce'); //CSRF対策
   }
-?>
+  switch($column_name) {
+    case 'the_page_meta_description':
+    ?>
 <fieldset class="inline-edit-col-right inline-custom-meta">
-  <div class="inline-edit-col column-<?php echo $column_name ?>">
+  <div class="inline-edit-col column-column-memo">
     <label class="inline-edit-group">
-    <?php
-      switch($column_name) {
-        case 'the_page_meta_description':
-    ?>
-    <span class="title">メタディスクリプション</span><span class="str-count">文字数:<span class="meta-description-count">0</span></span><textarea name="the_page_meta_description"></textarea>
-    <?php
-          break;
-      }
-    ?>
+      <span class="title">メモ</span>
+      <textarea name="the_page_memo"></textarea>
+    </label>
+  </div>
+  <div class="inline-edit-col column-the_page_meta_descriptio">
+    <label class="inline-edit-group">
+      <span class="title">メタディスクリプション</span><span class="str-count">文字数:<span class="meta-description-count">0</span></span>
+      <textarea name="the_page_meta_description"></textarea>
     </label>
   </div>
 </fieldset>
-<?php
+    <?php
+          break;
+      }
 }, 10, 2);
 
 
@@ -187,6 +190,11 @@ add_action('admin_footer-edit.php', function() {
       var $edit_row = $('#edit-' + $post_id);
       var $post_row = $('#post-' + $post_id);
 
+      // メモ
+      var $memo = $('.column-memo', $post_row ).html();
+      $(':input[name="the_page_memo"]', $edit_row ).val($memo)
+
+      // ディスクリプション
       $elm = $(':input[name="the_page_meta_description"]',$edit_row);
 
       var $the_page_meta_description = $('.column-the_page_meta_description', $post_row).html();
@@ -225,6 +233,10 @@ add_action('save_post', function($post_id) {
   $_POST += array("{$slug}_edit_nonce" => '');
   if (!wp_verify_nonce($_POST["{$slug}_edit_nonce"], 'quick_edit_action')) {
     return;
+  }
+
+  if ( isset( $_REQUEST['the_page_memo'] ) ) {
+    update_post_meta( $post_id, 'the_page_memo', $_REQUEST['the_page_memo']);
   }
 
   if ( isset( $_REQUEST['the_page_meta_description'] ) ) {
