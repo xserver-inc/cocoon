@@ -126,7 +126,7 @@ class CTABoxWidgetItem extends WP_Widget {
     <?php //画像 ?>
     <p>
       <label for="<?php echo $this->get_field_id('image_url'); ?>">
-        <?php _e( 'CTA画像（選択ボタンが動作しない場合は再読み込み）', THEME_NAME ) ?>
+        <?php _e( '画像（選択ボタンが動作しない場合は再読み込み）', THEME_NAME ) ?>
       </label><br>
 
       <?php

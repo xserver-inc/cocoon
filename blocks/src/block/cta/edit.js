@@ -53,7 +53,7 @@ export default function edit( props ) {
     return;
   }
 
-  // CTA画像削除
+  // 画像削除
   const onRemoveImage = () => {
     setAttributes( {
       mediaId: '',
@@ -61,7 +61,7 @@ export default function edit( props ) {
     } );
   };
 
-  // CTA画像選択
+  // 画像選択
   const onSelectImage = ( media ) => {
     setAttributes( { mediaId: String( media.id ), image: media.url } );
   };
@@ -182,17 +182,17 @@ export default function edit( props ) {
                 { label: __( '紫色', THEME_NAME ), value: 'btn-purple' },
                 { label: __( '深紫', THEME_NAME ), value: 'btn-deep' },
                 {
-                  label: __( '紺色(インディゴ)', THEME_NAME ),
+                  label: __( '紺色（インディゴ）', THEME_NAME ),
                   value: 'btn-indigo',
                 },
                 { label: __( '青色', THEME_NAME ), value: 'btn-blue' },
                 { label: __( '水色', THEME_NAME ), value: 'btn-light-blue' },
                 {
-                  label: __( '明るい青(シアン)', THEME_NAME ),
+                  label: __( '明るい青（シアン）', THEME_NAME ),
                   value: 'btn-cyan',
                 },
                 {
-                  label: __( '緑色がかった青(ティール)', THEME_NAME ),
+                  label: __( '緑色がかった青（ティール）', THEME_NAME ),
                   value: 'btn-teal',
                 },
                 { label: __( '緑色', THEME_NAME ), value: 'btn-green' },
@@ -203,7 +203,7 @@ export default function edit( props ) {
                 { label: __( 'ライム', THEME_NAME ), value: 'btn-lime' },
                 { label: __( '黄色', THEME_NAME ), value: 'btn-yellow' },
                 {
-                  label: __( '琥珀色(アンバー)', THEME_NAME ),
+                  label: __( '琥珀色（アンバー）', THEME_NAME ),
                   value: 'btn-amber',
                 },
                 { label: __( 'オレンジ', THEME_NAME ), value: 'btn-orange' },

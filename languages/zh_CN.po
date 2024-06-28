@@ -11558,7 +11558,7 @@ msgid "メッセージ・画像を左右に配置"
 msgstr ""
 
 #: lib/widgets/cta-box.php:129
-msgid "CTA画像（選択ボタンが動作しない場合は再読み込み）"
+msgid "画像（選択ボタンが動作しない場合は再読み込み）"
 msgstr ""
 
 #: lib/widgets/cta-box.php:148
@@ -13316,19 +13316,19 @@ msgid "置換"
 msgstr ""
 
 #: blocks/src/block/cta/edit.js:185
-msgid "紺色(インディゴ)"
+msgid "紺色（インディゴ）"
 msgstr ""
 
 #: blocks/src/block/cta/edit.js:191
-msgid "明るい青(シアン)"
+msgid "明るい青（シアン）"
 msgstr ""
 
 #: blocks/src/block/cta/edit.js:195
-msgid "緑色がかった青(ティール)"
+msgid "緑色がかった青（ティール）"
 msgstr ""
 
 #: blocks/src/block/cta/edit.js:206
-msgid "琥珀色(アンバー)"
+msgid "琥珀色（アンバー）"
 msgstr ""
 
 #: blocks/src/block/cta/index.js:21
