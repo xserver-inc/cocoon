@@ -29,7 +29,7 @@ function is_internal_blogcard_url($url){
   $cat = get_category_by_path($url, false);
   $tag = url_to_tag_object($url);
 
-  if ($id || is_home_url($url) || $cat || $tag) {
+  if (($id && get_post_status($id)) || is_home_url($url) || $cat || $tag) {
     return true;
   }
 }

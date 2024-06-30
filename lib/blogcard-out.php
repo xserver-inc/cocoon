@@ -15,7 +15,7 @@ function url_to_external_blog_card_tag($url){
   //サイトの内部リンクは処理しない場合（※wpForoページは外部リンクとして処理する）
   if ( includes_home_url($url) && !includes_wpforo_url($url) ) {
     $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換
-    if ( $id ) {//IDを取得できる場合はループを飛ばす
+    if ( $id && get_post_status($id) ) {//IDを取得できる場合はループを飛ばす
       return;
     }//IDが取得できない場合は外部リンクとして処理する
   }
