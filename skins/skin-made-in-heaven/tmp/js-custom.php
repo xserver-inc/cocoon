@@ -378,9 +378,7 @@ echo <<< EOF
 
   $(window).resize(function() {
     // メニュー解除
-    if ($('#navi-menu-input').prop("checked")) {
-      $('#navi-menu-input').prop("checked", false);
-    }
+    $('#navi-menu-input').prop("checked", false);
     setHeight();
   });
 
@@ -619,7 +617,7 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
   }
   $('.hvn-open-btn').addClass('active');
   $('#hvn-toc a').click(function() {
-    $('#hvn-close').prop('checked',true);
+    $('#hvn-close').prop('checked', true);
   });
 })(jQuery);
 

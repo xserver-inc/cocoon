@@ -260,37 +260,6 @@ EOF;
 //******************************************************************************
 
 //******************************************************************************
-//  bodyカラー変更
-//******************************************************************************
-
-if (!get_theme_mod('hvn_border_setting', true)) {
-  echo <<< EOF
-.body .list .e-card {
-  background-color: transparent;
-  border-radius: 0;
-  padding: 0;
-  overflow: unset;
-}
-
-.body .list:is(.list.big-card, .ect-big-card) {
-  background-color: transparent;
-  padding: 0;
-}
-
-EOF;
-  if (!get_theme_mod('hvn_border_radius_setting')) {
-    echo <<< EOF
-.body .list .e-card .card-thumb {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-EOF;
-  }
-}
-
-
-//******************************************************************************
 //  footerカラー変更
 //******************************************************************************
 $color = get_footer_background_color();
@@ -389,6 +358,38 @@ if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') !
   top: 0;
   width: 100vw;
   z-index: 9999;
+}
+
+EOF;
+  }
+}
+
+
+//******************************************************************************
+//  カード枠
+//******************************************************************************
+
+if (!get_theme_mod('hvn_border_setting', true)) {
+  echo <<< EOF
+.front-top-page .ect-big-card-first .a-wrap:first-child .e-card,
+.body .list .e-card {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  overflow: unset;
+}
+
+.body .list:is(.list.big-card, .ect-big-card) {
+  background-color: transparent;
+  padding: 0;
+}
+
+EOF;
+  if (!get_theme_mod('hvn_border_radius_setting')) {
+    echo <<< EOF
+.body .list .e-card .card-thumb {
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 EOF;
@@ -1094,20 +1095,39 @@ EOF;
 if (defined('HVN_OPTION') && HVN_OPTION) {
 
 //******************************************************************************
-//  余白を変更
+//  カード枠
 //******************************************************************************
-  if (get_theme_mod('hvn_margin_option_setting')) {
+  if (!get_theme_mod('hvn_border_setting', true)) {
     echo <<< EOF
 .body.error404 .main,
 .body.page .main,
 .body.single .main,
 .archive .entry-content,
-.menu-content .menu-drawer,
-.body :where(.content, .sidebar, .footer) .widget {
+.body aside.widget:not(.widget_search) {
   --main-padding: 5px;
+  --white-bgcolor: var(--body-color);
+}
+
+.body .footer aside.widget:not(.widget_search) {
+  --white-bgcolor: transparent;
+}
+
+.body .nwa .widget_author_box .author-box {
+  --main-padding: var(--padding15);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
 }
 
 EOF;
+    if (!get_theme_mod('hvn_border_radius_setting')) {
+      echo <<< EOF
+.widget:not(:has(.border-square, .large-thumb)) .card-thumb,
+.widget .large-thumb-on .card-content {
+  border-radius: 10px;
+}
+
+EOF;
+    }
   }
 
 
@@ -1129,14 +1149,6 @@ EOF;
 
 .hvn-dark .orderby .sort-select {
   background-color: transparent;
-}
-
-.orderby select {
-  background-color: unset;
-  color: var(--cocoon-text-color);
-  display: block;
-  outline: 0;
-  width: fit-content;
 }
 
 .sort-title {

@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.10.0
+ Version: 2.11.0
  Priority: 6900001000
 */
 
@@ -108,7 +108,8 @@
 **        2.9.1   2024-06-16  バグ対策
 **        2.9.2   2024-06-25  バグ対策
 **        2.9.3   2024-06-26  改善
-**        2.10.0  2024-07-28  クイック編集にメモ追加
+**        2.10.0  2024-06-28  クイック編集にメモ追加
+**        2.11.0  2024-06-30  仕様変更
 **
 *******************************************************************************/
 
@@ -144,7 +145,7 @@
   --column: 1;
   --swiper: 2;
   --title-line: 2;
-  --shadow-color: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-color: 0 0 3px rgba(0, 0, 0, 0.2);
   --thumb-width: 120px;
   --main-padding: var(--gap30);
   --padding15: 15px;
@@ -156,6 +157,10 @@
 .recommended {
   --column: 3;
   --gap: var(--padding15);
+}
+
+.main .toc {
+  --main-padding: var(--gap30);
 }
 
 
@@ -249,7 +254,8 @@
 }
 
 @media (width <=480px) {
-   :root {
+   :root,
+  .main .toc {
     --main-padding: 15px;
   }
   .recommended,
@@ -2892,11 +2898,13 @@ aside.widget .widget-title {
 **  アーカイブ、カテゴリー
 *******************************************************************************/
 
-.widget select {
-  background-color: unset;
-  color: var(--cocoon-text-color);
+select {
+  background-color: #fff;
+  color: #333;
   display: block;
+  height: 46px;
   outline: 0;
+  padding: 10px;
 }
 
 .body .widget_archive li,

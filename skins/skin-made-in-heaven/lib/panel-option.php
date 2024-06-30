@@ -23,21 +23,6 @@ function hvn_option($wp_customize) {
   // コントロール
   hvn_panel_label($wp_customize, $section, '全体', 1);
 
-  $wp_customize->add_setting('hvn_margin_option_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_margin_option_setting',
-      array(
-        'label'     => '余白を変更',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_margin_option_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
   $wp_customize->add_setting('hvn_orderby_option_setting', array('default' => false));
   $wp_customize->add_control(
     new WP_Customize_Control(
