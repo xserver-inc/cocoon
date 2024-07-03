@@ -23,7 +23,14 @@ if ( !function_exists( 'get_the_nolink_categories' ) ):
 function get_the_nolink_categories(){
   $categories = null;
   foreach((get_the_category()) as $category){
-    $categories .= '<span class="entry-category">'.$category->cat_name.'</span>';
+    $id = $category->term_id;
+    $classes = array(
+      'entry-category',
+      'cat-label-'.$id,
+    );
+    $classes = apply_filters( 'nolink_category_label_classes', $classes, $category );
+    $implode_class = implode(' ', $classes);
+    $categories .= '<span class="'.$implode_class.'">'.$category->cat_name.'</span>';
   }
   return $categories;
 }

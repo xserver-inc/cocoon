@@ -9456,6 +9456,10 @@ https://codepen.io/nxworld/pen/oLdoWb
   border-color: var(--cocoon-three-d-border-colors);
   border-radius: var(--cocoon-basic-border-radius);
 }
+.info-list .info-list-item-categorys .cat-label {
+  border: 0;
+  position: relative;
+}
 
 .info-list-caption {
   text-align: center;

@@ -8750,6 +8750,10 @@ body.wp-admin {
   border-color: var(--cocoon-three-d-border-colors);
   border-radius: var(--cocoon-basic-border-radius);
 }
+.admin-settings .demo .info-list .info-list-item-categorys .cat-label {
+  border: 0;
+  position: relative;
+}
 .admin-settings .demo .info-list-caption {
   text-align: center;
 }
@@ -17244,6 +17248,10 @@ body.wp-admin {
   border: 1px solid;
   border-color: var(--cocoon-three-d-border-colors);
   border-radius: var(--cocoon-basic-border-radius);
+}
+.admin-settings .demo .info-list .info-list-item-categorys .cat-label {
+  border: 0;
+  position: relative;
 }
 .admin-settings .demo .info-list-caption {
   text-align: center;
