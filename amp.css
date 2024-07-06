@@ -8618,7 +8618,13 @@ ul.timeline ul ul ul {
 .is-style-accordion {
   padding: 0;
 }
-.is-style-accordion .faq-question {
+.is-style-accordion.has-border-color .faq-question {
+  border: none;
+}
+.is-style-accordion:not(.not-nested-style).has-border-color .faq-question {
+  color: var(--cocoon-white-color);
+}
+.is-style-accordion > .faq > .faq-question {
   padding: 0.5em;
   margin: 0;
   cursor: pointer;
@@ -8626,23 +8632,17 @@ ul.timeline ul ul ul {
   background-color: #e8ecef;
   border-color: var(--cocoon-three-d-border-colors);
 }
-.is-style-accordion .faq-question::before {
+.is-style-accordion > .faq > .faq-question::before {
   content: "+";
   position: absolute;
   right: 1em;
   opacity: 0.5;
 }
-.is-style-accordion .faq-question.active::before {
+.is-style-accordion > .faq > .faq-question.active::before {
   content: "-";
 }
-.is-style-accordion .faq-answer {
+.is-style-accordion > .faq > .faq-answer {
   padding: 1em 0.5em;
-}
-.is-style-accordion.has-border-color .faq-question {
-  border: none;
-}
-.is-style-accordion:not(.not-nested-style).has-border-color .faq-question {
-  color: var(--cocoon-white-color);
 }
 
 .faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-item-label {
