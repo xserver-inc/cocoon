@@ -5871,7 +5871,7 @@ div.cocoon-render-dropdown select option[disabled] {
 }
 
 div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .editor-styles-wrapper.font-awesome-5 .card-arrow .a-wrap::after {
