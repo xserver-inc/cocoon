@@ -1485,3 +1485,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     // opacity: 0.99;
   }
 }
+
+//ブロックエディターの余白をクリックしても「+」ボタンが表示されない不具合修正
+.editor-styles-wrapper{
+  padding-bottom: 10vh;
+}
