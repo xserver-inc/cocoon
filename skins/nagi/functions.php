@@ -50,7 +50,10 @@ function insert_custom_fields($post)
     $cta_layout = 'cta_v'; 
   }
 ?>
-  <label for="fix_link">アフィリエイトタグのショートコード（こちらが入力されていないとフッター固定CTAは表示されません）</label>
+<p>※この機能についての<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-fix-cta/">詳しい説明はこちら</a></p>
+  <label for="fix_link">アフィリエイトタグのショートコード（こちらが入力されていないとフッター固定CTAは表示されません）
+</br>アフィリエイトのタグは＜a＞タグで囲まれたものに限られます
+  </label>
   <input id="fix_link" type="text" name="fix_link" value="<?php echo $fix_link; ?>"placeholder="アフィリエイトタグのショートコードをここへ入力してください">
   <br>
   <label for="fix_microcopy">マイクロコピー</label>
@@ -222,3 +225,6 @@ function nagi_enqueue_accordion_assets() {
         });
     }
 }
+
+//カルーセル
+add_filter('cocoon_setting_preview_carousel', '__return_false');
