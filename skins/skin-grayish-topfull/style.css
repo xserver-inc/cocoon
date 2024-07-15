@@ -7,7 +7,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 1.1.0
+  Version: 1.1.1
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -3828,16 +3828,16 @@ blockquote cite {
 
 
 
-.skin-grayish .cta-box {
+.cta-box {
   color: var(--skin-grayish-site-name-txt);
   background-color: var(--LtGray_T70);
 }
 
-.skin-grayish .cta-box .cta-heading {
+.cta-box .cta-heading {
   font-weight: 400;
 }
 
-.skin-grayish .cta-button .btn {
+.cta-button .btn {
   color: var(--skin-grayish-site-name-txt);
   font-weight: 400;
   background-color: var(--white);
@@ -3845,13 +3845,8 @@ blockquote cite {
   border: solid 1px var(--LtGray_T30);
 }
 
-.skin-grayish .cta-button .btn:hover {
-  color: var(--white);
-  background-color: var(--skin-grayish-cat-back);
-  border: solid 1px var(--skin-grayish-cat-back);
-}
 
-.skin-grayish .cta-button .btn::after {
+.cta-button .btn::after {
   display: none;
 }
 
@@ -4067,6 +4062,12 @@ blockquote cite {
 .footer .cta-button .btn {
   background-color: var(--LtGray_T70);
   border: solid 1px var(--LtGray_T70);
+}
+
+.cta-button .btn:hover {
+  color: var(--white);
+  background-color: var(--skin-grayish-cat-back);
+  border: solid 1px var(--skin-grayish-cat-back);
 }
 
 
