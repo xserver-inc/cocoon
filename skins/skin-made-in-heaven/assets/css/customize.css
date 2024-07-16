@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+/*******************************************************************************
+**
+**  カスタマイザー
+**
+*******************************************************************************/
+
+#customize-theme-controls #accordion-panel-hvn_cocoon .accordion-section-title:before {
+  color: #e589a2;
+  content: '\f487';
+  font-family: 'dashicons';
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.wp-customizer #_customize-input-entry_card_type,
+.wp-customizer #_customize-input-front_page_type,
+.wp-customizer select[id*="-hvn_"] {
+  max-width: unset;
+}
+
+
+/*******************************************************************************
+**  ラジオボタン
+*******************************************************************************/
+
+[id*="section-hvn"] .wp-color-result-text,
+[id*="section-hvn"] .color-picker-hex,
+[id*="section-hvn"] select,
+[id*="section-hvn"] input,
+[id*="section-hvn"] button {
+  border-radius: 0!important;
+}
+
+[id*="section-hvn"] .customize-control-radio {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[id*="section-hvn"] .customize-control-radio .description {
+  width: 100%;
+}
+
+[id*="section-hvn"] .customize-control-radio .customize-inside-control-row {
+  margin: 0;
+}
+
+[id*="section-hvn"] .customize-control-radio input {
+  display: none;
+}
+
+[id*="section-hvn"] .customize-control-radio label {
+  box-shadow: inset 1px 1px 0 0 #007cba, 1px 1px 0 0 #007cba, 1px 0 0 0 #007cba, 0 1px 0 0 #007cba;
+  color: #007cba;
+  padding: 5px 10px;
+}
+
+[id*="section-hvn"] .customize-control-radio input:checked ~ label {
+  background-color: #007cba;
+  color: #fff;
+}
+
+
+/*******************************************************************************
+**  アコーディオン表示項目
+*******************************************************************************/
+
+
+/* コメント */
+
+body:not(:has(#_customize-input-hvn_comment_setting:checked)) [id*="customize-control-hvn_comment_img"] {
+  display: none;
+}
+
+
+/* タイトル */
+
+body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="customize-control-hvn_title"] {
+  display: none;
+}
+
+
+/*******************************************************************************
+**  エラー表示
+*******************************************************************************/
+
+
+/* カラーピッカー */
+
+.wp-color-picker.iris-error,
+[id*="_customize-input-hvn_"]:invalid {
+  animation: shake-x 1s;
+  background-color: rgb(255 0 0 / 20%);
+  border-color: red;
+}
+
+@keyframes shake-x {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-4px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(4px);
+    ;
+  }
+}
+
+
+/*******************************************************************************
+**  見出し
+*******************************************************************************/
+
+.customize-control-hidden label {
+  background-color: #fff;
+  border-bottom: 1px solid #dcdcde;
+  border-top: 1px solid #dcdcde;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 15px calc(50% - 50vw);
+  padding: 10px calc(50vw - 50%);
+  width: 100%;
+}
+
+
+/*******************************************************************************
+**  エディター
+*******************************************************************************/
+
+[id*="customize-control-hvn_rich_text_color"],
+[id*="customize-control-hvn_marker_color"],
+[id*="customize-control-hvn_badge_color"],
+[id*="customize-control-hvn_inline_button_color"] {
+  display: flex;
+  gap: 15px;
+}
+
+[id*="customize-control-hvn_badge_color"] .description {
+  width: 55px;
+}

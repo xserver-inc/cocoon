@@ -56,7 +56,7 @@ endif;
 
 
 //******************************************************************************
-//  カラーコードを%薄いRBG、HEXコード変換
+//  カラーコードを%薄いRGB、HEXコード変換
 //******************************************************************************
 if (!function_exists('hvn_color_mix_rgb')):
 function hvn_color_mix_rgb($color, $per) {
@@ -119,7 +119,7 @@ function hvn_color_css() {
     $css .= "--main-color: {$main_color};";
 
     $rgb = colorcode_to_rgb($main_color);
-    $css .= "--main-rgb-color: {$rgb['red']}, {$rgb['green']}, {$rgb['blue']};";
+    $css .= "--main-rgb-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};";
 
     $rgb = hvn_color_mix_rgb($main_color, 0.15);
     $css .= "--hover-color: {$rgb['hex']};";
@@ -143,7 +143,7 @@ function hvn_color_css() {
     $rgb = colorcode_to_rgb($body_color);
     $css .= "--title-color: {$title_color};";
     $css .= "--body-color: {$body_color};";
-    $css .= "--body-rgb-color: {$rgb['red']}, {$rgb['green']}, {$rgb['blue']};";
+    $css .= "--body-rgb-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};";
   }
 
   // プロフィール背景画像
@@ -322,10 +322,10 @@ function hvn_wave($class = null) {
       <path id="wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
     </defs>
     <g class="parallax">
-      <use xlink:href="#wave" x="48" y="0" style="fill:rgba(var(--body-rgb-color),0.7)"></use>
-      <use xlink:href="#wave" x="48" y="3" style="fill:rgba(var(--body-rgb-color),0.5)"></use>
-      <use xlink:href="#wave" x="48" y="5" style="fill:rgba(var(--body-rgb-color),0.3)"></use>
-      <use xlink:href="#wave" x="48" y="7" style="fill:rgba(var(--body-rgb-color),1.0)"></use>
+      <use xlink:href="#wave" x="48" y="0" style="fill:rgb(var(--body-rgb-color) / 70%)"></use>
+      <use xlink:href="#wave" x="48" y="3" style="fill:rgb(var(--body-rgb-color) / 50%)"></use>
+      <use xlink:href="#wave" x="48" y="5" style="fill:rgb(var(--body-rgb-color) / 30%)"></use>
+      <use xlink:href="#wave" x="48" y="7" style="fill:rgb(var(--body-rgb-color) / 100%)"></use>
     </g>
   </svg>
 </div>

@@ -12,15 +12,27 @@ echo <<< EOF
   visibility: hidden;
 }
 
-.hvn-dark {
-  --appeal-bgcolor: 51, 51, 51;
-  --body-rgb-color: 51, 51, 51;
-  --body-color: #333;
-  --cocoon-text-color: #ccc;
-  --gray-bgcolor: #555;
-  --hover-color: rgba(255, 255, 255, 0.2);
-  --title-color: var(--cocoon-text-color);
-  --white-bgcolor: #444;
+.body .is-auto-horizontal {
+  --swiper-pagination-bullet-inactive-color: var(--title-color);
+}
+
+.body.hvn-card-border .is-auto-horizontal {
+  --swiper-pagination-bullet-inactive-color: var(--dark-text-color, #333);
+}
+
+.body.hvn-dark {
+  --body-rgb-color: 51 51 51;
+
+  --dark-body-color: #333;
+  --dark-content-bgcolor: #444;
+  --dark-footer-color: #666;
+  --dark-category-color: 85 85 85;
+  --dark-text-color: #fff;
+
+  --cocoon-text-color: var(--dark-text-color);
+  --content-bgcolor: var(--dark-content-bgcolor);
+  --body-color:var(--dark-body-color);
+  --title-color: var(--dark-text-color);
 }
 
 .hvn-dark .author-thumb img {
@@ -28,20 +40,20 @@ echo <<< EOF
 }
 
 .hvn-dark #footer {
-  background-color: var(--hover-color);
+  background-color: var(--dark-footer-color);
 }
 
 .hvn-dark .footer-bottom,
 .hvn-dark .footer-bottom a,
 .hvn-dark .footer-bottom a:hover {
-  border-color: var(--cocoon-text-color);
-  color: var(--cocoon-text-color);
+  border-color: var(--dark-text-color);
+  color: var(--dark-text-color);
 }
 
 .hvn-dark .navi-footer-in > .menu-footer li,
 .hvn-dark .navi-footer-in > .menu-footer li:last-child,
 .hvn-dark .footer .footer-in .footer-bottom-content {
-  border-color: var(--cocoon-text-color);
+  border-color: var(--dark-text-color);
 }
 
 .hvn-dark-switch {
@@ -66,23 +78,6 @@ echo <<< EOF
 }
 
 EOF;
-
-
-//******************************************************************************
-//  ブログカードスニペット非表示
-//******************************************************************************
-if (!is_entry_card_snippet_visible()) {
-  echo <<< EOF
-.blogcard-title {
-  --title-line: 4;
-}
-
-.body .blogcard-snippet {
-  display: none;
-}
-
-EOF;
-}
 
 
 //******************************************************************************
@@ -186,11 +181,11 @@ echo <<< EOF
 }
 
 .body .index-tab-button {
-  background-color: var(--white-bgcolor);
+  background-color: #fff;
   border: 1px solid var(--main-color);
   border-radius: 0;
   box-shadow: var(--shadow-color);
-  color: var(--cocoon-text-color);
+  color: #333;
   display: grid;
   font-size: var(--cocoon-text-size-s);
   font-weight: unset!important;
@@ -248,7 +243,6 @@ if (is_responsive_table_first_column_sticky_enable()) {
   top: -1px;
   width: 100%;
 }
-
 EOF;
 }
 
@@ -260,46 +254,14 @@ EOF;
 //******************************************************************************
 
 //******************************************************************************
-//  footerカラー変更
+//  ヘッダー背景カラー
 //******************************************************************************
-$color = get_footer_background_color();
-if ($color == null || $color == "#ffffff") {
-  $color = '#ffffff';
-}
 
-if (is_dark_hexcolor($color)) {
-  $color = '#ffffff';
-} else {
-  $color = '#333333';
-}
-
-echo <<< EOF
-.footer-bottom,
-.footer-bottom a,
-.footer-bottom a:hover {
-  border-color: {$color};
-  color: {$color};
-}
-
-.navi-footer-in > .menu-footer li,
-.navi-footer-in > .menu-footer li:last-child,
-.footer .footer-in .footer-bottom-content {
-  border-color: {$color};
-}
-
-.hvn-dark-switch label:before {
-  color: {$color};
-}
-
-EOF;
-
-
-//******************************************************************************
-//  背景カラー(モバイルフッターボタン)変更
-//******************************************************************************
-// 背景カラー
+// モバイルフッタボタン背景カラー
+$text = 'var(--main-color)';
 $color = get_header_background_color();
 if ($color) {
+  $text = '#ffffff';
   echo <<< EOF
 .mobile-menu-buttons {
   background-color: {$color};
@@ -308,19 +270,109 @@ if ($color) {
 EOF;
 }
 
-
-// テキストカラー
+// モバイルフッタボタンテキスト
 $color = get_header_text_color();
 if ($color) {
-  echo <<< EOF
+  $text = $color;
+}
+
+echo <<< EOF
 .mobile-menu-buttons .menu-button > a,
 .mobile-menu-buttons .menu-caption,
 .mobile-menu-buttons .menu-icon{
-  color: {$color};
+  color: {$text};
 }
 
 EOF;
+
+
+//******************************************************************************
+//  フッター背景カラー
+//******************************************************************************
+$text = '#333333';
+$footer_color = get_footer_background_color();
+if ($footer_color == null || $footer_color == "#ffffff") {
+  $footer_color = '#ffffff';
 }
+
+if (is_dark_hexcolor($footer_color)) {
+  $text = '#ffffff';
+}
+
+
+echo <<< EOF
+.footer-bottom,
+.footer-bottom a,
+.footer-bottom a:hover {
+  border-color: {$text};
+  color: {$text};
+}
+
+.navi-footer-in > .menu-footer li,
+.navi-footer-in > .menu-footer li:last-child,
+.footer .footer-in .footer-bottom-content {
+  border-color: {$text};
+}
+
+.hvn-dark-switch label:before {
+  color: {$text};
+}
+
+EOF;
+
+
+//******************************************************************************
+//  カード枠
+//******************************************************************************
+echo <<< EOF
+.body :is(.list, .is-auto-horizontal) .e-card {
+  color: var(--title-color);
+}
+
+.body.hvn-card-border :is(.list, .is-auto-horizontal) .e-card {
+  background-color: var(--dark-content-bgcolor, #fff);
+  border-radius: var(--border-radius10);
+  color: var(--dark-text-color, #333);
+  padding: var(--padding15);
+}
+
+.body:not(.hvn-card-border) :is(.list, .is-auto-horizontal) figure {
+  border-radius: var(--border-radius10);
+}
+
+EOF;
+
+
+//******************************************************************************
+//  コンテンツ枠
+//******************************************************************************
+echo <<< EOF
+.body.hvn-content-border {
+  --content-bgcolor: var(--dark-content-bgcolor, #fff);
+}
+
+.body:not(.hvn-content-border):is(.error404, .page, .single) .main,
+.body:not(.hvn-content-border).archive .entry-content,
+.body:not(.hvn-content-border) .container aside.widget {
+  --main-padding: 5px;
+  --content-bgcolor: var(--dark-body-color, var(--body-color));
+  --cocoon-text-color: var(--title-color);
+  color: var(--cocoon-text-color);
+}
+
+.body:not(.hvn-content-border) .footer aside.widget {
+  --content-bgcolor: var(--dark-footer-color, {$footer_color});
+  --cocoon-text-color: var(--dark-text-color, {$text});
+  color: var(--cocoon-text-color);
+}
+
+.body:not(.hvn-content-border) .nwa .widget_author_box .author-box {
+  --main-padding: var(--padding15);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+}
+
+EOF;
 
 
 //******************************************************************************
@@ -363,43 +415,6 @@ if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') !
 EOF;
   }
 }
-
-
-//******************************************************************************
-//  カード枠
-//******************************************************************************
-
-if (!get_theme_mod('hvn_border_setting', true)) {
-  echo <<< EOF
-.front-top-page .ect-big-card-first .a-wrap:first-child .e-card,
-.body .list .e-card {
-  background-color: transparent;
-  border-radius: 0;
-  padding: 0;
-  overflow: unset;
-}
-
-.body .list:is(.list.big-card, .ect-big-card) {
-  background-color: transparent;
-  padding: 0;
-}
-
-EOF;
-  if (!get_theme_mod('hvn_border_radius_setting')) {
-    echo <<< EOF
-.body .list .e-card .card-thumb {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-EOF;
-  }
-}
-
-
-//******************************************************************************
-//  オリジナルレイアウト
-//******************************************************************************
 
 
 //******************************************************************************
@@ -493,24 +508,24 @@ EOF;
 
   // 大きなカード
   $css4 =<<< EOF
-.list:is(.list.big-card, .ect-big-card) {
-  background-color: var(--white-bgcolor);
-  padding: var(--gap30) var(--main-padding);
+.body.hvn-card-border .list.ect-big-card {
+  background-color: var(--dark-content-bgcolor, #fff);
   border-radius: var(--border-radius10);
+  padding: var(--gap30) var(--main-padding);
 }
 
-.list:is(.list.big-card, .ect-big-card) .a-wrap .entry-card {
+.list.ect-big-card .a-wrap .entry-card {
   border-bottom: 1px dotted var(--border-color);
   border-radius: 0;
   padding: 0 0 var(--gap30) 0;
 }
 
-.list:is(.list.big-card, .ect-big-card) .a-wrap:last-child .entry-card {
+.list.ect-big-card .a-wrap:last-child .entry-card {
   border: 0;
   padding-bottom: 0;
 }
 
-.list:is(.list.big-card, .ect-big-card) .a-wrap:hover img {
+.list.ect-big-card .a-wrap:hover img {
   transform: unset;
 }
 
@@ -563,12 +578,12 @@ if (get_theme_mod('hvn_category_color_setting')) {
 
     echo <<< EOF
 :root {
-  --category-color: {$rgb['red']}, {$rgb['green']}, {$rgb['blue']};
+  --category-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};
 }
 
 .front-top-page.no-sidebar #list-columns {
-  --title-color: #333;
-  background-color: rgb(var(--category-color), 1);
+  --title-color: var(--dark-text-color, #333);
+  background-color: rgb(var(--dark-category-color, var(--category-color)) / 100%);
   margin: 0 calc(50% - 50vw);
   padding: var(--gap30) calc(50vw - 50%);
 }
@@ -577,25 +592,16 @@ if (get_theme_mod('hvn_category_color_setting')) {
   margin-top: 0;
 }
 
-
 .front-top-page.no-sidebar:not(:has(.list-column)) #footer {
   margin-top: var(--gap30);
 }
 
 EOF;
-    if (!get_theme_mod('hvn_border_setting', true)) {
-      echo <<< EOF
-.hvn-dark #list-columns {
-  --cocoon-text-color: #333;
-}
-
-EOF;
-    }
 
     if (get_theme_mod('hvn_header_wave_setting')) {
       echo <<< EOF
 .hvn-wave-category {
-  --body-rgb-color: var(--category-color);
+  --body-rgb-color: var(--dark-category-color, var(--category-color));
   display: block;
   height: 50px;
   margin: 0 calc(50% - 50vw) calc(var(--gap30) * -1);
@@ -610,13 +616,12 @@ EOF;
 
 
 //******************************************************************************
-//  フロントページから新着記事を除外
+//  「新着記事」タブ表示
 //******************************************************************************
-if (get_theme_mod('hvn_front_none_setting')) {
+if (!get_theme_mod('hvn_front_none_setting', true)) {
   echo <<< EOF
 .body .index-tab-button[for="index-tab-1"],
-.body .tab-cont.tb1,
-.body .list-new-entries {
+.body .tab-cont.tb1 {
   display: none;
 }
 
@@ -654,7 +659,7 @@ EOF;
     echo <<< EOF
 .main .toc {
   background-clip: padding-box;
-  background-color: var(--gray-bgcolor);
+  background-color: rgb(204 204 204 / 15%);
   border: 0;
   border-bottom: 4px double var(--border-color);
   border-top: 4px double var(--border-color);
@@ -708,7 +713,7 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
 }
 
 .hvn-content-wrap {
-  background-color: var(--white-bgcolor);
+  background-color: var(--dark-content-bgcolor, #fff);
   border: 0;
   left: 50%;
   max-height: 80%;
@@ -729,7 +734,7 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
 }
 
 .hvn-background {
-  background-color: rgba(0, 0, 0, .50);
+  background-color: rgb(0 0 0 / 50%);
   height: 100%;
   left: 0;
   position: absolute;
@@ -740,9 +745,9 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
 
 .hvn-open-btn {
   align-items: center;
-  background-color: var(--white-bgcolor);
-  border-radius: var(--border-radius100);
+  background-color: #fff;
   border: 1px solid var(--main-color);
+  border-radius: var(--border-radius100);
   bottom: 110px;
   box-shadow: var(--shadow-color);
   color: var(--main-color);
@@ -876,7 +881,7 @@ EOF;
 }
 
 //******************************************************************************
-//  サムネイル16:9変更
+//  サムネイル画像の比率変更
 //******************************************************************************
 if (get_theme_mod('hvn_thumb_option_setting')) {
   echo <<< EOF
@@ -919,33 +924,7 @@ if (get_theme_mod('hvn_swiper_auto_setting')) {
   margin: 0;
 }
 
-.body .content-top .navi-entry-cards.swiper.border-square .e-card,
-.body .content-top .navi-entry-cards.swiper.card-large-image .e-card {
-  border: 0;
-  border-radius: var(--border-radius10);
-}
-
 EOF;
-
-  if (!get_theme_mod('hvn_border_setting', true)) {
-    echo <<< EOF
-.body .content-top .navi-entry-cards.swiper .e-card {
-  background-color: transparent;
-  border-radius: 0;
-  padding: 0;
-}
-
-EOF;
-
-    if (!get_theme_mod('hvn_border_radius_setting')) {
-      echo <<< EOF
-.body .content-top .navi-entry-cards.swiper .e-card .card-thumb {
-  border-radius: 10px;
-}
-
-EOF;
-    }
-  }
 }
 
 
@@ -1095,43 +1074,6 @@ EOF;
 if (defined('HVN_OPTION') && HVN_OPTION) {
 
 //******************************************************************************
-//  カード枠
-//******************************************************************************
-  if (!get_theme_mod('hvn_border_setting', true)) {
-    echo <<< EOF
-.body.error404 .main,
-.body.page .main,
-.body.single .main,
-.archive .entry-content,
-.body aside.widget:not(.widget_search) {
-  --main-padding: 5px;
-  --white-bgcolor: var(--body-color);
-}
-
-.body .footer aside.widget:not(.widget_search) {
-  --white-bgcolor: transparent;
-}
-
-.body .nwa .widget_author_box .author-box {
-  --main-padding: var(--padding15);
-  border: 1px solid var(--border-color);
-  border-radius: 0;
-}
-
-EOF;
-    if (!get_theme_mod('hvn_border_radius_setting')) {
-      echo <<< EOF
-.widget:not(:has(.border-square, .large-thumb)) .card-thumb,
-.widget .large-thumb-on .card-content {
-  border-radius: 10px;
-}
-
-EOF;
-    }
-  }
-
-
-//******************************************************************************
 //  並び替え選択
 //******************************************************************************
   if (get_theme_mod('hvn_orderby_option_setting')) {
@@ -1143,33 +1085,16 @@ EOF;
   justify-content: flex-end;
 }
 
-.orderby .sort-select {
-  background-color: #fff;
-}
-
 .hvn-dark .orderby .sort-select {
   background-color: transparent;
 }
 
 .sort-title {
-  color: var(--cocoon-text-color);
+  color: var(--title-color);
 }
 
 .sort-title i {
   margin-right: 3px;
-}
-
-EOF;
-  }
-
-
-//******************************************************************************
-//  ヘッダーロゴ非表示
-//******************************************************************************
-  if (get_theme_mod('hvn_header_option_setting')) {
-    echo <<< EOF
-.front-top-page .header {
-  display: none;
 }
 
 EOF;
@@ -1186,7 +1111,7 @@ EOF;
     $p_title= get_theme_mod('hvn_title_popular_option_setting' ,'Popular');
     $p_sub  = get_theme_mod('hvn_title_popular_sub_option_setting' ,'本日読まれている記事です');
 
-    $c_title= get_theme_mod('hvn_title_category_option_setting' ,'カテゴリーごと');
+    $c_title= get_theme_mod('hvn_title_category_option_setting','Category');
     $c_sub  = get_theme_mod('hvn_title_category_sub_option_setting' ,'カテゴリーから記事を探す');
 
     echo <<< EOF
@@ -1227,8 +1152,8 @@ EOF;
 .hvn .list-new-entries:after,
 .hvn .list-columns:after {
   color: var(--title-color);
-  font-size: var(--sub-font-size);
   display: block;
+  font-size: var(--sub-font-size);
   position: absolute;
   text-align: center;
   width: 100%;
@@ -1341,6 +1266,19 @@ if (get_theme_mod('hvn_header_wave_setting')) {
   100% {
     transform: translate3d(85px, 0, 0);
   }
+}
+
+EOF;
+}
+
+
+//******************************************************************************
+//  ヘッダーロゴ非表示
+//******************************************************************************
+if (!get_theme_mod('hvn_header_option_setting', true)) {
+  echo <<< EOF
+.front-top-page .header {
+  display: none;
 }
 
 EOF;
@@ -1479,6 +1417,18 @@ EOF;
 EOF;
 }
 
+//******************************************************************************
+//  フォントサイズ
+//******************************************************************************
+$font_size = get_theme_mod('hvn_appea_font_size_setting', 40);
+
+echo <<< EOF
+.hvn-header .message {
+  font-size: {$font_size}px;
+}
+
+EOF;
+
 
 //******************************************************************************
 //  テキスト縦書き
@@ -1504,16 +1454,6 @@ if (get_theme_mod('hvn_header_logo_setting')) {
   echo <<< EOF
 .front-top-page .header {
   display: none;
-}
-
-@media (width <=1023px) {
-  .front-top-page {
-    margin-top:0;
-  }
-
-  .front-top-page .mobile-header-menu-buttons {
-    display:none;
-  }
 }
 
 EOF;
@@ -1558,17 +1498,10 @@ if ($color && $opacity) {
   $color = 'unset';
 }
 
-// 文字サイズ
-$font_size = get_theme_mod('hvn_appea_font_size_setting', 40);
-
 echo <<< EOF
 .hvn-mask {
   background-color: {$color};
   background-image: {$url};
-}
-
-.hvn-header .message {
-  font-size: {$font_size}px;
 }
 
 EOF;

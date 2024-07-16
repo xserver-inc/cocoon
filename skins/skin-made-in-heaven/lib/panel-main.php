@@ -38,59 +38,7 @@ function hvn_main($wp_customize) {
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'フロントページ', 2);
-
-  $wp_customize->add_setting('entry_card_type', array('default' => 'entry_card'));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'entry_card_type',
-      array(
-        'label'     => 'カードタイプ',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'entry_card_type',
-        'type'      => 'select',
-        'choices'   => array(
-          'entry_card'      => 'エントリーカード',
-          'big_card_first'  => '大きなカード(先頭のみ)',
-          'big_card'        => '大きなカード',
-          'vertical_card_2' => '縦型カード2列',
-          'vertical_card_3' => '縦型カード3列',
-        )
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_border_setting', array('default' => true));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_border_setting',
-      array(
-        'label'     => 'カード枠',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_border_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_border_radius_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_border_radius_setting',
-      array(
-        'label'     => 'カード四角',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_border_radius_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
+  hvn_panel_label($wp_customize, $section, '全体', 2);
 
   $wp_customize->add_setting('front_page_type', array('default' => 'index'));
   $wp_customize->add_control(
@@ -114,7 +62,6 @@ function hvn_main($wp_customize) {
   );
 
 
-
   $wp_customize->add_setting('hvn_card_expansion_setting', array('default' => false));
   $wp_customize->add_control(
     new WP_Customize_Control(
@@ -130,13 +77,13 @@ function hvn_main($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_front_none_setting', array('default' => false));
+  $wp_customize->add_setting('hvn_front_none_setting', array('default' => true));
   $wp_customize->add_control(
     new WP_Customize_Control(
       $wp_customize,
       'hvn_front_none_setting',
       array(
-        'label'       => 'フロントページから新着記事を除外',
+        'label'       => '「新着記事」タブ表示',
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_front_none_setting',
         'type'        => 'checkbox',
@@ -175,66 +122,68 @@ function hvn_main($wp_customize) {
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'ボタン', 3);
-
-  $wp_customize->add_setting('hvn_button_more_setting', array(
-    'default' => 'もっと見る',
-    'sanitize_callback' => 'hvn_sanitize_text',
-  ));
+  $wp_customize->add_setting('entry_card_type', array('default' => 'entry_card'));
   $wp_customize->add_control(
     new WP_Customize_Control(
       $wp_customize,
-      'hvn_button_more_setting',
+      'entry_card_type',
       array(
-        'description' => '「もっと見る」テキスト',
-        'section'     => "hvn_{$section}_section",
-        'settings'    => 'hvn_button_more_setting',
-        'type'        => 'text',
-        'input_attrs' => array(
-          'required'  => '',
+        'label'     => 'カードタイプ',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'entry_card_type',
+        'type'      => 'select',
+        'choices'   => array(
+          'entry_card'      => 'エントリーカード',
+          'big_card_first'  => '大きなカード(先頭のみ)',
+          'big_card'        => '大きなカード',
+          'vertical_card_2' => '縦型カード2列',
+          'vertical_card_3' => '縦型カード3列',
         )
       )
     )
   );
 
 
-  $wp_customize->add_setting('hvn_button_next_setting', array(
-    'default' => '次のページ',
-    'sanitize_callback' => 'hvn_sanitize_text',
-  ));
+  $wp_customize->add_setting('hvn_border_radius_setting', array('default' => false));
   $wp_customize->add_control(
     new WP_Customize_Control(
       $wp_customize,
-      'hvn_button_next_setting',
+      'hvn_border_radius_setting',
       array(
-        'description' => '「次のページ」テキスト',
-        'section'     => "hvn_{$section}_section",
-        'settings'    => 'hvn_button_next_setting',
-        'type'        => 'text',
-        'input_attrs' => array(
-          'required'  => '',
-        )
+        'label'     => 'カード四角',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_border_radius_setting',
+        'type'      => 'checkbox',
       )
     )
   );
 
 
-  $wp_customize->add_setting('hvn_breadcrumbs_setting', array(
-    'default' => 'ホーム',
-    'sanitize_callback' => 'hvn_sanitize_text',
-  ));
+  $wp_customize->add_setting('hvn_border_setting', array('default' => true));
   $wp_customize->add_control(
     new WP_Customize_Control(
       $wp_customize,
-      'hvn_breadcrumbs_setting',
+      'hvn_border_setting',
       array(
-        'description' => 'パンくずリストテキスト',
-        'section'     => "hvn_{$section}_section",
-        'settings'    => 'hvn_breadcrumbs_setting',
-        'type'        => 'text',
-        'input_attrs' => array(
-          'required'  => '',
-        )
+        'label'     => 'カード枠',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_border_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_content_setting', array('default' => true));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_content_setting',
+      array(
+        'label'     => 'コンテンツ枠',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_content_setting',
+        'type'      => 'checkbox',
       )
     )
   );
@@ -312,147 +261,6 @@ function hvn_main($wp_customize) {
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'オプション', 5);
-
-  $wp_customize->add_setting('hvn_index_new_setting', array(
-    'default' => 0,
-    'sanitize_callback' => 'hvn_sanitize_number_range',
-  ));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_index_new_setting',
-      array(
-        'description' => 'NEWマーク(0～5日、0はオフ)',
-        'section'     => "hvn_{$section}_section",
-        'settings'    => 'hvn_index_new_setting',
-        'type'        => 'number',
-        'input_attrs' => array(
-          'min'       => 0,
-          'max'       => 5,
-          'required'  => '',
-        )
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_like_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_like_setting',
-      array(
-        'label'     => 'いいねボタン',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_like_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_eyecatch_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_eyecatch_setting',
-      array(
-        'label'     => '縦アイキャッチ背景ぼかし',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_eyecatch_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_swiper_auto_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_swiper_auto_setting',
-      array(
-        'label'     => 'オートプレイ',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_swiper_auto_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_accordion_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_accordion_setting',
-      array(
-        'label'     => 'アコーディオン化',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_accordion_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_notice_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_notice_setting',
-      array(
-        'label'     => '通知エリア固定',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_notice_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $wp_customize->add_setting('hvn_star_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_star_setting',
-      array(
-        'label'     => '評価・ランキングハート',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_star_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
-  $label_array = [
-    'wide'          => '9:6',
-    'golden_ratio'  => '約5:8',
-    'postcard'      => '2:3',
-    'silver_ratio'  => '約5:7',
-    'standard'      => '3:4',
-    'square'        => '1:1'
-  ];
-  $thumb = get_theme_mod('thumbnail_image_type', 'wide');
-  $label = $label_array[$thumb];
-
-  $wp_customize->add_setting('hvn_thumb_option_setting', array('default' => false));
-  $wp_customize->add_control(
-    new WP_Customize_Control(
-      $wp_customize,
-      'hvn_thumb_option_setting',
-      array(
-        'label'     => 'サムネイル画像の比率('. $label . ')に従う',
-        'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_thumb_option_setting',
-        'type'      => 'checkbox',
-      )
-    )
-  );
-
-
   hvn_panel_label($wp_customize, $section, 'プロフィール', 6);
 
   $wp_customize->add_setting('hvn_prof_setting');
@@ -500,13 +308,28 @@ function hvn_main($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_profile_follows_setting', array('default' => false));
+  $wp_customize->add_setting('hvn_profile_btn_setting', array('default' => false));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_profile_btn_setting',
+      array(
+        'label'     => 'プロフィールボタン表示',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_profile_btn_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('hvn_profile_follows_setting', array('default' => true));
   $wp_customize->add_control(
     new WP_Customize_Control(
       $wp_customize,
       'hvn_profile_follows_setting',
       array(
-        'label'     => 'プロフィールのSNSフォローを非表示',
+        'label'     => 'SNSフォロー表示',
         'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_profile_follows_setting',
         'type'      => 'checkbox',

@@ -229,6 +229,9 @@ $_THEME_OPTIONS = array(
   'mobile_header_logo_visible' => 1,
   'slide_in_content_bottom_sidebar_visible' => 0,
 
+// 管理者画面
+  'admin_list_memo_visible' => 1,
+
 // ウィジェット
   'exclude_widget_classes' => [
     'WP_Widget_Media_Audio',

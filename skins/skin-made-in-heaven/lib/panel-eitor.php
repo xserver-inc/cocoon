@@ -15,7 +15,7 @@ function hvn_editor($wp_customize) {
     array(
       'title'     => 'エディター',
       'panel'     => 'hvn_cocoon',
-      'priority'  => 4,
+      'priority'  => 5,
     )
   );
 

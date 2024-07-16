@@ -75,9 +75,9 @@ EOF;
 
 
 //******************************************************************************
-//  フロントページから新着記事を除外
+//  「新着記事」タブ表示
 //******************************************************************************
-if (is_front_top_page() &&  get_theme_mod('hvn_front_none_setting')) {
+if (is_front_top_page() &&  !get_theme_mod('hvn_front_none_setting', true)) {
   echo <<< EOF
 (function($) {
   $('#index-tab-2').prop('checked', true);
@@ -698,3 +698,16 @@ EOF;
 EOF;
     break;
 }
+
+
+//******************************************************************************
+//  タブブロックスクロール表示
+//******************************************************************************
+echo <<< EOF
+(function($){
+  new ScrollHint(".tab-label-group", {
+    suggestClass: 'is-scroll-tab',
+  });
+})(jQuery);
+
+EOF;
