@@ -2490,8 +2490,8 @@ msgid "画像の選択"
 msgstr "Select image"
 
 #: lib/html-forms.php:791
-msgid "トップページのみ"
-msgstr "Homepage only"
+msgid "フロントページのみ"
+msgstr "Front page only"
 
 #: lib/html-forms.php:796
 #: lib/page-settings/sns-follow-forms.php:110

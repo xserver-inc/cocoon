@@ -788,7 +788,7 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   $id = $name.'_'.'is_front_page';
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_front_page" id="'.$id.'" ';
   checked(in_array('is_front_page', $checks));
-  echo '><label for="'.$id.'">' . __( 'トップページのみ', THEME_NAME ) . '</label></li>';
+  echo '><label for="'.$id.'">' . __( 'フロントページのみ', THEME_NAME ) . '</label></li>';
 
   $id = $name.'_'.'is_single';
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_single" id="'.$id.'" ';

@@ -2491,8 +2491,8 @@ msgid "画像の選択"
 msgstr "사진 신택"
 
 #: lib/html-forms.php:791
-msgid "トップページのみ"
-msgstr "탑 페이지만"
+msgid "フロントページのみ"
+msgstr "전면 페이지만"
 
 #: lib/html-forms.php:796
 #: lib/page-settings/sns-follow-forms.php:110

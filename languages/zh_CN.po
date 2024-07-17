@@ -2490,7 +2490,7 @@ msgid "画像の選択"
 msgstr ""
 
 #: lib/html-forms.php:791
-msgid "トップページのみ"
+msgid "フロントページのみ"
 msgstr ""
 
 #: lib/html-forms.php:796
