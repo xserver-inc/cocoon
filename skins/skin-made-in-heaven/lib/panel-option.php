@@ -266,7 +266,7 @@ function hvn_option($wp_customize) {
 
 
     $wp_customize->add_setting('hvn_title_new_option_setting', array(
-      'default' => 'NewPost',
+      'default' => 'New Post',
       'sanitize_callback' => 'hvn_sanitize_text',
     ));
     $wp_customize->add_control(

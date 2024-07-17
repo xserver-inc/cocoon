@@ -110,7 +110,7 @@
 **        2.9.3   2024-06-26  改善
 **        2.10.0  2024-06-28  クイック編集にメモ追加
 **        2.11.0  2024-06-30  仕様変更
-**        2.12.0  2024-07-15  仕様変更
+**        2.12.0  2024-07-17  仕様変更
 **
 *******************************************************************************/
 
@@ -862,7 +862,8 @@ span.fas.fa-history:before {
   position: relative;
 }
 
-.list-columns:not(:has(.list-column)) {
+.front-page-type-category .list-columns:not(:has(.list-column)),
+.list-columns.fpt-columns:not(:has(.list-column)) {
   display: none;
 }
 
@@ -1765,6 +1766,7 @@ span.fas.fa-history:before {
 
 .menu-close-button {
   color: var(--title-color);
+  line-height: 1.4;
 }
 
 .sidebar-menu-close-button .fa-times:before {

@@ -114,7 +114,7 @@ add_filter('the_author_box_description', function($description, $user_id) {
   if (get_theme_mod('hvn_profile_btn_setting')) {
     $url = get_the_author_profile_page_url($user_id);
     if ($url) {
-      $description .= "<div class=hnv-profile-btn><a href={$url}>プロフィール</a></div>";
+      $description .= "<div class=hnv-profile-btn><a href=\"{$url}\">プロフィール</a></div>";
     }
   }
 

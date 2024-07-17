@@ -529,6 +529,12 @@ EOF;
   transform: unset;
 }
 
+.entry-card-snippet {
+  color: var(--s-text-color);
+  line-height: 1.4;
+  margin-top: 5px;
+}
+
 EOF;
 
   // カードタイプ
