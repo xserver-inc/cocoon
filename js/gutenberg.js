@@ -14,13 +14,15 @@
     //ブロックエディターのラップ要素に必要なクラスを追加する
     const wrapClass = '.block-editor-writing-flow';
     // const addClasses = 'cocoon-block-wrap body article admin-page' + gbSettings['siteIconFont'] + gbSettings['pageTypeClass'];
-
     let addClasses = ['cocoon-block-wrap', 'body', 'article', 'admin-page'];
-    if (gbSettings['siteIconFont']) {
-      addClasses.push(gbSettings['siteIconFont'].replace(/\s/g, ""));
-    }
-    if (gbSettings['pageTypeClass']) {
-      addClasses.push(gbSettings['pageTypeClass'].replace(/\s/g, ""));
+
+    if (typeof gbSettings !== 'undefined') {
+      if (gbSettings['siteIconFont']) {
+        addClasses.push(gbSettings['siteIconFont'].replace(/\s/g, ""));
+      }
+      if (gbSettings['pageTypeClass']) {
+        addClasses.push(gbSettings['pageTypeClass'].replace(/\s/g, ""));
+      }
     }
 
     let writingFlow = document.querySelector(wrapClass);
