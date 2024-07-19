@@ -1245,6 +1245,9 @@ body.wp-admin {
 .admin-settings .demo :where(.wp-block-columns.is-layout-flex) {
   gap: 1em;
 }
+.admin-settings .demo .is-layout-flow > * {
+  margin-block-start: 0;
+}
 .admin-settings .demo figure {
   margin: 0;
 }
@@ -9743,6 +9746,9 @@ body.wp-admin {
 }
 .admin-settings .demo :where(.wp-block-columns.is-layout-flex) {
   gap: 1em;
+}
+.admin-settings .demo .is-layout-flow > * {
+  margin-block-start: 0;
 }
 .admin-settings .demo figure {
   margin: 0;

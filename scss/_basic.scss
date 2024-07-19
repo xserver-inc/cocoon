@@ -227,3 +227,8 @@ p.has-background{
 :where(.wp-block-columns.is-layout-flex) {
 	gap: 1em;
 }
+
+//WordPress6.6でカラム内要素の上部に余白がついてしまうのを余白なしに変更
+.is-layout-flow > *{
+  margin-block-start: 0;
+}
