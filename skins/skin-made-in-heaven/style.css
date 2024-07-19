@@ -110,7 +110,7 @@
 **        2.9.3   2024-06-26  改善
 **        2.10.0  2024-06-28  クイック編集にメモ追加
 **        2.11.0  2024-06-30  仕様変更
-**        2.12.0  2024-07-17  仕様変更
+**        2.12.0  2024-07-19  仕様変更
 **
 *******************************************************************************/
 
@@ -966,7 +966,7 @@ span.fas.fa-history:before {
   display: none;
 }
 
-.page-numbers {
+.body .page-numbers {
   background-color: #fff;
   border: 1px solid var(--main-color);
   border-radius: var(--border-radius100);
@@ -3829,8 +3829,10 @@ div.search-form {
 
 .pager-numbers {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
+  margin: var(--gap30) 0;
 }
 
 
