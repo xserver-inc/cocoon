@@ -319,26 +319,7 @@ div.mce-content-body {
   }
 }
 
-/* cocoon/style.css
-textarea{
-  min-height: 260px;
-}
- */
-
-/* wp-admin/css/common.css
-ul{
-    list-style:none;
-}
- */
-
 .wp-block {
-  ul {
-    list-style-type: disc;
-  }
-  li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-  }
   ul ul {
     list-style-type: circle;
   }

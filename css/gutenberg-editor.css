@@ -5193,23 +5193,6 @@ div.mce-content-body {
   min-height: auto;
 }
 
-/* cocoon/style.css
-textarea{
-  min-height: 260px;
-}
- */
-/* wp-admin/css/common.css
-ul{
-    list-style:none;
-}
- */
-.wp-block ul {
-  list-style-type: disc;
-}
-.wp-block li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-}
 .wp-block ul ul {
   list-style-type: circle;
 }
