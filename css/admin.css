@@ -1245,7 +1245,7 @@ body.wp-admin {
 .admin-settings .demo :where(.wp-block-columns.is-layout-flex) {
   gap: 1em;
 }
-.admin-settings .demo .is-layout-flow > * {
+.admin-settings .demo :is(.is-layout-flow, .is-layout-constrained) > * {
   margin-block-start: 0;
 }
 .admin-settings .demo figure {
@@ -9747,7 +9747,7 @@ body.wp-admin {
 .admin-settings .demo :where(.wp-block-columns.is-layout-flex) {
   gap: 1em;
 }
-.admin-settings .demo .is-layout-flow > * {
+.admin-settings .demo :is(.is-layout-flow, .is-layout-constrained) > * {
   margin-block-start: 0;
 }
 .admin-settings .demo figure {

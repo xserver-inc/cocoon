@@ -720,7 +720,7 @@ p.has-background {
   gap: 1em;
 }
 
-.is-layout-flow > * {
+:is(.is-layout-flow, .is-layout-constrained) > * {
   margin-block-start: 0;
 }
 
