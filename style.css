@@ -6392,14 +6392,10 @@ figcaption {
 }
 
 .comment-page-link {
-  text-align: center;
   margin: 24px 0;
-}
-.comment-page-link .page-numbers {
-  width: auto;
-  height: auto;
-  padding: 6px 12px;
-  line-height: normal;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
 }
 .comment-page-link .current {
   background-color: #eee;
