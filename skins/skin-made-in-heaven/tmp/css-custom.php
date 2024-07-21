@@ -22,7 +22,7 @@ echo <<< EOF
 
 .body.hvn-dark {
   --body-rgb-color: 51 51 51;
-
+  --hover-color: #777;
   --dark-body-color: #333;
   --dark-content-bgcolor: #444;
   --dark-footer-color: #666;
@@ -332,7 +332,7 @@ if ($no) {
   background-color: unset;
 }
 
-.navi li a::after {
+.navi-in > ul > li > a:after {
   background: var(--text-color);
   bottom: 0;
   content: '';
@@ -345,7 +345,7 @@ if ($no) {
   width: 100%;
 }
 
-.navi li a:hover::after {
+.navi-in > ul > li > a:hover::after {
   transform: scale(1, 1);
 }
 
