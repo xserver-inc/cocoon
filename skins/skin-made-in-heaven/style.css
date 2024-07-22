@@ -110,7 +110,7 @@
 **        2.9.3   2024-06-26  改善
 **        2.10.0  2024-06-28  クイック編集にメモ追加
 **        2.11.0  2024-06-30  仕様変更
-**        2.12.0  2024-07-21  仕様変更
+**        2.12.0  2024-07-22  仕様変更
 **
 *******************************************************************************/
 
@@ -3221,7 +3221,7 @@ table tr:nth-of-type(2n+1),
   background-color: #eee;
 }
 
-:not(.tab-label-group).is-scrollable:before {
+.scrollable-table.is-scrollable:before {
   animation: leftright 1s infinite alternate ease-in-out;
   content: 'スクロールできます→';
   display: block;
