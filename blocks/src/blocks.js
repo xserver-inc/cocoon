@@ -10,6 +10,18 @@ import {
 } from '@wordpress/blocks';
 import { compareVersions } from 'compare-versions';
 const cocoonBlocksPro = [];
+import { subscribe } from '@wordpress/data';
+
+
+//パターンエディターでアコーディオンブロックを使用しない
+const unsubscribe = subscribe(() => {
+    const postType = wp.data.select('core/editor').getCurrentPostType();
+    console.log(postType);
+    if (postType === 'wp_block') {
+      wp.blocks.unregisterBlockType('cocoon-blocks/toggle-box-1');
+      unsubscribe(); // 取得できたらサブスクリプションを解除
+    }
+});
 
 //構造化したブロック
 import * as balloon from './block/balloon';
