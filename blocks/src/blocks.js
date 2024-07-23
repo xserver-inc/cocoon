@@ -16,7 +16,6 @@ import { subscribe } from '@wordpress/data';
 //パターンエディターでアコーディオンブロックを使用しない
 const unsubscribe = subscribe(() => {
     const postType = wp.data.select('core/editor').getCurrentPostType();
-    console.log(postType);
     if (postType === 'wp_block') {
       wp.blocks.unregisterBlockType('cocoon-blocks/toggle-box-1');
       unsubscribe(); // 取得できたらサブスクリプションを解除
