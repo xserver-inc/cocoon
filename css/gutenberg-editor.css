@@ -6060,13 +6060,3 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .editor-styles-wrapper {
   padding-bottom: 40vh;
 }
-
-.interface-interface-skeleton__content {
-  overflow: visible;
-  margin: 1px;
-  z-index: 20;
-}
-
-.interface-interface-skeleton__secondary-sidebar {
-  z-index: 19;
-}
