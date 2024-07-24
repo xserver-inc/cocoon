@@ -135,15 +135,6 @@ EOM;
 }
 .index-tab-buttons .index-tab-button[for=index-tab-$key]::before {
   content: '\\$icon';
-  display: block;
-  font-size: 20px;
-  margin: 0 auto 5px;
-  width: 50px;
-  height: 50px;
-  background: $top_tab_bg;
-  border-radius: 50px;
-  line-height: 50px;
-  color: $top_tab_color;
 }
 EOM;
     }
