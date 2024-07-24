@@ -28,7 +28,8 @@ endif;
 define('OP_NOTICE_AREA_URL', 'notice_area_url');
 if ( !function_exists( 'get_notice_area_url' ) ):
 function get_notice_area_url(){
-  return get_theme_option(OP_NOTICE_AREA_URL);
+  $url = get_theme_option(OP_NOTICE_AREA_URL);
+  return apply_filters('get_notice_area_url', $url);
 }
 endif;
 
