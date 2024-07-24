@@ -869,6 +869,7 @@ a.tag-link {
 
 .cta_v .footer_fixed {
   flex-direction: column;
+  gap: 0;
 }
 
 input#fixed_close {
@@ -888,6 +889,7 @@ input#fixed_close {
   align-items: center;
   height: 85px;
   box-shadow: 0 -2px 5px rgb(0 0 0 / 15%);
+  gap: 1em;
 }
 
 #fixed_close:checked ~ .fixed_contents {
