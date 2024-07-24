@@ -902,6 +902,7 @@ input#fixed_close {
   width: 100%;
   transform: translate(0, 0);
   left: 0;
+  z-index: 1;
 }
 
 span.close .fa-xmark:after {
