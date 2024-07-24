@@ -7,12 +7,11 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//通知エリアメッセージ
-define('OP_NOTICE_AREA_MESSAGE', 'notice_area_message');
-if ( !function_exists( 'get_notice_area_message' ) ):
-function get_notice_area_message(){
-  $msg = stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE));
-  return apply_filters('get_notice_area_message', $msg);
+//通知エリアを表示するか
+define('OP_NOTICE_AREA_VISIBLE', 'notice_area_visible');
+if ( !function_exists( 'is_notice_area_visible' ) ):
+function is_notice_area_visible(){
+  return get_theme_option(OP_NOTICE_AREA_VISIBLE);
 }
 endif;
 
