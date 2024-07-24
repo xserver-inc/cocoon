@@ -16,11 +16,12 @@ function get_notice_area_message(){
 }
 endif;
 
-//通知エリアメッセージ
-define('OP_NOTICE_AREA_MESSAGE', 'notice_area_message');
-if ( !function_exists( 'get_notice_area_message' ) ):
-function get_notice_area_message(){
-  return stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE));
+//通知エリアURL
+define('OP_NOTICE_AREA_URL', 'notice_area_url');
+if ( !function_exists( 'get_notice_area_url' ) ):
+function get_notice_area_url(){
+  $url = get_theme_option(OP_NOTICE_AREA_URL);
+  return apply_filters('get_notice_area_url', $url);
 }
 endif;
 
