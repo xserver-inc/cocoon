@@ -46,7 +46,7 @@ function sanitize_font($input) {
 function mytheme_sanitize_float_range( $number, $setting ) {
   // デフォルト値を取得
   $default = $setting->default;
-  
+
   // 空白の場合はデフォルト値を返す
   if ( empty( $number ) && $number !== '0' ) {
     return $default;
@@ -73,7 +73,7 @@ if (!function_exists('nagi_sanitize_number_range')):
     $min  = (isset($atts['min'])  ? $atts['min'] : $number);
     $max  = (isset($atts['max'])  ? $atts['max'] : $number);
     $step = (isset($atts['step']) ? $atts['step'] : 1);
-  
+
     return ($min <= $number && $number <= $max && is_int($number / $step) ? $number : $setting->default);
   }
   endif;
@@ -93,7 +93,7 @@ function nagi_customize_register( $wp_customize ) {
     ));
 
   $wp_customize->add_setting(
-    'shadow_radio', 
+    'shadow_radio',
     array(
       'default' => 'shadow1',
       'priority' => 1000,
@@ -105,8 +105,8 @@ function nagi_customize_register( $wp_customize ) {
         $wp_customize,
     'nagi_shadow_radio',
     array(
-      'section'     => 'nagi_customizer_sct',  
-      'settings'    => 'shadow_radio',  
+      'section'     => 'nagi_customizer_sct',
+      'settings'    => 'shadow_radio',
       'label'       => '影をつけるか',
       'type'        => 'radio',
       'choices'     => array(
@@ -117,7 +117,7 @@ function nagi_customize_register( $wp_customize ) {
     ) )
   );
   $wp_customize->add_setting(
-    'radius_radio', 
+    'radius_radio',
     array(
       'default' => 'radius1',
       'priority' => 1000,
@@ -129,8 +129,8 @@ function nagi_customize_register( $wp_customize ) {
         $wp_customize,
     'nagi_radius_radio',
     array(
-      'section'     => 'nagi_customizer_sct',  
-      'settings'    => 'radius_radio',  
+      'section'     => 'nagi_customizer_sct',
+      'settings'    => 'radius_radio',
       'label'       => '丸みをつけるか',
       'type'        => 'radio',
       'choices'     => array(
@@ -147,14 +147,14 @@ function nagi_customize_register( $wp_customize ) {
       'priority'          => 1001,
       'sanitize_callback' => 'sanitize_hex_color'
     )
-  );   
+  );
 $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
       'gray_zone_ctr',
       array(
-        'section'     => 'nagi_customizer_sct',  
-        'settings'    => 'gray_zone',  
+        'section'     => 'nagi_customizer_sct',
+        'settings'    => 'gray_zone',
         'label'       => '薄グレーゾーンの色',
         'description' => '<small>目次やシェアボタン、フォローボタン等の背景色です。薄グレーゾーンといってますが、何色でもいいです。<br>※35%の透過となります。</small>'
       )
@@ -162,7 +162,7 @@ $wp_customize->add_control(
   );
 
   $wp_customize->add_setting(
-    'sidebar_use_gray', 
+    'sidebar_use_gray',
     array(
       'default' => true,
       'priority' => 1001,
@@ -173,15 +173,15 @@ $wp_customize->add_control(
   $wp_customize->add_control(
     'sidebar_use_gray',
     array(
-      'section'     => 'nagi_customizer_sct',  
-      'settings'    => 'sidebar_use_gray',  
+      'section'     => 'nagi_customizer_sct',
+      'settings'    => 'sidebar_use_gray',
       'label'       => 'サイドバーにもこの背景色をつける',
       'type'        => 'checkbox'
     )
   );
 
   $wp_customize->add_setting(
-    'sns_fix', 
+    'sns_fix',
     array(
       'default' => true,
       'priority' => 1001,
@@ -192,15 +192,15 @@ $wp_customize->add_control(
   $wp_customize->add_control(
     'sns_fix',
     array(
-      'section'     => 'nagi_customizer_sct',  
-      'settings'    => 'sns_fix',  
-      'label'       => 'snsトップシェアボタンを画面左に固定する',
-      'description' => '<small>PC表示でのみ固定。コクーン設定でメインカラムトップシェアボタンを表示にチェックを入れる必要があります。</small>',
+      'section'     => 'nagi_customizer_sct',
+      'settings'    => 'sns_fix',
+      'label'       => 'SNSトップシェアボタンを画面左に固定する',
+      'description' => '<small>PC表示でのみ固定。Cocoon設定でメインカラムトップシェアボタンを表示にチェックを入れる必要があります。</small>',
       'type'        => 'checkbox'
     )
   );
   $wp_customize->add_setting(
-    'cat_accordion', 
+    'cat_accordion',
     array(
       'default' => true,
       'priority' => 1001,
@@ -211,8 +211,8 @@ $wp_customize->add_control(
   $wp_customize->add_control(
     'cat_accordion',
     array(
-      'section'     => 'nagi_customizer_sct',  
-      'settings'    => 'cat_accordion',  
+      'section'     => 'nagi_customizer_sct',
+      'settings'    => 'cat_accordion',
       'label'       => 'カテゴリーウィジェットの子カテゴリーをアコーディオン形式で開閉する',
       'type'        => 'checkbox'
     )
@@ -225,7 +225,7 @@ $wp_customize->add_section( 'tab_customizer', array(
         詳しくは<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-tab/">こちら</a>',
         'priority' => 1,
         'panel'=>'nagi_customizer_panel'
-    
+
     ));
     $wp_customize->add_setting(
       'tab_icon_ori', // 設定ID
@@ -235,18 +235,18 @@ $wp_customize->add_section( 'tab_customizer', array(
         'sanitize_callback' => 'nagi_sanitize_checkbox',
       )
     );
-  
+
     $wp_customize->add_control(
       'tab_icon_ori',
       array(
-        'section'     => 'tab_customizer', 
-        'settings'    => 'tab_icon_ori',  
+        'section'     => 'tab_customizer',
+        'settings'    => 'tab_icon_ori',
         'label'       => 'トップページのタブのデザインをオリジナルのものにする',
         'description' => '<small>アイコンの設定が必須です。</small>',
         'type'        => 'checkbox'
       )
     );
-  
+
     $wp_customize->add_setting(
       'tab1_icon', // 設定ID
       array(
@@ -255,7 +255,7 @@ $wp_customize->add_section( 'tab_customizer', array(
         'sanitize_callback' => 'sanitize_text_field'
       )
     );
-  
+
     $wp_customize->add_control(
       'tab1_icon_control',
       array(
@@ -266,9 +266,9 @@ $wp_customize->add_section( 'tab_customizer', array(
         'type'        => 'text'
       )
     );
-  
-    
-  
+
+
+
     $wp_customize->add_setting(
       'tab2_icon', // 設定ID
       array(
@@ -277,7 +277,7 @@ $wp_customize->add_section( 'tab_customizer', array(
         'sanitize_callback' => 'sanitize_text_field'
       )
     );
-  
+
     $wp_customize->add_control(
       'tab2_icon_control',
       array(
@@ -288,7 +288,7 @@ $wp_customize->add_section( 'tab_customizer', array(
         'type'        => 'text'
       )
     );
-  
+
     $wp_customize->add_setting(
       'tab3_icon', // 設定ID
       array(
@@ -297,7 +297,7 @@ $wp_customize->add_section( 'tab_customizer', array(
         'sanitize_callback' => 'sanitize_text_field'
       )
     );
-  
+
     $wp_customize->add_control(
       'tab3_icon_control',
       array(
@@ -308,8 +308,8 @@ $wp_customize->add_section( 'tab_customizer', array(
         'type'        => 'text'
       )
     );
-  
-  
+
+
     $wp_customize->add_setting(
       'tab4_icon', // 設定ID
       array(
@@ -318,7 +318,7 @@ $wp_customize->add_section( 'tab_customizer', array(
         'sanitize_callback' => 'sanitize_text_field'
       )
     );
-  
+
     $wp_customize->add_control(
       'tab4_icon_control',
       array(
@@ -336,14 +336,14 @@ $wp_customize->add_section( 'tab_customizer', array(
         'priority'          => 1001,
         'sanitize_callback' => 'sanitize_hex_color'
       )
-    );   
+    );
 $wp_customize->add_control(
       new WP_Customize_Color_Control(
         $wp_customize,
         'top_tab_bg',
         array(
-          'section'     => 'tab_customizer',  
-          'settings'    => 'top_tab_bg',  
+          'section'     => 'tab_customizer',
+          'settings'    => 'top_tab_bg',
           'label'       => 'タブの背景色',
         )
       )
@@ -355,14 +355,14 @@ $wp_customize->add_setting(
         'priority'          => 1001,
         'sanitize_callback' => 'sanitize_hex_color'
       )
-    );   
+    );
 $wp_customize->add_control(
       new WP_Customize_Color_Control(
         $wp_customize,
         'top_tab_color',
         array(
-          'section'     => 'tab_customizer',  
-          'settings'    => 'top_tab_color',  
+          'section'     => 'tab_customizer',
+          'settings'    => 'top_tab_color',
           'label'       => 'タブの文字色',
         )
       )
@@ -374,14 +374,14 @@ $wp_customize->add_control(
           'priority'          => 1001,
           'sanitize_callback' => 'sanitize_hex_color'
         )
-      );   
+      );
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
           $wp_customize,
           'tab_bg_1_ctl',
           array(
-            'section'     => 'tab_customizer',  
-            'settings'    => 'tab_bg_1',  
+            'section'     => 'tab_customizer',
+            'settings'    => 'tab_bg_1',
             'label'       => 'アクティブなタブの背景色①',
             'description' => '<small>①と②を違う色にすることでグラデーションになります</small>'
           )
@@ -394,14 +394,14 @@ $wp_customize->add_control(
           'priority'          => 1001,
           'sanitize_callback' => 'sanitize_hex_color'
         )
-      );   
+      );
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
           $wp_customize,
           'tab_bg_2_ctl',
           array(
-            'section'     => 'tab_customizer',  
-            'settings'    => 'tab_bg_2',  
+            'section'     => 'tab_customizer',
+            'settings'    => 'tab_bg_2',
             'label'       => 'アクティブなタブの背景色②',
             'description' => '<small>①と②を違う色にすることでグラデーションになります</small>'
           )
@@ -414,7 +414,7 @@ $wp_customize->add_section( 'font_sct', array(
         'panel'=>'nagi_customizer_panel'
 ));
 $wp_customize->add_setting(
-    'font_radio', 
+    'font_radio',
     array(
       'default' => '"Quicksand"',
       'priority' => 1000,
@@ -426,8 +426,8 @@ $wp_customize->add_setting(
         $wp_customize,
     'font_radio',
     array(
-      'section'     => 'font_sct',  
-      'settings'    => 'font_radio',  
+      'section'     => 'font_sct',
+      'settings'    => 'font_radio',
       'label'       => 'グーグルフォントを選択する',
       'type'        => 'radio',
       'choices'     => array(
@@ -456,14 +456,14 @@ $wp_customize->add_setting(
     'priority'          => 1001,
     'sanitize_callback' => 'sanitize_hex_color'
   )
-);   
+);
 $wp_customize->add_control(
   new WP_Customize_Color_Control(
     $wp_customize,
     'cta_bg',
     array(
-      'section'     => 'cta_customizer',  
-      'settings'    => 'cta_bg',  
+      'section'     => 'cta_customizer',
+      'settings'    => 'cta_bg',
       'label'       => 'フッター固定CTAの背景色',
     )
   )
@@ -474,14 +474,14 @@ $wp_customize->add_setting(
     'default'           => '0.9',
     'priority'          => 1001,
     'sanitize_callback' => 'mytheme_sanitize_float_range',
-    
+
   )
-);   
+);
 $wp_customize->add_control(
     'cta_bg_opa',
     array(
-      'section'     => 'cta_customizer',  
-      'settings'    => 'cta_bg_opa',  
+      'section'     => 'cta_customizer',
+      'settings'    => 'cta_bg_opa',
       'description' =>'0から1まで0.01単位で設定できます<br>0に近くなるほど透明になります',
       'label'       => 'フッター固定CTAの背景色の透明度',
       'type'     => 'number',
@@ -500,14 +500,14 @@ $wp_customize->add_setting(
     'priority'          => 1001,
     'sanitize_callback' => 'sanitize_hex_color'
   )
-);   
+);
 $wp_customize->add_control(
   new WP_Customize_Color_Control(
     $wp_customize,
     'cta_color',
     array(
-      'section'     => 'cta_customizer',  
-      'settings'    => 'cta_color',  
+      'section'     => 'cta_customizer',
+      'settings'    => 'cta_color',
       'label'       => 'フッター固定CTAのマイクロコピーの色',
     )
   )
@@ -519,14 +519,14 @@ $wp_customize->add_setting(
     'priority'          => 1001,
     'sanitize_callback' => 'sanitize_hex_color'
   )
-);   
+);
 $wp_customize->add_control(
   new WP_Customize_Color_Control(
     $wp_customize,
     'cta_red',
     array(
-      'section'     => 'cta_customizer',  
-      'settings'    => 'cta_red',  
+      'section'     => 'cta_customizer',
+      'settings'    => 'cta_red',
       'label'       => '赤系ボタン',
     )
   )
@@ -538,14 +538,14 @@ $wp_customize->add_setting(
     'priority'          => 1001,
     'sanitize_callback' => 'sanitize_hex_color'
   )
-);   
+);
 $wp_customize->add_control(
   new WP_Customize_Color_Control(
     $wp_customize,
     'cta_blue',
     array(
-      'section'     => 'cta_customizer',  
-      'settings'    => 'cta_blue',  
+      'section'     => 'cta_customizer',
+      'settings'    => 'cta_blue',
       'label'       => '青系ボタン',
     )
   )
@@ -557,14 +557,14 @@ $wp_customize->add_setting(
     'priority'          => 1001,
     'sanitize_callback' => 'sanitize_hex_color'
   )
-);   
+);
 $wp_customize->add_control(
   new WP_Customize_Color_Control(
     $wp_customize,
     'cta_green',
     array(
-      'section'     => 'cta_customizer',  
-      'settings'    => 'cta_green',  
+      'section'     => 'cta_customizer',
+      'settings'    => 'cta_green',
       'label'       => '緑系ボタン',
     )
   )
@@ -584,14 +584,14 @@ $wp_customize->add_setting(
     'default'           => '4',
     'priority'          => 1001,
     'sanitize_callback' => 'nagi_sanitize_number_range',
-    
+
   )
-  );   
+  );
   $wp_customize->add_control(
     'carousel_1301over',
     array(
-      'section'     => 'carousel_customizer',  
-      'settings'    => 'carousel_1301over',  
+      'section'     => 'carousel_customizer',
+      'settings'    => 'carousel_1301over',
       'description' =>'2~6枚で設定可',
       'label'       => 'PC（画面幅 1301px以上）での表示枚数',
       'type'     => 'number',
@@ -608,14 +608,14 @@ $wp_customize->add_setting(
       'default'           => '1',
       'priority'          => 1001,
       'sanitize_callback' => 'nagi_sanitize_number_range',
-      
+
     )
-    );   
+    );
     $wp_customize->add_control(
       'slide_1301over',
       array(
-        'section'     => 'carousel_customizer',  
-        'settings'    => 'slide_1301over',  
+        'section'     => 'carousel_customizer',
+        'settings'    => 'slide_1301over',
         'description' =>'1~6枚で設定可',
         'label'       => 'PC（画面幅 1301px以上）での1度にスライドする枚数',
         'type'     => 'number',
@@ -632,14 +632,14 @@ array(
   'default'           => '4',
   'priority'          => 1001,
   'sanitize_callback' => 'nagi_sanitize_number_range',
-  
+
 )
-);   
+);
 $wp_customize->add_control(
   'carousel_1300',
   array(
-    'section'     => 'carousel_customizer',  
-    'settings'    => 'carousel_1300',  
+    'section'     => 'carousel_customizer',
+    'settings'    => 'carousel_1300',
     'description' =>'2~6枚で設定可',
     'label'       => 'PC（画面幅 1084px〜1300px）での表示枚数',
     'type'     => 'number',
@@ -656,14 +656,14 @@ $wp_customize->add_setting(
     'default'           => '1',
     'priority'          => 1001,
     'sanitize_callback' => 'nagi_sanitize_number_range',
-    
+
   )
-  );   
+  );
   $wp_customize->add_control(
     'slide_1300',
     array(
-      'section'     => 'carousel_customizer',  
-      'settings'    => 'slide_1300',  
+      'section'     => 'carousel_customizer',
+      'settings'    => 'slide_1300',
       'description' =>'1~6枚で設定可',
       'label'       => 'PC（画面幅 1084px〜1300px）での1度にスライドする枚数',
       'type'     => 'number',
@@ -680,14 +680,14 @@ $wp_customize->add_setting(
     'default'           => '3',
     'priority'          => 1001,
     'sanitize_callback' => 'nagi_sanitize_number_range',
-    
+
   )
-  );   
+  );
   $wp_customize->add_control(
     'carousel_1083',
     array(
-      'section'     => 'carousel_customizer',  
-      'settings'    => 'carousel_1083',  
+      'section'     => 'carousel_customizer',
+      'settings'    => 'carousel_1083',
       'description' =>'2~6枚で設定可',
       'label'       => 'PC（画面幅 895px〜1083px）での表示枚数',
       'type'     => 'number',
@@ -704,14 +704,14 @@ $wp_customize->add_setting(
       'default'           => '1',
       'priority'          => 1001,
       'sanitize_callback' => 'nagi_sanitize_number_range',
-      
+
     )
-    );   
+    );
     $wp_customize->add_control(
       'slide_1083',
       array(
-        'section'     => 'carousel_customizer',  
-        'settings'    => 'slide_1083',  
+        'section'     => 'carousel_customizer',
+        'settings'    => 'slide_1083',
         'description' =>'1~6枚で設定可',
         'label'       => 'PC（画面幅 895px〜1083px）での1度にスライドする枚数',
         'type'     => 'number',
@@ -728,14 +728,14 @@ $wp_customize->add_setting(
       'default'           => '2',
       'priority'          => 1001,
       'sanitize_callback' => 'nagi_sanitize_number_range',
-      
+
     )
-    );   
+    );
     $wp_customize->add_control(
       'carousel_894',
       array(
-        'section'     => 'carousel_customizer',  
-        'settings'    => 'carousel_894',  
+        'section'     => 'carousel_customizer',
+        'settings'    => 'carousel_894',
         'description' =>'2~4枚で設定可',
         'label'       => 'タブレット（画面幅 541px〜894px）での表示枚数',
         'type'     => 'number',
@@ -752,14 +752,14 @@ $wp_customize->add_setting(
         'default'           => '1',
         'priority'          => 1001,
         'sanitize_callback' => 'nagi_sanitize_number_range',
-        
+
       )
-      );   
+      );
       $wp_customize->add_control(
         'slide_894',
         array(
-          'section'     => 'carousel_customizer',  
-          'settings'    => 'slide_894',  
+          'section'     => 'carousel_customizer',
+          'settings'    => 'slide_894',
           'description' =>'1~4枚で設定可',
           'label'       => 'タブレット（画面幅 541px〜894px）での1度にスライドする枚数',
           'type'     => 'number',
@@ -776,14 +776,14 @@ $wp_customize->add_setting(
         'default'           => '1',
         'priority'          => 1001,
         'sanitize_callback' => 'nagi_sanitize_number_range',
-        
+
       )
-      );   
+      );
       $wp_customize->add_control(
         'carousel_540',
         array(
-          'section'     => 'carousel_customizer',  
-          'settings'    => 'carousel_540',  
+          'section'     => 'carousel_customizer',
+          'settings'    => 'carousel_540',
           'description' =>'1~3枚で設定可',
           'label'       => 'スマホ（画面幅 540px以下）での表示枚数',
           'type'     => 'number',
@@ -800,14 +800,14 @@ $wp_customize->add_setting(
           'default'           => '1',
           'priority'          => 1001,
           'sanitize_callback' => 'nagi_sanitize_number_range',
-          
+
         )
-        );   
+        );
         $wp_customize->add_control(
           'slide_540',
           array(
-            'section'     => 'carousel_customizer',  
-            'settings'    => 'slide_540',  
+            'section'     => 'carousel_customizer',
+            'settings'    => 'slide_540',
             'description' =>'1~3枚で設定可',
             'label'       => 'スマホ（画面幅 540px以下）での1度にスライドする枚数',
             'type'     => 'number',
@@ -822,6 +822,6 @@ $wp_customize->add_setting(
 
     }
 
-    
+
 
 add_action( 'customize_register', 'nagi_customize_register' );
