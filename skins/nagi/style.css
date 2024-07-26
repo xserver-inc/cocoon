@@ -846,19 +846,19 @@ a.tag-link {
   content: '\23';
 }
 
-.cta_red .footer_button {
+.cta_red .footer_button a {
   background-color: var(--nagi_cta_red);
 }
 
-.cta_blue .footer_button {
+.cta_blue .footer_button a {
   background-color: var(--nagi_cta_blue);
 }
 
-.cta_green .footer_button {
+.cta_green .footer_button a {
   background-color: var(--nagi_cta_green);
 }
 
-.cta_key .footer_button {
+.cta_key .footer_button a {
   background-color: var(--nagi_key_color);
 }
 
