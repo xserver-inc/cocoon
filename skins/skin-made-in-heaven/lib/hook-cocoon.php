@@ -438,3 +438,40 @@ add_action('cocoon_part_after__tmp/button-go-to-top', function() {
 EOF;
   }
 });
+
+
+//******************************************************************************
+//  通知エリア更新
+//******************************************************************************
+add_filter('get_notice_area_message', function($msg) {
+  global $_HVN_NOTICE;
+  global $_THEME_OPTIONS;
+
+  $_HVN_NOTICE = false;
+
+  $msg = stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE));
+
+  if (!is_admin()) {
+    if (strpos($msg, '[pattern ') !== false) {
+      $msg = do_shortcode($msg);
+
+      if (strpos($msg, 'href=') !== false) {
+        $_THEME_OPTIONS['notice_area_url'] = '';
+      }
+    }
+
+    $msg_array =  explode(',' ,$msg);
+
+    if (count($msg_array) > 1) {
+      $_HVN_NOTICE = true;
+      $html = null;
+
+      for ($i=0;$i<count($msg_array); $i++) {
+        $html .= "<div class=swiper-slide>{$msg_array[$i]}</div>";
+      }
+      $msg = "<div class=swiper><div class=swiper-wrapper>{$html}</div></div>";
+    }
+  }
+
+  return $msg;
+});

@@ -545,12 +545,12 @@ if (get_theme_mod('hvn_accordion_setting')) {
     var elm = $('.tagcloud a', this);
     var c   = elm.length;
     if (c > n) {
-      elm.slice(${n}).hide();
+      elm.slice({$n}).hide();
       $(this).append('{$button}');
     }
 
     $('button', this).click(function() {
-      elm.slice(${n}).slideToggle(300);
+      elm.slice({$n}).slideToggle(300);
       $(this).toggleClass('active');
     });
   });
