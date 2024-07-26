@@ -81,6 +81,16 @@ if (!function_exists('nagi_css_custom')) {
     $cta_bg = colorcode_to_rgb_css_code($cta_bg0, $cta_bg_opa);
     $header_bg_color = get_header_container_background_color();
     $header_text_color = get_header_container_text_color();
+    $color_code = '';
+    if ($header_bg_color && $header_text_color) {
+      if ($header_bg_color) {
+        $color_code .= 'background-color: '.$header_bg_color.';';
+      }
+      if ($header_text_color) {
+        $color_code .= 'color: '.$header_text_color.';';
+      }
+      $color_code .= '.mobile-header-menu-buttons{'.$color_code.'}';
+    }
 
     $icon_tabs = [
       1 => get_theme_mod('tab1_icon', 'f15c'),
@@ -112,10 +122,7 @@ if (!function_exists('nagi_css_custom')) {
   --nagi_cta_bg: $cta_bg;
   --nagi_c_font_fa: $nagi_c_font;
 }
-.mobile-header-menu-buttons{
-  background-color: $header_bg_color;
-  color: $header_text_color;
-}
+$color_code
 EOM;
 
     foreach ($icon_tabs as $key => $icon) {
