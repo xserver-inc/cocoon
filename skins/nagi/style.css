@@ -877,7 +877,6 @@ input#fixed_close {
 
 .footer_fixed {
   background: var(--nagi_cta_bg);
-  color: var(--nagi_cta_color);
   padding: 10px;
   position: fixed;
   bottom: 0;
@@ -889,6 +888,10 @@ input#fixed_close {
   height: 85px;
   box-shadow: 0 -2px 5px rgb(0 0 0 / 15%);
   gap: 1em;
+}
+
+.footer_micro {
+  color: var(--nagi_cta_color);
 }
 
 #fixed_close:checked ~ .fixed_contents {
