@@ -342,6 +342,10 @@ div#toc {
   margin: 3px 5px !important;
 }
 
+.nwa .sns-follow-buttons a{
+  width: 45%;
+}
+
 .sns-share-buttons.sns-buttons,
 .sns-follow-buttons.sns-buttons {
   justify-content: center;
