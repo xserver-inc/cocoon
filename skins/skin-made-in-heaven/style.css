@@ -110,7 +110,7 @@
 **        2.9.3   2024-06-26  改善
 **        2.10.0  2024-06-28  クイック編集にメモ追加
 **        2.11.0  2024-06-30  仕様変更
-**        2.12.0  2024-07-25  仕様変更
+**        2.12.0  2024-07-27  仕様変更
 **
 *******************************************************************************/
 
@@ -3512,7 +3512,7 @@ blockquote:before,
 }
 
 .is-style-accordion > .caption-box-label:after,
-.is-style-accordion .faq-question:before,
+.is-style-accordion > .faq > .faq-question::before,
 .toggle-button:before {
   align-items: center;
   color: unset;
@@ -3530,7 +3530,7 @@ blockquote:before,
 }
 
 .is-style-accordion .caption-box-label.active:after,
-.is-style-accordion .faq-question.active:before,
+.is-style-accordion > .faq > .faq-question.active::before,
 .toggle-checkbox:checked ~ .toggle-button:before {
   content: '\f106';
 }
@@ -3565,7 +3565,7 @@ blockquote:before,
   margin: 0;
 }
 
-.is-style-accordion .faq-question {
+.is-style-accordion > .faq > .faq-question {
   background-color: var(--border-color);
 }
 

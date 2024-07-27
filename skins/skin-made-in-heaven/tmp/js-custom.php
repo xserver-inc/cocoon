@@ -439,7 +439,7 @@ if (is_ssl()) {
 
     navigator.clipboard.writeText($(this).parent().text()).then(() => {
       $(".code-copy").text("COPIED");
-      setTimeout(function(){ 
+      setTimeout(function() {
         $(".code-copy").text("COPY");
       }, 1000);
     });
@@ -461,7 +461,7 @@ EOF;
 
   clip.on("success", function(event) {
     $(".code-copy").text("COPIED");
-    setTimeout(function(){ 
+    setTimeout(function() {
       $(".code-copy").text("COPY");
     }, 1000);
     event.clearSelection();
