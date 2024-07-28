@@ -23,12 +23,12 @@ add_action('enqueue_block_editor_assets', 'my_custom_editor_styles');
 function create_custom_fields()
 {
   add_meta_box(
-    'custom_field_1', 
-    'フッター固定CTA', 
-    'insert_custom_fields', 
-    'post', 
-    'normal', 
-    'default'  
+    'custom_field_1',
+    'フッター固定CTA',
+    'insert_custom_fields',
+    'post',
+    'normal',
+    'default'
   );
 }
 add_action('admin_menu', 'create_custom_fields');
@@ -44,15 +44,15 @@ function insert_custom_fields($post)
   $cta_color = get_post_meta($post->ID,'cta_color',true);
   $cta_layout = get_post_meta($post->ID,'cta_layout',true);
   if (empty($cta_color)) {
-    $cta_color = 'cta_red'; 
+    $cta_color = 'cta_red';
   }
   if (empty($cta_layout)) {
-    $cta_layout = 'cta_v'; 
+    $cta_layout = 'cta_v';
   }
 ?>
 <p>※この機能についての<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-fix-cta/">詳しい説明はこちら</a></p>
   <label for="fix_link">アフィリエイトタグのショートコード（こちらが入力されていないとフッター固定CTAは表示されません）
-</br>アフィリエイトのタグは＜a＞タグで囲まれたものに限られます
+</br>必ずアフィリエイトショートコードを入力してください。アフィリエイトのタグは＜a＞タグで囲まれたものに限られます。
   </label>
   <input id="fix_link" type="text" name="fix_link" value="<?php echo $fix_link; ?>"placeholder="アフィリエイトタグのショートコードをここへ入力してください">
   <br>
@@ -92,9 +92,9 @@ function save_custom_fields($post_id)
 
   if (isset($_POST['fix_link'])) {
     $data_without_quotes = str_replace('"', '', $_POST['fix_link']);
-    
+
     $sanitized_data = sanitize_textarea_field($data_without_quotes);
-    
+
     update_post_meta($post_id, 'fix_link', $sanitized_data);
 }
 
@@ -168,8 +168,8 @@ if ( !function_exists( 'wp_enqueue_slick_custom' ) ):
                     $autoplay.
                     'autoplaySpeed: '.strval(intval(get_carousel_autoplay_interval())*1000).',
                     infinite: true,
-                    slidesToShow: '.$show1301over.', 
-                    slidesToScroll: '.$slide1301over.', 
+                    slidesToShow: '.$show1301over.',
+                    slidesToScroll: '.$slide1301over.',
                     respondTo: "slider",
                     responsive: [
                       {
