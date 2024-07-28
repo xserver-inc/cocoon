@@ -23843,3 +23843,9 @@ textarea[name=the_page_memo] {
     margin: 0 !important;
   }
 }
+.admin-settings input[type=range] {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px;
+  width: 220px;
+}
