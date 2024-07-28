@@ -530,7 +530,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
 　  $('.children', this).before('{$button}');
 
     $('.sub-item', this).click(function() {
-      $(this).next('ul').slideToggle(300);
+      $(this).next('ul').toggle();
       $(this).toggleClass('active');
     });
   });
@@ -550,7 +550,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
     }
 
     $('button', this).click(function() {
-      elm.slice({$n}).slideToggle(300);
+      elm.slice({$n}).toggle();
       $(this).toggleClass('active');
     });
   });
@@ -671,7 +671,7 @@ switch(get_theme_mod('hvn_toc_hidden_setting')) {
   }
 
   $('.toc button').click(function() {
-    elm.slice({$n}).slideToggle(300);
+    elm.slice({$n}).toggle();
     $(this).toggleClass('active');
   });
 })(jQuery);
@@ -690,7 +690,7 @@ EOF;
   }
 
   $('.toc button').click(function() {
-    elm.slideToggle(300);
+    elm.toggle();
     $(this).toggleClass('active');
   });
 })(jQuery);
