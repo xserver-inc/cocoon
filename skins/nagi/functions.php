@@ -149,10 +149,25 @@ if ( !function_exists( 'wp_enqueue_slick_custom' ) ):
     $show540=get_theme_mod('carousel_540', '1');
 
     $slide1301over=get_theme_mod('slide_1301over', '1');
+    if ($slide1301over > $show1301over) {
+      $slide1301over = $show1301over;
+    }
     $slide1300=get_theme_mod('slide_1300', '1');
+    if ($slide1300 > $show1300) {
+      $slide1300 = $show1300;
+    }
     $slide1083=get_theme_mod('slide_1083', '1');
+    if ($slide1083 > $show1083) {
+      $slide1083 = $show1083;
+    }
     $slide894=get_theme_mod('slide_894', '1');
+    if ($slide894 > $show894) {
+      $slide894 = $show894;
+    }
     $slide540=get_theme_mod('slide_540', '1');
+    if ($slide540 > $show540) {
+      $slide540 = $show540;
+    }
 
     if (is_carousel_visible()) {
       wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );

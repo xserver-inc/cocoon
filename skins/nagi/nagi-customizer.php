@@ -616,7 +616,7 @@ $wp_customize->add_setting(
       array(
         'section'     => 'carousel_customizer',
         'settings'    => 'slide_1301over',
-        'description' =>'1~6枚で設定可',
+        'description' =>'1~6枚で設定可（表示枚数以下推奨）',
         'label'       => 'PC（画面幅 1301px以上）での1度にスライドする枚数',
         'type'     => 'number',
         'input_attrs' => array(
@@ -664,7 +664,7 @@ $wp_customize->add_setting(
     array(
       'section'     => 'carousel_customizer',
       'settings'    => 'slide_1300',
-      'description' =>'1~6枚で設定可',
+      'description' =>'1~6枚で設定可（表示枚数以下推奨）',
       'label'       => 'PC（画面幅 1084px〜1300px）での1度にスライドする枚数',
       'type'     => 'number',
       'input_attrs' => array(
@@ -712,7 +712,7 @@ $wp_customize->add_setting(
       array(
         'section'     => 'carousel_customizer',
         'settings'    => 'slide_1083',
-        'description' =>'1~6枚で設定可',
+        'description' =>'1~6枚で設定可（表示枚数以下推奨）',
         'label'       => 'PC（画面幅 895px〜1083px）での1度にスライドする枚数',
         'type'     => 'number',
         'input_attrs' => array(
@@ -760,7 +760,7 @@ $wp_customize->add_setting(
         array(
           'section'     => 'carousel_customizer',
           'settings'    => 'slide_894',
-          'description' =>'1~4枚で設定可',
+          'description' =>'1~4枚で設定可（表示枚数以下推奨）',
           'label'       => 'タブレット（画面幅 541px〜894px）での1度にスライドする枚数',
           'type'     => 'number',
           'input_attrs' => array(
@@ -808,7 +808,7 @@ $wp_customize->add_setting(
           array(
             'section'     => 'carousel_customizer',
             'settings'    => 'slide_540',
-            'description' =>'1~3枚で設定可',
+            'description' =>'1~3枚で設定可（表示枚数以下推奨）',
             'label'       => 'スマホ（画面幅 540px以下）での1度にスライドする枚数',
             'type'     => 'number',
             'input_attrs' => array(
