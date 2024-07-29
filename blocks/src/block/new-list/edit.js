@@ -83,6 +83,7 @@ export default function edit( props ) {
         title={ __( '表示カテゴリー選択', THEME_NAME ) }
         initialOpen={ true }
       >
+        <p className="howto">{ __( 'テキストを入力して絞り込んでください。', THEME_NAME ) + __( '※最大10件表示', THEME_NAME ) }</p>
         <SearchControl
           value={ catSearchInput }
           onChange={ setCatSearchInput }
