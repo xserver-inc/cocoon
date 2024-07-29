@@ -23843,9 +23843,16 @@ textarea[name=the_page_memo] {
     margin: 0 !important;
   }
 }
-.admin-settings input[type=range] {
+.classicpress .admin-settings input[type=range]:not(.iris-slider-offset) {
   position: relative;
   display: inline-block;
   margin: 0 8px;
   width: 220px;
+}
+.classicpress .range-wrap output {
+  margin-bottom: 12px;
+}
+.classicpress .iris-picker .iris-slider-offset {
+  top: 6px;
+  bottom: 6px;
 }
