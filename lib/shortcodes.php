@@ -1055,8 +1055,10 @@ function get_block_pattern_shortcode($atts) {
       $content = $reuse->post_content;
     }
   }
-
-  return do_shortcode(do_blocks($content));
+  if (!is_classicpress()) {
+    $content = do_blocks($content);
+  }
+  return do_shortcode($content);
 }
 endif;
 
