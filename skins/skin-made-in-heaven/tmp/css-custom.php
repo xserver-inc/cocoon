@@ -368,7 +368,7 @@ echo <<< EOF
 }
 
 .body.hvn-card-border :is(.list, .is-auto-horizontal) .e-card {
-  background-color: var(--dark-content-bgcolor, #fff);
+  background-color: var(--dark-content-bgcolor, var(--hvn-white));
   border-radius: var(--border-radius10);
   color: var(--dark-text-color, #333);
   padding: var(--padding15);
@@ -386,7 +386,7 @@ EOF;
 //******************************************************************************
 echo <<< EOF
 .body.hvn-content-border {
-  --content-bgcolor: var(--dark-content-bgcolor, #fff);
+  --content-bgcolor: var(--dark-content-bgcolor, var(--hvn-white));
 }
 
 .body:not(.hvn-content-border):is(.error404, .page, .single) .main,
@@ -541,7 +541,7 @@ EOF;
   // 大きなカード
   $css4 =<<< EOF
 .body.hvn-card-border .list.ect-big-card {
-  background-color: var(--dark-content-bgcolor, #fff);
+  background-color: var(--dark-content-bgcolor, var(--hvn-white));
   border-radius: var(--border-radius10);
   padding: var(--gap30) var(--main-padding);
 }
@@ -751,7 +751,7 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
 }
 
 .hvn-content-wrap {
-  background-color: var(--dark-content-bgcolor, #fff);
+  background-color: var(--dark-content-bgcolor, var(--hvn-white));
   border: 0;
   left: 50%;
   max-height: 80%;
