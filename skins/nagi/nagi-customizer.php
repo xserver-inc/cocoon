@@ -220,8 +220,8 @@ $wp_customize->add_control(
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーインデックスタブの設定
 $wp_customize->add_section( 'tab_customizer', array(
-        'title'    => __( 'トップページの記事一覧タブの設定', 'theme_slug' ),
-        'description' => 'トップページの記事一覧のデザインを変更したり、各タブにアイコンを設定できます</br>
+        'title'    => __( 'フロントページのタブ一覧の設定', 'theme_slug' ),
+        'description' => 'フロントページのタブ一覧のデザインを変更したり、各タブにアイコンを設定できます</br>
         詳しくは<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-tab/">こちら</a>',
         'priority' => 1,
         'panel'=>'nagi_customizer_panel'
@@ -241,7 +241,7 @@ $wp_customize->add_section( 'tab_customizer', array(
       array(
         'section'     => 'tab_customizer',
         'settings'    => 'tab_icon_ori',
-        'label'       => 'トップページのタブのデザインをオリジナルのものにする',
+        'label'       => 'フロントページのタブ一覧のデザインをオリジナルのものにする',
         'description' => '<small>アイコンの設定が必須です。</small>',
         'type'        => 'checkbox'
       )
@@ -578,8 +578,13 @@ $wp_customize->add_section( 'carousel_customizer', array(
   'panel'=>'nagi_customizer_panel'
 
 ));
+
+
+/////////////////////////////////////
+//1241以上
+/////////////////////////////////////
 $wp_customize->add_setting(
-  'carousel_1301over',
+  'carousel_1241over',
   array(
     'default'           => '4',
     'priority'          => 1001,
@@ -588,12 +593,12 @@ $wp_customize->add_setting(
   )
   );
   $wp_customize->add_control(
-    'carousel_1301over',
+    'carousel_1241over',
     array(
       'section'     => 'carousel_customizer',
-      'settings'    => 'carousel_1301over',
+      'settings'    => 'carousel_1241over',
       'description' =>'2~6枚で設定可',
-      'label'       => 'PC（画面幅 1301px以上）での表示枚数',
+      'label'       => '画面幅 1241px以上での表示枚数',
       'type'     => 'number',
       'input_attrs' => array(
           'min' => 2,
@@ -602,32 +607,32 @@ $wp_customize->add_setting(
       ),
     )
   );
+
   $wp_customize->add_setting(
-    'slide_1301over',
+    'slide_1241over',
     array(
-      'default'           => '1',
+      'default'           => 'true',
       'priority'          => 1001,
       'sanitize_callback' => 'nagi_sanitize_number_range',
 
     )
     );
     $wp_customize->add_control(
-      'slide_1301over',
+      'slide_1241over',
       array(
         'section'     => 'carousel_customizer',
-        'settings'    => 'slide_1301over',
-        'description' =>'1~6枚で設定可（表示枚数以下推奨）',
-        'label'       => 'PC（画面幅 1301px以上）での1度にスライドする枚数',
-        'type'     => 'number',
-        'input_attrs' => array(
-            'min' => 1,
-            'max' => 6,
-            'step' => 1,
-        ),
+        'settings'    => 'slide_1241over',
+        'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
+        'label'       => '1枚ずつスライドさせる',
+        'type'     => 'checkbox',
       )
     );
+
+//-----------------------------------------
+//1024-1240
+//-----------------------------------------
 $wp_customize->add_setting(
-'carousel_1300',
+'carousel_1024_1240',
 array(
   'default'           => '4',
   'priority'          => 1001,
@@ -636,12 +641,12 @@ array(
 )
 );
 $wp_customize->add_control(
-  'carousel_1300',
+  'carousel_1024_1240',
   array(
     'section'     => 'carousel_customizer',
-    'settings'    => 'carousel_1300',
+    'settings'    => 'carousel_1024_1240',
     'description' =>'2~6枚で設定可',
-    'label'       => 'PC（画面幅 1084px〜1300px）での表示枚数',
+    'label'       => '画面幅 1024px〜1240pxでの表示枚数',
     'type'     => 'number',
     'input_attrs' => array(
         'min' => 2,
@@ -650,8 +655,9 @@ $wp_customize->add_control(
     ),
   )
 );
+
 $wp_customize->add_setting(
-  'slide_1300',
+  'slide_1024_1240',
   array(
     'default'           => '1',
     'priority'          => 1001,
@@ -663,19 +669,18 @@ $wp_customize->add_setting(
     'slide_1300',
     array(
       'section'     => 'carousel_customizer',
-      'settings'    => 'slide_1300',
-      'description' =>'1~6枚で設定可（表示枚数以下推奨）',
-      'label'       => 'PC（画面幅 1084px〜1300px）での1度にスライドする枚数',
-      'type'     => 'number',
-      'input_attrs' => array(
-          'min' => 1,
-          'max' => 6,
-          'step' => 1,
-      ),
-    )
-  );
+      'settings'    => 'slide_1024_1240',
+      'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
+        'label'       => '1枚ずつスライドさせる',
+        'type'     => 'checkbox',
+      )
+    );
+
+//-----------------------------------------
+//835-1023
+//-----------------------------------------  
 $wp_customize->add_setting(
-  'carousel_1083',
+  'carousel_835_1023',
   array(
     'default'           => '3',
     'priority'          => 1001,
@@ -684,12 +689,12 @@ $wp_customize->add_setting(
   )
   );
   $wp_customize->add_control(
-    'carousel_1083',
+    'carousel_835_1023',
     array(
       'section'     => 'carousel_customizer',
-      'settings'    => 'carousel_1083',
+      'settings'    => 'carousel_835_1023',
       'description' =>'2~6枚で設定可',
-      'label'       => 'PC（画面幅 895px〜1083px）での表示枚数',
+      'label'       => '画面幅 835px〜1023pxでの表示枚数',
       'type'     => 'number',
       'input_attrs' => array(
           'min' => 2,
@@ -698,8 +703,9 @@ $wp_customize->add_setting(
       ),
     )
   );
+
   $wp_customize->add_setting(
-    'slide_1083',
+    'slide_835_1023',
     array(
       'default'           => '1',
       'priority'          => 1001,
@@ -708,22 +714,21 @@ $wp_customize->add_setting(
     )
     );
     $wp_customize->add_control(
-      'slide_1083',
+      'slide_835_1023',
       array(
         'section'     => 'carousel_customizer',
-        'settings'    => 'slide_1083',
-        'description' =>'1~6枚で設定可（表示枚数以下推奨）',
-        'label'       => 'PC（画面幅 895px〜1083px）での1度にスライドする枚数',
-        'type'     => 'number',
-        'input_attrs' => array(
-            'min' => 1,
-            'max' => 6,
-            'step' => 1,
-        ),
+        'settings'    => 'slide_835_1023',
+        'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
+        'label'       => '1枚ずつスライドさせる',
+        'type'     => 'checkbox',
       )
     );
+
+//-----------------------------------------
+//481-834
+//-----------------------------------------
   $wp_customize->add_setting(
-    'carousel_894',
+    'carousel_481_834',
     array(
       'default'           => '2',
       'priority'          => 1001,
@@ -732,12 +737,12 @@ $wp_customize->add_setting(
     )
     );
     $wp_customize->add_control(
-      'carousel_894',
+      'carousel_481_834',
       array(
         'section'     => 'carousel_customizer',
-        'settings'    => 'carousel_894',
+        'settings'    => 'carousel_481_834',
         'description' =>'2~4枚で設定可',
-        'label'       => 'タブレット（画面幅 541px〜894px）での表示枚数',
+        'label'       => '画面幅 481px〜834pxでの表示枚数',
         'type'     => 'number',
         'input_attrs' => array(
             'min' => 2,
@@ -746,8 +751,10 @@ $wp_customize->add_setting(
         ),
       )
     );
+
+
     $wp_customize->add_setting(
-      'slide_894',
+      'slide_481_834',
       array(
         'default'           => '1',
         'priority'          => 1001,
@@ -756,22 +763,21 @@ $wp_customize->add_setting(
       )
       );
       $wp_customize->add_control(
-        'slide_894',
+        'slide_481_834',
         array(
           'section'     => 'carousel_customizer',
-          'settings'    => 'slide_894',
-          'description' =>'1~4枚で設定可（表示枚数以下推奨）',
-          'label'       => 'タブレット（画面幅 541px〜894px）での1度にスライドする枚数',
-          'type'     => 'number',
-          'input_attrs' => array(
-              'min' => 1,
-              'max' => 4,
-              'step' => 1,
-          ),
-        )
-      );
+          'settings'    => 'slide_481_834',
+          'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
+        'label'       => '1枚ずつスライドさせる',
+        'type'     => 'checkbox',
+      )
+    );
+
+//-----------------------------------------
+//480以下
+//-----------------------------------------
     $wp_customize->add_setting(
-      'carousel_540',
+      'carousel_under480',
       array(
         'default'           => '1',
         'priority'          => 1001,
@@ -780,44 +786,40 @@ $wp_customize->add_setting(
       )
       );
       $wp_customize->add_control(
-        'carousel_540',
+        'carousel_under480',
         array(
           'section'     => 'carousel_customizer',
-          'settings'    => 'carousel_540',
-          'description' =>'1~3枚で設定可',
-          'label'       => 'スマホ（画面幅 540px以下）での表示枚数',
+          'settings'    => 'carousel_under480',
+          'description' =>'1~2枚で設定可',
+          'label'       => '画面幅 480px以下での表示枚数',
           'type'     => 'number',
           'input_attrs' => array(
               'min' => 1,
-              'max' => 3,
+              'max' => 2,
               'step' => 1,
           ),
         )
       );
-      $wp_customize->add_setting(
-        'slide_540',
-        array(
-          'default'           => '1',
-          'priority'          => 1001,
-          'sanitize_callback' => 'nagi_sanitize_number_range',
 
+
+     $wp_customize->add_setting(
+       'slide_under480',
+       array(
+         'default'           => '1',
+         'priority'          => 1001,
+         'sanitize_callback' => 'nagi_sanitize_number_range',
         )
         );
-        $wp_customize->add_control(
-          'slide_540',
-          array(
-            'section'     => 'carousel_customizer',
-            'settings'    => 'slide_540',
-            'description' =>'1~3枚で設定可（表示枚数以下推奨）',
-            'label'       => 'スマホ（画面幅 540px以下）での1度にスライドする枚数',
-            'type'     => 'number',
-            'input_attrs' => array(
-                'min' => 1,
-                'max' => 3,
-                'step' => 1,
-            ),
-          )
-        );
+      $wp_customize->add_control(
+         'slide_under480',
+         array(
+           'section'     => 'carousel_customizer',
+           'settings'    => 'slide_under480',
+           'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
+        'label'       => '1枚ずつスライドさせる',
+        'type'     => 'checkbox',
+      )
+    );
 
 
     }

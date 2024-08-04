@@ -52,7 +52,10 @@ function insert_custom_fields($post)
 ?>
 <p>※この機能についての<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-fix-cta/">詳しい説明はこちら</a></p>
   <label for="fix_link">アフィリエイトタグのショートコード（こちらが入力されていないとフッター固定CTAは表示されません）
-</br>必ずアフィリエイトショートコードを入力してください。アフィリエイトのタグは＜a＞タグで囲まれたものに限られます。
+
+<p class="hogehoge">必ずアフィリエイトショートコードを入力してください。<span>アフィリエイトのタグは＜a＞タグで囲まれたものに限られます。それ以外はボタンになりません。</span></p>
+
+
   </label>
   <input id="fix_link" type="text" name="fix_link" value="<?php echo $fix_link; ?>"placeholder="アフィリエイトタグのショートコードをここへ入力してください">
   <br>
@@ -142,32 +145,19 @@ add_filter('cocoon_part__tmp/carousel', function($content) {
 });
 if ( !function_exists( 'wp_enqueue_slick_custom' ) ):
   function wp_enqueue_slick_custom(){
-    $show1301over=get_theme_mod('carousel_1301over', '4');
-    $show1300=get_theme_mod('carousel_1300', '4');
-    $show1083=get_theme_mod('carousel_1083', '3');
-    $show894=get_theme_mod('carousel_894', '2');
-    $show540=get_theme_mod('carousel_540', '1');
+    $show1241over     = get_theme_mod('carousel_1241over', '4');
+    $show1024_1240    = get_theme_mod('carousel_1024_1240', '4');
+    $show835_1023     = get_theme_mod('carousel_835_1023', '3');
+    $show481_834      = get_theme_mod('carousel_481_834', '2');
+    $show_under480    = get_theme_mod('carousel_under480', '1');
 
-    $slide1301over=get_theme_mod('slide_1301over', '1');
-    if ($slide1301over > $show1301over) {
-      $slide1301over = $show1301over;
-    }
-    $slide1300=get_theme_mod('slide_1300', '1');
-    if ($slide1300 > $show1300) {
-      $slide1300 = $show1300;
-    }
-    $slide1083=get_theme_mod('slide_1083', '1');
-    if ($slide1083 > $show1083) {
-      $slide1083 = $show1083;
-    }
-    $slide894=get_theme_mod('slide_894', '1');
-    if ($slide894 > $show894) {
-      $slide894 = $show894;
-    }
-    $slide540=get_theme_mod('slide_540', '1');
-    if ($slide540 > $show540) {
-      $slide540 = $show540;
-    }
+    $slide1241over     = get_theme_mod('slide_1241over',true)? 1 : $show1241over;
+    $slide1024_1240    = get_theme_mod('slide_1024_1240', true)? 1 : $show1024_1240;
+    $slide835_1023     = get_theme_mod('slide_835_1023', true)? 1 : $show835_1023;
+    $slide481_834      = get_theme_mod('slide_481_834', true)? 1 : $show481_834;
+    $slide_under480    = get_theme_mod('slide_under480', true)? 1 : $show_under480;
+
+    
 
     if (is_carousel_visible()) {
       wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
@@ -183,36 +173,36 @@ if ( !function_exists( 'wp_enqueue_slick_custom' ) ):
                     $autoplay.
                     'autoplaySpeed: '.strval(intval(get_carousel_autoplay_interval())*1000).',
                     infinite: true,
-                    slidesToShow: '.$show1301over.',
-                    slidesToScroll: '.$slide1301over.',
+                    slidesToShow: '.$show1241over.',
+                    slidesToScroll: '.$slide1241over.',
                     respondTo: "slider",
                     responsive: [
                       {
                         breakpoint: 1241,
                         settings: {
-                          slidesToShow: '.$show1300.',
-                          slidesToScroll: '.$slide1300.'
+                          slidesToShow: '.$show1024_1240.',
+                          slidesToScroll: '.$slide1024_1240.'
                         }
                       },
                       {
                         breakpoint: 1024,
                         settings: {
-                          slidesToShow: '.$show1083.',
-                          slidesToScroll: '.$slide1083.'
+                          slidesToShow: '.$show835_1023.',
+                          slidesToScroll: '.$slide835_1023.'
                         }
                       },
                       {
                         breakpoint: 835,
                         settings: {
-                          slidesToShow: '.$show894.',
-                          slidesToScroll: '.$slide894.'
+                          slidesToShow: '.$show481_834.',
+                          slidesToScroll: '.$slide481_834.'
                         }
                       },
                       {
                         breakpoint: 481,
                         settings: {
-                          slidesToShow: '.$show540.',
-                          slidesToScroll: '.$slide540.'
+                          slidesToShow: '.$show_under480.',
+                          slidesToScroll: '.$slide_under480.'
                         }
                       }
                       ]

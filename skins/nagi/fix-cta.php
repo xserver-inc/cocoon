@@ -1,5 +1,4 @@
 <?php 
-// 投稿のIDを取得します。このIDは、具体的な使用状況に応じて適切に設定してください。
 $post_id = get_the_ID();
 $fix_link = get_post_meta($post_id, 'fix_link', true);
 $fix_microcopy = get_post_meta($post_id,'fix_microcopy',true);

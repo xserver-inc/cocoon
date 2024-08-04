@@ -5,7 +5,7 @@
   Author: ごー
   Author URI: https://go-blogs.com/cocoon/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/nagi.png
-  Version: 1.0.3
+  Version: 1.0.5
   Priority: 6800001000
   Visibility: false
 */
@@ -59,7 +59,7 @@ span.cat-label {
 .comment-form .submit,
 .list-more-button,
 span.page-numbers.page-prev-next,
-span.footer_button {
+span.footer_button a {
   border-radius: var(--nagi_r_big_radius);
 }
 
@@ -78,7 +78,7 @@ a.page-numbers,
 .list-more-button,
 .class_nagi .page-numbers:not(.dots),
 .comment-reply-link,
-span.footer_button,
+span.footer_button a,
 div#header-container {
   box-shadow: var(--nagi_r_shadow);
 }
@@ -123,7 +123,7 @@ span.page-numbers.current,
 .class_nagi .pager-prev-next a:hover span,
 .comment-page-link a.next.page-numbers:hover,
 .comment-page-link a.prev.page-numbers:hover,
-.class_nagi .page-numbers:hover,
+.class_nagi .page-numbers:hover:not(.dots),
 .class_nagi .pager-links a:hover span {
   background-color: var(--nagi_key_color_light);
   color: white;
@@ -1099,6 +1099,39 @@ span.post-count::after {
   content: ')';
 }
 
+/* カルーセル */
+.slick-prev, .slick-next,
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
+  height: 25px;
+  width: 25px;
+  z-index: 1;
+  background-color: var(--nagi_key_color_light);
+  border-radius: 3px;
+}
+.slick-prev{
+  left: 5px;
+}
+.slick-next{
+  right: 5px;
+}
+.carousel .slick-arrow:before{
+  color: #ffffff;
+  font-size: 15px;
+  opacity: 1;
+}
+
+/* hogehoge */
+p.hogehoge{
+  margin: 1em 0;
+    padding: 1em;
+    background: #ffe6e6;
+    border-radius: 5px;
+}
+p.hogehoge span{
+  font-size: 1.1em;
+  color: red;
+  font-weight: bolder;
+}
 @media screen and (max-width: 834px) {
   .sns-share.ss-top.ss-col-6 a,
   .sns-share.ss-bottom.ss-col-6 a,
