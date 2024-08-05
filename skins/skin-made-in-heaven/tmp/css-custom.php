@@ -370,7 +370,7 @@ echo <<< EOF
 .body.hvn-card-border :is(.list, .is-auto-horizontal) .e-card {
   background-color: var(--dark-content-bgcolor, var(--hvn-white-color));
   border-radius: var(--border-radius10);
-  color: var(--dark-text-color, #333);
+  color: var(--dark-text-color, var(--cocoon-text-color));
   padding: var(--padding15);
 }
 
