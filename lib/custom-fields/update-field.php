@@ -84,7 +84,7 @@ function time_mod_form_view() {
 
   $year = '<label for="aa_mod" class="screen-reader-text">' . __( '年', THEME_NAME ) .
     '</label><input type="text" id="aa_mod" name="aa_mod" value="' .
-    $aa_mod . '" size="4" maxlength="4"' . $tab_index_attribute . ' autocomplete="off" />' . __( '年', THEME_NAME );
+    $aa_mod . '" size="4" maxlength="4"' . $tab_index_attribute . ' />' . __( '年', THEME_NAME );
 
   $month = '<label for="mm_mod" class="screen-reader-text">' . __( '月', THEME_NAME )  .
     '</label><select id="mm_mod" name="mm_mod"' . $tab_index_attribute . ">\n";
@@ -98,13 +98,13 @@ function time_mod_form_view() {
 
   $day = '<label for="jj_mod" class="screen-reader-text">' . __( '日', THEME_NAME )  .
     '</label><input type="text" id="jj_mod" name="jj_mod" value="' .
-    $jj_mod . '" size="2" maxlength="2"' . $tab_index_attribute . ' autocomplete="off" />' . __( '日', THEME_NAME );
+    $jj_mod . '" size="2" maxlength="2"' . $tab_index_attribute . ' />' . __( '日', THEME_NAME );
   $hour = '<label for="hh_mod" class="screen-reader-text">時' .
     '</label><input type="text" id="hh_mod" name="hh_mod" value="' . $hh_mod .
-    '" size="2" maxlength="2"' . $tab_index_attribute . ' autocomplete="off" />';
+    '" size="2" maxlength="2"' . $tab_index_attribute . ' />';
   $minute = '<label for="mn_mod" class="screen-reader-text">分' .
     '</label><input type="text" id="mn_mod" name="mn_mod" value="' . $mn_mod .
-    '" size="2" maxlength="2"' . $tab_index_attribute . ' autocomplete="off" />';
+    '" size="2" maxlength="2"' . $tab_index_attribute . ' />';
 
   printf( '%1$s %2$s %3$s @ %4$s : %5$s', $year, $month, $day, $hour, $minute );
   echo '<input type="hidden" id="ss_mod" name="ss_mod" value="' . $ss_mod . '" />';

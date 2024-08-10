@@ -14,7 +14,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-search'; ?>
 <?php if (!is_amp() || (is_amp() && is_ssl())): ?>
   <!-- 検索ボタン -->
   <li class="search-menu-button menu-button">
-    <input autocomplete="off" id="search-menu-input" type="checkbox" class="display-none">
+    <input id="search-menu-input" type="checkbox" class="display-none">
     <label id="search-menu-open" class="menu-open menu-button-in" for="search-menu-input">
       <span class="search-menu-icon menu-icon">
         <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
