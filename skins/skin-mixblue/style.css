@@ -244,7 +244,7 @@
 -----------------------------------------------------■□ */
 /* ----- ページ番号のボーダー ----- */
 .page-numbers {
-  border-radius: 50%;
+  border-radius: 99px;
   border: 1px solid #3261ab;
   transition: 0.4s;
   box-shadow: 4px 4px 5px -3px rgba(0,0,0,0.24),
