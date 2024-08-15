@@ -13344,22 +13344,6 @@ msgstr ""
 msgid "置換"
 msgstr ""
 
-#: blocks/src/block/cta/edit.js:185
-msgid "紺色（インディゴ）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:191
-msgid "明るい青（シアン）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:195
-msgid "緑色がかった青（ティール）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:206
-msgid "琥珀色（アンバー）"
-msgstr ""
-
 #: blocks/src/block/cta/index.js:21
 msgid "CTA"
 msgstr ""
