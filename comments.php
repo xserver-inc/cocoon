@@ -30,7 +30,13 @@ if ( is_comment_open() || have_comments() ): ?>
         <?php
         if (get_comment_pages_count() > 1): ?>
         <div class="comment-page-link">
-          <?php paginate_comments_links(); //コメントが多い場合、ページャーを表示 ?>
+        <?php
+          $args = array(
+            'prev_text' => '<span class="screen-reader-text">'.__( '前へ', THEME_NAME ).'</span><span class="fa fa-angle-left" aria-hidden="true"></span>',
+            'next_text' => '<span class="screen-reader-text">'.__( '次へ', THEME_NAME ).'</span><span class="fa fa-angle-right" aria-hidden="true"></span>',
+          );
+          paginate_comments_links($args); //コメントが多い場合、ページャーを表示
+        ?>
         </div>
         <?php endif; ?>
 

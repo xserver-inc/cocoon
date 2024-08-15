@@ -319,26 +319,7 @@ div.mce-content-body {
   }
 }
 
-/* cocoon/style.css
-textarea{
-  min-height: 260px;
-}
- */
-
-/* wp-admin/css/common.css
-ul{
-    list-style:none;
-}
- */
-
 .wp-block {
-  ul {
-    list-style-type: disc;
-  }
-  li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-  }
   ul ul {
     list-style-type: circle;
   }
@@ -1245,7 +1226,7 @@ div.cocoon-render-dropdown {
 }
 //ブロックエディタータイトルのマージントップ高さ調整
 div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 //新着・人気記事ブロックの矢印アイコンフォントの文字化け修正
@@ -1484,4 +1465,9 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     // background-color: #fff;
     // opacity: 0.99;
   }
+}
+
+//ブロックエディターの余白をクリックしても「+」ボタンが表示されない不具合修正
+.editor-styles-wrapper{
+  padding-bottom: 40vh;
 }

@@ -84,14 +84,17 @@
 
 //コメントのページネーション
 .comment-page-link{
-  text-align: center;
-  margin:24px 0;
-  .page-numbers{
-    width: auto;
-    height: auto;
-    padding: 6px 12px;
-    line-height: normal;
-  }
+  margin: 24px 0;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+
+  // .page-numbers{
+  //   width: auto;
+  //   height: auto;
+  //   padding: 6px 12px;
+  //   line-height: normal;
+  // }
   .current{
     background-color:#eee;
   }

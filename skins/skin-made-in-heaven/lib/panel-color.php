@@ -146,7 +146,29 @@ function hvn_color($wp_customize) {
   );
 
 
-  hvn_panel_label($wp_customize, $section, '見出しデザイン', 3);
+  hvn_panel_label($wp_customize, $section, 'グローバルナビメニューデザイン', 3);
+
+  $wp_customize->add_setting('hvn_navi_setting', array('default' => '0'));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_navi_setting',
+      array(
+        'description' => 'hoverエフェクト',
+        'section'     => "hvn_{$section}_section",
+        'settings'    => 'hvn_navi_setting',
+        'type'        => 'select',
+        'choices'     => array(
+          '0' => '背景明るく',
+          '1' => 'ライン(中央から)',
+          '2' => 'ライン(左から)',
+        )
+      )
+    )
+  );
+
+
+  hvn_panel_label($wp_customize, $section, '見出しデザイン', 4);
 
   $wp_customize->add_setting('hvn_h2_css_setting', array('default' => '0'));
   $wp_customize->add_control(

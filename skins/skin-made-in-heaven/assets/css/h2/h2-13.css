@@ -6,6 +6,7 @@
 .main .under-entry-content h2 {
   background-color: var(--hover-color);
   border-left: 10px solid var(--main-color);
+  color: #333;
   padding: 20px 10px;
 }
 
@@ -19,10 +20,6 @@
   display: flex;
   min-height: 70px;
   padding: 0px 20px 5px;
-}
-
-.hvn-dark .article h2 {
-  --hover-color: var(--main-color);
 }
 
 .article h2::before {

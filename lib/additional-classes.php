@@ -326,6 +326,11 @@ function body_class_additional($classes) {
     $classes[] = 'no-page-title';
   }
 
+  //ClassicPressの場合
+  if (is_classicpress()) {
+    $classes[] = 'classicpress';
+  }
+
   return apply_filters('body_class_additional', $classes);
 }//body_class_additional
 endif;

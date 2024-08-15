@@ -46,7 +46,6 @@ $count = get_index_category_entry_card_count();
             <?php echo get_category_name_by_id($cat_id); ?>
           </span>
         </h1>
-        <div class="list">
           <?php
           $type = ET_DEFAULT;
           //[Cocoon設定]→[インデックス]→枠線の表示「カードの枠線を表示する」が有効になっている場合は枠線を表示する
@@ -67,6 +66,15 @@ $count = get_index_category_entry_card_count();
             );
           }
           $atts = apply_filters('list_category_column_atts', $atts, $cat_id);
+
+          $class = 'ect-entry-card';
+          if (strpos($atts['type'], 'large_thumb') !== false) {
+            $class = 'ect-vertical-card';
+          }
+
+          ?>
+        <div class="list <?php echo $class; ?>">
+          <?php
           //新着記事リストの作成
           generate_widget_entries_tag($atts);
           ?>

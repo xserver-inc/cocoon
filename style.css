@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.7.4.7
+Version: 2.7.5.7
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -718,6 +718,10 @@ p.has-background {
 
 :where(.wp-block-columns.is-layout-flex) {
   gap: 1em;
+}
+
+:is(.is-layout-flow, .is-layout-constrained) > * {
+  margin-block-start: 0;
 }
 
 /************************************
@@ -6388,14 +6392,10 @@ figcaption {
 }
 
 .comment-page-link {
-  text-align: center;
   margin: 24px 0;
-}
-.comment-page-link .page-numbers {
-  width: auto;
-  height: auto;
-  padding: 6px 12px;
-  line-height: normal;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
 }
 .comment-page-link .current {
   background-color: #eee;
@@ -8643,7 +8643,13 @@ ul.timeline ul ul ul {
 .is-style-accordion {
   padding: 0;
 }
-.is-style-accordion .faq-question {
+.is-style-accordion.has-border-color .faq-question {
+  border: none;
+}
+.is-style-accordion:not(.not-nested-style).has-border-color .faq-question {
+  color: var(--cocoon-white-color);
+}
+.is-style-accordion > .faq > .faq-question {
   padding: 0.5em;
   margin: 0;
   cursor: pointer;
@@ -8651,23 +8657,17 @@ ul.timeline ul ul ul {
   background-color: #e8ecef;
   border-color: var(--cocoon-three-d-border-colors);
 }
-.is-style-accordion .faq-question::before {
+.is-style-accordion > .faq > .faq-question::before {
   content: "+";
   position: absolute;
   right: 1em;
   opacity: 0.5;
 }
-.is-style-accordion .faq-question.active::before {
+.is-style-accordion > .faq > .faq-question.active::before {
   content: "-";
 }
-.is-style-accordion .faq-answer {
+.is-style-accordion > .faq > .faq-answer {
   padding: 1em 0.5em;
-}
-.is-style-accordion.has-border-color .faq-question {
-  border: none;
-}
-.is-style-accordion:not(.not-nested-style).has-border-color .faq-question {
-  color: var(--cocoon-white-color);
 }
 
 .faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-item-label {
@@ -9480,6 +9480,10 @@ https://codepen.io/nxworld/pen/oLdoWb
   border: 1px solid;
   border-color: var(--cocoon-three-d-border-colors);
   border-radius: var(--cocoon-basic-border-radius);
+}
+.info-list .info-list-item-categorys .cat-label {
+  border: 0;
+  position: relative;
 }
 
 .info-list-caption {

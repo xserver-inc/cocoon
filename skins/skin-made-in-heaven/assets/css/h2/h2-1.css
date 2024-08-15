@@ -10,9 +10,3 @@
   color: #333;
   padding: 20px 15px!important;
 }
-
-.hvn-dark .article h2,
-.hvn-dark .main .article .widget-title,
-.hvn-dark .main .under-entry-content h2 {
-  color: var(--cocoon-text-color);
-}

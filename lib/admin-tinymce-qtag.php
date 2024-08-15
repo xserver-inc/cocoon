@@ -1706,6 +1706,51 @@ function initialize_tinymce_styles($init_array) {
   //ビジュアルエディターのフォントサイズ変更機能の文字サイズ指定
   $init_array['fontsize_formats'] = '10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 42px 48px';
 
+  //クラシックエディターのマーカースタイルにショートカットキーを設定
+  $init_array['init_instance_callback'] = 'function(editor) {
+    // 黄色マーカー (Ctrl + Shift + Y)
+    editor.addShortcut("ctrl+shift+y", "Insert yellow marker", function() {
+      var selectedText = editor.selection.getContent();
+      var markerText = "<span class=\"marker\">" + selectedText + "</span>";
+      editor.execCommand("mceInsertContent", false, markerText);
+    });
+
+    // 黄色アンダーラインマーカー (Ctrl + Shift + Z)
+    editor.addShortcut("ctrl+shift+z", "Insert yellow underline marker", function() {
+      var selectedText = editor.selection.getContent();
+      var markerText = "<span class=\"marker-under\">" + selectedText + "</span>";
+      editor.execCommand("mceInsertContent", false, markerText);
+    });
+
+    // 赤色マーカー (Ctrl + Shift + R)
+    editor.addShortcut("ctrl+shift+r", "Insert red marker", function() {
+      var selectedText = editor.selection.getContent();
+      var markerText = "<span class=\"marker-red\">" + selectedText + "</span>";
+      editor.execCommand("mceInsertContent", false, markerText);
+    });
+
+    // 赤色アンダーラインマーカー (Ctrl + Shift + S)
+    editor.addShortcut("ctrl+shift+s", "Insert red underline marker", function() {
+      var selectedText = editor.selection.getContent();
+      var markerText = "<span class=\"marker-under-red\">" + selectedText + "</span>";
+      editor.execCommand("mceInsertContent", false, markerText);
+    });
+
+    // 青色マーカー (Ctrl + Shift + B)
+    editor.addShortcut("ctrl+shift+b", "Insert blue marker", function() {
+      var selectedText = editor.selection.getContent();
+      var markerText = "<span class=\"marker-blue\">" + selectedText + "</span>";
+      editor.execCommand("mceInsertContent", false, markerText);
+    });
+
+    // 青色アンダーラインマーカー (Ctrl + Shift + C)
+    editor.addShortcut("ctrl+shift+c", "Insert blue underline marker", function() {
+      var selectedText = editor.selection.getContent();
+      var markerText = "<span class=\"marker-under-blue\">" + selectedText + "</span>";
+      editor.execCommand("mceInsertContent", false, markerText);
+    });
+  }';
+
   //Tinymce配列用のフック
   $init_array = apply_filters('tinymce_init_array', $init_array);
   return $init_array;

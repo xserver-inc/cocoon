@@ -53,6 +53,21 @@ function hvn_header($wp_customize) {
   );
 
 
+  $wp_customize->add_setting('hvn_header_option_setting', array('default' => true));
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'hvn_header_option_setting',
+      array(
+        'label'     => 'ヘッダー表示',
+        'section'   => "hvn_{$section}_section",
+        'settings'  => 'hvn_header_option_setting',
+        'type'      => 'checkbox',
+      )
+    )
+  );
+
+
   hvn_panel_label($wp_customize, $section, 'メインビジュアル', 2);
 
   $wp_customize->add_setting('hvn_header_setting', array('default' => 'none'));
@@ -101,7 +116,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_appea_font_size_setting',
       array(
-        'description' => '文字サイズ(10～50px)',
+        'description' => 'フォントサイズ(10～50px)',
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_appea_font_size_setting',
         'type'        => 'number',

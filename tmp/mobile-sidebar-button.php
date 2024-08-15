@@ -13,7 +13,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-outdent'; ?>
 <?php if ( is_active_sidebar( 'sidebar' ) || is_active_sidebar( 'sidebar-scroll' ) ): ?>
 <!-- サイドバーボタン -->
   <li class="sidebar-menu-button menu-button">
-    <input autocomplete="off" id="sidebar-menu-input" type="checkbox" class="display-none">
+    <input id="sidebar-menu-input" type="checkbox" class="display-none">
     <label id="sidebar-menu-open" class="menu-open menu-button-in" for="sidebar-menu-input">
       <span class="sidebar-menu-icon menu-icon">
         <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>

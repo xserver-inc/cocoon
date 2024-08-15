@@ -27,6 +27,8 @@
         //[.go-to-to]をゆっくりフェードインする
         $('.go-to-top').fadeIn('slow');
       } else {
+        //トップへ戻る間だけ追加したクラスを除去
+        $('.go-to-top-common').removeClass('go-to-top-up')
         //それ以外だったらフェードアウトする
         $('.go-to-top').fadeOut('slow');
       }
@@ -37,6 +39,8 @@
 
   //ボタン(.go-to-top-common)のクリックイベント
   $('.go-to-top-common').click(function () {
+    //トップへ戻る間だけクラスを追加
+    $(this).addClass('go-to-top-up');
     //ページトップへ移動する
     $('body,html').animate({
       scrollTop: 1

@@ -22,12 +22,14 @@ endif;
 //内部ブログカードを作成できるURLかどうか
 if ( !function_exists( 'is_internal_blogcard_url' ) ):
 function is_internal_blogcard_url($url){
+  if (!includes_home_url($url)) {
+    return false;
+  }
   $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
   $cat = get_category_by_path($url, false);
   $tag = url_to_tag_object($url);
-  //_v($cat);
-  //_v($url);
-  if ($id || is_home_url($url) || $cat || $tag) {
+
+  if (($id && get_post_status($id)) || is_home_url($url) || $cat || $tag) {
     return true;
   }
 }

@@ -75,9 +75,9 @@ EOF;
 
 
 //******************************************************************************
-//  フロントページから新着記事を除外
+//  「新着記事」タブ表示
 //******************************************************************************
-if (is_front_top_page() &&  get_theme_mod('hvn_front_none_setting')) {
+if (is_front_top_page() &&  !get_theme_mod('hvn_front_none_setting', true)) {
   echo <<< EOF
 (function($) {
   $('#index-tab-2').prop('checked', true);
@@ -378,9 +378,7 @@ echo <<< EOF
 
   $(window).resize(function() {
     // メニュー解除
-    if ($('#navi-menu-input').prop("checked")) {
-      $('#navi-menu-input').prop("checked", false);
-    }
+    $('#navi-menu-input').prop("checked", false);
     setHeight();
   });
 
@@ -441,7 +439,7 @@ if (is_ssl()) {
 
     navigator.clipboard.writeText($(this).parent().text()).then(() => {
       $(".code-copy").text("COPIED");
-      setTimeout(function(){ 
+      setTimeout(function() {
         $(".code-copy").text("COPY");
       }, 1000);
     });
@@ -463,7 +461,7 @@ EOF;
 
   clip.on("success", function(event) {
     $(".code-copy").text("COPIED");
-    setTimeout(function(){ 
+    setTimeout(function() {
       $(".code-copy").text("COPY");
     }, 1000);
     event.clearSelection();
@@ -532,7 +530,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
 　  $('.children', this).before('{$button}');
 
     $('.sub-item', this).click(function() {
-      $(this).next('ul').slideToggle(300);
+      $(this).next('ul').toggle();
       $(this).toggleClass('active');
     });
   });
@@ -547,12 +545,12 @@ if (get_theme_mod('hvn_accordion_setting')) {
     var elm = $('.tagcloud a', this);
     var c   = elm.length;
     if (c > n) {
-      elm.slice(${n}).hide();
+      elm.slice({$n}).hide();
       $(this).append('{$button}');
     }
 
     $('button', this).click(function() {
-      elm.slice(${n}).slideToggle(300);
+      elm.slice({$n}).toggle();
       $(this).toggleClass('active');
     });
   });
@@ -619,7 +617,7 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
   }
   $('.hvn-open-btn').addClass('active');
   $('#hvn-toc a').click(function() {
-    $('#hvn-close').prop('checked',true);
+    $('#hvn-close').prop('checked', true);
   });
 })(jQuery);
 
@@ -673,7 +671,7 @@ switch(get_theme_mod('hvn_toc_hidden_setting')) {
   }
 
   $('.toc button').click(function() {
-    elm.slice({$n}).slideToggle(300);
+    elm.slice({$n}).toggle();
     $(this).toggleClass('active');
   });
 })(jQuery);
@@ -692,7 +690,7 @@ EOF;
   }
 
   $('.toc button').click(function() {
-    elm.slideToggle(300);
+    elm.toggle();
     $(this).toggleClass('active');
   });
 })(jQuery);
@@ -700,3 +698,16 @@ EOF;
 EOF;
     break;
 }
+
+
+//******************************************************************************
+//  タブブロックスクロール表示
+//******************************************************************************
+echo <<< EOF
+(function($){
+  new ScrollHint(".tab-label-group", {
+    suggestClass: 'is-scroll-tab',
+  });
+})(jQuery);
+
+EOF;

@@ -99,7 +99,7 @@ if (get_theme_mod('hvn_inline_button_set3_setting')) {
 [class*="inline-button"]:not([class*="inline-button-white-"]):after{
   --shadow: 3px;
   border-radius: inherit;
-  box-shadow: 0 var(--shadow) 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 var(--shadow) 0 rgb(0 0 0 / 20%);
   content: '';
   display: block;
   height: 100%;
@@ -334,7 +334,6 @@ html .body .is-style-hvn-timeline-line.has-{$slug}-point-color:not(.not-nested-s
 
 html .body .hvn-timeline.has-{$slug}-point-color:not(.not-nested-style) .timeline-item:before{
   border-color: {$color};
-  color: {$color};
 }
 
 EOF;

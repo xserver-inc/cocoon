@@ -833,3 +833,10 @@ function register_tag_check_list() {
   register_taxonomy( 'post_tag', 'post',(array) $tag_slug_args);
 }
 endif;
+
+//管理画面のbodyタグのクラスに挿入
+add_filter('admin_body_class', 'add_custom_admin_body_class');
+function add_custom_admin_body_class($classes) {
+  $classes .= ' classicpress';
+  return $classes;
+}

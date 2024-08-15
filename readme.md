@@ -72,8 +72,6 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 
 [Lozad.js](https://github.com/ApoorvSaxena/lozad.js)
 
-[IntersectionObserver polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)
-
 [clipboard.js](https://clipboardjs.com/)
 
 ## コードを参考にしたプラグイン

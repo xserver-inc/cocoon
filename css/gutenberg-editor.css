@@ -144,7 +144,8 @@
 }
 
 .wp-site-blocks .wp-block {
-  max-width: none !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article dd {
@@ -4210,7 +4211,13 @@ figcaption {
 .is-style-accordion {
   padding: 0;
 }
-.is-style-accordion .faq-question {
+.is-style-accordion.has-border-color .faq-question {
+  border: none;
+}
+.is-style-accordion:not(.not-nested-style).has-border-color .faq-question {
+  color: var(--cocoon-white-color);
+}
+.is-style-accordion > .faq > .faq-question {
   padding: 0.5em;
   margin: 0;
   cursor: pointer;
@@ -4218,23 +4225,17 @@ figcaption {
   background-color: #e8ecef;
   border-color: var(--cocoon-three-d-border-colors);
 }
-.is-style-accordion .faq-question::before {
+.is-style-accordion > .faq > .faq-question::before {
   content: "+";
   position: absolute;
   right: 1em;
   opacity: 0.5;
 }
-.is-style-accordion .faq-question.active::before {
+.is-style-accordion > .faq > .faq-question.active::before {
   content: "-";
 }
-.is-style-accordion .faq-answer {
+.is-style-accordion > .faq > .faq-answer {
   padding: 1em 0.5em;
-}
-.is-style-accordion.has-border-color .faq-question {
-  border: none;
-}
-.is-style-accordion:not(.not-nested-style).has-border-color .faq-question {
-  color: var(--cocoon-white-color);
 }
 
 .faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-item-label {
@@ -5192,23 +5193,6 @@ div.mce-content-body {
   min-height: auto;
 }
 
-/* cocoon/style.css
-textarea{
-  min-height: 260px;
-}
- */
-/* wp-admin/css/common.css
-ul{
-    list-style:none;
-}
- */
-.wp-block ul {
-  list-style-type: disc;
-}
-.wp-block li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-}
 .wp-block ul ul {
   list-style-type: circle;
 }
@@ -5871,7 +5855,7 @@ div.cocoon-render-dropdown select option[disabled] {
 }
 
 div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .editor-styles-wrapper.font-awesome-5 .card-arrow .a-wrap::after {
@@ -6071,4 +6055,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .cta-btn-group .cta-btn {
   width: 100%;
   justify-content: center;
+}
+
+.editor-styles-wrapper {
+  padding-bottom: 40vh;
 }

@@ -13,15 +13,12 @@ add_action('customize_register', function($wp_customize) {
       'priority'  => 300,
     )
   );
-  wp_enqueue_style('hvn-admin', HVN_SKIN_URL . 'assets/css/admin.css');
 
   hvn_color($wp_customize);
   hvn_main($wp_customize);
   hvn_header($wp_customize);
+  hvn_option($wp_customize);
   hvn_editor($wp_customize);
-  if (defined('HVN_OPTION') && HVN_OPTION) {
-    hvn_option($wp_customize);
-  }
 });
 
 
@@ -143,23 +140,26 @@ add_action('quick_edit_custom_box', function($column_name, $post_type) {
     $print_nonce = FALSE;
     wp_nonce_field('quick_edit_action', $post_type . '_edit_nonce'); //CSRF対策
   }
-?>
+  switch($column_name) {
+    case 'the_page_meta_description':
+    ?>
 <fieldset class="inline-edit-col-right inline-custom-meta">
-  <div class="inline-edit-col column-<?php echo $column_name ?>">
+  <div class="inline-edit-col column-column-memo">
     <label class="inline-edit-group">
-    <?php
-      switch($column_name) {
-        case 'the_page_meta_description':
-    ?>
-    <span class="title">メタディスクリプション</span><span class="str-count">文字数:<span class="meta-description-count">0</span></span><textarea name="the_page_meta_description"></textarea>
-    <?php
-          break;
-      }
-    ?>
+      <span class="title">メモ</span>
+      <textarea name="the_page_memo"></textarea>
+    </label>
+  </div>
+  <div class="inline-edit-col column-the_page_meta_descriptio">
+    <label class="inline-edit-group">
+      <span class="title">メタディスクリプション</span><span class="str-count">文字数:<span class="meta-description-count">0</span></span>
+      <textarea name="the_page_meta_description"></textarea>
     </label>
   </div>
 </fieldset>
-<?php
+    <?php
+          break;
+      }
 }, 10, 2);
 
 
@@ -187,7 +187,12 @@ add_action('admin_footer-edit.php', function() {
       var $edit_row = $('#edit-' + $post_id);
       var $post_row = $('#post-' + $post_id);
 
-      $elm = $(':input[name="the_page_meta_description"]',$edit_row);
+      // メモ
+      var $memo = $('.column-memo', $post_row).html();
+      $(':input[name="the_page_memo"]', $edit_row).val($memo)
+
+      // ディスクリプション
+      $elm = $(':input[name="the_page_meta_description"]', $edit_row);
 
       var $the_page_meta_description = $('.column-the_page_meta_description', $post_row).html();
       $elm.val($the_page_meta_description);
@@ -195,7 +200,7 @@ add_action('admin_footer-edit.php', function() {
       // 文字数表示
       $count = $elm.val().length;
       $('.meta-description-count', $edit_row).text($count);
-      $elm.bind("keydown keyup keypress change",function(){
+      $elm.bind("keydown keyup keypress change", function() {
         var $count = $(this).val().length;
         $('.meta-description-count', $edit_row).text($count);
       });
@@ -225,6 +230,10 @@ add_action('save_post', function($post_id) {
   $_POST += array("{$slug}_edit_nonce" => '');
   if (!wp_verify_nonce($_POST["{$slug}_edit_nonce"], 'quick_edit_action')) {
     return;
+  }
+
+  if ( isset( $_REQUEST['the_page_memo'] ) ) {
+    update_post_meta( $post_id, 'the_page_memo', $_REQUEST['the_page_memo']);
   }
 
   if ( isset( $_REQUEST['the_page_meta_description'] ) ) {
@@ -284,7 +293,7 @@ add_action('enqueue_block_editor_assets', function() {
 
 
 //******************************************************************************
-//  CSS、ライブラリ追加
+//  CSS追加
 //******************************************************************************
 add_action('wp_enqueue_scripts', function() {
   hvn_h2_h4_css();
@@ -292,6 +301,7 @@ add_action('wp_enqueue_scripts', function() {
   hvn_editor_css();
   hvn_custom_css();
   wp_dequeue_style('scrollhint-style');
+  wp_enqueue_script('scrollhint-js', get_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array('jquery'), false, true);
 }, 999);
 
 
@@ -308,6 +318,14 @@ add_action('admin_footer', function() {
   }
   wp_enqueue_style('hvn-admin', HVN_SKIN_URL . 'assets/css/admin.css');
 }, 999);
+
+
+//******************************************************************************
+//  カスタマイザーCSS追加
+//******************************************************************************
+add_action('customize_controls_enqueue_scripts', function() {
+  wp_enqueue_style('hnv-custom', HVN_SKIN_URL . '/assets/css/customize.css' );
+});
 
 
 //******************************************************************************
@@ -461,22 +479,15 @@ add_filter('option_time_format', function($option){
 //  NEWマーク追加
 //******************************************************************************
 add_filter('post_class', function($classes, $class, $post_id) {
-  // 表示期間3日
   $days = get_theme_mod('hvn_index_new_setting');
   if ($days == 0) {
     return $classes;
   }
 
-  // 現在の時刻取得
   $now = date_i18n('U');
-
-  // 最終更新日取得
   $mod_time  = get_update_time('U', $post_id);
-
-  // 投稿日取得
   $post_time = get_the_time('U', $post_id);
 
-  // 表示期間
   $last = $now - ($days * 24 * 60 * 60);
   if ($post_time > $last) {
     $classes[] = 'new-post';
@@ -737,4 +748,16 @@ add_filter('render_block_cocoon-blocks/faq', function($content, $block) {
 }
 
   return $content;
+}, 10, 2);
+
+
+//******************************************************************************
+//  プロフィールリンク変更
+//******************************************************************************
+add_filter('the_author_box_name', function($name, $id) {
+  $url = get_the_author_profile_page_url($id);
+  if (!$url) {
+    $name = strip_tags($name);
+  }
+  return $name;
 }, 10, 2);

@@ -439,7 +439,19 @@ input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a {
     border: 1.5px solid #e3dcd4;
     border-radius: 50%;
 }
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+.body .search-edit,
+.body input[type="text"],
+.body input[type="password"],
+.body input[type="date"],
+.body input[type="datetime"],
+.body input[type="email"],
+.body input[type="number"],
+.body input[type="search"],
+.body input[type="tel"],
+.body input[type="time"],
+.body input[type="url"],
+.body textarea,
+.body select {
     padding: 11.5px 23px 10px;
     border-radius: 30px;
     font-size: 16px;

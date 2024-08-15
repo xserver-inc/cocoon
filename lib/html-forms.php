@@ -788,7 +788,7 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   $id = $name.'_'.'is_front_page';
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_front_page" id="'.$id.'" ';
   checked(in_array('is_front_page', $checks));
-  echo '><label for="'.$id.'">' . __( 'トップページのみ', THEME_NAME ) . '</label></li>';
+  echo '><label for="'.$id.'">' . __( 'フロントページのみ', THEME_NAME ) . '</label></li>';
 
   $id = $name.'_'.'is_single';
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_single" id="'.$id.'" ';
@@ -1293,9 +1293,10 @@ function generate_widget_entries_tag($atts){
   if ($ordered_posts) {
     $post_type = 'post,page';// デフォルトでpost_typeは投稿と固定ページ
     $args = array(
-      'ignore_sticky_posts' => true,
+      'ignore_sticky_posts' => true, // 固定記事は表示しない
+      'posts_per_page'      => -1,   // 表示数を設定した記事を全件表示
       'post__in'  => $ordered_posts, // post__inで投稿IDを指定
-      'orderby'   => 'post__in', // 指定したID順にソート
+      'orderby'   => 'post__in',     // 指定したID順にソート
     );
   }
   //投稿タイプ

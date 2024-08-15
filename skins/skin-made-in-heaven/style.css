@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.9.3
+ Version: 2.12.0
  Priority: 6900001000
 */
 
@@ -108,6 +108,9 @@
 **        2.9.1   2024-06-16  バグ対策
 **        2.9.2   2024-06-25  バグ対策
 **        2.9.3   2024-06-26  改善
+**        2.10.0  2024-06-28  クイック編集にメモ追加
+**        2.11.0  2024-06-30  仕様変更
+**        2.12.0  2024-08-05  仕様変更
 **
 *******************************************************************************/
 
@@ -137,20 +140,29 @@
 *******************************************************************************/
 
 :root {
-  --border-radius10: 10px;
-  --border-radius100: 100px;
   --aspect-ratio: 16 / 9;
   --column: 1;
   --swiper: 2;
-  --title-line: 2;
-  --shadow-color: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --fpt-column: 2;
+  --title-line: 3;
+  --shadow-color: 0 0 3px rgb(0 0 0 / 20%);
   --thumb-width: 120px;
   --main-padding: var(--gap30);
   --padding15: 15px;
-  --white-bgcolor: #fff;
-  --gray-bgcolor: #f7f7f7;
-  --appeal-bgcolor: 255, 255, 255;
+  --hvn-white-color: #fff;
 }
+
+.hvn-radius {
+  --border-radius10: 10px;
+  --border-radius100: 100px;
+}
+
+.main .toc {
+  --main-padding: var(--gap30);
+}
+
+
+/* おすすめカード */
 
 .recommended {
   --column: 3;
@@ -160,11 +172,14 @@
 
 /* カード数≦3 */
 
-.recommended-in .widget-entry-cards:has(> :nth-child(-n+3):last-child) {
+.recommended .widget-entry-cards:has(> :nth-child(-n+3):last-child) {
   --gap: var(--gap30);
 }
 
-.rect-mini-card .related-list,
+
+/* 関連記事 */
+
+.related-list,
 .ect-2-columns {
   --column: 2;
 }
@@ -174,17 +189,19 @@
   --column: 3;
 }
 
+
+/* カテゴリーごと */
+
 .fpt-columns .list {
   --column: 1;
-}
-
-.fpt-2-columns {
-  --fpt-column: 2;
 }
 
 .fpt-3-columns {
   --fpt-column: 3;
 }
+
+
+/* カード横型 */
 
 .no-sidebar .main,
 .container {
@@ -200,21 +217,10 @@
   --swiper: 1;
 }
 
-.body .list .large-thumb,
-.body .list.ect-big-card,
-.body .list.ect-vertical-card,
-.front-top-page .ect-big-card-first .a-wrap:first-child {
-  --title-line: 2;
-}
 
-.widget-entry-cards:not(.card-large-image):not(:has(.card-snippet)),
-.related-list:not(:has(.card-snippet)) {
-  --title-line: 4;
-}
-
-.large-thumb-on {
-  --title-line: 3;
-}
+/*******************************************************************************
+**  レスポンシブ
+*******************************************************************************/
 
 @media (width <=1023px) {
   .main {
@@ -236,7 +242,7 @@
   .fpt-columns {
     --fpt-column: 1;
   }
-  .list-columns.fpt-columns:has(.large-thumb) {
+  .fpt-columns:has(.ect-vertical-card) {
     --fpt-column: 2;
   }
   .container,
@@ -248,19 +254,20 @@
 }
 
 @media (width <=480px) {
-   :root {
+   :root,
+  .main .toc {
     --main-padding: 15px;
   }
   .recommended,
-  .recommended-in .widget-entry-cards:has(> :nth-child(-n+3):last-child) {
+  .recommended .widget-entry-cards:has(> :nth-child(-n+3):last-child) {
     --gap: var(--padding15);
   }
-  .rect-mini-card .related-list,
+  .related-list,
   .ect-2-columns,
   .ect-3-columns {
     --column: 1;
   }
-  .list-columns.fpt-columns:has(.large-thumb) {
+  .fpt-columns:has(.ect-vertical-card) {
     --fpt-column: 1;
   }
   .container,
@@ -268,12 +275,6 @@
   .main,
   .footer {
     --swiper: 1;
-  }
-  .no-sp-snippet-related .related-list,
-  .no-sp-snippet .list,
-  .no-sp-snippet .blogcard-title,
-  .no-sp-snippet .widget-entry-cards:not(.card-large-image) .card-title {
-    --title-line: 4;
   }
 }
 
@@ -328,18 +329,22 @@ figcaption {
 /* スクロールバー */
 
 pre::-webkit-scrollbar,
-.scrollable-table::-webkit-scrollbar {
-  height: 10px;
-}
-
+.scrollable-table::-webkit-scrollbar,
+.tab-label-group::-webkit-scrollbar,
 .hvn-content-wrap::-webkit-scrollbar {
+  background-color: #fefefe;
+  box-shadow: inset 0 0 2px 0 rgb(0 0 0 / 15%);
+  height: 10px;
   width: 10px;
 }
 
 pre::-webkit-scrollbar-thumb,
 .scrollable-table::-webkit-scrollbar-thumb,
+.tab-label-group::-webkit-scrollbar-thumb,
 .hvn-content-wrap::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
   background-color: #ccc;
+  border: 3px solid transparent;
 }
 
 img {
@@ -362,7 +367,7 @@ img {
 *******************************************************************************/
 
 .header-container {
-  background-color: var(--white-bgcolor);
+  background-color: #fff;
 }
 
 .body .header-in {
@@ -412,7 +417,7 @@ img {
 }
 
 .navi-in a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(255 255 255 / 20%);
 }
 
 .navi-in > ul li:before {
@@ -424,13 +429,13 @@ img {
 }
 
 .navi-in > ul .sub-menu {
-  background-color: var(--white-bgcolor);
+  background-color: #fff;
   box-shadow: var(--shadow-color);
 }
 
 #navi-in .sub-menu a {
   border-top: 3px dotted var(--border-color);
-  color: unset;
+  color: #333;
   padding: 0 1.4em;
 }
 
@@ -452,7 +457,7 @@ img {
 }
 
 .notice-area {
-  box-shadow: inset 0 0 3px rgb(0 0 0 / 0.2);
+  box-shadow: inset 0 0 3px rgb(0 0 0 / 20%);
   font-size: 14px;
   font-weight: bold;
   line-height: 40px;
@@ -528,7 +533,7 @@ img {
 }
 
 .appeal-content {
-  background-color: rgb(var(--appeal-bgcolor), 0.85);
+  background-color: rgb(var(--body-rgb-color) / 85%);
   border-radius: var(--border-radius10);
   padding: var(--gap30) var(--main-padding);
 }
@@ -575,13 +580,13 @@ img {
   margin: 0;
 }
 
-.body .recommended.rcs-card-margin .a-wrap {
+.body .recommended .a-wrap {
   margin: 0!important;
   max-width: calc((100% - var(--gap) * (var(--column) - 1)) / var(--column));
 }
 
-.body .large-thumb-on .a-wrap figure {
-  height: 100%;
+.body .recommended .e-card {
+  border-radius: var(--border-radius10);
 }
 
 
@@ -668,8 +673,10 @@ img {
 
 .body.error404 .main,
 .body.page .main,
-.body.single .main {
-  background-color: var(--white-bgcolor);
+.body.single .main,
+.archive .entry-content,
+.body aside.widget:not(.widget_search) {
+  background-color: var(--content-bgcolor);
   border-radius: var(--border-radius10);
   display: block;
   padding: var(--gap30) var(--main-padding);
@@ -677,15 +684,6 @@ img {
 
 .body.error404 .article p {
   margin: 0;
-}
-
-
-/* アーカイブ */
-
-.archive .entry-content {
-  border-radius: var(--border-radius10);
-  background-color: var(--white-bgcolor);
-  padding: var(--gap30) var(--main-padding);
 }
 
 .archive .entry-content h2:first-child {
@@ -722,7 +720,7 @@ img {
 *******************************************************************************/
 
 .footer {
-  background-color: var(--white-bgcolor);
+  background-color: #fff;
   margin: var(--gap30) 0 0;
   padding: 0;
 }
@@ -792,6 +790,7 @@ img {
 
 .body .ad-area.ad-index-top,
 .body .ad-area.ad-index-bottom,
+.body .ad-area.ad-index-middle,
 .body .ad-area.ad-sidebar-top,
 .body .ad-area.ad-sidebar-bottom {
   margin-bottom: 0;
@@ -814,12 +813,6 @@ img {
 
 .body .list .a-wrap {
   max-width: unset;
-}
-
-.body .list .e-card {
-  border: 0;
-  height: 100%;
-  padding: var(--padding15);
 }
 
 
@@ -909,11 +902,11 @@ span.fas.fa-history:before {
 .comment-form .submit,
 .list-more-button,
 .pagination-next-link {
-  background-color: var(--white-bgcolor);
+  background-color: #fff;
   border: 1px solid var(--main-color);
   border-radius: var(--border-radius100);
   box-shadow: var(--shadow-color);
-  color: unset;
+  color: #333;
   display: grid;
   font-size: var(--cocoon-text-size-s)!important;
   font-weight: normal;
@@ -941,13 +934,7 @@ span.fas.fa-history:before {
 .pagination a:hover,
 .comment-page-link a:hover {
   background-color: var(--hover-color);
-  color: var(--cocoon-text-color);
-  opacity: 1;
-}
-
-.body .page-numbers.current {
-  background-color: var(--main-color);
-  color: var(--text-color);
+  color: #333;
   opacity: 1;
 }
 
@@ -981,11 +968,12 @@ span.fas.fa-history:before {
 }
 
 .body .page-numbers {
-  background-color: var(--white-bgcolor);
+  background-color: #fff;
   border: 1px solid var(--main-color);
   border-radius: var(--border-radius100);
   box-shadow: var(--shadow-color);
   font-size: var(--cocoon-text-size-s);
+  color: #333;
   height: 40px;
   line-height: 40px;
   margin: 0;
@@ -1001,6 +989,12 @@ span.fas.fa-history:before {
   color: var(--title-color);
   opacity: 1;
   width: unset;
+}
+
+.page-numbers.current {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  opacity: 1;
 }
 
 
@@ -1217,7 +1211,7 @@ span.fas.fa-history:before {
 
 /* ミニカード */
 
-.body .rect-mini-card .related-list .e-card {
+.body .related-list .e-card {
   border: 1px solid var(--cocoon-three-d-border-colors);
   padding: var(--padding15);
 }
@@ -1366,7 +1360,7 @@ span.fas.fa-history:before {
   border: 1px solid var(--main-color);
   border-radius: 0;
   box-shadow: var(--shadow-color);
-  color: var(--cocoon-text-color);
+  color: unset;
   opacity: 1;
   padding: var(--padding15);
 }
@@ -1482,7 +1476,6 @@ span.fas.fa-history:before {
   background-color: var(--hover-color);
   border: 5px solid #fff;
   box-shadow: var(--shadow-color);
-  height: 100%;
   margin: 0 0 var(--padding15);
 }
 
@@ -1491,7 +1484,6 @@ span.fas.fa-history:before {
 
 .wp-lightbox-overlay .scrim {
   background-color: #000!important;
-  opacity: 0.5;
 }
 
 .wp-lightbox-overlay svg {
@@ -1619,9 +1611,10 @@ span.fas.fa-history:before {
 /* 返信ボタン */
 
 .comment-reply-link {
-  background-color: var(--white-bgcolor);
+  background-color: #fff;
   border: 1px solid var(--main-color);
   box-shadow: var(--shadow-color);
+  color: #333;
   display: inline-block;
   margin: 0;
   padding: 0 1em;
@@ -1690,6 +1683,7 @@ span.fas.fa-history:before {
 /* 分割ページボタン */
 
 .comment-page-link:has(.page-numbers) {
+  gap: 5px;
   margin: var(--gap30) 0 0 0;
 }
 
@@ -1711,7 +1705,7 @@ span.fas.fa-history:before {
 }
 
 .go-to-top-button-icon-font {
-  background-image: linear-gradient(0deg, var(--main-color) 0, var(--main-color) var(--per), var(--white-bgcolor) var(--per), var(--white-bgcolor) 100%);
+  background-image: linear-gradient(0deg, var(--main-color) 0, var(--main-color) var(--per), #fff var(--per), #fff 100%);
   border: 1px solid var(--main-color);
   border-radius: var(--border-radius100);
   box-shadow: var(--shadow-color);
@@ -1737,16 +1731,6 @@ span.fas.fa-history:before {
 **  モバイル
 **
 *******************************************************************************/
-
-.mobile-menu-buttons {
-  color: var(--cocoon-text-color);
-}
-
-.mobile-menu-buttons .menu-button > a,
-.mobile-menu-buttons .menu-caption,
-.mobile-menu-buttons .menu-icon {
-  color: var(--main-color);
-}
 
 .mobile-menu-buttons .menu-caption {
   font-size: 11px;
@@ -1784,6 +1768,7 @@ span.fas.fa-history:before {
 
 .menu-close-button {
   color: var(--title-color);
+  line-height: 1.4;
 }
 
 .sidebar-menu-close-button .fa-times:before {
@@ -1796,10 +1781,6 @@ span.fas.fa-history:before {
 **  管理者画面
 **
 *******************************************************************************/
-
-.entry-card-content:has(.admin-pv) .entry-card-snippet {
-  display: none;
-}
 
 .entry-card-content:has(.admin-pv) .e-card-title {
   margin: 0;
@@ -1828,10 +1809,6 @@ span.fas.fa-history:before {
 **  ウィジェットエリア
 **
 *******************************************************************************/
-
-:is(.content-top, .content-bottom, .sidebar-scroll, .footer-widgets):not(:has(.widget)) {
-  display: none!important;
-}
 
 
 /*******************************************************************************
@@ -1909,21 +1886,11 @@ span.fas.fa-history:before {
   margin: 0;
 }
 
-.body aside.widget:not(.widget_search) {
-  background-color: var(--white-bgcolor);
-  border-radius: var(--border-radius10);
-  padding: var(--gap30) var(--main-padding);
-}
-
 .body .widget > ul {
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 0;
-}
-
-.widget-entry-card-date > span:nth-last-of-type(2) {
-  display: none;
 }
 
 
@@ -1983,16 +1950,8 @@ aside.widget .widget-title {
 **
 *******************************************************************************/
 
-.body .recommended .e-card,
-.list .e-card {
-  border-radius: var(--border-radius10);
-}
-
-.large-thumb .e-card {
-  border: 1px solid var(--border-color);
-}
-
-.large-thumb-on .card-snippet,
+.body .blogcard-snippet,
+.body .widget-entry-cards .card-snippet,
 .body .rss-entry-card-date {
   display: none!important;
 }
@@ -2004,17 +1963,12 @@ aside.widget .widget-title {
   content: none;
 }
 
-.body .widget-entry-card:has(.widget-entry-card-pv) .card-content {
-  padding-bottom: var(--gap30);
-}
-
 
 /*******************************************************************************
 **  デフォルトカード
 *******************************************************************************/
 
 .e-card {
-  background-color: var(--white-bgcolor);
   display: flex;
   gap: var(--padding15);
   height: 100%;
@@ -2025,7 +1979,7 @@ aside.widget .widget-title {
 .body .e-card .card-content {
   flex: 1;
   margin: 0;
-  padding: 0 0 var(--gap30);
+  padding: 0 0 20px;
   position: relative;
 }
 
@@ -2042,17 +1996,6 @@ aside.widget .widget-title {
   -webkit-line-clamp: var(--title-line)!important;
 }
 
-.blogcard-snippet,
-.card-snippet {
-  color: var(--s-text-color);
-  font-size: var(--cocoon-text-size-s)!important;
-  line-height: 1.4;
-  margin: 0;
-  opacity: 1!important;
-  padding: var(--padding15) 0 0;
-  -webkit-line-clamp: 3!important;
-}
-
 
 /*******************************************************************************
 **  縦型カード
@@ -2062,21 +2005,14 @@ aside.widget .widget-title {
 .ect-big-card .e-card,
 .ect-vertical-card .e-card,
 .large-thumb .e-card {
+  --title-line: 2;
   flex-direction: column;
-  padding: var(--padding15);
 }
 
 .front-top-page .ect-big-card-first .a-wrap:first-child .card-title,
 .body .ect-vertical-card .card-title,
 .body .large-thumb .card-title {
   height: calc(1.4em * var(--title-line));
-}
-
-.front-top-page .ect-big-card-first .a-wrap:first-child .card-snippet,
-.ect-vertical-card .card-snippet,
-.large-thumb .card-snippet {
-  border-top: 3px dotted var(--border-color);
-  margin: var(--padding15) 0 0;
 }
 
 .widget-entry-cards:not(.swiper) {
@@ -2128,7 +2064,7 @@ aside.widget .widget-title {
 *******************************************************************************/
 
 .body .large-thumb-on .e-card {
-  padding: 0;
+  padding: 0!important;
 }
 
 .body .large-thumb-on .card-content {
@@ -2419,6 +2355,10 @@ aside.widget .widget-title {
   display: none;
 }
 
+.body .widget-entry-card:has(.widget-entry-card-pv) .card-content {
+  padding-bottom: 20px;
+}
+
 
 /*******************************************************************************
 **  [C]プロフィール
@@ -2465,8 +2405,9 @@ aside.widget .widget-title {
   margin-bottom: 0;
 }
 
+.author-box .author-name,
 .author-box .author-name a {
-  color: var(--cocoon-text-color);
+  color: unset;
   font-size: 16px;
   line-height: 1.8;
   text-decoration: none;
@@ -2492,10 +2433,9 @@ aside.widget .widget-title {
 }
 
 .author-box .sns-follow-buttons a.follow-button {
-  background-color: unset!important;
   border: 1px solid var(--cocoon-text-color);
-  border-radius: 0;
   color: var(--cocoon-text-color);
+  border-radius: 0;
   display: flex;
   height: 30px;
   opacity: 1!important;
@@ -2556,7 +2496,7 @@ aside.widget .widget-title {
 }
 
 .box-menu {
-  background-color: var(--white-bgcolor);
+  background-color: transparent;
   box-shadow: inset 1px 1px 0 0 var(--border-color), 1px 1px 0 0 var(--border-color), 1px 0 0 0 var(--border-color)!important;
   display: flex!important;
   flex-direction: column;
@@ -2775,7 +2715,7 @@ aside.widget .widget-title {
 }
 
 .info-list-item-content-link:hover {
-  color: var(--cocoon-text-color);
+  color: unset;
   text-decoration: none;
 }
 
@@ -2825,7 +2765,7 @@ aside.widget .widget-title {
 
 .comment-content,
 .recent-comment-content {
-  background-color: var(--gray-bgcolor);
+  background-color: rgb(204 204 204 / 15%);
   border: 0;
   border-radius: 0;
   font-size: 16px;
@@ -2845,7 +2785,7 @@ aside.widget .widget-title {
 .comment-content:before,
 .recent-comment-content:before {
   border: 10px solid transparent;
-  border-bottom-color: var(--gray-bgcolor);
+  border-bottom-color: rgb(204 204 204 / 15%);
   content: '';
   left: 10px;
   margin: 0;
@@ -2891,9 +2831,9 @@ aside.widget .widget-title {
 **  アーカイブ、カテゴリー
 *******************************************************************************/
 
-.widget select {
-  background-color: unset;
-  color: var(--cocoon-text-color);
+select {
+  background-color: #fff;
+  color: #333;
   display: block;
   outline: 0;
 }
@@ -2937,14 +2877,14 @@ aside.widget .widget-title {
 
 .wp-calendar-table td a,
 .wp-calendar-table [id$="today"] a {
-  background-color: var(--hover-color);
+  background-color: var(--main-color);
+  color: var(--text-color);
   text-decoration: none;
 }
 
 .wp-calendar-table td a:hover,
 .wp-calendar-table [id$="today"] a:hover {
-  background-color: var(--main-color);
-  color: var(--text-color);
+  background-color: var(--hover-color);
 }
 
 .wp-calendar-table [id$="today"] {
@@ -2974,8 +2914,9 @@ aside.widget .widget-title {
 .body .widget_tag_cloud a,
 .body .widget_pages a {
   align-items: center;
-  background-color: var(--gray-bgcolor);
+  background-color: rgb(204 204 204 / 15%);
   border-radius: 50px;
+  color: var(--cocoon-text-color);
   display: flex;
   font-size: 16px;
   justify-content: space-between;
@@ -3250,20 +3191,23 @@ figure.wp-block-table table,
   border: 0!important;
 }
 
-.body table th {
-  background-color: #eee!important;
-  color: #333;
-  font-weight: bold;
-  text-align: center!important;
-}
-
 table tr:nth-of-type(2n+1),
 .wp-block-flexible-table-block-table.is-style-stripes tbody tr:nth-child(odd) td {
   background-color: unset!important;
 }
 
-.body table th,
+.body table th {
+  background-color: #eee!important;
+  border-color: var(--border-color) !important;
+  font-size: 16px;
+  padding: 3px 5px;
+  color: #333!important;
+  font-weight: bold;
+  text-align: center!important;
+}
+
 .body table td {
+  background-color: transparent;
   border-color: var(--border-color)!important;
   font-size: 16px;
   padding: 3px 5px;
@@ -3278,7 +3222,7 @@ table tr:nth-of-type(2n+1),
   background-color: #eee;
 }
 
-.entry-content .is-scrollable:before {
+.scrollable-table.is-scrollable:before {
   animation: leftright 1s infinite alternate ease-in-out;
   content: 'スクロールできます→';
   display: block;
@@ -3502,9 +3446,9 @@ blockquote:before,
 *******************************************************************************/
 
 .blogcard-label {
-  background-color: var(--white-bgcolor);
+  background-color: var(--content-bgcolor);
   border-radius: 0;
-  color: var(--cocoon-text-color);
+  color: unset;
   font-size: var(--cocoon-text-size-s);
   left: 14px;
   letter-spacing: normal;
@@ -3568,8 +3512,8 @@ blockquote:before,
   padding: var(--padding15);
 }
 
-.is-style-accordion .caption-box-label:after,
-.is-style-accordion .faq-question:before,
+.is-style-accordion > .caption-box-label:after,
+.is-style-accordion > .faq > .faq-question::before,
 .toggle-button:before {
   align-items: center;
   color: unset;
@@ -3587,7 +3531,7 @@ blockquote:before,
 }
 
 .is-style-accordion .caption-box-label.active:after,
-.is-style-accordion .faq-question.active:before,
+.is-style-accordion > .faq > .faq-question.active::before,
 .toggle-checkbox:checked ~ .toggle-button:before {
   content: '\f106';
 }
@@ -3622,7 +3566,7 @@ blockquote:before,
   margin: 0;
 }
 
-.is-style-accordion .faq-question {
+.is-style-accordion > .faq > .faq-question {
   background-color: var(--border-color);
 }
 
@@ -3792,7 +3736,7 @@ div.search-form {
 }
 
 .label-box-label {
-  background-color: var(--white-bgcolor);
+  background-color: var(--content-bgcolor);
   display: block;
   font-size: var(--cocoon-text-size-s);
   font-weight: normal;
@@ -3855,9 +3799,9 @@ div.search-form {
 /* キーボード */
 
 .keyboard-key {
-  background-color: var(--white-bgcolor);
+  background-color: #f7f7f7;
   box-shadow: none;
-  color: var(--cocoon-text-color);
+  color: #333;
   font-size: 16px;
   margin: 0 3px;
 }
@@ -3887,8 +3831,10 @@ div.search-form {
 
 .pager-numbers {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
+  margin: var(--gap30) 0;
 }
 
 
@@ -3906,10 +3852,10 @@ div.search-form {
 *******************************************************************************/
 
 :not(pre) > code {
-  background: #f7f7f7;
+  background-color: #f7f7f7;
   border: 1px solid var(--border-color);
   border-radius: 2px;
-  color: var(--cocoon-text-color);
+  color: #333;
   font-family: Menlo, Consolas, sans-serif;
   letter-spacing: 0;
   margin: 0 3px;
@@ -3937,7 +3883,7 @@ div.search-form {
 }
 
 .wp-block-pullquote blockquote {
-  background-color: #f9f9f9!important;
+  background-color: rgb(204 204 204 / 12%) !important;
   border: 0;
 }
 
@@ -3998,17 +3944,13 @@ div.search-form {
 
 .tab-label-group {
   gap: 0;
-  padding-bottom: var(--gap30);
 }
 
 .tab-label-group .tab-label {
   background-color: transparent;
-  border-bottom: 1px solid var(--border-color);
   border-radius: 0;
-  color: var(--cocoon-text-color);
   display: grid;
   font-size: var(--cocoon-text-size-s);
-  font-weight: unset;
   height: 40px;
   padding: 0 var(--padding15);
   place-content: center;
@@ -4022,9 +3964,17 @@ div.search-form {
 }
 
 .tab-content-group {
-  border: 0;
+  border: 1px solid var(--border-color);
   border-radius: 0;
-  padding: 0;
+  padding: var(--padding15);
+}
+
+.tab-block:has(> .is-scrollable):before {
+  animation: leftright 1s infinite alternate ease-in-out;
+  content: '→';
+  display: block;
+  font-size: var(--cocoon-text-size-s);
+  text-align: right;
 }
 
 
@@ -4116,10 +4066,6 @@ div.search-form {
   }
   .timeline-item-label:empty {
     display: none;
-  }
-  .body.no-sp-snippet .card-snippet,
-  .body.no-sp-snippet .blogcard-snippet {
-    display: none!important;
   }
   .body .widget-index-middle.widget_author_box .author-box {
     border: 0;

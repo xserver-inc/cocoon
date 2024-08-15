@@ -75,10 +75,10 @@
 }
 
 .is-style-hvn-timeline-big .timeline-item:before {
-  background-color: var(--border-color)!important;
-  border: 13px solid var(--white-bgcolor);
+  background-color: transparent!important;
+  border: 13px solid transparent;
   border-radius: 0;
-  border-top-color: transparent;
+  border-top-color: var(--border-color);
   content: '';
   height: 0;
   left: 50%;
@@ -209,7 +209,7 @@
 }
 
 .is-style-hvn-timeline-mini .timeline-item:before {
-  background-color: var(--white-bgcolor)!important;
+  background-color: var(--content-bgcolor)!important;
   border: 3px solid var(--cocoon-custom-point-color);
   content: '';
   height: 10px;
@@ -279,9 +279,9 @@
 }
 
 .hvn-timeline .timeline-item:before {
-  background-color: var(--white-bgcolor)!important;
+  background-color: var(--content-bgcolor)!important;
   border: 2px solid var(--cocoon-custom-point-color);
-  color: var(--cocoon-custom-point-color);
+  color: var(--cocoon-text-color)!important;
   font-family: 'Font Awesome 5 Free';
   font-size: 12px;
   font-weight: 900;
@@ -399,16 +399,18 @@ pre {
 **  タブ(吹き出し)
 *******************************************************************************/
 
-.is-style-hvn-tab-balloon.tab-block .tab-label-group {
+.is-style-hvn-tab-balloon.tab-block > .tab-label-group {
   column-gap: var(--padding15);
+  margin-bottom: var(--padding15)!important;
+  padding-bottom: var(--padding15);
 }
 
-.is-style-hvn-tab-balloon .tab-label-group .tab-label {
+.is-style-hvn-tab-balloon > .tab-label-group .tab-label {
   border: 1px solid var(--main-color);
   box-shadow: var(--shadow-color);
 }
 
-.is-style-hvn-tab-balloon .tab-label-group .tab-label.is-active:before {
+.is-style-hvn-tab-balloon > .tab-label-group .tab-label.is-active:before {
   background-color: var(--main-color);
   bottom: -11px;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
@@ -420,19 +422,29 @@ pre {
   width: 22px;
 }
 
+.is-style-hvn-tab-balloon > .tab-content-group {
+  border: 0;
+  padding: 0;
+}
+
 
 /*******************************************************************************
 **  タブ(ライン)
 *******************************************************************************/
 
-.is-style-hvn-tab-line .tab-label-group .tab-label {
+.is-style-hvn-tab-line > .tab-label-group .tab-label {
   border-bottom: 1px solid var(--border-color);
 }
 
-.is-style-hvn-tab-line .tab-label-group .tab-label.is-active {
+.is-style-hvn-tab-line > .tab-label-group .tab-label.is-active {
   background-color: transparent;
   border-bottom: 2px solid var(--main-color);
   color: var(--main-color);
+}
+
+.is-style-hvn-tab-line > .tab-content-group {
+  border: 0;
+  padding: var(--padding15) 0 0;
 }
 
 
@@ -527,6 +539,7 @@ pre {
 }
 
 .body .compare-box ul {
+  color: #333;
   padding: 15px 15px 15px 40px;
 }
 
@@ -556,7 +569,8 @@ pre {
   }
 }
 
-:is(.is-style-2-columns, .is-style-3-columns) .widget-entry-cards:not(.swiper) {
+:is(.is-style-2-columns, .is-style-3-columns) .widget-entry-cards:not(.swiper),
+:is(.is-style-2-columns, .is-style-3-columns).widget-entry-cards:not(.swiper) {
   display: grid;
   grid-template-columns: repeat(var(--column), minmax(0, 1fr));
 }
@@ -578,4 +592,31 @@ pre {
 
 :is(.is-style-2-columns, .is-style-3-columns) .card-large-image .a-wrap {
   max-width: unset;
+}
+
+
+/*******************************************************************************
+**  プロフィール
+*******************************************************************************/
+
+.hnv-profile-btn a {
+  display: none;
+}
+
+.nwa .hnv-profile-btn a {
+  background-color: #fff;
+  border: 1px solid var(--main-color);
+  box-shadow: var(--shadow-color);
+  color: #333;
+  display: grid;
+  font-size: var(--cocoon-text-size-s);
+  margin: var(--padding15) 0 0 0;
+  min-height: 40px;
+  place-content: center;
+  text-decoration: none;
+}
+
+.nwa .hnv-profile-btn a:hover {
+  background-color: var(--hover-color);
+  color: #333;
 }

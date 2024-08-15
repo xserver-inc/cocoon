@@ -14,7 +14,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-share-alt'; ?>
 
 <!-- シェアボタン -->
 <li class="share-menu-button menu-button">
-  <input autocomplete="off" id="share-menu-input" type="checkbox" class="display-none">
+  <input id="share-menu-input" type="checkbox" class="display-none">
   <label id="share-menu-open" class="menu-open menu-button-in" for="share-menu-input">
     <span class="share-menu-icon menu-icon">
       <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>

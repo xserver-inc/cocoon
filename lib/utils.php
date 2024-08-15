@@ -23,7 +23,14 @@ if ( !function_exists( 'get_the_nolink_categories' ) ):
 function get_the_nolink_categories(){
   $categories = null;
   foreach((get_the_category()) as $category){
-    $categories .= '<span class="entry-category">'.$category->cat_name.'</span>';
+    $id = $category->term_id;
+    $classes = array(
+      'entry-category',
+      'cat-label-'.$id,
+    );
+    $classes = apply_filters( 'nolink_category_label_classes', $classes, $category );
+    $implode_class = implode(' ', $classes);
+    $categories .= '<span class="'.$implode_class.'">'.$category->cat_name.'</span>';
   }
   return $categories;
 }
@@ -505,8 +512,7 @@ endif;
 if ( !function_exists( 'wp_enqueue_lazy_load' ) ):
 function wp_enqueue_lazy_load(){
   if (is_lazy_load_enable() && !is_admin() && !is_login_page()) {
-    wp_enqueue_script( 'polyfill-js', get_template_directory_uri() . '/plugins/polyfill/intersection-observer.js', array(), false, true );
-    wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array('polyfill-js'), false, true );
+    wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array(), false, true );
     $data = 'const observer = lozad(".lozad", {rootMargin: "0px 500px 500px"});observer.observe();';
     wp_add_inline_script( 'lazy-load-js', $data, 'after' ) ;
   }
@@ -2194,7 +2200,6 @@ endif;
 //指定されたURLはWordPressホームURLかどうか
 if ( !function_exists( 'is_home_url' ) ):
 function is_home_url($url){
-  //_v(home_url());
   return $url == home_url() || $url == home_url('/');
 }
 endif;
