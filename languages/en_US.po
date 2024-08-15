@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T14:45:14+00:00\n"
-"PO-Revision-Date: 2024-08-15 14:48\n"
+"PO-Revision-Date: 2024-08-15 15:22\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -2700,7 +2700,7 @@ msgstr "Traditional Japanese colors"
 
 #: lib/html-tooltips.php:86
 msgid "NIPPON COLORS"
-msgstr "NIPPON COLORS"
+msgstr "JAPANESE COLORS"
 
 #: lib/html-tooltips.php:87
 msgid "Color Hunt"
@@ -13346,7 +13346,7 @@ msgstr "Replace"
 
 #: blocks/src/block/cta/index.js:21
 msgid "CTA"
-msgstr ""
+msgstr "CTA"
 
 #: blocks/src/block/cta/index.js:23
 msgid "コールトゥアクションボックスを表示します。"
@@ -14602,7 +14602,7 @@ msgstr "comparison"
 #: blocks/src/block/cta/block.json
 msgctxt "block keyword"
 msgid "cta"
-msgstr ""
+msgstr "cta"
 
 #: blocks/src/block/faq/block.json
 msgctxt "block keyword"
