@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
-"PO-Revision-Date: 2024-08-15 13:54\n"
+"POT-Creation-Date: 2024-08-15T14:45:14+00:00\n"
+"PO-Revision-Date: 2024-08-15 15:21\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -28,7 +28,7 @@ msgstr "Cocoon"
 #. Theme URI of the theme
 #: style.css
 msgid "https://wp-cocoon.com/"
-msgstr ""
+msgstr "https://wp-cocoon.com/"
 
 #. Description of the theme
 #: style.css
@@ -85,16 +85,16 @@ msgstr "下一页"
 
 #: comments.php:53
 msgid "Required fields are marked %s"
-msgstr ""
+msgstr "Required fields are marked %s"
 
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL
 #: comments.php:69
 msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
-msgstr ""
+msgstr "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 
 #: comments.php:74
 msgid "Your email address will not be published."
-msgstr ""
+msgstr "Your email address will not be published."
 
 #: comments.php:81
 #: comments.php:88
@@ -3655,6 +3655,10 @@ msgstr "字节"
 msgid "functions.phpサイズ："
 msgstr "functions.php大小："
 
+#: lib/page-settings/about-forms.php:118
+msgid "Gutenberg："
+msgstr "Gutenberg："
+
 #: lib/page-settings/about-forms.php:120
 msgid "AMP："
 msgstr "AMP："
@@ -6092,7 +6096,7 @@ msgstr "要高亮显示的CSS选择器"
 
 #: lib/page-settings/code-forms.php:103
 msgid ".entry-content pre"
-msgstr ""
+msgstr ".entry-content pre"
 
 #: lib/page-settings/code-forms.php:104
 msgid "ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない場合は変更しないでください。"
@@ -12197,79 +12201,79 @@ msgstr "阴影蓝色S50"
 
 #: skins/skin-grayish-topfull/functions.php:2084
 msgid "PinkT0"
-msgstr ""
+msgstr "PinkT0"
 
 #: skins/skin-grayish-topfull/functions.php:2085
 msgid "PinkT50"
-msgstr ""
+msgstr "PinkT50"
 
 #: skins/skin-grayish-topfull/functions.php:2086
 msgid "PinkT90"
-msgstr ""
+msgstr "PinkT90"
 
 #: skins/skin-grayish-topfull/functions.php:2087
 msgid "PinkS50"
-msgstr ""
+msgstr "PinkS50"
 
 #: skins/skin-grayish-topfull/functions.php:2088
 msgid "RedT0"
-msgstr ""
+msgstr "RedT0"
 
 #: skins/skin-grayish-topfull/functions.php:2089
 msgid "RedT50"
-msgstr ""
+msgstr "RedT50"
 
 #: skins/skin-grayish-topfull/functions.php:2090
 msgid "YellowT0"
-msgstr ""
+msgstr "YellowT0"
 
 #: skins/skin-grayish-topfull/functions.php:2091
 msgid "YellowT50"
-msgstr ""
+msgstr "YellowT50"
 
 #: skins/skin-grayish-topfull/functions.php:2092
 msgid "YellowT90"
-msgstr ""
+msgstr "YellowT90"
 
 #: skins/skin-grayish-topfull/functions.php:2093
 msgid "YellowS50"
-msgstr ""
+msgstr "YellowS50"
 
 #: skins/skin-grayish-topfull/functions.php:2094
 msgid "BeigeT0"
-msgstr ""
+msgstr "BeigeT0"
 
 #: skins/skin-grayish-topfull/functions.php:2095
 msgid "BeigeT50"
-msgstr ""
+msgstr "BeigeT50"
 
 #: skins/skin-grayish-topfull/functions.php:2096
 msgid "BeigeT90"
-msgstr ""
+msgstr "BeigeT90"
 
 #: skins/skin-grayish-topfull/functions.php:2097
 msgid "BeigeS50"
-msgstr ""
+msgstr "BeigeS50"
 
 #: skins/skin-grayish-topfull/functions.php:2098
 msgid "GreenT0"
-msgstr ""
+msgstr "GreenT0"
 
 #: skins/skin-grayish-topfull/functions.php:2099
 msgid "GreenT50"
-msgstr ""
+msgstr "GreenT50"
 
 #: skins/skin-grayish-topfull/functions.php:2100
 msgid "GreenT90"
-msgstr ""
+msgstr "GreenT90"
 
 #: skins/skin-grayish-topfull/functions.php:2101
 msgid "GreenS30"
-msgstr ""
+msgstr "GreenS30"
 
 #: skins/skin-grayish-topfull/functions.php:2102
 msgid "GreenS50"
-msgstr ""
+msgstr "GreenS50"
 
 #: skins/skin-grayish-topfull/functions.php:2145
 msgid "横スクロールできます"
@@ -12386,11 +12390,11 @@ msgstr "登出"
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
-msgstr ""
+msgstr "bbPress - Create Topic"
 
 #. Template Name of the theme
 msgid "bbPress - Forums (Index)"
-msgstr ""
+msgstr "bbPress - Forums (Index)"
 
 #: tmp/admin-panel.php:39
 msgid "WLWで編集"
@@ -12406,7 +12410,7 @@ msgstr "页面速度"
 
 #: tmp/admin-panel.php:74
 msgid "GTmetrix"
-msgstr ""
+msgstr "GTmetrix"
 
 #: tmp/admin-panel.php:77
 msgid "モバイルフレンドリー"
@@ -12414,7 +12418,7 @@ msgstr "移动友好"
 
 #: tmp/admin-panel.php:83
 msgid "HTML5"
-msgstr ""
+msgstr "HTML5"
 
 #: tmp/admin-panel.php:86
 msgid "アウトライン"
@@ -12434,7 +12438,7 @@ msgstr "响应式测试"
 
 #: tmp/admin-panel.php:107
 msgid "Sizzy"
-msgstr ""
+msgstr "Sizzy"
 
 #: tmp/admin-panel.php:111
 msgid "Resolution Test"
@@ -12584,7 +12588,7 @@ msgstr "在X上分享"
 
 #: tmp/sns-share-buttons.php:17
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: tmp/sns-share-buttons.php:21
 msgid "Mastodonでシェア"
@@ -12620,7 +12624,7 @@ msgstr "在LINE上分享"
 
 #: tmp/sns-share-buttons.php:45
 msgid "LINE"
-msgstr ""
+msgstr "LINE"
 
 #: tmp/sns-share-buttons.php:49
 msgid "Pinterestでシェア"
@@ -13278,7 +13282,7 @@ msgstr "按钮设置"
 #: blocks/src/old/button-1/block.js:86
 #: blocks/src/old/button/block.js:68
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: blocks/src/block/button/edit.js:84
 #: blocks/src/old/button-1/block.js:98
@@ -13350,7 +13354,7 @@ msgstr "问题标签"
 
 #: blocks/src/block/faq/edit.js:134
 msgid "Q"
-msgstr ""
+msgstr "Q"
 
 #: blocks/src/block/faq/edit.js:138
 #: blocks/src/block/faq/edit.js:149
@@ -13363,7 +13367,7 @@ msgstr "回答标签"
 
 #: blocks/src/block/faq/edit.js:147
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: blocks/src/block/faq/edit.js:158
 msgid "質問ラベル色"
@@ -13379,7 +13383,7 @@ msgstr "请输入问题…"
 
 #: blocks/src/block/faq/index.js:20
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: blocks/src/block/faq/index.js:35
 msgid "よくある質問と回答。"
