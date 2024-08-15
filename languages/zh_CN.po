@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T14:45:14+00:00\n"
-"PO-Revision-Date: 2024-08-15 15:21\n"
+"PO-Revision-Date: 2024-08-15 15:45\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -323,7 +323,7 @@ msgstr "评论"
 #: blocks/src/block/test-box/deprecated.js:106
 #: blocks/src/old/tab-box/block.js:119
 msgid "OK"
-msgstr ""
+msgstr "合格"
 
 #: lib/admin-tinymce-qtag.php:205
 #: lib/admin-tinymce-qtag.php:670
@@ -702,7 +702,7 @@ msgstr "中断"
 #: blocks/src/block/tab-box/edit.js:111
 #: blocks/src/old/tab-box/block.js:115
 msgid "Amazon"
-msgstr ""
+msgstr "Amazon"
 
 #: lib/admin-tinymce-qtag.php:796
 msgid "ボックス（付箋風）"
@@ -1382,7 +1382,7 @@ msgstr "分类搜索"
 #: lib/admin.php:708
 #: lib/admin.php:722
 msgid "Excerpt"
-msgstr ""
+msgstr "Excerpt"
 
 #: lib/block-editor-styles-faq.php:13
 msgid "角型ラベル"
@@ -1454,51 +1454,51 @@ msgstr "便签风（绿色）"
 
 #: lib/block-editor-styles-image.php:15
 msgid "Clarendon"
-msgstr ""
+msgstr "Clarendon"
 
 #: lib/block-editor-styles-image.php:19
 msgid "Gingham"
-msgstr ""
+msgstr "Gingham"
 
 #: lib/block-editor-styles-image.php:23
 msgid "Moon"
-msgstr ""
+msgstr "Moon"
 
 #: lib/block-editor-styles-image.php:27
 msgid "Lark"
-msgstr ""
+msgstr "Lark"
 
 #: lib/block-editor-styles-image.php:31
 msgid "Reyes"
-msgstr ""
+msgstr "Reyes"
 
 #: lib/block-editor-styles-image.php:35
 msgid "Juno"
-msgstr ""
+msgstr "Juno"
 
 #: lib/block-editor-styles-image.php:39
 msgid "Slumber"
-msgstr ""
+msgstr "Slumber"
 
 #: lib/block-editor-styles-image.php:43
 msgid "Crema"
-msgstr ""
+msgstr "Crema"
 
 #: lib/block-editor-styles-image.php:47
 msgid "Ludwig"
-msgstr ""
+msgstr "Ludwig"
 
 #: lib/block-editor-styles-image.php:51
 msgid "Aden"
-msgstr ""
+msgstr "Aden"
 
 #: lib/block-editor-styles-image.php:55
 msgid "Perpetua"
-msgstr ""
+msgstr "Perpetua"
 
 #: lib/block-editor-styles-image.php:59
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #: lib/block-editor-styles-list.php:17
 #: lib/block-editor-styles-paragraph.php:17
@@ -3146,7 +3146,7 @@ msgstr "删除AMP页面的所有缓存。"
 
 #: lib/page-cache/cache-forms.php:94
 msgid "Amazon API"
-msgstr ""
+msgstr "Amazon API"
 
 #: lib/page-cache/cache-forms.php:97
 msgid "Amazon APIキャッシュの削除"
@@ -3305,47 +3305,47 @@ msgstr "无"
 
 #: lib/page-item-ranking/form.php:130
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: lib/page-item-ranking/form.php:131
 msgid "0.5"
-msgstr ""
+msgstr "0.5"
 
 #: lib/page-item-ranking/form.php:132
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: lib/page-item-ranking/form.php:133
 msgid "1.5"
-msgstr ""
+msgstr "1.5"
 
 #: lib/page-item-ranking/form.php:134
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: lib/page-item-ranking/form.php:135
 msgid "2.5"
-msgstr ""
+msgstr "2.5"
 
 #: lib/page-item-ranking/form.php:136
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: lib/page-item-ranking/form.php:137
 msgid "3.5"
-msgstr ""
+msgstr "3.5"
 
 #: lib/page-item-ranking/form.php:138
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: lib/page-item-ranking/form.php:139
 msgid "4.5"
-msgstr ""
+msgstr "4.5"
 
 #: lib/page-item-ranking/form.php:140
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: lib/page-item-ranking/form.php:144
 msgid "商品等を星の数で評価します。「なし」を選択した場合は表示されません。"
@@ -3383,7 +3383,7 @@ msgstr "详细页面URL"
 #: lib/page-item-ranking/form.php:178
 #: lib/page-settings/notice-forms.php:66
 msgid "http://"
-msgstr ""
+msgstr "http://"
 
 #: lib/page-item-ranking/form.php:171
 msgid "詳細ページへリンクするためのURLを入力してください。"
@@ -4440,7 +4440,7 @@ msgstr "这是ValueCommerce相关的广告设置。"
 
 #: lib/page-settings/ads-forms.php:407
 msgid "LinkSwitch"
-msgstr ""
+msgstr "LinkSwitch"
 
 #: lib/page-settings/ads-forms.php:411
 msgid "LinkSwitchを有効にする"
@@ -4452,7 +4452,7 @@ msgstr "是否启用ValueCommerce的LinkSwitch功能。需要输入LinkSwitch ID
 
 #: lib/page-settings/ads-forms.php:415
 msgid "LinkSwitch ID"
-msgstr ""
+msgstr "LinkSwitch ID"
 
 #: lib/page-settings/ads-forms.php:417
 msgid "LinkSwitch IDの入力"
@@ -4940,7 +4940,7 @@ msgstr ""
 #: lib/page-settings/amp-forms.php:104
 #: tmp/admin-panel.php:59
 msgid "AMPBench"
-msgstr ""
+msgstr "AMPBench"
 
 #: lib/page-settings/amp-forms.php:107
 msgid "「AMPテスト」を行うテストツール（バリデーター）を選択します。"
@@ -4988,7 +4988,7 @@ msgstr "Tag Manager ID"
 
 #: lib/page-settings/analytics-forms.php:58
 msgid "GTM-XXXXXXX"
-msgstr ""
+msgstr "GTM-XXXXXXX"
 
 #: lib/page-settings/analytics-forms.php:59
 msgid "GoogleタグマネージャのトラッキングIDを入力してください。Google AnalyticsトラッキングIDが入っていてもこちらが優先して計測されます。"
@@ -5008,7 +5008,7 @@ msgstr "GA4测量ID"
 
 #: lib/page-settings/analytics-forms.php:87
 msgid "G-XXXXXXXXXXXX"
-msgstr ""
+msgstr "G-XXXXXXXXXXXX"
 
 #: lib/page-settings/analytics-forms.php:88
 msgid "Google Analytics 4の測定IDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。"
@@ -5367,7 +5367,7 @@ msgstr "请输入在Mercari搜索按钮上显示的文本。"
 #: lib/page-settings/apis-forms.php:230
 #: lib/page-settings/apis-funcs.php:279
 msgid "DMM"
-msgstr ""
+msgstr "DMM"
 
 #: lib/page-settings/apis-forms.php:235
 msgid "DMMアフィリエイトID"
@@ -5403,7 +5403,7 @@ msgstr "通过Moshimo Affiliate发布Amazon链接并获得报酬。【重要】�
 
 #: lib/page-settings/apis-forms.php:268
 msgid "Amazon a_id"
-msgstr ""
+msgstr "Amazon a_id"
 
 #: lib/page-settings/apis-forms.php:271
 msgid "もしもアフィリエイトのAmazon IDを入力してください。"
@@ -5445,7 +5445,7 @@ msgstr "根据使用条款，Amazon API的缓存会在24小时内更新。"
 
 #: lib/page-settings/apis-forms.php:304
 msgid "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
-msgstr ""
+msgstr "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
 
 #: lib/page-settings/apis-forms.php:304
 msgid "Amazon.co.jp Product Advertising API ライセンス契約"
@@ -5453,7 +5453,7 @@ msgstr "Amazon.co.jp 产品广告API许可协议"
 
 #: lib/page-settings/apis-forms.php:305
 msgid "https://affiliate.amazon.co.jp/help/topic/t32/"
-msgstr ""
+msgstr "https://affiliate.amazon.co.jp/help/topic/t32/"
 
 #: lib/page-settings/apis-forms.php:305
 msgid "Product Advertising API (PA-API) の利用ガイドライン"
@@ -5461,7 +5461,7 @@ msgstr "产品广告API（PA-API）使用指南"
 
 #: lib/page-settings/apis-forms.php:306
 msgid "https://webservice.rakuten.co.jp/guide/rule"
-msgstr ""
+msgstr "https://webservice.rakuten.co.jp/guide/rule"
 
 #: lib/page-settings/apis-forms.php:306
 msgid "楽天ウェブサービス規約"
@@ -5635,7 +5635,7 @@ msgstr "按钮链接目标"
 
 #: lib/page-settings/appeal-forms.php:155
 msgid "https://xxxxxxxx.com/xxxxx/"
-msgstr ""
+msgstr "https://xxxxxxxx.com/xxxxx/"
 
 #: lib/page-settings/appeal-forms.php:156
 msgid "ボタンのリンク先となるURLを入力してください。"
@@ -6707,7 +6707,7 @@ msgstr "发布和固定页面管理界面的设置。"
 
 #: lib/page-settings/editor-forms.php:25
 msgid "Gutenberg"
-msgstr ""
+msgstr "Gutenberg"
 
 #: lib/page-settings/editor-forms.php:29
 msgid "Gutenbergエディターを有効にする"
@@ -7299,7 +7299,7 @@ msgstr "Lity（轻量级，逐张显示）"
 
 #: lib/page-settings/image-forms.php:133
 msgid "Lightbox"
-msgstr ""
+msgstr "Lightbox"
 
 #: lib/page-settings/image-forms.php:150
 msgid "全体画像設定"
@@ -7926,7 +7926,7 @@ msgstr "在head标签内插入标签，以向Facebook或外部网站传达页面
 
 #: lib/page-settings/ogp-forms.php:38
 msgid "Facebook APP ID"
-msgstr ""
+msgstr "Facebook APP ID"
 
 #: lib/page-settings/ogp-forms.php:42
 msgid "fb:app_idを入力"
@@ -8050,19 +8050,19 @@ msgstr "可以设置JavaScript库的版本。"
 
 #: lib/page-settings/others-forms.php:94
 msgid "jQuery"
-msgstr ""
+msgstr "jQuery"
 
 #: lib/page-settings/others-forms.php:100
 msgid "jQuery Core 3.6.1"
-msgstr ""
+msgstr "jQuery Core 3.6.1"
 
 #: lib/page-settings/others-forms.php:101
 msgid "jQuery Core 2.2.4"
-msgstr ""
+msgstr "jQuery Core 2.2.4"
 
 #: lib/page-settings/others-forms.php:102
 msgid "jQuery Core 1.12.4"
-msgstr ""
+msgstr "jQuery Core 1.12.4"
 
 #: lib/page-settings/others-forms.php:105
 msgid "jQueryのバージョン違いで動作しないプログラムがある場合は変更してください。"
@@ -8078,15 +8078,15 @@ msgstr "此jQuery选择功能将在2022年12月底终止。"
 
 #: lib/page-settings/others-forms.php:114
 msgid "jQuery Migrate"
-msgstr ""
+msgstr "jQuery Migrate"
 
 #: lib/page-settings/others-forms.php:120
 msgid "jQuery Migrate 3.3.2"
-msgstr ""
+msgstr "jQuery Migrate 3.3.2"
 
 #: lib/page-settings/others-forms.php:121
 msgid "jQuery Migrate 1.4.1"
-msgstr ""
+msgstr "jQuery Migrate 1.4.1"
 
 #: lib/page-settings/others-forms.php:124
 msgid "jQuery Migrateのバージョン違いで動作しないプログラムがある場合は変更してください。"
@@ -8512,7 +8512,7 @@ msgstr "Referrer"
 
 #: lib/page-settings/seo-forms.php:113
 msgid "no-referrer"
-msgstr ""
+msgstr "no-referrer"
 
 #: lib/page-settings/seo-forms.php:113
 msgid "（リファラー情報を送らない）"
@@ -8520,7 +8520,7 @@ msgstr "（不发送Referrer信息）"
 
 #: lib/page-settings/seo-forms.php:114
 msgid "no-referrer-when-downgrade"
-msgstr ""
+msgstr "no-referrer-when-downgrade"
 
 #: lib/page-settings/seo-forms.php:114
 msgid "（ASPにリファラーを送りたい場合はこちらを推奨）"
@@ -8528,23 +8528,23 @@ msgstr "（如果想向ASP发送Referrer信息，建议使用此项）"
 
 #: lib/page-settings/seo-forms.php:115
 msgid "same-origin"
-msgstr ""
+msgstr "same-origin"
 
 #: lib/page-settings/seo-forms.php:116
 msgid "origin"
-msgstr ""
+msgstr "origin"
 
 #: lib/page-settings/seo-forms.php:117
 msgid "strict-origin"
-msgstr ""
+msgstr "strict-origin"
 
 #: lib/page-settings/seo-forms.php:118
 msgid "origin-when-cross-origin"
-msgstr ""
+msgstr "origin-when-cross-origin"
 
 #: lib/page-settings/seo-forms.php:119
 msgid "strict-origin-when-cross-origin"
-msgstr ""
+msgstr "strict-origin-when-cross-origin"
 
 #: lib/page-settings/seo-forms.php:119
 msgid "（ブラウザデフォルト）"
@@ -8552,7 +8552,7 @@ msgstr "（浏览器默认）"
 
 #: lib/page-settings/seo-forms.php:120
 msgid "unsafe-url"
-msgstr ""
+msgstr "unsafe-url"
 
 #: lib/page-settings/seo-forms.php:123
 msgid "メタタグでのリファラーの振る舞いを設定します。"
@@ -8993,14 +8993,14 @@ msgstr "X（原Twitter）"
 #: lib/page-settings/sns-share-forms-top.php:58
 #: tmp/sns-share-buttons.php:21
 msgid "Mastodon"
-msgstr ""
+msgstr "Mastodon"
 
 #: lib/page-settings/sns-follow-forms.php:74
 #: lib/page-settings/sns-share-forms-bottom.php:74
 #: lib/page-settings/sns-share-forms-top.php:61
 #: tmp/sns-share-buttons.php:25
 msgid "Bluesky"
-msgstr ""
+msgstr "Bluesky"
 
 #: lib/page-settings/sns-follow-forms.php:75
 #: lib/page-settings/sns-share-forms-bottom.php:77
@@ -9014,7 +9014,7 @@ msgstr ""
 #: lib/page-settings/sns-share-forms-top.php:67
 #: tmp/sns-share-buttons.php:33
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: lib/page-settings/sns-follow-forms.php:77
 msgid "Google+"
@@ -10251,7 +10251,7 @@ msgstr "指定图标的形状和边框。"
 
 #: lib/page-speech-balloon/form.php:137
 msgid "TinyMCE"
-msgstr ""
+msgstr "TinyMCE"
 
 #: lib/page-speech-balloon/form.php:155
 msgid "ブロックエディターの「吹き出しブロック」で利用後、設定を変更すると、ブロックエディター上で再編集できなくなります。"
@@ -10845,23 +10845,23 @@ msgstr "updated短代码仅在文章和固定页面中可用。"
 
 #: lib/sns-follow.php:135
 msgid "X（旧Twitter） URL"
-msgstr ""
+msgstr "X  URL"
 
 #: lib/sns-follow.php:136
 msgid "Mastodon URL"
-msgstr ""
+msgstr "Mastodon URL"
 
 #: lib/sns-follow.php:137
 msgid "Bluesky URL"
-msgstr ""
+msgstr "Bluesky URL"
 
 #: lib/sns-follow.php:138
 msgid "Misskey URL"
-msgstr ""
+msgstr "Misskey URL"
 
 #: lib/sns-follow.php:139
 msgid "Facebook URL"
-msgstr ""
+msgstr "Facebook URL"
 
 #: lib/sns-follow.php:141
 msgid "はてブ URL"
@@ -10869,47 +10869,47 @@ msgstr ""
 
 #: lib/sns-follow.php:142
 msgid "Instagram URL"
-msgstr ""
+msgstr "Instagram URL"
 
 #: lib/sns-follow.php:143
 msgid "Pinterest URL"
-msgstr ""
+msgstr "Pinterest URL"
 
 #: lib/sns-follow.php:144
 msgid "YouTube URL"
-msgstr ""
+msgstr "YouTube URL"
 
 #: lib/sns-follow.php:145
 msgid "TikTok URL"
-msgstr ""
+msgstr "TikTok URL"
 
 #: lib/sns-follow.php:146
 msgid "LinkedIn URL"
-msgstr ""
+msgstr "LinkedIn URL"
 
 #: lib/sns-follow.php:147
 msgid "note URL"
-msgstr ""
+msgstr "note URL"
 
 #: lib/sns-follow.php:148
 msgid "SoundCloud URL"
-msgstr ""
+msgstr "SoundCloud URL"
 
 #: lib/sns-follow.php:149
 msgid "Flickr URL"
-msgstr ""
+msgstr "Flickr URL"
 
 #: lib/sns-follow.php:150
 msgid "LINE@ URL"
-msgstr ""
+msgstr "LINE@ URL"
 
 #: lib/sns-follow.php:151
 msgid "Amazon URL"
-msgstr ""
+msgstr "Amazon URL"
 
 #: lib/sns-follow.php:152
 msgid "Twitch URL"
-msgstr ""
+msgstr "Twitch URL"
 
 #: lib/sns-follow.php:153
 msgid "楽天 ROOM URL"
@@ -10917,15 +10917,15 @@ msgstr "乐天 ROOM URL"
 
 #: lib/sns-follow.php:154
 msgid "Slack URL"
-msgstr ""
+msgstr "Slack URL"
 
 #: lib/sns-follow.php:155
 msgid "GitHub URL"
-msgstr ""
+msgstr "GitHub URL"
 
 #: lib/sns-follow.php:156
 msgid "CodePen URL"
-msgstr ""
+msgstr "CodePen URL"
 
 #: lib/sns.php:17
 #: tmp/header-ogp.php:81
