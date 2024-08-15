@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-26T12:48:45+00:00\n"
-"PO-Revision-Date: 2024-06-26 12:52\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
+"PO-Revision-Date: 2024-08-15 12:21\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
 "X-Crowdin-Project-ID: 568447\n"
@@ -69,21 +69,35 @@ msgstr ""
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr ""
 
-#: comments.php:47
+#: comments.php:35
+#: tmp/mobile-prev-button.php:20
+#: tmp/pager-page-links.php:16
+#: tmp/pagination.php:69
+msgid "前へ"
+msgstr ""
+
+#: comments.php:36
+#: tmp/mobile-next-button.php:20
+#: tmp/pager-page-links.php:17
+#: tmp/pagination.php:70
+msgid "次へ"
+msgstr "Nächste"
+
+#: comments.php:53
 msgid "Required fields are marked %s"
 msgstr ""
 
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL
-#: comments.php:63
+#: comments.php:69
 msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 msgstr ""
 
-#: comments.php:68
+#: comments.php:74
 msgid "Your email address will not be published."
 msgstr ""
 
-#: comments.php:75
-#: comments.php:82
+#: comments.php:81
+#: comments.php:88
 msgid "コメントを書き込む"
 msgstr ""
 
@@ -1167,7 +1181,7 @@ msgid "あわせて読みたい"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1072
+#: lib/shortcodes.php:1074
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -2593,77 +2607,77 @@ msgstr ""
 msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
-#: lib/html-forms.php:1352
-#: lib/html-forms.php:1883
+#: lib/html-forms.php:1353
+#: lib/html-forms.php:1884
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1487
+#: lib/html-forms.php:1488
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1491
+#: lib/html-forms.php:1492
 msgid "NO USER"
 msgstr ""
 
-#: lib/html-forms.php:1507
+#: lib/html-forms.php:1508
 msgid "未登録のユーザーさん"
 msgstr ""
 
-#: lib/html-forms.php:1517
+#: lib/html-forms.php:1518
 msgid "未登録のユーザーさんです。"
 msgstr ""
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1520
 msgid "ログイン・登録はこちら→"
 msgstr ""
 
-#: lib/html-forms.php:1521
+#: lib/html-forms.php:1522
 msgid "ログインページ"
 msgstr ""
 
-#: lib/html-forms.php:1525
+#: lib/html-forms.php:1526
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr ""
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr ""
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "プロフィール設定画面"
 msgstr ""
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr ""
 
-#: lib/html-forms.php:1558
+#: lib/html-forms.php:1559
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1784
+#: lib/html-forms.php:1785
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1787
+#: lib/html-forms.php:1788
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1790
+#: lib/html-forms.php:1791
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1793
+#: lib/html-forms.php:1794
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1796
+#: lib/html-forms.php:1797
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1839
+#: lib/html-forms.php:1840
 #: lib/shortcodes.php:1006
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -4481,6 +4495,7 @@ msgid "スポンサーリンク"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:13
+#: skins/nagi/nagi-customizer.php:89
 msgid "全体設定"
 msgstr ""
 
@@ -4567,6 +4582,7 @@ msgid "指定なし"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:73
+#: skins/nagi/nagi-customizer.php:412
 msgid "フォント"
 msgstr "Schriftart"
 
@@ -5943,7 +5959,7 @@ msgstr "Kategorien"
 #: lib/page-settings/sns-share-forms-top.php:120
 #: lib/tinymce/html-tags.php:45
 #: lib/widgets/display-widgets.php:173
-#: blocks/src/block/new-list/edit.js:107
+#: blocks/src/block/new-list/edit.js:108
 msgid "タグ"
 msgstr "Tag"
 
@@ -6258,7 +6274,7 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1068
+#: lib/shortcodes.php:1070
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -8668,7 +8684,7 @@ msgstr ""
 #: lib/widgets/popular-entries.php:189
 #: lib/widgets/related-entries.php:182
 #: blocks/src/block/navicard/edit.js:101
-#: blocks/src/block/new-list/edit.js:133
+#: blocks/src/block/new-list/edit.js:134
 #: blocks/src/block/popular-list/edit.js:213
 msgid "表示タイプ"
 msgstr ""
@@ -11157,53 +11173,53 @@ msgstr ""
 msgid "キャンペーン期間中のみ表示"
 msgstr ""
 
-#: lib/utils.php:808
+#: lib/utils.php:814
 msgid "スクロールできます"
 msgstr ""
 
-#: lib/utils.php:896
+#: lib/utils.php:902
 msgid "公開"
 msgstr ""
 
-#: lib/utils.php:897
+#: lib/utils.php:903
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:2498
+#: lib/utils.php:2503
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2506
+#: lib/utils.php:2511
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2514
+#: lib/utils.php:2519
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2522
+#: lib/utils.php:2527
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2530
+#: lib/utils.php:2535
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2541
+#: lib/utils.php:2546
 msgid "%s年"
 msgstr ""
 
-#: lib/utils.php:2543
+#: lib/utils.php:2548
 msgid "%s年%sヶ月"
 msgstr ""
 
@@ -11589,6 +11605,7 @@ msgid "深紫"
 msgstr ""
 
 #: lib/widgets/cta-box.php:171
+#: blocks/src/block/cta/edit.js:185
 msgid "紺色（インディゴ）"
 msgstr ""
 
@@ -11598,10 +11615,12 @@ msgid "水色"
 msgstr ""
 
 #: lib/widgets/cta-box.php:174
+#: blocks/src/block/cta/edit.js:191
 msgid "明るい青（シアン）"
 msgstr ""
 
 #: lib/widgets/cta-box.php:175
+#: blocks/src/block/cta/edit.js:195
 msgid "緑色がかった青（ティール）"
 msgstr ""
 
@@ -11611,6 +11630,7 @@ msgid "明るい緑"
 msgstr ""
 
 #: lib/widgets/cta-box.php:180
+#: blocks/src/block/cta/edit.js:206
 msgid "琥珀色（アンバー）"
 msgstr ""
 
@@ -12067,6 +12087,22 @@ msgstr ""
 msgid "サイト内を検索"
 msgstr ""
 
+#: skins/nagi/nagi-customizer.php:84
+msgid "スキンNAGIの設定"
+msgstr ""
+
+#: skins/nagi/nagi-customizer.php:223
+msgid "フロントページのタブ一覧の設定"
+msgstr ""
+
+#: skins/nagi/nagi-customizer.php:446
+msgid "フッター固定CTAの色"
+msgstr ""
+
+#: skins/nagi/nagi-customizer.php:575
+msgid "カルーセルの設定"
+msgstr ""
+
 #: skins/one/functions.php:113
 msgid "スキンoneの設定"
 msgstr ""
@@ -12352,7 +12388,7 @@ msgstr ""
 msgid "LINE@をフォロー"
 msgstr ""
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:40
+#: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
 msgstr ""
 
@@ -12499,7 +12535,7 @@ msgstr ""
 msgid "タイトルとURLをコピーしました"
 msgstr ""
 
-#: tmp/list-category-columns.php:76
+#: tmp/list-category-columns.php:84
 #: tmp/list-category.php:47
 #: tmp/list-new-entries.php:23
 #: tmp/list-tab-index.php:84
@@ -12512,18 +12548,6 @@ msgstr ""
 
 #: tmp/mobile-follow-button.php:21
 msgid "フォロー"
-msgstr ""
-
-#: tmp/mobile-next-button.php:20
-#: tmp/pager-page-links.php:17
-#: tmp/pagination.php:70
-msgid "次へ"
-msgstr "Nächste"
-
-#: tmp/mobile-prev-button.php:20
-#: tmp/pager-page-links.php:16
-#: tmp/pagination.php:69
-msgid "前へ"
 msgstr ""
 
 #: tmp/mobile-share-button.php:22
@@ -13307,7 +13331,7 @@ msgstr ""
 #: blocks/src/block/cta/edit.js:78
 #: blocks/src/block/info-list/edit.js:87
 #: blocks/src/block/navicard/edit.js:99
-#: blocks/src/block/new-list/edit.js:123
+#: blocks/src/block/new-list/edit.js:124
 #: blocks/src/block/popular-list/edit.js:196
 msgid "基本設定"
 msgstr ""
@@ -13318,22 +13342,6 @@ msgstr ""
 
 #: blocks/src/block/cta/edit.js:127
 msgid "置換"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:185
-msgid "紺色（インディゴ）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:191
-msgid "明るい青（シアン）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:195
-msgid "緑色がかった青（ティール）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:206
-msgid "琥珀色（アンバー）"
 msgstr ""
 
 #: blocks/src/block/cta/index.js:21
@@ -13467,13 +13475,13 @@ msgid "キャプション(枠線内表示)"
 msgstr ""
 
 #: blocks/src/block/info-list/edit.js:123
-#: blocks/src/block/new-list/edit.js:224
+#: blocks/src/block/new-list/edit.js:225
 #: blocks/src/block/popular-list/edit.js:272
 msgid "フィルタ"
 msgstr ""
 
 #: blocks/src/block/info-list/edit.js:125
-#: blocks/src/block/new-list/edit.js:226
+#: blocks/src/block/new-list/edit.js:227
 #: blocks/src/block/popular-list/edit.js:274
 msgid "全カテゴリー表示"
 msgstr ""
@@ -13495,55 +13503,55 @@ msgid "メニューを選択してください。"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:106
-#: blocks/src/block/new-list/edit.js:138
+#: blocks/src/block/new-list/edit.js:139
 #: blocks/src/block/popular-list/edit.js:218
 msgid "通常のリスト"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:142
+#: blocks/src/block/new-list/edit.js:143
 #: blocks/src/block/popular-list/edit.js:222
 msgid "カードの上下に区切り線を入れる"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:142
+#: blocks/src/block/new-list/edit.js:143
 #: blocks/src/block/popular-list/edit.js:222
 msgid "（縦型表示のみ）"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:114
-#: blocks/src/block/new-list/edit.js:146
+#: blocks/src/block/new-list/edit.js:147
 #: blocks/src/block/popular-list/edit.js:226
 msgid "カードに枠線を表示する"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:118
-#: blocks/src/block/new-list/edit.js:150
+#: blocks/src/block/new-list/edit.js:151
 #: blocks/src/block/popular-list/edit.js:230
 msgid "大きなサムネイル表示"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:122
-#: blocks/src/block/new-list/edit.js:154
+#: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:234
 msgid "大きなサムネイルにタイトルを重ねる"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:129
-#: blocks/src/block/new-list/edit.js:200
+#: blocks/src/block/new-list/edit.js:201
 #: blocks/src/block/popular-list/edit.js:241
 msgid "記事タイトルを太字にする"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:134
-#: blocks/src/block/new-list/edit.js:205
+#: blocks/src/block/new-list/edit.js:206
 #: blocks/src/block/popular-list/edit.js:246
 msgid "カードに矢印を表示する"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:139
-#: blocks/src/block/new-list/edit.js:210
+#: blocks/src/block/new-list/edit.js:211
 #: blocks/src/block/popular-list/edit.js:251
 msgid "横並び表示"
 msgstr ""
@@ -13557,66 +13565,74 @@ msgstr ""
 msgid "表示カテゴリー選択"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:95
+#: blocks/src/block/new-list/edit.js:86
+msgid "テキストを入力して絞り込んでください。"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:86
+msgid "※最大10件表示"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:96
 #: blocks/src/block/popular-list/edit.js:94
 msgid "子カテゴリーの内容を含めて表示"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:125
+#: blocks/src/block/new-list/edit.js:126
 #: blocks/src/block/popular-list/edit.js:198
 msgid "表示する記事の数"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:160
+#: blocks/src/block/new-list/edit.js:161
 msgid "表示順"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:164
+#: blocks/src/block/new-list/edit.js:165
 msgid "更新日順"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:168
+#: blocks/src/block/new-list/edit.js:169
 msgid "投稿日順"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:181
+#: blocks/src/block/new-list/edit.js:182
 msgid "並び替え"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:184
+#: blocks/src/block/new-list/edit.js:185
 msgid "昇順"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:185
+#: blocks/src/block/new-list/edit.js:186
 msgid "降順"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:192
+#: blocks/src/block/new-list/edit.js:193
 msgid "読み飛ばし"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:217
+#: blocks/src/block/new-list/edit.js:218
 msgid "説明文の表示"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:237
+#: blocks/src/block/new-list/edit.js:238
 msgid "全タグ表示"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:246
+#: blocks/src/block/new-list/edit.js:247
 msgid "固定記事の表示"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:251
+#: blocks/src/block/new-list/edit.js:252
 #: blocks/src/block/popular-list/edit.js:286
 msgid "投稿タイプ"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:258
+#: blocks/src/block/new-list/edit.js:259
 msgid "検索グループ"
 msgstr ""
 
-#: blocks/src/block/new-list/edit.js:263
+#: blocks/src/block/new-list/edit.js:264
 msgid "投稿ユーザ"
 msgstr ""
 

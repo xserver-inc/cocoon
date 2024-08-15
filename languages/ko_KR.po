@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-26T12:48:45+00:00\n"
-"PO-Revision-Date: 2024-06-26 12:52\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
+"PO-Revision-Date: 2024-08-15 12:38\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
 "X-Crowdin-Project-ID: 568447\n"
@@ -69,21 +69,35 @@ msgstr "Cocoon 숏 코드"
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon 이전 블록 에디터 (비추천)"
 
-#: comments.php:47
+#: comments.php:35
+#: tmp/mobile-prev-button.php:20
+#: tmp/pager-page-links.php:16
+#: tmp/pagination.php:69
+msgid "前へ"
+msgstr "이전"
+
+#: comments.php:36
+#: tmp/mobile-next-button.php:20
+#: tmp/pager-page-links.php:17
+#: tmp/pagination.php:70
+msgid "次へ"
+msgstr "다음"
+
+#: comments.php:53
 msgid "Required fields are marked %s"
 msgstr ""
 
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL
-#: comments.php:63
+#: comments.php:69
 msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 msgstr ""
 
-#: comments.php:68
+#: comments.php:74
 msgid "Your email address will not be published."
 msgstr "이메일은 공개되지 않습니다."
 
-#: comments.php:75
-#: comments.php:82
+#: comments.php:81
+#: comments.php:88
 msgid "コメントを書き込む"
 msgstr "댓글 작성"
 
@@ -95,7 +109,7 @@ msgstr "키워드가 지정되지 않음"
 #: functions.php:507
 #: lib/admin.php:404
 msgid "パターン一覧"
-msgstr ""
+msgstr "패턴 목록"
 
 #: lib/admin-tinymce-qtag.php:24
 #: lib/tinymce/html-tags.php:136
@@ -150,7 +164,7 @@ msgstr "키보드"
 #: lib/block-editor-styles-paragraph.php:52
 #: blocks/src/block/icon-box/edit.js:33
 msgid "情報(i)"
-msgstr ""
+msgstr "정보(i)"
 
 #: lib/admin-tinymce-qtag.php:35
 #: lib/admin-tinymce-qtag.php:180
@@ -158,7 +172,7 @@ msgstr ""
 #: lib/block-editor-styles-paragraph.php:60
 #: blocks/src/block/icon-box/edit.js:37
 msgid "質問(?)"
-msgstr ""
+msgstr "질문(?)"
 
 #: lib/admin-tinymce-qtag.php:36
 #: lib/admin-tinymce-qtag.php:185
@@ -166,7 +180,7 @@ msgstr ""
 #: lib/block-editor-styles-paragraph.php:68
 #: blocks/src/block/icon-box/edit.js:41
 msgid "アラート(!)"
-msgstr ""
+msgstr "경고(!)"
 
 #: lib/admin-tinymce-qtag.php:37
 msgid "primary"
@@ -389,14 +403,14 @@ msgstr "두번째 (어두운 회색)"
 #: lib/block-editor-styles-paragraph.php:159
 #: blocks/src/block/info-box/edit.js:45
 msgid "サクセス（薄い緑色）"
-msgstr ""
+msgstr "성공 (밝은 초록)"
 
 #: lib/admin-tinymce-qtag.php:245
 #: lib/block-editor-styles-group.php:116
 #: lib/block-editor-styles-paragraph.php:151
 #: blocks/src/block/info-box/edit.js:41
 msgid "インフォ（薄い青色）"
-msgstr ""
+msgstr "정보 (밝은 파랑)"
 
 #: lib/admin-tinymce-qtag.php:250
 #: lib/block-editor-styles-group.php:132
@@ -1167,7 +1181,7 @@ msgid "あわせて読みたい"
 msgstr "같이 보기"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1072
+#: lib/shortcodes.php:1074
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -1468,7 +1482,7 @@ msgstr ""
 
 #: lib/block-editor-styles-image.php:43
 msgid "Crema"
-msgstr ""
+msgstr "Crema"
 
 #: lib/block-editor-styles-image.php:47
 msgid "Ludwig"
@@ -1476,15 +1490,15 @@ msgstr ""
 
 #: lib/block-editor-styles-image.php:51
 msgid "Aden"
-msgstr ""
+msgstr "Aden"
 
 #: lib/block-editor-styles-image.php:55
 msgid "Perpetua"
-msgstr ""
+msgstr "Perpetua"
 
 #: lib/block-editor-styles-image.php:59
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #: lib/block-editor-styles-list.php:17
 #: lib/block-editor-styles-paragraph.php:17
@@ -1552,7 +1566,7 @@ msgstr "Y/m/d(D)"
 
 #: lib/comments.php:85
 msgid "H:i:s"
-msgstr ""
+msgstr "H:i:s"
 
 #: lib/comments.php:104
 msgid "<span class=\"comment-author-label\">名前:</span><cite class=\"fn comment-author\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-author-separator\"> :</span>"
@@ -1564,7 +1578,7 @@ msgstr "게시일: "
 
 #: lib/comments.php:116
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 #: lib/content-category.php:180
 #: lib/content-tag.php:150
@@ -1779,7 +1793,7 @@ msgstr "Cocoon 설정의 「PR표시」를 활성화한 경우에도 이 제외 
 #: lib/page-cache/cache-forms.php:79
 #: lib/page-settings/_top-page.php:252
 msgid "AMP"
-msgstr ""
+msgstr "AMP"
 
 #: lib/custom-fields/amp-field.php:33
 msgid "AMPページを生成しない"
@@ -1918,11 +1932,11 @@ msgstr "이 페이지의 표시 상태를 설정합니다. \"본문만\"표시�
 
 #: lib/custom-fields/page-field.php:59
 msgid "タイトルを表示しない"
-msgstr ""
+msgstr "제목 표시 안함"
 
 #: lib/custom-fields/page-field.php:60
 msgid "このページに記事タイトルを表示するかを切り替えます。"
-msgstr ""
+msgstr "이 페이지에 기사 제목을 표시할지 여부를 토글합니다."
 
 #: lib/custom-fields/page-field.php:63
 msgid "読む時間を表示しない"
@@ -1952,7 +1966,7 @@ msgstr "리다이렉트 URL"
 
 #: lib/custom-fields/redirect-field.php:33
 msgid "https://"
-msgstr ""
+msgstr "https://"
 
 #: lib/custom-fields/redirect-field.php:34
 msgid "このページに訪れるユーザーを設定したURLに301リダイレクトします。"
@@ -2039,7 +2053,7 @@ msgstr "0에서 5 사이의 등급을 입력하십시오."
 #: lib/custom-fields/seo-field.php:20
 #: lib/page-settings/_top-page.php:182
 msgid "SEO"
-msgstr ""
+msgstr "SEO"
 
 #: lib/custom-fields/seo-field.php:118
 msgid "SEOタイトル"
@@ -2079,7 +2093,7 @@ msgstr "검색 엔진이 이 페이지의 링크를 따르지 않도록 메타 �
 
 #: lib/custom-fields/seo-field.php:147
 msgid "canonical"
-msgstr ""
+msgstr "canonical"
 
 #: lib/custom-fields/seo-field.php:148
 msgid "canonical URLの入力"
@@ -2134,7 +2148,7 @@ msgstr "수정일: "
 
 #: lib/custom-fields/update-field.php:40
 msgid "M j, Y @ H:i"
-msgstr ""
+msgstr "M j, Y @ H:i"
 
 #: lib/custom-fields/update-field.php:85
 #: lib/custom-fields/update-field.php:87
@@ -2153,7 +2167,7 @@ msgstr "일"
 
 #: lib/dashboard-message.php:38
 msgid "Guidance on COVID-19:"
-msgstr ""
+msgstr "Guidance on COVID-19:"
 
 #: lib/gutenberg.php:15
 #: lib/page-settings/all-forms.php:31
@@ -2282,51 +2296,51 @@ msgstr "일반 텍스트"
 
 #: lib/gutenberg.php:230
 msgid "Bash"
-msgstr ""
+msgstr "Bash"
 
 #: lib/gutenberg.php:234
 msgid "Basic"
-msgstr ""
+msgstr "Basic"
 
 #: lib/gutenberg.php:238
 msgid "C#"
-msgstr ""
+msgstr "C#"
 
 #: lib/gutenberg.php:242
 msgid "C++"
-msgstr ""
+msgstr "C++"
 
 #: lib/gutenberg.php:246
 msgid "CSS"
-msgstr ""
+msgstr "CSS"
 
 #: lib/gutenberg.php:250
 msgid "D"
-msgstr ""
+msgstr "D"
 
 #: lib/gutenberg.php:254
 msgid "DOS"
-msgstr ""
+msgstr "DOS"
 
 #: lib/gutenberg.php:258
 msgid "Delphi"
-msgstr ""
+msgstr "Delphi"
 
 #: lib/gutenberg.php:262
 msgid "Go"
-msgstr ""
+msgstr "Go"
 
 #: lib/gutenberg.php:266
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: lib/gutenberg.php:270
 msgid "Haml"
-msgstr ""
+msgstr "Haml"
 
 #: lib/gutenberg.php:274
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 #: lib/gutenberg.php:278
 msgid "Java"
@@ -2334,15 +2348,15 @@ msgstr "Java"
 
 #: lib/gutenberg.php:282
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: lib/gutenberg.php:286
 msgid "Less"
-msgstr ""
+msgstr "Less"
 
 #: lib/gutenberg.php:290
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: lib/gutenberg.php:294
 msgid "Objective C"
@@ -2350,27 +2364,27 @@ msgstr "Objective C"
 
 #: lib/gutenberg.php:298
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: lib/gutenberg.php:302
 msgid "Perl"
-msgstr ""
+msgstr "Perl"
 
 #: lib/gutenberg.php:306
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: lib/gutenberg.php:310
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: lib/gutenberg.php:314
 msgid "Ruby"
-msgstr ""
+msgstr "Ruby"
 
 #: lib/gutenberg.php:318
 msgid "Rust"
-msgstr ""
+msgstr "Rust"
 
 #: lib/gutenberg.php:322
 msgid "SCSS"
@@ -2378,19 +2392,19 @@ msgstr "SCSS."
 
 #: lib/gutenberg.php:326
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: lib/gutenberg.php:330
 msgid "Swift"
-msgstr ""
+msgstr "Swift"
 
 #: lib/gutenberg.php:334
 msgid "VBScript"
-msgstr ""
+msgstr "VBScript"
 
 #: lib/gutenberg.php:338
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 #: lib/html-forms.php:272
 msgid "解説ページ"
@@ -2594,77 +2608,77 @@ msgstr "쉼표로 구분된 태그 ID를 입력해 주세요."
 msgid "人気記事は見つかりませんでした。"
 msgstr "인기글을 찾을 수 없습니다."
 
-#: lib/html-forms.php:1352
-#: lib/html-forms.php:1883
+#: lib/html-forms.php:1353
+#: lib/html-forms.php:1884
 msgid "記事は見つかりませんでした。"
 msgstr "글을 찾을 수 없습니다."
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1487
+#: lib/html-forms.php:1488
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1491
+#: lib/html-forms.php:1492
 msgid "NO USER"
 msgstr ""
 
-#: lib/html-forms.php:1507
+#: lib/html-forms.php:1508
 msgid "未登録のユーザーさん"
 msgstr "미가입 사용자"
 
-#: lib/html-forms.php:1517
+#: lib/html-forms.php:1518
 msgid "未登録のユーザーさんです。"
 msgstr "가입하지 않은 사용자입니다."
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1520
 msgid "ログイン・登録はこちら→"
 msgstr "로그인ㆍ가입하려면 여기를 클릭 →"
 
-#: lib/html-forms.php:1521
+#: lib/html-forms.php:1522
 msgid "ログインページ"
 msgstr "로그인 페이지"
 
-#: lib/html-forms.php:1525
+#: lib/html-forms.php:1526
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
-msgstr ""
+msgstr "등록되지 않은 사용자입니다. 로그인하고 Cocoon 설정 저장 버튼을 누릅니다."
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "프로필 설정 화면에서 프로필 내용을 변경할 수 있습니다 →"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "プロフィール設定画面"
 msgstr "프로필 설정 화면"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "※이 메시지는 로그인 사용자에게만 표시됩니다."
 
-#: lib/html-forms.php:1558
+#: lib/html-forms.php:1559
 msgid "管理者用エラーメッセージ"
 msgstr "관리자용 오류 메시지"
 
-#: lib/html-forms.php:1784
+#: lib/html-forms.php:1785
 msgid "おすすめ"
 msgstr "추천"
 
-#: lib/html-forms.php:1787
+#: lib/html-forms.php:1788
 msgid "新着"
 msgstr "새글"
 
-#: lib/html-forms.php:1790
+#: lib/html-forms.php:1791
 msgid "注目"
 msgstr "주목"
 
-#: lib/html-forms.php:1793
+#: lib/html-forms.php:1794
 msgid "必見"
 msgstr "필독"
 
-#: lib/html-forms.php:1796
+#: lib/html-forms.php:1797
 msgid "お得"
 msgstr "이득"
 
-#: lib/html-forms.php:1839
+#: lib/html-forms.php:1840
 #: lib/shortcodes.php:1006
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -3133,7 +3147,7 @@ msgstr "모든 AMP 캐시를 삭제합니다."
 
 #: lib/page-cache/cache-forms.php:94
 msgid "Amazon API"
-msgstr ""
+msgstr "Amazon API"
 
 #: lib/page-cache/cache-forms.php:97
 msgid "Amazon APIキャッシュの削除"
@@ -3292,39 +3306,39 @@ msgstr "없음"
 
 #: lib/page-item-ranking/form.php:130
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: lib/page-item-ranking/form.php:131
 msgid "0.5"
-msgstr ""
+msgstr "0.5"
 
 #: lib/page-item-ranking/form.php:132
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: lib/page-item-ranking/form.php:133
 msgid "1.5"
-msgstr ""
+msgstr "1.5"
 
 #: lib/page-item-ranking/form.php:134
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: lib/page-item-ranking/form.php:135
 msgid "2.5"
-msgstr ""
+msgstr "2.5"
 
 #: lib/page-item-ranking/form.php:136
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: lib/page-item-ranking/form.php:137
 msgid "3.5"
-msgstr ""
+msgstr "3.5"
 
 #: lib/page-item-ranking/form.php:138
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: lib/page-item-ranking/form.php:139
 msgid "4.5"
@@ -4482,6 +4496,7 @@ msgid "スポンサーリンク"
 msgstr "스폰서 링크"
 
 #: lib/page-settings/all-forms.php:13
+#: skins/nagi/nagi-customizer.php:89
 msgid "全体設定"
 msgstr "전체 설정"
 
@@ -4568,6 +4583,7 @@ msgid "指定なし"
 msgstr "지정안함"
 
 #: lib/page-settings/all-forms.php:73
+#: skins/nagi/nagi-customizer.php:412
 msgid "フォント"
 msgstr "폰트"
 
@@ -5339,15 +5355,15 @@ msgstr "메루카리의 앰버서더ID를 만들어주세요."
 
 #: lib/page-settings/apis-forms.php:214
 msgid "メルカリ検索ボタンを表示する"
-msgstr ""
+msgstr "mercari 검색 버튼 표시"
 
 #: lib/page-settings/apis-forms.php:215
 msgid "メルカリのキーワード検索ボタンを表示するか。"
-msgstr ""
+msgstr "mercari 키워드 검색 버튼을 표시하겠습니까?"
 
 #: lib/page-settings/apis-forms.php:218
 msgid "メルカリの検索ボタンに表示するテキストを入力してください。"
-msgstr ""
+msgstr "mercari 검색 버튼에 표시할 텍스트를 입력하십시오."
 
 #: lib/page-settings/apis-forms.php:230
 #: lib/page-settings/apis-funcs.php:279
@@ -5944,7 +5960,7 @@ msgstr "카테고리"
 #: lib/page-settings/sns-share-forms-top.php:120
 #: lib/tinymce/html-tags.php:45
 #: lib/widgets/display-widgets.php:173
-#: blocks/src/block/new-list/edit.js:107
+#: blocks/src/block/new-list/edit.js:108
 msgid "タグ"
 msgstr "태그"
 
@@ -6259,7 +6275,7 @@ msgstr "댓글 목록 헤딩"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1068
+#: lib/shortcodes.php:1070
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -8669,7 +8685,7 @@ msgstr "관련 글의 보조가 되는 제목을 입력하세요."
 #: lib/widgets/popular-entries.php:189
 #: lib/widgets/related-entries.php:182
 #: blocks/src/block/navicard/edit.js:101
-#: blocks/src/block/new-list/edit.js:133
+#: blocks/src/block/new-list/edit.js:134
 #: blocks/src/block/popular-list/edit.js:213
 msgid "表示タイプ"
 msgstr "표시 유형"
@@ -9298,7 +9314,7 @@ msgstr ""
 #: lib/page-settings/sns-share-forms-bottom.php:92
 #: lib/page-settings/sns-share-forms-top.php:79
 msgid "LINE@"
-msgstr ""
+msgstr "LINE@"
 
 #: lib/page-settings/sns-share-forms-bottom.php:101
 #: lib/page-settings/sns-share-forms-top.php:88
@@ -9742,11 +9758,11 @@ msgstr "제목의 구분이 될 문자를 설정해 주세요."
 
 #: lib/page-settings/title-funcs.php:22
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: lib/page-settings/title-funcs.php:25
 msgid " | "
-msgstr ""
+msgstr " | "
 
 #: lib/page-settings/toc-forms.php:13
 msgid "目次設定"
@@ -10018,7 +10034,7 @@ msgstr "헤더"
 
 #: lib/page-settings/_top-page.php:185
 msgid "OGP"
-msgstr ""
+msgstr "OGP"
 
 #: lib/page-settings/_top-page.php:188
 msgid "アクセス解析・認証"
@@ -10072,7 +10088,7 @@ msgstr "모바일"
 
 #: lib/page-settings/_top-page.php:257
 msgid "PWA"
-msgstr ""
+msgstr "PWA"
 
 #: lib/page-settings/_top-page.php:261
 msgid "管理者画面"
@@ -10088,7 +10104,7 @@ msgstr "에디터"
 
 #: lib/page-settings/_top-page.php:273
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: lib/page-settings/_top-page.php:282
 msgid "テーマ情報"
@@ -10236,7 +10252,7 @@ msgstr "아이콘의 모양과 테두리 선을 지정합니다."
 
 #: lib/page-speech-balloon/form.php:137
 msgid "TinyMCE"
-msgstr ""
+msgstr "TinyMCE"
 
 #: lib/page-speech-balloon/form.php:155
 msgid "ブロックエディターの「吹き出しブロック」で利用後、設定を変更すると、ブロックエディター上で再編集できなくなります。"
@@ -10776,7 +10792,7 @@ msgstr "id, no, search 옵션 중 하나가 입력되지 않았습니다."
 
 #: lib/shortcodes-rakuten.php:184
 msgid "Y/m/d H:i"
-msgstr ""
+msgstr "Y/m/d H:i"
 
 #: lib/shortcodes-rakuten.php:390
 msgid "料率："
@@ -10846,7 +10862,7 @@ msgstr "Misskey URL"
 
 #: lib/sns-follow.php:139
 msgid "Facebook URL"
-msgstr ""
+msgstr "Facebook URL"
 
 #: lib/sns-follow.php:141
 msgid "はてブ URL"
@@ -10854,47 +10870,47 @@ msgstr "하테나 북마크 URL"
 
 #: lib/sns-follow.php:142
 msgid "Instagram URL"
-msgstr ""
+msgstr "Instagram URL"
 
 #: lib/sns-follow.php:143
 msgid "Pinterest URL"
-msgstr ""
+msgstr "Pinterest URL"
 
 #: lib/sns-follow.php:144
 msgid "YouTube URL"
-msgstr ""
+msgstr "YouTube URL"
 
 #: lib/sns-follow.php:145
 msgid "TikTok URL"
-msgstr ""
+msgstr "TikTok URL"
 
 #: lib/sns-follow.php:146
 msgid "LinkedIn URL"
-msgstr ""
+msgstr "LinkedIn URL"
 
 #: lib/sns-follow.php:147
 msgid "note URL"
-msgstr ""
+msgstr "note URL"
 
 #: lib/sns-follow.php:148
 msgid "SoundCloud URL"
-msgstr ""
+msgstr "SoundCloud URL"
 
 #: lib/sns-follow.php:149
 msgid "Flickr URL"
-msgstr ""
+msgstr "Flickr URL"
 
 #: lib/sns-follow.php:150
 msgid "LINE@ URL"
-msgstr ""
+msgstr "LINE@ URL"
 
 #: lib/sns-follow.php:151
 msgid "Amazon URL"
-msgstr ""
+msgstr "Amazon URL"
 
 #: lib/sns-follow.php:152
 msgid "Twitch URL"
-msgstr ""
+msgstr "Twitch URL"
 
 #: lib/sns-follow.php:153
 msgid "楽天 ROOM URL"
@@ -10902,7 +10918,7 @@ msgstr "라쿠텐 ROOM URL"
 
 #: lib/sns-follow.php:154
 msgid "Slack URL"
-msgstr ""
+msgstr "Slack URL"
 
 #: lib/sns-follow.php:155
 msgid "GitHub URL"
@@ -10910,7 +10926,7 @@ msgstr "Github URL"
 
 #: lib/sns-follow.php:156
 msgid "CodePen URL"
-msgstr ""
+msgstr "CodePen URL"
 
 #: lib/sns.php:17
 #: tmp/header-ogp.php:81
@@ -11069,7 +11085,7 @@ msgstr "프로필 박스"
 
 #: lib/tinymce/shortcodes.php:102
 msgid "ASIN"
-msgstr ""
+msgstr "ASIN"
 
 #: lib/tinymce/shortcodes.php:108
 msgid "Amazon商品リンク"
@@ -11159,48 +11175,48 @@ msgstr "캠페인 중에 표시할 콘텐츠를 입력하세요."
 msgid "キャンペーン期間中のみ表示"
 msgstr "캠페인 기간 동안만 표시"
 
-#: lib/utils.php:808
+#: lib/utils.php:814
 msgid "スクロールできます"
 msgstr "스크롤 가능"
 
-#: lib/utils.php:896
+#: lib/utils.php:902
 msgid "公開"
 msgstr "공개"
 
-#: lib/utils.php:897
+#: lib/utils.php:903
 msgid "記事を公開してもよろしいですか？"
 msgstr "이 글을 공개하시겠습니까?"
 
-#: lib/utils.php:2498
+#: lib/utils.php:2503
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 
-#: lib/utils.php:2506
+#: lib/utils.php:2511
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 
-#: lib/utils.php:2514
+#: lib/utils.php:2519
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 
-#: lib/utils.php:2522
+#: lib/utils.php:2527
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 
-#: lib/utils.php:2530
+#: lib/utils.php:2535
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s개월"
 
-#: lib/utils.php:2541
+#: lib/utils.php:2546
 msgid "%s年"
 msgstr "%s년"
 
-#: lib/utils.php:2543
+#: lib/utils.php:2548
 msgid "%s年%sヶ月"
 msgstr "%s년 %s월"
 
@@ -11566,12 +11582,12 @@ msgstr "CTA 이미지(선택 버튼이 작동하지 않는 경우에는 다시 �
 #: lib/widgets/cta-box.php:148
 #: blocks/src/block/cta/edit.js:164
 msgid "ボタンテキスト"
-msgstr ""
+msgstr "버튼 텍스트"
 
 #: lib/widgets/cta-box.php:155
 #: blocks/src/block/cta/edit.js:170
 msgid "ボタンURL"
-msgstr ""
+msgstr "버튼 URL"
 
 #: lib/widgets/cta-box.php:166
 #: blocks/src/block/cta/edit.js:179
@@ -11586,6 +11602,7 @@ msgid "深紫"
 msgstr "진보라"
 
 #: lib/widgets/cta-box.php:171
+#: blocks/src/block/cta/edit.js:185
 msgid "紺色（インディゴ）"
 msgstr "네이비 블루 (인디고)"
 
@@ -11595,10 +11612,12 @@ msgid "水色"
 msgstr "하늘색"
 
 #: lib/widgets/cta-box.php:174
+#: blocks/src/block/cta/edit.js:191
 msgid "明るい青（シアン）"
 msgstr "밝은 파랑 (시안)"
 
 #: lib/widgets/cta-box.php:175
+#: blocks/src/block/cta/edit.js:195
 msgid "緑色がかった青（ティール）"
 msgstr "청록색 (틸)"
 
@@ -11608,6 +11627,7 @@ msgid "明るい緑"
 msgstr "밝은 초록"
 
 #: lib/widgets/cta-box.php:180
+#: blocks/src/block/cta/edit.js:206
 msgid "琥珀色（アンバー）"
 msgstr "호박색 (앰버)"
 
@@ -11992,7 +12012,7 @@ msgstr "설정"
 
 #: lib/_defins.php:113
 msgid "PR"
-msgstr ""
+msgstr "PR"
 
 #: lib/_defins.php:114
 msgid "記事内に広告が含まれています。"
@@ -12063,6 +12083,22 @@ msgstr "상품을 가져오지 못했습니다. 존재하지 않는 ASIN을 지�
 #: searchform.php:21
 msgid "サイト内を検索"
 msgstr "사이트 내에서 검색"
+
+#: skins/nagi/nagi-customizer.php:84
+msgid "スキンNAGIの設定"
+msgstr "スキンNAGIの設定"
+
+#: skins/nagi/nagi-customizer.php:223
+msgid "フロントページのタブ一覧の設定"
+msgstr "전면 페이지의 탭 목록 설정"
+
+#: skins/nagi/nagi-customizer.php:446
+msgid "フッター固定CTAの色"
+msgstr "바닥글 고정 CTA 색상"
+
+#: skins/nagi/nagi-customizer.php:575
+msgid "カルーセルの設定"
+msgstr "회전 목마 설정"
 
 #: skins/one/functions.php:113
 msgid "スキンoneの設定"
@@ -12166,59 +12202,59 @@ msgstr "쉐이드 블루 S50"
 
 #: skins/skin-grayish-topfull/functions.php:2084
 msgid "PinkT0"
-msgstr ""
+msgstr "PinkT0"
 
 #: skins/skin-grayish-topfull/functions.php:2085
 msgid "PinkT50"
-msgstr ""
+msgstr "PinkT50"
 
 #: skins/skin-grayish-topfull/functions.php:2086
 msgid "PinkT90"
-msgstr ""
+msgstr "PinkT90"
 
 #: skins/skin-grayish-topfull/functions.php:2087
 msgid "PinkS50"
-msgstr ""
+msgstr "PinkS50"
 
 #: skins/skin-grayish-topfull/functions.php:2088
 msgid "RedT0"
-msgstr ""
+msgstr "RedT0"
 
 #: skins/skin-grayish-topfull/functions.php:2089
 msgid "RedT50"
-msgstr ""
+msgstr "RedT50"
 
 #: skins/skin-grayish-topfull/functions.php:2090
 msgid "YellowT0"
-msgstr ""
+msgstr "YellowT0"
 
 #: skins/skin-grayish-topfull/functions.php:2091
 msgid "YellowT50"
-msgstr ""
+msgstr "YellowT50"
 
 #: skins/skin-grayish-topfull/functions.php:2092
 msgid "YellowT90"
-msgstr ""
+msgstr "YellowT90"
 
 #: skins/skin-grayish-topfull/functions.php:2093
 msgid "YellowS50"
-msgstr ""
+msgstr "YellowS50"
 
 #: skins/skin-grayish-topfull/functions.php:2094
 msgid "BeigeT0"
-msgstr ""
+msgstr "BeigeT0"
 
 #: skins/skin-grayish-topfull/functions.php:2095
 msgid "BeigeT50"
-msgstr ""
+msgstr "BeigeT50"
 
 #: skins/skin-grayish-topfull/functions.php:2096
 msgid "BeigeT90"
-msgstr ""
+msgstr "BeigeT90"
 
 #: skins/skin-grayish-topfull/functions.php:2097
 msgid "BeigeS50"
-msgstr ""
+msgstr "BeigeS50"
 
 #: skins/skin-grayish-topfull/functions.php:2098
 msgid "GreenT0"
@@ -12349,7 +12385,7 @@ msgstr "사운드 클라우드 팔로우"
 msgid "LINE@をフォロー"
 msgstr "LINE@ 팔로우"
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:40
+#: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
 msgstr "로그아웃"
 
@@ -12496,7 +12532,7 @@ msgstr "(Web 폰트)"
 msgid "タイトルとURLをコピーしました"
 msgstr "제목과 URL을 복사했습니다"
 
-#: tmp/list-category-columns.php:76
+#: tmp/list-category-columns.php:84
 #: tmp/list-category.php:47
 #: tmp/list-new-entries.php:23
 #: tmp/list-tab-index.php:84
@@ -12510,18 +12546,6 @@ msgstr "글을 찾을 수 없습니다."
 #: tmp/mobile-follow-button.php:21
 msgid "フォロー"
 msgstr "팔로우"
-
-#: tmp/mobile-next-button.php:20
-#: tmp/pager-page-links.php:17
-#: tmp/pagination.php:70
-msgid "次へ"
-msgstr "다음"
-
-#: tmp/mobile-prev-button.php:20
-#: tmp/pager-page-links.php:16
-#: tmp/pagination.php:69
-msgid "前へ"
-msgstr "이전"
 
 #: tmp/mobile-share-button.php:22
 msgid "シェア"
@@ -13295,43 +13319,27 @@ msgstr "CTA 헤딩"
 
 #: blocks/src/block/cta/edit.js:49
 msgid "ここに訴求メッセージを入力してください。"
-msgstr ""
+msgstr "메시지를 입력해 주세요."
 
 #: blocks/src/block/cta/edit.js:50
 msgid "この記事を読む"
-msgstr ""
+msgstr "이 기사 읽기"
 
 #: blocks/src/block/cta/edit.js:78
 #: blocks/src/block/info-list/edit.js:87
 #: blocks/src/block/navicard/edit.js:99
-#: blocks/src/block/new-list/edit.js:123
+#: blocks/src/block/new-list/edit.js:124
 #: blocks/src/block/popular-list/edit.js:196
 msgid "基本設定"
 msgstr "기본 설정"
 
 #: blocks/src/block/cta/edit.js:89
 msgid "画像とメッセージのレイアウト"
-msgstr ""
+msgstr "이미지 및 메시지 레이아웃"
 
 #: blocks/src/block/cta/edit.js:127
 msgid "置換"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:185
-msgid "紺色（インディゴ）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:191
-msgid "明るい青（シアン）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:195
-msgid "緑色がかった青（ティール）"
-msgstr ""
-
-#: blocks/src/block/cta/edit.js:206
-msgid "琥珀色（アンバー）"
-msgstr ""
+msgstr "대체"
 
 #: blocks/src/block/cta/index.js:21
 msgid "CTA"
@@ -13339,7 +13347,7 @@ msgstr ""
 
 #: blocks/src/block/cta/index.js:23
 msgid "コールトゥアクションボックスを表示します。"
-msgstr ""
+msgstr "콜투 액션 박스를 표시합니다."
 
 #: blocks/src/block/faq/edit.js:130
 msgid "質問ラベル"
@@ -13464,13 +13472,13 @@ msgid "キャプション(枠線内表示)"
 msgstr "캡션(테두리 표시)"
 
 #: blocks/src/block/info-list/edit.js:123
-#: blocks/src/block/new-list/edit.js:224
+#: blocks/src/block/new-list/edit.js:225
 #: blocks/src/block/popular-list/edit.js:272
 msgid "フィルタ"
 msgstr "필터"
 
 #: blocks/src/block/info-list/edit.js:125
-#: blocks/src/block/new-list/edit.js:226
+#: blocks/src/block/new-list/edit.js:227
 #: blocks/src/block/popular-list/edit.js:274
 msgid "全カテゴリー表示"
 msgstr "모든 카테고리 표시"
@@ -13492,55 +13500,55 @@ msgid "メニューを選択してください。"
 msgstr "메뉴를 선택해주세요."
 
 #: blocks/src/block/navicard/edit.js:106
-#: blocks/src/block/new-list/edit.js:138
+#: blocks/src/block/new-list/edit.js:139
 #: blocks/src/block/popular-list/edit.js:218
 msgid "通常のリスト"
 msgstr "일반 목록"
 
 #: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:142
+#: blocks/src/block/new-list/edit.js:143
 #: blocks/src/block/popular-list/edit.js:222
 msgid "カードの上下に区切り線を入れる"
 msgstr "카드의 위아래에 구분선 넣기"
 
 #: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:142
+#: blocks/src/block/new-list/edit.js:143
 #: blocks/src/block/popular-list/edit.js:222
 msgid "（縦型表示のみ）"
 msgstr "(세로형 표시에만)"
 
 #: blocks/src/block/navicard/edit.js:114
-#: blocks/src/block/new-list/edit.js:146
+#: blocks/src/block/new-list/edit.js:147
 #: blocks/src/block/popular-list/edit.js:226
 msgid "カードに枠線を表示する"
 msgstr "카드에 테두리 표시하기"
 
 #: blocks/src/block/navicard/edit.js:118
-#: blocks/src/block/new-list/edit.js:150
+#: blocks/src/block/new-list/edit.js:151
 #: blocks/src/block/popular-list/edit.js:230
 msgid "大きなサムネイル表示"
 msgstr "큰 썸네일 표시"
 
 #: blocks/src/block/navicard/edit.js:122
-#: blocks/src/block/new-list/edit.js:154
+#: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:234
 msgid "大きなサムネイルにタイトルを重ねる"
 msgstr "큰 썸네일에 제목 겹치기"
 
 #: blocks/src/block/navicard/edit.js:129
-#: blocks/src/block/new-list/edit.js:200
+#: blocks/src/block/new-list/edit.js:201
 #: blocks/src/block/popular-list/edit.js:241
 msgid "記事タイトルを太字にする"
 msgstr "글 제목을 굵게 표시하기"
 
 #: blocks/src/block/navicard/edit.js:134
-#: blocks/src/block/new-list/edit.js:205
+#: blocks/src/block/new-list/edit.js:206
 #: blocks/src/block/popular-list/edit.js:246
 msgid "カードに矢印を表示する"
 msgstr "카드에 화살표 표시하기"
 
 #: blocks/src/block/navicard/edit.js:139
-#: blocks/src/block/new-list/edit.js:210
+#: blocks/src/block/new-list/edit.js:211
 #: blocks/src/block/popular-list/edit.js:251
 msgid "横並び表示"
 msgstr "가로로 표시"
@@ -13554,66 +13562,74 @@ msgstr "등록되어 있는 메뉴에서 내비게이션 카드를 표시합니�
 msgid "表示カテゴリー選択"
 msgstr "표시할 카테고리 선택"
 
-#: blocks/src/block/new-list/edit.js:95
+#: blocks/src/block/new-list/edit.js:86
+msgid "テキストを入力して絞り込んでください。"
+msgstr "텍스트를 입력하고 좁히십시오."
+
+#: blocks/src/block/new-list/edit.js:86
+msgid "※最大10件表示"
+msgstr "※최대 10건 표시"
+
+#: blocks/src/block/new-list/edit.js:96
 #: blocks/src/block/popular-list/edit.js:94
 msgid "子カテゴリーの内容を含めて表示"
 msgstr "하위 카테고리의 내용을 포함하여 표시"
 
-#: blocks/src/block/new-list/edit.js:125
+#: blocks/src/block/new-list/edit.js:126
 #: blocks/src/block/popular-list/edit.js:198
 msgid "表示する記事の数"
 msgstr "표시할 글의 수"
 
-#: blocks/src/block/new-list/edit.js:160
+#: blocks/src/block/new-list/edit.js:161
 msgid "表示順"
 msgstr "표시 순서"
 
-#: blocks/src/block/new-list/edit.js:164
+#: blocks/src/block/new-list/edit.js:165
 msgid "更新日順"
 msgstr "수정일 순"
 
-#: blocks/src/block/new-list/edit.js:168
+#: blocks/src/block/new-list/edit.js:169
 msgid "投稿日順"
 msgstr "게시일 순"
 
-#: blocks/src/block/new-list/edit.js:181
+#: blocks/src/block/new-list/edit.js:182
 msgid "並び替え"
 msgstr "정렬"
 
-#: blocks/src/block/new-list/edit.js:184
+#: blocks/src/block/new-list/edit.js:185
 msgid "昇順"
 msgstr "오름차순"
 
-#: blocks/src/block/new-list/edit.js:185
+#: blocks/src/block/new-list/edit.js:186
 msgid "降順"
 msgstr "내림차순"
 
-#: blocks/src/block/new-list/edit.js:192
+#: blocks/src/block/new-list/edit.js:193
 msgid "読み飛ばし"
 msgstr "건너뛰기"
 
-#: blocks/src/block/new-list/edit.js:217
+#: blocks/src/block/new-list/edit.js:218
 msgid "説明文の表示"
 msgstr "설명문 표시"
 
-#: blocks/src/block/new-list/edit.js:237
+#: blocks/src/block/new-list/edit.js:238
 msgid "全タグ表示"
 msgstr "모든 태그 표시"
 
-#: blocks/src/block/new-list/edit.js:246
+#: blocks/src/block/new-list/edit.js:247
 msgid "固定記事の表示"
 msgstr "고정 기사 표시"
 
-#: blocks/src/block/new-list/edit.js:251
+#: blocks/src/block/new-list/edit.js:252
 #: blocks/src/block/popular-list/edit.js:286
 msgid "投稿タイプ"
 msgstr "게시 유형"
 
-#: blocks/src/block/new-list/edit.js:258
+#: blocks/src/block/new-list/edit.js:259
 msgid "検索グループ"
 msgstr "검색 그룹"
 
-#: blocks/src/block/new-list/edit.js:263
+#: blocks/src/block/new-list/edit.js:264
 msgid "投稿ユーザ"
 msgstr "게시자"
 
@@ -13742,32 +13758,32 @@ msgstr "Tab"
 
 #: blocks/src/block/tab/edit.js:258
 msgid "タブ設定"
-msgstr ""
+msgstr "탭 설정"
 
 #: blocks/src/block/tab/edit.js:262
 #: blocks/src/block/tab/index.js:22
 msgid "タブ"
-msgstr ""
+msgstr "탭"
 
 #: blocks/src/block/tab/edit.js:263
 msgid "タブ削除"
-msgstr ""
+msgstr "탭 삭제"
 
 #: blocks/src/block/tab/edit.js:264
 msgid "上に移動"
-msgstr ""
+msgstr "위로 이동"
 
 #: blocks/src/block/tab/edit.js:265
 msgid "下に移動"
-msgstr ""
+msgstr "아래로 이동"
 
 #: blocks/src/block/tab/edit.js:270
 msgid "タブ追加"
-msgstr ""
+msgstr "탭 추가"
 
 #: blocks/src/block/tab/index.js:24
 msgid "表示する内容をタブで切り替えることができるボックスです。"
-msgstr ""
+msgstr "표시할 내용을 탭에서 전환할 수 있는 박스입니다."
 
 #: blocks/src/block/template/edit.js:56
 msgid "ダッシュボードメニューの「Cocoon設定」→「テンプレート」からテンプレートを作成してください。"
@@ -13933,204 +13949,204 @@ msgstr ""
 
 #: blocks/src/helpers.js:342
 msgid "fab-amazon"
-msgstr ""
+msgstr "fab-amazon"
 
 #: blocks/src/helpers.js:346
 msgid "fab-user"
-msgstr ""
+msgstr "fab-user"
 
 #: blocks/src/helpers.js:350
 msgid "fab-envelope"
-msgstr ""
+msgstr "fab-envelope"
 
 #: blocks/src/helpers.js:354
 msgid "fab-flag"
-msgstr ""
+msgstr "fab-flag"
 
 #: blocks/src/helpers.js:358
 msgid "fab-ban"
-msgstr ""
+msgstr "fab-ban"
 
 #: blocks/src/helpers.js:362
 msgid "fab-calendar"
-msgstr ""
+msgstr "fab-calendar"
 
 #: blocks/src/helpers.js:366
 msgid "fab-clock"
-msgstr ""
+msgstr "fab-clock"
 
 #: blocks/src/helpers.js:370
 msgid "fab-cutlery"
-msgstr ""
+msgstr "fab-cutlery"
 
 #: blocks/src/helpers.js:374
 #: blocks/src/helpers.js:545
 msgid "fab-heart"
-msgstr ""
+msgstr "fab-heart"
 
 #: blocks/src/helpers.js:378
 msgid "fab-camera"
-msgstr ""
+msgstr "fab-camera"
 
 #: blocks/src/helpers.js:382
 msgid "fab-search"
-msgstr ""
+msgstr "fab-search"
 
 #: blocks/src/helpers.js:386
 msgid "fab-file-text"
-msgstr ""
+msgstr "fab-file-text"
 
 #: blocks/src/helpers.js:390
 msgid "fab-folder"
-msgstr ""
+msgstr "fab-folder"
 
 #: blocks/src/helpers.js:394
 msgid "fab-tag"
-msgstr ""
+msgstr "fab-tag"
 
 #: blocks/src/helpers.js:398
 msgid "fab-car"
-msgstr ""
+msgstr "fab-car"
 
 #: blocks/src/helpers.js:402
 msgid "fab-truck"
-msgstr ""
+msgstr "fab-truck"
 
 #: blocks/src/helpers.js:406
 msgid "fab-bicycle"
-msgstr ""
+msgstr "fab-bicycle"
 
 #: blocks/src/helpers.js:410
 msgid "fab-motorcycle"
-msgstr ""
+msgstr "fab-motorcycle"
 
 #: blocks/src/helpers.js:414
 msgid "fab-bus"
-msgstr ""
+msgstr "fab-bus"
 
 #: blocks/src/helpers.js:418
 msgid "fab-plane"
-msgstr ""
+msgstr "fab-plane"
 
 #: blocks/src/helpers.js:422
 msgid "fab-train"
-msgstr ""
+msgstr "fab-train"
 
 #: blocks/src/helpers.js:426
 msgid "fab-subway"
-msgstr ""
+msgstr "fab-subway"
 
 #: blocks/src/helpers.js:430
 msgid "fab-taxi"
-msgstr ""
+msgstr "fab-taxi"
 
 #: blocks/src/helpers.js:434
 msgid "fab-ship"
-msgstr ""
+msgstr "fab-ship"
 
 #: blocks/src/helpers.js:438
 msgid "fab-jpy"
-msgstr ""
+msgstr "fab-jpy"
 
 #: blocks/src/helpers.js:442
 msgid "fab-usd"
-msgstr ""
+msgstr "fab-usd"
 
 #: blocks/src/helpers.js:446
 msgid "fab-eur"
-msgstr ""
+msgstr "fab-eur"
 
 #: blocks/src/helpers.js:450
 msgid "fab-btc"
-msgstr ""
+msgstr "fab-btc"
 
 #: blocks/src/helpers.js:454
 msgid "fab-apple"
-msgstr ""
+msgstr "fab-apple"
 
 #: blocks/src/helpers.js:458
 msgid "fab-android"
-msgstr ""
+msgstr "fab-android"
 
 #: blocks/src/helpers.js:462
 msgid "fab-wordpress"
-msgstr ""
+msgstr "fab-wordpress"
 
 #: blocks/src/helpers.js:469
 msgid "fab-caret-right"
-msgstr ""
+msgstr "fab-caret-right"
 
 #: blocks/src/helpers.js:477
 msgid "fab-check-circle"
-msgstr ""
+msgstr "fab-check-circle"
 
 #: blocks/src/helpers.js:481
 msgid "fab-check-circle-o"
-msgstr ""
+msgstr "fab-check-circle-o"
 
 #: blocks/src/helpers.js:485
 msgid "fab-check-square"
-msgstr ""
+msgstr "fab-check-square"
 
 #: blocks/src/helpers.js:489
 msgid "fab-check-square-o"
-msgstr ""
+msgstr "fab-check-square-o"
 
 #: blocks/src/helpers.js:493
 msgid "fab-caret-square-o-right"
-msgstr ""
+msgstr "fab-caret-square-o-right"
 
 #: blocks/src/helpers.js:497
 msgid "fab-arrow-right"
-msgstr ""
+msgstr "fab-arrow-right"
 
 #: blocks/src/helpers.js:501
 msgid "fab-angle-right"
-msgstr ""
+msgstr "fab-angle-right"
 
 #: blocks/src/helpers.js:505
 msgid "fab-angle-double-right"
-msgstr ""
+msgstr "fab-angle-double-right"
 
 #: blocks/src/helpers.js:509
 msgid "fab-arrow-circle-right"
-msgstr ""
+msgstr "fab-arrow-circle-right"
 
 #: blocks/src/helpers.js:513
 msgid "fab-arrow-circle-o-right"
-msgstr ""
+msgstr "fab-arrow-circle-o-right"
 
 #: blocks/src/helpers.js:517
 msgid "fab-play-circle"
-msgstr ""
+msgstr "fab-play-circle"
 
 #: blocks/src/helpers.js:521
 msgid "fab-play-circle-o"
-msgstr ""
+msgstr "fab-play-circle-o"
 
 #: blocks/src/helpers.js:525
 msgid "fab-chevron-right"
-msgstr ""
+msgstr "fab-chevron-right"
 
 #: blocks/src/helpers.js:529
 msgid "fab-chevron-circle-right"
-msgstr ""
+msgstr "fab-chevron-circle-right"
 
 #: blocks/src/helpers.js:533
 msgid "fab-hand-o-right"
-msgstr ""
+msgstr "fab-hand-o-right"
 
 #: blocks/src/helpers.js:541
 msgid "fab-star-o"
-msgstr ""
+msgstr "fab-star-o"
 
 #: blocks/src/helpers.js:549
 msgid "fab-heart-o"
-msgstr ""
+msgstr "fab-heart-o"
 
 #: blocks/src/helpers.js:553
 msgid "fab-square"
-msgstr ""
+msgstr "fab-square"
 
 #: blocks/src/helpers.js:557
 msgid "fab-square-o"
@@ -14401,7 +14417,7 @@ msgstr "서식 클리어"
 
 #: blocks/src/toolbutton/custom.js:24
 msgid "カスタムテキスト"
-msgstr ""
+msgstr "맞춤 텍스트"
 
 #: blocks/src/toolbutton/dropdown-affiliates.js:57
 msgid "アフィリエイト"

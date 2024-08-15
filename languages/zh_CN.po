@@ -12,6 +12,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
+"PO-Revision-Date: 2024-08-15 12:21\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.4.4\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -70,16 +73,30 @@ msgstr "Cocoon短代码"
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon旧块（不推荐）"
 
-#: comments.php:47
+#: comments.php:35
+#: tmp/mobile-prev-button.php:20
+#: tmp/pager-page-links.php:16
+#: tmp/pagination.php:69
+msgid "前へ"
+msgstr ""
+
+#: comments.php:36
+#: tmp/mobile-next-button.php:20
+#: tmp/pager-page-links.php:17
+#: tmp/pagination.php:70
+msgid "次へ"
+msgstr ""
+
+#: comments.php:53
 msgid "Required fields are marked %s"
 msgstr ""
 
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL
-#: comments.php:63
+#: comments.php:69
 msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 msgstr ""
 
-#: comments.php:68
+#: comments.php:74
 msgid "Your email address will not be published."
 msgstr "您的电子邮件地址不会被公开。"
 
@@ -1881,67 +1898,67 @@ msgid "記事は見つかりませんでした。"
 msgstr "未找到文章。"
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1487
+#: lib/html-forms.php:1488
 msgid "Posts by %s"
 msgstr "由%s发布的文章"
 
-#: lib/html-forms.php:1491
+#: lib/html-forms.php:1492
 msgid "NO USER"
 msgstr "没有用户"
 
-#: lib/html-forms.php:1507
+#: lib/html-forms.php:1508
 msgid "未登録のユーザーさん"
 msgstr "未注册的用户"
 
-#: lib/html-forms.php:1517
+#: lib/html-forms.php:1518
 msgid "未登録のユーザーさんです。"
 msgstr "是未注册的用户。"
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1520
 msgid "ログイン・登録はこちら→"
 msgstr "登录/注册在这里→"
 
-#: lib/html-forms.php:1521
+#: lib/html-forms.php:1522
 msgid "ログインページ"
 msgstr "登录页面"
 
-#: lib/html-forms.php:1525
+#: lib/html-forms.php:1526
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "您是未注册用户。请登录并按下Cocoon设置的保存按钮。"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "个人资料内容可以从管理面板更改→"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "プロフィール設定画面"
 msgstr "个人资料设置页面"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1529
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "※此消息仅对登录用户可见。"
 
-#: lib/html-forms.php:1558
+#: lib/html-forms.php:1559
 msgid "管理者用エラーメッセージ"
 msgstr "管理员错误信息"
 
-#: lib/html-forms.php:1784
+#: lib/html-forms.php:1785
 msgid "おすすめ"
 msgstr "推荐"
 
-#: lib/html-forms.php:1787
+#: lib/html-forms.php:1788
 msgid "新着"
 msgstr "最新"
 
-#: lib/html-forms.php:1790
+#: lib/html-forms.php:1791
 msgid "注目"
 msgstr "关注"
 
-#: lib/html-forms.php:1793
+#: lib/html-forms.php:1794
 msgid "必見"
 msgstr "必看"
 
-#: lib/html-forms.php:1796
+#: lib/html-forms.php:1797
 msgid "お得"
 msgstr "优惠"
 
@@ -3588,6 +3605,7 @@ msgid "スポンサーリンク"
 msgstr "赞助商链接"
 
 #: lib/page-settings/all-forms.php:13
+#: skins/nagi/nagi-customizer.php:89
 msgid "全体設定"
 msgstr "整体设置"
 
@@ -3672,6 +3690,7 @@ msgid "指定なし"
 msgstr "无指定"
 
 #: lib/page-settings/all-forms.php:73
+#: skins/nagi/nagi-customizer.php:412
 msgid "フォント"
 msgstr "字体"
 
@@ -9854,48 +9873,48 @@ msgstr "请输入在活动期间显示的内容。"
 msgid "キャンペーン期間中のみ表示"
 msgstr "仅在活动期间显示"
 
-#: lib/utils.php:808
+#: lib/utils.php:814
 msgid "スクロールできます"
 msgstr "可以滚动"
 
-#: lib/utils.php:896
+#: lib/utils.php:902
 msgid "公開"
 msgstr "公开"
 
-#: lib/utils.php:897
+#: lib/utils.php:903
 msgid "記事を公開してもよろしいですか？"
 msgstr "确定要公开文章吗？"
 
-#: lib/utils.php:2498
+#: lib/utils.php:2503
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s分钟"
 
-#: lib/utils.php:2506
+#: lib/utils.php:2511
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s小时"
 
-#: lib/utils.php:2514
+#: lib/utils.php:2519
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s天"
 
-#: lib/utils.php:2522
+#: lib/utils.php:2527
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s周"
 
-#: lib/utils.php:2530
+#: lib/utils.php:2535
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s个月"
 
-#: lib/utils.php:2541
+#: lib/utils.php:2546
 msgid "%s年"
 msgstr "%s年"
 
-#: lib/utils.php:2543
+#: lib/utils.php:2548
 msgid "%s年%sヶ月"
 msgstr "%s年%s个月"
 
@@ -10683,6 +10702,22 @@ msgstr "无法获取商品。可能指定了不存在的ASIN。"
 msgid "サイト内を検索"
 msgstr "搜索站内内容"
 
+#: skins/nagi/nagi-customizer.php:84
+msgid "スキンNAGIの設定"
+msgstr ""
+
+#: skins/nagi/nagi-customizer.php:223
+msgid "フロントページのタブ一覧の設定"
+msgstr ""
+
+#: skins/nagi/nagi-customizer.php:446
+msgid "フッター固定CTAの色"
+msgstr ""
+
+#: skins/nagi/nagi-customizer.php:575
+msgid "カルーセルの設定"
+msgstr ""
+
 #: skins/one/functions.php:113
 msgid "スキンoneの設定"
 msgstr "Skin one的设置"
@@ -10947,7 +10982,7 @@ msgstr "关注SoundCloud"
 msgid "LINE@をフォロー"
 msgstr "关注LINE@"
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:40
+#: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
 msgstr "登出"
 
@@ -11953,6 +11988,14 @@ msgstr "显示已注册菜单中的导航卡。"
 msgid "表示カテゴリー選択"
 msgstr "选择显示类别"
 
+#: blocks/src/block/new-list/edit.js:86
+msgid "テキストを入力して絞り込んでください。"
+msgstr ""
+
+#: blocks/src/block/new-list/edit.js:86
+msgid "※最大10件表示"
+msgstr ""
+
 #: blocks/src/block/new-list/edit.js:95 blocks/src/block/popular-list/edit.js:94
 msgid "子カテゴリーの内容を含めて表示"
 msgstr "包括显示子类别的内容"
@@ -11961,43 +12004,43 @@ msgstr "包括显示子类别的内容"
 msgid "表示する記事の数"
 msgstr "显示文章的数量"
 
-#: blocks/src/block/new-list/edit.js:160
+#: blocks/src/block/new-list/edit.js:161
 msgid "表示順"
 msgstr "显示顺序"
 
-#: blocks/src/block/new-list/edit.js:164
+#: blocks/src/block/new-list/edit.js:165
 msgid "更新日順"
 msgstr "按更新日期"
 
-#: blocks/src/block/new-list/edit.js:168
+#: blocks/src/block/new-list/edit.js:169
 msgid "投稿日順"
 msgstr "按发布日期"
 
-#: blocks/src/block/new-list/edit.js:181
+#: blocks/src/block/new-list/edit.js:182
 msgid "並び替え"
 msgstr "排序"
 
-#: blocks/src/block/new-list/edit.js:184
+#: blocks/src/block/new-list/edit.js:185
 msgid "昇順"
 msgstr "升序"
 
-#: blocks/src/block/new-list/edit.js:185
+#: blocks/src/block/new-list/edit.js:186
 msgid "降順"
 msgstr "降序"
 
-#: blocks/src/block/new-list/edit.js:192
+#: blocks/src/block/new-list/edit.js:193
 msgid "読み飛ばし"
 msgstr "跳过"
 
-#: blocks/src/block/new-list/edit.js:217
+#: blocks/src/block/new-list/edit.js:218
 msgid "説明文の表示"
 msgstr "显示说明文字"
 
-#: blocks/src/block/new-list/edit.js:237
+#: blocks/src/block/new-list/edit.js:238
 msgid "全タグ表示"
 msgstr "显示所有标签"
 
-#: blocks/src/block/new-list/edit.js:246
+#: blocks/src/block/new-list/edit.js:247
 msgid "固定記事の表示"
 msgstr "显示固定文章"
 
@@ -12005,11 +12048,11 @@ msgstr "显示固定文章"
 msgid "投稿タイプ"
 msgstr "文章类型"
 
-#: blocks/src/block/new-list/edit.js:258
+#: blocks/src/block/new-list/edit.js:259
 msgid "検索グループ"
 msgstr "搜索组"
 
-#: blocks/src/block/new-list/edit.js:263
+#: blocks/src/block/new-list/edit.js:264
 msgid "投稿ユーザ"
 msgstr "文章用户"
 
