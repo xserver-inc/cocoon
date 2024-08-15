@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
-"PO-Revision-Date: 2024-08-15 12:21\n"
+"PO-Revision-Date: 2024-08-15 12:38\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12086,19 +12086,19 @@ msgstr "사이트 내에서 검색"
 
 #: skins/nagi/nagi-customizer.php:84
 msgid "スキンNAGIの設定"
-msgstr ""
+msgstr "スキンNAGIの設定"
 
 #: skins/nagi/nagi-customizer.php:223
 msgid "フロントページのタブ一覧の設定"
-msgstr ""
+msgstr "전면 페이지의 탭 목록 설정"
 
 #: skins/nagi/nagi-customizer.php:446
 msgid "フッター固定CTAの色"
-msgstr ""
+msgstr "바닥글 고정 CTA 색상"
 
 #: skins/nagi/nagi-customizer.php:575
 msgid "カルーセルの設定"
-msgstr ""
+msgstr "회전 목마 설정"
 
 #: skins/one/functions.php:113
 msgid "スキンoneの設定"
@@ -13564,11 +13564,11 @@ msgstr "표시할 카테고리 선택"
 
 #: blocks/src/block/new-list/edit.js:86
 msgid "テキストを入力して絞り込んでください。"
-msgstr ""
+msgstr "텍스트를 입력하고 좁히십시오."
 
 #: blocks/src/block/new-list/edit.js:86
 msgid "※最大10件表示"
-msgstr ""
+msgstr "※최대 10건 표시"
 
 #: blocks/src/block/new-list/edit.js:96
 #: blocks/src/block/popular-list/edit.js:94
