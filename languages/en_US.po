@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
-"PO-Revision-Date: 2024-08-15 12:21\n"
+"PO-Revision-Date: 2024-08-15 12:38\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12089,19 +12089,19 @@ msgstr "Search within the site"
 
 #: skins/nagi/nagi-customizer.php:84
 msgid "スキンNAGIの設定"
-msgstr ""
+msgstr "Skin NAGI settings"
 
 #: skins/nagi/nagi-customizer.php:223
 msgid "フロントページのタブ一覧の設定"
-msgstr ""
+msgstr "Settings the front page tab list"
 
 #: skins/nagi/nagi-customizer.php:446
 msgid "フッター固定CTAの色"
-msgstr ""
+msgstr "Footer fixed CTA color"
 
 #: skins/nagi/nagi-customizer.php:575
 msgid "カルーセルの設定"
-msgstr ""
+msgstr "Carousel settings"
 
 #: skins/one/functions.php:113
 msgid "スキンoneの設定"
@@ -13567,11 +13567,11 @@ msgstr "Display categories"
 
 #: blocks/src/block/new-list/edit.js:86
 msgid "テキストを入力して絞り込んでください。"
-msgstr ""
+msgstr "Enter text to refine your search."
 
 #: blocks/src/block/new-list/edit.js:86
 msgid "※最大10件表示"
-msgstr ""
+msgstr "*Maximum 10 items displayed"
 
 #: blocks/src/block/new-list/edit.js:96
 #: blocks/src/block/popular-list/edit.js:94
