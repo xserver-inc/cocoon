@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T14:45:14+00:00\n"
-"PO-Revision-Date: 2024-08-15 15:45\n"
+"PO-Revision-Date: 2024-08-15 16:40\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -184,19 +184,19 @@ msgstr "警告(!)"
 
 #: lib/admin-tinymce-qtag.php:37
 msgid "primary"
-msgstr ""
+msgstr "主要"
 
 #: lib/admin-tinymce-qtag.php:38
 msgid "success"
-msgstr ""
+msgstr "成功"
 
 #: lib/admin-tinymce-qtag.php:40
 msgid "warning"
-msgstr ""
+msgstr "警告"
 
 #: lib/admin-tinymce-qtag.php:41
 msgid "danger"
-msgstr ""
+msgstr "危险"
 
 #: lib/admin-tinymce-qtag.php:78
 msgid "インライン"
@@ -474,7 +474,7 @@ msgstr "框（白色）"
 #: blocks/src/old/tab-box/block.js:147
 #: blocks/src/toolbutton/badge-grey.js:14
 msgid "灰色"
-msgstr ""
+msgstr "灰色"
 
 #: lib/admin-tinymce-qtag.php:281
 #: lib/admin-tinymce-qtag.php:315
@@ -509,7 +509,7 @@ msgstr ""
 #: blocks/src/old/toggle-box/block.js:69
 #: blocks/src/toolbutton/badge-yellow.js:14
 msgid "黄色"
-msgstr ""
+msgstr "黄色"
 
 #: lib/admin-tinymce-qtag.php:286
 #: lib/admin-tinymce-qtag.php:320
@@ -793,7 +793,7 @@ msgstr "左侧"
 #: lib/admin-tinymce-qtag.php:927
 #: lib/admin-tinymce-qtag.php:948
 msgid "中央"
-msgstr ""
+msgstr "中央"
 
 #: lib/admin-tinymce-qtag.php:892
 #: lib/admin-tinymce-qtag.php:912
@@ -1220,7 +1220,7 @@ msgstr "添加产品链接"
 
 #: lib/admin.php:135
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: lib/admin.php:140
 #: lib/custom-fields/seo-field.php:62
@@ -1231,7 +1231,7 @@ msgstr "字符数"
 
 #: lib/admin.php:145
 msgid "PV"
-msgstr ""
+msgstr "页面视图"
 
 #: lib/admin.php:150
 #: lib/content-category.php:264
@@ -1249,7 +1249,7 @@ msgstr "正文："
 
 #: lib/admin.php:218
 msgid "日："
-msgstr ""
+msgstr "日："
 
 #: lib/admin.php:226
 msgid "週："
@@ -1257,7 +1257,7 @@ msgstr "周："
 
 #: lib/admin.php:234
 msgid "月："
-msgstr ""
+msgstr "月："
 
 #: lib/admin.php:242
 msgid "全："
@@ -1357,7 +1357,7 @@ msgstr "访问统计"
 #: lib/admin.php:490
 #: lib/original-menu.php:42
 msgid "高速化"
-msgstr ""
+msgstr "更快的速度"
 
 #: lib/admin.php:497
 #: lib/original-menu.php:45
@@ -1527,7 +1527,7 @@ msgstr "边框线"
 #: blocks/src/block/toggle-box/edit.js:121
 #: blocks/src/micro/micro-balloon/edit.js:125
 msgid "背景色"
-msgstr ""
+msgstr "背景颜色"
 
 #: lib/block-editor-styles-list.php:33
 #: lib/block-editor-styles-paragraph.php:33
@@ -1542,35 +1542,35 @@ msgstr "交叉线"
 
 #: lib/comments.php:45
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\">says:</span>"
 
 #: lib/comments.php:50
 #: lib/comments.php:119
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Your comment is awaiting moderation."
 
 #. translators: 1: date, 2: time
 #: lib/comments.php:57
 #: lib/comments.php:106
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s at %2$s"
 
 #. translators: 1: date, 2: time
 #: lib/comments.php:57
 msgid "(Edit)"
-msgstr ""
+msgstr "(编辑)"
 
 #: lib/comments.php:78
 msgid "Y/m/d(D)"
-msgstr ""
+msgstr "Y/m/d(D)"
 
 #: lib/comments.php:85
 msgid "H:i:s"
-msgstr ""
+msgstr "H:i:s"
 
 #: lib/comments.php:104
 msgid "<span class=\"comment-author-label\">名前:</span><cite class=\"fn comment-author\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-author-separator\"> :</span>"
-msgstr ""
+msgstr "<span class=\"comment-author-label\">姓名:</span><cite class=\"fn comment-author\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-author-separator\"> :</span>"
 
 #: lib/comments.php:106
 msgid "投稿日："
@@ -1578,7 +1578,7 @@ msgstr "发布日期："
 
 #: lib/comments.php:116
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: lib/content-category.php:180
 #: lib/content-tag.php:150
@@ -1793,7 +1793,7 @@ msgstr "即使在Cocoon设置中启用了“PR标记”，但如果启用了此�
 #: lib/page-cache/cache-forms.php:79
 #: lib/page-settings/_top-page.php:252
 msgid "AMP"
-msgstr ""
+msgstr "AMP"
 
 #: lib/custom-fields/amp-field.php:33
 msgid "AMPページを生成しない"
@@ -1966,7 +1966,7 @@ msgstr "重定向URL"
 
 #: lib/custom-fields/redirect-field.php:33
 msgid "https://"
-msgstr ""
+msgstr "https://"
 
 #: lib/custom-fields/redirect-field.php:34
 msgid "このページに訪れるユーザーを設定したURLに301リダイレクトします。"
@@ -2052,7 +2052,7 @@ msgstr "在0到5的范围内输入评分。"
 #: lib/custom-fields/seo-field.php:20
 #: lib/page-settings/_top-page.php:182
 msgid "SEO"
-msgstr ""
+msgstr "SEO"
 
 #: lib/custom-fields/seo-field.php:118
 msgid "SEOタイトル"
@@ -2092,7 +2092,7 @@ msgstr "设置元标签以防止搜索引擎跟随此页面上的链接。"
 
 #: lib/custom-fields/seo-field.php:147
 msgid "canonical"
-msgstr ""
+msgstr "canonical"
 
 #: lib/custom-fields/seo-field.php:148
 msgid "canonical URLの入力"
@@ -2126,7 +2126,7 @@ msgstr "更改更新日期"
 
 #: lib/custom-fields/update-field.php:34
 msgid "更新"
-msgstr ""
+msgstr "更新"
 
 #: lib/custom-fields/update-field.php:35
 msgid "更新しない"
@@ -2147,26 +2147,26 @@ msgstr "更新日期时间："
 
 #: lib/custom-fields/update-field.php:40
 msgid "M j, Y @ H:i"
-msgstr ""
+msgstr "M j, Y @ H:i"
 
 #: lib/custom-fields/update-field.php:85
 #: lib/custom-fields/update-field.php:87
 msgid "年"
-msgstr ""
+msgstr "年"
 
 #: lib/custom-fields/update-field.php:89
 msgid "月"
-msgstr ""
+msgstr "月"
 
 #: lib/custom-fields/update-field.php:99
 #: lib/custom-fields/update-field.php:101
 #: lib/page-settings/apis-forms.php:294
 msgid "日"
-msgstr ""
+msgstr "日"
 
 #: lib/dashboard-message.php:38
 msgid "Guidance on COVID-19:"
-msgstr ""
+msgstr "关于新冠肺炎 (COVID-19) 的指南："
 
 #: lib/gutenberg.php:15
 #: lib/page-settings/all-forms.php:31
@@ -2178,11 +2178,11 @@ msgstr "主色"
 #: blocks/src/block/cta/edit.js:182
 #: blocks/src/toolbutton/badge-purple.js:14
 msgid "紫色"
-msgstr ""
+msgstr "紫色"
 
 #: lib/gutenberg.php:35
 msgid "深紫色"
-msgstr ""
+msgstr "深紫色"
 
 #: lib/gutenberg.php:40
 msgid "紺色"
@@ -2190,11 +2190,11 @@ msgstr "藏青色"
 
 #: lib/gutenberg.php:50
 msgid "天色"
-msgstr ""
+msgstr "天色"
 
 #: lib/gutenberg.php:55
 msgid "浅葱色"
-msgstr ""
+msgstr "浅洋葱色"
 
 #: lib/gutenberg.php:60
 msgid "深緑色"
@@ -2229,7 +2229,7 @@ msgstr "深橙色"
 #: blocks/src/block/cta/edit.js:214
 #: blocks/src/toolbutton/badge-brown.js:14
 msgid "茶色"
-msgstr ""
+msgstr "栗色"
 
 #: lib/gutenberg.php:110
 msgid "黒"
@@ -2295,115 +2295,115 @@ msgstr "纯文本"
 
 #: lib/gutenberg.php:230
 msgid "Bash"
-msgstr ""
+msgstr "Bash"
 
 #: lib/gutenberg.php:234
 msgid "Basic"
-msgstr ""
+msgstr "Basic"
 
 #: lib/gutenberg.php:238
 msgid "C#"
-msgstr ""
+msgstr "C#"
 
 #: lib/gutenberg.php:242
 msgid "C++"
-msgstr ""
+msgstr "C++"
 
 #: lib/gutenberg.php:246
 msgid "CSS"
-msgstr ""
+msgstr "CSS"
 
 #: lib/gutenberg.php:250
 msgid "D"
-msgstr ""
+msgstr "D"
 
 #: lib/gutenberg.php:254
 msgid "DOS"
-msgstr ""
+msgstr "DOS"
 
 #: lib/gutenberg.php:258
 msgid "Delphi"
-msgstr ""
+msgstr "Delphi"
 
 #: lib/gutenberg.php:262
 msgid "Go"
-msgstr ""
+msgstr "Go"
 
 #: lib/gutenberg.php:266
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: lib/gutenberg.php:270
 msgid "Haml"
-msgstr ""
+msgstr "Haml"
 
 #: lib/gutenberg.php:274
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 #: lib/gutenberg.php:278
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: lib/gutenberg.php:282
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: lib/gutenberg.php:286
 msgid "Less"
-msgstr ""
+msgstr "Less"
 
 #: lib/gutenberg.php:290
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: lib/gutenberg.php:294
 msgid "Objective C"
-msgstr ""
+msgstr "Objective C"
 
 #: lib/gutenberg.php:298
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: lib/gutenberg.php:302
 msgid "Perl"
-msgstr ""
+msgstr "Perl"
 
 #: lib/gutenberg.php:306
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: lib/gutenberg.php:310
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: lib/gutenberg.php:314
 msgid "Ruby"
-msgstr ""
+msgstr "Ruby"
 
 #: lib/gutenberg.php:318
 msgid "Rust"
-msgstr ""
+msgstr "Rust"
 
 #: lib/gutenberg.php:322
 msgid "SCSS"
-msgstr ""
+msgstr "SCSS"
 
 #: lib/gutenberg.php:326
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: lib/gutenberg.php:330
 msgid "Swift"
-msgstr ""
+msgstr "Swift"
 
 #: lib/gutenberg.php:334
 msgid "VBScript"
-msgstr ""
+msgstr "VBScript"
 
 #: lib/gutenberg.php:338
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 #: lib/html-forms.php:272
 msgid "解説ページ"
@@ -2505,7 +2505,7 @@ msgstr "选择图像"
 
 #: lib/html-forms.php:791
 msgid "フロントページのみ"
-msgstr ""
+msgstr "仅首页"
 
 #: lib/html-forms.php:796
 #: lib/page-settings/sns-follow-forms.php:110
@@ -2514,7 +2514,7 @@ msgstr ""
 #: lib/page-settings/_top-page.php:197
 #: lib/widgets/display-widgets.php:167
 msgid "投稿"
-msgstr ""
+msgstr "页面视图"
 
 #: lib/html-forms.php:801
 #: lib/page-settings/sns-follow-forms.php:113
@@ -2581,7 +2581,7 @@ msgstr "输入投稿ID"
 #: lib/html-forms.php:932
 #: lib/html-forms.php:952
 msgid "例：111,222,333"
-msgstr ""
+msgstr "例如：111,222,333"
 
 #: lib/html-forms.php:913
 msgid "投稿IDをカンマ区切りで入力してください。"
@@ -2615,11 +2615,11 @@ msgstr "未找到文章。"
 #. translators: %s: author's display name
 #: lib/html-forms.php:1488
 msgid "Posts by %s"
-msgstr ""
+msgstr "%s 的帖子"
 
 #: lib/html-forms.php:1492
 msgid "NO USER"
-msgstr ""
+msgstr "没有用户"
 
 #: lib/html-forms.php:1508
 msgid "未登録のユーザーさん"
@@ -2700,11 +2700,11 @@ msgstr "日本传统色"
 
 #: lib/html-tooltips.php:86
 msgid "NIPPON COLORS"
-msgstr ""
+msgstr "NIPPON COLORS"
 
 #: lib/html-tooltips.php:87
 msgid "Color Hunt"
-msgstr ""
+msgstr "Color Hunt"
 
 #: lib/html-tooltips.php:109
 #: lib/html-tooltips.php:123
@@ -2721,7 +2721,7 @@ msgstr "在设置广告之前，请确认AdSense政策。"
 #: tmp/admin-panel.php:71
 #: tmp/admin-panel.php:80
 msgid "ja"
-msgstr ""
+msgstr "ja"
 
 #: lib/html-tooltips.php:111
 #: lib/html-tooltips.php:125
@@ -2907,7 +2907,7 @@ msgstr "请输入将作为显示标签的标题。标题将用于列表显示。
 #: lib/page-func-text/form.php:34
 #: blocks/src/toolbutton/dropdown-shortcodes.js:189
 msgid "内容"
-msgstr ""
+msgstr "内容"
 
 #: lib/page-affiliate-tag/form.php:36
 msgid "アフィリエイトタグを入力"
@@ -2936,7 +2936,7 @@ msgstr "如果不需要显示在编辑器的下拉列表中，请禁用此选项
 #: lib/page-item-ranking/form.php:86
 #: lib/page-speech-balloon/form.php:152
 msgid "保存"
-msgstr ""
+msgstr "保存"
 
 #: lib/page-affiliate-tag/list.php:21
 #: lib/page-func-text/list.php:21
@@ -3285,7 +3285,7 @@ msgstr "请输入商品名等标题名称（※必填）"
 
 #: lib/page-item-ranking/form.php:120
 msgid "項目の名前です。タグ・ショートコード入力も可能です。"
-msgstr ""
+msgstr "项目的名称。您还可以输入标签和短代码。"
 
 #: lib/page-item-ranking/form.php:126
 msgid "評価："
@@ -3357,7 +3357,7 @@ msgstr "图片/横幅标签"
 
 #: lib/page-item-ranking/form.php:152
 msgid "商品画像、もしくはバナーのタグを入力してください。ショートコード入力も可能です。"
-msgstr ""
+msgstr "请输入产品图片或横幅标签。您还可以输入简码。"
 
 #: lib/page-item-ranking/form.php:153
 msgid "イメージ画像のタグを入力してください。※入力していない場合は表示されません。"
@@ -3434,7 +3434,7 @@ msgstr "官网"
 #: lib/page-item-ranking/list.php:21
 #: lib/page-speech-balloon/list.php:38
 msgid "設定を変更したり不要なものは削除してご利用ください。新しいものは「新規作成」ボタンから追加できます。"
-msgstr ""
+msgstr "请通过更改设置或删除不需要的项目来使用它。可以使用“新建”按钮添加新的。"
 
 #: lib/page-item-ranking/list.php:24
 msgid "「ランキング」を作成するには「新規作成」リンクをクリックしてください。"
@@ -3514,7 +3514,7 @@ msgstr "404页面标题"
 #: lib/page-settings/404-forms.php:54
 #: lib/page-settings/404-funcs.php:27
 msgid "404 NOT FOUND"
-msgstr ""
+msgstr "404 未找到"
 
 #: lib/page-settings/404-forms.php:55
 msgid "404ページに表示するタイトルを入力します。"
@@ -3669,7 +3669,7 @@ msgstr "PWA："
 
 #: lib/page-settings/about-forms.php:125
 msgid "Font Awesome："
-msgstr ""
+msgstr "Font Awesome："
 
 #: lib/page-settings/about-forms.php:126
 msgid "Auto Post Thumbnail："
@@ -3677,7 +3677,7 @@ msgstr "自动生成缩略图："
 
 #: lib/page-settings/about-forms.php:127
 msgid "Retina："
-msgstr ""
+msgstr "Retina："
 
 #: lib/page-settings/about-forms.php:128
 msgid "ホームイメージ："
@@ -3701,7 +3701,7 @@ msgstr "JavaScript压缩："
 
 #: lib/page-settings/about-forms.php:136
 msgid "Lazy Load："
-msgstr ""
+msgstr "懒加载："
 
 #: lib/page-settings/about-forms.php:143
 msgid "利用中のプラグイン："
@@ -3907,7 +3907,7 @@ msgstr "主题自带"
 
 #: lib/page-settings/admin-forms.php:204
 msgid "Jetpack"
-msgstr ""
+msgstr "Jetpack"
 
 #: lib/page-settings/admin-forms.php:207
 msgid "管理者パネルで表示するPVの取得方法を選択します。"
@@ -4087,7 +4087,7 @@ msgstr "显示ScreenResolution检查"
 
 #: lib/page-settings/admin-forms.php:327
 msgid "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
-msgstr ""
+msgstr "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
 
 #: lib/page-settings/ads-forms.php:11
 msgid "広告設定"
@@ -4351,7 +4351,7 @@ msgstr "主列左上方"
 
 #: lib/page-settings/ads-forms.php:319
 msgid "（小）"
-msgstr ""
+msgstr "（小）"
 
 #: lib/page-settings/ads-forms.php:320
 msgid "メインカラムの左上に「PR表記」を表示します。"
@@ -4363,7 +4363,7 @@ msgstr "正文上方"
 
 #: lib/page-settings/ads-forms.php:322
 msgid "（大）"
-msgstr ""
+msgstr "（大）"
 
 #: lib/page-settings/ads-forms.php:323
 msgid "記事本文の上部に「PR表記」を挿入します。"
@@ -4592,47 +4592,47 @@ msgstr "选择适用于整个网站的字体。"
 
 #: lib/page-settings/all-forms.php:78
 msgid "12px"
-msgstr ""
+msgstr "12px"
 
 #: lib/page-settings/all-forms.php:79
 msgid "13px"
-msgstr ""
+msgstr "13px"
 
 #: lib/page-settings/all-forms.php:80
 msgid "14px"
-msgstr ""
+msgstr "14px"
 
 #: lib/page-settings/all-forms.php:81
 msgid "15px"
-msgstr ""
+msgstr "15px"
 
 #: lib/page-settings/all-forms.php:82
 msgid "16px"
-msgstr ""
+msgstr "16px"
 
 #: lib/page-settings/all-forms.php:83
 msgid "17px"
-msgstr ""
+msgstr "17px"
 
 #: lib/page-settings/all-forms.php:84
 msgid "18px"
-msgstr ""
+msgstr "18px"
 
 #: lib/page-settings/all-forms.php:85
 msgid "19px"
-msgstr ""
+msgstr "19px"
 
 #: lib/page-settings/all-forms.php:86
 msgid "20px"
-msgstr ""
+msgstr "20px"
 
 #: lib/page-settings/all-forms.php:87
 msgid "21px"
-msgstr ""
+msgstr "21px"
 
 #: lib/page-settings/all-forms.php:88
 msgid "22px"
-msgstr ""
+msgstr "22px"
 
 #: lib/page-settings/all-forms.php:90
 #: blocks/src/block/button-wrap/edit.js:126
@@ -4670,11 +4670,11 @@ msgstr "网站图标字体"
 
 #: lib/page-settings/all-forms.php:142
 msgid "Font Awesome 4"
-msgstr ""
+msgstr "Font Awesome 4"
 
 #: lib/page-settings/all-forms.php:143
 msgid "Font Awesome 5"
-msgstr ""
+msgstr "Font Awesome 5"
 
 #: lib/page-settings/all-forms.php:146
 msgid "サイト全体で使用するアイコンフォントを選択します。"
@@ -4838,7 +4838,7 @@ msgstr "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-t
 
 #: lib/page-settings/all-funcs.php:250
 msgid "Y.m.d"
-msgstr ""
+msgstr "Y.m.d"
 
 #: lib/page-settings/amp-forms.php:11
 msgid "AMP設定"
@@ -4935,7 +4935,7 @@ msgstr "Google AMP测试"
 #: lib/page-settings/amp-forms.php:103
 #: tmp/admin-panel.php:56
 msgid "The AMP Validator"
-msgstr ""
+msgstr "The AMP Validator"
 
 #: lib/page-settings/amp-forms.php:104
 #: tmp/admin-panel.php:59
@@ -5024,7 +5024,7 @@ msgstr "这是Google Search Console站点验证标签的设置。"
 
 #: lib/page-settings/analytics-forms.php:113
 msgid "Google Search Console ID"
-msgstr ""
+msgstr "Google Search Console ID"
 
 #: lib/page-settings/analytics-forms.php:117
 msgid "サイト認証IDのみ入力"
@@ -5084,7 +5084,7 @@ msgstr "页眉标签输入"
 
 #: lib/page-settings/analytics-forms.php:192
 msgid "ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析・認証タグを入力してください。"
-msgstr ""
+msgstr "请输入需要插入标头中的任何其他访问分析/身份验证标签（紧接在 &lt;body&gt; 之后）。"
 
 #: lib/page-settings/analytics-forms.php:200
 msgid "フッター用コード"
@@ -5096,7 +5096,7 @@ msgstr "页脚标签输入"
 
 #: lib/page-settings/analytics-forms.php:205
 msgid "フッター（&lt;/body&gt;直前）に挿入する必要のある、その他アクセス解析・認証タグを入力してください。"
-msgstr ""
+msgstr "请输入需要插入页脚的任何其他访问分析/身份验证标签（就在 &lt;/body&gt; 之前）。"
 
 #: lib/page-settings/apis-forms.php:9
 msgid "取得方法"
@@ -5147,7 +5147,7 @@ msgstr "跟踪ID"
 
 #: lib/page-settings/apis-forms.php:52
 msgid "yourid-22"
-msgstr ""
+msgstr "yourid-22"
 
 #: lib/page-settings/apis-forms.php:53
 msgid "AmazonアソシエイトのトラッキングIDを入力してください。"
@@ -5288,7 +5288,7 @@ msgstr "用于在同一商品编号有多个商品时确定显示优先级。"
 
 #: lib/page-settings/apis-forms.php:141
 msgid "データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。"
-msgstr ""
+msgstr "显示数据获取时乐天市场销售页面上的价格。如果短代码设置了价格选项，则优先。"
 
 #: lib/page-settings/apis-forms.php:144
 msgid "楽天商品リンクのロゴの表示切り替え。"
@@ -5300,15 +5300,15 @@ msgstr "显示乐天搜索按钮"
 
 #: lib/page-settings/apis-forms.php:147
 msgid "楽天のキーワード検索ボタンを表示するか。"
-msgstr ""
+msgstr "是否应该显示乐天的关键字搜索按钮？"
 
 #: lib/page-settings/apis-forms.php:150
 msgid "楽天の検索ボタンに表示するテキストを入力してください。"
-msgstr ""
+msgstr "请输入要在乐天搜索按钮上显示的文本。"
 
 #: lib/page-settings/apis-forms.php:153
 msgid "楽天検索ボタンのリンク先URLを商品詳細ページにするか。"
-msgstr ""
+msgstr "乐天搜索按钮的目标 URL 应该是产品详细信息页面吗？"
 
 #: lib/page-settings/apis-forms.php:164
 #: lib/page-settings/apis-funcs.php:230
@@ -5833,7 +5833,7 @@ msgstr "返回顶部按钮设置"
 
 #: lib/page-settings/buttons-forms.php:16
 msgid "ページトップにスクロール移動するボタンの設定です。"
-msgstr ""
+msgstr "滚动到页面顶部的按钮的设置。"
 
 #: lib/page-settings/buttons-forms.php:31
 msgid "デモは動作しません。"
@@ -5887,11 +5887,11 @@ msgstr "轮播设置"
 
 #: lib/page-settings/carousel-forms.php:16
 msgid "ヘッダー下でカルーセル表示させたい投稿の設定を行います。"
-msgstr ""
+msgstr "配置您想要在标题下的轮播中显示的帖子。"
 
 #: lib/page-settings/carousel-forms.php:24
 msgid "設定が反映されない場合はリロードしてみてください。"
-msgstr ""
+msgstr "如果设置没有生效，请尝试重新加载。"
 
 #: lib/page-settings/carousel-forms.php:33
 msgid "カルーセルの表示"
@@ -6032,7 +6032,7 @@ msgstr "自动播放间隔"
 
 #: lib/page-settings/carousel-forms.php:155
 msgid "秒"
-msgstr ""
+msgstr "秒"
 
 #: lib/page-settings/carousel-forms.php:158
 msgid "カルーセルの自動送り間隔です。オートプレイが有効な時のみ設定した秒数ごとに入れ替わります。"
@@ -7095,7 +7095,7 @@ msgstr "宽度："
 
 #: lib/page-settings/header-forms.php:113
 msgid " × "
-msgstr ""
+msgstr " × "
 
 #: lib/page-settings/header-forms.php:114
 msgid "高さ："
@@ -7359,7 +7359,7 @@ msgstr "只是一个正方形。"
 
 #: lib/page-settings/image-forms.php:181
 msgid "1:1（正方形）"
-msgstr ""
+msgstr "1:1（正方形）"
 
 #: lib/page-settings/image-forms.php:184
 msgid "インデックス等で使われるサムネイル画像の縦横比率を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。"
@@ -7681,7 +7681,7 @@ msgstr "省略字符串"
 #: lib/page-settings/index-forms.php:195
 #: lib/page-settings/index-funcs.php:204
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: lib/page-settings/index-forms.php:196
 msgid "「自動生成抜粋文字数」を自動抜粋文が超えたときに表示する省略を表す文字を入力してください。"
@@ -7850,7 +7850,7 @@ msgstr "请输入要显示在通知区域的消息。"
 
 #: lib/page-settings/notice-forms.php:62
 msgid "通知URL"
-msgstr ""
+msgstr "通知网址"
 
 #: lib/page-settings/notice-forms.php:67
 msgid "通知エリアにリンクを設定する場合はURLを入力してください。"
@@ -7874,7 +7874,7 @@ msgstr "通知（绿色）"
 
 #: lib/page-settings/notice-forms.php:94
 msgid "注意（黄色）"
-msgstr ""
+msgstr "注意（黄色）"
 
 #: lib/page-settings/notice-forms.php:95
 msgid "警告（赤色）"
@@ -8246,7 +8246,7 @@ msgstr "PWA需要<b>512×512px</b>的<b>PNG图像</b>。可以从站点图标中
 
 #: lib/page-settings/pwa-forms.php:122
 msgid "配色"
-msgstr ""
+msgstr "配色方案"
 
 #: lib/page-settings/pwa-forms.php:127
 msgid "テーマカラー"
@@ -8750,15 +8750,15 @@ msgstr "6个月"
 #: lib/page-settings/single-forms.php:201
 #: blocks/src/block/popular-list/edit.js:179
 msgid "1年"
-msgstr ""
+msgstr "1年"
 
 #: lib/page-settings/single-forms.php:202
 msgid "2年"
-msgstr ""
+msgstr "2年"
 
 #: lib/page-settings/single-forms.php:203
 msgid "3年"
-msgstr ""
+msgstr "3年"
 
 #: lib/page-settings/single-forms.php:206
 msgid "関連記事を取得する期間を選択することで新鮮な記事を表示しやすくします。ニュースサイト等で、新しい記事が並んで欲しい時に設定します。頻回にサイトを更新していない場合は利用しないことをおすすめします。"
@@ -8882,7 +8882,7 @@ msgstr "皮肤列表"
 #: lib/page-settings/skin-forms.php:63
 #: lib/page-settings/skin-forms.php:65
 msgid "作者"
-msgstr ""
+msgstr "作者"
 
 #: lib/page-settings/skin-forms.php:88
 msgid "スキンを選択してください。"
@@ -9007,7 +9007,7 @@ msgstr "Bluesky"
 #: lib/page-settings/sns-share-forms-top.php:64
 #: tmp/sns-share-buttons.php:29
 msgid "Misskey"
-msgstr ""
+msgstr "Misskey"
 
 #: lib/page-settings/sns-follow-forms.php:76
 #: lib/page-settings/sns-share-forms-bottom.php:80
@@ -9018,7 +9018,7 @@ msgstr "Facebook"
 
 #: lib/page-settings/sns-follow-forms.php:77
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: lib/page-settings/sns-follow-forms.php:78
 #: lib/page-settings/sns-share-forms-bottom.php:83
@@ -9028,33 +9028,33 @@ msgstr "Hatena书签"
 
 #: lib/page-settings/sns-follow-forms.php:79
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: lib/page-settings/sns-follow-forms.php:80
 #: lib/page-settings/sns-share-forms-bottom.php:95
 #: lib/page-settings/sns-share-forms-top.php:82
 #: tmp/sns-share-buttons.php:49
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: lib/page-settings/sns-follow-forms.php:81
 msgid "YouTube"
-msgstr ""
+msgstr "Pinterest"
 
 #: lib/page-settings/sns-follow-forms.php:82
 #: lib/page-settings/sns-share-forms-bottom.php:98
 #: lib/page-settings/sns-share-forms-top.php:85
 #: tmp/sns-share-buttons.php:53
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: lib/page-settings/sns-follow-forms.php:83
 msgid "note"
-msgstr ""
+msgstr "note"
 
 #: lib/page-settings/sns-follow-forms.php:84
 msgid "Flickr"
-msgstr ""
+msgstr "Flickr"
 
 #: lib/page-settings/sns-follow-forms.php:85
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:212
@@ -9064,7 +9064,7 @@ msgstr "Amazon愿望清单"
 
 #: lib/page-settings/sns-follow-forms.php:86
 msgid "Twitch"
-msgstr ""
+msgstr "Twitch"
 
 #: lib/page-settings/sns-follow-forms.php:87
 msgid "楽天ROOM"
@@ -9072,15 +9072,15 @@ msgstr "乐天ROOM"
 
 #: lib/page-settings/sns-follow-forms.php:88
 msgid "Slack"
-msgstr ""
+msgstr "Slack"
 
 #: lib/page-settings/sns-follow-forms.php:89
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: lib/page-settings/sns-follow-forms.php:90
 msgid "CodePen"
-msgstr ""
+msgstr "CodePen"
 
 #: lib/page-settings/sns-follow-forms.php:92
 msgid "から設定"
@@ -9302,18 +9302,18 @@ msgstr "切换各个分享按钮的显示。"
 #: lib/page-settings/sns-share-forms-bottom.php:86
 #: lib/page-settings/sns-share-forms-top.php:73
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: lib/page-settings/sns-share-forms-bottom.php:89
 #: lib/page-settings/sns-share-forms-top.php:76
 #: tmp/sns-share-buttons.php:41
 msgid "Pocket"
-msgstr ""
+msgstr "Pocket"
 
 #: lib/page-settings/sns-share-forms-bottom.php:92
 #: lib/page-settings/sns-share-forms-top.php:79
 msgid "LINE@"
-msgstr ""
+msgstr "LINE@"
 
 #: lib/page-settings/sns-share-forms-bottom.php:101
 #: lib/page-settings/sns-share-forms-top.php:88
@@ -9346,32 +9346,32 @@ msgstr "栏数"
 #: lib/page-settings/sns-share-forms-bottom.php:167
 #: lib/page-settings/sns-share-forms-top.php:156
 msgid "1列"
-msgstr ""
+msgstr "1列"
 
 #: lib/page-settings/sns-share-forms-bottom.php:168
 #: lib/page-settings/sns-share-forms-top.php:157
 msgid "2列"
-msgstr ""
+msgstr "2列"
 
 #: lib/page-settings/sns-share-forms-bottom.php:169
 #: lib/page-settings/sns-share-forms-top.php:158
 msgid "3列"
-msgstr ""
+msgstr "3列"
 
 #: lib/page-settings/sns-share-forms-bottom.php:170
 #: lib/page-settings/sns-share-forms-top.php:159
 msgid "4列"
-msgstr ""
+msgstr "4列"
 
 #: lib/page-settings/sns-share-forms-bottom.php:171
 #: lib/page-settings/sns-share-forms-top.php:160
 msgid "5列"
-msgstr ""
+msgstr "5列"
 
 #: lib/page-settings/sns-share-forms-bottom.php:172
 #: lib/page-settings/sns-share-forms-top.php:161
 msgid "6列"
-msgstr ""
+msgstr "6列"
 
 #: lib/page-settings/sns-share-forms-bottom.php:175
 msgid "ボトムシェアボタンのカラム数を選択してください。"
@@ -9757,11 +9757,11 @@ msgstr "请设置作为标题分隔符的字符。"
 
 #: lib/page-settings/title-funcs.php:22
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: lib/page-settings/title-funcs.php:25
 msgid " | "
-msgstr ""
+msgstr " | "
 
 #: lib/page-settings/toc-forms.php:13
 msgid "目次設定"
@@ -10033,7 +10033,7 @@ msgstr "头部"
 
 #: lib/page-settings/_top-page.php:185
 msgid "OGP"
-msgstr ""
+msgstr "OGP"
 
 #: lib/page-settings/_top-page.php:188
 msgid "アクセス解析・認証"
@@ -10066,7 +10066,7 @@ msgstr "代码"
 
 #: lib/page-settings/_top-page.php:227
 msgid "通知"
-msgstr ""
+msgstr "通知"
 
 #: lib/page-settings/_top-page.php:230
 msgid "アピールエリア"
@@ -10087,7 +10087,7 @@ msgstr "移动端"
 
 #: lib/page-settings/_top-page.php:257
 msgid "PWA"
-msgstr ""
+msgstr "PWA"
 
 #: lib/page-settings/_top-page.php:261
 msgid "管理者画面"
@@ -10103,7 +10103,7 @@ msgstr "编辑器"
 
 #: lib/page-settings/_top-page.php:273
 msgid "API"
-msgstr ""
+msgstr "应用开发接口（API）"
 
 #: lib/page-settings/_top-page.php:282
 msgid "テーマ情報"
@@ -10183,7 +10183,7 @@ msgstr "设置气泡的样式。"
 #: blocks/src/old/balloon-ex-v2/block.js:104
 #: blocks/src/old/balloon-ex/block.js:173
 msgid "人物位置"
-msgstr ""
+msgstr "人物位置"
 
 #: lib/page-speech-balloon/form.php:108
 #: blocks/src/block/balloon/edit.js:253
@@ -10191,7 +10191,7 @@ msgstr ""
 #: blocks/src/old/balloon-ex-v2/block.js:110
 #: blocks/src/old/balloon-ex/block.js:179
 msgid "左"
-msgstr ""
+msgstr "左"
 
 #: lib/page-speech-balloon/form.php:109
 #: blocks/src/block/balloon/edit.js:257
@@ -10199,7 +10199,7 @@ msgstr ""
 #: blocks/src/old/balloon-ex-v2/block.js:114
 #: blocks/src/old/balloon-ex/block.js:183
 msgid "右"
-msgstr ""
+msgstr "右"
 
 #: lib/page-speech-balloon/form.php:112
 msgid "アイコンを表示するポジションを設定します。"
@@ -10351,7 +10351,7 @@ msgstr "未输入图标图片。"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:19
 msgid "匿名"
-msgstr ""
+msgstr "匿名"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:135
 msgid "[SAMPLE 001] 男性（左）"
@@ -10400,7 +10400,7 @@ msgstr "浏览器缓存"
 
 #: lib/page-speed-up/speed-up-forms.php:17
 msgid "ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れます。"
-msgstr ""
+msgstr "配置浏览器缓存。通过设置浏览器缓存，下次会加载本地资源文件而不是服务器，这样会加快进程。"
 
 #: lib/page-speed-up/speed-up-forms.php:29
 msgid "ブラウザキャッシュの有効化"
@@ -10596,38 +10596,38 @@ msgstr "进行网站显示速度的加速设置。"
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:56
 msgid "View details"
-msgstr ""
+msgstr "View details"
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:79
 msgid "More information about %s"
-msgstr ""
+msgstr "More information about %s"
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:130
 msgid "Check for updates"
-msgstr ""
+msgstr "Check for updates"
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:217
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
-msgstr ""
+msgstr "The %s plugin is up to date."
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:219
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
-msgstr ""
+msgstr "A new version of the %s plugin is available."
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:221
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
-msgstr ""
+msgstr "Could not determine if updates are available for %s."
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:227
 msgid "Unknown update checker status \"%s\""
-msgstr ""
+msgstr "Unknown update checker status \"%s\""
 
 #: lib/plugin-update-checker/Puc/v5p2/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
-msgstr ""
+msgstr "There is no changelog available."
 
 #: lib/profile.php:39
 msgid "プロフィール画像"
@@ -10639,7 +10639,7 @@ msgstr "上传个人资料图片"
 
 #: lib/profile.php:49
 msgid "自前でプロフィール画像をアップロードする場合は画像を選択してください。Gravatarよりこちらのプロフィール画像が優先されます。240×240pxの正方形の画像がお勧めです。"
-msgstr ""
+msgstr "如果您想上传自己的个人资料图片，请选择一张图片。此个人资料图像将优先于 Gravatar。建议使用 240x240px 的方形图像。"
 
 #: lib/profile.php:49
 msgid "ページサイズ縮小のため<a href=\"https://tinypng.com/\" target=\"_blank\" rel=\"noopener\">TinyPNG</a>等で登録前にで圧縮することをおすすめします。"
@@ -10651,7 +10651,7 @@ msgstr "个人资料页面URL"
 
 #: lib/profile.php:61
 msgid "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。"
-msgstr ""
+msgstr "请输入输入您的个人资料信息的页面 URL。个人资料名称链接将更改为个人资料页面。如果未输入，它将链接到作者的存档页面。"
 
 #: lib/settings.php:302
 msgid "ヘッダーメニュー"
@@ -10727,7 +10727,7 @@ msgstr "将图片下部设置为黑色背景并叠加标题"
 
 #: lib/shortcodes-amazon.php:188
 msgid "us-west-2"
-msgstr ""
+msgstr "us-west-2"
 
 #: lib/shortcodes-amazon.php:270
 msgid "webservices.amazon.co.jp"
@@ -10767,7 +10767,7 @@ msgstr "在Amazon上查看详情"
 
 #: lib/shortcodes-product-func.php:381
 msgid "（"
-msgstr ""
+msgstr "（"
 
 #: lib/shortcodes-product-func.php:381
 msgid "時点"
@@ -10775,7 +10775,7 @@ msgstr "时间点"
 
 #: lib/shortcodes-product-func.php:381
 msgid "）"
-msgstr ""
+msgstr "）"
 
 #: lib/shortcodes-product-func.php:449
 msgid "楽天で詳細を見る"
@@ -10791,7 +10791,7 @@ msgstr "未输入id、no、search选项之一。"
 
 #: lib/shortcodes-rakuten.php:184
 msgid "Y/m/d H:i"
-msgstr ""
+msgstr "Y/m/d H:i"
 
 #: lib/shortcodes-rakuten.php:390
 msgid "料率："
@@ -10865,7 +10865,7 @@ msgstr "Facebook URL"
 
 #: lib/sns-follow.php:141
 msgid "はてブ URL"
-msgstr ""
+msgstr "Hatena Bookmark URL"
 
 #: lib/sns-follow.php:142
 msgid "Instagram URL"
@@ -10930,7 +10930,7 @@ msgstr "CodePen URL"
 #: lib/sns.php:17
 #: tmp/header-ogp.php:81
 msgid "ja_JP"
-msgstr ""
+msgstr "ja_JP"
 
 #: lib/tinymce/html-tags.php:46
 #: lib/tinymce/speech-balloons.php:51
@@ -11084,7 +11084,7 @@ msgstr "个人资料框"
 
 #: lib/tinymce/shortcodes.php:102
 msgid "ASIN"
-msgstr ""
+msgstr "ASIN"
 
 #: lib/tinymce/shortcodes.php:108
 msgid "Amazon商品リンク"
@@ -11185,11 +11185,6 @@ msgstr "公开"
 #: lib/utils.php:903
 msgid "記事を公開してもよろしいですか？"
 msgstr "确定要公开文章吗？"
-
-#: lib/utils.php:2503
-msgid "%s min"
-msgid_plural "%s mins"
-msgstr[0] ""
 
 #: lib/utils.php:2511
 msgid "%s hour"
@@ -11442,7 +11437,7 @@ msgstr "页脚中部"
 
 #: lib/widget-areas.php:452
 msgid "フッター中間のウィジェットエリアです。"
-msgstr ""
+msgstr "这是页脚中间的小部件区域。"
 
 #: lib/widget-areas.php:466
 msgid "フッター右"
@@ -11537,7 +11532,7 @@ msgstr "标题："
 
 #: lib/widgets/classic-text.php:62
 msgid "内容："
-msgstr ""
+msgstr "内容:"
 
 #: lib/widgets/classic-text.php:65
 #: lib/widgets/cta-box.php:143
@@ -11608,7 +11603,7 @@ msgstr "深蓝色（靛蓝）"
 #: lib/widgets/cta-box.php:173
 #: blocks/src/block/cta/edit.js:189
 msgid "水色"
-msgstr ""
+msgstr "浅蓝色"
 
 #: lib/widgets/cta-box.php:174
 #: blocks/src/block/cta/edit.js:191
@@ -11718,7 +11713,7 @@ msgstr "Twitter ID（不需要@）"
 #: lib/widgets/fb-like-box.php:133
 #: lib/widgets/fb-like-box.php:141
 msgid "XXXXXXX"
-msgstr ""
+msgstr "XXXXXXX"
 
 #: lib/widgets/fb-like-box.php:134
 #: lib/widgets/fb-like-box.php:142
@@ -12011,7 +12006,7 @@ msgstr "设置"
 
 #: lib/_defins.php:113
 msgid "PR"
-msgstr ""
+msgstr "广告"
 
 #: lib/_defins.php:114
 msgid "記事内に広告が含まれています。"
@@ -12073,7 +12068,7 @@ msgstr "确定要删除吗？"
 
 #: lib/_defins.php:335
 msgid "www.amazon.co.jp"
-msgstr ""
+msgstr "www.amazon.co.jp"
 
 #: lib/_defins.php:338
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
@@ -12085,19 +12080,19 @@ msgstr "搜索站内内容"
 
 #: skins/nagi/nagi-customizer.php:84
 msgid "スキンNAGIの設定"
-msgstr ""
+msgstr "皮肤 NAGI 设置"
 
 #: skins/nagi/nagi-customizer.php:223
 msgid "フロントページのタブ一覧の設定"
-msgstr ""
+msgstr "首页选项卡列表设置"
 
 #: skins/nagi/nagi-customizer.php:446
 msgid "フッター固定CTAの色"
-msgstr ""
+msgstr "固定页脚 CTA 颜色"
 
 #: skins/nagi/nagi-customizer.php:575
 msgid "カルーセルの設定"
-msgstr ""
+msgstr "轮播设置"
 
 #: skins/one/functions.php:113
 msgid "スキンoneの設定"
@@ -12978,7 +12973,7 @@ msgstr "疑问"
 
 #: blocks/src/block-extension/style-extension/style02.js:90
 msgid "警告"
-msgstr ""
+msgstr "警告"
 
 #: blocks/src/block-extension/style-extension/style02.js:94
 msgid "肉球"
@@ -12994,11 +12989,11 @@ msgstr "点踩"
 
 #: blocks/src/block-extension/style-extension/style02.js:110
 msgid "男性"
-msgstr ""
+msgstr "男性"
 
 #: blocks/src/block-extension/style-extension/style02.js:114
 msgid "女性"
-msgstr ""
+msgstr "女性"
 
 #: blocks/src/block-extension/style-extension/style02.js:118
 msgid "ハート"
@@ -13010,7 +13005,7 @@ msgstr "心碎"
 
 #: blocks/src/block-extension/style-extension/style02.js:126
 msgid "禁止"
-msgstr ""
+msgstr "禁止"
 
 #: blocks/src/block-universal/caption-box/edit.js:111
 #: blocks/src/block-universal/label-box/edit.js:111
@@ -13128,7 +13123,7 @@ msgstr "显示广告。"
 #: blocks/src/old/balloon-ex/block.js:140
 #: blocks/src/old/balloon/block.js:82
 msgid "人物"
-msgstr ""
+msgstr "人物"
 
 #: blocks/src/block/balloon/edit.js:288
 msgid "吹き出し色設定"
@@ -13229,7 +13224,7 @@ msgstr "大小"
 #: blocks/src/old/button-wrap/block.js:161
 #: blocks/src/old/button/block.js:176
 msgid "小"
-msgstr ""
+msgstr "小"
 
 #: blocks/src/block/button-wrap/edit.js:101
 #: blocks/src/block/button/edit.js:104
@@ -13238,7 +13233,7 @@ msgstr ""
 #: blocks/src/old/button-wrap/block.js:165
 #: blocks/src/old/button/block.js:180
 msgid "中"
-msgstr ""
+msgstr "中"
 
 #: blocks/src/block/button-wrap/edit.js:105
 #: blocks/src/block/button/edit.js:108
@@ -13247,7 +13242,7 @@ msgstr ""
 #: blocks/src/old/button-wrap/block.js:169
 #: blocks/src/old/button/block.js:184
 msgid "大"
-msgstr ""
+msgstr "大"
 
 #: blocks/src/block/button-wrap/edit.js:111
 #: blocks/src/block/button/edit.js:114
@@ -13342,7 +13337,7 @@ msgstr "替换"
 
 #: blocks/src/block/cta/index.js:21
 msgid "CTA"
-msgstr ""
+msgstr "CTA"
 
 #: blocks/src/block/cta/index.js:23
 msgid "コールトゥアクションボックスを表示します。"
@@ -13563,11 +13558,11 @@ msgstr "选择显示类别"
 
 #: blocks/src/block/new-list/edit.js:86
 msgid "テキストを入力して絞り込んでください。"
-msgstr ""
+msgstr "请输入文字以缩小搜索范围。"
 
 #: blocks/src/block/new-list/edit.js:86
 msgid "※最大10件表示"
-msgstr ""
+msgstr "*最多显示 10 项"
 
 #: blocks/src/block/new-list/edit.js:96
 #: blocks/src/block/popular-list/edit.js:94
@@ -13650,11 +13645,11 @@ msgstr "数据汇总周期"
 
 #: blocks/src/block/popular-list/edit.js:147
 msgid "1日"
-msgstr ""
+msgstr "1日"
 
 #: blocks/src/block/popular-list/edit.js:175
 msgid "半年"
-msgstr ""
+msgstr "半年"
 
 #: blocks/src/block/popular-list/edit.js:205
 msgid "全期間集計"
@@ -13753,7 +13748,7 @@ msgstr "标签内容"
 
 #: blocks/src/block/tab/edit.js:159
 msgid "Tab"
-msgstr ""
+msgstr "标签页"
 
 #: blocks/src/block/tab/edit.js:258
 msgid "タブ設定"
@@ -14233,23 +14228,23 @@ msgstr "列比率"
 
 #: blocks/src/layout/column-2/block.js:107
 msgid "1:1（｜□｜□｜）"
-msgstr ""
+msgstr "1:1（｜□｜□｜）"
 
 #: blocks/src/layout/column-2/block.js:111
 msgid "1:2（｜□｜□□｜）"
-msgstr ""
+msgstr "1:2（｜□｜□□｜）"
 
 #: blocks/src/layout/column-2/block.js:115
 msgid "2:1（｜□□｜□｜）"
-msgstr ""
+msgstr "2:1（｜□□｜□｜）"
 
 #: blocks/src/layout/column-2/block.js:119
 msgid "1:3（｜□｜□□□｜））"
-msgstr ""
+msgstr "1:3（｜□｜□□□｜））"
 
 #: blocks/src/layout/column-2/block.js:123
 msgid "3:1,（｜□□□｜□｜）"
-msgstr ""
+msgstr "3:1,（｜□□□｜□｜）"
 
 #: blocks/src/layout/column-3/block.js:39
 msgid "本文を左・中央・右カラムに分けます。"
@@ -14384,27 +14379,27 @@ msgstr "背景图标"
 
 #: blocks/src/toolbutton/background-icons.js:71
 msgid "◎"
-msgstr ""
+msgstr "◎"
 
 #: blocks/src/toolbutton/background-icons.js:72
 msgid "○"
-msgstr ""
+msgstr "○"
 
 #: blocks/src/toolbutton/background-icons.js:73
 msgid "△"
-msgstr ""
+msgstr "△"
 
 #: blocks/src/toolbutton/background-icons.js:74
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: blocks/src/toolbutton/background-icons.js:75
 msgid "✓"
-msgstr ""
+msgstr "✓"
 
 #: blocks/src/toolbutton/background-icons.js:76
 msgid "？"
-msgstr ""
+msgstr "？"
 
 #: blocks/src/toolbutton/bold.js:15
 msgid "太字（boldクラス指定）"
@@ -14430,7 +14425,7 @@ msgstr "内联标签"
 #: blocks/src/toolbutton/dropdown-letters.js:25
 #: blocks/src/toolbutton/dropdown-letters.js:38
 msgid "文字"
-msgstr ""
+msgstr "字符"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:79
 msgid "Amazonリンク"
@@ -14443,7 +14438,7 @@ msgstr "亚马逊链接（更改商品名）"
 #: blocks/src/toolbutton/dropdown-shortcodes.js:88
 #: blocks/src/toolbutton/dropdown-shortcodes.js:115
 msgid "商品名"
-msgstr ""
+msgstr "商品名称"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:97
 msgid "Amazonリンク（ボタン非表示）"
