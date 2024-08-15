@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T14:45:14+00:00\n"
-"PO-Revision-Date: 2024-08-15 14:48\n"
+"PO-Revision-Date: 2024-08-15 16:40\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -11184,11 +11184,6 @@ msgstr ""
 #: lib/utils.php:903
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
-
-#: lib/utils.php:2503
-msgid "%s min"
-msgid_plural "%s mins"
-msgstr[0] ""
 
 #: lib/utils.php:2511
 msgid "%s hour"
