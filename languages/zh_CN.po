@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
-"PO-Revision-Date: 2024-08-15 13:46\n"
+"PO-Revision-Date: 2024-08-15 13:54\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -38,7 +38,7 @@ msgstr "已优化的免费主题，支持SEO、高速化和移动优先。"
 #. Author of the theme
 #: style.css
 msgid "わいひら"
-msgstr ""
+msgstr "yhira"
 
 #. Author URI of the theme
 #: style.css
@@ -3655,17 +3655,13 @@ msgstr "字节"
 msgid "functions.phpサイズ："
 msgstr "functions.php大小："
 
-#: lib/page-settings/about-forms.php:118
-msgid "Gutenberg："
-msgstr ""
-
 #: lib/page-settings/about-forms.php:120
 msgid "AMP："
-msgstr ""
+msgstr "AMP："
 
 #: lib/page-settings/about-forms.php:123
 msgid "PWA："
-msgstr ""
+msgstr "PWA："
 
 #: lib/page-settings/about-forms.php:125
 msgid "Font Awesome："
