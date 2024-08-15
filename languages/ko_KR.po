@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
-"PO-Revision-Date: 2024-08-15 12:38\n"
+"PO-Revision-Date: 2024-08-15 14:32\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -85,12 +85,12 @@ msgstr "다음"
 
 #: comments.php:53
 msgid "Required fields are marked %s"
-msgstr ""
+msgstr "Required fields are marked %s"
 
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL
 #: comments.php:69
 msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
-msgstr ""
+msgstr "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 
 #: comments.php:74
 msgid "Your email address will not be published."
@@ -184,19 +184,19 @@ msgstr "경고(!)"
 
 #: lib/admin-tinymce-qtag.php:37
 msgid "primary"
-msgstr ""
+msgstr "primary"
 
 #: lib/admin-tinymce-qtag.php:38
 msgid "success"
-msgstr ""
+msgstr "success"
 
 #: lib/admin-tinymce-qtag.php:40
 msgid "warning"
-msgstr ""
+msgstr "warning"
 
 #: lib/admin-tinymce-qtag.php:41
 msgid "danger"
-msgstr ""
+msgstr "danger"
 
 #: lib/admin-tinymce-qtag.php:78
 msgid "インライン"
@@ -323,7 +323,7 @@ msgstr "댓글"
 #: blocks/src/block/test-box/deprecated.js:106
 #: blocks/src/old/tab-box/block.js:119
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: lib/admin-tinymce-qtag.php:205
 #: lib/admin-tinymce-qtag.php:670
@@ -702,7 +702,7 @@ msgstr "브레이크"
 #: blocks/src/block/tab-box/edit.js:111
 #: blocks/src/old/tab-box/block.js:115
 msgid "Amazon"
-msgstr ""
+msgstr "Amazon"
 
 #: lib/admin-tinymce-qtag.php:796
 msgid "ボックス（付箋風）"
@@ -1220,7 +1220,7 @@ msgstr "상품 링크 추가"
 
 #: lib/admin.php:135
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: lib/admin.php:140
 #: lib/custom-fields/seo-field.php:62
@@ -1231,7 +1231,7 @@ msgstr "글자 수"
 
 #: lib/admin.php:145
 msgid "PV"
-msgstr ""
+msgstr "PV"
 
 #: lib/admin.php:150
 #: lib/content-category.php:264
@@ -1382,7 +1382,7 @@ msgstr "카테고리 검색"
 #: lib/admin.php:708
 #: lib/admin.php:722
 msgid "Excerpt"
-msgstr ""
+msgstr "Excerpt"
 
 #: lib/block-editor-styles-faq.php:13
 msgid "角型ラベル"
@@ -1454,31 +1454,31 @@ msgstr "포스트잇 (초록)"
 
 #: lib/block-editor-styles-image.php:15
 msgid "Clarendon"
-msgstr ""
+msgstr "Clarendon"
 
 #: lib/block-editor-styles-image.php:19
 msgid "Gingham"
-msgstr ""
+msgstr "Gingham"
 
 #: lib/block-editor-styles-image.php:23
 msgid "Moon"
-msgstr ""
+msgstr "Moon"
 
 #: lib/block-editor-styles-image.php:27
 msgid "Lark"
-msgstr ""
+msgstr "Lark"
 
 #: lib/block-editor-styles-image.php:31
 msgid "Reyes"
-msgstr ""
+msgstr "Reyes"
 
 #: lib/block-editor-styles-image.php:35
 msgid "Juno"
-msgstr ""
+msgstr "Juno"
 
 #: lib/block-editor-styles-image.php:39
 msgid "Slumber"
-msgstr ""
+msgstr "Slumber"
 
 #: lib/block-editor-styles-image.php:43
 msgid "Crema"
@@ -1486,7 +1486,7 @@ msgstr "Crema"
 
 #: lib/block-editor-styles-image.php:47
 msgid "Ludwig"
-msgstr ""
+msgstr "Ludwig"
 
 #: lib/block-editor-styles-image.php:51
 msgid "Aden"
@@ -1553,7 +1553,7 @@ msgstr "당신의 댓글은 승인을 기다리고있습니다."
 #: lib/comments.php:57
 #: lib/comments.php:106
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s at %2$s"
 
 #. translators: 1: date, 2: time
 #: lib/comments.php:57
@@ -2616,11 +2616,11 @@ msgstr "글을 찾을 수 없습니다."
 #. translators: %s: author's display name
 #: lib/html-forms.php:1488
 msgid "Posts by %s"
-msgstr ""
+msgstr "Posts by %s"
 
 #: lib/html-forms.php:1492
 msgid "NO USER"
-msgstr ""
+msgstr "NO USER"
 
 #: lib/html-forms.php:1508
 msgid "未登録のユーザーさん"
@@ -2701,7 +2701,7 @@ msgstr "일본 전통색"
 
 #: lib/html-tooltips.php:86
 msgid "NIPPON COLORS"
-msgstr ""
+msgstr "JAPANESE COLORS"
 
 #: lib/html-tooltips.php:87
 msgid "Color Hunt"
@@ -3342,11 +3342,11 @@ msgstr "4"
 
 #: lib/page-item-ranking/form.php:139
 msgid "4.5"
-msgstr ""
+msgstr "4.5"
 
 #: lib/page-item-ranking/form.php:140
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: lib/page-item-ranking/form.php:144
 msgid "商品等を星の数で評価します。「なし」を選択した場合は表示されません。"
@@ -3384,7 +3384,7 @@ msgstr "상세 페이지 URL"
 #: lib/page-item-ranking/form.php:178
 #: lib/page-settings/notice-forms.php:66
 msgid "http://"
-msgstr ""
+msgstr "http://"
 
 #: lib/page-item-ranking/form.php:171
 msgid "詳細ページへリンクするためのURLを入力してください。"
@@ -3515,7 +3515,7 @@ msgstr "404 페이지 제목"
 #: lib/page-settings/404-forms.php:54
 #: lib/page-settings/404-funcs.php:27
 msgid "404 NOT FOUND"
-msgstr ""
+msgstr "404 NOT FOUND"
 
 #: lib/page-settings/404-forms.php:55
 msgid "404ページに表示するタイトルを入力します。"
@@ -3655,10 +3655,6 @@ msgstr "바이트"
 #: lib/page-settings/about-forms.php:110
 msgid "functions.phpサイズ："
 msgstr "functions.php 크기:"
-
-#: lib/page-settings/about-forms.php:118
-msgid "Gutenberg："
-msgstr "Gutenberg:"
 
 #: lib/page-settings/about-forms.php:120
 msgid "AMP："
@@ -3908,7 +3904,7 @@ msgstr "오리지널 테마"
 
 #: lib/page-settings/admin-forms.php:204
 msgid "Jetpack"
-msgstr ""
+msgstr "Jetpack"
 
 #: lib/page-settings/admin-forms.php:207
 msgid "管理者パネルで表示するPVの取得方法を選択します。"
@@ -4441,7 +4437,7 @@ msgstr "밸류커머스와 관련된 광고 설정입니다."
 
 #: lib/page-settings/ads-forms.php:407
 msgid "LinkSwitch"
-msgstr ""
+msgstr "LinkSwitch"
 
 #: lib/page-settings/ads-forms.php:411
 msgid "LinkSwitchを有効にする"
@@ -4453,7 +4449,7 @@ msgstr "밸류커머스의 Link Switch 기능을 활성화하시겠습니까? Li
 
 #: lib/page-settings/ads-forms.php:415
 msgid "LinkSwitch ID"
-msgstr ""
+msgstr "LinkSwitch ID"
 
 #: lib/page-settings/ads-forms.php:417
 msgid "LinkSwitch IDの入力"
@@ -4671,11 +4667,11 @@ msgstr "사이트 아이콘 폰트"
 
 #: lib/page-settings/all-forms.php:142
 msgid "Font Awesome 4"
-msgstr ""
+msgstr "Font Awesome 4"
 
 #: lib/page-settings/all-forms.php:143
 msgid "Font Awesome 5"
-msgstr ""
+msgstr "Font Awesome 5"
 
 #: lib/page-settings/all-forms.php:146
 msgid "サイト全体で使用するアイコンフォントを選択します。"
@@ -4839,7 +4835,7 @@ msgstr "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">날짜 시�
 
 #: lib/page-settings/all-funcs.php:250
 msgid "Y.m.d"
-msgstr ""
+msgstr "Y.m.d"
 
 #: lib/page-settings/amp-forms.php:11
 msgid "AMP設定"
@@ -4936,12 +4932,12 @@ msgstr "Google AMP 테스트"
 #: lib/page-settings/amp-forms.php:103
 #: tmp/admin-panel.php:56
 msgid "The AMP Validator"
-msgstr ""
+msgstr "The AMP Validator"
 
 #: lib/page-settings/amp-forms.php:104
 #: tmp/admin-panel.php:59
 msgid "AMPBench"
-msgstr ""
+msgstr "AMPBench"
 
 #: lib/page-settings/amp-forms.php:107
 msgid "「AMPテスト」を行うテストツール（バリデーター）を選択します。"
@@ -4989,7 +4985,7 @@ msgstr "태그 관리자 ID"
 
 #: lib/page-settings/analytics-forms.php:58
 msgid "GTM-XXXXXXX"
-msgstr ""
+msgstr "GTM-XXXXXXX"
 
 #: lib/page-settings/analytics-forms.php:59
 msgid "GoogleタグマネージャのトラッキングIDを入力してください。Google AnalyticsトラッキングIDが入っていてもこちらが優先して計測されます。"
@@ -5009,7 +5005,7 @@ msgstr "GA4 측정 ID"
 
 #: lib/page-settings/analytics-forms.php:87
 msgid "G-XXXXXXXXXXXX"
-msgstr ""
+msgstr "G-XXXXXXXXXXXX"
 
 #: lib/page-settings/analytics-forms.php:88
 msgid "Google Analytics 4の測定IDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。"
@@ -5025,7 +5021,7 @@ msgstr "Google Search Console의 사이트 인증 태그를 설정합니다."
 
 #: lib/page-settings/analytics-forms.php:113
 msgid "Google Search Console ID"
-msgstr ""
+msgstr "Google Search Console ID"
 
 #: lib/page-settings/analytics-forms.php:117
 msgid "サイト認証IDのみ入力"
@@ -5148,7 +5144,7 @@ msgstr "추적 ID"
 
 #: lib/page-settings/apis-forms.php:52
 msgid "yourid-22"
-msgstr ""
+msgstr "yourid-22"
 
 #: lib/page-settings/apis-forms.php:53
 msgid "AmazonアソシエイトのトラッキングIDを入力してください。"
@@ -5368,7 +5364,7 @@ msgstr "mercari 검색 버튼에 표시할 텍스트를 입력하십시오."
 #: lib/page-settings/apis-forms.php:230
 #: lib/page-settings/apis-funcs.php:279
 msgid "DMM"
-msgstr ""
+msgstr "DMM"
 
 #: lib/page-settings/apis-forms.php:235
 msgid "DMMアフィリエイトID"
@@ -5404,7 +5400,7 @@ msgstr "모시모 제휴를 통해 아마존 링크를 올려 보상을 받습�
 
 #: lib/page-settings/apis-forms.php:268
 msgid "Amazon a_id"
-msgstr ""
+msgstr "Amazon a_id"
 
 #: lib/page-settings/apis-forms.php:271
 msgid "もしもアフィリエイトのAmazon IDを入力してください。"
@@ -5446,7 +5442,7 @@ msgstr "Amazon API의 캐시는 이용 약관에 따라 24시간마다 갱신됩
 
 #: lib/page-settings/apis-forms.php:304
 msgid "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
-msgstr ""
+msgstr "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
 
 #: lib/page-settings/apis-forms.php:304
 msgid "Amazon.co.jp Product Advertising API ライセンス契約"
@@ -5454,7 +5450,7 @@ msgstr "Amazon.co.jp 제품 광고 API 사용권 계약"
 
 #: lib/page-settings/apis-forms.php:305
 msgid "https://affiliate.amazon.co.jp/help/topic/t32/"
-msgstr ""
+msgstr "https://affiliate.amazon.co.jp/help/topic/t32/"
 
 #: lib/page-settings/apis-forms.php:305
 msgid "Product Advertising API (PA-API) の利用ガイドライン"
@@ -5462,7 +5458,7 @@ msgstr "PA-API(Product Advertising API) 사용 지침"
 
 #: lib/page-settings/apis-forms.php:306
 msgid "https://webservice.rakuten.co.jp/guide/rule"
-msgstr ""
+msgstr "https://webservice.rakuten.co.jp/guide/rule"
 
 #: lib/page-settings/apis-forms.php:306
 msgid "楽天ウェブサービス規約"
@@ -5636,7 +5632,7 @@ msgstr "버튼 링크"
 
 #: lib/page-settings/appeal-forms.php:155
 msgid "https://xxxxxxxx.com/xxxxx/"
-msgstr ""
+msgstr "https://xxxxxxxx.com/xxxxx/"
 
 #: lib/page-settings/appeal-forms.php:156
 msgid "ボタンのリンク先となるURLを入力してください。"
@@ -6097,7 +6093,7 @@ msgstr "하이라이트를 적용할 CSS 셀렉터"
 
 #: lib/page-settings/code-forms.php:103
 msgid ".entry-content pre"
-msgstr ""
+msgstr ".entry-content pre"
 
 #: lib/page-settings/code-forms.php:104
 msgid "ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない場合は変更しないでください。"
@@ -6708,7 +6704,7 @@ msgstr "글ㆍ페이지 관리 화면 설정입니다."
 
 #: lib/page-settings/editor-forms.php:25
 msgid "Gutenberg"
-msgstr ""
+msgstr "Gutenberg"
 
 #: lib/page-settings/editor-forms.php:29
 msgid "Gutenbergエディターを有効にする"
@@ -7300,7 +7296,7 @@ msgstr "Lity (가벼움ㆍ한 장 씩 표시)"
 
 #: lib/page-settings/image-forms.php:133
 msgid "Lightbox"
-msgstr ""
+msgstr "Lightbox"
 
 #: lib/page-settings/image-forms.php:150
 msgid "全体画像設定"
@@ -7681,7 +7677,7 @@ msgstr "생략 문자열"
 #: lib/page-settings/index-forms.php:195
 #: lib/page-settings/index-funcs.php:204
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: lib/page-settings/index-forms.php:196
 msgid "「自動生成抜粋文字数」を自動抜粋文が超えたときに表示する省略を表す文字を入力してください。"
@@ -7926,7 +7922,7 @@ msgstr "head 태그 내에 페이스북이나 외부 사이트 등에 페이지�
 
 #: lib/page-settings/ogp-forms.php:38
 msgid "Facebook APP ID"
-msgstr ""
+msgstr "Facebook APP ID"
 
 #: lib/page-settings/ogp-forms.php:42
 msgid "fb:app_idを入力"
@@ -8050,7 +8046,7 @@ msgstr "JavaScript 라이브러리의 버전을 설정할 수 있습니다."
 
 #: lib/page-settings/others-forms.php:94
 msgid "jQuery"
-msgstr ""
+msgstr "jQuery"
 
 #: lib/page-settings/others-forms.php:100
 msgid "jQuery Core 3.6.1"
@@ -8512,7 +8508,7 @@ msgstr "리퍼러"
 
 #: lib/page-settings/seo-forms.php:113
 msgid "no-referrer"
-msgstr ""
+msgstr "no-referrer"
 
 #: lib/page-settings/seo-forms.php:113
 msgid "（リファラー情報を送らない）"
@@ -8520,7 +8516,7 @@ msgstr "(리퍼러 정보를 보내지 않음)"
 
 #: lib/page-settings/seo-forms.php:114
 msgid "no-referrer-when-downgrade"
-msgstr ""
+msgstr "no-referrer-when-downgrade"
 
 #: lib/page-settings/seo-forms.php:114
 msgid "（ASPにリファラーを送りたい場合はこちらを推奨）"
@@ -8528,23 +8524,23 @@ msgstr "(ASP에 리퍼러를 보내고 싶은 경우는 이쪽을 권장)"
 
 #: lib/page-settings/seo-forms.php:115
 msgid "same-origin"
-msgstr ""
+msgstr "same-origin"
 
 #: lib/page-settings/seo-forms.php:116
 msgid "origin"
-msgstr ""
+msgstr "origin"
 
 #: lib/page-settings/seo-forms.php:117
 msgid "strict-origin"
-msgstr ""
+msgstr "strict-origin"
 
 #: lib/page-settings/seo-forms.php:118
 msgid "origin-when-cross-origin"
-msgstr ""
+msgstr "origin-when-cross-origin"
 
 #: lib/page-settings/seo-forms.php:119
 msgid "strict-origin-when-cross-origin"
-msgstr ""
+msgstr "strict-origin-when-cross-origin"
 
 #: lib/page-settings/seo-forms.php:119
 msgid "（ブラウザデフォルト）"
@@ -8552,7 +8548,7 @@ msgstr "(브라우저 기본)"
 
 #: lib/page-settings/seo-forms.php:120
 msgid "unsafe-url"
-msgstr ""
+msgstr "unsafe-url"
 
 #: lib/page-settings/seo-forms.php:123
 msgid "メタタグでのリファラーの振る舞いを設定します。"
@@ -9015,7 +9011,7 @@ msgstr "Misskey"
 #: lib/page-settings/sns-share-forms-top.php:67
 #: tmp/sns-share-buttons.php:33
 msgid "Facebook"
-msgstr "페이스북"
+msgstr "Facebook"
 
 #: lib/page-settings/sns-follow-forms.php:77
 msgid "Google+"
@@ -9036,7 +9032,7 @@ msgstr "인스타그램"
 #: lib/page-settings/sns-share-forms-top.php:82
 #: tmp/sns-share-buttons.php:49
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: lib/page-settings/sns-follow-forms.php:81
 msgid "YouTube"
@@ -9047,15 +9043,15 @@ msgstr "유튜브"
 #: lib/page-settings/sns-share-forms-top.php:85
 #: tmp/sns-share-buttons.php:53
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: lib/page-settings/sns-follow-forms.php:83
 msgid "note"
-msgstr ""
+msgstr "note"
 
 #: lib/page-settings/sns-follow-forms.php:84
 msgid "Flickr"
-msgstr ""
+msgstr "Flickr"
 
 #: lib/page-settings/sns-follow-forms.php:85
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:212
@@ -9065,7 +9061,7 @@ msgstr "아마존 위시리스트"
 
 #: lib/page-settings/sns-follow-forms.php:86
 msgid "Twitch"
-msgstr ""
+msgstr "Twitch"
 
 #: lib/page-settings/sns-follow-forms.php:87
 msgid "楽天ROOM"
@@ -9073,15 +9069,15 @@ msgstr "라쿠텐 ROOM"
 
 #: lib/page-settings/sns-follow-forms.php:88
 msgid "Slack"
-msgstr ""
+msgstr "Slack"
 
 #: lib/page-settings/sns-follow-forms.php:89
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: lib/page-settings/sns-follow-forms.php:90
 msgid "CodePen"
-msgstr ""
+msgstr "CodePen"
 
 #: lib/page-settings/sns-follow-forms.php:92
 msgid "から設定"
@@ -9303,13 +9299,13 @@ msgstr "공유 버튼별 표시 여부"
 #: lib/page-settings/sns-share-forms-bottom.php:86
 #: lib/page-settings/sns-share-forms-top.php:73
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: lib/page-settings/sns-share-forms-bottom.php:89
 #: lib/page-settings/sns-share-forms-top.php:76
 #: tmp/sns-share-buttons.php:41
 msgid "Pocket"
-msgstr ""
+msgstr "Pocket"
 
 #: lib/page-settings/sns-share-forms-bottom.php:92
 #: lib/page-settings/sns-share-forms-top.php:79
@@ -10597,38 +10593,38 @@ msgstr "사이트 표시 속도 증가를 위한 설정입니다."
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:56
 msgid "View details"
-msgstr ""
+msgstr "View details"
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:79
 msgid "More information about %s"
-msgstr ""
+msgstr "More information about %s"
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:130
 msgid "Check for updates"
-msgstr ""
+msgstr "Check for updates"
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:217
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
-msgstr ""
+msgstr "The %s plugin is up to date."
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:219
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
-msgstr ""
+msgstr "A new version of the %s plugin is available."
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:221
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
-msgstr ""
+msgstr "Could not determine if updates are available for %s."
 
 #: lib/plugin-update-checker/Puc/v5p2/Plugin/Ui.php:227
 msgid "Unknown update checker status \"%s\""
-msgstr ""
+msgstr "Unknown update checker status \"%s\""
 
 #: lib/plugin-update-checker/Puc/v5p2/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
-msgstr ""
+msgstr "There is no changelog available."
 
 #: lib/profile.php:39
 msgid "プロフィール画像"
@@ -11190,22 +11186,22 @@ msgstr "이 글을 공개하시겠습니까?"
 #: lib/utils.php:2503
 msgid "%s min"
 msgid_plural "%s mins"
-msgstr[0] ""
+msgstr[0] "%s min"
 
 #: lib/utils.php:2511
 msgid "%s hour"
 msgid_plural "%s hours"
-msgstr[0] ""
+msgstr[0] "%s hour"
 
 #: lib/utils.php:2519
 msgid "%s day"
 msgid_plural "%s days"
-msgstr[0] ""
+msgstr[0] "%s day"
 
 #: lib/utils.php:2527
 msgid "%s週間"
 msgid_plural "%s週間"
-msgstr[0] ""
+msgstr[0] "%s週間"
 
 #: lib/utils.php:2535
 msgid "%sヶ月"
@@ -12258,23 +12254,23 @@ msgstr "BeigeS50"
 
 #: skins/skin-grayish-topfull/functions.php:2098
 msgid "GreenT0"
-msgstr ""
+msgstr "GreenT0"
 
 #: skins/skin-grayish-topfull/functions.php:2099
 msgid "GreenT50"
-msgstr ""
+msgstr "GreenT50"
 
 #: skins/skin-grayish-topfull/functions.php:2100
 msgid "GreenT90"
-msgstr ""
+msgstr "GreenT90"
 
 #: skins/skin-grayish-topfull/functions.php:2101
 msgid "GreenS30"
-msgstr ""
+msgstr "GreenS30"
 
 #: skins/skin-grayish-topfull/functions.php:2102
 msgid "GreenS50"
-msgstr ""
+msgstr "GreenS50"
 
 #: skins/skin-grayish-topfull/functions.php:2145
 msgid "横スクロールできます"
@@ -12391,11 +12387,11 @@ msgstr "로그아웃"
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
-msgstr ""
+msgstr "bbPress - Create Topic"
 
 #. Template Name of the theme
 msgid "bbPress - Forums (Index)"
-msgstr ""
+msgstr "bbPress - Forums (Index)"
 
 #: tmp/admin-panel.php:39
 msgid "WLWで編集"
@@ -12411,7 +12407,7 @@ msgstr "페이지 속도"
 
 #: tmp/admin-panel.php:74
 msgid "GTmetrix"
-msgstr ""
+msgstr "GTmetrix"
 
 #: tmp/admin-panel.php:77
 msgid "モバイルフレンドリー"
@@ -12419,7 +12415,7 @@ msgstr "모바일 친화성"
 
 #: tmp/admin-panel.php:83
 msgid "HTML5"
-msgstr ""
+msgstr "HTML5"
 
 #: tmp/admin-panel.php:86
 msgid "アウトライン"
@@ -12439,7 +12435,7 @@ msgstr "반응형 텍스트"
 
 #: tmp/admin-panel.php:107
 msgid "Sizzy"
-msgstr ""
+msgstr "Sizzy"
 
 #: tmp/admin-panel.php:111
 msgid "Resolution Test"
@@ -12589,7 +12585,7 @@ msgstr "X에 공유"
 
 #: tmp/sns-share-buttons.php:17
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: tmp/sns-share-buttons.php:21
 msgid "Mastodonでシェア"
@@ -12625,7 +12621,7 @@ msgstr "라인에 공유"
 
 #: tmp/sns-share-buttons.php:45
 msgid "LINE"
-msgstr ""
+msgstr "LINE"
 
 #: tmp/sns-share-buttons.php:49
 msgid "Pinterestでシェア"
@@ -13283,7 +13279,7 @@ msgstr "버튼 설정"
 #: blocks/src/old/button-1/block.js:86
 #: blocks/src/old/button/block.js:68
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: blocks/src/block/button/edit.js:84
 #: blocks/src/old/button-1/block.js:98
@@ -13343,7 +13339,7 @@ msgstr "대체"
 
 #: blocks/src/block/cta/index.js:21
 msgid "CTA"
-msgstr ""
+msgstr "CTA"
 
 #: blocks/src/block/cta/index.js:23
 msgid "コールトゥアクションボックスを表示します。"
@@ -13355,7 +13351,7 @@ msgstr "질문 라벨"
 
 #: blocks/src/block/faq/edit.js:134
 msgid "Q"
-msgstr ""
+msgstr "Q"
 
 #: blocks/src/block/faq/edit.js:138
 #: blocks/src/block/faq/edit.js:149
@@ -13368,7 +13364,7 @@ msgstr "답ㅂ 라벨"
 
 #: blocks/src/block/faq/edit.js:147
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: blocks/src/block/faq/edit.js:158
 msgid "質問ラベル色"
@@ -13384,7 +13380,7 @@ msgstr "질문을 입력해 주세요."
 
 #: blocks/src/block/faq/index.js:20
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: blocks/src/block/faq/index.js:35
 msgid "よくある質問と回答。"
@@ -13863,89 +13859,89 @@ msgstr "여기를 클릭하여 설정을 바꾸세요. 이 부분은 공개된 �
 
 #: blocks/src/helpers.js:258
 msgid "fab-info-circle"
-msgstr ""
+msgstr "fab-info-circle"
 
 #: blocks/src/helpers.js:262
 msgid "fab-question-circle"
-msgstr ""
+msgstr "fab-question-circle"
 
 #: blocks/src/helpers.js:266
 msgid "fab-exclamation-circle"
-msgstr ""
+msgstr "fab-exclamation-circle"
 
 #: blocks/src/helpers.js:270
 msgid "fab-pencil"
-msgstr ""
+msgstr "fab-pencil"
 
 #: blocks/src/helpers.js:274
 msgid "fab-edit"
-msgstr ""
+msgstr "fab-edit"
 
 #: blocks/src/helpers.js:278
 msgid "fab-comment"
-msgstr ""
+msgstr "fab-comment"
 
 #: blocks/src/helpers.js:282
 msgid "fab-ok"
-msgstr ""
+msgstr "fab-ok"
 
 #: blocks/src/helpers.js:286
 msgid "fab-bad"
-msgstr ""
+msgstr "fab-bad"
 
 #: blocks/src/helpers.js:290
 msgid "fab-thumbs-up"
-msgstr ""
+msgstr "fab-thumbs-up"
 
 #: blocks/src/helpers.js:294
 msgid "fab-thumbs-down"
-msgstr ""
+msgstr "fab-thumbs-down"
 
 #: blocks/src/helpers.js:298
 #: blocks/src/helpers.js:473
 msgid "fab-check"
-msgstr ""
+msgstr "fab-check"
 
 #: blocks/src/helpers.js:302
 #: blocks/src/helpers.js:537
 msgid "fab-star"
-msgstr ""
+msgstr "fab-star"
 
 #: blocks/src/helpers.js:306
 msgid "fab-bell"
-msgstr ""
+msgstr "fab-bell"
 
 #: blocks/src/helpers.js:310
 msgid "fab-trophy"
-msgstr ""
+msgstr "fab-trophy"
 
 #: blocks/src/helpers.js:314
 msgid "fab-lightbulb"
-msgstr ""
+msgstr "fab-lightbulb"
 
 #: blocks/src/helpers.js:318
 msgid "fab-graduation-cap"
-msgstr ""
+msgstr "fab-graduation-cap"
 
 #: blocks/src/helpers.js:322
 msgid "fab-bolt"
-msgstr ""
+msgstr "fab-bolt"
 
 #: blocks/src/helpers.js:326
 msgid "fab-bookmark"
-msgstr ""
+msgstr "fab-bookmark"
 
 #: blocks/src/helpers.js:330
 msgid "fab-book"
-msgstr ""
+msgstr "fab-book"
 
 #: blocks/src/helpers.js:334
 msgid "fab-download"
-msgstr ""
+msgstr "fab-download"
 
 #: blocks/src/helpers.js:338
 msgid "fab-coffee"
-msgstr ""
+msgstr "fab-coffee"
 
 #: blocks/src/helpers.js:342
 msgid "fab-amazon"
@@ -14150,75 +14146,75 @@ msgstr "fab-square"
 
 #: blocks/src/helpers.js:557
 msgid "fab-square-o"
-msgstr ""
+msgstr "fab-square-o"
 
 #: blocks/src/helpers.js:561
 msgid "fab-circle"
-msgstr ""
+msgstr "fab-circle"
 
 #: blocks/src/helpers.js:565
 msgid "fab-circle-o"
-msgstr ""
+msgstr "fab-circle-o"
 
 #: blocks/src/helpers.js:569
 msgid "fab-dot-circle-o"
-msgstr ""
+msgstr "fab-dot-circle-o"
 
 #: blocks/src/helpers.js:573
 msgid "fab-plus"
-msgstr ""
+msgstr "fab-plus"
 
 #: blocks/src/helpers.js:577
 msgid "fab-plus-circle"
-msgstr ""
+msgstr "fab-plus-circle"
 
 #: blocks/src/helpers.js:581
 msgid "fab-plus-square"
-msgstr ""
+msgstr "fab-plus-square"
 
 #: blocks/src/helpers.js:585
 msgid "fab-plus-square-o"
-msgstr ""
+msgstr "fab-plus-square-o"
 
 #: blocks/src/helpers.js:589
 msgid "fab-minus"
-msgstr ""
+msgstr "fab-minus"
 
 #: blocks/src/helpers.js:593
 msgid "fab-minus-circle"
-msgstr ""
+msgstr "fab-minus-circle"
 
 #: blocks/src/helpers.js:597
 msgid "fab-minus-square"
-msgstr ""
+msgstr "fab-minus-square"
 
 #: blocks/src/helpers.js:601
 msgid "fab-minus-square-o"
-msgstr ""
+msgstr "fab-minus-square-o"
 
 #: blocks/src/helpers.js:605
 msgid "fab-times"
-msgstr ""
+msgstr "fab-times"
 
 #: blocks/src/helpers.js:609
 msgid "fab-times-circle"
-msgstr ""
+msgstr "fab-times-circle"
 
 #: blocks/src/helpers.js:613
 msgid "fab-times-circle-o"
-msgstr ""
+msgstr "fab-times-circle-o"
 
 #: blocks/src/helpers.js:617
 msgid "fab-window-close"
-msgstr ""
+msgstr "fab-window-close"
 
 #: blocks/src/helpers.js:621
 msgid "fab-window-close-o"
-msgstr ""
+msgstr "fab-window-close-o"
 
 #: blocks/src/helpers.js:625
 msgid "fab-paw"
-msgstr ""
+msgstr "fab-paw"
 
 #: blocks/src/layout/column-2/block.js:49
 msgid "2カラム"
@@ -14401,11 +14397,11 @@ msgstr "×"
 
 #: blocks/src/toolbutton/background-icons.js:75
 msgid "✓"
-msgstr ""
+msgstr "✓"
 
 #: blocks/src/toolbutton/background-icons.js:76
 msgid "？"
-msgstr ""
+msgstr "？"
 
 #: blocks/src/toolbutton/bold.js:15
 msgid "太字（boldクラス指定）"
@@ -14511,7 +14507,7 @@ msgstr "취소선 (수정)"
 #: blocks/src/block-universal/tab-caption-box/block.json
 msgctxt "block keyword"
 msgid "caption"
-msgstr ""
+msgstr "caption"
 
 #: blocks/src/block-universal/caption-box/block.json
 #: blocks/src/block-universal/label-box/block.json
@@ -14533,84 +14529,84 @@ msgstr ""
 #: blocks/src/block/toggle-box/block.json
 msgctxt "block keyword"
 msgid "box"
-msgstr ""
+msgstr "box"
 
 #: blocks/src/block-universal/label-box/block.json
 msgctxt "block keyword"
 msgid "label"
-msgstr ""
+msgstr "label"
 
 #: blocks/src/block-universal/tab-caption-box/block.json
 #: blocks/src/block/tab-box/block.json
 #: blocks/src/block/tab/block.json
 msgctxt "block keyword"
 msgid "tab"
-msgstr ""
+msgstr "tab"
 
 #: blocks/src/block/ad/block.json
 msgctxt "block keyword"
 msgid "ad"
-msgstr ""
+msgstr "ad"
 
 #: blocks/src/block/balloon/block.json
 #: blocks/src/micro/micro-balloon/block.json
 msgctxt "block keyword"
 msgid "balloon"
-msgstr ""
+msgstr "balloon"
 
 #: blocks/src/block/blank-box/block.json
 msgctxt "block keyword"
 msgid "blank"
-msgstr ""
+msgstr "blank"
 
 #: blocks/src/block/blogcard/block.json
 msgctxt "block keyword"
 msgid "blogcard"
-msgstr ""
+msgstr "blogcard"
 
 #: blocks/src/block/blogcard/block.json
 #: blocks/src/block/button-wrap/block.json
 msgctxt "block keyword"
 msgid "wrap"
-msgstr ""
+msgstr "wrap"
 
 #: blocks/src/block/box-menu/block.json
 msgctxt "block keyword"
 msgid "box-menu"
-msgstr ""
+msgstr "box-menu"
 
 #: blocks/src/block/button-wrap/block.json
 #: blocks/src/block/button/block.json
 msgctxt "block keyword"
 msgid "button"
-msgstr ""
+msgstr "button"
 
 #: blocks/src/block/button-wrap/block.json
 #: blocks/src/block/button/block.json
 msgctxt "block keyword"
 msgid "btn"
-msgstr ""
+msgstr "btn"
 
 #: blocks/src/block/comparison-box/block.json
 msgctxt "block keyword"
 msgid "comparison"
-msgstr ""
+msgstr "comparison"
 
 #: blocks/src/block/cta/block.json
 msgctxt "block keyword"
 msgid "cta"
-msgstr ""
+msgstr "cta"
 
 #: blocks/src/block/faq/block.json
 msgctxt "block keyword"
 msgid "faq"
-msgstr ""
+msgstr "faq"
 
 #: blocks/src/block/icon-box/block.json
 #: blocks/src/block/icon-list/block.json
 msgctxt "block keyword"
 msgid "icon"
-msgstr ""
+msgstr "icon"
 
 #: blocks/src/block/icon-list/block.json
 #: blocks/src/block/info-list/block.json
@@ -14618,88 +14614,88 @@ msgstr ""
 #: blocks/src/block/popular-list/block.json
 msgctxt "block keyword"
 msgid "list"
-msgstr ""
+msgstr "list"
 
 #: blocks/src/block/info-box/block.json
 #: blocks/src/block/info-list/block.json
 msgctxt "block keyword"
 msgid "info"
-msgstr ""
+msgstr "info"
 
 #: blocks/src/block/navicard/block.json
 msgctxt "block keyword"
 msgid "navi"
-msgstr ""
+msgstr "navi"
 
 #: blocks/src/block/navicard/block.json
 msgctxt "block keyword"
 msgid "card"
-msgstr ""
+msgstr "card"
 
 #: blocks/src/block/new-list/block.json
 msgctxt "block keyword"
 msgid "new"
-msgstr ""
+msgstr "new"
 
 #: blocks/src/block/popular-list/block.json
 msgctxt "block keyword"
 msgid "popular"
-msgstr ""
+msgstr "popular"
 
 #: blocks/src/block/profile/block.json
 msgctxt "block keyword"
 msgid "profile"
-msgstr ""
+msgstr "profile"
 
 #: blocks/src/block/profile/block.json
 msgctxt "block keyword"
 msgid "author"
-msgstr ""
+msgstr "author"
 
 #: blocks/src/block/ranking/block.json
 msgctxt "block keyword"
 msgid "ranking"
-msgstr ""
+msgstr "ranking"
 
 #: blocks/src/block/search-box/block.json
 msgctxt "block keyword"
 msgid "search"
-msgstr ""
+msgstr "search"
 
 #: blocks/src/block/sticky-box/block.json
 msgctxt "block keyword"
 msgid "sticky"
-msgstr ""
+msgstr "sticky"
 
 #: blocks/src/block/template/block.json
 msgctxt "block keyword"
 msgid "template"
-msgstr ""
+msgstr "template"
 
 #: blocks/src/block/timeline/block.json
 msgctxt "block keyword"
 msgid "timeline"
-msgstr ""
+msgstr "timeline"
 
 #: blocks/src/block/toggle-box/block.json
 msgctxt "block keyword"
 msgid "toggle"
-msgstr ""
+msgstr "toggle"
 
 #: blocks/src/micro/micro-balloon/block.json
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "micro"
-msgstr ""
+msgstr "micro"
 
 #: blocks/src/micro/micro-balloon/block.json
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "copy"
-msgstr ""
+msgstr "copy"
 
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "text"
-msgstr ""
+msgstr "text"
 
