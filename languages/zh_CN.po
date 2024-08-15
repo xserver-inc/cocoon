@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-15T12:16:38+00:00\n"
-"PO-Revision-Date: 2024-08-15 13:54\n"
+"POT-Creation-Date: 2024-08-15T14:45:14+00:00\n"
+"PO-Revision-Date: 2024-08-15 14:48\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -3654,6 +3654,10 @@ msgstr "字节"
 #: lib/page-settings/about-forms.php:110
 msgid "functions.phpサイズ："
 msgstr "functions.php大小："
+
+#: lib/page-settings/about-forms.php:118
+msgid "Gutenberg："
+msgstr "Gutenberg："
 
 #: lib/page-settings/about-forms.php:120
 msgid "AMP："
