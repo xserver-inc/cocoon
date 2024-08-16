@@ -34,6 +34,22 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 
 わいひら： [yhira](https://github.com/yhira)
 
+## 翻訳協力
+
+[vic322](https://github.com/vic322):英語
+
+[yuria (yuria0309)](https://crowdin.com/profile/yuria0309):韓国語
+
+[slowstep](https://crowdin.com/profile/vic322):韓国語
+
+[Hsin-Hsiang Peng (Hsins)](https://crowdin.com/profile/hsins)：中国語
+
+[Libmuy](https://github.com/libmuy):中国語
+
+翻訳はcrowdinにて行なっております。もし翻訳にご協力いただける場合は、以下のプロジェクトにて参加申請（Jojn）していただければ幸いです。
+
+https://crowdin.com/project/wp-cocoon
+
 ## 使用ライブラリ
 
 [php-html-css-js-minifier.php（CSS、JavaScript、HTML の縮小化）](https://gist.github.com/tovic/d7b310dea3b33e4732c0#file-php-html-css-js-minifier-php)
@@ -145,3 +161,7 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 [xs-khosomi](https://github.com/xs-khosomi)
 
 [MizuiMiduki](https://github.com/MizuiMiduki)
+
+[Na2factory](https://github.com/Na2-factory)
+
+[Libmuy](https://github.com/libmuy)
