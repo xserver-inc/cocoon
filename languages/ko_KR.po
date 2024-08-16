@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-15T14:45:14+00:00\n"
-"PO-Revision-Date: 2024-08-15 16:40\n"
+"PO-Revision-Date: 2024-08-16 00:10\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -33,7 +33,7 @@ msgstr "https://wp-cocoon.com/"
 #. Description of the theme
 #: style.css
 msgid "SEO・高速化・モバイルファースト最適化済みの無料テーマ。"
-msgstr "SEO, 속도, 모바일 퍼스트에 최적화된 무료 테마."
+msgstr "SEO, 속도, 모바일에 최적화된 무료 테마."
 
 #. Author of the theme
 #: style.css
