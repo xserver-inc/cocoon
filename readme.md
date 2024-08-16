@@ -36,15 +36,15 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 
 ## 翻訳協力
 
-[vic322](https://github.com/vic322):英語
+[vic322](https://github.com/vic322)：英語
 
-[yuria (yuria0309)](https://crowdin.com/profile/yuria0309):韓国語
+[yuria (yuria0309)](https://crowdin.com/profile/yuria0309)：韓国語
 
-[slowstep](https://crowdin.com/profile/vic322):韓国語
+[slowstep](https://crowdin.com/profile/vic322)：韓国語
 
 [Hsin-Hsiang Peng (Hsins)](https://crowdin.com/profile/hsins)：中国語
 
-[Libmuy](https://github.com/libmuy):中国語
+[Libmuy](https://github.com/libmuy)：中国語
 
 翻訳はcrowdinにて行なっております。もし翻訳にご協力いただける場合は、以下のプロジェクトにて参加申請（Jojn）していただければ幸いです。
 
