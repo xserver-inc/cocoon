@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-17 17:10\n"
+"PO-Revision-Date: 2024-08-17 18:08\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12201,52 +12201,52 @@ msgstr "Titles in the sidebar<br><small>(Adapts the four selected colors in orde
 
 #: skins/skin-grayish-topfull/functions.php:176
 msgid "skin-grayish: カスタマイズ"
-msgstr ""
+msgstr "skin-grayish: Customize"
 
 #: skins/skin-grayish-topfull/functions.php:184
 msgid "全体：英字フォント設定"
-msgstr ""
+msgstr "All: English font settings"
 
 #: skins/skin-grayish-topfull/functions.php:187
 msgid "英字フォントの適用箇所についてはこちらを参照"
-msgstr ""
+msgstr "Click here for information on where to apply English fonts."
 
 #: skins/skin-grayish-topfull/functions.php:200
 msgid "英字フォント設定 選択"
-msgstr ""
+msgstr "English font"
 
 #: skins/skin-grayish-topfull/functions.php:201
 msgid "ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。"
-msgstr ""
+msgstr "You can select the English font to be used for the logo text, global navigation menu, and each of the headings on the front page and sidebar."
 
 #: skins/skin-grayish-topfull/functions.php:201
 msgid "※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
-msgstr ""
+msgstr "*Excluding fixed pages and post content. If set to “No Settings”, Cocoon inherits the settings in Cocoon Settings > General Settings > Site Font."
 
 #: skins/skin-grayish-topfull/functions.php:208
 #: skins/skin-grayish-topfull/functions.php:210
 msgid "（細タイプなし）"
-msgstr ""
+msgstr "(No thin type)"
 
 #: skins/skin-grayish-topfull/functions.php:213
 msgid "設定なし"
-msgstr ""
+msgstr "None"
 
 #: skins/skin-grayish-topfull/functions.php:228
 msgid "サイトロゴ（テキスト時）のフォント太さ 選択"
-msgstr ""
+msgstr "Font thickness of site logo (when text)"
 
 #: skins/skin-grayish-topfull/functions.php:229
 msgid "ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。"
-msgstr ""
+msgstr "You can select either thin (default) or normal font size for the English font of the logo text."
 
 #: skins/skin-grayish-topfull/functions.php:229
 msgid "※フォントによって細いタイプがない場合があります。"
-msgstr ""
+msgstr "*There may be no thin type depending on a font."
 
 #: skins/skin-grayish-topfull/functions.php:234
 msgid "細"
-msgstr ""
+msgstr "Thin"
 
 #: skins/skin-grayish-topfull/functions.php:235
 msgid "普通"
@@ -12254,11 +12254,11 @@ msgstr "Normal"
 
 #: skins/skin-grayish-topfull/functions.php:370
 msgid "全体：カラー設定"
-msgstr ""
+msgstr "All: Color settings"
 
 #: skins/skin-grayish-topfull/functions.php:373
 msgid "各カラーの適用箇所についてはこちらを参照"
-msgstr ""
+msgstr "Click here to see where each color is applied."
 
 #: skins/skin-grayish-topfull/functions.php:388
 msgid "テキストカラー"
@@ -12266,7 +12266,7 @@ msgstr "Text color"
 
 #: skins/skin-grayish-topfull/functions.php:389
 msgid "メニュー・見出し・本文などのテキストカラーを変更。"
-msgstr ""
+msgstr "Change the text color of menus, headings, body text, etc."
 
 #: skins/skin-grayish-topfull/functions.php:390
 #: skins/skin-grayish-topfull/functions.php:410
@@ -12277,128 +12277,128 @@ msgstr ""
 #: skins/skin-grayish-topfull/functions.php:668
 #: skins/skin-grayish-topfull/functions.php:1405
 msgid "※空欄の場合はデフォルト値になります。"
-msgstr ""
+msgstr "*If left blank, the default value is used."
 
 #: skins/skin-grayish-topfull/functions.php:408
 msgid "メインアクセント 一番明るい青色"
-msgstr ""
+msgstr "Main accent the brightest blue"
 
 #: skins/skin-grayish-topfull/functions.php:409
 msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
-msgstr ""
+msgstr "Changed the color of the site logo text and each text link when hovering, the color of the New Post on the front page, the underline of the category title, the color of the underline of the sidebar widget heading, and the color of the accent line in the footer."
 
 #: skins/skin-grayish-topfull/functions.php:426
 msgid "メイン 薄い青色"
-msgstr ""
+msgstr "Main Light blue"
 
 #: skins/skin-grayish-topfull/functions.php:427
 msgid "グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。"
-msgstr ""
+msgstr "The background color of the third level of the global navigation, the More button on the front page, the Next page button, and the hover background color of the tag cloud."
 
 #: skins/skin-grayish-topfull/functions.php:444
 msgid "メイン 一番薄い青"
-msgstr ""
+msgstr "Main the lightest blue"
 
 #: skins/skin-grayish-topfull/functions.php:445
 msgid "フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。"
-msgstr ""
+msgstr "Background color for the second front page category, blue stripes for the social networking button backgrounds under the table of contents and articles, and the pagination button background color on the list page."
 
 #: skins/skin-grayish-topfull/functions.php:462
 msgid "サブ 濃い青"
-msgstr ""
+msgstr "Sub dark blue"
 
 #: skins/skin-grayish-topfull/functions.php:463
 msgid "プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。"
-msgstr ""
+msgstr "Profile name, date of post, icons, top and bottom lines for body table of contents, table of contents text, buttons for SNS share, follow, appeal area, etc."
 
 #: skins/skin-grayish-topfull/functions.php:480
 msgid "サブ もっと濃い青"
-msgstr ""
+msgstr "Sub more dark blue"
 
 #: skins/skin-grayish-topfull/functions.php:481
 msgid "カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。"
-msgstr ""
+msgstr "Category label background color, border of tags in articles and color of icons."
 
 #: skins/skin-grayish-topfull/functions.php:623
 msgid "フロントページ設定：ヘッダー"
-msgstr ""
+msgstr "Front Page settings: Header"
 
 #: skins/skin-grayish-topfull/functions.php:626
 #: skins/skin-grayish-topfull/functions.php:1368
 msgid "グローバルナビの高さ等変更についてはこちらを参照"
-msgstr ""
+msgstr "Click here for information on changing global navigation height, etc."
 
 #: skins/skin-grayish-topfull/functions.php:626
 msgid "メインビジュアルについてはこちらを参照"
-msgstr ""
+msgstr "Click here for the main visual"
 
 #: skins/skin-grayish-topfull/functions.php:626
 msgid "グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照"
-msgstr ""
+msgstr "Click here for information on creating a global navigation menu and SNS follow buttons."
 
 #: skins/skin-grayish-topfull/functions.php:666
 msgid "【PC】グローバルナビの背景色"
-msgstr ""
+msgstr "PC: Background color of global navigation"
 
 #: skins/skin-grayish-topfull/functions.php:667
 msgid "グローバルナビの背景色。"
-msgstr ""
+msgstr "Global navigation background color"
 
 #: skins/skin-grayish-topfull/functions.php:685
 msgid "【PC】グローバルナビ背景色の不透明度調整"
-msgstr ""
+msgstr "PC: Opacity of global navigation background color"
 
 #: skins/skin-grayish-topfull/functions.php:686
 #: skins/skin-grayish-topfull/functions.php:1421
 #: skins/skin-grayish-topfull/functions.php:1828
 msgid "値が大きくなるほど背景色が濃くなります。"
-msgstr ""
+msgstr "The larger the value, the darker the background color."
 
 #: skins/skin-grayish-topfull/functions.php:691
 #: skins/skin-grayish-topfull/functions.php:1426
 #: skins/skin-grayish-topfull/functions.php:1735
 #: skins/skin-grayish-topfull/functions.php:1833
 msgid "（背景色なし)"
-msgstr ""
+msgstr "（No background color)"
 
 #: skins/skin-grayish-topfull/functions.php:701
 #: skins/skin-grayish-topfull/functions.php:1436
 #: skins/skin-grayish-topfull/functions.php:1745
 #: skins/skin-grayish-topfull/functions.php:1843
 msgid "(不透明)"
-msgstr ""
+msgstr "(Opaque)"
 
 #: skins/skin-grayish-topfull/functions.php:719
 msgid "メインビジュアル 白ドットのON/OFF"
-msgstr ""
+msgstr "Main visual white dots ON/OFF"
 
 #: skins/skin-grayish-topfull/functions.php:720
 msgid "メインビジュアルの上に白いドットを重ねるかどうかを選択。解像度が低い画像を使用する場合はON推奨"
-msgstr ""
+msgstr "Select whether to overlay white dots over the main visual. On recommended when using low-resolution images."
 
 #: skins/skin-grayish-topfull/functions.php:742
 msgid "メインビジュアル 白オーバーレイの不透明度調整"
-msgstr ""
+msgstr "Main visual white overlay opacity"
 
 #: skins/skin-grayish-topfull/functions.php:743
 msgid "メインビジュアルの上に重ねる白の不透明度を調整。"
-msgstr ""
+msgstr "Adjust the opacity of the white overlaid on the main visual."
 
 #: skins/skin-grayish-topfull/functions.php:743
 msgid "値が大きくなるほど白が濃くなります。"
-msgstr ""
+msgstr "The larger the value, the darker the white."
 
 #: skins/skin-grayish-topfull/functions.php:773
 msgid "メインビジュアル下のスクロールアニメーションのON/OFF"
-msgstr ""
+msgstr "Scrolling animation under the main visual ON/OFF"
 
 #: skins/skin-grayish-topfull/functions.php:774
 msgid "メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。"
-msgstr ""
+msgstr "If you do not need the scroll prompt animation at the bottom of the main visual, turn it off here."
 
 #: skins/skin-grayish-topfull/functions.php:774
 msgid "PC/SP共通の設定になります。"
-msgstr ""
+msgstr "This setting is common for PC/Smartphone."
 
 #: skins/skin-grayish-topfull/functions.php:790
 msgid "X（旧Twitter）フォローボタンを表示"
@@ -12414,39 +12414,39 @@ msgstr "Display Bluesky follow button"
 
 #: skins/skin-grayish-topfull/functions.php:802
 msgid "Misskey フォローボタンを表示"
-msgstr "Show Misskey follow button"
+msgstr "Display Misskey follow button"
 
 #: skins/skin-grayish-topfull/functions.php:806
 msgid "Facebook フォローボタンを表示"
-msgstr "Show Facebook follow button"
+msgstr "Display Facebook follow button"
 
 #: skins/skin-grayish-topfull/functions.php:810
 msgid "はてブ フォローボタンを表示"
-msgstr "Show Hatena Bookmark follow button"
+msgstr "Display Hatena Bookmark follow button"
 
 #: skins/skin-grayish-topfull/functions.php:814
 msgid "Instagram フォローボタンを表示"
-msgstr ""
+msgstr "Display Instagram follow button"
 
 #: skins/skin-grayish-topfull/functions.php:818
 msgid "Pinterest フォローボタンを表示"
-msgstr ""
+msgstr "Display Pinterest follow button"
 
 #: skins/skin-grayish-topfull/functions.php:822
 msgid "YouTube フォローボタンを表示"
-msgstr ""
+msgstr "Display YouTube follow button"
 
 #: skins/skin-grayish-topfull/functions.php:826
 msgid "LinkedIn フォローボタンを表示"
-msgstr ""
+msgstr "Display LinkedIn follow button"
 
 #: skins/skin-grayish-topfull/functions.php:830
 msgid "note フォローボタンを表示"
-msgstr ""
+msgstr "Display note follow button"
 
 #: skins/skin-grayish-topfull/functions.php:834
 msgid "Flickr フォローボタンを表示"
-msgstr ""
+msgstr "Display Flickr follow button"
 
 #: skins/skin-grayish-topfull/functions.php:838
 msgid "Amazon欲しい物リスト フォローボタンを表示"
@@ -12458,31 +12458,31 @@ msgstr "Display Twitch follow button"
 
 #: skins/skin-grayish-topfull/functions.php:846
 msgid "楽天ROOM フォローボタンを表示"
-msgstr ""
+msgstr "Display Rakuten Room follow button"
 
 #: skins/skin-grayish-topfull/functions.php:850
 msgid "Slack フォローボタンを表示"
-msgstr ""
+msgstr "Display Slack follow button"
 
 #: skins/skin-grayish-topfull/functions.php:854
 msgid "GitHub フォローボタンを表示"
-msgstr ""
+msgstr "Display GitHub follow button"
 
 #: skins/skin-grayish-topfull/functions.php:858
 msgid "CodePen フォローボタンを表示"
-msgstr ""
+msgstr "Display CodePen follow button"
 
 #: skins/skin-grayish-topfull/functions.php:862
 msgid "TikTok フォローボタンを表示"
-msgstr ""
+msgstr "Display TikTok follow button"
 
 #: skins/skin-grayish-topfull/functions.php:866
 msgid "SoundCloud フォローボタンを表示"
-msgstr ""
+msgstr "Display SoundCloud follow button"
 
 #: skins/skin-grayish-topfull/functions.php:870
 msgid "LINE フォローボタンを表示"
-msgstr ""
+msgstr "Display LINE follow button"
 
 #: skins/skin-grayish-topfull/functions.php:890
 msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
