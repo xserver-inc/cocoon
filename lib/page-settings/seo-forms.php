@@ -123,7 +123,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__( 'メタタグでのリファラーの振る舞いを設定します。', THEME_NAME ).__( '以前のブラウザデフォルトはno-referrer-when-downgradeでしたが、2020年以降はstrict-origin-when-cross-originがデフォルトとなりました。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/referrer-policy/'));
             ?>
 
-            <p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Referrer-Policy" class="help-page" target="_blank" rel="noopener"><span class="fa fa-question-circle" aria-hidden="true"></span> リファラーポリシー</a></p>
+            <p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Referrer-Policy" class="help-page" target="_blank" rel="noopener"><span class="fa fa-question-circle" aria-hidden="true"></span><?php _e('リファラーポリシー', THEME_NAME); ?></a></p>
           </td>
         </tr>
 
