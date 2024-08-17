@@ -421,6 +421,7 @@ add_action('pre_get_posts',function($query) {
 add_action('cocoon_part_after__tmp/button-go-to-top', function() {
   if (get_theme_mod('hvn_toc_fix_setting')) {
     $html = do_shortcode('[toc]');
+    $title = __('目次', THEME_NAME);
     echo <<< EOF
 <div id="hvn-toc">
   <label for="hvn-open" class="hvn-open-btn"><i class="fas fa-list"></i></label>
@@ -428,7 +429,7 @@ add_action('cocoon_part_after__tmp/button-go-to-top', function() {
   <input type="radio" id="hvn-open"  class="display-none" name="hvn-trigger">
   <div class="hvn-modal">
     <div class="hvn-content-wrap">
-      <div class="hvn-title">目次</div>
+      <div class="hvn-title">{$title}</div>
       {$html}
     </div>
     <label for="hvn-close"><div class="hvn-background"></div></label>

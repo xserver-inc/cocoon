@@ -34,7 +34,7 @@ add_action('admin_bar_menu', function($wp_admin_bar) {
     $wp_admin_bar->add_menu(array(
       'parent'  => 'dashboard_menu',
       'id'      => 'dashboard_menu-logout',
-      'title'   => __('ログアウト'),
+      'title'   => __('ログアウト', THEME_NAME),
       'href'    => wp_logout_url()
     ));
   }
@@ -50,7 +50,7 @@ add_filter('post_date_column_time', function($h_time, $post) {
 
 
 add_filter('manage_pages_columns', function($columns) {
-  $columns['slug'] = 'スラッグ';
+  $columns['slug'] = __('Slug');
   return $columns;
 });
 
@@ -70,9 +70,9 @@ add_action('manage_pages_custom_column', function($column_name, $post_id) {
 //　ダッシュボード投稿一覧に追加
 //******************************************************************************
 add_filter('manage_post_posts_columns', function($columns) {
-  $columns['last_modified'] = '更新日';
-  $columns['the_page_meta_description'] = 'メタディスクリプション';
-  $columns['slug'] = 'スラッグ';
+  $columns['last_modified'] = __('更新日', THEME_NAME);
+  $columns['the_page_meta_description'] = __('メタディスクリプション', THEME_NAME);
+  $columns['slug'] = __('Slug');
 
   return $columns;
 });
@@ -91,7 +91,7 @@ add_action('manage_posts_custom_column', function($column_name, $post_id) {
       $u_date = get_the_modified_date('Y年n月j日 H:i');
       if ($p_date != $u_date) {
         $url = admin_url() . "admin-post.php?action=delete_date&id={$post_id}";
-        $button = " <a class=\"button\" href=\"{$url}\">クリア</a>";
+        $button = " <a class=\"button\" href=\"{$url}\">". __('クリア', THEME_NAME) . "</a>";
         echo $u_date . $button;
       }
       break;
@@ -146,20 +146,20 @@ add_action('quick_edit_custom_box', function($column_name, $post_type) {
 <fieldset class="inline-edit-col-right inline-custom-meta">
   <div class="inline-edit-col column-column-memo">
     <label class="inline-edit-group">
-      <span class="title">メモ</span>
+      <span class="title"><?php echo __('メモ', THEME_NAME) ?></span>
       <textarea name="the_page_memo"></textarea>
     </label>
   </div>
   <div class="inline-edit-col column-the_page_meta_descriptio">
     <label class="inline-edit-group">
-      <span class="title">メタディスクリプション</span><span class="str-count">文字数:<span class="meta-description-count">0</span></span>
+      <span class="title"><?php echo __('メタディスクリプション', THEME_NAME) ?></span><span class="str-count"><?php echo __('文字数', THEME_NAME) ?>:<span class="meta-description-count">0</span></span>
       <textarea name="the_page_meta_description"></textarea>
     </label>
   </div>
 </fieldset>
     <?php
-          break;
-      }
+    break;
+  }
 }, 10, 2);
 
 
