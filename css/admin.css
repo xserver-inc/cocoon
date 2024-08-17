@@ -1050,6 +1050,11 @@ body.wp-admin {
 .admin-settings .demo .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho", sans-serif;
 }
+.admin-settings .demo .ff-pretendard,
+.admin-settings .demo .wf-active .ff-pretendard,
+.admin-settings .demo .wp-admin-ff-pretendard .editor-styles-wrapper {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
 .admin-settings .demo .sub-caption {
   font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", var(--cocoon-default-font);
   font-weight: 400;
@@ -9547,6 +9552,11 @@ body.wp-admin {
 .admin-settings .demo .wf-active .ff-sawarabi-mincho,
 .admin-settings .demo .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho", sans-serif;
+}
+.admin-settings .demo .ff-pretendard,
+.admin-settings .demo .wf-active .ff-pretendard,
+.admin-settings .demo .wp-admin-ff-pretendard .editor-styles-wrapper {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 .admin-settings .demo .sub-caption {
   font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", var(--cocoon-default-font);
@@ -23756,6 +23766,11 @@ textarea[name=the_page_memo] {
 .components-popover__content .wf-active .ff-sawarabi-mincho,
 .components-popover__content .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho", sans-serif;
+}
+.components-popover__content .ff-pretendard,
+.components-popover__content .wf-active .ff-pretendard,
+.components-popover__content .wp-admin-ff-pretendard .editor-styles-wrapper {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 .components-popover__content .sub-caption {
   font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", var(--cocoon-default-font);

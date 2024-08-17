@@ -43,6 +43,11 @@ function is_site_font_family_local(){
   }
 }
 endif;
+if ( !function_exists( 'get_site_font_family_pretendard' ) ):
+function get_site_font_family_pretendard(){
+  return get_site_font_family() === 'pretendard';
+}
+endif;
 
 //フォントサイズ
 define('OP_SITE_FONT_SIZE', 'site_font_size');

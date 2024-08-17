@@ -932,13 +932,13 @@ EOM;
 endif;
 
 
-//Google Fontsの読み込み
+//Google Fontsの読み込み（Googleフォント以外のサイトフォント含む）
 if ( !function_exists( 'wp_enqueue_google_fonts' ) ):
 function wp_enqueue_google_fonts(){
   if (!is_site_font_family_local() && !is_google_font_lazy_load_enable()) {
-    wp_enqueue_style( 'google-fonts-'.get_site_font_source(), get_site_font_source_url() );
+    wp_enqueue_style( 'site-font-'.get_site_font_source(), get_site_font_source_url() );
   }
-  if (!is_site_font_family_local() && is_google_font_lazy_load_enable()) {
+  if (!is_site_font_family_local() && is_google_font_lazy_load_enable() && !get_site_font_family_pretendard()) {
     $code = "window.WebFontConfig = {
       google: { families: ['".get_site_font_source_family().get_site_font_source_weight()."'] },
       active: function() {
@@ -1776,7 +1776,12 @@ endif;
 //サイトフォントソースコードURLの取得
 if ( !function_exists( 'get_site_font_source_url' ) ):
 function get_site_font_source_url(){
-  return 'https://fonts.googleapis.com/css?family='.get_site_font_source_family().get_site_font_source_weight().'&display=swap';
+  $url = 'https://fonts.googleapis.com/css?family='.get_site_font_source_family().get_site_font_source_weight().'&display=swap';
+  //Pretendardフォント
+  if (get_site_font_family_pretendard()) {
+    $url = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css';
+  }
+  return $url;
 }
 endif;
 
@@ -3668,7 +3673,20 @@ function is_dark_hexcolor($hexcolor) {
 }
 endif;
 
+//使用言語が韓国語かどうか
+if ( !function_exists( 'is_wp_language_korean' ) ):
+function is_wp_language_korean() {
+  // WordPressの現在の言語を取得
+  $current_language = get_locale();
 
+  // 言語が韓国語（`ko_KR`）であるかどうかを判別
+  if ($current_language === 'ko_KR') {
+      return true;
+  } else {
+      return false;
+  }
+}
+endif;
 
 
 
