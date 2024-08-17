@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-17 09:58\n"
+"PO-Revision-Date: 2024-08-17 17:10\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12402,27 +12402,27 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:790
 msgid "X（旧Twitter）フォローボタンを表示"
-msgstr ""
+msgstr "Display X (formerly Twitter) follow button"
 
 #: skins/skin-grayish-topfull/functions.php:794
 msgid "Mastodon フォローボタンを表示"
-msgstr ""
+msgstr "Display Mastodon follow button"
 
 #: skins/skin-grayish-topfull/functions.php:798
 msgid "Bluesky フォローボタンを表示"
-msgstr ""
+msgstr "Display Bluesky follow button"
 
 #: skins/skin-grayish-topfull/functions.php:802
 msgid "Misskey フォローボタンを表示"
-msgstr ""
+msgstr "Show Misskey follow button"
 
 #: skins/skin-grayish-topfull/functions.php:806
 msgid "Facebook フォローボタンを表示"
-msgstr ""
+msgstr "Show Facebook follow button"
 
 #: skins/skin-grayish-topfull/functions.php:810
 msgid "はてブ フォローボタンを表示"
-msgstr ""
+msgstr "Show Hatena Bookmark follow button"
 
 #: skins/skin-grayish-topfull/functions.php:814
 msgid "Instagram フォローボタンを表示"
@@ -12450,11 +12450,11 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:838
 msgid "Amazon欲しい物リスト フォローボタンを表示"
-msgstr ""
+msgstr "Display Amazon Wishlist follow button"
 
 #: skins/skin-grayish-topfull/functions.php:842
 msgid "Twitch フォローボタンを表示"
-msgstr ""
+msgstr "Display Twitch follow button"
 
 #: skins/skin-grayish-topfull/functions.php:846
 msgid "楽天ROOM フォローボタンを表示"
@@ -12631,7 +12631,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1863
 msgid "モバイル時のロゴを別画像にしたいとき設定します。"
-msgstr ""
+msgstr "Set this option if you want to use a different image for the logo on mobile devices."
 
 #: skins/skin-grayish-topfull/functions.php:2077
 msgid "サイトテキストグレー"
@@ -12743,11 +12743,11 @@ msgstr "Can be scrolled horizontally"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
 msgid "検索フォームを閉じる"
-msgstr ""
+msgstr "Close search form"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:26
 msgid "検索フォームを開く"
-msgstr ""
+msgstr "Open search form"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:57
 #: tmp/sns-follow-buttons.php:33
@@ -12861,7 +12861,7 @@ msgstr "Logout"
 #: skins/skin-made-in-heaven/lib/hook-wp.php:53
 #: skins/skin-made-in-heaven/lib/hook-wp.php:75
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
@@ -14859,27 +14859,27 @@ msgstr "Background Icon"
 
 #: blocks/src/toolbutton/background-icons.js:71
 msgid "◎"
-msgstr ""
+msgstr "Double circle"
 
 #: blocks/src/toolbutton/background-icons.js:72
 msgid "○"
-msgstr ""
+msgstr "Circle"
 
 #: blocks/src/toolbutton/background-icons.js:73
 msgid "△"
-msgstr ""
+msgstr "Triangle"
 
 #: blocks/src/toolbutton/background-icons.js:74
 msgid "×"
-msgstr ""
+msgstr "X-mark"
 
 #: blocks/src/toolbutton/background-icons.js:75
 msgid "✓"
-msgstr ""
+msgstr "Check"
 
 #: blocks/src/toolbutton/background-icons.js:76
 msgid "？"
-msgstr ""
+msgstr "?"
 
 #: blocks/src/toolbutton/bold.js:15
 msgid "太字（boldクラス指定）"
