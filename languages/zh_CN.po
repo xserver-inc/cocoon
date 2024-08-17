@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-17T02:27:08+00:00\n"
-"PO-Revision-Date: 2024-08-17 02:29\n"
+"POT-Creation-Date: 2024-08-17T04:21:50+00:00\n"
+"PO-Revision-Date: 2024-08-17 04:30\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -4536,6 +4536,17 @@ msgstr "Hiragino Kaku Gothic, Meiryo"
 #: lib/page-settings/all-forms.php:57
 #: lib/page-settings/index-forms.php:50
 #: lib/page-settings/index-forms.php:82
+#: skins/skin-grayish-topfull/functions.php:206
+#: skins/skin-grayish-topfull/functions.php:234
+#: skins/skin-grayish-topfull/functions.php:696
+#: skins/skin-grayish-topfull/functions.php:725
+#: skins/skin-grayish-topfull/functions.php:753
+#: skins/skin-grayish-topfull/functions.php:779
+#: skins/skin-grayish-topfull/functions.php:896
+#: skins/skin-grayish-topfull/functions.php:1431
+#: skins/skin-grayish-topfull/functions.php:1586
+#: skins/skin-grayish-topfull/functions.php:1740
+#: skins/skin-grayish-topfull/functions.php:1838
 msgid "（デフォルト）"
 msgstr "（默认）"
 
@@ -9853,6 +9864,7 @@ msgstr "关："
 
 #: lib/page-settings/toc-forms.php:103
 #: lib/page-settings/toc-funcs.php:78
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
 msgid "閉じる"
 msgstr "关闭"
 
@@ -12179,6 +12191,440 @@ msgstr "文章内标题<br><small>（依次应用所选4种颜色）</small>"
 msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適応する）</small>"
 msgstr "侧边栏内标题<br><small>（依次应用所选4种颜色）</small>"
 
+#: skins/skin-grayish-topfull/functions.php:176
+msgid "skin-grayish: カスタマイズ"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:184
+msgid "全体：英字フォント設定"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:187
+msgid "英字フォントの適用箇所についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:200
+msgid "英字フォント設定 選択"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:201
+msgid "ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:201
+msgid "※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:208
+#: skins/skin-grayish-topfull/functions.php:210
+msgid "（細タイプなし）"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:213
+msgid "設定なし"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:228
+msgid "サイトロゴ（テキスト時）のフォント太さ 選択"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:229
+msgid "ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:229
+msgid "※フォントによって細いタイプがない場合があります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:234
+msgid "細"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:235
+msgid "普通"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:370
+msgid "全体：カラー設定"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:373
+msgid "各カラーの適用箇所についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:388
+msgid "テキストカラー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:389
+msgid "メニュー・見出し・本文などのテキストカラーを変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:390
+#: skins/skin-grayish-topfull/functions.php:410
+#: skins/skin-grayish-topfull/functions.php:428
+#: skins/skin-grayish-topfull/functions.php:446
+#: skins/skin-grayish-topfull/functions.php:464
+#: skins/skin-grayish-topfull/functions.php:482
+#: skins/skin-grayish-topfull/functions.php:668
+#: skins/skin-grayish-topfull/functions.php:1405
+msgid "※空欄の場合はデフォルト値になります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:408
+msgid "メインアクセント 一番明るい青色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:409
+msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:426
+msgid "メイン 薄い青色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:427
+msgid "グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:444
+msgid "メイン 一番薄い青"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:445
+msgid "フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:462
+msgid "サブ 濃い青"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:463
+msgid "プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:480
+msgid "サブ もっと濃い青"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:481
+msgid "カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:623
+msgid "フロントページ設定：ヘッダー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:626
+#: skins/skin-grayish-topfull/functions.php:1368
+msgid "グローバルナビの高さ等変更についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:626
+msgid "メインビジュアルについてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:626
+msgid "グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:666
+msgid "【PC】グローバルナビの背景色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:667
+msgid "グローバルナビの背景色。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:685
+msgid "【PC】グローバルナビ背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:686
+#: skins/skin-grayish-topfull/functions.php:1421
+#: skins/skin-grayish-topfull/functions.php:1828
+msgid "値が大きくなるほど背景色が濃くなります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:691
+#: skins/skin-grayish-topfull/functions.php:1426
+#: skins/skin-grayish-topfull/functions.php:1735
+#: skins/skin-grayish-topfull/functions.php:1833
+msgid "（背景色なし)"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:701
+#: skins/skin-grayish-topfull/functions.php:1436
+#: skins/skin-grayish-topfull/functions.php:1745
+#: skins/skin-grayish-topfull/functions.php:1843
+msgid "(不透明)"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:719
+msgid "メインビジュアル 白ドットのON/OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:720
+msgid "メインビジュアルの上に白いドットを重ねるかどうかを選択。解像度が低い画像を使用する場合はON推奨"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:742
+msgid "メインビジュアル 白オーバーレイの不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:743
+msgid "メインビジュアルの上に重ねる白の不透明度を調整。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:743
+msgid "値が大きくなるほど白が濃くなります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:773
+msgid "メインビジュアル下のスクロールアニメーションのON/OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:774
+msgid "メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:774
+msgid "PC/SP共通の設定になります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:790
+msgid "X（旧Twitter）フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:794
+msgid "Mastodon フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:798
+msgid "Bluesky フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:802
+msgid "Misskey フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:806
+msgid "Facebook フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:810
+msgid "はてブ フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:814
+msgid "Instagram フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:818
+msgid "Pinterest フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:822
+msgid "YouTube フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:826
+msgid "LinkedIn フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:830
+msgid "note フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:834
+msgid "Flickr フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:838
+msgid "Amazon欲しい物リスト フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:842
+msgid "Twitch フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:846
+msgid "楽天ROOM フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:850
+msgid "Slack フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:854
+msgid "GitHub フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:858
+msgid "CodePen フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:862
+msgid "TikTok フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:866
+msgid "SoundCloud フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:870
+msgid "LINE フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:890
+msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:891
+msgid "※フロントページ以外のグローバルナビにも表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1137
+msgid "全体：テキスト変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1140
+msgid "テキスト変更についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1153
+msgid "【フロントページ】\"New Post\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1154
+msgid "New Postを別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1154
+#: skins/skin-grayish-topfull/functions.php:1194
+msgid "Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1155
+msgid "※空欄の場合は\"New Post\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1165
+#: skins/skin-grayish-topfull/functions.php:1288
+#: skins/skin-grayish-topfull/functions.php:1289
+#: skins/skin-grayish-topfull/functions.php:1291
+msgid "最新の記事"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1173
+msgid "【フロントページ】\"最新の記事\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1174
+msgid "\"最新の記事\"を別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1174
+#: skins/skin-grayish-topfull/functions.php:1214
+msgid "Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1175
+msgid "※空欄の場合は\"最新の記事\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1193
+msgid "【フロントページ】\"Category\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1194
+msgid "Categoryを別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1195
+msgid "※空欄の場合は\"Category\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1213
+msgid "【フロントページ】Moreボタン \"More\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1214
+msgid "\"More\"を別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1215
+msgid "※空欄の場合は\"More\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1233
+msgid "【フロントページ・各一覧ページ】Nextボタン \"Next\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1234
+msgid "\"Next\"を別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1234
+msgid "※空欄の場合は\"Next\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1252
+msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1253
+msgid "\"Home\"を別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1253
+msgid "※空欄の場合は\"Home\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1365
+msgid "フロントページ以外の設定:ヘッダー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1380
+msgid "【PC】フロントページ以外のグローバルナビの高さ"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1381
+msgid "56px〜100pxの範囲で変更可能です。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1381
+msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1382
+msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1403
+msgid "【PC】フロントページ以外のヘッダーの背景色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1404
+msgid "ヘッダーの背景色を変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1420
+msgid "【PC】ヘッダー背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1827
+msgid "フッターモバイルボタン背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1862
+msgid "モバイル時のヘッダーロゴ画像アップロード"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1863
+msgid "モバイル時のロゴを別画像にしたいとき設定します。"
+msgstr ""
+
 #: skins/skin-grayish-topfull/functions.php:2077
 msgid "サイトテキストグレー"
 msgstr "网站文本灰色"
@@ -12286,6 +12732,14 @@ msgstr "GreenS50"
 #: skins/skin-grayish-topfull/functions.php:2145
 msgid "横スクロールできます"
 msgstr "可以横向滚动"
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
+msgid "検索フォームを閉じる"
+msgstr ""
+
+#: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:26
+msgid "検索フォームを開く"
+msgstr ""
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:57
 #: tmp/sns-follow-buttons.php:33
