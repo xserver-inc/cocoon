@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-17 10:58\n"
+"PO-Revision-Date: 2024-08-17 12:10\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12415,7 +12415,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:806
 msgid "Facebook フォローボタンを表示"
-msgstr ""
+msgstr "Facebook 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:810
 msgid "はてブ フォローボタンを表示"
@@ -12576,7 +12576,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1252
 msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
-msgstr ""
+msgstr "【게시물 및 고정 페이지】빵 부스러기 목록 \"Home\"을 변경"
 
 #: skins/skin-grayish-topfull/functions.php:1253
 msgid "\"Home\"を別のテキストに変更できます。"
