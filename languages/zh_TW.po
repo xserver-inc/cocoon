@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-15T14:45:14+00:00\n"
-"PO-Revision-Date: 2024-08-15 16:40\n"
+"POT-Creation-Date: 2024-08-17T02:27:08+00:00\n"
+"PO-Revision-Date: 2024-08-17 02:29\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -283,6 +283,7 @@ msgstr ""
 #: lib/custom-fields/memo-field.php:17
 #: lib/custom-fields/memo-field.php:18
 #: lib/custom-fields/memo-field.php:21
+#: skins/skin-made-in-heaven/lib/hook-wp.php:149
 #: blocks/src/block-extension/style-extension/style01.js:142
 #: blocks/src/block/icon-box/deprecated.js:98
 #: blocks/src/block/icon-box/edit.js:45
@@ -1131,6 +1132,7 @@ msgstr ""
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
+#: skins/skin-made-in-heaven/functions.php:109
 #: tmp/css-custom.php:907
 #: tmp/css-custom.php:959
 #: blocks/src/block/blogcard/deprecated.js:57
@@ -1226,6 +1228,7 @@ msgstr ""
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:116
 #: lib/custom-fields/seo-field.php:126
+#: skins/skin-made-in-heaven/lib/hook-wp.php:155
 msgid "文字数"
 msgstr ""
 
@@ -1677,6 +1680,8 @@ msgstr ""
 #: lib/custom-fields/seo-field.php:128
 #: lib/page-settings/title-forms.php:163
 #: lib/page-settings/title-forms.php:264
+#: skins/skin-made-in-heaven/lib/hook-wp.php:74
+#: skins/skin-made-in-heaven/lib/hook-wp.php:155
 msgid "メタディスクリプション"
 msgstr ""
 
@@ -2488,6 +2493,7 @@ msgid "選択"
 msgstr ""
 
 #: lib/html-forms.php:592
+#: skins/skin-made-in-heaven/lib/hook-wp.php:94
 msgid "クリア"
 msgstr ""
 
@@ -5755,6 +5761,7 @@ msgstr ""
 
 #: lib/page-settings/blogcard-in-forms.php:94
 #: skins/silk/functions.php:921
+#: skins/skin-made-in-heaven/lib/hook-wp.php:73
 msgid "更新日"
 msgstr ""
 
@@ -9810,6 +9817,7 @@ msgstr ""
 #: lib/page-settings/toc-funcs.php:54
 #: lib/page-settings/_top-page.php:206
 #: lib/widgets/toc.php:19
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:424
 msgid "目次"
 msgstr ""
 
@@ -11185,6 +11193,11 @@ msgstr ""
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
+#: lib/utils.php:2503
+msgid "%s min"
+msgid_plural "%s mins"
+msgstr[0] ""
+
 #: lib/utils.php:2511
 msgid "%s hour"
 msgid_plural "%s hours"
@@ -12380,6 +12393,11 @@ msgstr ""
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:53
+#: skins/skin-made-in-heaven/lib/hook-wp.php:75
+msgid "Slug"
 msgstr ""
 
 #. Template Name of the theme
