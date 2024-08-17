@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-17 05:54\n"
+"PO-Revision-Date: 2024-08-17 07:30\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -8581,7 +8581,7 @@ msgstr "Previously, the browser default was no-referrer-when-downgrade, but sinc
 
 #: lib/page-settings/seo-forms.php:126
 msgid "リファラーポリシー"
-msgstr ""
+msgstr "Referrer policy"
 
 #: lib/page-settings/seo-forms.php:140
 msgid "日付の設定"
