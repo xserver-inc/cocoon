@@ -3,17 +3,17 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 class SkinRakuColorChanging {
     // DBに保存するためのオプション名
-    const COLOR1    = 'raku_color_changing_color1'; 
-    const COLOR2    = 'raku_color_changing_color2'; 
-    const COLOR3    = 'raku_color_changing_color3'; 
-    const COLOR4    = 'raku_color_changing_color4'; 
-    const OPACITY   = 'raku_color_changing_opacity'; 
-    const DURATION  = 'raku_color_changing_duration'; 
-    const SIDE_TITLE      = 'raku_color_changing_side_title'; 
-    const SIDE_OPACITY    = 'raku_color_changing_side_opacity'; 
-    const ARTICLE_TITLE   = 'raku_color_changing_article_title'; 
-    const ARTICLE_OPACITY = 'raku_color_changing_article_opacity'; 
-    const ARTICLE_H3_OPACITY = 'raku_color_changing_article_h3_opacity'; 
+    const COLOR1    = 'raku_color_changing_color1';
+    const COLOR2    = 'raku_color_changing_color2';
+    const COLOR3    = 'raku_color_changing_color3';
+    const COLOR4    = 'raku_color_changing_color4';
+    const OPACITY   = 'raku_color_changing_opacity';
+    const DURATION  = 'raku_color_changing_duration';
+    const SIDE_TITLE      = 'raku_color_changing_side_title';
+    const SIDE_OPACITY    = 'raku_color_changing_side_opacity';
+    const ARTICLE_TITLE   = 'raku_color_changing_article_title';
+    const ARTICLE_OPACITY = 'raku_color_changing_article_opacity';
+    const ARTICLE_H3_OPACITY = 'raku_color_changing_article_h3_opacity';
     // 各色
     private $color = [
         'color1' => '',
@@ -30,9 +30,11 @@ class SkinRakuColorChanging {
     private $duration = '';
     private $side_title = '適応する';    // 適応する / 適応しない
     private $article_title = '適応する'; // 適応する / 適応しない
-    
+
     // コンストラクタ
     function __construct() {
+        $this->side_title = __('適応する', THEME_NAME);
+        $this->article_title = __('適応する', THEME_NAME);
         /*----------------------------------------------------
          色・フラグの保存
         ----------------------------------------------------*/
@@ -80,9 +82,9 @@ class SkinRakuColorChanging {
         $this->color['color4'] = get_theme_option(self::COLOR4, '#ff00ff');
         $this->opacity['bg'] = get_theme_option(self::OPACITY, '10'); // 不透明度（パーセント）
         $this->duration = get_theme_option(self::DURATION, '60');
-        $this->side_title = get_theme_option(self::SIDE_TITLE, '適応する');
+        $this->side_title = get_theme_option(self::SIDE_TITLE, __('適応する' , THEME_NAME));
         $this->opacity['side'] = get_theme_option(self::SIDE_OPACITY, '20'); // 不透明度（パーセント）
-        $this->article_title = get_theme_option(self::ARTICLE_TITLE, '適応する');
+        $this->article_title = get_theme_option(self::ARTICLE_TITLE, __('適応する' , THEME_NAME));
         $this->opacity['article'] = get_theme_option(self::ARTICLE_OPACITY, '20'); // 不透明度（パーセント）
         $this->opacity['article_h3'] = get_theme_option(self::ARTICLE_H3_OPACITY, '50'); // 不透明度（パーセント）
         /*----------------------------------------------------
@@ -112,7 +114,7 @@ class SkinRakuColorChanging {
         echo 'animation-duration: '.$this->duration.'s;';
         echo '}';
         // 記事内のタイトル
-        if($this->article_title === '適応する') {
+        if($this->article_title === __('適応する' , THEME_NAME)) {
             // h2
             echo '.article h2:nth-of-type(4n+1) { background: '.$this->color_code('color1', 'article').'; }';
             echo '.article h2:nth-of-type(4n+2) { background: '.$this->color_code('color2', 'article').'; }';
@@ -142,7 +144,7 @@ class SkinRakuColorChanging {
             echo '.article h4.skincolor4:nth-of-type(n), .article h5.skincolor4:nth-of-type(n), .article h6.skincolor4:nth-of-type(n) { border-color: '.$this->color_code('color4', 'article').'; }';
         }
         // サイドバーのタイトル
-        if($this->side_title === '適応する') {
+        if($this->side_title === __('適応する' , THEME_NAME)) {
             // sidebar
             echo '.widget-sidebar .widget-sidebar-title.skincolor1 { background: '.$this->color_code('color1', 'side').'; }';
             echo '.widget-sidebar .widget-sidebar-title.skincolor2 { background: '.$this->color_code('color2', 'side').'; }';
@@ -194,7 +196,7 @@ class SkinRakuColorChanging {
     tr_setting += '<li><?php echo str_replace("\n", "", $this->get_color_picker_tag(self::COLOR3,  $this->color['color3'], '')); ?></li>';
     tr_setting += '<li><?php echo str_replace("\n", "", $this->get_color_picker_tag(self::COLOR4,  $this->color['color4'], '')); ?></li>';
     tr_setting += '</ul>';
-    tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> 4色 選択してください。</p>';
+    tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('4色 選択してください。', THEME_NAME); ?></p>';
     tr_setting += '</td></tr>';
     /*----------------------------------------------------
      「背景アニメーション」用HTMLを作成
@@ -202,14 +204,14 @@ class SkinRakuColorChanging {
     tr_setting += '<tr>';
     tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>', THEME_NAME) ); ?></th>';
     tr_setting += '<td>';
-    tr_setting += '<p>【一通り変化するまでの時間】</p>';
-    tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::DURATION, $this->duration, "", 1, 120)); ?>秒（1～120秒）</p>';
-    tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> 時間を短くする程「早く」、長くする程「ゆっくり」変化します。</p>';
-    tr_setting += '<p>【不透明度】</p>';
+    tr_setting += '<p><?php _e('【一通り変化するまでの時間】', THEME_NAME); ?></p>';
+    tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::DURATION, $this->duration, "", 1, 120)); ?><?php _e('秒（1～120秒）', THEME_NAME); ?></p>';
+    tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('時間を短くする程「早く」、長くする程「ゆっくり」変化します。', THEME_NAME); ?></p>';
+    tr_setting += '<p><?php _e('【不透明度】', THEME_NAME); ?></p>';
     tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::OPACITY, $this->opacity['bg'])); ?>%（1～100%）</p>';
-    tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span> 数字を小さくする程、透明になります。';
-    tr_setting += '<br>透明にする程、【Cocoon設定 > 全体】の「サイト背景色」や「サイト背景画像」がより透けて見えます。';
-    tr_setting += '<br>設定していない場合は単純に色が薄くなります。</p>';
+    tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('数字を小さくする程、透明になります。', THEME_NAME); ?>';
+    tr_setting += '<br><?php _e('透明にする程、【Cocoon設定 > 全体】の「サイト背景色」や「サイト背景画像」がより透けて見えます。', THEME_NAME); ?>';
+    tr_setting += '<br><?php _e('設定していない場合は単純に色が薄くなります。', THEME_NAME); ?></p>';
     tr_setting += '</td></tr>';
     /*----------------------------------------------------
     「記事内のタイトルに色を適応させるかどうか」用HTMLを作成
@@ -219,19 +221,19 @@ class SkinRakuColorChanging {
     tr_setting += '<td><ul>';
     <?php
     $on_off_article_title = [
-        self::ARTICLE_TITLE.'1' => '適応する',
-        self::ARTICLE_TITLE.'2' => '適応しない',
+        self::ARTICLE_TITLE.'1' => __('適応する' , THEME_NAME),
+        self::ARTICLE_TITLE.'2' => __('適応しない' , THEME_NAME),
     ];
     foreach ($on_off_article_title as $id => $val) : ?>
     tr_setting += '<li><input type="radio" name="<?=self::ARTICLE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php the_checkbox_checked($val, $this->article_title); ?>><label for="<?=$id?>"><?=$val?></label></li>';
     <?php endforeach; ?>
     tr_setting += '</ul>';
-    tr_setting += '<p>【不透明度（背景と線の色）】</p>';
+    tr_setting += '<p><?php _e('【不透明度（背景と線の色）】', THEME_NAME); ?></p>';
     tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::ARTICLE_OPACITY, $this->opacity['article'])); ?>%（1～100%）</p>';
-    tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> 数字を小さくする程、色が薄くなります。';
-    tr_setting += '<p>【不透明度（H3タイトルの左側の線の色）】</p>';
+    tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('数字を小さくする程、色が薄くなります。', THEME_NAME); ?>';
+    tr_setting += '<p><?php _e('【不透明度（H3タイトルの左側の線の色）】', THEME_NAME); ?></p>';
     tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::ARTICLE_H3_OPACITY, $this->opacity['article_h3'])); ?>%（1～100%）</p>';
-    tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span> H3タイトルの左側の線だけ色が濃い方が綺麗なため、個別に設定できます。';
+    tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span><?php _e(' H3タイトルの左側の線だけ色が濃い方が綺麗なため、個別に設定できます。', THEME_NAME); ?>';
     tr_setting += '</td></tr>';
     /*----------------------------------------------------
      「サイドバーのタイトルに色を適応させるかどうか」用HTMLを作成
@@ -241,16 +243,16 @@ class SkinRakuColorChanging {
     tr_setting += '<td><ul>';
     <?php
     $on_off_side_title = [
-        self::SIDE_TITLE.'1' => '適応する',
-        self::SIDE_TITLE.'2' => '適応しない',
+        self::SIDE_TITLE.'1' => __('適応する' , THEME_NAME),
+        self::SIDE_TITLE.'2' => __('適応しない' , THEME_NAME),
     ];
     foreach ($on_off_side_title as $id => $val) : ?>
     tr_setting += '<li><input type="radio" name="<?=self::SIDE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php the_checkbox_checked($val, $this->side_title); ?>><label for="<?=$id?>"><?=$val?></label></li>';
     <?php endforeach; ?>
     tr_setting += '</ul>';
-    tr_setting += '<p>【不透明度（背景色）】</p>';
+    tr_setting += '<p><?php _e('【不透明度（背景色）】', THEME_NAME); ?></p>';
     tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::SIDE_OPACITY, $this->opacity['side'])); ?>%（1～100%）</p>';
-    tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span> 数字を小さくする程、色が薄くなります。';
+    tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('数字を小さくする程、色が薄くなります。', THEME_NAME); ?>';
     tr_setting += '</td></tr>';
     /*----------------------------------------------------
      追加
