@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-17 05:54\n"
+"PO-Revision-Date: 2024-08-17 10:58\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12202,7 +12202,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:184
 msgid "全体：英字フォント設定"
-msgstr ""
+msgstr "전체: 영문 글꼴 설정"
 
 #: skins/skin-grayish-topfull/functions.php:187
 msgid "英字フォントの適用箇所についてはこちらを参照"
@@ -12407,7 +12407,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:798
 msgid "Bluesky フォローボタンを表示"
-msgstr ""
+msgstr "Bluesky 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:802
 msgid "Misskey フォローボタンを表示"
