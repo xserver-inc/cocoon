@@ -20,10 +20,10 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-search'; ?>
           <?php //検索フォーム
           get_template_part('searchform') ?>
         </div>
-        <button type="button" class="searchMenuDialog_close js-searchMenuDialog-close grayish-btn"><span class="searchMenuDialog_closemark" aria-label="検索フォームを閉じる">閉じる</span></button>
+        <button type="button" class="searchMenuDialog_close js-searchMenuDialog-close grayish-btn"><span class="searchMenuDialog_closemark" aria-label="<?php _e('検索フォームを閉じる', THEME_NAME); ?>"><?php _e('閉じる', THEME_NAME); ?></span></button>
       </div>
     </dialog>
-    <button type="button" class="gnavi-search-menu-open grayish-btn js-searchMenuDialog-open" aria-label="検索フォームを開く">
+    <button type="button" class="gnavi-search-menu-open grayish-btn js-searchMenuDialog-open" aria-label="<?php _e('検索フォームを開く', THEME_NAME); ?>">
       <span class="search-menu-icon menu-icon">
         <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
       </span>
