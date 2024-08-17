@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-17 18:08\n"
+"PO-Revision-Date: 2024-08-17 19:08\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12486,148 +12486,148 @@ msgstr "Display LINE follow button"
 
 #: skins/skin-grayish-topfull/functions.php:890
 msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
-msgstr ""
+msgstr "If the URL is entered on the profile page, follow buttons are displayed in the global navigation."
 
 #: skins/skin-grayish-topfull/functions.php:891
 msgid "※フロントページ以外のグローバルナビにも表示されます。"
-msgstr ""
+msgstr "*This information is also displayed in the global navigation other than the front page."
 
 #: skins/skin-grayish-topfull/functions.php:1137
 msgid "全体：テキスト変更"
-msgstr ""
+msgstr "All: Text change"
 
 #: skins/skin-grayish-topfull/functions.php:1140
 msgid "テキスト変更についてはこちらを参照"
-msgstr ""
+msgstr "Click here to learn more about text changes."
 
 #: skins/skin-grayish-topfull/functions.php:1153
 msgid "【フロントページ】\"New Post\"を変更"
-msgstr ""
+msgstr "[Front Page] Change “New Post”"
 
 #: skins/skin-grayish-topfull/functions.php:1154
 msgid "New Postを別のテキストに変更できます。"
-msgstr ""
+msgstr "\"New Post\" can be changed to a different text."
 
 #: skins/skin-grayish-topfull/functions.php:1154
 #: skins/skin-grayish-topfull/functions.php:1194
 msgid "Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。"
-msgstr ""
+msgstr "It is displayed when you select Cocoon Settings > Index > By Category."
 
 #: skins/skin-grayish-topfull/functions.php:1155
 msgid "※空欄の場合は\"New Post\"が表示されます。"
-msgstr ""
+msgstr "If left blank, “New Post” will be displayed."
 
 #: skins/skin-grayish-topfull/functions.php:1165
 #: skins/skin-grayish-topfull/functions.php:1288
 #: skins/skin-grayish-topfull/functions.php:1289
 #: skins/skin-grayish-topfull/functions.php:1291
 msgid "最新の記事"
-msgstr ""
+msgstr "Latest Articles"
 
 #: skins/skin-grayish-topfull/functions.php:1173
 msgid "【フロントページ】\"最新の記事\"を変更"
-msgstr ""
+msgstr "[Front Page] Change “Latest Articles”"
 
 #: skins/skin-grayish-topfull/functions.php:1174
 msgid "\"最新の記事\"を別のテキストに変更できます。"
-msgstr ""
+msgstr "“Latest Articles” can be changed to another text."
 
 #: skins/skin-grayish-topfull/functions.php:1174
 #: skins/skin-grayish-topfull/functions.php:1214
 msgid "Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。"
-msgstr ""
+msgstr "It is displayed when you select Cocoon Settings>Index>Tab List or By Category."
 
 #: skins/skin-grayish-topfull/functions.php:1175
 msgid "※空欄の場合は\"最新の記事\"が表示されます。"
-msgstr ""
+msgstr "If the field is left blank, “Latest Articles” will be displayed."
 
 #: skins/skin-grayish-topfull/functions.php:1193
 msgid "【フロントページ】\"Category\"を変更"
-msgstr ""
+msgstr "[Top page] Change “Category”"
 
 #: skins/skin-grayish-topfull/functions.php:1194
 msgid "Categoryを別のテキストに変更できます。"
-msgstr ""
+msgstr "“Category” can be changed to another text."
 
 #: skins/skin-grayish-topfull/functions.php:1195
 msgid "※空欄の場合は\"Category\"が表示されます。"
-msgstr ""
+msgstr "If the field is left blank, “Category” will be displayed."
 
 #: skins/skin-grayish-topfull/functions.php:1213
 msgid "【フロントページ】Moreボタン \"More\"を変更"
-msgstr ""
+msgstr "[Front page] Change More button “More”"
 
 #: skins/skin-grayish-topfull/functions.php:1214
 msgid "\"More\"を別のテキストに変更できます。"
-msgstr ""
+msgstr "\"More\" can be changed to another text."
 
 #: skins/skin-grayish-topfull/functions.php:1215
 msgid "※空欄の場合は\"More\"が表示されます。"
-msgstr ""
+msgstr "If the field is left blank, “More” will be displayed."
 
 #: skins/skin-grayish-topfull/functions.php:1233
 msgid "【フロントページ・各一覧ページ】Nextボタン \"Next\"を変更"
-msgstr ""
+msgstr "[Front page and each list page] Changed Next button “Next\""
 
 #: skins/skin-grayish-topfull/functions.php:1234
 msgid "\"Next\"を別のテキストに変更できます。"
-msgstr ""
+msgstr "\"Next\" can be changed to another text."
 
 #: skins/skin-grayish-topfull/functions.php:1234
 msgid "※空欄の場合は\"Next\"が表示されます。"
-msgstr ""
+msgstr "If the field is left blank, “Next” will be displayed."
 
 #: skins/skin-grayish-topfull/functions.php:1252
 msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
-msgstr ""
+msgstr "[Post & Page] Change breadcrumbs list “Home”"
 
 #: skins/skin-grayish-topfull/functions.php:1253
 msgid "\"Home\"を別のテキストに変更できます。"
-msgstr ""
+msgstr "\"Home\" can be changed to another text."
 
 #: skins/skin-grayish-topfull/functions.php:1253
 msgid "※空欄の場合は\"Home\"が表示されます。"
-msgstr ""
+msgstr "If the field is left blank, “Home” will be displayed."
 
 #: skins/skin-grayish-topfull/functions.php:1365
 msgid "フロントページ以外の設定:ヘッダー"
-msgstr ""
+msgstr "Non-Front Page Settings: Header"
 
 #: skins/skin-grayish-topfull/functions.php:1380
 msgid "【PC】フロントページ以外のグローバルナビの高さ"
-msgstr ""
+msgstr "PC: Height of global navigation other than front page"
 
 #: skins/skin-grayish-topfull/functions.php:1381
 msgid "56px〜100pxの範囲で変更可能です。"
-msgstr ""
+msgstr "It can be changed within the range of 56px to 100px."
 
 #: skins/skin-grayish-topfull/functions.php:1381
 msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
-msgstr ""
+msgstr "If a logo image is used, the size of the logo image can be adjusted."
 
 #: skins/skin-grayish-topfull/functions.php:1382
 msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
-msgstr ""
+msgstr "*If blank or out of range, the value will be 56px."
 
 #: skins/skin-grayish-topfull/functions.php:1403
 msgid "【PC】フロントページ以外のヘッダーの背景色"
-msgstr ""
+msgstr "PC: Background color of headers other than front page"
 
 #: skins/skin-grayish-topfull/functions.php:1404
 msgid "ヘッダーの背景色を変更。"
-msgstr ""
+msgstr "Change the background color of the header."
 
 #: skins/skin-grayish-topfull/functions.php:1420
 msgid "【PC】ヘッダー背景色の不透明度調整"
-msgstr ""
+msgstr "PC: Adjustment of header background color opacity"
 
 #: skins/skin-grayish-topfull/functions.php:1827
 msgid "フッターモバイルボタン背景色の不透明度調整"
-msgstr ""
+msgstr "Footer mobile button background color opacity"
 
 #: skins/skin-grayish-topfull/functions.php:1862
 msgid "モバイル時のヘッダーロゴ画像アップロード"
-msgstr ""
+msgstr "Upload header logo image for mobile"
 
 #: skins/skin-grayish-topfull/functions.php:1863
 msgid "モバイル時のロゴを別画像にしたいとき設定します。"
