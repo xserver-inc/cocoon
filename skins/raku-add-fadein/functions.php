@@ -17,6 +17,7 @@ class SkinRaku {
     private $skin_base_json      = '';
     private $skin_base_amp       = '';
 
+    public $fadein_type;
     // コンストラクタ
     function __construct() {
         /*----------------------------------------------------
