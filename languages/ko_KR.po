@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-17T04:21:50+00:00\n"
-"PO-Revision-Date: 2024-08-17 04:30\n"
+"POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
+"PO-Revision-Date: 2024-08-17 05:54\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -8579,6 +8579,10 @@ msgstr "메타 태그의 리퍼러의 작동 방식을 설정합니다."
 #: lib/page-settings/seo-forms.php:123
 msgid "以前のブラウザデフォルトはno-referrer-when-downgradeでしたが、2020年以降はstrict-origin-when-cross-originがデフォルトとなりました。"
 msgstr "예전 브라우저의 기본값은 no-referrer-when-downgrade였지만 2020년 이후에는 strict-origin-when-cross-origin이 기본값이 되었습니다."
+
+#: lib/page-settings/seo-forms.php:126
+msgid "リファラーポリシー"
+msgstr ""
 
 #: lib/page-settings/seo-forms.php:140
 msgid "日付の設定"
