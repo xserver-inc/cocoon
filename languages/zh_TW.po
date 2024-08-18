@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-18T09:59:00+00:00\n"
-"PO-Revision-Date: 2024-08-18 10:47\n"
+"POT-Creation-Date: 2024-08-18T11:02:27+00:00\n"
+"PO-Revision-Date: 2024-08-18 12:03\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -4547,6 +4547,8 @@ msgstr ""
 #: skins/skin-grayish-topfull/functions.php:1431
 #: skins/skin-grayish-topfull/functions.php:1586
 #: skins/skin-grayish-topfull/functions.php:1740
+#: skins/skin-grayish-topfull/functions.php:1768
+#: skins/skin-grayish-topfull/functions.php:1791
 #: skins/skin-grayish-topfull/functions.php:1838
 msgid "（デフォルト）"
 msgstr ""
@@ -7741,6 +7743,7 @@ msgid "アーカイブ（インデックスリスト・新着関連記事ウィ�
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:13
+#: skins/skin-grayish-topfull/functions.php:1692
 msgid "モバイル設定"
 msgstr ""
 
@@ -12374,6 +12377,8 @@ msgstr ""
 #: skins/skin-grayish-topfull/functions.php:482
 #: skins/skin-grayish-topfull/functions.php:668
 #: skins/skin-grayish-topfull/functions.php:1405
+#: skins/skin-grayish-topfull/functions.php:1710
+#: skins/skin-grayish-topfull/functions.php:1810
 msgid "※空欄の場合はデフォルト値になります。"
 msgstr ""
 
@@ -12434,6 +12439,19 @@ msgstr ""
 msgid "グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照"
 msgstr ""
 
+#: skins/skin-grayish-topfull/functions.php:641
+msgid "【PC】グローバルナビの高さ"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:642
+msgid "フロントページのグローバルナビの高さ。56px〜100pxの範囲で変更可能です。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:643
+#: skins/skin-grayish-topfull/functions.php:1382
+msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
+msgstr ""
+
 #: skins/skin-grayish-topfull/functions.php:666
 msgid "【PC】グローバルナビの背景色"
 msgstr ""
@@ -12448,6 +12466,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:686
 #: skins/skin-grayish-topfull/functions.php:1421
+#: skins/skin-grayish-topfull/functions.php:1729
 #: skins/skin-grayish-topfull/functions.php:1828
 msgid "値が大きくなるほど背景色が濃くなります。"
 msgstr ""
@@ -12472,6 +12491,23 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:720
 msgid "メインビジュアルの上に白いドットを重ねるかどうかを選択。解像度が低い画像を使用する場合はON推奨"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:725
+#: skins/skin-grayish-topfull/functions.php:779
+#: skins/skin-grayish-topfull/functions.php:897
+#: skins/skin-grayish-topfull/functions.php:1768
+#: skins/skin-grayish-topfull/functions.php:1791
+msgid "ON"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:726
+#: skins/skin-grayish-topfull/functions.php:748
+#: skins/skin-grayish-topfull/functions.php:780
+#: skins/skin-grayish-topfull/functions.php:896
+#: skins/skin-grayish-topfull/functions.php:1769
+#: skins/skin-grayish-topfull/functions.php:1792
+msgid "OFF"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:742
@@ -12598,6 +12634,12 @@ msgstr ""
 msgid "テキスト変更についてはこちらを参照"
 msgstr ""
 
+#: skins/skin-grayish-topfull/functions.php:1145
+#: skins/skin-grayish-topfull/functions.php:1269
+#: skins/skin-grayish-topfull/functions.php:1273
+msgid "New Post"
+msgstr ""
+
 #: skins/skin-grayish-topfull/functions.php:1153
 msgid "【フロントページ】\"New Post\"を変更"
 msgstr ""
@@ -12651,6 +12693,13 @@ msgstr ""
 msgid "※空欄の場合は\"Category\"が表示されます。"
 msgstr ""
 
+#: skins/skin-grayish-topfull/functions.php:1205
+#: skins/skin-grayish-topfull/functions.php:1334
+#: skins/skin-grayish-topfull/functions.php:1335
+#: skins/skin-grayish-topfull/functions.php:1337
+msgid "More"
+msgstr ""
+
 #: skins/skin-grayish-topfull/functions.php:1213
 msgid "【フロントページ】Moreボタン \"More\"を変更"
 msgstr ""
@@ -12661,6 +12710,13 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1215
 msgid "※空欄の場合は\"More\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1225
+#: skins/skin-grayish-topfull/functions.php:1347
+#: skins/skin-grayish-topfull/functions.php:1348
+#: skins/skin-grayish-topfull/functions.php:1350
+msgid "Next"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1233
@@ -12703,10 +12759,6 @@ msgstr ""
 msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1382
-msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
-msgstr ""
-
 #: skins/skin-grayish-topfull/functions.php:1403
 msgid "【PC】フロントページ以外のヘッダーの背景色"
 msgstr ""
@@ -12717,6 +12769,94 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1420
 msgid "【PC】ヘッダー背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1454
+msgid "【PC】フロントページ以外のヘッダーロゴ画像アップロード"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1455
+msgid "ロゴをフロントページと別画像にしたいとき設定します。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1559
+msgid "コンテンツ下部ウィジェット：プロフィールボックス"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1562
+msgid "プロフィールボックスの設定についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1575
+msgid "プロフィールボックスの背景画像の白オーバーレイ不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1576
+msgid "値が大きくなるほど白色が濃くなります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1581
+msgid "（白色なし)"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1611
+msgid "画像アップロード"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1612
+msgid "プロフィールボックスの背景に設定したい画像を選択"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1695
+msgid "ヘッダー・フッターモバイルボタンの設定についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1708
+msgid "ヘッダーモバイルボタンの背景色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1709
+msgid "ヘッダーモバイルボタンの背景色を変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1711
+msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1728
+msgid "ヘッダーモバイルボタン背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1730
+msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1761
+msgid "フロントページのみヘッダーモバイルボタンをメニューアイコンのみON/OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1762
+msgid "フロントページ以外は設定したメニューを表示します。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1763
+msgid "※ヘッダーモバイルボタンにオリジナルメニューを作成する場合は、メニューの一番上に#menuを設定してください。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1785
+msgid "ヘッダーモバイルボタン＆フッターモバイルボタンのアイコン下のキャプションのON/OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1786
+msgid "モバイル時にアイコン下にキャプションを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1808
+msgid "フッターモバイルボタンの背景色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1809
+msgid "フッターモバイルボタンの背景色を変更。"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1827
