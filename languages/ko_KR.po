@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-18 06:13\n"
+"PO-Revision-Date: 2024-08-18 08:49\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12540,7 +12540,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1193
 msgid "【フロントページ】\"Category\"を変更"
-msgstr ""
+msgstr "【프론트 페이지】\"Category\"를 변경"
 
 #: skins/skin-grayish-topfull/functions.php:1194
 msgid "Categoryを別のテキストに変更できます。"
@@ -12740,7 +12740,7 @@ msgstr "갈 스크롤 가능"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
 msgid "検索フォームを閉じる"
-msgstr ""
+msgstr "검색 폼을 닫기"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:26
 msgid "検索フォームを開く"
