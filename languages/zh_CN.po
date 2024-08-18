@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-17 05:54\n"
+"POT-Creation-Date: 2024-08-18T09:59:00+00:00\n"
+"PO-Revision-Date: 2024-08-18 10:47\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1511,7 +1511,7 @@ msgstr "边框线"
 #: lib/block-editor-styles-list.php:25
 #: lib/block-editor-styles-paragraph.php:25
 #: lib/content-category.php:227
-#: lib/page-settings/all-forms.php:160
+#: lib/page-settings/all-forms.php:164
 #: lib/page-settings/appeal-forms.php:90
 #: lib/page-settings/buttons-forms.php:83
 #: lib/page-settings/editor-forms.php:70
@@ -1599,7 +1599,7 @@ msgid "カテゴリーの色を指定します。"
 msgstr "指定类别的颜色。"
 
 #: lib/content-category.php:236
-#: lib/page-settings/all-forms.php:94
+#: lib/page-settings/all-forms.php:98
 #: lib/page-settings/buttons-forms.php:86
 #: lib/page-settings/editor-forms.php:74
 #: blocks/src/block-universal/caption-box/edit.js:147
@@ -3303,6 +3303,7 @@ msgstr "评分："
 #: lib/page-settings/image-forms.php:109
 #: lib/page-settings/image-forms.php:129
 #: lib/page-settings/skin-forms.php:36
+#: skins/raku-add-fadein/functions.php:306
 #: blocks/src/block/blogcard/deprecated.js:53
 #: blocks/src/block/blogcard/edit.js:36
 #: blocks/src/old/blogcard-class/block.js:62
@@ -4594,266 +4595,274 @@ msgstr "Sawarabi Gothic（网络字体）"
 msgid "さわらび明朝（WEBフォント）"
 msgstr "Sawarabi Mincho（网络字体）"
 
-#: lib/page-settings/all-forms.php:71
+#: lib/page-settings/all-forms.php:74
+msgid "Pretendard"
+msgstr ""
+
+#: lib/page-settings/all-forms.php:74
+msgid "（韓国語WEBフォント）"
+msgstr ""
+
+#: lib/page-settings/all-forms.php:76
 msgid "指定なし"
 msgstr "无指定"
 
-#: lib/page-settings/all-forms.php:73
+#: lib/page-settings/all-forms.php:77
 #: skins/nagi/nagi-customizer.php:412
 msgid "フォント"
 msgstr "字体"
 
-#: lib/page-settings/all-forms.php:74
+#: lib/page-settings/all-forms.php:78
 msgid "サイト全体適用されるフォントを選択します。"
 msgstr "选择适用于整个网站的字体。"
 
-#: lib/page-settings/all-forms.php:78
+#: lib/page-settings/all-forms.php:82
 msgid "12px"
 msgstr "12px"
 
-#: lib/page-settings/all-forms.php:79
+#: lib/page-settings/all-forms.php:83
 msgid "13px"
 msgstr "13px"
 
-#: lib/page-settings/all-forms.php:80
+#: lib/page-settings/all-forms.php:84
 msgid "14px"
 msgstr "14px"
 
-#: lib/page-settings/all-forms.php:81
+#: lib/page-settings/all-forms.php:85
 msgid "15px"
 msgstr "15px"
 
-#: lib/page-settings/all-forms.php:82
+#: lib/page-settings/all-forms.php:86
 msgid "16px"
 msgstr "16px"
 
-#: lib/page-settings/all-forms.php:83
+#: lib/page-settings/all-forms.php:87
 msgid "17px"
 msgstr "17px"
 
-#: lib/page-settings/all-forms.php:84
+#: lib/page-settings/all-forms.php:88
 msgid "18px"
 msgstr "18px"
 
-#: lib/page-settings/all-forms.php:85
+#: lib/page-settings/all-forms.php:89
 msgid "19px"
 msgstr "19px"
 
-#: lib/page-settings/all-forms.php:86
+#: lib/page-settings/all-forms.php:90
 msgid "20px"
 msgstr "20px"
 
-#: lib/page-settings/all-forms.php:87
+#: lib/page-settings/all-forms.php:91
 msgid "21px"
 msgstr "21px"
 
-#: lib/page-settings/all-forms.php:88
+#: lib/page-settings/all-forms.php:92
 msgid "22px"
 msgstr "22px"
 
-#: lib/page-settings/all-forms.php:90
+#: lib/page-settings/all-forms.php:94
 #: blocks/src/block/button-wrap/edit.js:126
 #: blocks/src/block/button/edit.js:129
 msgid "文字サイズ"
 msgstr "文字大小"
 
-#: lib/page-settings/all-forms.php:91
+#: lib/page-settings/all-forms.php:95
 msgid "サイト全体のフォントサイズを変更します。"
 msgstr "更改整个网站的字体大小。"
 
-#: lib/page-settings/all-forms.php:96
+#: lib/page-settings/all-forms.php:100
 msgid "サイト全体の文字色を変更します。"
 msgstr "更改整个网站的字体颜色。"
 
-#: lib/page-settings/all-forms.php:110
+#: lib/page-settings/all-forms.php:114
 msgid "モバイルサイトフォント"
 msgstr "移动端网站字体"
 
-#: lib/page-settings/all-forms.php:115
+#: lib/page-settings/all-forms.php:119
 msgid "モバイル端末でのフォントサイズを変更します（横幅が480px以下の端末）。"
 msgstr "更改移动设备上的字体大小（宽度小于480px的设备）。"
 
-#: lib/page-settings/all-forms.php:123
+#: lib/page-settings/all-forms.php:127
 msgid "文字の太さ"
 msgstr "字体粗细"
 
-#: lib/page-settings/all-forms.php:128
+#: lib/page-settings/all-forms.php:132
 msgid "font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありますので実際の太さを確認しながら設定してください。"
 msgstr "通过 font-weight 指定字体的粗细。字体粗细可以指定为“100（细）到900（粗）”。然而，并非所有字体都能细致设置粗细，因此请在实际确认字体效果后进行设置。"
 
-#: lib/page-settings/all-forms.php:137
+#: lib/page-settings/all-forms.php:141
 msgid "サイトアイコンフォント"
 msgstr "网站图标字体"
 
-#: lib/page-settings/all-forms.php:142
+#: lib/page-settings/all-forms.php:146
 msgid "Font Awesome 4"
 msgstr "Font Awesome 4"
 
-#: lib/page-settings/all-forms.php:143
+#: lib/page-settings/all-forms.php:147
 msgid "Font Awesome 5"
 msgstr "Font Awesome 5"
 
-#: lib/page-settings/all-forms.php:146
+#: lib/page-settings/all-forms.php:150
 msgid "サイト全体で使用するアイコンフォントを選択します。"
 msgstr "选择整个网站使用的图标字体。"
 
-#: lib/page-settings/all-forms.php:155
+#: lib/page-settings/all-forms.php:159
 msgid "サイト背景色"
 msgstr "网站背景色"
 
-#: lib/page-settings/all-forms.php:161
+#: lib/page-settings/all-forms.php:165
 msgid "サイト全体の背景色を選択します。"
 msgstr "选择整个网站的背景颜色。"
 
-#: lib/page-settings/all-forms.php:169
+#: lib/page-settings/all-forms.php:173
 msgid "サイト背景画像"
 msgstr "网站背景图片"
 
-#: lib/page-settings/all-forms.php:174
+#: lib/page-settings/all-forms.php:178
 msgid "サイト全体の背景画像を選択します。より詳細に背景画像を設定するには、当設定を無効にして、「外観→カスタマイズ」の「背景画像」設定から行ってください。"
 msgstr "选择整个网站的背景图片。要更详细地设置背景图片，请禁用此设置并从“外观→自定义”中的“背景图片”设置进行操作。"
 
-#: lib/page-settings/all-forms.php:182
+#: lib/page-settings/all-forms.php:186
 msgid "サイト幅の均一化"
 msgstr "统一网站宽度"
 
-#: lib/page-settings/all-forms.php:186
+#: lib/page-settings/all-forms.php:190
 msgid "サイト幅を揃える"
 msgstr "统一网站宽度"
 
-#: lib/page-settings/all-forms.php:187
+#: lib/page-settings/all-forms.php:191
 msgid "サイト全体の幅をコンテンツ幅で統一します。"
 msgstr "将整个网站的宽度统一为内容的宽度。"
 
-#: lib/page-settings/all-forms.php:196
+#: lib/page-settings/all-forms.php:200
 msgid "サイトリンク色"
 msgstr "网站链接颜色"
 
-#: lib/page-settings/all-forms.php:201
+#: lib/page-settings/all-forms.php:205
 msgid "リンク色"
 msgstr "链接颜色"
 
-#: lib/page-settings/all-forms.php:202
+#: lib/page-settings/all-forms.php:206
 msgid "サイトで利用されるリンク色を選択します。"
 msgstr "选择在网站上使用的链接颜色。"
 
-#: lib/page-settings/all-forms.php:210
+#: lib/page-settings/all-forms.php:214
 msgid "サイト選択文字色"
 msgstr "网站选中文字颜色"
 
-#: lib/page-settings/all-forms.php:215
+#: lib/page-settings/all-forms.php:219
 msgid "選択文字色"
 msgstr "选择文字颜色"
 
-#: lib/page-settings/all-forms.php:216
+#: lib/page-settings/all-forms.php:220
 msgid "サイト内のテキストを選択した際の文字色です。"
 msgstr "这是在网站中选择文本时的文字颜色。"
 
-#: lib/page-settings/all-forms.php:224
+#: lib/page-settings/all-forms.php:228
 msgid "サイト選択背景色"
 msgstr "网站选择背景色"
 
-#: lib/page-settings/all-forms.php:229
+#: lib/page-settings/all-forms.php:233
 msgid "選択文字背景色"
 msgstr "选择文字背景色"
 
-#: lib/page-settings/all-forms.php:230
+#: lib/page-settings/all-forms.php:234
 msgid "サイト内のテキストを選択した際の背景色です。"
 msgstr "这是在选择网站内的文本时的背景颜色。"
 
-#: lib/page-settings/all-forms.php:238
+#: lib/page-settings/all-forms.php:242
 msgid "サイドバーの位置"
 msgstr "侧边栏位置"
 
-#: lib/page-settings/all-forms.php:243
+#: lib/page-settings/all-forms.php:247
 msgid "サイドバー右"
 msgstr "侧边栏右侧"
 
-#: lib/page-settings/all-forms.php:244
+#: lib/page-settings/all-forms.php:248
 msgid "サイドバー左"
 msgstr "侧边栏左侧"
 
-#: lib/page-settings/all-forms.php:248
+#: lib/page-settings/all-forms.php:252
 msgid "サイドバーの表示位置の設定です。"
 msgstr "设置侧边栏的显示位置。"
 
-#: lib/page-settings/all-forms.php:256
+#: lib/page-settings/all-forms.php:260
 msgid "サイドバーの表示状態"
 msgstr "侧边栏显示状态"
 
-#: lib/page-settings/all-forms.php:261
+#: lib/page-settings/all-forms.php:265
 msgid "全てのページで表示"
 msgstr "显示在所有页面"
 
-#: lib/page-settings/all-forms.php:262
+#: lib/page-settings/all-forms.php:266
 msgid "全てのページで非表示"
 msgstr "隐藏在所有页面"
 
-#: lib/page-settings/all-forms.php:263
+#: lib/page-settings/all-forms.php:267
 msgid "フロントページで非表示"
 msgstr "隐藏在首页"
 
-#: lib/page-settings/all-forms.php:264
+#: lib/page-settings/all-forms.php:268
 msgid "インデックスページで非表示"
 msgstr "隐藏在索引页"
 
-#: lib/page-settings/all-forms.php:265
+#: lib/page-settings/all-forms.php:269
 msgid "固定ページで非表示"
 msgstr "隐藏在固定页面"
 
-#: lib/page-settings/all-forms.php:266
+#: lib/page-settings/all-forms.php:270
 msgid "投稿ページで非表示"
 msgstr "隐藏在文章页面"
 
-#: lib/page-settings/all-forms.php:267
+#: lib/page-settings/all-forms.php:271
 msgid "404ページで非表示"
 msgstr "隐藏在404页面"
 
-#: lib/page-settings/all-forms.php:271
+#: lib/page-settings/all-forms.php:275
 msgid "サイドバーを表示するページの設定です。"
 msgstr "设置显示侧边栏的页面。"
 
-#: lib/page-settings/all-forms.php:279
+#: lib/page-settings/all-forms.php:283
 msgid "ファビコン"
 msgstr "网站图标"
 
-#: lib/page-settings/all-forms.php:282
+#: lib/page-settings/all-forms.php:286
 msgid "ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイト基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は512×512 pxのPNG画像を推奨します。"
 msgstr "网站图标（Favicon）的设置，请通过管理界面的“外观 → 自定义 → 网站基本信息”中的“网站图标”设置进行。建议使用512×512像素的PNG图片。"
 
-#: lib/page-settings/all-forms.php:290
+#: lib/page-settings/all-forms.php:294
 msgid "サイトアイコン"
 msgstr "网站图标"
 
-#: lib/page-settings/all-forms.php:296
+#: lib/page-settings/all-forms.php:300
 msgid "サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイコンは正方形で、幅・高さともに 512 ピクセル以上である必要があります。"
 msgstr "网站图标将用作网站应用程序和浏览器的图标。图标应为正方形，且宽度和高度均应至少为512像素。"
 
-#: lib/page-settings/all-forms.php:304
+#: lib/page-settings/all-forms.php:308
 msgid "サムネイル表示"
 msgstr "缩略图显示"
 
-#: lib/page-settings/all-forms.php:308
+#: lib/page-settings/all-forms.php:312
 msgid "サイト全体のサムネイルを表示する"
 msgstr "显示整个网站的缩略图"
 
-#: lib/page-settings/all-forms.php:309
+#: lib/page-settings/all-forms.php:313
 msgid "サイト内のサムネイル画像の表示を切り替えます。文章メインのサイト用設定です。※ブログカードは何かしら画像が取得できるので表示します。"
 msgstr "切换网站内缩略图的显示。此设置主要用于以文章为主的网站。※博客卡片将显示能获取的任何图片。"
 
-#: lib/page-settings/all-forms.php:318
+#: lib/page-settings/all-forms.php:322
 msgid "日付フォーマット"
 msgstr "日期格式"
 
-#: lib/page-settings/all-forms.php:323
+#: lib/page-settings/all-forms.php:327
 msgid "テーマが使用する日付のフォーマット形式を入力してください（初期値：Y.m.d）。"
 msgstr "请为主题使用的日期格式输入格式（默认值：Y.m.d）。"
 
-#: lib/page-settings/all-forms.php:325
+#: lib/page-settings/all-forms.php:329
 msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
 msgstr "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日期和时间格式指南</a>"
 
-#: lib/page-settings/all-funcs.php:250
+#: lib/page-settings/all-funcs.php:255
 msgid "Y.m.d"
 msgstr "Y.m.d"
 
@@ -8907,6 +8916,7 @@ msgid "作者"
 msgstr "作者"
 
 #: lib/page-settings/skin-forms.php:88
+#: skins/raku-add-fadein/functions.php:317
 msgid "スキンを選択してください。"
 msgstr "请选择皮肤。"
 
@@ -11210,36 +11220,36 @@ msgstr "公开"
 msgid "記事を公開してもよろしいですか？"
 msgstr "确定要公开文章吗？"
 
-#: lib/utils.php:2503
+#: lib/utils.php:2508
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s 分"
 
-#: lib/utils.php:2511
+#: lib/utils.php:2516
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 
-#: lib/utils.php:2519
+#: lib/utils.php:2524
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 
-#: lib/utils.php:2527
+#: lib/utils.php:2532
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 
-#: lib/utils.php:2535
+#: lib/utils.php:2540
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s个月"
 
-#: lib/utils.php:2546
+#: lib/utils.php:2551
 msgid "%s年"
 msgstr ""
 
-#: lib/utils.php:2548
+#: lib/utils.php:2553
 msgid "%s年%sヶ月"
 msgstr "%s年%s个月"
 
@@ -12171,29 +12181,122 @@ msgstr "将正文标题设为明朝体"
 msgid "サイドバーの見出しを明朝体にする"
 msgstr "将侧边栏标题设为明朝体"
 
-#: skins/raku-add-fadein/functions.php:268
+#: skins/raku-add-fadein/functions.php:269
 msgid "ふわっとタイプ"
 msgstr "渐入类型"
 
-#: skins/raku-add-fadein/functions.php:290
+#: skins/raku-add-fadein/functions.php:273
+msgid "１．ふわっと"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:274
+msgid "２．下からふわっと"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:275
+msgid "３．メインは左から、サイドは右からふわっと"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:276
+msgid "４．ヘッダー部分は上から、メインは左から、サイドは右からふわっと"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:291
 msgid "表示スキン（ベース）"
 msgstr "显示皮肤（基础）"
 
-#: skins/raku-color-changing/functions.php:190
+#: skins/raku-add-fadein/functions.php:317
+msgid "こちらで選択したスキンが表示されます。"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:318
+msgid "※現在選択中の【%s】は動作を追加するものです"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:36
+#: skins/raku-color-changing/functions.php:37
+#: skins/raku-color-changing/functions.php:85
+#: skins/raku-color-changing/functions.php:87
+#: skins/raku-color-changing/functions.php:117
+#: skins/raku-color-changing/functions.php:147
+#: skins/raku-color-changing/functions.php:224
+#: skins/raku-color-changing/functions.php:246
+msgid "適応する"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:192
 msgid "スキンカラー"
 msgstr "皮肤颜色"
 
-#: skins/raku-color-changing/functions.php:203
+#: skins/raku-color-changing/functions.php:199
+msgid "4色 選択してください。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:205
 msgid "背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>"
 msgstr "背景动画<br><small>（所选4种颜色慢慢替换）</small>"
 
-#: skins/raku-color-changing/functions.php:218
+#: skins/raku-color-changing/functions.php:207
+msgid "【一通り変化するまでの時間】"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:208
+msgid "秒（1～120秒）"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:209
+msgid "時間を短くする程「早く」、長くする程「ゆっくり」変化します。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:210
+msgid "【不透明度】"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:212
+msgid "数字を小さくする程、透明になります。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:213
+msgid "透明にする程、【Cocoon設定 > 全体】の「サイト背景色」や「サイト背景画像」がより透けて見えます。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:214
+msgid "設定していない場合は単純に色が薄くなります。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:220
 msgid "記事内のタイトル<br><small>（選択した4色を順に適応する）</small>"
 msgstr "文章内标题<br><small>（依次应用所选4种颜色）</small>"
 
-#: skins/raku-color-changing/functions.php:240
+#: skins/raku-color-changing/functions.php:225
+#: skins/raku-color-changing/functions.php:247
+msgid "適応しない"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:231
+msgid "【不透明度（背景と線の色）】"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:233
+#: skins/raku-color-changing/functions.php:255
+msgid "数字を小さくする程、色が薄くなります。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:234
+msgid "【不透明度（H3タイトルの左側の線の色）】"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:236
+msgid " H3タイトルの左側の線だけ色が濃い方が綺麗なため、個別に設定できます。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:242
 msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適応する）</small>"
 msgstr "侧边栏内标题<br><small>（依次应用所选4种颜色）</small>"
+
+#: skins/raku-color-changing/functions.php:253
+msgid "【不透明度（背景色）】"
+msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:176
 msgid "skin-grayish: カスタマイズ"
