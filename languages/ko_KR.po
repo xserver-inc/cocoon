@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-18 03:00\n"
+"PO-Revision-Date: 2024-08-18 06:13\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12198,7 +12198,7 @@ msgstr "사이드바 내의 제모<br><small>(선택한 4개의 색상을 순서
 
 #: skins/skin-grayish-topfull/functions.php:176
 msgid "skin-grayish: カスタマイズ"
-msgstr ""
+msgstr "skin-grayish: 커스터마이즈"
 
 #: skins/skin-grayish-topfull/functions.php:184
 msgid "全体：英字フォント設定"
@@ -12210,7 +12210,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:200
 msgid "英字フォント設定 選択"
-msgstr ""
+msgstr "영어 폰트 설정 선택"
 
 #: skins/skin-grayish-topfull/functions.php:201
 msgid "ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。"
@@ -12218,12 +12218,12 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:201
 msgid "※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
-msgstr ""
+msgstr "※고정 페이지나 게시물의 콘텐츠는 제외합니다. '설정 없음’으로 하면 Cocoon 설정 > 전체 설정 > 사이트 폰트 설정을 계승합니다."
 
 #: skins/skin-grayish-topfull/functions.php:208
 #: skins/skin-grayish-topfull/functions.php:210
 msgid "（細タイプなし）"
-msgstr ""
+msgstr "(세부 유형 없음)"
 
 #: skins/skin-grayish-topfull/functions.php:213
 msgid "設定なし"
@@ -12282,7 +12282,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:409
 msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
-msgstr ""
+msgstr "사이트 로고 텍스트와 각 텍스트 링크의 호버 시 색상, <br>프론트 페이지의 NewPost 색상, <br>카테고리 제목 하단 밑줄, <br>사이드바 및 위젯 제목 하단 밑줄 색상, <br>푸터 내 액센트 선 색상을 변경합니다."
 
 #: skins/skin-grayish-topfull/functions.php:426
 msgid "メイン 薄い青色"
@@ -12290,7 +12290,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:427
 msgid "グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。"
-msgstr ""
+msgstr "글로벌 내비게이션의 3단계 배경색, <br>프론트 페이지의 More 버튼, 다음 페이지 버튼, 태그 클라우드의 호버 시 배경색."
 
 #: skins/skin-grayish-topfull/functions.php:444
 msgid "メイン 一番薄い青"
@@ -12306,7 +12306,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:463
 msgid "プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。"
-msgstr ""
+msgstr "프로필 이름, 게시물 날짜, 아이콘, 본문 목차의 상하 선, 목차 텍스트, SNS 공유, 팔로우, 어필 영역의 버튼 등."
 
 #: skins/skin-grayish-topfull/functions.php:480
 msgid "サブ もっと濃い青"
@@ -12431,11 +12431,11 @@ msgstr "Pinterest 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:822
 msgid "YouTube フォローボタンを表示"
-msgstr ""
+msgstr "YouTube 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:826
 msgid "LinkedIn フォローボタンを表示"
-msgstr ""
+msgstr "LinkedIn 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:830
 msgid "note フォローボタンを表示"
@@ -12443,7 +12443,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:834
 msgid "Flickr フォローボタンを表示"
-msgstr ""
+msgstr "Flickr 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:838
 msgid "Amazon欲しい物リスト フォローボタンを表示"
@@ -12451,7 +12451,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:842
 msgid "Twitch フォローボタンを表示"
-msgstr ""
+msgstr "Twitch 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:846
 msgid "楽天ROOM フォローボタンを表示"
@@ -12459,7 +12459,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:850
 msgid "Slack フォローボタンを表示"
-msgstr ""
+msgstr "Slack 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:854
 msgid "GitHub フォローボタンを表示"
@@ -12471,7 +12471,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:862
 msgid "TikTok フォローボタンを表示"
-msgstr ""
+msgstr "TikTok 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:866
 msgid "SoundCloud フォローボタンを表示"
@@ -12483,7 +12483,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:890
 msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
-msgstr ""
+msgstr "프로필 페이지에 URL을 입력한 경우, 글로벌 내비게이션에 팔로우 버튼을 표시합니다."
 
 #: skins/skin-grayish-topfull/functions.php:891
 msgid "※フロントページ以外のグローバルナビにも表示されます。"
@@ -12584,7 +12584,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1253
 msgid "※空欄の場合は\"Home\"が表示されます。"
-msgstr ""
+msgstr "※빈칸일 경우 \"Home\"이 표시됩니다."
 
 #: skins/skin-grayish-topfull/functions.php:1365
 msgid "フロントページ以外の設定:ヘッダー"
@@ -12596,7 +12596,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1381
 msgid "56px〜100pxの範囲で変更可能です。"
-msgstr ""
+msgstr "56px~100px 범위에서 변경할 수 있습니다."
 
 #: skins/skin-grayish-topfull/functions.php:1381
 msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
@@ -12744,7 +12744,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:26
 msgid "検索フォームを開く"
-msgstr ""
+msgstr "검색 폼을 열기"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:57
 #: tmp/sns-follow-buttons.php:33
