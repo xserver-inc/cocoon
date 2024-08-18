@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-17 12:10\n"
+"PO-Revision-Date: 2024-08-18 02:03\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12423,11 +12423,11 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:814
 msgid "Instagram フォローボタンを表示"
-msgstr ""
+msgstr "Instagram 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:818
 msgid "Pinterest フォローボタンを表示"
-msgstr ""
+msgstr "Pinterest 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:822
 msgid "YouTube フォローボタンを表示"
@@ -12858,7 +12858,7 @@ msgstr "로그아웃"
 #: skins/skin-made-in-heaven/lib/hook-wp.php:53
 #: skins/skin-made-in-heaven/lib/hook-wp.php:75
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
@@ -14089,7 +14089,7 @@ msgstr "모든 태그 표시"
 
 #: blocks/src/block/new-list/edit.js:247
 msgid "固定記事の表示"
-msgstr "고정 기사 표시"
+msgstr "고정 게시글 표시"
 
 #: blocks/src/block/new-list/edit.js:252
 #: blocks/src/block/popular-list/edit.js:286
