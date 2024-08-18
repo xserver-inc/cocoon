@@ -30,7 +30,7 @@ endif;
 
 if ( !function_exists( 'replace_value_to_class' ) ):
 function replace_value_to_class($value){
-  return str_replace('_', '-', $value);;
+  return strtolower(str_replace('_', '-', $value));
 }
 endif;
 

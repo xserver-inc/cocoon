@@ -68,8 +68,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                   // 'kokoro' => __( 'こころ明朝（WEBフォント）', THEME_NAME ),
                   'sawarabi_gothic' => __( 'さわらびゴシック（WEBフォント）', THEME_NAME ),
                   'sawarabi_mincho' => __( 'さわらび明朝（WEBフォント）', THEME_NAME ),
-                  '' => __( '指定なし', THEME_NAME ),
+                  // '' => __( '指定なし', THEME_NAME ),
                 );
+                if (is_wp_language_korean()) {
+                  $options['pretendard'] = __( 'Pretendard', THEME_NAME ).__( '（韓国語WEBフォント）', THEME_NAME );
+                }
+                $options[''] = __( '指定なし', THEME_NAME );
                 generate_selectbox_tag(OP_SITE_FONT_FAMILY, $options, get_site_font_family(), __( 'フォント', THEME_NAME ));
                 generate_tips_tag(__( 'サイト全体適用されるフォントを選択します。', THEME_NAME ));
 
