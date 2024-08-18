@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-18 08:49\n"
+"PO-Revision-Date: 2024-08-18 09:50\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -12479,7 +12479,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:870
 msgid "LINE フォローボタンを表示"
-msgstr ""
+msgstr "LINE 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:890
 msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
@@ -12491,7 +12491,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1137
 msgid "全体：テキスト変更"
-msgstr ""
+msgstr "전체 : 텍스트 변경"
 
 #: skins/skin-grayish-topfull/functions.php:1140
 msgid "テキスト変更についてはこちらを参照"
@@ -12628,7 +12628,7 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1863
 msgid "モバイル時のロゴを別画像にしたいとき設定します。"
-msgstr ""
+msgstr "모바일에서 로고를 다른 이미지로 변경하고 싶을 때 설정합니다."
 
 #: skins/skin-grayish-topfull/functions.php:2077
 msgid "サイトテキストグレー"
