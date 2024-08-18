@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-08-17T04:46:31+00:00\n"
-"PO-Revision-Date: 2024-08-18 02:03\n"
+"PO-Revision-Date: 2024-08-18 03:00\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -2149,7 +2149,7 @@ msgstr "수정일 설정"
 #: lib/custom-fields/update-field.php:40
 #: lib/custom-fields/update-field.php:43
 msgid "更新日時:"
-msgstr "수정일: "
+msgstr "수정일:"
 
 #: lib/custom-fields/update-field.php:40
 msgid "M j, Y @ H:i"
