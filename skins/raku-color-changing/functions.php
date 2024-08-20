@@ -28,13 +28,13 @@ class SkinRakuColorChanging {
         'article_h3' => '',
     ];
     private $duration = '';
-    private $side_title = '適応する';    // 適応する / 適応しない
-    private $article_title = '適応する'; // 適応する / 適応しない
+    private $side_title = '適用する';    // 適用する / 適用しない
+    private $article_title = '適用する'; // 適用する / 適用しない
 
     // コンストラクタ
     function __construct() {
-        $this->side_title = __('適応する', THEME_NAME);
-        $this->article_title = __('適応する', THEME_NAME);
+        $this->side_title = __('適用する', THEME_NAME);
+        $this->article_title = __('適用する', THEME_NAME);
         /*----------------------------------------------------
          色・フラグの保存
         ----------------------------------------------------*/
@@ -82,9 +82,9 @@ class SkinRakuColorChanging {
         $this->color['color4'] = get_theme_option(self::COLOR4, '#ff00ff');
         $this->opacity['bg'] = get_theme_option(self::OPACITY, '10'); // 不透明度（パーセント）
         $this->duration = get_theme_option(self::DURATION, '60');
-        $this->side_title = get_theme_option(self::SIDE_TITLE, __('適応する' , THEME_NAME));
+        $this->side_title = get_theme_option(self::SIDE_TITLE, __('適用する' , THEME_NAME));
         $this->opacity['side'] = get_theme_option(self::SIDE_OPACITY, '20'); // 不透明度（パーセント）
-        $this->article_title = get_theme_option(self::ARTICLE_TITLE, __('適応する' , THEME_NAME));
+        $this->article_title = get_theme_option(self::ARTICLE_TITLE, __('適用する' , THEME_NAME));
         $this->opacity['article'] = get_theme_option(self::ARTICLE_OPACITY, '20'); // 不透明度（パーセント）
         $this->opacity['article_h3'] = get_theme_option(self::ARTICLE_H3_OPACITY, '50'); // 不透明度（パーセント）
         /*----------------------------------------------------
@@ -114,7 +114,7 @@ class SkinRakuColorChanging {
         echo 'animation-duration: '.$this->duration.'s;';
         echo '}';
         // 記事内のタイトル
-        if($this->article_title === __('適応する' , THEME_NAME)) {
+        if($this->article_title === __('適用する' , THEME_NAME)) {
             // h2
             echo '.article h2:nth-of-type(4n+1) { background: '.$this->color_code('color1', 'article').'; }';
             echo '.article h2:nth-of-type(4n+2) { background: '.$this->color_code('color2', 'article').'; }';
@@ -144,7 +144,7 @@ class SkinRakuColorChanging {
             echo '.article h4.skincolor4:nth-of-type(n), .article h5.skincolor4:nth-of-type(n), .article h6.skincolor4:nth-of-type(n) { border-color: '.$this->color_code('color4', 'article').'; }';
         }
         // サイドバーのタイトル
-        if($this->side_title === __('適応する' , THEME_NAME)) {
+        if($this->side_title === __('適用する' , THEME_NAME)) {
             // sidebar
             echo '.widget-sidebar .widget-sidebar-title.skincolor1 { background: '.$this->color_code('color1', 'side').'; }';
             echo '.widget-sidebar .widget-sidebar-title.skincolor2 { background: '.$this->color_code('color2', 'side').'; }';
@@ -217,12 +217,12 @@ class SkinRakuColorChanging {
     「記事内のタイトルに色を適応させるかどうか」用HTMLを作成
     ----------------------------------------------------*/
     tr_setting += '<tr>';
-    tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('記事内のタイトル<br><small>（選択した4色を順に適応する）</small>', THEME_NAME) ); ?></th>';
+    tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('記事内のタイトル<br><small>（選択した4色を順に適用する）</small>', THEME_NAME) ); ?></th>';
     tr_setting += '<td><ul>';
     <?php
     $on_off_article_title = [
-        self::ARTICLE_TITLE.'1' => __('適応する' , THEME_NAME),
-        self::ARTICLE_TITLE.'2' => __('適応しない' , THEME_NAME),
+        self::ARTICLE_TITLE.'1' => __('適用する' , THEME_NAME),
+        self::ARTICLE_TITLE.'2' => __('適用しない' , THEME_NAME),
     ];
     foreach ($on_off_article_title as $id => $val) : ?>
     tr_setting += '<li><input type="radio" name="<?=self::ARTICLE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php the_checkbox_checked($val, $this->article_title); ?>><label for="<?=$id?>"><?=$val?></label></li>';
@@ -239,12 +239,12 @@ class SkinRakuColorChanging {
      「サイドバーのタイトルに色を適応させるかどうか」用HTMLを作成
     ----------------------------------------------------*/
     tr_setting += '<tr>';
-    tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('サイドバー内のタイトル<br><small>（選択した4色を順に適応する）</small>', THEME_NAME) ); ?></th>';
+    tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('サイドバー内のタイトル<br><small>（選択した4色を順に適用する）</small>', THEME_NAME) ); ?></th>';
     tr_setting += '<td><ul>';
     <?php
     $on_off_side_title = [
-        self::SIDE_TITLE.'1' => __('適応する' , THEME_NAME),
-        self::SIDE_TITLE.'2' => __('適応しない' , THEME_NAME),
+        self::SIDE_TITLE.'1' => __('適用する' , THEME_NAME),
+        self::SIDE_TITLE.'2' => __('適用しない' , THEME_NAME),
     ];
     foreach ($on_off_side_title as $id => $val) : ?>
     tr_setting += '<li><input type="radio" name="<?=self::SIDE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php the_checkbox_checked($val, $this->side_title); ?>><label for="<?=$id?>"><?=$val?></label></li>';
