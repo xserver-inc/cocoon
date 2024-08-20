@@ -1728,6 +1728,9 @@ function get_site_font_source_family(){
     case 'sawarabi_mincho':
       $font_source_family = 'Sawarabi+Mincho';
       break;
+    case 'noto_sans_korean':
+      $font_source_family = 'Noto+Sans+KR';
+      break;
     default:
     $font_source_family = null;
       break;
@@ -1741,16 +1744,16 @@ if ( !function_exists( 'get_site_font_source_weight' ) ):
 function get_site_font_source_weight(){
   switch (get_site_font_family()) {
     case 'noto_sans_jp':
-      $font_source_weight = ':100,300,400,500,700,900';
+      $font_source_weight = ':wght@100..900';
       break;
     case 'noto_serif_jp':
-      $font_source_weight = ':200,300,400,500,600,700,900';
+      $font_source_weight = ':wght@200..900';
       break;
     case 'mplus_1p':
-      $font_source_weight = ':100,300,400,500,700,800,900';
+      $font_source_weight = ':wght@100;300;400;500;700;800;900';
       break;
     case 'rounded_mplus_1c':
-      $font_source_weight = ':100,300,400,500,700,800,900';
+      $font_source_weight = ':wght@100;300;400;500;700;800;900';
       break;
     case 'kosugi':
       $font_source_weight = '';
@@ -1763,6 +1766,9 @@ function get_site_font_source_weight(){
       break;
     case 'sawarabi_mincho':
       $font_source_weight = '';
+      break;
+    case 'noto_sans_korean':
+      $font_source_weight = ':wght@100..900';
       break;
     default:
     $font_source_weight = null;
