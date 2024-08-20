@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-18T11:02:27+00:00\n"
+"POT-Creation-Date: 2024-08-20T09:49:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -1504,7 +1504,7 @@ msgstr ""
 #: lib/block-editor-styles-list.php:25
 #: lib/block-editor-styles-paragraph.php:25
 #: lib/content-category.php:227
-#: lib/page-settings/all-forms.php:164
+#: lib/page-settings/all-forms.php:165
 #: lib/page-settings/appeal-forms.php:90
 #: lib/page-settings/buttons-forms.php:83
 #: lib/page-settings/editor-forms.php:70
@@ -1592,7 +1592,7 @@ msgid "カテゴリーの色を指定します。"
 msgstr ""
 
 #: lib/content-category.php:236
-#: lib/page-settings/all-forms.php:98
+#: lib/page-settings/all-forms.php:99
 #: lib/page-settings/buttons-forms.php:86
 #: lib/page-settings/editor-forms.php:74
 #: blocks/src/block-universal/caption-box/edit.js:147
@@ -4592,269 +4592,274 @@ msgid "さわらび明朝（WEBフォント）"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:74
-msgid "Pretendard"
+msgid "Noto Sans Korean"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:74
+#: lib/page-settings/all-forms.php:75
 msgid "（韓国語WEBフォント）"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:76
-msgid "指定なし"
+#: lib/page-settings/all-forms.php:75
+msgid "Pretendard"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:77
+msgid "指定なし"
+msgstr ""
+
+#: lib/page-settings/all-forms.php:78
 #: skins/nagi/nagi-customizer.php:412
 msgid "フォント"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:78
+#: lib/page-settings/all-forms.php:79
 msgid "サイト全体適用されるフォントを選択します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:82
+#: lib/page-settings/all-forms.php:83
 msgid "12px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:83
+#: lib/page-settings/all-forms.php:84
 msgid "13px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:84
+#: lib/page-settings/all-forms.php:85
 msgid "14px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:85
+#: lib/page-settings/all-forms.php:86
 msgid "15px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:86
+#: lib/page-settings/all-forms.php:87
 msgid "16px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:87
+#: lib/page-settings/all-forms.php:88
 msgid "17px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:88
+#: lib/page-settings/all-forms.php:89
 msgid "18px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:89
+#: lib/page-settings/all-forms.php:90
 msgid "19px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:90
+#: lib/page-settings/all-forms.php:91
 msgid "20px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:91
+#: lib/page-settings/all-forms.php:92
 msgid "21px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:92
+#: lib/page-settings/all-forms.php:93
 msgid "22px"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:94
+#: lib/page-settings/all-forms.php:95
 #: blocks/src/block/button-wrap/edit.js:126
 #: blocks/src/block/button/edit.js:129
 msgid "文字サイズ"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:95
+#: lib/page-settings/all-forms.php:96
 msgid "サイト全体のフォントサイズを変更します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:100
+#: lib/page-settings/all-forms.php:101
 msgid "サイト全体の文字色を変更します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:114
+#: lib/page-settings/all-forms.php:115
 msgid "モバイルサイトフォント"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:119
+#: lib/page-settings/all-forms.php:120
 msgid "モバイル端末でのフォントサイズを変更します（横幅が480px以下の端末）。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:127
+#: lib/page-settings/all-forms.php:128
 msgid "文字の太さ"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:132
+#: lib/page-settings/all-forms.php:133
 msgid "font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありますので実際の太さを確認しながら設定してください。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:141
+#: lib/page-settings/all-forms.php:142
 msgid "サイトアイコンフォント"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:146
+#: lib/page-settings/all-forms.php:147
 msgid "Font Awesome 4"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:147
+#: lib/page-settings/all-forms.php:148
 msgid "Font Awesome 5"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:150
+#: lib/page-settings/all-forms.php:151
 msgid "サイト全体で使用するアイコンフォントを選択します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:159
+#: lib/page-settings/all-forms.php:160
 msgid "サイト背景色"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:165
+#: lib/page-settings/all-forms.php:166
 msgid "サイト全体の背景色を選択します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:173
+#: lib/page-settings/all-forms.php:174
 msgid "サイト背景画像"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:178
+#: lib/page-settings/all-forms.php:179
 msgid "サイト全体の背景画像を選択します。より詳細に背景画像を設定するには、当設定を無効にして、「外観→カスタマイズ」の「背景画像」設定から行ってください。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:186
+#: lib/page-settings/all-forms.php:187
 msgid "サイト幅の均一化"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:190
+#: lib/page-settings/all-forms.php:191
 msgid "サイト幅を揃える"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:191
+#: lib/page-settings/all-forms.php:192
 msgid "サイト全体の幅をコンテンツ幅で統一します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:200
+#: lib/page-settings/all-forms.php:201
 msgid "サイトリンク色"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:205
+#: lib/page-settings/all-forms.php:206
 msgid "リンク色"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:206
+#: lib/page-settings/all-forms.php:207
 msgid "サイトで利用されるリンク色を選択します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:214
+#: lib/page-settings/all-forms.php:215
 msgid "サイト選択文字色"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:219
+#: lib/page-settings/all-forms.php:220
 msgid "選択文字色"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:220
+#: lib/page-settings/all-forms.php:221
 msgid "サイト内のテキストを選択した際の文字色です。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:228
+#: lib/page-settings/all-forms.php:229
 msgid "サイト選択背景色"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:233
+#: lib/page-settings/all-forms.php:234
 msgid "選択文字背景色"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:234
+#: lib/page-settings/all-forms.php:235
 msgid "サイト内のテキストを選択した際の背景色です。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:242
+#: lib/page-settings/all-forms.php:243
 msgid "サイドバーの位置"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:247
+#: lib/page-settings/all-forms.php:248
 msgid "サイドバー右"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:248
+#: lib/page-settings/all-forms.php:249
 msgid "サイドバー左"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:252
+#: lib/page-settings/all-forms.php:253
 msgid "サイドバーの表示位置の設定です。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:260
+#: lib/page-settings/all-forms.php:261
 msgid "サイドバーの表示状態"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:265
+#: lib/page-settings/all-forms.php:266
 msgid "全てのページで表示"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:266
+#: lib/page-settings/all-forms.php:267
 msgid "全てのページで非表示"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:267
+#: lib/page-settings/all-forms.php:268
 msgid "フロントページで非表示"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:268
+#: lib/page-settings/all-forms.php:269
 msgid "インデックスページで非表示"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:269
+#: lib/page-settings/all-forms.php:270
 msgid "固定ページで非表示"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:270
+#: lib/page-settings/all-forms.php:271
 msgid "投稿ページで非表示"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:271
+#: lib/page-settings/all-forms.php:272
 msgid "404ページで非表示"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:275
+#: lib/page-settings/all-forms.php:276
 msgid "サイドバーを表示するページの設定です。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:283
+#: lib/page-settings/all-forms.php:284
 msgid "ファビコン"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:286
+#: lib/page-settings/all-forms.php:287
 msgid "ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイト基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は512×512 pxのPNG画像を推奨します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:294
+#: lib/page-settings/all-forms.php:295
 msgid "サイトアイコン"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:300
+#: lib/page-settings/all-forms.php:301
 msgid "サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイコンは正方形で、幅・高さともに 512 ピクセル以上である必要があります。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:308
+#: lib/page-settings/all-forms.php:309
 msgid "サムネイル表示"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:312
+#: lib/page-settings/all-forms.php:313
 msgid "サイト全体のサムネイルを表示する"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:313
+#: lib/page-settings/all-forms.php:314
 msgid "サイト内のサムネイル画像の表示を切り替えます。文章メインのサイト用設定です。※ブログカードは何かしら画像が取得できるので表示します。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:322
+#: lib/page-settings/all-forms.php:323
 msgid "日付フォーマット"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:327
+#: lib/page-settings/all-forms.php:328
 msgid "テーマが使用する日付のフォーマット形式を入力してください（初期値：Y.m.d）。"
 msgstr ""
 
-#: lib/page-settings/all-forms.php:329
+#: lib/page-settings/all-forms.php:330
 msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
 msgstr ""
 
@@ -11218,41 +11223,41 @@ msgstr ""
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:2508
+#: lib/utils.php:2514
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2516
+#: lib/utils.php:2522
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2524
+#: lib/utils.php:2530
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2532
+#: lib/utils.php:2538
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2540
+#: lib/utils.php:2546
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2551
+#: lib/utils.php:2557
 msgid "%s年"
 msgstr ""
 
-#: lib/utils.php:2553
+#: lib/utils.php:2559
 msgid "%s年%sヶ月"
 msgstr ""
 
