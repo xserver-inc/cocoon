@@ -71,6 +71,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                   // '' => __( '指定なし', THEME_NAME ),
                 );
                 if (is_wp_language_korean()) {
+                  $options['noto_sans_korean'] = __( 'Noto Sans Korean', THEME_NAME ).__( '（韓国語WEBフォント）', THEME_NAME );
                   $options['pretendard'] = __( 'Pretendard', THEME_NAME ).__( '（韓国語WEBフォント）', THEME_NAME );
                 }
                 $options[''] = __( '指定なし', THEME_NAME );

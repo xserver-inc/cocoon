@@ -1050,6 +1050,11 @@ body.wp-admin {
 .admin-settings .demo .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho", sans-serif;
 }
+.admin-settings .demo .ff-noto-sans-korean,
+.admin-settings .demo .wf-active .ff-noto-sans-korean,
+.admin-settings .demo .wp-admin-ff-noto-sans-korean .editor-styles-wrapper {
+  font-family: "Noto Sans KR", sans-serif;
+}
 .admin-settings .demo .ff-pretendard,
 .admin-settings .demo .wf-active .ff-pretendard,
 .admin-settings .demo .wp-admin-ff-pretendard .editor-styles-wrapper {
@@ -9552,6 +9557,11 @@ body.wp-admin {
 .admin-settings .demo .wf-active .ff-sawarabi-mincho,
 .admin-settings .demo .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho", sans-serif;
+}
+.admin-settings .demo .ff-noto-sans-korean,
+.admin-settings .demo .wf-active .ff-noto-sans-korean,
+.admin-settings .demo .wp-admin-ff-noto-sans-korean .editor-styles-wrapper {
+  font-family: "Noto Sans KR", sans-serif;
 }
 .admin-settings .demo .ff-pretendard,
 .admin-settings .demo .wf-active .ff-pretendard,
@@ -23766,6 +23776,11 @@ textarea[name=the_page_memo] {
 .components-popover__content .wf-active .ff-sawarabi-mincho,
 .components-popover__content .wp-admin-ff-sawarabi-mincho .editor-styles-wrapper {
   font-family: "Sawarabi Mincho", sans-serif;
+}
+.components-popover__content .ff-noto-sans-korean,
+.components-popover__content .wf-active .ff-noto-sans-korean,
+.components-popover__content .wp-admin-ff-noto-sans-korean .editor-styles-wrapper {
+  font-family: "Noto Sans KR", sans-serif;
 }
 .components-popover__content .ff-pretendard,
 .components-popover__content .wf-active .ff-pretendard,
