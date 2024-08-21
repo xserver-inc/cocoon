@@ -371,7 +371,7 @@ function get_toc_expanded_content(){
       $the_content = get_the_content();
     }
     $the_content = get_shortcode_removed_content($the_content);
-    if (!!is_classicpress()) {
+    if (!is_classicpress()) {
       $the_content = do_blocks($the_content);
     }
     $the_content = do_shortcode($the_content);
