@@ -247,6 +247,7 @@ function function_text_shortcode($atts) {
       //無限ループ要素の除去
       //$shortcode = get_function_text_shortcode($id);
       $template = preg_replace('{\['.TEMPLATE_SHORTCODE.'[^\]]*?id=[\'"]?'.$id.'[\'"]?[^\]]*?\]}i', '', $recode->text);
+      $template = str_replace('[toc]', '', $recode->text);
       //余計な改行を取り除く
       $template = shortcode_unautop($template);
 
