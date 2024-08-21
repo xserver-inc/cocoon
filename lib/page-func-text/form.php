@@ -34,7 +34,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   echo '<h2>'.__( '内容', THEME_NAME ).'</h2>';
 
   generate_visuel_editor_tag('text', $text,  'func-text');
-  generate_tips_tag(__( '関数化するテキストを入力してください。', THEME_NAME ).__( '無限ループを避けるため、テンプレート内にtemp, tocショートコードが使用されている場合は、削除されます。', THEME_NAME ));
+  generate_tips_tag(__( '関数化するテキストを入力してください。', THEME_NAME ).__( '無限ループを避けるため、テンプレート内にtemp, tocショートコードが使用されている場合は、出力時に削除されます。', THEME_NAME ));
 
   //TinyMCE表示
   generate_checkbox_tag('visible' , $visible, __( 'エディターのリストに表示', THEME_NAME ));
