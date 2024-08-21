@@ -32,12 +32,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   generate_tips_tag(__( '表示ラベルとなるタイトルを入力してください。タイトルは一覧表示用です。', THEME_NAME ));
 
   echo '<h2>'.__( '内容', THEME_NAME ).'</h2>';
-  //_v($_POST);
+
   generate_visuel_editor_tag('text', $text,  'func-text');
-  // $editor_id = 'func-text'; //エディターを区別するために、IDを指定する
-  // $settings = array( 'textarea_name' => 'text' ); //配列としてデータを渡すためname属性を指定する
-  // wp_editor( $text, $editor_id, $settings );
-  generate_tips_tag(__( '関数化するテキストを入力してください。', THEME_NAME ));
+  generate_tips_tag(__( '関数化するテキストを入力してください。', THEME_NAME ).__( '無限ループを避けるため、テンプレート内にtemp, tocショートコードが使用されている場合は、削除されます。', THEME_NAME ));
 
   //TinyMCE表示
   generate_checkbox_tag('visible' , $visible, __( 'エディターのリストに表示', THEME_NAME ));
