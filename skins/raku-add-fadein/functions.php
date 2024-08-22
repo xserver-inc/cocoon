@@ -279,7 +279,7 @@ class SkinRaku {
         tr_fadein += '<li><input type="radio" name="<?=self::FADEIN_TYPE_OPTION_NAME?>" id="<?=$id?>" value="<?=$id?>" <?php the_checkbox_checked($id, $this->fadein_type); ?>><label for="<?=$id?>"><?=$type?></label></li>';
         <?php endforeach; ?>
         tr_fadein += '</ul>';
-        tr_fadein += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> '.__('ふわっとのタイプを選択してください。' , THEME_NAME).'<br>'.__('（詳しくは実際にご確認ください）' , THEME_NAME).'</p>';
+        tr_fadein += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('ふわっとのタイプを選択してください。', THEME_NAME); ?><br><?php _e('（詳しくは実際にご確認ください）', THEME_NAME); ?></p>';
         tr_fadein += '</td></tr>';
         // 追加
         skin_url_list.closest('tr').after(tr_fadein);
