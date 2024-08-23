@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-22T10:33:51+00:00\n"
+"POT-Creation-Date: 2024-08-23T07:23:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -1856,7 +1856,7 @@ msgstr ""
 #: lib/custom-fields/page-field.php:34
 #: lib/custom-fields/page-field.php:47
 #: lib/page-settings/comment-forms.php:43
-#: lib/page-settings/single-forms.php:327
+#: lib/page-settings/single-forms.php:326
 #: lib/page-speech-balloon/form.php:90
 #: lib/settings.php:553
 #: blocks/src/block-extension/style-extension/border01.js:42
@@ -2009,40 +2009,38 @@ msgid "テレビ、ラジオ、ビデオゲームなどのメディアシーズ�
 msgstr ""
 
 #: lib/custom-fields/review-field.php:47
-msgid ""
-"メディア出版物（書籍や定期刊行物、テレビ、ラジオ、ゲームなど）\n"
-"    "
+msgid "メディア出版物（書籍や定期刊行物、テレビ、ラジオ、ゲームなど）"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:49
+#: lib/custom-fields/review-field.php:48
 msgid "シリーズもののエピソード（テレビ、ラジオ、ビデオゲームなど）"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:50
+#: lib/custom-fields/review-field.php:49
 msgid "ダウンロードデータ（画像、ビデオ、オーディオなど）"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:51
+#: lib/custom-fields/review-field.php:50
 msgid "学校、NGO、企業、クラブなどの組織"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:54
+#: lib/custom-fields/review-field.php:53
 msgid "レビュー対象となるschema typeを入力。※必須"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:58
+#: lib/custom-fields/review-field.php:57
 msgid "レビュー対象名"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:60
+#: lib/custom-fields/review-field.php:59
 msgid "レビュー対象名を入力。※必須"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:67
+#: lib/custom-fields/review-field.php:66
 msgid "レビュー評価"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:69
+#: lib/custom-fields/review-field.php:68
 msgid "0から5の範囲で評価を入力。"
 msgstr ""
 
@@ -3255,7 +3253,7 @@ msgstr ""
 #: lib/page-settings/recommended-forms.php:19
 #: lib/page-settings/single-forms.php:25
 #: lib/page-settings/single-forms.php:95
-#: lib/page-settings/single-forms.php:293
+#: lib/page-settings/single-forms.php:292
 #: lib/page-settings/skin-forms.php:18
 #: lib/page-settings/sns-follow-forms.php:23
 #: lib/page-settings/sns-share-forms-bottom.php:21
@@ -3794,7 +3792,7 @@ msgstr ""
 
 #: lib/page-settings/admin-forms.php:108
 #: lib/page-settings/page-forms.php:27
-#: lib/page-settings/single-forms.php:408
+#: lib/page-settings/single-forms.php:407
 msgid "コメントを表示する"
 msgstr ""
 
@@ -3865,7 +3863,7 @@ msgstr ""
 #: lib/page-settings/page-forms.php:56
 #: lib/page-settings/recommended-forms.php:39
 #: lib/page-settings/seo-forms.php:158
-#: lib/page-settings/single-forms.php:437
+#: lib/page-settings/single-forms.php:436
 #: lib/page-settings/toc-forms.php:160
 msgid "表示しない"
 msgstr ""
@@ -4241,7 +4239,7 @@ msgid "本文中"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:200
-#: lib/page-settings/single-forms.php:344
+#: lib/page-settings/single-forms.php:343
 msgid "本文下"
 msgstr ""
 
@@ -4409,8 +4407,8 @@ msgid "「PR表記」を非表示にする投稿・固定ページのIDを,（�
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:366
-#: lib/page-settings/index-forms.php:242
-#: lib/page-settings/single-forms.php:366
+#: lib/page-settings/index-forms.php:241
+#: lib/page-settings/single-forms.php:365
 msgid "除外カテゴリー"
 msgstr ""
 
@@ -5974,7 +5972,7 @@ msgstr ""
 
 #: lib/page-settings/carousel-forms.php:76
 #: lib/page-settings/single-forms.php:129
-#: lib/page-settings/single-forms.php:358
+#: lib/page-settings/single-forms.php:357
 #: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:130
 #: lib/page-settings/sns-share-forms-top.php:117
@@ -6274,7 +6272,7 @@ msgstr ""
 
 #: lib/page-settings/comment-forms.php:13
 #: lib/page-settings/page-forms.php:13
-#: lib/page-settings/single-forms.php:394
+#: lib/page-settings/single-forms.php:393
 msgid "コメント設定"
 msgstr ""
 
@@ -6283,7 +6281,7 @@ msgid "コメント一覧や入力欄のみタグに関する設定です。"
 msgstr ""
 
 #: lib/page-settings/comment-forms.php:30
-#: lib/page-settings/single-forms.php:301
+#: lib/page-settings/single-forms.php:300
 msgid "デモはランダム表示です。"
 msgstr ""
 
@@ -6628,20 +6626,20 @@ msgid "投稿関連情報"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:353
-#: lib/page-settings/index-forms.php:216
-#: lib/page-settings/single-forms.php:253
+#: lib/page-settings/index-forms.php:215
+#: lib/page-settings/single-forms.php:252
 msgid "投稿日の表示"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:355
-#: lib/page-settings/index-forms.php:226
-#: lib/page-settings/single-forms.php:263
+#: lib/page-settings/index-forms.php:225
+#: lib/page-settings/single-forms.php:262
 msgid "更新日の表示"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:357
-#: lib/page-settings/index-forms.php:229
-#: lib/page-settings/single-forms.php:266
+#: lib/page-settings/index-forms.php:228
+#: lib/page-settings/single-forms.php:265
 msgid "投稿者名の表示"
 msgstr ""
 
@@ -7701,48 +7699,46 @@ msgid "自動生成抜粋文字数"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:182
-msgid ""
-"「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を\n"
-"              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
+msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:191
+#: lib/page-settings/index-forms.php:190
 msgid "省略文字列"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:195
+#: lib/page-settings/index-forms.php:194
 #: lib/page-settings/index-funcs.php:204
 msgid "..."
 msgstr ""
 
-#: lib/page-settings/index-forms.php:196
+#: lib/page-settings/index-forms.php:195
 msgid "「自動生成抜粋文字数」を自動抜粋文が超えたときに表示する省略を表す文字を入力してください。"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:205
-#: lib/page-settings/single-forms.php:242
+#: lib/page-settings/index-forms.php:204
+#: lib/page-settings/single-forms.php:241
 msgid "投稿関連情報の表示"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:209
-#: lib/page-settings/single-forms.php:246
+#: lib/page-settings/index-forms.php:208
+#: lib/page-settings/single-forms.php:245
 msgid "スニペット（抜粋）の表示"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:213
-#: lib/page-settings/single-forms.php:250
+#: lib/page-settings/index-forms.php:212
+#: lib/page-settings/single-forms.php:249
 msgid "スマホ端末でスニペットを表示（480px以下）"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:232
+#: lib/page-settings/index-forms.php:231
 msgid "コメント数の表示"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:234
+#: lib/page-settings/index-forms.php:233
 msgid "インデックスページのエントリーカードに投稿関連情報を表示するかどうか。"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:247
+#: lib/page-settings/index-forms.php:246
 msgid "アーカイブ（インデックスリスト・新着関連記事ウィジェット等）に表示させたくないカテゴリーを選択してください。"
 msgstr ""
 
@@ -8139,8 +8135,8 @@ msgstr ""
 
 #: lib/page-settings/page-forms.php:23
 #: lib/page-settings/single-forms.php:111
-#: lib/page-settings/single-forms.php:309
-#: lib/page-settings/single-forms.php:404
+#: lib/page-settings/single-forms.php:308
+#: lib/page-settings/single-forms.php:403
 msgid "表示"
 msgstr ""
 
@@ -8149,7 +8145,7 @@ msgid "固定ページにコメントを表示するか。"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:41
-#: lib/page-settings/single-forms.php:422
+#: lib/page-settings/single-forms.php:421
 msgid "パンくずリスト設定"
 msgstr ""
 
@@ -8158,27 +8154,27 @@ msgid "固定ページのパンくずリスト設定です。"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:51
-#: lib/page-settings/single-forms.php:432
+#: lib/page-settings/single-forms.php:431
 msgid "パンくずリストの配置"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:57
-#: lib/page-settings/single-forms.php:438
+#: lib/page-settings/single-forms.php:437
 msgid "メインカラム手前"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:58
-#: lib/page-settings/single-forms.php:439
+#: lib/page-settings/single-forms.php:438
 msgid "メインカラムトップ"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:59
-#: lib/page-settings/single-forms.php:440
+#: lib/page-settings/single-forms.php:439
 msgid "メインカラムボトム（デフォルト）"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:60
-#: lib/page-settings/single-forms.php:441
+#: lib/page-settings/single-forms.php:440
 msgid "フッター手前"
 msgstr ""
 
@@ -8187,12 +8183,12 @@ msgid "固定ページのパンくずリスト表示位置を設定します。"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:71
-#: lib/page-settings/single-forms.php:452
+#: lib/page-settings/single-forms.php:451
 msgid "記事タイトル"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:75
-#: lib/page-settings/single-forms.php:456
+#: lib/page-settings/single-forms.php:455
 msgid "パンくずリストに記事タイトルを含める"
 msgstr ""
 
@@ -8716,7 +8712,7 @@ msgid "関連記事の補助となる見出しを入力してください。"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:156
-#: lib/page-settings/single-forms.php:322
+#: lib/page-settings/single-forms.php:321
 #: lib/widgets/navi-entries.php:122
 #: lib/widgets/new-entries.php:192
 #: lib/widgets/popular-entries.php:189
@@ -8806,102 +8802,100 @@ msgid "最大自動生成抜粋文字数"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:232
-msgid ""
-"「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を\n"
-"              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
+msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:267
+#: lib/page-settings/single-forms.php:266
 msgid "投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:280
+#: lib/page-settings/single-forms.php:279
 msgid "ページ送りナビ設定"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:283
+#: lib/page-settings/single-forms.php:282
 msgid "[前ページ][次ページ]へと送るナビゲーションの設定です。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:313
+#: lib/page-settings/single-forms.php:312
 msgid "ページ送りナビを表示する"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:314
+#: lib/page-settings/single-forms.php:313
 msgid "[前ページ][次ページ]ナビを表示するか。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:328
+#: lib/page-settings/single-forms.php:327
 msgid "サムネイル正方形"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:331
+#: lib/page-settings/single-forms.php:330
 msgid "ページ送りナビの見た目を変更します。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:339
+#: lib/page-settings/single-forms.php:338
 msgid "表示位置"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:345
+#: lib/page-settings/single-forms.php:344
 msgid "関連記事上"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:346
+#: lib/page-settings/single-forms.php:345
 msgid "関連記事下（デフォルト）"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:347
+#: lib/page-settings/single-forms.php:346
 msgid "コメント下"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:350
+#: lib/page-settings/single-forms.php:349
 msgid "ページ送りナビを表示する位置を変更します。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:362
+#: lib/page-settings/single-forms.php:361
 msgid "同一カテゴリーのものを表示する"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:363
+#: lib/page-settings/single-forms.php:362
 msgid "投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリーが設定してある場合は、複数に属するものが表示されます。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:368
+#: lib/page-settings/single-forms.php:367
 msgid "ページ送りナビに表示させないカテゴリーを選択してください。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:376
+#: lib/page-settings/single-forms.php:375
 #: lib/widgets/info-list.php:143
 #: blocks/src/block/info-list/edit.js:102
 msgid "枠線表示"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:380
+#: lib/page-settings/single-forms.php:379
 msgid "ページ送りナビの枠線を表示する"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:381
+#: lib/page-settings/single-forms.php:380
 msgid "ページ送りナビを囲む枠線を表示するか。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:397
+#: lib/page-settings/single-forms.php:396
 msgid "投稿のコメント表示設定です。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:409
+#: lib/page-settings/single-forms.php:408
 msgid "投稿ページにコメントを表示するか。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:425
+#: lib/page-settings/single-forms.php:424
 msgid "投稿のパンくずリスト設定です。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:444
+#: lib/page-settings/single-forms.php:443
 msgid "投稿のパンくずリスト表示位置を設定します。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:457
+#: lib/page-settings/single-forms.php:456
 msgid "投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか切り替えます。"
 msgstr ""
 
