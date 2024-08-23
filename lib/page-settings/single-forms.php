@@ -229,8 +229,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_number_tag(OP_RELATED_EXCERPT_MAX_LENGTH,  get_related_excerpt_max_length(), 120, 0, 500);
-            generate_tips_tag(__( '「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を
-              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）', THEME_NAME ));
+            generate_tips_tag(__( '「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）', THEME_NAME ));
             ?>
           </td>
         </tr>
