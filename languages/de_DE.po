@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-20T11:08:45+00:00\n"
-"PO-Revision-Date: 2024-08-21 07:42\n"
+"POT-Creation-Date: 2024-08-23T07:23:26+00:00\n"
+"PO-Revision-Date: 2024-08-23 07:34\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1183,7 +1183,7 @@ msgid "あわせて読みたい"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1074
+#: lib/shortcodes.php:1075
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -1276,7 +1276,7 @@ msgid "ダッシュボード"
 msgstr ""
 
 #: lib/admin.php:375
-#: lib/shortcodes.php:496
+#: lib/shortcodes.php:498
 msgid "投稿一覧"
 msgstr ""
 
@@ -1863,7 +1863,7 @@ msgstr ""
 #: lib/custom-fields/page-field.php:34
 #: lib/custom-fields/page-field.php:47
 #: lib/page-settings/comment-forms.php:43
-#: lib/page-settings/single-forms.php:327
+#: lib/page-settings/single-forms.php:326
 #: lib/page-speech-balloon/form.php:90
 #: lib/settings.php:553
 #: blocks/src/block-extension/style-extension/border01.js:42
@@ -2016,39 +2016,38 @@ msgid "テレビ、ラジオ、ビデオゲームなどのメディアシーズ�
 msgstr ""
 
 #: lib/custom-fields/review-field.php:47
-msgid "メディア出版物（書籍や定期刊行物、テレビ、ラジオ、ゲームなど）\n"
-"    "
+msgid "メディア出版物（書籍や定期刊行物、テレビ、ラジオ、ゲームなど）"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:49
+#: lib/custom-fields/review-field.php:48
 msgid "シリーズもののエピソード（テレビ、ラジオ、ビデオゲームなど）"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:50
+#: lib/custom-fields/review-field.php:49
 msgid "ダウンロードデータ（画像、ビデオ、オーディオなど）"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:51
+#: lib/custom-fields/review-field.php:50
 msgid "学校、NGO、企業、クラブなどの組織"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:54
+#: lib/custom-fields/review-field.php:53
 msgid "レビュー対象となるschema typeを入力。※必須"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:58
+#: lib/custom-fields/review-field.php:57
 msgid "レビュー対象名"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:60
+#: lib/custom-fields/review-field.php:59
 msgid "レビュー対象名を入力。※必須"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:67
+#: lib/custom-fields/review-field.php:66
 msgid "レビュー評価"
 msgstr ""
 
-#: lib/custom-fields/review-field.php:69
+#: lib/custom-fields/review-field.php:68
 msgid "0から5の範囲で評価を入力。"
 msgstr ""
 
@@ -2528,7 +2527,7 @@ msgstr ""
 #: lib/page-settings/sns-share-forms-top.php:114
 #: lib/page-settings/toc-forms.php:62
 #: lib/page-settings/_top-page.php:200
-#: lib/shortcodes.php:490
+#: lib/shortcodes.php:492
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
 msgstr ""
@@ -2684,7 +2683,7 @@ msgid "お得"
 msgstr ""
 
 #: lib/html-forms.php:1840
-#: lib/shortcodes.php:1006
+#: lib/shortcodes.php:1007
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -2924,21 +2923,21 @@ msgid "アフィリエイトタグを入力してください。"
 msgstr ""
 
 #: lib/page-affiliate-tag/form.php:41
-#: lib/page-func-text/form.php:43
+#: lib/page-func-text/form.php:40
 #: lib/page-item-ranking/form.php:82
 #: lib/page-speech-balloon/form.php:141
 msgid "エディターのリストに表示"
 msgstr ""
 
 #: lib/page-affiliate-tag/form.php:42
-#: lib/page-func-text/form.php:44
+#: lib/page-func-text/form.php:41
 #: lib/page-item-ranking/form.php:83
 #: lib/page-speech-balloon/form.php:142
 msgid "エディターのドロップダウンリストに表示しなくて良い場合は、無効にしてください。"
 msgstr ""
 
 #: lib/page-affiliate-tag/form.php:46
-#: lib/page-func-text/form.php:48
+#: lib/page-func-text/form.php:45
 #: lib/page-item-ranking/form.php:86
 #: lib/page-speech-balloon/form.php:152
 msgid "保存"
@@ -3191,8 +3190,12 @@ msgstr ""
 msgid "楽天商品番号:%sの"
 msgstr ""
 
-#: lib/page-func-text/form.php:40
+#: lib/page-func-text/form.php:37
 msgid "関数化するテキストを入力してください。"
+msgstr ""
+
+#: lib/page-func-text/form.php:37
+msgid "無限ループを避けるため、テンプレート内にtemp, tocショートコードが使用されている場合は、出力時に削除されます。"
 msgstr ""
 
 #: lib/page-func-text/func-text-func.php:39
@@ -3257,7 +3260,7 @@ msgstr ""
 #: lib/page-settings/recommended-forms.php:19
 #: lib/page-settings/single-forms.php:25
 #: lib/page-settings/single-forms.php:95
-#: lib/page-settings/single-forms.php:293
+#: lib/page-settings/single-forms.php:292
 #: lib/page-settings/skin-forms.php:18
 #: lib/page-settings/sns-follow-forms.php:23
 #: lib/page-settings/sns-share-forms-bottom.php:21
@@ -3796,7 +3799,7 @@ msgstr ""
 
 #: lib/page-settings/admin-forms.php:108
 #: lib/page-settings/page-forms.php:27
-#: lib/page-settings/single-forms.php:408
+#: lib/page-settings/single-forms.php:407
 msgid "コメントを表示する"
 msgstr ""
 
@@ -3867,7 +3870,7 @@ msgstr ""
 #: lib/page-settings/page-forms.php:56
 #: lib/page-settings/recommended-forms.php:39
 #: lib/page-settings/seo-forms.php:158
-#: lib/page-settings/single-forms.php:437
+#: lib/page-settings/single-forms.php:436
 #: lib/page-settings/toc-forms.php:160
 msgid "表示しない"
 msgstr ""
@@ -4243,7 +4246,7 @@ msgid "本文中"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:200
-#: lib/page-settings/single-forms.php:344
+#: lib/page-settings/single-forms.php:343
 msgid "本文下"
 msgstr ""
 
@@ -4411,8 +4414,8 @@ msgid "「PR表記」を非表示にする投稿・固定ページのIDを,（�
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:366
-#: lib/page-settings/index-forms.php:242
-#: lib/page-settings/single-forms.php:366
+#: lib/page-settings/index-forms.php:241
+#: lib/page-settings/single-forms.php:365
 msgid "除外カテゴリー"
 msgstr ""
 
@@ -5976,11 +5979,11 @@ msgstr ""
 
 #: lib/page-settings/carousel-forms.php:76
 #: lib/page-settings/single-forms.php:129
-#: lib/page-settings/single-forms.php:358
+#: lib/page-settings/single-forms.php:357
 #: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:130
 #: lib/page-settings/sns-share-forms-top.php:117
-#: lib/shortcodes.php:502
+#: lib/shortcodes.php:504
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
 msgstr "Kategorien"
@@ -6276,7 +6279,7 @@ msgstr ""
 
 #: lib/page-settings/comment-forms.php:13
 #: lib/page-settings/page-forms.php:13
-#: lib/page-settings/single-forms.php:394
+#: lib/page-settings/single-forms.php:393
 msgid "コメント設定"
 msgstr ""
 
@@ -6285,7 +6288,7 @@ msgid "コメント一覧や入力欄のみタグに関する設定です。"
 msgstr ""
 
 #: lib/page-settings/comment-forms.php:30
-#: lib/page-settings/single-forms.php:301
+#: lib/page-settings/single-forms.php:300
 msgid "デモはランダム表示です。"
 msgstr ""
 
@@ -6308,7 +6311,7 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1070
+#: lib/shortcodes.php:1071
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -6630,20 +6633,20 @@ msgid "投稿関連情報"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:353
-#: lib/page-settings/index-forms.php:216
-#: lib/page-settings/single-forms.php:253
+#: lib/page-settings/index-forms.php:215
+#: lib/page-settings/single-forms.php:252
 msgid "投稿日の表示"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:355
-#: lib/page-settings/index-forms.php:226
-#: lib/page-settings/single-forms.php:263
+#: lib/page-settings/index-forms.php:225
+#: lib/page-settings/single-forms.php:262
 msgid "更新日の表示"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:357
-#: lib/page-settings/index-forms.php:229
-#: lib/page-settings/single-forms.php:266
+#: lib/page-settings/index-forms.php:228
+#: lib/page-settings/single-forms.php:265
 msgid "投稿者名の表示"
 msgstr ""
 
@@ -7703,47 +7706,46 @@ msgid "自動生成抜粋文字数"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:182
-msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を\n"
-"              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
+msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:191
+#: lib/page-settings/index-forms.php:190
 msgid "省略文字列"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:195
+#: lib/page-settings/index-forms.php:194
 #: lib/page-settings/index-funcs.php:204
 msgid "..."
 msgstr ""
 
-#: lib/page-settings/index-forms.php:196
+#: lib/page-settings/index-forms.php:195
 msgid "「自動生成抜粋文字数」を自動抜粋文が超えたときに表示する省略を表す文字を入力してください。"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:205
-#: lib/page-settings/single-forms.php:242
+#: lib/page-settings/index-forms.php:204
+#: lib/page-settings/single-forms.php:241
 msgid "投稿関連情報の表示"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:209
-#: lib/page-settings/single-forms.php:246
+#: lib/page-settings/index-forms.php:208
+#: lib/page-settings/single-forms.php:245
 msgid "スニペット（抜粋）の表示"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:213
-#: lib/page-settings/single-forms.php:250
+#: lib/page-settings/index-forms.php:212
+#: lib/page-settings/single-forms.php:249
 msgid "スマホ端末でスニペットを表示（480px以下）"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:232
+#: lib/page-settings/index-forms.php:231
 msgid "コメント数の表示"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:234
+#: lib/page-settings/index-forms.php:233
 msgid "インデックスページのエントリーカードに投稿関連情報を表示するかどうか。"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:247
+#: lib/page-settings/index-forms.php:246
 msgid "アーカイブ（インデックスリスト・新着関連記事ウィジェット等）に表示させたくないカテゴリーを選択してください。"
 msgstr ""
 
@@ -8140,8 +8142,8 @@ msgstr ""
 
 #: lib/page-settings/page-forms.php:23
 #: lib/page-settings/single-forms.php:111
-#: lib/page-settings/single-forms.php:309
-#: lib/page-settings/single-forms.php:404
+#: lib/page-settings/single-forms.php:308
+#: lib/page-settings/single-forms.php:403
 msgid "表示"
 msgstr "Anzeige"
 
@@ -8150,7 +8152,7 @@ msgid "固定ページにコメントを表示するか。"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:41
-#: lib/page-settings/single-forms.php:422
+#: lib/page-settings/single-forms.php:421
 msgid "パンくずリスト設定"
 msgstr ""
 
@@ -8159,27 +8161,27 @@ msgid "固定ページのパンくずリスト設定です。"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:51
-#: lib/page-settings/single-forms.php:432
+#: lib/page-settings/single-forms.php:431
 msgid "パンくずリストの配置"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:57
-#: lib/page-settings/single-forms.php:438
+#: lib/page-settings/single-forms.php:437
 msgid "メインカラム手前"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:58
-#: lib/page-settings/single-forms.php:439
+#: lib/page-settings/single-forms.php:438
 msgid "メインカラムトップ"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:59
-#: lib/page-settings/single-forms.php:440
+#: lib/page-settings/single-forms.php:439
 msgid "メインカラムボトム（デフォルト）"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:60
-#: lib/page-settings/single-forms.php:441
+#: lib/page-settings/single-forms.php:440
 msgid "フッター手前"
 msgstr ""
 
@@ -8188,12 +8190,12 @@ msgid "固定ページのパンくずリスト表示位置を設定します。"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:71
-#: lib/page-settings/single-forms.php:452
+#: lib/page-settings/single-forms.php:451
 msgid "記事タイトル"
 msgstr ""
 
 #: lib/page-settings/page-forms.php:75
-#: lib/page-settings/single-forms.php:456
+#: lib/page-settings/single-forms.php:455
 msgid "パンくずリストに記事タイトルを含める"
 msgstr ""
 
@@ -8717,7 +8719,7 @@ msgid "関連記事の補助となる見出しを入力してください。"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:156
-#: lib/page-settings/single-forms.php:322
+#: lib/page-settings/single-forms.php:321
 #: lib/widgets/navi-entries.php:122
 #: lib/widgets/new-entries.php:192
 #: lib/widgets/popular-entries.php:189
@@ -8807,101 +8809,100 @@ msgid "最大自動生成抜粋文字数"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:232
-msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を\n"
-"              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
+msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:267
+#: lib/page-settings/single-forms.php:266
 msgid "投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:280
+#: lib/page-settings/single-forms.php:279
 msgid "ページ送りナビ設定"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:283
+#: lib/page-settings/single-forms.php:282
 msgid "[前ページ][次ページ]へと送るナビゲーションの設定です。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:313
+#: lib/page-settings/single-forms.php:312
 msgid "ページ送りナビを表示する"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:314
+#: lib/page-settings/single-forms.php:313
 msgid "[前ページ][次ページ]ナビを表示するか。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:328
+#: lib/page-settings/single-forms.php:327
 msgid "サムネイル正方形"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:331
+#: lib/page-settings/single-forms.php:330
 msgid "ページ送りナビの見た目を変更します。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:339
+#: lib/page-settings/single-forms.php:338
 msgid "表示位置"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:345
+#: lib/page-settings/single-forms.php:344
 msgid "関連記事上"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:346
+#: lib/page-settings/single-forms.php:345
 msgid "関連記事下（デフォルト）"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:347
+#: lib/page-settings/single-forms.php:346
 msgid "コメント下"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:350
+#: lib/page-settings/single-forms.php:349
 msgid "ページ送りナビを表示する位置を変更します。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:362
+#: lib/page-settings/single-forms.php:361
 msgid "同一カテゴリーのものを表示する"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:363
+#: lib/page-settings/single-forms.php:362
 msgid "投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリーが設定してある場合は、複数に属するものが表示されます。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:368
+#: lib/page-settings/single-forms.php:367
 msgid "ページ送りナビに表示させないカテゴリーを選択してください。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:376
+#: lib/page-settings/single-forms.php:375
 #: lib/widgets/info-list.php:143
 #: blocks/src/block/info-list/edit.js:102
 msgid "枠線表示"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:380
+#: lib/page-settings/single-forms.php:379
 msgid "ページ送りナビの枠線を表示する"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:381
+#: lib/page-settings/single-forms.php:380
 msgid "ページ送りナビを囲む枠線を表示するか。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:397
+#: lib/page-settings/single-forms.php:396
 msgid "投稿のコメント表示設定です。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:409
+#: lib/page-settings/single-forms.php:408
 msgid "投稿ページにコメントを表示するか。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:425
+#: lib/page-settings/single-forms.php:424
 msgid "投稿のパンくずリスト設定です。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:444
+#: lib/page-settings/single-forms.php:443
 msgid "投稿のパンくずリスト表示位置を設定します。"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:457
+#: lib/page-settings/single-forms.php:456
 msgid "投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか切り替えます。"
 msgstr ""
 
@@ -10862,25 +10863,25 @@ msgstr ""
 msgid "楽天商品リンクが取得できませんでした。"
 msgstr ""
 
-#: lib/shortcodes.php:302
+#: lib/shortcodes.php:305
 #: lib/tinymce/shortcodes.php:234
 #: blocks/src/toolbutton/dropdown-shortcodes.js:184
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
 msgstr ""
 
-#: lib/shortcodes.php:383
+#: lib/shortcodes.php:386
 msgid "日付未入力"
 msgstr ""
 
-#: lib/shortcodes.php:409
+#: lib/shortcodes.php:412
 msgid "歳"
 msgstr ""
 
-#: lib/shortcodes.php:508
+#: lib/shortcodes.php:510
 msgid "月別アーカイブ"
 msgstr ""
 
-#: lib/shortcodes.php:978
+#: lib/shortcodes.php:980
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr ""
 
@@ -12211,6 +12212,678 @@ msgstr ""
 
 #: skins/raku-add-fadein/functions.php:276
 msgid "４．ヘッダー部分は上から、メインは左から、サイドは右からふわっと"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:291
+msgid "表示スキン（ベース）"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:317
+msgid "こちらで選択したスキンが表示されます。"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:318
+msgid "※現在選択中の【%s】は動作を追加するものです"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:36
+#: skins/raku-color-changing/functions.php:37
+#: skins/raku-color-changing/functions.php:85
+#: skins/raku-color-changing/functions.php:87
+#: skins/raku-color-changing/functions.php:117
+#: skins/raku-color-changing/functions.php:147
+#: skins/raku-color-changing/functions.php:224
+#: skins/raku-color-changing/functions.php:246
+msgid "適用する"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:192
+msgid "スキンカラー"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:199
+msgid "4色 選択してください。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:205
+msgid "背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:207
+msgid "【一通り変化するまでの時間】"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:208
+msgid "秒（1～120秒）"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:209
+msgid "時間を短くする程「早く」、長くする程「ゆっくり」変化します。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:210
+msgid "【不透明度】"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:212
+msgid "数字を小さくする程、透明になります。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:213
+msgid "透明にする程、【Cocoon設定 > 全体】の「サイト背景色」や「サイト背景画像」がより透けて見えます。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:214
+msgid "設定していない場合は単純に色が薄くなります。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:220
+msgid "記事内のタイトル<br><small>（選択した4色を順に適用する）</small>"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:225
+#: skins/raku-color-changing/functions.php:247
+msgid "適用しない"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:231
+msgid "【不透明度（背景と線の色）】"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:233
+#: skins/raku-color-changing/functions.php:255
+msgid "数字を小さくする程、色が薄くなります。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:234
+msgid "【不透明度（H3タイトルの左側の線の色）】"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:236
+msgid " H3タイトルの左側の線だけ色が濃い方が綺麗なため、個別に設定できます。"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:242
+msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適用する）</small>"
+msgstr ""
+
+#: skins/raku-color-changing/functions.php:253
+msgid "【不透明度（背景色）】"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:176
+msgid "skin-grayish: カスタマイズ"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:184
+msgid "全体：英字フォント設定"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:187
+msgid "英字フォントの適用箇所についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:200
+msgid "英字フォント設定 選択"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:201
+msgid "ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:201
+msgid "※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:208
+#: skins/skin-grayish-topfull/functions.php:210
+msgid "（細タイプなし）"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:213
+msgid "設定なし"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:228
+msgid "サイトロゴ（テキスト時）のフォント太さ 選択"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:229
+msgid "ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:229
+msgid "※フォントによって細いタイプがない場合があります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:234
+msgid "細"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:235
+msgid "普通"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:370
+msgid "全体：カラー設定"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:373
+msgid "各カラーの適用箇所についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:388
+msgid "テキストカラー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:389
+msgid "メニュー・見出し・本文などのテキストカラーを変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:390
+#: skins/skin-grayish-topfull/functions.php:410
+#: skins/skin-grayish-topfull/functions.php:428
+#: skins/skin-grayish-topfull/functions.php:446
+#: skins/skin-grayish-topfull/functions.php:464
+#: skins/skin-grayish-topfull/functions.php:482
+#: skins/skin-grayish-topfull/functions.php:668
+#: skins/skin-grayish-topfull/functions.php:1405
+#: skins/skin-grayish-topfull/functions.php:1710
+#: skins/skin-grayish-topfull/functions.php:1810
+msgid "※空欄の場合はデフォルト値になります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:408
+msgid "メインアクセント 一番明るい青色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:409
+msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:426
+msgid "メイン 薄い青色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:427
+msgid "グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:444
+msgid "メイン 一番薄い青"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:445
+msgid "フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:462
+msgid "サブ 濃い青"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:463
+msgid "プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:480
+msgid "サブ もっと濃い青"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:481
+msgid "カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:623
+msgid "フロントページ設定：ヘッダー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:626
+#: skins/skin-grayish-topfull/functions.php:1368
+msgid "グローバルナビの高さ等変更についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:626
+msgid "メインビジュアルについてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:626
+msgid "グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:641
+msgid "【PC】グローバルナビの高さ"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:642
+msgid "フロントページのグローバルナビの高さ。56px〜100pxの範囲で変更可能です。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:643
+#: skins/skin-grayish-topfull/functions.php:1382
+msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:666
+msgid "【PC】グローバルナビの背景色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:667
+msgid "グローバルナビの背景色。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:685
+msgid "【PC】グローバルナビ背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:686
+#: skins/skin-grayish-topfull/functions.php:1421
+#: skins/skin-grayish-topfull/functions.php:1729
+#: skins/skin-grayish-topfull/functions.php:1828
+msgid "値が大きくなるほど背景色が濃くなります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:691
+#: skins/skin-grayish-topfull/functions.php:1426
+#: skins/skin-grayish-topfull/functions.php:1735
+#: skins/skin-grayish-topfull/functions.php:1833
+msgid "（背景色なし)"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:701
+#: skins/skin-grayish-topfull/functions.php:1436
+#: skins/skin-grayish-topfull/functions.php:1745
+#: skins/skin-grayish-topfull/functions.php:1843
+msgid "(不透明)"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:719
+msgid "メインビジュアル 白ドットのON/OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:720
+msgid "メインビジュアルの上に白いドットを重ねるかどうかを選択。解像度が低い画像を使用する場合はON推奨"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:725
+#: skins/skin-grayish-topfull/functions.php:779
+#: skins/skin-grayish-topfull/functions.php:897
+#: skins/skin-grayish-topfull/functions.php:1768
+#: skins/skin-grayish-topfull/functions.php:1791
+msgid "ON"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:726
+#: skins/skin-grayish-topfull/functions.php:748
+#: skins/skin-grayish-topfull/functions.php:780
+#: skins/skin-grayish-topfull/functions.php:896
+#: skins/skin-grayish-topfull/functions.php:1769
+#: skins/skin-grayish-topfull/functions.php:1792
+msgid "OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:742
+msgid "メインビジュアル 白オーバーレイの不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:743
+msgid "メインビジュアルの上に重ねる白の不透明度を調整。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:743
+msgid "値が大きくなるほど白が濃くなります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:773
+msgid "メインビジュアル下のスクロールアニメーションのON/OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:774
+msgid "メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:774
+msgid "PC/SP共通の設定になります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:790
+msgid "X（旧Twitter）フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:794
+msgid "Mastodon フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:798
+msgid "Bluesky フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:802
+msgid "Misskey フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:806
+msgid "Facebook フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:810
+msgid "はてブ フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:814
+msgid "Instagram フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:818
+msgid "Pinterest フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:822
+msgid "YouTube フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:826
+msgid "LinkedIn フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:830
+msgid "note フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:834
+msgid "Flickr フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:838
+msgid "Amazon欲しい物リスト フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:842
+msgid "Twitch フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:846
+msgid "楽天ROOM フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:850
+msgid "Slack フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:854
+msgid "GitHub フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:858
+msgid "CodePen フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:862
+msgid "TikTok フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:866
+msgid "SoundCloud フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:870
+msgid "LINE フォローボタンを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:890
+msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:891
+msgid "※フロントページ以外のグローバルナビにも表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1137
+msgid "全体：テキスト変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1140
+msgid "テキスト変更についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1145
+#: skins/skin-grayish-topfull/functions.php:1269
+#: skins/skin-grayish-topfull/functions.php:1273
+msgid "New Post"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1153
+msgid "【フロントページ】\"New Post\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1154
+msgid "New Postを別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1154
+#: skins/skin-grayish-topfull/functions.php:1194
+msgid "Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1155
+msgid "※空欄の場合は\"New Post\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1165
+#: skins/skin-grayish-topfull/functions.php:1288
+#: skins/skin-grayish-topfull/functions.php:1289
+#: skins/skin-grayish-topfull/functions.php:1291
+msgid "最新の記事"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1173
+msgid "【フロントページ】\"最新の記事\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1174
+msgid "\"最新の記事\"を別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1174
+#: skins/skin-grayish-topfull/functions.php:1214
+msgid "Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1175
+msgid "※空欄の場合は\"最新の記事\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1193
+msgid "【フロントページ】\"Category\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1194
+msgid "Categoryを別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1195
+msgid "※空欄の場合は\"Category\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1205
+#: skins/skin-grayish-topfull/functions.php:1334
+#: skins/skin-grayish-topfull/functions.php:1335
+#: skins/skin-grayish-topfull/functions.php:1337
+msgid "More"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1213
+msgid "【フロントページ】Moreボタン \"More\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1214
+msgid "\"More\"を別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1215
+msgid "※空欄の場合は\"More\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1225
+#: skins/skin-grayish-topfull/functions.php:1347
+#: skins/skin-grayish-topfull/functions.php:1348
+#: skins/skin-grayish-topfull/functions.php:1350
+msgid "Next"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1233
+msgid "【フロントページ・各一覧ページ】Nextボタン \"Next\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1234
+msgid "\"Next\"を別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1234
+msgid "※空欄の場合は\"Next\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1252
+msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1253
+msgid "\"Home\"を別のテキストに変更できます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1253
+msgid "※空欄の場合は\"Home\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1365
+msgid "フロントページ以外の設定:ヘッダー"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1380
+msgid "【PC】フロントページ以外のグローバルナビの高さ"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1381
+msgid "56px〜100pxの範囲で変更可能です。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1381
+msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1403
+msgid "【PC】フロントページ以外のヘッダーの背景色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1404
+msgid "ヘッダーの背景色を変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1420
+msgid "【PC】ヘッダー背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1454
+msgid "【PC】フロントページ以外のヘッダーロゴ画像アップロード"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1455
+msgid "ロゴをフロントページと別画像にしたいとき設定します。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1559
+msgid "コンテンツ下部ウィジェット：プロフィールボックス"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1562
+msgid "プロフィールボックスの設定についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1575
+msgid "プロフィールボックスの背景画像の白オーバーレイ不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1576
+msgid "値が大きくなるほど白色が濃くなります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1581
+msgid "（白色なし)"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1611
+msgid "画像アップロード"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1612
+msgid "プロフィールボックスの背景に設定したい画像を選択"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1695
+msgid "ヘッダー・フッターモバイルボタンの設定についてはこちらを参照"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1708
+msgid "ヘッダーモバイルボタンの背景色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1709
+msgid "ヘッダーモバイルボタンの背景色を変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1711
+msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1728
+msgid "ヘッダーモバイルボタン背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1730
+msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1761
+msgid "フロントページのみヘッダーモバイルボタンをメニューアイコンのみON/OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1762
+msgid "フロントページ以外は設定したメニューを表示します。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1763
+msgid "※ヘッダーモバイルボタンにオリジナルメニューを作成する場合は、メニューの一番上に#menuを設定してください。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1785
+msgid "ヘッダーモバイルボタン＆フッターモバイルボタンのアイコン下のキャプションのON/OFF"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1786
+msgid "モバイル時にアイコン下にキャプションを表示"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1808
+msgid "フッターモバイルボタンの背景色"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1809
+msgid "フッターモバイルボタンの背景色を変更。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1827
+msgid "フッターモバイルボタン背景色の不透明度調整"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1862
+msgid "モバイル時のヘッダーロゴ画像アップロード"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1863
+msgid "モバイル時のロゴを別画像にしたいとき設定します。"
+msgstr ""
+
+#: skins/raku-add-fadein/functions.php:282
+msgid "（詳しくは実際にご確認ください）"
 msgstr ""
 
 #: skins/raku-add-fadein/functions.php:291
