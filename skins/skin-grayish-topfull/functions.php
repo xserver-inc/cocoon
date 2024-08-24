@@ -1578,7 +1578,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
         'settings' => 'undercon_profbg_overlay_alpha',
         'type' => 'select',
         'choices' => array(
-          'undercon_profbg_overlay_alpha_0' => '0'.__('（白色なし)' , THEME_NAME),
+          'undercon_profbg_overlay_alpha_0' => '0'.__('（白色なし）' , THEME_NAME),
           'undercon_profbg_overlay_alpha_1' => '0.1',
           'undercon_profbg_overlay_alpha_2' => '0.2',
           'undercon_profbg_overlay_alpha_3' => '0.3',
