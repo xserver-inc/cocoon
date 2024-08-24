@@ -1055,6 +1055,11 @@ function get_block_pattern_shortcode($atts) {
     if (isset($reuse)) {
       $content = $reuse->post_content;
     }
+    //無限ループ回避
+    //パターンショートコード
+    $content = preg_replace('{\[pattern[^\]]*?id=[\'"]?'.$id.'[\'"]?[^\]]*?\]}i', '', $content);
+    //目次ショートコード
+    $content = preg_replace('{\[toc[^\]]*\]}i', '', $content);
   }
   if (!is_classicpress()) {
     $content = do_blocks($content);

@@ -18,12 +18,21 @@ jobs:
         which msgfmt
         ls *.po | sed -r 's/.po//g' | xargs -I LOCALE /usr/bin/msgfmt -v -o ${LANGUAGES_PATH}/LOCALE.mo ${LANGUAGES_PATH}/LOCALE.po
 
+        # Download WP CLI
+        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+        sudo mv wp-cli.phar /usr/bin/wp
+
+        # make-php
+        wp i18n make-php .
+        
         git config user.name "GitHub Action"
         git config user.email "github.action@noreply.com"
 
         git pull
 
         git add *.mo
+        git add *.php
         DIFF_COUNT=$(git diff --cached --numstat | wc -l)
         if [ $DIFF_COUNT -ne 0 ]; then
           git commit -m "MO Compiled"

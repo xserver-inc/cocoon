@@ -1241,7 +1241,7 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
 
     // パンくずリストのHomeテキスト変更
     $wp_customize->add_setting('breadcrumb_caption', array(
-      'default' => 'Home',
+      'default' => __('Home' , THEME_NAME),
       'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control(
@@ -1537,10 +1537,10 @@ add_filter('breadcrumbs_page_root_text', 'customize_breadcrumbs_single_root_text
 if (!function_exists('customize_breadcrumbs_single_root_text')) :
   function customize_breadcrumbs_single_root_text()
   {
-    if (get_theme_mod('breadcrumb_caption', 'Home')) {
-      return esc_attr(get_theme_mod('breadcrumb_caption', 'Home'));
+    if (get_theme_mod('breadcrumb_caption', __('Home' , THEME_NAME))) {
+      return esc_attr(get_theme_mod('breadcrumb_caption', __('Home' , THEME_NAME)));
     } else {
-      return 'Home';
+      return __('Home' , THEME_NAME);
     }
   }
 endif;
