@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-23T07:23:26+00:00\n"
+"POT-Creation-Date: 2024-08-24T04:32:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -1176,7 +1176,7 @@ msgid "あわせて読みたい"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1075
+#: lib/shortcodes.php:1080
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -6304,7 +6304,7 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1071
+#: lib/shortcodes.php:1076
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -12741,6 +12741,13 @@ msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1234
 msgid "※空欄の場合は\"Next\"が表示されます。"
+msgstr ""
+
+#: skins/skin-grayish-topfull/functions.php:1244
+#: skins/skin-grayish-topfull/functions.php:1540
+#: skins/skin-grayish-topfull/functions.php:1541
+#: skins/skin-grayish-topfull/functions.php:1543
+msgid "Home"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1252
