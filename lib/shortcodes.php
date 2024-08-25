@@ -1077,7 +1077,8 @@ function pattern_editor_save_post($post_id) {
     return;
   }
   // 投稿タイプが wp_block の場合に処理
-  if (get_post_type($post_id) === 'wp_block') {
+  global $post;
+  if (!is_classic_editor() && (get_post_type($post_id) === 'wp_block')) {
     $content = get_post_field('post_content', $post_id);
     if (is_toc_shortcode_includes($content)) {
       // 保存処理をキャンセル

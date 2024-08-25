@@ -3653,6 +3653,18 @@ function is_block_editor_page() {
 }
 endif;
 
+//クラシックエディター画面かどうか
+if ( !function_exists( 'is_classic_editor' ) ):
+function is_classic_editor() {
+  // クラシックエディターが設定されているかどうかを確認
+  if (class_exists('Classic_Editor') || !is_gutenberg_editor_enable() || is_classicpress()) {
+      return true;
+  }
+
+  return false;
+}
+endif;
+
 //HTMLで使用するヘックスカラーが暗い色かどうか（）
 if ( !function_exists( 'is_dark_hexcolor' ) ):
 function is_dark_hexcolor($hexcolor) {
