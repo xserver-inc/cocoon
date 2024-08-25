@@ -3694,6 +3694,12 @@ function is_wp_language_korean() {
 }
 endif;
 
+//文章内にtocショートコードが使われているか
+if ( !function_exists( 'is_toc_shortcode_includes' ) ):
+function is_toc_shortcode_includes($content) {
+  return preg_match(TOC_SHORTCODE_REG, $content);
+}
+endif;
 
 
 ////////////////////////////////////////////////////

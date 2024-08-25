@@ -277,6 +277,9 @@ define('MATH_SHORTCODE', '[math]');
 define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)');
 define('URL_REG', '/'.URL_REG_STR.'/');
 
+//正規表現
+define('TOC_SHORTCODE_REG', '{\[toc[^\]]*\]}i');
+
 //Font Awesome4.7のCDN
 define('FONT_AWESOME_4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 //Font Awesome5のCDN

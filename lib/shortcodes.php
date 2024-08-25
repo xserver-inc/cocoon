@@ -248,7 +248,7 @@ function function_text_shortcode($atts) {
       //テンプレートショートコード
       $template = preg_replace('{\['.TEMPLATE_SHORTCODE.'[^\]]*?id=[\'"]?'.$id.'[\'"]?[^\]]*?\]}i', '', $recode->text);
       //目次ショートコード
-      $template = preg_replace('{\[toc[^\]]*\]}i', '', $recode->text);
+      $template = preg_replace(TOC_SHORTCODE_REG, '', $recode->text);
 
       //余計な改行を取り除く
       $template = shortcode_unautop($template);
@@ -1059,12 +1059,31 @@ function get_block_pattern_shortcode($atts) {
     //パターンショートコード
     $content = preg_replace('{\[pattern[^\]]*?id=[\'"]?'.$id.'[\'"]?[^\]]*?\]}i', '', $content);
     //目次ショートコード
-    $content = preg_replace('{\[toc[^\]]*\]}i', '', $content);
+    $content = preg_replace(TOC_SHORTCODE_REG, '', $content);
   }
   if (!is_classicpress()) {
     $content = do_blocks($content);
   }
   return do_shortcode($content);
+}
+endif;
+
+//パターンの保存時にtocショートコードが使われていたら警告
+add_action('save_post', 'pattern_editor_save_post');
+if ( !function_exists( 'pattern_editor_save_post' ) ):
+function pattern_editor_save_post($post_id) {
+  // 自動保存や別の処理でないことを確認
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+    return;
+  }
+  // 投稿タイプが wp_block の場合に処理
+  if (get_post_type($post_id) === 'wp_block') {
+    $content = get_post_field('post_content', $post_id);
+    if (is_toc_shortcode_includes($content)) {
+      // 保存処理をキャンセル
+      wp_die(__('無限ループを避けるため[toc]ショートコードはパターンでは使用できません。' , THEME_NAME).__('[toc]ショートコードを削除してください。' , THEME_NAME), __('保存エラー' , THEME_NAME), array('response' => 400));
+    }
+  }
 }
 endif;
 
