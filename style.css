@@ -11285,11 +11285,8 @@ body:has(#spotlight.show) .header {
   min-width: 1px;
 }
 
-.is-header-fixed .header-container {
+.header-container.fixed-header {
   z-index: 3;
-}
-.is-header-fixed .header-container .logo {
-  transition: 0.3s;
 }
 
 .fixed-header {

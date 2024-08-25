@@ -18769,11 +18769,8 @@ body.wp-admin {
   min-height: 1px;
   min-width: 1px;
 }
-.admin-settings .demo .is-header-fixed .header-container {
+.admin-settings .demo .header-container.fixed-header {
   z-index: 3;
-}
-.admin-settings .demo .is-header-fixed .header-container .logo {
-  transition: 0.3s;
 }
 .admin-settings .demo .fixed-header {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
