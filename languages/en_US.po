@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-23T07:23:26+00:00\n"
-"PO-Revision-Date: 2024-08-23 07:35\n"
+"POT-Creation-Date: 2024-08-24T16:00:06+00:00\n"
+"PO-Revision-Date: 2024-08-25 00:54\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -33,7 +33,7 @@ msgstr "https://wp-cocoon.com/"
 #. Description of the theme
 #: style.css
 msgid "SEO・高速化・モバイルファースト最適化済みの無料テーマ。"
-msgstr "Open source theme optimized for SEO, speed and mobile first."
+msgstr "Free open source theme optimized for SEO, speed and mobile first."
 
 #. Author of the theme
 #: style.css
@@ -67,7 +67,7 @@ msgstr "Cocoon short codes"
 
 #: blocks/src/init.php:283
 msgid "Cocoon旧ブロック（非推奨）"
-msgstr "Cocoon old block editor (not recommended)"
+msgstr "Cocoon legacy block editor (not recommended)"
 
 #: comments.php:35
 #: tmp/mobile-prev-button.php:20
@@ -1183,7 +1183,7 @@ msgid "あわせて読みたい"
 msgstr "Read together"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1075
+#: lib/shortcodes.php:1080
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -4870,7 +4870,7 @@ msgstr "Enter the date format that the theme will use (default : Y.m.d)."
 
 #: lib/page-settings/all-forms.php:330
 msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
-msgstr "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">Description of the date and time format</a>"
+msgstr "<a href=\"https://wpdocs.osdn.jp/formatting-date-and-time/\">Description of the date and time format</a>"
 
 #: lib/page-settings/all-funcs.php:255
 msgid "Y.m.d"
@@ -6311,7 +6311,7 @@ msgstr "Comment list heading"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1071
+#: lib/shortcodes.php:1076
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -12750,6 +12750,13 @@ msgstr "\"Next\" can be changed to another text."
 msgid "※空欄の場合は\"Next\"が表示されます。"
 msgstr "If the field is left blank, “Next” will be displayed."
 
+#: skins/skin-grayish-topfull/functions.php:1244
+#: skins/skin-grayish-topfull/functions.php:1540
+#: skins/skin-grayish-topfull/functions.php:1541
+#: skins/skin-grayish-topfull/functions.php:1543
+msgid "Home"
+msgstr "Home"
+
 #: skins/skin-grayish-topfull/functions.php:1252
 msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
 msgstr "[Post & Page] Change breadcrumbs list “Home”"
@@ -12815,7 +12822,7 @@ msgid "値が大きくなるほど白色が濃くなります。"
 msgstr "The larger the value, the darker the white."
 
 #: skins/skin-grayish-topfull/functions.php:1581
-msgid "（白色なし)"
+msgid "（白色なし）"
 msgstr "(No whites)"
 
 #: skins/skin-grayish-topfull/functions.php:1611

@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-23T07:23:26+00:00\n"
-"PO-Revision-Date: 2024-08-23 07:35\n"
+"POT-Creation-Date: 2024-08-24T16:00:06+00:00\n"
+"PO-Revision-Date: 2024-08-25 00:54\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1183,7 +1183,7 @@ msgid "あわせて読みたい"
 msgstr "一起阅读"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1075
+#: lib/shortcodes.php:1080
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -2017,7 +2017,7 @@ msgstr "电视、广播、电子游戏等的媒体季"
 
 #: lib/custom-fields/review-field.php:47
 msgid "メディア出版物（書籍や定期刊行物、テレビ、ラジオ、ゲームなど）"
-msgstr ""
+msgstr "媒体出版物（书籍、期刊、电视、广播、游戏等）"
 
 #: lib/custom-fields/review-field.php:48
 msgid "シリーズもののエピソード（テレビ、ラジオ、ビデオゲームなど）"
@@ -3196,7 +3196,7 @@ msgstr "请输入要函数化的文本。"
 
 #: lib/page-func-text/form.php:37
 msgid "無限ループを避けるため、テンプレート内にtemp, tocショートコードが使用されている場合は、出力時に削除されます。"
-msgstr ""
+msgstr "为了避免无限循环，如果模板中使用了temp, toc短代码，将在输出时删除。"
 
 #: lib/page-func-text/func-text-func.php:39
 msgid "WordPressカスタマイズ注意文サンプル"
@@ -4602,16 +4602,16 @@ msgstr "Sawarabi Mincho（网络字体）"
 
 #: lib/page-settings/all-forms.php:74
 msgid "Noto Sans Korean"
-msgstr ""
+msgstr "Noto Sans Korean"
 
 #: lib/page-settings/all-forms.php:74
 #: lib/page-settings/all-forms.php:75
 msgid "（韓国語WEBフォント）"
-msgstr ""
+msgstr "（韩语WEB字体）"
 
 #: lib/page-settings/all-forms.php:75
 msgid "Pretendard"
-msgstr ""
+msgstr "Pretendard"
 
 #: lib/page-settings/all-forms.php:77
 msgid "指定なし"
@@ -6311,7 +6311,7 @@ msgstr "评论列表标题"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1071
+#: lib/shortcodes.php:1076
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -7707,7 +7707,7 @@ msgstr "自动生成摘录的字符数"
 
 #: lib/page-settings/index-forms.php:182
 msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
-msgstr ""
+msgstr "设置在“条目卡片”中显示“从正文自动生成的摘要”时的最大字符数。※不是发布编辑界面的摘要文本。（最小：0，最大：500）"
 
 #: lib/page-settings/index-forms.php:190
 msgid "省略文字列"
@@ -8600,7 +8600,7 @@ msgstr "以前的浏览器默认设置是no-referrer-when-downgrade，但自2020
 
 #: lib/page-settings/seo-forms.php:126
 msgid "リファラーポリシー"
-msgstr ""
+msgstr "引用来源策略"
 
 #: lib/page-settings/seo-forms.php:140
 msgid "日付の設定"
@@ -8810,7 +8810,7 @@ msgstr "最大自动生成摘录字数"
 
 #: lib/page-settings/single-forms.php:232
 msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
-msgstr ""
+msgstr "设置在“相关文章条目卡”中显示的“从正文自动生成的摘要文本”的最大字符数。※不是发布编辑画面的摘要文本。（最小：0，最大：500）"
 
 #: lib/page-settings/single-forms.php:266
 msgid "投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。"
@@ -11236,17 +11236,17 @@ msgstr[0] "%s 分"
 #: lib/utils.php:2522
 msgid "%s hour"
 msgid_plural "%s hours"
-msgstr[0] ""
+msgstr[0] "%s 小时"
 
 #: lib/utils.php:2530
 msgid "%s day"
 msgid_plural "%s days"
-msgstr[0] ""
+msgstr[0] "%s 天"
 
 #: lib/utils.php:2538
 msgid "%s週間"
 msgid_plural "%s週間"
-msgstr[0] ""
+msgstr[0] "%s周"
 
 #: lib/utils.php:2546
 msgid "%sヶ月"
@@ -11255,7 +11255,7 @@ msgstr[0] "%s个月"
 
 #: lib/utils.php:2557
 msgid "%s年"
-msgstr ""
+msgstr "%s年"
 
 #: lib/utils.php:2559
 msgid "%s年%sヶ月"
@@ -12195,27 +12195,27 @@ msgstr "渐入类型"
 
 #: skins/raku-add-fadein/functions.php:273
 msgid "１．ふわっと"
-msgstr ""
+msgstr "1. 柔和"
 
 #: skins/raku-add-fadein/functions.php:274
 msgid "２．下からふわっと"
-msgstr ""
+msgstr "2. 从下方柔和"
 
 #: skins/raku-add-fadein/functions.php:275
 msgid "３．メインは左から、サイドは右からふわっと"
-msgstr ""
+msgstr "3. 主体从左边柔和，侧边从右边柔和"
 
 #: skins/raku-add-fadein/functions.php:276
 msgid "４．ヘッダー部分は上から、メインは左から、サイドは右からふわっと"
-msgstr ""
+msgstr "4. 头部从上方，主体从左边，侧边从右边柔和"
 
 #: skins/raku-add-fadein/functions.php:282
 msgid "ふわっとのタイプを選択してください。"
-msgstr ""
+msgstr "请选择柔和类型。"
 
 #: skins/raku-add-fadein/functions.php:282
 msgid "（詳しくは実際にご確認ください）"
-msgstr ""
+msgstr "（详情请实际查看）"
 
 #: skins/raku-add-fadein/functions.php:291
 msgid "表示スキン（ベース）"
@@ -12223,11 +12223,11 @@ msgstr "显示皮肤（基础）"
 
 #: skins/raku-add-fadein/functions.php:317
 msgid "こちらで選択したスキンが表示されます。"
-msgstr ""
+msgstr "这里选择的皮肤将会显示。"
 
 #: skins/raku-add-fadein/functions.php:318
 msgid "※現在選択中の【%s】は動作を追加するものです"
-msgstr ""
+msgstr "※当前选择的【%s】是添加行为的。"
 
 #: skins/raku-color-changing/functions.php:36
 #: skins/raku-color-changing/functions.php:37
@@ -12238,7 +12238,7 @@ msgstr ""
 #: skins/raku-color-changing/functions.php:224
 #: skins/raku-color-changing/functions.php:246
 msgid "適用する"
-msgstr ""
+msgstr "应用"
 
 #: skins/raku-color-changing/functions.php:192
 msgid "スキンカラー"
@@ -12246,142 +12246,142 @@ msgstr "皮肤颜色"
 
 #: skins/raku-color-changing/functions.php:199
 msgid "4色 選択してください。"
-msgstr ""
+msgstr "请选择4种颜色。"
 
 #: skins/raku-color-changing/functions.php:205
 msgid "背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>"
-msgstr "背景动画<br><small>（所选4种颜色慢慢替换）</small>"
+msgstr "背景动画<br><small>（所选的4种颜色会缓慢切换）</small>"
 
 #: skins/raku-color-changing/functions.php:207
 msgid "【一通り変化するまでの時間】"
-msgstr ""
+msgstr "【完成一次变化所需的时间】"
 
 #: skins/raku-color-changing/functions.php:208
 msgid "秒（1～120秒）"
-msgstr ""
+msgstr "秒（1～120秒）"
 
 #: skins/raku-color-changing/functions.php:209
 msgid "時間を短くする程「早く」、長くする程「ゆっくり」変化します。"
-msgstr ""
+msgstr "时间越短变化越快，越长变化越慢。"
 
 #: skins/raku-color-changing/functions.php:210
 msgid "【不透明度】"
-msgstr ""
+msgstr "【不透明度】"
 
 #: skins/raku-color-changing/functions.php:212
 msgid "数字を小さくする程、透明になります。"
-msgstr ""
+msgstr "数字越小，越透明。"
 
 #: skins/raku-color-changing/functions.php:213
 msgid "透明にする程、【Cocoon設定 > 全体】の「サイト背景色」や「サイト背景画像」がより透けて見えます。"
-msgstr ""
+msgstr "透明度越高，【Cocoon 设置 > 全体】中的“网站背景色”或“网站背景图片”将越明显。"
 
 #: skins/raku-color-changing/functions.php:214
 msgid "設定していない場合は単純に色が薄くなります。"
-msgstr ""
+msgstr "未设置时，颜色将变浅。"
 
 #: skins/raku-color-changing/functions.php:220
 msgid "記事内のタイトル<br><small>（選択した4色を順に適用する）</small>"
-msgstr ""
+msgstr "文章内的标题<br><small>（按顺序应用所选的4种颜色）</small>"
 
 #: skins/raku-color-changing/functions.php:225
 #: skins/raku-color-changing/functions.php:247
 msgid "適用しない"
-msgstr ""
+msgstr "不应用"
 
 #: skins/raku-color-changing/functions.php:231
 msgid "【不透明度（背景と線の色）】"
-msgstr ""
+msgstr "【不透明度（背景和线条颜色）】"
 
 #: skins/raku-color-changing/functions.php:233
 #: skins/raku-color-changing/functions.php:255
 msgid "数字を小さくする程、色が薄くなります。"
-msgstr ""
+msgstr "数字越小，颜色越浅。"
 
 #: skins/raku-color-changing/functions.php:234
 msgid "【不透明度（H3タイトルの左側の線の色）】"
-msgstr ""
+msgstr "【不透明度（H3标题左侧的线条颜色）】"
 
 #: skins/raku-color-changing/functions.php:236
 msgid " H3タイトルの左側の線だけ色が濃い方が綺麗なため、個別に設定できます。"
-msgstr ""
+msgstr "为了让H3标题左侧的线条颜色更美观，可以单独设置。"
 
 #: skins/raku-color-changing/functions.php:242
 msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適用する）</small>"
-msgstr ""
+msgstr "侧边栏内的标题<br><small>（按顺序应用所选的4种颜色）</small>"
 
 #: skins/raku-color-changing/functions.php:253
 msgid "【不透明度（背景色）】"
-msgstr ""
+msgstr "【不透明度（背景色）】"
 
 #: skins/skin-grayish-topfull/functions.php:176
 msgid "skin-grayish: カスタマイズ"
-msgstr ""
+msgstr "skin-grayish: 自定义"
 
 #: skins/skin-grayish-topfull/functions.php:184
 msgid "全体：英字フォント設定"
-msgstr ""
+msgstr "全局：英文字体设置"
 
 #: skins/skin-grayish-topfull/functions.php:187
 msgid "英字フォントの適用箇所についてはこちらを参照"
-msgstr ""
+msgstr "有关英文字体应用位置，请参见此处"
 
 #: skins/skin-grayish-topfull/functions.php:200
 msgid "英字フォント設定 選択"
-msgstr ""
+msgstr "选择英文字体设置"
 
 #: skins/skin-grayish-topfull/functions.php:201
 msgid "ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。"
-msgstr ""
+msgstr "可以选择用于徽标文本、全局导航菜单、首页和侧边栏各标题的英文字体。"
 
 #: skins/skin-grayish-topfull/functions.php:201
 msgid "※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
-msgstr ""
+msgstr "※不包括固定页面和文章内容。如果选择“无设置”，则会继承Cocoon设置 > 全局设置 > 网站字体的设置。"
 
 #: skins/skin-grayish-topfull/functions.php:208
 #: skins/skin-grayish-topfull/functions.php:210
 msgid "（細タイプなし）"
-msgstr ""
+msgstr "（无细体）"
 
 #: skins/skin-grayish-topfull/functions.php:213
 msgid "設定なし"
-msgstr ""
+msgstr "无设置"
 
 #: skins/skin-grayish-topfull/functions.php:228
 msgid "サイトロゴ（テキスト時）のフォント太さ 選択"
-msgstr ""
+msgstr "选择网站徽标（文本时）的字体粗细"
 
 #: skins/skin-grayish-topfull/functions.php:229
 msgid "ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。"
-msgstr ""
+msgstr "可以选择徽标文本的英文字体粗细为细（默认）或普通。"
 
 #: skins/skin-grayish-topfull/functions.php:229
 msgid "※フォントによって細いタイプがない場合があります。"
-msgstr ""
+msgstr "※某些字体可能没有细体选项。"
 
 #: skins/skin-grayish-topfull/functions.php:234
 msgid "細"
-msgstr ""
+msgstr "细"
 
 #: skins/skin-grayish-topfull/functions.php:235
 msgid "普通"
-msgstr ""
+msgstr "普通"
 
 #: skins/skin-grayish-topfull/functions.php:370
 msgid "全体：カラー設定"
-msgstr ""
+msgstr "全局：颜色设置"
 
 #: skins/skin-grayish-topfull/functions.php:373
 msgid "各カラーの適用箇所についてはこちらを参照"
-msgstr ""
+msgstr "有关每种颜色的应用位置，请参见此处"
 
 #: skins/skin-grayish-topfull/functions.php:388
 msgid "テキストカラー"
-msgstr ""
+msgstr "文本颜色"
 
 #: skins/skin-grayish-topfull/functions.php:389
 msgid "メニュー・見出し・本文などのテキストカラーを変更。"
-msgstr ""
+msgstr "更改菜单、标题、正文等的文本颜色。"
 
 #: skins/skin-grayish-topfull/functions.php:390
 #: skins/skin-grayish-topfull/functions.php:410
@@ -12394,118 +12394,118 @@ msgstr ""
 #: skins/skin-grayish-topfull/functions.php:1710
 #: skins/skin-grayish-topfull/functions.php:1810
 msgid "※空欄の場合はデフォルト値になります。"
-msgstr ""
+msgstr "※如果留空，将使用默认值。"
 
 #: skins/skin-grayish-topfull/functions.php:408
 msgid "メインアクセント 一番明るい青色"
-msgstr ""
+msgstr "主要强调色 最亮的蓝色"
 
 #: skins/skin-grayish-topfull/functions.php:409
 msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
-msgstr ""
+msgstr "更改网站徽标文本和各文本链接悬停时的颜色、<br>首页NewPost的颜色、<br>类别标题下划线的颜色、<br>侧边栏小工具标题下划线的颜色、<br>页脚内强调线的颜色。"
 
 #: skins/skin-grayish-topfull/functions.php:426
 msgid "メイン 薄い青色"
-msgstr ""
+msgstr "主要 浅蓝色"
 
 #: skins/skin-grayish-topfull/functions.php:427
 msgid "グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。"
-msgstr ""
+msgstr "全局导航的第三级背景色、<br>首页More按钮、下一页按钮、标签云悬停时的背景色。"
 
 #: skins/skin-grayish-topfull/functions.php:444
 msgid "メイン 一番薄い青"
-msgstr ""
+msgstr "主要 最浅蓝色"
 
 #: skins/skin-grayish-topfull/functions.php:445
 msgid "フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。"
-msgstr ""
+msgstr "首页第二个类别的背景色、<br>目录和文章下方的SNS按钮背景的蓝色条纹、<br>列表页面分页按钮的背景色。"
 
 #: skins/skin-grayish-topfull/functions.php:462
 msgid "サブ 濃い青"
-msgstr ""
+msgstr "次要 深蓝色"
 
 #: skins/skin-grayish-topfull/functions.php:463
 msgid "プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。"
-msgstr ""
+msgstr "个人资料名称、发布日期、图标、正文目录的上下线、目录文本、SNS分享、关注、引导区域的按钮等。"
 
 #: skins/skin-grayish-topfull/functions.php:480
 msgid "サブ もっと濃い青"
-msgstr ""
+msgstr "次要 更深蓝色"
 
 #: skins/skin-grayish-topfull/functions.php:481
 msgid "カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。"
-msgstr ""
+msgstr "类别标签背景色、文章内标签的边框线和图标颜色。"
 
 #: skins/skin-grayish-topfull/functions.php:623
 msgid "フロントページ設定：ヘッダー"
-msgstr ""
+msgstr "首页设置：头部"
 
 #: skins/skin-grayish-topfull/functions.php:626
 #: skins/skin-grayish-topfull/functions.php:1368
 msgid "グローバルナビの高さ等変更についてはこちらを参照"
-msgstr ""
+msgstr "有关更改全局导航高度等信息，请参见此处"
 
 #: skins/skin-grayish-topfull/functions.php:626
 msgid "メインビジュアルについてはこちらを参照"
-msgstr ""
+msgstr "有关主视觉，请参见此处"
 
 #: skins/skin-grayish-topfull/functions.php:626
 msgid "グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照"
-msgstr ""
+msgstr "有关全局导航菜单创建和SNS关注按钮，请参见此处"
 
 #: skins/skin-grayish-topfull/functions.php:641
 msgid "【PC】グローバルナビの高さ"
-msgstr ""
+msgstr "【PC】全局导航高度"
 
 #: skins/skin-grayish-topfull/functions.php:642
 msgid "フロントページのグローバルナビの高さ。56px〜100pxの範囲で変更可能です。"
-msgstr ""
+msgstr "首页全局导航的高度。可以在56px〜100px范围内更改。"
 
 #: skins/skin-grayish-topfull/functions.php:643
 #: skins/skin-grayish-topfull/functions.php:1382
 msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
-msgstr ""
+msgstr "※如果留空或超出范围，值将为56px。"
 
 #: skins/skin-grayish-topfull/functions.php:666
 msgid "【PC】グローバルナビの背景色"
-msgstr ""
+msgstr "【PC】全局导航背景色"
 
 #: skins/skin-grayish-topfull/functions.php:667
 msgid "グローバルナビの背景色。"
-msgstr ""
+msgstr "全局导航背景色。"
 
 #: skins/skin-grayish-topfull/functions.php:685
 msgid "【PC】グローバルナビ背景色の不透明度調整"
-msgstr ""
+msgstr "【PC】全局导航背景色的不透明度调整"
 
 #: skins/skin-grayish-topfull/functions.php:686
 #: skins/skin-grayish-topfull/functions.php:1421
 #: skins/skin-grayish-topfull/functions.php:1729
 #: skins/skin-grayish-topfull/functions.php:1828
 msgid "値が大きくなるほど背景色が濃くなります。"
-msgstr ""
+msgstr "值越大，背景色越深。"
 
 #: skins/skin-grayish-topfull/functions.php:691
 #: skins/skin-grayish-topfull/functions.php:1426
 #: skins/skin-grayish-topfull/functions.php:1735
 #: skins/skin-grayish-topfull/functions.php:1833
 msgid "（背景色なし)"
-msgstr ""
+msgstr "（无背景色）"
 
 #: skins/skin-grayish-topfull/functions.php:701
 #: skins/skin-grayish-topfull/functions.php:1436
 #: skins/skin-grayish-topfull/functions.php:1745
 #: skins/skin-grayish-topfull/functions.php:1843
 msgid "(不透明)"
-msgstr ""
+msgstr "（不透明）"
 
 #: skins/skin-grayish-topfull/functions.php:719
 msgid "メインビジュアル 白ドットのON/OFF"
-msgstr ""
+msgstr "主视觉 白点开关"
 
 #: skins/skin-grayish-topfull/functions.php:720
 msgid "メインビジュアルの上に白いドットを重ねるかどうかを選択。解像度が低い画像を使用する場合はON推奨"
-msgstr ""
+msgstr "选择是否在主视觉上叠加白点。如果使用低分辨率图像，建议开启"
 
 #: skins/skin-grayish-topfull/functions.php:725
 #: skins/skin-grayish-topfull/functions.php:779
@@ -12513,7 +12513,7 @@ msgstr ""
 #: skins/skin-grayish-topfull/functions.php:1768
 #: skins/skin-grayish-topfull/functions.php:1791
 msgid "ON"
-msgstr ""
+msgstr "开"
 
 #: skins/skin-grayish-topfull/functions.php:726
 #: skins/skin-grayish-topfull/functions.php:748
@@ -12522,927 +12522,375 @@ msgstr ""
 #: skins/skin-grayish-topfull/functions.php:1769
 #: skins/skin-grayish-topfull/functions.php:1792
 msgid "OFF"
-msgstr ""
+msgstr "关"
 
 #: skins/skin-grayish-topfull/functions.php:742
 msgid "メインビジュアル 白オーバーレイの不透明度調整"
-msgstr ""
+msgstr "主视觉 白色覆盖层不透明度调整"
 
 #: skins/skin-grayish-topfull/functions.php:743
 msgid "メインビジュアルの上に重ねる白の不透明度を調整。"
-msgstr ""
+msgstr "调整叠加在主视觉上的白色不透明度。"
 
 #: skins/skin-grayish-topfull/functions.php:743
 msgid "値が大きくなるほど白が濃くなります。"
-msgstr ""
+msgstr "值越大，白色越浓。"
 
 #: skins/skin-grayish-topfull/functions.php:773
 msgid "メインビジュアル下のスクロールアニメーションのON/OFF"
-msgstr ""
+msgstr "主视觉下的滚动动画开关"
 
 #: skins/skin-grayish-topfull/functions.php:774
 msgid "メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。"
-msgstr ""
+msgstr "如果不需要主视觉下方的滚动提示动画，请在此关闭。"
 
 #: skins/skin-grayish-topfull/functions.php:774
 msgid "PC/SP共通の設定になります。"
-msgstr ""
+msgstr "此设置适用于PC/智能手机。"
 
 #: skins/skin-grayish-topfull/functions.php:790
 msgid "X（旧Twitter）フォローボタンを表示"
-msgstr ""
+msgstr "显示X（原Twitter）关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:794
 msgid "Mastodon フォローボタンを表示"
-msgstr ""
+msgstr "显示Mastodon关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:798
 msgid "Bluesky フォローボタンを表示"
-msgstr ""
+msgstr "显示Bluesky关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:802
 msgid "Misskey フォローボタンを表示"
-msgstr ""
+msgstr "显示Misskey关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:806
 msgid "Facebook フォローボタンを表示"
-msgstr ""
+msgstr "显示Facebook关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:810
 msgid "はてブ フォローボタンを表示"
-msgstr ""
+msgstr "显示Hatena Bookmark关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:814
 msgid "Instagram フォローボタンを表示"
-msgstr ""
+msgstr "显示Instagram关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:818
 msgid "Pinterest フォローボタンを表示"
-msgstr ""
+msgstr "显示Pinterest关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:822
 msgid "YouTube フォローボタンを表示"
-msgstr ""
+msgstr "显示YouTube关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:826
 msgid "LinkedIn フォローボタンを表示"
-msgstr ""
+msgstr "显示LinkedIn关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:830
 msgid "note フォローボタンを表示"
-msgstr ""
+msgstr "显示note关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:834
 msgid "Flickr フォローボタンを表示"
-msgstr ""
+msgstr "显示Flickr关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:838
 msgid "Amazon欲しい物リスト フォローボタンを表示"
-msgstr ""
+msgstr "显示Amazon愿望清单关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:842
 msgid "Twitch フォローボタンを表示"
-msgstr ""
+msgstr "显示Twitch关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:846
 msgid "楽天ROOM フォローボタンを表示"
-msgstr ""
+msgstr "显示Rakuten Room关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:850
 msgid "Slack フォローボタンを表示"
-msgstr ""
+msgstr "显示Slack关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:854
 msgid "GitHub フォローボタンを表示"
-msgstr ""
+msgstr "显示GitHub关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:858
 msgid "CodePen フォローボタンを表示"
-msgstr ""
+msgstr "显示CodePen关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:862
 msgid "TikTok フォローボタンを表示"
-msgstr ""
+msgstr "显示TikTok关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:866
 msgid "SoundCloud フォローボタンを表示"
-msgstr ""
+msgstr "显示SoundCloud关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:870
 msgid "LINE フォローボタンを表示"
-msgstr ""
+msgstr "显示LINE关注按钮"
 
 #: skins/skin-grayish-topfull/functions.php:890
 msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
-msgstr ""
+msgstr "如果在个人资料页面中输入了URL，将在全局导航中显示关注按钮。"
 
 #: skins/skin-grayish-topfull/functions.php:891
 msgid "※フロントページ以外のグローバルナビにも表示されます。"
-msgstr ""
+msgstr "※它也显示在首页以外的全局导航中。"
 
 #: skins/skin-grayish-topfull/functions.php:1137
 msgid "全体：テキスト変更"
-msgstr ""
+msgstr "全局：文本更改"
 
 #: skins/skin-grayish-topfull/functions.php:1140
 msgid "テキスト変更についてはこちらを参照"
-msgstr ""
+msgstr "有关文本更改，请参见此处。"
 
 #: skins/skin-grayish-topfull/functions.php:1145
 #: skins/skin-grayish-topfull/functions.php:1269
 #: skins/skin-grayish-topfull/functions.php:1273
 msgid "New Post"
-msgstr ""
+msgstr "新文章"
 
 #: skins/skin-grayish-topfull/functions.php:1153
 msgid "【フロントページ】\"New Post\"を変更"
-msgstr ""
+msgstr "[首页] 更改 \"新文章\""
 
 #: skins/skin-grayish-topfull/functions.php:1154
 msgid "New Postを別のテキストに変更できます。"
-msgstr ""
+msgstr "可以将“新文章”更改为其他文本。"
 
 #: skins/skin-grayish-topfull/functions.php:1154
 #: skins/skin-grayish-topfull/functions.php:1194
 msgid "Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。"
-msgstr ""
+msgstr "当选择Cocoon设置 > 索引 > 按类别时，将显示此内容。"
 
 #: skins/skin-grayish-topfull/functions.php:1155
 msgid "※空欄の場合は\"New Post\"が表示されます。"
-msgstr ""
+msgstr "※如果留空，将显示“新文章”。"
 
 #: skins/skin-grayish-topfull/functions.php:1165
 #: skins/skin-grayish-topfull/functions.php:1288
 #: skins/skin-grayish-topfull/functions.php:1289
 #: skins/skin-grayish-topfull/functions.php:1291
 msgid "最新の記事"
-msgstr ""
+msgstr "最新文章"
 
 #: skins/skin-grayish-topfull/functions.php:1173
 msgid "【フロントページ】\"最新の記事\"を変更"
-msgstr ""
+msgstr "[首页] 更改 \"最新文章\""
 
 #: skins/skin-grayish-topfull/functions.php:1174
 msgid "\"最新の記事\"を別のテキストに変更できます。"
-msgstr ""
+msgstr "可以将“最新文章”更改为其他文本。"
 
 #: skins/skin-grayish-topfull/functions.php:1174
 #: skins/skin-grayish-topfull/functions.php:1214
 msgid "Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。"
-msgstr ""
+msgstr "当选择Cocoon设置 > 索引 > 标签列表或按类别时，将显示此内容。"
 
 #: skins/skin-grayish-topfull/functions.php:1175
 msgid "※空欄の場合は\"最新の記事\"が表示されます。"
-msgstr ""
+msgstr "※如果留空，将显示“最新文章”。"
 
 #: skins/skin-grayish-topfull/functions.php:1193
 msgid "【フロントページ】\"Category\"を変更"
-msgstr ""
+msgstr "[首页] 更改 \"Category\""
 
 #: skins/skin-grayish-topfull/functions.php:1194
 msgid "Categoryを別のテキストに変更できます。"
-msgstr ""
+msgstr "可以将“Category”更改为其他文本。"
 
 #: skins/skin-grayish-topfull/functions.php:1195
 msgid "※空欄の場合は\"Category\"が表示されます。"
-msgstr ""
+msgstr "※如果留空，将显示“Category”。"
 
 #: skins/skin-grayish-topfull/functions.php:1205
 #: skins/skin-grayish-topfull/functions.php:1334
 #: skins/skin-grayish-topfull/functions.php:1335
 #: skins/skin-grayish-topfull/functions.php:1337
 msgid "More"
-msgstr ""
+msgstr "更多"
 
 #: skins/skin-grayish-topfull/functions.php:1213
 msgid "【フロントページ】Moreボタン \"More\"を変更"
-msgstr ""
+msgstr "[首页] 更改更多按钮 \"更多\""
 
 #: skins/skin-grayish-topfull/functions.php:1214
 msgid "\"More\"を別のテキストに変更できます。"
-msgstr ""
+msgstr "可以将“更多”更改为其他文本。"
 
 #: skins/skin-grayish-topfull/functions.php:1215
 msgid "※空欄の場合は\"More\"が表示されます。"
-msgstr ""
+msgstr "※如果留空，将显示“更多”。"
 
 #: skins/skin-grayish-topfull/functions.php:1225
 #: skins/skin-grayish-topfull/functions.php:1347
 #: skins/skin-grayish-topfull/functions.php:1348
 #: skins/skin-grayish-topfull/functions.php:1350
 msgid "Next"
-msgstr ""
+msgstr "下一个"
 
 #: skins/skin-grayish-topfull/functions.php:1233
 msgid "【フロントページ・各一覧ページ】Nextボタン \"Next\"を変更"
-msgstr ""
+msgstr "[首页及各列表页面] 更改下一个按钮 \"更多\""
 
 #: skins/skin-grayish-topfull/functions.php:1234
 msgid "\"Next\"を別のテキストに変更できます。"
-msgstr ""
+msgstr "可以将“Next”更改为其他文本。"
 
 #: skins/skin-grayish-topfull/functions.php:1234
 msgid "※空欄の場合は\"Next\"が表示されます。"
-msgstr ""
+msgstr "※如果留空，将显示“更多”。"
+
+#: skins/skin-grayish-topfull/functions.php:1244
+#: skins/skin-grayish-topfull/functions.php:1540
+#: skins/skin-grayish-topfull/functions.php:1541
+#: skins/skin-grayish-topfull/functions.php:1543
+msgid "Home"
+msgstr "主页"
 
 #: skins/skin-grayish-topfull/functions.php:1252
 msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
-msgstr ""
+msgstr "[文章及固定页面] 更改面包屑导航中的 \"主页\""
 
 #: skins/skin-grayish-topfull/functions.php:1253
 msgid "\"Home\"を別のテキストに変更できます。"
-msgstr ""
+msgstr "可以将“主页”更改为其他文本。"
 
 #: skins/skin-grayish-topfull/functions.php:1253
 msgid "※空欄の場合は\"Home\"が表示されます。"
-msgstr ""
+msgstr "※如果留空，将显示“主页”。"
 
 #: skins/skin-grayish-topfull/functions.php:1365
 msgid "フロントページ以外の設定:ヘッダー"
-msgstr ""
+msgstr "非首页设置: 头部"
 
 #: skins/skin-grayish-topfull/functions.php:1380
 msgid "【PC】フロントページ以外のグローバルナビの高さ"
-msgstr ""
+msgstr "【PC】非首页的全局导航高度"
 
 #: skins/skin-grayish-topfull/functions.php:1381
 msgid "56px〜100pxの範囲で変更可能です。"
-msgstr ""
+msgstr "可以在56px〜100px范围内更改。"
 
 #: skins/skin-grayish-topfull/functions.php:1381
 msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
-msgstr ""
+msgstr "使用徽标图像时，可以调整徽标图像的大小。"
 
 #: skins/skin-grayish-topfull/functions.php:1403
 msgid "【PC】フロントページ以外のヘッダーの背景色"
-msgstr ""
+msgstr "【PC】非首页头部的背景色"
 
 #: skins/skin-grayish-topfull/functions.php:1404
 msgid "ヘッダーの背景色を変更。"
-msgstr ""
+msgstr "更改头部的背景色。"
 
 #: skins/skin-grayish-topfull/functions.php:1420
 msgid "【PC】ヘッダー背景色の不透明度調整"
-msgstr ""
+msgstr "【PC】头部背景色的不透明度调整"
 
 #: skins/skin-grayish-topfull/functions.php:1454
 msgid "【PC】フロントページ以外のヘッダーロゴ画像アップロード"
-msgstr ""
+msgstr "【PC】非首页头部徽标图像上传"
 
 #: skins/skin-grayish-topfull/functions.php:1455
 msgid "ロゴをフロントページと別画像にしたいとき設定します。"
-msgstr ""
+msgstr "当希望徽标与首页使用不同图像时进行设置。"
 
 #: skins/skin-grayish-topfull/functions.php:1559
 msgid "コンテンツ下部ウィジェット：プロフィールボックス"
-msgstr ""
+msgstr "内容底部小工具：个人资料框"
 
 #: skins/skin-grayish-topfull/functions.php:1562
 msgid "プロフィールボックスの設定についてはこちらを参照"
-msgstr ""
+msgstr "有关个人资料框的设置，请参见此处"
 
 #: skins/skin-grayish-topfull/functions.php:1575
 msgid "プロフィールボックスの背景画像の白オーバーレイ不透明度調整"
-msgstr ""
+msgstr "个人资料框背景图像的白色覆盖层不透明度调整"
 
 #: skins/skin-grayish-topfull/functions.php:1576
 msgid "値が大きくなるほど白色が濃くなります。"
-msgstr ""
+msgstr "值越大，白色越浓。"
 
 #: skins/skin-grayish-topfull/functions.php:1581
-msgid "（白色なし)"
-msgstr ""
+msgid "（白色なし）"
+msgstr "（无白色）"
 
 #: skins/skin-grayish-topfull/functions.php:1611
 msgid "画像アップロード"
-msgstr ""
+msgstr "上传图片"
 
 #: skins/skin-grayish-topfull/functions.php:1612
 msgid "プロフィールボックスの背景に設定したい画像を選択"
-msgstr ""
+msgstr "选择要设置为个人资料框背景的图像"
 
 #: skins/skin-grayish-topfull/functions.php:1695
 msgid "ヘッダー・フッターモバイルボタンの設定についてはこちらを参照"
-msgstr ""
+msgstr "有关头部和底部移动按钮的设置，请参见此处"
 
 #: skins/skin-grayish-topfull/functions.php:1708
 msgid "ヘッダーモバイルボタンの背景色"
-msgstr ""
+msgstr "头部移动按钮的背景色"
 
 #: skins/skin-grayish-topfull/functions.php:1709
 msgid "ヘッダーモバイルボタンの背景色を変更。"
-msgstr ""
+msgstr "更改头部移动按钮的背景色。"
 
 #: skins/skin-grayish-topfull/functions.php:1711
 msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。"
-msgstr ""
+msgstr "※ 如果将“仅在首页显示头部移动按钮的菜单图标”设置为启用，则首页的头部移动按钮背景色将无效。"
 
 #: skins/skin-grayish-topfull/functions.php:1728
 msgid "ヘッダーモバイルボタン背景色の不透明度調整"
-msgstr ""
+msgstr "头部移动按钮背景色的不透明度调整"
 
 #: skins/skin-grayish-topfull/functions.php:1730
 msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。"
-msgstr ""
+msgstr "※ 如果将“仅在首页显示头部移动按钮的菜单图标”设置为启用，则首页的头部移动按钮背景色的不透明度调整将无效。"
 
 #: skins/skin-grayish-topfull/functions.php:1761
 msgid "フロントページのみヘッダーモバイルボタンをメニューアイコンのみON/OFF"
-msgstr ""
+msgstr "仅在首页启用头部移动按钮的菜单图标开关"
 
 #: skins/skin-grayish-topfull/functions.php:1762
 msgid "フロントページ以外は設定したメニューを表示します。"
-msgstr ""
+msgstr "在首页之外显示设置的菜单。"
 
 #: skins/skin-grayish-topfull/functions.php:1763
 msgid "※ヘッダーモバイルボタンにオリジナルメニューを作成する場合は、メニューの一番上に#menuを設定してください。"
-msgstr ""
+msgstr "※ 要在头部移动按钮上创建自定义菜单，请在菜单顶部设置#menu。"
 
 #: skins/skin-grayish-topfull/functions.php:1785
 msgid "ヘッダーモバイルボタン＆フッターモバイルボタンのアイコン下のキャプションのON/OFF"
-msgstr ""
+msgstr "头部移动按钮和底部移动按钮图标下方的标题开关"
 
 #: skins/skin-grayish-topfull/functions.php:1786
 msgid "モバイル時にアイコン下にキャプションを表示"
-msgstr ""
+msgstr "在移动设备上在图标下方显示标题"
 
 #: skins/skin-grayish-topfull/functions.php:1808
 msgid "フッターモバイルボタンの背景色"
-msgstr ""
+msgstr "底部移动按钮的背景色"
 
 #: skins/skin-grayish-topfull/functions.php:1809
 msgid "フッターモバイルボタンの背景色を変更。"
-msgstr ""
+msgstr "更改底部移动按钮的背景色。"
 
 #: skins/skin-grayish-topfull/functions.php:1827
 msgid "フッターモバイルボタン背景色の不透明度調整"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:184
-msgid "全体：英字フォント設定"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:187
-msgid "英字フォントの適用箇所についてはこちらを参照"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:200
-msgid "英字フォント設定 選択"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:201
-msgid "ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:201
-msgid "※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:208
-#: skins/skin-grayish-topfull/functions.php:210
-msgid "（細タイプなし）"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:213
-msgid "設定なし"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:228
-msgid "サイトロゴ（テキスト時）のフォント太さ 選択"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:229
-msgid "ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:229
-msgid "※フォントによって細いタイプがない場合があります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:234
-msgid "細"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:235
-msgid "普通"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:370
-msgid "全体：カラー設定"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:373
-msgid "各カラーの適用箇所についてはこちらを参照"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:388
-msgid "テキストカラー"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:389
-msgid "メニュー・見出し・本文などのテキストカラーを変更。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:390
-#: skins/skin-grayish-topfull/functions.php:410
-#: skins/skin-grayish-topfull/functions.php:428
-#: skins/skin-grayish-topfull/functions.php:446
-#: skins/skin-grayish-topfull/functions.php:464
-#: skins/skin-grayish-topfull/functions.php:482
-#: skins/skin-grayish-topfull/functions.php:668
-#: skins/skin-grayish-topfull/functions.php:1405
-#: skins/skin-grayish-topfull/functions.php:1710
-#: skins/skin-grayish-topfull/functions.php:1810
-msgid "※空欄の場合はデフォルト値になります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:408
-msgid "メインアクセント 一番明るい青色"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:409
-msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:426
-msgid "メイン 薄い青色"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:427
-msgid "グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:444
-msgid "メイン 一番薄い青"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:445
-msgid "フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:462
-msgid "サブ 濃い青"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:463
-msgid "プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:480
-msgid "サブ もっと濃い青"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:481
-msgid "カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:623
-msgid "フロントページ設定：ヘッダー"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:626
-#: skins/skin-grayish-topfull/functions.php:1368
-msgid "グローバルナビの高さ等変更についてはこちらを参照"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:626
-msgid "メインビジュアルについてはこちらを参照"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:626
-msgid "グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:641
-msgid "【PC】グローバルナビの高さ"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:642
-msgid "フロントページのグローバルナビの高さ。56px〜100pxの範囲で変更可能です。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:643
-#: skins/skin-grayish-topfull/functions.php:1382
-msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:666
-msgid "【PC】グローバルナビの背景色"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:667
-msgid "グローバルナビの背景色。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:685
-msgid "【PC】グローバルナビ背景色の不透明度調整"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:686
-#: skins/skin-grayish-topfull/functions.php:1421
-#: skins/skin-grayish-topfull/functions.php:1729
-#: skins/skin-grayish-topfull/functions.php:1828
-msgid "値が大きくなるほど背景色が濃くなります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:691
-#: skins/skin-grayish-topfull/functions.php:1426
-#: skins/skin-grayish-topfull/functions.php:1735
-#: skins/skin-grayish-topfull/functions.php:1833
-msgid "（背景色なし)"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:701
-#: skins/skin-grayish-topfull/functions.php:1436
-#: skins/skin-grayish-topfull/functions.php:1745
-#: skins/skin-grayish-topfull/functions.php:1843
-msgid "(不透明)"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:719
-msgid "メインビジュアル 白ドットのON/OFF"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:720
-msgid "メインビジュアルの上に白いドットを重ねるかどうかを選択。解像度が低い画像を使用する場合はON推奨"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:725
-#: skins/skin-grayish-topfull/functions.php:779
-#: skins/skin-grayish-topfull/functions.php:897
-#: skins/skin-grayish-topfull/functions.php:1768
-#: skins/skin-grayish-topfull/functions.php:1791
-msgid "ON"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:726
-#: skins/skin-grayish-topfull/functions.php:748
-#: skins/skin-grayish-topfull/functions.php:780
-#: skins/skin-grayish-topfull/functions.php:896
-#: skins/skin-grayish-topfull/functions.php:1769
-#: skins/skin-grayish-topfull/functions.php:1792
-msgid "OFF"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:742
-msgid "メインビジュアル 白オーバーレイの不透明度調整"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:743
-msgid "メインビジュアルの上に重ねる白の不透明度を調整。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:743
-msgid "値が大きくなるほど白が濃くなります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:773
-msgid "メインビジュアル下のスクロールアニメーションのON/OFF"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:774
-msgid "メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:774
-msgid "PC/SP共通の設定になります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:790
-msgid "X（旧Twitter）フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:794
-msgid "Mastodon フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:798
-msgid "Bluesky フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:802
-msgid "Misskey フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:806
-msgid "Facebook フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:810
-msgid "はてブ フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:814
-msgid "Instagram フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:818
-msgid "Pinterest フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:822
-msgid "YouTube フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:826
-msgid "LinkedIn フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:830
-msgid "note フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:834
-msgid "Flickr フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:838
-msgid "Amazon欲しい物リスト フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:842
-msgid "Twitch フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:846
-msgid "楽天ROOM フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:850
-msgid "Slack フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:854
-msgid "GitHub フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:858
-msgid "CodePen フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:862
-msgid "TikTok フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:866
-msgid "SoundCloud フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:870
-msgid "LINE フォローボタンを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:890
-msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:891
-msgid "※フロントページ以外のグローバルナビにも表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1137
-msgid "全体：テキスト変更"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1140
-msgid "テキスト変更についてはこちらを参照"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1145
-#: skins/skin-grayish-topfull/functions.php:1269
-#: skins/skin-grayish-topfull/functions.php:1273
-msgid "New Post"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1153
-msgid "【フロントページ】\"New Post\"を変更"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1154
-msgid "New Postを別のテキストに変更できます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1154
-#: skins/skin-grayish-topfull/functions.php:1194
-msgid "Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1155
-msgid "※空欄の場合は\"New Post\"が表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1165
-#: skins/skin-grayish-topfull/functions.php:1288
-#: skins/skin-grayish-topfull/functions.php:1289
-#: skins/skin-grayish-topfull/functions.php:1291
-msgid "最新の記事"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1173
-msgid "【フロントページ】\"最新の記事\"を変更"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1174
-msgid "\"最新の記事\"を別のテキストに変更できます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1174
-#: skins/skin-grayish-topfull/functions.php:1214
-msgid "Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1175
-msgid "※空欄の場合は\"最新の記事\"が表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1193
-msgid "【フロントページ】\"Category\"を変更"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1194
-msgid "Categoryを別のテキストに変更できます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1195
-msgid "※空欄の場合は\"Category\"が表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1205
-#: skins/skin-grayish-topfull/functions.php:1334
-#: skins/skin-grayish-topfull/functions.php:1335
-#: skins/skin-grayish-topfull/functions.php:1337
-msgid "More"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1213
-msgid "【フロントページ】Moreボタン \"More\"を変更"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1214
-msgid "\"More\"を別のテキストに変更できます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1215
-msgid "※空欄の場合は\"More\"が表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1225
-#: skins/skin-grayish-topfull/functions.php:1347
-#: skins/skin-grayish-topfull/functions.php:1348
-#: skins/skin-grayish-topfull/functions.php:1350
-msgid "Next"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1233
-msgid "【フロントページ・各一覧ページ】Nextボタン \"Next\"を変更"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1234
-msgid "\"Next\"を別のテキストに変更できます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1234
-msgid "※空欄の場合は\"Next\"が表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1252
-msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1253
-msgid "\"Home\"を別のテキストに変更できます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1253
-msgid "※空欄の場合は\"Home\"が表示されます。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1365
-msgid "フロントページ以外の設定:ヘッダー"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1380
-msgid "【PC】フロントページ以外のグローバルナビの高さ"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1381
-msgid "56px〜100pxの範囲で変更可能です。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1381
-msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1403
-msgid "【PC】フロントページ以外のヘッダーの背景色"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1404
-msgid "ヘッダーの背景色を変更。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1420
-msgid "【PC】ヘッダー背景色の不透明度調整"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1454
-msgid "【PC】フロントページ以外のヘッダーロゴ画像アップロード"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1455
-msgid "ロゴをフロントページと別画像にしたいとき設定します。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1559
-msgid "コンテンツ下部ウィジェット：プロフィールボックス"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1562
-msgid "プロフィールボックスの設定についてはこちらを参照"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1575
-msgid "プロフィールボックスの背景画像の白オーバーレイ不透明度調整"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1576
-msgid "値が大きくなるほど白色が濃くなります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1581
-msgid "（白色なし)"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1611
-msgid "画像アップロード"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1612
-msgid "プロフィールボックスの背景に設定したい画像を選択"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1695
-msgid "ヘッダー・フッターモバイルボタンの設定についてはこちらを参照"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1708
-msgid "ヘッダーモバイルボタンの背景色"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1709
-msgid "ヘッダーモバイルボタンの背景色を変更。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1711
-msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1728
-msgid "ヘッダーモバイルボタン背景色の不透明度調整"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1730
-msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1761
-msgid "フロントページのみヘッダーモバイルボタンをメニューアイコンのみON/OFF"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1762
-msgid "フロントページ以外は設定したメニューを表示します。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1763
-msgid "※ヘッダーモバイルボタンにオリジナルメニューを作成する場合は、メニューの一番上に#menuを設定してください。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1785
-msgid "ヘッダーモバイルボタン＆フッターモバイルボタンのアイコン下のキャプションのON/OFF"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1786
-msgid "モバイル時にアイコン下にキャプションを表示"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1808
-msgid "フッターモバイルボタンの背景色"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1809
-msgid "フッターモバイルボタンの背景色を変更。"
-msgstr ""
-
-#: skins/skin-grayish-topfull/functions.php:1827
-msgid "フッターモバイルボタン背景色の不透明度調整"
-msgstr ""
+msgstr "底部移动按钮背景色的不透明度调整"
 
 #: skins/skin-grayish-topfull/functions.php:1862
 msgid "モバイル時のヘッダーロゴ画像アップロード"
-msgstr ""
+msgstr "上传移动设备的头部徽标图像"
 
 #: skins/skin-grayish-topfull/functions.php:1863
 msgid "モバイル時のロゴを別画像にしたいとき設定します。"
-msgstr ""
+msgstr "当希望在移动设备上使用不同图像作为徽标时进行设置。"
 
 #: skins/skin-grayish-topfull/functions.php:2077
 msgid "サイトテキストグレー"
@@ -13554,11 +13002,11 @@ msgstr "可以横向滚动"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
 msgid "検索フォームを閉じる"
-msgstr ""
+msgstr "关闭搜索表单"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:26
 msgid "検索フォームを開く"
-msgstr ""
+msgstr "打开搜索表单"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:57
 #: tmp/sns-follow-buttons.php:33
@@ -13672,7 +13120,7 @@ msgstr "登出"
 #: skins/skin-made-in-heaven/lib/hook-wp.php:53
 #: skins/skin-made-in-heaven/lib/hook-wp.php:75
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
@@ -15148,362 +14596,362 @@ msgstr "点击此处更改设置。此输入不会反映在公共页面上。"
 
 #: blocks/src/helpers.js:258
 msgid "fab-info-circle"
-msgstr ""
+msgstr "fab-info-circle"
 
 #: blocks/src/helpers.js:262
 msgid "fab-question-circle"
-msgstr ""
+msgstr "fab-question-circle"
 
 #: blocks/src/helpers.js:266
 msgid "fab-exclamation-circle"
-msgstr ""
+msgstr "fab-exclamation-circle"
 
 #: blocks/src/helpers.js:270
 msgid "fab-pencil"
-msgstr ""
+msgstr "fab-pencil"
 
 #: blocks/src/helpers.js:274
 msgid "fab-edit"
-msgstr ""
+msgstr "fab-edit"
 
 #: blocks/src/helpers.js:278
 msgid "fab-comment"
-msgstr ""
+msgstr "fab-comment"
 
 #: blocks/src/helpers.js:282
 msgid "fab-ok"
-msgstr ""
+msgstr "fab-ok"
 
 #: blocks/src/helpers.js:286
 msgid "fab-bad"
-msgstr ""
+msgstr "fab-bad"
 
 #: blocks/src/helpers.js:290
 msgid "fab-thumbs-up"
-msgstr ""
+msgstr "fab-thumbs-up"
 
 #: blocks/src/helpers.js:294
 msgid "fab-thumbs-down"
-msgstr ""
+msgstr "fab-thumbs-down"
 
 #: blocks/src/helpers.js:298
 #: blocks/src/helpers.js:473
 msgid "fab-check"
-msgstr ""
+msgstr "fab-check"
 
 #: blocks/src/helpers.js:302
 #: blocks/src/helpers.js:537
 msgid "fab-star"
-msgstr ""
+msgstr "fab-star"
 
 #: blocks/src/helpers.js:306
 msgid "fab-bell"
-msgstr ""
+msgstr "fab-bell"
 
 #: blocks/src/helpers.js:310
 msgid "fab-trophy"
-msgstr ""
+msgstr "fab-trophy"
 
 #: blocks/src/helpers.js:314
 msgid "fab-lightbulb"
-msgstr ""
+msgstr "fab-lightbulb"
 
 #: blocks/src/helpers.js:318
 msgid "fab-graduation-cap"
-msgstr ""
+msgstr "fab-graduation-cap"
 
 #: blocks/src/helpers.js:322
 msgid "fab-bolt"
-msgstr ""
+msgstr "fab-bolt"
 
 #: blocks/src/helpers.js:326
 msgid "fab-bookmark"
-msgstr ""
+msgstr "fab-bookmark"
 
 #: blocks/src/helpers.js:330
 msgid "fab-book"
-msgstr ""
+msgstr "fab-book"
 
 #: blocks/src/helpers.js:334
 msgid "fab-download"
-msgstr ""
+msgstr "fab-download"
 
 #: blocks/src/helpers.js:338
 msgid "fab-coffee"
-msgstr ""
+msgstr "fab-coffee"
 
 #: blocks/src/helpers.js:342
 msgid "fab-amazon"
-msgstr ""
+msgstr "fab-amazon"
 
 #: blocks/src/helpers.js:346
 msgid "fab-user"
-msgstr ""
+msgstr "fab-user"
 
 #: blocks/src/helpers.js:350
 msgid "fab-envelope"
-msgstr ""
+msgstr "fab-envelope"
 
 #: blocks/src/helpers.js:354
 msgid "fab-flag"
-msgstr ""
+msgstr "fab-flag"
 
 #: blocks/src/helpers.js:358
 msgid "fab-ban"
-msgstr ""
+msgstr "fab-ban"
 
 #: blocks/src/helpers.js:362
 msgid "fab-calendar"
-msgstr ""
+msgstr "fab-calendar"
 
 #: blocks/src/helpers.js:366
 msgid "fab-clock"
-msgstr ""
+msgstr "fab-clock"
 
 #: blocks/src/helpers.js:370
 msgid "fab-cutlery"
-msgstr ""
+msgstr "fab-cutlery"
 
 #: blocks/src/helpers.js:374
 #: blocks/src/helpers.js:545
 msgid "fab-heart"
-msgstr ""
+msgstr "fab-heart"
 
 #: blocks/src/helpers.js:378
 msgid "fab-camera"
-msgstr ""
+msgstr "fab-camera"
 
 #: blocks/src/helpers.js:382
 msgid "fab-search"
-msgstr ""
+msgstr "fab-search"
 
 #: blocks/src/helpers.js:386
 msgid "fab-file-text"
-msgstr ""
+msgstr "fab-file-text"
 
 #: blocks/src/helpers.js:390
 msgid "fab-folder"
-msgstr ""
+msgstr "fab-folder"
 
 #: blocks/src/helpers.js:394
 msgid "fab-tag"
-msgstr ""
+msgstr "fab-tag"
 
 #: blocks/src/helpers.js:398
 msgid "fab-car"
-msgstr ""
+msgstr "fab-car"
 
 #: blocks/src/helpers.js:402
 msgid "fab-truck"
-msgstr ""
+msgstr "fab-truck"
 
 #: blocks/src/helpers.js:406
 msgid "fab-bicycle"
-msgstr ""
+msgstr "fab-bicycle"
 
 #: blocks/src/helpers.js:410
 msgid "fab-motorcycle"
-msgstr ""
+msgstr "fab-motorcycle"
 
 #: blocks/src/helpers.js:414
 msgid "fab-bus"
-msgstr ""
+msgstr "fab-bus"
 
 #: blocks/src/helpers.js:418
 msgid "fab-plane"
-msgstr ""
+msgstr "fab-plane"
 
 #: blocks/src/helpers.js:422
 msgid "fab-train"
-msgstr ""
+msgstr "fab-train"
 
 #: blocks/src/helpers.js:426
 msgid "fab-subway"
-msgstr ""
+msgstr "fab-subway"
 
 #: blocks/src/helpers.js:430
 msgid "fab-taxi"
-msgstr ""
+msgstr "fab-taxi"
 
 #: blocks/src/helpers.js:434
 msgid "fab-ship"
-msgstr ""
+msgstr "fab-ship"
 
 #: blocks/src/helpers.js:438
 msgid "fab-jpy"
-msgstr ""
+msgstr "fab-jpy"
 
 #: blocks/src/helpers.js:442
 msgid "fab-usd"
-msgstr ""
+msgstr "fab-usd"
 
 #: blocks/src/helpers.js:446
 msgid "fab-eur"
-msgstr ""
+msgstr "fab-eur"
 
 #: blocks/src/helpers.js:450
 msgid "fab-btc"
-msgstr ""
+msgstr "fab-btc"
 
 #: blocks/src/helpers.js:454
 msgid "fab-apple"
-msgstr ""
+msgstr "fab-apple"
 
 #: blocks/src/helpers.js:458
 msgid "fab-android"
-msgstr ""
+msgstr "fab-android"
 
 #: blocks/src/helpers.js:462
 msgid "fab-wordpress"
-msgstr ""
+msgstr "fab-wordpress"
 
 #: blocks/src/helpers.js:469
 msgid "fab-caret-right"
-msgstr ""
+msgstr "fab-caret-right"
 
 #: blocks/src/helpers.js:477
 msgid "fab-check-circle"
-msgstr ""
+msgstr "fab-check-circle"
 
 #: blocks/src/helpers.js:481
 msgid "fab-check-circle-o"
-msgstr ""
+msgstr "fab-check-circle-o"
 
 #: blocks/src/helpers.js:485
 msgid "fab-check-square"
-msgstr ""
+msgstr "fab-check-square"
 
 #: blocks/src/helpers.js:489
 msgid "fab-check-square-o"
-msgstr ""
+msgstr "fab-check-square-o"
 
 #: blocks/src/helpers.js:493
 msgid "fab-caret-square-o-right"
-msgstr ""
+msgstr "fab-caret-square-o-right"
 
 #: blocks/src/helpers.js:497
 msgid "fab-arrow-right"
-msgstr ""
+msgstr "fab-arrow-right"
 
 #: blocks/src/helpers.js:501
 msgid "fab-angle-right"
-msgstr ""
+msgstr "fab-angle-right"
 
 #: blocks/src/helpers.js:505
 msgid "fab-angle-double-right"
-msgstr ""
+msgstr "fab-angle-double-right"
 
 #: blocks/src/helpers.js:509
 msgid "fab-arrow-circle-right"
-msgstr ""
+msgstr "fab-arrow-circle-right"
 
 #: blocks/src/helpers.js:513
 msgid "fab-arrow-circle-o-right"
-msgstr ""
+msgstr "fab-arrow-circle-o-right"
 
 #: blocks/src/helpers.js:517
 msgid "fab-play-circle"
-msgstr ""
+msgstr "fab-play-circle"
 
 #: blocks/src/helpers.js:521
 msgid "fab-play-circle-o"
-msgstr ""
+msgstr "fab-play-circle-o"
 
 #: blocks/src/helpers.js:525
 msgid "fab-chevron-right"
-msgstr ""
+msgstr "fab-chevron-right"
 
 #: blocks/src/helpers.js:529
 msgid "fab-chevron-circle-right"
-msgstr ""
+msgstr "fab-chevron-circle-right"
 
 #: blocks/src/helpers.js:533
 msgid "fab-hand-o-right"
-msgstr ""
+msgstr "fab-hand-o-right"
 
 #: blocks/src/helpers.js:541
 msgid "fab-star-o"
-msgstr ""
+msgstr "fab-star-o"
 
 #: blocks/src/helpers.js:549
 msgid "fab-heart-o"
-msgstr ""
+msgstr "fab-heart-o"
 
 #: blocks/src/helpers.js:553
 msgid "fab-square"
-msgstr ""
+msgstr "fab-square"
 
 #: blocks/src/helpers.js:557
 msgid "fab-square-o"
-msgstr ""
+msgstr "fab-square-o"
 
 #: blocks/src/helpers.js:561
 msgid "fab-circle"
-msgstr ""
+msgstr "fab-circle"
 
 #: blocks/src/helpers.js:565
 msgid "fab-circle-o"
-msgstr ""
+msgstr "fab-circle-o"
 
 #: blocks/src/helpers.js:569
 msgid "fab-dot-circle-o"
-msgstr ""
+msgstr "fab-dot-circle-o"
 
 #: blocks/src/helpers.js:573
 msgid "fab-plus"
-msgstr ""
+msgstr "fab-plus"
 
 #: blocks/src/helpers.js:577
 msgid "fab-plus-circle"
-msgstr ""
+msgstr "fab-plus-circle"
 
 #: blocks/src/helpers.js:581
 msgid "fab-plus-square"
-msgstr ""
+msgstr "fab-plus-square"
 
 #: blocks/src/helpers.js:585
 msgid "fab-plus-square-o"
-msgstr ""
+msgstr "fab-plus-square-o"
 
 #: blocks/src/helpers.js:589
 msgid "fab-minus"
-msgstr ""
+msgstr "fab-minus"
 
 #: blocks/src/helpers.js:593
 msgid "fab-minus-circle"
-msgstr ""
+msgstr "fab-minus-circle"
 
 #: blocks/src/helpers.js:597
 msgid "fab-minus-square"
-msgstr ""
+msgstr "fab-minus-square"
 
 #: blocks/src/helpers.js:601
 msgid "fab-minus-square-o"
-msgstr ""
+msgstr "fab-minus-square-o"
 
 #: blocks/src/helpers.js:605
 msgid "fab-times"
-msgstr ""
+msgstr "fab-times"
 
 #: blocks/src/helpers.js:609
 msgid "fab-times-circle"
-msgstr ""
+msgstr "fab-times-circle"
 
 #: blocks/src/helpers.js:613
 msgid "fab-times-circle-o"
-msgstr ""
+msgstr "fab-times-circle-o"
 
 #: blocks/src/helpers.js:617
 msgid "fab-window-close"
-msgstr ""
+msgstr "fab-window-close"
 
 #: blocks/src/helpers.js:621
 msgid "fab-window-close-o"
-msgstr ""
+msgstr "fab-window-close-o"
 
 #: blocks/src/helpers.js:625
 msgid "fab-paw"
-msgstr ""
+msgstr "fab-paw"
 
 #: blocks/src/layout/column-2/block.js:49
 msgid "2カラム"
@@ -15796,7 +15244,7 @@ msgstr "删除线（修正）"
 #: blocks/src/block-universal/tab-caption-box/block.json
 msgctxt "block keyword"
 msgid "caption"
-msgstr ""
+msgstr "caption"
 
 #: blocks/src/block-universal/caption-box/block.json
 #: blocks/src/block-universal/label-box/block.json
@@ -15818,84 +15266,84 @@ msgstr ""
 #: blocks/src/block/toggle-box/block.json
 msgctxt "block keyword"
 msgid "box"
-msgstr ""
+msgstr "box"
 
 #: blocks/src/block-universal/label-box/block.json
 msgctxt "block keyword"
 msgid "label"
-msgstr ""
+msgstr "label"
 
 #: blocks/src/block-universal/tab-caption-box/block.json
 #: blocks/src/block/tab-box/block.json
 #: blocks/src/block/tab/block.json
 msgctxt "block keyword"
 msgid "tab"
-msgstr ""
+msgstr "tab"
 
 #: blocks/src/block/ad/block.json
 msgctxt "block keyword"
 msgid "ad"
-msgstr ""
+msgstr "ad"
 
 #: blocks/src/block/balloon/block.json
 #: blocks/src/micro/micro-balloon/block.json
 msgctxt "block keyword"
 msgid "balloon"
-msgstr ""
+msgstr "balloon"
 
 #: blocks/src/block/blank-box/block.json
 msgctxt "block keyword"
 msgid "blank"
-msgstr ""
+msgstr "blank"
 
 #: blocks/src/block/blogcard/block.json
 msgctxt "block keyword"
 msgid "blogcard"
-msgstr ""
+msgstr "blogcard"
 
 #: blocks/src/block/blogcard/block.json
 #: blocks/src/block/button-wrap/block.json
 msgctxt "block keyword"
 msgid "wrap"
-msgstr ""
+msgstr "wrap"
 
 #: blocks/src/block/box-menu/block.json
 msgctxt "block keyword"
 msgid "box-menu"
-msgstr ""
+msgstr "box-menu"
 
 #: blocks/src/block/button-wrap/block.json
 #: blocks/src/block/button/block.json
 msgctxt "block keyword"
 msgid "button"
-msgstr ""
+msgstr "button"
 
 #: blocks/src/block/button-wrap/block.json
 #: blocks/src/block/button/block.json
 msgctxt "block keyword"
 msgid "btn"
-msgstr ""
+msgstr "btn"
 
 #: blocks/src/block/comparison-box/block.json
 msgctxt "block keyword"
 msgid "comparison"
-msgstr ""
+msgstr "comparison"
 
 #: blocks/src/block/cta/block.json
 msgctxt "block keyword"
 msgid "cta"
-msgstr ""
+msgstr "cta"
 
 #: blocks/src/block/faq/block.json
 msgctxt "block keyword"
 msgid "faq"
-msgstr ""
+msgstr "faq"
 
 #: blocks/src/block/icon-box/block.json
 #: blocks/src/block/icon-list/block.json
 msgctxt "block keyword"
 msgid "icon"
-msgstr ""
+msgstr "icon"
 
 #: blocks/src/block/icon-list/block.json
 #: blocks/src/block/info-list/block.json
@@ -15903,88 +15351,88 @@ msgstr ""
 #: blocks/src/block/popular-list/block.json
 msgctxt "block keyword"
 msgid "list"
-msgstr ""
+msgstr "list"
 
 #: blocks/src/block/info-box/block.json
 #: blocks/src/block/info-list/block.json
 msgctxt "block keyword"
 msgid "info"
-msgstr ""
+msgstr "info"
 
 #: blocks/src/block/navicard/block.json
 msgctxt "block keyword"
 msgid "navi"
-msgstr ""
+msgstr "navi"
 
 #: blocks/src/block/navicard/block.json
 msgctxt "block keyword"
 msgid "card"
-msgstr ""
+msgstr "card"
 
 #: blocks/src/block/new-list/block.json
 msgctxt "block keyword"
 msgid "new"
-msgstr ""
+msgstr "new"
 
 #: blocks/src/block/popular-list/block.json
 msgctxt "block keyword"
 msgid "popular"
-msgstr ""
+msgstr "popular"
 
 #: blocks/src/block/profile/block.json
 msgctxt "block keyword"
 msgid "profile"
-msgstr ""
+msgstr "profile"
 
 #: blocks/src/block/profile/block.json
 msgctxt "block keyword"
 msgid "author"
-msgstr ""
+msgstr "author"
 
 #: blocks/src/block/ranking/block.json
 msgctxt "block keyword"
 msgid "ranking"
-msgstr ""
+msgstr "ranking"
 
 #: blocks/src/block/search-box/block.json
 msgctxt "block keyword"
 msgid "search"
-msgstr ""
+msgstr "search"
 
 #: blocks/src/block/sticky-box/block.json
 msgctxt "block keyword"
 msgid "sticky"
-msgstr ""
+msgstr "sticky"
 
 #: blocks/src/block/template/block.json
 msgctxt "block keyword"
 msgid "template"
-msgstr ""
+msgstr "template"
 
 #: blocks/src/block/timeline/block.json
 msgctxt "block keyword"
 msgid "timeline"
-msgstr ""
+msgstr "timeline"
 
 #: blocks/src/block/toggle-box/block.json
 msgctxt "block keyword"
 msgid "toggle"
-msgstr ""
+msgstr "toggle"
 
 #: blocks/src/micro/micro-balloon/block.json
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "micro"
-msgstr ""
+msgstr "micro"
 
 #: blocks/src/micro/micro-balloon/block.json
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "copy"
-msgstr ""
+msgstr "copy"
 
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "text"
-msgstr ""
+msgstr "text"
 

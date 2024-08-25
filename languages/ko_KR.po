@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-23T07:23:26+00:00\n"
-"PO-Revision-Date: 2024-08-23 07:35\n"
+"POT-Creation-Date: 2024-08-24T16:00:06+00:00\n"
+"PO-Revision-Date: 2024-08-25 00:54\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1183,7 +1183,7 @@ msgid "あわせて読みたい"
 msgstr "같이 보기"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1075
+#: lib/shortcodes.php:1080
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -4870,7 +4870,7 @@ msgstr "테마가 사용하는 날짜의 형식을 입력해주세요 (기본: Y
 
 #: lib/page-settings/all-forms.php:330
 msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
-msgstr "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">날짜 시간 형식관련 정보</a>"
+msgstr "<a href=\"https://wpdocs.osdn.jp/formatting-date-and-time/\">날짜 시간 형식관련 정보</a>"
 
 #: lib/page-settings/all-funcs.php:255
 msgid "Y.m.d"
@@ -6311,7 +6311,7 @@ msgstr "댓글 목록 헤딩"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1071
+#: lib/shortcodes.php:1076
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -12745,6 +12745,13 @@ msgstr "\"Next\"를 다른 텍스트로 변경할 수 있습니다."
 msgid "※空欄の場合は\"Next\"が表示されます。"
 msgstr "※빈칸일 경우 \"Next\"가 표시됩니다."
 
+#: skins/skin-grayish-topfull/functions.php:1244
+#: skins/skin-grayish-topfull/functions.php:1540
+#: skins/skin-grayish-topfull/functions.php:1541
+#: skins/skin-grayish-topfull/functions.php:1543
+msgid "Home"
+msgstr "Home"
+
 #: skins/skin-grayish-topfull/functions.php:1252
 msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
 msgstr "【게시물 및 고정 페이지】빵 부스러기 목록 \"Home\"을 변경"
@@ -12810,7 +12817,7 @@ msgid "値が大きくなるほど白色が濃くなります。"
 msgstr "값이 클수록 흰색이 진해집니다."
 
 #: skins/skin-grayish-topfull/functions.php:1581
-msgid "（白色なし)"
+msgid "（白色なし）"
 msgstr "(흰색 없음)"
 
 #: skins/skin-grayish-topfull/functions.php:1611
