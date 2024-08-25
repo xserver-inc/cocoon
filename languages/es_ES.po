@@ -1292,8 +1292,6 @@ msgstr "Controlar cuántos anuncios se muestran"
 msgid "先頭から"
 msgstr "Desde el primero"
 
-msgstr "最大"
-
 msgid "※-1で全てのH2見出し手前に広告を挿入"
 msgstr "Inserte anuncios delante de todos los titulares H2 con -1"
 
