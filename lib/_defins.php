@@ -334,6 +334,9 @@ define('THEME_HTTPS_REDIRECT_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTTPS
 define('THEME_HTTPS_REDIRECT_HTACCESS_REG', '{'.THEME_HTTPS_REDIRECT_HTACCESS_BEGIN.'.+?'.THEME_HTTPS_REDIRECT_HTACCESS_END.'}s');
 define('THEME_HTTPS_REWRITERULE_REG', '/RewriteRule .+ https:\/\/%{HTTP_HOST}%{REQUEST_URI}/i');
 
+//メッセージ
+define('TOC_SHORTCODE_ERROR_MESSAGE', __('無限ループを避けるため[toc]ショートコードはパターンでは使用できません。' , THEME_NAME).__('ショートコードを削除してください。' , THEME_NAME).__('ショートコードが使用されている場合でも表示時に取り消されます。' , THEME_NAME));
+
 //サービスドメイン
 define('AMAZON_DOMAIN', __( 'www.amazon.co.jp', THEME_NAME ));
 

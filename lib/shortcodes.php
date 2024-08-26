@@ -1076,14 +1076,33 @@ function pattern_editor_save_post($post_id) {
   if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
     return;
   }
-  // 投稿タイプが wp_block の場合に処理
-  global $post;
-  if (!is_classic_editor() && (get_post_type($post_id) === 'wp_block')) {
-    $content = get_post_field('post_content', $post_id);
-    if (is_toc_shortcode_includes($content)) {
+
+  $content = get_post_field('post_content', $post_id);
+  // tocショートコードが含まれている場合、もしくは投稿タイプが wp_block の場合に処理
+  if (is_toc_shortcode_includes($content) && (get_post_type($post_id) === 'wp_block')) {
+    if (!is_classic_editor()) {
+      // ブロックエディターのケース
+
       // 保存処理をキャンセル
-      wp_die(__('無限ループを避けるため[toc]ショートコードはパターンでは使用できません。' , THEME_NAME).__('[toc]ショートコードを削除してください。' , THEME_NAME), __('保存エラー' , THEME_NAME), array('response' => 400));
+      wp_die(TOC_SHORTCODE_ERROR_MESSAGE, __('保存エラー' , THEME_NAME), array('response' => 400));
+      return false;
+    } else {
+      // クラシックエディターのケース
+      add_filter('redirect_post_location', function($location) {
+        return add_query_arg('toc_error', 1, $location);
+      });
+      // 保存をキャンセルするため false を返す
+      return false;
     }
+  }
+}
+endif;
+
+add_action('admin_notices', 'toc_error_admin_notices');
+if ( !function_exists( 'toc_error_admin_notices' ) ):
+function toc_error_admin_notices() {
+  if (isset($_GET['toc_error'])) {
+    echo '<div class="notice notice-error is-dismissible"><p><strong>'.__( 'エラー：', THEME_NAME ).'</strong>'.TOC_SHORTCODE_ERROR_MESSAGE.'</p></div>';
   }
 }
 endif;
