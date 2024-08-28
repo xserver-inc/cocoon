@@ -19,7 +19,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
      parent::__construct(
       'fb_like_box',
       WIDGET_NAME_PREFIX.__( 'Facebookボックス', THEME_NAME ),//ウィジェット名
-      array('description' => __( '「この記事が気に入ったらいいね！しよう」ウィジェットです。', THEME_NAME )),
+      array('description' => __( '「この記事が気に入ったらフォローしよう」ウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );
   }
@@ -28,7 +28,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
     //タイトル名を取得
     $title = !empty($instance['title']) ? $instance['title'] : '';
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
-    $message = !empty( $instance['message'] ) ? $instance['message'] : __( 'この記事が気に入ったら<br>いいね！しよう', THEME_NAME );
+    $message = !empty( $instance['message'] ) ? $instance['message'] : __( 'この記事が気に入ったら<br>フォローしよう', THEME_NAME );
     $sub_message = !empty( $instance['sub_message'] ) ? $instance['sub_message'] : __( '最新情報をお届けします。', THEME_NAME );
 
     $facebook_url = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : get_the_author_facebook_url();
@@ -106,9 +106,9 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         <?php _e( 'メッセージ', THEME_NAME ) ?>
       </label>
       <?php if (0): ?>
-      <input class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" type="text" value="<?php echo $message; ?>" placeholder="<?php _e( 'この記事が気に入ったら<br>いいね！しよう', THEME_NAME ) ?>" />
+      <input class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" type="text" value="<?php echo $message; ?>" placeholder="<?php _e( 'この記事が気に入ったら<br>フォローしよう', THEME_NAME ) ?>" />
       <?php endif ?>
-      <textarea class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" cols="20" rows="4" placeholder="<?php _e( 'この記事が気に入ったら<br>いいね！しよう', THEME_NAME ) ?>"><?php echo $message; ?></textarea>
+      <textarea class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" cols="20" rows="4" placeholder="<?php _e( 'この記事が気に入ったら<br>フォローしよう', THEME_NAME ) ?>"><?php echo $message; ?></textarea>
     </p>
     <?php //サブメッセージ ?>
     <p>

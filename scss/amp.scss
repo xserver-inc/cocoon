@@ -67,40 +67,40 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   display: none;
 }
 
-%follow_amp_button{
-  text-decoration: none;
-  text-align: center;
-  margin: 0 auto;
-  padding: 3px 12px;
-  top: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--cocoon-white-color);
-  position: relative;
-  border-radius: var(--cocoon-basic-border-radius);
+// %follow_amp_button{
+//   text-decoration: none;
+//   text-align: center;
+//   margin: 0 auto;
+//   padding: 3px 12px;
+//   top: 8px;
+//   font-size: 14px;
+//   font-weight: bold;
+//   color: var(--cocoon-white-color);
+//   position: relative;
+//   border-radius: var(--cocoon-basic-border-radius);
 
-  &:hover{
-    color: var(--cocoon-white-color);
-    opacity: 0.7;
-  }
-}
+//   &:hover{
+//     color: var(--cocoon-white-color);
+//     opacity: 0.7;
+//   }
+// }
 
-@mixin follow_amp_button($unicode, $bc_color){
-  background-color: $bc_color;
-  &::before{
-    // @include fontawesome($unicode);
-    // font-family: FontAwesome;
-    // margin: 0 3px;
-    font-weight: normal;
-  }
-}
+// @mixin follow_amp_button($unicode, $bc_color){
+//   background-color: $bc_color;
+//   &::before{
+//     // @include fontawesome($unicode);
+//     // font-family: FontAwesome;
+//     // margin: 0 3px;
+//     font-weight: normal;
+//   }
+// }
 
-//Facebookボタン
-.facebook-follow-button{
-  @extend %follow_amp_button;
+// //Facebookボタン
+// .facebook-follow-button{
+//   @extend %follow_amp_button;
 
-  @include follow_amp_button('\f087', var(--cocoon-facebook-color));
-}
+//   @include follow_amp_button('\f087', var(--cocoon-facebook-color));
+// }
 
 //Twitterボタン
 .twitter-follow-button{

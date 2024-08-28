@@ -11,6 +11,7 @@
     font-weight: 400;
   }
   .bb-ok::before{content: "\f111" + '  ' + $bb-ok-text;}
+  // .facebook-follow-button::before{content: "\f164";}
 
   .blank-box.bb-check::before,
   .blank-box.bb-comment::before,

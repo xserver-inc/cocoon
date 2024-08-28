@@ -189,6 +189,22 @@ body.wp-admin {
   width: 100%;
 }
 
+.admin-settings .demo .facebook-follow-button {
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--cocoon-white-color);
+  position: relative;
+  border-radius: var(--cocoon-basic-border-radius);
+}
+.admin-settings .demo .facebook-follow-button:hover {
+  color: var(--cocoon-white-color);
+  opacity: 0.7;
+}
+
 .snippet-list {
   padding: 20px;
   display: flex;
@@ -493,10 +509,10 @@ body.wp-admin {
   ************************************/
   /* アイコンを左に表示 */
   /************************************
-  ** Facebookページを「いいね！」するエリアのスタイル
+  ** Facebookページを「フォロー」するエリアのスタイル
   ************************************/
   /************************************
-  ** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
+  ** Facebookページを「フォロー」するエリアのスタイル（サイドバーの時）
   ************************************/
   /*閉じる用の薄黒カバー*/
   /*中身*/
@@ -746,10 +762,10 @@ body.wp-admin {
   ************************************/
   /* アイコンを左に表示 */
   /************************************
-  ** Facebookページを「いいね！」するエリアのスタイル
+  ** Facebookページを「フォロー」するエリアのスタイル
   ************************************/
   /************************************
-  ** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
+  ** Facebookページを「フォロー」するエリアのスタイル（サイドバーの時）
   ************************************/
   /*閉じる用の薄黒カバー*/
   /*中身*/
@@ -7175,6 +7191,21 @@ body.wp-admin {
 .admin-settings .demo .fb-like-facebook {
   margin-bottom: -7px;
 }
+.admin-settings .demo .facebook-follow-button {
+  background-color: var(--cocoon-facebook-color);
+  margin-bottom: 0.6em;
+}
+.admin-settings .demo .facebook-follow-button::before {
+  content: "\f087";
+  font-family: FontAwesome;
+  margin: 0 3px;
+  font-weight: normal;
+}
+.admin-settings .demo .font-awesome-5 .facebook-follow-button::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f164";
+}
 .admin-settings .demo .sidebar .fb-like-box {
   max-width: 640px;
   flex-direction: column;
@@ -7226,14 +7257,8 @@ body.wp-admin {
   height: 100px;
   text-align: center;
   float: right;
-  padding-top: 27px;
+  padding-top: 31px;
   box-sizing: border-box;
-  /*  display: -webkit-flex;
-    display:         flex;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-justify-content: center;
-            justify-content: center;*/
 }
 .admin-settings .demo .fb-like-balloon-button iframe {
   background-color: #fff;
@@ -15683,6 +15708,21 @@ body.wp-admin {
 .admin-settings .demo .fb-like-facebook {
   margin-bottom: -7px;
 }
+.admin-settings .demo .facebook-follow-button {
+  background-color: var(--cocoon-facebook-color);
+  margin-bottom: 0.6em;
+}
+.admin-settings .demo .facebook-follow-button::before {
+  content: "\f087";
+  font-family: FontAwesome;
+  margin: 0 3px;
+  font-weight: normal;
+}
+.admin-settings .demo .font-awesome-5 .facebook-follow-button::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f164";
+}
 .admin-settings .demo .sidebar .fb-like-box {
   max-width: 640px;
   flex-direction: column;
@@ -15734,14 +15774,8 @@ body.wp-admin {
   height: 100px;
   text-align: center;
   float: right;
-  padding-top: 27px;
+  padding-top: 31px;
   box-sizing: border-box;
-  /*  display: -webkit-flex;
-    display:         flex;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-justify-content: center;
-            justify-content: center;*/
 }
 .admin-settings .demo .fb-like-balloon-button iframe {
   background-color: #fff;
@@ -18953,7 +18987,7 @@ body.wp-admin {
     ** 関連記事
     ************************************/
     /************************************
-    ** Facebookページを「いいね！」するエリアのスタイル
+    ** Facebookページを「フォロー」するエリアのスタイル
     ************************************/
   }
   .admin-settings .demo .navi-in > .menu-header {

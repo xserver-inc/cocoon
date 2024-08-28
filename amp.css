@@ -170,6 +170,22 @@
   width: 100%;
 }
 
+.line-follow-button, .twitter-follow-button, .facebook-follow-button {
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--cocoon-white-color);
+  position: relative;
+  border-radius: var(--cocoon-basic-border-radius);
+}
+.line-follow-button:hover, .twitter-follow-button:hover, .facebook-follow-button:hover {
+  color: var(--cocoon-white-color);
+  opacity: 0.7;
+}
+
 .fz-12px {
   font-size: 12px;
 }
@@ -7597,13 +7613,30 @@ div.sbs-think:not(.not-nested-style) .speech-balloon::after {
   margin-bottom: -7px;
 }
 
+.facebook-follow-button {
+  background-color: var(--cocoon-facebook-color);
+  margin-bottom: 0.6em;
+}
+.facebook-follow-button::before {
+  content: "\f087";
+  font-family: FontAwesome;
+  margin: 0 3px;
+  font-weight: normal;
+}
+
+.font-awesome-5 .facebook-follow-button::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f164";
+}
+
 .sidebar .fb-like-box {
   max-width: 640px;
   flex-direction: column;
 }
 
 /************************************
-** Facebookページを「いいね！」するエリアのスタイル
+** Facebookページを「フォロー」するエリアのスタイル
 ************************************/
 div.fb-like-mobile {
   display: none;
@@ -7659,14 +7692,8 @@ div.fb-like-mobile {
   height: 100px;
   text-align: center;
   float: right;
-  padding-top: 27px;
+  padding-top: 31px;
   box-sizing: border-box;
-  /*  display: -webkit-flex;
-    display:         flex;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-justify-content: center;
-            justify-content: center;*/
 }
 
 .fb-like-balloon-button iframe {
@@ -7714,7 +7741,7 @@ div.fb-like-mobile {
 }
 
 /************************************
-** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
+** Facebookページを「フォロー」するエリアのスタイル（サイドバーの時）
 ************************************/
 .sidebar .fb-like-balloon-body::after {
   display: none;
@@ -10590,7 +10617,7 @@ pre {
     margin-right: 10px;
   }
   /************************************
-  ** Facebookページを「いいね！」するエリアのスタイル
+  ** Facebookページを「フォロー」するエリアのスタイル
   ************************************/
   .fb-like-balloon-body {
     margin-right: 100px;
@@ -11217,43 +11244,27 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"] {
   display: none;
 }
 
-.line-follow-button, .twitter-follow-button, .facebook-follow-button {
-  text-decoration: none;
-  text-align: center;
-  margin: 0 auto;
-  padding: 3px 12px;
-  top: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--cocoon-white-color);
-  position: relative;
-  border-radius: var(--cocoon-basic-border-radius);
-}
-.line-follow-button:hover, .twitter-follow-button:hover, .facebook-follow-button:hover {
-  color: var(--cocoon-white-color);
-  opacity: 0.7;
-}
-
-.facebook-follow-button {
-  background-color: var(--cocoon-facebook-color);
-}
-.facebook-follow-button::before {
-  font-weight: normal;
-}
-
 .twitter-follow-button {
   font-weight: normal;
   background-color: var(--cocoon-twitter-color);
+  margin-bottom: 0.6em;
 }
 .twitter-follow-button::before {
+  content: "\f099";
+  font-family: FontAwesome;
+  margin: 0 3px;
   font-weight: normal;
 }
 
 .line-follow-button {
   font-weight: normal;
   background-color: var(--cocoon-line-color);
+  margin-bottom: 0.6em;
 }
 .line-follow-button::before {
+  content: "\f075";
+  font-family: FontAwesome;
+  margin: 0 3px;
   font-weight: normal;
 }
 

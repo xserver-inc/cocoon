@@ -18,15 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <div class="fb-like-balloon-arrow-box">
     <div class="fb-like-balloon-arrow-box-in">
       <div class="fb-like-balloon-button">
-        <div class="fb-like fb-like-pc" data-href="<?php echo $_FACEBOOK_URL; ?>" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
-
-        <div class="fb-like fb-like-mobile" data-href="<?php echo $_FACEBOOK_URL; ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-        <?php //通常ページの場合
-        if (!is_amp()): ?>
-          <?php generate_facebook_sdk_code(); ?>
-        <?php else: //AMPページの場合 ?>
-          <a class="facebook-follow-button" href="<?php echo $_FACEBOOK_URL; ?>"><?php _e( 'いいね！', THEME_NAME ) ?></a>
-        <?php endif ?>
+        <a class="facebook-follow-button" target="_blank" href="<?php echo esc_url($_FACEBOOK_URL); ?>"><?php _e( 'フォロー', THEME_NAME ) ?></a>
       </div>
       <div class="fb-like-balloon-body">
         <?php //メッセージの呼び出し
