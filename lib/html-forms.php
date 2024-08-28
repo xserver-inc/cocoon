@@ -1468,6 +1468,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
             $description = get_the_author_meta('description', $user_id);
           }
           $description = wpautop($description);
+          $description = do_shortcode($description);
 
           if (!is_buddypress_page()) {
             //プロフィールページURLの取得
