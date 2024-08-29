@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-24T16:00:06+00:00\n"
-"PO-Revision-Date: 2024-08-25 04:18\n"
+"POT-Creation-Date: 2024-08-29T00:24:31+00:00\n"
+"PO-Revision-Date: 2024-08-29 03:46\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1183,7 +1183,7 @@ msgid "あわせて読みたい"
 msgstr "Leer juntos"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1080
+#: lib/shortcodes.php:1119
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -2613,76 +2613,76 @@ msgid "人気記事は見つかりませんでした。"
 msgstr "No se encontraron artículos populares."
 
 #: lib/html-forms.php:1353
-#: lib/html-forms.php:1884
+#: lib/html-forms.php:1880
 msgid "記事は見つかりませんでした。"
 msgstr "No se encontraron artículos."
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1488
+#: lib/html-forms.php:1485
 msgid "Posts by %s"
 msgstr "Publicaciones por %s"
 
-#: lib/html-forms.php:1492
+#: lib/html-forms.php:1489
 msgid "NO USER"
 msgstr "NO HAY USUARIO"
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1504
 msgid "未登録のユーザーさん"
 msgstr "Usuario no registrado"
 
-#: lib/html-forms.php:1518
+#: lib/html-forms.php:1514
 msgid "未登録のユーザーさんです。"
 msgstr "El usuario no está registrado."
 
-#: lib/html-forms.php:1520
+#: lib/html-forms.php:1516
 msgid "ログイン・登録はこちら→"
 msgstr "Iniciar sesión/Registrarse ->"
 
-#: lib/html-forms.php:1522
+#: lib/html-forms.php:1518
 msgid "ログインページ"
 msgstr "Página de inicio de sesión"
 
-#: lib/html-forms.php:1526
+#: lib/html-forms.php:1522
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "Usuario no registrado. Por favor inicie sesión y presione el botón de guardar en la configuración de Cocoon."
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "El contenido del perfil se puede cambiar desde la pantalla de administración ->"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール設定画面"
 msgstr "Configuración del perfil"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*Este mensaje solo se muestra a los usuarios que han iniciado sesión."
 
-#: lib/html-forms.php:1559
+#: lib/html-forms.php:1555
 msgid "管理者用エラーメッセージ"
 msgstr "Mensajes de error para el administrador"
 
-#: lib/html-forms.php:1785
+#: lib/html-forms.php:1781
 msgid "おすすめ"
 msgstr "Recomendado"
 
-#: lib/html-forms.php:1788
+#: lib/html-forms.php:1784
 msgid "新着"
 msgstr "Nuevas publicaciones"
 
-#: lib/html-forms.php:1791
+#: lib/html-forms.php:1787
 msgid "注目"
 msgstr "Destacado"
 
-#: lib/html-forms.php:1794
+#: lib/html-forms.php:1790
 msgid "必見"
 msgstr "Imprescindible"
 
-#: lib/html-forms.php:1797
+#: lib/html-forms.php:1793
 msgid "お得"
 msgstr "Grandes ofertas"
 
-#: lib/html-forms.php:1840
+#: lib/html-forms.php:1836
 #: lib/shortcodes.php:1007
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -6311,7 +6311,7 @@ msgstr "Encabezado de la lista de comentarios"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1076
+#: lib/shortcodes.php:1115
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -10885,6 +10885,14 @@ msgstr "Archivo mensual"
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "El shortcode updated solo se puede usar en publicaciones y páginas fijas."
 
+#: lib/shortcodes.php:1087
+msgid "保存エラー"
+msgstr "Error al guardar"
+
+#: lib/shortcodes.php:1105
+msgid "エラー："
+msgstr "Error: "
+
 #: lib/sns-follow.php:135
 msgid "X（旧Twitter） URL"
 msgstr "URL de X (anteriormente Twitter)"
@@ -11710,12 +11718,12 @@ msgid "Facebookバルーン"
 msgstr "Globo de Facebook"
 
 #: lib/widgets/fb-like-balloon.php:23
-msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタンを表示するウィジェットです。"
-msgstr "Este widget es para mostrar el botón de \"Me gusta\" en una página de Facebook con la imagen destacada de una publicación o página individual."
+msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「フォロー」ボタンを表示するウィジェットです。"
+msgstr "Este widget es para mostrar el botón de \"Seguir\" en una página de Facebook con la imagen destacada de una publicación o página individual."
 
 #: lib/widgets/fb-like-balloon.php:79
-msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">いいね</span>してチェックしよう！"
-msgstr "¡Si te gustó este artículo, <br><span class=\"bold-red\">dale me gusta</span> para recibir las últimas noticias!"
+msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">フォロー</span>してチェックしよう！"
+msgstr "¡Si te gustó este artículo, <br><span class=\"bold-red\">Seguir</span> para recibir las últimas noticias!"
 
 #: lib/widgets/fb-like-balloon.php:87
 #: lib/widgets/fb-like-box.php:123
@@ -11736,14 +11744,14 @@ msgid "Facebookボックス"
 msgstr "Caja de Facebook"
 
 #: lib/widgets/fb-like-box.php:22
-msgid "「この記事が気に入ったらいいね！しよう」ウィジェットです。"
-msgstr "Este es el widget de \"¡Si te gustó este artículo, dale me gusta!\""
+msgid "「この記事が気に入ったらフォローしよう」ウィジェットです。"
+msgstr "Este es el widget de \"¡Si te gustó este artículo, dale Seguir!\""
 
 #: lib/widgets/fb-like-box.php:31
 #: lib/widgets/fb-like-box.php:109
 #: lib/widgets/fb-like-box.php:111
-msgid "この記事が気に入ったら<br>いいね！しよう"
-msgstr "Si te gustó este artículo,<br>¡dale me gusta!"
+msgid "この記事が気に入ったら<br>フォローしよう"
+msgstr "Si te gustó este artículo,<br>¡dale Seguir!"
 
 #: lib/widgets/fb-like-box.php:32
 #: lib/widgets/fb-like-box.php:118
@@ -12114,15 +12122,27 @@ msgstr "Rascacielos grande"
 msgid "広告コードをそのまま表示"
 msgstr "El código del anuncio se mostrará tal como está"
 
-#: lib/_defins.php:314
+#: lib/_defins.php:317
 msgid "本当に削除してもいいですか？"
 msgstr "¿Realmente quieres eliminarlo?"
 
-#: lib/_defins.php:335
+#: lib/_defins.php:338
+msgid "無限ループを避けるため[toc]ショートコードはパターンでは使用できません。"
+msgstr "Para evitar bucles infinitos, el shortcodes [toc] no puede utilizarse en patrones."
+
+#: lib/_defins.php:338
+msgid "ショートコードを削除してください。"
+msgstr "Quitar el shortcodes."
+
+#: lib/_defins.php:338
+msgid "ショートコードが使用されている場合でも表示時に取り消されます。"
+msgstr "Incluso si se utiliza un shortcode, se cancela en la pantalla."
+
+#: lib/_defins.php:341
 msgid "www.amazon.co.jp"
 msgstr "www.amazon.com"
 
-#: lib/_defins.php:338
+#: lib/_defins.php:344
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "No se pudo recuperar el producto. Es posible que haya especificado un ASIN que no existe."
 
@@ -13225,16 +13245,17 @@ msgstr "Sin etiqueta"
 msgid "通常ページへ"
 msgstr "Ir a la página habitual"
 
-#: tmp/fb-like-balloon.php:28
-#: tmp/fb-like-box.php:29
-msgid "いいね！"
-msgstr "¡Me gusta!"
+#: tmp/fb-like-balloon.php:21
+#: tmp/fb-like-box.php:24
+#: tmp/mobile-follow-button.php:21
+msgid "フォロー"
+msgstr "Seguir"
 
-#: tmp/fb-like-box.php:36
+#: tmp/fb-like-box.php:30
 msgid "@%sさんをフォロー"
 msgstr "Seguir a @%s"
 
-#: tmp/fb-like-box.php:46
+#: tmp/fb-like-box.php:40
 msgid "友だち追加"
 msgstr "Agregar amigo"
 
@@ -13280,10 +13301,6 @@ msgstr "Cargar más"
 #: tmp/list-not-found-posts.php:9
 msgid "投稿が見つかりませんでした。"
 msgstr "No se encontraron publicaciones."
-
-#: tmp/mobile-follow-button.php:21
-msgid "フォロー"
-msgstr "Seguir"
 
 #: tmp/mobile-share-button.php:22
 msgid "シェア"

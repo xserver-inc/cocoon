@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-24T16:00:06+00:00\n"
-"PO-Revision-Date: 2024-08-25 00:54\n"
+"POT-Creation-Date: 2024-08-29T00:24:31+00:00\n"
+"PO-Revision-Date: 2024-08-29 01:49\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1183,7 +1183,7 @@ msgid "あわせて読みたい"
 msgstr "같이 보기"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1080
+#: lib/shortcodes.php:1119
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -2613,76 +2613,76 @@ msgid "人気記事は見つかりませんでした。"
 msgstr "인기글을 찾을 수 없습니다."
 
 #: lib/html-forms.php:1353
-#: lib/html-forms.php:1884
+#: lib/html-forms.php:1880
 msgid "記事は見つかりませんでした。"
 msgstr "글을 찾을 수 없습니다."
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1488
+#: lib/html-forms.php:1485
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1492
+#: lib/html-forms.php:1489
 msgid "NO USER"
 msgstr "NO USER"
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1504
 msgid "未登録のユーザーさん"
 msgstr "미가입 사용자"
 
-#: lib/html-forms.php:1518
+#: lib/html-forms.php:1514
 msgid "未登録のユーザーさんです。"
 msgstr "가입하지 않은 사용자입니다."
 
-#: lib/html-forms.php:1520
+#: lib/html-forms.php:1516
 msgid "ログイン・登録はこちら→"
 msgstr "로그인ㆍ가입하려면 여기를 클릭 →"
 
-#: lib/html-forms.php:1522
+#: lib/html-forms.php:1518
 msgid "ログインページ"
 msgstr "로그인 페이지"
 
-#: lib/html-forms.php:1526
+#: lib/html-forms.php:1522
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "등록되지 않은 사용자입니다. 로그인하고 Cocoon 설정 저장 버튼을 누릅니다."
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "프로필 설정 화면에서 프로필 내용을 변경할 수 있습니다 →"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール設定画面"
 msgstr "프로필 설정 화면"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "※이 메시지는 로그인 사용자에게만 표시됩니다."
 
-#: lib/html-forms.php:1559
+#: lib/html-forms.php:1555
 msgid "管理者用エラーメッセージ"
 msgstr "관리자용 오류 메시지"
 
-#: lib/html-forms.php:1785
+#: lib/html-forms.php:1781
 msgid "おすすめ"
 msgstr "추천"
 
-#: lib/html-forms.php:1788
+#: lib/html-forms.php:1784
 msgid "新着"
 msgstr "새글"
 
-#: lib/html-forms.php:1791
+#: lib/html-forms.php:1787
 msgid "注目"
 msgstr "주목"
 
-#: lib/html-forms.php:1794
+#: lib/html-forms.php:1790
 msgid "必見"
 msgstr "필독"
 
-#: lib/html-forms.php:1797
+#: lib/html-forms.php:1793
 msgid "お得"
 msgstr "이득"
 
-#: lib/html-forms.php:1840
+#: lib/html-forms.php:1836
 #: lib/shortcodes.php:1007
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -6311,7 +6311,7 @@ msgstr "댓글 목록 헤딩"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1076
+#: lib/shortcodes.php:1115
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -10885,6 +10885,14 @@ msgstr "월별 아카이브"
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "updated 숏 코드는 글, 고정 페이지 이외에서는 이용할 수 없습니다."
 
+#: lib/shortcodes.php:1087
+msgid "保存エラー"
+msgstr "저장 오류"
+
+#: lib/shortcodes.php:1105
+msgid "エラー："
+msgstr "오류:"
+
 #: lib/sns-follow.php:135
 msgid "X（旧Twitter） URL"
 msgstr "X(구 Twitter) URL"
@@ -11705,12 +11713,12 @@ msgid "Facebookバルーン"
 msgstr "Facebook 벌룬"
 
 #: lib/widgets/fb-like-balloon.php:23
-msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタンを表示するウィジェットです。"
-msgstr "글ㆍ페이지의 아이캐치를 이용한 페이스북 페이지에의 좋아요 버튼을 표시하는 위젯입니다."
+msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「フォロー」ボタンを表示するウィジェットです。"
+msgstr "게시물·개별 페이지의 대표 이미지를 이용한 Facebook 페이지의 '팔로우' 버튼을 표시하는 위젯입니다."
 
 #: lib/widgets/fb-like-balloon.php:79
-msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">いいね</span>してチェックしよう！"
-msgstr "이 글이 마음에 드신다면 최신 뉴스 정보를 <br><span class=\"bold-red\">좋아요</span>를 해서 확인하세요!"
+msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">フォロー</span>してチェックしよう！"
+msgstr "이 글이 마음에 들었다면 최신 정보를 <br><span class=\"bold-red\">팔로우</span>하여 확인해 보세요!"
 
 #: lib/widgets/fb-like-balloon.php:87
 #: lib/widgets/fb-like-box.php:123
@@ -11731,14 +11739,14 @@ msgid "Facebookボックス"
 msgstr "페이스북 박스"
 
 #: lib/widgets/fb-like-box.php:22
-msgid "「この記事が気に入ったらいいね！しよう」ウィジェットです。"
-msgstr "\"이 글이 마음에 들었으면 좋아요 하자\" 위젯입니다."
+msgid "「この記事が気に入ったらフォローしよう」ウィジェットです。"
+msgstr "\"이 글이 마음에 들었다면 팔로우 하세요\" 위젯입니다."
 
 #: lib/widgets/fb-like-box.php:31
 #: lib/widgets/fb-like-box.php:109
 #: lib/widgets/fb-like-box.php:111
-msgid "この記事が気に入ったら<br>いいね！しよう"
-msgstr "이 글이 마음에 들면<br>좋아요 하자"
+msgid "この記事が気に入ったら<br>フォローしよう"
+msgstr "이 기사가 마음에 들었다면<br>팔로우하세요."
 
 #: lib/widgets/fb-like-box.php:32
 #: lib/widgets/fb-like-box.php:118
@@ -12109,15 +12117,27 @@ msgstr "대형 스카이스크래퍼"
 msgid "広告コードをそのまま表示"
 msgstr "광고 코드를 그대로 표시"
 
-#: lib/_defins.php:314
+#: lib/_defins.php:317
 msgid "本当に削除してもいいですか？"
 msgstr "정말 삭제하시겠습니까?"
 
-#: lib/_defins.php:335
+#: lib/_defins.php:338
+msgid "無限ループを避けるため[toc]ショートコードはパターンでは使用できません。"
+msgstr "무한 루프를 피하기 위해 [toc] 숏코드는 패턴에서 사용할 수 없습니다."
+
+#: lib/_defins.php:338
+msgid "ショートコードを削除してください。"
+msgstr "숏코드를 삭제해 주세요."
+
+#: lib/_defins.php:338
+msgid "ショートコードが使用されている場合でも表示時に取り消されます。"
+msgstr "숏코드가 사용되었더라도 표시할 때는 취소됩니다."
+
+#: lib/_defins.php:341
 msgid "www.amazon.co.jp"
 msgstr "www.amazon.com"
 
-#: lib/_defins.php:338
+#: lib/_defins.php:344
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "상품을 가져오지 못했습니다. 존재하지 않는 ASIN을 지정했을 수 있습니다."
 
@@ -13220,16 +13240,17 @@ msgstr "라벨 없음"
 msgid "通常ページへ"
 msgstr "일반 페이지로"
 
-#: tmp/fb-like-balloon.php:28
-#: tmp/fb-like-box.php:29
-msgid "いいね！"
-msgstr "좋아요"
+#: tmp/fb-like-balloon.php:21
+#: tmp/fb-like-box.php:24
+#: tmp/mobile-follow-button.php:21
+msgid "フォロー"
+msgstr "팔로우"
 
-#: tmp/fb-like-box.php:36
+#: tmp/fb-like-box.php:30
 msgid "@%sさんをフォロー"
 msgstr "@%s 팔로우하기"
 
-#: tmp/fb-like-box.php:46
+#: tmp/fb-like-box.php:40
 msgid "友だち追加"
 msgstr "친구 추가"
 
@@ -13275,10 +13296,6 @@ msgstr "더 보기"
 #: tmp/list-not-found-posts.php:9
 msgid "投稿が見つかりませんでした。"
 msgstr "글을 찾을 수 없습니다."
-
-#: tmp/mobile-follow-button.php:21
-msgid "フォロー"
-msgstr "팔로우"
 
 #: tmp/mobile-share-button.php:22
 msgid "シェア"
