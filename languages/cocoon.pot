@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.7.6.1\n"
+"Project-Id-Version: Cocoon 2.7.6.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-24T16:00:06+00:00\n"
+"POT-Creation-Date: 2024-08-29T00:24:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -1176,7 +1176,7 @@ msgid "あわせて読みたい"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1080
+#: lib/shortcodes.php:1119
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -2606,76 +2606,76 @@ msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
 #: lib/html-forms.php:1353
-#: lib/html-forms.php:1884
+#: lib/html-forms.php:1880
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1488
+#: lib/html-forms.php:1485
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1492
+#: lib/html-forms.php:1489
 msgid "NO USER"
 msgstr ""
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1504
 msgid "未登録のユーザーさん"
 msgstr ""
 
-#: lib/html-forms.php:1518
+#: lib/html-forms.php:1514
 msgid "未登録のユーザーさんです。"
 msgstr ""
 
-#: lib/html-forms.php:1520
+#: lib/html-forms.php:1516
 msgid "ログイン・登録はこちら→"
 msgstr ""
 
-#: lib/html-forms.php:1522
+#: lib/html-forms.php:1518
 msgid "ログインページ"
 msgstr ""
 
-#: lib/html-forms.php:1526
+#: lib/html-forms.php:1522
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr ""
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr ""
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール設定画面"
 msgstr ""
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr ""
 
-#: lib/html-forms.php:1559
+#: lib/html-forms.php:1555
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1785
+#: lib/html-forms.php:1781
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1788
+#: lib/html-forms.php:1784
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1791
+#: lib/html-forms.php:1787
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1794
+#: lib/html-forms.php:1790
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1797
+#: lib/html-forms.php:1793
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1840
+#: lib/html-forms.php:1836
 #: lib/shortcodes.php:1007
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -6304,7 +6304,7 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1076
+#: lib/shortcodes.php:1115
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -10878,6 +10878,14 @@ msgstr ""
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr ""
 
+#: lib/shortcodes.php:1087
+msgid "保存エラー"
+msgstr ""
+
+#: lib/shortcodes.php:1105
+msgid "エラー："
+msgstr ""
+
 #: lib/sns-follow.php:135
 msgid "X（旧Twitter） URL"
 msgstr ""
@@ -11703,11 +11711,11 @@ msgid "Facebookバルーン"
 msgstr ""
 
 #: lib/widgets/fb-like-balloon.php:23
-msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタンを表示するウィジェットです。"
+msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「フォロー」ボタンを表示するウィジェットです。"
 msgstr ""
 
 #: lib/widgets/fb-like-balloon.php:79
-msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">いいね</span>してチェックしよう！"
+msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">フォロー</span>してチェックしよう！"
 msgstr ""
 
 #: lib/widgets/fb-like-balloon.php:87
@@ -11729,13 +11737,13 @@ msgid "Facebookボックス"
 msgstr ""
 
 #: lib/widgets/fb-like-box.php:22
-msgid "「この記事が気に入ったらいいね！しよう」ウィジェットです。"
+msgid "「この記事が気に入ったらフォローしよう」ウィジェットです。"
 msgstr ""
 
 #: lib/widgets/fb-like-box.php:31
 #: lib/widgets/fb-like-box.php:109
 #: lib/widgets/fb-like-box.php:111
-msgid "この記事が気に入ったら<br>いいね！しよう"
+msgid "この記事が気に入ったら<br>フォローしよう"
 msgstr ""
 
 #: lib/widgets/fb-like-box.php:32
@@ -12107,15 +12115,27 @@ msgstr ""
 msgid "広告コードをそのまま表示"
 msgstr ""
 
-#: lib/_defins.php:314
+#: lib/_defins.php:317
 msgid "本当に削除してもいいですか？"
 msgstr ""
 
-#: lib/_defins.php:335
-msgid "www.amazon.co.jp"
+#: lib/_defins.php:338
+msgid "無限ループを避けるため[toc]ショートコードはパターンでは使用できません。"
 msgstr ""
 
 #: lib/_defins.php:338
+msgid "ショートコードを削除してください。"
+msgstr ""
+
+#: lib/_defins.php:338
+msgid "ショートコードが使用されている場合でも表示時に取り消されます。"
+msgstr ""
+
+#: lib/_defins.php:341
+msgid "www.amazon.co.jp"
+msgstr ""
+
+#: lib/_defins.php:344
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr ""
 
@@ -13218,16 +13238,17 @@ msgstr ""
 msgid "通常ページへ"
 msgstr ""
 
-#: tmp/fb-like-balloon.php:28
-#: tmp/fb-like-box.php:29
-msgid "いいね！"
+#: tmp/fb-like-balloon.php:21
+#: tmp/fb-like-box.php:24
+#: tmp/mobile-follow-button.php:21
+msgid "フォロー"
 msgstr ""
 
-#: tmp/fb-like-box.php:36
+#: tmp/fb-like-box.php:30
 msgid "@%sさんをフォロー"
 msgstr ""
 
-#: tmp/fb-like-box.php:46
+#: tmp/fb-like-box.php:40
 msgid "友だち追加"
 msgstr ""
 
@@ -13272,10 +13293,6 @@ msgstr ""
 
 #: tmp/list-not-found-posts.php:9
 msgid "投稿が見つかりませんでした。"
-msgstr ""
-
-#: tmp/mobile-follow-button.php:21
-msgid "フォロー"
 msgstr ""
 
 #: tmp/mobile-share-button.php:22

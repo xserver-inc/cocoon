@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-24T16:00:06+00:00\n"
-"PO-Revision-Date: 2024-08-25 00:54\n"
+"POT-Creation-Date: 2024-08-29T00:24:31+00:00\n"
+"PO-Revision-Date: 2024-08-29 03:46\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1183,7 +1183,7 @@ msgid "あわせて読みたい"
 msgstr "推薦閱讀"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1080
+#: lib/shortcodes.php:1119
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -2613,76 +2613,76 @@ msgid "人気記事は見つかりませんでした。"
 msgstr "未找到熱門文章。"
 
 #: lib/html-forms.php:1353
-#: lib/html-forms.php:1884
+#: lib/html-forms.php:1880
 msgid "記事は見つかりませんでした。"
 msgstr "未找到文章。"
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1488
+#: lib/html-forms.php:1485
 msgid "Posts by %s"
 msgstr "由 %s 發布的帖子"
 
-#: lib/html-forms.php:1492
+#: lib/html-forms.php:1489
 msgid "NO USER"
 msgstr "無用戶"
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1504
 msgid "未登録のユーザーさん"
 msgstr "未註冊用戶"
 
-#: lib/html-forms.php:1518
+#: lib/html-forms.php:1514
 msgid "未登録のユーザーさんです。"
 msgstr "此用戶未註冊。"
 
-#: lib/html-forms.php:1520
+#: lib/html-forms.php:1516
 msgid "ログイン・登録はこちら→"
 msgstr "登錄/註冊在這裡→"
 
-#: lib/html-forms.php:1522
+#: lib/html-forms.php:1518
 msgid "ログインページ"
 msgstr "登錄頁面"
 
-#: lib/html-forms.php:1526
+#: lib/html-forms.php:1522
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "未註冊用戶。請登錄並按下Cocoon設置中的保存按鈕。"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "可以在管理界面中更改個人資料→"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール設定画面"
 msgstr "個人資料設置"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*此消息僅顯示給登錄用戶。"
 
-#: lib/html-forms.php:1559
+#: lib/html-forms.php:1555
 msgid "管理者用エラーメッセージ"
 msgstr "管理員錯誤消息"
 
-#: lib/html-forms.php:1785
+#: lib/html-forms.php:1781
 msgid "おすすめ"
 msgstr "推薦"
 
-#: lib/html-forms.php:1788
+#: lib/html-forms.php:1784
 msgid "新着"
 msgstr "新帖子"
 
-#: lib/html-forms.php:1791
+#: lib/html-forms.php:1787
 msgid "注目"
 msgstr "精選"
 
-#: lib/html-forms.php:1794
+#: lib/html-forms.php:1790
 msgid "必見"
 msgstr "必看"
 
-#: lib/html-forms.php:1797
+#: lib/html-forms.php:1793
 msgid "お得"
 msgstr "特惠"
 
-#: lib/html-forms.php:1840
+#: lib/html-forms.php:1836
 #: lib/shortcodes.php:1007
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -6311,7 +6311,7 @@ msgstr "評論列表標題"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1076
+#: lib/shortcodes.php:1115
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -10885,6 +10885,14 @@ msgstr "按月存檔"
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "更新的簡碼僅可用於文章和固定頁面。"
 
+#: lib/shortcodes.php:1087
+msgid "保存エラー"
+msgstr "保存错误"
+
+#: lib/shortcodes.php:1105
+msgid "エラー："
+msgstr "錯誤："
+
 #: lib/sns-follow.php:135
 msgid "X（旧Twitter） URL"
 msgstr "X（原Twitter） URL"
@@ -11705,12 +11713,12 @@ msgid "Facebookバルーン"
 msgstr "Facebook氣球"
 
 #: lib/widgets/fb-like-balloon.php:23
-msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタンを表示するウィジェットです。"
-msgstr "這是一個插件，用於顯示帶有文章/個別頁面亮點圖片的Facebook頁面上的“讚”按鈕。"
+msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「フォロー」ボタンを表示するウィジェットです。"
+msgstr "這是一個插件，用於顯示帶有文章/個別頁面亮點圖片的Facebook頁面上的“關注”按鈕。"
 
 #: lib/widgets/fb-like-balloon.php:79
-msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">いいね</span>してチェックしよう！"
-msgstr "如果您喜歡這篇文章，請按<span class=\"bold-red\">讚</span>，以查看最新消息！"
+msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">フォロー</span>してチェックしよう！"
+msgstr "如果您喜歡這篇文章，請按<span class=\"bold-red\">關注</span>，以查看最新消息！"
 
 #: lib/widgets/fb-like-balloon.php:87
 #: lib/widgets/fb-like-box.php:123
@@ -11731,14 +11739,14 @@ msgid "Facebookボックス"
 msgstr "Facebook框"
 
 #: lib/widgets/fb-like-box.php:22
-msgid "「この記事が気に入ったらいいね！しよう」ウィジェットです。"
-msgstr "這是一個“如果你喜歡這篇文章，請按讚！”的插件。"
+msgid "「この記事が気に入ったらフォローしよう」ウィジェットです。"
+msgstr "這是一個“如果你喜歡這篇文章，關注！”的插件。"
 
 #: lib/widgets/fb-like-box.php:31
 #: lib/widgets/fb-like-box.php:109
 #: lib/widgets/fb-like-box.php:111
-msgid "この記事が気に入ったら<br>いいね！しよう"
-msgstr "如果你喜歡這篇文章，<br>請按讚！"
+msgid "この記事が気に入ったら<br>フォローしよう"
+msgstr "如果你喜歡這篇文章，<br>請按關注！"
 
 #: lib/widgets/fb-like-box.php:32
 #: lib/widgets/fb-like-box.php:118
@@ -12109,15 +12117,27 @@ msgstr "大天幕廣告"
 msgid "広告コードをそのまま表示"
 msgstr "直接顯示廣告代碼"
 
-#: lib/_defins.php:314
+#: lib/_defins.php:317
 msgid "本当に削除してもいいですか？"
 msgstr "您真的確定要刪除嗎？"
 
-#: lib/_defins.php:335
+#: lib/_defins.php:338
+msgid "無限ループを避けるため[toc]ショートコードはパターンでは使用できません。"
+msgstr "为避免无限循环，模式中不能使用 [toc] 简码。"
+
+#: lib/_defins.php:338
+msgid "ショートコードを削除してください。"
+msgstr "删除简码。"
+
+#: lib/_defins.php:338
+msgid "ショートコードが使用されている場合でも表示時に取り消されます。"
+msgstr "即使使用了简码，也会在显示时取消。"
+
+#: lib/_defins.php:341
 msgid "www.amazon.co.jp"
 msgstr "www.amazon.com"
 
-#: lib/_defins.php:338
+#: lib/_defins.php:344
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "無法獲取商品。可能指定了不存在的ASIN。"
 
@@ -13220,16 +13240,17 @@ msgstr "無標籤"
 msgid "通常ページへ"
 msgstr "轉到普通頁面"
 
-#: tmp/fb-like-balloon.php:28
-#: tmp/fb-like-box.php:29
-msgid "いいね！"
-msgstr "讚！"
+#: tmp/fb-like-balloon.php:21
+#: tmp/fb-like-box.php:24
+#: tmp/mobile-follow-button.php:21
+msgid "フォロー"
+msgstr "關注"
 
-#: tmp/fb-like-box.php:36
+#: tmp/fb-like-box.php:30
 msgid "@%sさんをフォロー"
 msgstr "關注@%s。"
 
-#: tmp/fb-like-box.php:46
+#: tmp/fb-like-box.php:40
 msgid "友だち追加"
 msgstr "添加好友"
 
@@ -13275,10 +13296,6 @@ msgstr "查看更多"
 #: tmp/list-not-found-posts.php:9
 msgid "投稿が見つかりませんでした。"
 msgstr "未找到帖子。"
-
-#: tmp/mobile-follow-button.php:21
-msgid "フォロー"
-msgstr "關注"
 
 #: tmp/mobile-share-button.php:22
 msgid "シェア"

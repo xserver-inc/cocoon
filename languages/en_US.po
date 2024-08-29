@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-24T16:00:06+00:00\n"
-"PO-Revision-Date: 2024-08-25 00:54\n"
+"POT-Creation-Date: 2024-08-29T00:24:31+00:00\n"
+"PO-Revision-Date: 2024-08-29 02:53\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1183,7 +1183,7 @@ msgid "あわせて読みたい"
 msgstr "Read together"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1080
+#: lib/shortcodes.php:1119
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:935
 #: tmp/css-custom.php:980
@@ -2613,76 +2613,76 @@ msgid "人気記事は見つかりませんでした。"
 msgstr "Popular articles were not found."
 
 #: lib/html-forms.php:1353
-#: lib/html-forms.php:1884
+#: lib/html-forms.php:1880
 msgid "記事は見つかりませんでした。"
 msgstr "No articles found."
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1488
+#: lib/html-forms.php:1485
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1492
+#: lib/html-forms.php:1489
 msgid "NO USER"
 msgstr "NO USER"
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1504
 msgid "未登録のユーザーさん"
 msgstr "Unregistered user"
 
-#: lib/html-forms.php:1518
+#: lib/html-forms.php:1514
 msgid "未登録のユーザーさんです。"
 msgstr "The user is unregistered."
 
-#: lib/html-forms.php:1520
+#: lib/html-forms.php:1516
 msgid "ログイン・登録はこちら→"
 msgstr "Login/Register ->"
 
-#: lib/html-forms.php:1522
+#: lib/html-forms.php:1518
 msgid "ログインページ"
 msgstr "Login page"
 
-#: lib/html-forms.php:1526
+#: lib/html-forms.php:1522
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "Unregistered user. Please login and press the save button in Cocoon Settings."
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "Profile content can be changed in the admin screen ->"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "プロフィール設定画面"
 msgstr "Profile settings"
 
-#: lib/html-forms.php:1529
+#: lib/html-forms.php:1525
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*This message is displayed for logged-in users only."
 
-#: lib/html-forms.php:1559
+#: lib/html-forms.php:1555
 msgid "管理者用エラーメッセージ"
 msgstr "Error messages for the administrator"
 
-#: lib/html-forms.php:1785
+#: lib/html-forms.php:1781
 msgid "おすすめ"
 msgstr "Recommended"
 
-#: lib/html-forms.php:1788
+#: lib/html-forms.php:1784
 msgid "新着"
 msgstr "New posts"
 
-#: lib/html-forms.php:1791
+#: lib/html-forms.php:1787
 msgid "注目"
 msgstr "Featured"
 
-#: lib/html-forms.php:1794
+#: lib/html-forms.php:1790
 msgid "必見"
 msgstr "Must-see"
 
-#: lib/html-forms.php:1797
+#: lib/html-forms.php:1793
 msgid "お得"
 msgstr "Great deals"
 
-#: lib/html-forms.php:1840
+#: lib/html-forms.php:1836
 #: lib/shortcodes.php:1007
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -6311,7 +6311,7 @@ msgstr "Comment list heading"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1076
+#: lib/shortcodes.php:1115
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -10885,6 +10885,14 @@ msgstr "Monthly archive"
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "updated short codes can only be used on posts and fixed pages."
 
+#: lib/shortcodes.php:1087
+msgid "保存エラー"
+msgstr "Save error"
+
+#: lib/shortcodes.php:1105
+msgid "エラー："
+msgstr "Error: "
+
 #: lib/sns-follow.php:135
 msgid "X（旧Twitter） URL"
 msgstr "X (formerly Twitter) URL"
@@ -11710,12 +11718,12 @@ msgid "Facebookバルーン"
 msgstr "Facebook balloon"
 
 #: lib/widgets/fb-like-balloon.php:23
-msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタンを表示するウィジェットです。"
-msgstr "This widget is for displaying the \"Like\" button on a Facebook page with the eye-catching image of a post/individual page."
+msgid "投稿・個別ページのアイキャッチを利用したFacebookページへの「フォロー」ボタンを表示するウィジェットです。"
+msgstr "This widget is for displaying the \"Follow\" button on a Facebook page with the eye-catching image of a post/individual page."
 
 #: lib/widgets/fb-like-balloon.php:79
-msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">いいね</span>してチェックしよう！"
-msgstr "If you liked this article, <br><span class=\"bold-red\">like</span> the latest news!"
+msgid "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">フォロー</span>してチェックしよう！"
+msgstr "If you liked this article, <br><span class=\"bold-red\">Follow</span> the latest news!"
 
 #: lib/widgets/fb-like-balloon.php:87
 #: lib/widgets/fb-like-box.php:123
@@ -11736,14 +11744,14 @@ msgid "Facebookボックス"
 msgstr "Facebook box"
 
 #: lib/widgets/fb-like-box.php:22
-msgid "「この記事が気に入ったらいいね！しよう」ウィジェットです。"
-msgstr "This is the \"If you liked this article, like it!\" widget."
+msgid "「この記事が気に入ったらフォローしよう」ウィジェットです。"
+msgstr "This is the \"If you liked this article, Follow it!\" widget."
 
 #: lib/widgets/fb-like-box.php:31
 #: lib/widgets/fb-like-box.php:109
 #: lib/widgets/fb-like-box.php:111
-msgid "この記事が気に入ったら<br>いいね！しよう"
-msgstr "If you liked this article,<br>like it!"
+msgid "この記事が気に入ったら<br>フォローしよう"
+msgstr "If you liked this article,<br>Follow it!"
 
 #: lib/widgets/fb-like-box.php:32
 #: lib/widgets/fb-like-box.php:118
@@ -12114,15 +12122,27 @@ msgstr "Large skyscraper"
 msgid "広告コードをそのまま表示"
 msgstr "The ad code will appear as is"
 
-#: lib/_defins.php:314
+#: lib/_defins.php:317
 msgid "本当に削除してもいいですか？"
 msgstr "Do you really want to delete it?"
 
-#: lib/_defins.php:335
+#: lib/_defins.php:338
+msgid "無限ループを避けるため[toc]ショートコードはパターンでは使用できません。"
+msgstr "To avoid infinite loops, [toc] shortcodes cannot be used in patterns."
+
+#: lib/_defins.php:338
+msgid "ショートコードを削除してください。"
+msgstr "Remove the shortcodes."
+
+#: lib/_defins.php:338
+msgid "ショートコードが使用されている場合でも表示時に取り消されます。"
+msgstr "Even if a shorcode is used, it will be cancelled when displayed."
+
+#: lib/_defins.php:341
 msgid "www.amazon.co.jp"
 msgstr "www.amazon.com"
 
-#: lib/_defins.php:338
+#: lib/_defins.php:344
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "The product could not be retrieved. You may have specified an ASIN that does not exist."
 
@@ -13225,16 +13245,17 @@ msgstr "No label"
 msgid "通常ページへ"
 msgstr "To the usual page"
 
-#: tmp/fb-like-balloon.php:28
-#: tmp/fb-like-box.php:29
-msgid "いいね！"
-msgstr "Like!"
+#: tmp/fb-like-balloon.php:21
+#: tmp/fb-like-box.php:24
+#: tmp/mobile-follow-button.php:21
+msgid "フォロー"
+msgstr "Follow"
 
-#: tmp/fb-like-box.php:36
+#: tmp/fb-like-box.php:30
 msgid "@%sさんをフォロー"
 msgstr "Follow @%s."
 
-#: tmp/fb-like-box.php:46
+#: tmp/fb-like-box.php:40
 msgid "友だち追加"
 msgstr "Add friends"
 
@@ -13280,10 +13301,6 @@ msgstr "Load more"
 #: tmp/list-not-found-posts.php:9
 msgid "投稿が見つかりませんでした。"
 msgstr "Posts could not be found."
-
-#: tmp/mobile-follow-button.php:21
-msgid "フォロー"
-msgstr "Follow"
 
 #: tmp/mobile-share-button.php:22
 msgid "シェア"
