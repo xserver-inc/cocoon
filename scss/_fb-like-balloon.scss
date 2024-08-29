@@ -1,5 +1,5 @@
 /************************************
-** Facebookページを「いいね！」するエリアのスタイル
+** Facebookページを「フォロー」するエリアのスタイル
 ************************************/
 div.fb-like-mobile{
   display: none;
@@ -48,14 +48,10 @@ div.fb-like-mobile{
   height: 100px;
   text-align: center;
   float: right;
-  padding-top: 27px;
+  padding-top: 31px;
   box-sizing: border-box;
-/*  display: -webkit-flex;
-  display:         flex;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-justify-content: center;
-          justify-content: center;*/
+  // display: flex;
+  // justify-content: center;
 }
 
 .fb-like-balloon-button iframe{
@@ -100,7 +96,7 @@ div.fb-like-mobile{
 
 
 /************************************
-** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
+** Facebookページを「フォロー」するエリアのスタイル（サイドバーの時）
 ************************************/
 .sidebar .fb-like-balloon-body::after{
   display: none;

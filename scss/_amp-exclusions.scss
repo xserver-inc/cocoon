@@ -50,13 +50,8 @@
 
 
 //固定ヘッダー
-.is-header-fixed{
-  .header-container{
-    z-index: 3;
-    .logo{
-      transition: .3s;
-    }
-  }
+.header-container.fixed-header{
+   z-index: 3;
 }
 
 

@@ -277,6 +277,9 @@ define('MATH_SHORTCODE', '[math]');
 define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)');
 define('URL_REG', '/'.URL_REG_STR.'/');
 
+//正規表現
+define('TOC_SHORTCODE_REG', '{\[toc[^\]]*\]}i');
+
 //Font Awesome4.7のCDN
 define('FONT_AWESOME_4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 //Font Awesome5のCDN
@@ -330,6 +333,9 @@ define('THEME_HTTPS_REDIRECT_HTACCESS_BEGIN', '#BEGIN '.THEME_NAME_UPPER.' HTTPS
 define('THEME_HTTPS_REDIRECT_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTTPS REDIRECT HTACCESS');
 define('THEME_HTTPS_REDIRECT_HTACCESS_REG', '{'.THEME_HTTPS_REDIRECT_HTACCESS_BEGIN.'.+?'.THEME_HTTPS_REDIRECT_HTACCESS_END.'}s');
 define('THEME_HTTPS_REWRITERULE_REG', '/RewriteRule .+ https:\/\/%{HTTP_HOST}%{REQUEST_URI}/i');
+
+//メッセージ
+define('TOC_SHORTCODE_ERROR_MESSAGE', __('無限ループを避けるため[toc]ショートコードはパターンでは使用できません。' , THEME_NAME).__('ショートコードを削除してください。' , THEME_NAME).__('ショートコードが使用されている場合でも表示時に取り消されます。' , THEME_NAME));
 
 //サービスドメイン
 define('AMAZON_DOMAIN', __( 'www.amazon.co.jp', THEME_NAME ));

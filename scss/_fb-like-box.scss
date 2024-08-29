@@ -6,9 +6,6 @@
   .fb-like-thumb,
   .fb-like-content{
     width: 100%;
-    // >*{
-    //   min-width: 100%;
-    // }
   }
 
   img{
@@ -24,16 +21,9 @@
 
 }
 
-// .fb-like-thumb{
-//   max-width: 56%;
-// }
-
 .fb-like-content{
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // align-content: space-around;
   text-align: center;
 
   >div{
@@ -59,7 +49,6 @@
     margin: 8px;
 
     display: flex;
-    // align-items: center;
     justify-content: center;
 
     >*{
@@ -71,6 +60,22 @@
 
 .fb-like-facebook{
   margin-bottom: -7px;
+}
+
+
+//Facebookボタン
+.facebook-follow-button{
+  @extend %follow_amp_button;
+
+  @include follow_amp_button('\f087', var(--cocoon-facebook-color));
+}
+
+.font-awesome-5{
+  .facebook-follow-button::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f164";
+  }
 }
 
 ///////////////////////////////////////
