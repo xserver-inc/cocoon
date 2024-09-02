@@ -1837,6 +1837,7 @@ function generate_info_list_tag($atts){
     'frame' => 1,
     'divider' => 1,
     'modified' => 0,
+    'offset' => 0,
   ), $atts));
 
   $args = array(
@@ -1844,6 +1845,7 @@ function generate_info_list_tag($atts){
     'no_found_rows' => true,
     'ignore_sticky_posts' => true,
     'posts_per_page' => $count,
+    'offset' => $offset,
   );
 
   //更新日順
