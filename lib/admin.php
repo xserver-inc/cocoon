@@ -24,8 +24,10 @@ function admin_print_styles_custom() {
   //https://wp-cocoon.com/community/postid/76360/
   if (is_admin_jetpack_stats_page()) return;
 
-  //管理用スタイル
-  wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+  if (!is_screen_editor_page()) {
+    //管理用スタイル
+    wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+  }
 
   //Font Awesome
   wp_enqueue_style_font_awesome();
