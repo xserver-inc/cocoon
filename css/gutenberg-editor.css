@@ -5909,6 +5909,11 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   display: block;
   padding: 4px;
 }
+.style-buttons .__prevWrap::after {
+  content: initial !important;
+  display: initial !important;
+  height: initial !important;
+}
 .style-buttons .__prev {
   height: 48px;
   display: block;
