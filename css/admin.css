@@ -1101,6 +1101,9 @@ body.wp-admin {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+.admin-settings .demo html {
+  scroll-behavior: smooth;
+}
 .admin-settings .demo .container {
   padding-right: constant(safe-area-inset-right);
   padding-left: constant(safe-area-inset-left);
@@ -9617,6 +9620,9 @@ body.wp-admin {
   box-sizing: border-box;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+.admin-settings .demo html {
+  scroll-behavior: smooth;
 }
 .admin-settings .demo .container {
   padding-right: constant(safe-area-inset-right);
