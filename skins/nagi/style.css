@@ -1253,14 +1253,15 @@ p.hogehoge span{
     border-radius: 5px;
     border: 1px solid;
     border-color: var(--nagi_site_text_color_light);
-    padding: 0.5em 0.3em;
+    /* padding: 0.5em 0.3em; */
     box-shadow: var(--nagi_r_shadow);
   }
-
+  /*
   .navi-in > ul .sub-menu li {
     height: 40px;
     line-height: 40px;
   }
+  */
 
   .navi-in > ul .sub-menu li a {
     font-size: 13px;
