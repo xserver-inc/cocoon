@@ -1803,7 +1803,7 @@ endif;
 //サイトフォントソースコードURLの取得
 if ( !function_exists( 'get_site_font_source_url' ) ):
 function get_site_font_source_url(){
-  $url = 'https://fonts.googleapis.com/css?family='.get_site_font_source_family().get_site_font_source_weight().'&display=swap';
+  $url = 'https://fonts.googleapis.com/css2?family='.get_site_font_source_family().get_site_font_source_weight().'&display=swap';
   //Pretendardフォント
   if (get_site_font_family_pretendard()) {
     $url = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css';
