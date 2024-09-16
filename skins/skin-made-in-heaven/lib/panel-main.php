@@ -92,15 +92,15 @@ function hvn_main($wp_customize) {
   );
 
 
-  $wp_customize->add_setting('hvn_categoties_card_setting', array('default' => false));
+  $wp_customize->add_setting('hvn_categories_card_setting', array('default' => false));
   $wp_customize->add_control(
     new WP_Customize_Control(
       $wp_customize,
-      'hvn_categoties_card_setting',
+      'hvn_categories_card_setting',
       array(
         'label'     => 'カテゴリーごと(2、3カラム)縦型カード',
         'section'   => "hvn_{$section}_section",
-        'settings'  => 'hvn_categoties_card_setting',
+        'settings'  => 'hvn_categories_card_setting',
         'type'      => 'checkbox',
       )
     )

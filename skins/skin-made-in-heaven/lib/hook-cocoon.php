@@ -278,7 +278,7 @@ add_filter('cocoon_part__tmp/list', function($content) {
 //  カテゴリーごと(2、3カード)縦型カード
 //******************************************************************************
 add_filter('index_widget_entry_card_type', function($type, $cat_id) {
-  if (get_theme_mod('hvn_categoties_card_setting')) {
+  if (get_theme_mod('hvn_categories_card_setting')) {
     $type = 'large_thumb';
   }
   return $type;

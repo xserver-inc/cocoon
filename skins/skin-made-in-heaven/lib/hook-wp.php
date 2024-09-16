@@ -97,7 +97,7 @@ add_action('manage_posts_custom_column', function($column_name, $post_id) {
       break;
 
     case 'the_page_meta_description':
-      $post_meta = get_post_meta( $post_id, 'the_page_meta_description', true );
+      $post_meta = get_post_meta($post_id, 'the_page_meta_description', true);
       if ($post_meta) {
         echo $post_meta;
       } else {
@@ -150,7 +150,7 @@ add_action('quick_edit_custom_box', function($column_name, $post_type) {
       <textarea name="the_page_memo"></textarea>
     </label>
   </div>
-  <div class="inline-edit-col column-the_page_meta_descriptio">
+  <div class="inline-edit-col column-the_page_meta_description">
     <label class="inline-edit-group">
       <span class="title"><?php echo __('メタディスクリプション', THEME_NAME) ?></span><span class="str-count"><?php echo __('文字数', THEME_NAME) ?>:<span class="meta-description-count">0</span></span>
       <textarea name="the_page_meta_description"></textarea>
@@ -232,11 +232,11 @@ add_action('save_post', function($post_id) {
     return;
   }
 
-  if ( isset( $_REQUEST['the_page_memo'] ) ) {
+  if (isset($_REQUEST['the_page_memo'])) {
     update_post_meta( $post_id, 'the_page_memo', $_REQUEST['the_page_memo']);
   }
 
-  if ( isset( $_REQUEST['the_page_meta_description'] ) ) {
+  if (isset($_REQUEST['the_page_meta_description'])) {
     update_post_meta( $post_id, 'the_page_meta_description', $_REQUEST['the_page_meta_description']);
   }
 });
