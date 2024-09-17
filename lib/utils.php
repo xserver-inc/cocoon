@@ -1463,6 +1463,7 @@ endif;
 //URLからドメインを取得
 if ( !function_exists( 'get_domain_name' ) ):
 function get_domain_name($url){
+  if (empty($url)) return;
   return parse_url($url, PHP_URL_HOST);
 }
 endif;
