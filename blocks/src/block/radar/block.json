@@ -1,0 +1,25 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/radar",
+  "category": "cocoon-block",
+  "keywords": ["radar", "chart"],
+  "attributes": {
+    "labels": {
+        "type": "array",
+        "default": ["A", "B", "C", "D", "E"]
+    },
+    "data": {
+      "type": "array",
+      "default": [1, 2, 3, 4, 5]
+    },
+    "chartId": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}
