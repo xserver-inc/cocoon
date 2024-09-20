@@ -10,10 +10,6 @@
   overflow-wrap: break-word;
 }
 
-html{
-  scroll-behavior: smooth;
-}
-
 .container{
   padding-right:  constant(safe-area-inset-right);
   padding-left:  constant(safe-area-inset-left);
