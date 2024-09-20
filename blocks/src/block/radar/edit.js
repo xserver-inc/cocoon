@@ -80,17 +80,21 @@ export default function edit( props ) {
           <InspectorControls>
               <PanelBody title="Chart Settings">
                   <TextControl
-                      label="Labels (comma separated)"
+                      label={ __( '項目', THEME_NAME ) + __( '（カンマ区切り）', THEME_NAME ) }
                       value={labels.join(', ')}
                       onChange={(value) => setAttributes({ labels: value.split(',').map(label => label.trim()) })}
                   />
                   <TextControl
-                      label="Data (comma separated, 0-5)"
+                      label={ __( '値', THEME_NAME ) + __( '（カンマ区切り）', THEME_NAME ) }
                       value={data.join(', ')}
                       onChange={(value) => {
                           const newData = value.split(',').map(d => {
-                              const num = parseFloat(d.trim());
-                              return Math.max(0, Math.min(5, num));
+                              let num = parseFloat(d.trim());
+                              num = Math.max(0, Math.min(5, num));
+                              if (isNaN(num)) {
+                                num = '';
+                              }
+                              return num;
                           });
                           setAttributes({ data: newData });
                       }}
