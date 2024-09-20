@@ -18,6 +18,13 @@ function enqueue_block_editor_assets_radar() {
         null,
         true // フッターに追加
     );
+    // wp_enqueue_script(
+    //     'chartjs-plugin-datalabels-js',
+    //     'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels',
+    //     array('chart-js'), // 依存関係
+    //     null,
+    //     true // フッターに追加
+    // );
   }
 
 

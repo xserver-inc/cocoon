@@ -4,6 +4,10 @@
   "category": "cocoon-block",
   "keywords": ["radar", "chart"],
   "attributes": {
+    "chartId": {
+      "type": "string",
+      "default": ""
+    },
     "labels": {
         "type": "array",
         "default": ["A", "B", "C", "D", "E"]
@@ -11,10 +15,6 @@
     "data": {
       "type": "array",
       "default": [1, 2, 3, 4, 5]
-    },
-    "chartId": {
-      "type": "string",
-      "default": ""
     }
   },
   "example": {},
