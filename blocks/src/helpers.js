@@ -919,3 +919,22 @@ export function CreateCategoryList( catData, input, data, updateAttr ) {
 
   return control;
 }
+
+export function hexToRgba(hex, alpha = 1) {
+  // 先頭の#を取り除く
+  hex = hex.replace('#', '');
+
+  // 3桁のカラーコードを6桁に変換
+  if (hex.length === 3) {
+    hex = hex.split('').map(function(h) {
+      return h + h;
+    }).join('');
+  }
+
+  // 16進数を10進数に変換してRGBの形式に
+  var r = parseInt(hex.substring(0, 2), 16);
+  var g = parseInt(hex.substring(2, 4), 16);
+  var b = parseInt(hex.substring(4, 6), 16);
+
+  return `rgb(${r}, ${g}, ${b}, ${alpha})`;
+}
