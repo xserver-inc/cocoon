@@ -16,6 +16,10 @@
       "type": "number",
       "default": 5
     },
+    "allowMaxOver": {
+      "type": "boolean",
+      "default": false
+    },
     "displayLegend": {
       "type": "boolean",
       "default": false

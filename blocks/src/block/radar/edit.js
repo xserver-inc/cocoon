@@ -23,7 +23,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
+  const { canvasSize, maximum, allowMaxOver, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -106,7 +106,7 @@ export default function edit( props ) {
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [canvasSize, maximum, displayLegend, legendText, labels, data, chartColor, displayAngleLines, displayLabelValue, pointLabelFontSize, chartId]);
+  }, [canvasSize, maximum, allowMaxOver, displayLegend, legendText, labels, data, chartColor, displayAngleLines, displayLabelValue, pointLabelFontSize, chartId]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -179,7 +179,10 @@ export default function edit( props ) {
             onChange={(value) => {
               const newData = value.split(',').map(d => {
                 let num = parseFloat(d.trim());
-                num = Math.max(0, Math.min(maximum, num));
+                if (!allowMaxOver) {
+                  num = Math.max(0, Math.min(maximum, num));
+                }
+
                 if (isNaN(num)) {
                   num = '';
                 }
@@ -187,6 +190,11 @@ export default function edit( props ) {
             });
             setAttributes({ data: newData });
             }}
+          />
+          <ToggleControl
+            label={ __( '値が最大値を超えるのを許可', THEME_NAME ) } // ToggleControlを追加
+            checked={ allowMaxOver }
+            onChange={ (value) => setAttributes({ allowMaxOver: value }) }
           />
           <ToggleControl
             label={ __( 'アングルラインを表示', THEME_NAME ) } // ToggleControlを追加
