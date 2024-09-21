@@ -10,17 +10,19 @@ import {
   PanelBody,
   TextControl,
   RangeControl,
+  ButtonGroup,
+  Button,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 const MIN_SIZE = 200;
-const MAX_SIZE = 1920;
+const MAX_SIZE = 1280;
 const DEFAULT_COLOR = 'rgba(255, 99, 132, 0.2)';
 const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { imageSize, labels, data, chartId, chartColor } = attributes;
+  const { imageSize, maximum, labels, data, chartId, chartColor } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -66,9 +68,9 @@ export default function edit( props ) {
         scales: {
           r: {
             min: 0,
-            max: 5,
+            max: maximum,
             ticks: {
-              stepSize: 1,
+              stepSize: (maximum === 100) ? 10 : 1,
             },
           }
         },
@@ -94,7 +96,7 @@ export default function edit( props ) {
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [imageSize, labels, data, chartColor, chartId]);
+  }, [imageSize, , maximum, labels, data, chartColor, chartId]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -110,6 +112,11 @@ export default function edit( props ) {
     }
   }, [canvasRef.current]);
 
+    // クリック時にパーセンテージを更新する関数
+    const handleMaximumChange = ( newMaximum ) => {
+      setAttributes({ maximum: newMaximum });
+    };
+
   return (
     <div className="radar-chart-block">
       <canvas ref={canvasRef} id={chartId} width={imageSize} height={imageSize} tabIndex="0" />
@@ -121,7 +128,21 @@ export default function edit( props ) {
             onChange={ ( value ) => setAttributes({ imageSize: value }) }
             min={ MIN_SIZE }
             max={ MAX_SIZE }
+            step="10"
           />
+          <p>{ __( '最大値', THEME_NAME )}</p>
+          <ButtonGroup>
+            { [5, 10, 100].map( ( value ) => (
+              <Button
+                key={ value }
+                isPrimary={ value === maximum }
+                onClick={ () => handleMaximumChange( value ) }
+              >
+                { value }
+              </Button>
+            ) ) }
+          </ButtonGroup>
+          <br /><br />
           <TextControl
             label={ __( '項目', THEME_NAME ) + __( '（カンマ区切り）', THEME_NAME ) }
             value={labels.join(', ')}
@@ -131,8 +152,15 @@ export default function edit( props ) {
             label={ __( '値', THEME_NAME ) + __( '（カンマ区切り）', THEME_NAME ) }
             value={data.join(', ')}
             onChange={(value) => {
-              const newData = value.split(',').map(d => parseFloat(d.trim()) || 0);
-              setAttributes({ data: newData });
+              const newData = value.split(',').map(d => {
+                let num = parseFloat(d.trim());
+                num = Math.max(0, Math.min(maximum, num));
+                if (isNaN(num)) {
+                  num = '';
+                }
+                return num;
+            });
+            setAttributes({ data: newData });
             }}
           />
         </PanelBody>
