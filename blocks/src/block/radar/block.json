@@ -40,6 +40,10 @@
       "type": "boolean",
       "default": true
     },
+    "pointLabelFontSize": {
+      "type": "number",
+      "default": 11
+    },
     "chartColor": {
       "type": "string",
       "default": "#2ca9e1"

@@ -4,7 +4,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function save( props ) {
   const { attributes } = props;
-  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
 
   const chartScript = `
   document.addEventListener('DOMContentLoaded', function() {
@@ -18,27 +18,32 @@ export default function save( props ) {
     ctx.chart = new Chart(ctx, {
       type: 'radar',
       data: {
-      labels: ${JSON.stringify(labels.map((label, index) => displayLabelValue ? `${label} ( ${data[index]} )` : label))},
-      datasets: [{
-        label: '${legendText}',
-        data: ${JSON.stringify(data)},
-        backgroundColor: '${chartColor ? hexToRgba(chartColor, 0.2) : DEFAULT_COLOR}',
-        borderColor: '${chartColor ? hexToRgba(chartColor, 0.9) : DEFAULT_BORDER_COLOR}',
-        borderWidth: 1
-      }]
+        labels: ${JSON.stringify(labels.map((label, index) => displayLabelValue ? `${label} ( ${data[index]} )` : label))},
+        datasets: [{
+          label: '${legendText}',
+          data: ${JSON.stringify(data)},
+          backgroundColor: '${chartColor ? hexToRgba(chartColor, 0.2) : DEFAULT_COLOR}',
+          borderColor: '${chartColor ? hexToRgba(chartColor, 0.9) : DEFAULT_BORDER_COLOR}',
+          borderWidth: 1
+        }]
       },
       options: {
-      scales: {
-        r: {
-          angleLines: {
-            display: ${displayAngleLines}
-          },
-          min: 0,
-          max: ${maximum},
-          ticks: {
-            stepSize: ${(maximum === 100) ? 10 : 1}
-          },
-        }
+        scales: {
+          r: {
+            angleLines: {
+              display: ${displayAngleLines}
+            },
+            min: 0,
+            max: ${maximum},
+            ticks: {
+              stepSize: ${(maximum === 100) ? 10 : 1}
+            },
+            pointLabels: {
+              font: {
+                size: ${pointLabelFontSize}
+              }
+            }
+          }
         },
         responsive: true,
         maintainAspectRatio: false,

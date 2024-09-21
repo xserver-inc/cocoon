@@ -23,7 +23,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -76,6 +76,11 @@ export default function edit( props ) {
             max: maximum,
             ticks: {
               stepSize: (maximum === 100) ? 10 : 1
+            },
+            pointLabels: {
+              font: {
+                size: pointLabelFontSize // フォントサイズを指定
+              }
             }
           }
         },
@@ -101,7 +106,7 @@ export default function edit( props ) {
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [canvasSize, maximum, displayLegend, legendText, labels, data, chartColor, displayAngleLines, displayLabelValue, chartId]);
+  }, [canvasSize, maximum, displayLegend, legendText, labels, data, chartColor, displayAngleLines, displayLabelValue, pointLabelFontSize, chartId]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -192,6 +197,14 @@ export default function edit( props ) {
             label={ __( '項目に値を表示', THEME_NAME ) } // ToggleControlを追加
             checked={ displayLabelValue }
             onChange={ (value) => setAttributes({ displayLabelValue: value }) }
+          />
+          <RangeControl
+            label={ __( '項目のフォントサイズ', THEME_NAME ) }
+            value={ pointLabelFontSize }
+            onChange={ ( value ) => setAttributes({ pointLabelFontSize: value }) }
+            min="8"
+            max="24"
+            step="1"
           />
         </PanelBody>
         <PanelColorSettings
