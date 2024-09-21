@@ -942,3 +942,17 @@ export function hexToRgba(hex, alpha = 1) {
 export function getCanvasId() {
   return `canvas-${Math.random().toString(36).substr(2, 9)}`;
 }
+
+// 配列の値の総計
+export function arrayValueTotal(array) {
+  return array.reduce((accumulator, currentValue) => {
+    // 空文字をチェックし、空なら0に置き換える
+    const value = isNaN(currentValue) ? 0 : Number(currentValue);
+    return accumulator + value;
+  }, 0);
+}
+
+// 配列の値の総計
+export function radarValueTotal(array) {
+  return ' [ ' + __( '総計: ', THEME_NAME ) +  arrayValueTotal(array) + ' ]'
+}

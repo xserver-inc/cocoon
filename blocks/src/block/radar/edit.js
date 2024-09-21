@@ -1,4 +1,4 @@
-import { THEME_NAME, hexToRgba, getCanvasId } from '../../helpers';
+import { THEME_NAME, hexToRgba, getCanvasId, radarValueTotal } from '../../helpers';
 import { useRef, useEffect, useState } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import {
@@ -23,7 +23,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { canvasSize, maximum, allowMaxOver, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
+  const { canvasSize, maximum, allowMaxOver, displayLegend, legendText, displayTotal, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -59,7 +59,7 @@ export default function edit( props ) {
       data: {
         labels: labels.map((label, index) => displayLabelValue ? `${label} ( ${data[index]} )` : label),
         datasets: [{
-          label: legendText,
+          label: displayTotal ? legendText + radarValueTotal(data) : legendText,
           data: data,
           backgroundColor: chartColor ? hexToRgba(chartColor, 0.2) : DEFAULT_COLOR,
           borderColor: chartColor ? hexToRgba(chartColor, 0.9) : DEFAULT_BORDER_COLOR,
@@ -106,7 +106,7 @@ export default function edit( props ) {
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [canvasSize, maximum, allowMaxOver, displayLegend, legendText, labels, data, chartColor, displayAngleLines, displayLabelValue, pointLabelFontSize, chartId]);
+  }, [canvasSize, maximum, allowMaxOver, displayLegend, legendText, displayTotal, labels, data, chartColor, displayAngleLines, displayLabelValue, pointLabelFontSize, chartId]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -166,6 +166,13 @@ export default function edit( props ) {
               label={ __( 'データ名', THEME_NAME ) }
               value={ legendText }
               onChange={ (value) => setAttributes({ legendText: value }) }
+            />
+          )}
+          { displayLegend && (
+            <ToggleControl
+              label={ __( 'データ名末尾に総計を表示', THEME_NAME ) } // ToggleControlを追加
+              checked={ displayTotal }
+              onChange={ (value) => setAttributes({ displayTotal: value }) }
             />
           )}
           <TextControl

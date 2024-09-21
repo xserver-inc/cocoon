@@ -1,10 +1,10 @@
-import { hexToRgba } from '../../helpers';
+import { hexToRgba,  radarValueTotal } from '../../helpers';
 const DEFAULT_COLOR = 'rgba(255, 99, 132, 0.2)';
 const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function save( props ) {
   const { attributes } = props;
-  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, legendText, displayTotal, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
 
   const chartScript = `
   document.addEventListener('DOMContentLoaded', function() {
@@ -20,7 +20,7 @@ export default function save( props ) {
       data: {
         labels: ${JSON.stringify(labels.map((label, index) => displayLabelValue ? `${label} ( ${data[index]} )` : label))},
         datasets: [{
-          label: '${legendText}',
+          label: '${displayTotal ? legendText + radarValueTotal(data) : legendText}',
           data: ${JSON.stringify(data)},
           backgroundColor: '${chartColor ? hexToRgba(chartColor, 0.2) : DEFAULT_COLOR}',
           borderColor: '${chartColor ? hexToRgba(chartColor, 0.9) : DEFAULT_BORDER_COLOR}',

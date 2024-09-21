@@ -16,10 +16,6 @@
       "type": "number",
       "default": 5
     },
-    "allowMaxOver": {
-      "type": "boolean",
-      "default": false
-    },
     "displayLegend": {
       "type": "boolean",
       "default": false
@@ -28,6 +24,10 @@
       "type": "string",
       "default": ""
     },
+    "displayTotal": {
+      "type": "boolean",
+      "default": true
+    },
     "labels": {
         "type": "array",
         "default": ["A", "B", "C", "D", "E"]
@@ -35,6 +35,10 @@
     "data": {
       "type": "array",
       "default": [4, 4, 4, 4, 4]
+    },
+    "allowMaxOver": {
+      "type": "boolean",
+      "default": false
     },
     "displayAngleLines": {
       "type": "boolean",
