@@ -23,7 +23,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { canvasSize, maximum, displayLegend, labels, data, chartId, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, chartColor } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -57,10 +57,9 @@ export default function edit( props ) {
     chartInstanceRef.current = new Chart(ctx, {
       type: 'radar',
       data: {
-
         labels: labels,
         datasets: [{
-          label: 'サンプルデータ',
+          label: legendText,
           data: data,
           backgroundColor: chartColor ? hexToRgba(chartColor, 0.2) : DEFAULT_COLOR,
           borderColor: chartColor ? hexToRgba(chartColor, 0.9) : DEFAULT_BORDER_COLOR,
@@ -99,7 +98,7 @@ export default function edit( props ) {
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [canvasSize, maximum, displayLegend, labels, data, chartColor, chartId]);
+  }, [canvasSize, maximum, displayLegend, legendText, labels, data, chartColor, chartId]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -147,17 +146,24 @@ export default function edit( props ) {
           </ButtonGroup>
           <br /><br />
           <ToggleControl
-            label={ __( 'データ名を表示', THEME_NAME ) } // ToggleControlを追加
+            label={ __( '凡例を表示', THEME_NAME ) } // ToggleControlを追加
             checked={ displayLegend }
             onChange={ (value) => setAttributes({ displayLegend: value }) }
           />
+          { displayLegend && (
+            <TextControl
+              label={ __( '凡例名', THEME_NAME ) }
+              value={ legendText }
+              onChange={ (value) => setAttributes({ legendText: value }) }
+            />
+          )}
           <TextControl
-            label={ __( '項目', THEME_NAME ) + __( '（カンマ区切り）', THEME_NAME ) }
+            label={ __( '項目', THEME_NAME ) + __( '（カンマ区切りで何項目でも入力可）', THEME_NAME ) }
             value={labels.join(', ')}
             onChange={(value) => setAttributes({ labels: value.split(',').map(label => label.trim()) })}
           />
           <TextControl
-            label={ __( '値', THEME_NAME ) + __( '（カンマ区切り）', THEME_NAME ) }
+            label={ __( '値', THEME_NAME ) + __( '（カンマ区切りで項目の数だけ入力可）', THEME_NAME ) }
             value={data.join(', ')}
             onChange={(value) => {
               const newData = value.split(',').map(d => {
