@@ -8,13 +8,17 @@
       "type": "string",
       "default": ""
     },
-    "imageSize": {
+    "canvasSize": {
       "type": "number",
       "default": 400
     },
     "maximum": {
       "type": "number",
       "default": 5
+    },
+    "displayLegend": {
+      "type": "boolean",
+      "default": false
     },
     "labels": {
         "type": "array",

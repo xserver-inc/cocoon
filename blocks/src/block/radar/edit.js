@@ -12,6 +12,7 @@ import {
   RangeControl,
   ButtonGroup,
   Button,
+  ToggleControl,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -22,7 +23,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { imageSize, maximum, labels, data, chartId, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, labels, data, chartId, chartColor } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -56,8 +57,10 @@ export default function edit( props ) {
     chartInstanceRef.current = new Chart(ctx, {
       type: 'radar',
       data: {
+
         labels: labels,
         datasets: [{
+          label: 'サンプルデータ',
           data: data,
           backgroundColor: chartColor ? hexToRgba(chartColor, 0.2) : DEFAULT_COLOR,
           borderColor: chartColor ? hexToRgba(chartColor, 0.9) : DEFAULT_BORDER_COLOR,
@@ -78,7 +81,7 @@ export default function edit( props ) {
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            display: false
+            display: displayLegend // 凡例表示の設定
           },
         },
       },
@@ -87,16 +90,16 @@ export default function edit( props ) {
 
   // チャートのレンダリングとサイズ調整
   useEffect(() => {
-    if (canvasRef.current && imageSize) {
-      canvasRef.current.width = imageSize;
-      canvasRef.current.height = imageSize;
+    if (canvasRef.current && canvasSize) {
+      canvasRef.current.width = canvasSize;
+      canvasRef.current.height = canvasSize;
       renderChart();
     }
 
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [imageSize, , maximum, labels, data, chartColor, chartId]);
+  }, [canvasSize, maximum, displayLegend, labels, data, chartColor, chartId]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -119,13 +122,13 @@ export default function edit( props ) {
 
   return (
     <div className="radar-chart-block">
-      <canvas ref={canvasRef} id={chartId} width={imageSize} height={imageSize} tabIndex="0" />
+      <canvas ref={canvasRef} id={chartId} width={canvasSize} height={canvasSize} tabIndex="0" />
       <InspectorControls>
         <PanelBody title={ __( 'チャート設定', THEME_NAME ) }>
           <RangeControl
-            label={ __( 'チャートサイズ', THEME_NAME ) }
-            value={ imageSize }
-            onChange={ ( value ) => setAttributes({ imageSize: value }) }
+            label={ __( 'サイズ', THEME_NAME ) }
+            value={ canvasSize }
+            onChange={ ( value ) => setAttributes({ canvasSize: value }) }
             min={ MIN_SIZE }
             max={ MAX_SIZE }
             step="10"
@@ -143,6 +146,11 @@ export default function edit( props ) {
             ) ) }
           </ButtonGroup>
           <br /><br />
+          <ToggleControl
+            label={ __( 'データ名を表示', THEME_NAME ) } // ToggleControlを追加
+            checked={ displayLegend }
+            onChange={ (value) => setAttributes({ displayLegend: value }) }
+          />
           <TextControl
             label={ __( '項目', THEME_NAME ) + __( '（カンマ区切り）', THEME_NAME ) }
             value={labels.join(', ')}
