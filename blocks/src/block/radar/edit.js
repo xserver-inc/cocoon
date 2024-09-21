@@ -72,8 +72,8 @@ export default function edit( props ) {
             min: 0,
             max: maximum,
             ticks: {
-              stepSize: (maximum === 100) ? 10 : 1,
-            },
+              stepSize: (maximum === 100) ? 10 : 1
+            }
           }
         },
         responsive: true,
@@ -81,8 +81,8 @@ export default function edit( props ) {
         plugins: {
           legend: {
             display: displayLegend // 凡例表示の設定
-          },
-        },
+          }
+        }
       },
     });
   };
@@ -102,22 +102,25 @@ export default function edit( props ) {
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
-    if (canvasRef.current) {
-      const handleClick = () => {
-        selectBlock(clientId);
-      };
-      canvasRef.current.addEventListener('click', handleClick);
-
-      return () => {
-        canvasRef.current.removeEventListener('click', handleClick);
-      };
-    }
-  }, [canvasRef.current]);
-
-    // クリック時にパーセンテージを更新する関数
-    const handleMaximumChange = ( newMaximum ) => {
-      setAttributes({ maximum: newMaximum });
+    const handleClick = () => {
+      selectBlock(clientId);
     };
+
+    if (canvasRef.current) {
+      canvasRef.current.addEventListener('click', handleClick);
+    }
+
+    return () => {
+      if (canvasRef.current) {
+        canvasRef.current.removeEventListener('click', handleClick);
+      }
+    };
+  }, [canvasRef, clientId, selectBlock]); // clientId と selectBlock を依存配列に追加
+
+  // クリック時に最大値を更新する関数
+  const handleMaximumChange = ( newMaximum ) => {
+    setAttributes({ maximum: newMaximum });
+  };
 
   return (
     <div className="radar-chart-block">

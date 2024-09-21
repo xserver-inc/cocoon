@@ -936,5 +936,5 @@ export function hexToRgba(hex, alpha = 1) {
   var g = parseInt(hex.substring(2, 4), 16);
   var b = parseInt(hex.substring(4, 6), 16);
 
-  return `rgb(${r}, ${g}, ${b}, ${alpha})`;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
