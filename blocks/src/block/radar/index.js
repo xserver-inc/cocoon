@@ -20,7 +20,7 @@ export { metadata, name };
 export const settings = {
   title: __( 'レーダーチャート', THEME_NAME ),
   icon: 'chart-line',
-  description: __( '評価や能力値表示向けにレーダーチャートを表示します。', THEME_NAME ) + __( '基本的に投稿・固定ページ・カスタム投稿ページでのみ表示します。', THEME_NAME ),
+  description: __( '評価や能力値表示向けにレーダーチャートを表示します。', THEME_NAME ) + __( '基本的に投稿・固定ページ・カスタム投稿ページのみで利用できます。', THEME_NAME ),
 
   edit,
   save,

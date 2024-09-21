@@ -36,6 +36,10 @@
       "type": "boolean",
       "default": false
     },
+    "displayLabelValue": {
+      "type": "boolean",
+      "default": true
+    },
     "chartColor": {
       "type": "string",
       "default": "#2ca9e1"

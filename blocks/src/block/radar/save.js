@@ -4,7 +4,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function save( props ) {
   const { attributes } = props;
-  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, chartColor } = attributes;
 
   const chartScript = `
   document.addEventListener('DOMContentLoaded', function() {
@@ -18,7 +18,7 @@ export default function save( props ) {
     ctx.chart = new Chart(ctx, {
       type: 'radar',
       data: {
-      labels: ${JSON.stringify(labels)},
+      labels: ${JSON.stringify(labels.map((label, index) => displayLabelValue ? `${label} ( ${data[index]} )` : label))},
       datasets: [{
         label: '${legendText}',
         data: ${JSON.stringify(data)},

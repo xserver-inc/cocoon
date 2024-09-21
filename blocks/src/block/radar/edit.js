@@ -23,7 +23,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, displayLabelValue, chartColor } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -57,7 +57,7 @@ export default function edit( props ) {
     chartInstanceRef.current = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels: labels,
+        labels: labels.map((label, index) => displayLabelValue ? `${label} ( ${data[index]} )` : label),
         datasets: [{
           label: legendText,
           data: data,
@@ -101,7 +101,7 @@ export default function edit( props ) {
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [canvasSize, maximum, displayLegend, legendText, labels, data, chartColor, displayAngleLines, chartId]);
+  }, [canvasSize, maximum, displayLegend, legendText, labels, data, chartColor, displayAngleLines, displayLabelValue, chartId]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -187,6 +187,11 @@ export default function edit( props ) {
             label={ __( 'アングルラインを表示', THEME_NAME ) } // ToggleControlを追加
             checked={ displayAngleLines }
             onChange={ (value) => setAttributes({ displayAngleLines: value }) }
+          />
+          <ToggleControl
+            label={ __( '項目に値を表示', THEME_NAME ) } // ToggleControlを追加
+            checked={ displayLabelValue }
+            onChange={ (value) => setAttributes({ displayLabelValue: value }) }
           />
         </PanelBody>
         <PanelColorSettings
