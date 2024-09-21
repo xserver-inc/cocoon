@@ -1,4 +1,4 @@
-import { THEME_NAME, hexToRgba } from '../../helpers';
+import { THEME_NAME, hexToRgba, getCanvasId } from '../../helpers';
 import { useRef, useEffect, useState } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import {
@@ -23,7 +23,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, chartColor } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -35,7 +35,7 @@ export default function edit( props ) {
 
   useEffect(() => {
     if (!chartId) {
-      const newChartId = `radarChart-${Math.random().toString(36).substr(2, 9)}`;
+      const newChartId = getCanvasId();
       setAttributes({ chartId: newChartId });
     }
   }, []);
@@ -70,7 +70,7 @@ export default function edit( props ) {
         scales: {
           r: {
             angleLines: {
-              display: false
+              display: displayAngleLines
             },
             min: 0,
             max: maximum,
@@ -101,7 +101,7 @@ export default function edit( props ) {
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [canvasSize, maximum, displayLegend, legendText, labels, data, chartColor, chartId]);
+  }, [canvasSize, maximum, displayLegend, legendText, labels, data, chartColor, displayAngleLines, chartId]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -152,13 +152,13 @@ export default function edit( props ) {
           </ButtonGroup>
           <br /><br />
           <ToggleControl
-            label={ __( '凡例を表示', THEME_NAME ) } // ToggleControlを追加
+            label={ __( 'データ名を表示', THEME_NAME ) } // ToggleControlを追加
             checked={ displayLegend }
             onChange={ (value) => setAttributes({ displayLegend: value }) }
           />
           { displayLegend && (
             <TextControl
-              label={ __( '凡例名', THEME_NAME ) }
+              label={ __( 'データ名', THEME_NAME ) }
               value={ legendText }
               onChange={ (value) => setAttributes({ legendText: value }) }
             />
@@ -183,6 +183,11 @@ export default function edit( props ) {
             setAttributes({ data: newData });
             }}
           />
+          <ToggleControl
+            label={ __( 'アングルラインを表示', THEME_NAME ) } // ToggleControlを追加
+            checked={ displayAngleLines }
+            onChange={ (value) => setAttributes({ displayAngleLines: value }) }
+          />
         </PanelBody>
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
@@ -198,3 +203,56 @@ export default function edit( props ) {
     </div>
   );
 }
+
+wp.data.subscribe(() => {
+  const blocks = wp.data.select('core/block-editor').getBlocks();
+
+  blocks.forEach((block) => {
+      // cocoon-blocks/radarブロックが追加または複製されたかをチェック
+      if (block.name === 'cocoon-blocks/radar') {
+          // ここで処理を行う
+          // console.log('cocoon-blocks/radarブロックが複製されました', block);
+
+          // 複製後に特定の処理を実行する例
+          handleRadarBlockDuplication(block);
+      }
+  });
+});
+
+// 複製時の処理を定義する関数
+function handleRadarBlockDuplication(block) {
+  // ここにブロックに対して行いたい処理を書く
+  // console.log('複製後の処理を実行', block);
+  // console.log(block.attributes.chartId);
+  block.attributes.chartId = getCanvasId();
+  // console.log(block.attributes.chartId);
+}
+
+
+// wp.data.subscribe(() => {
+//   const blocks = wp.data.select('core/block-editor').getBlocks();
+//   const previousBlocks = wp.data.select('core/block-editor').getPreviousBlocks();
+
+//   // ブロック数が変わっているか確認（ブロックが貼り付けられた場合）
+//   if (blocks.length !== previousBlocks.length) {
+//       const newBlock = blocks[blocks.length - 1]; // 最後に追加されたブロック
+
+//       // 追加されたブロックがcocoon-blocks/radarかどうかをチェック
+//       if (newBlock && newBlock.name === 'cocoon-blocks/radar') {
+//           console.log('cocoon-blocks/radarブロックがクリップボードから貼り付けられました', newBlock);
+
+//           // 貼り付け時の処理を実行する例
+//           handleRadarBlockPaste(newBlock);
+//       }
+//   }
+// });
+
+// // 貼り付け時の処理を定義する関数
+// function handleRadarBlockPaste(block) {
+//   // ここにブロックに対して行いたい処理を書く
+//   console.log('貼り付け後の処理を実行', block);
+//   block.attributes.chartId = getCanvasId();
+// }
+
+
+

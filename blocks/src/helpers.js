@@ -20,9 +20,8 @@ import {
   getColorClassName,
 } from '@wordpress/block-editor';
 import { displayShortcut } from '@wordpress/keycodes';
-// import {
-//   find
-// } from 'lodash';
+
+
 const { getComputedStyle } = window;
 
 export const THEME_NAME = 'cocoon';
@@ -937,4 +936,9 @@ export function hexToRgba(hex, alpha = 1) {
   var b = parseInt(hex.substring(4, 6), 16);
 
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+// キャンバス用のユニークなIDを取得する
+export function getCanvasId() {
+  return `canvas-${Math.random().toString(36).substr(2, 9)}`;
 }

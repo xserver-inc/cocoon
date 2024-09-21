@@ -30,7 +30,11 @@
     },
     "data": {
       "type": "array",
-      "default": [1, 2, 3, 4, 5]
+      "default": [4, 4, 4, 4, 4]
+    },
+    "displayAngleLines": {
+      "type": "boolean",
+      "default": false
     },
     "chartColor": {
       "type": "string",
@@ -40,7 +44,6 @@
   "example": {},
   "supports": {
     "customClassName": true,
-    "anchor": true,
-    "multiple": false
+    "anchor": true
   }
 }

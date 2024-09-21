@@ -4,7 +4,7 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function save( props ) {
   const { attributes } = props;
-  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, chartColor } = attributes;
+  const { canvasSize, maximum, displayLegend, legendText, labels, data, chartId, displayAngleLines, chartColor } = attributes;
 
   const chartScript = `
   document.addEventListener('DOMContentLoaded', function() {
@@ -31,7 +31,7 @@ export default function save( props ) {
       scales: {
         r: {
           angleLines: {
-            display: false
+            display: ${displayAngleLines}
           },
           min: 0,
           max: ${maximum},
