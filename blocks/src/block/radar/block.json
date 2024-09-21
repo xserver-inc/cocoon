@@ -8,6 +8,10 @@
       "type": "string",
       "default": ""
     },
+    "imageSize": {
+      "type": "number",
+      "default": 400
+    },
     "labels": {
         "type": "array",
         "default": ["A", "B", "C", "D", "E"]
