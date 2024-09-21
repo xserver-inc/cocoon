@@ -69,6 +69,9 @@ export default function edit( props ) {
       options: {
         scales: {
           r: {
+            angleLines: {
+              display: false
+            },
             min: 0,
             max: maximum,
             ticks: {

@@ -7,36 +7,20 @@ if ( !function_exists( 'enqueue_block_editor_assets_radar' ) ):
 function enqueue_block_editor_assets_radar() {
   // 使用例：段落ブロックがあるかどうかをチェック
   $post_id = get_the_ID();
-  $post_content = get_post_field('post_content', $post_id);
+  if ($post_id) {
+    $post_content = get_post_field('post_content', $post_id);
 
-  // チャートブロックを利用する公開ページと管理画面だけchart.jsを読み込む
-  if (has_specific_blocks($post_content, array('cocoon-blocks/radar')) || is_admin()) {
-    wp_enqueue_script(
-        'chart-js',
-        'https://cdn.jsdelivr.net/npm/chart.js',
-        array(), // 依存関係
-        null,
-        true // フッターに追加
-    );
-    // wp_enqueue_script(
-    //     'chartjs-plugin-datalabels-js',
-    //     'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels',
-    //     array('chart-js'), // 依存関係
-    //     null,
-    //     true // フッターに追加
-    // );
+    // チャートブロックを利用する公開ページと管理画面だけchart.jsを読み込む
+    if (has_specific_blocks($post_content, array('cocoon-blocks/radar')) || is_admin()) {
+      wp_enqueue_script(
+          'chart-js',
+          'https://cdn.jsdelivr.net/npm/chart.js',
+          array(), // 依存関係
+          null,
+          true // フッターに追加
+      );
+    }
   }
-
-
-    // if( is_admin()) {
-    //   wp_enqueue_script(
-    //     'custom-chart-block',
-    //     get_stylesheet_directory_uri() . '/custom-chart-block.js', // カスタムブロック用の JS ファイル
-    //     array('chart-js', 'wp-blocks', 'wp-editor'), // 依存関係
-    //     null,
-    //     true // フッターに追加
-    //   );
-    // }
 }
 endif;
 
