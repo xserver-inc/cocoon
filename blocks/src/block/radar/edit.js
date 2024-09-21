@@ -131,7 +131,7 @@ export default function edit( props ) {
   };
 
   return (
-    <div className="radar-chart-block">
+    <div className="radar-chart-block wp-block">
       <canvas ref={canvasRef} id={chartId} width={canvasSize} height={canvasSize} tabIndex="0" />
       <InspectorControls>
         <PanelBody title={ __( 'チャート設定', THEME_NAME ) }>

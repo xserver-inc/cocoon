@@ -63,7 +63,7 @@ export default function save( props ) {
   `;
 
   return (
-  <div className="radar-chart-block">
+  <div className="radar-chart-block wp-block">
     <canvas id={chartId} width={canvasSize} height={canvasSize} />
     <script>{chartScript}</script>
   </div>
