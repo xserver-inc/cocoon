@@ -23,7 +23,25 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
   const { attributes, setAttributes, clientId } = props;
-  const { canvasSize, maximum, allowMaxOver, displayLegend, legendText, displayTotal, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
+  const {
+    chartId,
+    chartColor,
+    fontColor,
+    canvasSize,
+    fontSize,
+    fontWeight,
+    maximum,
+    displayTitle,
+    title,
+    displayLegend,
+    legendText,
+    displayTotal,
+    labels,
+    data,
+    displayLabelValue,
+    displayAngleLines,
+    allowMaxOver,
+  } = attributes;
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -75,20 +93,43 @@ export default function edit( props ) {
             min: 0,
             max: maximum,
             ticks: {
-              stepSize: (maximum === 100) ? 10 : 1
+              stepSize: (maximum === 100) ? 10 : 1,
+              font: {
+                size: fontSize, // 目盛のフォントサイズを指定
+                weight: fontWeight,
+              },
+              color: fontColor,
             },
             pointLabels: {
               font: {
-                size: pointLabelFontSize // フォントサイズを指定
-              }
+                size: fontSize, // フォントサイズを指定
+                weight: fontWeight,
+              },
+              color: fontColor,
             }
           }
         },
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
+          title: {
+            display: displayTitle, // タイトルの表示
+            text: title, // タイトルのテキスト
+            font: {
+              size: fontSize + 2, // フォントサイズを指定
+              weight: fontWeight + 100,
+            },
+            color: fontColor,
+          },
           legend: {
-            display: displayLegend // 凡例表示の設定
+            display: displayLegend, // 凡例表示の設定
+            labels: {
+              font: {
+                size: fontSize, // 凡例のフォントサイズ
+                weight: fontWeight,
+              },
+              color: fontColor,
+            }
           }
         }
       },
@@ -106,7 +147,25 @@ export default function edit( props ) {
     return () => {
       destroyChart(); // クリーンアップ時にチャートを破棄
     };
-  }, [canvasSize, maximum, allowMaxOver, displayLegend, legendText, displayTotal, labels, data, chartColor, displayAngleLines, displayLabelValue, pointLabelFontSize, chartId]);
+  }, [
+    chartId,
+    chartColor,
+    fontColor,
+    canvasSize,
+    fontSize,
+    fontWeight,
+    maximum,
+    displayTitle,
+    title,
+    displayLegend,
+    legendText,
+    displayTotal,
+    labels,
+    data,
+    displayAngleLines,
+    allowMaxOver,
+    displayLabelValue,
+  ]);
 
   // マウスクリックでブロックを選択（フォーカス）する
   useEffect(() => {
@@ -134,14 +193,32 @@ export default function edit( props ) {
     <div className="radar-chart-block wp-block">
       <canvas ref={canvasRef} id={chartId} width={canvasSize} height={canvasSize} tabIndex="0" />
       <InspectorControls>
+        <PanelColorSettings
+          title={ __( '色設定', THEME_NAME ) }
+          colorSettings={[
+            {
+              label: __( 'チャートカラー', THEME_NAME ),
+              onChange: ( newColor ) => setAttributes({ chartColor: newColor }),
+              value: chartColor,
+            },
+          ]}
+        />
         <PanelBody title={ __( 'チャート設定', THEME_NAME ) }>
           <RangeControl
-            label={ __( 'サイズ', THEME_NAME ) }
+            label={ __( 'キャンバスサイズ', THEME_NAME ) }
             value={ canvasSize }
             onChange={ ( value ) => setAttributes({ canvasSize: value }) }
             min={ MIN_SIZE }
             max={ MAX_SIZE }
             step="10"
+          />
+          <RangeControl
+            label={ __( 'フォントサイズ', THEME_NAME ) }
+            value={ fontSize }
+            onChange={ ( value ) => setAttributes({ fontSize: value }) }
+            min="8"
+            max="24"
+            step="1"
           />
           <p>{ __( '最大値', THEME_NAME )}</p>
           <ButtonGroup>
@@ -156,6 +233,18 @@ export default function edit( props ) {
             ) ) }
           </ButtonGroup>
           <br /><br />
+          <ToggleControl
+            label={ __( 'タイトルを表示', THEME_NAME ) } // ToggleControlを追加
+            checked={ displayTitle }
+            onChange={ (value) => setAttributes({ displayTitle: value }) }
+          />
+          { displayTitle && (
+            <TextControl
+              label={ __( 'タイトル', THEME_NAME ) }
+              value={ title }
+              onChange={ (value) => setAttributes({ title: value }) }
+            />
+          )}
           <ToggleControl
             label={ __( 'データ名を表示', THEME_NAME ) } // ToggleControlを追加
             checked={ displayLegend }
@@ -199,6 +288,11 @@ export default function edit( props ) {
             }}
           />
           <ToggleControl
+            label={ __( '項目に値を表示', THEME_NAME ) } // ToggleControlを追加
+            checked={ displayLabelValue }
+            onChange={ (value) => setAttributes({ displayLabelValue: value }) }
+          />
+          <ToggleControl
             label={ __( '値が最大値を超えるのを許可', THEME_NAME ) } // ToggleControlを追加
             checked={ allowMaxOver }
             onChange={ (value) => setAttributes({ allowMaxOver: value }) }
@@ -208,30 +302,7 @@ export default function edit( props ) {
             checked={ displayAngleLines }
             onChange={ (value) => setAttributes({ displayAngleLines: value }) }
           />
-          <ToggleControl
-            label={ __( '項目に値を表示', THEME_NAME ) } // ToggleControlを追加
-            checked={ displayLabelValue }
-            onChange={ (value) => setAttributes({ displayLabelValue: value }) }
-          />
-          <RangeControl
-            label={ __( '項目のフォントサイズ', THEME_NAME ) }
-            value={ pointLabelFontSize }
-            onChange={ ( value ) => setAttributes({ pointLabelFontSize: value }) }
-            min="8"
-            max="24"
-            step="1"
-          />
         </PanelBody>
-        <PanelColorSettings
-          title={ __( '色設定', THEME_NAME ) }
-          colorSettings={[
-            {
-              label: __( 'チャートカラー', THEME_NAME ),
-              onChange: ( newColor ) => setAttributes({ chartColor: newColor }),
-              value: chartColor,
-            },
-          ]}
-        />
       </InspectorControls>
     </div>
   );

@@ -4,7 +4,25 @@ const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function save( props ) {
   const { attributes } = props;
-  const { canvasSize, maximum, displayLegend, legendText, displayTotal, labels, data, chartId, displayAngleLines, displayLabelValue, pointLabelFontSize, chartColor } = attributes;
+  const {
+    chartId,
+    chartColor,
+    fontColor,
+    canvasSize,
+    fontSize,
+    fontWeight,
+    maximum,
+    displayTitle,
+    title,
+    displayLegend,
+    legendText,
+    displayTotal,
+    labels,
+    data,
+    displayLabelValue,
+    // allowMaxOver,
+    displayAngleLines,
+  } = attributes;
 
   const chartScript = `
   document.addEventListener('DOMContentLoaded', function() {
@@ -24,35 +42,58 @@ export default function save( props ) {
           data: ${JSON.stringify(data)},
           backgroundColor: '${chartColor ? hexToRgba(chartColor, 0.2) : DEFAULT_COLOR}',
           borderColor: '${chartColor ? hexToRgba(chartColor, 0.9) : DEFAULT_BORDER_COLOR}',
-          borderWidth: 1
+          borderWidth: 1,
         }]
       },
       options: {
         scales: {
           r: {
             angleLines: {
-              display: ${displayAngleLines}
+              display: ${displayAngleLines},
             },
             min: 0,
             max: ${maximum},
             ticks: {
-              stepSize: ${(maximum === 100) ? 10 : 1}
+              stepSize: ${(maximum === 100) ? 10 : 1},
+              font: {
+                size: ${fontSize},
+                weight: ${fontWeight},
+              },
+              color: '${fontColor}',
             },
             pointLabels: {
               font: {
-                size: ${pointLabelFontSize}
-              }
-            }
-          }
+                size: ${fontSize},
+                weight: ${fontWeight},
+              },
+              color: '${fontColor}',
+            },
+          },
         },
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
+          title: {
+            display: ${displayTitle},
+            text: '${title}',
+            font: {
+              size: ${fontSize + 2},
+              weight: ${fontWeight + 100},
+            },
+            color: '${fontColor}',
+          },
           legend: {
-            display: ${displayLegend}
-          }
-        }
-      }
+            display: ${displayLegend},
+            labels: {
+              font: {
+                size: ${fontSize},
+                weight: ${fontWeight},
+              },
+              color: '${fontColor}',
+            },
+          },
+        },
+      },
       });
     };
 
