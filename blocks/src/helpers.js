@@ -952,7 +952,34 @@ export function arrayValueTotal(array) {
   }, 0);
 }
 
-// 配列の値の総計
-export function radarValueTotal(array) {
-  return ' [ ' + __( '総計: ', THEME_NAME ) +  arrayValueTotal(array) + ' ]'
+// // 配列の値の総計
+// export function radarValueTotal(array) {
+//   return ' [ ' + __( '総計: ', THEME_NAME ) +  arrayValueTotal(array) + ' ]'
+// }
+
+// フォントの高さを取得
+export function getChartJsFontHeight(fontSize) {
+  // 一時的な要素を作成
+  let element = document.createElement('span');
+
+  // 要素のスタイルを設定
+  element.style.fontFamily = "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif'";
+  element.style.fontSize = fontSize;
+  element.style.position = 'absolute';
+  element.style.visibility = 'hidden';
+  element.style.whiteSpace = 'nowrap';
+
+  // 高さを測定するための文字列を挿入
+  element.innerText = 'Hg'; // 「H」と「g」は高い文字と低い文字の代表例
+
+  // DOM に追加
+  document.body.appendChild(element);
+
+  // 高さを取得
+  let height = element.offsetHeight;
+
+  // 要素をDOMから削除
+  document.body.removeChild(element);
+
+  return height;
 }

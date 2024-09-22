@@ -1,4 +1,4 @@
-import { THEME_NAME, hexToRgba, getCanvasId, radarValueTotal } from '../../helpers';
+import { THEME_NAME, hexToRgba, getCanvasId, arrayValueTotal, getChartJsFontHeight } from '../../helpers';
 import { useRef, useEffect, useState } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import {
@@ -35,9 +35,9 @@ export default function edit( props ) {
     title,
     displayLegend,
     legendText,
-    displayTotal,
     labels,
     data,
+    displayTotal,
     displayLabelValue,
     displayAngleLines,
     allowMaxOver,
@@ -71,13 +71,34 @@ export default function edit( props ) {
 
     destroyChart(); // 既存のチャートがあれば破棄
 
+    // 合計を表示するカスタムプラグイン
+    const totalPlugin = {
+      id: 'totalPlugin',
+      afterDatasetsDraw(chart, args, options) {
+        if (displayTotal) {
+          const { ctx, chartArea: { top, left, right, bottom } } = chart;
+          const centerX = (left + right) / 2;
+          const centerY = (top + bottom + ((data.length % 2 === 0) ? 0 : getChartJsFontHeight(fontSize))) / 2;
+          const total = `${__( '総計:', THEME_NAME )} ${arrayValueTotal(data)}`;
+
+          ctx.save();
+          ctx.font = fontSize;
+          ctx.fillStyle = fontColor;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(total, centerX, centerY);
+          ctx.restore();
+        }
+      }
+    };
+
     // 新しいチャートを生成
     chartInstanceRef.current = new Chart(ctx, {
       type: 'radar',
       data: {
         labels: labels.map((label, index) => displayLabelValue ? `${label} ( ${data[index]} )` : label),
         datasets: [{
-          label: displayTotal ? legendText + radarValueTotal(data) : legendText,
+          label: legendText,
           data: data,
           backgroundColor: chartColor ? hexToRgba(chartColor, 0.2) : DEFAULT_COLOR,
           borderColor: chartColor ? hexToRgba(chartColor, 0.9) : DEFAULT_BORDER_COLOR,
@@ -131,10 +152,13 @@ export default function edit( props ) {
               color: fontColor,
             }
           },
+          totalPlugin: true // 合計表示プラグインを有効化
         }
       },
+      plugins: [totalPlugin] // 合計表示プラグインをチャートに追加
     });
   };
+
 
   // チャートのレンダリングとサイズ調整
   useEffect(() => {
@@ -142,6 +166,7 @@ export default function edit( props ) {
       canvasRef.current.width = canvasSize;
       canvasRef.current.height = canvasSize;
       renderChart();
+      chartInstanceRef.current.update(); // チャートを更新して再描画
     }
 
     return () => {
@@ -159,9 +184,9 @@ export default function edit( props ) {
     title,
     displayLegend,
     legendText,
-    displayTotal,
     labels,
     data,
+    displayTotal,
     displayAngleLines,
     allowMaxOver,
     displayLabelValue,
@@ -259,13 +284,6 @@ export default function edit( props ) {
               placeholder={ __( 'ここに凡例を入力してください', THEME_NAME ) }
             />
           )}
-          { displayLegend && (
-            <ToggleControl
-              label={ __( 'データ名末尾に総計を表示', THEME_NAME ) } // ToggleControlを追加
-              checked={ displayTotal }
-              onChange={ (value) => setAttributes({ displayTotal: value }) }
-            />
-          )}
           <TextControl
             label={ __( '項目', THEME_NAME ) + __( '（カンマ区切りで何項目でも入力可）', THEME_NAME ) }
             value={labels.join(', ')}
@@ -290,6 +308,11 @@ export default function edit( props ) {
               setAttributes({ data: newData });
             }}
             placeholder={ __( '1, 2, 3, 4, 5', THEME_NAME ) }
+          />
+          <ToggleControl
+            label={ __( '総計を表示', THEME_NAME ) } // ToggleControlを追加
+            checked={ displayTotal }
+            onChange={ (value) => setAttributes({ displayTotal: value }) }
           />
           <ToggleControl
             label={ __( '項目に値を表示', THEME_NAME ) } // ToggleControlを追加
