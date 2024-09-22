@@ -27,6 +27,14 @@ function admin_print_styles_custom() {
   if (!is_screen_editor_page()) {
     //管理用スタイル
     wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+  } else {
+    echo '<style>
+      .postbox-container input[type="text"],
+      .components-panel input[type="text"],
+      textarea[name="the_page_memo"]{
+        width: 100%;
+      }
+    </style>';
   }
 
   //Font Awesome
