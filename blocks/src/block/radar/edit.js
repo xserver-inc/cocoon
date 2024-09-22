@@ -130,7 +130,7 @@ export default function edit( props ) {
               },
               color: fontColor,
             }
-          }
+          },
         }
       },
     });
@@ -243,6 +243,7 @@ export default function edit( props ) {
               label={ __( 'タイトル', THEME_NAME ) }
               value={ title }
               onChange={ (value) => setAttributes({ title: value }) }
+              placeholder={ __( 'ここにタイトルを入力してください', THEME_NAME ) }
             />
           )}
           <ToggleControl
@@ -255,6 +256,7 @@ export default function edit( props ) {
               label={ __( 'データ名', THEME_NAME ) }
               value={ legendText }
               onChange={ (value) => setAttributes({ legendText: value }) }
+              placeholder={ __( 'ここに凡例を入力してください', THEME_NAME ) }
             />
           )}
           { displayLegend && (
@@ -268,6 +270,7 @@ export default function edit( props ) {
             label={ __( '項目', THEME_NAME ) + __( '（カンマ区切りで何項目でも入力可）', THEME_NAME ) }
             value={labels.join(', ')}
             onChange={(value) => setAttributes({ labels: value.split(',').map(label => label.trim()) })}
+            placeholder={ __( '項目A, 項目B, 項目C, 項目D, 項目E', THEME_NAME ) }
           />
           <TextControl
             label={ __( '値', THEME_NAME ) + __( '（カンマ区切りで項目の数だけ入力可）', THEME_NAME ) }
@@ -283,9 +286,10 @@ export default function edit( props ) {
                   num = '';
                 }
                 return num;
-            });
-            setAttributes({ data: newData });
+              });
+              setAttributes({ data: newData });
             }}
+            placeholder={ __( '1, 2, 3, 4, 5', THEME_NAME ) }
           />
           <ToggleControl
             label={ __( '項目に値を表示', THEME_NAME ) } // ToggleControlを追加
