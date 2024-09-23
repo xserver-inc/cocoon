@@ -52,7 +52,7 @@ const radarChartIcon = (
 export const settings = {
   title: __( 'レーダーチャート', THEME_NAME ),
   icon: radarChartIcon,
-  description: __( '評価や能力値表示に向いているレーダーチャートブロックです。', THEME_NAME ) + __( '基本的に投稿・固定ページ・カスタム投稿ページのみで利用できます。', THEME_NAME ),
+  description: __( '評価や能力値表示に。', THEME_NAME ),
 
   edit,
   save,
