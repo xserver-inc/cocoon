@@ -464,7 +464,9 @@ add_filter('get_notice_area_message', function($msg) {
     $msg_array =  explode(',' ,$msg);
 
     if (count($msg_array) > 1) {
-      $_HVN_NOTICE = true;
+      if (is_notice_area_visible()) {
+        $_HVN_NOTICE = true;
+      }
       $html = null;
 
       for ($i=0;$i<count($msg_array); $i++) {
