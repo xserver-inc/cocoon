@@ -113,7 +113,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'ホームイメージ', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'トップページのOGPやTwitter Cardsで表示する画像の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'インデックスページのOGPやTwitter Cardsで表示する画像の設定です。', THEME_NAME );_e( 'フロントページが固定ページに設定してある場合は、固定ページのアイキャッチが優先されます。', THEME_NAME ); ?></p>
 
     <table class="form-table">
       <tbody>
