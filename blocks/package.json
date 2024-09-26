@@ -26,5 +26,9 @@
     "compare-versions": "^6.1.0",
     "react": "^18.2.0",
     "react-native": "^0.72.6"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001662",
+    "chart.js": "^4.4.4"
   }
 }

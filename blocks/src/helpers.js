@@ -20,9 +20,8 @@ import {
   getColorClassName,
 } from '@wordpress/block-editor';
 import { displayShortcut } from '@wordpress/keycodes';
-// import {
-//   find
-// } from 'lodash';
+
+
 const { getComputedStyle } = window;
 
 export const THEME_NAME = 'cocoon';
@@ -918,4 +917,69 @@ export function CreateCategoryList( catData, input, data, updateAttr ) {
   } );
 
   return control;
+}
+
+export function hexToRgba(hex, alpha = 1) {
+  // 先頭の#を取り除く
+  hex = hex.replace('#', '');
+
+  // 3桁のカラーコードを6桁に変換
+  if (hex.length === 3) {
+    hex = hex.split('').map(function(h) {
+      return h + h;
+    }).join('');
+  }
+
+  // 16進数を10進数に変換してRGBの形式に
+  var r = parseInt(hex.substring(0, 2), 16);
+  var g = parseInt(hex.substring(2, 4), 16);
+  var b = parseInt(hex.substring(4, 6), 16);
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+// キャンバス用のユニークなIDを取得する
+export function getCanvasId() {
+  return `canvas-${Math.random().toString(36).substr(2, 9)}`;
+}
+
+// 配列の値の総計
+export function arrayValueTotal(array) {
+  return array.reduce((accumulator, currentValue) => {
+    // 空文字をチェックし、空なら0に置き換える
+    const value = isNaN(currentValue) ? 0 : Number(currentValue);
+    return accumulator + value;
+  }, 0);
+}
+
+// // 配列の値の総計
+// export function radarValueTotal(array) {
+//   return ' [ ' + __( '総計: ', THEME_NAME ) +  arrayValueTotal(array) + ' ]'
+// }
+
+// フォントの高さを取得
+export function getChartJsFontHeight(fontSize) {
+  // 一時的な要素を作成
+  let element = document.createElement('span');
+
+  // 要素のスタイルを設定
+  element.style.fontFamily = "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif'";
+  element.style.fontSize = fontSize;
+  element.style.position = 'absolute';
+  element.style.visibility = 'hidden';
+  element.style.whiteSpace = 'nowrap';
+
+  // 高さを測定するための文字列を挿入
+  element.innerText = 'Hg'; // 「H」と「g」は高い文字と低い文字の代表例
+
+  // DOM に追加
+  document.body.appendChild(element);
+
+  // 高さを取得
+  let height = element.offsetHeight;
+
+  // 要素をDOMから削除
+  document.body.removeChild(element);
+
+  return height;
 }

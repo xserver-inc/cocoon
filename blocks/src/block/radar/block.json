@@ -1,0 +1,81 @@
+{
+  "apiVersion": 2,
+  "name": "cocoon-blocks/radar",
+  "category": "cocoon-block",
+  "keywords": ["radar", "chart"],
+  "attributes": {
+    "chartId": {
+      "type": "string",
+      "default": ""
+    },
+    "chartColor": {
+      "type": "string",
+      "default": "#2ca9e1"
+    },
+    "fontColor": {
+      "type": "string",
+      "default": "#666666"
+    },
+    "canvasSize": {
+      "type": "number",
+      "default": 400
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 11
+    },
+    "fontWeight": {
+      "type": "number",
+      "default": 400
+    },
+    "maximum": {
+      "type": "number",
+      "default": 5
+    },
+    "displayTitle": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "displayLegend": {
+      "type": "boolean",
+      "default": false
+    },
+    "legendText": {
+      "type": "string",
+      "default": ""
+    },
+    "displayTotal": {
+      "type": "boolean",
+      "default": true
+    },
+    "labels": {
+        "type": "array",
+        "default": ["A", "B", "C", "D", "E"]
+    },
+    "data": {
+      "type": "array",
+      "default": [4, 4, 4, 4, 4]
+    },
+    "displayLabelValue": {
+      "type": "boolean",
+      "default": true
+    },
+    "allowMaxOver": {
+      "type": "boolean",
+      "default": false
+    },
+    "displayAngleLines": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "example": {},
+  "supports": {
+    "customClassName": true,
+    "anchor": true
+  }
+}
