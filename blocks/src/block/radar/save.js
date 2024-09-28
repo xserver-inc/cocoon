@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   `;
 
-  return (
+return (
   <div { ...blockProps }>
     <canvas id={chartId} width={canvasSize} height={canvasSize} />
     <script>{chartScript}</script>
