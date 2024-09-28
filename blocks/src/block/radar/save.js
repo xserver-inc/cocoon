@@ -1,4 +1,6 @@
 import { THEME_NAME, hexToRgba, arrayValueTotal, getChartJsFontHeight } from '../../helpers';
+import { useBlockProps } from '@wordpress/block-editor';
+import classnames from 'classnames';
 const DEFAULT_COLOR = 'rgba(255, 99, 132, 0.2)';
 const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 import { __ } from '@wordpress/i18n';
@@ -24,6 +26,13 @@ export default function save( props ) {
     // allowMaxOver,
     displayAngleLines,
   } = attributes;
+
+  const className = classnames( 'block-box', 'wp-block', 'radar-chart-block');
+
+  const blockProps = useBlockProps.save( {
+    className: className,
+  } );
+
 
   const chartScript = `
 document.addEventListener('DOMContentLoaded', function() {
@@ -126,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
   `;
 
   return (
-  <div className="radar-chart-block wp-block">
+  <div { ...blockProps }>
     <canvas id={chartId} width={canvasSize} height={canvasSize} />
     <script>{chartScript}</script>
   </div>

@@ -6077,3 +6077,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .editor-styles-wrapper {
   padding-bottom: 40vh;
 }
+
+.radar-chart-block.is-selected {
+  border: 2px solid #007cba; /* 選択時の強調表示 */
+}

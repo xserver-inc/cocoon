@@ -5,6 +5,7 @@ import {
   store as blockEditorStore,
   InspectorControls,
   PanelColorSettings,
+  useBlockProps,
 } from '@wordpress/block-editor';
 import {
   PanelBody,
@@ -14,6 +15,7 @@ import {
   Button,
   ToggleControl,
 } from '@wordpress/components';
+import classnames from 'classnames';
 import { __ } from '@wordpress/i18n';
 
 const MIN_SIZE = 200;
@@ -22,7 +24,7 @@ const DEFAULT_COLOR = 'rgba(255, 99, 132, 0.2)';
 const DEFAULT_BORDER_COLOR = 'rgba(255, 99, 132, 0.9)';
 
 export default function edit( props ) {
-  const { attributes, setAttributes, clientId } = props;
+  const { attributes, setAttributes, clientId, className } = props;
   const {
     chartId,
     chartColor,
@@ -42,6 +44,7 @@ export default function edit( props ) {
     displayAngleLines,
     allowMaxOver,
   } = attributes;
+
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null); // useRefで管理
 
@@ -50,6 +53,14 @@ export default function edit( props ) {
   }));
 
   const { selectBlock } = useDispatch(blockEditorStore);
+
+  const classes = classnames( 'block-box', 'wp-block', 'radar-chart-block', {
+    [ className ]: !! className,
+    'is-selected': !! isSelected,
+  } );
+  const blockProps = useBlockProps( {
+    className: classes,
+  } );
 
   useEffect(() => {
     if (!chartId) {
@@ -215,8 +226,16 @@ export default function edit( props ) {
   };
 
   return (
-    <div className="radar-chart-block wp-block">
-      <canvas ref={canvasRef} id={chartId} width={canvasSize} height={canvasSize} tabIndex="0" />
+    <div { ...blockProps }>
+      <canvas
+        ref={canvasRef}
+        id={chartId}
+        width={canvasSize}
+        height={canvasSize}
+        tabIndex="0"
+        onClick={ () => selectBlock(clientId) }
+        onFocus={ () => selectBlock(clientId) }
+      />
       <InspectorControls>
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
@@ -342,7 +361,6 @@ wp.data.subscribe(() => {
       // cocoon-blocks/radarブロックが追加または複製されたかをチェック
       if (block.name === 'cocoon-blocks/radar') {
           // ここで処理を行う
-          // console.log('cocoon-blocks/radarブロックが複製されました', block);
 
           // 複製後に特定の処理を実行する例
           handleRadarBlockDuplication(block);
@@ -353,37 +371,7 @@ wp.data.subscribe(() => {
 // 複製時の処理を定義する関数
 function handleRadarBlockDuplication(block) {
   // ここにブロックに対して行いたい処理を書く
-  // console.log('複製後の処理を実行', block);
-  // console.log(block.attributes.chartId);
   block.attributes.chartId = getCanvasId();
-  // console.log(block.attributes.chartId);
 }
-
-
-// wp.data.subscribe(() => {
-//   const blocks = wp.data.select('core/block-editor').getBlocks();
-//   const previousBlocks = wp.data.select('core/block-editor').getPreviousBlocks();
-
-//   // ブロック数が変わっているか確認（ブロックが貼り付けられた場合）
-//   if (blocks.length !== previousBlocks.length) {
-//       const newBlock = blocks[blocks.length - 1]; // 最後に追加されたブロック
-
-//       // 追加されたブロックがcocoon-blocks/radarかどうかをチェック
-//       if (newBlock && newBlock.name === 'cocoon-blocks/radar') {
-//           console.log('cocoon-blocks/radarブロックがクリップボードから貼り付けられました', newBlock);
-
-//           // 貼り付け時の処理を実行する例
-//           handleRadarBlockPaste(newBlock);
-//       }
-//   }
-// });
-
-// // 貼り付け時の処理を定義する関数
-// function handleRadarBlockPaste(block) {
-//   // ここにブロックに対して行いたい処理を書く
-//   console.log('貼り付け後の処理を実行', block);
-//   block.attributes.chartId = getCanvasId();
-// }
-
 
 
