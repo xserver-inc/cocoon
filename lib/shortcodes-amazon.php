@@ -664,9 +664,8 @@ function amazon_product_link_shortcode($atts){
       $ProductGroup = esc_html($Classifications->{'ProductGroup'}->{'DisplayValue'});
       $ProductGroupClass = strtolower($ProductGroup);
       $ProductGroupClass = str_replace(' ', '-', $ProductGroupClass);
-      //_v($ProductGroup);
 
-      $ByLineInfo = $ItemInfo->{'ByLineInfo'};
+      $ByLineInfo = isset($ItemInfo->{'ByLineInfo'}) ? $ItemInfo->{'ByLineInfo'} : null;
       $Publisher = esc_html(isset($ByLineInfo->{'Publisher'}->{'DisplayValue'}) ? $ByLineInfo->{'Publisher'}->{'DisplayValue'} : null);
       $Manufacturer = esc_html(isset($ByLineInfo->{'Manufacturer'}->{'DisplayValue'}) ? $ByLineInfo->{'Manufacturer'}->{'DisplayValue'} : null);
       $Brand = esc_html(isset($ByLineInfo->{'Brand'}->{'DisplayValue'}) ? $ByLineInfo->{'Brand'}->{'DisplayValue'} : null);

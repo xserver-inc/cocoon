@@ -134,11 +134,7 @@ function hvn_color_css() {
   // 背景カラー
   $body_color = get_theme_mod('hvn_body_color_setting', HVN_BODY_COLOR);
   if ($body_color) {
-    if (is_dark_hexcolor($body_color)) {
-      $title_color = '#fff';
-    } else {
-      $title_color = '#333';
-    }
+    $title_color = is_dark_hexcolor($body_color) ? '#fff' : '#333';
 
     $rgb = colorcode_to_rgb($body_color);
     $css .= "--title-color: {$title_color};";
@@ -148,11 +144,7 @@ function hvn_color_css() {
 
   // プロフィール背景画像
   $img = wp_get_attachment_url(get_theme_mod('hvn_prof_setting'));
-  if ($img) {
-    $css .= "--prof-image: url({$img});";
-  } else {
-    $css .= "--prof-image: none;";
-  }
+  $css .= $img ? "--prof-image: url({$img});" : "--prof-image: none;";
 
   // カード四角
   if (get_theme_mod('hvn_border_radius_setting')) {

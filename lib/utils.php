@@ -1348,6 +1348,27 @@ function get_image_width_and_height($image_url){
 }
 endif;
 
+//エディターページか
+if ( !function_exists( 'is_screen_editor_page' ) ):
+function is_screen_editor_page(){
+  // 管理画面内でのみ実行
+  if (is_admin()) {
+    // 現在の画面オブジェクトを取得
+    $current_screen = get_current_screen();
+
+    // 画面オブジェクトが取得できた場合
+    if ($current_screen) {
+      // エディター画面である場合に true を返す
+      if (($current_screen->base === 'post') || ($current_screen->base === 'site-editor')) {
+          return true;
+      }
+    }
+  }
+  // エディター画面ではない場合は false を返す
+  return false;
+}
+endif;
+
 //テーマ設定ページか
 if ( !function_exists( 'is_admin_php_page' ) ):
 function is_admin_php_page(){
@@ -1442,6 +1463,7 @@ endif;
 //URLからドメインを取得
 if ( !function_exists( 'get_domain_name' ) ):
 function get_domain_name($url){
+  if (empty($url)) return;
   return parse_url($url, PHP_URL_HOST);
 }
 endif;
@@ -1782,7 +1804,7 @@ endif;
 //サイトフォントソースコードURLの取得
 if ( !function_exists( 'get_site_font_source_url' ) ):
 function get_site_font_source_url(){
-  $url = 'https://fonts.googleapis.com/css?family='.get_site_font_source_family().get_site_font_source_weight().'&display=swap';
+  $url = 'https://fonts.googleapis.com/css2?family='.get_site_font_source_family().get_site_font_source_weight().'&display=swap';
   //Pretendardフォント
   if (get_site_font_family_pretendard()) {
     $url = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css';

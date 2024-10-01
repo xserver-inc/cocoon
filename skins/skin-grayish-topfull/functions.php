@@ -184,7 +184,7 @@ if (!function_exists('skin_grayish_font_customize')) :
         'title'    => __('全体：英字フォント設定', THEME_NAME),
         'panel'    => 'font_pat_panel',
         'priority' => 1000,
-        'description' => '<a href="https://cocoon-grayish.na2-factory.com/site-title-set/" target="_blank">'.__('英字フォントの適用箇所についてはこちらを参照', THEME_NAME).'</a>',
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/site-title-set/" target="_blank">' . __('英字フォントの適用箇所についてはこちらを参照', THEME_NAME) . '</a>',
       )
     );
 
@@ -198,16 +198,16 @@ if (!function_exists('skin_grayish_font_customize')) :
         'font_pat_control_radio',
         array(
           'label' => __('英字フォント設定 選択', THEME_NAME),
-          'description' => __('ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。', THEME_NAME).__('※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。', THEME_NAME),
+          'description' => __('ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。', THEME_NAME) . __('※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。', THEME_NAME),
           'section'  => 'font_pat_section',
           'settings' => 'font_pat_control_radio',
           'type'     => 'radio',
           'choices'  => array(
-            'font_Montserrat' => 'Montserrat'.__('（デフォルト）', THEME_NAME),
+            'font_Montserrat' => 'Montserrat' . __('（デフォルト）', THEME_NAME),
             'font_Lato' => 'Lato',
-            'font_InknutAntiqua' => 'Inknut Antiqua'.__('（細タイプなし）', THEME_NAME),
+            'font_InknutAntiqua' => 'Inknut Antiqua' . __('（細タイプなし）', THEME_NAME),
             'font_Spectral' => 'Spectral',
-            'font_Lora' => 'Lora'.__('（細タイプなし）', THEME_NAME),
+            'font_Lora' => 'Lora' . __('（細タイプなし）', THEME_NAME),
             'font_Jost' => 'Jost',
             'font_RobotoSlab' => 'Roboto Slab',
             'font_none' => __('設定なし', THEME_NAME),
@@ -226,12 +226,12 @@ if (!function_exists('skin_grayish_font_customize')) :
         'title_font_weight_radio',
         array(
           'label' => __('サイトロゴ（テキスト時）のフォント太さ 選択', THEME_NAME),
-          'description' => __('ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。', THEME_NAME).__('※フォントによって細いタイプがない場合があります。', THEME_NAME),
+          'description' => __('ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。', THEME_NAME) . __('※フォントによって細いタイプがない場合があります。', THEME_NAME),
           'section'  => 'font_pat_section',
           'settings' => 'title_font_weight_radio',
           'type'     => 'radio',
           'choices'  => array(
-            'font_weight_Thin' => __('細', THEME_NAME).__('（デフォルト）', THEME_NAME),
+            'font_weight_Thin' => __('細', THEME_NAME) . __('（デフォルト）', THEME_NAME),
             'font_weight_Normal' => __('普通', THEME_NAME),
           ),
         )
@@ -370,7 +370,7 @@ if (!function_exists('skin_grayish_color_customize')) :
         'title'    => __('全体：カラー設定', THEME_NAME),
         'panel'    => 'font_pat_panel',
         'priority' => 2000,
-        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-th-color/" target="_blank">'.__('各カラーの適用箇所についてはこちらを参照', THEME_NAME).'</a>',
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-th-color/" target="_blank">' . __('各カラーの適用箇所についてはこちらを参照', THEME_NAME) . '</a>',
       )
     );
 
@@ -386,8 +386,8 @@ if (!function_exists('skin_grayish_color_customize')) :
         'colorpicker_text_gray_S50',
         array(
           'label'    => __('テキストカラー', THEME_NAME),
-          'description' => __('メニュー・見出し・本文などのテキストカラーを変更。', THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。', THEME_NAME),
+          'description' => __('メニュー・見出し・本文などのテキストカラーを変更。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
           'section'  => 'color_pat_section',
           'settings' => 'colorpicker_text_gray_S50',
         )
@@ -406,8 +406,8 @@ if (!function_exists('skin_grayish_color_customize')) :
         'colorpicker_main_blue_T0',
         array(
           'label'    => __('メインアクセント 一番明るい青色', THEME_NAME),
-          'description' => __('サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。', THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。', THEME_NAME),
+          'description' => __('サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
           'section'  => 'color_pat_section',
           'settings' => 'colorpicker_main_blue_T0',
         )
@@ -424,8 +424,8 @@ if (!function_exists('skin_grayish_color_customize')) :
         'colorpicker_main_blue_T70',
         array(
           'label'    => __('メイン 薄い青色', THEME_NAME),
-          'description' => __('グローバルナビの3階層目の背景色、<br>フロントページのMoreボタン、次のページへボタン、タグクラウドのホバー時背景色。', THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。', THEME_NAME),
+          'description' => __('グローバルナビの3階層目の背景色、<br>フロントページのView Moreボタン、次のページへボタン、タグクラウドのホバー時背景色。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
           'section'  => 'color_pat_section',
           'settings' => 'colorpicker_main_blue_T70',
         )
@@ -442,8 +442,8 @@ if (!function_exists('skin_grayish_color_customize')) :
         'colorpicker_main_blue_T90',
         array(
           'label'    => __('メイン 一番薄い青', THEME_NAME),
-          'description' => __('フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。', THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。', THEME_NAME),
+          'description' => __('フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
           'section'  => 'color_pat_section',
           'settings' => 'colorpicker_main_blue_T90',
         )
@@ -460,8 +460,8 @@ if (!function_exists('skin_grayish_color_customize')) :
         'colorpicker_main_blue_S30',
         array(
           'label'    => __('サブ 濃い青', THEME_NAME),
-          'description' => __('プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。', THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。', THEME_NAME),
+          'description' => __('プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
           'section'  => 'color_pat_section',
           'settings' => 'colorpicker_main_blue_S30',
         )
@@ -478,8 +478,8 @@ if (!function_exists('skin_grayish_color_customize')) :
         'colorpicker_main_blue_S50',
         array(
           'label'    => __('サブ もっと濃い青', THEME_NAME),
-          'description' => __('カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。', THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。', THEME_NAME),
+          'description' => __('カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
           'section'  => 'color_pat_section',
           'settings' => 'colorpicker_main_blue_S50',
         )
@@ -623,7 +623,7 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         'title'    => __('フロントページ設定：ヘッダー', THEME_NAME),
         'panel'    => 'font_pat_panel',
         'priority' => 4000,
-        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-pcheader/" target="_blank">'.__('グローバルナビの高さ等変更についてはこちらを参照', THEME_NAME).'</a><br><br><a href="https://cocoon-grayish.na2-factory.com/manual-top-mv/" target="_blank">'.__('メインビジュアルについてはこちらを参照', THEME_NAME).'</a><br><br><a href="https://cocoon-grayish.na2-factory.com/manual-pc-menu/" target="_blank">'.__('グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照', THEME_NAME).'</a>',
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-pcheader/" target="_blank">' . __('グローバルナビの高さ等変更についてはこちらを参照', THEME_NAME) . '</a><br><br><a href="https://cocoon-grayish.na2-factory.com/manual-top-mv/" target="_blank">' . __('メインビジュアルについてはこちらを参照', THEME_NAME) . '</a><br><br><a href="https://cocoon-grayish.na2-factory.com/manual-pc-menu/" target="_blank">' . __('グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照', THEME_NAME) . '</a>',
 
       )
     );
@@ -638,9 +638,9 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         $wp_customize,
         'top_navi_size',
         array(
-          'label'    => __('【PC】グローバルナビの高さ' , THEME_NAME),
-          'description' => __('フロントページのグローバルナビの高さ。56px〜100pxの範囲で変更可能です。' , THEME_NAME).'
-          <br>'.__('※空欄の場合や、範囲外の値の場合は56pxになります。' , THEME_NAME),
+          'label'    => __('【PC】グローバルナビの高さ', THEME_NAME),
+          'description' => __('フロントページのグローバルナビの高さ。56px〜100pxの範囲で変更可能です。', THEME_NAME) . '
+          <br>' . __('※空欄の場合や、範囲外の値の場合は56pxになります。', THEME_NAME),
           'section'  => 'topmv_section',
           'settings' => 'top_navi_size',
           'type'     => 'number',
@@ -664,8 +664,8 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         'top_navibg_colorpicker',
         array(
           'label'    => __('【PC】グローバルナビの背景色', THEME_NAME),
-          'description' => __('グローバルナビの背景色。', THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。', THEME_NAME),
+          'description' => __('グローバルナビの背景色。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
           'section'  => 'topmv_section',
           'settings' => 'top_navibg_colorpicker',
         )
@@ -688,17 +688,17 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
           'settings' => 'top_navibg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'top_navibg_alpha_0' => '0'.__('（背景色なし)', THEME_NAME),
+            'top_navibg_alpha_0' => '0' . __('（背景色なし)', THEME_NAME),
             'top_navibg_alpha_1' => '0.1',
             'top_navibg_alpha_2' => '0.2',
             'top_navibg_alpha_3' => '0.3',
             'top_navibg_alpha_4' => '0.4',
-            'top_navibg_alpha_5' => '0.5'.__('（デフォルト）', THEME_NAME),
+            'top_navibg_alpha_5' => '0.5' . __('（デフォルト）', THEME_NAME),
             'top_navibg_alpha_6' => '0.6',
             'top_navibg_alpha_7' => '0.7',
             'top_navibg_alpha_8' => '0.8',
             'top_navibg_alpha_9' => '0.9',
-            'top_navibg_alpha_10' => '1.0'.__('(不透明)', THEME_NAME),
+            'top_navibg_alpha_10' => '1.0' . __('(不透明)', THEME_NAME),
           ),
         )
       )
@@ -722,8 +722,8 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
           'settings' => 'topmv_dot_radio',
           'type'     => 'radio',
           'choices'  => array(
-            'topmv_dot_On' => __('ON' , THEME_NAME).__('（デフォルト）', THEME_NAME),
-            'topmv_dot_Off' => __('OFF' , THEME_NAME),
+            'topmv_dot_On' => __('ON', THEME_NAME) . __('（デフォルト）', THEME_NAME),
+            'topmv_dot_Off' => __('OFF', THEME_NAME),
           ),
         )
       )
@@ -740,17 +740,17 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         'topmv_whovlay_select',
         array(
           'label'    => __('メインビジュアル 白オーバーレイの不透明度調整', THEME_NAME),
-          'description' => __('メインビジュアルの上に重ねる白の不透明度を調整。', THEME_NAME).__('値が大きくなるほど白が濃くなります。', THEME_NAME),
+          'description' => __('メインビジュアルの上に重ねる白の不透明度を調整。', THEME_NAME) . __('値が大きくなるほど白が濃くなります。', THEME_NAME),
           'section'  => 'topmv_section',
           'settings' => 'topmv_whovlay_select',
           'type'     => 'select',
           'choices'  => array(
-            'topmv_whoverlay_0' => __('OFF' , THEME_NAME),
+            'topmv_whoverlay_0' => __('OFF', THEME_NAME),
             'topmv_whoverlay_1' => '0.1',
             'topmv_whoverlay_2' => '0.2',
             'topmv_whoverlay_3' => '0.3',
             'topmv_whoverlay_4' => '0.4',
-            'topmv_whoverlay_5' => '0.5'.__('（デフォルト）', THEME_NAME),
+            'topmv_whoverlay_5' => '0.5' . __('（デフォルト）', THEME_NAME),
             'topmv_whoverlay_6' => '0.6',
             'topmv_whoverlay_7' => '0.7',
             'topmv_whoverlay_8' => '0.8',
@@ -771,13 +771,13 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         'topmv_scrollanim',
         array(
           'label'    => __('メインビジュアル下のスクロールアニメーションのON/OFF', THEME_NAME),
-          'description' => __('メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。', THEME_NAME).__('PC/SP共通の設定になります。', THEME_NAME),
+          'description' => __('メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。', THEME_NAME) . __('PC/SP共通の設定になります。', THEME_NAME),
           'section'  => 'topmv_section',
           'settings' => 'topmv_scrollanim',
           'type'     => 'radio',
           'choices'  => array(
-            'topmv_scrollanim_On' => __('ON' , THEME_NAME).__('（デフォルト）', THEME_NAME),
-            'topmv_scrollanim_Off' => __('OFF' , THEME_NAME),
+            'topmv_scrollanim_On' => __('ON', THEME_NAME) . __('（デフォルト）', THEME_NAME),
+            'topmv_scrollanim_Off' => __('OFF', THEME_NAME),
           ),
         )
       )
@@ -887,14 +887,14 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
           $setting_name,
           array(
             'label'       => $data['label'],
-            'description' => __('プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。', THEME_NAME).'
-            <br>'.__('※フロントページ以外のグローバルナビにも表示されます。', THEME_NAME),
+            'description' => __('プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。', THEME_NAME) . '
+            <br>' . __('※フロントページ以外のグローバルナビにも表示されます。', THEME_NAME),
             'section'     => 'topmv_section',
             'settings'    => $setting_name,
             'type'        => 'select',
             'choices'     => array(
-              'snsbtn_select_Off' => __('OFF' , THEME_NAME).__('（デフォルト）', THEME_NAME),
-              'snsbtn_select_On'  => __('ON' , THEME_NAME),
+              'snsbtn_select_Off' => __('OFF', THEME_NAME) . __('（デフォルト）', THEME_NAME),
+              'snsbtn_select_On'  => __('ON', THEME_NAME),
             ),
           )
         )
@@ -1137,12 +1137,12 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         'title'    => __('全体：テキスト変更', THEME_NAME),
         'panel'    => 'font_pat_panel',
         'priority' => 3000,
-        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-contents-text/" target="_blank">'.__('テキスト変更についてはこちらを参照', THEME_NAME).'</a><br><br>',
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-contents-text/" target="_blank">' . __('テキスト変更についてはこちらを参照', THEME_NAME) . '</a><br><br>',
       )
     );
     // New Postを好きなテキストに変更できる
     $wp_customize->add_setting('topmv_newpost_text', array(
-      'default' => __('New Post' , THEME_NAME),
+      'default' => __('New Post', THEME_NAME),
       'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control(
@@ -1151,8 +1151,8 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         'topmv_newpost_text',
         array(
           'label'    => __('【フロントページ】"New Post"を変更', THEME_NAME),
-          'description' => __('New Postを別のテキストに変更できます。', THEME_NAME).'<br>'.__('Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。', THEME_NAME).'
-          <br>'.__('※空欄の場合は"New Post"が表示されます。', THEME_NAME),
+          'description' => __('New Postを別のテキストに変更できます。', THEME_NAME) . '<br>' . __('Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。', THEME_NAME) . '
+          <br>' . __('※空欄の場合は"New Post"が表示されます。', THEME_NAME),
           'section'  => 'topcontents_section',
           'settings' => 'topmv_newpost_text',
           'type'     => 'text',
@@ -1171,8 +1171,8 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         'topmv_newpost_heading_text',
         array(
           'label'    => __('【フロントページ】"最新の記事"を変更', THEME_NAME),
-          'description' => __('"最新の記事"を別のテキストに変更できます。', THEME_NAME).'<br>'.__('Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。', THEME_NAME).'
-          <br>'.__('※空欄の場合は"最新の記事"が表示されます。', THEME_NAME),
+          'description' => __('"最新の記事"を別のテキストに変更できます。', THEME_NAME) . '<br>' . __('Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。', THEME_NAME) . '
+          <br>' . __('※空欄の場合は"最新の記事"が表示されます。', THEME_NAME),
           'section'  => 'topcontents_section',
           'settings' => 'topmv_newpost_heading_text',
           'type'     => 'text',
@@ -1191,8 +1191,8 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         'topmv_category_text',
         array(
           'label'    => __('【フロントページ】"Category"を変更', THEME_NAME),
-          'description' => __('Categoryを別のテキストに変更できます。', THEME_NAME).'<br>'.__('Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。', THEME_NAME).'
-          <br>'.__('※空欄の場合は"Category"が表示されます。', THEME_NAME),
+          'description' => __('Categoryを別のテキストに変更できます。', THEME_NAME) . '<br>' . __('Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。', THEME_NAME) . '
+          <br>' . __('※空欄の場合は"Category"が表示されます。', THEME_NAME),
           'section'  => 'topcontents_section',
           'settings' => 'topmv_category_text',
           'type'     => 'text',
@@ -1200,9 +1200,9 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
       )
     );
 
-    // フロントページのMoreボタン テキストをMore以外に書き換え Cocoon設定>インデックス>
+    // フロントページのView Moreボタン テキストをView More以外に書き換え Cocoon設定>インデックス>
     $wp_customize->add_setting('topmv_more_button_caption', array(
-      'default' => __('More' , THEME_NAME),
+      'default' => __('View More', THEME_NAME),
       'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control(
@@ -1210,9 +1210,9 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         $wp_customize,
         'topmv_more_button_caption',
         array(
-          'label'    => __('【フロントページ】Moreボタン "More"を変更', THEME_NAME),
-          'description' => __('"More"を別のテキストに変更できます。', THEME_NAME).'<br>'.__('Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。', THEME_NAME).'<br>
-          '.__('※空欄の場合は"More"が表示されます。', THEME_NAME),
+          'label'    => __('【フロントページ】View Moreボタン "View More"を変更', THEME_NAME),
+          'description' => __('"View More"を別のテキストに変更できます。', THEME_NAME) . '<br>' . __('Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。', THEME_NAME) . '<br>
+          ' . __('※空欄の場合は"View More"が表示されます。', THEME_NAME),
           'section'  => 'topcontents_section',
           'settings' => 'topmv_more_button_caption',
           'type'     => 'text',
@@ -1222,7 +1222,7 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
 
     // フロントページ・インデックスページのNextボタン テキストを書き換え Cocoon設定>インデックス>デフォルト、タブ一覧
     $wp_customize->add_setting('topindex_next_button_caption', array(
-      'default' => __('Next' , THEME_NAME),
+      'default' => __('Next', THEME_NAME),
       'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control(
@@ -1231,7 +1231,7 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         'topindex_next_button_caption',
         array(
           'label'    => __('【フロントページ・各一覧ページ】Nextボタン "Next"を変更', THEME_NAME),
-          'description' => __('"Next"を別のテキストに変更できます。', THEME_NAME).'<br>'.__('※空欄の場合は"Next"が表示されます。', THEME_NAME),
+          'description' => __('"Next"を別のテキストに変更できます。', THEME_NAME) . '<br>' . __('※空欄の場合は"Next"が表示されます。', THEME_NAME),
           'section'  => 'topcontents_section',
           'settings' => 'topindex_next_button_caption',
           'type'     => 'text',
@@ -1241,7 +1241,7 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
 
     // パンくずリストのHomeテキスト変更
     $wp_customize->add_setting('breadcrumb_caption', array(
-      'default' => __('Home' , THEME_NAME),
+      'default' => __('Home', THEME_NAME),
       'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control(
@@ -1250,7 +1250,7 @@ if (!function_exists('skin_grayish_top_contents_customize')) :
         'breadcrumb_caption',
         array(
           'label'    => __('【投稿・固定ページ】パンくずリスト "Home"を変更', THEME_NAME),
-          'description' => __('"Home"を別のテキストに変更できます。', THEME_NAME).'<br>'.__('※空欄の場合は"Home"が表示されます。', THEME_NAME),
+          'description' => __('"Home"を別のテキストに変更できます。', THEME_NAME) . '<br>' . __('※空欄の場合は"Home"が表示されます。', THEME_NAME),
           'section'  => 'topcontents_section',
           'settings' => 'breadcrumb_caption',
           'type'     => 'text',
@@ -1266,11 +1266,11 @@ add_action('wp_head', 'skin_grayish_top_newpost_text');
 if (!function_exists('skin_grayish_top_newpost_text')) :
   function skin_grayish_top_newpost_text()
   {
-    if (get_theme_mod('topmv_newpost_text', __('New Post' , THEME_NAME))) {
+    if (get_theme_mod('topmv_newpost_text', __('New Post', THEME_NAME))) {
     ?>
       <style type="text/css">
         .skin-grayish .list-new-entries h1::before {
-          content: <?php echo '"' . esc_attr(get_theme_mod('topmv_newpost_text', __('New Post' , THEME_NAME))) . '"' ?>;
+          content: <?php echo '"' . esc_attr(get_theme_mod('topmv_newpost_text', __('New Post', THEME_NAME))) . '"' ?>;
         }
       </style>
     <?php
@@ -1326,15 +1326,15 @@ if (!function_exists('skin_grayish_top_category_text')) :
 endif;
 
 
-// フロントページのMoreボタン テキストをMore以外に書き換え
+// フロントページのView Moreボタン テキストをView More以外に書き換え
 add_filter('more_button_caption', 'customize_more_button_caption');
 if (!function_exists('customize_more_button_caption')) :
   function customize_more_button_caption()
   {
-    if (get_theme_mod('topmv_more_button_caption', __('More' , THEME_NAME))) {
-      return esc_attr(get_theme_mod('topmv_more_button_caption', __('More' , THEME_NAME)));
+    if (get_theme_mod('topmv_more_button_caption', __('View More', THEME_NAME))) {
+      return esc_attr(get_theme_mod('topmv_more_button_caption', __('View More', THEME_NAME)));
     } else {
-      return __('More' , THEME_NAME);
+      return __('View More', THEME_NAME);
     }
   }
 endif;
@@ -1344,10 +1344,10 @@ add_filter('pagination_next_link_caption', 'skin_grayish_nextbutton_text');
 if (!function_exists('skin_grayish_nextbutton_text')) :
   function skin_grayish_nextbutton_text()
   {
-    if (get_theme_mod('topindex_next_button_caption', __('Next' , THEME_NAME))) {
-      return esc_attr(get_theme_mod('topindex_next_button_caption', __('Next' , THEME_NAME)));
+    if (get_theme_mod('topindex_next_button_caption', __('Next', THEME_NAME))) {
+      return esc_attr(get_theme_mod('topindex_next_button_caption', __('Next', THEME_NAME)));
     } else {
-      return __('Next' , THEME_NAME);
+      return __('Next', THEME_NAME);
     }
   }
 endif;
@@ -1365,7 +1365,7 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
         'title' => __('フロントページ以外の設定:ヘッダー', THEME_NAME),
         'panel' => 'font_pat_panel',
         'priority' => 5000,
-        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-pcheader/" target="_blank">'.__('グローバルナビの高さ等変更についてはこちらを参照', THEME_NAME).'</a><br><br>',
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-cstm-pcheader/" target="_blank">' . __('グローバルナビの高さ等変更についてはこちらを参照', THEME_NAME) . '</a><br><br>',
       )
     );
     //ロゴの高さ
@@ -1378,8 +1378,8 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
       'other_logosize',
       array(
         'label' => __('【PC】フロントページ以外のグローバルナビの高さ', THEME_NAME),
-        'description' => __('56px〜100pxの範囲で変更可能です。', THEME_NAME).__('ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。', THEME_NAME).'
-        <br>'.__('※空欄の場合や、範囲外の値の場合は56pxになります。', THEME_NAME),
+        'description' => __('56px〜100pxの範囲で変更可能です。', THEME_NAME) . __('ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。', THEME_NAME) . '
+        <br>' . __('※空欄の場合や、範囲外の値の場合は56pxになります。', THEME_NAME),
         'section' => 'other_section',
         'settings' => 'other_logosize',
         'type' => 'number',
@@ -1401,8 +1401,8 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
       'ohter_headerbg_color',
       array(
         'label' => __('【PC】フロントページ以外のヘッダーの背景色', THEME_NAME),
-        'description' => __('ヘッダーの背景色を変更。', THEME_NAME).'
-        <br>'.__('※空欄の場合はデフォルト値になります。', THEME_NAME),
+        'description' => __('ヘッダーの背景色を変更。', THEME_NAME) . '
+        <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
         'section' => 'other_section',
         'settings' => 'ohter_headerbg_color',
       )
@@ -1423,17 +1423,17 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
         'settings' => 'ohter_headerbg_alpha',
         'type' => 'select',
         'choices' => array(
-          'ohter_headerbg_alpha_0' => '0'.__('（背景色なし)', THEME_NAME),
+          'ohter_headerbg_alpha_0' => '0' . __('（背景色なし)', THEME_NAME),
           'ohter_headerbg_alpha_1' => '0.1',
           'ohter_headerbg_alpha_2' => '0.2',
           'ohter_headerbg_alpha_3' => '0.3',
           'ohter_headerbg_alpha_4' => '0.4',
-          'ohter_headerbg_alpha_5' => '0.5'.__('（デフォルト）', THEME_NAME),
+          'ohter_headerbg_alpha_5' => '0.5' . __('（デフォルト）', THEME_NAME),
           'ohter_headerbg_alpha_6' => '0.6',
           'ohter_headerbg_alpha_7' => '0.7',
           'ohter_headerbg_alpha_8' => '0.8',
           'ohter_headerbg_alpha_9' => '0.9',
-          'ohter_headerbg_alpha_10' => '1.0'.__('(不透明)', THEME_NAME),
+          'ohter_headerbg_alpha_10' => '1.0' . __('(不透明)', THEME_NAME),
         ),
       )
     ));
@@ -1451,8 +1451,8 @@ if (!function_exists('skin_grayish_ohter_header_customize')) :
         array(
           'section'     => 'other_section',  // 紐づけるセクションIDを指定
           'settings'    => 'otherpage_logo_image',  // 紐づける設定IDを指定
-          'label'       => __('【PC】フロントページ以外のヘッダーロゴ画像アップロード' , THEME_NAME),
-          'description' => __('ロゴをフロントページと別画像にしたいとき設定します。' , THEME_NAME)
+          'label'       => __('【PC】フロントページ以外のヘッダーロゴ画像アップロード', THEME_NAME),
+          'description' => __('ロゴをフロントページと別画像にしたいとき設定します。', THEME_NAME)
         )
       )
     );
@@ -1537,10 +1537,10 @@ add_filter('breadcrumbs_page_root_text', 'customize_breadcrumbs_single_root_text
 if (!function_exists('customize_breadcrumbs_single_root_text')) :
   function customize_breadcrumbs_single_root_text()
   {
-    if (get_theme_mod('breadcrumb_caption', __('Home' , THEME_NAME))) {
-      return esc_attr(get_theme_mod('breadcrumb_caption', __('Home' , THEME_NAME)));
+    if (get_theme_mod('breadcrumb_caption', __('Home', THEME_NAME))) {
+      return esc_attr(get_theme_mod('breadcrumb_caption', __('Home', THEME_NAME)));
     } else {
-      return __('Home' , THEME_NAME);
+      return __('Home', THEME_NAME);
     }
   }
 endif;
@@ -1556,10 +1556,10 @@ if (!function_exists('skin_grayish_profbox_customize')) :
     $wp_customize->add_section(
       'under_contents_section',
       array(
-        'title' => __('コンテンツ下部ウィジェット：プロフィールボックス' , THEME_NAME),
+        'title' => __('コンテンツ下部ウィジェット：プロフィールボックス', THEME_NAME),
         'panel' => 'font_pat_panel',
         'priority' => 7500,
-        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-profbox/" target="_blank">'.__('プロフィールボックスの設定についてはこちらを参照' , THEME_NAME).'</a>',
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-profbox/" target="_blank">' . __('プロフィールボックスの設定についてはこちらを参照', THEME_NAME) . '</a>',
       )
     );
 
@@ -1572,18 +1572,18 @@ if (!function_exists('skin_grayish_profbox_customize')) :
       $wp_customize,
       'undercon_profbg_overlay_alpha',
       array(
-        'label' => __('プロフィールボックスの背景画像の白オーバーレイ不透明度調整' , THEME_NAME),
-        'description' => __('値が大きくなるほど白色が濃くなります。' , THEME_NAME),
+        'label' => __('プロフィールボックスの背景画像の白オーバーレイ不透明度調整', THEME_NAME),
+        'description' => __('値が大きくなるほど白色が濃くなります。', THEME_NAME),
         'section' => 'under_contents_section',
         'settings' => 'undercon_profbg_overlay_alpha',
         'type' => 'select',
         'choices' => array(
-          'undercon_profbg_overlay_alpha_0' => '0'.__('（白色なし）' , THEME_NAME),
+          'undercon_profbg_overlay_alpha_0' => '0' . __('（白色なし）', THEME_NAME),
           'undercon_profbg_overlay_alpha_1' => '0.1',
           'undercon_profbg_overlay_alpha_2' => '0.2',
           'undercon_profbg_overlay_alpha_3' => '0.3',
           'undercon_profbg_overlay_alpha_4' => '0.4',
-          'undercon_profbg_overlay_alpha_5' => '0.5'.__('（デフォルト）', THEME_NAME),
+          'undercon_profbg_overlay_alpha_5' => '0.5' . __('（デフォルト）', THEME_NAME),
           'undercon_profbg_overlay_alpha_6' => '0.6',
           'undercon_profbg_overlay_alpha_7' => '0.7',
           'undercon_profbg_overlay_alpha_8' => '0.8',
@@ -1608,8 +1608,8 @@ if (!function_exists('skin_grayish_profbox_customize')) :
         array(
           'section'     => 'under_contents_section',  // 紐づけるセクションIDを指定
           'settings'    => 'undercon_profbg_image',  // 紐づける設定IDを指定
-          'label'       => __('画像アップロード' , THEME_NAME),
-          'description' => __('プロフィールボックスの背景に設定したい画像を選択' , THEME_NAME)
+          'label'       => __('画像アップロード', THEME_NAME),
+          'description' => __('プロフィールボックスの背景に設定したい画像を選択', THEME_NAME)
         )
       )
     );
@@ -1689,10 +1689,10 @@ if (!function_exists('skin_grayish_mobile_customize')) :
     $wp_customize->add_section(
       'mobile_section',
       array(
-        'title'    => __('モバイル設定' , THEME_NAME),
+        'title'    => __('モバイル設定', THEME_NAME),
         'panel'    => 'font_pat_panel',
         'priority' => 8000,
-        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-sp-menu/" target="_blank">'.__('ヘッダー・フッターモバイルボタンの設定についてはこちらを参照' , THEME_NAME).'</a>',
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-sp-menu/" target="_blank">' . __('ヘッダー・フッターモバイルボタンの設定についてはこちらを参照', THEME_NAME) . '</a>',
       )
     );
     // ヘッダーモバイルボタンの背景色設定
@@ -1705,10 +1705,10 @@ if (!function_exists('skin_grayish_mobile_customize')) :
         $wp_customize,
         'mobile_headerbg_color',
         array(
-          'label'    => __('ヘッダーモバイルボタンの背景色' , THEME_NAME),
-          'description' => __('ヘッダーモバイルボタンの背景色を変更。' , THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。' , THEME_NAME).'
-          <br>'.__('※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。' , THEME_NAME),
+          'label'    => __('ヘッダーモバイルボタンの背景色', THEME_NAME),
+          'description' => __('ヘッダーモバイルボタンの背景色を変更。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME) . '
+          <br>' . __('※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。', THEME_NAME),
           'section'  => 'mobile_section',
           'settings' => 'mobile_headerbg_color',
         )
@@ -1725,24 +1725,24 @@ if (!function_exists('skin_grayish_mobile_customize')) :
         $wp_customize,
         'mobile_headerbg_alpha',
         array(
-          'label'    => __('ヘッダーモバイルボタン背景色の不透明度調整' , THEME_NAME),
-          'description' => __('値が大きくなるほど背景色が濃くなります。' , THEME_NAME).'
-          <br>'.__('※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。' , THEME_NAME),
+          'label'    => __('ヘッダーモバイルボタン背景色の不透明度調整', THEME_NAME),
+          'description' => __('値が大きくなるほど背景色が濃くなります。', THEME_NAME) . '
+          <br>' . __('※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。', THEME_NAME),
           'section'  => 'mobile_section',
           'settings' => 'mobile_headerbg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'mobile_headerbg_alpha_0' => '0'.__('（背景色なし)', THEME_NAME),
+            'mobile_headerbg_alpha_0' => '0' . __('（背景色なし)', THEME_NAME),
             'mobile_headerbg_alpha_1' => '0.1',
             'mobile_headerbg_alpha_2' => '0.2',
             'mobile_headerbg_alpha_3' => '0.3',
             'mobile_headerbg_alpha_4' => '0.4',
-            'mobile_headerbg_alpha_5' => '0.5'.__('（デフォルト）', THEME_NAME),
+            'mobile_headerbg_alpha_5' => '0.5' . __('（デフォルト）', THEME_NAME),
             'mobile_headerbg_alpha_6' => '0.6',
             'mobile_headerbg_alpha_7' => '0.7',
             'mobile_headerbg_alpha_8' => '0.8',
             'mobile_headerbg_alpha_9' => '0.9',
-            'mobile_headerbg_alpha_10' => '1.0'.__('(不透明)', THEME_NAME),
+            'mobile_headerbg_alpha_10' => '1.0' . __('(不透明)', THEME_NAME),
           ),
         )
       )
@@ -1758,15 +1758,15 @@ if (!function_exists('skin_grayish_mobile_customize')) :
         $wp_customize,
         'mobile_topheader_menu',
         array(
-          'label'    => __('フロントページのみヘッダーモバイルボタンをメニューアイコンのみON/OFF' , THEME_NAME),
-          'description' => __('フロントページ以外は設定したメニューを表示します。' , THEME_NAME).'
-          <br>'.__('※ヘッダーモバイルボタンにオリジナルメニューを作成する場合は、メニューの一番上に#menuを設定してください。' , THEME_NAME),
+          'label'    => __('フロントページのみヘッダーモバイルボタンをメニューアイコンのみON/OFF', THEME_NAME),
+          'description' => __('フロントページ以外は設定したメニューを表示します。', THEME_NAME) . '
+          <br>' . __('※ヘッダーモバイルボタンにオリジナルメニューを作成する場合は、メニューの一番上に#menuを設定してください。', THEME_NAME),
           'section'  => 'mobile_section',
           'settings' => 'mobile_topheader_menu',
           'type'     => 'radio',
           'choices'  => array(
-            'top_menuonly_On' => __('ON' , THEME_NAME).__('（デフォルト）' , THEME_NAME),
-            'top_menuonly_Off' => __('OFF' , THEME_NAME),
+            'top_menuonly_On' => __('ON', THEME_NAME) . __('（デフォルト）', THEME_NAME),
+            'top_menuonly_Off' => __('OFF', THEME_NAME),
           ),
         )
       )
@@ -1782,14 +1782,14 @@ if (!function_exists('skin_grayish_mobile_customize')) :
         $wp_customize,
         'mobile_caption_radio',
         array(
-          'label'    => __('ヘッダーモバイルボタン＆フッターモバイルボタンのアイコン下のキャプションのON/OFF' , THEME_NAME),
-          'description' => __('モバイル時にアイコン下にキャプションを表示' , THEME_NAME),
+          'label'    => __('ヘッダーモバイルボタン＆フッターモバイルボタンのアイコン下のキャプションのON/OFF', THEME_NAME),
+          'description' => __('モバイル時にアイコン下にキャプションを表示', THEME_NAME),
           'section'  => 'mobile_section',
           'settings' => 'mobile_caption_radio',
           'type'     => 'radio',
           'choices'  => array(
-            'menu_caption_On' => __('ON' , THEME_NAME).__('（デフォルト）' , THEME_NAME),
-            'menu_caption_Off' => __('OFF' , THEME_NAME),
+            'menu_caption_On' => __('ON', THEME_NAME) . __('（デフォルト）', THEME_NAME),
+            'menu_caption_Off' => __('OFF', THEME_NAME),
           ),
         )
       )
@@ -1805,9 +1805,9 @@ if (!function_exists('skin_grayish_mobile_customize')) :
         $wp_customize,
         'mobile_footerbg_color',
         array(
-          'label'    => __('フッターモバイルボタンの背景色' , THEME_NAME),
-          'description' => __('フッターモバイルボタンの背景色を変更。' , THEME_NAME).'
-          <br>'.__('※空欄の場合はデフォルト値になります。' , THEME_NAME),
+          'label'    => __('フッターモバイルボタンの背景色', THEME_NAME),
+          'description' => __('フッターモバイルボタンの背景色を変更。', THEME_NAME) . '
+          <br>' . __('※空欄の場合はデフォルト値になります。', THEME_NAME),
           'section'  => 'mobile_section',
           'settings' => 'mobile_footerbg_color',
         )
@@ -1830,17 +1830,17 @@ if (!function_exists('skin_grayish_mobile_customize')) :
           'settings' => 'mobile_footerbg_alpha',
           'type'     => 'select',
           'choices'  => array(
-            'mobile_footerbg_alpha_0' => '0'.__('（背景色なし)', THEME_NAME),
+            'mobile_footerbg_alpha_0' => '0' . __('（背景色なし)', THEME_NAME),
             'mobile_footerbg_alpha_1' => '0.1',
             'mobile_footerbg_alpha_2' => '0.2',
             'mobile_footerbg_alpha_3' => '0.3',
             'mobile_footerbg_alpha_4' => '0.4',
-            'mobile_footerbg_alpha_5' => '0.5'.__('（デフォルト）', THEME_NAME),
+            'mobile_footerbg_alpha_5' => '0.5' . __('（デフォルト）', THEME_NAME),
             'mobile_footerbg_alpha_6' => '0.6',
             'mobile_footerbg_alpha_7' => '0.7',
             'mobile_footerbg_alpha_8' => '0.8',
             'mobile_footerbg_alpha_9' => '0.9',
-            'mobile_footerbg_alpha_10' => '1.0'.__('(不透明)', THEME_NAME),
+            'mobile_footerbg_alpha_10' => '1.0' . __('(不透明)', THEME_NAME),
           ),
         )
       )

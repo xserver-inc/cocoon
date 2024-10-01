@@ -50,6 +50,7 @@ import * as navicard from './block/navicard';
 import * as tab from './block/tab';
 import * as tabItem from './block/tab-item';
 import * as cta from './block/cta';
+import * as radar from './block/radar';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -86,6 +87,7 @@ const cocoonBlocks = [
   tab,
   tabItem,
   cta,
+  radar,
 
   captionBox,
   tabCaptionBox,

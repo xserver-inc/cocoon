@@ -1268,6 +1268,11 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     box-shadow: 0 0 0 1px #e5e8eb;
     display: block;
     padding: 4px;
+    &::after{
+      content: initial !important;
+      display: initial !important;
+      height: initial !important;
+    }
   }
   //プレビュー画面
   .__prev {
@@ -1470,4 +1475,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 //ブロックエディターの余白をクリックしても「+」ボタンが表示されない不具合修正
 .editor-styles-wrapper{
   padding-bottom: 40vh;
+}
+
+.radar-chart-block.is-selected {
+  border: 2px solid #007cba; /* 選択時の強調表示 */
 }

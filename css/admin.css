@@ -20402,11 +20402,6 @@ select option.fa:before {
   margin-left: 1em;
 }
 
-.postbox-container input[type=text],
-.components-panel input[type=text] {
-  width: 100%;
-}
-
 .components-panel input[type=range] {
   width: calc(100% - 18px);
 }
@@ -20682,10 +20677,6 @@ select option.fa:before {
 .tooltip .fa-image,
 .tooltip .fa-picture-o {
   color: #285294;
-}
-
-textarea[name=the_page_memo] {
-  width: 100%;
 }
 
 .mce-text {

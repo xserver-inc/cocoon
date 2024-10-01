@@ -1008,6 +1008,7 @@ function get_info_list_shortcode($atts){
     'frame' => 1,
     'divider' => 1,
     'modified' => 0,
+    'offset' => 0,
   ), $atts, 'info_list'));
 
   //countオプションに異常値が入っていた場合
@@ -1028,6 +1029,7 @@ function get_info_list_shortcode($atts){
     'frame' => $frame,
     'divider' => $divider,
     'modified' => $modified,
+    'offset' => $offset,
   );
   ob_start();
   generate_info_list_tag($atts);

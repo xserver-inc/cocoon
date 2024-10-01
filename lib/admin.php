@@ -24,8 +24,20 @@ function admin_print_styles_custom() {
   //https://wp-cocoon.com/community/postid/76360/
   if (is_admin_jetpack_stats_page()) return;
 
-  //管理用スタイル
-  wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+  if (!is_screen_editor_page()) {
+    //管理用スタイル
+    wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+  } else {
+    //ブロックエディター・クラシックエディターの「レビュー対象名・リダイレクトURL・メモ」欄コントロールがはみ出してしまう問題解消のCSS
+    echo '
+    <style>
+      .postbox-container input[type="text"],
+      .components-panel input[type="text"],
+      textarea[name="the_page_memo"]{
+        width: 100%;
+      }
+    </style>';
+  }
 
   //Font Awesome
   wp_enqueue_style_font_awesome();

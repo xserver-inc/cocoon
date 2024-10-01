@@ -45,7 +45,7 @@ $snippet = is_entry_card_snippet_visible();
 
   <div class="list-columns list-popular">
     <h1 class="list-popular-title list-title">
-      <span class="list-title-in"><?php echo apply_filters('hvn_popluar_caption', '本日読まれている記事'); ?></span>
+      <span class="list-title-in"><?php echo apply_filters('hvn_popular_caption', '本日読まれている記事'); ?></span>
     </h1>
     <?php echo do_shortcode('[popular_list type="large_thumb" snippet=' . $snippet . ' class="list ect-vertical-card-' . $columns . ' ect-vertical-card ect-' . $columns . '-columns" count=4 days=1]'); ?>
   </div>
@@ -75,4 +75,3 @@ for ($i=0; $i < count($cat_ids); $i++):
 <?php endfor; ?>
   </div>
 </div>
-<?
