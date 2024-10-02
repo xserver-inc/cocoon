@@ -82,6 +82,20 @@ export default function edit( props ) {
 
     destroyChart(); // 既存のチャートがあれば破棄
 
+    // キャンバス背景色を白にするカスタムプラグイン
+    const customCanvasBackgroundColor = {
+      id: 'customCanvasBackgroundColor',
+      beforeDraw: (chart) => {
+        const ctx = chart.ctx;
+        const canvas = chart.canvas;
+        ctx.save();
+        ctx.globalCompositeOperation = 'destination-over'; // 背景色を他の要素の背後に描画
+        ctx.fillStyle = '#ffffff'; // キャンバスの背景色を白に設定
+        ctx.fillRect(0, 0, canvas.width, canvas.height); // キャンバス全体に背景色を塗る
+        ctx.restore();
+      }
+    };
+
     // 合計を表示するカスタムプラグイン
     const totalPlugin = {
       id: 'totalPlugin',
@@ -131,6 +145,7 @@ export default function edit( props ) {
                 weight: fontWeight,
               },
               color: fontColor,
+              backdropColor: 'transparent', // 目盛の背景色を透明に
             },
             pointLabels: {
               font: {
@@ -166,7 +181,7 @@ export default function edit( props ) {
           totalPlugin: true // 合計表示プラグインを有効化
         }
       },
-      plugins: [totalPlugin] // 合計表示プラグインをチャートに追加
+      plugins: [customCanvasBackgroundColor, totalPlugin] // カスタム背景と合計表示プラグインをチャートに追加
     });
   };
 
