@@ -102,7 +102,7 @@ function get_cocoon_editor_color_palette_colors(){
         'color' => '#954e2a',
     ),
     array(
-        'name' => __( '薄い灰色', THEME_NAME ),
+        'name' => __( 'ライトグレー', THEME_NAME ),
         'slug' => 'light-grey',
         'color' => '#dddddd',
     ),
