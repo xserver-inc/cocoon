@@ -144,7 +144,8 @@ export default function edit( props ) {
         scales: {
           r: {
             angleLines: {
-              display: displayAngleLines
+              display: displayAngleLines,
+              color: hexToRgba(gridColor, 0.5), // アングルラインの色に設定
             },
             min: 0,
             max: maximum,

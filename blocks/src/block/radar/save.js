@@ -68,6 +68,7 @@ export default function save( props ) {
             r: {
               angleLines: {
                 display: ${displayAngleLines},
+                color: '${hexToRgba(gridColor, 0.5)}', // アングルライン線の色
               },
               min: 0,
               max: ${maximum},
