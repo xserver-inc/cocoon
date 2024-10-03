@@ -10,7 +10,9 @@ export default function save( props ) {
   const {
     chartId,
     chartColor,
+    backgroundColor,
     fontColor,
+    gridColor,
     canvasSize,
     fontSize,
     fontWeight,
@@ -23,7 +25,6 @@ export default function save( props ) {
     data,
     displayTotal,
     displayLabelValue,
-    // allowMaxOver,
     displayAngleLines,
   } = attributes;
 
@@ -32,7 +33,6 @@ export default function save( props ) {
   const blockProps = useBlockProps.save( {
     className: className,
   } );
-
 
   const chartScript = `
   document.addEventListener('DOMContentLoaded', function() {
@@ -70,6 +70,7 @@ export default function save( props ) {
                   weight: ${fontWeight},
                 },
                 color: '${fontColor}',
+                backdropColor: 'transparent', // 目盛の背景色を透明に
               },
               pointLabels: {
                 font: {
@@ -78,6 +79,9 @@ export default function save( props ) {
                 },
                 color: '${fontColor}',
               },
+              grid: {
+                color: '${hexToRgba(gridColor, 0.5)}', // グリッド線の色
+              }
             },
           },
           responsive: true,
@@ -132,7 +136,7 @@ export default function save( props ) {
               const canvas = chart.canvas;
               ctx.save();
               ctx.globalCompositeOperation = 'destination-over'; // 背景色を他の要素の背後に描画
-              ctx.fillStyle = '#ffffff'; // キャンバスの背景色を白に設定
+              ctx.fillStyle = '${backgroundColor}'; // キャンバスの背景色を設定
               ctx.fillRect(0, 0, canvas.width, canvas.height); // キャンバス全体に背景色を塗る
               ctx.restore();
             }
@@ -147,12 +151,10 @@ export default function save( props ) {
   });
   `;
 
-
-
-return (
-  <div { ...blockProps }>
-    <canvas id={chartId} width={canvasSize} height={canvasSize} />
-    <script>{chartScript}</script>
-  </div>
+  return (
+    <div { ...blockProps }>
+      <canvas id={chartId} width={canvasSize} height={canvasSize} />
+      <script>{chartScript}</script>
+    </div>
   );
 }

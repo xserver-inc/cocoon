@@ -28,7 +28,9 @@ export default function edit( props ) {
   const {
     chartId,
     chartColor,
+    backgroundColor,
     fontColor,
+    gridColor,
     canvasSize,
     fontSize,
     fontWeight,
@@ -90,7 +92,7 @@ export default function edit( props ) {
         const canvas = chart.canvas;
         ctx.save();
         ctx.globalCompositeOperation = 'destination-over'; // 背景色を他の要素の背後に描画
-        ctx.fillStyle = '#ffffff'; // キャンバスの背景色を白に設定
+        ctx.fillStyle = backgroundColor; // キャンバスの背景色を白に設定
         ctx.fillRect(0, 0, canvas.width, canvas.height); // キャンバス全体に背景色を塗る
         ctx.restore();
       }
@@ -147,6 +149,9 @@ export default function edit( props ) {
               color: fontColor,
               backdropColor: 'transparent', // 目盛の背景色を透明に
             },
+            grid: {
+              color: hexToRgba(gridColor, 0.5), // グリッド線の色を設定
+            },
             pointLabels: {
               font: {
                 size: fontSize, // フォントサイズを指定
@@ -201,7 +206,9 @@ export default function edit( props ) {
   }, [
     chartId,
     chartColor,
+    backgroundColor,
     fontColor,
+    gridColor,
     canvasSize,
     fontSize,
     fontWeight,
@@ -256,9 +263,24 @@ export default function edit( props ) {
           title={ __( '色設定', THEME_NAME ) }
           colorSettings={[
             {
-              label: __( 'チャートカラー', THEME_NAME ),
+              label: __( 'チャート色', THEME_NAME ),
               onChange: ( newColor ) => setAttributes({ chartColor: newColor }),
               value: chartColor,
+            },
+            {
+              label: __( '背景色', THEME_NAME ),
+              onChange: ( newColor ) => setAttributes({ backgroundColor: newColor }),
+              value: backgroundColor,
+            },
+            {
+              label: __( '文字色', THEME_NAME ),
+              onChange: ( newColor ) => setAttributes({ fontColor: newColor }),
+              value: fontColor,
+            },
+            {
+              label: __( 'グリッド色', THEME_NAME ) + __( '（※透過）', THEME_NAME ),
+              onChange: ( newColor ) => setAttributes({ gridColor: newColor }),
+              value: gridColor,
             },
           ]}
         />
