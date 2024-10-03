@@ -133,6 +133,14 @@ export default function edit( props ) {
         }]
       },
       options: {
+        layout: {
+          padding: {
+            top: 30,    // 上の余白
+            bottom: 30, // 下の余白
+            left: 30,   // 左の余白
+            right: 30,  // 右の余白
+          },
+        },
         scales: {
           r: {
             angleLines: {
