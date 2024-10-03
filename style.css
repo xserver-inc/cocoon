@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.7.7.6
+Version: 2.7.7.7
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -58,7 +58,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --cocoon-orange-color: #f39800;
   --cocoon-deep-orange-color: #ea5506;
   --cocoon-brown-color: #954e2a;
+  --cocoon-light-grey-color: #cccccc;
   --cocoon-grey-color: #949495;
+  --cocoon-dark-grey-color: #666666;
   --cocoon-blue-gray-color: #607d8b;
   --cocoon-black-color: #333333;
   --cocoon-white-color: #ffffff;

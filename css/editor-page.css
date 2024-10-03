@@ -1,35 +1,31 @@
-:root{
-  //ブランドカラーまとめ
-  --cocoon-twitter-color: #000000;//#606060
-  --cocoon-mastodon-color: #6364FF;//#a1a2ff
-  --cocoon-bluesky-color: #0085ff;//#66b5ff
-  --cocoon-misskey-color: #96d04a;//#c0e292
-  --cocoon-facebook-color: #3b5998;//#5a71a2
-  --cocoon-hatebu-color: #2c6ebd;//#4b83c5
+:root {
+  --cocoon-twitter-color: #000000;
+  --cocoon-mastodon-color: #6364FF;
+  --cocoon-bluesky-color: #0085ff;
+  --cocoon-misskey-color: #96d04a;
+  --cocoon-facebook-color: #3b5998;
+  --cocoon-hatebu-color: #2c6ebd;
   --cocoon-google-plus-color: #dd4b39;
-  --cocoon-pocket-color: #ef4056;//#ec6a7a
-  --cocoon-line-color: #00c300;//#73c173
-  --cocoon-linkedin-color: #0077b5;//#258abf
+  --cocoon-pocket-color: #ef4056;
+  --cocoon-line-color: #00c300;
+  --cocoon-linkedin-color: #0077b5;
   --cocoon-website-color: #002561;
-  --cocoon-instagram-color: #405de6;//#8c9df0
-  --cocoon-pinterest-color: #bd081c;//#c35662
-  --cocoon-youtube-color: #cd201f;//#e17978
-  --cocoon-tiktok-color: #000000;//#606060
-  --cocoon-note-color: #41c9b4;//#8dded2
-  --cocoon-soundcloud-color: #ff8800;//#ffb766
-  --cocoon-flickr-color: #111;//#707070
-  --cocoon-amazon-color: #ff9900;//#ffc166
-  --cocoon-twitch-color: #6441a4;//#a28dc8
+  --cocoon-instagram-color: #405de6;
+  --cocoon-pinterest-color: #bd081c;
+  --cocoon-youtube-color: #cd201f;
+  --cocoon-tiktok-color: #000000;
+  --cocoon-note-color: #41c9b4;
+  --cocoon-soundcloud-color: #ff8800;
+  --cocoon-flickr-color: #111;
+  --cocoon-amazon-color: #ff9900;
+  --cocoon-twitch-color: #6441a4;
   --cocoon-rakuten-color: #bf0000;
-  --cocoon-rakuten-room-color: #c61e79;//#dc78ae
-  --cocoon-slack-color: #e01563;//#ec72a1
-  --cocoon-github-color: #4078c0;//#8caed9
-  --cocoon-codepen-color: #333;//#848484
-  --cocoon-feedly-color: #2bb24c;//#4ba761
-  --cocoon-rss-color: #f26522;//#e07c4c
-
-  //汎用色
-  //以下の色を変更したらブロックエディターの設定の変更する
+  --cocoon-rakuten-room-color: #c61e79;
+  --cocoon-slack-color: #e01563;
+  --cocoon-github-color: #4078c0;
+  --cocoon-codepen-color: #333;
+  --cocoon-feedly-color: #2bb24c;
+  --cocoon-rss-color: #f26522;
   --cocoon-red-color: #e60033;
   --cocoon-pink-color: #e95295;
   --cocoon-purple-color: #884898;
@@ -57,29 +53,17 @@
   --cocoon-watery-yellow-color: #fff7cc;
   --cocoon-watery-red-color: #fdf2f2;
   --cocoon-watery-green-color: #ebf8f4;
-
-  //カスタム色
   --cocoon-custom-background-color: inherit;
   --cocoon-custom-text-color: inherit;
   --cocoon-custom-border-color: #ccc;
-
-  //フォント
   --cocoon-default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-
-  //テキスト色
   --cocoon-text-color: #333;
   --cocoon-pallid-text-color: #777;
   --cocoon-x-pallid-text-color: #999;
-
-  //テキストサイズ
   --cocoon-default-text-size: 18px;
   --cocoon-text-size-s: 0.8em;
-
-  //ボーダー色
   --cocoon-basic-border-color: #ccc;
   --cocoon-three-d-border-colors: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
-
-  //色
   --cocoon-middle-thickness-color: #888;
   --cocoon-thin-color: #ddd;
   --cocoon-x-thin-color: #eee;
@@ -89,21 +73,42 @@
   --cocoon-select-background-color: #d8eaf2;
   --cocoon-tab-label-color: #f2f2f2;
   --cocoon-tab-label-active-color: #404453;
-
-  //要素の丸め
   --cocoon-basic-border-radius: 4px;
   --cocoon-badge-border-radius: 2px;
   --cocoon-middle-border-radius: 8px;
-
-  //ボックス関係
   --cocoon-box-padding: 1em 1.5em;
   --cocoon-list-padding: min(1%, 8px) min(2%, 16px) min(1%, 8px) min(3%, 24px);
   --cocoon-list-wide-padding: min(3%, 24px) min(5%, 40px) min(3%, 24px) min(7%, 56px);
   --cocoon-box-border-color: #47585c;
-
-  //SNSボタン色
   --cocoon-sns-color: var(--cocoon-text-color);
-
-  //デフォルトカードサムネイルアスペクトレシオ
   --card-ratio: 16/9;
+}
+
+.faw::before {
+  font-family: FontAwesome;
+  padding-right: 4px;
+}
+
+.toggle .toggle-link {
+  font-size: 0.8em;
+  cursor: pointer;
+  margin-left: 6px;
+  text-decoration: underline;
+  color: #0073aa;
+  transition-duration: 0.05s;
+  transition-property: border, background, color;
+  transition-timing-function: ease-in-out;
+}
+.toggle .toggle-link:hover {
+  color: #00a0d2;
+}
+.toggle .toggle-content {
+  display: none;
+  width: 100%;
+}
+
+.postbox-container input[type=text],
+.components-panel input[type=text],
+textarea[name=the_page_memo] {
+  width: 100%;
 }

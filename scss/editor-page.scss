@@ -1,0 +1,14 @@
+//ブロックエディターページやクラシックギターページのページ上に適用されるCSS
+@import "defins";
+
+/////////////////////////////////////
+// トグル詳細設定
+/////////////////////////////////////
+@include toggle;
+
+//ブロックエディター・クラシックエディターの「レビュー対象名・リダイレクトURL・メモ」欄コントロールがはみ出してしまう問題解消のCSS
+.postbox-container input[type="text"],
+.components-panel input[type="text"],
+textarea[name="the_page_memo"]{
+  width: 100%;
+}

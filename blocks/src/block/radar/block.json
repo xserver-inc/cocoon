@@ -12,9 +12,17 @@
       "type": "string",
       "default": "#2ca9e1"
     },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
     "fontColor": {
       "type": "string",
       "default": "#666666"
+    },
+    "gridColor": {
+      "type": "string",
+      "default": "#dddddd"
     },
     "canvasSize": {
       "type": "number",

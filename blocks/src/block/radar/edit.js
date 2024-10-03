@@ -28,7 +28,9 @@ export default function edit( props ) {
   const {
     chartId,
     chartColor,
+    backgroundColor,
     fontColor,
+    gridColor,
     canvasSize,
     fontSize,
     fontWeight,
@@ -82,6 +84,20 @@ export default function edit( props ) {
 
     destroyChart(); // 既存のチャートがあれば破棄
 
+    // キャンバス背景色を白にするカスタムプラグイン
+    const customCanvasBackgroundColor = {
+      id: 'customCanvasBackgroundColor',
+      beforeDraw: (chart) => {
+        const ctx = chart.ctx;
+        const canvas = chart.canvas;
+        ctx.save();
+        ctx.globalCompositeOperation = 'destination-over'; // 背景色を他の要素の背後に描画
+        ctx.fillStyle = backgroundColor; // キャンバスの背景色を白に設定
+        ctx.fillRect(0, 0, canvas.width, canvas.height); // キャンバス全体に背景色を塗る
+        ctx.restore();
+      }
+    };
+
     // 合計を表示するカスタムプラグイン
     const totalPlugin = {
       id: 'totalPlugin',
@@ -131,6 +147,10 @@ export default function edit( props ) {
                 weight: fontWeight,
               },
               color: fontColor,
+              backdropColor: 'transparent', // 目盛の背景色を透明に
+            },
+            grid: {
+              color: hexToRgba(gridColor, 0.5), // グリッド線の色を設定
             },
             pointLabels: {
               font: {
@@ -166,7 +186,7 @@ export default function edit( props ) {
           totalPlugin: true // 合計表示プラグインを有効化
         }
       },
-      plugins: [totalPlugin] // 合計表示プラグインをチャートに追加
+      plugins: [customCanvasBackgroundColor, totalPlugin] // カスタム背景と合計表示プラグインをチャートに追加
     });
   };
 
@@ -186,7 +206,9 @@ export default function edit( props ) {
   }, [
     chartId,
     chartColor,
+    backgroundColor,
     fontColor,
+    gridColor,
     canvasSize,
     fontSize,
     fontWeight,
@@ -241,9 +263,24 @@ export default function edit( props ) {
           title={ __( '色設定', THEME_NAME ) }
           colorSettings={[
             {
-              label: __( 'チャートカラー', THEME_NAME ),
+              label: __( 'チャート色', THEME_NAME ),
               onChange: ( newColor ) => setAttributes({ chartColor: newColor }),
               value: chartColor,
+            },
+            {
+              label: __( '背景色', THEME_NAME ),
+              onChange: ( newColor ) => setAttributes({ backgroundColor: newColor }),
+              value: backgroundColor,
+            },
+            {
+              label: __( '文字色', THEME_NAME ),
+              onChange: ( newColor ) => setAttributes({ fontColor: newColor }),
+              value: fontColor,
+            },
+            {
+              label: __( 'グリッド色', THEME_NAME ) + __( '（※透過）', THEME_NAME ),
+              onChange: ( newColor ) => setAttributes({ gridColor: newColor }),
+              value: gridColor,
             },
           ]}
         />

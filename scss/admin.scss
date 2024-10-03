@@ -358,35 +358,10 @@ form.admin-settings{
   padding-left: 30px;
 }
 
-/************************************
-** トグル詳細設定
-************************************/
-.toggle{
-
-  .toggle-link{
-    font-size: 0.8em;
-    cursor: pointer;
-
-    margin-left: 6px;
-
-    text-decoration: underline;
-    color: #0073aa;
-    transition-duration: 0.05s;
-    transition-property: border, background, color;
-    transition-timing-function: ease-in-out;
-
-    &:hover{
-      color: #00a0d2;
-    }
-
-
-  }
-
-  .toggle-content{
-    display: none;
-    width: 100%;
-  }
-}
+/////////////////////////////////////
+// トグル詳細設定
+/////////////////////////////////////
+@include toggle;
 
 /*文字数カウントエリア*/
 .str-count{

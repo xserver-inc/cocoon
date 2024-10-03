@@ -28,15 +28,8 @@ function admin_print_styles_custom() {
     //管理用スタイル
     wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
   } else {
-    //ブロックエディター・クラシックエディターの「レビュー対象名・リダイレクトURL・メモ」欄コントロールがはみ出してしまう問題解消のCSS
-    echo '
-    <style>
-      .postbox-container input[type="text"],
-      .components-panel input[type="text"],
-      textarea[name="the_page_memo"]{
-        width: 100%;
-      }
-    </style>';
+    //ブロックエディターページやクラシックエディターページ全体に適用されるCSS
+    wp_enqueue_style( 'editor-page-style', get_template_directory_uri().'/css/editor-page.css' );
   }
 
   //Font Awesome

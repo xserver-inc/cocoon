@@ -226,8 +226,20 @@ export function colorValueToSlug( color ) {
     case '#954e2a':
       return 'brown';
       break;
+    case '#dddddd':
+      return 'light-grey';
+      break;
+    case '#ddd':
+      return 'light-grey';
+      break;
     case '#949495':
       return 'grey';
+      break;
+    case '#666666':
+      return 'dark-grey';
+      break;
+    case '#666':
+      return 'dark-grey';
       break;
     case '#333333':
       return 'black';
