@@ -280,7 +280,7 @@
   content: "\f410";
 }
 
-.blank-box.bb-amazon .fa::before,
+.blank-box.bb-amazon > .bb-label > .fa::before,
 .fab-amazon::before,
 .fab-btc::before,
 .fab-apple::before,
