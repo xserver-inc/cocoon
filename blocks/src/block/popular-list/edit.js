@@ -136,48 +136,48 @@ export default function edit( props ) {
       label={ __( 'データの集計期間', THEME_NAME ) }
       value={ days }
       onChange={ ( newValue ) =>
-        setAttributes( { days: parseInt( newValue ) } )
+        setAttributes( { days: newValue } )
       }
       options={ [
         {
           label: __( '全期間', THEME_NAME ),
-          value: 0,
+          value: "all",
         },
         {
           label: __( '1日', THEME_NAME ),
-          value: 1,
+          value: "1",
         },
         {
           label: __( '3日', THEME_NAME ),
-          value: 3,
+          value: "3",
         },
         {
           label: __( '1週間', THEME_NAME ),
-          value: 7,
+          value: "7",
         },
         {
           label: __( '2週間', THEME_NAME ),
-          value: 14,
+          value: "14",
         },
         {
           label: __( '1ヶ月', THEME_NAME ),
-          value: 30,
+          value: "30",
         },
         {
           label: __( '2ヶ月', THEME_NAME ),
-          value: 60,
+          value: "60",
         },
         {
           label: __( '3ヶ月', THEME_NAME ),
-          value: 90,
+          value: "90",
         },
         {
           label: __( '半年', THEME_NAME ),
-          value: 182,
+          value: "182",
         },
         {
           label: __( '1年', THEME_NAME ),
-          value: 365,
+          value: "365",
         },
       ] }
     />

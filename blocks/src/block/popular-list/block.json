@@ -14,8 +14,8 @@
       "default": true
     },
     "days": {
-      "type": "number",
-      "default": 0
+      "type": "string",
+      "default": "all"
     },
     "rank": {
       "type": "boolean",
