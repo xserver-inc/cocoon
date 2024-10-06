@@ -7,6 +7,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+//クラシックエディタースタイルを適用
+add_editor_style();
+
 //ファイルのディレクトリパスを取得する（最後の/付き）
 if ( !function_exists( 'abspath' ) ):
 function abspath($file){return dirname($file).'/';}
