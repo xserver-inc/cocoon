@@ -12,6 +12,7 @@
   "example": {},
   "supports": {
     "anchor": false,
-    "lock": false
+    "lock": false,
+    "inserter": false
   }
 }
