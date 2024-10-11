@@ -28,7 +28,7 @@ if (is_singular()){//単一記事ページの場合
   //キャッチフレーズ
   $description = get_bloginfo('description');
   //フロントページがインデックスページの場合
-  if (is_front_top_page()) {
+  if (is_front_top_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   }
 
