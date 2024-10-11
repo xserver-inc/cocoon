@@ -25,7 +25,12 @@ if (is_singular()){//単一記事ページの場合
     $url = generate_canonical_url();
     $title = wp_get_document_title();
   }
+  //キャッチフレーズ
   $description = get_bloginfo('description');
+  //フロントページがインデックスページの場合
+  if (is_front_top_page()) {
+    $description = get_front_page_meta_description();
+  }
 
   if ( is_category() ) {//カテゴリ用設定
     $description = get_category_meta_description();

@@ -67,7 +67,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_textbox_tag(OP_FRONT_PAGE_META_DESCRIPTION, get_front_page_meta_description(), __( 'メタディスクリプションを入力', THEME_NAME ));
-            generate_tips_tag(__( 'フロントページで出力するメタディスクリプションタグの内容を入力してください。入力しない場合は、メタタグは出力されません。', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページで出力するメタディスクリプションタグの内容を入力してください。').__('入力しない場合は、キャッチフレーズが表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
