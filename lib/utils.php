@@ -1147,11 +1147,19 @@ function local_to_home_url($local){
 }
 endif;
 
-
 //テーマのリソースディレクトリ
 if ( !function_exists( 'get_theme_resources_path' ) ):
 function get_theme_resources_path(){
   $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-resources/';
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
+  return $dir;
+}
+endif;
+
+//生成アイキャッチディレクトリ
+if ( !function_exists( 'get_theme_featured_images_path' ) ):
+function get_theme_featured_images_path(){
+  $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-featured-images/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
