@@ -14,3 +14,18 @@
 //   margin-left: auto;
 //   margin-right: auto;
 // }
+
+//「管理メニュー」→「パターン一覧」から開いたパターンエディターに余白が設定されない不具合修正
+.body > .is-root-container .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: 840px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.body > .is-root-container .wp-container-core-group-is-layout-1.is-content-justification-left > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  margin-left: 0 !important;
+}
+
+.body > .is-root-container .wp-container-core-group-is-layout-1.is-content-justification-right > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  margin-right: 0 !important;
+}
