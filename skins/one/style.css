@@ -672,3 +672,12 @@ code {
 /* DEBUG: ダークモード */
 @media (prefers-color-scheme: dark){
 }
+
+/* フッターのアイコンメニューに余計な余白が出るのを修正 */
+@media screen and (min-width: 1024px) {
+  .is-pcmenu-on .mobile-menu-buttons.mobile-footer-menu-buttons {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+}
