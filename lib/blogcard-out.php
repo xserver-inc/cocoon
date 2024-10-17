@@ -34,7 +34,7 @@ function url_to_external_blog_card($the_content) {
   // //ブロックエディターのブログカード用の本文整形
   // $the_content = fix_blogcard_content($the_content);
   //1行にURLのみが期待されている行（URL）を全て$mに取得
-  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(?!.*<br *\/?>).*?(<\/p>)?/im', $the_content,$m);
+  $res = preg_match_all('/^(<p[^>]*?>)?(<a[^>]+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(?!.*<br *\/?>).*?(<\/p>)?/im', $the_content,$m);
 
   //マッチしたURL一つ一つをループしてカードを作成
   foreach ($m[0] as $match) {
