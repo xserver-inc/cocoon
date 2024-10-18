@@ -3743,6 +3743,15 @@ function is_toc_shortcode_includes($content) {
 }
 endif;
 
+//カレントページのURLを取得する
+if ( !function_exists( 'get_current_page_url' ) ):
+function get_current_page_url() {
+  global $wp;
+
+  return home_url(add_query_arg(array(), $wp->request));
+}
+endif;
+
 
 ////////////////////////////////////////////////////
 // 以下子テーマカスタマイズ時にエラーがないようにするためのエイリアス

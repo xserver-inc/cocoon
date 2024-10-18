@@ -209,6 +209,13 @@ function url_to_internal_blogcard($the_content) {
     if (includes_wpforo_url($url)) {
       continue;
     }
+
+    //カレントページのURLと$urlが同じ場合は、ブログカード化しない
+    if (get_current_page_url() === $url) {
+      continue;
+    }
+
+
     $tag = url_to_internal_blogcard_tag($url);
 
 
@@ -274,6 +281,11 @@ function url_shortcode_to_blogcard($the_content) {
 
     //wpForoのブログカードは外部ブログカードに任せる
     if (includes_wpforo_url($url)) {
+      continue;
+    }
+
+    //カレントページのURLと$urlが同じ場合は、ブログカード化しない
+    if (get_current_page_url() === $url) {
       continue;
     }
 
