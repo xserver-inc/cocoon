@@ -418,7 +418,7 @@ function get_category_meta_description($category = null){
   }
 
   //カテゴリー本文から抜粋文を作成
-  $cat_desc = get_content_excerpt(get_the_category_content(), 160);
+  $cat_desc = get_content_excerpt(get_the_category_content(null, true), 160);
   if ( $cat_desc ) {
     $cat_desc = trim( strip_tags( $cat_desc ) );
     //カテゴリー設定に説明がある場合はそれを返す
@@ -563,7 +563,7 @@ function get_tag_meta_description($tag = null){
   }
 
   //タグ本文から抜粋文を作成
-  $tag_content = get_content_excerpt(get_the_tag_content(), 160);
+  $tag_content = get_content_excerpt(get_the_tag_content(null, true), 160);
   if ($tag_content) {
     $tag_desc = trim( strip_tags( $tag_content ) );
   }

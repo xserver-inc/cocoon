@@ -95,7 +95,7 @@ endif;
 
 //カテゴリー本文の取得
 if ( !function_exists( 'get_the_category_content' ) ):
-function get_the_category_content($cat_id = null, $for_editor = false){
+function get_the_category_content($cat_id = null, $for_editor_or_snipet = false){
   if (!$cat_id) {
     $cat_id = get_query_var('cat');
   }
@@ -109,8 +109,7 @@ function get_the_category_content($cat_id = null, $for_editor = false){
     else
       $content = category_description($cat_id);
   }
-  if (!$for_editor) {
-    //$content = wpautop($content);
+  if (!$for_editor_or_snipet) {
     $content = apply_filters( 'the_category_tag_content', $content );//カテゴリー・タグ本文共通
     $content = apply_filters( 'the_category_content', $content );
   }
@@ -171,7 +170,7 @@ function get_the_category_snippet($cat_id){
   }
   if (!$snippet) {
     //カテゴリ内容の抜粋
-    $snippet = get_content_excerpt(get_the_category_content($cat_id), get_entry_card_excerpt_max_length());
+    $snippet = get_content_excerpt(get_the_category_content($cat_id, true), get_entry_card_excerpt_max_length());
   }
   if (!$snippet) {
     //カテゴリ説明を取得
