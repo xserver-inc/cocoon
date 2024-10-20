@@ -388,6 +388,9 @@ a.page-numbers:hover {
 		position: relative;
 		justify-content: space-between;
 	}
+	.body .pager-post-navi:not(:has(.prev-post)) {
+		justify-content:flex-end;
+	}
 	.pager-post-navi a.prev-post,
 	.pager-post-navi a.next-post {
 		width: 50%;
