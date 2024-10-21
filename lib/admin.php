@@ -53,7 +53,7 @@ function admin_print_styles_custom() {
   // 管理画面でのJavaScript読み込み
   ///////////////////////////////////////
   //管理画面用での独自JavaScriptの読み込み
-  wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
+  wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array(), false, true );
 
   //投稿ページの場合
   if (is_admin_post_page()) {
