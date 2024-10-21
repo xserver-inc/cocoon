@@ -1,7 +1,7 @@
 /*アニメーションの@keyframes用のCSSコードを書く（ここに書くとAMP用で約500KBまで記入できます）*/
 @keyframes fadeIn {
 	from {
-		opacity: 0;
+		opacity: 0.01;
 	}
 	to {
 		opacity: 1;
