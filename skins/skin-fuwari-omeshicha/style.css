@@ -376,7 +376,8 @@ a.page-numbers:hover {
 		min-width: 20%;
 		max-width: 20%;
 	}
-	.pager-post-navi a.next-post {
+	.pager-post-navi a.next-post,
+	.body .pager-post-navi a:nth-child(2) {
 		border-top: 1px solid #aec9cc;
 	}
 }
