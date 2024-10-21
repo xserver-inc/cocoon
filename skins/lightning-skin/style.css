@@ -521,6 +521,8 @@ a.prev-post {
 	background: -moz-linear-gradient(right, rgba(133, 198, 244, .5), transparent);
 	background: -webkit-linear-gradient(right, rgba(133, 198, 244, .5), transparent);
 	background: linear-gradient(to left, rgba(133, 198, 244, .5), transparent);
+}
+.pager-post-navi:not(.post-navi-square) a.next-post{
 	margin-bottom: 5px;
 }
 a.next-post {
