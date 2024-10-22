@@ -155,7 +155,9 @@ endif;
 if (!function_exists('enqueue_skin_grayish_google_fonts')) :
   function enqueue_skin_grayish_google_fonts()
   {
-    wp_enqueue_style('skin_grayish-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:200,400|Spectral:200,400|Inknut+Antiqua:300,400|Jost:300,400|Lato:300,400|Lora|Montserrat:200,400&display=swap');
+    if (get_theme_mod('font_pat_control_radio', 'font_Montserrat') !== 'font_none') {
+      wp_enqueue_style('skin_grayish-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:200,400|Spectral:200,400|Inknut+Antiqua:300,400|Jost:300,400|Lato:300,400|Lora|Montserrat:200,400&display=swap');
+    }
   }
 endif;
 
