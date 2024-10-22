@@ -12,7 +12,9 @@ function nagi_body_class_names( $classes ) {
 
 add_action('wp_head', 'nagi_g_font');
 function nagi_g_font() {
-echo '<link href="https://fonts.googleapis.com/css2?family=Alice&family=Comfortaa:wght@300..700&family=Fugaz+One&family=Quicksand:wght@300..700&family=Roboto:wght@300;400;700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">';
+  if (get_theme_mod('font_radio', '"Quicksand"') !== 'none') {
+    echo '<link href="https://fonts.googleapis.com/css2?family=Alice&family=Comfortaa:wght@300..700&family=Fugaz+One&family=Quicksand:wght@300..700&family=Roboto:wght@300;400;700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">';
+  }
 }
 
 function my_custom_editor_styles() {
@@ -157,7 +159,7 @@ if ( !function_exists( 'wp_enqueue_slick_custom' ) ):
     $slide481_834      = get_theme_mod('slide_481_834', true)? 1 : $show481_834;
     $slide_under480    = get_theme_mod('slide_under480', true)? 1 : $show_under480;
 
-    
+
 
     if (is_carousel_visible()) {
       wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
