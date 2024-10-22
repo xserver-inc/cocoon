@@ -12,7 +12,6 @@ $pagination_wh: 46px;
   height: $pagination_wh;
   width: $pagination_wh;
   border: 1px solid var(--cocoon-thin-color);
-  margin: 0 4px;
   line-height: $pagination_wh - 6;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
@@ -27,6 +26,7 @@ $pagination_wh: 46px;
   display: inline-flex;
   justify-content: center;
   width: 100%;
+  gap: 8px;
 
   .current{
     background-color: var(--cocoon-current-background-color);
