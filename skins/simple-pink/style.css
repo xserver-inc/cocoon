@@ -225,7 +225,7 @@ table th {
 .page-numbers {
   color: #fdb5c3;
   border: 1px solid #f88fa7;
-  border-radius: 50%;
+  border-radius: 99px;
 }
 
 .pagination .current {

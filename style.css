@@ -11834,11 +11834,6 @@ _:-ms-lang(x), .mc-circle {
     font-size: 10px;
     padding: 1px 3px;
   }
-  .page-numbers {
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-  }
   .pagination-next-link, .comment-btn {
     font-size: 1em;
   }

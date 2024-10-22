@@ -19328,11 +19328,6 @@ body.wp-admin {
     font-size: 10px;
     padding: 1px 3px;
   }
-  .admin-settings .demo .page-numbers {
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-  }
   .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn {
     font-size: 1em;
   }
