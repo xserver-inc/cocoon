@@ -60,6 +60,21 @@ if($is_1_page):
     $paginate_base .= '%_%';
   }
 
+  function pagination_number_custom($formatted_number, $number) {
+    // 6桁以上の場合、span.six-digits-or-moreタグで囲む
+    if ( $number >= 100000 ) {
+      return '<span class="six-digits-or-more">' . $number . '</span>';
+    }
+    // 5桁以上の場合、span.five-digits-or-moreタグで囲む
+    if ( $number >= 10000 ) {
+      return '<span class="five-digits-or-more">' . $number . '</span>';
+    }
+    return (string) $number;
+  }
+
+  // カンマ区切りを無効にするため、`number_format_i18n` フィルターを無効にします
+  add_filter('number_format_i18n', 'pagination_number_custom', 10, 2);
+
   echo paginate_links(array(
     'base' => $paginate_base,
     'format' => $paginate_format,
@@ -68,7 +83,10 @@ if($is_1_page):
     'current' => ($paged ? $paged : 1),
     'prev_text' => '<span class="screen-reader-text">'.__( '前へ', THEME_NAME ).'</span><span class="fa fa-angle-left" aria-hidden="true"></span>',
 'next_text' => '<span class="screen-reader-text">'.__( '次へ', THEME_NAME ).'</span><span class="fa fa-angle-right" aria-hidden="true"></span>',
-  )); ?>
+  ));
+  remove_filter('number_format_i18n', 'pagination_number_custom', 10);
+
+  ?>
 </div><!-- /.pagination -->
 <?php
 endif;

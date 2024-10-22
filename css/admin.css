@@ -6140,7 +6140,7 @@ body.wp-admin {
   width: 46px;
   border: 1px solid var(--cocoon-thin-color);
   margin: 0 4px;
-  line-height: 46px;
+  line-height: 40px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
   font-size: 16px;
@@ -6171,6 +6171,12 @@ body.wp-admin {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: var(--cocoon-text-color);
+}
+.admin-settings .demo .five-digits-or-more {
+  font-size: 14px;
+}
+.admin-settings .demo .six-digits-or-more {
+  font-size: 12px;
 }
 .admin-settings .demo .pager-links {
   margin: 24px 0;
@@ -14658,7 +14664,7 @@ body.wp-admin {
   width: 46px;
   border: 1px solid var(--cocoon-thin-color);
   margin: 0 4px;
-  line-height: 46px;
+  line-height: 40px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
   font-size: 16px;
@@ -14689,6 +14695,12 @@ body.wp-admin {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: var(--cocoon-text-color);
+}
+.admin-settings .demo .five-digits-or-more {
+  font-size: 14px;
+}
+.admin-settings .demo .six-digits-or-more {
+  font-size: 12px;
 }
 .admin-settings .demo .pager-links {
   margin: 24px 0;
