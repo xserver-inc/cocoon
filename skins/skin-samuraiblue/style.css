@@ -516,7 +516,6 @@ input[type='submit'] {
 .pagination .current{
   color: #fbfcfe;
   background-color: #19295a;
-  font-size: 160%;
   border: 2px solid #d3d6db;
   border-radius: 50%;
 }
