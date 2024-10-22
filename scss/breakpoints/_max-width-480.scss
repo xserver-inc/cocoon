@@ -615,5 +615,10 @@ div#bbpress-forums .bbp-body div.bbp-reply-content{
   min-height: 200px;
 }
 
+//ページネーションのドットボタン非表示
+.page-numbers.dots{
+  display: none;
+}
+
 //商品ボックス
 @include product_item_box_480;

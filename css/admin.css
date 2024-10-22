@@ -19277,6 +19277,10 @@ body.wp-admin {
   .admin-settings .demo .sidebar .ad-vertical .ad-additional-vertical {
     display: block;
   }
+  .admin-settings .demo .prev.page-numbers + * + * + *,
+  .admin-settings .demo .page-numbers.current + * + * {
+    display: none;
+  }
   .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box {
     padding: 10px 10px 24px;
     display: block;
@@ -19796,6 +19800,9 @@ body.wp-admin {
   }
   .admin-settings .demo .appeal .appeal-in {
     min-height: 200px;
+  }
+  .admin-settings .demo .page-numbers.dots {
+    display: none;
   }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb {
     width: 80px;

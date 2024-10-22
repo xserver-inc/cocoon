@@ -11782,6 +11782,10 @@ _:-ms-lang(x), .mc-circle {
   .sidebar .ad-vertical .ad-additional-vertical {
     display: block;
   }
+  .prev.page-numbers + * + * + *,
+  .page-numbers.current + * + * {
+    display: none;
+  }
   .booklink-box, .kaerebalink-box, .tomarebalink-box, .product-item-box {
     padding: 10px 10px 24px;
     display: block;
@@ -12299,6 +12303,9 @@ _:-ms-lang(x), .mc-circle {
   }
   .appeal .appeal-in {
     min-height: 200px;
+  }
+  .page-numbers.dots {
+    display: none;
   }
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb {
     width: 80px;
