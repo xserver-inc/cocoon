@@ -6437,6 +6437,7 @@ figcaption {
   line-height: 46px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
+  font-size: 16px;
 }
 .page-numbers span {
   line-height: inherit;
