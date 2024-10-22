@@ -368,7 +368,7 @@ input[type='submit'] {
 /
 /   ・エントリカードを浮かせるので、次の記事と前の記事の間に隙間をつくる
 --------------------------------------------------------- */
-.pager-post-navi a.prev-post {
+.pager-post-navi:not(.post-navi-square) a.prev-post {
   margin-bottom: 8px;
 }
 
