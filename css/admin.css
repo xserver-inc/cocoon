@@ -19277,10 +19277,6 @@ body.wp-admin {
   .admin-settings .demo .sidebar .ad-vertical .ad-additional-vertical {
     display: block;
   }
-  .admin-settings .demo .prev.page-numbers + * + * + *,
-  .admin-settings .demo .page-numbers.current + * + * {
-    display: none;
-  }
   .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box {
     padding: 10px 10px 24px;
     display: block;

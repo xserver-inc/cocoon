@@ -384,11 +384,5 @@ textarea {
   }
 }
 
-//ページネーションのボタンを2つ非表示
-.prev.page-numbers + * + * + *,
-.page-numbers.current + * + *{
-  display: none;
-}
-
 //商品ボックス
 @include product_item_box_834;

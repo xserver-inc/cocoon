@@ -11782,10 +11782,6 @@ _:-ms-lang(x), .mc-circle {
   .sidebar .ad-vertical .ad-additional-vertical {
     display: block;
   }
-  .prev.page-numbers + * + * + *,
-  .page-numbers.current + * + * {
-    display: none;
-  }
   .booklink-box, .kaerebalink-box, .tomarebalink-box, .product-item-box {
     padding: 10px 10px 24px;
     display: block;
