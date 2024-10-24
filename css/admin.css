@@ -8006,6 +8006,9 @@ body.wp-admin {
 .admin-settings .demo .iconlist-box ul li::before {
   display: initial;
 }
+.admin-settings .demo .iconlist-box ul ul {
+  list-style: none;
+}
 .admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
 }
@@ -16529,6 +16532,9 @@ body.wp-admin {
 }
 .admin-settings .demo .iconlist-box ul li::before {
   display: initial;
+}
+.admin-settings .demo .iconlist-box ul ul {
+  list-style: none;
 }
 .admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;

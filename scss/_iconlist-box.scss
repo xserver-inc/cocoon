@@ -17,6 +17,9 @@
     li::before{
       display: initial;
     }
+    ul{
+      list-style: none;
+    }
   }
   ol:not(.has-list-style){
     >li::before{
