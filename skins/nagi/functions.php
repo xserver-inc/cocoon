@@ -22,7 +22,7 @@ function nagi_g_font() {
 
 function generate_font_url($font_family) {
   $font_families = array(
-    'FugazOne' => 'Fugaz+One&display=swap',
+    'Fugaz One' => 'Fugaz+One&display=swap',
     'Saira'     => 'Saira:ital,wght@0,100..900;1,100..900&display=swap',
     'Alice'     => 'Alice&display=swap',
     'Comfortaa' => 'Comfortaa:wght@300..700&display=swap',

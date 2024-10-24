@@ -28,7 +28,7 @@ function sanitize_radius($input) {
 }
 function sanitize_font($input) {
     $valid = array(
-        'FugazOne' => 'FugazOne',
+        'Fugaz One' => 'Fugaz One',
         'Saira' => 'Saira',
         'Alice' => 'Alice',
         'Comfortaa' => 'Comfortaa',
@@ -431,7 +431,7 @@ $wp_customize->add_setting(
       'label'       => 'グーグルフォントを選択する',
       'type'        => 'radio',
       'choices'     => array(
-        'FugazOne' => 'Fugaz One(font-weight: 400 のみ)',
+        'Fugaz One' => 'Fugaz One(font-weight: 400 のみ)',
         'Saira' => 'Saira',
         'Alice' => 'Alice(font-weight: 400 のみ)',
         'Comfortaa' => 'Comfortaa',
