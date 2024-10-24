@@ -639,6 +639,21 @@ blockquote {
   border: none;
 }
 
+/*ページ送りナビ*/
+.post-navi-default.post-navi-border a {
+  border: 1px solid var(--cocoon-basic-border-color);
+}
+.post-navi-default.post-navi-border .next-post {
+  border-top-width: 1px;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 480px) {
+  .pager-post-navi.post-navi-square a:last-child {
+    border-top-width: 1px;
+    margin-top: 6px;
+  }
+}
 :root {
   --text-main: #faf8f7;
   --bg4: #1c1a1a;

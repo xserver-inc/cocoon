@@ -94,7 +94,7 @@ $pn_margin_width: 10px;
   a{
     border: 1px solid var(--cocoon-basic-border-color);
   }
-  // a:last-child{
-  //   border-left-width: 0px;
-  // }
+  a:last-child{
+    border-left-width: 0px;
+  }
 }
