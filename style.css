@@ -6620,9 +6620,6 @@ figcaption {
 .post-navi-square.post-navi-border a {
   border: 1px solid var(--cocoon-basic-border-color);
 }
-.post-navi-square.post-navi-border a:last-child {
-  border-left-width: 0px;
-}
 
 canvas, iframe, video,
 .fb_iframe_widget,
@@ -11907,7 +11904,7 @@ _:-ms-lang(x), .mc-circle {
     width: 100%;
     padding: 7px;
   }
-  .pager-post-navi.post-navi-square a:last-child {
+  .pager-post-navi.post-navi-square .next-post {
     border-top-width: 0;
     border-left-width: 1px;
   }

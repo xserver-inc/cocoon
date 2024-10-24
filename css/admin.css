@@ -6279,9 +6279,6 @@ body.wp-admin {
 .admin-settings .demo .post-navi-square.post-navi-border a {
   border: 1px solid var(--cocoon-basic-border-color);
 }
-.admin-settings .demo .post-navi-square.post-navi-border a:last-child {
-  border-left-width: 0px;
-}
 .admin-settings .demo canvas, .admin-settings .demo iframe, .admin-settings .demo video,
 .admin-settings .demo .fb_iframe_widget,
 .admin-settings .demo .fb_iframe_widget span {
@@ -14806,9 +14803,6 @@ body.wp-admin {
 .admin-settings .demo .post-navi-square.post-navi-border a {
   border: 1px solid var(--cocoon-basic-border-color);
 }
-.admin-settings .demo .post-navi-square.post-navi-border a:last-child {
-  border-left-width: 0px;
-}
 .admin-settings .demo canvas, .admin-settings .demo iframe, .admin-settings .demo video,
 .admin-settings .demo .fb_iframe_widget,
 .admin-settings .demo .fb_iframe_widget span {
@@ -19407,7 +19401,7 @@ body.wp-admin {
     width: 100%;
     padding: 7px;
   }
-  .admin-settings .demo .pager-post-navi.post-navi-square a:last-child {
+  .admin-settings .demo .pager-post-navi.post-navi-square .next-post {
     border-top-width: 0;
     border-left-width: 1px;
   }
