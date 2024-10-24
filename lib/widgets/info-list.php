@@ -156,6 +156,7 @@ class InfoListWidgetItem extends WP_Widget {
       ?>
     </p>
     <?php //表示カテゴリー ?>
+    <p>
       <label>
         <?php _e( '表示カテゴリー', THEME_NAME ) ?>
         <?php _e( '（※未選択の場合は全て表示）', THEME_NAME ) ?>
