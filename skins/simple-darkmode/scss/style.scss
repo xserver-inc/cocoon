@@ -261,8 +261,9 @@ div.speech-balloon{
  color: var(--text-main);
 }
 /*フッター*/
-#footer{
+.footer{
   background-color: var(--bg3);
+  color: var(--text-main);
 }
 div .footer-bottom-content{
   color: var(--text-main);
@@ -316,8 +317,8 @@ textarea{
   background-color: var(--bg3);
   color: var(--text-main);
 }
-/*フッター*/
-.footer{
+/*ウィジェット*/
+.widget{
   color: var(--text-main);
 }
  /*引用*/
