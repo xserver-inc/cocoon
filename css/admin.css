@@ -35,6 +35,8 @@ body.wp-admin {
   --cocoon-codepen-color: #333;
   --cocoon-feedly-color: #2bb24c;
   --cocoon-rss-color: #f26522;
+  --cocoon-copy-color: #333333;
+  --cocoon-comment-color: #333333;
   --cocoon-red-color: #e60033;
   --cocoon-pink-color: #e95295;
   --cocoon-purple-color: #884898;
@@ -1997,6 +1999,12 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=bc-brand-color] .rss-button {
   --cocoon-sns-color: var(--cocoon-rss-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .copy-button {
+  --cocoon-sns-color: var(--cocoon-copy-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .comment-button {
+  --cocoon-sns-color: var(--cocoon-comment-color);
 }
 .admin-settings .demo .ss-top {
   margin-top: 0;
@@ -10524,6 +10532,12 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=bc-brand-color] .rss-button {
   --cocoon-sns-color: var(--cocoon-rss-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .copy-button {
+  --cocoon-sns-color: var(--cocoon-copy-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .comment-button {
+  --cocoon-sns-color: var(--cocoon-comment-color);
 }
 .admin-settings .demo .ss-top {
   margin-top: 0;
