@@ -5467,7 +5467,7 @@ html .body .label-box.has-white-background-color .box-content {
   opacity: 0.7;
 }
 
-.toggle-checkbox {
+input.toggle-checkbox {
   display: none;
 }
 

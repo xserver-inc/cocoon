@@ -5313,7 +5313,7 @@ body.wp-admin {
 .admin-settings .demo .toggle-button:hover {
   opacity: 0.7;
 }
-.admin-settings .demo .toggle-checkbox {
+.admin-settings .demo input.toggle-checkbox {
   display: none;
 }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button {
@@ -13837,7 +13837,7 @@ body.wp-admin {
 .admin-settings .demo .toggle-button:hover {
   opacity: 0.7;
 }
-.admin-settings .demo .toggle-checkbox {
+.admin-settings .demo input.toggle-checkbox {
   display: none;
 }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button {
@@ -23018,7 +23018,7 @@ select option.fa:before {
 .components-popover__content .toggle-button:hover {
   opacity: 0.7;
 }
-.components-popover__content .toggle-checkbox {
+.components-popover__content input.toggle-checkbox {
   display: none;
 }
 .components-popover__content .toggle-checkbox:checked ~ .toggle-button {
