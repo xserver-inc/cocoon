@@ -78,6 +78,9 @@
   a:hover {
     color: #f7a488;
   }
+  .bc-brand-color-white a {
+    background-color: #888;
+  }
   /* カスタム色対応 */
   .speech-wrap,
   .toggle-box,
@@ -736,6 +739,10 @@ a {
 
 a:hover {
   color: #f7a488;
+}
+
+.bc-brand-color-white a {
+  background-color: #888;
 }
 
 /* カスタム色対応 */
