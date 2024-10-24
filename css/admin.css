@@ -6173,10 +6173,10 @@ body.wp-admin {
   color: var(--cocoon-text-color);
 }
 .admin-settings .demo .five-digits-or-more {
-  font-size: 14px;
+  font-size: 13px;
 }
 .admin-settings .demo .six-digits-or-more {
-  font-size: 12px;
+  font-size: 11px;
 }
 .admin-settings .demo .pager-links {
   margin: 24px 0;
@@ -14697,10 +14697,10 @@ body.wp-admin {
   color: var(--cocoon-text-color);
 }
 .admin-settings .demo .five-digits-or-more {
-  font-size: 14px;
+  font-size: 13px;
 }
 .admin-settings .demo .six-digits-or-more {
-  font-size: 12px;
+  font-size: 11px;
 }
 .admin-settings .demo .pager-links {
   margin: 24px 0;
