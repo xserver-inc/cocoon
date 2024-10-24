@@ -494,6 +494,11 @@ textarea {
   color: var(--text-main);
 }
 
+/*フッター*/
+.footer {
+  color: var(--text-main);
+}
+
 /*引用*/
 blockquote {
   background-color: var(--bg2);
