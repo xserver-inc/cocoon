@@ -7856,7 +7856,10 @@ body.wp-admin {
 .admin-settings .demo .btn .anchor-icon,
 .admin-settings .demo .ranking-item-link-buttons a .anchor-icon,
 .admin-settings .demo .btn-wrap a .anchor-icon,
-.admin-settings .demo .no-icon .anchor-icon {
+.admin-settings .demo .no-icon .anchor-icon,
+.admin-settings .demo .wp-block-categories-list a .anchor-icon,
+.admin-settings .demo .wp-block-archives-list a .anchor-icon,
+.admin-settings .demo .wp-block-calendar a .anchor-icon {
   display: none !important;
 }
 .admin-settings .demo .gallery {
@@ -16389,7 +16392,10 @@ body.wp-admin {
 .admin-settings .demo .btn .anchor-icon,
 .admin-settings .demo .ranking-item-link-buttons a .anchor-icon,
 .admin-settings .demo .btn-wrap a .anchor-icon,
-.admin-settings .demo .no-icon .anchor-icon {
+.admin-settings .demo .no-icon .anchor-icon,
+.admin-settings .demo .wp-block-categories-list a .anchor-icon,
+.admin-settings .demo .wp-block-archives-list a .anchor-icon,
+.admin-settings .demo .wp-block-calendar a .anchor-icon {
   display: none !important;
 }
 .admin-settings .demo .gallery {

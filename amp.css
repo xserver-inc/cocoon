@@ -8390,7 +8390,10 @@ div.fb-like-mobile {
 .btn .anchor-icon,
 .ranking-item-link-buttons a .anchor-icon,
 .btn-wrap a .anchor-icon,
-.no-icon .anchor-icon {
+.no-icon .anchor-icon,
+.wp-block-categories-list a .anchor-icon,
+.wp-block-archives-list a .anchor-icon,
+.wp-block-calendar a .anchor-icon {
   display: none !important;
 }
 

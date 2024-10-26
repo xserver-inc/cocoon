@@ -8,7 +8,10 @@
 .wpf-sbtn-wrap,
 .btn,
 .btn-wrap a,
-.no-icon{
+.no-icon,
+.wp-block-categories-list a,
+.wp-block-archives-list a,
+.wp-block-calendar a {
   .anchor-icon{
     display: none !important;
   }
