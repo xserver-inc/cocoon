@@ -2632,6 +2632,10 @@ label.screen-reader-text {
   margin: 20px 0;
 }
 
+.wp-block-calendar .wp-calendar-table {
+  max-width: 400px;
+}
+
 .wp-calendar-table {
   border-collapse: collapse;
   border-top-width: 1px;

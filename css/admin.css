@@ -2876,6 +2876,9 @@ body.wp-admin {
 .admin-settings .demo .calendar_wrap {
   margin: 20px 0;
 }
+.admin-settings .demo .wp-block-calendar .wp-calendar-table {
+  max-width: 400px;
+}
 .admin-settings .demo .wp-calendar-table {
   border-collapse: collapse;
   border-top-width: 1px;
@@ -11416,6 +11419,9 @@ body.wp-admin {
 }
 .admin-settings .demo .calendar_wrap {
   margin: 20px 0;
+}
+.admin-settings .demo .wp-block-calendar .wp-calendar-table {
+  max-width: 400px;
 }
 .admin-settings .demo .wp-calendar-table {
   border-collapse: collapse;

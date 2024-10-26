@@ -81,6 +81,9 @@ label.screen-reader-text{
 .calendar_wrap{
   margin: 20px 0;
 }
+.wp-block-calendar .wp-calendar-table{
+  max-width: 400px;
+}
 
 .wp-calendar-table {
   border-collapse: collapse;
