@@ -3161,6 +3161,10 @@ body.wp-admin {
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
 }
+.admin-settings .demo .wp-block-categories-list,
+.admin-settings .demo .wp-block-archives-list {
+  list-style: none;
+}
 .admin-settings .demo .has-box-style {
   padding: var(--cocoon-box-padding);
 }
@@ -11689,6 +11693,10 @@ body.wp-admin {
 }
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
+}
+.admin-settings .demo .wp-block-categories-list,
+.admin-settings .demo .wp-block-archives-list {
+  list-style: none;
 }
 .admin-settings .demo .has-box-style {
   padding: var(--cocoon-box-padding);

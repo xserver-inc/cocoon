@@ -2966,6 +2966,11 @@ label.screen-reader-text {
   line-height: normal;
 }
 
+.wp-block-categories-list,
+.wp-block-archives-list {
+  list-style: none;
+}
+
 .has-box-style {
   padding: var(--cocoon-box-padding);
 }
