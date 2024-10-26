@@ -1250,7 +1250,7 @@ html[lang=en] .ribbon-top-left::after {
 .body .wp-block-cover :last-child,
 .body .blogcard-type :last-child,
 .body .btn-wrap :last-child,
-.body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
+.body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between, .is-layout-flex) :last-child,
 .body .wp-block-gallery :last-child,
 .body .block-box :last-child,
 .body .blank-box :last-child,
