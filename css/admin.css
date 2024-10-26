@@ -6127,7 +6127,6 @@ body.wp-admin {
   display: inline-flex;
   justify-content: center;
   width: 100%;
-  gap: 8px;
 }
 .admin-settings .demo .pagination .current {
   background-color: var(--cocoon-current-background-color);
@@ -6144,6 +6143,7 @@ body.wp-admin {
   height: 46px;
   width: 46px;
   border: 1px solid var(--cocoon-thin-color);
+  margin: 0 4px;
   line-height: 40px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
@@ -14656,7 +14656,6 @@ body.wp-admin {
   display: inline-flex;
   justify-content: center;
   width: 100%;
-  gap: 8px;
 }
 .admin-settings .demo .pagination .current {
   background-color: var(--cocoon-current-background-color);
@@ -14673,6 +14672,7 @@ body.wp-admin {
   height: 46px;
   width: 46px;
   border: 1px solid var(--cocoon-thin-color);
+  margin: 0 4px;
   line-height: 40px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
