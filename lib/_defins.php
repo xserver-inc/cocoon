@@ -65,6 +65,9 @@ define('WIDGET_NEW_ENTRY_CARD_PREFIX', 'new');
 define('WIDGET_RELATED_ENTRY_CARD_PREFIX', 'widget-related');
 define('WIDGET_NAVI_ENTRY_CARD_PREFIX', 'navi');
 
+//ソースコードをハイライト表示するCSSセレクタ
+define('CODE_HIGHLIGHT_CSS_SELECTOR', '.entry-content pre:not(.wp-block-verse, .wp-block-preformatted)');
+
 //目次のインデックス番号
 global $_TOC_INDEX;
 $_TOC_INDEX = 1;

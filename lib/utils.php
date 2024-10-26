@@ -586,7 +586,7 @@ function wp_enqueue_highlight_js(){
     $url = apply_filters( 'code_highlight_js_url', $url );
     wp_enqueue_script( 'code-highlight-js', $url, array( 'jquery' ), false, true );
     if (is_admin_php_page()) {
-      $selector = '.entry-content pre';
+      $selector = CODE_HIGHLIGHT_CSS_SELECTOR;
     } else {
       $selector = get_code_highlight_css_selector();
     }
