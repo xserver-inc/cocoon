@@ -2210,7 +2210,7 @@ if (!function_exists('mobile_header_buttons_set')) :
           }
         }
       </script>
-    <?php
+<?php
     }
   }
 endif;
@@ -2294,54 +2294,3 @@ add_filter("cocoon_part__tmp/mobile-logo-button", function ($content) {
   }
   return $content;
 });
-
-// pagination for large-number
-add_action(
-  "cocoon_part_after__tmp/pagination",
-  "replace_pagination_large_number"
-);
-
-if (!function_exists('replace_pagination_large_number')) :
-  function replace_pagination_large_number()
-  {
-    ?>
-    <script>
-      // v1.1.3 add for pagination large number
-      const pageNumbers = document.querySelectorAll('.page-numbers');
-
-      if (pageNumbers.length > 0) {
-        pageNumbers.forEach(function(pageNumber) {
-          // prev or next skip
-          if (pageNumber.classList.contains('prev') || pageNumber.classList.contains('next')) {
-            return;
-          }
-          const originalText = pageNumber.textContent;
-          const numberText = originalText.replace(/,/g, '');
-          // Set text with commas removed
-          pageNumber.textContent = numberText;
-          // Convert to integer (after removing commas)
-          const numberValue = parseInt(numberText, 10);
-          // For 4 digits, reduce font size
-          if (numberValue >= 1000) {
-            // Set original number as tooltip
-            pageNumber.setAttribute('title', numberText);
-            if (numberValue < 10000) {
-              pageNumber.style.fontSize = '0.8em';
-            } else if (numberValue < 1000000) {
-              // If 5 digits or more, abbreviated display
-              const shortenedText = (numberValue / 1000).toFixed(1) + 'K'; // ex: 12,345 -> 12.3K
-              pageNumber.textContent = shortenedText;
-              pageNumber.style.fontSize = '0.5em';
-            } else {
-              // For 6 digits or more
-              const shortenedText = (numberValue / 1000000).toFixed(1) + 'M'; // ex: 1,234,567 -> 1.2M
-              pageNumber.textContent = shortenedText;
-              pageNumber.style.fontSize = '0.5em';
-            }
-          }
-        });
-      }
-    </script>
-<?php
-  }
-endif;
