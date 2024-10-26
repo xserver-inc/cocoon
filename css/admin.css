@@ -3771,14 +3771,10 @@ body.wp-admin {
   background-color: #CBEFE4;
 }
 .admin-settings .demo [class*=is-style-blank-box-] {
-  --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
-  background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   border-style: solid;
   border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
+  border-color: var(--cocoon-grey-color);
 }
 .admin-settings .demo [class*=is-style-blank-box-] ol, .admin-settings .demo [class*=is-style-blank-box-] ul {
   margin: 0;
@@ -12304,14 +12300,10 @@ body.wp-admin {
   background-color: #CBEFE4;
 }
 .admin-settings .demo [class*=is-style-blank-box-] {
-  --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
-  background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   border-style: solid;
   border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
+  border-color: var(--cocoon-grey-color);
 }
 .admin-settings .demo [class*=is-style-blank-box-] ol, .admin-settings .demo [class*=is-style-blank-box-] ul {
   margin: 0;
@@ -21487,14 +21479,10 @@ select option.fa:before {
   background-color: #CBEFE4;
 }
 .components-popover__content [class*=is-style-blank-box-] {
-  --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
-  background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   border-style: solid;
   border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
+  border-color: var(--cocoon-grey-color);
 }
 .components-popover__content [class*=is-style-blank-box-] ol, .components-popover__content [class*=is-style-blank-box-] ul {
   margin: 0;

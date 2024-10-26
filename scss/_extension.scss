@@ -611,7 +611,13 @@ $bb_green: var(--cocoon-green-color);
 }
 
 [class*="is-style-blank-box-"]{
-  @include blank_box;
+  border-radius: var(--cocoon-basic-border-radius);
+  ol, ul {
+    margin: 0;
+  }
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-grey-color);
 }
 .is-style-blank-box-red{
   border-color: var(--cocoon-red-color);
