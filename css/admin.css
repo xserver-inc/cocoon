@@ -1278,6 +1278,11 @@ body.wp-admin {
 .admin-settings .demo :is(.is-layout-flow, .is-layout-constrained) > * {
   margin-block-start: 0;
 }
+.admin-settings .demo .has-drop-cap:not(:focus)::first-letter {
+  font-size: 3em;
+  font-weight: normal;
+  float: none;
+}
 .admin-settings .demo figure {
   margin: 0;
 }
@@ -9813,6 +9818,11 @@ body.wp-admin {
 }
 .admin-settings .demo :is(.is-layout-flow, .is-layout-constrained) > * {
   margin-block-start: 0;
+}
+.admin-settings .demo .has-drop-cap:not(:focus)::first-letter {
+  font-size: 3em;
+  font-weight: normal;
+  float: none;
 }
 .admin-settings .demo figure {
   margin: 0;

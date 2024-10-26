@@ -756,6 +756,12 @@ p.has-background {
   margin-block-start: 0;
 }
 
+.has-drop-cap:not(:focus)::first-letter {
+  font-size: 3em;
+  font-weight: normal;
+  float: none;
+}
+
 /************************************
 ** 画像関係のスタイル
 ************************************/
