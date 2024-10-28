@@ -3175,6 +3175,7 @@ body.wp-admin {
 .admin-settings .demo .wp-block-categories-list,
 .admin-settings .demo .wp-block-archives-list {
   list-style: none;
+  padding-left: 0;
 }
 .admin-settings .demo .has-box-style {
   padding: var(--cocoon-box-padding);
@@ -11722,6 +11723,7 @@ body.wp-admin {
 .admin-settings .demo .wp-block-categories-list,
 .admin-settings .demo .wp-block-archives-list {
   list-style: none;
+  padding-left: 0;
 }
 .admin-settings .demo .has-box-style {
   padding: var(--cocoon-box-padding);
