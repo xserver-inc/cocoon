@@ -4173,6 +4173,7 @@ body.wp-admin {
 .admin-settings .demo .btn-shine,
 .admin-settings .demo .btn-wrap-shine > a {
   overflow: hidden;
+  vertical-align: middle;
 }
 .admin-settings .demo .btn-shine:before,
 .admin-settings .demo .btn-wrap-shine > a:before {
@@ -12721,6 +12722,7 @@ body.wp-admin {
 .admin-settings .demo .btn-shine,
 .admin-settings .demo .btn-wrap-shine > a {
   overflow: hidden;
+  vertical-align: middle;
 }
 .admin-settings .demo .btn-shine:before,
 .admin-settings .demo .btn-wrap-shine > a:before {
@@ -21904,6 +21906,7 @@ select option.fa:before {
 .components-popover__content .btn-shine,
 .components-popover__content .btn-wrap-shine > a {
   overflow: hidden;
+  vertical-align: middle;
 }
 .components-popover__content .btn-shine:before,
 .components-popover__content .btn-wrap-shine > a:before {
