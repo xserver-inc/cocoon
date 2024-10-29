@@ -3088,10 +3088,9 @@ body.wp-admin {
 }
 .admin-settings .demo .recent-comments {
   line-height: 1.3;
-  margin-bottom: 12px;
-}
-.admin-settings .demo .recent-comments:last-child {
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .admin-settings .demo .recent-comment-avatar {
   float: left;
@@ -11638,10 +11637,9 @@ body.wp-admin {
 }
 .admin-settings .demo .recent-comments {
   line-height: 1.3;
-  margin-bottom: 12px;
-}
-.admin-settings .demo .recent-comments:last-child {
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .admin-settings .demo .recent-comment-avatar {
   float: left;

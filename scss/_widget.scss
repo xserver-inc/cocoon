@@ -370,12 +370,11 @@ label.screen-reader-text{
 /************************************
 ** 最近のコメントウィジェット
 ************************************/
-.recent-comments{
+.recent-comments {
   line-height: 1.3;
-  margin-bottom: 12px;
-  &:last-child{
-    margin-bottom: 0;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .recent-comment-avatar{

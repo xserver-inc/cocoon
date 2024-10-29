@@ -59,6 +59,9 @@ class RecentCommentsWidgetItem extends WP_Widget {
             //日付フォーマットの指定
             $format = get_site_date_format();
             $format = apply_filters('recent_comments_widget_date_format', $format);
+
+            $html = '<div class="recent-comments">';
+
             foreach ( $comments as $comment ) {
               //var_dump($comment);
               $url = get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID;
@@ -70,37 +73,22 @@ class RecentCommentsWidgetItem extends WP_Widget {
               $comment_content = str_replace(array("\r\n", "\r", "\n"), '', $comment_content);
               if(mb_strlen($comment_content,"UTF-8") > $str_count) {
                 $comment_content = mb_substr($comment_content, 0, $str_count).'...';
-              }?>
-                <div class="recent-comments cf">
-                  <a class="recent-comment-link a-wrap cf" href="<?php echo $url; ?>" title="<?php echo esc_attr($title); ?>">
-                    <div class="recent-comment cf">
-                      <div class="recent-comment-info cf">
-                        <figure class="recent-comment-avatar">
-                          <?php echo $avatar; ?>
-                        </figure>
-                        <div class="recent-comment-author">
-                          <?php echo $author; ?>
-                        </div>
-                        <div class="recent-comment-date">
-                          <?php echo $date; ?>
-                        </div>
-                      </div>
-                      <div class="recent-comment-content">
-                        <?php echo $comment_content; ?>
-                      </div>
-                      <div class="recent-comment-article"><span class="fa fa-link" aria-hidden="true"></span> <?php echo $title; ?>
-                      </div>
-                    </div><!-- /.recent-comment -->
-                  </a>
-                </div><!-- /.recent-comments -->
-                <?php
-              // } else {
-              //   echo $my_pre_comment_content;
-              // };
-              // echo '</div>';
-
-              // echo '</dd>';
+              }
+              $html .= '
+                <a class="recent-comment-link a-wrap cf" href="' . $url . '" title="' . esc_attr($title) . '">
+                  <div class="recent-comment cf">
+                    <div class="recent-comment-info cf">
+                      <figure class="recent-comment-avatar">' . $avatar . '</figure>
+                      <div class="recent-comment-author">' . $author . '</div>
+                      <div class="recent-comment-date">' . $date . '</div>
+                    </div>
+                    <div class="recent-comment-content">' . $comment_content . '</div>
+                    <div class="recent-comment-article"><span class="fa fa-link" aria-hidden="true"></span> ' . $title . '</div>
+                  </div>
+                </a>';
             }
+            $html .= '</div>';
+            echo $html;
           } else { ?>
             <p><?php _e( 'コメントなし', THEME_NAME ) ?></p>
           <?php
@@ -109,6 +97,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
       <?php echo $args['after_widget']; ?>
     <?php
   }
+
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['title'] =
