@@ -1143,3 +1143,17 @@ function get_cta_tag($atts, $content = null ){
   return apply_filters('get_cta_tag', $tag);
 }
 endif;
+
+add_shortcode('icon', 'get_font_awesome_icon_tag');
+if ( !function_exists( 'get_font_awesome_icon_tag' ) ):
+function get_font_awesome_icon_tag($atts){
+  $atts = shortcode_atts(
+    array(
+      'class' => '',
+    ),
+    $atts
+  );
+
+  return '<span class="' . esc_attr($atts['class']) . '"></span>';
+}
+endif;
