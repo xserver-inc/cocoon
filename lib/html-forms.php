@@ -1613,8 +1613,9 @@ function get_widget_entry_card_link_tag($atts){
         if (is_widget_navi_entry_card_prefix($prefix)) {
           $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
 
-          //投稿の場合
-          if ($object === 'post' || $object === 'page') {
+          //投稿・固定ページ・カスタム投稿の場合
+          $post_types = get_custum_post_types();
+          if ($object === 'post' || $object === 'page' || in_array($object, $post_types)) {
             if ($type === ET_DEFAULT) {
               $size = THUMB120;
             } else {
