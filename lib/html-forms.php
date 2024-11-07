@@ -1875,6 +1875,7 @@ function generate_info_list_tag($atts){
     ?>
       <div class="info-list-item">
         <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
+        <?php do_action('info_list_item_meta_before'); ?>
         <div class="info-list-item-meta">
           <span class="info-list-item-date"><?php echo $date; ?></span><span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
         </div>
