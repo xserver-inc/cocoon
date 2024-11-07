@@ -209,7 +209,7 @@ function cocoon_blocks_cgb_editor_assets()
 	);
 
 	//プロフィール情報を渡す
-	$users = get_users(['fields' => ['ID', 'user_nicename']]);
+	$users = get_users(['fields' => ['ID', 'display_name']]);
 	wp_localize_script(
 		'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
 		'gbUsers', //任意のオブジェクト名
