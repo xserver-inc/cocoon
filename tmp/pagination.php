@@ -60,7 +60,6 @@ if($is_1_page):
     $paginate_base .= '%_%';
   }
 
-  if (!function_exists('pagination_number_custom')):
   function pagination_number_custom($formatted_number, $number) {
     // 6桁以上の場合、span.six-digits-or-moreタグで囲む
     if ( $number >= 100000 ) {
@@ -72,7 +71,6 @@ if($is_1_page):
     }
     return (string) $number;
   }
-  endif;
 
   // カンマ区切りを無効にするため、`number_format_i18n` フィルターを無効にします
   add_filter('number_format_i18n', 'pagination_number_custom', 10, 2);
