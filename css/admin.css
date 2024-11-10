@@ -1289,6 +1289,7 @@ body.wp-admin {
 .admin-settings .demo img {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 .admin-settings .demo .circle-image img {
   border-radius: 50%;
@@ -9838,6 +9839,7 @@ body.wp-admin {
 .admin-settings .demo img {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 .admin-settings .demo .circle-image img {
   border-radius: 50%;
