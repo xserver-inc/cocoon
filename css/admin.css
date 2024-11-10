@@ -2482,9 +2482,6 @@ body.wp-admin {
   opacity: 0.9;
   border: 1px solid #eee;
 }
-.admin-settings .demo .eye-catch img {
-  vertical-align: bottom;
-}
 .admin-settings .demo .eye-catch-caption {
   color: var(--cocoon-white-color);
   position: absolute;
@@ -11031,9 +11028,6 @@ body.wp-admin {
   padding: 2px 8px;
   opacity: 0.9;
   border: 1px solid #eee;
-}
-.admin-settings .demo .eye-catch img {
-  vertical-align: bottom;
 }
 .admin-settings .demo .eye-catch-caption {
   color: var(--cocoon-white-color);
