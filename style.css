@@ -8432,7 +8432,8 @@ div.fb-like-mobile {
 .no-icon .anchor-icon,
 .wp-block-categories-list a .anchor-icon,
 .wp-block-archives-list a .anchor-icon,
-.wp-block-calendar a .anchor-icon {
+.wp-block-calendar a .anchor-icon,
+.wp-block-tag-cloud a .anchor-icon {
   display: none !important;
 }
 
