@@ -203,7 +203,7 @@ select, .search-edit {
   text-decoration: none;
   text-align: center;
   margin: 0 auto;
-  padding: 3px 12px;
+  padding: 4px 7px 6px;
   font-size: 14px;
   font-weight: bold;
   color: var(--cocoon-white-color);
