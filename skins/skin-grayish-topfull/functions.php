@@ -378,7 +378,11 @@ if (!function_exists('skin_grayish_titlefont_weight')) :
 	';
     $style_font_weight = '';
     if (get_theme_mod('title_font_weight_radio', 'font_weight_Thin') === 'font_weight_Thin') {
-      $style_font_weight = '200';
+      if (get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_Jost' || get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_Lato') {
+        $style_font_weight = '300';
+      } else {
+        $style_font_weight = '200';
+      }
     } elseif (get_theme_mod('title_font_weight_radio', 'font_weight_Thin') === 'font_weight_Normal') {
       $style_font_weight = '400';
     }
