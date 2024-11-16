@@ -141,6 +141,10 @@
   font-weight: 400;
 }
 
+.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: 840px;
+}
+
 .body > .is-root-container .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
   margin-left: auto;
   margin-right: auto;
