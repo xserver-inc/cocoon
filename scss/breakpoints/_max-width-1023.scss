@@ -147,10 +147,9 @@ div.sidebar {
   flex-direction: column;
 }
 
-// //ヘッダーモバイルボタン表示時にサイトロゴを表示しない
-// .no-mobile-header-logo .logo-header {
-//   display: none;
-// }
+.header-container-in.hlt-top-menu {
+  flex-direction: column;
+}
 
 .mblt-footer-mobile-buttons .go-to-top-button,
 .mblt-header-and-footer-mobile-buttons .go-to-top-button {
