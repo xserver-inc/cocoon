@@ -6,7 +6,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 2.0.1
+  Version: 2.0.2
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -354,6 +354,11 @@ a:hover {
   color: var(--skin-grayish-site-name-txt);
   font-size: clamp(14px, 1.37vw, 16px);
   min-height: 0vw;
+}
+
+/* v2.0.2 */
+.skin-grayish .navi-in a {
+  height: auto;
 }
 
 .skin-grayish .navi-footer-in>.menu-footer {
