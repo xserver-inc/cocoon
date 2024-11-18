@@ -1525,7 +1525,6 @@ body.wp-admin {
 .admin-settings .demo .hlt-tm-small .navi-in > ul li,
 .admin-settings .demo .cl-slim .navi-in > ul li {
   height: 40px;
-  line-height: 40px;
 }
 .admin-settings .demo .hlt-tm-small .navi-in > ul li .sub-menu ul,
 .admin-settings .demo .cl-slim .navi-in > ul li .sub-menu ul {
@@ -1544,14 +1543,17 @@ body.wp-admin {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
 }
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
   right: 6px;
   top: 0;
-  display: inline-block;
+  display: flex;
   opacity: 0.7;
   font-size: 11px;
+  height: 100%;
+  align-items: center;
 }
 .admin-settings .demo .navi-in > ul {
   padding: 0;
@@ -1567,22 +1569,20 @@ body.wp-admin {
   display: block;
   width: 176px;
   height: 60px;
-  line-height: 60px;
   position: relative;
 }
 .admin-settings .demo .navi-in > ul li:hover > ul {
   display: block;
 }
-.admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap {
-  line-height: 21.4285714286px;
+.admin-settings .demo .navi-in > ul .caption-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  height: 60px;
+  width: 100%;
 }
-.admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
+.admin-settings .demo .navi-in > ul .caption-wrap > div {
   width: 100%;
 }
 .admin-settings .demo .navi-in > ul .sub-menu {
@@ -1613,9 +1613,11 @@ body.wp-admin {
   position: relative;
   color: var(--cocoon-text-color);
   text-decoration: none;
-  display: block;
+  display: flex;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 .admin-settings .demo .navi-in a:hover {
   background-color: #f5f8fa;
@@ -10074,7 +10076,6 @@ body.wp-admin {
 .admin-settings .demo .hlt-tm-small .navi-in > ul li,
 .admin-settings .demo .cl-slim .navi-in > ul li {
   height: 40px;
-  line-height: 40px;
 }
 .admin-settings .demo .hlt-tm-small .navi-in > ul li .sub-menu ul,
 .admin-settings .demo .cl-slim .navi-in > ul li .sub-menu ul {
@@ -10093,14 +10094,17 @@ body.wp-admin {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
 }
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
   right: 6px;
   top: 0;
-  display: inline-block;
+  display: flex;
   opacity: 0.7;
   font-size: 11px;
+  height: 100%;
+  align-items: center;
 }
 .admin-settings .demo .navi-in > ul {
   padding: 0;
@@ -10116,22 +10120,20 @@ body.wp-admin {
   display: block;
   width: 176px;
   height: 60px;
-  line-height: 60px;
   position: relative;
 }
 .admin-settings .demo .navi-in > ul li:hover > ul {
   display: block;
 }
-.admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap {
-  line-height: 21.4285714286px;
+.admin-settings .demo .navi-in > ul .caption-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  height: 60px;
+  width: 100%;
 }
-.admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
+.admin-settings .demo .navi-in > ul .caption-wrap > div {
   width: 100%;
 }
 .admin-settings .demo .navi-in > ul .sub-menu {
@@ -10162,9 +10164,11 @@ body.wp-admin {
   position: relative;
   color: var(--cocoon-text-color);
   text-decoration: none;
-  display: block;
+  display: flex;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 .admin-settings .demo .navi-in a:hover {
   background-color: #f5f8fa;

@@ -391,6 +391,10 @@ div #carousel-in {
   opacity: 1;
 }
 
+.cl-slim .navi-in > ul li:hover > ul > li {
+  height: 40px;
+}
+
 .navi-in > ul .sub-menu .sub-menu li {
   display: none;
 }

@@ -74,9 +74,13 @@ body {
   color: white;
 }
 
+#navi {
+  background-color: #FFB300;
+}
 #navi a {
   position: relative;
   color: white;
+  background-color: #FFB300;
 }
 #navi a::after {
   position: absolute;

@@ -180,9 +180,11 @@ body {
 }
 
 #navi {
+  background-color: $main-color-dark;
   a {
     position: relative;
     color: $white-color;
+    background-color: $main-color-dark;
 
     &::after {
       @include pseudo();
