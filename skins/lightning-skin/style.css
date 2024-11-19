@@ -156,10 +156,6 @@ box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 	width: auto;
 	margin: 4px 5px;
 }
-#navi .navi-in .sub-menu li li{
-  height: auto;
-}
-
 .navi-in > ul > .menu-item-has-children > a::after{
 	top: 8px;
 	right: 8px;
@@ -192,9 +188,6 @@ box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 .navi-in > ul .sub-menu a:hover{
 	color: #454545;
-}
-.navi-in > ul .sub-menu ul{
-	top: calc(-3em + 5px);
 }
 ul.sub-menu li a{
 	background-color: #85c6f4;
@@ -755,8 +748,4 @@ a.popular-entry-card-link{
 }
 .menu-drawer li .sub-menu li{
 	margin-right: 0;
-}
-
-.navi-in .menu-item-has-description .has-icon {
-	top: 12px;
 }
