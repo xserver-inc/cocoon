@@ -12,6 +12,11 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 $author = (get_the_author_meta('display_name') ? get_the_author_meta('display_name') : get_bloginfo('name'));
+$description = get_meta_description_text();
+//個別のメタディスクリプションを取得できなかった場合は、キャッチフレーズをメタディスクリプションに
+if (!$description) {
+  $description = get_bloginfo('description');
+}
  ?>
 <script type="application/ld+json">
 {
@@ -82,7 +87,7 @@ if ($image_url && file_exists($image_file)) {
 
   },
   "description": "<?php
-    $description = get_meta_description_text();
+    $description = $description;
     $description = str_replace('\\', '', $description);
     echo esc_attr($description);
   ?>…"<?php  // 抜粋 ?>

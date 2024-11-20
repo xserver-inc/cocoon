@@ -478,7 +478,8 @@ endif;
 //メタディスクリプション文の取得
 if ( !function_exists( 'get_meta_description_text' ) ):
 function get_meta_description_text(){
-  $description = get_bloginfo('description');
+  //generate_meta_description_tag関数でメタディスクリプションが空のときメタディスクリプションを出力しないようにするため、デフォルトは空文字
+  $description = '';
   if (is_front_top_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
