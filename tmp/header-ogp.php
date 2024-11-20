@@ -25,15 +25,8 @@ if (is_singular()){//単一記事ページの場合
     $url = generate_canonical_url();
     $title = wp_get_document_title();
   }
-  //キャッチフレーズ
-  $description = get_bloginfo('description');
-  //フロントページがインデックスページの場合
-  if (is_front_top_page() && get_front_page_meta_description()) {
-    $description = get_front_page_meta_description();
-  }
 
   if ( is_category() ) {//カテゴリ用設定
-    $description = get_category_meta_description();
     if ($category_title =  get_the_category_title(get_query_var('cat'))) {
       $title = $category_title;
     } else {
@@ -43,7 +36,6 @@ if (is_singular()){//単一記事ページの場合
   }
 
   if ( is_tag() || is_tax() ) {//タグ用設定
-    $description = get_tag_meta_description();
     if ($tag_title =  get_the_tag_title(get_queried_object_id())) {
       $title = $tag_title;
     } else {
