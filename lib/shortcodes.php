@@ -491,7 +491,12 @@ function sitemap_shortcode( $atts, $content = null ) {
     <?php if ($page): ?>
     <h2><?php echo apply_filters('sitemap_page_caption', __( '固定ページ', THEME_NAME )); ?></h2>
     <ul>
-      <?php wp_list_pages('title_li='); ?>
+      <?php
+      wp_list_pages( array(
+        'title_li' => '',
+        'exclude'  => get_the_ID()
+      ) );
+      ?>
     </ul>
     <?php endif; ?>
     <?php if ($single): ?>
