@@ -401,6 +401,9 @@ endif;
 //カテゴリーメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_category_meta_description' ) ):
 function get_category_meta_description($category = null){
+  if (!$category && is_category()) {
+    $category = get_queried_object();
+  }
   //カテゴリー設定ページのディスクリプションを取得
   $cat_desc = get_the_category_meta_description();
   if ($cat_desc) {
