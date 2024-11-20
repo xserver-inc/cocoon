@@ -27,9 +27,8 @@ if (is_singular()){//単一記事ページの場合
   }
 
   if ( is_category() ) {//カテゴリ用設定
-    $category = get_queried_object();
-    if ($category) {
-      $title = $category->name;
+    if ($category_title =  get_the_category_title(get_query_var('cat'))) {
+      $title = $category_title;
     } else {
       $title = wp_title(null, false).' | '.get_bloginfo('name');
     }
@@ -37,9 +36,8 @@ if (is_singular()){//単一記事ページの場合
   }
 
   if ( is_tag() || is_tax() ) {//タグ用設定
-    $tag = get_queried_object();
-    if ($tag) {
-      $title = $tag->name;
+    if ($tag_title =  get_the_tag_title(get_queried_object_id())) {
+      $title = $tag_title;
     } else {
       $title = wp_title(null, false).' | '.get_bloginfo('name');
     }
