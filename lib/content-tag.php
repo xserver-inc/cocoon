@@ -189,13 +189,13 @@ function extra_tag_fields( $tag ) {
     $tag_id = $tag->term_id;
 ?>
 <tr class="form-field term-title-wrap">
-  <th><label for="title"><?php _e( 'タイトル', THEME_NAME ) ?></label></th>
+  <th><label for="title"><?php _e( 'SEOタイトル', THEME_NAME ) ?></label></th>
   <td>
     <?php
     $the_tag_title = get_the_tag_title($tag_id, false);
     ?>
-    <input type="text" name="the_tag_title" id="title" size="25" value="<?php echo esc_attr($the_tag_title) ?>" placeholder="<?php _e( 'ページのタイトル', THEME_NAME ) ?>" />
-    <p class="description"><?php _e( 'このページのタイトルを指定します。ページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
+    <input type="text" name="the_tag_title" id="title" size="25" value="<?php echo esc_attr($the_tag_title) ?>" placeholder="<?php _e( 'SEO向けのタイトルの入力', THEME_NAME ) ?>" />
+    <p class="description"><?php _e( '検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。' ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-content-wrap">
