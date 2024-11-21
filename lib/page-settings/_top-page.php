@@ -125,7 +125,7 @@ endif;
 ///////////////////////////////////////
 ?>
 <div class="wrap admin-settings">
-<h1><?php _e( SETTING_NAME_TOP, THEME_NAME ) ?></h1>
+<h1><?php _e( 'Cocoon 設定', THEME_NAME ) ?></h1>
 <?php
 //画面に「設定は保存されました」メッセージを表示
 $is_reset_ok = isset($_GET['reset']) && $_GET['reset'];
