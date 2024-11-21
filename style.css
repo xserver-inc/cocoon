@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.7.7.7
+Version: 2.8.0.2
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -41,6 +41,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --cocoon-codepen-color: #333;
   --cocoon-feedly-color: #2bb24c;
   --cocoon-rss-color: #f26522;
+  --cocoon-copy-color: #333333;
+  --cocoon-comment-color: #333333;
   --cocoon-red-color: #e60033;
   --cocoon-pink-color: #e95295;
   --cocoon-purple-color: #884898;
@@ -201,7 +203,7 @@ select, .search-edit {
   text-decoration: none;
   text-align: center;
   margin: 0 auto;
-  padding: 3px 12px;
+  padding: 4px 7px 6px;
   font-size: 14px;
   font-weight: bold;
   color: var(--cocoon-white-color);
@@ -754,6 +756,12 @@ p.has-background {
   margin-block-start: 0;
 }
 
+.has-drop-cap:not(:focus)::first-letter {
+  font-size: 3em;
+  font-weight: normal;
+  float: none;
+}
+
 /************************************
 ** 画像関係のスタイル
 ************************************/
@@ -764,6 +772,7 @@ figure {
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 
 .circle-image img {
@@ -1049,7 +1058,6 @@ img.emoji {
 .hlt-tm-small .navi-in > ul li,
 .cl-slim .navi-in > ul li {
   height: 40px;
-  line-height: 40px;
 }
 .hlt-tm-small .navi-in > ul li .sub-menu ul,
 .cl-slim .navi-in > ul li .sub-menu ul {
@@ -1072,15 +1080,18 @@ img.emoji {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
 }
 
 .navi-in .has-icon {
   position: absolute;
   right: 6px;
   top: 0;
-  display: inline-block;
+  display: flex;
   opacity: 0.7;
   font-size: 11px;
+  height: 100%;
+  align-items: center;
 }
 .navi-in > ul {
   padding: 0;
@@ -1096,22 +1107,20 @@ img.emoji {
   display: block;
   width: 176px;
   height: 60px;
-  line-height: 60px;
   position: relative;
 }
 .navi-in > ul li:hover > ul {
   display: block;
 }
-.navi-in > ul .menu-item-has-description > a > .caption-wrap {
-  line-height: 21.4285714286px;
+.navi-in > ul .caption-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  height: 60px;
+  width: 100%;
 }
-.navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
+.navi-in > ul .caption-wrap > div {
   width: 100%;
 }
 .navi-in > ul .sub-menu {
@@ -1142,9 +1151,11 @@ img.emoji {
   position: relative;
   color: var(--cocoon-text-color);
   text-decoration: none;
-  display: block;
+  display: flex;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 .navi-in a:hover {
   background-color: #f5f8fa;
@@ -1615,6 +1626,14 @@ img.emoji {
 
 [class*=bc-brand-color] .rss-button {
   --cocoon-sns-color: var(--cocoon-rss-color);
+}
+
+[class*=bc-brand-color] .copy-button {
+  --cocoon-sns-color: var(--cocoon-copy-color);
+}
+
+[class*=bc-brand-color] .comment-button {
+  --cocoon-sns-color: var(--cocoon-comment-color);
 }
 
 .ss-top {
@@ -2160,9 +2179,6 @@ span.internal-icon {
   opacity: 0.9;
   border: 1px solid #eee;
 }
-.eye-catch img {
-  vertical-align: bottom;
-}
 
 .eye-catch-caption {
   color: var(--cocoon-white-color);
@@ -2641,6 +2657,10 @@ label.screen-reader-text {
   margin: 20px 0;
 }
 
+.wp-block-calendar .wp-calendar-table {
+  max-width: 400px;
+}
+
 .wp-calendar-table {
   border-collapse: collapse;
   border-top-width: 1px;
@@ -2884,6 +2904,9 @@ label.screen-reader-text {
 ************************************/
 .recent-comments {
   line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .recent-comment-avatar {
@@ -2979,6 +3002,13 @@ label.screen-reader-text {
 }
 .widget_search .wp-block-search__input {
   line-height: normal;
+}
+
+.wp-block-categories-list,
+.wp-block-archives-list,
+ul.wp-block-archives {
+  list-style: none;
+  padding-left: 0;
 }
 
 .has-box-style {
@@ -3302,7 +3332,7 @@ label.screen-reader-text {
 .body .wp-block-cover :last-child,
 .body .blogcard-type :last-child,
 .body .btn-wrap :last-child,
-.body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
+.body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between, .is-layout-flex) :last-child,
 .body .wp-block-gallery :last-child,
 .body .block-box :last-child,
 .body .blank-box :last-child,
@@ -3678,14 +3708,10 @@ label.screen-reader-text {
 }
 
 [class*=is-style-blank-box-] {
-  --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
-  background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   border-style: solid;
   border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
+  border-color: var(--cocoon-grey-color);
 }
 [class*=is-style-blank-box-] ol, [class*=is-style-blank-box-] ul {
   margin: 0;
@@ -4150,6 +4176,7 @@ div.search-form {
 .btn-shine,
 .btn-wrap-shine > a {
   overflow: hidden;
+  vertical-align: middle;
 }
 
 .btn-shine:before,
@@ -5492,7 +5519,7 @@ html .body .label-box.has-white-background-color .box-content {
   opacity: 0.7;
 }
 
-.toggle-checkbox {
+input.toggle-checkbox {
   display: none;
 }
 
@@ -6459,9 +6486,10 @@ figcaption {
   width: 46px;
   border: 1px solid var(--cocoon-thin-color);
   margin: 0 4px;
-  line-height: 46px;
+  line-height: 40px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
+  font-size: 16px;
 }
 .page-numbers span {
   line-height: inherit;
@@ -6495,6 +6523,14 @@ figcaption {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: var(--cocoon-text-color);
+}
+
+.five-digits-or-more {
+  font-size: 13px;
+}
+
+.six-digits-or-more {
+  font-size: 11px;
 }
 
 /************************************
@@ -8395,7 +8431,11 @@ div.fb-like-mobile {
 .btn .anchor-icon,
 .ranking-item-link-buttons a .anchor-icon,
 .btn-wrap a .anchor-icon,
-.no-icon .anchor-icon {
+.no-icon .anchor-icon,
+.wp-block-categories-list a .anchor-icon,
+.wp-block-archives-list a .anchor-icon,
+.wp-block-calendar a .anchor-icon,
+.wp-block-tag-cloud a .anchor-icon {
   display: none !important;
 }
 
@@ -8586,6 +8626,9 @@ ul.timeline ul ul ul {
 }
 .iconlist-box ul li::before {
   display: initial;
+}
+.iconlist-box ul ul {
+  list-style: none;
 }
 .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
@@ -11455,6 +11498,9 @@ _:-ms-lang(x), .mc-circle {
   .footer-bottom.fdt-left-and-right .footer-bottom-content {
     flex-direction: column;
   }
+  .header-container-in.hlt-top-menu {
+    flex-direction: column;
+  }
   .mblt-footer-mobile-buttons .go-to-top-button,
   .mblt-header-and-footer-mobile-buttons .go-to-top-button {
     display: none;
@@ -11597,9 +11643,6 @@ _:-ms-lang(x), .mc-circle {
   .rect-mini-card .related-entry-card-content {
     margin-left: 32%;
   }
-  .header-container-in.hlt-top-menu {
-    flex-direction: column;
-  }
   .ect-vertical-card .entry-card-wrap {
     width: 49%;
   }
@@ -11656,11 +11699,6 @@ _:-ms-lang(x), .mc-circle {
   }
   #header .site-name-text {
     font-size: 22px;
-  }
-  .header-container-in.hlt-top-menu .header .header-in,
-  .header-container-in.hlt-top-menu .header .logo-text {
-    display: block;
-    height: 100%;
   }
   .header-container-in.hlt-top-menu .site-name-text {
     white-space: normal;
@@ -11832,11 +11870,6 @@ _:-ms-lang(x), .mc-circle {
   .cat-label {
     font-size: 10px;
     padding: 1px 3px;
-  }
-  .page-numbers {
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
   }
   .pagination-next-link, .comment-btn {
     font-size: 1em;
@@ -12296,6 +12329,9 @@ _:-ms-lang(x), .mc-circle {
   .appeal .appeal-in {
     min-height: 200px;
   }
+  .page-numbers.dots {
+    display: none;
+  }
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb {
     width: 80px;
     min-width: 80px;
@@ -12425,7 +12461,7 @@ pre {
 .is-code-row-number-enable pre.hljs#highlight-demo {
   border: none;
   position: relative;
-  padding: 0.4em 1em 0.4em 3em;
+  padding: 0.4em 1em 0.4em 3em !important;
 }
 
 .is-code-row-number-enable pre.hljs::before {

@@ -288,7 +288,7 @@ $marker_u_blue: $marker_blue;
   .wp-block-cover,
   .blogcard-type,
   .btn-wrap,
-  .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between),
+  .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between, .is-layout-flex),
   .wp-block-gallery,
   .block-box,
   .blank-box,
@@ -611,7 +611,13 @@ $bb_green: var(--cocoon-green-color);
 }
 
 [class*="is-style-blank-box-"]{
-  @include blank_box;
+  border-radius: var(--cocoon-basic-border-radius);
+  ol, ul {
+    margin: 0;
+  }
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-grey-color);
 }
 .is-style-blank-box-red{
   border-color: var(--cocoon-red-color);
@@ -1047,6 +1053,7 @@ div.search-form{
 .btn-shine,
 .btn-wrap-shine > a {
   overflow: hidden;
+  vertical-align: middle;
 }
 .btn-shine:before,
 .btn-wrap-shine > a:before {
@@ -1701,7 +1708,7 @@ $toggle_border_width: 2px;
   opacity: 0.7;
 }
 
-.toggle-checkbox{
+input.toggle-checkbox{
   display: none;
 }
 

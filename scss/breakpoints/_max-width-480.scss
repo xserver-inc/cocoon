@@ -29,13 +29,6 @@ h3{
   padding: 1px 3px;
 }
 
-.page-numbers{
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  //margin-left: 0;
-}
-
 .pagination-next-link{
   font-size: 1em;
 }
@@ -620,6 +613,11 @@ div#bbpress-forums .bbp-body div.bbp-reply-content{
 
 .appeal .appeal-in{
   min-height: 200px;
+}
+
+//ページネーションのドットボタン非表示
+.page-numbers.dots{
+  display: none;
 }
 
 //商品ボックス

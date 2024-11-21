@@ -35,6 +35,8 @@ body.wp-admin {
   --cocoon-codepen-color: #333;
   --cocoon-feedly-color: #2bb24c;
   --cocoon-rss-color: #f26522;
+  --cocoon-copy-color: #333333;
+  --cocoon-comment-color: #333333;
   --cocoon-red-color: #e60033;
   --cocoon-pink-color: #e95295;
   --cocoon-purple-color: #884898;
@@ -195,7 +197,7 @@ body.wp-admin {
   text-decoration: none;
   text-align: center;
   margin: 0 auto;
-  padding: 3px 12px;
+  padding: 4px 7px 6px;
   font-size: 14px;
   font-weight: bold;
   color: var(--cocoon-white-color);
@@ -1276,12 +1278,18 @@ body.wp-admin {
 .admin-settings .demo :is(.is-layout-flow, .is-layout-constrained) > * {
   margin-block-start: 0;
 }
+.admin-settings .demo .has-drop-cap:not(:focus)::first-letter {
+  font-size: 3em;
+  font-weight: normal;
+  float: none;
+}
 .admin-settings .demo figure {
   margin: 0;
 }
 .admin-settings .demo img {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 .admin-settings .demo .circle-image img {
   border-radius: 50%;
@@ -1517,7 +1525,6 @@ body.wp-admin {
 .admin-settings .demo .hlt-tm-small .navi-in > ul li,
 .admin-settings .demo .cl-slim .navi-in > ul li {
   height: 40px;
-  line-height: 40px;
 }
 .admin-settings .demo .hlt-tm-small .navi-in > ul li .sub-menu ul,
 .admin-settings .demo .cl-slim .navi-in > ul li .sub-menu ul {
@@ -1536,14 +1543,17 @@ body.wp-admin {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
 }
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
   right: 6px;
   top: 0;
-  display: inline-block;
+  display: flex;
   opacity: 0.7;
   font-size: 11px;
+  height: 100%;
+  align-items: center;
 }
 .admin-settings .demo .navi-in > ul {
   padding: 0;
@@ -1559,22 +1569,20 @@ body.wp-admin {
   display: block;
   width: 176px;
   height: 60px;
-  line-height: 60px;
   position: relative;
 }
 .admin-settings .demo .navi-in > ul li:hover > ul {
   display: block;
 }
-.admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap {
-  line-height: 21.4285714286px;
+.admin-settings .demo .navi-in > ul .caption-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  height: 60px;
+  width: 100%;
 }
-.admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
+.admin-settings .demo .navi-in > ul .caption-wrap > div {
   width: 100%;
 }
 .admin-settings .demo .navi-in > ul .sub-menu {
@@ -1605,9 +1613,11 @@ body.wp-admin {
   position: relative;
   color: var(--cocoon-text-color);
   text-decoration: none;
-  display: block;
+  display: flex;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 .admin-settings .demo .navi-in a:hover {
   background-color: #f5f8fa;
@@ -1997,6 +2007,12 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=bc-brand-color] .rss-button {
   --cocoon-sns-color: var(--cocoon-rss-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .copy-button {
+  --cocoon-sns-color: var(--cocoon-copy-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .comment-button {
+  --cocoon-sns-color: var(--cocoon-comment-color);
 }
 .admin-settings .demo .ss-top {
   margin-top: 0;
@@ -2468,9 +2484,6 @@ body.wp-admin {
   opacity: 0.9;
   border: 1px solid #eee;
 }
-.admin-settings .demo .eye-catch img {
-  vertical-align: bottom;
-}
 .admin-settings .demo .eye-catch-caption {
   color: var(--cocoon-white-color);
   position: absolute;
@@ -2863,6 +2876,9 @@ body.wp-admin {
 .admin-settings .demo .calendar_wrap {
   margin: 20px 0;
 }
+.admin-settings .demo .wp-block-calendar .wp-calendar-table {
+  max-width: 400px;
+}
 .admin-settings .demo .wp-calendar-table {
   border-collapse: collapse;
   border-top-width: 1px;
@@ -3072,6 +3088,9 @@ body.wp-admin {
 }
 .admin-settings .demo .recent-comments {
   line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .admin-settings .demo .recent-comment-avatar {
   float: left;
@@ -3152,6 +3171,12 @@ body.wp-admin {
 }
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
+}
+.admin-settings .demo .wp-block-categories-list,
+.admin-settings .demo .wp-block-archives-list,
+.admin-settings .demo ul.wp-block-archives {
+  list-style: none;
+  padding-left: 0;
 }
 .admin-settings .demo .has-box-style {
   padding: var(--cocoon-box-padding);
@@ -3411,7 +3436,7 @@ body.wp-admin {
 .admin-settings .demo .body .wp-block-cover :last-child,
 .admin-settings .demo .body .blogcard-type :last-child,
 .admin-settings .demo .body .btn-wrap :last-child,
-.admin-settings .demo .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
+.admin-settings .demo .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between, .is-layout-flex) :last-child,
 .admin-settings .demo .body .wp-block-gallery :last-child,
 .admin-settings .demo .body .block-box :last-child,
 .admin-settings .demo .body .blank-box :last-child,
@@ -3763,14 +3788,10 @@ body.wp-admin {
   background-color: #CBEFE4;
 }
 .admin-settings .demo [class*=is-style-blank-box-] {
-  --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
-  background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   border-style: solid;
   border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
+  border-color: var(--cocoon-grey-color);
 }
 .admin-settings .demo [class*=is-style-blank-box-] ol, .admin-settings .demo [class*=is-style-blank-box-] ul {
   margin: 0;
@@ -4153,6 +4174,7 @@ body.wp-admin {
 .admin-settings .demo .btn-shine,
 .admin-settings .demo .btn-wrap-shine > a {
   overflow: hidden;
+  vertical-align: middle;
 }
 .admin-settings .demo .btn-shine:before,
 .admin-settings .demo .btn-wrap-shine > a:before {
@@ -5313,7 +5335,7 @@ body.wp-admin {
 .admin-settings .demo .toggle-button:hover {
   opacity: 0.7;
 }
-.admin-settings .demo .toggle-checkbox {
+.admin-settings .demo input.toggle-checkbox {
   display: none;
 }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button {
@@ -6140,9 +6162,10 @@ body.wp-admin {
   width: 46px;
   border: 1px solid var(--cocoon-thin-color);
   margin: 0 4px;
-  line-height: 46px;
+  line-height: 40px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
+  font-size: 16px;
 }
 .admin-settings .demo .page-numbers span {
   line-height: inherit;
@@ -6170,6 +6193,12 @@ body.wp-admin {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: var(--cocoon-text-color);
+}
+.admin-settings .demo .five-digits-or-more {
+  font-size: 13px;
+}
+.admin-settings .demo .six-digits-or-more {
+  font-size: 11px;
 }
 .admin-settings .demo .pager-links {
   margin: 24px 0;
@@ -7841,7 +7870,11 @@ body.wp-admin {
 .admin-settings .demo .btn .anchor-icon,
 .admin-settings .demo .ranking-item-link-buttons a .anchor-icon,
 .admin-settings .demo .btn-wrap a .anchor-icon,
-.admin-settings .demo .no-icon .anchor-icon {
+.admin-settings .demo .no-icon .anchor-icon,
+.admin-settings .demo .wp-block-categories-list a .anchor-icon,
+.admin-settings .demo .wp-block-archives-list a .anchor-icon,
+.admin-settings .demo .wp-block-calendar a .anchor-icon,
+.admin-settings .demo .wp-block-tag-cloud a .anchor-icon {
   display: none !important;
 }
 .admin-settings .demo .gallery {
@@ -7998,6 +8031,9 @@ body.wp-admin {
 }
 .admin-settings .demo .iconlist-box ul li::before {
   display: initial;
+}
+.admin-settings .demo .iconlist-box ul ul {
+  list-style: none;
 }
 .admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
@@ -9793,12 +9829,18 @@ body.wp-admin {
 .admin-settings .demo :is(.is-layout-flow, .is-layout-constrained) > * {
   margin-block-start: 0;
 }
+.admin-settings .demo .has-drop-cap:not(:focus)::first-letter {
+  font-size: 3em;
+  font-weight: normal;
+  float: none;
+}
 .admin-settings .demo figure {
   margin: 0;
 }
 .admin-settings .demo img {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 .admin-settings .demo .circle-image img {
   border-radius: 50%;
@@ -10034,7 +10076,6 @@ body.wp-admin {
 .admin-settings .demo .hlt-tm-small .navi-in > ul li,
 .admin-settings .demo .cl-slim .navi-in > ul li {
   height: 40px;
-  line-height: 40px;
 }
 .admin-settings .demo .hlt-tm-small .navi-in > ul li .sub-menu ul,
 .admin-settings .demo .cl-slim .navi-in > ul li .sub-menu ul {
@@ -10053,14 +10094,17 @@ body.wp-admin {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
 }
 .admin-settings .demo .navi-in .has-icon {
   position: absolute;
   right: 6px;
   top: 0;
-  display: inline-block;
+  display: flex;
   opacity: 0.7;
   font-size: 11px;
+  height: 100%;
+  align-items: center;
 }
 .admin-settings .demo .navi-in > ul {
   padding: 0;
@@ -10076,22 +10120,20 @@ body.wp-admin {
   display: block;
   width: 176px;
   height: 60px;
-  line-height: 60px;
   position: relative;
 }
 .admin-settings .demo .navi-in > ul li:hover > ul {
   display: block;
 }
-.admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap {
-  line-height: 21.4285714286px;
+.admin-settings .demo .navi-in > ul .caption-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  height: 60px;
+  width: 100%;
 }
-.admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
+.admin-settings .demo .navi-in > ul .caption-wrap > div {
   width: 100%;
 }
 .admin-settings .demo .navi-in > ul .sub-menu {
@@ -10122,9 +10164,11 @@ body.wp-admin {
   position: relative;
   color: var(--cocoon-text-color);
   text-decoration: none;
-  display: block;
+  display: flex;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 .admin-settings .demo .navi-in a:hover {
   background-color: #f5f8fa;
@@ -10514,6 +10558,12 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=bc-brand-color] .rss-button {
   --cocoon-sns-color: var(--cocoon-rss-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .copy-button {
+  --cocoon-sns-color: var(--cocoon-copy-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .comment-button {
+  --cocoon-sns-color: var(--cocoon-comment-color);
 }
 .admin-settings .demo .ss-top {
   margin-top: 0;
@@ -10985,9 +11035,6 @@ body.wp-admin {
   opacity: 0.9;
   border: 1px solid #eee;
 }
-.admin-settings .demo .eye-catch img {
-  vertical-align: bottom;
-}
 .admin-settings .demo .eye-catch-caption {
   color: var(--cocoon-white-color);
   position: absolute;
@@ -11380,6 +11427,9 @@ body.wp-admin {
 .admin-settings .demo .calendar_wrap {
   margin: 20px 0;
 }
+.admin-settings .demo .wp-block-calendar .wp-calendar-table {
+  max-width: 400px;
+}
 .admin-settings .demo .wp-calendar-table {
   border-collapse: collapse;
   border-top-width: 1px;
@@ -11589,6 +11639,9 @@ body.wp-admin {
 }
 .admin-settings .demo .recent-comments {
   line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .admin-settings .demo .recent-comment-avatar {
   float: left;
@@ -11669,6 +11722,12 @@ body.wp-admin {
 }
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
+}
+.admin-settings .demo .wp-block-categories-list,
+.admin-settings .demo .wp-block-archives-list,
+.admin-settings .demo ul.wp-block-archives {
+  list-style: none;
+  padding-left: 0;
 }
 .admin-settings .demo .has-box-style {
   padding: var(--cocoon-box-padding);
@@ -11928,7 +11987,7 @@ body.wp-admin {
 .admin-settings .demo .body .wp-block-cover :last-child,
 .admin-settings .demo .body .blogcard-type :last-child,
 .admin-settings .demo .body .btn-wrap :last-child,
-.admin-settings .demo .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
+.admin-settings .demo .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between, .is-layout-flex) :last-child,
 .admin-settings .demo .body .wp-block-gallery :last-child,
 .admin-settings .demo .body .block-box :last-child,
 .admin-settings .demo .body .blank-box :last-child,
@@ -12280,14 +12339,10 @@ body.wp-admin {
   background-color: #CBEFE4;
 }
 .admin-settings .demo [class*=is-style-blank-box-] {
-  --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
-  background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   border-style: solid;
   border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
+  border-color: var(--cocoon-grey-color);
 }
 .admin-settings .demo [class*=is-style-blank-box-] ol, .admin-settings .demo [class*=is-style-blank-box-] ul {
   margin: 0;
@@ -12670,6 +12725,7 @@ body.wp-admin {
 .admin-settings .demo .btn-shine,
 .admin-settings .demo .btn-wrap-shine > a {
   overflow: hidden;
+  vertical-align: middle;
 }
 .admin-settings .demo .btn-shine:before,
 .admin-settings .demo .btn-wrap-shine > a:before {
@@ -13830,7 +13886,7 @@ body.wp-admin {
 .admin-settings .demo .toggle-button:hover {
   opacity: 0.7;
 }
-.admin-settings .demo .toggle-checkbox {
+.admin-settings .demo input.toggle-checkbox {
   display: none;
 }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button {
@@ -14657,9 +14713,10 @@ body.wp-admin {
   width: 46px;
   border: 1px solid var(--cocoon-thin-color);
   margin: 0 4px;
-  line-height: 46px;
+  line-height: 40px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
+  font-size: 16px;
 }
 .admin-settings .demo .page-numbers span {
   line-height: inherit;
@@ -14687,6 +14744,12 @@ body.wp-admin {
   background-color: #f5f8fa;
   transition: all 0.3s ease-in-out;
   color: var(--cocoon-text-color);
+}
+.admin-settings .demo .five-digits-or-more {
+  font-size: 13px;
+}
+.admin-settings .demo .six-digits-or-more {
+  font-size: 11px;
 }
 .admin-settings .demo .pager-links {
   margin: 24px 0;
@@ -16358,7 +16421,11 @@ body.wp-admin {
 .admin-settings .demo .btn .anchor-icon,
 .admin-settings .demo .ranking-item-link-buttons a .anchor-icon,
 .admin-settings .demo .btn-wrap a .anchor-icon,
-.admin-settings .demo .no-icon .anchor-icon {
+.admin-settings .demo .no-icon .anchor-icon,
+.admin-settings .demo .wp-block-categories-list a .anchor-icon,
+.admin-settings .demo .wp-block-archives-list a .anchor-icon,
+.admin-settings .demo .wp-block-calendar a .anchor-icon,
+.admin-settings .demo .wp-block-tag-cloud a .anchor-icon {
   display: none !important;
 }
 .admin-settings .demo .gallery {
@@ -16515,6 +16582,9 @@ body.wp-admin {
 }
 .admin-settings .demo .iconlist-box ul li::before {
   display: initial;
+}
+.admin-settings .demo .iconlist-box ul ul {
+  list-style: none;
 }
 .admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
@@ -18945,6 +19015,9 @@ body.wp-admin {
   .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content {
     flex-direction: column;
   }
+  .admin-settings .demo .header-container-in.hlt-top-menu {
+    flex-direction: column;
+  }
   .admin-settings .demo .mblt-footer-mobile-buttons .go-to-top-button,
   .admin-settings .demo .mblt-header-and-footer-mobile-buttons .go-to-top-button {
     display: none;
@@ -19090,9 +19163,6 @@ body.wp-admin {
   .admin-settings .demo .rect-mini-card .related-entry-card-content {
     margin-left: 32%;
   }
-  .admin-settings .demo .header-container-in.hlt-top-menu {
-    flex-direction: column;
-  }
   .admin-settings .demo .ect-vertical-card .entry-card-wrap {
     width: 49%;
   }
@@ -19149,11 +19219,6 @@ body.wp-admin {
   }
   .admin-settings .demo #header .site-name-text {
     font-size: 22px;
-  }
-  .admin-settings .demo .header-container-in.hlt-top-menu .header .header-in,
-  .admin-settings .demo .header-container-in.hlt-top-menu .header .logo-text {
-    display: block;
-    height: 100%;
   }
   .admin-settings .demo .header-container-in.hlt-top-menu .site-name-text {
     white-space: normal;
@@ -19325,11 +19390,6 @@ body.wp-admin {
   .admin-settings .demo .cat-label {
     font-size: 10px;
     padding: 1px 3px;
-  }
-  .admin-settings .demo .page-numbers {
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
   }
   .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn {
     font-size: 1em;
@@ -19788,6 +19848,9 @@ body.wp-admin {
   .admin-settings .demo .appeal .appeal-in {
     min-height: 200px;
   }
+  .admin-settings .demo .page-numbers.dots {
+    display: none;
+  }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb {
     width: 80px;
     min-width: 80px;
@@ -20004,7 +20067,7 @@ pre {
 .is-code-row-number-enable pre.hljs#highlight-demo {
   border: none;
   position: relative;
-  padding: 0.4em 1em 0.4em 3em;
+  padding: 0.4em 1em 0.4em 3em !important;
 }
 
 .is-code-row-number-enable pre.hljs::before {
@@ -21103,7 +21166,7 @@ select option.fa:before {
 .components-popover__content .body .wp-block-cover :last-child,
 .components-popover__content .body .blogcard-type :last-child,
 .components-popover__content .body .btn-wrap :last-child,
-.components-popover__content .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between) :last-child,
+.components-popover__content .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between, .is-layout-flex) :last-child,
 .components-popover__content .body .wp-block-gallery :last-child,
 .components-popover__content .body .block-box :last-child,
 .components-popover__content .body .blank-box :last-child,
@@ -21455,14 +21518,10 @@ select option.fa:before {
   background-color: #CBEFE4;
 }
 .components-popover__content [class*=is-style-blank-box-] {
-  --cocoon-custom-border-color: var(--cocoon-grey-color);
-  padding: var(--cocoon-box-padding);
   border-radius: var(--cocoon-basic-border-radius);
-  background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
   border-style: solid;
   border-width: 3px;
-  border-color: var(--cocoon-custom-border-color);
+  border-color: var(--cocoon-grey-color);
 }
 .components-popover__content [class*=is-style-blank-box-] ol, .components-popover__content [class*=is-style-blank-box-] ul {
   margin: 0;
@@ -21846,6 +21905,7 @@ select option.fa:before {
 .components-popover__content .btn-shine,
 .components-popover__content .btn-wrap-shine > a {
   overflow: hidden;
+  vertical-align: middle;
 }
 .components-popover__content .btn-shine:before,
 .components-popover__content .btn-wrap-shine > a:before {
@@ -23006,7 +23066,7 @@ select option.fa:before {
 .components-popover__content .toggle-button:hover {
   opacity: 0.7;
 }
-.components-popover__content .toggle-checkbox {
+.components-popover__content input.toggle-checkbox {
   display: none;
 }
 .components-popover__content .toggle-checkbox:checked ~ .toggle-button {

@@ -156,6 +156,14 @@
   --cocoon-sns-color: var(--cocoon-rss-color);
 }
 
+[class*="bc-brand-color"] .copy-button {
+  --cocoon-sns-color: var(--cocoon-copy-color);
+}
+
+[class*="bc-brand-color"] .comment-button {
+  --cocoon-sns-color: var(--cocoon-comment-color);
+}
+
 .ss-top{
   margin-top: 0;
   margin-bottom: 0;

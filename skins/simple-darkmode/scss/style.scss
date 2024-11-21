@@ -232,6 +232,10 @@ div #carousel-in{
   height: 60px;
   opacity: 1;
 }
+.hlt-tm-small .navi-in > ul li:hover > ul > li,
+.cl-slim .navi-in > ul li:hover > ul > li {
+  height: 40px;
+}
 .navi-in > ul .sub-menu .sub-menu li {
   display: none;
 }
@@ -261,8 +265,9 @@ div.speech-balloon{
  color: var(--text-main);
 }
 /*フッター*/
-#footer{
+.footer{
   background-color: var(--bg3);
+  color: var(--text-main);
 }
 div .footer-bottom-content{
   color: var(--text-main);
@@ -314,6 +319,10 @@ pre:where(:not(.hljs)) {
 }
 textarea{
   background-color: var(--bg3);
+  color: var(--text-main);
+}
+/*ウィジェット*/
+.widget{
   color: var(--text-main);
 }
  /*引用*/
@@ -435,4 +444,22 @@ blockquote{
 .article h5,
 .article h6{
   border: none;
+}
+/*ページ送りナビ*/
+.post-navi-default{
+  &.post-navi-border a{
+    border: 1px solid var(--cocoon-basic-border-color);
+  }
+  &.post-navi-border .next-post {
+    border-top-width: 1px;
+    margin-top: 6px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .pager-post-navi.post-navi-square a:last-child {
+    border-top-width: 1px;
+    margin-top: 6px;
+  }
 }

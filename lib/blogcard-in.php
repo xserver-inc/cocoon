@@ -194,7 +194,7 @@ endif;
 //本文中のURLをブログカードタグに変更する
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
-  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?(<\/a>)?(<\/p>)?/im', $the_content,$m);
+  $res = preg_match_all('/^(<p[^>]*?>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?(<\/a>)?(<\/p>)?/im', $the_content, $m);
   //_v($m);
   foreach ($m[0] as $match) {
 
@@ -209,6 +209,13 @@ function url_to_internal_blogcard($the_content) {
     if (includes_wpforo_url($url)) {
       continue;
     }
+
+    //カレントページのURLと$urlが同じ場合は、ブログカード化しない
+    if (get_current_page_url() === $url) {
+      continue;
+    }
+
+
     $tag = url_to_internal_blogcard_tag($url);
 
 
@@ -277,6 +284,11 @@ function url_shortcode_to_blogcard($the_content) {
       continue;
     }
 
+    //カレントページのURLと$urlが同じ場合は、ブログカード化しない
+    if (get_current_page_url() === $url) {
+      continue;
+    }
+
     //取得した内部URLからブログカードのHTMLタグを作成
     $tag = url_to_internal_blogcard_tag($url);//外部ブログカードタグに変換
     //URLをブログカードに変換
@@ -311,7 +323,7 @@ if ( !function_exists( 'is_p_tag_appropriate' ) ):
 function is_p_tag_appropriate($match){
   if (strpos($match,'p>') !== false){
     //pタグが含まれていた場合は開始タグと終了タグが揃っているかどうか
-    if ( (strpos($match,'<p>') !== false) && (strpos($match,'</p>') !== false) ) {
+    if ( preg_match('/<p[^>]*?>/', $match) && (strpos($match,'</p>') !== false) ) {
       return true;
     }
     return false;

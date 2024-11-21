@@ -7,6 +7,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+//クラシックエディタースタイルを適用
+add_editor_style();
+
 //ファイルのディレクトリパスを取得する（最後の/付き）
 if ( !function_exists( 'abspath' ) ):
 function abspath($file){return dirname($file).'/';}
@@ -131,23 +134,21 @@ if ( !function_exists( 'get_archive_chapter_title' ) ):
 function get_archive_chapter_title(){
   $chapter_title = null;
   if( is_category() ) {//カテゴリーページの場合
-    $cat_id = get_query_var('cat');
     $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
-    if ($cat_id && get_the_category_title($cat_id)) {
-      $chapter_title .= $icon_font.get_the_category_title($cat_id);
+    $category = get_queried_object();
+    if ( $category ) {
+      $chapter_title .= $icon_font.$category->name;
     } else {
       $chapter_title .= single_cat_title( $icon_font, false );
     }
-  } elseif( is_tag() ) {//タグページの場合
-    $tag_id = get_queried_object_id();
+  } elseif( is_tag() || is_tax()) {//タグ・タクソノミページの場合（タクソノミページでもタグアイコンを表示するように変更）
     $icon_font = '<span class="fa fa-tags" aria-hidden="true"></span>';
-    if ($tag_id && get_the_tag_title($tag_id)) {
-      $chapter_title .= $icon_font.get_the_tag_title($tag_id);
+    $tag = get_queried_object();
+    if ( $tag ) {
+      $chapter_title .= $icon_font.$tag->name;
     } else {
       $chapter_title .= single_tag_title( $icon_font, false );
     }
-  } elseif( is_tax() ) {//タクソノミページの場合
-    $chapter_title .= single_term_title( '', false );
   } elseif( is_search() ) {//検索結果
     $search_query = trim(strip_tags(get_search_query()));
     if (empty($search_query)) {

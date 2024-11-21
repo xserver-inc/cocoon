@@ -53,7 +53,7 @@ function admin_print_styles_custom() {
   // 管理画面でのJavaScript読み込み
   ///////////////////////////////////////
   //管理画面用での独自JavaScriptの読み込み
-  wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
+  wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array(), false, true );
 
   //投稿ページの場合
   if (is_admin_post_page()) {
@@ -173,12 +173,12 @@ add_action( 'manage_pages_custom_column', 'customize_admin_add_column', 10, 2 );
 if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
   //投稿ID
-  if ( 'post-id' == $column_name ) {
+  if ( is_admin_list_post_id_visible() && ('post-id' === $column_name) ) {
     $thum = $post_id;
   }
 
   //文字数表示
-  if ( 'word-count' == $column_name ) {
+  if ( is_admin_list_word_count_visible() && ('word-count' === $column_name) ) {
     //テーマで設定されているサムネイルを利用する場合
     $post = get_post($post_id);
     //_v($post);
@@ -208,7 +208,7 @@ function customize_admin_add_column($column_name, $post_id) {
   }
 
   //PV表示
-  if ( 'pv' == $column_name ) {
+  if ( is_admin_list_pv_visible() && ('pv' === $column_name) ) {
     //テーマで設定されているサムネイルを利用する場合
     $post = get_post($post_id);
     //_v($post);
@@ -254,13 +254,13 @@ function customize_admin_add_column($column_name, $post_id) {
   }
 
   //アイキャッチ表示
-  if ( 'thumbnail' == $column_name ) {
+  if ( is_admin_list_eyecatch_visible() && ('thumbnail' === $column_name) ) {
     //テーマで設定されているサムネイルを利用する場合
     $thum = get_the_post_thumbnail($post_id, THUMB150, array( 'style' => 'width:75px;height:auto;' ));
   }
 
   //メモ表示
-  if ( 'memo' == $column_name ) {
+  if ( is_admin_list_memo_visible() && ('memo' === $column_name) ) {
     //テーマで設定されているサムネイルを利用する場合
     $thum = htmlspecialchars(get_the_page_memo($post_id));
   }
@@ -450,7 +450,7 @@ function customize_admin_bar_menu($wp_admin_bar){
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-theme-settings', // 子メニューID
       'meta'   => array(),
-      'title'  => __( SETTING_NAME_TOP, THEME_NAME ), // ラベル
+      'title'  => __( 'Cocoon 設定', THEME_NAME ), // ラベル
       'href'   => admin_url('admin.php?page=theme-settings') // ページURL
     ));
     $wp_admin_bar->add_menu(array(

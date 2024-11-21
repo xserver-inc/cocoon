@@ -210,7 +210,7 @@ select {
     border-color: $key-color;
 }
 
-.a-wrap {
+.a-wrap:not(.prev-post, .next-post, .prev-next-home) {
     border-radius: 0.5em;
 }
 

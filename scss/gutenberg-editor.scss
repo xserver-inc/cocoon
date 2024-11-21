@@ -1473,10 +1473,27 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 }
 
 //ブロックエディターの余白をクリックしても「+」ボタンが表示されない不具合修正
-.editor-styles-wrapper{
-  padding-bottom: 40vh;
-}
+// .editor-styles-wrapper{
+//   padding-bottom: 10vh;
+// }
 
 .radar-chart-block.is-selected {
   border: 2px solid #007cba; /* 選択時の強調表示 */
+}
+
+// グループのグリッドレイアウト
+body .is-layout-grid {
+  display: grid;
+}
+
+.body .is-layout-grid > :is(*, div) {
+  margin: 0;
+}
+
+:root :where(.is-layout-grid) {
+  gap: 1.2rem;
+}
+
+.wp-block-pullquote{
+  font-size: 1.5em;
 }

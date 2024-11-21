@@ -136,7 +136,7 @@ var ScrollHint = function () {
         }
       }, true);
       (0, _util.addClass)(element, _this.opt.scrollHintClass);
-      (0, _util.append)(element, '<div class="' + _this.opt.scrollHintIconWrapClass + '" data-target="scrollable-icon">\n        <span class="' + _this.opt.scrollHintIconClass + (_this.opt.scrollHintIconAppendClass ? ' ' + _this.opt.scrollHintIconAppendClass : '') + '">\n          <div class="' + _this.opt.scrollHintText + '">' + _this.opt.i18n.scrollable + '</div>\n        </span>\n      </div>');
+      (0, _util.append)(element, '<div class="' + _this.opt.scrollHintIconWrapClass + '" data-target="scrollable-icon">\n        <span class="' + _this.opt.scrollHintIconClass + (_this.opt.scrollHintIconAppendClass ? ' ' + _this.opt.scrollHintIconAppendClass : '') + '">\n          <span class="' + _this.opt.scrollHintText + '">' + _this.opt.i18n.scrollable + '</span>\n        </span>\n      </div>');
       _this.items.push(item);
     });
     window.addEventListener('scroll', function () {

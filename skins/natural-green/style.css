@@ -197,7 +197,7 @@ select {
   border-color: #86cfcf;
 }
 
-.a-wrap {
+.a-wrap:not(.prev-post, .next-post, .prev-next-home) {
   border-radius: 0.5em;
 }
 

@@ -28,12 +28,12 @@ function sanitize_radius($input) {
 }
 function sanitize_font($input) {
     $valid = array(
-        '"Fugaz One"' => '"Fugaz One"',
-        '"Saira"' => '"Saira"',
-        '"Alice"' => '"Alice"',
-        '"Comfortaa"' => '"Comfortaa"',
-        '"Quicksand"' => '"Quicksand"',
-        '"Roboto"' => '"Roboto"',
+        'Fugaz One' => 'Fugaz One',
+        'Saira' => 'Saira',
+        'Alice' => 'Alice',
+        'Comfortaa' => 'Comfortaa',
+        'Quicksand' => 'Quicksand',
+        'Roboto' => 'Roboto',
         'none'=>'none',
     );
 
@@ -416,7 +416,7 @@ $wp_customize->add_section( 'font_sct', array(
 $wp_customize->add_setting(
     'font_radio',
     array(
-      'default' => '"Quicksand"',
+      'default' => 'Quicksand',
       'priority' => 1000,
       'sanitize_callback' => 'sanitize_font',
     )
@@ -431,12 +431,12 @@ $wp_customize->add_setting(
       'label'       => 'グーグルフォントを選択する',
       'type'        => 'radio',
       'choices'     => array(
-        '"Fugaz One"' => 'Fugaz One(font-weight: 400 のみ)',
-        '"Saira"' => 'Saira',
-        '"Alice"' => 'Alice(font-weight: 400 のみ)',
-        '"Comfortaa"' => 'Comfortaa',
-        '"Quicksand"' => 'Quicksand',
-        '"Roboto"' => 'Roboto',
+        'Fugaz One' => 'Fugaz One(font-weight: 400 のみ)',
+        'Saira' => 'Saira',
+        'Alice' => 'Alice(font-weight: 400 のみ)',
+        'Comfortaa' => 'Comfortaa',
+        'Quicksand' => 'Quicksand',
+        'Roboto' => 'Roboto',
         'none'=> '指定なし',
       ),
     ) )
@@ -678,7 +678,7 @@ $wp_customize->add_setting(
 
 //-----------------------------------------
 //835-1023
-//-----------------------------------------  
+//-----------------------------------------
 $wp_customize->add_setting(
   'carousel_835_1023',
   array(

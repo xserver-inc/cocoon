@@ -12,7 +12,29 @@ function nagi_body_class_names( $classes ) {
 
 add_action('wp_head', 'nagi_g_font');
 function nagi_g_font() {
-echo '<link href="https://fonts.googleapis.com/css2?family=Alice&family=Comfortaa:wght@300..700&family=Fugaz+One&family=Quicksand:wght@300..700&family=Roboto:wght@300;400;700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">';
+  $font_family = get_theme_mod('font_radio', 'Quicksand');
+  $font_url = generate_font_url($font_family);
+  if ($font_family !== 'none') {
+    echo '<link href="' . esc_url($font_url) . '" rel="preload" as="style">'."\n";
+    echo '<link href="' . esc_url($font_url) . '" rel="stylesheet" media="print" onload="this.media=\'all\'">'."\n";
+  }
+}
+
+function generate_font_url($font_family) {
+  $font_families = array(
+    'Fugaz One' => 'Fugaz+One&display=swap',
+    'Saira'     => 'Saira:ital,wght@0,100..900;1,100..900&display=swap',
+    'Alice'     => 'Alice&display=swap',
+    'Comfortaa' => 'Comfortaa:wght@300..700&display=swap',
+    'Quicksand' => 'Quicksand:wght@300..700&display=swap',
+    'Roboto'    => 'Roboto:wght@300;400;700&display=swap',
+    'none'      	=> '',
+  );
+
+  if (isset($font_families[$font_family]) && $font_family !== 'none') {
+    return 'https://fonts.googleapis.com/css2?family=' . $font_families[$font_family];
+  }
+  return '';
 }
 
 function my_custom_editor_styles() {
@@ -157,7 +179,7 @@ if ( !function_exists( 'wp_enqueue_slick_custom' ) ):
     $slide481_834      = get_theme_mod('slide_481_834', true)? 1 : $show481_834;
     $slide_under480    = get_theme_mod('slide_under480', true)? 1 : $show_under480;
 
-    
+
 
     if (is_carousel_visible()) {
       wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );

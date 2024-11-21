@@ -24,7 +24,7 @@ function css_custom() {
 	.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons, #navi .navi-in > .menu-mobile li {
 		background-color: '.$content_color.';
 	}
-		
+
 	.single .main, .page .main, .error404 .main, .list {
 		box-shadow: 0 0 0 10px '.$content_color.' inset;
 	}
@@ -36,10 +36,37 @@ function css_custom() {
 	}';
 }
 
-// Googleフォント読み込み
+/*******************************
+* WEBフォント設定
+*******************************/
+// Googleフォント読み込み（非同期化）
 add_action('wp_head', 'adds_head');
 function adds_head() {
-echo '<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Kiwi+Maru&family=Klee+One&family=Zen+Kaku+Gothic+New&family=Zen+Maru+Gothic&family=Zen+Kurenaido&display=swap" rel="stylesheet">'."\n";
+    $font_family = get_theme_mod('font_pattern_control', 'font_klee');
+    $font_url = generate_font_url($font_family);
+    if ($font_family !== 'font_none') {
+      echo '<link href="' . esc_url($font_url) . '" rel="preload" as="style">'."\n";
+      echo '<link href="' . esc_url($font_url) . '" rel="stylesheet" media="print" onload="this.media=\'all\'">'."\n";
+    }
+}
+
+// フォントのURLを生成する関数
+function generate_font_url($font_family) {
+    $font_families = array(
+        'font_klee' =>'Klee+One:wght@600&display=swap',
+        'font_kaisei_decol' => 'Kaisei+Decol:wght@700&display=swap',
+        'font_zen_kusenaido' => 'Zen+Kurenaido&display=swap',
+        'font_zen_kaku_gothic' => 'Zen+Kaku+Gothic+New:wght@500&display=swap',
+        'font_zen_maru_gothic' => 'Zen+Maru+Gothic:wght@500&display=swap',
+        'font_kiwi' => 'Kiwi+Maru:wght@500&display=swap',
+        'font_none' => '', // 読み込むフォントがない場合は空文字にする
+    );
+
+    if (isset($font_families[$font_family]) && $font_family !== 'font_none') {
+        return 'https://fonts.googleapis.com/css2?family=' . $font_families[$font_family];
+    }
+
+    return ''; // 該当するフォントが見つからない場合も空文字にする
 }
 
 /*******************************
@@ -52,8 +79,8 @@ function font_pattern($wp_customize) {
 	$wp_customize->add_section(
 		'font_pattern_section',
 		array(
-			'title' => '【スキン】日本語フォント設定', 
-			'priority' => 1000, 
+			'title' => '【スキン】日本語フォント設定',
+			'priority' => 1000,
 		)
 	);
 	$wp_customize->add_setting(
@@ -65,8 +92,8 @@ function font_pattern($wp_customize) {
 	$wp_customize->add_control(
 		'font_pattern_control',
 		array(
-			'label' => 'ロゴフォント設定', 
-			'description' => 'ロゴテキストや記事タイトルなどのロゴフォントを設定できます。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。', 
+			'label' => 'ロゴフォント設定',
+			'description' => 'ロゴテキストや記事タイトルなどのロゴフォントを設定できます。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。',
 			'setting' => 'font_pattern_control', //紐づけるセッティングID
 			'section' => 'font_pattern_section', //紐づけるセクション名
 			'type' => 'radio', //コントロールタイプ
@@ -119,8 +146,8 @@ function bg_pattern($wp_customize) {
 	$wp_customize->add_section(
 		'bg_image_section',
 		array(
-			'title' => '【スキン】背景パターン設定', 
-			'priority' => 1000, 
+			'title' => '【スキン】背景パターン設定',
+			'priority' => 1000,
 		)
 	);
 	$wp_customize->add_setting(
@@ -132,8 +159,8 @@ function bg_pattern($wp_customize) {
 	$wp_customize->add_control(
 		'bg_image_control',
 		array(
-			'label' => '背景パターン設定', 
-			'description' => '背景のパターンをお選びください。「設定なし」にすると背景のパターンは削除され色のみになります。', 
+			'label' => '背景パターン設定',
+			'description' => '背景のパターンをお選びください。「設定なし」にすると背景のパターンは削除され色のみになります。',
 			'setting' => 'bg_image_control', //紐づけるセッティングID
 			'section' => 'bg_image_section', //紐づけるセクション名
 			'type' => 'radio', //コントロールタイプ
@@ -190,8 +217,8 @@ function logo_text_dot($wp_customize) {
 	$wp_customize->add_section(
 		'logo_text_dot_section',
 		array(
-			'title' => '【スキン】ロゴテキストの傍点設定', 
-			'priority' => 1000, 
+			'title' => '【スキン】ロゴテキストの傍点設定',
+			'priority' => 1000,
 		)
 	);
 	$wp_customize->add_setting(
@@ -203,8 +230,8 @@ function logo_text_dot($wp_customize) {
 	$wp_customize->add_control(
 		'logo_text_dot_control',
 		array(
-			'label' => 'ロゴテキストの傍点デザイン', 
-			'description' => 'ロゴテキストの傍点をお選びください。「設定なし」にすると傍点は削除されます。', 
+			'label' => 'ロゴテキストの傍点デザイン',
+			'description' => 'ロゴテキストの傍点をお選びください。「設定なし」にすると傍点は削除されます。',
 			'setting' => 'logo_text_dot_control',//紐づけるセッティングID
 			'section' => 'logo_text_dot_section', //紐づけるセクション名
 			'type' => 'select', //コントロールタイプ
@@ -232,8 +259,8 @@ function logo_text_dot($wp_customize) {
 	$wp_customize->add_control(
 		'logo_text_dot_potision',
 		array(
-			'label' => 'ロゴテキストの傍点位置', 
-			'description' => 'ロゴテキストの傍点の位置をお選びいただけます。', 
+			'label' => 'ロゴテキストの傍点位置',
+			'description' => 'ロゴテキストの傍点の位置をお選びいただけます。',
 			'setting' => 'logo_text_dot_potision',//紐づけるセッティングID
 			'section' => 'logo_text_dot_section', //紐づけるセクション名
 			'type' => 'radio', //コントロールタイプ
@@ -263,7 +290,7 @@ function logo_text_dot_css() {
 	if (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_point') {
 		$style_value = 'dot';
 	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_point_open') {
-		$style_value = 'open dot'; 
+		$style_value = 'open dot';
 	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_circle') {
 		$style_value = 'circle';
 	} elseif (get_theme_mod('logo_text_dot_control','dot_point') === 'dot_circle_open') {
@@ -286,7 +313,7 @@ function logo_text_dot_css() {
 	if (get_theme_mod('logo_text_dot_potision','dot_under') === 'dot_under') {
 		$style_position = 'under left';
 	} else {
-		$style_position = 'over left'; 
+		$style_position = 'over left';
 	}
 	echo sprintf($style_template, $style_value, $style_value, $style_position, $style_position);
 }

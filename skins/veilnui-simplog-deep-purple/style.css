@@ -12,7 +12,7 @@
 @keyframes fadeIn {
   0% {
     transform: translateY(10%);
-    opacity: 0;
+    opacity: 0.01;
   }
   100% {
     transform: translateY(0%);
@@ -74,9 +74,13 @@ body {
   color: white;
 }
 
+#navi {
+  background-color: #5E35B1;
+}
 #navi a {
   position: relative;
   color: white;
+  background-color: #5E35B1;
 }
 #navi a::after {
   position: absolute;
@@ -625,18 +629,21 @@ body {
   background-color: transparent;
 }
 
-#pager-post-navi.post-navi-border a {
+.pager-post-navi.post-navi-square.post-navi-border a {
+  border-color: #7E57C2;
+}
+.pager-post-navi.post-navi-border a {
   border-top: solid #7E57C2 1px;
   border-bottom: solid #7E57C2 1px;
 }
-#pager-post-navi.post-navi-border .prev-post ~ .next-post {
+.pager-post-navi.post-navi-border:not(.post-navi-square) .prev-post ~ .next-post {
   border-top: none;
 }
-#pager-post-navi a:hover {
+.pager-post-navi a:hover {
   transition: all 0.3s ease;
   background-color: #EDE7F6;
 }
-#pager-post-navi a .fa {
+.pager-post-navi a .fa {
   color: #5E35B1;
 }
 

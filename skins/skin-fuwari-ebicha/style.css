@@ -344,11 +344,8 @@ p.wp-caption-text {
 ** ページナンバー
 ************************************/
 .page-numbers {
-	width: 30px;
-	height: 30px;
 	border: none;
 	border-radius: 2px;
-	line-height: 30px;
 }
 
 a.page-numbers {
@@ -376,7 +373,7 @@ a.page-numbers:hover {
 		min-width: 20%;
 		max-width: 20%;
 	}
-	.pager-post-navi a.next-post {
+	.body .pager-post-navi a:nth-child(2) {
 		border-top: 1px solid #d7a69c;
 	}
 }
@@ -386,6 +383,9 @@ a.page-numbers:hover {
 		flex-direction: row;
 		position: relative;
 		justify-content: space-between;
+	}
+	.body .pager-post-navi:not(:has(.prev-post)) {
+		justify-content:flex-end;
 	}
 	.pager-post-navi a.prev-post,
 	.pager-post-navi a.next-post {

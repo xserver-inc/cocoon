@@ -86,6 +86,8 @@ body{
   /*background-color: #fcfcfc;*/
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+.a-wrap:not(.prev-post, .next-post, .prev-next-home) {
   border-radius: 4px;
 }
 
@@ -366,7 +368,7 @@ input[type='submit'] {
 /
 /   ・エントリカードを浮かせるので、次の記事と前の記事の間に隙間をつくる
 --------------------------------------------------------- */
-.pager-post-navi a.prev-post {
+.pager-post-navi:not(.post-navi-square) a.prev-post {
   margin-bottom: 8px;
 }
 
@@ -502,7 +504,7 @@ input[type='submit'] {
 /* ----- ページ番号 ----- */
 .page-numbers {
   background-color: #d3d6db;
-  border-radius: 50%;
+  border-radius: 99px;
   border: 2px solid #19295a;
 }
 
@@ -514,7 +516,6 @@ input[type='submit'] {
 .pagination .current{
   color: #fbfcfe;
   background-color: #19295a;
-  font-size: 160%;
   border: 2px solid #d3d6db;
   border-radius: 50%;
 }

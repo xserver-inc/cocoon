@@ -126,7 +126,6 @@ a {
 .navi-in > ul li {
 		font-weight: bold;
 		height: 64px;
-		line-height: 64px;
 }
 .navi-in > ul .menu-item-has-description > a > .caption-wrap{
 	line-height: 28px;
@@ -1361,8 +1360,8 @@ table th {
 
 .recent-comments .a-wrap{
 	padding: 1.5%;
-	margin-bottom: 3%;
 }
+
 .ranking-items p {
 	margin-top: 0;
 }

@@ -1613,8 +1613,9 @@ function get_widget_entry_card_link_tag($atts){
         if (is_widget_navi_entry_card_prefix($prefix)) {
           $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
 
-          //投稿の場合
-          if ($object === 'post' || $object === 'page') {
+          //投稿・固定ページ・カスタム投稿の場合
+          $post_types = get_custum_post_types();
+          if ($object === 'post' || $object === 'page' || in_array($object, $post_types)) {
             if ($type === ET_DEFAULT) {
               $size = THUMB120;
             } else {
@@ -1838,6 +1839,7 @@ function generate_info_list_tag($atts){
     'divider' => 1,
     'modified' => 0,
     'offset' => 0,
+    'action' => null,
   ), $atts));
 
   $args = array(
@@ -1846,6 +1848,7 @@ function generate_info_list_tag($atts){
     'ignore_sticky_posts' => true,
     'posts_per_page' => $count,
     'offset' => $offset,
+    'action' => $action,
   );
 
   //更新日順
@@ -1872,6 +1875,7 @@ function generate_info_list_tag($atts){
     ?>
       <div class="info-list-item">
         <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
+        <?php do_action('info_list_item_meta_before'); ?>
         <div class="info-list-item-meta">
           <span class="info-list-item-date"><?php echo $date; ?></span><span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
         </div>

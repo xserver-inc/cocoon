@@ -60,6 +60,17 @@ body {
   background: #89c3eb;
 }
 
+.post-navi-default.post-navi-border .next-post {
+  border-top-width: 1px;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 480px) {
+  .pager-post-navi.post-navi-square a:last-child {
+    border-top-width: 1px;
+    margin-top: 6px;
+  }
+}
 .cat-label,
 .mobile-menu-buttons,
 .mobile-menu-buttons .menu-button > a,

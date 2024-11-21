@@ -401,38 +401,38 @@ endif;
 //カテゴリーメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_category_meta_description' ) ):
 function get_category_meta_description($category = null){
-  //カテゴリー設定ページのディスクリプションを取得
-  $cat_desc = get_the_category_meta_description();
-  if ($cat_desc) {
-    $cat_desc = trim( strip_tags( $cat_desc ) );
-    //ディスクリプションが設定されている場合
-    return htmlspecialchars($cat_desc);
-  }
-
-  //カテゴリ説明文を取得
-  $cat_desc = category_description();
-  if ($cat_desc) {
-    $cat_desc = trim( strip_tags( $cat_desc ) );
-    //カテゴリー設定に説明がある場合はそれを返す
-    return htmlspecialchars($cat_desc);
-  }
-
-  //カテゴリー本文から抜粋文を作成
-  $cat_desc = get_content_excerpt(get_the_category_content(), 160);
-  if ( $cat_desc ) {
-    $cat_desc = trim( strip_tags( $cat_desc ) );
-    //カテゴリー設定に説明がある場合はそれを返す
-    return htmlspecialchars($cat_desc);
+  if ( !$category && is_category() ) {
+    $category = get_queried_object();
   }
 
   //カテゴリー名から作成
-  if ($category) {
+  if ( $category ) {
     $cat_name = $category->name;
   } else {
     $cat_name = single_cat_title('', false);
   }
-
+  //デフォルトのカテゴリ名
   $cat_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat_name );
+
+
+  //カテゴリー本文から抜粋文を作成
+  $temp_desc = get_content_excerpt(get_the_category_content(null, true), 160);
+  if ( $temp_desc ) {
+    $cat_desc = trim( strip_tags( $temp_desc ) );
+  }
+
+  //カテゴリ説明文を取得
+  $temp_desc = category_description();
+  if ( $temp_desc ) {
+    $cat_desc = trim( strip_tags( $temp_desc ) );
+  }
+
+  //カテゴリー設定ページのディスクリプションを取得
+  $temp_desc = get_the_category_meta_description();
+  if ( $temp_desc ) {
+    $cat_desc = trim( strip_tags( $temp_desc ) );
+  }
+
   $cat_desc = htmlspecialchars($cat_desc);
   return apply_filters('get_category_meta_description', $cat_desc);
 }
@@ -475,8 +475,9 @@ endif;
 //メタディスクリプション文の取得
 if ( !function_exists( 'get_meta_description_text' ) ):
 function get_meta_description_text(){
+  //generate_meta_description_tag関数でメタディスクリプションが空のときメタディスクリプションを出力しないようにするため、デフォルトは空文字
   $description = '';
-  if (is_front_page() && get_front_page_meta_description()) {
+  if (is_front_top_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
     if (!post_password_required()) {
@@ -545,38 +546,33 @@ endif;
 //タグメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_tag_meta_description' ) ):
 function get_tag_meta_description($tag = null){
-  $tag_desc = '';
-  //タグ設定ページのディスクリプションを取得
-  if (get_the_tag_meta_description()) {
-    $tag_desc = trim( strip_tags( get_the_tag_meta_description() ) );
-  }
-  if ( $tag_desc ) {//ディスクリプションが設定されている場合
-    return htmlspecialchars($tag_desc);
-  }
-
-  //タグ説明文を取得
-  if (tag_description()) {
-    $tag_desc = trim( strip_tags( tag_description() ) );
-  }
-  if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
-    return htmlspecialchars($tag_desc);
-  }
-
-  //タグ本文から抜粋文を作成
-  $tag_content = get_content_excerpt(get_the_tag_content(), 160);
-  if ($tag_content) {
-    $tag_desc = trim( strip_tags( $tag_content ) );
-  }
-  if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
-    return htmlspecialchars($tag_desc);
-  }
   //タグ名から作成
   if ($tag) {
     $tag_name = $tag->name;
   } else {
     $tag_name = single_tag_title('', false);
   }
+  //デフォルトのタグ名
   $tag_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag_name );
+
+  //タグ本文から抜粋文を作成
+  $temp_desc = get_content_excerpt(get_the_tag_content(null, true), 160);
+  if ( $temp_desc ) {
+    $tag_desc = trim( strip_tags( $temp_desc ) );
+  }
+
+  //タグ説明文を取得
+  $temp_desc = tag_description();
+  if ( $temp_desc ) {
+    $tag_desc = trim( strip_tags( $temp_desc ) );
+  }
+
+  //タグ設定ページのディスクリプションを取得
+  $temp_desc = get_the_tag_meta_description();
+  if ( $temp_desc ) {
+    $tag_desc = trim( strip_tags( $temp_desc ) );
+  }
+
   $tag_desc = htmlspecialchars($tag_desc);
   return apply_filters('get_tag_meta_description', $tag_desc);
 }

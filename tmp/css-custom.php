@@ -125,6 +125,7 @@ if ($site_key_text_color = get_site_key_text_color()): ?>
 if($site_text_color = get_site_text_color()): ?>
 body.public-page{
   --cocoon-text-color: <?php echo $site_text_color; ?>;
+  color: var(--cocoon-text-color);
 }
 <?php endif; ?>
 <?php //サイト背景色

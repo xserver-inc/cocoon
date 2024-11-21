@@ -259,7 +259,6 @@
 .pagination .current{
   color:#7dd0ec;
   background-color: #c1385f;
-  font-size: 140%;
   border: 1px solid #43a8ca;
 }
 
@@ -305,7 +304,7 @@ input[type='submit'] {
 / 『投稿ナビ』
 /　　カードを浮かせるので、次の記事と前の記事の隙間をあける
 --------------------------------------------------------- */
-.pager-post-navi a.prev-post {
+.pager-post-navi:not(.post-navi-square) a.prev-post {
   margin-bottom: 8px;
 }
 

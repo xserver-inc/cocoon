@@ -232,3 +232,10 @@ p.has-background{
 :is(.is-layout-flow, .is-layout-constrained) > *{
   margin-block-start: 0;
 }
+
+//段落のドロップキャップ大きすぎ問題修正
+.has-drop-cap:not(:focus)::first-letter{
+  font-size: 3em;
+  font-weight: normal;
+  float: none;
+}

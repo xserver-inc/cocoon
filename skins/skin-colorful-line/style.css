@@ -198,7 +198,7 @@
 /* □■-----------------------------------------------------
 / 『投稿ナビ』
 -----------------------------------------------------■□ */
-.pager-post-navi a.next-post {
+.pager-post-navi:not(.post-navi-square) a.next-post {
   margin-top: 7px;
 }
 

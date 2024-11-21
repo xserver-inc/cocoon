@@ -35,9 +35,10 @@ export default function edit( props ) {
         if ( isProfileIdExist === false && user.id == id ) {
           isProfileIdExist = true;
         }
+
         options.push( {
           value: user.id,
-          label: user.user_nicename,
+          label: user.display_name,
           disabled: false,
         } );
         abledDropdownListItemCount += 1;

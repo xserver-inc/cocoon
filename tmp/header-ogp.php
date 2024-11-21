@@ -11,6 +11,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <meta property="og:type" content="<?php echo (is_singular() ? 'article' : 'website'); ?>">
 <?php
 $description = get_meta_description_text();
+//個別のメタディスクリプションを取得できなかった場合は、キャッチフレーズをメタディスクリプションに
+if (!$description) {
+  $description = get_bloginfo('description');
+}
 if (is_singular()){//単一記事ページの場合
   $title = get_the_title();
   if ( is_front_page() ) {
@@ -25,12 +29,11 @@ if (is_singular()){//単一記事ページの場合
     $url = generate_canonical_url();
     $title = wp_get_document_title();
   }
-  $description = get_bloginfo('description');
 
   if ( is_category() ) {//カテゴリ用設定
-    $description = get_category_meta_description();
-    if ($category_title =  get_the_category_title(get_query_var('cat'))) {
-      $title = $category_title;
+    $category = get_queried_object();
+    if ($category) {
+      $title = $category->name;
     } else {
       $title = wp_title(null, false).' | '.get_bloginfo('name');
     }
@@ -38,9 +41,9 @@ if (is_singular()){//単一記事ページの場合
   }
 
   if ( is_tag() || is_tax() ) {//タグ用設定
-    $description = get_tag_meta_description();
-    if ($tag_title =  get_the_tag_title(get_queried_object_id())) {
-      $title = $tag_title;
+    $tag = get_queried_object();
+    if ($tag) {
+      $title = $tag->name;
     } else {
       $title = wp_title(null, false).' | '.get_bloginfo('name');
     }

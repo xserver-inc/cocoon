@@ -586,7 +586,7 @@ function wp_enqueue_highlight_js(){
     $url = apply_filters( 'code_highlight_js_url', $url );
     wp_enqueue_script( 'code-highlight-js', $url, array( 'jquery' ), false, true );
     if (is_admin_php_page()) {
-      $selector = '.entry-content pre';
+      $selector = CODE_HIGHLIGHT_CSS_SELECTOR;
     } else {
       $selector = get_code_highlight_css_selector();
     }
@@ -1147,11 +1147,19 @@ function local_to_home_url($local){
 }
 endif;
 
-
 //テーマのリソースディレクトリ
 if ( !function_exists( 'get_theme_resources_path' ) ):
 function get_theme_resources_path(){
   $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-resources/';
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
+  return $dir;
+}
+endif;
+
+//生成アイキャッチディレクトリ
+if ( !function_exists( 'get_theme_featured_images_path' ) ):
+function get_theme_featured_images_path(){
+  $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-featured-images/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
@@ -3732,6 +3740,15 @@ endif;
 if ( !function_exists( 'is_toc_shortcode_includes' ) ):
 function is_toc_shortcode_includes($content) {
   return preg_match(TOC_SHORTCODE_REG, $content, $m);
+}
+endif;
+
+//カレントページのURLを取得する
+if ( !function_exists( 'get_current_page_url' ) ):
+function get_current_page_url() {
+  global $wp;
+
+  return home_url(add_query_arg(array(), $wp->request));
 }
 endif;
 

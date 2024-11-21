@@ -23,23 +23,61 @@ function widget_tag_cloud_args_custom($args) {
 endif;
 
 //カテゴリ・アーカイブウィジェットのキャプションをspanでラップして投稿数のカッコを取り除き数字をspanでラップする
-add_filter( 'wp_list_categories', 'remove_post_count_parentheses', 10, 2 );
-add_filter( 'get_archives_link',  'remove_post_count_parentheses', 10, 2 );
+add_action('dynamic_sidebar_before', 'dynamic_widget_area_before');
+if (!function_exists('dynamic_widget_area_before')):
+function dynamic_widget_area_before($index) {
+  // ウィジェット領域が呼び出される前に実行される処理
+  add_filter( 'wp_list_categories', 'remove_post_count_parentheses', 10, 2 );
+  add_filter( 'get_archives_link',  'remove_post_count_parentheses', 10, 2 );
+  add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom', 10, 2);
+}
+endif;
+
+add_action('dynamic_sidebar_after', 'dynamic_widget_area_after');
+if (!function_exists('dynamic_widget_area_after')):
+function dynamic_widget_area_after($index) {
+  // ウィジェット領域が呼び出された後に実行される処理
+  remove_filter('wp_list_categories', 'remove_post_count_parentheses', 10);
+  remove_filter('get_archives_link', 'remove_post_count_parentheses', 10);
+  remove_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom', 10, 2);
+}
+endif;
 if ( !function_exists( 'remove_post_count_parentheses' ) ):
 function remove_post_count_parentheses( $output, $instance ) {
-  //「投稿数を表示」が有効でないとき
-  $output = preg_replace('/<\/a>\n?<\/li>/', '</span></a></li>', $output);
+  // 管理画面の場合やブロックエディタのときには処理しない
+  if ( is_admin() ) {
+    return $output;
+  }
 
+  // RESTリクエスト（ブロックエディタのプレビューなど）での処理を回避する
+  if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+    return $output;
+  }
+
+  // 「投稿数を表示」が有効でないとき
+  $output = preg_replace('/<\/a>\n?<\/li>/', '</span></a></li>', $output);
   $output = preg_replace('/<a [^>]+?>/', '$0<span class="list-item-caption">', $output);
   $output = preg_replace('/<\/a>.*\(([0-9,]+)\)/', '</span><span class="post-count">$1</span></a>', $output);
+
   return $output;
 }
 endif;
 
+
 //タグクラウドの出力変更
-add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom', 10, 2);
+// add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom', 10, 2);
 if ( !function_exists( 'wp_tag_cloud_custom' ) ):
 function wp_tag_cloud_custom( $output, $args ) {
+  // 管理画面の場合やブロックエディタのときには処理しない
+  if ( is_admin() ) {
+    return $output;
+  }
+
+  // RESTリクエスト（ブロックエディタのプレビューなど）での処理を回避する
+  if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+    return $output;
+  }
+
   //style属性を取り除く
   $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output);
   //タグテキストにspanタグの取り付け
@@ -47,7 +85,6 @@ function wp_tag_cloud_custom( $output, $args ) {
   //数字を表示しているとき
   if (isset($args['show_count']) && $args['show_count']) {
     $output = str_replace( '<span class="tag-link-count">', '</span><span class="tag-link-count">',  $output);
-    //_v($output);
     //カッコを取り除く
     $output = str_replace( '<span class="tag-link-count"> (', '<span class="tag-link-count">',  $output);
     $output = str_replace( ')</span>', '</span>',  $output);

@@ -467,7 +467,7 @@ blockquote::after {
 	padding-bottom: 0;
 	background-color: #fff;
 }
-.pager-post-navi a + a {
+.pager-post-navi:not(.post-navi-square) a + a {
 	margin-top: 10px;
 }
 .pager-post-navi a.prev-post::before,

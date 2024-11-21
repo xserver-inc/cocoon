@@ -67,7 +67,7 @@ if (!function_exists('nagi_css_custom')) {
     $top_tab_bg = get_theme_mod('top_tab_bg', '#474a56');
     $top_tab_color = get_theme_mod('top_tab_color', '#ffffff');
     $gray_zone = colorcode_to_rgb_css_code(get_theme_mod('gray_zone', '#efefef'), 0.35);
-    $nagi_g_font = get_theme_mod('font_radio', '"Quicksand"');
+    $nagi_g_font = '"' . get_theme_mod('font_radio', 'Quicksand') . '"';
     $nagi_c_font = skin_get_site_font_family();
     $nagi_radius = skin_get_nagi_radius();
     $nagi_big_radius = skin_get_nagi_big_radius();
@@ -248,7 +248,7 @@ function nagi_custom_editor_styles() {
   $site_text_color_light = colorcode_to_rgb_css_code($site_text_color, 0.4);
   $site_bg_color = get_site_background_color() ?: '#fff';
   $gray_zone = colorcode_to_rgb_css_code(get_theme_mod('gray_zone', '#efefef'), 0.35);
-  $nagi_g_font = get_theme_mod('font_radio', '"Quicksand"');
+  $nagi_g_font = '"' . get_theme_mod('font_radio', 'Quicksand') . '"';
   $nagi_c_font = skin_get_site_font_family();
   $nagi_radius = skin_get_nagi_radius();
   $nagi_big_radius = skin_get_nagi_big_radius();

@@ -18,7 +18,7 @@ pre {
 .is-code-row-number-enable pre.hljs#highlight-demo {
   border: none;
   position: relative;
-  padding: 0.4em 1em 0.4em 3em;
+  padding: 0.4em 1em 0.4em 3em !important;
 }
 
 .is-code-row-number-enable pre.hljs::before {

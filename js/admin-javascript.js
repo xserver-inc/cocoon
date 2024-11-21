@@ -4,44 +4,38 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-(function($){
-  /////////////////////////////////
-  //管理タブの何番目がクリックされたか
-  /////////////////////////////////
-  $("#tabs > ul > li").click(function () {
-    var index = $("#tabs > ul > li").index(this);
-    $('#select_index').val(index);
+
+// 管理タブの何番目がクリックされたか
+document.querySelectorAll("#tabs > ul > li").forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    document.getElementById("select_index").value = index;
   });
+});
 
-  /////////////////////////////////
-  //トグルスイッチ
-  /////////////////////////////////
-  $('.toggle-link').click(function(){
-    $(this).next('.toggle-content').toggle();
+// トグルスイッチ
+document.querySelectorAll('.toggle-link').forEach(toggleLink => {
+  toggleLink.addEventListener('click', () => {
+    const toggleContent = toggleLink.nextElementSibling;
+    if (toggleContent && toggleContent.classList.contains('toggle-content')) {
+      toggleContent.style.display = toggleContent.style.display === 'none' ? 'block' : 'none';
+    }
   });
+});
 
-  //$(".display-widgets-toggle").insertBefore(".widget-control-save");
-
-  /////////////////////////////////
-  //カルーセルエリアの不具合処理（無理やり）
-  /////////////////////////////////
-  $(".carousel-area").on("click", function() {
-    $(function(){
-      $('.slick-arrow').delay(10).queue(function(){
-        $(this).click();
-      });
+// WordPressの管理バー削除処理
+function deleteWpAdminBar(selector) {
+  document.querySelectorAll(selector).forEach(iframe => {
+    iframe.addEventListener('load', () => {
+      const iframeContent = iframe.contentDocument;
+      if (iframeContent) {
+        const wpAdminBar = iframeContent.getElementById('wpadminbar');
+        if (wpAdminBar) wpAdminBar.style.display = 'none';
+        const adminPanel = iframeContent.querySelector('.admin-panel');
+        if (adminPanel) adminPanel.style.display = 'none';
+        iframeContent.documentElement.style.cssText = 'margin-top: 0px !important';
+      }
     });
   });
+}
 
-  function delete_wp_adminbar(selector) {
-    $(selector).on('load', function(){
-      $(selector).contents().find('#wpadminbar').hide();
-      $(selector).contents().find('.admin-panel').hide();
-      $(selector).contents().find('html').css({'cssText': 'margin-top: 0px !important;'});
-    });
-  }
-  delete_wp_adminbar('.iframe-demo');
-
-
-  //$("iframe.iframe-demo").attr("src", $("iframe.iframe-demo").attr("src")+'?preview=theme-settings');
-})(jQuery);
+deleteWpAdminBar('.iframe-demo');

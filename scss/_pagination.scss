@@ -13,9 +13,10 @@ $pagination_wh: 46px;
   width: $pagination_wh;
   border: 1px solid var(--cocoon-thin-color);
   margin: 0 4px;
-  line-height: $pagination_wh;
+  line-height: $pagination_wh - 6;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
+  font-size: 16px;
 }
 
 /************************************
@@ -73,4 +74,12 @@ $pagination_wh: 46px;
   }
 }
 
+//5桁以上の数字
+.five-digits-or-more{
+  font-size: 13px;
+}
 
+//6桁以上の数字
+.six-digits-or-more{
+  font-size: 11px;
+}

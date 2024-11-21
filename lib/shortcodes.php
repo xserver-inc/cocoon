@@ -491,7 +491,12 @@ function sitemap_shortcode( $atts, $content = null ) {
     <?php if ($page): ?>
     <h2><?php echo apply_filters('sitemap_page_caption', __( '固定ページ', THEME_NAME )); ?></h2>
     <ul>
-      <?php wp_list_pages('title_li='); ?>
+      <?php
+      wp_list_pages( array(
+        'title_li' => '',
+        'exclude'  => get_the_ID()
+      ) );
+      ?>
     </ul>
     <?php endif; ?>
     <?php if ($single): ?>
@@ -1009,6 +1014,7 @@ function get_info_list_shortcode($atts){
     'divider' => 1,
     'modified' => 0,
     'offset' => 0,
+    'action' => null,
   ), $atts, 'info_list'));
 
   //countオプションに異常値が入っていた場合
@@ -1030,6 +1036,7 @@ function get_info_list_shortcode($atts){
     'divider' => $divider,
     'modified' => $modified,
     'offset' => $offset,
+    'action' => $action,
   );
   ob_start();
   generate_info_list_tag($atts);
@@ -1141,5 +1148,19 @@ function get_cta_tag($atts, $content = null ){
   $tag = ob_get_clean();
 
   return apply_filters('get_cta_tag', $tag);
+}
+endif;
+
+add_shortcode('icon', 'get_font_awesome_icon_tag');
+if ( !function_exists( 'get_font_awesome_icon_tag' ) ):
+function get_font_awesome_icon_tag($atts){
+  $atts = shortcode_atts(
+    array(
+      'class' => '',
+    ),
+    $atts
+  );
+
+  return '<span class="' . esc_attr($atts['class']) . '"></span>';
 }
 endif;

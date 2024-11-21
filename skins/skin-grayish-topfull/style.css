@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /*!
   Skin Name: grayish
   Description: グレイベースのシンプルデザイン フロントページにメインビジュアルを画面高さいっぱいに表示するスキンです
@@ -7,7 +6,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 1.1.2
+  Version: 2.0.2
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -168,14 +167,22 @@
 }
 
 /****************************** Common ******************************/
+/* v1.1.3 */
+*, :after, :before {
+  min-inline-size: 0
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
 
-.skin-grayish {
+.body {
   letter-spacing: .16rem;
   font-feature-settings: 'palt';
+}
+
+.skin-grayish {
   overflow-x: hidden;
 }
 
@@ -347,6 +354,11 @@ a:hover {
   color: var(--skin-grayish-site-name-txt);
   font-size: clamp(14px, 1.37vw, 16px);
   min-height: 0vw;
+}
+
+/* v2.0.2 */
+.skin-grayish .navi-in a {
+  height: auto;
 }
 
 .skin-grayish .navi-footer-in>.menu-footer {
@@ -2356,6 +2368,11 @@ dialog[open] .searchMenuDialog_close.grayish-btn {
   position: relative;
 }
 
+.blank-box.bb-tab .bb-label {
+  display: flex;
+  align-items: center;
+}
+
 .skin-grayish .blank-box.bb-tab .bb-label {
   background-color: var(--LtBlue_S30);
   position: absolute;
@@ -2787,6 +2804,7 @@ blockquote cite {
   border-top-right-radius: 0px;
   padding: 0.8em 1.5em;
   position: relative;
+  flex: 0 0 auto;
 }
 
 .tab-content-group {
@@ -2833,13 +2851,13 @@ blockquote cite {
   bottom: 0;
 }
 
-[class*="gray-tab-style"] .tab-content-group {
+/* [class*="gray-tab-style"] .tab-content-group {
   border: none;
 }
 
 [class*="gray-tab-style"] .tab-label-group .tab-label::after {
   display: none;
-}
+} */
 
 /* オプション：１カラム フロントページ向け */
 /* オプション：フォントサイズ 16px -> 10pxへレスポンシブ */
@@ -2849,33 +2867,43 @@ blockquote cite {
 
 
 /* オプション：均等配置 ver */
-.gray-tab-label-equal .tab-label-group {
+.gray-tab-label-equal:not([class*="is-style-grytab"]) .tab-label-group,
+:where(.is-style-grytab-low-line-equal, .is-style-grytab-up-line-equal, .is-style-grytab-tablabel-equal, .is-style-grytab-line-equal, .is-style-grytab-cir-equal) .tab-label-group,
+:where(.is-style-grytab-low-line-equal-pc, .is-style-grytab-up-line-equal-pc, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-line-equal-pc, .is-style-grytab-cir-equal-pc) .tab-label-group,
+:where(.is-style-grytab-low-line-equal-odd, .is-style-grytab-up-line-equal-odd, .is-style-grytab-tablabel-equal-odd, .is-style-grytab-line-equal-odd, .is-style-grytab-cir-equal-odd) .tab-label-group {
   justify-content: space-between;
   flex-wrap: wrap;
   overflow-wrap: anywhere;
   white-space: normal;
 }
 
-.gray-tab-label-equal .tab-label-group .tab-label {
+.gray-tab-label-equal:not([class*="is-style-grytab"]) .tab-label-group .tab-label,
+:where(.is-style-grytab-low-line-equal, .is-style-grytab-up-line-equal, .is-style-grytab-tablabel-equal, .is-style-grytab-line-equal, .is-style-grytab-cir-equal) .tab-label-group .tab-label,
+:where(.is-style-grytab-low-line-equal-odd, .is-style-grytab-up-line-equal-odd, .is-style-grytab-tablabel-equal-odd, .is-style-grytab-line-equal-odd, .is-style-grytab-cir-equal-odd) .tab-label-group .tab-label {
   flex: 1;
   text-align: center;
 }
 
 /* オプション：均等配置 PC時のみセンター ver */
-.gray-tab-label-equal.--pc-center .tab-label-group {
+.gray-tab-label-equal.--pc-center:not([class*="is-style-grytab"]) .tab-label-group,
+:where(.is-style-grytab-low-line-equal-pc, .is-style-grytab-up-line-equal-pc, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-line-equal-pc, .is-style-grytab-cir-equal-pc) .tab-label-group {
   justify-content: center;
 }
 
-.gray-tab-label-equal.--pc-center .tab-label-group .tab-label {
+.gray-tab-label-equal.--pc-center:not([class*="is-style-grytab"]) .tab-label-group .tab-label,
+:where(.is-style-grytab-low-line-equal-pc, .is-style-grytab-up-line-equal-pc, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-line-equal-pc, .is-style-grytab-cir-equal-pc) .tab-label-group .tab-label {
   flex: 0 0 25%;
+  text-align: center;
 }
 
 /* スタイル１：線 upper-type */
-.gray-tab-style-up .tab-label-group .tab-label.is-active::after {
+.gray-tab-style-up:not([class*="is-style-grytab"]) .tab-label-group .tab-label.is-active::after,
+:where(.is-style-grytab-up-line, .is-style-grytab-up-line-equal, .is-style-grytab-up-line-equal-pc, .is-style-grytab-up-line-equal-odd) .tab-label-group .tab-label.is-active::after {
   background-color: var(--skin-grayish-site-main-hover);
 }
 
-.gray-tab-style-up .tab-label-group .tab-label::after {
+.gray-tab-style-up:not([class*="is-style-grytab"]) .tab-label-group .tab-label::after,
+:where(.is-style-grytab-up-line, .is-style-grytab-up-line-equal, .is-style-grytab-up-line-equal-pc, .is-style-grytab-up-line-equal-odd) .tab-label-group .tab-label::after {
   display: block;
   content: "";
   background-color: transparent;
@@ -2893,24 +2921,27 @@ blockquote cite {
 /* .gray-tab-style .tab-content-group {
   background-color: var(--LtBlue_T90);
 } */
-
-.gray-tab-style .tab-label-group .tab-label {
+.gray-tab-style:not([class*="is-style-grytab"]) .tab-label-group .tab-label,
+:where(.is-style-grytab-tablabel, .is-style-grytab-tablabel-equal, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-tablabel-equal-odd) .tab-label-group .tab-label {
   padding: 0.5em 1.5em;
   background-color: var(--white);
   transition: background-color .4s;
 
 }
 
-.gray-tab-style .tab-label-group .tab-label.is-active {
+.gray-tab-style:not([class*="is-style-grytab"]) .tab-label-group .tab-label.is-active,
+:where(.is-style-grytab-tablabel, .is-style-grytab-tablabel-equal, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-tablabel-equal-odd) .tab-label-group .tab-label.is-active {
   background-color: var(--LtBlue_T70);
   color: var(--LtGray_S50);
 }
 
-.gray-tab-style .tab-label-group .tab-label.is-active::after {
+.gray-tab-style:not([class*="is-style-grytab"]) .tab-label-group .tab-label.is-active::after,
+:where(.is-style-grytab-tablabel, .is-style-grytab-tablabel-equal, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-tablabel-equal-odd) .tab-label-group .tab-label.is-active::after {
   background-color: var(--LtBlue_T0);
 }
 
-.gray-tab-style .tab-label-group .tab-label::after {
+.gray-tab-style:not([class*="is-style-grytab"]) .tab-label-group .tab-label::after,
+:where(.is-style-grytab-tablabel, .is-style-grytab-tablabel-equal, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-tablabel-equal-odd) .tab-label-group .tab-label::after {
   display: block;
   content: "";
   background-color: transparent;
@@ -2924,17 +2955,20 @@ blockquote cite {
 }
 
 /* スタイル3：ライン */
-.gray-tab-style-line .tab-content-group {
+.gray-tab-style-line:not([class*="is-style-grytab"]) .tab-content-group,
+:where(.is-style-grytab-line, .is-style-grytab-line-equal, .is-style-grytab-line-equal-pc, .is-style-grytab-line-equal-odd) .tab-content-group {
   border-top: 1px solid var(--LtGray_T70);
   border-bottom: 1px solid var(--LtGray_T70);
   background-color: var(--white);
 }
 
-.gray-tab-style-line .tab-label-group {
+.gray-tab-style-line:not([class*="is-style-grytab"]) .tab-label-group,
+:where(.is-style-grytab-line, .is-style-grytab-line-equal, .is-style-grytab-line-equal-pc, .is-style-grytab-line-equal-odd) .tab-label-group {
   padding-bottom: 0.5em;
 }
 
-.gray-tab-style-line .tab-label-group .tab-label {
+.gray-tab-style-line:not([class*="is-style-grytab"]) .tab-label-group .tab-label,
+:where(.is-style-grytab-line, .is-style-grytab-line-equal, .is-style-grytab-line-equal-pc, .is-style-grytab-line-equal-odd) .tab-label-group .tab-label {
   padding: 0.5em 1.5em;
   background-color: var(--white);
   color: var(--LtGray_T30);
@@ -2942,11 +2976,13 @@ blockquote cite {
 
 }
 
-.gray-tab-style-line .tab-label-group .tab-label.is-active {
+.gray-tab-style-line:not([class*="is-style-grytab"]) .tab-label-group .tab-label.is-active,
+:where(.is-style-grytab-line, .is-style-grytab-line-equal, .is-style-grytab-line-equal-pc, .is-style-grytab-line-equal-odd) .tab-label-group .tab-label.is-active {
   color: var(--LtGray_S50);
 }
 
-.gray-tab-style-line .tab-label-group .tab-label::before {
+.gray-tab-style-line:not([class*="is-style-grytab"]) .tab-label-group .tab-label::before,
+:where(.is-style-grytab-line, .is-style-grytab-line-equal, .is-style-grytab-line-equal-pc, .is-style-grytab-line-equal-odd) .tab-label-group .tab-label::before {
   display: block;
   content: "";
   background-color: var(--LtGray_T70);
@@ -2960,21 +2996,32 @@ blockquote cite {
 }
 
 
-.gray-tab-style-line .tab-label-group .tab-label:first-child::before {
+.gray-tab-style-line:not([class*="is-style-grytab"]) .tab-label-group .tab-label:first-child::before,
+:where(.is-style-grytab-line, .is-style-grytab-line-equal, .is-style-grytab-line-equal-pc, .is-style-grytab-line-equal-odd) .tab-label-group .tab-label:first-child::before {
+  display: none;
+}
+
+.gray-tab-style-line:not([class*="is-style-grytab"]) .tab-label-group .tab-label.is-active::after,
+:where(.is-style-grytab-line, .is-style-grytab-line-equal, .is-style-grytab-line-equal-pc, .is-style-grytab-line-equal-odd) .tab-label-group .tab-label.is-active::after,
+.gray-tab-style-line:not([class*="is-style-grytab"]) .tab-label-group .tab-label::after,
+:where(.is-style-grytab-line, .is-style-grytab-line-equal, .is-style-grytab-line-equal-pc, .is-style-grytab-line-equal-odd) .tab-label-group .tab-label::after {
   display: none;
 }
 
 /* スタイル4：ラベルの端が円タイプ */
-.gray-tab-style-cir {
+.gray-tab-style-cir:not([class*="is-style-grytab"]),
+:is(.is-style-grytab-cir, .is-style-grytab-cir-equal, .is-style-grytab-cir-equal-pc, .is-style-grytab-cir-equal-odd) {
   background-color: var(--Blk_Beige_T70);
 }
 
-.gray-tab-style-cir .tab-content-group {
+.gray-tab-style-cir:not([class*="is-style-grytab"]) .tab-content-group,
+:is(.is-style-grytab-cir, .is-style-grytab-cir-equal, .is-style-grytab-cir-equal-pc, .is-style-grytab-cir-equal-odd) .tab-content-group {
   border-top: 1px solid var(--Blk_Beige_T0);
   background-color: var(--Blk_Beige_T70);
 }
 
-.gray-tab-style-cir .tab-label-group {
+.gray-tab-style-cir:not([class*="is-style-grytab"]) .tab-label-group,
+:is(.is-style-grytab-cir, .is-style-grytab-cir-equal, .is-style-grytab-cir-equal-pc, .is-style-grytab-cir-equal-odd) .tab-label-group {
   background-color: var(--Blk_Beige_T70);
   row-gap: 8px;
   -moz-column-gap: 4px;
@@ -2982,7 +3029,8 @@ blockquote cite {
   padding: 2em 1em;
 }
 
-.gray-tab-style-cir .tab-label-group .tab-label {
+.gray-tab-style-cir:not([class*="is-style-grytab"]) .tab-label-group .tab-label,
+:is(.is-style-grytab-cir, .is-style-grytab-cir-equal, .is-style-grytab-cir-equal-pc, .is-style-grytab-cir-equal-odd) .tab-label-group .tab-label {
   padding: 0.5em 1.5em;
   background-color: var(--white);
   border-radius: 30px 30px;
@@ -2991,15 +3039,24 @@ blockquote cite {
   transition: background-color .4s, color .4s;
 }
 
-.gray-tab-style-cir .tab-label-group .tab-label.is-active {
+.gray-tab-style-cir:not([class*="is-style-grytab"]) .tab-label-group .tab-label.is-active,
+:is(.is-style-grytab-cir, .is-style-grytab-cir-equal, .is-style-grytab-cir-equal-pc, .is-style-grytab-cir-equal-odd) .tab-label-group .tab-label.is-active {
   background-color: var(--Blk_Beige_S50);
   color: var(--white);
+}
+
+.gray-tab-style-cir:not([class*="is-style-grytab"]) .tab-label-group .tab-label.is-active::after,
+:is(.is-style-grytab-cir, .is-style-grytab-cir-equal, .is-style-grytab-cir-equal-pc, .is-style-grytab-cir-equal-odd) .tab-label-group .tab-label.is-active::after,
+.gray-tab-style-cir:not([class*="is-style-grytab"]) .tab-label-group .tab-label::after,
+:is(.is-style-grytab-cir, .is-style-grytab-cir-equal, .is-style-grytab-cir-equal-pc, .is-style-grytab-cir-equal-odd) .tab-label-group .tab-label::after {
+  display: none;
 }
 
 
 /* tab box for .nwa */
 /* even */
-.nwa .gray-tab-label-equal .tab-label-group {
+.nwa .gray-tab-label-equal:not([class*="is-style-grytab"]) .tab-label-group,
+.nwa :where(.is-style-grytab-low-line-equal, .is-style-grytab-up-line-equal, .is-style-grytab-tablabel-equal, .is-style-grytab-line-equal, .is-style-grytab-cir-equal) .tab-label-group {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
@@ -3007,26 +3064,48 @@ blockquote cite {
 }
 
 /* odd (Max 3想定) */
-.nwa .gray-tab-label-equal.--odd .tab-label-group {
+.nwa .gray-tab-label-equal.--odd:not([class*="is-style-grytab"]) .tab-label-group,
+.nwa :where(.is-style-grytab-low-line-equal-odd, .is-style-grytab-up-line-equal-odd, .is-style-grytab-tablabel-equal-odd, .is-style-grytab-line-equal-odd, .is-style-grytab-cir-equal-odd) .tab-label-group {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
   row-gap: 4px;
 }
 
-.nwa .gray-tab-label-equal .tab-label-group .tab-label {
+.nwa .gray-tab-label-equal:not([class*="is-style-grytab"]) .tab-label-group .tab-label,
+.nwa :where(.is-style-grytab-low-line-equal, .is-style-grytab-up-line-equal, .is-style-grytab-tablabel-equal, .is-style-grytab-line-equal, .is-style-grytab-cir-equal) .tab-label-group .tab-label,
+.nwa :where(.is-style-grytab-low-line-equal-pc, .is-style-grytab-up-line-equal-pc, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-line-equal-pc, .is-style-grytab-cir-equal-pc) .tab-label-group .tab-label,
+.nwa :where(.is-style-grytab-low-line-equal-odd, .is-style-grytab-up-line-equal-odd, .is-style-grytab-tablabel-equal-odd, .is-style-grytab-line-equal-odd, .is-style-grytab-cir-equal-odd) .tab-label-group .tab-label {
   font-size: 12px;
 }
 
 /* ラインタイプ　かつ even */
-.nwa .gray-tab-style-line.gray-tab-label-equal:not(.--odd) .tab-label-group .tab-label:nth-child(odd)::before {
+.nwa .gray-tab-style-line.gray-tab-label-equal:not([class*="is-style-grytab"]):not(.--odd) .tab-label-group .tab-label:nth-child(odd)::before,
+.nwa :where(.is-style-grytab-line-equal, .is-style-grytab-line-equal-pc) .tab-label-group .tab-label:nth-child(odd)::before {
   display: none;
 }
 
 /* ラインタイプ　かつ --odd */
-.nwa .gray-tab-style-line.gray-tab-label-equal.--odd .tab-label-group .tab-label:nth-child(3n+1)::before {
+.nwa .gray-tab-style-line.gray-tab-label-equal:not([class*="is-style-grytab"]).--odd .tab-label-group .tab-label:nth-child(3n+1)::before,
+.nwa .is-style-grytab-line-equal-odd .tab-label-group .tab-label:nth-child(3n+1)::before {
   display: none;
 }
+
+/* オプション：均等配置 PC時のみセンター ver はnwaに配置されたら even均等配置にする　*/
+.nwa .gray-tab-label-equal:not([class*="is-style-grytab"]).--pc-center .tab-label-group,
+.nwa :where(.is-style-grytab-low-line-equal-pc, .is-style-grytab-up-line-equal-pc, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-line-equal-pc, .is-style-grytab-cir-equal-pc) .tab-label-group {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  row-gap: 4px;
+}
+
+.nwa .gray-tab-label-equal:not([class*="is-style-grytab"]).--pc-center .tab-label-group .tab-label,
+.nwa :where(.is-style-grytab-low-line-equal-pc, .is-style-grytab-up-line-equal-pc, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-line-equal-pc, .is-style-grytab-cir-equal-pc) .tab-label-group .tab-label {
+  /* flex: 0 0 25%; */
+  text-align: center;
+}
+
 
 /* サイドバーpadding */
 .skin-grayish .sidebar-menu-content .sidebar.nwa {
@@ -3037,7 +3116,7 @@ blockquote cite {
   padding: 1.2em 0;
 }
 
-.nwa .gray-tab-style-cir .tab-content-group,
+.nwa :is(.gray-tab-style-cir, .is-style-grytab-cir, .is-style-grytab-cir-equal, .is-style-grytab-cir-equal-pc, .is-style-grytab-cir-equal-odd) .tab-content-group,
 .nwa .footer-widgets .tab-content-group,
 .nwa .footer-widgets-mobile .tab-content-group {
   padding: 1.2em 0.8em;
@@ -3450,13 +3529,25 @@ blockquote cite {
   scale: 1.1;
 }
 
+/* v1.1.4 */
 .skin-grayish .pagination .page-numbers,
 .skin-grayish .pager-links.pager-numbers .post-page-numbers .page-numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
   background-color: var(--skin-grayish-gradient);
   border-radius: 99%;
   border: solid 1px var(--skin-grayish-gradient);
   letter-spacing: 0;
 }
+
+
+/* v1.1.3 */
+.skin-grayish .pager-links.pager-numbers .post-page-numbers {
+  text-decoration: none;
+}
+
 
 .skin-grayish .pagination .page-numbers.current,
 .skin-grayish .pager-links.pager-numbers .post-page-numbers .page-numbers.current {
@@ -3470,15 +3561,27 @@ blockquote cite {
   color: var(--skin-grayish-site-sub-color);
 }
 
-.skin-grayish.ff-noto-sans-jp .pagination .page-numbers,
+/* .skin-grayish.ff-noto-sans-jp .pagination .page-numbers,
 .skin-grayish.ff-noto-sans-jp .pager-links.pager-numbers .post-page-numbers .page-numbers {
   line-height: 43px;
-}
+} */
 
 /* ページネーション margin-bottom fronttyp:default & tab */
 .skin-grayish .pagination {
   margin: 24px 0 64px 0;
 }
+
+/* v1.1.3 */
+.skin-grayish .pagination {
+  flex-wrap: wrap;
+  row-gap: 1em;
+}
+
+.skin-grayish .pagination,
+.skin-grayish .pager-links.pager-numbers .post-page-numbers .page-numbers {
+  font-size: 16px;
+}
+
 
 /****************************** Footer  ******************************/
 .skin-grayish .footer {
@@ -4416,10 +4519,12 @@ blockquote cite {
   align-items: center;
   background-color: var(--skin-grayish-cat-back);
   width: 80px;
+  height: 80px;
   border-radius: 99%;
   top: calc(50% - 30px);
   left: unset;
   right: 20px;
+  padding: 10px 10px 10px 10px;
 }
 
 .skin-grayish .scroll-hint-icon:before,
@@ -4428,6 +4533,7 @@ blockquote cite {
 }
 
 .skin-grayish .scroll-hint-text {
+  font-size: 10px;
   color: var(--white);
   margin-top: 0;
 }
@@ -4714,6 +4820,28 @@ blockquote cite {
 /* for spotlight */
 body:has(#spotlight.show) .header {
   background-image: none;
+}
+
+/* v1.1.3 検索やinputのiOSズーム対応 投稿or固定ページ内の問い合わせフォームにも対応*/
+.search-box.input-box,
+.entry-content input[type="text"],
+.entry-content input[type="password"],
+.entry-content input[type="date"],
+.entry-content input[type="datetime"],
+.entry-content input[type="email"],
+.entry-content input[type="number"],
+.entry-content input[type="search"],
+.entry-content input[type="tel"],
+.entry-content input[type="time"],
+.entry-content input[type="url"],
+.entry-content textarea,
+.comment-area input,
+.comment-area textarea {
+  font-size: 16px;
+}
+
+.wp-block-search__input {
+  font-size: 16px !important;
 }
 
 
@@ -5492,7 +5620,9 @@ body:has(#spotlight.show) .header {
 
   /* tab box for front */
   /* even */
-  .gray-tab-label-equal .tab-label-group {
+  .gray-tab-label-equal:not([class*="is-style-grytab"]).tab-block .tab-label-group,
+  :where(.is-style-grytab-low-line-equal, .is-style-grytab-up-line-equal, .is-style-grytab-tablabel-equal, .is-style-grytab-line-equal, .is-style-grytab-cir-equal).tab-block .tab-label-group,
+  :where(.is-style-grytab-low-line-equal-pc, .is-style-grytab-up-line-equal-pc, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-line-equal-pc, .is-style-grytab-cir-equal-pc).tab-block .tab-label-group {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
@@ -5500,24 +5630,29 @@ body:has(#spotlight.show) .header {
   }
 
   /* odd (Max 3想定) */
-  .gray-tab-label-equal.--odd .tab-label-group {
+  .gray-tab-label-equal.--odd:not([class*="is-style-grytab"]) .tab-label-group,
+  :where(.is-style-grytab-low-line-equal-odd, .is-style-grytab-up-line-equal-odd, .is-style-grytab-tablabel-equal-odd, .is-style-grytab-line-equal-odd, .is-style-grytab-cir-equal-odd).tab-block .tab-label-group {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     row-gap: 4px;
   }
 
-  .gray-tab-label-equal .tab-label-group .tab-label {
+  .gray-tab-label-equal:not([class*="is-style-grytab"]) .tab-label-group .tab-label,
+  :where(.is-style-grytab-low-line-equal-pc, .is-style-grytab-up-line-equal-pc, .is-style-grytab-tablabel-equal-pc, .is-style-grytab-line-equal-pc, .is-style-grytab-cir-equal-pc) .tab-label-group .tab-label,
+  :where(.is-style-grytab-low-line-equal-odd, .is-style-grytab-up-line-equal-odd, .is-style-grytab-tablabel-equal-odd, .is-style-grytab-line-equal-odd, .is-style-grytab-cir-equal-odd) .tab-label-group .tab-label {
     font-size: clamp(0.75rem, 0.6397rem + 0.3676vw, 0.875rem);
   }
 
   /* ラインタイプ　かつ even */
-  .gray-tab-style-line.gray-tab-label-equal:not(.--odd) .tab-label-group .tab-label:nth-child(odd)::before {
+  .gray-tab-style-line.gray-tab-label-equal:not(.--odd):not([class*="is-style-grytab"]) .tab-label-group .tab-label:nth-child(odd)::before,
+  :where(.is-style-grytab-line-equal, .is-style-grytab-line-equal-pc) .tab-label-group .tab-label:nth-child(odd)::before {
     display: none;
   }
 
   /* ラインタイプ　かつ --odd */
-  .gray-tab-style-line.gray-tab-label-equal.--odd .tab-label-group .tab-label:nth-child(3n+1)::before {
+  .gray-tab-style-line.gray-tab-label-equal.--odd:not([class*="is-style-grytab"]) .tab-label-group .tab-label:nth-child(3n+1)::before,
+  .is-style-grytab-line-equal-odd .tab-label-group .tab-label:nth-child(3n+1)::before {
     display: none;
   }
 
@@ -5848,6 +5983,7 @@ body:has(#spotlight.show) .header {
     justify-self: center;
     border-left: 0px;
     padding-left: 0rem;
+    width: 100%;
   }
 
   :where(.main, .content-bottom, .content-top) .author-box .author-follows .sns-follow-buttons,
@@ -6481,9 +6617,15 @@ body:has(#spotlight.show) .header {
     padding: 0.4rem;
   }
 
-  .skin-grayish.ff-noto-sans-jp .pagination .page-numbers,
+  /* .skin-grayish.ff-noto-sans-jp .pagination .page-numbers,
   .skin-grayish.ff-noto-sans-jp .pager-links.pager-numbers .post-page-numbers .page-numbers {
     line-height: 31px;
+  } */
+
+  /* v1.1.3 */
+  .skin-grayish .pagination,
+  .skin-grayish .pager-links.pager-numbers .post-page-numbers .page-numbers {
+    font-size: 14px;
   }
 
 

@@ -95,7 +95,7 @@
 @keyframes fadeIn {
   0% {
     transform: translateY(10%);
-    opacity: 0;
+    opacity: 0.01;
   }
 
   100% {
@@ -180,9 +180,11 @@ body {
 }
 
 #navi {
+  background-color: $main-color-dark;
   a {
     position: relative;
     color: $white-color;
+    background-color: $main-color-dark;
 
     &::after {
       @include pseudo();
@@ -858,7 +860,10 @@ body {
 }
 
 // pager post navi ページ送りナビ
-#pager-post-navi {
+.pager-post-navi {
+  &.post-navi-square.post-navi-border a{
+    border-color: $main-color-midium;
+  }
 
   // displya border settings ボーダー表示設定あり
   &.post-navi-border a {
@@ -866,7 +871,7 @@ body {
     border-bottom: solid $main-color-midium 1px;
   }
 
-  &.post-navi-border {
+  &.post-navi-border:not(.post-navi-square) {
     .prev-post~.next-post {
       border-top: none;
     }
