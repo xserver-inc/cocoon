@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.7.7.7\n"
+"Project-Id-Version: Cocoon 2.8.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-03T08:25:58+00:00\n"
+"POT-Creation-Date: 2024-11-21T11:18:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -65,14 +65,14 @@ msgstr ""
 #: comments.php:35
 #: tmp/mobile-prev-button.php:20
 #: tmp/pager-page-links.php:16
-#: tmp/pagination.php:69
+#: tmp/pagination.php:86
 msgid "前へ"
 msgstr ""
 
 #: comments.php:36
 #: tmp/mobile-next-button.php:20
 #: tmp/pager-page-links.php:17
-#: tmp/pagination.php:70
+#: tmp/pagination.php:87
 msgid "次へ"
 msgstr ""
 
@@ -94,12 +94,12 @@ msgstr ""
 msgid "コメントを書き込む"
 msgstr ""
 
-#: functions.php:154
+#: functions.php:155
 msgid "キーワード指定なし"
 msgstr ""
 
-#: functions.php:506
 #: functions.php:507
+#: functions.php:508
 #: lib/admin.php:409
 msgid "パターン一覧"
 msgstr ""
@@ -259,7 +259,7 @@ msgid "青色アンダーラインマーカー"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:168
-#: blocks/src/block/radar/edit.js:297
+#: blocks/src/block/radar/edit.js:306
 #: blocks/src/toolbutton/dropdown-font-sizes.js:54
 #: blocks/src/toolbutton/dropdown-font-sizes.js:67
 msgid "フォントサイズ"
@@ -626,8 +626,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:307
 #: lib/admin-tinymce-qtag.php:1662
-#: tmp/css-custom.php:927
-#: tmp/css-custom.php:974
+#: tmp/css-custom.php:928
+#: tmp/css-custom.php:975
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
@@ -658,8 +658,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:457
 #: lib/admin-tinymce-qtag.php:1668
-#: tmp/css-custom.php:923
-#: tmp/css-custom.php:971
+#: tmp/css-custom.php:924
+#: tmp/css-custom.php:972
 #: blocks/src/block/blogcard/deprecated.js:85
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -676,8 +676,8 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:547
 #: lib/admin-tinymce-qtag.php:1680
-#: tmp/css-custom.php:943
-#: tmp/css-custom.php:986
+#: tmp/css-custom.php:944
+#: tmp/css-custom.php:987
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -1127,8 +1127,8 @@ msgstr ""
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
 #: skins/skin-made-in-heaven/functions.php:109
-#: tmp/css-custom.php:907
-#: tmp/css-custom.php:959
+#: tmp/css-custom.php:908
+#: tmp/css-custom.php:960
 #: blocks/src/block/blogcard/deprecated.js:57
 #: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:66
@@ -1136,8 +1136,8 @@ msgid "関連記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1632
-#: tmp/css-custom.php:911
-#: tmp/css-custom.php:962
+#: tmp/css-custom.php:912
+#: tmp/css-custom.php:963
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:70
@@ -1145,8 +1145,8 @@ msgid "参考記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1638
-#: tmp/css-custom.php:915
-#: tmp/css-custom.php:965
+#: tmp/css-custom.php:916
+#: tmp/css-custom.php:966
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
@@ -1158,8 +1158,8 @@ msgstr ""
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
-#: tmp/css-custom.php:919
-#: tmp/css-custom.php:968
+#: tmp/css-custom.php:920
+#: tmp/css-custom.php:969
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:52
 #: blocks/src/block/popular-list/index.js:28
@@ -1168,8 +1168,8 @@ msgid "人気記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1650
-#: tmp/css-custom.php:931
-#: tmp/css-custom.php:977
+#: tmp/css-custom.php:932
+#: tmp/css-custom.php:978
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:78
@@ -1177,10 +1177,10 @@ msgid "あわせて読みたい"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1121
+#: lib/shortcodes.php:1128
 #: lib/widgets/cta-box.php:34
-#: tmp/css-custom.php:935
-#: tmp/css-custom.php:980
+#: tmp/css-custom.php:936
+#: tmp/css-custom.php:981
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:60
 #: blocks/src/old/blogcard-class/block.js:82
@@ -1188,8 +1188,8 @@ msgid "詳細はこちら"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1674
-#: tmp/css-custom.php:939
-#: tmp/css-custom.php:983
+#: tmp/css-custom.php:940
+#: tmp/css-custom.php:984
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:94
@@ -1197,15 +1197,15 @@ msgid "公式サイト"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1686
-#: tmp/css-custom.php:947
-#: tmp/css-custom.php:989
+#: tmp/css-custom.php:948
+#: tmp/css-custom.php:990
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1692
-#: tmp/css-custom.php:951
-#: tmp/css-custom.php:992
+#: tmp/css-custom.php:952
+#: tmp/css-custom.php:993
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr ""
@@ -1231,7 +1231,7 @@ msgid "PV"
 msgstr ""
 
 #: lib/admin.php:155
-#: lib/content-category.php:264
+#: lib/content-category.php:263
 #: lib/content-tag.php:211
 msgid "アイキャッチ"
 msgstr ""
@@ -1270,7 +1270,7 @@ msgid "ダッシュボード"
 msgstr ""
 
 #: lib/admin.php:380
-#: lib/shortcodes.php:498
+#: lib/shortcodes.php:503
 msgid "投稿一覧"
 msgstr ""
 
@@ -1307,6 +1307,12 @@ msgstr ""
 
 #: lib/admin.php:445
 msgid "プラグイン一覧"
+msgstr ""
+
+#: lib/admin.php:453
+#: lib/original-menu.php:20
+#: lib/page-settings/_top-page.php:128
+msgid "Cocoon 設定"
 msgstr ""
 
 #: lib/admin.php:460
@@ -1504,7 +1510,7 @@ msgstr ""
 
 #: lib/block-editor-styles-list.php:25
 #: lib/block-editor-styles-paragraph.php:25
-#: lib/content-category.php:227
+#: lib/content-category.php:226
 #: lib/page-settings/all-forms.php:165
 #: lib/page-settings/appeal-forms.php:90
 #: lib/page-settings/buttons-forms.php:83
@@ -1519,7 +1525,7 @@ msgstr ""
 #: blocks/src/block/button/edit.js:144
 #: blocks/src/block/faq/edit.js:173
 #: blocks/src/block/icon-list/edit.js:124
-#: blocks/src/block/radar/edit.js:271
+#: blocks/src/block/radar/edit.js:280
 #: blocks/src/block/tab-box/edit.js:146
 #: blocks/src/block/timeline/edit.js:161
 #: blocks/src/block/toggle-box/edit.js:121
@@ -1578,22 +1584,22 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: lib/content-category.php:180
+#: lib/content-category.php:179
 #: lib/content-tag.php:150
-#: lib/seo.php:435
-#: lib/seo.php:579
+#: lib/seo.php:415
+#: lib/seo.php:556
 msgid "「%s」の記事一覧です。"
 msgstr ""
 
-#: lib/content-category.php:222
+#: lib/content-category.php:221
 msgid "カテゴリー色"
 msgstr ""
 
-#: lib/content-category.php:231
+#: lib/content-category.php:230
 msgid "カテゴリーの色を指定します。"
 msgstr ""
 
-#: lib/content-category.php:236
+#: lib/content-category.php:235
 #: lib/page-settings/all-forms.php:99
 #: lib/page-settings/buttons-forms.php:86
 #: lib/page-settings/editor-forms.php:74
@@ -1606,7 +1612,7 @@ msgstr ""
 #: blocks/src/block/button/edit.js:149
 #: blocks/src/block/faq/edit.js:178
 #: blocks/src/block/icon-list/edit.js:129
-#: blocks/src/block/radar/edit.js:276
+#: blocks/src/block/radar/edit.js:285
 #: blocks/src/block/tab-box/edit.js:151
 #: blocks/src/block/timeline/edit.js:166
 #: blocks/src/block/toggle-box/edit.js:126
@@ -1615,64 +1621,43 @@ msgstr ""
 msgid "文字色"
 msgstr ""
 
-#: lib/content-category.php:240
+#: lib/content-category.php:239
 msgid "カテゴリーの文字色を指定します。入力しない場合は、白色になります。"
 msgstr ""
 
-#: lib/content-category.php:245
+#: lib/content-category.php:244
 #: lib/content-tag.php:192
-#: lib/page-affiliate-tag/form.php:30
-#: lib/page-func-text/form.php:30
-#: lib/page-settings/appeal-forms.php:112
-#: lib/page-settings/_top-page.php:179
-#: lib/page-speech-balloon/form.php:49
-#: lib/widgets/author-box.php:68
-#: lib/widgets/box-menus.php:73
-#: lib/widgets/cta-box.php:101
-#: lib/widgets/fb-like-balloon.php:69
-#: lib/widgets/fb-like-box.php:99
-#: lib/widgets/item-ranking.php:64
-#: lib/widgets/mobile-text.php:73
-#: lib/widgets/navi-entries.php:101
-#: lib/widgets/pc-text.php:72
-#: lib/widgets/recent-comments.php:141
-#: lib/widgets/recommended-cards.php:87
-#: lib/widgets/sns-follow-buttons.php:56
-#: lib/widgets/toc.php:83
-#: blocks/src/block/radar/edit.js:324
-#: blocks/src/block/timeline-item/deprecated.js:24
-#: blocks/src/block/timeline-item/deprecated.js:48
-#: blocks/src/block/timeline-item/edit.js:28
-#: blocks/src/block/timeline/edit.js:185
-msgid "タイトル"
+#: lib/custom-fields/seo-field.php:118
+msgid "SEOタイトル"
+msgstr ""
+
+#: lib/content-category.php:249
+#: lib/content-tag.php:197
+msgid "SEO向けのタイトルの入力"
 msgstr ""
 
 #: lib/content-category.php:250
-#: lib/content-tag.php:197
-msgid "ページのタイトル"
-msgstr ""
-
-#: lib/content-category.php:251
 #: lib/content-tag.php:198
-msgid "このページのタイトルを指定します。ページのタイトルタグにここで入力したテキストが適用されます。"
+#: lib/custom-fields/seo-field.php:120
+msgid "検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。"
 msgstr ""
 
-#: lib/content-category.php:255
+#: lib/content-category.php:254
 #: lib/content-tag.php:202
 #: lib/page-settings/_top-page.php:203
 msgid "本文"
 msgstr ""
 
-#: lib/content-category.php:260
+#: lib/content-category.php:259
 msgid "このページで表示されるメインコンテンツを入力してください。"
 msgstr ""
 
-#: lib/content-category.php:269
+#: lib/content-category.php:268
 #: lib/content-tag.php:216
 msgid "タイトル下に表示されるアイキャッチ画像を選択してください。"
 msgstr ""
 
-#: lib/content-category.php:273
+#: lib/content-category.php:272
 #: lib/content-tag.php:220
 #: lib/custom-fields/seo-field.php:128
 #: lib/page-settings/title-forms.php:163
@@ -1682,15 +1667,15 @@ msgstr ""
 msgid "メタディスクリプション"
 msgstr ""
 
-#: lib/content-category.php:277
+#: lib/content-category.php:276
 msgid "カテゴリーページの説明文を入力してください"
 msgstr ""
 
-#: lib/content-category.php:279
+#: lib/content-category.php:278
 msgid "このページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。"
 msgstr ""
 
-#: lib/content-category.php:283
+#: lib/content-category.php:282
 #: lib/content-tag.php:230
 #: lib/custom-fields/seo-field.php:134
 #: lib/page-settings/title-forms.php:78
@@ -1699,46 +1684,46 @@ msgstr ""
 msgid "メタキーワード"
 msgstr ""
 
-#: lib/content-category.php:288
+#: lib/content-category.php:287
 #: lib/content-tag.php:235
 msgid "キーワード1,キーワード2,キーワード3"
 msgstr ""
 
-#: lib/content-category.php:289
+#: lib/content-category.php:288
 #: lib/content-tag.php:236
 msgid "このページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。"
 msgstr ""
 
-#: lib/content-category.php:293
+#: lib/content-category.php:292
 #: lib/content-tag.php:240
 msgid "noindex"
 msgstr ""
 
-#: lib/content-category.php:299
+#: lib/content-category.php:298
 #: lib/content-tag.php:246
 #: lib/custom-fields/seo-field.php:139
 msgid "インデックスしない（noindex）"
 msgstr ""
 
-#: lib/content-category.php:300
+#: lib/content-category.php:299
 #: lib/content-tag.php:247
 #: lib/custom-fields/seo-field.php:140
 msgid "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr ""
 
-#: lib/content-category.php:300
+#: lib/content-category.php:299
 msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢カテゴリーページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
 msgstr ""
 
-#: lib/content-category.php:370
+#: lib/content-category.php:369
 msgid "カテゴリーとしてウィジェットやラベル等で表示される名前です。"
 msgstr ""
 
-#: lib/content-category.php:372
+#: lib/content-category.php:371
 msgid "基本的にカテゴリー設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr ""
 
-#: lib/content-category.php:374
+#: lib/content-category.php:373
 msgid "基本的にタグ設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr ""
 
@@ -2055,16 +2040,12 @@ msgstr ""
 msgid "SEO"
 msgstr ""
 
-#: lib/custom-fields/seo-field.php:118
-msgid "SEOタイトル"
-msgstr ""
-
 #: lib/custom-fields/seo-field.php:119
 msgid "タイトルを入力してください。"
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:120
-msgid "検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。一般的に日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出し部分には「記事のタイトル」が利用されます）"
+msgid "一般的に日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出し部分には「記事のタイトル」が利用されます）"
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:130
@@ -2618,7 +2599,7 @@ msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
 #: lib/html-forms.php:1353
-#: lib/html-forms.php:1882
+#: lib/html-forms.php:1886
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
@@ -2667,28 +2648,28 @@ msgstr ""
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1781
+#: lib/html-forms.php:1782
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1784
+#: lib/html-forms.php:1785
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1787
+#: lib/html-forms.php:1788
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1790
+#: lib/html-forms.php:1791
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1793
+#: lib/html-forms.php:1794
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1836
-#: lib/shortcodes.php:1007
+#: lib/html-forms.php:1837
+#: lib/shortcodes.php:1012
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -2901,6 +2882,32 @@ msgstr ""
 #: lib/page-item-ranking/form-delete.php:34
 #: lib/page-speech-balloon/form-delete.php:31
 msgid "削除しないで一覧に戻る"
+msgstr ""
+
+#: lib/page-affiliate-tag/form.php:30
+#: lib/page-func-text/form.php:30
+#: lib/page-settings/appeal-forms.php:112
+#: lib/page-settings/_top-page.php:179
+#: lib/page-speech-balloon/form.php:49
+#: lib/widgets/author-box.php:68
+#: lib/widgets/box-menus.php:73
+#: lib/widgets/cta-box.php:101
+#: lib/widgets/fb-like-balloon.php:69
+#: lib/widgets/fb-like-box.php:99
+#: lib/widgets/item-ranking.php:64
+#: lib/widgets/mobile-text.php:73
+#: lib/widgets/navi-entries.php:101
+#: lib/widgets/pc-text.php:72
+#: lib/widgets/recent-comments.php:130
+#: lib/widgets/recommended-cards.php:87
+#: lib/widgets/sns-follow-buttons.php:56
+#: lib/widgets/toc.php:83
+#: blocks/src/block/radar/edit.js:333
+#: blocks/src/block/timeline-item/deprecated.js:24
+#: blocks/src/block/timeline-item/deprecated.js:48
+#: blocks/src/block/timeline-item/edit.js:28
+#: blocks/src/block/timeline/edit.js:185
+msgid "タイトル"
 msgstr ""
 
 #: lib/page-affiliate-tag/form.php:31
@@ -4545,19 +4552,19 @@ msgstr ""
 #: lib/page-settings/all-forms.php:57
 #: lib/page-settings/index-forms.php:50
 #: lib/page-settings/index-forms.php:82
-#: skins/skin-grayish-topfull/functions.php:206
 #: skins/skin-grayish-topfull/functions.php:234
-#: skins/skin-grayish-topfull/functions.php:696
-#: skins/skin-grayish-topfull/functions.php:725
-#: skins/skin-grayish-topfull/functions.php:753
-#: skins/skin-grayish-topfull/functions.php:779
-#: skins/skin-grayish-topfull/functions.php:896
-#: skins/skin-grayish-topfull/functions.php:1431
-#: skins/skin-grayish-topfull/functions.php:1586
-#: skins/skin-grayish-topfull/functions.php:1740
-#: skins/skin-grayish-topfull/functions.php:1768
-#: skins/skin-grayish-topfull/functions.php:1791
-#: skins/skin-grayish-topfull/functions.php:1838
+#: skins/skin-grayish-topfull/functions.php:262
+#: skins/skin-grayish-topfull/functions.php:730
+#: skins/skin-grayish-topfull/functions.php:759
+#: skins/skin-grayish-topfull/functions.php:787
+#: skins/skin-grayish-topfull/functions.php:813
+#: skins/skin-grayish-topfull/functions.php:930
+#: skins/skin-grayish-topfull/functions.php:1465
+#: skins/skin-grayish-topfull/functions.php:1620
+#: skins/skin-grayish-topfull/functions.php:1774
+#: skins/skin-grayish-topfull/functions.php:1802
+#: skins/skin-grayish-topfull/functions.php:1825
+#: skins/skin-grayish-topfull/functions.php:1872
 msgid "（デフォルト）"
 msgstr ""
 
@@ -5988,7 +5995,7 @@ msgstr ""
 #: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:130
 #: lib/page-settings/sns-share-forms-top.php:117
-#: lib/shortcodes.php:504
+#: lib/shortcodes.php:509
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
 msgstr ""
@@ -6134,10 +6141,6 @@ msgstr ""
 
 #: lib/page-settings/code-forms.php:99
 msgid "ハイライト表示するCSSセレクタ"
-msgstr ""
-
-#: lib/page-settings/code-forms.php:103
-msgid ".entry-content pre"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:104
@@ -6316,7 +6319,7 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1117
+#: lib/shortcodes.php:1124
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -7544,7 +7547,7 @@ msgid "フロントページの表示形式を選択します。"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:60
-#: lib/widgets/info-list.php:160
+#: lib/widgets/info-list.php:161
 msgid "表示カテゴリー"
 msgstr ""
 
@@ -7755,7 +7758,7 @@ msgid "アーカイブ（インデックスリスト・新着関連記事ウィ�
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:13
-#: skins/skin-grayish-topfull/functions.php:1692
+#: skins/skin-grayish-topfull/functions.php:1726
 msgid "モバイル設定"
 msgstr ""
 
@@ -9689,7 +9692,11 @@ msgid "メタディスクリプションを入力"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:70
-msgid "フロントページで出力するメタディスクリプションタグの内容を入力してください。入力しない場合は、メタタグは出力されません。"
+msgid "フロントページで出力するメタディスクリプションタグの内容を入力してください。"
+msgstr ""
+
+#: lib/page-settings/title-forms.php:70
+msgid "入力しない場合は、キャッチフレーズが表示されます。"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:82
@@ -10886,19 +10893,19 @@ msgstr ""
 msgid "歳"
 msgstr ""
 
-#: lib/shortcodes.php:510
+#: lib/shortcodes.php:515
 msgid "月別アーカイブ"
 msgstr ""
 
-#: lib/shortcodes.php:980
+#: lib/shortcodes.php:985
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr ""
 
-#: lib/shortcodes.php:1089
+#: lib/shortcodes.php:1096
 msgid "保存エラー"
 msgstr ""
 
-#: lib/shortcodes.php:1107
+#: lib/shortcodes.php:1114
 msgid "エラー："
 msgstr ""
 
@@ -10987,7 +10994,7 @@ msgid "CodePen URL"
 msgstr ""
 
 #: lib/sns.php:17
-#: tmp/header-ogp.php:81
+#: tmp/header-ogp.php:84
 msgid "ja_JP"
 msgstr ""
 
@@ -11245,41 +11252,41 @@ msgstr ""
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:2536
+#: lib/utils.php:2544
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2544
+#: lib/utils.php:2552
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2552
+#: lib/utils.php:2560
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2560
+#: lib/utils.php:2568
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2568
+#: lib/utils.php:2576
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2579
+#: lib/utils.php:2587
 msgid "%s年"
 msgstr ""
 
-#: lib/utils.php:2581
+#: lib/utils.php:2589
 msgid "%s年%sヶ月"
 msgstr ""
 
@@ -11569,7 +11576,7 @@ msgid "例：この記事を書いた人"
 msgstr ""
 
 #: lib/widgets/author-box.php:82
-#: blocks/src/block/profile/edit.js:92
+#: blocks/src/block/profile/edit.js:93
 msgid "画像を円形にする"
 msgstr ""
 
@@ -11823,7 +11830,7 @@ msgstr ""
 msgid "更新日順に並び替え"
 msgstr ""
 
-#: lib/widgets/info-list.php:161
+#: lib/widgets/info-list.php:162
 msgid "（※未選択の場合は全て表示）"
 msgstr ""
 
@@ -11993,8 +12000,8 @@ msgid "PV表示"
 msgstr ""
 
 #: lib/widgets/recent-comments.php:19
-#: lib/widgets/recent-comments.php:127
-#: lib/widgets/recent-comments.php:133
+#: lib/widgets/recent-comments.php:116
+#: lib/widgets/recent-comments.php:122
 msgid "最近のコメント"
 msgstr ""
 
@@ -12002,23 +12009,23 @@ msgstr ""
 msgid "最近投稿されたコメントを表示するウィジェットです。"
 msgstr ""
 
-#: lib/widgets/recent-comments.php:105
+#: lib/widgets/recent-comments.php:93
 msgid "コメントなし"
 msgstr ""
 
-#: lib/widgets/recent-comments.php:148
+#: lib/widgets/recent-comments.php:137
 msgid "表示するコメント数"
 msgstr ""
 
-#: lib/widgets/recent-comments.php:155
+#: lib/widgets/recent-comments.php:144
 msgid "コメント文字数"
 msgstr ""
 
-#: lib/widgets/recent-comments.php:162
+#: lib/widgets/recent-comments.php:151
 msgid "管理者の除外"
 msgstr ""
 
-#: lib/widgets/recent-comments.php:164
+#: lib/widgets/recent-comments.php:153
 msgid "管理者のコメントを表示しない"
 msgstr ""
 
@@ -12073,85 +12080,85 @@ msgstr ""
 msgid "設定"
 msgstr ""
 
-#: lib/_defins.php:113
+#: lib/_defins.php:116
 msgid "PR"
 msgstr ""
 
-#: lib/_defins.php:114
+#: lib/_defins.php:117
 msgid "記事内に広告が含まれています。"
 msgstr ""
 
-#: lib/_defins.php:146
-#: lib/_defins.php:167
-#: lib/_defins.php:178
-#: lib/_defins.php:191
+#: lib/_defins.php:149
+#: lib/_defins.php:170
+#: lib/_defins.php:181
+#: lib/_defins.php:194
 msgid "オート（AdSenseにおまかせ）"
 msgstr ""
 
-#: lib/_defins.php:147
-#: lib/_defins.php:168
-#: lib/_defins.php:179
-#: lib/_defins.php:192
+#: lib/_defins.php:150
+#: lib/_defins.php:171
+#: lib/_defins.php:182
+#: lib/_defins.php:195
 msgid "バナー"
 msgstr ""
 
-#: lib/_defins.php:148
-#: lib/_defins.php:180
-#: lib/_defins.php:193
+#: lib/_defins.php:151
+#: lib/_defins.php:183
+#: lib/_defins.php:196
 msgid "レスポンシブレクタングル"
 msgstr ""
 
-#: lib/_defins.php:149
-#: lib/_defins.php:181
-#: lib/_defins.php:194
+#: lib/_defins.php:152
+#: lib/_defins.php:184
+#: lib/_defins.php:197
 msgid "シングルレクタングル"
 msgstr ""
 
-#: lib/_defins.php:150
-#: lib/_defins.php:182
+#: lib/_defins.php:153
+#: lib/_defins.php:185
 msgid "ダブルレクタングル"
 msgstr ""
 
-#: lib/_defins.php:151
-#: lib/_defins.php:184
+#: lib/_defins.php:154
+#: lib/_defins.php:187
 msgid "記事内広告"
 msgstr ""
 
-#: lib/_defins.php:169
+#: lib/_defins.php:172
 msgid "レクタングル"
 msgstr ""
 
-#: lib/_defins.php:170
-#: lib/_defins.php:183
+#: lib/_defins.php:173
+#: lib/_defins.php:186
 msgid "ラージスカイスクレイパー"
 msgstr ""
 
-#: lib/_defins.php:177
-#: lib/_defins.php:190
+#: lib/_defins.php:180
+#: lib/_defins.php:193
 msgid "広告コードをそのまま表示"
 msgstr ""
 
-#: lib/_defins.php:317
+#: lib/_defins.php:320
 msgid "本当に削除してもいいですか？"
 msgstr ""
 
-#: lib/_defins.php:338
+#: lib/_defins.php:341
 msgid "無限ループを避けるため[toc]ショートコードはパターンでは使用できません。"
 msgstr ""
 
-#: lib/_defins.php:338
+#: lib/_defins.php:341
 msgid "ショートコードを削除してください。"
 msgstr ""
 
-#: lib/_defins.php:338
+#: lib/_defins.php:341
 msgid "ショートコードが使用されている場合でも表示時に取り消されます。"
 msgstr ""
 
-#: lib/_defins.php:341
+#: lib/_defins.php:344
 msgid "www.amazon.co.jp"
 msgstr ""
 
-#: lib/_defins.php:344
+#: lib/_defins.php:347
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr ""
 
@@ -12348,689 +12355,689 @@ msgstr ""
 msgid "【不透明度（背景色）】"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:176
+#: skins/skin-grayish-topfull/functions.php:204
 msgid "skin-grayish: カスタマイズ"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:184
+#: skins/skin-grayish-topfull/functions.php:212
 msgid "全体：英字フォント設定"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:187
+#: skins/skin-grayish-topfull/functions.php:215
 msgid "英字フォントの適用箇所についてはこちらを参照"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:200
+#: skins/skin-grayish-topfull/functions.php:228
 msgid "英字フォント設定 選択"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:201
+#: skins/skin-grayish-topfull/functions.php:229
 msgid "ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:201
+#: skins/skin-grayish-topfull/functions.php:229
 msgid "※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:208
-#: skins/skin-grayish-topfull/functions.php:210
+#: skins/skin-grayish-topfull/functions.php:236
+#: skins/skin-grayish-topfull/functions.php:238
 msgid "（細タイプなし）"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:213
+#: skins/skin-grayish-topfull/functions.php:241
 msgid "設定なし"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:228
+#: skins/skin-grayish-topfull/functions.php:256
 msgid "サイトロゴ（テキスト時）のフォント太さ 選択"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:229
+#: skins/skin-grayish-topfull/functions.php:257
 msgid "ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:229
+#: skins/skin-grayish-topfull/functions.php:257
 msgid "※フォントによって細いタイプがない場合があります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:234
+#: skins/skin-grayish-topfull/functions.php:262
 msgid "細"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:235
+#: skins/skin-grayish-topfull/functions.php:263
 msgid "普通"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:370
+#: skins/skin-grayish-topfull/functions.php:404
 msgid "全体：カラー設定"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:373
+#: skins/skin-grayish-topfull/functions.php:407
 msgid "各カラーの適用箇所についてはこちらを参照"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:388
+#: skins/skin-grayish-topfull/functions.php:422
 msgid "テキストカラー"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:389
+#: skins/skin-grayish-topfull/functions.php:423
 msgid "メニュー・見出し・本文などのテキストカラーを変更。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:390
-#: skins/skin-grayish-topfull/functions.php:410
-#: skins/skin-grayish-topfull/functions.php:428
-#: skins/skin-grayish-topfull/functions.php:446
-#: skins/skin-grayish-topfull/functions.php:464
-#: skins/skin-grayish-topfull/functions.php:482
-#: skins/skin-grayish-topfull/functions.php:668
-#: skins/skin-grayish-topfull/functions.php:1405
-#: skins/skin-grayish-topfull/functions.php:1710
-#: skins/skin-grayish-topfull/functions.php:1810
+#: skins/skin-grayish-topfull/functions.php:424
+#: skins/skin-grayish-topfull/functions.php:444
+#: skins/skin-grayish-topfull/functions.php:462
+#: skins/skin-grayish-topfull/functions.php:480
+#: skins/skin-grayish-topfull/functions.php:498
+#: skins/skin-grayish-topfull/functions.php:516
+#: skins/skin-grayish-topfull/functions.php:702
+#: skins/skin-grayish-topfull/functions.php:1439
+#: skins/skin-grayish-topfull/functions.php:1744
+#: skins/skin-grayish-topfull/functions.php:1844
 msgid "※空欄の場合はデフォルト値になります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:408
+#: skins/skin-grayish-topfull/functions.php:442
 msgid "メインアクセント 一番明るい青色"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:409
+#: skins/skin-grayish-topfull/functions.php:443
 msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:426
+#: skins/skin-grayish-topfull/functions.php:460
 msgid "メイン 薄い青色"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:427
+#: skins/skin-grayish-topfull/functions.php:461
 msgid "グローバルナビの3階層目の背景色、<br>フロントページのView Moreボタン、次のページへボタン、タグクラウドのホバー時背景色。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:444
+#: skins/skin-grayish-topfull/functions.php:478
 msgid "メイン 一番薄い青"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:445
+#: skins/skin-grayish-topfull/functions.php:479
 msgid "フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:462
+#: skins/skin-grayish-topfull/functions.php:496
 msgid "サブ 濃い青"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:463
+#: skins/skin-grayish-topfull/functions.php:497
 msgid "プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:480
+#: skins/skin-grayish-topfull/functions.php:514
 msgid "サブ もっと濃い青"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:481
+#: skins/skin-grayish-topfull/functions.php:515
 msgid "カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:623
+#: skins/skin-grayish-topfull/functions.php:657
 msgid "フロントページ設定：ヘッダー"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:626
-#: skins/skin-grayish-topfull/functions.php:1368
+#: skins/skin-grayish-topfull/functions.php:660
+#: skins/skin-grayish-topfull/functions.php:1402
 msgid "グローバルナビの高さ等変更についてはこちらを参照"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:626
+#: skins/skin-grayish-topfull/functions.php:660
 msgid "メインビジュアルについてはこちらを参照"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:626
+#: skins/skin-grayish-topfull/functions.php:660
 msgid "グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:641
+#: skins/skin-grayish-topfull/functions.php:675
 msgid "【PC】グローバルナビの高さ"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:642
+#: skins/skin-grayish-topfull/functions.php:676
 msgid "フロントページのグローバルナビの高さ。56px〜100pxの範囲で変更可能です。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:643
-#: skins/skin-grayish-topfull/functions.php:1382
+#: skins/skin-grayish-topfull/functions.php:677
+#: skins/skin-grayish-topfull/functions.php:1416
 msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:666
+#: skins/skin-grayish-topfull/functions.php:700
 msgid "【PC】グローバルナビの背景色"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:667
+#: skins/skin-grayish-topfull/functions.php:701
 msgid "グローバルナビの背景色。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:685
+#: skins/skin-grayish-topfull/functions.php:719
 msgid "【PC】グローバルナビ背景色の不透明度調整"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:686
-#: skins/skin-grayish-topfull/functions.php:1421
-#: skins/skin-grayish-topfull/functions.php:1729
-#: skins/skin-grayish-topfull/functions.php:1828
+#: skins/skin-grayish-topfull/functions.php:720
+#: skins/skin-grayish-topfull/functions.php:1455
+#: skins/skin-grayish-topfull/functions.php:1763
+#: skins/skin-grayish-topfull/functions.php:1862
 msgid "値が大きくなるほど背景色が濃くなります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:691
-#: skins/skin-grayish-topfull/functions.php:1426
-#: skins/skin-grayish-topfull/functions.php:1735
-#: skins/skin-grayish-topfull/functions.php:1833
+#: skins/skin-grayish-topfull/functions.php:725
+#: skins/skin-grayish-topfull/functions.php:1460
+#: skins/skin-grayish-topfull/functions.php:1769
+#: skins/skin-grayish-topfull/functions.php:1867
 msgid "（背景色なし)"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:701
-#: skins/skin-grayish-topfull/functions.php:1436
-#: skins/skin-grayish-topfull/functions.php:1745
-#: skins/skin-grayish-topfull/functions.php:1843
+#: skins/skin-grayish-topfull/functions.php:735
+#: skins/skin-grayish-topfull/functions.php:1470
+#: skins/skin-grayish-topfull/functions.php:1779
+#: skins/skin-grayish-topfull/functions.php:1877
 msgid "(不透明)"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:719
+#: skins/skin-grayish-topfull/functions.php:753
 msgid "メインビジュアル 白ドットのON/OFF"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:720
+#: skins/skin-grayish-topfull/functions.php:754
 msgid "メインビジュアルの上に白いドットを重ねるかどうかを選択。解像度が低い画像を使用する場合はON推奨"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:725
-#: skins/skin-grayish-topfull/functions.php:779
-#: skins/skin-grayish-topfull/functions.php:897
-#: skins/skin-grayish-topfull/functions.php:1768
-#: skins/skin-grayish-topfull/functions.php:1791
+#: skins/skin-grayish-topfull/functions.php:759
+#: skins/skin-grayish-topfull/functions.php:813
+#: skins/skin-grayish-topfull/functions.php:931
+#: skins/skin-grayish-topfull/functions.php:1802
+#: skins/skin-grayish-topfull/functions.php:1825
 msgid "ON"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:726
-#: skins/skin-grayish-topfull/functions.php:748
-#: skins/skin-grayish-topfull/functions.php:780
-#: skins/skin-grayish-topfull/functions.php:896
-#: skins/skin-grayish-topfull/functions.php:1769
-#: skins/skin-grayish-topfull/functions.php:1792
+#: skins/skin-grayish-topfull/functions.php:760
+#: skins/skin-grayish-topfull/functions.php:782
+#: skins/skin-grayish-topfull/functions.php:814
+#: skins/skin-grayish-topfull/functions.php:930
+#: skins/skin-grayish-topfull/functions.php:1803
+#: skins/skin-grayish-topfull/functions.php:1826
 msgid "OFF"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:742
+#: skins/skin-grayish-topfull/functions.php:776
 msgid "メインビジュアル 白オーバーレイの不透明度調整"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:743
+#: skins/skin-grayish-topfull/functions.php:777
 msgid "メインビジュアルの上に重ねる白の不透明度を調整。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:743
+#: skins/skin-grayish-topfull/functions.php:777
 msgid "値が大きくなるほど白が濃くなります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:773
+#: skins/skin-grayish-topfull/functions.php:807
 msgid "メインビジュアル下のスクロールアニメーションのON/OFF"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:774
+#: skins/skin-grayish-topfull/functions.php:808
 msgid "メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:774
+#: skins/skin-grayish-topfull/functions.php:808
 msgid "PC/SP共通の設定になります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:790
+#: skins/skin-grayish-topfull/functions.php:824
 msgid "X（旧Twitter）フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:794
+#: skins/skin-grayish-topfull/functions.php:828
 msgid "Mastodon フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:798
+#: skins/skin-grayish-topfull/functions.php:832
 msgid "Bluesky フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:802
+#: skins/skin-grayish-topfull/functions.php:836
 msgid "Misskey フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:806
+#: skins/skin-grayish-topfull/functions.php:840
 msgid "Facebook フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:810
+#: skins/skin-grayish-topfull/functions.php:844
 msgid "はてブ フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:814
+#: skins/skin-grayish-topfull/functions.php:848
 msgid "Instagram フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:818
+#: skins/skin-grayish-topfull/functions.php:852
 msgid "Pinterest フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:822
+#: skins/skin-grayish-topfull/functions.php:856
 msgid "YouTube フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:826
+#: skins/skin-grayish-topfull/functions.php:860
 msgid "LinkedIn フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:830
+#: skins/skin-grayish-topfull/functions.php:864
 msgid "note フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:834
+#: skins/skin-grayish-topfull/functions.php:868
 msgid "Flickr フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:838
+#: skins/skin-grayish-topfull/functions.php:872
 msgid "Amazon欲しい物リスト フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:842
+#: skins/skin-grayish-topfull/functions.php:876
 msgid "Twitch フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:846
+#: skins/skin-grayish-topfull/functions.php:880
 msgid "楽天ROOM フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:850
+#: skins/skin-grayish-topfull/functions.php:884
 msgid "Slack フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:854
+#: skins/skin-grayish-topfull/functions.php:888
 msgid "GitHub フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:858
+#: skins/skin-grayish-topfull/functions.php:892
 msgid "CodePen フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:862
+#: skins/skin-grayish-topfull/functions.php:896
 msgid "TikTok フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:866
+#: skins/skin-grayish-topfull/functions.php:900
 msgid "SoundCloud フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:870
+#: skins/skin-grayish-topfull/functions.php:904
 msgid "LINE フォローボタンを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:890
+#: skins/skin-grayish-topfull/functions.php:924
 msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:891
+#: skins/skin-grayish-topfull/functions.php:925
 msgid "※フロントページ以外のグローバルナビにも表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1137
+#: skins/skin-grayish-topfull/functions.php:1171
 msgid "全体：テキスト変更"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1140
+#: skins/skin-grayish-topfull/functions.php:1174
 msgid "テキスト変更についてはこちらを参照"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1145
-#: skins/skin-grayish-topfull/functions.php:1269
-#: skins/skin-grayish-topfull/functions.php:1273
+#: skins/skin-grayish-topfull/functions.php:1179
+#: skins/skin-grayish-topfull/functions.php:1303
+#: skins/skin-grayish-topfull/functions.php:1307
 msgid "New Post"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1153
+#: skins/skin-grayish-topfull/functions.php:1187
 msgid "【フロントページ】\"New Post\"を変更"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1154
+#: skins/skin-grayish-topfull/functions.php:1188
 msgid "New Postを別のテキストに変更できます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1154
-#: skins/skin-grayish-topfull/functions.php:1194
+#: skins/skin-grayish-topfull/functions.php:1188
+#: skins/skin-grayish-topfull/functions.php:1228
 msgid "Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1155
+#: skins/skin-grayish-topfull/functions.php:1189
 msgid "※空欄の場合は\"New Post\"が表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1165
-#: skins/skin-grayish-topfull/functions.php:1288
-#: skins/skin-grayish-topfull/functions.php:1289
-#: skins/skin-grayish-topfull/functions.php:1291
+#: skins/skin-grayish-topfull/functions.php:1199
+#: skins/skin-grayish-topfull/functions.php:1322
+#: skins/skin-grayish-topfull/functions.php:1323
+#: skins/skin-grayish-topfull/functions.php:1325
 msgid "最新の記事"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1173
+#: skins/skin-grayish-topfull/functions.php:1207
 msgid "【フロントページ】\"最新の記事\"を変更"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1174
+#: skins/skin-grayish-topfull/functions.php:1208
 msgid "\"最新の記事\"を別のテキストに変更できます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1174
-#: skins/skin-grayish-topfull/functions.php:1214
+#: skins/skin-grayish-topfull/functions.php:1208
+#: skins/skin-grayish-topfull/functions.php:1248
 msgid "Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1175
+#: skins/skin-grayish-topfull/functions.php:1209
 msgid "※空欄の場合は\"最新の記事\"が表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1193
+#: skins/skin-grayish-topfull/functions.php:1227
 msgid "【フロントページ】\"Category\"を変更"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1194
+#: skins/skin-grayish-topfull/functions.php:1228
 msgid "Categoryを別のテキストに変更できます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1195
+#: skins/skin-grayish-topfull/functions.php:1229
 msgid "※空欄の場合は\"Category\"が表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1205
-#: skins/skin-grayish-topfull/functions.php:1334
-#: skins/skin-grayish-topfull/functions.php:1335
-#: skins/skin-grayish-topfull/functions.php:1337
+#: skins/skin-grayish-topfull/functions.php:1239
+#: skins/skin-grayish-topfull/functions.php:1368
+#: skins/skin-grayish-topfull/functions.php:1369
+#: skins/skin-grayish-topfull/functions.php:1371
 msgid "View More"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1213
+#: skins/skin-grayish-topfull/functions.php:1247
 msgid "【フロントページ】View Moreボタン \"View More\"を変更"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1214
+#: skins/skin-grayish-topfull/functions.php:1248
 msgid "\"View More\"を別のテキストに変更できます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1215
+#: skins/skin-grayish-topfull/functions.php:1249
 msgid "※空欄の場合は\"View More\"が表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1225
-#: skins/skin-grayish-topfull/functions.php:1347
-#: skins/skin-grayish-topfull/functions.php:1348
-#: skins/skin-grayish-topfull/functions.php:1350
+#: skins/skin-grayish-topfull/functions.php:1259
+#: skins/skin-grayish-topfull/functions.php:1381
+#: skins/skin-grayish-topfull/functions.php:1382
+#: skins/skin-grayish-topfull/functions.php:1384
 msgid "Next"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1233
+#: skins/skin-grayish-topfull/functions.php:1267
 msgid "【フロントページ・各一覧ページ】Nextボタン \"Next\"を変更"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1234
+#: skins/skin-grayish-topfull/functions.php:1268
 msgid "\"Next\"を別のテキストに変更できます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1234
+#: skins/skin-grayish-topfull/functions.php:1268
 msgid "※空欄の場合は\"Next\"が表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1244
-#: skins/skin-grayish-topfull/functions.php:1540
-#: skins/skin-grayish-topfull/functions.php:1541
-#: skins/skin-grayish-topfull/functions.php:1543
+#: skins/skin-grayish-topfull/functions.php:1278
+#: skins/skin-grayish-topfull/functions.php:1574
+#: skins/skin-grayish-topfull/functions.php:1575
+#: skins/skin-grayish-topfull/functions.php:1577
 msgid "Home"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1252
+#: skins/skin-grayish-topfull/functions.php:1286
 msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1253
+#: skins/skin-grayish-topfull/functions.php:1287
 msgid "\"Home\"を別のテキストに変更できます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1253
+#: skins/skin-grayish-topfull/functions.php:1287
 msgid "※空欄の場合は\"Home\"が表示されます。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1365
+#: skins/skin-grayish-topfull/functions.php:1399
 msgid "フロントページ以外の設定:ヘッダー"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1380
+#: skins/skin-grayish-topfull/functions.php:1414
 msgid "【PC】フロントページ以外のグローバルナビの高さ"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1381
+#: skins/skin-grayish-topfull/functions.php:1415
 msgid "56px〜100pxの範囲で変更可能です。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1381
+#: skins/skin-grayish-topfull/functions.php:1415
 msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1403
+#: skins/skin-grayish-topfull/functions.php:1437
 msgid "【PC】フロントページ以外のヘッダーの背景色"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1404
+#: skins/skin-grayish-topfull/functions.php:1438
 msgid "ヘッダーの背景色を変更。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1420
+#: skins/skin-grayish-topfull/functions.php:1454
 msgid "【PC】ヘッダー背景色の不透明度調整"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1454
+#: skins/skin-grayish-topfull/functions.php:1488
 msgid "【PC】フロントページ以外のヘッダーロゴ画像アップロード"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1455
+#: skins/skin-grayish-topfull/functions.php:1489
 msgid "ロゴをフロントページと別画像にしたいとき設定します。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1559
+#: skins/skin-grayish-topfull/functions.php:1593
 msgid "コンテンツ下部ウィジェット：プロフィールボックス"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1562
+#: skins/skin-grayish-topfull/functions.php:1596
 msgid "プロフィールボックスの設定についてはこちらを参照"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1575
+#: skins/skin-grayish-topfull/functions.php:1609
 msgid "プロフィールボックスの背景画像の白オーバーレイ不透明度調整"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1576
+#: skins/skin-grayish-topfull/functions.php:1610
 msgid "値が大きくなるほど白色が濃くなります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1581
+#: skins/skin-grayish-topfull/functions.php:1615
 msgid "（白色なし）"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1611
+#: skins/skin-grayish-topfull/functions.php:1645
 msgid "画像アップロード"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1612
+#: skins/skin-grayish-topfull/functions.php:1646
 msgid "プロフィールボックスの背景に設定したい画像を選択"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1695
+#: skins/skin-grayish-topfull/functions.php:1729
 msgid "ヘッダー・フッターモバイルボタンの設定についてはこちらを参照"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1708
+#: skins/skin-grayish-topfull/functions.php:1742
 msgid "ヘッダーモバイルボタンの背景色"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1709
+#: skins/skin-grayish-topfull/functions.php:1743
 msgid "ヘッダーモバイルボタンの背景色を変更。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1711
+#: skins/skin-grayish-topfull/functions.php:1745
 msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1728
+#: skins/skin-grayish-topfull/functions.php:1762
 msgid "ヘッダーモバイルボタン背景色の不透明度調整"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1730
+#: skins/skin-grayish-topfull/functions.php:1764
 msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1761
+#: skins/skin-grayish-topfull/functions.php:1795
 msgid "フロントページのみヘッダーモバイルボタンをメニューアイコンのみON/OFF"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1762
+#: skins/skin-grayish-topfull/functions.php:1796
 msgid "フロントページ以外は設定したメニューを表示します。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1763
+#: skins/skin-grayish-topfull/functions.php:1797
 msgid "※ヘッダーモバイルボタンにオリジナルメニューを作成する場合は、メニューの一番上に#menuを設定してください。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1785
+#: skins/skin-grayish-topfull/functions.php:1819
 msgid "ヘッダーモバイルボタン＆フッターモバイルボタンのアイコン下のキャプションのON/OFF"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1786
+#: skins/skin-grayish-topfull/functions.php:1820
 msgid "モバイル時にアイコン下にキャプションを表示"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1808
+#: skins/skin-grayish-topfull/functions.php:1842
 msgid "フッターモバイルボタンの背景色"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1809
+#: skins/skin-grayish-topfull/functions.php:1843
 msgid "フッターモバイルボタンの背景色を変更。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1827
+#: skins/skin-grayish-topfull/functions.php:1861
 msgid "フッターモバイルボタン背景色の不透明度調整"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1862
+#: skins/skin-grayish-topfull/functions.php:1896
 msgid "モバイル時のヘッダーロゴ画像アップロード"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:1863
+#: skins/skin-grayish-topfull/functions.php:1897
 msgid "モバイル時のロゴを別画像にしたいとき設定します。"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2077
+#: skins/skin-grayish-topfull/functions.php:2111
 msgid "サイトテキストグレー"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2078
+#: skins/skin-grayish-topfull/functions.php:2112
 msgid "ライトグレーT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2079
+#: skins/skin-grayish-topfull/functions.php:2113
 msgid "ライトブルーT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2080
+#: skins/skin-grayish-topfull/functions.php:2114
 msgid "ライトブルーT70"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2081
+#: skins/skin-grayish-topfull/functions.php:2115
 msgid "ライトブルーT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2082
+#: skins/skin-grayish-topfull/functions.php:2116
 msgid "シェイドブルーS30"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2083
+#: skins/skin-grayish-topfull/functions.php:2117
 msgid "シェイドブルーS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2084
+#: skins/skin-grayish-topfull/functions.php:2118
 msgid "PinkT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2085
+#: skins/skin-grayish-topfull/functions.php:2119
 msgid "PinkT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2086
+#: skins/skin-grayish-topfull/functions.php:2120
 msgid "PinkT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2087
+#: skins/skin-grayish-topfull/functions.php:2121
 msgid "PinkS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2088
+#: skins/skin-grayish-topfull/functions.php:2122
 msgid "RedT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2089
+#: skins/skin-grayish-topfull/functions.php:2123
 msgid "RedT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2090
+#: skins/skin-grayish-topfull/functions.php:2124
 msgid "YellowT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2091
+#: skins/skin-grayish-topfull/functions.php:2125
 msgid "YellowT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2092
+#: skins/skin-grayish-topfull/functions.php:2126
 msgid "YellowT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2093
+#: skins/skin-grayish-topfull/functions.php:2127
 msgid "YellowS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2094
+#: skins/skin-grayish-topfull/functions.php:2128
 msgid "BeigeT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2095
+#: skins/skin-grayish-topfull/functions.php:2129
 msgid "BeigeT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2096
+#: skins/skin-grayish-topfull/functions.php:2130
 msgid "BeigeT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2097
+#: skins/skin-grayish-topfull/functions.php:2131
 msgid "BeigeS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2098
+#: skins/skin-grayish-topfull/functions.php:2132
 msgid "GreenT0"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2099
+#: skins/skin-grayish-topfull/functions.php:2133
 msgid "GreenT50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2100
+#: skins/skin-grayish-topfull/functions.php:2134
 msgid "GreenT90"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2101
+#: skins/skin-grayish-topfull/functions.php:2135
 msgid "GreenS30"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2102
+#: skins/skin-grayish-topfull/functions.php:2136
 msgid "GreenS50"
 msgstr ""
 
-#: skins/skin-grayish-topfull/functions.php:2145
+#: skins/skin-grayish-topfull/functions.php:2179
 msgid "横スクロールできます"
 msgstr ""
 
@@ -13246,7 +13253,7 @@ msgstr ""
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr ""
 
-#: tmp/css-custom.php:903
+#: tmp/css-custom.php:904
 msgid "ラベルなし"
 msgstr ""
 
@@ -13822,7 +13829,7 @@ msgstr ""
 #: blocks/src/block/button/edit.js:141
 #: blocks/src/block/faq/edit.js:155
 #: blocks/src/block/icon-list/edit.js:111
-#: blocks/src/block/radar/edit.js:263
+#: blocks/src/block/radar/edit.js:272
 #: blocks/src/block/tab-box/edit.js:138
 #: blocks/src/block/timeline/edit.js:153
 #: blocks/src/block/toggle-box/edit.js:113
@@ -13923,7 +13930,7 @@ msgstr ""
 
 #: blocks/src/block/blogcard/deprecated.js:47
 #: blocks/src/block/blogcard/edit.js:30
-#: blocks/src/block/profile/edit.js:87
+#: blocks/src/block/profile/edit.js:88
 #: blocks/src/block/tab-box/edit.js:65
 #: blocks/src/block/timeline-item/deprecated.js:20
 #: blocks/src/block/timeline-item/deprecated.js:40
@@ -14442,15 +14449,15 @@ msgstr ""
 msgid "人気記事の一覧を表示します。"
 msgstr ""
 
-#: blocks/src/block/profile/edit.js:53
+#: blocks/src/block/profile/edit.js:54
 msgid "選択できるユーザーがありません。"
 msgstr ""
 
-#: blocks/src/block/profile/edit.js:55
+#: blocks/src/block/profile/edit.js:56
 msgid "ユーザーを選択してください。"
 msgstr ""
 
-#: blocks/src/block/profile/edit.js:102
+#: blocks/src/block/profile/edit.js:103
 msgid "ユーザー"
 msgstr ""
 
@@ -14459,91 +14466,91 @@ msgid "プロフィールを表示します。"
 msgstr ""
 
 #: blocks/src/block/radar/edit.js:109
-#: blocks/src/block/radar/save.js:120
+#: blocks/src/block/radar/save.js:129
 msgid "総計:"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:266
+#: blocks/src/block/radar/edit.js:275
 msgid "チャート色"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:281
+#: blocks/src/block/radar/edit.js:290
 msgid "グリッド色"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:281
+#: blocks/src/block/radar/edit.js:290
 msgid "（※透過）"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:287
+#: blocks/src/block/radar/edit.js:296
 msgid "チャート設定"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:289
+#: blocks/src/block/radar/edit.js:298
 msgid "キャンバスサイズ"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:304
+#: blocks/src/block/radar/edit.js:313
 msgid "最大値"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:318
+#: blocks/src/block/radar/edit.js:327
 msgid "タイトルを表示"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:327
+#: blocks/src/block/radar/edit.js:336
 msgid "ここにタイトルを入力してください"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:331
+#: blocks/src/block/radar/edit.js:340
 msgid "データ名を表示"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:337
+#: blocks/src/block/radar/edit.js:346
 msgid "データ名"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:340
+#: blocks/src/block/radar/edit.js:349
 msgid "ここに凡例を入力してください"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:344
+#: blocks/src/block/radar/edit.js:353
 msgid "項目"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:344
+#: blocks/src/block/radar/edit.js:353
 msgid "（カンマ区切りで何項目でも入力可）"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:347
+#: blocks/src/block/radar/edit.js:356
 msgid "項目A, 項目B, 項目C, 項目D, 項目E"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:350
+#: blocks/src/block/radar/edit.js:359
 msgid "値"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:350
+#: blocks/src/block/radar/edit.js:359
 msgid "（カンマ区切りで項目の数だけ入力可）"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:366
+#: blocks/src/block/radar/edit.js:375
 msgid "1, 2, 3, 4, 5"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:369
+#: blocks/src/block/radar/edit.js:378
 msgid "総計を表示"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:374
+#: blocks/src/block/radar/edit.js:383
 msgid "項目に値を表示"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:379
+#: blocks/src/block/radar/edit.js:388
 msgid "値が最大値を超えるのを許可"
 msgstr ""
 
-#: blocks/src/block/radar/edit.js:384
+#: blocks/src/block/radar/edit.js:393
 msgid "アングルラインを表示"
 msgstr ""
 
