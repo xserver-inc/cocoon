@@ -477,21 +477,53 @@ if ( !function_exists( 'get_meta_description_text' ) ):
 function get_meta_description_text(){
   //generate_meta_description_tag関数でメタディスクリプションが空のときメタディスクリプションを出力しないようにするため、デフォルトは空文字
   $description = '';
-  if (is_front_top_page() && get_front_page_meta_description()) {
-    $description = get_front_page_meta_description();
+  if (is_front_top_page()) {
+    if (get_front_page_meta_description()) {
+      $description = get_front_page_meta_description();
+      if (!$description) {
+        $description = get_bloginfo('description');
+      }
+    }
   } elseif (is_singular() && is_meta_description_to_singular()) {
+    //パスワードが必要な時は何も出力しない
     if (!post_password_required()) {
       $description = get_the_meta_description();
     }
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
-  } elseif ((is_tag() || is_tax()) && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
+  } elseif ((is_tag() || is_tax()) && is_meta_description_to_category()) {
     $description = get_tag_meta_description();
   }
   if ($description) {
     $description = htmlspecialchars($description);
   }
   return apply_filters('get_meta_description_text', $description);
+}
+endif;
+
+//OGPディスクリプション文の取得
+if ( !function_exists( 'get_ogp_description_text' ) ):
+function get_ogp_description_text(){
+  $description = get_bloginfo('description');
+  if (is_front_top_page()) {
+    if (get_front_page_meta_description()) {
+      $description = get_front_page_meta_description();
+    } else {
+      $description = get_bloginfo('description');
+    }
+  } elseif (is_singular()) {
+    if (!post_password_required()) {
+      $description = get_the_meta_description();
+    }
+  } elseif (is_category()) {
+    $description = get_category_meta_description();
+  } elseif ((is_tag() || is_tax())) {
+    $description = get_tag_meta_description();
+  }
+  if ($description) {
+    $description = htmlspecialchars($description);
+  }
+  return apply_filters('get_ogp_description_text', $description);
 }
 endif;
 
@@ -635,7 +667,8 @@ function get_the_meta_description(){
     $desc = get_the_page_meta_description();
   }
 
-  if ( !$desc ) {//投稿で抜粋が設定されていない場合は、120文字の冒頭の抽出分
+  //投稿で抜粋が設定されていない場合は、120文字の冒頭の抽出分
+  if ( !$desc ) {
     $desc = strip_shortcodes(get_the_snippet( $post->post_content, 160 ));
     $desc = mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags($desc)), 0, 120);
 
