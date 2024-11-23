@@ -75,6 +75,14 @@ function is_free_front_page_title(){
 }
 endif;
 
+//フロントページにメタディスクリプションを含める
+define('OP_META_DESCRIPTION_TO_FRONT_PAGE', 'meta_description_to_front_page');
+if ( !function_exists( 'is_meta_description_to_front_page' ) ):
+function is_meta_description_to_front_page(){
+  return get_theme_option(OP_META_DESCRIPTION_TO_FRONT_PAGE, 1);
+}
+endif;
+
 //フロントページのメタディスクリプション
 define('OP_FRONT_PAGE_META_DESCRIPTION', 'front_page_meta_description');
 if ( !function_exists( 'get_front_page_meta_description' ) ):

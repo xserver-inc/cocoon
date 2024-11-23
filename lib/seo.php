@@ -478,7 +478,7 @@ function get_meta_description_text(){
   //generate_meta_description_tag関数でメタディスクリプションが空のときメタディスクリプションを出力しないようにするため、デフォルトは空文字
   $description = '';
   if (is_front_top_page()) {
-    if (get_front_page_meta_description()) {
+    if (is_meta_description_to_front_page()) {
       $description = get_front_page_meta_description();
       if (!$description) {
         $description = get_bloginfo('description');

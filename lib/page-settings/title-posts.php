@@ -13,6 +13,9 @@ update_theme_option(OP_FRONT_PAGE_TITLE_FORMAT);
 //自由形式のフロントページのイトル
 update_theme_option(OP_FREE_FRONT_PAGE_TITLE);
 
+//フロントページにメタディスクリプションを含める
+update_theme_option(OP_META_DESCRIPTION_TO_FRONT_PAGE);
+
 //フロントページのメタディスクリプション
 update_theme_option(OP_FRONT_PAGE_META_DESCRIPTION);
 

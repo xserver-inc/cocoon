@@ -66,6 +66,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
+            generate_checkbox_tag(OP_META_DESCRIPTION_TO_FRONT_PAGE, is_meta_description_to_front_page(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページのページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
+            ?>
+            <?php
             generate_textbox_tag(OP_FRONT_PAGE_META_DESCRIPTION, get_front_page_meta_description(), __( 'メタディスクリプションを入力', THEME_NAME ));
             generate_tips_tag(__( 'フロントページで出力するメタディスクリプションタグの内容を入力してください。', THEME_NAME ).__('入力しない場合は、キャッチフレーズが表示されます。', THEME_NAME ));
             ?>
