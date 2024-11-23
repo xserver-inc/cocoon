@@ -416,7 +416,7 @@ function get_category_meta_description($category = null){
 
 
   //カテゴリー本文から抜粋文を作成
-  $temp_desc = get_content_excerpt(get_the_category_content(null, true), 120);
+  $temp_desc = get_content_excerpt(get_the_category_content(null, true), 120);//get_content_excerptはデフォルトでも120文字だが明示的に記入
   if ( $temp_desc ) {
     $cat_desc = trim( strip_tags( $temp_desc ) );
   }
@@ -588,7 +588,7 @@ function get_tag_meta_description($tag = null){
   $tag_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag_name );
 
   //タグ本文から抜粋文を作成
-  $temp_desc = get_content_excerpt(get_the_tag_content(null, true), 120);
+  $temp_desc = get_content_excerpt(get_the_tag_content(null, true), 120);//get_content_excerptはデフォルトでも120文字だが明示的に記入
   if ( $temp_desc ) {
     $tag_desc = trim( strip_tags( $temp_desc ) );
   }
@@ -669,7 +669,7 @@ function get_the_meta_description(){
 
   //投稿で抜粋が設定されていない場合は、120文字の冒頭の抽出分
   if ( !$desc ) {
-    $desc = get_content_excerpt(get_the_snippet( $post->post_content, 120 ));
+    $desc = get_content_excerpt(get_the_snippet( $post->post_content, 120 ), 120);//get_content_excerptはデフォルトでも120文字だが明示的に記入
 
   }
   $desc = htmlspecialchars($desc);
