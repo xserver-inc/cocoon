@@ -371,6 +371,7 @@ function move_default_category_description(){
     } else {
       $description = __( '基本的にタグ設定の一覧テーブルに説明文を表示するための入力です。', THEME_NAME );
     }
+    $description .= __( '有効なメタディスクリプション文が設定されてない場合は、メタディスクリプションとして利用されることもあります。', THEME_NAME );
   ?>
     <script type="text/javascript">
     jQuery(function($) {
