@@ -83,6 +83,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
+            generate_checkbox_tag(OP_META_KEYWORDS_TO_FRONT_PAGE, is_meta_keywords_to_front_page(), __( 'メタキーワードタグを出力する', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
+            ?>
+            <?php
             generate_textbox_tag(OP_FRONT_PAGE_META_KEYWORDS, get_front_page_meta_keywords(), __( 'キーワード1,キーワード2,キーワード3,...', THEME_NAME ));
             generate_tips_tag(__( 'フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
             ?>

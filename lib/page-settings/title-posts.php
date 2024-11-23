@@ -19,6 +19,9 @@ update_theme_option(OP_META_DESCRIPTION_TO_FRONT_PAGE);
 //フロントページのメタディスクリプション
 update_theme_option(OP_FRONT_PAGE_META_DESCRIPTION);
 
+//フロントページにメタキーワードを含める
+update_theme_option(OP_META_KEYWORDS_TO_FRONT_PAGE);
+
 //フロントページのメタディスクリプション
 update_theme_option(OP_FRONT_PAGE_META_KEYWORDS);
 

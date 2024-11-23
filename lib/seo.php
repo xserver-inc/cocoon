@@ -544,7 +544,7 @@ endif;
 if ( !function_exists( 'get_meta_keywords_text' ) ):
 function get_meta_keywords_text(){
   $keywords = null;
-  if (is_front_page() && get_front_page_meta_keywords()) {
+  if (is_front_page() && is_meta_keywords_to_front_page()) {
     $keywords = get_front_page_meta_keywords();
   } elseif (is_singular() && is_meta_keywords_to_singular()) {
     $keywords = get_the_meta_keywords();
