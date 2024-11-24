@@ -101,8 +101,6 @@ update_theme_option(OP_ADMIN_STRUCTURED_DATA_VISIBLE);
 //HTML5チェックリンクの表示
 update_theme_option(OP_ADMIN_NU_HTML_CHECKER_VISIBLE);
 
-//HTML5アウトラインチェックリンクの表示
-update_theme_option(OP_ADMIN_HTML5_OUTLINER_VISIBLE);
 
 //SEOチェキリンクの表示
 update_theme_option(OP_ADMIN_SEOCHEKI_VISIBLE);

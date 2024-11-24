@@ -273,7 +273,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE, is_admin_panel_check_tools_area_visible(), __( 'チェックツールエリアを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、アウトラインチェック、Twitterの反応など。', THEME_NAME ));
+            generate_tips_tag(__( 'ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、Twitterの反応など。', THEME_NAME ));
             ?>
             <div class="indent">
               <?php
@@ -288,9 +288,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
               generate_checkbox_tag(OP_ADMIN_NU_HTML_CHECKER_VISIBLE, is_admin_nu_html_checker_visible(), __( 'HTML5チェックを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">Nu Html Checker</a>リンクの表示。', THEME_NAME ));
-
-              generate_checkbox_tag(OP_ADMIN_HTML5_OUTLINER_VISIBLE, is_admin_html5_outliner_visible(), __( 'HTML5アウトラインチェックを表示する', THEME_NAME ));
-              generate_tips_tag(__( '<a href="https://gsnedders.html5.org/outliner/" target="_blank" rel="noopener">HTML 5 Outliner</a>リンクの表示。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_SEOCHEKI_VISIBLE, is_admin_seocheki_visible(), __( 'SEOチェキを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="http://seocheki.net/" target="_blank" rel="noopener">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。', THEME_NAME ));

@@ -277,14 +277,6 @@ function is_admin_seocheki_visible(){
 }
 endif;
 
-//HTML5アウトラインチェックリンクの表示
-define('OP_ADMIN_HTML5_OUTLINER_VISIBLE', 'admin_html5_outliner_visible');
-if ( !function_exists( 'is_admin_html5_outliner_visible' ) ):
-function is_admin_html5_outliner_visible(){
-  return get_theme_option(OP_ADMIN_HTML5_OUTLINER_VISIBLE, 1);
-}
-endif;
-
 //ツイートチェックリンクの表示
 define('OP_ADMIN_TWEET_CHECK_VISIBLE', 'admin_tweet_check_visible');
 if ( !function_exists( 'is_admin_tweet_check_visible' ) ):

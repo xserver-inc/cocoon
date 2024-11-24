@@ -79,9 +79,6 @@ if (is_user_administrator()
       <?php if (is_admin_nu_html_checker_visible()): ?>
         <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="validator-w3"><?php _e( 'HTML5', THEME_NAME ) ?></a>
       <?php endif ?>
-      <?php if (is_admin_html5_outliner_visible()): ?>
-        <a href="https://gsnedders.html5.org/outliner/process.py?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="outliner"><?php _e( 'アウトライン', THEME_NAME ) ?></a>
-      <?php endif ?>
       <?php if (is_admin_seocheki_visible()): ?>
         <a href="http://seocheki.net/site-check.php?u=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="seocheki"><?php _e( 'SEOチェキ', THEME_NAME ) ?></a>
       <?php endif ?>
