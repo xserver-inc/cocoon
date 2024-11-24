@@ -283,9 +283,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               generate_checkbox_tag(OP_ADMIN_GTMETRIX_VISIBLE, is_admin_gtmetrix_visible(), __( 'GTmetrixを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://gtmetrix.com/" target="_blank" rel="noopener">GTmetrix</a>リンクの表示。', THEME_NAME ));
 
-              generate_checkbox_tag(OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE, is_admin_mobile_friendly_test_visible(), __( 'モバイルフレンドリーテストを表示する', THEME_NAME ));
-              generate_tips_tag(__( '<a href="https://search.google.com/test/mobile-friendly" target="_blank" rel="noopener">モバイルフレンドリーテスト</a>リンクの表示。', THEME_NAME ));
-
               generate_checkbox_tag(OP_ADMIN_STRUCTURED_DATA_VISIBLE, is_admin_structured_data_visible(), __( '構造化データチェックを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://search.google.com/structured-data/testing-tool#" target="_blank" rel="noopener">構造化データ テストツール</a>リンクの表示。', THEME_NAME ));
 

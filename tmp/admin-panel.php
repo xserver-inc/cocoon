@@ -73,9 +73,6 @@ if (is_user_administrator()
       <?php if (is_admin_gtmetrix_visible()): ?>
         <a href="https://gtmetrix.com/?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="gtmetrix"><?php _e( 'GTmetrix', THEME_NAME ) ?></a>
       <?php endif ?>
-      <?php if (is_admin_mobile_friendly_test_visible()): ?>
-        <a href="https://search.google.com/test/mobile-friendly?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer"><?php _e( 'モバイルフレンドリー', THEME_NAME ) ?></a>
-      <?php endif ?>
       <?php if (is_admin_structured_data_visible()): ?>
         <a href="https://search.google.com/structured-data/testing-tool/?hl=<?php _e( 'ja', THEME_NAME ) ?>&url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer"><?php _e( '構造化データ', THEME_NAME ) ?></a>
       <?php endif ?>
