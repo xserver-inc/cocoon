@@ -284,7 +284,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               generate_tips_tag(__( '<a href="https://gtmetrix.com/" target="_blank" rel="noopener">GTmetrix</a>リンクの表示。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_STRUCTURED_DATA_VISIBLE, is_admin_structured_data_visible(), __( '構造化データチェックを表示する', THEME_NAME ));
-              generate_tips_tag(__( '<a href="https://search.google.com/structured-data/testing-tool#" target="_blank" rel="noopener">構造化データ テストツール</a>リンクの表示。', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://search.google.com/test/rich-results?hl=ja" target="_blank" rel="noopener">リッチリザルトテストツール</a>リンクの表示。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_NU_HTML_CHECKER_VISIBLE, is_admin_nu_html_checker_visible(), __( 'HTML5チェックを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">Nu Html Checker</a>リンクの表示。', THEME_NAME ));
