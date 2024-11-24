@@ -11024,11 +11024,6 @@ pre {
   .ect-big-card-first .card-content {
     margin: 0;
   }
-  .ect-entry-card .card-snippet,
-  .rect-entry-card .card-snippet,
-  .ect-big-card-first .card-snippet {
-    clear: both;
-  }
   .ect-entry-card .card-meta,
   .rect-entry-card .card-meta,
   .ect-big-card-first .card-meta {

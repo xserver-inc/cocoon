@@ -19667,11 +19667,6 @@ body.wp-admin {
   .admin-settings .demo .ect-big-card-first .card-content {
     margin: 0;
   }
-  .admin-settings .demo .ect-entry-card .card-snippet,
-  .admin-settings .demo .rect-entry-card .card-snippet,
-  .admin-settings .demo .ect-big-card-first .card-snippet {
-    clear: both;
-  }
   .admin-settings .demo .ect-entry-card .card-meta,
   .admin-settings .demo .rect-entry-card .card-meta,
   .admin-settings .demo .ect-big-card-first .card-meta {
