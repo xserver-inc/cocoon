@@ -1857,6 +1857,15 @@ function generate_info_list_tag($atts){
       'orderby' => 'modified',
     );
   }
+
+  //インデックス除外カテゴリー
+  $exclude_category_ids = get_archive_exclude_category_ids();
+  if ($exclude_category_ids && is_array($exclude_category_ids)) {
+    $args += array(
+      'category__not_in' => $exclude_category_ids,
+    );
+  }
+
   $args = apply_filters( 'get_info_list_args', $args );
   $query = new WP_Query( $args );
   $frame_class = ($frame ? ' is-style-frame-border' : '');
