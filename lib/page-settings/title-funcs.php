@@ -19,10 +19,10 @@ if ( !function_exists( 'get_title_separator_caption' ) ):
 function get_title_separator_caption(){
   switch (get_title_separator()) {
     case 'hyphen':
-      $separator = __( ' - ', THEME_NAME );
+      $separator = __( '-', THEME_NAME );
       break;
     default:
-      $separator = __( ' | ', THEME_NAME );
+      $separator = __( '|', THEME_NAME );
       break;
   }
   return $separator;
