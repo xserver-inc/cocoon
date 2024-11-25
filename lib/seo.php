@@ -412,29 +412,29 @@ function get_category_meta_description($category = null){
     $cat_name = single_cat_title('', false);
   }
   //デフォルトのカテゴリ名
-  $cat_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat_name );
+  $desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat_name );
 
 
   //カテゴリー本文から抜粋文を作成
-  $temp_desc = get_content_excerpt(get_the_category_content(null, true), 120);//get_content_excerptはデフォルトでも120文字だが明示的に記入
-  if ( $temp_desc ) {
-    $cat_desc = trim( strip_tags( $temp_desc ) );
+  $tmp_desc = get_the_category_content(null, true);
+  if ( $tmp_desc ) {
+    $desc = get_content_excerpt( $tmp_desc, 120 );//get_content_excerptはデフォルトでも120文字だが明示的に記入
   }
 
   //カテゴリ説明文を取得
-  $temp_desc = category_description();
-  if ( $temp_desc ) {
-    $cat_desc = trim( strip_tags( $temp_desc ) );
+  $tmp_desc = category_description();
+  if ( $tmp_desc ) {
+    $desc = get_content_excerpt( $tmp_desc, 120 );
   }
 
   //カテゴリー設定ページのディスクリプションを取得
-  $temp_desc = get_the_category_meta_description();
-  if ( $temp_desc ) {
-    $cat_desc = trim( strip_tags( $temp_desc ) );
+  $tmp_desc = get_the_category_meta_description();
+  if ( $tmp_desc ) {
+    $desc = get_content_excerpt( $tmp_desc, 1000 );//メタディスクリプションは基本全部出力するが最大1000文字まで
   }
 
-  $cat_desc = htmlspecialchars($cat_desc);
-  return apply_filters('get_category_meta_description', $cat_desc);
+  $desc = htmlspecialchars($desc);
+  return apply_filters('get_category_meta_description', $desc);
 }
 endif;
 
@@ -585,28 +585,28 @@ function get_tag_meta_description($tag = null){
     $tag_name = single_tag_title('', false);
   }
   //デフォルトのタグ名
-  $tag_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag_name );
+  $desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag_name );
 
   //タグ本文から抜粋文を作成
-  $temp_desc = get_content_excerpt(get_the_tag_content(null, true), 120);//get_content_excerptはデフォルトでも120文字だが明示的に記入
-  if ( $temp_desc ) {
-    $tag_desc = trim( strip_tags( $temp_desc ) );
+  $tmp_desc = get_the_tag_content(null, true);
+  if ( $tmp_desc ) {
+    $desc = get_content_excerpt( $tmp_desc, 120 );//get_content_excerptはデフォルトでも120文字だが明示的に記入
   }
 
   //タグ説明文を取得
-  $temp_desc = tag_description();
-  if ( $temp_desc ) {
-    $tag_desc = trim( strip_tags( $temp_desc ) );
+  $tmp_desc = tag_description();
+  if ( $tmp_desc ) {
+    $desc = get_content_excerpt( $tmp_desc, 120 );
   }
 
   //タグ設定ページのディスクリプションを取得
-  $temp_desc = get_the_tag_meta_description();
-  if ( $temp_desc ) {
-    $tag_desc = trim( strip_tags( $temp_desc ) );
+  $tmp_desc = get_the_tag_meta_description();
+  if ( $tmp_desc ) {
+    $desc = get_content_excerpt( $tmp_desc, 1000 );//メタディスクリプションは基本全部出力するが最大1000文字まで
   }
 
-  $tag_desc = htmlspecialchars($tag_desc);
-  return apply_filters('get_tag_meta_description', $tag_desc);
+  $desc = htmlspecialchars($desc);
+  return apply_filters('get_tag_meta_description', $desc);
 }
 endif;
 
@@ -659,19 +659,21 @@ if ( !function_exists( 'get_the_meta_description' ) ):
 function get_the_meta_description(){
   global $post;
 
+  //get_content_excerptはデフォルトでも120文字だが明示的に記入
+  $desc = get_content_excerpt(get_the_snippet( $post->post_content, 120 ), 120);
+
   //抜粋を取得
-  $desc = trim(strip_tags( $post->post_excerpt ));
+  $tmp_desc = $post->post_excerpt;
+  if ( $tmp_desc ) {
+    $desc = get_content_excerpt( $tmp_desc, 120 );
+  }
 
   //投稿・固定ページにメタディスクリプションが設定してあれば取得
-  if (get_the_page_meta_description()) {
-    $desc = get_the_page_meta_description();
+  $tmp_desc = get_the_page_meta_description();
+  if ( $tmp_desc ) {
+    $desc = get_content_excerpt( $tmp_desc, 1000 );//メタディスクリプションは基本全部出力するが最大1000文字まで
   }
 
-  //投稿で抜粋が設定されていない場合は、120文字の冒頭の抽出分
-  if ( !$desc ) {
-    $desc = get_content_excerpt(get_the_snippet( $post->post_content, 120 ), 120);//get_content_excerptはデフォルトでも120文字だが明示的に記入
-
-  }
   $desc = htmlspecialchars($desc);
   return apply_filters('get_the_meta_description', $desc);
 }
