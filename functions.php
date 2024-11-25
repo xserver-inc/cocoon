@@ -516,3 +516,6 @@ function add_reuse_block_menu_page() {
   }
 }
 endif;
+
+//sizes="auto"対策
+add_filter ( 'wp_img_tag_add_auto_sizes' ,  '__return_false' );
