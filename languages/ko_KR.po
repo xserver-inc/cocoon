@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-25T14:34:00+00:00\n"
-"PO-Revision-Date: 2024-11-25 15:43\n"
+"POT-Creation-Date: 2024-11-25T15:56:43+00:00\n"
+"PO-Revision-Date: 2024-11-25 16:00\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -2551,7 +2551,7 @@ msgstr "검색 결과 목록"
 
 #: lib/html-forms.php:831
 #: lib/page-settings/_top-page.php:248
-#: lib/widget-areas.php:500
+#: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr "404 페이지"
 
@@ -11294,248 +11294,248 @@ msgstr "%s년"
 msgid "%s年%sヶ月"
 msgstr "%s년 %s월"
 
-#: lib/widget-areas.php:17
+#: lib/widget-areas.php:18
 #: tmp/mobile-sidebar-button.php:21
 msgid "サイドバー"
 msgstr "사이드바"
 
-#: lib/widget-areas.php:19
+#: lib/widget-areas.php:20
 msgid "サイドバーのウィジェットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
 msgstr "사이드바 위젯 영역입니다. 위젯을 넣지 않은 경우 1열 표시가 됩니다."
 
-#: lib/widget-areas.php:33
+#: lib/widget-areas.php:34
 msgid "サイドバースクロール追従"
 msgstr "사이드바 스크롤 따르기"
 
-#: lib/widget-areas.php:35
+#: lib/widget-areas.php:36
 msgid "サイドバーで下にスクロールすると追いかけてくるエリアです。"
 msgstr "사이드바에서 아래로 스크롤하면 따라오는 영역입니다."
 
-#: lib/widget-areas.php:49
+#: lib/widget-areas.php:50
 msgid "メインカラムスクロール追従"
 msgstr "메인 칼럼 스크롤 따르기"
 
-#: lib/widget-areas.php:51
+#: lib/widget-areas.php:52
 msgid "メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。"
 msgstr "메인 칼럼에서 아래로 스크롤하면 따라오는 영역입니다. 사이드바가 더 긴 경우 따릅니다."
 
-#: lib/widget-areas.php:65
+#: lib/widget-areas.php:66
 msgid "投稿タイトル上"
 msgstr "글 제목 상단"
 
-#: lib/widget-areas.php:67
+#: lib/widget-areas.php:68
 msgid "投稿タイトル上に表示されるウィジェット。"
 msgstr "글 제목 상단에 표시되는 위젯."
 
-#: lib/widget-areas.php:81
+#: lib/widget-areas.php:82
 msgid "投稿タイトル下"
 msgstr "글 제목 하단"
 
-#: lib/widget-areas.php:83
+#: lib/widget-areas.php:84
 msgid "投稿タイトル下に表示されるウィジェット。"
 msgstr "글 제목 상단에 표시되는 위젯."
 
-#: lib/widget-areas.php:97
+#: lib/widget-areas.php:98
 msgid "投稿本文上"
 msgstr "글 본문 상단"
 
-#: lib/widget-areas.php:99
+#: lib/widget-areas.php:100
 msgid "投稿本文上に表示されるウィジェット。"
 msgstr "글 본문 상단에 표시되는 위젯."
 
-#: lib/widget-areas.php:113
+#: lib/widget-areas.php:114
 msgid "投稿本文中"
 msgstr "글 본문 중간"
 
-#: lib/widget-areas.php:115
+#: lib/widget-areas.php:116
 msgid "投稿本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "글 본문 중간에 표시되는 위젯. 글 중 첫번째 H2 태그 바로 앞에 표시됩니다. 광고가 표시되어 있을 경우에는 광고 하단에 표시됩니다."
 
-#: lib/widget-areas.php:129
+#: lib/widget-areas.php:130
 msgid "投稿本文下"
 msgstr "글 본문 하단"
 
-#: lib/widget-areas.php:131
+#: lib/widget-areas.php:132
 msgid "投稿本文下に表示されるウィジェット。"
 msgstr "글 본문 상단에 표시되는 위젯."
 
-#: lib/widget-areas.php:145
+#: lib/widget-areas.php:146
 msgid "投稿SNSボタン上"
 msgstr "글 SNS 버튼 상단"
 
-#: lib/widget-areas.php:147
+#: lib/widget-areas.php:148
 msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "글 메인 칼럼의 맨 아래 SNS 버튼 위에 표시되는 위젯. 광고를 표시하고 있는 경우 광고 하단에 표시합니다."
 
-#: lib/widget-areas.php:161
+#: lib/widget-areas.php:162
 msgid "投稿SNSボタン下"
 msgstr "글 SNS 버튼 하단"
 
-#: lib/widget-areas.php:163
+#: lib/widget-areas.php:164
 msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "글 메인 칼럼의 맨 아래 SNS 버튼 아래에 표시되는 위젯."
 
-#: lib/widget-areas.php:177
+#: lib/widget-areas.php:178
 msgid "投稿関連記事上"
 msgstr "관련 글 상단"
 
-#: lib/widget-areas.php:179
+#: lib/widget-areas.php:180
 msgid "関連記事の上に表示されるウィジェット。"
 msgstr "관련 글 위에 표시되는 위젯."
 
-#: lib/widget-areas.php:193
+#: lib/widget-areas.php:194
 msgid "投稿関連記事下"
 msgstr "관련 글 하단"
 
-#: lib/widget-areas.php:195
+#: lib/widget-areas.php:196
 msgid "関連記事の下（広告を表示している場合はその下）に表示されるウィジェット。"
 msgstr "관련 글 아래(광고를 표시하는 경우는 그 아래)에 표시되는 위젯."
 
-#: lib/widget-areas.php:209
+#: lib/widget-areas.php:210
 msgid "投稿コメント上"
 msgstr "댓글 상단"
 
-#: lib/widget-areas.php:211
+#: lib/widget-areas.php:212
 msgid "コメントエリアの上に表示されるウィジェット。"
 msgstr "댓글 위에 표시되는 위젯."
 
-#: lib/widget-areas.php:225
+#: lib/widget-areas.php:226
 msgid "投稿コメント下"
 msgstr "댓글 하단"
 
-#: lib/widget-areas.php:227
+#: lib/widget-areas.php:228
 msgid "コメントフォームの下に表示されるウィジェット。"
 msgstr "댓글 아래에 표시되는 위젯."
 
-#: lib/widget-areas.php:241
+#: lib/widget-areas.php:242
 msgid "固定ページタイトル上"
 msgstr "페이지 제목 상단"
 
-#: lib/widget-areas.php:243
+#: lib/widget-areas.php:244
 msgid "固定ページタイトル上に表示されるウィジェット。"
 msgstr "페이지 제목 상단에 표시되는 위젯."
 
-#: lib/widget-areas.php:257
+#: lib/widget-areas.php:258
 msgid "固定ページタイトル下"
 msgstr "페이지 제목 하단"
 
-#: lib/widget-areas.php:259
+#: lib/widget-areas.php:260
 msgid "固定ページタイトル下に表示されるウィジェット。"
 msgstr "페이지 제목 상단에 표시되는 위젯."
 
-#: lib/widget-areas.php:273
+#: lib/widget-areas.php:274
 msgid "固定ページ本文上"
 msgstr "페이지 본문 상단"
 
-#: lib/widget-areas.php:275
+#: lib/widget-areas.php:276
 msgid "固定ページ本文上に表示されるウィジェット。"
 msgstr "페이지 본문 상단에 표시되는 위젯."
 
-#: lib/widget-areas.php:289
+#: lib/widget-areas.php:290
 msgid "固定ページ本文中"
 msgstr "페이지 본문 중간"
 
-#: lib/widget-areas.php:291
+#: lib/widget-areas.php:292
 msgid "固定ページ本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "페이지 본문 중간에 표시되는 위젯. 글 중 첫번째 H2 태그 바로 앞에 표시됩니다. 광고가 표시되어 있을 경우에는 광고 하단에 표시됩니다."
 
-#: lib/widget-areas.php:305
+#: lib/widget-areas.php:306
 msgid "固定ページ本文下"
 msgstr "페이지 본문 하단"
 
-#: lib/widget-areas.php:307
+#: lib/widget-areas.php:308
 msgid "固定ページ本文下に表示されるウィジェット。"
 msgstr "페이지 본문 상단에 표시되는 위젯."
 
-#: lib/widget-areas.php:322
+#: lib/widget-areas.php:323
 msgid "固定ページSNSボタン上"
 msgstr "페이지 SNS 버튼 상단"
 
-#: lib/widget-areas.php:324
+#: lib/widget-areas.php:325
 msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "페이지 메인 칼럼의 맨 아래 SNS 버튼 위에 표시되는 위젯. 광고를 표시하고 있는 경우 광고 하단에 표시합니다."
 
-#: lib/widget-areas.php:338
+#: lib/widget-areas.php:339
 msgid "固定ページSNSボタン下"
 msgstr "페이지 SNS 버튼 하단"
 
-#: lib/widget-areas.php:340
+#: lib/widget-areas.php:341
 msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "페이지 메인 칼럼의 맨 아래 SNS 버튼 아래에 표시되는 위젯."
 
-#: lib/widget-areas.php:354
+#: lib/widget-areas.php:355
 msgid "インデックスリストトップ"
 msgstr "인덱스 리스트 상단"
 
-#: lib/widget-areas.php:356
+#: lib/widget-areas.php:357
 msgid "インデックスリストのトップに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "인덱스 리스트의 위에 표시되는 위젯. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
 
-#: lib/widget-areas.php:370
+#: lib/widget-areas.php:371
 msgid "インデックスリストミドル"
 msgstr "인덱스 리스트 중간"
 
-#: lib/widget-areas.php:372
+#: lib/widget-areas.php:373
 msgid "インデックスリストの3つ目下に表示されるウィジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
 msgstr "인덱스 리스트의 세번째 항목 아래에 표시되는 위젯.  리스트의 스타일이 \"썸네일 카드\"일 때만 가능한 설정입니다. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
 
-#: lib/widget-areas.php:386
+#: lib/widget-areas.php:387
 msgid "インデックスリストボトム"
 msgstr "인덱스 리스트 하단"
 
-#: lib/widget-areas.php:388
+#: lib/widget-areas.php:389
 msgid "インデックスリストのボトムに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "인덱스 리스트의 아래에 표시되는 위젯. 광고가 표시되어 있을 때는 그 아래에 표시됩니다."
 
-#: lib/widget-areas.php:402
+#: lib/widget-areas.php:403
 msgid "コンテンツ上部"
 msgstr "콘텐츠 상단"
 
-#: lib/widget-areas.php:404
+#: lib/widget-areas.php:405
 msgid "メインカラムとサイドバーの上部エリア。グローバルメニューの下にもなります。"
 msgstr "메인 칼럼과 사이드바의 위쪽 영역. 글로벌 메뉴 아래에도 있습니다."
 
-#: lib/widget-areas.php:418
+#: lib/widget-areas.php:419
 msgid "コンテンツ下部"
 msgstr "콘텐츠 하단"
 
-#: lib/widget-areas.php:420
+#: lib/widget-areas.php:421
 msgid "メインカラムとサイドバーの下部エリア。フッターの上になります。"
 msgstr "메인 칼럼과 사이드바의 아래쪽 영역. 푸터의 위쪽입니다."
 
-#: lib/widget-areas.php:434
+#: lib/widget-areas.php:435
 msgid "フッター左"
 msgstr "푸터 왼쪽"
 
-#: lib/widget-areas.php:436
+#: lib/widget-areas.php:437
 msgid "フッター左側のウィジェットエリアです。"
 msgstr "푸터 왼쪽의 위젯 영역입니다."
 
-#: lib/widget-areas.php:451
+#: lib/widget-areas.php:452
 msgid "フッター中"
 msgstr "푸터 중간"
 
-#: lib/widget-areas.php:452
+#: lib/widget-areas.php:453
 msgid "フッター中間のウィジェットエリアです。"
 msgstr "푸터 중간의 위젯 영역입니다."
 
-#: lib/widget-areas.php:466
+#: lib/widget-areas.php:467
 msgid "フッター右"
 msgstr "푸터 오른쪽"
 
-#: lib/widget-areas.php:468
+#: lib/widget-areas.php:469
 msgid "フッター右側フッター中のウィジェットエリアです。"
 msgstr "푸터 오른쪽의 위젯 영역입니다."
 
-#: lib/widget-areas.php:483
+#: lib/widget-areas.php:484
 msgid "フッター（モバイル用）"
 msgstr "푸터 (모바일용)"
 
-#: lib/widget-areas.php:485
+#: lib/widget-areas.php:486
 msgid "モバイルで表示するウィジェットエリアです。834px以下で表示されます。"
 msgstr "모바일에서 보이는 위젯 영역입니다. 834px 이하에서 표시됩니다."
 
-#: lib/widget-areas.php:502
+#: lib/widget-areas.php:503
 msgid "404ページをカスタマイズするためのウィジェットエリアです。"
 msgstr "404페이지를 커스터마이징 하기 위한 위젯 영역입니다."
 

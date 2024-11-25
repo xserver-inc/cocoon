@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-25T14:34:00+00:00\n"
-"PO-Revision-Date: 2024-11-25 15:43\n"
+"POT-Creation-Date: 2024-11-25T15:56:43+00:00\n"
+"PO-Revision-Date: 2024-11-25 16:00\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -2551,7 +2551,7 @@ msgstr "搜索结果列表"
 
 #: lib/html-forms.php:831
 #: lib/page-settings/_top-page.php:248
-#: lib/widget-areas.php:500
+#: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr "404页面"
 
@@ -11294,248 +11294,248 @@ msgstr "%s年"
 msgid "%s年%sヶ月"
 msgstr "%s年%s个月"
 
-#: lib/widget-areas.php:17
+#: lib/widget-areas.php:18
 #: tmp/mobile-sidebar-button.php:21
 msgid "サイドバー"
 msgstr "侧边栏"
 
-#: lib/widget-areas.php:19
+#: lib/widget-areas.php:20
 msgid "サイドバーのウィジェットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
 msgstr "这是侧边栏的组件区域。如果未放置组件，则显示为单栏。"
 
-#: lib/widget-areas.php:33
+#: lib/widget-areas.php:34
 msgid "サイドバースクロール追従"
 msgstr "侧边栏滚动跟随"
 
-#: lib/widget-areas.php:35
+#: lib/widget-areas.php:36
 msgid "サイドバーで下にスクロールすると追いかけてくるエリアです。"
 msgstr "在侧边栏中向下滚动时，会跟随的区域。"
 
-#: lib/widget-areas.php:49
+#: lib/widget-areas.php:50
 msgid "メインカラムスクロール追従"
 msgstr "主栏滚动跟随"
 
-#: lib/widget-areas.php:51
+#: lib/widget-areas.php:52
 msgid "メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。"
 msgstr "在主栏中向下滚动时，会跟随的区域。如果侧边栏更长，它会跟随。"
 
-#: lib/widget-areas.php:65
+#: lib/widget-areas.php:66
 msgid "投稿タイトル上"
 msgstr "文章标题上方"
 
-#: lib/widget-areas.php:67
+#: lib/widget-areas.php:68
 msgid "投稿タイトル上に表示されるウィジェット。"
 msgstr "显示在文章标题上的组件。"
 
-#: lib/widget-areas.php:81
+#: lib/widget-areas.php:82
 msgid "投稿タイトル下"
 msgstr "文章标题下方"
 
-#: lib/widget-areas.php:83
+#: lib/widget-areas.php:84
 msgid "投稿タイトル下に表示されるウィジェット。"
 msgstr "显示在文章标题下方的组件。"
 
-#: lib/widget-areas.php:97
+#: lib/widget-areas.php:98
 msgid "投稿本文上"
 msgstr "文章正文上方"
 
-#: lib/widget-areas.php:99
+#: lib/widget-areas.php:100
 msgid "投稿本文上に表示されるウィジェット。"
 msgstr "显示在文章正文上方的组件。"
 
-#: lib/widget-areas.php:113
+#: lib/widget-areas.php:114
 msgid "投稿本文中"
 msgstr "文章正文中"
 
-#: lib/widget-areas.php:115
+#: lib/widget-areas.php:116
 msgid "投稿本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "显示在文章正文中的组件。显示在正文中第一个H2标签之前。如果有广告，则显示在广告下方。"
 
-#: lib/widget-areas.php:129
+#: lib/widget-areas.php:130
 msgid "投稿本文下"
 msgstr "文章正文下方"
 
-#: lib/widget-areas.php:131
+#: lib/widget-areas.php:132
 msgid "投稿本文下に表示されるウィジェット。"
 msgstr "显示在文章正文下方的组件。"
 
-#: lib/widget-areas.php:145
+#: lib/widget-areas.php:146
 msgid "投稿SNSボタン上"
 msgstr "文章SNS按钮上方"
 
-#: lib/widget-areas.php:147
+#: lib/widget-areas.php:148
 msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "显示在文章主栏底部的SNS按钮上方的组件。如果显示广告，则显示在广告下方。"
 
-#: lib/widget-areas.php:161
+#: lib/widget-areas.php:162
 msgid "投稿SNSボタン下"
 msgstr "文章SNS按钮下方"
 
-#: lib/widget-areas.php:163
+#: lib/widget-areas.php:164
 msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "显示在文章主栏底部的SNS按钮下方的组件。"
 
-#: lib/widget-areas.php:177
+#: lib/widget-areas.php:178
 msgid "投稿関連記事上"
 msgstr "文章相关内容上方"
 
-#: lib/widget-areas.php:179
+#: lib/widget-areas.php:180
 msgid "関連記事の上に表示されるウィジェット。"
 msgstr "显示在相关内容上方的组件。"
 
-#: lib/widget-areas.php:193
+#: lib/widget-areas.php:194
 msgid "投稿関連記事下"
 msgstr "文章相关内容下方"
 
-#: lib/widget-areas.php:195
+#: lib/widget-areas.php:196
 msgid "関連記事の下（広告を表示している場合はその下）に表示されるウィジェット。"
 msgstr "显示在相关内容下方（如果显示广告，则在广告下方）的组件。"
 
-#: lib/widget-areas.php:209
+#: lib/widget-areas.php:210
 msgid "投稿コメント上"
 msgstr "文章评论上方"
 
-#: lib/widget-areas.php:211
+#: lib/widget-areas.php:212
 msgid "コメントエリアの上に表示されるウィジェット。"
 msgstr "显示在评论区域上方的组件。"
 
-#: lib/widget-areas.php:225
+#: lib/widget-areas.php:226
 msgid "投稿コメント下"
 msgstr "文章评论下方"
 
-#: lib/widget-areas.php:227
+#: lib/widget-areas.php:228
 msgid "コメントフォームの下に表示されるウィジェット。"
 msgstr "显示在评论表单下方的组件。"
 
-#: lib/widget-areas.php:241
+#: lib/widget-areas.php:242
 msgid "固定ページタイトル上"
 msgstr "固定页面标题上方"
 
-#: lib/widget-areas.php:243
+#: lib/widget-areas.php:244
 msgid "固定ページタイトル上に表示されるウィジェット。"
 msgstr "显示在固定页面标题上方的组件。"
 
-#: lib/widget-areas.php:257
+#: lib/widget-areas.php:258
 msgid "固定ページタイトル下"
 msgstr "固定页面标题下方"
 
-#: lib/widget-areas.php:259
+#: lib/widget-areas.php:260
 msgid "固定ページタイトル下に表示されるウィジェット。"
 msgstr "显示在固定页面标题下方的组件。"
 
-#: lib/widget-areas.php:273
+#: lib/widget-areas.php:274
 msgid "固定ページ本文上"
 msgstr "固定页面正文上方"
 
-#: lib/widget-areas.php:275
+#: lib/widget-areas.php:276
 msgid "固定ページ本文上に表示されるウィジェット。"
 msgstr "显示在固定页面正文上方的组件。"
 
-#: lib/widget-areas.php:289
+#: lib/widget-areas.php:290
 msgid "固定ページ本文中"
 msgstr "固定页面正文中"
 
-#: lib/widget-areas.php:291
+#: lib/widget-areas.php:292
 msgid "固定ページ本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "显示在固定页面正文中的组件。显示在正文中第一个H2标签之前。如果有广告，则显示在广告下方。"
 
-#: lib/widget-areas.php:305
+#: lib/widget-areas.php:306
 msgid "固定ページ本文下"
 msgstr "固定页面正文下方"
 
-#: lib/widget-areas.php:307
+#: lib/widget-areas.php:308
 msgid "固定ページ本文下に表示されるウィジェット。"
 msgstr "显示在固定页面正文下方的组件。"
 
-#: lib/widget-areas.php:322
+#: lib/widget-areas.php:323
 msgid "固定ページSNSボタン上"
 msgstr "固定页面SNS按钮上方"
 
-#: lib/widget-areas.php:324
+#: lib/widget-areas.php:325
 msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "显示在固定页面主栏底部的SNS按钮上方的组件。如果显示广告，则显示在广告下方。"
 
-#: lib/widget-areas.php:338
+#: lib/widget-areas.php:339
 msgid "固定ページSNSボタン下"
 msgstr "固定页面SNS按钮下方"
 
-#: lib/widget-areas.php:340
+#: lib/widget-areas.php:341
 msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "显示在固定页面主栏底部的SNS按钮下方的组件。"
 
-#: lib/widget-areas.php:354
+#: lib/widget-areas.php:355
 msgid "インデックスリストトップ"
 msgstr "索引列表顶部"
 
-#: lib/widget-areas.php:356
+#: lib/widget-areas.php:357
 msgid "インデックスリストのトップに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "显示在索引列表顶部的组件。如果显示广告，则显示在广告下方。"
 
-#: lib/widget-areas.php:370
+#: lib/widget-areas.php:371
 msgid "インデックスリストミドル"
 msgstr "索引列表中间"
 
-#: lib/widget-areas.php:372
+#: lib/widget-areas.php:373
 msgid "インデックスリストの3つ目下に表示されるウィジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
 msgstr "显示在索引列表第三个下方的组件。仅在“列表样式”为“缩略图卡片”时有效。如果显示广告，则显示在广告下方。"
 
-#: lib/widget-areas.php:386
+#: lib/widget-areas.php:387
 msgid "インデックスリストボトム"
 msgstr "索引列表底部"
 
-#: lib/widget-areas.php:388
+#: lib/widget-areas.php:389
 msgid "インデックスリストのボトムに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "显示在索引列表底部的组件。如果显示广告，则显示在广告下方。"
 
-#: lib/widget-areas.php:402
+#: lib/widget-areas.php:403
 msgid "コンテンツ上部"
 msgstr "内容上部"
 
-#: lib/widget-areas.php:404
+#: lib/widget-areas.php:405
 msgid "メインカラムとサイドバーの上部エリア。グローバルメニューの下にもなります。"
 msgstr "主栏和侧边栏的上部区域。也位于全局菜单下方。"
 
-#: lib/widget-areas.php:418
+#: lib/widget-areas.php:419
 msgid "コンテンツ下部"
 msgstr "内容下部"
 
-#: lib/widget-areas.php:420
+#: lib/widget-areas.php:421
 msgid "メインカラムとサイドバーの下部エリア。フッターの上になります。"
 msgstr "主栏和侧边栏的下部区域。位于页脚上方。"
 
-#: lib/widget-areas.php:434
+#: lib/widget-areas.php:435
 msgid "フッター左"
 msgstr "页脚左侧"
 
-#: lib/widget-areas.php:436
+#: lib/widget-areas.php:437
 msgid "フッター左側のウィジェットエリアです。"
 msgstr "页脚左侧的组件区域。"
 
-#: lib/widget-areas.php:451
+#: lib/widget-areas.php:452
 msgid "フッター中"
 msgstr "页脚中部"
 
-#: lib/widget-areas.php:452
+#: lib/widget-areas.php:453
 msgid "フッター中間のウィジェットエリアです。"
 msgstr "这是页脚中间的小部件区域。"
 
-#: lib/widget-areas.php:466
+#: lib/widget-areas.php:467
 msgid "フッター右"
 msgstr "页脚右侧"
 
-#: lib/widget-areas.php:468
+#: lib/widget-areas.php:469
 msgid "フッター右側フッター中のウィジェットエリアです。"
 msgstr "页脚右侧的组件区域。"
 
-#: lib/widget-areas.php:483
+#: lib/widget-areas.php:484
 msgid "フッター（モバイル用）"
 msgstr "页脚（移动端用）"
 
-#: lib/widget-areas.php:485
+#: lib/widget-areas.php:486
 msgid "モバイルで表示するウィジェットエリアです。834px以下で表示されます。"
 msgstr "这是在移动端显示的组件区域。显示在834px以下。"
 
-#: lib/widget-areas.php:502
+#: lib/widget-areas.php:503
 msgid "404ページをカスタマイズするためのウィジェットエリアです。"
 msgstr "这是用于自定义404页面的组件区域。"
 

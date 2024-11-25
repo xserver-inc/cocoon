@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-25T14:34:00+00:00\n"
-"PO-Revision-Date: 2024-11-25 15:43\n"
+"POT-Creation-Date: 2024-11-25T15:56:43+00:00\n"
+"PO-Revision-Date: 2024-11-25 16:00\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -2551,7 +2551,7 @@ msgstr "Liste des résultats de recherche"
 
 #: lib/html-forms.php:831
 #: lib/page-settings/_top-page.php:248
-#: lib/widget-areas.php:500
+#: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr "Pages 404"
 
@@ -11299,248 +11299,248 @@ msgstr "%s ans"
 msgid "%s年%sヶ月"
 msgstr "%s ans et %s mois"
 
-#: lib/widget-areas.php:17
+#: lib/widget-areas.php:18
 #: tmp/mobile-sidebar-button.php:21
 msgid "サイドバー"
 msgstr "Barre latérale"
 
-#: lib/widget-areas.php:19
+#: lib/widget-areas.php:20
 msgid "サイドバーのウィジェットエリアです。ウィジェットを入れていない場合は1カラム表示になります。"
 msgstr "C'est la zone de widgets de la barre latérale. Si aucun widget n'est inséré, l'affichage sera en 1 colonne."
 
-#: lib/widget-areas.php:33
+#: lib/widget-areas.php:34
 msgid "サイドバースクロール追従"
 msgstr "Suivi du défilement de la barre latérale"
 
-#: lib/widget-areas.php:35
+#: lib/widget-areas.php:36
 msgid "サイドバーで下にスクロールすると追いかけてくるエリアです。"
 msgstr "Cette zone suit lorsque vous faites défiler vers le bas dans la barre latérale."
 
-#: lib/widget-areas.php:49
+#: lib/widget-areas.php:50
 msgid "メインカラムスクロール追従"
 msgstr "Suivi du défilement de la colonne principale"
 
-#: lib/widget-areas.php:51
+#: lib/widget-areas.php:52
 msgid "メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。"
 msgstr "Cette zone suit lorsque vous faites défiler vers le bas dans la colonne principale. La barre latérale suivra si elle est plus longue."
 
-#: lib/widget-areas.php:65
+#: lib/widget-areas.php:66
 msgid "投稿タイトル上"
 msgstr "Au-dessus du titre de l'article"
 
-#: lib/widget-areas.php:67
+#: lib/widget-areas.php:68
 msgid "投稿タイトル上に表示されるウィジェット。"
 msgstr "Les widgets sont affichés au-dessus du titre de l'article."
 
-#: lib/widget-areas.php:81
+#: lib/widget-areas.php:82
 msgid "投稿タイトル下"
 msgstr "En dessous du titre de l'article"
 
-#: lib/widget-areas.php:83
+#: lib/widget-areas.php:84
 msgid "投稿タイトル下に表示されるウィジェット。"
 msgstr "Les widgets sont affichés en dessous du titre de l'article."
 
-#: lib/widget-areas.php:97
+#: lib/widget-areas.php:98
 msgid "投稿本文上"
 msgstr "Au-dessus du corps de texte de l'article"
 
-#: lib/widget-areas.php:99
+#: lib/widget-areas.php:100
 msgid "投稿本文上に表示されるウィジェット。"
 msgstr "Les widgets sont affichés au-dessus du corps de texte d'un article."
 
-#: lib/widget-areas.php:113
+#: lib/widget-areas.php:114
 msgid "投稿本文中"
 msgstr "Dans le corps de texte de l'article"
 
-#: lib/widget-areas.php:115
+#: lib/widget-areas.php:116
 msgid "投稿本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "Les widgets sont affichés dans le corps de texte d'un article. Ils sont affichés avant la première balise H2 dans le corps de texte. Si des publicités sont affichées, les widgets seront affichés sous les publicités."
 
-#: lib/widget-areas.php:129
+#: lib/widget-areas.php:130
 msgid "投稿本文下"
 msgstr "En dessous du corps de texte de l'article"
 
-#: lib/widget-areas.php:131
+#: lib/widget-areas.php:132
 msgid "投稿本文下に表示されるウィジェット。"
 msgstr "Les widgets sont affichés en dessous du corps de texte d'un article."
 
-#: lib/widget-areas.php:145
+#: lib/widget-areas.php:146
 msgid "投稿SNSボタン上"
 msgstr "Au-dessus des boutons de réseaux sociaux dans un article"
 
-#: lib/widget-areas.php:147
+#: lib/widget-areas.php:148
 msgid "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "Les widgets sont affichés au-dessus des boutons de réseaux sociaux tout en bas de la colonne principale d'un article. Si des publicités sont affichées, les widgets seront affichés sous les publicités."
 
-#: lib/widget-areas.php:161
+#: lib/widget-areas.php:162
 msgid "投稿SNSボタン下"
 msgstr "En dessous des boutons de réseaux sociaux dans un article"
 
-#: lib/widget-areas.php:163
+#: lib/widget-areas.php:164
 msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "Les widgets sont affichés en dessous des boutons de réseaux sociaux tout en bas de la colonne principale d'un article."
 
-#: lib/widget-areas.php:177
+#: lib/widget-areas.php:178
 msgid "投稿関連記事上"
 msgstr "Au-dessus des articles similaires"
 
-#: lib/widget-areas.php:179
+#: lib/widget-areas.php:180
 msgid "関連記事の上に表示されるウィジェット。"
 msgstr "Les widgets affichés au-dessus des articles similaires."
 
-#: lib/widget-areas.php:193
+#: lib/widget-areas.php:194
 msgid "投稿関連記事下"
 msgstr "En dessous des articles similaires dans un article"
 
-#: lib/widget-areas.php:195
+#: lib/widget-areas.php:196
 msgid "関連記事の下（広告を表示している場合はその下）に表示されるウィジェット。"
 msgstr "Les widgets sont affichés en dessous des articles similaires (si des publicités sont affichées, les widgets seront affichés sous les publicités)."
 
-#: lib/widget-areas.php:209
+#: lib/widget-areas.php:210
 msgid "投稿コメント上"
 msgstr "Au-dessus des commentaires"
 
-#: lib/widget-areas.php:211
+#: lib/widget-areas.php:212
 msgid "コメントエリアの上に表示されるウィジェット。"
 msgstr "Le widget affiché au-dessus de la zone des commentaires."
 
-#: lib/widget-areas.php:225
+#: lib/widget-areas.php:226
 msgid "投稿コメント下"
 msgstr "En dessous des commentaires"
 
-#: lib/widget-areas.php:227
+#: lib/widget-areas.php:228
 msgid "コメントフォームの下に表示されるウィジェット。"
 msgstr "Les widgets sont affichés en dessous du formulaire de commentaire."
 
-#: lib/widget-areas.php:241
+#: lib/widget-areas.php:242
 msgid "固定ページタイトル上"
 msgstr "Au-dessus du titre de la page"
 
-#: lib/widget-areas.php:243
+#: lib/widget-areas.php:244
 msgid "固定ページタイトル上に表示されるウィジェット。"
 msgstr "Les widgets sont affichés au-dessus du titre de la page."
 
-#: lib/widget-areas.php:257
+#: lib/widget-areas.php:258
 msgid "固定ページタイトル下"
 msgstr "En dessous du titre de la page"
 
-#: lib/widget-areas.php:259
+#: lib/widget-areas.php:260
 msgid "固定ページタイトル下に表示されるウィジェット。"
 msgstr "Les widgets sont affichés en dessous du titre de la page."
 
-#: lib/widget-areas.php:273
+#: lib/widget-areas.php:274
 msgid "固定ページ本文上"
 msgstr "Au-dessus du corps de texte de la page"
 
-#: lib/widget-areas.php:275
+#: lib/widget-areas.php:276
 msgid "固定ページ本文上に表示されるウィジェット。"
 msgstr "Les widgets sont affichés au-dessus du corps de texte d'une page."
 
-#: lib/widget-areas.php:289
+#: lib/widget-areas.php:290
 msgid "固定ページ本文中"
 msgstr "Dans le corps de texte de la page"
 
-#: lib/widget-areas.php:291
+#: lib/widget-areas.php:292
 msgid "固定ページ本文中に表示されるウィジェット。文中最初のH2タグの手前に表示されます。広告が表示されている場合は、広告の下に表示されます。"
 msgstr "Les widgets sont affichés dans le corps de texte d'une page. Ils sont affichés avant la première balise H2 dans le corps de texte. Si des publicités sont affichées, les widgets seront affichés sous les publicités."
 
-#: lib/widget-areas.php:305
+#: lib/widget-areas.php:306
 msgid "固定ページ本文下"
 msgstr "En dessous du corps de texte de la page"
 
-#: lib/widget-areas.php:307
+#: lib/widget-areas.php:308
 msgid "固定ページ本文下に表示されるウィジェット。"
 msgstr "Les widgets sont affichés au-dessus du corps de texte d'une page."
 
-#: lib/widget-areas.php:322
+#: lib/widget-areas.php:323
 msgid "固定ページSNSボタン上"
 msgstr "Au-dessus des boutons de réseaux sociaux dans une page"
 
-#: lib/widget-areas.php:324
+#: lib/widget-areas.php:325
 msgid "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウィジェット。広告を表示している場合は、広告の下になります。"
 msgstr "Les widgets sont affichés au-dessus des boutons de réseaux sociaux tout en bas de la colonne principale d'une page. Si des publicités sont affichées, les widgets seront affichés sous les publicités."
 
-#: lib/widget-areas.php:338
+#: lib/widget-areas.php:339
 msgid "固定ページSNSボタン下"
 msgstr "En dessous des boutons de réseaux sociaux dans une page"
 
-#: lib/widget-areas.php:340
+#: lib/widget-areas.php:341
 msgid "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウィジェット。"
 msgstr "Les widgets sont affichés en dessous des boutons de réseaux sociaux tout en bas de la colonne principale d'une page."
 
-#: lib/widget-areas.php:354
+#: lib/widget-areas.php:355
 msgid "インデックスリストトップ"
 msgstr "Haut des listes d'index"
 
-#: lib/widget-areas.php:356
+#: lib/widget-areas.php:357
 msgid "インデックスリストのトップに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "Les widgets sont affichés en haut des listes d'index. Si des publicités sont affichées, les widgets seront affichés sous les publicités."
 
-#: lib/widget-areas.php:370
+#: lib/widget-areas.php:371
 msgid "インデックスリストミドル"
 msgstr "Milieu des listes d'index"
 
-#: lib/widget-areas.php:372
+#: lib/widget-areas.php:373
 msgid "インデックスリストの3つ目下に表示されるウィジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
 msgstr "Les widgets sont affichés sous la troisième liste d'index. Cette fonctionnalité est activée uniquement lorsque le style de la liste est défini sur « Carte de vignette ». Si des publicités sont affichées, les widgets seront affichés sous les publicités."
 
-#: lib/widget-areas.php:386
+#: lib/widget-areas.php:387
 msgid "インデックスリストボトム"
 msgstr "Bas des listes d'index"
 
-#: lib/widget-areas.php:388
+#: lib/widget-areas.php:389
 msgid "インデックスリストのボトムに表示されるウィジェット。広告が表示されているときは広告の下に表示されます。"
 msgstr "Les widgets sont affichés en bas des listes d'index. Si des publicités sont affichées, les widgets seront affichés sous les publicités."
 
-#: lib/widget-areas.php:402
+#: lib/widget-areas.php:403
 msgid "コンテンツ上部"
 msgstr "Au-dessus du contenu"
 
-#: lib/widget-areas.php:404
+#: lib/widget-areas.php:405
 msgid "メインカラムとサイドバーの上部エリア。グローバルメニューの下にもなります。"
 msgstr "La zone au-dessus de la colonne principale et de la barre latérale. En d'autres termes, les widgets seront affichés sous le menu global."
 
-#: lib/widget-areas.php:418
+#: lib/widget-areas.php:419
 msgid "コンテンツ下部"
 msgstr "En dessous du contenu"
 
-#: lib/widget-areas.php:420
+#: lib/widget-areas.php:421
 msgid "メインカラムとサイドバーの下部エリア。フッターの上になります。"
 msgstr "La zone en dessous de la colonne principale et de la barre latérale. En d'autres termes, les widgets seront affichés au-dessus du pied de page."
 
-#: lib/widget-areas.php:434
+#: lib/widget-areas.php:435
 msgid "フッター左"
 msgstr "Gauche du pied de page"
 
-#: lib/widget-areas.php:436
+#: lib/widget-areas.php:437
 msgid "フッター左側のウィジェットエリアです。"
 msgstr "La zone de widgets est affichée à gauche du pied de page."
 
-#: lib/widget-areas.php:451
+#: lib/widget-areas.php:452
 msgid "フッター中"
 msgstr "Centre du pied de page"
 
-#: lib/widget-areas.php:452
+#: lib/widget-areas.php:453
 msgid "フッター中間のウィジェットエリアです。"
 msgstr "La zone de widgets est affichée au centre du pied de page."
 
-#: lib/widget-areas.php:466
+#: lib/widget-areas.php:467
 msgid "フッター右"
 msgstr "Droite du pied de page"
 
-#: lib/widget-areas.php:468
+#: lib/widget-areas.php:469
 msgid "フッター右側フッター中のウィジェットエリアです。"
 msgstr "La zone de widgets est affichée à droite du pied de page."
 
-#: lib/widget-areas.php:483
+#: lib/widget-areas.php:484
 msgid "フッター（モバイル用）"
 msgstr "Pied de page (pour mobile)"
 
-#: lib/widget-areas.php:485
+#: lib/widget-areas.php:486
 msgid "モバイルで表示するウィジェットエリアです。834px以下で表示されます。"
 msgstr "La zone de widgets est affichée sur les appareils mobiles. Elle est affichée à 834 px ou moins."
 
-#: lib/widget-areas.php:502
+#: lib/widget-areas.php:503
 msgid "404ページをカスタマイズするためのウィジェットエリアです。"
 msgstr "La zone de widgets pour personnaliser les pages 404."
 
