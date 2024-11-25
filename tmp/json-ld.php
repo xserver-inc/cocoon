@@ -12,11 +12,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 $author = (get_the_author_meta('display_name') ? get_the_author_meta('display_name') : get_bloginfo('name'));
-$description = get_meta_description_text();
-//個別のメタディスクリプションを取得できなかった場合は、キャッチフレーズをメタディスクリプションに
-if (!$description) {
-  $description = get_bloginfo('description');
-}
+$description = get_ogp_description_text();
  ?>
 <script type="application/ld+json">
 {

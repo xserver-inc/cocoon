@@ -95,17 +95,12 @@ update_theme_option(OP_ADMIN_PAGESPEED_INSIGHTS_VISIBLE);
 //GTmetrixsリンクの表示
 update_theme_option(OP_ADMIN_GTMETRIX_VISIBLE);
 
-//モバイルフレンドリーリンクの表示
-update_theme_option(OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE);
-
 //構造化チェックリンクの表示
 update_theme_option(OP_ADMIN_STRUCTURED_DATA_VISIBLE);
 
 //HTML5チェックリンクの表示
 update_theme_option(OP_ADMIN_NU_HTML_CHECKER_VISIBLE);
 
-//HTML5アウトラインチェックリンクの表示
-update_theme_option(OP_ADMIN_HTML5_OUTLINER_VISIBLE);
 
 //SEOチェキリンクの表示
 update_theme_option(OP_ADMIN_SEOCHEKI_VISIBLE);

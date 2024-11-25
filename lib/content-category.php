@@ -99,6 +99,7 @@ function get_the_category_content($cat_id = null, $for_editor_or_snipet = false)
   if (!$cat_id) {
     $cat_id = get_query_var('cat');
   }
+  $content = '';
   if (term_metadata_exists($cat_id, 'the_category_content')) {
     //取得できた場合はそのまま返す（本文編集などでも使われる）
     $content = get_term_meta( $cat_id, 'the_category_content', true );
@@ -106,8 +107,6 @@ function get_the_category_content($cat_id = null, $for_editor_or_snipet = false)
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['content']))
       $content = $meta['content'];
-    else
-      $content = category_description($cat_id);
   }
   if (!$for_editor_or_snipet) {
     $content = apply_filters( 'the_category_tag_content', $content );//カテゴリー・タグ本文共通
@@ -372,6 +371,7 @@ function move_default_category_description(){
     } else {
       $description = __( '基本的にタグ設定の一覧テーブルに説明文を表示するための入力です。', THEME_NAME );
     }
+    $description .= __( '有効なメタディスクリプション文が設定されてない場合は、メタディスクリプションとして利用されることもあります。', THEME_NAME );
   ?>
     <script type="text/javascript">
     jQuery(function($) {

@@ -70,6 +70,7 @@ function get_the_tag_content($tag_id = null, $for_editor_or_snipet = false){
   if (!$tag_id) {
     $tag_id = get_queried_object_id();
   }
+  $content = '';
   if (term_metadata_exists($tag_id, 'the_tag_content')) {
     //取得できた場合はそのまま返す（本文編集などでも使われる）
     $content = get_term_meta( $tag_id, 'the_tag_content', true );
@@ -77,8 +78,6 @@ function get_the_tag_content($tag_id = null, $for_editor_or_snipet = false){
     $meta = get_the_tag_meta($tag_id);
     if (!empty($meta['content']))
       $content = $meta['content'];
-    else
-      $content = tag_description($tag_id);
   }
   if (!$for_editor_or_snipet) {
     //$content = wpautop($content);

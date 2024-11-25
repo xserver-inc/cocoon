@@ -66,8 +66,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
+            generate_checkbox_tag(OP_META_DESCRIPTION_TO_FRONT_PAGE, is_meta_description_to_front_page(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページのページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
+            ?>
+            <?php
             generate_textbox_tag(OP_FRONT_PAGE_META_DESCRIPTION, get_front_page_meta_description(), __( 'メタディスクリプションを入力', THEME_NAME ));
-            generate_tips_tag(__( 'フロントページで出力するメタディスクリプションタグの内容を入力してください。').__('入力しない場合は、キャッチフレーズが表示されます。', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページで出力するメタディスクリプションタグの内容を入力してください。', THEME_NAME ).__('入力しない場合は、キャッチフレーズが表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -78,6 +82,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_label_tag(OP_FRONT_PAGE_META_KEYWORDS, __( 'メタキーワード', THEME_NAME ) ); ?>
           </th>
           <td>
+            <?php
+            generate_checkbox_tag(OP_META_KEYWORDS_TO_FRONT_PAGE, is_meta_keywords_to_front_page(), __( 'メタキーワードタグを出力する', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
+            ?>
             <?php
             generate_textbox_tag(OP_FRONT_PAGE_META_KEYWORDS, get_front_page_meta_keywords(), __( 'キーワード1,キーワード2,キーワード3,...', THEME_NAME ));
             generate_tips_tag(__( 'フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));

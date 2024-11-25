@@ -10,11 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <!-- OGP -->
 <meta property="og:type" content="<?php echo (is_singular() ? 'article' : 'website'); ?>">
 <?php
-$description = get_meta_description_text();
-//個別のメタディスクリプションを取得できなかった場合は、キャッチフレーズをメタディスクリプションに
-if (!$description) {
-  $description = get_bloginfo('description');
-}
+$description = get_ogp_description_text();
 if (is_singular()){//単一記事ページの場合
   $title = get_the_title();
   if ( is_front_page() ) {

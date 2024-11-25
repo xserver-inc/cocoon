@@ -109,6 +109,7 @@ body.wp-admin {
   float: left;
   margin-top: 3px;
   position: relative;
+  margin-bottom: 0.4em;
 }
 
 .admin-settings .demo .related-entry-card-content, .admin-settings .demo .entry-card-content {
@@ -117,7 +118,7 @@ body.wp-admin {
 
 .admin-settings .demo .related-entry-card-title, .admin-settings .demo .entry-card-title {
   font-size: 18px;
-  margin: 0 0 5px 0;
+  margin: 0 0 0.4em 0;
   line-height: 1.6;
   font-weight: bold;
   display: -webkit-box;
@@ -128,6 +129,7 @@ body.wp-admin {
 
 .admin-settings .demo .related-entry-card-snippet, .admin-settings .demo .entry-card-snippet {
   font-size: var(--cocoon-text-size-s);
+  margin: 0 0 0.4em 0;
   line-height: 1.3;
   display: -webkit-box;
   overflow: hidden;
@@ -1320,7 +1322,6 @@ body.wp-admin {
 }
 .admin-settings .demo .ect-vertical-card .entry-card-thumb,
 .admin-settings .demo .rect-vertical-card .related-entry-card-thumb {
-  margin: 0;
   flex-shrink: 0;
 }
 .admin-settings .demo .no-thumbnail .card-thumb,
@@ -9871,7 +9872,6 @@ body.wp-admin {
 }
 .admin-settings .demo .ect-vertical-card .entry-card-thumb,
 .admin-settings .demo .rect-vertical-card .related-entry-card-thumb {
-  margin: 0;
   flex-shrink: 0;
 }
 .admin-settings .demo .no-thumbnail .card-thumb,
@@ -19666,12 +19666,6 @@ body.wp-admin {
   .admin-settings .demo .rect-entry-card .card-content,
   .admin-settings .demo .ect-big-card-first .card-content {
     margin: 0;
-  }
-  .admin-settings .demo .ect-entry-card .card-snippet,
-  .admin-settings .demo .rect-entry-card .card-snippet,
-  .admin-settings .demo .ect-big-card-first .card-snippet {
-    margin-bottom: 0;
-    clear: both;
   }
   .admin-settings .demo .ect-entry-card .card-meta,
   .admin-settings .demo .rect-entry-card .card-meta,

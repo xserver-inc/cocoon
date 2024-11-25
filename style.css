@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.8.0.2
+Version: 2.8.1
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -115,6 +115,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   float: left;
   margin-top: 3px;
   position: relative;
+  margin-bottom: 0.4em;
 }
 
 .related-entry-card-content, .entry-card-content {
@@ -123,7 +124,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .related-entry-card-title, .entry-card-title {
   font-size: 18px;
-  margin: 0 0 5px 0;
+  margin: 0 0 0.4em 0;
   line-height: 1.6;
   font-weight: bold;
   display: -webkit-box;
@@ -134,6 +135,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .related-entry-card-snippet, .entry-card-snippet {
   font-size: var(--cocoon-text-size-s);
+  margin: 0 0 0.4em 0;
   line-height: 1.3;
   display: -webkit-box;
   overflow: hidden;
@@ -817,7 +819,6 @@ img {
 
 .ect-vertical-card .entry-card-thumb,
 .rect-vertical-card .related-entry-card-thumb {
-  margin: 0;
   flex-shrink: 0;
 }
 
@@ -12147,12 +12148,6 @@ _:-ms-lang(x), .mc-circle {
   .rect-entry-card .card-content,
   .ect-big-card-first .card-content {
     margin: 0;
-  }
-  .ect-entry-card .card-snippet,
-  .rect-entry-card .card-snippet,
-  .ect-big-card-first .card-snippet {
-    margin-bottom: 0;
-    clear: both;
   }
   .ect-entry-card .card-meta,
   .rect-entry-card .card-meta,

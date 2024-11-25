@@ -178,8 +178,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_number_tag(OP_ENTRY_CARD_EXCERPT_MAX_LENGTH,  get_entry_card_excerpt_max_length(), 120, 0, 500);
-            generate_tips_tag(__( '「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）', THEME_NAME ));
+            generate_number_tag(OP_ENTRY_CARD_EXCERPT_MAX_LENGTH,  get_entry_card_excerpt_max_length(), 120, 1, 500);
+            generate_tips_tag(__( '「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -228,7 +228,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ENTRY_CARD_POST_AUTHOR_VISIBLE , is_entry_card_post_author_visible(), __( '投稿者名の表示', THEME_NAME ));
             echo '<br>';
 
-            generate_checkbox_tag(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE , is_entry_card_post_comment_count_visible(), __( 'コメント数の表示', THEME_NAME ));
+            generate_checkbox_tag(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE , is_entry_card_post_comment_count_visible(), __( 'コメント数の表示', THEME_NAME ).__( '（※投稿・固定ページでコメントが表示されている場合）', THEME_NAME ));
 
             generate_tips_tag(__( 'インデックスページのエントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
             ?>

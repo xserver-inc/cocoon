@@ -253,14 +253,6 @@ function is_admin_gtmetrix_visible(){
 }
 endif;
 
-//モバイルフレンドリーリンクの表示
-define('OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE', 'admin_mobile_friendly_test_visible');
-if ( !function_exists( 'is_admin_mobile_friendly_test_visible' ) ):
-function is_admin_mobile_friendly_test_visible(){
-  return get_theme_option(OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE, 1);
-}
-endif;
-
 //構造化チェックリンクの表示
 define('OP_ADMIN_STRUCTURED_DATA_VISIBLE', 'admin_structured_data_visible');
 if ( !function_exists( 'is_admin_structured_data_visible' ) ):
@@ -282,14 +274,6 @@ define('OP_ADMIN_SEOCHEKI_VISIBLE', 'admin_seocheki_visible');
 if ( !function_exists( 'is_admin_seocheki_visible' ) ):
 function is_admin_seocheki_visible(){
   return get_theme_option(OP_ADMIN_SEOCHEKI_VISIBLE, 1);
-}
-endif;
-
-//HTML5アウトラインチェックリンクの表示
-define('OP_ADMIN_HTML5_OUTLINER_VISIBLE', 'admin_html5_outliner_visible');
-if ( !function_exists( 'is_admin_html5_outliner_visible' ) ):
-function is_admin_html5_outliner_visible(){
-  return get_theme_option(OP_ADMIN_HTML5_OUTLINER_VISIBLE, 1);
 }
 endif;
 

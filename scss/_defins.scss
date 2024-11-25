@@ -143,6 +143,7 @@ $bgc_hover_anime: all .3s ease-in-out;
   float: left;
   margin-top: $emtry_card_thumb_margin_top;
   position: relative;
+  margin-bottom: 0.4em;
 }
 
 %card_content{
@@ -151,7 +152,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 
 %card_title{
   font-size: 18px;
-  margin: 0 0 5px 0;
+  margin: 0 0 0.4em 0;
   line-height: 1.6;
   font-weight: bold;
   display: -webkit-box;
@@ -162,6 +163,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 
 %card_snippet{
   font-size: var(--cocoon-text-size-s);
+  margin: 0 0 0.4em 0;
   line-height: 1.3;
   display: -webkit-box;
   overflow: hidden;
