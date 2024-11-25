@@ -67,7 +67,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_META_DESCRIPTION_TO_FRONT_PAGE, is_meta_description_to_front_page(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
-            generate_tips_tag(__( 'フロントページのページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
             ?>
             <?php
             generate_textbox_tag(OP_FRONT_PAGE_META_DESCRIPTION, get_front_page_meta_description(), __( 'メタディスクリプションを入力', THEME_NAME ));
@@ -84,7 +84,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_META_KEYWORDS_TO_FRONT_PAGE, is_meta_keywords_to_front_page(), __( 'メタキーワードタグを出力する', THEME_NAME ));
-            generate_tips_tag(__( 'フロントページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
             ?>
             <?php
             generate_textbox_tag(OP_FRONT_PAGE_META_KEYWORDS, get_front_page_meta_keywords(), __( 'キーワード1,キーワード2,キーワード3,...', THEME_NAME ));
