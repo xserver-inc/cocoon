@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-21T11:18:29+00:00\n"
-"PO-Revision-Date: 2024-11-21 12:50\n"
+"POT-Creation-Date: 2024-11-25T14:34:00+00:00\n"
+"PO-Revision-Date: 2024-11-25 15:43\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -101,12 +101,12 @@ msgstr "Your email address will not be published."
 msgid "コメントを書き込む"
 msgstr "写评论"
 
-#: functions.php:155
+#: functions.php:156
 msgid "キーワード指定なし"
 msgstr "未指定关键词"
 
-#: functions.php:507
 #: functions.php:508
+#: functions.php:509
 #: lib/admin.php:409
 msgid "パターン一覧"
 msgstr "模式列表"
@@ -1238,8 +1238,8 @@ msgid "PV"
 msgstr "页面视图"
 
 #: lib/admin.php:155
-#: lib/content-category.php:263
-#: lib/content-tag.php:211
+#: lib/content-category.php:262
+#: lib/content-tag.php:210
 msgid "アイキャッチ"
 msgstr "封面图片"
 
@@ -1517,7 +1517,7 @@ msgstr "边框线"
 
 #: lib/block-editor-styles-list.php:25
 #: lib/block-editor-styles-paragraph.php:25
-#: lib/content-category.php:226
+#: lib/content-category.php:225
 #: lib/page-settings/all-forms.php:165
 #: lib/page-settings/appeal-forms.php:90
 #: lib/page-settings/buttons-forms.php:83
@@ -1591,22 +1591,22 @@ msgstr "发布日期："
 msgid "Edit"
 msgstr "编辑"
 
-#: lib/content-category.php:179
-#: lib/content-tag.php:150
+#: lib/content-category.php:178
+#: lib/content-tag.php:149
 #: lib/seo.php:415
-#: lib/seo.php:556
+#: lib/seo.php:588
 msgid "「%s」の記事一覧です。"
 msgstr "「%s」的文章列表。"
 
-#: lib/content-category.php:221
+#: lib/content-category.php:220
 msgid "カテゴリー色"
 msgstr "类别颜色"
 
-#: lib/content-category.php:230
+#: lib/content-category.php:229
 msgid "カテゴリーの色を指定します。"
 msgstr "指定类别的颜色。"
 
-#: lib/content-category.php:235
+#: lib/content-category.php:234
 #: lib/page-settings/all-forms.php:99
 #: lib/page-settings/buttons-forms.php:86
 #: lib/page-settings/editor-forms.php:74
@@ -1628,129 +1628,133 @@ msgstr "指定类别的颜色。"
 msgid "文字色"
 msgstr "文字颜色"
 
-#: lib/content-category.php:239
+#: lib/content-category.php:238
 msgid "カテゴリーの文字色を指定します。入力しない場合は、白色になります。"
 msgstr "指定类别的文字颜色。不输入时将为白色。"
 
-#: lib/content-category.php:244
-#: lib/content-tag.php:192
+#: lib/content-category.php:243
+#: lib/content-tag.php:191
 #: lib/custom-fields/seo-field.php:118
 msgid "SEOタイトル"
 msgstr "SEO标题"
 
-#: lib/content-category.php:249
-#: lib/content-tag.php:197
+#: lib/content-category.php:248
+#: lib/content-tag.php:196
 msgid "SEO向けのタイトルの入力"
 msgstr "输入用于SEO的标题"
 
-#: lib/content-category.php:250
-#: lib/content-tag.php:198
+#: lib/content-category.php:249
+#: lib/content-tag.php:197
 #: lib/custom-fields/seo-field.php:120
 msgid "検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。"
 msgstr "请输入您希望在搜索引擎中显示的标题。这里输入的文本将优先于文章标题插入到标题标签(&lt;title&gt;)中。"
 
-#: lib/content-category.php:254
-#: lib/content-tag.php:202
+#: lib/content-category.php:253
+#: lib/content-tag.php:201
 #: lib/page-settings/_top-page.php:203
 msgid "本文"
 msgstr "正文"
 
-#: lib/content-category.php:259
+#: lib/content-category.php:258
 msgid "このページで表示されるメインコンテンツを入力してください。"
 msgstr "请输入此页面显示的主要内容。"
 
-#: lib/content-category.php:268
-#: lib/content-tag.php:216
+#: lib/content-category.php:267
+#: lib/content-tag.php:215
 msgid "タイトル下に表示されるアイキャッチ画像を選択してください。"
 msgstr "请选择显示在标题下的特色图片。"
 
-#: lib/content-category.php:272
-#: lib/content-tag.php:220
+#: lib/content-category.php:271
+#: lib/content-tag.php:219
 #: lib/custom-fields/seo-field.php:128
-#: lib/page-settings/title-forms.php:163
-#: lib/page-settings/title-forms.php:264
+#: lib/page-settings/title-forms.php:171
+#: lib/page-settings/title-forms.php:272
 #: skins/skin-made-in-heaven/lib/hook-wp.php:74
 #: skins/skin-made-in-heaven/lib/hook-wp.php:155
 msgid "メタディスクリプション"
 msgstr "元描述"
 
-#: lib/content-category.php:276
+#: lib/content-category.php:275
 msgid "カテゴリーページの説明文を入力してください"
 msgstr "请输入类别页面的说明文字"
 
-#: lib/content-category.php:278
+#: lib/content-category.php:277
 msgid "このページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。"
 msgstr "输入此页面的描述。这里输入的文本将用作元描述标签。"
 
-#: lib/content-category.php:282
-#: lib/content-tag.php:230
+#: lib/content-category.php:281
+#: lib/content-tag.php:229
 #: lib/custom-fields/seo-field.php:134
-#: lib/page-settings/title-forms.php:78
-#: lib/page-settings/title-forms.php:176
-#: lib/page-settings/title-forms.php:277
+#: lib/page-settings/title-forms.php:82
+#: lib/page-settings/title-forms.php:184
+#: lib/page-settings/title-forms.php:285
 msgid "メタキーワード"
 msgstr "元关键字"
 
-#: lib/content-category.php:287
-#: lib/content-tag.php:235
+#: lib/content-category.php:286
+#: lib/content-tag.php:234
 msgid "キーワード1,キーワード2,キーワード3"
 msgstr "关键字1，关键字2，关键字3"
 
-#: lib/content-category.php:288
-#: lib/content-tag.php:236
+#: lib/content-category.php:287
+#: lib/content-tag.php:235
 msgid "このページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。"
 msgstr "请输入此页面的元关键字，并用逗号分隔。※目前此设置意义不大。"
 
-#: lib/content-category.php:292
-#: lib/content-tag.php:240
+#: lib/content-category.php:291
+#: lib/content-tag.php:239
 msgid "noindex"
 msgstr "不索引"
 
-#: lib/content-category.php:298
-#: lib/content-tag.php:246
+#: lib/content-category.php:297
+#: lib/content-tag.php:245
 #: lib/custom-fields/seo-field.php:139
 msgid "インデックスしない（noindex）"
 msgstr "不索引（noindex）"
 
-#: lib/content-category.php:299
-#: lib/content-tag.php:247
+#: lib/content-category.php:298
+#: lib/content-tag.php:246
 #: lib/custom-fields/seo-field.php:140
 msgid "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr "设置元标签以防止此页面被搜索引擎索引。"
 
-#: lib/content-category.php:299
+#: lib/content-category.php:298
 msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢カテゴリーページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
 msgstr "即使此设置无效，如果启用了Cocoon设置的“SEO”标签中的“将类别页面设为noindex”设置，优先级会以其为准。"
 
-#: lib/content-category.php:369
+#: lib/content-category.php:368
 msgid "カテゴリーとしてウィジェットやラベル等で表示される名前です。"
 msgstr "这是作为类别在小部件和标签等中显示的名称。"
 
-#: lib/content-category.php:371
+#: lib/content-category.php:370
 msgid "基本的にカテゴリー設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr "基本上是用于在类别设置列表表中显示说明文字的输入。"
 
-#: lib/content-category.php:373
+#: lib/content-category.php:372
 msgid "基本的にタグ設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr "基本上是用于在标签设置列表表中显示说明文字的输入。"
 
-#: lib/content-tag.php:207
+#: lib/content-category.php:374
+msgid "有効なメタディスクリプション文が設定されてない場合は、メタディスクリプションとして利用されることもあります。"
+msgstr "如果没有设置有效的meta描述，则可能会用作meta描述。"
+
+#: lib/content-tag.php:206
 msgid "ページで表示されるメインコンテンツを入力してください。"
 msgstr "请输入在页面上显示的主要内容。"
 
-#: lib/content-tag.php:224
+#: lib/content-tag.php:223
 msgid "ページの説明文を入力してください"
 msgstr "请输入页面的说明文字"
 
-#: lib/content-tag.php:226
+#: lib/content-tag.php:225
 msgid "ページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。"
 msgstr "输入页面的描述。这里输入的文本将用作元描述标签。"
 
-#: lib/content-tag.php:247
+#: lib/content-tag.php:246
 msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢タグページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
 msgstr "即使此设置无效，如果启用了Cocoon设置的“SEO”标签中的“将标签页面设为noindex”设置，优先级会以其为准。"
 
-#: lib/content-tag.php:247
+#: lib/content-tag.php:246
 msgid "※カスタム投稿のカテゴリーなったとしても公開ページはタグとして認識されます。"
 msgstr "※即使成为自定义文章的类别，公开页面仍会被识别为标签。"
 
@@ -2606,7 +2610,7 @@ msgid "人気記事は見つかりませんでした。"
 msgstr "未找到热门文章。"
 
 #: lib/html-forms.php:1353
-#: lib/html-forms.php:1886
+#: lib/html-forms.php:1895
 msgid "記事は見つかりませんでした。"
 msgstr "未找到文章。"
 
@@ -2717,7 +2721,7 @@ msgstr "在设置广告之前，请确认AdSense政策。"
 #: lib/html-tooltips.php:111
 #: lib/html-tooltips.php:125
 #: tmp/admin-panel.php:71
-#: tmp/admin-panel.php:80
+#: tmp/admin-panel.php:77
 msgid "ja"
 msgstr "ja"
 
@@ -3285,8 +3289,8 @@ msgstr "创建排行榜。要输入下一个排行榜，请按保存按钮。"
 #: lib/page-settings/sns-share-forms-bottom.php:21
 #: lib/page-settings/sns-share-forms-top.php:21
 #: lib/page-settings/title-forms.php:25
-#: lib/page-settings/title-forms.php:109
-#: lib/page-settings/title-forms.php:207
+#: lib/page-settings/title-forms.php:117
+#: lib/page-settings/title-forms.php:215
 #: lib/page-settings/toc-forms.php:25
 msgid "プレビュー"
 msgstr "预览"
@@ -4015,8 +4019,8 @@ msgid "チェックツールエリアを表示する"
 msgstr "显示检查工具区域"
 
 #: lib/page-settings/admin-forms.php:276
-msgid "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、アウトラインチェック、Twitterの反応など。"
-msgstr "显示一个区域，用于显示页面诊断的检查工具。包括PageSpeed Insights、结构化数据检查、HTML5检查、轮廓检查、Twitter反应等。"
+msgid "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、Twitterの反応など。"
+msgstr "显示一个区域，用于显示页面诊断的检查工具。包括PageSpeed Insights、结构化数据检查、HTML5检查、Twitter反应等。"
 
 #: lib/page-settings/admin-forms.php:280
 msgid "PageSpeed Insightsを表示する"
@@ -4035,86 +4039,70 @@ msgid "<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTme
 msgstr "显示链接以在<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTmetrix</a>中检查。"
 
 #: lib/page-settings/admin-forms.php:286
-msgid "モバイルフレンドリーテストを表示する"
-msgstr "显示移动友好性测试"
-
-#: lib/page-settings/admin-forms.php:287
-msgid "<a href=\"https://search.google.com/test/mobile-friendly\" target=\"_blank\" rel=\"noopener\">モバイルフレンドリーテスト</a>リンクの表示。"
-msgstr "显示链接以在<a href=\"https://search.google.com/test/mobile-friendly\" target=\"_blank\" rel=\"noopener\">移动友好性测试</a>中检查。"
-
-#: lib/page-settings/admin-forms.php:289
 msgid "構造化データチェックを表示する"
 msgstr "显示结构化数据检查"
 
-#: lib/page-settings/admin-forms.php:290
-msgid "<a href=\"https://search.google.com/structured-data/testing-tool#\" target=\"_blank\" rel=\"noopener\">構造化データ テストツール</a>リンクの表示。"
-msgstr "显示链接以在<a href=\"https://search.google.com/structured-data/testing-tool#\" target=\"_blank\" rel=\"noopener\">结构化数据测试工具</a>中检查。"
+#: lib/page-settings/admin-forms.php:287
+msgid "<a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">リッチリザルトテストツール</a>リンクの表示。"
+msgstr "显示链接以在<a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">豐富結果測試工具</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:292
+#: lib/page-settings/admin-forms.php:289
 msgid "HTML5チェックを表示する"
 msgstr "显示HTML5检查"
 
-#: lib/page-settings/admin-forms.php:293
+#: lib/page-settings/admin-forms.php:290
 msgid "<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a>リンクの表示。"
 msgstr "显示链接以在<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:295
-msgid "HTML5アウトラインチェックを表示する"
-msgstr "显示HTML5轮廓检查"
-
-#: lib/page-settings/admin-forms.php:296
-msgid "<a href=\"https://gsnedders.html5.org/outliner/\" target=\"_blank\" rel=\"noopener\">HTML 5 Outliner</a>リンクの表示。"
-msgstr "显示链接以在<a href=\"https://gsnedders.html5.org/outliner/\" target=\"_blank\" rel=\"noopener\">HTML 5 Outliner</a>中检查。"
-
-#: lib/page-settings/admin-forms.php:298
+#: lib/page-settings/admin-forms.php:292
 msgid "SEOチェキを表示する"
 msgstr "显示SEO检查"
 
-#: lib/page-settings/admin-forms.php:299
+#: lib/page-settings/admin-forms.php:293
 msgid "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
 msgstr "显示链接以在<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO检查! 免费SEO工具</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:301
+#: lib/page-settings/admin-forms.php:295
 msgid "ツイートチェックを表示する"
 msgstr "显示推文检查"
 
-#: lib/page-settings/admin-forms.php:302
+#: lib/page-settings/admin-forms.php:296
 msgid "投稿・固定ページに対するツイートチェックリンクの表示。"
 msgstr "显示文章和固定页面的推文检查链接。"
 
-#: lib/page-settings/admin-forms.php:311
+#: lib/page-settings/admin-forms.php:305
 msgid "レスポンシブツールエリアの表示"
 msgstr "显示响应式工具区域"
 
-#: lib/page-settings/admin-forms.php:315
+#: lib/page-settings/admin-forms.php:309
 msgid "レスポンシブチェックを表示する"
 msgstr "显示响应式检查"
 
-#: lib/page-settings/admin-forms.php:316
+#: lib/page-settings/admin-forms.php:310
 msgid "レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えます。"
 msgstr "切换显示响应式显示状态检查工具区域的功能。"
 
-#: lib/page-settings/admin-forms.php:320
+#: lib/page-settings/admin-forms.php:314
 msgid "Responsinatorチェックを表示する"
 msgstr "显示Responsinator检查"
 
-#: lib/page-settings/admin-forms.php:321
+#: lib/page-settings/admin-forms.php:315
 msgid "<a href=\"http://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>チェック用リンクの表示。"
 msgstr "显示链接以在<a href=\"http://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:323
+#: lib/page-settings/admin-forms.php:317
 msgid "Sizzyチェックを表示する"
 msgstr "显示Sizzy检查"
 
-#: lib/page-settings/admin-forms.php:324
+#: lib/page-settings/admin-forms.php:318
 msgid "<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>チェック用リンクの表示。"
 msgstr "显示链接以在<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:326
+#: lib/page-settings/admin-forms.php:320
 msgid "ScreenResolutionチェックを表示する"
 msgstr "显示ScreenResolution检查"
 
-#: lib/page-settings/admin-forms.php:327
+#: lib/page-settings/admin-forms.php:321
 msgid "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
 msgstr "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
 
@@ -5761,7 +5749,7 @@ msgid "URLやURLリンクをブログカード形式で表示するための設�
 msgstr "这是为了将URL或URL链接以博客卡片形式显示的设置。内部博客卡片用于显示帖子或固定页面。"
 
 #: lib/page-settings/blogcard-in-forms.php:39
-#: lib/page-settings/title-forms.php:135
+#: lib/page-settings/title-forms.php:143
 msgid "ランダムで投稿を取得しています。"
 msgstr "正在随机获取帖子。"
 
@@ -7721,8 +7709,8 @@ msgid "自動生成抜粋文字数"
 msgstr "自动生成摘录的字符数"
 
 #: lib/page-settings/index-forms.php:182
-msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
-msgstr "设置在“条目卡片”中显示“从正文自动生成的摘要”时的最大字符数。※不是发布编辑界面的摘要文本。（最小：0，最大：500）"
+msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）"
+msgstr "设置在“条目卡片”中显示“从正文自动生成的摘要”时的最大字符数。※不是发布编辑界面的摘要文本。（最小：1，最大：500）"
 
 #: lib/page-settings/index-forms.php:190
 msgid "省略文字列"
@@ -7755,6 +7743,10 @@ msgstr "在智能手机上显示摘录（480px以下）"
 #: lib/page-settings/index-forms.php:231
 msgid "コメント数の表示"
 msgstr "显示评论数"
+
+#: lib/page-settings/index-forms.php:231
+msgid "（※投稿・固定ページでコメントが表示されている場合）"
+msgstr "（※当在文章或固定页面上显示评论时）"
 
 #: lib/page-settings/index-forms.php:233
 msgid "インデックスページのエントリーカードに投稿関連情報を表示するかどうか。"
@@ -8537,7 +8529,7 @@ msgid "画像や動画、ファイルなどの添付ページをnoindex設定に
 msgstr "将图像、视频、文件等附件页面设置为noindex。"
 
 #: lib/page-settings/seo-forms.php:73
-#: tmp/admin-panel.php:80
+#: tmp/admin-panel.php:77
 msgid "構造化データ"
 msgstr "结构化数据"
 
@@ -8828,8 +8820,8 @@ msgid "最大自動生成抜粋文字数"
 msgstr "最大自动生成摘录字数"
 
 #: lib/page-settings/single-forms.php:232
-msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
-msgstr "设置在“相关文章条目卡”中显示的“从正文自动生成的摘要文本”的最大字符数。※不是发布编辑画面的摘要文本。（最小：0，最大：500）"
+msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）"
+msgstr "设置在“相关文章条目卡”中显示的“从正文自动生成的摘要文本”的最大字符数。※不是发布编辑画面的摘要文本。（最小：1，最大：500）"
 
 #: lib/page-settings/single-forms.php:266
 msgid "投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。"
@@ -9652,8 +9644,8 @@ msgid "フロントページの、タイトル、メタディスクリプショ�
 msgstr "这是关于前端页面的标题、元描述、元关键词的设置。"
 
 #: lib/page-settings/title-forms.php:35
-#: lib/page-settings/title-forms.php:136
-#: lib/page-settings/title-forms.php:238
+#: lib/page-settings/title-forms.php:144
+#: lib/page-settings/title-forms.php:246
 msgid "プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。"
 msgstr "预览仅供参考。显示可能会根据搜索引擎的不同而有所改变。"
 
@@ -9663,10 +9655,10 @@ msgstr "前端页面标题"
 
 #: lib/page-settings/title-forms.php:48
 #: lib/page-settings/title-forms.php:49
-#: lib/page-settings/title-forms.php:150
-#: lib/page-settings/title-forms.php:151
-#: lib/page-settings/title-forms.php:252
-#: lib/page-settings/title-forms.php:253
+#: lib/page-settings/title-forms.php:158
+#: lib/page-settings/title-forms.php:159
+#: lib/page-settings/title-forms.php:260
+#: lib/page-settings/title-forms.php:261
 msgid "サイト名"
 msgstr "网站名称"
 
@@ -9695,136 +9687,146 @@ msgid "サイトの説明"
 msgstr "网站描述"
 
 #: lib/page-settings/title-forms.php:69
-msgid "メタディスクリプションを入力"
-msgstr "输入元描述"
-
-#: lib/page-settings/title-forms.php:70
-msgid "フロントページで出力するメタディスクリプションタグの内容を入力してください。"
-msgstr "请输入在首页输出的meta描述标签的内容。"
-
-#: lib/page-settings/title-forms.php:70
-msgid "入力しない場合は、キャッチフレーズが表示されます。"
-msgstr "如果不输入，将显示标语。"
-
-#: lib/page-settings/title-forms.php:82
-msgid "キーワード1,キーワード2,キーワード3,..."
-msgstr "关键词1,关键词2,关键词3,..."
-
-#: lib/page-settings/title-forms.php:83
-msgid "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。"
-msgstr "请输入在前端页面中输出的元关键词标签内容，用（逗号）分隔。如果不输入，则不会输出元标签。※从SEO的角度来看，这几乎没有意义。"
-
-#: lib/page-settings/title-forms.php:97
-msgid "投稿・固定ページ設定"
-msgstr "帖子和固定页面设置"
-
-#: lib/page-settings/title-forms.php:100
-msgid "投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
-msgstr "这是关于帖子和固定页面的标题、元描述、元关键词的设置。"
-
-#: lib/page-settings/title-forms.php:144
-msgid "投稿・固定ページタイトル"
-msgstr "帖子和固定页面标题"
-
-#: lib/page-settings/title-forms.php:149
-#: lib/page-settings/title-forms.php:150
-#: lib/page-settings/title-forms.php:151
-#: lib/page-settings/title-forms.php:246
-#: lib/page-settings/title-forms.php:251
-#: lib/page-settings/title-forms.php:252
-#: lib/page-settings/title-forms.php:253
-msgid "ページタイトル"
-msgstr "页面标题"
-
-#: lib/page-settings/title-forms.php:154
-msgid "投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。"
-msgstr "请选择在帖子和固定页面中输出的标题标签格式。"
-
-#: lib/page-settings/title-forms.php:167
-#: lib/page-settings/title-forms.php:268
+#: lib/page-settings/title-forms.php:175
+#: lib/page-settings/title-forms.php:276
 msgid "メタディスクリプションタグを出力する"
 msgstr "输出元描述标签"
 
-#: lib/page-settings/title-forms.php:168
-msgid "投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
-msgstr "是否在帖子和固定页面的head标签中输出元描述标签。"
+#: lib/page-settings/title-forms.php:70
+msgid "フロントページのheadタグ内に、メタディスクリプションタグを出力するか。"
+msgstr "是否在首页的head标签内输出meta描述标签。"
 
-#: lib/page-settings/title-forms.php:180
-#: lib/page-settings/title-forms.php:281
+#: lib/page-settings/title-forms.php:73
+msgid "メタディスクリプションを入力"
+msgstr "输入元描述"
+
+#: lib/page-settings/title-forms.php:74
+msgid "フロントページで出力するメタディスクリプションタグの内容を入力してください。"
+msgstr "请输入在首页输出的meta描述标签的内容。"
+
+#: lib/page-settings/title-forms.php:74
+msgid "入力しない場合は、キャッチフレーズが表示されます。"
+msgstr "如果不输入，将显示标语。"
+
+#: lib/page-settings/title-forms.php:86
+#: lib/page-settings/title-forms.php:188
+#: lib/page-settings/title-forms.php:289
 msgid "メタキーワードタグを出力する"
 msgstr "输出元关键词标签"
 
-#: lib/page-settings/title-forms.php:181
+#: lib/page-settings/title-forms.php:87
+msgid "フロントページのheadタグ内に、メタキーワードタグを出力するか。"
+msgstr "是否在首页的head标签内输出meta关键词标签。"
+
+#: lib/page-settings/title-forms.php:90
+msgid "キーワード1,キーワード2,キーワード3,..."
+msgstr "关键词1,关键词2,关键词3,..."
+
+#: lib/page-settings/title-forms.php:91
+msgid "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。"
+msgstr "请输入在前端页面中输出的元关键词标签内容，用（逗号）分隔。如果不输入，则不会输出元标签。※从SEO的角度来看，这几乎没有意义。"
+
+#: lib/page-settings/title-forms.php:105
+msgid "投稿・固定ページ設定"
+msgstr "帖子和固定页面设置"
+
+#: lib/page-settings/title-forms.php:108
+msgid "投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
+msgstr "这是关于帖子和固定页面的标题、元描述、元关键词的设置。"
+
+#: lib/page-settings/title-forms.php:152
+msgid "投稿・固定ページタイトル"
+msgstr "帖子和固定页面标题"
+
+#: lib/page-settings/title-forms.php:157
+#: lib/page-settings/title-forms.php:158
+#: lib/page-settings/title-forms.php:159
+#: lib/page-settings/title-forms.php:254
+#: lib/page-settings/title-forms.php:259
+#: lib/page-settings/title-forms.php:260
+#: lib/page-settings/title-forms.php:261
+msgid "ページタイトル"
+msgstr "页面标题"
+
+#: lib/page-settings/title-forms.php:162
+msgid "投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。"
+msgstr "请选择在帖子和固定页面中输出的标题标签格式。"
+
+#: lib/page-settings/title-forms.php:176
+msgid "投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
+msgstr "是否在帖子和固定页面的head标签中输出元描述标签。"
+
+#: lib/page-settings/title-forms.php:189
 msgid "投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr "是否在帖子和固定页面的head标签中输出元关键词标签。※从SEO的角度来看，这几乎没有意义。"
 
-#: lib/page-settings/title-forms.php:195
+#: lib/page-settings/title-forms.php:203
 msgid "カテゴリー・タグページ設定"
 msgstr "分类和标签页面设置"
 
-#: lib/page-settings/title-forms.php:198
+#: lib/page-settings/title-forms.php:206
 msgid "カテゴリー・タグページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
 msgstr "这是关于分类和标签页面的标题、元描述、元关键词的设置。"
 
-#: lib/page-settings/title-forms.php:237
+#: lib/page-settings/title-forms.php:245
 msgid "カテゴリーページのランダム表示です。"
 msgstr "分类页面的随机显示。"
 
-#: lib/page-settings/title-forms.php:256
+#: lib/page-settings/title-forms.php:264
 msgid "カテゴリー・タグページで出力するタイトルタグのフォーマットを選択してください。"
 msgstr "请选择在分类和标签页面中输出的标题标签格式。"
 
-#: lib/page-settings/title-forms.php:269
+#: lib/page-settings/title-forms.php:277
 msgid "カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
 msgstr "是否在分类和标签页面的head标签中输出元描述标签。"
 
-#: lib/page-settings/title-forms.php:282
+#: lib/page-settings/title-forms.php:290
 msgid "カテゴリー・タグページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr "是否在分类和标签页面的head标签中输出元关键词标签。※从SEO的角度来看，这几乎没有意义。"
 
-#: lib/page-settings/title-forms.php:295
+#: lib/page-settings/title-forms.php:303
 msgid "タイトル共通設定"
 msgstr "标题通用设置"
 
-#: lib/page-settings/title-forms.php:298
+#: lib/page-settings/title-forms.php:306
 msgid "タイトルで使用される区切り文字の設定です。"
 msgstr "这是用于标题的分隔符设置。"
 
-#: lib/page-settings/title-forms.php:306
+#: lib/page-settings/title-forms.php:314
 msgid "簡略化したサイト名"
 msgstr "简化网站名称"
 
-#: lib/page-settings/title-forms.php:310
+#: lib/page-settings/title-forms.php:318
 msgid "短縮形のサイト名"
 msgstr "简短的网站名称"
 
-#: lib/page-settings/title-forms.php:313
+#: lib/page-settings/title-forms.php:321
 msgid "サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してください。入力しない場合は、通常のサイト名が表示されます。この短縮サイト名は投稿・固定・カテゴリー・タグページで適用されます"
 msgstr "如果网站名称过长并希望在标题中包含简化的网站名称，请输入。如果不输入，将显示正常的网站名称。此简化网站名称适用于帖子、固定、分类和标签页面"
 
-#: lib/page-settings/title-forms.php:321
+#: lib/page-settings/title-forms.php:329
 msgid "セパレーター"
 msgstr "分隔符"
 
-#: lib/page-settings/title-forms.php:326
+#: lib/page-settings/title-forms.php:334
 msgid " | （パイプ）"
 msgstr " | （竖线）"
 
-#: lib/page-settings/title-forms.php:327
+#: lib/page-settings/title-forms.php:335
 msgid " - （ハイフン）"
 msgstr " - （连字符）"
 
-#: lib/page-settings/title-forms.php:330
+#: lib/page-settings/title-forms.php:338
 msgid "タイトルの区切りとなる文字を設定してください。"
 msgstr "请设置作为标题分隔符的字符。"
 
 #: lib/page-settings/title-funcs.php:22
-msgid " - "
-msgstr " - "
+msgid "-"
+msgstr "-"
 
 #: lib/page-settings/title-funcs.php:25
-msgid " | "
-msgstr " | "
+msgid "|"
+msgstr "|"
 
 #: lib/page-settings/toc-forms.php:13
 msgid "目次設定"
@@ -11001,7 +11003,7 @@ msgid "CodePen URL"
 msgstr "CodePen URL"
 
 #: lib/sns.php:17
-#: tmp/header-ogp.php:84
+#: tmp/header-ogp.php:80
 msgid "ja_JP"
 msgstr "ja_JP"
 
@@ -13189,35 +13191,27 @@ msgstr "页面速度"
 msgid "GTmetrix"
 msgstr "GTmetrix"
 
-#: tmp/admin-panel.php:77
-msgid "モバイルフレンドリー"
-msgstr "移动友好"
-
-#: tmp/admin-panel.php:83
+#: tmp/admin-panel.php:80
 msgid "HTML5"
 msgstr "HTML5"
 
-#: tmp/admin-panel.php:86
-msgid "アウトライン"
-msgstr "大纲"
-
-#: tmp/admin-panel.php:89
+#: tmp/admin-panel.php:83
 msgid "SEOチェキ"
 msgstr "SEO检查"
 
-#: tmp/admin-panel.php:92
+#: tmp/admin-panel.php:86
 msgid "ツイート検索"
 msgstr "推文搜索"
 
-#: tmp/admin-panel.php:104
+#: tmp/admin-panel.php:98
 msgid "レスポンシブテスト"
 msgstr "响应式测试"
 
-#: tmp/admin-panel.php:107
+#: tmp/admin-panel.php:101
 msgid "Sizzy"
 msgstr "Sizzy"
 
-#: tmp/admin-panel.php:111
+#: tmp/admin-panel.php:105
 msgid "Resolution Test"
 msgstr "分辨率测试"
 

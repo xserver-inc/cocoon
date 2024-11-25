@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-21T11:18:29+00:00\n"
-"PO-Revision-Date: 2024-11-21 12:50\n"
+"POT-Creation-Date: 2024-11-25T14:34:00+00:00\n"
+"PO-Revision-Date: 2024-11-25 15:43\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -101,12 +101,12 @@ msgstr "이메일은 공개되지 않습니다."
 msgid "コメントを書き込む"
 msgstr "댓글 작성"
 
-#: functions.php:155
+#: functions.php:156
 msgid "キーワード指定なし"
 msgstr "키워드가 지정되지 않음"
 
-#: functions.php:507
 #: functions.php:508
+#: functions.php:509
 #: lib/admin.php:409
 msgid "パターン一覧"
 msgstr "패턴 목록"
@@ -1238,8 +1238,8 @@ msgid "PV"
 msgstr "PV"
 
 #: lib/admin.php:155
-#: lib/content-category.php:263
-#: lib/content-tag.php:211
+#: lib/content-category.php:262
+#: lib/content-tag.php:210
 msgid "アイキャッチ"
 msgstr "아이캐치"
 
@@ -1517,7 +1517,7 @@ msgstr "테두리"
 
 #: lib/block-editor-styles-list.php:25
 #: lib/block-editor-styles-paragraph.php:25
-#: lib/content-category.php:226
+#: lib/content-category.php:225
 #: lib/page-settings/all-forms.php:165
 #: lib/page-settings/appeal-forms.php:90
 #: lib/page-settings/buttons-forms.php:83
@@ -1591,22 +1591,22 @@ msgstr "게시일: "
 msgid "Edit"
 msgstr "Edit"
 
-#: lib/content-category.php:179
-#: lib/content-tag.php:150
+#: lib/content-category.php:178
+#: lib/content-tag.php:149
 #: lib/seo.php:415
-#: lib/seo.php:556
+#: lib/seo.php:588
 msgid "「%s」の記事一覧です。"
 msgstr "\"%s\"의 게시글 목록입니다."
 
-#: lib/content-category.php:221
+#: lib/content-category.php:220
 msgid "カテゴリー色"
 msgstr "카테고리 색"
 
-#: lib/content-category.php:230
+#: lib/content-category.php:229
 msgid "カテゴリーの色を指定します。"
 msgstr "카테고리 색을 설정합니다."
 
-#: lib/content-category.php:235
+#: lib/content-category.php:234
 #: lib/page-settings/all-forms.php:99
 #: lib/page-settings/buttons-forms.php:86
 #: lib/page-settings/editor-forms.php:74
@@ -1628,129 +1628,133 @@ msgstr "카테고리 색을 설정합니다."
 msgid "文字色"
 msgstr "글자색"
 
-#: lib/content-category.php:239
+#: lib/content-category.php:238
 msgid "カテゴリーの文字色を指定します。入力しない場合は、白色になります。"
 msgstr "카테고리의 글자색을 지정합니다. 입력하지 않은 경우 흰색이 적용됩니다."
 
-#: lib/content-category.php:244
-#: lib/content-tag.php:192
+#: lib/content-category.php:243
+#: lib/content-tag.php:191
 #: lib/custom-fields/seo-field.php:118
 msgid "SEOタイトル"
 msgstr "SEO 제목"
 
-#: lib/content-category.php:249
-#: lib/content-tag.php:197
+#: lib/content-category.php:248
+#: lib/content-tag.php:196
 msgid "SEO向けのタイトルの入力"
 msgstr "SEO용 제목 입력"
 
-#: lib/content-category.php:250
-#: lib/content-tag.php:198
+#: lib/content-category.php:249
+#: lib/content-tag.php:197
 #: lib/custom-fields/seo-field.php:120
 msgid "検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。"
 msgstr "검색 엔진에 표시할 제목을 입력해 주세요. 여기 입력한 텍스트가 기사 제목보다 우선적으로 제목 태그 (&lt;title&gt;)에 삽입됩니다."
 
-#: lib/content-category.php:254
-#: lib/content-tag.php:202
+#: lib/content-category.php:253
+#: lib/content-tag.php:201
 #: lib/page-settings/_top-page.php:203
 msgid "本文"
 msgstr "본문"
 
-#: lib/content-category.php:259
+#: lib/content-category.php:258
 msgid "このページで表示されるメインコンテンツを入力してください。"
 msgstr "이 페이지에서 표시할 메인 콘텐츠를 입력해주세요."
 
-#: lib/content-category.php:268
-#: lib/content-tag.php:216
+#: lib/content-category.php:267
+#: lib/content-tag.php:215
 msgid "タイトル下に表示されるアイキャッチ画像を選択してください。"
 msgstr "제목 아래에 나타날 아이캐치 이미지를 선택하세요."
 
-#: lib/content-category.php:272
-#: lib/content-tag.php:220
+#: lib/content-category.php:271
+#: lib/content-tag.php:219
 #: lib/custom-fields/seo-field.php:128
-#: lib/page-settings/title-forms.php:163
-#: lib/page-settings/title-forms.php:264
+#: lib/page-settings/title-forms.php:171
+#: lib/page-settings/title-forms.php:272
 #: skins/skin-made-in-heaven/lib/hook-wp.php:74
 #: skins/skin-made-in-heaven/lib/hook-wp.php:155
 msgid "メタディスクリプション"
 msgstr "meta description"
 
-#: lib/content-category.php:276
+#: lib/content-category.php:275
 msgid "カテゴリーページの説明文を入力してください"
 msgstr "카테고리 페이지에 대한 설명을 입력하세요."
 
-#: lib/content-category.php:278
+#: lib/content-category.php:277
 msgid "このページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。"
 msgstr "이 페이지의 설명을 입력합니다. 여기에 입력된 텍스트는 메타 디스크립션 태그에 이용됩니다."
 
-#: lib/content-category.php:282
-#: lib/content-tag.php:230
+#: lib/content-category.php:281
+#: lib/content-tag.php:229
 #: lib/custom-fields/seo-field.php:134
-#: lib/page-settings/title-forms.php:78
-#: lib/page-settings/title-forms.php:176
-#: lib/page-settings/title-forms.php:277
+#: lib/page-settings/title-forms.php:82
+#: lib/page-settings/title-forms.php:184
+#: lib/page-settings/title-forms.php:285
 msgid "メタキーワード"
 msgstr "meta keywords"
 
-#: lib/content-category.php:287
-#: lib/content-tag.php:235
+#: lib/content-category.php:286
+#: lib/content-tag.php:234
 msgid "キーワード1,キーワード2,キーワード3"
 msgstr "키워드1, 키워드2, 키워드3"
 
-#: lib/content-category.php:288
-#: lib/content-tag.php:236
+#: lib/content-category.php:287
+#: lib/content-tag.php:235
 msgid "このページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。"
 msgstr "이 페이지의 메타 키워드를 쉼표로 구분하여 입력해주세요. ※현재는 큰 의미가 없는 설정입니다."
 
-#: lib/content-category.php:292
-#: lib/content-tag.php:240
+#: lib/content-category.php:291
+#: lib/content-tag.php:239
 msgid "noindex"
 msgstr "noindex"
 
-#: lib/content-category.php:298
-#: lib/content-tag.php:246
+#: lib/content-category.php:297
+#: lib/content-tag.php:245
 #: lib/custom-fields/seo-field.php:139
 msgid "インデックスしない（noindex）"
 msgstr "색인 생성 안함 (noindex)"
 
-#: lib/content-category.php:299
-#: lib/content-tag.php:247
+#: lib/content-category.php:298
+#: lib/content-tag.php:246
 #: lib/custom-fields/seo-field.php:140
 msgid "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr "이 페이지가 검색 엔진에 의해 색인화되지 않도록 메타 태그를 설정하세요."
 
-#: lib/content-category.php:299
+#: lib/content-category.php:298
 msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢カテゴリーページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
 msgstr "이 설정을 비활성화 하더라도 Coocon 설정의 SEO 탭에 있는 ｢카테고리 페이지를 noindex로」 설정을 활성화 한 경우에는 해당 설정이 우선됩니다."
 
-#: lib/content-category.php:369
+#: lib/content-category.php:368
 msgid "カテゴリーとしてウィジェットやラベル等で表示される名前です。"
 msgstr "위젯, 레이블 등이 카테고리로 표시하는 이름입니다."
 
-#: lib/content-category.php:371
+#: lib/content-category.php:370
 msgid "基本的にカテゴリー設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr "기본적으로 카테고리 설정 일람 테이블에 설명문을 표시하기 위한 입력입니다."
 
-#: lib/content-category.php:373
+#: lib/content-category.php:372
 msgid "基本的にタグ設定の一覧テーブルに説明文を表示するための入力です。"
 msgstr "기본적으로 태그 설정 목록 테이블에 설명문을 표시하기 위한 입력입니다."
 
-#: lib/content-tag.php:207
+#: lib/content-category.php:374
+msgid "有効なメタディスクリプション文が設定されてない場合は、メタディスクリプションとして利用されることもあります。"
+msgstr "유효한 메타 설명이 설정되지 않은 경우, 메타 설명으로 사용될 수도 있습니다."
+
+#: lib/content-tag.php:206
 msgid "ページで表示されるメインコンテンツを入力してください。"
 msgstr "페이지에 표시할 메인 콘텐츠를 입력해주세요."
 
-#: lib/content-tag.php:224
+#: lib/content-tag.php:223
 msgid "ページの説明文を入力してください"
 msgstr "페이지의 설명문을 입력해주세요"
 
-#: lib/content-tag.php:226
+#: lib/content-tag.php:225
 msgid "ページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。"
 msgstr "페이지의 설명을 입력합니다. 여기에 입력한 텍스트는 메타 디스크립션 태그에 이용됩니다."
 
-#: lib/content-tag.php:247
+#: lib/content-tag.php:246
 msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢タグページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
 msgstr "이 설정을 비활성화 하더라도 Coocon 설정의 SEO 탭에 있는 ｢태그 페이지를 noindex로」 설정을 활성화 한 경우에는 해당 설정이 우선됩니다."
 
-#: lib/content-tag.php:247
+#: lib/content-tag.php:246
 msgid "※カスタム投稿のカテゴリーなったとしても公開ページはタグとして認識されます。"
 msgstr "※커스텀 게시의 카테고리가 된다 하여도 공개 페이지는 태그로 인식됩니다."
 
@@ -2606,7 +2610,7 @@ msgid "人気記事は見つかりませんでした。"
 msgstr "인기글을 찾을 수 없습니다."
 
 #: lib/html-forms.php:1353
-#: lib/html-forms.php:1886
+#: lib/html-forms.php:1895
 msgid "記事は見つかりませんでした。"
 msgstr "글을 찾을 수 없습니다."
 
@@ -2717,7 +2721,7 @@ msgstr "광고 설정 전 AdSense 정책을 확인해 주세요."
 #: lib/html-tooltips.php:111
 #: lib/html-tooltips.php:125
 #: tmp/admin-panel.php:71
-#: tmp/admin-panel.php:80
+#: tmp/admin-panel.php:77
 msgid "ja"
 msgstr "ko"
 
@@ -3285,8 +3289,8 @@ msgstr "랭킹을 생성합니다. 다음 순위를 입력하려면 저장 버�
 #: lib/page-settings/sns-share-forms-bottom.php:21
 #: lib/page-settings/sns-share-forms-top.php:21
 #: lib/page-settings/title-forms.php:25
-#: lib/page-settings/title-forms.php:109
-#: lib/page-settings/title-forms.php:207
+#: lib/page-settings/title-forms.php:117
+#: lib/page-settings/title-forms.php:215
 #: lib/page-settings/toc-forms.php:25
 msgid "プレビュー"
 msgstr "미리보기"
@@ -4015,8 +4019,8 @@ msgid "チェックツールエリアを表示する"
 msgstr "체크 도구 영역 표시"
 
 #: lib/page-settings/admin-forms.php:276
-msgid "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、アウトラインチェック、Twitterの反応など。"
-msgstr "페이지를 진단하기 위한 검사 도구를 표시하는 영역을 표시합니다. PageSpeed Insights, 구조화 데이터 체크, HTML5 체크, 아웃라인 체크, 트위터 반응 등 입니다."
+msgid "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、Twitterの反応など。"
+msgstr "페이지를 진단하기 위한 검사 도구를 표시하는 영역을 표시합니다. PageSpeed Insights, 구조화 데이터 체크, HTML5 체크, 트위터 반응 등 입니다."
 
 #: lib/page-settings/admin-forms.php:280
 msgid "PageSpeed Insightsを表示する"
@@ -4035,86 +4039,70 @@ msgid "<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTme
 msgstr "<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTmetrix</a> 링크를 표시합니다."
 
 #: lib/page-settings/admin-forms.php:286
-msgid "モバイルフレンドリーテストを表示する"
-msgstr "모바일 친화성 테스트 표시"
-
-#: lib/page-settings/admin-forms.php:287
-msgid "<a href=\"https://search.google.com/test/mobile-friendly\" target=\"_blank\" rel=\"noopener\">モバイルフレンドリーテスト</a>リンクの表示。"
-msgstr "<a href=\"https://search.google.com/test/mobile-friendly\" target=\"_blank\" rel=\"noopener\">모바일 친화성 테스트</a> 링크 표시."
-
-#: lib/page-settings/admin-forms.php:289
 msgid "構造化データチェックを表示する"
 msgstr "구조화된 데이터 검사를 표시합니다."
 
-#: lib/page-settings/admin-forms.php:290
-msgid "<a href=\"https://search.google.com/structured-data/testing-tool#\" target=\"_blank\" rel=\"noopener\">構造化データ テストツール</a>リンクの表示。"
-msgstr "<a href=\"https://search.google.com/structured-data/testing-tool#\" target=\"_blank\" rel=\"noopener\">구조화된 데이터 검사 도구</a> 링크 표시"
+#: lib/page-settings/admin-forms.php:287
+msgid "<a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">リッチリザルトテストツール</a>リンクの表示。"
+msgstr "<a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">리치 결과 테스트 도구</a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:292
+#: lib/page-settings/admin-forms.php:289
 msgid "HTML5チェックを表示する"
 msgstr "HTML5 검사 표시"
 
-#: lib/page-settings/admin-forms.php:293
+#: lib/page-settings/admin-forms.php:290
 msgid "<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a>リンクの表示。"
 msgstr "<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:295
-msgid "HTML5アウトラインチェックを表示する"
-msgstr "HTML5 아웃라인 체크 표시"
-
-#: lib/page-settings/admin-forms.php:296
-msgid "<a href=\"https://gsnedders.html5.org/outliner/\" target=\"_blank\" rel=\"noopener\">HTML 5 Outliner</a>リンクの表示。"
-msgstr "<a href=\"https://gsnedders.html5.org/outliner/\" target=\"_blank\" rel=\"noopener\">HTML 5 Outliner</a> 링크 표시."
-
-#: lib/page-settings/admin-forms.php:298
+#: lib/page-settings/admin-forms.php:292
 msgid "SEOチェキを表示する"
 msgstr "SEO 체커 표시"
 
-#: lib/page-settings/admin-forms.php:299
+#: lib/page-settings/admin-forms.php:293
 msgid "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
 msgstr "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO Check! 무료로 사용할 수 있는 SEO 툴</a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:301
+#: lib/page-settings/admin-forms.php:295
 msgid "ツイートチェックを表示する"
 msgstr "트위터 체크 표시"
 
-#: lib/page-settings/admin-forms.php:302
+#: lib/page-settings/admin-forms.php:296
 msgid "投稿・固定ページに対するツイートチェックリンクの表示。"
 msgstr "게시물 및 페이지에 대한 트윗 확인 링크를 표시합니다."
 
-#: lib/page-settings/admin-forms.php:311
+#: lib/page-settings/admin-forms.php:305
 msgid "レスポンシブツールエリアの表示"
 msgstr "반응 도구 영역을 표시합니다."
 
-#: lib/page-settings/admin-forms.php:315
+#: lib/page-settings/admin-forms.php:309
 msgid "レスポンシブチェックを表示する"
 msgstr "반응 확인 표시"
 
-#: lib/page-settings/admin-forms.php:316
+#: lib/page-settings/admin-forms.php:310
 msgid "レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えます。"
 msgstr "반응 표시 상태를 효율적으로 체크할 수 있는 도구 영역의 표시여부를 지정합니다."
 
-#: lib/page-settings/admin-forms.php:320
+#: lib/page-settings/admin-forms.php:314
 msgid "Responsinatorチェックを表示する"
 msgstr "Responsinator 체크 표시"
 
-#: lib/page-settings/admin-forms.php:321
+#: lib/page-settings/admin-forms.php:315
 msgid "<a href=\"http://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>チェック用リンクの表示。"
 msgstr "<a href=\"http://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>체크용 링크 표시."
 
-#: lib/page-settings/admin-forms.php:323
+#: lib/page-settings/admin-forms.php:317
 msgid "Sizzyチェックを表示する"
 msgstr "Sizzy 체크 표시"
 
-#: lib/page-settings/admin-forms.php:324
+#: lib/page-settings/admin-forms.php:318
 msgid "<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>チェック用リンクの表示。"
 msgstr "<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a> 체크 링크 표시."
 
-#: lib/page-settings/admin-forms.php:326
+#: lib/page-settings/admin-forms.php:320
 msgid "ScreenResolutionチェックを表示する"
 msgstr "ScreenResolution 체크 표시"
 
-#: lib/page-settings/admin-forms.php:327
+#: lib/page-settings/admin-forms.php:321
 msgid "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
 msgstr "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a> 체크용 링크 표시."
 
@@ -5761,7 +5749,7 @@ msgid "URLやURLリンクをブログカード形式で表示するための設�
 msgstr "URL 및 URL 링크를 블로그 카드 형식으로 표시하기 위한 설정입니다. 내부 블로그 카드는 게시글 및 페이지를 표시하기 위한 것입니다."
 
 #: lib/page-settings/blogcard-in-forms.php:39
-#: lib/page-settings/title-forms.php:135
+#: lib/page-settings/title-forms.php:143
 msgid "ランダムで投稿を取得しています。"
 msgstr "랜덤으로 글을 가져옵니다."
 
@@ -7721,8 +7709,8 @@ msgid "自動生成抜粋文字数"
 msgstr "자동 생성 발췌문 글자 수"
 
 #: lib/page-settings/index-forms.php:182
-msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
-msgstr "엔트리 카드에서 본문에서 자동으로 가져온 발췌문을 표시할 때 최대 글자 수를 설정합니다. ※글 편집 화면의 발췌문이 아닙니다. (최소: 0, 최대: 500)"
+msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）"
+msgstr "엔트리 카드에서 본문에서 자동으로 가져온 발췌문을 표시할 때 최대 글자 수를 설정합니다. ※글 편집 화면의 발췌문이 아닙니다. (최소: 1, 최대: 500)"
 
 #: lib/page-settings/index-forms.php:190
 msgid "省略文字列"
@@ -7755,6 +7743,10 @@ msgstr "스마트폰에서 스니펫 표시 (480px 이하)"
 #: lib/page-settings/index-forms.php:231
 msgid "コメント数の表示"
 msgstr "댓글 수 표시"
+
+#: lib/page-settings/index-forms.php:231
+msgid "（※投稿・固定ページでコメントが表示されている場合）"
+msgstr "(※ 게시물 또는 고정 페이지에 댓글이 표시되는 경우)"
 
 #: lib/page-settings/index-forms.php:233
 msgid "インデックスページのエントリーカードに投稿関連情報を表示するかどうか。"
@@ -8537,7 +8529,7 @@ msgid "画像や動画、ファイルなどの添付ページをnoindex設定に
 msgstr "사진, 영상, 파일 등의 페이지를 noindex로 설정합니다."
 
 #: lib/page-settings/seo-forms.php:73
-#: tmp/admin-panel.php:80
+#: tmp/admin-panel.php:77
 msgid "構造化データ"
 msgstr "구조화 데이터"
 
@@ -8828,8 +8820,8 @@ msgid "最大自動生成抜粋文字数"
 msgstr "최대 자동 생성 발췌 글자 수"
 
 #: lib/page-settings/single-forms.php:232
-msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大：500）"
-msgstr "「관련 글 엔트리 카드」에서 「본문에서 자동으로 가져오는 발췌문」을 표시하는 경우 최대 글자수를 설정합니다.※글 편집 화면의 발췌문이 아닙니다. (최소: 0, 최대: 500)"
+msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）"
+msgstr "「관련 글 엔트리 카드」에서 「본문에서 자동으로 가져오는 발췌문」을 표시하는 경우 최대 글자수를 설정합니다.※글 편집 화면의 발췌문이 아닙니다. (최소: 1, 최대: 500)"
 
 #: lib/page-settings/single-forms.php:266
 msgid "投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。"
@@ -9652,8 +9644,8 @@ msgid "フロントページの、タイトル、メタディスクリプショ�
 msgstr "프런트 페이지의 title, meta description, meta keywords 설정입니다."
 
 #: lib/page-settings/title-forms.php:35
-#: lib/page-settings/title-forms.php:136
-#: lib/page-settings/title-forms.php:238
+#: lib/page-settings/title-forms.php:144
+#: lib/page-settings/title-forms.php:246
 msgid "プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。"
 msgstr "미리보기는 어디까지나 가이드입니다. 표시는 검색엔진에의해 변경될 수 있습니다."
 
@@ -9663,10 +9655,10 @@ msgstr "프런트 페이지 제목"
 
 #: lib/page-settings/title-forms.php:48
 #: lib/page-settings/title-forms.php:49
-#: lib/page-settings/title-forms.php:150
-#: lib/page-settings/title-forms.php:151
-#: lib/page-settings/title-forms.php:252
-#: lib/page-settings/title-forms.php:253
+#: lib/page-settings/title-forms.php:158
+#: lib/page-settings/title-forms.php:159
+#: lib/page-settings/title-forms.php:260
+#: lib/page-settings/title-forms.php:261
 msgid "サイト名"
 msgstr "사이트명"
 
@@ -9695,136 +9687,146 @@ msgid "サイトの説明"
 msgstr "사이트 설명"
 
 #: lib/page-settings/title-forms.php:69
-msgid "メタディスクリプションを入力"
-msgstr "meta description 입력"
-
-#: lib/page-settings/title-forms.php:70
-msgid "フロントページで出力するメタディスクリプションタグの内容を入力してください。"
-msgstr "프론트 페이지에서 출력할 메타 디스크립션 태그의 내용을 입력해 주세요."
-
-#: lib/page-settings/title-forms.php:70
-msgid "入力しない場合は、キャッチフレーズが表示されます。"
-msgstr "입력하지 않을 경우, 캐치프레이즈가 표시됩니다."
-
-#: lib/page-settings/title-forms.php:82
-msgid "キーワード1,キーワード2,キーワード3,..."
-msgstr "키워드1, 키워드2, 키워드3, ..."
-
-#: lib/page-settings/title-forms.php:83
-msgid "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。"
-msgstr "프런트 페이지에 출력하는 meta keywords 태그의 내용을 ,(쉼표)로 구분하여 입력해 주세요. 입력하지 않으면 메타 태그는 출력되지 않습니다. ※SEO상으로는 거의 의미가 없는 설정이라고 생각됩니다."
-
-#: lib/page-settings/title-forms.php:97
-msgid "投稿・固定ページ設定"
-msgstr "글ㆍ페이지 설정"
-
-#: lib/page-settings/title-forms.php:100
-msgid "投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
-msgstr "글ㆍ페이지의 title, meta description, meta keywords 설정입니다."
-
-#: lib/page-settings/title-forms.php:144
-msgid "投稿・固定ページタイトル"
-msgstr "글ㆍ페이지 제목"
-
-#: lib/page-settings/title-forms.php:149
-#: lib/page-settings/title-forms.php:150
-#: lib/page-settings/title-forms.php:151
-#: lib/page-settings/title-forms.php:246
-#: lib/page-settings/title-forms.php:251
-#: lib/page-settings/title-forms.php:252
-#: lib/page-settings/title-forms.php:253
-msgid "ページタイトル"
-msgstr "페이지 제목"
-
-#: lib/page-settings/title-forms.php:154
-msgid "投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。"
-msgstr "글ㆍ페이지에 출력할 제목 태그의 포맷을 선택해 주세요."
-
-#: lib/page-settings/title-forms.php:167
-#: lib/page-settings/title-forms.php:268
+#: lib/page-settings/title-forms.php:175
+#: lib/page-settings/title-forms.php:276
 msgid "メタディスクリプションタグを出力する"
 msgstr "meta description 태그 출력하기"
 
-#: lib/page-settings/title-forms.php:168
-msgid "投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
-msgstr "글ㆍ페이지의 head 태그 내에 meta description 태그를 출력하겠습니까?"
+#: lib/page-settings/title-forms.php:70
+msgid "フロントページのheadタグ内に、メタディスクリプションタグを出力するか。"
+msgstr "프론트 페이지의 head 태그에 메타 설명 태그를 출력할지 여부."
 
-#: lib/page-settings/title-forms.php:180
-#: lib/page-settings/title-forms.php:281
+#: lib/page-settings/title-forms.php:73
+msgid "メタディスクリプションを入力"
+msgstr "meta description 입력"
+
+#: lib/page-settings/title-forms.php:74
+msgid "フロントページで出力するメタディスクリプションタグの内容を入力してください。"
+msgstr "프론트 페이지에서 출력할 메타 디스크립션 태그의 내용을 입력해 주세요."
+
+#: lib/page-settings/title-forms.php:74
+msgid "入力しない場合は、キャッチフレーズが表示されます。"
+msgstr "입력하지 않을 경우, 캐치프레이즈가 표시됩니다."
+
+#: lib/page-settings/title-forms.php:86
+#: lib/page-settings/title-forms.php:188
+#: lib/page-settings/title-forms.php:289
 msgid "メタキーワードタグを出力する"
 msgstr "meta keywords 태그 출력하기"
 
-#: lib/page-settings/title-forms.php:181
+#: lib/page-settings/title-forms.php:87
+msgid "フロントページのheadタグ内に、メタキーワードタグを出力するか。"
+msgstr "프론트 페이지의 head 태그에 메타 키워드 태그를 출력할지 여부."
+
+#: lib/page-settings/title-forms.php:90
+msgid "キーワード1,キーワード2,キーワード3,..."
+msgstr "키워드1, 키워드2, 키워드3, ..."
+
+#: lib/page-settings/title-forms.php:91
+msgid "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。"
+msgstr "프런트 페이지에 출력하는 meta keywords 태그의 내용을 ,(쉼표)로 구분하여 입력해 주세요. 입력하지 않으면 메타 태그는 출력되지 않습니다. ※SEO상으로는 거의 의미가 없는 설정이라고 생각됩니다."
+
+#: lib/page-settings/title-forms.php:105
+msgid "投稿・固定ページ設定"
+msgstr "글ㆍ페이지 설정"
+
+#: lib/page-settings/title-forms.php:108
+msgid "投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
+msgstr "글ㆍ페이지의 title, meta description, meta keywords 설정입니다."
+
+#: lib/page-settings/title-forms.php:152
+msgid "投稿・固定ページタイトル"
+msgstr "글ㆍ페이지 제목"
+
+#: lib/page-settings/title-forms.php:157
+#: lib/page-settings/title-forms.php:158
+#: lib/page-settings/title-forms.php:159
+#: lib/page-settings/title-forms.php:254
+#: lib/page-settings/title-forms.php:259
+#: lib/page-settings/title-forms.php:260
+#: lib/page-settings/title-forms.php:261
+msgid "ページタイトル"
+msgstr "페이지 제목"
+
+#: lib/page-settings/title-forms.php:162
+msgid "投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。"
+msgstr "글ㆍ페이지에 출력할 제목 태그의 포맷을 선택해 주세요."
+
+#: lib/page-settings/title-forms.php:176
+msgid "投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
+msgstr "글ㆍ페이지의 head 태그 내에 meta description 태그를 출력하겠습니까?"
+
+#: lib/page-settings/title-forms.php:189
 msgid "投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr "글ㆍ페이지의 head 태그 내에 meta keywords 태그를 출력하겠습니까? ※SEO상으로는 거의 의미가 없는 설정이라고 생각됩니다."
 
-#: lib/page-settings/title-forms.php:195
+#: lib/page-settings/title-forms.php:203
 msgid "カテゴリー・タグページ設定"
 msgstr "카테고리ㆍ테그 페이지 설정"
 
-#: lib/page-settings/title-forms.php:198
+#: lib/page-settings/title-forms.php:206
 msgid "カテゴリー・タグページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
 msgstr "카테고리ㆍ태그 페이지의 제목, meta description, meta keywords 설정입니다."
 
-#: lib/page-settings/title-forms.php:237
+#: lib/page-settings/title-forms.php:245
 msgid "カテゴリーページのランダム表示です。"
 msgstr "카테고리 페이지는 랜덤으로 표시됩니다."
 
-#: lib/page-settings/title-forms.php:256
+#: lib/page-settings/title-forms.php:264
 msgid "カテゴリー・タグページで出力するタイトルタグのフォーマットを選択してください。"
 msgstr "카테고리ㆍ태그 페이지에 출력할 제목 태그의 포맷을 선택해 주세요."
 
-#: lib/page-settings/title-forms.php:269
+#: lib/page-settings/title-forms.php:277
 msgid "カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
 msgstr "카테고리ㆍ태그 페이지의 head 태그 내에 meta description 태그를 출력하시겠습니까?"
 
-#: lib/page-settings/title-forms.php:282
+#: lib/page-settings/title-forms.php:290
 msgid "カテゴリー・タグページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr "카테고리ㆍ태그 페이지의 head 태그 내에 meta keywords 태그를 출력하시겠습니까? 입력하지 않으면 메타 태그는 출력되지 않습니다. ※SEO적으로는 거의 의미가 없는 설정이라고 생각합니다."
 
-#: lib/page-settings/title-forms.php:295
+#: lib/page-settings/title-forms.php:303
 msgid "タイトル共通設定"
 msgstr "타이틀 공통 설정"
 
-#: lib/page-settings/title-forms.php:298
+#: lib/page-settings/title-forms.php:306
 msgid "タイトルで使用される区切り文字の設定です。"
 msgstr "타이틀에 사용할 짧은 글자 설정입니다."
 
-#: lib/page-settings/title-forms.php:306
+#: lib/page-settings/title-forms.php:314
 msgid "簡略化したサイト名"
 msgstr "간단화된 사이트 이름"
 
-#: lib/page-settings/title-forms.php:310
+#: lib/page-settings/title-forms.php:318
 msgid "短縮形のサイト名"
 msgstr "짧은 사이트 이름"
 
-#: lib/page-settings/title-forms.php:313
+#: lib/page-settings/title-forms.php:321
 msgid "サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してください。入力しない場合は、通常のサイト名が表示されます。この短縮サイト名は投稿・固定・カテゴリー・タグページで適用されます"
 msgstr "사이트 이름이 너무 길어서 간략화된 사이트 이름을 제목에 포함시키고 싶다면 입력하세요. 입력하지 않는 경우 일반 사이트 이름이 표시됩니다. 이 짧은 사이트 이름은 글, 페이지, 카테고리, 태그 페이지에 적용됩니다."
 
-#: lib/page-settings/title-forms.php:321
+#: lib/page-settings/title-forms.php:329
 msgid "セパレーター"
 msgstr "구분자"
 
-#: lib/page-settings/title-forms.php:326
+#: lib/page-settings/title-forms.php:334
 msgid " | （パイプ）"
 msgstr " | (파이프)"
 
-#: lib/page-settings/title-forms.php:327
+#: lib/page-settings/title-forms.php:335
 msgid " - （ハイフン）"
 msgstr " - (하이픈)"
 
-#: lib/page-settings/title-forms.php:330
+#: lib/page-settings/title-forms.php:338
 msgid "タイトルの区切りとなる文字を設定してください。"
 msgstr "제목의 구분이 될 문자를 설정해 주세요."
 
 #: lib/page-settings/title-funcs.php:22
-msgid " - "
-msgstr " - "
+msgid "-"
+msgstr "-"
 
 #: lib/page-settings/title-funcs.php:25
-msgid " | "
-msgstr " | "
+msgid "|"
+msgstr "|"
 
 #: lib/page-settings/toc-forms.php:13
 msgid "目次設定"
@@ -11001,7 +11003,7 @@ msgid "CodePen URL"
 msgstr "CodePen URL"
 
 #: lib/sns.php:17
-#: tmp/header-ogp.php:84
+#: tmp/header-ogp.php:80
 msgid "ja_JP"
 msgstr "ko_KR"
 
@@ -13189,35 +13191,27 @@ msgstr "페이지 속도"
 msgid "GTmetrix"
 msgstr "GTmetrix"
 
-#: tmp/admin-panel.php:77
-msgid "モバイルフレンドリー"
-msgstr "모바일 친화성"
-
-#: tmp/admin-panel.php:83
+#: tmp/admin-panel.php:80
 msgid "HTML5"
 msgstr "HTML5"
 
-#: tmp/admin-panel.php:86
-msgid "アウトライン"
-msgstr "아웃라인"
-
-#: tmp/admin-panel.php:89
+#: tmp/admin-panel.php:83
 msgid "SEOチェキ"
 msgstr "SEO 체크"
 
-#: tmp/admin-panel.php:92
+#: tmp/admin-panel.php:86
 msgid "ツイート検索"
 msgstr "트윗 검색"
 
-#: tmp/admin-panel.php:104
+#: tmp/admin-panel.php:98
 msgid "レスポンシブテスト"
 msgstr "반응형 텍스트"
 
-#: tmp/admin-panel.php:107
+#: tmp/admin-panel.php:101
 msgid "Sizzy"
 msgstr "Sizzy"
 
-#: tmp/admin-panel.php:111
+#: tmp/admin-panel.php:105
 msgid "Resolution Test"
 msgstr "Resolution test"
 
