@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-25T14:05:01+00:00\n"
+"POT-Creation-Date: 2024-11-25T14:34:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -9686,7 +9686,7 @@ msgid "メタディスクリプションタグを出力する"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:70
-msgid "フロントページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
+msgid "フロントページのheadタグ内に、メタディスクリプションタグを出力するか。"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:73
@@ -9708,7 +9708,7 @@ msgid "メタキーワードタグを出力する"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:87
-msgid "フロントページのページのheadタグ内に、メタキーワードタグを出力するか。"
+msgid "フロントページのheadタグ内に、メタキーワードタグを出力するか。"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:90
