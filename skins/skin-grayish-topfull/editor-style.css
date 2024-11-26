@@ -42,12 +42,12 @@
 	padding: 0.2em 1.2em 0.2em 0.8em !important;
 }
 
-
-.editor-styles-wrapper .tab-caption-box-label {
+/* WP6.7以降で見出し色に影響あり */
+/* .editor-styles-wrapper .tab-caption-box-label {
 	--cocoon-custom-text-color: var(--white);
 	color: var(--cocoon-custom-text-color);
 	background-color: var(--cocoon-custom-border-color);
-}
+} */
 
 /* タイムラインBoxの中にアイコンリスト使用すると、アイコンが表示されないことの対応 */
 .editor-styles-wrapper .timeline-box li {
