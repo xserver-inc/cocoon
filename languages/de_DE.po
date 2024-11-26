@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-11-25T15:56:43+00:00\n"
-"PO-Revision-Date: 2024-11-25 16:00\n"
+"PO-Revision-Date: 2024-11-26 23:02\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -9694,7 +9694,7 @@ msgstr "Meta-Beschreibungstags ausgeben"
 
 #: lib/page-settings/title-forms.php:70
 msgid "フロントページのheadタグ内に、メタディスクリプションタグを出力するか。"
-msgstr "Soll das Meta-Description-Tag im Head-Tag der Startseite ausgegeben werden?\n"
+msgstr "Soll das Meta-Description-Tag im Head-Tag der Startseite ausgegeben werden?"
 
 #: lib/page-settings/title-forms.php:73
 msgid "メタディスクリプションを入力"
