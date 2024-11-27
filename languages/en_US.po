@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-11-25T15:56:43+00:00\n"
-"PO-Revision-Date: 2024-11-25 16:00\n"
+"PO-Revision-Date: 2024-11-27 07:37\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -9690,7 +9690,7 @@ msgstr "Site description"
 #: lib/page-settings/title-forms.php:175
 #: lib/page-settings/title-forms.php:276
 msgid "メタディスクリプションタグを出力する"
-msgstr "Output meta description tags"
+msgstr "Output meta description tag"
 
 #: lib/page-settings/title-forms.php:70
 msgid "フロントページのheadタグ内に、メタディスクリプションタグを出力するか。"
@@ -9712,7 +9712,7 @@ msgstr "If not inputted, the tagline will be displayed."
 #: lib/page-settings/title-forms.php:188
 #: lib/page-settings/title-forms.php:289
 msgid "メタキーワードタグを出力する"
-msgstr "Output meta keyword tag"
+msgstr "Output meta keyword tags"
 
 #: lib/page-settings/title-forms.php:87
 msgid "フロントページのheadタグ内に、メタキーワードタグを出力するか。"
