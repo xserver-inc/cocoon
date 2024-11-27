@@ -687,26 +687,29 @@ function get_the_snippet($content, $length = 70, $post_id = null) {
   $tmp_post = $post;
 
   $description = null;
+
+  //$post_idが指定されている場合は、その内容に変更
   if ($post_id) {
     $tmp_post = get_post($post_id);
   }
+
   //抜粋（投稿編集画面）の取得
-  if ($tmp_post) {
+  if ($tmp_post && isset($tmp_post->post_excerpt)) {
     $description = $tmp_post->post_excerpt;
   }
 
   //SEO設定のディスクリプション取得
   if (!$description) {
-    if ($post_id) {
-      $description = get_the_page_meta_description($post_id);
-    } elseif ($tmp_post && isset($tmp_post->ID)) {
+    if ($tmp_post && isset($tmp_post->ID)) {
       $description = get_the_page_meta_description($tmp_post->ID);
     }
   }
 
   //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
   if (!$description) {
-    $description = get_the_all_in_one_seo_pack_meta_description($post_id);
+    if ($tmp_post && isset($tmp_post->ID)) {
+      $description = get_the_all_in_one_seo_pack_meta_description($post_id);
+    }
   }
   //改行を除去
   $description = str_replace(array("\r\n", "\r", "\n"), '', $description);
