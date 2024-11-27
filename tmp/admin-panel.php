@@ -83,7 +83,7 @@ if (is_user_administrator()
         <a href="http://seocheki.net/site-check.php?u=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="seocheki"><?php _e( 'SEOチェキ', THEME_NAME ) ?></a>
       <?php endif ?>
       <?php if (is_admin_tweet_check_visible()): ?>
-        <a href="https://twitter.com/search?f=tweets&q=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="tweets"><?php _e( 'ツイート検索', THEME_NAME ) ?></a>
+        <a href="https://x.com/search?f=tweets&q=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="tweets"><?php _e( 'ツイート検索', THEME_NAME ) ?></a>
       <?php endif ?>
     </div>
   <?php endif ?>

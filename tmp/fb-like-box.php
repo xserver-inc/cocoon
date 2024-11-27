@@ -27,7 +27,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php
         if ($_TWITTER_ID): ?>
           <div class="fb-like-twitter">
-            <a href="https://twitter.com/<?php echo $_TWITTER_ID; ?>?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"><?php echo sprintf(__( '@%sさんをフォロー', THEME_NAME ), $_TWITTER_ID); ?></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://x.com/<?php echo $_TWITTER_ID; ?>?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"><?php echo sprintf(__( '@%sさんをフォロー', THEME_NAME ), $_TWITTER_ID); ?></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         <?php endif ?>
         <?php if ($_LINE_ID): ?>

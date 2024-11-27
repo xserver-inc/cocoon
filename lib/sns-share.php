@@ -495,7 +495,7 @@ function get_twitter_share_url(){
   if (get_twitter_hash_tag()) {
     $hash_tag = '+'.urlencode( get_twitter_hash_tag() );
   }
-  return 'https://twitter.com/intent/tweet?text='.urlencode( get_share_page_title() ).$hash_tag.'&amp;url='.
+  return 'https://x.com/intent/tweet?text='.urlencode( get_share_page_title() ).$hash_tag.'&amp;url='.
   urlencode( get_share_page_url() ).
   get_twitter_via_param(). //ツイートにメンションを含める
   get_twitter_related_param();//ツイート後にフォローを促す
