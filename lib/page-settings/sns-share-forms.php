@@ -37,6 +37,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
           </td>
         </tr>
 
+        <?php if (false): ?>
         <!-- プロモーション -->
         <tr>
           <th scope="row">
@@ -49,6 +50,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
             ?>
           </td>
         </tr>
+        <?php endif; ?>
 
 
         <!-- ハッシュタグ -->

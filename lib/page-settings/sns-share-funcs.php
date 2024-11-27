@@ -28,7 +28,8 @@ endif;
 define('OP_TWITTER_RELATED_FOLLOW_ENABLE', 'twitter_related_follow_enable');
 if ( !function_exists( 'is_twitter_related_follow_enable' ) ):
 function is_twitter_related_follow_enable(){
-  return get_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE, 1);
+  return false;
+  // return get_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE, 1);
 }
 endif;
 

@@ -14,8 +14,8 @@ require_once abspath(__FILE__).'sns-share-posts-bottom.php';
 
 //ツイートにメンションを含める
 update_theme_option(OP_TWITTER_ID_INCLUDE);
-//ツイート後にフォローを促す
-update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
+// //ツイート後にフォローを促す
+// update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
 //ツイートに含めるハッシュタグ
 update_theme_option(OP_TWITTER_HASH_TAG);
 
