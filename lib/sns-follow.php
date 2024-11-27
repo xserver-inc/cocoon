@@ -240,9 +240,9 @@ function get_the_author_twitter_id($url = null){
   if (!$url) {
    $url = get_the_author_twitter_url();
   }
-  $res = preg_match('/twitter\.com\/(.+?)\/?$/i', $url, $m);
-  if ($res && $m && $m[1]) {
-    return $m[1];
+  $res = preg_match('/(twitter|x)\.com\/(.+?)\/?$/i', $url, $m);
+  if ($res && $m && $m[2]) {
+    return $m[2];
   }
 }
 endif;
