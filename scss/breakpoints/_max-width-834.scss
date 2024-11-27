@@ -57,7 +57,9 @@ table {
 }
 
 .sns-share.ss-top.ss-col-6,
-.sns-share.ss-bottom.ss-col-6 {
+.sns-share.ss-bottom.ss-col-6,
+.sns-share.ss-top.ss-col-5,
+.sns-share.ss-bottom.ss-col-5 {
   .sns-buttons{
     column-gap: calc(1.5%/2);
   }

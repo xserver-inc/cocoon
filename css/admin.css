@@ -19134,11 +19134,15 @@ body.wp-admin {
     margin-left: 4px;
   }
   .admin-settings .demo .sns-share.ss-top.ss-col-6 .sns-buttons,
-  .admin-settings .demo .sns-share.ss-bottom.ss-col-6 .sns-buttons {
+  .admin-settings .demo .sns-share.ss-bottom.ss-col-6 .sns-buttons,
+  .admin-settings .demo .sns-share.ss-top.ss-col-5 .sns-buttons,
+  .admin-settings .demo .sns-share.ss-bottom.ss-col-5 .sns-buttons {
     column-gap: 0.75%;
   }
   .admin-settings .demo .sns-share.ss-top.ss-col-6 a,
-  .admin-settings .demo .sns-share.ss-bottom.ss-col-6 a {
+  .admin-settings .demo .sns-share.ss-bottom.ss-col-6 a,
+  .admin-settings .demo .sns-share.ss-top.ss-col-5 a,
+  .admin-settings .demo .sns-share.ss-bottom.ss-col-5 a {
     width: 32.5%;
   }
   .admin-settings .demo .sns-follow-buttons {

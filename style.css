@@ -11612,11 +11612,15 @@ _:-ms-lang(x), .mc-circle {
     margin-left: 4px;
   }
   .sns-share.ss-top.ss-col-6 .sns-buttons,
-  .sns-share.ss-bottom.ss-col-6 .sns-buttons {
+  .sns-share.ss-bottom.ss-col-6 .sns-buttons,
+  .sns-share.ss-top.ss-col-5 .sns-buttons,
+  .sns-share.ss-bottom.ss-col-5 .sns-buttons {
     column-gap: 0.75%;
   }
   .sns-share.ss-top.ss-col-6 a,
-  .sns-share.ss-bottom.ss-col-6 a {
+  .sns-share.ss-bottom.ss-col-6 a,
+  .sns-share.ss-top.ss-col-5 a,
+  .sns-share.ss-bottom.ss-col-5 a {
     width: 32.5%;
   }
   .sns-follow-buttons {
