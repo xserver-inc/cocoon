@@ -708,6 +708,8 @@ function get_the_snippet($content, $length = 70, $post_id = null) {
   if (!$description) {
     $description = get_the_all_in_one_seo_pack_meta_description($post_id);
   }
+  //改行を除去
+  $description = str_replace(array("\r\n", "\r", "\n"), '', $description);
 
   //SEO設定のディスクリプションがない場合は「本文からの自動生成抜粋」を取得
   if (!$description) {
