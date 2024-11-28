@@ -36,19 +36,17 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 
 ## 翻訳協力
 
-[vic322](https://github.com/vic322)：英語
-
-[yuria (yuria0309)](https://crowdin.com/profile/yuria0309)：韓国語
-
-[slowstep](https://crowdin.com/profile/vic322)：韓国語
-
-[Hsin-Hsiang Peng (Hsins)](https://crowdin.com/profile/hsins)：中国語
-
-[Libmuy](https://github.com/libmuy)：中国語
+| 言語   | 協力者 |
+| ---    | ------ |
+| 英語   | [vic322](https://github.com/vic322) |
+| 韓国語 | [yuria (yuria0309)](https://crowdin.com/profile/yuria0309), [slowstep](https://crowdin.com/profile/slowstep) |
+| 中国語 | [Hsin-Hsiang Peng (Hsins)](https://crowdin.com/profile/hsins), [Libmuy](https://github.com/libmuy) |
 
 各種翻訳は、翻訳マネジメントプラットホームのCrowdinにて行なっております。もし翻訳にご協力いただける場合は、以下のプロジェクトにて参加申請（Jojn）していただければ幸いです。
 
-https://crowdin.com/project/wp-cocoon
+Translations are done by Crowdin, a translation management platform. If you are interested in helping us with translations, please submit a join request.
+
+[Crowdin](https://crowdin.com/project/wp-cocoon)
 
 ## 使用ライブラリ
 
