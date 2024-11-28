@@ -6,8 +6,8 @@ jobs:
   WP_PO_TO_JSON:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       id: setup_node_id
       with:
         node-version: 14
