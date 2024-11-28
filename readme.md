@@ -44,7 +44,7 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 
 各種翻訳は、翻訳マネジメントプラットホームのCrowdinにて行なっております。もし翻訳にご協力いただける場合は、以下のプロジェクトにて参加申請（Jojn）していただければ幸いです。
 
-Translations are done by Crowdin, a translation management platform. If you are interested in helping us with translations, please submit a jojn request.
+Translations are done by Crowdin, a translation management platform. If you are interested in helping us with translations, please submit a join request.
 
 [Crowdin](https://crowdin.com/project/wp-cocoon)
 
