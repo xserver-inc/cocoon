@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.8.1\n"
+"Project-Id-Version: Cocoon 2.8.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-25T15:56:43+00:00\n"
+"POT-Creation-Date: 2024-11-28T14:41:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -2780,7 +2780,7 @@ msgid "45分"
 msgstr ""
 
 #: lib/page-access/access-forms.php:61
-#: lib/page-settings/sns-share-forms.php:170
+#: lib/page-settings/sns-share-forms.php:172
 msgid "1時間"
 msgstr ""
 
@@ -2789,18 +2789,18 @@ msgid "1時間半"
 msgstr ""
 
 #: lib/page-access/access-forms.php:63
-#: lib/page-settings/sns-share-forms.php:171
+#: lib/page-settings/sns-share-forms.php:173
 msgid "2時間"
 msgstr ""
 
 #: lib/page-access/access-forms.php:64
-#: lib/page-settings/sns-share-forms.php:172
+#: lib/page-settings/sns-share-forms.php:174
 msgid "3時間"
 msgstr ""
 
 #: lib/page-access/access-forms.php:65
 #: lib/page-settings/sns-follow-forms.php:246
-#: lib/page-settings/sns-share-forms.php:175
+#: lib/page-settings/sns-share-forms.php:177
 msgid "6時間"
 msgstr ""
 
@@ -2810,7 +2810,7 @@ msgstr ""
 
 #: lib/page-access/access-forms.php:67
 #: lib/page-settings/sns-follow-forms.php:247
-#: lib/page-settings/sns-share-forms.php:178
+#: lib/page-settings/sns-share-forms.php:180
 msgid "12時間"
 msgstr ""
 
@@ -2821,7 +2821,7 @@ msgstr ""
 
 #: lib/page-access/access-forms.php:69
 #: lib/page-settings/sns-follow-forms.php:249
-#: lib/page-settings/sns-share-forms.php:181
+#: lib/page-settings/sns-share-forms.php:183
 msgid "24時間"
 msgstr ""
 
@@ -9242,7 +9242,7 @@ msgid "feedlyは購読者情報がエラーで取得できない場合があり�
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:219
-#: lib/page-settings/sns-share-forms.php:143
+#: lib/page-settings/sns-share-forms.php:145
 msgid "キャッシュ設定"
 msgstr ""
 
@@ -9251,37 +9251,37 @@ msgid "フォロー数取得時のキャッシュ利用設定です。キャッ�
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:228
-#: lib/page-settings/sns-share-forms.php:152
+#: lib/page-settings/sns-share-forms.php:154
 msgid "キャッシュの有効化"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:232
-#: lib/page-settings/sns-share-forms.php:156
+#: lib/page-settings/sns-share-forms.php:158
 msgid "キャッシュを有効にする"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:233
-#: lib/page-settings/sns-share-forms.php:157
+#: lib/page-settings/sns-share-forms.php:159
 msgid "SNSシェア数をキャッシュ化することでページ表示スピードの短縮化を図ります。"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:241
-#: lib/page-settings/sns-share-forms.php:165
+#: lib/page-settings/sns-share-forms.php:167
 msgid "キャッシュ間隔"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:250
-#: lib/page-settings/sns-share-forms.php:182
+#: lib/page-settings/sns-share-forms.php:184
 msgid "2日間"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:251
-#: lib/page-settings/sns-share-forms.php:183
+#: lib/page-settings/sns-share-forms.php:185
 msgid "3日間"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:254
-#: lib/page-settings/sns-share-forms.php:186
+#: lib/page-settings/sns-share-forms.php:188
 msgid "キャッシュの取得間隔を設定します。間隔が狭いほど更新は増えますがサーバー負担は増えます（主に相手サーバー）。"
 msgstr ""
 
@@ -9519,107 +9519,107 @@ msgstr ""
 msgid "シェアされたポストに著者のＸ IDを含める。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:43
+#: lib/page-settings/sns-share-forms.php:44
 msgid "プロモーション"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:47
+#: lib/page-settings/sns-share-forms.php:48
 msgid "ポスト後にフォローを促す"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:48
+#: lib/page-settings/sns-share-forms.php:49
 msgid "ポスト後に著者のフォローボタンを表示します。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:57
+#: lib/page-settings/sns-share-forms.php:59
 msgid "ハッシュタグ"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:61
+#: lib/page-settings/sns-share-forms.php:63
 msgid "#ハッシュタグ"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:62
+#: lib/page-settings/sns-share-forms.php:64
 msgid "ポスト時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力も可能です。URLやタイトルを含めて140文字を超える場合は正常動作しない可能性もあります。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:79
+#: lib/page-settings/sns-share-forms.php:81
 msgid "Facebook設定"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:81
+#: lib/page-settings/sns-share-forms.php:83
 msgid "Facebookのシェア数に関する設定です。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:87
+#: lib/page-settings/sns-share-forms.php:89
 msgid "アクセストークン"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:92
+#: lib/page-settings/sns-share-forms.php:94
 msgid "access_tokenを入力"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:93
+#: lib/page-settings/sns-share-forms.php:95
 msgid "Facebookのシェア数を取得するのに必要なアクセストークンを入力します。当テーマではリアクションカウントをシェア数として採用しています。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:112
+#: lib/page-settings/sns-share-forms.php:114
 msgid "Pinterest設定"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:114
+#: lib/page-settings/sns-share-forms.php:116
 msgid "Pinterestの「保存」ボタンに関する設定です。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:121
+#: lib/page-settings/sns-share-forms.php:123
 msgid "Pinterest共有"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:125
+#: lib/page-settings/sns-share-forms.php:127
 msgid "Pinterestで画像をシェアする"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:126
+#: lib/page-settings/sns-share-forms.php:128
 msgid "この機能を有効にすると、投稿・固定ページ内の画像にマウスホバーすると「ピン」ボタンが表示されます。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:145
+#: lib/page-settings/sns-share-forms.php:147
 msgid "シェア数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示スピードを多少なりともあげることができます。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:173
+#: lib/page-settings/sns-share-forms.php:175
 msgid "4時間"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:174
+#: lib/page-settings/sns-share-forms.php:176
 msgid "5時間"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:176
+#: lib/page-settings/sns-share-forms.php:178
 msgid "8時間"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:177
+#: lib/page-settings/sns-share-forms.php:179
 msgid "10時間"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:179
+#: lib/page-settings/sns-share-forms.php:181
 msgid "16時間"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:180
+#: lib/page-settings/sns-share-forms.php:182
 msgid "20時間"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:195
+#: lib/page-settings/sns-share-forms.php:197
 msgid "別スキームシェア数"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:201
+#: lib/page-settings/sns-share-forms.php:203
 msgid "別スキームのSNSシェア数をキャッシュする"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms.php:202
+#: lib/page-settings/sns-share-forms.php:204
 msgid "httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。SNSサーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。"
 msgstr ""
 
@@ -14546,6 +14546,14 @@ msgstr ""
 
 #: blocks/src/block/radar/edit.js:393
 msgid "アングルラインを表示"
+msgstr ""
+
+#: blocks/src/block/radar/index.js:25
+msgid "レーダーチャート"
+msgstr ""
+
+#: blocks/src/block/radar/index.js:27
+msgid "評価や能力値表示に。"
 msgstr ""
 
 #: blocks/src/block/ranking/edit.js:43
