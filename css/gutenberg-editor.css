@@ -6103,3 +6103,7 @@ body .is-layout-grid {
 .wp-block-pullquote {
   font-size: 1.5em;
 }
+
+.components-base-control__label {
+  text-transform: initial !important;
+}
