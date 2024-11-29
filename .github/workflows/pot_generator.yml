@@ -6,7 +6,7 @@ jobs:
   WP_POT_Generator:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Wordpress POT Generation
       shell: bash
       run: |
@@ -20,7 +20,7 @@ jobs:
 
         # Regenerate POT file
         # wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --exclude="languages/*,plugins/*,blocks/dist/*,node_modules/*" --skip-audit
-        wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --include="blocks/src/*,lib/*,tmp/*,skins/*,templates/*,*.php" --skip-audit --ignore-domain
+        wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --include="blocks/src/*,lib/*,tmp/*,skins/*,templates/*,*.php" --skip-audit --ignore-domain --debug
 
         git config user.name "GitHub Action"
         git config user.email "github.action@noreply.com"
