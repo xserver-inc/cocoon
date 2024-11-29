@@ -33,7 +33,7 @@ function view_other_custom_box(){
 
   //RSS除外
   generate_checkbox_tag('the_page_no_rss' , is_the_page_no_rss(), __( 'フィードに出力しない', THEME_NAME ));
-  generate_howto_tag(__( 'チェックを入れると、この記事はRSS・Atomのフィードに出力されなくなります。'.get_help_page_tag('https://wp-cocoon.com/do-not-output-post-to-feed/'), THEME_NAME ), 'the_page_no_rss');
+  generate_howto_tag(__( 'チェックを入れると、この記事はRSS・Atomのフィードに出力されなくなります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/do-not-output-post-to-feed/'), 'the_page_no_rss');
 }
 endif;
 
