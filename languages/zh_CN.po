@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-28T14:41:27+00:00\n"
-"PO-Revision-Date: 2024-11-28 16:08\n"
+"POT-Creation-Date: 2024-11-29T13:09:05+00:00\n"
+"PO-Revision-Date: 2024-11-29 14:31\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -4547,19 +4547,19 @@ msgstr "Hiragino Kaku Gothic, Meiryo"
 #: lib/page-settings/all-forms.php:57
 #: lib/page-settings/index-forms.php:50
 #: lib/page-settings/index-forms.php:82
-#: skins/skin-grayish-topfull/functions.php:234
-#: skins/skin-grayish-topfull/functions.php:262
-#: skins/skin-grayish-topfull/functions.php:730
-#: skins/skin-grayish-topfull/functions.php:759
-#: skins/skin-grayish-topfull/functions.php:787
-#: skins/skin-grayish-topfull/functions.php:813
-#: skins/skin-grayish-topfull/functions.php:930
-#: skins/skin-grayish-topfull/functions.php:1465
-#: skins/skin-grayish-topfull/functions.php:1620
-#: skins/skin-grayish-topfull/functions.php:1774
-#: skins/skin-grayish-topfull/functions.php:1802
-#: skins/skin-grayish-topfull/functions.php:1825
-#: skins/skin-grayish-topfull/functions.php:1872
+#: skins/skin-grayish-topfull/functions.php:245
+#: skins/skin-grayish-topfull/functions.php:273
+#: skins/skin-grayish-topfull/functions.php:741
+#: skins/skin-grayish-topfull/functions.php:770
+#: skins/skin-grayish-topfull/functions.php:798
+#: skins/skin-grayish-topfull/functions.php:824
+#: skins/skin-grayish-topfull/functions.php:941
+#: skins/skin-grayish-topfull/functions.php:1476
+#: skins/skin-grayish-topfull/functions.php:1631
+#: skins/skin-grayish-topfull/functions.php:1785
+#: skins/skin-grayish-topfull/functions.php:1813
+#: skins/skin-grayish-topfull/functions.php:1836
+#: skins/skin-grayish-topfull/functions.php:1883
 msgid "（デフォルト）"
 msgstr "（默认）"
 
@@ -7717,7 +7717,7 @@ msgid "省略文字列"
 msgstr "省略字符串"
 
 #: lib/page-settings/index-forms.php:194
-#: lib/page-settings/index-funcs.php:204
+#: lib/page-settings/index-funcs.php:208
 msgid "..."
 msgstr ""
 
@@ -7757,7 +7757,7 @@ msgid "アーカイブ（インデックスリスト・新着関連記事ウィ�
 msgstr "请选择不想在归档（索引列表、新相关文章小工具等）中显示的类别。"
 
 #: lib/page-settings/mobile-buttons-forms.php:13
-#: skins/skin-grayish-topfull/functions.php:1726
+#: skins/skin-grayish-topfull/functions.php:1737
 msgid "モバイル設定"
 msgstr "移动设备设置"
 
@@ -12359,691 +12359,768 @@ msgstr "侧边栏内的标题<br><small>（按顺序应用所选的4种颜色）
 msgid "【不透明度（背景色）】"
 msgstr "【不透明度（背景色）】"
 
-#: skins/skin-grayish-topfull/functions.php:204
+#: skins/skin-grayish-topfull/functions.php:215
 msgid "skin-grayish: カスタマイズ"
 msgstr "skin-grayish: 自定义"
 
-#: skins/skin-grayish-topfull/functions.php:212
+#: skins/skin-grayish-topfull/functions.php:223
 msgid "全体：英字フォント設定"
 msgstr "全局：英文字体设置"
 
-#: skins/skin-grayish-topfull/functions.php:215
+#: skins/skin-grayish-topfull/functions.php:226
 msgid "英字フォントの適用箇所についてはこちらを参照"
 msgstr "有关英文字体应用位置，请参见此处"
 
-#: skins/skin-grayish-topfull/functions.php:228
+#: skins/skin-grayish-topfull/functions.php:239
 msgid "英字フォント設定 選択"
 msgstr "选择英文字体设置"
 
-#: skins/skin-grayish-topfull/functions.php:229
+#: skins/skin-grayish-topfull/functions.php:240
 msgid "ロゴテキスト・グローバルナビメニューや、フロントページ・サイドバーの各見出しに使用する英字フォントを選択できます。"
 msgstr "可以选择用于徽标文本、全局导航菜单、首页和侧边栏各标题的英文字体。"
 
-#: skins/skin-grayish-topfull/functions.php:229
+#: skins/skin-grayish-topfull/functions.php:240
 msgid "※固定ページや投稿のコンテンツは除く。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
 msgstr "※不包括固定页面和文章内容。如果选择“无设置”，则会继承Cocoon设置 > 全局设置 > 网站字体的设置。"
 
-#: skins/skin-grayish-topfull/functions.php:236
-#: skins/skin-grayish-topfull/functions.php:238
+#: skins/skin-grayish-topfull/functions.php:247
+#: skins/skin-grayish-topfull/functions.php:249
 msgid "（細タイプなし）"
 msgstr "（无细体）"
 
-#: skins/skin-grayish-topfull/functions.php:241
+#: skins/skin-grayish-topfull/functions.php:252
 msgid "設定なし"
 msgstr "无设置"
 
-#: skins/skin-grayish-topfull/functions.php:256
+#: skins/skin-grayish-topfull/functions.php:267
 msgid "サイトロゴ（テキスト時）のフォント太さ 選択"
 msgstr "选择网站徽标（文本时）的字体粗细"
 
-#: skins/skin-grayish-topfull/functions.php:257
+#: skins/skin-grayish-topfull/functions.php:268
 msgid "ロゴテキストの英字フォントの太さを細（デフォルト）又は普通どちらか選択できます。"
 msgstr "可以选择徽标文本的英文字体粗细为细（默认）或普通。"
 
-#: skins/skin-grayish-topfull/functions.php:257
+#: skins/skin-grayish-topfull/functions.php:268
 msgid "※フォントによって細いタイプがない場合があります。"
 msgstr "※某些字体可能没有细体选项。"
 
-#: skins/skin-grayish-topfull/functions.php:262
+#: skins/skin-grayish-topfull/functions.php:273
 msgid "細"
 msgstr "细"
 
-#: skins/skin-grayish-topfull/functions.php:263
+#: skins/skin-grayish-topfull/functions.php:274
 msgid "普通"
 msgstr "普通"
 
-#: skins/skin-grayish-topfull/functions.php:404
+#: skins/skin-grayish-topfull/functions.php:415
 msgid "全体：カラー設定"
 msgstr "全局：颜色设置"
 
-#: skins/skin-grayish-topfull/functions.php:407
+#: skins/skin-grayish-topfull/functions.php:418
 msgid "各カラーの適用箇所についてはこちらを参照"
 msgstr "有关每种颜色的应用位置，请参见此处"
 
-#: skins/skin-grayish-topfull/functions.php:422
+#: skins/skin-grayish-topfull/functions.php:433
 msgid "テキストカラー"
 msgstr "文本颜色"
 
-#: skins/skin-grayish-topfull/functions.php:423
+#: skins/skin-grayish-topfull/functions.php:434
 msgid "メニュー・見出し・本文などのテキストカラーを変更。"
 msgstr "更改菜单、标题、正文等的文本颜色。"
 
-#: skins/skin-grayish-topfull/functions.php:424
-#: skins/skin-grayish-topfull/functions.php:444
-#: skins/skin-grayish-topfull/functions.php:462
-#: skins/skin-grayish-topfull/functions.php:480
-#: skins/skin-grayish-topfull/functions.php:498
-#: skins/skin-grayish-topfull/functions.php:516
-#: skins/skin-grayish-topfull/functions.php:702
-#: skins/skin-grayish-topfull/functions.php:1439
-#: skins/skin-grayish-topfull/functions.php:1744
-#: skins/skin-grayish-topfull/functions.php:1844
+#: skins/skin-grayish-topfull/functions.php:435
+#: skins/skin-grayish-topfull/functions.php:455
+#: skins/skin-grayish-topfull/functions.php:473
+#: skins/skin-grayish-topfull/functions.php:491
+#: skins/skin-grayish-topfull/functions.php:509
+#: skins/skin-grayish-topfull/functions.php:527
+#: skins/skin-grayish-topfull/functions.php:713
+#: skins/skin-grayish-topfull/functions.php:1450
+#: skins/skin-grayish-topfull/functions.php:1755
+#: skins/skin-grayish-topfull/functions.php:1855
 msgid "※空欄の場合はデフォルト値になります。"
 msgstr "※如果留空，将使用默认值。"
 
-#: skins/skin-grayish-topfull/functions.php:442
+#: skins/skin-grayish-topfull/functions.php:453
 msgid "メインアクセント 一番明るい青色"
 msgstr "主要强调色 最亮的蓝色"
 
-#: skins/skin-grayish-topfull/functions.php:443
+#: skins/skin-grayish-topfull/functions.php:454
 msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
 msgstr "更改网站徽标文本和各文本链接悬停时的颜色、<br>首页NewPost的颜色、<br>类别标题下划线的颜色、<br>侧边栏小工具标题下划线的颜色、<br>页脚内强调线的颜色。"
 
-#: skins/skin-grayish-topfull/functions.php:460
+#: skins/skin-grayish-topfull/functions.php:471
 msgid "メイン 薄い青色"
 msgstr "主要 浅蓝色"
 
-#: skins/skin-grayish-topfull/functions.php:461
+#: skins/skin-grayish-topfull/functions.php:472
 msgid "グローバルナビの3階層目の背景色、<br>フロントページのView Moreボタン、次のページへボタン、タグクラウドのホバー時背景色。"
 msgstr "全局导航的第三级背景色、<br>首页\"查看更多\"按钮、下一页按钮、标签云悬停时的背景色。"
 
-#: skins/skin-grayish-topfull/functions.php:478
+#: skins/skin-grayish-topfull/functions.php:489
 msgid "メイン 一番薄い青"
 msgstr "主要 最浅蓝色"
 
-#: skins/skin-grayish-topfull/functions.php:479
+#: skins/skin-grayish-topfull/functions.php:490
 msgid "フロントページカテゴリー２つ目の背景色、<br>目次・記事下のSNSボタン背景のストライプの青系、<br>一覧ページのページネーションボタン背景色。"
 msgstr "首页第二个类别的背景色、<br>目录和文章下方的SNS按钮背景的蓝色条纹、<br>列表页面分页按钮的背景色。"
 
-#: skins/skin-grayish-topfull/functions.php:496
+#: skins/skin-grayish-topfull/functions.php:507
 msgid "サブ 濃い青"
 msgstr "次要 深蓝色"
 
-#: skins/skin-grayish-topfull/functions.php:497
+#: skins/skin-grayish-topfull/functions.php:508
 msgid "プロフィールname・投稿の日付・アイコン・本文目次の上下線・目次テキスト・SNSシェア・Follow・アピールエリアのボタン等。"
 msgstr "个人资料名称、发布日期、图标、正文目录的上下线、目录文本、SNS分享、关注、引导区域的按钮等。"
 
-#: skins/skin-grayish-topfull/functions.php:514
+#: skins/skin-grayish-topfull/functions.php:525
 msgid "サブ もっと濃い青"
 msgstr "次要 更深蓝色"
 
-#: skins/skin-grayish-topfull/functions.php:515
+#: skins/skin-grayish-topfull/functions.php:526
 msgid "カテゴリーラベル背景色・記事内タグの枠線とアイコンの色。"
 msgstr "类别标签背景色、文章内标签的边框线和图标颜色。"
 
-#: skins/skin-grayish-topfull/functions.php:657
+#: skins/skin-grayish-topfull/functions.php:668
 msgid "フロントページ設定：ヘッダー"
 msgstr "首页设置：头部"
 
-#: skins/skin-grayish-topfull/functions.php:660
-#: skins/skin-grayish-topfull/functions.php:1402
+#: skins/skin-grayish-topfull/functions.php:671
+#: skins/skin-grayish-topfull/functions.php:1413
 msgid "グローバルナビの高さ等変更についてはこちらを参照"
 msgstr "有关更改全局导航高度等信息，请参见此处"
 
-#: skins/skin-grayish-topfull/functions.php:660
+#: skins/skin-grayish-topfull/functions.php:671
 msgid "メインビジュアルについてはこちらを参照"
 msgstr "有关主视觉，请参见此处"
 
-#: skins/skin-grayish-topfull/functions.php:660
+#: skins/skin-grayish-topfull/functions.php:671
 msgid "グローバルナビのメニュー作成・SNSフォローボタンについてはこちらを参照"
 msgstr "有关全局导航菜单创建和SNS关注按钮，请参见此处"
 
-#: skins/skin-grayish-topfull/functions.php:675
+#: skins/skin-grayish-topfull/functions.php:686
 msgid "【PC】グローバルナビの高さ"
 msgstr "【PC】全局导航高度"
 
-#: skins/skin-grayish-topfull/functions.php:676
+#: skins/skin-grayish-topfull/functions.php:687
 msgid "フロントページのグローバルナビの高さ。56px〜100pxの範囲で変更可能です。"
 msgstr "首页全局导航的高度。可以在56px〜100px范围内更改。"
 
-#: skins/skin-grayish-topfull/functions.php:677
-#: skins/skin-grayish-topfull/functions.php:1416
+#: skins/skin-grayish-topfull/functions.php:688
+#: skins/skin-grayish-topfull/functions.php:1427
 msgid "※空欄の場合や、範囲外の値の場合は56pxになります。"
 msgstr "※如果留空或超出范围，值将为56px。"
 
-#: skins/skin-grayish-topfull/functions.php:700
+#: skins/skin-grayish-topfull/functions.php:711
 msgid "【PC】グローバルナビの背景色"
 msgstr "【PC】全局导航背景色"
 
-#: skins/skin-grayish-topfull/functions.php:701
+#: skins/skin-grayish-topfull/functions.php:712
 msgid "グローバルナビの背景色。"
 msgstr "全局导航背景色。"
 
-#: skins/skin-grayish-topfull/functions.php:719
+#: skins/skin-grayish-topfull/functions.php:730
 msgid "【PC】グローバルナビ背景色の不透明度調整"
 msgstr "【PC】全局导航背景色的不透明度调整"
 
-#: skins/skin-grayish-topfull/functions.php:720
-#: skins/skin-grayish-topfull/functions.php:1455
-#: skins/skin-grayish-topfull/functions.php:1763
-#: skins/skin-grayish-topfull/functions.php:1862
+#: skins/skin-grayish-topfull/functions.php:731
+#: skins/skin-grayish-topfull/functions.php:1466
+#: skins/skin-grayish-topfull/functions.php:1774
+#: skins/skin-grayish-topfull/functions.php:1873
 msgid "値が大きくなるほど背景色が濃くなります。"
 msgstr "值越大，背景色越深。"
 
-#: skins/skin-grayish-topfull/functions.php:725
-#: skins/skin-grayish-topfull/functions.php:1460
-#: skins/skin-grayish-topfull/functions.php:1769
-#: skins/skin-grayish-topfull/functions.php:1867
+#: skins/skin-grayish-topfull/functions.php:736
+#: skins/skin-grayish-topfull/functions.php:1471
+#: skins/skin-grayish-topfull/functions.php:1780
+#: skins/skin-grayish-topfull/functions.php:1878
 msgid "（背景色なし)"
 msgstr "（无背景色）"
 
-#: skins/skin-grayish-topfull/functions.php:735
-#: skins/skin-grayish-topfull/functions.php:1470
-#: skins/skin-grayish-topfull/functions.php:1779
-#: skins/skin-grayish-topfull/functions.php:1877
+#: skins/skin-grayish-topfull/functions.php:746
+#: skins/skin-grayish-topfull/functions.php:1481
+#: skins/skin-grayish-topfull/functions.php:1790
+#: skins/skin-grayish-topfull/functions.php:1888
 msgid "(不透明)"
 msgstr "（不透明）"
 
-#: skins/skin-grayish-topfull/functions.php:753
+#: skins/skin-grayish-topfull/functions.php:764
 msgid "メインビジュアル 白ドットのON/OFF"
 msgstr "主视觉 白点开关"
 
-#: skins/skin-grayish-topfull/functions.php:754
+#: skins/skin-grayish-topfull/functions.php:765
 msgid "メインビジュアルの上に白いドットを重ねるかどうかを選択。解像度が低い画像を使用する場合はON推奨"
 msgstr "选择是否在主视觉上叠加白点。如果使用低分辨率图像，建议开启"
 
-#: skins/skin-grayish-topfull/functions.php:759
-#: skins/skin-grayish-topfull/functions.php:813
-#: skins/skin-grayish-topfull/functions.php:931
-#: skins/skin-grayish-topfull/functions.php:1802
-#: skins/skin-grayish-topfull/functions.php:1825
+#: skins/skin-grayish-topfull/functions.php:770
+#: skins/skin-grayish-topfull/functions.php:824
+#: skins/skin-grayish-topfull/functions.php:942
+#: skins/skin-grayish-topfull/functions.php:1813
+#: skins/skin-grayish-topfull/functions.php:1836
 msgid "ON"
 msgstr "开"
 
-#: skins/skin-grayish-topfull/functions.php:760
-#: skins/skin-grayish-topfull/functions.php:782
-#: skins/skin-grayish-topfull/functions.php:814
-#: skins/skin-grayish-topfull/functions.php:930
-#: skins/skin-grayish-topfull/functions.php:1803
-#: skins/skin-grayish-topfull/functions.php:1826
+#: skins/skin-grayish-topfull/functions.php:771
+#: skins/skin-grayish-topfull/functions.php:793
+#: skins/skin-grayish-topfull/functions.php:825
+#: skins/skin-grayish-topfull/functions.php:941
+#: skins/skin-grayish-topfull/functions.php:1814
+#: skins/skin-grayish-topfull/functions.php:1837
 msgid "OFF"
 msgstr "关"
 
-#: skins/skin-grayish-topfull/functions.php:776
+#: skins/skin-grayish-topfull/functions.php:787
 msgid "メインビジュアル 白オーバーレイの不透明度調整"
 msgstr "主视觉 白色覆盖层不透明度调整"
 
-#: skins/skin-grayish-topfull/functions.php:777
+#: skins/skin-grayish-topfull/functions.php:788
 msgid "メインビジュアルの上に重ねる白の不透明度を調整。"
 msgstr "调整叠加在主视觉上的白色不透明度。"
 
-#: skins/skin-grayish-topfull/functions.php:777
+#: skins/skin-grayish-topfull/functions.php:788
 msgid "値が大きくなるほど白が濃くなります。"
 msgstr "值越大，白色越浓。"
 
-#: skins/skin-grayish-topfull/functions.php:807
+#: skins/skin-grayish-topfull/functions.php:818
 msgid "メインビジュアル下のスクロールアニメーションのON/OFF"
 msgstr "主视觉下的滚动动画开关"
 
-#: skins/skin-grayish-topfull/functions.php:808
+#: skins/skin-grayish-topfull/functions.php:819
 msgid "メインビジュアルの下部にあるスクロールを促すアニメーションが不要の場合ここでOFF。"
 msgstr "如果不需要主视觉下方的滚动提示动画，请在此关闭。"
 
-#: skins/skin-grayish-topfull/functions.php:808
+#: skins/skin-grayish-topfull/functions.php:819
 msgid "PC/SP共通の設定になります。"
 msgstr "此设置适用于PC/智能手机。"
 
-#: skins/skin-grayish-topfull/functions.php:824
+#: skins/skin-grayish-topfull/functions.php:835
 msgid "X（旧Twitter）フォローボタンを表示"
 msgstr "显示X（原Twitter）关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:828
+#: skins/skin-grayish-topfull/functions.php:839
 msgid "Mastodon フォローボタンを表示"
 msgstr "显示Mastodon关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:832
+#: skins/skin-grayish-topfull/functions.php:843
 msgid "Bluesky フォローボタンを表示"
 msgstr "显示Bluesky关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:836
+#: skins/skin-grayish-topfull/functions.php:847
 msgid "Misskey フォローボタンを表示"
 msgstr "显示Misskey关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:840
+#: skins/skin-grayish-topfull/functions.php:851
 msgid "Facebook フォローボタンを表示"
 msgstr "显示Facebook关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:844
+#: skins/skin-grayish-topfull/functions.php:855
 msgid "はてブ フォローボタンを表示"
 msgstr "显示Hatena Bookmark关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:848
+#: skins/skin-grayish-topfull/functions.php:859
 msgid "Instagram フォローボタンを表示"
 msgstr "显示Instagram关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:852
+#: skins/skin-grayish-topfull/functions.php:863
 msgid "Pinterest フォローボタンを表示"
 msgstr "显示Pinterest关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:856
+#: skins/skin-grayish-topfull/functions.php:867
 msgid "YouTube フォローボタンを表示"
 msgstr "显示YouTube关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:860
+#: skins/skin-grayish-topfull/functions.php:871
 msgid "LinkedIn フォローボタンを表示"
 msgstr "显示LinkedIn关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:864
+#: skins/skin-grayish-topfull/functions.php:875
 msgid "note フォローボタンを表示"
 msgstr "显示note关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:868
+#: skins/skin-grayish-topfull/functions.php:879
 msgid "Flickr フォローボタンを表示"
 msgstr "显示Flickr关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:872
+#: skins/skin-grayish-topfull/functions.php:883
 msgid "Amazon欲しい物リスト フォローボタンを表示"
 msgstr "显示Amazon愿望清单关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:876
+#: skins/skin-grayish-topfull/functions.php:887
 msgid "Twitch フォローボタンを表示"
 msgstr "显示Twitch关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:880
+#: skins/skin-grayish-topfull/functions.php:891
 msgid "楽天ROOM フォローボタンを表示"
 msgstr "显示Rakuten Room关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:884
+#: skins/skin-grayish-topfull/functions.php:895
 msgid "Slack フォローボタンを表示"
 msgstr "显示Slack关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:888
+#: skins/skin-grayish-topfull/functions.php:899
 msgid "GitHub フォローボタンを表示"
 msgstr "显示GitHub关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:892
+#: skins/skin-grayish-topfull/functions.php:903
 msgid "CodePen フォローボタンを表示"
 msgstr "显示CodePen关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:896
+#: skins/skin-grayish-topfull/functions.php:907
 msgid "TikTok フォローボタンを表示"
 msgstr "显示TikTok关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:900
+#: skins/skin-grayish-topfull/functions.php:911
 msgid "SoundCloud フォローボタンを表示"
 msgstr "显示SoundCloud关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:904
+#: skins/skin-grayish-topfull/functions.php:915
 msgid "LINE フォローボタンを表示"
 msgstr "显示LINE关注按钮"
 
-#: skins/skin-grayish-topfull/functions.php:924
+#: skins/skin-grayish-topfull/functions.php:935
 msgid "プロフィールページでURLを入力している場合、グローバルナビにフォローボタンを表示します。"
 msgstr "如果在个人资料页面中输入了URL，将在全局导航中显示关注按钮。"
 
-#: skins/skin-grayish-topfull/functions.php:925
+#: skins/skin-grayish-topfull/functions.php:936
 msgid "※フロントページ以外のグローバルナビにも表示されます。"
 msgstr "※它也显示在首页以外的全局导航中。"
 
-#: skins/skin-grayish-topfull/functions.php:1171
+#: skins/skin-grayish-topfull/functions.php:1182
 msgid "全体：テキスト変更"
 msgstr "全局：文本更改"
 
-#: skins/skin-grayish-topfull/functions.php:1174
+#: skins/skin-grayish-topfull/functions.php:1185
 msgid "テキスト変更についてはこちらを参照"
 msgstr "有关文本更改，请参见此处。"
 
-#: skins/skin-grayish-topfull/functions.php:1179
-#: skins/skin-grayish-topfull/functions.php:1303
-#: skins/skin-grayish-topfull/functions.php:1307
+#: skins/skin-grayish-topfull/functions.php:1190
+#: skins/skin-grayish-topfull/functions.php:1314
+#: skins/skin-grayish-topfull/functions.php:1318
 msgid "New Post"
 msgstr "新文章"
 
-#: skins/skin-grayish-topfull/functions.php:1187
+#: skins/skin-grayish-topfull/functions.php:1198
 msgid "【フロントページ】\"New Post\"を変更"
 msgstr "[首页] 更改 \"新文章\""
 
-#: skins/skin-grayish-topfull/functions.php:1188
+#: skins/skin-grayish-topfull/functions.php:1199
 msgid "New Postを別のテキストに変更できます。"
 msgstr "可以将“新文章”更改为其他文本。"
 
-#: skins/skin-grayish-topfull/functions.php:1188
-#: skins/skin-grayish-topfull/functions.php:1228
+#: skins/skin-grayish-topfull/functions.php:1199
+#: skins/skin-grayish-topfull/functions.php:1239
 msgid "Cocoon設定>インデックス>カテゴリーごとを選択した場合に表示されます。"
 msgstr "当选择Cocoon设置 > 索引 > 按类别时，将显示此内容。"
 
-#: skins/skin-grayish-topfull/functions.php:1189
+#: skins/skin-grayish-topfull/functions.php:1200
 msgid "※空欄の場合は\"New Post\"が表示されます。"
 msgstr "※如果留空，将显示“新文章”。"
 
-#: skins/skin-grayish-topfull/functions.php:1199
-#: skins/skin-grayish-topfull/functions.php:1322
-#: skins/skin-grayish-topfull/functions.php:1323
-#: skins/skin-grayish-topfull/functions.php:1325
+#: skins/skin-grayish-topfull/functions.php:1210
+#: skins/skin-grayish-topfull/functions.php:1333
+#: skins/skin-grayish-topfull/functions.php:1334
+#: skins/skin-grayish-topfull/functions.php:1336
 msgid "最新の記事"
 msgstr "最新文章"
 
-#: skins/skin-grayish-topfull/functions.php:1207
+#: skins/skin-grayish-topfull/functions.php:1218
 msgid "【フロントページ】\"最新の記事\"を変更"
 msgstr "[首页] 更改 \"最新文章\""
 
-#: skins/skin-grayish-topfull/functions.php:1208
+#: skins/skin-grayish-topfull/functions.php:1219
 msgid "\"最新の記事\"を別のテキストに変更できます。"
 msgstr "可以将“最新文章”更改为其他文本。"
 
-#: skins/skin-grayish-topfull/functions.php:1208
-#: skins/skin-grayish-topfull/functions.php:1248
+#: skins/skin-grayish-topfull/functions.php:1219
+#: skins/skin-grayish-topfull/functions.php:1259
 msgid "Cocoon設定>インデックス>タブ一覧又はカテゴリーごとを選択した場合に表示されます。"
 msgstr "当选择Cocoon设置 > 索引 > 标签列表或按类别时，将显示此内容。"
 
-#: skins/skin-grayish-topfull/functions.php:1209
+#: skins/skin-grayish-topfull/functions.php:1220
 msgid "※空欄の場合は\"最新の記事\"が表示されます。"
 msgstr "※如果留空，将显示“最新文章”。"
 
-#: skins/skin-grayish-topfull/functions.php:1227
+#: skins/skin-grayish-topfull/functions.php:1238
 msgid "【フロントページ】\"Category\"を変更"
 msgstr "[首页] 更改 \"Category\""
 
-#: skins/skin-grayish-topfull/functions.php:1228
+#: skins/skin-grayish-topfull/functions.php:1239
 msgid "Categoryを別のテキストに変更できます。"
 msgstr "可以将“Category”更改为其他文本。"
 
-#: skins/skin-grayish-topfull/functions.php:1229
+#: skins/skin-grayish-topfull/functions.php:1240
 msgid "※空欄の場合は\"Category\"が表示されます。"
 msgstr "※如果留空，将显示“Category”。"
 
-#: skins/skin-grayish-topfull/functions.php:1239
-#: skins/skin-grayish-topfull/functions.php:1368
-#: skins/skin-grayish-topfull/functions.php:1369
-#: skins/skin-grayish-topfull/functions.php:1371
+#: skins/skin-grayish-topfull/functions.php:1250
+#: skins/skin-grayish-topfull/functions.php:1379
+#: skins/skin-grayish-topfull/functions.php:1380
+#: skins/skin-grayish-topfull/functions.php:1382
 msgid "View More"
 msgstr "查看更多"
 
-#: skins/skin-grayish-topfull/functions.php:1247
+#: skins/skin-grayish-topfull/functions.php:1258
 msgid "【フロントページ】View Moreボタン \"View More\"を変更"
 msgstr "[首页] 更改更多按钮 \"查看更多\""
 
-#: skins/skin-grayish-topfull/functions.php:1248
+#: skins/skin-grayish-topfull/functions.php:1259
 msgid "\"View More\"を別のテキストに変更できます。"
 msgstr "可以将\"查看更多\"更改为其他文本。"
 
-#: skins/skin-grayish-topfull/functions.php:1249
+#: skins/skin-grayish-topfull/functions.php:1260
 msgid "※空欄の場合は\"View More\"が表示されます。"
 msgstr "※如果留空，将显示\"查看更多\"。"
 
-#: skins/skin-grayish-topfull/functions.php:1259
-#: skins/skin-grayish-topfull/functions.php:1381
-#: skins/skin-grayish-topfull/functions.php:1382
-#: skins/skin-grayish-topfull/functions.php:1384
+#: skins/skin-grayish-topfull/functions.php:1270
+#: skins/skin-grayish-topfull/functions.php:1392
+#: skins/skin-grayish-topfull/functions.php:1393
+#: skins/skin-grayish-topfull/functions.php:1395
 msgid "Next"
 msgstr "下一个"
 
-#: skins/skin-grayish-topfull/functions.php:1267
+#: skins/skin-grayish-topfull/functions.php:1278
 msgid "【フロントページ・各一覧ページ】Nextボタン \"Next\"を変更"
 msgstr "[首页及各列表页面] 更改下一个按钮 \"更多\""
 
-#: skins/skin-grayish-topfull/functions.php:1268
+#: skins/skin-grayish-topfull/functions.php:1279
 msgid "\"Next\"を別のテキストに変更できます。"
 msgstr "可以将“Next”更改为其他文本。"
 
-#: skins/skin-grayish-topfull/functions.php:1268
+#: skins/skin-grayish-topfull/functions.php:1279
 msgid "※空欄の場合は\"Next\"が表示されます。"
 msgstr "※如果留空，将显示“更多”。"
 
-#: skins/skin-grayish-topfull/functions.php:1278
-#: skins/skin-grayish-topfull/functions.php:1574
-#: skins/skin-grayish-topfull/functions.php:1575
-#: skins/skin-grayish-topfull/functions.php:1577
+#: skins/skin-grayish-topfull/functions.php:1289
+#: skins/skin-grayish-topfull/functions.php:1585
+#: skins/skin-grayish-topfull/functions.php:1586
+#: skins/skin-grayish-topfull/functions.php:1588
 msgid "Home"
 msgstr "主页"
 
-#: skins/skin-grayish-topfull/functions.php:1286
+#: skins/skin-grayish-topfull/functions.php:1297
 msgid "【投稿・固定ページ】パンくずリスト \"Home\"を変更"
 msgstr "[文章及固定页面] 更改面包屑导航中的 \"主页\""
 
-#: skins/skin-grayish-topfull/functions.php:1287
+#: skins/skin-grayish-topfull/functions.php:1298
 msgid "\"Home\"を別のテキストに変更できます。"
 msgstr "可以将“主页”更改为其他文本。"
 
-#: skins/skin-grayish-topfull/functions.php:1287
+#: skins/skin-grayish-topfull/functions.php:1298
 msgid "※空欄の場合は\"Home\"が表示されます。"
 msgstr "※如果留空，将显示“主页”。"
 
-#: skins/skin-grayish-topfull/functions.php:1399
+#: skins/skin-grayish-topfull/functions.php:1410
 msgid "フロントページ以外の設定:ヘッダー"
 msgstr "非首页设置: 头部"
 
-#: skins/skin-grayish-topfull/functions.php:1414
+#: skins/skin-grayish-topfull/functions.php:1425
 msgid "【PC】フロントページ以外のグローバルナビの高さ"
 msgstr "【PC】非首页的全局导航高度"
 
-#: skins/skin-grayish-topfull/functions.php:1415
+#: skins/skin-grayish-topfull/functions.php:1426
 msgid "56px〜100pxの範囲で変更可能です。"
 msgstr "可以在56px〜100px范围内更改。"
 
-#: skins/skin-grayish-topfull/functions.php:1415
+#: skins/skin-grayish-topfull/functions.php:1426
 msgid "ロゴ画像を使用の場合はロゴ画像の大きさを調整可能です。"
 msgstr "使用徽标图像时，可以调整徽标图像的大小。"
 
-#: skins/skin-grayish-topfull/functions.php:1437
+#: skins/skin-grayish-topfull/functions.php:1448
 msgid "【PC】フロントページ以外のヘッダーの背景色"
 msgstr "【PC】非首页头部的背景色"
 
-#: skins/skin-grayish-topfull/functions.php:1438
+#: skins/skin-grayish-topfull/functions.php:1449
 msgid "ヘッダーの背景色を変更。"
 msgstr "更改头部的背景色。"
 
-#: skins/skin-grayish-topfull/functions.php:1454
+#: skins/skin-grayish-topfull/functions.php:1465
 msgid "【PC】ヘッダー背景色の不透明度調整"
 msgstr "【PC】头部背景色的不透明度调整"
 
-#: skins/skin-grayish-topfull/functions.php:1488
+#: skins/skin-grayish-topfull/functions.php:1499
 msgid "【PC】フロントページ以外のヘッダーロゴ画像アップロード"
 msgstr "【PC】非首页头部徽标图像上传"
 
-#: skins/skin-grayish-topfull/functions.php:1489
+#: skins/skin-grayish-topfull/functions.php:1500
 msgid "ロゴをフロントページと別画像にしたいとき設定します。"
 msgstr "当希望徽标与首页使用不同图像时进行设置。"
 
-#: skins/skin-grayish-topfull/functions.php:1593
+#: skins/skin-grayish-topfull/functions.php:1604
 msgid "コンテンツ下部ウィジェット：プロフィールボックス"
 msgstr "内容底部小工具：个人资料框"
 
-#: skins/skin-grayish-topfull/functions.php:1596
+#: skins/skin-grayish-topfull/functions.php:1607
 msgid "プロフィールボックスの設定についてはこちらを参照"
 msgstr "有关个人资料框的设置，请参见此处"
 
-#: skins/skin-grayish-topfull/functions.php:1609
+#: skins/skin-grayish-topfull/functions.php:1620
 msgid "プロフィールボックスの背景画像の白オーバーレイ不透明度調整"
 msgstr "个人资料框背景图像的白色覆盖层不透明度调整"
 
-#: skins/skin-grayish-topfull/functions.php:1610
+#: skins/skin-grayish-topfull/functions.php:1621
 msgid "値が大きくなるほど白色が濃くなります。"
 msgstr "值越大，白色越浓。"
 
-#: skins/skin-grayish-topfull/functions.php:1615
+#: skins/skin-grayish-topfull/functions.php:1626
 msgid "（白色なし）"
 msgstr "（无白色）"
 
-#: skins/skin-grayish-topfull/functions.php:1645
+#: skins/skin-grayish-topfull/functions.php:1656
 msgid "画像アップロード"
 msgstr "上传图片"
 
-#: skins/skin-grayish-topfull/functions.php:1646
+#: skins/skin-grayish-topfull/functions.php:1657
 msgid "プロフィールボックスの背景に設定したい画像を選択"
 msgstr "选择要设置为个人资料框背景的图像"
 
-#: skins/skin-grayish-topfull/functions.php:1729
+#: skins/skin-grayish-topfull/functions.php:1740
 msgid "ヘッダー・フッターモバイルボタンの設定についてはこちらを参照"
 msgstr "有关头部和底部移动按钮的设置，请参见此处"
 
-#: skins/skin-grayish-topfull/functions.php:1742
+#: skins/skin-grayish-topfull/functions.php:1753
 msgid "ヘッダーモバイルボタンの背景色"
 msgstr "头部移动按钮的背景色"
 
-#: skins/skin-grayish-topfull/functions.php:1743
+#: skins/skin-grayish-topfull/functions.php:1754
 msgid "ヘッダーモバイルボタンの背景色を変更。"
 msgstr "更改头部移动按钮的背景色。"
 
-#: skins/skin-grayish-topfull/functions.php:1745
+#: skins/skin-grayish-topfull/functions.php:1756
 msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。"
 msgstr "※ 如果将“仅在首页显示头部移动按钮的菜单图标”设置为启用，则首页的头部移动按钮背景色将无效。"
 
-#: skins/skin-grayish-topfull/functions.php:1762
+#: skins/skin-grayish-topfull/functions.php:1773
 msgid "ヘッダーモバイルボタン背景色の不透明度調整"
 msgstr "头部移动按钮背景色的不透明度调整"
 
-#: skins/skin-grayish-topfull/functions.php:1764
+#: skins/skin-grayish-topfull/functions.php:1775
 msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。"
 msgstr "※ 如果将“仅在首页显示头部移动按钮的菜单图标”设置为启用，则首页的头部移动按钮背景色的不透明度调整将无效。"
 
-#: skins/skin-grayish-topfull/functions.php:1795
+#: skins/skin-grayish-topfull/functions.php:1806
 msgid "フロントページのみヘッダーモバイルボタンをメニューアイコンのみON/OFF"
 msgstr "仅在首页启用头部移动按钮的菜单图标开关"
 
-#: skins/skin-grayish-topfull/functions.php:1796
+#: skins/skin-grayish-topfull/functions.php:1807
 msgid "フロントページ以外は設定したメニューを表示します。"
 msgstr "在首页之外显示设置的菜单。"
 
-#: skins/skin-grayish-topfull/functions.php:1797
+#: skins/skin-grayish-topfull/functions.php:1808
 msgid "※ヘッダーモバイルボタンにオリジナルメニューを作成する場合は、メニューの一番上に#menuを設定してください。"
 msgstr "※ 要在头部移动按钮上创建自定义菜单，请在菜单顶部设置#menu。"
 
-#: skins/skin-grayish-topfull/functions.php:1819
+#: skins/skin-grayish-topfull/functions.php:1830
 msgid "ヘッダーモバイルボタン＆フッターモバイルボタンのアイコン下のキャプションのON/OFF"
 msgstr "头部移动按钮和底部移动按钮图标下方的标题开关"
 
-#: skins/skin-grayish-topfull/functions.php:1820
+#: skins/skin-grayish-topfull/functions.php:1831
 msgid "モバイル時にアイコン下にキャプションを表示"
 msgstr "在移动设备上在图标下方显示标题"
 
-#: skins/skin-grayish-topfull/functions.php:1842
+#: skins/skin-grayish-topfull/functions.php:1853
 msgid "フッターモバイルボタンの背景色"
 msgstr "底部移动按钮的背景色"
 
-#: skins/skin-grayish-topfull/functions.php:1843
+#: skins/skin-grayish-topfull/functions.php:1854
 msgid "フッターモバイルボタンの背景色を変更。"
 msgstr "更改底部移动按钮的背景色。"
 
-#: skins/skin-grayish-topfull/functions.php:1861
+#: skins/skin-grayish-topfull/functions.php:1872
 msgid "フッターモバイルボタン背景色の不透明度調整"
 msgstr "底部移动按钮背景色的不透明度调整"
 
-#: skins/skin-grayish-topfull/functions.php:1896
+#: skins/skin-grayish-topfull/functions.php:1907
 msgid "モバイル時のヘッダーロゴ画像アップロード"
 msgstr "上传移动设备的头部徽标图像"
 
-#: skins/skin-grayish-topfull/functions.php:1897
+#: skins/skin-grayish-topfull/functions.php:1908
 msgid "モバイル時のロゴを別画像にしたいとき設定します。"
 msgstr "当希望在移动设备上使用不同图像作为徽标时进行设置。"
 
-#: skins/skin-grayish-topfull/functions.php:2111
+#: skins/skin-grayish-topfull/functions.php:2122
 msgid "サイトテキストグレー"
 msgstr "网站文本灰色"
 
-#: skins/skin-grayish-topfull/functions.php:2112
+#: skins/skin-grayish-topfull/functions.php:2123
 msgid "ライトグレーT0"
 msgstr "浅灰色T0"
 
-#: skins/skin-grayish-topfull/functions.php:2113
+#: skins/skin-grayish-topfull/functions.php:2124
 msgid "ライトブルーT0"
 msgstr "浅蓝色T0"
 
-#: skins/skin-grayish-topfull/functions.php:2114
+#: skins/skin-grayish-topfull/functions.php:2125
 msgid "ライトブルーT70"
 msgstr "浅蓝色T70"
 
-#: skins/skin-grayish-topfull/functions.php:2115
+#: skins/skin-grayish-topfull/functions.php:2126
 msgid "ライトブルーT90"
 msgstr "浅蓝色T90"
 
-#: skins/skin-grayish-topfull/functions.php:2116
+#: skins/skin-grayish-topfull/functions.php:2127
 msgid "シェイドブルーS30"
 msgstr "阴影蓝色S30"
 
-#: skins/skin-grayish-topfull/functions.php:2117
+#: skins/skin-grayish-topfull/functions.php:2128
 msgid "シェイドブルーS50"
 msgstr "阴影蓝色S50"
 
-#: skins/skin-grayish-topfull/functions.php:2118
+#: skins/skin-grayish-topfull/functions.php:2129
 msgid "PinkT0"
 msgstr "PinkT0"
 
-#: skins/skin-grayish-topfull/functions.php:2119
+#: skins/skin-grayish-topfull/functions.php:2130
 msgid "PinkT50"
 msgstr "PinkT50"
 
-#: skins/skin-grayish-topfull/functions.php:2120
+#: skins/skin-grayish-topfull/functions.php:2131
 msgid "PinkT90"
 msgstr "PinkT90"
 
-#: skins/skin-grayish-topfull/functions.php:2121
+#: skins/skin-grayish-topfull/functions.php:2132
 msgid "PinkS50"
 msgstr "PinkS50"
 
-#: skins/skin-grayish-topfull/functions.php:2122
+#: skins/skin-grayish-topfull/functions.php:2133
 msgid "RedT0"
 msgstr "RedT0"
 
-#: skins/skin-grayish-topfull/functions.php:2123
+#: skins/skin-grayish-topfull/functions.php:2134
 msgid "RedT50"
 msgstr "RedT50"
 
-#: skins/skin-grayish-topfull/functions.php:2124
+#: skins/skin-grayish-topfull/functions.php:2135
 msgid "YellowT0"
 msgstr "YellowT0"
 
-#: skins/skin-grayish-topfull/functions.php:2125
+#: skins/skin-grayish-topfull/functions.php:2136
 msgid "YellowT50"
 msgstr "YellowT50"
 
-#: skins/skin-grayish-topfull/functions.php:2126
+#: skins/skin-grayish-topfull/functions.php:2137
 msgid "YellowT90"
 msgstr "YellowT90"
 
-#: skins/skin-grayish-topfull/functions.php:2127
+#: skins/skin-grayish-topfull/functions.php:2138
 msgid "YellowS50"
 msgstr "YellowS50"
 
-#: skins/skin-grayish-topfull/functions.php:2128
+#: skins/skin-grayish-topfull/functions.php:2139
 msgid "BeigeT0"
 msgstr "BeigeT0"
 
-#: skins/skin-grayish-topfull/functions.php:2129
+#: skins/skin-grayish-topfull/functions.php:2140
 msgid "BeigeT50"
 msgstr "BeigeT50"
 
-#: skins/skin-grayish-topfull/functions.php:2130
+#: skins/skin-grayish-topfull/functions.php:2141
 msgid "BeigeT90"
 msgstr "BeigeT90"
 
-#: skins/skin-grayish-topfull/functions.php:2131
+#: skins/skin-grayish-topfull/functions.php:2142
 msgid "BeigeS50"
 msgstr "BeigeS50"
 
-#: skins/skin-grayish-topfull/functions.php:2132
+#: skins/skin-grayish-topfull/functions.php:2143
 msgid "GreenT0"
 msgstr "GreenT0"
 
-#: skins/skin-grayish-topfull/functions.php:2133
+#: skins/skin-grayish-topfull/functions.php:2144
 msgid "GreenT50"
 msgstr "GreenT50"
 
-#: skins/skin-grayish-topfull/functions.php:2134
+#: skins/skin-grayish-topfull/functions.php:2145
 msgid "GreenT90"
 msgstr "GreenT90"
 
-#: skins/skin-grayish-topfull/functions.php:2135
+#: skins/skin-grayish-topfull/functions.php:2146
 msgid "GreenS30"
 msgstr "GreenS30"
 
-#: skins/skin-grayish-topfull/functions.php:2136
+#: skins/skin-grayish-topfull/functions.php:2147
 msgid "GreenS50"
 msgstr "GreenS50"
 
-#: skins/skin-grayish-topfull/functions.php:2179
+#: skins/skin-grayish-topfull/functions.php:2190
 msgid "横スクロールできます"
 msgstr "可以横向滚动"
+
+#: skins/skin-grayish-topfull/functions.php:2353
+#: blocks/src/block-extension/style-extension/style01.js:106
+msgid "上線"
+msgstr "上线"
+
+#: skins/skin-grayish-topfull/functions.php:2354
+msgid "カラーラベル"
+msgstr "颜色标签"
+
+#: skins/skin-grayish-topfull/functions.php:2355
+msgid "ライン"
+msgstr "线条"
+
+#: skins/skin-grayish-topfull/functions.php:2356
+msgid "円"
+msgstr "圈"
+
+#: skins/skin-grayish-topfull/functions.php:2358
+msgid "均等デフォルト"
+msgstr "均衡默认"
+
+#: skins/skin-grayish-topfull/functions.php:2359
+msgid "均等上線"
+msgstr "均衡上线"
+
+#: skins/skin-grayish-topfull/functions.php:2360
+msgid "均等カラーラベル"
+msgstr "均衡颜色标签"
+
+#: skins/skin-grayish-topfull/functions.php:2361
+msgid "均等ライン"
+msgstr "均衡线条"
+
+#: skins/skin-grayish-topfull/functions.php:2362
+msgid "均等円"
+msgstr "均衡圆形"
+
+#: skins/skin-grayish-topfull/functions.php:2364
+msgid "PC均等デフォルト"
+msgstr "PC均衡默认"
+
+#: skins/skin-grayish-topfull/functions.php:2365
+msgid "PC均等上線"
+msgstr "PC均衡上线"
+
+#: skins/skin-grayish-topfull/functions.php:2366
+msgid "PC均等カラーラベル"
+msgstr "PC均衡颜色标签"
+
+#: skins/skin-grayish-topfull/functions.php:2367
+msgid "PC均等ライン"
+msgstr "PC均衡线条"
+
+#: skins/skin-grayish-topfull/functions.php:2368
+msgid "PC均等円"
+msgstr "PC均衡圆形"
+
+#: skins/skin-grayish-topfull/functions.php:2370
+msgid "3-均等デフォルト"
+msgstr "3-均衡默认"
+
+#: skins/skin-grayish-topfull/functions.php:2371
+msgid "3-均等上線"
+msgstr "3-均衡上线"
+
+#: skins/skin-grayish-topfull/functions.php:2372
+msgid "3-均等カラーラベル"
+msgstr "3-均衡颜色标签"
+
+#: skins/skin-grayish-topfull/functions.php:2373
+msgid "3-均等ライン"
+msgstr "3-均衡线条"
+
+#: skins/skin-grayish-topfull/functions.php:2374
+msgid "3-均等円"
+msgstr "3-均衡圆形"
 
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
 msgid "検索フォームを閉じる"
@@ -13606,10 +13683,6 @@ msgstr "打孔机"
 #: blocks/src/block-extension/style-extension/style01.js:102
 msgid "手書き風"
 msgstr "手写风"
-
-#: blocks/src/block-extension/style-extension/style01.js:106
-msgid "上線"
-msgstr "上线"
 
 #: blocks/src/block-extension/style-extension/style01.js:110
 msgid "付箋"
