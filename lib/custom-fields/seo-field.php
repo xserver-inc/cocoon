@@ -117,7 +117,7 @@ function seo_custom_box_view(){
   }
   generate_label_tag('the_page_seo_title', __('SEOタイトル', THEME_NAME).$meta_title_count_tag );
   generate_textbox_tag('the_page_seo_title', $the_page_seo_title, __( 'タイトルを入力してください。', THEME_NAME ));
-  generate_howto_tag(__( '検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。' ).__( '一般的に日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出し部分には「記事のタイトル」が利用されます）', THEME_NAME ), 'the_page_seo_title');
+  generate_howto_tag(__( '検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。', THEME_NAME ).__( '一般的に日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出し部分には「記事のタイトル」が利用されます）', THEME_NAME ), 'the_page_seo_title');
 
 
   //メタディスクリプション

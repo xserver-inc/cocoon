@@ -246,7 +246,7 @@ function extra_category_fields( $cat ) {
     $the_category_title = get_the_category_title($cat_id, false);
     ?>
     <input type="text" name="the_category_title" id="title" size="25" value="<?php echo esc_attr($the_category_title) ?>" placeholder="<?php _e( 'SEO向けのタイトルの入力', THEME_NAME ) ?>" />
-    <p class="description"><?php _e( '検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。' ) ?></p>
+    <p class="description"><?php _e( '検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-content-wrap">
