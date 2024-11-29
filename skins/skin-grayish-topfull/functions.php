@@ -165,6 +165,17 @@ if (!function_exists('enqueue_skin_grayish_google_fonts')) :
     }
   }
 endif;
+// editor
+if (!function_exists('enqueue_skin_grayish_google_fonts_editor')) :
+  function enqueue_skin_grayish_google_fonts_editor()
+  {
+    $font_family = get_theme_mod('font_pat_control_radio', 'font_Montserrat');
+    $font_url = generate_font_url($font_family);
+    if ($font_family !== 'font_none') {
+      wp_enqueue_style('skin_grayish-google-fonts-editor', esc_url($font_url));
+    }
+  }
+endif;
 
 // フォントのURLを生成する関数()
 if (!function_exists('generate_font_url')) :
@@ -188,7 +199,7 @@ if (!function_exists('generate_font_url')) :
 endif;
 
 add_action('wp_enqueue_scripts', 'enqueue_skin_grayish_google_fonts');
-add_action('enqueue_block_editor_assets', 'enqueue_skin_grayish_google_fonts');
+add_action('enqueue_block_editor_assets', 'enqueue_skin_grayish_google_fonts_editor');
 
 // -----------------------------------------------------------------------------
 // テーマカスタマイザー　タイトル：見出しのGoogleFontの選択を可能に：
@@ -2334,146 +2345,44 @@ class grayish_Custom_Functions
   public static $instance = false;
 
   // カスタムブロックスタイル（タブブロック）
-  const TAB_BLOCK_STYLES = [
-    // ここにカスタムスタイルを追加
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-up-line',
-        'label' => '上線',
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-tablabel',
-        'label' => 'カラーラベル'
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-line',
-        'label' => 'ライン'
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-cir',
-        'label' => '円'
-      ]
-    ],
-    // 均等配置
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-low-line-equal',
-        'label' => '均等デフォルト',
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-up-line-equal',
-        'label' => '均等上線',
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-tablabel-equal',
-        'label' => '均等カラーラベル'
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-line-equal',
-        'label' => '均等ライン'
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-cir-equal',
-        'label' => '均等円'
-      ]
-    ],
-    // 均等配置+PC時のみ中央寄りタイプ
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-low-line-equal-pc',
-        'label' => 'PC均等デフォルト',
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-up-line-equal-pc',
-        'label' => 'PC均等上線',
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-tablabel-equal-pc',
-        'label' => 'PC均等カラーラベル'
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-line-equal-pc',
-        'label' => 'PC均等ライン'
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-cir-equal-pc',
-        'label' => 'PC均等円'
-      ]
-    ],
-    // 均等配置+３の倍数タイプ
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-low-line-equal-odd',
-        'label' => '3-均等デフォルト',
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-up-line-equal-odd',
-        'label' => '3-均等上線',
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-tablabel-equal-odd',
-        'label' => '3-均等カラーラベル'
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-line-equal-odd',
-        'label' => '3-均等ライン'
-      ]
-    ],
-    [
-      'name'       => 'cocoon-blocks/tab',
-      'properties' => [
-        'name'  => 'grytab-cir-equal-odd',
-        'label' => '3-均等円'
-      ]
-    ]
 
-  ];
+  public static function get_grayish_tab_block_styles()
+  {
+    $styles = [
+      // 各スタイルを定義
+      ['name' => 'grytab-up-line', 'label' => __('上線', THEME_NAME)],
+      ['name' => 'grytab-tablabel', 'label' => __('カラーラベル', THEME_NAME)],
+      ['name' => 'grytab-line', 'label' => __('ライン', THEME_NAME)],
+      ['name' => 'grytab-cir', 'label' => __('円', THEME_NAME)],
+      // 均等配置
+      ['name' => 'grytab-low-line-equal', 'label' => __('均等デフォルト', THEME_NAME)],
+      ['name' => 'grytab-up-line-equal', 'label' => __('均等上線', THEME_NAME)],
+      ['name' => 'grytab-tablabel-equal', 'label' => __('均等カラーラベル', THEME_NAME)],
+      ['name' => 'grytab-line-equal', 'label' => __('均等ライン', THEME_NAME)],
+      ['name' => 'grytab-cir-equal', 'label' => __('均等円', THEME_NAME)],
+      // PC均等配置
+      ['name' => 'grytab-low-line-equal-pc', 'label' => __('PC均等デフォルト', THEME_NAME)],
+      ['name' => 'grytab-up-line-equal-pc', 'label' => __('PC均等上線', THEME_NAME)],
+      ['name' => 'grytab-tablabel-equal-pc', 'label' => __('PC均等カラーラベル', THEME_NAME)],
+      ['name' => 'grytab-line-equal-pc', 'label' => __('PC均等ライン', THEME_NAME)],
+      ['name' => 'grytab-cir-equal-pc', 'label' => __('PC均等円', THEME_NAME)],
+      // 3の倍数均等配置
+      ['name' => 'grytab-low-line-equal-odd', 'label' => __('3-均等デフォルト', THEME_NAME)],
+      ['name' => 'grytab-up-line-equal-odd', 'label' => __('3-均等上線', THEME_NAME)],
+      ['name' => 'grytab-tablabel-equal-odd', 'label' => __('3-均等カラーラベル', THEME_NAME)],
+      ['name' => 'grytab-line-equal-odd', 'label' => __('3-均等ライン', THEME_NAME)],
+      ['name' => 'grytab-cir-equal-odd', 'label' => __('3-均等円', THEME_NAME)],
+    ];
+
+    // 'cocoon-blocks/tab' のプロパティを付与
+    return array_map(function ($style) {
+      return [
+        'name' => 'cocoon-blocks/tab',
+        'properties' => $style
+      ];
+    }, $styles);
+  }
+
 
   private function __construct()
   {
@@ -2486,7 +2395,7 @@ class grayish_Custom_Functions
 
       // カスタムブロックスタイルの登録　
       // フックcustom_grayish_block_stylesで別のブロックのスタイル追加も可能にする
-      $blockstyles = apply_filters('custom_grayish_block_styles', self::TAB_BLOCK_STYLES);
+      $blockstyles = apply_filters('custom_grayish_block_styles', self::get_grayish_tab_block_styles());
       foreach ($blockstyles as $blockstyle) {
         register_block_style($blockstyle['name'], $blockstyle['properties']);
       }
