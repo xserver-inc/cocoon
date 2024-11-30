@@ -46,10 +46,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'sitename' => __( 'サイト名', THEME_NAME ),
-              'sitename_tagline' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'キャッチフレーズ', THEME_NAME ),
+              'sitename_tagline' => __( 'サイト名', THEME_NAME ).' '.get_title_separator_caption().' '.__( 'キャッチフレーズ', THEME_NAME ),
               'free' => __( '自由形式', THEME_NAME ),
             );
-            echo '<br>';
             generate_radiobox_tag(OP_FRONT_PAGE_TITLE_FORMAT, $options, get_front_page_title_format());
             _e( '自由形式タイトル', THEME_NAME );
             echo '<br>';

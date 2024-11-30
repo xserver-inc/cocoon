@@ -846,7 +846,8 @@ function get_rss_feed_tag( $atts ) {
           $feed_img = $img_url;
         endif;
         $feed_url = $item->get_permalink();
-        $feed_title = str_replace(["\r\n", "\r", "\n"], '', $item->get_title());
+        $feed_title = $item->get_title() ?? '';
+        $feed_title = str_replace(["\r\n", "\r", "\n"], '', $feed_title);
         $feed_date = $item->get_date(get_site_date_format());
         $feed_text = get_content_excerpt(strip_tags($item->get_content()), get_entry_card_excerpt_max_length());
 

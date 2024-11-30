@@ -532,8 +532,14 @@ if (is_toc_toggle_switch_enable()): ?>
   height: 100%;
   opacity: 1;
 }
+<?php
+$open_caption = get_toc_open_caption();
+if ($open_caption === '') {
+  $open_caption = __('開く', THEME_NAME);
+}
+; ?>
 .toc-title::after{
-  content: '[<?php echo get_toc_open_caption(); ?>]';
+  content: '[<?php echo $open_caption; ?>]';
   margin-left: 0.5em;
   cursor: pointer;
   font-size: 0.8em;
@@ -541,8 +547,15 @@ if (is_toc_toggle_switch_enable()): ?>
 .toc-title:hover::after{
   text-decoration: underline;
 }
+
+<?php
+$close_caption = get_toc_close_caption();
+if ($close_caption === '') {
+  $close_caption = __('閉じる', THEME_NAME);
+}
+; ?>
 .toc-checkbox:checked + .toc-title::after{
-  content: '[<?php echo get_toc_close_caption(); ?>]';
+  content: '[<?php echo $close_caption; ?>]';
 }<?php endif ?>
 <?php //アイキャッチを中央表示
 if (is_eyecatch_center_enable()): ?>

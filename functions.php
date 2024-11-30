@@ -69,6 +69,7 @@ function get_content_excerpt($content, $length = 120){
   $content = str_replace('&nbsp;', '', $content);//特殊文字の削除（今回はスペースのみ）
   $content = preg_replace('/\[.+?\]/i', '', $content); //ショートコードを取り除く
   $content = preg_replace(URL_REG, '', $content); //URLを取り除く
+  $content = $content ?? '';
   $content = str_replace(array("\r\n", "\r", "\n"), '', $content); //改行部分を取り除く
   $content = preg_replace('/\s+/', ' ', $content); // 連続するスペースを1つにまとめる
   $content = preg_replace('/\A[\x00\s]++|[\x00\s]++\z/u', '', $content); // 先頭と末尾から空白文字を取り除く

@@ -1361,7 +1361,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 
 .editor-post-title::after {
   color: rgb(51, 51, 51);
-  content: "文字数: " attr(data-title-count);
+  content: "Count: " attr(data-title-count);
   display: inline-block;
   font-size: 12px;
   font-weight: normal;
@@ -1373,6 +1373,10 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   padding: 1px 8px;
   border-radius: 5px;
   border: 1px solid var(--cocoon-basic-border-color);
+}
+
+[lang="ja"] .editor-post-title::after {
+  content: "文字数: " attr(data-title-count);
 }
 
 .components-range-control .components-base-control__label{

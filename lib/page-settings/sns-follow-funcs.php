@@ -33,7 +33,7 @@ function get_sns_follow_display_message(){
 }
 endif;
 
-//フロントページシェアボタンの表示
+//フロントページフォローボタンの表示
 define('OP_SNS_FRONT_PAGE_FOLLOW_BUTTONS_VISIBLE', 'sns_front_page_follow_buttons_visible');
 if ( !function_exists( 'is_sns_front_page_follow_buttons_visible' ) ):
 function is_sns_front_page_follow_buttons_visible(){
@@ -41,7 +41,7 @@ function is_sns_front_page_follow_buttons_visible(){
 }
 endif;
 
-//投稿シェアボタンの表示
+//投稿フォローボタンの表示
 define('OP_SNS_SINGLE_FOLLOW_BUTTONS_VISIBLE', 'sns_single_follow_buttons_visible');
 if ( !function_exists( 'is_sns_single_follow_buttons_visible' ) ):
 function is_sns_single_follow_buttons_visible(){
@@ -49,7 +49,7 @@ function is_sns_single_follow_buttons_visible(){
 }
 endif;
 
-//固定ページシェアボタンの表示
+//固定ページフォローボタンの表示
 define('OP_SNS_PAGE_FOLLOW_BUTTONS_VISIBLE', 'sns_page_follow_buttons_visible');
 if ( !function_exists( 'is_sns_page_follow_buttons_visible' ) ):
 function is_sns_page_follow_buttons_visible(){
@@ -57,7 +57,7 @@ function is_sns_page_follow_buttons_visible(){
 }
 endif;
 
-//カテゴリーシェアボタンの表示
+//カテゴリーフォローボタンの表示
 define('OP_SNS_CATEGORY_FOLLOW_BUTTONS_VISIBLE', 'sns_category_follow_buttons_visible');
 if ( !function_exists( 'is_sns_category_follow_buttons_visible' ) ):
 function is_sns_category_follow_buttons_visible(){
@@ -65,7 +65,7 @@ function is_sns_category_follow_buttons_visible(){
 }
 endif;
 
-//タグシェアボタンの表示
+//タグフォローボタンの表示
 define('OP_SNS_TAG_FOLLOW_BUTTONS_VISIBLE', 'sns_tag_follow_buttons_visible');
 if ( !function_exists( 'is_sns_tag_follow_buttons_visible' ) ):
 function is_sns_tag_follow_buttons_visible(){

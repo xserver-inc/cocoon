@@ -589,6 +589,9 @@ function wp_enqueue_highlight_js(){
       $selector = CODE_HIGHLIGHT_CSS_SELECTOR;
     } else {
       $selector = get_code_highlight_css_selector();
+      if ($selector === '') {
+        $selector = CODE_HIGHLIGHT_CSS_SELECTOR;
+      }
     }
 
     $data = '

@@ -55,6 +55,10 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   $top_level   = 2; //h2がトップレベル
   $targetclass = 'entry-content'; //目次対象となるHTML要素
 
+  if ($title === '') {
+    $title = __('目次', THEME_NAME);
+  }
+
   $set_depth = intval(get_toc_depth()); //2-6 0で全て
   if (intval($set_depth) == 0) {
     $set_depth = 6;
