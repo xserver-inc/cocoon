@@ -329,7 +329,7 @@ function add_wp_block_columns($columns){
 
   return array_merge(
     array_slice($columns, 0, $index),
-    array('shortcode' => 'ショートコード'),
+    array('shortcode' => __( 'ショートコード', THEME_NAME )),
     array_slice($columns, $index)
   );
 }
