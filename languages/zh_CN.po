@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-29T13:09:05+00:00\n"
-"PO-Revision-Date: 2024-11-29 14:31\n"
+"POT-Creation-Date: 2024-11-30T16:11:15+00:00\n"
+"PO-Revision-Date: 2024-11-30 16:23\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -101,12 +101,12 @@ msgstr "Your email address will not be published."
 msgid "コメントを書き込む"
 msgstr "写评论"
 
-#: functions.php:156
+#: functions.php:157
 msgid "キーワード指定なし"
 msgstr "未指定关键词"
 
-#: functions.php:508
 #: functions.php:509
+#: functions.php:510
 #: lib/admin.php:409
 msgid "パターン一覧"
 msgstr "模式列表"
@@ -160,24 +160,24 @@ msgstr "键盘"
 
 #: lib/admin-tinymce-qtag.php:34
 #: lib/admin-tinymce-qtag.php:175
-#: lib/block-editor-styles-group.php:17
-#: lib/block-editor-styles-paragraph.php:52
+#: lib/block-editor-styles-group.php:18
+#: lib/block-editor-styles-paragraph.php:53
 #: blocks/src/block/icon-box/edit.js:33
 msgid "情報(i)"
 msgstr "信息(i)"
 
 #: lib/admin-tinymce-qtag.php:35
 #: lib/admin-tinymce-qtag.php:180
-#: lib/block-editor-styles-group.php:25
-#: lib/block-editor-styles-paragraph.php:60
+#: lib/block-editor-styles-group.php:26
+#: lib/block-editor-styles-paragraph.php:61
 #: blocks/src/block/icon-box/edit.js:37
 msgid "質問(?)"
 msgstr "问题(?)"
 
 #: lib/admin-tinymce-qtag.php:36
 #: lib/admin-tinymce-qtag.php:185
-#: lib/block-editor-styles-group.php:33
-#: lib/block-editor-styles-paragraph.php:68
+#: lib/block-editor-styles-group.php:34
+#: lib/block-editor-styles-paragraph.php:69
 #: blocks/src/block/icon-box/edit.js:41
 msgid "アラート(!)"
 msgstr "警告(!)"
@@ -279,8 +279,8 @@ msgstr "框（图标）"
 #: lib/admin-tinymce-qtag.php:190
 #: lib/admin-tinymce-qtag.php:517
 #: lib/admin.php:160
-#: lib/block-editor-styles-group.php:41
-#: lib/block-editor-styles-paragraph.php:76
+#: lib/block-editor-styles-group.php:42
+#: lib/block-editor-styles-paragraph.php:77
 #: lib/custom-fields/memo-field.php:17
 #: lib/custom-fields/memo-field.php:18
 #: lib/custom-fields/memo-field.php:21
@@ -296,8 +296,8 @@ msgstr "备注"
 
 #: lib/admin-tinymce-qtag.php:195
 #: lib/admin-tinymce-qtag.php:337
-#: lib/block-editor-styles-group.php:49
-#: lib/block-editor-styles-paragraph.php:84
+#: lib/block-editor-styles-group.php:50
+#: lib/block-editor-styles-paragraph.php:85
 #: lib/page-settings/comment-funcs.php:32
 #: lib/page-settings/sns-share-forms-bottom.php:104
 #: lib/page-settings/sns-share-forms-top.php:91
@@ -316,8 +316,8 @@ msgstr "评论"
 
 #: lib/admin-tinymce-qtag.php:200
 #: lib/admin-tinymce-qtag.php:639
-#: lib/block-editor-styles-group.php:57
-#: lib/block-editor-styles-paragraph.php:92
+#: lib/block-editor-styles-group.php:58
+#: lib/block-editor-styles-paragraph.php:93
 #: blocks/src/block-extension/style-extension/style01.js:150
 #: blocks/src/block/icon-box/deprecated.js:106
 #: blocks/src/block/icon-box/edit.js:53
@@ -329,8 +329,8 @@ msgstr "合格"
 
 #: lib/admin-tinymce-qtag.php:205
 #: lib/admin-tinymce-qtag.php:670
-#: lib/block-editor-styles-group.php:65
-#: lib/block-editor-styles-paragraph.php:100
+#: lib/block-editor-styles-group.php:66
+#: lib/block-editor-styles-paragraph.php:101
 #: blocks/src/block-extension/style-extension/style01.js:154
 #: blocks/src/block/icon-box/deprecated.js:110
 #: blocks/src/block/icon-box/edit.js:57
@@ -342,8 +342,8 @@ msgstr "不合格"
 
 #: lib/admin-tinymce-qtag.php:210
 #: lib/admin-tinymce-qtag.php:701
-#: lib/block-editor-styles-group.php:73
-#: lib/block-editor-styles-paragraph.php:108
+#: lib/block-editor-styles-group.php:74
+#: lib/block-editor-styles-paragraph.php:109
 #: blocks/src/block-extension/style-extension/style01.js:158
 #: blocks/src/block/icon-box/deprecated.js:114
 #: blocks/src/block/icon-box/edit.js:61
@@ -355,8 +355,8 @@ msgstr "好"
 
 #: lib/admin-tinymce-qtag.php:215
 #: lib/admin-tinymce-qtag.php:732
-#: lib/block-editor-styles-group.php:81
-#: lib/block-editor-styles-paragraph.php:116
+#: lib/block-editor-styles-group.php:82
+#: lib/block-editor-styles-paragraph.php:117
 #: blocks/src/block-extension/style-extension/style01.js:162
 #: blocks/src/block/icon-box/deprecated.js:118
 #: blocks/src/block/icon-box/edit.js:65
@@ -368,8 +368,8 @@ msgstr "坏"
 
 #: lib/admin-tinymce-qtag.php:220
 #: lib/admin-tinymce-qtag.php:763
-#: lib/block-editor-styles-group.php:89
-#: lib/block-editor-styles-paragraph.php:124
+#: lib/block-editor-styles-group.php:90
+#: lib/block-editor-styles-paragraph.php:125
 #: lib/widgets/author-box.php:19
 #: blocks/src/block-extension/style-extension/style01.js:166
 #: blocks/src/block/icon-box/deprecated.js:122
@@ -385,62 +385,62 @@ msgid "ボックス（案内）"
 msgstr "框（信息）"
 
 #: lib/admin-tinymce-qtag.php:230
-#: lib/block-editor-styles-group.php:100
-#: lib/block-editor-styles-paragraph.php:135
+#: lib/block-editor-styles-group.php:101
+#: lib/block-editor-styles-paragraph.php:136
 #: blocks/src/block/info-box/deprecated.js:85
 #: blocks/src/block/info-box/edit.js:33
 msgid "プライマリー（濃い水色）"
 msgstr "主要（深水蓝色）"
 
 #: lib/admin-tinymce-qtag.php:235
-#: lib/block-editor-styles-group.php:108
-#: lib/block-editor-styles-paragraph.php:143
+#: lib/block-editor-styles-group.php:109
+#: lib/block-editor-styles-paragraph.php:144
 #: blocks/src/block/info-box/deprecated.js:89
 #: blocks/src/block/info-box/edit.js:37
 msgid "セカンダリー（濃い灰色）"
 msgstr "次要（深灰色）"
 
 #: lib/admin-tinymce-qtag.php:240
-#: lib/block-editor-styles-group.php:124
-#: lib/block-editor-styles-paragraph.php:159
+#: lib/block-editor-styles-group.php:125
+#: lib/block-editor-styles-paragraph.php:160
 #: blocks/src/block/info-box/edit.js:45
 msgid "サクセス（薄い緑色）"
 msgstr "成功（浅绿色）"
 
 #: lib/admin-tinymce-qtag.php:245
-#: lib/block-editor-styles-group.php:116
-#: lib/block-editor-styles-paragraph.php:151
+#: lib/block-editor-styles-group.php:117
+#: lib/block-editor-styles-paragraph.php:152
 #: blocks/src/block/info-box/edit.js:41
 msgid "インフォ（薄い青色）"
 msgstr "信息（浅蓝色）"
 
 #: lib/admin-tinymce-qtag.php:250
-#: lib/block-editor-styles-group.php:132
-#: lib/block-editor-styles-paragraph.php:167
+#: lib/block-editor-styles-group.php:133
+#: lib/block-editor-styles-paragraph.php:168
 #: blocks/src/block/info-box/deprecated.js:101
 #: blocks/src/block/info-box/edit.js:49
 msgid "ワーニング（薄い黄色）"
 msgstr "警告（浅黄色）"
 
 #: lib/admin-tinymce-qtag.php:255
-#: lib/block-editor-styles-group.php:140
-#: lib/block-editor-styles-paragraph.php:175
+#: lib/block-editor-styles-group.php:141
+#: lib/block-editor-styles-paragraph.php:176
 #: blocks/src/block/info-box/deprecated.js:105
 #: blocks/src/block/info-box/edit.js:53
 msgid "デンジャー（薄い赤色）"
 msgstr "危险（浅红色）"
 
 #: lib/admin-tinymce-qtag.php:260
-#: lib/block-editor-styles-group.php:148
-#: lib/block-editor-styles-paragraph.php:183
+#: lib/block-editor-styles-group.php:149
+#: lib/block-editor-styles-paragraph.php:184
 #: blocks/src/block/info-box/deprecated.js:109
 #: blocks/src/block/info-box/edit.js:57
 msgid "ライト（白色）"
 msgstr "光（白色）"
 
 #: lib/admin-tinymce-qtag.php:265
-#: lib/block-editor-styles-group.php:156
-#: lib/block-editor-styles-paragraph.php:191
+#: lib/block-editor-styles-group.php:157
+#: lib/block-editor-styles-paragraph.php:192
 #: blocks/src/block/info-box/deprecated.js:113
 #: blocks/src/block/info-box/edit.js:61
 msgid "ダーク（暗い灰色）"
@@ -633,8 +633,8 @@ msgstr "框（标签）"
 
 #: lib/admin-tinymce-qtag.php:307
 #: lib/admin-tinymce-qtag.php:1662
-#: tmp/css-custom.php:928
-#: tmp/css-custom.php:975
+#: tmp/css-custom.php:941
+#: tmp/css-custom.php:988
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
@@ -665,8 +665,8 @@ msgstr "提示"
 
 #: lib/admin-tinymce-qtag.php:457
 #: lib/admin-tinymce-qtag.php:1668
-#: tmp/css-custom.php:924
-#: tmp/css-custom.php:972
+#: tmp/css-custom.php:937
+#: tmp/css-custom.php:985
 #: blocks/src/block/blogcard/deprecated.js:85
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -683,8 +683,8 @@ msgstr "书签"
 
 #: lib/admin-tinymce-qtag.php:547
 #: lib/admin-tinymce-qtag.php:1680
-#: tmp/css-custom.php:944
-#: tmp/css-custom.php:987
+#: tmp/css-custom.php:957
+#: tmp/css-custom.php:1000
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -1134,8 +1134,8 @@ msgstr "包围博客卡标签"
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
 #: skins/skin-made-in-heaven/functions.php:109
-#: tmp/css-custom.php:908
-#: tmp/css-custom.php:960
+#: tmp/css-custom.php:921
+#: tmp/css-custom.php:973
 #: blocks/src/block/blogcard/deprecated.js:57
 #: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:66
@@ -1143,8 +1143,8 @@ msgid "関連記事"
 msgstr "相关文章"
 
 #: lib/admin-tinymce-qtag.php:1632
-#: tmp/css-custom.php:912
-#: tmp/css-custom.php:963
+#: tmp/css-custom.php:925
+#: tmp/css-custom.php:976
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:70
@@ -1152,8 +1152,8 @@ msgid "参考記事"
 msgstr "参考文章"
 
 #: lib/admin-tinymce-qtag.php:1638
-#: tmp/css-custom.php:916
-#: tmp/css-custom.php:966
+#: tmp/css-custom.php:929
+#: tmp/css-custom.php:979
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
@@ -1165,8 +1165,8 @@ msgstr "参考链接"
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
-#: tmp/css-custom.php:920
-#: tmp/css-custom.php:969
+#: tmp/css-custom.php:933
+#: tmp/css-custom.php:982
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:52
 #: blocks/src/block/popular-list/index.js:28
@@ -1175,8 +1175,8 @@ msgid "人気記事"
 msgstr "热门文章"
 
 #: lib/admin-tinymce-qtag.php:1650
-#: tmp/css-custom.php:932
-#: tmp/css-custom.php:978
+#: tmp/css-custom.php:945
+#: tmp/css-custom.php:991
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:78
@@ -1184,10 +1184,10 @@ msgid "あわせて読みたい"
 msgstr "一起阅读"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1128
+#: lib/shortcodes.php:1129
 #: lib/widgets/cta-box.php:34
-#: tmp/css-custom.php:936
-#: tmp/css-custom.php:981
+#: tmp/css-custom.php:949
+#: tmp/css-custom.php:994
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:60
 #: blocks/src/old/blogcard-class/block.js:82
@@ -1195,8 +1195,8 @@ msgid "詳細はこちら"
 msgstr "详细信息在这里"
 
 #: lib/admin-tinymce-qtag.php:1674
-#: tmp/css-custom.php:940
-#: tmp/css-custom.php:984
+#: tmp/css-custom.php:953
+#: tmp/css-custom.php:997
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:94
@@ -1204,15 +1204,15 @@ msgid "公式サイト"
 msgstr "官方网站"
 
 #: lib/admin-tinymce-qtag.php:1686
-#: tmp/css-custom.php:948
-#: tmp/css-custom.php:990
+#: tmp/css-custom.php:961
+#: tmp/css-custom.php:1003
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr "上一篇文章"
 
 #: lib/admin-tinymce-qtag.php:1692
-#: tmp/css-custom.php:952
-#: tmp/css-custom.php:993
+#: tmp/css-custom.php:965
+#: tmp/css-custom.php:1006
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr "接下来的文章"
@@ -1266,6 +1266,12 @@ msgstr "月："
 #: lib/admin.php:247
 msgid "全："
 msgstr "总计："
+
+#: lib/admin.php:332
+#: lib/tinymce/shortcodes.php:45
+#: blocks/src/toolbutton/dropdown-shortcodes.js:242
+msgid "ショートコード"
+msgstr "短代码"
 
 #: lib/admin.php:361
 msgid "管理メニュー"
@@ -1394,71 +1400,71 @@ msgstr "分类搜索"
 msgid "Excerpt"
 msgstr "Excerpt"
 
-#: lib/block-editor-styles-faq.php:13
+#: lib/block-editor-styles-faq.php:14
 msgid "角型ラベル"
 msgstr "角形标签"
 
-#: lib/block-editor-styles-faq.php:17
+#: lib/block-editor-styles-faq.php:18
 msgid "アコーディオン"
 msgstr "手风琴"
 
-#: lib/block-editor-styles-group.php:167
-#: lib/block-editor-styles-paragraph.php:202
+#: lib/block-editor-styles-group.php:168
+#: lib/block-editor-styles-paragraph.php:203
 msgid "白抜き（赤色）"
 msgstr "白底（红色）"
 
-#: lib/block-editor-styles-group.php:175
-#: lib/block-editor-styles-paragraph.php:210
+#: lib/block-editor-styles-group.php:176
+#: lib/block-editor-styles-paragraph.php:211
 msgid "白抜き（ピンク）"
 msgstr "白底（粉色）"
 
-#: lib/block-editor-styles-group.php:183
-#: lib/block-editor-styles-paragraph.php:218
+#: lib/block-editor-styles-group.php:184
+#: lib/block-editor-styles-paragraph.php:219
 msgid "白抜き（紺色）"
 msgstr "白底（深蓝色）"
 
-#: lib/block-editor-styles-group.php:191
-#: lib/block-editor-styles-paragraph.php:226
+#: lib/block-editor-styles-group.php:192
+#: lib/block-editor-styles-paragraph.php:227
 msgid "白抜き（青色）"
 msgstr "白底（蓝色）"
 
-#: lib/block-editor-styles-group.php:199
-#: lib/block-editor-styles-paragraph.php:234
+#: lib/block-editor-styles-group.php:200
+#: lib/block-editor-styles-paragraph.php:235
 msgid "白抜き（黄色）"
 msgstr "白底（黄色）"
 
-#: lib/block-editor-styles-group.php:207
-#: lib/block-editor-styles-paragraph.php:242
+#: lib/block-editor-styles-group.php:208
+#: lib/block-editor-styles-paragraph.php:243
 msgid "白抜き（緑色）"
 msgstr "白底（绿色）"
 
-#: lib/block-editor-styles-group.php:215
-#: lib/block-editor-styles-paragraph.php:250
+#: lib/block-editor-styles-group.php:216
+#: lib/block-editor-styles-paragraph.php:251
 msgid "白抜き（オレンジ）"
 msgstr "白底（橙色）"
 
-#: lib/block-editor-styles-group.php:226
-#: lib/block-editor-styles-paragraph.php:261
+#: lib/block-editor-styles-group.php:227
+#: lib/block-editor-styles-paragraph.php:262
 msgid "付箋風（灰色）"
 msgstr "便签风（灰色）"
 
-#: lib/block-editor-styles-group.php:234
-#: lib/block-editor-styles-paragraph.php:269
+#: lib/block-editor-styles-group.php:235
+#: lib/block-editor-styles-paragraph.php:270
 msgid "付箋風（黄色）"
 msgstr "便签风（黄色）"
 
-#: lib/block-editor-styles-group.php:242
-#: lib/block-editor-styles-paragraph.php:277
+#: lib/block-editor-styles-group.php:243
+#: lib/block-editor-styles-paragraph.php:278
 msgid "付箋風（赤色）"
 msgstr "便签风（红色）"
 
-#: lib/block-editor-styles-group.php:250
-#: lib/block-editor-styles-paragraph.php:285
+#: lib/block-editor-styles-group.php:251
+#: lib/block-editor-styles-paragraph.php:286
 msgid "付箋風（青色）"
 msgstr "便签风（蓝色）"
 
-#: lib/block-editor-styles-group.php:258
-#: lib/block-editor-styles-paragraph.php:293
+#: lib/block-editor-styles-group.php:259
+#: lib/block-editor-styles-paragraph.php:294
 msgid "付箋風（緑色）"
 msgstr "便签风（绿色）"
 
@@ -1510,13 +1516,13 @@ msgstr "Perpetua"
 msgid "Mono"
 msgstr "Mono"
 
-#: lib/block-editor-styles-list.php:17
-#: lib/block-editor-styles-paragraph.php:17
+#: lib/block-editor-styles-list.php:18
+#: lib/block-editor-styles-paragraph.php:18
 msgid "枠線"
 msgstr "边框线"
 
-#: lib/block-editor-styles-list.php:25
-#: lib/block-editor-styles-paragraph.php:25
+#: lib/block-editor-styles-list.php:26
+#: lib/block-editor-styles-paragraph.php:26
 #: lib/content-category.php:225
 #: lib/page-settings/all-forms.php:165
 #: lib/page-settings/appeal-forms.php:90
@@ -1540,13 +1546,13 @@ msgstr "边框线"
 msgid "背景色"
 msgstr "背景颜色"
 
-#: lib/block-editor-styles-list.php:33
-#: lib/block-editor-styles-paragraph.php:33
+#: lib/block-editor-styles-list.php:34
+#: lib/block-editor-styles-paragraph.php:34
 msgid "枠線・背景色"
 msgstr "边框和背景颜色"
 
-#: lib/block-editor-styles-list.php:41
-#: lib/block-editor-styles-paragraph.php:41
+#: lib/block-editor-styles-list.php:42
+#: lib/block-editor-styles-paragraph.php:42
 #: blocks/src/block-extension/style-extension/style01.js:74
 msgid "交差線"
 msgstr "交叉线"
@@ -1667,8 +1673,8 @@ msgstr "请选择显示在标题下的特色图片。"
 #: lib/content-category.php:271
 #: lib/content-tag.php:219
 #: lib/custom-fields/seo-field.php:128
-#: lib/page-settings/title-forms.php:171
-#: lib/page-settings/title-forms.php:272
+#: lib/page-settings/title-forms.php:170
+#: lib/page-settings/title-forms.php:271
 #: skins/skin-made-in-heaven/lib/hook-wp.php:74
 #: skins/skin-made-in-heaven/lib/hook-wp.php:155
 msgid "メタディスクリプション"
@@ -1685,9 +1691,9 @@ msgstr "输入此页面的描述。这里输入的文本将用作元描述标签
 #: lib/content-category.php:281
 #: lib/content-tag.php:229
 #: lib/custom-fields/seo-field.php:134
-#: lib/page-settings/title-forms.php:82
-#: lib/page-settings/title-forms.php:184
-#: lib/page-settings/title-forms.php:285
+#: lib/page-settings/title-forms.php:81
+#: lib/page-settings/title-forms.php:183
+#: lib/page-settings/title-forms.php:284
 msgid "メタキーワード"
 msgstr "元关键字"
 
@@ -2680,7 +2686,7 @@ msgid "お得"
 msgstr "优惠"
 
 #: lib/html-forms.php:1837
-#: lib/shortcodes.php:1012
+#: lib/shortcodes.php:1013
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -2909,7 +2915,7 @@ msgstr "不删除并返回列表"
 #: lib/widgets/mobile-text.php:73
 #: lib/widgets/navi-entries.php:101
 #: lib/widgets/pc-text.php:72
-#: lib/widgets/recent-comments.php:130
+#: lib/widgets/recent-comments.php:131
 #: lib/widgets/recommended-cards.php:87
 #: lib/widgets/sns-follow-buttons.php:56
 #: lib/widgets/toc.php:83
@@ -3289,8 +3295,8 @@ msgstr "创建排行榜。要输入下一个排行榜，请按保存按钮。"
 #: lib/page-settings/sns-share-forms-bottom.php:21
 #: lib/page-settings/sns-share-forms-top.php:21
 #: lib/page-settings/title-forms.php:25
-#: lib/page-settings/title-forms.php:117
-#: lib/page-settings/title-forms.php:215
+#: lib/page-settings/title-forms.php:116
+#: lib/page-settings/title-forms.php:214
 #: lib/page-settings/toc-forms.php:25
 msgid "プレビュー"
 msgstr "预览"
@@ -5749,7 +5755,7 @@ msgid "URLやURLリンクをブログカード形式で表示するための設�
 msgstr "这是为了将URL或URL链接以博客卡片形式显示的设置。内部博客卡片用于显示帖子或固定页面。"
 
 #: lib/page-settings/blogcard-in-forms.php:39
-#: lib/page-settings/title-forms.php:143
+#: lib/page-settings/title-forms.php:142
 msgid "ランダムで投稿を取得しています。"
 msgstr "正在随机获取帖子。"
 
@@ -6314,7 +6320,7 @@ msgstr "评论列表标题"
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1124
+#: lib/shortcodes.php:1125
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -8988,12 +8994,12 @@ msgid "フォローボタンの表示"
 msgstr "显示关注按钮"
 
 #: lib/page-settings/sns-follow-forms.php:42
-msgid "本文下のフォローボタンを表示する"
-msgstr "在正文下显示关注按钮"
+msgid "フォローボタンを表示する"
+msgstr "显示关注按钮"
 
 #: lib/page-settings/sns-follow-forms.php:43
-msgid "投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。"
-msgstr "切换帖子和固定页面正文下的关注按钮显示。"
+msgid "フォローボタンの表示を切り替えます。"
+msgstr "切换关注按钮的显示。"
 
 #: lib/page-settings/sns-follow-forms.php:51
 msgid "フォローメッセージ"
@@ -9644,8 +9650,8 @@ msgid "フロントページの、タイトル、メタディスクリプショ�
 msgstr "这是关于前端页面的标题、元描述、元关键词的设置。"
 
 #: lib/page-settings/title-forms.php:35
-#: lib/page-settings/title-forms.php:144
-#: lib/page-settings/title-forms.php:246
+#: lib/page-settings/title-forms.php:143
+#: lib/page-settings/title-forms.php:245
 msgid "プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。"
 msgstr "预览仅供参考。显示可能会根据搜索引擎的不同而有所改变。"
 
@@ -9655,10 +9661,10 @@ msgstr "前端页面标题"
 
 #: lib/page-settings/title-forms.php:48
 #: lib/page-settings/title-forms.php:49
+#: lib/page-settings/title-forms.php:157
 #: lib/page-settings/title-forms.php:158
-#: lib/page-settings/title-forms.php:159
+#: lib/page-settings/title-forms.php:259
 #: lib/page-settings/title-forms.php:260
-#: lib/page-settings/title-forms.php:261
 msgid "サイト名"
 msgstr "网站名称"
 
@@ -9670,153 +9676,153 @@ msgstr "标语"
 msgid "自由形式"
 msgstr "自由格式"
 
-#: lib/page-settings/title-forms.php:54
+#: lib/page-settings/title-forms.php:53
 msgid "自由形式タイトル"
 msgstr "自由格式标题"
 
-#: lib/page-settings/title-forms.php:56
+#: lib/page-settings/title-forms.php:55
 msgid "自由形式のタイトルを入力してください"
 msgstr "请输入自由格式的标题"
 
-#: lib/page-settings/title-forms.php:57
+#: lib/page-settings/title-forms.php:56
 msgid "フロントページで出力するタイトルタグのフォーマットを選択してください。自由に設定する場合は「自由形式タイトル」ボックスに入力してください。"
 msgstr "请选择在前端页面中输出的标题标签格式。如果要自由设置，请在“自由格式标题”框中输入。"
 
-#: lib/page-settings/title-forms.php:65
+#: lib/page-settings/title-forms.php:64
 msgid "サイトの説明"
 msgstr "网站描述"
 
-#: lib/page-settings/title-forms.php:69
-#: lib/page-settings/title-forms.php:175
-#: lib/page-settings/title-forms.php:276
+#: lib/page-settings/title-forms.php:68
+#: lib/page-settings/title-forms.php:174
+#: lib/page-settings/title-forms.php:275
 msgid "メタディスクリプションタグを出力する"
 msgstr "输出元描述标签"
 
-#: lib/page-settings/title-forms.php:70
+#: lib/page-settings/title-forms.php:69
 msgid "フロントページのheadタグ内に、メタディスクリプションタグを出力するか。"
 msgstr "是否在首页的head标签内输出meta描述标签。"
 
-#: lib/page-settings/title-forms.php:73
+#: lib/page-settings/title-forms.php:72
 msgid "メタディスクリプションを入力"
 msgstr "输入元描述"
 
-#: lib/page-settings/title-forms.php:74
+#: lib/page-settings/title-forms.php:73
 msgid "フロントページで出力するメタディスクリプションタグの内容を入力してください。"
 msgstr "请输入在首页输出的meta描述标签的内容。"
 
-#: lib/page-settings/title-forms.php:74
+#: lib/page-settings/title-forms.php:73
 msgid "入力しない場合は、キャッチフレーズが表示されます。"
 msgstr "如果不输入，将显示标语。"
 
-#: lib/page-settings/title-forms.php:86
-#: lib/page-settings/title-forms.php:188
-#: lib/page-settings/title-forms.php:289
+#: lib/page-settings/title-forms.php:85
+#: lib/page-settings/title-forms.php:187
+#: lib/page-settings/title-forms.php:288
 msgid "メタキーワードタグを出力する"
 msgstr "输出元关键词标签"
 
-#: lib/page-settings/title-forms.php:87
+#: lib/page-settings/title-forms.php:86
 msgid "フロントページのheadタグ内に、メタキーワードタグを出力するか。"
 msgstr "是否在首页的head标签内输出meta关键词标签。"
 
-#: lib/page-settings/title-forms.php:90
+#: lib/page-settings/title-forms.php:89
 msgid "キーワード1,キーワード2,キーワード3,..."
 msgstr "关键词1,关键词2,关键词3,..."
 
-#: lib/page-settings/title-forms.php:91
+#: lib/page-settings/title-forms.php:90
 msgid "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr "请输入在前端页面中输出的元关键词标签内容，用（逗号）分隔。如果不输入，则不会输出元标签。※从SEO的角度来看，这几乎没有意义。"
 
-#: lib/page-settings/title-forms.php:105
+#: lib/page-settings/title-forms.php:104
 msgid "投稿・固定ページ設定"
 msgstr "帖子和固定页面设置"
 
-#: lib/page-settings/title-forms.php:108
+#: lib/page-settings/title-forms.php:107
 msgid "投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
 msgstr "这是关于帖子和固定页面的标题、元描述、元关键词的设置。"
 
-#: lib/page-settings/title-forms.php:152
+#: lib/page-settings/title-forms.php:151
 msgid "投稿・固定ページタイトル"
 msgstr "帖子和固定页面标题"
 
+#: lib/page-settings/title-forms.php:156
 #: lib/page-settings/title-forms.php:157
 #: lib/page-settings/title-forms.php:158
-#: lib/page-settings/title-forms.php:159
-#: lib/page-settings/title-forms.php:254
+#: lib/page-settings/title-forms.php:253
+#: lib/page-settings/title-forms.php:258
 #: lib/page-settings/title-forms.php:259
 #: lib/page-settings/title-forms.php:260
-#: lib/page-settings/title-forms.php:261
 msgid "ページタイトル"
 msgstr "页面标题"
 
-#: lib/page-settings/title-forms.php:162
+#: lib/page-settings/title-forms.php:161
 msgid "投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。"
 msgstr "请选择在帖子和固定页面中输出的标题标签格式。"
 
-#: lib/page-settings/title-forms.php:176
+#: lib/page-settings/title-forms.php:175
 msgid "投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
 msgstr "是否在帖子和固定页面的head标签中输出元描述标签。"
 
-#: lib/page-settings/title-forms.php:189
+#: lib/page-settings/title-forms.php:188
 msgid "投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr "是否在帖子和固定页面的head标签中输出元关键词标签。※从SEO的角度来看，这几乎没有意义。"
 
-#: lib/page-settings/title-forms.php:203
+#: lib/page-settings/title-forms.php:202
 msgid "カテゴリー・タグページ設定"
 msgstr "分类和标签页面设置"
 
-#: lib/page-settings/title-forms.php:206
+#: lib/page-settings/title-forms.php:205
 msgid "カテゴリー・タグページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
 msgstr "这是关于分类和标签页面的标题、元描述、元关键词的设置。"
 
-#: lib/page-settings/title-forms.php:245
+#: lib/page-settings/title-forms.php:244
 msgid "カテゴリーページのランダム表示です。"
 msgstr "分类页面的随机显示。"
 
-#: lib/page-settings/title-forms.php:264
+#: lib/page-settings/title-forms.php:263
 msgid "カテゴリー・タグページで出力するタイトルタグのフォーマットを選択してください。"
 msgstr "请选择在分类和标签页面中输出的标题标签格式。"
 
-#: lib/page-settings/title-forms.php:277
+#: lib/page-settings/title-forms.php:276
 msgid "カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
 msgstr "是否在分类和标签页面的head标签中输出元描述标签。"
 
-#: lib/page-settings/title-forms.php:290
+#: lib/page-settings/title-forms.php:289
 msgid "カテゴリー・タグページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr "是否在分类和标签页面的head标签中输出元关键词标签。※从SEO的角度来看，这几乎没有意义。"
 
-#: lib/page-settings/title-forms.php:303
+#: lib/page-settings/title-forms.php:302
 msgid "タイトル共通設定"
 msgstr "标题通用设置"
 
-#: lib/page-settings/title-forms.php:306
+#: lib/page-settings/title-forms.php:305
 msgid "タイトルで使用される区切り文字の設定です。"
 msgstr "这是用于标题的分隔符设置。"
 
-#: lib/page-settings/title-forms.php:314
+#: lib/page-settings/title-forms.php:313
 msgid "簡略化したサイト名"
 msgstr "简化网站名称"
 
-#: lib/page-settings/title-forms.php:318
+#: lib/page-settings/title-forms.php:317
 msgid "短縮形のサイト名"
 msgstr "简短的网站名称"
 
-#: lib/page-settings/title-forms.php:321
+#: lib/page-settings/title-forms.php:320
 msgid "サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してください。入力しない場合は、通常のサイト名が表示されます。この短縮サイト名は投稿・固定・カテゴリー・タグページで適用されます"
 msgstr "如果网站名称过长并希望在标题中包含简化的网站名称，请输入。如果不输入，将显示正常的网站名称。此简化网站名称适用于帖子、固定、分类和标签页面"
 
-#: lib/page-settings/title-forms.php:329
+#: lib/page-settings/title-forms.php:328
 msgid "セパレーター"
 msgstr "分隔符"
 
-#: lib/page-settings/title-forms.php:334
+#: lib/page-settings/title-forms.php:333
 msgid " | （パイプ）"
 msgstr " | （竖线）"
 
-#: lib/page-settings/title-forms.php:335
+#: lib/page-settings/title-forms.php:334
 msgid " - （ハイフン）"
 msgstr " - （连字符）"
 
-#: lib/page-settings/title-forms.php:338
+#: lib/page-settings/title-forms.php:337
 msgid "タイトルの区切りとなる文字を設定してください。"
 msgstr "请设置作为标题分隔符的字符。"
 
@@ -9875,6 +9881,7 @@ msgstr "目录标题"
 #: lib/page-settings/toc-forms.php:80
 #: lib/page-settings/toc-funcs.php:54
 #: lib/page-settings/_top-page.php:206
+#: lib/toc.php:59
 #: lib/widgets/toc.php:19
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:424
 msgid "目次"
@@ -9902,6 +9909,7 @@ msgstr "开："
 
 #: lib/page-settings/toc-forms.php:99
 #: lib/page-settings/toc-funcs.php:70
+#: tmp/css-custom.php:538
 msgid "開く"
 msgstr "展开"
 
@@ -9912,6 +9920,7 @@ msgstr "关："
 #: lib/page-settings/toc-forms.php:103
 #: lib/page-settings/toc-funcs.php:78
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
+#: tmp/css-custom.php:554
 msgid "閉じる"
 msgstr "关闭"
 
@@ -10906,15 +10915,15 @@ msgstr "岁"
 msgid "月別アーカイブ"
 msgstr "按月归档"
 
-#: lib/shortcodes.php:985
+#: lib/shortcodes.php:986
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "updated短代码仅在文章和固定页面中可用。"
 
-#: lib/shortcodes.php:1096
+#: lib/shortcodes.php:1097
 msgid "保存エラー"
 msgstr "保存错误"
 
-#: lib/shortcodes.php:1114
+#: lib/shortcodes.php:1115
 msgid "エラー："
 msgstr "错误："
 
@@ -11114,11 +11123,6 @@ msgstr "插入HTML"
 msgid "HTMLを挿入してください"
 msgstr "请插入HTML"
 
-#: lib/tinymce/shortcodes.php:45
-#: blocks/src/toolbutton/dropdown-shortcodes.js:242
-msgid "ショートコード"
-msgstr "短代码"
-
 #: lib/tinymce/shortcodes.php:54
 msgid "広告 [ad]"
 msgstr "广告 [ad]"
@@ -11249,48 +11253,48 @@ msgstr "请输入在活动期间显示的内容。"
 msgid "キャンペーン期間中のみ表示"
 msgstr "仅在活动期间显示"
 
-#: lib/utils.php:814
+#: lib/utils.php:817
 msgid "スクロールできます"
 msgstr "可以滚动"
 
-#: lib/utils.php:902
+#: lib/utils.php:905
 msgid "公開"
 msgstr "公开"
 
-#: lib/utils.php:903
+#: lib/utils.php:906
 msgid "記事を公開してもよろしいですか？"
 msgstr "确定要公开文章吗？"
 
-#: lib/utils.php:2544
+#: lib/utils.php:2547
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s 分"
 
-#: lib/utils.php:2552
+#: lib/utils.php:2555
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s 小时"
 
-#: lib/utils.php:2560
+#: lib/utils.php:2563
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s 天"
 
-#: lib/utils.php:2568
+#: lib/utils.php:2571
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s周"
 
-#: lib/utils.php:2576
+#: lib/utils.php:2579
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s个月"
 
-#: lib/utils.php:2587
+#: lib/utils.php:2590
 msgid "%s年"
 msgstr "%s年"
 
-#: lib/utils.php:2589
+#: lib/utils.php:2592
 msgid "%s年%sヶ月"
 msgstr "%s年%s个月"
 
@@ -12004,8 +12008,8 @@ msgid "PV表示"
 msgstr "显示PV"
 
 #: lib/widgets/recent-comments.php:19
-#: lib/widgets/recent-comments.php:116
-#: lib/widgets/recent-comments.php:122
+#: lib/widgets/recent-comments.php:117
+#: lib/widgets/recent-comments.php:123
 msgid "最近のコメント"
 msgstr "最新评论"
 
@@ -12013,23 +12017,23 @@ msgstr "最新评论"
 msgid "最近投稿されたコメントを表示するウィジェットです。"
 msgstr "这是显示最近发布的评论的组件。"
 
-#: lib/widgets/recent-comments.php:93
+#: lib/widgets/recent-comments.php:94
 msgid "コメントなし"
 msgstr "无评论"
 
-#: lib/widgets/recent-comments.php:137
+#: lib/widgets/recent-comments.php:138
 msgid "表示するコメント数"
 msgstr "显示的评论数"
 
-#: lib/widgets/recent-comments.php:144
+#: lib/widgets/recent-comments.php:145
 msgid "コメント文字数"
 msgstr "评论字数"
 
-#: lib/widgets/recent-comments.php:151
+#: lib/widgets/recent-comments.php:152
 msgid "管理者の除外"
 msgstr "排除管理员"
 
-#: lib/widgets/recent-comments.php:153
+#: lib/widgets/recent-comments.php:154
 msgid "管理者のコメントを表示しない"
 msgstr "不显示管理员的评论"
 
@@ -13326,7 +13330,7 @@ msgstr "返回顶部"
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr "这篇文章大约需要<span class=\"bold\">%s分钟</span>阅读。"
 
-#: tmp/css-custom.php:904
+#: tmp/css-custom.php:917
 msgid "ラベルなし"
 msgstr "无标签"
 
