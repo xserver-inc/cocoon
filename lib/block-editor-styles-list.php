@@ -7,37 +7,39 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-///////////////////////////////////////////
-// シンプル
-///////////////////////////////////////////
-register_block_style(
-  'core/list',
-  array(
-    'name'  => 'solid-line',
-    'label' => __( '枠線', THEME_NAME ),
-  )
-);
+add_action('after_setup_theme', function(){
+  ///////////////////////////////////////////
+  // シンプル
+  ///////////////////////////////////////////
+  register_block_style(
+    'core/list',
+    array(
+      'name'  => 'solid-line',
+      'label' => __( '枠線', THEME_NAME ),
+    )
+  );
 
-register_block_style(
-  'core/list',
-  array(
-    'name'  => 'gray-back',
-    'label' => __( '背景色', THEME_NAME ),
-  )
-);
+  register_block_style(
+    'core/list',
+    array(
+      'name'  => 'gray-back',
+      'label' => __( '背景色', THEME_NAME ),
+    )
+  );
 
-register_block_style(
-  'core/list',
-  array(
-    'name'  => 'solid-back',
-    'label' => __( '枠線・背景色', THEME_NAME ),
-  )
-);
+  register_block_style(
+    'core/list',
+    array(
+      'name'  => 'solid-back',
+      'label' => __( '枠線・背景色', THEME_NAME ),
+    )
+  );
 
-register_block_style(
-  'core/list',
-  array(
-    'name'  => 'solid-cross',
-    'label' => __( '交差線', THEME_NAME ),
-  )
-);
+  register_block_style(
+    'core/list',
+    array(
+      'name'  => 'solid-cross',
+      'label' => __( '交差線', THEME_NAME ),
+    )
+  );
+});

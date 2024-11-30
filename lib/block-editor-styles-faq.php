@@ -7,12 +7,14 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//FAQ
-register_block_style('cocoon-blocks/faq', array(
-  'name' => 'square',
-  'label' => __('角型ラベル', THEME_NAME),
-));
-register_block_style('cocoon-blocks/faq', array(
-  'name' => 'accordion',
-  'label' => __('アコーディオン', THEME_NAME),
-));
+add_action('after_setup_theme', function(){
+  //FAQ
+  register_block_style('cocoon-blocks/faq', array(
+    'name' => 'square',
+    'label' => __('角型ラベル', THEME_NAME),
+  ));
+  register_block_style('cocoon-blocks/faq', array(
+    'name' => 'accordion',
+    'label' => __('アコーディオン', THEME_NAME),
+  ));
+});
