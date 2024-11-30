@@ -534,7 +534,7 @@ if (is_toc_toggle_switch_enable()): ?>
 }
 <?php
 $open_caption = get_toc_open_caption();
-if (trim($open_caption) === '') {
+if ($open_caption === '') {
   $open_caption = __('開く', THEME_NAME);
 }
 ; ?>
@@ -550,7 +550,7 @@ if (trim($open_caption) === '') {
 
 <?php
 $close_caption = get_toc_close_caption();
-if (trim($close_caption) === '') {
+if ($close_caption === '') {
   $close_caption = __('閉じる', THEME_NAME);
 }
 ; ?>
