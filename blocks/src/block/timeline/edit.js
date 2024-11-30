@@ -141,7 +141,7 @@ export function TimelineEdit( props ) {
       <InspectorControls>
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
           <RangeControl
-            label={ __( 'アイテム数' ) }
+            label={ __( 'アイテム数', THEME_NAME ) }
             value={ items }
             onChange={ ( value ) => setAttributes( { items: value } ) }
             min={ 1 }
