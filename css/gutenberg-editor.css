@@ -5887,6 +5887,7 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   column-gap: 0;
 }
 .style-buttons .display-none {
