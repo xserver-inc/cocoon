@@ -6103,3 +6103,10 @@ body .is-layout-grid {
 .components-base-control__label {
   text-transform: initial !important;
 }
+
+.icon-setting-buttons .components-button[class*=fab] {
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+}
