@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-11-30T16:11:15+00:00\n"
-"PO-Revision-Date: 2024-11-30 16:23\n"
+"PO-Revision-Date: 2024-12-01 02:13\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -15165,7 +15165,7 @@ msgstr "fab-window-close-o"
 
 #: blocks/src/helpers.js:636
 msgid "fab-paw"
-msgstr "Fab-paw"
+msgstr "fab-paw"
 
 #: blocks/src/layout/column-2/block.js:49
 msgid "2カラム"
