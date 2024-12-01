@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.8.1.5
+Version: 2.8.1.6
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -3186,7 +3186,6 @@ ul.wp-block-archives {
   border-color: #b8daff;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*サクセスメッセージ*/
@@ -3199,7 +3198,6 @@ ul.wp-block-archives {
   border-color: #c3e6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*インフォメッセージ*/
@@ -3212,7 +3210,6 @@ ul.wp-block-archives {
   border-color: #bee5eb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*注意メッセージ*/
@@ -3225,7 +3222,6 @@ ul.wp-block-archives {
   border-color: #ffeeba;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*警告メッセージ*/
@@ -3238,7 +3234,6 @@ ul.wp-block-archives {
   border-color: #f5c6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*セカンダリー*/
@@ -3249,7 +3244,6 @@ ul.wp-block-archives {
   border-color: #d6d8db;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*ライト*/
@@ -3260,7 +3254,6 @@ ul.wp-block-archives {
   border-color: #fdfdfe;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*ダーク*/
@@ -3271,7 +3264,6 @@ ul.wp-block-archives {
   border-color: #c6c8ca;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*******************************

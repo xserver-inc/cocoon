@@ -3309,7 +3309,6 @@ body.wp-admin {
   border-color: #b8daff;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-success-box,
 .admin-settings .demo .success-box,
@@ -3320,7 +3319,6 @@ body.wp-admin {
   border-color: #c3e6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-info-box,
 .admin-settings .demo .info-box,
@@ -3331,7 +3329,6 @@ body.wp-admin {
   border-color: #bee5eb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-warning-box,
 .admin-settings .demo .warning-box,
@@ -3342,7 +3339,6 @@ body.wp-admin {
   border-color: #ffeeba;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-danger-box,
 .admin-settings .demo .danger-box,
@@ -3353,7 +3349,6 @@ body.wp-admin {
   border-color: #f5c6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-secondary-box,
 .admin-settings .demo .secondary-box {
@@ -3362,7 +3357,6 @@ body.wp-admin {
   border-color: #d6d8db;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-light-box,
 .admin-settings .demo .light-box {
@@ -3371,7 +3365,6 @@ body.wp-admin {
   border-color: #fdfdfe;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-dark-box,
 .admin-settings .demo .dark-box {
@@ -3380,7 +3373,6 @@ body.wp-admin {
   border-color: #c6c8ca;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-information-box,
 .admin-settings .demo .is-style-question-box,
@@ -11859,7 +11851,6 @@ body.wp-admin {
   border-color: #b8daff;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-success-box,
 .admin-settings .demo .success-box,
@@ -11870,7 +11861,6 @@ body.wp-admin {
   border-color: #c3e6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-info-box,
 .admin-settings .demo .info-box,
@@ -11881,7 +11871,6 @@ body.wp-admin {
   border-color: #bee5eb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-warning-box,
 .admin-settings .demo .warning-box,
@@ -11892,7 +11881,6 @@ body.wp-admin {
   border-color: #ffeeba;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-danger-box,
 .admin-settings .demo .danger-box,
@@ -11903,7 +11891,6 @@ body.wp-admin {
   border-color: #f5c6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-secondary-box,
 .admin-settings .demo .secondary-box {
@@ -11912,7 +11899,6 @@ body.wp-admin {
   border-color: #d6d8db;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-light-box,
 .admin-settings .demo .light-box {
@@ -11921,7 +11907,6 @@ body.wp-admin {
   border-color: #fdfdfe;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-dark-box,
 .admin-settings .demo .dark-box {
@@ -11930,7 +11915,6 @@ body.wp-admin {
   border-color: #c6c8ca;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .admin-settings .demo .is-style-information-box,
 .admin-settings .demo .is-style-question-box,
@@ -21036,7 +21020,6 @@ select option.fa:before {
   border-color: #b8daff;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .components-popover__content .is-style-success-box,
 .components-popover__content .success-box,
@@ -21047,7 +21030,6 @@ select option.fa:before {
   border-color: #c3e6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .components-popover__content .is-style-info-box,
 .components-popover__content .info-box,
@@ -21058,7 +21040,6 @@ select option.fa:before {
   border-color: #bee5eb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .components-popover__content .is-style-warning-box,
 .components-popover__content .warning-box,
@@ -21069,7 +21050,6 @@ select option.fa:before {
   border-color: #ffeeba;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .components-popover__content .is-style-danger-box,
 .components-popover__content .danger-box,
@@ -21080,7 +21060,6 @@ select option.fa:before {
   border-color: #f5c6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .components-popover__content .is-style-secondary-box,
 .components-popover__content .secondary-box {
@@ -21089,7 +21068,6 @@ select option.fa:before {
   border-color: #d6d8db;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .components-popover__content .is-style-light-box,
 .components-popover__content .light-box {
@@ -21098,7 +21076,6 @@ select option.fa:before {
   border-color: #fdfdfe;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .components-popover__content .is-style-dark-box,
 .components-popover__content .dark-box {
@@ -21107,7 +21084,6 @@ select option.fa:before {
   border-color: #c6c8ca;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 .components-popover__content .is-style-information-box,
 .components-popover__content .is-style-question-box,
