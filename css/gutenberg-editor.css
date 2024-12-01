@@ -1106,7 +1106,6 @@ html[lang=en] .ribbon-top-left::after {
   border-color: #b8daff;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*サクセスメッセージ*/
@@ -1119,7 +1118,6 @@ html[lang=en] .ribbon-top-left::after {
   border-color: #c3e6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*インフォメッセージ*/
@@ -1132,7 +1130,6 @@ html[lang=en] .ribbon-top-left::after {
   border-color: #bee5eb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*注意メッセージ*/
@@ -1145,7 +1142,6 @@ html[lang=en] .ribbon-top-left::after {
   border-color: #ffeeba;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*警告メッセージ*/
@@ -1158,7 +1154,6 @@ html[lang=en] .ribbon-top-left::after {
   border-color: #f5c6cb;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*セカンダリー*/
@@ -1169,7 +1164,6 @@ html[lang=en] .ribbon-top-left::after {
   border-color: #d6d8db;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*ライト*/
@@ -1180,7 +1174,6 @@ html[lang=en] .ribbon-top-left::after {
   border-color: #fdfdfe;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*ダーク*/
@@ -1191,7 +1184,6 @@ html[lang=en] .ribbon-top-left::after {
   border-color: #c6c8ca;
   padding: 15px;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 /*******************************
