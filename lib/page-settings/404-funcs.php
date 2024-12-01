@@ -11,7 +11,12 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_404_IMAGE_URL', '404_image_url');
 if ( !function_exists( 'get_404_image_url' ) ):
 function get_404_image_url(){
-  return get_theme_option(OP_404_IMAGE_URL, get_default_404_image_url());
+  $url = get_theme_option(OP_404_IMAGE_URL, get_default_404_image_url());
+  $url = trim($url);
+  if (empty($url)) {
+    $url = get_default_404_image_url();
+  }
+  return apply_filters('get_404_image_url', $url);
 }
 endif;
 if ( !function_exists( 'get_default_404_image_url' ) ):
