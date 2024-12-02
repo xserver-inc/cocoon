@@ -440,7 +440,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'footer_before' => __( 'フッター手前', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SINGLE_BREADCRUMBS_POSITION, $options, get_single_breadcrumbs_position());
-            generate_tips_tag(__( '投稿のパンくずリスト表示位置を設定します。', THEME_NAME ));
+            generate_tips_tag(__( '投稿・カテゴリーページのパンくずリスト表示位置を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>
