@@ -196,7 +196,7 @@ endif;
 define('OP_SIMPLIFIED_SITE_NAME', 'simplified_site_name');
 if ( !function_exists( 'get_simplified_site_name' ) ):
 function get_simplified_site_name(){
-  return stripslashes_deep(get_theme_option(OP_SIMPLIFIED_SITE_NAME));
+  return stripslashes_deep(get_theme_option(OP_SIMPLIFIED_SITE_NAME, ''));
 }
 endif;
 
