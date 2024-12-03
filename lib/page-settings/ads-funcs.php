@@ -43,9 +43,6 @@ endif;
 define('OP_ADSENSE_DISPLAY_METHOD', 'adsense_display_method');
 if ( !function_exists( 'get_adsense_display_method' ) ):
 function get_adsense_display_method(){
-  // $display_method = get_theme_option(OP_ADSENSE_DISPLAY_METHOD, 'by_myself');
-  // $display_method = $display_method ? $display_method : 'by_myself';
-  // return $display_method;
   return 'by_myself';
 }
 endif;
@@ -516,7 +513,7 @@ endif;
 define('OP_PR_LABEL_SMALL_CAPTION', 'pr_label_small_caption');
 if ( !function_exists( 'get_pr_label_small_caption' ) ):
 function get_pr_label_small_caption(){
-  return get_theme_option(OP_PR_LABEL_SMALL_CAPTION, PR_LABEL_SMALL_CAPTION);
+  return get_theme_option(OP_PR_LABEL_SMALL_CAPTION, PR_LABEL_SMALL_CAPTION, '');
 }
 endif;
 
@@ -524,7 +521,7 @@ endif;
 define('OP_PR_LABEL_LARGE_CAPTION', 'pr_label_large_caption');
 if ( !function_exists( 'get_pr_label_large_caption' ) ):
 function get_pr_label_large_caption(){
-  return get_theme_option(OP_PR_LABEL_LARGE_CAPTION, PR_LABEL_LARGE_CAPTION);
+  return get_theme_option(OP_PR_LABEL_LARGE_CAPTION, PR_LABEL_LARGE_CAPTION, '');
 }
 endif;
 

@@ -193,7 +193,7 @@ endif;
 define('OP_ENTRY_CARD_EXCERPT_MAX_LENGTH', 'entry_card_excerpt_max_length');
 if ( !function_exists( 'get_entry_card_excerpt_max_length' ) ):
 function get_entry_card_excerpt_max_length(){
-  $max_length = get_theme_option(OP_ENTRY_CARD_EXCERPT_MAX_LENGTH, 120);
+  $max_length = get_theme_option(OP_ENTRY_CARD_EXCERPT_MAX_LENGTH, '');
   if ((intval($max_length) < 1) || (intval($max_length) > 500)) {
     $max_length = '';
   }

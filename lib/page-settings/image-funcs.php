@@ -188,7 +188,7 @@ endif;
 define('OP_NO_IMAGE_URL', 'no_image_url');
 if ( !function_exists( 'get_no_image_url' ) ):
 function get_no_image_url(){
-  return get_theme_option(OP_NO_IMAGE_URL);
+  return get_theme_option(OP_NO_IMAGE_URL, '');
 }
 endif;
 if ( !function_exists( 'get_no_image_file' ) ):

@@ -19,7 +19,7 @@ endif;
 define('OP_GOOGLE_TAG_MANAGER_TRACKING_ID', 'google_tag_manager_tracking_id');
 if ( !function_exists( 'get_google_tag_manager_tracking_id' ) ):
 function get_google_tag_manager_tracking_id(){
-  return get_theme_option(OP_GOOGLE_TAG_MANAGER_TRACKING_ID);
+  return get_theme_option(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, '');
 }
 endif;
 
@@ -27,7 +27,7 @@ endif;
 define('OP_GA4_TRACKING_ID', 'ga4_tracking_id');
 if ( !function_exists( 'get_ga4_tracking_id' ) ):
 function get_ga4_tracking_id(){
-  return get_theme_option(OP_GA4_TRACKING_ID);
+  return get_theme_option(OP_GA4_TRACKING_ID, '');
 }
 endif;
 
@@ -35,7 +35,7 @@ endif;
 define('OP_GOOGLE_SEARCH_CONSOLE_ID', 'google_search_console_id');
 if ( !function_exists( 'get_google_search_console_id' ) ):
 function get_google_search_console_id(){
-  return get_theme_option(OP_GOOGLE_SEARCH_CONSOLE_ID);
+  return get_theme_option(OP_GOOGLE_SEARCH_CONSOLE_ID, '');
 }
 endif;
 
@@ -43,7 +43,7 @@ endif;
 define('OP_CLARITY_PROJECT_ID', 'clarity_project_id');
 if ( !function_exists( 'get_clarity_project_id' ) ):
 function get_clarity_project_id(){
-  return get_theme_option(OP_CLARITY_PROJECT_ID);
+  return get_theme_option(OP_CLARITY_PROJECT_ID, '');
 }
 endif;
 
@@ -51,7 +51,7 @@ endif;
 define('OP_OTHER_ANALYTICS_HEAD_TAGS', 'other_analytics_head_tags');
 if ( !function_exists( 'get_other_analytics_head_tags' ) ):
 function get_other_analytics_head_tags(){
-  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_HEAD_TAGS));
+  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_HEAD_TAGS, ''));
 }
 endif;
 
@@ -59,7 +59,7 @@ endif;
 define('OP_OTHER_ANALYTICS_HEADER_TAGS', 'other_analytics_header_tags');
 if ( !function_exists( 'get_other_analytics_header_tags' ) ):
 function get_other_analytics_header_tags(){
-  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_HEADER_TAGS));
+  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_HEADER_TAGS, ''));
 }
 endif;
 
@@ -67,6 +67,6 @@ endif;
 define('OP_OTHER_ANALYTICS_FOOTER_TAGS', 'other_analytics_footer_tags');
 if ( !function_exists( 'get_other_analytics_footer_tags' ) ):
 function get_other_analytics_footer_tags(){
-  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_FOOTER_TAGS));
+  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_FOOTER_TAGS, ''));
 }
 endif;

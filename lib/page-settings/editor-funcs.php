@@ -57,7 +57,7 @@ endif;
 define('OP_EDITOR_BACKGROUND_COLOR', 'editor_background_color');
 if ( !function_exists( 'get_editor_background_color' ) ):
 function get_editor_background_color(){
-  return get_theme_option(OP_EDITOR_BACKGROUND_COLOR);
+  return get_theme_option(OP_EDITOR_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -65,7 +65,7 @@ endif;
 define('OP_EDITOR_TEXT_COLOR', 'editor_text_color');
 if ( !function_exists( 'get_editor_text_color' ) ):
 function get_editor_text_color(){
-  return get_theme_option(OP_EDITOR_TEXT_COLOR);
+  return get_theme_option(OP_EDITOR_TEXT_COLOR, '');
 }
 endif;
 

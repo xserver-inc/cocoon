@@ -27,7 +27,7 @@ endif;
 define('OP_GO_TO_TOP_BACKGROUND_COLOR', 'go_to_top_background_color');
 if ( !function_exists( 'get_go_to_top_background_color' ) ):
 function get_go_to_top_background_color(){
-  return get_theme_option(OP_GO_TO_TOP_BACKGROUND_COLOR);
+  return get_theme_option(OP_GO_TO_TOP_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -35,7 +35,7 @@ endif;
 define('OP_GO_TO_TOP_TEXT_COLOR', 'go_to_top_text_color');
 if ( !function_exists( 'get_go_to_top_text_color' ) ):
 function get_go_to_top_text_color(){
-  return get_theme_option(OP_GO_TO_TOP_TEXT_COLOR);
+  return get_theme_option(OP_GO_TO_TOP_TEXT_COLOR, '');
 }
 endif;
 
@@ -43,6 +43,6 @@ endif;
 define('OP_GO_TO_TOP_BUTTON_IMAGE_URL', 'go_to_top_button_image_url');
 if ( !function_exists( 'get_go_to_top_button_image_url' ) ):
 function get_go_to_top_button_image_url(){
-  return get_theme_option(OP_GO_TO_TOP_BUTTON_IMAGE_URL);
+  return get_theme_option(OP_GO_TO_TOP_BUTTON_IMAGE_URL, '');
 }
 endif;

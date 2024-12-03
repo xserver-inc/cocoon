@@ -19,7 +19,7 @@ endif;
 define('OP_NOTICE_AREA_MESSAGE', 'notice_area_message');
 if ( !function_exists( 'get_notice_area_message' ) ):
 function get_notice_area_message(){
-  $msg = stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE));
+  $msg = stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE, ''));
   return apply_filters('get_notice_area_message', $msg);
 }
 endif;
@@ -28,7 +28,7 @@ endif;
 define('OP_NOTICE_AREA_URL', 'notice_area_url');
 if ( !function_exists( 'get_notice_area_url' ) ):
 function get_notice_area_url(){
-  $url = get_theme_option(OP_NOTICE_AREA_URL);
+  $url = get_theme_option(OP_NOTICE_AREA_URL, '');
   return apply_filters('get_notice_area_url', $url);
 }
 endif;
@@ -53,7 +53,7 @@ endif;
 define('OP_NOTICE_AREA_BACKGROUND_COLOR', 'notice_area_background_color');
 if ( !function_exists( 'get_notice_area_background_color' ) ):
 function get_notice_area_background_color(){
-  return get_theme_option(OP_NOTICE_AREA_BACKGROUND_COLOR);
+  return get_theme_option(OP_NOTICE_AREA_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -61,6 +61,6 @@ endif;
 define('OP_NOTICE_AREA_TEXT_COLOR', 'notice_area_text_color');
 if ( !function_exists( 'get_notice_area_text_color' ) ):
 function get_notice_area_text_color(){
-  return get_theme_option(OP_NOTICE_AREA_TEXT_COLOR);
+  return get_theme_option(OP_NOTICE_AREA_TEXT_COLOR, '');
 }
 endif;

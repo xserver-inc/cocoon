@@ -37,7 +37,7 @@ endif;
 define('OP_COMMENT_SUB_HEADING', 'comment_sub_heading');
 if ( !function_exists( 'get_comment_sub_heading' ) ):
 function get_comment_sub_heading(){
-  return stripslashes_deep(get_theme_option(OP_COMMENT_SUB_HEADING));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_SUB_HEADING, ''));
 }
 endif;
 
@@ -71,7 +71,7 @@ endif;
 define('OP_COMMENT_INFORMATION_MESSAGE', 'comment_information_message');
 if ( !function_exists( 'get_comment_information_message' ) ):
 function get_comment_information_message(){
-  return stripslashes_deep(get_theme_option(OP_COMMENT_INFORMATION_MESSAGE));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_INFORMATION_MESSAGE, ''));
 }
 endif;
 
