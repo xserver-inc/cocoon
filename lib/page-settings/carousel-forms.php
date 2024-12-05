@@ -54,10 +54,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- カルーセルカテゴリーID -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( '表示内容', THEME_NAME )); ?>
+            <?php
+            generate_label_tag('', __( '表示内容', THEME_NAME ));
+             ?>
           </th>
           <td>
             <?php
+            echo '<p>'.__( '人気記事、カテゴリー、タグの順に優先され、いずれか一つが表示されます。', THEME_NAME ).'</p><br>';
             echo __( '人気記事', THEME_NAME ).'<br>';
             generate_checkbox_tag( OP_CAROUSEL_POPULAR_POSTS_ENABLE, is_carousel_popular_posts_enable(), '');
 
