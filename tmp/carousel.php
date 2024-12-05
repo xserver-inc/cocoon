@@ -14,8 +14,6 @@ if (empty($max_count)) {
   $max_count = CAROUSEL_MAX_COUNT;
 }
 $args = array(
-  // 'category__in' => get_carousel_category_ids(),
-  'tag__in' => get_carousel_tag_ids(),
   'orderby' => get_carousel_orderby(), //ランダム表示
   'no_found_rows' => true,
   'posts_per_page' => $max_count,
@@ -32,9 +30,10 @@ if ( is_carousel_popular_posts_enable()) {
     $post_ids[] = $post->ID; // 配列に追加
   }
   $args += array('post__in' => $post_ids);
-} else {
-  //人気記事じゃない場合
+} elseif (get_carousel_category_ids()) {//カテゴリー
   $args += array('category__in' => get_carousel_category_ids());
+} else {//タグ
+  $args += array('tag__in' => get_carousel_tag_ids());
 }
 $args = apply_filters('cocoon_carousel_args', $args);
 $query = new WP_Query( $args );

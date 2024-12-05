@@ -70,16 +70,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             );
             generate_selectbox_tag(OP_CAROUSEL_POPULAR_POSTS_COUNT_DAYS, $options,  get_carousel_popular_posts_count_days());
             generate_label_tag(OP_CAROUSEL_POPULAR_POSTS_COUNT_DAYS, __('で集計した人気記事を含める', THEME_NAME) );
-            echo '<br>';
-            echo '<br>';
+            generate_tips_tag(__( '人気記事を選択すると、人気記事のみが優先して表示されます。', THEME_NAME ));
 
             echo __( 'カテゴリー', THEME_NAME ).'<br>';
             generate_hierarchical_category_check_list( 0, OP_CAROUSEL_CATEGORY_IDS, get_carousel_category_ids(), 300 );
-            echo '<br>';
+            generate_tips_tag(__( 'カテゴリーを選択すると、カテゴリーに関連付けられた記事のみが表示されます。', THEME_NAME ).__( '（※カテゴリー関連記事を表示させたい場合は、人気記事を選択しないでください）', THEME_NAME ));
 
             echo __( 'タグ', THEME_NAME ).'<br>';
             generate_tagcloud_check_list(OP_CAROUSEL_TAG_IDS, get_carousel_tag_ids());
-            generate_tips_tag(__( 'カルーセルと関連付けるカテゴリーもしくはタグを選択してください。人気記事を有効にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び替え」で設定した順番で表示されます。', THEME_NAME ));
+            generate_tips_tag(__( 'タグを選択すると、タグに関連付けられた記事のみが表示されます。', THEME_NAME ).__( '（※タグ関連記事を表示させたい場合は、人気記事・カテゴリーを選択しないでください）', THEME_NAME ));
             ?>
           </td>
         </tr>
