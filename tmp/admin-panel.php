@@ -68,7 +68,7 @@ if (is_user_administrator()
         $encoded_url = get_encoded_url(get_requested_url());
       ?>
       <?php if (is_admin_pagespeed_insights_visible()): ?>
-        <a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true&hl=<?php _e( 'ja', THEME_NAME ) ?>&url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="pagespeed"><?php _e( 'ページスピード', THEME_NAME ) ?></a>
+        <a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true&hl=<?php _e( 'ja', THEME_NAME ) ?>&url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="pagespeed"><?php _e( 'PageSpeed Insights', THEME_NAME ) ?></a>
       <?php endif ?>
       <?php if (is_admin_gtmetrix_visible()): ?>
         <a href="https://gtmetrix.com/?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer" class="gtmetrix"><?php _e( 'GTmetrix', THEME_NAME ) ?></a>

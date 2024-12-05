@@ -3752,7 +3752,7 @@ msgid "管理画面の機能設定です。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:24
-msgid "管理者メニュー"
+msgid "管理メニュー"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:25
@@ -3760,7 +3760,7 @@ msgid "管理画面に素早く移動するためのメニューリンクです�
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:31
-msgid "アドミンバーに独自管理メニューを表示"
+msgid "ツールバーに独自管理メニューを表示"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:32
@@ -3808,7 +3808,7 @@ msgid "投稿・固定ページ記事一覧テーブルのカラム操作。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:99
-msgid "作成者を表示する"
+msgid "投稿者を表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:102
@@ -3830,7 +3830,7 @@ msgid "日付を表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:115
-msgid "投稿IDを表示する"
+msgid "IDを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:118
