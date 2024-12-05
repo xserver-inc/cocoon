@@ -27,9 +27,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
 
-            //アドミンバーに独自管理メニューを表示
-            generate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'ツールバーに独自管理メニューを表示', THEME_NAME ));
-            generate_tips_tag(__( 'ツールバーに手軽に設定画面にアクセスできるメニューを表示します。', THEME_NAME ));
+            //ツールバー（管理バー）に独自管理メニューを表示
+            generate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'ツールバー（管理バー）に独自管理メニューを表示', THEME_NAME ));
+            generate_tips_tag(__( 'ツールバー（管理バー）に手軽に設定画面にアクセスできるメニューを表示します。', THEME_NAME ));
             ?>
           </td>
         </tr>
