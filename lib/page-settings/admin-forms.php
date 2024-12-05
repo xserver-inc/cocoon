@@ -21,14 +21,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- 管理者向け設定  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( '管理者メニュー', THEME_NAME ) );
+            <?php generate_label_tag('', __( '管理メニュー', THEME_NAME ) );
             generate_preview_tooltip_tag('https://im-cocoon.net/wp-content/uploads/admin-menu.png', __( '管理画面に素早く移動するためのメニューリンクです。', THEME_NAME )); ?>
           </th>
           <td>
             <?php
 
             //アドミンバーに独自管理メニューを表示
-            generate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'アドミンバーに独自管理メニューを表示', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'ツールバーに独自管理メニューを表示', THEME_NAME ));
             generate_tips_tag(__( '管理者バーに手軽に設定画面にアクセスできるメニューを表示します。', THEME_NAME ));
             ?>
           </td>
@@ -74,11 +74,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- 投稿一覧設定 -->
 <div id="admin-single-index" class="postbox">
-  <h2 class="hndle"><?php _e( '投稿一覧設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( '投稿一覧・固定ページ一覧設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php
-      _e( '管理画面の投稿一覧ページの設定です。', THEME_NAME );
+      _e( '管理画面の投稿一覧・固定ページ一覧ページの設定です。', THEME_NAME );
       generate_help_page_tag('https://wp-cocoon.com/post-columns-switch/');
      ?></p>
 
@@ -96,7 +96,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
 
-            generate_checkbox_tag(OP_ADMIN_LIST_AUTHOR_VISIBLE , is_admin_list_author_visible(), __( '作成者を表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_LIST_AUTHOR_VISIBLE , is_admin_list_author_visible(), __( '投稿者を表示する', THEME_NAME ));
             echo '<br>';
 
             generate_checkbox_tag(OP_ADMIN_LIST_CATEGORIES_VISIBLE , is_admin_list_categories_visible(), __( 'カテゴリーを表示する', THEME_NAME ));
@@ -112,7 +112,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ADMIN_LIST_DATE_VISIBLE , is_admin_list_date_visible(), __( '日付を表示する', THEME_NAME ));
             echo '<br>';
 
-            generate_checkbox_tag(OP_ADMIN_LIST_POST_ID_VISIBLE , is_admin_list_post_id_visible(), __( '投稿IDを表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_LIST_POST_ID_VISIBLE , is_admin_list_post_id_visible(), __( 'IDを表示する', THEME_NAME ));
             echo '<br>';
 
             generate_checkbox_tag(OP_ADMIN_LIST_WORD_COUNT_VISIBLE , is_admin_list_word_count_visible(), __( '文字数を表示する', THEME_NAME ));
