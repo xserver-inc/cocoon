@@ -306,7 +306,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, is_admin_panel_responsive_tools_area_visible(), __( 'レスポンシブチェックを表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, is_admin_panel_responsive_tools_area_visible(), __( 'レスポンシブチェックツールエリアを表示する', THEME_NAME ));
             generate_tips_tag(__( 'レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えます。', THEME_NAME ));
             ?>
             <div class="indent">
