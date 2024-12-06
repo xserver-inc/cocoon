@@ -22,7 +22,6 @@ $args = array(
 if ( is_carousel_popular_posts_enable()) {
   $days = get_carousel_popular_posts_count_days();
   $limit = intval($max_count) * 5;
-  $category_ids = is_array(get_carousel_category_ids()) ? get_carousel_category_ids() : array();
   $records = get_access_ranking_records($days, $limit, 'post');
   $post_ids = array();
   //取得した投稿IDをセット
