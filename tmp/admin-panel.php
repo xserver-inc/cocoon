@@ -23,7 +23,7 @@ if (is_user_administrator()
    ?>
 
   <?php //編集エリアの表示
-  if (is_admin_panel_edit_area_visible() && (is_singular() || (!is_singular() && is_admin_panel_wp_dashboard_visible()))): ?>
+  if (is_admin_panel_edit_area_visible() && (is_singular() || (!is_singular() && is_admin_panel_wp_dashboard_visible())) && (is_admin_panel_wp_dashboard_visible() || is_admin_panel_wp_edit_visible() || is_admin_panel_wlw_edit_visible())): ?>
     <div class="admin-edit">
       <span class="fa fa-edit fa-fw" aria-hidden="true"></span>
       <?php //ダッシュボードリンクの表示
@@ -35,7 +35,7 @@ if (is_user_administrator()
         <span class="post-edit"><?php edit_post_link(__( '編集', THEME_NAME )); ?></span>
       <?php endif ?>
       <?php //Windows Live Writer編集リンクの表示
-      if (is_admin_panel_wlw_edit_visible()): ?>
+      if (is_admin_panel_wlw_edit_visible() && is_singular()): ?>
         <span class="post-wlw-edit"><?php wlw_edit_post_link(__( 'WLWで編集', THEME_NAME )); ?></span>
       <?php endif ?>
     </div>
@@ -61,7 +61,7 @@ if (is_user_administrator()
     </div>
   <?php endif ?>
 
-  <?php if (is_admin_panel_check_tools_area_visible()): ?>
+  <?php if (is_admin_panel_check_tools_area_visible() && (is_admin_pagespeed_insights_visible() || is_admin_gtmetrix_visible() ||is_admin_structured_data_visible() || is_admin_nu_html_checker_visible() || is_admin_seocheki_visible() || is_admin_tweet_check_visible())): ?>
     <div class="admin-checks">
       <span class="fa fa-check" aria-hidden="true"></span>
       <?php
@@ -88,7 +88,7 @@ if (is_user_administrator()
     </div>
   <?php endif ?>
 
-  <?php if (is_admin_panel_responsive_tools_area_visible()): ?>
+  <?php if (is_admin_panel_responsive_tools_area_visible() && (is_admin_responsinator_visible() || is_admin_sizzy_visible() || is_admin_multi_screen_resolution_test_visible())): ?>
     <div class="admin-cresponsive">
       <span class="fa fa-tablet" aria-hidden="true"></span>
       <?php
