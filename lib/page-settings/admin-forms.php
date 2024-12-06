@@ -181,33 +181,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ADMIN_PANEL_PV_AREA_VISIBLE, is_admin_panel_pv_area_visible(), __( 'PVエリアを表示する', THEME_NAME ));
             generate_tips_tag(__( '管理者パネル内のPVエリアを表示します。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-panel-pv.png'));
             ?>
-            <div class="indent">
-              <?php
-              //インデックスのエントリーカードにPV数を表示
-              generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), __( 'インデックスにPV数を表示する', THEME_NAME ));
-              generate_tips_tag(__( 'インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/admin-index-pv/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-index-pv.png'));
-               ?>
-              <span><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
-              <?php
-              $theme = '';
-              //テーマのアクセス取得が有効でないとき
-              if (!is_access_count_enable()) {
-                $theme = '<span class="red">'.__( '※テーマのアクセス集計が有効になっていません。', THEME_NAME ).'</span>';
-              }
-              $jet = '';
-              //Jetpackの統計機能が有効でないとき
-              if (!is_jetpack_stats_module_active()) {
-                $jet = '<span class="red">'.__( '※Jetpackの統計機能が有効になっていません。', THEME_NAME ).'</span>';
-              }
-              $options = array(
-                THEME_NAME => __( 'テーマ独自', THEME_NAME ).$theme,
-                'jetpack' => __( 'Jetpack', THEME_NAME ).$jet,
-              );
-              generate_radiobox_tag(OP_ADMIN_PANEL_PV_TYPE, $options, get_admin_panel_pv_type());
-              generate_tips_tag(__( '管理者パネルで表示するPVの取得方法を選択します。', THEME_NAME ));
-
-               ?>
-            </div>
           </td>
         </tr>
 
@@ -325,6 +298,58 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<!-- インデックス設定 -->
+<div id="admin-index_" class="postbox">
+  <h2 class="hndle"><?php _e( 'インデックス設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'インデックスページのエントリーカードに表示されるPVの設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- エントリーカード  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'エントリーカード', THEME_NAME ) );
+            generate_preview_tooltip_tag('https://im-cocoon.net/wp-content/uploads/admin-index-pv.png', __( 'エントリーカードのPV表示エリアの設定です。', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            //インデックスのエントリーカードにPV数を表示
+            generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), __( 'インデックスにPV数を表示する', THEME_NAME ));
+            generate_tips_tag(__( 'インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/admin-index-pv/'));
+              ?>
+            <span><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
+            <?php
+            $theme = '';
+            //テーマのアクセス取得が有効でないとき
+            if (!is_access_count_enable()) {
+              $theme = '<span class="red">'.__( '※テーマのアクセス集計が有効になっていません。', THEME_NAME ).'</span>';
+            }
+            $jet = '';
+            //Jetpackの統計機能が有効でないとき
+            if (!is_jetpack_stats_module_active()) {
+              $jet = '<span class="red">'.__( '※Jetpackの統計機能が有効になっていません。', THEME_NAME ).'</span>';
+            }
+            $options = array(
+              THEME_NAME => __( 'テーマ独自', THEME_NAME ).$theme,
+              'jetpack' => __( 'Jetpack', THEME_NAME ).$jet,
+            );
+            generate_radiobox_tag(OP_ADMIN_PANEL_PV_TYPE, $options, get_admin_panel_pv_type());
+            generate_tips_tag(__( '管理者パネルで表示するPVの取得方法を選択します。', THEME_NAME ));
+
+              ?>
+          </td>
+        </tr>
 
       </tbody>
     </table>
