@@ -95,14 +95,14 @@ if (is_user_administrator()
         $encoded_url = get_encoded_url(get_requested_url());
       ?>
       <?php if (is_admin_responsinator_visible()): ?>
-        <a href="http://www.responsinator.com/?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer"><?php _e( 'レスポンシブテスト', THEME_NAME ) ?></a>
+        <a href="http://www.responsinator.com/?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer"><?php _e( 'Responsinator', THEME_NAME ) ?></a>
       <?php endif ?>
       <?php if (is_admin_sizzy_visible()): ?>
         <a href="https://sizzy.co/?url=<?php echo $encoded_url; ?> " target="_blank" rel="noopener noreferrer"><?php _e( 'Sizzy', THEME_NAME ) ?></a>
       <?php endif ?>
       <?php
       if (is_admin_multi_screen_resolution_test_visible()): ?>
-         <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=<?php echo $encoded_url; ?>&w=414&h=736" target="_blank" rel="noopener noreferrer"><?php _e( 'Resolution Test', THEME_NAME ) ?></a>
+         <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=<?php echo $encoded_url; ?>&w=414&h=736" target="_blank" rel="noopener noreferrer"><?php _e( 'ScreenResolution', THEME_NAME ) ?></a>
       <?php endif ?>
 
     </div>
