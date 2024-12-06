@@ -184,7 +184,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <div class="indent">
               <?php
               //インデックスのエントリーカードにPV数を表示
-              generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), __( 'インデックスにPV数を表示', THEME_NAME ));
+              generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), __( 'インデックスにPV数を表示する', THEME_NAME ));
               generate_tips_tag(__( 'インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/admin-index-pv/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-index-pv.png'));
                ?>
               <span><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
@@ -224,8 +224,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
             <div class="indent">
               <?php
-              generate_checkbox_tag(OP_ADMIN_PANEL_WP_DASHBOARD_VISIBLE , is_admin_panel_wp_dashboard_visible(), __( 'ダッシュボードリンクの表示', THEME_NAME ));
-              generate_tips_tag(__( 'Wordpressのダッシュボードに移動するためのリンクです。', THEME_NAME ));
+              generate_checkbox_tag(OP_ADMIN_PANEL_WP_DASHBOARD_VISIBLE , is_admin_panel_wp_dashboard_visible(), __( 'ダッシュボードリンクを表示する', THEME_NAME ));
+              generate_tips_tag(__( 'WordPressのダッシュボードに移動するためのリンクです。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_PANEL_WP_EDIT_VISIBLE , is_admin_panel_wp_edit_visible(), __( '投稿編集リンクの表示', THEME_NAME ));
               generate_tips_tag(__( 'WordPress管理画面で投稿内容を編集するためのリンクです。', THEME_NAME ));
