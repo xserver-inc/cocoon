@@ -249,9 +249,14 @@ function is_all_thumbnail_visible(){
 endif;
 
 //日付フォーマット
+define('SITE_DATE_FORMAT', __( 'Y.m.d', THEME_NAME ));
 define('OP_SITE_DATE_FORMAT', 'site_date_format');
 if ( !function_exists( 'get_site_date_format' ) ):
 function get_site_date_format(){
-  return get_theme_option(OP_SITE_DATE_FORMAT, __( 'Y.m.d', THEME_NAME ));
+  $site_date_format = get_theme_option(OP_SITE_DATE_FORMAT, SITE_DATE_FORMAT);
+  if (empty($site_date_format)) {
+    $site_date_format = SITE_DATE_FORMAT;
+  }
+  return $site_date_format;
 }
 endif;
