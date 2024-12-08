@@ -513,7 +513,7 @@ endif;
 define('OP_PR_LABEL_SMALL_CAPTION', 'pr_label_small_caption');
 if ( !function_exists( 'get_pr_label_small_caption' ) ):
 function get_pr_label_small_caption(){
-  return get_theme_option(OP_PR_LABEL_SMALL_CAPTION, PR_LABEL_SMALL_CAPTION, '');
+  return get_theme_option(OP_PR_LABEL_SMALL_CAPTION, PR_LABEL_SMALL_CAPTION);
 }
 endif;
 
@@ -521,7 +521,7 @@ endif;
 define('OP_PR_LABEL_LARGE_CAPTION', 'pr_label_large_caption');
 if ( !function_exists( 'get_pr_label_large_caption' ) ):
 function get_pr_label_large_caption(){
-  return get_theme_option(OP_PR_LABEL_LARGE_CAPTION, PR_LABEL_LARGE_CAPTION, '');
+  return get_theme_option(OP_PR_LABEL_LARGE_CAPTION, PR_LABEL_LARGE_CAPTION);
 }
 endif;
 
