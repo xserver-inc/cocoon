@@ -19645,19 +19645,19 @@ body.wp-admin {
   .admin-settings .demo .e-card-meta {
     margin-top: 2px;
   }
-  .admin-settings .demo .ect-entry-card .card-thumb,
-  .admin-settings .demo .rect-entry-card .card-thumb,
-  .admin-settings .demo .ect-big-card-first .card-thumb {
-    margin-bottom: 6px;
+  .admin-settings .demo .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-thumb,
+  .admin-settings .demo .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-thumb,
+  .admin-settings .demo .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-thumb {
+    margin-bottom: 22px;
   }
-  .admin-settings .demo .ect-entry-card .card-content,
-  .admin-settings .demo .rect-entry-card .card-content,
-  .admin-settings .demo .ect-big-card-first .card-content {
+  .admin-settings .demo .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-content,
+  .admin-settings .demo .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-content,
+  .admin-settings .demo .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-content {
     margin: 0;
   }
-  .admin-settings .demo .ect-entry-card .card-meta,
-  .admin-settings .demo .rect-entry-card .card-meta,
-  .admin-settings .demo .ect-big-card-first .card-meta {
+  .admin-settings .demo .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-meta,
+  .admin-settings .demo .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-meta,
+  .admin-settings .demo .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-meta {
     clear: both;
   }
   .admin-settings .demo .list .ect-vertical-card > * {

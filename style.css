@@ -12135,19 +12135,19 @@ _:-ms-lang(x), .mc-circle {
   .e-card-meta {
     margin-top: 2px;
   }
-  .ect-entry-card .card-thumb,
-  .rect-entry-card .card-thumb,
-  .ect-big-card-first .card-thumb {
-    margin-bottom: 6px;
+  .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-thumb,
+  .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-thumb,
+  .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-thumb {
+    margin-bottom: 22px;
   }
-  .ect-entry-card .card-content,
-  .rect-entry-card .card-content,
-  .ect-big-card-first .card-content {
+  .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-content,
+  .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-content,
+  .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-content {
     margin: 0;
   }
-  .ect-entry-card .card-meta,
-  .rect-entry-card .card-meta,
-  .ect-big-card-first .card-meta {
+  .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-meta,
+  .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-meta,
+  .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-meta {
     clear: both;
   }
   .list .ect-vertical-card > * {

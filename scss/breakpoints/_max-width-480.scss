@@ -418,15 +418,16 @@ a.facebook-follow-button{
 .ect-entry-card,
 .rect-entry-card,
 .ect-big-card-first{
-  .card-thumb{
-    margin-bottom: 6px;
-  }
-  .card-content{
-    margin: 0;
-  }
-  .card-meta{
-    clear: both;
-    //position: static;
+  .a-wrap:not(.ec-big-card-first){
+    .card-thumb{
+      margin-bottom: 22px;
+    }
+    .card-content{
+      margin: 0;
+    }
+    .card-meta{
+      clear: both;
+    }
   }
 }
 
