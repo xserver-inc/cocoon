@@ -155,7 +155,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'both_date' => __( '投稿日・更新日を表示', THEME_NAME ),
               'post_date_only' => __( '投稿日のみ表示', THEME_NAME ),
               'update_date_only' => __( '更新日のみ表示', THEME_NAME ),
-              'none' => __( '表示しない', THEME_NAME ),
+              // 'none' => __( '表示しない', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());
             generate_tips_tag(__( '表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方が変わる可能性があります。', THEME_NAME ).__( 'この「SEO」での「表示する日付」設定では、「投稿日」か「更新日」いずれかを検索エンジンに伝えたいか出力するhtmlを制御します。', THEME_NAME ).__( '「投稿日・更新日を表示」を選択した場合は、「更新日」が優先して検索エンジンに伝えられます。', THEME_NAME ));
