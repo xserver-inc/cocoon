@@ -355,7 +355,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_POST_UPDATE_VISIBLE , is_post_update_visible(), __( '更新日の表示', THEME_NAME ));
             echo '<br>';
             generate_checkbox_tag(OP_POST_AUTHOR_VISIBLE , is_post_author_visible(), __( '投稿者名の表示', THEME_NAME ));
-            generate_tips_tag(__( '投稿・固定ページの「投稿日・更新日・投稿者名」を表示するかどうか。', THEME_NAME ).__( '投稿日・更新日が同じ日付の場合は投稿日のみが表示されます。', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページの「投稿日・更新日・投稿者名」を表示するかどうか。', THEME_NAME ).__( '投稿日・更新日が同じ日付の場合は投稿日のみが表示されます。', THEME_NAME ).__( 'この日付表示設定では、単にCSSにより表示/非表示が切り替わります。', THEME_NAME ).__( 'HTMLは出力されるので、検索エンジンに日付情報は伝わります。', THEME_NAME ));
             ?>
           </td>
         </tr>
