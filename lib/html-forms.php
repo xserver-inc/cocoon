@@ -1828,7 +1828,7 @@ function get_navi_card_wrap_tag($atts){
 }
 endif;
 
-//インフォリスト生成タグ
+//新着記事生成タグ
 if ( !function_exists( 'generate_info_list_tag' ) ):
 function generate_info_list_tag($atts){
   extract(shortcode_atts(array(
@@ -1864,6 +1864,12 @@ function generate_info_list_tag($atts){
     $args += array(
       'category__not_in' => $exclude_category_ids,
     );
+  }
+
+  //投稿編集のその他設定「アーカイブに出力しない」を除外
+  $exclude_post_ids = get_archive_exclude_post_ids();
+  if ($exclude_post_ids && is_array($exclude_post_ids)) {
+    $args['post__not_in'] = $exclude_post_ids;
   }
 
   $args = apply_filters( 'get_info_list_args', $args );
