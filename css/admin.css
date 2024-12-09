@@ -7392,6 +7392,7 @@ body.wp-admin {
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover .menu-button-in {
   opacity: 0.8;
 }
+.admin-settings .demo .mobile-menu-buttons .ad-area,
 .admin-settings .demo .mobile-menu-buttons .widget:has(.ad-area) {
   display: none;
 }
@@ -15934,6 +15935,7 @@ body.wp-admin {
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover .menu-button-in {
   opacity: 0.8;
 }
+.admin-settings .demo .mobile-menu-buttons .ad-area,
 .admin-settings .demo .mobile-menu-buttons .widget:has(.ad-area) {
   display: none;
 }

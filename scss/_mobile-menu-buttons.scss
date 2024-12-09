@@ -52,6 +52,7 @@
   }
 
   //ドロワーメニューの広告は表示しない（アドセンスポリシー違反の可能性を排除）
+  .ad-area,
   .widget:has(.ad-area) {
     display: none;
   }
