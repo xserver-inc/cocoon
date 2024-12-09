@@ -18233,6 +18233,9 @@ body.wp-admin {
 .admin-settings .demo .admin-panel a {
   color: var(--cocoon-white-color);
 }
+.admin-settings .demo .admin-panel:not(:has(.admin-pv, .admin-edit, .admin-checks, .admin-responsive)) {
+  display: none;
+}
 .admin-settings .demo .admin-pv,
 .admin-settings .demo .admin-edit,
 .admin-settings .demo .admin-amp,

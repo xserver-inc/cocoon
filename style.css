@@ -10599,6 +10599,10 @@ input[name=tab_item] {
   color: var(--cocoon-white-color);
 }
 
+.admin-panel:not(:has(.admin-pv, .admin-edit, .admin-checks, .admin-responsive)) {
+  display: none;
+}
+
 .admin-pv,
 .admin-edit,
 .admin-amp,
