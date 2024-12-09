@@ -89,7 +89,7 @@ if (is_user_administrator()
   <?php endif ?>
 
   <?php if (is_admin_panel_responsive_tools_area_visible() && (is_admin_responsinator_visible() || is_admin_sizzy_visible() || is_admin_multi_screen_resolution_test_visible())): ?>
-    <div class="admin-cresponsive">
+    <div class="admin-responsive">
       <span class="fa fa-tablet" aria-hidden="true"></span>
       <?php
         $encoded_url = get_encoded_url(get_requested_url());

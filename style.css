@@ -10608,7 +10608,7 @@ input[name=tab_item] {
 .admin-edit,
 .admin-amp,
 .admin-checks,
-.admin-cresponsive {
+.admin-responsive {
   border-radius: 3px;
   padding: 0 10px;
   border: 1px solid var(--cocoon-basic-border-color);
@@ -10618,13 +10618,13 @@ input[name=tab_item] {
 .admin-edit > span,
 .admin-amp > span,
 .admin-checks > span,
-.admin-cresponsive > span {
+.admin-responsive > span {
   padding: 0 4px;
 }
 
 .admin-amp a,
 .admin-checks a,
-.admin-cresponsive a {
+.admin-responsive a {
   margin: 0 4px;
   font-size: 0.8em;
 }

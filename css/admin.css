@@ -18242,7 +18242,7 @@ body.wp-admin {
 .admin-settings .demo .admin-edit,
 .admin-settings .demo .admin-amp,
 .admin-settings .demo .admin-checks,
-.admin-settings .demo .admin-cresponsive {
+.admin-settings .demo .admin-responsive {
   border-radius: 3px;
   padding: 0 10px;
   border: 1px solid var(--cocoon-basic-border-color);
@@ -18252,12 +18252,12 @@ body.wp-admin {
 .admin-settings .demo .admin-edit > span,
 .admin-settings .demo .admin-amp > span,
 .admin-settings .demo .admin-checks > span,
-.admin-settings .demo .admin-cresponsive > span {
+.admin-settings .demo .admin-responsive > span {
   padding: 0 4px;
 }
 .admin-settings .demo .admin-amp a,
 .admin-settings .demo .admin-checks a,
-.admin-settings .demo .admin-cresponsive a {
+.admin-settings .demo .admin-responsive a {
   margin: 0 4px;
   font-size: 0.8em;
 }
