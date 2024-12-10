@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //PVエリアの表示
-if (is_admin_panel_pv_area_visible()): ?>
+?>
   <div class="admin-pv">
     <span class="admin-pv-by">
       <?php if (get_admin_panel_pv_type() == THEME_NAME): ?>
@@ -43,4 +43,3 @@ if (is_admin_panel_pv_area_visible()): ?>
       echo '<span class="jetpack-page"><a href="'.admin_url().'admin.php?page=stats&view=post&post='.get_the_ID().'"title="'.__( 'Jetpackの統計', THEME_NAME ).'" target="_blank" rel="noopener noreferrer"><span class="fa fa-line-chart" aria-hidden="true"></span></a></span>';
     } ?>
   </div>
-<?php endif ?>
