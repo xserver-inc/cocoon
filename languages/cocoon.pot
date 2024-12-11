@@ -14509,7 +14509,7 @@ msgid "ランキング番号を表示する"
 msgstr ""
 
 #: blocks/src/block/popular-list/edit.js:265
-msgid "PV数表示"
+msgid "PV数を表示する"
 msgstr ""
 
 #: blocks/src/block/popular-list/edit.js:293

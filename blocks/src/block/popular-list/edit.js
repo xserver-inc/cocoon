@@ -262,7 +262,7 @@ export default function edit( props ) {
             } }
           />
           <ToggleControl
-            label={ __( 'PV数表示', THEME_NAME ) }
+            label={ __( 'PV数を表示する', THEME_NAME ) }
             checked={ pv }
             onChange={ ( isChecked ) => {
               setAttributes( { pv: isChecked } );
