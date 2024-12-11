@@ -7795,7 +7795,7 @@ msgid "モバイルボタン"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:57
-msgid "モバイルボタンの固定表示"
+msgid "モバイルボタンを固定表示する"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:58
@@ -7811,7 +7811,7 @@ msgid "モバイルで「ヘッダーモバイルボタン」が表示されて�
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:63
-msgid "モバイルボタン時コンテンツ下のサイドバーを表示"
+msgid "モバイルボタン時コンテンツ下のサイドバーを表示する"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:64
