@@ -34,7 +34,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
 ///////////////////////////////////////
 ?>
 <div class="wrap admin-settings">
-<h1><?php _e( 'テキストテンプレート', THEME_NAME ) ?></h1>
+<h1><?php _e( 'テンプレート', THEME_NAME ) ?></h1>
     <!-- 使いまわしテキスト（関数テキスト） -->
     <div class="func-text metabox-holder">
       <div class="operation-buttons">

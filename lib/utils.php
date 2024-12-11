@@ -1413,7 +1413,7 @@ function is_admin_post_php_page(){
 }
 endif;
 
-//テーマ設定テキストテンプレートページか
+//テーマ設定テンプレートページか
 if ( !function_exists( 'is_admin_theme_func_text_php_page' ) ):
 function is_admin_theme_func_text_php_page(){
   global $pagenow;

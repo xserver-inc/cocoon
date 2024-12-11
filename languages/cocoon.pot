@@ -3241,7 +3241,7 @@ msgid "内容が入力されていません。"
 msgstr ""
 
 #: lib/page-func-text/_top-page.php:37
-msgid "テキストテンプレート"
+msgid "テンプレート"
 msgstr ""
 
 #: lib/page-func-text/_top-page.php:45
