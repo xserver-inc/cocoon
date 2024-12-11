@@ -45,7 +45,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $is_horizontal = apply_filters( 'new_entries_widget_is_horizontal', empty($instance['is_horizontal']) ? 0 : 1 );
     //タイトルを太字に
     $is_bold = apply_filters( 'popular_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : $instance['is_bold'] );
-    //矢印表示
+    //カードに矢印を表示する
     $is_arrow_visible = apply_filters( 'popular_entries_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : $instance['is_arrow_visible'] );
     //除外投稿IDを取得
     $exclude_post_ids = empty($instance['exclude_post_ids']) ? '' : $instance['exclude_post_ids'];
@@ -232,10 +232,10 @@ class PopularEntryWidgetItem extends WP_Widget {
         generate_checkbox_tag($this->get_field_name('is_bold') , $is_bold, __( 'タイトルを太字にする', THEME_NAME ));
       ?>
     </p>
-    <?php //矢印表示 ?>
+    <?php //カードに矢印を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( '矢印表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( 'カードに矢印を表示する', THEME_NAME ));
       ?>
     </p>
     <?php //除外投稿ID ?>

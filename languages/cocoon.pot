@@ -11916,7 +11916,7 @@ msgstr ""
 #: lib/widgets/new-entries.php:214
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
-msgid "矢印表示"
+msgid "カードに矢印を表示する"
 msgstr ""
 
 #: lib/widgets/new-entries.php:20

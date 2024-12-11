@@ -208,10 +208,10 @@ class NewEntryWidgetItem extends WP_Widget {
         generate_checkbox_tag($this->get_field_name('is_bold') , $is_bold, __( 'タイトルを太字にする', THEME_NAME ));
       ?>
     </p>
-    <?php //矢印表示 ?>
+    <?php //カードに矢印を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( '矢印表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( 'カードに矢印を表示する', THEME_NAME ));
       ?>
     </p>
     <?php //固定表示記事を表示する ?>
