@@ -1352,7 +1352,7 @@ msgstr ""
 
 #: lib/admin.php:481
 #: lib/original-menu.php:36
-msgid "ランキング作成"
+msgid "ランキング"
 msgstr ""
 
 #: lib/admin.php:488
