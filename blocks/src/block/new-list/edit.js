@@ -198,7 +198,7 @@ export default function edit( props ) {
           />
           <Divider />
           <ToggleControl
-            label={ __( '記事タイトルを太字にする', THEME_NAME ) }
+            label={ __( 'タイトルを太字にする', THEME_NAME ) }
             checked={ bold }
             onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
           />
