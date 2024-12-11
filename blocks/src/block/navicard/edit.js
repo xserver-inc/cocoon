@@ -126,6 +126,13 @@ export default function edit( props ) {
           />
           <Divider />
           <ToggleControl
+            label={ __( '横並び表示にする', THEME_NAME ) }
+            checked={ horizontal }
+            onChange={ ( isChecked ) =>
+              setAttributes( { horizontal: isChecked } )
+            }
+          />
+          <ToggleControl
             label={ __( 'タイトルを太字にする', THEME_NAME ) }
             checked={ bold }
             onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
@@ -134,13 +141,6 @@ export default function edit( props ) {
             label={ __( 'カードに矢印を表示する', THEME_NAME ) }
             checked={ arrow }
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
-          />
-          <ToggleControl
-            label={ __( '横並び表示にする', THEME_NAME ) }
-            checked={ horizontal }
-            onChange={ ( isChecked ) =>
-              setAttributes( { horizontal: isChecked } )
-            }
           />
         </PanelBody>
       </InspectorControls>

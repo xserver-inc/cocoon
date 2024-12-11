@@ -238,21 +238,16 @@ export default function edit( props ) {
           />
           <Divider />
           <ToggleControl
-            label={ __( 'タイトルを太字にする', THEME_NAME ) }
-            checked={ bold }
-            onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
-          />
-          <ToggleControl
-            label={ __( 'カードに矢印を表示する', THEME_NAME ) }
-            checked={ arrow }
-            onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
-          />
-          <ToggleControl
             label={ __( '横並び表示にする', THEME_NAME ) }
             checked={ horizontal }
             onChange={ ( isChecked ) =>
               setAttributes( { horizontal: isChecked } )
             }
+          />
+          <ToggleControl
+            label={ __( 'タイトルを太字にする', THEME_NAME ) }
+            checked={ bold }
+            onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
           />
           <ToggleControl
             label={ __( 'ランキング番号を表示する', THEME_NAME ) }
@@ -267,6 +262,11 @@ export default function edit( props ) {
             onChange={ ( isChecked ) => {
               setAttributes( { pv: isChecked } );
             } }
+          />
+          <ToggleControl
+            label={ __( 'カードに矢印を表示する', THEME_NAME ) }
+            checked={ arrow }
+            onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
         </PanelBody>
         <PanelBody title={ __( 'フィルタ', THEME_NAME ) } initialOpen={ false }>

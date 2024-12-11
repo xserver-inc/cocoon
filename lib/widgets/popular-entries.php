@@ -207,18 +207,6 @@ class PopularEntryWidgetItem extends WP_Widget {
         generate_selectbox_tag($this->get_field_name('count_days'), $options, $count_days);
        ?>
     </p>
-    <?php //ランキング表示 ?>
-    <p>
-      <?php
-        generate_checkbox_tag($this->get_field_name('ranking_visible') , $ranking_visible, __( 'ランキング表示', THEME_NAME ));
-       ?>
-    </p>
-    <?php //PV数を表示する ?>
-    <p>
-      <?php
-        generate_checkbox_tag($this->get_field_name('pv_visible') , $pv_visible, __( 'PV数を表示する', THEME_NAME ));
-       ?>
-    </p>
     <?php //横並び表示にする ?>
     <p>
       <?php
@@ -231,6 +219,18 @@ class PopularEntryWidgetItem extends WP_Widget {
       <?php
         generate_checkbox_tag($this->get_field_name('is_bold') , $is_bold, __( 'タイトルを太字にする', THEME_NAME ));
       ?>
+    </p>
+    <?php //ランキング表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('ranking_visible') , $ranking_visible, __( 'ランキング表示', THEME_NAME ));
+       ?>
+    </p>
+    <?php //PV数を表示する ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('pv_visible') , $pv_visible, __( 'PV数を表示する', THEME_NAME ));
+       ?>
     </p>
     <?php //カードに矢印を表示する ?>
     <p>
