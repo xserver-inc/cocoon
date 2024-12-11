@@ -8460,7 +8460,7 @@ msgid "headタグに挿入"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:30
-msgid "canonicalタグの追加"
+msgid "canonicalタグを追加する"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:31
@@ -8533,7 +8533,7 @@ msgid "構造化データ"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:79
-msgid "JSON-LDを出力"
+msgid "JSON-LDを出力する"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:80

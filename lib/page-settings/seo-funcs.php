@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//canonicalタグの追加
+//canonicalタグを追加する
 define('OP_CANONICAL_TAG_ENABLE', 'canonical_tag_enable');
 if ( !function_exists( 'is_canonical_tag_enable' ) ):
 function is_canonical_tag_enable(){
@@ -15,7 +15,7 @@ function is_canonical_tag_enable(){
 }
 endif;
 
-//分割ページにrel="next"/"prev"タグの追加
+//分割ページにrel="next"/"prev"タグを追加する
 define('OP_PREV_NEXT_ENABLE', 'prev_next_enable');
 if ( !function_exists( 'is_prev_next_enable' ) ):
 function is_prev_next_enable(){
