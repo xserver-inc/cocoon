@@ -6483,7 +6483,7 @@ msgstr ""
 
 #: lib/page-settings/content-forms.php:109
 #: lib/page-settings/content-forms.php:232
-msgid "noopenerを追加"
+msgid "noopenerを追加する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:110
@@ -6503,7 +6503,7 @@ msgstr ""
 
 #: lib/page-settings/content-forms.php:118
 #: lib/page-settings/content-forms.php:241
-msgid "noreferrerを追加"
+msgid "noreferrerを追加する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:119
@@ -6522,7 +6522,7 @@ msgid "新しいタブで開くリンクのrel属性にnoreferrerを追加しま
 msgstr ""
 
 #: lib/page-settings/content-forms.php:127
-msgid "externalを追加"
+msgid "externalを追加する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:128
@@ -6536,7 +6536,7 @@ msgstr ""
 
 #: lib/page-settings/content-forms.php:140
 #: lib/page-settings/content-forms.php:260
-msgid "アイコンの表示"
+msgid "アイコンを表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:141
@@ -6603,7 +6603,7 @@ msgid "レスポンシブテーブル"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:316
-msgid "横幅の広いテーブルは横スクロール"
+msgid "横幅の広いテーブルは横スクロールする"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:317
@@ -6611,7 +6611,7 @@ msgid "端末幅より広いテーブルが表示されるときは、テーブ�
 msgstr ""
 
 #: lib/page-settings/content-forms.php:321
-msgid "テーブルの1列目を固定表示"
+msgid "テーブルの1列目を固定表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:322
@@ -6637,19 +6637,19 @@ msgstr ""
 #: lib/page-settings/content-forms.php:353
 #: lib/page-settings/index-forms.php:215
 #: lib/page-settings/single-forms.php:252
-msgid "投稿日の表示"
+msgid "投稿日を表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:355
 #: lib/page-settings/index-forms.php:225
 #: lib/page-settings/single-forms.php:262
-msgid "更新日の表示"
+msgid "更新日を表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:357
 #: lib/page-settings/index-forms.php:228
 #: lib/page-settings/single-forms.php:265
-msgid "投稿者名の表示"
+msgid "投稿者名を表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:358
