@@ -13,7 +13,7 @@ update_theme_option(OP_EYECATCH_VISIBLE);
 //アイキャッチラベルの表示
 update_theme_option(OP_EYECATCH_LABEL_VISIBLE);
 
-//アイキャッチの中央寄せ
+//アイキャッチを中央寄せする
 update_theme_option(OP_EYECATCH_CENTER_ENABLE);
 
 //アイキャッチをカラム幅に引き伸ばす

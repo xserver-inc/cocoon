@@ -7265,7 +7265,7 @@ msgid "投稿・固定ページのアイキャッチに表示されるカテゴ�
 msgstr ""
 
 #: lib/page-settings/image-forms.php:74
-msgid "アイキャッチの中央寄せ"
+msgid "アイキャッチを中央寄せする"
 msgstr ""
 
 #: lib/page-settings/image-forms.php:75

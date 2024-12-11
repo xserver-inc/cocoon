@@ -23,7 +23,7 @@ function is_eyecatch_label_visible(){
 }
 endif;
 
-//アイキャッチの中央寄せ
+//アイキャッチを中央寄せする
 define('OP_EYECATCH_CENTER_ENABLE', 'eyecatch_center_enable');
 if ( !function_exists( 'is_eyecatch_center_enable' ) ):
 function is_eyecatch_center_enable(){
