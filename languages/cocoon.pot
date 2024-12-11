@@ -3760,7 +3760,7 @@ msgid "管理画面に素早く移動するためのメニューリンクです�
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:31
-msgid "ツールバー（管理バー）に独自管理メニューを表示"
+msgid "ツールバー（管理バー）に独自管理メニューを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:32
@@ -3874,15 +3874,15 @@ msgid "管理者用のPV表示エリア、各種チェックツール表示用�
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:163
-msgid "全て表示"
+msgid "全て表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:164
-msgid "PCのみ表示"
+msgid "PCのみ表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:165
-msgid "モバイルのみ表示"
+msgid "モバイルのみ表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:166
