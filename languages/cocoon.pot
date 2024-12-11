@@ -3050,7 +3050,7 @@ msgid "アフィリエイトタグが入力されていません。"
 msgstr ""
 
 #: lib/page-affiliate-tag/_top-page.php:37
-msgid "アフィリエイトタグ管理"
+msgid "アフィリエイトタグ"
 msgstr ""
 
 #: lib/page-affiliate-tag/_top-page.php:41
