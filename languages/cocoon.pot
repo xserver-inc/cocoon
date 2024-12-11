@@ -8885,7 +8885,7 @@ msgstr ""
 #: lib/page-settings/single-forms.php:375
 #: lib/widgets/info-list.php:143
 #: blocks/src/block/info-list/edit.js:102
-msgid "枠線表示"
+msgid "枠線を表示する"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:379
@@ -11827,13 +11827,13 @@ msgstr ""
 
 #: lib/widgets/info-list.php:149
 #: blocks/src/block/info-list/edit.js:109
-msgid "仕切り線表示"
+msgid "仕切り線を表示する"
 msgstr ""
 
 #: lib/widgets/info-list.php:155
 #: lib/widgets/new-entries.php:226
 #: blocks/src/block/info-list/edit.js:116
-msgid "更新日順に並び替え"
+msgid "更新日順に並び替える"
 msgstr ""
 
 #: lib/widgets/info-list.php:162
