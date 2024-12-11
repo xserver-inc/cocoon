@@ -14369,13 +14369,13 @@ msgstr ""
 #: blocks/src/block/navicard/edit.js:118
 #: blocks/src/block/new-list/edit.js:151
 #: blocks/src/block/popular-list/edit.js:230
-msgid "大きなサムネイル表示"
+msgid "大きなサムネイル表示にする"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:122
 #: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:234
-msgid "大きなサムネイルにタイトルを重ねる"
+msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:129

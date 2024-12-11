@@ -115,11 +115,11 @@ export default function edit( props ) {
                 value: 'border_square',
               },
               {
-                label: __( '大きなサムネイル表示', THEME_NAME ),
+                label: __( '大きなサムネイル表示にする', THEME_NAME ),
                 value: 'large_thumb',
               },
               {
-                label: __( '大きなサムネイルにタイトルを重ねる', THEME_NAME ),
+                label: __( '大きなサムネイルにタイトルを重ねて表示する', THEME_NAME ),
                 value: 'large_thumb_on',
               },
             ] }
