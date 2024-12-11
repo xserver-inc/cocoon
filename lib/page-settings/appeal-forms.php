@@ -36,12 +36,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'none' => __( '表示しない', THEME_NAME ),
-              'all_page' => __( '全ページで表示', THEME_NAME ),
-              'front_page_only' => __( 'フロントページのみで表示', THEME_NAME ),
-              'not_singular' => __( '投稿・固定ページ以外で表示', THEME_NAME ),
-              'singular_only' => __( '投稿・固定ページのみで表示', THEME_NAME ),
-              'single_only' => __( '投稿ページのみで表示', THEME_NAME ),
-              'page_only' => __( '固定ページのみで表示', THEME_NAME ),
+              'all_page' => __( '全ページで表示する', THEME_NAME ),
+              'front_page_only' => __( 'フロントページのみで表示する', THEME_NAME ),
+              'not_singular' => __( '投稿・固定ページ以外で表示する', THEME_NAME ),
+              'singular_only' => __( '投稿・固定ページのみで表示する', THEME_NAME ),
+              'single_only' => __( '投稿ページのみで表示する', THEME_NAME ),
+              'page_only' => __( '固定ページのみで表示する', THEME_NAME ),
             );
             generate_selectbox_tag(OP_APPEAL_AREA_DISPLAY_TYPE, $options, get_appeal_area_display_type());
             generate_tips_tag(__( 'アピールエリアを表示するページを設定します。', THEME_NAME ));
@@ -73,7 +73,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__( 'アピールエリアの背景に表示する画像を設定します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/appeal-area-background-image-setting/'));
 
             //ヘッダー背景画像の固定
-            generate_checkbox_tag(OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED, is_appeal_area_background_attachment_fixed(), __( 'アピールエリア背景画像の固定', THEME_NAME ));
+            generate_checkbox_tag(OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED, is_appeal_area_background_attachment_fixed(), __( 'アピールエリアの背景画像を固定する', THEME_NAME ));
             generate_tips_tag(__( 'アピールエリアに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/appeal-area-background-image-setting/'));
             ?>
           </td>

@@ -5608,7 +5608,7 @@ msgid "アピールエリアの背景に表示する画像を設定します。"
 msgstr ""
 
 #: lib/page-settings/appeal-forms.php:76
-msgid "アピールエリア背景画像の固定"
+msgid "アピールエリアの背景画像を固定する"
 msgstr ""
 
 #: lib/page-settings/appeal-forms.php:77
@@ -5945,7 +5945,7 @@ msgid "カルーセルを表示するページを設定します。"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:49
-msgid "スマートフォンで表示（480px以下）"
+msgid "スマートフォンで表示する（480px以下）"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:57
@@ -6062,7 +6062,7 @@ msgid "オートプレイ"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:140
-msgid "オートプレイを実行"
+msgid "オートプレイを実行する"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:141
