@@ -7,7 +7,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (//!empty($_POST['name']) &&
+if (
+    !empty($_POST['title']) &&
+    //!empty($_POST['name']) &&
     !empty($_POST['icon']) &&
     !empty($_POST['action'])) {
   if ($_POST['action'] == 'new') {
@@ -21,7 +23,6 @@ if (//!empty($_POST['name']) &&
     } else {
       generate_error_message_tag(__( '吹き出しを新規作成できませんでした。', THEME_NAME ));
     }
-    //_v($result);
   } else {
     $id = isset($_POST['id']) ? intval($_POST['id']) : '';
     if ($id) {
@@ -36,6 +37,9 @@ if (//!empty($_POST['name']) &&
   }
 } else {
   $message = '';
+  if (empty($_POST['title'])) {
+    $message .= __( 'タイトルが入力されていません。', THEME_NAME ).'<br>';
+  }
   // if (empty($_POST['name'])) {
   //   $message .= __( '名前が入力されていません。', THEME_NAME ).'<br>';
   // }
