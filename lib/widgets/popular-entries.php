@@ -39,7 +39,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $count_days = apply_filters( 'popular_entries_widget_count_days', empty($instance['count_days']) ? PCD_DEFAULT : $instance['count_days'] );
     //ランキング表示
     $ranking_visible = apply_filters( 'popular_entries_widget_ranking_visible', empty($instance['ranking_visible']) ? 0 : $instance['ranking_visible'] );
-    //PV表示
+    //PV数を表示する
     $pv_visible = apply_filters( 'popular_entries_widget_pv_visible', empty($instance['pv_visible']) ? 0 : $instance['pv_visible'] );
     //水平表示
     $is_horizontal = apply_filters( 'new_entries_widget_is_horizontal', empty($instance['is_horizontal']) ? 0 : 1 );
@@ -213,10 +213,10 @@ class PopularEntryWidgetItem extends WP_Widget {
         generate_checkbox_tag($this->get_field_name('ranking_visible') , $ranking_visible, __( 'ランキング表示', THEME_NAME ));
        ?>
     </p>
-    <?php //PV表示 ?>
+    <?php //PV数を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('pv_visible') , $pv_visible, __( 'PV表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('pv_visible') , $pv_visible, __( 'PV数を表示する', THEME_NAME ));
        ?>
     </p>
     <?php //横並び表示にする ?>
