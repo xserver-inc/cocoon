@@ -195,7 +195,7 @@ $wp_customize->add_control(
       'section'     => 'nagi_customizer_sct',
       'settings'    => 'sns_fix',
       'label'       => 'SNSトップシェアボタンを画面左に固定する',
-      'description' => '<small>PC表示でのみ固定。Cocoon設定でメインカラムトップシェアボタンを表示にチェックを入れる必要があります。</small>',
+      'description' => '<small>PC表示でのみ固定。Cocoon設定で「メインカラムトップシェアボタンを表示する」にチェックを入れる必要があります。</small>',
       'type'        => 'checkbox'
     )
   );

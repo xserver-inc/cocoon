@@ -9320,7 +9320,7 @@ msgid "ボトムシェアボタンの表示"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:40
-msgid "メインカラムボトムシェアボタンを表示"
+msgid "メインカラムボトムシェアボタンを表示する"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:41
@@ -9478,7 +9478,7 @@ msgid "トップシェアボタンの表示"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-top.php:40
-msgid "メインカラムトップシェアボタンを表示"
+msgid "メインカラムトップシェアボタンを表示する"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-top.php:41
