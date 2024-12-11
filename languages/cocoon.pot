@@ -7871,7 +7871,7 @@ msgid "通知表示"
 msgstr ""
 
 #: lib/page-settings/notice-forms.php:40
-msgid "通知エリアの表示"
+msgid "通知エリアを表示する"
 msgstr ""
 
 #: lib/page-settings/notice-forms.php:41
