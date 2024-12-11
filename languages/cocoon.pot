@@ -11936,7 +11936,7 @@ msgid "新着記事のタイトル"
 msgstr ""
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示"
+msgid "「固定表示」記事を表示する"
 msgstr ""
 
 #: lib/widgets/new-entries.php:232

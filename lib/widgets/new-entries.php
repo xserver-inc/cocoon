@@ -217,13 +217,13 @@ class NewEntryWidgetItem extends WP_Widget {
     <?php //固定表示記事を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_sticky_visible') , $is_sticky_visible, __( '「固定表示」記事を表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_sticky_visible') , $is_sticky_visible, __( '「固定表示」記事を表示する', THEME_NAME ));
       ?>
     </p>
-    <?php //更新日順に並べ替え ?>
+    <?php //更新日順に並べ替える ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_modified_enable') , $is_modified_enable, __( '更新日順に並び替え', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_modified_enable') , $is_modified_enable, __( '更新日順に並び替える', THEME_NAME ));
       ?>
     </p>
     <?php //除外投稿ID ?>
