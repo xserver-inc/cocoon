@@ -23,7 +23,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ALL_ADS_VISIBLE, is_all_ads_visible(), __("全ての広告を表示",THEME_NAME ));
+            generate_checkbox_tag(OP_ALL_ADS_VISIBLE, is_all_ads_visible(), __("全ての広告を表示する",THEME_NAME ));
             generate_tips_tag(__( 'アドセンス設定、ウィジェット設定等、全ての広告の表示を切り替えます。', THEME_NAME ));
             ?>
           </td>
@@ -66,7 +66,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_ALL_ADSENSES_VISIBLE, is_all_adsenses_visible(), __( '全てのアドセンス広告を表示', THEME_NAME ));
+            generate_checkbox_tag( OP_ALL_ADSENSES_VISIBLE, is_all_adsenses_visible(), __( '全てのアドセンス広告を表示する', THEME_NAME ));
             generate_tips_tag(__( '「アドセンス設定」で設定した、アドセンス広告全ての表示を切り替えます。', THEME_NAME ));
             ?>
           </td>

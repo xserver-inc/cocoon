@@ -4118,7 +4118,7 @@ msgid "広告の表示"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:26
-msgid "全ての広告を表示"
+msgid "全ての広告を表示する"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:27
@@ -4153,7 +4153,7 @@ msgid "アドセンス広告の表示"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:69
-msgid "全てのアドセンス広告を表示"
+msgid "全てのアドセンス広告を表示する"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:70
