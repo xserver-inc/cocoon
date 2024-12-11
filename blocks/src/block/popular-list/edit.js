@@ -248,14 +248,14 @@ export default function edit( props ) {
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
           <ToggleControl
-            label={ __( '横並び表示', THEME_NAME ) }
+            label={ __( '横並び表示にする', THEME_NAME ) }
             checked={ horizontal }
             onChange={ ( isChecked ) =>
               setAttributes( { horizontal: isChecked } )
             }
           />
           <ToggleControl
-            label={ __( 'ランキング番号表示', THEME_NAME ) }
+            label={ __( 'ランキング番号を表示する', THEME_NAME ) }
             checked={ rank }
             onChange={ ( isChecked ) => {
               setAttributes( { rank: isChecked } );

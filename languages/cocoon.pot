@@ -11895,7 +11895,7 @@ msgstr ""
 #: lib/widgets/new-entries.php:201
 #: lib/widgets/popular-entries.php:225
 #: lib/widgets/related-entries.php:203
-msgid "横型表示"
+msgid "横並び表示にする"
 msgstr ""
 
 #: lib/widgets/navi-entries.php:132
@@ -14393,7 +14393,7 @@ msgstr ""
 #: blocks/src/block/navicard/edit.js:139
 #: blocks/src/block/new-list/edit.js:211
 #: blocks/src/block/popular-list/edit.js:251
-msgid "横並び表示"
+msgid "横並び表示にする"
 msgstr ""
 
 #: blocks/src/block/navicard/index.js:28
@@ -14505,7 +14505,7 @@ msgid "全期間集計"
 msgstr ""
 
 #: blocks/src/block/popular-list/edit.js:258
-msgid "ランキング番号表示"
+msgid "ランキング番号を表示する"
 msgstr ""
 
 #: blocks/src/block/popular-list/edit.js:265

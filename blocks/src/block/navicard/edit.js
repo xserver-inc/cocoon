@@ -136,7 +136,7 @@ export default function edit( props ) {
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
           <ToggleControl
-            label={ __( '横並び表示', THEME_NAME ) }
+            label={ __( '横並び表示にする', THEME_NAME ) }
             checked={ horizontal }
             onChange={ ( isChecked ) =>
               setAttributes( { horizontal: isChecked } )

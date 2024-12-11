@@ -125,10 +125,10 @@ class NaviEntryWidgetItem extends WP_Widget {
       generate_radiobox_tag($this->get_field_name('entry_type'), $options, $entry_type);
       ?>
     </p>
-    <?php //横型表示 ?>
+    <?php //横並び表示にする ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横型表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横並び表示にする', THEME_NAME ));
         _e( '（「大きなサムネイル」との使用がお勧め）', THEME_NAME )
       ?>
     </p>
