@@ -17,7 +17,7 @@ if (is_user_administrator()
 <div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>">
 
   <?php //PVエリアの表示
-  if (is_singular()) {
+  if (is_singular() && is_admin_panel_pv_area_visible()) {
     cocoon_template_part('tmp/admin-pv');
   }
    ?>
