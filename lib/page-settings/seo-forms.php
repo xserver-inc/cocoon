@@ -76,7 +76,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
 
             //JSON-LD
-            generate_checkbox_tag(OP_JSON_LD_TAG_ENABLE, is_json_ld_tag_enable(), __( 'JSON-LDを出力', THEME_NAME ));
+            generate_checkbox_tag(OP_JSON_LD_TAG_ENABLE, is_json_ld_tag_enable(), __( 'JSON-LDを出力する', THEME_NAME ));
             generate_tips_tag(__( '構造化データのJSON-LD情報をヘッダーに出力するかどうか。', THEME_NAME ));
 
             ?>
