@@ -49,13 +49,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_CODE_HIGHLIGHT_ENABLE, is_code_highlight_enable(), __( 'ソースコードをハイライト表示', THEME_NAME ));
+            generate_checkbox_tag( OP_CODE_HIGHLIGHT_ENABLE, is_code_highlight_enable(), __( 'ソースコードをハイライト表示する', THEME_NAME ));
             generate_tips_tag(__( '本文中に表示されているpreタグ中のソースコードをハイライト表示します。', THEME_NAME ));
             echo '<br>';
             ?>
             <div class="indent">
               <?php
-              generate_checkbox_tag( OP_CODE_ROW_NUMBER_ENABLE, is_code_row_number_enable(), __( '行番号表示', THEME_NAME ));
+              generate_checkbox_tag( OP_CODE_ROW_NUMBER_ENABLE, is_code_row_number_enable(), __( '行番号を表示する', THEME_NAME ));
               generate_tips_tag(__( 'ソースコード左側に行番号を表示します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/max-code-row-count/'));
               ?>
             </div>

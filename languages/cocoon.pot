@@ -6094,7 +6094,7 @@ msgid "ハイライト表示"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:52
-msgid "ソースコードをハイライト表示"
+msgid "ソースコードをハイライト表示する"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:53
@@ -6102,7 +6102,7 @@ msgid "本文中に表示されているpreタグ中のソースコードをハ�
 msgstr ""
 
 #: lib/page-settings/code-forms.php:58
-msgid "行番号表示"
+msgid "行番号を表示する"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:59

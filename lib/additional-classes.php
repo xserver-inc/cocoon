@@ -371,7 +371,7 @@ function get_additional_entry_content_classes($option = null){
       break;
   }
 
-  //行番号表示
+  //行番号を表示する
   if (is_code_row_number_enable()) {
     $classes .= ' is-code-row-number-enable';
   }

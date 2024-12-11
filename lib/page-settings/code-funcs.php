@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//ソースコードをハイライト表示するか
+//ソースコードをハイライト表示する
 define('OP_CODE_HIGHLIGHT_ENABLE', 'code_highlight_enable');
 if ( !function_exists( 'is_code_highlight_enable' ) ):
 function is_code_highlight_enable(){
@@ -15,7 +15,7 @@ function is_code_highlight_enable(){
 }
 endif;
 
-//ソースコードの行番号を表示するか
+//行番号を表示する
 define('OP_CODE_ROW_NUMBER_ENABLE', 'code_row_number_enable');
 if ( !function_exists( 'is_code_row_number_enable' ) ):
 function is_code_row_number_enable(){
