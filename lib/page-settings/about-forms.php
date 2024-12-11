@@ -14,6 +14,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <div class="inside">
 
     <p><?php echo THEME_NAME_CAMEL; ?><?php _e( '環境に関する情報です。', THEME_NAME ) ?></p>
+
+    <?php //https環境ではブラウザのクリップボードAPIを利用する
+    if (is_ssl()): ?>
+      <p><button class="copy-button button"><?php _e( '環境情報をコピー', THEME_NAME ) ?></button></p>
+      <div class="copy-info"><?php _e('環境情報をコピーしました', THEME_NAME); ?></div>
+    <?php endif; ?>
     <?php
     $sep = '----------------------------------------------'.PHP_EOL;
     $all = $sep;
@@ -152,9 +158,28 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     //var_dump($all);
      ?>
-    <pre><?php echo $all; ?></pre>
-    <p><?php _e( '不具合報告の際には以下の情報を添えてもらうと助かります。', THEME_NAME ) ?></p>
-    <textarea style="width: 100%;height: 400px"><?php echo $all; ?></textarea>
+    <pre class="env-info"><?php echo $all; ?></pre>
+    <p><?php _e( '不具合報告の際には上記の情報を添えてもらうと助かります。', THEME_NAME ) ?></p>
+    <?php //https環境ではブラウザのクリップボードAPIを利用する
+    if (is_ssl()): ?>
+      <p><button class="copy-button button"><?php _e( '環境情報をコピー', THEME_NAME ) ?></button></p>
+      <div class="copy-info"><?php _e('環境情報をコピーしました', THEME_NAME); ?></div>
+      <script>
+      (function($){
+        const selector = '.copy-button';//clipboardで使う要素を指定
+        $(selector).click(function(event){
+          //クリック動作をキャンセル
+          event.preventDefault();
+          //クリップボード動作
+          navigator.clipboard.writeText($('.env-info').text()).then(
+            () => {
+              $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+            });
+        });
+      })(jQuery);
+      </script>
+    <?php endif; ?>
+    <!-- <textarea style="width: 100%;height: 400px"><?php echo $all; ?></textarea> -->
 
 
   </div>

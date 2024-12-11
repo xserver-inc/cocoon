@@ -211,6 +211,23 @@ body.wp-admin {
   opacity: 0.7;
 }
 
+.copy-info, .admin-settings .demo .copy-info {
+  display: none;
+  /*初期状態は非表示*/
+  padding: 1em 2em;
+  color: #fff;
+  border-radius: 8px;
+  /*画面上部に表示*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--cocoon-text-color);
+  opacity: 0.8;
+  box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
+  z-index: 2;
+}
+
 .snippet-list {
   padding: 20px;
   display: flex;
@@ -2098,22 +2115,6 @@ body.wp-admin {
 }
 .admin-settings .demo .sbc-hide .share-count {
   display: none;
-}
-.admin-settings .demo .copy-info {
-  display: none;
-  /*初期状態は非表示*/
-  padding: 1em 2em;
-  color: #fff;
-  border-radius: 8px;
-  /*画面上部に表示*/
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--cocoon-text-color);
-  opacity: 0.8;
-  box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
-  z-index: 2;
 }
 .admin-settings .demo .article-header .sns-share:not(:has(.sns-button)),
 .admin-settings .demo .article-footer .sns-share:not(:has(.sns-button)) {
@@ -10641,22 +10642,6 @@ body.wp-admin {
 }
 .admin-settings .demo .sbc-hide .share-count {
   display: none;
-}
-.admin-settings .demo .copy-info {
-  display: none;
-  /*初期状態は非表示*/
-  padding: 1em 2em;
-  color: #fff;
-  border-radius: 8px;
-  /*画面上部に表示*/
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--cocoon-text-color);
-  opacity: 0.8;
-  box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
-  z-index: 2;
 }
 .admin-settings .demo .article-header .sns-share:not(:has(.sns-button)),
 .admin-settings .demo .article-footer .sns-share:not(:has(.sns-button)) {
