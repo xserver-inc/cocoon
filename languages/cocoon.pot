@@ -12040,7 +12040,7 @@ msgid "おすすめカード一覧を表示するウィジェットです。"
 msgstr ""
 
 #: lib/widgets/recommended-cards.php:118
-msgid "余白を有効にする"
+msgid "おすすめカード毎に余白を設ける"
 msgstr ""
 
 #: lib/widgets/related-entries.php:20
