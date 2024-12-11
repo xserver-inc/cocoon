@@ -7959,7 +7959,7 @@ msgid "OGPの有効化"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:29
-msgid "OGPタグの挿入"
+msgid "OGPタグを挿入する"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:30
@@ -7991,7 +7991,7 @@ msgid "Twitterカードの有効化"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:76
-msgid "Twitterカードタグの挿入"
+msgid "Twitterカードタグを挿入する"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:77
