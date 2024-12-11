@@ -8043,7 +8043,7 @@ msgid "簡単SSL対応"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:28
-msgid "内部URLをSSL対応（簡易版）"
+msgid "内部URLをSSL対応する（簡易版）"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:29
