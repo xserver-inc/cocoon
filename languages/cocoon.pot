@@ -6894,7 +6894,7 @@ msgstr ""
 
 #: lib/page-settings/editor-forms.php:166
 #: lib/widgets/popular-entries.php:213
-msgid "ランキング表示"
+msgid "ランキング番号を表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:167
