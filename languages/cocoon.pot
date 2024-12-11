@@ -2746,7 +2746,7 @@ msgid "テーマ独自のアクセス集計機能の設定です。"
 msgstr ""
 
 #: lib/page-access/access-forms.php:30
-msgid "アクセス集計の有効化"
+msgid "アクセス集計を有効にする"
 msgstr ""
 
 #: lib/page-access/access-forms.php:31
@@ -10472,7 +10472,7 @@ msgid "ブラウザキャッシュを設定します。ブラウザキャッシ�
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュの有効化"
+msgid "ブラウザキャッシュを有効にする"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:30

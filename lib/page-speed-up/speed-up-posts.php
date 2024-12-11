@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//ブラウザキャッシュの有効化
+//ブラウザキャッシュを有効にする
 update_theme_option(OP_BROWSER_CACHE_ENABLE);
 if (DEBUG_MODE) {
   //ハイスピードモードを有効にするか
