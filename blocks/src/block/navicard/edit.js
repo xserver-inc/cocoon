@@ -103,7 +103,7 @@ export default function edit( props ) {
             onChange={ ( newType ) => setAttributes( { menuType: newType } ) }
             options={ [
               {
-                label: __( '通常のリスト', THEME_NAME ),
+                label: __( 'デフォルト', THEME_NAME ),
                 value: 'default',
               },
               {

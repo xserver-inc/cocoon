@@ -14345,7 +14345,7 @@ msgstr ""
 #: blocks/src/block/navicard/edit.js:106
 #: blocks/src/block/new-list/edit.js:139
 #: blocks/src/block/popular-list/edit.js:218
-msgid "通常のリスト"
+msgid "デフォルト"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:110
