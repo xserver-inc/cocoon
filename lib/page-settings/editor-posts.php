@@ -73,7 +73,7 @@ update_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E);
 //拡張カラーパレット色F
 update_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F);
 
-//タイトル等の文字数カウンター表示
+//タイトル等の文字数カウンターを表示する
 update_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE);
 
 //ページ公開前に確認アラートを出す

@@ -225,7 +225,7 @@ function get_block_editor_extended_palette_color_f(){
 }
 endif;
 
-//タイトル等の文字数カウンター表示
+//タイトル等の文字数カウンターを表示する
 define('OP_ADMIN_EDITOR_COUNTER_VISIBLE', 'admin_editor_counter_visible');
 if ( !function_exists( 'is_admin_editor_counter_visible' ) ):
 function is_admin_editor_counter_visible(){

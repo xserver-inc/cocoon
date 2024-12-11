@@ -6773,7 +6773,7 @@ msgid "文字カウンター"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:57
-msgid "タイトル等の文字数カウンター表示"
+msgid "タイトル等の文字数カウンターを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:58
@@ -6813,7 +6813,7 @@ msgid "ブロックエディターのみに適用される設定です。"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:117
-msgid "「ふりがな（ルビ）」ボタン表示"
+msgid "「ふりがな（ルビ）」ボタンを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:118
@@ -6821,7 +6821,7 @@ msgid "Cocoonの「ルビ」ボタン表示を切り替えます。プラグイ�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:122
-msgid "「書式のクリア」ボタン表示"
+msgid "「書式のクリア」ボタンを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:123
@@ -6833,7 +6833,7 @@ msgid "スタイルドロップダウン"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:135
-msgid "文字スタイル表示"
+msgid "文字スタイルを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:136
@@ -6841,7 +6841,7 @@ msgid "ツールバーの文字スタイルドロップダウンを表示する�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:138
-msgid "マーカー表示"
+msgid "マーカーを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:139
@@ -6849,7 +6849,7 @@ msgid "ツールバーのマーカースタイルドロップダウンを表示�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:141
-msgid "バッジ表示"
+msgid "バッジを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:142
@@ -6857,7 +6857,7 @@ msgid "ツールバーのバッジスタイルドロップダウンを表示す�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:144
-msgid "文字サイズ表示"
+msgid "文字サイズを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:145
@@ -6869,7 +6869,7 @@ msgid "ショートコードドロップダウン"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:157
-msgid "汎用ショートコード表示"
+msgid "汎用ショートコードを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:158
@@ -6877,7 +6877,7 @@ msgid "ツールバーの汎用ショートコードドロップダウンを表�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:160
-msgid "テンプレート表示"
+msgid "テンプレート表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:161
@@ -6885,7 +6885,7 @@ msgid "ツールバーのテンプレートショートコードドロップダ�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:163
-msgid "アフィリエイト表示"
+msgid "アフィリエイトを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:164
