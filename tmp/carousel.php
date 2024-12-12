@@ -9,28 +9,30 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 if (is_carousel_visible() && !is_amp() && apply_filters('carousel_visible', true)): ?>
 <?php //カルーセルに関連付けられた投稿の取得
+$max_count = get_carousel_max_count();
+if (empty($max_count)) {
+  $max_count = CAROUSEL_MAX_COUNT;
+}
 $args = array(
-  // 'category__in' => get_carousel_category_ids(),
-  'tag__in' => get_carousel_tag_ids(),
   'orderby' => get_carousel_orderby(), //ランダム表示
   'no_found_rows' => true,
-  'posts_per_page' => get_carousel_max_count(),
+  'posts_per_page' => $max_count,
 );
 //人気記事が有効の場合
 if ( is_carousel_popular_posts_enable()) {
   $days = get_carousel_popular_posts_count_days();
-  $limit = intval(get_carousel_max_count()) * 5;
-  $category_ids = is_array(get_carousel_category_ids()) ? get_carousel_category_ids() : array();
-  $records = get_access_ranking_records($days, $limit, 'post', $category_ids);//カテゴリーで絞り込み
+  $limit = intval($max_count) * 5;
+  $records = get_access_ranking_records($days, $limit, 'post');
   $post_ids = array();
   //取得した投稿IDをセット
   foreach ($records as $post) {
     $post_ids[] = $post->ID; // 配列に追加
   }
   $args += array('post__in' => $post_ids);
-} else {
-  //人気記事じゃない場合
+} elseif (get_carousel_category_ids()) {//カテゴリー
   $args += array('category__in' => get_carousel_category_ids());
+} else {//タグ
+  $args += array('tag__in' => get_carousel_tag_ids());
 }
 $args = apply_filters('cocoon_carousel_args', $args);
 $query = new WP_Query( $args );

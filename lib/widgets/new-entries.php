@@ -195,10 +195,10 @@ class NewEntryWidgetItem extends WP_Widget {
       generate_radiobox_tag($this->get_field_name('entry_type'), $options, $entry_type);
       ?>
     </p>
-    <?php //横型表示 ?>
+    <?php //横並び表示にする ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横型表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横並び表示にする', THEME_NAME ));
         _e( '（「大きなサムネイル」との使用がお勧め）', THEME_NAME )
       ?>
     </p>
@@ -208,22 +208,22 @@ class NewEntryWidgetItem extends WP_Widget {
         generate_checkbox_tag($this->get_field_name('is_bold') , $is_bold, __( 'タイトルを太字にする', THEME_NAME ));
       ?>
     </p>
-    <?php //矢印表示 ?>
+    <?php //カードに矢印を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( '矢印表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( 'カードに矢印を表示する', THEME_NAME ));
       ?>
     </p>
     <?php //固定表示記事を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_sticky_visible') , $is_sticky_visible, __( '「固定表示」記事を表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_sticky_visible') , $is_sticky_visible, __( '「固定表示」記事を表示する', THEME_NAME ));
       ?>
     </p>
-    <?php //更新日順に並べ替え ?>
+    <?php //更新日順に並べ替える ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_modified_enable') , $is_modified_enable, __( '更新日順に並び替え', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_modified_enable') , $is_modified_enable, __( '更新日順に並び替える', THEME_NAME ));
       ?>
     </p>
     <?php //除外投稿ID ?>

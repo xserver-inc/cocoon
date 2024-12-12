@@ -57,9 +57,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_COMMENT_HEADING, get_comment_heading(), __( '見出し', THEME_NAME ));
+            generate_textbox_tag(OP_COMMENT_HEADING, get_comment_heading(), COMMENT_HEADING);
             generate_tips_tag(__( 'コメント一覧の見出しを入力してください。', THEME_NAME ));
-            generate_textbox_tag(OP_COMMENT_SUB_HEADING, get_comment_sub_heading(), __( 'サブ見出し', THEME_NAME ));
+            generate_textbox_tag(OP_COMMENT_SUB_HEADING, get_comment_sub_heading(), '');
             generate_tips_tag(__( 'コメント一覧の補助となる見出しを入力してください。', THEME_NAME ));
             ?>
           </td>
@@ -92,7 +92,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_COMMENT_FORM_HEADING, get_comment_form_heading(), __( '見出し', THEME_NAME ));
+            generate_textbox_tag(OP_COMMENT_FORM_HEADING, get_comment_form_heading(), COMMENT_FORM_HEADING);
             generate_tips_tag(__( 'コメント入力欄の見出しを入力してください。', THEME_NAME ));
             ?>
           </td>
@@ -131,7 +131,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_COMMENT_SUBMIT_LABEL, get_comment_submit_label(), __( 'コメントを送信', THEME_NAME ));
+            generate_textbox_tag(OP_COMMENT_SUBMIT_LABEL, get_comment_submit_label(), COMMENT_SUBMIT_LABEL);
             generate_tips_tag(__( 'コメントの送信ボタンのラベルテキストを入力してください。', THEME_NAME ));
             ?>
           </td>

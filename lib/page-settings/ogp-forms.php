@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             //OGPタグ
-            generate_checkbox_tag(OP_FACEBOOK_OGP_ENABLE, is_facebook_ogp_enable(), __( 'OGPタグの挿入', THEME_NAME ));
+            generate_checkbox_tag(OP_FACEBOOK_OGP_ENABLE, is_facebook_ogp_enable(), __( 'OGPタグを挿入する', THEME_NAME ));
             generate_tips_tag(__( 'headタグ内にFacebookや外部サイトなどに、ページの概要情報伝えるタグを挿入します。', THEME_NAME ));
             ?>
           </td>
@@ -73,7 +73,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
 
             //Twitterカードタグ
-            generate_checkbox_tag(OP_TWITTER_CARD_ENABLE, is_twitter_card_enable(), __( 'Twitterカードタグの挿入', THEME_NAME ));
+            generate_checkbox_tag(OP_TWITTER_CARD_ENABLE, is_twitter_card_enable(), __( 'Twitterカードタグを挿入する', THEME_NAME ));
             generate_tips_tag(__( 'headタグ内にTwitterに対して、ページの概要情報伝えるタグを挿入します。', THEME_NAME ));
 
             ?>

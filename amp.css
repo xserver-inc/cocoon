@@ -192,6 +192,23 @@
   opacity: 0.7;
 }
 
+.copy-info {
+  display: none;
+  /*初期状態は非表示*/
+  padding: 1em 2em;
+  color: #fff;
+  border-radius: 8px;
+  /*画面上部に表示*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--cocoon-text-color);
+  opacity: 0.8;
+  box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
+  z-index: 2;
+}
+
 .fz-12px {
   font-size: 12px;
 }
@@ -1702,23 +1719,6 @@ img.emoji {
 }
 
 /* メッセージ */
-.copy-info {
-  display: none;
-  /*初期状態は非表示*/
-  padding: 1em 2em;
-  color: #fff;
-  border-radius: 8px;
-  /*画面上部に表示*/
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--cocoon-text-color);
-  opacity: 0.8;
-  box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
-  z-index: 2;
-}
-
 .article-header .sns-share:not(:has(.sns-button)),
 .article-footer .sns-share:not(:has(.sns-button)) {
   display: none;
@@ -6454,7 +6454,7 @@ figcaption {
   width: 46px;
   border: 1px solid var(--cocoon-thin-color);
   margin: 0 4px;
-  line-height: 40px;
+  line-height: 44px;
   text-align: center;
   border-radius: var(--cocoon-basic-border-radius);
   font-size: 16px;
@@ -7849,6 +7849,7 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-button:hover .menu-button-in {
   opacity: 0.8;
 }
+.mobile-menu-buttons .ad-area,
 .mobile-menu-buttons .widget:has(.ad-area) {
   display: none;
 }
@@ -11010,19 +11011,19 @@ pre {
   .e-card-meta {
     margin-top: 2px;
   }
-  .ect-entry-card .card-thumb,
-  .rect-entry-card .card-thumb,
-  .ect-big-card-first .card-thumb {
-    margin-bottom: 6px;
+  .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-thumb,
+  .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-thumb,
+  .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-thumb {
+    margin-bottom: 22px;
   }
-  .ect-entry-card .card-content,
-  .rect-entry-card .card-content,
-  .ect-big-card-first .card-content {
+  .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-content,
+  .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-content,
+  .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-content {
     margin: 0;
   }
-  .ect-entry-card .card-meta,
-  .rect-entry-card .card-meta,
-  .ect-big-card-first .card-meta {
+  .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-meta,
+  .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-meta,
+  .ect-big-card-first .a-wrap:not(.ec-big-card-first) .card-meta {
     clear: both;
   }
   .list .ect-vertical-card > * {

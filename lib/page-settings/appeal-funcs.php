@@ -63,7 +63,7 @@ endif;
 define('OP_APPEAL_AREA_HEIGHT', 'appeal_area_height');
 if ( !function_exists( 'get_appeal_area_height' ) ):
 function get_appeal_area_height(){
-  return get_theme_option(OP_APPEAL_AREA_HEIGHT);
+  return get_theme_option(OP_APPEAL_AREA_HEIGHT, '');
 }
 endif;
 
@@ -71,7 +71,7 @@ endif;
 define('OP_APPEAL_AREA_IMAGE_URL', 'appeal_area_image_url');
 if ( !function_exists( 'get_appeal_area_image_url' ) ):
 function get_appeal_area_image_url(){
-  return get_theme_option(OP_APPEAL_AREA_IMAGE_URL);
+  return get_theme_option(OP_APPEAL_AREA_IMAGE_URL, '');
 }
 endif;
 
@@ -79,7 +79,7 @@ endif;
 define('OP_APPEAL_AREA_BACKGROUND_COLOR', 'appeal_area_background_color');
 if ( !function_exists( 'get_appeal_area_background_color' ) ):
 function get_appeal_area_background_color(){
-  return get_theme_option(OP_APPEAL_AREA_BACKGROUND_COLOR);
+  return get_theme_option(OP_APPEAL_AREA_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -103,7 +103,7 @@ endif;
 define('OP_APPEAL_AREA_TITLE', 'appeal_area_title');
 if ( !function_exists( 'get_appeal_area_title' ) ):
 function get_appeal_area_title(){
-  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_TITLE));
+  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_TITLE, ''));
 }
 endif;
 
@@ -111,7 +111,7 @@ endif;
 define('OP_APPEAL_AREA_MESSAGE', 'appeal_area_message');
 if ( !function_exists( 'get_appeal_area_message' ) ):
 function get_appeal_area_message(){
-  $appeal_area_message = stripslashes_deep(get_theme_option(OP_APPEAL_AREA_MESSAGE));
+  $appeal_area_message = stripslashes_deep(get_theme_option(OP_APPEAL_AREA_MESSAGE, ''));
   return $appeal_area_message;
 }
 endif;
@@ -120,7 +120,7 @@ endif;
 define('OP_APPEAL_AREA_BUTTON_MESSAGE', 'appeal_area_button_message');
 if ( !function_exists( 'get_appeal_area_button_message' ) ):
 function get_appeal_area_button_message(){
-  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_BUTTON_MESSAGE));
+  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_BUTTON_MESSAGE, ''));
 }
 endif;
 
@@ -128,7 +128,7 @@ endif;
 define('OP_APPEAL_AREA_BUTTON_URL', 'appeal_area_button_url');
 if ( !function_exists( 'get_appeal_area_button_url' ) ):
 function get_appeal_area_button_url(){
-  return get_theme_option(OP_APPEAL_AREA_BUTTON_URL);
+  return get_theme_option(OP_APPEAL_AREA_BUTTON_URL, '');
 }
 endif;
 
@@ -144,6 +144,6 @@ endif;
 define('OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR', 'appeal_area_button_background_color');
 if ( !function_exists( 'get_appeal_area_button_background_color' ) ):
 function get_appeal_area_button_background_color(){
-  return get_theme_option(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR);
+  return get_theme_option(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR, '');
 }
 endif;

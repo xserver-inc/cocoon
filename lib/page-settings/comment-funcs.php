@@ -26,10 +26,11 @@ function is_comment_display_type_simple_thread(){
 endif;
 
 //コメントの見出し
+define('COMMENT_HEADING', __( 'コメント', THEME_NAME ));
 define('OP_COMMENT_HEADING', 'comment_heading');
 if ( !function_exists( 'get_comment_heading' ) ):
 function get_comment_heading(){
-  return stripslashes_deep(get_theme_option(OP_COMMENT_HEADING, __( 'コメント', THEME_NAME )));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_HEADING, COMMENT_HEADING));
 }
 endif;
 
@@ -37,7 +38,7 @@ endif;
 define('OP_COMMENT_SUB_HEADING', 'comment_sub_heading');
 if ( !function_exists( 'get_comment_sub_heading' ) ):
 function get_comment_sub_heading(){
-  return stripslashes_deep(get_theme_option(OP_COMMENT_SUB_HEADING));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_SUB_HEADING, ''));
 }
 endif;
 
@@ -60,10 +61,11 @@ function is_comment_form_display_type_toggle_button(){
 endif;
 
 //コメント入力欄の見出し
+define('COMMENT_FORM_HEADING', __( 'コメントをどうぞ', THEME_NAME ));
 define('OP_COMMENT_FORM_HEADING', 'comment_form_heading');
 if ( !function_exists( 'get_comment_form_heading' ) ):
 function get_comment_form_heading(){
-  return stripslashes_deep(get_theme_option(OP_COMMENT_FORM_HEADING, __( 'コメントをどうぞ', THEME_NAME )));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_FORM_HEADING, COMMENT_FORM_HEADING));
 }
 endif;
 
@@ -71,7 +73,7 @@ endif;
 define('OP_COMMENT_INFORMATION_MESSAGE', 'comment_information_message');
 if ( !function_exists( 'get_comment_information_message' ) ):
 function get_comment_information_message(){
-  return stripslashes_deep(get_theme_option(OP_COMMENT_INFORMATION_MESSAGE));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_INFORMATION_MESSAGE, ''));
 }
 endif;
 
@@ -84,9 +86,10 @@ function is_comment_website_visible(){
 endif;
 
 //コメント送信ボタンのラベル
+define('COMMENT_SUBMIT_LABEL', __( 'コメントを送信', THEME_NAME ));
 define('OP_COMMENT_SUBMIT_LABEL', 'comment_submit_label');
 if ( !function_exists( 'get_comment_submit_label' ) ):
 function get_comment_submit_label(){
-  return stripslashes_deep(get_theme_option(OP_COMMENT_SUBMIT_LABEL, __( 'コメントを送信', THEME_NAME )));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_SUBMIT_LABEL, COMMENT_SUBMIT_LABEL));
 }
 endif;

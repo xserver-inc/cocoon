@@ -21,15 +21,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- 管理者向け設定  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( '管理者メニュー', THEME_NAME ) );
+            <?php generate_label_tag('', __( '管理メニュー', THEME_NAME ) );
             generate_preview_tooltip_tag('https://im-cocoon.net/wp-content/uploads/admin-menu.png', __( '管理画面に素早く移動するためのメニューリンクです。', THEME_NAME )); ?>
           </th>
           <td>
             <?php
 
-            //アドミンバーに独自管理メニューを表示
-            generate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'アドミンバーに独自管理メニューを表示', THEME_NAME ));
-            generate_tips_tag(__( '管理者バーに手軽に設定画面にアクセスできるメニューを表示します。', THEME_NAME ));
+            //ツールバー（管理バー）に独自管理メニューを表示する
+            generate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'ツールバー（管理バー）に独自管理メニューを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'ツールバー（管理バー）に手軽に設定画面にアクセスできるメニューを表示します。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -74,11 +74,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- 投稿一覧設定 -->
 <div id="admin-single-index" class="postbox">
-  <h2 class="hndle"><?php _e( '投稿一覧設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( '投稿一覧・固定ページ一覧設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php
-      _e( '管理画面の投稿一覧ページの設定です。', THEME_NAME );
+      _e( '管理画面の投稿一覧・固定ページ一覧ページの設定です。', THEME_NAME );
       generate_help_page_tag('https://wp-cocoon.com/post-columns-switch/');
      ?></p>
 
@@ -96,7 +96,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
 
-            generate_checkbox_tag(OP_ADMIN_LIST_AUTHOR_VISIBLE , is_admin_list_author_visible(), __( '作成者を表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_LIST_AUTHOR_VISIBLE , is_admin_list_author_visible(), __( '投稿者を表示する', THEME_NAME ));
             echo '<br>';
 
             generate_checkbox_tag(OP_ADMIN_LIST_CATEGORIES_VISIBLE , is_admin_list_categories_visible(), __( 'カテゴリーを表示する', THEME_NAME ));
@@ -112,7 +112,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ADMIN_LIST_DATE_VISIBLE , is_admin_list_date_visible(), __( '日付を表示する', THEME_NAME ));
             echo '<br>';
 
-            generate_checkbox_tag(OP_ADMIN_LIST_POST_ID_VISIBLE , is_admin_list_post_id_visible(), __( '投稿IDを表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_LIST_POST_ID_VISIBLE , is_admin_list_post_id_visible(), __( 'IDを表示する', THEME_NAME ));
             echo '<br>';
 
             generate_checkbox_tag(OP_ADMIN_LIST_WORD_COUNT_VISIBLE , is_admin_list_word_count_visible(), __( '文字数を表示する', THEME_NAME ));
@@ -160,9 +160,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php            $options = array(
-              'all' => __( '全て表示', THEME_NAME ),
-              'pc_only' => __( 'PCのみ表示', THEME_NAME ),
-              'mobile_only' => __( 'モバイルのみ表示', THEME_NAME ),
+              'all' => __( '全て表示する', THEME_NAME ),
+              'pc_only' => __( 'PCのみ表示する', THEME_NAME ),
+              'mobile_only' => __( 'モバイルのみ表示する', THEME_NAME ),
               'none' => __( '表示しない', THEME_NAME ),
             );
             generate_selectbox_tag(OP_ADMIN_PANEL_DISPLAY_TYPE, $options, get_admin_panel_display_type());
@@ -181,33 +181,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ADMIN_PANEL_PV_AREA_VISIBLE, is_admin_panel_pv_area_visible(), __( 'PVエリアを表示する', THEME_NAME ));
             generate_tips_tag(__( '管理者パネル内のPVエリアを表示します。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-panel-pv.png'));
             ?>
-            <div class="indent">
-              <?php
-              //インデックスのエントリーカードにPV数を表示
-              generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), __( 'インデックスにPV数を表示', THEME_NAME ));
-              generate_tips_tag(__( 'インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/admin-index-pv/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-index-pv.png'));
-               ?>
-              <span><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
-              <?php
-              $theme = '';
-              //テーマのアクセス取得が有効でないとき
-              if (!is_access_count_enable()) {
-                $theme = '<span class="red">'.__( '※テーマのアクセス集計が有効になっていません。', THEME_NAME ).'</span>';
-              }
-              $jet = '';
-              //Jetpackの統計機能が有効でないとき
-              if (!is_jetpack_stats_module_active()) {
-                $jet = '<span class="red">'.__( '※Jetpackの統計機能が有効になっていません。', THEME_NAME ).'</span>';
-              }
-              $options = array(
-                THEME_NAME => __( 'テーマ独自', THEME_NAME ).$theme,
-                'jetpack' => __( 'Jetpack', THEME_NAME ).$jet,
-              );
-              generate_radiobox_tag(OP_ADMIN_PANEL_PV_TYPE, $options, get_admin_panel_pv_type());
-              generate_tips_tag(__( '管理者パネルで表示するPVの取得方法を選択します。', THEME_NAME ));
-
-               ?>
-            </div>
           </td>
         </tr>
 
@@ -224,8 +197,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
             <div class="indent">
               <?php
-              generate_checkbox_tag(OP_ADMIN_PANEL_WP_DASHBOARD_VISIBLE , is_admin_panel_wp_dashboard_visible(), __( 'ダッシュボードリンクの表示', THEME_NAME ));
-              generate_tips_tag(__( 'Wordpressのダッシュボードに移動するためのリンクです。', THEME_NAME ));
+              generate_checkbox_tag(OP_ADMIN_PANEL_WP_DASHBOARD_VISIBLE , is_admin_panel_wp_dashboard_visible(), __( 'ダッシュボードリンクを表示する', THEME_NAME ));
+              generate_tips_tag(__( 'WordPressのダッシュボードに移動するためのリンクです。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_PANEL_WP_EDIT_VISIBLE , is_admin_panel_wp_edit_visible(), __( '投稿編集リンクの表示', THEME_NAME ));
               generate_tips_tag(__( 'WordPress管理画面で投稿内容を編集するためのリンクです。', THEME_NAME ));
@@ -292,8 +265,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               generate_checkbox_tag(OP_ADMIN_SEOCHEKI_VISIBLE, is_admin_seocheki_visible(), __( 'SEOチェキを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="http://seocheki.net/" target="_blank" rel="noopener">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。', THEME_NAME ));
 
-              generate_checkbox_tag(OP_ADMIN_TWEET_CHECK_VISIBLE, is_admin_tweet_check_visible(), __( 'ツイートチェックを表示する', THEME_NAME ));
-              generate_tips_tag(__( '投稿・固定ページに対するツイートチェックリンクの表示。', THEME_NAME ));
+              generate_checkbox_tag(OP_ADMIN_TWEET_CHECK_VISIBLE, is_admin_tweet_check_visible(), __( 'ツイート検索を表示する', THEME_NAME ));
+              generate_tips_tag(__( '投稿・固定ページ・インデックスページに対するツイート検索リンクの表示。', THEME_NAME ));
                ?>
             </div>
           </td>
@@ -306,7 +279,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, is_admin_panel_responsive_tools_area_visible(), __( 'レスポンシブチェックを表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, is_admin_panel_responsive_tools_area_visible(), __( 'レスポンシブチェックツールエリアを表示する', THEME_NAME ));
             generate_tips_tag(__( 'レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えます。', THEME_NAME ));
             ?>
             <div class="indent">
@@ -325,6 +298,58 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<!-- インデックス設定 -->
+<div id="admin-index_" class="postbox">
+  <h2 class="hndle"><?php _e( 'インデックス設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'インデックスページのエントリーカードに表示されるPVの設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- エントリーカード  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'エントリーカード', THEME_NAME ) );
+            generate_preview_tooltip_tag('https://im-cocoon.net/wp-content/uploads/admin-index-pv.png', __( 'エントリーカードのPV表示エリアの設定です。', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            //インデックスのエントリーカードにPV数を表示
+            generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), __( 'インデックスにPV数を表示する', THEME_NAME ));
+            generate_tips_tag(__( 'インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/admin-index-pv/'));
+              ?>
+            <span><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
+            <?php
+            $theme = '';
+            //テーマのアクセス取得が有効でないとき
+            if (!is_access_count_enable()) {
+              $theme = '<span class="red">'.__( '※テーマのアクセス集計が有効になっていません。', THEME_NAME ).'</span>';
+            }
+            $jet = '';
+            //Jetpackの統計機能が有効でないとき
+            if (!is_jetpack_stats_module_active()) {
+              $jet = '<span class="red">'.__( '※Jetpackの統計機能が有効になっていません。', THEME_NAME ).'</span>';
+            }
+            $options = array(
+              THEME_NAME => __( 'テーマ独自', THEME_NAME ).$theme,
+              'jetpack' => __( 'Jetpack', THEME_NAME ).$jet,
+            );
+            generate_radiobox_tag(OP_ADMIN_PANEL_PV_TYPE, $options, get_admin_panel_pv_type());
+            generate_tips_tag(__( '管理者パネルで表示するPVの取得方法を選択します。', THEME_NAME ));
+
+              ?>
+          </td>
+        </tr>
 
       </tbody>
     </table>

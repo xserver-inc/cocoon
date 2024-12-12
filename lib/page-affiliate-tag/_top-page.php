@@ -34,7 +34,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
 ///////////////////////////////////////
 ?>
 <div class="wrap admin-settings">
-<h1><?php _e( 'アフィリエイトタグ管理', THEME_NAME ) ?></h1>
+<h1><?php _e( 'アフィリエイトタグ', THEME_NAME ) ?></h1>
     <!-- アフィリエイトタグ -->
     <div class="affiliate-tag metabox-holder">
       <div class="operation-buttons">

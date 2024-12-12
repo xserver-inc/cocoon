@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //サイトキーカラー
 define('OP_SITE_KEY_COLOR', 'site_key_color');
 if ( !function_exists( 'get_site_key_color' ) ):
-function get_site_key_color($default = null){
+function get_site_key_color($default = ''){
   return get_theme_option(OP_SITE_KEY_COLOR, $default);
 }
 endif;
@@ -19,7 +19,7 @@ endif;
 define('OP_SITE_KEY_TEXT_COLOR', 'site_key_text_color');
 if ( !function_exists( 'get_site_key_text_color' ) ):
 function get_site_key_text_color(){
-  return get_theme_option(OP_SITE_KEY_TEXT_COLOR);
+  return get_theme_option(OP_SITE_KEY_TEXT_COLOR, '');
 }
 endif;
 
@@ -69,7 +69,7 @@ endif;
 define('OP_SITE_TEXT_COLOR', 'site_text_color');
 if ( !function_exists( 'get_site_text_color' ) ):
 function get_site_text_color(){
-  return get_theme_option(OP_SITE_TEXT_COLOR);
+  return get_theme_option(OP_SITE_TEXT_COLOR, '');
 }
 endif;
 
@@ -108,7 +108,7 @@ endif;
 define('OP_SITE_BACKGROUND_COLOR', 'site_background_color');
 if ( !function_exists( 'get_site_background_color' ) ):
 function get_site_background_color(){
-  return get_theme_option(OP_SITE_BACKGROUND_COLOR);
+  return get_theme_option(OP_SITE_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -116,7 +116,7 @@ endif;
 define('OP_SITE_BACKGROUND_IMAGE_URL', 'site_background_image_url');
 if ( !function_exists( 'get_site_background_image_url' ) ):
 function get_site_background_image_url(){
-  return get_theme_option(OP_SITE_BACKGROUND_IMAGE_URL);
+  return get_theme_option(OP_SITE_BACKGROUND_IMAGE_URL, '');
 }
 endif;
 
@@ -124,7 +124,7 @@ endif;
 define('OP_SITE_LINK_COLOR', 'site_link_color');
 if ( !function_exists( 'get_site_link_color' ) ):
 function get_site_link_color(){
-  return get_theme_option(OP_SITE_LINK_COLOR);
+  return get_theme_option(OP_SITE_LINK_COLOR, '');
 }
 endif;
 
@@ -132,7 +132,7 @@ endif;
 define('OP_SITE_SELECTION_COLOR', 'site_selection_color');
 if ( !function_exists( 'get_site_selection_color' ) ):
 function get_site_selection_color(){
-  return get_theme_option(OP_SITE_SELECTION_COLOR);
+  return get_theme_option(OP_SITE_SELECTION_COLOR, '');
 }
 endif;
 
@@ -140,7 +140,7 @@ endif;
 define('OP_SITE_SELECTION_BACKGROUND_COLOR', 'site_selection_background_color');
 if ( !function_exists( 'get_site_selection_background_color' ) ):
 function get_site_selection_background_color(){
-  return get_theme_option(OP_SITE_SELECTION_BACKGROUND_COLOR);
+  return get_theme_option(OP_SITE_SELECTION_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -249,9 +249,14 @@ function is_all_thumbnail_visible(){
 endif;
 
 //日付フォーマット
+define('SITE_DATE_FORMAT', __( 'Y.m.d', THEME_NAME ));
 define('OP_SITE_DATE_FORMAT', 'site_date_format');
 if ( !function_exists( 'get_site_date_format' ) ):
 function get_site_date_format(){
-  return get_theme_option(OP_SITE_DATE_FORMAT, __( 'Y.m.d', THEME_NAME ));
+  $site_date_format = get_theme_option(OP_SITE_DATE_FORMAT, SITE_DATE_FORMAT);
+  if (empty($site_date_format)) {
+    $site_date_format = SITE_DATE_FORMAT;
+  }
+  return $site_date_format;
 }
 endif;

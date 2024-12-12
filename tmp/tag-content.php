@@ -12,7 +12,7 @@ $tag_id = get_queried_object_id();
 $eye_catch_url = get_the_tag_eye_catch_url($tag_id);
 $content = get_the_tag_content($tag_id);
 if ($eye_catch_url || $content): ?>
-<article class="tag-content article">
+<article class="tag-content article<?php echo get_additional_entry_content_classes(); ?>">
   <header class="article-header tag-header">
     <?php //タイトル
     cocoon_template_part('tmp/list-title'); ?>

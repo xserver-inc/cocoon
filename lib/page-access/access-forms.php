@@ -27,7 +27,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ACCESS_COUNT_ENABLE , is_access_count_enable(), __( 'アクセス集計の有効化', THEME_NAME ));
+            generate_checkbox_tag(OP_ACCESS_COUNT_ENABLE , is_access_count_enable(), __( 'アクセス集計を有効にする', THEME_NAME ));
             generate_tips_tag(__( '有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的なWordPress Popular Postsプラグインを実装しているようなものなのでレンタルサーバーから負荷が高いといわれたら無効にしてください。', THEME_NAME ));
             ?>
           </td>
@@ -36,20 +36,20 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- キャッシュ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_ACCESS_COUNT_CACHE_ENABLE, __('キャッシュ', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_ACCESS_COUNT_CACHE_ENABLE, __('キャッシュの有効化', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ACCESS_COUNT_CACHE_ENABLE , is_access_count_cache_enable(), __( 'アクセスキャッシュの有効化', THEME_NAME ));
+            generate_checkbox_tag(OP_ACCESS_COUNT_CACHE_ENABLE , is_access_count_cache_enable(), __( 'キャッシュを有効にする', THEME_NAME ));
             generate_tips_tag(__( 'アクセス統計情報の取得は多少なりともサーバーに負荷をかけるのでキャッシュの利用をおすすめします。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- キャッシュ更新間隔 -->
+        <!-- キャッシュ間隔 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_ACCESS_COUNT_CACHE_INTERVAL, __('キャッシュ更新間隔', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_ACCESS_COUNT_CACHE_INTERVAL, __('キャッシュ間隔', THEME_NAME) ); ?>
           </th>
           <td>
             <?php

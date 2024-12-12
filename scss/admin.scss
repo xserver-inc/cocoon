@@ -1099,3 +1099,7 @@ select option.fa{
     bottom: 6px;
   }
 }
+
+.copy-info {
+  @extend %copy_info;
+}

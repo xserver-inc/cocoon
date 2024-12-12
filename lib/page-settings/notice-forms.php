@@ -37,7 +37,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_NOTICE_AREA_VISIBLE , is_notice_area_visible(), __( '通知エリアの表示', THEME_NAME ));
+            generate_checkbox_tag(OP_NOTICE_AREA_VISIBLE , is_notice_area_visible(), __( '通知エリアを表示する', THEME_NAME ));
             generate_tips_tag(__( '通知メッセージを入力して「通知表示」を有効にすればヘッダー下に通知メッセージが表示されます。', THEME_NAME ));
             ?>
           </td>

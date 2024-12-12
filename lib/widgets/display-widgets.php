@@ -160,7 +160,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
 
         <?php if (is_widget_authors_tab_visible()): ?>
         <input id="<?php echo $author_tab_id; ?>" type="radio" name="tab_item">
-        <label id="author-<?php echo $widget_id; ?>" class="author-tab tab-item" for="<?php echo $author_tab_id; ?>"><?php _e( '著者', THEME_NAME ) ?></label>
+        <label id="author-<?php echo $widget_id; ?>" class="author-tab tab-item" for="<?php echo $author_tab_id; ?>"><?php _e( '投稿者', THEME_NAME ) ?></label>
         <?php endif ?>
 
         <input id="<?php echo $post_tab_id; ?>" type="radio" name="tab_item">

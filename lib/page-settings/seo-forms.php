@@ -27,12 +27,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
 
             //canonicalタグ
-            generate_checkbox_tag(OP_CANONICAL_TAG_ENABLE, is_canonical_tag_enable(), __( 'canonicalタグの追加', THEME_NAME ));
+            generate_checkbox_tag(OP_CANONICAL_TAG_ENABLE, is_canonical_tag_enable(), __( 'canonicalタグを追加する', THEME_NAME ));
             generate_tips_tag(__( 'WordPressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。', THEME_NAME ).'<br>'.__( 'この機能を有効にするとトップページやカテゴリーページ等にもcanonicalタグが挿入されます。', THEME_NAME ));
 
             //prev nextタグ
-            generate_checkbox_tag(OP_PREV_NEXT_ENABLE, is_prev_next_enable(), __( '分割ページにrel="next"/"prev"タグの追加', THEME_NAME ));
-            generate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。無効にした場合はWordPressデフォルトのnext/prev設定になります。', THEME_NAME ));
+            generate_checkbox_tag(OP_PREV_NEXT_ENABLE, is_prev_next_enable(), __( '分割ページにrel="next"/"prev"タグを追加する', THEME_NAME ));
+            generate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。', THEME_NAME ));
 
             //カテゴリーページをnoindexとする
             generate_checkbox_tag(OP_CATEGORY_PAGE_NOINDEX, is_category_page_noindex(), __( 'カテゴリーページをnoindexとする', THEME_NAME ));
@@ -76,7 +76,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
 
             //JSON-LD
-            generate_checkbox_tag(OP_JSON_LD_TAG_ENABLE, is_json_ld_tag_enable(), __( 'JSON-LDを出力', THEME_NAME ));
+            generate_checkbox_tag(OP_JSON_LD_TAG_ENABLE, is_json_ld_tag_enable(), __( 'JSON-LDを出力する', THEME_NAME ));
             generate_tips_tag(__( '構造化データのJSON-LD情報をヘッダーに出力するかどうか。', THEME_NAME ));
 
             ?>
@@ -155,10 +155,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'both_date' => __( '投稿日・更新日を表示', THEME_NAME ),
               'post_date_only' => __( '投稿日のみ表示', THEME_NAME ),
               'update_date_only' => __( '更新日のみ表示', THEME_NAME ),
-              'none' => __( '表示しない', THEME_NAME ),
+              // 'none' => __( '表示しない', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());
-            generate_tips_tag(__( '表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方が変わる可能性があります。', THEME_NAME ));
+            generate_tips_tag(__( '表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方が変わる可能性があります。', THEME_NAME ).__( 'この「SEO」での「表示する日付」設定では、「投稿日」か「更新日」いずれかを検索エンジンに伝えたいか出力するhtmlを制御します。', THEME_NAME ).__( '「投稿日・更新日を表示」を選択した場合は、「更新日」が優先して検索エンジンに伝えられます。', THEME_NAME ));
             ?>
           </td>
         </tr>

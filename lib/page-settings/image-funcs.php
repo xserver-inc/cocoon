@@ -23,7 +23,7 @@ function is_eyecatch_label_visible(){
 }
 endif;
 
-//アイキャッチの中央寄せ
+//アイキャッチを中央寄せする
 define('OP_EYECATCH_CENTER_ENABLE', 'eyecatch_center_enable');
 if ( !function_exists( 'is_eyecatch_center_enable' ) ):
 function is_eyecatch_center_enable(){
@@ -188,7 +188,7 @@ endif;
 define('OP_NO_IMAGE_URL', 'no_image_url');
 if ( !function_exists( 'get_no_image_url' ) ):
 function get_no_image_url(){
-  return get_theme_option(OP_NO_IMAGE_URL);
+  return get_theme_option(OP_NO_IMAGE_URL, '');
 }
 endif;
 if ( !function_exists( 'get_no_image_file' ) ):

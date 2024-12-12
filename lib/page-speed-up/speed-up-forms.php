@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_BROWSER_CACHE_ENABLE , is_browser_cache_enable(), __( 'ブラウザキャッシュの有効化', THEME_NAME ));
+            generate_checkbox_tag(OP_BROWSER_CACHE_ENABLE , is_browser_cache_enable(), __( 'ブラウザキャッシュを有効にする', THEME_NAME ));
             generate_tips_tag(__( 'ブラウザキャッシュを有効化することで、訪問者が2回目以降リソースファイルをサーバーから読み込む時間を軽減できます。', THEME_NAME ));
             ?>
           </td>

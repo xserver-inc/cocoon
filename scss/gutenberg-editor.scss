@@ -1246,7 +1246,9 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   column-gap: 0;
+
   .display-none{
     display: none !important;
   }
@@ -1504,4 +1506,11 @@ body .is-layout-grid {
 
 .components-base-control__label{
   text-transform: initial !important;
+}
+
+.icon-setting-buttons .components-button[class*="fab"]{
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: inline-block;
 }

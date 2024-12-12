@@ -7,10 +7,10 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//canonicalタグの追加
+//canonicalタグを追加する
 update_theme_option(OP_CANONICAL_TAG_ENABLE);
 
-//分割ページにrel="next"/"prev"タグの追加
+//分割ページにrel="next"/"prev"タグを追加する
 update_theme_option(OP_PREV_NEXT_ENABLE);
 
 //カテゴリーページをnoindexとする

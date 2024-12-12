@@ -478,7 +478,7 @@ function customize_admin_bar_menu($wp_admin_bar){
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-theme-ranking', // 子メニューID
       'meta'   => array(),
-      'title'  => __( 'ランキング作成', THEME_NAME ), // ラベル
+      'title'  => __( 'ランキング', THEME_NAME ), // ラベル
       'href'   => admin_url('admin.php?page=theme-ranking') // ページURL
     ));
     $wp_admin_bar->add_menu(array(

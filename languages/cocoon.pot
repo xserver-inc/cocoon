@@ -1352,7 +1352,7 @@ msgstr ""
 
 #: lib/admin.php:481
 #: lib/original-menu.php:36
-msgid "ランキング作成"
+msgid "ランキング"
 msgstr ""
 
 #: lib/admin.php:488
@@ -2746,7 +2746,7 @@ msgid "テーマ独自のアクセス集計機能の設定です。"
 msgstr ""
 
 #: lib/page-access/access-forms.php:30
-msgid "アクセス集計の有効化"
+msgid "アクセス集計を有効にする"
 msgstr ""
 
 #: lib/page-access/access-forms.php:31
@@ -3050,7 +3050,7 @@ msgid "アフィリエイトタグが入力されていません。"
 msgstr ""
 
 #: lib/page-affiliate-tag/_top-page.php:37
-msgid "アフィリエイトタグ管理"
+msgid "アフィリエイトタグ"
 msgstr ""
 
 #: lib/page-affiliate-tag/_top-page.php:41
@@ -3241,7 +3241,7 @@ msgid "内容が入力されていません。"
 msgstr ""
 
 #: lib/page-func-text/_top-page.php:37
-msgid "テキストテンプレート"
+msgid "テンプレート"
 msgstr ""
 
 #: lib/page-func-text/_top-page.php:45
@@ -3752,7 +3752,7 @@ msgid "管理画面の機能設定です。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:24
-msgid "管理者メニュー"
+msgid "管理メニュー"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:25
@@ -3760,7 +3760,7 @@ msgid "管理画面に素早く移動するためのメニューリンクです�
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:31
-msgid "アドミンバーに独自管理メニューを表示"
+msgid "ツールバー（管理バー）に独自管理メニューを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:32
@@ -3808,7 +3808,7 @@ msgid "投稿・固定ページ記事一覧テーブルのカラム操作。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:99
-msgid "作成者を表示する"
+msgid "投稿者を表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:102
@@ -3830,7 +3830,7 @@ msgid "日付を表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:115
-msgid "投稿IDを表示する"
+msgid "IDを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:118
@@ -3874,15 +3874,15 @@ msgid "管理者用のPV表示エリア、各種チェックツール表示用�
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:163
-msgid "全て表示"
+msgid "全て表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:164
-msgid "PCのみ表示"
+msgid "PCのみ表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:165
-msgid "モバイルのみ表示"
+msgid "モバイルのみ表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:166
@@ -4118,7 +4118,7 @@ msgid "広告の表示"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:26
-msgid "全ての広告を表示"
+msgid "全ての広告を表示する"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:27
@@ -4153,7 +4153,7 @@ msgid "アドセンス広告の表示"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:69
-msgid "全てのアドセンス広告を表示"
+msgid "全てのアドセンス広告を表示する"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:70
@@ -5608,7 +5608,7 @@ msgid "アピールエリアの背景に表示する画像を設定します。"
 msgstr ""
 
 #: lib/page-settings/appeal-forms.php:76
-msgid "アピールエリア背景画像の固定"
+msgid "アピールエリアの背景画像を固定する"
 msgstr ""
 
 #: lib/page-settings/appeal-forms.php:77
@@ -5945,7 +5945,7 @@ msgid "カルーセルを表示するページを設定します。"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:49
-msgid "スマートフォンで表示（480px以下）"
+msgid "スマートフォンで表示する（480px以下）"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:57
@@ -6062,7 +6062,7 @@ msgid "オートプレイ"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:140
-msgid "オートプレイを実行"
+msgid "オートプレイを実行する"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:141
@@ -6094,7 +6094,7 @@ msgid "ハイライト表示"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:52
-msgid "ソースコードをハイライト表示"
+msgid "ソースコードをハイライト表示する"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:53
@@ -6102,7 +6102,7 @@ msgid "本文中に表示されているpreタグ中のソースコードをハ�
 msgstr ""
 
 #: lib/page-settings/code-forms.php:58
-msgid "行番号表示"
+msgid "行番号を表示する"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:59
@@ -6483,7 +6483,7 @@ msgstr ""
 
 #: lib/page-settings/content-forms.php:109
 #: lib/page-settings/content-forms.php:232
-msgid "noopenerを追加"
+msgid "noopenerを追加する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:110
@@ -6503,7 +6503,7 @@ msgstr ""
 
 #: lib/page-settings/content-forms.php:118
 #: lib/page-settings/content-forms.php:241
-msgid "noreferrerを追加"
+msgid "noreferrerを追加する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:119
@@ -6522,7 +6522,7 @@ msgid "新しいタブで開くリンクのrel属性にnoreferrerを追加しま
 msgstr ""
 
 #: lib/page-settings/content-forms.php:127
-msgid "externalを追加"
+msgid "externalを追加する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:128
@@ -6536,7 +6536,7 @@ msgstr ""
 
 #: lib/page-settings/content-forms.php:140
 #: lib/page-settings/content-forms.php:260
-msgid "アイコンの表示"
+msgid "アイコンを表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:141
@@ -6603,7 +6603,7 @@ msgid "レスポンシブテーブル"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:316
-msgid "横幅の広いテーブルは横スクロール"
+msgid "横幅の広いテーブルは横スクロールする"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:317
@@ -6611,7 +6611,7 @@ msgid "端末幅より広いテーブルが表示されるときは、テーブ�
 msgstr ""
 
 #: lib/page-settings/content-forms.php:321
-msgid "テーブルの1列目を固定表示"
+msgid "テーブルの1列目を固定表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:322
@@ -6637,19 +6637,19 @@ msgstr ""
 #: lib/page-settings/content-forms.php:353
 #: lib/page-settings/index-forms.php:215
 #: lib/page-settings/single-forms.php:252
-msgid "投稿日の表示"
+msgid "投稿日を表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:355
 #: lib/page-settings/index-forms.php:225
 #: lib/page-settings/single-forms.php:262
-msgid "更新日の表示"
+msgid "更新日を表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:357
 #: lib/page-settings/index-forms.php:228
 #: lib/page-settings/single-forms.php:265
-msgid "投稿者名の表示"
+msgid "投稿者名を表示する"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:358
@@ -6773,7 +6773,7 @@ msgid "文字カウンター"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:57
-msgid "タイトル等の文字数カウンター表示"
+msgid "タイトル等の文字数カウンターを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:58
@@ -6813,7 +6813,7 @@ msgid "ブロックエディターのみに適用される設定です。"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:117
-msgid "「ふりがな（ルビ）」ボタン表示"
+msgid "「ふりがな（ルビ）」ボタンを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:118
@@ -6821,7 +6821,7 @@ msgid "Cocoonの「ルビ」ボタン表示を切り替えます。プラグイ�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:122
-msgid "「書式のクリア」ボタン表示"
+msgid "「書式のクリア」ボタンを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:123
@@ -6833,7 +6833,7 @@ msgid "スタイルドロップダウン"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:135
-msgid "文字スタイル表示"
+msgid "文字スタイルを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:136
@@ -6841,7 +6841,7 @@ msgid "ツールバーの文字スタイルドロップダウンを表示する�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:138
-msgid "マーカー表示"
+msgid "マーカーを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:139
@@ -6849,7 +6849,7 @@ msgid "ツールバーのマーカースタイルドロップダウンを表示�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:141
-msgid "バッジ表示"
+msgid "バッジを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:142
@@ -6857,7 +6857,7 @@ msgid "ツールバーのバッジスタイルドロップダウンを表示す�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:144
-msgid "文字サイズ表示"
+msgid "文字サイズを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:145
@@ -6869,7 +6869,7 @@ msgid "ショートコードドロップダウン"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:157
-msgid "汎用ショートコード表示"
+msgid "汎用ショートコードを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:158
@@ -6877,7 +6877,7 @@ msgid "ツールバーの汎用ショートコードドロップダウンを表�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:160
-msgid "テンプレート表示"
+msgid "テンプレート表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:161
@@ -6885,7 +6885,7 @@ msgid "ツールバーのテンプレートショートコードドロップダ�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:163
-msgid "アフィリエイト表示"
+msgid "アフィリエイトを表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:164
@@ -6894,7 +6894,7 @@ msgstr ""
 
 #: lib/page-settings/editor-forms.php:166
 #: lib/widgets/popular-entries.php:213
-msgid "ランキング表示"
+msgid "ランキング番号を表示する"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:167
@@ -7265,7 +7265,7 @@ msgid "投稿・固定ページのアイキャッチに表示されるカテゴ�
 msgstr ""
 
 #: lib/page-settings/image-forms.php:74
-msgid "アイキャッチの中央寄せ"
+msgid "アイキャッチを中央寄せする"
 msgstr ""
 
 #: lib/page-settings/image-forms.php:75
@@ -7795,7 +7795,7 @@ msgid "モバイルボタン"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:57
-msgid "モバイルボタンの固定表示"
+msgid "モバイルボタンを固定表示する"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:58
@@ -7811,7 +7811,7 @@ msgid "モバイルで「ヘッダーモバイルボタン」が表示されて�
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:63
-msgid "モバイルボタン時コンテンツ下のサイドバーを表示"
+msgid "モバイルボタン時コンテンツ下のサイドバーを表示する"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:64
@@ -7871,7 +7871,7 @@ msgid "通知表示"
 msgstr ""
 
 #: lib/page-settings/notice-forms.php:40
-msgid "通知エリアの表示"
+msgid "通知エリアを表示する"
 msgstr ""
 
 #: lib/page-settings/notice-forms.php:41
@@ -7959,7 +7959,7 @@ msgid "OGPの有効化"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:29
-msgid "OGPタグの挿入"
+msgid "OGPタグを挿入する"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:30
@@ -7991,7 +7991,7 @@ msgid "Twitterカードの有効化"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:76
-msgid "Twitterカードタグの挿入"
+msgid "Twitterカードタグを挿入する"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:77
@@ -8043,7 +8043,7 @@ msgid "簡単SSL対応"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:28
-msgid "内部URLをSSL対応（簡易版）"
+msgid "内部URLをSSL対応する（簡易版）"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:29
@@ -8460,7 +8460,7 @@ msgid "headタグに挿入"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:30
-msgid "canonicalタグの追加"
+msgid "canonicalタグを追加する"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:31
@@ -8533,7 +8533,7 @@ msgid "構造化データ"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:79
-msgid "JSON-LDを出力"
+msgid "JSON-LDを出力する"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:80
@@ -8885,7 +8885,7 @@ msgstr ""
 #: lib/page-settings/single-forms.php:375
 #: lib/widgets/info-list.php:143
 #: blocks/src/block/info-list/edit.js:102
-msgid "枠線表示"
+msgid "枠線を表示する"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:379
@@ -9320,7 +9320,7 @@ msgid "ボトムシェアボタンの表示"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:40
-msgid "メインカラムボトムシェアボタンを表示"
+msgid "メインカラムボトムシェアボタンを表示する"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:41
@@ -9478,7 +9478,7 @@ msgid "トップシェアボタンの表示"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-top.php:40
-msgid "メインカラムトップシェアボタンを表示"
+msgid "メインカラムトップシェアボタンを表示する"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-top.php:41
@@ -10472,7 +10472,7 @@ msgid "ブラウザキャッシュを設定します。ブラウザキャッシ�
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュの有効化"
+msgid "ブラウザキャッシュを有効にする"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:30
@@ -11827,13 +11827,13 @@ msgstr ""
 
 #: lib/widgets/info-list.php:149
 #: blocks/src/block/info-list/edit.js:109
-msgid "仕切り線表示"
+msgid "仕切り線を表示する"
 msgstr ""
 
 #: lib/widgets/info-list.php:155
 #: lib/widgets/new-entries.php:226
 #: blocks/src/block/info-list/edit.js:116
-msgid "更新日順に並び替え"
+msgid "更新日順に並び替える"
 msgstr ""
 
 #: lib/widgets/info-list.php:162
@@ -11895,7 +11895,7 @@ msgstr ""
 #: lib/widgets/new-entries.php:201
 #: lib/widgets/popular-entries.php:225
 #: lib/widgets/related-entries.php:203
-msgid "横型表示"
+msgid "横並び表示にする"
 msgstr ""
 
 #: lib/widgets/navi-entries.php:132
@@ -11916,7 +11916,7 @@ msgstr ""
 #: lib/widgets/new-entries.php:214
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
-msgid "矢印表示"
+msgid "カードに矢印を表示する"
 msgstr ""
 
 #: lib/widgets/new-entries.php:20
@@ -11936,7 +11936,7 @@ msgid "新着記事のタイトル"
 msgstr ""
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示"
+msgid "「固定表示」記事を表示する"
 msgstr ""
 
 #: lib/widgets/new-entries.php:232
@@ -12040,7 +12040,7 @@ msgid "おすすめカード一覧を表示するウィジェットです。"
 msgstr ""
 
 #: lib/widgets/recommended-cards.php:118
-msgid "余白を有効にする"
+msgid "おすすめカード毎に余白を設ける"
 msgstr ""
 
 #: lib/widgets/related-entries.php:20
@@ -14345,7 +14345,7 @@ msgstr ""
 #: blocks/src/block/navicard/edit.js:106
 #: blocks/src/block/new-list/edit.js:139
 #: blocks/src/block/popular-list/edit.js:218
-msgid "通常のリスト"
+msgid "デフォルト"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:110
@@ -14369,19 +14369,19 @@ msgstr ""
 #: blocks/src/block/navicard/edit.js:118
 #: blocks/src/block/new-list/edit.js:151
 #: blocks/src/block/popular-list/edit.js:230
-msgid "大きなサムネイル表示"
+msgid "大きなサムネイル表示にする"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:122
 #: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:234
-msgid "大きなサムネイルにタイトルを重ねる"
+msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:129
 #: blocks/src/block/new-list/edit.js:201
 #: blocks/src/block/popular-list/edit.js:241
-msgid "記事タイトルを太字にする"
+msgid "タイトルを太字にする"
 msgstr ""
 
 #: blocks/src/block/navicard/edit.js:134
@@ -14393,7 +14393,7 @@ msgstr ""
 #: blocks/src/block/navicard/edit.js:139
 #: blocks/src/block/new-list/edit.js:211
 #: blocks/src/block/popular-list/edit.js:251
-msgid "横並び表示"
+msgid "横並び表示にする"
 msgstr ""
 
 #: blocks/src/block/navicard/index.js:28
@@ -14505,11 +14505,11 @@ msgid "全期間集計"
 msgstr ""
 
 #: blocks/src/block/popular-list/edit.js:258
-msgid "ランキング番号表示"
+msgid "ランキング番号を表示する"
 msgstr ""
 
 #: blocks/src/block/popular-list/edit.js:265
-msgid "PV数表示"
+msgid "PV数を表示する"
 msgstr ""
 
 #: blocks/src/block/popular-list/edit.js:293

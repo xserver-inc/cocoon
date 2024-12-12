@@ -137,22 +137,22 @@ class InfoListWidgetItem extends WP_Widget {
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" type="number" value="<?php echo $count ? $count : EC_DEFAULT; ?>" min="1" />
     </p>
-    <?php //枠線表示 ?>
+    <?php //枠線を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_frame') , $is_frame, __( '枠線表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_frame') , $is_frame, __( '枠線を表示する', THEME_NAME ));
       ?>
     </p>
-    <?php //仕切り線表示 ?>
+    <?php //仕切り線を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_divider') , $is_divider, __( '仕切り線表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_divider') , $is_divider, __( '仕切り線を表示する', THEME_NAME ));
       ?>
     </p>
-    <?php //更新日順に並び替え ?>
+    <?php //更新日順に並び替える ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('modified') , $modified, __( '更新日順に並び替え', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('modified') , $modified, __( '更新日順に並び替える', THEME_NAME ));
       ?>
     </p>
     <?php //表示カテゴリー ?>

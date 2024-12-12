@@ -41,7 +41,7 @@ endif;
 define('OP_FREE_FRONT_PAGE_TITLE', 'free_front_page_title');
 if ( !function_exists( 'get_free_front_page_title' ) ):
 function get_free_front_page_title(){
-  return stripslashes_deep(get_theme_option(OP_FREE_FRONT_PAGE_TITLE, trim( get_bloginfo('name') )));
+  return stripslashes_deep(get_theme_option(OP_FREE_FRONT_PAGE_TITLE, get_bloginfo('name') ));
 }
 endif;
 
@@ -87,7 +87,7 @@ endif;
 define('OP_FRONT_PAGE_META_DESCRIPTION', 'front_page_meta_description');
 if ( !function_exists( 'get_front_page_meta_description' ) ):
 function get_front_page_meta_description(){
-  return get_theme_option(OP_FRONT_PAGE_META_DESCRIPTION);
+  return get_theme_option(OP_FRONT_PAGE_META_DESCRIPTION, '');
 }
 endif;
 
@@ -103,7 +103,7 @@ endif;
 define('OP_FRONT_PAGE_META_KEYWORDS', 'front_page_meta_keywords');
 if ( !function_exists( 'get_front_page_meta_keywords' ) ):
 function get_front_page_meta_keywords(){
-  return get_theme_option(OP_FRONT_PAGE_META_KEYWORDS);
+  return get_theme_option(OP_FRONT_PAGE_META_KEYWORDS, '');
 }
 endif;
 
@@ -196,7 +196,7 @@ endif;
 define('OP_SIMPLIFIED_SITE_NAME', 'simplified_site_name');
 if ( !function_exists( 'get_simplified_site_name' ) ):
 function get_simplified_site_name(){
-  return stripslashes_deep(trim(get_theme_option(OP_SIMPLIFIED_SITE_NAME)));
+  return stripslashes_deep(get_theme_option(OP_SIMPLIFIED_SITE_NAME, ''));
 }
 endif;
 

@@ -51,7 +51,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_404_PAGE_TITLE, get_404_page_title(), __( '404 NOT FOUND', THEME_NAME ));
+            generate_textbox_tag(OP_404_PAGE_TITLE, get_404_page_title(), T404_PAGE_TITLE);
             generate_tips_tag(__( '404ページに表示するタイトルを入力します。', THEME_NAME ));
             ?>
           </td>
@@ -64,7 +64,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_textarea_tag(OP_404_PAGE_MESSAGE, get_404_page_message(), __( 'お探しのページは見つかりませんでした。', THEME_NAME ));
+            generate_textarea_tag(OP_404_PAGE_MESSAGE, get_404_page_message(), T404_PAGE_MESSAGE);
             generate_tips_tag(__( '404ページに表示するメッセージを入力します。タグ入力可能です。入力されたテキストには自動的に段落が付加されます。', THEME_NAME ));
             ?>
           </td>

@@ -215,7 +215,7 @@ export default function edit( props ) {
             onChange={ ( newType ) => setAttributes( { type: newType } ) }
             options={ [
               {
-                label: __( '通常のリスト', THEME_NAME ),
+                label: __( 'デフォルト', THEME_NAME ),
                 value: 'default',
               },
               {
@@ -227,46 +227,46 @@ export default function edit( props ) {
                 value: 'border_square',
               },
               {
-                label: __( '大きなサムネイル表示', THEME_NAME ),
+                label: __( '大きなサムネイル表示にする', THEME_NAME ),
                 value: 'large_thumb',
               },
               {
-                label: __( '大きなサムネイルにタイトルを重ねる', THEME_NAME ),
+                label: __( '大きなサムネイルにタイトルを重ねて表示する', THEME_NAME ),
                 value: 'large_thumb_on',
               },
             ] }
           />
           <Divider />
           <ToggleControl
-            label={ __( '記事タイトルを太字にする', THEME_NAME ) }
-            checked={ bold }
-            onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
-          />
-          <ToggleControl
-            label={ __( 'カードに矢印を表示する', THEME_NAME ) }
-            checked={ arrow }
-            onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
-          />
-          <ToggleControl
-            label={ __( '横並び表示', THEME_NAME ) }
+            label={ __( '横並び表示にする', THEME_NAME ) }
             checked={ horizontal }
             onChange={ ( isChecked ) =>
               setAttributes( { horizontal: isChecked } )
             }
           />
           <ToggleControl
-            label={ __( 'ランキング番号表示', THEME_NAME ) }
+            label={ __( 'タイトルを太字にする', THEME_NAME ) }
+            checked={ bold }
+            onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
+          />
+          <ToggleControl
+            label={ __( 'ランキング番号を表示する', THEME_NAME ) }
             checked={ rank }
             onChange={ ( isChecked ) => {
               setAttributes( { rank: isChecked } );
             } }
           />
           <ToggleControl
-            label={ __( 'PV数表示', THEME_NAME ) }
+            label={ __( 'PV数を表示する', THEME_NAME ) }
             checked={ pv }
             onChange={ ( isChecked ) => {
               setAttributes( { pv: isChecked } );
             } }
+          />
+          <ToggleControl
+            label={ __( 'カードに矢印を表示する', THEME_NAME ) }
+            checked={ arrow }
+            onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
         </PanelBody>
         <PanelBody title={ __( 'フィルタ', THEME_NAME ) } initialOpen={ false }>

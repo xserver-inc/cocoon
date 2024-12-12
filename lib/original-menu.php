@@ -32,8 +32,8 @@ function add_original_menu_in_admin_page() {
   //アフィリエイトタグサブメニューを追加
   add_submenu_page(THEME_SETTINGS_PAFE, __('アフィリエイトタグ', THEME_NAME), __('アフィリエイトタグ', THEME_NAME), 'manage_options', 'theme-affiliate-tag', 'add_theme_affiliate_tag_page');
 
-  //ランキング作成サブメニューを追加
-  add_submenu_page(THEME_SETTINGS_PAFE, __('ランキング作成', THEME_NAME), __('ランキング作成', THEME_NAME), 'manage_options', 'theme-ranking', 'add_theme_item_ranking_page');
+  //ランキングサブメニューを追加
+  add_submenu_page(THEME_SETTINGS_PAFE, __('ランキング', THEME_NAME), __('ランキング', THEME_NAME), 'manage_options', 'theme-ranking', 'add_theme_item_ranking_page');
 
   //アクセス集計サブメニューを追加
   add_submenu_page(THEME_SETTINGS_PAFE, __('アクセス集計', THEME_NAME), __('アクセス集計', THEME_NAME), 'manage_options', 'theme-access', 'add_theme_access_page');

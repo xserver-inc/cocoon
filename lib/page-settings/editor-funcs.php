@@ -57,7 +57,7 @@ endif;
 define('OP_EDITOR_BACKGROUND_COLOR', 'editor_background_color');
 if ( !function_exists( 'get_editor_background_color' ) ):
 function get_editor_background_color(){
-  return get_theme_option(OP_EDITOR_BACKGROUND_COLOR);
+  return get_theme_option(OP_EDITOR_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -65,7 +65,7 @@ endif;
 define('OP_EDITOR_TEXT_COLOR', 'editor_text_color');
 if ( !function_exists( 'get_editor_text_color' ) ):
 function get_editor_text_color(){
-  return get_theme_option(OP_EDITOR_TEXT_COLOR);
+  return get_theme_option(OP_EDITOR_TEXT_COLOR, '');
 }
 endif;
 
@@ -225,7 +225,7 @@ function get_block_editor_extended_palette_color_f(){
 }
 endif;
 
-//タイトル等の文字数カウンター表示
+//タイトル等の文字数カウンターを表示する
 define('OP_ADMIN_EDITOR_COUNTER_VISIBLE', 'admin_editor_counter_visible');
 if ( !function_exists( 'is_admin_editor_counter_visible' ) ):
 function is_admin_editor_counter_visible(){

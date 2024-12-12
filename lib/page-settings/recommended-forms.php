@@ -37,12 +37,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'none' => __( '表示しない', THEME_NAME ),
-              'all_page' => __( '全ページで表示', THEME_NAME ),
-              'front_page_only' => __( 'フロントページのみで表示', THEME_NAME ),
-              'not_singular' => __( '投稿・固定ページ以外で表示', THEME_NAME ),
-              'singular_only' => __( '投稿・固定ページのみで表示', THEME_NAME ),
-              'single_only' => __( '投稿ページのみで表示', THEME_NAME ),
-              'page_only' => __( '固定ページのみで表示', THEME_NAME ),
+              'all_page' => __( '全ページで表示する', THEME_NAME ),
+              'front_page_only' => __( 'フロントページのみで表示する', THEME_NAME ),
+              'not_singular' => __( '投稿・固定ページ以外で表示する', THEME_NAME ),
+              'singular_only' => __( '投稿・固定ページのみで表示する', THEME_NAME ),
+              'single_only' => __( '投稿ページのみで表示する', THEME_NAME ),
+              'page_only' => __( '固定ページのみで表示する', THEME_NAME ),
             );
             generate_selectbox_tag(OP_RECOMMENDED_CARDS_DISPLAY_TYPE, $options, get_recommended_cards_display_type());
             generate_tips_tag(__( 'おすすめカードを表示するページを設定します。', THEME_NAME ));

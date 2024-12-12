@@ -34,7 +34,7 @@ class NaviEntryWidgetItem extends WP_Widget {
     $is_horizontal = apply_filters( 'navi_entries_widget_is_horizontal', empty($instance['is_horizontal']) ? 0 : 1 );
     //タイトルの太さ
     $is_bold = apply_filters( 'navi_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : 1 );
-    //矢印表示
+    //カードに矢印を表示する
     $is_arrow_visible = apply_filters( 'navi_entries_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : 1 );
 
 
@@ -125,10 +125,10 @@ class NaviEntryWidgetItem extends WP_Widget {
       generate_radiobox_tag($this->get_field_name('entry_type'), $options, $entry_type);
       ?>
     </p>
-    <?php //横型表示 ?>
+    <?php //横並び表示にする ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横型表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_horizontal') , $is_horizontal, __( '横並び表示にする', THEME_NAME ));
         _e( '（「大きなサムネイル」との使用がお勧め）', THEME_NAME )
       ?>
     </p>
@@ -138,10 +138,10 @@ class NaviEntryWidgetItem extends WP_Widget {
         generate_checkbox_tag($this->get_field_name('is_bold') , $is_bold, __( 'タイトルを太字にする', THEME_NAME ));
       ?>
     </p>
-    <?php //矢印表示 ?>
+    <?php //カードに矢印を表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( '矢印表示', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( 'カードに矢印を表示する', THEME_NAME ));
       ?>
     </p>
     <p><?php echo get_help_page_tag('https://wp-cocoon.com/navi-card-widget/'); ?></p>

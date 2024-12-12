@@ -36,17 +36,17 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'none' => __( '表示しない', THEME_NAME ),
-              'all_page' => __( '全ページで表示', THEME_NAME ),
-              'front_page_only' => __( 'フロントページのみで表示', THEME_NAME ),
-              'not_singular' => __( '投稿・固定ページ以外で表示', THEME_NAME ),
-              'singular_only' => __( '投稿・固定ページのみで表示', THEME_NAME ),
-              'single_only' => __( '投稿ページのみで表示', THEME_NAME ),
-              'page_only' => __( '固定ページのみで表示', THEME_NAME ),
+              'all_page' => __( '全ページで表示する', THEME_NAME ),
+              'front_page_only' => __( 'フロントページのみで表示する', THEME_NAME ),
+              'not_singular' => __( '投稿・固定ページ以外で表示する', THEME_NAME ),
+              'singular_only' => __( '投稿・固定ページのみで表示する', THEME_NAME ),
+              'single_only' => __( '投稿ページのみで表示する', THEME_NAME ),
+              'page_only' => __( '固定ページのみで表示する', THEME_NAME ),
             );
             generate_selectbox_tag(OP_CAROUSEL_DISPLAY_TYPE, $options, get_carousel_display_type());
             generate_tips_tag(__( 'カルーセルを表示するページを設定します。', THEME_NAME ));
 
-            generate_checkbox_tag(OP_CAROUSEL_SMARTPHONE_VISIBLE , is_carousel_smartphone_visible(), __( 'スマートフォンで表示（480px以下）', THEME_NAME ));
+            generate_checkbox_tag(OP_CAROUSEL_SMARTPHONE_VISIBLE , is_carousel_smartphone_visible(), __( 'スマートフォンで表示する（480px以下）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -54,10 +54,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- カルーセルカテゴリーID -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( '表示内容', THEME_NAME )); ?>
+            <?php
+            generate_label_tag('', __( '表示内容', THEME_NAME ));
+             ?>
           </th>
           <td>
             <?php
+            echo '<p>'.__( '人気記事、カテゴリー、タグの順に優先され、いずれか一つが表示されます。', THEME_NAME ).'</p><br>';
             echo __( '人気記事', THEME_NAME ).'<br>';
             generate_checkbox_tag( OP_CAROUSEL_POPULAR_POSTS_ENABLE, is_carousel_popular_posts_enable(), '');
 
@@ -70,16 +73,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             );
             generate_selectbox_tag(OP_CAROUSEL_POPULAR_POSTS_COUNT_DAYS, $options,  get_carousel_popular_posts_count_days());
             generate_label_tag(OP_CAROUSEL_POPULAR_POSTS_COUNT_DAYS, __('で集計した人気記事を含める', THEME_NAME) );
-            echo '<br>';
-            echo '<br>';
+            generate_tips_tag(__( '人気記事を選択すると、人気記事のみが優先して表示されます。', THEME_NAME ));
 
             echo __( 'カテゴリー', THEME_NAME ).'<br>';
             generate_hierarchical_category_check_list( 0, OP_CAROUSEL_CATEGORY_IDS, get_carousel_category_ids(), 300 );
-            echo '<br>';
+            generate_tips_tag(__( 'カテゴリーを選択すると、カテゴリーに関連付けられた記事のみが表示されます。', THEME_NAME ).__( '（※カテゴリー関連記事を表示させたい場合は、人気記事を選択しないでください）', THEME_NAME ));
 
             echo __( 'タグ', THEME_NAME ).'<br>';
             generate_tagcloud_check_list(OP_CAROUSEL_TAG_IDS, get_carousel_tag_ids());
-            generate_tips_tag(__( 'カルーセルと関連付けるカテゴリーもしくはタグを選択してください。人気記事を有効にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び替え」で設定した順番で表示されます。', THEME_NAME ));
+            generate_tips_tag(__( 'タグを選択すると、タグに関連付けられた記事のみが表示されます。', THEME_NAME ).__( '（※タグ関連記事を表示させたい場合は、人気記事・カテゴリーを選択しないでください）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -111,7 +113,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
           <?php
-            generate_number_tag(OP_CAROUSEL_MAX_COUNT,  get_carousel_max_count(), '', 12, 120);
+            generate_number_tag(OP_CAROUSEL_MAX_COUNT,  get_carousel_max_count(), CAROUSEL_MAX_COUNT, 12, 120);
             generate_tips_tag(__( 'カルーセルに表示するアイテムの最大表示数を設定します。（デフォルト：18、最小：12、最大：120）', THEME_NAME ));
             ?>
           </td>
@@ -137,7 +139,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_CAROUSEL_AUTOPLAY_ENABLE, is_carousel_autoplay_enable(), __( 'オートプレイを実行', THEME_NAME ));
+            generate_checkbox_tag( OP_CAROUSEL_AUTOPLAY_ENABLE, is_carousel_autoplay_enable(), __( 'オートプレイを実行する', THEME_NAME ));
             generate_tips_tag(__( 'カルーセルが自動的に送られます。', THEME_NAME ));
             ?>
           </td>

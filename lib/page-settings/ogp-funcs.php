@@ -19,7 +19,7 @@ endif;
 define('OP_FACEBOOK_APP_ID', 'facebook_app_id');
 if ( !function_exists( 'get_facebook_app_id' ) ):
 function get_facebook_app_id(){
-  return get_theme_option(OP_FACEBOOK_APP_ID);
+  return get_theme_option(OP_FACEBOOK_APP_ID, '');
 }
 endif;
 

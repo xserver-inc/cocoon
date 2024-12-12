@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_GLOBAL_NAVI_BACKGROUND_COLOR', 'global_navi_background_color');
 if ( !function_exists( 'get_global_navi_background_color' ) ):
 function get_global_navi_background_color(){
-  return get_theme_option(OP_GLOBAL_NAVI_BACKGROUND_COLOR);
+  return get_theme_option(OP_GLOBAL_NAVI_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -19,7 +19,7 @@ endif;
 define('OP_GLOBAL_NAVI_TEXT_COLOR', 'global_navi_text_color');
 if ( !function_exists( 'get_global_navi_text_color' ) ):
 function get_global_navi_text_color(){
-  return get_theme_option(OP_GLOBAL_NAVI_TEXT_COLOR);
+  return get_theme_option(OP_GLOBAL_NAVI_TEXT_COLOR, '');
 }
 endif;
 
@@ -27,7 +27,7 @@ endif;
 define('OP_GLOBAL_NAVI_MENU_WIDTH', 'global_navi_menu_width');
 if ( !function_exists( 'get_global_navi_menu_width' ) ):
 function get_global_navi_menu_width(){
-  return get_theme_option(OP_GLOBAL_NAVI_MENU_WIDTH);
+  return get_theme_option(OP_GLOBAL_NAVI_MENU_WIDTH, '');
 }
 endif;
 

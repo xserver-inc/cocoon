@@ -106,25 +106,25 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_EXTERNAL_LINK_NOOPENER_ENABLE, is_external_link_noopener_enable(), __( 'noopenerを追加', THEME_NAME ));
+            generate_checkbox_tag(OP_EXTERNAL_LINK_NOOPENER_ENABLE, is_external_link_noopener_enable(), __( 'noopenerを追加する', THEME_NAME ));
             generate_tips_tag(__( 'rel属性にnoopenerを追加します。', THEME_NAME ));?>
             <div class="indent<?php echo get_not_allowed_form_class(!is_external_link_noopener_enable(), true); ?>">
               <?php
-              generate_checkbox_tag(OP_EXTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE, is_external_target_blank_link_noopener_enable(), __( 'target="_blank"の際はnoopenerを追加', THEME_NAME ));
+              generate_checkbox_tag(OP_EXTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE, is_external_target_blank_link_noopener_enable(), __( 'target="_blank"の際はnoopenerを追加する', THEME_NAME ));
               generate_tips_tag(__( '新しいタブで開くリンクのrel属性にnoopenerを追加します。', THEME_NAME ));
               ?>
             </div>
             <?php
-            generate_checkbox_tag(OP_EXTERNAL_LINK_NOREFERRER_ENABLE, is_external_link_noreferrer_enable(), __( 'noreferrerを追加', THEME_NAME ));
+            generate_checkbox_tag(OP_EXTERNAL_LINK_NOREFERRER_ENABLE, is_external_link_noreferrer_enable(), __( 'noreferrerを追加する', THEME_NAME ));
             generate_tips_tag(__( 'rel属性にnoreferrerを追加します。', THEME_NAME ));?>
             <div class="indent<?php echo get_not_allowed_form_class(!is_external_link_noreferrer_enable(), true); ?>">
               <?php
-              generate_checkbox_tag(OP_EXTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE, is_external_target_blank_link_noreferrer_enable(), __( 'target="_blank"の際はnoreferrerを追加', THEME_NAME ));
+              generate_checkbox_tag(OP_EXTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE, is_external_target_blank_link_noreferrer_enable(), __( 'target="_blank"の際はnoopenerを追加する', THEME_NAME ));
               generate_tips_tag(__( '新しいタブで開くリンクのrel属性にnoreferrerを追加します。', THEME_NAME ));
               ?>
             </div>
             <?php
-            generate_checkbox_tag(OP_EXTERNAL_LINK_EXTERNAL_ENABLE, is_external_link_external_enable(), __( 'externalを追加', THEME_NAME ));
+            generate_checkbox_tag(OP_EXTERNAL_LINK_EXTERNAL_ENABLE, is_external_link_external_enable(), __( 'externalを追加する', THEME_NAME ));
             generate_tips_tag(__( 'rel属性にexternalを追加します。', THEME_NAME ));
             ?>
           </td>
@@ -137,7 +137,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_EXTERNAL_LINK_ICON_VISIBLE , is_external_link_icon_visible(), __( 'アイコンの表示', THEME_NAME ));
+            generate_checkbox_tag(OP_EXTERNAL_LINK_ICON_VISIBLE , is_external_link_icon_visible(), __( 'アイコンを表示する', THEME_NAME ));
             generate_tips_tag(__( '外部リンクの右部にFont Awesomeアイコンを表示するか。', THEME_NAME ));
             ?>
           </td>
@@ -229,21 +229,21 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_INTERNAL_LINK_NOOPENER_ENABLE, is_internal_link_noopener_enable(), __( 'noopenerを追加', THEME_NAME ));
+            generate_checkbox_tag(OP_INTERNAL_LINK_NOOPENER_ENABLE, is_internal_link_noopener_enable(), __( 'noopenerを追加する', THEME_NAME ));
             generate_tips_tag(__( 'rel属性にnoopenerを追加します。', THEME_NAME ));?>
             <div class="indent<?php echo get_not_allowed_form_class(!is_internal_link_noopener_enable(), true); ?>">
               <?php
-              generate_checkbox_tag(OP_INTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE, is_internal_target_blank_link_noopener_enable(), __( 'target="_blank"の際はnoopenerを追加', THEME_NAME ));
+              generate_checkbox_tag(OP_INTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE, is_internal_target_blank_link_noopener_enable(), __( 'target="_blank"の際はnoopenerを追加する', THEME_NAME ));
               generate_tips_tag(__( '新しいタブで開くリンクのrel属性にnoopenerを追加します。', THEME_NAME ));
               ?>
             </div>
             <?php
-            generate_checkbox_tag(OP_INTERNAL_LINK_NOREFERRER_ENABLE, is_internal_link_noreferrer_enable(), __( 'noreferrerを追加', THEME_NAME ));
+            generate_checkbox_tag(OP_INTERNAL_LINK_NOREFERRER_ENABLE, is_internal_link_noreferrer_enable(), __( 'noreferrerを追加する', THEME_NAME ));
             generate_tips_tag(__( 'rel属性にnoreferrerを追加します。', THEME_NAME ));
             ?>
             <div class="indent<?php echo get_not_allowed_form_class(!is_internal_link_noreferrer_enable(), true); ?>">
               <?php
-              generate_checkbox_tag(OP_INTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE, is_internal_target_blank_link_noreferrer_enable(), __( 'target="_blank"の際はnoreferrerを追加', THEME_NAME ));
+              generate_checkbox_tag(OP_INTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE, is_internal_target_blank_link_noreferrer_enable(), __( 'target="_blank"の際はnoopenerを追加する', THEME_NAME ));
               generate_tips_tag(__( '新しいタブで開くリンクのrel属性にnoreferrerを追加します。', THEME_NAME ));
               ?>
             </div>
@@ -257,7 +257,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_INTERNAL_LINK_ICON_VISIBLE , is_internal_link_icon_visible(), __( 'アイコンの表示', THEME_NAME ));
+            generate_checkbox_tag(OP_INTERNAL_LINK_ICON_VISIBLE , is_internal_link_icon_visible(), __( 'アイコンを表示する', THEME_NAME ));
             generate_tips_tag(__( '内部リンクの右部にFont Awesomeアイコンを表示するか。', THEME_NAME ));
             ?>
           </td>
@@ -313,12 +313,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_RESPONSIVE_TABLE_ENABLE , is_responsive_table_enable(), __( '横幅の広いテーブルは横スクロール', THEME_NAME ));
+            generate_checkbox_tag(OP_RESPONSIVE_TABLE_ENABLE , is_responsive_table_enable(), __( '横幅の広いテーブルは横スクロールする', THEME_NAME ));
             generate_tips_tag(__( '端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れないようにします。', THEME_NAME ));
             ?>
             <div class="indent<?php echo get_not_allowed_form_class(is_responsive_table_enable(), true); ?>">
               <?php
-              generate_checkbox_tag(OP_RESPONSIVE_TABLE_FIRST_COLUMN_STICKY_ENABLE, is_responsive_table_first_column_sticky_enable(), __( 'テーブルの1列目を固定表示', THEME_NAME ));
+              generate_checkbox_tag(OP_RESPONSIVE_TABLE_FIRST_COLUMN_STICKY_ENABLE, is_responsive_table_first_column_sticky_enable(), __( 'テーブルの1列目を固定表示する', THEME_NAME ));
               generate_tips_tag(__( '横スクロールテーブルで1列目となるth、tdを固定します。', THEME_NAME ).__( 'テーブルの1列目のセルを結合している場合は正常に動作しない場合があります。あらかじめご了承ください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/responsive-table-first-column-fixed/'));
               ?>
             </div>
@@ -350,12 +350,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_POST_DATE_VISIBLE , is_post_date_visible(), __( '投稿日の表示', THEME_NAME ));
+            generate_checkbox_tag(OP_POST_DATE_VISIBLE , is_post_date_visible(), __( '投稿日を表示する', THEME_NAME ));
             echo '<br>';
-            generate_checkbox_tag(OP_POST_UPDATE_VISIBLE , is_post_update_visible(), __( '更新日の表示', THEME_NAME ));
+            generate_checkbox_tag(OP_POST_UPDATE_VISIBLE , is_post_update_visible(), __( '更新日を表示する', THEME_NAME ));
             echo '<br>';
-            generate_checkbox_tag(OP_POST_AUTHOR_VISIBLE , is_post_author_visible(), __( '投稿者名の表示', THEME_NAME ));
-            generate_tips_tag(__( '投稿・固定ページの「投稿日・更新日・投稿者名」を表示するかどうか。', THEME_NAME ).__( '投稿日・更新日が同じ日付の場合は投稿日のみが表示されます。', THEME_NAME ));
+            generate_checkbox_tag(OP_POST_AUTHOR_VISIBLE , is_post_author_visible(), __( '投稿者名を表示する', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページの「投稿日・更新日・投稿者名」を表示するかどうか。', THEME_NAME ).__( '投稿日・更新日が同じ日付の場合は投稿日のみが表示されます。', THEME_NAME ).__( 'この日付表示設定では、単にCSSにより表示/非表示が切り替わります。', THEME_NAME ).__( 'HTMLは出力されるので、検索エンジンに日付情報は伝わります。', THEME_NAME ));
             ?>
           </td>
         </tr>

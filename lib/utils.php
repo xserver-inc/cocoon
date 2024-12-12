@@ -108,7 +108,11 @@ endif;
 if ( !function_exists( 'generate_small_pr_label_tag' ) ):
 function generate_small_pr_label_tag(){
   if (apply_filters( 'is_small_pr_label_visible', true )) {
-    echo '<span class="pr-label pr-label-s">'.get_pr_label_small_caption().'</span>'; //PR表記出力
+    $small_caption = get_pr_label_small_caption();
+    if (empty($small_caption)) {
+    $small_caption= PR_LABEL_SMALL_CAPTION;
+    }
+    echo '<span class="pr-label pr-label-s">'.$small_caption.'</span>'; //PR表記出力
   }
 }
 endif;
@@ -118,7 +122,11 @@ endif;
 if ( !function_exists( 'generate_large_pr_label_tag' ) ):
 function generate_large_pr_label_tag(){
   if (apply_filters( 'is_large_pr_label_visible', true )) {
-    echo '<div class="pr-label pr-label-l">'.get_pr_label_large_caption().'</div>'; //PR表記出力
+    $large_caption = get_pr_label_large_caption();
+    if (empty($large_caption)) {
+      $large_caption = PR_LABEL_LARGE_CAPTION;
+    }
+    echo '<div class="pr-label pr-label-l">'.$large_caption.'</div>'; //PR表記出力
   }
 }
 endif;
@@ -1405,7 +1413,7 @@ function is_admin_post_php_page(){
 }
 endif;
 
-//テーマ設定テキストテンプレートページか
+//テーマ設定テンプレートページか
 if ( !function_exists( 'is_admin_theme_func_text_php_page' ) ):
 function is_admin_theme_func_text_php_page(){
   global $pagenow;

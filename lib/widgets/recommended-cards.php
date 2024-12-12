@@ -112,10 +112,10 @@ class RecommendedCardWidgetItem extends WP_Widget {
       generate_radiobox_tag($this->get_field_name('style'), $options, $style);
       ?>
     </p>
-    <?php //余白を有効にする ?>
+    <?php //おすすめカード毎に余白を設ける ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_margin') , $is_margin, __( '余白を有効にする', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_margin') , $is_margin, __( 'おすすめカード毎に余白を設ける', THEME_NAME ));
       ?>
     </p>
     <p><?php echo get_help_page_tag('https://wp-cocoon.com/recommended-cards-widget/'); ?></p>

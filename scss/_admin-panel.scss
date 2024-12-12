@@ -28,11 +28,15 @@
 
 }
 
+.admin-panel:not(:has(.admin-pv, .admin-edit, .admin-checks, .admin-responsive)) {
+  display: none;
+}
+
 .admin-pv,
 .admin-edit,
 .admin-amp,
 .admin-checks,
-.admin-cresponsive{
+.admin-responsive{
   border-radius: 3px;
   padding: 0 10px;
   border: 1px solid var(--cocoon-basic-border-color);
@@ -45,7 +49,7 @@
 
 .admin-amp,
 .admin-checks,
-.admin-cresponsive{
+.admin-responsive{
   a{
     margin: 0 4px;
     font-size: 0.8em;

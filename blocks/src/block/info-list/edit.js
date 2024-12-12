@@ -99,21 +99,21 @@ export default function edit( props ) {
             max={ 100 }
           />
           <ToggleControl
-            label={ __( '枠線表示', THEME_NAME ) }
+            label={ __( '枠線を表示する', THEME_NAME ) }
             checked={ showFrame }
             onChange={ ( isChecked ) =>
               setAttributes( { showFrame: isChecked } )
             }
           />
           <ToggleControl
-            label={ __( '仕切り線表示', THEME_NAME ) }
+            label={ __( '仕切り線を表示する', THEME_NAME ) }
             checked={ showDivider }
             onChange={ ( isChecked ) =>
               setAttributes( { showDivider: isChecked } )
             }
           />
           <ToggleControl
-            label={ __( '更新日順に並び替え', THEME_NAME ) }
+            label={ __( '更新日順に並び替える', THEME_NAME ) }
             checked={ modified }
             onChange={ ( isChecked ) =>
               setAttributes( { modified: isChecked } )

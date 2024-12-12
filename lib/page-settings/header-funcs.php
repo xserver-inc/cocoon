@@ -57,7 +57,7 @@ endif;
 define('OP_HEADER_AREA_HEIGHT', 'header_area_height');
 if ( !function_exists( 'get_header_area_height' ) ):
 function get_header_area_height(){
-  return get_theme_option(OP_HEADER_AREA_HEIGHT);
+  return get_theme_option(OP_HEADER_AREA_HEIGHT, '');
 }
 endif;
 
@@ -65,7 +65,7 @@ endif;
 define('OP_MOBILE_HEADER_AREA_HEIGHT', 'mobile_header_area_height');
 if ( !function_exists( 'get_mobile_header_area_height' ) ):
 function get_mobile_header_area_height(){
-  return get_theme_option(OP_MOBILE_HEADER_AREA_HEIGHT);
+  return get_theme_option(OP_MOBILE_HEADER_AREA_HEIGHT, '');
 }
 endif;
 
@@ -81,7 +81,7 @@ endif;
 define('OP_THE_SITE_LOGO_WIDTH', 'the_site_logo_width');
 if ( !function_exists( 'get_the_site_logo_width' ) ):
 function get_the_site_logo_width(){
-  return get_theme_option(OP_THE_SITE_LOGO_WIDTH);
+  return get_theme_option(OP_THE_SITE_LOGO_WIDTH, '');
 }
 endif;
 
@@ -89,7 +89,7 @@ endif;
 define('OP_THE_SITE_LOGO_HEIGHT', 'the_site_logo_height');
 if ( !function_exists( 'get_the_site_logo_height' ) ):
 function get_the_site_logo_height(){
-  return get_theme_option(OP_THE_SITE_LOGO_HEIGHT);
+  return get_theme_option(OP_THE_SITE_LOGO_HEIGHT, '');
 }
 endif;
 
@@ -144,7 +144,7 @@ endif;
 define('OP_HEADER_CONTAINER_BACKGROUND_COLOR', 'header_container_background_color');
 if ( !function_exists( 'get_header_container_background_color' ) ):
 function get_header_container_background_color(){
-  return get_theme_option(OP_HEADER_CONTAINER_BACKGROUND_COLOR);
+  return get_theme_option(OP_HEADER_CONTAINER_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -152,7 +152,7 @@ endif;
 define('OP_HEADER_CONTAINER_TEXT_COLOR', 'header_container_text_color');
 if ( !function_exists( 'get_header_container_text_color' ) ):
 function get_header_container_text_color(){
-  return get_theme_option(OP_HEADER_CONTAINER_TEXT_COLOR);
+  return get_theme_option(OP_HEADER_CONTAINER_TEXT_COLOR, '');
 }
 endif;
 
@@ -160,7 +160,7 @@ endif;
 define('OP_HEADER_BACKGROUND_COLOR', 'header_background_color');
 if ( !function_exists( 'get_header_background_color' ) ):
 function get_header_background_color(){
-  return get_theme_option(OP_HEADER_BACKGROUND_COLOR);
+  return get_theme_option(OP_HEADER_BACKGROUND_COLOR, '');
 }
 endif;
 
@@ -168,6 +168,6 @@ endif;
 define('OP_HEADER_TEXT_COLOR', 'header_text_color');
 if ( !function_exists( 'get_header_text_color' ) ):
 function get_header_text_color(){
-  return get_theme_option(OP_HEADER_TEXT_COLOR);
+  return get_theme_option(OP_HEADER_TEXT_COLOR, '');
 }
 endif;

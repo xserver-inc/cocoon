@@ -26,7 +26,7 @@ endif;
 //AmazonトラッキングID
 define('OP_AMAZON_ASSOCIATE_TRACKING_ID', 'amazon_associate_tracking_id');
 if ( !function_exists( 'get_amazon_associate_tracking_id' ) ):
-function get_amazon_associate_tracking_id($tracking_id = null){
+function get_amazon_associate_tracking_id($tracking_id = ''){
   //Cocoon設定で入力されているものを取得
   $id = get_theme_option(OP_AMAZON_ASSOCIATE_TRACKING_ID, '');
 
