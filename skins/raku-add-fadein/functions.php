@@ -25,7 +25,7 @@ class SkinRaku {
         ----------------------------------------------------*/
         if (is_admin()) {
             if (isset($_POST[self::BASE_SKIN_OPTION_NAME])) {
-                // 表示スキン（ベース）を保尊
+                // スキン一覧表示（ベース）を保尊
                 update_theme_option(self::BASE_SKIN_OPTION_NAME);
             }
             if (isset($_POST[self::FADEIN_TYPE_OPTION_NAME])) {
@@ -284,11 +284,11 @@ class SkinRaku {
         // 追加
         skin_url_list.closest('tr').after(tr_fadein);
         /*----------------------------------------------------
-         追加する「表示スキン（ベース）」用HTMLを作成
+         追加する「スキン一覧表示（ベース）」用HTMLを作成
         ----------------------------------------------------*/
         let myskin_name = '';
         let tr_base_skin = '<tr>';
-        tr_base_skin += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('表示スキン（ベース）', THEME_NAME) ); ?></th>';
+        tr_base_skin += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('スキン一覧表示（ベース）', THEME_NAME) ); ?></th>';
         tr_base_skin += '<td><select id="<?=self::BASE_SKIN_OPTION_NAME?>" name="<?=self::BASE_SKIN_OPTION_NAME?>" style="margin-bottom: 1em;">';
         // skin_urlのリストからtdを作成
         skin_url_list.each(function() {

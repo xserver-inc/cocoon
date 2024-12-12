@@ -8939,7 +8939,7 @@ msgid "スキンを選択してください。"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:97
-msgid "表示スキン"
+msgid "スキン一覧表示"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:102
@@ -12265,7 +12265,7 @@ msgid "（詳しくは実際にご確認ください）"
 msgstr ""
 
 #: skins/raku-add-fadein/functions.php:291
-msgid "表示スキン（ベース）"
+msgid "スキン一覧表示（ベース）"
 msgstr ""
 
 #: skins/raku-add-fadein/functions.php:317
