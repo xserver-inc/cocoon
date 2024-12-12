@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-12T06:35:13+00:00\n"
+"POT-Creation-Date: 2024-12-12T06:37:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -3809,7 +3809,7 @@ msgid "投稿・固定ページ一覧設定"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:81
-msgid "管理画面の投稿一覧・固定ページ一覧ページの設定です。"
+msgid "管理画面の投稿・固定ページ一覧ページの設定です。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:92
