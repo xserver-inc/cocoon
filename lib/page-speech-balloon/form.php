@@ -46,7 +46,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
       <tr>
         <th scope="row">
-          <?php generate_label_tag('title', __( 'タイトル', THEME_NAME ).__( '（※必須）', THEME_NAME )); ?>
+          <?php generate_label_tag('title', __( 'タイトル', THEME_NAME ).' '.__( '（※必須）', THEME_NAME )); ?>
         </th>
         <td>
           <?php
@@ -70,7 +70,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
       <tr>
         <th scope="row">
-          <?php generate_label_tag('icon', __( 'アイコン画像', THEME_NAME ).__( '（※必須）', THEME_NAME )); ?>
+          <?php generate_label_tag('icon', __( 'アイコン画像', THEME_NAME ).' '.__( '（※必須）', THEME_NAME )); ?>
         </th>
         <td>
           <?php
