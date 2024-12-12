@@ -7169,7 +7169,7 @@ msgid "ヘッダー背景として表示する画像を設定します。"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:149
-msgid "ヘッダー背景画像の固定"
+msgid "ヘッダー背景画像を固定する"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:150
@@ -7177,7 +7177,7 @@ msgid "PC画面でヘッダー背景に設定した画像を固定します。�
 msgstr ""
 
 #: lib/page-settings/header-forms.php:153
-msgid "背景画像の全てを表示"
+msgid "背景画像を全て表示する"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:154
