@@ -74,7 +74,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- 投稿一覧設定 -->
 <div id="admin-single-index" class="postbox">
-  <h2 class="hndle"><?php _e( '投稿一覧・固定ページ一覧設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( '投稿・固定ページ一覧設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php

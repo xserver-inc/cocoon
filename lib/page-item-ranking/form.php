@@ -72,7 +72,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
   <div class="ranking-title">
     <?php
     echo '<h2>';
-    generate_label_tag('title', __('タイトル（※必須）', THEME_NAME) );
+    generate_label_tag('title', __('タイトル', THEME_NAME).' '.__('（※必須）', THEME_NAME) );
     echo '</h2>';
     generate_textbox_tag('title', $title,  __('タイトルを入力',THEME_NAME ));
     generate_tips_tag(__( 'ランキングを識別するためのタイトルを入力してください。', THEME_NAME ));

@@ -27,11 +27,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $visible = 1;
   }
 
-  echo '<h2>'.__( 'タイトル', THEME_NAME ).__( '（※必須）', THEME_NAME ).'</h2>';
+  echo '<h2>'.__( 'タイトル', THEME_NAME ).' '.__( '（※必須）', THEME_NAME ).'</h2>';
   generate_textbox_tag('title', $title, __( 'タイトルの入力（126文字まで）', THEME_NAME ));
   generate_tips_tag(__( '表示ラベルとなるタイトルを入力してください。タイトルは一覧表示用です。', THEME_NAME ));
 
-  echo '<h2>'.__( '内容', THEME_NAME ).__( '（※必須）', THEME_NAME ).'</h2>';
+  echo '<h2>'.__( '内容', THEME_NAME ).' '.__( '（※必須）', THEME_NAME ).'</h2>';
   //_v($_POST);
   generate_textarea_tag('text', $text,  __( 'アフィリエイトタグを入力', THEME_NAME ));
 
