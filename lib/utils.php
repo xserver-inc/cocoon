@@ -3355,7 +3355,7 @@ endif;
 
 //タブレットをモバイルとしないモバイル判定関数
 if ( !function_exists( 'is_mobile' ) ):
-//スマホ表示分岐
+//スマートフォン表示分岐
 function is_mobile(){
   if (!isset($_SERVER['HTTP_USER_AGENT'])) {
     return false;

@@ -150,8 +150,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             //echo '<div'.get_not_allowed_form_class(!is_entry_card_type_entry_card()).'>';
             echo '<div>';
-            generate_checkbox_tag(OP_SMARTPHONE_ENTRY_CARD_1_COLUMN , is_smartphone_entry_card_1_column(), __( 'スマホ端末で縦型＆タイル型のエントリーカードを1カラムにする', THEME_NAME ));
-            generate_tips_tag(__( 'スマホ（480px以下）で表示した際に、カードタイプを「縦型カード」「タイルカード」にしている場合は、1カラムで表示します。※デフォルトは2カラム', THEME_NAME ));
+            generate_checkbox_tag(OP_SMARTPHONE_ENTRY_CARD_1_COLUMN , is_smartphone_entry_card_1_column(), __( 'スマートフォンで縦型＆タイル型のエントリーカードを1カラムにする', THEME_NAME ));
+            generate_tips_tag(__( 'スマートフォン（480px以下）で表示した際に、カードタイプを「縦型カード」「タイルカード」にしている場合は、1カラムで表示します。※デフォルトは2カラム', THEME_NAME ));
             echo '</div>';
 
             ?>
@@ -205,11 +205,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ENTRY_CARD_SNIPPET_VISIBLE , is_entry_card_snippet_visible(), __( 'スニペット（抜粋）の表示', THEME_NAME ));
+            generate_checkbox_tag(OP_ENTRY_CARD_SNIPPET_VISIBLE , is_entry_card_snippet_visible(), __( 'スニペット（抜粋）を表示する', THEME_NAME ));
 
 
             echo '<div class="indent'.get_not_allowed_form_class(is_entry_card_snippet_visible(), true).'">';
-              generate_checkbox_tag(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE , is_smartphone_entry_card_snippet_visible(), __( 'スマホ端末でスニペットを表示（480px以下）', THEME_NAME ));
+              generate_checkbox_tag(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE , is_smartphone_entry_card_snippet_visible(), __( 'スマートフォンで表示する（480px以下）', THEME_NAME ));
             echo '</div>';
 
             generate_checkbox_tag(OP_ENTRY_CARD_POST_DATE_VISIBLE , is_entry_card_post_date_visible(), __( '投稿日を表示する', THEME_NAME ));
@@ -221,7 +221,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ENTRY_CARD_POST_AUTHOR_VISIBLE , is_entry_card_post_author_visible(), __( '投稿者名を表示する', THEME_NAME ));
             echo '<br>';
 
-            generate_checkbox_tag(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE , is_entry_card_post_comment_count_visible(), __( 'コメント数の表示', THEME_NAME ).__( '（※投稿・固定ページでコメントが表示されている場合）', THEME_NAME ));
+            generate_checkbox_tag(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE , is_entry_card_post_comment_count_visible(), __( 'コメント数を表示する', THEME_NAME ).__( '（※投稿・固定ページでコメントが表示されている場合）', THEME_NAME ));
 
             generate_tips_tag(__( 'インデックスページのエントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
             ?>

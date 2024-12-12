@@ -246,7 +246,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
             echo '<div class="indent'.get_not_allowed_form_class(is_related_entry_card_snippet_visible(), true).'">';
-              generate_checkbox_tag(OP_SMARTPHONE_RELATED_ENTRY_CARD_SNIPPET_VISIBLE , is_smartphone_related_entry_card_snippet_visible(), __( 'スマホ端末でスニペットを表示する（480px以下）', THEME_NAME ));
+              generate_checkbox_tag(OP_SMARTPHONE_RELATED_ENTRY_CARD_SNIPPET_VISIBLE , is_smartphone_related_entry_card_snippet_visible(), __( 'スマートフォンで表示する（480px以下）', THEME_NAME ));
             echo '</div>';
 
             generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE , is_related_entry_card_post_date_visible(), __( '投稿日を表示する', THEME_NAME ));

@@ -72,7 +72,7 @@ if (is_entry_card_type_big_card_first() && $count === 1) {
               <span class="post-author-name"><?php echo get_the_author(); ?></span>
             </span>
           <?php endif ?>
-          <?php //コメント数の表示
+          <?php //コメント数を表示する
           $count = get_comments_number();
           if(is_entry_card_post_comment_count_visible() && is_single_comment_visible() && apply_filters('entry_card_post_comment_count_visible', true, $count)): ?>
             <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>

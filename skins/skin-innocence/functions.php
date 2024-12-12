@@ -14,7 +14,7 @@ $_THEME_OPTIONS =
 array(
   'entry_card_type' => 'vertical_card_2', //インデックスのカードタイプ
   'entry_card_border_visible' => 0, //インデックスの枠線
-  'smartphone_entry_card_1_column' => 0, //スマホ端末で1カラムにするか
+  'smartphone_entry_card_1_column' => 0, //スマートフォンで1カラムにするか
   'main_column_contents_width' => 730, //メインカラムの幅
   'entry_card_snippet_visible' => 0, //スニペットを表示するか
   'smartphone_entry_card_snippet_visible' => 0, //スニペットを表示するか(モバイル)
