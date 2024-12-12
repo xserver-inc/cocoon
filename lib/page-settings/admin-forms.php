@@ -78,7 +78,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <div class="inside">
 
     <p><?php
-      _e( '管理画面の投稿一覧・固定ページ一覧ページの設定です。', THEME_NAME );
+      _e( '管理画面の投稿・固定ページ一覧ページの設定です。', THEME_NAME );
       generate_help_page_tag('https://wp-cocoon.com/post-columns-switch/');
      ?></p>
 
