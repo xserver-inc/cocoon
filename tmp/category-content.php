@@ -12,7 +12,7 @@ $cat_id = get_query_var('cat');
 $eye_catch_url = get_the_category_eye_catch_url($cat_id);
 $content = get_the_category_content($cat_id);
 if ($eye_catch_url || $content): ?>
-<article class="category-content article">
+<article class="category-content article<?php echo get_additional_entry_content_classes(); ?>">
   <header class="article-header category-header">
     <?php //カテゴリータイトル
     cocoon_template_part('tmp/list-title'); ?>
