@@ -131,8 +131,8 @@ function one_customize_register( $wp_customize ) {
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one2', array(
-        'label'       => __( 'PCでもスマホ用の固定フッターメニューを表示する', 'theme' ),
-        'description' => __( '従来どおりPCでスマホ用の固定フッターメニューを表示させたくない場合はチェックを外してください', 'theme' ),
+        'label'       => __( 'PCでもスマートフォン用の固定フッターメニューを表示する', 'theme' ),
+        'description' => __( '従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください', 'theme' ),
         'section'     => 'theme_setting',
         'priority'    => 4,
         'type'        => 'checkbox',

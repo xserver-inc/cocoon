@@ -1027,7 +1027,7 @@ border-bottom:4px solid #5572ff;
   margin-right: -10px;
 }
 
-/*スマホの固定フッターメニュー*/
+/*スマートフォンの固定フッターメニュー*/
 .mobile-menu-buttons {
     background:  linear-gradient(to left, rgba(132, 209, 255, 0.85), rgba(255, 160, 252, 0.85))!important;
     box-shadow: 0px 2px 3px 3px #041329;

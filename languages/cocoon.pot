@@ -2077,7 +2077,7 @@ msgid "記事の説明文を入力してください。"
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:131
-msgid "記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。"
+msgid "記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマートフォンではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。"
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:135
@@ -7197,7 +7197,7 @@ msgid "ヘッダー背景として表示する画像を設定します。"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:149
-msgid "ヘッダー背景画像の固定"
+msgid "ヘッダー背景画像を固定する"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:150
@@ -7205,7 +7205,7 @@ msgid "PC画面でヘッダー背景に設定した画像を固定します。�
 msgstr ""
 
 #: lib/page-settings/header-forms.php:153
-msgid "背景画像の全てを表示"
+msgid "背景画像を全て表示する"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:154
@@ -7361,7 +7361,7 @@ msgid "Spotlight（軽量・高機能ギャラリー）"
 msgstr ""
 
 #: lib/page-settings/image-forms.php:131
-msgid "baguetteBox（軽量・スマホ向け）"
+msgid "baguetteBox（軽量・スマートフォン向け）"
 msgstr ""
 
 #: lib/page-settings/image-forms.php:132
@@ -7723,11 +7723,11 @@ msgid "縦型カード・タイルカードに設定した場合はサムネイ�
 msgstr ""
 
 #: lib/page-settings/index-forms.php:153
-msgid "スマホ端末で縦型＆タイル型のエントリーカードを1カラムにする"
+msgid "スマートフォンで縦型＆タイル型のエントリーカードを1カラムにする"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:154
-msgid "スマホ（480px以下）で表示した際に、カードタイプを「縦型カード」「タイルカード」にしている場合は、1カラムで表示します。※デフォルトは2カラム"
+msgid "スマートフォン（480px以下）で表示した際に、カードタイプを「縦型カード」「タイルカード」にしている場合は、1カラムで表示します。※デフォルトは2カラム"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:169
@@ -7762,15 +7762,17 @@ msgid "投稿関連情報の表示"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:208
-msgid "スニペット（抜粋）の表示"
+#: lib/page-settings/single-forms.php:245
+msgid "スニペット（抜粋）を表示する"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:212
-msgid "スマホ端末でスニペットを表示（480px以下）"
+#: lib/page-settings/single-forms.php:249
+msgid "スマートフォンで表示する（480px以下）"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:224
-msgid "コメント数の表示"
+#: lib/page-settings/index-forms.php:231
+msgid "コメント数を表示する"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:224
@@ -9004,7 +9006,7 @@ msgid "スキンを選択してください。"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:97
-msgid "表示スキン"
+msgid "スキン一覧表示"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:102
@@ -12282,11 +12284,11 @@ msgid "本文の見出しにカウントをつけたくない場合はチェッ�
 msgstr ""
 
 #: skins/one/functions.php:134
-msgid "PCでもスマホ用の固定フッターメニューを表示する"
+msgid "PCでもスマートフォン用の固定フッターメニューを表示する"
 msgstr ""
 
 #: skins/one/functions.php:135
-msgid "従来どおりPCでスマホ用の固定フッターメニューを表示させたくない場合はチェックを外してください"
+msgid "従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください"
 msgstr ""
 
 #: skins/one/functions.php:145
@@ -12346,7 +12348,7 @@ msgid "（詳しくは実際にご確認ください）"
 msgstr ""
 
 #: skins/raku-add-fadein/functions.php:291
-msgid "表示スキン（ベース）"
+msgid "スキン一覧表示（ベース）"
 msgstr ""
 
 #: skins/raku-add-fadein/functions.php:317

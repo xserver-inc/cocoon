@@ -128,7 +128,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             $options = array(
               'none' => __( 'なし', THEME_NAME ),
               'spotlight' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/spotlight.gif').__( 'Spotlight（軽量・高機能ギャラリー）', THEME_NAME ),
-              'baguettebox' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/baguettebox.gif').__( 'baguetteBox（軽量・スマホ向け）', THEME_NAME ),
+              'baguettebox' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/baguettebox.gif').__( 'baguetteBox（軽量・スマートフォン向け）', THEME_NAME ),
               'lity' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/lity.gif').__( 'Lity（軽量・1枚ずつ表示）', THEME_NAME ),
               'lightbox' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/lightbox.gif').__( 'Lightbox', THEME_NAME ),
             );

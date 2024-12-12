@@ -128,7 +128,7 @@ function seo_custom_box_view(){
   generate_label_tag('the_page_meta_description', __('メタディスクリプション', THEME_NAME).$meta_description_count_tag  );
 
   generate_textarea_tag('the_page_meta_description', $the_page_meta_description, __( '記事の説明文を入力してください。', THEME_NAME ), 3, DEFAULT_INPUT_COLS, 'width:100%') ;
-  generate_howto_tag(__( '記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。', THEME_NAME ), 'the_page_meta_description');
+  generate_howto_tag(__( '記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマートフォンではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。', THEME_NAME ), 'the_page_meta_description');
 
   //メタキーワード
   generate_label_tag('the_page_meta_keywords', __('メタキーワード', THEME_NAME) );

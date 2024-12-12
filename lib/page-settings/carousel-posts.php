@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //カルーセルの表示
 update_theme_option(OP_CAROUSEL_DISPLAY_TYPE);
 
-//カルーセルをスマホで表示する
+//カルーセルをスマートフォンで表示する
 update_theme_option(OP_CAROUSEL_SMARTPHONE_VISIBLE);
 
 //カルーセルに人気記事を表示する

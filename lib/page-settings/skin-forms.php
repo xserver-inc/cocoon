@@ -91,17 +91,17 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
-        <!-- 表示スキン -->
+        <!-- スキン一覧表示 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_INCLUDE_SKIN_TYPE, __('表示スキン', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_INCLUDE_SKIN_TYPE, __('スキン一覧表示', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
             $options = array(
-              'all' => __( '全てのスキンを表示', THEME_NAME ),
-              'parent_only' => __( '親テーマのスキンのみ表示', THEME_NAME ),
-              'child_only' => __( '子テーマのスキンのみ表示', THEME_NAME ),
+              'all' => __( '全てのスキンを表示する', THEME_NAME ),
+              'parent_only' => __( '親テーマのスキンのみ表示する', THEME_NAME ),
+              'child_only' => __( '子テーマのスキンのみ表示する', THEME_NAME ),
             );
             generate_radiobox_tag(OP_INCLUDE_SKIN_TYPE, $options, get_include_skin_type());
             generate_tips_tag(__( 'スキン一覧に含めて表示するスキンを選択してください。', THEME_NAME ));
