@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.8.2.3\n"
+"Project-Id-Version: Cocoon 2.8.2.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-12T08:26:10+00:00\n"
+"POT-Creation-Date: 2024-12-12T12:59:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -4835,31 +4835,31 @@ msgid "サイドバーの表示状態"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:266
-msgid "全てのページで表示"
+msgid "全てのページで表示する"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:267
-msgid "全てのページで非表示"
+msgid "全てのページで非表示にする"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:268
-msgid "フロントページで非表示"
+msgid "フロントページで非表示にする"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:269
-msgid "インデックスページで非表示"
+msgid "インデックスページで非表示にする"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:270
-msgid "固定ページで非表示"
+msgid "固定ページで非表示にする"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:271
-msgid "投稿ページで非表示"
+msgid "投稿ページで非表示にする"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:272
-msgid "404ページで非表示"
+msgid "404ページで非表示にする"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:276
@@ -5973,6 +5973,8 @@ msgid "カルーセルを表示するページを設定します。"
 msgstr ""
 
 #: lib/page-settings/carousel-forms.php:49
+#: lib/page-settings/index-forms.php:212
+#: lib/page-settings/single-forms.php:249
 msgid "スマートフォンで表示する（480px以下）"
 msgstr ""
 
@@ -7766,12 +7768,7 @@ msgstr ""
 msgid "スニペット（抜粋）を表示する"
 msgstr ""
 
-#: lib/page-settings/index-forms.php:212
-#: lib/page-settings/single-forms.php:249
-msgid "スマートフォンで表示する（480px以下）"
-msgstr ""
-
-#: lib/page-settings/index-forms.php:231
+#: lib/page-settings/index-forms.php:224
 msgid "コメント数を表示する"
 msgstr ""
 
@@ -8883,14 +8880,6 @@ msgstr ""
 msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）"
 msgstr ""
 
-#: lib/page-settings/single-forms.php:245
-msgid "スニペット（抜粋）を表示する"
-msgstr ""
-
-#: lib/page-settings/single-forms.php:249
-msgid "スマホ端末でスニペットを表示する（480px以下）"
-msgstr ""
-
 #: lib/page-settings/single-forms.php:266
 msgid "投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。"
 msgstr ""
@@ -9010,15 +8999,15 @@ msgid "スキン一覧表示"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:102
-msgid "全てのスキンを表示"
+msgid "全てのスキンを表示する"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:103
-msgid "親テーマのスキンのみ表示"
+msgid "親テーマのスキンのみ表示する"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:104
-msgid "子テーマのスキンのみ表示"
+msgid "子テーマのスキンのみ表示する"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:107
