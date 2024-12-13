@@ -56,7 +56,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'amp-lightbox-gallery' => __( 'AMPギャラリー（複数画像ギャラリー表示対応）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_AMP_IMAGE_ZOOM_EFFECT, $options, get_amp_image_zoom_effect());
-            generate_tips_tag(__( 'リンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ));
+            generate_tips_tag(__( '本文内のリンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ));
             ?>
           </td>
         </tr>

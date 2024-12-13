@@ -69,7 +69,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <div class="indent<?php echo get_not_allowed_form_class(is_eyecatch_visible(), true); ?>">
               <?php
               generate_checkbox_tag(OP_EYECATCH_LABEL_VISIBLE, is_eyecatch_label_visible(), __( 'アイキャッチラベルを表示する', THEME_NAME ));
-              generate_tips_tag(__( '本文エリアトップのアイキャッチに表示されるカテゴリーラベルの表示切り替えです。', THEME_NAME ));
+              generate_tips_tag(__( '本文エリアトップのアイキャッチに表示されるカテゴリーラベルの表示切り替えです。', THEME_NAME ).__( '（※投稿・固定・カテゴリーページのみ）', THEME_NAME ));
 
             generate_checkbox_tag(OP_EYECATCH_CENTER_ENABLE , is_eyecatch_center_enable(), __( 'アイキャッチを中央寄せする', THEME_NAME ));
             generate_tips_tag(__( '本文エリアトップに表示されるアイキャッチをカラムの中央に表示します。', THEME_NAME ));
@@ -113,7 +113,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'shadow_paper' => __( 'シャドー（ペーパー）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_IMAGE_WRAP_EFFECT, $options, get_image_wrap_effect());
-            generate_tips_tag(__( '画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。', THEME_NAME ));
+            generate_tips_tag(__( '本文内の画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -133,7 +133,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'lightbox' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/lightbox.gif').__( 'Lightbox', THEME_NAME ),
             );
             generate_radiobox_tag(OP_IMAGE_ZOOM_EFFECT, $options, get_image_zoom_effect());
-            generate_tips_tag(__( 'リンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/lightbox-libraries/'));
+            generate_tips_tag(__( '本文内のリンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/lightbox-libraries/'));
             ?>
           </td>
         </tr>
