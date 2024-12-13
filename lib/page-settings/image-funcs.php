@@ -381,6 +381,7 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
 endif;
 
 // 画像のURLから添付ファイルIDを取得する関数
+if ( !function_exists( 'get_attachment_id_from_url' ) ):
 function get_attachment_id_from_url($url) {
   global $wpdb;
 
@@ -394,8 +395,10 @@ function get_attachment_id_from_url($url) {
 
   return $attachment_id;
 }
+endif;
 
 // 画像のURLからキャプションを取得する関数
+if ( !function_exists( 'get_caption_from_image_url' ) ):
 function get_caption_from_image_url($image_url) {
   // 画像URLから添付ファイルIDを取得
   $attachment_id = get_attachment_id_from_url($image_url);
@@ -408,3 +411,4 @@ function get_caption_from_image_url($image_url) {
 
   return '';
 }
+endif;
