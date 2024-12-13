@@ -16,8 +16,10 @@ if ($eye_catch_url || $content): ?>
   <header class="article-header category-header">
     <?php //カテゴリータイトル
     cocoon_template_part('tmp/list-title'); ?>
-    <?php if ($eye_catch_url): ?>
-      <div class="eye-catch-wrap">
+    <?php if ($eye_catch_url):
+      //アイキャッチがない場合は非表示クラスを追加
+      $display_none = is_eyecatch_visible() ? null : ' display-none'; ?>
+      <div class="eye-catch-wrap<?php echo $display_none; ?>">
         <figure class="eye-catch">
           <img src="<?php echo esc_url($eye_catch_url); ?>" class="eye-catch-image wp-category-image" alt="<?php echo esc_attr(get_the_category_title($cat_id)); ?>">
           <?php //カテゴリーラベル
