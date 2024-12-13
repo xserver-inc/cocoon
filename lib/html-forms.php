@@ -1218,21 +1218,15 @@ function generate_widget_entries_tag($atts){
       $args['post__not_in'] = $exclude_post_ids;
     }
   }
-  if ($random && $modified) {
+  if ($random) {
     $args += array(
-      'orderby' => array('rand', 'modified'),
+      'orderby' => 'rand',
     );
-  } else {
-    if ($random) {
-      $args += array(
-        'orderby' => 'rand',
-      );
-    }
-    if ($modified) {
-      $args += array(
-        'orderby' => 'modified',
-      );
-    }
+  }
+  if ($modified) {
+    $args += array(
+      'orderby' => 'modified',
+    );
   }
   //関連記事の場合は表示ページを除外
   if (is_single() && $random) {

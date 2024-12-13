@@ -16,14 +16,22 @@ if ($eye_catch_url || $content): ?>
   <header class="article-header category-header">
     <?php //カテゴリータイトル
     cocoon_template_part('tmp/list-title'); ?>
-    <?php if ($eye_catch_url): ?>
-      <div class="eye-catch-wrap">
+    <?php if ($eye_catch_url):
+      //アイキャッチがない場合は非表示クラスを追加
+      $display_none = is_eyecatch_visible() ? null : ' display-none';
+      //アイキャッチからキャプションを取得
+      $caption = get_caption_from_image_url($eye_catch_url); ?>
+      <div class="eye-catch-wrap<?php echo $display_none; ?>">
         <figure class="eye-catch">
           <img src="<?php echo esc_url($eye_catch_url); ?>" class="eye-catch-image wp-category-image" alt="<?php echo esc_attr(get_the_category_title($cat_id)); ?>">
           <?php //カテゴリーラベル
           if (apply_filters('is_eyecatch_category_label_visible', true) && apply_filters( 'is_category_label_visible', true )) {
             echo '<span class="cat-label cat-label-'.$cat_id.'">'.single_cat_title( '', false ).'</span>';
           } ?>
+          <?php //キャプション
+          if ($caption){
+            echo '<figcaption class="eye-catch-caption">'.esc_html($caption).'</figcaption>';
+          }; ?>
         </figure>
       </div>
       <?php do_action('category_eye_catch_after'); ?>
