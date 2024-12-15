@@ -29,7 +29,7 @@ if ($eye_catch_url || $content): ?>
             echo '<span class="cat-label cat-label-'.$cat_id.'">'.single_cat_title( '', false ).'</span>';
           } ?>
           <?php //キャプション
-          if ($caption){
+          if (is_eyecatch_caption_visible() && $caption){
             echo '<figcaption class="eye-catch-caption">'.esc_html($caption).'</figcaption>';
           }; ?>
         </figure>
