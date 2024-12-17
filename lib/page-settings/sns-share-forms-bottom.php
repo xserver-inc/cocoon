@@ -202,7 +202,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_SNS_BOTTOM_SHARE_BUTTONS_COUNT_VISIBLE, is_sns_bottom_share_buttons_count_visible(), __( 'シェア数を表示', THEME_NAME ));
+            generate_checkbox_tag( OP_SNS_BOTTOM_SHARE_BUTTONS_COUNT_VISIBLE, is_sns_bottom_share_buttons_count_visible(), __( 'シェア数を表示する', THEME_NAME ));
             generate_tips_tag(__( 'ボトムシェアボタンのシェア数表示を切り替えます。', THEME_NAME ));
             ?>
           </td>

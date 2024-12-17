@@ -324,7 +324,7 @@ export default function edit( props ) {
           </ButtonGroup>
           <br /><br />
           <ToggleControl
-            label={ __( 'タイトルを表示', THEME_NAME ) } // ToggleControlを追加
+            label={ __( 'タイトルを表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayTitle }
             onChange={ (value) => setAttributes({ displayTitle: value }) }
           />
@@ -337,7 +337,7 @@ export default function edit( props ) {
             />
           )}
           <ToggleControl
-            label={ __( 'データ名を表示', THEME_NAME ) } // ToggleControlを追加
+            label={ __( 'データ名を表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayLegend }
             onChange={ (value) => setAttributes({ displayLegend: value }) }
           />
@@ -375,22 +375,22 @@ export default function edit( props ) {
             placeholder={ __( '1, 2, 3, 4, 5', THEME_NAME ) }
           />
           <ToggleControl
-            label={ __( '総計を表示', THEME_NAME ) } // ToggleControlを追加
+            label={ __( '総計を表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayTotal }
             onChange={ (value) => setAttributes({ displayTotal: value }) }
           />
           <ToggleControl
-            label={ __( '項目に値を表示', THEME_NAME ) } // ToggleControlを追加
+            label={ __( '項目に値を表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayLabelValue }
             onChange={ (value) => setAttributes({ displayLabelValue: value }) }
           />
           <ToggleControl
-            label={ __( '値が最大値を超えるのを許可', THEME_NAME ) } // ToggleControlを追加
+            label={ __( '値が最大値を超えるのを許可する', THEME_NAME ) } // ToggleControlを追加
             checked={ allowMaxOver }
             onChange={ (value) => setAttributes({ allowMaxOver: value }) }
           />
           <ToggleControl
-            label={ __( 'アングルラインを表示', THEME_NAME ) } // ToggleControlを追加
+            label={ __( 'アングルラインを表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayAngleLines }
             onChange={ (value) => setAttributes({ displayAngleLines: value }) }
           />

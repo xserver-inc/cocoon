@@ -152,9 +152,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             <?php
             $options = array(
-              'both_date' => __( '投稿日・更新日を表示', THEME_NAME ),
-              'post_date_only' => __( '投稿日のみ表示', THEME_NAME ),
-              'update_date_only' => __( '更新日のみ表示', THEME_NAME ),
+              'both_date' => __( '投稿日・更新日を表示する', THEME_NAME ),
+              'post_date_only' => __( '投稿日のみを表示する', THEME_NAME ),
+              'update_date_only' => __( '更新日のみを表示する', THEME_NAME ),
               // 'none' => __( '表示しない', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());

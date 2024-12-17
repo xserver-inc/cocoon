@@ -91,7 +91,7 @@ export default function edit( props ) {
         } ) }
       </PanelBody>
       <ToggleControl
-        label={ __( '子カテゴリーの内容を含めて表示', THEME_NAME ) }
+        label={ __( '子カテゴリーの内容を含めて表示する', THEME_NAME ) }
         checked={ children }
         onChange={ ( isChecked ) => setAttributes( { children: isChecked } ) }
       />
@@ -271,7 +271,7 @@ export default function edit( props ) {
         </PanelBody>
         <PanelBody title={ __( 'フィルタ', THEME_NAME ) } initialOpen={ false }>
           <ToggleControl
-            label={ __( '全カテゴリー表示', THEME_NAME ) }
+            label={ __( '全カテゴリーを表示する', THEME_NAME ) }
             checked={ showAllCats }
             onChange={ ( isChecked ) => {
               setAttributes( { showAllCats: isChecked } );

@@ -252,13 +252,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE , is_related_entry_card_post_date_visible(), __( '投稿日を表示する', THEME_NAME ));
             echo '<br>';
 
-            // //表示しないとき
-            // $is_not_allowed = is_related_entry_card_post_date_visible();
-            // $is_not_allowed = $is_not_allowed || !is_related_entry_card_post_update_visible();
-            // echo '<div class="indent'.get_not_allowed_form_class(!$is_not_allowed, true).'">';
-            //   generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE , is_related_entry_card_post_date_or_update_visible(), __( '更新日が存在しない場合は投稿日を表示', THEME_NAME ));
-            // echo '</div>';
-
             generate_checkbox_tag(OP_RELATED_ENTRY_CARD_POST_UPDATE_VISIBLE , is_related_entry_card_post_update_visible(), __( '更新日を表示する', THEME_NAME ));
             echo '<br>';
 

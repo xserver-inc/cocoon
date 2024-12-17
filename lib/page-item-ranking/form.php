@@ -79,7 +79,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
     echo '<br>';
 
     //TinyMCE表示
-    generate_checkbox_tag('visible' , $visible, __( 'エディターのリストに表示', THEME_NAME ));
+    generate_checkbox_tag('visible' , $visible, __( 'エディターのリストに表示する', THEME_NAME ));
     generate_tips_tag(__( 'エディターのドロップダウンリストに表示しなくて良い場合は、無効にしてください。', THEME_NAME ));
     echo '<br>';
 
