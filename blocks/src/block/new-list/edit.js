@@ -215,7 +215,7 @@ export default function edit( props ) {
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
           <ToggleControl
-            label={ __( '説明文の表示', THEME_NAME ) }
+            label={ __( '説明文を表示する', THEME_NAME ) }
             checked={ snippet }
             onChange={ ( isChecked ) =>
               setAttributes( { snippet: isChecked } )
