@@ -10529,10 +10529,6 @@ msgstr "Cache do navegador"
 msgid "ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れます。"
 msgstr "Configura cache do navegador. Ao configurar o cache do navegador, a partir da próxima vez, os arquivos de recurso não serão carregados do servidor, mas sim os arquivos de recurso locais, o que acelera a navegação."
 
-#: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュを有効にする"
-msgstr "Habilitar cache do navegador"
-
 #: lib/page-speed-up/speed-up-forms.php:30
 msgid "ブラウザキャッシュを有効化することで、訪問者が2回目以降リソースファイルをサーバーから読み込む時間を軽減できます。"
 msgstr "Ativar o cache do navegador pode reduzir o tempo necessário para carregar arquivos de recurso do servidor quando os visitantes acessam pela segunda vez ou posterior."

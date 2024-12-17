@@ -10529,10 +10529,6 @@ msgstr "Browser cache"
 msgid "ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れます。"
 msgstr "Sets browser caching. By setting browser caching, from next time, resource files will not be loaded from the server but instead local resource files will be loaded, which speeds up browsing."
 
-#: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュを有効にする"
-msgstr "Enable browser cache"
-
 #: lib/page-speed-up/speed-up-forms.php:30
 msgid "ブラウザキャッシュを有効化することで、訪問者が2回目以降リソースファイルをサーバーから読み込む時間を軽減できます。"
 msgstr "Enabling browser caching can reduce the time taken to load resource files from the server when visitors visit the second or later time."

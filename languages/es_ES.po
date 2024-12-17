@@ -3996,6 +3996,7 @@ msgstr "Mostrar enlace para comprobar en <a href=\"https://search.google.com/tes
 
 #: lib/page-settings/admin-forms.php:229
 msgid "The AMP Validatorを表示する"
+msgstr "Mostrar el validador de AMP"
 
 #: lib/page-settings/admin-forms.php:230
 msgid "<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" rel=\"noopener\">The AMP Validator</a>でチェックするためのリンクの表示。"
@@ -10527,10 +10528,6 @@ msgstr "Caché del navegador"
 #: lib/page-speed-up/speed-up-forms.php:17
 msgid "ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れます。"
 msgstr "Configura la caché del navegador. Al configurar la caché del navegador, los archivos de recursos se cargarán localmente en lugar de desde el servidor en la próxima visita, lo que acelerará la navegación."
-
-#: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュを有効にする"
-msgstr "Habilitar caché del navegador"
 
 #: lib/page-speed-up/speed-up-forms.php:30
 msgid "ブラウザキャッシュを有効化することで、訪問者が2回目以降リソースファイルをサーバーから読み込む時間を軽減できます。"

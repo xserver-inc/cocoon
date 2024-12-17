@@ -3966,6 +3966,7 @@ msgstr "Afficher le lien d'édition des articles"
 msgid "WordPress管理画面で投稿内容を編集するためのリンクです。"
 msgstr "Ceci est le lien pour éditer le contenu des articles dans l'écran d'administration WordPress."
 
+#: lib/page-settings/admin-forms.php:206
 msgid "WLW編集リンクを表示する"
 msgstr "Afficher le lien d'édition WLW"
 
@@ -10527,10 +10528,6 @@ msgstr "Cache du navigateur"
 #: lib/page-speed-up/speed-up-forms.php:17
 msgid "ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れます。"
 msgstr "Configurer le cache du navigateur. En configurant le cache du navigateur, les fichiers de ressources seront chargés localement plutôt que depuis le serveur lors des visites suivantes, ce qui accélère le chargement."
-
-#: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュを有効にする"
-msgstr "Activer le cache"
 
 #: lib/page-speed-up/speed-up-forms.php:30
 msgid "ブラウザキャッシュを有効化することで、訪問者が2回目以降リソースファイルをサーバーから読み込む時間を軽減できます。"
