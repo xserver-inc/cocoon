@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-13T14:49:06+00:00\n"
+"POT-Creation-Date: 2024-12-17T11:09:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -1376,6 +1376,7 @@ msgstr ""
 
 #: lib/admin.php:495
 #: lib/original-menu.php:42
+#: lib/page-speed-up/_top-page.php:39
 msgid "高速化"
 msgstr ""
 
@@ -2770,12 +2771,14 @@ msgstr ""
 #: lib/page-access/access-forms.php:39
 #: lib/page-settings/sns-follow-forms.php:228
 #: lib/page-settings/sns-share-forms.php:154
+#: lib/page-speed-up/speed-up-forms.php:25
 msgid "キャッシュの有効化"
 msgstr ""
 
 #: lib/page-access/access-forms.php:43
 #: lib/page-settings/sns-follow-forms.php:232
 #: lib/page-settings/sns-share-forms.php:158
+#: lib/page-speed-up/speed-up-forms.php:29
 msgid "キャッシュを有効にする"
 msgstr ""
 
@@ -5257,6 +5260,7 @@ msgid "データー取得時点のAmazon販売ページでの値段を表示し�
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:77
+#: blocks/src/block/new-list/edit.js:218
 msgid "説明文を表示する"
 msgstr ""
 
@@ -10508,16 +10512,11 @@ msgid "[SAMPLE 010] どや顔女性（右）"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:14
-#: lib/page-speed-up/speed-up-forms.php:25
 msgid "ブラウザキャッシュ"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:17
 msgid "ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れます。"
-msgstr ""
-
-#: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュを有効にする"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:30
@@ -10698,10 +10697,6 @@ msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:226
 msgid "よくわからない場合は、デフォルトのままご利用ください。"
-msgstr ""
-
-#: lib/page-speed-up/_top-page.php:39
-msgid "サイト高速化"
 msgstr ""
 
 #: lib/page-speed-up/_top-page.php:41
@@ -14471,10 +14466,6 @@ msgstr ""
 
 #: blocks/src/block/new-list/edit.js:193
 msgid "読み飛ばし"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:218
-msgid "説明文の表示"
 msgstr ""
 
 #: blocks/src/block/new-list/edit.js:238
