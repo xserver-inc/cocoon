@@ -6066,8 +6066,9 @@ msgstr "(※카테고리 관련 기사를 표시하려면 인기 기사를 선�
 msgid "タグ"
 msgstr "태그"
 
+#: lib/page-settings/carousel-forms.php:84
 msgid "タグを選択すると、タグに関連付けられた記事のみが表示されます。"
-msgstr ""
+msgstr "태그를 선택하면 태그와 연결된 기사만 표시됩니다."
 
 #: lib/page-settings/carousel-forms.php:84
 msgid "（※タグ関連記事を表示させたい場合は、人気記事・カテゴリーを選択しないでください）"
