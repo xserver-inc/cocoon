@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-30T16:11:15+00:00\n"
-"PO-Revision-Date: 2024-11-30 16:23\n"
+"POT-Creation-Date: 2024-12-13T14:49:06+00:00\n"
+"PO-Revision-Date: 2024-12-13 15:53\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -69,35 +69,35 @@ msgstr "Cocoon短代码"
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon旧块（不推荐）"
 
-#: comments.php:35
+#: comments.php:39
 #: tmp/mobile-prev-button.php:20
 #: tmp/pager-page-links.php:16
 #: tmp/pagination.php:86
 msgid "前へ"
 msgstr "上一页"
 
-#: comments.php:36
+#: comments.php:40
 #: tmp/mobile-next-button.php:20
 #: tmp/pager-page-links.php:17
 #: tmp/pagination.php:87
 msgid "次へ"
 msgstr "下一页"
 
-#: comments.php:53
+#: comments.php:57
 msgid "Required fields are marked %s"
 msgstr "Required fields are marked %s"
 
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL
-#: comments.php:69
+#: comments.php:81
 msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 msgstr "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 
-#: comments.php:74
+#: comments.php:86
 msgid "Your email address will not be published."
 msgstr "Your email address will not be published."
 
-#: comments.php:81
-#: comments.php:88
+#: comments.php:93
+#: comments.php:100
 msgid "コメントを書き込む"
 msgstr "写评论"
 
@@ -298,7 +298,7 @@ msgstr "备注"
 #: lib/admin-tinymce-qtag.php:337
 #: lib/block-editor-styles-group.php:50
 #: lib/block-editor-styles-paragraph.php:85
-#: lib/page-settings/comment-funcs.php:32
+#: lib/page-settings/comment-funcs.php:29
 #: lib/page-settings/sns-share-forms-bottom.php:104
 #: lib/page-settings/sns-share-forms-top.php:91
 #: lib/page-settings/_top-page.php:224
@@ -1160,7 +1160,7 @@ msgid "参考リンク"
 msgstr "参考链接"
 
 #: lib/admin-tinymce-qtag.php:1644
-#: lib/page-settings/carousel-forms.php:61
+#: lib/page-settings/carousel-forms.php:64
 #: lib/page-settings/image-forms.php:211
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
@@ -1274,6 +1274,7 @@ msgid "ショートコード"
 msgstr "短代码"
 
 #: lib/admin.php:361
+#: lib/page-settings/admin-forms.php:24
 msgid "管理メニュー"
 msgstr "管理菜单"
 
@@ -1341,6 +1342,7 @@ msgstr "对话框"
 
 #: lib/admin.php:467
 #: lib/original-menu.php:30
+#: lib/page-func-text/_top-page.php:37
 #: lib/tinymce/function-texts.php:49
 #: blocks/src/block/template/edit.js:108
 #: blocks/src/block/template/index.js:21
@@ -1351,6 +1353,7 @@ msgstr "模板"
 
 #: lib/admin.php:474
 #: lib/original-menu.php:33
+#: lib/page-affiliate-tag/_top-page.php:37
 #: lib/tinymce/affiliate-tags.php:48
 #: blocks/src/shortcode/affi/block.js:18
 #: blocks/src/toolbutton/dropdown-affiliates.js:70
@@ -1359,8 +1362,16 @@ msgstr "联盟标签"
 
 #: lib/admin.php:481
 #: lib/original-menu.php:36
-msgid "ランキング作成"
-msgstr "创建排行榜"
+#: lib/page-item-ranking/_top-page.php:37
+#: lib/tinymce/item-rankings.php:51
+#: lib/widgets/item-ranking.php:19
+#: lib/widgets/item-ranking.php:71
+#: blocks/src/block/ranking/edit.js:110
+#: blocks/src/block/ranking/index.js:21
+#: blocks/src/toolbutton/dropdown-rankings.js:58
+#: blocks/src/toolbutton/dropdown-rankings.js:71
+msgid "ランキング"
+msgstr "排行榜"
 
 #: lib/admin.php:488
 #: lib/original-menu.php:39
@@ -1869,6 +1880,9 @@ msgstr "页面设置"
 #: blocks/src/block-extension/style-extension/style01.js:42
 #: blocks/src/block-extension/style-extension/style02.js:42
 #: blocks/src/block/balloon/edit.js:229
+#: blocks/src/block/navicard/edit.js:106
+#: blocks/src/block/new-list/edit.js:139
+#: blocks/src/block/popular-list/edit.js:218
 #: blocks/src/old/balloon-ex-fix1/block.js:165
 #: blocks/src/old/balloon-ex-v2/block.js:86
 #: blocks/src/old/balloon-ex/block.js:155
@@ -2070,7 +2084,7 @@ msgid "記事の説明文を入力してください。"
 msgstr "请输入文章说明文字。"
 
 #: lib/custom-fields/seo-field.php:131
-msgid "記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。"
+msgid "記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマートフォンではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。"
 msgstr "请输入文章说明。日文建议输入大约120个字符左右。在手机上，大约50个字符会显示。这里输入的元描述也会用于博客卡片的摘要部分。如果不输入，摘要中的内容将作为元描述插入。"
 
 #: lib/custom-fields/seo-field.php:135
@@ -2615,77 +2629,77 @@ msgstr "请用逗号分隔输入标签ID。"
 msgid "人気記事は見つかりませんでした。"
 msgstr "未找到热门文章。"
 
-#: lib/html-forms.php:1353
+#: lib/html-forms.php:1347
 #: lib/html-forms.php:1895
 msgid "記事は見つかりませんでした。"
 msgstr "未找到文章。"
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1485
+#: lib/html-forms.php:1479
 msgid "Posts by %s"
 msgstr "%s 的帖子"
 
-#: lib/html-forms.php:1489
+#: lib/html-forms.php:1483
 msgid "NO USER"
 msgstr "没有用户"
 
-#: lib/html-forms.php:1504
+#: lib/html-forms.php:1498
 msgid "未登録のユーザーさん"
 msgstr "未注册的用户"
 
-#: lib/html-forms.php:1514
+#: lib/html-forms.php:1508
 msgid "未登録のユーザーさんです。"
 msgstr "是未注册的用户。"
 
-#: lib/html-forms.php:1516
+#: lib/html-forms.php:1510
 msgid "ログイン・登録はこちら→"
 msgstr "登录/注册在这里→"
 
-#: lib/html-forms.php:1518
+#: lib/html-forms.php:1512
 msgid "ログインページ"
 msgstr "登录页面"
 
-#: lib/html-forms.php:1522
+#: lib/html-forms.php:1516
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "您是未注册用户。请登录并按下Cocoon设置的保存按钮。"
 
-#: lib/html-forms.php:1525
+#: lib/html-forms.php:1519
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "个人资料内容可以从管理面板更改→"
 
-#: lib/html-forms.php:1525
+#: lib/html-forms.php:1519
 msgid "プロフィール設定画面"
 msgstr "个人资料设置页面"
 
-#: lib/html-forms.php:1525
+#: lib/html-forms.php:1519
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "※此消息仅对登录用户可见。"
 
-#: lib/html-forms.php:1555
+#: lib/html-forms.php:1549
 msgid "管理者用エラーメッセージ"
 msgstr "管理员错误信息"
 
-#: lib/html-forms.php:1782
+#: lib/html-forms.php:1776
 msgid "おすすめ"
 msgstr "推荐"
 
-#: lib/html-forms.php:1785
+#: lib/html-forms.php:1779
 msgid "新着"
 msgstr "最新"
 
-#: lib/html-forms.php:1788
+#: lib/html-forms.php:1782
 msgid "注目"
 msgstr "关注"
 
-#: lib/html-forms.php:1791
+#: lib/html-forms.php:1785
 msgid "必見"
 msgstr "必看"
 
-#: lib/html-forms.php:1794
+#: lib/html-forms.php:1788
 msgid "お得"
 msgstr "优惠"
 
-#: lib/html-forms.php:1837
+#: lib/html-forms.php:1831
 #: lib/shortcodes.php:1013
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -2753,7 +2767,7 @@ msgid "テーマ独自のアクセス集計機能の設定です。"
 msgstr "这是主题独有的访问统计功能设置。"
 
 #: lib/page-access/access-forms.php:30
-msgid "アクセス集計の有効化"
+msgid "アクセス集計を有効にする"
 msgstr "启用访问统计"
 
 #: lib/page-access/access-forms.php:31
@@ -2761,20 +2775,26 @@ msgid "有効にすることで「人気記事」ウィジェット等が利用�
 msgstr "启用后，可以使用“热门文章”小部件等。它类似于简单的WordPress Popular Posts插件，因此，如果租用服务器对其产生负担，请将其禁用。"
 
 #: lib/page-access/access-forms.php:39
-msgid "キャッシュ"
-msgstr "缓存"
+#: lib/page-settings/sns-follow-forms.php:228
+#: lib/page-settings/sns-share-forms.php:154
+msgid "キャッシュの有効化"
+msgstr "启用缓存"
 
 #: lib/page-access/access-forms.php:43
-msgid "アクセスキャッシュの有効化"
-msgstr "启用访问缓存"
+#: lib/page-settings/sns-follow-forms.php:232
+#: lib/page-settings/sns-share-forms.php:158
+msgid "キャッシュを有効にする"
+msgstr "启用缓存"
 
 #: lib/page-access/access-forms.php:44
 msgid "アクセス統計情報の取得は多少なりともサーバーに負荷をかけるのでキャッシュの利用をおすすめします。"
 msgstr "获取访问统计信息会对服务器造成一定的负担，因此推荐使用缓存。"
 
 #: lib/page-access/access-forms.php:52
-msgid "キャッシュ更新間隔"
-msgstr "缓存更新间隔"
+#: lib/page-settings/sns-follow-forms.php:241
+#: lib/page-settings/sns-share-forms.php:167
+msgid "キャッシュ間隔"
+msgstr "缓存间隔"
 
 #: lib/page-access/access-forms.php:57
 msgid "10分"
@@ -2903,6 +2923,7 @@ msgstr "不删除并返回列表"
 
 #: lib/page-affiliate-tag/form.php:30
 #: lib/page-func-text/form.php:30
+#: lib/page-item-ranking/form.php:75
 #: lib/page-settings/appeal-forms.php:112
 #: lib/page-settings/_top-page.php:179
 #: lib/page-speech-balloon/form.php:49
@@ -2926,6 +2947,16 @@ msgstr "不删除并返回列表"
 #: blocks/src/block/timeline/edit.js:185
 msgid "タイトル"
 msgstr "标题"
+
+#: lib/page-affiliate-tag/form.php:30
+#: lib/page-affiliate-tag/form.php:34
+#: lib/page-func-text/form.php:30
+#: lib/page-func-text/form.php:34
+#: lib/page-item-ranking/form.php:75
+#: lib/page-speech-balloon/form.php:49
+#: lib/page-speech-balloon/form.php:73
+msgid "（※必須）"
+msgstr "（※必填）"
 
 #: lib/page-affiliate-tag/form.php:31
 #: lib/page-func-text/form.php:31
@@ -3028,7 +3059,7 @@ msgstr "删除失败。"
 #: lib/page-item-ranking/posts-delete.php:24
 #: lib/page-item-ranking/posts.php:89
 #: lib/page-speech-balloon/posts-delete.php:24
-#: lib/page-speech-balloon/posts.php:46
+#: lib/page-speech-balloon/posts.php:50
 msgid "入力内容が不正です。"
 msgstr "输入内容无效。"
 
@@ -3049,16 +3080,13 @@ msgstr "未保存到数据库中。"
 #: lib/page-affiliate-tag/posts.php:40
 #: lib/page-func-text/posts.php:44
 #: lib/page-item-ranking/posts.php:80
+#: lib/page-speech-balloon/posts.php:41
 msgid "タイトルが入力されていません。"
 msgstr "未输入标题。"
 
 #: lib/page-affiliate-tag/posts.php:43
 msgid "アフィリエイトタグが入力されていません。"
 msgstr "未输入联盟标签。"
-
-#: lib/page-affiliate-tag/_top-page.php:37
-msgid "アフィリエイトタグ管理"
-msgstr "联盟标签管理"
 
 #: lib/page-affiliate-tag/_top-page.php:41
 #: lib/page-func-text/_top-page.php:41
@@ -3247,10 +3275,6 @@ msgstr "文本已更新。"
 msgid "内容が入力されていません。"
 msgstr "未输入内容。"
 
-#: lib/page-func-text/_top-page.php:37
-msgid "テキストテンプレート"
-msgstr "文本模板"
-
 #: lib/page-func-text/_top-page.php:45
 msgid "頻繁に利用する文章のテンプレートを登録する機能です。ショートコードで何度でも使い回すことができます。"
 msgstr "这是一个注册经常使用的文本模板的功能。可以通过短代码多次使用。"
@@ -3300,10 +3324,6 @@ msgstr "创建排行榜。要输入下一个排行榜，请按保存按钮。"
 #: lib/page-settings/toc-forms.php:25
 msgid "プレビュー"
 msgstr "预览"
-
-#: lib/page-item-ranking/form.php:75
-msgid "タイトル（※必須）"
-msgstr "标题（※必填）"
 
 #: lib/page-item-ranking/form.php:77
 msgid "タイトルを入力"
@@ -3519,17 +3539,6 @@ msgstr "未创建排行榜项目。"
 msgid "アイテムカウントが設定されていません。"
 msgstr "未设置项目计数。"
 
-#: lib/page-item-ranking/_top-page.php:37
-#: lib/tinymce/item-rankings.php:51
-#: lib/widgets/item-ranking.php:19
-#: lib/widgets/item-ranking.php:71
-#: blocks/src/block/ranking/edit.js:110
-#: blocks/src/block/ranking/index.js:21
-#: blocks/src/toolbutton/dropdown-rankings.js:58
-#: blocks/src/toolbutton/dropdown-rankings.js:71
-msgid "ランキング"
-msgstr "排行榜"
-
 #: lib/page-settings/404-forms.php:13
 msgid "404ページ設定"
 msgstr "404页面设置"
@@ -3550,11 +3559,6 @@ msgstr "请选择要在404页面显示的图片。"
 msgid "404ページタイトル"
 msgstr "404页面标题"
 
-#: lib/page-settings/404-forms.php:54
-#: lib/page-settings/404-funcs.php:27
-msgid "404 NOT FOUND"
-msgstr "404 未找到"
-
 #: lib/page-settings/404-forms.php:55
 msgid "404ページに表示するタイトルを入力します。"
 msgstr "请输入要在404页面显示的标题。"
@@ -3563,14 +3567,17 @@ msgstr "请输入要在404页面显示的标题。"
 msgid "404ページメッセージ"
 msgstr "404页面消息"
 
-#: lib/page-settings/404-forms.php:67
-#: lib/page-settings/404-funcs.php:35
-msgid "お探しのページは見つかりませんでした。"
-msgstr "未找到您要查找的页面。"
-
 #: lib/page-settings/404-forms.php:68
 msgid "404ページに表示するメッセージを入力します。タグ入力可能です。入力されたテキストには自動的に段落が付加されます。"
 msgstr "请输入要在404页面显示的消息。可以输入标签。输入的文本将自动添加段落。"
+
+#: lib/page-settings/404-funcs.php:29
+msgid "404 NOT FOUND"
+msgstr "404 未找到"
+
+#: lib/page-settings/404-funcs.php:38
+msgid "お探しのページは見つかりませんでした。"
+msgstr "未找到您要查找的页面。"
 
 #: lib/page-settings/about-forms.php:13
 msgid "環境情報"
@@ -3580,175 +3587,185 @@ msgstr "环境信息"
 msgid "環境に関する情報です。"
 msgstr "这是有关环境的信息。"
 
-#: lib/page-settings/about-forms.php:22
+#: lib/page-settings/about-forms.php:20
+#: lib/page-settings/about-forms.php:165
+msgid "環境情報をコピー"
+msgstr "复制环境信息"
+
+#: lib/page-settings/about-forms.php:21
+#: lib/page-settings/about-forms.php:166
+msgid "環境情報をコピーしました"
+msgstr "已复制环境信息"
+
+#: lib/page-settings/about-forms.php:28
 msgid "サイト名："
 msgstr "站点名称："
 
-#: lib/page-settings/about-forms.php:23
+#: lib/page-settings/about-forms.php:29
 msgid "サイトURL："
 msgstr "站点URL："
 
-#: lib/page-settings/about-forms.php:24
+#: lib/page-settings/about-forms.php:30
 msgid "ホームURL："
 msgstr "主页URL："
 
-#: lib/page-settings/about-forms.php:25
+#: lib/page-settings/about-forms.php:31
 msgid "コンテンツURL："
 msgstr "内容URL："
 
-#: lib/page-settings/about-forms.php:26
+#: lib/page-settings/about-forms.php:32
 msgid "インクルードURL："
 msgstr "包含URL："
 
-#: lib/page-settings/about-forms.php:27
+#: lib/page-settings/about-forms.php:33
 msgid "テンプレートURL："
 msgstr "模板URL："
 
-#: lib/page-settings/about-forms.php:28
+#: lib/page-settings/about-forms.php:34
 msgid "スタイルシートURL："
 msgstr "样式表URL："
 
-#: lib/page-settings/about-forms.php:30
+#: lib/page-settings/about-forms.php:36
 msgid "親テーマスタイル："
 msgstr "父主题样式："
 
-#: lib/page-settings/about-forms.php:33
+#: lib/page-settings/about-forms.php:39
 msgid "子テーマスタイル："
 msgstr "子主题样式："
 
-#: lib/page-settings/about-forms.php:37
+#: lib/page-settings/about-forms.php:43
 msgid "スキン："
 msgstr "皮肤："
 
-#: lib/page-settings/about-forms.php:44
+#: lib/page-settings/about-forms.php:50
 msgid "サーバー："
 msgstr "服务器："
 
-#: lib/page-settings/about-forms.php:47
+#: lib/page-settings/about-forms.php:53
 msgid "WordPressバージョン："
 msgstr "WordPress版本："
 
-#: lib/page-settings/about-forms.php:48
+#: lib/page-settings/about-forms.php:54
 msgid "PHPバージョン："
 msgstr "PHP版本："
 
-#: lib/page-settings/about-forms.php:50
+#: lib/page-settings/about-forms.php:56
 msgid "ブラウザ："
 msgstr "浏览器："
 
-#: lib/page-settings/about-forms.php:52
+#: lib/page-settings/about-forms.php:58
 msgid "サーバーソフト："
 msgstr "服务器软件："
 
-#: lib/page-settings/about-forms.php:54
+#: lib/page-settings/about-forms.php:60
 msgid "サーバープロトコル："
 msgstr "服务器协议："
 
-#: lib/page-settings/about-forms.php:56
+#: lib/page-settings/about-forms.php:62
 msgid "文字セット："
 msgstr "字符集："
 
-#: lib/page-settings/about-forms.php:58
+#: lib/page-settings/about-forms.php:64
 msgid "エンコーディング："
 msgstr "编码："
 
-#: lib/page-settings/about-forms.php:60
+#: lib/page-settings/about-forms.php:66
 msgid "言語："
 msgstr "语言："
 
-#: lib/page-settings/about-forms.php:69
+#: lib/page-settings/about-forms.php:75
 msgid "テーマ名："
 msgstr "主题名称："
 
-#: lib/page-settings/about-forms.php:72
-#: lib/page-settings/about-forms.php:99
+#: lib/page-settings/about-forms.php:78
+#: lib/page-settings/about-forms.php:105
 msgid "バージョン："
 msgstr "版本："
 
-#: lib/page-settings/about-forms.php:80
+#: lib/page-settings/about-forms.php:86
 msgid "カテゴリー数："
 msgstr "类别数："
 
-#: lib/page-settings/about-forms.php:83
+#: lib/page-settings/about-forms.php:89
 msgid "タグ数："
 msgstr "标签数："
 
-#: lib/page-settings/about-forms.php:85
+#: lib/page-settings/about-forms.php:91
 msgid "ユーザー数："
 msgstr "用户数："
 
-#: lib/page-settings/about-forms.php:96
+#: lib/page-settings/about-forms.php:102
 msgid "子テーマ名："
 msgstr "子主题名称："
 
-#: lib/page-settings/about-forms.php:104
+#: lib/page-settings/about-forms.php:110
 msgid "style.cssサイズ："
 msgstr "style.css大小："
 
-#: lib/page-settings/about-forms.php:104
 #: lib/page-settings/about-forms.php:110
+#: lib/page-settings/about-forms.php:116
 msgid "バイト"
 msgstr "字节"
 
-#: lib/page-settings/about-forms.php:110
+#: lib/page-settings/about-forms.php:116
 msgid "functions.phpサイズ："
 msgstr "functions.php大小："
 
-#: lib/page-settings/about-forms.php:118
+#: lib/page-settings/about-forms.php:124
 msgid "Gutenberg："
 msgstr "Gutenberg："
 
-#: lib/page-settings/about-forms.php:120
+#: lib/page-settings/about-forms.php:126
 msgid "AMP："
 msgstr "AMP："
 
-#: lib/page-settings/about-forms.php:123
+#: lib/page-settings/about-forms.php:129
 msgid "PWA："
 msgstr "PWA："
 
-#: lib/page-settings/about-forms.php:125
+#: lib/page-settings/about-forms.php:131
 msgid "Font Awesome："
 msgstr "Font Awesome："
 
-#: lib/page-settings/about-forms.php:126
+#: lib/page-settings/about-forms.php:132
 msgid "Auto Post Thumbnail："
 msgstr "自动生成缩略图："
 
-#: lib/page-settings/about-forms.php:127
+#: lib/page-settings/about-forms.php:133
 msgid "Retina："
 msgstr "Retina："
 
-#: lib/page-settings/about-forms.php:128
+#: lib/page-settings/about-forms.php:134
 msgid "ホームイメージ："
 msgstr "主页图片："
 
-#: lib/page-settings/about-forms.php:132
+#: lib/page-settings/about-forms.php:138
 msgid "ブラウザキャッシュ有効化："
 msgstr "启用浏览器缓存："
 
-#: lib/page-settings/about-forms.php:133
+#: lib/page-settings/about-forms.php:139
 msgid "HTML縮小化："
 msgstr "HTML压缩："
 
-#: lib/page-settings/about-forms.php:134
+#: lib/page-settings/about-forms.php:140
 msgid "CSS縮小化："
 msgstr "CSS压缩："
 
-#: lib/page-settings/about-forms.php:135
+#: lib/page-settings/about-forms.php:141
 msgid "JavaScript縮小化："
 msgstr "JavaScript压缩："
 
-#: lib/page-settings/about-forms.php:136
+#: lib/page-settings/about-forms.php:142
 msgid "Lazy Load："
 msgstr "懒加载："
 
-#: lib/page-settings/about-forms.php:143
+#: lib/page-settings/about-forms.php:149
 msgid "利用中のプラグイン："
 msgstr "正在使用的插件："
 
-#: lib/page-settings/about-forms.php:156
-msgid "不具合報告の際には以下の情報を添えてもらうと助かります。"
-msgstr "报告问题时，附上以下信息会有所帮助。"
+#: lib/page-settings/about-forms.php:162
+msgid "不具合報告の際には上記の情報を添えてもらうと助かります。"
+msgstr "报告问题时，附上上述信息会有所帮助。"
 
 #: lib/page-settings/admin-forms.php:13
 msgid "管理画面設定"
@@ -3758,21 +3775,17 @@ msgstr "管理界面设置"
 msgid "管理画面の機能設定です。"
 msgstr "这是管理界面的功能设置。"
 
-#: lib/page-settings/admin-forms.php:24
-msgid "管理者メニュー"
-msgstr "管理员菜单"
-
 #: lib/page-settings/admin-forms.php:25
 msgid "管理画面に素早く移動するためのメニューリンクです。"
 msgstr "用于快速导航到管理界面的菜单链接。"
 
 #: lib/page-settings/admin-forms.php:31
-msgid "アドミンバーに独自管理メニューを表示"
-msgstr "在管理员工具栏中显示自定义管理菜单"
+msgid "ツールバー（管理バー）に独自管理メニューを表示する"
+msgstr "在工具栏（管理栏）显示自定义管理菜单"
 
 #: lib/page-settings/admin-forms.php:32
-msgid "管理者バーに手軽に設定画面にアクセスできるメニューを表示します。"
-msgstr "在管理员工具栏中显示一个便捷的菜单以访问设置页面。"
+msgid "ツールバー（管理バー）に手軽に設定画面にアクセスできるメニューを表示します。"
+msgstr "在工具栏（管理栏）显示可轻松访问设置界面的菜单。"
 
 #: lib/page-settings/admin-forms.php:46
 msgid "ダッシュボードメッセージ"
@@ -3799,12 +3812,12 @@ msgid "新型コロナウイルスに関する情報は、WHOの終息宣言が�
 msgstr "新冠病毒相关信息将显示至WHO发布疫情结束声明或接近该状态为止（由于此次病毒的性质，完全结束的可能性尚不明确）。"
 
 #: lib/page-settings/admin-forms.php:77
-msgid "投稿一覧設定"
-msgstr "文章列表设置"
+msgid "投稿・固定ページ一覧設定"
+msgstr "投稿和固定页面列表设置"
 
 #: lib/page-settings/admin-forms.php:81
-msgid "管理画面の投稿一覧ページの設定です。"
-msgstr "这是管理界面中文章列表页面的设置。"
+msgid "管理画面の投稿・固定ページ一覧ページの設定です。"
+msgstr "这是管理界面中投稿和固定页面列表页面的设置。"
 
 #: lib/page-settings/admin-forms.php:92
 msgid "カラム表示"
@@ -3815,7 +3828,7 @@ msgid "投稿・固定ページ記事一覧テーブルのカラム操作。"
 msgstr "操作文章和固定页面文章列表表格中的列。"
 
 #: lib/page-settings/admin-forms.php:99
-msgid "作成者を表示する"
+msgid "投稿者を表示する"
 msgstr "显示作者"
 
 #: lib/page-settings/admin-forms.php:102
@@ -3837,7 +3850,7 @@ msgid "日付を表示する"
 msgstr "显示日期"
 
 #: lib/page-settings/admin-forms.php:115
-msgid "投稿IDを表示する"
+msgid "IDを表示する"
 msgstr "显示文章ID"
 
 #: lib/page-settings/admin-forms.php:118
@@ -3881,15 +3894,15 @@ msgid "管理者用のPV表示エリア、各種チェックツール表示用�
 msgstr "这是一个用于显示管理员PV区域和各种检查工具的面板。"
 
 #: lib/page-settings/admin-forms.php:163
-msgid "全て表示"
-msgstr "全部显示"
+msgid "全て表示する"
+msgstr "显示全部"
 
 #: lib/page-settings/admin-forms.php:164
-msgid "PCのみ表示"
+msgid "PCのみ表示する"
 msgstr "仅显示在PC上"
 
 #: lib/page-settings/admin-forms.php:165
-msgid "モバイルのみ表示"
+msgid "モバイルのみ表示する"
 msgstr "仅显示在移动设备上"
 
 #: lib/page-settings/admin-forms.php:166
@@ -3898,7 +3911,6 @@ msgstr "仅显示在移动设备上"
 #: lib/page-settings/header-forms.php:128
 #: lib/page-settings/page-forms.php:56
 #: lib/page-settings/recommended-forms.php:39
-#: lib/page-settings/seo-forms.php:158
 #: lib/page-settings/single-forms.php:436
 #: lib/page-settings/toc-forms.php:160
 msgid "表示しない"
@@ -3920,197 +3932,213 @@ msgstr "显示PV区域"
 msgid "管理者パネル内のPVエリアを表示します。"
 msgstr "在管理员面板内显示PV区域。"
 
-#: lib/page-settings/admin-forms.php:187
-msgid "インデックスにPV数を表示"
-msgstr "在索引中显示PV数"
-
-#: lib/page-settings/admin-forms.php:188
-msgid "インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。"
-msgstr "在索引页面的每个条目卡片中显示PV数。如果使用Jetpack进行统计，首次访问时获取信息可能会有些延迟。"
-
-#: lib/page-settings/admin-forms.php:190
-msgid "アクセス集計方法"
-msgstr "访问统计方法"
-
-#: lib/page-settings/admin-forms.php:195
-msgid "※テーマのアクセス集計が有効になっていません。"
-msgstr "※主题的访问统计未启用。"
-
-#: lib/page-settings/admin-forms.php:200
-msgid "※Jetpackの統計機能が有効になっていません。"
-msgstr "※Jetpack的统计功能未启用。"
-
-#: lib/page-settings/admin-forms.php:203
-msgid "テーマ独自"
-msgstr "主题自带"
-
-#: lib/page-settings/admin-forms.php:204
-msgid "Jetpack"
-msgstr "Jetpack"
-
-#: lib/page-settings/admin-forms.php:207
-msgid "管理者パネルで表示するPVの取得方法を選択します。"
-msgstr "选择在管理员面板中显示的PV的获取方法。"
-
-#: lib/page-settings/admin-forms.php:218
+#: lib/page-settings/admin-forms.php:191
 msgid "編集エリアの表示"
 msgstr "显示编辑区域"
 
-#: lib/page-settings/admin-forms.php:222
+#: lib/page-settings/admin-forms.php:195
 msgid "編集エリアを表示する"
 msgstr "显示编辑区域"
 
-#: lib/page-settings/admin-forms.php:223
+#: lib/page-settings/admin-forms.php:196
 msgid "管理者パネル内の編集エリアを表示します。"
 msgstr "在管理员面板内显示编辑区域。"
 
-#: lib/page-settings/admin-forms.php:227
-msgid "ダッシュボードリンクの表示"
+#: lib/page-settings/admin-forms.php:200
+msgid "ダッシュボードリンクを表示する"
 msgstr "显示仪表盘链接"
 
-#: lib/page-settings/admin-forms.php:228
-msgid "Wordpressのダッシュボードに移動するためのリンクです。"
+#: lib/page-settings/admin-forms.php:201
+msgid "WordPressのダッシュボードに移動するためのリンクです。"
 msgstr "这是跳转到WordPress仪表盘的链接。"
 
-#: lib/page-settings/admin-forms.php:230
+#: lib/page-settings/admin-forms.php:203
 msgid "投稿編集リンクの表示"
 msgstr "显示文章编辑链接"
 
-#: lib/page-settings/admin-forms.php:231
+#: lib/page-settings/admin-forms.php:204
 msgid "WordPress管理画面で投稿内容を編集するためのリンクです。"
 msgstr "这是在WordPress管理界面中编辑文章内容的链接。"
 
-#: lib/page-settings/admin-forms.php:233
+#: lib/page-settings/admin-forms.php:206
 msgid "WLW編集リンクの表示"
 msgstr "显示WLW编辑链接"
 
-#: lib/page-settings/admin-forms.php:234
+#: lib/page-settings/admin-forms.php:207
 msgid "Windows Live Writerで投稿内容を編集するためのリンクです。"
 msgstr "这是使用Windows Live Writer编辑文章内容的链接。"
 
-#: lib/page-settings/admin-forms.php:244
+#: lib/page-settings/admin-forms.php:217
 msgid "AMPエリアの表示"
 msgstr "显示AMP区域"
 
-#: lib/page-settings/admin-forms.php:248
+#: lib/page-settings/admin-forms.php:221
 msgid "AMPエリア表示する"
 msgstr "显示AMP区域"
 
-#: lib/page-settings/admin-forms.php:249
+#: lib/page-settings/admin-forms.php:222
 msgid "AMP動作確認・テストリンクなどを表示します。"
 msgstr "显示AMP运行检查和测试链接等内容。"
 
-#: lib/page-settings/admin-forms.php:253
+#: lib/page-settings/admin-forms.php:226
 msgid "Google AMPテストを表示"
 msgstr "显示Google AMP测试"
 
-#: lib/page-settings/admin-forms.php:254
+#: lib/page-settings/admin-forms.php:227
 msgid "<a href=\"https://search.google.com/test/amp\" target=\"_blank\" rel=\"noopener\">AMP テスト - Google Search Console</a>でチェックするためのリンクの表示。"
 msgstr "显示链接以在<a href=\"https://search.google.com/test/amp\" target=\"_blank\" rel=\"noopener\">AMP测试 - Google搜索控制台</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:256
+#: lib/page-settings/admin-forms.php:229
 msgid "The AMP Validatorを表示"
 msgstr "显示The AMP Validator"
 
-#: lib/page-settings/admin-forms.php:257
+#: lib/page-settings/admin-forms.php:230
 msgid "<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" rel=\"noopener\">The AMP Validator</a>でチェックするためのリンクの表示。"
 msgstr "显示链接以在<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" rel=\"noopener\">The AMP Validator</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:271
+#: lib/page-settings/admin-forms.php:244
 msgid "チェックツールエリアの表示"
 msgstr "显示检查工具区域"
 
-#: lib/page-settings/admin-forms.php:275
+#: lib/page-settings/admin-forms.php:248
 msgid "チェックツールエリアを表示する"
 msgstr "显示检查工具区域"
 
-#: lib/page-settings/admin-forms.php:276
+#: lib/page-settings/admin-forms.php:249
 msgid "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、Twitterの反応など。"
 msgstr "显示一个区域，用于显示页面诊断的检查工具。包括PageSpeed Insights、结构化数据检查、HTML5检查、Twitter反应等。"
 
-#: lib/page-settings/admin-forms.php:280
+#: lib/page-settings/admin-forms.php:253
 msgid "PageSpeed Insightsを表示する"
 msgstr "显示PageSpeed Insights"
 
-#: lib/page-settings/admin-forms.php:281
+#: lib/page-settings/admin-forms.php:254
 msgid "<a href=\"https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true\" target=\"_blank\" rel=\"noopener\">PageSpeed Insights</a>リンクの表示。"
 msgstr "显示链接以在<a href=\"https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true\" target=\"_blank\" rel=\"noopener\">PageSpeed Insights</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:283
+#: lib/page-settings/admin-forms.php:256
 msgid "GTmetrixを表示する"
 msgstr "显示GTmetrix"
 
-#: lib/page-settings/admin-forms.php:284
+#: lib/page-settings/admin-forms.php:257
 msgid "<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTmetrix</a>リンクの表示。"
 msgstr "显示链接以在<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTmetrix</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:286
+#: lib/page-settings/admin-forms.php:259
 msgid "構造化データチェックを表示する"
 msgstr "显示结构化数据检查"
 
-#: lib/page-settings/admin-forms.php:287
+#: lib/page-settings/admin-forms.php:260
 msgid "<a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">リッチリザルトテストツール</a>リンクの表示。"
 msgstr "显示链接以在<a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">豐富結果測試工具</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:289
+#: lib/page-settings/admin-forms.php:262
 msgid "HTML5チェックを表示する"
 msgstr "显示HTML5检查"
 
-#: lib/page-settings/admin-forms.php:290
+#: lib/page-settings/admin-forms.php:263
 msgid "<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a>リンクの表示。"
 msgstr "显示链接以在<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:292
+#: lib/page-settings/admin-forms.php:265
 msgid "SEOチェキを表示する"
 msgstr "显示SEO检查"
 
-#: lib/page-settings/admin-forms.php:293
+#: lib/page-settings/admin-forms.php:266
 msgid "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
 msgstr "显示链接以在<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO检查! 免费SEO工具</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:295
-msgid "ツイートチェックを表示する"
-msgstr "显示推文检查"
+#: lib/page-settings/admin-forms.php:268
+msgid "ツイート検索を表示する"
+msgstr "显示推文搜索"
 
-#: lib/page-settings/admin-forms.php:296
-msgid "投稿・固定ページに対するツイートチェックリンクの表示。"
-msgstr "显示文章和固定页面的推文检查链接。"
+#: lib/page-settings/admin-forms.php:269
+msgid "投稿・固定ページ・インデックスページに対するツイート検索リンクの表示。"
+msgstr "显示针对投稿、固定页面和索引页面的推文搜索链接。"
 
-#: lib/page-settings/admin-forms.php:305
+#: lib/page-settings/admin-forms.php:278
 msgid "レスポンシブツールエリアの表示"
 msgstr "显示响应式工具区域"
 
-#: lib/page-settings/admin-forms.php:309
-msgid "レスポンシブチェックを表示する"
-msgstr "显示响应式检查"
+#: lib/page-settings/admin-forms.php:282
+msgid "レスポンシブチェックツールエリアを表示する"
+msgstr "显示响应式检查工具区域"
 
-#: lib/page-settings/admin-forms.php:310
+#: lib/page-settings/admin-forms.php:283
 msgid "レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えます。"
 msgstr "切换显示响应式显示状态检查工具区域的功能。"
 
-#: lib/page-settings/admin-forms.php:314
+#: lib/page-settings/admin-forms.php:287
 msgid "Responsinatorチェックを表示する"
 msgstr "显示Responsinator检查"
 
-#: lib/page-settings/admin-forms.php:315
+#: lib/page-settings/admin-forms.php:288
 msgid "<a href=\"http://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>チェック用リンクの表示。"
 msgstr "显示链接以在<a href=\"http://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:317
+#: lib/page-settings/admin-forms.php:290
 msgid "Sizzyチェックを表示する"
 msgstr "显示Sizzy检查"
 
-#: lib/page-settings/admin-forms.php:318
+#: lib/page-settings/admin-forms.php:291
 msgid "<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>チェック用リンクの表示。"
 msgstr "显示链接以在<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>中检查。"
 
-#: lib/page-settings/admin-forms.php:320
+#: lib/page-settings/admin-forms.php:293
 msgid "ScreenResolutionチェックを表示する"
 msgstr "显示ScreenResolution检查"
 
-#: lib/page-settings/admin-forms.php:321
+#: lib/page-settings/admin-forms.php:294
 msgid "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
 msgstr "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
+
+#: lib/page-settings/admin-forms.php:311
+msgid "インデックス設定"
+msgstr "索引設定"
+
+#: lib/page-settings/admin-forms.php:314
+msgid "インデックスページのエントリーカードに表示されるPVの設定です。"
+msgstr "这是设置索引页面条目卡中显示的PV。"
+
+#: lib/page-settings/admin-forms.php:322
+msgid "エントリーカード"
+msgstr "条目卡片"
+
+#: lib/page-settings/admin-forms.php:323
+msgid "エントリーカードのPV表示エリアの設定です。"
+msgstr "这是条目卡PV显示区域的设置。"
+
+#: lib/page-settings/admin-forms.php:328
+msgid "インデックスにPV数を表示する"
+msgstr "在索引中显示PV数"
+
+#: lib/page-settings/admin-forms.php:329
+msgid "インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。"
+msgstr "在索引页面的每个条目卡片中显示PV数。如果使用Jetpack进行统计，首次访问时获取信息可能会有些延迟。"
+
+#: lib/page-settings/admin-forms.php:331
+msgid "アクセス集計方法"
+msgstr "访问统计方法"
+
+#: lib/page-settings/admin-forms.php:336
+msgid "※テーマのアクセス集計が有効になっていません。"
+msgstr "※主题的访问统计未启用。"
+
+#: lib/page-settings/admin-forms.php:341
+msgid "※Jetpackの統計機能が有効になっていません。"
+msgstr "※Jetpack的统计功能未启用。"
+
+#: lib/page-settings/admin-forms.php:344
+msgid "テーマ独自"
+msgstr "主题自带"
+
+#: lib/page-settings/admin-forms.php:345
+msgid "Jetpack"
+msgstr "Jetpack"
+
+#: lib/page-settings/admin-forms.php:348
+msgid "管理者パネルで表示するPVの取得方法を選択します。"
+msgstr "选择在管理员面板中显示的PV的获取方法。"
 
 #: lib/page-settings/ads-forms.php:11
 msgid "広告設定"
@@ -4125,7 +4153,7 @@ msgid "広告の表示"
 msgstr "广告显示"
 
 #: lib/page-settings/ads-forms.php:26
-msgid "全ての広告を表示"
+msgid "全ての広告を表示する"
 msgstr "显示所有广告"
 
 #: lib/page-settings/ads-forms.php:27
@@ -4160,7 +4188,7 @@ msgid "アドセンス広告の表示"
 msgstr "显示AdSense广告"
 
 #: lib/page-settings/ads-forms.php:69
-msgid "全てのアドセンス広告を表示"
+msgid "全てのアドセンス広告を表示する"
 msgstr "显示所有AdSense广告"
 
 #: lib/page-settings/ads-forms.php:70
@@ -4427,7 +4455,7 @@ msgid "「PR表記」を非表示にする投稿・固定ページのIDを,（�
 msgstr "请用逗号分隔指定不显示“PR标记”的文章或固定页面ID。"
 
 #: lib/page-settings/ads-forms.php:366
-#: lib/page-settings/index-forms.php:241
+#: lib/page-settings/index-forms.php:234
 #: lib/page-settings/single-forms.php:365
 msgid "除外カテゴリー"
 msgstr "排除分类"
@@ -4814,31 +4842,31 @@ msgid "サイドバーの表示状態"
 msgstr "侧边栏显示状态"
 
 #: lib/page-settings/all-forms.php:266
-msgid "全てのページで表示"
-msgstr "显示在所有页面"
+msgid "全てのページで表示する"
+msgstr "在所有页面显示"
 
 #: lib/page-settings/all-forms.php:267
-msgid "全てのページで非表示"
+msgid "全てのページで非表示にする"
 msgstr "隐藏在所有页面"
 
 #: lib/page-settings/all-forms.php:268
-msgid "フロントページで非表示"
+msgid "フロントページで非表示にする"
 msgstr "隐藏在首页"
 
 #: lib/page-settings/all-forms.php:269
-msgid "インデックスページで非表示"
+msgid "インデックスページで非表示にする"
 msgstr "隐藏在索引页"
 
 #: lib/page-settings/all-forms.php:270
-msgid "固定ページで非表示"
+msgid "固定ページで非表示にする"
 msgstr "隐藏在固定页面"
 
 #: lib/page-settings/all-forms.php:271
-msgid "投稿ページで非表示"
+msgid "投稿ページで非表示にする"
 msgstr "隐藏在文章页面"
 
 #: lib/page-settings/all-forms.php:272
-msgid "404ページで非表示"
+msgid "404ページで非表示にする"
 msgstr "隐藏在404页面"
 
 #: lib/page-settings/all-forms.php:276
@@ -4885,7 +4913,7 @@ msgstr "请为主题使用的日期格式输入格式（默认值：Y.m.d）。"
 msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
 msgstr "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日期和时间格式指南</a>"
 
-#: lib/page-settings/all-funcs.php:255
+#: lib/page-settings/all-funcs.php:252
 msgid "Y.m.d"
 msgstr "Y.m.d"
 
@@ -4937,8 +4965,8 @@ msgstr "AMP画廊（支持多张图片画廊显示）"
 
 #: lib/page-settings/amp-forms.php:59
 #: lib/page-settings/image-forms.php:136
-msgid "リンク画像をクリックしたときの拡大効果の設定です。"
-msgstr "设置点击链接图片时的放大效果。"
+msgid "本文内のリンク画像をクリックしたときの拡大効果の設定です。"
+msgstr "设置正文中链接图片点击时的放大效果。"
 
 #: lib/page-settings/amp-forms.php:67
 msgid "インラインスタイル"
@@ -5560,37 +5588,37 @@ msgstr "宣传区域的显示"
 #: lib/page-settings/appeal-forms.php:39
 #: lib/page-settings/carousel-forms.php:39
 #: lib/page-settings/recommended-forms.php:40
-msgid "全ページで表示"
+msgid "全ページで表示する"
 msgstr "在所有页面显示"
 
 #: lib/page-settings/appeal-forms.php:40
 #: lib/page-settings/carousel-forms.php:40
 #: lib/page-settings/recommended-forms.php:41
-msgid "フロントページのみで表示"
+msgid "フロントページのみで表示する"
 msgstr "仅在首页显示"
 
 #: lib/page-settings/appeal-forms.php:41
 #: lib/page-settings/carousel-forms.php:41
 #: lib/page-settings/recommended-forms.php:42
-msgid "投稿・固定ページ以外で表示"
+msgid "投稿・固定ページ以外で表示する"
 msgstr "显示在帖子和固定页面以外的地方"
 
 #: lib/page-settings/appeal-forms.php:42
 #: lib/page-settings/carousel-forms.php:42
 #: lib/page-settings/recommended-forms.php:43
-msgid "投稿・固定ページのみで表示"
+msgid "投稿・固定ページのみで表示する"
 msgstr "仅在帖子和固定页面显示"
 
 #: lib/page-settings/appeal-forms.php:43
 #: lib/page-settings/carousel-forms.php:43
 #: lib/page-settings/recommended-forms.php:44
-msgid "投稿ページのみで表示"
+msgid "投稿ページのみで表示する"
 msgstr "仅在帖子页面显示"
 
 #: lib/page-settings/appeal-forms.php:44
 #: lib/page-settings/carousel-forms.php:44
 #: lib/page-settings/recommended-forms.php:45
-msgid "固定ページのみで表示"
+msgid "固定ページのみで表示する"
 msgstr "仅在固定页面显示"
 
 #: lib/page-settings/appeal-forms.php:47
@@ -5603,7 +5631,7 @@ msgid "高さ"
 msgstr "高度"
 
 #: lib/page-settings/appeal-forms.php:60
-msgid "アピールエリアの高さをpx数で指定します。モバイル環境では高さは無効になります。（最小：200px、最大：800px）"
+msgid "アピールエリアの最低限の高さをpx数で指定します。モバイル環境では高さは無効になります。（最小：200px、最大：800px）"
 msgstr "以像素为单位指定宣传区域的高度。在移动设备上，高度设置将无效。（最小：200px，最大：800px）"
 
 #: lib/page-settings/appeal-forms.php:68
@@ -5615,7 +5643,7 @@ msgid "アピールエリアの背景に表示する画像を設定します。"
 msgstr "设置在宣传区域背景中显示的图片。"
 
 #: lib/page-settings/appeal-forms.php:76
-msgid "アピールエリア背景画像の固定"
+msgid "アピールエリアの背景画像を固定する"
 msgstr "固定宣传区域的背景图片"
 
 #: lib/page-settings/appeal-forms.php:77
@@ -5952,45 +5980,55 @@ msgid "カルーセルを表示するページを設定します。"
 msgstr "设置显示轮播的页面。"
 
 #: lib/page-settings/carousel-forms.php:49
-msgid "スマートフォンで表示（480px以下）"
+#: lib/page-settings/index-forms.php:212
+#: lib/page-settings/single-forms.php:249
+msgid "スマートフォンで表示する（480px以下）"
 msgstr "在智能手机上显示（480px以下）"
 
-#: lib/page-settings/carousel-forms.php:57
+#: lib/page-settings/carousel-forms.php:58
 msgid "表示内容"
 msgstr "显示内容"
 
-#: lib/page-settings/carousel-forms.php:65
+#: lib/page-settings/carousel-forms.php:63
+msgid "人気記事、カテゴリー、タグの順に優先され、いずれか一つが表示されます。"
+msgstr "按人气文章、类别、标签的顺序优先显示，其中之一将会被显示。"
+
+#: lib/page-settings/carousel-forms.php:68
 #: lib/widgets/popular-entries.php:201
 msgid "本日"
 msgstr "今天"
 
-#: lib/page-settings/carousel-forms.php:66
+#: lib/page-settings/carousel-forms.php:69
 #: lib/widgets/popular-entries.php:202
 msgid "7日間"
 msgstr "7天"
 
-#: lib/page-settings/carousel-forms.php:67
+#: lib/page-settings/carousel-forms.php:70
 #: lib/widgets/popular-entries.php:203
 msgid "30日間"
 msgstr "30天"
 
-#: lib/page-settings/carousel-forms.php:68
+#: lib/page-settings/carousel-forms.php:71
 #: lib/widgets/popular-entries.php:204
 msgid "1年間"
 msgstr "1年"
 
-#: lib/page-settings/carousel-forms.php:69
+#: lib/page-settings/carousel-forms.php:72
 #: lib/page-settings/single-forms.php:193
 #: lib/widgets/popular-entries.php:205
 #: blocks/src/block/popular-list/edit.js:143
 msgid "全期間"
 msgstr "所有期间"
 
-#: lib/page-settings/carousel-forms.php:72
+#: lib/page-settings/carousel-forms.php:75
 msgid "で集計した人気記事を含める"
 msgstr "包括按...统计的热门文章"
 
 #: lib/page-settings/carousel-forms.php:76
+msgid "人気記事を選択すると、人気記事のみが優先して表示されます。"
+msgstr "选择人气文章时，将仅优先显示人气文章。"
+
+#: lib/page-settings/carousel-forms.php:78
 #: lib/page-settings/single-forms.php:129
 #: lib/page-settings/single-forms.php:357
 #: lib/page-settings/sns-follow-forms.php:116
@@ -6002,6 +6040,14 @@ msgid "カテゴリー"
 msgstr "分类"
 
 #: lib/page-settings/carousel-forms.php:80
+msgid "カテゴリーを選択すると、カテゴリーに関連付けられた記事のみが表示されます。"
+msgstr "选择类别时，仅显示与类别相关的文章。"
+
+#: lib/page-settings/carousel-forms.php:80
+msgid "（※カテゴリー関連記事を表示させたい場合は、人気記事を選択しないでください）"
+msgstr "（※如果希望显示类别相关文章，请不要选择人气文章）"
+
+#: lib/page-settings/carousel-forms.php:82
 #: lib/page-settings/editor-forms.php:83
 #: lib/page-settings/single-forms.php:130
 #: lib/page-settings/sns-follow-forms.php:119
@@ -6013,78 +6059,82 @@ msgstr "分类"
 msgid "タグ"
 msgstr "标签"
 
-#: lib/page-settings/carousel-forms.php:82
-msgid "カルーセルと関連付けるカテゴリーもしくはタグを選択してください。人気記事を有効にしカテゴリーもしくはタグを選択した場合は、すべて合算し「カルーセルの並び替え」で設定した順番で表示されます。"
-msgstr "请选择与轮播相关的分类或标签。如果启用了热门文章并选择了分类或标签，则所有内容将合并，并按“轮播排序”中设置的顺序显示。"
+#: lib/page-settings/carousel-forms.php:84
+msgid "タグを選択すると、タグに関連付けられた記事のみが表示されます。"
+msgstr "选择标签时，仅显示与标签相关的文章。"
 
-#: lib/page-settings/carousel-forms.php:90
+#: lib/page-settings/carousel-forms.php:84
+msgid "（※タグ関連記事を表示させたい場合は、人気記事・カテゴリーを選択しないでください）"
+msgstr "（※如果希望显示标签相关文章，请不要选择人气文章或类别）"
+
+#: lib/page-settings/carousel-forms.php:92
 msgid "カルーセルの並び替え"
 msgstr "轮播排序"
 
-#: lib/page-settings/carousel-forms.php:95
+#: lib/page-settings/carousel-forms.php:97
 #: lib/page-settings/index-forms.php:123
 msgid "ランダム"
 msgstr "随机"
 
-#: lib/page-settings/carousel-forms.php:96
+#: lib/page-settings/carousel-forms.php:98
 #: lib/page-settings/index-forms.php:121
 msgid "投稿日（降順）"
 msgstr "发布日期（降序）"
 
-#: lib/page-settings/carousel-forms.php:97
+#: lib/page-settings/carousel-forms.php:99
 #: lib/page-settings/index-forms.php:122
 msgid "更新日（降順）"
 msgstr "更新日期（降序）"
 
-#: lib/page-settings/carousel-forms.php:100
+#: lib/page-settings/carousel-forms.php:102
 msgid "カルーセルを表示する順番を変更します。"
 msgstr "更改轮播显示顺序。"
 
-#: lib/page-settings/carousel-forms.php:109
+#: lib/page-settings/carousel-forms.php:111
 msgid "最大表示数"
 msgstr "最大显示数"
 
-#: lib/page-settings/carousel-forms.php:115
+#: lib/page-settings/carousel-forms.php:117
 msgid "カルーセルに表示するアイテムの最大表示数を設定します。（デフォルト：18、最小：12、最大：120）"
 msgstr "设置在轮播中显示的项目的最大数量。（默认：18，最小：12，最大：120）"
 
-#: lib/page-settings/carousel-forms.php:123
+#: lib/page-settings/carousel-forms.php:125
 #: lib/page-settings/index-forms.php:164
 #: lib/page-settings/single-forms.php:214
 msgid "枠線の表示"
 msgstr "显示边框"
 
-#: lib/page-settings/carousel-forms.php:127
+#: lib/page-settings/carousel-forms.php:129
 #: lib/page-settings/index-forms.php:168
 #: lib/page-settings/single-forms.php:218
 msgid "カードの枠線を表示する"
 msgstr "显示卡片的边框"
 
-#: lib/page-settings/carousel-forms.php:128
+#: lib/page-settings/carousel-forms.php:130
 msgid "カルーセルのカードの枠となる罫線を表示するか。"
 msgstr "是否显示轮播卡片的边框线。"
 
-#: lib/page-settings/carousel-forms.php:136
+#: lib/page-settings/carousel-forms.php:138
 msgid "オートプレイ"
 msgstr "自动播放"
 
-#: lib/page-settings/carousel-forms.php:140
-msgid "オートプレイを実行"
+#: lib/page-settings/carousel-forms.php:142
+msgid "オートプレイを実行する"
 msgstr "启用自动播放"
 
-#: lib/page-settings/carousel-forms.php:141
+#: lib/page-settings/carousel-forms.php:143
 msgid "カルーセルが自動的に送られます。"
 msgstr "轮播将自动滑动。"
 
-#: lib/page-settings/carousel-forms.php:149
+#: lib/page-settings/carousel-forms.php:151
 msgid "オートプレイインターバル"
 msgstr "自动播放间隔"
 
-#: lib/page-settings/carousel-forms.php:155
+#: lib/page-settings/carousel-forms.php:157
 msgid "秒"
 msgstr "秒"
 
-#: lib/page-settings/carousel-forms.php:158
+#: lib/page-settings/carousel-forms.php:160
 msgid "カルーセルの自動送り間隔です。オートプレイが有効な時のみ設定した秒数ごとに入れ替わります。"
 msgstr "这是轮播的自动滑动间隔。仅在启用自动播放时，每隔设定的秒数更换一次。"
 
@@ -6101,7 +6151,7 @@ msgid "ハイライト表示"
 msgstr "高亮显示"
 
 #: lib/page-settings/code-forms.php:52
-msgid "ソースコードをハイライト表示"
+msgid "ソースコードをハイライト表示する"
 msgstr "高亮显示源代码"
 
 #: lib/page-settings/code-forms.php:53
@@ -6109,7 +6159,7 @@ msgid "本文中に表示されているpreタグ中のソースコードをハ�
 msgstr "高亮显示本文中pre标签内的源代码。"
 
 #: lib/page-settings/code-forms.php:58
-msgid "行番号表示"
+msgid "行番号を表示する"
 msgstr "显示行号"
 
 #: lib/page-settings/code-forms.php:59
@@ -6317,32 +6367,9 @@ msgstr "更改评论的显示格式。"
 msgid "コメント一覧見出し"
 msgstr "评论列表标题"
 
-#: lib/page-settings/comment-forms.php:60
-#: lib/page-settings/comment-forms.php:95
-#: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1125
-#: lib/widgets/cta-box.php:108
-#: blocks/src/block-universal/caption-box/deprecated.js:25
-#: blocks/src/block-universal/caption-box/edit.js:20
-#: blocks/src/block-universal/label-box/deprecated.js:25
-#: blocks/src/block-universal/label-box/edit.js:20
-#: blocks/src/block-universal/tab-caption-box/deprecated.js:25
-#: blocks/src/block-universal/tab-caption-box/edit.js:20
-#: blocks/src/block/cta/edit.js:83
-#: blocks/src/old/caption-box/block.js:18
-#: blocks/src/old/label-box/block.js:17
-#: blocks/src/old/tab-caption-box/block.js:18
-msgid "見出し"
-msgstr "标题"
-
 #: lib/page-settings/comment-forms.php:61
 msgid "コメント一覧の見出しを入力してください。"
 msgstr "请输入评论列表的标题。"
-
-#: lib/page-settings/comment-forms.php:62
-#: lib/page-settings/single-forms.php:147
-msgid "サブ見出し"
-msgstr "副标题"
 
 #: lib/page-settings/comment-forms.php:63
 msgid "コメント一覧の補助となる見出しを入力してください。"
@@ -6400,18 +6427,17 @@ msgstr "是否显示网站输入框。"
 msgid "送信ボタンラベル"
 msgstr "发送按钮标签"
 
-#: lib/page-settings/comment-forms.php:134
-#: lib/page-settings/comment-funcs.php:90
-msgid "コメントを送信"
-msgstr "发送评论"
-
 #: lib/page-settings/comment-forms.php:135
 msgid "コメントの送信ボタンのラベルテキストを入力してください。"
 msgstr "请输入评论发送按钮的标签文本。"
 
-#: lib/page-settings/comment-funcs.php:66
+#: lib/page-settings/comment-funcs.php:64
 msgid "コメントをどうぞ"
 msgstr "请发表评论"
+
+#: lib/page-settings/comment-funcs.php:89
+msgid "コメントを送信"
+msgstr "发送评论"
 
 #: lib/page-settings/content-forms.php:13
 msgid "本文行間設定"
@@ -6490,7 +6516,7 @@ msgstr "添加rel属性"
 
 #: lib/page-settings/content-forms.php:109
 #: lib/page-settings/content-forms.php:232
-msgid "noopenerを追加"
+msgid "noopenerを追加する"
 msgstr "添加noopener"
 
 #: lib/page-settings/content-forms.php:110
@@ -6499,8 +6525,10 @@ msgid "rel属性にnoopenerを追加します。"
 msgstr "在rel属性中添加noopener。"
 
 #: lib/page-settings/content-forms.php:113
+#: lib/page-settings/content-forms.php:122
 #: lib/page-settings/content-forms.php:236
-msgid "target=\"_blank\"の際はnoopenerを追加"
+#: lib/page-settings/content-forms.php:246
+msgid "target=\"_blank\"の際はnoopenerを追加する"
 msgstr "target=\"_blank\"时添加noopener"
 
 #: lib/page-settings/content-forms.php:114
@@ -6510,7 +6538,7 @@ msgstr "在新标签页中打开链接时，添加rel属性noopener。"
 
 #: lib/page-settings/content-forms.php:118
 #: lib/page-settings/content-forms.php:241
-msgid "noreferrerを追加"
+msgid "noreferrerを追加する"
 msgstr "添加noreferrer"
 
 #: lib/page-settings/content-forms.php:119
@@ -6518,18 +6546,13 @@ msgstr "添加noreferrer"
 msgid "rel属性にnoreferrerを追加します。"
 msgstr "在rel属性中添加noreferrer。"
 
-#: lib/page-settings/content-forms.php:122
-#: lib/page-settings/content-forms.php:246
-msgid "target=\"_blank\"の際はnoreferrerを追加"
-msgstr "target=\"_blank\"时添加noreferrer"
-
 #: lib/page-settings/content-forms.php:123
 #: lib/page-settings/content-forms.php:247
 msgid "新しいタブで開くリンクのrel属性にnoreferrerを追加します。"
 msgstr "在新标签页中打开链接时，添加rel属性noreferrer。"
 
 #: lib/page-settings/content-forms.php:127
-msgid "externalを追加"
+msgid "externalを追加する"
 msgstr "添加external"
 
 #: lib/page-settings/content-forms.php:128
@@ -6543,8 +6566,8 @@ msgstr "图标显示"
 
 #: lib/page-settings/content-forms.php:140
 #: lib/page-settings/content-forms.php:260
-msgid "アイコンの表示"
-msgstr "图标的显示"
+msgid "アイコンを表示する"
+msgstr "显示图标"
 
 #: lib/page-settings/content-forms.php:141
 msgid "外部リンクの右部にFont Awesomeアイコンを表示するか。"
@@ -6610,7 +6633,7 @@ msgid "レスポンシブテーブル"
 msgstr "响应式表格"
 
 #: lib/page-settings/content-forms.php:316
-msgid "横幅の広いテーブルは横スクロール"
+msgid "横幅の広いテーブルは横スクロールする"
 msgstr "宽表格可以水平滚动"
 
 #: lib/page-settings/content-forms.php:317
@@ -6618,7 +6641,7 @@ msgid "端末幅より広いテーブルが表示されるときは、テーブ�
 msgstr "当显示的表格宽于设备宽度时，表格将可以横向滚动以保持布局完整。"
 
 #: lib/page-settings/content-forms.php:321
-msgid "テーブルの1列目を固定表示"
+msgid "テーブルの1列目を固定表示する"
 msgstr "固定显示表格的第一列"
 
 #: lib/page-settings/content-forms.php:322
@@ -6644,20 +6667,20 @@ msgstr "发布相关信息"
 #: lib/page-settings/content-forms.php:353
 #: lib/page-settings/index-forms.php:215
 #: lib/page-settings/single-forms.php:252
-msgid "投稿日の表示"
+msgid "投稿日を表示する"
 msgstr "显示发布日期"
 
 #: lib/page-settings/content-forms.php:355
-#: lib/page-settings/index-forms.php:225
+#: lib/page-settings/index-forms.php:218
 #: lib/page-settings/single-forms.php:262
-msgid "更新日の表示"
+msgid "更新日を表示する"
 msgstr "显示更新日期"
 
 #: lib/page-settings/content-forms.php:357
-#: lib/page-settings/index-forms.php:228
+#: lib/page-settings/index-forms.php:221
 #: lib/page-settings/single-forms.php:265
-msgid "投稿者名の表示"
-msgstr "显示发布者姓名"
+msgid "投稿者名を表示する"
+msgstr "显示发布者名称"
 
 #: lib/page-settings/content-forms.php:358
 msgid "投稿・固定ページの「投稿日・更新日・投稿者名」を表示するかどうか。"
@@ -6666,6 +6689,14 @@ msgstr "是否显示发布和固定页面的“发布日期、更新日期、发
 #: lib/page-settings/content-forms.php:358
 msgid "投稿日・更新日が同じ日付の場合は投稿日のみが表示されます。"
 msgstr "如果发布日期和更新日期相同，则只显示发布日期。"
+
+#: lib/page-settings/content-forms.php:358
+msgid "この日付表示設定では、単にCSSにより表示/非表示が切り替わります。"
+msgstr "此日期显示设置仅通过CSS切换显示/隐藏。"
+
+#: lib/page-settings/content-forms.php:358
+msgid "HTMLは出力されるので、検索エンジンに日付情報は伝わります。"
+msgstr "HTML会被输出，因此日期信息会传递给搜索引擎。"
 
 #: lib/page-settings/content-forms.php:366
 msgid "記事を読む時間"
@@ -6780,7 +6811,7 @@ msgid "文字カウンター"
 msgstr "字数统计器"
 
 #: lib/page-settings/editor-forms.php:57
-msgid "タイトル等の文字数カウンター表示"
+msgid "タイトル等の文字数カウンターを表示する"
 msgstr "显示标题等的字数统计器"
 
 #: lib/page-settings/editor-forms.php:58
@@ -6820,7 +6851,7 @@ msgid "ブロックエディターのみに適用される設定です。"
 msgstr "仅适用于块编辑器的设置。"
 
 #: lib/page-settings/editor-forms.php:117
-msgid "「ふりがな（ルビ）」ボタン表示"
+msgid "「ふりがな（ルビ）」ボタンを表示する"
 msgstr "显示“假名（注音）”按钮"
 
 #: lib/page-settings/editor-forms.php:118
@@ -6828,7 +6859,7 @@ msgid "Cocoonの「ルビ」ボタン表示を切り替えます。プラグイ�
 msgstr "切换Cocoon的“注音”按钮显示。如果使用插件的注音功能时出现错误，请禁用此功能。"
 
 #: lib/page-settings/editor-forms.php:122
-msgid "「書式のクリア」ボタン表示"
+msgid "「書式のクリア」ボタンを表示する"
 msgstr "显示“清除格式”按钮"
 
 #: lib/page-settings/editor-forms.php:123
@@ -6840,32 +6871,32 @@ msgid "スタイルドロップダウン"
 msgstr "样式下拉菜单"
 
 #: lib/page-settings/editor-forms.php:135
-msgid "文字スタイル表示"
-msgstr "显示文本样式"
+msgid "「文字スタイル」を表示する"
+msgstr "显示\"文字样式\""
 
 #: lib/page-settings/editor-forms.php:136
 msgid "ツールバーの文字スタイルドロップダウンを表示するか。"
 msgstr "是否显示工具栏的文本样式下拉菜单。"
 
 #: lib/page-settings/editor-forms.php:138
-msgid "マーカー表示"
-msgstr "显示标记"
+msgid "「マーカー」を表示する"
+msgstr "显示\"标记\""
 
 #: lib/page-settings/editor-forms.php:139
 msgid "ツールバーのマーカースタイルドロップダウンを表示するか。"
 msgstr "是否显示工具栏的标记样式下拉菜单。"
 
 #: lib/page-settings/editor-forms.php:141
-msgid "バッジ表示"
-msgstr "显示徽章"
+msgid "「バッジ」を表示する"
+msgstr "显示\"徽章\""
 
 #: lib/page-settings/editor-forms.php:142
 msgid "ツールバーのバッジスタイルドロップダウンを表示するか。"
 msgstr "是否显示工具栏的徽章样式下拉菜单。"
 
 #: lib/page-settings/editor-forms.php:144
-msgid "文字サイズ表示"
-msgstr "显示文字大小"
+msgid "「文字サイズ」を表示する"
+msgstr "显示\"文字大小\""
 
 #: lib/page-settings/editor-forms.php:145
 msgid "ツールバーの文字サイズスタイルドロップダウンを表示するか。"
@@ -6876,33 +6907,32 @@ msgid "ショートコードドロップダウン"
 msgstr "短代码下拉菜单"
 
 #: lib/page-settings/editor-forms.php:157
-msgid "汎用ショートコード表示"
-msgstr "显示通用短代码"
+msgid "「汎用ショートコード」を表示する"
+msgstr "显示\"通用短代码\""
 
 #: lib/page-settings/editor-forms.php:158
 msgid "ツールバーの汎用ショートコードドロップダウンを表示するか。"
 msgstr "是否显示工具栏的通用短代码下拉菜单。"
 
 #: lib/page-settings/editor-forms.php:160
-msgid "テンプレート表示"
-msgstr "显示模板"
+msgid "「テンプレート」表示する"
+msgstr "显示\"模板\""
 
 #: lib/page-settings/editor-forms.php:161
 msgid "ツールバーのテンプレートショートコードドロップダウンを表示するか。"
 msgstr "是否显示工具栏的模板短代码下拉菜单。"
 
 #: lib/page-settings/editor-forms.php:163
-msgid "アフィリエイト表示"
-msgstr "显示联盟营销"
+msgid "「アフィリエイト」を表示する"
+msgstr "显示\"联盟营销\""
 
 #: lib/page-settings/editor-forms.php:164
 msgid "ツールバーのアフィリエイトショートコードドロップダウンを表示するか。"
 msgstr "是否显示工具栏的联盟营销短代码下拉菜单。"
 
 #: lib/page-settings/editor-forms.php:166
-#: lib/widgets/popular-entries.php:213
-msgid "ランキング表示"
-msgstr "显示排名"
+msgid "「ランキング」を表示する"
+msgstr "显示\"排名\""
 
 #: lib/page-settings/editor-forms.php:167
 msgid "ツールバーのランキングショートコードドロップダウンを表示するか。"
@@ -6913,12 +6943,12 @@ msgid "ブロックオプション"
 msgstr "块选项"
 
 #: lib/page-settings/editor-forms.php:180
-msgid "スタイル表示"
-msgstr "显示样式"
+msgid "「スタイル」オプションを表示する"
+msgstr "显示\"样式\"选项"
 
 #: lib/page-settings/editor-forms.php:181
-msgid "ブロックエディターのスタイルオプションを表示するか。"
-msgstr "是否显示块编辑器的样式选项。"
+msgid "ブロックエディターの「スタイル」オプションを表示するか。"
+msgstr "是否显示块编辑器的\"样式\"选项。"
 
 #: lib/page-settings/editor-forms.php:189
 msgid "拡張カラーパレット色"
@@ -7176,7 +7206,7 @@ msgid "ヘッダー背景として表示する画像を設定します。"
 msgstr "设置作为标题栏背景显示的图像。"
 
 #: lib/page-settings/header-forms.php:149
-msgid "ヘッダー背景画像の固定"
+msgid "ヘッダー背景画像を固定する"
 msgstr "固定标题栏背景图像"
 
 #: lib/page-settings/header-forms.php:150
@@ -7184,8 +7214,8 @@ msgid "PC画面でヘッダー背景に設定した画像を固定します。�
 msgstr "在PC屏幕上固定为标题栏背景设置的图像。上下滚动时，背景图像将不会移动。"
 
 #: lib/page-settings/header-forms.php:153
-msgid "背景画像の全てを表示"
-msgstr "显示背景图像的全部"
+msgid "背景画像を全て表示する"
+msgstr "显示整个背景图片"
 
 #: lib/page-settings/header-forms.php:154
 msgid "ヘッダーのサイズを「ヘッダー背景画像」に設定した画像の縦横比サイズに合わせて表示させます。"
@@ -7248,8 +7278,8 @@ msgid "本文画像設定"
 msgstr "正文图像设置"
 
 #: lib/page-settings/image-forms.php:16
-msgid "投稿・固定ページの本文部分に関する画像の設定です。"
-msgstr "关于发布和固定页面正文部分的图像设置。"
+msgid "投稿・固定・カテゴリー・タグページの本文部分に関する画像の設定です。"
+msgstr "这是关于投稿、固定、类别和标签页面正文部分的图片设置。"
 
 #: lib/page-settings/image-forms.php:62
 msgid "アイキャッチの表示"
@@ -7260,24 +7290,28 @@ msgid "本文上にアイキャッチを表示する"
 msgstr "在正文上方显示特色图片"
 
 #: lib/page-settings/image-forms.php:67
-msgid "投稿・固定ページトップにアイキャッチを表示します。"
-msgstr "在发布和固定页面顶部显示特色图片。"
+msgid "本文エリアトップトップにアイキャッチを表示します。"
+msgstr "在正文区域顶部显示特色图片。"
 
 #: lib/page-settings/image-forms.php:71
 msgid "アイキャッチラベルを表示する"
 msgstr "显示特色图片标签"
 
 #: lib/page-settings/image-forms.php:72
-msgid "投稿・固定ページのアイキャッチに表示されるカテゴリーラベルの表示切り替えです。"
-msgstr "切换显示发布和固定页面的特色图片上的分类标签。"
+msgid "本文エリアトップのアイキャッチに表示されるカテゴリーラベルの表示切り替えです。"
+msgstr "切换显示正文区域顶部特色图片上的类别标签。"
+
+#: lib/page-settings/image-forms.php:72
+msgid "（※投稿・固定・カテゴリーページのみ）"
+msgstr "（※仅限投稿、固定和类别页面）"
 
 #: lib/page-settings/image-forms.php:74
-msgid "アイキャッチの中央寄せ"
+msgid "アイキャッチを中央寄せする"
 msgstr "特色图片居中"
 
 #: lib/page-settings/image-forms.php:75
-msgid "投稿・固定ページに表示されるアイキャッチをカラムの中央に表示します。"
-msgstr "将显示在发布和固定页面的特色图片居中显示在列中。"
+msgid "本文エリアトップに表示されるアイキャッチをカラムの中央に表示します。"
+msgstr "将正文区域顶部显示的特色图片居中显示在栏中。"
 
 #: lib/page-settings/image-forms.php:77
 msgid "アイキャッチをカラム幅に引き伸ばす"
@@ -7302,6 +7336,10 @@ msgstr "特色图片自动设置"
 #: lib/page-settings/image-forms.php:95
 msgid "アイキャッチ自動設定を有効にする"
 msgstr "启用特色图片自动设置"
+
+#: lib/page-settings/image-forms.php:95
+msgid "（※投稿・固定ページのみ）"
+msgstr "（※仅限投稿和固定页面）"
 
 #: lib/page-settings/image-forms.php:96
 msgid "記事を保存したり公開したりするときに、本文中に最初に出てくる画像をアイキャッチにします。※プレビューには反映されません。"
@@ -7328,15 +7366,15 @@ msgid "シャドー（ペーパー）"
 msgstr "阴影（纸张效果）"
 
 #: lib/page-settings/image-forms.php:116
-msgid "画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。"
-msgstr "图像框线设置。启用后，即使是白色图像也更容易被识别为图像。"
+msgid "本文内の画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。"
+msgstr "这是正文中图片边框的设置。启用后，即使是浅色图片也更容易被识别为图片。"
 
 #: lib/page-settings/image-forms.php:130
 msgid "Spotlight（軽量・高機能ギャラリー）"
 msgstr "Spotlight（轻量级高性能图库）"
 
 #: lib/page-settings/image-forms.php:131
-msgid "baguetteBox（軽量・スマホ向け）"
+msgid "baguetteBox（軽量・スマートフォン向け）"
 msgstr "baguetteBox（轻量级，适合智能手机）"
 
 #: lib/page-settings/image-forms.php:132
@@ -7698,11 +7736,11 @@ msgid "縦型カード・タイルカードに設定した場合はサムネイ�
 msgstr "如果设置为竖排卡片或瓷砖卡片，请重新生成缩略图。"
 
 #: lib/page-settings/index-forms.php:153
-msgid "スマホ端末で縦型＆タイル型のエントリーカードを1カラムにする"
+msgid "スマートフォンで縦型＆タイル型のエントリーカードを1カラムにする"
 msgstr "在手机上将竖排和瓷砖型条目卡片设置为单列显示"
 
 #: lib/page-settings/index-forms.php:154
-msgid "スマホ（480px以下）で表示した際に、カードタイプを「縦型カード」「タイルカード」にしている場合は、1カラムで表示します。※デフォルトは2カラム"
+msgid "スマートフォン（480px以下）で表示した際に、カードタイプを「縦型カード」「タイルカード」にしている場合は、1カラムで表示します。※デフォルトは2カラム"
 msgstr "在手机（480px以下）上显示时，如果卡片类型设置为“竖排卡片”或“瓷砖卡片”，将显示为单列。※默认是两列"
 
 #: lib/page-settings/index-forms.php:169
@@ -7738,27 +7776,22 @@ msgstr "显示投稿相关信息"
 
 #: lib/page-settings/index-forms.php:208
 #: lib/page-settings/single-forms.php:245
-msgid "スニペット（抜粋）の表示"
+msgid "スニペット（抜粋）を表示する"
 msgstr "显示摘录（摘要）"
 
-#: lib/page-settings/index-forms.php:212
-#: lib/page-settings/single-forms.php:249
-msgid "スマホ端末でスニペットを表示（480px以下）"
-msgstr "在智能手机上显示摘录（480px以下）"
-
-#: lib/page-settings/index-forms.php:231
-msgid "コメント数の表示"
+#: lib/page-settings/index-forms.php:224
+msgid "コメント数を表示する"
 msgstr "显示评论数"
 
-#: lib/page-settings/index-forms.php:231
+#: lib/page-settings/index-forms.php:224
 msgid "（※投稿・固定ページでコメントが表示されている場合）"
 msgstr "（※当在文章或固定页面上显示评论时）"
 
-#: lib/page-settings/index-forms.php:233
+#: lib/page-settings/index-forms.php:226
 msgid "インデックスページのエントリーカードに投稿関連情報を表示するかどうか。"
 msgstr "是否在索引页的条目卡上显示投稿相关信息。"
 
-#: lib/page-settings/index-forms.php:246
+#: lib/page-settings/index-forms.php:239
 msgid "アーカイブ（インデックスリスト・新着関連記事ウィジェット等）に表示させたくないカテゴリーを選択してください。"
 msgstr "请选择不想在归档（索引列表、新相关文章小工具等）中显示的类别。"
 
@@ -7802,7 +7835,7 @@ msgid "モバイルボタン"
 msgstr "移动按钮"
 
 #: lib/page-settings/mobile-buttons-forms.php:57
-msgid "モバイルボタンの固定表示"
+msgid "モバイルボタンを固定表示する"
 msgstr "固定显示移动按钮"
 
 #: lib/page-settings/mobile-buttons-forms.php:58
@@ -7818,7 +7851,7 @@ msgid "モバイルで「ヘッダーモバイルボタン」が表示されて�
 msgstr "在移动设备上显示“头部移动按钮”时，是否显示头部的标志。"
 
 #: lib/page-settings/mobile-buttons-forms.php:63
-msgid "モバイルボタン時コンテンツ下のサイドバーを表示"
+msgid "モバイルボタン時コンテンツ下のサイドバーを表示する"
 msgstr "在移动按钮时显示内容下的侧边栏"
 
 #: lib/page-settings/mobile-buttons-forms.php:64
@@ -7878,7 +7911,7 @@ msgid "通知表示"
 msgstr "显示通知"
 
 #: lib/page-settings/notice-forms.php:40
-msgid "通知エリアの表示"
+msgid "通知エリアを表示する"
 msgstr "显示通知区域"
 
 #: lib/page-settings/notice-forms.php:41
@@ -7966,7 +7999,7 @@ msgid "OGPの有効化"
 msgstr "启用OGP"
 
 #: lib/page-settings/ogp-forms.php:29
-msgid "OGPタグの挿入"
+msgid "OGPタグを挿入する"
 msgstr "插入OGP标签"
 
 #: lib/page-settings/ogp-forms.php:30
@@ -7998,7 +8031,7 @@ msgid "Twitterカードの有効化"
 msgstr "启用Twitter卡片"
 
 #: lib/page-settings/ogp-forms.php:76
-msgid "Twitterカードタグの挿入"
+msgid "Twitterカードタグを挿入する"
 msgstr "插入Twitter卡片标签"
 
 #: lib/page-settings/ogp-forms.php:77
@@ -8050,7 +8083,7 @@ msgid "簡単SSL対応"
 msgstr "简单SSL支持"
 
 #: lib/page-settings/others-forms.php:28
-msgid "内部URLをSSL対応（簡易版）"
+msgid "内部URLをSSL対応する（簡易版）"
 msgstr "SSL支持内部URL（简化版）"
 
 #: lib/page-settings/others-forms.php:29
@@ -8406,6 +8439,7 @@ msgid "カード余白"
 msgstr "卡片间距"
 
 #: lib/page-settings/recommended-forms.php:96
+#: lib/widgets/recommended-cards.php:118
 msgid "おすすめカード毎に余白を設ける"
 msgstr "为每张推荐卡片设置间距"
 
@@ -8467,8 +8501,8 @@ msgid "headタグに挿入"
 msgstr "插入到head标签中"
 
 #: lib/page-settings/seo-forms.php:30
-msgid "canonicalタグの追加"
-msgstr "添加canonical标签"
+msgid "canonicalタグを追加する"
+msgstr ""
 
 #: lib/page-settings/seo-forms.php:31
 msgid "WordPressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
@@ -8479,12 +8513,12 @@ msgid "この機能を有効にするとトップページやカテゴリーペ�
 msgstr "启用此功能后，首页和分类页面等也会插入canonical标签。"
 
 #: lib/page-settings/seo-forms.php:34
-msgid "分割ページにrel=\"next\"/\"prev\"タグの追加"
+msgid "分割ページにrel=\"next\"/\"prev\"タグを追加する"
 msgstr "在分页页面中添加rel=\"next\"/\"prev\"标签"
 
 #: lib/page-settings/seo-forms.php:35
-msgid "検索エンジンに続き物ページの順番を知らせます。無効にした場合はWordPressデフォルトのnext/prev設定になります。"
-msgstr "通知搜索引擎页面的顺序。如果禁用此功能，将使用WordPress的默认next/prev设置。"
+msgid "検索エンジンに続き物ページの順番を知らせます。"
+msgstr "通知搜索引擎续篇页面的顺序。"
 
 #: lib/page-settings/seo-forms.php:38
 msgid "カテゴリーページをnoindexとする"
@@ -8540,7 +8574,7 @@ msgid "構造化データ"
 msgstr "结构化数据"
 
 #: lib/page-settings/seo-forms.php:79
-msgid "JSON-LDを出力"
+msgid "JSON-LDを出力する"
 msgstr "输出JSON-LD"
 
 #: lib/page-settings/seo-forms.php:80
@@ -8643,6 +8677,14 @@ msgstr "仅显示更新日期"
 msgid "表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方が変わる可能性があります。"
 msgstr "请选择要显示的日期格式。显示的日期可能会影响搜索引擎的识别。"
 
+#: lib/page-settings/seo-forms.php:161
+msgid "この「SEO」での「表示する日付」設定では、「投稿日」か「更新日」いずれかを検索エンジンに伝えたいか出力するHTMLを制御します。"
+msgstr "在此「SEO」中的「显示日期」设置中，通过控制输出的HTML来决定是否将「发布日期」或「更新日期」传递给搜索引擎。"
+
+#: lib/page-settings/seo-forms.php:161
+msgid "「投稿日・更新日を表示」を選択した場合は、「更新日」が優先して検索エンジンに伝えられます。"
+msgstr "选择「显示发布日期和更新日期」时，「更新日期」将优先传递给搜索引擎。"
+
 #: lib/page-settings/single-forms.php:13
 msgid "カテゴリー・タグ表示設定"
 msgstr "分类和标签显示设置"
@@ -8727,9 +8769,29 @@ msgstr "关联相关文章时是使用分类还是标签。关联标签时，如
 msgid "関連記事見出し"
 msgstr "相关文章标题"
 
+#: lib/page-settings/single-forms.php:145
+#: lib/shortcodes.php:1125
+#: lib/widgets/cta-box.php:108
+#: blocks/src/block-universal/caption-box/deprecated.js:25
+#: blocks/src/block-universal/caption-box/edit.js:20
+#: blocks/src/block-universal/label-box/deprecated.js:25
+#: blocks/src/block-universal/label-box/edit.js:20
+#: blocks/src/block-universal/tab-caption-box/deprecated.js:25
+#: blocks/src/block-universal/tab-caption-box/edit.js:20
+#: blocks/src/block/cta/edit.js:83
+#: blocks/src/old/caption-box/block.js:18
+#: blocks/src/old/label-box/block.js:17
+#: blocks/src/old/tab-caption-box/block.js:18
+msgid "見出し"
+msgstr "标题"
+
 #: lib/page-settings/single-forms.php:146
 msgid "関連記事の見出しを入力してください。"
 msgstr "请输入相关文章的标题。"
+
+#: lib/page-settings/single-forms.php:147
+msgid "サブ見出し"
+msgstr "副标题"
 
 #: lib/page-settings/single-forms.php:148
 msgid "関連記事の補助となる見出しを入力してください。"
@@ -8890,8 +8952,6 @@ msgid "ページ送りナビに表示させないカテゴリーを選択して�
 msgstr "请选择不在页面导航中显示的分类。"
 
 #: lib/page-settings/single-forms.php:375
-#: lib/widgets/info-list.php:143
-#: blocks/src/block/info-list/edit.js:102
 msgid "枠線表示"
 msgstr "显示边框线"
 
@@ -8916,8 +8976,8 @@ msgid "投稿のパンくずリスト設定です。"
 msgstr "这是帖子面包屑导航的设置。"
 
 #: lib/page-settings/single-forms.php:443
-msgid "投稿のパンくずリスト表示位置を設定します。"
-msgstr "设置帖子面包屑导航的显示位置。"
+msgid "投稿・カテゴリーページのパンくずリスト表示位置を設定します。"
+msgstr "设置投稿和类别页面中面包屑导航的显示位置。"
 
 #: lib/page-settings/single-forms.php:456
 msgid "投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか切り替えます。"
@@ -8946,20 +9006,20 @@ msgid "スキンを選択してください。"
 msgstr "请选择皮肤。"
 
 #: lib/page-settings/skin-forms.php:97
-msgid "表示スキン"
-msgstr "显示的皮肤"
+msgid "スキン一覧表示"
+msgstr "显示皮肤列表"
 
 #: lib/page-settings/skin-forms.php:102
-msgid "全てのスキンを表示"
+msgid "全てのスキンを表示する"
 msgstr "显示所有皮肤"
 
 #: lib/page-settings/skin-forms.php:103
-msgid "親テーマのスキンのみ表示"
+msgid "親テーマのスキンのみ表示する"
 msgstr "仅显示母主题的皮肤"
 
 #: lib/page-settings/skin-forms.php:104
-msgid "子テーマのスキンのみ表示"
-msgstr "仅显示子主题的皮肤"
+msgid "子テーマのスキンのみ表示する"
+msgstr "仅显示母主题的皮肤"
 
 #: lib/page-settings/skin-forms.php:107
 msgid "スキン一覧に含めて表示するスキンを選択してください。"
@@ -9263,25 +9323,10 @@ msgstr "缓存设置"
 msgid "フォロー数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示スピードを多少なりともあげることができます。"
 msgstr "这是关于获取关注数时使用缓存的设置。使用缓存可以稍微提高页面显示速度。"
 
-#: lib/page-settings/sns-follow-forms.php:228
-#: lib/page-settings/sns-share-forms.php:154
-msgid "キャッシュの有効化"
-msgstr "启用缓存"
-
-#: lib/page-settings/sns-follow-forms.php:232
-#: lib/page-settings/sns-share-forms.php:158
-msgid "キャッシュを有効にする"
-msgstr "启用缓存"
-
 #: lib/page-settings/sns-follow-forms.php:233
 #: lib/page-settings/sns-share-forms.php:159
 msgid "SNSシェア数をキャッシュ化することでページ表示スピードの短縮化を図ります。"
 msgstr "通过缓存SNS分享数量来缩短页面显示速度。"
-
-#: lib/page-settings/sns-follow-forms.php:241
-#: lib/page-settings/sns-share-forms.php:167
-msgid "キャッシュ間隔"
-msgstr "缓存间隔"
 
 #: lib/page-settings/sns-follow-forms.php:250
 #: lib/page-settings/sns-share-forms.php:184
@@ -9327,7 +9372,7 @@ msgid "ボトムシェアボタンの表示"
 msgstr "显示底部分享按钮"
 
 #: lib/page-settings/sns-share-forms-bottom.php:40
-msgid "メインカラムボトムシェアボタンを表示"
+msgid "メインカラムボトムシェアボタンを表示する"
 msgstr "显示主栏底部分享按钮"
 
 #: lib/page-settings/sns-share-forms-bottom.php:41
@@ -9485,7 +9530,7 @@ msgid "トップシェアボタンの表示"
 msgstr "显示顶部分享按钮"
 
 #: lib/page-settings/sns-share-forms-top.php:40
-msgid "メインカラムトップシェアボタンを表示"
+msgid "メインカラムトップシェアボタンを表示する"
 msgstr "显示主栏顶部分享按钮"
 
 #: lib/page-settings/sns-share-forms-top.php:41
@@ -10405,23 +10450,23 @@ msgstr "气泡已被删除。"
 msgid "吹き出しの削除に失敗しました。"
 msgstr "删除气泡失败。"
 
-#: lib/page-speech-balloon/posts.php:20
+#: lib/page-speech-balloon/posts.php:22
 msgid "吹き出しを新規作成しました。"
 msgstr "气泡已新建。"
 
-#: lib/page-speech-balloon/posts.php:22
+#: lib/page-speech-balloon/posts.php:24
 msgid "吹き出しを新規作成できませんでした。"
 msgstr "无法新建气泡。"
 
-#: lib/page-speech-balloon/posts.php:30
+#: lib/page-speech-balloon/posts.php:31
 msgid "吹き出しを更新しました。"
 msgstr "气泡已更新。"
 
-#: lib/page-speech-balloon/posts.php:32
+#: lib/page-speech-balloon/posts.php:33
 msgid "吹き出しを更新できませんでした。"
 msgstr "无法更新气泡。"
 
-#: lib/page-speech-balloon/posts.php:43
+#: lib/page-speech-balloon/posts.php:47
 msgid "アイコン画像が入力されていません。"
 msgstr "未输入图标图片。"
 
@@ -10479,7 +10524,7 @@ msgid "ブラウザキャッシュを設定します。ブラウザキャッシ�
 msgstr "配置浏览器缓存。通过设置浏览器缓存，下次会加载本地资源文件而不是服务器，这样会加快进程。"
 
 #: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュの有効化"
+msgid "ブラウザキャッシュを有効にする"
 msgstr "启用浏览器缓存"
 
 #: lib/page-speed-up/speed-up-forms.php:30
@@ -10754,36 +10799,51 @@ msgid "カードの上下に破線の区切り線が表示されます。"
 msgstr "卡片的上下将显示虚线分隔线。"
 
 #: lib/settings.php:556
-msgid "区切り線"
-msgstr "分隔线"
+#: blocks/src/block/navicard/edit.js:110
+#: blocks/src/block/new-list/edit.js:143
+#: blocks/src/block/popular-list/edit.js:222
+msgid "カードの上下に区切り線を入れる"
+msgstr "在卡片上下添加分隔线"
 
 #: lib/settings.php:556
-msgid "（縦型表示時のみ）"
-msgstr "（仅在竖排显示时）"
+#: blocks/src/block/navicard/edit.js:110
+#: blocks/src/block/new-list/edit.js:143
+#: blocks/src/block/popular-list/edit.js:222
+msgid "（縦型表示のみ）"
+msgstr "（仅限纵向显示）"
 
 #: lib/settings.php:558
 msgid "カード自体を罫線で囲みます。"
 msgstr "用边框线围绕卡片本身。"
 
 #: lib/settings.php:559
-msgid "囲み枠"
-msgstr "围绕框"
+#: blocks/src/block/navicard/edit.js:114
+#: blocks/src/block/new-list/edit.js:147
+#: blocks/src/block/popular-list/edit.js:226
+msgid "カードに枠線を表示する"
+msgstr "在卡片上显示边框"
 
 #: lib/settings.php:561
 msgid "大きなサムネイル画像の下にタイトルを表示します。"
 msgstr "在大缩略图下显示标题。"
 
 #: lib/settings.php:562
-msgid "大きなサムネイル"
-msgstr "大缩略图"
+#: blocks/src/block/navicard/edit.js:118
+#: blocks/src/block/new-list/edit.js:151
+#: blocks/src/block/popular-list/edit.js:230
+msgid "大きなサムネイル表示にする"
+msgstr "显示大缩略图"
 
 #: lib/settings.php:564
 msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
 msgstr "将标题叠加在大缩略图的下方。"
 
 #: lib/settings.php:565
-msgid "タイトルを重ねた大きなサムネイル"
-msgstr "标题叠加的大缩略图"
+#: blocks/src/block/navicard/edit.js:122
+#: blocks/src/block/new-list/edit.js:155
+#: blocks/src/block/popular-list/edit.js:234
+msgid "大きなサムネイルにタイトルを重ねて表示する"
+msgstr "在大缩略图上叠加标题"
 
 #: lib/settings.php:574
 msgid "画像のみ"
@@ -11253,48 +11313,48 @@ msgstr "请输入在活动期间显示的内容。"
 msgid "キャンペーン期間中のみ表示"
 msgstr "仅在活动期间显示"
 
-#: lib/utils.php:817
+#: lib/utils.php:825
 msgid "スクロールできます"
 msgstr "可以滚动"
 
-#: lib/utils.php:905
+#: lib/utils.php:913
 msgid "公開"
 msgstr "公开"
 
-#: lib/utils.php:906
+#: lib/utils.php:914
 msgid "記事を公開してもよろしいですか？"
 msgstr "确定要公开文章吗？"
 
-#: lib/utils.php:2547
+#: lib/utils.php:2555
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s 分"
 
-#: lib/utils.php:2555
+#: lib/utils.php:2563
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s 小时"
 
-#: lib/utils.php:2563
+#: lib/utils.php:2571
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s 天"
 
-#: lib/utils.php:2571
+#: lib/utils.php:2579
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s周"
 
-#: lib/utils.php:2579
+#: lib/utils.php:2587
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s个月"
 
-#: lib/utils.php:2590
+#: lib/utils.php:2598
 msgid "%s年"
 msgstr "%s年"
 
-#: lib/utils.php:2592
+#: lib/utils.php:2600
 msgid "%s年%sヶ月"
 msgstr "%s年%s个月"
 
@@ -11730,8 +11790,8 @@ msgid "ページ"
 msgstr "页面"
 
 #: lib/widgets/display-widgets.php:163
-msgid "著者"
-msgstr "作者"
+msgid "投稿者"
+msgstr "发布者"
 
 #: lib/widgets/display-widgets.php:176
 msgid "カスタム投稿タイプ"
@@ -11827,15 +11887,20 @@ msgstr "标题（在边框内显示）"
 msgid "表示数（半角数字）"
 msgstr "显示数量（半角数字）"
 
+#: lib/widgets/info-list.php:143
+#: blocks/src/block/info-list/edit.js:102
+msgid "枠線を表示する"
+msgstr "显示边框线"
+
 #: lib/widgets/info-list.php:149
 #: blocks/src/block/info-list/edit.js:109
-msgid "仕切り線表示"
+msgid "仕切り線を表示する"
 msgstr "显示分隔线"
 
 #: lib/widgets/info-list.php:155
 #: lib/widgets/new-entries.php:226
 #: blocks/src/block/info-list/edit.js:116
-msgid "更新日順に並び替え"
+msgid "更新日順に並び替える"
 msgstr "按更新日期排序"
 
 #: lib/widgets/info-list.php:162
@@ -11895,22 +11960,28 @@ msgstr "这是显示导航卡片列表的组件。"
 
 #: lib/widgets/navi-entries.php:131
 #: lib/widgets/new-entries.php:201
-#: lib/widgets/popular-entries.php:225
+#: lib/widgets/popular-entries.php:213
 #: lib/widgets/related-entries.php:203
-msgid "横型表示"
-msgstr "横向显示"
+#: blocks/src/block/navicard/edit.js:129
+#: blocks/src/block/new-list/edit.js:201
+#: blocks/src/block/popular-list/edit.js:241
+msgid "横並び表示にする"
+msgstr "横向排列显示"
 
 #: lib/widgets/navi-entries.php:132
 #: lib/widgets/new-entries.php:202
-#: lib/widgets/popular-entries.php:226
+#: lib/widgets/popular-entries.php:214
 #: lib/widgets/related-entries.php:204
 msgid "（「大きなサムネイル」との使用がお勧め）"
 msgstr "（建议与“大缩略图”一起使用）"
 
 #: lib/widgets/navi-entries.php:138
 #: lib/widgets/new-entries.php:208
-#: lib/widgets/popular-entries.php:232
+#: lib/widgets/popular-entries.php:220
 #: lib/widgets/related-entries.php:210
+#: blocks/src/block/navicard/edit.js:136
+#: blocks/src/block/new-list/edit.js:208
+#: blocks/src/block/popular-list/edit.js:248
 msgid "タイトルを太字にする"
 msgstr "将标题加粗"
 
@@ -11918,8 +11989,11 @@ msgstr "将标题加粗"
 #: lib/widgets/new-entries.php:214
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
-msgid "矢印表示"
-msgstr "显示箭头"
+#: blocks/src/block/navicard/edit.js:141
+#: blocks/src/block/new-list/edit.js:213
+#: blocks/src/block/popular-list/edit.js:267
+msgid "カードに矢印を表示する"
+msgstr "在卡片上显示箭头"
 
 #: lib/widgets/new-entries.php:20
 msgid "新着記事リストをサムネイルつきで表示するウィジェットです。"
@@ -11938,7 +12012,7 @@ msgid "新着記事のタイトル"
 msgstr "新文章标题"
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示"
+msgid "「固定表示」記事を表示する"
 msgstr "显示“置顶”文章"
 
 #: lib/widgets/new-entries.php:232
@@ -12003,9 +12077,15 @@ msgstr "热门文章标题"
 msgid "集計期間"
 msgstr "统计期间"
 
-#: lib/widgets/popular-entries.php:219
-msgid "PV表示"
-msgstr "显示PV"
+#: lib/widgets/popular-entries.php:226
+#: blocks/src/block/popular-list/edit.js:253
+msgid "ランキング番号を表示する"
+msgstr "显示排名号码"
+
+#: lib/widgets/popular-entries.php:232
+#: blocks/src/block/popular-list/edit.js:260
+msgid "PV数を表示する"
+msgstr "显示PV数"
 
 #: lib/widgets/recent-comments.php:19
 #: lib/widgets/recent-comments.php:117
@@ -12040,10 +12120,6 @@ msgstr "不显示管理员的评论"
 #: lib/widgets/recommended-cards.php:20
 msgid "おすすめカード一覧を表示するウィジェットです。"
 msgstr "这是显示推荐卡片列表的组件。"
-
-#: lib/widgets/recommended-cards.php:118
-msgid "余白を有効にする"
-msgstr "启用边距"
 
 #: lib/widgets/related-entries.php:20
 msgid "関連記事リストをサムネイルつきで表示するウィジェットです。投稿ページのみ表示されます。"
@@ -12203,11 +12279,11 @@ msgid "本文の見出しにカウントをつけたくない場合はチェッ�
 msgstr "如果不想在正文标题上添加编号，请取消选中"
 
 #: skins/one/functions.php:134
-msgid "PCでもスマホ用の固定フッターメニューを表示する"
+msgid "PCでもスマートフォン用の固定フッターメニューを表示する"
 msgstr "在PC端也显示手机端的固定页脚菜单"
 
 #: skins/one/functions.php:135
-msgid "従来どおりPCでスマホ用の固定フッターメニューを表示させたくない場合はチェックを外してください"
+msgid "従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください"
 msgstr "如果不想在PC端显示手机端的固定页脚菜单，请取消选中"
 
 #: skins/one/functions.php:145
@@ -12267,8 +12343,8 @@ msgid "（詳しくは実際にご確認ください）"
 msgstr "（详情请实际查看）"
 
 #: skins/raku-add-fadein/functions.php:291
-msgid "表示スキン（ベース）"
-msgstr "显示皮肤（基础）"
+msgid "スキン一覧表示（ベース）"
+msgstr "显示皮肤列表（基础）"
 
 #: skins/raku-add-fadein/functions.php:317
 msgid "こちらで選択したスキンが表示されます。"
@@ -13265,8 +13341,8 @@ msgid "AMPページへ"
 msgstr "前往AMP页面"
 
 #: tmp/admin-panel.php:71
-msgid "ページスピード"
-msgstr "页面速度"
+msgid "PageSpeed Insights"
+msgstr "PageSpeed Insights"
 
 #: tmp/admin-panel.php:74
 msgid "GTmetrix"
@@ -13285,16 +13361,16 @@ msgid "ツイート検索"
 msgstr "推文搜索"
 
 #: tmp/admin-panel.php:98
-msgid "レスポンシブテスト"
-msgstr "响应式测试"
+msgid "Responsinator"
+msgstr "Responsinator"
 
 #: tmp/admin-panel.php:101
 msgid "Sizzy"
 msgstr "Sizzy"
 
 #: tmp/admin-panel.php:105
-msgid "Resolution Test"
-msgstr "分辨率测试"
+msgid "ScreenResolution"
+msgstr "ScreenResolution"
 
 #: tmp/admin-pv.php:22
 msgid "本日:"
@@ -14344,60 +14420,6 @@ msgstr "没有注册菜单。"
 msgid "メニューを選択してください。"
 msgstr "请选择一个菜单。"
 
-#: blocks/src/block/navicard/edit.js:106
-#: blocks/src/block/new-list/edit.js:139
-#: blocks/src/block/popular-list/edit.js:218
-msgid "通常のリスト"
-msgstr "普通列表"
-
-#: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:143
-#: blocks/src/block/popular-list/edit.js:222
-msgid "カードの上下に区切り線を入れる"
-msgstr "在卡片上下添加分隔线"
-
-#: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:143
-#: blocks/src/block/popular-list/edit.js:222
-msgid "（縦型表示のみ）"
-msgstr "（仅限纵向显示）"
-
-#: blocks/src/block/navicard/edit.js:114
-#: blocks/src/block/new-list/edit.js:147
-#: blocks/src/block/popular-list/edit.js:226
-msgid "カードに枠線を表示する"
-msgstr "在卡片上显示边框"
-
-#: blocks/src/block/navicard/edit.js:118
-#: blocks/src/block/new-list/edit.js:151
-#: blocks/src/block/popular-list/edit.js:230
-msgid "大きなサムネイル表示"
-msgstr "显示大缩略图"
-
-#: blocks/src/block/navicard/edit.js:122
-#: blocks/src/block/new-list/edit.js:155
-#: blocks/src/block/popular-list/edit.js:234
-msgid "大きなサムネイルにタイトルを重ねる"
-msgstr "在大缩略图上叠加标题"
-
-#: blocks/src/block/navicard/edit.js:129
-#: blocks/src/block/new-list/edit.js:201
-#: blocks/src/block/popular-list/edit.js:241
-msgid "記事タイトルを太字にする"
-msgstr "将文章标题加粗"
-
-#: blocks/src/block/navicard/edit.js:134
-#: blocks/src/block/new-list/edit.js:206
-#: blocks/src/block/popular-list/edit.js:246
-msgid "カードに矢印を表示する"
-msgstr "在卡片上显示箭头"
-
-#: blocks/src/block/navicard/edit.js:139
-#: blocks/src/block/new-list/edit.js:211
-#: blocks/src/block/popular-list/edit.js:251
-msgid "横並び表示"
-msgstr "横向排列显示"
-
 #: blocks/src/block/navicard/index.js:28
 msgid "登録されているメニューからナビカードを表示します。"
 msgstr "显示已注册菜单中的导航卡。"
@@ -14505,14 +14527,6 @@ msgstr "半年"
 #: blocks/src/block/popular-list/edit.js:205
 msgid "全期間集計"
 msgstr "所有期间汇总"
-
-#: blocks/src/block/popular-list/edit.js:258
-msgid "ランキング番号表示"
-msgstr "显示排名号码"
-
-#: blocks/src/block/popular-list/edit.js:265
-msgid "PV数表示"
-msgstr "显示PV数"
 
 #: blocks/src/block/popular-list/edit.js:293
 msgid "除外投稿(ID)"
