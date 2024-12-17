@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-13T14:49:06+00:00\n"
-"PO-Revision-Date: 2024-12-16 13:34\n"
+"POT-Creation-Date: 2024-12-17T11:52:56+00:00\n"
+"PO-Revision-Date: 2024-12-17 12:55\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1383,6 +1383,7 @@ msgstr "Resumen de acceso"
 
 #: lib/admin.php:495
 #: lib/original-menu.php:42
+#: lib/page-speed-up/_top-page.php:39
 msgid "高速化"
 msgstr "Acelerar"
 
@@ -1873,7 +1874,7 @@ msgstr "Configuración de la página"
 #: lib/custom-fields/page-field.php:34
 #: lib/custom-fields/page-field.php:47
 #: lib/page-settings/comment-forms.php:43
-#: lib/page-settings/single-forms.php:326
+#: lib/page-settings/single-forms.php:319
 #: lib/page-speech-balloon/form.php:90
 #: lib/settings.php:553
 #: blocks/src/block-extension/style-extension/border01.js:42
@@ -2469,8 +2470,11 @@ msgstr "Formato (Unidad de anuncio)"
 
 #: lib/html-forms.php:507
 #: lib/html-forms.php:572
-msgid "広告ラベルを表示"
-msgstr "Mostrar etiquetas de anuncios"
+#: lib/widgets/ad.php:79
+#: lib/widgets/mobile-ad.php:79
+#: lib/widgets/pc-ad.php:83
+msgid "広告ラベルを表示する"
+msgstr "Mostrar etiqueta de anuncio"
 
 #: lib/html-forms.php:514
 msgid "広告の表示数を制御する"
@@ -2777,12 +2781,14 @@ msgstr "Cuando se habilita, el resumen se puede usar en el widget de \"Artículo
 #: lib/page-access/access-forms.php:39
 #: lib/page-settings/sns-follow-forms.php:228
 #: lib/page-settings/sns-share-forms.php:154
+#: lib/page-speed-up/speed-up-forms.php:25
 msgid "キャッシュの有効化"
 msgstr "Habilitar caché"
 
 #: lib/page-access/access-forms.php:43
 #: lib/page-settings/sns-follow-forms.php:232
 #: lib/page-settings/sns-share-forms.php:158
+#: lib/page-speed-up/speed-up-forms.php:29
 msgid "キャッシュを有効にする"
 msgstr "Habilitar el caché"
 
@@ -2986,7 +2992,7 @@ msgstr "Ingrese su etiqueta de afiliado."
 #: lib/page-func-text/form.php:40
 #: lib/page-item-ranking/form.php:82
 #: lib/page-speech-balloon/form.php:141
-msgid "エディターのリストに表示"
+msgid "エディターのリストに表示する"
 msgstr "Mostrar en la lista del editor"
 
 #: lib/page-affiliate-tag/form.php:42
@@ -3313,7 +3319,7 @@ msgstr "Crear un ranking. Haga clic en \"Guardar\" para ingresar el siguiente ra
 #: lib/page-settings/recommended-forms.php:19
 #: lib/page-settings/single-forms.php:25
 #: lib/page-settings/single-forms.php:95
-#: lib/page-settings/single-forms.php:292
+#: lib/page-settings/single-forms.php:285
 #: lib/page-settings/skin-forms.php:18
 #: lib/page-settings/sns-follow-forms.php:23
 #: lib/page-settings/sns-share-forms-bottom.php:21
@@ -3841,7 +3847,7 @@ msgstr "Mostrar etiqueta"
 
 #: lib/page-settings/admin-forms.php:108
 #: lib/page-settings/page-forms.php:27
-#: lib/page-settings/single-forms.php:407
+#: lib/page-settings/single-forms.php:400
 msgid "コメントを表示する"
 msgstr "Mostrar comentario"
 
@@ -3911,7 +3917,7 @@ msgstr "Mostrar solo en móviles"
 #: lib/page-settings/header-forms.php:128
 #: lib/page-settings/page-forms.php:56
 #: lib/page-settings/recommended-forms.php:39
-#: lib/page-settings/single-forms.php:436
+#: lib/page-settings/single-forms.php:429
 #: lib/page-settings/toc-forms.php:160
 msgid "表示しない"
 msgstr "No mostrar"
@@ -3953,7 +3959,7 @@ msgid "WordPressのダッシュボードに移動するためのリンクです�
 msgstr "Enlace para ir al panel de control de Wordpress."
 
 #: lib/page-settings/admin-forms.php:203
-msgid "投稿編集リンクの表示"
+msgid "投稿編集リンクを表示する"
 msgstr "Mostrar enlace de edición de publicación"
 
 #: lib/page-settings/admin-forms.php:204
@@ -3961,7 +3967,7 @@ msgid "WordPress管理画面で投稿内容を編集するためのリンクで�
 msgstr "Este es el enlace para editar el contenido de la publicación en el panel de administración de WordPress."
 
 #: lib/page-settings/admin-forms.php:206
-msgid "WLW編集リンクの表示"
+msgid "WLW編集リンクを表示する"
 msgstr "Mostrar enlace de edición de WLW"
 
 #: lib/page-settings/admin-forms.php:207
@@ -3981,7 +3987,7 @@ msgid "AMP動作確認・テストリンクなどを表示します。"
 msgstr "Mostrar confirmación de funcionamiento de AMP, enlaces de prueba, etc."
 
 #: lib/page-settings/admin-forms.php:226
-msgid "Google AMPテストを表示"
+msgid "Google AMPテストを表示する"
 msgstr "Mostrar prueba de Google AMP"
 
 #: lib/page-settings/admin-forms.php:227
@@ -3989,154 +3995,154 @@ msgid "<a href=\"https://search.google.com/test/amp\" target=\"_blank\" rel=\"no
 msgstr "Mostrar enlace para comprobar en <a href=\"https://search.google.com/test/amp\" target=\"_blank\" rel=\"noopener\">Prueba de AMP - Google Search Console</a>."
 
 #: lib/page-settings/admin-forms.php:229
-msgid "The AMP Validatorを表示"
+msgid "The AMP Validatorを表示する"
 msgstr "Mostrar el validador de AMP"
 
 #: lib/page-settings/admin-forms.php:230
 msgid "<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" rel=\"noopener\">The AMP Validator</a>でチェックするためのリンクの表示。"
 msgstr "Mostrar enlace para comprobar en <a href=\"https://validator.ampproject.org/#\" target=\"_blank\" rel=\"noopener\">El validador de AMP</a>."
 
-#: lib/page-settings/admin-forms.php:244
+#: lib/page-settings/admin-forms.php:241
 msgid "チェックツールエリアの表示"
 msgstr "Mostrar área de herramientas de verificación"
 
-#: lib/page-settings/admin-forms.php:248
+#: lib/page-settings/admin-forms.php:245
 msgid "チェックツールエリアを表示する"
 msgstr "Mostrar el área de herramientas de verificación"
 
-#: lib/page-settings/admin-forms.php:249
+#: lib/page-settings/admin-forms.php:246
 msgid "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、Twitterの反応など。"
 msgstr "Mostrar el área con herramientas de verificación para diagnosticar la página. Esta área incluye PageSpeed Insights, verificación de datos estructurados, verificación de HTML5, reacción de Twitter, etc."
 
-#: lib/page-settings/admin-forms.php:253
+#: lib/page-settings/admin-forms.php:250
 msgid "PageSpeed Insightsを表示する"
 msgstr "Mostrar PageSpeed Insights"
 
-#: lib/page-settings/admin-forms.php:254
+#: lib/page-settings/admin-forms.php:251
 msgid "<a href=\"https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true\" target=\"_blank\" rel=\"noopener\">PageSpeed Insights</a>リンクの表示。"
 msgstr "Mostrar enlace de <a href=\"https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true\" target=\"_blank\" rel=\"noopener\">PageSpeed Insights</a>."
 
-#: lib/page-settings/admin-forms.php:256
+#: lib/page-settings/admin-forms.php:253
 msgid "GTmetrixを表示する"
 msgstr "Mostrar GTmetrix"
 
-#: lib/page-settings/admin-forms.php:257
+#: lib/page-settings/admin-forms.php:254
 msgid "<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTmetrix</a>リンクの表示。"
 msgstr "Mostrar enlace de <a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTmetrix</a>."
 
-#: lib/page-settings/admin-forms.php:259
+#: lib/page-settings/admin-forms.php:256
 msgid "構造化データチェックを表示する"
 msgstr "Mostrar verificación de datos estructurados"
 
-#: lib/page-settings/admin-forms.php:260
+#: lib/page-settings/admin-forms.php:257
 msgid "<a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">リッチリザルトテストツール</a>リンクの表示。"
 msgstr "Mostrar enlace de verificación <a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">Verificador de datos estructurados</a>."
 
-#: lib/page-settings/admin-forms.php:262
+#: lib/page-settings/admin-forms.php:259
 msgid "HTML5チェックを表示する"
 msgstr "Mostrar verificación de HTML5"
 
-#: lib/page-settings/admin-forms.php:263
+#: lib/page-settings/admin-forms.php:260
 msgid "<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a>リンクの表示。"
 msgstr "Mostrar enlace de verificación <a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a>."
 
-#: lib/page-settings/admin-forms.php:265
+#: lib/page-settings/admin-forms.php:262
 msgid "SEOチェキを表示する"
 msgstr "Mostrar SEO Cheki"
 
-#: lib/page-settings/admin-forms.php:266
+#: lib/page-settings/admin-forms.php:263
 msgid "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
 msgstr "Mostrar enlace de <a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO Cheki! Herramientas SEO gratuitas</a>."
 
-#: lib/page-settings/admin-forms.php:268
+#: lib/page-settings/admin-forms.php:265
 msgid "ツイート検索を表示する"
 msgstr "Mostrar búsqueda de tweets"
 
-#: lib/page-settings/admin-forms.php:269
+#: lib/page-settings/admin-forms.php:266
 msgid "投稿・固定ページ・インデックスページに対するツイート検索リンクの表示。"
 msgstr "Visualización de enlaces de búsqueda de tweets para entradas, páginas fijas y la página de índice."
 
-#: lib/page-settings/admin-forms.php:278
+#: lib/page-settings/admin-forms.php:275
 msgid "レスポンシブツールエリアの表示"
 msgstr "Mostrar área de herramientas responsive"
 
-#: lib/page-settings/admin-forms.php:282
+#: lib/page-settings/admin-forms.php:279
 msgid "レスポンシブチェックツールエリアを表示する"
 msgstr "Mostrar el área de herramientas de verificación responsiva"
 
-#: lib/page-settings/admin-forms.php:283
+#: lib/page-settings/admin-forms.php:280
 msgid "レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えます。"
 msgstr "Alternar la visualización del área de herramientas donde puede verificar de manera eficiente el estado de visualización responsive."
 
-#: lib/page-settings/admin-forms.php:287
+#: lib/page-settings/admin-forms.php:284
 msgid "Responsinatorチェックを表示する"
 msgstr "Mostrar verificación de Responsinator"
 
-#: lib/page-settings/admin-forms.php:288
+#: lib/page-settings/admin-forms.php:285
 msgid "<a href=\"http://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>チェック用リンクの表示。"
 msgstr "Mostrar enlace de verificación <a href=\"https://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>."
 
-#: lib/page-settings/admin-forms.php:290
+#: lib/page-settings/admin-forms.php:287
 msgid "Sizzyチェックを表示する"
 msgstr "Mostrar verificación de Sizzy"
 
-#: lib/page-settings/admin-forms.php:291
+#: lib/page-settings/admin-forms.php:288
 msgid "<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>チェック用リンクの表示。"
 msgstr "Mostrar enlace de verificación <a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>."
 
-#: lib/page-settings/admin-forms.php:293
+#: lib/page-settings/admin-forms.php:290
 msgid "ScreenResolutionチェックを表示する"
 msgstr "Mostrar verificación de ScreenResolution"
 
-#: lib/page-settings/admin-forms.php:294
+#: lib/page-settings/admin-forms.php:291
 msgid "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
 msgstr "Mostrar enlace de verificación <a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>."
 
-#: lib/page-settings/admin-forms.php:311
+#: lib/page-settings/admin-forms.php:308
 msgid "インデックス設定"
 msgstr "Índice"
 
-#: lib/page-settings/admin-forms.php:314
+#: lib/page-settings/admin-forms.php:311
 msgid "インデックスページのエントリーカードに表示されるPVの設定です。"
 msgstr "Esta es la configuración de las vistas de página (PV) que se muestran en las tarjetas de entrada de la página de índice."
 
-#: lib/page-settings/admin-forms.php:322
+#: lib/page-settings/admin-forms.php:319
 msgid "エントリーカード"
 msgstr "Tarjeta de entrada"
 
-#: lib/page-settings/admin-forms.php:323
+#: lib/page-settings/admin-forms.php:320
 msgid "エントリーカードのPV表示エリアの設定です。"
 msgstr "Configuración del área de visualización de PV en la tarjeta de entrada."
 
-#: lib/page-settings/admin-forms.php:328
+#: lib/page-settings/admin-forms.php:325
 msgid "インデックスにPV数を表示する"
 msgstr "Mostrar el conteo de PV en el índice"
 
-#: lib/page-settings/admin-forms.php:329
+#: lib/page-settings/admin-forms.php:326
 msgid "インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。"
 msgstr "Muestra el conteo de PV para cada tarjeta de entrada en la página de índice. Si el método de agregación es Jetpack, la obtención de información tomará tiempo en el primer acceso."
 
-#: lib/page-settings/admin-forms.php:331
+#: lib/page-settings/admin-forms.php:328
 msgid "アクセス集計方法"
 msgstr "Método de resumen de acceso"
 
-#: lib/page-settings/admin-forms.php:336
+#: lib/page-settings/admin-forms.php:333
 msgid "※テーマのアクセス集計が有効になっていません。"
 msgstr "*El resumen de acceso del tema no está habilitado."
 
-#: lib/page-settings/admin-forms.php:341
+#: lib/page-settings/admin-forms.php:338
 msgid "※Jetpackの統計機能が有効になっていません。"
 msgstr "*La función de estadísticas de Jetpack no está habilitada."
 
-#: lib/page-settings/admin-forms.php:344
+#: lib/page-settings/admin-forms.php:341
 msgid "テーマ独自"
 msgstr "Original del tema"
 
-#: lib/page-settings/admin-forms.php:345
+#: lib/page-settings/admin-forms.php:342
 msgid "Jetpack"
 msgstr "Jetpack"
 
-#: lib/page-settings/admin-forms.php:348
+#: lib/page-settings/admin-forms.php:345
 msgid "管理者パネルで表示するPVの取得方法を選択します。"
 msgstr "Seleccione cómo obtener los PV que se muestran en el panel de administración."
 
@@ -4287,7 +4293,7 @@ msgid "本文中"
 msgstr "Parte media del contenido"
 
 #: lib/page-settings/ads-forms.php:200
-#: lib/page-settings/single-forms.php:343
+#: lib/page-settings/single-forms.php:336
 msgid "本文下"
 msgstr "Parte inferior del contenido"
 
@@ -4456,7 +4462,7 @@ msgstr "Especifique los ID de las publicaciones y páginas fijas para las que de
 
 #: lib/page-settings/ads-forms.php:366
 #: lib/page-settings/index-forms.php:234
-#: lib/page-settings/single-forms.php:365
+#: lib/page-settings/single-forms.php:358
 msgid "除外カテゴリー"
 msgstr "Categorías excluidas"
 
@@ -5264,6 +5270,7 @@ msgid "データー取得時点のAmazon販売ページでの値段を表示し�
 msgstr "Muestra los precios en la página de ventas de Amazon en el momento de la obtención de datos. Si se ha configurado una opción de precio mediante un shortcode, este tendrá prioridad."
 
 #: lib/page-settings/apis-forms.php:77
+#: blocks/src/block/new-list/edit.js:218
 msgid "説明文を表示する"
 msgstr "Mostrar descripción"
 
@@ -6030,7 +6037,7 @@ msgstr "Si selecciona artículos populares, solo se mostrarán estos con priorid
 
 #: lib/page-settings/carousel-forms.php:78
 #: lib/page-settings/single-forms.php:129
-#: lib/page-settings/single-forms.php:357
+#: lib/page-settings/single-forms.php:350
 #: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:130
 #: lib/page-settings/sns-share-forms-top.php:117
@@ -6338,7 +6345,7 @@ msgstr "Configura el ancho del margen entre la columna principal y la barra late
 
 #: lib/page-settings/comment-forms.php:13
 #: lib/page-settings/page-forms.php:13
-#: lib/page-settings/single-forms.php:393
+#: lib/page-settings/single-forms.php:386
 msgid "コメント設定"
 msgstr "Configuración de comentarios"
 
@@ -6347,7 +6354,7 @@ msgid "コメント一覧や入力欄のみタグに関する設定です。"
 msgstr "Las configuraciones relacionadas con la lista de comentarios y las etiquetas solo para los campos de entrada."
 
 #: lib/page-settings/comment-forms.php:30
-#: lib/page-settings/single-forms.php:300
+#: lib/page-settings/single-forms.php:293
 msgid "デモはランダム表示です。"
 msgstr "La demostración es una visualización aleatoria."
 
@@ -6384,11 +6391,11 @@ msgid "ボタン切り換え動作。"
 msgstr "Operación del interruptor de botón."
 
 #: lib/page-settings/comment-forms.php:79
-msgid "常に表示"
+msgid "常に表示する"
 msgstr "Mostrar siempre"
 
 #: lib/page-settings/comment-forms.php:80
-msgid "ボタンで表示切り替え"
+msgid "ボタンで表示を切り替える"
 msgstr "Alternar visualización con botón"
 
 #: lib/page-settings/comment-forms.php:83
@@ -6672,13 +6679,13 @@ msgstr "Mostrar la fecha de publicación"
 
 #: lib/page-settings/content-forms.php:355
 #: lib/page-settings/index-forms.php:218
-#: lib/page-settings/single-forms.php:262
+#: lib/page-settings/single-forms.php:255
 msgid "更新日を表示する"
 msgstr "Mostrar la fecha de actualización"
 
 #: lib/page-settings/content-forms.php:357
 #: lib/page-settings/index-forms.php:221
-#: lib/page-settings/single-forms.php:265
+#: lib/page-settings/single-forms.php:258
 msgid "投稿者名を表示する"
 msgstr "Mostrar el nombre del autor"
 
@@ -8192,8 +8199,8 @@ msgstr "Configuración de visualización de comentarios de páginas."
 
 #: lib/page-settings/page-forms.php:23
 #: lib/page-settings/single-forms.php:111
-#: lib/page-settings/single-forms.php:308
-#: lib/page-settings/single-forms.php:403
+#: lib/page-settings/single-forms.php:301
+#: lib/page-settings/single-forms.php:396
 msgid "表示"
 msgstr "Visualización"
 
@@ -8202,7 +8209,7 @@ msgid "固定ページにコメントを表示するか。"
 msgstr "¿Desea mostrar comentarios en las páginas?"
 
 #: lib/page-settings/page-forms.php:41
-#: lib/page-settings/single-forms.php:421
+#: lib/page-settings/single-forms.php:414
 msgid "パンくずリスト設定"
 msgstr "Configuración de migas de pan"
 
@@ -8211,27 +8218,27 @@ msgid "固定ページのパンくずリスト設定です。"
 msgstr "La configuración de migas de pan para las páginas."
 
 #: lib/page-settings/page-forms.php:51
-#: lib/page-settings/single-forms.php:431
+#: lib/page-settings/single-forms.php:424
 msgid "パンくずリストの配置"
 msgstr "Colocación de migas de pan"
 
 #: lib/page-settings/page-forms.php:57
-#: lib/page-settings/single-forms.php:437
+#: lib/page-settings/single-forms.php:430
 msgid "メインカラム手前"
 msgstr "Antes de la columna principal"
 
 #: lib/page-settings/page-forms.php:58
-#: lib/page-settings/single-forms.php:438
+#: lib/page-settings/single-forms.php:431
 msgid "メインカラムトップ"
 msgstr "Encima del título de la página/publicación"
 
 #: lib/page-settings/page-forms.php:59
-#: lib/page-settings/single-forms.php:439
+#: lib/page-settings/single-forms.php:432
 msgid "メインカラムボトム（デフォルト）"
 msgstr "Parte inferior de la columna principal (predeterminado)"
 
 #: lib/page-settings/page-forms.php:60
-#: lib/page-settings/single-forms.php:440
+#: lib/page-settings/single-forms.php:433
 msgid "フッター手前"
 msgstr "Antes del pie de página"
 
@@ -8240,12 +8247,12 @@ msgid "固定ページのパンくずリスト表示位置を設定します。"
 msgstr "Establezca la posición de visualización de las migas de pan para las páginas."
 
 #: lib/page-settings/page-forms.php:71
-#: lib/page-settings/single-forms.php:451
+#: lib/page-settings/single-forms.php:444
 msgid "記事タイトル"
 msgstr "Título del artículo"
 
 #: lib/page-settings/page-forms.php:75
-#: lib/page-settings/single-forms.php:455
+#: lib/page-settings/single-forms.php:448
 msgid "パンくずリストに記事タイトルを含める"
 msgstr "Incluir el título del artículo en las migas de pan"
 
@@ -8662,16 +8669,16 @@ msgid "表示する日付"
 msgstr "Fecha a mostrar"
 
 #: lib/page-settings/seo-forms.php:155
-msgid "投稿日・更新日を表示"
+msgid "投稿日・更新日を表示する"
 msgstr "Mostrar fecha de publicación y de actualización"
 
 #: lib/page-settings/seo-forms.php:156
-msgid "投稿日のみ表示"
+msgid "投稿日のみを表示する"
 msgstr "Mostrar solo la fecha de publicación"
 
 #: lib/page-settings/seo-forms.php:157
-msgid "更新日のみ表示"
-msgstr "Mostrar solo la fecha de actualización"
+msgid "更新日のみを表示する"
+msgstr "Mostrar la fecha de actualización"
 
 #: lib/page-settings/seo-forms.php:161
 msgid "表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方が変わる可能性があります。"
@@ -8798,7 +8805,7 @@ msgid "関連記事の補助となる見出しを入力してください。"
 msgstr "Ingrese un subencabezado para los artículos relacionados."
 
 #: lib/page-settings/single-forms.php:156
-#: lib/page-settings/single-forms.php:321
+#: lib/page-settings/single-forms.php:314
 #: lib/widgets/navi-entries.php:122
 #: lib/widgets/new-entries.php:192
 #: lib/widgets/popular-entries.php:189
@@ -8891,95 +8898,95 @@ msgstr "Número máximo de caracteres para fragmentos generados automáticamente
 msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）"
 msgstr "Configure el número máximo de caracteres al mostrar \"Fragmento generado automáticamente desde el texto\" en \"Tarjetas de entrada de artículos relacionados\". *Este no es el texto del fragmento de la pantalla de edición de la publicación. (mínimo: 1, máximo: 500)"
 
-#: lib/page-settings/single-forms.php:266
+#: lib/page-settings/single-forms.php:259
 msgid "投稿の関連記事のエントリーカードに投稿関連情報を表示するかどうか。"
 msgstr "¿Mostrar información relacionada con la publicación en las tarjetas de entrada de artículos relacionados de la publicación?"
 
-#: lib/page-settings/single-forms.php:279
+#: lib/page-settings/single-forms.php:272
 msgid "ページ送りナビ設定"
 msgstr "Configuración de la navegación de páginas"
 
-#: lib/page-settings/single-forms.php:282
+#: lib/page-settings/single-forms.php:275
 msgid "[前ページ][次ページ]へと送るナビゲーションの設定です。"
 msgstr "Configuración de la navegación para enviar a [Página anterior]/[Página siguiente]."
 
-#: lib/page-settings/single-forms.php:312
+#: lib/page-settings/single-forms.php:305
 msgid "ページ送りナビを表示する"
 msgstr "Mostrar navegación de páginas"
 
-#: lib/page-settings/single-forms.php:313
+#: lib/page-settings/single-forms.php:306
 msgid "[前ページ][次ページ]ナビを表示するか。"
 msgstr "¿Mostrar la navegación [Página anterior]/[Página siguiente]?"
 
-#: lib/page-settings/single-forms.php:327
+#: lib/page-settings/single-forms.php:320
 msgid "サムネイル正方形"
 msgstr "Miniatura cuadrada"
 
-#: lib/page-settings/single-forms.php:330
+#: lib/page-settings/single-forms.php:323
 msgid "ページ送りナビの見た目を変更します。"
 msgstr "Cambiar la apariencia de la navegación de páginas."
 
-#: lib/page-settings/single-forms.php:338
+#: lib/page-settings/single-forms.php:331
 msgid "表示位置"
 msgstr "Posición de visualización"
 
-#: lib/page-settings/single-forms.php:344
+#: lib/page-settings/single-forms.php:337
 msgid "関連記事上"
 msgstr "Encima de los artículos relacionados"
 
-#: lib/page-settings/single-forms.php:345
+#: lib/page-settings/single-forms.php:338
 msgid "関連記事下（デフォルト）"
 msgstr "Debajo de los artículos relacionados (predeterminado)"
 
-#: lib/page-settings/single-forms.php:346
+#: lib/page-settings/single-forms.php:339
 msgid "コメント下"
 msgstr "Debajo de los comentarios"
 
-#: lib/page-settings/single-forms.php:349
+#: lib/page-settings/single-forms.php:342
 msgid "ページ送りナビを表示する位置を変更します。"
 msgstr "Cambie la posición de visualización de la navegación de páginas."
 
-#: lib/page-settings/single-forms.php:361
+#: lib/page-settings/single-forms.php:354
 msgid "同一カテゴリーのものを表示する"
 msgstr "Mostrar publicaciones de la misma categoría"
 
-#: lib/page-settings/single-forms.php:362
+#: lib/page-settings/single-forms.php:355
 msgid "投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリーが設定してある場合は、複数に属するものが表示されます。"
 msgstr "¿Desea mostrar publicaciones y navegación de páginas de la misma categoría? Si se han configurado múltiples categorías, se mostrarán los elementos que pertenecen a varias categorías."
 
-#: lib/page-settings/single-forms.php:367
+#: lib/page-settings/single-forms.php:360
 msgid "ページ送りナビに表示させないカテゴリーを選択してください。"
 msgstr "Seleccione una categoría para excluirla de la visualización en la navegación de páginas."
 
-#: lib/page-settings/single-forms.php:375
+#: lib/page-settings/single-forms.php:368
 msgid "枠線表示"
 msgstr "Mostrar bordes"
 
-#: lib/page-settings/single-forms.php:379
+#: lib/page-settings/single-forms.php:372
 msgid "ページ送りナビの枠線を表示する"
 msgstr "Mostrar bordes de la navegación de páginas"
 
-#: lib/page-settings/single-forms.php:380
+#: lib/page-settings/single-forms.php:373
 msgid "ページ送りナビを囲む枠線を表示するか。"
 msgstr "¿Mostrar bordes alrededor de la navegación de páginas?"
 
-#: lib/page-settings/single-forms.php:396
+#: lib/page-settings/single-forms.php:389
 msgid "投稿のコメント表示設定です。"
 msgstr "Configuración de visualización de comentarios en las publicaciones."
 
-#: lib/page-settings/single-forms.php:408
+#: lib/page-settings/single-forms.php:401
 msgid "投稿ページにコメントを表示するか。"
 msgstr "¿Mostrar comentarios en las páginas de publicación?"
 
-#: lib/page-settings/single-forms.php:424
+#: lib/page-settings/single-forms.php:417
 msgid "投稿のパンくずリスト設定です。"
 msgstr "Configuración de migas de pan en las publicaciones."
 
-#: lib/page-settings/single-forms.php:443
+#: lib/page-settings/single-forms.php:436
 msgid "投稿・カテゴリーページのパンくずリスト表示位置を設定します。"
 msgstr "Configure la posición de visualización de la ruta de navegación en las páginas de entradas y categorías."
 
-#: lib/page-settings/single-forms.php:456
+#: lib/page-settings/single-forms.php:449
 msgid "投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか切り替えます。"
 msgstr "Alternar la visualización del título de la página para las migas de pan en las páginas de publicación."
 
@@ -9510,7 +9517,7 @@ msgstr "Mostrar el recuento de compartidos"
 
 #: lib/page-settings/sns-share-forms-bottom.php:205
 #: lib/page-settings/sns-share-forms-top.php:195
-msgid "シェア数を表示"
+msgid "シェア数を表示する"
 msgstr "Mostrar el recuento de compartidos"
 
 #: lib/page-settings/sns-share-forms-bottom.php:206
@@ -10515,17 +10522,12 @@ msgid "[SAMPLE 010] どや顔女性（右）"
 msgstr "[SAMPLE 010] Mujer con cara de satisfacción (derecha)"
 
 #: lib/page-speed-up/speed-up-forms.php:14
-#: lib/page-speed-up/speed-up-forms.php:25
 msgid "ブラウザキャッシュ"
 msgstr "Caché del navegador"
 
 #: lib/page-speed-up/speed-up-forms.php:17
 msgid "ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れます。"
 msgstr "Configura la caché del navegador. Al configurar la caché del navegador, los archivos de recursos se cargarán localmente en lugar de desde el servidor en la próxima visita, lo que acelerará la navegación."
-
-#: lib/page-speed-up/speed-up-forms.php:29
-msgid "ブラウザキャッシュを有効にする"
-msgstr "Habilitar caché del navegador"
 
 #: lib/page-speed-up/speed-up-forms.php:30
 msgid "ブラウザキャッシュを有効化することで、訪問者が2回目以降リソースファイルをサーバーから読み込む時間を軽減できます。"
@@ -10706,10 +10708,6 @@ msgstr "Use dns-prefetch y preconnect en la etiqueta link para acelerar la carga
 #: lib/page-speed-up/speed-up-forms.php:226
 msgid "よくわからない場合は、デフォルトのままご利用ください。"
 msgstr "Si no está seguro, utilice la configuración predeterminada."
-
-#: lib/page-speed-up/_top-page.php:39
-msgid "サイト高速化"
-msgstr "Aceleración del sitio"
 
 #: lib/page-speed-up/_top-page.php:41
 msgid "サイト表示スピードの高速化設定を行います。"
@@ -11630,12 +11628,6 @@ msgstr "En el caso de AdSense, inserte una etiqueta receptiva. Si se deja en bla
 msgid "広告フォーマット（AdSenseコード入力時のみ有効）"
 msgstr "Formato de anuncio (válido solo cuando se ingresa el código de AdSense)"
 
-#: lib/widgets/ad.php:79
-#: lib/widgets/mobile-ad.php:79
-#: lib/widgets/pc-ad.php:83
-msgid "広告ラベルを表示する"
-msgstr "Mostrar etiqueta de anuncio"
-
 #: lib/widgets/author-box.php:20
 msgid "記事を書いた著者のプロフィール情報を表示するウィジェットです。"
 msgstr "Este es un widget para mostrar el perfil del autor del artículo."
@@ -11783,11 +11775,11 @@ msgid "ウィジェットの表示"
 msgstr "Visualización de widgets"
 
 #: lib/widgets/display-widgets.php:127
-msgid "チェック・入力したページで非表示"
+msgid "チェック・入力したページで非表示にする"
 msgstr "Ocultar en páginas seleccionadas o introducidas"
 
 #: lib/widgets/display-widgets.php:128
-msgid "チェック・入力したページで表示"
+msgid "チェック・入力したページで表示する"
 msgstr "Mostrar en páginas seleccionadas o introducidas"
 
 #: lib/widgets/display-widgets.php:159
@@ -14406,7 +14398,7 @@ msgstr "Filtro"
 #: blocks/src/block/info-list/edit.js:125
 #: blocks/src/block/new-list/edit.js:227
 #: blocks/src/block/popular-list/edit.js:274
-msgid "全カテゴリー表示"
+msgid "全カテゴリーを表示する"
 msgstr "Mostrar todas las categorías"
 
 #: blocks/src/block/info-list/index.js:30
@@ -14444,7 +14436,7 @@ msgstr "*Máximo 10 elementos mostrados"
 
 #: blocks/src/block/new-list/edit.js:96
 #: blocks/src/block/popular-list/edit.js:94
-msgid "子カテゴリーの内容を含めて表示"
+msgid "子カテゴリーの内容を含めて表示する"
 msgstr "Incluir contenido de categorías secundarias"
 
 #: blocks/src/block/new-list/edit.js:126
@@ -14480,16 +14472,12 @@ msgstr "Descendente"
 msgid "読み飛ばし"
 msgstr "Saltar artículos"
 
-#: blocks/src/block/new-list/edit.js:218
-msgid "説明文の表示"
-msgstr "Mostrar descripción"
-
 #: blocks/src/block/new-list/edit.js:238
-msgid "全タグ表示"
+msgid "全タグを表示する"
 msgstr "Mostrar todas las etiquetas"
 
 #: blocks/src/block/new-list/edit.js:247
-msgid "固定記事の表示"
+msgid "固定記事を表示する"
 msgstr "Mostrar artículos fijos"
 
 #: blocks/src/block/new-list/edit.js:252
@@ -14587,7 +14575,7 @@ msgid "最大値"
 msgstr "Máximo"
 
 #: blocks/src/block/radar/edit.js:327
-msgid "タイトルを表示"
+msgid "タイトルを表示する"
 msgstr "Mostrar título"
 
 #: blocks/src/block/radar/edit.js:336
@@ -14595,7 +14583,7 @@ msgid "ここにタイトルを入力してください"
 msgstr "Escriba aquí el título"
 
 #: blocks/src/block/radar/edit.js:340
-msgid "データ名を表示"
+msgid "データ名を表示する"
 msgstr "Mostrar nombre de datos"
 
 #: blocks/src/block/radar/edit.js:346
@@ -14631,19 +14619,19 @@ msgid "1, 2, 3, 4, 5"
 msgstr "1, 2, 3, 4, 5"
 
 #: blocks/src/block/radar/edit.js:378
-msgid "総計を表示"
-msgstr "Mostrar total"
+msgid "総計を表示する"
+msgstr "Mostrar totales generales"
 
 #: blocks/src/block/radar/edit.js:383
-msgid "項目に値を表示"
+msgid "項目に値を表示する"
 msgstr "Mostrar los valores de los elementos"
 
 #: blocks/src/block/radar/edit.js:388
-msgid "値が最大値を超えるのを許可"
+msgid "値が最大値を超えるのを許可する"
 msgstr "Permitir que el valor supere el valor máximo"
 
 #: blocks/src/block/radar/edit.js:393
-msgid "アングルラインを表示"
+msgid "アングルラインを表示する"
 msgstr "Mostrar líneas angulares"
 
 #: blocks/src/block/radar/index.js:25
