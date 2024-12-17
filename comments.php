@@ -59,7 +59,7 @@ if ( is_comment_open() || have_comments() ):
   $comment_info_msg = get_comment_information_message();
   $comment_info_msg_tag = null;
   if ($comment_info_msg) {
-    $comment_info_msg_tag = '<div class="comment-information-messag">'.$comment_info_msg.'</div>';
+    $comment_info_msg_tag = '<div class="comment-information-messag">'.do_shortcode(wpautop($comment_info_msg)).'</div>';
   }
   //コメントフォームの引数
   $post_id = get_the_ID();

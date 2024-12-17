@@ -25,11 +25,11 @@ if ($eye_catch_url || $content): ?>
         <figure class="eye-catch">
           <img src="<?php echo esc_url($eye_catch_url); ?>" class="eye-catch-image wp-category-image" alt="<?php echo esc_attr(get_the_category_title($cat_id)); ?>">
           <?php //カテゴリーラベル
-          if (apply_filters('is_eyecatch_category_label_visible', true) && apply_filters( 'is_category_label_visible', true )) {
+          if (is_eyecatch_label_visible() && apply_filters('is_eyecatch_category_label_visible', true)) {
             echo '<span class="cat-label cat-label-'.$cat_id.'">'.single_cat_title( '', false ).'</span>';
           } ?>
           <?php //キャプション
-          if ($caption){
+          if (is_eyecatch_caption_visible() && $caption){
             echo '<figcaption class="eye-catch-caption">'.esc_html($caption).'</figcaption>';
           }; ?>
         </figure>

@@ -25,7 +25,7 @@ if ($eye_catch_url || $content): ?>
         <figure class="eye-catch">
           <img src="<?php echo esc_url($eye_catch_url); ?>" class="eye-catch-image wp-tag-image" alt="<?php echo esc_attr(get_the_tag_title($tag_id)); ?>">
           <?php //キャプション
-          if ($caption){
+          if (is_eyecatch_caption_visible() && $caption){
             echo '<figcaption class="eye-catch-caption">'.esc_html($caption).'</figcaption>';
           }; ?>
         </figure>

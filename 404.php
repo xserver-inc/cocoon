@@ -16,7 +16,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   <img class="not-found" src="<?php echo get_404_image_url(); ?>" alt="404 Not Found" />
 
-  <?php echo wpautop(get_404_page_message()); ?>
+  <?php echo do_shortcode(wpautop(get_404_page_message())); ?>
 
   <?php //404ページウィジェット
   if ( is_active_sidebar( '404-page' ) ): ?>
