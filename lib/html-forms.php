@@ -504,7 +504,7 @@ function generate_main_column_ad_detail_setting_forms($name, $value, $label_name
     //ラベル表示の設定
     if ($label_name) {
       echo '<p>';
-      generate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
+      generate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示する', THEME_NAME ));
       echo '</p>';
     }
 
@@ -569,7 +569,7 @@ function generate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $l
     generate_selectbox_tag($name, $options, $value, __( 'フォーマット（広告ユニット）', THEME_NAME ));
     //ラベル表示の設定
     echo '<p>';
-    generate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
+    generate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示する', THEME_NAME ));
     echo '</p>';
     ?>
     </div>

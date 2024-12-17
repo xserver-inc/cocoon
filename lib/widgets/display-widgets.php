@@ -124,8 +124,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
       </label>
       <?php
         $options = array(
-          'hide' => __( 'チェック・入力したページで非表示', THEME_NAME ),
-          'show' => __( 'チェック・入力したページで表示', THEME_NAME ),
+          'hide' => __( 'チェック・入力したページで非表示にする', THEME_NAME ),
+          'show' => __( 'チェック・入力したページで表示する', THEME_NAME ),
         );
         generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
         $dw =get_dropped_widget($widget);

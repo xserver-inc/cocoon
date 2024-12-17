@@ -76,8 +76,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'always' => __( '常に表示', THEME_NAME ),
-              'toggle_button' => __( 'ボタンで表示切り替え', THEME_NAME ),
+              'always' => __( '常に表示する', THEME_NAME ),
+              'toggle_button' => __( 'ボタンで表示を切り替える', THEME_NAME ),
             );
             generate_radiobox_tag(OP_COMMENT_FORM_DISPLAY_TYPE, $options, get_comment_form_display_type());
             generate_tips_tag(__( 'コメント入力欄の表示状態を設定します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/toggle-comment-button/'));
