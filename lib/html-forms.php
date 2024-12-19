@@ -314,8 +314,14 @@ endif;
 //テキストボックスの生成
 if ( !function_exists( 'generate_textbox_tag' ) ):
 function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){
+  $value = isset($value) ? $value : '';
   ob_start();?>
-  <input type="text" id="<?php echo $name; ?>" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>" placeholder="<?php echo esc_attr($placeholder); ?>">
+  <input type="text"
+    id="<?php echo esc_attr($name); ?>"
+    name="<?php echo esc_attr($name); ?>"
+    size="<?php echo esc_attr($cols); ?>"
+    value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>"
+    placeholder="<?php echo esc_attr($placeholder); ?>">
   <?php
   $res = ob_get_clean();
   echo apply_filters('admin_input_form_tag', $res, $name);
