@@ -313,7 +313,7 @@ endif;
 
 //テキストボックスの生成
 if ( !function_exists( 'generate_textbox_tag' ) ):
-function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){
+function generate_textbox_tag($name, $value = '', $placeholder = '', $cols = DEFAULT_INPUT_COLS){
   $value = isset($value) ? $value : '';
   ob_start();?>
   <input type="text"
@@ -330,7 +330,7 @@ endif;
 
 //テキストエリアの生成
 if ( !function_exists( 'generate_textarea_tag' ) ):
-function generate_textarea_tag($name, $value, $placeholder, $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS, $style = null){
+function generate_textarea_tag($name, $value = '', $placeholder = '', $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS, $style = null){
   $style_tag = null;
   if ($style) {
     $style_tag = ' style="'.$style.'"';
