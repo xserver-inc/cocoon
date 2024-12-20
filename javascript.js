@@ -25,7 +25,6 @@
     if (s1 ^ s2) {
       if (s2) {
         // トップへ戻るボタンが見えている時
-        $('.body').attr('data-top-button', 'true');
         $('.body').removeClass('go-to-top-hidden');
         $('.body').addClass('go-to-top-visible');
 
@@ -35,7 +34,6 @@
         //トップへ戻る間だけ追加したクラスを除去
         $('.go-to-top-common').removeClass('go-to-top-up');
         // トップへ戻るボタンが見えていない時
-        $('.body').attr('data-top-button', 'false');
         $('.body').removeClass('go-to-top-visible');
         $('.body').addClass('go-to-top-hidden');
 
