@@ -331,6 +331,9 @@ function body_class_additional($classes) {
     $classes[] = 'classicpress';
   }
 
+  //「トップに戻る」ボタンが表示されていない時
+  $classes[] = 'go-to-top-hidden';
+
   return apply_filters('body_class_additional', $classes);
 }//body_class_additional
 endif;
