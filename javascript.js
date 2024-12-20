@@ -25,7 +25,6 @@
     if (s1 ^ s2) {
       if (s2) {
         // トップへ戻るボタンが見えている時
-        $('.body').removeClass('go-to-top-hidden');
         $('.body').addClass('go-to-top-visible');
 
         // //[.go-to-to]をゆっくりフェードインする
@@ -35,7 +34,6 @@
         $('.go-to-top-common').removeClass('go-to-top-up');
         // トップへ戻るボタンが見えていない時
         $('.body').removeClass('go-to-top-visible');
-        $('.body').addClass('go-to-top-hidden');
 
         // //それ以外だったらフェードアウトする
         // $('.go-to-top').fadeOut('slow');
