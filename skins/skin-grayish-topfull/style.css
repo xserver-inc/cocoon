@@ -6,7 +6,7 @@
   Author: Na2factory
   Author URI: https://na2-factory.com/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-grayish-topfull.webp
-  Version: 2.0.4
+  Version: 2.0.5
   Priority: 7000001000
   License: GNU General Public License
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -167,10 +167,6 @@
 }
 
 /****************************** Common ******************************/
-/* v1.1.3 */
-*, :after, :before {
-  min-inline-size: 0
-}
 
 html {
   scroll-behavior: smooth;
@@ -183,7 +179,7 @@ html {
 }
 
 .skin-grayish {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .skin-grayish .container {
@@ -3592,7 +3588,7 @@ blockquote cite {
 /****************************** Footer  ******************************/
 .skin-grayish .footer {
   background-color: var(--LtGray_T70);
-  overflow-x: hidden;
+  overflow-x: clip;
   margin-top: 0;
 }
 
