@@ -87,7 +87,7 @@ function wp_tag_cloud_custom( $output, $args ) {
     $output = str_replace( '<span class="tag-link-count">', '</span><span class="tag-link-count">',  $output);
     //カッコを取り除く
     $output = str_replace( '<span class="tag-link-count"> (', '<span class="tag-link-count">',  $output);
-    $output = str_replace( ')</span>', '</span>',  $output);
+    $output = str_replace( ')</span></a>', '</span></a>',  $output);
   } else {//数字を表示しないとき
     $output = str_replace( '</a>', '</span></a>', $output);
   }
