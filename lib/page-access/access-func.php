@@ -348,7 +348,7 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
     WHERE post_status = 'publish' AND
           post_type = '{$post_type}'".
           $author_query."
-    ORDER BY sum_count DESC
+    ORDER BY sum_count DESC, post_id
     LIMIT $limit
   ";
   //_v($query);
@@ -463,7 +463,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
         ) AS {$joined_table} #カテゴリーとアクセステーブルを内部結合した仮の名前
 
         GROUP BY {$joined_table}.post_id
-        ORDER BY sum_count DESC
+        ORDER BY sum_count DESC, post_id
     ";
     //_v($query);
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
@@ -473,14 +473,13 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
       SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
         FROM {$access_table} $where
         GROUP BY {$access_table}.post_id
-        ORDER BY sum_count DESC
+        ORDER BY sum_count DESC, post_id
     ";
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
   }
-
   $records = $wpdb->get_results( $query );
-  // _v($query);
+  // var_dump($query);
   // _v($records);
 
   if (is_access_count_cache_enable() && $records) {
