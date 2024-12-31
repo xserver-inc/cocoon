@@ -1090,7 +1090,10 @@ function generate_popular_entries_tag($atts){
 
       $pv_tag = null;
       if ($pv_visible){
-        $pv_text = $pv == '1' ? $pv.' view' : $pv.' views';
+        $pv_unit = ($pv == '1') ? ' view' : ' views';
+        // $pv_unit = apply_filters('popular_entry_card_pv_unit', $pv_unit, $pv);
+        $pv_text = $pv.$pv_unit;
+        $pv_text = apply_filters('popular_entry_card_pv_text', $pv_text, $pv, $pv_unit);
         $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
       }
       ?>
