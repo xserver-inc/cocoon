@@ -36,6 +36,7 @@ require_once abspath(__FILE__).'comments.php';   //コメント関係の関数
 require_once abspath(__FILE__).'related-entries.php';   //関連記事関係の関数
 require_once abspath(__FILE__).'walkers.php';  //Walker_Nav_Menuまとめ
 require_once abspath(__FILE__).'plugins.php';   //プラグイン関係の関数
+require_once abspath(__FILE__).'eyecatch.php';   //タイトルからアイキャッチ生成関数
 //CSS・JavaScript縮小化ライブラリ
 if (!class_exists('MatthiasMullie\Minify\Minify')) {
   $path = get_template_directory() . '/plugins/minify';
