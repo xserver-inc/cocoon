@@ -163,7 +163,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'wide' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/wide.png', __( 'テレビ（地デジ）やYouTubeと同じ比率。', THEME_NAME ), THUMB320WIDTH).
-                __( '9:16, 1:1.777..（地デジ・YouTube比）デフォルト', THEME_NAME ),
+                __( '9:16, 1:1.777..（地デジ・YouTube比）デフォルト', THEME_NAME ).__( '【推奨】', THEME_NAME ),
 
               'golden_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME ), THUMB320WIDTH).
                 __( '約5:8, 1:1.618..（黄金比）', THEME_NAME ),
@@ -181,7 +181,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 __( '1:1（正方形）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_THUMBNAIL_IMAGE_TYPE, $options, get_thumbnail_image_type());
-            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像の縦横比率を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/thumbnail-aspect-ratio/'));
+            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像の縦横比率を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ).__( 'デフォルトが最もSNSとの相性が良いので、変更はお勧めしません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/thumbnail-aspect-ratio/'));
             ?>
 
           </td>
