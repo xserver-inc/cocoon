@@ -168,7 +168,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'golden_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME ), THUMB320WIDTH).
                 __( '約5:8, 1:1.618..（黄金比）', THEME_NAME ),
 
-                'postcard' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/postcard.png', __( '一眼レフのアスペクト比。ハガキの縦横比に近いです。', THEME_NAME ), THUMB320WIDTH).
+                '現地' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/postcard.png', __( '一眼レフのアスペクト比。ハガキの縦横比に近いです。', THEME_NAME ), THUMB320WIDTH).
                   __( '2:3, 1:1.5（一眼レフ比）', THEME_NAME ),
 
               'silver_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/silver.png', __( '日本の木造建築に古くから使われている比率。大和比とも呼ばれています。', THEME_NAME ), THUMB320WIDTH).
@@ -204,7 +204,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       </tbody>
     </table>
 
-    <p><?php _e( 'これらの設定で変更されるサムネイル部分はこちら。', THEME_NAME ); ?></p>
+    <p><?php _e( 'これらの設定で変更される画像部分はこちら。', THEME_NAME ); ?></p>
     <ol>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/index.jpg', __( 'インデックス、アーカイブ、検索結果ページのエントリーカードのサムネイル。', THEME_NAME )).__('インデックスカード', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/new.png', __( '新着記事ウィジェットのサムネイル。', THEME_NAME ), THUMB320WIDTH).__('新着記事', THEME_NAME); ?></li>
@@ -213,6 +213,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/carousel.png', __( 'カルーセルカードのサムネイル。', THEME_NAME )).__('カルーセル', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/page-navi.png', __( 'ページ送りナビのサムネイル。※デフォルトのみ）', THEME_NAME )).__('ページ送りナビ', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/blogcard.png', __( '内部ブログカード、外部ブログカードのサムネイル。', THEME_NAME )).__('ブログカード', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2025/01/title-eyechatch.png', __( 'エディターの「タイトルからアイキャッチを生成する」で生成したアイキャッチ。', THEME_NAME )).__('タイトルから生成したアイキャッチ', THEME_NAME); ?></li>
     </ol>
   </div>
 </div>
