@@ -148,10 +148,32 @@ function generate_dynamic_featured_image($post_id) {
       $lines[] = trim($current_line);
     }
 
-    // 最大5行に制限し、それ以降は省略
-    if (count($lines) > 5) {
-      $lines = array_slice($lines, 0, 5);
-      $lines[4] = mb_substr($lines[4], 0, mb_strlen($lines[4]) - 3) . '...';
+    // デフォルト最大5行に制限し、それ以降は省略
+    $max_row = 5;
+    // デフォルト以外
+    switch (get_thumbnail_image_type()) {
+      case 'golden_ratio':
+        $max_row = 6;
+        break;
+      case 'postcard':
+        $max_row = 6;
+        break;
+      case 'silver_ratio':
+        $max_row = 7;
+        break;
+      case 'standard':
+        $max_row = 8;
+        break;
+      case 'square':
+        $max_row = 11;
+        break;
+      default: // ここは使用されない
+        $max_row = 5;
+        break;
+    }
+    if (count($lines) > $max_row) {
+      $lines = array_slice($lines, 0, $max_row);
+      $lines[$max_row - 1] = mb_substr($lines[$max_row - 1], 0, mb_strlen($lines[$max_row - 1]) - 3) . '...';
     }
 
     // 各行を描画
