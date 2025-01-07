@@ -96,7 +96,6 @@ function generate_dynamic_featured_image($post_id) {
   if (file_exists($font_path)) {
     $lines = [];
     $current_line = '';
-
     // タイトルを単語または全角文字ごとに処理して改行を調整
     $words = preg_split('/(?=[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}\p{P}\p{S}]|\s+)/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
 
@@ -107,12 +106,24 @@ function generate_dynamic_featured_image($post_id) {
 
       // 行の幅が最大幅を超えた場合の処理
       if ($text_width > $max_width && !empty(trim($current_line))) {
-        $lines[] = trim($current_line);
-        $current_line = $word;
+        // はじめ括弧が行の最後に来る場合の処理
+        if (preg_match('/^[\p{Ps}]/u', $word)) {
+          $lines[] = trim($current_line);
+          $current_line = $word;
+        }
+        // 記号が行の先頭に来る場合の処理
+        else if (preg_match('/^[\p{P}\p{S}]/u', $word)) {
+          $lines[] = trim($current_line) . mb_substr($word, 0, 1); // 前の行の最後に記号一文字を追加
+          $current_line = mb_substr($word, 1); // 残りの部分を次の行に設定
+        } else {
+          $lines[] = trim($current_line);
+          $current_line = $word;
+        }
       } else {
         $current_line .= $word;
       }
     }
+
     // 最後の行を追加
     if (!empty(trim($current_line))) {
       $lines[] = trim($current_line);
