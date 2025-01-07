@@ -98,7 +98,7 @@ function generate_dynamic_featured_image($post_id) {
     $current_line = '';
 
     // タイトルを単語または全角文字ごとに処理して改行を調整
-    $words = preg_split('/(?=[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}\p{P}\p{S}]|\s+)/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
+    $words = preg_split('/(?=[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}\p{L}\p{N}]|\s+)/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
 
     foreach ($words as $word) {
       // 仮に現在の行に追加した場合のテキストサイズを測定
@@ -107,6 +107,11 @@ function generate_dynamic_featured_image($post_id) {
 
       // 行の幅が最大幅を超えた場合の処理
       if ($text_width > $max_width && !empty(trim($current_line))) {
+        // 直前の文字が記号の場合はその記号を次の行に移動
+        if (preg_match('/[\p{P}\p{S}]$/u', $current_line)) {
+          $current_line = preg_replace('/[\p{P}\p{S}]$/u', '', $current_line);
+          $word = mb_substr($current_line, -1) . $word;
+        }
         $lines[] = trim($current_line);
         $current_line = $word;
       } else {
