@@ -36,9 +36,9 @@ function generate_dynamic_featured_image($post_id) {
   $avatar_url = get_the_author_upladed_avatar_url($author_id);
 
   // 画像のサイズを設定
-  // $width = 1280;
+  $width = 1280;
   // $height = 720;
-  $width = get_thumbnail_width(1280);
+  // Cocoon設定のサムネイル画像サイズに適した高さ
   $height = get_thumbnail_height($width);
 
   // タイトルが「自動下書き」の場合は画像を生成しない
