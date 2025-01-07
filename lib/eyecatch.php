@@ -28,11 +28,11 @@ function generate_dynamic_featured_image($post_id) {
     return;
   }
 
-  // 投稿タイトルと著者名を取得
+  // 投稿タイトルと投稿者名を取得
   $post_title = get_the_title($post_id);
   $author_id = get_post_field('post_author', $post_id);
   $author_name = get_the_author_meta('display_name', $author_id);
-  // 著者のアバター画像を取得
+  // 投稿者のアバター画像を取得
   $avatar_url = get_the_author_upladed_avatar_url($author_id);
 
   // 画像のサイズを設定
@@ -197,7 +197,29 @@ function generate_dynamic_featured_image($post_id) {
       imagecopyresampled($image, $avatar_image, $avatar_x, $avatar_y, 0, 0, $avatar_size, $avatar_size, imagesx($avatar_image), imagesy($avatar_image));
       imagedestroy($avatar_image);
 
-      // 著者名をアバター画像の上下中央に配置し、さらに余白を追加（4px上に移動）
+      // 投稿者名を描画エリアに収まるように省略する
+      $max_author_name_width = $width - $avatar_x - $avatar_size - 30 - $margin; // アバター画像の幅と余白を考慮
+      $author_name_box = imagettfbbox($font_size - 6, 0, $font_path, $author_name);
+      $author_name_width = $author_name_box[2] - $author_name_box[0];
+
+      // 投稿者名が最大幅を超える場合の処理
+      if ($author_name_width > $max_author_name_width) {
+        $ellipsis = '...';
+        $ellipsis_width = imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[0];
+        $max_author_name_width -= $ellipsis_width;
+
+        // 投稿者名を省略して最大幅に収める
+        for ($i = mb_strlen($author_name); $i > 0; $i--) {
+          $truncated_author_name = mb_substr($author_name, 0, $i);
+          $truncated_author_name_width = imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[2] - imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[0];
+          if ($truncated_author_name_width <= $max_author_name_width) {
+            $author_name = $truncated_author_name . $ellipsis;
+            break;
+          }
+        }
+      }
+
+      // 投稿者名をアバター画像の上下中央に配置し、さらに余白を追加（4px上に移動）
       $author_text_y = $avatar_y + ($avatar_size / 2) + ($font_size / 3) + 6; // 6pxの余白を追加
       imagettftext($image, $font_size - 6, 0, $avatar_x + $avatar_size + 30, $author_text_y, $text_color, $font_path, $author_name); // 余白を増やして30pxに設定
     }
