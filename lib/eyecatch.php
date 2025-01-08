@@ -74,9 +74,21 @@ function generate_dynamic_featured_image($post_id) {
   $image = imagecreatetruecolor($width, $height);
 
   // カラーの設定
-  $background_color = imagecolorallocate($image, 255, 255, 255); // 背景色（白）
-  $text_color = imagecolorallocate($image, 51, 51, 51); // テキスト色（ダークグレー）
-  $border_color = imagecolorallocate($image, 162, 215, 221); // 縁の色 (#a2d7dd)
+
+  // 背景色（白）
+  $background_color_code = apply_filters('featured_image_background_color_code', '#ffffff');
+  list($r, $g, $b) = sscanf($background_color_code, "#%02x%02x%02x");
+  $background_color = imagecolorallocate($image, $r, $g, $b);
+
+  // テキスト色（ダークグレー）
+  $text_color_code = apply_filters('featured_image_text_color_code', '#333333');
+  list($r, $g, $b) = sscanf($text_color_code, "#%02x%02x%02x");
+  $text_color = imagecolorallocate($image, $r, $g, $b);
+
+  // ボーダー色(#a2d7dd)
+  $border_color_code = apply_filters('featured_image_border_color_code', '#a2d7dd');
+  list($r, $g, $b) = sscanf($border_color_code, "#%02x%02x%02x");
+  $border_color = imagecolorallocate($image, $r, $g, $b);
 
   // 背景を塗りつぶす - 20pxのボーダー部分を描画し、その内側を背景色で塗りつぶす
   imagefilledrectangle($image, 0, 0, $width, $height, $border_color);
