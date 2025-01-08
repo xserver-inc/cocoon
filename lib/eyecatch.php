@@ -65,7 +65,7 @@ function generate_dynamic_featured_image($post_id) {
   }
 
   // 「タイトルからアイキャッチ生成をする」が有効でない場合は処理を終了
-  $is_checked = isset($_POST['generate_featured_from_title']) && (intval($_POST['generate_featured_from_title']) == 1);
+  $is_checked = isset($_POST['generate_featured_image_from_title']) && (intval($_POST['generate_featured_image_from_title']) == 1);
   if (!$is_checked) {
     return;
   }
@@ -74,7 +74,6 @@ function generate_dynamic_featured_image($post_id) {
   $image = imagecreatetruecolor($width, $height);
 
   // カラーの設定
-
   // 背景色（白）
   $background_color_code = apply_filters('featured_image_background_color_code', '#ffffff');
   list($r, $g, $b) = sscanf($background_color_code, "#%02x%02x%02x");
@@ -266,12 +265,12 @@ function generate_dynamic_featured_image($post_id) {
 endif;
 
 // タイトルからアイキャッチを生成HTMLの作成
-if ( !function_exists( 'generate_featured_from_title_custom_checkbox' ) ):
-function generate_featured_from_title_custom_checkbox() {
+if ( !function_exists( 'generate_featured_image_from_title_custom_checkbox' ) ):
+function generate_featured_image_from_title_custom_checkbox() {
   ?>
   <div id="custom-checkbox-wrapper" style="margin-top: 10px; padding: 5px 0;">
     <label>
-      <input type="checkbox" id="generate_featured_from_title" name="generate_featured_from_title" value="1">
+      <input type="checkbox" id="generate_featured_image_from_title" name="generate_featured_image_from_title" value="1">
       <?php echo esc_js(__('タイトルからアイキャッチを生成する', THEME_NAME)); ?>
     </label>
   </div>
@@ -289,13 +288,12 @@ function add_custom_checkbox_below_featured_image_meta_box() {
     return;
   }
   global $post;
-  // $is_checked = get_post_meta($post->ID, '_generate_featured_from_title', true) ? 'checked' : '';
   ?>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // チェックボックスのHTMLを作成
       var checkboxHtml = `
-        <?php generate_featured_from_title_custom_checkbox(); ?>
+        <?php generate_featured_image_from_title_custom_checkbox(); ?>
       `;
 
       // チェックボックスを挿入または削除する関数
@@ -389,7 +387,7 @@ function add_custom_checkbox_below_featured_image() {
     document.addEventListener('DOMContentLoaded', function () {
       /* チェックボックスのHTMLを作成 */
       var checkboxHtml = `
-        <?php generate_featured_from_title_custom_checkbox(); ?>
+        <?php generate_featured_image_from_title_custom_checkbox(); ?>
       `;
 
       /* チェックボックスを挿入または削除する関数 */
@@ -410,8 +408,8 @@ function add_custom_checkbox_below_featured_image() {
           featuredImagePanel.insertAdjacentHTML('beforeend', checkboxHtml);
 
           /* チェックボックスの状態に応じてvalueを変更 */
-          var checkbox = document.querySelector('#generate_featured_from_title');
-          var hiddenInput = document.querySelector('#generate_featured_from_title_hide');
+          var checkbox = document.querySelector('#generate_featured_image_from_title');
+          var hiddenInput = document.querySelector('#generate_featured_image_from_title_hide');
           if (checkbox && hiddenInput) {
           checkbox.addEventListener('change', function () {
             hiddenInput.value = checkbox.checked ? '1' : '0';
@@ -441,7 +439,7 @@ function add_custom_checkbox_below_featured_image() {
       manageCustomCheckbox();
 
       /* 初期表示時にチェックボックスの状態に応じて表示を切り替え */
-      var initialCheckbox = document.querySelector('#generate_featured_from_title');
+      var initialCheckbox = document.querySelector('#generate_featured_image_from_title');
       if (initialCheckbox) {
       toggleFeaturedImageContainer(initialCheckbox.checked);
       }
@@ -458,9 +456,9 @@ function add_custom_checkbox_below_featured_image() {
 endif;
 
 /* チェックボックスのnonceフィールドを追加 */
-add_action('edit_form_after_title', 'add_custom_checkbox_nonce');
-if ( !function_exists( 'add_custom_checkbox_nonce' ) ):
-function add_custom_checkbox_nonce() {
+add_action('edit_form_after_title', 'add_featured_image_checkbox_nonce');
+if ( !function_exists( 'add_featured_image_checkbox_nonce' ) ):
+function add_featured_image_checkbox_nonce() {
   // GDライブラリがインストールされていない場合は処理を終了
   if (!extension_loaded('gd')) {
     return;
@@ -470,8 +468,8 @@ function add_custom_checkbox_nonce() {
     return;
   }
   // nonceフィールドを追加してセキュリティを確保
-  wp_nonce_field('save_generate_featured', 'generate_featured_nonce');
+  wp_nonce_field('save_generate_featured', 'generate_featured_image_nonce');
   // チェックボックスの状態を保持するための隠しフィールドを追加
-  echo '<input type="hidden" id="generate_featured_from_title_hide" name="generate_featured_from_title" value="0">';
+  echo '<input type="hidden" id="generate_featured_image_from_title_hide" name="generate_featured_image_from_title" value="0">';
 }
 endif;
