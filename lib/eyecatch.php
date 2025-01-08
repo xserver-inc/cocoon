@@ -284,6 +284,10 @@ add_action('admin_footer-post.php', 'add_custom_checkbox_below_featured_image_me
 add_action('admin_footer-post-new.php', 'add_custom_checkbox_below_featured_image_meta_box');
 if ( !function_exists( 'add_custom_checkbox_below_featured_image_meta_box' ) ):
 function add_custom_checkbox_below_featured_image_meta_box() {
+  // GDライブラリがインストールされていない場合は処理を終了
+  if (!extension_loaded('gd')) {
+    return;
+  }
   global $post;
   // $is_checked = get_post_meta($post->ID, '_generate_featured_from_title', true) ? 'checked' : '';
   ?>
@@ -367,33 +371,16 @@ function add_custom_checkbox_below_featured_image_meta_box() {
 }
 endif;
 
-// add_action('save_post', 'save_checkbox_below_featured_image_meta_box');
-// // チェックボックスの値を保存
-// function save_checkbox_below_featured_image_meta_box($post_id) {
-//     // 自動保存の場合はスキップ
-//     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-//         return;
-//     }
-
-//     // 投稿の編集権限を確認
-//     if (!current_user_can('edit_post', $post_id)) {
-//         return;
-//     }
-
-//     // チェックボックスの値を保存または削除
-//     if (isset($_POST['generate_featured_from_title'])) {
-//         // update_post_meta($post_id, '_generate_featured_from_title', '1');
-//     } else {
-//         delete_post_meta($post_id, '_generate_featured_from_title');
-//     }
-// }
-
-
 /* 「アイキャッチ画像」メタボックスにチェックボックスを追加 */
 add_action('admin_footer-post.php', 'add_custom_checkbox_below_featured_image');
 add_action('admin_footer-post-new.php', 'add_custom_checkbox_below_featured_image');
 if ( !function_exists( 'add_custom_checkbox_below_featured_image' ) ):
 function add_custom_checkbox_below_featured_image() {
+  // GDライブラリがインストールされていない場合は処理を終了
+  if (!extension_loaded('gd')) {
+    return;
+  }
+
   if (!use_gutenberg_editor()) {
     return;
   }
@@ -474,6 +461,10 @@ endif;
 add_action('edit_form_after_title', 'add_custom_checkbox_nonce');
 if ( !function_exists( 'add_custom_checkbox_nonce' ) ):
 function add_custom_checkbox_nonce() {
+  // GDライブラリがインストールされていない場合は処理を終了
+  if (!extension_loaded('gd')) {
+    return;
+  }
   // Gutenbergエディターを使用していない場合は処理を終了
   if (!use_gutenberg_editor()) {
     return;
