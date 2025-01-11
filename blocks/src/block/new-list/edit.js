@@ -68,7 +68,7 @@ export default function edit( props ) {
 
   // wp.coreから全カテゴリー情報の取得
   const categoryData = useSelect( ( select ) => {
-    return select( 'core' ).getEntityRecords( 'taxonomy', 'category' );
+    return select( 'core' ).getEntityRecords( 'taxonomy', 'category', { per_page: -1 } );
   } );
 
   // 可変コントロールの定義
@@ -83,7 +83,7 @@ export default function edit( props ) {
         title={ __( '表示カテゴリー選択', THEME_NAME ) }
         initialOpen={ true }
       >
-        <p className="howto">{ __( 'テキストを入力して絞り込んでください。', THEME_NAME ) + __( '※最大10件表示', THEME_NAME ) }</p>
+        <p className="howto">{ __( 'テキストを入力して絞り込んでください。', THEME_NAME ) }</p>
         <SearchControl
           value={ catSearchInput }
           onChange={ setCatSearchInput }

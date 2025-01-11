@@ -12,3 +12,8 @@
 textarea[name="the_page_memo"]{
   width: 100%;
 }
+
+.block-editor-page .category-checkbox-list{
+  max-height: 300px;
+  overflow: auto;
+}
