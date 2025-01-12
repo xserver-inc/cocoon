@@ -268,7 +268,7 @@ endif;
 if ( !function_exists( 'generate_featured_image_from_title_custom_checkbox' ) ):
 function generate_featured_image_from_title_custom_checkbox() {
   ?>
-  <div id="custom-checkbox-wrapper" style="margin-top: 10px; padding: 5px 0;">
+  <div id="featured-image-from-title" class="featured-image-from-title">
     <label>
       <input type="checkbox" id="generate_featured_image_from_title" name="generate_featured_image_from_title" value="1">
       <?php echo esc_js(__('タイトルからアイキャッチを生成する', THEME_NAME)); ?>
@@ -300,7 +300,7 @@ function add_custom_checkbox_below_featured_image_meta_box() {
       function manageCustomCheckbox() {
         var postThumbnailDiv = document.querySelector('#postimagediv .inside');
         var thumbnailImage = document.querySelector('#postimagediv .inside img'); // アイキャッチ画像の存在をチェック
-        var checkboxWrapper = document.querySelector('#custom-checkbox-wrapper');
+        var checkboxWrapper = document.querySelector('#featured-image-from-title');
         var checkboxInput = checkboxWrapper ? checkboxWrapper.querySelector('input[type="checkbox"]') : null;
         var setThumbnailLink = document.querySelector('#set-post-thumbnail');
 
@@ -334,7 +334,7 @@ function add_custom_checkbox_below_featured_image_meta_box() {
 
       // チェックボックスのイベントリスナーを設定
       function attachCheckboxListener() {
-        var checkboxInput = document.querySelector('#custom-checkbox-wrapper input[type="checkbox"]');
+        var checkboxInput = document.querySelector('#featured-image-from-title input[type="checkbox"]');
         var setThumbnailLink = document.querySelector('#set-post-thumbnail');
 
         if (checkboxInput && setThumbnailLink) {
@@ -394,7 +394,7 @@ function add_custom_checkbox_below_featured_image() {
       function manageCustomCheckbox() {
       var featuredImagePanel = document.querySelector('.editor-post-featured-image'); /* ブロックエディターのアイキャッチエリア */
       var actionsPanel = document.querySelector('.editor-post-featured-image__actions');
-      var customCheckbox = document.querySelector('#custom-checkbox-wrapper');
+      var customCheckbox = document.querySelector('#featured-image-from-title');
 
       if (featuredImagePanel) {
         if (actionsPanel) {
@@ -444,7 +444,7 @@ function add_custom_checkbox_below_featured_image() {
       toggleFeaturedImageContainer(initialCheckbox.checked);
       }
 
-      /* 常に#custom-checkbox-wrapperの存在を監視してチェックボックスを管理 */
+      /* 常に#featured-image-from-titleの存在を監視してチェックボックスを管理 */
       setInterval(function () {
       manageCustomCheckbox();
       }, 500); /* 500msごとにチェック */
