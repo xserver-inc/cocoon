@@ -120,3 +120,8 @@ textarea[name=the_page_memo] {
   padding: 5px 0;
   font-size: 12px;
 }
+
+.block-editor-page .category-checkbox-list {
+  max-height: 300px;
+  overflow: auto;
+}

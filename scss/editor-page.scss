@@ -19,3 +19,9 @@ textarea[name="the_page_memo"]{
   padding: 5px 0;
   font-size: 12px;
 }
+
+//新着記事・人気記事・新着情報のカテゴリーチェックボックスリストに高さの上限を定める
+.block-editor-page .category-checkbox-list{
+  max-height: 300px;
+  overflow: auto;
+}

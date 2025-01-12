@@ -902,6 +902,7 @@ export function CreateCategoryList( catData, input, data, updateAttr ) {
   if ( catData == null ) return null;
 
   let control = [];
+
   let dataArray = data.split( ',' );
   catData.forEach( ( record ) => {
     let isChecked = false;
@@ -928,7 +929,11 @@ export function CreateCategoryList( catData, input, data, updateAttr ) {
     );
   } );
 
-  return control;
+  return (
+    <div className="category-checkbox-list">
+      {control}
+    </div>
+  );
 }
 
 export function hexToRgba(hex, alpha = 1) {
