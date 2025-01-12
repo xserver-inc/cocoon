@@ -287,6 +287,11 @@ function add_custom_checkbox_below_featured_image_meta_box() {
   if (!extension_loaded('gd')) {
     return;
   }
+
+  // タイトルアイキャッチが有効でない時
+  if (!is_featured_image_from_title_enable()) {
+    return;
+  }
   global $post;
   ?>
   <script>
@@ -379,7 +384,13 @@ function add_custom_checkbox_below_featured_image() {
     return;
   }
 
+  // Gutenbergエディターを使用していない場合は処理を終了
   if (!use_gutenberg_editor()) {
+    return;
+  }
+
+  // タイトルアイキャッチが有効でない時
+  if (!is_featured_image_from_title_enable()) {
     return;
   }
   ?>
@@ -463,10 +474,17 @@ function add_featured_image_checkbox_nonce() {
   if (!extension_loaded('gd')) {
     return;
   }
+
   // Gutenbergエディターを使用していない場合は処理を終了
   if (!use_gutenberg_editor()) {
     return;
   }
+
+  // タイトルアイキャッチが有効でない時
+  if (!is_featured_image_from_title_enable()) {
+    return;
+  }
+
   // nonceフィールドを追加してセキュリティを確保
   wp_nonce_field('save_generate_featured', 'generate_featured_image_nonce');
   // チェックボックスの状態を保持するための隠しフィールドを追加
