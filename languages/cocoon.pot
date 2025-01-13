@@ -10800,7 +10800,7 @@ msgstr ""
 #: blocks/src/block/navicard/edit.js:110
 #: blocks/src/block/new-list/edit.js:143
 #: blocks/src/block/popular-list/edit.js:222
-msgid "（縦型表示のみ）"
+msgid "（縦並び表示のみ）"
 msgstr ""
 
 #: lib/settings.php:558

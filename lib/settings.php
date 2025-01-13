@@ -553,7 +553,7 @@ function get_widget_entry_type_options(){
       __( 'デフォルト', THEME_NAME ),
     ET_BORDER_PARTITION =>
       get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/border_partition.png', __( 'カードの上下に破線の区切り線が表示されます。', THEME_NAME ), 360).
-      __( 'カードの上下に区切り線を入れる', THEME_NAME ).__( '（縦型表示のみ）', THEME_NAME ),
+      __( 'カードの上下に区切り線を入れる', THEME_NAME ).__( '（縦並び表示のみ）', THEME_NAME ),
     ET_BORDER_SQUARE =>
       get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/border_square.png', __( 'カード自体を罫線で囲みます。', THEME_NAME ), 360).
       __( 'カードに枠線を表示する', THEME_NAME ),
