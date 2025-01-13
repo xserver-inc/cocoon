@@ -16,6 +16,12 @@ function generate_dynamic_featured_image($post_id) {
     return;
   }
 
+  // 投稿が下書き、レビュー待ち、または公開以外のステータスの場合は処理を終了
+  $post_status = get_post_status($post_id);
+  if (!in_array($post_status, ['publish'])) {
+    return;
+  }
+
   // 投稿タイプが post, page, カスタム投稿 以外の場合は処理を終了
   $post_type = get_post_type($post_id);
   $custom_post_types = get_post_types(['_builtin' => false]); // すべてのカスタム投稿タイプを取得
@@ -30,6 +36,9 @@ function generate_dynamic_featured_image($post_id) {
 
   // 投稿タイトルと投稿者名を取得
   $post_title = get_the_title($post_id);
+  if (!$post_title) {
+    return;
+  }
   $author_id = get_post_field('post_author', $post_id);
   $author_name = get_the_author_meta('display_name', $author_id);
   // 投稿者のアバター画像を取得
