@@ -104,6 +104,10 @@ function generate_dynamic_featured_image($post_id) {
 
   // 日本語フォントファイルのパスを定義
   $font_path = get_template_directory() . '/webfonts/googlefonts/NotoSansJP-Regular.ttf';
+  if (!file_exists($font_path)) {
+    error_log("Font file not found: " . $font_path);
+  }
+
 
   // フォントサイズを設定
   $font_size = 48;
@@ -122,6 +126,7 @@ function generate_dynamic_featured_image($post_id) {
     foreach ($words as $word) {
       // 仮に現在の行に追加した場合のテキストサイズを測定
       $box = imagettfbbox($font_size, 0, $font_path, $current_line . $word);
+      error_log(print_r($box, true));
       $text_width = $box[2] - $box[0];
 
       // 行の幅が最大幅を超えた場合の処理
