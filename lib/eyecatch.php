@@ -108,7 +108,6 @@ function generate_dynamic_featured_image($post_id) {
     error_log("Font file not found: " . $font_path);
   }
 
-
   // フォントサイズを設定
   $font_size = 48;
 
@@ -212,6 +211,9 @@ function generate_dynamic_featured_image($post_id) {
       $avatar_url = get_avatar_url($author_id, ['size' => 64]); // WordPressデフォルトのアバター画像を取得
     }
     $avatar_path = url_to_local($avatar_url);
+    if (!file_exists($avatar_path)) {
+      $avatar_path = get_template_directory() . '/images/anony.png'; // 自前のサーバーにない場合、'anony.png'を使用
+    }
     $avatar_image = @imagecreatefromstring(file_get_contents($avatar_path));
 
     if ($avatar_image !== false) {
