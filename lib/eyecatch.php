@@ -31,6 +31,7 @@ function generate_dynamic_featured_image($post_id) {
 
   // GDライブラリがインストールされていない場合は処理を終了
   if (!extension_loaded('gd')) {
+    error_log('GD library does not exist.');
     return;
   }
 
