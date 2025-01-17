@@ -640,6 +640,9 @@ function get_navi_card_list_tag($atts){
     $object_id = $menu->object_id;
     $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
+    // target 属性を取得
+    $target = isset($menu->target) && $menu->target === '_blank' ? '_blank' : '';
+
     //アイテムタグの取得
     $atts = array(
       'prefix' => WIDGET_NAVI_ENTRY_CARD_PREFIX,
@@ -653,6 +656,7 @@ function get_navi_card_list_tag($atts){
       'object' => $object,
       'object_id' => $object_id,
       'horizontal' => $horizontal,
+      'target' => $target,
     );
     $tag .= get_widget_entry_card_link_tag($atts);
 
