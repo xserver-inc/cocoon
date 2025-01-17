@@ -120,9 +120,11 @@ function generate_dynamic_featured_image($post_id) {
   if (file_exists($font_path)) {
     $lines = [];
     $current_line = '';
-    // タイトルを単語または全角文字ごとに処理して改行を調整
-    $words = preg_split('/(?<=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)|(?=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
-    // _v($words);
+    // 連続する空白を1つの空白に置き換える
+    $post_title = preg_replace('/\s{2,}/u', ' ', $post_title);
+    // タイトルを単語または全角文字（ひらがな、カタカナ、漢字）ごとに分割し、改行を調整するための配列に変換
+    $words = preg_split('/(?<=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)|(?=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)|(?<=\s)|(?=\s)|(?<=-)|(?=-)|(?<=\p{P}(?<!-))|(?=\p{P}(?<!-))/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
+    _v($words);
 
     foreach ($words as $word) {
       // 仮に現在の行に追加した場合のテキストサイズを測定
