@@ -126,45 +126,44 @@ function generate_dynamic_featured_image($post_id) {
     foreach ($words as $word) {
       // 仮に現在の行に追加した場合のテキストサイズを測定
       $box = imagettfbbox($font_size, 0, $font_path, $current_line . $word);
-      error_log(print_r($box, true));
       $text_width = $box[2] - $box[0];
 
       // 行の幅が最大幅を超えた場合の処理
       if ($text_width > $max_width && !empty(trim($current_line))) {
-      // はじめ括弧が行の最後に来る場合の処理
-      if (preg_match('/^[\p{Ps}]/u', $word)) {
-        $lines[] = trim($current_line);
-        $current_line = $word;
-      }
-      // 記号が行の先頭に来る場合の処理
-      else if (preg_match('/^[\p{P}\p{S}]/u', $word)) {
-        $lines[] = trim($current_line) . mb_substr($word, 0, 1); // 前の行の最後に記号一文字を追加
-        $current_line = mb_substr($word, 1); // 残りの部分を次の行に設定
-      } else {
-        // 英単語が長すぎる場合の処理
-        $box = imagettfbbox($font_size, 0, $font_path, str_repeat('A', 1)); // 1文字の幅を取得
-        $char_width = $box[2] - $box[0];
-        $max_chars_per_line = floor($max_width / $char_width); // 描画エリアに描画可能な半角英数字の数を計算
-
-        if (strlen($word) > $max_chars_per_line) { // 描画エリアに収まらない場合は途中で改行
-        $split_word = str_split($word, $max_chars_per_line);
-        foreach ($split_word as $part) {
-          $box = imagettfbbox($font_size, 0, $font_path, $current_line . $part);
-          $text_width = $box[2] - $box[0];
-          if ($text_width > $max_width && !empty(trim($current_line))) {
+        // はじめ括弧が行の最後に来る場合の処理
+        if (preg_match('/^[\p{Ps}]/u', $word)) {
           $lines[] = trim($current_line);
-          $current_line = $part;
+          $current_line = $word;
+        }
+        // 記号が行の先頭に来る場合の処理
+        else if (preg_match('/^[\p{P}\p{S}]/u', $word)) {
+          $lines[] = trim($current_line) . mb_substr($word, 0, 1); // 前の行の最後に記号一文字を追加
+          $current_line = mb_substr($word, 1); // 残りの部分を次の行に設定
+        } else {
+          // 英単語が長すぎる場合の処理
+          $box = imagettfbbox($font_size, 0, $font_path, str_repeat('A', 1)); // 1文字の幅を取得
+          $char_width = $box[2] - $box[0];
+          $max_chars_per_line = floor($max_width / $char_width); // 描画エリアに描画可能な半角英数字の数を計算
+
+          if (strlen($word) > $max_chars_per_line) { // 描画エリアに収まらない場合は途中で改行
+            $split_word = str_split($word, $max_chars_per_line);
+            foreach ($split_word as $part) {
+              $box = imagettfbbox($font_size, 0, $font_path, $current_line . $part);
+              $text_width = $box[2] - $box[0];
+              if ($text_width > $max_width && !empty(trim($current_line))) {
+              $lines[] = trim($current_line);
+              $current_line = $part;
+              } else {
+              $current_line .= $part;
+              }
+            }
           } else {
-          $current_line .= $part;
+            $lines[] = trim($current_line);
+            $current_line = $word;
           }
         }
-        } else {
-        $lines[] = trim($current_line);
-        $current_line = $word;
-        }
-      }
       } else {
-      $current_line .= $word;
+        $current_line .= $word;
       }
     }
 
