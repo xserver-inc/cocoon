@@ -59,7 +59,7 @@ function generate_dynamic_featured_image($post_id) {
   // アイキャッチ画像のパスを定義
   $upload_path = get_theme_featured_images_path();
   $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
-  $new_image_path = trailingslashit($upload_path) . 'featured_image_' . $post_id . '_' . $width . 'x' . $height . $post_title_hash . '.png';
+  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
 
   // すでにアイキャッチ画像が設定されている場合は処理を終了
   $current_thumbnail_id = get_post_thumbnail_id($post_id);
