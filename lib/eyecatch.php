@@ -121,7 +121,8 @@ function generate_dynamic_featured_image($post_id) {
     $lines = [];
     $current_line = '';
     // タイトルを単語または全角文字ごとに処理して改行を調整
-    $words = preg_split('/(?=[\p{Hiragana}|\p{Katakana}|\p{Han}|\p{P}|\p{S}]|\s+)/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
+    $words = preg_split('/(?<=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)|(?=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
+    // _v($words);
 
     foreach ($words as $word) {
       // 仮に現在の行に追加した場合のテキストサイズを測定
