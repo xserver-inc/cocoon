@@ -145,6 +145,11 @@ function generate_dynamic_featured_image($post_id) {
           $lines[] = trim($current_line);
           $current_line = $word;
         }
+        // 閉じ括弧が行の先頭に来る場合の処理
+        else if (preg_match('/^[\p{Pe}]/u', $word)) {
+          $lines[] = trim($current_line) . mb_substr($word, 0, 1); // 前の行の最後に閉じ括弧一文字を追加
+          $current_line = mb_substr($word, 1); // 残りの部分を次の行に設定
+        }
         // ダブルクオート・シングルクォートの開きクォートが行の最後に来る場合の処理
         else if (preg_match('/^[‘“‚„‹«]/u', $word)) {
           $lines[] = trim($current_line);
