@@ -120,6 +120,8 @@ function generate_dynamic_featured_image($post_id) {
 
   // フォントサイズを設定
   $font_size = 48;
+  // 省略記号を設定
+  $ellipsis = '...';
 
   // 余白と最大幅を計算
   $margin = $width * 0.1;
@@ -224,9 +226,12 @@ function generate_dynamic_featured_image($post_id) {
         $max_row = 5;
         break;
     }
+    // 行数が最大行数を超える場合の処理
     if (count($lines) > $max_row) {
+      // 最大行数までの行を取得
       $lines = array_slice($lines, 0, $max_row);
-      $lines[$max_row - 1] = mb_substr($lines[$max_row - 1], 0, mb_strlen($lines[$max_row - 1]) - 3) . '...';
+      // 最後の行に省略記号を追加
+      $lines[$max_row - 1] = mb_substr($lines[$max_row - 1], 0, mb_strlen($lines[$max_row - 1]) - 3) . $ellipsis;
     }
 
     // 各行を描画
@@ -277,7 +282,6 @@ function generate_dynamic_featured_image($post_id) {
 
       // 投稿者名が最大幅を超える場合の処理
       if ($author_name_width > $max_author_name_width) {
-        $ellipsis = '...'; // 省略記号を設定
         $ellipsis_width = imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[0]; // 省略記号の幅を計算
         // 減算して省略記号の幅を最大著者名幅から引く
         $max_author_name_width -= $ellipsis_width;
