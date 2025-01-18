@@ -37,6 +37,10 @@ function generate_dynamic_featured_image($post_id) {
 
   // 投稿タイトルと投稿者名を取得
   $post_title = get_the_title($post_id);
+  // 連続する空白を1つの空白に置き換える
+  $post_title = preg_replace('/\s{2,}/u', ' ', $post_title);
+  // 投稿タイトルが自動的にHTMLエンティティや特殊文字に変換されることへの対応
+  $post_title = str_replace(['&#8220;', '&#8221;', '&#8216;', '&#8217;', '&lt;', '&gt;', '&amp;'], ['"', '"', "'", "'", '<', '>', '&'], $post_title);
   if (!$post_title) {
     return;
   }
@@ -61,8 +65,8 @@ function generate_dynamic_featured_image($post_id) {
   $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
   $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
   // デバッグ用のファイル名
-  $current_time = current_time('YmdHis');
-  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
+  // $current_time = current_time('YmdHis');
+  // $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
 
   // すでにアイキャッチ画像が設定されている場合は処理を終了
   $current_thumbnail_id = get_post_thumbnail_id($post_id);
@@ -123,8 +127,6 @@ function generate_dynamic_featured_image($post_id) {
   if (file_exists($font_path)) {
     $lines = [];
     $current_line = '';
-    // 連続する空白を1つの空白に置き換える
-    $post_title = preg_replace('/\s{2,}/u', ' ', $post_title);
     // タイトルを単語または全角文字（ひらがな、カタカナ、漢字）ごとに分割し、改行を調整するための配列に変換
     $words = preg_split('/(?<=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)|(?=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)|(?<=\s)|(?=\s)|(?<=\p{P}(?<!-))|(?=\p{P}(?<!-))|(?<=-)(?=[^\p{L}])|(?<=[^\p{L}])(?=-)/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
     // _v($words);
