@@ -115,6 +115,7 @@ function generate_dynamic_featured_image($post_id) {
   $font_path = get_template_directory() . '/webfonts/googlefonts/NotoSansJP-Regular.ttf';
   if (!file_exists($font_path)) {
     error_log("Font file not found: " . $font_path);
+    return;
   }
 
   // フォントサイズを設定
