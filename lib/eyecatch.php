@@ -60,6 +60,9 @@ function generate_dynamic_featured_image($post_id) {
   $upload_path = get_theme_featured_images_path();
   $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
   $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
+  // デバッグ用のファイル名
+  // $current_time = current_time('YmdHis');
+  // $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
 
   // すでにアイキャッチ画像が設定されている場合は処理を終了
   $current_thumbnail_id = get_post_thumbnail_id($post_id);
