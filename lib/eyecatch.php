@@ -61,8 +61,8 @@ function generate_dynamic_featured_image($post_id) {
   $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
   $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
   // デバッグ用のファイル名
-  // $current_time = current_time('YmdHis');
-  // $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
+  $current_time = current_time('YmdHis');
+  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
 
   // すでにアイキャッチ画像が設定されている場合は処理を終了
   $current_thumbnail_id = get_post_thumbnail_id($post_id);
@@ -130,11 +130,12 @@ function generate_dynamic_featured_image($post_id) {
     // _v($words);
 
     foreach ($words as $word) {
+      // _v($current_line);
       // 仮に現在の行に追加した場合のテキストサイズを測定
       $box = imagettfbbox($font_size, 0, $font_path, $current_line . $word);
       $text_width = $box[2] - $box[0];
 
-      // 行の幅が最大幅を超えた場合の処理
+     // 行の幅が最大幅を超えた場合の処理
       if ($text_width > $max_width && !empty(trim($current_line))) {
         // はじめ括弧が行の最後に来る場合の処理
         if (preg_match('/^[\p{Ps}]/u', $word)) {
@@ -157,10 +158,10 @@ function generate_dynamic_featured_image($post_id) {
               $box = imagettfbbox($font_size, 0, $font_path, $current_line . $part);
               $text_width = $box[2] - $box[0];
               if ($text_width > $max_width && !empty(trim($current_line))) {
-              $lines[] = trim($current_line);
-              $current_line = $part;
+                $lines[] = trim($current_line);
+                $current_line = $part;
               } else {
-              $current_line .= $part;
+                $current_line .= $part;
               }
             }
           } else {
@@ -170,6 +171,8 @@ function generate_dynamic_featured_image($post_id) {
         }
       } else {
         $current_line .= $word;
+        // 行の先頭に全角スペースがある場合は削除
+        $current_line = preg_replace('/^\x{3000}/u', '', $current_line);
       }
     }
 
