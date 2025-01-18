@@ -41,14 +41,10 @@ function generate_dynamic_featured_image($post_id) {
   $post_title = preg_replace('/\s{2,}/u', ' ', $post_title);
   // 投稿タイトルが自動的にHTMLエンティティや特殊文字に変換されることへの対応
   $post_title = html_entity_decode($post_title);
-  // $post_title = str_replace(
-  //   ['&#8220;', '&#8221;', '&#8216;', '&#8217;', '&lt;', '&gt;', '&amp;', '&copy;', '&reg;', '&trade;', '&#8212;', '&#8211;', '&#8230;', '&#215;', '&#247;'],
-  //   ['"', '"', "'", "'", '<', '>', '&', '©', '®', '™', '—', '–', '…', '×', '÷'],
-  //   $post_title
-  // );
   if (!$post_title) {
     return;
   }
+
   $author_id = get_post_field('post_author', $post_id);
   $author_name = get_the_author_meta('display_name', $author_id);
   // 投稿者のアバター画像を取得
@@ -150,12 +146,12 @@ function generate_dynamic_featured_image($post_id) {
           $current_line = $word;
         }
         // ダブルクオート・シングルクォートの開きクォートが行の最後に来る場合の処理
-        else if (preg_match('/^[\'"]/', $word)) {
+        else if (preg_match('/^[‘“‚„‹«]/u', $word)) {
           $lines[] = trim($current_line);
           $current_line = $word;
         }
         // ダブルクオート・シングルクォートの閉じクォートが行の先頭に来る場合の処理
-        else if (preg_match('/^[\'"]/', $word)) {
+        else if (preg_match('/^[’”‘“›»]/u', $word)) {
           $lines[] = trim($current_line) . mb_substr($word, 0, 1); // 前の行の最後に記号一文字を追加
           $current_line = mb_substr($word, 1); // 残りの部分を次の行に設定
         }
