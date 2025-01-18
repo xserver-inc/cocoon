@@ -66,8 +66,8 @@ function generate_dynamic_featured_image($post_id) {
   $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
   $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
   // デバッグ用のファイル名
-  // $current_time = current_time('YmdHis');
-  // $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
+  $current_time = current_time('YmdHis');
+  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
 
   // すでにアイキャッチ画像が設定されている場合は処理を終了
   $current_thumbnail_id = get_post_thumbnail_id($post_id);
@@ -231,7 +231,16 @@ function generate_dynamic_featured_image($post_id) {
       // 最大行数までの行を取得
       $lines = array_slice($lines, 0, $max_row);
       // 最後の行に省略記号を追加
-      $lines[$max_row - 1] = mb_substr($lines[$max_row - 1], 0, mb_strlen($lines[$max_row - 1]) - 3) . $ellipsis;
+      $last_line = $lines[$max_row - 1];
+      $last_line_width = imagettfbbox($font_size, 0, $font_path, $last_line)[2] - imagettfbbox($font_size, 0, $font_path, $last_line)[0];
+      $ellipsis_width = imagettfbbox($font_size, 0, $font_path, $ellipsis)[2] - imagettfbbox($font_size, 0, $font_path, $ellipsis)[0];
+
+      // 省略記号を追加しても最大幅を超えないように調整
+      while ($last_line_width + $ellipsis_width > $max_width && mb_strlen($last_line) > 0) {
+        $last_line = mb_substr($last_line, 0, -1);
+        $last_line_width = imagettfbbox($font_size, 0, $font_path, $last_line)[2] - imagettfbbox($font_size, 0, $font_path, $last_line)[0];
+      }
+      $lines[$max_row - 1] = $last_line . $ellipsis;
     }
 
     // 各行を描画
