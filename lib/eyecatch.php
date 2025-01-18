@@ -40,7 +40,11 @@ function generate_dynamic_featured_image($post_id) {
   // 連続する空白を1つの空白に置き換える
   $post_title = preg_replace('/\s{2,}/u', ' ', $post_title);
   // 投稿タイトルが自動的にHTMLエンティティや特殊文字に変換されることへの対応
-  $post_title = str_replace(['&#8220;', '&#8221;', '&#8216;', '&#8217;', '&lt;', '&gt;', '&amp;'], ['"', '"', "'", "'", '<', '>', '&'], $post_title);
+  $post_title = str_replace(
+    ['&#8220;', '&#8221;', '&#8216;', '&#8217;', '&lt;', '&gt;', '&amp;', '&copy;', '&reg;', '&trade;', '&#8212;', '&#8211;', '&#8230;', '&#215;', '&#247;'],
+    ['"', '"', "'", "'", '<', '>', '&', '©', '®', '™', '—', '–', '…', '×', '÷'],
+    $post_title
+  );
   if (!$post_title) {
     return;
   }
