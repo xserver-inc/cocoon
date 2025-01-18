@@ -251,19 +251,19 @@ function generate_dynamic_featured_image($post_id) {
 
       // 投稿者名が最大幅を超える場合の処理
       if ($author_name_width > $max_author_name_width) {
-      $ellipsis = '...';
-      $ellipsis_width = imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[0];
-      $max_author_name_width -= $ellipsis_width;
+        $ellipsis = '...';
+        $ellipsis_width = imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[0];
+        $max_author_name_width -= $ellipsis_width;
 
-      // 投稿者名を省略して最大幅に収める
-      for ($i = mb_strlen($author_name); $i > 0; $i--) {
-        $truncated_author_name = mb_substr($author_name, 0, $i);
-        $truncated_author_name_width = imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[2] - imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[0];
-        if ($truncated_author_name_width <= $max_author_name_width) {
-        $author_name = $truncated_author_name . $ellipsis;
-        break;
+        // 投稿者名を省略して最大幅に収める
+        for ($i = mb_strlen($author_name); $i > 0; $i--) {
+          $truncated_author_name = mb_substr($author_name, 0, $i);
+          $truncated_author_name_width = imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[2] - imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[0];
+          if ($truncated_author_name_width <= $max_author_name_width) {
+          $author_name = $truncated_author_name . $ellipsis;
+          break;
+          }
         }
-      }
       }
 
       // 投稿者名をアバター画像の上下中央に配置し、さらに余白を追加（4px上に移動）
