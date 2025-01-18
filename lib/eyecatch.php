@@ -154,6 +154,11 @@ function generate_dynamic_featured_image($post_id) {
           $lines[] = trim($current_line);
           $current_line = $word;
         }
+        // ダブルクオート・シングルクォートの閉じクォートが行の先頭に来る場合の処理
+        else if (preg_match('/^[\'"]/', $word)) {
+          $lines[] = trim($current_line) . mb_substr($word, 0, 1); // 前の行の最後に記号一文字を追加
+          $current_line = mb_substr($word, 1); // 残りの部分を次の行に設定
+        }
         // 記号が行の先頭に来る場合の処理
         else if (preg_match('/^[\p{P}\p{S}]/u', $word)) {
           $lines[] = trim($current_line) . mb_substr($word, 0, 1); // 前の行の最後に記号一文字を追加
@@ -164,22 +169,23 @@ function generate_dynamic_featured_image($post_id) {
           $char_width = $box[2] - $box[0];
           $max_chars_per_line = floor($max_width / $char_width); // 描画エリアに描画可能な半角英数字の数を計算
 
-          if (strlen($word) > $max_chars_per_line) { // 描画エリアに収まらない場合は途中で改行
-            $split_word = str_split($word, $max_chars_per_line);
-            foreach ($split_word as $part) {
-              $box = imagettfbbox($font_size, 0, $font_path, $current_line . $part);
-              $text_width = $box[2] - $box[0];
-              if ($text_width > $max_width && !empty(trim($current_line))) {
-                $lines[] = trim($current_line);
-                $current_line = $part;
-              } else {
-                $current_line .= $part;
+            if (strlen($word) > $max_chars_per_line) { // 描画エリアに収まらない場合は途中で改行
+              $split_word = str_split($word, $max_chars_per_line); // 単語を最大文字数ごとに分割
+              foreach ($split_word as $part) {
+                $box = imagettfbbox($font_size, 0, $font_path, $current_line . $part); // テキストのバウンディングボックスを取得
+                $text_width = $box[2] - $box[0]; // テキストの幅を計算
+                // テキストの幅が最大幅を超え、現在の行が空でないかを確認
+                if ($text_width > $max_width && !empty(trim($current_line))) {
+                  $lines[] = trim($current_line); // 現在の行を追加
+                  $current_line = $part; // 新しい行を開始
+                } else {
+                  $current_line .= $part; // 現在の行に追加
+                }
               }
+            } else {
+              $lines[] = trim($current_line); // 現在の行を追加
+              $current_line = $word; // 新しい行を開始
             }
-          } else {
-            $lines[] = trim($current_line);
-            $current_line = $word;
-          }
         }
       } else {
         $current_line .= $word;
@@ -269,17 +275,22 @@ function generate_dynamic_featured_image($post_id) {
 
       // 投稿者名が最大幅を超える場合の処理
       if ($author_name_width > $max_author_name_width) {
-        $ellipsis = '...';
-        $ellipsis_width = imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[0];
+        $ellipsis = '...'; // 省略記号を設定
+        $ellipsis_width = imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[0]; // 省略記号の幅を計算
+        // 減算して省略記号の幅を最大著者名幅から引く
         $max_author_name_width -= $ellipsis_width;
 
         // 投稿者名を省略して最大幅に収める
         for ($i = mb_strlen($author_name); $i > 0; $i--) {
+          // 著者名を指定した長さに切り詰める
           $truncated_author_name = mb_substr($author_name, 0, $i);
+          // 切り詰めた著者名の幅を計算する
           $truncated_author_name_width = imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[2] - imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[0];
+          // 切り詰めた著者名の幅が最大幅以下か確認する
           if ($truncated_author_name_width <= $max_author_name_width) {
-          $author_name = $truncated_author_name . $ellipsis;
-          break;
+            // 著者名を省略記号付きで更新する
+            $author_name = $truncated_author_name . $ellipsis;
+            break;
           }
         }
       }
