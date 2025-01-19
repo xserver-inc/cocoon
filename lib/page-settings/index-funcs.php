@@ -276,19 +276,29 @@ function get_archive_exclude_category_ids(){
 }
 endif;
 
-//フォントページタイプ用のカテゴリーID取得
+//フロントページタイプ用のカテゴリーID取得
 if ( !function_exists( 'get_index_list_category_ids' ) ):
 function get_index_list_category_ids(){
   //チェックリストのカテゴリーを読み込む
   $cat_ids = get_index_category_ids();
+
   //順番を変更したい場合はカンマテキストのほうを読み込む
   $cat_comma = trim(get_index_category_ids_comma_text());
   if ($cat_comma) {
     $cat_ids = explode(',', $cat_comma);
   }
+
   if (!is_array($cat_ids)) {
     $cat_ids = array();
   }
+
+  //除外カテゴリーがある場合、表示カテゴリーから除外
+  $exclude_category_ids = get_archive_exclude_category_ids();
+  if (is_array($cat_ids) && is_array($exclude_category_ids)) {
+    $cat_ids = array_diff($cat_ids, $exclude_category_ids);
+    $cat_ids = array_values($cat_ids);
+  }
+
   //カテゴリーをPHP独自カスタマイズで制御したい人用のフック
   $cat_ids = apply_filters('get_index_list_category_ids', $cat_ids);
   return $cat_ids;

@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.8.2.5
+Version: 2.8.3.4
 Requires at least: 5.7.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -8384,10 +8384,18 @@ div.fb-like-mobile {
 ************************************/
 .go-to-top {
   position: fixed;
-  display: none;
+  display: block;
   right: 10px;
   bottom: 10px;
   z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.go-to-top-visible .go-to-top {
+  visibility: visible;
+  opacity: 1;
 }
 
 .go-to-top-button {

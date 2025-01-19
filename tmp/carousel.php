@@ -14,14 +14,16 @@ if (empty($max_count)) {
   $max_count = CAROUSEL_MAX_COUNT;
 }
 $args = array(
-  'orderby' => get_carousel_orderby(), //ランダム表示
+  'orderby' => get_carousel_orderby(), //表示順
+  // 'orderby' => 'post__in', //【デバッグ用】post__in の順番を維持
   'no_found_rows' => true,
   'posts_per_page' => $max_count,
+  'ignore_sticky_posts' => true,   //固定投稿を無視
 );
 //人気記事が有効の場合
 if ( is_carousel_popular_posts_enable()) {
   $days = get_carousel_popular_posts_count_days();
-  $limit = intval($max_count) * 5;
+  $limit = intval($max_count);
   $records = get_access_ranking_records($days, $limit, 'post');
   $post_ids = array();
   //取得した投稿IDをセット
@@ -36,8 +38,6 @@ if ( is_carousel_popular_posts_enable()) {
 }
 $args = apply_filters('cocoon_carousel_args', $args);
 $query = new WP_Query( $args );
-// var_dump($query -> have_posts());
-// var_dump($query);
   if( $query -> have_posts() ): //カルーセルが設定されているとき
 ?>
 <div id="carousel" class="carousel<?php echo get_additional_carousel_area_classes(); ?>">

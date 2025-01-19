@@ -48,7 +48,7 @@ export default function edit( props ) {
 
   // wp.coreから全カテゴリー情報の取得
   const categoryData = useSelect( ( select ) => {
-    return select( 'core' ).getEntityRecords( 'taxonomy', 'category' );
+    return select( 'core' ).getEntityRecords( 'taxonomy', 'category', { per_page: -1 } );
   } );
 
   // 可変コントロールの定義

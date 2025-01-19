@@ -24,13 +24,19 @@
     // スレッショルドを跨いだ時のみ処理をする
     if (s1 ^ s2) {
       if (s2) {
-        //[.go-to-to]をゆっくりフェードインする
-        $('.go-to-top').fadeIn('slow');
+        // トップへ戻るボタンが見えている時
+        $('.body').addClass('go-to-top-visible');
+
+        // //[.go-to-to]をゆっくりフェードインする
+        // $('.go-to-top').fadeIn('slow');
       } else {
         //トップへ戻る間だけ追加したクラスを除去
-        $('.go-to-top-common').removeClass('go-to-top-up')
-        //それ以外だったらフェードアウトする
-        $('.go-to-top').fadeOut('slow');
+        $('.go-to-top-common').removeClass('go-to-top-up');
+        // トップへ戻るボタンが見えていない時
+        $('.body').removeClass('go-to-top-visible');
+
+        // //それ以外だったらフェードアウトする
+        // $('.go-to-top').fadeOut('slow');
       }
     }
 

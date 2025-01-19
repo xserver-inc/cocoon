@@ -8359,10 +8359,18 @@ div.fb-like-mobile {
 ************************************/
 .go-to-top {
   position: fixed;
-  display: none;
+  display: block;
   right: 10px;
   bottom: 10px;
   z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.go-to-top-visible .go-to-top {
+  visibility: visible;
+  opacity: 1;
 }
 
 .go-to-top-button {

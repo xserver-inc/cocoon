@@ -68,7 +68,7 @@ export default function edit( props ) {
 
   // wp.coreから全カテゴリー情報の取得
   const categoryData = useSelect( ( select ) => {
-    return select( 'core' ).getEntityRecords( 'taxonomy', 'category' );
+    return select( 'core' ).getEntityRecords( 'taxonomy', 'category', { per_page: -1 } );
   } );
 
   // 可変コントロールの定義
@@ -83,7 +83,7 @@ export default function edit( props ) {
         title={ __( '表示カテゴリー選択', THEME_NAME ) }
         initialOpen={ true }
       >
-        <p className="howto">{ __( 'テキストを入力して絞り込んでください。', THEME_NAME ) + __( '※最大10件表示', THEME_NAME ) }</p>
+        <p className="howto">{ __( 'テキストを入力して絞り込んでください。', THEME_NAME ) }</p>
         <SearchControl
           value={ catSearchInput }
           onChange={ setCatSearchInput }
@@ -140,7 +140,7 @@ export default function edit( props ) {
                 value: 'default',
               },
               {
-                label: __( 'カードの上下に区切り線を入れる', THEME_NAME ) + __( '（縦型表示のみ）', THEME_NAME ),
+                label: __( 'カードの上下に区切り線を入れる', THEME_NAME ) + __( '（縦並び表示のみ）', THEME_NAME ),
                 value: 'border_partition',
               },
               {

@@ -142,7 +142,7 @@ function update_custom_insert_post_data( $data, $postarr ){
     $mn_mod = $_POST['mn_mod'] > 59 ? $_POST['mn_mod'] -60 : $_POST['mn_mod'];
     $ss_mod = $_POST['ss_mod'] > 59 ? $_POST['ss_mod'] -60 : $_POST['ss_mod'];
     $modified_date = sprintf( '%04d-%02d-%02d %02d:%02d:%02d', $aa_mod, $mm_mod, $jj_mod, $hh_mod, $mn_mod, $ss_mod );
-    $post_date = get_the_date('Y-m-d H:i:s', $post->ID);
+    $post_date = get_the_date('Y-m-d H:i:s');
 if (( strtotime($modified_date) < strtotime($post_date) ) ||
     ( ! wp_checkdate( $mm_mod, $jj_mod, $aa_mod, $modified_date ))) {
       unset( $data['post_modified'] );

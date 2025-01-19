@@ -54,7 +54,7 @@ if ( is_comment_open() || have_comments() ):
   ///////////////////////////////////////////
   // メールアドレスが公開されることはありません。
   $req = get_option( 'require_name_email' );
-  $required_text = sprintf( ' ' . __( 'Required fields are marked %s' ), '<span class="required">*</span>' );
+  $required_text = sprintf( ' ' . __( 'Required fields are marked %s' ), wp_required_field_indicator() );
   //コメント案内メッセージ
   $comment_info_msg = get_comment_information_message();
   $comment_info_msg_tag = null;
@@ -90,14 +90,14 @@ if ( is_comment_open() || have_comments() ):
      echo '<aside class="comment-form">';
     if (!is_amp()) {
       if (is_comment_form_display_type_toggle_button()) {?>
-        <button type="button" id="comment-reply-btn" class="comment-btn key-btn"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></button>
+        <button type="button" id="comment-reply-btn" class="comment-btn key-btn"><?php echo apply_filters('cocoon_comment_button_caption', __('コメントを書き込む', THEME_NAME)); ?></button>
       <?php }
       //通常ページ
       comment_form($args);
     } else {
       //AMPページ?>
       <h3 id="reply-title" class="comment-reply-title"><?php echo $comment_form_heading; ?></h3>
-      <a class="comment-btn" href="<?php echo get_permalink().'#comment-area'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
+      <a class="comment-btn" href="<?php echo get_permalink().'#comment-area'; ?>"><?php echo apply_filters('cocoon_comment_button_caption', __('コメントを書き込む', THEME_NAME)); ?></a>
       <?php
     }
       echo '</aside>';

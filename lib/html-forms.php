@@ -313,9 +313,15 @@ endif;
 
 //テキストボックスの生成
 if ( !function_exists( 'generate_textbox_tag' ) ):
-function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){
+function generate_textbox_tag($name, $value = '', $placeholder = '', $cols = DEFAULT_INPUT_COLS){
+  $value = isset($value) ? $value : '';
   ob_start();?>
-  <input type="text" id="<?php echo $name; ?>" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>" placeholder="<?php echo esc_attr($placeholder); ?>">
+  <input type="text"
+    id="<?php echo esc_attr($name); ?>"
+    name="<?php echo esc_attr($name); ?>"
+    size="<?php echo esc_attr($cols); ?>"
+    value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>"
+    placeholder="<?php echo esc_attr($placeholder); ?>">
   <?php
   $res = ob_get_clean();
   echo apply_filters('admin_input_form_tag', $res, $name);
@@ -324,7 +330,7 @@ endif;
 
 //テキストエリアの生成
 if ( !function_exists( 'generate_textarea_tag' ) ):
-function generate_textarea_tag($name, $value, $placeholder, $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS, $style = null){
+function generate_textarea_tag($name, $value = '', $placeholder = '', $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS, $style = null){
   $style_tag = null;
   if ($style) {
     $style_tag = ' style="'.$style.'"';
@@ -1084,7 +1090,10 @@ function generate_popular_entries_tag($atts){
 
       $pv_tag = null;
       if ($pv_visible){
-        $pv_text = $pv == '1' ? $pv.' view' : $pv.' views';
+        $pv_unit = ($pv == '1') ? 'view' : 'views';
+        // $pv_unit = apply_filters('popular_entry_card_pv_unit', $pv_unit, $pv);
+        $pv_text = $pv.' '.$pv_unit;
+        $pv_text = apply_filters('popular_entry_card_pv_text', $pv_text, $pv, $pv_unit);
         $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
       }
       ?>
@@ -1579,11 +1588,14 @@ function get_widget_entry_card_link_tag($atts){
     'object' => 'post',
     'object_id' => null,
     'horizontal' => 0,
+    'target' => null,
   ), $atts));
+
   $class_text = null;
   if (isset($classes[0]) && !empty($classes[0])) {
     $class_text = ' '.implode(' ', $classes);
   }
+
   //リボンタグの取得
   $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
   $swiper_slide = null;
@@ -1598,8 +1610,11 @@ function get_widget_entry_card_link_tag($atts){
     $div_class = 'class="'.implode(' ', get_post_class( array('post-'.get_the_ID(), $prefix.'-entry-card', 'widget-entry-card', 'e-card', 'cf') )).'"';
   }
 
+  // target 属性の設定
+  $target_attr = $target ? ' target="' . esc_attr($target) . '"' : '';
+
   ob_start(); ?>
-  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>">
+  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>"<?php echo $target_attr; ?>>
     <div <?php echo $div_class; ?>>
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
