@@ -1699,10 +1699,10 @@ body.wp-admin {
 }
 .admin-settings .demo .cat-label {
   position: absolute;
-  top: 0.3em;
-  left: 0.3em;
+  top: 0.24em;
+  left: 0.24em;
   border: 1px solid #eee;
-  font-size: 11px;
+  font-size: 10px;
   color: var(--cocoon-white-color);
   background-color: rgba(51, 51, 51, 0.7);
   padding: 1px 5px;
@@ -10233,10 +10233,10 @@ body.wp-admin {
 }
 .admin-settings .demo .cat-label {
   position: absolute;
-  top: 0.3em;
-  left: 0.3em;
+  top: 0.24em;
+  left: 0.24em;
   border: 1px solid #eee;
-  font-size: 11px;
+  font-size: 10px;
   color: var(--cocoon-white-color);
   background-color: rgba(51, 51, 51, 0.7);
   padding: 1px 5px;
