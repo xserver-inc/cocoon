@@ -1,15 +1,15 @@
-# Copyright (C) 2024 わいひら
+# Copyright (C) 2025 わいひら
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.8.2.5\n"
+"Project-Id-Version: Cocoon 2.8.3.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-17T13:57:41+00:00\n"
+"POT-Creation-Date: 2025-01-19T01:51:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -1177,7 +1177,7 @@ msgid "あわせて読みたい"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1129
+#: lib/shortcodes.php:1133
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:949
 #: tmp/css-custom.php:994
@@ -2110,8 +2110,8 @@ msgid "ページ内容が類似もしくは重複しているURLが複数存在�
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:150
-#: lib/html-forms.php:497
-#: lib/html-forms.php:563
+#: lib/html-forms.php:503
+#: lib/html-forms.php:569
 msgid "詳細設定"
 msgstr ""
 
@@ -2424,72 +2424,72 @@ msgstr ""
 msgid "解説ページ"
 msgstr ""
 
-#: lib/html-forms.php:363
+#: lib/html-forms.php:369
 msgid "タイトル検索"
 msgstr ""
 
-#: lib/html-forms.php:367
+#: lib/html-forms.php:373
 msgid "タイトル昇順"
 msgstr ""
 
-#: lib/html-forms.php:368
+#: lib/html-forms.php:374
 msgid "タイトル降順"
 msgstr ""
 
-#: lib/html-forms.php:369
+#: lib/html-forms.php:375
 msgid "作成日昇順"
 msgstr ""
 
-#: lib/html-forms.php:370
+#: lib/html-forms.php:376
 msgid "作成日降順"
 msgstr ""
 
-#: lib/html-forms.php:371
+#: lib/html-forms.php:377
 msgid "編集日昇順"
 msgstr ""
 
-#: lib/html-forms.php:372
+#: lib/html-forms.php:378
 msgid "編集日降順"
 msgstr ""
 
-#: lib/html-forms.php:376
+#: lib/html-forms.php:382
 msgid "抽出"
 msgstr ""
 
-#: lib/html-forms.php:503
-#: lib/html-forms.php:569
+#: lib/html-forms.php:509
+#: lib/html-forms.php:575
 msgid "フォーマット（広告ユニット）"
 msgstr ""
 
-#: lib/html-forms.php:507
-#: lib/html-forms.php:572
+#: lib/html-forms.php:513
+#: lib/html-forms.php:578
 #: lib/widgets/ad.php:79
 #: lib/widgets/mobile-ad.php:79
 #: lib/widgets/pc-ad.php:83
 msgid "広告ラベルを表示する"
 msgstr ""
 
-#: lib/html-forms.php:514
+#: lib/html-forms.php:520
 msgid "広告の表示数を制御する"
 msgstr ""
 
-#: lib/html-forms.php:516
+#: lib/html-forms.php:522
 msgid "先頭から"
 msgstr ""
 
-#: lib/html-forms.php:518
+#: lib/html-forms.php:524
 msgid "個まで"
 msgstr ""
 
-#: lib/html-forms.php:520
+#: lib/html-forms.php:526
 msgid "※-1で全てのH2見出し手前に広告を挿入"
 msgstr ""
 
-#: lib/html-forms.php:550
+#: lib/html-forms.php:556
 msgid "入力済"
 msgstr ""
 
-#: lib/html-forms.php:552
+#: lib/html-forms.php:558
 #: blocks/src/block/balloon/edit.js:24
 #: blocks/src/old/balloon-1/block.js:17
 #: blocks/src/old/balloon-2/block.js:23
@@ -2500,33 +2500,33 @@ msgstr ""
 msgid "未入力"
 msgstr ""
 
-#: lib/html-forms.php:591
+#: lib/html-forms.php:597
 #: blocks/src/block/cta/edit.js:126
 msgid "選択"
 msgstr ""
 
-#: lib/html-forms.php:592
+#: lib/html-forms.php:598
 #: skins/skin-made-in-heaven/lib/hook-wp.php:94
 msgid "クリア"
 msgstr ""
 
-#: lib/html-forms.php:599
+#: lib/html-forms.php:605
 msgid "大きな画像は縮小して表示されます。"
 msgstr ""
 
-#: lib/html-forms.php:620
+#: lib/html-forms.php:626
 msgid "画像を選択してください。"
 msgstr ""
 
-#: lib/html-forms.php:628
+#: lib/html-forms.php:634
 msgid "画像の選択"
 msgstr ""
 
-#: lib/html-forms.php:791
+#: lib/html-forms.php:797
 msgid "フロントページのみ"
 msgstr ""
 
-#: lib/html-forms.php:796
+#: lib/html-forms.php:802
 #: lib/page-settings/sns-follow-forms.php:110
 #: lib/page-settings/sns-share-forms-bottom.php:124
 #: lib/page-settings/sns-share-forms-top.php:111
@@ -2535,7 +2535,7 @@ msgstr ""
 msgid "投稿"
 msgstr ""
 
-#: lib/html-forms.php:801
+#: lib/html-forms.php:807
 #: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:127
 #: lib/page-settings/sns-share-forms-top.php:114
@@ -2546,158 +2546,158 @@ msgstr ""
 msgid "固定ページ"
 msgstr ""
 
-#: lib/html-forms.php:806
+#: lib/html-forms.php:812
 msgid "カテゴリー一覧"
 msgstr ""
 
-#: lib/html-forms.php:811
+#: lib/html-forms.php:817
 msgid "タグ一覧"
 msgstr ""
 
-#: lib/html-forms.php:816
+#: lib/html-forms.php:822
 msgid "著者一覧"
 msgstr ""
 
-#: lib/html-forms.php:821
+#: lib/html-forms.php:827
 msgid "アーカイブ一覧"
 msgstr ""
 
-#: lib/html-forms.php:826
+#: lib/html-forms.php:832
 msgid "検索結果一覧"
 msgstr ""
 
-#: lib/html-forms.php:831
+#: lib/html-forms.php:837
 #: lib/page-settings/_top-page.php:248
 #: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr ""
 
-#: lib/html-forms.php:837
+#: lib/html-forms.php:843
 msgid "AMPページ"
 msgstr ""
 
-#: lib/html-forms.php:844
+#: lib/html-forms.php:850
 msgid "wpForoページ"
 msgstr ""
 
-#: lib/html-forms.php:851
+#: lib/html-forms.php:857
 msgid "bbPressページ"
 msgstr ""
 
-#: lib/html-forms.php:858
+#: lib/html-forms.php:864
 msgid "BuddyPressページ"
 msgstr ""
 
-#: lib/html-forms.php:865
+#: lib/html-forms.php:871
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr ""
 
-#: lib/html-forms.php:911
+#: lib/html-forms.php:917
 msgid "投稿ID入力"
 msgstr ""
 
-#: lib/html-forms.php:912
-#: lib/html-forms.php:932
-#: lib/html-forms.php:952
+#: lib/html-forms.php:918
+#: lib/html-forms.php:938
+#: lib/html-forms.php:958
 msgid "例：111,222,333"
 msgstr ""
 
-#: lib/html-forms.php:913
+#: lib/html-forms.php:919
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:931
+#: lib/html-forms.php:937
 msgid "固定ページID入力"
 msgstr ""
 
-#: lib/html-forms.php:933
+#: lib/html-forms.php:939
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:951
+#: lib/html-forms.php:957
 msgid "タグID入力"
 msgstr ""
 
-#: lib/html-forms.php:953
+#: lib/html-forms.php:959
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:1119
+#: lib/html-forms.php:1128
 msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
-#: lib/html-forms.php:1347
-#: lib/html-forms.php:1895
+#: lib/html-forms.php:1356
+#: lib/html-forms.php:1910
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1479
+#: lib/html-forms.php:1488
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1483
+#: lib/html-forms.php:1492
 msgid "NO USER"
 msgstr ""
 
-#: lib/html-forms.php:1498
+#: lib/html-forms.php:1507
 msgid "未登録のユーザーさん"
 msgstr ""
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1517
 msgid "未登録のユーザーさんです。"
 msgstr ""
 
-#: lib/html-forms.php:1510
+#: lib/html-forms.php:1519
 msgid "ログイン・登録はこちら→"
 msgstr ""
 
-#: lib/html-forms.php:1512
+#: lib/html-forms.php:1521
 msgid "ログインページ"
 msgstr ""
 
-#: lib/html-forms.php:1516
+#: lib/html-forms.php:1525
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr ""
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1528
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr ""
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1528
 msgid "プロフィール設定画面"
 msgstr ""
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1528
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr ""
 
-#: lib/html-forms.php:1549
+#: lib/html-forms.php:1558
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1776
+#: lib/html-forms.php:1791
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1779
+#: lib/html-forms.php:1794
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1782
+#: lib/html-forms.php:1797
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1785
+#: lib/html-forms.php:1800
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1788
+#: lib/html-forms.php:1803
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1831
-#: lib/shortcodes.php:1013
+#: lib/html-forms.php:1846
+#: lib/shortcodes.php:1017
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -8770,7 +8770,7 @@ msgid "関連記事見出し"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1125
+#: lib/shortcodes.php:1129
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -10966,15 +10966,15 @@ msgstr ""
 msgid "月別アーカイブ"
 msgstr ""
 
-#: lib/shortcodes.php:986
+#: lib/shortcodes.php:990
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr ""
 
-#: lib/shortcodes.php:1097
+#: lib/shortcodes.php:1101
 msgid "保存エラー"
 msgstr ""
 
-#: lib/shortcodes.php:1115
+#: lib/shortcodes.php:1119
 msgid "エラー："
 msgstr ""
 
@@ -11304,53 +11304,53 @@ msgstr ""
 msgid "キャンペーン期間中のみ表示"
 msgstr ""
 
-#: lib/utils.php:825
+#: lib/utils.php:824
 msgid "スクロールできます"
 msgstr ""
 
-#: lib/utils.php:913
+#: lib/utils.php:912
 msgid "公開"
 msgstr ""
 
-#: lib/utils.php:914
+#: lib/utils.php:913
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:2555
+#: lib/utils.php:2554
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2563
+#: lib/utils.php:2562
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2571
+#: lib/utils.php:2570
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2579
+#: lib/utils.php:2578
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2587
+#: lib/utils.php:2586
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2598
+#: lib/utils.php:2597
 msgid "%s年"
 msgstr ""
 
-#: lib/utils.php:2600
+#: lib/utils.php:2599
 msgid "%s年%sヶ月"
 msgstr ""
 
@@ -14421,10 +14421,6 @@ msgstr ""
 
 #: blocks/src/block/new-list/edit.js:86
 msgid "テキストを入力して絞り込んでください。"
-msgstr ""
-
-#: blocks/src/block/new-list/edit.js:86
-msgid "※最大10件表示"
 msgstr ""
 
 #: blocks/src/block/new-list/edit.js:96
