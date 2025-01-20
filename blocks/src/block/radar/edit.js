@@ -276,6 +276,7 @@ export default function edit( props ) {
               label: __( 'チャート色', THEME_NAME ),
               onChange: ( newColor ) => setAttributes({ chartColor: newColor }),
               value: chartColor,
+              enableAlpha: false,
             },
             {
               label: __( '背景色', THEME_NAME ),
