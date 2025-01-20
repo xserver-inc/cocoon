@@ -109,6 +109,7 @@ export function IconListEdit( props ) {
         </PanelBody>
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
+          enableAlpha={true}
           colorSettings={ [
             {
               label: __( 'アイコン色', THEME_NAME ),

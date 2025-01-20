@@ -151,6 +151,7 @@ export function TimelineEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
+          enableAlpha={true}
           colorSettings={ [
             {
               label: __( 'ポイント色', THEME_NAME ),
