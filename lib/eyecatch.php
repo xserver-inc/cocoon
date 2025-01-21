@@ -117,9 +117,29 @@ function generate_dynamic_featured_image($post_id) {
   list($r, $g, $b) = sscanf($border_color_code, "#%02x%02x%02x");
   $border_color = imagecolorallocate($image, $r, $g, $b);
 
-  // 背景を塗りつぶす - 20pxのボーダー部分を描画し、その内側を背景色で塗りつぶす
+  $border_width = 30;
+
+  // 背景を塗りつぶす - 30pxのボーダー部分を描画し、その内側を背景色で塗りつぶす
   imagefilledrectangle($image, 0, 0, $width, $height, $border_color);
-  imagefilledrectangle($image, 20, 20, $width - 20, $height - 20, $background_color);
+  imagefilledrectangle($image, $border_width, $border_width, $width - $border_width, $height - $border_width, $background_color);
+
+  // 四隅を丸くするための半径を設定
+  $radius = $border_width;
+
+  // 四隅を丸くする
+  // 左上の角を丸くする
+  imagefilledarc($image, $radius, $radius, $radius * 2, $radius * 2, 0, 90, $border_color, IMG_ARC_PIE);
+  // 右上の角を丸くする
+  imagefilledarc($image, $width - $radius, $radius, $radius * 2, $radius * 2, 90, 180, $border_color, IMG_ARC_PIE);
+  // 左下の角を丸くする
+  imagefilledarc($image, $radius, $height - $radius, $radius * 2, $radius * 2, 270, 360, $border_color, IMG_ARC_PIE);
+  // 右下の角を丸くする
+  imagefilledarc($image, $width - $radius, $height - $radius, $radius * 2, $radius * 2, 180, 270, $border_color, IMG_ARC_PIE);
+
+  imagefilledarc($image, $radius * 2, $radius * 2, $radius * 2, $radius * 2, 180, 270, $background_color, IMG_ARC_PIE);
+  imagefilledarc($image, $width - $radius * 2, $radius * 2, $radius * 2, $radius * 2, 270, 360, $background_color, IMG_ARC_PIE);
+  imagefilledarc($image, $radius * 2, $height - $radius * 2, $radius * 2, $radius * 2, 90, 180, $background_color, IMG_ARC_PIE);
+  imagefilledarc($image, $width - $radius * 2, $height - $radius * 2, $radius * 2, $radius * 2, 0, 90, $background_color, IMG_ARC_PIE);
 
   // 日本語フォントファイルのパスを定義
   $font_path = get_template_directory() . '/webfonts/googlefonts/NotoSansJP-Regular.ttf';
