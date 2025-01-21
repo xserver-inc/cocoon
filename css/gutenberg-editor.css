@@ -1529,7 +1529,7 @@ html[lang=en] .ribbon-top-left::after {
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
-  top: -1.8em;
+  top: -26px;
   line-height: 1.8;
   color: var(--cocoon-white-color);
   left: -3px;
@@ -5500,7 +5500,7 @@ ol, ul {
 
 .tab-caption-box-label.box-label,
 .label-box-label.box-label {
-  margin-bottom: -2px;
+  margin-bottom: -3px;
 }
 
 .timeline-box [data-block] {
