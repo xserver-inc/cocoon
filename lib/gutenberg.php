@@ -644,16 +644,17 @@ html .body .btn-wrap.has-larger-font-size > a {
     border-color: var(--cocoon-custom-border-color);
     background-color: var(--cocoon-custom-background-color);
     color: var(--cocoon-custom-text-color);
+    background-clip: padding-box;
 }
 <?php //吹き出しボックス ?>
 .cocoon-block-balloon.not-nested-style > .speech-balloon {
     background-color:var(--cocoon-custom-background-color);
     border-color: var(--cocoon-custom-border-color);
     color: var(--cocoon-custom-text-color);
+    background-clip: padding-box;
 }
 <?php //見出しボックス ?>
 .cocoon-block-caption-box.not-nested-style {
-    background-color: var(--cocoon-custom-background-color);
     border-color: var(--cocoon-custom-border-color);
     color: var(--cocoon-custom-text-color);
 }
@@ -662,6 +663,10 @@ html .body .btn-wrap.has-larger-font-size > a {
 }
 .cocoon-block-caption-box.has-border-color.not-nested-style > .box-label{
     color: var(--cocoon-white-color);
+}
+.cocoon-block-caption-box.not-nested-style > .box-content{
+    background-color: var(--cocoon-custom-background-color);
+    background-clip: padding-box;
 }
     <?php
     $css = ob_get_clean();

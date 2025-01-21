@@ -120,6 +120,7 @@ export function MicroBalloonEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
+          enableAlpha={true}
           colorSettings={ [
             {
               label: __( '背景色', THEME_NAME ),

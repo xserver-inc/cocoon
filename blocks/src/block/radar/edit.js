@@ -270,11 +270,13 @@ export default function edit( props ) {
       <InspectorControls>
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
+          enableAlpha={true}
           colorSettings={[
             {
               label: __( 'チャート色', THEME_NAME ),
               onChange: ( newColor ) => setAttributes({ chartColor: newColor }),
               value: chartColor,
+              enableAlpha: false,
             },
             {
               label: __( '背景色', THEME_NAME ),

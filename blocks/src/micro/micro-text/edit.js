@@ -88,6 +88,7 @@ export function MicroTextEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
+          enableAlpha={true}
           colorSettings={ [
             {
               label: __( '文字色', THEME_NAME ),
