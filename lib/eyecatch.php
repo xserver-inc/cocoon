@@ -7,6 +7,14 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+
+// GDライブラリを用いた動的画像生成関数
+if ( !function_exists( 'generate_dynamic_image' ) ):
+function generate_dynamic_image($new_image_path, $width, $height) {
+
+}
+endif;
+
 // 投稿が保存または更新されたときに関数を実行するフック
 add_action('save_post', 'generate_dynamic_featured_image');
 if ( !function_exists( 'generate_dynamic_featured_image' ) ):
@@ -45,7 +53,26 @@ function generate_dynamic_featured_image($post_id) {
     return;
   }
 
+  // タイトルが「自動下書き」の場合は画像を生成しない
+  if ($post_title === __( 'Auto Draft' )) {
+    return;
+  }
+
+  // すでにアイキャッチ画像が設定されている場合は処理を終了
+  $current_thumbnail_id = get_post_thumbnail_id($post_id);
+  if ($current_thumbnail_id) {
+    return;
+  }
+
+  // 「タイトルからアイキャッチ生成をする」が有効でない場合は処理を終了
+  $is_checked = isset($_POST['generate_featured_image_from_title']) && (intval($_POST['generate_featured_image_from_title']) == 1);
+  if (!$is_checked) {
+    return;
+  }
+
+  // 投稿者ID取得
   $author_id = get_post_field('post_author', $post_id);
+  // 投稿者の表示名の取得
   $author_name = get_the_author_meta('display_name', $author_id);
   // 投稿者のアバター画像を取得
   $avatar_url = get_the_author_upladed_avatar_url($author_id);
@@ -56,35 +83,18 @@ function generate_dynamic_featured_image($post_id) {
   // Cocoon設定のサムネイル画像サイズに適した高さ
   $height = get_thumbnail_height($width);
 
-  // タイトルが「自動下書き」の場合は画像を生成しない
-  if ($post_title === __( 'Auto Draft' )) {
-    return;
-  }
-
   // アイキャッチ画像のパスを定義
   $upload_path = get_theme_featured_images_path();
   $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
   $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
   // デバッグ用のファイル名
-  // $current_time = current_time('YmdHis');
-  // $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
-
-  // すでにアイキャッチ画像が設定されている場合は処理を終了
-  $current_thumbnail_id = get_post_thumbnail_id($post_id);
-  if ($current_thumbnail_id) {
-    return;
-  }
+  $current_time = current_time('YmdHis');
+  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
 
   // すでにメディアに同じファイルが登録されている場合は処理を終了
   $existing_attachment_id = attachment_url_to_postid($new_image_path);
   if ($existing_attachment_id) {
     set_post_thumbnail($post_id, $existing_attachment_id);
-    return;
-  }
-
-  // 「タイトルからアイキャッチ生成をする」が有効でない場合は処理を終了
-  $is_checked = isset($_POST['generate_featured_image_from_title']) && (intval($_POST['generate_featured_image_from_title']) == 1);
-  if (!$is_checked) {
     return;
   }
 
@@ -133,15 +143,13 @@ function generate_dynamic_featured_image($post_id) {
     $current_line = '';
     // タイトルを単語または全角文字（ひらがな、カタカナ、漢字）ごとに分割し、改行を調整するための配列に変換
     $words = preg_split('/(?<=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)|(?=\p{Hiragana}|\p{Katakana}|\p{Han}|\s)|(?<=\s)|(?=\s)|(?<=\p{P}(?<!-))|(?=\p{P}(?<!-))|(?<=-)(?=[^\p{L}])|(?<=[^\p{L}])(?=-)/u', $post_title, -1, PREG_SPLIT_NO_EMPTY);
-    // _v($words);
 
     foreach ($words as $word) {
-      // _v($current_line);
       // 仮に現在の行に追加した場合のテキストサイズを測定
       $box = imagettfbbox($font_size, 0, $font_path, $current_line . $word);
       $text_width = $box[2] - $box[0];
 
-     // 行の幅が最大幅を超えた場合の処理
+      // 行の幅が最大幅を超えた場合の処理
       if ($text_width > $max_width && !empty(trim($current_line))) {
         // はじめ括弧が行の最後に来る場合の処理
         if (preg_match('/^[\p{Ps}]/u', $word)) {
@@ -173,23 +181,23 @@ function generate_dynamic_featured_image($post_id) {
           $char_width = $box[2] - $box[0];
           $max_chars_per_line = floor($max_width / $char_width); // 描画エリアに描画可能な半角英数字の数を計算
 
-            if (strlen($word) > $max_chars_per_line) { // 描画エリアに収まらない場合は途中で改行
-              $split_word = str_split($word, $max_chars_per_line); // 単語を最大文字数ごとに分割
-              foreach ($split_word as $part) {
-                $box = imagettfbbox($font_size, 0, $font_path, $current_line . $part); // テキストのバウンディングボックスを取得
-                $text_width = $box[2] - $box[0]; // テキストの幅を計算
-                // テキストの幅が最大幅を超え、現在の行が空でないかを確認
-                if ($text_width > $max_width && !empty(trim($current_line))) {
-                  $lines[] = trim($current_line); // 現在の行を追加
-                  $current_line = $part; // 新しい行を開始
-                } else {
-                  $current_line .= $part; // 現在の行に追加
-                }
+          if (strlen($word) > $max_chars_per_line) { // 描画エリアに収まらない場合は途中で改行
+            $split_word = str_split($word, $max_chars_per_line); // 単語を最大文字数ごとに分割
+            foreach ($split_word as $part) {
+              $box = imagettfbbox($font_size, 0, $font_path, $current_line . $part); // テキストのバウンディングボックスを取得
+              $text_width = $box[2] - $box[0]; // テキストの幅を計算
+              // テキストの幅が最大幅を超え、現在の行が空でないかを確認
+              if ($text_width > $max_width && !empty(trim($current_line))) {
+                $lines[] = trim($current_line); // 現在の行を追加
+                $current_line = $part; // 新しい行を開始
+              } else {
+                $current_line .= $part; // 現在の行に追加
               }
-            } else {
-              $lines[] = trim($current_line); // 現在の行を追加
-              $current_line = $word; // 新しい行を開始
             }
+          } else {
+            $lines[] = trim($current_line); // 現在の行を追加
+            $current_line = $word; // 新しい行を開始
+          }
         }
       } else {
         $current_line .= $word;
@@ -203,29 +211,12 @@ function generate_dynamic_featured_image($post_id) {
       $lines[] = trim($current_line);
     }
 
-    // デフォルト最大5行に制限し、それ以降は省略
-    $max_row = 5;
-    // デフォルト以外
-    switch (get_thumbnail_image_type()) {
-      case 'golden_ratio':
-        $max_row = 6;
-        break;
-      case 'postcard':
-        $max_row = 6;
-        break;
-      case 'silver_ratio':
-        $max_row = 7;
-        break;
-      case 'standard':
-        $max_row = 8;
-        break;
-      case 'square':
-        $max_row = 11;
-        break;
-      default: // ここは使用されない
-        $max_row = 5;
-        break;
-    }
+    // アバター画像の高さを考慮して最大行数を計算
+    $avatar_size = 64;
+    $avatar_margin = $margin + 41; // アバター画像の余白を考慮
+    $available_height = $height - $avatar_size - $avatar_margin;
+    $max_row = floor($available_height / ($font_size + 41)); // 行間を含めた行の高さで割る
+
     // 行数が最大行数を超える場合の処理
     if (count($lines) > $max_row) {
       // 最大行数までの行を取得
@@ -265,7 +256,7 @@ function generate_dynamic_featured_image($post_id) {
       $avatar_height = imagesy($avatar_image);
 
       // アバター画像の中心をトリミングするための座標を計算
-        if ($avatar_width > $avatar_height) {
+      if ($avatar_width > $avatar_height) {
         $src_x = ($avatar_width - $avatar_height) / 2;
         $src_y = 0;
         $src_w = $avatar_height;
@@ -278,7 +269,6 @@ function generate_dynamic_featured_image($post_id) {
       }
 
       // アバター画像を描画
-      $avatar_size = 64;
       $avatar_x = $margin;
       $avatar_y = $height - $avatar_size - $margin + 40; // 下部に余白を持たせて配置
       imagecopyresampled($image, $avatar_image, $avatar_x, $avatar_y, $src_x, $src_y, $avatar_size, $avatar_size, $src_w, $src_h);
