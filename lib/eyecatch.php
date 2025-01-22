@@ -10,38 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 // GDライブラリを用いた動的画像生成関数
 if ( !function_exists( 'generate_dynamic_image' ) ):
-function generate_dynamic_image($new_image_path, $width, $height) {
-
-}
-endif;
-
-// 投稿が保存または更新されたときに関数を実行するフック
-add_action('save_post', 'generate_dynamic_featured_image');
-if ( !function_exists( 'generate_dynamic_featured_image' ) ):
-function generate_dynamic_featured_image($post_id) {
-  // 自動保存やリビジョン、自動下書きの場合は処理を終了
-  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-    return;
-  }
-
-  // 投稿が下書き、レビュー待ち、または公開以外のステータスの場合は処理を終了
-  $post_status = get_post_status($post_id);
-  if (!in_array($post_status, ['publish'])) {
-    return;
-  }
-
-  // 投稿タイプが post, page, カスタム投稿 以外の場合は処理を終了
-  $post_type = get_post_type($post_id);
-  $custom_post_types = get_post_types(['_builtin' => false]); // すべてのカスタム投稿タイプを取得
-  if (!in_array($post_type, array_merge(['post', 'page'], $custom_post_types))) {
-    return;
-  }
-
-  // GDライブラリがインストールされていない場合は処理を終了
-  if (!extension_loaded('gd')) {
-    error_log('GD library does not exist.');
-    return;
-  }
+function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
 
   // 投稿タイトルと投稿者名を取得
   $post_title = get_the_title($post_id);
@@ -50,24 +19,7 @@ function generate_dynamic_featured_image($post_id) {
   // 投稿タイトルが自動的にHTMLエンティティや特殊文字に変換されることへの対応
   $post_title = html_entity_decode($post_title);
   if (!$post_title) {
-    return;
-  }
-
-  // タイトルが「自動下書き」の場合は画像を生成しない
-  if ($post_title === __( 'Auto Draft' )) {
-    return;
-  }
-
-  // すでにアイキャッチ画像が設定されている場合は処理を終了
-  $current_thumbnail_id = get_post_thumbnail_id($post_id);
-  if ($current_thumbnail_id) {
-    return;
-  }
-
-  // 「タイトルからアイキャッチ生成をする」が有効でない場合は処理を終了
-  $is_checked = isset($_POST['generate_featured_image_from_title']) && (intval($_POST['generate_featured_image_from_title']) == 1);
-  if (!$is_checked) {
-    return;
+    return false;
   }
 
   // 投稿者ID取得
@@ -77,26 +29,6 @@ function generate_dynamic_featured_image($post_id) {
   // 投稿者のアバター画像を取得
   $avatar_url = get_the_author_upladed_avatar_url($author_id);
 
-  // 画像のサイズを設定
-  $width = 1280;
-  // $height = 720;
-  // Cocoon設定のサムネイル画像サイズに適した高さ
-  $height = get_thumbnail_height($width);
-
-  // アイキャッチ画像のパスを定義
-  $upload_path = get_theme_featured_images_path();
-  $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
-  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
-  // デバッグ用のファイル名
-  $current_time = current_time('YmdHis');
-  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
-
-  // すでにメディアに同じファイルが登録されている場合は処理を終了
-  $existing_attachment_id = attachment_url_to_postid($new_image_path);
-  if ($existing_attachment_id) {
-    set_post_thumbnail($post_id, $existing_attachment_id);
-    return;
-  }
 
   // ベース画像の作成
   $image = imagecreatetruecolor($width, $height);
@@ -129,16 +61,15 @@ function generate_dynamic_featured_image($post_id) {
   // 四隅を丸くする
   // 左上の角を丸くする
   imagefilledarc($image, $radius, $radius, $radius * 2, $radius * 2, 0, 90, $border_color, IMG_ARC_PIE);
+  imagefilledarc($image, $radius * 2, $radius * 2, $radius * 2, $radius * 2, 180, 270, $background_color, IMG_ARC_PIE);
   // 右上の角を丸くする
   imagefilledarc($image, $width - $radius, $radius, $radius * 2, $radius * 2, 90, 180, $border_color, IMG_ARC_PIE);
+  imagefilledarc($image, $width - $radius * 2, $radius * 2, $radius * 2, $radius * 2, 270, 360, $background_color, IMG_ARC_PIE);
   // 左下の角を丸くする
   imagefilledarc($image, $radius, $height - $radius, $radius * 2, $radius * 2, 270, 360, $border_color, IMG_ARC_PIE);
+  imagefilledarc($image, $radius * 2, $height - $radius * 2, $radius * 2, $radius * 2, 90, 180, $background_color, IMG_ARC_PIE);
   // 右下の角を丸くする
   imagefilledarc($image, $width - $radius, $height - $radius, $radius * 2, $radius * 2, 180, 270, $border_color, IMG_ARC_PIE);
-
-  imagefilledarc($image, $radius * 2, $radius * 2, $radius * 2, $radius * 2, 180, 270, $background_color, IMG_ARC_PIE);
-  imagefilledarc($image, $width - $radius * 2, $radius * 2, $radius * 2, $radius * 2, 270, 360, $background_color, IMG_ARC_PIE);
-  imagefilledarc($image, $radius * 2, $height - $radius * 2, $radius * 2, $radius * 2, 90, 180, $background_color, IMG_ARC_PIE);
   imagefilledarc($image, $width - $radius * 2, $height - $radius * 2, $radius * 2, $radius * 2, 0, 90, $background_color, IMG_ARC_PIE);
 
   // 日本語フォントファイルのパスを定義
@@ -331,26 +262,108 @@ function generate_dynamic_featured_image($post_id) {
   }
 
   // 画像をアップロードディレクトリに保存
-  $image_path = $new_image_path;
-  imagepng($image, $image_path);
-  imagedestroy($image);
+  if (imagepng($image, $new_image_path)) {
+    imagedestroy($image);
+    return true;
+  }
 
-  // 画像をWordPressメディアライブラリに登録
-  $attachment = [
-    'post_mime_type' => 'image/png',
-    'post_title'     => sanitize_file_name(basename($image_path)),
-    'post_content'   => '',
-    'post_status'    => 'inherit',
-  ];
+}
+endif;
 
-  // 画像をWordPressのメディアライブラリに添付ファイルとして登録
-  $attachment_id = wp_insert_attachment($attachment, $image_path, $post_id);
-  require_once(ABSPATH . 'wp-admin/includes/image.php'); // メタデータ生成用のファイルを読み込む
-  $attachment_data = wp_generate_attachment_metadata($attachment_id, $image_path); // 添付ファイルのメタデータを生成
-  wp_update_attachment_metadata($attachment_id, $attachment_data); // メタデータを更新し、データベースに保存
+// 投稿が保存または更新されたときに関数を実行するフック
+add_action('save_post', 'generate_dynamic_featured_image');
+if ( !function_exists( 'generate_dynamic_featured_image' ) ):
+function generate_dynamic_featured_image($post_id) {
+  // 自動保存やリビジョン、自動下書きの場合は処理を終了
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+    return;
+  }
 
-  // 投稿のアイキャッチ画像として設定
-  set_post_thumbnail($post_id, $attachment_id);
+  // 投稿が下書き、レビュー待ち、または公開以外のステータスの場合は処理を終了
+  $post_status = get_post_status($post_id);
+  if (!in_array($post_status, ['publish'])) {
+    return;
+  }
+
+  // 投稿タイプが post, page, カスタム投稿 以外の場合は処理を終了
+  $post_type = get_post_type($post_id);
+  $custom_post_types = get_post_types(['_builtin' => false]); // すべてのカスタム投稿タイプを取得
+  if (!in_array($post_type, array_merge(['post', 'page'], $custom_post_types))) {
+    return;
+  }
+
+  // GDライブラリがインストールされていない場合は処理を終了
+  if (!extension_loaded('gd')) {
+    error_log('GD library does not exist.');
+    return;
+  }
+
+  // タイトルが「自動下書き」の場合は画像を生成しない
+  if ($post_title === __( 'Auto Draft' )) {
+    return;
+  }
+
+  // すでにアイキャッチ画像が設定されている場合は処理を終了
+  $current_thumbnail_id = get_post_thumbnail_id($post_id);
+  if ($current_thumbnail_id) {
+    return;
+  }
+
+  // 「タイトルからアイキャッチ生成をする」が有効でない場合は処理を終了
+  $is_checked = isset($_POST['generate_featured_image_from_title']) && (intval($_POST['generate_featured_image_from_title']) == 1);
+  if (!$is_checked) {
+    return;
+  }
+
+  // 投稿者ID取得
+  $author_id = get_post_field('post_author', $post_id);
+  // 投稿者の表示名の取得
+  $author_name = get_the_author_meta('display_name', $author_id);
+  // 投稿者のアバター画像を取得
+  $avatar_url = get_the_author_upladed_avatar_url($author_id);
+
+  // 画像のサイズを設定
+  $width = 1280;
+  // $height = 720;
+  // Cocoon設定のサムネイル画像サイズに適した高さ
+  $height = get_thumbnail_height($width);
+
+  // アイキャッチ画像のパスを定義
+  $upload_path = get_theme_featured_images_path();
+  $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
+  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
+  // デバッグ用のファイル名
+  $current_time = current_time('YmdHis');
+  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
+
+  // すでにメディアに同じファイルが登録されている場合は処理を終了
+  $existing_attachment_id = attachment_url_to_postid($new_image_path);
+  if ($existing_attachment_id) {
+    set_post_thumbnail($post_id, $existing_attachment_id);
+    return;
+  }
+
+  // アイキャッチ画像生成に成功した場合、
+  if (generate_dynamic_image($post_id, $new_image_path, $width, $height)) {
+    // 画像をWordPressメディアライブラリに登録
+    $attachment = [
+      'post_mime_type' => 'image/png',
+      'post_title'     => sanitize_file_name(basename($new_image_path)),
+      'post_content'   => '',
+      'post_status'    => 'inherit',
+    ];
+
+    // 画像をWordPressのメディアライブラリに添付ファイルとして登録
+    $attachment_id = wp_insert_attachment($attachment, $new_image_path, $post_id);
+    require_once(ABSPATH . 'wp-admin/includes/image.php'); // メタデータ生成用のファイルを読み込む
+    $attachment_data = wp_generate_attachment_metadata($attachment_id, $new_image_path); // 添付ファイルのメタデータを生成
+    wp_update_attachment_metadata($attachment_id, $attachment_data); // メタデータを更新し、データベースに保存
+
+    // 投稿のアイキャッチ画像として設定
+    set_post_thumbnail($post_id, $attachment_id);
+  }
+
+
 }
 endif;
 
