@@ -564,19 +564,18 @@ _:lang(ja)+_:-webkit-full-screen-document, .list-title-in:before, .list-title-in
 	width: calc(34.03% - 2em);
 }
 
-@media screen and (max-width: 480px) {
-	/* スマートフォンで縦型＆タイル型のエントリーカードを1カラムにする */
-	.ect-tile-card.sp-entry-card-1-column .masonry-brick{
-		left: 0 !important;
-		width: 100%;
-	}
-}
-
 @media screen and (max-width: 834px) {
 	.tab-cont.tb1 .ect-tile-card-3 .masonry-brick {
 		width: calc(49.5% - 2em);
 	}
 }
+
+@media screen and (max-width: 480px) {
+  .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap.a-wrap {
+    width: calc(100% - 4em);
+  }
+}
+
 
 /************************
 * カードの囲みボックス
