@@ -1688,6 +1688,7 @@ $toggle_border_width: 2px;
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 
   &::before{
     content: '\f067';

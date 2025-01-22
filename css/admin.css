@@ -5318,6 +5318,7 @@ body.wp-admin {
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 }
 .admin-settings .demo .toggle-button::before {
   content: "\f067";
@@ -13857,6 +13858,7 @@ body.wp-admin {
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 }
 .admin-settings .demo .toggle-button::before {
   content: "\f067";
@@ -23043,6 +23045,7 @@ select option.fa:before {
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 }
 .components-popover__content .toggle-button::before {
   content: "\f067";
