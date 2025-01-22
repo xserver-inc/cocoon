@@ -6751,6 +6751,7 @@ body.wp-admin {
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
+  background-clip: padding-box;
 }
 .admin-settings .demo .cocoon-block-balloon.not-nested-style.sbs-think > .speech-balloon::before {
   left: -29px;
@@ -15291,6 +15292,7 @@ body.wp-admin {
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
+  background-clip: padding-box;
 }
 .admin-settings .demo .cocoon-block-balloon.not-nested-style.sbs-think > .speech-balloon::before {
   left: -29px;

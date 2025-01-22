@@ -7149,6 +7149,7 @@ div.sbs-think:not(.not-nested-style) .speech-balloon::after {
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
+  background-clip: padding-box;
 }
 .cocoon-block-balloon.not-nested-style.sbs-think > .speech-balloon::before {
   left: -29px;
