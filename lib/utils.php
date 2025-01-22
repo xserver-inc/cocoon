@@ -1175,6 +1175,15 @@ function get_theme_featured_images_path(){
 }
 endif;
 
+//生成SNSディレクトリ
+if ( !function_exists( 'get_theme_sns_images_path' ) ):
+function get_theme_sns_images_path(){
+  $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-sns-images/';
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
+  return $dir;
+}
+endif;
+
 //テーマの汎用キャッシュディレクトリ
 if ( !function_exists( 'get_theme_cache_path' ) ):
 function get_theme_cache_path(){

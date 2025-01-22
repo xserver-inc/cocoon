@@ -270,6 +270,13 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
 }
 endif;
 
+// 生成する画像ファイルのパスを取得
+if ( !function_exists( 'get_dynamic_image_path' ) ):
+function get_dynamic_image_path($post_id, $upload_path, $post_title_hash) {
+  return trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $post_title_hash . '.png';
+}
+endif;
+
 // 投稿が保存または更新されたときに関数を実行するフック
 add_action('save_post', 'generate_dynamic_featured_image');
 if ( !function_exists( 'generate_dynamic_featured_image' ) ):
@@ -331,10 +338,10 @@ function generate_dynamic_featured_image($post_id) {
   // アイキャッチ画像のパスを定義
   $upload_path = get_theme_featured_images_path();
   $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
-  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $post_title_hash . '.png';
-  // デバッグ用のファイル名
-  $current_time = current_time('YmdHis');
-  $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $width . 'x' . $height . '-' . $current_time . '-' . $post_title_hash . '.png';
+  $new_image_path = get_dynamic_image_path($post_id, $upload_path, $post_title_hash);
+  // // デバッグ用のファイル名
+  // $current_time = current_time('YmdHis');
+  // $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $current_time . '-' . $post_title_hash . '.png';
 
   // すでにメディアに同じファイルが登録されている場合は処理を終了
   $existing_attachment_id = attachment_url_to_postid($new_image_path);
@@ -361,9 +368,21 @@ function generate_dynamic_featured_image($post_id) {
 
     // 投稿のアイキャッチ画像として設定
     set_post_thumbnail($post_id, $attachment_id);
+
+
+
+    // Twitterカードのサムネイルのアスペクト比に準じた高さ
+    $height = floor($width * 630 / 1200);
+
+    // SNS画像のパスを定義
+    $upload_path = get_theme_sns_images_path();
+    $new_image_path = get_dynamic_image_path($post_id, $upload_path, $post_title_hash);
+
+    // SNS画像生成に成功した場合
+    if (generate_dynamic_image($post_id, $new_image_path, $width, $height)) {
+      return true;
+    }
   }
-
-
 }
 endif;
 
