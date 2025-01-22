@@ -26,6 +26,8 @@ $document_root = isset($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : 
 define('ROOT_PATH', trailingslashit($document_root));
 //PWA Service Workerのバージョン
 define('PWA_SERVICE_WORKER_VERSION', '20190523');
+define('COCOON_FEATURED_IMAGES_DIR_NAME', THEME_NAME.'-featured-images');
+define('COCOON_SNS_IMAGES_DIR_NAME', THEME_NAME.'-sns-images');
 
 //開発関係の場合デバッグ値を有効にする
 $http_host = isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : '';

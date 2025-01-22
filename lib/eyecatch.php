@@ -7,6 +7,16 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// タイトル整形関数
+if ( !function_exists( 'sanitize_post_title' ) ):
+function sanitize_post_title($post_title) {
+  // 連続する空白を1つの空白に置き換える
+  $post_title = preg_replace('/\s{2,}/u', ' ', $post_title);
+  // 投稿タイトルが自動的にHTMLエンティティや特殊文字に変換されることへの対応
+  $post_title = html_entity_decode($post_title);
+  return $post_title;
+}
+endif;
 
 // GDライブラリを用いた動的画像生成関数
 if ( !function_exists( 'generate_dynamic_image' ) ):
@@ -14,10 +24,14 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
 
   // 投稿タイトルと投稿者名を取得
   $post_title = get_the_title($post_id);
-  // 連続する空白を1つの空白に置き換える
-  $post_title = preg_replace('/\s{2,}/u', ' ', $post_title);
-  // 投稿タイトルが自動的にHTMLエンティティや特殊文字に変換されることへの対応
-  $post_title = html_entity_decode($post_title);
+
+  // タイトルが「自動下書き」の場合は画像を生成しない
+  if ($post_title === __( 'Auto Draft' )) {
+    return false;
+  }
+
+  // タイトルの整形
+  $post_title = sanitize_post_title($post_title);
   if (!$post_title) {
     return false;
   }
@@ -283,44 +297,44 @@ if ( !function_exists( 'generate_dynamic_featured_image' ) ):
 function generate_dynamic_featured_image($post_id) {
   // 自動保存やリビジョン、自動下書きの場合は処理を終了
   if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-    return;
+    return false;
   }
 
   // 投稿が下書き、レビュー待ち、または公開以外のステータスの場合は処理を終了
   $post_status = get_post_status($post_id);
   if (!in_array($post_status, ['publish'])) {
-    return;
+    return false;
   }
 
   // 投稿タイプが post, page, カスタム投稿 以外の場合は処理を終了
   $post_type = get_post_type($post_id);
   $custom_post_types = get_post_types(['_builtin' => false]); // すべてのカスタム投稿タイプを取得
   if (!in_array($post_type, array_merge(['post', 'page'], $custom_post_types))) {
-    return;
+    return false;
   }
 
   // GDライブラリがインストールされていない場合は処理を終了
   if (!extension_loaded('gd')) {
     error_log('GD library does not exist.');
-    return;
-  }
-
-  // タイトルが「自動下書き」の場合は画像を生成しない
-  if ($post_title === __( 'Auto Draft' )) {
-    return;
+    return false;
   }
 
   // すでにアイキャッチ画像が設定されている場合は処理を終了
   $current_thumbnail_id = get_post_thumbnail_id($post_id);
   if ($current_thumbnail_id) {
-    return;
+    return false;
   }
 
   // 「タイトルからアイキャッチ生成をする」が有効でない場合は処理を終了
   $is_checked = isset($_POST['generate_featured_image_from_title']) && (intval($_POST['generate_featured_image_from_title']) == 1);
   if (!$is_checked) {
-    return;
+    return false;
   }
+
+  // 投稿タイトルと投稿者名を取得
+  $post_title = get_the_title($post_id);
+  // タイトルの整形
+  $post_title = sanitize_post_title($post_title);
 
   // 投稿者ID取得
   $author_id = get_post_field('post_author', $post_id);
@@ -331,17 +345,13 @@ function generate_dynamic_featured_image($post_id) {
 
   // 画像のサイズを設定
   $width = 1280;
-  // $height = 720;
   // Cocoon設定のサムネイル画像サイズに適した高さ
-  $height = get_thumbnail_height($width);
+  $height = get_thumbnail_height($width); // デフォルトだと720
 
   // アイキャッチ画像のパスを定義
   $upload_path = get_theme_featured_images_path();
   $post_title_hash = md5($post_title . $avatar_url . $author_name . $width . 'x' . $height);
   $new_image_path = get_dynamic_image_path($post_id, $upload_path, $post_title_hash);
-  // // デバッグ用のファイル名
-  // $current_time = current_time('YmdHis');
-  // $new_image_path = trailingslashit($upload_path) . 'featured-image-' . $post_id . '-' . $current_time . '-' . $post_title_hash . '.png';
 
   // すでにメディアに同じファイルが登録されている場合は処理を終了
   $existing_attachment_id = attachment_url_to_postid($new_image_path);

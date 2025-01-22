@@ -1169,7 +1169,7 @@ endif;
 //生成アイキャッチディレクトリ
 if ( !function_exists( 'get_theme_featured_images_path' ) ):
 function get_theme_featured_images_path(){
-  $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-featured-images/';
+  $dir = WP_CONTENT_DIR.'/uploads/'.COCOON_FEATURED_IMAGES_DIR_NAME.'/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
@@ -1178,7 +1178,7 @@ endif;
 //生成SNSディレクトリ
 if ( !function_exists( 'get_theme_sns_images_path' ) ):
 function get_theme_sns_images_path(){
-  $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-sns-images/';
+  $dir = WP_CONTENT_DIR.'/uploads/'.COCOON_SNS_IMAGES_DIR_NAME.'/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
@@ -2717,6 +2717,19 @@ function get_singular_sns_share_image_url(){
     $image = wp_get_attachment_image_src( $image_id, 'full');
     if (isset($image[0])) {
       $sns_image_url = $image[0];
+      // _v($sns_image_url);
+      // タイトルアイキャッチが生成されている場合
+      if (preg_match('{/wp-content/uploads/'.COCOON_FEATURED_IMAGES_DIR_NAME.'/featured-image-\d+-[a-f0-9]{32}\.png}', $sns_image_url)) {
+
+        // _v('m='.$sns_image_url);
+        $tmp_image_url = str_replace(COCOON_FEATURED_IMAGES_DIR_NAME, COCOON_SNS_IMAGES_DIR_NAME, $sns_image_url);
+        // SNS画像が存在している場合
+        if (file_exists(url_to_local($tmp_image_url))) {
+          // SNS画像URLに変更
+          $sns_image_url = $tmp_image_url;
+          // _v('r='.$sns_image_url);
+        }
+      }
     }
   } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive() && is_auto_post_thumbnail_enable()) {//投稿にアイキャッチは無いが画像がある場合の処理
     if (isset($image[2])) {
