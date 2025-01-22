@@ -5499,7 +5499,10 @@ ol, ul {
   text-align: right;
 }
 
-.tab-caption-box-label.box-label,
+.tab-caption-box-label.box-label {
+  margin-bottom: 3px;
+}
+
 .label-box-label.box-label {
   margin-bottom: -3px;
 }

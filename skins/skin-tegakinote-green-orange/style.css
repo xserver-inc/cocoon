@@ -1127,7 +1127,7 @@ pre {
 }
 
 /* 白抜きボックス(クラシックエディターのみ) */
-.blank-box, .is-style-blank-box-red, .is-style-blank-box-navy, .is-style-blank-box-blue, .is-style-blank-box-yellow, .is-style-blank-box-green, .is-style-blank-box-pink, .is-style-blank-box-orange, .is-style-sticky-gray, .is-style-sticky-yellow, .is-style-sticky-red, .is-style-sticky-blue, .is-style-sticky-green {
+.blank-box:not(.wp-block), .is-style-blank-box-red, .is-style-blank-box-navy, .is-style-blank-box-blue, .is-style-blank-box-yellow, .is-style-blank-box-green, .is-style-blank-box-pink, .is-style-blank-box-orange, .is-style-sticky-gray, .is-style-sticky-yellow, .is-style-sticky-red, .is-style-sticky-blue, .is-style-sticky-green {
 	border-color: #bbbfbf;
 }
 
