@@ -5018,13 +5018,13 @@ body.wp-admin {
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: var(--cocoon-custom-border-color);
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
   color: var(--cocoon-text-color);
 }
 .admin-settings .demo .tab-caption-box-content {
-  margin-top: -3px;
   border-width: 3px;
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
@@ -13561,13 +13561,13 @@ body.wp-admin {
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: var(--cocoon-custom-border-color);
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
   color: var(--cocoon-text-color);
 }
 .admin-settings .demo .tab-caption-box-content {
-  margin-top: -3px;
   border-width: 3px;
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
@@ -22751,13 +22751,13 @@ select option.fa:before {
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: var(--cocoon-custom-border-color);
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
   color: var(--cocoon-text-color);
 }
 .components-popover__content .tab-caption-box-content {
-  margin-top: -3px;
   border-width: 3px;
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
