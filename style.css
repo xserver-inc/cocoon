@@ -8735,6 +8735,7 @@ ul.timeline ul ul ul {
 
 .is-style-accordion {
   padding: 0;
+  background-color: transparent;
 }
 .is-style-accordion.has-border-color .faq-question {
   border: none;
@@ -8761,6 +8762,7 @@ ul.timeline ul ul ul {
 }
 .is-style-accordion > .faq > .faq-answer {
   padding: 1em 0.5em;
+  background-color: var(--cocoon-custom-background-color);
 }
 
 .faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-item-label {
