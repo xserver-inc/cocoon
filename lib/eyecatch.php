@@ -177,7 +177,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
     }
 
     // アバター画像の高さを考慮して最大行数を計算
-    $avatar_size = 64;
+    $avatar_size = 82;
     $avatar_margin = $margin + 41; // アバター画像の余白を考慮
     $available_height = $height - $avatar_size - $avatar_margin;
     $max_row = floor($available_height / ($font_size + 41)); // 行間を含めた行の高さで割る
@@ -245,8 +245,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
       $radius = $avatar_size / 2;
 
       // 円を描画（マスク処理がうまくいかなかったので、背景色の太い円でアバター画像を丸型にする）
-      // 線の太さを設定
-      $circle_width = 30;
+      $circle_width = floor(($avatar_size / 2) * sqrt(2)); // 線の太さを設定
       // imagesetthickness($image, $circle_width); // 線の幅を30ピクセルに設定
       // imagearc($image, $center_x, $center_y, $avatar_size + $circle_width, $avatar_size + $circle_width, 0, 360, $circle_color);
       // imagesetthicknessで線の幅を設定すると綺麗な描けなかったのでforループを使用してひとつずつ描画する
