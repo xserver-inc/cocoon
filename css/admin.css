@@ -3691,8 +3691,8 @@ body.wp-admin {
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
-  top: -26px;
-  line-height: 1.8;
+  top: -27px;
+  height: 24px;
   color: var(--cocoon-white-color);
   left: -3px;
   border-radius: 6px 6px 0 0;
@@ -5018,13 +5018,13 @@ body.wp-admin {
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: var(--cocoon-custom-border-color);
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
   color: var(--cocoon-text-color);
 }
 .admin-settings .demo .tab-caption-box-content {
-  margin-top: -3px;
   border-width: 3px;
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
@@ -5318,6 +5318,7 @@ body.wp-admin {
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 }
 .admin-settings .demo .toggle-button::before {
   content: "\f067";
@@ -6750,6 +6751,7 @@ body.wp-admin {
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
+  background-clip: padding-box;
 }
 .admin-settings .demo .cocoon-block-balloon.not-nested-style.sbs-think > .speech-balloon::before {
   left: -29px;
@@ -8122,6 +8124,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-accordion {
   padding: 0;
+  background-color: transparent;
 }
 .admin-settings .demo .is-style-accordion.has-border-color .faq-question {
   border: none;
@@ -8148,6 +8151,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-accordion > .faq > .faq-answer {
   padding: 1em 0.5em;
+  background-color: var(--cocoon-custom-background-color);
 }
 .admin-settings .demo .faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-item-label {
   color: #fff;
@@ -12230,8 +12234,8 @@ body.wp-admin {
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
-  top: -26px;
-  line-height: 1.8;
+  top: -27px;
+  height: 24px;
   color: var(--cocoon-white-color);
   left: -3px;
   border-radius: 6px 6px 0 0;
@@ -13557,13 +13561,13 @@ body.wp-admin {
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: var(--cocoon-custom-border-color);
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
   color: var(--cocoon-text-color);
 }
 .admin-settings .demo .tab-caption-box-content {
-  margin-top: -3px;
   border-width: 3px;
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
@@ -13857,6 +13861,7 @@ body.wp-admin {
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 }
 .admin-settings .demo .toggle-button::before {
   content: "\f067";
@@ -15289,6 +15294,7 @@ body.wp-admin {
   border-color: var(--cocoon-custom-border-color);
   background-color: var(--cocoon-custom-background-color);
   border-radius: 50%;
+  background-clip: padding-box;
 }
 .admin-settings .demo .cocoon-block-balloon.not-nested-style.sbs-think > .speech-balloon::before {
   left: -29px;
@@ -16661,6 +16667,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-accordion {
   padding: 0;
+  background-color: transparent;
 }
 .admin-settings .demo .is-style-accordion.has-border-color .faq-question {
   border: none;
@@ -16687,6 +16694,7 @@ body.wp-admin {
 }
 .admin-settings .demo .is-style-accordion > .faq > .faq-answer {
   padding: 1em 0.5em;
+  background-color: var(--cocoon-custom-background-color);
 }
 .admin-settings .demo .faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-item-label {
   color: #fff;
@@ -21415,8 +21423,8 @@ select option.fa:before {
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
-  top: -26px;
-  line-height: 1.8;
+  top: -27px;
+  height: 24px;
   color: var(--cocoon-white-color);
   left: -3px;
   border-radius: 6px 6px 0 0;
@@ -22743,13 +22751,13 @@ select option.fa:before {
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: var(--cocoon-custom-border-color);
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
   color: var(--cocoon-text-color);
 }
 .components-popover__content .tab-caption-box-content {
-  margin-top: -3px;
   border-width: 3px;
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
@@ -23043,6 +23051,7 @@ select option.fa:before {
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 }
 .components-popover__content .toggle-button::before {
   content: "\f067";

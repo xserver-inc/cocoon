@@ -1496,13 +1496,13 @@ div.search-form{
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: var(--cocoon-custom-border-color);
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
   color: var(--cocoon-text-color);
 }
 .tab-caption-box-content{
-  margin-top: -3px;
   border-width: 3px;
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
@@ -1688,6 +1688,7 @@ $toggle_border_width: 2px;
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 
   &::before{
     content: '\f067';

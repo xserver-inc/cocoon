@@ -71,6 +71,7 @@
 //アコーディオンスタイル
 .is-style-accordion{
   padding: 0;
+  background-color:transparent;
 
   &.has-border-color{
     .faq-question{
@@ -111,6 +112,7 @@
 
     >.faq-answer{
       padding: 1em .5em;
+      background-color: var(--cocoon-custom-background-color);
     }
   }
 }
