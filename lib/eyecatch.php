@@ -14,6 +14,19 @@ function sanitize_post_title($post_title) {
   $post_title = preg_replace('/\s{2,}/u', ' ', $post_title);
   // 投稿タイトルが自動的にHTMLエンティティや特殊文字に変換されることへの対応
   $post_title = html_entity_decode($post_title);
+  // 絵文字を除外する
+  $post_title = preg_replace([
+    '/[\x{1F600}-\x{1F64F}]/u', // 顔文字
+    '/[\x{1F300}-\x{1F5FF}]/u', // その他のシンボル
+    '/[\x{1F680}-\x{1F6FF}]/u', // 交通機関と地図記号
+    '/[\x{1F700}-\x{1F77F}]/u', // アルケミー記号
+    '/[\x{1F780}-\x{1F7FF}]/u', // 幾何学模様
+    '/[\x{1F800}-\x{1F8FF}]/u', // 装飾用記号
+    '/[\x{1F900}-\x{1F9FF}]/u', // 装飾用記号補助
+    '/[\x{1FA00}-\x{1FA6F}]/u', // 装飾用記号補助
+    '/[\x{1FA70}-\x{1FAFF}]/u', // 装飾用記号補助
+    '/[\x{2600}-\x{26FF}]/u'    // その他のシンボル
+  ], '', $post_title);
   return $post_title;
 }
 endif;
