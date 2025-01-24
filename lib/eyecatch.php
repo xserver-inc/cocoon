@@ -240,13 +240,14 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
       imagedestroy($avatar_image);
 
       // 投稿者名を描画エリアに収まるように省略する
+      $author_name_font_size = 42;
       $max_author_name_width = $width - $avatar_x - $avatar_size - 30 - $margin; // アバター画像の幅と余白を考慮
-      $author_name_box = imagettfbbox($font_size - 6, 0, $font_path, $author_name);
+      $author_name_box = imagettfbbox($author_name_font_size - 6, 0, $font_path, $author_name);
       $author_name_width = $author_name_box[2] - $author_name_box[0];
 
       // 投稿者名が最大幅を超える場合の処理
       if ($author_name_width > $max_author_name_width) {
-        $ellipsis_width = imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($font_size - 6, 0, $font_path, $ellipsis)[0]; // 省略記号の幅を計算
+        $ellipsis_width = imagettfbbox($author_name_font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($author_name_font_size - 6, 0, $font_path, $ellipsis)[0]; // 省略記号の幅を計算
         // 減算して省略記号の幅を最大著者名幅から引く
         $max_author_name_width -= $ellipsis_width;
 
@@ -255,7 +256,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
           // 著者名を指定した長さに切り詰める
           $truncated_author_name = mb_substr($author_name, 0, $i);
           // 切り詰めた著者名の幅を計算する
-          $truncated_author_name_width = imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[2] - imagettfbbox($font_size - 6, 0, $font_path, $truncated_author_name)[0];
+          $truncated_author_name_width = imagettfbbox($author_name_font_size - 6, 0, $font_path, $truncated_author_name)[2] - imagettfbbox($author_name_font_size - 6, 0, $font_path, $truncated_author_name)[0];
           // 切り詰めた著者名の幅が最大幅以下か確認する
           if ($truncated_author_name_width <= $max_author_name_width) {
             // 著者名を省略記号付きで更新する
@@ -265,9 +266,9 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
         }
       }
 
-      // 投稿者名をアバター画像の上下中央に配置し、さらに余白を追加（4px上に移動）
-      $author_text_y = $avatar_y + ($avatar_size / 2) + ($font_size / 3) + 6; // 6pxの余白を追加
-      imagettftext($image, $font_size - 6, 0, $avatar_x + $avatar_size + 30, $author_text_y, $text_color, $font_path, $author_name); // 余白を増やして30pxに設定
+      // 投稿者名をアバター画像の上下中央に配置し、さらに余白を追加
+      $author_text_y = $avatar_y + ($avatar_size / 2) + ($author_name_font_size / 3) + 6; // 6pxの余白を追加
+      imagettftext($image, $author_name_font_size - 6, 0, $avatar_x + $avatar_size + 30, $author_text_y, $text_color, $font_path, $author_name); // 余白を増やして30pxに設定
     }
   } else {
     // フォントファイルが見つからない場合の代替処理
