@@ -239,6 +239,21 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
       imagecopyresampled($image, $avatar_image, $avatar_x, $avatar_y, $src_x, $src_y, $avatar_size, $avatar_size, $src_w, $src_h);
       imagedestroy($avatar_image);
 
+      // アバター画像の内径に沿って円を描画
+      $center_x = $avatar_x + ($avatar_size / 2);
+      $center_y = $avatar_y + ($avatar_size / 2);
+      $radius = $avatar_size / 2;
+
+      // 円を描画（マスク処理がうまくいかなかったので、背景色の太い円でアバター画像を丸型にする）
+      // 線の太さを設定
+      $circle_width = 30;
+      // imagesetthickness($image, $circle_width); // 線の幅を30ピクセルに設定
+      // imagearc($image, $center_x, $center_y, $avatar_size + $circle_width, $avatar_size + $circle_width, 0, 360, $circle_color);
+      // imagesetthicknessで線の幅を設定すると綺麗な描けなかったのでforループを使用してひとつずつ描画する
+      for ($i = 0; $i < $circle_width; $i++) {
+        imagearc($image, $center_x, $center_y, $avatar_size + $i, $avatar_size + $i, 0, 360, $background_color_code);
+      }
+
       // 投稿者名を描画エリアに収まるように省略する
       $author_name_font_size = 42;
       $max_author_name_width = $width - $avatar_x - $avatar_size - 30 - $margin; // アバター画像の幅と余白を考慮
