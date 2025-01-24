@@ -31,6 +31,13 @@ function sanitize_post_title($post_title) {
 }
 endif;
 
+// 画像幅に合わせて各部分のサイズを変更
+if ( !function_exists( 'get_dynamic_featured_image_size' ) ) :
+function get_dynamic_featured_image_size($canvas_size, $parts_size) {
+  return round(($parts_size / 1280) * $canvas_size);
+}
+endif;
+
 // GDライブラリを用いた動的画像生成関数
 if ( !function_exists( 'generate_dynamic_image' ) ):
 function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
@@ -76,9 +83,9 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
   list($r, $g, $b) = sscanf($border_color_code, "#%02x%02x%02x");
   $border_color = imagecolorallocate($image, $r, $g, $b);
 
-  $border_width = 30;
+  $border_width = get_dynamic_featured_image_size($width, 30);
 
-  // 背景を塗りつぶす - 30pxのボーダー部分を描画し、その内側を背景色で塗りつぶす
+  // 背景を塗りつぶす のボーダー部分を描画し、その内側を背景色で塗りつぶす
   imagefilledrectangle($image, 0, 0, $width, $height, $border_color);
   imagefilledrectangle($image, $border_width, $border_width, $width - $border_width, $height - $border_width, $background_color);
 
@@ -107,7 +114,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
   }
 
   // フォントサイズを設定
-  $font_size = 48;
+  $font_size = get_dynamic_featured_image_size($width, 48);
   // 省略記号を設定
   $ellipsis = '...';
 
@@ -190,10 +197,12 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
     }
 
     // アバター画像の高さを考慮して最大行数を計算
-    $avatar_size = 82;
-    $avatar_margin = $margin + 41; // アバター画像の余白を考慮
+    $line_space = get_dynamic_featured_image_size($width, 40);
+    $avatar_top_space = get_dynamic_featured_image_size($width, $line_space + 1);
+    $avatar_size = get_dynamic_featured_image_size($width, 82);
+    $avatar_margin = $margin + $avatar_top_space; // アバター画像の余白を考慮
     $available_height = $height - $avatar_size - $avatar_margin;
-    $max_row = floor($available_height / ($font_size + 41)); // 行間を含めた行の高さで割る
+    $max_row = floor($available_height / ($font_size + $avatar_top_space)); // 行間を含めた行の高さで割る
 
     // 行数が最大行数を超える場合の処理
     if (count($lines) > $max_row) {
@@ -213,14 +222,14 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
     }
 
     // 各行を描画
-    $y = 150;
+    $y = get_dynamic_featured_image_size($width, 150);
     foreach ($lines as $line) {
       imagettftext($image, $font_size, 0, $margin, $y, $text_color, $font_path, $line);
-      $y += $font_size + 40; // 行間をさらに広く設定
+      $y += $font_size + $line_space; // 行間をさらに広く設定
     }
 
     if (empty($avatar_url)) {
-      $avatar_url = get_avatar_url($author_id, ['size' => 64]); // WordPressデフォルトのアバター画像を取得
+      $avatar_url = get_avatar_url($author_id, ['size' => $avatar_size]); // WordPressデフォルトのアバター画像を取得
     }
     $avatar_path = url_to_local($avatar_url);
     if (!file_exists($avatar_path)) {
@@ -248,7 +257,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
 
       // アバター画像を描画
       $avatar_x = $margin;
-      $avatar_y = $height - $avatar_size - $margin + 40; // 下部に余白を持たせて配置
+      $avatar_y = $height - $avatar_size - $margin + $line_space; // 下部に余白を持たせて配置
       imagecopyresampled($image, $avatar_image, $avatar_x, $avatar_y, $src_x, $src_y, $avatar_size, $avatar_size, $src_w, $src_h);
       imagedestroy($avatar_image);
 
@@ -267,14 +276,14 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
       }
 
       // 投稿者名を描画エリアに収まるように省略する
-      $author_name_font_size = 36;
-      $max_author_name_width = $width - $avatar_x - $avatar_size - 30 - $margin; // アバター画像の幅と余白を考慮
-      $author_name_box = imagettfbbox($author_name_font_size - 6, 0, $font_path, $author_name);
+      $author_name_font_size = get_dynamic_featured_image_size($width, 38);
+      $max_author_name_width = $width - $avatar_x - $avatar_size - $border_width - $margin; // アバター画像の幅と余白を考慮
+      $author_name_box = imagettfbbox($author_name_font_size, 0, $font_path, $author_name);
       $author_name_width = $author_name_box[2] - $author_name_box[0];
 
       // 投稿者名が最大幅を超える場合の処理
       if ($author_name_width > $max_author_name_width) {
-        $ellipsis_width = imagettfbbox($author_name_font_size - 6, 0, $font_path, $ellipsis)[2] - imagettfbbox($author_name_font_size - 6, 0, $font_path, $ellipsis)[0]; // 省略記号の幅を計算
+        $ellipsis_width = imagettfbbox($author_name_font_size, 0, $font_path, $ellipsis)[2] - imagettfbbox($author_name_font_size, 0, $font_path, $ellipsis)[0]; // 省略記号の幅を計算
         // 減算して省略記号の幅を最大著者名幅から引く
         $max_author_name_width -= $ellipsis_width;
 
@@ -283,7 +292,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
           // 著者名を指定した長さに切り詰める
           $truncated_author_name = mb_substr($author_name, 0, $i);
           // 切り詰めた著者名の幅を計算する
-          $truncated_author_name_width = imagettfbbox($author_name_font_size - 6, 0, $font_path, $truncated_author_name)[2] - imagettfbbox($author_name_font_size - 6, 0, $font_path, $truncated_author_name)[0];
+          $truncated_author_name_width = imagettfbbox($author_name_font_size, 0, $font_path, $truncated_author_name)[2] - imagettfbbox($author_name_font_size, 0, $font_path, $truncated_author_name)[0];
           // 切り詰めた著者名の幅が最大幅以下か確認する
           if ($truncated_author_name_width <= $max_author_name_width) {
             // 著者名を省略記号付きで更新する
@@ -295,7 +304,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
 
       // 投稿者名をアバター画像の上下中央に配置し、さらに余白を追加
       $author_text_y = $avatar_y + ($avatar_size / 2) + ($author_name_font_size / 3); // 6pxの余白を追加
-      imagettftext($image, $author_name_font_size, 0, $avatar_x + $avatar_size + 30, $author_text_y, $text_color, $font_path, $author_name); // 余白を増やして30pxに設定
+      imagettftext($image, $author_name_font_size, 0, $avatar_x + $avatar_size + $border_width, $author_text_y, $text_color, $font_path, $author_name); // 余白を増やして30pxに設定
     }
   } else {
     // フォントファイルが見つからない場合の代替処理
