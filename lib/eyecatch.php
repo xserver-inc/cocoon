@@ -410,7 +410,9 @@ function generate_dynamic_featured_image($post_id) {
 
 
     // Twitterカードのサムネイルのアスペクト比に準じた高さ
-    $height = floor($width * 630 / 1200);
+    $width = 1200;
+    $height = 630;
+    // $height = floor($width * 630 / 1200);
 
     // SNS画像のパスを定義
     $upload_path = get_theme_sns_images_path();
