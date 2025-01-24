@@ -251,11 +251,11 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
       // imagearc($image, $center_x, $center_y, $avatar_size + $circle_width, $avatar_size + $circle_width, 0, 360, $circle_color);
       // imagesetthicknessで線の幅を設定すると綺麗な描けなかったのでforループを使用してひとつずつ描画する
       for ($i = 0; $i < $circle_width; $i++) {
-        imagearc($image, $center_x, $center_y, $avatar_size + $i, $avatar_size + $i, 0, 360, $background_color_code);
+        imagearc($image, $center_x, $center_y, $avatar_size + $i, $avatar_size + $i, 0, 360, $background_color);
       }
 
       // 投稿者名を描画エリアに収まるように省略する
-      $author_name_font_size = 42;
+      $author_name_font_size = 36;
       $max_author_name_width = $width - $avatar_x - $avatar_size - 30 - $margin; // アバター画像の幅と余白を考慮
       $author_name_box = imagettfbbox($author_name_font_size - 6, 0, $font_path, $author_name);
       $author_name_width = $author_name_box[2] - $author_name_box[0];
@@ -282,8 +282,8 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
       }
 
       // 投稿者名をアバター画像の上下中央に配置し、さらに余白を追加
-      $author_text_y = $avatar_y + ($avatar_size / 2) + ($author_name_font_size / 3) + 6; // 6pxの余白を追加
-      imagettftext($image, $author_name_font_size - 6, 0, $avatar_x + $avatar_size + 30, $author_text_y, $text_color, $font_path, $author_name); // 余白を増やして30pxに設定
+      $author_text_y = $avatar_y + ($avatar_size / 2) + ($author_name_font_size / 3); // 6pxの余白を追加
+      imagettftext($image, $author_name_font_size, 0, $avatar_x + $avatar_size + 30, $author_text_y, $text_color, $font_path, $author_name); // 余白を増やして30pxに設定
     }
   } else {
     // フォントファイルが見つからない場合の代替処理
