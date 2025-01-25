@@ -1350,17 +1350,6 @@ pre {
 }
 
 /************************
-* マイクロバルーン
-************************/
-.micro-balloon:after, .micro-balloon:before {
-	top: calc(100% - 0px);
-}
-
-.micro-bottom.micro-balloon:after, .micro-bottom.micro-balloon:before {
-	bottom: calc(100% - 0px);
-}
-
-/************************
 * 吹き出し
 ************************/
 .speech-wrap{
