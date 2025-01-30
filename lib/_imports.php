@@ -12,11 +12,8 @@ require_once ABSPATH.'wp-admin/includes/file.php';//WP_Filesystemの使用
 require_once abspath(__FILE__).'utils.php';      //ユーティリティー関数
 require_once abspath(__FILE__).'page-settings/skin-funcs.php';       //スキン設定関数
 //スキンのセット
-if (get_skin_url() ) {
-  //最初の読み込み
-  if (!isset($_POST[HIDDEN_FIELD_NAME])) {
-    cocoon_skin_settings();  //スキン
-  }
+if (get_skin_url() && !isset($_POST[HIDDEN_FIELD_NAME])) {
+  cocoon_skin_settings();  //スキン
 }
 
 // require_once abspath(__FILE__).'language.php';   //マルチ言語設定
