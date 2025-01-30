@@ -17,12 +17,6 @@ if (get_skin_url() ) {
   if (!isset($_POST[HIDDEN_FIELD_NAME])) {
     cocoon_skin_settings();  //スキン
   }
-  //公開ページ
-  if (!is_admin()) {
-    add_action('wp', function() {
-      cocoon_skin_settings();  //スキン
-    });
-  }
 }
 
 // require_once abspath(__FILE__).'language.php';   //マルチ言語設定
