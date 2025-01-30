@@ -91,6 +91,20 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- アイキャッチ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_FEATURED_IMAGE_FROM_TITLE, __('アイキャッチ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_FEATURED_IMAGE_FROM_TITLE , is_featured_image_from_title_enable(), __( '「タイトルからアイキャッチを生成する」機能を有効にする', THEME_NAME ).__( '（β版）', THEME_NAME ));
+            generate_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2025/01/featured-image-from-title.png');
+            generate_tips_tag(__( 'エディターのアイキャッチ設定エリア内に、タイトルからアイキャッチを自動生成するオプションを追加します。', THEME_NAME ).__( '「公開（保存）」ボタンが押された時だけ画像が生成されます。', THEME_NAME ).__( 'ベータ版機能ですので、仕様が変わる可能性があるのでご了承ください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         </tbody>
     </table>
 

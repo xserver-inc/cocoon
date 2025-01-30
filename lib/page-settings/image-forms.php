@@ -163,7 +163,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'wide' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/wide.png', __( 'テレビ（地デジ）やYouTubeと同じ比率。', THEME_NAME ), THUMB320WIDTH).
-                __( '9:16, 1:1.777..（地デジ・YouTube比）デフォルト', THEME_NAME ),
+                __( '9:16, 1:1.777..（地デジ・YouTube比）デフォルト', THEME_NAME ).__( '【推奨】', THEME_NAME ),
 
               'golden_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME ), THUMB320WIDTH).
                 __( '約5:8, 1:1.618..（黄金比）', THEME_NAME ),
@@ -204,7 +204,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       </tbody>
     </table>
 
-    <p><?php _e( 'これらの設定で変更されるサムネイル部分はこちら。', THEME_NAME ); ?></p>
+    <p><?php _e( 'これらの設定で変更される画像部分はこちら。', THEME_NAME ); ?></p>
     <ol>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/index.jpg', __( 'インデックス、アーカイブ、検索結果ページのエントリーカードのサムネイル。', THEME_NAME )).__('インデックスカード', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/new.png', __( '新着記事ウィジェットのサムネイル。', THEME_NAME ), THUMB320WIDTH).__('新着記事', THEME_NAME); ?></li>
@@ -213,6 +213,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/carousel.png', __( 'カルーセルカードのサムネイル。', THEME_NAME )).__('カルーセル', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/page-navi.png', __( 'ページ送りナビのサムネイル。※デフォルトのみ）', THEME_NAME )).__('ページ送りナビ', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/blogcard.png', __( '内部ブログカード、外部ブログカードのサムネイル。', THEME_NAME )).__('ブログカード', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2025/01/title-eyechatch.png', __( 'エディターの「タイトルからアイキャッチを生成する」で生成したアイキャッチ。', THEME_NAME )).__('タイトルから生成したアイキャッチ', THEME_NAME); ?></li>
     </ol>
   </div>
 </div>

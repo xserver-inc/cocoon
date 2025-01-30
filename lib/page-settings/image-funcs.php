@@ -118,12 +118,12 @@ function get_thumbnail_aspect_ratio(){
     case 'golden_ratio':
       $ratio = 1/((1 + sqrt(5)) / 2);
       break;
+    case 'postcard':
+      $ratio = 2/3;
+      break;
     case 'silver_ratio':
       $ratio = 1/sqrt(2);
       break;
-      case 'postcard':
-        $ratio = 2/3;
-        break;
     case 'standard':
       $ratio = 3/4;
       break;
