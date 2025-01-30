@@ -13,7 +13,7 @@ require_once abspath(__FILE__).'utils.php';      //ユーティリティー関�
 require_once abspath(__FILE__).'page-settings/skin-funcs.php';       //スキン設定関数
 //スキンのセット
 if (get_skin_url() && !isset($_POST[HIDDEN_FIELD_NAME])) {
-  cocoon_skin_settings();  //スキン
+  cocoon_skin_settings();  //スキン設定
 }
 
 // require_once abspath(__FILE__).'language.php';   //マルチ言語設定
