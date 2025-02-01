@@ -153,6 +153,7 @@ export function FAQEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
+          enableAlpha={true}
           colorSettings={ [
             {
               label: __( '質問ラベル色', THEME_NAME ),

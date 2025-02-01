@@ -512,6 +512,7 @@ $bb_green: var(--cocoon-green-color);
   @include bace_box;
   border-width: 3px;
   border-color: var(--cocoon-custom-border-color);
+  background-clip: padding-box;
 }
 @mixin sticky{
   border-width: 0 0 0 6px;
@@ -872,6 +873,7 @@ div.search-form{
   font-size: 14px;
   position: relative;
   transition: $bgc_hover_anime;
+  background-clip: padding-box;
 
   amp-img{
     position: absolute;
@@ -1161,6 +1163,9 @@ div.search-form{
   display: table;
   margin-bottom: 0.8em;
   font-size: 0.8em;
+  background-clip: padding-box;
+
+
   &.has-background{
     color: var(--cocoon-white-color);
   }
@@ -1424,7 +1429,7 @@ div.search-form{
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
   border-radius: var(--cocoon-basic-border-radius);
-  background-color: var(--cocoon-custom-background-color);
+  // background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
   &.has-border-color:not(.not-nested-style) .box-label{
     color: var(--cocoon-white-color);
@@ -1491,13 +1496,13 @@ div.search-form{
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: var(--cocoon-custom-border-color);
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-top-left-radius: var(--cocoon-middle-border-radius);
   border-top-right-radius: var(--cocoon-middle-border-radius);
   color: var(--cocoon-text-color);
 }
 .tab-caption-box-content{
-  margin-top: -3px;
   border-width: 3px;
   border-style: solid;
   border-color: var(--cocoon-custom-border-color);
@@ -1506,6 +1511,7 @@ div.search-form{
   padding: 0.4em 0.8em;
   border-radius: var(--cocoon-middle-border-radius);
   border-top-left-radius: 0;
+  background-clip: padding-box;
 }
 .has-border-color > .tab-caption-box-label{
   background-color: var(--cocoon-custom-border-color);
@@ -1648,6 +1654,7 @@ html .body .label-box.has-white-background-color .box-content {
     height: 0;
     transition: $bgc_hover_anime;
     overflow: hidden;
+    background-clip: padding-box;
   }
 }
 
@@ -1681,6 +1688,7 @@ $toggle_border_width: 2px;
   position: relative;
   margin: 0;
   color: var(--cocoon-text-color);
+  background-clip: padding-box;
 
   &::before{
     content: '\f067';

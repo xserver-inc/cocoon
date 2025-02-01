@@ -22,6 +22,9 @@ update_theme_option(OP_EDITOR_TEXT_COLOR);
 //タグをチェックリストにするか
 update_theme_option(OP_EDITOR_TAG_CHECK_LIST_ENABLE);
 
+//「タイトルからアイキャッチを生成する」を有効にするか
+update_theme_option(OP_FEATURED_IMAGE_FROM_TITLE);
+
 //ルビボタン有効
 update_theme_option(OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE);
 

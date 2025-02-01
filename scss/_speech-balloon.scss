@@ -345,6 +345,7 @@ div.sbs-think{
         border-color: var(--cocoon-custom-border-color);
         background-color: var(--cocoon-custom-background-color);
         border-radius: 50%;
+        background-clip: padding-box;
       }
       &::before {
         left: -29px;

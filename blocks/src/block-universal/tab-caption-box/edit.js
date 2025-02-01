@@ -135,6 +135,7 @@ export function TabCaptionBoxEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
+          enableAlpha={true}
           colorSettings={ [
             {
               label: __( 'ボーダー色', THEME_NAME ),

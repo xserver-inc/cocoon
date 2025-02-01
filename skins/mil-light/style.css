@@ -897,12 +897,6 @@ span.post-date {
     border: 1px solid #b3ada8;
     border-radius: 9px;
 }
-.micro-bottom.micro-balloon:after, .micro-bottom.micro-balloon:before {
-    bottom: calc(100% - 0px);
-}
-.micro-balloon:after, .micro-balloon:before {
-    top: calc(100% - 0px);
-}
 .btn, .ranking-item-link-buttons a, .btn-wrap > a, .wp-block-freeform .btn-wrap > a {
     border-radius: 13px;
     padding: 10px 20px;

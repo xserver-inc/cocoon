@@ -56,6 +56,7 @@ export function BlankBoxEdit( props ) {
       <InspectorControls>
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
+          enableAlpha={true}
           colorSettings={ [
             {
               label: __( 'ボーダー色', THEME_NAME ),

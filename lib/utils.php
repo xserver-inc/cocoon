@@ -1169,7 +1169,16 @@ endif;
 //生成アイキャッチディレクトリ
 if ( !function_exists( 'get_theme_featured_images_path' ) ):
 function get_theme_featured_images_path(){
-  $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-featured-images/';
+  $dir = WP_CONTENT_DIR.'/uploads/'.COCOON_FEATURED_IMAGES_DIR_NAME.'/';
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
+  return $dir;
+}
+endif;
+
+//生成SNSディレクトリ
+if ( !function_exists( 'get_theme_sns_images_path' ) ):
+function get_theme_sns_images_path(){
+  $dir = WP_CONTENT_DIR.'/uploads/'.COCOON_SNS_IMAGES_DIR_NAME.'/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
@@ -2708,6 +2717,19 @@ function get_singular_sns_share_image_url(){
     $image = wp_get_attachment_image_src( $image_id, 'full');
     if (isset($image[0])) {
       $sns_image_url = $image[0];
+      // _v($sns_image_url);
+      // タイトルアイキャッチが生成されている場合
+      if (preg_match('{/wp-content/uploads/'.COCOON_FEATURED_IMAGES_DIR_NAME.'/featured-image-\d+-[a-f0-9]{32}\.png}', $sns_image_url)) {
+
+        // _v('m='.$sns_image_url);
+        $tmp_image_url = str_replace(COCOON_FEATURED_IMAGES_DIR_NAME, COCOON_SNS_IMAGES_DIR_NAME, $sns_image_url);
+        // SNS画像が存在している場合
+        if (file_exists(url_to_local($tmp_image_url))) {
+          // SNS画像URLに変更
+          $sns_image_url = $tmp_image_url;
+          // _v('r='.$sns_image_url);
+        }
+      }
     }
   } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive() && is_auto_post_thumbnail_enable()) {//投稿にアイキャッチは無いが画像がある場合の処理
     if (isset($image[2])) {
@@ -3759,6 +3781,65 @@ function get_current_page_url() {
   global $wp;
 
   return home_url(add_query_arg(array(), $wp->request));
+}
+endif;
+
+// Cocoonスキンセッティング関数
+if ( !function_exists( 'cocoon_skin_settings' ) ):
+function cocoon_skin_settings() {
+  global $_THEME_OPTIONS;
+  $temp_options = $_THEME_OPTIONS;
+
+  //スキン用のfunctions.phpがある場合
+  $php_file_path = url_to_local(get_skin_php_url());
+  if (file_exists($php_file_path)) {
+    require_once $php_file_path;
+  }
+
+  //スキン制御がある場合は配列をマージ
+  if (is_array($_THEME_OPTIONS)) {
+    $_THEME_OPTIONS = array_merge($temp_options, $_THEME_OPTIONS);
+  }
+  //スキン側で関数で指定されている場合
+  if ( function_exists( 'get_skin_theme_options' ) ){
+    $options = get_skin_theme_options();
+    if (is_array($options)) {
+      $_THEME_OPTIONS = array_merge($_THEME_OPTIONS, $options);
+    }
+  }
+
+  //スキン用のoption.csvがある場合
+  $csv_file_path = url_to_local(get_skin_csv_url());
+  if (file_exists($csv_file_path)) {
+    $csv_file = new SplFileObject($csv_file_path);
+    $csv_file->setFlags(SplFileObject::READ_CSV);
+    foreach ($csv_file as $line) {
+      //終端の空行を除く処理　空行の場合に取れる値は後述
+      if(isset($line[0]) && isset($line[1])){
+        $name = trim($line[0]);
+        $value = trim($line[1]);
+        //配列オプション名
+        $array_opsion_mames = array(
+          'exclude_widget_classes',
+          'exclude_widget_area_ids',
+        );
+        if (in_array($name, $array_opsion_mames) && includes_string($value, ',')) {
+          $value = explode(',', $value);
+        }
+        $_THEME_OPTIONS[$name] = $value;
+      }
+    }
+  }
+
+  //スキン用のoption.jsonがある場合
+  $json_file_path = url_to_local(get_skin_json_url());
+  if (file_exists($json_file_path)) {
+    $json = wp_filesystem_get_contents($json_file_path);
+    if ($json) {
+      $json_options = json_decode($json, true);
+      $_THEME_OPTIONS = array_merge($_THEME_OPTIONS, $json_options);
+    }
+  }
 }
 endif;
 

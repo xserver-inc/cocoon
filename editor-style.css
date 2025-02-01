@@ -319,8 +319,8 @@ span.btn-wrap {
   font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: 13px;
-  top: -1.8em;
-  line-height: 1.8;
+  top: -27px;
+  height: 24px;
   color: var(--cocoon-white-color);
   left: -3px;
   border-radius: 6px 6px 0 0;

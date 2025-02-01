@@ -9,6 +9,7 @@
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
   border-color: var(--cocoon-custom-border-color);
+  background-clip: padding-box;
 }
 .timeline-box .timeline {
   list-style: none;

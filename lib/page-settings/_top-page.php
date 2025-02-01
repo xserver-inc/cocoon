@@ -103,7 +103,7 @@ if( $is_post_ok ):
   // テーマ設定ページではスキン設定の読み込みを保存後にするために遅らせる
   ///////////////////////////////////////////
   if (get_skin_url() && is_admin_php_page()) {
-    require_once get_template_directory().'/lib/skin.php';   //スキン
+    cocoon_skin_settings();  //スキン設定
   }
 
   ///////////////////////////////////////

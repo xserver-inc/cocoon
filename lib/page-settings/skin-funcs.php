@@ -11,7 +11,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_SKIN_URL', 'skin_url');
 if ( !function_exists( 'get_skin_url' ) ):
 function get_skin_url(){
-  return get_theme_option(OP_SKIN_URL, '');
+  $skin_url = get_theme_option(OP_SKIN_URL, '');
+  $skin_url = apply_filters('get_skin_url', $skin_url);
+  return $skin_url;
 }
 endif;
 

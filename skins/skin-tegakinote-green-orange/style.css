@@ -562,11 +562,19 @@ _:lang(ja)+_:-webkit-full-screen-document, .list-title-in:before, .list-title-in
 	width: calc(34.03% - 2em);
 }
 
+
 @media screen and (max-width: 834px) {
 	.tab-cont.tb1 .ect-tile-card-3 .masonry-brick {
 		width: calc(49.5% - 2em);
 	}
 }
+
+@media screen and (max-width: 480px) {
+  .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap.a-wrap {
+    width: calc(100% - 4em);
+  }
+}
+
 
 /************************
 * カードの囲みボックス
@@ -1118,48 +1126,6 @@ pre {
 	opacity: .5;
 }
 
-/* 白抜きボックス(クラシックエディターのみ) */
-.blank-box, .is-style-blank-box-red, .is-style-blank-box-navy, .is-style-blank-box-blue, .is-style-blank-box-yellow, .is-style-blank-box-green, .is-style-blank-box-pink, .is-style-blank-box-orange, .is-style-sticky-gray, .is-style-sticky-yellow, .is-style-sticky-red, .is-style-sticky-blue, .is-style-sticky-green {
-	border-color: #bbbfbf;
-}
-
-.blank-box.bb-yellow, .bb-yellow.is-style-blank-box-red, .bb-yellow.is-style-blank-box-navy, .bb-yellow.is-style-blank-box-blue, .bb-yellow.is-style-blank-box-yellow, .bb-yellow.is-style-blank-box-green, .bb-yellow.is-style-blank-box-pink, .bb-yellow.is-style-blank-box-orange, .bb-yellow.is-style-sticky-gray, .bb-yellow.is-style-sticky-yellow, .bb-yellow.is-style-sticky-red, .bb-yellow.is-style-sticky-blue, .bb-yellow.is-style-sticky-green {
-	border-color: #ffe865;
-}
-
-.blank-box.bb-red, .bb-red.is-style-blank-box-red, .bb-red.is-style-blank-box-navy, .bb-red.is-style-blank-box-blue, .bb-red.is-style-blank-box-yellow, .bb-red.is-style-blank-box-green, .bb-red.is-style-blank-box-pink, .bb-red.is-style-blank-box-orange, .bb-red.is-style-sticky-gray, .bb-red.is-style-sticky-yellow, .bb-red.is-style-sticky-red, .bb-red.is-style-sticky-blue, .bb-red.is-style-sticky-green {
-	border-color: #ed2c2c;
-}
-
-.blank-box.bb-blue, .bb-blue.is-style-blank-box-red, .bb-blue.is-style-blank-box-navy, .bb-blue.is-style-blank-box-blue, .bb-blue.is-style-blank-box-yellow, .bb-blue.is-style-blank-box-green, .bb-blue.is-style-blank-box-pink, .bb-blue.is-style-blank-box-orange, .bb-blue.is-style-sticky-gray, .bb-blue.is-style-sticky-yellow, .bb-blue.is-style-sticky-red, .bb-blue.is-style-sticky-blue, .bb-blue.is-style-sticky-green {
-	border-color: #4bb0de;
-}
-
-.blank-box.bb-green, .bb-green.is-style-blank-box-red, .bb-green.is-style-blank-box-navy, .bb-green.is-style-blank-box-blue, .bb-green.is-style-blank-box-yellow, .bb-green.is-style-blank-box-green, .bb-green.is-style-blank-box-pink, .bb-green.is-style-blank-box-orange, .bb-green.is-style-sticky-gray, .bb-green.is-style-sticky-yellow, .bb-green.is-style-sticky-red, .bb-green.is-style-sticky-blue, .bb-green.is-style-sticky-green {
-	border-color: #60c48b;
-}
-
-/* タブボックス(クラシックエディターのみ) */
-.blank-box.bb-tab .bb-label, .bb-tab.is-style-blank-box-red .bb-label, .bb-tab.is-style-blank-box-navy .bb-label, .bb-tab.is-style-blank-box-blue .bb-label, .bb-tab.is-style-blank-box-yellow .bb-label, .bb-tab.is-style-blank-box-green .bb-label, .bb-tab.is-style-blank-box-pink .bb-label, .bb-tab.is-style-blank-box-orange .bb-label, .bb-tab.is-style-sticky-gray .bb-label, .bb-tab.is-style-sticky-yellow .bb-label, .bb-tab.is-style-sticky-red .bb-label, .bb-tab.is-style-sticky-blue .bb-label, .bb-tab.is-style-sticky-green .bb-label {
-	background-color: #bbbfbf;
-}
-
-.blank-box.bb-tab.bb-yellow .bb-label, .bb-tab.bb-yellow.is-style-blank-box-red .bb-label, .bb-tab.bb-yellow.is-style-blank-box-navy .bb-label, .bb-tab.bb-yellow.is-style-blank-box-blue .bb-label, .bb-tab.bb-yellow.is-style-blank-box-yellow .bb-label, .bb-tab.bb-yellow.is-style-blank-box-green .bb-label, .bb-tab.bb-yellow.is-style-blank-box-pink .bb-label, .bb-tab.bb-yellow.is-style-blank-box-orange .bb-label, .bb-tab.bb-yellow.is-style-sticky-gray .bb-label, .bb-tab.bb-yellow.is-style-sticky-yellow .bb-label, .bb-tab.bb-yellow.is-style-sticky-red .bb-label, .bb-tab.bb-yellow.is-style-sticky-blue .bb-label, .bb-tab.bb-yellow.is-style-sticky-green .bb-label {
-	background-color: #ffe865;
-}
-
-.blank-box.bb-tab.bb-red .bb-label, .bb-tab.bb-red.is-style-blank-box-red .bb-label, .bb-tab.bb-red.is-style-blank-box-navy .bb-label, .bb-tab.bb-red.is-style-blank-box-blue .bb-label, .bb-tab.bb-red.is-style-blank-box-yellow .bb-label, .bb-tab.bb-red.is-style-blank-box-green .bb-label, .bb-tab.bb-red.is-style-blank-box-pink .bb-label, .bb-tab.bb-red.is-style-blank-box-orange .bb-label, .bb-tab.bb-red.is-style-sticky-gray .bb-label, .bb-tab.bb-red.is-style-sticky-yellow .bb-label, .bb-tab.bb-red.is-style-sticky-red .bb-label, .bb-tab.bb-red.is-style-sticky-blue .bb-label, .bb-tab.bb-red.is-style-sticky-green .bb-label {
-	background-color: #ed2d2c;
-}
-
-.blank-box.bb-tab.bb-blue .bb-label, .bb-tab.bb-blue.is-style-blank-box-red .bb-label, .bb-tab.bb-blue.is-style-blank-box-navy .bb-label, .bb-tab.bb-blue.is-style-blank-box-blue .bb-label, .bb-tab.bb-blue.is-style-blank-box-yellow .bb-label, .bb-tab.bb-blue.is-style-blank-box-green .bb-label, .bb-tab.bb-blue.is-style-blank-box-pink .bb-label, .bb-tab.bb-blue.is-style-blank-box-orange .bb-label, .bb-tab.bb-blue.is-style-sticky-gray .bb-label, .bb-tab.bb-blue.is-style-sticky-yellow .bb-label, .bb-tab.bb-blue.is-style-sticky-red .bb-label, .bb-tab.bb-blue.is-style-sticky-blue .bb-label, .bb-tab.bb-blue.is-style-sticky-green .bb-label {
-	background-color: #4bb0de;
-}
-
-.blank-box.bb-tab.bb-green .bb-label, .bb-tab.bb-green.is-style-blank-box-red .bb-label, .bb-tab.bb-green.is-style-blank-box-navy .bb-label, .bb-tab.bb-green.is-style-blank-box-blue .bb-label, .bb-tab.bb-green.is-style-blank-box-yellow .bb-label, .bb-tab.bb-green.is-style-blank-box-green .bb-label, .bb-tab.bb-green.is-style-blank-box-pink .bb-label, .bb-tab.bb-green.is-style-blank-box-orange .bb-label, .bb-tab.bb-green.is-style-sticky-gray .bb-label, .bb-tab.bb-green.is-style-sticky-yellow .bb-label, .bb-tab.bb-green.is-style-sticky-red .bb-label, .bb-tab.bb-green.is-style-sticky-blue .bb-label, .bb-tab.bb-green.is-style-sticky-green .bb-label {
-	background-color: #60c58b;
-}
-
 /************************
 * ブログカード
 ************************/
@@ -1182,17 +1148,6 @@ pre {
 
 .timeline-item-content {
 	border-left-color: rgba(var(--back-color), 1);
-}
-
-/************************
-* マイクロバルーン
-************************/
-.micro-balloon:after, .micro-balloon:before {
-	top: calc(100% - 0px);
-}
-
-.micro-bottom.micro-balloon:after, .micro-bottom.micro-balloon:before {
-	bottom: calc(100% - 0px);
 }
 
 /************************

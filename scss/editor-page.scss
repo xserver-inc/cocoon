@@ -13,6 +13,14 @@ textarea[name="the_page_memo"]{
   width: 100%;
 }
 
+//「タイトルからアイキャッチを生成する」オプション
+.featured-image-from-title{
+  margin-top: 10px;
+  padding: 5px 0;
+  font-size: 12px;
+}
+
+//新着記事・人気記事・新着情報のカテゴリーチェックボックスリストに高さの上限を定める
 .block-editor-page .category-checkbox-list{
   max-height: 300px;
   overflow: auto;
