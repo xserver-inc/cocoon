@@ -85,6 +85,14 @@ function is_featured_image_from_title_enable(){
 }
 endif;
 
+//「タイトルからアイキャッチを生成する」のチェックボックスをデフォルトで有効にするか
+define('OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT', 'featured_image_from_title_default');
+if ( !function_exists( 'is_featured_image_from_title_default_enable' ) ):
+function is_featured_image_from_title_default_enable(){
+  return get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT, 0);
+}
+endif;
+
 //ルビボタン有効
 define('OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE', 'block_editor_ruby_button_visible');
 if ( !function_exists( 'is_block_editor_ruby_button_visible' ) ):

@@ -441,7 +441,7 @@ function generate_featured_image_from_title_custom_checkbox() {
   ?>
   <div id="featured-image-from-title" class="featured-image-from-title">
     <label>
-      <input type="checkbox" id="generate_featured_image_from_title" name="generate_featured_image_from_title" value="1">
+      <input type="checkbox" id="generate_featured_image_from_title" name="generate_featured_image_from_title" value="<?php echo(is_featured_image_from_title_default_enable() ? '0' : '')?>" <?php echo(is_featured_image_from_title_default_enable() ? 'checked' : '')?>>
       <?php echo esc_js(__('タイトルからアイキャッチを生成する', THEME_NAME)); ?>
     </label>
   </div>
@@ -659,6 +659,6 @@ function add_featured_image_checkbox_nonce() {
   // nonceフィールドを追加してセキュリティを確保
   wp_nonce_field('save_generate_featured', 'generate_featured_image_nonce');
   // チェックボックスの状態を保持するための隠しフィールドを追加
-  echo '<input type="hidden" id="generate_featured_image_from_title_hide" name="generate_featured_image_from_title" value="0">';
+  echo '<input type="hidden" id="generate_featured_image_from_title_hide" name="generate_featured_image_from_title" value="' . (is_featured_image_from_title_default_enable() ? '1' : '0') . '">';
 }
 endif;
