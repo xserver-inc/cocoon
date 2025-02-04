@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.8.4\n"
+"Project-Id-Version: Cocoon 2.8.4.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-01T12:42:43+00:00\n"
+"POT-Creation-Date: 2025-02-04T16:22:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -6860,7 +6860,7 @@ msgid "（β版）"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:103
-msgid "エディターのアイキャッチ設定エリア内に、タイトルからアイキャッチを自動生成するオプションを追加します。"
+msgid "エディターのアイキャッチ設定エリア内に、「タイトルからアイキャッチを生成する」オプションを追加します。"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:103
