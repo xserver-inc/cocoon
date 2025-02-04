@@ -363,7 +363,7 @@ function generate_dynamic_featured_image($post_id) {
   }
 
   // 「タイトルからアイキャッチ生成をする」が有効でない場合は処理を終了
-  $is_checked = isset($_POST['generate_featured_image_from_title']) && (intval($_POST['generate_featured_image_from_title']) == 1);
+  $is_checked = isset($_POST['generate_featured_image_from_title']) && (intval($_POST['generate_featured_image_from_title']) === 1);
   if (!$is_checked) {
     return false;
   }
