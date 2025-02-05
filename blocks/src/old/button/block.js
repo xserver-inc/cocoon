@@ -84,6 +84,7 @@ registerBlockType( 'cocoon-blocks/button', {
                   label: __( '新しいタブで開く', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -164,6 +165,7 @@ registerBlockType( 'cocoon-blocks/button', {
                   label: __( 'グレー', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -184,6 +186,7 @@ registerBlockType( 'cocoon-blocks/button', {
                   label: __( '大', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

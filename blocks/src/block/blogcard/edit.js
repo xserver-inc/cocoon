@@ -84,6 +84,7 @@ export default function edit( { attributes, setAttributes, className } ) {
                 label: __( '続きの記事', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
         </PanelBody>
       </InspectorControls>

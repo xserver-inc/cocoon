@@ -93,6 +93,7 @@ export default [
                     label: __( 'ダウンロード', THEME_NAME ),
                   },
                 ] }
+                __nextHasNoMarginBottom={ true }
               />
             </PanelBody>
           </InspectorControls>

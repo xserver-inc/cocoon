@@ -103,6 +103,7 @@ export default [
                     label: __( '緑色', THEME_NAME ),
                   },
                 ] }
+                __nextHasNoMarginBottom={ true }
               />
             </PanelBody>
           </InspectorControls>

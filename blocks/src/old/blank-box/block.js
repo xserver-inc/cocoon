@@ -84,6 +84,7 @@ registerBlockType( 'cocoon-blocks/blank-box', {
                   label: __( '緑色', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

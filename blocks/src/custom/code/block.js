@@ -106,6 +106,7 @@ export const addBlockControl = createHigherOrderComponent( ( BlockEdit ) => {
                   selectOption = changeOption;
                   props.setAttributes( { className: newClassName } );
                 } }
+                __nextHasNoMarginBottom={ true }
               />
             </PanelBody>
           </InspectorControls>

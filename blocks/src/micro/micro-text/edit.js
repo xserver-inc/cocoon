@@ -63,6 +63,7 @@ export function MicroTextEdit( props ) {
                 label: __( '上寄り', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
 
           <BaseControl label={ __( 'アイコン', THEME_NAME ) }>

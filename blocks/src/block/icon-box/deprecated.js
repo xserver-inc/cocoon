@@ -122,6 +122,7 @@ export default [
                     label: __( 'プロフィール', THEME_NAME ),
                   },
                 ] }
+                __nextHasNoMarginBottom={ true }
               />
             </PanelBody>
           </InspectorControls>

@@ -77,6 +77,7 @@ registerBlockType( 'cocoon-blocks/label-box', {
                   label: __( '緑色', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <BaseControl label={ __( 'アイコン', THEME_NAME ) }>

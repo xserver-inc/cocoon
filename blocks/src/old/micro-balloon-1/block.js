@@ -75,6 +75,7 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
                   label: __( '上寄り', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -103,6 +104,7 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
                   label: __( '緑色', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <ToggleControl

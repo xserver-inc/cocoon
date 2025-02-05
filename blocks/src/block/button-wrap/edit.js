@@ -105,6 +105,7 @@ export function ButtonWrapEdit( props ) {
                 label: __( '大', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
 
           <ToggleControl

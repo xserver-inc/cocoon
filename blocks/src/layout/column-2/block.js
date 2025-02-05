@@ -123,6 +123,7 @@ registerBlockType( 'cocoon-blocks/column-2', {
                   label: __( '3:1,（｜□□□｜□｜）', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

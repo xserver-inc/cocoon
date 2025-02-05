@@ -122,6 +122,7 @@ export const deprecated = [
                     label: __( 'プロフィール', THEME_NAME ),
                   },
                 ] }
+                __nextHasNoMarginBottom={ true }
               />
             </PanelBody>
           </InspectorControls>

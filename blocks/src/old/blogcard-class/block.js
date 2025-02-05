@@ -94,6 +94,7 @@ registerBlockType( 'cocoon-blocks/blogcard', {
                   label: __( '公式サイト', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

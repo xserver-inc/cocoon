@@ -83,6 +83,7 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
               value={ index }
               onChange={ ( value ) => setAttributes( { index: value } ) }
               options={ balloons }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

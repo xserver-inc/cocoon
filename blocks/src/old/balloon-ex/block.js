@@ -143,6 +143,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 setAttributes( { index: value, icon: '' } )
               }
               options={ balloons }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -167,6 +168,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '考え事', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -183,6 +185,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '右', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -207,6 +210,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '丸（枠線あり）', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

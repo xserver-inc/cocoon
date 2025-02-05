@@ -102,6 +102,7 @@ registerBlockType( 'cocoon-blocks/button-1', {
                   label: __( '新しいタブで開く', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -122,6 +123,7 @@ registerBlockType( 'cocoon-blocks/button-1', {
                   label: __( '大', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <ToggleControl

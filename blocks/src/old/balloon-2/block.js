@@ -162,6 +162,7 @@ registerBlockType( 'cocoon-blocks/balloon-box-2', {
                 } )
               }
               options={ balloons }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

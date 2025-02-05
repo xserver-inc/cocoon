@@ -135,6 +135,7 @@ registerBlockType( 'cocoon-blocks/tab-box', {
                   label: __( 'プロフィール', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -163,6 +164,7 @@ registerBlockType( 'cocoon-blocks/tab-box', {
                   label: __( '緑色', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

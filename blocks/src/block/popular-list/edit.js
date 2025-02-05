@@ -180,6 +180,7 @@ export default function edit( props ) {
           value: "365",
         },
       ] }
+      __nextHasNoMarginBottom={ true }
     />
   );
   if ( showAllDays ) {
@@ -235,6 +236,7 @@ export default function edit( props ) {
                 value: 'large_thumb_on',
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
           <Divider />
           <ToggleControl

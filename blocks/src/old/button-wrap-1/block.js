@@ -114,6 +114,7 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
                   label: __( '大', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <ToggleControl
