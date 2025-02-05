@@ -116,6 +116,7 @@ export default function edit( props ) {
             } )
           }
           options={ options }
+          __nextHasNoMarginBottom={ true }
         />
         { getBoxMenuContent() }
       </div>
