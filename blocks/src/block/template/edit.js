@@ -46,7 +46,6 @@ export default function edit( props ) {
         }
       } );
     }
-    console.log( abledDropdownListItemCount );
 
     return options;
   }
