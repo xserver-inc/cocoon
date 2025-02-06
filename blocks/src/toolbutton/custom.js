@@ -12,7 +12,6 @@ import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { ToolbarButton } from '@wordpress/components';
 import { Icon, pencil } from '@wordpress/icons';
 
-console.log(gbSettings.customTextCount);
 //表示数
 const isCustomTexVisible = Number(
   gbSettings.customTextCount ? gbSettings.customTextCount : 0

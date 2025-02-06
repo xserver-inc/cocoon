@@ -15,8 +15,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { RichText, InspectorControls, PanelColorSettings, ContrastChecker } =
-  wp.editor;
+import { RichText, InspectorControls, PanelColorSettings, ContrastChecker } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, TextControl, ToggleControl } =
   wp.components;
 import { Fragment } from '@wordpress/element';

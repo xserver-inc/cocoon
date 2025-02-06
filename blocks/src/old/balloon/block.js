@@ -9,7 +9,7 @@ import { THEME_NAME, BLOCK_CLASS, isBalloonExist } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
 const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
+import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );

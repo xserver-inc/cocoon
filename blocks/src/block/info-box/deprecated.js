@@ -10,7 +10,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 const { createBlock } = wp.blocks;
-const { InnerBlocks, InspectorControls } = wp.editor;
+import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 

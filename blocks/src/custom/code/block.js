@@ -23,7 +23,7 @@ import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
 const { addFilter } = wp.hooks;
 const { PanelBody, SelectControl } = wp.components;
-const { InspectorControls } = wp.editor;
+import { InspectorControls } from '@wordpress/block-editor';
 const { createHigherOrderComponent } = wp.compose;
 
 //サイドバーパネルの見出し
