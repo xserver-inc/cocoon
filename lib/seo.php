@@ -663,7 +663,11 @@ function get_the_meta_description(){
   $desc = get_content_excerpt(get_the_snippet( $post->post_content, 120 ), 120);
 
   //抜粋を取得
-  $tmp_desc = $post->post_excerpt;
+  $tmp_desc = '';
+  if (isset($post->post_excerpt)) {
+    $tmp_desc = $post->post_excerpt;
+  }
+
   if ( $tmp_desc ) {
     $desc = get_content_excerpt( $tmp_desc, 120 );
   }
