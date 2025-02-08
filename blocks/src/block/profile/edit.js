@@ -108,6 +108,7 @@ export default function edit( props ) {
             setAttributes( { id: value, classNames: classes } )
           }
           options={ options }
+          __nextHasNoMarginBottom={ true }
         />
         { getProfileContent() }
       </div>

@@ -10,7 +10,7 @@ import { THEME_NAME, BLOCK_CLASS, ICONS, getIconClass } from '../../helpers';
 const { times } = lodash;
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
+import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, Button } = wp.components;
 import { Fragment } from '@wordpress/element';
 const CAPTION_BOX_CLASS = 'label-box';
@@ -77,6 +77,7 @@ registerBlockType( 'cocoon-blocks/label-box', {
                   label: __( '緑色', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <BaseControl label={ __( 'アイコン', THEME_NAME ) }>

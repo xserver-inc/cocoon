@@ -103,6 +103,7 @@ export default function edit( props ) {
                 },
               ] }
               onChange={ ( value ) => setAttributes( { layout: value } ) }
+              __nextHasNoMarginBottom={ true }
             />
             <BaseControl
               className={ 'cta-base-control cta-image-base-control' }
@@ -215,6 +216,7 @@ export default function edit( props ) {
                 { label: __( '灰色', THEME_NAME ), value: 'btn-grey' },
               ] }
               onChange={ ( value ) => setAttributes( { buttonColor: value } ) }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </Panel>

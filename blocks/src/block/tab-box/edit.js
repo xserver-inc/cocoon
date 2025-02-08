@@ -131,6 +131,7 @@ export function TabBoxEdit( props ) {
                 label: __( 'プロフィール', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
         </PanelBody>
 

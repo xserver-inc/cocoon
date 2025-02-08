@@ -125,7 +125,10 @@ function fetch_thumbnail_image($matches, $key, $post_content, $post_id){
 endif;
 
 //投稿内の最初の画像をアイキャッチに設定する（Auto Post Thumnailプラグイン的な機能）
-if ( is_auto_post_thumbnail_enable() ) {
+if ( is_auto_post_thumbnail_enable() && !(
+  isset($_POST['generate_featured_image_from_title'])
+  && (intval($_POST['generate_featured_image_from_title']) === 1)
+) ) {
   //新しい投稿で自動設定する場合
   //add_action( 'transition_post_status', 'auto_post_thumbnail_image');
   add_action('save_post', 'auto_post_thumbnail_image');

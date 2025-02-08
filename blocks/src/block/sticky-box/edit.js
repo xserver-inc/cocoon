@@ -49,6 +49,7 @@ export default function edit( { attributes, setAttributes, className } ) {
                 label: __( '緑色', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
         </PanelBody>
       </InspectorControls>

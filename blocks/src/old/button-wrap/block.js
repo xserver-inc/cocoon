@@ -11,7 +11,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { RichText, InspectorControls } = wp.editor;
+import { RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, TextareaControl } =
   wp.components;
 import { Fragment } from '@wordpress/element';
@@ -149,6 +149,7 @@ registerBlockType( 'cocoon-blocks/button-wrap', {
                   label: __( 'グレー', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -169,6 +170,7 @@ registerBlockType( 'cocoon-blocks/button-wrap', {
                   label: __( '大', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

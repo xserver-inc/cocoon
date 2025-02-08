@@ -123,6 +123,7 @@ export default function edit( props ) {
                 value: 'large_thumb_on',
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
           <Divider />
           <ToggleControl
@@ -158,6 +159,7 @@ export default function edit( props ) {
             } )
           }
           options={ options }
+          __nextHasNoMarginBottom={ true }
         />
         { getNavicardContent() }
       </div>

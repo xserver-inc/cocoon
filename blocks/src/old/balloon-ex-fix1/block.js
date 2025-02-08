@@ -12,7 +12,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { InnerBlocks, RichText, MediaUpload, InspectorControls } = wp.editor;
+import { InnerBlocks, RichText, MediaUpload, InspectorControls } from '@wordpress/block-editor';
 const { Button, PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
@@ -153,6 +153,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 } )
               }
               options={ balloons }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -177,6 +178,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '考え事', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -193,6 +195,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '右', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -217,6 +220,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '丸（枠線あり）', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

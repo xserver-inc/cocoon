@@ -9,7 +9,7 @@ import { THEME_NAME } from '../../helpers';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
-const { InspectorControls } = wp.editor;
+import { InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 
@@ -93,6 +93,7 @@ export default [
                     label: __( 'ダウンロード', THEME_NAME ),
                   },
                 ] }
+                __nextHasNoMarginBottom={ true }
               />
             </PanelBody>
           </InspectorControls>

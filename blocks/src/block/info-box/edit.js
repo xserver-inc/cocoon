@@ -61,6 +61,7 @@ export default function edit( { attributes, setAttributes, className } ) {
                 label: __( 'ダーク（暗い灰色）', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
         </PanelBody>
       </InspectorControls>

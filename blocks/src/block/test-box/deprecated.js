@@ -10,7 +10,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
+import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 
@@ -122,6 +122,7 @@ export const deprecated = [
                     label: __( 'プロフィール', THEME_NAME ),
                   },
                 ] }
+                __nextHasNoMarginBottom={ true }
               />
             </PanelBody>
           </InspectorControls>

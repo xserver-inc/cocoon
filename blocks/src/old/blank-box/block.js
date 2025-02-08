@@ -11,7 +11,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
+import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __(
@@ -84,6 +84,7 @@ registerBlockType( 'cocoon-blocks/blank-box', {
                   label: __( '緑色', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>
