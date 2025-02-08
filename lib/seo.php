@@ -460,7 +460,12 @@ function get_the_meta_keywords(){
   //var_dump(get_the_page_meta_keywords());
   $keywords =  get_the_page_meta_keywords();
   if (!$keywords) {
-    $categories = get_the_category($post->ID);
+    //IDを取得
+    $post_id = null;
+    if (isset($post->ID)) {
+      $post_id = $post->ID;
+    }
+    $categories = get_the_category($post_id);
     $category_names = array();
     foreach($categories as $category):
       array_push( $category_names, $category -> cat_name);
