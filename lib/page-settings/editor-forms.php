@@ -104,7 +104,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
             <div class="indent<?php echo get_not_allowed_form_class(is_featured_image_from_title_enable(), true); ?>">
               <?php
-              generate_checkbox_tag(OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE , is_featured_image_from_title_default_enable(), __( 'チェックボックスをデフォルトで選択する', THEME_NAME ).__( '（β版）', THEME_NAME ));
+              generate_checkbox_tag(OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE , is_featured_image_from_title_default_enable(), __( 'チェックボックスをデフォルトで選択する', THEME_NAME ));
               generate_tips_tag(__( 'エディターにある「タイトルからアイキャッチを生成する」オプションのチェックボックスをデフォルトで選択状態にします。', THEME_NAME ));
               ?>
             </div>
