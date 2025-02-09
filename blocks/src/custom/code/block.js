@@ -23,7 +23,7 @@ import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
 const { addFilter } = wp.hooks;
 const { PanelBody, SelectControl } = wp.components;
-const { InspectorControls } = wp.editor;
+import { InspectorControls } from '@wordpress/block-editor';
 const { createHigherOrderComponent } = wp.compose;
 
 //サイドバーパネルの見出し
@@ -106,6 +106,7 @@ export const addBlockControl = createHigherOrderComponent( ( BlockEdit ) => {
                   selectOption = changeOption;
                   props.setAttributes( { className: newClassName } );
                 } }
+                __nextHasNoMarginBottom={ true }
               />
             </PanelBody>
           </InspectorControls>

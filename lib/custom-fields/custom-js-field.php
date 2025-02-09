@@ -31,7 +31,7 @@ function custom_js_custom_box_save_data($post_id) {
   $custom_js_noncename = isset($_POST['custom_js_noncename']) ? $_POST['custom_js_noncename'] : null;
   if (!wp_verify_nonce($custom_js_noncename, 'custom-js')) return $post_id;
   if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return $post_id;
-  $custom_js = $_POST['custom_js'];
+  $custom_js = isset($_POST['custom_js']) ? $_POST['custom_js'] : null;
   update_post_meta($post_id, '_custom_js', $custom_js);
 }
 endif;

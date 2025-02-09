@@ -156,6 +156,7 @@ export default function edit( props ) {
                 value: 'large_thumb_on',
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
           <SelectControl
             label={ __( '表示順', THEME_NAME ) }
@@ -177,6 +178,7 @@ export default function edit( props ) {
                 setAttributes( { modified: true } );
               }
             } }
+            __nextHasNoMarginBottom={ true }
           />
           <SelectControl
             label={ __( '並び替え', THEME_NAME ) }
@@ -188,6 +190,7 @@ export default function edit( props ) {
             onChange={ ( value ) => {
               setAttributes( { order: value } );
             } }
+            __nextHasNoMarginBottom={ true }
           />
           <RangeControl
             label={ __( '読み飛ばし', THEME_NAME ) }

@@ -16,8 +16,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { RichText, InspectorControls, PanelColorSettings, ContrastChecker } =
-  wp.editor;
+import { RichText, InspectorControls, PanelColorSettings, ContrastChecker } from '@wordpress/block-editor';
 const {
   PanelBody,
   SelectControl,
@@ -114,6 +113,7 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
                   label: __( '大', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <ToggleControl

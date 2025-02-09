@@ -11,7 +11,7 @@ import { faComments } from '@fortawesome/free-regular-svg-icons';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
+import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
@@ -74,6 +74,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
               value={ index ? index : gbSpeechBalloons[ index ].index }
               onChange={ ( value ) => setAttributes( { index: value } ) }
               options={ balloons }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -98,6 +99,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '考え事', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -114,6 +116,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '右', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -140,6 +143,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                   label: __( '丸（枠線あり）', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

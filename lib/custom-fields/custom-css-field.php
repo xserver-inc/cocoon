@@ -39,6 +39,7 @@ endif;
 
 if ( !function_exists( 'get_custom_css_code' ) ):
 function get_custom_css_code(){
+  $custom_css = '';
   if ( is_singular() ) {
     if ( have_posts() ) : while ( have_posts() ) : the_post();
       $custom_css = get_post_meta(get_the_ID(), '_custom_css', true);

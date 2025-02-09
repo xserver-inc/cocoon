@@ -17,7 +17,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
+import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
@@ -162,6 +162,7 @@ registerBlockType( 'cocoon-blocks/balloon-box-2', {
                 } )
               }
               options={ balloons }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>

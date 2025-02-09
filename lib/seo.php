@@ -460,7 +460,12 @@ function get_the_meta_keywords(){
   //var_dump(get_the_page_meta_keywords());
   $keywords =  get_the_page_meta_keywords();
   if (!$keywords) {
-    $categories = get_the_category($post->ID);
+    //IDを取得
+    $post_id = null;
+    if (isset($post->ID)) {
+      $post_id = $post->ID;
+    }
+    $categories = get_the_category($post_id);
     $category_names = array();
     foreach($categories as $category):
       array_push( $category_names, $category -> cat_name);
@@ -659,11 +664,21 @@ if ( !function_exists( 'get_the_meta_description' ) ):
 function get_the_meta_description(){
   global $post;
 
+  //内容を取得
+  $tmp_content = '';
+  if (isset($post->post_content)) {
+    $tmp_content = $post->post_content;
+  }
+
   //get_content_excerptはデフォルトでも120文字だが明示的に記入
-  $desc = get_content_excerpt(get_the_snippet( $post->post_content, 120 ), 120);
+  $desc = get_content_excerpt(get_the_snippet( $tmp_content, 120 ), 120);
 
   //抜粋を取得
-  $tmp_desc = $post->post_excerpt;
+  $tmp_desc = '';
+  if (isset($post->post_excerpt)) {
+    $tmp_desc = $post->post_excerpt;
+  }
+
   if ( $tmp_desc ) {
     $desc = get_content_excerpt( $tmp_desc, 120 );
   }

@@ -9,7 +9,7 @@ import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { InnerBlocks, RichText, InspectorControls } = wp.editor;
+import { RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, ToggleControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __( 'マイクロコピーバルーン', THEME_NAME );
@@ -74,6 +74,7 @@ registerBlockType( 'cocoon-blocks/micro-balloon', {
                   label: __( '上寄り', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -102,6 +103,7 @@ registerBlockType( 'cocoon-blocks/micro-balloon', {
                   label: __( '緑色', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <ToggleControl

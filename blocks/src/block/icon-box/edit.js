@@ -69,6 +69,7 @@ export default function edit( { attributes, setAttributes, className } ) {
                 label: __( 'プロフィール', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
         </PanelBody>
       </InspectorControls>

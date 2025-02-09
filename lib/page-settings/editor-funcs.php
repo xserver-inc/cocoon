@@ -78,10 +78,25 @@ function is_editor_tag_check_list_enable(){
 endif;
 
 //「タイトルからアイキャッチを生成する」を有効にするか
-define('OP_FEATURED_IMAGE_FROM_TITLE', 'featured_image_from_title');
+define('OP_FEATURED_IMAGE_FROM_TITLE', 'featured_image_from_title'); //修正前
+define('OP_FEATURED_IMAGE_FROM_TITLE_ENABLE', 'featured_image_from_title_enable'); //修正後
 if ( !function_exists( 'is_featured_image_from_title_enable' ) ):
 function is_featured_image_from_title_enable(){
-  return get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE, 0);
+  //以前のオプションネームの値を取得する
+  $value = get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE, 0);
+  if (!$value) {
+    //現在のオプションネームの値を取得する
+    $value = get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE_ENABLE, 0);
+  }
+  return $value;
+}
+endif;
+
+//「タイトルからアイキャッチを生成する」のチェックボックスをデフォルトで有効にするか
+define('OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE', 'featured_image_from_title_default_enable');
+if ( !function_exists( 'is_featured_image_from_title_default_enable' ) ):
+function is_featured_image_from_title_default_enable(){
+  return get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE, 0);
 }
 endif;
 

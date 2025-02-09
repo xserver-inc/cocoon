@@ -89,6 +89,7 @@ export function MicroBalloonEdit( props ) {
                 label: __( '上寄り', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
 
           <ToggleControl

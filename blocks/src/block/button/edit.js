@@ -88,6 +88,7 @@ export function ButtonEdit( props ) {
                 label: __( '新しいタブで開く', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
 
           <SelectControl
@@ -108,6 +109,7 @@ export function ButtonEdit( props ) {
                 label: __( '大', THEME_NAME ),
               },
             ] }
+            __nextHasNoMarginBottom={ true }
           />
 
           <ToggleControl

@@ -10,7 +10,7 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-const { RichText, InspectorControls } = wp.editor;
+import { RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, TextControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const BUTTON_BLOCK = ' button-block';
@@ -84,6 +84,7 @@ registerBlockType( 'cocoon-blocks/button', {
                   label: __( '新しいタブで開く', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -164,6 +165,7 @@ registerBlockType( 'cocoon-blocks/button', {
                   label: __( 'グレー', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
 
             <SelectControl
@@ -184,6 +186,7 @@ registerBlockType( 'cocoon-blocks/button', {
                   label: __( '大', THEME_NAME ),
                 },
               ] }
+              __nextHasNoMarginBottom={ true }
             />
           </PanelBody>
         </InspectorControls>
