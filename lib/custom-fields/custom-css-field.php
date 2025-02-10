@@ -20,8 +20,10 @@ endif;
 if ( !function_exists( 'view_custom_css_custom_box' ) ):
 function view_custom_css_custom_box() {
   global $post;
-  echo '<input type="hidden" name="custom_css_noncename" id="custom_css_noncename" value="'.wp_create_nonce('custom-css').'" />';
-  echo '<textarea name="custom_css" id="custom_css" rows="5" cols="30" style="width:100%;" placeholder="'.__( '当ページ変更用のCSSコードのみを入力してください。styleタグは不要です。', THEME_NAME ).'">'.get_post_meta($post->ID,'_custom_css',true).'</textarea>';
+  if (isset($post->ID)) {
+    echo '<input type="hidden" name="custom_css_noncename" id="custom_css_noncename" value="'.wp_create_nonce('custom-css').'" />';
+    echo '<textarea name="custom_css" id="custom_css" rows="5" cols="30" style="width:100%;" placeholder="'.__( '当ページ変更用のCSSコードのみを入力してください。styleタグは不要です。', THEME_NAME ).'">'.get_post_meta($post->ID,'_custom_css',true).'</textarea>';
+  }
 }
 endif;
 

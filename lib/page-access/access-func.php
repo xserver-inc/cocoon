@@ -175,7 +175,9 @@ function logging_page_access($post_id = null, $post_type = 'post'){
     ) {
     if (!$post_id || !$post_type ) {
       global $post;
-      $post_id = $post->ID;
+      if (isset($post->ID)) {
+        $post_id = $post->ID;
+      }
       $post_type = get_accesses_post_type();
     }
     //IDとページタイプが取得できたとき
@@ -428,7 +430,6 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   }
   //カテゴリーを指定する場合
   if (is_ids_exist($cat_ids) || is_ids_exist($exclude_cat_ids)) {
-    global $post;
     $term_relationships = $wpdb->term_relationships;
     $term_taxonomy = $wpdb->term_taxonomy;
     $joined_table = 'terms_accesses';

@@ -1863,7 +1863,7 @@ endif;
 if ( !function_exists( 'in_authors' ) ):
 function in_authors($authers){
   global $post;
-  if ($post) {
+  if ($post && isset($post->post_author)) {
     return in_array($post->post_author, $authers);
   } else {
     return false;

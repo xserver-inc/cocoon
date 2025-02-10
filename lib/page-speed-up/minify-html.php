@@ -11,7 +11,6 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'code_minify_call_back' ) ):
 function code_minify_call_back($html) {
   global $post;
-  //_v($post);
   if (is_admin() || is_feed() || !$post) {
     return $html;
   }

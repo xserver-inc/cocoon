@@ -42,7 +42,9 @@ function update_custom_box_view() {
     else {
       $stamp = __( '更新日時:', THEME_NAME ).'<span style="font-weight:bold">未更新</span>';
     }
-    $date = date_i18n( get_option('date_format') . ' @ ' . get_option('time_format'), strtotime( $post->post_modified ) );
+    if (isset($post->post_modified)) {
+      $date = date_i18n( get_option('date_format') . ' @ ' . get_option('time_format'), strtotime( $post->post_modified ) );
+    }
   ?>
   <style>
   .modtime { padding: 2px 0 1px 0; display: inline !important; height: auto !important; }

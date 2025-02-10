@@ -463,7 +463,6 @@ function add_custom_checkbox_below_featured_image_meta_box() {
   if (!is_featured_image_from_title_enable()) {
     return;
   }
-  global $post;
   ?>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
