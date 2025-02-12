@@ -532,6 +532,7 @@ endif;
 add_filter ( 'wp_img_tag_add_auto_sizes' ,  '__return_false' );
 
 
+// タクソノミ対応カテゴリー・タグリンク
 add_filter('cocoon_part__tmp/categories-tags', function($content) {
   $post_type = get_post_type();
 

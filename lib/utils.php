@@ -118,8 +118,6 @@ add_filter('get_the_nolink_category', function($category, $categories) {
         'cat_ID' => $category->term_id,  // term_idをcat_IDとして設定
         'cat_name' => $category->name    // termの名前をcat_nameとして設定
       );
-
-      var_dump($category);  // デバッグ用に表示
     }
   }
 
