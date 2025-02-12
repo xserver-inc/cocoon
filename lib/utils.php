@@ -94,6 +94,40 @@ function get_the_nolink_category($id = null, $is_visible = true){
 }
 endif;
 
+add_filter('get_the_nolink_category', function($category, $categories) {
+  $post_type = get_post_type();
+
+  // カスタム投稿の場合
+  if ($post_type !== 'post') {
+
+    // タクソノミーを取得
+    $taxonomies = get_object_taxonomies($post_type);
+    // タームを取得
+    $args = array(
+      'order'   => 'ASC',
+      'orderby' => 'name',
+    );
+    $terms = wp_get_post_terms(get_the_ID(), $taxonomies, $args);
+
+    if ($terms && !is_wp_error($terms)) {
+      // ターム情報を取得し、最初のタームを設定
+      $category = $terms[0];
+
+      // $categoryにcat_IDとcat_nameを設定
+      $category = (object) array(
+        'cat_ID' => $category->term_id,  // term_idをcat_IDとして設定
+        'cat_name' => $category->name    // termの名前をcat_nameとして設定
+      );
+
+      var_dump($category);  // デバッグ用に表示
+    }
+  }
+
+  // $categoryを返す
+  return $category;
+}, 10, 2);
+
+
 
 //リンクのないカテゴリーの出力
 if ( !function_exists( 'the_nolink_category' ) ):

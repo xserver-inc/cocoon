@@ -131,51 +131,61 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
 }
 endif;
 
-//アーカイブタイトルの取得
+// アーカイブタイトルの取得
 if ( !function_exists( 'get_archive_chapter_title' ) ):
 function get_archive_chapter_title(){
-  $chapter_title = null;
-  if( is_category() ) {//カテゴリーページの場合
+  $chapter_title = '';
+
+  if( is_category() ) { // カテゴリーページの場合
     $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
     $category = get_queried_object();
     if ( $category ) {
-      $chapter_title .= $icon_font.$category->name;
+      $chapter_title .= $icon_font . esc_html($category->name);
     } else {
-      $chapter_title .= single_cat_title( $icon_font, false );
+      $chapter_title .= single_cat_title($icon_font, false);
     }
-  } elseif( is_tag() || is_tax()) {//タグ・タクソノミページの場合（タクソノミページでもタグアイコンを表示するように変更）
+  } elseif( is_tag() || is_tax()) { // タグ・タクソノミページの場合
     $icon_font = '<span class="fa fa-tags" aria-hidden="true"></span>';
+
+    $post_type  = get_post_type();
+    $taxonomies = get_object_taxonomies($post_type);
+
+    // 階層型タクソノミーの場合
+    if (!empty($taxonomies) && is_taxonomy_hierarchical($taxonomies[0]) && $post_type !== 'post') {
+      $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
+    }
+
     $tag = get_queried_object();
     if ( $tag ) {
-      $chapter_title .= $icon_font.$tag->name;
+      $chapter_title .= $icon_font . esc_html($tag->name);
     } else {
-      $chapter_title .= single_tag_title( $icon_font, false );
+      $chapter_title .= single_tag_title($icon_font, false);
     }
-  } elseif( is_search() ) {//検索結果
+  } elseif( is_search() ) { // 検索結果ページ
     $search_query = trim(strip_tags(get_search_query()));
     if (empty($search_query)) {
-      $search_query = __( 'キーワード指定なし', THEME_NAME );
+      $search_query = __( 'キーワード指定なし', 'text-domain' ); // THEME_NAME を適切なテキストドメインに変更
     }
-    $chapter_title .= '<span class="fa fa-search" aria-hidden="true"></span>"'.$search_query.'"';
-  } elseif (is_day()) {
-    //年月日のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y-m-d');
-  } elseif (is_month()) {
-    //年と月のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y-m');
-  } elseif (is_year()) {
-    //年のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y');
-  } elseif (is_author()) {//著書ページの場合
-    $chapter_title .= '<span class="fa fa-user" aria-hidden="true"></span>'.esc_html(get_the_author());
-  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+    $chapter_title .= '<span class="fa fa-search" aria-hidden="true"></span>"' . esc_html($search_query) . '"';
+  } elseif (is_day()) { // 日別アーカイブ
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>' . get_the_time('Y-m-d');
+  } elseif (is_month()) { // 月別アーカイブ
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>' . get_the_time('Y-m');
+  } elseif (is_year()) { // 年別アーカイブ
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>' . get_the_time('Y');
+  } elseif (is_author()) { // 著者ページ
+    $chapter_title .= '<span class="fa fa-user" aria-hidden="true"></span>' . esc_html(get_the_author());
+  } elseif (is_paged()) { // 2ページ目以降
     $chapter_title .= 'Archives';
-  } else {
+  } else { // その他
     $chapter_title .= 'Archives';
   }
+
   return apply_filters('get_archive_chapter_title', $chapter_title);
 }
 endif;
+
+
 
 //アーカイブ見出しの取得
 if ( !function_exists( 'get_archive_chapter_text' ) ):
