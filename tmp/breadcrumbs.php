@@ -1,6 +1,3 @@
-
-Written by Anonymous
-
 <?php // カテゴリ用のパンくずリスト
 /**
  * Cocoon WordPress Theme
