@@ -8,16 +8,16 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 ////////////////////////////
+//カテゴリーページのパンくずリスト
+////////////////////////////
+if (is_single_breadcrumbs_position_main_top()) {
+  cocoon_template_part('tmp/breadcrumbs');
+}
+
+////////////////////////////
 //アーカイブのタイトル
 ////////////////////////////
 if ( is_category() ){
-  ////////////////////////////
-  //カテゴリーページのパンくずリスト
-  ////////////////////////////
-  if (is_single_breadcrumbs_position_main_top()) {
-    cocoon_template_part('tmp/breadcrumbs');
-  }
-
   ////////////////////////////
   //カテゴリーページのコンテンツ
   ////////////////////////////
@@ -133,7 +133,7 @@ if (is_front_page_type_index() || !is_front_top_page()) {
 ////////////////////////////
 //カテゴリーページのパンくずリスト
 ////////////////////////////
-if (is_category() && is_single_breadcrumbs_position_main_bottom()){
+if (is_single_breadcrumbs_position_main_bottom()){
   cocoon_template_part('tmp/breadcrumbs');
 }
 

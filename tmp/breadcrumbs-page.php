@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php //パンくずリストを表示するとき
-if (is_page_breadcrumbs_visible()): ?>
+if (is_page_breadcrumbs_visible() && is_page()): ?>
 <?php if ( !is_front_page() ): //個別ページでパンくずリストを表示する場合
 $root_text = __( 'ホーム', THEME_NAME );
 $root_text = apply_filters('breadcrumbs_page_root_text', $root_text);
