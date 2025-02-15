@@ -125,3 +125,7 @@ textarea[name=the_page_memo] {
   max-height: 300px;
   overflow: auto;
 }
+
+.uploded-thumbnail img {
+  max-width: 100%;
+}

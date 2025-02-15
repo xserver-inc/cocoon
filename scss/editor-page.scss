@@ -25,3 +25,8 @@ textarea[name="the_page_memo"]{
   max-height: 300px;
   overflow: auto;
 }
+
+// SNS画像
+.uploded-thumbnail img{
+  max-width: 100%;
+}
