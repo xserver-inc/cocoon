@@ -78,14 +78,14 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_tax() || is_category()
     // 階層型タクソノミー（カテゴリー）、カテゴリーの場合
     if ((is_tax() || 'post' !== get_post_type())  || is_category() || 'post' === get_post_type()) {
        // 親カテゴリーを取得
-      $par = get_term($cat->parent, get_query_var('taxonomy', 'category'));
+       $par = get_term($cat->parent, $cat->taxonomy);
 
       $cats = [];
 
       // 親のカテゴリーを取得
       while ($par && !is_wp_error($par) && $par->term_id != 0) {
         $cats[] = $par;
-        $par = get_term($par->parent, get_query_var('taxonomy', 'category'));
+        $par = get_term($par->parent, $par->taxonomy);
       }
 
       // 先祖順に並べ替え
