@@ -132,7 +132,7 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
 endif;
 
 // アーカイブタイトルの取得
-if ( !function_exists( 'get_archive_chapter_title' ) ):
+if ( !function_exists( 'get_archive_chapter_title' ) ) :
 function get_archive_chapter_title(){
   $chapter_title = '';
 
@@ -147,15 +147,20 @@ function get_archive_chapter_title(){
   } elseif( is_tag() || is_tax()) { // タグ・タクソノミページの場合
     $icon_font = '<span class="fa fa-tags" aria-hidden="true"></span>';
 
-    $post_type  = get_post_type();
-    $taxonomies = get_object_taxonomies($post_type);
+    // 現在のタームのタクソノミーを取得
+    $tag = get_queried_object();
 
-    // 階層型タクソノミーの場合
-    if (!empty($taxonomies) && is_taxonomy_hierarchical($taxonomies[0]) && $post_type !== 'post') {
-      $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
+    if ( is_tax() ) {
+      $taxonomy = $tag->taxonomy; // 現在のタクソノミーを取得
+
+      // 階層型タクソノミーの場合はフォルダアイコン、階層型でない場合はタグアイコン
+      if ( is_taxonomy_hierarchical($taxonomy) ) {
+        $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
+      } else {
+        $icon_font = '<span class="fa fa-tags" aria-hidden="true"></span>';
+      }
     }
 
-    $tag = get_queried_object();
     if ( $tag ) {
       $chapter_title .= $icon_font . esc_html($tag->name);
     } else {
@@ -498,15 +503,15 @@ add_filter('oembed_providers', function ($providers){
 //参考：https://github.com/WordPress/gutenberg/issues/53555#issuecomment-1675107104
 add_filter( 'render_block_core/image', __NAMESPACE__ . '\fix_img_v63', 10, 2 );
 function fix_img_v63( $block_content, $block ) {
-	$attrs = $block['attrs'] ?? [];
-	$w = $attrs['width'] ?? '';
-	$h = $attrs['height'] ?? '';
-	if ( $w && $h ) {
-		$size_style    = "width:{$w}px;height:{$h}px";
-		$ratio         = "{$w}/{$h}";
-		$block_content = str_replace( $size_style, "aspect-ratio:{$ratio}", $block_content );
-	}
-	return $block_content;
+  $attrs = $block['attrs'] ?? [];
+  $w = $attrs['width'] ?? '';
+  $h = $attrs['height'] ?? '';
+  if ( $w && $h ) {
+    $size_style    = "width:{$w}px;height:{$h}px";
+    $ratio         = "{$w}/{$h}";
+    $block_content = str_replace( $size_style, "aspect-ratio:{$ratio}", $block_content );
+  }
+  return $block_content;
 }
 
 
@@ -538,39 +543,44 @@ add_filter('cocoon_part__tmp/categories-tags', function($content) {
 
   // カスタム投稿の場合
   if ($post_type !== 'post') {
-
-    // タクソノミーを取得
+    // 投稿タイプに関連付けられたタクソノミーを取得
     $taxonomies = get_object_taxonomies($post_type);
-    // タームを取得
 
+    // ターム取得
     $args = array(
       'order'   => 'ASC',
       'orderby' => 'name',
     );
     $terms = wp_get_post_terms(get_the_ID(), $taxonomies, $args);
 
-    // 階層的なタクソノミーか判定
-    if (is_taxonomy_hierarchical($taxonomies[0])) {
-      $cat_tag = 'cat';
-      $icon = '<span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>';
-    } else {
-      $cat_tag = 'tag';
-      $icon = '<span class="fa fa-tag tag-icon tax-icon" aria-hidden="true"></span>';
-    }
-
     if ($terms && !is_wp_error($terms)) {
-      $html = '';
+      $categories_html = '';  // 階層型タクソノミーのHTML
+      $tags_html = '';        // 非階層型タクソノミーのHTML
+
       foreach ($terms as $term) {
-        $html .= '<a class="' . $cat_tag . '-link ' . $cat_tag . '-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term->slug, $term->taxonomy)) . '">' . $icon . esc_html($term->name) . '</a>';
+        // タクソノミーが階層型（カテゴリー）かどうか
+        if (is_taxonomy_hierarchical($term->taxonomy)) {
+          $categories_html .= '<a class="cat-link cat-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term)) . '">
+            <span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>' . esc_html($term->name) . '</a>';
+        } else {
+          $tags_html .= '<a class="tag-link tag-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term)) . '">
+            <span class="fa fa-tag tag-icon tax-icon" aria-hidden="true"></span>' . esc_html($term->name) . '</a>';
+        }
       }
 
-      // 階層的なタクソノミーはカテゴリーとする
-      if ($cat_tag == 'cat') {
-        $html = '<div class="entry-categories">' . $html . '</div>';
-      } else {
-        $html = '<div class="entry-tags">' . $html . '</div>';
+      // カテゴリーがある場合は出力
+      if (!empty($categories_html)) {
+        $categories_html = '<div class="entry-categories">' . $categories_html . '</div>';
       }
-      $content = '<div class="entry-categories-tags ' . esc_attr(get_additional_categories_tags_area_classes() ?: '') . '">' . $html . '</div>';
+
+      // タグがある場合は出力
+      if (!empty($tags_html)) {
+        $tags_html = '<div class="entry-tags">' . $tags_html . '</div>';
+      }
+
+      // 最終的なHTMLを構築
+      $content = '<div class="entry-categories-tags ' . esc_attr(get_additional_categories_tags_area_classes() ?: '') . '">'
+                . $categories_html . $tags_html . '</div>';
     }
   }
 
