@@ -622,12 +622,12 @@ function add_custom_checkbox_below_featured_image() {
       /* 初期表示時にチェックボックスの状態に応じて表示を切り替え */
       var initialCheckbox = document.querySelector('#generate_featured_image_from_title');
       if (initialCheckbox) {
-      toggleFeaturedImageContainer(initialCheckbox.checked);
+        toggleFeaturedImageContainer(initialCheckbox.checked);
       }
 
       /* 常に#featured-image-from-titleの存在を監視してチェックボックスを管理 */
       setInterval(function () {
-      manageCustomCheckbox();
+        manageCustomCheckbox();
       }, 500); /* 500msごとにチェック */
     });
   </script>
