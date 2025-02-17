@@ -441,7 +441,7 @@ function generate_featured_image_from_title_custom_checkbox() {
   ?>
   <div id="featured-image-from-title" class="featured-image-from-title">
     <label>
-      <input type="checkbox" id="generate_featured_image_from_title" name="generate_featured_image_from_title" value="<?php echo(is_featured_image_from_title_default_enable() ? '0' : '')?>" <?php echo(is_featured_image_from_title_default_enable() ? 'checked' : '')?>>
+      <input type="checkbox" id="generate_featured_image_from_title" name="generate_featured_image_from_title" value="1" <?php echo(is_featured_image_from_title_default_enable() ? 'checked' : '')?>>
       <?php echo esc_js(__('タイトルからアイキャッチを生成する', THEME_NAME)); ?>
     </label>
   </div>
