@@ -26,23 +26,38 @@ endif;
 // ページ設定
 ///////////////////////////////////////
 if ( !function_exists( 'page_custom_box_view' ) ):
-function page_custom_box_view(){
+function page_custom_box_view() {
+  global $post;
 
-  //メインカテゴリー
+  // メインカテゴリー
   if (is_admin_single()) {
     $options = array(
       '' => __( 'デフォルト', THEME_NAME ),
     );
-    $cats = get_the_category();
-    foreach($cats as $cat):
-      $options[$cat->cat_ID] = $cat->name;
-    endforeach ;
+
+    // 投稿タイプに紐づくタクソノミーを取得
+    $taxonomies = get_object_taxonomies($post->post_type, 'objects');
+
+    foreach ($taxonomies as $taxonomy) {
+      $terms = get_the_terms($post->ID, $taxonomy->name);
+      if (!empty($terms) && !is_wp_error($terms)) {
+        foreach ($terms as $term) {
+          $options[$term->term_id] = $term->name;
+        }
+      }
+    }
+
     generate_selectbox_tag('the_page_main_category', $options, get_the_page_main_category(), __( 'メインカテゴリー', THEME_NAME ));
-    generate_howto_tag(__( 'このページで優先するカテゴリーを選択します。', THEME_NAME ).__( '優先カテゴリーは、アイキャッチやパンくずリストに適用されます。', THEME_NAME ).__( 'カテゴリー選択直後はすぐにセレクトボックスに反映されません。', THEME_NAME ).__( '一度ページを更新してください。', THEME_NAME ), 'the_page_main_category');
+    generate_howto_tag(
+      __( 'このページで優先するカテゴリーを選択します。', THEME_NAME ) .
+      __( '優先カテゴリーは、アイキャッチやパンくずリストに適用されます。', THEME_NAME ) .
+      __( 'カテゴリー選択直後はすぐにセレクトボックスに反映されません。', THEME_NAME ) .
+      __( '一度ページを更新してください。', THEME_NAME ),
+      'the_page_main_category'
+    );
   }
 
-
-  //ページタイプ
+  // ページタイプ
   $options = array(
     'default' => __( 'デフォルト', THEME_NAME ),
     'column1_full_wide' => __( '1カラム（フルワイド）', THEME_NAME ),
@@ -55,58 +70,51 @@ function page_custom_box_view(){
   generate_selectbox_tag('page_type', $options, get_singular_page_type(), __( 'ページタイプ', THEME_NAME ));
   generate_howto_tag(__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ), 'page_type');
 
-  //ページタイトル表示
+  // タイトル表示
   generate_checkbox_tag('the_page_title_novisible' , is_page_title_novisible(), __( 'タイトルを表示しない', THEME_NAME ));
   generate_howto_tag(__( 'このページに記事タイトルを表示するかを切り替えます。', THEME_NAME ), 'the_page_title_novisible');
 
-  //記事を読む時間
+  // 読む時間
   generate_checkbox_tag('the_page_read_time_novisible' , is_the_page_read_time_novisible(), __( '読む時間を表示しない', THEME_NAME ));
   generate_howto_tag(__( 'このページに「記事を読む時間」を表示するかを切り替えます。', THEME_NAME ), 'the_page_read_time_novisible');
 
-  //目次表示
+  // 目次表示
   generate_checkbox_tag('the_page_toc_novisible' , is_the_page_toc_novisible(), __( '目次を表示しない', THEME_NAME ));
   generate_howto_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ), 'the_page_toc_novisible');
 }
 endif;
 
 add_action('save_post', 'page_custom_box_save_data');
+// メタボックスのデータを保存
 if ( !function_exists( 'page_custom_box_save_data' ) ):
-function page_custom_box_save_data(){
-  $id = get_the_ID();
+function page_custom_box_save_data($post_id) {
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+  if (!isset($_POST['post_type'])) return;
+  if (!current_user_can('edit_post', $post_id)) return;
 
-  //メインカテゴリー
-  if ( is_admin_single() && isset( $_POST['the_page_main_category'] ) ){
-    $the_page_main_category = $_POST['the_page_main_category'];
-    $the_page_main_category_key = 'the_page_main_category';
-    add_post_meta($id, $the_page_main_category_key, $the_page_main_category, true);
-    update_post_meta($id, $the_page_main_category_key, $the_page_main_category);
+  // メインカテゴリー
+  if (isset($_POST['the_page_main_category'])) {
+    $the_page_main_category = sanitize_text_field($_POST['the_page_main_category']);
+    update_post_meta($post_id, 'the_page_main_category', $the_page_main_category);
   }
 
-  //ページタイプ
-  if ( isset( $_POST['page_type'] ) ){
-    $page_type = $_POST['page_type'];
-    $page_type_key = 'page_type';
-    add_post_meta($id, $page_type_key, $page_type, true);
-    update_post_meta($id, $page_type_key, $page_type);
+  // ページタイプ
+  if (isset($_POST['page_type'])) {
+    $page_type = sanitize_text_field($_POST['page_type']);
+    update_post_meta($post_id, 'page_type', $page_type);
   }
 
-  //タイトル表示
+  // タイトル表示
   $the_page_title_novisible = !empty($_POST['the_page_title_novisible']) ? 1 : 0;
-  $the_page_title_novisible_key = 'the_page_title_novisible';
-  add_post_meta($id, $the_page_title_novisible_key, $the_page_title_novisible, true);
-  update_post_meta($id, $the_page_title_novisible_key, $the_page_title_novisible);
+  update_post_meta($post_id, 'the_page_title_novisible', $the_page_title_novisible);
 
-  //読む時間
+  // 読む時間
   $the_page_read_time_novisible = !empty($_POST['the_page_read_time_novisible']) ? 1 : 0;
-  $the_page_read_time_novisible_key = 'the_page_read_time_novisible';
-  add_post_meta($id, $the_page_read_time_novisible_key, $the_page_read_time_novisible, true);
-  update_post_meta($id, $the_page_read_time_novisible_key, $the_page_read_time_novisible);
+  update_post_meta($post_id, 'the_page_read_time_novisible', $the_page_read_time_novisible);
 
-  //目次表示
+  // 目次表示
   $the_page_toc_novisible = !empty($_POST['the_page_toc_novisible']) ? 1 : 0;
-  $the_page_toc_novisible_key = 'the_page_toc_novisible';
-  add_post_meta($id, $the_page_toc_novisible_key, $the_page_toc_novisible, true);
-  update_post_meta($id, $the_page_toc_novisible_key, $the_page_toc_novisible);
+  update_post_meta($post_id, 'the_page_toc_novisible', $the_page_toc_novisible);
 }
 endif;
 
@@ -252,5 +260,3 @@ function is_the_page_toc_visible(){
   return !is_the_page_toc_novisible();
 }
 endif;
-
-

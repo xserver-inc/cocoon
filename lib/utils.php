@@ -19,19 +19,63 @@ endif;
 
 
 //リンクのないカテゴリーの取得（複数）
-if ( !function_exists( 'get_the_nolink_categories' ) ):
-function get_the_nolink_categories(){
+if ( !function_exists( 'get_the_nolink_categories' ) ) :
+function get_the_nolink_categories() {
   $categories = null;
-  foreach((get_the_category()) as $category){
-    $id = $category->term_id;
-    $classes = array(
-      'entry-category',
-      'cat-label-'.$id,
-    );
-    $classes = apply_filters( 'nolink_category_label_classes', $classes, $category );
-    $implode_class = implode(' ', $classes);
-    $categories .= '<span class="'.$implode_class.'">'.$category->cat_name.'</span>';
+  $post_id = get_the_ID();
+
+  // 現在の投稿タイプを取得
+  $post_type = get_post_type($post_id);
+
+  // 通常投稿の場合、カテゴリーを取得
+  if ($post_type === 'post') {
+    // 投稿に関連付けられたカテゴリーを取得
+    $taxonomy = 'category';
+    $taxonomy_obj = get_taxonomy($taxonomy);
+
+    if ($taxonomy_obj && !$taxonomy_obj->hierarchical) {
+      return $categories;
+    }
+
+    $terms = get_the_terms($post_id, $taxonomy);
+
+  } else {
+    // カスタム投稿の場合、階層型タクソノミーを取得
+    $taxonomies = get_object_taxonomies($post_type, 'objects');
+    $taxonomy = null;
+
+    // カスタムタクソノミーを取得（階層型のみ）
+    foreach ($taxonomies as $tax) {
+      if ($tax->hierarchical) {
+        $taxonomy = $tax->name;
+        break;
+      }
+    }
+
+    // タクソノミーが見つかった場合
+    if ($taxonomy) {
+      $terms = get_the_terms($post_id, $taxonomy);
+    }
   }
+
+  if ($terms && !is_wp_error($terms)) {
+    // ターム名をA-Zにソート
+    usort($terms, function($a, $b) {
+      return strcmp($a->name, $b->name);
+    });
+
+    foreach ($terms as $term) {
+      $id = $term->term_id;
+      $classes = array(
+        'entry-category',
+        'cat-label-' . $id,
+      );
+      $classes = apply_filters('nolink_category_label_classes', $classes, $term);
+      $implode_class = implode(' ', $classes);
+      $categories .= '<span class="' . $implode_class . '">' . $term->name . '</span>';
+    }
+  }
+
   return $categories;
 }
 endif;
@@ -108,6 +152,19 @@ add_filter('get_the_nolink_category', function($category, $categories) {
     // 階層型タクソノミーが存在しない場合は処理を終了
     if (empty($hierarchical_taxonomies)) {
       return $category;
+    }
+
+    // メインのターム取得
+    $main_cat_id = get_the_page_main_category(get_the_ID());
+    if ($main_cat_id) {
+      $main_term = get_term($main_cat_id);
+      if (!is_wp_error($main_term) && $main_term) {
+        $category = (object) array(
+          'cat_ID'   => $main_term->term_id,
+          'cat_name' => $main_term->name
+        );
+        return $category;
+      }
     }
 
     // 最初の階層型タクソノミーのタームを取得

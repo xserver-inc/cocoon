@@ -1020,6 +1020,8 @@ function get_info_list_shortcode($atts){
     'modified' => 0,
     'offset' => 0,
     'action' => null,
+    'post_type' => 'post',
+    'taxonomy' => null,
   ), $atts, 'info_list'));
 
   //countオプションに異常値が入っていた場合
@@ -1042,6 +1044,8 @@ function get_info_list_shortcode($atts){
     'modified' => $modified,
     'offset' => $offset,
     'action' => $action,
+    'post_type' => $post_type,
+    'taxonomy' => $taxonomy,
   );
   ob_start();
   generate_info_list_tag($atts);

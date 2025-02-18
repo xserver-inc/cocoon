@@ -277,49 +277,66 @@ if (get_appeal_area_button_background_color()): ?>
 ///////////////////////////////////////
 // カテゴリー色の設定
 ///////////////////////////////////////
-$cats = get_categories();
+// すべての投稿タイプの階層型タクソノミーを取得
+$taxonomies = get_taxonomies(array('hierarchical' => true), 'objects');
+
 $colors = array();
 $text_colors = array();
-//カテゴリー色の振り分け
-foreach ($cats as $cat) {
-  $color = get_the_category_color($cat->cat_ID);
-  $text_color = get_the_category_text_color($cat->cat_ID);
-  $cat_label_pre = '.cat-label.cat-label-';
-  $cat_link_pre = '.cat-link.cat-link-';
-  if ($color) {
-    $selectors = $cat_label_pre.$cat->cat_ID.', '.$cat_link_pre.$cat->cat_ID;
-    if (isset($colors[$color])) {
-      array_push($colors[$color], $selectors);
-    } else {
-      $colors[$color] = array($selectors);
+
+foreach ($taxonomies as $taxonomy) {
+  // タクソノミーのタームを取得
+  $terms = get_terms(array(
+    'taxonomy'   => $taxonomy->name,
+    'hide_empty' => false, // 投稿がなくても取得する
+  ));
+
+  foreach ($terms as $term) {
+    $color = get_the_category_color($term->term_id); // カラー取得関数（カスタム関数）
+    $text_color = get_the_category_text_color($term->term_id); // 文字色取得関数（カスタム関数）
+
+    $cat_label_pre = '.cat-label.cat-label-';
+    $cat_link_pre = '.cat-link.cat-link-';
+
+    if ($color) {
+      $selectors = $cat_label_pre . $term->term_id . ', ' . $cat_link_pre . $term->term_id;
+      if (isset($colors[$color])) {
+        array_push($colors[$color], $selectors);
+      } else {
+        $colors[$color] = array($selectors);
+      }
     }
-  }
-  if ($text_color) {
-    $selectors = $cat_label_pre.$cat->cat_ID.', '.$cat_link_pre.$cat->cat_ID;
-    if (isset($text_colors[$text_color])) {
-      array_push($text_colors[$text_color], $selectors);
-    } else {
-      $text_colors[$text_color] = array($selectors);
+
+    if ($text_color) {
+      $selectors = $cat_label_pre . $term->term_id . ', ' . $cat_link_pre . $term->term_id;
+      if (isset($text_colors[$text_color])) {
+        array_push($text_colors[$text_color], $selectors);
+      } else {
+        $text_colors[$text_color] = array($selectors);
+      }
     }
   }
 }
-//CSSの生成
+
+// CSS の生成
 $css = '';
-//カテゴリー背景色
+
+// 背景色の設定
 foreach ($colors as $color_code => $ids) {
   $selector = implode(', ', $ids);
-  $css .= $selector.'{'.PHP_EOL.
-    '  background-color: '.$color_code.';'.PHP_EOL.
-    '  color: #fff;'.PHP_EOL.
-  '}'.PHP_EOL.PHP_EOL;
+  $css .= $selector . '{' . PHP_EOL .
+    '  background-color: ' . $color_code . ';' . PHP_EOL .
+    '  color: #fff;' . PHP_EOL .
+  '}' . PHP_EOL . PHP_EOL;
 }
-//カテゴリー文字色
+
+// 文字色の設定
 foreach ($text_colors as $color_code => $ids) {
   $selector = implode(', ', $ids);
-  $css .= $selector.'{'.PHP_EOL.
-    '  color: '.$color_code.';'.PHP_EOL.
-  '}'.PHP_EOL.PHP_EOL;
+  $css .= $selector . '{' . PHP_EOL .
+    '  color: ' . $color_code . ';' . PHP_EOL .
+  '}' . PHP_EOL . PHP_EOL;
 }
+
 echo $css;
  ?>
 <?php

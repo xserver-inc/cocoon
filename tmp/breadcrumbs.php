@@ -55,8 +55,8 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_tax() || is_category()
 
     // 投稿にメインカテゴリー設定の場合
     $main_cat_id = get_the_page_main_category();
-    if ($main_cat_id && in_category($main_cat_id)) {
-      $cat = get_category($main_cat_id);
+    if ($main_cat_id) {
+      $cat = get_term($main_cat_id);  // メイン設定したタームを取得
     }
   } else {
     // 現在のクエリオブジェクトを取得
