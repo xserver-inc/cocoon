@@ -47,23 +47,14 @@ function page_custom_box_view() {
       }
     }
 
-    // 投稿ページとカスタム投稿ページでの表記の違い
-    if (isset($post->post_type) && ($post->post_type === 'post')) {
-      $label = __( 'メインカテゴリー', THEME_NAME );
-      $caption = __( 'このページで優先するカテゴリーを選択します。', THEME_NAME ) .
-        __( '優先カテゴリーは、アイキャッチやパンくずリストに適用されます。', THEME_NAME ) .
-        __( 'カテゴリー選択直後はすぐにセレクトボックスに反映されません。', THEME_NAME ) .
-        __( '一度ページを更新してください。', THEME_NAME );
-    } else {
-      $label = __( 'メインターム', THEME_NAME );
-      $caption = __( 'このページで優先するタームを選択します。', THEME_NAME ) .
-        __( '優先タームは、アイキャッチやパンくずリストに適用されます。', THEME_NAME ) .
-        __( 'ターム選択直後はすぐにセレクトボックスに反映されません。', THEME_NAME ) .
-        __( '一度ページを更新してください。', THEME_NAME );
-    }
-
-    generate_selectbox_tag('the_page_main_category', $options, get_the_page_main_category(), $label);
-    generate_howto_tag($caption, 'the_page_main_category');
+    generate_selectbox_tag('the_page_main_category', $options, get_the_page_main_category(), __( 'メインカテゴリー', THEME_NAME ));
+    generate_howto_tag(
+      __( 'このページで優先するカテゴリーを選択します。', THEME_NAME ) .
+      __( '優先カテゴリーは、アイキャッチやパンくずリストに適用されます。', THEME_NAME ) .
+      __( 'カテゴリー選択直後はすぐにセレクトボックスに反映されません。', THEME_NAME ) .
+      __( '一度ページを更新してください。', THEME_NAME ),
+      'the_page_main_category'
+    );
   }
 
   // ページタイプ
