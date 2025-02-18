@@ -1,4 +1,4 @@
-# Copyright (C) 2024 わいひら
+# Copyright (C) 2025 わいひら
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-17T11:52:56+00:00\n"
-"PO-Revision-Date: 2024-12-17 12:55\n"
+"POT-Creation-Date: 2025-02-09T14:11:13+00:00\n"
+"PO-Revision-Date: 2025-02-18 14:50\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -266,7 +266,7 @@ msgid "青色アンダーラインマーカー"
 msgstr "Marcador azul subrayado"
 
 #: lib/admin-tinymce-qtag.php:168
-#: blocks/src/block/radar/edit.js:306
+#: blocks/src/block/radar/edit.js:308
 #: blocks/src/toolbutton/dropdown-font-sizes.js:54
 #: blocks/src/toolbutton/dropdown-font-sizes.js:67
 msgid "フォントサイズ"
@@ -470,10 +470,10 @@ msgstr "Caja (contorno)"
 #: lib/admin-tinymce-qtag.php:799
 #: lib/gutenberg.php:110
 #: lib/widgets/cta-box.php:184
-#: blocks/src/block/cta/edit.js:215
+#: blocks/src/block/cta/edit.js:216
 #: blocks/src/block/sticky-box/deprecated.js:87
 #: blocks/src/block/sticky-box/edit.js:33
-#: blocks/src/old/tab-box/block.js:147
+#: blocks/src/old/tab-box/block.js:148
 #: blocks/src/toolbutton/badge-grey.js:14
 msgid "灰色"
 msgstr "Gris"
@@ -498,15 +498,15 @@ msgstr "Gris"
 #: lib/admin-tinymce-qtag.php:804
 #: lib/gutenberg.php:80
 #: lib/widgets/cta-box.php:179
-#: blocks/src/block/cta/edit.js:204
+#: blocks/src/block/cta/edit.js:205
 #: blocks/src/block/sticky-box/deprecated.js:91
 #: blocks/src/block/sticky-box/edit.js:37
 #: blocks/src/old/blank-box/block.js:72
 #: blocks/src/old/caption-box/block.js:66
 #: blocks/src/old/label-box/block.js:65
-#: blocks/src/old/micro-balloon-1/block.js:91
-#: blocks/src/old/micro-balloon/block.js:90
-#: blocks/src/old/tab-box/block.js:151
+#: blocks/src/old/micro-balloon-1/block.js:92
+#: blocks/src/old/micro-balloon/block.js:91
+#: blocks/src/old/tab-box/block.js:152
 #: blocks/src/old/tab-caption-box/block.js:66
 #: blocks/src/old/toggle-box/block.js:69
 #: blocks/src/toolbutton/badge-yellow.js:14
@@ -533,15 +533,15 @@ msgstr "Amarillo"
 #: lib/admin-tinymce-qtag.php:809
 #: lib/gutenberg.php:20
 #: lib/widgets/cta-box.php:167
-#: blocks/src/block/cta/edit.js:180
+#: blocks/src/block/cta/edit.js:181
 #: blocks/src/block/sticky-box/deprecated.js:95
 #: blocks/src/block/sticky-box/edit.js:41
 #: blocks/src/old/blank-box/block.js:76
 #: blocks/src/old/caption-box/block.js:70
 #: blocks/src/old/label-box/block.js:69
-#: blocks/src/old/micro-balloon-1/block.js:95
-#: blocks/src/old/micro-balloon/block.js:94
-#: blocks/src/old/tab-box/block.js:155
+#: blocks/src/old/micro-balloon-1/block.js:96
+#: blocks/src/old/micro-balloon/block.js:95
+#: blocks/src/old/tab-box/block.js:156
 #: blocks/src/old/tab-caption-box/block.js:70
 #: blocks/src/old/toggle-box/block.js:73
 #: blocks/src/toolbutton/badge-red.js:14
@@ -571,15 +571,15 @@ msgstr "Rojo"
 #: lib/admin-tinymce-qtag.php:814
 #: lib/gutenberg.php:45
 #: lib/widgets/cta-box.php:172
-#: blocks/src/block/cta/edit.js:188
+#: blocks/src/block/cta/edit.js:189
 #: blocks/src/block/sticky-box/deprecated.js:99
 #: blocks/src/block/sticky-box/edit.js:45
 #: blocks/src/old/blank-box/block.js:80
 #: blocks/src/old/caption-box/block.js:74
 #: blocks/src/old/label-box/block.js:73
-#: blocks/src/old/micro-balloon-1/block.js:99
-#: blocks/src/old/micro-balloon/block.js:98
-#: blocks/src/old/tab-box/block.js:159
+#: blocks/src/old/micro-balloon-1/block.js:100
+#: blocks/src/old/micro-balloon/block.js:99
+#: blocks/src/old/tab-box/block.js:160
 #: blocks/src/old/tab-caption-box/block.js:74
 #: blocks/src/old/toggle-box/block.js:77
 #: blocks/src/toolbutton/badge-blue.js:14
@@ -609,15 +609,15 @@ msgstr "Azul"
 #: lib/admin-tinymce-qtag.php:819
 #: lib/gutenberg.php:65
 #: lib/widgets/cta-box.php:176
-#: blocks/src/block/cta/edit.js:198
+#: blocks/src/block/cta/edit.js:199
 #: blocks/src/block/sticky-box/deprecated.js:103
 #: blocks/src/block/sticky-box/edit.js:49
 #: blocks/src/old/blank-box/block.js:84
 #: blocks/src/old/caption-box/block.js:78
 #: blocks/src/old/label-box/block.js:77
-#: blocks/src/old/micro-balloon-1/block.js:103
-#: blocks/src/old/micro-balloon/block.js:102
-#: blocks/src/old/tab-box/block.js:163
+#: blocks/src/old/micro-balloon-1/block.js:104
+#: blocks/src/old/micro-balloon/block.js:103
+#: blocks/src/old/tab-box/block.js:164
 #: blocks/src/old/tab-caption-box/block.js:78
 #: blocks/src/old/toggle-box/block.js:81
 #: blocks/src/toolbutton/badge-green.js:14
@@ -713,62 +713,62 @@ msgstr "Caja (estilo nota adhesiva)"
 #: lib/admin-tinymce-qtag.php:829
 #: lib/gutenberg.php:90
 #: lib/widgets/cta-box.php:181
-#: blocks/src/block/cta/edit.js:209
+#: blocks/src/block/cta/edit.js:210
 #: blocks/src/old/button-wrap/block.js:137
-#: blocks/src/old/button/block.js:152
+#: blocks/src/old/button/block.js:153
 #: blocks/src/toolbutton/badge-orange.js:14
 msgid "オレンジ"
 msgstr "Naranja"
 
 #: lib/admin-tinymce-qtag.php:834
 #: blocks/src/old/button-wrap/block.js:81
-#: blocks/src/old/button/block.js:96
+#: blocks/src/old/button/block.js:97
 msgid "レッド"
 msgstr "Rojo"
 
 #: lib/admin-tinymce-qtag.php:839
 #: lib/gutenberg.php:25
 #: lib/widgets/cta-box.php:168
-#: blocks/src/block/cta/edit.js:181
+#: blocks/src/block/cta/edit.js:182
 #: blocks/src/old/button-wrap/block.js:85
-#: blocks/src/old/button/block.js:100
+#: blocks/src/old/button/block.js:101
 #: blocks/src/toolbutton/badge-pink.js:14
 msgid "ピンク"
 msgstr "Rosa"
 
 #: lib/admin-tinymce-qtag.php:844
 #: blocks/src/old/button-wrap/block.js:89
-#: blocks/src/old/button/block.js:104
+#: blocks/src/old/button/block.js:105
 msgid "パープル"
 msgstr "Púrpura"
 
 #: lib/admin-tinymce-qtag.php:849
 #: blocks/src/old/button-wrap/block.js:101
-#: blocks/src/old/button/block.js:116
+#: blocks/src/old/button/block.js:117
 msgid "ブルー"
 msgstr "Azul"
 
 #: lib/admin-tinymce-qtag.php:854
 #: blocks/src/old/button-wrap/block.js:117
-#: blocks/src/old/button/block.js:132
+#: blocks/src/old/button/block.js:133
 msgid "グリーン"
 msgstr "Verde"
 
 #: lib/admin-tinymce-qtag.php:859
 #: blocks/src/old/button-wrap/block.js:129
-#: blocks/src/old/button/block.js:144
+#: blocks/src/old/button/block.js:145
 msgid "イエロー"
 msgstr "Amarillo"
 
 #: lib/admin-tinymce-qtag.php:864
 #: blocks/src/old/button-wrap/block.js:145
-#: blocks/src/old/button/block.js:160
+#: blocks/src/old/button/block.js:161
 msgid "ブラウン"
 msgstr "Marrón"
 
 #: lib/admin-tinymce-qtag.php:869
 #: blocks/src/old/button-wrap/block.js:149
-#: blocks/src/old/button/block.js:164
+#: blocks/src/old/button/block.js:165
 msgid "グレー"
 msgstr "Gris"
 
@@ -820,12 +820,12 @@ msgid "吹き出し（下）"
 msgstr "Globo de discurso (abajo)"
 
 #: lib/admin-tinymce-qtag.php:962
-#: lib/page-settings/editor-forms.php:113
+#: lib/page-settings/editor-forms.php:133
 #: lib/page-settings/_top-page.php:242
 #: blocks/src/block/button/deprecated.js:29
 #: blocks/src/block/button/index.js:20
-#: blocks/src/old/button-1/block.js:37
-#: blocks/src/old/button-1/block.js:46
+#: blocks/src/old/button-1/block.js:36
+#: blocks/src/old/button-1/block.js:45
 #: blocks/src/old/button/block.js:19
 #: blocks/src/old/button/block.js:27
 msgid "ボタン"
@@ -1118,7 +1118,7 @@ msgstr "Gris (grande)"
 
 #: lib/admin-tinymce-qtag.php:1273
 #: blocks/src/block/button-wrap/index.js:22
-#: blocks/src/old/button-wrap-1/block.js:44
+#: blocks/src/old/button-wrap-1/block.js:43
 #: blocks/src/old/button-wrap/block.js:21
 msgid "囲みボタン"
 msgstr "Botón rodeado"
@@ -1184,7 +1184,7 @@ msgid "あわせて読みたい"
 msgstr "Leer juntos"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1129
+#: lib/shortcodes.php:1133
 #: lib/widgets/cta-box.php:34
 #: tmp/css-custom.php:949
 #: tmp/css-custom.php:994
@@ -1240,6 +1240,7 @@ msgstr "PV"
 #: lib/admin.php:155
 #: lib/content-category.php:262
 #: lib/content-tag.php:210
+#: lib/page-settings/editor-forms.php:97
 msgid "アイキャッチ"
 msgstr "Imagen destacada"
 
@@ -1311,7 +1312,7 @@ msgstr "Widgets"
 
 #: lib/admin.php:431
 #: tmp/mobile-navi-button.php:21
-#: blocks/src/block/navicard/edit.js:149
+#: blocks/src/block/navicard/edit.js:150
 msgid "メニュー"
 msgstr "Menús"
 
@@ -1344,7 +1345,7 @@ msgstr "Globo de discurso"
 #: lib/original-menu.php:30
 #: lib/page-func-text/_top-page.php:37
 #: lib/tinymce/function-texts.php:49
-#: blocks/src/block/template/edit.js:108
+#: blocks/src/block/template/edit.js:107
 #: blocks/src/block/template/index.js:21
 #: blocks/src/toolbutton/dropdown-templates.js:57
 #: blocks/src/toolbutton/dropdown-templates.js:70
@@ -1541,20 +1542,20 @@ msgstr "Línea de borde"
 #: lib/page-settings/buttons-forms.php:83
 #: lib/page-settings/editor-forms.php:70
 #: lib/page-settings/pwa-forms.php:131
-#: blocks/src/block-universal/caption-box/edit.js:142
-#: blocks/src/block-universal/label-box/edit.js:142
-#: blocks/src/block-universal/tab-caption-box/edit.js:145
-#: blocks/src/block/balloon/edit.js:291
-#: blocks/src/block/blank-box/edit.js:66
-#: blocks/src/block/button-wrap/edit.js:141
-#: blocks/src/block/button/edit.js:144
-#: blocks/src/block/faq/edit.js:173
-#: blocks/src/block/icon-list/edit.js:124
-#: blocks/src/block/radar/edit.js:280
-#: blocks/src/block/tab-box/edit.js:146
-#: blocks/src/block/timeline/edit.js:161
-#: blocks/src/block/toggle-box/edit.js:121
-#: blocks/src/micro/micro-balloon/edit.js:125
+#: blocks/src/block-universal/caption-box/edit.js:143
+#: blocks/src/block-universal/label-box/edit.js:143
+#: blocks/src/block-universal/tab-caption-box/edit.js:146
+#: blocks/src/block/balloon/edit.js:295
+#: blocks/src/block/blank-box/edit.js:67
+#: blocks/src/block/button-wrap/edit.js:143
+#: blocks/src/block/button/edit.js:147
+#: blocks/src/block/faq/edit.js:174
+#: blocks/src/block/icon-list/edit.js:125
+#: blocks/src/block/radar/edit.js:282
+#: blocks/src/block/tab-box/edit.js:148
+#: blocks/src/block/timeline/edit.js:162
+#: blocks/src/block/toggle-box/edit.js:122
+#: blocks/src/micro/micro-balloon/edit.js:126
 msgid "背景色"
 msgstr "Color de fondo"
 
@@ -1612,7 +1613,7 @@ msgstr "Editar"
 #: lib/content-category.php:178
 #: lib/content-tag.php:149
 #: lib/seo.php:415
-#: lib/seo.php:588
+#: lib/seo.php:593
 msgid "「%s」の記事一覧です。"
 msgstr "Lista de artículos de \"%s\"."
 
@@ -1628,21 +1629,21 @@ msgstr "Especifica el color de la categoría."
 #: lib/page-settings/all-forms.php:99
 #: lib/page-settings/buttons-forms.php:86
 #: lib/page-settings/editor-forms.php:74
-#: blocks/src/block-universal/caption-box/edit.js:147
-#: blocks/src/block-universal/label-box/edit.js:147
-#: blocks/src/block-universal/tab-caption-box/edit.js:150
-#: blocks/src/block/balloon/edit.js:296
-#: blocks/src/block/blank-box/edit.js:71
-#: blocks/src/block/button-wrap/edit.js:146
-#: blocks/src/block/button/edit.js:149
-#: blocks/src/block/faq/edit.js:178
-#: blocks/src/block/icon-list/edit.js:129
-#: blocks/src/block/radar/edit.js:285
-#: blocks/src/block/tab-box/edit.js:151
-#: blocks/src/block/timeline/edit.js:166
-#: blocks/src/block/toggle-box/edit.js:126
-#: blocks/src/micro/micro-balloon/edit.js:130
-#: blocks/src/micro/micro-text/edit.js:93
+#: blocks/src/block-universal/caption-box/edit.js:148
+#: blocks/src/block-universal/label-box/edit.js:148
+#: blocks/src/block-universal/tab-caption-box/edit.js:151
+#: blocks/src/block/balloon/edit.js:300
+#: blocks/src/block/blank-box/edit.js:72
+#: blocks/src/block/button-wrap/edit.js:148
+#: blocks/src/block/button/edit.js:152
+#: blocks/src/block/faq/edit.js:179
+#: blocks/src/block/icon-list/edit.js:130
+#: blocks/src/block/radar/edit.js:287
+#: blocks/src/block/tab-box/edit.js:153
+#: blocks/src/block/timeline/edit.js:167
+#: blocks/src/block/toggle-box/edit.js:127
+#: blocks/src/micro/micro-balloon/edit.js:131
+#: blocks/src/micro/micro-text/edit.js:95
 msgid "文字色"
 msgstr "Color de texto"
 
@@ -1880,18 +1881,18 @@ msgstr "Configuración de la página"
 #: blocks/src/block-extension/style-extension/border01.js:42
 #: blocks/src/block-extension/style-extension/style01.js:42
 #: blocks/src/block-extension/style-extension/style02.js:42
-#: blocks/src/block/balloon/edit.js:229
+#: blocks/src/block/balloon/edit.js:230
 #: blocks/src/block/navicard/edit.js:106
 #: blocks/src/block/new-list/edit.js:139
-#: blocks/src/block/popular-list/edit.js:218
-#: blocks/src/old/balloon-ex-fix1/block.js:165
-#: blocks/src/old/balloon-ex-v2/block.js:86
-#: blocks/src/old/balloon-ex/block.js:155
+#: blocks/src/block/popular-list/edit.js:219
+#: blocks/src/old/balloon-ex-fix1/block.js:166
+#: blocks/src/old/balloon-ex-v2/block.js:87
+#: blocks/src/old/balloon-ex/block.js:156
 #: blocks/src/old/blank-box/block.js:68
 #: blocks/src/old/caption-box/block.js:62
 #: blocks/src/old/label-box/block.js:61
-#: blocks/src/old/micro-balloon-1/block.js:87
-#: blocks/src/old/micro-balloon/block.js:86
+#: blocks/src/old/micro-balloon-1/block.js:88
+#: blocks/src/old/micro-balloon/block.js:87
 #: blocks/src/old/tab-caption-box/block.js:62
 #: blocks/src/old/toggle-box/block.js:65
 msgid "デフォルト"
@@ -2117,8 +2118,8 @@ msgid "ページ内容が類似もしくは重複しているURLが複数存在�
 msgstr "Si hay varias URL con contenido de página similar o duplicado, este campo se puede utilizar para indicar al motor de búsqueda cuál es la URL legítima para que la evaluación de la página por parte del motor de búsqueda se consolide. Si el contenido está duplicado, ingrese la URL de la página canónica."
 
 #: lib/custom-fields/seo-field.php:150
-#: lib/html-forms.php:497
-#: lib/html-forms.php:563
+#: lib/html-forms.php:503
+#: lib/html-forms.php:569
 msgid "詳細設定"
 msgstr "Configuración avanzada"
 
@@ -2182,6 +2183,14 @@ msgstr "Día"
 msgid "Guidance on COVID-19:"
 msgstr "Guía sobre COVID-19:"
 
+#: lib/eyecatch.php:49
+msgid "Auto Draft"
+msgstr ""
+
+#: lib/eyecatch.php:445
+msgid "タイトルからアイキャッチを生成する"
+msgstr ""
+
 #: lib/gutenberg.php:15
 #: lib/page-settings/all-forms.php:31
 msgid "キーカラー"
@@ -2189,7 +2198,7 @@ msgstr "Color clave"
 
 #: lib/gutenberg.php:30
 #: lib/widgets/cta-box.php:169
-#: blocks/src/block/cta/edit.js:182
+#: blocks/src/block/cta/edit.js:183
 #: blocks/src/toolbutton/badge-purple.js:14
 msgid "紫色"
 msgstr "Púrpura"
@@ -2220,9 +2229,9 @@ msgstr "Verde amarillento"
 
 #: lib/gutenberg.php:75
 #: lib/widgets/cta-box.php:178
-#: blocks/src/block/cta/edit.js:203
+#: blocks/src/block/cta/edit.js:204
 #: blocks/src/old/button-wrap/block.js:125
-#: blocks/src/old/button/block.js:140
+#: blocks/src/old/button/block.js:141
 msgid "ライム"
 msgstr "Lima"
 
@@ -2232,15 +2241,15 @@ msgstr "Ámbar"
 
 #: lib/gutenberg.php:95
 #: lib/widgets/cta-box.php:182
-#: blocks/src/block/cta/edit.js:211
+#: blocks/src/block/cta/edit.js:212
 #: blocks/src/old/button-wrap/block.js:141
-#: blocks/src/old/button/block.js:156
+#: blocks/src/old/button/block.js:157
 msgid "ディープオレンジ"
 msgstr "Naranja oscuro"
 
 #: lib/gutenberg.php:100
 #: lib/widgets/cta-box.php:183
-#: blocks/src/block/cta/edit.js:214
+#: blocks/src/block/cta/edit.js:215
 #: blocks/src/toolbutton/badge-brown.js:14
 msgid "茶色"
 msgstr "Marrón"
@@ -2278,32 +2287,32 @@ msgid "淡い緑"
 msgstr "Verde claro"
 
 #: lib/gutenberg.php:190
-#: lib/page-settings/editor-forms.php:193
+#: lib/page-settings/editor-forms.php:213
 msgid "拡張色A"
 msgstr "Color extendido A"
 
 #: lib/gutenberg.php:195
-#: lib/page-settings/editor-forms.php:194
+#: lib/page-settings/editor-forms.php:214
 msgid "拡張色B"
 msgstr "Color extendido B"
 
 #: lib/gutenberg.php:200
-#: lib/page-settings/editor-forms.php:195
+#: lib/page-settings/editor-forms.php:215
 msgid "拡張色C"
 msgstr "Color extendido C"
 
 #: lib/gutenberg.php:205
-#: lib/page-settings/editor-forms.php:196
+#: lib/page-settings/editor-forms.php:216
 msgid "拡張色D"
 msgstr "Color extendido D"
 
 #: lib/gutenberg.php:210
-#: lib/page-settings/editor-forms.php:197
+#: lib/page-settings/editor-forms.php:217
 msgid "拡張色E"
 msgstr "Color extendido E"
 
 #: lib/gutenberg.php:215
-#: lib/page-settings/editor-forms.php:198
+#: lib/page-settings/editor-forms.php:218
 msgid "拡張色F"
 msgstr "Color extendido F"
 
@@ -2431,72 +2440,72 @@ msgstr "XML"
 msgid "解説ページ"
 msgstr "Página de descripción"
 
-#: lib/html-forms.php:363
+#: lib/html-forms.php:369
 msgid "タイトル検索"
 msgstr "Búsqueda de título"
 
-#: lib/html-forms.php:367
+#: lib/html-forms.php:373
 msgid "タイトル昇順"
 msgstr "Título (ascendente)"
 
-#: lib/html-forms.php:368
+#: lib/html-forms.php:374
 msgid "タイトル降順"
 msgstr "Título (descendente)"
 
-#: lib/html-forms.php:369
+#: lib/html-forms.php:375
 msgid "作成日昇順"
 msgstr "Fecha de creación (ascendente)"
 
-#: lib/html-forms.php:370
+#: lib/html-forms.php:376
 msgid "作成日降順"
 msgstr "Fecha de creación (descendente)"
 
-#: lib/html-forms.php:371
+#: lib/html-forms.php:377
 msgid "編集日昇順"
 msgstr "Fecha de edición (ascendente)"
 
-#: lib/html-forms.php:372
+#: lib/html-forms.php:378
 msgid "編集日降順"
 msgstr "Fecha de edición (descendente)"
 
-#: lib/html-forms.php:376
+#: lib/html-forms.php:382
 msgid "抽出"
 msgstr "Extraer"
 
-#: lib/html-forms.php:503
-#: lib/html-forms.php:569
+#: lib/html-forms.php:509
+#: lib/html-forms.php:575
 msgid "フォーマット（広告ユニット）"
 msgstr "Formato (Unidad de anuncio)"
 
-#: lib/html-forms.php:507
-#: lib/html-forms.php:572
+#: lib/html-forms.php:513
+#: lib/html-forms.php:578
 #: lib/widgets/ad.php:79
 #: lib/widgets/mobile-ad.php:79
 #: lib/widgets/pc-ad.php:83
 msgid "広告ラベルを表示する"
 msgstr "Mostrar etiqueta de anuncio"
 
-#: lib/html-forms.php:514
+#: lib/html-forms.php:520
 msgid "広告の表示数を制御する"
 msgstr "Controlar cuántos anuncios se muestran"
 
-#: lib/html-forms.php:516
+#: lib/html-forms.php:522
 msgid "先頭から"
 msgstr "Desde el primero"
 
-#: lib/html-forms.php:518
+#: lib/html-forms.php:524
 msgid "個まで"
 msgstr "Máximo"
 
-#: lib/html-forms.php:520
+#: lib/html-forms.php:526
 msgid "※-1で全てのH2見出し手前に広告を挿入"
 msgstr "Inserte anuncios delante de todos los titulares H2 con -1"
 
-#: lib/html-forms.php:550
+#: lib/html-forms.php:556
 msgid "入力済"
 msgstr "Ingresado"
 
-#: lib/html-forms.php:552
+#: lib/html-forms.php:558
 #: blocks/src/block/balloon/edit.js:24
 #: blocks/src/old/balloon-1/block.js:17
 #: blocks/src/old/balloon-2/block.js:23
@@ -2507,33 +2516,33 @@ msgstr "Ingresado"
 msgid "未入力"
 msgstr "No ingresado"
 
-#: lib/html-forms.php:591
-#: blocks/src/block/cta/edit.js:126
+#: lib/html-forms.php:597
+#: blocks/src/block/cta/edit.js:127
 msgid "選択"
 msgstr "Seleccionar"
 
-#: lib/html-forms.php:592
+#: lib/html-forms.php:598
 #: skins/skin-made-in-heaven/lib/hook-wp.php:94
 msgid "クリア"
 msgstr "Limpiar"
 
-#: lib/html-forms.php:599
+#: lib/html-forms.php:605
 msgid "大きな画像は縮小して表示されます。"
 msgstr "Las imágenes grandes se muestran en tamaño reducido."
 
-#: lib/html-forms.php:620
+#: lib/html-forms.php:626
 msgid "画像を選択してください。"
 msgstr "Seleccione una imagen."
 
-#: lib/html-forms.php:628
+#: lib/html-forms.php:634
 msgid "画像の選択"
 msgstr "Seleccionar imagen"
 
-#: lib/html-forms.php:791
+#: lib/html-forms.php:797
 msgid "フロントページのみ"
 msgstr "Solo página principal"
 
-#: lib/html-forms.php:796
+#: lib/html-forms.php:802
 #: lib/page-settings/sns-follow-forms.php:110
 #: lib/page-settings/sns-share-forms-bottom.php:124
 #: lib/page-settings/sns-share-forms-top.php:111
@@ -2542,7 +2551,7 @@ msgstr "Solo página principal"
 msgid "投稿"
 msgstr "Publicación"
 
-#: lib/html-forms.php:801
+#: lib/html-forms.php:807
 #: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:127
 #: lib/page-settings/sns-share-forms-top.php:114
@@ -2553,158 +2562,158 @@ msgstr "Publicación"
 msgid "固定ページ"
 msgstr "Página fija"
 
-#: lib/html-forms.php:806
+#: lib/html-forms.php:812
 msgid "カテゴリー一覧"
 msgstr "Lista de categorías"
 
-#: lib/html-forms.php:811
+#: lib/html-forms.php:817
 msgid "タグ一覧"
 msgstr "Lista de etiquetas"
 
-#: lib/html-forms.php:816
+#: lib/html-forms.php:822
 msgid "著者一覧"
 msgstr "Lista de autores"
 
-#: lib/html-forms.php:821
+#: lib/html-forms.php:827
 msgid "アーカイブ一覧"
 msgstr "Lista de archivos"
 
-#: lib/html-forms.php:826
+#: lib/html-forms.php:832
 msgid "検索結果一覧"
 msgstr "Lista de resultados de búsqueda"
 
-#: lib/html-forms.php:831
+#: lib/html-forms.php:837
 #: lib/page-settings/_top-page.php:248
 #: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr "Páginas 404"
 
-#: lib/html-forms.php:837
+#: lib/html-forms.php:843
 msgid "AMPページ"
 msgstr "Páginas AMP"
 
-#: lib/html-forms.php:844
+#: lib/html-forms.php:850
 msgid "wpForoページ"
 msgstr "Páginas wpForo"
 
-#: lib/html-forms.php:851
+#: lib/html-forms.php:857
 msgid "bbPressページ"
 msgstr "Páginas bbPress"
 
-#: lib/html-forms.php:858
+#: lib/html-forms.php:864
 msgid "BuddyPressページ"
 msgstr "Páginas BuddyPress"
 
-#: lib/html-forms.php:865
+#: lib/html-forms.php:871
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr "Páginas de foros de complementos (bbPress, BuddyPress, wpForo)"
 
-#: lib/html-forms.php:911
+#: lib/html-forms.php:917
 msgid "投稿ID入力"
 msgstr "Ingrese los IDs de las publicaciones"
 
-#: lib/html-forms.php:912
-#: lib/html-forms.php:932
-#: lib/html-forms.php:952
+#: lib/html-forms.php:918
+#: lib/html-forms.php:938
+#: lib/html-forms.php:958
 msgid "例：111,222,333"
 msgstr "Ejemplo: 111, 222, 333"
 
-#: lib/html-forms.php:913
+#: lib/html-forms.php:919
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "Ingrese los IDs de las publicaciones, separados por comas."
 
-#: lib/html-forms.php:931
+#: lib/html-forms.php:937
 msgid "固定ページID入力"
 msgstr "Ingrese los IDs de las páginas fijas"
 
-#: lib/html-forms.php:933
+#: lib/html-forms.php:939
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "Ingrese los IDs de las páginas fijas, separados por comas."
 
-#: lib/html-forms.php:951
+#: lib/html-forms.php:957
 msgid "タグID入力"
 msgstr "Ingrese los IDs de las etiquetas"
 
-#: lib/html-forms.php:953
+#: lib/html-forms.php:959
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr "Ingrese los IDs de las etiquetas, separados por comas."
 
-#: lib/html-forms.php:1119
+#: lib/html-forms.php:1128
 msgid "人気記事は見つかりませんでした。"
 msgstr "No se encontraron artículos populares."
 
-#: lib/html-forms.php:1347
-#: lib/html-forms.php:1895
+#: lib/html-forms.php:1356
+#: lib/html-forms.php:1910
 msgid "記事は見つかりませんでした。"
 msgstr "No se encontraron artículos."
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1479
+#: lib/html-forms.php:1488
 msgid "Posts by %s"
 msgstr "Publicaciones por %s"
 
-#: lib/html-forms.php:1483
+#: lib/html-forms.php:1492
 msgid "NO USER"
 msgstr "NO HAY USUARIO"
 
-#: lib/html-forms.php:1498
+#: lib/html-forms.php:1507
 msgid "未登録のユーザーさん"
 msgstr "Usuario no registrado"
 
-#: lib/html-forms.php:1508
+#: lib/html-forms.php:1517
 msgid "未登録のユーザーさんです。"
 msgstr "El usuario no está registrado."
 
-#: lib/html-forms.php:1510
+#: lib/html-forms.php:1519
 msgid "ログイン・登録はこちら→"
 msgstr "Iniciar sesión/Registrarse ->"
 
-#: lib/html-forms.php:1512
+#: lib/html-forms.php:1521
 msgid "ログインページ"
 msgstr "Página de inicio de sesión"
 
-#: lib/html-forms.php:1516
+#: lib/html-forms.php:1525
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "Usuario no registrado. Por favor inicie sesión y presione el botón de guardar en la configuración de Cocoon."
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1528
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "El contenido del perfil se puede cambiar desde la pantalla de administración ->"
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1528
 msgid "プロフィール設定画面"
 msgstr "Configuración del perfil"
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1528
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*Este mensaje solo se muestra a los usuarios que han iniciado sesión."
 
-#: lib/html-forms.php:1549
+#: lib/html-forms.php:1558
 msgid "管理者用エラーメッセージ"
 msgstr "Mensajes de error para el administrador"
 
-#: lib/html-forms.php:1776
+#: lib/html-forms.php:1791
 msgid "おすすめ"
 msgstr "Recomendado"
 
-#: lib/html-forms.php:1779
+#: lib/html-forms.php:1794
 msgid "新着"
 msgstr "Nuevas publicaciones"
 
-#: lib/html-forms.php:1782
+#: lib/html-forms.php:1797
 msgid "注目"
 msgstr "Destacado"
 
-#: lib/html-forms.php:1785
+#: lib/html-forms.php:1800
 msgid "必見"
 msgstr "Imprescindible"
 
-#: lib/html-forms.php:1788
+#: lib/html-forms.php:1803
 msgid "お得"
 msgstr "Grandes ofertas"
 
-#: lib/html-forms.php:1831
-#: lib/shortcodes.php:1013
+#: lib/html-forms.php:1846
+#: lib/shortcodes.php:1017
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -2946,11 +2955,11 @@ msgstr "No eliminar y volver a la lista"
 #: lib/widgets/recommended-cards.php:87
 #: lib/widgets/sns-follow-buttons.php:56
 #: lib/widgets/toc.php:83
-#: blocks/src/block/radar/edit.js:333
+#: blocks/src/block/radar/edit.js:335
 #: blocks/src/block/timeline-item/deprecated.js:24
 #: blocks/src/block/timeline-item/deprecated.js:48
 #: blocks/src/block/timeline-item/edit.js:28
-#: blocks/src/block/timeline/edit.js:185
+#: blocks/src/block/timeline/edit.js:186
 msgid "タイトル"
 msgstr "Título"
 
@@ -3045,7 +3054,7 @@ msgstr "Editar"
 #: lib/page-item-ranking/form.php:226
 #: lib/page-item-ranking/list.php:64
 #: lib/page-speech-balloon/list.php:75
-#: blocks/src/block/cta/edit.js:139
+#: blocks/src/block/cta/edit.js:140
 msgid "削除"
 msgstr "Eliminar"
 
@@ -4718,8 +4727,8 @@ msgid "22px"
 msgstr "22 px"
 
 #: lib/page-settings/all-forms.php:95
-#: blocks/src/block/button-wrap/edit.js:126
-#: blocks/src/block/button/edit.js:129
+#: blocks/src/block/button-wrap/edit.js:127
+#: blocks/src/block/button/edit.js:131
 msgid "文字サイズ"
 msgstr "Tamaño del texto"
 
@@ -5270,7 +5279,7 @@ msgid "データー取得時点のAmazon販売ページでの値段を表示し�
 msgstr "Muestra los precios en la página de ventas de Amazon en el momento de la obtención de datos. Si se ha configurado una opción de precio mediante un shortcode, este tendrá prioridad."
 
 #: lib/page-settings/apis-forms.php:77
-#: blocks/src/block/new-list/edit.js:218
+#: blocks/src/block/new-list/edit.js:221
 msgid "説明文を表示する"
 msgstr "Mostrar descripción"
 
@@ -5689,7 +5698,7 @@ msgstr "Introduce un título para el área de anuncio. Si se deja en blanco, no 
 #: lib/widgets/cta-box.php:140
 #: lib/widgets/fb-like-balloon.php:76
 #: lib/widgets/fb-like-box.php:106
-#: blocks/src/block/cta/edit.js:148
+#: blocks/src/block/cta/edit.js:149
 msgid "メッセージ"
 msgstr "Mensaje"
 
@@ -5749,7 +5758,7 @@ msgstr "Configura cómo se abrirán los enlaces del botón en el área de anunci
 #: lib/page-settings/appeal-forms.php:186
 #: lib/page-settings/buttons-forms.php:78
 #: lib/widgets/cta-box.php:162
-#: blocks/src/block/cta/edit.js:176
+#: blocks/src/block/cta/edit.js:177
 msgid "ボタン色"
 msgstr "Color del botón"
 
@@ -5851,7 +5860,7 @@ msgstr "Configura la fecha que se mostrará en la tarjeta de blog. Si no hay una
 #: lib/page-settings/blogcard-out-forms.php:85
 #: lib/page-settings/notice-forms.php:75
 #: blocks/src/block/button/edit.js:78
-#: blocks/src/old/button-1/block.js:92
+#: blocks/src/old/button-1/block.js:91
 #: blocks/src/old/button/block.js:74
 msgid "リンクの開き方"
 msgstr "Cómo abrir un enlace"
@@ -5859,7 +5868,7 @@ msgstr "Cómo abrir un enlace"
 #: lib/page-settings/blogcard-in-forms.php:111
 #: lib/page-settings/blogcard-out-forms.php:90
 #: blocks/src/block/button/edit.js:88
-#: blocks/src/old/button-1/block.js:102
+#: blocks/src/old/button-1/block.js:101
 #: blocks/src/old/button/block.js:84
 msgid "新しいタブで開く"
 msgstr "Abrir en una nueva pestaña"
@@ -6267,19 +6276,19 @@ msgstr "Color del borde del contenido"
 
 #: lib/page-settings/column-forms.php:80
 #: lib/page-settings/column-forms.php:150
-#: blocks/src/block-universal/caption-box/edit.js:137
-#: blocks/src/block-universal/label-box/edit.js:137
-#: blocks/src/block-universal/tab-caption-box/edit.js:140
-#: blocks/src/block/balloon/edit.js:301
-#: blocks/src/block/blank-box/edit.js:61
-#: blocks/src/block/button-wrap/edit.js:151
-#: blocks/src/block/button/edit.js:154
-#: blocks/src/block/faq/edit.js:168
-#: blocks/src/block/icon-list/edit.js:119
-#: blocks/src/block/tab-box/edit.js:141
-#: blocks/src/block/timeline/edit.js:171
-#: blocks/src/block/toggle-box/edit.js:116
-#: blocks/src/micro/micro-balloon/edit.js:135
+#: blocks/src/block-universal/caption-box/edit.js:138
+#: blocks/src/block-universal/label-box/edit.js:138
+#: blocks/src/block-universal/tab-caption-box/edit.js:141
+#: blocks/src/block/balloon/edit.js:305
+#: blocks/src/block/blank-box/edit.js:62
+#: blocks/src/block/button-wrap/edit.js:153
+#: blocks/src/block/button/edit.js:157
+#: blocks/src/block/faq/edit.js:169
+#: blocks/src/block/icon-list/edit.js:120
+#: blocks/src/block/tab-box/edit.js:143
+#: blocks/src/block/timeline/edit.js:172
+#: blocks/src/block/toggle-box/edit.js:117
+#: blocks/src/micro/micro-balloon/edit.js:136
 msgid "ボーダー色"
 msgstr "Color del borde"
 
@@ -6587,11 +6596,11 @@ msgstr "¿Desea mostrar el icono de Font Awesome en la parte derecha del enlace 
 #: blocks/src/block-universal/label-box/edit.js:112
 #: blocks/src/block-universal/tab-caption-box/edit.js:114
 #: blocks/src/block/icon-list/edit.js:90
-#: blocks/src/micro/micro-balloon/edit.js:100
-#: blocks/src/micro/micro-text/edit.js:68
-#: blocks/src/old/caption-box/block.js:83
-#: blocks/src/old/label-box/block.js:82
-#: blocks/src/old/tab-caption-box/block.js:83
+#: blocks/src/micro/micro-balloon/edit.js:101
+#: blocks/src/micro/micro-text/edit.js:69
+#: blocks/src/old/caption-box/block.js:84
+#: blocks/src/old/label-box/block.js:83
+#: blocks/src/old/tab-caption-box/block.js:84
 msgid "アイコン"
 msgstr "Icono"
 
@@ -6849,139 +6858,168 @@ msgstr "Cambiar para seleccionar etiquetas seleccionando la lista de verificaci�
 msgid "※タグ編集画面やエディターのタグオプション上で階層構造形式になります。"
 msgstr "*Esta es una estructura jerárquica en la pantalla de edición de etiquetas y en las opciones de etiquetas en el editor."
 
+#: lib/page-settings/editor-forms.php:101
+msgid "「タイトルからアイキャッチを生成する」機能を有効にする"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:101
+#: lib/page-settings/editor-forms.php:107
+msgid "（β版）"
+msgstr ""
+
 #: lib/page-settings/editor-forms.php:103
+msgid "エディターのアイキャッチ設定エリア内に、「タイトルからアイキャッチを生成する」オプションを追加します。"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:103
+msgid "「公開（保存）」ボタンが押された時だけ画像が生成されます。"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:103
+msgid "ベータ版機能ですので、仕様が変わる可能性があるのでご了承ください。"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:107
+msgid "チェックボックスをデフォルトで選択する"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:108
+msgid "エディターにある「タイトルからアイキャッチを生成する」オプションのチェックボックスをデフォルトで選択状態にします。"
+msgstr ""
+
+#: lib/page-settings/editor-forms.php:123
 msgid "ブロックエディター設定"
 msgstr "Configuración del editor de bloques"
 
-#: lib/page-settings/editor-forms.php:108
+#: lib/page-settings/editor-forms.php:128
 msgid "ブロックエディターのみに適用される設定です。"
 msgstr "Las configuraciones se aplican solo al editor de bloques."
 
-#: lib/page-settings/editor-forms.php:117
+#: lib/page-settings/editor-forms.php:137
 msgid "「ふりがな（ルビ）」ボタンを表示する"
 msgstr "Mostrar el botón \"Furigana (Ruby)\""
 
-#: lib/page-settings/editor-forms.php:118
+#: lib/page-settings/editor-forms.php:138
 msgid "Cocoonの「ルビ」ボタン表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。"
 msgstr "Alternar la visualización del botón \"Furigana\" de Cocoon. Si está utilizando la función Furigana del complemento y ocurre un error, desactívelo."
 
-#: lib/page-settings/editor-forms.php:122
+#: lib/page-settings/editor-forms.php:142
 msgid "「書式のクリア」ボタンを表示する"
 msgstr "Mostrar el botón \"Borrar formato\""
 
-#: lib/page-settings/editor-forms.php:123
+#: lib/page-settings/editor-forms.php:143
 msgid "Cocoonの「書式のクリア」表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。"
 msgstr "Alternar la visualización del botón \"Borrar formato\" de Cocoon. Si está utilizando la función Furigana del complemento y ocurre un error, desactívelo."
 
-#: lib/page-settings/editor-forms.php:131
+#: lib/page-settings/editor-forms.php:151
 msgid "スタイルドロップダウン"
 msgstr "Desplegable de estilo"
 
-#: lib/page-settings/editor-forms.php:135
+#: lib/page-settings/editor-forms.php:155
 msgid "「文字スタイル」を表示する"
 msgstr "Mostrar \"Estilo de texto\""
 
-#: lib/page-settings/editor-forms.php:136
+#: lib/page-settings/editor-forms.php:156
 msgid "ツールバーの文字スタイルドロップダウンを表示するか。"
 msgstr "¿Desea mostrar la lista desplegable de estilo de texto en la barra de herramientas?"
 
-#: lib/page-settings/editor-forms.php:138
+#: lib/page-settings/editor-forms.php:158
 msgid "「マーカー」を表示する"
 msgstr "Mostrar \"Marcador\""
 
-#: lib/page-settings/editor-forms.php:139
+#: lib/page-settings/editor-forms.php:159
 msgid "ツールバーのマーカースタイルドロップダウンを表示するか。"
 msgstr "¿Desea mostrar la lista desplegable de estilo de marcador en la barra de herramientas?"
 
-#: lib/page-settings/editor-forms.php:141
+#: lib/page-settings/editor-forms.php:161
 msgid "「バッジ」を表示する"
 msgstr "Mostrar \"Insignia\""
 
-#: lib/page-settings/editor-forms.php:142
+#: lib/page-settings/editor-forms.php:162
 msgid "ツールバーのバッジスタイルドロップダウンを表示するか。"
 msgstr "¿Desea mostrar la lista desplegable de estilo de insignia en la barra de herramientas?"
 
-#: lib/page-settings/editor-forms.php:144
+#: lib/page-settings/editor-forms.php:164
 msgid "「文字サイズ」を表示する"
 msgstr "Mostrar \"Tamaño de texto\""
 
-#: lib/page-settings/editor-forms.php:145
+#: lib/page-settings/editor-forms.php:165
 msgid "ツールバーの文字サイズスタイルドロップダウンを表示するか。"
 msgstr "¿Desea mostrar la lista desplegable de tamaño de texto en la barra de herramientas?"
 
-#: lib/page-settings/editor-forms.php:153
+#: lib/page-settings/editor-forms.php:173
 msgid "ショートコードドロップダウン"
 msgstr "Lista desplegable de código corto"
 
-#: lib/page-settings/editor-forms.php:157
+#: lib/page-settings/editor-forms.php:177
 msgid "「汎用ショートコード」を表示する"
 msgstr "Mostrar \"Shortcode genérico\""
 
-#: lib/page-settings/editor-forms.php:158
+#: lib/page-settings/editor-forms.php:178
 msgid "ツールバーの汎用ショートコードドロップダウンを表示するか。"
 msgstr "¿Desea mostrar la lista desplegable de código corto genérico en la barra de herramientas?"
 
-#: lib/page-settings/editor-forms.php:160
+#: lib/page-settings/editor-forms.php:180
 msgid "「テンプレート」表示する"
 msgstr "Mostrar \"Plantilla\""
 
-#: lib/page-settings/editor-forms.php:161
+#: lib/page-settings/editor-forms.php:181
 msgid "ツールバーのテンプレートショートコードドロップダウンを表示するか。"
 msgstr "¿Desea mostrar la lista desplegable de código corto de la plantilla en la barra de herramientas?"
 
-#: lib/page-settings/editor-forms.php:163
+#: lib/page-settings/editor-forms.php:183
 msgid "「アフィリエイト」を表示する"
 msgstr "Mostrar \"Afiliación\""
 
-#: lib/page-settings/editor-forms.php:164
+#: lib/page-settings/editor-forms.php:184
 msgid "ツールバーのアフィリエイトショートコードドロップダウンを表示するか。"
 msgstr "¿Desea mostrar la lista desplegable de código corto de afiliado en la barra de herramientas?"
 
-#: lib/page-settings/editor-forms.php:166
+#: lib/page-settings/editor-forms.php:186
 msgid "「ランキング」を表示する"
 msgstr "Mostrar \"Ranking\""
 
-#: lib/page-settings/editor-forms.php:167
+#: lib/page-settings/editor-forms.php:187
 msgid "ツールバーのランキングショートコードドロップダウンを表示するか。"
 msgstr "¿Desea mostrar la lista desplegable de código corto de clasificación en la barra de herramientas?"
 
-#: lib/page-settings/editor-forms.php:176
+#: lib/page-settings/editor-forms.php:196
 msgid "ブロックオプション"
 msgstr "Opciones de bloque"
 
-#: lib/page-settings/editor-forms.php:180
+#: lib/page-settings/editor-forms.php:200
 msgid "「スタイル」オプションを表示する"
 msgstr "Mostrar la opción \"Estilo\""
 
-#: lib/page-settings/editor-forms.php:181
+#: lib/page-settings/editor-forms.php:201
 msgid "ブロックエディターの「スタイル」オプションを表示するか。"
 msgstr "¿Mostrar la opción \"Estilo\" en el editor de bloques?"
 
-#: lib/page-settings/editor-forms.php:189
+#: lib/page-settings/editor-forms.php:209
 msgid "拡張カラーパレット色"
 msgstr "Colores de paleta de colores extendida"
 
-#: lib/page-settings/editor-forms.php:200
+#: lib/page-settings/editor-forms.php:220
 msgid "任意のカラーパレット色を設定できます。"
 msgstr "Puede configurar cualquier color de la paleta de colores."
 
-#: lib/page-settings/editor-forms.php:217
+#: lib/page-settings/editor-forms.php:237
 msgid "旧エディター設定"
 msgstr "Configuración del editor antiguo"
 
-#: lib/page-settings/editor-forms.php:222
+#: lib/page-settings/editor-forms.php:242
 msgid "ビジュアルエディター用の設定です。"
 msgstr "Las configuraciones para el editor visual."
 
-#: lib/page-settings/editor-forms.php:227
+#: lib/page-settings/editor-forms.php:247
 msgid "確認ダイアログ"
 msgstr "Cuadro de diálogo de confirmación"
 
-#: lib/page-settings/editor-forms.php:231
+#: lib/page-settings/editor-forms.php:251
 msgid "ページ公開前に確認アラートを出す"
 msgstr "Emitir una alerta de confirmación antes de la publicación de la página"
 
-#: lib/page-settings/editor-forms.php:232
+#: lib/page-settings/editor-forms.php:252
 msgid "記事を投稿する前に確認ダイアログを表示します。※旧エディター用の設定"
 msgstr "Muestra un cuadro de diálogo de confirmación antes de enviar un artículo."
 
@@ -7412,6 +7450,10 @@ msgstr "La misma proporción que la televisión (terrestre digital) y YouTube."
 msgid "9:16, 1:1.777..（地デジ・YouTube比）デフォルト"
 msgstr "9:16, 1:1.777... (digital terrestre, proporción de YouTube) (predeterminado)"
 
+#: lib/page-settings/image-forms.php:166
+msgid "【推奨】"
+msgstr ""
+
 #: lib/page-settings/image-forms.php:168
 msgid "人間が最も美しいと感じる比率とされています。"
 msgstr "Esta es la proporción que se considera más hermosa para los seres humanos."
@@ -7469,8 +7511,8 @@ msgid "サムネイルをRetinaディスプレイ対応端末で見ても綺麗�
 msgstr "Las miniaturas se muestran bellamente incluso en dispositivos compatibles con la pantalla Retina. *Esto no se aplica a \"Tarjeta grande\" en \"Tipo de tarjeta de índice\"."
 
 #: lib/page-settings/image-forms.php:207
-msgid "これらの設定で変更されるサムネイル部分はこちら。"
-msgstr "Aquí está la parte de la miniatura que se cambia con esta configuración."
+msgid "これらの設定で変更される画像部分はこちら。"
+msgstr ""
 
 #: lib/page-settings/image-forms.php:209
 msgid "インデックス、アーカイブ、検索結果ページのエントリーカードのサムネイル。"
@@ -7522,19 +7564,27 @@ msgstr "Navegación de alimentación de página"
 msgid "内部ブログカード、外部ブログカードのサムネイル。"
 msgstr "La miniatura de las tarjetas de blog internas y externas."
 
-#: lib/page-settings/image-forms.php:223
+#: lib/page-settings/image-forms.php:216
+msgid "エディターの「タイトルからアイキャッチを生成する」で生成したアイキャッチ。"
+msgstr ""
+
+#: lib/page-settings/image-forms.php:216
+msgid "タイトルから生成したアイキャッチ"
+msgstr ""
+
+#: lib/page-settings/image-forms.php:224
 msgid "NO IMAGE設定"
 msgstr "Configuración de NO IMAGE"
 
-#: lib/page-settings/image-forms.php:226
+#: lib/page-settings/image-forms.php:227
 msgid "アイキャッチの存在しない投稿のサムネイル画像設定です。"
 msgstr "La configuración de la imagen en miniatura para las publicaciones sin imagen destacada."
 
-#: lib/page-settings/image-forms.php:234
+#: lib/page-settings/image-forms.php:235
 msgid "NO IMAGE画像"
 msgstr "Imagen NO IMAGE"
 
-#: lib/page-settings/image-forms.php:239
+#: lib/page-settings/image-forms.php:240
 msgid "アイキャッチが存在しない投稿・固定ページのサムネイルに利用される画像ファイルを指定してください。"
 msgstr "Especifica un archivo de imagen para mostrar en la miniatura de las publicaciones/páginas que no tienen una imagen destacada."
 
@@ -8777,7 +8827,7 @@ msgid "関連記事見出し"
 msgstr "Encabezado de artículos relacionados"
 
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1125
+#: lib/shortcodes.php:1129
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -8812,7 +8862,7 @@ msgstr "Ingrese un subencabezado para los artículos relacionados."
 #: lib/widgets/related-entries.php:182
 #: blocks/src/block/navicard/edit.js:101
 #: blocks/src/block/new-list/edit.js:134
-#: blocks/src/block/popular-list/edit.js:213
+#: blocks/src/block/popular-list/edit.js:214
 msgid "表示タイプ"
 msgstr "Tipo de visualización"
 
@@ -10184,7 +10234,7 @@ msgid "SNSフォロー"
 msgstr "Seguir en redes sociales"
 
 #: lib/page-settings/_top-page.php:215
-#: blocks/src/block/cta/edit.js:109
+#: blocks/src/block/cta/edit.js:110
 msgid "画像"
 msgstr "Imagen"
 
@@ -10270,34 +10320,34 @@ msgid "アイコンとなる画像を選択してください。160px以上の�
 msgstr "Seleccione una imagen que se convertirá en un icono. Configure una imagen cuadrada de al menos 160 px de tamaño."
 
 #: lib/page-speech-balloon/form.php:85
-#: blocks/src/block/balloon/edit.js:223
-#: blocks/src/old/balloon-ex-fix1/block.js:159
-#: blocks/src/old/balloon-ex-v2/block.js:80
-#: blocks/src/old/balloon-ex/block.js:149
+#: blocks/src/block/balloon/edit.js:224
+#: blocks/src/old/balloon-ex-fix1/block.js:160
+#: blocks/src/old/balloon-ex-v2/block.js:81
+#: blocks/src/old/balloon-ex/block.js:150
 msgid "吹き出しスタイル"
 msgstr "Estilo del globo de diálogo"
 
 #: lib/page-speech-balloon/form.php:91
-#: blocks/src/block/balloon/edit.js:233
-#: blocks/src/old/balloon-ex-fix1/block.js:169
-#: blocks/src/old/balloon-ex-v2/block.js:90
-#: blocks/src/old/balloon-ex/block.js:159
+#: blocks/src/block/balloon/edit.js:234
+#: blocks/src/old/balloon-ex-fix1/block.js:170
+#: blocks/src/old/balloon-ex-v2/block.js:91
+#: blocks/src/old/balloon-ex/block.js:160
 msgid "フラット"
 msgstr "Plano"
 
 #: lib/page-speech-balloon/form.php:92
-#: blocks/src/block/balloon/edit.js:237
-#: blocks/src/old/balloon-ex-fix1/block.js:173
-#: blocks/src/old/balloon-ex-v2/block.js:94
-#: blocks/src/old/balloon-ex/block.js:163
+#: blocks/src/block/balloon/edit.js:238
+#: blocks/src/old/balloon-ex-fix1/block.js:174
+#: blocks/src/old/balloon-ex-v2/block.js:95
+#: blocks/src/old/balloon-ex/block.js:164
 msgid "LINE風"
 msgstr "Estilo LINE"
 
 #: lib/page-speech-balloon/form.php:93
-#: blocks/src/block/balloon/edit.js:241
-#: blocks/src/old/balloon-ex-fix1/block.js:177
-#: blocks/src/old/balloon-ex-v2/block.js:98
-#: blocks/src/old/balloon-ex/block.js:167
+#: blocks/src/block/balloon/edit.js:242
+#: blocks/src/old/balloon-ex-fix1/block.js:178
+#: blocks/src/old/balloon-ex-v2/block.js:99
+#: blocks/src/old/balloon-ex/block.js:168
 msgid "考え事"
 msgstr "Pensando"
 
@@ -10306,26 +10356,26 @@ msgid "吹き出しのスタイルを設定します。"
 msgstr "Configure el estilo del globo de diálogo."
 
 #: lib/page-speech-balloon/form.php:103
-#: blocks/src/block/balloon/edit.js:247
-#: blocks/src/old/balloon-ex-fix1/block.js:183
-#: blocks/src/old/balloon-ex-v2/block.js:104
-#: blocks/src/old/balloon-ex/block.js:173
+#: blocks/src/block/balloon/edit.js:249
+#: blocks/src/old/balloon-ex-fix1/block.js:185
+#: blocks/src/old/balloon-ex-v2/block.js:106
+#: blocks/src/old/balloon-ex/block.js:175
 msgid "人物位置"
 msgstr "Posición del avatar"
 
 #: lib/page-speech-balloon/form.php:108
-#: blocks/src/block/balloon/edit.js:253
-#: blocks/src/old/balloon-ex-fix1/block.js:189
-#: blocks/src/old/balloon-ex-v2/block.js:110
-#: blocks/src/old/balloon-ex/block.js:179
+#: blocks/src/block/balloon/edit.js:255
+#: blocks/src/old/balloon-ex-fix1/block.js:191
+#: blocks/src/old/balloon-ex-v2/block.js:112
+#: blocks/src/old/balloon-ex/block.js:181
 msgid "左"
 msgstr "Izquierda"
 
 #: lib/page-speech-balloon/form.php:109
-#: blocks/src/block/balloon/edit.js:257
-#: blocks/src/old/balloon-ex-fix1/block.js:193
-#: blocks/src/old/balloon-ex-v2/block.js:114
-#: blocks/src/old/balloon-ex/block.js:183
+#: blocks/src/block/balloon/edit.js:259
+#: blocks/src/old/balloon-ex-fix1/block.js:195
+#: blocks/src/old/balloon-ex-v2/block.js:116
+#: blocks/src/old/balloon-ex/block.js:185
 msgid "右"
 msgstr "Derecha"
 
@@ -10334,42 +10384,42 @@ msgid "アイコンを表示するポジションを設定します。"
 msgstr "Configure la posición para mostrar el icono."
 
 #: lib/page-speech-balloon/form.php:119
-#: blocks/src/block/balloon/edit.js:263
-#: blocks/src/old/balloon-ex-fix1/block.js:199
-#: blocks/src/old/balloon-ex-v2/block.js:120
-#: blocks/src/old/balloon-ex/block.js:189
+#: blocks/src/block/balloon/edit.js:266
+#: blocks/src/old/balloon-ex-fix1/block.js:202
+#: blocks/src/old/balloon-ex-v2/block.js:123
+#: blocks/src/old/balloon-ex/block.js:192
 msgid "アイコンスタイル"
 msgstr "Estilo del icono"
 
 #: lib/page-speech-balloon/form.php:124
-#: blocks/src/block/balloon/edit.js:269
-#: blocks/src/old/balloon-ex-fix1/block.js:205
-#: blocks/src/old/balloon-ex-v2/block.js:128
-#: blocks/src/old/balloon-ex/block.js:195
+#: blocks/src/block/balloon/edit.js:272
+#: blocks/src/old/balloon-ex-fix1/block.js:208
+#: blocks/src/old/balloon-ex-v2/block.js:131
+#: blocks/src/old/balloon-ex/block.js:198
 msgid "四角（枠線なし）"
 msgstr "Cuadrado (sin borde)"
 
 #: lib/page-speech-balloon/form.php:125
-#: blocks/src/block/balloon/edit.js:273
-#: blocks/src/old/balloon-ex-fix1/block.js:209
-#: blocks/src/old/balloon-ex-v2/block.js:132
-#: blocks/src/old/balloon-ex/block.js:199
+#: blocks/src/block/balloon/edit.js:276
+#: blocks/src/old/balloon-ex-fix1/block.js:212
+#: blocks/src/old/balloon-ex-v2/block.js:135
+#: blocks/src/old/balloon-ex/block.js:202
 msgid "四角（枠線あり）"
 msgstr "Cuadrado (con borde)"
 
 #: lib/page-speech-balloon/form.php:126
-#: blocks/src/block/balloon/edit.js:277
-#: blocks/src/old/balloon-ex-fix1/block.js:213
-#: blocks/src/old/balloon-ex-v2/block.js:136
-#: blocks/src/old/balloon-ex/block.js:203
+#: blocks/src/block/balloon/edit.js:280
+#: blocks/src/old/balloon-ex-fix1/block.js:216
+#: blocks/src/old/balloon-ex-v2/block.js:139
+#: blocks/src/old/balloon-ex/block.js:206
 msgid "丸（枠線なし）"
 msgstr "Círculo (sin borde)"
 
 #: lib/page-speech-balloon/form.php:127
-#: blocks/src/block/balloon/edit.js:281
-#: blocks/src/old/balloon-ex-fix1/block.js:217
-#: blocks/src/old/balloon-ex-v2/block.js:140
-#: blocks/src/old/balloon-ex/block.js:207
+#: blocks/src/block/balloon/edit.js:284
+#: blocks/src/old/balloon-ex-fix1/block.js:220
+#: blocks/src/old/balloon-ex-v2/block.js:143
+#: blocks/src/old/balloon-ex/block.js:210
 msgid "丸（枠線あり）"
 msgstr "Círculo (con borde)"
 
@@ -10799,15 +10849,15 @@ msgstr "Una línea de separación discontinua se muestra arriba y abajo de la ta
 #: lib/settings.php:556
 #: blocks/src/block/navicard/edit.js:110
 #: blocks/src/block/new-list/edit.js:143
-#: blocks/src/block/popular-list/edit.js:222
+#: blocks/src/block/popular-list/edit.js:223
 msgid "カードの上下に区切り線を入れる"
 msgstr "Agregar una línea de separación en la parte superior e inferior de la tarjeta"
 
 #: lib/settings.php:556
 #: blocks/src/block/navicard/edit.js:110
 #: blocks/src/block/new-list/edit.js:143
-#: blocks/src/block/popular-list/edit.js:222
-msgid "（縦型表示のみ）"
+#: blocks/src/block/popular-list/edit.js:223
+msgid "（縦並び表示のみ）"
 msgstr "(Solo para visualización vertical)"
 
 #: lib/settings.php:558
@@ -10817,7 +10867,7 @@ msgstr "Rodea la tarjeta con un borde."
 #: lib/settings.php:559
 #: blocks/src/block/navicard/edit.js:114
 #: blocks/src/block/new-list/edit.js:147
-#: blocks/src/block/popular-list/edit.js:226
+#: blocks/src/block/popular-list/edit.js:227
 msgid "カードに枠線を表示する"
 msgstr "Mostrar bordes en la tarjeta"
 
@@ -10828,7 +10878,7 @@ msgstr "El título se muestra debajo de imágenes en miniatura grandes."
 #: lib/settings.php:562
 #: blocks/src/block/navicard/edit.js:118
 #: blocks/src/block/new-list/edit.js:151
-#: blocks/src/block/popular-list/edit.js:230
+#: blocks/src/block/popular-list/edit.js:231
 msgid "大きなサムネイル表示にする"
 msgstr "Miniatura grande"
 
@@ -10839,7 +10889,7 @@ msgstr "El título se coloca superpuesto en la parte inferior de las imágenes e
 #: lib/settings.php:565
 #: blocks/src/block/navicard/edit.js:122
 #: blocks/src/block/new-list/edit.js:155
-#: blocks/src/block/popular-list/edit.js:234
+#: blocks/src/block/popular-list/edit.js:235
 msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr "Superponer el título en la miniatura grande"
 
@@ -10973,15 +11023,15 @@ msgstr "años"
 msgid "月別アーカイブ"
 msgstr "Archivo mensual"
 
-#: lib/shortcodes.php:986
+#: lib/shortcodes.php:990
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "El shortcode updated solo se puede usar en publicaciones y páginas fijas."
 
-#: lib/shortcodes.php:1097
+#: lib/shortcodes.php:1101
 msgid "保存エラー"
 msgstr "Error al guardar"
 
-#: lib/shortcodes.php:1115
+#: lib/shortcodes.php:1119
 msgid "エラー："
 msgstr "Error: "
 
@@ -11081,7 +11131,7 @@ msgstr "Ingrese contenido."
 
 #: lib/tinymce/html-tags.php:48
 #: blocks/src/layout/column-2/block.js:28
-#: blocks/src/layout/column-2/block.js:134
+#: blocks/src/layout/column-2/block.js:135
 #: blocks/src/layout/column-3/block.js:60
 msgid "左側に入力する内容"
 msgstr "Contenido a ingresar en el lado izquierdo"
@@ -11093,7 +11143,7 @@ msgstr "Contenido a ingresar en el centro"
 
 #: lib/tinymce/html-tags.php:50
 #: blocks/src/layout/column-2/block.js:32
-#: blocks/src/layout/column-2/block.js:138
+#: blocks/src/layout/column-2/block.js:139
 #: blocks/src/layout/column-3/block.js:68
 msgid "右側に入力する内容"
 msgstr "Contenido a ingresar en el lado derecho"
@@ -11311,53 +11361,53 @@ msgstr "Ingrese el contenido que desea mostrar durante la campaña."
 msgid "キャンペーン期間中のみ表示"
 msgstr "Mostrar solo durante el período de la campaña"
 
-#: lib/utils.php:825
+#: lib/utils.php:824
 msgid "スクロールできます"
 msgstr "Puede desplazarse"
 
-#: lib/utils.php:913
+#: lib/utils.php:912
 msgid "公開"
 msgstr "Publicar"
 
-#: lib/utils.php:914
+#: lib/utils.php:913
 msgid "記事を公開してもよろしいですか？"
 msgstr "¿Está seguro de que desea publicar el artículo?"
 
-#: lib/utils.php:2555
+#: lib/utils.php:2563
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s min"
 msgstr[1] "%s mins"
 
-#: lib/utils.php:2563
+#: lib/utils.php:2571
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s hora"
 msgstr[1] "%s horas"
 
-#: lib/utils.php:2571
+#: lib/utils.php:2579
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s día"
 msgstr[1] "%s días"
 
-#: lib/utils.php:2579
+#: lib/utils.php:2587
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s semana"
 msgstr[1] "%s semanas"
 
-#: lib/utils.php:2587
+#: lib/utils.php:2595
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s mes"
 msgstr[1] "%s meses"
 
-#: lib/utils.php:2598
+#: lib/utils.php:2606
 msgid "%s年"
 msgstr "%s años"
 
-#: lib/utils.php:2600
+#: lib/utils.php:2608
 msgid "%s年%sヶ月"
 msgstr "%s años y %s meses"
 
@@ -11679,7 +11729,7 @@ msgstr "Contenido :"
 #: lib/widgets/cta-box.php:143
 #: lib/widgets/mobile-text.php:83
 #: lib/widgets/pc-text.php:82
-#: blocks/src/block/cta/edit.js:156
+#: blocks/src/block/cta/edit.js:157
 msgid "自動的に段落を追加する"
 msgstr "Agregar párrafos automáticamente"
 
@@ -11715,54 +11765,54 @@ msgid "画像（選択ボタンが動作しない場合は再読み込み）"
 msgstr "Imágenes CTA (recargue si el botón de selección no funciona)"
 
 #: lib/widgets/cta-box.php:148
-#: blocks/src/block/cta/edit.js:164
+#: blocks/src/block/cta/edit.js:165
 msgid "ボタンテキスト"
 msgstr "Texto del botón"
 
 #: lib/widgets/cta-box.php:155
-#: blocks/src/block/cta/edit.js:170
+#: blocks/src/block/cta/edit.js:171
 msgid "ボタンURL"
 msgstr "URL del botón"
 
 #: lib/widgets/cta-box.php:166
-#: blocks/src/block/cta/edit.js:179
+#: blocks/src/block/cta/edit.js:180
 #: blocks/src/toolbutton/button-black.js:14
 #: blocks/src/toolbutton/button-white-black.js:14
 msgid "黒色"
 msgstr "Negro"
 
 #: lib/widgets/cta-box.php:170
-#: blocks/src/block/cta/edit.js:183
+#: blocks/src/block/cta/edit.js:184
 msgid "深紫"
 msgstr "Púrpura oscuro"
 
 #: lib/widgets/cta-box.php:171
-#: blocks/src/block/cta/edit.js:185
+#: blocks/src/block/cta/edit.js:186
 msgid "紺色（インディゴ）"
 msgstr "Azul marino (índigo)"
 
 #: lib/widgets/cta-box.php:173
-#: blocks/src/block/cta/edit.js:189
+#: blocks/src/block/cta/edit.js:190
 msgid "水色"
 msgstr "Azul claro"
 
 #: lib/widgets/cta-box.php:174
-#: blocks/src/block/cta/edit.js:191
+#: blocks/src/block/cta/edit.js:192
 msgid "明るい青（シアン）"
 msgstr "Azul brillante (cian)"
 
 #: lib/widgets/cta-box.php:175
-#: blocks/src/block/cta/edit.js:195
+#: blocks/src/block/cta/edit.js:196
 msgid "緑色がかった青（ティール）"
 msgstr "Azul verdoso (teal)"
 
 #: lib/widgets/cta-box.php:177
-#: blocks/src/block/cta/edit.js:200
+#: blocks/src/block/cta/edit.js:201
 msgid "明るい緑"
 msgstr "Verde brillante"
 
 #: lib/widgets/cta-box.php:180
-#: blocks/src/block/cta/edit.js:206
+#: blocks/src/block/cta/edit.js:207
 msgid "琥珀色（アンバー）"
 msgstr "Ámbar"
 
@@ -11959,9 +12009,9 @@ msgstr "Este es un widget para mostrar la lista de tarjetas de navegación."
 #: lib/widgets/new-entries.php:201
 #: lib/widgets/popular-entries.php:213
 #: lib/widgets/related-entries.php:203
-#: blocks/src/block/navicard/edit.js:129
-#: blocks/src/block/new-list/edit.js:201
-#: blocks/src/block/popular-list/edit.js:241
+#: blocks/src/block/navicard/edit.js:130
+#: blocks/src/block/new-list/edit.js:204
+#: blocks/src/block/popular-list/edit.js:243
 msgid "横並び表示にする"
 msgstr "Mostrar lado a lado"
 
@@ -11976,9 +12026,9 @@ msgstr "(Recomendado con \"Miniatura grande\")"
 #: lib/widgets/new-entries.php:208
 #: lib/widgets/popular-entries.php:220
 #: lib/widgets/related-entries.php:210
-#: blocks/src/block/navicard/edit.js:136
-#: blocks/src/block/new-list/edit.js:208
-#: blocks/src/block/popular-list/edit.js:248
+#: blocks/src/block/navicard/edit.js:137
+#: blocks/src/block/new-list/edit.js:211
+#: blocks/src/block/popular-list/edit.js:250
 msgid "タイトルを太字にする"
 msgstr "Resaltar el título en negrita"
 
@@ -11986,9 +12036,9 @@ msgstr "Resaltar el título en negrita"
 #: lib/widgets/new-entries.php:214
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
-#: blocks/src/block/navicard/edit.js:141
-#: blocks/src/block/new-list/edit.js:213
-#: blocks/src/block/popular-list/edit.js:267
+#: blocks/src/block/navicard/edit.js:142
+#: blocks/src/block/new-list/edit.js:216
+#: blocks/src/block/popular-list/edit.js:269
 msgid "カードに矢印を表示する"
 msgstr "Mostrar flecha en la tarjeta"
 
@@ -12075,12 +12125,12 @@ msgid "集計期間"
 msgstr "Período de agregación"
 
 #: lib/widgets/popular-entries.php:226
-#: blocks/src/block/popular-list/edit.js:253
+#: blocks/src/block/popular-list/edit.js:255
 msgid "ランキング番号を表示する"
 msgstr "Mostrar número de ranking"
 
 #: lib/widgets/popular-entries.php:232
-#: blocks/src/block/popular-list/edit.js:260
+#: blocks/src/block/popular-list/edit.js:262
 msgid "PV数を表示する"
 msgstr "Mostrar el número de PV"
 
@@ -12156,90 +12206,90 @@ msgstr "Configuración de Cocoon No puede mostrar nada que no se muestre en \"Pr
 msgid "例：Cocoon設定で「h2見出しまで」と設定されている場合、このウィジェットで「h3見出し」以降を表示することはできません。"
 msgstr "Ejemplo: Si \"hasta h2\" está configurado en las configuraciones de Cocoon, este widget no podrá mostrar \"h3 en adelante\"."
 
-#: lib/_defins.php:46
+#: lib/_defins.php:48
 #: blocks/src/block/faq/edit.js:127
 msgid "設定"
 msgstr "Configuración"
 
-#: lib/_defins.php:116
+#: lib/_defins.php:118
 msgid "PR"
 msgstr "PR"
 
-#: lib/_defins.php:117
+#: lib/_defins.php:119
 msgid "記事内に広告が含まれています。"
 msgstr "Este artículo contiene anuncios."
 
-#: lib/_defins.php:149
-#: lib/_defins.php:170
-#: lib/_defins.php:181
-#: lib/_defins.php:194
+#: lib/_defins.php:151
+#: lib/_defins.php:172
+#: lib/_defins.php:183
+#: lib/_defins.php:196
 msgid "オート（AdSenseにおまかせ）"
 msgstr "Auto (por AdSense)"
 
-#: lib/_defins.php:150
-#: lib/_defins.php:171
-#: lib/_defins.php:182
-#: lib/_defins.php:195
+#: lib/_defins.php:152
+#: lib/_defins.php:173
+#: lib/_defins.php:184
+#: lib/_defins.php:197
 msgid "バナー"
 msgstr "Banner"
 
-#: lib/_defins.php:151
-#: lib/_defins.php:183
-#: lib/_defins.php:196
+#: lib/_defins.php:153
+#: lib/_defins.php:185
+#: lib/_defins.php:198
 msgid "レスポンシブレクタングル"
 msgstr "Rectángulo adaptable"
 
-#: lib/_defins.php:152
-#: lib/_defins.php:184
-#: lib/_defins.php:197
+#: lib/_defins.php:154
+#: lib/_defins.php:186
+#: lib/_defins.php:199
 msgid "シングルレクタングル"
 msgstr "Rectángulo único"
 
-#: lib/_defins.php:153
-#: lib/_defins.php:185
+#: lib/_defins.php:155
+#: lib/_defins.php:187
 msgid "ダブルレクタングル"
 msgstr "Doble rectángulo"
 
-#: lib/_defins.php:154
-#: lib/_defins.php:187
+#: lib/_defins.php:156
+#: lib/_defins.php:189
 msgid "記事内広告"
 msgstr "Anuncio en artículo"
 
-#: lib/_defins.php:172
+#: lib/_defins.php:174
 msgid "レクタングル"
 msgstr "Rectángulo"
 
-#: lib/_defins.php:173
-#: lib/_defins.php:186
+#: lib/_defins.php:175
+#: lib/_defins.php:188
 msgid "ラージスカイスクレイパー"
 msgstr "Rascacielos grande"
 
-#: lib/_defins.php:180
-#: lib/_defins.php:193
+#: lib/_defins.php:182
+#: lib/_defins.php:195
 msgid "広告コードをそのまま表示"
 msgstr "El código del anuncio se mostrará tal como está"
 
-#: lib/_defins.php:320
+#: lib/_defins.php:322
 msgid "本当に削除してもいいですか？"
 msgstr "¿Realmente quieres eliminarlo?"
 
-#: lib/_defins.php:341
+#: lib/_defins.php:343
 msgid "無限ループを避けるため[toc]ショートコードはパターンでは使用できません。"
 msgstr "Para evitar bucles infinitos, el shortcodes [toc] no puede utilizarse en patrones."
 
-#: lib/_defins.php:341
+#: lib/_defins.php:343
 msgid "ショートコードを削除してください。"
 msgstr "Quitar el shortcodes."
 
-#: lib/_defins.php:341
+#: lib/_defins.php:343
 msgid "ショートコードが使用されている場合でも表示時に取り消されます。"
 msgstr "Incluso si se utiliza un shortcode, se cancela en la pantalla."
 
-#: lib/_defins.php:344
+#: lib/_defins.php:346
 msgid "www.amazon.co.jp"
 msgstr "www.amazon.com"
 
-#: lib/_defins.php:347
+#: lib/_defins.php:349
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "No se pudo recuperar el producto. Es posible que haya especificado un ASIN que no existe."
 
@@ -13971,27 +14021,27 @@ msgstr "Configuración de estilo"
 #: blocks/src/block-universal/label-box/edit.js:134
 #: blocks/src/block-universal/tab-caption-box/edit.js:137
 #: blocks/src/block/blank-box/edit.js:58
-#: blocks/src/block/button-wrap/edit.js:138
-#: blocks/src/block/button/edit.js:141
+#: blocks/src/block/button-wrap/edit.js:139
+#: blocks/src/block/button/edit.js:143
 #: blocks/src/block/faq/edit.js:155
 #: blocks/src/block/icon-list/edit.js:111
 #: blocks/src/block/radar/edit.js:272
-#: blocks/src/block/tab-box/edit.js:138
+#: blocks/src/block/tab-box/edit.js:139
 #: blocks/src/block/timeline/edit.js:153
 #: blocks/src/block/toggle-box/edit.js:113
-#: blocks/src/micro/micro-balloon/edit.js:122
-#: blocks/src/micro/micro-text/edit.js:90
-#: blocks/src/old/button-1/block.js:141
-#: blocks/src/old/button-1/block.js:147
+#: blocks/src/micro/micro-balloon/edit.js:123
+#: blocks/src/micro/micro-text/edit.js:91
+#: blocks/src/old/button-1/block.js:142
+#: blocks/src/old/button-1/block.js:148
 #: blocks/src/old/button-wrap-1/block.js:133
 #: blocks/src/old/button-wrap-1/block.js:139
 #: blocks/src/old/button-wrap/block.js:75
-#: blocks/src/old/button/block.js:90
+#: blocks/src/old/button/block.js:91
 #: blocks/src/old/caption-box/block.js:56
 #: blocks/src/old/label-box/block.js:55
-#: blocks/src/old/micro-balloon-1/block.js:81
-#: blocks/src/old/micro-balloon/block.js:80
-#: blocks/src/old/tab-box/block.js:141
+#: blocks/src/old/micro-balloon-1/block.js:82
+#: blocks/src/old/micro-balloon/block.js:81
+#: blocks/src/old/tab-box/block.js:142
 #: blocks/src/old/tab-caption-box/block.js:56
 #: blocks/src/old/toggle-box/block.js:59
 msgid "色設定"
@@ -14049,13 +14099,9 @@ msgstr "Mostrar anuncios."
 msgid "人物"
 msgstr "Persona"
 
-#: blocks/src/block/balloon/edit.js:288
+#: blocks/src/block/balloon/edit.js:292
 msgid "吹き出し色設定"
 msgstr "Configuración de color del globo de diálogo"
-
-#: blocks/src/block/balloon/edit.js:349
-msgid "セリフの入力"
-msgstr "Ingresar líneas"
 
 #: blocks/src/block/balloon/index.js:38
 #: blocks/src/old/balloon-ex-fix1/block.js:60
@@ -14115,102 +14161,102 @@ msgid "登録されているボックスメニューを表示します。"
 msgstr "Muestra el menú de caja registrado."
 
 #: blocks/src/block/button-wrap/deprecated.js:29
-#: blocks/src/old/button-wrap-1/block.js:56
+#: blocks/src/old/button-wrap-1/block.js:55
 #: blocks/src/old/button-wrap/block.js:32
 msgid "こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。"
 msgstr "Haz clic aquí para ingresar un área para configurar una etiqueta de enlace. Esta entrada no se reflejará en la página publicada."
 
 #: blocks/src/block/button-wrap/edit.js:83
-#: blocks/src/old/button-wrap-1/block.js:92
+#: blocks/src/old/button-wrap-1/block.js:91
 #: blocks/src/old/button-wrap/block.js:67
 msgid "囲みボタン設定"
 msgstr "Configuración del botón de contorno"
 
 #: blocks/src/block/button-wrap/edit.js:85
-#: blocks/src/old/button-wrap-1/block.js:94
+#: blocks/src/old/button-wrap-1/block.js:93
 #: blocks/src/old/button-wrap/block.js:69
 msgid "リンクタグ・ショートコード"
 msgstr "Etiquetas de enlace y shortcodes"
 
 #: blocks/src/block/button-wrap/edit.js:91
-#: blocks/src/block/button/edit.js:94
+#: blocks/src/block/button/edit.js:95
 #: blocks/src/old/button-1/block.js:108
-#: blocks/src/old/button-wrap-1/block.js:100
-#: blocks/src/old/button-wrap/block.js:155
-#: blocks/src/old/button/block.js:170
+#: blocks/src/old/button-wrap-1/block.js:99
+#: blocks/src/old/button-wrap/block.js:156
+#: blocks/src/old/button/block.js:172
 msgid "サイズ"
 msgstr "Tamaño"
 
 #: blocks/src/block/button-wrap/edit.js:97
-#: blocks/src/block/button/edit.js:100
+#: blocks/src/block/button/edit.js:101
 #: blocks/src/old/button-1/block.js:114
-#: blocks/src/old/button-wrap-1/block.js:106
-#: blocks/src/old/button-wrap/block.js:161
-#: blocks/src/old/button/block.js:176
+#: blocks/src/old/button-wrap-1/block.js:105
+#: blocks/src/old/button-wrap/block.js:162
+#: blocks/src/old/button/block.js:178
 msgid "小"
 msgstr "Pequeño"
 
 #: blocks/src/block/button-wrap/edit.js:101
-#: blocks/src/block/button/edit.js:104
+#: blocks/src/block/button/edit.js:105
 #: blocks/src/old/button-1/block.js:118
-#: blocks/src/old/button-wrap-1/block.js:110
-#: blocks/src/old/button-wrap/block.js:165
-#: blocks/src/old/button/block.js:180
+#: blocks/src/old/button-wrap-1/block.js:109
+#: blocks/src/old/button-wrap/block.js:166
+#: blocks/src/old/button/block.js:182
 msgid "中"
 msgstr "Mediano"
 
 #: blocks/src/block/button-wrap/edit.js:105
-#: blocks/src/block/button/edit.js:108
+#: blocks/src/block/button/edit.js:109
 #: blocks/src/old/button-1/block.js:122
-#: blocks/src/old/button-wrap-1/block.js:114
-#: blocks/src/old/button-wrap/block.js:169
-#: blocks/src/old/button/block.js:184
+#: blocks/src/old/button-wrap-1/block.js:113
+#: blocks/src/old/button-wrap/block.js:170
+#: blocks/src/old/button/block.js:186
 msgid "大"
 msgstr "Grande"
 
-#: blocks/src/block/button-wrap/edit.js:111
-#: blocks/src/block/button/edit.js:114
-#: blocks/src/micro/micro-balloon/edit.js:95
-#: blocks/src/old/button-1/block.js:128
+#: blocks/src/block/button-wrap/edit.js:112
+#: blocks/src/block/button/edit.js:116
+#: blocks/src/micro/micro-balloon/edit.js:96
+#: blocks/src/old/button-1/block.js:129
 #: blocks/src/old/button-wrap-1/block.js:120
-#: blocks/src/old/micro-balloon-1/block.js:109
-#: blocks/src/old/micro-balloon/block.js:108
+#: blocks/src/old/micro-balloon-1/block.js:111
+#: blocks/src/old/micro-balloon/block.js:110
 msgid "円形にする"
 msgstr "Redondeado"
 
-#: blocks/src/block/button-wrap/edit.js:117
-#: blocks/src/block/button/edit.js:120
-#: blocks/src/old/button-1/block.js:134
+#: blocks/src/block/button-wrap/edit.js:118
+#: blocks/src/block/button/edit.js:122
+#: blocks/src/old/button-1/block.js:135
 #: blocks/src/old/button-wrap-1/block.js:126
 msgid "光らせる"
 msgstr "Brillante"
 
 #: blocks/src/block/button-wrap/index.js:24
-#: blocks/src/old/button-wrap-1/block.js:47
+#: blocks/src/old/button-wrap-1/block.js:46
 #: blocks/src/old/button-wrap/block.js:24
 msgid "アスリートタグ等のタグを変更できないリンクをボタン化します。"
 msgstr "Convierte en un botón un enlace cuyos tags no se pueden modificar, como los tags de atleta."
 
 #: blocks/src/block/button/edit.js:70
-#: blocks/src/old/button-1/block.js:84
+#: blocks/src/old/button-1/block.js:83
 #: blocks/src/old/button/block.js:66
 msgid "ボタン設定"
 msgstr "Configuración de botón"
 
 #: blocks/src/block/button/edit.js:72
-#: blocks/src/old/button-1/block.js:86
+#: blocks/src/old/button-1/block.js:85
 #: blocks/src/old/button/block.js:68
 msgid "URL"
 msgstr "URL"
 
 #: blocks/src/block/button/edit.js:84
-#: blocks/src/old/button-1/block.js:98
+#: blocks/src/old/button-1/block.js:97
 #: blocks/src/old/button/block.js:80
 msgid "現在のタブで開く"
 msgstr "Abrir en la pestaña actual"
 
 #: blocks/src/block/button/index.js:22
-#: blocks/src/old/button-1/block.js:40
+#: blocks/src/old/button-1/block.js:39
 #: blocks/src/old/button/block.js:22
 msgid "一般的なリンクボタンを作成します。"
 msgstr "Crear un botón de enlace estándar."
@@ -14247,7 +14293,7 @@ msgstr "Leer este artículo"
 #: blocks/src/block/info-list/edit.js:87
 #: blocks/src/block/navicard/edit.js:99
 #: blocks/src/block/new-list/edit.js:124
-#: blocks/src/block/popular-list/edit.js:196
+#: blocks/src/block/popular-list/edit.js:197
 msgid "基本設定"
 msgstr "Configuración básica"
 
@@ -14255,7 +14301,7 @@ msgstr "Configuración básica"
 msgid "画像とメッセージのレイアウト"
 msgstr "Diseño de imagen y mensaje"
 
-#: blocks/src/block/cta/edit.js:127
+#: blocks/src/block/cta/edit.js:128
 msgid "置換"
 msgstr "Reemplazar"
 
@@ -14288,15 +14334,15 @@ msgstr "Etiqueta de respuesta"
 msgid "A"
 msgstr "R"
 
-#: blocks/src/block/faq/edit.js:158
+#: blocks/src/block/faq/edit.js:159
 msgid "質問ラベル色"
 msgstr "Color de la etiqueta de pregunta"
 
-#: blocks/src/block/faq/edit.js:163
+#: blocks/src/block/faq/edit.js:164
 msgid "回答ラベル色"
 msgstr "Color de la etiqueta de respuesta"
 
-#: blocks/src/block/faq/edit.js:197
+#: blocks/src/block/faq/edit.js:198
 msgid "質問を入力してください…"
 msgstr "Ingrese su pregunta…"
 
@@ -14347,11 +14393,11 @@ msgstr "Caja de iconos"
 msgid "アイコンを用いて直感的にメッセージ内容を伝えるためのボックスです。"
 msgstr "Es una caja para transmitir el contenido del mensaje de manera intuitiva usando iconos."
 
-#: blocks/src/block/icon-list/edit.js:114
+#: blocks/src/block/icon-list/edit.js:115
 msgid "アイコン色"
 msgstr "Color del icono"
 
-#: blocks/src/block/icon-list/edit.js:142
+#: blocks/src/block/icon-list/edit.js:143
 msgid "タイトルがある場合は入力"
 msgstr "Ingrese un título si es necesario"
 
@@ -14390,14 +14436,14 @@ msgid "キャプション(枠線内表示)"
 msgstr "Leyenda (Mostrada dentro del marco)"
 
 #: blocks/src/block/info-list/edit.js:123
-#: blocks/src/block/new-list/edit.js:225
-#: blocks/src/block/popular-list/edit.js:272
+#: blocks/src/block/new-list/edit.js:228
+#: blocks/src/block/popular-list/edit.js:274
 msgid "フィルタ"
 msgstr "Filtro"
 
 #: blocks/src/block/info-list/edit.js:125
-#: blocks/src/block/new-list/edit.js:227
-#: blocks/src/block/popular-list/edit.js:274
+#: blocks/src/block/new-list/edit.js:230
+#: blocks/src/block/popular-list/edit.js:276
 msgid "全カテゴリーを表示する"
 msgstr "Mostrar todas las categorías"
 
@@ -14430,66 +14476,62 @@ msgstr "Seleccionar categorías a mostrar"
 msgid "テキストを入力して絞り込んでください。"
 msgstr "Ingrese texto para refinar su búsqueda."
 
-#: blocks/src/block/new-list/edit.js:86
-msgid "※最大10件表示"
-msgstr "*Máximo 10 elementos mostrados"
-
 #: blocks/src/block/new-list/edit.js:96
 #: blocks/src/block/popular-list/edit.js:94
 msgid "子カテゴリーの内容を含めて表示する"
 msgstr "Incluir contenido de categorías secundarias"
 
 #: blocks/src/block/new-list/edit.js:126
-#: blocks/src/block/popular-list/edit.js:198
+#: blocks/src/block/popular-list/edit.js:199
 msgid "表示する記事の数"
 msgstr "Número de artículos a mostrar"
 
-#: blocks/src/block/new-list/edit.js:161
+#: blocks/src/block/new-list/edit.js:162
 msgid "表示順"
 msgstr "Orden de visualización"
 
-#: blocks/src/block/new-list/edit.js:165
+#: blocks/src/block/new-list/edit.js:166
 msgid "更新日順"
 msgstr "Ordenar por fecha de modificación"
 
-#: blocks/src/block/new-list/edit.js:169
+#: blocks/src/block/new-list/edit.js:170
 msgid "投稿日順"
 msgstr "Ordenar por fecha de publicación"
 
-#: blocks/src/block/new-list/edit.js:182
+#: blocks/src/block/new-list/edit.js:184
 msgid "並び替え"
 msgstr "Ordenar"
 
-#: blocks/src/block/new-list/edit.js:185
+#: blocks/src/block/new-list/edit.js:187
 msgid "昇順"
 msgstr "Ascendente"
 
-#: blocks/src/block/new-list/edit.js:186
+#: blocks/src/block/new-list/edit.js:188
 msgid "降順"
 msgstr "Descendente"
 
-#: blocks/src/block/new-list/edit.js:193
+#: blocks/src/block/new-list/edit.js:196
 msgid "読み飛ばし"
 msgstr "Saltar artículos"
 
-#: blocks/src/block/new-list/edit.js:238
+#: blocks/src/block/new-list/edit.js:241
 msgid "全タグを表示する"
 msgstr "Mostrar todas las etiquetas"
 
-#: blocks/src/block/new-list/edit.js:247
+#: blocks/src/block/new-list/edit.js:250
 msgid "固定記事を表示する"
 msgstr "Mostrar artículos fijos"
 
-#: blocks/src/block/new-list/edit.js:252
-#: blocks/src/block/popular-list/edit.js:286
+#: blocks/src/block/new-list/edit.js:255
+#: blocks/src/block/popular-list/edit.js:288
 msgid "投稿タイプ"
 msgstr "Tipo de publicación"
 
-#: blocks/src/block/new-list/edit.js:259
+#: blocks/src/block/new-list/edit.js:262
 msgid "検索グループ"
 msgstr "Grupo de búsqueda"
 
-#: blocks/src/block/new-list/edit.js:264
+#: blocks/src/block/new-list/edit.js:267
 msgid "投稿ユーザ"
 msgstr "Autor"
 
@@ -14517,11 +14559,11 @@ msgstr "1 día"
 msgid "半年"
 msgstr "Medio año"
 
-#: blocks/src/block/popular-list/edit.js:205
+#: blocks/src/block/popular-list/edit.js:206
 msgid "全期間集計"
 msgstr "Agregar todo el periodo"
 
-#: blocks/src/block/popular-list/edit.js:293
+#: blocks/src/block/popular-list/edit.js:295
 msgid "除外投稿(ID)"
 msgstr "Excluir artículos (ID)"
 
@@ -14550,87 +14592,87 @@ msgstr "Muestra el perfil del usuario."
 msgid "総計:"
 msgstr "Total:"
 
-#: blocks/src/block/radar/edit.js:275
+#: blocks/src/block/radar/edit.js:276
 msgid "チャート色"
 msgstr "Color de carta"
 
-#: blocks/src/block/radar/edit.js:290
+#: blocks/src/block/radar/edit.js:292
 msgid "グリッド色"
 msgstr "Color de la cuadrícula"
 
-#: blocks/src/block/radar/edit.js:290
+#: blocks/src/block/radar/edit.js:292
 msgid "（※透過）"
 msgstr "(*Transparente)"
 
-#: blocks/src/block/radar/edit.js:296
+#: blocks/src/block/radar/edit.js:298
 msgid "チャート設定"
 msgstr "Configuración de gráficos"
 
-#: blocks/src/block/radar/edit.js:298
+#: blocks/src/block/radar/edit.js:300
 msgid "キャンバスサイズ"
 msgstr "Tamaño del lienzo"
 
-#: blocks/src/block/radar/edit.js:313
+#: blocks/src/block/radar/edit.js:315
 msgid "最大値"
 msgstr "Máximo"
 
-#: blocks/src/block/radar/edit.js:327
+#: blocks/src/block/radar/edit.js:329
 msgid "タイトルを表示する"
 msgstr "Mostrar título"
 
-#: blocks/src/block/radar/edit.js:336
+#: blocks/src/block/radar/edit.js:338
 msgid "ここにタイトルを入力してください"
 msgstr "Escriba aquí el título"
 
-#: blocks/src/block/radar/edit.js:340
+#: blocks/src/block/radar/edit.js:342
 msgid "データ名を表示する"
 msgstr "Mostrar nombre de datos"
 
-#: blocks/src/block/radar/edit.js:346
+#: blocks/src/block/radar/edit.js:348
 msgid "データ名"
 msgstr "nombre-datos"
 
-#: blocks/src/block/radar/edit.js:349
+#: blocks/src/block/radar/edit.js:351
 msgid "ここに凡例を入力してください"
 msgstr "Escriba aquí la leyenda"
 
-#: blocks/src/block/radar/edit.js:353
+#: blocks/src/block/radar/edit.js:355
 msgid "項目"
 msgstr "Elementos"
 
-#: blocks/src/block/radar/edit.js:353
+#: blocks/src/block/radar/edit.js:355
 msgid "（カンマ区切りで何項目でも入力可）"
 msgstr "(puede introducirse cualquier número de elementos, separados por comas)"
 
-#: blocks/src/block/radar/edit.js:356
+#: blocks/src/block/radar/edit.js:358
 msgid "項目A, 項目B, 項目C, 項目D, 項目E"
 msgstr "Elemento A, Elemento B, Elemento C, Elemento D, Elemento E"
 
-#: blocks/src/block/radar/edit.js:359
+#: blocks/src/block/radar/edit.js:361
 msgid "値"
 msgstr "Valores"
 
-#: blocks/src/block/radar/edit.js:359
+#: blocks/src/block/radar/edit.js:361
 msgid "（カンマ区切りで項目の数だけ入力可）"
 msgstr "(Puede introducir tantos elementos como desee, separados por comas)"
 
-#: blocks/src/block/radar/edit.js:375
+#: blocks/src/block/radar/edit.js:377
 msgid "1, 2, 3, 4, 5"
 msgstr "1, 2, 3, 4, 5"
 
-#: blocks/src/block/radar/edit.js:378
+#: blocks/src/block/radar/edit.js:380
 msgid "総計を表示する"
 msgstr "Mostrar totales generales"
 
-#: blocks/src/block/radar/edit.js:383
+#: blocks/src/block/radar/edit.js:385
 msgid "項目に値を表示する"
 msgstr "Mostrar los valores de los elementos"
 
-#: blocks/src/block/radar/edit.js:388
+#: blocks/src/block/radar/edit.js:390
 msgid "値が最大値を超えるのを許可する"
 msgstr "Permitir que el valor supere el valor máximo"
 
-#: blocks/src/block/radar/edit.js:393
+#: blocks/src/block/radar/edit.js:395
 msgid "アングルラインを表示する"
 msgstr "Mostrar líneas angulares"
 
@@ -14734,23 +14776,23 @@ msgstr "Agregar pestaña"
 msgid "表示する内容をタブで切り替えることができるボックスです。"
 msgstr "Caja que te permite cambiar el contenido mediante pestañas."
 
-#: blocks/src/block/template/edit.js:56
+#: blocks/src/block/template/edit.js:55
 msgid "ダッシュボードメニューの「Cocoon設定」→「テンプレート」からテンプレートを作成してください。"
 msgstr "Crea una plantilla desde \"Tablero de mandos\" -> \"Configuración de Cocoon\" -> \"Plantilla\"."
 
-#: blocks/src/block/template/edit.js:61
+#: blocks/src/block/template/edit.js:60
 msgid "テンプレートが登録されていません。"
 msgstr "No se ha registrado la plantilla."
 
-#: blocks/src/block/template/edit.js:68
+#: blocks/src/block/template/edit.js:67
 msgid "有効なテンプレートが登録されていません。"
 msgstr "No se ha registrado una plantilla válida."
 
-#: blocks/src/block/template/edit.js:70
+#: blocks/src/block/template/edit.js:69
 msgid "もしくは登録されているテンプレートを表示設定にしてください。。"
 msgstr "O cambia la configuración de visualización de la plantilla registrada."
 
-#: blocks/src/block/template/edit.js:76
+#: blocks/src/block/template/edit.js:75
 msgid "テンプレートを選択してください。"
 msgstr "Selecciona una plantilla."
 
@@ -14767,7 +14809,7 @@ msgstr "Ingresa el contenido que se mostrará en el lado izquierdo de la columna
 msgid "アイテム数"
 msgstr "Número de elementos"
 
-#: blocks/src/block/timeline/edit.js:156
+#: blocks/src/block/timeline/edit.js:157
 msgid "ポイント色"
 msgstr "Color del punto"
 
@@ -15282,37 +15324,37 @@ msgid "吹き出しEX"
 msgstr "Globo de diálogo EX"
 
 #: blocks/src/old/button-wrap/block.js:93
-#: blocks/src/old/button/block.js:108
+#: blocks/src/old/button/block.js:109
 msgid "ディープパープル"
 msgstr "Púrpura profundo"
 
 #: blocks/src/old/button-wrap/block.js:97
-#: blocks/src/old/button/block.js:112
+#: blocks/src/old/button/block.js:113
 msgid "インディゴ[紺色]"
 msgstr "Índigo (azul marino)"
 
 #: blocks/src/old/button-wrap/block.js:105
-#: blocks/src/old/button/block.js:120
+#: blocks/src/old/button/block.js:121
 msgid "ライトブルー"
 msgstr "Azul claro"
 
 #: blocks/src/old/button-wrap/block.js:109
-#: blocks/src/old/button/block.js:124
+#: blocks/src/old/button/block.js:125
 msgid "シアン"
 msgstr "Cian"
 
 #: blocks/src/old/button-wrap/block.js:113
-#: blocks/src/old/button/block.js:128
+#: blocks/src/old/button/block.js:129
 msgid "ティール[緑色がかった青]"
 msgstr "Verde azulado (teal)"
 
 #: blocks/src/old/button-wrap/block.js:121
-#: blocks/src/old/button/block.js:136
+#: blocks/src/old/button/block.js:137
 msgid "ライトグリーン"
 msgstr "Verde claro"
 
 #: blocks/src/old/button-wrap/block.js:133
-#: blocks/src/old/button/block.js:148
+#: blocks/src/old/button/block.js:149
 msgid "アンバー[琥珀色]"
 msgstr "Ámbar"
 
@@ -15364,7 +15406,7 @@ msgstr "Negrita (especificación de clase bold)"
 msgid "書式のクリア"
 msgstr "Borrar formato"
 
-#: blocks/src/toolbutton/custom.js:24
+#: blocks/src/toolbutton/custom.js:23
 msgid "カスタムテキスト"
 msgstr "Texto personalizado"
 

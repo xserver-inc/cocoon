@@ -2176,10 +2176,6 @@ msgstr ""
 msgid "Guidance on COVID-19:"
 msgstr ""
 
-#: lib/eyecatch.php:49
-msgid "Auto Draft"
-msgstr ""
-
 #: lib/eyecatch.php:445
 msgid "タイトルからアイキャッチを生成する"
 msgstr ""
@@ -11370,31 +11366,26 @@ msgstr ""
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
-msgstr[1] ""
 
 #: lib/utils.php:2571
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
-msgstr[1] ""
 
 #: lib/utils.php:2579
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
-msgstr[1] ""
 
 #: lib/utils.php:2587
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
-msgstr[1] ""
 
 #: lib/utils.php:2595
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
-msgstr[1] ""
 
 #: lib/utils.php:2606
 msgid "%s年"
@@ -15696,3 +15687,4 @@ msgstr ""
 msgctxt "block keyword"
 msgid "text"
 msgstr ""
+
