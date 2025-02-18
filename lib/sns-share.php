@@ -736,7 +736,9 @@ function get_share_cache_ID(){
   $id = 'nuknown';
   if ( is_singular() ) {
     global $post;
-    $id = $post->ID;
+    if (isset($post->ID)) {
+      $id = $post->ID;
+    }
   } elseif (is_category() && !is_paged()) {
     //カテゴリートップページ
     $cat_id = get_query_var('cat');

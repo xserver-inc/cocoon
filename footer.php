@@ -27,12 +27,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php endif; ?>
 
     <?php //投稿パンくずリストがフッター手前の場合
-    if ((is_single() || is_category()) && is_single_breadcrumbs_position_footer_before()){
+    if (is_single_breadcrumbs_position_footer_before()){
       cocoon_template_part('tmp/breadcrumbs');
     } ?>
 
     <?php //固定ページパンくずリストがフッター手前の場合
-    if (is_page() && is_page_breadcrumbs_position_footer_before()){
+    if (is_page_breadcrumbs_position_footer_before()){
       cocoon_template_part('tmp/breadcrumbs-page');
     } ?>
 

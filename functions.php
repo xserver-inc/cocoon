@@ -131,51 +131,66 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
 }
 endif;
 
-//アーカイブタイトルの取得
-if ( !function_exists( 'get_archive_chapter_title' ) ):
+// アーカイブタイトルの取得
+if ( !function_exists( 'get_archive_chapter_title' ) ) :
 function get_archive_chapter_title(){
-  $chapter_title = null;
-  if( is_category() ) {//カテゴリーページの場合
+  $chapter_title = '';
+
+  if( is_category() ) { // カテゴリーページの場合
     $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
     $category = get_queried_object();
     if ( $category ) {
-      $chapter_title .= $icon_font.$category->name;
+      $chapter_title .= $icon_font . esc_html($category->name);
     } else {
-      $chapter_title .= single_cat_title( $icon_font, false );
+      $chapter_title .= single_cat_title($icon_font, false);
     }
-  } elseif( is_tag() || is_tax()) {//タグ・タクソノミページの場合（タクソノミページでもタグアイコンを表示するように変更）
+  } elseif( is_tag() || is_tax()) { // タグ・タクソノミページの場合
     $icon_font = '<span class="fa fa-tags" aria-hidden="true"></span>';
+
+    // 現在のタームのタクソノミーを取得
     $tag = get_queried_object();
-    if ( $tag ) {
-      $chapter_title .= $icon_font.$tag->name;
-    } else {
-      $chapter_title .= single_tag_title( $icon_font, false );
+
+    if ( is_tax() ) {
+      $taxonomy = $tag->taxonomy; // 現在のタクソノミーを取得
+
+      // 階層型タクソノミーの場合はフォルダアイコン、階層型でない場合はタグアイコン
+      if ( is_taxonomy_hierarchical($taxonomy) ) {
+        $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
+      } else {
+        $icon_font = '<span class="fa fa-tags" aria-hidden="true"></span>';
+      }
     }
-  } elseif( is_search() ) {//検索結果
+
+    if ( $tag ) {
+      $chapter_title .= $icon_font . esc_html($tag->name);
+    } else {
+      $chapter_title .= single_tag_title($icon_font, false);
+    }
+  } elseif( is_search() ) { // 検索結果ページ
     $search_query = trim(strip_tags(get_search_query()));
     if (empty($search_query)) {
-      $search_query = __( 'キーワード指定なし', THEME_NAME );
+      $search_query = __( 'キーワード指定なし', 'text-domain' ); // THEME_NAME を適切なテキストドメインに変更
     }
-    $chapter_title .= '<span class="fa fa-search" aria-hidden="true"></span>"'.$search_query.'"';
-  } elseif (is_day()) {
-    //年月日のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y-m-d');
-  } elseif (is_month()) {
-    //年と月のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y-m');
-  } elseif (is_year()) {
-    //年のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y');
-  } elseif (is_author()) {//著書ページの場合
-    $chapter_title .= '<span class="fa fa-user" aria-hidden="true"></span>'.esc_html(get_the_author());
-  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+    $chapter_title .= '<span class="fa fa-search" aria-hidden="true"></span>"' . esc_html($search_query) . '"';
+  } elseif (is_day()) { // 日別アーカイブ
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>' . get_the_time('Y-m-d');
+  } elseif (is_month()) { // 月別アーカイブ
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>' . get_the_time('Y-m');
+  } elseif (is_year()) { // 年別アーカイブ
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>' . get_the_time('Y');
+  } elseif (is_author()) { // 著者ページ
+    $chapter_title .= '<span class="fa fa-user" aria-hidden="true"></span>' . esc_html(get_the_author());
+  } elseif (is_paged()) { // 2ページ目以降
     $chapter_title .= 'Archives';
-  } else {
+  } else { // その他
     $chapter_title .= 'Archives';
   }
+
   return apply_filters('get_archive_chapter_title', $chapter_title);
 }
 endif;
+
+
 
 //アーカイブ見出しの取得
 if ( !function_exists( 'get_archive_chapter_text' ) ):
@@ -488,15 +503,15 @@ add_filter('oembed_providers', function ($providers){
 //参考：https://github.com/WordPress/gutenberg/issues/53555#issuecomment-1675107104
 add_filter( 'render_block_core/image', __NAMESPACE__ . '\fix_img_v63', 10, 2 );
 function fix_img_v63( $block_content, $block ) {
-	$attrs = $block['attrs'] ?? [];
-	$w = $attrs['width'] ?? '';
-	$h = $attrs['height'] ?? '';
-	if ( $w && $h ) {
-		$size_style    = "width:{$w}px;height:{$h}px";
-		$ratio         = "{$w}/{$h}";
-		$block_content = str_replace( $size_style, "aspect-ratio:{$ratio}", $block_content );
-	}
-	return $block_content;
+  $attrs = $block['attrs'] ?? [];
+  $w = $attrs['width'] ?? '';
+  $h = $attrs['height'] ?? '';
+  if ( $w && $h ) {
+    $size_style    = "width:{$w}px;height:{$h}px";
+    $ratio         = "{$w}/{$h}";
+    $block_content = str_replace( $size_style, "aspect-ratio:{$ratio}", $block_content );
+  }
+  return $block_content;
 }
 
 
@@ -520,3 +535,54 @@ endif;
 
 //sizes="auto"対策
 add_filter ( 'wp_img_tag_add_auto_sizes' ,  '__return_false' );
+
+
+// タクソノミ対応カテゴリー・タグリンク
+add_filter('cocoon_part__tmp/categories-tags', function($content) {
+  $post_type = get_post_type();
+
+  // カスタム投稿の場合
+  if ($post_type !== 'post') {
+    // 投稿タイプに関連付けられたタクソノミーを取得
+    $taxonomies = get_object_taxonomies($post_type);
+
+    // ターム取得
+    $args = array(
+      'order'   => 'ASC',
+      'orderby' => 'name',
+    );
+    $terms = wp_get_post_terms(get_the_ID(), $taxonomies, $args);
+
+    if ($terms && !is_wp_error($terms)) {
+      $categories_html = '';  // 階層型タクソノミーのHTML
+      $tags_html = '';        // 非階層型タクソノミーのHTML
+
+      foreach ($terms as $term) {
+        // タクソノミーが階層型（カテゴリー）かどうか
+        if (is_taxonomy_hierarchical($term->taxonomy)) {
+          $categories_html .= '<a class="cat-link cat-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term)) . '">
+            <span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>' . esc_html($term->name) . '</a>';
+        } else {
+          $tags_html .= '<a class="tag-link tag-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term)) . '">
+            <span class="fa fa-tag tag-icon tax-icon" aria-hidden="true"></span>' . esc_html($term->name) . '</a>';
+        }
+      }
+
+      // カテゴリーがある場合は出力
+      if (!empty($categories_html)) {
+        $categories_html = '<div class="entry-categories">' . $categories_html . '</div>';
+      }
+
+      // タグがある場合は出力
+      if (!empty($tags_html)) {
+        $tags_html = '<div class="entry-tags">' . $tags_html . '</div>';
+      }
+
+      // 最終的なHTMLを構築
+      $content = '<div class="entry-categories-tags ' . esc_attr(get_additional_categories_tags_area_classes() ?: '') . '">'
+                . $categories_html . $tags_html . '</div>';
+    }
+  }
+
+  return $content;
+});

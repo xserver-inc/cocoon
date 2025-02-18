@@ -441,7 +441,7 @@ function generate_featured_image_from_title_custom_checkbox() {
   ?>
   <div id="featured-image-from-title" class="featured-image-from-title">
     <label>
-      <input type="checkbox" id="generate_featured_image_from_title" name="generate_featured_image_from_title" value="<?php echo(is_featured_image_from_title_default_enable() ? '0' : '')?>" <?php echo(is_featured_image_from_title_default_enable() ? 'checked' : '')?>>
+      <input type="checkbox" id="generate_featured_image_from_title" name="generate_featured_image_from_title" value="1" <?php echo(is_featured_image_from_title_default_enable() ? 'checked' : '')?>>
       <?php echo esc_js(__('タイトルからアイキャッチを生成する', THEME_NAME)); ?>
     </label>
   </div>
@@ -463,7 +463,6 @@ function add_custom_checkbox_below_featured_image_meta_box() {
   if (!is_featured_image_from_title_enable()) {
     return;
   }
-  global $post;
   ?>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -623,12 +622,12 @@ function add_custom_checkbox_below_featured_image() {
       /* 初期表示時にチェックボックスの状態に応じて表示を切り替え */
       var initialCheckbox = document.querySelector('#generate_featured_image_from_title');
       if (initialCheckbox) {
-      toggleFeaturedImageContainer(initialCheckbox.checked);
+        toggleFeaturedImageContainer(initialCheckbox.checked);
       }
 
       /* 常に#featured-image-from-titleの存在を監視してチェックボックスを管理 */
       setInterval(function () {
-      manageCustomCheckbox();
+        manageCustomCheckbox();
       }, 500); /* 500msごとにチェック */
     });
   </script>

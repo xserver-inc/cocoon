@@ -10,8 +10,22 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if (is_post_navi_visible()):
   $in_same_term = is_post_navi_same_category_enable();
   $excluded_terms = sanitize_array(get_post_navi_exclude_category_ids());
-  $prevpost = get_adjacent_post($in_same_term, $excluded_terms, true); //前の記事
-  $nextpost = get_adjacent_post($in_same_term, $excluded_terms, false); //次の記事
+  // タクソノミ関連情報の取得
+  $taxonomy = 'category';
+  // 現在の投稿タイプを取得
+  $post_type = get_post_type();
+  if ($post_type) {
+    // 投稿タイプに関連するタクソノミーを取得
+    $taxonomies = get_object_taxonomies($post_type);
+    if ($taxonomies && isset($taxonomies[0])) {
+      // 最初のタクソノミーを使用
+      $taxonomy = $taxonomies[0];
+    }
+  }
+  // 現在の投稿記事に隣接する投稿記事を取得
+  $prevpost = get_adjacent_post($in_same_term, $excluded_terms, true, apply_filters('post_navi_taxonomy', $taxonomy)); //前の記事
+  $nextpost = get_adjacent_post($in_same_term, $excluded_terms, false, apply_filters('post_navi_taxonomy', $taxonomy)); //次の記事
+
   $width  = THUMB120WIDTH;
   $height = THUMB120HEIGHT;
   switch (get_post_navi_type()) {

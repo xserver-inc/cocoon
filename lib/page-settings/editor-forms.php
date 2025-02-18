@@ -102,12 +102,18 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2025/01/featured-image-from-title.png');
             generate_tips_tag(__( 'エディターのアイキャッチ設定エリア内に、「タイトルからアイキャッチを生成する」オプションを追加します。', THEME_NAME ).__( '「公開（保存）」ボタンが押された時だけ画像が生成されます。', THEME_NAME ).__( 'ベータ版機能ですので、仕様が変わる可能性があるのでご了承ください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/automatic-generation-of-featured-image-from-title/'));
             ?>
-            <div class="indent<?php echo get_not_allowed_form_class(is_featured_image_from_title_enable(), true); ?>">
-              <?php
-              generate_checkbox_tag(OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE , is_featured_image_from_title_default_enable(), __( 'チェックボックスをデフォルトで選択する', THEME_NAME ).__( '（β版）', THEME_NAME ));
-              generate_tips_tag(__( 'エディターにある「タイトルからアイキャッチを生成する」オプションのチェックボックスをデフォルトで選択状態にします。', THEME_NAME ));
-              ?>
-            </div>
+            <?php
+            // 以下の不具合により導入見送り
+            // https://wp-cocoon.com/community/postid/83950/
+            if (false): ?>
+              <div class="indent<?php echo get_not_allowed_form_class(is_featured_image_from_title_enable(), true); ?>">
+                <?php
+                generate_checkbox_tag(OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE , is_featured_image_from_title_default_enable(), __( 'チェックボックスをデフォルトで選択する', THEME_NAME ));
+                generate_tips_tag(__( 'エディターにある「タイトルからアイキャッチを生成する」オプションのチェックボックスをデフォルトで選択状態にします。', THEME_NAME ));
+                ?>
+              </div>
+            <?php endif; ?>
+
           </td>
         </tr>
 

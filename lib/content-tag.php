@@ -185,7 +185,38 @@ $taxonomy = (isset($_GET['taxonomy']) && $_GET['taxonomy'] !== 'category') ? wp_
 add_action ( $taxonomy.'_edit_form_fields', 'extra_tag_fields');
 if ( !function_exists( 'extra_tag_fields' ) ):
 function extra_tag_fields( $tag ) {
-    $tag_id = $tag->term_id;
+  $tag_id = $tag->term_id;
+
+  // 階層型タクソノミーの場合、カテゴリーラベルの色設定追加
+  $taxonomy = get_taxonomy($tag->taxonomy);
+  if ($taxonomy && $taxonomy->hierarchical) {
+?>
+
+<tr class="form-field term-color-wrap">
+  <th><label for="color"><?php _e( 'カテゴリー色', THEME_NAME ) ?></label></th>
+  <td>
+    <div style="float: left;padding-right: 30px;">
+      <?php
+      $the_category_color = get_the_category_color($tag_id);
+      generate_label_tag('the_category_color', __( '背景色', THEME_NAME ));
+      echo '<br>';
+      generate_color_picker_tag('the_category_color',  $the_category_color, '');
+      ?>
+      <p class="description"><?php _e( 'カテゴリーの色を指定します。', THEME_NAME ) ?></p>
+    </div>
+    <div style="">
+      <?php
+      $the_category_text_color = get_the_category_text_color($tag_id);
+      generate_label_tag('the_category_text_color', __( '文字色', THEME_NAME ));
+      echo '<br>';
+      generate_color_picker_tag('the_category_text_color',  $the_category_text_color, '');
+      ?>
+      <p class="description"><?php _e( 'カテゴリーの文字色を指定します。入力しない場合は、白色になります。', THEME_NAME ) ?></p>
+    </div>
+  </td>
+</tr>
+<?php
+  }
 ?>
 <tr class="form-field term-title-wrap">
   <th><label for="title"><?php _e( 'SEOタイトル', THEME_NAME ) ?></label></th>
@@ -257,6 +288,15 @@ if ( !function_exists( 'save_extra_tag_fileds' ) ):
 function save_extra_tag_fileds( $term_id ) {
   if (isset($_POST['taxonomy'])) {
     $tag_id = $term_id;
+    if ( isset( $_POST['the_category_color'] ) ) {
+      $the_category_color = $_POST['the_category_color'];
+      update_term_meta( $tag_id, 'the_category_color', $the_category_color );
+    }
+
+    if ( isset( $_POST['the_category_text_color'] ) ) {
+      $the_category_text_color = $_POST['the_category_text_color'];
+      update_term_meta( $tag_id, 'the_category_text_color', $the_category_text_color );
+    }
 
     if ( isset( $_POST['the_tag_title'] ) ) {
       $the_tag_title = $_POST['the_tag_title'];

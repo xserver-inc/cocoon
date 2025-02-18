@@ -1842,16 +1842,19 @@ if ( !function_exists( 'generate_info_list_tag' ) ):
 function generate_info_list_tag($atts){
   extract(shortcode_atts(array(
     'count' => 5,
-    'cats' => 'all',
+    'cats' => array(),
     'caption' => __( '新着情報', THEME_NAME ),
     'frame' => 1,
     'divider' => 1,
     'modified' => 0,
     'offset' => 0,
     'action' => null,
+    'post_type' => 'post',
+    'taxonomy' => 'category',
   ), $atts));
 
   $args = array(
+    'post_type' => $post_type,
     'cat' => $cats,
     'no_found_rows' => true,
     'ignore_sticky_posts' => true,
@@ -1860,57 +1863,68 @@ function generate_info_list_tag($atts){
     'action' => $action,
   );
 
-  //更新日順
+  // 更新日順
   if ($modified) {
-    $args += array(
-      'orderby' => 'modified',
-    );
+    $args['orderby'] = 'modified';
   }
 
-  //インデックス除外カテゴリー
+  // インデックス除外カテゴリー
   $exclude_category_ids = get_archive_exclude_category_ids();
   if ($exclude_category_ids && is_array($exclude_category_ids)) {
-    $args += array(
-      'category__not_in' => $exclude_category_ids,
-    );
+    $args['category__not_in'] = $exclude_category_ids;
   }
 
-  //投稿編集のその他設定「アーカイブに出力しない」を除外
+  // 投稿編集のその他設定「アーカイブに出力しない」を除外
   $exclude_post_ids = get_archive_exclude_post_ids();
   if ($exclude_post_ids && is_array($exclude_post_ids)) {
     $args['post__not_in'] = $exclude_post_ids;
+  }
+
+  /* カテゴリーの指定 */
+  if (($cats) && $post_type !== 'post') {
+    unset($args['cat']);
+    $terms = is_array($cats) ? $cats : explode(',', $cats);
+
+    $terms = array_map('intval', $terms);
+
+    $args['tax_query'] = array(
+      array(
+        'taxonomy' => $taxonomy,
+        'field'    => 'term_id',
+        'terms'    => $terms,
+      )
+    );
   }
 
   $args = apply_filters( 'get_info_list_args', $args );
   $query = new WP_Query( $args );
   $frame_class = ($frame ? ' is-style-frame-border' : '');
   $divider_class = ($divider ? ' is-style-divider-line' : '');
-  if( $query -> have_posts() ): //投稿が存在する時 ?>
-  <div id="info-list" class="info-list<?php echo $frame_class; ?><?php echo $divider_class; ?>">
-    <?php if ($caption): ?>
-      <div class="info-list-caption"><?php echo esc_html($caption); ?></div>
-    <?php endif; ?>
-    <?php while ($query -> have_posts()) : $query -> the_post();
-      $date = get_the_time(get_site_date_format());
-      $update_date = get_update_time(get_site_date_format());
-      if ($modified && $update_date) {
-        $date = $update_date;
-      }
-    ?>
-      <div class="info-list-item">
-        <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
-        <?php do_action('info_list_item_meta_before'); ?>
-        <div class="info-list-item-meta">
-          <span class="info-list-item-date"><?php echo $date; ?></span><span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
+  if( $query->have_posts() ): ?>
+    <div id="info-list" class="info-list<?php echo $frame_class; ?><?php echo $divider_class; ?>">
+      <?php if ($caption): ?>
+        <div class="info-list-caption"><?php echo esc_html($caption); ?></div>
+      <?php endif; ?>
+      <?php while ($query->have_posts()) : $query->the_post();
+        $date = get_the_time(get_site_date_format());
+        $update_date = get_update_time(get_site_date_format());
+        if ($modified && $update_date) {
+          $date = $update_date;
+        }
+      ?>
+        <div class="info-list-item">
+          <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
+          <?php do_action('info_list_item_meta_before'); ?>
+          <div class="info-list-item-meta">
+            <span class="info-list-item-date"><?php echo $date; ?></span>
+            <span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
+          </div>
         </div>
-      </div>
-    <?php endwhile; ?>
-  </div>
+      <?php endwhile; ?>
+    </div>
   <?php else :
-    echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
-  endif; ?>
-  <?php wp_reset_postdata(); ?>
-  <?php //wp_reset_query(); ?>
-<?php
+    echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';
+  endif;
+  wp_reset_postdata();
 }
 endif;

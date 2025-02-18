@@ -145,7 +145,7 @@ function auto_post_thumbnail_image($post_id) {
   global $post;
 
 
-  if (!$post_id) {
+  if (!$post_id && isset($post->id)) {
     $post_id = $post->id;
   }
 

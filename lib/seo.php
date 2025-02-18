@@ -745,7 +745,7 @@ endif;
 if ( !function_exists( 'get_the_all_in_one_seo_pack_meta_description' ) ):
 function get_the_all_in_one_seo_pack_meta_description($id = null) {
   global $post;
-  if (!$id) {
+  if (!$id && isset($post->ID)) {
     $id = $post->ID;
   }
   if (class_exists( 'All_in_One_SEO_Pack' )) {
