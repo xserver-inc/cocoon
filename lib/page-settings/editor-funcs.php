@@ -96,7 +96,9 @@ endif;
 define('OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE', 'featured_image_from_title_default_enable');
 if ( !function_exists( 'is_featured_image_from_title_default_enable' ) ):
 function is_featured_image_from_title_default_enable(){
-  return get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE, 0);
+  $default_enable = get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE_DEFAULT_ENABLE, 0);
+  $default_enable = apply_filters('is_featured_image_from_title_default_enable', $default_enable);
+  return $default_enable;
 }
 endif;
 
