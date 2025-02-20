@@ -5,13 +5,34 @@ global $_HVN_EYECATCH;
 
 
 //******************************************************************************
+//  多言語
+//******************************************************************************
+?>
+:root{
+  --hvn-notice: '<?php echo __('詳細はこちら', THEME_NAME); ?>';
+  --hvn-prev: '<?php echo __('過去の投稿', THEME_NAME); ?>';
+  --hvn-next: '<?php echo __('新しい投稿', THEME_NAME); ?>';
+  --hvn-table: '<?php echo __('スクロールできます→', THEME_NAME); ?>';
+  --hvn-ribbon1: '<?php echo __('お勧め', THEME_NAME); ?>';
+  --hvn-ribbon2: '<?php echo __('新着', THEME_NAME); ?>';
+  --hvn-ribbon3: '<?php echo __('注目', THEME_NAME); ?>';
+  --hvn-ribbon4: '<?php echo __('必見', THEME_NAME); ?>';
+  --hvn-ribbon5: '<?php echo __('お得', THEME_NAME); ?>';
+}
+<?php
+//******************************************************************************
 //  ダークモード
 //******************************************************************************
-echo <<< EOF
+if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') != 'none')) {
+  echo <<< EOF
 .body {
   visibility: hidden;
 }
+EOF;
 
+}
+
+echo <<< EOF
 .body .is-auto-horizontal {
   --swiper-pagination-bullet-inactive-color: var(--title-color);
 }
@@ -131,6 +152,7 @@ echo <<< EOF
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
   color: var(--text-color);
+  font-weight: unset;
 }
 
 EOF;
@@ -181,20 +203,17 @@ echo <<< EOF
 }
 
 .body .index-tab-button {
+  align-content: center;
   background-color: #fff;
   border: 1px solid var(--main-color);
   border-radius: 0;
   box-shadow: var(--shadow-color);
   color: #333;
-  display: grid;
   font-size: var(--cocoon-text-size-s);
-  font-weight: unset!important;
   height: 40px;
   margin: 0;
   padding: 0 var(--padding15);
-  place-content: center;
   position: relative;
-  text-align: center;
   width: 100%;
 }
 
@@ -204,8 +223,7 @@ echo <<< EOF
 
 @media (width <=834px) {
   .body .index-tab-button {
-    max-width: unset;
-    width: calc((100% - var(--padding15)) / 2)!important;
+    width: calc((100% - var(--padding15)) / 2);
   }
 }
 
@@ -332,7 +350,7 @@ if ($no) {
   background-color: unset;
 }
 
-.navi-in > ul > li > a:after {
+.navi-in a:after {
   background: var(--text-color);
   bottom: 0;
   content: '';
@@ -345,7 +363,7 @@ if ($no) {
   width: 100%;
 }
 
-.navi-in > ul > li > a:hover::after {
+.navi-in a:hover:after {
   transform: scale(1, 1);
 }
 
@@ -468,7 +486,7 @@ if (get_theme_mod('hvn_card_expansion_setting')) {
 
 EOF;
 
-  // 大きなカード(先頭のみ)
+  // 大きなカード（先頭のみ）
   $css2 =<<< EOF
 .front-top-page .list .a-wrap:first-child {
   grid-column: 1 / 3;
@@ -484,11 +502,11 @@ EOF;
 
 EOF;
 
-  // 縦型カード2、3列+カテゴリーごと(2、3カラム)
+  // 縦型カード2、3列+カテゴリーごと（2、3カラム）
   $css3 =<<< EOF
 .body .list-new-entries .card-content,
 .body .list-popular .card-content {
-  padding: 0 0 var(--gap30)!important;
+  padding: 0 0 20px;
 }
 
 .body .list-new-entries .like,
@@ -666,6 +684,7 @@ if (!get_theme_mod('hvn_front_none_setting', true)) {
 EOF;
 }
 
+
 //******************************************************************************
 //  目次スタイル
 //******************************************************************************
@@ -754,13 +773,13 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
   background-color: var(--dark-content-bgcolor, var(--hvn-white-color));
   border: 0;
   left: 50%;
-  max-height: 80%;
+  max-height: calc(100vh - 120px);
   overflow-y: auto;
   padding: var(--gap30);
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
+  width: 1170px;
   z-index: 2;
 }
 
@@ -812,9 +831,16 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
   }
 }
 
+@media (width < 1190px) {
+  .hvn-content-wrap {
+    width: calc(100% - 20px);
+  }
+}
+
 @media (width <=1023px) {
-  #hvn-toc {
-    display: none;
+  .hvn-open-btn {
+    bottom: 60px;
+    right: 10px;
   }
 }
 
@@ -831,6 +857,19 @@ if (get_theme_mod('hvn_notice_setting')) {
   position: sticky;
   top: 0;
   z-index: 3;
+}
+
+EOF;
+}
+
+
+//******************************************************************************
+//  通知メッセージ横スクロール
+//******************************************************************************
+if (get_theme_mod('hvn_notice_scroll_setting')) {
+  echo <<< EOF
+.notice-area-message .swiper .swiper-wrapper {
+  transition-timing-function: linear;
 }
 
 EOF;
@@ -918,6 +957,7 @@ if (get_theme_mod('hvn_star_setting')) {
 EOF;
 }
 
+
 //******************************************************************************
 //  サムネイル画像の比率変更
 //******************************************************************************
@@ -940,8 +980,8 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_swiper_auto_setting')) {
   echo <<< EOF
-.body .swiper-pagination {
-  bottom: 0!important;
+.body.hvn .swiper-pagination {
+  bottom: 0;
 }
 
 .body .swiper-pagination-bullet-active {
@@ -1012,7 +1052,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
   border-top: 1px dotted #ccc;
   color: var(--cocoon-text-color);
   justify-content: unset;
-  padding: 3px 5px;
+  padding: 3px 2em 3px 5px;
 }
 
 .body :is(.widget_pages, .widget_archive, .widget_categories) > ul > li:first-of-type > a {
@@ -1033,7 +1073,6 @@ if (get_theme_mod('hvn_accordion_setting')) {
 .widget_categories .post-count,
 .widget_archive .post-count {
   margin-left:auto;
-  padding-right: 2em;
 }
 
 .sidebar .widget_tag_cloud .tagcloud a {
@@ -1054,7 +1093,6 @@ button.sub-item {
   position: absolute;
   right: 5px;
   top: 8px;
-  transition: .3s;
   width: 20px;
 }
 
@@ -1065,11 +1103,10 @@ button.sub-item:before {
   font-family: 'Font Awesome 5 Free';
   font-size: 5px;
   font-weight: bold;
-  transition: transform .3s;
 }
 
 button.sub-item.active:before {
-  transform: rotate(-180deg);
+  content: '\\f077';
 }
 
 .toc button.sub-item,
@@ -1212,11 +1249,12 @@ EOF;
 
 .hvn .list-new-entries,
 .hvn .list-columns {
-  padding-top: calc((var(--main-font-size) + var(--sub-font-size)) * 1.8 + var(--gap30))!important;
+  padding-top: calc((var(--main-font-size) + var(--sub-font-size)) * 1.8 + var(--gap30));
 }
 
 EOF;
   }
+
 
 //******************************************************************************
 //  コメント
@@ -1257,7 +1295,6 @@ EOF;
 //  メインビジュアル
 //
 //******************************************************************************
-
 
 //******************************************************************************
 //  波線
@@ -1370,7 +1407,6 @@ echo <<< EOF
   padding: 0 10px;
   place-content: center;
   position: absolute;
-  text-align: center;
   z-index: 1;
 }
 
@@ -1454,6 +1490,7 @@ EOF;
 
 EOF;
 }
+
 
 //******************************************************************************
 //  フォントサイズ

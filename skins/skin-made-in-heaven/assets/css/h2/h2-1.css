@@ -8,5 +8,5 @@
   background-color: var(--hover-color);
   border-left: 10px solid var(--main-color);
   color: #333;
-  padding: 20px 15px!important;
+  padding: 20px 15px;
 }

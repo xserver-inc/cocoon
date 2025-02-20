@@ -7,7 +7,7 @@
 .main .under-entry-content h2 {
   background-color: var(--hover-color);
   color: #333;
-  padding: 20px 25px!important;
+  padding: 20px 25px;
 }
 
 .article h2::before,
@@ -15,10 +15,10 @@
 .main .under-entry-content h2::before {
   border: dashed 1px var(--main-color);
   box-sizing: border-box;
-  inset: 4px auto auto 4px;
   content: '';
   display: block;
   height: calc(100% - 8px);
+  inset: 4px auto auto 4px;
   position: absolute;
   width: calc(100% - 8px);
 }

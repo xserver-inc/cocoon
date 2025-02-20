@@ -9,7 +9,7 @@ add_action('customize_register', function($wp_customize) {
   $wp_customize->add_panel(
     'hvn_cocoon',
     array(
-      'title'     => 'メイド・イン・ヘブン設定',
+      'title'     => __('メイド・イン・ヘブン設定', THEME_NAME),
       'priority'  => 300,
     )
   );
@@ -42,19 +42,21 @@ add_action('admin_bar_menu', function($wp_admin_bar) {
 
 
 //******************************************************************************
-//　ダッシュボード投稿、固定ページ一覧を24時間表示
+//  ダッシュボード投稿、固定ページ一覧を24時間表示
 //******************************************************************************
 add_filter('post_date_column_time', function($h_time, $post) {
-  return get_the_date('Y年n月j日 H:i');
+  return get_the_date('Y-m-d H:i');
 }, 10, 2);
 
 
+// 「スラッグ」カラム追加
 add_filter('manage_pages_columns', function($columns) {
   $columns['slug'] = __('Slug');
   return $columns;
 });
 
 
+// 「スラッグ」カラム追加
 add_action('manage_pages_custom_column', function($column_name, $post_id) {
   switch($column_name) {
     case 'slug':
@@ -67,7 +69,7 @@ add_action('manage_pages_custom_column', function($column_name, $post_id) {
 
 
 //******************************************************************************
-//　ダッシュボード投稿一覧に追加
+//  ダッシュボード投稿一覧に追加
 //******************************************************************************
 add_filter('manage_post_posts_columns', function($columns) {
   $columns['last_modified'] = __('更新日', THEME_NAME);
@@ -78,17 +80,19 @@ add_filter('manage_post_posts_columns', function($columns) {
 });
 
 
+// 「更新日付」カラム追加
 add_filter('manage_edit-post_sortable_columns', function($columns) {
   $columns['last_modified'] = 'modified';
   return $columns;
 });
 
 
+// 「更新日付」カラム追加
 add_action('manage_posts_custom_column', function($column_name, $post_id) {
   switch($column_name) {
     case 'last_modified':
-      $p_date = get_the_date('Y年n月j日 H:i');
-      $u_date = get_the_modified_date('Y年n月j日 H:i');
+      $p_date = get_the_date('Y-m-d H:i');
+      $u_date = get_the_modified_date('Y-m-d H:i');
       if ($p_date != $u_date) {
         $url = admin_url() . "admin-post.php?action=delete_date&id={$post_id}";
         $button = " <a class=\"button\" href=\"{$url}\">". __('クリア', THEME_NAME) . "</a>";
@@ -115,7 +119,7 @@ add_action('manage_posts_custom_column', function($column_name, $post_id) {
 
 
 //******************************************************************************
-//　更新日クリア
+//  更新日クリア
 //******************************************************************************
 add_action('admin_post_delete_date', function() {
   global $wpdb;
@@ -132,7 +136,7 @@ add_action('admin_post_delete_date', function() {
 
 
 //******************************************************************************
-//　クイック編集に入力フォーム追加
+//  クイック編集に入力フォーム追加
 //******************************************************************************
 add_action('quick_edit_custom_box', function($column_name, $post_type) {
   static $print_nonce = TRUE;
@@ -164,7 +168,7 @@ add_action('quick_edit_custom_box', function($column_name, $post_type) {
 
 
 //******************************************************************************
-//　クイック編集の入力フォームに値表示
+//  クイック編集の入力フォームに値表示
 //******************************************************************************
 add_action('admin_footer-edit.php', function() {
   global $post_type;
@@ -215,7 +219,7 @@ add_action('admin_footer-edit.php', function() {
 
 
 //******************************************************************************
-//　カスタムフィールド更新
+//  カスタムフィールド更新
 //******************************************************************************
 add_action('save_post', function($post_id) {
   $slug = 'post';
@@ -287,8 +291,132 @@ add_filter('widget_title', function($title) {
 //******************************************************************************
 //  Gutenbergエディターメニュー追加
 //******************************************************************************
-add_action('enqueue_block_editor_assets', function() {
-  wp_enqueue_script('hvn-block', HVN_SKIN_URL . 'assets/js/block.js', [], false, true);
+add_action('init', function() {
+
+  $block_styles = [
+    // タイムライン
+    [
+      'name'       => 'cocoon-blocks/timeline',
+      'properties' => [
+        'name'  => 'hvn-timeline-mini',
+        'label' => __('ミニ', THEME_NAME),
+      ],
+    ],
+    [
+      'name'       => 'cocoon-blocks/timeline',
+      'properties' => [
+        'name'  => 'hvn-timeline-line',
+        'label' => __('ライン', THEME_NAME),
+      ],
+    ],
+    [
+      'name'       => 'cocoon-blocks/timeline',
+      'properties' => [
+        'name'  => 'hvn-timeline-step',
+        'label' => __('ステップ', THEME_NAME),
+      ],
+    ],
+    [
+      'name'       => 'cocoon-blocks/timeline',
+      'properties' => [
+        'name'  => 'hvn-timeline-big',
+        'label' => __('ビッグ', THEME_NAME),
+      ],
+    ],
+    [
+      'name'       => 'cocoon-blocks/timeline',
+      'properties' => [
+        'name'  => 'hvn-timeline-box',
+        'label' => __('ボックス', THEME_NAME),
+      ],
+    ],
+    
+    // タブ
+    [
+      'name'       => 'cocoon-blocks/tab',
+      'properties' => [
+        'name'  => 'hvn-tab-balloon',
+        'label' => __('吹き出し', THEME_NAME),
+      ],
+    ],
+    [
+      'name'       => 'cocoon-blocks/tab',
+      'properties' => [
+        'name'  => 'hvn-tab-line',
+        'label' => __('下線', THEME_NAME),
+      ],
+    ],
+
+    // ブログカード
+    [
+      'name'       => 'cocoon-blocks/blogcard',
+      'properties' => [
+        'name'  => 'hvn-text',
+        'label' => __('テキスト', THEME_NAME),
+      ],
+    ],
+
+    // 見出しボックス
+    [
+      'name'       => 'cocoon-blocks/caption-box-1',
+      'properties' => [
+        'name'  => 'accordion',
+        'label' => __('アコーディオン', THEME_NAME),
+      ],
+    ],
+
+    // 新着記事
+    [
+      'name'       => 'cocoon-blocks/new-list',
+      'properties' => [
+        'name'  => '2-columns',
+        'label' => __('2カラム', THEME_NAME),
+      ],
+    ],
+    [
+      'name'       => 'cocoon-blocks/new-list',
+      'properties' => [
+        'name'  => '3-columns',
+        'label' => __('3カラム', THEME_NAME),
+      ],
+    ],
+
+    // 人気記事
+    [
+      'name'       => 'cocoon-blocks/popular-list',
+      'properties' => [
+        'name'  => '2-columns',
+        'label' => __('2カラム', THEME_NAME),
+      ],
+    ],
+    [
+      'name'       => 'cocoon-blocks/popular-list',
+      'properties' => [
+        'name'  => '3-columns',
+        'label' => __('3カラム', THEME_NAME),
+      ],
+    ],
+
+    // ナビカード
+    [
+      'name'       => 'cocoon-blocks/navicard',
+      'properties' => [
+        'name'  => '2-columns',
+        'label' => __('2カラム', THEME_NAME),
+      ],
+    ],
+    [
+      'name'       => 'cocoon-blocks/navicard',
+      'properties' => [
+        'name'  => '3-columns',
+        'label' => __('3カラム', THEME_NAME),
+      ],
+    ],
+  ];
+
+  foreach ($block_styles as $blockstyle) {
+    register_block_style($blockstyle['name'], $blockstyle['properties']);
+  }
 });
 
 
@@ -324,7 +452,7 @@ add_action('admin_footer', function() {
 //  カスタマイザーCSS追加
 //******************************************************************************
 add_action('customize_controls_enqueue_scripts', function() {
-  wp_enqueue_style('hnv-custom', HVN_SKIN_URL . '/assets/css/customize.css' );
+  wp_enqueue_style('hvn-custom', HVN_SKIN_URL . '/assets/css/customize.css' );
 });
 
 
@@ -431,10 +559,9 @@ add_action('wp_ajax_nopriv_hvn_like_action', 'hvn_like_ajax');
 //  アーカイブ日付をY-m形式変更
 //******************************************************************************
 add_filter('get_archives_link', function($html) {
-  $html = preg_replace('/([0-9]*)年([0-9]*)月/', '$1-0$2', $html);
-  $html = preg_replace('/([0-9]*)-0*([0-9]{2,})/','$1-$2', $html);
-
-  return $html;
+  return preg_replace_callback('/(\d+)年(\d+)月/', function($matches) {
+    return $matches[1] . '-' . str_pad($matches[2], 2, '0', STR_PAD_LEFT);
+  }, $html);
 });
 
 
@@ -442,11 +569,16 @@ add_filter('get_archives_link', function($html) {
 //  カレンダー日付をY-m形式変更
 //******************************************************************************
 add_filter('get_calendar', function($html) {
-  $html = preg_replace('/\s?([0-9]{1,})月\s?/', '0$1月', $html);
-  $html = preg_replace('/0*([0-9]{2,})月/','$1', $html);
-  $html = preg_replace('/([0-9]*)年/', '$1-', $html);
+  $html = preg_replace_callback('/\s?(\d+)日\s?/', function($matches) {
+    return '-' . str_pad($matches[1], 2, '0', STR_PAD_LEFT);
+  }, $html);
 
-  /* ボタン */
+  $html = preg_replace_callback('/\s?(\d+)月\s?/', function($matches) {
+    return str_pad($matches[1], 2, '0', STR_PAD_LEFT);
+  }, $html);
+
+  $html = preg_replace('/(\d{4})年/', '$1-', $html);
+
   $html = str_replace('&laquo;', '<i class="fas fa-angle-left"></i>', $html);
   $html = str_replace('&raquo;', '<i class="fas fa-angle-right"></i>', $html);
 
@@ -488,7 +620,7 @@ add_filter('post_class', function($classes, $class, $post_id) {
   $mod_time  = get_update_time('U', $post_id);
   $post_time = get_the_time('U', $post_id);
 
-  $last = $now - ($days * 24 * 60 * 60);
+  $last = $now - ($days * DAY_IN_SECONDS);
   if ($post_time > $last) {
     $classes[] = 'new-post';
   } else if ($mod_time > $last) {
@@ -506,12 +638,12 @@ add_filter('wp_nav_menu', function($nav_menu, $args) {
   if ((($args->theme_location == NAV_MENU_HEADER)
    ||  ($args->theme_location == NAV_MENU_MOBILE_SLIDE_IN))
    && (strpos($args->menu_class, 'menu-drawer') !== false)) {
-    $html = get_theme_mod('hvn_mobile_text_setting', 'メニュー');
+    $html = get_theme_mod('hvn_mobile_text_setting', __('メニュー', THEME_NAME));
     $nav_menu = '<aside class="widget"><h3 class="widget-title">' . $html . '</h3>' . $nav_menu  . '</aside>';
   }
 
   return $nav_menu;
-}, 10,2);
+}, 10, 2);
 
 
 //******************************************************************************
@@ -539,7 +671,7 @@ add_filter('render_block', function($block_content) {
 //******************************************************************************
 
 // コメントフォーム追加
-add_action('comment_form_field_comment', function($content) {
+add_filter('comment_form_field_comment', function($content) {
   $icon = 3;
   $html = null;
 
@@ -561,7 +693,7 @@ EOF;
       }
     }
     if ($html) {
-      $html = "<label>アイコン</label><div class=hvn-comment>{$html}</div>";
+      $html = "<label>" . __('アイコン', THEME_NAME) . "</label><div class=hvn-comment>{$html}</div>";
     }
   }
 
@@ -580,16 +712,17 @@ add_action('comment_post', function($comment_id) {
 
 // コメントメタカスタムフィールド追加
 add_action('add_meta_boxes_comment', function() {
- add_meta_box('hvn-comment-title', 'カスタムフィールド' , 'comment_meta_post_icon', 'comment', 'normal', 'high');
+ add_meta_box('hvn-comment-title', __('カスタムフィールド', THEME_NAME), 'comment_meta_post_icon', 'comment', 'normal', 'high');
 });
 
 
 function comment_meta_post_icon($comment) {
   $post_icon = get_comment_meta($comment->comment_ID, 'post-icon', true);
+  $label = __('アイコン番号', THEME_NAME);
 
   $html = <<<EOF
 <p>
-  <label for="post-icon">アイコン番号:</label>
+  <label for="post-icon">{$label}:</label>
   <input type="text" name="post-icon" value="{$post_icon}"  class="widefat" />
 </p>
 EOF;
@@ -608,12 +741,13 @@ add_action('edit_comment', function($comment_id) {
 
 // コメント一覧にカスタムフィールド追加
 add_filter('manage_edit-comments_columns', function($columns) {
-  $columns['post-icon'] = "アイコン番号";
+  $columns['post-icon'] = __('アイコン番号', THEME_NAME);
 
   return $columns;
 });
 
 
+// コメント一覧にアイコンカラム追加
 add_action('manage_comments_custom_column', function($column_name, $comment_id) {
   if ($column_name == 'post-icon') {
     $post_icon = get_comment_meta($comment_id, 'post-icon', true);
@@ -656,18 +790,18 @@ add_action('init',function() {
       $json,
     );
   }
-  register_block_pattern_category('heaven', ['label' => 'メイド・イン・ヘブン']);
+  register_block_pattern_category('heaven', ['label' => __('メイド・イン・ヘブン', THEME_NAME)]);
 });
 
 
 //******************************************************************************
 //  タグクラウドにパラメータ追加
 //******************************************************************************
-add_filter('in_widget_form', function($widget, $return, $instance) {
+add_action('in_widget_form', function($widget, $return, $instance) {
   if ($widget->id_base == 'tag_cloud') {
     $f_id   = $widget->get_field_id('drop');
     $f_name = $widget->get_field_name('drop');
-    echo "<p><input type=checkbox class=widefat name={$f_name}" .  checked(isset($instance['drop']), true, false) . "><label for={$f_id}>ドロップダウンで表示</label></p>";
+    echo "<p><input type=checkbox class=widefat name={$f_name}" .  checked(isset($instance['drop']) && $instance['drop'] != '', true, false) . "><label for={$f_id}>ドロップダウンで表示</label></p>";
   }
 }, 10, 3);
 
@@ -676,7 +810,9 @@ add_filter('in_widget_form', function($widget, $return, $instance) {
 //  設定フォーム更新
 //******************************************************************************
 add_filter('widget_update_callback', function($instance, $new_instance, $old_instance, $this_widget) {
-  $instance['drop'] = $new_instance['drop'];
+  if ($this_widget->id_base == 'tag_cloud') {
+    $instance['drop'] = ! empty( $new_instance['drop']) ? $new_instance['drop'] : '';
+  }
 
   return $instance;
 }, 10, 4);
@@ -689,7 +825,7 @@ add_filter('widget_tag_cloud_args', function($args, $instance) {
   $args['drop'] = isset($instance['drop']) ? $instance['drop'] : '';
 
   return $args;
-},2,10);
+}, 2, 10);
 
 
 //******************************************************************************
@@ -701,7 +837,7 @@ add_filter('wp_tag_cloud', function($return, $args) {
     $tags = get_tags(array('orderby'=> 'count', 'order' => 'DESC'));
 
     ob_start();
-    echo '<select aria-label="選択" onchange="document.location.href=this.options[this.selectedIndex].value;"><option value="" selected="selected">タグを選択</option>';
+    echo '<select aria-label="' . __('選択', THEME_NAME) . '" onchange="document.location.href=this.options[this.selectedIndex].value;"><option value="" selected="selected">タグを選択</option>';
 
     if ($tags) {
       foreach($tags as $tag) {
@@ -716,7 +852,7 @@ add_filter('wp_tag_cloud', function($return, $args) {
   }
 
   return $return;
-},2,10);
+}, 2, 10);
 
 
 //******************************************************************************

@@ -11,7 +11,7 @@ for ($i=0; $i<count($text); $i++) {
   $color = get_theme_mod("hvn_rich_text_color{$i}_setting");
   if ($color) {
     echo <<< EOF
-.{$text[$i]},.bold-{$text[$i]} {color: {$color}!important;}
+.{$text[$i]},.bold-{$text[$i]} {color: {$color};}
 
 EOF;
   }
@@ -33,24 +33,22 @@ for ($i=0; $i<count($marker); $i++) {
     if (get_theme_mod('hvn_marker_color_set1_setting')) {
       echo <<< EOF
 .marker{$marker[$i][0]} {
-  background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100%!important;
-  background-color: unset!important;
+  background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100%;
 }
 
 .marker-under{$marker[$i][0]} {
-  background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100% 0.5em!important;
-  background-color: unset!important;
+  background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100% 0.5em;
 }
 
 EOF;
     } else {
       echo <<< EOF
 .marker{$marker[$i][0]} {
-  background: {$color}!important;
+  background: {$color};
 }
 
 .marker-under{$marker[$i][0]} {
-  background: linear-gradient(transparent 60%, {$color} 60%)!important;
+  background: linear-gradient(transparent 60%, {$color} 60%);
 }
 
 EOF;
@@ -121,12 +119,12 @@ EOF;
 $css = null;
 $color = get_theme_mod('hvn_numeric_list_set1_setting');
 if ($color) {
-  $css = "background-color: {$color}!important;";
+  $css = "background-color: {$color};";
 }
 
 $no = get_theme_mod('hvn_numeric_list_set2_setting');
 if ($no) {
-  $css .= 'border-radius: 0!important;';
+  $css .= 'border-radius: 0;';
 }
 
 if ($css) {
@@ -181,8 +179,8 @@ switch($no) {
     $id = implode(',', $id_array) ;
     echo <<< EOF
 {$id} {
-  background-color: transparent!important;
-  border-width: 1px!important;
+  background-color: transparent;
+  border-width: 1px;
   color: var(--cocoon-text-color);
 }
 
@@ -194,9 +192,9 @@ EOF;
     $id =  implode(':before,', $id_array);
     echo <<< EOF
 {$id}:before{
-  border: 0!important;
-  color: #fff!important;
-  margin: 0!important;
+  border: 0;
+  color: #fff;
+  margin: 0;
 }
 EOF;
 
@@ -219,16 +217,23 @@ $no = get_theme_mod('hvn_tab_box_set1_setting');
 switch($no) {
   case 1:
     echo <<< EOF
-.blank-box.bb-tab,
-.tab-caption-box-content {
+.blank-box.bb-tab {
   margin-top: calc(var(--gap30) + 12.5px);
+  padding-top: calc(var(--padding15) + 12.5px);
+}
+
+.tab-caption-box {
+  padding-top: 12.5px;
+}
+
+.tab-caption-box-content {
   padding-top: calc(var(--padding15) + 12.5px);
 }
 
 .tab-caption-box-label {
   left: 15px;
   position: absolute;
-  top: -12px;
+  top: 0;
 }
 
 .editor-styles-wrapper .blank-box.bb-tab:before,
@@ -244,19 +249,15 @@ EOF;
   case 2:
     echo <<< EOF
 .blank-box.bb-tab {
-  margin: 0 0 var(--gap30) 0!important;
-  padding-top: calc(var(--padding15) + 1.8em)!important;
+  margin: 0 0 var(--gap30) 0;
+  padding-top: calc(var(--padding15) + 1.8em);
 }
 
 .editor-styles-wrapper .blank-box.bb-tab::before,
 .blank-box.bb-tab .bb-label {
-  top: -1px!important;
+  top: -1px;
 }
 
-
-.tab-caption-box {
-  margin: 0 0 var(--gap30) 0!important;
-}
 
 .tab-caption-box-label {
   position: absolute;
@@ -264,7 +265,7 @@ EOF;
 }
 
 .tab-caption-box-content {
-  padding-top: calc(var(--padding15) + 1.8em)!important;
+  padding-top: calc(var(--padding15) + 1.8em);
 }
 
 EOF;
@@ -280,11 +281,11 @@ switch($no) {
   case 1:
     echo <<< EOF
 .faq .faq-item-label {
-  background-color: var(--cocoon-custom-question-color)!important;
-  color: #fff!important;
+  background-color: var(--cocoon-custom-question-color);
+  color: #fff;
 }
 .faq .faq-answer-label {
-  background-color: var(--cocoon-custom-answer-color)!important;
+  background-color: var(--cocoon-custom-answer-color);
 }
 
 EOF;
@@ -293,12 +294,12 @@ EOF;
   case 2:
     echo <<< EOF
 .faq .faq-item-label {
-  background-color: var(--cocoon-custom-question-color)!important;
+  background-color: var(--cocoon-custom-question-color);
   border-radius: 100%;
-  color: #fff!important;
+  color: #fff;
 }
 .faq .faq-answer-label {
-  background-color: var(--cocoon-custom-answer-color)!important;
+  background-color: var(--cocoon-custom-answer-color);
 }
 
 EOF;

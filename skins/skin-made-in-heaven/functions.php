@@ -196,7 +196,7 @@ $_THEME_OPTIONS = array(
   'code_row_number_enable' => 0,
   'code_highlight_package' => 'light',
   'code_highlight_style' => 'tomorrow-night-bright',
-  'code_highlight_css_selector' => '.entry-content pre',
+  'code_highlight_css_selector' => '.entry-content pre:not(.wp-block-verse, .wp-block-preformatted)',
 
 // コメント
   'comment_display_type' => 'default',
@@ -292,4 +292,5 @@ $_THEME_OPTIONS = array(
 
 // エディター
   'visual_editor_style_enable' => 1,
+  'admin_editor_counter_visible' => 1,
 );

@@ -8,15 +8,15 @@
 
 
 /*******************************************************************************
-**  タイムライン(ステップ)
+**  タイムライン（ステップ）
 *******************************************************************************/
 
 .is-style-hvn-timeline-step.timeline-box .timeline {
   padding: 0;
 }
 
-.is-style-hvn-timeline-step .timeline-item {
-  border-left: 0!important;
+.body .is-style-hvn-timeline-step .timeline-item {
+  border-left: 0;
 }
 
 .is-style-hvn-timeline-step .timeline-item:last-of-type .timeline-item-content {
@@ -54,15 +54,15 @@
 
 
 /*******************************************************************************
-**  タイムライン(ビッグ)
+**  タイムライン（ビッグ）
 *******************************************************************************/
 
 .is-style-hvn-timeline-big.timeline-box .timeline {
   padding: 0;
 }
 
-.is-style-hvn-timeline-big .timeline-item {
-  border-left: 0!important;
+.body .is-style-hvn-timeline-big .timeline-item {
+  border-left: 0;
   border-top: 1px dotted var(--border-color);
 }
 
@@ -125,7 +125,7 @@
 
 
 /*******************************************************************************
-**  タイムライン(ボックス)
+**  タイムライン（ボックス）
 *******************************************************************************/
 
 .is-style-hvn-timeline-box.timeline-box .timeline {
@@ -173,10 +173,10 @@
   display: none;
 }
 
-.is-style-hvn-timeline-box .timeline-item-content {
+.body .is-style-hvn-timeline-box .timeline-item-content {
   border: 0;
   float: none;
-  padding: 0!important;
+  padding: 0;
   width: 100%;
 }
 
@@ -200,7 +200,7 @@
 
 
 /*******************************************************************************
-**  タイムライン(ミニ)
+**  タイムライン（ミニ）
 *******************************************************************************/
 
 .editor-styles-wrapper .is-style-hvn-timeline-mini,
@@ -218,7 +218,7 @@
 
 
 /*******************************************************************************
-**  タイムライン(ライン)
+**  タイムライン（ライン）
 *******************************************************************************/
 
 .editor-styles-wrapper .is-style-hvn-timeline-line,
@@ -266,7 +266,7 @@
 
 
 /*******************************************************************************
-**  タイムライン(スケジュール)
+**  タイムライン（スケジュール）
 *******************************************************************************/
 
 .editor-styles-wrapper .hvn-timeline,
@@ -281,7 +281,7 @@
 .hvn-timeline .timeline-item:before {
   background-color: var(--content-bgcolor)!important;
   border: 2px solid var(--cocoon-custom-point-color);
-  color: var(--cocoon-text-color)!important;
+  color: var(--cocoon-text-color);
   font-family: 'Font Awesome 5 Free';
   font-size: 12px;
   font-weight: 900;
@@ -300,7 +300,7 @@
 }
 
 .no-radius.timeline-box .timeline-item:before {
-  border-radius: 0!important;
+  border-radius: 0;
 }
 
 
@@ -308,13 +308,14 @@
 **  コピーボタン
 *******************************************************************************/
 
-pre {
+.body pre {
   border: 0;
   font-family: "Menlo", "Consolas", "monaco", "monospace", "ＭＳ ゴシック", sans-serif;
-  padding: var(--padding15)!important;
+  padding: var(--padding15);
 }
 
 .pre-wrap {
+  margin-bottom: var(--gap30);
   position: relative;
 }
 
@@ -324,7 +325,7 @@ pre {
 
 .pre-wrap:hover .code-copy {
   opacity: 1;
-  transition: all 0.3s ease-out!important;
+  transition: all 0.3s ease-out;
 }
 
 .code-copy {
@@ -345,7 +346,7 @@ pre {
 
 
 /*******************************************************************************
-**  リボン(NEWマーク)
+**  リボン（NEWマーク）
 *******************************************************************************/
 
 .widget-entry-cards.ranking-visible .a-wrap:before,
@@ -396,7 +397,7 @@ pre {
 
 
 /*******************************************************************************
-**  タブ(吹き出し)
+**  タブ（吹き出し）
 *******************************************************************************/
 
 .is-style-hvn-tab-balloon.tab-block > .tab-label-group {
@@ -429,7 +430,7 @@ pre {
 
 
 /*******************************************************************************
-**  タブ(ライン)
+**  タブ（ライン）
 *******************************************************************************/
 
 .is-style-hvn-tab-line > .tab-label-group .tab-label {
@@ -498,13 +499,21 @@ pre {
   width: calc(100% - var(--thumb-width) - var(--padding15));
 }
 
+.hvn-blogcard .wp-block-cocoon-blocks-blogcard {
+  padding-top: 0;
+}
+
+.hvn-blogcard .blogcard-label {
+  display: none;
+}
+
 
 /*******************************************************************************
 **  比較ボックス
 *******************************************************************************/
 
-.compare-box {
-  gap: 0!important;
+.body .compare-box {
+  gap: 0;
 }
 
 .compare-box.column-wrap > div {
@@ -583,7 +592,7 @@ pre {
 }
 
 .body :is(.is-style-2-columns, .is-style-3-columns) .border-partition .a-wrap {
-  border: 0!important;
+  border: 0;
   padding-bottom: 0;
 }
 
@@ -599,24 +608,73 @@ pre {
 **  プロフィール
 *******************************************************************************/
 
-.hnv-profile-btn a {
+.hvn-profile-btn a {
   display: none;
 }
 
-.nwa .hnv-profile-btn a {
-  background-color: #fff;
-  border: 1px solid var(--main-color);
-  box-shadow: var(--shadow-color);
-  color: #333;
+.nwa .hvn-profile-btn a {
+  border-radius: 0;
   display: grid;
-  font-size: var(--cocoon-text-size-s);
   margin: var(--padding15) 0 0 0;
-  min-height: 40px;
-  place-content: center;
   text-decoration: none;
 }
 
-.nwa .hnv-profile-btn a:hover {
-  background-color: var(--hover-color);
-  color: #333;
+
+/*******************************************************************************
+**  階層
+*******************************************************************************/
+
+.article .hvn-hierarchy {
+  background-color: #000;
+  color: #eaeaea;
+  font-family: 'Menlo', 'Consolas', 'monaco', 'monospace', 'ＭＳ ゴシック', sans-serif;
+  padding: 15px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.article .hvn-hierarchy::-webkit-scrollbar {
+  height: 10px;
+}
+
+.article .hvn-hierarchy::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+.article .hvn-hierarchy li {
+  list-style: none;
+  margin: 0;
+  padding-left: 1em;
+  position: relative;
+}
+
+.article .hvn-hierarchy ul {
+  margin: 0;
+  padding-left: 1em;
+}
+
+.article .hvn-hierarchy ul li:before {
+  background-color: #fff;
+  content: "";
+  height: 1px;
+  left: -0.5em;
+  margin: auto;
+  position: absolute;
+  top: 0.75em;
+  width: 1em;
+}
+
+.article .hvn-hierarchy ul li:after {
+  background-color: #fff;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: -0.5em;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.article .hvn-hierarchy ul li:last-child:after {
+  height: 0.75em;
 }

@@ -6,11 +6,12 @@
 **
 *******************************************************************************/
 
-#customize-theme-controls #accordion-panel-hvn_cocoon .accordion-section-title:before {
+#customize-theme-controls #accordion-panel-hvn_cocoon button:before {
   color: #e589a2;
   content: '\f487';
   font-family: 'dashicons';
   font-weight: normal;
+  margin-right: 5px;
   vertical-align: middle;
 }
 
@@ -25,12 +26,12 @@
 **  ラジオボタン
 *******************************************************************************/
 
-[id*="section-hvn"] .wp-color-result-text,
-[id*="section-hvn"] .color-picker-hex,
-[id*="section-hvn"] select,
-[id*="section-hvn"] input,
-[id*="section-hvn"] button {
-  border-radius: 0!important;
+.wp-customizer [id*="section-hvn"] .wp-color-result-text,
+.wp-customizer [id*="section-hvn"] .color-picker-hex,
+.wp-customizer [id*="section-hvn"] select,
+.wp-customizer [id*="section-hvn"] input,
+.wp-customizer [id*="section-hvn"] button {
+  border-radius: 0;
 }
 
 [id*="section-hvn"] .customize-control-radio {
@@ -142,6 +143,9 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
   gap: 15px;
 }
 
-[id*="customize-control-hvn_badge_color"] .description {
+[id*="customize-control-hvn_rich_text_color"] .description,
+[id*="customize-control-hvn_marker_color"] .description,
+[id*="customize-control-hvn_badge_color"] .description,
+[id*="customize-control-hvn_inline_button_color"] .description {
   width: 55px;
 }

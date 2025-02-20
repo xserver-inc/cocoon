@@ -21,14 +21,14 @@ $snippet = is_entry_card_snippet_visible();
 <div id="list-wrap" class="list-wrap list-wrap front-page-type-category-<?php echo $columns; ?>-columns">
   <div class="list-new-entries">
     <h1 class="list-new-entries-title list-title">
-      <span class="list-title-in"><?php echo apply_filters('new_entries_caption', '新着記事'); ?></span>
+      <span class="list-title-in"><?php echo apply_filters('new_entries_caption', __('新着記事', THEME_NAME)); ?></span>
     </h1>
     <div class="index-tab-wrap">
       <input id="index-tab-1" type="radio" name="tab_item" checked>
       <input id="index-tab-2" type="radio" name="tab_item">
       <div class="index-tab-buttons">
-        <label class="index-tab-button" for="index-tab-1">新着記事</label>
-        <label class="index-tab-button" for="index-tab-2">更新記事</label>
+        <label class="index-tab-button" for="index-tab-1"><?php echo __('新着記事', THEME_NAME); ?></label>
+        <label class="index-tab-button" for="index-tab-2"><?php echo __('更新記事', THEME_NAME); ?></label>
       </div>
       <div class="tab-cont tb1">
         <?php echo do_shortcode('[new_list type="large_thumb" snippet=' . $snippet . ' class="list ect-vertical-card-' . $columns . ' ect-vertical-card ect-' . $columns . '-columns" count=4]'); ?>
@@ -38,14 +38,14 @@ $snippet = is_entry_card_snippet_visible();
       </div>
     </div>
     <div class="list-more-button-wrap">
-      <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>?cat=0" class="list-more-button"><?php echo apply_filters('more_button_caption', 'もっと見る'); ?></a>
+      <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>?cat=0" class="list-more-button"><?php echo apply_filters('more_button_caption', __('もっと見る', THEME_NAME)); ?></a>
     </div>
   </div>
 
 
   <div class="list-columns list-popular">
     <h1 class="list-popular-title list-title">
-      <span class="list-title-in"><?php echo apply_filters('hvn_popular_caption', '本日読まれている記事'); ?></span>
+      <span class="list-title-in"><?php echo apply_filters('hvn_popular_caption', __('本日読まれている記事', THEME_NAME)); ?></span>
     </h1>
     <?php echo do_shortcode('[popular_list type="large_thumb" snippet=' . $snippet . ' class="list ect-vertical-card-' . $columns . ' ect-vertical-card ect-' . $columns . '-columns" count=4 days=1]'); ?>
   </div>
@@ -67,7 +67,7 @@ for ($i=0; $i < count($cat_ids); $i++):
       </div>
     <?php if($cat = get_category($cat_id)): ?>
       <div class="list-more-button-wrap">
-        <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', 'もっと見る'); ?></a>
+        <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', __('もっと見る', THEME_NAME)); ?></a>
       </div>
     <?php endif; ?>
       </div>

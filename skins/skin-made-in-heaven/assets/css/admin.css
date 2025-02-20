@@ -22,17 +22,22 @@
 /* 投稿、固定ページ一覧ステータス */
 
 .wp-admin.post-type-post .status-sticky {
-  background-color: #F1F8E9;
+  background-color: #f1f8e9;
 }
 
 .wp-admin.post-type-post .status-future,
 .wp-admin.post-type-page .status-future {
-  background-color: #E0F7FA;
+  background-color: #e0f7fa;
 }
 
 .wp-admin.post-type-post .status-draft,
 .wp-admin.post-type-page .status-draft {
-  background-color: #FFEBEE;
+  background-color: #ffebee;
+}
+
+/* カラム調整 */
+.fixed th {
+  width: 100%!important;
 }
 
 
@@ -218,6 +223,7 @@
   display: none;
 }
 
+
 /* 管理画面 */
 
 .skin-control:has(#admin_list_memo_visible_1) {
@@ -227,13 +233,8 @@
 
 /* エディター */
 
-#tab-editor-content tr:nth-child(2) {
-  display: none;
-}
-
-
-/* テーマ情報 */
-
-#tab-about-content pre {
+#tab-editor-content tr:nth-child(2),
+#tab-editor-content tr:nth-child(3),
+#tab-editor-content tr:nth-child(4) {
   display: none;
 }

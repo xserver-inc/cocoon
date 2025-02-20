@@ -3,7 +3,7 @@ if(!defined('ABSPATH'))exit;
 
 
 //******************************************************************************
-//  カスタマイザー(基本カラー)
+//  カスタマイザー（基本カラー）
 //******************************************************************************
 if (!function_exists('hvn_color')):
 function hvn_color($wp_customize) {
@@ -13,7 +13,7 @@ function hvn_color($wp_customize) {
   $wp_customize->add_section(
     "hvn_{$section}_section",
     array(
-      'title'     => '基本カラー',
+      'title'     => __('基本カラー', THEME_NAME),
       'panel'     => 'hvn_cocoon',
       'priority'  => 1,
     )
@@ -21,7 +21,7 @@ function hvn_color($wp_customize) {
 
 
   // コントロール
-  hvn_panel_label($wp_customize, $section, '基本カラー', 1);
+  hvn_panel_label($wp_customize, $section, __('基本カラー', THEME_NAME), 1);
 
   $wp_customize->add_setting('hvn_main_color_setting', array(
     'default' => HVN_MAIN_COLOR,
@@ -32,7 +32,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'hvn_main_color_setting',
       array(
-        'description' => 'サイトカラー',
+        'description' => __('サイトカラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_main_color_setting',
       )
@@ -49,7 +49,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'hvn_body_color_setting',
       array(
-        'description' => '背景カラー',
+        'description' => __('背景カラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_body_color_setting',
       )
@@ -66,7 +66,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'hvn_text_color_setting',
       array(
-        'description' => 'テキストカラー',
+        'description' => __('テキストカラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_text_color_setting',
       )
@@ -74,7 +74,7 @@ function hvn_color($wp_customize) {
   );
 
 
-  hvn_panel_label($wp_customize, $section, '個別カラー', 2);
+  hvn_panel_label($wp_customize, $section, __('個別カラー', THEME_NAME), 2);
 
   $wp_customize->add_setting('header_background_color');
   $wp_customize->add_control(
@@ -82,7 +82,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'header_background_color',
       array(
-        'description' => 'ヘッダー背景カラー',
+        'description' => __('ヘッダー背景カラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'header_background_color',
       )
@@ -96,7 +96,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'header_text_color',
       array(
-        'description' => 'ヘッダーテキストカラー',
+        'description' => __('ヘッダーテキストカラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'header_text_color',
       )
@@ -110,7 +110,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'global_navi_background_color',
       array(
-        'description' => 'グローバルナビ背景カラー',
+        'description' => __('グローバルナビ背景カラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'global_navi_background_color',
       )
@@ -124,7 +124,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'global_navi_text_color',
       array(
-        'description' => 'グローバルナビテキストカラー',
+        'description' => __('グローバルナビテキストカラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'global_navi_text_color',
       )
@@ -138,7 +138,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'footer_background_color',
       array(
-        'description' => 'フッター背景カラー',
+        'description' => __('フッター背景カラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'footer_background_color',
       )
@@ -146,7 +146,7 @@ function hvn_color($wp_customize) {
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'グローバルナビメニューデザイン', 3);
+  hvn_panel_label($wp_customize, $section, __('グローバルナビメニューデザイン', THEME_NAME), 3);
 
   $wp_customize->add_setting('hvn_navi_setting', array('default' => '0'));
   $wp_customize->add_control(
@@ -154,21 +154,21 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'hvn_navi_setting',
       array(
-        'description' => 'hoverエフェクト',
+        'description' => __('hoverエフェクト', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_navi_setting',
         'type'        => 'select',
         'choices'     => array(
-          '0' => '背景明るく',
-          '1' => 'ライン(中央から)',
-          '2' => 'ライン(左から)',
+          '0' => __('背景明るく',         THEME_NAME),
+          '1' => __('ライン（中央から）', THEME_NAME),
+          '2' => __('ライン（左から）',   THEME_NAME),
         )
       )
     )
   );
 
 
-  hvn_panel_label($wp_customize, $section, '見出しデザイン', 4);
+  hvn_panel_label($wp_customize, $section, __('見出しデザイン', THEME_NAME), 4);
 
   $wp_customize->add_setting('hvn_h2_css_setting', array('default' => '0'));
   $wp_customize->add_control(
@@ -224,7 +224,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'hvn_widget_css_setting',
       array(
-        'description' => 'ウィジェット',
+        'description' => __('ウィジェット', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_widget_css_setting',
         'type'        => 'select',
@@ -236,7 +236,7 @@ function hvn_color($wp_customize) {
 
   // モバイルメニュータイトル
   $wp_customize->add_setting('hvn_mobile_text_setting', array(
-    'default' => 'メニュー',
+    'default' => __('メニュー', THEME_NAME),
     'sanitize_callback' => 'hvn_sanitize_text',
   ));
   $wp_customize->add_control(
@@ -244,7 +244,7 @@ function hvn_color($wp_customize) {
       $wp_customize,
       'hvn_mobile_text_setting',
       array(
-        'description' => 'スライドインメニュータイトル',
+        'description' => __('スライドインメニュータイトル', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_mobile_text_setting',
         'type'        => 'text',

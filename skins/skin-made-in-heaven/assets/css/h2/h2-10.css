@@ -7,5 +7,5 @@
 .main .under-entry-content h2 {
   border-bottom: 2px solid var(--main-color);
   border-top: 2px solid var(--main-color);
-  padding: 18px 25px !important;
+  padding: 18px 25px;
 }

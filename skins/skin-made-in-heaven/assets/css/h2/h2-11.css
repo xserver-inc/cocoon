@@ -7,5 +7,5 @@
 .main .under-entry-content h2 {
   background-image: repeating-linear-gradient(90deg, #fff 0 1px, transparent 1px 2px), repeating-linear-gradient(#fff 0 1px, var(--main-color) 1px 2px);
   color: #333;
-  padding: 20px 25px!important;
+  padding: 20px 25px;
 }

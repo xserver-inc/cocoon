@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 
 
 //******************************************************************************
-//  カスタマイザー(メインビジュアル)
+//  カスタマイザー（メインビジュアル）
 //******************************************************************************
 if (!function_exists('hvn_editor')):
 function hvn_editor($wp_customize) {
@@ -13,7 +13,7 @@ function hvn_editor($wp_customize) {
   $wp_customize->add_section(
     "hvn_{$section}_section",
     array(
-      'title'     => 'エディター',
+      'title'     => __('エディター', THEME_NAME),
       'panel'     => 'hvn_cocoon',
       'priority'  => 5,
     )
@@ -21,7 +21,7 @@ function hvn_editor($wp_customize) {
 
 
   // コントロール
-  hvn_panel_label($wp_customize, $section, '文字', 1);
+  hvn_panel_label($wp_customize, $section, __('文字', THEME_NAME), 1);
 
   $text = [
     ['赤色', '#e60033'],
@@ -35,7 +35,7 @@ function hvn_editor($wp_customize) {
         $wp_customize,
         "hvn_rich_text_color{$i}_setting",
         array(
-          'description' => $text[$i][0],
+          'description' => __($text[$i][0], THEME_NAME),
           'section'     => "hvn_{$section}_section",
           'settings'    => "hvn_rich_text_color{$i}_setting",
         )
@@ -44,7 +44,7 @@ function hvn_editor($wp_customize) {
   }
 
 
-  hvn_panel_label($wp_customize, $section, 'マーカー', 2);
+  hvn_panel_label($wp_customize, $section, __('マーカー', THEME_NAME), 2);
 
   $marker = [
     ['黄色', '#ffff99'],
@@ -58,7 +58,7 @@ function hvn_editor($wp_customize) {
         $wp_customize,
         "hvn_marker_color{$i}_setting",
         array(
-          'description' => $marker[$i][0],
+          'description' => __($marker[$i][0], THEME_NAME),
           'section'     => "hvn_{$section}_section",
           'settings'    => "hvn_marker_color{$i}_setting",
         )
@@ -73,7 +73,7 @@ function hvn_editor($wp_customize) {
       $wp_customize,
       'hvn_marker_color_set1_setting',
       array(
-        'label'   => 'ストライプ',
+        'label'   => __('ストライプ', THEME_NAME),
         'section' => "hvn_{$section}_section",
         'settings'=> 'hvn_marker_color_set1_setting',
         'type'    => 'checkbox',
@@ -82,7 +82,7 @@ function hvn_editor($wp_customize) {
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'バッジ', 3);
+  hvn_panel_label($wp_customize, $section, __('バッジ', THEME_NAME), 3);
 
   $badge = [
     ['オレンジ' , '#f39800'],
@@ -102,7 +102,7 @@ function hvn_editor($wp_customize) {
         $wp_customize,
         "hvn_badge_color{$i}_setting",
         array(
-          'description' => $badge[$i][0],
+          'description' => __($badge[$i][0], THEME_NAME),
           'section'     => "hvn_{$section}_section",
           'settings'    => "hvn_badge_color{$i}_setting",
         )
@@ -111,7 +111,7 @@ function hvn_editor($wp_customize) {
   }
 
 
-  hvn_panel_label($wp_customize, $section, 'インラインボタン', 4);
+  hvn_panel_label($wp_customize, $section, __('インラインボタン', THEME_NAME), 4);
 
   $inline_button = [
     ['黒色', '#333333'],
@@ -126,7 +126,7 @@ function hvn_editor($wp_customize) {
         $wp_customize,
         "hvn_inline_button_color{$i}_setting",
         array(
-          'description' => $inline_button[$i][0],
+          'description' => __($inline_button[$i][0], THEME_NAME),
           'section'     => "hvn_{$section}_section",
           'settings'    => "hvn_inline_button_color{$i}_setting",
         )
@@ -143,7 +143,7 @@ function hvn_editor($wp_customize) {
         $wp_customize,
         'hvn_inline_button_set' . ($i + 1) . '_setting',
         array(
-          'label'   => $set[$i],
+          'label'   => __($set[$i], THEME_NAME),
           'section' => "hvn_{$section}_section",
           'settings'=> 'hvn_inline_button_set' . ($i + 1) . '_setting',
           'type'    => 'checkbox',
@@ -153,7 +153,7 @@ function hvn_editor($wp_customize) {
   }
 
 
-  hvn_panel_label($wp_customize, $section, 'リスト丸数字', 5);
+  hvn_panel_label($wp_customize, $section, __('リスト丸数字', THEME_NAME), 5);
 
   $wp_customize->add_setting("hvn_numeric_list_set1_setting", array('default' => '#47585c'));
   $wp_customize->add_control(
@@ -161,7 +161,7 @@ function hvn_editor($wp_customize) {
       $wp_customize,
       "hvn_numeric_list_set1_setting",
       array(
-        'description' => '背景カラー',
+        'description' => __('背景カラー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => "hvn_numeric_list_set1_setting",
       )
@@ -175,20 +175,20 @@ function hvn_editor($wp_customize) {
       $wp_customize,
       'hvn_numeric_list_set2_setting',
       array(
-        'description' => 'スタイル',
+        'description' => __('スタイル', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_numeric_list_set2_setting',
         'type'        => 'radio',
         'choices'     => array(
-          '0'   => '丸',
-          '1'   => '四角',
+          '0'   => __('丸',   THEME_NAME),
+          '1'   => __('四角', THEME_NAME),
         ),
       )
     )
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'アイコンボックス', 6);
+  hvn_panel_label($wp_customize, $section, __('アイコンボックス', THEME_NAME), 6);
 
   $wp_customize->add_setting('hvn_icon_box_set1_setting', array('default' => '0'));
   $wp_customize->add_control(
@@ -196,21 +196,21 @@ function hvn_editor($wp_customize) {
       $wp_customize,
       'hvn_icon_box_set1_setting',
       array(
-        'description' => 'スタイル',
+        'description' => __('スタイル', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_icon_box_set1_setting',
         'type'        => 'radio',
         'choices'     => array(
-          '0'   => '塗りつぶし',
-          '1'   => '枠',
-          '2'   => '付箋',
+          '0'   => __('塗りつぶし', THEME_NAME),
+          '1'   => __('枠',         THEME_NAME),
+          '2'   => __('付箋',       THEME_NAME),
         ),
       )
     )
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'タブボックス', 7);
+  hvn_panel_label($wp_customize, $section, __('タブボックス', THEME_NAME), 7);
 
   $wp_customize->add_setting('hvn_tab_box_set1_setting', array('default' => '0'));
   $wp_customize->add_control(
@@ -218,21 +218,21 @@ function hvn_editor($wp_customize) {
       $wp_customize,
       'hvn_tab_box_set1_setting',
       array(
-        'description' => 'スタイル',
+        'description' => __('スタイル', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_tab_box_set1_setting',
         'type'        => 'radio',
         'choices'     => array(
-          '0'   => '見出し(標準)',
-          '1'   => '見出し(枠上)',
-          '2'   => '見出し(枠中)',
+          '0'   => __('見出し(標準)', THEME_NAME),
+          '1'   => __('見出し(枠上)', THEME_NAME),
+          '2'   => __('見出し(枠中)', THEME_NAME),
         ),
       )
     )
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'FAQ', 8);
+  hvn_panel_label($wp_customize, $section, __('FAQ', THEME_NAME), 8);
 
   $wp_customize->add_setting('hvn_faq_set1_setting', array('default' => '0'));
   $wp_customize->add_control(
@@ -240,14 +240,14 @@ function hvn_editor($wp_customize) {
       $wp_customize,
       'hvn_faq_set1_setting',
       array(
-        'description' => 'スタイル',
+        'description' => __('スタイル', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_faq_set1_setting',
         'type'        => 'radio',
         'choices'     => array(
-          '0'   => '標準',
-          '1'   => '角型ラベル',
-          '2'   => '丸型ラベル',
+          '0'   => __('標準',       THEME_NAME),
+          '1'   => __('角型ラベル', THEME_NAME),
+          '2'   => __('丸型ラベル', THEME_NAME),
         ),
       )
     )
