@@ -7,7 +7,7 @@
 .main .under-entry-content h2 {
   background-color: var(--hover-color);
   color: #333;
-  padding: 18px 23px!important;
+  padding: 18px 23px;
   position: relative;
   z-index: auto;
 }

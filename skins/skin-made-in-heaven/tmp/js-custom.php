@@ -5,7 +5,7 @@ global $_IS_SWIPER_ENABLE;
 global $_HVN_NOTICE;
 
 $n = HVN_COUNT;
-$button = '<button class="sub-item" aria-label="もっと見る"></button>';
+$button = '<button class="sub-item" aria-label="'. __('もっと見る', THEME_NAME) . '"></button>';
 
 
 //******************************************************************************
@@ -161,7 +161,7 @@ EOF;
 if (get_theme_mod('hvn_toc_setting')) {
   echo <<< EOF
 (function($) {
-  // 見出し判定位置調整(font-size)
+  // 見出し判定位置調整（font-size）
   const val = 50;
   let footerTop;
   let lastBodyHeight = 0;
@@ -250,7 +250,7 @@ EOF;
 
 
 //******************************************************************************
-//  メインビジュアル(画像)
+//  メインビジュアル（画像）
 //******************************************************************************
 if (hvn_image_count() > 1 && get_theme_mod('hvn_header_setting') == 'image' && is_front_top_page()) {
   $speed = 2000;
@@ -437,7 +437,9 @@ if (is_ssl()) {
   $('.code-copy').click(function(event) {
     event.preventDefault();
 
-    navigator.clipboard.writeText($(this).parent().text()).then(() => {
+    var codeText = $(this).siblings('pre').find('code').text();
+
+    navigator.clipboard.writeText(codeText).then(() => {
       $(".code-copy").text("COPIED");
       setTimeout(function() {
         $(".code-copy").text("COPY");
@@ -455,7 +457,7 @@ EOF;
 
   const clip = new Clipboard(".code-copy", {
     target: function (trigger) {
-      return trigger.nextElementSibling;
+      return trigger.nextElementSibling.querySelector('code');
     },
   });
 
@@ -591,14 +593,23 @@ EOF;
 //  通知エリア
 //******************************************************************************
 if ($_HVN_NOTICE) {
+  $direction = 'vertical';
+  $delay = 8000;
+  $speed = 2000;
+  if (get_theme_mod('hvn_notice_scroll_setting')) {
+    $direction = 'horizontal';
+    $delay = 0;
+    $speed = 15000;
+  }
+
   echo <<< EOF
 const noticeSwiper = new Swiper(".notice-area-message .swiper",{
   loop: true,
-  direction: "vertical",
+  direction: "{$direction}",
   autoplay: {
-    delay: 8000,
+    delay: {$delay},
   },
-  speed: 2000, 
+  speed: {$speed},
 });
 
 EOF;
@@ -609,7 +620,6 @@ EOF;
 //  目次ボタン
 //******************************************************************************
 if (get_theme_mod('hvn_toc_fix_setting')) {
-  $html = do_shortcode('[toc]');
   echo <<< EOF
 (function($) {
   if (!($('.main .toc').length)) {

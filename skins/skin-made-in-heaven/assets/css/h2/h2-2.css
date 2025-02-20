@@ -8,6 +8,6 @@
   background-color: var(--main-color);
   border-bottom: 4px double var(--content-bgcolor);
   border-top: 4px double var(--content-bgcolor);
-  color: var(--text-color)!important;
-  padding: 16px 25px!important;
+  color: var(--text-color);
+  padding: 16px 25px;
 }

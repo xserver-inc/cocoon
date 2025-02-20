@@ -4,7 +4,7 @@
 
 aside.widget .widget-title {
   background-color: var(--main-color);
-  color: var(--text-color)!important;
+  color: var(--text-color);
   padding: 10px var(--main-padding);
   margin-left: calc(var(--main-padding) * -1);
   margin-right: calc(var(--main-padding) * -1);

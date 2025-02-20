@@ -7,8 +7,8 @@
   background-size: 4px 4px;
   border: 1px solid var(--main-color);
   border-left-width: 50px;
-  padding: 19px 14px 19px 15px!important;
   counter-increment: number;
+  padding: 19px 14px 19px 15px;
 }
 
 .article h2:before {
@@ -29,7 +29,7 @@
   background: linear-gradient(135deg, transparent 25%, var(--hover-color) 26%, var(--hover-color) 50%, transparent 51%, transparent 75%, var(--hover-color) 76%, var(--hover-color));
   background-size: 4px 4px;
   border-left: 10px solid var(--main-color);
-  padding: 20px 20px 20px 10px!important;
+  padding: 20px 20px 20px 10px;
 }
 
 .toc-list > li {

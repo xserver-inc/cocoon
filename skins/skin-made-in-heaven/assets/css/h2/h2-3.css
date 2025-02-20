@@ -6,6 +6,6 @@
 .main .article .widget-title,
 .main .under-entry-content h2 {
   background-color: var(--main-color);
-  color: var(--text-color)!important;
-  padding: 20px 25px!important;
+  color: var(--text-color);
+  padding: 20px 25px;
 }

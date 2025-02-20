@@ -25,7 +25,7 @@ add_filter('get_archive_chapter_title', function($chapter_title) {
     if (have_posts()) {
       $count =  $wp_query->found_posts;
     }
-    $chapter_title = $chapter_title . ' : ' .$count . '件ヒット';
+    $chapter_title = $chapter_title . ' : ' .$count . __('件ヒット', THEME_NAME);
   }
   $chapter_title = '<span class="list-title-in"><span>' . $chapter_title . '</span></span>';
 
@@ -36,22 +36,27 @@ add_filter('get_archive_chapter_title', function($chapter_title) {
 //******************************************************************************
 //  「もっと見る」「次のページ」「パンくず」テキスト変更
 //******************************************************************************
+// 「もっと見る」テキスト変更
 add_filter('more_button_caption', function($caption) {
-  return get_theme_mod('hvn_button_more_setting', 'もっと見る');
+  return get_theme_mod('hvn_button_more_setting',  __('もっと見る', THEME_NAME));
 });
 
 
+// 「次のページ」テキスト変更
 add_filter('pagination_next_link_caption', function($caption) {
-  return get_theme_mod('hvn_button_next_setting', '次のページ');
+  return get_theme_mod('hvn_button_next_setting',  __('次のページ', THEME_NAME));
 });
 
 
+// 「パンくず」テキスト変更
 add_filter('breadcrumbs_single_root_text', 'breadcrumbs_root_text_custom');
 add_filter('breadcrumbs_page_root_text', 'breadcrumbs_root_text_custom');
 
+
+// 「ホーム」テキスト変更
 if (!function_exists('breadcrumbs_root_text_custom')):
 function breadcrumbs_root_text_custom(){
-  return get_theme_mod('hvn_breadcrumbs_setting', 'ホーム');
+  return get_theme_mod('hvn_breadcrumbs_setting', __('ホーム', THEME_NAME));
 }
 endif;
 
@@ -108,13 +113,13 @@ add_filter('the_author_box_description', function($description, $user_id) {
   $date = get_theme_mod('hvn_site_date_setting');
   if ($date  && get_theme_mod('hvn_site_date_onoff_setting')) {
     $day = number_format(ceil(date_i18n('U') - strtotime($date)) / (24 * 60 * 60));
-    $description .= "<p class=hvn_site_date>{$date}開設から{$day}日目です。</p>";
+    $description .= "<p class=hvn_site_date>" . $date . __('開設から', THEME_NAME) . $day . __('日目です。', THEME_NAME) . "</p>";
   }
 
   if (get_theme_mod('hvn_profile_btn_setting')) {
     $url = get_the_author_profile_page_url($user_id);
     if ($url) {
-      $description .= "<div class=hnv-profile-btn><a href=\"{$url}\">プロフィール</a></div>";
+      $description .= "<div class=hvn-profile-btn><a class=key-btn href=\"{$url}\">" . __('プロフィール', THEME_NAME) . "</a></div>";
     }
   }
 
@@ -132,6 +137,7 @@ add_action('entry_card_snippet_after', function($post_ID) {
 });
 
 
+// 投稿ページいいねボタン追加
 add_filter('cocoon_part__tmp/date-tags', function($content) {
   if (is_single()  && get_theme_mod('hvn_like_setting')) {
     $post_ID = get_the_ID();
@@ -145,6 +151,7 @@ add_filter('cocoon_part__tmp/date-tags', function($content) {
 });
 
 
+// ウィジェットいいねボタン追加
 add_action('widget_entry_card_date_before', function($prefix, $post_ID) {
   if (get_theme_mod('hvn_like_setting')) {
     if ($prefix == WIDGET_NEW_ENTRY_CARD_PREFIX) {
@@ -158,11 +165,9 @@ add_action('widget_entry_card_date_before', function($prefix, $post_ID) {
 //******************************************************************************
 //  PV数表示変更
 //******************************************************************************
-add_filter('code_minify_call_back', function($html) {
-  $html = preg_replace('/widget-entry-card-pv">([0-9]+) views?/', 'widget-entry-card-pv">$1', $html);
-
-  return $html;
-});
+add_filter('popular_entry_card_pv_text', function($pv_text, $pv, $pv_unit) {
+  return $pv;
+}, 10, 3);
 
 
 //******************************************************************************
@@ -275,7 +280,7 @@ add_filter('cocoon_part__tmp/list', function($content) {
 
 
 //******************************************************************************
-//  カテゴリーごと(2、3カード)縦型カード
+//  カテゴリーごと（2、3カード）縦型カード
 //******************************************************************************
 add_filter('index_widget_entry_card_type', function($type, $cat_id) {
   if (get_theme_mod('hvn_categories_card_setting')) {
@@ -365,15 +370,30 @@ add_action('cocoon_part_before__tmp/list-index', function() {
 <div class="orderby">
   <span class="sort-title"><i class="fas fa-sort-amount-down"></i>並び替え</span>
   <span class="sort-select">
-    <select id="orderby-switch" class="orderby-switch-dropdown" onchange="document.cookie = this.options[this.selectedIndex].value+';path=/';window.document.location.href =location.href;">
-      <option value="orderby-switch="         <?php the_option_selected($orderby, '');          ?>>新着順</option>
-      <option value="orderby-switch=modified" <?php the_option_selected($orderby, 'modified');  ?>>更新順</option>
-      <option value="orderby-switch=popular"  <?php the_option_selected($orderby, 'popular');   ?>>人気順</option>
+    <select id="orderby-switch" class="orderby-switch-dropdown" 
+      onchange="
+        var selectedValue = this.options[this.selectedIndex].value;
+        var currentUrl = window.location.href;
+        currentUrl = currentUrl.replace(/[&?]time=\d+/, '');
+
+        var timestamp = new Date().getTime();
+        if (currentUrl.indexOf('?') > -1) {
+          currentUrl += '&time=' + timestamp;
+        } else {
+          currentUrl += '?time=' + timestamp;
+        }
+        document.cookie = selectedValue + ';path=/';
+        window.document.location.href = currentUrl;
+      ">
+      <option value="orderby-switch="         <?php the_option_selected($orderby, '');          ?>><?php echo __('新着順', THEME_NAME) ?></option>
+      <option value="orderby-switch=modified" <?php the_option_selected($orderby, 'modified');  ?>><?php echo __('更新順', THEME_NAME) ?></option>
+      <option value="orderby-switch=popular"  <?php the_option_selected($orderby, 'popular');   ?>><?php echo __('人気順', THEME_NAME) ?></option>
+      <option value="orderby-switch=comment"  <?php the_option_selected($orderby, 'comment');   ?>><?php echo __('コメント数順', THEME_NAME) ?></option>
     </select>
   </span>
 </div>
 <?php
-    echo  ob_get_clean();
+    echo ob_get_clean();
   }
 });
 
@@ -407,6 +427,14 @@ add_action('pre_get_posts',function($query) {
       }
       $query->set('post__in', $post_ids);
       $query->set('orderby', 'post__in');
+      break;
+
+    // コメント数
+    case 'comment':
+      $query->set( 'orderby', array(
+        'comment_count' => 'DESC',
+        'date'          => 'DESC'
+      ));
       break;
 
     default:
@@ -455,24 +483,40 @@ add_filter('get_notice_area_message', function($msg) {
   if (!is_admin()) {
     if (strpos($msg, '[pattern ') !== false) {
       $msg = do_shortcode($msg);
-
-      if (strpos($msg, 'href=') !== false) {
-        $_THEME_OPTIONS['notice_area_url'] = '';
-      }
     }
 
-    $msg_array =  explode(',' ,$msg);
+    $msg = apply_filters('hvn_notice_message', $msg);
+
+    // メッセージにリンク含む場合、通知URL無効
+    if (strpos($msg, 'href=') !== false) {
+      $_THEME_OPTIONS['notice_area_url'] = '';
+    }
+
+    // 改行コード除去
+    $msg = preg_replace('/\r\n|\n|\r/', '', $msg);
+    $msg_array =  explode(',', $msg);
+
+    // 空メッセージ除去
+    $msg_array = array_filter($msg_array, function($value) {
+      return $value !== '';
+    });
+    $msg_array = array_values($msg_array);
 
     if (count($msg_array) > 1) {
       if (is_notice_area_visible()) {
         $_HVN_NOTICE = true;
       }
-      $html = null;
+    }
 
-      for ($i=0;$i<count($msg_array); $i++) {
-        $html .= "<div class=swiper-slide>{$msg_array[$i]}</div>";
-      }
+    $html = '';
+    for ($i=0; $i<count($msg_array); $i++) {
+      $html .= "<div class=swiper-slide>{$msg_array[$i]}</div>";
+    }
+
+    if ($html) {
       $msg = "<div class=swiper><div class=swiper-wrapper>{$html}</div></div>";
+    } else {
+      $msg = '';
     }
   }
 

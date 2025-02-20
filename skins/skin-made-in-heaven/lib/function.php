@@ -12,7 +12,7 @@ function hvn_menu_setting($name) {
   $file = url_to_local(get_theme_file_uri(HVN_SKIN . "assets/css/{$name}/{$name}.csv"));
   if (($fp = fopen($file, 'r')) !== false) {
     while (($line = fgetcsv($fp))) {
-      $data["$line[0]"] = "$line[1]";
+      $data["$line[0]"] = __("$line[1]", THEME_NAME);
     }
     fclose($fp);
   }
@@ -25,7 +25,7 @@ endif;
 //******************************************************************************
 //  カスタマイザー値チェック
 //******************************************************************************
-// 数字
+// 数字チェック
 if (!function_exists('hvn_sanitize_number_range')):
 function hvn_sanitize_number_range($number, $setting) {
   $number = absint($number);
@@ -39,7 +39,7 @@ function hvn_sanitize_number_range($number, $setting) {
 endif;
 
 
-// テキスト
+// テキストチェック
 if (!function_exists('hvn_sanitize_text')):
 function hvn_sanitize_text($text, $setting) {
   return ($text ? $text : $setting->default);
@@ -47,7 +47,7 @@ function hvn_sanitize_text($text, $setting) {
 endif;
 
 
-// パレット
+// 16進チェック
 if (!function_exists('hvn_sanitize_color')):
 function hvn_sanitize_color($color, $setting) {
   return (sanitize_hex_color($color) ? $color : $setting->default);
@@ -376,11 +376,12 @@ function hvn_like_ajax() {
 endif;
 
 
+// いいね数
 if (!function_exists('hvn_like_tag')):
 function hvn_like_tag($post_ID) {
   $count = intval(get_post_meta($post_ID, 'post_like', true));
   $html =<<< EOF
-<div class=like>
+<div class="like" title="いいね">
   <span class="button" data-id="{$post_ID}"></span>
   <span class="count">{$count}</span>
 </div>
@@ -414,8 +415,9 @@ endif;
 
 
 //******************************************************************************
-//  サイト幅
+//  サイト幅設定
 //******************************************************************************
+// サイト幅設定
 if (!function_exists('get_site_wrap_width')):
 function get_site_wrap_width() {
   return HVN_MAIN_WIDTH + HVN_SIDE_WIDTH + HVN_GAP + 20;
@@ -423,6 +425,7 @@ function get_site_wrap_width() {
 endif;
 
 
+// メイン幅設定
 if (!function_exists('get_main_column_width')):
 function get_main_column_width() {
   return HVN_MAIN_WIDTH;
@@ -430,6 +433,7 @@ function get_main_column_width() {
 endif;
 
 
+// サイドバー幅設定
 if (!function_exists('get_sidebar_width')):
 function get_sidebar_width() {
   return HVN_SIDE_WIDTH;

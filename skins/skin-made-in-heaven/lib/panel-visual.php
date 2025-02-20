@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 
 
 //******************************************************************************
-//  カスタマイザー(メインビジュアル)
+//  カスタマイザー（メインビジュアル）
 //******************************************************************************
 if (!function_exists('hvn_header')):
 function hvn_header($wp_customize) {
@@ -13,7 +13,7 @@ function hvn_header($wp_customize) {
   $wp_customize->add_section(
     "hvn_{$section}_section",
     array(
-      'title'     => 'メインビジュアル',
+      'title'     => __('メインビジュアル', THEME_NAME),
       'panel'     => 'hvn_cocoon',
       'priority'  => 3,
     )
@@ -21,7 +21,7 @@ function hvn_header($wp_customize) {
 
 
   // コントロール
-  hvn_panel_label($wp_customize, $section, 'ヘッダーロゴ', 1);
+  hvn_panel_label($wp_customize, $section, __('ヘッダーロゴ', THEME_NAME), 1);
 
   $wp_customize->add_setting('the_site_logo_url');
   $wp_customize->add_control(
@@ -29,7 +29,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'the_site_logo_url',
       array(
-        'description' => '画像',
+        'description' => __('画像', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'the_site_logo_url',
         'mime_type'   => 'image',
@@ -44,7 +44,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_logo_setting',
       array(
-        'label'   => 'メインビジュアル表示',
+        'label'   => __('メインビジュアル表示', THEME_NAME),
         'section' => "hvn_{$section}_section",
         'settings'=> 'hvn_header_logo_setting',
         'type'    => 'checkbox',
@@ -59,7 +59,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_option_setting',
       array(
-        'label'     => 'ヘッダー表示',
+        'label'     => __('ヘッダー表示', THEME_NAME),
         'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_header_option_setting',
         'type'      => 'checkbox',
@@ -68,7 +68,7 @@ function hvn_header($wp_customize) {
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'メインビジュアル', 2);
+  hvn_panel_label($wp_customize, $section, __('メインビジュアル', THEME_NAME), 2);
 
   $wp_customize->add_setting('hvn_header_setting', array('default' => 'none'));
   $wp_customize->add_control(
@@ -80,9 +80,9 @@ function hvn_header($wp_customize) {
         'settings'  => 'hvn_header_setting',
         'type'      => 'select',
         'choices'   => array(
-          'none'    => 'なし',
-          'video'   => '動画',
-          'image'   => '画像',
+          'none'    => __('なし', THEME_NAME),
+          'video'   => __('動画', THEME_NAME),
+          'image'   => __('画像', THEME_NAME),
         )
       )
     )
@@ -98,7 +98,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_message_setting',
       array(
-        'description' => 'タイトルテキスト',
+        'description' => __('タイトルテキスト', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_header_message_setting',
         'type'        => 'text',
@@ -116,7 +116,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_appea_font_size_setting',
       array(
-        'description' => 'フォントサイズ(10～50px)',
+        'description' => __('フォントサイズ', THEME_NAME) . '(10～50px)',
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_appea_font_size_setting',
         'type'        => 'number',
@@ -136,7 +136,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_vertival_setting',
       array(
-        'label'   => 'テキスト縦書き',
+        'label'   => __('テキスト縦書き', THEME_NAME),
         'section' => "hvn_{$section}_section",
         'settings'=> 'hvn_header_vertival_setting',
         'type'    => 'checkbox',
@@ -151,14 +151,14 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_scroll_setting',
       array(
-        'description' => 'Scrollボタン',
+        'description' => __('Scrollボタン', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_header_scroll_setting',
         'type'        => 'select',
         'choices'     => array(
-          '0'         => 'なし',
-          '1'         => '線',
-          '2'         => '矢印',
+          '0'         => __('なし', THEME_NAME),
+          '1'         => __('線'  , THEME_NAME),
+          '2'         => __('矢印', THEME_NAME),
         )
       )
     )
@@ -171,7 +171,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_wave_setting',
       array(
-        'label'   => '波線',
+        'label'   => __('波線', THEME_NAME),
         'section' => "hvn_{$section}_section",
         'settings'=> 'hvn_header_wave_setting',
         'type'    => 'checkbox',
@@ -186,7 +186,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_video_setting',
       array(
-        'label'     => '動画',
+        'label'     => __('動画', THEME_NAME),
         'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_header_video_setting',
         'mime_type' => 'video',
@@ -198,7 +198,7 @@ function hvn_header($wp_customize) {
   for ($i=1; $i<=3; $i++) {
     $label = null;
     if ($i == 1) {
-      $label = '画像';
+      $label = __('画像', THEME_NAME);
     }
     $wp_customize->add_setting('hvn_header_img' . $i . '_setting');
     $wp_customize->add_control(
@@ -207,7 +207,7 @@ function hvn_header($wp_customize) {
         'hvn_header_img' . $i . '_setting',
         array(
           'label'       => $label,
-          'description' => '画像[' . $i . ']',
+          'description' => __('画像', THEME_NAME) . "[{$i}]",
           'section'     => "hvn_{$section}_section",
           'settings'    => 'hvn_header_img'. $i . '_setting',
           'mime_type'   => 'image',
@@ -217,7 +217,7 @@ function hvn_header($wp_customize) {
   }
 
 
-  hvn_panel_label($wp_customize, $section, 'スライドオプション', 3);
+  hvn_panel_label($wp_customize, $section, __('スライドオプション', THEME_NAME), 3);
 
   $wp_customize->add_setting('hvn_header_fade_setting', array('default' => 'fade'));
   $wp_customize->add_control(
@@ -225,16 +225,16 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_fade_setting',
       array(
-        'description' => 'スライド切り替え',
+        'description' => __('スライド切り替え', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_header_fade_setting',
         'type'        => 'radio',
         'choices'     => array(
-          'fade'      => 'フェード',
-          'horizontal'=> '横',
-          'vertical'  => '縦',
-          'h-split'   => '横分割',
-          'v-split'   => '縦分割',
+          'fade'      => __('フェード', THEME_NAME),
+          'horizontal'=> __('横', THEME_NAME),
+          'vertical'  => __('縦', THEME_NAME),
+          'h-split'   => __('横分割', THEME_NAME),
+          'v-split'   => __('縦分割', THEME_NAME),
         ),
       )
     )
@@ -247,21 +247,21 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_animation_setting',
       array(
-        'description' => 'スライド中のズーム',
+        'description' => __('スライド中のズーム', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_header_animation_setting',
         'type'        => 'radio',
         'choices'     => array(
-          '0' => 'なし',
-          '1' => 'イン',
-          '2' => 'アウト',
+          '0' => __('なし', THEME_NAME),
+          '1' => __('イン', THEME_NAME),
+          '2' => __('アウト', THEME_NAME),
         )
       )
     )
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'フィルター', 4);
+  hvn_panel_label($wp_customize, $section, __('フィルター', THEME_NAME), 4);
 
   $wp_customize->add_setting('hvn_header_filter_setting', array('default' => '0'));
   $wp_customize->add_control(
@@ -273,18 +273,18 @@ function hvn_header($wp_customize) {
         'settings'  => 'hvn_header_filter_setting',
         'type'      => 'select',
         'choices'   => array(
-          '0' => 'なし',
-          '1' => 'ドット黒',
-          '2' => 'ドット白',
-          '3' => '走査線横',
-          '4' => 'モノクロ',
+          '0' => __('なし',     THEME_NAME),
+          '1' => __('ドット黒', THEME_NAME),
+          '2' => __('ドット白', THEME_NAME),
+          '3' => __('走査線横', THEME_NAME),
+          '4' => __('モノクロ', THEME_NAME),
         )
       )
     )
   );
 
 
-  hvn_panel_label($wp_customize, $section, 'オーバーレイ', 5);
+  hvn_panel_label($wp_customize, $section, __('オーバーレイ', THEME_NAME), 5);
 
   $wp_customize->add_setting('hvn_header_color_setting');
   $wp_customize->add_control(
@@ -292,7 +292,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_color_setting',
       array(
-        'description' => 'メインビジュアルに被せるカラーレイヤー',
+        'description' => __('メインビジュアルに被せるカラーレイヤー', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_header_color_setting',
       )
@@ -309,7 +309,7 @@ function hvn_header($wp_customize) {
       $wp_customize,
       'hvn_header_opacity_setting',
       array(
-        'description' => '不透明度(opacity値0～50%)',
+        'description' => __('不透明度(opacity値0～50%)', THEME_NAME),
         'section'     => "hvn_{$section}_section",
         'settings'    => 'hvn_header_opacity_setting',
         'type'        => 'number',
