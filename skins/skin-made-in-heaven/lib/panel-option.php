@@ -167,7 +167,7 @@ function hvn_option($wp_customize) {
       $wp_customize,
       'hvn_thumb_option_setting',
       array(
-        'label'     =>  __('サムネイル画像の比率（'. $label . '）に従う', THEME_NAME),
+        'label'     =>  sprintf(__('サムネイル画像の比率（%s）に従う', THEME_NAME), $label),
         'section'   => "hvn_{$section}_section",
         'settings'  => 'hvn_thumb_option_setting',
         'type'      => 'checkbox',

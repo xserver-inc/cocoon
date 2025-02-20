@@ -25,7 +25,7 @@ add_filter('get_archive_chapter_title', function($chapter_title) {
     if (have_posts()) {
       $count =  $wp_query->found_posts;
     }
-    $chapter_title = $chapter_title . ' : ' .$count . __('件ヒット', THEME_NAME);
+    $chapter_title = $chapter_title . ' : ' . sprintf(__('%s件ヒット', THEME_NAME), $count);
   }
   $chapter_title = '<span class="list-title-in"><span>' . $chapter_title . '</span></span>';
 
@@ -113,7 +113,7 @@ add_filter('the_author_box_description', function($description, $user_id) {
   $date = get_theme_mod('hvn_site_date_setting');
   if ($date  && get_theme_mod('hvn_site_date_onoff_setting')) {
     $day = number_format(ceil(date_i18n('U') - strtotime($date)) / (24 * 60 * 60));
-    $description .= "<p class=hvn_site_date>" . $date . __('開設から', THEME_NAME) . $day . __('日目です。', THEME_NAME) . "</p>";
+    $description .= "<p class=hvn_site_date>" . sprintf(__('%s開設から%s日目です。', THEME_NAME), $date, $day) . "</p>";
   }
 
   if (get_theme_mod('hvn_profile_btn_setting')) {
