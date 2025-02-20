@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-09T14:11:13+00:00\n"
-"PO-Revision-Date: 2025-02-18 14:50\n"
+"POT-Creation-Date: 2025-02-20T01:45:16+00:00\n"
+"PO-Revision-Date: 2025-02-20 02:16\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -101,12 +101,12 @@ msgstr "Votre adresse e-mail ne sera pas publiée."
 msgid "コメントを書き込む"
 msgstr "Écrire un commentaire"
 
-#: functions.php:157
+#: functions.php:172
 msgid "キーワード指定なし"
 msgstr "Aucun mot-clé spécifié"
 
-#: functions.php:509
-#: functions.php:510
+#: functions.php:524
+#: functions.php:525
 #: lib/admin.php:409
 msgid "パターン一覧"
 msgstr "Liste des modèles."
@@ -151,6 +151,7 @@ msgstr "Barré"
 
 #: lib/admin-tinymce-qtag.php:32
 #: lib/admin-tinymce-qtag.php:826
+#: skins/skin-made-in-heaven/lib/panel-editor.php:85
 msgid "バッジ"
 msgstr "Badge"
 
@@ -235,6 +236,7 @@ msgid "キーボードキー"
 msgstr "Touche du clavier"
 
 #: lib/admin-tinymce-qtag.php:133
+#: skins/skin-made-in-heaven/lib/panel-editor.php:47
 #: blocks/src/toolbutton/dropdown-markers.js:22
 #: blocks/src/toolbutton/dropdown-markers.js:35
 msgid "マーカー"
@@ -266,6 +268,7 @@ msgid "青色アンダーラインマーカー"
 msgstr "Marqueur souligné bleu"
 
 #: lib/admin-tinymce-qtag.php:168
+#: skins/skin-made-in-heaven/lib/panel-visual.php:119
 #: blocks/src/block/radar/edit.js:308
 #: blocks/src/toolbutton/dropdown-font-sizes.js:54
 #: blocks/src/toolbutton/dropdown-font-sizes.js:67
@@ -284,7 +287,7 @@ msgstr "Boîte (icône)"
 #: lib/custom-fields/memo-field.php:17
 #: lib/custom-fields/memo-field.php:18
 #: lib/custom-fields/memo-field.php:21
-#: skins/skin-made-in-heaven/lib/hook-wp.php:149
+#: skins/skin-made-in-heaven/lib/hook-wp.php:153
 #: blocks/src/block-extension/style-extension/style01.js:142
 #: blocks/src/block/icon-box/deprecated.js:98
 #: blocks/src/block/icon-box/edit.js:45
@@ -302,6 +305,7 @@ msgstr "Note"
 #: lib/page-settings/sns-share-forms-bottom.php:104
 #: lib/page-settings/sns-share-forms-top.php:91
 #: lib/page-settings/_top-page.php:224
+#: skins/skin-made-in-heaven/lib/panel-option.php:412
 #: tmp/mobile-comments-button.php:12
 #: tmp/sns-share-buttons.php:63
 #: blocks/src/block-extension/style-extension/style01.js:146
@@ -371,6 +375,8 @@ msgstr "Mauvais"
 #: lib/block-editor-styles-group.php:90
 #: lib/block-editor-styles-paragraph.php:125
 #: lib/widgets/author-box.php:19
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:122
+#: skins/skin-made-in-heaven/lib/panel-main.php:264
 #: blocks/src/block-extension/style-extension/style01.js:166
 #: blocks/src/block/icon-box/deprecated.js:122
 #: blocks/src/block/icon-box/edit.js:69
@@ -633,8 +639,8 @@ msgstr "Boîte (onglet)"
 
 #: lib/admin-tinymce-qtag.php:307
 #: lib/admin-tinymce-qtag.php:1662
-#: tmp/css-custom.php:941
-#: tmp/css-custom.php:988
+#: tmp/css-custom.php:958
+#: tmp/css-custom.php:1005
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
@@ -665,8 +671,8 @@ msgstr "Indice"
 
 #: lib/admin-tinymce-qtag.php:457
 #: lib/admin-tinymce-qtag.php:1668
-#: tmp/css-custom.php:937
-#: tmp/css-custom.php:985
+#: tmp/css-custom.php:954
+#: tmp/css-custom.php:1002
 #: blocks/src/block/blogcard/deprecated.js:85
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -683,8 +689,8 @@ msgstr "Marque-page"
 
 #: lib/admin-tinymce-qtag.php:547
 #: lib/admin-tinymce-qtag.php:1680
-#: tmp/css-custom.php:957
-#: tmp/css-custom.php:1000
+#: tmp/css-custom.php:974
+#: tmp/css-custom.php:1017
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -820,7 +826,7 @@ msgid "吹き出し（下）"
 msgstr "Bulle (en dessous)"
 
 #: lib/admin-tinymce-qtag.php:962
-#: lib/page-settings/editor-forms.php:133
+#: lib/page-settings/editor-forms.php:139
 #: lib/page-settings/_top-page.php:242
 #: blocks/src/block/button/deprecated.js:29
 #: blocks/src/block/button/index.js:20
@@ -1134,8 +1140,8 @@ msgstr "Étiquette de carte de blog encadrée"
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
 #: skins/skin-made-in-heaven/functions.php:109
-#: tmp/css-custom.php:921
-#: tmp/css-custom.php:973
+#: tmp/css-custom.php:938
+#: tmp/css-custom.php:990
 #: blocks/src/block/blogcard/deprecated.js:57
 #: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:66
@@ -1143,8 +1149,8 @@ msgid "関連記事"
 msgstr "Articles connexes"
 
 #: lib/admin-tinymce-qtag.php:1632
-#: tmp/css-custom.php:925
-#: tmp/css-custom.php:976
+#: tmp/css-custom.php:942
+#: tmp/css-custom.php:993
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:70
@@ -1152,8 +1158,8 @@ msgid "参考記事"
 msgstr "Articles de référence"
 
 #: lib/admin-tinymce-qtag.php:1638
-#: tmp/css-custom.php:929
-#: tmp/css-custom.php:979
+#: tmp/css-custom.php:946
+#: tmp/css-custom.php:996
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
@@ -1165,8 +1171,9 @@ msgstr "Lien de référence"
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
-#: tmp/css-custom.php:933
-#: tmp/css-custom.php:982
+#: skins/skin-made-in-heaven/lib/panel-option.php:335
+#: tmp/css-custom.php:950
+#: tmp/css-custom.php:999
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:52
 #: blocks/src/block/popular-list/index.js:28
@@ -1175,8 +1182,8 @@ msgid "人気記事"
 msgstr "Articles populaires"
 
 #: lib/admin-tinymce-qtag.php:1650
-#: tmp/css-custom.php:945
-#: tmp/css-custom.php:991
+#: tmp/css-custom.php:962
+#: tmp/css-custom.php:1008
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:78
@@ -1184,10 +1191,11 @@ msgid "あわせて読みたい"
 msgstr "À lire ensemble"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1133
+#: lib/shortcodes.php:1137
 #: lib/widgets/cta-box.php:34
-#: tmp/css-custom.php:949
-#: tmp/css-custom.php:994
+#: skins/skin-made-in-heaven/tmp/css-custom.php:12
+#: tmp/css-custom.php:966
+#: tmp/css-custom.php:1011
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:60
 #: blocks/src/old/blogcard-class/block.js:82
@@ -1195,8 +1203,8 @@ msgid "詳細はこちら"
 msgstr "Détails"
 
 #: lib/admin-tinymce-qtag.php:1674
-#: tmp/css-custom.php:953
-#: tmp/css-custom.php:997
+#: tmp/css-custom.php:970
+#: tmp/css-custom.php:1014
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:94
@@ -1204,15 +1212,15 @@ msgid "公式サイト"
 msgstr "Site officiel"
 
 #: lib/admin-tinymce-qtag.php:1686
-#: tmp/css-custom.php:961
-#: tmp/css-custom.php:1003
+#: tmp/css-custom.php:978
+#: tmp/css-custom.php:1020
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr "Article précédent"
 
 #: lib/admin-tinymce-qtag.php:1692
-#: tmp/css-custom.php:965
-#: tmp/css-custom.php:1006
+#: tmp/css-custom.php:982
+#: tmp/css-custom.php:1023
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr "Article suivant"
@@ -1229,7 +1237,7 @@ msgstr "ID"
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:116
 #: lib/custom-fields/seo-field.php:126
-#: skins/skin-made-in-heaven/lib/hook-wp.php:155
+#: skins/skin-made-in-heaven/lib/hook-wp.php:159
 msgid "文字数"
 msgstr "Nombre de caractères"
 
@@ -1239,7 +1247,7 @@ msgstr "PV"
 
 #: lib/admin.php:155
 #: lib/content-category.php:262
-#: lib/content-tag.php:210
+#: lib/content-tag.php:241
 #: lib/page-settings/editor-forms.php:97
 msgid "アイキャッチ"
 msgstr "Image accrocheuse"
@@ -1307,10 +1315,13 @@ msgstr "Personnaliser"
 
 #: lib/admin.php:424
 #: lib/page-settings/_top-page.php:264
+#: skins/skin-made-in-heaven/lib/panel-color.php:227
 msgid "ウィジェット"
 msgstr "Widgets"
 
 #: lib/admin.php:431
+#: skins/skin-made-in-heaven/lib/hook-wp.php:641
+#: skins/skin-made-in-heaven/lib/panel-color.php:239
 #: tmp/mobile-navi-button.php:21
 #: blocks/src/block/navicard/edit.js:150
 msgid "メニュー"
@@ -1334,6 +1345,7 @@ msgstr "Paramètres de Cocoon"
 #: lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37
 #: lib/tinymce/speech-balloons.php:50
+#: skins/skin-made-in-heaven/lib/hook-wp.php:339
 #: blocks/src/block/balloon/index.js:21
 #: blocks/src/old/balloon-1/block.js:57
 #: blocks/src/old/balloon-2/block.js:46
@@ -1414,10 +1426,12 @@ msgid "Excerpt"
 msgstr "Extrait"
 
 #: lib/block-editor-styles-faq.php:14
+#: skins/skin-made-in-heaven/lib/panel-editor.php:249
 msgid "角型ラベル"
 msgstr "Étiquette carrée"
 
 #: lib/block-editor-styles-faq.php:18
+#: skins/skin-made-in-heaven/lib/hook-wp.php:364
 msgid "アコーディオン"
 msgstr "Accordéon"
 
@@ -1537,6 +1551,7 @@ msgstr "Ligne de bordure"
 #: lib/block-editor-styles-list.php:26
 #: lib/block-editor-styles-paragraph.php:26
 #: lib/content-category.php:225
+#: lib/content-tag.php:201
 #: lib/page-settings/all-forms.php:165
 #: lib/page-settings/appeal-forms.php:90
 #: lib/page-settings/buttons-forms.php:83
@@ -1618,14 +1633,17 @@ msgid "「%s」の記事一覧です。"
 msgstr "Liste des articles de \"%s\"."
 
 #: lib/content-category.php:220
+#: lib/content-tag.php:196
 msgid "カテゴリー色"
 msgstr "Couleur de la catégorie"
 
 #: lib/content-category.php:229
+#: lib/content-tag.php:205
 msgid "カテゴリーの色を指定します。"
 msgstr "Spécifiez la couleur de la catégorie."
 
 #: lib/content-category.php:234
+#: lib/content-tag.php:210
 #: lib/page-settings/all-forms.php:99
 #: lib/page-settings/buttons-forms.php:86
 #: lib/page-settings/editor-forms.php:74
@@ -1648,28 +1666,29 @@ msgid "文字色"
 msgstr "Couleur du texte"
 
 #: lib/content-category.php:238
+#: lib/content-tag.php:214
 msgid "カテゴリーの文字色を指定します。入力しない場合は、白色になります。"
 msgstr "Spécifiez la couleur du texte de la catégorie. Si aucune couleur n'est spécifiée, le blanc est utilisé par défaut."
 
 #: lib/content-category.php:243
-#: lib/content-tag.php:191
+#: lib/content-tag.php:222
 #: lib/custom-fields/seo-field.php:118
 msgid "SEOタイトル"
 msgstr "Titre SEO"
 
 #: lib/content-category.php:248
-#: lib/content-tag.php:196
+#: lib/content-tag.php:227
 msgid "SEO向けのタイトルの入力"
 msgstr "Saisie du titre pour le SEO"
 
 #: lib/content-category.php:249
-#: lib/content-tag.php:197
+#: lib/content-tag.php:228
 #: lib/custom-fields/seo-field.php:120
 msgid "検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。"
 msgstr "Veuillez entrer le titre que vous souhaitez afficher dans les moteurs de recherche. Le texte saisi ici sera prioritairement inséré dans la balise de titre (&lt;title&gt;) par rapport au titre de l'article."
 
 #: lib/content-category.php:253
-#: lib/content-tag.php:201
+#: lib/content-tag.php:232
 #: lib/page-settings/_top-page.php:203
 msgid "本文"
 msgstr "Corps"
@@ -1679,17 +1698,17 @@ msgid "このページで表示されるメインコンテンツを入力して�
 msgstr "Saisissez le contenu principal à afficher sur la page."
 
 #: lib/content-category.php:267
-#: lib/content-tag.php:215
+#: lib/content-tag.php:246
 msgid "タイトル下に表示されるアイキャッチ画像を選択してください。"
 msgstr "Sélectionnez une image accrocheuse qui apparaîtra sous le titre."
 
 #: lib/content-category.php:271
-#: lib/content-tag.php:219
+#: lib/content-tag.php:250
 #: lib/custom-fields/seo-field.php:128
 #: lib/page-settings/title-forms.php:170
 #: lib/page-settings/title-forms.php:271
-#: skins/skin-made-in-heaven/lib/hook-wp.php:74
-#: skins/skin-made-in-heaven/lib/hook-wp.php:155
+#: skins/skin-made-in-heaven/lib/hook-wp.php:76
+#: skins/skin-made-in-heaven/lib/hook-wp.php:159
 msgid "メタディスクリプション"
 msgstr "Méta description"
 
@@ -1702,7 +1721,7 @@ msgid "このページの説明を入力します。ここに入力したテキ�
 msgstr "Saisissez une description pour la page. Le texte saisi ici sera utilisé comme balise méta description."
 
 #: lib/content-category.php:281
-#: lib/content-tag.php:229
+#: lib/content-tag.php:260
 #: lib/custom-fields/seo-field.php:134
 #: lib/page-settings/title-forms.php:81
 #: lib/page-settings/title-forms.php:183
@@ -1711,28 +1730,28 @@ msgid "メタキーワード"
 msgstr "Mots-clés méta"
 
 #: lib/content-category.php:286
-#: lib/content-tag.php:234
+#: lib/content-tag.php:265
 msgid "キーワード1,キーワード2,キーワード3"
 msgstr "Mot-clé 1, Mot-clé 2, Mot-clé 3, ..."
 
 #: lib/content-category.php:287
-#: lib/content-tag.php:235
+#: lib/content-tag.php:266
 msgid "このページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。"
 msgstr "Saisissez les mots-clés méta pour cette page, séparés par des virgules. *Cette configuration n'a actuellement pas beaucoup d'effet."
 
 #: lib/content-category.php:291
-#: lib/content-tag.php:239
+#: lib/content-tag.php:270
 msgid "noindex"
 msgstr "Noindex"
 
 #: lib/content-category.php:297
-#: lib/content-tag.php:245
+#: lib/content-tag.php:276
 #: lib/custom-fields/seo-field.php:139
 msgid "インデックスしない（noindex）"
 msgstr "Ne pas indexer (noindex)"
 
 #: lib/content-category.php:298
-#: lib/content-tag.php:246
+#: lib/content-tag.php:277
 #: lib/custom-fields/seo-field.php:140
 msgid "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr "Configure une balise méta pour que cette page ne soit pas indexée par les moteurs de recherche."
@@ -1757,23 +1776,23 @@ msgstr "Ceci est essentiellement saisi pour afficher une description dans le tab
 msgid "有効なメタディスクリプション文が設定されてない場合は、メタディスクリプションとして利用されることもあります。"
 msgstr "S'il n'y a pas de méta description valide définie, elle peut également être utilisée comme méta description."
 
-#: lib/content-tag.php:206
+#: lib/content-tag.php:237
 msgid "ページで表示されるメインコンテンツを入力してください。"
 msgstr "Saisissez le contenu principal à afficher sur la page."
 
-#: lib/content-tag.php:223
+#: lib/content-tag.php:254
 msgid "ページの説明文を入力してください"
 msgstr "Saisissez une description pour la page."
 
-#: lib/content-tag.php:225
+#: lib/content-tag.php:256
 msgid "ページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。"
 msgstr "Saisissez une description pour la page. Le texte saisi ici sera utilisé comme balise méta description."
 
-#: lib/content-tag.php:246
+#: lib/content-tag.php:277
 msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢タグページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
 msgstr "Même si cette option est désactivée, le paramètre \"Définir les pages de tag sur noindex\" dans l'onglet \"SEO\" des paramètres de Cocoon sera prioritaire."
 
-#: lib/content-tag.php:246
+#: lib/content-tag.php:277
 msgid "※カスタム投稿のカテゴリーなったとしても公開ページはタグとして認識されます。"
 msgstr "*Même s'il s'agit d'une catégorie de publication personnalisée, la page publique sera reconnue comme un tag."
 
@@ -1826,7 +1845,7 @@ msgstr "Activer ou désactiver la génération de pages AMP (Accelerated Mobile 
 msgid "カスタムCSS"
 msgstr "CSS personnalisé"
 
-#: lib/custom-fields/custom-css-field.php:24
+#: lib/custom-fields/custom-css-field.php:25
 msgid "当ページ変更用のCSSコードのみを入力してください。styleタグは不要です。"
 msgstr "Saisissez uniquement le code CSS destiné à cette page. La balise style n'est pas nécessaire."
 
@@ -1836,7 +1855,7 @@ msgstr "Saisissez uniquement le code CSS destiné à cette page. La balise style
 msgid "カスタムJavaScript"
 msgstr "JavaScript personnalisé"
 
-#: lib/custom-fields/custom-js-field.php:24
+#: lib/custom-fields/custom-js-field.php:25
 msgid "当ページ変更用のJavaScriptコードのみを入力してください。scriptタグは不要です。"
 msgstr "Saisissez uniquement le code JavaScript destiné à cette page. La balise script n'est pas nécessaire."
 
@@ -1872,8 +1891,8 @@ msgstr "Si sélectionné, cet article ne sera pas inclus dans le flux RSS/Atom."
 msgid "ページ設定"
 msgstr "Paramètres de la page"
 
-#: lib/custom-fields/page-field.php:34
-#: lib/custom-fields/page-field.php:47
+#: lib/custom-fields/page-field.php:35
+#: lib/custom-fields/page-field.php:62
 #: lib/page-settings/comment-forms.php:43
 #: lib/page-settings/single-forms.php:319
 #: lib/page-speech-balloon/form.php:90
@@ -1898,79 +1917,79 @@ msgstr "Paramètres de la page"
 msgid "デフォルト"
 msgstr "Par défaut"
 
-#: lib/custom-fields/page-field.php:40
+#: lib/custom-fields/page-field.php:50
 msgid "メインカテゴリー"
 msgstr "Catégorie principale"
 
-#: lib/custom-fields/page-field.php:41
+#: lib/custom-fields/page-field.php:52
 msgid "このページで優先するカテゴリーを選択します。"
 msgstr "Sélectionnez la catégorie préférée pour cette page."
 
-#: lib/custom-fields/page-field.php:41
+#: lib/custom-fields/page-field.php:53
 msgid "優先カテゴリーは、アイキャッチやパンくずリストに適用されます。"
 msgstr "La catégorie prioritaire est appliquée aux images mises en avant et aux fil d'Ariane."
 
-#: lib/custom-fields/page-field.php:41
+#: lib/custom-fields/page-field.php:54
 msgid "カテゴリー選択直後はすぐにセレクトボックスに反映されません。"
 msgstr "La sélection de la catégorie ne sera pas immédiatement reflétée dans la boîte de sélection."
 
-#: lib/custom-fields/page-field.php:41
+#: lib/custom-fields/page-field.php:55
 msgid "一度ページを更新してください。"
 msgstr "Rafraîchissez votre page."
 
-#: lib/custom-fields/page-field.php:48
+#: lib/custom-fields/page-field.php:63
 msgid "1カラム（フルワイド）"
 msgstr "Une colonne (plein écran)"
 
-#: lib/custom-fields/page-field.php:49
+#: lib/custom-fields/page-field.php:64
 msgid "1カラム（広い）"
 msgstr "Une colonne (large)"
 
-#: lib/custom-fields/page-field.php:50
+#: lib/custom-fields/page-field.php:65
 msgid "1カラム（狭い）"
 msgstr "Une colonne (étroite)"
 
-#: lib/custom-fields/page-field.php:51
+#: lib/custom-fields/page-field.php:66
 msgid "本文のみ（フルワイド）"
 msgstr "Corps uniquement (plein écran)"
 
-#: lib/custom-fields/page-field.php:52
+#: lib/custom-fields/page-field.php:67
 msgid "本文のみ（広い）"
 msgstr "Corps uniquement (large)"
 
-#: lib/custom-fields/page-field.php:53
+#: lib/custom-fields/page-field.php:68
 msgid "本文のみ（狭い）"
 msgstr "Corps uniquement (étroit)"
 
-#: lib/custom-fields/page-field.php:55
+#: lib/custom-fields/page-field.php:70
 msgid "ページタイプ"
 msgstr "Type de page"
 
-#: lib/custom-fields/page-field.php:56
+#: lib/custom-fields/page-field.php:71
 msgid "このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。"
 msgstr "Définissez le type d'affichage de cette page. L'affichage \"Corps uniquement\" est adapté pour une page de destination."
 
-#: lib/custom-fields/page-field.php:59
+#: lib/custom-fields/page-field.php:74
 msgid "タイトルを表示しない"
 msgstr "Ne pas afficher le titre"
 
-#: lib/custom-fields/page-field.php:60
+#: lib/custom-fields/page-field.php:75
 msgid "このページに記事タイトルを表示するかを切り替えます。"
 msgstr "Activez ou désactivez l'affichage du titre de l'article sur cette page."
 
-#: lib/custom-fields/page-field.php:63
+#: lib/custom-fields/page-field.php:78
 msgid "読む時間を表示しない"
 msgstr "Ne pas afficher le temps de lecture"
 
-#: lib/custom-fields/page-field.php:64
+#: lib/custom-fields/page-field.php:79
 msgid "このページに「記事を読む時間」を表示するかを切り替えます。"
 msgstr "Activez ou désactivez l'affichage du temps de lecture de l'article sur cette page."
 
-#: lib/custom-fields/page-field.php:67
+#: lib/custom-fields/page-field.php:82
 msgid "目次を表示しない"
 msgstr "Ne pas afficher la table des matières"
 
-#: lib/custom-fields/page-field.php:68
+#: lib/custom-fields/page-field.php:83
 msgid "このページに目次を表示するかを切り替えます。"
 msgstr "Activez ou désactivez l'affichage de la table des matières sur cette page."
 
@@ -2164,17 +2183,17 @@ msgstr "Date et heure de mise à jour :"
 msgid "M j, Y @ H:i"
 msgstr "j M, Y @ H:i"
 
-#: lib/custom-fields/update-field.php:85
 #: lib/custom-fields/update-field.php:87
+#: lib/custom-fields/update-field.php:89
 msgid "年"
 msgstr "Année"
 
-#: lib/custom-fields/update-field.php:89
+#: lib/custom-fields/update-field.php:91
 msgid "月"
 msgstr "Mois"
 
-#: lib/custom-fields/update-field.php:99
 #: lib/custom-fields/update-field.php:101
+#: lib/custom-fields/update-field.php:103
 #: lib/page-settings/apis-forms.php:294
 msgid "日"
 msgstr "Jour"
@@ -2287,32 +2306,32 @@ msgid "淡い緑"
 msgstr "Vert clair"
 
 #: lib/gutenberg.php:190
-#: lib/page-settings/editor-forms.php:213
+#: lib/page-settings/editor-forms.php:219
 msgid "拡張色A"
 msgstr "Couleur étendue A"
 
 #: lib/gutenberg.php:195
-#: lib/page-settings/editor-forms.php:214
+#: lib/page-settings/editor-forms.php:220
 msgid "拡張色B"
 msgstr "Couleur étendue B"
 
 #: lib/gutenberg.php:200
-#: lib/page-settings/editor-forms.php:215
+#: lib/page-settings/editor-forms.php:221
 msgid "拡張色C"
 msgstr "Couleur étendue C"
 
 #: lib/gutenberg.php:205
-#: lib/page-settings/editor-forms.php:216
+#: lib/page-settings/editor-forms.php:222
 msgid "拡張色D"
 msgstr "Couleur étendue D"
 
 #: lib/gutenberg.php:210
-#: lib/page-settings/editor-forms.php:217
+#: lib/page-settings/editor-forms.php:223
 msgid "拡張色E"
 msgstr "Couleur étendue E"
 
 #: lib/gutenberg.php:215
-#: lib/page-settings/editor-forms.php:218
+#: lib/page-settings/editor-forms.php:224
 msgid "拡張色F"
 msgstr "Couleur étendue F"
 
@@ -2517,12 +2536,13 @@ msgid "未入力"
 msgstr "Non saisi"
 
 #: lib/html-forms.php:597
+#: skins/skin-made-in-heaven/lib/hook-wp.php:840
 #: blocks/src/block/cta/edit.js:127
 msgid "選択"
 msgstr "Sélectionner"
 
 #: lib/html-forms.php:598
-#: skins/skin-made-in-heaven/lib/hook-wp.php:94
+#: skins/skin-made-in-heaven/lib/hook-wp.php:98
 msgid "クリア"
 msgstr "Effacer"
 
@@ -2643,7 +2663,7 @@ msgid "人気記事は見つかりませんでした。"
 msgstr "Aucun article populaire n'a été trouvé."
 
 #: lib/html-forms.php:1356
-#: lib/html-forms.php:1910
+#: lib/html-forms.php:1926
 msgid "記事は見つかりませんでした。"
 msgstr "Aucun article trouvé."
 
@@ -2697,18 +2717,22 @@ msgid "おすすめ"
 msgstr "Recommandé"
 
 #: lib/html-forms.php:1794
+#: skins/skin-made-in-heaven/tmp/css-custom.php:17
 msgid "新着"
 msgstr "Nouveautés"
 
 #: lib/html-forms.php:1797
+#: skins/skin-made-in-heaven/tmp/css-custom.php:18
 msgid "注目"
 msgstr "En vedette"
 
 #: lib/html-forms.php:1800
+#: skins/skin-made-in-heaven/tmp/css-custom.php:19
 msgid "必見"
 msgstr "À voir absolument"
 
 #: lib/html-forms.php:1803
+#: skins/skin-made-in-heaven/tmp/css-custom.php:20
 msgid "お得"
 msgstr "Bonnes affaires"
 
@@ -2955,6 +2979,9 @@ msgstr "Ne pas supprimer et revenir à la liste"
 #: lib/widgets/recommended-cards.php:87
 #: lib/widgets/sns-follow-buttons.php:56
 #: lib/widgets/toc.php:83
+#: skins/skin-made-in-heaven/lib/panel-option.php:293
+#: skins/skin-made-in-heaven/lib/panel-option.php:336
+#: skins/skin-made-in-heaven/lib/panel-option.php:379
 #: blocks/src/block/radar/edit.js:335
 #: blocks/src/block/timeline-item/deprecated.js:24
 #: blocks/src/block/timeline-item/deprecated.js:48
@@ -3371,6 +3398,11 @@ msgstr "Évaluation :"
 #: lib/page-settings/image-forms.php:129
 #: lib/page-settings/skin-forms.php:36
 #: skins/raku-add-fadein/functions.php:306
+#: skins/skin-made-in-heaven/lib/panel-main.php:225
+#: skins/skin-made-in-heaven/lib/panel-visual.php:83
+#: skins/skin-made-in-heaven/lib/panel-visual.php:159
+#: skins/skin-made-in-heaven/lib/panel-visual.php:255
+#: skins/skin-made-in-heaven/lib/panel-visual.php:276
 #: blocks/src/block/blogcard/deprecated.js:53
 #: blocks/src/block/blogcard/edit.js:36
 #: blocks/src/old/blogcard-class/block.js:62
@@ -4609,6 +4641,7 @@ msgstr "Hiragino Kakugo, Meirio"
 #: skins/skin-grayish-topfull/functions.php:1813
 #: skins/skin-grayish-topfull/functions.php:1836
 #: skins/skin-grayish-topfull/functions.php:1883
+#: skins/skin-made-in-heaven/lib/panel-main.php:54
 msgid "（デフォルト）"
 msgstr "(Par défaut)"
 
@@ -5848,7 +5881,7 @@ msgstr "Date de publication"
 
 #: lib/page-settings/blogcard-in-forms.php:94
 #: skins/silk/functions.php:921
-#: skins/skin-made-in-heaven/lib/hook-wp.php:73
+#: skins/skin-made-in-heaven/lib/hook-wp.php:75
 msgid "更新日"
 msgstr "Date de mise à jour"
 
@@ -6131,6 +6164,7 @@ msgid "カルーセルのカードの枠となる罫線を表示するか。"
 msgstr "Définissez si vous souhaitez afficher des lignes de séparation pour les bordures des cartes dans le carrousel."
 
 #: lib/page-settings/carousel-forms.php:138
+#: skins/skin-made-in-heaven/lib/panel-option.php:84
 msgid "オートプレイ"
 msgstr "Lecture automatique"
 
@@ -6592,6 +6626,7 @@ msgstr "Voulez-vous afficher l'icône Font Awesome dans la partie droite du lien
 #: lib/page-settings/content-forms.php:149
 #: lib/page-settings/content-forms.php:269
 #: lib/page-settings/pwa-forms.php:85
+#: skins/skin-made-in-heaven/lib/hook-wp.php:696
 #: blocks/src/block-universal/caption-box/edit.js:112
 #: blocks/src/block-universal/label-box/edit.js:112
 #: blocks/src/block-universal/tab-caption-box/edit.js:114
@@ -6863,7 +6898,6 @@ msgid "「タイトルからアイキャッチを生成する」機能を有効�
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:101
-#: lib/page-settings/editor-forms.php:107
 msgid "（β版）"
 msgstr ""
 
@@ -6879,147 +6913,147 @@ msgstr ""
 msgid "ベータ版機能ですので、仕様が変わる可能性があるのでご了承ください。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:107
+#: lib/page-settings/editor-forms.php:111
 msgid "チェックボックスをデフォルトで選択する"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:108
+#: lib/page-settings/editor-forms.php:112
 msgid "エディターにある「タイトルからアイキャッチを生成する」オプションのチェックボックスをデフォルトで選択状態にします。"
 msgstr ""
 
-#: lib/page-settings/editor-forms.php:123
+#: lib/page-settings/editor-forms.php:129
 msgid "ブロックエディター設定"
 msgstr "Paramètres de l'éditeur de blocs"
 
-#: lib/page-settings/editor-forms.php:128
+#: lib/page-settings/editor-forms.php:134
 msgid "ブロックエディターのみに適用される設定です。"
 msgstr "Ces paramètres s'appliquent uniquement à l'éditeur de blocs."
 
-#: lib/page-settings/editor-forms.php:137
+#: lib/page-settings/editor-forms.php:143
 msgid "「ふりがな（ルビ）」ボタンを表示する"
 msgstr "Afficher le bouton « Furigana (Ruby) »"
 
-#: lib/page-settings/editor-forms.php:138
+#: lib/page-settings/editor-forms.php:144
 msgid "Cocoonの「ルビ」ボタン表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。"
 msgstr "Basculez l'affichage du bouton “Ruby” dans Cocoon. Désactivez-le si une erreur se produit lors de l'utilisation de la fonction Ruby d'un plugin."
 
-#: lib/page-settings/editor-forms.php:142
+#: lib/page-settings/editor-forms.php:148
 msgid "「書式のクリア」ボタンを表示する"
 msgstr "Afficher le bouton « Effacer le formatage »"
 
-#: lib/page-settings/editor-forms.php:143
+#: lib/page-settings/editor-forms.php:149
 msgid "Cocoonの「書式のクリア」表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。"
 msgstr "Basculez l'affichage du bouton “Effacer le format” dans Cocoon. Désactivez-le si une erreur se produit lors de l'utilisation de la fonction Ruby d'un plugin."
 
-#: lib/page-settings/editor-forms.php:151
+#: lib/page-settings/editor-forms.php:157
 msgid "スタイルドロップダウン"
 msgstr "Menu déroulant des styles"
 
-#: lib/page-settings/editor-forms.php:155
+#: lib/page-settings/editor-forms.php:161
 msgid "「文字スタイル」を表示する"
 msgstr "Afficher le « Style de texte »"
 
-#: lib/page-settings/editor-forms.php:156
+#: lib/page-settings/editor-forms.php:162
 msgid "ツールバーの文字スタイルドロップダウンを表示するか。"
 msgstr "Voulez-vous afficher la liste déroulante des styles de texte dans la barre d'outils ?"
 
-#: lib/page-settings/editor-forms.php:158
+#: lib/page-settings/editor-forms.php:164
 msgid "「マーカー」を表示する"
 msgstr "Afficher le « Marqueur »"
 
-#: lib/page-settings/editor-forms.php:159
+#: lib/page-settings/editor-forms.php:165
 msgid "ツールバーのマーカースタイルドロップダウンを表示するか。"
 msgstr "Voulez-vous afficher la liste déroulante des styles de marqueur dans la barre d'outils ?"
 
-#: lib/page-settings/editor-forms.php:161
+#: lib/page-settings/editor-forms.php:167
 msgid "「バッジ」を表示する"
 msgstr "Afficher le « Badge »"
 
-#: lib/page-settings/editor-forms.php:162
+#: lib/page-settings/editor-forms.php:168
 msgid "ツールバーのバッジスタイルドロップダウンを表示するか。"
 msgstr "Voulez-vous afficher la liste déroulante des styles de badge dans la barre d'outils ?"
 
-#: lib/page-settings/editor-forms.php:164
+#: lib/page-settings/editor-forms.php:170
 msgid "「文字サイズ」を表示する"
 msgstr "Afficher la « Taille de texte »"
 
-#: lib/page-settings/editor-forms.php:165
+#: lib/page-settings/editor-forms.php:171
 msgid "ツールバーの文字サイズスタイルドロップダウンを表示するか。"
 msgstr "Voulez-vous afficher la liste déroulante des tailles de texte dans la barre d'outils ?"
 
-#: lib/page-settings/editor-forms.php:173
+#: lib/page-settings/editor-forms.php:179
 msgid "ショートコードドロップダウン"
 msgstr "Liste déroulante des shortcodes"
 
-#: lib/page-settings/editor-forms.php:177
+#: lib/page-settings/editor-forms.php:183
 msgid "「汎用ショートコード」を表示する"
 msgstr "Afficher le « Shortcode générique »"
 
-#: lib/page-settings/editor-forms.php:178
+#: lib/page-settings/editor-forms.php:184
 msgid "ツールバーの汎用ショートコードドロップダウンを表示するか。"
 msgstr "Voulez-vous afficher la liste déroulante des shortcodes génériques dans la barre d'outils ?"
 
-#: lib/page-settings/editor-forms.php:180
+#: lib/page-settings/editor-forms.php:186
 msgid "「テンプレート」表示する"
 msgstr "Afficher le « Modèle »"
 
-#: lib/page-settings/editor-forms.php:181
+#: lib/page-settings/editor-forms.php:187
 msgid "ツールバーのテンプレートショートコードドロップダウンを表示するか。"
 msgstr "Voulez-vous afficher la liste déroulante des shortcodes de modèles dans la barre d'outils ?"
 
-#: lib/page-settings/editor-forms.php:183
+#: lib/page-settings/editor-forms.php:189
 msgid "「アフィリエイト」を表示する"
 msgstr "Afficher l'« Affiliation »"
 
-#: lib/page-settings/editor-forms.php:184
+#: lib/page-settings/editor-forms.php:190
 msgid "ツールバーのアフィリエイトショートコードドロップダウンを表示するか。"
 msgstr "Voulez-vous afficher la liste déroulante des shortcodes d'affiliation dans la barre d'outils ?"
 
-#: lib/page-settings/editor-forms.php:186
+#: lib/page-settings/editor-forms.php:192
 msgid "「ランキング」を表示する"
 msgstr "Afficher le « Classement »"
 
-#: lib/page-settings/editor-forms.php:187
+#: lib/page-settings/editor-forms.php:193
 msgid "ツールバーのランキングショートコードドロップダウンを表示するか。"
 msgstr "Voulez-vous afficher la liste déroulante des shortcodes de classement dans la barre d'outils ?"
 
-#: lib/page-settings/editor-forms.php:196
+#: lib/page-settings/editor-forms.php:202
 msgid "ブロックオプション"
 msgstr "Options de bloc"
 
-#: lib/page-settings/editor-forms.php:200
+#: lib/page-settings/editor-forms.php:206
 msgid "「スタイル」オプションを表示する"
 msgstr "Afficher l'option « Style »"
 
-#: lib/page-settings/editor-forms.php:201
+#: lib/page-settings/editor-forms.php:207
 msgid "ブロックエディターの「スタイル」オプションを表示するか。"
 msgstr "Afficher ou non l'option « Style » dans l'éditeur de blocs."
 
-#: lib/page-settings/editor-forms.php:209
+#: lib/page-settings/editor-forms.php:215
 msgid "拡張カラーパレット色"
 msgstr "Palette de couleurs étendue"
 
-#: lib/page-settings/editor-forms.php:220
+#: lib/page-settings/editor-forms.php:226
 msgid "任意のカラーパレット色を設定できます。"
 msgstr "Vous pouvez définir n'importe quelle couleur de palette."
 
-#: lib/page-settings/editor-forms.php:237
+#: lib/page-settings/editor-forms.php:243
 msgid "旧エディター設定"
 msgstr "Paramètres de l'ancien éditeur"
 
-#: lib/page-settings/editor-forms.php:242
+#: lib/page-settings/editor-forms.php:248
 msgid "ビジュアルエディター用の設定です。"
 msgstr "Ces paramètres s'appliquent à l'éditeur visuel."
 
-#: lib/page-settings/editor-forms.php:247
+#: lib/page-settings/editor-forms.php:253
 msgid "確認ダイアログ"
 msgstr "Boîte de dialogue de confirmation"
 
-#: lib/page-settings/editor-forms.php:251
+#: lib/page-settings/editor-forms.php:257
 msgid "ページ公開前に確認アラートを出す"
 msgstr "Afficher une alerte de confirmation avant la publication de la page"
 
-#: lib/page-settings/editor-forms.php:252
+#: lib/page-settings/editor-forms.php:258
 msgid "記事を投稿する前に確認ダイアログを表示します。※旧エディター用の設定"
 msgstr "Afficher une boîte de dialogue de confirmation avant de publier un article. *Pour l'ancien éditeur"
 
@@ -7199,6 +7233,7 @@ msgid "モバイルでのヘッダーの高さをpx数で指定します。834px
 msgstr "Spécifiez la hauteur de l'en-tête pour les appareils mobiles en pixels. Ce paramètre est destiné aux tablettes ayant une largeur d'écran allant jusqu'à 834 px. Si laissé vide, la hauteur par défaut sera utilisée. (minimum : 0 px, maximum : 600 px)"
 
 #: lib/page-settings/header-forms.php:93
+#: skins/skin-made-in-heaven/lib/panel-visual.php:24
 msgid "ヘッダーロゴ"
 msgstr "Logo de l'en-tête"
 
@@ -7529,6 +7564,9 @@ msgstr "La vignette du widget des nouveaux articles."
 #: lib/page-settings/image-forms.php:210
 #: lib/widgets/new-entries.php:19
 #: lib/widgets/new-entries.php:130
+#: skins/skin-made-in-heaven/lib/panel-option.php:292
+#: skins/skin-made-in-heaven/tmp/list-category-columns.php:24
+#: skins/skin-made-in-heaven/tmp/list-category-columns.php:30
 #: tmp/list-new-entries.php:16
 #: tmp/list-tab-index.php:26
 #: blocks/src/block/new-list/index.js:28
@@ -7601,6 +7639,7 @@ msgid "※タイル表示はうまくプレビューできないかも。今の�
 msgstr "*L'affichage des tuiles peut ne pas bien s'afficher en aperçu. La cause en est actuellement inconnue."
 
 #: lib/page-settings/index-forms.php:44
+#: skins/skin-made-in-heaven/lib/panel-main.php:49
 msgid "フロントページタイプ"
 msgstr "Type de page d'accueil"
 
@@ -7609,24 +7648,32 @@ msgid "表示形式"
 msgstr "Format d'affichage"
 
 #: lib/page-settings/index-forms.php:50
+#: skins/skin-made-in-heaven/lib/panel-main.php:54
 msgid "一覧"
 msgstr "Liste des articles"
 
 #: lib/page-settings/index-forms.php:51
+#: skins/skin-made-in-heaven/lib/panel-main.php:55
 msgid "タブ一覧"
 msgstr "Liste par onglets"
 
 #: lib/page-settings/index-forms.php:52
 #: lib/page-settings/index-forms.php:53
 #: lib/page-settings/index-forms.php:54
+#: skins/skin-made-in-heaven/lib/panel-main.php:56
+#: skins/skin-made-in-heaven/lib/panel-main.php:57
+#: skins/skin-made-in-heaven/lib/panel-main.php:58
+#: skins/skin-made-in-heaven/lib/panel-option.php:378
 msgid "カテゴリーごと"
 msgstr "Par catégories"
 
 #: lib/page-settings/index-forms.php:53
+#: skins/skin-made-in-heaven/lib/panel-main.php:57
 msgid "（2カラム）"
 msgstr "2 colonnes"
 
 #: lib/page-settings/index-forms.php:54
+#: skins/skin-made-in-heaven/lib/panel-main.php:58
 msgid "（3カラム）"
 msgstr "3 colonnes"
 
@@ -7752,27 +7799,33 @@ msgid "一覧リストを表示する順番を設定します。"
 msgstr "Définissez l'ordre d'affichage de la liste."
 
 #: lib/page-settings/index-forms.php:134
+#: skins/skin-made-in-heaven/lib/panel-main.php:131
 msgid "カードタイプ"
 msgstr "Type de carte"
 
 #: lib/page-settings/index-forms.php:139
 #: lib/page-settings/single-forms.php:161
+#: skins/skin-made-in-heaven/lib/panel-main.php:136
 msgid "エントリーカード（デフォルト）"
 msgstr "Carte d'entrée (par défaut)"
 
 #: lib/page-settings/index-forms.php:140
+#: skins/skin-made-in-heaven/lib/panel-main.php:137
 msgid "大きなカード（先頭のみ）"
 msgstr "Grande carte (seulement en haut)"
 
 #: lib/page-settings/index-forms.php:141
+#: skins/skin-made-in-heaven/lib/panel-main.php:138
 msgid "大きなカード"
 msgstr "Grande carte"
 
 #: lib/page-settings/index-forms.php:142
+#: skins/skin-made-in-heaven/lib/panel-main.php:139
 msgid "縦型カード2列"
 msgstr "Carte verticale 2 colonnes"
 
 #: lib/page-settings/index-forms.php:143
+#: skins/skin-made-in-heaven/lib/panel-main.php:140
 msgid "縦型カード3列"
 msgstr "Carte verticale 3 colonnes"
 
@@ -8368,6 +8421,9 @@ msgid "13文字以降は自動的に削除されます。"
 msgstr "Les caractères au-delà du 12ème sont automatiquement supprimés."
 
 #: lib/page-settings/pwa-forms.php:72
+#: skins/skin-made-in-heaven/lib/panel-option.php:314
+#: skins/skin-made-in-heaven/lib/panel-option.php:357
+#: skins/skin-made-in-heaven/lib/panel-option.php:400
 msgid "説明文"
 msgstr "Description"
 
@@ -8827,7 +8883,7 @@ msgid "関連記事見出し"
 msgstr "Titre des articles connexes"
 
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1129
+#: lib/shortcodes.php:1133
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -9324,6 +9380,7 @@ msgstr "Couleur du bouton"
 #: lib/page-settings/sns-follow-forms.php:161
 #: lib/page-settings/sns-share-forms-bottom.php:149
 #: lib/page-settings/sns-share-forms-top.php:136
+#: skins/skin-made-in-heaven/lib/panel-visual.php:280
 msgid "モノクロ"
 msgstr "Monochrome"
 
@@ -9985,7 +10042,8 @@ msgstr "Titre de la table des matières"
 #: lib/page-settings/_top-page.php:206
 #: lib/toc.php:59
 #: lib/widgets/toc.php:19
-#: skins/skin-made-in-heaven/lib/hook-cocoon.php:424
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:452
+#: skins/skin-made-in-heaven/lib/panel-main.php:192
 msgid "目次"
 msgstr "Table des matières"
 
@@ -10011,7 +10069,7 @@ msgstr "Ouvrir :"
 
 #: lib/page-settings/toc-forms.php:99
 #: lib/page-settings/toc-funcs.php:70
-#: tmp/css-custom.php:538
+#: tmp/css-custom.php:555
 msgid "開く"
 msgstr "Ouvrir"
 
@@ -10022,7 +10080,7 @@ msgstr "Fermer :"
 #: lib/page-settings/toc-forms.php:103
 #: lib/page-settings/toc-funcs.php:78
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
-#: tmp/css-custom.php:554
+#: tmp/css-custom.php:571
 msgid "閉じる"
 msgstr "Fermer"
 
@@ -10202,6 +10260,7 @@ msgid "スキン"
 msgstr "Apparence"
 
 #: lib/page-settings/_top-page.php:170
+#: skins/skin-made-in-heaven/lib/panel-main.php:41
 msgid "全体"
 msgstr "Global"
 
@@ -10234,6 +10293,12 @@ msgid "SNSフォロー"
 msgstr "Suivre sur les réseaux sociaux"
 
 #: lib/page-settings/_top-page.php:215
+#: skins/skin-made-in-heaven/lib/panel-option.php:432
+#: skins/skin-made-in-heaven/lib/panel-option.php:441
+#: skins/skin-made-in-heaven/lib/panel-visual.php:32
+#: skins/skin-made-in-heaven/lib/panel-visual.php:85
+#: skins/skin-made-in-heaven/lib/panel-visual.php:201
+#: skins/skin-made-in-heaven/lib/panel-visual.php:210
 #: blocks/src/block/cta/edit.js:110
 msgid "画像"
 msgstr "Image"
@@ -10276,6 +10341,7 @@ msgid "ウィジェットエリア"
 msgstr "Zone de widget"
 
 #: lib/page-settings/_top-page.php:270
+#: skins/skin-made-in-heaven/lib/panel-editor.php:16
 msgid "エディター"
 msgstr "Éditeur"
 
@@ -11027,11 +11093,11 @@ msgstr "Archive mensuelle"
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "Le shortcode updated ne peut être utilisé que sur des articles ou des pages fixes."
 
-#: lib/shortcodes.php:1101
+#: lib/shortcodes.php:1105
 msgid "保存エラー"
 msgstr "Enregistrer l’erreur"
 
-#: lib/shortcodes.php:1119
+#: lib/shortcodes.php:1123
 msgid "エラー："
 msgstr "Erreur : "
 
@@ -11182,6 +11248,9 @@ msgid "2カラム（3:1, ｜□□□｜□｜）"
 msgstr "2 colonnes (3:1, | □□□ | □)"
 
 #: lib/tinymce/html-tags.php:109
+#: skins/skin-made-in-heaven/lib/hook-wp.php:380
+#: skins/skin-made-in-heaven/lib/hook-wp.php:396
+#: skins/skin-made-in-heaven/lib/hook-wp.php:412
 #: blocks/src/layout/column-3/block.js:24
 msgid "3カラム"
 msgstr "3 colonnes"
@@ -11361,53 +11430,53 @@ msgstr "Veuillez saisir le contenu à afficher pendant la campagne."
 msgid "キャンペーン期間中のみ表示"
 msgstr "Affiché uniquement pendant la période de la campagne"
 
-#: lib/utils.php:824
+#: lib/utils.php:919
 msgid "スクロールできます"
 msgstr "Peut faire défiler"
 
-#: lib/utils.php:912
+#: lib/utils.php:1007
 msgid "公開"
 msgstr "Publier"
 
-#: lib/utils.php:913
+#: lib/utils.php:1008
 msgid "記事を公開してもよろしいですか？"
 msgstr "Êtes-vous sûr de vouloir publier l'article ?"
 
-#: lib/utils.php:2563
+#: lib/utils.php:2658
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s min"
 msgstr[1] "%s min"
 
-#: lib/utils.php:2571
+#: lib/utils.php:2666
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s heure"
 msgstr[1] "%s heures"
 
-#: lib/utils.php:2579
+#: lib/utils.php:2674
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s jour"
 msgstr[1] "%s jours"
 
-#: lib/utils.php:2587
+#: lib/utils.php:2682
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s semaine"
 msgstr[1] "%s semaines"
 
-#: lib/utils.php:2595
+#: lib/utils.php:2690
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s mois"
 msgstr[1] "%s mois"
 
-#: lib/utils.php:2606
+#: lib/utils.php:2701
 msgid "%s年"
 msgstr "%s ans"
 
-#: lib/utils.php:2608
+#: lib/utils.php:2703
 msgid "%s年%sヶ月"
 msgstr "%s ans et %s mois"
 
@@ -11993,6 +12062,8 @@ msgstr "C'est un widget de texte uniquement pour les appareils mobiles. Il est a
 
 #: lib/widgets/mobile-text.php:80
 #: lib/widgets/pc-text.php:79
+#: skins/skin-made-in-heaven/lib/hook-wp.php:355
+#: skins/skin-made-in-heaven/lib/panel-option.php:197
 msgid "テキスト"
 msgstr "Texte"
 
@@ -12548,6 +12619,7 @@ msgid "各カラーの適用箇所についてはこちらを参照"
 msgstr "Cliquez ici pour voir où chaque couleur est appliquée."
 
 #: skins/skin-grayish-topfull/functions.php:433
+#: skins/skin-made-in-heaven/lib/panel-color.php:69
 msgid "テキストカラー"
 msgstr "Couleur du texte"
 
@@ -13182,6 +13254,7 @@ msgid "カラーラベル"
 msgstr "Étiquette de couleur"
 
 #: skins/skin-grayish-topfull/functions.php:2355
+#: skins/skin-made-in-heaven/lib/hook-wp.php:309
 msgid "ライン"
 msgstr "Ligne"
 
@@ -13362,14 +13435,564 @@ msgstr "Suivre SoundCloud"
 msgid "LINE@をフォロー"
 msgstr "Suivre LINE@"
 
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:28
+msgid "件ヒット"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:41
+#: skins/skin-made-in-heaven/lib/panel-option.php:200
+#: skins/skin-made-in-heaven/tmp/js-custom.php:8
+#: skins/skin-made-in-heaven/tmp/list-category-columns.php:41
+#: skins/skin-made-in-heaven/tmp/list-category-columns.php:70
+#: tmp/list-category-columns.php:84
+#: tmp/list-category.php:47
+#: tmp/list-new-entries.php:23
+#: tmp/list-tab-index.php:84
+msgid "もっと見る"
+msgstr "Charger plus"
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:47
+#: skins/skin-made-in-heaven/lib/panel-option.php:221
+#: tmp/pagination.php:38
+msgid "次のページ"
+msgstr "Page suivante"
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:59
+#: skins/skin-made-in-heaven/lib/panel-option.php:242
+#: tmp/breadcrumbs-page.php:13
+#: tmp/breadcrumbs.php:68
+#: tmp/mobile-home-button.php:19
+msgid "ホーム"
+msgstr "Accueil"
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:116
+msgid "開設から"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:116
+msgid "日目です。"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:388
+msgid "新着順"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:389
+msgid "更新順"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:390
+msgid "人気順"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:391
+msgid "コメント数順"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:12
+msgid "メイド・イン・ヘブン設定"
+msgstr ""
+
 #: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
 msgstr "Déconnexion"
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:53
-#: skins/skin-made-in-heaven/lib/hook-wp.php:75
+#: skins/skin-made-in-heaven/lib/hook-wp.php:54
+#: skins/skin-made-in-heaven/lib/hook-wp.php:77
 msgid "Slug"
 msgstr "Slug"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:302
+msgid "ミニ"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:316
+#: blocks/src/block-extension/style-extension/style02.js:54
+msgid "ステップ"
+msgstr "Étapes"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:323
+msgid "ビッグ"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:330
+#: skins/skin-made-in-heaven/lib/panel-main.php:206
+msgid "ボックス"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:346
+msgid "下線"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:373
+#: skins/skin-made-in-heaven/lib/hook-wp.php:389
+#: skins/skin-made-in-heaven/lib/hook-wp.php:405
+#: blocks/src/layout/column-2/block.js:49
+msgid "2カラム"
+msgstr "2 colonnes"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:715
+msgid "カスタムフィールド"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:721
+#: skins/skin-made-in-heaven/lib/hook-wp.php:744
+msgid "アイコン番号"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:793
+msgid "メイド・イン・ヘブン"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:16
+#: skins/skin-made-in-heaven/lib/panel-color.php:24
+msgid "基本カラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:35
+msgid "サイトカラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:52
+#: skins/skin-made-in-heaven/lib/panel-editor.php:164
+msgid "背景カラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:77
+msgid "個別カラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:85
+msgid "ヘッダー背景カラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:99
+msgid "ヘッダーテキストカラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:113
+msgid "グローバルナビ背景カラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:127
+msgid "グローバルナビテキストカラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:141
+msgid "フッター背景カラー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:149
+msgid "グローバルナビメニューデザイン"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:157
+msgid "hoverエフェクト"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:162
+msgid "背景明るく"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:163
+msgid "ライン（中央から）"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:164
+msgid "ライン（左から）"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:171
+msgid "見出しデザイン"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:247
+msgid "スライドインメニュータイトル"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:24
+#: blocks/src/toolbutton/dropdown-letters.js:25
+#: blocks/src/toolbutton/dropdown-letters.js:38
+msgid "文字"
+msgstr "Caractères"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:76
+#: blocks/src/block-extension/style-extension/style01.js:50
+msgid "ストライプ"
+msgstr "Rayures"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:114
+msgid "インラインボタン"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:156
+msgid "リスト丸数字"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:178
+#: skins/skin-made-in-heaven/lib/panel-editor.php:199
+#: skins/skin-made-in-heaven/lib/panel-editor.php:221
+#: skins/skin-made-in-heaven/lib/panel-editor.php:243
+#: skins/skin-made-in-heaven/lib/panel-main.php:200
+msgid "スタイル"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:183
+#: blocks/src/block-extension/style-extension/style02.js:70
+msgid "丸"
+msgstr "Cercle"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:184
+msgid "四角"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:191
+#: blocks/src/block/icon-box/index.js:22
+msgid "アイコンボックス"
+msgstr "Boîte d'icônes"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:204
+msgid "塗りつぶし"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:205
+msgid "枠"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:206
+#: blocks/src/block-extension/style-extension/style01.js:110
+msgid "付箋"
+msgstr "Post-it"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:213
+#: blocks/src/block/tab-box/index.js:22
+#: blocks/src/old/tab-box/block.js:21
+msgid "タブボックス"
+msgstr "Boîte à onglets"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:226
+msgid "見出し(標準)"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:227
+msgid "見出し(枠上)"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:228
+msgid "見出し(枠中)"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:235
+#: blocks/src/block/faq/index.js:20
+msgid "FAQ"
+msgstr "FAQ"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:248
+msgid "標準"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:250
+msgid "丸型ラベル"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:16
+msgid "拡張"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:24
+msgid "ローディン画面"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:71
+msgid "拡張タイプ"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:86
+msgid "「新着記事」タブ表示"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:101
+msgid "カテゴリーごと（2、3カラム）縦型カード"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:116
+msgid "カテゴリーごと背景色"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:153
+msgid "カード四角"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:168
+msgid "カード枠"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:183
+msgid "コンテンツ枠"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:205
+msgid "シンプル"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:207
+msgid "上下線"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:220
+msgid "省略表示"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:226
+msgid "行以上"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:227
+msgid "見出しH3"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:240
+msgid "スクロール追従ハイライト"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:255
+msgid "目次ボタン"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:272
+msgid "背景画像"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:287
+msgid "サイト開設日"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:302
+msgid "サイト開設経過日数"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:317
+msgid "プロフィールボタン表示"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:332
+msgid "SNSフォロー表示"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:16
+#: skins/skin-made-in-heaven/lib/panel-option.php:23
+msgid "オプション"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:34
+msgid "NEWマーク(0～5日、0はオフ)"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:54
+msgid "いいねボタン"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:69
+msgid "縦アイキャッチ背景ぼかし"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:99
+msgid "アコーディオン化"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:114
+msgid "通知エリア固定"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:129
+msgid "通知メッセージ横スクロール"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:144
+msgid "評価・ランキングハート"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:155
+msgid "約5:8"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:157
+msgid "約5:7"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:170
+msgid "サムネイル画像の比率（"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:187
+msgid "並び替え選択"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:208
+msgid "「もっと見る」テキスト"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:229
+msgid "「次のページ」テキスト"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:250
+msgid "パンくずリストテキスト"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:270
+msgid "フロントページタイトル変更"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:306
+msgid "新着・更新された記事です"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:349
+msgid "本日読まれている記事です"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:392
+msgid "カテゴリーから記事を探す"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:420
+msgid "コメントアイコン選択・表示"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:16
+#: skins/skin-made-in-heaven/lib/panel-visual.php:71
+msgid "メインビジュアル"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:47
+msgid "メインビジュアル表示"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:62
+msgid "ヘッダー表示"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:84
+#: skins/skin-made-in-heaven/lib/panel-visual.php:189
+msgid "動画"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:101
+msgid "タイトルテキスト"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:139
+msgid "テキスト縦書き"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:154
+msgid "Scrollボタン"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:160
+msgid "線"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:161
+msgid "矢印"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:174
+msgid "波線"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:220
+msgid "スライドオプション"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:228
+msgid "スライド切り替え"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:233
+msgid "フェード"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:234
+msgid "横"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:235
+msgid "縦"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:236
+msgid "横分割"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:237
+msgid "縦分割"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:250
+msgid "スライド中のズーム"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:256
+msgid "イン"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:257
+msgid "アウト"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:264
+msgid "フィルター"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:277
+msgid "ドット黒"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:278
+msgid "ドット白"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:279
+msgid "走査線横"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:287
+msgid "オーバーレイ"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:295
+msgid "メインビジュアルに被せるカラーレイヤー"
+msgstr ""
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:312
+msgid "不透明度(opacity値0～50%)"
+msgstr ""
+
+#: skins/skin-made-in-heaven/tmp/css-custom.php:13
+msgid "過去の投稿"
+msgstr ""
+
+#: skins/skin-made-in-heaven/tmp/css-custom.php:14
+msgid "新しい投稿"
+msgstr ""
+
+#: skins/skin-made-in-heaven/tmp/css-custom.php:15
+msgid "スクロールできます→"
+msgstr ""
+
+#: skins/skin-made-in-heaven/tmp/css-custom.php:16
+msgid "お勧め"
+msgstr ""
+
+#: skins/skin-made-in-heaven/tmp/list-category-columns.php:31
+msgid "更新記事"
+msgstr ""
+
+#: skins/skin-made-in-heaven/tmp/list-category-columns.php:48
+msgid "本日読まれている記事"
+msgstr ""
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
@@ -13439,12 +14062,6 @@ msgstr "Total :"
 msgid "Jetpackの統計"
 msgstr "Statistiques Jetpack"
 
-#: tmp/breadcrumbs-page.php:13
-#: tmp/breadcrumbs.php:28
-#: tmp/mobile-home-button.php:19
-msgid "ホーム"
-msgstr "Accueil"
-
 #: tmp/button-go-to-top.php:11
 msgid "トップへ戻る"
 msgstr "Retour en haut"
@@ -13453,7 +14070,7 @@ msgstr "Retour en haut"
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr "Cet article peut être lu en <span class=\"bold\">environ %s</span> minutes."
 
-#: tmp/css-custom.php:917
+#: tmp/css-custom.php:934
 msgid "ラベルなし"
 msgstr "Sans étiquette"
 
@@ -13507,13 +14124,6 @@ msgstr "(Police web)"
 msgid "タイトルとURLをコピーしました"
 msgstr "Titre et URL copiés"
 
-#: tmp/list-category-columns.php:84
-#: tmp/list-category.php:47
-#: tmp/list-new-entries.php:23
-#: tmp/list-tab-index.php:84
-msgid "もっと見る"
-msgstr "Charger plus"
-
 #: tmp/list-not-found-posts.php:9
 msgid "投稿が見つかりませんでした。"
 msgstr "Les publications n'ont pas été trouvées."
@@ -13525,10 +14135,6 @@ msgstr "Partager"
 #: tmp/mobile-toc-button.php:28
 msgid "目次へ"
 msgstr "Vers la table des matières"
-
-#: tmp/pagination.php:38
-msgid "次のページ"
-msgstr "Page suivante"
 
 #: tmp/related-list.php:21
 msgid "関連記事は見つかりませんでした。"
@@ -13763,10 +14369,6 @@ msgstr "Effacer la marge"
 msgid "薄背景"
 msgstr "Fond gris clair"
 
-#: blocks/src/block-extension/style-extension/style01.js:50
-msgid "ストライプ"
-msgstr "Rayures"
-
 #: blocks/src/block-extension/style-extension/style01.js:54
 msgid "方眼紙"
 msgstr "Papier millimétré"
@@ -13810,10 +14412,6 @@ msgstr "Perforatrice"
 #: blocks/src/block-extension/style-extension/style01.js:102
 msgid "手書き風"
 msgstr "Style manuscrit"
-
-#: blocks/src/block-extension/style-extension/style01.js:110
-msgid "付箋"
-msgstr "Post-it"
 
 #: blocks/src/block-extension/style-extension/style01.js:114
 msgid "左吹き出し"
@@ -13916,10 +14514,6 @@ msgstr "Chiffres cerclés"
 msgid "順位"
 msgstr "Rang"
 
-#: blocks/src/block-extension/style-extension/style02.js:54
-msgid "ステップ"
-msgstr "Étapes"
-
 #: blocks/src/block-extension/style-extension/style02.js:62
 msgid "チェック有効"
 msgstr "Vérification activée"
@@ -13927,10 +14521,6 @@ msgstr "Vérification activée"
 #: blocks/src/block-extension/style-extension/style02.js:66
 msgid "チェック無効"
 msgstr "Vérification désactivée"
-
-#: blocks/src/block-extension/style-extension/style02.js:70
-msgid "丸"
-msgstr "Cercle"
 
 #: blocks/src/block-extension/style-extension/style02.js:74
 msgid "三角"
@@ -14346,10 +14936,6 @@ msgstr "Couleur de l'étiquette de réponse"
 msgid "質問を入力してください…"
 msgstr "Entrez votre question…"
 
-#: blocks/src/block/faq/index.js:20
-msgid "FAQ"
-msgstr "FAQ"
-
 #: blocks/src/block/faq/index.js:35
 msgid "よくある質問と回答。"
 msgstr "Questions fréquentes et réponses."
@@ -14384,10 +14970,6 @@ msgstr "Info (?)"
 #: blocks/src/block/test-box/deprecated.js:94
 msgid "補足情報(!)"
 msgstr "Info (!)"
-
-#: blocks/src/block/icon-box/index.js:22
-msgid "アイコンボックス"
-msgstr "Boîte d'icônes"
 
 #: blocks/src/block/icon-box/index.js:24
 msgid "アイコンを用いて直感的にメッセージ内容を伝えるためのボックスです。"
@@ -14724,11 +15306,6 @@ msgstr "Boîte style note autocollante"
 #: blocks/src/block/sticky-box/index.js:39
 msgid "目立つ濃いめの色で付箋風にメッセージを伝えるためのボックスです。"
 msgstr "C'est une boîte pour transmettre un message de style note autocollante avec des couleurs foncées."
-
-#: blocks/src/block/tab-box/index.js:22
-#: blocks/src/old/tab-box/block.js:21
-msgid "タブボックス"
-msgstr "Boîte à onglets"
 
 #: blocks/src/block/tab-box/index.js:24
 #: blocks/src/old/tab-box/block.js:24
@@ -15211,10 +15788,6 @@ msgstr "fab-window-close-o"
 msgid "fab-paw"
 msgstr "fab-paw"
 
-#: blocks/src/layout/column-2/block.js:49
-msgid "2カラム"
-msgstr "2 colonnes"
-
 #: blocks/src/layout/column-2/block.js:63
 msgid "本文を左右カラムに分けます。オプションでカラム比率を変更できます。"
 msgstr "Le corps du texte est divisé en colonnes gauche et droite. Vous pouvez changer le ratio des colonnes en option."
@@ -15418,11 +15991,6 @@ msgstr "Affiliation"
 #: blocks/src/toolbutton/dropdown-badges.js:35
 msgid "インラインタグ"
 msgstr "Tag en ligne"
-
-#: blocks/src/toolbutton/dropdown-letters.js:25
-#: blocks/src/toolbutton/dropdown-letters.js:38
-msgid "文字"
-msgstr "Caractères"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:79
 msgid "Amazonリンク"
