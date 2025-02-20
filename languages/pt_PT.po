@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-20T01:45:16+00:00\n"
-"PO-Revision-Date: 2025-02-20 02:16\n"
+"POT-Creation-Date: 2025-02-20T11:35:37+00:00\n"
+"PO-Revision-Date: 2025-02-20 13:13\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -13436,8 +13436,8 @@ msgid "LINE@をフォロー"
 msgstr "Seguir LINE@"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:28
-msgid "件ヒット"
-msgstr ""
+msgid "%s件ヒット"
+msgstr "%s resultados encontrados"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:41
 #: skins/skin-made-in-heaven/lib/panel-option.php:200
@@ -13460,18 +13460,14 @@ msgstr "Próxima página"
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:59
 #: skins/skin-made-in-heaven/lib/panel-option.php:242
 #: tmp/breadcrumbs-page.php:13
-#: tmp/breadcrumbs.php:68
+#: tmp/breadcrumbs.php:69
 #: tmp/mobile-home-button.php:19
 msgid "ホーム"
 msgstr "Home"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:116
-msgid "開設から"
-msgstr ""
-
-#: skins/skin-made-in-heaven/lib/hook-cocoon.php:116
-msgid "日目です。"
-msgstr ""
+msgid "%s開設から%s日目です。"
+msgstr "%s está aberto há %s dias."
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:388
 msgid "新着順"
@@ -13821,8 +13817,8 @@ msgid "約5:7"
 msgstr "Aproximadamente 5:7"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:170
-msgid "サムネイル画像の比率（"
-msgstr "Proporção da imagem em miniatura ("
+msgid "サムネイル画像の比率（%s）に従う"
+msgstr "Seguir a proporção da imagem em miniatura (%s)"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:187
 msgid "並び替え選択"
