@@ -2208,7 +2208,7 @@ msgstr ""
 
 #: lib/eyecatch.php:445
 msgid "タイトルからアイキャッチを生成する"
-msgstr ""
+msgstr "Gerar imagem de destaque a partir do título"
 
 #: lib/gutenberg.php:15
 #: lib/page-settings/all-forms.php:31
@@ -6895,31 +6895,31 @@ msgstr "*Isso é um formato de estrutura hierárquica na tela de edição de tag
 
 #: lib/page-settings/editor-forms.php:101
 msgid "「タイトルからアイキャッチを生成する」機能を有効にする"
-msgstr ""
+msgstr "Ativar a função \"Gerar imagem destacada a partir do título\""
 
 #: lib/page-settings/editor-forms.php:101
 msgid "（β版）"
-msgstr ""
+msgstr "(versão beta)"
 
 #: lib/page-settings/editor-forms.php:103
 msgid "エディターのアイキャッチ設定エリア内に、「タイトルからアイキャッチを生成する」オプションを追加します。"
-msgstr ""
+msgstr "Adiciona a opção \"Gerar imagem destacada a partir do título\" na área de configuração de imagem destacada do editor."
 
 #: lib/page-settings/editor-forms.php:103
 msgid "「公開（保存）」ボタンが押された時だけ画像が生成されます。"
-msgstr ""
+msgstr "A imagem será gerada apenas quando o botão \"Publicar (Salvar)\" for pressionado."
 
 #: lib/page-settings/editor-forms.php:103
 msgid "ベータ版機能ですので、仕様が変わる可能性があるのでご了承ください。"
-msgstr ""
+msgstr "Esta é uma função beta, portanto, esteja ciente de que as especificações podem mudar."
 
 #: lib/page-settings/editor-forms.php:111
 msgid "チェックボックスをデフォルトで選択する"
-msgstr ""
+msgstr "Selecionar a caixa de seleção por padrão"
 
 #: lib/page-settings/editor-forms.php:112
 msgid "エディターにある「タイトルからアイキャッチを生成する」オプションのチェックボックスをデフォルトで選択状態にします。"
-msgstr ""
+msgstr "Define a caixa de seleção da opção \"Gerar imagem destacada a partir do título\" no editor como selecionada por padrão."
 
 #: lib/page-settings/editor-forms.php:129
 msgid "ブロックエディター設定"
@@ -7487,7 +7487,7 @@ msgstr "9:16, 1:1.777... (proporção digital terrestre e YouTube) (padrão)"
 
 #: lib/page-settings/image-forms.php:166
 msgid "【推奨】"
-msgstr ""
+msgstr "【Recomendado】"
 
 #: lib/page-settings/image-forms.php:168
 msgid "人間が最も美しいと感じる比率とされています。"
@@ -7547,7 +7547,7 @@ msgstr "As miniaturas são exibidas de forma bonita mesmo em dispositivos compat
 
 #: lib/page-settings/image-forms.php:207
 msgid "これらの設定で変更される画像部分はこちら。"
-msgstr ""
+msgstr "Aqui estão as partes da imagem que serão alteradas com essas configurações."
 
 #: lib/page-settings/image-forms.php:209
 msgid "インデックス、アーカイブ、検索結果ページのエントリーカードのサムネイル。"
@@ -7604,11 +7604,11 @@ msgstr "A miniatura dos cartões de blog internos e externos."
 
 #: lib/page-settings/image-forms.php:216
 msgid "エディターの「タイトルからアイキャッチを生成する」で生成したアイキャッチ。"
-msgstr ""
+msgstr "Imagem destacada gerada pelo editor a partir do título."
 
 #: lib/page-settings/image-forms.php:216
 msgid "タイトルから生成したアイキャッチ"
-msgstr ""
+msgstr "Imagem destacada gerada a partir do título"
 
 #: lib/page-settings/image-forms.php:224
 msgid "NO IMAGE設定"
@@ -13475,23 +13475,23 @@ msgstr ""
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:388
 msgid "新着順"
-msgstr ""
+msgstr "Ordem de novos"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:389
 msgid "更新順"
-msgstr ""
+msgstr "Ordem de atualização"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:390
 msgid "人気順"
-msgstr ""
+msgstr "Ordem de popularidade"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:391
 msgid "コメント数順"
-msgstr ""
+msgstr "Ordem de número de comentários"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:12
 msgid "メイド・イン・ヘブン設定"
-msgstr ""
+msgstr "Configurações do Made in Heaven"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
@@ -13504,7 +13504,7 @@ msgstr "Slug"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:302
 msgid "ミニ"
-msgstr ""
+msgstr "Mini"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:316
 #: blocks/src/block-extension/style-extension/style02.js:54
@@ -13513,16 +13513,16 @@ msgstr "Passos"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:323
 msgid "ビッグ"
-msgstr ""
+msgstr "Grande"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:330
 #: skins/skin-made-in-heaven/lib/panel-main.php:206
 msgid "ボックス"
-msgstr ""
+msgstr "Caixa"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:346
 msgid "下線"
-msgstr ""
+msgstr "Sublinhado"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:373
 #: skins/skin-made-in-heaven/lib/hook-wp.php:389
@@ -13533,82 +13533,82 @@ msgstr "2 colunas"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:715
 msgid "カスタムフィールド"
-msgstr ""
+msgstr "Campo personalizado"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:721
 #: skins/skin-made-in-heaven/lib/hook-wp.php:744
 msgid "アイコン番号"
-msgstr ""
+msgstr "Número do ícone"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:793
 msgid "メイド・イン・ヘブン"
-msgstr ""
+msgstr "Made in Heaven"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:16
 #: skins/skin-made-in-heaven/lib/panel-color.php:24
 msgid "基本カラー"
-msgstr ""
+msgstr "Cor básica"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:35
 msgid "サイトカラー"
-msgstr ""
+msgstr "Cor do site"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:52
 #: skins/skin-made-in-heaven/lib/panel-editor.php:164
 msgid "背景カラー"
-msgstr ""
+msgstr "Cor de fundo"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:77
 msgid "個別カラー"
-msgstr ""
+msgstr "Cor individual"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:85
 msgid "ヘッダー背景カラー"
-msgstr ""
+msgstr "Cor de fundo do cabeçalho"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:99
 msgid "ヘッダーテキストカラー"
-msgstr ""
+msgstr "Cor do texto do cabeçalho"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:113
 msgid "グローバルナビ背景カラー"
-msgstr ""
+msgstr "Cor de fundo da navegação global"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:127
 msgid "グローバルナビテキストカラー"
-msgstr ""
+msgstr "Cor do texto da navegação global"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:141
 msgid "フッター背景カラー"
-msgstr ""
+msgstr "Cor de fundo do rodapé"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:149
 msgid "グローバルナビメニューデザイン"
-msgstr ""
+msgstr "Design do menu de navegação global"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:157
 msgid "hoverエフェクト"
-msgstr ""
+msgstr "Efeito hover"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:162
 msgid "背景明るく"
-msgstr ""
+msgstr "Fundo claro"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:163
 msgid "ライン（中央から）"
-msgstr ""
+msgstr "Linha (do centro)"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:164
 msgid "ライン（左から）"
-msgstr ""
+msgstr "Linha (da esquerda)"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:171
 msgid "見出しデザイン"
-msgstr ""
+msgstr "Design do cabeçalho"
 
 #: skins/skin-made-in-heaven/lib/panel-color.php:247
 msgid "スライドインメニュータイトル"
-msgstr ""
+msgstr "Título do menu deslizante"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:24
 #: blocks/src/toolbutton/dropdown-letters.js:25
@@ -13623,11 +13623,11 @@ msgstr "Listras"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:114
 msgid "インラインボタン"
-msgstr ""
+msgstr "Botão inline"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:156
 msgid "リスト丸数字"
-msgstr ""
+msgstr "Lista de números circulares"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:178
 #: skins/skin-made-in-heaven/lib/panel-editor.php:199
@@ -13635,7 +13635,7 @@ msgstr ""
 #: skins/skin-made-in-heaven/lib/panel-editor.php:243
 #: skins/skin-made-in-heaven/lib/panel-main.php:200
 msgid "スタイル"
-msgstr ""
+msgstr "Estilo"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:183
 #: blocks/src/block-extension/style-extension/style02.js:70
@@ -13644,7 +13644,7 @@ msgstr "Círculo"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:184
 msgid "四角"
-msgstr ""
+msgstr "Quadrado"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:191
 #: blocks/src/block/icon-box/index.js:22
@@ -13653,11 +13653,11 @@ msgstr "Caixa de ícones"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:204
 msgid "塗りつぶし"
-msgstr ""
+msgstr "Preenchimento"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:205
 msgid "枠"
-msgstr ""
+msgstr "Borda"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:206
 #: blocks/src/block-extension/style-extension/style01.js:110
@@ -13672,15 +13672,15 @@ msgstr "Caixa de aba"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:226
 msgid "見出し(標準)"
-msgstr ""
+msgstr "Cabeçalho (padrão)"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:227
 msgid "見出し(枠上)"
-msgstr ""
+msgstr "Cabeçalho (acima da borda)"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:228
 msgid "見出し(枠中)"
-msgstr ""
+msgstr "Cabeçalho (dentro da borda)"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:235
 #: blocks/src/block/faq/index.js:20
@@ -13689,310 +13689,310 @@ msgstr "FAQ"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:248
 msgid "標準"
-msgstr ""
+msgstr "Padrão"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:250
 msgid "丸型ラベル"
-msgstr ""
+msgstr "Etiqueta circular"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:16
 msgid "拡張"
-msgstr ""
+msgstr "Extensão"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:24
 msgid "ローディン画面"
-msgstr ""
+msgstr "Tela de carregamento"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:71
 msgid "拡張タイプ"
-msgstr ""
+msgstr "Tipo de extensão"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:86
 msgid "「新着記事」タブ表示"
-msgstr ""
+msgstr "Exibir aba \"Novos artigos\""
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:101
 msgid "カテゴリーごと（2、3カラム）縦型カード"
-msgstr ""
+msgstr "Cartão vertical por categoria (2, 3 colunas)"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:116
 msgid "カテゴリーごと背景色"
-msgstr ""
+msgstr "Cor de fundo por categoria"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:153
 msgid "カード四角"
-msgstr ""
+msgstr "Cartão quadrado"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:168
 msgid "カード枠"
-msgstr ""
+msgstr "Borda do cartão"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:183
 msgid "コンテンツ枠"
-msgstr ""
+msgstr "Borda do conteúdo"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:205
 msgid "シンプル"
-msgstr ""
+msgstr "Simples"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:207
 msgid "上下線"
-msgstr ""
+msgstr "Linhas superior e inferior"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:220
 msgid "省略表示"
-msgstr ""
+msgstr "Exibição abreviada"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:226
 msgid "行以上"
-msgstr ""
+msgstr "Mais de linhas"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:227
 msgid "見出しH3"
-msgstr ""
+msgstr "Cabeçalho H3"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:240
 msgid "スクロール追従ハイライト"
-msgstr ""
+msgstr "Destaque de rolagem"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:255
 msgid "目次ボタン"
-msgstr ""
+msgstr "Botão de índice"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:272
 msgid "背景画像"
-msgstr ""
+msgstr "Imagem de fundo"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:287
 msgid "サイト開設日"
-msgstr ""
+msgstr "Data de criação do site"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:302
 msgid "サイト開設経過日数"
-msgstr ""
+msgstr "Dias desde a criação do site"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:317
 msgid "プロフィールボタン表示"
-msgstr ""
+msgstr "Exibir botão de perfil"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:332
 msgid "SNSフォロー表示"
-msgstr ""
+msgstr "Exibir seguir nas redes sociais"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:16
 #: skins/skin-made-in-heaven/lib/panel-option.php:23
 msgid "オプション"
-msgstr ""
+msgstr "Opções"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:34
 msgid "NEWマーク(0～5日、0はオフ)"
-msgstr ""
+msgstr "Marca NOVO (0-5 dias, 0 é desligado)"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:54
 msgid "いいねボタン"
-msgstr ""
+msgstr "Botão de curtir"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:69
 msgid "縦アイキャッチ背景ぼかし"
-msgstr ""
+msgstr "Desfoque de fundo vertical"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:99
 msgid "アコーディオン化"
-msgstr ""
+msgstr "Transformar em acordeão"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:114
 msgid "通知エリア固定"
-msgstr ""
+msgstr "Fixar área de notificação"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:129
 msgid "通知メッセージ横スクロール"
-msgstr ""
+msgstr "Rolagem horizontal da mensagem de notificação"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:144
 msgid "評価・ランキングハート"
-msgstr ""
+msgstr "Avaliação e classificação com coração"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:155
 msgid "約5:8"
-msgstr ""
+msgstr "Aproximadamente 5:8"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:157
 msgid "約5:7"
-msgstr ""
+msgstr "Aproximadamente 5:7"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:170
 msgid "サムネイル画像の比率（"
-msgstr ""
+msgstr "Proporção da imagem em miniatura ("
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:187
 msgid "並び替え選択"
-msgstr ""
+msgstr "Opção de ordenação"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:208
 msgid "「もっと見る」テキスト"
-msgstr ""
+msgstr "Texto \"Carregar mais\""
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:229
 msgid "「次のページ」テキスト"
-msgstr ""
+msgstr "Texto \"Próxima página\""
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:250
 msgid "パンくずリストテキスト"
-msgstr ""
+msgstr "Texto da lista de navegação"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:270
 msgid "フロントページタイトル変更"
-msgstr ""
+msgstr "Alterar título da página inicial"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:306
 msgid "新着・更新された記事です"
-msgstr ""
+msgstr "Artigos novos e atualizados"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:349
 msgid "本日読まれている記事です"
-msgstr ""
+msgstr "Artigos lidos hoje"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:392
 msgid "カテゴリーから記事を探す"
-msgstr ""
+msgstr "Procurar artigos por categoria"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:420
 msgid "コメントアイコン選択・表示"
-msgstr ""
+msgstr "Selecionar e exibir ícone de comentário"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:16
 #: skins/skin-made-in-heaven/lib/panel-visual.php:71
 msgid "メインビジュアル"
-msgstr ""
+msgstr "Visual principal"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:47
 msgid "メインビジュアル表示"
-msgstr ""
+msgstr "Exibir visual principal"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:62
 msgid "ヘッダー表示"
-msgstr ""
+msgstr "Exibir cabeçalho"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:84
 #: skins/skin-made-in-heaven/lib/panel-visual.php:189
 msgid "動画"
-msgstr ""
+msgstr "Vídeo"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:101
 msgid "タイトルテキスト"
-msgstr ""
+msgstr "Texto do título"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:139
 msgid "テキスト縦書き"
-msgstr ""
+msgstr "Texto vertical"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:154
 msgid "Scrollボタン"
-msgstr ""
+msgstr "Botão de rolagem"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:160
 msgid "線"
-msgstr ""
+msgstr "Linha"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:161
 msgid "矢印"
-msgstr ""
+msgstr "Seta"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:174
 msgid "波線"
-msgstr ""
+msgstr "Linha ondulada"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:220
 msgid "スライドオプション"
-msgstr ""
+msgstr "Opções de slide"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:228
 msgid "スライド切り替え"
-msgstr ""
+msgstr "Troca de slide"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:233
 msgid "フェード"
-msgstr ""
+msgstr "Desvanecer"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:234
 msgid "横"
-msgstr ""
+msgstr "Horizontal"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:235
 msgid "縦"
-msgstr ""
+msgstr "Vertical"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:236
 msgid "横分割"
-msgstr ""
+msgstr "Divisão horizontal"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:237
 msgid "縦分割"
-msgstr ""
+msgstr "Divisão vertical"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:250
 msgid "スライド中のズーム"
-msgstr ""
+msgstr "Zoom durante o slide"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:256
 msgid "イン"
-msgstr ""
+msgstr "Aproximar"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:257
 msgid "アウト"
-msgstr ""
+msgstr "Afastar"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:264
 msgid "フィルター"
-msgstr ""
+msgstr "Filtro"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:277
 msgid "ドット黒"
-msgstr ""
+msgstr "Pontos pretos"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:278
 msgid "ドット白"
-msgstr ""
+msgstr "Pontos brancos"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:279
 msgid "走査線横"
-msgstr ""
+msgstr "Linhas de varredura horizontais"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:287
 msgid "オーバーレイ"
-msgstr ""
+msgstr "Sobreposição"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:295
 msgid "メインビジュアルに被せるカラーレイヤー"
-msgstr ""
+msgstr "Camada de cor sobre o visual principal"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:312
 msgid "不透明度(opacity値0～50%)"
-msgstr ""
+msgstr "Opacidade (valor de 0 a 50%)"
 
 #: skins/skin-made-in-heaven/tmp/css-custom.php:13
 msgid "過去の投稿"
-msgstr ""
+msgstr "Postagens anteriores"
 
 #: skins/skin-made-in-heaven/tmp/css-custom.php:14
 msgid "新しい投稿"
-msgstr ""
+msgstr "Novas postagens"
 
 #: skins/skin-made-in-heaven/tmp/css-custom.php:15
 msgid "スクロールできます→"
-msgstr ""
+msgstr "Pode rolar →"
 
 #: skins/skin-made-in-heaven/tmp/css-custom.php:16
 msgid "お勧め"
-msgstr ""
+msgstr "Recomendado"
 
 #: skins/skin-made-in-heaven/tmp/list-category-columns.php:31
 msgid "更新記事"
-msgstr ""
+msgstr "Artigos atualizados"
 
 #: skins/skin-made-in-heaven/tmp/list-category-columns.php:48
 msgid "本日読まれている記事"
-msgstr ""
+msgstr "Artigos lidos hoje"
 
 #. Template Name of the theme
 msgid "bbPress - Create Topic"
