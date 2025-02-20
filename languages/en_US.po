@@ -7053,7 +7053,7 @@ msgstr "Confirmation dialog box"
 msgid "ページ公開前に確認アラートを出す"
 msgstr "Issue a confirmation alert before page publication"
 
-#: lib/page-settings/editor-forms.php:258
+#: lib/page-settings/editor-forms.php:111
 msgid "チェックボックスをデフォルトで選択する"
 msgstr "Set the checkbox as selected by default"
 
