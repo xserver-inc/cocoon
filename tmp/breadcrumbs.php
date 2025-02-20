@@ -11,22 +11,23 @@ if ( !defined( 'ABSPATH' ) ) exit; // WordPress の直接実行を防止
 // パンくずリストの表示条件をチェック
 if (is_single_breadcrumbs_visible() && (is_single() || is_tax() || is_category())) {
 
-  // タクソノミーページの場合
-  if (is_tax()) {
-    $cat = get_queried_object();  // 現在のターム情報を取得
-    $taxonomy = $cat->taxonomy;   // 現在のタクソノミーを取得
-
-    // タクソノミーが階層型でない場合、パンくずを表示しない
-    if (!is_taxonomy_hierarchical($taxonomy)) {
-      return;
-    }
-  }
-
   $cat = null;
+  $post_type = '';
 
-  // 現在の投稿タイプを取得
-  $post_type = get_post_type();
-  // var_dump($post_type);
+  // タクソノミーページ（カテゴリー含む）の場合
+  if (is_tax() || is_category()) {
+    $cat = get_queried_object();  // 現在のタクソノミー情報を取得
+    if ($cat && isset($cat->taxonomy)) {
+      // タクソノミーに紐づく投稿タイプを取得
+      $post_types = get_taxonomy($cat->taxonomy)->object_type;
+      if (!empty($post_types)) {
+        $post_type = reset($post_types); // 先頭の投稿タイプを取得
+      }
+    }
+  } else {
+    // 通常の投稿ページ
+    $post_type = get_post_type();
+  }
 
   // 投稿タイプに関連付けられたタクソノミーを取得
   $taxonomies = get_object_taxonomies($post_type);
