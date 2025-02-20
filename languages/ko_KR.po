@@ -13470,23 +13470,23 @@ msgstr ""
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:388
 msgid "新着順"
-msgstr ""
+msgstr "신착순"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:389
 msgid "更新順"
-msgstr ""
+msgstr "갱신순"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:390
 msgid "人気順"
-msgstr ""
+msgstr "인기순"
 
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:391
 msgid "コメント数順"
-msgstr ""
+msgstr "댓글 수 순"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:12
 msgid "メイド・イン・ヘブン設定"
-msgstr ""
+msgstr "메이드 인 헤븐 설정"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:37
 msgid "ログアウト"
@@ -13495,7 +13495,499 @@ msgstr "로그아웃"
 #: skins/skin-made-in-heaven/lib/hook-wp.php:54
 #: skins/skin-made-in-heaven/lib/hook-wp.php:77
 msgid "Slug"
-msgstr "Slug"
+msgstr "슬러그"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:302
+msgid "ミニ"
+msgstr "미니"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:316
+#: blocks/src/block-extension/style-extension/style02.js:54
+msgid "ステップ"
+msgstr "단계"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:323
+msgid "ビッグ"
+msgstr "빅"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:330
+#: skins/skin-made-in-heaven/lib/panel-main.php:206
+msgid "ボックス"
+msgstr "박스"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:346
+msgid "下線"
+msgstr "밑줄"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:373
+#: skins/skin-made-in-heaven/lib/hook-wp.php:389
+#: skins/skin-made-in-heaven/lib/hook-wp.php:405
+#: blocks/src/layout/column-2/block.js:49
+msgid "2カラム"
+msgstr "2열"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:715
+msgid "カスタムフィールド"
+msgstr "커스텀 필드"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:721
+#: skins/skin-made-in-heaven/lib/hook-wp.php:744
+msgid "アイコン番号"
+msgstr "아이콘 번호"
+
+#: skins/skin-made-in-heaven/lib/hook-wp.php:793
+msgid "メイド・イン・ヘブン"
+msgstr "메이드 인 헤븐"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:16
+#: skins/skin-made-in-heaven/lib/panel-color.php:24
+msgid "基本カラー"
+msgstr "기본 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:35
+msgid "サイトカラー"
+msgstr "사이트 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:52
+#: skins/skin-made-in-heaven/lib/panel-editor.php:164
+msgid "背景カラー"
+msgstr "배경 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:77
+msgid "個別カラー"
+msgstr "개별 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:85
+msgid "ヘッダー背景カラー"
+msgstr "헤더 배경 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:99
+msgid "ヘッダーテキストカラー"
+msgstr "헤더 텍스트 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:113
+msgid "グローバルナビ背景カラー"
+msgstr "글로벌 내비 배경 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:127
+msgid "グローバルナビテキストカラー"
+msgstr "글로벌 내비 텍스트 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:141
+msgid "フッター背景カラー"
+msgstr "푸터 배경 색상"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:149
+msgid "グローバルナビメニューデザイン"
+msgstr "글로벌 내비 메뉴 디자인"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:157
+msgid "hoverエフェクト"
+msgstr "호버 효과"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:162
+msgid "背景明るく"
+msgstr "밝은 배경"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:163
+msgid "ライン（中央から）"
+msgstr "라인(중앙에서)"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:164
+msgid "ライン（左から）"
+msgstr "라인(왼쪽에서)"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:171
+msgid "見出しデザイン"
+msgstr "제목 디자인"
+
+#: skins/skin-made-in-heaven/lib/panel-color.php:247
+msgid "スライドインメニュータイトル"
+msgstr "슬라이드 인 메뉴 제목"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:24
+#: blocks/src/toolbutton/dropdown-letters.js:25
+#: blocks/src/toolbutton/dropdown-letters.js:38
+msgid "文字"
+msgstr "문자"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:76
+#: blocks/src/block-extension/style-extension/style01.js:50
+msgid "ストライプ"
+msgstr "스트라이프"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:114
+msgid "インラインボタン"
+msgstr "인라인 버튼"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:156
+msgid "リスト丸数字"
+msgstr "리스트 동그라미 숫자"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:178
+#: skins/skin-made-in-heaven/lib/panel-editor.php:199
+#: skins/skin-made-in-heaven/lib/panel-editor.php:221
+#: skins/skin-made-in-heaven/lib/panel-editor.php:243
+#: skins/skin-made-in-heaven/lib/panel-main.php:200
+msgid "スタイル"
+msgstr "스타일"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:183
+#: blocks/src/block-extension/style-extension/style02.js:70
+msgid "丸"
+msgstr "동그라미"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:184
+msgid "四角"
+msgstr "사각형"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:191
+#: blocks/src/block/icon-box/index.js:22
+msgid "アイコンボックス"
+msgstr "아이콘 박스"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:204
+msgid "塗りつぶし"
+msgstr "채우기"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:205
+msgid "枠"
+msgstr "테두리"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:206
+#: blocks/src/block-extension/style-extension/style01.js:110
+msgid "付箋"
+msgstr "포스트잇"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:213
+#: blocks/src/block/tab-box/index.js:22
+#: blocks/src/old/tab-box/block.js:21
+msgid "タブボックス"
+msgstr "탭 박스"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:226
+msgid "見出し(標準)"
+msgstr "제목(표준)"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:227
+msgid "見出し(枠上)"
+msgstr "제목(테두리 위)"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:228
+msgid "見出し(枠中)"
+msgstr "제목(테두리 안)"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:235
+#: blocks/src/block/faq/index.js:20
+msgid "FAQ"
+msgstr "FAQ"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:248
+msgid "標準"
+msgstr "표준"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:250
+msgid "丸型ラベル"
+msgstr "동그라미 라벨"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:16
+msgid "拡張"
+msgstr "확장"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:24
+msgid "ローディン画面"
+msgstr "로딩 화면"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:71
+msgid "拡張タイプ"
+msgstr "확장 타입"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:86
+msgid "「新着記事」タブ表示"
+msgstr "「신착 글」탭 표시"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:101
+msgid "カテゴリーごと（2、3カラム）縦型カード"
+msgstr "카테고리별(2, 3열) 세로형 카드"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:116
+msgid "カテゴリーごと背景色"
+msgstr "카테고리별 배경색"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:153
+msgid "カード四角"
+msgstr "카드 사각형"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:168
+msgid "カード枠"
+msgstr "카드 테두리"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:183
+msgid "コンテンツ枠"
+msgstr "콘텐츠 테두리"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:205
+msgid "シンプル"
+msgstr "심플"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:207
+msgid "上下線"
+msgstr "상하선"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:220
+msgid "省略表示"
+msgstr "생략 표시"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:226
+msgid "行以上"
+msgstr "행 이상"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:227
+msgid "見出しH3"
+msgstr "제목 H3"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:240
+msgid "スクロール追従ハイライト"
+msgstr "스크롤 따라가기 하이라이트"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:255
+msgid "目次ボタン"
+msgstr "목차 버튼"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:272
+msgid "背景画像"
+msgstr "배경 이미지"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:287
+msgid "サイト開設日"
+msgstr "사이트 개설일"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:302
+msgid "サイト開設経過日数"
+msgstr "사이트 개설 경과 일수"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:317
+msgid "プロフィールボタン表示"
+msgstr "프로필 버튼 표시"
+
+#: skins/skin-made-in-heaven/lib/panel-main.php:332
+msgid "SNSフォロー表示"
+msgstr "SNS 팔로우 표시"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:16
+#: skins/skin-made-in-heaven/lib/panel-option.php:23
+msgid "オプション"
+msgstr "옵션"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:34
+msgid "NEWマーク(0～5日、0はオフ)"
+msgstr "NEW 마크(0~5일, 0은 끔)"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:54
+msgid "いいねボタン"
+msgstr "좋아요 버튼"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:69
+msgid "縦アイキャッチ背景ぼかし"
+msgstr "세로 아이캐치 배경 흐리기"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:99
+msgid "アコーディオン化"
+msgstr "아코디언화"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:114
+msgid "通知エリア固定"
+msgstr "알림 영역 고정"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:129
+msgid "通知メッセージ横スクロール"
+msgstr "알림 메시지 가로 스크롤"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:144
+msgid "評価・ランキングハート"
+msgstr "평가ㆍ랭킹 하트"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:155
+msgid "約5:8"
+msgstr "약 5:8"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:157
+msgid "約5:7"
+msgstr "약 5:7"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:170
+msgid "サムネイル画像の比率（"
+msgstr "썸네일 이미지 비율("
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:187
+msgid "並び替え選択"
+msgstr "정렬 선택"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:208
+msgid "「もっと見る」テキスト"
+msgstr "\"더 보기\" 텍스트"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:229
+msgid "「次のページ」テキスト"
+msgstr "\"다음 페이지\" 텍스트"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:250
+msgid "パンくずリストテキスト"
+msgstr "빵 부스러기 목록 텍스트"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:270
+msgid "フロントページタイトル変更"
+msgstr "프론트 페이지 제목 변경"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:306
+msgid "新着・更新された記事です"
+msgstr "새로 작성되거나 업데이트된 글입니다"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:349
+msgid "本日読まれている記事です"
+msgstr "오늘 읽힌 글입니다"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:392
+msgid "カテゴリーから記事を探す"
+msgstr "카테고리에서 글 찾기"
+
+#: skins/skin-made-in-heaven/lib/panel-option.php:420
+msgid "コメントアイコン選択・表示"
+msgstr "댓글 아이콘 선택ㆍ표시"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:16
+#: skins/skin-made-in-heaven/lib/panel-visual.php:71
+msgid "メインビジュアル"
+msgstr "메인 비주얼"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:47
+msgid "メインビジュアル表示"
+msgstr "메인 비주얼 표시"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:62
+msgid "ヘッダー表示"
+msgstr "헤더 표시"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:84
+#: skins/skin-made-in-heaven/lib/panel-visual.php:189
+msgid "動画"
+msgstr "동영상"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:101
+msgid "タイトルテキスト"
+msgstr "제목 텍스트"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:139
+msgid "テキスト縦書き"
+msgstr "텍스트 세로쓰기"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:154
+msgid "Scrollボタン"
+msgstr "스크롤 버튼"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:160
+msgid "線"
+msgstr "선"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:161
+msgid "矢印"
+msgstr "화살표"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:174
+msgid "波線"
+msgstr "물결선"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:220
+msgid "スライドオプション"
+msgstr "슬라이드 옵션"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:228
+msgid "スライド切り替え"
+msgstr "슬라이드 전환"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:233
+msgid "フェード"
+msgstr "페이드"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:234
+msgid "横"
+msgstr "가로"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:235
+msgid "縦"
+msgstr "세로"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:236
+msgid "横分割"
+msgstr "가로 분할"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:237
+msgid "縦分割"
+msgstr "세로 분할"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:250
+msgid "スライド中のズーム"
+msgstr "슬라이드 중 줌"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:256
+msgid "イン"
+msgstr "인"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:257
+msgid "アウト"
+msgstr "아웃"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:264
+msgid "フィルター"
+msgstr "필터"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:277
+msgid "ドット黒"
+msgstr "검은 점"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:278
+msgid "ドット白"
+msgstr "흰 점"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:279
+msgid "走査線横"
+msgstr "가로 주사선"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:287
+msgid "オーバーレイ"
+msgstr "오버레이"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:295
+msgid "メインビジュアルに被せるカラーレイヤー"
+msgstr "메인 비주얼에 덮는 컬러 레이어"
+
+#: skins/skin-made-in-heaven/lib/panel-visual.php:312
+msgid "不透明度(opacity値0～50%)"
+msgstr "불투명도(opacity 값 0~50%)"
+
+#: skins/skin-made-in-heaven/tmp/css-custom.php:13
+msgid "過去の投稿"
+msgstr "이전 글"
+
+#: skins/skin-made-in-heaven/tmp/css-custom.php:14
+msgid "新しい投稿"
+msgstr "새 글"
+
+#: skins/skin-made-in-heaven/tmp/css-custom.php:15
+msgid "スクロールできます→"
+msgstr "스크롤 할 수 있습니다→"
+
+#: skins/skin-made-in-heaven/tmp/css-custom.php:16
+msgid "お勧め"
+msgstr "추천"
+
+#: skins/skin-made-in-heaven/tmp/list-category-columns.php:31
+msgid "更新記事"
+msgstr "업데이트된 글"
+
+#: skins/skin-made-in-heaven/tmp/list-category-columns.php:48
+msgid "本日読まれている記事"
+msgstr "오늘 읽힌 글"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:302
 msgid "ミニ"
