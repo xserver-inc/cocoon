@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-20T11:35:37+00:00\n"
-"PO-Revision-Date: 2025-02-20 13:13\n"
+"POT-Creation-Date: 2025-02-25T09:26:24+00:00\n"
+"PO-Revision-Date: 2025-02-25 10:04\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -13621,6 +13621,29 @@ msgstr "Rayas"
 msgid "インラインボタン"
 msgstr "Botón en línea"
 
+#: skins/skin-made-in-heaven/lib/panel-editor.php:138
+#: blocks/src/block/button-wrap/edit.js:112
+#: blocks/src/block/button/edit.js:116
+#: blocks/src/micro/micro-balloon/edit.js:96
+#: blocks/src/old/button-1/block.js:129
+#: blocks/src/old/button-wrap-1/block.js:120
+#: blocks/src/old/micro-balloon-1/block.js:111
+#: blocks/src/old/micro-balloon/block.js:110
+msgid "円形にする"
+msgstr "Redondeado"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:138
+#: blocks/src/block/button-wrap/edit.js:118
+#: blocks/src/block/button/edit.js:122
+#: blocks/src/old/button-1/block.js:135
+#: blocks/src/old/button-wrap-1/block.js:126
+msgid "光らせる"
+msgstr "Brillante"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:138
+msgid "立体にする"
+msgstr "3D"
+
 #: skins/skin-made-in-heaven/lib/panel-editor.php:156
 msgid "リスト丸数字"
 msgstr "Lista de números en círculo"
@@ -14799,23 +14822,6 @@ msgstr "Mediano"
 #: blocks/src/old/button/block.js:186
 msgid "大"
 msgstr "Grande"
-
-#: blocks/src/block/button-wrap/edit.js:112
-#: blocks/src/block/button/edit.js:116
-#: blocks/src/micro/micro-balloon/edit.js:96
-#: blocks/src/old/button-1/block.js:129
-#: blocks/src/old/button-wrap-1/block.js:120
-#: blocks/src/old/micro-balloon-1/block.js:111
-#: blocks/src/old/micro-balloon/block.js:110
-msgid "円形にする"
-msgstr "Redondeado"
-
-#: blocks/src/block/button-wrap/edit.js:118
-#: blocks/src/block/button/edit.js:122
-#: blocks/src/old/button-1/block.js:135
-#: blocks/src/old/button-wrap-1/block.js:126
-msgid "光らせる"
-msgstr "Brillante"
 
 #: blocks/src/block/button-wrap/index.js:24
 #: blocks/src/old/button-wrap-1/block.js:46
