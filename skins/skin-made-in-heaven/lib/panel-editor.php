@@ -135,7 +135,7 @@ function hvn_editor($wp_customize) {
   }
 
 
-  $set = ['円形にする', '光らせる', '立体にする'];
+  $set = [__('円形にする', THEME_NAME), __('光らせる', THEME_NAME), __('立体にする', THEME_NAME)];
   for ($i=0; $i<count($set); $i++) {
     $wp_customize->add_setting('hvn_inline_button_set' . ($i + 1) . '_setting', array('default' => false));
     $wp_customize->add_control(
@@ -143,7 +143,7 @@ function hvn_editor($wp_customize) {
         $wp_customize,
         'hvn_inline_button_set' . ($i + 1) . '_setting',
         array(
-          'label'   => __($set[$i], THEME_NAME),
+          'label'   => $set[$i],
           'section' => "hvn_{$section}_section",
           'settings'=> 'hvn_inline_button_set' . ($i + 1) . '_setting',
           'type'    => 'checkbox',
