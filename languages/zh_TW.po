@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-20T11:35:37+00:00\n"
-"PO-Revision-Date: 2025-02-20 13:13\n"
+"POT-Creation-Date: 2025-02-25T09:26:24+00:00\n"
+"PO-Revision-Date: 2025-02-25 10:04\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -13616,6 +13616,29 @@ msgstr "條紋"
 msgid "インラインボタン"
 msgstr "內嵌按鈕"
 
+#: skins/skin-made-in-heaven/lib/panel-editor.php:138
+#: blocks/src/block/button-wrap/edit.js:112
+#: blocks/src/block/button/edit.js:116
+#: blocks/src/micro/micro-balloon/edit.js:96
+#: blocks/src/old/button-1/block.js:129
+#: blocks/src/old/button-wrap-1/block.js:120
+#: blocks/src/old/micro-balloon-1/block.js:111
+#: blocks/src/old/micro-balloon/block.js:110
+msgid "円形にする"
+msgstr "設為圓形"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:138
+#: blocks/src/block/button-wrap/edit.js:118
+#: blocks/src/block/button/edit.js:122
+#: blocks/src/old/button-1/block.js:135
+#: blocks/src/old/button-wrap-1/block.js:126
+msgid "光らせる"
+msgstr "使其發光"
+
+#: skins/skin-made-in-heaven/lib/panel-editor.php:138
+msgid "立体にする"
+msgstr "三維"
+
 #: skins/skin-made-in-heaven/lib/panel-editor.php:156
 msgid "リスト丸数字"
 msgstr "列表圓形數字"
@@ -14794,23 +14817,6 @@ msgstr "中"
 #: blocks/src/old/button/block.js:186
 msgid "大"
 msgstr "大"
-
-#: blocks/src/block/button-wrap/edit.js:112
-#: blocks/src/block/button/edit.js:116
-#: blocks/src/micro/micro-balloon/edit.js:96
-#: blocks/src/old/button-1/block.js:129
-#: blocks/src/old/button-wrap-1/block.js:120
-#: blocks/src/old/micro-balloon-1/block.js:111
-#: blocks/src/old/micro-balloon/block.js:110
-msgid "円形にする"
-msgstr "設為圓形"
-
-#: blocks/src/block/button-wrap/edit.js:118
-#: blocks/src/block/button/edit.js:122
-#: blocks/src/old/button-1/block.js:135
-#: blocks/src/old/button-wrap-1/block.js:126
-msgid "光らせる"
-msgstr "使其發光"
 
 #: blocks/src/block/button-wrap/index.js:24
 #: blocks/src/old/button-wrap-1/block.js:46
