@@ -1165,6 +1165,8 @@ function generate_widget_entries_tag($atts){
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
+    'posted_date' => 0,
+    'updated_date' => 0,
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
@@ -1347,6 +1349,16 @@ function generate_widget_entries_tag($atts){
     if ($snippet) {
       $atts += array(
         'snippet' => get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() ),
+      );
+    }
+    if ($posted_date) {
+      $atts += array(
+        'posted_date' => get_the_date(),
+      );
+    }
+    if ($updated_date) {
+      $atts += array(
+        'updated_date' => get_the_modified_date(),
       );
     }
     //var_dump($atts);
@@ -1580,6 +1592,8 @@ function get_widget_entry_card_link_tag($atts){
     'url' => null,
     'title' => null,
     'snippet' => null,
+    'posted_date' => null,
+    'updated_date' => null,
     'thumb_size' => null,
     'image_attributes' => null,
     'ribbon_no' => null,
@@ -1666,6 +1680,22 @@ function get_widget_entry_card_link_tag($atts){
         if (!is_widget_navi_entry_card_prefix($prefix)) {
           generate_widget_entry_card_date($prefix);
         } ?>
+
+        <?php if($posted_date || $updated_date): ?>
+        <div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date">
+          <?php if($posted_date): ?>
+          <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date">
+            <span class="post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><?php echo get_the_time('Y/m/d'); ?>  
+          </span>
+          <?php endif; ?>
+          <?php if($updated_date): ?>
+          <span class="<?php echo $prefix; ?>-entry-card-update-date widget-entry-card-update-date post-update">
+            <span class="post-update"><span class="fa fa-history" aria-hidden="true"></span><?php echo get_the_modified_time('Y/m/d'); ?>
+          </span>
+          <?php endif; ?>
+        </div>
+        <?php endif; ?>
+
       </div><!-- /.entry-content -->
     </div><!-- /.entry-card -->
   </a><!-- /.entry-card-link -->

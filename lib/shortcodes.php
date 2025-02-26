@@ -49,6 +49,8 @@ function new_entries_shortcode($atts) {
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
+    'posted_date' => 0, // 追加
+    'updated_date' => 0, // 追加
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
@@ -105,6 +107,8 @@ function new_entries_shortcode($atts) {
     'arrow' => $arrow,
     'class' => $class,
     'snippet' => $snippet,
+    'posted_date' => $posted_date,
+    'updated_date' => $updated_date,
     'author' => $author,
     'offset' => $offset,
     'horizontal' => $horizontal,
