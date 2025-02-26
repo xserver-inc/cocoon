@@ -1127,25 +1127,26 @@ function generate_popular_entries_tag($atts){
           <?php echo $pv_tag; ?>
         <?php endif ?>
         <?php generate_widget_entry_card_date('popular', $post->ID); ?>
+
+        <?php if($posted_date || $updated_date): ?>
+        <div class="popular-entry-card-date widget-entry-card-date">
+          <?php if($posted_date): ?>
+          <span class="popular-entry-card-post-date widget-entry-card-post-date post-date">
+            <span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_time('Y/m/d'); ?></span>
+          </span>
+          <?php endif; ?>
+          <?php if($updated_date): ?>
+          <span class="popular-entry-card-update-date widget-entry-card-update-date post-update">
+            <span class="fa fa-history" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_modified_time('Y/m/d'); ?></span>
+          </span>
+          <?php endif; ?>
+        </div>
+        <?php endif; ?>
+
       </div><!-- /.popular-entry-content -->
       <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
         <?php echo $pv_tag; ?>
       <?php endif ?>
-
-      <?php if($posted_date || $updated_date): ?>
-      <div class="popular-entry-card-date widget-entry-card-date">
-        <?php if($posted_date): ?>
-        <span class="popular-entry-card-post-date widget-entry-card-post-date post-date">
-          <span class="post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><?php echo get_the_time('Y/m/d'); ?>  
-        </span>
-        <?php endif; ?>
-        <?php if($updated_date): ?>
-        <span class="popular-entry-card-update-date widget-entry-card-update-date post-update">
-          <span class="post-update"><span class="fa fa-history" aria-hidden="true"></span><?php echo get_the_modified_time('Y/m/d'); ?>
-        </span>
-        <?php endif; ?>
-      </div>
-      <?php endif; ?>
 
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
@@ -1714,12 +1715,12 @@ function get_widget_entry_card_link_tag($atts){
         <div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date">
           <?php if($posted_date): ?>
           <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date">
-            <span class="post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><?php echo get_the_time('Y/m/d'); ?>  
+            <span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_time('Y/m/d'); ?></span>
           </span>
           <?php endif; ?>
           <?php if($updated_date): ?>
           <span class="<?php echo $prefix; ?>-entry-card-update-date widget-entry-card-update-date post-update">
-            <span class="post-update"><span class="fa fa-history" aria-hidden="true"></span><?php echo get_the_modified_time('Y/m/d'); ?>
+            <span class="fa fa-history" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_modified_time('Y/m/d'); ?></span>
           </span>
           <?php endif; ?>
         </div>
