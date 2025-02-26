@@ -2793,6 +2793,12 @@ label.screen-reader-text {
   overflow: hidden;
 }
 
+/* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整 */
+.widget-entry-card-date {
+  margin-top: 3px;
+  margin-left: 6px;
+}
+
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
@@ -11543,6 +11549,11 @@ _:-ms-lang(x), .mc-circle {
   }
   #navi .navi-in > .menu-mobile li a:after {
     display: none;
+  }
+  /* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整（モバイル） */
+  .widget-entry-card-date {
+    margin-top: 1px;
+    margin-left: 0;
   }
   .slicknav_menu {
     display: block;

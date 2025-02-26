@@ -430,6 +430,7 @@ body.wp-admin {
   /************************************
   ** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
   ************************************/
+  /* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整 */
   /************************************
   ** 新着記事ウィジェット（大きなサムネイル）
   ************************************/
@@ -683,6 +684,7 @@ body.wp-admin {
   /************************************
   ** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
   ************************************/
+  /* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整 */
   /************************************
   ** 新着記事ウィジェット（大きなサムネイル）
   ************************************/
@@ -2992,6 +2994,10 @@ body.wp-admin {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
+}
+.admin-settings .demo .widget-entry-card-date {
+  margin-top: 3px;
+  margin-left: 6px;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
@@ -11536,6 +11542,10 @@ body.wp-admin {
   -webkit-line-clamp: 4;
   overflow: hidden;
 }
+.admin-settings .demo .widget-entry-card-date {
+  margin-top: 3px;
+  margin-left: 6px;
+}
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
 }
@@ -18918,6 +18928,7 @@ body.wp-admin {
 }
 @media screen and (max-width: 1023px) {
   .admin-settings .demo {
+    /* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整（モバイル） */
     /* モバイルヘッダー高さ分、余白を設ける */
     /* adminバーがある場合、その余白分を除いた余白とする */
   }
@@ -19051,6 +19062,10 @@ body.wp-admin {
   }
   .admin-settings .demo #navi .navi-in > .menu-mobile li a:after {
     display: none;
+  }
+  .admin-settings .demo .widget-entry-card-date {
+    margin-top: 1px;
+    margin-left: 0;
   }
   .admin-settings .demo .slicknav_menu {
     display: block;
