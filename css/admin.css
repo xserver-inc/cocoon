@@ -2998,6 +2998,23 @@ body.wp-admin {
 .admin-settings .demo .widget-entry-card-date {
   margin-top: 3px;
   margin-left: 6px;
+  /* アイコンと日付がディスプレイ幅で分断されないように調整 */
+  /* 「横並び表示にする」設定時の調整 */
+}
+.admin-settings .demo .widget-entry-card-date .post-date,
+.admin-settings .demo .widget-entry-card-date .post-update {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper .admin-settings .demo .widget-entry-card-date {
+  margin-top: 0;
+  margin-left: 0;
+}
+.swiper .admin-settings .demo .widget-entry-card-date .post-date,
+.swiper .admin-settings .demo .widget-entry-card-date .post-update {
+  font-size: 0.6em;
+  margin-right: 3px;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
@@ -11545,6 +11562,23 @@ body.wp-admin {
 .admin-settings .demo .widget-entry-card-date {
   margin-top: 3px;
   margin-left: 6px;
+  /* アイコンと日付がディスプレイ幅で分断されないように調整 */
+  /* 「横並び表示にする」設定時の調整 */
+}
+.admin-settings .demo .widget-entry-card-date .post-date,
+.admin-settings .demo .widget-entry-card-date .post-update {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper .admin-settings .demo .widget-entry-card-date {
+  margin-top: 0;
+  margin-left: 0;
+}
+.swiper .admin-settings .demo .widget-entry-card-date .post-date,
+.swiper .admin-settings .demo .widget-entry-card-date .post-update {
+  font-size: 0.6em;
+  margin-right: 3px;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
