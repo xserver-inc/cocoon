@@ -77,6 +77,22 @@ function get_the_site_logo_url(){
 }
 endif;
 
+//サイトロゴ（ヘッダー固定時）
+define('OP_THE_FIXED_SITE_LOGO_URL', 'the_fixed_site_logo_url');
+if ( !function_exists( 'get_the_fixed_site_logo_url' ) ):
+function get_the_fixed_site_logo_url(){
+  return get_theme_option(OP_THE_FIXED_SITE_LOGO_URL, '');
+}
+endif;
+
+//サイトロゴ（モバイル用）
+define('OP_THE_MOBILE_SITE_LOGO_URL', 'the_mobile_site_logo_url');
+if ( !function_exists( 'get_the_mobile_site_logo_url' ) ):
+function get_the_mobile_site_logo_url(){
+  return get_theme_option(OP_THE_MOBILE_SITE_LOGO_URL, '');
+}
+endif;
+
 //サイトロゴ幅
 define('OP_THE_SITE_LOGO_WIDTH', 'the_site_logo_width');
 if ( !function_exists( 'get_the_site_logo_width' ) ):
@@ -90,6 +106,22 @@ define('OP_THE_SITE_LOGO_HEIGHT', 'the_site_logo_height');
 if ( !function_exists( 'get_the_site_logo_height' ) ):
 function get_the_site_logo_height(){
   return get_theme_option(OP_THE_SITE_LOGO_HEIGHT, '');
+}
+endif;
+
+//サイトロゴ幅（モバイル）
+define('OP_THE_MOBILE_SITE_LOGO_WIDTH', 'the_mobile_site_logo_width');
+if ( !function_exists( 'get_the_mobile_site_logo_width' ) ):
+function get_the_mobile_site_logo_width(){
+  return get_theme_option(OP_THE_MOBILE_SITE_LOGO_WIDTH, '');
+}
+endif;
+
+//サイトロゴ高さ（モバイル）
+define('OP_THE_MOBILE_SITE_LOGO_HEIGHT', 'the_mobile_site_logo_height');
+if ( !function_exists( 'get_the_mobile_site_logo_height' ) ):
+function get_the_mobile_site_logo_height(){
+  return get_theme_option(OP_THE_MOBILE_SITE_LOGO_HEIGHT, '');
 }
 endif;
 

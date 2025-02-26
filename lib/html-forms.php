@@ -400,11 +400,21 @@ function generate_the_site_logo_tag($is_header = true){
     $class = ' logo-footer';
   }
 
+  // ロゴ画像のURLを取得
   $logo_url = get_the_site_logo_url();
-  $footer_logo_ur = get_footer_logo_url();
-  if (!$is_header && $footer_logo_ur) {
-    $logo_url = $footer_logo_ur;
+  $fixed_logo_url = get_the_fixed_site_logo_url();
+  $mobile_logo_url = get_the_mobile_site_logo_url();
+  $footer_logo_url = get_footer_logo_url();
+
+  if (!$is_header && $footer_logo_url) {
+    $logo_url = $footer_logo_url;
   }
+
+  // モバイルの場合はモバイル用のロゴ画像URLを取得
+  if ($is_header && is_mobile() && $mobile_logo_url) {
+    $logo_url = $mobile_logo_url;
+  }
+
   if ( $logo_url ) {
     $class .= ' logo-image';
   } else {
@@ -419,12 +429,16 @@ function generate_the_site_logo_tag($is_header = true){
 
   //ロゴの幅設定
   $site_logo_width = get_the_site_logo_width();
+  //モバイル時のロゴの幅設定がある場合は上書き
+  $site_logo_width = is_mobile() ? get_the_mobile_site_logo_width() : $site_logo_width;
   $width_attr = null;
   if ($site_logo_width && $is_header) {
     $width_attr = ' width="'.$site_logo_width.'"';
   }
   //ロゴの高さ設定
   $site_logo_height = get_the_site_logo_height();
+  //モバイル時のロゴの幅設定がある場合は上書き
+  $site_logo_height = is_mobile() ? get_the_mobile_site_logo_height() : $site_logo_height;
   $height_attr = null;
   if ($site_logo_height && $is_header) {
     $height_attr = ' height="'.$site_logo_height.'"';
@@ -445,14 +459,42 @@ function generate_the_site_logo_tag($is_header = true){
   if (!$logo_url) {
     $itemprop = ' itemprop="name about"';
   }
-  $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text"'.$itemprop.'>';
-  $logo_after_tag = '</span></a></'.$tag.'>';
+
+  $no_fixed_class = '';
+  $fixed_class = '';
+  if (!$fixed_logo_url) {
+    $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text"'.$itemprop.'>';
+    $logo_after_tag = '</span></a></'.$tag.'>';
+  } else {
+    // 固定でないヘッダー時のロゴ画像用タグ
+    $no_fixed_class .= ' no-fixed-logo-header';
+    $logo_before_tag = '<'.$tag.' class="logo'.$class.$no_fixed_class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text"'.$itemprop.'>';
+    $logo_after_tag = '</span></a></'.$tag.'>';
+    // 固定ヘッダー時のロゴ画像用タグ
+    $fixed_class .= ' fixed-logo-header';
+    $fixed_logo_before_tag = '<'.$tag.' class="logo'.$class.$fixed_class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text"'.$itemprop.'>';
+    $fixed_logo_after_tag = '</span></a></'.$tag.'>';
+  }
+
   if ($logo_url) {
     $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'><meta itemprop="name about" content="' . esc_attr($site_logo_text) . '">';
   } else {
     $site_logo_tag = esc_html($site_logo_text);
   }
-  $all_tag = $logo_before_tag.$site_logo_tag.$logo_after_tag;
+  
+  // 固定ヘッダー時のロゴ画像がある場合
+  if ($fixed_logo_url) {
+    $site_fixed_logo_tag = '<img class="site-fixed-logo-image '.$img_class.'" src="'.$fixed_logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'><meta itemprop="name about" content="' . esc_attr($site_logo_text) . '">';
+  }
+
+  if ((!$fixed_logo_url)) {
+    // 固定ヘッダー時のロゴ画像がない場合
+    $all_tag = $logo_before_tag.$site_logo_tag.$logo_after_tag;
+  } else {
+    // 固定ヘッダー時のロゴ画像がある場合
+    $all_tag = $logo_before_tag.$site_logo_tag.$logo_after_tag.$fixed_logo_before_tag.$site_fixed_logo_tag.$fixed_logo_after_tag;
+  }
+
   echo apply_filters( 'the_site_logo_tag', $all_tag, $is_header, $home_url, $site_logo_text, $site_logo_width, $site_logo_height );
 }
 endif;

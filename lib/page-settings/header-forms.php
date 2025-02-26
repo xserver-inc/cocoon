@@ -99,7 +99,30 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
-
+        <!-- ヘッダーロゴ（ヘッダー固定時） -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_THE_FIXED_SITE_LOGO_URL, __( 'ヘッダーロゴ（ヘッダー固定時）', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_upload_image_tag(OP_THE_FIXED_SITE_LOGO_URL, get_the_fixed_site_logo_url());
+            generate_tips_tag(__( 'ヘッダー固定時でのヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+        <!-- ヘッダーロゴ（モバイル用） -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_THE_MOBILE_SITE_LOGO_URL, __( 'ヘッダーロゴ（モバイル）', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_upload_image_tag(OP_THE_MOBILE_SITE_LOGO_URL, get_the_mobile_site_logo_url());
+            generate_tips_tag(__( 'モバイルでのヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
 
         <!-- ヘッダーロゴサイズ -->
         <tr>
@@ -114,6 +137,22 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             _e( '高さ：', THEME_NAME );
             generate_number_tag(OP_THE_SITE_LOGO_HEIGHT,  get_the_site_logo_height(), '', 0, 800);
             generate_tips_tag(__( 'ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+        <!-- ヘッダーロゴサイズ（モバイル） -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'ヘッダーロゴサイズ（モバイル）', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            _e( '幅：', THEME_NAME );
+            generate_number_tag(OP_THE_MOBILE_SITE_LOGO_WIDTH,  get_the_mobile_site_logo_width(), '', 0, 1600);
+            _e( ' × ', THEME_NAME );
+            _e( '高さ：', THEME_NAME );
+            generate_number_tag(OP_THE_MOBILE_SITE_LOGO_HEIGHT,  get_the_mobile_site_logo_height(), '', 0, 800);
+            generate_tips_tag(__( 'モバイルでのロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。', THEME_NAME ));
             ?>
           </td>
         </tr>
