@@ -1027,6 +1027,8 @@ function generate_popular_entries_tag($atts){
     'exclude_cat_ids' => array(),
     'bold' => 0,
     'arrow' => 0,
+    'posted_date' => 0,
+    'updated_date' => 0,
     'class' => null,
     'snippet' => 0,
     'author' => null,
@@ -1096,6 +1098,17 @@ function generate_popular_entries_tag($atts){
         $pv_text = apply_filters('popular_entry_card_pv_text', $pv_text, $pv, $pv_unit);
         $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
       }
+
+      if ($posted_date) {
+        $atts += array(
+          'posted_date' => get_the_date(),
+        );
+      }
+      if ($updated_date) {
+        $atts += array(
+          'updated_date' => get_the_modified_date(),
+        );
+      }
       ?>
   <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>">
     <div <?php post_class( array('post-'.$post->ID, 'popular-entry-card', 'widget-entry-card', 'e-card', 'cf'), $post->ID ); ?>>
@@ -1118,6 +1131,22 @@ function generate_popular_entries_tag($atts){
       <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
         <?php echo $pv_tag; ?>
       <?php endif ?>
+
+      <?php if($posted_date || $updated_date): ?>
+      <div class="popular-entry-card-date widget-entry-card-date">
+        <?php if($posted_date): ?>
+        <span class="popular-entry-card-post-date widget-entry-card-post-date post-date">
+          <span class="post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><?php echo get_the_time('Y/m/d'); ?>  
+        </span>
+        <?php endif; ?>
+        <?php if($updated_date): ?>
+        <span class="popular-entry-card-update-date widget-entry-card-update-date post-update">
+          <span class="post-update"><span class="fa fa-history" aria-hidden="true"></span><?php echo get_the_modified_time('Y/m/d'); ?>
+        </span>
+        <?php endif; ?>
+      </div>
+      <?php endif; ?>
+
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
 

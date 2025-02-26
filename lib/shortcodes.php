@@ -49,8 +49,8 @@ function new_entries_shortcode($atts) {
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
-    'posted_date' => 0, // 追加
-    'updated_date' => 0, // 追加
+    'posted_date' => 0,
+    'updated_date' => 0,
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
@@ -142,6 +142,8 @@ function popular_entries_shortcode($atts) {
     'ex_cats' => null,
     'bold' => 0,
     'arrow' => 0,
+    'posted_date' => 0,
+    'updated_date' => 0,
     'class' => null,
     'snippet' => 0,
     'author' => null,
@@ -182,6 +184,8 @@ function popular_entries_shortcode($atts) {
     'exclude_cat_ids' => $exclude_cat_ids,
     'bold' => $bold,
     'arrow' => $arrow,
+    'posted_date' => $posted_date,
+    'updated_date' => $updated_date,
     'class' => $class,
     'snippet' => $snippet,
     'author' => $author,
