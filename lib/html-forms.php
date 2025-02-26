@@ -415,7 +415,7 @@ function generate_the_site_logo_tag($is_header = true){
     $logo_url = $mobile_logo_url;
   }
 
-  if ( $logo_url ) {
+  if ( $logo_url || !$logo_url && $fixed_logo_url ) {
     $class .= ' logo-image';
   } else {
     $class .= ' logo-text';
