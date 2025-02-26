@@ -192,6 +192,13 @@ div.sidebar {
 .widget-entry-card-date {
   margin-top: 1px;
   margin-left: 0;
+    /* アイコンと日付のレイアウトを微調整 */
+    .post-date,
+    .post-update {
+      .fa {
+        margin-top: 1px;
+      }
+    }
 }
 
 ///////////////////////////////////////
