@@ -2797,7 +2797,7 @@ label.screen-reader-text {
 .widget-entry-card-date {
   margin-top: 3px;
   margin-left: 6px;
-  /* アイコンと日付がディスプレイ幅で分断されないように調整 */
+  /* アイコンと日付がディスプレイ幅で分断されないように調整 ＆ アイコンと日付のレイアウトを微調整 */
   /* 「横並び表示にする」設定時の調整 */
 }
 .widget-entry-card-date .post-date,
@@ -2805,6 +2805,10 @@ label.screen-reader-text {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+.widget-entry-card-date .post-date .fa,
+.widget-entry-card-date .post-update .fa {
+  margin-top: 2px;
 }
 .swiper .widget-entry-card-date {
   margin-top: 0;
@@ -11571,6 +11575,11 @@ _:-ms-lang(x), .mc-circle {
   .widget-entry-card-date {
     margin-top: 1px;
     margin-left: 0;
+    /* アイコンと日付のレイアウトを微調整 */
+  }
+  .widget-entry-card-date .post-date .fa,
+  .widget-entry-card-date .post-update .fa {
+    margin-top: 1px;
   }
   .slicknav_menu {
     display: block;
