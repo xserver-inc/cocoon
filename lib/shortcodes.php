@@ -119,7 +119,7 @@ function new_entries_shortcode($atts) {
   );
   ob_start();
   generate_widget_entries_tag($atts);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -194,7 +194,7 @@ function popular_entries_shortcode($atts) {
   );
   ob_start();
   generate_popular_entries_tag($atts);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
