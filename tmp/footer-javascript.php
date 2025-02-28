@@ -122,6 +122,10 @@ if (!is_amp()): ?>
           'width': '100%',
         });
 
+        /* ヘッダー固定設定時のロゴの切り替え */
+        $("#header-container .no-fixed-logo-header").hide();
+        $("#header-container .fixed-logo-header").show();
+
         const wpadminbar = document.getElementById('wpadminbar');
         const headerContainerTop = wpadminbar ? wpadminbar.clientHeight : 0;
 
@@ -146,6 +150,10 @@ if (!is_amp()): ?>
           'left': 'auto',
           'width': 'auto',
         });
+
+        /* ヘッダー固定設定時のロゴの切り替え */
+        $("#header-container .no-fixed-logo-header").show();
+        $("#header-container .fixed-logo-header").hide();
 
         /* ヘッダーの高さの戻る分、padding削除しスクロール位置を止まらせる */
         $("#header-fixed").css({

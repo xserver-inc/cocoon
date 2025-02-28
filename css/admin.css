@@ -1463,6 +1463,9 @@ body.wp-admin {
   padding: 10px 0;
   font-size: inherit;
 }
+.admin-settings .demo .fixed-logo-header {
+  display: none;
+}
 .admin-settings .demo .header-container-in.hlt-top-menu {
   display: flex;
   justify-content: space-between;
@@ -10030,6 +10033,9 @@ body.wp-admin {
 .admin-settings .demo .logo-image {
   padding: 10px 0;
   font-size: inherit;
+}
+.admin-settings .demo .fixed-logo-header {
+  display: none;
 }
 .admin-settings .demo .header-container-in.hlt-top-menu {
   display: flex;

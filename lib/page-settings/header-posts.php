@@ -22,11 +22,23 @@ update_theme_option(OP_MOBILE_HEADER_AREA_HEIGHT);
 //サイトロゴ
 update_theme_option(OP_THE_SITE_LOGO_URL);
 
+//サイトロゴ（ヘッダー固定時）
+update_theme_option(OP_THE_FIXED_SITE_LOGO_URL);
+
+//モバイル用サイトロゴ
+update_theme_option(OP_THE_MOBILE_SITE_LOGO_URL);
+
 //サイトロゴ幅
 update_theme_option(OP_THE_SITE_LOGO_WIDTH);
 
 //サイトロゴ高さ
 update_theme_option(OP_THE_SITE_LOGO_HEIGHT);
+
+//サイトロゴ幅（モバイル）
+update_theme_option(OP_THE_MOBILE_SITE_LOGO_WIDTH);
+
+//サイトロゴ高さ（モバイル）
+update_theme_option(OP_THE_MOBILE_SITE_LOGO_HEIGHT);
 
 //キャッチフレーズ位置
 update_theme_option(OP_TAGLINE_POSITION);

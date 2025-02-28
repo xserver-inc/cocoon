@@ -520,6 +520,24 @@ if ($site_logo_width = get_the_site_logo_width()): ?>
   height: auto;
 }
 <?php endif ?>
+<?php //ヘッダーロゴ高さ（モバイル）
+if ($site_mobile_logo_height = get_the_mobile_site_logo_height()): ?>
+@media screen and (max-width: 1023px){
+  .logo-header img{
+    height: <?php echo $site_mobile_logo_height; ?>px;
+    width: auto;
+  }
+}
+<?php endif ?>
+<?php //ヘッダーロゴ幅（モバイル）
+if ($site_mobile_logo_width = get_the_mobile_site_logo_width()): ?>
+@media screen and (max-width: 1023px){
+  .logo-header img{
+    width: <?php echo $site_mobile_logo_width; ?>px;
+    height: auto;
+  }
+}
+<?php endif ?>
 <?php //モバイルのヘッダーの高さ
 if ($mhah = get_mobile_header_area_height()): ?>
 @media screen and (max-width: 834px){
