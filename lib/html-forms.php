@@ -1633,7 +1633,7 @@ function get_widget_entry_card_link_tag($atts){
     'object_id' => null,
     'horizontal' => 0,
     'target' => null,
-  ), $atts));
+  ), $atts, 'get_widget_entry_card_link_tag'));
 
   $class_text = null;
   if (isset($classes[0]) && !empty($classes[0])) {
