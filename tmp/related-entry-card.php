@@ -26,9 +26,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <?php the_title(); //記事のタイトル?>
     </h3>
     <?php //スニペットの表示
-    if (is_related_entry_card_snippet_visible()): ?>
+    $snippet = get_the_snippet( get_the_content(''), get_related_excerpt_max_length() );
+    if (is_related_entry_card_snippet_visible() && $snippet): ?>
     <div class="related-entry-card-snippet card-snippet e-card-snippet">
-      <?php echo get_the_snippet( get_the_content(''), get_related_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+      <?php echo $snippet; //カスタマイズで指定した文字の長さだけ本文抜粋?>
     </div>
     <?php endif ?>
     <?php do_action( 'related_entry_card_snippet_after', get_the_ID() ); ?>

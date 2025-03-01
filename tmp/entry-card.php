@@ -42,9 +42,10 @@ if (is_entry_card_type_big_card_first() && $count === 1) {
     <div class="entry-card-content card-content e-card-content">
       <h2 class="entry-card-title card-title e-card-title" itemprop="headline"><?php the_title() ?></h2>
       <?php //スニペットの表示
-      if (is_entry_card_snippet_visible()): ?>
+      $snippet = get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() );
+      if (is_entry_card_snippet_visible() && $snippet): ?>
       <div class="entry-card-snippet card-snippet e-card-snippet">
-        <?php echo get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+        <?php echo $snippet; //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <?php endif ?>
       <?php do_action( 'entry_card_snippet_after', get_the_ID() ); ?>
