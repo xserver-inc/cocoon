@@ -1034,7 +1034,7 @@ function generate_popular_entries_tag($atts){
     'author' => null,
     'post_type' => 'post',
     'horizontal' => 0,
-  ), $atts));
+  ), $atts, 'generate_popular_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
   global $_IS_SWIPER_ENABLE;
@@ -1203,7 +1203,7 @@ function generate_widget_entries_tag($atts){
     'ex_posts' => null,
     'ex_cats' => null,
     'ordered_posts' => null,
-  ), $atts));
+  ), $atts, 'generate_widget_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
   global $_IS_SWIPER_ENABLE;
@@ -1882,7 +1882,7 @@ function get_navi_card_wrap_tag($atts){
     'arrow' => 0,
     'class' => null,
     'horizontal' => 0,
-  ), $atts));
+  ), $atts, 'get_navi_card_wrap_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
   global $_IS_SWIPER_ENABLE;
@@ -1911,7 +1911,7 @@ function generate_info_list_tag($atts){
     'action' => null,
     'post_type' => 'post',
     'taxonomy' => 'category',
-  ), $atts));
+  ), $atts, 'generate_info_list_tag'));
 
   $args = array(
     'post_type' => $post_type,
