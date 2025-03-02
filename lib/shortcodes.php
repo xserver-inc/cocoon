@@ -21,7 +21,7 @@ function author_box_shortcode($atts) {
   $label = sanitize_shortcode_value($label);
   ob_start();
   generate_author_box_tag($id, $label, $is_image_circle);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -290,7 +290,7 @@ function item_ranking_shortcode($atts) {
 
     ob_start();
     generate_item_ranking_tag($id);
-    return ob_get_clean();
+    return (ob_get_clean());
   }
 
 }
@@ -527,7 +527,7 @@ function sitemap_shortcode( $atts, $content = null ) {
     <?php endif; ?>
   </div>
   <?php
-  return ob_get_clean();
+  return (ob_get_clean());
 }
 endif;
 
@@ -715,7 +715,7 @@ function get_recommend_cards_tag($atts){
       </div><!-- /.recommended-in -->
     </div><!-- /.recommended -->
     <?php
-    $tag = ob_get_clean();
+    $tag = (ob_get_clean());
     return apply_filters('get_recommend_cards_tag', $tag);
   }
 }
@@ -1010,7 +1010,7 @@ function ad_shortcode( $atts ) {
   if (is_ad_shortcode_enable()) {
     ob_start();//バッファリング
     get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
-    return ob_get_clean();
+    return (ob_get_clean());
   }
 }
 endif;
@@ -1057,7 +1057,7 @@ function get_info_list_shortcode($atts){
   );
   ob_start();
   generate_info_list_tag($atts);
-  $tag = ob_get_clean();
+  $tag = (ob_get_clean());
 
   return apply_filters('get_info_list_tag', $tag);
 }
@@ -1163,7 +1163,7 @@ function get_cta_tag($atts, $content = null ){
 
   ob_start();
   cocoon_template_part('tmp/cta-box');
-  $tag = ob_get_clean();
+  $tag = (ob_get_clean());
 
   return apply_filters('get_cta_tag', $tag);
 }
