@@ -49,6 +49,8 @@ function new_entries_shortcode($atts) {
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
+    'posted_date' => 0,
+    'updated_date' => 0,
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
@@ -105,6 +107,8 @@ function new_entries_shortcode($atts) {
     'arrow' => $arrow,
     'class' => $class,
     'snippet' => $snippet,
+    'posted_date' => $posted_date,
+    'updated_date' => $updated_date,
     'author' => $author,
     'offset' => $offset,
     'horizontal' => $horizontal,
@@ -115,7 +119,7 @@ function new_entries_shortcode($atts) {
   );
   ob_start();
   generate_widget_entries_tag($atts);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -138,6 +142,8 @@ function popular_entries_shortcode($atts) {
     'ex_cats' => null,
     'bold' => 0,
     'arrow' => 0,
+    'posted_date' => 0,
+    'updated_date' => 0,
     'class' => null,
     'snippet' => 0,
     'author' => null,
@@ -178,6 +184,8 @@ function popular_entries_shortcode($atts) {
     'exclude_cat_ids' => $exclude_cat_ids,
     'bold' => $bold,
     'arrow' => $arrow,
+    'posted_date' => $posted_date,
+    'updated_date' => $updated_date,
     'class' => $class,
     'snippet' => $snippet,
     'author' => $author,
@@ -186,7 +194,7 @@ function popular_entries_shortcode($atts) {
   );
   ob_start();
   generate_popular_entries_tag($atts);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -1064,7 +1072,8 @@ function get_block_pattern_shortcode($atts) {
     array(
       'id' => null,
     ),
-    $atts
+    $atts,
+    'pattern'
   ));
 
   $content = null;
@@ -1167,7 +1176,8 @@ function get_font_awesome_icon_tag($atts){
     array(
       'class' => '',
     ),
-    $atts
+    $atts,
+    'icon'
   );
 
   return '<span class="' . esc_attr($atts['class']) . '"></span>';

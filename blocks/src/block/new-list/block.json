@@ -69,6 +69,14 @@
       "type": "boolean",
       "default": false
     },
+    "postedDate": {
+      "type": "boolean",
+      "default": false
+    },
+    "updatedDate": {
+      "type": "boolean",
+      "default": false
+    },
     "post_type": {
       "type": "string",
       "default": "post"

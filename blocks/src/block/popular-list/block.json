@@ -45,6 +45,14 @@
       "type": "boolean",
       "default": false
     },
+    "postedDate": {
+      "type": "boolean",
+      "default": false
+    },
+    "updatedDate": {
+      "type": "boolean",
+      "default": false
+    },
     "showAllCats": {
       "type": "boolean",
       "default": true
