@@ -1466,6 +1466,24 @@ body.wp-admin {
 .admin-settings .demo .fixed-logo-header {
   display: none;
 }
+.admin-settings .demo .fixed-header .fixed-logo-header {
+  display: block;
+}
+.admin-settings .demo .fixed-header .no-fixed-logo-header {
+  display: none;
+}
+.admin-settings .demo .no-fixed-logo-header.no-fixed-logo-header-text-only {
+  padding: 20px 0 30px;
+  font-size: 1em;
+}
+@media screen and (max-width: 1023px) {
+  .admin-settings .demo .no-fixed-logo-header {
+    display: none;
+  }
+  .admin-settings .demo .fixed-logo-header {
+    display: block;
+  }
+}
 .admin-settings .demo .header-container-in.hlt-top-menu {
   display: flex;
   justify-content: space-between;
@@ -10036,6 +10054,24 @@ body.wp-admin {
 }
 .admin-settings .demo .fixed-logo-header {
   display: none;
+}
+.admin-settings .demo .fixed-header .fixed-logo-header {
+  display: block;
+}
+.admin-settings .demo .fixed-header .no-fixed-logo-header {
+  display: none;
+}
+.admin-settings .demo .no-fixed-logo-header.no-fixed-logo-header-text-only {
+  padding: 20px 0 30px;
+  font-size: 1em;
+}
+@media screen and (max-width: 1023px) {
+  .admin-settings .demo .no-fixed-logo-header {
+    display: none;
+  }
+  .admin-settings .demo .fixed-logo-header {
+    display: block;
+  }
 }
 .admin-settings .demo .header-container-in.hlt-top-menu {
   display: flex;

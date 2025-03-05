@@ -962,6 +962,27 @@ img.emoji {
   display: none;
 }
 
+.fixed-header .fixed-logo-header {
+  display: block;
+}
+
+.fixed-header .no-fixed-logo-header {
+  display: none;
+}
+
+.no-fixed-logo-header.no-fixed-logo-header-text-only {
+  padding: 20px 0 30px;
+  font-size: 1em;
+}
+
+@media screen and (max-width: 1023px) {
+  .no-fixed-logo-header {
+    display: none;
+  }
+  .fixed-logo-header {
+    display: block;
+  }
+}
 /************************************
 ** ヘッダーレイアウト
 ************************************/

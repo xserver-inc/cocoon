@@ -54,9 +54,31 @@
   font-size: inherit;
 }
 
-// ヘッダー固定時用のロゴ画像の初期化
+// ヘッダー固定時・モバイル用のロゴ画像の初期化
 .fixed-logo-header {
   display: none;
+}
+// ヘッダー固定時、固定ロゴを非表示
+.fixed-header .fixed-logo-header {
+  display: block;
+}
+// ヘッダー固定時、固定ロゴを持っているなら、通常ロゴを非表示
+.fixed-header .no-fixed-logo-header {
+  display: none;
+}
+// ヘッダー固定時・モバイル用のロゴ画像の設定のみの場合の初期化
+.no-fixed-logo-header.no-fixed-logo-header-text-only {
+  padding: 20px 0 30px;
+  font-size: 1em;
+}
+// ヘッダーロゴ画像とヘッダー固定時・モバイル用のロゴ画像の切り替え
+@media screen and (max-width: 1023px){
+  .no-fixed-logo-header{
+    display: none;
+  }
+  .fixed-logo-header{
+    display: block;
+  }
 }
 
 /************************************
