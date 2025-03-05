@@ -237,32 +237,6 @@ label.screen-reader-text{
   }
 }
 
-/* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整 */
-.widget-entry-card-date {
-  margin-top: 3px;
-  margin-left: 6px;
-  /* アイコンと日付がディスプレイ幅で分断されないように調整 ＆ アイコンと日付のレイアウトを微調整 */
-  .post-date,
-  .post-update {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    .fa {
-      margin-top: 2px;
-    }
-  }
-  /* 「横並び表示にする」設定時の調整 */
-  .swiper & {
-    margin-top: 0;
-    margin-left: 0;
-    .post-date,
-    .post-update{
-      font-size: 0.6em;
-      margin-right: 3px;
-    }
-  }
-}
-
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/

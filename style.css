@@ -2793,33 +2793,6 @@ label.screen-reader-text {
   overflow: hidden;
 }
 
-/* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整 */
-.widget-entry-card-date {
-  margin-top: 3px;
-  margin-left: 6px;
-  /* アイコンと日付がディスプレイ幅で分断されないように調整 ＆ アイコンと日付のレイアウトを微調整 */
-  /* 「横並び表示にする」設定時の調整 */
-}
-.widget-entry-card-date .post-date,
-.widget-entry-card-date .post-update {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-.widget-entry-card-date .post-date .fa,
-.widget-entry-card-date .post-update .fa {
-  margin-top: 2px;
-}
-.swiper .widget-entry-card-date {
-  margin-top: 0;
-  margin-left: 0;
-}
-.swiper .widget-entry-card-date .post-date,
-.swiper .widget-entry-card-date .post-update {
-  font-size: 0.6em;
-  margin-right: 3px;
-}
-
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
@@ -11570,16 +11543,6 @@ _:-ms-lang(x), .mc-circle {
   }
   #navi .navi-in > .menu-mobile li a:after {
     display: none;
-  }
-  /* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整（モバイル） */
-  .widget-entry-card-date {
-    margin-top: 1px;
-    margin-left: 0;
-    /* アイコンと日付のレイアウトを微調整 */
-  }
-  .widget-entry-card-date .post-date .fa,
-  .widget-entry-card-date .post-update .fa {
-    margin-top: 1px;
   }
   .slicknav_menu {
     display: block;
