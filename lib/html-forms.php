@@ -1033,6 +1033,7 @@ function generate_popular_entries_tag($atts){
     'author' => null,
     'post_type' => 'post',
     'horizontal' => 0,
+    'date' => 0,
   ), $atts, 'generate_popular_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1053,6 +1054,7 @@ function generate_popular_entries_tag($atts){
     'arrow' => $arrow,
     'class' => $class,
     'horizontal' => $horizontal,
+    'date' => $date,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   $swiper_slide = null;
@@ -1096,12 +1098,6 @@ function generate_popular_entries_tag($atts){
         $pv_text = $pv.' '.$pv_unit;
         $pv_text = apply_filters('popular_entry_card_pv_text', $pv_text, $pv, $pv_unit);
         $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
-      }
-
-      if ($date) {
-        $atts += array(
-          'date' => true,
-        );
       }
       ?>
   <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>">
@@ -1352,6 +1348,7 @@ function generate_widget_entries_tag($atts){
       'thumb_size' => $thumb_size,
       'type' => $type,
       'horizontal' => $horizontal,
+      'date' => $date,
     );
 
     if ($snippet) {
@@ -1360,13 +1357,6 @@ function generate_widget_entries_tag($atts){
       );
     }
 
-    if ($date) {
-      $atts += array(
-        'date' => true,
-      );
-    }
-    
-    //var_dump($atts);
     echo get_widget_entry_card_link_tag($atts); ?>
   <?php endwhile;
   else :
@@ -1443,11 +1433,11 @@ $display_class = $display ? '' : ' display-none';
 ?>
 <?php do_action( 'widget_entry_card_date_before', $prefix, $post_id); ?>
 <div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date<?php echo $display_class; ?>">
-  <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span><?php
+  <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span></span><?php
     //更新日の取得
     $update_time = get_update_time(get_site_date_format(), $post_id);
   if($update_time):
-  ?><span class="<?php echo $prefix; ?>-entry-card-update-date widget-entry-card-update-date post-update"><?php echo $update_time; ?></span><?php
+  ?><span class="<?php echo $prefix; ?>-entry-card-update-date widget-entry-card-update-date post-update"><span class="fa fa-history" aria-hidden="true"></span><span class="entry-date"><?php echo $update_time; ?></span></span>  <?php
   endif; ?>
 </div><?php
 }
@@ -1684,7 +1674,7 @@ function get_widget_entry_card_link_tag($atts){
         <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
         <?php endif; ?>
         <?php
-        if (!is_widget_navi_entry_card_prefix($prefix)) { 
+        if (!is_widget_navi_entry_card_prefix($prefix)) {
           generate_widget_entry_card_date($prefix, null, $display = $date);
         } ?>
 

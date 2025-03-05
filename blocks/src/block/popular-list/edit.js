@@ -272,7 +272,7 @@ export default function edit( props ) {
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
           <ToggleControl
-            label={__('投稿日・更新日を表示', THEME_NAME)}
+            label={__('投稿日・更新日を表示する', THEME_NAME)}
             checked={date}
             onChange={(isChecked) => setAttributes({ date: isChecked })}
           />
