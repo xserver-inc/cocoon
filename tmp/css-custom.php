@@ -515,7 +515,7 @@ if ($site_logo_height = get_the_site_logo_height()): ?>
 <?php endif ?>
 <?php //ヘッダーロゴ幅
 if ($site_logo_width = get_the_site_logo_width()): ?>
-.logo-header img{
+.logo-header:not(:has(.site-fixed-logo-image)) img{
   width: <?php echo $site_logo_width; ?>px;
   height: auto;
 }
