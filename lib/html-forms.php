@@ -448,14 +448,24 @@ function generate_the_site_logo_tag($is_header = true){
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text"'.$itemprop.'>';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
-    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'><meta itemprop="name about" content="' . esc_attr($site_logo_text) . '">';
+    $site_logo_tag = '<img class="site-logo-image ' . $img_class . '" src="' . $logo_url . '" alt="' . esc_attr($site_logo_text) . '"' . $width_attr . $height_attr . '><meta itemprop="name about" content="' . esc_attr($site_logo_text) . '">';
+
+    // ヘッダーロゴの場合
+    if ($is_header) {
+      // ヘッダー固定ロゴを設定
+      $fixed_logo_url = get_the_fixed_site_logo_url();
+      if ($fixed_logo_url) {
+        $site_logo_tag  =   '<img class="site-fixed-logo-image '. $img_class . '" src="' . $fixed_logo_url . '" alt="' . esc_attr($site_logo_text) . '">' . $site_logo_tag;
+      }
+    }
   } else {
     $site_logo_tag = esc_html($site_logo_text);
   }
-  $all_tag = $logo_before_tag.$site_logo_tag.$logo_after_tag;
+  $all_tag = $logo_before_tag . $site_logo_tag . $logo_after_tag;
   echo apply_filters( 'the_site_logo_tag', $all_tag, $is_header, $home_url, $site_logo_text, $site_logo_width, $site_logo_height );
 }
 endif;
+
 
 //カラーピッカーの生成
 if ( !function_exists( 'generate_color_picker_tag' ) ):

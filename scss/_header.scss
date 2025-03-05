@@ -1,7 +1,6 @@
 /************************************
 ** ヘッダー
 ************************************/
-
 .header{
   @extend %background_image;
   height: 100%;
@@ -53,6 +52,19 @@
 .logo-image{
   padding: 10px 0;
   font-size: inherit;
+}
+
+// ヘッダー固定時・モバイル用のロゴ画像の初期化
+.site-fixed-logo-image{
+  display: none;
+}
+// ヘッダー固定時、固定ロゴを表示
+.fixed-header .site-fixed-logo-image{
+  display: block;
+}
+// ヘッダー固定時、固定ロゴを持っているなら、通常ロゴを非表示
+.fixed-header:has(.site-fixed-logo-image) .site-logo-image{
+  display: none;
 }
 
 /************************************

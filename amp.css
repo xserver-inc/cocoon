@@ -958,6 +958,18 @@ img.emoji {
   font-size: inherit;
 }
 
+.site-fixed-logo-image {
+  display: none;
+}
+
+.fixed-header .site-fixed-logo-image {
+  display: block;
+}
+
+.fixed-header:has(.site-fixed-logo-image) .site-logo-image {
+  display: none;
+}
+
 /************************************
 ** ヘッダーレイアウト
 ************************************/
