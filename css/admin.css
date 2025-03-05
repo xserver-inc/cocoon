@@ -430,7 +430,6 @@ body.wp-admin {
   /************************************
   ** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
   ************************************/
-  /* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整 */
   /************************************
   ** 新着記事ウィジェット（大きなサムネイル）
   ************************************/
@@ -684,7 +683,6 @@ body.wp-admin {
   /************************************
   ** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
   ************************************/
-  /* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整 */
   /************************************
   ** 新着記事ウィジェット（大きなサムネイル）
   ************************************/
@@ -2994,31 +2992,6 @@ body.wp-admin {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
-}
-.admin-settings .demo .widget-entry-card-date {
-  margin-top: 3px;
-  margin-left: 6px;
-  /* アイコンと日付がディスプレイ幅で分断されないように調整 ＆ アイコンと日付のレイアウトを微調整 */
-  /* 「横並び表示にする」設定時の調整 */
-}
-.admin-settings .demo .widget-entry-card-date .post-date,
-.admin-settings .demo .widget-entry-card-date .post-update {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-.admin-settings .demo .widget-entry-card-date .post-date .fa,
-.admin-settings .demo .widget-entry-card-date .post-update .fa {
-  margin-top: 2px;
-}
-.swiper .admin-settings .demo .widget-entry-card-date {
-  margin-top: 0;
-  margin-left: 0;
-}
-.swiper .admin-settings .demo .widget-entry-card-date .post-date,
-.swiper .admin-settings .demo .widget-entry-card-date .post-update {
-  font-size: 0.6em;
-  margin-right: 3px;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
@@ -11563,31 +11536,6 @@ body.wp-admin {
   -webkit-line-clamp: 4;
   overflow: hidden;
 }
-.admin-settings .demo .widget-entry-card-date {
-  margin-top: 3px;
-  margin-left: 6px;
-  /* アイコンと日付がディスプレイ幅で分断されないように調整 ＆ アイコンと日付のレイアウトを微調整 */
-  /* 「横並び表示にする」設定時の調整 */
-}
-.admin-settings .demo .widget-entry-card-date .post-date,
-.admin-settings .demo .widget-entry-card-date .post-update {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-.admin-settings .demo .widget-entry-card-date .post-date .fa,
-.admin-settings .demo .widget-entry-card-date .post-update .fa {
-  margin-top: 2px;
-}
-.swiper .admin-settings .demo .widget-entry-card-date {
-  margin-top: 0;
-  margin-left: 0;
-}
-.swiper .admin-settings .demo .widget-entry-card-date .post-date,
-.swiper .admin-settings .demo .widget-entry-card-date .post-update {
-  font-size: 0.6em;
-  margin-right: 3px;
-}
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
 }
@@ -18970,7 +18918,6 @@ body.wp-admin {
 }
 @media screen and (max-width: 1023px) {
   .admin-settings .demo {
-    /* 記事一覧ブロック、ランキング一覧ブロックの「投稿日・更新日」のレイアウト調整（モバイル） */
     /* モバイルヘッダー高さ分、余白を設ける */
     /* adminバーがある場合、その余白分を除いた余白とする */
   }
@@ -19104,15 +19051,6 @@ body.wp-admin {
   }
   .admin-settings .demo #navi .navi-in > .menu-mobile li a:after {
     display: none;
-  }
-  .admin-settings .demo .widget-entry-card-date {
-    margin-top: 1px;
-    margin-left: 0;
-    /* アイコンと日付のレイアウトを微調整 */
-  }
-  .admin-settings .demo .widget-entry-card-date .post-date .fa,
-  .admin-settings .demo .widget-entry-card-date .post-update .fa {
-    margin-top: 1px;
   }
   .admin-settings .demo .slicknav_menu {
     display: block;

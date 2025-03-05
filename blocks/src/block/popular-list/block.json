@@ -45,11 +45,7 @@
       "type": "boolean",
       "default": false
     },
-    "postedDate": {
-      "type": "boolean",
-      "default": false
-    },
-    "updatedDate": {
+    "date": {
       "type": "boolean",
       "default": false
     },
