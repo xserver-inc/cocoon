@@ -85,14 +85,6 @@ function get_the_fixed_site_logo_url(){
 }
 endif;
 
-//サイトロゴ（モバイル用）
-define('OP_THE_MOBILE_SITE_LOGO_URL', 'the_mobile_site_logo_url');
-if ( !function_exists( 'get_the_mobile_site_logo_url' ) ):
-function get_the_mobile_site_logo_url(){
-  return get_theme_option(OP_THE_MOBILE_SITE_LOGO_URL, '');
-}
-endif;
-
 //サイトロゴ幅
 define('OP_THE_SITE_LOGO_WIDTH', 'the_site_logo_width');
 if ( !function_exists( 'get_the_site_logo_width' ) ):

@@ -61,6 +61,19 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
+        <!-- ヘッダーロゴ（ヘッダー固定時・モバイル） -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_THE_FIXED_SITE_LOGO_URL, __( 'ヘッダー固定・モバイルロゴ', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_upload_image_tag(OP_THE_FIXED_SITE_LOGO_URL, get_the_fixed_site_logo_url());
+            generate_tips_tag(__( 'ヘッダー固定、モバイル時でのヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
         <!-- 高さ -->
         <tr>
@@ -99,30 +112,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
-        <!-- ヘッダーロゴ（ヘッダー固定時） -->
-        <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_THE_FIXED_SITE_LOGO_URL, __( 'ヘッダーロゴ（ヘッダー固定時）', THEME_NAME ) ); ?>
-          </th>
-          <td>
-            <?php
-            generate_upload_image_tag(OP_THE_FIXED_SITE_LOGO_URL, get_the_fixed_site_logo_url());
-            generate_tips_tag(__( 'ヘッダー固定時でのヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。<br>※「ヘッダーの固定」が有効時のみ適用されます。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-        <!-- ヘッダーロゴ（モバイル用） -->
-        <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_THE_MOBILE_SITE_LOGO_URL, __( 'ヘッダーロゴ（モバイル）', THEME_NAME ) ); ?>
-          </th>
-          <td>
-            <?php
-            generate_upload_image_tag(OP_THE_MOBILE_SITE_LOGO_URL, get_the_mobile_site_logo_url());
-            generate_tips_tag(__( 'モバイルでのヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
 
         <!-- ヘッダーロゴサイズ -->
         <tr>
@@ -143,7 +132,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- ヘッダーロゴサイズ（モバイル） -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( 'ヘッダーロゴサイズ（モバイル）', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( 'ヘッダーロゴサイズ<br>（モバイル）', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
