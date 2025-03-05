@@ -101,22 +101,6 @@ function get_the_site_logo_height(){
 }
 endif;
 
-//サイトロゴ幅（モバイル）
-define('OP_THE_MOBILE_SITE_LOGO_WIDTH', 'the_mobile_site_logo_width');
-if ( !function_exists( 'get_the_mobile_site_logo_width' ) ):
-function get_the_mobile_site_logo_width(){
-  return get_theme_option(OP_THE_MOBILE_SITE_LOGO_WIDTH, '');
-}
-endif;
-
-//サイトロゴ高さ（モバイル）
-define('OP_THE_MOBILE_SITE_LOGO_HEIGHT', 'the_mobile_site_logo_height');
-if ( !function_exists( 'get_the_mobile_site_logo_height' ) ):
-function get_the_mobile_site_logo_height(){
-  return get_theme_option(OP_THE_MOBILE_SITE_LOGO_HEIGHT, '');
-}
-endif;
-
 //キャッチフレーズ位置
 define('OP_TAGLINE_POSITION', 'tagline_position');
 if ( !function_exists( 'get_tagline_position' ) ):

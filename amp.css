@@ -958,31 +958,18 @@ img.emoji {
   font-size: inherit;
 }
 
-.fixed-logo-header {
+.site-fixed-logo-image {
   display: none;
 }
 
-.fixed-header .fixed-logo-header {
+.fixed-header .site-fixed-logo-image {
   display: block;
 }
 
-.fixed-header .no-fixed-logo-header {
+.fixed-header:has(.site-fixed-logo-image) .site-logo-image {
   display: none;
 }
 
-.no-fixed-logo-header.no-fixed-logo-header-text-only {
-  padding: 20px 0 30px;
-  font-size: 1em;
-}
-
-@media screen and (max-width: 1023px) {
-  .no-fixed-logo-header {
-    display: none;
-  }
-  .fixed-logo-header {
-    display: block;
-  }
-}
 /************************************
 ** ヘッダーレイアウト
 ************************************/
