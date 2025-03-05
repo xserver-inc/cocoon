@@ -52,8 +52,7 @@ export default function edit( props ) {
     offset,
     sticky,
     snippet,
-    postedDate,
-    updatedDate,
+    date,
     post_type,
     taxonomy,
     author,
@@ -227,17 +226,10 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
-            label={__('投稿日を表示', THEME_NAME)}
-            checked={postedDate}
+            label={__('投稿日・更新日を表示', THEME_NAME)}
+            checked={date}
             onChange={(isChecked) =>
-              setAttributes({ postedDate: isChecked })
-            }
-          />
-          <ToggleControl
-            label={__('更新日を表示', THEME_NAME)}
-            checked={updatedDate}
-            onChange={(isChecked) =>
-              setAttributes({ updatedDate: isChecked })
+              setAttributes({ date: isChecked })
             }
           />
         </PanelBody>

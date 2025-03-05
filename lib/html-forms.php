@@ -1027,8 +1027,7 @@ function generate_popular_entries_tag($atts){
     'exclude_cat_ids' => array(),
     'bold' => 0,
     'arrow' => 0,
-    'posted_date' => 0,
-    'updated_date' => 0,
+    'date' => 0,
     'class' => null,
     'snippet' => 0,
     'author' => null,
@@ -1099,14 +1098,9 @@ function generate_popular_entries_tag($atts){
         $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
       }
 
-      if ($posted_date) {
+      if ($date) {
         $atts += array(
-          'posted_date' => get_the_date(),
-        );
-      }
-      if ($updated_date) {
-        $atts += array(
-          'updated_date' => get_the_modified_date(),
+          'date' => true,
         );
       }
       ?>
@@ -1126,23 +1120,7 @@ function generate_popular_entries_tag($atts){
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
         <?php endif ?>
-        <?php generate_widget_entry_card_date('popular', $post->ID); ?>
-
-        <?php if($posted_date || $updated_date): ?>
-        <div class="popular-entry-card-date widget-entry-card-date">
-          <?php if($posted_date): ?>
-          <span class="popular-entry-card-post-date widget-entry-card-post-date post-date">
-            <span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_time('Y/m/d'); ?></span>
-          </span>
-          <?php endif; ?>
-          <?php if($updated_date): ?>
-          <span class="popular-entry-card-update-date widget-entry-card-update-date post-update">
-            <span class="fa fa-history" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_modified_time('Y/m/d'); ?></span>
-          </span>
-          <?php endif; ?>
-        </div>
-        <?php endif; ?>
-
+        <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date); ?>
       </div><!-- /.popular-entry-content -->
       <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
         <?php echo $pv_tag; ?>
@@ -1195,8 +1173,7 @@ function generate_widget_entries_tag($atts){
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
-    'posted_date' => 0,
-    'updated_date' => 0,
+    'date' => 0,
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
@@ -1376,21 +1353,19 @@ function generate_widget_entries_tag($atts){
       'type' => $type,
       'horizontal' => $horizontal,
     );
+
     if ($snippet) {
       $atts += array(
         'snippet' => get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() ),
       );
     }
-    if ($posted_date) {
+
+    if ($date) {
       $atts += array(
-        'posted_date' => get_the_date(),
+        'date' => true,
       );
     }
-    if ($updated_date) {
-      $atts += array(
-        'updated_date' => get_the_modified_date(),
-      );
-    }
+    
     //var_dump($atts);
     echo get_widget_entry_card_link_tag($atts); ?>
   <?php endwhile;
@@ -1462,9 +1437,12 @@ endif;
 
 //ウィジェットエントリーカードの日付
 if ( !function_exists( 'generate_widget_entry_card_date' ) ):
-function generate_widget_entry_card_date($prefix, $post_id = null){?>
+function generate_widget_entry_card_date($prefix, $post_id = null, $display = false){
+// クラスのON/OFFを制御するオプション
+$display_class = $display ? '' : ' display-none';
+?>
 <?php do_action( 'widget_entry_card_date_before', $prefix, $post_id); ?>
-<div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date display-none">
+<div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date<?php echo $display_class; ?>">
   <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span><?php
     //更新日の取得
     $update_time = get_update_time(get_site_date_format(), $post_id);
@@ -1622,8 +1600,7 @@ function get_widget_entry_card_link_tag($atts){
     'url' => null,
     'title' => null,
     'snippet' => null,
-    'posted_date' => null,
-    'updated_date' => null,
+    'date' => null,
     'thumb_size' => null,
     'image_attributes' => null,
     'ribbon_no' => null,
@@ -1707,24 +1684,9 @@ function get_widget_entry_card_link_tag($atts){
         <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
         <?php endif; ?>
         <?php
-        if (!is_widget_navi_entry_card_prefix($prefix)) {
-          generate_widget_entry_card_date($prefix);
+        if (!is_widget_navi_entry_card_prefix($prefix)) { 
+          generate_widget_entry_card_date($prefix, null, $display = $date);
         } ?>
-
-        <?php if($posted_date || $updated_date): ?>
-        <div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date">
-          <?php if($posted_date): ?>
-          <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date">
-            <span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_time('Y/m/d'); ?></span>
-          </span>
-          <?php endif; ?>
-          <?php if($updated_date): ?>
-          <span class="<?php echo $prefix; ?>-entry-card-update-date widget-entry-card-update-date post-update">
-            <span class="fa fa-history" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_modified_time('Y/m/d'); ?></span>
-          </span>
-          <?php endif; ?>
-        </div>
-        <?php endif; ?>
 
       </div><!-- /.entry-content -->
     </div><!-- /.entry-card -->

@@ -46,8 +46,7 @@ export default function edit( props ) {
     type,
     bold,
     arrow,
-    postedDate,
-    updatedDate,
+    date,
     showAllCats,
     cats,
     children,
@@ -273,14 +272,9 @@ export default function edit( props ) {
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
           <ToggleControl
-            label={__('投稿日を表示', THEME_NAME)}
-            checked={postedDate}
-            onChange={(isChecked) => setAttributes({ postedDate: isChecked })}
-          />
-          <ToggleControl
-            label={__('更新日を表示', THEME_NAME)}
-            checked={updatedDate}
-            onChange={(isChecked) => setAttributes({ updatedDate: isChecked })}
+            label={__('投稿日・更新日を表示', THEME_NAME)}
+            checked={date}
+            onChange={(isChecked) => setAttributes({ date: isChecked })}
           />
         </PanelBody>
         <PanelBody title={ __( 'フィルタ', THEME_NAME ) } initialOpen={ false }>
