@@ -16,26 +16,26 @@ const withGroupBlockLink = createHigherOrderComponent((BlockEdit) => {
 
         return (
             <Fragment>
-                <BlockEdit {...props} />
-                <InspectorControls>
-                    <PanelBody title="グループブロックのリンク設定">
-                        <TextControl
-                            label="リンクURL"
-                            value={url}
-                            onChange={(newUrl) => setAttributes({ customGroupLink: newUrl })}
-                            placeholder="https://example.com"
-                        />
-                        <SelectControl
-                            label="リンクターゲット"
-                            value={target}
-                            options={[
-                                { label: "同じタブで開く", value: "_self" },
-                                { label: "新しいタブで開く", value: "_blank" },
-                            ]}
-                            onChange={(newTarget) => setAttributes({ customGroupLinkTarget: newTarget })}
-                        />
-                    </PanelBody>
-                </InspectorControls>
+            <BlockEdit {...props} />
+            <InspectorControls>
+                <PanelBody title={__('グループブロックのリンク設定', 'THEME_NAME')}>
+                <TextControl
+                    label={__('リンクURL', 'THEME_NAME')}
+                    value={url}
+                    onChange={(newUrl) => setAttributes({ customGroupLink: newUrl })}
+                    placeholder="https://example.com"
+                />
+                <SelectControl
+                    label={__('リンクターゲット', 'THEME_NAME')}
+                    value={target}
+                    options={[
+                    { label: __('同じタブで開く', 'THEME_NAME'), value: "_self" },
+                    { label: __('新しいタブで開く', 'THEME_NAME'), value: "_blank" },
+                    ]}
+                    onChange={(newTarget) => setAttributes({ customGroupLinkTarget: newTarget })}
+                />
+                </PanelBody>
+            </InspectorControls>
             </Fragment>
         );
     };
