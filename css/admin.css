@@ -1302,6 +1302,9 @@ body.wp-admin {
   font-weight: normal;
   float: none;
 }
+.admin-settings .demo [data-url] {
+  cursor: pointer;
+}
 .admin-settings .demo figure {
   margin: 0;
 }
@@ -9853,6 +9856,9 @@ body.wp-admin {
   font-size: 3em;
   font-weight: normal;
   float: none;
+}
+.admin-settings .demo [data-url] {
+  cursor: pointer;
 }
 .admin-settings .demo figure {
   margin: 0;
