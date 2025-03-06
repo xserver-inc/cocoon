@@ -238,3 +238,23 @@
     }
   }
 })();
+
+// グループエディターのリンク
+// DOMContentLoadedイベントが発生したときに実行
+document.addEventListener("DOMContentLoaded", function () {
+  // data-url属性を持つすべての要素に対して処理を実行
+  document.querySelectorAll("[data-url]").forEach(function (block) {
+    // 要素がクリックされたときのイベントリスナーを追加
+    block.addEventListener("click", function () {
+      // data-url属性の値を取得
+      const url = block.getAttribute("data-url");
+      // target属性の値を取得（デフォルトは"_self"）
+      const target = block.getAttribute("target") || "_self";
+
+      // urlが存在する場合、新しいウィンドウまたはタブで開く
+      if (url) {
+        window.open(url, target);
+      }
+    });
+  });
+});
