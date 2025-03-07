@@ -136,6 +136,7 @@ registerCocoonBlocks();
 
 //デフォルトブロックの拡張
 import './custom/code/block.js';
+import './custom/code/group-block-link.js'; // グループボックスをまとめてリンク化する
 
 // ボーダー拡張
 import './block-extension/style-extension/border01.js';
