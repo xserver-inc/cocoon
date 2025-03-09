@@ -21,7 +21,7 @@ function author_box_shortcode($atts) {
   $label = sanitize_shortcode_value($label);
   ob_start();
   generate_author_box_tag($id, $label, $is_image_circle);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -49,12 +49,14 @@ function new_entries_shortcode($atts) {
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
+    'date' => 0,
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
     'ex_posts' => null,
     'ex_cats' => null,
     'ordered_posts' => null,
+    'date' => 0,
   ), $atts, 'new_list'));
 
   //countオプションに異常値が入っていた場合
@@ -105,6 +107,7 @@ function new_entries_shortcode($atts) {
     'arrow' => $arrow,
     'class' => $class,
     'snippet' => $snippet,
+    'date' => $date,
     'author' => $author,
     'offset' => $offset,
     'horizontal' => $horizontal,
@@ -115,7 +118,7 @@ function new_entries_shortcode($atts) {
   );
   ob_start();
   generate_widget_entries_tag($atts);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -138,6 +141,7 @@ function popular_entries_shortcode($atts) {
     'ex_cats' => null,
     'bold' => 0,
     'arrow' => 0,
+    'date' => 0,
     'class' => null,
     'snippet' => 0,
     'author' => null,
@@ -178,6 +182,7 @@ function popular_entries_shortcode($atts) {
     'exclude_cat_ids' => $exclude_cat_ids,
     'bold' => $bold,
     'arrow' => $arrow,
+    'date' => $date,
     'class' => $class,
     'snippet' => $snippet,
     'author' => $author,
@@ -186,7 +191,7 @@ function popular_entries_shortcode($atts) {
   );
   ob_start();
   generate_popular_entries_tag($atts);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -282,7 +287,7 @@ function item_ranking_shortcode($atts) {
 
     ob_start();
     generate_item_ranking_tag($id);
-    return ob_get_clean();
+    return (ob_get_clean());
   }
 
 }
@@ -519,7 +524,7 @@ function sitemap_shortcode( $atts, $content = null ) {
     <?php endif; ?>
   </div>
   <?php
-  return ob_get_clean();
+  return (ob_get_clean());
 }
 endif;
 
@@ -707,7 +712,7 @@ function get_recommend_cards_tag($atts){
       </div><!-- /.recommended-in -->
     </div><!-- /.recommended -->
     <?php
-    $tag = ob_get_clean();
+    $tag = (ob_get_clean());
     return apply_filters('get_recommend_cards_tag', $tag);
   }
 }
@@ -1002,7 +1007,7 @@ function ad_shortcode( $atts ) {
   if (is_ad_shortcode_enable()) {
     ob_start();//バッファリング
     get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
-    return ob_get_clean();
+    return (ob_get_clean());
   }
 }
 endif;
@@ -1049,7 +1054,7 @@ function get_info_list_shortcode($atts){
   );
   ob_start();
   generate_info_list_tag($atts);
-  $tag = ob_get_clean();
+  $tag = (ob_get_clean());
 
   return apply_filters('get_info_list_tag', $tag);
 }
@@ -1064,7 +1069,8 @@ function get_block_pattern_shortcode($atts) {
     array(
       'id' => null,
     ),
-    $atts
+    $atts,
+    'pattern'
   ));
 
   $content = null;
@@ -1154,7 +1160,7 @@ function get_cta_tag($atts, $content = null ){
 
   ob_start();
   cocoon_template_part('tmp/cta-box');
-  $tag = ob_get_clean();
+  $tag = (ob_get_clean());
 
   return apply_filters('get_cta_tag', $tag);
 }
@@ -1167,7 +1173,8 @@ function get_font_awesome_icon_tag($atts){
     array(
       'class' => '',
     ),
-    $atts
+    $atts,
+    'icon'
   );
 
   return '<span class="' . esc_attr($atts['class']) . '"></span>';

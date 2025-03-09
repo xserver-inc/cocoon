@@ -188,8 +188,6 @@ div.sidebar {
   }
 }
 
-
-
 ///////////////////////////////////////
 // SlickNavの表示
 ///////////////////////////////////////
@@ -206,3 +204,4 @@ body:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) 
 .admin-bar:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
   margin-top: calc(50px - var(--wp-admin--admin-bar--height));
 }
+

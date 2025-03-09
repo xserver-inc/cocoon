@@ -30,6 +30,7 @@ function render_block_cocoon_block_popular_list($attributes, $content)
 		'ex_cats' => $attributes['ex_cats'],
 		'bold' => $attributes['bold'] ? 1 : 0,
 		'arrow' => $attributes['arrow'] ? 1 : 0,
+		'date' => $attributes['date'] ? 1 : 0,
 		'post_type' => $attributes['post_type'],
 		'horizontal' => $attributes['horizontal'] ? 1 : 0,
 	];

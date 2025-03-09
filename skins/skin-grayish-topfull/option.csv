@@ -22,6 +22,7 @@ sidebar_position,sidebar_right
 ,,-------ヘッダー設定
 header_layout_type,center_logo_slim_top_menu
 header_fixed,0
+the_fixed_site_logo_url,
 ,,tagline_position,header_bottom
 header_area_height,
 mobile_header_area_height,

@@ -32,6 +32,7 @@ function render_block_cocoon_block_new_list($attributes, $content)
 		'bold' => $attributes['bold'] ? 1 : 0,
 		'arrow' => $attributes['arrow'] ? 1 : 0,
 		'snippet' => $attributes['snippet'] ? 1 : 0,
+		'date' => $attributes['date'] ? 1 : 0,
 		'author' => $attributes['author'],
 		'offset' => $attributes['offset'],
 		'horizontal' => $attributes['horizontal'] ? 1 : 0,

@@ -448,14 +448,24 @@ function generate_the_site_logo_tag($is_header = true){
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text"'.$itemprop.'>';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
-    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'><meta itemprop="name about" content="' . esc_attr($site_logo_text) . '">';
+    $site_logo_tag = '<img class="site-logo-image ' . $img_class . '" src="' . $logo_url . '" alt="' . esc_attr($site_logo_text) . '"' . $width_attr . $height_attr . '><meta itemprop="name about" content="' . esc_attr($site_logo_text) . '">';
+
+    // ヘッダーロゴの場合
+    if ($is_header) {
+      // ヘッダー固定ロゴを設定
+      $fixed_logo_url = get_the_fixed_site_logo_url();
+      if ($fixed_logo_url) {
+        $site_logo_tag  =   '<img class="site-fixed-logo-image '. $img_class . '" src="' . $fixed_logo_url . '" alt="' . esc_attr($site_logo_text) . '">' . $site_logo_tag;
+      }
+    }
   } else {
     $site_logo_tag = esc_html($site_logo_text);
   }
-  $all_tag = $logo_before_tag.$site_logo_tag.$logo_after_tag;
+  $all_tag = $logo_before_tag . $site_logo_tag . $logo_after_tag;
   echo apply_filters( 'the_site_logo_tag', $all_tag, $is_header, $home_url, $site_logo_text, $site_logo_width, $site_logo_height );
 }
 endif;
+
 
 //カラーピッカーの生成
 if ( !function_exists( 'generate_color_picker_tag' ) ):
@@ -1027,12 +1037,14 @@ function generate_popular_entries_tag($atts){
     'exclude_cat_ids' => array(),
     'bold' => 0,
     'arrow' => 0,
+    'date' => 0,
     'class' => null,
     'snippet' => 0,
     'author' => null,
     'post_type' => 'post',
     'horizontal' => 0,
-  ), $atts));
+    'date' => 0,
+  ), $atts, 'generate_popular_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
   global $_IS_SWIPER_ENABLE;
@@ -1052,6 +1064,7 @@ function generate_popular_entries_tag($atts){
     'arrow' => $arrow,
     'class' => $class,
     'horizontal' => $horizontal,
+    'date' => $date,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   $swiper_slide = null;
@@ -1113,11 +1126,12 @@ function generate_popular_entries_tag($atts){
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
         <?php endif ?>
-        <?php generate_widget_entry_card_date('popular', $post->ID); ?>
+        <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date); ?>
       </div><!-- /.popular-entry-content -->
       <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
         <?php echo $pv_tag; ?>
       <?php endif ?>
+
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
 
@@ -1165,13 +1179,14 @@ function generate_widget_entries_tag($atts){
     'arrow' => 0,
     'class' => null,
     'snippet' => 0,
+    'date' => 0,
     'author' => null,
     'offset' => 0,
     'horizontal' => 0,
     'ex_posts' => null,
     'ex_cats' => null,
     'ordered_posts' => null,
-  ), $atts));
+  ), $atts, 'generate_widget_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
   global $_IS_SWIPER_ENABLE;
@@ -1343,13 +1358,15 @@ function generate_widget_entries_tag($atts){
       'thumb_size' => $thumb_size,
       'type' => $type,
       'horizontal' => $horizontal,
+      'date' => $date,
     );
+
     if ($snippet) {
       $atts += array(
         'snippet' => get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() ),
       );
     }
-    //var_dump($atts);
+
     echo get_widget_entry_card_link_tag($atts); ?>
   <?php endwhile;
   else :
@@ -1420,14 +1437,17 @@ endif;
 
 //ウィジェットエントリーカードの日付
 if ( !function_exists( 'generate_widget_entry_card_date' ) ):
-function generate_widget_entry_card_date($prefix, $post_id = null){?>
+function generate_widget_entry_card_date($prefix, $post_id = null, $display = false){
+// クラスのON/OFFを制御するオプション
+$display_class = $display ? '' : ' display-none';
+?>
 <?php do_action( 'widget_entry_card_date_before', $prefix, $post_id); ?>
-<div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date display-none">
-  <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span><?php
+<div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date<?php echo $display_class; ?>">
+  <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span></span><?php
     //更新日の取得
     $update_time = get_update_time(get_site_date_format(), $post_id);
   if($update_time):
-  ?><span class="<?php echo $prefix; ?>-entry-card-update-date widget-entry-card-update-date post-update"><?php echo $update_time; ?></span><?php
+  ?><span class="<?php echo $prefix; ?>-entry-card-update-date widget-entry-card-update-date post-update"><span class="fa fa-history" aria-hidden="true"></span><span class="entry-date"><?php echo $update_time; ?></span></span>  <?php
   endif; ?>
 </div><?php
 }
@@ -1580,6 +1600,7 @@ function get_widget_entry_card_link_tag($atts){
     'url' => null,
     'title' => null,
     'snippet' => null,
+    'date' => null,
     'thumb_size' => null,
     'image_attributes' => null,
     'ribbon_no' => null,
@@ -1589,7 +1610,7 @@ function get_widget_entry_card_link_tag($atts){
     'object_id' => null,
     'horizontal' => 0,
     'target' => null,
-  ), $atts));
+  ), $atts, 'get_widget_entry_card_link_tag'));
 
   $class_text = null;
   if (isset($classes[0]) && !empty($classes[0])) {
@@ -1664,8 +1685,9 @@ function get_widget_entry_card_link_tag($atts){
         <?php endif; ?>
         <?php
         if (!is_widget_navi_entry_card_prefix($prefix)) {
-          generate_widget_entry_card_date($prefix);
+          generate_widget_entry_card_date($prefix, null, $display = $date);
         } ?>
+
       </div><!-- /.entry-content -->
     </div><!-- /.entry-card -->
   </a><!-- /.entry-card-link -->
@@ -1822,7 +1844,7 @@ function get_navi_card_wrap_tag($atts){
     'arrow' => 0,
     'class' => null,
     'horizontal' => 0,
-  ), $atts));
+  ), $atts, 'get_navi_card_wrap_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
   global $_IS_SWIPER_ENABLE;
@@ -1851,7 +1873,7 @@ function generate_info_list_tag($atts){
     'action' => null,
     'post_type' => 'post',
     'taxonomy' => 'category',
-  ), $atts));
+  ), $atts, 'generate_info_list_tag'));
 
   $args = array(
     'post_type' => $post_type,

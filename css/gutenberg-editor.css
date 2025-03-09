@@ -5582,7 +5582,7 @@ p {
 body,
 body::before,
 .editor-styles-wrapper::before {
-  background: none !important;
+  background-image: none !important;
 }
 
 .faq .faq-answer .wp-block,

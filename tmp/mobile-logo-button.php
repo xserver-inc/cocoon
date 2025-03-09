@@ -16,6 +16,13 @@ $site_logo_text = apply_filters('site_logo_text', get_bloginfo('name'));
 $site_logo_text = apply_filters('mobile_header_site_logo_text', $site_logo_text);
 $logo_url = get_the_site_logo_url();
 $size = get_image_width_and_height($logo_url);
+
+// ヘッダー固定ロゴを設定した場合
+$fixed_logo_url = get_the_fixed_site_logo_url();
+if ($fixed_logo_url) {
+  $logo_url = $fixed_logo_url;
+}
+
 $width_attr = null;
 $height_attr = null;
 if ($size) {

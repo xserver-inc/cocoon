@@ -512,12 +512,18 @@ if ($site_logo_height = get_the_site_logo_height()): ?>
   height: <?php echo $site_logo_height; ?>px;
   width: auto;
 }
+.fixed-header .logo-header img{
+  height: auto;
+}
 <?php endif ?>
 <?php //ヘッダーロゴ幅
 if ($site_logo_width = get_the_site_logo_width()): ?>
 .logo-header img{
   width: <?php echo $site_logo_width; ?>px;
   height: auto;
+}
+.fixed-header .logo-header img{
+  width: auto;
 }
 <?php endif ?>
 <?php //モバイルのヘッダーの高さ

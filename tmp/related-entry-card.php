@@ -26,9 +26,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <?php the_title(); //記事のタイトル?>
     </h3>
     <?php //スニペットの表示
-    if (is_related_entry_card_snippet_visible()): ?>
+    $snippet = get_the_snippet( get_the_content(''), get_related_excerpt_max_length() );
+    if (is_related_entry_card_snippet_visible() && $snippet): ?>
     <div class="related-entry-card-snippet card-snippet e-card-snippet">
-      <?php echo get_the_snippet( get_the_content(''), get_related_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+      <?php echo $snippet; //カスタマイズで指定した文字の長さだけ本文抜粋?>
     </div>
     <?php endif ?>
     <?php do_action( 'related_entry_card_snippet_after', get_the_ID() ); ?>
@@ -42,12 +43,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         //echo $update_time;
         //投稿日の表示
         if (is_related_entry_card_post_date_visible() || (is_related_entry_card_post_date_or_update_visible() && !$update_time && is_related_entry_card_post_update_visible())): ?>
-          <span class="post-date"><span class="fa fa-clock-o" aria-hidden="true"></span> <?php the_time(get_site_date_format()); ?></span>
+          <span class="post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php the_time(get_site_date_format()); ?></span></span>
         <?php endif ?>
         <?php //更新時の表示
         //_v(is_related_entry_card_post_update_visible());
         if (is_related_entry_card_post_update_visible() && $update_time && (get_the_time('U') < get_update_time('U'))): ?>
-          <span class="post-update"><span class="fa fa-history" aria-hidden="true"></span> <?php echo $update_time; ?></span>
+          <span class="post-update"><span class="fa fa-history" aria-hidden="true"></span><span class="entry-date"><?php echo $update_time; ?></span></span>
         <?php endif ?>
         <?php //投稿者の表示
         if (is_related_entry_card_post_author_visible()): ?>

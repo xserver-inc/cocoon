@@ -38,27 +38,6 @@ div.editor-styles-wrapper{
   font-size: 1.625rem;
 }
 
-// .editor-styles-wrapper div.block-editor-cocoon-wrap {
-//   max-width: 860px;
-//   width: auto;
-//   padding-left: 14px;
-//   padding-right: 14px;
-//   margin: 20px auto;
-// }
-
-// .wp-block {
-//   padding: 0;
-//   margin: 0 auto;
-//   max-width: none;
-// }
-
-// .edit-post-text-editor {
-//   padding: 0;
-//   margin: 0 auto;
-//   max-width: 800px;
-// }
-
-
 //ブロックボックス内のインナーブロックのマージン変更
 .block-box{
   .editor-block-list__layout .editor-block-list__block-edit{
@@ -856,15 +835,13 @@ p {
 
 //ブロックエディターの背景画像問題の修正
 .block-editor-block-styles__item-preview .editor-styles-wrapper::before{
-  // background-image: none !important;
-  // width: 0;
-  // height: 0;
   display: none;
 }
+
 body,
 body::before,
 .editor-styles-wrapper::before {
-  background: none !important;
+  background-image: none !important;
 }
 
 
@@ -884,10 +861,7 @@ body::before,
   margin-right: auto;
   display: flex;
   margin-bottom: 1em;
-  // >.column-2,
-  // >.column-3{
-  //   display: flex;
-  // }
+
   >.block-editor-inner-blocks{
     width: 100%;
     >.block-editor-block-list__layout{
@@ -976,16 +950,6 @@ body::before,
   float: none;
 }
 
-// .wp-block[data-align=left] > .micro-balloon{
-//   text-align: left;
-// }
-// .wp-block[data-align=center] > .micro-balloon{
-//   text-align: center;
-// }
-// .wp-block[data-align=right] > .micro-balloon{
-//   text-align: right;
-// }
-
 .wp-block[data-align=left] > .micro-text{
   text-align: left;
 }
@@ -1010,16 +974,6 @@ body::before,
   margin-left: auto;
   margin-right: auto;
 }
-
-// .admin-micro-balloon-wrap .micro-balloon{
-//   display: inline-block !important;
-// }
-
-// .admin-micro-balloon-wrap{
-//   margin-bottom: 0 !important;
-//   // margin-left: auto !important;
-//   // margin-right: auto !important;
-// }
 
 .micro-copy .micro-balloon{
   margin-left: 0;
@@ -1417,8 +1371,6 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   align-items: center;
 }
 
-
-
 .wp-block-list{
   .wp-block-list{
     padding-top: 0;
@@ -1438,7 +1390,6 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 
 //ツールボタンのインラインボタンドロップダウンの余白設定
 .components-button [class*="inline-button-"]{
-  // margin: 2px 0 !important;
   padding: 4px 8px !important;
 }
 
