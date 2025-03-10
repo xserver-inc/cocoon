@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-// add_action( 'admin_menu', 'add_custom_js_custom_box' );
+add_action( 'admin_menu', 'add_custom_js_custom_box' );
 if ( !function_exists( 'add_custom_js_custom_box' ) ):
 function add_custom_js_custom_box() {
   add_meta_box( 'custom_js', __( 'カスタムJavaScript', THEME_NAME ), 'view_custom_js_custom_box', 'post', 'normal', 'low' );
