@@ -4949,13 +4949,6 @@ figcaption {
   padding: 0 4px;
 }
 
-/* copy from editor-style.css */
-div.editor-styles-wrapper {
-  margin: 20px;
-  background-color: #fff;
-  padding-top: 20px;
-}
-
 .editor-post-title .editor-post-title__input {
   font-size: 1.625rem;
 }
