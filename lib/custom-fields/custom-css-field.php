@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-add_action( 'admin_menu', 'add_custom_css_custom_box' );
+// add_action( 'admin_menu', 'add_custom_css_custom_box' );
 if ( !function_exists( 'add_custom_css_custom_box' ) ):
 function add_custom_css_custom_box() {
   add_meta_box( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'post', 'normal', 'low' );

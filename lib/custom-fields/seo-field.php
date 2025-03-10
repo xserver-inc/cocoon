@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ///////////////////////////////////////
 // カスタムボックスの追加
 ///////////////////////////////////////
-add_action('admin_menu', 'add_seo_custom_box');
+// add_action('admin_menu', 'add_seo_custom_box');
 if ( !function_exists( 'add_seo_custom_box' ) ):
 function add_seo_custom_box(){
   //SEOボックス
