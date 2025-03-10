@@ -591,15 +591,6 @@ a.prev-post:hover::before,a.next-post:hover::before{
 .search-submit{
 	top: 4px;
 }
-/* 最新記事 */
-a.new-entry-card-link{
-	border: 1px solid #adadad;
-}
-
-/* 人気記事 */
-a.popular-entry-card-link{
-	border: 1px solid #adadad;
-}
 .popular-entry-card-thumb{
 	width: 120px;
 }
