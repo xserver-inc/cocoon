@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-25T09:26:24+00:00\n"
-"PO-Revision-Date: 2025-02-25 10:04\n"
+"POT-Creation-Date: 2025-03-09T01:26:19+00:00\n"
+"PO-Revision-Date: 2025-03-13 09:17\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -639,8 +639,8 @@ msgstr "方框 (標籤)"
 
 #: lib/admin-tinymce-qtag.php:307
 #: lib/admin-tinymce-qtag.php:1662
-#: tmp/css-custom.php:958
-#: tmp/css-custom.php:1005
+#: tmp/css-custom.php:964
+#: tmp/css-custom.php:1011
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
@@ -671,8 +671,8 @@ msgstr "提示"
 
 #: lib/admin-tinymce-qtag.php:457
 #: lib/admin-tinymce-qtag.php:1668
-#: tmp/css-custom.php:954
-#: tmp/css-custom.php:1002
+#: tmp/css-custom.php:960
+#: tmp/css-custom.php:1008
 #: blocks/src/block/blogcard/deprecated.js:85
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -689,8 +689,8 @@ msgstr "書籤"
 
 #: lib/admin-tinymce-qtag.php:547
 #: lib/admin-tinymce-qtag.php:1680
-#: tmp/css-custom.php:974
-#: tmp/css-custom.php:1017
+#: tmp/css-custom.php:980
+#: tmp/css-custom.php:1023
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -1140,8 +1140,8 @@ msgstr "圍繞部落格卡片標籤"
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
 #: skins/skin-made-in-heaven/functions.php:109
-#: tmp/css-custom.php:938
-#: tmp/css-custom.php:990
+#: tmp/css-custom.php:944
+#: tmp/css-custom.php:996
 #: blocks/src/block/blogcard/deprecated.js:57
 #: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:66
@@ -1149,8 +1149,8 @@ msgid "関連記事"
 msgstr "相關文章"
 
 #: lib/admin-tinymce-qtag.php:1632
-#: tmp/css-custom.php:942
-#: tmp/css-custom.php:993
+#: tmp/css-custom.php:948
+#: tmp/css-custom.php:999
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:70
@@ -1158,8 +1158,8 @@ msgid "参考記事"
 msgstr "參考文章"
 
 #: lib/admin-tinymce-qtag.php:1638
-#: tmp/css-custom.php:946
-#: tmp/css-custom.php:996
+#: tmp/css-custom.php:952
+#: tmp/css-custom.php:1002
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
@@ -1172,8 +1172,8 @@ msgstr "參考連結"
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
 #: skins/skin-made-in-heaven/lib/panel-option.php:335
-#: tmp/css-custom.php:950
-#: tmp/css-custom.php:999
+#: tmp/css-custom.php:956
+#: tmp/css-custom.php:1005
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:52
 #: blocks/src/block/popular-list/index.js:28
@@ -1182,8 +1182,8 @@ msgid "人気記事"
 msgstr "熱門文章"
 
 #: lib/admin-tinymce-qtag.php:1650
-#: tmp/css-custom.php:962
-#: tmp/css-custom.php:1008
+#: tmp/css-custom.php:968
+#: tmp/css-custom.php:1014
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:78
@@ -1191,11 +1191,11 @@ msgid "あわせて読みたい"
 msgstr "推薦閱讀"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1137
+#: lib/shortcodes.php:1143
 #: lib/widgets/cta-box.php:34
 #: skins/skin-made-in-heaven/tmp/css-custom.php:12
-#: tmp/css-custom.php:966
-#: tmp/css-custom.php:1011
+#: tmp/css-custom.php:972
+#: tmp/css-custom.php:1017
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:60
 #: blocks/src/old/blogcard-class/block.js:82
@@ -1203,8 +1203,8 @@ msgid "詳細はこちら"
 msgstr "詳細資訊"
 
 #: lib/admin-tinymce-qtag.php:1674
-#: tmp/css-custom.php:970
-#: tmp/css-custom.php:1014
+#: tmp/css-custom.php:976
+#: tmp/css-custom.php:1020
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:94
@@ -1212,15 +1212,15 @@ msgid "公式サイト"
 msgstr "官方網站"
 
 #: lib/admin-tinymce-qtag.php:1686
-#: tmp/css-custom.php:978
-#: tmp/css-custom.php:1020
+#: tmp/css-custom.php:984
+#: tmp/css-custom.php:1026
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr "上一篇文章"
 
 #: lib/admin-tinymce-qtag.php:1692
-#: tmp/css-custom.php:982
-#: tmp/css-custom.php:1023
+#: tmp/css-custom.php:988
+#: tmp/css-custom.php:1029
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr "下一篇文章"
@@ -1293,7 +1293,7 @@ msgid "ダッシュボード"
 msgstr "儀表板"
 
 #: lib/admin.php:380
-#: lib/shortcodes.php:503
+#: lib/shortcodes.php:508
 msgid "投稿一覧"
 msgstr "文章列表"
 
@@ -1902,8 +1902,8 @@ msgstr "頁面設定"
 #: blocks/src/block-extension/style-extension/style02.js:42
 #: blocks/src/block/balloon/edit.js:230
 #: blocks/src/block/navicard/edit.js:106
-#: blocks/src/block/new-list/edit.js:139
-#: blocks/src/block/popular-list/edit.js:219
+#: blocks/src/block/new-list/edit.js:140
+#: blocks/src/block/popular-list/edit.js:220
 #: blocks/src/old/balloon-ex-fix1/block.js:166
 #: blocks/src/old/balloon-ex-v2/block.js:87
 #: blocks/src/old/balloon-ex/block.js:156
@@ -2137,8 +2137,8 @@ msgid "ページ内容が類似もしくは重複しているURLが複数存在�
 msgstr "如果存在多個具有相似或重複頁面內容的 URL，則可以使用此字段向搜尋引擎表明哪個 URL 是正規的，以便合併來自搜尋引擎的頁面評價。如果內容重複，請輸入正規頁面的 URL。"
 
 #: lib/custom-fields/seo-field.php:150
-#: lib/html-forms.php:503
-#: lib/html-forms.php:569
+#: lib/html-forms.php:513
+#: lib/html-forms.php:579
 msgid "詳細設定"
 msgstr "詳細設定"
 
@@ -2491,40 +2491,40 @@ msgstr "編輯日期（降冪）"
 msgid "抽出"
 msgstr "提取"
 
-#: lib/html-forms.php:509
-#: lib/html-forms.php:575
+#: lib/html-forms.php:519
+#: lib/html-forms.php:585
 msgid "フォーマット（広告ユニット）"
 msgstr "格式（廣告單元）"
 
-#: lib/html-forms.php:513
-#: lib/html-forms.php:578
+#: lib/html-forms.php:523
+#: lib/html-forms.php:588
 #: lib/widgets/ad.php:79
 #: lib/widgets/mobile-ad.php:79
 #: lib/widgets/pc-ad.php:83
 msgid "広告ラベルを表示する"
 msgstr "顯示廣告標籤"
 
-#: lib/html-forms.php:520
+#: lib/html-forms.php:530
 msgid "広告の表示数を制御する"
 msgstr "控制顯示的廣告數量"
 
-#: lib/html-forms.php:522
+#: lib/html-forms.php:532
 msgid "先頭から"
 msgstr "從第一個開始"
 
-#: lib/html-forms.php:524
+#: lib/html-forms.php:534
 msgid "個まで"
 msgstr "最多"
 
-#: lib/html-forms.php:526
+#: lib/html-forms.php:536
 msgid "※-1で全てのH2見出し手前に広告を挿入"
 msgstr "使用-1在所有H2標題前插入廣告"
 
-#: lib/html-forms.php:556
+#: lib/html-forms.php:566
 msgid "入力済"
 msgstr "已輸入"
 
-#: lib/html-forms.php:558
+#: lib/html-forms.php:568
 #: blocks/src/block/balloon/edit.js:24
 #: blocks/src/old/balloon-1/block.js:17
 #: blocks/src/old/balloon-2/block.js:23
@@ -2535,34 +2535,34 @@ msgstr "已輸入"
 msgid "未入力"
 msgstr "未輸入"
 
-#: lib/html-forms.php:597
+#: lib/html-forms.php:607
 #: skins/skin-made-in-heaven/lib/hook-wp.php:840
 #: blocks/src/block/cta/edit.js:127
 msgid "選択"
 msgstr "選擇"
 
-#: lib/html-forms.php:598
+#: lib/html-forms.php:608
 #: skins/skin-made-in-heaven/lib/hook-wp.php:98
 msgid "クリア"
 msgstr "清除"
 
-#: lib/html-forms.php:605
+#: lib/html-forms.php:615
 msgid "大きな画像は縮小して表示されます。"
 msgstr "大型圖片將縮小顯示。"
 
-#: lib/html-forms.php:626
+#: lib/html-forms.php:636
 msgid "画像を選択してください。"
 msgstr "請選擇圖片。"
 
-#: lib/html-forms.php:634
+#: lib/html-forms.php:644
 msgid "画像の選択"
 msgstr "選擇圖片"
 
-#: lib/html-forms.php:797
+#: lib/html-forms.php:807
 msgid "フロントページのみ"
 msgstr "僅首頁"
 
-#: lib/html-forms.php:802
+#: lib/html-forms.php:812
 #: lib/page-settings/sns-follow-forms.php:110
 #: lib/page-settings/sns-share-forms-bottom.php:124
 #: lib/page-settings/sns-share-forms-top.php:111
@@ -2571,173 +2571,173 @@ msgstr "僅首頁"
 msgid "投稿"
 msgstr "文章"
 
-#: lib/html-forms.php:807
+#: lib/html-forms.php:817
 #: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:127
 #: lib/page-settings/sns-share-forms-top.php:114
 #: lib/page-settings/toc-forms.php:62
 #: lib/page-settings/_top-page.php:200
-#: lib/shortcodes.php:492
+#: lib/shortcodes.php:497
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
 msgstr "靜態頁面"
 
-#: lib/html-forms.php:812
+#: lib/html-forms.php:822
 msgid "カテゴリー一覧"
 msgstr "分類列表"
 
-#: lib/html-forms.php:817
+#: lib/html-forms.php:827
 msgid "タグ一覧"
 msgstr "標籤列表"
 
-#: lib/html-forms.php:822
+#: lib/html-forms.php:832
 msgid "著者一覧"
 msgstr "作者列表"
 
-#: lib/html-forms.php:827
+#: lib/html-forms.php:837
 msgid "アーカイブ一覧"
 msgstr "彙整列表"
 
-#: lib/html-forms.php:832
+#: lib/html-forms.php:842
 msgid "検索結果一覧"
 msgstr "搜尋結果列表"
 
-#: lib/html-forms.php:837
+#: lib/html-forms.php:847
 #: lib/page-settings/_top-page.php:248
 #: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr "404 頁面"
 
-#: lib/html-forms.php:843
+#: lib/html-forms.php:853
 msgid "AMPページ"
 msgstr "AMP 頁面"
 
-#: lib/html-forms.php:850
+#: lib/html-forms.php:860
 msgid "wpForoページ"
 msgstr "wpForo 頁面"
 
-#: lib/html-forms.php:857
+#: lib/html-forms.php:867
 msgid "bbPressページ"
 msgstr "bbPress 頁面"
 
-#: lib/html-forms.php:864
+#: lib/html-forms.php:874
 msgid "BuddyPressページ"
 msgstr "BuddyPress 頁面"
 
-#: lib/html-forms.php:871
+#: lib/html-forms.php:881
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr "外掛論壇頁面（bbPress、BuddyPress、wpForo）"
 
-#: lib/html-forms.php:917
+#: lib/html-forms.php:927
 msgid "投稿ID入力"
 msgstr "輸入文章 ID"
 
-#: lib/html-forms.php:918
-#: lib/html-forms.php:938
-#: lib/html-forms.php:958
+#: lib/html-forms.php:928
+#: lib/html-forms.php:948
+#: lib/html-forms.php:968
 msgid "例：111,222,333"
 msgstr "例：111,222,333"
 
-#: lib/html-forms.php:919
+#: lib/html-forms.php:929
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "請輸入以逗號分隔的文章 ID。"
 
-#: lib/html-forms.php:937
+#: lib/html-forms.php:947
 msgid "固定ページID入力"
 msgstr "輸入靜態頁面 ID"
 
-#: lib/html-forms.php:939
+#: lib/html-forms.php:949
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "請輸入以逗號分隔的靜態頁面 ID。"
 
-#: lib/html-forms.php:957
+#: lib/html-forms.php:967
 msgid "タグID入力"
 msgstr "輸入標籤 ID"
 
-#: lib/html-forms.php:959
+#: lib/html-forms.php:969
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr "請輸入以逗號分隔的標籤 ID。"
 
-#: lib/html-forms.php:1128
+#: lib/html-forms.php:1142
 msgid "人気記事は見つかりませんでした。"
 msgstr "未找到熱門文章。"
 
-#: lib/html-forms.php:1356
-#: lib/html-forms.php:1926
+#: lib/html-forms.php:1373
+#: lib/html-forms.php:1948
 msgid "記事は見つかりませんでした。"
 msgstr "未找到文章。"
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1488
+#: lib/html-forms.php:1508
 msgid "Posts by %s"
 msgstr "由 %s 發布的文章"
 
-#: lib/html-forms.php:1492
+#: lib/html-forms.php:1512
 msgid "NO USER"
 msgstr "無使用者"
 
-#: lib/html-forms.php:1507
+#: lib/html-forms.php:1527
 msgid "未登録のユーザーさん"
 msgstr "未註冊使用者"
 
-#: lib/html-forms.php:1517
+#: lib/html-forms.php:1537
 msgid "未登録のユーザーさんです。"
 msgstr "此使用者未註冊。"
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1539
 msgid "ログイン・登録はこちら→"
 msgstr "登入/註冊在這裡→"
 
-#: lib/html-forms.php:1521
+#: lib/html-forms.php:1541
 msgid "ログインページ"
 msgstr "登入頁面"
 
-#: lib/html-forms.php:1525
+#: lib/html-forms.php:1545
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "未註冊使用者。請登入並按下 Cocoon 設定中的儲存按鈕。"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1548
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "可以在管理界面中更改個人資料→"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1548
 msgid "プロフィール設定画面"
 msgstr "個人資料設定"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1548
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*此訊息僅顯示給登入使用者。"
 
-#: lib/html-forms.php:1558
+#: lib/html-forms.php:1578
 msgid "管理者用エラーメッセージ"
 msgstr "管理員錯誤訊息"
 
-#: lib/html-forms.php:1791
+#: lib/html-forms.php:1813
 msgid "おすすめ"
 msgstr "推薦"
 
-#: lib/html-forms.php:1794
+#: lib/html-forms.php:1816
 #: skins/skin-made-in-heaven/tmp/css-custom.php:17
 msgid "新着"
 msgstr "新文章"
 
-#: lib/html-forms.php:1797
+#: lib/html-forms.php:1819
 #: skins/skin-made-in-heaven/tmp/css-custom.php:18
 msgid "注目"
 msgstr "精選"
 
-#: lib/html-forms.php:1800
+#: lib/html-forms.php:1822
 #: skins/skin-made-in-heaven/tmp/css-custom.php:19
 msgid "必見"
 msgstr "必看"
 
-#: lib/html-forms.php:1803
+#: lib/html-forms.php:1825
 #: skins/skin-made-in-heaven/tmp/css-custom.php:20
 msgid "お得"
 msgstr "特惠"
 
-#: lib/html-forms.php:1846
-#: lib/shortcodes.php:1017
+#: lib/html-forms.php:1868
+#: lib/shortcodes.php:1022
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -2902,13 +2902,13 @@ msgid "2日"
 msgstr "2 天"
 
 #: lib/page-access/access-forms.php:71
-#: blocks/src/block/popular-list/edit.js:151
+#: blocks/src/block/popular-list/edit.js:152
 msgid "3日"
 msgstr "3 天"
 
 #: lib/page-access/access-forms.php:72
 #: lib/page-settings/single-forms.php:194
-#: blocks/src/block/popular-list/edit.js:155
+#: blocks/src/block/popular-list/edit.js:156
 msgid "1週間"
 msgstr "1 週"
 
@@ -3955,7 +3955,7 @@ msgstr "僅顯示在手機"
 #: lib/page-settings/admin-forms.php:166
 #: lib/page-settings/appeal-forms.php:38
 #: lib/page-settings/carousel-forms.php:38
-#: lib/page-settings/header-forms.php:128
+#: lib/page-settings/header-forms.php:140
 #: lib/page-settings/page-forms.php:56
 #: lib/page-settings/recommended-forms.php:39
 #: lib/page-settings/single-forms.php:429
@@ -5312,7 +5312,7 @@ msgid "データー取得時点のAmazon販売ページでの値段を表示し�
 msgstr "顯示在獲取資料時 Amazon 銷售頁面上的價格。如果使用短代碼設定了 price 選項，則優先顯示該選項。"
 
 #: lib/page-settings/apis-forms.php:77
-#: blocks/src/block/new-list/edit.js:221
+#: blocks/src/block/new-list/edit.js:222
 msgid "説明文を表示する"
 msgstr "顯示說明"
 
@@ -5675,7 +5675,7 @@ msgid "アピールエリアを表示するページを設定します。"
 msgstr "設定顯示促銷區的頁面。"
 
 #: lib/page-settings/appeal-forms.php:55
-#: lib/page-settings/header-forms.php:68
+#: lib/page-settings/header-forms.php:81
 msgid "高さ"
 msgstr "高度"
 
@@ -6065,7 +6065,7 @@ msgstr "1 年"
 #: lib/page-settings/carousel-forms.php:72
 #: lib/page-settings/single-forms.php:193
 #: lib/widgets/popular-entries.php:205
-#: blocks/src/block/popular-list/edit.js:143
+#: blocks/src/block/popular-list/edit.js:144
 msgid "全期間"
 msgstr "全部期間"
 
@@ -6083,7 +6083,7 @@ msgstr "選擇熱門文章時，僅優先顯示熱門文章。"
 #: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:130
 #: lib/page-settings/sns-share-forms-top.php:117
-#: lib/shortcodes.php:509
+#: lib/shortcodes.php:514
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
 msgstr "分類"
@@ -6104,7 +6104,7 @@ msgstr "（※若要顯示分類相關文章，請不要選擇熱門文章）"
 #: lib/page-settings/sns-share-forms-top.php:120
 #: lib/tinymce/html-tags.php:45
 #: lib/widgets/display-widgets.php:173
-#: blocks/src/block/new-list/edit.js:108
+#: blocks/src/block/new-list/edit.js:109
 msgid "タグ"
 msgstr "標籤"
 
@@ -7216,140 +7216,148 @@ msgstr "固定頁首"
 msgid "ページをスクロールしても、ヘッダーが追従してきます。こちらはパソコン環境のみの動作になります。IEでは動作しません。"
 msgstr "即使滾動頁面，頁首也會隨之移動。此功能僅適用於 PC 環境，不適用於 IE 瀏覽器。"
 
-#: lib/page-settings/header-forms.php:73
+#: lib/page-settings/header-forms.php:67
+msgid "ヘッダー固定・モバイルロゴ"
+msgstr "固定標頭・行動版標誌"
+
+#: lib/page-settings/header-forms.php:72
+msgid "ヘッダー固定、モバイル時でのヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。"
+msgstr "設定在行動裝置上固定標頭時顯示的圖片。建議使用 jpg、jpeg 或 png 格式的圖片。"
+
+#: lib/page-settings/header-forms.php:86
 msgid "ヘッダーの高さをpx数で指定します。モバイル環境ではモバイル用設定のものが利用されます。未入力でデフォルトになります。（最小：0px、最大：800px）"
 msgstr "指定頁首高度，單位為像素。在行動裝置上，將使用行動裝置設定的高度。如果留空，則為預設高度。（最小：0px，最大：800px）"
 
-#: lib/page-settings/header-forms.php:73
+#: lib/page-settings/header-forms.php:86
 msgid "※「ヘッダーレイアウト」が「センターロゴ」の時のみに適用されます。"
 msgstr "*僅適用於「頁首佈局」設定為「居中標誌」時。"
 
-#: lib/page-settings/header-forms.php:81
+#: lib/page-settings/header-forms.php:94
 msgid "高さ（モバイル）"
 msgstr "高度（行動裝置）"
 
-#: lib/page-settings/header-forms.php:86
+#: lib/page-settings/header-forms.php:99
 msgid "モバイルでのヘッダーの高さをpx数で指定します。834px以下のタブレット以下の幅の狭い端末用です。未入力でデフォルトになります。（最小：0px、最大：600px）"
 msgstr "指定行動裝置頁首高度，單位為像素。適用於寬度為 834px 或更小的平板電腦或其他窄螢幕裝置。如果留空，則為預設高度。（最小：0px，最大：600px）"
 
-#: lib/page-settings/header-forms.php:93
+#: lib/page-settings/header-forms.php:106
 #: skins/skin-made-in-heaven/lib/panel-visual.php:24
 msgid "ヘッダーロゴ"
 msgstr "頁首標誌"
 
-#: lib/page-settings/header-forms.php:98
+#: lib/page-settings/header-forms.php:111
 msgid "ヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。"
 msgstr "設定要顯示在頁首部分的圖片。建議使用 jpg、jpeg 或 png 格式的圖片。"
 
-#: lib/page-settings/header-forms.php:107
+#: lib/page-settings/header-forms.php:119
 msgid "ヘッダーロゴサイズ"
 msgstr "頁首標誌大小"
 
-#: lib/page-settings/header-forms.php:111
+#: lib/page-settings/header-forms.php:123
 msgid "幅："
 msgstr "寬度："
 
-#: lib/page-settings/header-forms.php:113
+#: lib/page-settings/header-forms.php:125
 msgid " × "
 msgstr "×"
 
-#: lib/page-settings/header-forms.php:114
+#: lib/page-settings/header-forms.php:126
 msgid "高さ："
 msgstr "高度："
 
-#: lib/page-settings/header-forms.php:116
+#: lib/page-settings/header-forms.php:128
 msgid "ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。"
 msgstr "指定標誌的寬度和高度，這樣可以支援 Retina 顯示。如果不需要設定大小，請留空。如果「頁首佈局」不是選擇「居中標誌」，則不會進行標誌大小的更改。"
 
-#: lib/page-settings/header-forms.php:123
+#: lib/page-settings/header-forms.php:135
 msgid "キャッチフレーズの配置"
 msgstr "標語的佈置"
 
-#: lib/page-settings/header-forms.php:129
+#: lib/page-settings/header-forms.php:141
 msgid "ヘッダートップ（デフォルト）"
 msgstr "頁首頂部（預設）"
 
-#: lib/page-settings/header-forms.php:130
+#: lib/page-settings/header-forms.php:142
 msgid "ヘッダーボトム"
 msgstr "頁首底部"
 
-#: lib/page-settings/header-forms.php:133
+#: lib/page-settings/header-forms.php:145
 msgid "キャッチフレーズの表示位置を設定します。※「ヘッダーレイアウト」が「センターロゴ」の場合。"
 msgstr "設定標語的顯示位置。※僅適用於「頁首佈局」設定為「居中標誌」。"
 
-#: lib/page-settings/header-forms.php:141
+#: lib/page-settings/header-forms.php:153
 msgid "ヘッダー背景画像"
 msgstr "頁首背景圖片"
 
-#: lib/page-settings/header-forms.php:146
+#: lib/page-settings/header-forms.php:158
 msgid "ヘッダー背景として表示する画像を設定します。"
 msgstr "設定作為頁首背景顯示的圖片。"
 
-#: lib/page-settings/header-forms.php:149
+#: lib/page-settings/header-forms.php:161
 msgid "ヘッダー背景画像を固定する"
 msgstr "固定頁首背景圖片"
 
-#: lib/page-settings/header-forms.php:150
+#: lib/page-settings/header-forms.php:162
 msgid "PC画面でヘッダー背景に設定した画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。"
 msgstr "在電腦版螢幕上固定設定為頁首背景的圖片。當上下捲動時，背景圖片將不會移動。"
 
-#: lib/page-settings/header-forms.php:153
+#: lib/page-settings/header-forms.php:165
 msgid "背景画像を全て表示する"
 msgstr "顯示整個背景圖片"
 
-#: lib/page-settings/header-forms.php:154
+#: lib/page-settings/header-forms.php:166
 msgid "ヘッダーのサイズを「ヘッダー背景画像」に設定した画像の縦横比サイズに合わせて表示させます。"
 msgstr "將頁首的尺寸設定為與「頁首背景圖片」中設定的圖片的寬高比例相符。"
 
-#: lib/page-settings/header-forms.php:154
+#: lib/page-settings/header-forms.php:166
 msgid "これにより背景画像が隠れることなく表示されます。"
 msgstr "這將確保背景圖片不被隱藏。"
 
-#: lib/page-settings/header-forms.php:154
+#: lib/page-settings/header-forms.php:166
 msgid "「ヘッダーレイアウト」設定が「センターロゴ」時のみ。"
 msgstr "僅當「頁首佈局」設定為「居中標誌」時適用。"
 
-#: lib/page-settings/header-forms.php:154
+#: lib/page-settings/header-forms.php:166
 msgid "ヘッダー設定にある「高さ」や「高さ（モバイル）」の値は無効になります。"
 msgstr "頁首設定中的「高度」和「高度（手機端）」值將失效。"
 
-#: lib/page-settings/header-forms.php:162
+#: lib/page-settings/header-forms.php:174
 msgid "ヘッダー全体色"
 msgstr "整體頁首顏色"
 
-#: lib/page-settings/header-forms.php:169
+#: lib/page-settings/header-forms.php:181
 msgid "ヘッダー全体背景色"
 msgstr "整體頁首背景顏色"
 
-#: lib/page-settings/header-forms.php:170
+#: lib/page-settings/header-forms.php:182
 msgid "ロゴ部分やグローバルナビ全てを含めた背景色を選択します。"
 msgstr "選擇包括標誌部分和全域導航的背景顏色。"
 
-#: lib/page-settings/header-forms.php:172
+#: lib/page-settings/header-forms.php:184
 msgid "ヘッダー全体文字色"
 msgstr "整體頁首文字顏色"
 
-#: lib/page-settings/header-forms.php:173
+#: lib/page-settings/header-forms.php:185
 msgid "ロゴ部分やグローバルナビ全てを含めたテキスト色を選択します。"
 msgstr "選擇包括標誌部分和全域導航的文字顏色。"
 
-#: lib/page-settings/header-forms.php:181
+#: lib/page-settings/header-forms.php:193
 msgid "ヘッダー色（ロゴ部）"
 msgstr "頁首顏色（標誌部分）"
 
-#: lib/page-settings/header-forms.php:187
+#: lib/page-settings/header-forms.php:199
 msgid "ロゴエリア背景色"
 msgstr "標誌區域背景顏色"
 
-#: lib/page-settings/header-forms.php:188
+#: lib/page-settings/header-forms.php:200
 msgid "グローバルナビ上のヘッダー背景色を選択します。"
 msgstr "選擇全域導航上方的頁首背景顏色。"
 
-#: lib/page-settings/header-forms.php:190
+#: lib/page-settings/header-forms.php:202
 msgid "ロゴ文字色"
 msgstr "標誌文字顏色"
 
-#: lib/page-settings/header-forms.php:191
+#: lib/page-settings/header-forms.php:203
 msgid "グローバルナビ上のヘッダーテキスト色を選択します。"
 msgstr "選擇全域導航上方的頁首文字顏色。"
 
@@ -8775,6 +8783,8 @@ msgid "表示する日付"
 msgstr "顯示日期"
 
 #: lib/page-settings/seo-forms.php:155
+#: blocks/src/block/new-list/edit.js:229
+#: blocks/src/block/popular-list/edit.js:275
 msgid "投稿日・更新日を表示する"
 msgstr "顯示發佈日期和更新日期"
 
@@ -8883,7 +8893,7 @@ msgid "関連記事見出し"
 msgstr "相關文章標題"
 
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1133
+#: lib/shortcodes.php:1139
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -8917,8 +8927,8 @@ msgstr "請輸入相關文章的副標題。"
 #: lib/widgets/popular-entries.php:189
 #: lib/widgets/related-entries.php:182
 #: blocks/src/block/navicard/edit.js:101
-#: blocks/src/block/new-list/edit.js:134
-#: blocks/src/block/popular-list/edit.js:214
+#: blocks/src/block/new-list/edit.js:135
+#: blocks/src/block/popular-list/edit.js:215
 msgid "表示タイプ"
 msgstr "顯示類型"
 
@@ -8952,7 +8962,7 @@ msgid "取得期間"
 msgstr "獲取期間"
 
 #: lib/page-settings/single-forms.php:195
-#: blocks/src/block/popular-list/edit.js:159
+#: blocks/src/block/popular-list/edit.js:160
 msgid "2週間"
 msgstr "2週"
 
@@ -8961,17 +8971,17 @@ msgid "3週間"
 msgstr "3週"
 
 #: lib/page-settings/single-forms.php:197
-#: blocks/src/block/popular-list/edit.js:163
+#: blocks/src/block/popular-list/edit.js:164
 msgid "1ヶ月"
 msgstr "1個月"
 
 #: lib/page-settings/single-forms.php:198
-#: blocks/src/block/popular-list/edit.js:167
+#: blocks/src/block/popular-list/edit.js:168
 msgid "2ヶ月"
 msgstr "2個月"
 
 #: lib/page-settings/single-forms.php:199
-#: blocks/src/block/popular-list/edit.js:171
+#: blocks/src/block/popular-list/edit.js:172
 msgid "3ヶ月"
 msgstr "3個月"
 
@@ -8980,7 +8990,7 @@ msgid "6ヶ月"
 msgstr "6個月"
 
 #: lib/page-settings/single-forms.php:201
-#: blocks/src/block/popular-list/edit.js:179
+#: blocks/src/block/popular-list/edit.js:180
 msgid "1年"
 msgstr "1年"
 
@@ -10069,7 +10079,7 @@ msgstr "打開："
 
 #: lib/page-settings/toc-forms.php:99
 #: lib/page-settings/toc-funcs.php:70
-#: tmp/css-custom.php:555
+#: tmp/css-custom.php:561
 msgid "開く"
 msgstr "打開"
 
@@ -10080,7 +10090,7 @@ msgstr "關閉："
 #: lib/page-settings/toc-forms.php:103
 #: lib/page-settings/toc-funcs.php:78
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
-#: tmp/css-custom.php:571
+#: tmp/css-custom.php:577
 msgid "閉じる"
 msgstr "關閉"
 
@@ -10914,15 +10924,15 @@ msgstr "在卡片的上下顯示虛線分隔線。"
 
 #: lib/settings.php:556
 #: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:143
-#: blocks/src/block/popular-list/edit.js:223
+#: blocks/src/block/new-list/edit.js:144
+#: blocks/src/block/popular-list/edit.js:224
 msgid "カードの上下に区切り線を入れる"
 msgstr "在卡片的上下添加分隔線"
 
 #: lib/settings.php:556
 #: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:143
-#: blocks/src/block/popular-list/edit.js:223
+#: blocks/src/block/new-list/edit.js:144
+#: blocks/src/block/popular-list/edit.js:224
 msgid "（縦並び表示のみ）"
 msgstr "（僅限垂直顯示）"
 
@@ -10932,8 +10942,8 @@ msgstr "用框線圍繞卡片本身。"
 
 #: lib/settings.php:559
 #: blocks/src/block/navicard/edit.js:114
-#: blocks/src/block/new-list/edit.js:147
-#: blocks/src/block/popular-list/edit.js:227
+#: blocks/src/block/new-list/edit.js:148
+#: blocks/src/block/popular-list/edit.js:228
 msgid "カードに枠線を表示する"
 msgstr "在卡片上顯示框線"
 
@@ -10943,8 +10953,8 @@ msgstr "在大縮略圖下方顯示標題。"
 
 #: lib/settings.php:562
 #: blocks/src/block/navicard/edit.js:118
-#: blocks/src/block/new-list/edit.js:151
-#: blocks/src/block/popular-list/edit.js:231
+#: blocks/src/block/new-list/edit.js:152
+#: blocks/src/block/popular-list/edit.js:232
 msgid "大きなサムネイル表示にする"
 msgstr "顯示大縮略圖"
 
@@ -10954,8 +10964,8 @@ msgstr "標題重疊在大縮略圖的下方。"
 
 #: lib/settings.php:565
 #: blocks/src/block/navicard/edit.js:122
-#: blocks/src/block/new-list/edit.js:155
-#: blocks/src/block/popular-list/edit.js:235
+#: blocks/src/block/new-list/edit.js:156
+#: blocks/src/block/popular-list/edit.js:236
 msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr "在大型縮略圖上疊加顯示標題"
 
@@ -11071,33 +11081,33 @@ msgstr "Rakuten商品獲取錯誤"
 msgid "楽天商品リンクが取得できませんでした。"
 msgstr "無法獲取 Rakuten 商品連結。"
 
-#: lib/shortcodes.php:305
+#: lib/shortcodes.php:310
 #: lib/tinymce/shortcodes.php:234
 #: blocks/src/toolbutton/dropdown-shortcodes.js:184
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
 msgstr "此內容僅顯示給登入使用者。"
 
-#: lib/shortcodes.php:386
+#: lib/shortcodes.php:391
 msgid "日付未入力"
 msgstr "未輸入日期"
 
-#: lib/shortcodes.php:412
+#: lib/shortcodes.php:417
 msgid "歳"
 msgstr "歲"
 
-#: lib/shortcodes.php:515
+#: lib/shortcodes.php:520
 msgid "月別アーカイブ"
 msgstr "按月存檔"
 
-#: lib/shortcodes.php:990
+#: lib/shortcodes.php:995
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "更新的簡碼僅可用於文章和固定頁面。"
 
-#: lib/shortcodes.php:1105
+#: lib/shortcodes.php:1111
 msgid "保存エラー"
 msgstr "儲存失敗"
 
-#: lib/shortcodes.php:1123
+#: lib/shortcodes.php:1129
 msgid "エラー："
 msgstr "錯誤："
 
@@ -12076,8 +12086,8 @@ msgstr "這是一個顯示導航卡列表的小工具。"
 #: lib/widgets/popular-entries.php:213
 #: lib/widgets/related-entries.php:203
 #: blocks/src/block/navicard/edit.js:130
-#: blocks/src/block/new-list/edit.js:204
-#: blocks/src/block/popular-list/edit.js:243
+#: blocks/src/block/new-list/edit.js:205
+#: blocks/src/block/popular-list/edit.js:244
 msgid "横並び表示にする"
 msgstr "並排顯示"
 
@@ -12093,8 +12103,8 @@ msgstr "（推薦與“大縮略圖”一起使用）"
 #: lib/widgets/popular-entries.php:220
 #: lib/widgets/related-entries.php:210
 #: blocks/src/block/navicard/edit.js:137
-#: blocks/src/block/new-list/edit.js:211
-#: blocks/src/block/popular-list/edit.js:250
+#: blocks/src/block/new-list/edit.js:212
+#: blocks/src/block/popular-list/edit.js:251
 msgid "タイトルを太字にする"
 msgstr "將標題設為粗體"
 
@@ -12103,8 +12113,8 @@ msgstr "將標題設為粗體"
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
 #: blocks/src/block/navicard/edit.js:142
-#: blocks/src/block/new-list/edit.js:216
-#: blocks/src/block/popular-list/edit.js:269
+#: blocks/src/block/new-list/edit.js:217
+#: blocks/src/block/popular-list/edit.js:270
 msgid "カードに矢印を表示する"
 msgstr "在卡片上顯示箭頭"
 
@@ -12191,12 +12201,12 @@ msgid "集計期間"
 msgstr "統計期間"
 
 #: lib/widgets/popular-entries.php:226
-#: blocks/src/block/popular-list/edit.js:255
+#: blocks/src/block/popular-list/edit.js:256
 msgid "ランキング番号を表示する"
 msgstr "顯示排名號碼"
 
 #: lib/widgets/popular-entries.php:232
-#: blocks/src/block/popular-list/edit.js:262
+#: blocks/src/block/popular-list/edit.js:263
 msgid "PV数を表示する"
 msgstr "顯示PV數"
 
@@ -14084,7 +14094,7 @@ msgstr "返回頂部"
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr "本文閱讀時間約為<span class=\"bold\">%s分鐘</span>。"
 
-#: tmp/css-custom.php:934
+#: tmp/css-custom.php:940
 msgid "ラベルなし"
 msgstr "無標籤"
 
@@ -14879,8 +14889,8 @@ msgstr "閱讀此文章"
 #: blocks/src/block/cta/edit.js:78
 #: blocks/src/block/info-list/edit.js:87
 #: blocks/src/block/navicard/edit.js:99
-#: blocks/src/block/new-list/edit.js:124
-#: blocks/src/block/popular-list/edit.js:197
+#: blocks/src/block/new-list/edit.js:125
+#: blocks/src/block/popular-list/edit.js:198
 msgid "基本設定"
 msgstr "基本設定"
 
@@ -15005,8 +15015,8 @@ msgid "ボックスの背景色により、直感的にメッセージ内容を�
 msgstr "這是一個用於通過框的背景顏色直觀傳達訊息內容的框。"
 
 #: blocks/src/block/info-list/edit.js:58
-#: blocks/src/block/new-list/edit.js:78
-#: blocks/src/block/popular-list/edit.js:77
+#: blocks/src/block/new-list/edit.js:79
+#: blocks/src/block/popular-list/edit.js:78
 msgid "表示するカテゴリーをカンマ区切りで指定"
 msgstr "用逗號分隔指定要顯示的分類"
 
@@ -15015,14 +15025,14 @@ msgid "キャプション(枠線内表示)"
 msgstr "標題（顯示在框線內）"
 
 #: blocks/src/block/info-list/edit.js:123
-#: blocks/src/block/new-list/edit.js:228
-#: blocks/src/block/popular-list/edit.js:274
+#: blocks/src/block/new-list/edit.js:236
+#: blocks/src/block/popular-list/edit.js:280
 msgid "フィルタ"
 msgstr "過濾器"
 
 #: blocks/src/block/info-list/edit.js:125
-#: blocks/src/block/new-list/edit.js:230
-#: blocks/src/block/popular-list/edit.js:276
+#: blocks/src/block/new-list/edit.js:238
+#: blocks/src/block/popular-list/edit.js:282
 msgid "全カテゴリーを表示する"
 msgstr "顯示所有分類"
 
@@ -15046,71 +15056,71 @@ msgstr "請選擇選單。"
 msgid "登録されているメニューからナビカードを表示します。"
 msgstr "顯示已註冊選單中的導航卡片。"
 
-#: blocks/src/block/new-list/edit.js:83
-#: blocks/src/block/popular-list/edit.js:82
+#: blocks/src/block/new-list/edit.js:84
+#: blocks/src/block/popular-list/edit.js:83
 msgid "表示カテゴリー選択"
 msgstr "選擇顯示的分類"
 
-#: blocks/src/block/new-list/edit.js:86
+#: blocks/src/block/new-list/edit.js:87
 msgid "テキストを入力して絞り込んでください。"
 msgstr "輸入文字以篩選。"
 
-#: blocks/src/block/new-list/edit.js:96
-#: blocks/src/block/popular-list/edit.js:94
+#: blocks/src/block/new-list/edit.js:97
+#: blocks/src/block/popular-list/edit.js:95
 msgid "子カテゴリーの内容を含めて表示する"
 msgstr "包括子分類的內容"
 
-#: blocks/src/block/new-list/edit.js:126
-#: blocks/src/block/popular-list/edit.js:199
+#: blocks/src/block/new-list/edit.js:127
+#: blocks/src/block/popular-list/edit.js:200
 msgid "表示する記事の数"
 msgstr "顯示的文章數量"
 
-#: blocks/src/block/new-list/edit.js:162
+#: blocks/src/block/new-list/edit.js:163
 msgid "表示順"
 msgstr "顯示順序"
 
-#: blocks/src/block/new-list/edit.js:166
+#: blocks/src/block/new-list/edit.js:167
 msgid "更新日順"
 msgstr "按更新日期排序"
 
-#: blocks/src/block/new-list/edit.js:170
+#: blocks/src/block/new-list/edit.js:171
 msgid "投稿日順"
 msgstr "按發佈日期排序"
 
-#: blocks/src/block/new-list/edit.js:184
+#: blocks/src/block/new-list/edit.js:185
 msgid "並び替え"
 msgstr "排序"
 
-#: blocks/src/block/new-list/edit.js:187
+#: blocks/src/block/new-list/edit.js:188
 msgid "昇順"
 msgstr "升序"
 
-#: blocks/src/block/new-list/edit.js:188
+#: blocks/src/block/new-list/edit.js:189
 msgid "降順"
 msgstr "降序"
 
-#: blocks/src/block/new-list/edit.js:196
+#: blocks/src/block/new-list/edit.js:197
 msgid "読み飛ばし"
 msgstr "跳過文章"
 
-#: blocks/src/block/new-list/edit.js:241
+#: blocks/src/block/new-list/edit.js:249
 msgid "全タグを表示する"
 msgstr "顯示所有標籤"
 
-#: blocks/src/block/new-list/edit.js:250
+#: blocks/src/block/new-list/edit.js:258
 msgid "固定記事を表示する"
 msgstr "顯示置頂文章"
 
-#: blocks/src/block/new-list/edit.js:255
-#: blocks/src/block/popular-list/edit.js:288
+#: blocks/src/block/new-list/edit.js:263
+#: blocks/src/block/popular-list/edit.js:294
 msgid "投稿タイプ"
 msgstr "文章類型"
 
-#: blocks/src/block/new-list/edit.js:262
+#: blocks/src/block/new-list/edit.js:270
 msgid "検索グループ"
 msgstr "搜尋群組"
 
-#: blocks/src/block/new-list/edit.js:267
+#: blocks/src/block/new-list/edit.js:275
 msgid "投稿ユーザ"
 msgstr "作者"
 
@@ -15118,31 +15128,31 @@ msgstr "作者"
 msgid "新着記事の一覧を表示します。"
 msgstr "顯示新文章列表。"
 
-#: blocks/src/block/popular-list/edit.js:107
+#: blocks/src/block/popular-list/edit.js:108
 msgid "除外するカテゴリーをカンマ区切りで指定"
 msgstr "用逗號分隔指定要排除的分類"
 
-#: blocks/src/block/popular-list/edit.js:112
+#: blocks/src/block/popular-list/edit.js:113
 msgid "除外カテゴリー選択"
 msgstr "選擇排除的分類"
 
-#: blocks/src/block/popular-list/edit.js:136
+#: blocks/src/block/popular-list/edit.js:137
 msgid "データの集計期間"
 msgstr "數據彙總期間"
 
-#: blocks/src/block/popular-list/edit.js:147
+#: blocks/src/block/popular-list/edit.js:148
 msgid "1日"
 msgstr "1天"
 
-#: blocks/src/block/popular-list/edit.js:175
+#: blocks/src/block/popular-list/edit.js:176
 msgid "半年"
 msgstr "半年"
 
-#: blocks/src/block/popular-list/edit.js:206
+#: blocks/src/block/popular-list/edit.js:207
 msgid "全期間集計"
 msgstr "彙總整個期間"
 
-#: blocks/src/block/popular-list/edit.js:295
+#: blocks/src/block/popular-list/edit.js:301
 msgid "除外投稿(ID)"
 msgstr "排除文章（ID）"
 
