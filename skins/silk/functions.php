@@ -1007,7 +1007,7 @@ class Skin_Silk_Functions {
     return str_replace('fa-tag', 'fa-hashtag', $output);
   }
 
-  //プロフィールボックス
+  //プロフィール
   public function author_box($name) {
     return '<i class="'.$this->fa.' fa-at"></i>'.$name;
   }

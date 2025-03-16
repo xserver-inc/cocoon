@@ -11328,7 +11328,7 @@ msgstr ""
 #: lib/tinymce/shortcodes.php:96
 #: blocks/src/block/profile/index.js:21
 #: blocks/src/toolbutton/dropdown-shortcodes.js:72
-msgid "プロフィールボックス"
+msgid "プロフィール"
 msgstr ""
 
 #: lib/tinymce/shortcodes.php:102
@@ -11796,7 +11796,7 @@ msgid "自動的に段落を追加する"
 msgstr ""
 
 #: lib/widgets/cta-box.php:19
-msgid "CTAボックス"
+msgid "CTA"
 msgstr ""
 
 #: lib/widgets/cta-box.php:20
@@ -13038,15 +13038,15 @@ msgid "ロゴをフロントページと別画像にしたいとき設定しま�
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1604
-msgid "コンテンツ下部ウィジェット：プロフィールボックス"
+msgid "コンテンツ下部ウィジェット：プロフィール"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1607
-msgid "プロフィールボックスの設定についてはこちらを参照"
+msgid "プロフィールの設定についてはこちらを参照"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1620
-msgid "プロフィールボックスの背景画像の白オーバーレイ不透明度調整"
+msgid "プロフィールの背景画像の白オーバーレイ不透明度調整"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1621
@@ -13062,7 +13062,7 @@ msgid "画像アップロード"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1657
-msgid "プロフィールボックスの背景に設定したい画像を選択"
+msgid "プロフィールの背景に設定したい画像を選択"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1740

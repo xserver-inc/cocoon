@@ -84,7 +84,7 @@
               '[navi_list name="メニュー名" type="default" bold="0" arrow="0"]',
           },
           {
-            label: "プロフィールボックス",
+            label: "プロフィール",
             value: '[author_box label="この記事を書いた人]',
           },
           {

@@ -66,10 +66,10 @@ registerShortcodeFormatType(
     '" type="default" bold="0" arrow="0"]',
   [ 'fas', 'th-list' ]
 );
-//プロフィールボックス
+//プロフィール
 registerShortcodeFormatType(
   'shortcode-profile',
-  __( 'プロフィールボックス', THEME_NAME ),
+  __( 'プロフィール', THEME_NAME ),
   '[author_box label="' + __( 'この記事を書いた人', THEME_NAME ) + ']',
   [ 'fas', 'user-circle' ]
 );

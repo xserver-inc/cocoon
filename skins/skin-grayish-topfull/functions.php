@@ -1593,7 +1593,7 @@ endif;
 
 // -----------------------------------------------------------------------------
 // テーマカスタマイザー　コンテンツ下部ウィジェットの設定：
-// プロフィールボックスの背景画像とオーバーレイ調整を設定可能
+// プロフィールの背景画像とオーバーレイ調整を設定可能
 // -----------------------------------------------------------------------------
 if (!function_exists('skin_grayish_profbox_customize')) :
   function skin_grayish_profbox_customize($wp_customize)
@@ -1601,14 +1601,14 @@ if (!function_exists('skin_grayish_profbox_customize')) :
     $wp_customize->add_section(
       'under_contents_section',
       array(
-        'title' => __('コンテンツ下部ウィジェット：プロフィールボックス', THEME_NAME),
+        'title' => __('コンテンツ下部ウィジェット：プロフィール', THEME_NAME),
         'panel' => 'font_pat_panel',
         'priority' => 7500,
-        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-profbox/" target="_blank">' . __('プロフィールボックスの設定についてはこちらを参照', THEME_NAME) . '</a>',
+        'description' => '<a href="https://cocoon-grayish.na2-factory.com/manual-profbox/" target="_blank">' . __('プロフィールの設定についてはこちらを参照', THEME_NAME) . '</a>',
       )
     );
 
-    //プロフィールボックスの白オーバーレイ 透明度の設定　
+    //プロフィールの白オーバーレイ 透明度の設定　
     $wp_customize->add_setting('undercon_profbg_overlay_alpha', array(
       'default' => 'undercon_profbg_overlay_alpha_5',
       'sanitize_callback' => 'skin_grayish_sanitize_select',
@@ -1617,7 +1617,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
       $wp_customize,
       'undercon_profbg_overlay_alpha',
       array(
-        'label' => __('プロフィールボックスの背景画像の白オーバーレイ不透明度調整', THEME_NAME),
+        'label' => __('プロフィールの背景画像の白オーバーレイ不透明度調整', THEME_NAME),
         'description' => __('値が大きくなるほど白色が濃くなります。', THEME_NAME),
         'section' => 'under_contents_section',
         'settings' => 'undercon_profbg_overlay_alpha',
@@ -1654,7 +1654,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
           'section'     => 'under_contents_section',  // 紐づけるセクションIDを指定
           'settings'    => 'undercon_profbg_image',  // 紐づける設定IDを指定
           'label'       => __('画像アップロード', THEME_NAME),
-          'description' => __('プロフィールボックスの背景に設定したい画像を選択', THEME_NAME)
+          'description' => __('プロフィールの背景に設定したい画像を選択', THEME_NAME)
         )
       )
     );
@@ -1662,7 +1662,7 @@ if (!function_exists('skin_grayish_profbox_customize')) :
 endif;
 add_action('customize_register', 'skin_grayish_profbox_customize');
 
-// プロフィールボックス背景 白オーバーレイ
+// プロフィール背景 白オーバーレイ
 add_action('wp_head', 'skin_grayish_profboxbg_whovlay');
 if (!function_exists('skin_grayish_profboxbg_whovlay')) :
   function skin_grayish_profboxbg_whovlay()
@@ -1704,7 +1704,7 @@ if (!function_exists('skin_grayish_profboxbg_whovlay')) :
 
 endif;
 
-// プロフィールボックスの背景画像を設定
+// プロフィールの背景画像を設定
 add_action('wp_head', 'skin_grayish_profboxbg_img');
 if (!function_exists('skin_grayish_profboxbg_img')) :
   function skin_grayish_profboxbg_img()

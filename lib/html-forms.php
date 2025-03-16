@@ -1453,7 +1453,7 @@ $display_class = $display ? '' : ' display-none';
 }
 endif;
 
-//プロフィールボックス生成関数
+//プロフィール生成関数
 if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0){
   $description = '';

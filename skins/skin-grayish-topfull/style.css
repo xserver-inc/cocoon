@@ -4338,7 +4338,7 @@ blockquote cite {
   text-align: left;
 }
 
-/* プロフィールボックス　エディタでカラム、インデックスミドルウィジェット時など縦表示にする */
+/* プロフィール　エディタでカラム、インデックスミドルウィジェット時など縦表示にする */
 .skin-grayish :where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box,
 .skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box,
 .skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box,
@@ -4770,17 +4770,17 @@ blockquote cite {
   grid-column: 2;
 }
 
-/* content-bottomのプロフィールボックスの直後のウィジェットにのみ余白 */
+/* content-bottomのプロフィールの直後のウィジェットにのみ余白 */
 .skin-grayish .content-bottom .widget_author_box+.widget-content-bottom {
   padding-top: 2.5rem;
 }
 
-/* content-bottomのプロフィールボックスの直後のウィジェットが人気記事の場合は多めの余白 */
+/* content-bottomのプロフィールの直後のウィジェットが人気記事の場合は多めの余白 */
 .skin-grayish .content-bottom .widget_author_box+.widget-content-bottom.widget_popular_entries {
   padding-top: 4.5rem;
 }
 
-/* Front content-bottomの最初がプロフィールボックス以外のときは上に余白が必要 */
+/* Front content-bottomの最初がプロフィール以外のときは上に余白が必要 */
 .skin-grayish.front-top-page .content-bottom .content-bottom-in .widget-content-bottom:first-child:not(.widget_author_box) {
   padding-top: 2.5rem;
 }
@@ -5206,7 +5206,7 @@ body:has(#spotlight.show) .header {
   }
 
 
-  /* content-bottomのプロフィールボックスの直後のウィジェットが人気記事の場合は多めの余白 */
+  /* content-bottomのプロフィールの直後のウィジェットが人気記事の場合は多めの余白 */
   .skin-grayish .content-bottom .widget_author_box+.widget-content-bottom.widget_popular_entries {
     padding-top: 3.5rem;
   }
@@ -5922,7 +5922,7 @@ body:has(#spotlight.show) .header {
     margin-top: 0;
   }
 
-  /* プロフィールボックス main,content-bottom, content-top 縦表示 */
+  /* プロフィール main,content-bottom, content-top 縦表示 */
   :where(.main, .content-bottom, .content-top) .author-box {
     grid-template-rows: 100px auto auto auto auto;
     grid-template-columns: 1fr;

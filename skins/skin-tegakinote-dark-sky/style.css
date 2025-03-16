@@ -138,8 +138,8 @@ a {
 ・アイキャッチ画像(.eye-catch img)
 ・404 NOT FOUND画像(.not-found)
 ・記事を読む時間の目安(.read-time)
-・プロフィールボックスのSNSボタン(.author-box .sns-follow-buttons)
-・CTAボックスの画像(.cta-thumb img)
+・プロフィールのSNSボタン(.author-box .sns-follow-buttons)
+・CTAの画像(.cta-thumb img)
 ************************/
 .tagline, .eye-catch img, .not-found, .read-time, .author-box .sns-follow-buttons, .cta-thumb img {
 	position: relative;
@@ -338,8 +338,8 @@ div:not(list-columns) .list:after {
 /************************
 * 両端が濃いマーカー
 ・アピールエリアのタイトル(.appeal-title)
-・プロフィールボックスの名前(.author-box .author-name a)
-・CTAボックスのタイトル(.cta-heading)
+・プロフィールの名前(.author-box .author-name a)
+・CTAのタイトル(.cta-heading)
 ・ナビメニューのホバーエフェクト(.navi-in a)
 ・インデックスのタブ一覧のボタンのホバーエフェクト(.index-tab-buttons)
 ************************/
@@ -1411,7 +1411,7 @@ pre {
 ・サブメニューのボタン(.navi-in .has-icon div)
 ・検索欄のボタン(.search-submit)
 ・「トップへ戻る」ボタン(.go-to-top-button)
-・プロフィールボックスの吹き出し(.author-widget-name)
+・プロフィールの吹き出し(.author-widget-name)
 ・一覧ページのページネーション(.pagination .page-numbers, .pagination .current, .pagination-next-link)
 ・一覧ページの「もっと見る」ボタン(.list-more-button)
 ・コメントのボタン(.comment-btn)
@@ -1766,8 +1766,8 @@ pre {
 /************************
 * カード型囲みボックス
 (メインエリアのみ)
-・プロフィールボックス
-・CTAボックス
+・プロフィール
+・CTA
 ************************/
 .main .main-widget-label {
 	text-align: center;
@@ -1821,7 +1821,7 @@ pre {
 	z-index: 3;
 }
 
-/* プロフィールボックス用 */
+/* プロフィール用 */
 .main .author-box {
 	box-shadow: 0px 2px 0px 0px rgba(var(--back-color), 1), 0px 1px 4px 0px rgba(0, 0, 0, .1);
 	border-top-color: rgba(var(--gray-dark-color), 1);
@@ -1848,7 +1848,7 @@ pre {
 	}
 }
 
-/* CTAボックス用 */
+/* CTA用 */
 .main .cta-box {
 	box-shadow: 0px 2px 0px 0px rgba(var(--gray-color), 1), 0px 1px 4px 0px rgba(0, 0, 0, .1);
 	border-top-color: rgba(var(--gray-color), 1);
@@ -1866,7 +1866,7 @@ pre {
 }
 
 /************************
-* プロフィールボックス
+* プロフィール
 ************************/
 .author-box {
 	border: none;
@@ -1980,7 +1980,7 @@ pre {
 
 
 /************************
-* CTAボックス
+* CTA
 ************************/
 .cta-box {
 	text-align: center;
