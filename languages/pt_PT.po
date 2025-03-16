@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-25T09:26:24+00:00\n"
-"PO-Revision-Date: 2025-02-25 10:04\n"
+"POT-Creation-Date: 2025-03-09T01:26:19+00:00\n"
+"PO-Revision-Date: 2025-03-13 09:17\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -639,8 +639,8 @@ msgstr "Caixa (aba)"
 
 #: lib/admin-tinymce-qtag.php:307
 #: lib/admin-tinymce-qtag.php:1662
-#: tmp/css-custom.php:958
-#: tmp/css-custom.php:1005
+#: tmp/css-custom.php:964
+#: tmp/css-custom.php:1011
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:81
@@ -671,8 +671,8 @@ msgstr "Dica"
 
 #: lib/admin-tinymce-qtag.php:457
 #: lib/admin-tinymce-qtag.php:1668
-#: tmp/css-custom.php:954
-#: tmp/css-custom.php:1002
+#: tmp/css-custom.php:960
+#: tmp/css-custom.php:1008
 #: blocks/src/block/blogcard/deprecated.js:85
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -689,8 +689,8 @@ msgstr "Favoritos"
 
 #: lib/admin-tinymce-qtag.php:547
 #: lib/admin-tinymce-qtag.php:1680
-#: tmp/css-custom.php:974
-#: tmp/css-custom.php:1017
+#: tmp/css-custom.php:980
+#: tmp/css-custom.php:1023
 #: blocks/src/block/blogcard/deprecated.js:93
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -1140,8 +1140,8 @@ msgstr "Rótulo de cartão de blog cercado"
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
 #: skins/skin-made-in-heaven/functions.php:109
-#: tmp/css-custom.php:938
-#: tmp/css-custom.php:990
+#: tmp/css-custom.php:944
+#: tmp/css-custom.php:996
 #: blocks/src/block/blogcard/deprecated.js:57
 #: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:66
@@ -1149,8 +1149,8 @@ msgid "関連記事"
 msgstr "Artigos relacionados"
 
 #: lib/admin-tinymce-qtag.php:1632
-#: tmp/css-custom.php:942
-#: tmp/css-custom.php:993
+#: tmp/css-custom.php:948
+#: tmp/css-custom.php:999
 #: blocks/src/block/blogcard/deprecated.js:61
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:70
@@ -1158,8 +1158,8 @@ msgid "参考記事"
 msgstr "Artigos de referência"
 
 #: lib/admin-tinymce-qtag.php:1638
-#: tmp/css-custom.php:946
-#: tmp/css-custom.php:996
+#: tmp/css-custom.php:952
+#: tmp/css-custom.php:1002
 #: blocks/src/block/blogcard/deprecated.js:65
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
@@ -1172,8 +1172,8 @@ msgstr "Link de referência"
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
 #: skins/skin-made-in-heaven/lib/panel-option.php:335
-#: tmp/css-custom.php:950
-#: tmp/css-custom.php:999
+#: tmp/css-custom.php:956
+#: tmp/css-custom.php:1005
 #: blocks/src/block/blogcard/deprecated.js:69
 #: blocks/src/block/blogcard/edit.js:52
 #: blocks/src/block/popular-list/index.js:28
@@ -1182,8 +1182,8 @@ msgid "人気記事"
 msgstr "Artigos populares"
 
 #: lib/admin-tinymce-qtag.php:1650
-#: tmp/css-custom.php:962
-#: tmp/css-custom.php:1008
+#: tmp/css-custom.php:968
+#: tmp/css-custom.php:1014
 #: blocks/src/block/blogcard/deprecated.js:73
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:78
@@ -1191,11 +1191,11 @@ msgid "あわせて読みたい"
 msgstr "Leia junto"
 
 #: lib/admin-tinymce-qtag.php:1656
-#: lib/shortcodes.php:1137
+#: lib/shortcodes.php:1143
 #: lib/widgets/cta-box.php:34
 #: skins/skin-made-in-heaven/tmp/css-custom.php:12
-#: tmp/css-custom.php:966
-#: tmp/css-custom.php:1011
+#: tmp/css-custom.php:972
+#: tmp/css-custom.php:1017
 #: blocks/src/block/blogcard/deprecated.js:77
 #: blocks/src/block/blogcard/edit.js:60
 #: blocks/src/old/blogcard-class/block.js:82
@@ -1203,8 +1203,8 @@ msgid "詳細はこちら"
 msgstr "Detalhes"
 
 #: lib/admin-tinymce-qtag.php:1674
-#: tmp/css-custom.php:970
-#: tmp/css-custom.php:1014
+#: tmp/css-custom.php:976
+#: tmp/css-custom.php:1020
 #: blocks/src/block/blogcard/deprecated.js:89
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:94
@@ -1212,15 +1212,15 @@ msgid "公式サイト"
 msgstr "Site oficial"
 
 #: lib/admin-tinymce-qtag.php:1686
-#: tmp/css-custom.php:978
-#: tmp/css-custom.php:1020
+#: tmp/css-custom.php:984
+#: tmp/css-custom.php:1026
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr "Artigo anterior"
 
 #: lib/admin-tinymce-qtag.php:1692
-#: tmp/css-custom.php:982
-#: tmp/css-custom.php:1023
+#: tmp/css-custom.php:988
+#: tmp/css-custom.php:1029
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr "Próximo artigo"
@@ -1293,7 +1293,7 @@ msgid "ダッシュボード"
 msgstr "Painel de controle"
 
 #: lib/admin.php:380
-#: lib/shortcodes.php:503
+#: lib/shortcodes.php:508
 msgid "投稿一覧"
 msgstr "Publicações"
 
@@ -1902,8 +1902,8 @@ msgstr "Configurações da página"
 #: blocks/src/block-extension/style-extension/style02.js:42
 #: blocks/src/block/balloon/edit.js:230
 #: blocks/src/block/navicard/edit.js:106
-#: blocks/src/block/new-list/edit.js:139
-#: blocks/src/block/popular-list/edit.js:219
+#: blocks/src/block/new-list/edit.js:140
+#: blocks/src/block/popular-list/edit.js:220
 #: blocks/src/old/balloon-ex-fix1/block.js:166
 #: blocks/src/old/balloon-ex-v2/block.js:87
 #: blocks/src/old/balloon-ex/block.js:156
@@ -2137,8 +2137,8 @@ msgid "ページ内容が類似もしくは重複しているURLが複数存在�
 msgstr "Se houver vários URLs com conteúdo de página semelhante ou duplicado, este campo pode ser usado para indicar ao motor de busca qual é o URL legítimo para que a avaliação da página do motor de busca seja consolidada. Se o conteúdo for duplicado, insira o URL da página canônica."
 
 #: lib/custom-fields/seo-field.php:150
-#: lib/html-forms.php:503
-#: lib/html-forms.php:569
+#: lib/html-forms.php:513
+#: lib/html-forms.php:579
 msgid "詳細設定"
 msgstr "Configurações avançadas"
 
@@ -2491,40 +2491,40 @@ msgstr "Data de edição (descendente)"
 msgid "抽出"
 msgstr "Extrair"
 
-#: lib/html-forms.php:509
-#: lib/html-forms.php:575
+#: lib/html-forms.php:519
+#: lib/html-forms.php:585
 msgid "フォーマット（広告ユニット）"
 msgstr "Formato (Unidade de Anúncio)"
 
-#: lib/html-forms.php:513
-#: lib/html-forms.php:578
+#: lib/html-forms.php:523
+#: lib/html-forms.php:588
 #: lib/widgets/ad.php:79
 #: lib/widgets/mobile-ad.php:79
 #: lib/widgets/pc-ad.php:83
 msgid "広告ラベルを表示する"
 msgstr "Exibir etiqueta de anúncio"
 
-#: lib/html-forms.php:520
+#: lib/html-forms.php:530
 msgid "広告の表示数を制御する"
 msgstr "Controlar o número de anúncios exibidos"
 
-#: lib/html-forms.php:522
+#: lib/html-forms.php:532
 msgid "先頭から"
 msgstr "Do início"
 
-#: lib/html-forms.php:524
+#: lib/html-forms.php:534
 msgid "個まで"
 msgstr "Máximo"
 
-#: lib/html-forms.php:526
+#: lib/html-forms.php:536
 msgid "※-1で全てのH2見出し手前に広告を挿入"
 msgstr "Insira anúncios na frente de todos os cabeçalhos H2 com -1"
 
-#: lib/html-forms.php:556
+#: lib/html-forms.php:566
 msgid "入力済"
 msgstr "Inserido"
 
-#: lib/html-forms.php:558
+#: lib/html-forms.php:568
 #: blocks/src/block/balloon/edit.js:24
 #: blocks/src/old/balloon-1/block.js:17
 #: blocks/src/old/balloon-2/block.js:23
@@ -2535,34 +2535,34 @@ msgstr "Inserido"
 msgid "未入力"
 msgstr "Não inserido"
 
-#: lib/html-forms.php:597
+#: lib/html-forms.php:607
 #: skins/skin-made-in-heaven/lib/hook-wp.php:840
 #: blocks/src/block/cta/edit.js:127
 msgid "選択"
 msgstr "Selecionar"
 
-#: lib/html-forms.php:598
+#: lib/html-forms.php:608
 #: skins/skin-made-in-heaven/lib/hook-wp.php:98
 msgid "クリア"
 msgstr "Limpar"
 
-#: lib/html-forms.php:605
+#: lib/html-forms.php:615
 msgid "大きな画像は縮小して表示されます。"
 msgstr "Imagens grandes são exibidas em tamanho reduzido."
 
-#: lib/html-forms.php:626
+#: lib/html-forms.php:636
 msgid "画像を選択してください。"
 msgstr "Selecione uma imagem."
 
-#: lib/html-forms.php:634
+#: lib/html-forms.php:644
 msgid "画像の選択"
 msgstr "Selecionar imagem"
 
-#: lib/html-forms.php:797
+#: lib/html-forms.php:807
 msgid "フロントページのみ"
 msgstr "Apenas na página inicial"
 
-#: lib/html-forms.php:802
+#: lib/html-forms.php:812
 #: lib/page-settings/sns-follow-forms.php:110
 #: lib/page-settings/sns-share-forms-bottom.php:124
 #: lib/page-settings/sns-share-forms-top.php:111
@@ -2571,173 +2571,173 @@ msgstr "Apenas na página inicial"
 msgid "投稿"
 msgstr "Publicação"
 
-#: lib/html-forms.php:807
+#: lib/html-forms.php:817
 #: lib/page-settings/sns-follow-forms.php:113
 #: lib/page-settings/sns-share-forms-bottom.php:127
 #: lib/page-settings/sns-share-forms-top.php:114
 #: lib/page-settings/toc-forms.php:62
 #: lib/page-settings/_top-page.php:200
-#: lib/shortcodes.php:492
+#: lib/shortcodes.php:497
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
 msgstr "Página"
 
-#: lib/html-forms.php:812
+#: lib/html-forms.php:822
 msgid "カテゴリー一覧"
 msgstr "Lista de categorias"
 
-#: lib/html-forms.php:817
+#: lib/html-forms.php:827
 msgid "タグ一覧"
 msgstr "Lista de tags"
 
-#: lib/html-forms.php:822
+#: lib/html-forms.php:832
 msgid "著者一覧"
 msgstr "Lista de autores"
 
-#: lib/html-forms.php:827
+#: lib/html-forms.php:837
 msgid "アーカイブ一覧"
 msgstr "Lista de arquivos"
 
-#: lib/html-forms.php:832
+#: lib/html-forms.php:842
 msgid "検索結果一覧"
 msgstr "Lista de resultados de pesquisa"
 
-#: lib/html-forms.php:837
+#: lib/html-forms.php:847
 #: lib/page-settings/_top-page.php:248
 #: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr "Páginas 404"
 
-#: lib/html-forms.php:843
+#: lib/html-forms.php:853
 msgid "AMPページ"
 msgstr "Páginas AMP"
 
-#: lib/html-forms.php:850
+#: lib/html-forms.php:860
 msgid "wpForoページ"
 msgstr "Páginas wpForo"
 
-#: lib/html-forms.php:857
+#: lib/html-forms.php:867
 msgid "bbPressページ"
 msgstr "Páginas bbPress"
 
-#: lib/html-forms.php:864
+#: lib/html-forms.php:874
 msgid "BuddyPressページ"
 msgstr "Páginas BuddyPress"
 
-#: lib/html-forms.php:871
+#: lib/html-forms.php:881
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr "Páginas de fóruns de plugins (bbPress, BuddyPress, wpForo)"
 
-#: lib/html-forms.php:917
+#: lib/html-forms.php:927
 msgid "投稿ID入力"
 msgstr "Digite os IDs das publicações"
 
-#: lib/html-forms.php:918
-#: lib/html-forms.php:938
-#: lib/html-forms.php:958
+#: lib/html-forms.php:928
+#: lib/html-forms.php:948
+#: lib/html-forms.php:968
 msgid "例：111,222,333"
 msgstr "Exemplo: 111, 222, 333"
 
-#: lib/html-forms.php:919
+#: lib/html-forms.php:929
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "Digite os IDs das publicações, separados por vírgulas."
 
-#: lib/html-forms.php:937
+#: lib/html-forms.php:947
 msgid "固定ページID入力"
 msgstr "Digite os IDs das páginas"
 
-#: lib/html-forms.php:939
+#: lib/html-forms.php:949
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "Digite os IDs das páginas, separados por vírgulas."
 
-#: lib/html-forms.php:957
+#: lib/html-forms.php:967
 msgid "タグID入力"
 msgstr "Digite os IDs das tags"
 
-#: lib/html-forms.php:959
+#: lib/html-forms.php:969
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr "Digite os IDs das tags, separados por vírgulas."
 
-#: lib/html-forms.php:1128
+#: lib/html-forms.php:1142
 msgid "人気記事は見つかりませんでした。"
 msgstr "Não foram encontrados artigos populares."
 
-#: lib/html-forms.php:1356
-#: lib/html-forms.php:1926
+#: lib/html-forms.php:1373
+#: lib/html-forms.php:1948
 msgid "記事は見つかりませんでした。"
 msgstr "Nenhum artigo encontrado."
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1488
+#: lib/html-forms.php:1508
 msgid "Posts by %s"
 msgstr "Publicações de %s"
 
-#: lib/html-forms.php:1492
+#: lib/html-forms.php:1512
 msgid "NO USER"
 msgstr "NENHUM USUÁRIO"
 
-#: lib/html-forms.php:1507
+#: lib/html-forms.php:1527
 msgid "未登録のユーザーさん"
 msgstr "Usuário não registrado"
 
-#: lib/html-forms.php:1517
+#: lib/html-forms.php:1537
 msgid "未登録のユーザーさんです。"
 msgstr "O usuário não está registrado."
 
-#: lib/html-forms.php:1519
+#: lib/html-forms.php:1539
 msgid "ログイン・登録はこちら→"
 msgstr "Login/Registrar ->"
 
-#: lib/html-forms.php:1521
+#: lib/html-forms.php:1541
 msgid "ログインページ"
 msgstr "Página de login"
 
-#: lib/html-forms.php:1525
+#: lib/html-forms.php:1545
 msgid "未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。"
 msgstr "Usuário não registrado. Por favor, faça login e pressione o botão de salvar nas configurações do Cocoon."
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1548
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "O conteúdo do perfil pode ser alterado na tela de administração ->"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1548
 msgid "プロフィール設定画面"
 msgstr "Configurações de perfil"
 
-#: lib/html-forms.php:1528
+#: lib/html-forms.php:1548
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*Esta mensagem é exibida apenas para usuários logados."
 
-#: lib/html-forms.php:1558
+#: lib/html-forms.php:1578
 msgid "管理者用エラーメッセージ"
 msgstr "Mensagens de erro para o administrador"
 
-#: lib/html-forms.php:1791
+#: lib/html-forms.php:1813
 msgid "おすすめ"
 msgstr "Recomendado"
 
-#: lib/html-forms.php:1794
+#: lib/html-forms.php:1816
 #: skins/skin-made-in-heaven/tmp/css-custom.php:17
 msgid "新着"
 msgstr "Novos posts"
 
-#: lib/html-forms.php:1797
+#: lib/html-forms.php:1819
 #: skins/skin-made-in-heaven/tmp/css-custom.php:18
 msgid "注目"
 msgstr "Destaques"
 
-#: lib/html-forms.php:1800
+#: lib/html-forms.php:1822
 #: skins/skin-made-in-heaven/tmp/css-custom.php:19
 msgid "必見"
 msgstr "Imperdível"
 
-#: lib/html-forms.php:1803
+#: lib/html-forms.php:1825
 #: skins/skin-made-in-heaven/tmp/css-custom.php:20
 msgid "お得"
 msgstr "Grandes ofertas"
 
-#: lib/html-forms.php:1846
-#: lib/shortcodes.php:1017
+#: lib/html-forms.php:1868
+#: lib/shortcodes.php:1022
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -2902,13 +2902,13 @@ msgid "2日"
 msgstr "2 dias"
 
 #: lib/page-access/access-forms.php:71
-#: blocks/src/block/popular-list/edit.js:151
+#: blocks/src/block/popular-list/edit.js:152
 msgid "3日"
 msgstr "3 dias"
 
 #: lib/page-access/access-forms.php:72
 #: lib/page-settings/single-forms.php:194
-#: blocks/src/block/popular-list/edit.js:155
+#: blocks/src/block/popular-list/edit.js:156
 msgid "1週間"
 msgstr "1 semana"
 
@@ -3955,7 +3955,7 @@ msgstr "Exibir apenas no mobile"
 #: lib/page-settings/admin-forms.php:166
 #: lib/page-settings/appeal-forms.php:38
 #: lib/page-settings/carousel-forms.php:38
-#: lib/page-settings/header-forms.php:128
+#: lib/page-settings/header-forms.php:140
 #: lib/page-settings/page-forms.php:56
 #: lib/page-settings/recommended-forms.php:39
 #: lib/page-settings/single-forms.php:429
@@ -5312,7 +5312,7 @@ msgid "データー取得時点のAmazon販売ページでの値段を表示し�
 msgstr "Exibe os preços na página de vendas da Amazon no momento da obtenção dos dados. Se uma opção de preço for definida usando um shortcode, ela terá precedência."
 
 #: lib/page-settings/apis-forms.php:77
-#: blocks/src/block/new-list/edit.js:221
+#: blocks/src/block/new-list/edit.js:222
 msgid "説明文を表示する"
 msgstr "Exibir descrição"
 
@@ -5675,7 +5675,7 @@ msgid "アピールエリアを表示するページを設定します。"
 msgstr "Defina a página para exibir a área de anúncio."
 
 #: lib/page-settings/appeal-forms.php:55
-#: lib/page-settings/header-forms.php:68
+#: lib/page-settings/header-forms.php:81
 msgid "高さ"
 msgstr "Altura"
 
@@ -6065,7 +6065,7 @@ msgstr "1 ano"
 #: lib/page-settings/carousel-forms.php:72
 #: lib/page-settings/single-forms.php:193
 #: lib/widgets/popular-entries.php:205
-#: blocks/src/block/popular-list/edit.js:143
+#: blocks/src/block/popular-list/edit.js:144
 msgid "全期間"
 msgstr "Todos os períodos"
 
@@ -6083,7 +6083,7 @@ msgstr "Ao selecionar artigos populares, apenas os artigos populares serão exib
 #: lib/page-settings/sns-follow-forms.php:116
 #: lib/page-settings/sns-share-forms-bottom.php:130
 #: lib/page-settings/sns-share-forms-top.php:117
-#: lib/shortcodes.php:509
+#: lib/shortcodes.php:514
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
 msgstr "Categoria"
@@ -6104,7 +6104,7 @@ msgstr "(※ Para exibir artigos relacionados à categoria, não selecione artig
 #: lib/page-settings/sns-share-forms-top.php:120
 #: lib/tinymce/html-tags.php:45
 #: lib/widgets/display-widgets.php:173
-#: blocks/src/block/new-list/edit.js:108
+#: blocks/src/block/new-list/edit.js:109
 msgid "タグ"
 msgstr "Tag"
 
@@ -7216,140 +7216,148 @@ msgstr "Fixar cabeçalho"
 msgid "ページをスクロールしても、ヘッダーが追従してきます。こちらはパソコン環境のみの動作になります。IEでは動作しません。"
 msgstr "O menu seguirá mesmo quando você rolar a página. Funciona apenas em computadores e navegadores que não sejam o IE."
 
-#: lib/page-settings/header-forms.php:73
+#: lib/page-settings/header-forms.php:67
+msgid "ヘッダー固定・モバイルロゴ"
+msgstr "Cabeçalho fixo e logotipo móvel"
+
+#: lib/page-settings/header-forms.php:72
+msgid "ヘッダー固定、モバイル時でのヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。"
+msgstr "Configura a imagem exibida no cabeçalho fixo durante o uso em dispositivos móveis. Recomenda-se imagens nos formatos JPG, JPEG ou PNG."
+
+#: lib/page-settings/header-forms.php:86
 msgid "ヘッダーの高さをpx数で指定します。モバイル環境ではモバイル用設定のものが利用されます。未入力でデフォルトになります。（最小：0px、最大：800px）"
 msgstr "Especifica a altura do cabeçalho em pixels. Em ambientes móveis, as configurações móveis serão usadas. Se deixado em branco, será usada a altura padrão. (mínimo: 0 px, máximo: 800 px)"
 
-#: lib/page-settings/header-forms.php:73
+#: lib/page-settings/header-forms.php:86
 msgid "※「ヘッダーレイアウト」が「センターロゴ」の時のみに適用されます。"
 msgstr "*Aplicado apenas quando \"Layout do cabeçalho\" estiver definido como \"Logotipo centralizado\"."
 
-#: lib/page-settings/header-forms.php:81
+#: lib/page-settings/header-forms.php:94
 msgid "高さ（モバイル）"
 msgstr "Altura (móvel)"
 
-#: lib/page-settings/header-forms.php:86
+#: lib/page-settings/header-forms.php:99
 msgid "モバイルでのヘッダーの高さをpx数で指定します。834px以下のタブレット以下の幅の狭い端末用です。未入力でデフォルトになります。（最小：0px、最大：600px）"
 msgstr "Especifica a altura do cabeçalho para dispositivos móveis em pixels. Esta configuração é para tablets com uma largura de tela de até 834 px. Se deixado em branco, a altura padrão será usada. (mínimo: 0 px, máximo: 600 px)"
 
-#: lib/page-settings/header-forms.php:93
+#: lib/page-settings/header-forms.php:106
 #: skins/skin-made-in-heaven/lib/panel-visual.php:24
 msgid "ヘッダーロゴ"
 msgstr "Logotipo do cabeçalho"
 
-#: lib/page-settings/header-forms.php:98
+#: lib/page-settings/header-forms.php:111
 msgid "ヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。"
 msgstr "Define uma imagem para exibir na seção do cabeçalho. É recomendável usar imagens jpg, jpeg ou png."
 
-#: lib/page-settings/header-forms.php:107
+#: lib/page-settings/header-forms.php:119
 msgid "ヘッダーロゴサイズ"
 msgstr "Tamanho do logotipo do cabeçalho"
 
-#: lib/page-settings/header-forms.php:111
+#: lib/page-settings/header-forms.php:123
 msgid "幅："
 msgstr "Largura:"
 
-#: lib/page-settings/header-forms.php:113
+#: lib/page-settings/header-forms.php:125
 msgid " × "
 msgstr "×"
 
-#: lib/page-settings/header-forms.php:114
+#: lib/page-settings/header-forms.php:126
 msgid "高さ："
 msgstr "Altura:"
 
-#: lib/page-settings/header-forms.php:116
+#: lib/page-settings/header-forms.php:128
 msgid "ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。"
 msgstr "Especifica as dimensões horizontais e verticais do logotipo. Isso é para suporte Retina, etc., do logotipo. Deixe em branco se não for necessário especificar o tamanho. Se \"Layout do cabeçalho\" não estiver definido como \"Logotipo centralizado\", o tamanho do logotipo não será alterado."
 
-#: lib/page-settings/header-forms.php:123
+#: lib/page-settings/header-forms.php:135
 msgid "キャッチフレーズの配置"
 msgstr "Posicionamento do slogan"
 
-#: lib/page-settings/header-forms.php:129
+#: lib/page-settings/header-forms.php:141
 msgid "ヘッダートップ（デフォルト）"
 msgstr "Topo do cabeçalho (padrão)"
 
-#: lib/page-settings/header-forms.php:130
+#: lib/page-settings/header-forms.php:142
 msgid "ヘッダーボトム"
 msgstr "Parte inferior do cabeçalho"
 
-#: lib/page-settings/header-forms.php:133
+#: lib/page-settings/header-forms.php:145
 msgid "キャッチフレーズの表示位置を設定します。※「ヘッダーレイアウト」が「センターロゴ」の場合。"
 msgstr "Define a posição de exibição de um slogan. *Quando \"Layout do cabeçalho\" estiver definido como \"Logotipo centralizado\"."
 
-#: lib/page-settings/header-forms.php:141
+#: lib/page-settings/header-forms.php:153
 msgid "ヘッダー背景画像"
 msgstr "Imagem de fundo do cabeçalho"
 
-#: lib/page-settings/header-forms.php:146
+#: lib/page-settings/header-forms.php:158
 msgid "ヘッダー背景として表示する画像を設定します。"
 msgstr "Defina uma imagem como fundo do cabeçalho."
 
-#: lib/page-settings/header-forms.php:149
+#: lib/page-settings/header-forms.php:161
 msgid "ヘッダー背景画像を固定する"
 msgstr "Fixar imagem de fundo do cabeçalho"
 
-#: lib/page-settings/header-forms.php:150
+#: lib/page-settings/header-forms.php:162
 msgid "PC画面でヘッダー背景に設定した画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。"
 msgstr "Fixa a imagem definida como fundo do cabeçalho na tela do PC. A imagem de fundo não se moverá ao rolar para cima e para baixo."
 
-#: lib/page-settings/header-forms.php:153
+#: lib/page-settings/header-forms.php:165
 msgid "背景画像を全て表示する"
 msgstr "Exibir todas as imagens de fundo"
 
-#: lib/page-settings/header-forms.php:154
+#: lib/page-settings/header-forms.php:166
 msgid "ヘッダーのサイズを「ヘッダー背景画像」に設定した画像の縦横比サイズに合わせて表示させます。"
 msgstr "O tamanho do cabeçalho é exibido de acordo com a proporção da imagem definida como \"Imagem de fundo do cabeçalho\"."
 
-#: lib/page-settings/header-forms.php:154
+#: lib/page-settings/header-forms.php:166
 msgid "これにより背景画像が隠れることなく表示されます。"
 msgstr "Isso garante que a imagem de fundo não seja escondida."
 
-#: lib/page-settings/header-forms.php:154
+#: lib/page-settings/header-forms.php:166
 msgid "「ヘッダーレイアウト」設定が「センターロゴ」時のみ。"
 msgstr "Somente quando \"Layout do cabeçalho\" estiver definido como \"Logotipo centralizado\"."
 
-#: lib/page-settings/header-forms.php:154
+#: lib/page-settings/header-forms.php:166
 msgid "ヘッダー設定にある「高さ」や「高さ（モバイル）」の値は無効になります。"
 msgstr "Os valores de \"Altura\" e \"Altura (móvel)\" nas configurações de cabeçalho são desativados."
 
-#: lib/page-settings/header-forms.php:162
+#: lib/page-settings/header-forms.php:174
 msgid "ヘッダー全体色"
 msgstr "Cor total do cabeçalho"
 
-#: lib/page-settings/header-forms.php:169
+#: lib/page-settings/header-forms.php:181
 msgid "ヘッダー全体背景色"
 msgstr "Cor de fundo total do cabeçalho"
 
-#: lib/page-settings/header-forms.php:170
+#: lib/page-settings/header-forms.php:182
 msgid "ロゴ部分やグローバルナビ全てを含めた背景色を選択します。"
 msgstr "Selecione a cor de fundo, incluindo a parte do logotipo e toda a navegação global."
 
-#: lib/page-settings/header-forms.php:172
+#: lib/page-settings/header-forms.php:184
 msgid "ヘッダー全体文字色"
 msgstr "Cor do texto total do cabeçalho"
 
-#: lib/page-settings/header-forms.php:173
+#: lib/page-settings/header-forms.php:185
 msgid "ロゴ部分やグローバルナビ全てを含めたテキスト色を選択します。"
 msgstr "Selecione a cor do texto, incluindo a parte do logotipo e toda a navegação global."
 
-#: lib/page-settings/header-forms.php:181
+#: lib/page-settings/header-forms.php:193
 msgid "ヘッダー色（ロゴ部）"
 msgstr "Cor do cabeçalho (logotipo)"
 
-#: lib/page-settings/header-forms.php:187
+#: lib/page-settings/header-forms.php:199
 msgid "ロゴエリア背景色"
 msgstr "Cor de fundo da área do logotipo"
 
-#: lib/page-settings/header-forms.php:188
+#: lib/page-settings/header-forms.php:200
 msgid "グローバルナビ上のヘッダー背景色を選択します。"
 msgstr "Selecione a cor de fundo do cabeçalho acima da navegação global."
 
-#: lib/page-settings/header-forms.php:190
+#: lib/page-settings/header-forms.php:202
 msgid "ロゴ文字色"
 msgstr "Cor do texto do logotipo"
 
-#: lib/page-settings/header-forms.php:191
+#: lib/page-settings/header-forms.php:203
 msgid "グローバルナビ上のヘッダーテキスト色を選択します。"
 msgstr "Selecione a cor do texto acima da navegação global."
 
@@ -8775,6 +8783,8 @@ msgid "表示する日付"
 msgstr "Data a ser exibida"
 
 #: lib/page-settings/seo-forms.php:155
+#: blocks/src/block/new-list/edit.js:229
+#: blocks/src/block/popular-list/edit.js:275
 msgid "投稿日・更新日を表示する"
 msgstr "Exibir data de postagem e data de atualização"
 
@@ -8883,7 +8893,7 @@ msgid "関連記事見出し"
 msgstr "Título dos artigos relacionados"
 
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1133
+#: lib/shortcodes.php:1139
 #: lib/widgets/cta-box.php:108
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -8917,8 +8927,8 @@ msgstr "Digite um subtítulo para os artigos relacionados."
 #: lib/widgets/popular-entries.php:189
 #: lib/widgets/related-entries.php:182
 #: blocks/src/block/navicard/edit.js:101
-#: blocks/src/block/new-list/edit.js:134
-#: blocks/src/block/popular-list/edit.js:214
+#: blocks/src/block/new-list/edit.js:135
+#: blocks/src/block/popular-list/edit.js:215
 msgid "表示タイプ"
 msgstr "Tipo de exibição"
 
@@ -8952,7 +8962,7 @@ msgid "取得期間"
 msgstr "Período de aquisição"
 
 #: lib/page-settings/single-forms.php:195
-#: blocks/src/block/popular-list/edit.js:159
+#: blocks/src/block/popular-list/edit.js:160
 msgid "2週間"
 msgstr "2 semanas"
 
@@ -8961,17 +8971,17 @@ msgid "3週間"
 msgstr "3 semanas"
 
 #: lib/page-settings/single-forms.php:197
-#: blocks/src/block/popular-list/edit.js:163
+#: blocks/src/block/popular-list/edit.js:164
 msgid "1ヶ月"
 msgstr "1 mês"
 
 #: lib/page-settings/single-forms.php:198
-#: blocks/src/block/popular-list/edit.js:167
+#: blocks/src/block/popular-list/edit.js:168
 msgid "2ヶ月"
 msgstr "2 meses"
 
 #: lib/page-settings/single-forms.php:199
-#: blocks/src/block/popular-list/edit.js:171
+#: blocks/src/block/popular-list/edit.js:172
 msgid "3ヶ月"
 msgstr "3 meses"
 
@@ -8980,7 +8990,7 @@ msgid "6ヶ月"
 msgstr "6 meses"
 
 #: lib/page-settings/single-forms.php:201
-#: blocks/src/block/popular-list/edit.js:179
+#: blocks/src/block/popular-list/edit.js:180
 msgid "1年"
 msgstr "1 ano"
 
@@ -10069,7 +10079,7 @@ msgstr "Abrir:"
 
 #: lib/page-settings/toc-forms.php:99
 #: lib/page-settings/toc-funcs.php:70
-#: tmp/css-custom.php:555
+#: tmp/css-custom.php:561
 msgid "開く"
 msgstr "Abrir"
 
@@ -10080,7 +10090,7 @@ msgstr "Fechar:"
 #: lib/page-settings/toc-forms.php:103
 #: lib/page-settings/toc-funcs.php:78
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
-#: tmp/css-custom.php:571
+#: tmp/css-custom.php:577
 msgid "閉じる"
 msgstr "Fechar"
 
@@ -10914,15 +10924,15 @@ msgstr "Uma linha tracejada é exibida acima e abaixo do cartão."
 
 #: lib/settings.php:556
 #: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:143
-#: blocks/src/block/popular-list/edit.js:223
+#: blocks/src/block/new-list/edit.js:144
+#: blocks/src/block/popular-list/edit.js:224
 msgid "カードの上下に区切り線を入れる"
 msgstr "Adicionar uma linha de separação na parte superior e inferior do cartão"
 
 #: lib/settings.php:556
 #: blocks/src/block/navicard/edit.js:110
-#: blocks/src/block/new-list/edit.js:143
-#: blocks/src/block/popular-list/edit.js:223
+#: blocks/src/block/new-list/edit.js:144
+#: blocks/src/block/popular-list/edit.js:224
 msgid "（縦並び表示のみ）"
 msgstr "(apenas para exibição vertical)"
 
@@ -10932,8 +10942,8 @@ msgstr "Cercar o próprio cartão com uma borda."
 
 #: lib/settings.php:559
 #: blocks/src/block/navicard/edit.js:114
-#: blocks/src/block/new-list/edit.js:147
-#: blocks/src/block/popular-list/edit.js:227
+#: blocks/src/block/new-list/edit.js:148
+#: blocks/src/block/popular-list/edit.js:228
 msgid "カードに枠線を表示する"
 msgstr "Exibir bordas no cartão"
 
@@ -10943,8 +10953,8 @@ msgstr "O título é exibido abaixo das imagens de miniatura grandes."
 
 #: lib/settings.php:562
 #: blocks/src/block/navicard/edit.js:118
-#: blocks/src/block/new-list/edit.js:151
-#: blocks/src/block/popular-list/edit.js:231
+#: blocks/src/block/new-list/edit.js:152
+#: blocks/src/block/popular-list/edit.js:232
 msgid "大きなサムネイル表示にする"
 msgstr "Miniatura grande"
 
@@ -10954,8 +10964,8 @@ msgstr "Os títulos são sobrepostos à parte inferior das imagens de miniatura 
 
 #: lib/settings.php:565
 #: blocks/src/block/navicard/edit.js:122
-#: blocks/src/block/new-list/edit.js:155
-#: blocks/src/block/popular-list/edit.js:235
+#: blocks/src/block/new-list/edit.js:156
+#: blocks/src/block/popular-list/edit.js:236
 msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr "Miniatura grande com o título sobreposto"
 
@@ -11071,33 +11081,33 @@ msgstr "Erro ao recuperar o produto do Rakuten"
 msgid "楽天商品リンクが取得できませんでした。"
 msgstr "Não foi possível recuperar o link do produto do Rakuten."
 
-#: lib/shortcodes.php:305
+#: lib/shortcodes.php:310
 #: lib/tinymce/shortcodes.php:234
 #: blocks/src/toolbutton/dropdown-shortcodes.js:184
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
 msgstr "Este conteúdo é exibido apenas para usuários logados."
 
-#: lib/shortcodes.php:386
+#: lib/shortcodes.php:391
 msgid "日付未入力"
 msgstr "Data não inserida"
 
-#: lib/shortcodes.php:412
+#: lib/shortcodes.php:417
 msgid "歳"
 msgstr "anos"
 
-#: lib/shortcodes.php:515
+#: lib/shortcodes.php:520
 msgid "月別アーカイブ"
 msgstr "Arquivo mensal"
 
-#: lib/shortcodes.php:990
+#: lib/shortcodes.php:995
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr "O código curto de atualização só pode ser usado em postagens e páginas fixas."
 
-#: lib/shortcodes.php:1105
+#: lib/shortcodes.php:1111
 msgid "保存エラー"
 msgstr "Salvar erro"
 
-#: lib/shortcodes.php:1123
+#: lib/shortcodes.php:1129
 msgid "エラー："
 msgstr "Erro: "
 
@@ -12081,8 +12091,8 @@ msgstr "Este é um widget para exibir a lista de cartões de navegação."
 #: lib/widgets/popular-entries.php:213
 #: lib/widgets/related-entries.php:203
 #: blocks/src/block/navicard/edit.js:130
-#: blocks/src/block/new-list/edit.js:204
-#: blocks/src/block/popular-list/edit.js:243
+#: blocks/src/block/new-list/edit.js:205
+#: blocks/src/block/popular-list/edit.js:244
 msgid "横並び表示にする"
 msgstr "Exibir lado a lado"
 
@@ -12098,8 +12108,8 @@ msgstr "(Uso recomendado com \"Miniatura grande\")"
 #: lib/widgets/popular-entries.php:220
 #: lib/widgets/related-entries.php:210
 #: blocks/src/block/navicard/edit.js:137
-#: blocks/src/block/new-list/edit.js:211
-#: blocks/src/block/popular-list/edit.js:250
+#: blocks/src/block/new-list/edit.js:212
+#: blocks/src/block/popular-list/edit.js:251
 msgid "タイトルを太字にする"
 msgstr "Título em negrito"
 
@@ -12108,8 +12118,8 @@ msgstr "Título em negrito"
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
 #: blocks/src/block/navicard/edit.js:142
-#: blocks/src/block/new-list/edit.js:216
-#: blocks/src/block/popular-list/edit.js:269
+#: blocks/src/block/new-list/edit.js:217
+#: blocks/src/block/popular-list/edit.js:270
 msgid "カードに矢印を表示する"
 msgstr "Exibir seta no cartão"
 
@@ -12196,12 +12206,12 @@ msgid "集計期間"
 msgstr "Período de agregação"
 
 #: lib/widgets/popular-entries.php:226
-#: blocks/src/block/popular-list/edit.js:255
+#: blocks/src/block/popular-list/edit.js:256
 msgid "ランキング番号を表示する"
 msgstr "Exibir classificação"
 
 #: lib/widgets/popular-entries.php:232
-#: blocks/src/block/popular-list/edit.js:262
+#: blocks/src/block/popular-list/edit.js:263
 msgid "PV数を表示する"
 msgstr "Exibir o número de PVs"
 
@@ -14089,7 +14099,7 @@ msgstr "Voltar ao topo"
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr "Este artigo pode ser lido em <span class=\"bold\">aproximadamente %s minutos</span>."
 
-#: tmp/css-custom.php:934
+#: tmp/css-custom.php:940
 msgid "ラベルなし"
 msgstr "Sem etiqueta"
 
@@ -14884,8 +14894,8 @@ msgstr "Leia este artigo"
 #: blocks/src/block/cta/edit.js:78
 #: blocks/src/block/info-list/edit.js:87
 #: blocks/src/block/navicard/edit.js:99
-#: blocks/src/block/new-list/edit.js:124
-#: blocks/src/block/popular-list/edit.js:197
+#: blocks/src/block/new-list/edit.js:125
+#: blocks/src/block/popular-list/edit.js:198
 msgid "基本設定"
 msgstr "Configurações básicas"
 
@@ -15010,8 +15020,8 @@ msgid "ボックスの背景色により、直感的にメッセージ内容を�
 msgstr "É uma caixa para transmitir o conteúdo da mensagem pela cor de fundo da caixa."
 
 #: blocks/src/block/info-list/edit.js:58
-#: blocks/src/block/new-list/edit.js:78
-#: blocks/src/block/popular-list/edit.js:77
+#: blocks/src/block/new-list/edit.js:79
+#: blocks/src/block/popular-list/edit.js:78
 msgid "表示するカテゴリーをカンマ区切りで指定"
 msgstr "Especifique as categorias a serem exibidas separadas por vírgulas"
 
@@ -15020,14 +15030,14 @@ msgid "キャプション(枠線内表示)"
 msgstr "Legenda (exibida dentro da moldura)"
 
 #: blocks/src/block/info-list/edit.js:123
-#: blocks/src/block/new-list/edit.js:228
-#: blocks/src/block/popular-list/edit.js:274
+#: blocks/src/block/new-list/edit.js:236
+#: blocks/src/block/popular-list/edit.js:280
 msgid "フィルタ"
 msgstr "Filtro"
 
 #: blocks/src/block/info-list/edit.js:125
-#: blocks/src/block/new-list/edit.js:230
-#: blocks/src/block/popular-list/edit.js:276
+#: blocks/src/block/new-list/edit.js:238
+#: blocks/src/block/popular-list/edit.js:282
 msgid "全カテゴリーを表示する"
 msgstr "Exibir todas as categorias"
 
@@ -15051,71 +15061,71 @@ msgstr "Selecione um menu."
 msgid "登録されているメニューからナビカードを表示します。"
 msgstr "Exibir navicard a partir do menu registrado."
 
-#: blocks/src/block/new-list/edit.js:83
-#: blocks/src/block/popular-list/edit.js:82
+#: blocks/src/block/new-list/edit.js:84
+#: blocks/src/block/popular-list/edit.js:83
 msgid "表示カテゴリー選択"
 msgstr "Seleção de categorias de exibição"
 
-#: blocks/src/block/new-list/edit.js:86
+#: blocks/src/block/new-list/edit.js:87
 msgid "テキストを入力して絞り込んでください。"
 msgstr "Digite o texto para refinar sua pesquisa."
 
-#: blocks/src/block/new-list/edit.js:96
-#: blocks/src/block/popular-list/edit.js:94
+#: blocks/src/block/new-list/edit.js:97
+#: blocks/src/block/popular-list/edit.js:95
 msgid "子カテゴリーの内容を含めて表示する"
 msgstr "Incluir e exibir o conteúdo das subcategorias"
 
-#: blocks/src/block/new-list/edit.js:126
-#: blocks/src/block/popular-list/edit.js:199
+#: blocks/src/block/new-list/edit.js:127
+#: blocks/src/block/popular-list/edit.js:200
 msgid "表示する記事の数"
 msgstr "Número de artigos a serem exibidos"
 
-#: blocks/src/block/new-list/edit.js:162
+#: blocks/src/block/new-list/edit.js:163
 msgid "表示順"
 msgstr "Ordem de exibição"
 
-#: blocks/src/block/new-list/edit.js:166
+#: blocks/src/block/new-list/edit.js:167
 msgid "更新日順"
 msgstr "Ordenar por data de modificação"
 
-#: blocks/src/block/new-list/edit.js:170
+#: blocks/src/block/new-list/edit.js:171
 msgid "投稿日順"
 msgstr "Ordenar por data de publicação"
 
-#: blocks/src/block/new-list/edit.js:184
+#: blocks/src/block/new-list/edit.js:185
 msgid "並び替え"
 msgstr "Classificação"
 
-#: blocks/src/block/new-list/edit.js:187
+#: blocks/src/block/new-list/edit.js:188
 msgid "昇順"
 msgstr "Ascendente"
 
-#: blocks/src/block/new-list/edit.js:188
+#: blocks/src/block/new-list/edit.js:189
 msgid "降順"
 msgstr "Descendente"
 
-#: blocks/src/block/new-list/edit.js:196
+#: blocks/src/block/new-list/edit.js:197
 msgid "読み飛ばし"
 msgstr "Pular artigos"
 
-#: blocks/src/block/new-list/edit.js:241
+#: blocks/src/block/new-list/edit.js:249
 msgid "全タグを表示する"
 msgstr "Exibir todas as tags"
 
-#: blocks/src/block/new-list/edit.js:250
+#: blocks/src/block/new-list/edit.js:258
 msgid "固定記事を表示する"
 msgstr "Exibir artigos fixos"
 
-#: blocks/src/block/new-list/edit.js:255
-#: blocks/src/block/popular-list/edit.js:288
+#: blocks/src/block/new-list/edit.js:263
+#: blocks/src/block/popular-list/edit.js:294
 msgid "投稿タイプ"
 msgstr "Tipo de publicação"
 
-#: blocks/src/block/new-list/edit.js:262
+#: blocks/src/block/new-list/edit.js:270
 msgid "検索グループ"
 msgstr "Grupo de pesquisa"
 
-#: blocks/src/block/new-list/edit.js:267
+#: blocks/src/block/new-list/edit.js:275
 msgid "投稿ユーザ"
 msgstr "Autor"
 
@@ -15123,31 +15133,31 @@ msgstr "Autor"
 msgid "新着記事の一覧を表示します。"
 msgstr "Exibir a lista de novos artigos."
 
-#: blocks/src/block/popular-list/edit.js:107
+#: blocks/src/block/popular-list/edit.js:108
 msgid "除外するカテゴリーをカンマ区切りで指定"
 msgstr "Especifique as categorias a serem excluídas, separadas por vírgulas"
 
-#: blocks/src/block/popular-list/edit.js:112
+#: blocks/src/block/popular-list/edit.js:113
 msgid "除外カテゴリー選択"
 msgstr "Seleção de categorias excluídas"
 
-#: blocks/src/block/popular-list/edit.js:136
+#: blocks/src/block/popular-list/edit.js:137
 msgid "データの集計期間"
 msgstr "Período de agregação de dados"
 
-#: blocks/src/block/popular-list/edit.js:147
+#: blocks/src/block/popular-list/edit.js:148
 msgid "1日"
 msgstr "1 dia"
 
-#: blocks/src/block/popular-list/edit.js:175
+#: blocks/src/block/popular-list/edit.js:176
 msgid "半年"
 msgstr "Meio ano"
 
-#: blocks/src/block/popular-list/edit.js:206
+#: blocks/src/block/popular-list/edit.js:207
 msgid "全期間集計"
 msgstr "Agregado de todo o período"
 
-#: blocks/src/block/popular-list/edit.js:295
+#: blocks/src/block/popular-list/edit.js:301
 msgid "除外投稿(ID)"
 msgstr "Excluir artigos (ID)"
 
