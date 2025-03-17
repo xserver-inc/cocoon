@@ -1,4 +1,4 @@
-<?php //タイトルからアイキャッ生成関係関数
+<?php //タイトルからアイキャッチ生成関係関数
 /**
  * Cocoon WordPress Theme
  * @author: yhira
@@ -337,9 +337,9 @@ function generate_dynamic_featured_image($post_id) {
     return false;
   }
 
-  // 投稿が下書き、レビュー待ち、または公開以外のステータスの場合は処理を終了
+  // 投稿が公開、予約済み、レビュー待ち以外のステータスの場合は処理を終了
   $post_status = get_post_status($post_id);
-  if (!in_array($post_status, ['publish'])) {
+  if (!in_array($post_status, ['publish', 'future', 'pending'])) {
     return false;
   }
 
