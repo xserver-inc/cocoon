@@ -144,6 +144,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
               }
               options={ balloons }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -169,6 +170,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -186,6 +188,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -211,6 +214,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>

@@ -117,6 +117,7 @@ export default function edit( props ) {
           }
           options={ options }
           __nextHasNoMarginBottom={ true }
+          __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
         />
         { getBoxMenuContent() }
       </div>

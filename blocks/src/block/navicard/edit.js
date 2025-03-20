@@ -124,6 +124,7 @@ export default function edit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
           <Divider />
           <ToggleControl
@@ -160,6 +161,7 @@ export default function edit( props ) {
           }
           options={ options }
           __nextHasNoMarginBottom={ true }
+          __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
         />
         { getNavicardContent() }
       </div>

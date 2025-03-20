@@ -114,6 +114,7 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
 
             <ToggleControl

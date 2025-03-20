@@ -85,6 +85,7 @@ registerBlockType( 'cocoon-blocks/button', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -166,6 +167,7 @@ registerBlockType( 'cocoon-blocks/button', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -187,6 +189,7 @@ registerBlockType( 'cocoon-blocks/button', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>
