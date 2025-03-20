@@ -3453,7 +3453,8 @@ body.wp-admin {
 .admin-settings .demo .body .light-box :last-child,
 .admin-settings .demo .body .dark-box :last-child,
 .admin-settings .demo .body .tab-content :last-child,
-.admin-settings .demo .body .toc :last-child {
+.admin-settings .demo .body .toc :last-child,
+.admin-settings .demo .body .wp-block-social-links :last-child {
   margin-bottom: 0;
 }
 .admin-settings .demo .body div.scrollable-table table,
@@ -12005,7 +12006,8 @@ body.wp-admin {
 .admin-settings .demo .body .light-box :last-child,
 .admin-settings .demo .body .dark-box :last-child,
 .admin-settings .demo .body .tab-content :last-child,
-.admin-settings .demo .body .toc :last-child {
+.admin-settings .demo .body .toc :last-child,
+.admin-settings .demo .body .wp-block-social-links :last-child {
   margin-bottom: 0;
 }
 .admin-settings .demo .body div.scrollable-table table,
@@ -21194,7 +21196,8 @@ select option.fa:before {
 .components-popover__content .body .light-box :last-child,
 .components-popover__content .body .dark-box :last-child,
 .components-popover__content .body .tab-content :last-child,
-.components-popover__content .body .toc :last-child {
+.components-popover__content .body .toc :last-child,
+.components-popover__content .body .wp-block-social-links :last-child {
   margin-bottom: 0;
 }
 .components-popover__content .body div.scrollable-table table,

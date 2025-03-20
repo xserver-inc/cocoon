@@ -3351,7 +3351,8 @@ ul.wp-block-archives {
 .body .light-box :last-child,
 .body .dark-box :last-child,
 .body .tab-content :last-child,
-.body .toc :last-child {
+.body .toc :last-child,
+.body .wp-block-social-links :last-child {
   margin-bottom: 0;
 }
 .body div.scrollable-table table,
