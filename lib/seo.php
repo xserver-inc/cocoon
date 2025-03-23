@@ -498,6 +498,8 @@ function get_meta_description_text(){
     $description = get_category_meta_description();
   } elseif ((is_tag() || is_tax()) && is_meta_description_to_category()) {
     $description = get_tag_meta_description();
+  } elseif (is_search()) {
+    $description = __( '検索結果ページです。', THEME_NAME );
   }
   if ($description) {
     $description = htmlspecialchars($description);
