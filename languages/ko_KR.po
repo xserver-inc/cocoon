@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-09T01:26:19+00:00\n"
-"PO-Revision-Date: 2025-03-13 09:17\n"
+"POT-Creation-Date: 2025-03-23T02:11:22+00:00\n"
+"PO-Revision-Date: 2025-03-23 02:43\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -374,15 +374,18 @@ msgstr "BAD"
 #: lib/admin-tinymce-qtag.php:763
 #: lib/block-editor-styles-group.php:90
 #: lib/block-editor-styles-paragraph.php:125
+#: lib/tinymce/shortcodes.php:96
 #: lib/widgets/author-box.php:19
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:122
 #: skins/skin-made-in-heaven/lib/panel-main.php:264
 #: blocks/src/block-extension/style-extension/style01.js:166
 #: blocks/src/block/icon-box/deprecated.js:122
 #: blocks/src/block/icon-box/edit.js:69
+#: blocks/src/block/profile/index.js:21
 #: blocks/src/block/tab-box/edit.js:131
 #: blocks/src/block/test-box/deprecated.js:122
 #: blocks/src/old/tab-box/block.js:135
+#: blocks/src/toolbutton/dropdown-shortcodes.js:72
 msgid "プロフィール"
 msgstr "프로필"
 
@@ -476,10 +479,10 @@ msgstr "박스 (빈 상자)"
 #: lib/admin-tinymce-qtag.php:799
 #: lib/gutenberg.php:110
 #: lib/widgets/cta-box.php:184
-#: blocks/src/block/cta/edit.js:216
+#: blocks/src/block/cta/edit.js:217
 #: blocks/src/block/sticky-box/deprecated.js:87
 #: blocks/src/block/sticky-box/edit.js:33
-#: blocks/src/old/tab-box/block.js:148
+#: blocks/src/old/tab-box/block.js:149
 #: blocks/src/toolbutton/badge-grey.js:14
 msgid "灰色"
 msgstr "회색"
@@ -504,15 +507,15 @@ msgstr "회색"
 #: lib/admin-tinymce-qtag.php:804
 #: lib/gutenberg.php:80
 #: lib/widgets/cta-box.php:179
-#: blocks/src/block/cta/edit.js:205
+#: blocks/src/block/cta/edit.js:206
 #: blocks/src/block/sticky-box/deprecated.js:91
 #: blocks/src/block/sticky-box/edit.js:37
 #: blocks/src/old/blank-box/block.js:72
 #: blocks/src/old/caption-box/block.js:66
 #: blocks/src/old/label-box/block.js:65
-#: blocks/src/old/micro-balloon-1/block.js:92
-#: blocks/src/old/micro-balloon/block.js:91
-#: blocks/src/old/tab-box/block.js:152
+#: blocks/src/old/micro-balloon-1/block.js:93
+#: blocks/src/old/micro-balloon/block.js:92
+#: blocks/src/old/tab-box/block.js:153
 #: blocks/src/old/tab-caption-box/block.js:66
 #: blocks/src/old/toggle-box/block.js:69
 #: blocks/src/toolbutton/badge-yellow.js:14
@@ -539,15 +542,15 @@ msgstr "노랑"
 #: lib/admin-tinymce-qtag.php:809
 #: lib/gutenberg.php:20
 #: lib/widgets/cta-box.php:167
-#: blocks/src/block/cta/edit.js:181
+#: blocks/src/block/cta/edit.js:182
 #: blocks/src/block/sticky-box/deprecated.js:95
 #: blocks/src/block/sticky-box/edit.js:41
 #: blocks/src/old/blank-box/block.js:76
 #: blocks/src/old/caption-box/block.js:70
 #: blocks/src/old/label-box/block.js:69
-#: blocks/src/old/micro-balloon-1/block.js:96
-#: blocks/src/old/micro-balloon/block.js:95
-#: blocks/src/old/tab-box/block.js:156
+#: blocks/src/old/micro-balloon-1/block.js:97
+#: blocks/src/old/micro-balloon/block.js:96
+#: blocks/src/old/tab-box/block.js:157
 #: blocks/src/old/tab-caption-box/block.js:70
 #: blocks/src/old/toggle-box/block.js:73
 #: blocks/src/toolbutton/badge-red.js:14
@@ -577,15 +580,15 @@ msgstr "빨강"
 #: lib/admin-tinymce-qtag.php:814
 #: lib/gutenberg.php:45
 #: lib/widgets/cta-box.php:172
-#: blocks/src/block/cta/edit.js:189
+#: blocks/src/block/cta/edit.js:190
 #: blocks/src/block/sticky-box/deprecated.js:99
 #: blocks/src/block/sticky-box/edit.js:45
 #: blocks/src/old/blank-box/block.js:80
 #: blocks/src/old/caption-box/block.js:74
 #: blocks/src/old/label-box/block.js:73
-#: blocks/src/old/micro-balloon-1/block.js:100
-#: blocks/src/old/micro-balloon/block.js:99
-#: blocks/src/old/tab-box/block.js:160
+#: blocks/src/old/micro-balloon-1/block.js:101
+#: blocks/src/old/micro-balloon/block.js:100
+#: blocks/src/old/tab-box/block.js:161
 #: blocks/src/old/tab-caption-box/block.js:74
 #: blocks/src/old/toggle-box/block.js:77
 #: blocks/src/toolbutton/badge-blue.js:14
@@ -615,15 +618,15 @@ msgstr "파랑"
 #: lib/admin-tinymce-qtag.php:819
 #: lib/gutenberg.php:65
 #: lib/widgets/cta-box.php:176
-#: blocks/src/block/cta/edit.js:199
+#: blocks/src/block/cta/edit.js:200
 #: blocks/src/block/sticky-box/deprecated.js:103
 #: blocks/src/block/sticky-box/edit.js:49
 #: blocks/src/old/blank-box/block.js:84
 #: blocks/src/old/caption-box/block.js:78
 #: blocks/src/old/label-box/block.js:77
-#: blocks/src/old/micro-balloon-1/block.js:104
-#: blocks/src/old/micro-balloon/block.js:103
-#: blocks/src/old/tab-box/block.js:164
+#: blocks/src/old/micro-balloon-1/block.js:105
+#: blocks/src/old/micro-balloon/block.js:104
+#: blocks/src/old/tab-box/block.js:165
 #: blocks/src/old/tab-caption-box/block.js:78
 #: blocks/src/old/toggle-box/block.js:81
 #: blocks/src/toolbutton/badge-green.js:14
@@ -719,62 +722,62 @@ msgstr "박스 (포스트잇)"
 #: lib/admin-tinymce-qtag.php:829
 #: lib/gutenberg.php:90
 #: lib/widgets/cta-box.php:181
-#: blocks/src/block/cta/edit.js:210
+#: blocks/src/block/cta/edit.js:211
 #: blocks/src/old/button-wrap/block.js:137
-#: blocks/src/old/button/block.js:153
+#: blocks/src/old/button/block.js:154
 #: blocks/src/toolbutton/badge-orange.js:14
 msgid "オレンジ"
 msgstr "주황"
 
 #: lib/admin-tinymce-qtag.php:834
 #: blocks/src/old/button-wrap/block.js:81
-#: blocks/src/old/button/block.js:97
+#: blocks/src/old/button/block.js:98
 msgid "レッド"
 msgstr "빨강"
 
 #: lib/admin-tinymce-qtag.php:839
 #: lib/gutenberg.php:25
 #: lib/widgets/cta-box.php:168
-#: blocks/src/block/cta/edit.js:182
+#: blocks/src/block/cta/edit.js:183
 #: blocks/src/old/button-wrap/block.js:85
-#: blocks/src/old/button/block.js:101
+#: blocks/src/old/button/block.js:102
 #: blocks/src/toolbutton/badge-pink.js:14
 msgid "ピンク"
 msgstr "분홍"
 
 #: lib/admin-tinymce-qtag.php:844
 #: blocks/src/old/button-wrap/block.js:89
-#: blocks/src/old/button/block.js:105
+#: blocks/src/old/button/block.js:106
 msgid "パープル"
 msgstr "보라"
 
 #: lib/admin-tinymce-qtag.php:849
 #: blocks/src/old/button-wrap/block.js:101
-#: blocks/src/old/button/block.js:117
+#: blocks/src/old/button/block.js:118
 msgid "ブルー"
 msgstr "파랑"
 
 #: lib/admin-tinymce-qtag.php:854
 #: blocks/src/old/button-wrap/block.js:117
-#: blocks/src/old/button/block.js:133
+#: blocks/src/old/button/block.js:134
 msgid "グリーン"
 msgstr "초록"
 
 #: lib/admin-tinymce-qtag.php:859
 #: blocks/src/old/button-wrap/block.js:129
-#: blocks/src/old/button/block.js:145
+#: blocks/src/old/button/block.js:146
 msgid "イエロー"
 msgstr "노랑"
 
 #: lib/admin-tinymce-qtag.php:864
 #: blocks/src/old/button-wrap/block.js:145
-#: blocks/src/old/button/block.js:161
+#: blocks/src/old/button/block.js:162
 msgid "ブラウン"
 msgstr "갈색"
 
 #: lib/admin-tinymce-qtag.php:869
 #: blocks/src/old/button-wrap/block.js:149
-#: blocks/src/old/button/block.js:165
+#: blocks/src/old/button/block.js:166
 msgid "グレー"
 msgstr "회색"
 
@@ -1323,7 +1326,7 @@ msgstr "위젯"
 #: skins/skin-made-in-heaven/lib/hook-wp.php:641
 #: skins/skin-made-in-heaven/lib/panel-color.php:239
 #: tmp/mobile-navi-button.php:21
-#: blocks/src/block/navicard/edit.js:150
+#: blocks/src/block/navicard/edit.js:151
 msgid "メニュー"
 msgstr "메뉴"
 
@@ -1560,17 +1563,17 @@ msgstr "테두리"
 #: blocks/src/block-universal/caption-box/edit.js:143
 #: blocks/src/block-universal/label-box/edit.js:143
 #: blocks/src/block-universal/tab-caption-box/edit.js:146
-#: blocks/src/block/balloon/edit.js:295
+#: blocks/src/block/balloon/edit.js:299
 #: blocks/src/block/blank-box/edit.js:67
-#: blocks/src/block/button-wrap/edit.js:143
-#: blocks/src/block/button/edit.js:147
+#: blocks/src/block/button-wrap/edit.js:144
+#: blocks/src/block/button/edit.js:149
 #: blocks/src/block/faq/edit.js:174
 #: blocks/src/block/icon-list/edit.js:125
 #: blocks/src/block/radar/edit.js:282
-#: blocks/src/block/tab-box/edit.js:148
+#: blocks/src/block/tab-box/edit.js:149
 #: blocks/src/block/timeline/edit.js:162
 #: blocks/src/block/toggle-box/edit.js:122
-#: blocks/src/micro/micro-balloon/edit.js:126
+#: blocks/src/micro/micro-balloon/edit.js:127
 msgid "背景色"
 msgstr "배경색"
 
@@ -1650,18 +1653,18 @@ msgstr "카테고리 색을 설정합니다."
 #: blocks/src/block-universal/caption-box/edit.js:148
 #: blocks/src/block-universal/label-box/edit.js:148
 #: blocks/src/block-universal/tab-caption-box/edit.js:151
-#: blocks/src/block/balloon/edit.js:300
+#: blocks/src/block/balloon/edit.js:304
 #: blocks/src/block/blank-box/edit.js:72
-#: blocks/src/block/button-wrap/edit.js:148
-#: blocks/src/block/button/edit.js:152
+#: blocks/src/block/button-wrap/edit.js:149
+#: blocks/src/block/button/edit.js:154
 #: blocks/src/block/faq/edit.js:179
 #: blocks/src/block/icon-list/edit.js:130
 #: blocks/src/block/radar/edit.js:287
-#: blocks/src/block/tab-box/edit.js:153
+#: blocks/src/block/tab-box/edit.js:154
 #: blocks/src/block/timeline/edit.js:167
 #: blocks/src/block/toggle-box/edit.js:127
-#: blocks/src/micro/micro-balloon/edit.js:131
-#: blocks/src/micro/micro-text/edit.js:95
+#: blocks/src/micro/micro-balloon/edit.js:132
+#: blocks/src/micro/micro-text/edit.js:96
 msgid "文字色"
 msgstr "글자색"
 
@@ -1900,18 +1903,18 @@ msgstr "페이지 설정"
 #: blocks/src/block-extension/style-extension/border01.js:42
 #: blocks/src/block-extension/style-extension/style01.js:42
 #: blocks/src/block-extension/style-extension/style02.js:42
-#: blocks/src/block/balloon/edit.js:230
+#: blocks/src/block/balloon/edit.js:231
 #: blocks/src/block/navicard/edit.js:106
 #: blocks/src/block/new-list/edit.js:140
-#: blocks/src/block/popular-list/edit.js:220
-#: blocks/src/old/balloon-ex-fix1/block.js:166
-#: blocks/src/old/balloon-ex-v2/block.js:87
-#: blocks/src/old/balloon-ex/block.js:156
+#: blocks/src/block/popular-list/edit.js:221
+#: blocks/src/old/balloon-ex-fix1/block.js:167
+#: blocks/src/old/balloon-ex-v2/block.js:88
+#: blocks/src/old/balloon-ex/block.js:157
 #: blocks/src/old/blank-box/block.js:68
 #: blocks/src/old/caption-box/block.js:62
 #: blocks/src/old/label-box/block.js:61
-#: blocks/src/old/micro-balloon-1/block.js:88
-#: blocks/src/old/micro-balloon/block.js:87
+#: blocks/src/old/micro-balloon-1/block.js:89
+#: blocks/src/old/micro-balloon/block.js:88
 #: blocks/src/old/tab-caption-box/block.js:62
 #: blocks/src/old/toggle-box/block.js:65
 msgid "デフォルト"
@@ -2217,7 +2220,7 @@ msgstr "메인 색상"
 
 #: lib/gutenberg.php:30
 #: lib/widgets/cta-box.php:169
-#: blocks/src/block/cta/edit.js:183
+#: blocks/src/block/cta/edit.js:184
 #: blocks/src/toolbutton/badge-purple.js:14
 msgid "紫色"
 msgstr "보라색"
@@ -2248,9 +2251,9 @@ msgstr "연두색"
 
 #: lib/gutenberg.php:75
 #: lib/widgets/cta-box.php:178
-#: blocks/src/block/cta/edit.js:204
+#: blocks/src/block/cta/edit.js:205
 #: blocks/src/old/button-wrap/block.js:125
-#: blocks/src/old/button/block.js:141
+#: blocks/src/old/button/block.js:142
 msgid "ライム"
 msgstr "라임"
 
@@ -2260,15 +2263,15 @@ msgstr "호박색"
 
 #: lib/gutenberg.php:95
 #: lib/widgets/cta-box.php:182
-#: blocks/src/block/cta/edit.js:212
+#: blocks/src/block/cta/edit.js:213
 #: blocks/src/old/button-wrap/block.js:141
-#: blocks/src/old/button/block.js:157
+#: blocks/src/old/button/block.js:158
 msgid "ディープオレンジ"
 msgstr "딥 오렌지"
 
 #: lib/gutenberg.php:100
 #: lib/widgets/cta-box.php:183
-#: blocks/src/block/cta/edit.js:215
+#: blocks/src/block/cta/edit.js:216
 #: blocks/src/toolbutton/badge-brown.js:14
 msgid "茶色"
 msgstr "갈색"
@@ -2537,7 +2540,7 @@ msgstr "미입력"
 
 #: lib/html-forms.php:607
 #: skins/skin-made-in-heaven/lib/hook-wp.php:840
-#: blocks/src/block/cta/edit.js:127
+#: blocks/src/block/cta/edit.js:128
 msgid "選択"
 msgstr "선택"
 
@@ -3081,7 +3084,7 @@ msgstr "수정"
 #: lib/page-item-ranking/form.php:226
 #: lib/page-item-ranking/list.php:64
 #: lib/page-speech-balloon/list.php:75
-#: blocks/src/block/cta/edit.js:140
+#: blocks/src/block/cta/edit.js:141
 msgid "削除"
 msgstr "삭제"
 
@@ -4760,8 +4763,8 @@ msgid "22px"
 msgstr "22px"
 
 #: lib/page-settings/all-forms.php:95
-#: blocks/src/block/button-wrap/edit.js:127
-#: blocks/src/block/button/edit.js:131
+#: blocks/src/block/button-wrap/edit.js:128
+#: blocks/src/block/button/edit.js:133
 msgid "文字サイズ"
 msgstr "글자 크기"
 
@@ -5312,7 +5315,7 @@ msgid "データー取得時点のAmazon販売ページでの値段を表示し�
 msgstr "데이터 취득 시점의 Amazon 판매 페이지에서의 가격을 표시합니다. 숏 코드로 price 옵션이 설정되어 있는 경우는 그쪽이 우선됩니다."
 
 #: lib/page-settings/apis-forms.php:77
-#: blocks/src/block/new-list/edit.js:222
+#: blocks/src/block/new-list/edit.js:225
 msgid "説明文を表示する"
 msgstr "설명 표시"
 
@@ -5731,7 +5734,7 @@ msgstr "어필 영역 제목을 입력하세요. 공백으로 두면 제목이 �
 #: lib/widgets/cta-box.php:140
 #: lib/widgets/fb-like-balloon.php:76
 #: lib/widgets/fb-like-box.php:106
-#: blocks/src/block/cta/edit.js:149
+#: blocks/src/block/cta/edit.js:150
 msgid "メッセージ"
 msgstr "메시지"
 
@@ -5791,7 +5794,7 @@ msgstr "어필 영역의 버튼의 링크를 여는 방법을 지정합니다."
 #: lib/page-settings/appeal-forms.php:186
 #: lib/page-settings/buttons-forms.php:78
 #: lib/widgets/cta-box.php:162
-#: blocks/src/block/cta/edit.js:177
+#: blocks/src/block/cta/edit.js:178
 msgid "ボタン色"
 msgstr "버튼색"
 
@@ -6313,16 +6316,16 @@ msgstr "콘텐츠 테두리 색"
 #: blocks/src/block-universal/caption-box/edit.js:138
 #: blocks/src/block-universal/label-box/edit.js:138
 #: blocks/src/block-universal/tab-caption-box/edit.js:141
-#: blocks/src/block/balloon/edit.js:305
+#: blocks/src/block/balloon/edit.js:309
 #: blocks/src/block/blank-box/edit.js:62
-#: blocks/src/block/button-wrap/edit.js:153
-#: blocks/src/block/button/edit.js:157
+#: blocks/src/block/button-wrap/edit.js:154
+#: blocks/src/block/button/edit.js:159
 #: blocks/src/block/faq/edit.js:169
 #: blocks/src/block/icon-list/edit.js:120
-#: blocks/src/block/tab-box/edit.js:143
+#: blocks/src/block/tab-box/edit.js:144
 #: blocks/src/block/timeline/edit.js:172
 #: blocks/src/block/toggle-box/edit.js:117
-#: blocks/src/micro/micro-balloon/edit.js:136
+#: blocks/src/micro/micro-balloon/edit.js:137
 msgid "ボーダー色"
 msgstr "테두리 색상"
 
@@ -6631,11 +6634,11 @@ msgstr "외부 링크의 오른쪽에 Font Awesome 아이콘을 표시하겠습�
 #: blocks/src/block-universal/label-box/edit.js:112
 #: blocks/src/block-universal/tab-caption-box/edit.js:114
 #: blocks/src/block/icon-list/edit.js:90
-#: blocks/src/micro/micro-balloon/edit.js:101
-#: blocks/src/micro/micro-text/edit.js:69
-#: blocks/src/old/caption-box/block.js:84
-#: blocks/src/old/label-box/block.js:83
-#: blocks/src/old/tab-caption-box/block.js:84
+#: blocks/src/micro/micro-balloon/edit.js:102
+#: blocks/src/micro/micro-text/edit.js:70
+#: blocks/src/old/caption-box/block.js:85
+#: blocks/src/old/label-box/block.js:84
+#: blocks/src/old/tab-caption-box/block.js:85
 msgid "アイコン"
 msgstr "아이콘"
 
@@ -8783,8 +8786,8 @@ msgid "表示する日付"
 msgstr "표시할 날짜"
 
 #: lib/page-settings/seo-forms.php:155
-#: blocks/src/block/new-list/edit.js:229
-#: blocks/src/block/popular-list/edit.js:275
+#: blocks/src/block/new-list/edit.js:232
+#: blocks/src/block/popular-list/edit.js:277
 msgid "投稿日・更新日を表示する"
 msgstr "게시일ㆍ수정일 표시"
 
@@ -8928,7 +8931,7 @@ msgstr "관련 글의 보조가 되는 제목을 입력하세요."
 #: lib/widgets/related-entries.php:182
 #: blocks/src/block/navicard/edit.js:101
 #: blocks/src/block/new-list/edit.js:135
-#: blocks/src/block/popular-list/edit.js:215
+#: blocks/src/block/popular-list/edit.js:216
 msgid "表示タイプ"
 msgstr "표시 유형"
 
@@ -10309,7 +10312,7 @@ msgstr "SNS 팔로우"
 #: skins/skin-made-in-heaven/lib/panel-visual.php:85
 #: skins/skin-made-in-heaven/lib/panel-visual.php:201
 #: skins/skin-made-in-heaven/lib/panel-visual.php:210
-#: blocks/src/block/cta/edit.js:110
+#: blocks/src/block/cta/edit.js:111
 msgid "画像"
 msgstr "사진"
 
@@ -10396,34 +10399,34 @@ msgid "アイコンとなる画像を選択してください。160px以上の�
 msgstr "아이콘이 될 이미지를 선택해 주세요. 160px 이상의 정사각형 이미지를 설정해 주세요."
 
 #: lib/page-speech-balloon/form.php:85
-#: blocks/src/block/balloon/edit.js:224
-#: blocks/src/old/balloon-ex-fix1/block.js:160
-#: blocks/src/old/balloon-ex-v2/block.js:81
-#: blocks/src/old/balloon-ex/block.js:150
+#: blocks/src/block/balloon/edit.js:225
+#: blocks/src/old/balloon-ex-fix1/block.js:161
+#: blocks/src/old/balloon-ex-v2/block.js:82
+#: blocks/src/old/balloon-ex/block.js:151
 msgid "吹き出しスタイル"
 msgstr "말풍선 스타일"
 
 #: lib/page-speech-balloon/form.php:91
-#: blocks/src/block/balloon/edit.js:234
-#: blocks/src/old/balloon-ex-fix1/block.js:170
-#: blocks/src/old/balloon-ex-v2/block.js:91
-#: blocks/src/old/balloon-ex/block.js:160
+#: blocks/src/block/balloon/edit.js:235
+#: blocks/src/old/balloon-ex-fix1/block.js:171
+#: blocks/src/old/balloon-ex-v2/block.js:92
+#: blocks/src/old/balloon-ex/block.js:161
 msgid "フラット"
 msgstr "플랫"
 
 #: lib/page-speech-balloon/form.php:92
-#: blocks/src/block/balloon/edit.js:238
-#: blocks/src/old/balloon-ex-fix1/block.js:174
-#: blocks/src/old/balloon-ex-v2/block.js:95
-#: blocks/src/old/balloon-ex/block.js:164
+#: blocks/src/block/balloon/edit.js:239
+#: blocks/src/old/balloon-ex-fix1/block.js:175
+#: blocks/src/old/balloon-ex-v2/block.js:96
+#: blocks/src/old/balloon-ex/block.js:165
 msgid "LINE風"
 msgstr "LINE 스타일"
 
 #: lib/page-speech-balloon/form.php:93
-#: blocks/src/block/balloon/edit.js:242
-#: blocks/src/old/balloon-ex-fix1/block.js:178
-#: blocks/src/old/balloon-ex-v2/block.js:99
-#: blocks/src/old/balloon-ex/block.js:168
+#: blocks/src/block/balloon/edit.js:243
+#: blocks/src/old/balloon-ex-fix1/block.js:179
+#: blocks/src/old/balloon-ex-v2/block.js:100
+#: blocks/src/old/balloon-ex/block.js:169
 msgid "考え事"
 msgstr "생각"
 
@@ -10432,26 +10435,26 @@ msgid "吹き出しのスタイルを設定します。"
 msgstr "말풍선의 스타일 설정입니다."
 
 #: lib/page-speech-balloon/form.php:103
-#: blocks/src/block/balloon/edit.js:249
-#: blocks/src/old/balloon-ex-fix1/block.js:185
-#: blocks/src/old/balloon-ex-v2/block.js:106
-#: blocks/src/old/balloon-ex/block.js:175
+#: blocks/src/block/balloon/edit.js:251
+#: blocks/src/old/balloon-ex-fix1/block.js:187
+#: blocks/src/old/balloon-ex-v2/block.js:108
+#: blocks/src/old/balloon-ex/block.js:177
 msgid "人物位置"
 msgstr "아바타 위치"
 
 #: lib/page-speech-balloon/form.php:108
-#: blocks/src/block/balloon/edit.js:255
-#: blocks/src/old/balloon-ex-fix1/block.js:191
-#: blocks/src/old/balloon-ex-v2/block.js:112
-#: blocks/src/old/balloon-ex/block.js:181
+#: blocks/src/block/balloon/edit.js:257
+#: blocks/src/old/balloon-ex-fix1/block.js:193
+#: blocks/src/old/balloon-ex-v2/block.js:114
+#: blocks/src/old/balloon-ex/block.js:183
 msgid "左"
 msgstr "왼쪽"
 
 #: lib/page-speech-balloon/form.php:109
-#: blocks/src/block/balloon/edit.js:259
-#: blocks/src/old/balloon-ex-fix1/block.js:195
-#: blocks/src/old/balloon-ex-v2/block.js:116
-#: blocks/src/old/balloon-ex/block.js:185
+#: blocks/src/block/balloon/edit.js:261
+#: blocks/src/old/balloon-ex-fix1/block.js:197
+#: blocks/src/old/balloon-ex-v2/block.js:118
+#: blocks/src/old/balloon-ex/block.js:187
 msgid "右"
 msgstr "오른쪽"
 
@@ -10460,42 +10463,42 @@ msgid "アイコンを表示するポジションを設定します。"
 msgstr "아이콘을 표시할 위치를 설정합니다."
 
 #: lib/page-speech-balloon/form.php:119
-#: blocks/src/block/balloon/edit.js:266
-#: blocks/src/old/balloon-ex-fix1/block.js:202
-#: blocks/src/old/balloon-ex-v2/block.js:123
-#: blocks/src/old/balloon-ex/block.js:192
+#: blocks/src/block/balloon/edit.js:269
+#: blocks/src/old/balloon-ex-fix1/block.js:205
+#: blocks/src/old/balloon-ex-v2/block.js:126
+#: blocks/src/old/balloon-ex/block.js:195
 msgid "アイコンスタイル"
 msgstr "아이콘 스타일"
 
 #: lib/page-speech-balloon/form.php:124
-#: blocks/src/block/balloon/edit.js:272
-#: blocks/src/old/balloon-ex-fix1/block.js:208
-#: blocks/src/old/balloon-ex-v2/block.js:131
-#: blocks/src/old/balloon-ex/block.js:198
+#: blocks/src/block/balloon/edit.js:275
+#: blocks/src/old/balloon-ex-fix1/block.js:211
+#: blocks/src/old/balloon-ex-v2/block.js:134
+#: blocks/src/old/balloon-ex/block.js:201
 msgid "四角（枠線なし）"
 msgstr "사각형 (테두리 없음)"
 
 #: lib/page-speech-balloon/form.php:125
-#: blocks/src/block/balloon/edit.js:276
-#: blocks/src/old/balloon-ex-fix1/block.js:212
-#: blocks/src/old/balloon-ex-v2/block.js:135
-#: blocks/src/old/balloon-ex/block.js:202
+#: blocks/src/block/balloon/edit.js:279
+#: blocks/src/old/balloon-ex-fix1/block.js:215
+#: blocks/src/old/balloon-ex-v2/block.js:138
+#: blocks/src/old/balloon-ex/block.js:205
 msgid "四角（枠線あり）"
 msgstr "사각형 (테두리 있음)"
 
 #: lib/page-speech-balloon/form.php:126
-#: blocks/src/block/balloon/edit.js:280
-#: blocks/src/old/balloon-ex-fix1/block.js:216
-#: blocks/src/old/balloon-ex-v2/block.js:139
-#: blocks/src/old/balloon-ex/block.js:206
+#: blocks/src/block/balloon/edit.js:283
+#: blocks/src/old/balloon-ex-fix1/block.js:219
+#: blocks/src/old/balloon-ex-v2/block.js:142
+#: blocks/src/old/balloon-ex/block.js:209
 msgid "丸（枠線なし）"
 msgstr "원 (테두리 없음)"
 
 #: lib/page-speech-balloon/form.php:127
-#: blocks/src/block/balloon/edit.js:284
-#: blocks/src/old/balloon-ex-fix1/block.js:220
-#: blocks/src/old/balloon-ex-v2/block.js:143
-#: blocks/src/old/balloon-ex/block.js:210
+#: blocks/src/block/balloon/edit.js:287
+#: blocks/src/old/balloon-ex-fix1/block.js:223
+#: blocks/src/old/balloon-ex-v2/block.js:146
+#: blocks/src/old/balloon-ex/block.js:213
 msgid "丸（枠線あり）"
 msgstr "원 (테두리 있음)"
 
@@ -10925,14 +10928,14 @@ msgstr "카드의 위아래에 구분선이 표시됩니다."
 #: lib/settings.php:556
 #: blocks/src/block/navicard/edit.js:110
 #: blocks/src/block/new-list/edit.js:144
-#: blocks/src/block/popular-list/edit.js:224
+#: blocks/src/block/popular-list/edit.js:225
 msgid "カードの上下に区切り線を入れる"
 msgstr "카드의 위아래에 구분선 넣기"
 
 #: lib/settings.php:556
 #: blocks/src/block/navicard/edit.js:110
 #: blocks/src/block/new-list/edit.js:144
-#: blocks/src/block/popular-list/edit.js:224
+#: blocks/src/block/popular-list/edit.js:225
 msgid "（縦並び表示のみ）"
 msgstr "(세로형 표시에만)"
 
@@ -10943,7 +10946,7 @@ msgstr "테두리로 카드 감싸기"
 #: lib/settings.php:559
 #: blocks/src/block/navicard/edit.js:114
 #: blocks/src/block/new-list/edit.js:148
-#: blocks/src/block/popular-list/edit.js:228
+#: blocks/src/block/popular-list/edit.js:229
 msgid "カードに枠線を表示する"
 msgstr "카드에 테두리 표시하기"
 
@@ -10954,7 +10957,7 @@ msgstr "큰 썸네일 사진 아래에 제목을 표시합니다."
 #: lib/settings.php:562
 #: blocks/src/block/navicard/edit.js:118
 #: blocks/src/block/new-list/edit.js:152
-#: blocks/src/block/popular-list/edit.js:232
+#: blocks/src/block/popular-list/edit.js:233
 msgid "大きなサムネイル表示にする"
 msgstr "큰 썸네일 표시"
 
@@ -10965,7 +10968,7 @@ msgstr "큰 썸네일 사진 하단에 제목을 겹칩니다."
 #: lib/settings.php:565
 #: blocks/src/block/navicard/edit.js:122
 #: blocks/src/block/new-list/edit.js:156
-#: blocks/src/block/popular-list/edit.js:236
+#: blocks/src/block/popular-list/edit.js:237
 msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr "큰 썸네일에 제목을 겹쳐서 표시합니다"
 
@@ -11207,7 +11210,7 @@ msgstr "내용을 입력해 주세요."
 
 #: lib/tinymce/html-tags.php:48
 #: blocks/src/layout/column-2/block.js:28
-#: blocks/src/layout/column-2/block.js:135
+#: blocks/src/layout/column-2/block.js:136
 #: blocks/src/layout/column-3/block.js:60
 msgid "左側に入力する内容"
 msgstr "왼쪽에 입력할 내용"
@@ -11219,7 +11222,7 @@ msgstr "중앙에 입력할 내용"
 
 #: lib/tinymce/html-tags.php:50
 #: blocks/src/layout/column-2/block.js:32
-#: blocks/src/layout/column-2/block.js:139
+#: blocks/src/layout/column-2/block.js:140
 #: blocks/src/layout/column-3/block.js:68
 msgid "右側に入力する内容"
 msgstr "오른쪽에 입력할 내용"
@@ -11341,12 +11344,6 @@ msgstr "네비 카드 목록"
 #: blocks/src/toolbutton/dropdown-shortcodes.js:73
 msgid "この記事を書いた人"
 msgstr "작성자"
-
-#: lib/tinymce/shortcodes.php:96
-#: blocks/src/block/profile/index.js:21
-#: blocks/src/toolbutton/dropdown-shortcodes.js:72
-msgid "プロフィールボックス"
-msgstr "프로필 박스"
 
 #: lib/tinymce/shortcodes.php:102
 msgid "ASIN"
@@ -11803,13 +11800,14 @@ msgstr "내용 :"
 #: lib/widgets/cta-box.php:143
 #: lib/widgets/mobile-text.php:83
 #: lib/widgets/pc-text.php:82
-#: blocks/src/block/cta/edit.js:157
+#: blocks/src/block/cta/edit.js:158
 msgid "自動的に段落を追加する"
 msgstr "자동으로 문단 추가하기"
 
 #: lib/widgets/cta-box.php:19
-msgid "CTAボックス"
-msgstr "CTA 박스"
+#: blocks/src/block/cta/index.js:21
+msgid "CTA"
+msgstr "CTA"
 
 #: lib/widgets/cta-box.php:20
 msgid "コール・トゥ・アクションで訪問者にとってもらいたい行動を促すウィジェットです。"
@@ -11839,54 +11837,54 @@ msgid "画像（選択ボタンが動作しない場合は再読み込み）"
 msgstr "CTA 이미지(선택 버튼이 작동하지 않는 경우에는 다시 읽기)"
 
 #: lib/widgets/cta-box.php:148
-#: blocks/src/block/cta/edit.js:165
+#: blocks/src/block/cta/edit.js:166
 msgid "ボタンテキスト"
 msgstr "버튼 텍스트"
 
 #: lib/widgets/cta-box.php:155
-#: blocks/src/block/cta/edit.js:171
+#: blocks/src/block/cta/edit.js:172
 msgid "ボタンURL"
 msgstr "버튼 URL"
 
 #: lib/widgets/cta-box.php:166
-#: blocks/src/block/cta/edit.js:180
+#: blocks/src/block/cta/edit.js:181
 #: blocks/src/toolbutton/button-black.js:14
 #: blocks/src/toolbutton/button-white-black.js:14
 msgid "黒色"
 msgstr "검은색"
 
 #: lib/widgets/cta-box.php:170
-#: blocks/src/block/cta/edit.js:184
+#: blocks/src/block/cta/edit.js:185
 msgid "深紫"
 msgstr "진보라"
 
 #: lib/widgets/cta-box.php:171
-#: blocks/src/block/cta/edit.js:186
+#: blocks/src/block/cta/edit.js:187
 msgid "紺色（インディゴ）"
 msgstr "네이비 블루 (인디고)"
 
 #: lib/widgets/cta-box.php:173
-#: blocks/src/block/cta/edit.js:190
+#: blocks/src/block/cta/edit.js:191
 msgid "水色"
 msgstr "하늘색"
 
 #: lib/widgets/cta-box.php:174
-#: blocks/src/block/cta/edit.js:192
+#: blocks/src/block/cta/edit.js:193
 msgid "明るい青（シアン）"
 msgstr "밝은 파랑 (시안)"
 
 #: lib/widgets/cta-box.php:175
-#: blocks/src/block/cta/edit.js:196
+#: blocks/src/block/cta/edit.js:197
 msgid "緑色がかった青（ティール）"
 msgstr "청록색 (틸)"
 
 #: lib/widgets/cta-box.php:177
-#: blocks/src/block/cta/edit.js:201
+#: blocks/src/block/cta/edit.js:202
 msgid "明るい緑"
 msgstr "밝은 초록"
 
 #: lib/widgets/cta-box.php:180
-#: blocks/src/block/cta/edit.js:207
+#: blocks/src/block/cta/edit.js:208
 msgid "琥珀色（アンバー）"
 msgstr "호박색 (앰버)"
 
@@ -12085,9 +12083,9 @@ msgstr "네비 카드 목록을 보여주는 위젯입니다."
 #: lib/widgets/new-entries.php:201
 #: lib/widgets/popular-entries.php:213
 #: lib/widgets/related-entries.php:203
-#: blocks/src/block/navicard/edit.js:130
-#: blocks/src/block/new-list/edit.js:205
-#: blocks/src/block/popular-list/edit.js:244
+#: blocks/src/block/navicard/edit.js:131
+#: blocks/src/block/new-list/edit.js:208
+#: blocks/src/block/popular-list/edit.js:246
 msgid "横並び表示にする"
 msgstr "가로 배열로 표시합니다"
 
@@ -12102,9 +12100,9 @@ msgstr "(「큰 썸네일」과 함께 사용하는 것을 권장)"
 #: lib/widgets/new-entries.php:208
 #: lib/widgets/popular-entries.php:220
 #: lib/widgets/related-entries.php:210
-#: blocks/src/block/navicard/edit.js:137
-#: blocks/src/block/new-list/edit.js:212
-#: blocks/src/block/popular-list/edit.js:251
+#: blocks/src/block/navicard/edit.js:138
+#: blocks/src/block/new-list/edit.js:215
+#: blocks/src/block/popular-list/edit.js:253
 msgid "タイトルを太字にする"
 msgstr "타이틀을 굵게"
 
@@ -12112,9 +12110,9 @@ msgstr "타이틀을 굵게"
 #: lib/widgets/new-entries.php:214
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
-#: blocks/src/block/navicard/edit.js:142
-#: blocks/src/block/new-list/edit.js:217
-#: blocks/src/block/popular-list/edit.js:270
+#: blocks/src/block/navicard/edit.js:143
+#: blocks/src/block/new-list/edit.js:220
+#: blocks/src/block/popular-list/edit.js:272
 msgid "カードに矢印を表示する"
 msgstr "카드에 화살표 표시하기"
 
@@ -12201,12 +12199,12 @@ msgid "集計期間"
 msgstr "집계 기간"
 
 #: lib/widgets/popular-entries.php:226
-#: blocks/src/block/popular-list/edit.js:256
+#: blocks/src/block/popular-list/edit.js:258
 msgid "ランキング番号を表示する"
 msgstr "랭킹 번호 표시"
 
 #: lib/widgets/popular-entries.php:232
-#: blocks/src/block/popular-list/edit.js:263
+#: blocks/src/block/popular-list/edit.js:265
 msgid "PV数を表示する"
 msgstr "PV 수 표시"
 
@@ -13050,16 +13048,16 @@ msgid "ロゴをフロントページと別画像にしたいとき設定しま�
 msgstr "로고를 프론트 페이지와 다른 이미지로 설정하고 싶을 때 사용합니다."
 
 #: skins/skin-grayish-topfull/functions.php:1604
-msgid "コンテンツ下部ウィジェット：プロフィールボックス"
-msgstr "콘텐츠 하단 위젯: 프로필 박스"
+msgid "コンテンツ下部ウィジェット：プロフィール"
+msgstr "콘텐츠 하단 위젯: 프로필"
 
 #: skins/skin-grayish-topfull/functions.php:1607
-msgid "プロフィールボックスの設定についてはこちらを参照"
-msgstr "프로필 박스 설정에 대해서는 여기를 참조하세요."
+msgid "プロフィールの設定についてはこちらを参照"
+msgstr "프로필 설정에 대해서는 여기를 참조하세요"
 
 #: skins/skin-grayish-topfull/functions.php:1620
-msgid "プロフィールボックスの背景画像の白オーバーレイ不透明度調整"
-msgstr "프로필 박스 배경 이미지의 흰색 오버레이 불투명도 조정"
+msgid "プロフィールの背景画像の白オーバーレイ不透明度調整"
+msgstr "프로필 배경 이미지의 흰색 오버레이 불투명도 조정"
 
 #: skins/skin-grayish-topfull/functions.php:1621
 msgid "値が大きくなるほど白色が濃くなります。"
@@ -13074,8 +13072,8 @@ msgid "画像アップロード"
 msgstr "이미지 업로드"
 
 #: skins/skin-grayish-topfull/functions.php:1657
-msgid "プロフィールボックスの背景に設定したい画像を選択"
-msgstr "프로필 박스 배경으로 설정할 이미지를 선택하세요."
+msgid "プロフィールの背景に設定したい画像を選択"
+msgstr "프로필 배경에 설정할 이미지를 선택하세요"
 
 #: skins/skin-grayish-topfull/functions.php:1740
 msgid "ヘッダー・フッターモバイルボタンの設定についてはこちらを参照"
@@ -13627,21 +13625,21 @@ msgid "インラインボタン"
 msgstr "인라인 버튼"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:138
-#: blocks/src/block/button-wrap/edit.js:112
-#: blocks/src/block/button/edit.js:116
-#: blocks/src/micro/micro-balloon/edit.js:96
-#: blocks/src/old/button-1/block.js:129
-#: blocks/src/old/button-wrap-1/block.js:120
-#: blocks/src/old/micro-balloon-1/block.js:111
-#: blocks/src/old/micro-balloon/block.js:110
+#: blocks/src/block/button-wrap/edit.js:113
+#: blocks/src/block/button/edit.js:118
+#: blocks/src/micro/micro-balloon/edit.js:97
+#: blocks/src/old/button-1/block.js:131
+#: blocks/src/old/button-wrap-1/block.js:121
+#: blocks/src/old/micro-balloon-1/block.js:113
+#: blocks/src/old/micro-balloon/block.js:112
 msgid "円形にする"
 msgstr "둥글게"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:138
-#: blocks/src/block/button-wrap/edit.js:118
-#: blocks/src/block/button/edit.js:122
-#: blocks/src/old/button-1/block.js:135
-#: blocks/src/old/button-wrap-1/block.js:126
+#: blocks/src/block/button-wrap/edit.js:119
+#: blocks/src/block/button/edit.js:124
+#: blocks/src/old/button-1/block.js:137
+#: blocks/src/old/button-wrap-1/block.js:127
 msgid "光らせる"
 msgstr "빛나게"
 
@@ -14635,27 +14633,27 @@ msgstr "스타일 설정"
 #: blocks/src/block-universal/label-box/edit.js:134
 #: blocks/src/block-universal/tab-caption-box/edit.js:137
 #: blocks/src/block/blank-box/edit.js:58
-#: blocks/src/block/button-wrap/edit.js:139
-#: blocks/src/block/button/edit.js:143
+#: blocks/src/block/button-wrap/edit.js:140
+#: blocks/src/block/button/edit.js:145
 #: blocks/src/block/faq/edit.js:155
 #: blocks/src/block/icon-list/edit.js:111
 #: blocks/src/block/radar/edit.js:272
-#: blocks/src/block/tab-box/edit.js:139
+#: blocks/src/block/tab-box/edit.js:140
 #: blocks/src/block/timeline/edit.js:153
 #: blocks/src/block/toggle-box/edit.js:113
-#: blocks/src/micro/micro-balloon/edit.js:123
-#: blocks/src/micro/micro-text/edit.js:91
-#: blocks/src/old/button-1/block.js:142
-#: blocks/src/old/button-1/block.js:148
-#: blocks/src/old/button-wrap-1/block.js:133
-#: blocks/src/old/button-wrap-1/block.js:139
+#: blocks/src/micro/micro-balloon/edit.js:124
+#: blocks/src/micro/micro-text/edit.js:92
+#: blocks/src/old/button-1/block.js:144
+#: blocks/src/old/button-1/block.js:150
+#: blocks/src/old/button-wrap-1/block.js:134
+#: blocks/src/old/button-wrap-1/block.js:140
 #: blocks/src/old/button-wrap/block.js:75
-#: blocks/src/old/button/block.js:91
+#: blocks/src/old/button/block.js:92
 #: blocks/src/old/caption-box/block.js:56
 #: blocks/src/old/label-box/block.js:55
-#: blocks/src/old/micro-balloon-1/block.js:82
-#: blocks/src/old/micro-balloon/block.js:81
-#: blocks/src/old/tab-box/block.js:142
+#: blocks/src/old/micro-balloon-1/block.js:83
+#: blocks/src/old/micro-balloon/block.js:82
+#: blocks/src/old/tab-box/block.js:143
 #: blocks/src/old/tab-caption-box/block.js:56
 #: blocks/src/old/toggle-box/block.js:59
 msgid "色設定"
@@ -14713,7 +14711,7 @@ msgstr "광고를 표시합니다."
 msgid "人物"
 msgstr "인물"
 
-#: blocks/src/block/balloon/edit.js:292
+#: blocks/src/block/balloon/edit.js:296
 msgid "吹き出し色設定"
 msgstr "말풍선 색 설정"
 
@@ -14793,38 +14791,38 @@ msgid "リンクタグ・ショートコード"
 msgstr "링크 태그ㆍ숏 코드"
 
 #: blocks/src/block/button-wrap/edit.js:91
-#: blocks/src/block/button/edit.js:95
-#: blocks/src/old/button-1/block.js:108
+#: blocks/src/block/button/edit.js:96
+#: blocks/src/old/button-1/block.js:109
 #: blocks/src/old/button-wrap-1/block.js:99
-#: blocks/src/old/button-wrap/block.js:156
-#: blocks/src/old/button/block.js:172
+#: blocks/src/old/button-wrap/block.js:157
+#: blocks/src/old/button/block.js:174
 msgid "サイズ"
 msgstr "사이즈"
 
 #: blocks/src/block/button-wrap/edit.js:97
-#: blocks/src/block/button/edit.js:101
-#: blocks/src/old/button-1/block.js:114
+#: blocks/src/block/button/edit.js:102
+#: blocks/src/old/button-1/block.js:115
 #: blocks/src/old/button-wrap-1/block.js:105
-#: blocks/src/old/button-wrap/block.js:162
-#: blocks/src/old/button/block.js:178
+#: blocks/src/old/button-wrap/block.js:163
+#: blocks/src/old/button/block.js:180
 msgid "小"
 msgstr "작게"
 
 #: blocks/src/block/button-wrap/edit.js:101
-#: blocks/src/block/button/edit.js:105
-#: blocks/src/old/button-1/block.js:118
+#: blocks/src/block/button/edit.js:106
+#: blocks/src/old/button-1/block.js:119
 #: blocks/src/old/button-wrap-1/block.js:109
-#: blocks/src/old/button-wrap/block.js:166
-#: blocks/src/old/button/block.js:182
+#: blocks/src/old/button-wrap/block.js:167
+#: blocks/src/old/button/block.js:184
 msgid "中"
 msgstr "중간"
 
 #: blocks/src/block/button-wrap/edit.js:105
-#: blocks/src/block/button/edit.js:109
-#: blocks/src/old/button-1/block.js:122
+#: blocks/src/block/button/edit.js:110
+#: blocks/src/old/button-1/block.js:123
 #: blocks/src/old/button-wrap-1/block.js:113
-#: blocks/src/old/button-wrap/block.js:170
-#: blocks/src/old/button/block.js:186
+#: blocks/src/old/button-wrap/block.js:171
+#: blocks/src/old/button/block.js:188
 msgid "大"
 msgstr "크게"
 
@@ -14890,7 +14888,7 @@ msgstr "이 기사 읽기"
 #: blocks/src/block/info-list/edit.js:87
 #: blocks/src/block/navicard/edit.js:99
 #: blocks/src/block/new-list/edit.js:125
-#: blocks/src/block/popular-list/edit.js:198
+#: blocks/src/block/popular-list/edit.js:199
 msgid "基本設定"
 msgstr "기본 설정"
 
@@ -14898,13 +14896,9 @@ msgstr "기본 설정"
 msgid "画像とメッセージのレイアウト"
 msgstr "이미지 및 메시지 레이아웃"
 
-#: blocks/src/block/cta/edit.js:128
+#: blocks/src/block/cta/edit.js:129
 msgid "置換"
 msgstr "대체"
-
-#: blocks/src/block/cta/index.js:21
-msgid "CTA"
-msgstr "CTA"
 
 #: blocks/src/block/cta/index.js:23
 msgid "コールトゥアクションボックスを表示します。"
@@ -15025,14 +15019,14 @@ msgid "キャプション(枠線内表示)"
 msgstr "캡션(테두리 표시)"
 
 #: blocks/src/block/info-list/edit.js:123
-#: blocks/src/block/new-list/edit.js:236
-#: blocks/src/block/popular-list/edit.js:280
+#: blocks/src/block/new-list/edit.js:239
+#: blocks/src/block/popular-list/edit.js:282
 msgid "フィルタ"
 msgstr "필터"
 
 #: blocks/src/block/info-list/edit.js:125
-#: blocks/src/block/new-list/edit.js:238
-#: blocks/src/block/popular-list/edit.js:282
+#: blocks/src/block/new-list/edit.js:241
+#: blocks/src/block/popular-list/edit.js:284
 msgid "全カテゴリーを表示する"
 msgstr "모든 카테고리 표시"
 
@@ -15071,56 +15065,56 @@ msgid "子カテゴリーの内容を含めて表示する"
 msgstr "하위 카테고리의 내용을 포함하여 표시"
 
 #: blocks/src/block/new-list/edit.js:127
-#: blocks/src/block/popular-list/edit.js:200
+#: blocks/src/block/popular-list/edit.js:201
 msgid "表示する記事の数"
 msgstr "표시할 글의 수"
 
-#: blocks/src/block/new-list/edit.js:163
+#: blocks/src/block/new-list/edit.js:164
 msgid "表示順"
 msgstr "표시 순서"
 
-#: blocks/src/block/new-list/edit.js:167
+#: blocks/src/block/new-list/edit.js:168
 msgid "更新日順"
 msgstr "수정일 순"
 
-#: blocks/src/block/new-list/edit.js:171
+#: blocks/src/block/new-list/edit.js:172
 msgid "投稿日順"
 msgstr "게시일 순"
 
-#: blocks/src/block/new-list/edit.js:185
+#: blocks/src/block/new-list/edit.js:187
 msgid "並び替え"
 msgstr "정렬"
 
-#: blocks/src/block/new-list/edit.js:188
+#: blocks/src/block/new-list/edit.js:190
 msgid "昇順"
 msgstr "오름차순"
 
-#: blocks/src/block/new-list/edit.js:189
+#: blocks/src/block/new-list/edit.js:191
 msgid "降順"
 msgstr "내림차순"
 
-#: blocks/src/block/new-list/edit.js:197
+#: blocks/src/block/new-list/edit.js:200
 msgid "読み飛ばし"
 msgstr "건너뛰기"
 
-#: blocks/src/block/new-list/edit.js:249
+#: blocks/src/block/new-list/edit.js:252
 msgid "全タグを表示する"
 msgstr "모든 태그를 표시"
 
-#: blocks/src/block/new-list/edit.js:258
+#: blocks/src/block/new-list/edit.js:261
 msgid "固定記事を表示する"
 msgstr "고정된 글 표시"
 
-#: blocks/src/block/new-list/edit.js:263
-#: blocks/src/block/popular-list/edit.js:294
+#: blocks/src/block/new-list/edit.js:266
+#: blocks/src/block/popular-list/edit.js:296
 msgid "投稿タイプ"
 msgstr "게시 유형"
 
-#: blocks/src/block/new-list/edit.js:270
+#: blocks/src/block/new-list/edit.js:273
 msgid "検索グループ"
 msgstr "검색 그룹"
 
-#: blocks/src/block/new-list/edit.js:275
+#: blocks/src/block/new-list/edit.js:278
 msgid "投稿ユーザ"
 msgstr "게시자"
 
@@ -15148,11 +15142,11 @@ msgstr "1일"
 msgid "半年"
 msgstr "반년"
 
-#: blocks/src/block/popular-list/edit.js:207
+#: blocks/src/block/popular-list/edit.js:208
 msgid "全期間集計"
 msgstr "전체 기간"
 
-#: blocks/src/block/popular-list/edit.js:301
+#: blocks/src/block/popular-list/edit.js:303
 msgid "除外投稿(ID)"
 msgstr "제외 게시물(ID)"
 
@@ -15904,37 +15898,37 @@ msgid "吹き出しEX"
 msgstr "말풍선 EX"
 
 #: blocks/src/old/button-wrap/block.js:93
-#: blocks/src/old/button/block.js:109
+#: blocks/src/old/button/block.js:110
 msgid "ディープパープル"
 msgstr "딥 퍼플"
 
 #: blocks/src/old/button-wrap/block.js:97
-#: blocks/src/old/button/block.js:113
+#: blocks/src/old/button/block.js:114
 msgid "インディゴ[紺色]"
 msgstr "인디고 (네이비 블루)"
 
 #: blocks/src/old/button-wrap/block.js:105
-#: blocks/src/old/button/block.js:121
+#: blocks/src/old/button/block.js:122
 msgid "ライトブルー"
 msgstr "밝은 파랑"
 
 #: blocks/src/old/button-wrap/block.js:109
-#: blocks/src/old/button/block.js:125
+#: blocks/src/old/button/block.js:126
 msgid "シアン"
 msgstr "청록"
 
 #: blocks/src/old/button-wrap/block.js:113
-#: blocks/src/old/button/block.js:129
+#: blocks/src/old/button/block.js:130
 msgid "ティール[緑色がかった青]"
 msgstr "틸 [중간 청록]"
 
 #: blocks/src/old/button-wrap/block.js:121
-#: blocks/src/old/button/block.js:137
+#: blocks/src/old/button/block.js:138
 msgid "ライトグリーン"
 msgstr "연두"
 
 #: blocks/src/old/button-wrap/block.js:133
-#: blocks/src/old/button/block.js:149
+#: blocks/src/old/button/block.js:150
 msgid "アンバー[琥珀色]"
 msgstr "앰버 [호박색]"
 
