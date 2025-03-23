@@ -169,7 +169,7 @@ function get_archive_chapter_title(){
   } elseif( is_search() ) { // 検索結果ページ
     $search_query = trim(strip_tags(get_search_query()));
     if (empty($search_query)) {
-      $search_query = __( 'キーワード指定なし', 'text-domain' ); // THEME_NAME を適切なテキストドメインに変更
+      $search_query = __( 'キーワード指定なし', THEME_NAME ); // THEME_NAME を適切なテキストドメインに変更
     }
     $chapter_title .= '<span class="fa fa-search" aria-hidden="true"></span>"' . esc_html($search_query) . '"';
   } elseif (is_day()) { // 日別アーカイブ

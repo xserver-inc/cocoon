@@ -85,6 +85,7 @@ registerBlockType( 'cocoon-blocks/blank-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>

@@ -79,6 +79,7 @@ registerBlockType( 'cocoon-blocks/tab-caption-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
 
             <BaseControl label={ __( 'アイコン', THEME_NAME ) }>

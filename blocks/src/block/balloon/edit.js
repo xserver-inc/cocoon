@@ -218,6 +218,7 @@ export function BalloonEdit( props ) {
             }
             options={ balloons }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
 
           <SelectControl
@@ -243,6 +244,7 @@ export function BalloonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
 
           <SelectControl
@@ -260,6 +262,7 @@ export function BalloonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
 
           <SelectControl
@@ -285,6 +288,7 @@ export function BalloonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
         </PanelBody>
 

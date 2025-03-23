@@ -1259,7 +1259,8 @@ html[lang=en] .ribbon-top-left::after {
 .body .light-box :last-child,
 .body .dark-box :last-child,
 .body .tab-content :last-child,
-.body .toc :last-child {
+.body .toc :last-child,
+.body .wp-block-social-links :last-child {
   margin-bottom: 0;
 }
 .body div.scrollable-table table,
@@ -4947,13 +4948,6 @@ figcaption {
 
 .components-button.is-button {
   padding: 0 4px;
-}
-
-/* copy from editor-style.css */
-div.editor-styles-wrapper {
-  margin: 20px;
-  background-color: #fff;
-  padding-top: 20px;
 }
 
 .editor-post-title .editor-post-title__input {

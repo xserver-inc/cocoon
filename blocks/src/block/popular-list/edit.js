@@ -182,6 +182,7 @@ export default function edit( props ) {
         },
       ] }
       __nextHasNoMarginBottom={ true }
+      __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
     />
   );
   if ( showAllDays ) {
@@ -238,6 +239,7 @@ export default function edit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
           <Divider />
           <ToggleControl

@@ -1,4 +1,4 @@
-<?php //CTAボックス
+<?php //CTA
 /**
  * Cocoon WordPress Theme
  * @author: yhira

@@ -87,13 +87,13 @@ function generate_shortcodes_js($value){
   shortcodes[3].before = '<?php echo $before; ?>';
   shortcodes[3].after = '<?php echo $after; ?>';
 
-  <?php //プロフィールボックスのショートコード
+  <?php //プロフィールのショートコード
   $msg = __( 'この記事を書いた人', THEME_NAME );
   $before = '[author_box label=';
   $after = ']';
    ?>
   shortcodes[4] = new Array();
-  shortcodes[4].title  = '<?php echo __( 'プロフィールボックス', THEME_NAME ); ?>';
+  shortcodes[4].title  = '<?php echo __( 'プロフィール', THEME_NAME ); ?>';
   shortcodes[4].tag = '<?php echo $before.$msg.$after; ?>';
   shortcodes[4].before = '<?php echo $before; ?>';
   shortcodes[4].after = '<?php echo $after; ?>';

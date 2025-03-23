@@ -107,6 +107,7 @@ export const addBlockControl = createHigherOrderComponent( ( BlockEdit ) => {
                   props.setAttributes( { className: newClassName } );
                 } }
                 __nextHasNoMarginBottom={ true }
+                __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
               />
             </PanelBody>
           </InspectorControls>

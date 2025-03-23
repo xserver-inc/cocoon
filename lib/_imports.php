@@ -199,7 +199,7 @@ require_once abspath(__FILE__).'widgets/author-box.php';
 require_once abspath(__FILE__).'widgets/fb-like-box.php';
 //Facebookバルーン
 require_once abspath(__FILE__).'widgets/fb-like-balloon.php';
-//CTAボックス
+//CTA
 require_once abspath(__FILE__).'widgets/cta-box.php';
 //ランキング
 require_once abspath(__FILE__).'widgets/item-ranking.php';

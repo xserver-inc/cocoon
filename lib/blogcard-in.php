@@ -86,23 +86,34 @@ function url_to_internal_blogcard_tag($url){
     }
     $snippet = preg_replace('/\n/', '', $snippet);
 
-    //日付表示
+    // 日付表示
     $date = null;
     $post_date = mysql2date(get_site_date_format(), $post_data->post_date);
+
     switch (get_internal_blogcard_date_type()) {
       case 'post_date':
         $date = $post_date;
         break;
+
       case 'up_date':
-        $date = mysql2date(get_site_date_format(), $post_data->post_modified);
-        if (!$date) {
+        $modified_date = mysql2date(get_site_date_format(), $post_data->post_modified);
+
+        // 年が -0001 になる場合は無効な日付と判断して投稿日に差し替え
+        if (
+          !$modified_date ||
+          strpos($modified_date, '-0001') !== false ||
+          strpos($modified_date, '0000') !== false
+        ) {
           $date = $post_date;
+        } else {
+          $date = $modified_date;
         }
         break;
     }
+
     if (is_internal_blogcard_date_visible()) {
-      $date = '<div class="blogcard-post-date internal-blogcard-post-date">'.$date.'</div>';//日付の取得
-      $date_tag = '<div class="blogcard-date internal-blogcard-date">'.$date.'</div>';
+      $date = '<div class="blogcard-post-date internal-blogcard-post-date">' . $date . '</div>'; // 日付の取得
+      $date_tag = '<div class="blogcard-date internal-blogcard-date">' . $date . '</div>';
     }
 
 

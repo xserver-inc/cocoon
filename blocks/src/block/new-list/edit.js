@@ -158,6 +158,7 @@ export default function edit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
           <SelectControl
             label={ __( '表示順', THEME_NAME ) }
@@ -180,6 +181,7 @@ export default function edit( props ) {
               }
             } }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
           <SelectControl
             label={ __( '並び替え', THEME_NAME ) }
@@ -192,6 +194,7 @@ export default function edit( props ) {
               setAttributes( { order: value } );
             } }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
           <RangeControl
             label={ __( '読み飛ばし', THEME_NAME ) }

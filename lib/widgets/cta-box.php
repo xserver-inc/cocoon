@@ -16,7 +16,7 @@ class CTABoxWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
       'cta_box',
-      WIDGET_NAME_PREFIX.__( 'CTAボックス', THEME_NAME ),//ウィジェット名
+      WIDGET_NAME_PREFIX.__( 'CTA', THEME_NAME ),//ウィジェット名
       array('description' => __( 'コール・トゥ・アクションで訪問者にとってもらいたい行動を促すウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );

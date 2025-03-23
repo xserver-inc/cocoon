@@ -56,7 +56,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php if ( is_copy_share_button_visible($option) && !is_amp() )://コピーボタンを表示するか
         global $_MOBILE_COPY_BUTTON;
         $_MOBILE_COPY_BUTTON = true; ?>
-      <a role="button" tabindex="0" class="sns-button share-button copy-button copy-share-button-sq" data-clipboard-text="<?php echo esc_attr(get_share_page_title()); ?> <?php the_permalink(); ?>" title="<?php _e( 'タイトルとURLをコピーする', THEME_NAME ) ?>" aria-label="<?php _e( 'タイトルとURLをコピーする', THEME_NAME ) ?>"><span class="social-icon icon-copy"></span><span class="button-caption"><?php _e( 'コピー', THEME_NAME ) ?></span><span class="share-count copy-share-count"></span></a>
+      <a role="button" tabindex="0" class="sns-button share-button copy-button copy-share-button-sq" data-clipboard-text="<?php echo esc_attr(get_share_page_title()); ?> <?php echo get_share_page_url(); ?>" title="<?php _e( 'タイトルとURLをコピーする', THEME_NAME ) ?>" aria-label="<?php _e( 'タイトルとURLをコピーする', THEME_NAME ) ?>"><span class="social-icon icon-copy"></span><span class="button-caption"><?php _e( 'コピー', THEME_NAME ) ?></span><span class="share-count copy-share-count"></span></a>
     <?php endif; ?>
 
     <?php if ( is_comment_share_button_visible($option) )://コメントボタンを表示するか ?>

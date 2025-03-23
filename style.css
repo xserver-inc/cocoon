@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.8.5.1
+Version: 2.8.5.2
 Requires at least: 6.1.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -3351,7 +3351,8 @@ ul.wp-block-archives {
 .body .light-box :last-child,
 .body .dark-box :last-child,
 .body .tab-content :last-child,
-.body .toc :last-child {
+.body .toc :last-child,
+.body .wp-block-social-links :last-child {
   margin-bottom: 0;
 }
 .body div.scrollable-table table,
@@ -6744,7 +6745,7 @@ canvas, iframe, video,
 }
 
 /************************************
-** プロフィールボックス
+** プロフィール
 ************************************/
 .author-box {
   border-radius: var(--cocoon-basic-border-radius);

@@ -89,6 +89,7 @@ export function ButtonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
 
           <SelectControl
@@ -110,6 +111,7 @@ export function ButtonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
           />
 
           <ToggleControl

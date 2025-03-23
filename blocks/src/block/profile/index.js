@@ -18,7 +18,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-  title: __( 'プロフィールボックス', THEME_NAME ),
+  title: __( 'プロフィール', THEME_NAME ),
   icon: <FontAwesomeIcon icon={ faIdCard } />,
   description: __( 'プロフィールを表示します。', THEME_NAME ),
 

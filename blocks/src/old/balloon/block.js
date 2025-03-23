@@ -84,6 +84,7 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
               onChange={ ( value ) => setAttributes( { index: value } ) }
               options={ balloons }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>

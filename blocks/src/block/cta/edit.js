@@ -104,6 +104,7 @@ export default function edit( props ) {
               ] }
               onChange={ ( value ) => setAttributes( { layout: value } ) }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
             <BaseControl
               className={ 'cta-base-control cta-image-base-control' }
@@ -217,6 +218,7 @@ export default function edit( props ) {
               ] }
               onChange={ ( value ) => setAttributes( { buttonColor: value } ) }
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </Panel>
