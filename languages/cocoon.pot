@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-23T02:11:22+00:00\n"
+"POT-Creation-Date: 2025-03-24T11:24:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
@@ -1624,7 +1624,7 @@ msgstr ""
 #: lib/content-category.php:178
 #: lib/content-tag.php:149
 #: lib/seo.php:415
-#: lib/seo.php:593
+#: lib/seo.php:595
 msgid "「%s」の記事一覧です。"
 msgstr ""
 
@@ -10892,6 +10892,10 @@ msgstr ""
 
 #: lib/profile.php:61
 msgid "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。"
+msgstr ""
+
+#: lib/seo.php:502
+msgid "検索結果ページです。"
 msgstr ""
 
 #: lib/settings.php:302
