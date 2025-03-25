@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-23T02:11:22+00:00\n"
-"PO-Revision-Date: 2025-03-23 02:43\n"
+"POT-Creation-Date: 2025-03-24T11:24:13+00:00\n"
+"PO-Revision-Date: 2025-03-25 12:50\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1631,7 +1631,7 @@ msgstr "Modifier"
 #: lib/content-category.php:178
 #: lib/content-tag.php:149
 #: lib/seo.php:415
-#: lib/seo.php:593
+#: lib/seo.php:595
 msgid "「%s」の記事一覧です。"
 msgstr "Liste des articles de \"%s\"."
 
@@ -10900,6 +10900,10 @@ msgstr "URL de la page de profil"
 #: lib/profile.php:61
 msgid "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。"
 msgstr "Entrez l'URL de la page où les informations de profil ont été saisies. Le lien du nom du profil sera changé vers la page de profil. Si cette information est laissée vide, le lien redirigera vers la page d'archive de l'auteur."
+
+#: lib/seo.php:502
+msgid "検索結果ページです。"
+msgstr "Page des résultats de recherche."
 
 #: lib/settings.php:302
 msgid "ヘッダーメニュー"
