@@ -8,9 +8,8 @@ msgstr ""
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-23T02:11:22+00:00\n"
-"PO-Revision-Date: 2025-03-23 02:43\n"
+"POT-Creation-Date: 2025-03-24T11:24:13+00:00\n"
+"PO-Revision-Date: 2025-03-25 12:50\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -1631,7 +1630,7 @@ msgstr "Edit"
 #: lib/content-category.php:178
 #: lib/content-tag.php:149
 #: lib/seo.php:415
-#: lib/seo.php:593
+#: lib/seo.php:595
 msgid "「%s」の記事一覧です。"
 msgstr "\"%s\"의 게시글 목록입니다."
 
@@ -10900,6 +10899,10 @@ msgstr "프로필 페이지 URL"
 #: lib/profile.php:61
 msgid "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。"
 msgstr "프로필 정보가 입력되어 있는 페이지 URL을 입력해 주세요. 프로필 이름 링크가 프로필 페이지로 변경됩니다. 입력하지 않는 경우에는 작성자의 아카이브 페이지로 링크 됩니다."
+
+#: lib/seo.php:502
+msgid "検索結果ページです。"
+msgstr "검색 결과 페이지입니다."
 
 #: lib/settings.php:302
 msgid "ヘッダーメニュー"
