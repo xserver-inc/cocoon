@@ -19,11 +19,7 @@
     padding: var(--cocoon-list-wide-padding);
   }
 }
-// .wp-block{
-//   .has-list-style{
-//     padding: var(--cocoon-list-padding);
-//   }
-// }
+
 .body :is(ul, ol).has-border{
   padding: var(--cocoon-list-wide-padding);
   &.has-background{
