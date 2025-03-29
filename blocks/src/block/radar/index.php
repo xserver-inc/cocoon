@@ -1,7 +1,7 @@
 <?php
 
 // 同期パターンにブロックが組まれているか
-if ( !function_exists( 'has_radar_block_in_patterns' ) ):
+if ( !function_exists( 'has_block_in_patterns' ) ):
 function has_block_in_patterns($post_content, $block) {
   // `wp:block {"ref":ID}` のパターンを取得
   preg_match_all('/wp:block\s*\{\s*"ref"\s*:\s*(\d+)\s*\}/', $post_content, $matches);
