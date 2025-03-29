@@ -3637,6 +3637,52 @@ div.sbs-think:not(.not-nested-style) .speech-balloon::after {
   right: -44px;
 }
 
+.iconlist-box {
+  --cocoon-custom-icon-color: var(--cocoon-text-color);
+  --cocoon-custom-border-color: transparent;
+  --cocoon-custom-background-color: transparent;
+  --cocoon-custom-text-color: var(--cocoon-text-color);
+  border-color: var(--cocoon-custom-border-color);
+  background-color: var(--cocoon-custom-background-color);
+  color: var(--cocoon-custom-text-color);
+}
+.iconlist-box.has-border-color li::before {
+  color: var(--cocoon-custom-icon-color);
+}
+.iconlist-box ul {
+  list-style: none;
+}
+.iconlist-box ul li::before {
+  display: initial;
+}
+.iconlist-box ul ul {
+  list-style: none;
+}
+.iconlist-box ol:not(.has-list-style) > li::before {
+  display: none;
+}
+.iconlist-box.list-none ul {
+  list-style: disc;
+}
+.iconlist-box.list-none ol {
+  list-style: decimal;
+}
+
+.iconlist-box li::before {
+  font-family: FontAwesome;
+  margin-right: 0.4em;
+  margin-left: -1.4em;
+  position: absolute;
+}
+
+.iconlist-title {
+  font-weight: 700;
+  text-align: center;
+}
+.iconlist-title:empty {
+  display: none;
+}
+
 .tab-label-group {
   list-style: none !important;
   display: flex;
@@ -4019,124 +4065,6 @@ ul.timeline ul ul ul {
 }
 .tab-content-group .tab-content.is-active {
   display: block;
-}
-
-.faq-wrap {
-  --cocoon-custom-question-color:#b7282e;
-  --cocoon-custom-answer-color:#007bbb;
-  --cocoon-custom-border-color: transparent;
-  --cocoon-custom-background-color: transparent;
-  --cocoon-custom-text-color: var(--cocoon-text-color);
-  border-color: var(--cocoon-custom-border-color);
-  background-color: var(--cocoon-custom-background-color);
-  color: var(--cocoon-custom-text-color);
-}
-
-.faq-item {
-  display: flex;
-}
-
-.faq-item-label {
-  font-size: 24px;
-  margin-right: 0.6em;
-}
-
-.is-style-square:not(.not-nested-style) .faq-item-label {
-  color: #fff !important;
-  background-color: var(--cocoon-custom-question-color);
-  font-size: 20px;
-  padding: 5px 8px;
-  height: 100%;
-}
-
-.is-style-square:not(.not-nested-style) .faq-answer-label {
-  background-color: var(--cocoon-custom-answer-color);
-}
-
-.faq-item-content {
-  flex: 1 1 auto;
-  width: 60%;
-}
-
-.faq-question {
-  margin-bottom: 1.8em;
-  align-items: center;
-}
-
-.faq-question-label {
-  color: var(--cocoon-custom-question-color);
-}
-
-.faq-question-content {
-  font-weight: 700;
-  margin-right: 30px;
-}
-
-.faq .faq-answer {
-  margin-left: 0;
-}
-
-.faq-answer-content {
-  margin-top: 6px;
-}
-
-.faq-answer-label {
-  color: var(--cocoon-custom-answer-color);
-}
-
-.is-style-square .faq-item-label {
-  font-size: 20px;
-  padding: 5px 8px;
-  height: 100%;
-}
-
-.is-style-accordion {
-  padding: 0;
-  background-color: transparent;
-}
-.is-style-accordion.has-border-color .faq-question {
-  border: none;
-}
-.is-style-accordion:not(.not-nested-style).has-border-color .faq-question {
-  color: var(--cocoon-white-color);
-}
-.is-style-accordion > .faq > .faq-question {
-  padding: 0.5em;
-  margin: 0;
-  cursor: pointer;
-  position: relative;
-  background-color: #e8ecef;
-  border-color: var(--cocoon-three-d-border-colors);
-}
-.is-style-accordion > .faq > .faq-question::before {
-  content: "+";
-  position: absolute;
-  right: 1em;
-  opacity: 0.5;
-}
-.is-style-accordion > .faq > .faq-question.active::before {
-  content: "-";
-}
-.is-style-accordion > .faq > .faq-answer {
-  padding: 1em 0.5em;
-  background-color: var(--cocoon-custom-background-color);
-}
-
-.faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-item-label {
-  color: #fff;
-}
-
-.faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-question-label {
-  background-color: var(--cocoon-custom-question-color);
-}
-
-.faq-wrap.is-style-square.not-nested-style > .faq > * > .faq-answer-label {
-  background-color: var(--cocoon-custom-answer-color);
-}
-
-.faq-wrap.is-style-accordion.has-border-color.not-nested-style > .faq > .faq-question {
-  color: var(--cocoon-white-color);
-  background-color: var(--cocoon-custom-border-color);
 }
 
 .faq-wrap {
