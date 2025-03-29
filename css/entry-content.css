@@ -4185,6 +4185,700 @@ ul.timeline ul ul ul {
   background-color: var(--cocoon-custom-border-color);
 }
 
+[class*=fab-]::before {
+  font-family: FontAwesome;
+}
+
+.fab-info-circle::before {
+  content: "\f05a";
+}
+
+.fab-question-circle::before {
+  content: "\f059";
+}
+
+.fab-exclamation-circle::before {
+  content: "\f06a";
+}
+
+.fab-pencil::before {
+  content: "\f040";
+}
+
+.fab-edit::before {
+  content: "\f044";
+}
+
+.fab-comment::before {
+  content: "\f075";
+}
+
+.fab-ok::before {
+  content: "\f10c";
+}
+
+.fab-bad::before {
+  content: "\f00d";
+}
+
+.fab-lightbulb::before {
+  content: "\f0eb";
+}
+
+.fab-graduation-cap::before {
+  content: "\f19d";
+}
+
+.fab-book::before {
+  content: "\f02d";
+}
+
+.fab-amazon::before {
+  content: "\f270";
+}
+
+.fab-envelope::before {
+  content: "\f0e0";
+}
+
+.fab-flag::before {
+  content: "\f024";
+}
+
+.fab-ban::before {
+  content: "\f05e";
+}
+
+.fab-bolt::before {
+  content: "\f0e7";
+}
+
+.fab-calendar::before {
+  content: "\f073";
+}
+
+.fab-clock::before {
+  content: "\f017";
+}
+
+.fab-cutlery::before {
+  content: "\f0f5";
+}
+
+.fab-heart::before,
+.list-heart li::before {
+  content: "\f004";
+}
+
+.fab-camera::before {
+  content: "\f030";
+}
+
+.fab-search::before {
+  content: "\f002";
+}
+
+.fab-folder::before {
+  content: "\f07b";
+}
+
+.fab-tag::before {
+  content: "\f02b";
+}
+
+.fab-trophy::before {
+  content: "\f091";
+}
+
+.fab-car::before {
+  content: "\f1b9";
+}
+
+.fab-truck::before {
+  content: "\f0d1";
+}
+
+.fab-bicycle::before {
+  content: "\f206";
+}
+
+.fab-motorcycle::before {
+  content: "\f21c";
+}
+
+.fab-bus::before {
+  content: "\f207";
+}
+
+.fab-plane::before {
+  content: "\f072";
+}
+
+.fab-train::before {
+  content: "\f238";
+}
+
+.fab-subway::before {
+  content: "\f239";
+}
+
+.fab-taxi::before {
+  content: "\f1ba";
+}
+
+.fab-file-text::before {
+  content: "\f15c";
+}
+
+.fab-jpy::before {
+  content: "\f157";
+}
+
+.fab-usd::before {
+  content: "\f155";
+}
+
+.fab-eur::before {
+  content: "\f153";
+}
+
+.fab-btc::before {
+  content: "\f15a";
+}
+
+.fab-apple::before {
+  content: "\f179";
+}
+
+.fab-android::before {
+  content: "\f17b";
+}
+
+.fab-ship::before {
+  content: "\f21a";
+}
+
+.fab-wordpress::before {
+  content: "\f19a";
+}
+
+.fab-thumbs-up::before {
+  content: "\f164";
+}
+
+.fab-thumbs-down::before {
+  content: "\f165";
+}
+
+.fab-check::before,
+.list-check li::before {
+  content: "\f00c";
+}
+
+.fab-bell::before {
+  content: "\f0f3";
+}
+
+.fab-star::before,
+.list-star li::before {
+  content: "\f005";
+}
+
+.fab-bookmark::before {
+  content: "\f02e";
+}
+
+.fab-download::before {
+  content: "\f019";
+}
+
+.fab-coffee::before {
+  content: "\f0f4";
+}
+
+.fab-user::before {
+  content: "\f007";
+}
+
+.fab-check-circle::before,
+.list-check-circle li::before {
+  content: "\f058";
+}
+
+.fab-check-circle-o::before,
+.list-check-circle-o li::before {
+  content: "\f05d";
+}
+
+.fab-check-square::before,
+.list-check-square li::before {
+  content: "\f14a";
+}
+
+.fab-check-square-o::before,
+.list-check-square-o li::before {
+  content: "\f046";
+}
+
+.fab-caret-right::before,
+.list-caret-right li::before {
+  content: "\f0da";
+}
+
+.fab-caret-square-o-right::before,
+.list-caret-square-o-right li::before {
+  content: "\f152";
+}
+
+.fab-arrow-right::before,
+.list-arrow-right li::before {
+  content: "\f061";
+}
+
+.fab-angle-right::before,
+.list-angle-right li::before {
+  content: "\f105";
+}
+
+.fab-angle-double-right::before,
+.list-angle-double-right li::before {
+  content: "\f101";
+}
+
+.fab-arrow-circle-right::before,
+.list-arrow-circle-right li::before {
+  content: "\f0a9";
+}
+
+.fab-arrow-circle-o-right::before,
+.list-arrow-circle-o-right li::before {
+  content: "\f18e";
+}
+
+.fab-play-circle::before,
+.list-play-circle li::before {
+  content: "\f144";
+}
+
+.fab-play-circle-o::before,
+.list-play-circle-o li::before {
+  content: "\f01d";
+}
+
+.fab-chevron-right::before,
+.list-chevron-right li::before {
+  content: "\f054";
+}
+
+.fab-chevron-circle-right::before,
+.list-chevron-circle-right li::before {
+  content: "\f138";
+}
+
+.fab-hand-o-right::before,
+.list-hand-o-right li::before {
+  content: "\f0a4";
+}
+
+.fab-star-o::before,
+.list-star-o li::before {
+  content: "\f006";
+}
+
+.fab-heart-o::before,
+.list-heart-o li::before {
+  content: "\f08a";
+}
+
+.fab-square::before,
+.list-square li::before {
+  content: "\f0c8";
+}
+
+.fab-square-o::before,
+.list-square-o li::before {
+  content: "\f096";
+}
+
+.fab-circle::before,
+.list-circle li::before {
+  content: "\f111";
+}
+
+.fab-circle-o::before,
+.list-circle-o li::before {
+  content: "\f10c";
+}
+
+.fab-dot-circle-o::before,
+.list-dot-circle-o li::before {
+  content: "\f192";
+}
+
+.fab-plus::before,
+.list-plus li::before {
+  content: "\f067";
+}
+
+.fab-plus-circle::before,
+.list-plus-circle li::before {
+  content: "\f055";
+}
+
+.fab-plus-square::before,
+.list-plus-square li::before {
+  content: "\f0fe";
+}
+
+.fab-plus-square-o::before,
+.list-plus-square-o li::before {
+  content: "\f196";
+}
+
+.fab-minus::before,
+.list-minus li::before {
+  content: "\f068";
+}
+
+.fab-minus-circle::before,
+.list-minus-circle li::before {
+  content: "\f056";
+}
+
+.fab-minus-square::before,
+.list-minus-square li::before {
+  content: "\f146";
+}
+
+.fab-minus-square-o::before,
+.list-minus-square-o li::before {
+  content: "\f147";
+}
+
+.fab-times::before,
+.list-times li::before {
+  content: "\f00d";
+}
+
+.fab-times-circle::before,
+.list-times-circle li::before {
+  content: "\f057";
+}
+
+.fab-times-circle-o::before,
+.list-times-circle-o li::before {
+  content: "\f05c";
+}
+
+.fab-window-close::before,
+.list-window-close li::before {
+  content: "\f2d3";
+}
+
+.fab-window-close-o::before,
+.list-window-close-o li::before {
+  content: "\f2d4";
+}
+
+.fab-paw::before,
+.list-paw li::before {
+  content: "\f1b0";
+}
+
+.is-style-comment-box::before,
+.is-style-ok-box::before,
+.comment-box::before,
+.ok-box::before,
+.blank-box.bb-ok .fa::before,
+.blank-box.bb-point .fa::before,
+.fab-ok::before,
+.fab-lightbulb::before,
+.fab-clock::before,
+.fab-check-circle-o::before,
+.list-check-circle-o li::before,
+.fab-check-square-o::before,
+.list-check-square-o li::before,
+.fab-arrow-circle-o-right::before,
+.list-arrow-circle-o-right li::before,
+.fab-play-circle-o::before,
+.list-play-circle-o li::before,
+.fab-hand-o-right::before,
+.list-hand-o-right li::before,
+.fab-star-o::before,
+.list-star-o li::before,
+.fab-heart-o::before,
+.list-heart-o li::before,
+.fab-caret-square-o-right::before,
+.list-caret-square-o-right li::before,
+.fab-square-o::before,
+.list-square-o li::before,
+.fab-circle-o::before,
+.list-circle-o li::before,
+.fab-dot-circle-o::before,
+.list-dot-circle-o li::before,
+.fab-plus-square-o::before,
+.list-plus-square-o li::before,
+.fab-minus-square-o::before,
+.list-minus-square-o li::before,
+.fab-times-circle-o::before,
+.list-times-circle-o li::before,
+.fab-window-close-o::before,
+.list-window-close-o li::before,
+.fa-picture-o:before,
+.fa-share-square-o::before,
+.search-form div.sbtn::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+.fa-picture-o:before {
+  content: "\f03e";
+}
+
+.fa-share-square-o::before {
+  content: "\f14d";
+}
+
+.is-style-comment-box::before,
+.comment-box::before {
+  content: "\f075";
+}
+
+.is-style-ok-box::before,
+.ok-box::before,
+.fab-ok::before,
+.bb-ok .bb-label .fa::before {
+  content: "\f111";
+}
+
+.fab-check-circle-o::before,
+.list-check-circle-o li::before {
+  content: "\f058";
+}
+
+.fab-check-square-o::before,
+.list-check-square-o li::before {
+  content: "\f14a";
+}
+
+.fab-arrow-circle-o-right::before,
+.list-arrow-circle-o-right li::before {
+  content: "\f35a";
+}
+
+.fab-play-circle-o::before,
+.list-play-circle-o li::before {
+  content: "\f144";
+}
+
+.fab-star-o::before,
+.list-star-o li::before {
+  content: "\f005";
+}
+
+.fab-heart-o::before,
+.list-heart-o li::before {
+  content: "\f004";
+}
+
+.fab-square-o::before,
+.list-square-o li::before {
+  content: "\f0c8";
+}
+
+.fab-circle-o::before,
+.list-circle-o li::before {
+  content: "\f111";
+}
+
+.fab-plus-square-o::before,
+.list-plus-square-o li::before {
+  content: "\f0fe";
+}
+
+.fab-minus-square-o::before,
+.list-minus-square-o li::before {
+  content: "\f146";
+}
+
+.fab-times-circle-o::before,
+.list-times-circle-o li::before {
+  content: "\f057";
+}
+
+.fab-window-close-o::before,
+.list-window-close-o li::before {
+  content: "\f410";
+}
+
+.is-style-information-box::before,
+.is-style-question-box::before,
+.is-style-alert-box::before,
+.is-style-memo-box::before,
+.is-style-ng-box::before,
+.is-style-good-box::before,
+.is-style-bad-box::before,
+.is-style-profile-box::before,
+.information-box::before,
+.information::before,
+.question-box::before,
+.question::before,
+.alert-box::before,
+.alert::before,
+.memo-box::before,
+.ng-box::before,
+.good-box::before,
+.bad-box::before,
+.profile-box::before,
+.fab-info-circle::before,
+.fab-question-circle::before,
+.fab-exclamation-circle::before,
+.fab-pencil::before,
+.fab-edit::before,
+.fab-comment::before,
+.fab-bad::before,
+.fab-graduation-cap::before,
+.fab-book::before,
+.fab-envelope::before,
+.fab-flag::before,
+.fab-ban::before,
+.fab-bolt::before,
+.fab-calendar::before,
+.fab-cutlery::before,
+.fab-heart::before,
+.list-heart li::before,
+.fab-camera::before,
+.fab-search::before,
+.fab-folder::before,
+.fab-tag::before,
+.fab-trophy::before,
+.fab-car::before,
+.fab-truck::before,
+.fab-bicycle::before,
+.fab-motorcycle::before,
+.fab-bus::before,
+.fab-plane::before,
+.fab-train::before,
+.fab-subway::before,
+.fab-taxi::before,
+.fab-file-text::before,
+.fab-jpy::before,
+.fab-usd::before,
+.fab-eur::before,
+.fab-ship::before,
+.fab-thumbs-up::before,
+.fab-thumbs-down::before,
+.fab-check::before,
+.list-check li::before,
+.fab-bell::before,
+.fab-star::before,
+.list-star li::before,
+.fab-bookmark::before,
+.fab-download::before,
+.fab-coffee::before,
+.fab-user::before,
+.btn-l::after,
+.ranking-item-link-buttons a::after,
+.ranking-items .ranking-item .ranking-item-link-buttons a::after,
+.ranking-items .timeline-box .ranking-item-link-buttons a::after,
+.btn-wrap.btn-wrap-l > a::after,
+.toggle-button::before,
+.fab-check-circle::before,
+.list-check-circle li::before,
+.fab-check-square::before,
+.list-check-square li::before,
+.fab-caret-right::before,
+.list-caret-right li::before,
+.fab-arrow-right::before,
+.list-arrow-right li::before,
+.fab-angle-right::before,
+.list-angle-right li::before,
+.fab-angle-double-right::before,
+.list-angle-double-right li::before,
+.fab-arrow-circle-right::before,
+.list-arrow-circle-right li::before,
+.fab-play-circle::before,
+.list-play-circle li::before,
+.fab-chevron-right::before,
+.list-chevron-right li::before,
+.fab-chevron-circle-right::before,
+.list-chevron-circle-right li::before,
+.fab-square::before,
+.list-square li::before,
+.fab-circle::before,
+.list-circle li::before,
+.fab-plus::before,
+.list-plus li::before,
+.fab-plus-circle::before,
+.list-plus-circle li::before,
+.fab-plus-square::before,
+.list-plus-square li::before,
+.fab-minus::before,
+.list-minus li::before,
+.fab-minus-circle::before,
+.list-minus-circle li::before,
+.fab-minus-square::before,
+.list-minus-square li::before,
+.fab-times::before,
+.list-times li::before,
+.fab-times-circle::before,
+.list-times-circle li::before,
+.fab-window-close::before,
+.list-window-close li::before,
+.fab-paw::before,
+.list-paw li::before,
+.search-form div.sbtn:before,
+.slick-prev.slick-arrow::before,
+.slick-next.slick-arrow::before,
+.fa-exclamation-triangle::before,
+.fa-external-link::before,
+.fa-level-up::before,
+.fa-sign-out::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.fa-external-link::before {
+  content: "\f35d";
+}
+
+.fa-level-up::before {
+  content: "\f3bf";
+}
+
+.fa-sign-out::before {
+  content: "\f2f5";
+}
+
+.is-style-memo-box::before,
+.memo-box::before,
+.fab-pencil::before {
+  content: "\f303";
+}
+
+.bb-memo .fa::before {
+  content: "\f303";
+}
+
+.fab-cutlery::before {
+  content: "\f2e7";
+}
+
+.fab-window-close::before,
+.list-window-close li::before {
+  content: "\f410";
+}
+
+.blank-box.bb-amazon > .bb-label > .fa::before,
+.fab-amazon::before,
+.fab-btc::before,
+.fab-apple::before,
+.fab-android::before,
+.fab-wordpress::before {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
 @keyframes shine {
   0% {
     transform: scale(0) rotate(45deg);
