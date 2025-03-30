@@ -2311,6 +2311,7 @@ span.internal-icon {
 .blogcard-site {
   float: left;
   display: flex;
+  align-items: center;
   align-content: center;
 }
 

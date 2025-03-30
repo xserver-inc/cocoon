@@ -2612,6 +2612,7 @@ body.wp-admin {
 .admin-settings .demo .blogcard-site {
   float: left;
   display: flex;
+  align-items: center;
   align-content: center;
 }
 .admin-settings .demo .blogcard-date {
@@ -11165,6 +11166,7 @@ body.wp-admin {
 .admin-settings .demo .blogcard-site {
   float: left;
   display: flex;
+  align-items: center;
   align-content: center;
 }
 .admin-settings .demo .blogcard-date {
