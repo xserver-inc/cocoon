@@ -1180,3 +1180,168 @@ function get_font_awesome_icon_tag($atts){
   return '<span class="' . esc_attr($atts['class']) . '"></span>';
 }
 endif;
+
+
+add_shortcode('radar_chart', 'radar_chart_shortcode');
+if ( !function_exists( 'radar_chart_shortcode' ) ):
+function radar_chart_shortcode($atts) {
+  // デフォルトの属性を定義
+  $atts = shortcode_atts(array(
+    'chart_color'       => '#2ca9e1',
+    'background_color'  => '#ffffff',
+    'font_color'        => '#666666',
+    'grid_color'        => '#dddddd',
+    'canvas_size'       => 400,
+    'font_size'         => 11,
+    'font_weight'       => 400,
+    'maximum'           => 5,
+    'display_title'     => 0,
+    'title'             => '',
+    'display_legend'    => 0,
+    'legend_text'       => '',
+    'labels'            => __('A,B,C,D,E', THEME_NAME),
+    'data'              => '4,4,4,4,4',
+    'display_total'     => 1,
+    'display_label_value' => 1,
+    'display_angle_lines' => 0,
+    'allow_max_over'    => 0,
+  ), $atts, 'radar_chart');
+
+  // chartIdをユニークに生成
+  $chart_id = 'canvas-' . wp_rand(1000, 999999) . uniqid();
+
+  // パラメータ整形
+  $color = esc_attr($atts['chart_color']);
+  $background_color = esc_attr($atts['background_color']);
+  $font_color = esc_attr($atts['font_color']);
+  $grid_color = esc_attr($atts['grid_color']);
+  $canvas_size = intval($atts['canvas_size']);
+  $font_size = intval($atts['font_size']);
+  $font_weight = intval($atts['font_weight']);
+  $maximum = intval($atts['maximum']);
+  $display_title = filter_var($atts['display_title'], FILTER_VALIDATE_BOOLEAN);
+  $title = esc_html($atts['title']);
+  $display_legend = filter_var($atts['display_legend'], FILTER_VALIDATE_BOOLEAN);
+  $legend_text = esc_html($atts['legend_text']);
+  $labels = array_map('trim', explode(',', $atts['labels']));
+  $data = array_map('intval', explode(',', $atts['data']));
+  $display_total = filter_var($atts['display_total'], FILTER_VALIDATE_BOOLEAN);
+  $display_label_value = filter_var($atts['display_label_value'], FILTER_VALIDATE_BOOLEAN);
+  $display_angle_lines = filter_var($atts['display_angle_lines'], FILTER_VALIDATE_BOOLEAN);
+  $allow_max_over = filter_var($atts['allow_max_over'], FILTER_VALIDATE_BOOLEAN);
+
+  // ラベルに値を付けて表示
+  $display_labels = [];
+  foreach ($labels as $i => $label) {
+    $val = isset($data[$i]) ? $data[$i] : 0;
+    $display_labels[] = $display_label_value ? $label . " ( $val )" : $label;
+  }
+  $labels_json = json_encode($display_labels, JSON_UNESCAPED_UNICODE);
+  $data_json = json_encode($data);
+  $background_color_rgba = 'rgba(' . implode(',', sscanf($color, "#%02x%02x%02x")) . ', 0.2)';
+  $border_color_rgba = 'rgba(' . implode(',', sscanf($color, "#%02x%02x%02x")) . ', 0.9)';
+  $total = array_sum($data);
+
+  ob_start();
+  ?>
+<div class="wp-block-cocoon-blocks-radar block-box wp-block radar-chart-block">
+<canvas id="<?php echo $chart_id; ?>" width="<?php echo $canvas_size; ?>" height="<?php echo $canvas_size; ?>"></canvas>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('<?php echo $chart_id; ?>').getContext('2d');
+    var renderChart = function() {
+      if (ctx.chart) ctx.chart.destroy();
+      ctx.chart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: <?php echo $labels_json; ?>,
+          datasets: [{
+            label: '<?php echo $legend_text; ?>',
+            data: <?php echo $data_json; ?>,
+            backgroundColor: '<?php echo $background_color_rgba; ?>',
+            borderColor: '<?php echo $border_color_rgba; ?>',
+            borderWidth: 1,
+          }]
+        },
+        options: {
+          layout: { padding: { top: 30, bottom: 30, left: 30, right: 30 }},
+          scales: {
+            r: {
+              angleLines: { display: <?php echo $display_angle_lines ? 'true' : 'false'; ?>, color: '<?php echo $grid_color; ?>' },
+              min: 0,
+              max: <?php echo $maximum; ?>,
+              ticks: {
+                stepSize: <?php echo $maximum === 100 ? 10 : 1; ?>,
+                font: { size: <?php echo $font_size; ?>, weight: <?php echo $font_weight; ?> },
+                color: '<?php echo $font_color; ?>',
+                backdropColor: 'transparent'
+              },
+              pointLabels: {
+                font: { size: <?php echo $font_size; ?>, weight: <?php echo $font_weight; ?> },
+                color: '<?php echo $font_color; ?>',
+              },
+              grid: { color: '<?php echo $grid_color; ?>' }
+            }
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: <?php echo $display_title ? 'true' : 'false'; ?>,
+              text: '<?php echo $title; ?>',
+              font: { size: <?php echo $font_size + 2; ?>, weight: <?php echo $font_weight + 100; ?> },
+              color: '<?php echo $font_color; ?>',
+            },
+            legend: {
+              display: <?php echo $display_legend ? 'true' : 'false'; ?>,
+              labels: {
+                font: { size: <?php echo $font_size; ?>, weight: <?php echo $font_weight; ?> },
+                color: '<?php echo $font_color; ?>'
+              }
+            },
+            totalPlugin: true
+          }
+        },
+        plugins: [
+          {
+            id: 'totalPlugin',
+            afterDatasetsDraw(chart, args, options) {
+              if (<?php echo $display_total ? 'true' : 'false'; ?>) {
+                const { ctx, chartArea: { top, left, right, bottom } } = chart;
+                const centerX = (left + right) / 2;
+                const centerY = (top + bottom + 18) / 2;
+                const total = '<?php echo __('総計', THEME_NAME); ?>: <?php echo $total; ?>';
+                ctx.save();
+                ctx.font = '<?php echo $font_size; ?>px sans-serif';
+                ctx.fillStyle = '<?php echo $font_color; ?>';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(total, centerX, centerY);
+                ctx.restore();
+              }
+            }
+          },
+          {
+            id: 'customCanvasBackgroundColor',
+            beforeDraw: (chart) => {
+              const ctx = chart.ctx;
+              const canvas = chart.canvas;
+              ctx.save();
+              ctx.globalCompositeOperation = 'destination-over';
+              ctx.fillStyle = '<?php echo $background_color; ?>';
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+              ctx.restore();
+            }
+          }
+        ]
+      });
+    };
+    renderChart();
+    window.addEventListener('resize', renderChart);
+  });
+</script>
+</div>
+  <?php
+  return ob_get_clean();
+}
+endif;

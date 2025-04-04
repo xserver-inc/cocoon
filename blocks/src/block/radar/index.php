@@ -72,6 +72,11 @@ endif;
 // 本文中に特定のブロックが使われているか
 if ( !function_exists( 'has_specific_blocks' ) ):
 function has_specific_blocks($post_content, $block_type_names) {
+  // ショートコードが使われている場合
+  if (preg_match('/\[radar_chart\s+.*?\]/', $post_content)) {
+    return true; // ショートコードが見つかった場合
+  }
+
   // 投稿内容をブロックごとに解析
   $blocks = parse_blocks($post_content);
 
