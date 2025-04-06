@@ -1240,6 +1240,7 @@ function radar_chart_shortcode($atts) {
   $data_json = json_encode($data);
   $background_color_rgba = 'rgba(' . implode(',', sscanf($color, "#%02x%02x%02x")) . ', 0.2)';
   $border_color_rgba = 'rgba(' . implode(',', sscanf($color, "#%02x%02x%02x")) . ', 0.9)';
+  $grid_color_rgba = 'rgba(' . implode(',', sscanf($grid_color, "#%02x%02x%02x")) . ', 0.5)';
   $total = array_sum($data);
 
   ob_start();
@@ -1267,7 +1268,7 @@ function radar_chart_shortcode($atts) {
           layout: { padding: { top: 30, bottom: 30, left: 30, right: 30 }},
           scales: {
             r: {
-              angleLines: { display: <?php echo $display_angle_lines ? 'true' : 'false'; ?>, color: '<?php echo $grid_color; ?>' },
+              angleLines: { display: <?php echo $display_angle_lines ? 'true' : 'false'; ?>, color: '<?php echo $grid_color_rgba; ?>' },
               min: 0,
               max: <?php echo $maximum; ?>,
               ticks: {
@@ -1280,7 +1281,7 @@ function radar_chart_shortcode($atts) {
                 font: { size: <?php echo $font_size; ?>, weight: <?php echo $font_weight; ?> },
                 color: '<?php echo $font_color; ?>',
               },
-              grid: { color: '<?php echo $grid_color; ?>' }
+              grid: { color: '<?php echo $grid_color_rgba; ?>' }
             }
           },
           responsive: true,
