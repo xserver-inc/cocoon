@@ -1182,7 +1182,7 @@ function get_font_awesome_icon_tag($atts){
 endif;
 
 
-add_shortcode('radar_chart', 'radar_chart_shortcode');
+// add_shortcode('radar_chart', 'radar_chart_shortcode');
 if ( !function_exists( 'radar_chart_shortcode' ) ):
 function radar_chart_shortcode($atts) {
   // デフォルトの属性を定義
