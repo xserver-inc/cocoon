@@ -364,6 +364,8 @@ function get_category_index_list_entry_card_tag($categories, $count){
     $count = 0;
   } else { // ここから記事が見つからなかった場合の処理
     cocoon_template_part('tmp/list-not-found-posts');
+    // 記事が見つからなかった場合はカウントを0にする
+    set_query_var('count', 0);
   }
   wp_reset_postdata();
   return ob_get_clean();
