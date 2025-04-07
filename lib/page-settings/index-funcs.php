@@ -342,7 +342,7 @@ function get_category_index_list_entry_card_tag($categories, $count){
 
   //カテゴリーの除外
   $exclude_category_ids = get_archive_exclude_category_ids();
-  if (!$categories && $exclude_category_ids && is_array($exclude_category_ids)) {
+  if ($exclude_category_ids && is_array($exclude_category_ids)) {
     $args += array(
       'category__not_in' => $exclude_category_ids,
     );
