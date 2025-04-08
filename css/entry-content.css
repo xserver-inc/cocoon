@@ -106,6 +106,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   padding-right: 4px;
 }
 
+.widget-entry-card-thumb {
+  float: left;
+  margin-top: 3px;
+  position: relative;
+  margin-bottom: 0.4em;
+}
+
 .has-box-style {
   padding: var(--cocoon-box-padding);
 }
@@ -4301,6 +4308,467 @@ img.blogcard-favicon-image {
 
 .blogcard-type br {
   display: none;
+}
+
+/************************************
+** ウィジェット
+************************************/
+label.screen-reader-text {
+  display: none;
+}
+
+/*タグクラウド*/
+.tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tagcloud a {
+  border: 1px solid var(--cocoon-x-thin-color);
+  border-radius: 2px;
+  color: var(--cocoon-text-color);
+  padding: 3px 8px;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 2px;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
+.tagcloud a:hover {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease-in-out;
+  color: var(--cocoon-text-color);
+}
+.tagcloud a .tag-caption {
+  word-break: break-all;
+}
+.tagcloud a .tag-caption .tax-icon {
+  margin-right: 0.4em;
+}
+.tagcloud a .tag-link-count {
+  margin-left: 8px;
+}
+
+/*ウィジェット（カテゴリー・アーカイブなど）*/
+.widget_recent_entries ul,
+.widget_categories ul,
+.widget_archive ul,
+.widget_pages ul,
+.widget_meta ul,
+.widget_rss ul,
+.widget_nav_menu ul,
+.widget_block ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.widget_recent_entries ul li ul,
+.widget_categories ul li ul,
+.widget_archive ul li ul,
+.widget_pages ul li ul,
+.widget_meta ul li ul,
+.widget_rss ul li ul,
+.widget_nav_menu ul li ul,
+.widget_block ul li ul {
+  padding-left: 20px;
+  margin: 0;
+}
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_pages ul li a,
+.widget_meta ul li a,
+.widget_rss ul li a,
+.widget_nav_menu ul li a,
+.widget_block ul li a {
+  color: var(--cocoon-text-color);
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+.widget_recent_entries ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_meta ul li a:hover,
+.widget_rss ul li a:hover,
+.widget_nav_menu ul li a:hover,
+.widget_block ul li a:hover {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease-in-out;
+  color: var(--cocoon-text-color);
+}
+
+.widget_categories ul li a .post-count,
+.widget_archive ul li a .post-count {
+  display: block;
+  float: right;
+}
+
+.widget_recent_comments li {
+  padding: 10px 0;
+}
+
+/*カレンダー*/
+.calendar_wrap {
+  margin: 20px 0;
+}
+
+.wp-block-calendar .wp-calendar-table {
+  max-width: 400px;
+}
+
+.wp-calendar-table {
+  border-collapse: collapse;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-top-color: var(--cocoon-x-thin-color);
+  border-right-color: var(--cocoon-x-thin-color);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.wp-calendar-table caption {
+  font-weight: bold;
+  text-align: center;
+}
+.wp-calendar-table [id$=today] {
+  background-color: #ffe6b2;
+}
+.wp-calendar-table [id$=today] a {
+  background-color: #ffe6b2;
+}
+.wp-calendar-table [id$=today] a:hover {
+  background-color: #ffd67e;
+}
+.wp-calendar-table tr:nth-of-type(2n+1) {
+  background-color: transparent;
+}
+.wp-calendar-table td {
+  padding: 0px;
+}
+.wp-calendar-table td a {
+  color: var(--cocoon-text-color);
+  display: block;
+  background-color: #ffface;
+}
+.wp-calendar-table td a:hover {
+  background-color: #fff69b;
+}
+
+/************************************
+** 新着記事ウィジェット（デフォルト）
+************************************/
+.widget-entry-cards .a-wrap {
+  padding: 5px;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.widget-entry-cards figure {
+  width: 120px;
+}
+
+.widget-entry-card {
+  font-size: 16px;
+  position: relative;
+}
+
+.widget-entry-card-content {
+  margin-left: 126px;
+}
+
+.widget-entry-card-snippet {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.widget-entry-card-pv {
+  margin-left: 5px;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.border-partition .a-wrap {
+  border-bottom: 2px dotted var(--cocoon-x-thin-color);
+}
+.border-partition .a-wrap:first-of-type {
+  border-top: 2px dotted var(--cocoon-x-thin-color);
+}
+
+.border-partition.is-list-horizontal .a-wrap {
+  border: 0;
+}
+
+.border-square .a-wrap {
+  border-radius: var(--cocoon-basic-border-radius);
+  border: 1px solid var(--cocoon-thin-color);
+}
+
+.card-title-bold .card-title {
+  font-weight: 700;
+}
+
+.card-arrow .a-wrap {
+  position: relative;
+}
+.card-arrow .a-wrap::after {
+  content: "\f105";
+  font-family: "FontAwesome";
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: -8px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+}
+.card-arrow .card-content {
+  margin-right: 22px;
+}
+
+.font-awesome-5 .card-arrow .a-wrap::after {
+  font-family: "Font Awesome 5 Free";
+}
+
+/************************************
+** 新着記事・人気記事・ナビカードウィジェット（タイトルを重ねた大きなサムネイル以外）
+************************************/
+.widget-entry-cards:not(.large-thumb-on) .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.widget-entry-cards:not(.large-thumb-on) .card-snippet {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+/************************************
+** 新着記事ウィジェット（大きなサムネイル）
+************************************/
+.widget-entry-cards.card-large-image .a-wrap {
+  max-width: 400px;
+}
+.widget-entry-cards.card-large-image .e-card {
+  font-size: var(--cocoon-default-text-size);
+}
+.widget-entry-cards.card-large-image figure {
+  float: none;
+  width: 100%;
+}
+.widget-entry-cards.card-large-image figure img {
+  width: 100%;
+  display: block;
+}
+.widget-entry-cards.card-large-image .card-content {
+  margin: 0 0 0.5em;
+  padding: 0.4em 0;
+}
+.widget-entry-cards.card-large-image .widget-entry-card-pv {
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px 6px;
+  background-color: #333;
+  color: #fff;
+}
+
+/************************************
+** 新着記事ウィジェット（タイトルを重ねた大きなサムネイル）
+************************************/
+.widget-entry-cards.large-thumb-on .a-wrap {
+  overflow: hidden;
+}
+.widget-entry-cards.large-thumb-on .a-wrap:hover {
+  opacity: 0.8;
+}
+.widget-entry-cards.large-thumb-on .a-wrap:hover .card-content {
+  margin-bottom: -4em;
+  transition: all 0.5s;
+  opacity: 0;
+}
+.widget-entry-cards.large-thumb-on .e-card {
+  position: relative;
+}
+.widget-entry-cards.large-thumb-on .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.widget-entry-cards.large-thumb-on .card-content {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0.6em;
+  background: linear-gradient(180deg, transparent, #555);
+  color: var(--cocoon-white-color);
+  transition: all 0.5s;
+}
+.widget-entry-cards.large-thumb-on .card-snippet {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/************************************
+** 人気記事ウィジェットランキング表示
+************************************/
+.widget-entry-cards.ranking-visible {
+  counter-reset: p-rank;
+}
+.widget-entry-cards.ranking-visible .no-1 .card-thumb::before {
+  background: #cca11f;
+}
+.widget-entry-cards.ranking-visible .no-2 .card-thumb::before {
+  background: #b1b1b3;
+}
+.widget-entry-cards.ranking-visible .no-3 .card-thumb::before {
+  background: #b37036;
+}
+.widget-entry-cards.ranking-visible .a-wrap {
+  counter-increment: p-rank;
+}
+.widget-entry-cards.ranking-visible .card-thumb::before {
+  content: counter(p-rank);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 4px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  background-color: #666;
+  color: #fff;
+  opacity: 0.9;
+  text-align: center;
+  font-size: 13px;
+  z-index: 1;
+}
+
+/************************************
+** 最近のコメントウィジェット
+************************************/
+.recent-comments {
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recent-comment-avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.recent-comment-author {
+  font-weight: bold;
+}
+
+.recent-comment-info,
+.recent-comment-article {
+  font-size: 16px;
+}
+
+.recent-comment-article {
+  margin-top: 3px;
+}
+
+.recent-comment-content {
+  position: relative;
+  background: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-thin-color);
+  padding: 6px;
+  margin-top: 4px;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+.recent-comment-content::after, .recent-comment-content::before {
+  bottom: 100%;
+  left: 18px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.recent-comment-content::after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: var(--cocoon-white-color);
+  border-width: 6px;
+  margin-left: -6px;
+}
+.recent-comment-content::before {
+  border-color: rgba(221, 221, 221, 0);
+  border-bottom-color: var(--cocoon-thin-color);
+  border-width: 9px;
+  margin-left: -9px;
+}
+
+/************************************
+** フォーローボタウィジェット
+************************************/
+.nwa .author-box .sns-follow-buttons {
+  justify-content: center;
+}
+.nwa .sns-follow-buttons {
+  column-gap: 1%;
+}
+.nwa .sns-follow-buttons a {
+  width: 48%;
+}
+
+.widget_mobile_text,
+.widget_mobile_ad {
+  display: none;
+}
+
+.widget h2 {
+  font-size: 20px;
+}
+
+.entry-content .main-widget-label {
+  display: none;
+}
+
+.widget_recent_comments ul {
+  padding-left: 0;
+}
+.widget_recent_comments ul li {
+  list-style: none;
+}
+
+.wp-block-latest-comments {
+  padding-left: 0;
+}
+
+.widget_search .wp-block-search__button {
+  padding: 0.375em 0.1em;
+  font-size: 14px;
+}
+.widget_search .wp-block-search__input {
+  line-height: normal;
+}
+
+.wp-block-categories-list,
+.wp-block-archives-list,
+ul.wp-block-archives {
+  list-style: none;
+  padding-left: 0;
 }
 
 [class*=fab-]::before {
