@@ -87,8 +87,7 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
             </div>
         <?php endif; ?>
         <?php else: ?>
-            <h2>NOT FOUND</h2>
-            <p>投稿が見つかりませんでした。</p>
+            <?php cocoon_template_part('tmp/list-not-found-posts'); ?>
         <?php endif; ?>
     </div>
     <?php endif; ?>
