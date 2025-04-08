@@ -59,6 +59,8 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
                 'order' => 'DESC',
                 //カテゴリーをIDで指定
                 'category' => $cat_id,
+                //除外カテゴリーがある場合は除外
+                'category__not_in' => get_archive_exclude_category_ids(),
                 //アーカイブに表示しないページのID
                 'post__not_in' =>  get_archive_exclude_post_ids(),
             );
@@ -84,6 +86,9 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
                 <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', __( 'もっと見る', THEME_NAME )); ?></a>
             </div>
         <?php endif; ?>
+        <?php else: ?>
+            <h2>NOT FOUND</h2>
+            <p>投稿が見つかりませんでした。</p>
         <?php endif; ?>
     </div>
     <?php endif; ?>

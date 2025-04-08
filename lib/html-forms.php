@@ -1160,7 +1160,7 @@ endif;
 
 //汎用エントリーウィジェットのタグ生成
 if ( !function_exists( 'generate_widget_entries_tag' ) ):
-function generate_widget_entries_tag($atts){
+function generate_widget_entries_tag($atts, $loop_index = 0){
   extract(shortcode_atts(array(
     'entry_count' => 5,
     'cat_ids' => array(),
@@ -1343,6 +1343,11 @@ function generate_widget_entries_tag($atts){
     'horizontal' => $horizontal,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
+
+  // カウントを一意なキーで設定
+  $unique_count_key = 'count_' . $loop_index;
+  // カウントの初期値
+  $count = 0;
   ?>
   <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>">
   <?php if ( $horizontal ) : ?>
@@ -1367,10 +1372,14 @@ function generate_widget_entries_tag($atts){
       );
     }
 
-    echo get_widget_entry_card_link_tag($atts); ?>
+    echo get_widget_entry_card_link_tag($atts);
+
+    set_query_var($unique_count_key, $count++); // 一意なキーでカウントを設定
+    ?>
   <?php endwhile;
   else :
     echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
+    set_query_var($unique_count_key, 0); // 記事がない場合は 0 を設定
   endif; ?>
   <?php wp_reset_postdata(); ?>
   <?php //wp_reset_query(); ?>
