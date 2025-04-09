@@ -1368,9 +1368,9 @@ function generate_widget_entries_tag($atts){
     }
 
     echo get_widget_entry_card_link_tag($atts);
-    set_query_var('count', 1); // 記事がある場合は 1 を設定
     ?>
   <?php endwhile;
+    set_query_var('count', 1); // 記事がある場合は 1 を設定
   else :
     echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
     set_query_var('count', 0); // 記事がない場合は 0 を設定
