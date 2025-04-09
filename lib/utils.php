@@ -2497,7 +2497,12 @@ function is_the_page_sidebar_visible(){
   }
 
   //サイドバーにウィジェットが入っていない場合
-  if (!is_active_sidebar( 'sidebar' ) && !is_active_sidebar( 'sidebar-scroll' )) {
+  ob_start();
+  dynamic_sidebar( 'sidebar' );
+  dynamic_sidebar( 'sidebar-scroll' );
+  $sidebar = ob_get_clean();
+
+  if ( trim( $sidebar ) == '' ) {
     $is_sidebar_visible = false;
   }
 
