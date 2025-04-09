@@ -76,16 +76,15 @@ $count = get_index_category_entry_card_count();
         <div class="list <?php echo $class; ?>">
           <?php
           //新着記事リストの作成
-          generate_widget_entries_tag($atts, $i);
+          generate_widget_entries_tag($atts);
           ?>
         </div><!-- .list -->
 
 
         <?php if ($cat = get_category($cat_id)): ?>
         <?php
-        // 一意なカウントを取得
-        $unique_count_key = 'count_' . $i;
-        $current_count = get_query_var($unique_count_key);
+        // カウントを取得
+        $current_count = get_query_var('count');
 
           // カウントが 0 より大きい場合のみ表示
           if ($current_count > 0): ?>
