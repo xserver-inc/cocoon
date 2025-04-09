@@ -1374,7 +1374,8 @@ function generate_widget_entries_tag($atts, $loop_index = 0){
 
     echo get_widget_entry_card_link_tag($atts);
 
-    set_query_var($unique_count_key, $count++); // 一意なキーでカウントを設定
+    $count++; // カウントをインクリメント
+    set_query_var($unique_count_key, $count); // 一意なキーでカウントを設定
     ?>
   <?php endwhile;
   else :
