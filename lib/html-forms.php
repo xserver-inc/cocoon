@@ -1121,7 +1121,7 @@ function generate_popular_entries_tag($atts){
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
-        <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
+        <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo escape_shortcodes($title);?></div>
         <?php echo $snippet_tag; ?>
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
@@ -1353,7 +1353,7 @@ function generate_widget_entries_tag($atts){
     $atts = array(
       'prefix' => $prefix,
       'url' => get_the_permalink(),
-      'title' => get_the_title(),
+      'title' => escape_shortcodes(get_the_title()),
       'thumb_size' => $thumb_size,
       'type' => $type,
       'horizontal' => $horizontal,

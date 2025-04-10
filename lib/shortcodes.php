@@ -638,8 +638,8 @@ function get_navi_card_list_tag($atts){
     $image_attributes = get_navi_card_image_attributes($menu, $type);
 
     $url = $menu->url;
-    $title = $menu->title;
-    $snippet = $menu->description;
+    $title = escape_shortcodes($menu->title);
+    $snippet = strip_shortcodes($menu->description);
     $classes = $menu->classes;
     $object = $menu->object;
     $object_id = $menu->object_id;
@@ -773,10 +773,10 @@ function get_box_menu_tag($atts){
     $target = !empty($menu->target) ? $menu->target : $atts['target'];
 
     $url = $menu->url;
-    $title = $menu->title;
+    $title = escape_shortcodes($menu->title);
     $title_tag = '<div class="box-menu-label">'.$title.'</div>';
-    $description_tag = '<div class="box-menu-description">'.$menu->description.'</div>';
-    $attr_title = $menu->attr_title;
+    $description_tag = '<div class="box-menu-description">'.strip_shortcodes($menu->description).'</div>';
+    $attr_title = escape_shortcodes($menu->attr_title);
     $classes = implode(' ', $menu->classes);
     $icon_tag = '<div class="fa fa-star" aria-hidden="true"></div>';
     //画像URLの場合

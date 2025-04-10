@@ -3943,6 +3943,15 @@ function cocoon_skin_settings() {
 }
 endif;
 
+//ショートコードのエスケープ
+if ( !function_exists( 'escape_shortcodes' ) ):
+function escape_shortcodes($content) {
+  // [shortcode] → [[shortcode]] に置換（全ショートコード対象）
+  return preg_replace_callback('/\[([a-zA-Z0-9_]+)([^\]]*)\]/', function($matches) {
+      return '[[' . $matches[1] . $matches[2] . ']]';
+  }, $content);
+}
+endif;
 
 ////////////////////////////////////////////////////
 // 以下子テーマカスタマイズ時にエラーがないようにするためのエイリアス
