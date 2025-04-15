@@ -8047,13 +8047,10 @@ body.wp-admin {
   color: var(--cocoon-custom-icon-color);
 }
 .admin-settings .demo .iconlist-box ul {
-  list-style: none;
+  list-style: none !important;
 }
 .admin-settings .demo .iconlist-box ul li::before {
   display: initial;
-}
-.admin-settings .demo .iconlist-box ul ul {
-  list-style: none;
 }
 .admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
@@ -16601,13 +16598,10 @@ body.wp-admin {
   color: var(--cocoon-custom-icon-color);
 }
 .admin-settings .demo .iconlist-box ul {
-  list-style: none;
+  list-style: none !important;
 }
 .admin-settings .demo .iconlist-box ul li::before {
   display: initial;
-}
-.admin-settings .demo .iconlist-box ul ul {
-  list-style: none;
 }
 .admin-settings .demo .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;

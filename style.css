@@ -8645,13 +8645,10 @@ ul.timeline ul ul ul {
   color: var(--cocoon-custom-icon-color);
 }
 .iconlist-box ul {
-  list-style: none;
+  list-style: none !important;
 }
 .iconlist-box ul li::before {
   display: initial;
-}
-.iconlist-box ul ul {
-  list-style: none;
 }
 .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
