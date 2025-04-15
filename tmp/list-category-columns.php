@@ -81,14 +81,12 @@ $count = get_index_category_entry_card_count();
         </div><!-- .list -->
 
 
-        <?php if ($cat = get_category($cat_id)): ?>
         <?php
-          // カウントが 0 より大きい場合のみ表示
-          if (get_query_var('count') > 0): ?>
-            <div class="list-more-button-wrap">
-              <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', __( 'もっと見る', THEME_NAME )); ?></a>
-            </div>
-          <?php endif; ?>
+        // カウントが 0 より大きい場合のみ表示
+        if (get_query_var('count') > 0): ?>
+          <div class="list-more-button-wrap">
+            <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', __( 'もっと見る', THEME_NAME )); ?></a>
+          </div>
         <?php endif; ?>
 
       </div><!-- .list-column -->
