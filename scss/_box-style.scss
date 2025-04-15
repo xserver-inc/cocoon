@@ -371,7 +371,7 @@
 // :is(.is-style-numeric-list-enclosed, .is-style-numeric-list-rank, .is-style-numeric-list-step)
 [class*="is-style-numeric-list-"]{
   counter-reset: list;
-  list-style-type: none !important;
+  list-style-type: none;
   // margin-left: 20px;
   >li{
     position:relative;

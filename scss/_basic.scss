@@ -57,6 +57,10 @@ ul{
   list-style-type: disc;
 }
 
+ul ul {
+  list-style-type: revert;
+}
+
 hr{
   color: var(--cocoon-current-background-color);
 }

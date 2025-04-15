@@ -1167,6 +1167,9 @@ body.wp-admin {
 .admin-settings .demo ul {
   list-style-type: disc;
 }
+.admin-settings .demo ul ul {
+  list-style-type: revert;
+}
 .admin-settings .demo hr {
   color: var(--cocoon-current-background-color);
 }
@@ -9256,7 +9259,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=is-style-numeric-list-] {
   counter-reset: list;
-  list-style-type: none !important;
+  list-style-type: none;
 }
 .admin-settings .demo [class*=is-style-numeric-list-] > li {
   position: relative;
@@ -9717,6 +9720,9 @@ body.wp-admin {
 }
 .admin-settings .demo ul {
   list-style-type: disc;
+}
+.admin-settings .demo ul ul {
+  list-style-type: revert;
 }
 .admin-settings .demo hr {
   color: var(--cocoon-current-background-color);
@@ -17807,7 +17813,7 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=is-style-numeric-list-] {
   counter-reset: list;
-  list-style-type: none !important;
+  list-style-type: none;
 }
 .admin-settings .demo [class*=is-style-numeric-list-] > li {
   position: relative;

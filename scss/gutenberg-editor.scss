@@ -293,22 +293,22 @@ div.mce-content-body {
 }
 
 .wp-block {
-  ul ul {
-    list-style-type: circle;
-  }
-  ol {
-    ul {
-      list-style-type: circle;
-    }
-    ol ul, ul ul {
-      list-style-type: square;
-    }
-  }
-  ul {
-    ol ul, ul ul {
-      list-style-type: square;
-    }
-  }
+  // ul ul {
+  //   list-style-type: circle;
+  // }
+  // ol {
+  //   ul {
+  //     list-style-type: circle;
+  //   }
+  //   ol ul, ul ul {
+  //     list-style-type: square;
+  //   }
+  // }
+  // ul {
+  //   ol ul, ul ul {
+  //     list-style-type: square;
+  //   }
+  // }
   .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
     max-width: none;
   }
