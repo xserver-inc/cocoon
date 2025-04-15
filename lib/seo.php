@@ -732,7 +732,7 @@ function get_the_snippet($content, $length = 70, $post_id = null) {
   $description = $description ?? '';
   $description = str_replace(array("\r\n", "\r", "\n"), '', $description);
   //ショートコードを除去
-  $description = strip_shortcodes($description);//ショートコード削除
+  $description = strip_shortcodes($description);
 
   //SEO設定のディスクリプションがない場合は「本文からの自動生成抜粋」を取得
   if (!$description) {
