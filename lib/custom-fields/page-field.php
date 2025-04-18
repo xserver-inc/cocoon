@@ -39,7 +39,7 @@ function page_custom_box_view() {
     $taxonomies = get_object_taxonomies($post->post_type, 'objects');
 
     foreach ($taxonomies as $taxonomy) {
-      if (!$taxonomy->hierarchical) {
+      if ($taxonomy->name !== 'category') {
         continue;
       }
       $terms = get_the_terms($post->ID, $taxonomy->name);
