@@ -26,7 +26,6 @@ function is_comment_display_type_simple_thread(){
 endif;
 
 //コメントの見出し
-define('COMMENT_HEADING', __( 'コメント', THEME_NAME ));
 define('OP_COMMENT_HEADING', 'comment_heading');
 if ( !function_exists( 'get_comment_heading' ) ):
 function get_comment_heading(){
@@ -61,7 +60,6 @@ function is_comment_form_display_type_toggle_button(){
 endif;
 
 //コメント入力欄の見出し
-define('COMMENT_FORM_HEADING', __( 'コメントをどうぞ', THEME_NAME ));
 define('OP_COMMENT_FORM_HEADING', 'comment_form_heading');
 if ( !function_exists( 'get_comment_form_heading' ) ):
 function get_comment_form_heading(){
@@ -86,7 +84,6 @@ function is_comment_website_visible(){
 endif;
 
 //コメント送信ボタンのラベル
-define('COMMENT_SUBMIT_LABEL', __( 'コメントを送信', THEME_NAME ));
 define('OP_COMMENT_SUBMIT_LABEL', 'comment_submit_label');
 if ( !function_exists( 'get_comment_submit_label' ) ):
 function get_comment_submit_label(){

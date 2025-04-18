@@ -15,7 +15,6 @@ if( !function_exists( 'add_update_custom_box' ) ):
 function add_update_custom_box() {
   add_meta_box( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'post', 'side', 'default' );
   add_meta_box( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'page', 'side', 'default' );
-  //add_meta_box( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'topic', 'side', 'default' );
   //カスタム投稿タイプに登録
   add_meta_box_custom_post_types( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'custum_post', 'side', 'default' );
 }

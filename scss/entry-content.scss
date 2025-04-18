@@ -32,7 +32,91 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "box-menus";
 @import "info-list";
 @import "toc";
+@import "author-box";
+@import "cta-box";
 @import "fontawesome-before";
 @import "fontawesome5";
 @import "./animation/keyframes";
 // @import "amp-exclusions";
+
+
+// 以下調整用CSS
+
+/* クリアフィックス */
+.cf::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.block-box p:first-of-type,
+.tab-block p:first-of-type{
+  margin-top: 0;
+}
+
+.micro-top{
+  margin-bottom: inherit;
+}
+
+.micro-bottom.micro-balloon {
+  margin-top: inherit;
+}
+
+.a-wrap {
+  text-decoration: none;
+  display: block;
+  color: var(--cocoon-text-color);
+  padding: 1.5%;
+  transition: all 0.3s ease-in-out;
+}
+.a-wrap:hover {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease-in-out;
+  color: var(--cocoon-text-color);
+}
+
+
+.blogcard,
+.ecb-entry-border .entry-card-wrap,
+.border-square .a-wrap,
+.author-box {
+  border-color: var(--cocoon-three-d-border-colors);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.blogcard img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.blogcard-thumbnail img{
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+/*
+.widget-entry-card-date{
+  display: none;
+} */
+
+.widget-entry-card-post-date.post-date,
+.widget-entry-card-update-date.post-update{
+  color: var(--cocoon-text-color);
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+.widget-entry-card-date .entry-date{
+  margin-left: 4px;
+}
+
+.box-menu-icon{
+  color: #f6a068;
+}
+
+
+/*プロフィールの円形画像用*/
+.circle-image img{
+  border-radius: 50%;
+}

@@ -44,8 +44,6 @@ define('THEME_CHILD_JS', THEME_NAME.'-child-js');
 define('THEME_SKIN_JS', THEME_NAME.'-skin-js');
 //ウィジェット名プレフィックス
 define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C]
-//トップレベルオリジナル設定名
-define('SETTING_NAME_TOP', THEME_NAME_CAMEL.' '.__( '設定', THEME_NAME ));
 
 //ウィジェットのエントリータイプ
 define('ET_DEFAULT',        'default');
@@ -114,10 +112,6 @@ define('AD_FORMAT_DABBLE_RECTANGLE', 'dabble-rectangle'); //ダブルレクタ�
 //広告ユニット以外
 define('DATA_AD_FORMAT_FLUID', 'fluid'); //記事中広告
 
-//PR表記
-define('PR_LABEL_SMALL_CAPTION', __( 'PR', THEME_NAME ));
-define('PR_LABEL_LARGE_CAPTION', __( '記事内に広告が含まれています。', THEME_NAME ));
-
 //ナビゲーションメニュー
 define('NAV_MENU_HEADER', 'navi-header');
 define('NAV_MENU_HEADER_MOBILE', 'navi-mobile');
@@ -144,60 +138,6 @@ define('CHILD_THEME_KEYFRAMES_CSS_URL', get_stylesheet_directory_uri().'/keyfram
 //子テーマのkeyframes.cssのファイルパス
 define('CHILD_THEME_KEYFRAMES_CSS_FILE', get_stylesheet_directory().'/keyframes.css');
 
-
-//メインカラム用の広告フォーマット集
-global $_MAIN_DATA_AD_FORMATS;
-$_MAIN_DATA_AD_FORMATS = array(
-  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
-  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
-  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
-  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
-  AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
-  DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
-);
-// define('MAIN_DATA_AD_FORMATS', $_MAIN_DATA_AD_FORMATS);
-
-//AdSenseの存在フラグ
-global $_IS_ADSENSE_EXIST;
-$_IS_ADSENSE_EXIST = false; //最初はAdSenseの存在がない
-// //アドセンススクリプトコードが読み込まれているか
-// global $_IS_ADSENSE_SCRIPT_EMPTY;
-// $_IS_ADSENSE_SCRIPT_EMPTY = true;
-// _v('def');
-// _v($_IS_ADSENSE_SCRIPT_EMPTY);
-
-//サイドバー用の広告フォーマット集
-global $_SIDEBAR_DATA_AD_FORMATS;
-$_SIDEBAR_DATA_AD_FORMATS = array(
-  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
-  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
-  DATA_AD_FORMAT_RECTANGLE => __( 'レクタングル', THEME_NAME ),
-  DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
-);
-// define('SIDEBAR_DATA_AD_FORMATS', $_SIDEBAR_DATA_AD_FORMATS);
-
-//PCウィジェット用の広告フォーマット集
-global $_PC_WIDGET_DATA_AD_FORMATS;
-$_PC_WIDGET_DATA_AD_FORMATS = array(
-  'none' => __( '広告コードをそのまま表示', THEME_NAME ),
-  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
-  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
-  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
-  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
-  AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
-  DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
-  DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
-);
-
-//モバイル用の広告フォーマット集
-global $_MOBILE_WIDGET_DATA_AD_FORMATS;
-$_MOBILE_WIDGET_DATA_AD_FORMATS = array(
-  'none' => __( '広告コードをそのまま表示', THEME_NAME ),
-  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
-  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
-  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
-  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
-);
 
 //スキン制御向けのグローバル変数
 global $_THEME_OPTIONS;
@@ -318,9 +258,6 @@ define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
 //AMPの目次へ戻る用のコード
 define('AMP_GO_TO_TOC_ON_CODE', ' on="tap:toc.scrollTo(\'duration\'=375)"');
 
-//リンククリック時の削除確認JavaScript
-define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
-
 //デフォルトサイトアイコン
 define('DEFAULT_SITE_ICON_32',  get_template_directory_uri().'/images/site-icon32x32.png');
 define('DEFAULT_SITE_ICON_180', get_template_directory_uri().'/images/site-icon180x180.png');
@@ -339,14 +276,8 @@ define('THEME_HTTPS_REDIRECT_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTTPS
 define('THEME_HTTPS_REDIRECT_HTACCESS_REG', '{'.THEME_HTTPS_REDIRECT_HTACCESS_BEGIN.'.+?'.THEME_HTTPS_REDIRECT_HTACCESS_END.'}s');
 define('THEME_HTTPS_REWRITERULE_REG', '/RewriteRule .+ https:\/\/%{HTTP_HOST}%{REQUEST_URI}/i');
 
-//メッセージ
-define('TOC_SHORTCODE_ERROR_MESSAGE', __('無限ループを避けるため[toc]ショートコードはパターンでは使用できません。' , THEME_NAME).__('ショートコードを削除してください。' , THEME_NAME).__('ショートコードが使用されている場合でも表示時に取り消されます。' , THEME_NAME));
 
-//サービスドメイン
-define('AMAZON_DOMAIN', __( 'www.amazon.co.jp', THEME_NAME ));
 
-//Amazon ASINエラー
-define('AMAZON_ASIN_ERROR_MESSAGE', __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
 //Amazonメール広告
 define('THEME_MAIL_AMAZON_PR', "");
 
@@ -362,6 +293,88 @@ Support forum
 https://wp-cocoon.com/community/
 --------------------------------
 ※本メールアドレスは送信専用のため、返信できません。");
+
+add_action('after_setup_theme', function() {
+
+  //トップレベルオリジナル設定名
+  define('SETTING_NAME_TOP', THEME_NAME_CAMEL.' '.__( '設定', THEME_NAME ));
+
+  //PR表記
+  define('PR_LABEL_SMALL_CAPTION', __( 'PR', THEME_NAME ));
+  define('PR_LABEL_LARGE_CAPTION', __( '記事内に広告が含まれています。', THEME_NAME ));
+
+  //メインカラム用の広告フォーマット集
+  global $_MAIN_DATA_AD_FORMATS;
+  $_MAIN_DATA_AD_FORMATS = array(
+    DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+    DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+    DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+    AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
+    AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
+    DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
+  );
+
+  //AdSenseの存在フラグ
+  global $_IS_ADSENSE_EXIST;
+  $_IS_ADSENSE_EXIST = false; //最初はAdSenseの存在がない
+
+  //サイドバー用の広告フォーマット集
+  global $_SIDEBAR_DATA_AD_FORMATS;
+  $_SIDEBAR_DATA_AD_FORMATS = array(
+    DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+    DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+    DATA_AD_FORMAT_RECTANGLE => __( 'レクタングル', THEME_NAME ),
+    DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
+  );
+
+  //PCウィジェット用の広告フォーマット集
+  global $_PC_WIDGET_DATA_AD_FORMATS;
+  $_PC_WIDGET_DATA_AD_FORMATS = array(
+    'none' => __( '広告コードをそのまま表示', THEME_NAME ),
+    DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+    DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+    DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+    AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
+    AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
+    DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
+    DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
+  );
+
+  //モバイル用の広告フォーマット集
+  global $_MOBILE_WIDGET_DATA_AD_FORMATS;
+  $_MOBILE_WIDGET_DATA_AD_FORMATS = array(
+    'none' => __( '広告コードをそのまま表示', THEME_NAME ),
+    DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+    DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+    DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+    AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
+  );
+
+  //サービスドメイン
+  define('AMAZON_DOMAIN', __( 'www.amazon.co.jp', THEME_NAME ));
+  //リンククリック時の削除確認JavaScript
+  define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
+  //メッセージ
+  define('TOC_SHORTCODE_ERROR_MESSAGE', __('無限ループを避けるため[toc]ショートコードはパターンでは使用できません。' , THEME_NAME).__('ショートコードを削除してください。' , THEME_NAME).__('ショートコードが使用されている場合でも表示時に取り消されます。' , THEME_NAME));
+  //Amazon ASINエラー
+  define('AMAZON_ASIN_ERROR_MESSAGE', __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
+
+
+  define('TIME_ERROR_MESSAGE', '<span class="time-error">'.__( '日付未入力', THEME_NAME ).'</span>');
+
+  define('T404_PAGE_TITLE', __( '404 NOT FOUND', THEME_NAME ));
+  define('T404_PAGE_MESSAGE', __( 'お探しのページは見つかりませんでした。', THEME_NAME ));
+
+  define('SITE_DATE_FORMAT', __( 'Y.m.d', THEME_NAME ));
+
+  define('COMMENT_HEADING', __( 'コメント', THEME_NAME ));
+  define('COMMENT_FORM_HEADING', __( 'コメントをどうぞ', THEME_NAME ));
+  define('COMMENT_SUBMIT_LABEL', __( 'コメントを送信', THEME_NAME ));
+
+  //デフォルトの名前
+  define('SB_DEFAULT_NAME', __( '匿名', THEME_NAME ));
+});
+
 
 
 //インポートファイルの読み込み

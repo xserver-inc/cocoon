@@ -17,7 +17,7 @@ if (get_skin_url() && !isset($_POST[HIDDEN_FIELD_NAME])) {
 }
 
 // require_once abspath(__FILE__).'language.php';   //マルチ言語設定
-require_once abspath(__FILE__).'utils.php';      //ユーティリティー関数
+// require_once abspath(__FILE__).'utils.php';      //ユーティリティー関数
 require_once abspath(__FILE__).'html-forms.php'; //HTMLフォーム生成関数
 require_once abspath(__FILE__).'html-tooltips.php'; //HTMLツールチップ生成関数
 require_once abspath(__FILE__).'gutenberg.php';   //ブロックエディター関係の関数

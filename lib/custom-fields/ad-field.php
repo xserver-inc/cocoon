@@ -35,21 +35,6 @@ function view_ad_custom_box(){
   generate_checkbox_tag('the_page_pr_labels_novisible' , is_the_page_pr_labels_novisible(), __( 'PR表記を除外する', THEME_NAME ));
   generate_howto_tag(__( 'Cocoon設定で「PR表記」を有効にしていたとしても、この除外オプションを有効にすれば非表示になります。', THEME_NAME ), 'the_page_pr_labels_novisible');
 
-
-  // //PR表記タイプ
-  // $the_pr_label_type = get_the_pr_label_type();
-  // if (!$the_pr_label_type) {
-  //   $the_pr_label_type = 'default';
-  // }
-  // generate_label_tag('the_pr_label_type', '<b>'.__('この記事のPR表記', THEME_NAME).'</b>' );
-  // $options = array(
-  //   'default' => __( 'デフォルト', THEME_NAME ),
-  //   'visible' => __( 'この記事は常に表示する', THEME_NAME ),
-  //   'invisible' => __( 'この記事は常に表示しない', THEME_NAME ),
-  // );
-  // generate_radiobox_tag('the_pr_label_type', $options, $the_pr_label_type, '');
-  // generate_howto_tag(__( '「デフォルト」の場合は「Cocoon設定」の「PR表記」設定に準拠します。', THEME_NAME ).__( 'それ以外の「表示・非表示」設定は当設定が優先されます。', THEME_NAME ), 'the_pr_label_type');
-
 }
 endif;
 

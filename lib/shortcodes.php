@@ -388,7 +388,6 @@ function timeline_item_shortcode( $atts, $content = null ){
 }
 endif;
 
-define('TIME_ERROR_MESSAGE', '<span class="time-error">'.__( '日付未入力', THEME_NAME ).'</span>');
 //相対的な時間経過を取得するショートコード
 if (!shortcode_exists('ago')) {
   add_shortcode('ago', 'ago_shortcode');

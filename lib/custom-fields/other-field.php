@@ -15,7 +15,6 @@ if ( !function_exists( 'add_other_custom_box' ) ):
 function add_other_custom_box(){
   //その他ボックス
   add_meta_box( 'singular_other_settings',__( 'その他', THEME_NAME ), 'view_other_custom_box', 'post', 'side' );
-  // add_meta_box( 'singular_other_settings',__( 'その他', THEME_NAME ), 'view_other_custom_box', 'page', 'side' );
   //カスタム投稿タイプに登録
   add_meta_box_custom_post_types( 'singular_other_settings',__( 'その他', THEME_NAME ), 'view_other_custom_box', 'page', 'side' );
 }

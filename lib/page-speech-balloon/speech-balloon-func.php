@@ -15,9 +15,6 @@ define('SPEECH_BALLOONS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_speech_ball
 define('SB_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
 define('SB_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
 
-//デフォルトの名前
-define('SB_DEFAULT_NAME', __( '匿名', THEME_NAME ));
-
 //スタイル
 define('SBS_STANDARD', 'stn');
 define('SBS_FLAT', 'flat');
