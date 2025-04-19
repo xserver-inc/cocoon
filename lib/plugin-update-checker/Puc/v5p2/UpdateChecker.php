@@ -362,7 +362,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 		 *
 		 * @param Metadata|null $update
 		 */
-		protected function fixSupportedWordpressVersion(Metadata $update = null) {
+		protected function fixSupportedWordpressVersion(?Metadata $update = null) {
 			if ( !isset($update->tested) || !preg_match('/^\d++\.\d++$/', $update->tested) ) {
 				return;
 			}
@@ -676,7 +676,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 			$result = wp_remote_get($url, $options);
 
 			$result = apply_filters($this->getUniqueName('request_metadata_http_result'), $result, $url, $options);
-			
+
 			//Try to parse the response
 			$status = $this->validateApiResponse($result);
 			$metadata = null;
