@@ -272,7 +272,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
       // imagearc($image, $center_x, $center_y, $avatar_size + $circle_width, $avatar_size + $circle_width, 0, 360, $circle_color);
       // imagesetthicknessで線の幅を設定すると綺麗な描けなかったのでforループを使用してひとつずつ描画する
       for ($i = 0; $i < $circle_width; $i++) {
-        imagearc($image, $center_x, $center_y, $avatar_size + $i, $avatar_size + $i, 0, 360, $background_color);
+        imagearc($image, (int)$center_x, (int)$center_y, (int)($avatar_size + $i), (int)($avatar_size + $i), 0, 360, $background_color);
       }
 
       // 投稿者名を描画エリアに収まるように省略する
