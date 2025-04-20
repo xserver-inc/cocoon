@@ -397,11 +397,11 @@ function ago_shortcode( $atts ){
   extract( shortcode_atts( array(
     'from' => null,
   ), $atts, 'ago' ) );
-  if (!$from) {
+  if (empty($from)) {
     return TIME_ERROR_MESSAGE;
   }
   $from = sanitize_shortcode_value($from);
-  $from = strtotime($from);
+  $from = strtotime((string)$from);
   return get_human_time_diff_advance($from);
 }
 endif;
@@ -419,10 +419,11 @@ function age_shortcode( $atts ){
     $from = $birth;
   }
   //入力エラー出力
-  if (!$from) {
+  if (empty($from)) {
     return TIME_ERROR_MESSAGE;
   }
-  $from = strtotime($from);
+  $from = sanitize_shortcode_value($from);
+  $from = strtotime((string)$from);
   return get_human_years_ago($from, $unit);
 }
 endif;
@@ -440,6 +441,7 @@ function yago_shortcode( $atts ){
   if (!$from) {
     return TIME_ERROR_MESSAGE;
   }
+  $from = sanitize_shortcode_value($from);
   $from = strtotime($from);
   return get_human_years_ago($from, $unit);
 }
@@ -570,10 +572,11 @@ function countdown_shortcode( $atts ){
     'unit' => null,
   ), $atts, 'countdown' ) );
   //入力エラー出力
-  if (!$to) {
+  if (empty($to)) {
     return TIME_ERROR_MESSAGE;
   }
-  $to = strtotime($to);
+  $to = sanitize_shortcode_value($to);
+  $to = strtotime((string)$to);
   $count = get_countdown_days($to);
   if($count === "0") {
     return "-";
@@ -914,16 +917,12 @@ function campaign_shortcode( $atts, $content = null ) {
   $now = date_i18n('U');
 
   //いつから（開始日時）
-  $from_time = strtotime($from);
-  if (!$from_time) {
-    $from_time = strtotime('-1 day');
-  };
+  $from = sanitize_shortcode_value($from);
+  $from_time = !empty($from) ? strtotime($from) : strtotime('-1 day');
 
   //いつまで（終了日時）
-  $to_time = strtotime($to);
-  if (!$to_time) {
-    $to_time = strtotime('+1 day');
-  };
+  $to = sanitize_shortcode_value($to);
+  $to_time = !empty($to) ? strtotime($to) : strtotime('+1 day');
 
   //拡張クラス
   if ($class) {
@@ -934,8 +933,6 @@ function campaign_shortcode( $atts, $content = null ) {
   $content = apply_filters('campaign_shortcode_content', $content);
   if (($from_time < $now) && ($to_time > $now)) {
     $tag = '<div class="campaign'.esc_attr($class).'">'.
-      // date_i18n('開始日時：Y年m月d日 H時i分s秒', $from_time).'<br>'.
-      // date_i18n('終了日時：Y年m月d日 H時i分s秒', $to_time).'<br>'.
       $content.
     '</div>';
   }
