@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css");
+@import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
 :root {
   --cocoon-twitter-color: #000000;
   --cocoon-mastodon-color: #6364FF;

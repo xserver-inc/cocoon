@@ -245,8 +245,8 @@ if (!is_amp()): ?>
   <?php //Swiper
   global $_IS_SWIPER_ENABLE;
   if ($_IS_SWIPER_ENABLE): ?>
-  <link rel='stylesheet' id='swiper-style-css' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css' />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <link rel='stylesheet' id='swiper-style-css' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
   const mySwiper = new Swiper('.is-list-horizontal.swiper', {
     // Optional parameters
