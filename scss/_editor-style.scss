@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+// Swiperをパターンエディターなどでも読み込む（ブロックエディター、パターンエディターのiframe）
+@import url('https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
+
 @import "common-editor";
 
 // :root{
