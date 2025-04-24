@@ -128,7 +128,7 @@ function get_skin_infos(){
 
   //親skinsフォルダ内を検索
   if ( !is_child_skins_only_enable() || !is_child_theme() ){
-    $dir = get_template_directory().'/skins/';
+    $dir = get_cocoon_template_directory().'/skins/';
     $parent_dirs = get_skin_dirs($dir);
   }
 

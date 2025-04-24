@@ -7,6 +7,21 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+
+// テンプレートURLの取得
+if ( !function_exists( 'get_cocoon_template_directory' ) ):
+function get_cocoon_template_directory(){
+  return apply_filters('get_cocoon_template_directory', get_template_directory());
+}
+endif;
+
+// テンプレートURLの取得
+if ( !function_exists( 'get_cocoon_template_directory_uri' ) ):
+function get_cocoon_template_directory_uri(){
+  return apply_filters('get_cocoon_template_directory_uri', get_template_directory_uri());
+}
+endif;
+
 //テーマ名
 define('THEME_NAME', 'cocoon');
 require_once abspath(__FILE__).'language.php';   //マルチ言語設定
@@ -122,13 +137,13 @@ define('NAV_MENU_FOOTER_MOBILE_BUTTONS', 'navi-footer-mobile');
 define('NAV_MENU_MOBILE_SLIDE_IN', 'navi-mobile-slide-in');
 
 //親テーマのstyle.cssのURL
-define('PARENT_THEME_STYLE_CSS_URL', get_template_directory_uri().'/style.css');
+define('PARENT_THEME_STYLE_CSS_URL', get_cocoon_template_directory_uri().'/style.css');
 //親テーマのstyle.cssのファイルパス
-define('PARENT_THEME_STYLE_CSS_FILE', get_template_directory().'/style.css');
+define('PARENT_THEME_STYLE_CSS_FILE', get_cocoon_template_directory().'/style.css');
 //親テーマのkeyframes.cssのURL
-define('PARENT_THEME_KEYFRAMES_CSS_URL', get_template_directory_uri().'/keyframes.css');
+define('PARENT_THEME_KEYFRAMES_CSS_URL', get_cocoon_template_directory_uri().'/keyframes.css');
 //親テーマのkeyframes.cssのファイルパス
-define('PARENT_THEME_KEYFRAMES_CSS_FILE', get_template_directory().'/keyframes.css');
+define('PARENT_THEME_KEYFRAMES_CSS_FILE', get_cocoon_template_directory().'/keyframes.css');
 //子テーマのstyle.cssのURL
 define('CHILD_THEME_STYLE_CSS_URL', get_stylesheet_directory_uri().'/style.css');
 //子テーマのstyle.cssのファイルパス
@@ -172,18 +187,18 @@ define('SF_PROFILE', 'sf-profile');
 define('SF_MOBILE', 'sf-mobile');
 
 //NO IMAGE画像URL
-define('NO_IMAGE_320', get_template_directory_uri().'/images/no-image-320.png');
-define('NO_IMAGE_160', get_template_directory_uri().'/images/no-image-160.png');
-define('NO_IMAGE_120', get_template_directory_uri().'/images/no-image-120.png');
-define('NO_IMAGE_150', get_template_directory_uri().'/images/no-image-150.png');
-define('NO_IMAGE_LARGE', get_template_directory_uri().'/images/no-image-large.png');
-define('NO_IMAGE_RSS', get_template_directory_uri().'/images/no-image-rss.png');
+define('NO_IMAGE_320', get_cocoon_template_directory_uri().'/images/no-image-320.png');
+define('NO_IMAGE_160', get_cocoon_template_directory_uri().'/images/no-image-160.png');
+define('NO_IMAGE_120', get_cocoon_template_directory_uri().'/images/no-image-120.png');
+define('NO_IMAGE_150', get_cocoon_template_directory_uri().'/images/no-image-150.png');
+define('NO_IMAGE_LARGE', get_cocoon_template_directory_uri().'/images/no-image-large.png');
+define('NO_IMAGE_RSS', get_cocoon_template_directory_uri().'/images/no-image-rss.png');
 
 //画像と判別するファイル拡張子（正規表現用）
 define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp|\.avif');
 
 //OGPホームイメージURLデフォルト
-define('OGP_HOME_IMAGE_URL_DEFAULT', get_template_directory_uri().'/screenshot.jpg');
+define('OGP_HOME_IMAGE_URL_DEFAULT', get_cocoon_template_directory_uri().'/screenshot.jpg');
 //サイトアイコンフォントデフォルト
 define('SITE_ICON_FONT_DEFAULT', 'font_awesome_4');
 
@@ -231,27 +246,27 @@ define('FONT_AWESOME_4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4
 define('FONT_AWESOME_5_CDN_URL', 'https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
 //Font Awesome4
-define('FONT_AWESOME_4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
-define('FONT_AWESOME_4_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
+define('FONT_AWESOME_4_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
+define('FONT_AWESOME_4_WOFF2_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
 //Font Awesome5
-define('FONT_AWESOME_5_URL', get_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
-define('FONT_AWESOME_5_BRANDS_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-brands-400.woff2');
-define('FONT_AWESOME_5_REGULAR_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-regular-400.woff2');
-define('FONT_AWESOME_5_SOLID_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-solid-900.woff2');
+define('FONT_AWESOME_5_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
+define('FONT_AWESOME_5_BRANDS_WOFF2_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-brands-400.woff2');
+define('FONT_AWESOME_5_REGULAR_WOFF2_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-regular-400.woff2');
+define('FONT_AWESOME_5_SOLID_WOFF2_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-solid-900.woff2');
 //Font Awesome5アップデート
-define('FONT_AWESOME_5_UPDATE_URL', get_template_directory_uri().'/css/fontawesome5.css');
+define('FONT_AWESOME_5_UPDATE_URL', get_cocoon_template_directory_uri().'/css/fontawesome5.css');
 //IcoMoonフォント
 define('FONT_ICOMOON_UPDATED_VERSION_URL_QUERY', '?v=2.7.0.2');
-define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
-define('FONT_ICOMOON_WOFF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
-define('FONT_ICOMOON_TTF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
+define('FONT_ICOMOON_URL', get_cocoon_template_directory_uri() . '/webfonts/icomoon/style.css'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
+define('FONT_ICOMOON_WOFF_URL', get_cocoon_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
+define('FONT_ICOMOON_TTF_URL', get_cocoon_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
 
 //親テーマのJavaScript
-define('THEME_JS_URL', get_template_directory_uri() . '/javascript.js');
+define('THEME_JS_URL', get_cocoon_template_directory_uri() . '/javascript.js');
 //子テーマのJavaScript
 define('THEME_CHILD_JS_URL', get_stylesheet_directory_uri() . '/javascript.js');
 //set-event-passive
-define('SET_EVENT_PASSIVE_JS_URL', get_template_directory_uri() . '/js/set-event-passive.js');
+define('SET_EVENT_PASSIVE_JS_URL', get_cocoon_template_directory_uri() . '/js/set-event-passive.js');
 
 //AMPのトップへ戻る用のコード
 define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
@@ -259,10 +274,10 @@ define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
 define('AMP_GO_TO_TOC_ON_CODE', ' on="tap:toc.scrollTo(\'duration\'=375)"');
 
 //デフォルトサイトアイコン
-define('DEFAULT_SITE_ICON_32',  get_template_directory_uri().'/images/site-icon32x32.png');
-define('DEFAULT_SITE_ICON_180', get_template_directory_uri().'/images/site-icon180x180.png');
-define('DEFAULT_SITE_ICON_192', get_template_directory_uri().'/images/site-icon192x192.png');
-define('DEFAULT_SITE_ICON_270', get_template_directory_uri().'/images/site-icon270x270.png');
+define('DEFAULT_SITE_ICON_32',  get_cocoon_template_directory_uri().'/images/site-icon32x32.png');
+define('DEFAULT_SITE_ICON_180', get_cocoon_template_directory_uri().'/images/site-icon180x180.png');
+define('DEFAULT_SITE_ICON_192', get_cocoon_template_directory_uri().'/images/site-icon192x192.png');
+define('DEFAULT_SITE_ICON_270', get_cocoon_template_directory_uri().'/images/site-icon270x270.png');
 
 //.htaccess関連の定数
 define('HTACCESS_FILE', ABSPATH.'.htaccess');

@@ -36,9 +36,9 @@ define('IRASUTOYA_ CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="
 define('IMAGE_CDN_DIR_URL', 'https://im-cocoon.net/wp-content/uploads');
 
 
-define('SB_IMAGE_DIR_URL', get_template_directory_uri().'/images');
+define('SB_IMAGE_DIR_URL', get_cocoon_template_directory_uri().'/images');
 //デフォルトアイコン
-define('SB_DEFAULT_ICON', get_template_directory_uri().'/images/anony.png');
+define('SB_DEFAULT_ICON', get_cocoon_template_directory_uri().'/images/anony.png');
 define('SB_DEFAULT_MAN_ICON', SB_IMAGE_DIR_URL.'/man.png');
 define('SB_DEFAULT_WOMAN_ICON', SB_IMAGE_DIR_URL.'/woman.png');
 

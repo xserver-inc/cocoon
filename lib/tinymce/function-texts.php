@@ -25,7 +25,7 @@ endif;
 //ボタン用スクリプトの登録
 if ( !function_exists( 'add_function_texts_to_mce_external_plugins' ) ):
 function add_function_texts_to_mce_external_plugins( $plugin_array ){
-  $path=get_template_directory_uri() . '/js/function-texts.js';
+  $path=get_cocoon_template_directory_uri() . '/js/function-texts.js';
   $plugin_array['function_texts'] = $path;
   //_v($plugin_array);
   return $plugin_array;

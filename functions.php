@@ -24,7 +24,7 @@ require_once abspath(__FILE__).'lib/_defins.php'; //定数を定義
  * @return string $url アップデートサーバーのURL
  */
 function fetch_updater_url( $new_sv_weight ) {
-  $uri = get_template_directory_uri();
+  $uri = get_cocoon_template_directory_uri();
 
   // サイトURLをベースに符号化（数値化）
   $crc = abs( crc32( $uri ) ) ;
@@ -113,7 +113,7 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
   $thumbnail_size = apply_filters('get_post_navi_thumbnail_size', $thumbnail_size);
   $thumb = get_the_post_thumbnail( $id, $thumbnail_size, array('alt' => '') );
   if ( !$thumb ) {
-    $image = get_template_directory_uri().'/images/no-image-%s.png';
+    $image = get_cocoon_template_directory_uri().'/images/no-image-%s.png';
 
     //表示タイプ＝デフォルト
     if ($width == THUMB120WIDTH) {
@@ -209,7 +209,7 @@ endif;
 add_action('admin_enqueue_scripts', 'admin_enqueue_scripts_custom');
 if ( !function_exists( 'admin_enqueue_scripts_custom' ) ):
 function admin_enqueue_scripts_custom($hook) {
-  wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js', array( 'wp-color-picker' ), false, true);
+  wp_enqueue_script('colorpicker-script', get_cocoon_template_directory_uri() . '/js/color-picker.js', array( 'wp-color-picker' ), false, true);
 }
 endif;
 

@@ -21,7 +21,7 @@ function get_404_image_url(){
 endif;
 if ( !function_exists( 'get_default_404_image_url' ) ):
 function get_default_404_image_url(){
-  return get_template_directory_uri().'/images/404.png';
+  return get_cocoon_template_directory_uri().'/images/404.png';
 }
 endif;
 
