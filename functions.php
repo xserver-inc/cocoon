@@ -15,7 +15,10 @@ if ( !function_exists( 'abspath' ) ):
 function abspath($file){return dirname($file).'/';}
 endif;
 
-require_once abspath(__FILE__).'lib/_defins.php'; //定数を定義
+//定数を定義
+require_once abspath(__FILE__).'lib/_defins.php';
+//インポートファイルの読み込み
+require_once abspath(__FILE__).'lib/_imports.php';
 
 /**
  * ダウンロード配信サーバーの参照先を取得する関数

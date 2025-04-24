@@ -375,7 +375,3 @@ add_action('after_setup_theme', function() {
   define('SB_DEFAULT_NAME', __( '匿名', THEME_NAME ));
 });
 
-
-
-//インポートファイルの読み込み
-require_once abspath(__FILE__).'_imports.php';
