@@ -182,8 +182,8 @@ if ( !function_exists( 'wp_enqueue_slick_custom' ) ):
 
 
     if (is_carousel_visible()) {
-      wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
-      wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
+      wp_enqueue_style( 'slick-theme-style', get_cocoon_template_directory_uri() . '/plugins/slick/slick-theme.css' );
+      wp_enqueue_script( 'slick-js', get_cocoon_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
       $autoplay = null;
       if (is_carousel_autoplay_enable()) {
         $autoplay = 'autoplay: true,';

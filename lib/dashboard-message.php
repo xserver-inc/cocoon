@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'dashboard_message_get_text' ) ):
 function dashboard_message_get_text() {
 	//メッセージファイルを取得
-	$filename = get_template_directory() . '/lib/dashboard-message.txt';
+	$filename = get_cocoon_template_directory() . '/lib/dashboard-message.txt';
 	$messages = wp_filesystem_get_contents( $filename );
 
 	//改行で分ける

@@ -26,10 +26,10 @@ function admin_print_styles_custom() {
 
   if (!is_screen_editor_page()) {
     //管理用スタイル
-    wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+    wp_enqueue_style( 'admin-style', get_cocoon_template_directory_uri().'/css/admin.css' );
   } else {
     //ブロックエディターページやクラシックエディターページ全体に適用されるCSS
-    wp_enqueue_style( 'editor-page-style', get_template_directory_uri().'/css/editor-page.css' );
+    wp_enqueue_style( 'editor-page-style', get_cocoon_template_directory_uri().'/css/editor-page.css' );
   }
 
   //Font Awesome
@@ -53,7 +53,7 @@ function admin_print_styles_custom() {
   // 管理画面でのJavaScript読み込み
   ///////////////////////////////////////
   //管理画面用での独自JavaScriptの読み込み
-  wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array(), false, true );
+  wp_enqueue_script( 'admin-javascript', get_cocoon_template_directory_uri() . '/js/admin-javascript.js', array(), false, true );
 
   //投稿ページの場合
   if (is_admin_post_page()) {

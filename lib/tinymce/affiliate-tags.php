@@ -25,7 +25,7 @@ endif;
 //ボタン用スクリプトの登録
 if ( !function_exists( 'add_affiliate_tags_to_mce_external_plugins' ) ):
 function add_affiliate_tags_to_mce_external_plugins( $plugin_array ){
-  $path=get_template_directory_uri() . '/js/affiliate-tags.js';
+  $path=get_cocoon_template_directory_uri() . '/js/affiliate-tags.js';
   $plugin_array['affiliate_tags'] = $path;
   return $plugin_array;
 }

@@ -580,7 +580,7 @@ endif;
 if ( !function_exists( 'get_copy_share_url' ) ):
 function get_copy_share_url(){
   if (is_amp()) {
-    return get_template_directory_uri().'/lib/common/copy.php?title='.urlencode( get_share_page_title() ).'&amp;url='.urlencode(get_share_page_url());
+    return get_cocoon_template_directory_uri().'/lib/common/copy.php?title='.urlencode( get_share_page_title() ).'&amp;url='.urlencode(get_share_page_url());
   } else {
     return 'javascript:void(0)';
   }

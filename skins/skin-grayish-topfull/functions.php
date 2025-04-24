@@ -2178,9 +2178,9 @@ if (!function_exists('wp_enqueue_scrollhint_skinadd')) :
       // レスポンシブtable がoffの場合、ここでlib呼び出し
       if (!is_responsive_table_enable()) {
         //ScrollHintスタイルの呼び出し
-        wp_enqueue_style('scrollhint-style', get_template_directory_uri() . '/plugins/scroll-hint-master/css/scroll-hint.css');
+        wp_enqueue_style('scrollhint-style', get_cocoon_template_directory_uri() . '/plugins/scroll-hint-master/css/scroll-hint.css');
         //ScrollHintスクリプトの呼び出し
-        wp_enqueue_script('scrollhint-js', get_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array('jquery'), false, true);
+        wp_enqueue_script('scrollhint-js', get_cocoon_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array('jquery'), false, true);
       }
       $data = '
           (function($){
