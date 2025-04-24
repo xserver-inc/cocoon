@@ -148,7 +148,7 @@ if ( function_exists( 'register_block_style' ) && is_block_editor_style_block_op
 }
 
 //Cocoon Blocks
-if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) && is_gutenberg_editor_enable() ):
+if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) ):
   require_once get_cocoon_template_directory().'/blocks/plugin.php';
 endif;
 
