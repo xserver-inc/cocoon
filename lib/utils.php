@@ -58,7 +58,7 @@ function get_the_nolink_categories() {
     }
   }
 
-  if ($terms && !is_wp_error($terms)) {
+  if (isset($terms) && $terms && !is_wp_error($terms)) {
     // ターム名をA-Zにソート
     usort($terms, function($a, $b) {
       return strcmp($a->name, $b->name);
