@@ -42,13 +42,14 @@ function cocoon_blocks_cgb_block_assets()
   //Google Fonts
   wp_enqueue_google_fonts();
 
-  //サイトフォントの設定を反映するクラスを付与
-  add_filter( 'admin_body_class', function($classes){
-    $classes .= ' wp-admin-'.get_site_font_family_class();
-    $classes .= ' wp-admin-'.get_site_font_size_class();
-    $classes .= ' wp-admin-'.get_site_font_weight_class();
-    return $classes;
-  });
+	//サイトフォントの設定を反映するクラスを付与
+	add_filter('admin_body_class', 'add_site_font_settings_to_admin_body_class');
+	function add_site_font_settings_to_admin_body_class($classes) {
+		$classes .= ' wp-admin-' . get_site_font_family_class();
+		$classes .= ' wp-admin-' . get_site_font_size_class();
+		$classes .= ' wp-admin-' . get_site_font_weight_class();
+		return $classes;
+	}
 }
 
 /**
