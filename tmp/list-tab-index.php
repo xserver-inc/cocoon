@@ -73,24 +73,24 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
         'posts_per_page'   => get_option_posts_per_page(),
         'orderby'          => !is_index_sort_orderby_date() ? get_index_sort_orderby() : 'date',
         'order'            => 'DESC',
-        'category'         => $cat_id,
+        'cat'              => $cat_id,
         'category__not_in' => get_archive_exclude_category_ids(),
         'post__not_in'     => get_archive_exclude_post_ids(),
       );
       $args = apply_filters('list_category_tab_args', $args, $cat_id);
-      $posts = get_posts($args);
+      $query = new WP_Query($args);
 
-      if ($posts):
+      if ($query->have_posts()):
       ?>
         <div class="<?php echo $list_classes; ?>">
           <?php
           $count = 0;
-          foreach ($posts as $post):
-            setup_postdata($post);
+          while ($query->have_posts()):
+            $query->the_post();
             $count++;
             set_query_var('count', $count);
             cocoon_template_part('tmp/entry-card');
-          endforeach;
+          endwhile;
           wp_reset_postdata();
           ?>
         </div>
