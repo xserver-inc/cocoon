@@ -70,7 +70,7 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
     <div class="tab-cont tb<?php echo $number; ?>">
       <?php
       $args = array(
-        'post_type' => 'post'
+        'post_type'           => 'post',
         'posts_per_page'      => get_option_posts_per_page(),
         'orderby'             => !is_index_sort_orderby_date() ? get_index_sort_orderby() : 'date',
         'order'               => 'DESC',
