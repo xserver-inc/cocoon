@@ -12,7 +12,7 @@ add_action( 'after_setup_theme', function (){
   global $locale;
 
   //親テーマの翻訳ディレクトリ
-  $language_dir = get_cocoon_template_directory() . '/languages';
+  $language_dir = get_template_directory() . '/languages';
 
   //子テーマの翻訳ディレクトリ
   $child_language_dir = get_stylesheet_directory() . '/languages';
