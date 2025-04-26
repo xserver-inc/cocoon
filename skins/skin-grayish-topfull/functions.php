@@ -2155,7 +2155,7 @@ endif;
 // -----------------------------------------------------------------------------
 // 管理画面　Cocoon設定のプレビューの表示
 // -----------------------------------------------------------------------------
-// define("SKINDIR", get_stylesheet_directory_uri());
+// define("SKINDIR", get_cocoon_stylesheet_directory_uri());
 add_action('admin_print_styles', 'admin_print_styles_skinadd');
 if (!function_exists('admin_print_styles_skinadd')) :
   function admin_print_styles_skinadd()

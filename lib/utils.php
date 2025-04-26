@@ -2296,9 +2296,9 @@ endif;
 if ( !function_exists( 'replace_directory_uri' ) ):
 function replace_directory_uri($code){
   $code = str_replace('[template_directory_uri]', get_cocoon_template_directory_uri(), $code);
-  $code = str_replace('[stylesheet_directory_uri]', get_stylesheet_directory_uri(), $code);
-  $code = str_replace('<?php echo template_directory_uri(); ?>', get_cocoon_template_directory_uri(), $code);
-  $code = str_replace('<?php echo get_stylesheet_directory_uri(); ?>', get_stylesheet_directory_uri(), $code);
+  $code = str_replace('[stylesheet_directory_uri]', get_cocoon_stylesheet_directory_uri(), $code);
+  $code = str_replace('<?php echo get_template_directory_uri(); ?>', get_cocoon_template_directory_uri(), $code);
+  $code = str_replace('<?php echo get_stylesheet_directory_uri(); ?>', get_cocoon_stylesheet_directory_uri(), $code);
   return $code;
 }
 endif;

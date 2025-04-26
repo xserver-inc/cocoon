@@ -15,7 +15,7 @@ add_action( 'after_setup_theme', function (){
   $language_dir = get_cocoon_template_directory() . '/languages';
 
   //子テーマの翻訳ディレクトリ
-  $child_language_dir = get_stylesheet_directory() . '/languages';
+  $child_language_dir = get_cocoon_stylesheet_directory() . '/languages';
   //子テーマの翻訳ファイル
   $child_language_file = $child_language_dir.'/'.$locale.'.mo';
 

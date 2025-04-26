@@ -8,7 +8,11 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 
-// テンプレートURLの取得
+///////////////////////////
+// 今後の拡張用のパス取得関数
+///////////////////////////
+
+// テンプレートディレクトリの取得
 if ( !function_exists( 'get_cocoon_template_directory' ) ):
 function get_cocoon_template_directory(){
   return apply_filters('get_cocoon_template_directory', get_template_directory());
@@ -19,6 +23,20 @@ endif;
 if ( !function_exists( 'get_cocoon_template_directory_uri' ) ):
 function get_cocoon_template_directory_uri(){
   return apply_filters('get_cocoon_template_directory_uri', get_template_directory_uri());
+}
+endif;
+
+// スタイルシートディレクトリの取得
+if ( !function_exists( 'get_cocoon_stylesheet_directory' ) ):
+function get_cocoon_stylesheet_directory(){
+  return apply_filters('get_cocoon_stylesheet_directory', get_stylesheet_directory());
+}
+endif;
+
+// スタイルシートURLの取得
+if ( !function_exists( 'get_cocoon_stylesheet_directory_uri' ) ):
+function get_cocoon_stylesheet_directory_uri(){
+  return apply_filters('get_cocoon_stylesheet_directory_uri', get_stylesheet_directory_uri());
 }
 endif;
 
@@ -145,13 +163,13 @@ define('PARENT_THEME_KEYFRAMES_CSS_URL', get_cocoon_template_directory_uri().'/k
 //親テーマのkeyframes.cssのファイルパス
 define('PARENT_THEME_KEYFRAMES_CSS_FILE', get_cocoon_template_directory().'/keyframes.css');
 //子テーマのstyle.cssのURL
-define('CHILD_THEME_STYLE_CSS_URL', get_stylesheet_directory_uri().'/style.css');
+define('CHILD_THEME_STYLE_CSS_URL', get_cocoon_stylesheet_directory_uri().'/style.css');
 //子テーマのstyle.cssのファイルパス
-define('CHILD_THEME_STYLE_CSS_FILE', get_stylesheet_directory().'/style.css');
+define('CHILD_THEME_STYLE_CSS_FILE', get_cocoon_stylesheet_directory().'/style.css');
 //子テーマのkeyframes.cssのURL
-define('CHILD_THEME_KEYFRAMES_CSS_URL', get_stylesheet_directory_uri().'/keyframes.css');
+define('CHILD_THEME_KEYFRAMES_CSS_URL', get_cocoon_stylesheet_directory_uri().'/keyframes.css');
 //子テーマのkeyframes.cssのファイルパス
-define('CHILD_THEME_KEYFRAMES_CSS_FILE', get_stylesheet_directory().'/keyframes.css');
+define('CHILD_THEME_KEYFRAMES_CSS_FILE', get_cocoon_stylesheet_directory().'/keyframes.css');
 
 
 //スキン制御向けのグローバル変数
@@ -264,7 +282,7 @@ define('FONT_ICOMOON_TTF_URL', get_cocoon_template_directory_uri() . '/webfonts/
 //親テーマのJavaScript
 define('THEME_JS_URL', get_cocoon_template_directory_uri() . '/javascript.js');
 //子テーマのJavaScript
-define('THEME_CHILD_JS_URL', get_stylesheet_directory_uri() . '/javascript.js');
+define('THEME_CHILD_JS_URL', get_cocoon_stylesheet_directory_uri() . '/javascript.js');
 //set-event-passive
 define('SET_EVENT_PASSIVE_JS_URL', get_cocoon_template_directory_uri() . '/js/set-event-passive.js');
 

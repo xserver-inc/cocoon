@@ -783,7 +783,7 @@ function generate_style_amp_custom_tag(){?>
     }
 
     //AMPのスキンスタイル
-    $css_child_url = get_stylesheet_directory_uri().'/amp.css';
+    $css_child_url = get_cocoon_stylesheet_directory_uri().'/amp.css';
     $child_amp_css = css_url_to_css_minify_code($css_child_url);
     if ($child_amp_css !== false) {
       $css_all .= apply_filters( 'amp_child_amp_css', $child_amp_css );

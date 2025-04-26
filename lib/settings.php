@@ -153,7 +153,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     //ブロックエディターの時editor-style.cssを読み込む
     if (is_child_theme() && use_gutenberg_editor()) {
       array_push($stylesheets,
-        add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
+        add_file_ver_to_css_js(get_cocoon_stylesheet_directory_uri().'/editor-style.css')
       );
     }
     // fontの指定がgoogle fontの場合
