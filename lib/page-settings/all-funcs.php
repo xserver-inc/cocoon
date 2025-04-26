@@ -185,7 +185,7 @@ endif;
 
 if ( !function_exists( 'get_default_site_icon_url' ) ):
 function get_default_site_icon_url(){
-  return get_template_directory_uri().'/images/site-icon.png';
+  return get_cocoon_template_directory_uri().'/images/site-icon.png';
 }
 endif;
 

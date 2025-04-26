@@ -74,13 +74,12 @@ if (is_admin()) {
 if ( !function_exists( 'cocoon_blocks_cgb_editor_assets' ) )
 function cocoon_blocks_cgb_editor_assets()
 {
-
-  $asset_file = require get_template_directory() . '/blocks/dist/blocks.build.asset.php';
+  $asset_file = require get_cocoon_template_directory() . '/blocks/dist/blocks.build.asset.php';
 	// phpcs:ignore
 	// Scripts.
 	wp_enqueue_script(
 		'cocoon-blocks-js', // Handle.
-		get_template_directory_uri() . '/blocks/dist/blocks.build.js',
+		get_cocoon_template_directory_uri() . '/blocks/dist/blocks.build.js',
 		//plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
     $asset_file['dependencies'],
     // const xxx = wp.xxx型式の古い記述で有効 // Dependencies, defined above.
@@ -93,7 +92,7 @@ function cocoon_blocks_cgb_editor_assets()
 	wp_set_script_translations(
 		'cocoon-blocks-js',
 		THEME_NAME,
-		get_template_directory() . '/languages'
+		get_cocoon_template_directory() . '/languages'
 	);
 
 	//ショートコードオブジェクトの取得
@@ -146,12 +145,12 @@ function cocoon_blocks_cgb_editor_assets()
 		'isAdsVisible' => is_ads_visible() ? 1 : 0,
 		'isAdShortcodeEnable' => is_ad_shortcode_enable() ? 1 : 0,
 		'speechBalloonDefaultIconUrl' =>
-			get_template_directory_uri() . '/images/anony.png',
+			get_cocoon_template_directory_uri() . '/images/anony.png',
 		'siteIconFont' => ' ' . get_site_icon_font_class(),
 		'pageTypeClass' => get_editor_page_type_class(),
 		'isDebugMode' => DEBUG_MODE,
 		'wpVersion' => $wp_version,
-		'templateUrl' => get_template_directory_uri(),
+		'templateUrl' => get_cocoon_template_directory_uri(),
 		'customTextCount' => apply_filters( 'cocoon_custom_text_count', 2),
 	];
 

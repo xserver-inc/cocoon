@@ -119,7 +119,7 @@ endif;
 //ブラウザキャッシュを.htaccessに追加する
 if ( !function_exists( 'add_browser_cache_to_htaccess' ) ):
 function add_browser_cache_to_htaccess(){
-  $resoce_file = get_template_directory().'/configs/browser-cache.conf';
+  $resoce_file = get_cocoon_template_directory().'/configs/browser-cache.conf';
   $begin = THEME_HTACCESS_BEGIN;
   $end = THEME_HTACCESS_END;
   $reg = THEME_HTACCESS_REG;

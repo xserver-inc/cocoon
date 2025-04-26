@@ -26,7 +26,7 @@ endif;
 //ボタン用スクリプトの登録
 if ( !function_exists( 'add_item_rankings_to_mce_external_plugins' ) ):
 function add_item_rankings_to_mce_external_plugins( $plugin_array ){
-  $path=get_template_directory_uri() . '/js/item-rankings.js';
+  $path=get_cocoon_template_directory_uri() . '/js/item-rankings.js';
   $plugin_array['item_rankings'] = $path;
 
   return $plugin_array;

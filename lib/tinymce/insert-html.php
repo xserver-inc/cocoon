@@ -24,7 +24,7 @@ endif;
 //ビジュアルエディターにHTML挿入ボタン動作を行うJavaScriptを追加する
 if ( !function_exists( 'add_insert_html_button_plugin' ) ):
 function add_insert_html_button_plugin( $plugin_array ) {
-  $plugin_array['custom_button_script'] =  get_template_directory_uri() . "/js/button-insert-html.js";
+  $plugin_array['custom_button_script'] =  get_cocoon_template_directory_uri() . "/js/button-insert-html.js";
   return $plugin_array;
 }
 endif;

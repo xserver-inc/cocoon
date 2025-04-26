@@ -107,7 +107,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
   imagefilledarc($image, $width - $radius * 2, $height - $radius * 2, $radius * 2, $radius * 2, 0, 90, $background_color, IMG_ARC_PIE);
 
   // 日本語フォントファイルのパスを定義
-  $font_path = get_template_directory() . '/webfonts/googlefonts/NotoSansJP-Regular.ttf';
+  $font_path = get_cocoon_template_directory() . '/webfonts/googlefonts/NotoSansJP-Regular.ttf';
   if (!file_exists($font_path)) {
     error_log("Font file not found: " . $font_path);
     return;
@@ -233,7 +233,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
     }
     $avatar_path = url_to_local($avatar_url);
     if (!file_exists($avatar_path)) {
-      $avatar_path = get_template_directory() . '/images/anony.png'; // 自前のサーバーにない場合、'anony.png'を使用
+      $avatar_path = get_cocoon_template_directory() . '/images/anony.png'; // 自前のサーバーにない場合、'anony.png'を使用
     }
     $avatar_image = @imagecreatefromstring(file_get_contents($avatar_path));
 

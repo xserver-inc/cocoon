@@ -24,7 +24,7 @@ endif;
 //ボタン用スクリプトの登録
 if ( !function_exists( 'add_shortcodes_to_mce_external_plugins' ) ):
 function add_shortcodes_to_mce_external_plugins( $plugin_array ){
-  $path=get_template_directory_uri() . '/js/shortcodes.js';
+  $path=get_cocoon_template_directory_uri() . '/js/shortcodes.js';
   $plugin_array['shortcodes'] = $path;
   return $plugin_array;
 }
