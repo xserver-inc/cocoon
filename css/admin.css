@@ -7768,7 +7768,7 @@ body.wp-admin {
 }
 .admin-settings .demo .footer {
   margin-top: 20px;
-  padding: 8px;
+  padding: 8px 0;
 }
 .admin-settings .demo .copyright {
   margin-top: 8px;
@@ -16322,7 +16322,7 @@ body.wp-admin {
 }
 .admin-settings .demo .footer {
   margin-top: 20px;
-  padding: 8px;
+  padding: 8px 0;
 }
 .admin-settings .demo .copyright {
   margin-top: 8px;
