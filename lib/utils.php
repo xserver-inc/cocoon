@@ -493,6 +493,15 @@ endif;
 if ( !function_exists( 'wp_enqueue_style_icomoon' ) ):
 function wp_enqueue_style_icomoon(){
   wp_enqueue_style( 'icomoon-style', FONT_ICOMOON_URL );
+  $inline_css = "
+  @font-face {
+    font-family: 'icomoon';
+    src: url(" . FONT_ICOMOON_WOFF_URL . ") format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }";
+  wp_add_inline_style( 'icomoon-style', $inline_css );
 }
 endif;
 
