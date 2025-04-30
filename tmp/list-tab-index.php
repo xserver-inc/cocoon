@@ -77,7 +77,6 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
         'cat'                 => $cat_id,
         'category__not_in'    => get_archive_exclude_category_ids(),
         'post__not_in'        => get_archive_exclude_post_ids(),
-        'ignore_sticky_posts' => true,
         'no_found_rows'       => true,
       );
       $args = apply_filters('list_category_tab_args', $args, $cat_id);
