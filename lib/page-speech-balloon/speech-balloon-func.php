@@ -8,6 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //関数テキストテーブルのバージョン
+global $wpdb;
 define('SPEECH_BALLOONS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.0');
 define('SPEECH_BALLOONS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_speech_balloons');
 

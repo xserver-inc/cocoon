@@ -35,6 +35,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "author-box";
 @import "cta-box";
 @import "kaereba";
+@import "box-border";
+@import "box-menus";
+@import "box-style";
 @import "fontawesome-before";
 @import "fontawesome5";
 @import "icomoon";
@@ -126,7 +129,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   display: none;
 }
 
-// iframe.wp-embedded-contentがあると画面が横揺れするのを修正
-iframe.wp-embedded-content{
+// ブログカードラッパー内にiframe.wp-embedded-contentがあると画面が横揺れするのを修正
+.blogcard-type iframe.wp-embedded-content{
   width: auto !important;
 }
