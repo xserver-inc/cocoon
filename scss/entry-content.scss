@@ -34,6 +34,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "toc";
 @import "author-box";
 @import "cta-box";
+@import "kaereba";
 @import "fontawesome-before";
 @import "fontawesome5";
 @import "icomoon";
@@ -116,8 +117,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   color: #f6a068;
 }
 
-
 /*プロフィールの円形画像用*/
 .circle-image img{
   border-radius: 50%;
+}
+
+.toc-checkbox{
+  display: none;
+}
+
+// iframe.wp-embedded-contentがあると画面が横揺れするのを修正
+iframe.wp-embedded-content{
+  width: auto !important;
 }
