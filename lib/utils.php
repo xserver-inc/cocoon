@@ -23,6 +23,7 @@ if ( !function_exists( 'get_the_nolink_categories' ) ) :
 function get_the_nolink_categories() {
   $categories = null;
   $post_id = get_the_ID();
+  $terms = null;
 
   // 現在の投稿タイプを取得
   $post_type = get_post_type($post_id);
