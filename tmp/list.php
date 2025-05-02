@@ -60,15 +60,23 @@ if (is_sns_top_share_buttons_visible() &&
 } ?>
 
 <?php
-  if (is_front_top_page() && is_front_page_type_tab_index()) {
-    cocoon_template_part('tmp/list-tab-index');
-  } elseif (is_front_top_page() && is_front_page_type_category()) {
-    cocoon_template_part('tmp/list-category');
-  } elseif ((is_front_top_page() && is_front_page_type_category_2_columns()) || is_front_top_page() && is_front_page_type_category_3_columns()) {
-    cocoon_template_part('tmp/list-category-columns');
-  } else {
-    cocoon_template_part('tmp/list-index');
-  }
+$template_map = [
+  'index'     => 'tmp/list-index',
+  'tab_index' => 'tmp/list-tab-index',
+  'category'  => 'tmp/list-category',
+  'category_2_columns' => 'tmp/list-category-columns',
+  'category_3_columns' => 'tmp/list-category-columns',
+];
+
+$template_map = apply_filters('front_page_type_map', $template_map);
+
+$page_type = get_front_page_type();
+
+if (isset($template_map[$page_type]) && is_front_top_page()) {
+  cocoon_template_part($template_map[$page_type]);
+} else {
+  cocoon_template_part('tmp/list-index');
+}
 ?>
 
 <?php
