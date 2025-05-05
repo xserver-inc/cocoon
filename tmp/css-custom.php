@@ -5,13 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-if ( !defined( 'ABSPATH' ) ) exit;
-
-// css-custom出力の関数化（オーバーライドで介入可能なように）
-if ( !function_exists( 'get_css_custom' ) ):
-function get_css_custom(){
-  ob_start();
-?>
+if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php //サイトキー色
 if ($site_key_color = get_site_key_color()): ?>
@@ -1052,13 +1046,3 @@ if ($image_url && is_header_size_background_image_aspect_ratio() && is_header_la
     }
   <?php endif; ?>
 <?php endif; ?>
-
-<?php
-  $css_custom = ob_get_clean();
-  return apply_filters('get_css_custom', $css_custom);
-}// generate_css_custom関数の終了
-endif;
-// カスタムCSSの出力
-echo get_css_custom();
-
-?>
