@@ -9424,7 +9424,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   align-items: center;
 }
 .box-menu-icon * {
-  margin: 10px 0;
   max-width: 60px;
   max-height: 60px;
   height: auto;
@@ -9434,6 +9433,10 @@ https://codepen.io/nxworld/pen/oLdoWb
   font-size: 16px;
   border: none;
   box-shadow: none;
+}
+
+.box-menu-box.block-box .box-menu-icon * {
+  margin: 10px 0;
 }
 
 .box-menu-label {
