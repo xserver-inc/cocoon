@@ -48,7 +48,7 @@
   }
 }
 // .body .block-box :last-child{margin-bottom: 0;}に負けないCSSセレクターにする
-.box-menu-box.block-box .box-menu-icon *{
+.body .box-menus .box-menu-icon *{
   margin: 10px 0;
 }
 

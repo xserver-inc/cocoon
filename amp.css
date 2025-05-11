@@ -9435,7 +9435,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   box-shadow: none;
 }
 
-.box-menu-box.block-box .box-menu-icon * {
+.body .box-menus .box-menu-icon * {
   margin: 10px 0;
 }
 

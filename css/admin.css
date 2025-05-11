@@ -8722,7 +8722,7 @@ body.wp-admin {
   border: none;
   box-shadow: none;
 }
-.admin-settings .demo .box-menu-box.block-box .box-menu-icon * {
+.admin-settings .demo .body .box-menus .box-menu-icon * {
   margin: 10px 0;
 }
 .admin-settings .demo .box-menu-label {
@@ -17278,7 +17278,7 @@ body.wp-admin {
   border: none;
   box-shadow: none;
 }
-.admin-settings .demo .box-menu-box.block-box .box-menu-icon * {
+.admin-settings .demo .body .box-menus .box-menu-icon * {
   margin: 10px 0;
 }
 .admin-settings .demo .box-menu-label {
