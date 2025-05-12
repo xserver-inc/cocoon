@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/info-list",
   "category": "cocoon-block",
-  "keywords": ["info", "list"],
+  "keywords": ["info", "list", "インフォリスト", "新着情報"],
 
   "attributes": {
     "classNames": {

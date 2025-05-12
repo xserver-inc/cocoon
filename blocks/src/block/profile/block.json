@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/profile",
   "category": "cocoon-block",
-  "keywords": ["profile", "author", "box"],
+  "keywords": ["profile", "author", "box", "プロフィール"],
 
   "attributes": {
     "id": {

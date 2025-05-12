@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/navicard",
   "category": "cocoon-block",
-  "keywords": ["navi", "card"],
+  "keywords": ["navi", "card", "ナビカード", "カード", "メニュー"],
 
   "attributes": {
     "id": {

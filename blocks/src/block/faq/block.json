@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/faq",
   "category": "cocoon-block",
-  "keywords": [ "faq", "box" ],
+  "keywords": [ "faq", "box", "よくある質問", "質問" ],
 
   "attributes": {
     "question": {

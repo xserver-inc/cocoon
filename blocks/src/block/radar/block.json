@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/radar",
   "category": "cocoon-block",
-  "keywords": ["radar", "chart"],
+  "keywords": ["radar", "chart", "レーダー", "チャート"],
   "attributes": {
     "chartId": {
       "type": "string",

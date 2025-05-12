@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/tab",
   "category": "cocoon-block",
-  "keywords": [ "tab" ],
+  "keywords": [ "tab", "タブ" ],
   "attributes": {
     "tabLabelsArray": {
       "type": "array",

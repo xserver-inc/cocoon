@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/sticky-box",
   "category": "cocoon-block",
-  "keywords": [ "sticky", "box" ],
+  "keywords": [ "sticky", "box", "付箋" ],
 
   "attributes": {
     "style": {

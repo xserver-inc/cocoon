@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/micro-text",
   "category": "cocoon-micro",
-  "keywords": [ "micro", "copy", "text" ],
+  "keywords": [ "micro", "copy", "text", "マイクロテキスト", "マイクロコピー" ],
 
   "attributes": {
     "content": {

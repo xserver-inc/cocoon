@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/box-menu",
   "category": "cocoon-block",
-  "keywords": ["box-menu"],
+  "keywords": ["box-menu", "ボックスメニュー", "メニュー", "ボックス"],
 
   "attributes": {
     "id": {

@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/ranking",
   "category": "cocoon-block",
-  "keywords": ["ranking"],
+  "keywords": ["ranking", "ランキング"],
 
   "attributes": {
     "id": {
