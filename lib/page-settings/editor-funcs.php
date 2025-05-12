@@ -86,7 +86,7 @@ function is_featured_image_from_title_enable(){
   $value = get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE, 0);
   if (!$value) {
     //現在のオプションネームの値を取得する
-    $value = get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE_ENABLE, 0);
+    $value = get_theme_option(OP_FEATURED_IMAGE_FROM_TITLE_ENABLE, 1);
   }
   return $value;
 }
