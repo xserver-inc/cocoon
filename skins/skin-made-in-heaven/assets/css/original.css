@@ -472,7 +472,7 @@
 
 .is-style-hvn-text .blogcard-wrap:before {
   border: 1px solid var(--cocoon-text-color);
-  border-radius: 100%;
+  border-radius: 50%;
   content: '\f0c1';
   flex-shrink: 0;
   font-family: "Font Awesome 5 Free";

@@ -112,7 +112,7 @@ add_filter('get_additional_sns_follow_button_classes', function($classes) {
 add_filter('the_author_box_description', function($description, $user_id) {
   $date = get_theme_mod('hvn_site_date_setting');
   if ($date  && get_theme_mod('hvn_site_date_onoff_setting')) {
-    $day = number_format(ceil(date_i18n('U') - strtotime($date)) / (24 * 60 * 60));
+    $day = number_format(ceil(date_i18n('U') - strtotime($date)) / DAY_IN_SECONDS);
     $description .= "<p class=hvn_site_date>" . sprintf(__('%s開設から%s日目です。', THEME_NAME), $date, $day) . "</p>";
   }
 
@@ -197,7 +197,7 @@ add_filter('cocoon_part__tmp/css-custom', function($content) {
 //  Swiper変更
 //******************************************************************************
 add_filter('cocoon_part__tmp/footer-javascript', function($content) {
-  $content = str_replace('spaceBetween: 4', 'spaceBetween: ' . HVN_GAP , $content);
+  $content = str_replace('spaceBetween: 4', 'spaceBetween: ' . HVN_GAP, $content);
 
   return $content;
 });
@@ -211,7 +211,7 @@ add_filter('cocoon_part__tmp/body-top', function($content) {
     $content = preg_replace('/(<div class="swiper-button-prev">)/', '<div class="swiper-pagination"></div>$1', $content);
 
     $w = new WP_HTML_Tag_Processor($content);
-    while ($w->next_tag(array('class_name' => 'navi-entry-cards',))) {
+    while ($w->next_tag(['class_name' => 'navi-entry-cards',])) {
       $w->add_class('is-auto-horizontal');
       $w->remove_class('is-list-horizontal');
     }
@@ -232,7 +232,7 @@ add_action('cocoon_part_after__tmp/footer-javascript', function() {
   if ((!$_IS_SWIPER_ENABLE)
    && (($_HVN_NOTICE)
     || (hvn_image_count() > 1  && get_theme_mod('hvn_header_setting') == 'image' && is_front_top_page()))) {
-    echo <<< EOF
+    echo <<<EOF
     <link rel='stylesheet' id='swiper-style-css' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css' />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
@@ -249,17 +249,13 @@ EOF;
 //******************************************************************************
 //  オリジナルレイアウト変更
 //******************************************************************************
-add_filter('cocoon_part__tmp/list-category-columns', function($content) {
+add_filter('front_page_type_map', function($template_map) {
   if (get_theme_mod('hvn_card_expansion_setting')) {
-    if (is_entry_card_type_vertical_card_2()
-     || is_entry_card_type_vertical_card_3()) {
-      ob_start();
-      cocoon_template_part(HVN_SKIN . 'tmp/list-category-columns');
-      $content = ob_get_clean();
-    }
+    $template_map['category_2_columns'] = HVN_SKIN . 'tmp/list-category-columns';
+    $template_map['category_3_columns'] = HVN_SKIN . 'tmp/list-category-columns';
   }
 
-  return $content;
+  return $template_map;
 });
 
 
@@ -323,7 +319,7 @@ EOF;
 //******************************************************************************
 add_filter('cocoon_part__tmp/sns-share-buttons', function($content) {
   $before ='/data-clipboard-text=".*" title/';
-  $after = 'data-clipboard-text="&lt;a href=' . get_the_permalink() . '&gt;' . get_share_page_title() . '&lt;/a&gt;" title';
+  $after = 'data-clipboard-text="&lt;a href=' . get_share_page_url() . '&gt;' . get_share_page_title() . '&lt;/a&gt;" title';
   $content = preg_replace($before, $after, $content);
 
   return $content;
@@ -333,9 +329,9 @@ add_filter('cocoon_part__tmp/sns-share-buttons', function($content) {
 //******************************************************************************
 //  エントリーカードにリボンを追加
 //******************************************************************************
-add_action('entry_card_snippet_after',function($post_ID) {
+add_action('entry_card_snippet_after', function($post_ID) {
   $memo = get_post_meta($post_ID, 'the_page_memo', true);
-  preg_match('/ribbon-color-[1-5]/', $memo,$class);
+  preg_match('/ribbon-color-[1-5]/', $memo, $class);
   if ($class) {
     echo '<div class="ribbon ribbon-top-left ' . $class[0] . '"></div>';
   }
@@ -368,7 +364,7 @@ add_action('cocoon_part_before__tmp/list-index', function() {
     ob_start();
 ?>
 <div class="orderby">
-  <span class="sort-title"><i class="fas fa-sort-amount-down"></i>並び替え</span>
+  <span class="sort-title"><i class="fas fa-sort-amount-down"></i><?php echo __('並び替え', THEME_NAME) ?></span>
   <span class="sort-select">
     <select id="orderby-switch" class="orderby-switch-dropdown" 
       onchange="
@@ -399,72 +395,26 @@ add_action('cocoon_part_before__tmp/list-index', function() {
 
 
 //******************************************************************************
-//  表示順を設定
-//******************************************************************************
-add_action('pre_get_posts',function($query) {
-  // 一覧ページのみ並び替え
-  if (is_admin() || !is_home() || !$query->is_main_query()) {
-    return;
-  }
-
-  // cooki更新
-  $ck = isset($_COOKIE['orderby-switch']) ? $_COOKIE['orderby-switch'] : null;
-  if (isset($_GET['orderby-switch'])) {
-    setcookie('orderby-switch', esc_html($_GET['orderby-switch']), time() + 60 * 60 * 24,'/');
-  }
-
-  // 順序設定
-  $gt = isset($_GET['orderby-switch']) ? $_GET['orderby-switch'] : null;
-  $st = empty($ck) ? $gt : $ck;
-
-  switch($st) {
-    // 人気順
-    case 'popular':
-      $records = get_access_ranking_records('all', 3000, 'post');
-      $post_ids = array();
-      foreach ($records as $post) {
-        $post_ids[] = $post->ID;
-      }
-      $query->set('post__in', $post_ids);
-      $query->set('orderby', 'post__in');
-      break;
-
-    // コメント数
-    case 'comment':
-      $query->set( 'orderby', array(
-        'comment_count' => 'DESC',
-        'date'          => 'DESC'
-      ));
-      break;
-
-    default:
-      $query->set('orderby', $st);
-  }
-});
-
-
-//******************************************************************************
 //  目次ボタン追加
 //******************************************************************************
 add_action('cocoon_part_after__tmp/button-go-to-top', function() {
   if (get_theme_mod('hvn_toc_fix_setting')) {
     $html = do_shortcode('[toc]');
     $title = __('目次', THEME_NAME);
-    echo <<< EOF
-<div id="hvn-toc">
-  <label for="hvn-open" class="hvn-open-btn"><i class="fas fa-list"></i></label>
-  <input type="radio" id="hvn-close" class="display-none" name="hvn-trigger">
-  <input type="radio" id="hvn-open"  class="display-none" name="hvn-trigger">
-  <div class="hvn-modal">
-    <div class="hvn-content-wrap">
-      <div class="hvn-title">{$title}</div>
-      {$html}
+    ?>
+    <div id="hvn-toc">
+      <label for="hvn-open" class="hvn-open-btn"><i class="fas fa-list"></i></label>
+      <input type="radio" id="hvn-close" class="display-none" name="hvn-trigger">
+      <input type="radio" id="hvn-open"  class="display-none" name="hvn-trigger">
+      <div class="hvn-modal">
+        <div class="hvn-content-wrap">
+          <div class="hvn-title"><?php echo $title; ?></div>
+          <?php echo $html; ?>
+        </div>
+        <label for="hvn-close"><div class="hvn-background"></div></label>
+      </div>
     </div>
-    <label for="hvn-close"><div class="hvn-background"></div></label>
-  </div>
-</div>
-
-EOF;
+    <?php
   }
 });
 
@@ -521,4 +471,26 @@ add_filter('get_notice_area_message', function($msg) {
   }
 
   return $msg;
+});
+
+
+//******************************************************************************
+//  アイキャッチ自動生成
+//******************************************************************************
+
+// アイキャッチ自動生成（背景カラー）
+add_filter('featured_image_background_color_code', function($color) {
+  return get_theme_mod('hvn_thumb_color0_setting', '#ffffff');
+});
+
+
+// アイキャッチ自動生成（テキストカラー）
+add_filter('featured_image_text_color_code', function($color) {
+  return get_theme_mod('hvn_thumb_color1_setting', '#333333');
+});
+
+
+// アイキャッチ自動生成（枠カラー）
+add_filter('featured_image_border_color_code', function($color) {
+  return get_theme_mod('hvn_thumb_color2_setting', '#a2d7dd');
 });

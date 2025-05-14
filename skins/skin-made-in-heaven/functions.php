@@ -43,7 +43,7 @@ define('HVN_MAIN_WIDTH', 770);
 define('HVN_SIDE_WIDTH', 370);
 
 $_MOBILE_COPY_BUTTON = true;
-$_THEME_OPTIONS = array(
+$_THEME_OPTIONS = [
 // 全体
   'site_key_color' => '',
   'site_key_text_color' => '',
@@ -106,7 +106,6 @@ $_THEME_OPTIONS = array(
   'category_tag_display_position' => 'content_bottom',
   'related_entries_visible' => 1,
   'related_association_type' => 'category',
-  'related_entry_heading' => __('関連記事', THEME_NAME),
   'related_entry_sub_heading' => '',
   'related_entry_type' => 'mini_card',
   'related_entry_count' => 4,
@@ -293,4 +292,4 @@ $_THEME_OPTIONS = array(
 // エディター
   'visual_editor_style_enable' => 1,
   'admin_editor_counter_visible' => 1,
-);
+];

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* 矢印1（アイコン上下） */
+
+.scrolldown {
+  color: #fff;
+  height: fit-content;
+  inset: 0;
+  letter-spacing: 0.05em;
+  margin: auto 0 40px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.scrolldown span {
+  cursor: pointer;
+}
+
+.scrolldown:after {
+  animation: pathmove 1.4s ease-in-out infinite alternate;
+  content: '\f078';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+@keyframes pathmove {
+  from {
+    bottom: -20px;
+  }
+  to {
+    bottom: -50px;
+  }
+}

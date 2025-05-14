@@ -45,6 +45,7 @@
 
 [id*="section-hvn"] .customize-control-radio .customize-inside-control-row {
   margin: 0;
+  padding-bottom: 0;
 }
 
 [id*="section-hvn"] .customize-control-radio input {

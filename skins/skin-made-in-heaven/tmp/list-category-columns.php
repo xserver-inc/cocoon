@@ -1,7 +1,6 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
-
 $cat_ids = get_index_list_category_ids();
 $count = get_index_category_entry_card_count();
 
@@ -37,11 +36,12 @@ $snippet = is_entry_card_snippet_visible();
         <?php echo do_shortcode('[new_list type="large_thumb" snippet=' . $snippet . ' class="list ect-vertical-card-' . $columns . ' ect-vertical-card ect-' . $columns . '-columns" count=4 modified=1]'); ?>
       </div>
     </div>
-    <div class="list-more-button-wrap">
-      <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>?cat=0" class="list-more-button"><?php echo apply_filters('more_button_caption', __('もっと見る', THEME_NAME)); ?></a>
-    </div>
+    <?php if (get_query_var('count') > 0) : ?>
+      <div class="list-more-button-wrap">
+        <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>?cat=0" class="list-more-button"><?php echo apply_filters('more_button_caption', __('もっと見る', THEME_NAME)); ?></a>
+      </div>
+    <?php endif; ?>
   </div>
-
 
   <div class="list-columns list-popular">
     <h1 class="list-popular-title list-title">
@@ -51,27 +51,27 @@ $snippet = is_entry_card_snippet_visible();
   </div>
 
   <div id="list-columns" class="list-columns fpt-columns fpt-<?php echo $fpt_columns; ?>-columns">
-<?php
-for ($i=0; $i < count($cat_ids); $i++):
-  $cat_id = $cat_ids[$i];
-  $type = apply_filters('index_widget_entry_card_type', 'ET_DEFAULT', $cat_id);
+    <?php
+    for ($i = 0; $i < count($cat_ids); $i++) :
+      $cat_id = $cat_ids[$i];
+      $type = apply_filters('index_widget_entry_card_type', 'ET_DEFAULT', $cat_id);
 
-  if (is_category_exist($cat_id)):
-?>
-    <div class="list-category-<?php echo $cat_id; ?>-column list-column">
-      <h1 class="list-category-<?php echo $cat_id; ?>-column-title list-title">
-        <span class="list-title-in"><?php echo get_category_name_by_id($cat_id); ?></span>
-      </h1>
-      <div class="list">
-        <?php echo do_shortcode('[new_list count=4 cats=' . $cat_id . ' type=' . $type .']'); ?>
-      </div>
-    <?php if($cat = get_category($cat_id)): ?>
-      <div class="list-more-button-wrap">
-        <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', __('もっと見る', THEME_NAME)); ?></a>
-      </div>
-    <?php endif; ?>
-      </div>
-  <?php endif; ?>
-<?php endfor; ?>
+      if (is_category_exist($cat_id)) :
+    ?>
+        <div class="list-category-<?php echo $cat_id; ?>-column list-column">
+          <h1 class="list-category-<?php echo $cat_id; ?>-column-title list-title">
+            <span class="list-title-in"><?php echo get_category_name_by_id($cat_id); ?></span>
+          </h1>
+          <div class="list">
+            <?php echo do_shortcode('[new_list count=4 cats=' . $cat_id . ' type=' . $type . ']'); ?>
+          </div>
+          <?php if (get_query_var('count') > 0) : ?>
+            <div class="list-more-button-wrap">
+              <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', __('もっと見る', THEME_NAME)); ?></a>
+            </div>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
+    <?php endfor; ?>
   </div>
 </div>

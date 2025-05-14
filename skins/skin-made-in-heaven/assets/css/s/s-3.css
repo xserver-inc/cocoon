@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* 線2（Scroll＋線上下） */
+
+.scrolldown {
+  animation: arrow-moving 2s ease-in-out infinite;
+  color: #fff;
+  display: flex;
+  height: fit-content;
+  inset: 0;
+  letter-spacing: 0.05em;
+  margin: auto auto 0;
+  position: absolute;
+  width: fit-content;
+  z-index: 1;
+}
+
+.scrolldown span {
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+  writing-mode: vertical-rl;
+}
+
+.scrolldown:after {
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid #fff;
+  content: '';
+  display: block;
+  height: 55px;
+  margin-bottom: 7px;
+  transform: skewy(-60deg);
+  width: 7px;
+}
+
+@keyframes arrow-moving {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 0;
+  }
+}

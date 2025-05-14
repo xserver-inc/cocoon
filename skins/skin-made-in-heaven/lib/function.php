@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) exit;
 //******************************************************************************
 if (!function_exists('hvn_menu_setting')):
 function hvn_menu_setting($name) {
-  $data = array();
+  $data = [];
 
   $file = url_to_local(get_theme_file_uri(HVN_SKIN . "assets/css/{$name}/{$name}.csv"));
   if (($fp = fopen($file, 'r')) !== false) {
@@ -17,7 +17,7 @@ function hvn_menu_setting($name) {
     fclose($fp);
   }
 
-  return $data;
+  return ['choices' => $data];
 }
 endif;
 
@@ -96,6 +96,12 @@ function hvn_h2_h4_css() {
     wp_enqueue_style('hvn-widget-style', $widget_url);
   }
 
+  $scroll = get_theme_mod('hvn_header_scroll_setting', '0');
+  if ($scroll) {
+    $scroll_url = get_theme_file_uri(HVN_SKIN . "assets/css/s/s-{$scroll}.css");
+    wp_enqueue_style('hvn-scroll-style', $scroll_url);
+  }
+
   wp_enqueue_style('hvn-original-style', HVN_SKIN_URL . 'assets/css/original.css');
 }
 endif;
@@ -170,7 +176,7 @@ function hvn_color_css() {
   $css = ':root{' . $css . '}';
 
   $handle = 'hvn-color';
-  wp_register_style($handle, false, array());
+  wp_register_style($handle, false, []);
   wp_enqueue_style($handle);
   wp_add_inline_style($handle, $css);
 
@@ -197,7 +203,7 @@ function hvn_custom_css() {
   $css = ob_get_clean();
   if ($css) {
     $handle = 'hvn-custom';
-    wp_register_style($handle, false, array());
+    wp_register_style($handle, false, []);
     wp_enqueue_style($handle);
     wp_add_inline_style($handle, $css);
   }
@@ -216,7 +222,7 @@ function hvn_editor_css() {
   $css = ob_get_clean();
   if ($css) {
     $handle = 'hvn-editor';
-    wp_register_style($handle, false, array());
+    wp_register_style($handle, false, []);
     wp_enqueue_style($handle);
     wp_add_inline_style($handle, $css);
   }
@@ -294,7 +300,9 @@ function hvn_add_header() {
   // Scrollボタン
   $scroll = get_theme_mod('hvn_header_scroll_setting');
   if ($scroll && $html) {
-    $html .= '<div class="scrolldown scrolldown' . $scroll .'"><span>Scroll</span></div>';
+    ob_start();
+    cocoon_template_part(HVN_SKIN . 'tmp/scroll/s-' . $scroll);
+    $html .= ob_get_clean();
   }
 
   return $html;
@@ -307,7 +315,7 @@ endif;
 //******************************************************************************
 if (!function_exists('hvn_wave')):
 function hvn_wave($class = null) {
-  $html = <<< EOF
+  $html = <<<EOF
 <div class="{$class}">
   <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
     <defs>
@@ -380,7 +388,7 @@ endif;
 if (!function_exists('hvn_like_tag')):
 function hvn_like_tag($post_ID) {
   $count = intval(get_post_meta($post_ID, 'post_like', true));
-  $html =<<< EOF
+  $html =<<<EOF
 <div class="like" title="いいね">
   <span class="button" data-id="{$post_ID}"></span>
   <span class="count">{$count}</span>
@@ -402,14 +410,56 @@ function hvn_panel_label($wp_customize, $section, $label, $no) {
     new WP_Customize_Control(
       $wp_customize,
       "hvn_label{$no}_{$section}_section",
-      array(
+      [
         'label'       => "■ {$label}",
         'section'     => "hvn_{$section}_section",
         'settings'    => "hvn_label{$no}_{$section}_section",
         'type'        => 'hidden',
-      )
+      ]
     )
   );
+}
+endif;
+
+
+//******************************************************************************
+//  カスタマイザーコントロール
+//******************************************************************************
+if (!function_exists('hvn_panel_control')):
+function hvn_panel_control($wp_customize, $section, $setting, $default, $label, $description, $input_attrs, $type) {
+  $args = array_merge(
+    [
+      'label'       => $label,
+      'description' => $description,
+      'section'     => "hvn_{$section}_section",
+      'settings'    => $setting,
+      'type'        => $type,
+    ],
+    $input_attrs,
+  );
+
+  $wp_customize->add_setting($setting, $default);
+  switch ($type) {
+    case 'color':
+      $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting, $args));
+      break;
+
+    case 'i_image':
+      unset($args['type']);
+      $args['mime_type'] = 'image';
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting, $args));
+      break;
+
+    case 'image':
+    case 'video':
+      unset($args['type']);
+      $args['mime_type'] = $type;
+      $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, $setting, $args));
+      break;
+
+    default:
+      $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting, $args));
+  }
 }
 endif;
 
