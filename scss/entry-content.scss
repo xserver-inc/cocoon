@@ -38,6 +38,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "box-border";
 @import "box-menus";
 @import "box-style";
+@import "swiper";
 @import "fontawesome-before";
 @import "fontawesome5";
 @import "icomoon";
@@ -132,4 +133,31 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 // ブログカードラッパー内にiframe.wp-embedded-contentがあると画面が横揺れするのを修正
 .blogcard-type iframe.wp-embedded-content{
   width: auto !important;
+}
+
+///////////////////////////////////////
+// iOS対応
+///////////////////////////////////////
+.author-thumb,
+.blogcard-thumbnail,
+.related-entry-card-thumb,
+.popular-entry-card-thumb,
+.new-entry-card-thumb{
+  margin-right: $thumb_content_margin;
+}
+
+///////////////////////////////////////
+// 非表示のものは非表示にする
+///////////////////////////////////////
+.display-none {
+  display: none;
+}
+
+.is-list-horizontal .swiper-button-next,
+.is-list-horizontal .swiper-button-prev{
+  margin: auto !important;
+}
+
+.widget-entry-cards.ranking-visible .card-thumb::before{
+  box-sizing: content-box;
 }

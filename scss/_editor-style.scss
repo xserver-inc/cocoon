@@ -77,6 +77,11 @@ html[lang="en"] .column-3::before{
   }
 }
 
+// クラシックエディター用
+.mce-content-body .column-wrap{
+  margin-bottom: 1.4em;
+}
+
 .column-left,
 .column-center,
 .column-right {

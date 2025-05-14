@@ -3180,7 +3180,7 @@ body.wp-admin {
 .admin-settings .demo .wp-block-latest-comments {
   padding-left: 0;
 }
-.admin-settings .demo .widget_search .wp-block-search__button {
+.admin-settings .demo :where(.wp-block-search__button) {
   padding: 0.375em 0.1em;
   font-size: 14px;
 }
@@ -11736,7 +11736,7 @@ body.wp-admin {
 .admin-settings .demo .wp-block-latest-comments {
   padding-left: 0;
 }
-.admin-settings .demo .widget_search .wp-block-search__button {
+.admin-settings .demo :where(.wp-block-search__button) {
   padding: 0.375em 0.1em;
   font-size: 14px;
 }

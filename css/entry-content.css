@@ -4753,10 +4753,11 @@ label.screen-reader-text {
   padding-left: 0;
 }
 
-.widget_search .wp-block-search__button {
+:where(.wp-block-search__button) {
   padding: 0.375em 0.1em;
   font-size: 14px;
 }
+
 .widget_search .wp-block-search__input {
   line-height: normal;
 }
@@ -6336,6 +6337,110 @@ https://codepen.io/nxworld/pen/oLdoWb
   color: #ef5350 !important;
 }
 
+:root {
+  --easing: cubic-bezier(.2, 1, .2, 1);
+  --transition: .8s var(--easing);
+  --box-shadow: 0 0 30px #fff;
+}
+
+.swiper-wrapper {
+  margin-top: 8px;
+  margin-left: 1px;
+}
+
+/* 新着カードを横並びにする */
+/* はみ出した分を横スクロール */
+.is-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  /* カードのサムネイル幅200px */
+}
+.is-list-horizontal .widget-entry-card-link {
+  flex-shrink: 0;
+  max-width: 320px;
+}
+.is-list-horizontal .card-title {
+  font-size: 16px;
+}
+.is-list-horizontal .card-title,
+.is-list-horizontal .card-snippet {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.is-list-horizontal.large-thumb .widget-entry-card-link, .is-list-horizontal.large-thumb-on .widget-entry-card-link {
+  max-width: 220px;
+}
+.is-list-horizontal.large-thumb .card-title, .is-list-horizontal.large-thumb-on .card-title {
+  -webkit-line-clamp: 2;
+  height: 2.6em;
+}
+.is-list-horizontal.large-thumb-on .card-content {
+  overflow: hidden;
+}
+.is-list-horizontal.large-thumb-on .card-title {
+  font-size: 14px;
+}
+.is-list-horizontal .swiper-wrapper {
+  height: initial;
+}
+.is-list-horizontal .swiper-button-next,
+.is-list-horizontal .swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+}
+.is-list-horizontal .swiper-button-next {
+  left: calc(100% - 62px);
+}
+.is-list-horizontal .swiper-button-next:hover {
+  left: calc(100% - 66px);
+  width: 60px;
+  height: 60px;
+}
+.is-list-horizontal .swiper-button-next::after {
+  border-color: #ffffff;
+  margin-right: 0.4rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 12px;
+  height: 12px;
+  content: "";
+  border: solid rgba(255, 255, 255, 0.7);
+  border-width: 2px 2px 0 0;
+}
+.is-list-horizontal .swiper-button-prev {
+  left: 22px;
+  display: none;
+}
+.is-list-horizontal .swiper-button-prev:hover {
+  left: 17px;
+  width: 60px;
+  height: 60px;
+}
+.is-list-horizontal .swiper-button-prev::after {
+  border-color: #ffffff;
+  margin-left: 0.4rem;
+  transform: rotate(45deg);
+  width: 12px;
+  height: 12px;
+  content: "";
+  border: solid rgba(255, 255, 255, 0.7);
+  border-width: 0 0 2px 2px;
+}
+
 [class*=fab-]::before {
   font-family: FontAwesome;
 }
@@ -7257,4 +7362,25 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .blogcard-type iframe.wp-embedded-content {
   width: auto !important;
+}
+
+.author-thumb,
+.blogcard-thumbnail,
+.related-entry-card-thumb,
+.popular-entry-card-thumb,
+.new-entry-card-thumb {
+  margin-right: 1.6%;
+}
+
+.display-none {
+  display: none;
+}
+
+.is-list-horizontal .swiper-button-next,
+.is-list-horizontal .swiper-button-prev {
+  margin: auto !important;
+}
+
+.widget-entry-cards.ranking-visible .card-thumb::before {
+  box-sizing: content-box;
 }
