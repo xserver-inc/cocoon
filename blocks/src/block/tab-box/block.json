@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/tab-box-1",
   "category": "cocoon-block",
-  "keywords": [ "tab", "box", "タブ", "タブボックス" ],
+  "keywords": [ "tab", "box" ],
 
   "attributes": {
     "label": {

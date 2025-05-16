@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/search-box",
   "category": "cocoon-block",
-  "keywords": [ "search", "box", "サーチ", "サーチボックス" ],
+  "keywords": [ "search", "box" ],
 
   "attributes": {
     "content": {

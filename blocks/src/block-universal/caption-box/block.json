@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/caption-box-1",
   "category": "cocoon-universal-block",
-  "keywords": [ "caption", "box", "キャプション" ],
+  "keywords": [ "caption", "box" ],
 
   "attributes": {
     "content": {

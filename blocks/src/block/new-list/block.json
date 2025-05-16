@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/new-list",
   "category": "cocoon-block",
-  "keywords": ["new", "list", "ニューリスト", "新着記事"],
+  "keywords": ["new", "list"],
 
   "attributes": {
     "classNames": {

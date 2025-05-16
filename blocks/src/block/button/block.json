@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/button-1",
   "category": "cocoon-block",
-  "keywords": [ "button", "btn", "ボタン" ],
+  "keywords": [ "button", "btn" ],
 
   "attributes": {
     "content": {

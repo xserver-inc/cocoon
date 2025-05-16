@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/popular-list",
   "category": "cocoon-block",
-  "keywords": ["popular", "list", "ポピュラーリスト", "人気記事"],
+  "keywords": ["popular", "list"],
 
   "attributes": {
     "classNames": {

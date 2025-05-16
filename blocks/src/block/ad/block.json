@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/ad",
   "category": "cocoon-block",
-  "keywords": ["ad", "広告"],
+  "keywords": ["ad"],
 
   "attributes": {
     "id": {

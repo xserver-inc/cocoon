@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/tab-caption-box-1",
   "category": "cocoon-universal-block",
-  "keywords": [ "tab", "caption", "box", "タブ", "タブキャプション", "キャプション" ],
+  "keywords": [ "tab", "caption", "box" ],
 
   "attributes": {
     "content": {

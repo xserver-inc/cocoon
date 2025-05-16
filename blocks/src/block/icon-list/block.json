@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/iconlist-box",
   "category": "cocoon-block",
-  "keywords": [ "icon", "list", "box", "アイコンリスト" ],
+  "keywords": [ "icon", "list", "box" ],
 
   "attributes": {
     "title": {

@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/blogcard",
   "category": "cocoon-block",
-  "keywords": [ "blogcard", "box", "wrap", "ブログカード", "内部ブログカード", "外部ブログカード" ],
+  "keywords": [ "blogcard", "box", "wrap" ],
 
   "attributes": {
     "content": {

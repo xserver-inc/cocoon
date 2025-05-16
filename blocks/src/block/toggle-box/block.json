@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/toggle-box-1",
   "category": "cocoon-block",
-  "keywords": [ "toggle", "box", "accordion", "トグル", "アコーディオン"],
+  "keywords": [ "toggle", "box" ],
 
   "attributes": {
     "content": {

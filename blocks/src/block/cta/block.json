@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/cta",
   "category": "cocoon-block",
-  "keywords": ["cta", "box", "CTA", "コールトゥアクション"],
+  "keywords": ["cta", "box"],
 
   "attributes": {
     "initialized": {
