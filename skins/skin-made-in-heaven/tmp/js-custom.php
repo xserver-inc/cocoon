@@ -671,7 +671,7 @@ switch(get_theme_mod('hvn_toc_hidden_setting')) {
   case '1':
     echo <<<EOF
 (function($) {
-  var n = ${n}
+  var n = ${n};
 
   var elm = $('.main .toc-content li');
   var c = elm.length;
