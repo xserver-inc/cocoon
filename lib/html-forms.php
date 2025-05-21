@@ -1935,7 +1935,7 @@ function generate_info_list_tag($atts){
           $date = $update_date;
         }
       ?>
-        <div class="info-list-item">
+        <div <?php post_class('info-list-item'); ?>>
           <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php echo escape_shortcodes(get_the_title());?></a></div>
           <?php do_action('info_list_item_meta_before'); ?>
           <div class="info-list-item-meta">
