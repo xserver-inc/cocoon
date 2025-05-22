@@ -3956,12 +3956,9 @@ endif;
 //ショートコードのエスケープ
 if ( !function_exists( 'escape_shortcodes' ) ):
 function escape_shortcodes($content) {
-  // ショートコードのエスケープに必要な書類を追加する（※現在は何もしていない）
+  // ショートコードを実行できない文字列に置き換える
+  $content = str_replace(['[', ']'], ['&#91;', '&#93;'], $content);
   return $content;
-  // // [shortcode] → [[shortcode]] に置換（全ショートコード対象）
-  // return preg_replace_callback('/\[([a-zA-Z0-9_]+)([^\]]*)\]/', function($matches) {
-  //     return '[[' . $matches[1] . $matches[2] . ']]';
-  // }, $content);
 }
 endif;
 
