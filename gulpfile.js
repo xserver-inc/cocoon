@@ -44,6 +44,17 @@ const scssBuildEditor = (done) => {
     done();
 }
 
+const scssBuildEditorToCss = (done) => {
+    gulp.src('./scss/_editor-style.scss')
+        .pipe(plumber())
+        .pipe(rename({basename: 'editor-style'}))
+        .pipe(sass({
+            outputStyle: "expanded"
+        }))
+        .pipe(gulp.dest('./css/'));
+    done();
+}
+
 const scssBuildBlock = (done) => {
     gulp.src('./scss/gutenberg-editor.scss')
         .pipe(plumber())
@@ -99,13 +110,13 @@ const scssBuildSkins = (done) => {
 }
 
 const watchFiles = (done) => {
-    gulp.watch('./scss/**/*.scss', gulp.series(scssBuildFront, scssBuildFontAwesome, scssBuildAdmin, scssBuildEditor, scssBuildBlock, scssBuildEditorPage, scssBuildEntryContent));
+    gulp.watch('./scss/**/*.scss', gulp.series(scssBuildFront, scssBuildFontAwesome, scssBuildAdmin, scssBuildEditor, scssBuildEditorToCss, scssBuildBlock, scssBuildEditorPage, scssBuildEntryContent));
     gulp.watch(['skins/**/*.scss', '!skins/skin-test/**'], scssBuildSkins);
     done();
 }
 
 exports.default = gulp.series(
-    scssBuildFront, scssBuildFontAwesome, scssBuildAdmin, scssBuildEditor, scssBuildBlock, scssBuildEditorPage, scssBuildEntryContent, scssBuildSkins
+    scssBuildFront, scssBuildFontAwesome, scssBuildAdmin, scssBuildEditor, scssBuildEditorToCss, scssBuildBlock, scssBuildEditorPage, scssBuildEntryContent, scssBuildSkins
 );
 
 exports.watch = watchFiles;

@@ -1,0 +1,487 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
+:root {
+  --cocoon-twitter-color: #000000;
+  --cocoon-mastodon-color: #6364FF;
+  --cocoon-bluesky-color: #0085ff;
+  --cocoon-misskey-color: #96d04a;
+  --cocoon-facebook-color: #3b5998;
+  --cocoon-hatebu-color: #2c6ebd;
+  --cocoon-google-plus-color: #dd4b39;
+  --cocoon-pocket-color: #ef4056;
+  --cocoon-line-color: #00c300;
+  --cocoon-linkedin-color: #0077b5;
+  --cocoon-website-color: #002561;
+  --cocoon-instagram-color: #405de6;
+  --cocoon-pinterest-color: #bd081c;
+  --cocoon-youtube-color: #cd201f;
+  --cocoon-tiktok-color: #000000;
+  --cocoon-note-color: #41c9b4;
+  --cocoon-soundcloud-color: #ff8800;
+  --cocoon-flickr-color: #111;
+  --cocoon-amazon-color: #ff9900;
+  --cocoon-twitch-color: #6441a4;
+  --cocoon-rakuten-color: #bf0000;
+  --cocoon-rakuten-room-color: #c61e79;
+  --cocoon-slack-color: #e01563;
+  --cocoon-github-color: #4078c0;
+  --cocoon-codepen-color: #333;
+  --cocoon-feedly-color: #2bb24c;
+  --cocoon-rss-color: #f26522;
+  --cocoon-copy-color: #333333;
+  --cocoon-comment-color: #333333;
+  --cocoon-red-color: #e60033;
+  --cocoon-pink-color: #e95295;
+  --cocoon-purple-color: #884898;
+  --cocoon-deep-color: #55295b;
+  --cocoon-indigo-color: #1e50a2;
+  --cocoon-blue-color: #0095d9;
+  --cocoon-light-blue-color: #2ca9e1;
+  --cocoon-cyan-color: #00a3af;
+  --cocoon-teal-color: #007b43;
+  --cocoon-green-color: #3eb370;
+  --cocoon-light-green-color: #8bc34a;
+  --cocoon-lime-color: #c3d825;
+  --cocoon-yellow-color: #ffd900;
+  --cocoon-amber-color: #ffc107;
+  --cocoon-orange-color: #f39800;
+  --cocoon-deep-orange-color: #ea5506;
+  --cocoon-brown-color: #954e2a;
+  --cocoon-light-grey-color: #cccccc;
+  --cocoon-grey-color: #949495;
+  --cocoon-dark-grey-color: #666666;
+  --cocoon-blue-gray-color: #607d8b;
+  --cocoon-black-color: #333333;
+  --cocoon-white-color: #ffffff;
+  --cocoon-watery-blue-color: #f3fafe;
+  --cocoon-watery-yellow-color: #fff7cc;
+  --cocoon-watery-red-color: #fdf2f2;
+  --cocoon-watery-green-color: #ebf8f4;
+  --cocoon-custom-background-color: inherit;
+  --cocoon-custom-text-color: inherit;
+  --cocoon-custom-border-color: #ccc;
+  --cocoon-default-font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --cocoon-text-color: #333;
+  --cocoon-pallid-text-color: #777;
+  --cocoon-x-pallid-text-color: #999;
+  --cocoon-default-text-size: 18px;
+  --cocoon-text-size-s: 0.8em;
+  --cocoon-basic-border-color: #ccc;
+  --cocoon-three-d-border-colors: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
+  --cocoon-middle-thickness-color: #888;
+  --cocoon-thin-color: #ddd;
+  --cocoon-x-thin-color: #eee;
+  --cocoon-xx-thin-color: #f5f6f7;
+  --cocoon-xxx-thin-color: #fafbfc;
+  --cocoon-current-background-color: #eee;
+  --cocoon-select-background-color: #d8eaf2;
+  --cocoon-tab-label-color: #f2f2f2;
+  --cocoon-tab-label-active-color: #404453;
+  --cocoon-basic-border-radius: 4px;
+  --cocoon-badge-border-radius: 2px;
+  --cocoon-middle-border-radius: 8px;
+  --cocoon-box-padding: 1em 1.5em;
+  --cocoon-list-padding: min(1%, 8px) min(2%, 16px) min(1%, 8px) min(3%, 24px);
+  --cocoon-list-wide-padding: min(3%, 24px) min(5%, 40px) min(3%, 24px) min(7%, 56px);
+  --cocoon-box-border-color: #47585c;
+  --cocoon-sns-color: var(--cocoon-text-color);
+  --card-ratio: 16/9;
+}
+
+.faw::before {
+  font-family: FontAwesome;
+  padding-right: 4px;
+}
+
+.body.font-awesome-5 .bct-related::before,
+.body.font-awesome-5 .blank-box.bb-ok::before,
+.body.font-awesome-5 .blank-box.bb-point::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+.body.font-awesome-5 .bb-ok::before {
+  content: "\f111   OK";
+}
+.body.font-awesome-5 .blank-box.bb-check::before,
+.body.font-awesome-5 .blank-box.bb-comment::before,
+.body.font-awesome-5 .blank-box.bb-tips::before,
+.body.font-awesome-5 .blank-box.bb-pickup::before,
+.body.font-awesome-5 .blank-box.bb-hint::before,
+.body.font-awesome-5 .blank-box.bb-bookmark::before,
+.body.font-awesome-5 .blank-box.bb-memo::before,
+.body.font-awesome-5 .blank-box.bb-download::before,
+.body.font-awesome-5 .blank-box.bb-break::before,
+.body.font-awesome-5 .blank-box.bb-ng::before,
+.body.font-awesome-5 .blank-box.bb-good::before,
+.body.font-awesome-5 .blank-box.bb-bad::before,
+.body.font-awesome-5 .blank-box.bb-profile::before,
+.body.font-awesome-5 .bct-none::before,
+.body.font-awesome-5 .bct-reference::before,
+.body.font-awesome-5 .bct-reference-link::before,
+.body.font-awesome-5 .bct-popular::before,
+.body.font-awesome-5 .bct-pickup::before,
+.body.font-awesome-5 .bct-check::before,
+.body.font-awesome-5 .bct-together::before,
+.body.font-awesome-5 .bct-detail::before,
+.body.font-awesome-5 .bct-official::before,
+.body.font-awesome-5 .bct-dl::before,
+.body.font-awesome-5 .bct-prev::before,
+.body.font-awesome-5 .bct-next::before,
+.body.font-awesome-5 .btn-wrap::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 501;
+}
+.body.font-awesome-5 .bb-memo::before {
+  content: "\f249   MEMO";
+}
+.body.font-awesome-5 .blank-box.bb-tab::before {
+  font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+}
+.body.font-awesome-5 .blank-box.bb-amazon::before {
+  font-family: "Font Awesome 5 Brands", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+  font-weight: 400;
+}
+
+/*ビジュアルエディターのスタイルを書く*/
+body#tinymce {
+  padding: 1em 20px !important;
+  margin-top: 0 !important;
+  background-image: none;
+  background-color: #fff;
+}
+
+body#tinymce.wp-editor::before {
+  background: none;
+}
+
+.column-2,
+.column-3 {
+  margin: 16px 0;
+}
+
+/* .column-2::before,
+.column-3::before{
+  content: "※カラムへの着色はエディタのみ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1em;
+  width: 31%;
+  font-size: 0.8em;
+  padding: 4px 8px;
+  background-color: #f7dde4;
+  text-align: center;
+}
+
+html[lang="en"] .column-2::before,
+html[lang="en"] .column-3::before{
+  content: "* Coloring is Editor Only.";
+} */
+.column-wrap .block-editor-block-list__layout {
+  min-height: 2em;
+}
+
+.mce-content-body .column-wrap {
+  margin-bottom: 1.4em;
+}
+
+.column-left,
+.column-center,
+.column-right {
+  padding: 0.4em;
+}
+
+.column-left {
+  background-color: #c7e1ef;
+}
+
+.column-center {
+  background-color: #c9e8d8;
+}
+
+.column-right {
+  background-color: #ffecd3;
+}
+
+.btn-wrap,
+.blogcard-type {
+  padding: 6px;
+  position: relative;
+}
+
+.btn-wrap {
+  padding: 10px !important;
+}
+
+span.btn-wrap {
+  padding: 6px 18px 6px;
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+.btn-wrap::before {
+  position: absolute;
+  top: -2px;
+  right: 4px;
+}
+
+.btn-wrap::before {
+  font-family: FontAwesome;
+  color: #DBB004;
+  content: "\f146";
+}
+
+.blogcard-type::before {
+  font-family: FontAwesome;
+  font-size: 0.6em;
+  padding: 0 4px;
+  background-color: #587b93;
+  color: #fff;
+  top: 0;
+  right: 0;
+  position: absolute;
+  white-space: pre;
+}
+
+.btn-wrap {
+  background-color: #f8e58c;
+}
+
+.blogcard-type {
+  padding-top: 1em;
+  background-color: #e6ecf0;
+}
+
+.blogcard-type.bct-none::before {
+  content: "\f0c8   ラベルなし";
+}
+
+.blogcard-type.bct-related::before {
+  content: "\f15c   関連記事";
+}
+
+.blogcard-type.bct-reference::before {
+  content: "\f19d   参考記事";
+}
+
+.blogcard-type.bct-reference-link::before {
+  content: "\f19d   参考リンク";
+}
+
+.blogcard-type.bct-popular::before {
+  content: "\f005   人気記事";
+}
+
+.blogcard-type.bct-pickup::before {
+  content: "\f005   ピックアップ";
+}
+
+.blogcard-type.bct-check::before {
+  content: "\f00c   チェック";
+}
+
+.blogcard-type.bct-together::before {
+  content: "\f02d   あわせて読みたい";
+}
+
+.blogcard-type.bct-detail::before {
+  content: "\f15c   詳細はこちら";
+}
+
+.blogcard-type.bct-official::before {
+  content: "\f024   公式サイト";
+}
+
+.blogcard-type.bct-dl::before {
+  content: "\f019   ダウンロード";
+}
+
+.blogcard-type.bct-prev::before {
+  content: "\f137   前回の記事";
+}
+
+.blogcard-type.bct-next::before {
+  content: "\f138   続きの記事";
+}
+
+/*ビジュアルエディターにinstagramの引用符が表示される対応*/
+.instagram-media {
+  position: relative !important;
+}
+
+.postbody.main {
+  width: auto;
+}
+
+.button-wrap-msg,
+.box-block-msg {
+  font-size: 10px;
+  text-align: center;
+}
+
+.blank-box.bb-tab::before {
+  background-color: var(--cocoon-custom-border-color);
+  font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
+  position: absolute;
+  font-size: 13px;
+  top: -27px;
+  height: 24px;
+  color: var(--cocoon-white-color);
+  left: -3px;
+  border-radius: 6px 6px 0 0;
+  padding: 0 1em 0 0.8em;
+  font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif;
+}
+.blank-box.bb-red::before {
+  background-color: var(--cocoon-red-color);
+}
+.blank-box.bb-pink::before {
+  background-color: var(--cocoon-pink-color);
+}
+.blank-box.bb-purple::before {
+  background-color: var(--cocoon-purple-color);
+}
+.blank-box.bb-blue::before {
+  background-color: var(--cocoon-blue-color);
+}
+.blank-box.bb-green::before {
+  background-color: var(--cocoon-green-color);
+}
+.blank-box.bb-orange::before {
+  background-color: var(--cocoon-orange-color);
+}
+.blank-box.bb-yellow::before {
+  background-color: var(--cocoon-yellow-color);
+}
+.blank-box.bb-brown::before {
+  background-color: var(--cocoon-brown-color);
+}
+.blank-box.bb-grey::before {
+  background-color: var(--cocoon-grey-color);
+}
+.blank-box.bb-black::before {
+  background-color: var(--cocoon-black-color);
+}
+.blank-box.bb-deep::before {
+  background-color: var(--cocoon-deep-color);
+}
+.blank-box.bb-indigo::before {
+  background-color: var(--cocoon-indigo-color);
+}
+.blank-box.bb-light-blue::before {
+  background-color: var(--cocoon-light-blue-color);
+}
+.blank-box.bb-cyan::before {
+  background-color: var(--cocoon-cyan-color);
+}
+.blank-box.bb-teal::before {
+  background-color: var(--cocoon-teal-color);
+}
+.blank-box.bb-light-green::before {
+  background-color: var(--cocoon-light-green-color);
+}
+.blank-box.bb-lime::before {
+  background-color: var(--cocoon-lime-color);
+}
+.blank-box.bb-amber::before {
+  background-color: var(--cocoon-amber-color);
+}
+.blank-box.bb-deep-orange::before {
+  background-color: var(--cocoon-deep-orange-color);
+}
+.blank-box.bb-white::before {
+  background-color: var(--cocoon-white-color);
+}
+
+.bb-check::before {
+  content: "\f00c   CHECK";
+}
+
+.bb-comment::before {
+  content: "\f075   COMMENT";
+}
+
+.bb-point::before {
+  content: "\f0eb   POINT";
+}
+
+.bb-tips::before {
+  content: "\f19d   TIPS";
+}
+
+.bb-hint::before {
+  content: "\f0f3   HINT";
+}
+
+.bb-pickup::before {
+  content: "\f005   PICKUP";
+}
+
+.bb-bookmark::before {
+  content: "\f02e   BOOKMARK";
+}
+
+.bb-memo::before {
+  content: "\f249   MEMO";
+}
+
+.bb-download::before {
+  content: "\f019   DOWNLOAD";
+}
+
+.bb-break::before {
+  content: "\f0f4   BREAK";
+}
+
+.bb-amazon::before {
+  content: "\f270   AMAZON";
+}
+
+.bb-ok::before {
+  content: "\f10c   OK";
+}
+
+.bb-ng::before {
+  content: "\f00d   NG";
+}
+
+.bb-good::before {
+  content: "\f164   GOOD";
+}
+
+.bb-bad::before {
+  content: "\f165   BAD";
+}
+
+.bb-profile::before {
+  content: "\f007   PROFILE";
+}
+
+.has-small-font-size {
+  font-size: 13px;
+}
+
+.has-medium-font-size {
+  font-size: 20px;
+}
+
+.has-large-font-size {
+  font-size: 36px;
+}
+
+.has-huge-font-size,
+.has-larger-font-size {
+  font-size: 42px;
+}
+
+.mce-content-body .btn-wrap a[data-mce-selected] {
+  padding: 7px 13px;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce .btn[class*=btn-] {
+  color: var(--cocoon-white-color);
+}
+
+.mce-content-body .blogcard-type br {
+  display: initial;
+}
