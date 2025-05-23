@@ -589,3 +589,25 @@ add_filter('cocoon_part__tmp/categories-tags', function($content) {
 
   return $content;
 });
+
+// bbPressが非アクティブな場合、特定のページテンプレートを非表示にする
+function hide_bbpress_templates_if_inactive( $page_templates ) {
+  // is_plugin_activeが未定義の場合は読み込んで致命的なエラーを回避
+  if ( !function_exists( 'is_plugin_active' ) ) {
+    require_once ABSPATH . 'wp-admin/includes/plugin.php';
+  }
+
+  // bbPressが非アクティブな場合、特定のページテンプレートを非表示にする
+  if ( !is_plugin_active( 'bbpress/bbpress.php' ) ) {
+    $templates_to_remove = [
+      'templates/page-create-topic.php',
+      'templates/page-front-forums.php',
+    ];
+    foreach ( $templates_to_remove as $template ) {
+      unset( $page_templates[ $template ] );
+    }
+  }
+
+  return $page_templates;
+}
+add_filter( 'theme_page_templates', 'hide_bbpress_templates_if_inactive' );
