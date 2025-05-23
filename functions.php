@@ -591,6 +591,7 @@ add_filter('cocoon_part__tmp/categories-tags', function($content) {
 });
 
 // bbPressが非アクティブな場合、特定のページテンプレートを非表示にする
+add_filter( 'theme_page_templates', 'hide_bbpress_templates_if_inactive' );
 function hide_bbpress_templates_if_inactive( $page_templates ) {
   // is_plugin_activeが未定義の場合は読み込んで致命的なエラーを回避
   if ( !function_exists( 'is_plugin_active' ) ) {
@@ -610,4 +611,3 @@ function hide_bbpress_templates_if_inactive( $page_templates ) {
 
   return $page_templates;
 }
-add_filter( 'theme_page_templates', 'hide_bbpress_templates_if_inactive' );
