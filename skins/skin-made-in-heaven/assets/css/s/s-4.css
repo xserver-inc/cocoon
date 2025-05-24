@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/* 矢印2（円広がる） */
+
+.scrolldown {
+  color: #fff;
+  height: fit-content;
+  inset: 0;
+  letter-spacing: 0.05em;
+  margin: auto 0 20px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.scrolldown span {
+  cursor: pointer;
+}
+
+.scrolldown .arrow:before {
+  content: '\f078';
+  display: block;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  letter-spacing: 0;
+  position: relative;
+}
+
+.scrolldown .arrow:after {
+  animation: circle 3s infinite;
+  border-radius: 100%;
+  box-shadow: 0 0 0 0 #555;
+  box-sizing: border-box;
+  content: '';
+  height: 34px;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 26px;
+  transform: translateX(-50%);
+  width: 34px;
+  z-index: -1;
+}
+
+@keyframes circle {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

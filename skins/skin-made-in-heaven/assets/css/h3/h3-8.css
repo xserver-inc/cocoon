@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/* 塗りつぶし（薄） */
+
+.article h3 {
+  background-color: var(--hover-color);
+  color: #333;
+  padding: 10px 15px;
+}

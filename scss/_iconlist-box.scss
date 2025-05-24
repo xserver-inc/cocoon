@@ -13,12 +13,9 @@
   }
 
   ul{
-    list-style: none;
+    list-style: none !important;
     li::before{
       display: initial;
-    }
-    ul{
-      list-style: none;
     }
   }
   ol:not(.has-list-style){

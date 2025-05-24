@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* 矢印3（矢印マスク） */
+
+.scrolldown {
+  color: #fff;
+  height: fit-content;
+  inset: 0;
+  letter-spacing: 0.05em;
+  margin: auto 0 0;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.scrolldown span {
+  cursor: pointer;
+}
+
+.arrow-mask {
+  background-color: #c0c0c0;
+  clip-path: polygon(
+    48% 0%, 52% 0%, /* 棒の上端（4%幅） */
+    52% 75%,        /* 棒の下端（75%で三角の始点） */
+    65% 75%,        /* 三角の右端 */
+    50% 95%,        /* 三角の下端（中央） */
+    35% 75%,        /* 三角の左端 */
+    48% 75%         /* 棒の左下に戻る */
+  );
+  height: 40px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 40px;
+}
+
+.arrow-red {
+  animation: flow-down 2s linear infinite;
+  background-color: var(--main-color);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: -100%;
+  width: 100%;
+}
+
+@keyframes flow-down {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    top: 100%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}

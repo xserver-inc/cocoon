@@ -99,8 +99,10 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_tax() || is_category()
       }
 
       // 現在のカテゴリーを表示
-      echo $echo.'<div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span><span class="fa fa-folder fa-fw" aria-hidden="true"></span><a href="'.esc_url(get_category_link($cat->term_id)).'" itemprop="item"><span itemprop="name" class="breadcrumb-caption">'.esc_html($cat->name).'</span></a><meta itemprop="position" content="'.$count.'" /></div>';
-
+      if (isset($cat->term_id)) {
+        ++$count;
+        echo $echo.'<div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span><span class="fa fa-folder fa-fw" aria-hidden="true"></span><a href="'.esc_url(get_category_link($cat->term_id)).'" itemprop="item"><span itemprop="name" class="breadcrumb-caption">'.esc_html($cat->name).'</span></a><meta itemprop="position" content="'.$count.'" /></div>';
+      }
     }
   }
 

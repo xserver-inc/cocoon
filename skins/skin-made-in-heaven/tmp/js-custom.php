@@ -12,7 +12,7 @@ $button = '<button class="sub-item" aria-label="'. __('もっと見る', THEME_N
 //  ローディング画面
 //******************************************************************************
 if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') != 'none')) {
-  echo <<< EOF
+  echo <<<EOF
 (function($) {
   $('body').css('overflow-y', 'hidden');
   if (sessionStorage.getItem('visited')) {
@@ -37,7 +37,7 @@ EOF;
 //  テーブルの1列目を固定表示の問題対策
 //******************************************************************************
 if (is_responsive_table_first_column_sticky_enable()) {
-  echo <<< EOF
+  echo <<<EOF
 (function($) {
   var flag = 0;
   var next = 0;
@@ -62,7 +62,7 @@ EOF;
 //******************************************************************************
 //  FAQアコーディオン無効
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 (function($) {
   $('.is-style-accordion > .faq > .faq-question').off('click').click(function() {
     $(this).next('.is-style-accordion .faq-answer').slideToggle(0);
@@ -78,7 +78,7 @@ EOF;
 //  「新着記事」タブ表示
 //******************************************************************************
 if (is_front_top_page() &&  !get_theme_mod('hvn_front_none_setting', true)) {
-  echo <<< EOF
+  echo <<<EOF
 (function($) {
   $('#index-tab-2').prop('checked', true);
 })(jQuery);
@@ -91,7 +91,7 @@ EOF;
 //  オートプレイ
 //******************************************************************************
 if (get_theme_mod('hvn_swiper_auto_setting') && $_IS_SWIPER_ENABLE) {
-  $js = <<< EOF
+  $js = <<<EOF
     loop: true,
     speed: 1000,
     autoplay: {
@@ -135,7 +135,7 @@ EOF;
     if ($swip_count > 1) {
       $js = null;
     }
-    echo <<< EOF
+    echo <<<EOF
 const autoSwiper = new Swiper('.is-auto-horizontal.swiper', {
   slidesPerView: 'auto',
   spaceBetween: 30,
@@ -159,7 +159,7 @@ EOF;
 //  目次ハイライト
 //******************************************************************************
 if (get_theme_mod('hvn_toc_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 (function($) {
   // 見出し判定位置調整（font-size）
   const val = 50;
@@ -226,7 +226,7 @@ EOF;
 //  スクロールボタン
 //******************************************************************************
 if ((get_theme_mod('hvn_header_setting', 'none') != 'none') && is_front_top_page() && !is_singular_page_type_content_only()) {
-  echo <<< EOF
+  echo <<<EOF
 (function($){
   if ($('.appeal').length) {
     elm = $('.appeal');
@@ -258,7 +258,7 @@ if (hvn_image_count() > 1 && get_theme_mod('hvn_header_setting') == 'image' && i
     $speed = 0;
   }
 
-  echo <<< EOF
+  echo <<<EOF
 const swiper = new Swiper('.hvn-swiper', {
   speed: {$speed},
   loop: true,
@@ -278,7 +278,7 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_like_setting')) {
   $url =  esc_html(admin_url('admin-ajax.php'));
-  echo <<< EOF
+  echo <<<EOF
 (function($) {
   var cook = [];
 
@@ -350,7 +350,7 @@ EOF;
 //******************************************************************************
 //  スクロール量
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 (function($) {
   $(window).on('load scroll', function() {
     var scroll = $(window).scrollTop();
@@ -366,7 +366,7 @@ EOF;
 //******************************************************************************
 //  メインビジュアルy座標取得
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 (function($) {
   function setHeight() {
     var a = 0;
@@ -393,7 +393,7 @@ EOF;
 //******************************************************************************
 $size_481 = 481;
 $size_835 = 835;
-echo <<< EOF
+echo <<<EOF
 (function($) {
   const size_835 = window.matchMedia("(min-width: ${size_835}px)");
   const size_481 = window.matchMedia("(min-width: ${size_481}px)");
@@ -430,7 +430,7 @@ EOF;
 //  コードコピーボタンを追加
 //******************************************************************************
 if (is_ssl()) {
-  echo <<< EOF
+  echo <<<EOF
 (function($) {
   $(".wp-block-code").wrap('<div class="pre-wrap"></div>').before('<button class="code-copy">COPY</button>');
 
@@ -451,7 +451,7 @@ if (is_ssl()) {
 EOF;
 
 } else {
-  echo <<< EOF
+  echo <<<EOF
 (function($) {
   $(".wp-block-code").wrap('<div class="pre-wrap"></div>').before('<button class="code-copy">COPY</button>');
 
@@ -478,7 +478,7 @@ EOF;
 //  アコーディオン化
 //******************************************************************************
 if (get_theme_mod('hvn_accordion_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 // アーカイブ
 (function($) {
   var html;
@@ -547,12 +547,12 @@ if (get_theme_mod('hvn_accordion_setting')) {
     var elm = $('.tagcloud a', this);
     var c   = elm.length;
     if (c > n) {
-      elm.slice({$n}).hide();
+      elm.slice(n).hide();
       $(this).append('{$button}');
     }
 
     $('button', this).click(function() {
-      elm.slice({$n}).toggle();
+      elm.slice(n).toggle();
       $(this).toggleClass('active');
     });
   });
@@ -565,7 +565,7 @@ EOF;
 //******************************************************************************
 //  ダークモード
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 (function($) {
   const btn = $('#hvn-dark');
   btn.click(function() {
@@ -602,7 +602,7 @@ if ($_HVN_NOTICE) {
     $speed = 15000;
   }
 
-  echo <<< EOF
+  echo <<<EOF
 const noticeSwiper = new Swiper(".notice-area-message .swiper",{
   loop: true,
   direction: "{$direction}",
@@ -620,7 +620,7 @@ EOF;
 //  目次ボタン
 //******************************************************************************
 if (get_theme_mod('hvn_toc_fix_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 (function($) {
   if (!($('.main .toc').length)) {
     return;
@@ -638,7 +638,7 @@ EOF;
 //******************************************************************************
 //  ブログスタイル
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 (function($) {
   $('.is-style-hvn-text').each(function(){
     $('.blogcard-wrap', this).html($('.blogcard-title', this));
@@ -652,7 +652,7 @@ EOF;
 //******************************************************************************
 //  見出しボックスアコーディオン
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 (function($) {
   $('.is-style-accordion.cocoon-block-caption-box > .caption-box-content').hide();
   $('.is-style-accordion.cocoon-block-caption-box > .caption-box-label').click(function() {
@@ -669,9 +669,9 @@ EOF;
 //******************************************************************************
 switch(get_theme_mod('hvn_toc_hidden_setting')) {
   case '1':
-    echo <<< EOF
+    echo <<<EOF
 (function($) {
-  var n = ${n}
+  var n = ${n};
 
   var elm = $('.main .toc-content li');
   var c = elm.length;
@@ -690,7 +690,7 @@ EOF;
     break;
 
   case '2':
-    echo <<< EOF
+    echo <<<EOF
 (function($) {
   var elm = $('.main .toc-content ul ul');
   var c = elm.length;
@@ -713,7 +713,7 @@ EOF;
 //******************************************************************************
 //  タブブロックスクロール表示
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 (function($){
   new ScrollHint(".tab-label-group", {
     suggestClass: 'is-scroll-tab',

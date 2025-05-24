@@ -8,6 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //関数テキストテーブルのバージョン
+global $wpdb;
 define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.3');//rand(0, 99)
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 

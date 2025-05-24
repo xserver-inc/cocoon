@@ -11,6 +11,6 @@ $message = apply_filters('posts_not_found_message', $message);
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <div class="posts-not-found">
-  <h2>NOT FOUND</h2>
+  <h2><?php _e( 'NOT FOUND', THEME_NAME ); ?></h2>
   <p><?php echo $message; ?></p>
 </div>

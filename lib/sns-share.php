@@ -151,10 +151,10 @@ function fetch_facebook_count($url = null) {
   if (is_sns_share_count_cache_enable() && is_another_scheme_sns_share_count()) {
     $res = $res + fetch_facebook_count_raw(get_another_scheme_url($url));
   }
-  //_v($res);
 
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
+    do_action('set_transient_facebook_share_count', get_the_ID(), $res);
     set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_share_count_cache_interval() );
   }
   return $res;
@@ -223,10 +223,6 @@ function fetch_hatebu_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      // _edump(
-      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-      //   'label', 'tag', 'ade5ac'
-      // );
       return $count;
     }
   }
@@ -243,6 +239,7 @@ function fetch_hatebu_count($url = null) {
 
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
+    do_action('set_transient_hatebu_share_count', get_the_ID(), $res);
     set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_share_count_cache_interval() );
   }
 
@@ -371,6 +368,7 @@ function fetch_pocket_count($url = null) {
 
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
+    do_action('set_transient_pocket_share_count', get_the_ID(), $res);
     set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_share_count_cache_interval() );
   }
 
@@ -582,7 +580,7 @@ endif;
 if ( !function_exists( 'get_copy_share_url' ) ):
 function get_copy_share_url(){
   if (is_amp()) {
-    return get_template_directory_uri().'/lib/common/copy.php?title='.urlencode( get_share_page_title() ).'&amp;url='.urlencode(get_share_page_url());
+    return get_cocoon_template_directory_uri().'/lib/common/copy.php?title='.urlencode( get_share_page_title() ).'&amp;url='.urlencode(get_share_page_url());
   } else {
     return 'javascript:void(0)';
   }

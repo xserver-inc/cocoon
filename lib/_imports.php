@@ -17,7 +17,7 @@ if (get_skin_url() && !isset($_POST[HIDDEN_FIELD_NAME])) {
 }
 
 // require_once abspath(__FILE__).'language.php';   //マルチ言語設定
-require_once abspath(__FILE__).'utils.php';      //ユーティリティー関数
+// require_once abspath(__FILE__).'utils.php';      //ユーティリティー関数
 require_once abspath(__FILE__).'html-forms.php'; //HTMLフォーム生成関数
 require_once abspath(__FILE__).'html-tooltips.php'; //HTMLツールチップ生成関数
 require_once abspath(__FILE__).'gutenberg.php';   //ブロックエディター関係の関数
@@ -41,7 +41,7 @@ require_once abspath(__FILE__).'plugins.php';    //プラグイン関係の関�
 require_once abspath(__FILE__).'eyecatch.php';   //タイトルからアイキャッチ生成関数
 //CSS・JavaScript縮小化ライブラリ
 if (!class_exists('MatthiasMullie\Minify\Minify')) {
-  $path = get_template_directory() . '/plugins/minify';
+  $path = get_cocoon_template_directory() . '/plugins/minify';
   require_once $path . '/minify-master/src/Minify.php';
   require_once $path . '/minify-master/src/CSS.php';
   require_once $path . '/minify-master/src/JS.php';
@@ -148,8 +148,8 @@ if ( function_exists( 'register_block_style' ) && is_block_editor_style_block_op
 }
 
 //Cocoon Blocks
-if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) && is_gutenberg_editor_enable() ):
-  require_once get_template_directory().'/blocks/plugin.php';
+if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) ):
+  require_once get_cocoon_template_directory().'/blocks/plugin.php';
 endif;
 
 

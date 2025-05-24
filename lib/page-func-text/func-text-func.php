@@ -8,6 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //関数テキストテーブルのバージョン
+global $wpdb;
 define('FUNCTION_TEXTS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
 define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_function_texts');
 //_v(FUNCTION_TEXTS_TABLE_NAME);

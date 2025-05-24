@@ -30,8 +30,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'ホームURL：', THEME_NAME ).home_url().PHP_EOL;
     $all .= __( 'コンテンツURL：', THEME_NAME ).get_remove_home_url(content_url()).PHP_EOL;
     $all .= __( 'インクルードURL：', THEME_NAME ).get_remove_home_url(includes_url()).PHP_EOL;
-    $all .= __( 'テンプレートURL：', THEME_NAME ).get_remove_home_url(get_template_directory_uri()).PHP_EOL;
-    $all .= __( 'スタイルシートURL：', THEME_NAME ).get_remove_home_url(get_stylesheet_directory_uri()).PHP_EOL;
+    $all .= __( 'テンプレートURL：', THEME_NAME ).get_remove_home_url(get_cocoon_template_directory_uri()).PHP_EOL;
+    $all .= __( 'スタイルシートURL：', THEME_NAME ).get_remove_home_url(get_cocoon_stylesheet_directory_uri()).PHP_EOL;
     //親テーマ
     $all .= __( '親テーマスタイル：', THEME_NAME ).get_remove_home_url(PARENT_THEME_STYLE_CSS_URL).PHP_EOL;
     //子テーマ
@@ -110,7 +110,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         $all .= __( 'style.cssサイズ：', THEME_NAME ).strlen($css).' '.__( 'バイト', THEME_NAME ).PHP_EOL;
 
         //functions.phpサイズ
-        $functions_file = get_stylesheet_directory().'/functions.php';
+        $functions_file = get_cocoon_stylesheet_directory().'/functions.php';
         if (file_exists($functions_file)) {
           $php = wp_filesystem_get_contents($functions_file);
           $all .= __( 'functions.phpサイズ：', THEME_NAME ).strlen($php).' '.__( 'バイト', THEME_NAME ).PHP_EOL;

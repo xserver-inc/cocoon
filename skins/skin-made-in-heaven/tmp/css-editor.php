@@ -10,7 +10,7 @@ $text = ['red', 'blue' , 'green'];
 for ($i=0; $i<count($text); $i++) {
   $color = get_theme_mod("hvn_rich_text_color{$i}_setting");
   if ($color) {
-    echo <<< EOF
+    echo <<<EOF
 .{$text[$i]},.bold-{$text[$i]} {color: {$color};}
 
 EOF;
@@ -31,7 +31,7 @@ for ($i=0; $i<count($marker); $i++) {
   $color = get_theme_mod("hvn_marker_color{$i}_setting", $marker[$i][1]);
   if ($color) {
     if (get_theme_mod('hvn_marker_color_set1_setting')) {
-      echo <<< EOF
+      echo <<<EOF
 .marker{$marker[$i][0]} {
   background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100%;
 }
@@ -42,7 +42,7 @@ for ($i=0; $i<count($marker); $i++) {
 
 EOF;
     } else {
-      echo <<< EOF
+      echo <<<EOF
 .marker{$marker[$i][0]} {
   background: {$color};
 }
@@ -92,7 +92,7 @@ if ($css) {
 
 
 if (get_theme_mod('hvn_inline_button_set3_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 
 [class*="inline-button"]:not([class*="inline-button-white-"]):after{
   --shadow: 3px;
@@ -128,7 +128,7 @@ if ($no) {
 }
 
 if ($css) {
-  echo <<< EOF
+  echo <<<EOF
 .editor-styles-wrapper .is-style-numeric-list-enclosed > li:before,
 .is-style-numeric-list-enclosed > li:before {
   {$css}
@@ -177,7 +177,7 @@ $no = get_theme_mod('hvn_icon_box_set1_setting');
 switch($no) {
   case 1:
     $id = implode(',', $id_array) ;
-    echo <<< EOF
+    echo <<<EOF
 {$id} {
   background-color: transparent;
   border-width: 1px;
@@ -190,7 +190,7 @@ EOF;
 
   case 2:
     $id =  implode(':before,', $id_array);
-    echo <<< EOF
+    echo <<<EOF
 {$id}:before{
   border: 0;
   color: #fff;
@@ -199,7 +199,7 @@ EOF;
 EOF;
 
     for ($i=0; $i<count($icon_box_class); $i++) {
-      echo <<< EOF
+      echo <<<EOF
 {$icon_box_class[$i][0]}:before {
   background-color: {$icon_box_class[$i][1]};
 }
@@ -216,7 +216,7 @@ EOF;
 $no = get_theme_mod('hvn_tab_box_set1_setting');
 switch($no) {
   case 1:
-    echo <<< EOF
+    echo <<<EOF
 .blank-box.bb-tab {
   margin-top: calc(var(--gap30) + 12.5px);
   padding-top: calc(var(--padding15) + 12.5px);
@@ -247,7 +247,7 @@ EOF;
     break;
 
   case 2:
-    echo <<< EOF
+    echo <<<EOF
 .blank-box.bb-tab {
   margin: 0 0 var(--gap30) 0;
   padding-top: calc(var(--padding15) + 1.8em);
@@ -279,7 +279,7 @@ EOF;
 $no = get_theme_mod('hvn_faq_set1_setting');
 switch($no) {
   case 1:
-    echo <<< EOF
+    echo <<<EOF
 .faq .faq-item-label {
   background-color: var(--cocoon-custom-question-color);
   color: #fff;
@@ -292,7 +292,7 @@ EOF;
     break;
 
   case 2:
-    echo <<< EOF
+    echo <<<EOF
 .faq .faq-item-label {
   background-color: var(--cocoon-custom-question-color);
   border-radius: 100%;
@@ -324,7 +324,7 @@ $colors = array_merge($colors, $default_colors);
 foreach ($colors as $color) {
   $slug  = $color['slug'];
   $color = $color['color'];
-  echo <<< EOF
+  echo <<<EOF
 html .body .is-style-hvn-timeline-mini.has-{$slug}-point-color:not(.not-nested-style) .timeline-item:before{
   border-color: {$color};
 }

@@ -17,7 +17,7 @@ function add_original_menu_in_admin_page() {
   //セパレーターの挿入
   add_admin_menu_separator(apply_filters('cocoon_add_theme_settings_page_separator_position', 29));
   //トップレベルメニューを追加する
-  add_menu_page(__( 'Cocoon 設定', THEME_NAME ), __( 'Cocoon 設定', THEME_NAME ), 'manage_options', THEME_SETTINGS_PAFE, 'add_theme_settings_page', get_template_directory_uri().'/images/admin-menu-logo.png', apply_filters('cocoon_add_theme_settings_page_position', 29) );
+  add_menu_page(__( 'Cocoon 設定', THEME_NAME ), __( 'Cocoon 設定', THEME_NAME ), 'manage_options', THEME_SETTINGS_PAFE, 'add_theme_settings_page', get_cocoon_template_directory_uri().'/images/admin-menu-logo.png', apply_filters('cocoon_add_theme_settings_page_position', 29) );
 
 
   //add_menu_page();

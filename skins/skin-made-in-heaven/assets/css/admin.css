@@ -35,7 +35,9 @@
   background-color: #ffebee;
 }
 
+
 /* カラム調整 */
+
 .fixed th {
   width: 100%!important;
 }
@@ -68,10 +70,10 @@
 /* 広告 */
 
 #tab-ads-content tr:nth-of-type(3) td label[for=pr_label_small_caption],
-#tab-ads-content tr:nth-of-type(3) td label[for=pr_label_small_caption] + br,
+#tab-ads-content tr:nth-of-type(3) td label[for=pr_label_small_caption]+br,
 #exclude-pr-label tr:nth-child(2),
 #exclude-pr-label .skin-control,
-#exclude-pr-label .skin-control + .tips {
+#exclude-pr-label .skin-control+.tips {
   display: none;
 }
 
@@ -79,7 +81,7 @@
 /* インデックス */
 
 #tab-index-page-content tr:nth-child(1) td label[for="front_page_type"],
-#tab-index-page-content tr:nth-child(1) td label[for="front_page_type"] + ul,
+#tab-index-page-content tr:nth-child(1) td label[for="front_page_type"]+ul,
 #tab-index-page-content tr:nth-child(1) td .tips:first-of-type,
 #tab-index-page-content tr:nth-child(1) td .toggle:last-of-type {
   display: none;
@@ -94,7 +96,7 @@
 }
 
 #tab-index-page-content .skin-control,
-#tab-index-page-content .skin-control + br {
+#tab-index-page-content .skin-control+br {
   display: none;
 }
 
@@ -102,8 +104,24 @@
 /* 投稿 */
 
 #cat-tag-page,
-#single-relation,
 #single-bread {
+  display: none;
+}
+
+#single-relation tr:nth-child(1),
+#single-relation tr:nth-child(2),
+#single-relation tr:nth-child(3),
+#single-relation tr:nth-child(5),
+#single-relation tr:nth-child(6),
+#single-relation tr:nth-child(7),
+#single-relation tr:nth-child(8),
+#single-relation tr:nth-child(9),
+#single-relation tr:nth-child(10) {
+  display: none;
+}
+
+#single-relation .skin-control,
+#single-relation .skin-control+p {
   display: none;
 }
 
@@ -112,6 +130,12 @@
 #single-nav tr:nth-child(3),
 #single-nav tr:nth-child(4),
 #single-nav tr:nth-child(6) {
+  display: none;
+}
+
+#single-nav [for=post_navi_exclude_category_ids],
+#single-nav .post_navi_exclude_category_ids-list,
+#single-nav .post_navi_exclude_category_ids-list+.tips {
   display: none;
 }
 
@@ -137,7 +161,7 @@
 /* 目次 */
 
 #tab-toc-page-content .skin-control,
-#tab-toc-page-content .skin-control + br {
+#tab-toc-page-content .skin-control+br {
   display: none;
 }
 
@@ -194,7 +218,7 @@
 /* コメント */
 
 #tab-comment-content .skin-control,
-#tab-comment-content .skin-control + .tips {
+#tab-comment-content .skin-control+.tips {
   display: none;
 }
 

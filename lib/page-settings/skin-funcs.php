@@ -118,7 +118,7 @@ function get_skin_infos(){
   $parent_dirs  = array();
 
   //子skinsフォルダ内を検索
-  $dir = get_stylesheet_directory().'/skins/';
+  $dir = get_cocoon_stylesheet_directory().'/skins/';
   if(is_child_theme() && file_exists($dir)){
     if (!is_parent_skins_only_enable()) {
       $child_dirs = get_skin_dirs($dir);
@@ -128,7 +128,7 @@ function get_skin_infos(){
 
   //親skinsフォルダ内を検索
   if ( !is_child_skins_only_enable() || !is_child_theme() ){
-    $dir = get_template_directory().'/skins/';
+    $dir = get_cocoon_template_directory().'/skins/';
     $parent_dirs = get_skin_dirs($dir);
   }
 
@@ -200,7 +200,7 @@ function get_skin_infos(){
 
           $file_url = local_to_url($style_css_file);
           $dir_url = local_to_url($dir);
-          if (is_child_theme() && strpos($file_url, get_stylesheet_directory_uri()) !== false) {
+          if (is_child_theme() && strpos($file_url, get_cocoon_stylesheet_directory_uri()) !== false) {
             $skin_name = '[Child]'.$skin_name;
           }
           //返り値の設定

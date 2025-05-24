@@ -240,7 +240,7 @@ EOM;
 add_action('wp_head', 'nagi_css_custom', 101);
 
 function nagi_custom_editor_styles() {
-  wp_enqueue_style('my-editor-style', get_template_directory_uri() . '/skins/nagi/editor-style.css');
+  wp_enqueue_style('my-editor-style', get_cocoon_template_directory_uri() . '/skins/nagi/editor-style.css');
 
   $site_key_color = get_site_key_color() ?: '#000000';
   $site_key_color_light = colorcode_to_rgb_css_code($site_key_color, 0.6);

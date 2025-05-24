@@ -1,7 +1,7 @@
 <?php
 
 // 同期パターンにブロックが組まれているか
-if ( !function_exists( 'has_radar_block_in_patterns' ) ):
+if ( !function_exists( 'has_block_in_patterns' ) ):
 function has_block_in_patterns($post_content, $block) {
   // `wp:block {"ref":ID}` のパターンを取得
   preg_match_all('/wp:block\s*\{\s*"ref"\s*:\s*(\d+)\s*\}/', $post_content, $matches);
@@ -72,6 +72,11 @@ endif;
 // 本文中に特定のブロックが使われているか
 if ( !function_exists( 'has_specific_blocks' ) ):
 function has_specific_blocks($post_content, $block_type_names) {
+  // ショートコードが使われている場合
+  if (preg_match('/\[radar_chart\s+.*?\]/', $post_content)) {
+    return true; // ショートコードが見つかった場合
+  }
+
   // 投稿内容をブロックごとに解析
   $blocks = parse_blocks($post_content);
 

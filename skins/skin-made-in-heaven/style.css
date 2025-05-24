@@ -7,7 +7,7 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.13.0
+ Version: 2.14.0
  Priority: 6900001000
 */
 
@@ -127,6 +127,7 @@
 **                            スキン制御追加
 **                            Cocoon 2.8.2.3対応
 **                            important見直し
+**        2.14.0  2025-05-18  仕様変更
 **
 *******************************************************************************/
 
@@ -170,7 +171,7 @@
 
 .hvn-radius {
   --border-radius10: 10px;
-  --border-radius100: 100px;
+  --border-radius100: 100vmax;
 }
 
 .main .toc {
@@ -318,7 +319,7 @@
 
 .body .a-wrap {
   background-color: transparent;
-  border: 0;
+  border: 0!important;
   margin: 0;
   opacity: 1!important;
   overflow: unset!important;
@@ -369,6 +370,10 @@ pre::-webkit-scrollbar-thumb,
 
 ::placeholder {
   color: var(--cocoon-thin-color);
+}
+
+*:focus {
+  outline: none;
 }
 
 
@@ -493,7 +498,7 @@ pre::-webkit-scrollbar-thumb,
 .notice-area-link .swiper-slide:after,
 .notice-area-link:not(:has(.swiper)) .notice-area-message:after {
   background-color: rgb(255 255 255 / 40%);
-  border-radius: 100px;
+  border-radius: 100vmax;
   content: var(--hvn-notice);
   margin-left: 5px;
   padding: 3px 10px;
@@ -903,7 +908,7 @@ span.fas.fa-history:before {
 
 .appeal-button,
 .ranking-item-link-buttons a,
-.cta-button a,
+.cta-button .btn,
 .key-btn,
 .comment-form .submit,
 .list-more-button,
@@ -927,14 +932,14 @@ span.fas.fa-history:before {
 
 .appeal-button,
 .ranking-item-link-buttons a,
-.cta-button a {
+.cta-button .btn {
   border-radius: 0;
 }
 
 .pager-links a:hover span,
 .appeal-button:hover,
 .ranking-item-link-buttons a:hover,
-.cta-button a:hover,
+.cta-button .btn:hover,
 .key-btn:hover,
 .comment-form .submit:hover,
 .list-more-button:hover,
@@ -947,7 +952,7 @@ span.fas.fa-history:before {
 }
 
 .ranking-item-link-buttons a:after,
-.cta-button a:after {
+.cta-button .btn:after {
   content: none;
 }
 
@@ -1956,7 +1961,7 @@ aside.widget .widget-title {
 .body .blogcard-snippet,
 .body .widget-entry-cards .card-snippet,
 .body .rss-entry-card-date {
-  display: none;
+  display: none!important;
 }
 
 .widget-entry-cards:after,
@@ -1975,7 +1980,6 @@ aside.widget .widget-title {
   display: flex;
   gap: var(--padding15);
   height: 100%;
-  overflow: hidden;
   width: 100%;
 }
 
@@ -1997,6 +2001,32 @@ aside.widget .widget-title {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--title-line);
+}
+
+
+/* 投稿日・更新日 */
+
+.widget-entry-card-date:not(.display-none) {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+}
+
+.widget-entry-card-date > span:nth-last-child(2) {
+  display: none;
+}
+
+.large-thumb .new-entry-card-content:not(:has(.new-entry-card-date.display-none)),
+.large-thumb .popular-entry-card-content:not(:has(.popular-entry-card-date.display-none)) {
+  padding: 0 0 20px;
+}
+
+.large-thumb-on .widget-entry-card-date {
+  display: none;
 }
 
 
@@ -2038,7 +2068,7 @@ aside.widget .widget-title {
 }
 
 .border-partition:not(.swiper) .a-wrap {
-  border-bottom: 1px dotted var(--border-color);
+  border-bottom: 1px dotted var(--border-color)!important;
   padding-bottom: var(--padding15);
 }
 
@@ -2047,7 +2077,7 @@ aside.widget .widget-title {
 }
 
 .border-partition .a-wrap:last-of-type {
-  border-bottom: 0;
+  border-bottom: 0!important;
   padding-bottom: 0;
 }
 
@@ -2075,7 +2105,7 @@ aside.widget .widget-title {
 }
 
 .body .large-thumb-on .card-content {
-  background: rgb(0 0 0 / 30%);
+  background: rgb(0 0 0 / 30%)!important;
   display: grid;
   height: 100%;
   margin: 0!important;
@@ -2319,7 +2349,7 @@ aside.widget .widget-title {
 }
 
 .widget-entry-cards.ranking-visible .card-thumb:before {
-  content: none;
+  content: none!important;
 }
 
 .body .widget-entry-cards.ranking-visible .a-wrap:before {
@@ -2336,18 +2366,18 @@ aside.widget .widget-title {
 /* PV表示 */
 
 .body .popular-entry-cards .widget-entry-card-pv {
-  background-color: unset;
+  background-color: unset!important;
   bottom: 0;
-  color: var(--s-text-color);
+  color: var(--s-text-color)!important;
   font-size: var(--cocoon-text-size-s);
   font-style: normal;
   line-height: 1;
   margin: 0;
-  opacity: 1;
+  opacity: 1!important;
   padding: 0;
-  position: absolute;
-  top: unset;
-  right: 0;
+  position: absolute!important;
+  top: unset!important;
+  left: 0;
 }
 
 .widget-entry-card-pv:before {
@@ -2513,7 +2543,7 @@ aside.widget .widget-title {
   color: var(--main-color);
 }
 
-.body .box-menu-icon > * {
+.body .box-menus .box-menu-icon * {
   margin: 0;
 }
 
@@ -2528,6 +2558,10 @@ aside.widget .widget-title {
 
 .box-menu:hover {
   background-color: var(--hover-color);
+}
+
+.nwa .box-menu:nth-last-child(1):nth-child(odd) {
+  width: 100%;
 }
 
 
@@ -2829,7 +2863,6 @@ select {
   background-color: #fff;
   color: #333;
   display: block;
-  outline: 0;
 }
 
 .body .widget_archive li,
@@ -2909,7 +2942,7 @@ select {
 .body .widget_pages a {
   align-items: center;
   background-color: rgb(204 204 204 / 15%);
-  border-radius: 50px;
+  border-radius: 100vmax;
   color: var(--cocoon-text-color);
   display: flex;
   font-size: 16px;
@@ -3035,7 +3068,6 @@ select {
 }
 
 .body .search-edit {
-  outline: none;
   padding: 10px;
 }
 
@@ -3659,7 +3691,6 @@ div.search-form {
   line-height: unset;
   margin: unset;
   min-height: unset;
-  outline: unset;
   padding: 0!important;
   position: relative;
   text-align: unset;
@@ -3748,7 +3779,7 @@ div.search-form {
 }
 
 .label-box-label:after {
-  background-color: var(--content-bgcolor);
+  background-color: var(--content-bgcolor, #fff);
   content: '';
   display: block;
   height: 1px;
@@ -4053,6 +4084,9 @@ div.search-form {
   }
   .body .box-menus .box-menu {
     width: 50%;
+  }
+  .body .box-menus .box-menu:nth-last-child(1):nth-child(odd) {
+    width: 100%;
   }
   .body .container .column-wrap {
     gap: var(--gap30);

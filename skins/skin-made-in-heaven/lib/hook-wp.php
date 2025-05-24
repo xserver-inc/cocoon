@@ -8,10 +8,10 @@ if (!defined('ABSPATH')) exit;
 add_action('customize_register', function($wp_customize) {
   $wp_customize->add_panel(
     'hvn_cocoon',
-    array(
+    [
       'title'     => __('メイド・イン・ヘブン設定', THEME_NAME),
       'priority'  => 300,
-    )
+    ]
   );
 
   hvn_color($wp_customize);
@@ -31,12 +31,14 @@ add_action('admin_bar_menu', function($wp_admin_bar) {
   $wp_admin_bar->remove_menu('search');
 
   if (is_admin_tool_menu_visible() && is_user_administrator()) {
-    $wp_admin_bar->add_menu(array(
-      'parent'  => 'dashboard_menu',
-      'id'      => 'dashboard_menu-logout',
-      'title'   => __('ログアウト', THEME_NAME),
-      'href'    => wp_logout_url()
-    ));
+    $wp_admin_bar->add_menu(
+      [
+        'parent'  => 'dashboard_menu',
+        'id'      => 'dashboard_menu-logout',
+        'title'   => __('ログアウト', THEME_NAME),
+        'href'    => wp_logout_url()
+      ]
+    );
   }
 }, 10000);
 
@@ -198,7 +200,7 @@ add_action('admin_footer-edit.php', function() {
       // ディスクリプション
       $elm = $(':input[name="the_page_meta_description"]', $edit_row);
 
-      var $the_page_meta_description = $('.column-the_page_meta_description', $post_row).html();
+      var $the_page_meta_description = $('.column-the_page_meta_description', $post_row).text();
       $elm.val($the_page_meta_description);
 
       // 文字数表示
@@ -231,7 +233,7 @@ add_action('save_post', function($post_id) {
     return;
   }
 
-  $_POST += array("{$slug}_edit_nonce" => '');
+  $_POST += ["{$slug}_edit_nonce" => ''];
   if (!wp_verify_nonce($_POST["{$slug}_edit_nonce"], 'quick_edit_action')) {
     return;
   }
@@ -292,7 +294,7 @@ add_filter('widget_title', function($title) {
 //  Gutenbergエディターメニュー追加
 //******************************************************************************
 add_action('init', function() {
-
+  // 独自スタイル追加
   $block_styles = [
     // タイムライン
     [
@@ -417,6 +419,19 @@ add_action('init', function() {
   foreach ($block_styles as $blockstyle) {
     register_block_style($blockstyle['name'], $blockstyle['properties']);
   }
+
+  // 独自パターン追加
+  $path = url_to_local(HVN_SKIN_URL) . "assets/pattern/*.json";
+  $files = glob($path);
+
+  foreach ($files as $i => $file) {
+    $json =  json_decode(file_get_contents($file), true);
+    register_block_pattern(
+      "heaven/pattern{$i}",
+      $json,
+    );
+  }
+  register_block_pattern_category('heaven', ['label' => __('メイド・イン・ヘブン', THEME_NAME)]);
 });
 
 
@@ -429,7 +444,7 @@ add_action('wp_enqueue_scripts', function() {
   hvn_editor_css();
   hvn_custom_css();
   wp_dequeue_style('scrollhint-style');
-  wp_enqueue_script('scrollhint-js', get_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array('jquery'), false, true);
+  wp_enqueue_script('scrollhint-js', get_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', ['jquery'], false, true);
 }, 999);
 
 
@@ -459,7 +474,7 @@ add_action('customize_controls_enqueue_scripts', function() {
 //******************************************************************************
 //  クラシックエディターCSS追加
 //******************************************************************************
-add_filter('tiny_mce_before_init',function($settings) {
+add_filter('tiny_mce_before_init', function($settings) {
   $settings['content_style'] = hvn_color_css();
 
   return $settings;
@@ -684,7 +699,7 @@ add_filter('comment_form_field_comment', function($content) {
       $img = get_theme_mod("hvn_comment_img{$i}_setting");
       if ($img) {
         $url = wp_get_attachment_url($img);
-        $html  .= <<< EOF
+        $html  .= <<<EOF
 <div class="hvn-comment-icon">
   <figure><img src="{$url}"></figure>
   <input type="radio" name="post-icon" value="{$i}" {$checked}>
@@ -758,15 +773,13 @@ add_action('manage_comments_custom_column', function($column_name, $comment_id) 
 
 // アバター変更
 add_filter('get_avatar' , function($avatar, $comment) {
-  if (defined('HVN_OPTION') && HVN_OPTION) {
-    if (get_theme_mod('hvn_comment_setting')) {
-      if (!is_admin() && isset($comment->comment_ID)) {
-        $no = get_comment_meta($comment->comment_ID, 'post-icon',true);
-        if ($no) {
-          $img = wp_get_attachment_url(get_theme_mod("hvn_comment_img{$no}_setting"));
-          if ($img) {
-            $avatar = "<img src={$img} class=avatar>";
-          }
+  if (get_theme_mod('hvn_comment_setting')) {
+    if (!is_admin() && isset($comment->comment_ID)) {
+      $no = get_comment_meta($comment->comment_ID, 'post-icon',true);
+      if ($no) {
+        $img = wp_get_attachment_url(get_theme_mod("hvn_comment_img{$no}_setting"));
+        if ($img) {
+          $avatar = "<img src={$img} class=avatar>";
         }
       }
     }
@@ -774,24 +787,6 @@ add_filter('get_avatar' , function($avatar, $comment) {
 
   return $avatar;
 }, 100001, 2);
-
-
-//******************************************************************************
-//  独自パターン追加
-//******************************************************************************
-add_action('init',function() {
-  $path = url_to_local(HVN_SKIN_URL) . "assets/pattern/*.json";
-  $files = glob($path);
-
-  foreach ($files as $i => $file) {
-    $json =  json_decode(file_get_contents($file), true);
-    register_block_pattern(
-      "heaven/pattern{$i}",
-      $json,
-    );
-  }
-  register_block_pattern_category('heaven', ['label' => __('メイド・イン・ヘブン', THEME_NAME)]);
-});
 
 
 //******************************************************************************
@@ -834,7 +829,7 @@ add_filter('widget_tag_cloud_args', function($args, $instance) {
 add_filter('wp_tag_cloud', function($return, $args) {
   if (isset($args['drop']) && $args['drop'] == 'on'){
     $id = get_query_var('tag_id');
-    $tags = get_tags(array('orderby'=> 'count', 'order' => 'DESC'));
+    $tags = get_tags(['orderby'=> 'count', 'order' => 'DESC']);
 
     ob_start();
     echo '<select aria-label="' . __('選択', THEME_NAME) . '" onchange="document.location.href=this.options[this.selectedIndex].value;"><option value="" selected="selected">タグを選択</option>';
@@ -897,3 +892,73 @@ add_filter('the_author_box_name', function($name, $id) {
   }
   return $name;
 }, 10, 2);
+
+
+//******************************************************************************
+//  表示順を設定
+//******************************************************************************
+add_action('pre_get_posts', function($query) {
+  // 一覧ページのみ並び替え
+  if (is_admin() || !is_home() || !$query->is_main_query()) {
+    return;
+  }
+
+  if (get_theme_mod('hvn_orderby_option_setting')) {
+    // cooki更新
+    $ck = isset($_COOKIE['orderby-switch']) ? $_COOKIE['orderby-switch'] : null;
+    if (isset($_GET['orderby-switch'])) {
+      setcookie('orderby-switch', esc_html($_GET['orderby-switch']), time() + DAY_IN_SECONDS, '/');
+    }
+
+    // 順序設定
+    $gt = isset($_GET['orderby-switch']) ? $_GET['orderby-switch'] : null;
+    $st = empty($ck) ? $gt : $ck;
+
+    switch($st) {
+      // 人気順
+      case 'popular':
+        $records = get_access_ranking_records('all', 3000, 'post');
+        $post_ids = [];
+        foreach ($records as $post) {
+          $post_ids[] = $post->ID;
+        }
+        $query->set('post__in', $post_ids);
+        $query->set('orderby', 'post__in');
+        break;
+
+      // コメント数
+      case 'comment':
+        $query->set('orderby', [
+          'comment_count' => 'DESC',
+          'date'          => 'DESC'
+        ]);
+        break;
+
+      default:
+        $query->set('orderby', $st);
+    }
+  }
+});
+
+
+//******************************************************************************
+//  投稿アーカイブを無効
+//******************************************************************************
+add_action('template_redirect', function() {
+  if (is_author()) {
+    wp_redirect(home_url());
+    exit;
+  }
+});
+
+
+
+//******************************************************************************
+// ページ送りナビ除外
+//******************************************************************************
+add_filter('theme_mod_post_navi_exclude_category_ids', function($mod) {
+  if (!is_admin()) {
+    $mod =  get_archive_exclude_category_ids();
+  }
+  return $mod;
+});

@@ -41,7 +41,7 @@
 
 .toc-list > li::before {
   background-color: var(--main-color);
-  border-radius: 100%;
+  border-radius: 50%;
   color: var(--text-color)!important;
   content: counter(toc-number);
   font-size: 12px;

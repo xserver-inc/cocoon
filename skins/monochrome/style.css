@@ -1,9 +1,7 @@
 /*
   Skin Name: モノクロ
   Description: モノクロを基調としています。
-  Skin URI: https://yurukei-career.com/cocoon-styling-mono/
   Author: yurukei20
-  Author URI: https://yurukei-career.com
   Screenshot URI:https://im-cocoon.net/wp-content/uploads/monochrome.png
   Version: 0.0.1
   Priority: 9200001000
@@ -23,7 +21,6 @@
 	margin-left: 20px;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	max-height: 100px;
 }
 /* .logo {
 	text-align: left;

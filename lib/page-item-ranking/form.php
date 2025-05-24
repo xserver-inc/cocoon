@@ -173,7 +173,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
         </div>
         <div class="ranking-item-link-tag">
           <?php
-          generate_label_tag('', __('ページURL', THEME_NAME) );
+          generate_label_tag('', __('公式ページURL', THEME_NAME) );
           echo '<br>';
           generate_textbox_tag('item_ranking['.$i.'][link_url]', $link_url,  __('http://',THEME_NAME ));
           generate_tips_tag(__( '公式ページ等のURLを入力してください。「リンクタグ」と双方入力されている場合はこちらが優先されます。', THEME_NAME ));

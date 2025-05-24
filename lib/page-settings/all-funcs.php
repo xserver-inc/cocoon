@@ -185,7 +185,7 @@ endif;
 
 if ( !function_exists( 'get_default_site_icon_url' ) ):
 function get_default_site_icon_url(){
-  return get_template_directory_uri().'/images/site-icon.png';
+  return get_cocoon_template_directory_uri().'/images/site-icon.png';
 }
 endif;
 
@@ -249,7 +249,6 @@ function is_all_thumbnail_visible(){
 endif;
 
 //日付フォーマット
-define('SITE_DATE_FORMAT', __( 'Y.m.d', THEME_NAME ));
 define('OP_SITE_DATE_FORMAT', 'site_date_format');
 if ( !function_exists( 'get_site_date_format' ) ):
 function get_site_date_format(){

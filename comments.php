@@ -87,7 +87,7 @@ if ( is_comment_open() || have_comments() ):
   );
 
   if (is_comment_open()) {
-     echo '<aside class="comment-form">';
+     echo '<aside class="comment-form-wrap">';
     if (!is_amp()) {
       if (is_comment_form_display_type_toggle_button()) {?>
         <button type="button" id="comment-reply-btn" class="comment-btn key-btn"><?php echo apply_filters('cocoon_comment_button_caption', __('コメントを書き込む', THEME_NAME)); ?></button>

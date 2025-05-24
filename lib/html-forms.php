@@ -1110,7 +1110,7 @@ function generate_popular_entries_tag($atts){
         $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
       }
       ?>
-  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>">
+  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr(escape_shortcodes($title)); ?>">
     <div <?php post_class( array('post-'.$post->ID, 'popular-entry-card', 'widget-entry-card', 'e-card', 'cf'), $post->ID ); ?>>
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php echo $post_thumbnail_img; ?>
@@ -1121,7 +1121,7 @@ function generate_popular_entries_tag($atts){
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
-        <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
+        <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo escape_shortcodes($title);?></div>
         <?php echo $snippet_tag; ?>
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
@@ -1348,13 +1348,12 @@ function generate_widget_entries_tag($atts){
   <?php if ( $horizontal ) : ?>
     <div class="swiper-wrapper">
   <?php endif; ?>
-  <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
     <?php //エントリーカードリンクタグの生成
     $atts = array(
       'prefix' => $prefix,
       'url' => get_the_permalink(),
-      'title' => get_the_title(),
+      'title' => escape_shortcodes(get_the_title()),
       'thumb_size' => $thumb_size,
       'type' => $type,
       'horizontal' => $horizontal,
@@ -1367,13 +1366,15 @@ function generate_widget_entries_tag($atts){
       );
     }
 
-    echo get_widget_entry_card_link_tag($atts); ?>
+    echo get_widget_entry_card_link_tag($atts);
+    ?>
   <?php endwhile;
+    set_query_var('count', 1); // 記事がある場合は 1 を設定
   else :
     echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
+    set_query_var('count', 0); // 記事がない場合は 0 を設定
   endif; ?>
   <?php wp_reset_postdata(); ?>
-  <?php //wp_reset_query(); ?>
   <?php if ( $horizontal ) : ?>
     </div>
       <div class="swiper-button-prev"></div>
@@ -1635,7 +1636,7 @@ function get_widget_entry_card_link_tag($atts){
   $target_attr = $target ? ' target="' . esc_attr($target) . '"' : '';
 
   ob_start(); ?>
-  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr($title); ?>"<?php echo $target_attr; ?>>
+  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr(escape_shortcodes($title)); ?>"<?php echo $target_attr; ?>>
     <div <?php echo $div_class; ?>>
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
@@ -1934,8 +1935,8 @@ function generate_info_list_tag($atts){
           $date = $update_date;
         }
       ?>
-        <div class="info-list-item">
-          <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php the_title();?></a></div>
+        <div <?php post_class('info-list-item'); ?>>
+          <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php echo escape_shortcodes(get_the_title());?></a></div>
           <?php do_action('info_list_item_meta_before'); ?>
           <div class="info-list-item-meta">
             <span class="info-list-item-date"><?php echo $date; ?></span>

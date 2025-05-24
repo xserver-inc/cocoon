@@ -39,6 +39,9 @@ function page_custom_box_view() {
     $taxonomies = get_object_taxonomies($post->post_type, 'objects');
 
     foreach ($taxonomies as $taxonomy) {
+      if ($taxonomy->name !== 'category') {
+        continue;
+      }
       $terms = get_the_terms($post->ID, $taxonomy->name);
       if (!empty($terms) && !is_wp_error($terms)) {
         foreach ($terms as $term) {

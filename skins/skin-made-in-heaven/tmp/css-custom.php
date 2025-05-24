@@ -24,7 +24,7 @@ global $_HVN_EYECATCH;
 //  ダークモード
 //******************************************************************************
 if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') != 'none')) {
-  echo <<< EOF
+  echo <<<EOF
 .body {
   visibility: hidden;
 }
@@ -32,7 +32,7 @@ EOF;
 
 }
 
-echo <<< EOF
+echo <<<EOF
 .body .is-auto-horizontal {
   --swiper-pagination-bullet-inactive-color: var(--title-color);
 }
@@ -147,7 +147,7 @@ for ($i=1; $i<=$tab_cnt + 1; $i++) {
 }
 $id = implode(',', $id_array ) ;
 
-echo <<< EOF
+echo <<<EOF
 {$id} {
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
@@ -162,7 +162,7 @@ for ($i=1; $i<=$tab_cnt + 1; $i++) {
 }
 $id = implode(',', $id_array ) ;
 
-echo <<< EOF
+echo <<<EOF
 {$id} {
   background-color: var(--main-color);
   bottom: -11px;
@@ -182,7 +182,7 @@ for ($i=1; $i<=$tab_cnt + 1; $i++) {
 }
 $id = implode(',', $id_array ) ;
 
-echo <<< EOF
+echo <<<EOF
 {$id} {
   animation: none;
   display: flex;
@@ -234,7 +234,7 @@ EOF;
 //  テーブルの1列目を固定対策
 //******************************************************************************
 if (is_responsive_table_first_column_sticky_enable()) {
-  echo <<< EOF
+  echo <<<EOF
 .scrollable-table.stfc-sticky table:not(.wp-calendar-table) tr > *:first-child {
   background-color: unset;
   color: unset;
@@ -280,7 +280,7 @@ $text = 'var(--main-color)';
 $color = get_header_background_color();
 if ($color) {
   $text = '#ffffff';
-  echo <<< EOF
+  echo <<<EOF
 .mobile-menu-buttons {
   background-color: {$color};
 }
@@ -294,7 +294,7 @@ if ($color) {
   $text = $color;
 }
 
-echo <<< EOF
+echo <<<EOF
 .mobile-menu-buttons .menu-button > a,
 .mobile-menu-buttons .menu-caption,
 .mobile-menu-buttons .menu-icon{
@@ -318,7 +318,7 @@ if (is_dark_hexcolor($footer_color)) {
 }
 
 
-echo <<< EOF
+echo <<<EOF
 .footer-bottom,
 .footer-bottom a,
 .footer-bottom a:hover {
@@ -345,7 +345,7 @@ EOF;
 $no = get_theme_mod('hvn_navi_setting');
 if ($no) {
   $o_array = ['', 'center', 'left'];
-  echo <<< EOF
+  echo <<<EOF
 .navi-in a:hover {
   background-color: unset;
 }
@@ -380,7 +380,7 @@ EOF;
 //******************************************************************************
 //  カード枠
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 .body :is(.list, .is-auto-horizontal) .e-card {
   color: var(--title-color);
 }
@@ -402,7 +402,7 @@ EOF;
 //******************************************************************************
 //  コンテンツ枠
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 .body.hvn-content-border {
   --content-bgcolor: var(--dark-content-bgcolor, var(--hvn-white-color));
 }
@@ -434,7 +434,7 @@ EOF;
 //******************************************************************************
 //  縦型カード3列
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 @media (width > 834px) {
   [class*=front-page-type-category] .ect-3-columns .a-wrap:nth-of-type(4) {
     display: none;
@@ -449,7 +449,7 @@ EOF;
 //******************************************************************************
 if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') != 'none')) {
   if (!is_admin()) {
-    echo <<< EOF
+    echo <<<EOF
 .loader-bg {
   background-color: var(--body-color);
   display: grid;
@@ -473,7 +473,7 @@ EOF;
 if (get_theme_mod('hvn_card_expansion_setting')) {
 
   // カード2列
-  $css1 =<<< EOF
+  $css1 =<<<EOF
 .list {
   --column: 2;
 }
@@ -487,7 +487,7 @@ if (get_theme_mod('hvn_card_expansion_setting')) {
 EOF;
 
   // 大きなカード（先頭のみ）
-  $css2 =<<< EOF
+  $css2 =<<<EOF
 .front-top-page .list .a-wrap:first-child {
   grid-column: 1 / 3;
   grid-row: 1 / 3;
@@ -503,7 +503,7 @@ EOF;
 EOF;
 
   // 縦型カード2、3列+カテゴリーごと（2、3カラム）
-  $css3 =<<< EOF
+  $css3 =<<<EOF
 .body .list-new-entries .card-content,
 .body .list-popular .card-content {
   padding: 0 0 20px;
@@ -533,20 +533,6 @@ EOF;
   width: 100%;
 }
 
-.front-top-page .post-date:before {
-  content: '\\f017';
-  font-family: 'Font Awesome 5 Free';
-  margin-right: 3px;
-}
-
-.front-top-page .post-update:before {
-  content: '\\f2f1';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  margin-right: 3px;
-}
-
-
 /* 人気記事なし */
 
 .list.widget-entry-cards p {
@@ -557,7 +543,7 @@ EOF;
 EOF;
 
   // 大きなカード
-  $css4 =<<< EOF
+  $css4 =<<<EOF
 .body.hvn-card-border .list.ect-big-card {
   background-color: var(--dark-content-bgcolor, var(--hvn-white-color));
   border-radius: var(--border-radius10);
@@ -632,7 +618,7 @@ if (get_theme_mod('hvn_category_color_setting')) {
     $color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
     $rgb = hvn_color_mix_rgb($color, 0.25);
 
-    echo <<< EOF
+    echo <<<EOF
 :root {
   --category-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};
 }
@@ -655,7 +641,7 @@ if (get_theme_mod('hvn_category_color_setting')) {
 EOF;
 
     if (get_theme_mod('hvn_header_wave_setting')) {
-      echo <<< EOF
+      echo <<<EOF
 .hvn-wave-category {
   --body-rgb-color: var(--dark-category-color, var(--category-color));
   display: block;
@@ -675,7 +661,7 @@ EOF;
 //  「新着記事」タブ表示
 //******************************************************************************
 if (!get_theme_mod('hvn_front_none_setting', true)) {
-  echo <<< EOF
+  echo <<<EOF
 .body .index-tab-button[for="index-tab-1"],
 .body .tab-cont.tb1 {
   display: none;
@@ -690,7 +676,7 @@ EOF;
 //******************************************************************************
 switch(get_theme_mod('hvn_toc_style_setting')) {
   case 1:
-    echo <<< EOF
+    echo <<<EOF
 .main .toc {
   border: 1px solid var(--main-color);
   padding: 0;
@@ -713,7 +699,7 @@ EOF;
     break;
 
   case 2:
-    echo <<< EOF
+    echo <<<EOF
 .main .toc {
   background-clip: padding-box;
   background-color: rgb(204 204 204 / 15%);
@@ -736,7 +722,7 @@ EOF;
 //  目次ハイライト
 //******************************************************************************
 if (get_theme_mod('hvn_toc_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .hvn-scroll-toc .sidebar-scroll .toc-content li.current:before {
   color: var(--main-color);
 }
@@ -753,7 +739,7 @@ EOF;
 //  目次ボタン
 //******************************************************************************
 if (get_theme_mod('hvn_toc_fix_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .hvn-modal {
   display: none;
   height: 100%;
@@ -852,7 +838,7 @@ EOF;
 //  通知エリア固定
 //******************************************************************************
 if (get_theme_mod('hvn_notice_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .notice-area {
   position: sticky;
   top: 0;
@@ -867,7 +853,7 @@ EOF;
 //  通知メッセージ横スクロール
 //******************************************************************************
 if (get_theme_mod('hvn_notice_scroll_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .notice-area-message .swiper .swiper-wrapper {
   transition-timing-function: linear;
 }
@@ -880,7 +866,7 @@ EOF;
 //  いいねボタン
 //******************************************************************************
 if (get_theme_mod('hvn_like_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .list .like {
   bottom: 0;
   display: flex;
@@ -931,7 +917,7 @@ EOF;
 //  評価スター・ランキングハート
 //******************************************************************************
 if (get_theme_mod('hvn_star_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .rating-star {
   gap: 2px;
 }
@@ -962,7 +948,7 @@ EOF;
 //  サムネイル画像の比率変更
 //******************************************************************************
 if (get_theme_mod('hvn_thumb_option_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .body {
   --aspect-ratio: var(--card-ratio);
 }
@@ -979,7 +965,7 @@ EOF;
 //  横型カードオートプレイ
 //******************************************************************************
 if (get_theme_mod('hvn_swiper_auto_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .body.hvn .swiper-pagination {
   bottom: 0;
 }
@@ -1010,7 +996,7 @@ EOF;
 //  縦アイキャッチ背景ぼかし
 //******************************************************************************
 if ($_HVN_EYECATCH) {
-  echo <<< EOF
+  echo <<<EOF
 .eye-catch img {
   margin: 0 auto;
   min-width: unset;
@@ -1039,7 +1025,7 @@ EOF;
 //  アコーディオン化
 //******************************************************************************
 if (get_theme_mod('hvn_accordion_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .body :is(.widget_pages, .body .widget_archive, .widget_categories) ul {
   display: block;
   margin: 0;
@@ -1082,7 +1068,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
 EOF;
 }
 
-echo <<< EOF
+echo <<<EOF
 button.sub-item {
   background-color: transparent;
   border: 1px solid #ccc;
@@ -1123,7 +1109,7 @@ EOF;
 //  プロフィール背景画像
 //******************************************************************************
 if (wp_get_attachment_url(get_theme_mod('hvn_prof_setting'))) {
-  echo <<< EOF
+  echo <<<EOF
 .body .nwa .author-thumb {
   background: var(--prof-image) no-repeat center;
   background-size: cover;
@@ -1152,7 +1138,7 @@ if (defined('HVN_OPTION') && HVN_OPTION) {
 //  並び替え選択
 //******************************************************************************
   if (get_theme_mod('hvn_orderby_option_setting')) {
-    echo <<< EOF
+    echo <<<EOF
 .orderby {
   align-items: center;
   display: flex;
@@ -1174,22 +1160,23 @@ if (defined('HVN_OPTION') && HVN_OPTION) {
 
 EOF;
   }
+}
 
 
 //******************************************************************************
 //  タイトル・説明文表示
 //******************************************************************************
-  if (get_theme_mod('hvn_tcheck_option_setting')) {
-    $n_title= get_theme_mod('hvn_title_new_option_setting' ,'NewPost');
-    $n_sub  = get_theme_mod('hvn_title_new_sub_option_setting' ,'新着・更新された記事です');
+if (get_theme_mod('hvn_tcheck_option_setting')) {
+  $n_title= get_theme_mod('hvn_title_new_option_setting' ,'NewPost');
+  $n_sub  = get_theme_mod('hvn_title_new_sub_option_setting' ,'新着・更新された記事です');
 
-    $p_title= get_theme_mod('hvn_title_popular_option_setting' ,'Popular');
-    $p_sub  = get_theme_mod('hvn_title_popular_sub_option_setting' ,'本日読まれている記事です');
+  $p_title= get_theme_mod('hvn_title_popular_option_setting' ,'Popular');
+  $p_sub  = get_theme_mod('hvn_title_popular_sub_option_setting' ,'本日読まれている記事です');
 
-    $c_title= get_theme_mod('hvn_title_category_option_setting','Category');
-    $c_sub  = get_theme_mod('hvn_title_category_sub_option_setting' ,'カテゴリーから記事を探す');
+  $c_title= get_theme_mod('hvn_title_category_option_setting','Category');
+  $c_sub  = get_theme_mod('hvn_title_category_sub_option_setting' ,'カテゴリーから記事を探す');
 
-    echo <<< EOF
+  echo <<<EOF
 :root {
   --main-font-size: 40px;
   --sub-font-size: 14px;
@@ -1253,14 +1240,14 @@ EOF;
 }
 
 EOF;
-  }
+}
 
 
 //******************************************************************************
 //  コメント
 //******************************************************************************
-  if (get_theme_mod('hvn_comment_setting')) {
-    echo <<< EOF
+if (get_theme_mod('hvn_comment_setting')) {
+  echo <<<EOF
 .hvn-comment {
   display: flex;
   gap: 5px;
@@ -1286,7 +1273,6 @@ EOF;
 }
 
 EOF;
-  }
 }
 
 
@@ -1300,7 +1286,7 @@ EOF;
 //  波線
 //******************************************************************************
 if (get_theme_mod('hvn_header_wave_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .waves {
   bottom: -1px;
   height: 50px;
@@ -1351,7 +1337,7 @@ EOF;
 //  ヘッダーロゴ非表示
 //******************************************************************************
 if (!get_theme_mod('hvn_header_option_setting', true)) {
-  echo <<< EOF
+  echo <<<EOF
 .front-top-page .header {
   display: none;
 }
@@ -1365,7 +1351,7 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_header_setting', 'none') == 'none') return;
 
-echo <<< EOF
+echo <<<EOF
 :root {
   --height: calc(100svh - var(--ah));
 }
@@ -1410,86 +1396,8 @@ echo <<< EOF
   z-index: 1;
 }
 
-.scrolldown {
-  color: #fff;
-  height: fit-content;
-  inset: 0;
-  letter-spacing: 0.05em;
-  margin: auto 0 40px;
-  text-align: center;
-  position: absolute;
-  z-index: 1;
-}
-
-.scrolldown span{
-  cursor: pointer;
-}
 
 EOF;
-
-
-//******************************************************************************
-//  Scrollボタン
-//******************************************************************************
-switch(get_theme_mod('hvn_header_scroll_setting')) {
-  case '1': 
-    echo <<< EOF
-.scrolldown:after {
-  animation: pathmove 1.4s ease-in-out infinite;
-  background-color: #fff;
-  content: '';
-  display: block;
-  height: 50px;
-  left: 50%;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 1px;
-}
-
-@keyframes pathmove {
-  0% {
-    height: 0;
-    opacity: 0;
-    top: 25px;
-  }
-  30% {
-    height: 30px;
-    opacity: 1;
-  }
-  100% {
-    height: 0;
-    opacity: 0;
-    top: 65px;
-  }
-}
-
-EOF;
-    break;
-
-  case '2':
-    echo <<< EOF
-.scrolldown:after {
-  animation: pathmove 1.4s ease-in-out infinite alternate;
-  content: '\\f078';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-}
-
-@keyframes pathmove {
-  from {
-    bottom: -20px;
-  }
-  to {
-    bottom: -50px;
-  }
-}
-
-EOF;
-}
 
 
 //******************************************************************************
@@ -1497,7 +1405,7 @@ EOF;
 //******************************************************************************
 $font_size = get_theme_mod('hvn_appea_font_size_setting', 40);
 
-echo <<< EOF
+echo <<<EOF
 .hvn-header .message {
   font-size: {$font_size}px;
 }
@@ -1509,7 +1417,7 @@ EOF;
 //  テキスト縦書き
 //******************************************************************************
 if (get_theme_mod('hvn_header_vertival_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .message div {
   border: 1px solid #fff;
   padding: 1em 0;
@@ -1526,7 +1434,7 @@ EOF;
 //  ヘッダーロゴ表示
 //******************************************************************************
 if (get_theme_mod('hvn_header_logo_setting')) {
-  echo <<< EOF
+  echo <<<EOF
 .front-top-page .header {
   display: none;
 }
@@ -1549,7 +1457,7 @@ switch($no) {
     break;
 
   case 4:
-    echo <<< EOF
+    echo <<<EOF
 .hvn-header video,
 .hvn-swiper {
   filter: grayscale(1);
@@ -1573,7 +1481,7 @@ if ($color && $opacity) {
   $color = 'unset';
 }
 
-echo <<< EOF
+echo <<<EOF
 .hvn-mask {
   background-color: {$color};
   background-image: {$url};
@@ -1597,7 +1505,7 @@ if ($zoom != '0') {
     $e_zoom = 1;
   }
 
-  echo <<< EOF
+  echo <<<EOF
 :root {
   --s-zoom: {$s_zoom};
   --e-zoom: {$e_zoom};
@@ -1627,7 +1535,7 @@ EOF;
 //******************************************************************************
 //  スライド切り替え
 //******************************************************************************
-echo <<< EOF
+echo <<<EOF
 :root {
   --ani: 2s cubic-bezier(.4, 0, .2, 1) 0s forwards;
 }
@@ -1636,6 +1544,7 @@ echo <<< EOF
   margin: 0;
   padding: 0;
   position: relative;
+  z-index: 0;
 }
 
 .hvn-swiper img {
@@ -1646,6 +1555,7 @@ echo <<< EOF
   width: 100%;
 }
 
+.swiper-wrapper .img1,
 .swiper-wrapper .img2 {
   left: 0;
   position: absolute;
@@ -1666,7 +1576,7 @@ EOF;
 switch(get_theme_mod('hvn_header_fade_setting')) {
   // 横方向
   case 'horizontal':
-    echo <<< EOF
+    echo <<<EOF
 @keyframes slide1 {
   0% {
     clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
@@ -1681,7 +1591,7 @@ EOF;
 
   // 縦方向
   case 'vertical':
-    echo <<< EOF
+    echo <<<EOF
 @keyframes slide1 {
   0% {
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
@@ -1696,7 +1606,7 @@ EOF;
 
   // 横分割
   case 'h-split':
-    echo <<< EOF
+    echo <<<EOF
 @keyframes slide1 {
   0% {
     clip-path: polygon(0 0, 0 0%, 0 50%, 0 50%);
@@ -1720,7 +1630,7 @@ EOF;
 
   // 縦分割
   case 'v-split':
-    echo <<< EOF
+    echo <<<EOF
 @keyframes slide1 {
   0% {
     clip-path: polygon(0 100%, 50% 100%, 50% 100%, 0 100%);

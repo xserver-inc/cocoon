@@ -23,6 +23,7 @@ if ( !function_exists( 'get_the_nolink_categories' ) ) :
 function get_the_nolink_categories() {
   $categories = null;
   $post_id = get_the_ID();
+  $terms = null;
 
   // 現在の投稿タイプを取得
   $post_type = get_post_type($post_id);
@@ -58,7 +59,7 @@ function get_the_nolink_categories() {
     }
   }
 
-  if ($terms && !is_wp_error($terms)) {
+  if (isset($terms) && $terms && !is_wp_error($terms)) {
     // ターム名をA-Zにソート
     usort($terms, function($a, $b) {
       return strcmp($a->name, $b->name);
@@ -402,7 +403,7 @@ endif;
 //highlight-jsのCSS URLを取得
 if ( !function_exists( 'get_highlight_js_css_url' ) ):
 function get_highlight_js_css_url(){
-  return get_template_directory_uri() . '/plugins/highlight-js/styles/'.get_code_highlight_style().'.css';
+  return get_cocoon_template_directory_uri() . '/plugins/highlight-js/styles/'.get_code_highlight_style().'.css';
 }
 endif;
 
@@ -493,6 +494,15 @@ endif;
 if ( !function_exists( 'wp_enqueue_style_icomoon' ) ):
 function wp_enqueue_style_icomoon(){
   wp_enqueue_style( 'icomoon-style', FONT_ICOMOON_URL );
+  $inline_css = "
+  @font-face {
+    font-family: 'icomoon';
+    src: url(" . FONT_ICOMOON_WOFF_URL . ") format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }";
+  wp_add_inline_style( 'icomoon-style', $inline_css );
 }
 endif;
 
@@ -615,7 +625,7 @@ endif;
 if ( !function_exists( 'wp_enqueue_lazy_load' ) ):
 function wp_enqueue_lazy_load(){
   if (is_lazy_load_enable() && !is_admin() && !is_login_page()) {
-    wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array(), false, true );
+    wp_enqueue_script( 'lazy-load-js', get_cocoon_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array(), false, true );
     $data = 'const observer = lozad(".lozad", {rootMargin: "0px 500px 500px"});observer.observe();';
     wp_add_inline_script( 'lazy-load-js', $data, 'after' ) ;
   }
@@ -656,7 +666,7 @@ endif;
 if ( !function_exists( 'wp_enqueue_script_clipboard_js' ) ):
 function wp_enqueue_script_clipboard_js(){
   if ( is_singular() && (is_top_copy_share_button_visible() || is_bottom_copy_share_button_visible()) ){
-    wp_enqueue_script( 'clipboard-js', get_template_directory_uri().'/plugins/clipboard.js-master/dist/clipboard.min.js', array( 'jquery' ), false, true );
+    wp_enqueue_script( 'clipboard-js', get_cocoon_template_directory_uri().'/plugins/clipboard.js-master/dist/clipboard.min.js', array( 'jquery' ), false, true );
     $data = "
     (function($){
       var clipboard = new Clipboard('.copy-button');//clipboardで使う要素を指定
@@ -685,7 +695,7 @@ function wp_enqueue_highlight_js(){
     //ソースコードハイライト表示用のスタイル
     wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
     //ソースコードハイライト表示用のライブラリ
-    $url = get_template_directory_uri() . '/plugins/highlight-js/'.$file_name;
+    $url = get_cocoon_template_directory_uri() . '/plugins/highlight-js/'.$file_name;
     $url = apply_filters( 'code_highlight_js_url', $url );
     wp_enqueue_script( 'code-highlight-js', $url, array( 'jquery' ), false, true );
     if (is_admin_php_page()) {
@@ -716,9 +726,9 @@ function wp_enqueue_lightbox(){
   //_v(get_image_zoom_effect());
  if ( ((is_lightbox_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
     //Lightboxスタイルの呼び出し
-    wp_enqueue_style( 'lightbox-style', get_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css' );
+    wp_enqueue_style( 'lightbox-style', get_cocoon_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css' );
     //Lightboxスクリプトの呼び出し
-    wp_enqueue_script( 'lightbox-js', get_template_directory_uri() . '/plugins/lightbox2/dist/js/lightbox.min.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'lightbox-js', get_cocoon_template_directory_uri() . '/plugins/lightbox2/dist/js/lightbox.min.js', array( 'jquery' ), false, true  );
   }
 }
 endif;
@@ -728,9 +738,9 @@ if ( !function_exists( 'wp_enqueue_lity' ) ):
 function wp_enqueue_lity(){
  if ( ((is_lity_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
     //lityスタイルの呼び出し
-    wp_enqueue_style( 'lity-style', get_template_directory_uri() . '/plugins/lity/dist/lity.min.css' );
+    wp_enqueue_style( 'lity-style', get_cocoon_template_directory_uri() . '/plugins/lity/dist/lity.min.css' );
     //lityスクリプトの呼び出し
-    wp_enqueue_script( 'lity-js', get_template_directory_uri() . '/plugins/lity/dist/lity.min.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'lity-js', get_cocoon_template_directory_uri() . '/plugins/lity/dist/lity.min.js', array( 'jquery' ), false, true  );
   }
 }
 endif;
@@ -741,9 +751,9 @@ if ( !function_exists( 'wp_enqueue_baguettebox' ) ):
 function wp_enqueue_baguettebox(){
  if ( ((is_baguettebox_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
     //baguetteboxスタイルの呼び出し
-    wp_enqueue_style( 'baguettebox-style', get_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.css' );
+    wp_enqueue_style( 'baguettebox-style', get_cocoon_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.css' );
     //baguetteboxスクリプトの呼び出し
-    wp_enqueue_script( 'baguettebox-js', get_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'baguettebox-js', get_cocoon_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.js', array( 'jquery' ), false, true  );
     $selector = '.entry-content';
     $data = '
           (function($){
@@ -761,7 +771,7 @@ if ( !function_exists( 'wp_enqueue_spotlight' ) ):
 function wp_enqueue_spotlight(){
  if ( ((is_spotlight_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
     //spotlightスクリプトの呼び出し
-    wp_enqueue_script( 'spotlight-js', get_template_directory_uri() . '/plugins/spotlight-master/dist/spotlight.bundle.js', array(), false, true  );
+    wp_enqueue_script( 'spotlight-js', get_cocoon_template_directory_uri() . '/plugins/spotlight-master/dist/spotlight.bundle.js', array(), false, true  );
   }
 }
 endif;
@@ -773,9 +783,9 @@ function wp_enqueue_clingify(){
   //グローバルナビ追従が有効な時
   if ( is_header_fixed() ) {
     //clingifyスタイルの呼び出し
-    wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
+    wp_enqueue_style( 'clingify-style', get_cocoon_template_directory_uri() . '/plugins/clingify/clingify.css' );
     //clingifyスクリプトの呼び出し
-    wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.min.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'clingify-js', get_cocoon_template_directory_uri() . '/plugins/clingify/jquery.clingify.min.js', array( 'jquery' ), false, true  );
     if (is_header_fixed()) {
       $selector = '.header-container';
       $detached_classes = get_additional_header_container_classes();
@@ -817,9 +827,9 @@ endif;
 if ( !function_exists( 'wp_enqueue_slick' ) ):
 function wp_enqueue_slick(){
   if (is_carousel_visible()) {
-    wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
+    wp_enqueue_style( 'slick-theme-style', get_cocoon_template_directory_uri() . '/plugins/slick/slick-theme.css' );
     //Slickスクリプトの呼び出し
-    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'slick-js', get_cocoon_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
     $autoplay = null;
     if (is_carousel_autoplay_enable()) {
       $autoplay = 'autoplay: true,';
@@ -876,7 +886,7 @@ endif;
 //Swiper
 if ( !function_exists( 'wp_enqueue_swiper' ) ):
 function wp_enqueue_swiper(){
-  wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
+  wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
 }
 endif;
 
@@ -884,9 +894,9 @@ endif;
 if ( !function_exists( 'wp_enqueue_slicknav' ) ):
 function wp_enqueue_slicknav(){
   if (is_slicknav_visible() || is_admin_php_page()) {
-    //wp_enqueue_style( 'slicknav-style', get_template_directory_uri() . '/plugins/slicknav/slicknav.css' );
+    //wp_enqueue_style( 'slicknav-style', get_cocoon_template_directory_uri() . '/plugins/slicknav/slicknav.css' );
     //SlickNavスクリプトの呼び出し
-    wp_enqueue_script( 'slicknav-js', get_template_directory_uri() . '/plugins/slicknav/jquery.slicknav.min.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'slicknav-js', get_cocoon_template_directory_uri() . '/plugins/slicknav/jquery.slicknav.min.js', array( 'jquery' ), false, true  );
     $data = '
               (function($){
                 $(".menu-header").slicknav({
@@ -908,9 +918,9 @@ if ( !function_exists( 'wp_enqueue_scrollhint' ) ):
 function wp_enqueue_scrollhint(){
   if (is_responsive_table_enable() && (is_singular() || (is_category() && !is_paged())|| (is_tag() && !is_paged()))) {
     //ScrollHintスタイルの呼び出し
-    wp_enqueue_style( 'scrollhint-style', get_template_directory_uri() . '/plugins/scroll-hint-master/css/scroll-hint.css' );
+    wp_enqueue_style( 'scrollhint-style', get_cocoon_template_directory_uri() . '/plugins/scroll-hint-master/css/scroll-hint.css' );
     //ScrollHintスクリプトの呼び出し
-    wp_enqueue_script( 'scrollhint-js', get_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'scrollhint-js', get_cocoon_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array( 'jquery' ), false, true  );
     $data = '
           (function($){
             new ScrollHint(".scrollable-table", {
@@ -936,7 +946,7 @@ function wp_enqueue_stickyfill(){
   //グローバルナビ追従が有効な時
   if ( is_scrollable_sidebar_enable() || is_scrollable_main_enable() ) {
     //stickyfillスクリプトの呼び出し
-    wp_enqueue_script( 'stickyfill-js', get_template_directory_uri() . '/plugins/stickyfill/dist/stickyfill.min.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'stickyfill-js', get_cocoon_template_directory_uri() . '/plugins/stickyfill/dist/stickyfill.min.js', array( 'jquery' ), false, true  );
 
     //position: sticky;に対応していないブラウザの場合はstickyfillを実行
     if (is_scrollable_sidebar_enable() && ($is_ie || $is_edge_version_under_16)) {
@@ -2295,10 +2305,10 @@ endif;
 //カスタムフィールドのショートコードをロケーションURIに置換
 if ( !function_exists( 'replace_directory_uri' ) ):
 function replace_directory_uri($code){
-  $code = str_replace('[template_directory_uri]', get_template_directory_uri(), $code);
-  $code = str_replace('[stylesheet_directory_uri]', get_stylesheet_directory_uri(), $code);
-  $code = str_replace('<?php echo template_directory_uri(); ?>', get_template_directory_uri(), $code);
-  $code = str_replace('<?php echo get_stylesheet_directory_uri(); ?>', get_stylesheet_directory_uri(), $code);
+  $code = str_replace('[template_directory_uri]', get_cocoon_template_directory_uri(), $code);
+  $code = str_replace('[stylesheet_directory_uri]', get_cocoon_stylesheet_directory_uri(), $code);
+  $code = str_replace('<?php echo get_template_directory_uri(); ?>', get_cocoon_template_directory_uri(), $code);
+  $code = str_replace('<?php echo get_stylesheet_directory_uri(); ?>', get_cocoon_stylesheet_directory_uri(), $code);
   return $code;
 }
 endif;
@@ -2497,7 +2507,12 @@ function is_the_page_sidebar_visible(){
   }
 
   //サイドバーにウィジェットが入っていない場合
-  if (!is_active_sidebar( 'sidebar' ) && !is_active_sidebar( 'sidebar-scroll' )) {
+  ob_start();
+  dynamic_sidebar( 'sidebar' );
+  dynamic_sidebar( 'sidebar-scroll' );
+  $sidebar = ob_get_clean();
+
+  if ( trim( $sidebar ) == '' ) {
     $is_sidebar_visible = false;
   }
 
@@ -2562,7 +2577,7 @@ if ( !function_exists( 'get_site_favicon_url' ) ):
 function get_site_favicon_url(){
   $url = get_site_icon_url();
   if (!$url) {
-    $url = get_template_directory_uri().'/images/site-icon32x32.png';
+    $url = get_cocoon_template_directory_uri().'/images/site-icon32x32.png';
   }
   return apply_filters('get_site_favicon_url', $url);
 }
@@ -3938,6 +3953,14 @@ function cocoon_skin_settings() {
 }
 endif;
 
+//ショートコードのエスケープ
+if ( !function_exists( 'escape_shortcodes' ) ):
+function escape_shortcodes($content) {
+  // ショートコードを実行できない文字列に置き換える
+  $content = str_replace(['[', ']'], ['&#91;', '&#93;'], $content);
+  return $content;
+}
+endif;
 
 ////////////////////////////////////////////////////
 // 以下子テーマカスタマイズ時にエラーがないようにするためのエイリアス

@@ -584,6 +584,10 @@ ul {
   list-style-type: disc;
 }
 
+ul ul {
+  list-style-type: revert;
+}
+
 hr {
   color: var(--cocoon-current-background-color);
 }
@@ -2311,6 +2315,7 @@ span.internal-icon {
 .blogcard-site {
   float: left;
   display: flex;
+  align-items: center;
   align-content: center;
 }
 
@@ -2984,10 +2989,11 @@ label.screen-reader-text {
   padding-left: 0;
 }
 
-.widget_search .wp-block-search__button {
+:where(.wp-block-search__button) {
   padding: 0.375em 0.1em;
   font-size: 14px;
 }
+
 .widget_search .wp-block-search__input {
   line-height: normal;
 }
@@ -8284,7 +8290,7 @@ div.fb-like-mobile {
 ************************************/
 .footer {
   margin-top: 20px;
-  padding: 8px;
+  padding: 8px 0;
 }
 
 .copyright {
@@ -8619,13 +8625,10 @@ ul.timeline ul ul ul {
   color: var(--cocoon-custom-icon-color);
 }
 .iconlist-box ul {
-  list-style: none;
+  list-style: none !important;
 }
 .iconlist-box ul li::before {
   display: initial;
-}
-.iconlist-box ul ul {
-  list-style: none;
 }
 .iconlist-box ol:not(.has-list-style) > li::before {
   display: none;
@@ -9422,7 +9425,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   align-items: center;
 }
 .box-menu-icon * {
-  margin: 10px 0;
   max-width: 60px;
   max-height: 60px;
   height: auto;
@@ -9432,6 +9434,10 @@ https://codepen.io/nxworld/pen/oLdoWb
   font-size: 16px;
   border: none;
   box-shadow: none;
+}
+
+.body .box-menus .box-menu-icon * {
+  margin: 10px 0;
 }
 
 .box-menu-label {
@@ -10057,7 +10063,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 [class*=is-style-numeric-list-] {
   counter-reset: list;
-  list-style-type: none !important;
+  list-style-type: none;
 }
 [class*=is-style-numeric-list-] > li {
   position: relative;

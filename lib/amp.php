@@ -56,7 +56,7 @@ function convert_content_for_amp($the_content){
   }
 
   //iframe用のplaceholderタグ（amp-iframeの呼び出し位置エラー対策）
-  $amp_placeholder = '<amp-img layout="fill" src="'.get_template_directory_uri().'/images/transparence.png'.'" placeholder></amp-img>';
+  $amp_placeholder = '<amp-img layout="fill" src="'.get_cocoon_template_directory_uri().'/images/transparence.png'.'" placeholder></amp-img>';
 
 
   // バリューコマースのバナー変換
@@ -721,7 +721,7 @@ function generate_style_amp_custom_tag(){?>
 
   $css_all = '';
   //AMPスタイルの取得（SCSSで出力したAMP用のCSS）
-  $css_url = get_template_directory_uri().'/amp.css';
+  $css_url = get_cocoon_template_directory_uri().'/amp.css';
   $css = css_url_to_css_minify_code($css_url);
   if ($css !== false) {
     $css_all .= apply_filters( 'amp_parent_css', $css );
@@ -730,7 +730,7 @@ function generate_style_amp_custom_tag(){?>
   ///////////////////////////////////////////
   //IcoMoonのスタイル
   ///////////////////////////////////////////
-  $css_icomoom = css_url_to_css_minify_code(get_template_directory_uri().'/webfonts/icomoon/style.css');
+  $css_icomoom = css_url_to_css_minify_code(get_cocoon_template_directory_uri().'/webfonts/icomoon/style.css');
   if ($css_icomoom !== false) {
     $css_all .= apply_filters( 'amp_icomoon_css', $css_icomoom );
   }
@@ -739,7 +739,7 @@ function generate_style_amp_custom_tag(){?>
   //Font Awesome5のスタイル
   ///////////////////////////////////////////
   if (is_site_icon_font_font_awesome_5()) {
-    $css_fa5 = css_url_to_css_minify_code(get_template_directory_uri().'/css/fontawesome5.css');
+    $css_fa5 = css_url_to_css_minify_code(get_cocoon_template_directory_uri().'/css/fontawesome5.css');
     if ($css_fa5 !== false) {
       $css_all .= apply_filters( 'amp_font_awesome_5_css', $css_fa5 );
     }
@@ -783,7 +783,7 @@ function generate_style_amp_custom_tag(){?>
     }
 
     //AMPのスキンスタイル
-    $css_child_url = get_stylesheet_directory_uri().'/amp.css';
+    $css_child_url = get_cocoon_stylesheet_directory_uri().'/amp.css';
     $child_amp_css = css_url_to_css_minify_code($css_child_url);
     if ($child_amp_css !== false) {
       $css_all .= apply_filters( 'amp_child_amp_css', $child_amp_css );
@@ -821,7 +821,7 @@ if ( !function_exists( 'get_style_amp_keyframes_tag' ) ):
 function get_style_amp_keyframes_tag(){
   $css_all = '';
   //AMPスタイルの取得（SCSSで出力したAMP用のCSS）
-  $keyframes_css_url = get_template_directory_uri().'/keyframes.css';
+  $keyframes_css_url = get_cocoon_template_directory_uri().'/keyframes.css';
   $css = css_url_to_css_minify_code($keyframes_css_url);
   if ($css !== false) {
     $css_all .= apply_filters( 'amp_parent_keyframes_css', $css );

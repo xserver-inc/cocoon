@@ -26,10 +26,10 @@ function admin_print_styles_custom() {
 
   if (!is_screen_editor_page()) {
     //管理用スタイル
-    wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+    wp_enqueue_style( 'admin-style', get_cocoon_template_directory_uri().'/css/admin.css' );
   } else {
     //ブロックエディターページやクラシックエディターページ全体に適用されるCSS
-    wp_enqueue_style( 'editor-page-style', get_template_directory_uri().'/css/editor-page.css' );
+    wp_enqueue_style( 'editor-page-style', get_cocoon_template_directory_uri().'/css/editor-page.css' );
   }
 
   //Font Awesome
@@ -44,16 +44,16 @@ function admin_print_styles_custom() {
   //メディアアップローダの javascript API
   wp_enqueue_media();
 
-  ///////////////////////////////////
-  //Swiper
-  ///////////////////////////////////
-  wp_enqueue_swiper();
+  // ///////////////////////////////////
+  // //Swiper
+  // ///////////////////////////////////
+  // wp_enqueue_swiper();
 
   ///////////////////////////////////////
   // 管理画面でのJavaScript読み込み
   ///////////////////////////////////////
   //管理画面用での独自JavaScriptの読み込み
-  wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array(), false, true );
+  wp_enqueue_script( 'admin-javascript', get_cocoon_template_directory_uri() . '/js/admin-javascript.js', array(), false, true );
 
   //投稿ページの場合
   if (is_admin_post_page()) {
@@ -513,45 +513,6 @@ function customize_admin_bar_menu($wp_admin_bar){
 }
 endif;
 
-
-// //記事公開前に確認アラートを出す
-// if (is_confirmation_before_publish()) {
-//   add_action('admin_print_scripts', 'publish_confirm_admin_print_scripts');
-// }
-// if ( !function_exists( 'publish_confirm_admin_print_scripts' ) ):
-// function publish_confirm_admin_print_scripts() {
-//   $post_text = __( '公開', THEME_NAME );
-//   $confirm_text = __( '記事を公開してもよろしいですか？', THEME_NAME );
-//   echo <<< EOM
-// <script type="text/javascript">
-// //console.log("id");
-// window.onload = function() {
-//   var id = document.getElementById('publish');
-//   if (id.value.indexOf("$post_text", 0) != -1) {
-//     id.onclick = publish_confirm;
-//   }
-// }
-// function publish_confirm() {
-//   if (window.confirm("$confirm_text")) {
-//     return true;
-//   } else {
-//     var elements = document.getElementsByTagName('span');
-//     for (var i = 0; i < elements.length; i++) {
-//       var element = elements[i];
-//       if (element.className.indexOf("spinner", 0) != -1) {
-//         element.classList.remove('spinner');
-//       }
-//     }
-//     document.getElementById('publish').classList.remove('button-primary-disabled');
-//     document.getElementById('save-post').classList.remove('button-disabled');
-
-//       return false;
-//   }
-// }
-// </script>
-// EOM;
-// }
-// endif;
 
 //投稿一覧リストの上にタグフィルターと管理者フィルターを追加する
 add_action('restrict_manage_posts', 'custmuize_restrict_manage_posts');

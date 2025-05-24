@@ -33,23 +33,28 @@ if (!defined('ABSPATH')) {
 if (is_admin()) {
 	add_action('enqueue_block_assets', 'cocoon_blocks_cgb_block_assets');
 }
+if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) ):
 function cocoon_blocks_cgb_block_assets()
 {
 	// phpcs:ignore
 	//Font Awesome
 	wp_enqueue_style_font_awesome();
 
-  //Google Fonts
-  wp_enqueue_google_fonts();
+	//Google Fonts
+	wp_enqueue_google_fonts();
 
-  //サイトフォントの設定を反映するクラスを付与
-  add_filter( 'admin_body_class', function($classes){
-    $classes .= ' wp-admin-'.get_site_font_family_class();
-    $classes .= ' wp-admin-'.get_site_font_size_class();
-    $classes .= ' wp-admin-'.get_site_font_weight_class();
-    return $classes;
-  });
+	//サイトフォントの設定を反映するクラスを付与
+	add_filter('admin_body_class', 'add_site_font_settings_to_admin_body_class');
+	if (!function_exists('add_site_font_settings_to_admin_body_class')) {
+		function add_site_font_settings_to_admin_body_class($classes) {
+			$classes .= ' wp-admin-' . get_site_font_family_class();
+			$classes .= ' wp-admin-' . get_site_font_size_class();
+			$classes .= ' wp-admin-' . get_site_font_weight_class();
+			return $classes;
+		}
+	}
 }
+endif;
 
 /**
  * Enqueue Gutenberg block assets for backend editor.
@@ -68,15 +73,15 @@ if (is_admin()) {
 		9
 	);
 }
+if ( !function_exists( 'cocoon_blocks_cgb_editor_assets' ) ):
 function cocoon_blocks_cgb_editor_assets()
 {
-
-  $asset_file = require get_template_directory() . '/blocks/dist/blocks.build.asset.php';
+  $asset_file = require get_cocoon_template_directory() . '/blocks/dist/blocks.build.asset.php';
 	// phpcs:ignore
 	// Scripts.
 	wp_enqueue_script(
 		'cocoon-blocks-js', // Handle.
-		get_template_directory_uri() . '/blocks/dist/blocks.build.js',
+		get_cocoon_template_directory_uri() . '/blocks/dist/blocks.build.js',
 		//plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
     $asset_file['dependencies'],
     // const xxx = wp.xxx型式の古い記述で有効 // Dependencies, defined above.
@@ -89,7 +94,7 @@ function cocoon_blocks_cgb_editor_assets()
 	wp_set_script_translations(
 		'cocoon-blocks-js',
 		THEME_NAME,
-		get_template_directory() . '/languages'
+		get_cocoon_template_directory() . '/languages'
 	);
 
 	//ショートコードオブジェクトの取得
@@ -142,12 +147,12 @@ function cocoon_blocks_cgb_editor_assets()
 		'isAdsVisible' => is_ads_visible() ? 1 : 0,
 		'isAdShortcodeEnable' => is_ad_shortcode_enable() ? 1 : 0,
 		'speechBalloonDefaultIconUrl' =>
-			get_template_directory_uri() . '/images/anony.png',
+			get_cocoon_template_directory_uri() . '/images/anony.png',
 		'siteIconFont' => ' ' . get_site_icon_font_class(),
 		'pageTypeClass' => get_editor_page_type_class(),
 		'isDebugMode' => DEBUG_MODE,
 		'wpVersion' => $wp_version,
-		'templateUrl' => get_template_directory_uri(),
+		'templateUrl' => get_cocoon_template_directory_uri(),
 		'customTextCount' => apply_filters( 'cocoon_custom_text_count', 2),
 	];
 
@@ -230,6 +235,7 @@ function cocoon_blocks_cgb_editor_assets()
 		get_block_editor_code_languages() //カラーパレット
 	);
 }
+endif;
 
 //Cocoonカテゴリーを追加
 if (is_admin()) {

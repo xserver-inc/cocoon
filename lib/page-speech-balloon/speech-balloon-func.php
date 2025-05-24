@@ -8,15 +8,13 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //関数テキストテーブルのバージョン
+global $wpdb;
 define('SPEECH_BALLOONS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.0');
 define('SPEECH_BALLOONS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_speech_balloons');
 
 //関数テキスト移動用URL
 define('SB_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
 define('SB_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
-
-//デフォルトの名前
-define('SB_DEFAULT_NAME', __( '匿名', THEME_NAME ));
 
 //スタイル
 define('SBS_STANDARD', 'stn');
@@ -39,9 +37,9 @@ define('IRASUTOYA_ CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="
 define('IMAGE_CDN_DIR_URL', 'https://im-cocoon.net/wp-content/uploads');
 
 
-define('SB_IMAGE_DIR_URL', get_template_directory_uri().'/images');
+define('SB_IMAGE_DIR_URL', get_cocoon_template_directory_uri().'/images');
 //デフォルトアイコン
-define('SB_DEFAULT_ICON', get_template_directory_uri().'/images/anony.png');
+define('SB_DEFAULT_ICON', get_cocoon_template_directory_uri().'/images/anony.png');
 define('SB_DEFAULT_MAN_ICON', SB_IMAGE_DIR_URL.'/man.png');
 define('SB_DEFAULT_WOMAN_ICON', SB_IMAGE_DIR_URL.'/woman.png');
 

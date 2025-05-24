@@ -24,7 +24,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_label_tag('', __( 'バックアップ', THEME_NAME ) ); ?>
           </th>
           <td>
-            <a href="<?php echo get_template_directory_uri().'/lib/page-backup/backup-download.php'; ?>" class="button"><?php _e( 'バックアップファイルの取得', THEME_NAME ) ?></a>
+            <a href="<?php echo get_cocoon_template_directory_uri().'/lib/page-backup/backup-download.php'; ?>" class="button"><?php _e( 'バックアップファイルの取得', THEME_NAME ) ?></a>
             <?php
               generate_tips_tag(__( 'テーマ設定のバックアップをする際はボタンを押してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/how-to-theme-settings-backup/'));
             ?>

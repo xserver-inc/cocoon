@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+// Swiperをパターンエディターなどでも読み込む（ブロックエディター、パターンエディターのiframe）
+@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+
 @import "common-editor";
 
 // :root{
@@ -72,6 +75,11 @@ html[lang="en"] .column-3::before{
   .block-editor-block-list__layout {
     min-height: 2em;
   }
+}
+
+// クラシックエディター用
+.mce-content-body .column-wrap{
+  margin-bottom: 1.4em;
 }
 
 .column-left,

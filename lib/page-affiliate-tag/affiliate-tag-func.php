@@ -8,6 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //テーブルのバージョン
+global $wpdb;
 define('AFFILIATE_TAGS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
 define('AFFILIATE_TAGS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_affiliate_tags');
 

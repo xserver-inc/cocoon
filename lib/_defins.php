@@ -7,6 +7,39 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+
+///////////////////////////
+// 今後の拡張用のパス取得関数
+///////////////////////////
+
+// テンプレートディレクトリの取得
+if ( !function_exists( 'get_cocoon_template_directory' ) ):
+function get_cocoon_template_directory(){
+  return apply_filters('get_cocoon_template_directory', get_template_directory());
+}
+endif;
+
+// テンプレートURLの取得
+if ( !function_exists( 'get_cocoon_template_directory_uri' ) ):
+function get_cocoon_template_directory_uri(){
+  return apply_filters('get_cocoon_template_directory_uri', get_template_directory_uri());
+}
+endif;
+
+// スタイルシートディレクトリの取得
+if ( !function_exists( 'get_cocoon_stylesheet_directory' ) ):
+function get_cocoon_stylesheet_directory(){
+  return apply_filters('get_cocoon_stylesheet_directory', get_stylesheet_directory());
+}
+endif;
+
+// スタイルシートURLの取得
+if ( !function_exists( 'get_cocoon_stylesheet_directory_uri' ) ):
+function get_cocoon_stylesheet_directory_uri(){
+  return apply_filters('get_cocoon_stylesheet_directory_uri', get_stylesheet_directory_uri());
+}
+endif;
+
 //テーマ名
 define('THEME_NAME', 'cocoon');
 require_once abspath(__FILE__).'language.php';   //マルチ言語設定
@@ -44,8 +77,6 @@ define('THEME_CHILD_JS', THEME_NAME.'-child-js');
 define('THEME_SKIN_JS', THEME_NAME.'-skin-js');
 //ウィジェット名プレフィックス
 define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C]
-//トップレベルオリジナル設定名
-define('SETTING_NAME_TOP', THEME_NAME_CAMEL.' '.__( '設定', THEME_NAME ));
 
 //ウィジェットのエントリータイプ
 define('ET_DEFAULT',        'default');
@@ -114,10 +145,6 @@ define('AD_FORMAT_DABBLE_RECTANGLE', 'dabble-rectangle'); //ダブルレクタ�
 //広告ユニット以外
 define('DATA_AD_FORMAT_FLUID', 'fluid'); //記事中広告
 
-//PR表記
-define('PR_LABEL_SMALL_CAPTION', __( 'PR', THEME_NAME ));
-define('PR_LABEL_LARGE_CAPTION', __( '記事内に広告が含まれています。', THEME_NAME ));
-
 //ナビゲーションメニュー
 define('NAV_MENU_HEADER', 'navi-header');
 define('NAV_MENU_HEADER_MOBILE', 'navi-mobile');
@@ -128,76 +155,22 @@ define('NAV_MENU_FOOTER_MOBILE_BUTTONS', 'navi-footer-mobile');
 define('NAV_MENU_MOBILE_SLIDE_IN', 'navi-mobile-slide-in');
 
 //親テーマのstyle.cssのURL
-define('PARENT_THEME_STYLE_CSS_URL', get_template_directory_uri().'/style.css');
+define('PARENT_THEME_STYLE_CSS_URL', get_cocoon_template_directory_uri().'/style.css');
 //親テーマのstyle.cssのファイルパス
-define('PARENT_THEME_STYLE_CSS_FILE', get_template_directory().'/style.css');
+define('PARENT_THEME_STYLE_CSS_FILE', get_cocoon_template_directory().'/style.css');
 //親テーマのkeyframes.cssのURL
-define('PARENT_THEME_KEYFRAMES_CSS_URL', get_template_directory_uri().'/keyframes.css');
+define('PARENT_THEME_KEYFRAMES_CSS_URL', get_cocoon_template_directory_uri().'/keyframes.css');
 //親テーマのkeyframes.cssのファイルパス
-define('PARENT_THEME_KEYFRAMES_CSS_FILE', get_template_directory().'/keyframes.css');
+define('PARENT_THEME_KEYFRAMES_CSS_FILE', get_cocoon_template_directory().'/keyframes.css');
 //子テーマのstyle.cssのURL
-define('CHILD_THEME_STYLE_CSS_URL', get_stylesheet_directory_uri().'/style.css');
+define('CHILD_THEME_STYLE_CSS_URL', get_cocoon_stylesheet_directory_uri().'/style.css');
 //子テーマのstyle.cssのファイルパス
-define('CHILD_THEME_STYLE_CSS_FILE', get_stylesheet_directory().'/style.css');
+define('CHILD_THEME_STYLE_CSS_FILE', get_cocoon_stylesheet_directory().'/style.css');
 //子テーマのkeyframes.cssのURL
-define('CHILD_THEME_KEYFRAMES_CSS_URL', get_stylesheet_directory_uri().'/keyframes.css');
+define('CHILD_THEME_KEYFRAMES_CSS_URL', get_cocoon_stylesheet_directory_uri().'/keyframes.css');
 //子テーマのkeyframes.cssのファイルパス
-define('CHILD_THEME_KEYFRAMES_CSS_FILE', get_stylesheet_directory().'/keyframes.css');
+define('CHILD_THEME_KEYFRAMES_CSS_FILE', get_cocoon_stylesheet_directory().'/keyframes.css');
 
-
-//メインカラム用の広告フォーマット集
-global $_MAIN_DATA_AD_FORMATS;
-$_MAIN_DATA_AD_FORMATS = array(
-  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
-  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
-  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
-  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
-  AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
-  DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
-);
-// define('MAIN_DATA_AD_FORMATS', $_MAIN_DATA_AD_FORMATS);
-
-//AdSenseの存在フラグ
-global $_IS_ADSENSE_EXIST;
-$_IS_ADSENSE_EXIST = false; //最初はAdSenseの存在がない
-// //アドセンススクリプトコードが読み込まれているか
-// global $_IS_ADSENSE_SCRIPT_EMPTY;
-// $_IS_ADSENSE_SCRIPT_EMPTY = true;
-// _v('def');
-// _v($_IS_ADSENSE_SCRIPT_EMPTY);
-
-//サイドバー用の広告フォーマット集
-global $_SIDEBAR_DATA_AD_FORMATS;
-$_SIDEBAR_DATA_AD_FORMATS = array(
-  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
-  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
-  DATA_AD_FORMAT_RECTANGLE => __( 'レクタングル', THEME_NAME ),
-  DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
-);
-// define('SIDEBAR_DATA_AD_FORMATS', $_SIDEBAR_DATA_AD_FORMATS);
-
-//PCウィジェット用の広告フォーマット集
-global $_PC_WIDGET_DATA_AD_FORMATS;
-$_PC_WIDGET_DATA_AD_FORMATS = array(
-  'none' => __( '広告コードをそのまま表示', THEME_NAME ),
-  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
-  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
-  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
-  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
-  AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
-  DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
-  DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
-);
-
-//モバイル用の広告フォーマット集
-global $_MOBILE_WIDGET_DATA_AD_FORMATS;
-$_MOBILE_WIDGET_DATA_AD_FORMATS = array(
-  'none' => __( '広告コードをそのまま表示', THEME_NAME ),
-  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
-  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
-  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
-  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
-);
 
 //スキン制御向けのグローバル変数
 global $_THEME_OPTIONS;
@@ -232,18 +205,18 @@ define('SF_PROFILE', 'sf-profile');
 define('SF_MOBILE', 'sf-mobile');
 
 //NO IMAGE画像URL
-define('NO_IMAGE_320', get_template_directory_uri().'/images/no-image-320.png');
-define('NO_IMAGE_160', get_template_directory_uri().'/images/no-image-160.png');
-define('NO_IMAGE_120', get_template_directory_uri().'/images/no-image-120.png');
-define('NO_IMAGE_150', get_template_directory_uri().'/images/no-image-150.png');
-define('NO_IMAGE_LARGE', get_template_directory_uri().'/images/no-image-large.png');
-define('NO_IMAGE_RSS', get_template_directory_uri().'/images/no-image-rss.png');
+define('NO_IMAGE_320', get_cocoon_template_directory_uri().'/images/no-image-320.png');
+define('NO_IMAGE_160', get_cocoon_template_directory_uri().'/images/no-image-160.png');
+define('NO_IMAGE_120', get_cocoon_template_directory_uri().'/images/no-image-120.png');
+define('NO_IMAGE_150', get_cocoon_template_directory_uri().'/images/no-image-150.png');
+define('NO_IMAGE_LARGE', get_cocoon_template_directory_uri().'/images/no-image-large.png');
+define('NO_IMAGE_RSS', get_cocoon_template_directory_uri().'/images/no-image-rss.png');
 
 //画像と判別するファイル拡張子（正規表現用）
 define('IMAGE_RECOGNITION_EXTENSIONS_REG', '\.jpe?g|\.png|\.gif|\.webp|\.avif');
 
 //OGPホームイメージURLデフォルト
-define('OGP_HOME_IMAGE_URL_DEFAULT', get_template_directory_uri().'/screenshot.jpg');
+define('OGP_HOME_IMAGE_URL_DEFAULT', get_cocoon_template_directory_uri().'/screenshot.jpg');
 //サイトアイコンフォントデフォルト
 define('SITE_ICON_FONT_DEFAULT', 'font_awesome_4');
 
@@ -291,41 +264,38 @@ define('FONT_AWESOME_4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4
 define('FONT_AWESOME_5_CDN_URL', 'https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
 //Font Awesome4
-define('FONT_AWESOME_4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
-define('FONT_AWESOME_4_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
+define('FONT_AWESOME_4_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
+define('FONT_AWESOME_4_WOFF2_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
 //Font Awesome5
-define('FONT_AWESOME_5_URL', get_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
-define('FONT_AWESOME_5_BRANDS_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-brands-400.woff2');
-define('FONT_AWESOME_5_REGULAR_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-regular-400.woff2');
-define('FONT_AWESOME_5_SOLID_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-solid-900.woff2');
+define('FONT_AWESOME_5_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
+define('FONT_AWESOME_5_BRANDS_WOFF2_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-brands-400.woff2');
+define('FONT_AWESOME_5_REGULAR_WOFF2_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-regular-400.woff2');
+define('FONT_AWESOME_5_SOLID_WOFF2_URL', get_cocoon_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-solid-900.woff2');
 //Font Awesome5アップデート
-define('FONT_AWESOME_5_UPDATE_URL', get_template_directory_uri().'/css/fontawesome5.css');
+define('FONT_AWESOME_5_UPDATE_URL', get_cocoon_template_directory_uri().'/css/fontawesome5.css');
 //IcoMoonフォント
 define('FONT_ICOMOON_UPDATED_VERSION_URL_QUERY', '?v=2.7.0.2');
-define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
-define('FONT_ICOMOON_WOFF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
-define('FONT_ICOMOON_TTF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
+define('FONT_ICOMOON_URL', get_cocoon_template_directory_uri() . '/webfonts/icomoon/style.css'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
+define('FONT_ICOMOON_WOFF_URL', get_cocoon_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
+define('FONT_ICOMOON_TTF_URL', get_cocoon_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf'.FONT_ICOMOON_UPDATED_VERSION_URL_QUERY);
 
 //親テーマのJavaScript
-define('THEME_JS_URL', get_template_directory_uri() . '/javascript.js');
+define('THEME_JS_URL', get_cocoon_template_directory_uri() . '/javascript.js');
 //子テーマのJavaScript
-define('THEME_CHILD_JS_URL', get_stylesheet_directory_uri() . '/javascript.js');
+define('THEME_CHILD_JS_URL', get_cocoon_stylesheet_directory_uri() . '/javascript.js');
 //set-event-passive
-define('SET_EVENT_PASSIVE_JS_URL', get_template_directory_uri() . '/js/set-event-passive.js');
+define('SET_EVENT_PASSIVE_JS_URL', get_cocoon_template_directory_uri() . '/js/set-event-passive.js');
 
 //AMPのトップへ戻る用のコード
 define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
 //AMPの目次へ戻る用のコード
 define('AMP_GO_TO_TOC_ON_CODE', ' on="tap:toc.scrollTo(\'duration\'=375)"');
 
-//リンククリック時の削除確認JavaScript
-define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
-
 //デフォルトサイトアイコン
-define('DEFAULT_SITE_ICON_32',  get_template_directory_uri().'/images/site-icon32x32.png');
-define('DEFAULT_SITE_ICON_180', get_template_directory_uri().'/images/site-icon180x180.png');
-define('DEFAULT_SITE_ICON_192', get_template_directory_uri().'/images/site-icon192x192.png');
-define('DEFAULT_SITE_ICON_270', get_template_directory_uri().'/images/site-icon270x270.png');
+define('DEFAULT_SITE_ICON_32',  get_cocoon_template_directory_uri().'/images/site-icon32x32.png');
+define('DEFAULT_SITE_ICON_180', get_cocoon_template_directory_uri().'/images/site-icon180x180.png');
+define('DEFAULT_SITE_ICON_192', get_cocoon_template_directory_uri().'/images/site-icon192x192.png');
+define('DEFAULT_SITE_ICON_270', get_cocoon_template_directory_uri().'/images/site-icon270x270.png');
 
 //.htaccess関連の定数
 define('HTACCESS_FILE', ABSPATH.'.htaccess');
@@ -339,14 +309,8 @@ define('THEME_HTTPS_REDIRECT_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTTPS
 define('THEME_HTTPS_REDIRECT_HTACCESS_REG', '{'.THEME_HTTPS_REDIRECT_HTACCESS_BEGIN.'.+?'.THEME_HTTPS_REDIRECT_HTACCESS_END.'}s');
 define('THEME_HTTPS_REWRITERULE_REG', '/RewriteRule .+ https:\/\/%{HTTP_HOST}%{REQUEST_URI}/i');
 
-//メッセージ
-define('TOC_SHORTCODE_ERROR_MESSAGE', __('無限ループを避けるため[toc]ショートコードはパターンでは使用できません。' , THEME_NAME).__('ショートコードを削除してください。' , THEME_NAME).__('ショートコードが使用されている場合でも表示時に取り消されます。' , THEME_NAME));
 
-//サービスドメイン
-define('AMAZON_DOMAIN', __( 'www.amazon.co.jp', THEME_NAME ));
 
-//Amazon ASINエラー
-define('AMAZON_ASIN_ERROR_MESSAGE', __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
 //Amazonメール広告
 define('THEME_MAIL_AMAZON_PR', "");
 
@@ -363,6 +327,84 @@ https://wp-cocoon.com/community/
 --------------------------------
 ※本メールアドレスは送信専用のため、返信できません。");
 
+add_action('after_setup_theme', function() {
 
-//インポートファイルの読み込み
-require_once abspath(__FILE__).'_imports.php';
+  //トップレベルオリジナル設定名
+  define('SETTING_NAME_TOP', THEME_NAME_CAMEL.' '.__( '設定', THEME_NAME ));
+
+  //PR表記
+  define('PR_LABEL_SMALL_CAPTION', __( 'PR', THEME_NAME ));
+  define('PR_LABEL_LARGE_CAPTION', __( '記事内に広告が含まれています。', THEME_NAME ));
+
+  //メインカラム用の広告フォーマット集
+  global $_MAIN_DATA_AD_FORMATS;
+  $_MAIN_DATA_AD_FORMATS = array(
+    DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+    DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+    DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+    AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
+    AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
+    DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
+  );
+
+  //AdSenseの存在フラグ
+  global $_IS_ADSENSE_EXIST;
+  $_IS_ADSENSE_EXIST = false; //最初はAdSenseの存在がない
+
+  //サイドバー用の広告フォーマット集
+  global $_SIDEBAR_DATA_AD_FORMATS;
+  $_SIDEBAR_DATA_AD_FORMATS = array(
+    DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+    DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+    DATA_AD_FORMAT_RECTANGLE => __( 'レクタングル', THEME_NAME ),
+    DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
+  );
+
+  //PCウィジェット用の広告フォーマット集
+  global $_PC_WIDGET_DATA_AD_FORMATS;
+  $_PC_WIDGET_DATA_AD_FORMATS = array(
+    'none' => __( '広告コードをそのまま表示', THEME_NAME ),
+    DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+    DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+    DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+    AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
+    AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
+    DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
+    DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
+  );
+
+  //モバイル用の広告フォーマット集
+  global $_MOBILE_WIDGET_DATA_AD_FORMATS;
+  $_MOBILE_WIDGET_DATA_AD_FORMATS = array(
+    'none' => __( '広告コードをそのまま表示', THEME_NAME ),
+    DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+    DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+    DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+    AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
+  );
+
+  //サービスドメイン
+  define('AMAZON_DOMAIN', __( 'www.amazon.co.jp', THEME_NAME ));
+  //リンククリック時の削除確認JavaScript
+  define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
+  //メッセージ
+  define('TOC_SHORTCODE_ERROR_MESSAGE', __('無限ループを避けるため[toc]ショートコードはパターンでは使用できません。' , THEME_NAME).__('ショートコードを削除してください。' , THEME_NAME).__('ショートコードが使用されている場合でも表示時に取り消されます。' , THEME_NAME));
+  //Amazon ASINエラー
+  define('AMAZON_ASIN_ERROR_MESSAGE', __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
+
+
+  define('TIME_ERROR_MESSAGE', '<span class="time-error">'.__( '日付未入力', THEME_NAME ).'</span>');
+
+  define('T404_PAGE_TITLE', __( '404 NOT FOUND', THEME_NAME ));
+  define('T404_PAGE_MESSAGE', __( 'お探しのページは見つかりませんでした。', THEME_NAME ));
+
+  define('SITE_DATE_FORMAT', __( 'Y.m.d', THEME_NAME ));
+
+  define('COMMENT_HEADING', __( 'コメント', THEME_NAME ));
+  define('COMMENT_FORM_HEADING', __( 'コメントをどうぞ', THEME_NAME ));
+  define('COMMENT_SUBMIT_LABEL', __( 'コメントを送信', THEME_NAME ));
+
+  //デフォルトの名前
+  define('SB_DEFAULT_NAME', __( '匿名', THEME_NAME ));
+});
+

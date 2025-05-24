@@ -34,7 +34,7 @@
   align-items: center;
 
   *{
-    margin: 10px 0;
+    // margin: 10px 0;
     max-width: 60px;
     max-height: 60px;
     height: auto;
@@ -46,6 +46,10 @@
     box-shadow: none;
     //filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.2));
   }
+}
+// .body .block-box :last-child{margin-bottom: 0;}に負けないCSSセレクターにする
+.body .box-menus .box-menu-icon *{
+  margin: 10px 0;
 }
 
 .box-menu-label{

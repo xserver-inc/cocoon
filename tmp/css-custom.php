@@ -426,8 +426,8 @@ if ($responsive_width <= 1023) {
 } ?>
 <?php if (!is_admin()): ?>
 @media screen and (max-width: <?php echo $responsive_width; ?>px){
-  <?php //echo wp_filesystem_get_contents(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
-  <?php require_once(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
+  <?php //echo wp_filesystem_get_contents(get_cocoon_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
+  <?php require_once(get_cocoon_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
 }
 <?php endif ?>
 <?php //通知エリア背景色
@@ -445,7 +445,7 @@ if ($color = get_notice_area_text_color()): ?>
 <?php //アクセスカウント取得用スタイル
 if (!is_admin() && is_singular() && is_access_count_enable()): ?>
 body::after{
-  content: url("<?php echo get_template_directory_uri(); ?>/lib/analytics/access.php?post_id=<?php echo get_the_ID(); ?>&post_type=<?php echo get_accesses_post_type(); ?>") !important;
+  content: url("<?php echo get_cocoon_template_directory_uri(); ?>/lib/analytics/access.php?post_id=<?php echo get_the_ID(); ?>&post_type=<?php echo get_accesses_post_type(); ?>") !important;
   visibility: hidden;
   position: absolute;
   bottom: 0;
@@ -924,13 +924,6 @@ $color = get_site_key_color() ? get_site_key_color() : '#f6a068';
 }
 .box-menu-icon{
   color: <?php echo $color; ?>;
-}
-@font-face {
-  font-family: 'icomoon';
-  src: url(<?php echo FONT_ICOMOON_WOFF_URL; ?>) format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
 <?php //囲みブログカードスタイル（エディター画面）
 global $locale;

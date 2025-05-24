@@ -3,7 +3,7 @@ if( !function_exists('wp_enqueue_tab_frontend_script')) :
 function wp_enqueue_tab_frontend_script() {
   wp_enqueue_script(
     'tab-frontend',
-    get_template_directory_uri() . '/blocks/src/block/tab/tab-frontend.js',
+    get_cocoon_template_directory_uri() . '/blocks/src/block/tab/tab-frontend.js',
     array('wp-blocks'),
     null,
     false

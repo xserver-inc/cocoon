@@ -16,7 +16,6 @@ function add_memo_custom_box(){
   //広告ボックス
   add_meta_box( 'singular_memo_settings',__( 'メモ', THEME_NAME ), 'view_memo_custom_box', 'post', 'side' );
   add_meta_box( 'singular_memo_settings',__( 'メモ', THEME_NAME ), 'view_memo_custom_box', 'page', 'side' );
-  //add_meta_box( 'singular_memo_settings',__( 'メモ', THEME_NAME ), 'view_memo_custom_box', 'topic', 'side' );
   //カスタム投稿タイプに登録
   add_meta_box_custom_post_types( 'singular_memo_settings',__( 'メモ', THEME_NAME ), 'view_memo_custom_box', 'custum_post', 'side' );
 }
