@@ -15,7 +15,7 @@ if (is_page_breadcrumbs_position_main_top()){
 cocoon_template_part('tmp/content') ?>
 
 <?php //コメントを表示する場合
-if (is_page_comment_visible()) {
+if (is_page_comment_visible() && !post_password_required( $post )) {
   comments_template(); //コメントテンプレート
 } ?>
 
