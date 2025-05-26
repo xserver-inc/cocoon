@@ -589,3 +589,54 @@ add_filter('cocoon_part__tmp/categories-tags', function($content) {
 
   return $content;
 });
+
+// bbPressが非アクティブな場合、特定のページテンプレートを非表示にする
+add_filter( 'theme_page_templates', 'hide_bbpress_templates_if_inactive' );
+function hide_bbpress_templates_if_inactive( $page_templates ) {
+  // bbPressがインストールされている場合は何もしない
+  if ( is_bbpress_exist() ) {
+    return $page_templates;
+  }
+
+  // 非アクティブな場合、非表示にしたいbbPressテンプレートのファイル名またはパスを定義
+  $bbpress_templates_to_remove = [
+    'templates/page-create-topic.php',
+    'templates/page-front-forums.php',
+  ];
+
+  // 現在のテンプレートから、上記で定義したbbPressテンプレートを非表示
+  foreach ( $bbpress_templates_to_remove as $template ) {
+    unset( $page_templates[ $template ] );
+  }
+
+  return $page_templates;
+}
+
+// bbPressが非アクティブな場合に、特定のbbPressテンプレートをpage.phpで上書きする
+add_filter( 'template_include', 'override_bbpress_templates_if_inactive' );
+function override_bbpress_templates_if_inactive( $template ) {
+  // bbPressがインストールされている場合は何もしない
+  if ( is_bbpress_exist() ) {
+    return $template;
+  }
+
+  // 非アクティブな場合、上書きしたいbbPressテンプレートのファイル名またはパスを定義
+  // ここで定義されたテンプレートがもし現在読み込まれている場合、page.phpに切り替えます。
+  $bbpress_templates_to_override = [
+    'templates/page-create-topic.php',
+    'templates/page-front-forums.php',
+  ];
+
+  // 現在のテンプレートが、上書き対象のbbPressテンプレートのいずれかと一致するか確認
+  foreach ( $bbpress_templates_to_override as $bbpress_template ) {
+    if ( basename( $template ) === basename( $bbpress_template ) ) {
+      // WordPressのテンプレート階層に従い、page.phpを探して返す
+      $new_template = locate_template( 'page.php' );
+      if ( !empty( $new_template ) ) {
+          return $new_template; // page.phpが見つかったら、それを読み込む
+      }
+    }
+  }
+
+  return $template;
+}
