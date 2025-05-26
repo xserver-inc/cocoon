@@ -593,13 +593,8 @@ add_filter('cocoon_part__tmp/categories-tags', function($content) {
 // bbPressが非アクティブな場合、特定のページテンプレートを非表示にする
 add_filter( 'theme_page_templates', 'hide_bbpress_templates_if_inactive' );
 function hide_bbpress_templates_if_inactive( $page_templates ) {
-  // is_plugin_activeが未定義の場合は読み込んで致命的なエラーを回避
-  if ( !function_exists( 'is_plugin_active' ) ) {
-    require_once ABSPATH . 'wp-admin/includes/plugin.php';
-  }
-
-  // bbPressがアクティブな場合は何もしない
-  if ( is_plugin_active( 'bbpress/bbpress.php' ) ) {
+  // bbPressがインストールされている場合は何もしない
+  if ( is_bbpress_exist() ) {
     return $page_templates;
   }
 
@@ -620,13 +615,8 @@ function hide_bbpress_templates_if_inactive( $page_templates ) {
 // bbPressが非アクティブな場合に、特定のbbPressテンプレートをpage.phpで上書きする
 add_filter( 'template_include', 'override_bbpress_templates_if_inactive' );
 function override_bbpress_templates_if_inactive( $template ) {
-  // is_plugin_activeが未定義の場合は読み込んで致命的なエラーを回避
-  if ( !function_exists( 'is_plugin_active' ) ) {
-    require_once ABSPATH . 'wp-admin/includes/plugin.php';
-  }
-
-  // bbPressがアクティブな場合は何もしない
-  if ( is_plugin_active( 'bbpress/bbpress.php' ) ) {
+  // bbPressがインストールされている場合は何もしない
+  if ( is_bbpress_exist() ) {
     return $template;
   }
 
