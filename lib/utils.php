@@ -3878,6 +3878,21 @@ function is_wp_language_korean() {
 }
 endif;
 
+//使用言語が繁体中文かどうか
+if ( !function_exists( 'is_wp_language_traditional_chinese' ) ):
+function is_wp_language_traditional_chinese() {
+  // WordPressの現在の言語を取得
+  $current_language = get_locale();
+
+  // 言語が繁体中文（`zh_TW`）であるかどうかを判別
+  if ($current_language === 'zh_TW') {
+      return true;
+  } else {
+      return false;
+  }
+}
+endif;
+
 //文章内にtocショートコードが使われているか
 if ( !function_exists( 'is_toc_shortcode_includes' ) ):
 function is_toc_shortcode_includes($content) {
