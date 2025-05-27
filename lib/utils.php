@@ -1885,6 +1885,9 @@ function get_site_font_source_family(){
     case 'noto_sans_korean':
       $font_source_family = 'Noto+Sans+KR';
       break;
+    case 'noto_sans_tc':
+      $font_source_family = 'Noto+Sans+TC';
+      break;
     default:
     $font_source_family = null;
       break;
@@ -1922,6 +1925,9 @@ function get_site_font_source_weight(){
       $font_source_weight = '';
       break;
     case 'noto_sans_korean':
+      $font_source_weight = ':wght@100..900';
+      break;
+    case 'noto_sans_tc':
       $font_source_weight = ':wght@100..900';
       break;
     default:

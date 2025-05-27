@@ -1104,6 +1104,11 @@ body.wp-admin {
 .admin-settings .demo .wp-admin-ff-microsoft-jhenghei .editor-styles-wrapper {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+.admin-settings .demo .ff-noto-sans-tc,
+.admin-settings .demo .wf-active .ff-noto-sans-tc,
+.admin-settings .demo .wp-admin-ff-noto-sans-tc .editor-styles-wrapper {
+  font-family: "Noto Sans TC", sans-serif;
+}
 .admin-settings .demo .sub-caption {
   font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", var(--cocoon-default-font);
   font-weight: 400;
@@ -9664,6 +9669,11 @@ body.wp-admin {
 .admin-settings .demo .wf-active .ff-microsoft-jhenghei,
 .admin-settings .demo .wp-admin-ff-microsoft-jhenghei .editor-styles-wrapper {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.admin-settings .demo .ff-noto-sans-tc,
+.admin-settings .demo .wf-active .ff-noto-sans-tc,
+.admin-settings .demo .wp-admin-ff-noto-sans-tc .editor-styles-wrapper {
+  font-family: "Noto Sans TC", sans-serif;
 }
 .admin-settings .demo .sub-caption {
   font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", var(--cocoon-default-font);
@@ -23910,6 +23920,11 @@ select option.fa:before {
 .components-popover__content .wf-active .ff-microsoft-jhenghei,
 .components-popover__content .wp-admin-ff-microsoft-jhenghei .editor-styles-wrapper {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.components-popover__content .ff-noto-sans-tc,
+.components-popover__content .wf-active .ff-noto-sans-tc,
+.components-popover__content .wp-admin-ff-noto-sans-tc .editor-styles-wrapper {
+  font-family: "Noto Sans TC", sans-serif;
 }
 .components-popover__content .sub-caption {
   font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", var(--cocoon-default-font);
