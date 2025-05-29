@@ -3190,10 +3190,6 @@ body.wp-admin {
 .admin-settings .demo .wp-block-latest-comments {
   padding-left: 0;
 }
-.admin-settings .demo :where(.wp-block-search__button) {
-  padding: 0.375em 0.1em;
-  font-size: 14px;
-}
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
 }
@@ -11756,10 +11752,6 @@ body.wp-admin {
 .admin-settings .demo .wp-block-latest-comments {
   padding-left: 0;
 }
-.admin-settings .demo :where(.wp-block-search__button) {
-  padding: 0.375em 0.1em;
-  font-size: 14px;
-}
 .admin-settings .demo .widget_search .wp-block-search__input {
   line-height: normal;
 }
@@ -18070,10 +18062,11 @@ body.wp-admin {
   flex-grow: 1;
 }
 .admin-settings .demo .wp-block-search__button {
-  width: 60px;
   border-radius: var(--cocoon-basic-border-radius);
   border: 1px solid var(--cocoon-basic-border-color);
   cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
 }
 .admin-settings .demo option {
   padding: 12px;

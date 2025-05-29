@@ -3001,11 +3001,6 @@ label.screen-reader-text {
   padding-left: 0;
 }
 
-:where(.wp-block-search__button) {
-  padding: 0.375em 0.1em;
-  font-size: 14px;
-}
-
 .widget_search .wp-block-search__input {
   line-height: normal;
 }

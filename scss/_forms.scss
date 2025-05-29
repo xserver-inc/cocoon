@@ -22,16 +22,13 @@ input[type="search"]{
   flex-grow: 1;
 }
 
-.wp-block-search__button{
-  width: 60px;
+.wp-block-search__button {
   border-radius: var(--cocoon-basic-border-radius);
   border: 1px solid var(--cocoon-basic-border-color);
   cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
 }
-
-// textarea{
-//   min-height: 260px;
-// }
 
 option{
   padding: 12px;
