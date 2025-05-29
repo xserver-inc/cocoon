@@ -43,8 +43,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "fontawesome5";
 @import "icomoon";
 @import "./animation/keyframes";
-// @import "amp-exclusions";
+// @import "amp-exclusions";/
 
+// メディアクエリ
+@import "breakpoints/breakpoints";
 
 // 以下調整用CSS
 

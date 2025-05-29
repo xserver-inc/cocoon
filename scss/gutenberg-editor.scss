@@ -709,6 +709,12 @@ ol, ul {
     .btn-wrap,
     .wp-block-cocoon-blocks-button-1{
       text-align: center;
+
+    }
+    .btn-wrap a,
+    .wp-block-cocoon-blocks-button-1 .btn{
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -716,6 +722,10 @@ ol, ul {
     .btn-wrap,
     .wp-block-cocoon-blocks-button-1{
       text-align: right;
+    }
+    .btn-wrap a,
+    .wp-block-cocoon-blocks-button-1 .btn{
+      margin-left: auto;
     }
   }
 }
