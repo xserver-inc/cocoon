@@ -1885,6 +1885,9 @@ function get_site_font_source_family(){
     case 'noto_sans_korean':
       $font_source_family = 'Noto+Sans+KR';
       break;
+    case 'noto_sans_tc':
+      $font_source_family = 'Noto+Sans+TC';
+      break;
     default:
     $font_source_family = null;
       break;
@@ -1922,6 +1925,9 @@ function get_site_font_source_weight(){
       $font_source_weight = '';
       break;
     case 'noto_sans_korean':
+      $font_source_weight = ':wght@100..900';
+      break;
+    case 'noto_sans_tc':
       $font_source_weight = ':wght@100..900';
       break;
     default:
@@ -3871,6 +3877,21 @@ function is_wp_language_korean() {
 
   // 言語が韓国語（`ko_KR`）であるかどうかを判別
   if ($current_language === 'ko_KR') {
+      return true;
+  } else {
+      return false;
+  }
+}
+endif;
+
+//使用言語が繁体中文かどうか
+if ( !function_exists( 'is_wp_language_traditional_chinese' ) ):
+function is_wp_language_traditional_chinese() {
+  // WordPressの現在の言語を取得
+  $current_language = get_locale();
+
+  // 言語が繁体中文（`zh_TW`）であるかどうかを判別
+  if ($current_language === 'zh_TW') {
       return true;
   } else {
       return false;

@@ -526,6 +526,18 @@ select, .search-edit {
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
+.ff-microsoft-jhenghei,
+.wf-active .ff-microsoft-jhenghei,
+.wp-admin-ff-microsoft-jhenghei .editor-styles-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.ff-noto-sans-tc,
+.wf-active .ff-noto-sans-tc,
+.wp-admin-ff-noto-sans-tc .editor-styles-wrapper {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
 .sub-caption {
   font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", var(--cocoon-default-font);
   font-weight: 400;

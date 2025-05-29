@@ -74,6 +74,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                   $options['noto_sans_korean'] = __( 'Noto Sans Korean', THEME_NAME ).__( '（韓国語WEBフォント）', THEME_NAME );
                   $options['pretendard'] = __( 'Pretendard', THEME_NAME ).__( '（韓国語WEBフォント）', THEME_NAME );
                 }
+                if (is_wp_language_traditional_chinese()) {
+                  $options['microsoft_jhenghei'] = __( 'Microsoft JhengHei', THEME_NAME ).__( '（繁体中文）', THEME_NAME );
+                  $options['noto_sans_tc'] = __( 'Noto Sans TC', THEME_NAME ).__( '（繁体中文WEBフォント）', THEME_NAME );
+                }
                 $options[''] = __( '指定なし', THEME_NAME );
                 generate_selectbox_tag(OP_SITE_FONT_FAMILY, $options, get_site_font_family(), __( 'フォント', THEME_NAME ));
                 generate_tips_tag(__( 'サイト全体適用されるフォントを選択します。', THEME_NAME ));
