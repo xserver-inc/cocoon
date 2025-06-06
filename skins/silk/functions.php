@@ -438,7 +438,26 @@ class Skin_Silk_Functions {
     }';
 
     //背景色
-    $site_background = get_site_background_color() ?: 'var(--cocoon-custom-background-color, #fff)';
+    $custom_background_color = get_site_background_color();
+    if ($custom_background_color) {
+      echo '.speech-wrap,
+      .sbs-line.sbp-r{
+        --cocoon-custom-background-color: '.$custom_background_color.';
+        --cocoon-custom-text-color: inherit;
+      }
+
+      .body .speech-balloon::after {
+        border-right-color: '.$custom_background_color.';
+      }
+      .sbp-r .speech-balloon::after {
+        border-left-color: '.$custom_background_color.';
+      }
+      .sbs-line.sbp-r .speech-balloon::after {
+        border-left-color: '.$custom_background_color.';
+      }';
+    }
+    $site_background = $custom_background_color ?: 'var(--cocoon-custom-background-color, #fff)';
+
     echo 'hr.is-style-cut-line::after,
     .iconlist-title {
       background: '.$site_background.';
@@ -446,22 +465,6 @@ class Skin_Silk_Functions {
 
     .info-list-item-content-link {
       --cocoon-black-color: '.$site_color.';
-    }
-
-    .speech-wrap,
-    .sbs-line.sbp-r{
-      --cocoon-custom-background-color: '.$site_background.';
-      --cocoon-custom-text-color: inherit;
-    }
-
-    .body .speech-balloon::after {
-      border-right-color: '.$site_background.';
-    }
-    .sbp-r .speech-balloon::after {
-      border-left-color: '.$site_background.';
-    }
-    .sbs-line.sbp-r .speech-balloon::after {
-      border-left-color: '.$site_background.';
     }
 
     .micro-balloon{
