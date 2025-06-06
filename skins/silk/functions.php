@@ -439,6 +439,7 @@ class Skin_Silk_Functions {
 
     //背景色
     $custom_background_color = get_site_background_color();
+    // サイトの背景色が設定されている場合のみ、CSS変数を直接定義する
     if ($custom_background_color) {
       echo '.speech-wrap,
       .sbs-line.sbp-r{
@@ -456,6 +457,8 @@ class Skin_Silk_Functions {
         border-left-color: '.$custom_background_color.';
       }';
     }
+    // 他のスタイルで利用するための汎用変数を準備する
+    // サイト背景色が未設定の場合は、CSS変数（var）を参照させ、フォールバックで白(#fff)を指定する
     $site_background = $custom_background_color ?: 'var(--cocoon-custom-background-color, #fff)';
 
     echo 'hr.is-style-cut-line::after,
