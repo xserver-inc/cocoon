@@ -1982,11 +1982,6 @@ p code.hljs {
 }
 
 /* 吹き出し */
-.speech-wrap{
-  --cocoon-custom-background-color: #fff;
-  --cocoon-custom-border-color: #ddd;
-}
-
 .speech-icon img {
   border-width: 1px;
   border-color: #ddd;
@@ -2045,6 +2040,13 @@ div.speech-balloon {
 .is-style-light-background-box,
 .is-style-stitch-box{
   color: #333;
+}
+
+/* Cocoon本体による影響の調整 */
+@media screen and (min-width: 481px) {
+  .cocoon-block-balloon.not-nested-style.sbs-line > .speech-balloon::after {
+    left: -7px;
+  }
 }
 
 /* テーブル */
