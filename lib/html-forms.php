@@ -986,27 +986,29 @@ function generate_custom_post_type_check_list( $name, $checks, $width = 0 ) {
     $checks = array();
   }
 
-  echo '<div class="tab-content custom-post-type-check-list '.$name.'-list cocoon-donation-privilege" style="width: '.$width.';"><ul>';
-
   $custom_post_types = get_custum_post_types();
 
-  foreach($custom_post_types as $custom_post_type) {
-    $post_type_object = get_post_type_object($custom_post_type);
-    $label = ($post_type_object->label) ? $post_type_object->label : $custom_post_type;
-    $id = $id = $name.'_'.$custom_post_type;
+  echo '<div class="tab-content custom-post-type-check-list '.$name.'-list cocoon-donation-privilege" style="width: '.$width.';">';
 
-    echo '<li><input type="checkbox" name="'.esc_attr($name).'[]" value="'.esc_attr($custom_post_type).'" id="'.esc_attr($id).'"';
-    checked(in_array($custom_post_type, $checks));
-    echo '><label for="'.$id.'">' . esc_html($label) . '</label></li>';
-  } //foreach
+  if ($custom_post_types) {
+    echo '<ul>';
+    foreach($custom_post_types as $custom_post_type) {
+      $post_type_object = get_post_type_object($custom_post_type);
+      $label = ($post_type_object->label) ? $post_type_object->label : $custom_post_type;
+      $id = $id = $name.'_'.$custom_post_type;
 
-  echo '</ul></div>';
+      echo '<li><input type="checkbox" name="'.esc_attr($name).'[]" value="'.esc_attr($custom_post_type).'" id="'.esc_attr($id).'"';
+      checked(in_array($custom_post_type, $checks));
+      echo '><label for="'.$id.'">' . esc_html($label) . '</label></li>';
+    } //foreach
+     echo '</ul>';
+  } else {
+    echo '<p>';
+    _e( '現在、「カスタム投稿タイプ」は存在しません。', THEME_NAME );
+    echo '</p>';
+  }
 
-  // echo '<div class="tab-content tag-check-list '.$name.'-list" style="width: '.$width.';">';
-
-  // echo '<p>'.__( 'タグID入力', THEME_NAME ).'</p>';
-  // generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
-  // echo '<p>'.__( 'タグIDをカンマ区切りで入力してください。', THEME_NAME ).'</p>';
+  echo '</div>';
 
   // echo '</div>';
 }
