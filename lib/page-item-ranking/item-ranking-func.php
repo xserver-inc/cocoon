@@ -259,7 +259,7 @@ function get_rating_star_tag($rate, $max = 5, $number = false, $color = null){
   }
 
   $tag .= '</span>';
-  return $tag;
+  return change_fa($tag);
 }
 endif;
 
