@@ -517,7 +517,7 @@ select option.fa{
   }
 }
 .widget-content .tab-content{
-  height: 120px;
+  max-height: 140px;
   margin-bottom: 1em;
 }
 .tabs .tagcloud-list{
@@ -825,6 +825,10 @@ select option.fa{
 
     input[type='text']{
       width: 100%;
+    }
+
+    input, select{
+      margin: 0;
     }
   }
 
