@@ -20723,7 +20723,7 @@ select option.fa:before {
 .toggle-wrap .toggle-content input[type=text] {
   width: 100%;
 }
-.toggle-wrap .toggle-content input, .toggle-wrap .toggle-content select {
+.toggle-wrap .toggle-content .widget-text {
   margin: 0;
 }
 .toggle-wrap > input[type=checkbox] {

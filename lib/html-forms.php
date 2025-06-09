@@ -313,7 +313,7 @@ endif;
 
 //テキストボックスの生成
 if ( !function_exists( 'generate_textbox_tag' ) ):
-function generate_textbox_tag($name, $value = '', $placeholder = '', $cols = DEFAULT_INPUT_COLS){
+function generate_textbox_tag($name, $value = '', $placeholder = '', $cols = DEFAULT_INPUT_COLS, $class = ''){
   $value = isset($value) ? $value : '';
   ob_start();?>
   <input type="text"
@@ -321,7 +321,11 @@ function generate_textbox_tag($name, $value = '', $placeholder = '', $cols = DEF
     name="<?php echo esc_attr($name); ?>"
     size="<?php echo esc_attr($cols); ?>"
     value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>"
-    placeholder="<?php echo esc_attr($placeholder); ?>">
+    placeholder="<?php echo esc_attr($placeholder); ?>"
+    <?php if ($class): ?>
+    class="<?php echo esc_attr($class); ?>"
+    <?php endif; ?>
+    >
   <?php
   $res = ob_get_clean();
   echo apply_filters('admin_input_form_tag', $res, $name);
@@ -925,7 +929,7 @@ function generate_post_check_list( $name, $value, $width = 0 ) {
   echo '<div class="tab-content post-check-list '.$name.'-list" style="width: '.$width.';">';
 
   echo '<p>'.__( '投稿ID入力', THEME_NAME ).'</p>';
-  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ), DEFAULT_INPUT_COLS, 'widget-text');
   echo '<p>'.__( '投稿IDをカンマ区切りで入力してください。', THEME_NAME ).'</p>';
 
   echo '</div>';
@@ -945,7 +949,7 @@ function generate_fixed_page_check_list( $name, $value, $width = 0 ) {
   echo '<div class="tab-content fixed-page-check-list '.$name.'-list" style="width: '.$width.';">';
 
   echo '<p>'.__( '固定ページID入力', THEME_NAME ).'</p>';
-  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ), DEFAULT_INPUT_COLS, 'widget-text');
   echo '<p>'.__( '固定ページIDをカンマ区切りで入力してください。', THEME_NAME ).'</p>';
 
   echo '</div>';
@@ -965,7 +969,7 @@ function generate_tag_check_list( $name, $value, $width = 0 ) {
   echo '<div class="tab-content tag-check-list '.$name.'-list" style="width: '.$width.';">';
 
   echo '<p>'.__( 'タグID入力', THEME_NAME ).'</p>';
-  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ), DEFAULT_INPUT_COLS, 'widget-text');
   echo '<p>'.__( 'タグIDをカンマ区切りで入力してください。', THEME_NAME ).'</p>';
 
   echo '</div>';
