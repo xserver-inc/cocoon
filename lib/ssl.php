@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //投稿内容をSSL対応する
-if ( !function_exists( 'chagne_http_to_https' ) ):
+if ( !function_exists( 'chagne_site_url_html_to_https' ) ):
 function chagne_site_url_html_to_https($the_content){
   //httpとhttpsURLの取得
   if (strpos(site_url(), 'https://') !== false) {
