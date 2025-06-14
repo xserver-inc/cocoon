@@ -181,6 +181,9 @@ function gutenberg_stylesheets_custom() {
     wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_cocoon_template_directory_uri() . '/js/gutenberg.js', array( 'jquery' ), false, true );
     wp_enqueue_style( THEME_NAME . '-gutenberg', get_cocoon_template_directory_uri() . '/css/gutenberg-editor.css' );
 
+    // IcoMoonを読み込む
+	  wp_enqueue_style_icomoon();
+
     //WordPressバージョンが5.8以上の時
     if (is_wp_5_8_or_over()) {
 
