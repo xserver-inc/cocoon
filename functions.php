@@ -640,3 +640,64 @@ function override_bbpress_templates_if_inactive( $template ) {
 
   return $template;
 }
+
+// 2. サイトエディター（パターンエディター）のiframe内用
+add_action('admin_footer', 'add_site_editor_body_class_script');
+function add_site_editor_body_class_script() {
+  // サイトエディターの場合のみ実行
+  if (use_gutenberg_editor()) {
+    echo "
+      <script>
+        (function() {
+          // DOM読み込み完了後に実行
+          function addBodyClass() {
+            // iframe内のdocumentを取得
+            const iframe = document.querySelector('iframe[name=\"editor-canvas\"]');
+            if (iframe && iframe.contentWindow && iframe.contentWindow.document) {
+              const iframeBody = iframe.contentWindow.document.body;
+              if (iframeBody) {
+                // フォントを追加
+                if (!iframeBody.classList.contains('custom-editor-class')) {
+                  iframeBody.classList.add('wp-admin-".get_site_font_family_class()."');
+                }
+                // フォントサイズを追加
+                if (!iframeBody.classList.contains('custom-editor-class')) {
+                  iframeBody.classList.add('wp-admin-".get_site_font_size_class()."');
+                }
+                // フォントウェイトを追加
+                if (!iframeBody.classList.contains('custom-editor-class')) {
+                  iframeBody.classList.add('wp-admin-".get_site_font_weight_class()."');
+                }
+              }
+            }
+          }
+
+          // 初回実行
+          setTimeout(addBodyClass, 1000);
+
+          // iframe の読み込みを監視
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.type === 'childList') {
+                const iframe = document.querySelector('iframe[name=\"editor-canvas\"]');
+                if (iframe) {
+                  console.log(iframe);
+                  iframe.addEventListener('load', addBodyClass);
+                  addBodyClass();
+                }
+              }
+            });
+          });
+
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+
+          // 定期的にチェック（フォールバック）
+          setInterval(addBodyClass, 2000);
+        })();
+      </script>
+    ";
+  }
+}

@@ -53,6 +53,17 @@ function cocoon_blocks_cgb_block_assets()
 			return $classes;
 		}
 	}
+	// add_filter( 'block_editor_settings_all', 'add_site_font_settings_to_admin_body_class', 10, 2 );
+	// if (!function_exists('add_site_font_settings_to_admin_body_class')) {
+	// 	function add_site_font_settings_to_admin_body_class( $editor_settings, $post ) {
+	// 		$classes = '';
+	// 		$classes .= ' wp-admin-' . get_site_font_family_class();
+	// 		$classes .= ' wp-admin-' . get_site_font_size_class();
+	// 		$classes .= ' wp-admin-' . get_site_font_weight_class();
+	// 		$editor_settings['bodyClassName'] = $classes;
+	// 		return $editor_settings;
+	// 	}
+	// }
 }
 endif;
 
@@ -89,6 +100,21 @@ function cocoon_blocks_cgb_editor_assets()
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		// true // Enqueue the script in the footer.
 	);
+
+	// // テーマ内のCSSファイルのパスを構築
+	// $css_file_path = get_template_directory() . '/css/gutenberg-editor.css';
+	// $css_file_url = get_template_directory_uri() . '/css/gutenberg-editor.css';
+
+	// // ファイルが存在するかチェック
+	// if (file_exists($css_file_path)) {
+	// 	wp_enqueue_style(
+	// 		'theme-gutenberg-editor-styles', // ハンドル名
+	// 		$css_file_url,                   // CSSファイルのURL
+	// 		array(),                         // 依存関係
+	// 		filemtime($css_file_path),       // バージョン（ファイルの更新時刻を使用）
+	// 		'all'                            // メディアタイプ
+	// 	);
+	// }
 
 	// ブロックエディターに翻訳ファイルを読み込む
 	wp_set_script_translations(
