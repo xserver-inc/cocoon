@@ -457,7 +457,7 @@ function get_ad_ads_txt_content(){
   if (file_exists($file_path)){
     $ads_txt_content = file_get_contents($file_path);
   }
-  return $ads_txt_content;
+  return stripslashes_deep($ads_txt_content);
 }
 endif;
 
