@@ -1315,7 +1315,6 @@ function generate_widget_entries_tag($atts){
   }
   //順序付きポスト
   if ($ordered_posts) {
-    $post_type = 'post,page';// デフォルトでpost_typeは投稿と固定ページ
     $args = array(
       'ignore_sticky_posts' => true, // 固定記事は表示しない
       'posts_per_page'      => -1,   // 表示数を設定した記事を全件表示
