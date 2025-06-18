@@ -144,7 +144,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__( 'Cocoonの「ルビ」ボタン表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。', THEME_NAME ));
             ?>
 
-            <?php //組織のクリア
+            <?php //書式のクリア
             generate_checkbox_tag(OP_BLOCK_EDITOR_CLEAR_FORMAT_BUTTON_VISIBLE , is_block_editor_clear_format_button_visible(), __( '「書式のクリア」ボタンを表示する', THEME_NAME ));
             generate_tips_tag(__( 'Cocoonの「書式のクリア」表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。', THEME_NAME ));
             ?>
