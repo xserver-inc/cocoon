@@ -609,7 +609,7 @@ function wp_enqueue_script_theme_js(){
   $value = apply_filters( 'cocoon_localize_script_options_value', array(
     'is_lazy_load_enable' => is_lazy_load_enable(),
     'is_fixed_mobile_buttons_enable' => is_fixed_mobile_buttons_enable(),
-    'is_google_font_lazy_load_enable' => is_google_font_lazy_load_enable(),
+    'is_google_font_lazy_load_enable' => is_google_font_lazy_load_enable() && !is_admin(),
   ) );
   wp_localize_script( THEME_JS, $name, $value );
 
@@ -1050,10 +1050,10 @@ endif;
 //Google Fontsの読み込み（Googleフォント以外のサイトフォント含む）
 if ( !function_exists( 'wp_enqueue_google_fonts' ) ):
 function wp_enqueue_google_fonts(){
-  if (!is_site_font_family_local() && !is_google_font_lazy_load_enable()) {
+  if (is_admin() || (!is_site_font_family_local() && !is_google_font_lazy_load_enable())) {
     wp_enqueue_style( 'site-font-'.get_site_font_source(), get_site_font_source_url() );
   }
-  if (!is_site_font_family_local() && is_google_font_lazy_load_enable() && !get_site_font_family_pretendard()) {
+  if (!is_admin() && !is_site_font_family_local() && is_google_font_lazy_load_enable() && !get_site_font_family_pretendard()) {
     $code = "window.WebFontConfig = {
       google: { families: ['".get_site_font_source_family().get_site_font_source_weight()."'] },
       active: function() {

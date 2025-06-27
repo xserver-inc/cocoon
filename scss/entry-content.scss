@@ -17,6 +17,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 //固定値
 @import "defins";
 //本文パーツ
+@import "font";
 @import "extension";
 @import "extension-layout";
 @import "speech-balloon";
@@ -57,17 +58,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   display: block;
 }
 
+/* 後で消す */
 .block-box p:first-of-type,
 .tab-block p:first-of-type{
   margin-top: 0;
-}
-
-.micro-top{
-  margin-bottom: inherit;
-}
-
-.micro-bottom.micro-balloon {
-  margin-top: inherit;
 }
 
 .a-wrap {
