@@ -109,7 +109,7 @@ if (!function_exists('skin_get_site_font_family')) :
     // echo $skin_font_set;
     switch ($skin_font_set) {
       case 'hiragino':
-        return 'Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans"';
+        return '"Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo';
         break;
       case 'meiryo':
         return 'Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans"';
@@ -199,7 +199,7 @@ if (!function_exists('generate_font_url')) :
 endif;
 
 add_action('wp_enqueue_scripts', 'enqueue_skin_grayish_google_fonts');
-add_action('enqueue_block_editor_assets', 'enqueue_skin_grayish_google_fonts_editor');
+add_action('enqueue_block_assets', 'enqueue_skin_grayish_google_fonts_editor');
 
 // -----------------------------------------------------------------------------
 // テーマカスタマイザー　タイトル：見出しのGoogleFontの選択を可能に：
@@ -323,57 +323,56 @@ if (!function_exists('skin_grayish_font_css')) :
   }
 endif;
 
-// Block Editor編集画面 タブボックスにもカスタマイザーで設定したGoogle Fontを当てる
-if (!function_exists('skin_grayish_font_blkeditor')) :
-  function skin_grayish_font_blkeditor()
-  {
-    $cocoon_site_font = skin_get_site_font_family();
-    $style_template = '
-.editor-styles-wrapper .blank-box.bb-tab::before {
-  font-family: "Font Awesome 5 Free", %s!important;
-  }
-	';
-    $style_template_amazon = '
-.editor-styles-wrapper .blank-box.bb-amazon::before {
-  font-family: "Font Awesome 5 Brands", %s!important;
-  }
-	';
-    $style_font = '';
-    if (get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_Montserrat') {
-      $style_font = '"Montserrat", ' . $cocoon_site_font . ', var(--skin-grayish-default-font), sans-serif';
-    } elseif (get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_Lato') {
-      $style_font = '"Lato",' . $cocoon_site_font . ', var(--skin-grayish-default-font), sans-serif';
-    } elseif (get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_InknutAntiqua') {
-      $style_font = '"Inknut Antiqua", ' . $cocoon_site_font . ', var(--skin-grayish-default-font), sans-serif';
-    } elseif (get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_Spectral') {
-      $style_font = '"Spectral", ' . $cocoon_site_font . ', var(--skin-grayish-default-font), sans-serif';
-    } elseif (get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_Lora') {
-      $style_font = '"Lora", ' . $cocoon_site_font . ', var(--skin-grayish-default-font), sans-serif';
-    } elseif (get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_Jost') {
-      $style_font = '"Jost", ' . $cocoon_site_font . ', var(--skin-grayish-default-font),sans-serif';
-    } elseif (get_theme_mod('font_pat_control_radio', 'font_Montserrat') === 'font_RobotoSlab') {
-      $style_font = '"Roboto Slab", ' . $cocoon_site_font . ', var(--skin-grayish-default-font),sans-serif';
-    } else {
-      // $style_font = 'inherit';
-      $style_font = $cocoon_site_font . ', var(--skin-grayish-default-font),sans-serif';
-    }
-    // echo sprintf($style_template, $style_font);
-    $style_fontfamily = sprintf($style_template, $style_font);
-    wp_add_inline_style('wp-block-editor', $style_fontfamily);
 
-    $style_fontfamily_amazon = sprintf($style_template_amazon, $style_font);
-    wp_add_inline_style('wp-block-editor', $style_fontfamily_amazon);
-    // ブロックエディタの中にもCSS変数で出力
-    $style_fontfamily_cstm =
-      '
-      :root {--skin-grayish-style-font: ' . $style_font . ';
-        --skin-get-site-font: ' . $cocoon_site_font . ', var(--skin-grayish-default-font),sans-serif' . ';
-        }	';
-    wp_add_inline_style('wp-block-editor', $style_fontfamily_cstm);
-  }
-endif;
-add_action('enqueue_block_editor_assets', 'skin_grayish_font_blkeditor');
 
+// WordPress6.8 パターン編集画面iframe対応
+add_action('enqueue_block_assets', 'skin_grayish_font_blkeditor');
+
+function skin_grayish_font_blkeditor()
+{
+  $cocoon_site_font = skin_get_site_font_family();
+  $font_key = get_theme_mod('font_pat_control_radio', 'font_Montserrat');
+
+  $font_map = array(
+    'font_Montserrat'      => '"Montserrat"',
+    'font_Lato'            => '"Lato"',
+    'font_InknutAntiqua'   => '"Inknut Antiqua"',
+    'font_Spectral'        => '"Spectral"',
+    'font_Lora'            => '"Lora"',
+    'font_Jost'            => '"Jost"',
+    'font_RobotoSlab'      => '"Roboto Slab"',
+  );
+
+  $font_base = isset($font_map[$font_key]) ? $font_map[$font_key] : '';
+  $style_font = trim($font_base . ', ' . $cocoon_site_font . ', var(--skin-grayish-default-font), sans-serif', ', ');
+
+  // Google Fonts の URL を生成（font_none の場合は空になる想定）
+  $font_url = generate_font_url($font_key);
+
+  if ($font_key !== 'font_none' && !empty($font_url)) {
+    wp_enqueue_style('skin-grayish-gfont', esc_url($font_url), array(), null);
+  } else {
+    // Google Fonts を読み込まない場合でも handle は登録しておく
+    wp_register_style('skin-grayish-gfont', false);
+    wp_enqueue_style('skin-grayish-gfont');
+  }
+
+  // iframe内にも CSS 変数などを注入（Google Fonts の有無に関係なく）
+  $css = ":root {
+    --skin-grayish-style-font: {$style_font};
+    --skin-get-site-font: {$cocoon_site_font}, var(--skin-grayish-default-font), sans-serif;
+  }
+
+  .editor-styles-wrapper .blank-box.bb-tab::before {
+    font-family: 'Font Awesome 5 Free', {$style_font} !important;
+  }
+
+  .editor-styles-wrapper .blank-box.bb-amazon::before {
+    font-family: 'Font Awesome 5 Brands', {$style_font} !important;
+  }";
+
+  wp_add_inline_style('skin-grayish-gfont', $css);
+}
 
 // head内にCSSを追加　タイトルフォントの太さ
 add_action('wp_head', 'skin_grayish_titlefont_weight');
@@ -649,10 +648,11 @@ if (!function_exists('skin_grayish_color_customize_blkeditor')) :
 	';
     $style_textcolor = sprintf($style_template, $text_color, $text_color, $text_color, $main_color, $main_thin_color, $main_exthin_color, $sub_color, $sub_cattag_color);
 
-    wp_add_inline_style('wp-block-editor', $style_textcolor);
+    // wp_add_inline_style('wp-block-editor', $style_textcolor);
+    wp_add_inline_style('skin-grayish-gfont', $style_textcolor);
   }
 endif;
-add_action('enqueue_block_editor_assets', 'skin_grayish_color_customize_blkeditor');
+add_action('enqueue_block_assets', 'skin_grayish_color_customize_blkeditor');
 
 // -----------------------------------------------------------------------------
 // テーマカスタマイザー　フロントページ設定：ヘッダー
@@ -2102,7 +2102,7 @@ endif;
 // ブロックエディター編集画面にもスタイルを当てる：cocoon-gutenbergで親テーマのあとに読み込み
 // -----------------------------------------------------------------------------
 add_theme_support('editor-styles');
-add_action('enqueue_block_editor_assets', 'skin_block_editor_style_setup');
+add_action('enqueue_block_assets', 'skin_block_editor_style_setup');
 if (!function_exists('skin_block_editor_style_setup')) :
   function skin_block_editor_style_setup()
   {
