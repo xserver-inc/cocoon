@@ -1,15 +1,49 @@
 /* ブロックエディターの編集画面のcss */
 /* 表示側とできるだけ見た目をあわせる */
 
-.editor-styles-wrapper.body.article {
+/* .editor-styles-wrapper.body.article {
+	color: var(--skin-grayish-site-name-txt);
+} */
+
+/* .editor-styles-wrapper {
+	color: var(--skin-grayish-site-name-txt);
+} */
+
+.editor-styles-wrapper .editor-post-title__input {
 	color: var(--skin-grayish-site-name-txt);
 }
+
+.editor-styles-wrapper :where(p,
+	h1, h2, h3, h4, h5, h6,
+	ul, ol, li,
+	blockquote,
+	code, pre,
+	a,
+	table, th, td, details, summary) {
+	color: var(--skin-grayish-site-name-txt);
+}
+
+.editor-styles-wrapper .article h4::before {
+	display: block;
+	content: "";
+	background-image: url("images/svg-icon/mat-check.svg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	filter: invert(74%) sepia(7%) saturate(50%) hue-rotate(349deg) brightness(88%) contrast(91%);
+	width: 0.9em;
+	height: 0.9em;
+	position: absolute;
+	top: 1em;
+	left: 0;
+	z-index: 1;
+}
+
 
 /* ------------------------------------------------------------------------ */
 /*  ランキング エディタでアイコンが消えるため追加                                  */
 /* ------------------------------------------------------------------------ */
 .editor-styles-wrapper .ranking-box :is(.g-crown, .s-crown, .c-crown)::before {
-	background-image: url(images/svg-icon/crown.svg);
+	background-image: url("images/svg-icon/crown.svg");
 }
 
 /* ------------------------------------------------------------------------ */
@@ -63,7 +97,7 @@
 	grid-template-columns: minmax(auto, 150px) 1fr !important;
 	row-gap: 0 !important;
 	-moz-column-gap: 2.5em !important;
-	column-gap: 2.5em !important;
+	     column-gap: 2.5em !important;
 	background-color: var(--white) !important;
 	width: 100% !important;
 	padding: 2em !important;
@@ -167,7 +201,7 @@
 
 /* ----------- レスポンシブ -----------*/
 /*834px以下*/
-@media screen and (max-width: 834px) {
+@media screen and (width <=834px) {
 
 	/* ------------------------------------------------------------------------ */
 	/*  Profileボックス  :where(.main, .content-bottom) ver                                                       */
@@ -177,7 +211,7 @@
 		grid-template-columns: 1fr !important;
 		padding: 2em 1em !important;
 		-moz-column-gap: 0em !important;
-		column-gap: 0em !important;
+		     column-gap: 0em !important;
 	}
 
 	.editor-styles-wrapper .author-box .author-content .author-name {
@@ -185,7 +219,6 @@
 		grid-column: 1 !important;
 		align-self: flex-start !important;
 		justify-self: center !important;
-		text-align: left !important;
 		padding-top: 0 !important;
 		padding-bottom: 1em !important;
 		text-align: center !important;
