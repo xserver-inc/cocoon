@@ -113,6 +113,28 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   margin-bottom: 0.4em;
 }
 
+.sns-follow-message, .sns-share-message {
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.copy-info {
+  display: none;
+  /*初期状態は非表示*/
+  padding: 1em 2em;
+  color: #fff;
+  border-radius: 8px;
+  /*画面上部に表示*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--cocoon-text-color);
+  opacity: 0.8;
+  box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
+  z-index: 2;
+}
+
 .fz-12px {
   font-size: 12px;
 }
@@ -6818,6 +6840,284 @@ https://codepen.io/nxworld/pen/oLdoWb
   content: "";
   border: solid rgba(255, 255, 255, 0.7);
   border-width: 0 0 2px 2px;
+}
+
+.sns-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  row-gap: 10px;
+  column-gap: 6px;
+  margin-top: 0.3em;
+  margin-bottom: 2em;
+}
+.sns-buttons a {
+  align-content: center;
+  align-items: center;
+  background-color: var(--cocoon-sns-color);
+  border-radius: var(--cocoon-basic-border-radius);
+  display: inline-flex;
+  font-size: 18px;
+  justify-content: center;
+  height: 45px;
+  position: relative;
+  text-align: center;
+  width: 32%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 0 !important;
+  color: var(--cocoon-white-color);
+  text-decoration: none;
+}
+.sns-buttons a:hover {
+  opacity: 0.7;
+}
+
+.bc-brand-color-white a {
+  background-color: var(--cocoon-white-color);
+  border: 1px solid var(--cocoon-sns-color);
+  color: var(--cocoon-sns-color);
+  font-weight: 500;
+}
+.bc-brand-color-white a:hover {
+  opacity: 0.5;
+}
+
+[class*=bc-brand-color] .x-corp-button {
+  --cocoon-sns-color: var(--cocoon-twitter-color);
+}
+
+[class*=bc-brand-color] .mastodon-button {
+  --cocoon-sns-color: var(--cocoon-mastodon-color);
+}
+
+[class*=bc-brand-color] .bluesky-button {
+  --cocoon-sns-color: var(--cocoon-bluesky-color);
+}
+
+[class*=bc-brand-color] .misskey-button {
+  --cocoon-sns-color: var(--cocoon-misskey-color);
+}
+
+[class*=bc-brand-color] .facebook-button {
+  --cocoon-sns-color: var(--cocoon-facebook-color);
+}
+
+[class*=bc-brand-color] .hatebu-button {
+  --cocoon-sns-color: var(--cocoon-hatebu-color);
+}
+
+[class*=bc-brand-color] .google-plus-button {
+  --cocoon-sns-color: var(--cocoon-google-plus-color);
+}
+
+[class*=bc-brand-color] .pocket-button {
+  --cocoon-sns-color: var(--cocoon-pocket-color);
+}
+
+[class*=bc-brand-color] .line-button {
+  --cocoon-sns-color: var(--cocoon-line-color);
+}
+
+[class*=bc-brand-color] .website-button {
+  --cocoon-sns-color: var(--cocoon-website-color);
+}
+
+[class*=bc-brand-color] .instagram-button {
+  --cocoon-sns-color: var(--cocoon-instagram-color);
+}
+
+[class*=bc-brand-color] .pinterest-button {
+  --cocoon-sns-color: var(--cocoon-pinterest-color);
+}
+
+[class*=bc-brand-color] .youtube-button {
+  --cocoon-sns-color: var(--cocoon-youtube-color);
+}
+
+[class*=bc-brand-color] .tiktok-button {
+  --cocoon-sns-color: var(--cocoon-tiktok-color);
+}
+
+[class*=bc-brand-color] .linkedin-button {
+  --cocoon-sns-color: var(--cocoon-linkedin-color);
+}
+
+[class*=bc-brand-color] .note-button {
+  --cocoon-sns-color: var(--cocoon-note-color);
+}
+
+[class*=bc-brand-color] .soundcloud-button {
+  --cocoon-sns-color: var(--cocoon-soundcloud-color);
+}
+
+[class*=bc-brand-color] .flickr-button {
+  --cocoon-sns-color: var(--cocoon-flickr-color);
+}
+
+[class*=bc-brand-color] .amazon-button {
+  --cocoon-sns-color: var(--cocoon-amazon-color);
+}
+
+[class*=bc-brand-color] .twitch-button {
+  --cocoon-sns-color: var(--cocoon-twitch-color);
+}
+
+[class*=bc-brand-color] .rakuten-room-button {
+  --cocoon-sns-color: var(--cocoon-rakuten-room-color);
+}
+
+[class*=bc-brand-color] .slack-button {
+  --cocoon-sns-color: var(--cocoon-slack-color);
+}
+
+[class*=bc-brand-color] .github-button {
+  --cocoon-sns-color: var(--cocoon-github-color);
+}
+
+[class*=bc-brand-color] .codepen-button {
+  --cocoon-sns-color: var(--cocoon-codepen-color);
+}
+
+[class*=bc-brand-color] .feedly-button {
+  --cocoon-sns-color: var(--cocoon-feedly-color);
+}
+
+[class*=bc-brand-color] .rss-button {
+  --cocoon-sns-color: var(--cocoon-rss-color);
+}
+
+[class*=bc-brand-color] .copy-button {
+  --cocoon-sns-color: var(--cocoon-copy-color);
+}
+
+[class*=bc-brand-color] .comment-button {
+  --cocoon-sns-color: var(--cocoon-comment-color);
+}
+
+.ss-top {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ss-top .sns-share-message {
+  display: none;
+}
+
+.sns-share.ss-col-1 a {
+  width: 100%;
+}
+.sns-share.ss-col-2 .sns-buttons {
+  column-gap: 1%;
+}
+.sns-share.ss-col-2 a {
+  width: 49.5%;
+}
+.sns-share.ss-col-3 .sns-buttons {
+  column-gap: 0.75%;
+}
+.sns-share.ss-col-3 a {
+  width: 32.5%;
+}
+.sns-share.ss-col-4 .sns-buttons {
+  column-gap: 1.3333333333%;
+}
+.sns-share.ss-col-4 a {
+  width: 24%;
+}
+.sns-share.ss-col-5 .sns-buttons {
+  column-gap: 1.25%;
+}
+.sns-share.ss-col-5 a {
+  width: 19%;
+}
+.sns-share.ss-col-6 .sns-buttons {
+  column-gap: 0.8%;
+}
+.sns-share.ss-col-6 a {
+  width: 16%;
+}
+.sns-share.ss-high-and-low-cl a, .sns-share.ss-high-and-low-lc a {
+  display: flex;
+  align-content: center;
+  line-height: 16px;
+}
+.sns-share.ss-high-and-low-cl a .social-icon, .sns-share.ss-high-and-low-lc a .social-icon,
+.sns-share.ss-high-and-low-cl a .button-caption,
+.sns-share.ss-high-and-low-lc a .button-caption {
+  display: block;
+  font-size: 16px;
+  margin: 0;
+}
+.sns-share.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-high-and-low-lc a .social-icon.button-caption {
+  font-size: 12px;
+}
+.sns-share.ss-high-and-low-cl a .button-caption.button-caption, .sns-share.ss-high-and-low-lc a .button-caption.button-caption {
+  font-size: 12px;
+}
+.sns-share.ss-high-and-low-lc a {
+  flex-direction: column;
+}
+.sns-share.ss-high-and-low-lc a > span {
+  padding-top: 3px;
+}
+.sns-share.ss-high-and-low-cl a {
+  flex-direction: column-reverse;
+}
+
+.sns-share-buttons a .button-caption {
+  font-size: 16px;
+  margin-left: 10px;
+}
+.sns-share-buttons a .share-count {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.share-menu-content .sns-share-buttons a {
+  width: 24%;
+}
+
+.sbc-hide .share-count {
+  display: none;
+}
+
+/* メッセージ */
+.article-header .sns-share:not(:has(.sns-button)),
+.article-footer .sns-share:not(:has(.sns-button)) {
+  display: none;
+}
+
+/************************************
+** SNSフォローボタン
+************************************/
+.sns-follow-buttons a {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+}
+.sns-follow-buttons a:last-child {
+  margin-right: 0;
+}
+.sns-follow-buttons a .follow-count {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.fbc-hide .follow-count {
+  display: none;
 }
 
 [class*=fab-]::before {
