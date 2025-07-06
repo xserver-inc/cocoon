@@ -1208,9 +1208,11 @@ table tr:nth-of-type(2n) {
 /* □■-----------------------------------------------------
 / 『モバイルメニュー』
 -----------------------------------------------------■□ */
+.mobile-menu-buttons {
+	background-color: #333333;
+}
 .mobile-menu-buttons > .menu-button,
 .mobile-menu-buttons > .menu-button > a{
-	background-color: #333333;
 	color: #e9e9e9;
 }
 /*
