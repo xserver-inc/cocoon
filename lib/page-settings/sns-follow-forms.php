@@ -79,9 +79,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li><?php _e( 'Instagram', THEME_NAME ) ?></li>
               <li><?php _e( 'Pinterest', THEME_NAME ) ?></li>
               <li><?php _e( 'YouTube', THEME_NAME ) ?></li>
+              <li><?php _e( 'TikTok', THEME_NAME ) ?></li>
               <li><?php _e( 'LinkedIn', THEME_NAME ) ?></li>
               <li><?php _e( 'note', THEME_NAME ) ?></li>
+              <li><?php _e( 'SoundCloud', THEME_NAME ) ?></li>
               <li><?php _e( 'Flickr', THEME_NAME ) ?></li>
+              <li><?php _e( 'LINE@', THEME_NAME ) ?></li>
               <li><?php _e( 'Amazon欲しい物リスト', THEME_NAME ) ?></li>
               <li><?php _e( 'Twitch', THEME_NAME ) ?></li>
               <li><?php _e( '楽天ROOM', THEME_NAME ) ?></li>

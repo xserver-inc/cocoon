@@ -138,7 +138,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['misskey_url'] = __( 'Misskey URL', THEME_NAME );
   $prof_items['facebook_url'] = __( 'Facebook URL', THEME_NAME );
   //$prof_items['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
-  $prof_items['hatebu_url'] = __( 'はてブ URL', THEME_NAME );
+  $prof_items['hatebu_url'] = __( 'はてなブックマーク URL', THEME_NAME );
   $prof_items['instagram_url'] = __( 'Instagram URL', THEME_NAME );
   $prof_items['pinterest_url'] = __( 'Pinterest URL', THEME_NAME );
   $prof_items['youtube_url'] = __( 'YouTube URL', THEME_NAME );
@@ -148,7 +148,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['soundcloud_url'] = __( 'SoundCloud URL', THEME_NAME );
   $prof_items['flickr_url'] = __( 'Flickr URL', THEME_NAME );
   $prof_items['line_at_url'] = __( 'LINE@ URL', THEME_NAME );
-  $prof_items['amazon_url'] = __( 'Amazon URL', THEME_NAME );
+  $prof_items['amazon_url'] = __( 'Amazon欲しい物リスト URL', THEME_NAME );
   $prof_items['twitch_url'] = __( 'Twitch URL', THEME_NAME );
   $prof_items['rakuten_room_url'] = __( '楽天 ROOM URL', THEME_NAME );
   $prof_items['slack_url'] = __( 'Slack URL', THEME_NAME );
