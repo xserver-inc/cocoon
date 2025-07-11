@@ -1464,7 +1464,7 @@ if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0){
   $description = '';
   $user_id = get_the_author_meta( 'ID' );
-  if (!$user_id || !is_singular()) {
+  if (!$user_id || (!is_singular() && !is_author($user_id))) {
     $user_id = get_sns_default_follow_user();
   }
   if ($id && get_userdata( $id )) {
