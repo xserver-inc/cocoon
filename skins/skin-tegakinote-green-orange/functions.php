@@ -317,3 +317,4 @@ function logo_text_dot_css() {
 	}
 	echo sprintf($style_template, $style_value, $style_value, $style_position, $style_position);
 }
+

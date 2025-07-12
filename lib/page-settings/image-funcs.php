@@ -412,3 +412,4 @@ function get_caption_from_image_url($image_url) {
   return '';
 }
 endif;
+

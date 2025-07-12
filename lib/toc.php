@@ -410,3 +410,4 @@ if ( !function_exists( 'is_toc_widget_used_in_singular_content_widget_area' ) ):
      return false;
   }
   endif;
+

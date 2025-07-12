@@ -1536,3 +1536,4 @@ class Parsedown
                           'time',
     );
 }
+

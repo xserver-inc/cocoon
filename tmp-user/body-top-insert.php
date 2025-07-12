@@ -9,3 +9,4 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 <?php endif; ?>
 <?php //ログインユーザーも含めてカウントする場合は以下に挿入 ?>
+
