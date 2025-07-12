@@ -20,3 +20,4 @@ function is_entry_card_border_visible(){
   return true;
 }
 */
+

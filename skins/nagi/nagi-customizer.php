@@ -827,3 +827,4 @@ $wp_customize->add_setting(
 
 
 add_action( 'customize_register', 'nagi_customize_register' );
+

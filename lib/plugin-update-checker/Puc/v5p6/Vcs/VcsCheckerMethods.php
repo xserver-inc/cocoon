@@ -57,3 +57,4 @@ if ( !trait_exists(VcsCheckerMethods::class, false) ) :
 	}
 
 endif;
+

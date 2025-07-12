@@ -1046,3 +1046,4 @@ if ($image_url && is_header_size_background_image_aspect_ratio() && is_header_la
     }
   <?php endif; ?>
 <?php endif; ?>
+

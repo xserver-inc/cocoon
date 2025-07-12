@@ -160,3 +160,4 @@ function is_lightboxable_page(){
   return is_singular() || (is_category() && !is_paged()) || (is_tag() && !is_paged());
 }
 endif;
+

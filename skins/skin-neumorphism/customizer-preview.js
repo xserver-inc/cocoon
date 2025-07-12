@@ -75,3 +75,4 @@
 		return newHex;
 	}
 }( jQuery ));
+

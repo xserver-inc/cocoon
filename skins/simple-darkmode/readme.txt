@@ -17,3 +17,4 @@ Simple-Darkmode WordPress Theme Cocoon Skin bundles the following third-party re
 SILK Cocoon Skin, Copyright 2020 SILK
 SILK Cocoon Skin is distributed under the terms of the GNU GPL
 Source: https://dateqa.com/cocoon/
+

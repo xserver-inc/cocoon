@@ -132,3 +132,4 @@ function minify_js($input) {
         ),
     $input);
 }
+

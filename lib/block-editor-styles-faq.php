@@ -18,3 +18,4 @@ add_action('after_setup_theme', function(){
     'label' => __('アコーディオン', THEME_NAME),
   ));
 });
+

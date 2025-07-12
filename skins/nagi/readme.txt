@@ -17,3 +17,4 @@ NAGI WordPress Theme Cocoon Skin bundles the following third-party resources:
 grayish Cocoon Skin, Copyright 2023 grayish
 grayish Cocoon Skin is distributed under the terms of the GNU GPL
 Source: https://cocoon-grayish.na2-factory.com/
+
