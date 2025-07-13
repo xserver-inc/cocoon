@@ -1000,3 +1000,4 @@ export function getChartJsFontHeight(fontSize) {
 
   return height;
 }
+

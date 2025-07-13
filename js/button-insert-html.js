@@ -26,3 +26,4 @@
   /* Start the buttons */
   tinymce.PluginManager.add( 'custom_button_script', tinymce.plugins.MyButtons );
 })();
+

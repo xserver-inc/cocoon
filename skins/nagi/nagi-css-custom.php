@@ -272,3 +272,4 @@ EOM;
   wp_add_inline_style('my-editor-style', $custom_css);
 }
 add_action('enqueue_block_editor_assets', 'nagi_custom_editor_styles');
+

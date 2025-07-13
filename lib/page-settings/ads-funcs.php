@@ -609,3 +609,4 @@ function put_ads_txt_file(){
   }
 }
 endif;
+

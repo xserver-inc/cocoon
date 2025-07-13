@@ -35,3 +35,4 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-search'; ?>
     </div>
   </li>
 <?php endif ?>
+

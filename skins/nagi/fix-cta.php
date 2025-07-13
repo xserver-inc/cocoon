@@ -26,3 +26,4 @@ if (!empty($fix_link)) :?>
   </div>
 </div>
 <?php endif; ?>
+
