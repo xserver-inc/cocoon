@@ -637,7 +637,7 @@ button#comment-reply-btn {
 	color: #777;
 }
 
-.profile-block-box .author-thumb img {
+.author-thumb img {
 	border: 3px solid #fff;
 }
 
@@ -649,6 +649,10 @@ button#comment-reply-btn {
 	position: relative;
 	margin-top: 17px;
 	z-index: 1;
+}
+
+.nwa .author-box .author-thumb img {
+	border: none;
 }
 
 .author-thumb:before {
