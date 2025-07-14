@@ -60,6 +60,7 @@ body {
 	border-radius: 3px;
 	padding: 0;
 	margin-bottom: 35px;
+	overflow: hidden;
 }
 
 @media screen and (max-width: 480px) {
@@ -81,11 +82,6 @@ body {
 .entry-card-thumb {
 	/* サムネイルの上の余白をなくす */
 	margin-top: 0;
-}
-
-.entry-card-thumb img {
-	/* サムネイルの上の角を丸くする */
-	border-radius: 3px 3px 0 0;
 }
 
 .entry-card-title {
