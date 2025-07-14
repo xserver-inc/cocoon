@@ -78,6 +78,16 @@ body {
 	transform: translateY(-2px);
 }
 
+.entry-card-thumb {
+	/* サムネイルの上の余白をなくす */
+	margin-top: 0;
+}
+
+.entry-card-thumb img {
+	/* サムネイルの上の角を丸くする */
+	border-radius: 3px 3px 0 0;
+}
+
 .entry-card-title {
 	color: #5a5a5a;
 	/*見出しの色*/
