@@ -430,7 +430,8 @@ body.public-page,.content .main, .navi {
     border-bottom: 15px solid #666;
     border-left: 15px solid transparent;
     top: -1.6em;
-    left: calc(46%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
