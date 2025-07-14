@@ -82,3 +82,4 @@ class WpCliCheckTrigger {
 		return $input;
 	}
 }
+

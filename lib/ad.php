@@ -353,3 +353,4 @@ if ( !function_exists( 'is_pr_labels_visible' ) ):
 
   }
   endif;
+

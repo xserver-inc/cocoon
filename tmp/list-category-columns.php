@@ -95,3 +95,4 @@ $count = get_index_category_entry_card_count();
     <?php endfor; ?>
   </div><!-- .list-categories -->
 </div><!-- .list-wrap -->
+

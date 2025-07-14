@@ -255,3 +255,4 @@ function nagi_enqueue_accordion_assets() {
 
 //カルーセル
 add_filter('cocoon_setting_preview_carousel', '__return_false');
+

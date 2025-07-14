@@ -100,3 +100,4 @@ function has_specific_blocks($post_content, $block_type_names) {
   return false; // 特定のブロックが見つからなかった場合
 }
 endif;
+

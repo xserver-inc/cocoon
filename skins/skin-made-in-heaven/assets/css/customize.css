@@ -150,3 +150,4 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
 [id*="customize-control-hvn_inline_button_color"] .description {
   width: 55px;
 }
+
