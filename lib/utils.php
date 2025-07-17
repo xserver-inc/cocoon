@@ -3764,16 +3764,9 @@ function px_to_int($px){
 }
 endif;
 
-// //デバッグ用の関数
-// if ( !function_exists( '_v' ) ):
-// function _v($v){
-//   do_action( 'qm/debug', $v );
-// }
-// endif;
-
 //著者プロフィールページのURLを取得
-if ( !function_exists( 'get_the_auther_profile_page_url' ) ):
-function get_the_auther_profile_page_url(){
+if ( !function_exists( 'get_author_profile_page_url' ) ):
+function get_author_profile_page_url(){
   if (is_post_author_visible() && get_the_author()) {
     $author_id = get_the_author_meta( 'ID' );
     $profile_page_url = get_the_author_profile_page_url($author_id);
@@ -3788,10 +3781,16 @@ function get_the_auther_profile_page_url(){
   return $url;
 }
 endif;
+//関数のエイリアス（後から削除する可能性あり）
+if ( !function_exists( 'get_the_auther_profile_page_url' ) ):
+function get_the_auther_profile_page_url(){
+  return get_author_profile_page_url();
+}
+endif;
 
 //著者プロフィール名前を取得
-if ( !function_exists( 'get_the_auther_profile_name' ) ):
-function get_the_auther_profile_name(){
+if ( !function_exists( 'get_author_profile_name' ) ):
+function get_author_profile_name(){
   if (is_post_author_visible() && get_the_author()) {
     $name = get_the_author();
   } else {
@@ -3800,6 +3799,13 @@ function get_the_auther_profile_name(){
   return $name;
 }
 endif;
+//関数のエイリアス（後から削除する可能性あり）
+if ( !function_exists( 'get_the_auther_profile_name' ) ):
+function get_the_auther_profile_name(){
+  return get_author_profile_name();
+}
+endif;
+
 
 //フロントページタイプの取得
 if ( !function_exists( 'get_front_page_type_class' ) ):
