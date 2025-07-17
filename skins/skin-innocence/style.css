@@ -637,10 +637,6 @@ button#comment-reply-btn {
 	color: #777;
 }
 
-.author-thumb img {
-	border: 3px solid #fff;
-}
-
 .nwa .author-box {
 	padding: 10px 0 0;
 }
@@ -651,11 +647,7 @@ button#comment-reply-btn {
 	z-index: 1;
 }
 
-.nwa .author-box .author-thumb img {
-	border: none;
-}
-
-.author-thumb:before {
+.nwa .author-box .author-thumb:before {
 	content: "";
 	position: absolute;
 	width: calc(100% + 20px);
