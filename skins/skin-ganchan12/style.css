@@ -416,7 +416,7 @@ body.public-page,.content .main, .navi {
   width: 0;
   height: 0;
    position: absolute;
-    left: -.7em;
+    left: -13px;
     display: inline-block;
     border-top: 15px solid transparent;
     border-right: 15px solid #666;
@@ -428,7 +428,7 @@ body.public-page,.content .main, .navi {
     border-right: 15px solid transparent;
     border-bottom: 15px solid #666;
     border-left: 15px solid transparent;
-    top: -1.6em;
+    top: -28px;
     left: 50%;
     transform: translateX(-50%);
 }
