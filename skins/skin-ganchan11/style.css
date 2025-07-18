@@ -3,7 +3,6 @@
   Description: 女性が春色のスプリングコートを羽織っておでかけするイメージで作りました。ファッション・女性向けコンテンツにいかがでしょうか。
   Skin URI: https://aruru.co.jp/cocoon02/
   Author: がんちゃん
-  Author URI: https://ganchan.info/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-ganchan11.png
   Version: 0.0.1
   Priority: 9910001000
@@ -415,7 +414,7 @@ body.public-page,.content .main, .navi {
   width: 0;
   height: 0;
    position: absolute;
-    left: -.7em;
+    left: -13px;
     display: inline-block;
     border-top: 15px solid transparent;
     border-right: 15px solid #666;
@@ -427,8 +426,9 @@ body.public-page,.content .main, .navi {
     border-right: 15px solid transparent;
     border-bottom: 15px solid #666;
     border-left: 15px solid transparent;
-    top: -1.6em;
-    left: calc(46%);
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -437,8 +437,7 @@ body.public-page,.content .main, .navi {
   	padding:10px;
   }
   .author-content:before{
-  	top: 80px;
-      left: 25%;
+  	top: 40px;
   }
 }
 
