@@ -1050,10 +1050,17 @@ endif;
 //Google Fontsの読み込み（Googleフォント以外のサイトフォント含む）
 if ( !function_exists( 'wp_enqueue_google_fonts' ) ):
 function wp_enqueue_google_fonts(){
-  if (is_admin() || (!is_site_font_family_local() && !is_google_font_lazy_load_enable())) {
+  // ローカルフォントの場合は何もしない
+  if (is_site_font_family_local()) {
+    return ;
+  }
+
+  // 管理ページの時はフォントレイジーロードがいうこんな時もCSSで読み込む
+  if (is_admin() || !is_google_font_lazy_load_enable()) {
     wp_enqueue_style( 'site-font-'.get_site_font_source(), get_site_font_source_url() );
   }
-  if (!is_admin() && !is_site_font_family_local() && is_google_font_lazy_load_enable() && !get_site_font_family_pretendard()) {
+
+  if (!is_admin() && is_google_font_lazy_load_enable() && !get_site_font_family_pretendard()) {
     $code = "window.WebFontConfig = {
       google: { families: ['".get_site_font_source_family().get_site_font_source_weight()."'] },
       active: function() {
