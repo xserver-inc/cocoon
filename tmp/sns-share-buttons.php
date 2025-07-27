@@ -59,7 +59,17 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <a role="button" tabindex="0" class="sns-button share-button copy-button copy-share-button-sq" data-clipboard-text="<?php echo esc_attr(get_share_page_title()); ?> <?php echo get_share_page_url(); ?>" title="<?php _e( 'タイトルとURLをコピーする', THEME_NAME ) ?>" aria-label="<?php _e( 'タイトルとURLをコピーする', THEME_NAME ) ?>"><span class="social-icon icon-copy"></span><span class="button-caption"><?php _e( 'コピー', THEME_NAME ) ?></span><span class="share-count copy-share-count"></span></a>
     <?php endif; ?>
 
-    <?php if ( is_comment_share_button_visible($option) )://コメントボタンを表示するか ?>
+    <?php
+    if ( // コメントボタンを表示するか
+      // 投稿・固定ページのみでコメントが有効（オープンもしくはコメントがある）な時表示
+      (is_comment_share_button_visible($option) && is_singular() && (is_comment_open() || get_comments_number()))
+      && (
+        // Cocoon設定の固定ページコメント表示が有効の時
+        (is_page() && is_page_comment_visible())
+        // Cocoon設定の投稿ページコメント表示が有効の時
+        || (is_single() && is_single_comment_visible())
+        )
+      ):?>
       <a href="#comments" class="sns-button share-button comment-button comment-share-button-sq" title="<?php _e( 'コメントする', THEME_NAME ) ?>" aria-label="<?php _e( 'コメントする', THEME_NAME ) ?>"><span class="social-icon icon-comment"></span><span class="button-caption"><?php _e( 'コメント', THEME_NAME ) ?></span><span class="share-count comment-share-count"></span></a>
     <?php endif; ?>
 
