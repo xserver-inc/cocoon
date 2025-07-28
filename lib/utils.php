@@ -253,11 +253,14 @@ endif;
 //コメントが許可されているか
 if ( !function_exists( 'is_comment_open' ) ):
 function is_comment_open(){
-  global $post;
-  if ( isset($post->comment_status) ) {
-    return $post->comment_status == 'open';
-  }
-  return false;
+  // global $post;
+  // if ( isset($post->comment_status) ) {
+  //   return $post->comment_status == 'open';
+  // }
+  // return false;
+
+  // コードの簡略化
+  return comments_open();
 }
 endif;
 
