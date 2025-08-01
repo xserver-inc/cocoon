@@ -1309,9 +1309,15 @@ function generate_widget_entries_tag($atts){
   }
   //除外カテゴリーショートコードオプション
   if ($ex_cats) {
-    $args += array(
-      'category__not_in' => $ex_cats,
-    );
+    // 重複排除して結合
+    $prev = isset($args['category__not_in']) ? (array)$args['category__not_in'] : [];
+    // $ex_catsがカンマ区切りの文字列の場合は配列化
+    if (is_string($ex_cats)) {
+      $more = explode(',', $ex_cats);
+    } else {
+      $more = (array)$ex_cats;
+    }
+    $args['category__not_in'] = array_values(array_unique(array_map('intval', array_merge($prev, $more))));
   }
   //順序付きポスト
   if ($ordered_posts) {
