@@ -218,7 +218,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
     </p>
     <?php //除外カテゴリーID ?>
       <label>
-        <?php _e( '除外カテゴリーID（除外するものを選択してください）', THEME_NAME ) ?>
+        <?php _e( '除外カテゴリー（除外するものを選択してください）', THEME_NAME ) ?>
       </label>
       <?php echo generate_hierarchical_category_check_list(0, $this->get_field_name('exclude_cat_ids'), $exclude_cat_ids); ?>
     <?php
