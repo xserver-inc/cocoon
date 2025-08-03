@@ -51,6 +51,20 @@ endif;
 add_filter('tiny_mce_before_init', 'initialize_tinymce_styles');
 if ( !function_exists( 'initialize_tinymce_styles' ) ):
 function initialize_tinymce_styles($init_array) {
+
+  // Cocoon設定のカラム幅をクラシックエディターに適用する
+	$default_width = 800;
+	$main_column_contents_width = get_main_column_contents_width() ? get_main_column_contents_width() : $default_width;
+  $default_padding = 29;
+  $main_column_padding = get_main_column_padding() ? get_main_column_padding() : $default_padding;
+  // $css = '#tinymce.mce-content-body{max-width:100%;width:'.$main_column_contents_width.'px;padding:1em '.$main_column_padding.'px !important;box-sizing:content-box;}';
+  $css = '#tinymce.mce-content-body{max-width:100%;width:'.($main_column_contents_width + $main_column_padding * 2).'px;padding:1em '.$main_column_padding.'px !important;}';
+
+  // 既存に追記（上書きしない）
+  $init_array['content_style'] = (isset($init_array['content_style']) ? rtrim($init_array['content_style']) . ' ' : '') . $css;
+
+
+  // フォントサイズ
   $font_sizes = array();
   for ($i=12; $i <= 22 ; $i++) {
     $font_sizes[] = array(
