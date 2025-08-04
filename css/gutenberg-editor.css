@@ -6176,3 +6176,7 @@ body .is-layout-grid {
   height: 36px;
   display: inline-block;
 }
+
+body.block-editor-page {
+  background-color: initial;
+}
