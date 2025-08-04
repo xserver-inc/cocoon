@@ -1000,6 +1000,7 @@ img.emoji {
 }
 .header-container-in.hlt-top-menu .header {
   background-image: none;
+  aspect-ratio: unset;
 }
 .header-container-in.hlt-top-menu .logo-text {
   padding: 0;
