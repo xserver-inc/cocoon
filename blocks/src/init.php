@@ -102,16 +102,18 @@ function cocoon_blocks_cgb_editor_assets()
 	);
 
 	// Cocoon設定のカラム幅を適用する
-	$default_width = 800;
-	$main_column_contents_width = get_main_column_contents_width() ? get_main_column_contents_width() : $default_width;
-  $css = "
-		div.editor-visual-editor__post-title-wrapper > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
-		div.block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-			max-width: ".$main_column_contents_width."px;
-		}";
+	if (is_visual_editor_style_enable()) {
+		$default_width = 800;
+		$main_column_contents_width = get_main_column_contents_width() ? get_main_column_contents_width() : $default_width;
+		$css = "
+			div.editor-visual-editor__post-title-wrapper > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
+			div.block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+				max-width: ".$main_column_contents_width."px;
+			}";
 
-  // ハンドルは 'wp-block-editor'（新しめ）または 'wp-edit-blocks'（互換）
-  wp_add_inline_style('wp-block-editor', $css);
+		// ハンドルは 'wp-block-editor'（新しめ）または 'wp-edit-blocks'（互換）
+		wp_add_inline_style('wp-block-editor', $css);
+	}
 
 	// // テーマ内のCSSファイルのパスを構築
 	// $css_file_path = get_template_directory() . '/css/gutenberg-editor.css';
