@@ -485,3 +485,10 @@ span.btn-wrap {
 .mce-content-body .blogcard-type br {
   display: initial;
 }
+
+body#tinymce {
+  border: none;
+  box-shadow: none;
+  border-radius: none;
+  background-color: initial !important;
+}
