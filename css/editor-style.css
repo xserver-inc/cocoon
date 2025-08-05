@@ -488,4 +488,6 @@ span.btn-wrap {
 
 body#tinymce {
   border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
