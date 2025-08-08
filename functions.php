@@ -411,6 +411,14 @@ function remove_widgets_block_editor() {
 }
 endif;
 
+//カスタムヘッダーサポートの削除
+add_action( 'after_setup_theme', 'remove_custom_header_support' );
+if ( !function_exists( 'remove_custom_header_support' ) ):
+function remove_custom_header_support() {
+  remove_theme_support( 'custom-header' );
+}
+endif;
+
 //FAQブロック
 //参考：SILKスキンのコード（ろこさん作成）
 //URL：https://dateqa.com/cocoon/
