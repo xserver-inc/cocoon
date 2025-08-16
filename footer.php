@@ -36,6 +36,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       cocoon_template_part('tmp/breadcrumbs-page');
     } ?>
 
+    <?php //フッター前アクションフック
+    do_action('cocoon_footer_before'); ?>
+
     <footer id="footer" class="footer footer-container nwa" itemscope itemtype="https://schema.org/WPFooter">
 
       <div id="footer-in" class="footer-in wrap cf">
@@ -75,6 +78,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       </div>
 
     </footer>
+
+    <?php //フッター後アクションフック
+    do_action('cocoon_footer_after'); ?>
 
     <?php //管理者用パネル
     cocoon_template_part('tmp/admin-panel'); ?>
