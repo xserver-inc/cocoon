@@ -63,6 +63,22 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- サイト情報  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_INTERNAL_BLOGCARD_DOMAIN_STYLE, __( 'サイト情報', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'domain' => __( 'ドメイン', THEME_NAME ),
+              'name' => __( 'サイト名', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_INTERNAL_BLOGCARD_DOMAIN_STYLE, $options, get_internal_blogcard_domain_style());
+            generate_tips_tag(__( 'サイト情報の表記方法を選択してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
 
         <!-- サムネイルスタイル  -->
         <tr>

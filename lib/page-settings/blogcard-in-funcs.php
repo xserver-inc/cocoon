@@ -23,6 +23,16 @@ function is_comment_internal_blogcard_enable(){
 }
 endif;
 
+//内部ブログカードのドメイン設定
+define('OP_INTERNAL_BLOGCARD_DOMAIN_STYLE', 'internal_blogcard_domain_style');
+if ( !function_exists( 'get_internal_blogcard_domain_style' ) ):
+function get_internal_blogcard_domain_style(){
+  return get_theme_option(OP_INTERNAL_BLOGCARD_DOMAIN_STYLE, 'domain');
+}
+endif;
+
+
+
 //内部ブログカードのサムネイル設定
 define('OP_INTERNAL_BLOGCARD_THUMBNAIL_STYLE', 'internal_blogcard_thumbnail_style');
 if ( !function_exists( 'get_internal_blogcard_thumbnail_style' ) ):

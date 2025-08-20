@@ -175,6 +175,11 @@ function url_to_internal_blogcard_tag($url){
 
   //サイトロゴ
   $domain = get_domain_name(punycode_decode($url));
+
+  if (get_internal_blogcard_domain_style() === 'name') {
+    $domain = get_bloginfo('name');
+  }
+
   $site_logo_tag = '<div class="blogcard-domain internal-blogcard-domain">'.$domain.'</div>';
   $site_logo_tag = '<div class="blogcard-site internal-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 

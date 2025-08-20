@@ -226,6 +226,12 @@ function url_to_external_ogp_blogcard_tag($url){
   }
   $domain = get_domain_name($durl);
 
+  $domain_style = get_external_blogcard_domain_style(); // "domain" or "name"
+  if ($domain_style === 'name' && !empty($ogp->site_name)) {
+    $domain = $ogp->site_name; // OGPのサイト名を優先
+  }
+
+
   //og:imageが相対パスのとき
   if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか
     //相対パスの時はエラー用の画像を表示
