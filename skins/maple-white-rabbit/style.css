@@ -249,12 +249,24 @@ color: #ba91e2;
 }
 /* サイト内検索 */
 /* サイト内検索 */
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+body:not(.wp-admin) .search-edit, 
+body:not(.wp-admin) input[type="text"], 
+body:not(.wp-admin) input[type="password"], 
+body:not(.wp-admin) input[type="date"], 
+body:not(.wp-admin) input[type="datetime"], 
+body:not(.wp-admin) input[type="email"], 
+body:not(.wp-admin) input[type="number"], 
+body:not(.wp-admin) input[type="search"], 
+body:not(.wp-admin) input[type="tel"], 
+body:not(.wp-admin) input[type="time"], 
+body:not(.wp-admin) input[type="url"], 
+body:not(.wp-admin) textarea, 
+body:not(.wp-admin) select {
    border: 2px solid #7fbfff; /* 線の色 */
   border-radius: 3px;
   outline: none;
 }
-[type=submit].search-submit {
+body:not(.wp-admin) [type=submit].search-submit {
    top: 0;
     right: 0;
     height: 100%;
@@ -266,7 +278,7 @@ color: #ba91e2;
     border: none;
     border-radius: 0 3px 3px 0;
 }
-[type=submit].search-submit:hover {
+body:not(.wp-admin) [type=submit].search-submit:hover {
     color: #fff;
     background: #7fbfff;
 }
@@ -920,4 +932,9 @@ ol.toc-list > li:before {
 .micro-balloon,
 .micro-text{
 	--cocoon-custom-text-color: #6a859c;;
+}
+
+/* WP管理画面調整用CSS */
+.wp-admin a.help-page {
+	color: #2271b1;
 }
