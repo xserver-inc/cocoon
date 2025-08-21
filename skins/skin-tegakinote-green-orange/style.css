@@ -1846,13 +1846,26 @@ pre {
 /************************
 * フォーム
 ************************/
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, input[type="submit"] {
+body:not(.wp-admin) .search-edit, 
+body:not(.wp-admin) input[type="text"], 
+body:not(.wp-admin) input[type="password"], 
+body:not(.wp-admin) input[type="date"], 
+body:not(.wp-admin) input[type="datetime"], 
+body:not(.wp-admin) input[type="email"], 
+body:not(.wp-admin) input[type="number"], 
+body:not(.wp-admin) input[type="search"], 
+body:not(.wp-admin) input[type="tel"], 
+body:not(.wp-admin) input[type="time"], 
+body:not(.wp-admin) input[type="url"], 
+body:not(.wp-admin) textarea, 
+body:not(.wp-admin) select, 
+body:not(.wp-admin) input[type="submit"] {
 	border: 3px solid rgba(var(--gray-color), .7);
 	border-radius: 10px;
 	background-color: rgba(var(--back-color), .3);
 }
 
-input[type="submit"] {
+body:not(.wp-admin) input[type="submit"] {
 	border-color: rgba(var(--black-color), 1);
 	background-color: rgba(var(--white-color), 1);
 	font-size: 18px;
@@ -1860,7 +1873,7 @@ input[type="submit"] {
 }
 
 
-input[type="submit"]:hover {
+body:not(.wp-admin) input[type="submit"]:hover {
 	border-color: rgba(var(--black-color), 1);
 	background-color: rgba(var(--back-color), 1);
 }
