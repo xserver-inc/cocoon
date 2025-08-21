@@ -2082,26 +2082,39 @@ pre {
 /************************
 * フォーム
 ************************/
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, input[type="submit"] {
+body:not(.wp-admin) .search-edit, 
+body:not(.wp-admin) input[type="text"], 
+body:not(.wp-admin) input[type="password"], 
+body:not(.wp-admin) input[type="date"], 
+body:not(.wp-admin) input[type="datetime"], 
+body:not(.wp-admin) input[type="email"], 
+body:not(.wp-admin) input[type="number"], 
+body:not(.wp-admin) input[type="search"], 
+body:not(.wp-admin) input[type="tel"], 
+body:not(.wp-admin) input[type="time"], 
+body:not(.wp-admin) input[type="url"], 
+body:not(.wp-admin) textarea, 
+body:not(.wp-admin) select, 
+body:not(.wp-admin) input[type="submit"] {
 	border-color: rgba(rgba(var(--gray-color), 1), .7);
 	border-width: 3px;border-radius: 10px;
 	background-color: rgba(var(--back-color), .3);
 	color: rgba(var(--white-color), 1);
 }
 
-input[type="submit"] {
+body:not(.wp-admin) input[type="submit"] {
 	border-color: rgba(var(--white-color), 1);
 	background-color: rgba(var(--black-color), 1);
 	font-size: 18px;
 	letter-spacing: .1em;
 }
 
-input[type="submit"]:hover {
+body:not(.wp-admin) input[type="submit"]:hover {
 	border-color: rgba(var(--black-color), 1);
 	background-color: rgba(var(--black-color), 1);
 }
 
-option {
+body:not(.wp-admin) option {
 	background-color: rgba(var(--black-color), 1);
 }
 
@@ -2328,3 +2341,13 @@ option {
 	column-gap: 8px;
 }
 
+/************************
+* WP管理画面調整用CSS
+************************/
+.wp-admin {
+	color: #3c434a;
+}
+
+.wp-admin a.help-page {
+	color: #2271b1;
+}
