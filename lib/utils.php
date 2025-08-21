@@ -940,39 +940,9 @@ function wp_enqueue_scrollhint(){
 }
 endif;
 
-//clingifyの読み込み
+//stickyfillの読み込み（IEのposition:sticky;対応用の関数だったが、IEコート終了により削除。ただ独自カスタマイズでエラーとならないようにするために外枠だけ残す：後で消す）
 if ( !function_exists( 'wp_enqueue_stickyfill' ) ):
 function wp_enqueue_stickyfill(){
-  $browser_info = get_browser_info();
-  $is_ie = $browser_info['browser_name'] == 'IE';
-  $is_edge_version_under_16 = ($browser_info['browser_name'] == 'IE') && (intval($browser_info['browser_version']) < 16);
-  //グローバルナビ追従が有効な時
-  if ( is_scrollable_sidebar_enable() || is_scrollable_main_enable() ) {
-    //stickyfillスクリプトの呼び出し
-    wp_enqueue_script( 'stickyfill-js', get_cocoon_template_directory_uri() . '/plugins/stickyfill/dist/stickyfill.min.js', array( 'jquery' ), false, true  );
-
-    //position: sticky;に対応していないブラウザの場合はstickyfillを実行
-    if (is_scrollable_sidebar_enable() && ($is_ie || $is_edge_version_under_16)) {
-      $data = '
-              (function($){
-                var elements = $(".sidebar-scroll");
-                Stickyfill.add(elements);
-              })(jQuery);
-            ';
-      wp_add_inline_script( 'stickyfill-js', $data, 'after' );
-    }
-
-    if (is_scrollable_main_enable() && ($is_ie || $is_edge_version_under_16)) {
-      $data = '
-              (function($){
-                var elements = $(".main-scroll");
-                Stickyfill.add(elements);
-              })(jQuery);
-            ';
-      wp_add_inline_script( 'stickyfill-js', $data, 'after' );
-    }
-
-  }
 }
 endif;
 
