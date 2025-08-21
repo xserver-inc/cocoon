@@ -19,19 +19,19 @@ body {
 /************************************
 ** フォーム関連
 ************************************/
-.search-edit,
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea,
-select {
+body:not(.wp-admin) .search-edit,
+body:not(.wp-admin) input[type="text"],
+body:not(.wp-admin) input[type="password"],
+body:not(.wp-admin) input[type="date"],
+body:not(.wp-admin) input[type="datetime"],
+body:not(.wp-admin) input[type="email"],
+body:not(.wp-admin) input[type="number"],
+body:not(.wp-admin) input[type="search"],
+body:not(.wp-admin) input[type="tel"],
+body:not(.wp-admin) input[type="time"],
+body:not(.wp-admin) input[type="url"],
+body:not(.wp-admin) textarea,
+body:not(.wp-admin) select {
 	padding: 8px;
 	border: 1px solid #aec9cc;
 	font-size: 14px;
