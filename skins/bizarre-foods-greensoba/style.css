@@ -185,7 +185,7 @@ aside .search-box input[type="text"]{
    position: relative;
 }
 
-.search-edit, input[type="text"]::placeholder {
+body:not(.wp-admin) .search-edit, body:not(.wp-admin) input[type="text"]::placeholder {
     font-size: .8em;
     color: #ccc;
 }
@@ -195,7 +195,7 @@ input::placeholder,input:-ms-input-placeholder,input::-ms-input-placeholder {
     font-size: .5em;
 }
 
-.search-edit, input[type="text"] {
+body:not(.wp-admin) .search-edit, body:not(.wp-admin) input[type="text"] {
     padding: 11px;
     border-radius: 4px;
     font-size: 14px;
@@ -1311,3 +1311,7 @@ h3.wpforo-forum-title::before {
     padding: 0;
 }
 
+/* WP管理画面調整用CSS */
+.wp-admin a.help-page {
+	color: #2271b1;
+}
