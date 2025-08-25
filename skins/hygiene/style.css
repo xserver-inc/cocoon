@@ -1836,11 +1836,20 @@ margin-top: 25px;
 .widget-entry-cards .widget-entry-card, .sga-ranking-list a{
   font-size: 16px
 }
-/* HACK: 入力エリア関連 */
-.search-edit, input[type="text"], input[type="password"],
- input[type="date"], input[type="datetime"], input[type="email"],
-  input[type="number"], input[type="search"], input[type="tel"],
-   input[type="time"], input[type="url"], textarea, select{
+/* HACK: 入力エリア関連（管理画面除外） */
+body:not(.wp-admin) .search-edit, 
+body:not(.wp-admin) input[type="text"], 
+body:not(.wp-admin) input[type="password"],
+body:not(.wp-admin) input[type="date"], 
+body:not(.wp-admin) input[type="datetime"], 
+body:not(.wp-admin) input[type="email"],
+body:not(.wp-admin) input[type="number"], 
+body:not(.wp-admin) input[type="search"], 
+body:not(.wp-admin) input[type="tel"],
+body:not(.wp-admin) input[type="time"], 
+body:not(.wp-admin) input[type="url"], 
+body:not(.wp-admin) textarea, 
+body:not(.wp-admin) select{
      -webkit-appearance: none;
          -moz-appearance: none;
          -ms-appearance: none;
@@ -1854,13 +1863,13 @@ margin-top: 25px;
          font-size: 15px;
          color: #757575;
    }
-select:hover{
+body:not(.wp-admin) select:hover{
   transition: all 0.4s ease;
   transform: skewX(-10deg);
   cursor: pointer;
   background: #ff9de521;
 }
-input[type="checkbox"] {
+body:not(.wp-admin) input[type="checkbox"] {
   -webkit-appearance: none;
       -moz-appearance: none;
       -ms-appearance: none;
