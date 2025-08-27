@@ -169,7 +169,7 @@ body {
 }
 
 /* 検索ボタン（管理画面除外） */
-body:not(.wp-admin) :is(.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select) {
+:is(.editor-visual-editor, body:not(.wp-admin)) :is(.search-edit, input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], textarea, select) {
   font-size: 16px;
   border: 2px solid #86cfcf;
   border-radius: 0.5em;
