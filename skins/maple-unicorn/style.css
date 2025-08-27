@@ -248,13 +248,13 @@ a:hover {
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
 	color: inherit;
 }
-/* サイト内検索（管理画面除外） */
-body:not(.wp-admin) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select) {
+/* サイト内検索（ブロックエディター＋フロント表示のみ適用） */
+:is(.editor-visual-editor, body:not(.wp-admin)) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select) {
 	border: 2px solid #c6a2ff;
 	border-radius: 3px;
 	outline: none;
 }
-body:not(.wp-admin) [type="submit"].search-submit {
+[type="submit"].search-submit {
 	top: 0;
 	right: 0;
 	height: 100%;
@@ -266,7 +266,7 @@ body:not(.wp-admin) [type="submit"].search-submit {
 	border: none;
 	border-radius: 0 3px 3px 0;
 }
-body:not(.wp-admin) [type="submit"].search-submit:hover {
+[type="submit"].search-submit:hover {
 	color: #fff;
 	background: #c6a2ff;
 }
