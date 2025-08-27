@@ -1837,7 +1837,7 @@ margin-top: 25px;
   font-size: 16px
 }
 /* HACK: 入力エリア関連（管理画面除外） */
-body:not(.wp-admin) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select) {
+:is(.editor-visual-editor, body:not(.wp-admin)) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select) {
      -webkit-appearance: none;
          -moz-appearance: none;
          -ms-appearance: none;
@@ -1851,13 +1851,13 @@ body:not(.wp-admin) :is(.search-edit, input[type="text"], input[type="password"]
          font-size: 15px;
          color: #757575;
    }
-body:not(.wp-admin) select:hover{
+:is(.editor-visual-editor, body:not(.wp-admin)) select:hover{
   transition: all 0.4s ease;
   transform: skewX(-10deg);
   cursor: pointer;
   background: #ff9de521;
 }
-body:not(.wp-admin) input[type="checkbox"] {
+:is(.editor-visual-editor, body:not(.wp-admin)) input[type="checkbox"] {
   -webkit-appearance: none;
       -moz-appearance: none;
       -ms-appearance: none;
