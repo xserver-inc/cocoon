@@ -19,7 +19,7 @@ body {
 /************************************
 ** フォーム関連
 ************************************/
-body:not(.wp-admin) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select) {
+:is(.editor-visual-editor, body:not(.wp-admin)) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select) {
 	padding: 8px;
 	border: 1px solid #bfbab2;
 	font-size: 14px;
