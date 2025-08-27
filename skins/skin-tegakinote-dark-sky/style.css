@@ -2082,26 +2082,26 @@ pre {
 /************************
 * フォーム
 ************************/
-body:not(.wp-admin) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, input[type="submit"]) {
+:is(.editor-visual-editor, body:not(.wp-admin)) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, input[type="submit"]) {
 	border-color: rgba(rgba(var(--gray-color), 1), .7);
 	border-width: 3px;border-radius: 10px;
 	background-color: rgba(var(--back-color), .3);
 	color: rgba(var(--white-color), 1);
 }
 
-body:not(.wp-admin) input[type="submit"] {
+:is(.editor-visual-editor, body:not(.wp-admin)) input[type="submit"] {
 	border-color: rgba(var(--white-color), 1);
 	background-color: rgba(var(--black-color), 1);
 	font-size: 18px;
 	letter-spacing: .1em;
 }
 
-body:not(.wp-admin) input[type="submit"]:hover {
+:is(.editor-visual-editor, body:not(.wp-admin)) input[type="submit"]:hover {
 	border-color: rgba(var(--black-color), 1);
 	background-color: rgba(var(--black-color), 1);
 }
 
-body:not(.wp-admin) option {
+:is(.editor-visual-editor, body:not(.wp-admin)) option {
 	background-color: rgba(var(--black-color), 1);
 }
 

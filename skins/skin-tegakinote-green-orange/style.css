@@ -1846,21 +1846,20 @@ pre {
 /************************
 * フォーム
 ************************/
-body:not(.wp-admin) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, input[type="submit"]) {
+:is(.editor-visual-editor, body:not(.wp-admin)) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, input[type="submit"]) {
 	border: 3px solid rgba(var(--gray-color), .7);
 	border-radius: 10px;
 	background-color: rgba(var(--back-color), .3);
 }
 
-body:not(.wp-admin) input[type="submit"] {
+:is(.editor-visual-editor, body:not(.wp-admin)) input[type="submit"] {
 	border-color: rgba(var(--black-color), 1);
 	background-color: rgba(var(--white-color), 1);
 	font-size: 18px;
 	letter-spacing: .1em;
 }
 
-
-body:not(.wp-admin) input[type="submit"]:hover {
+:is(.editor-visual-editor, body:not(.wp-admin)) input[type="submit"]:hover {
 	border-color: rgba(var(--black-color), 1);
 	background-color: rgba(var(--back-color), 1);
 }
