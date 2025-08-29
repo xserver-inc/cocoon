@@ -56,7 +56,6 @@ function new_entries_shortcode($atts) {
     'ex_posts' => null,
     'ex_cats' => null,
     'ordered_posts' => null,
-    'date' => 0,
   ), $atts, 'new_list'));
 
   //countオプションに異常値が入っていた場合
