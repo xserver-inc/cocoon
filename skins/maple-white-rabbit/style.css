@@ -247,10 +247,9 @@ color: #ba91e2;
     box-shadow: 0 10px 20px -5px rgba(0,0,0,.2);
 	color: inherit;
 }
-/* サイト内検索 */
-/* サイト内検索 */
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
-   border: 2px solid #7fbfff; /* 線の色 */
+/* サイト内検索（ブロックエディター＋フロント表示のみ適用） */
+:is(.editor-visual-editor, body:not(.wp-admin)) :is(.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select) {
+  border: 2px solid #7fbfff;
   border-radius: 3px;
   outline: none;
 }
@@ -920,4 +919,15 @@ ol.toc-list > li:before {
 .micro-balloon,
 .micro-text{
 	--cocoon-custom-text-color: #6a859c;;
+}
+
+/* WP管理画面調整用CSS */
+.wp-admin {
+	color: #3c434a;
+}
+.wp-admin a.help-page {
+	color: #2271b1;
+}
+.wp-admin form p {
+	font-weight: 400;
 }
