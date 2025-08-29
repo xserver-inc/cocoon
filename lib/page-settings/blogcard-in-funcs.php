@@ -31,8 +31,6 @@ function get_internal_blogcard_domain_style(){
 }
 endif;
 
-
-
 //内部ブログカードのサムネイル設定
 define('OP_INTERNAL_BLOGCARD_THUMBNAIL_STYLE', 'internal_blogcard_thumbnail_style');
 if ( !function_exists( 'get_internal_blogcard_thumbnail_style' ) ):
