@@ -1,3 +1,6 @@
+.editor-styles-wrapper.cocoon-block-wrap.body.article{
+    background-color: #d8e4ff;
+}
 /* DEBUG: .editor-styles-wrapper が付与されない・・・ */
 .editor-styles-wrapper kbd {
     height: 35px;
