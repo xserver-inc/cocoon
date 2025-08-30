@@ -1313,7 +1313,3 @@ h3.wpforo-forum-title::before {
     padding: 0;
 }
 
-/* WP管理画面調整用CSS */
-.wp-admin a.help-page {
-	color: #2271b1;
-}

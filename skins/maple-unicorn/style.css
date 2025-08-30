@@ -1096,13 +1096,3 @@ ol.toc-list > li:before {
 	--cocoon-custom-text-color: #6a859c;;
 }
 
-/* WP管理画面調整用CSS */
-.wp-admin {
-	color: #3c434a;
-}
-.wp-admin a.help-page {
-	color: #2271b1;
-}
-.wp-admin form p {
-	font-weight: 400;
-}

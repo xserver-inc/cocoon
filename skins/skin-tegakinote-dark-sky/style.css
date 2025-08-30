@@ -2328,13 +2328,3 @@ pre {
 	column-gap: 8px;
 }
 
-/************************
-* WP管理画面調整用CSS
-************************/
-.wp-admin {
-	color: #3c434a;
-}
-
-.wp-admin a.help-page {
-	color: #2271b1;
-}
