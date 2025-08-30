@@ -102,7 +102,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 //文字色
                 generate_color_picker_tag(OP_SITE_TEXT_COLOR,  get_site_text_color(), __( '文字色', THEME_NAME ));
 
-                generate_tips_tag(__( 'サイト全体の文字色を変更します。', THEME_NAME ));
+                generate_tips_tag(__( 'サイト全体の文字色を変更します。', THEME_NAME ).__( '※エディター上の色は変更されません。', THEME_NAME ));
                 ?>
 
               </div>
@@ -167,7 +167,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_color_picker_tag(OP_SITE_BACKGROUND_COLOR,  get_site_background_color(), __( '背景色', THEME_NAME ));
-            generate_tips_tag(__( 'サイト全体の背景色を選択します。', THEME_NAME ));
+            generate_tips_tag(__( 'サイト全体の背景色を選択します。', THEME_NAME ).__( '※エディター上の色は変更されません。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -208,7 +208,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_color_picker_tag(OP_SITE_LINK_COLOR,  get_site_link_color(), __( 'リンク色', THEME_NAME ));
-            generate_tips_tag(__( 'サイトで利用されるリンク色を選択します。', THEME_NAME ));
+            generate_tips_tag(__( 'サイトで利用されるリンク色を選択します。', THEME_NAME ).__( '※エディター上の色は変更されません。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -222,7 +222,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_color_picker_tag(OP_SITE_SELECTION_COLOR,  get_site_selection_color(), __( '選択文字色', THEME_NAME ));
-            generate_tips_tag(__( 'サイト内のテキストを選択した際の文字色です。', THEME_NAME ));
+            generate_tips_tag(__( 'サイト内のテキストを選択した際の文字色です。', THEME_NAME ).__( '※エディター上の色は変更されません。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -236,7 +236,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_color_picker_tag(OP_SITE_SELECTION_BACKGROUND_COLOR,  get_site_selection_background_color(), __( '選択文字背景色', THEME_NAME ));
-            generate_tips_tag(__( 'サイト内のテキストを選択した際の背景色です。', THEME_NAME ));
+            generate_tips_tag(__( 'サイト内のテキストを選択した際の背景色です。', THEME_NAME ).__( '※エディター上の色は変更されません。', THEME_NAME ));
             ?>
           </td>
         </tr>

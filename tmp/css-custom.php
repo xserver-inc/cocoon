@@ -122,20 +122,21 @@ if ($site_key_text_color = get_site_key_text_color()): ?>
 }
 <?php endif ?>
 <?php //サイト文字色
-if($site_text_color = get_site_text_color()): ?>
+
+if(!is_admin() && get_site_text_color()): ?>
 body.public-page{
-  --cocoon-text-color: <?php echo $site_text_color; ?>;
+  --cocoon-text-color: <?php echo get_site_text_color(); ?>;
   color: var(--cocoon-text-color);
 }
 <?php endif; ?>
 <?php //サイト背景色
-if (get_site_background_color()): ?>
+if (!is_admin() && get_site_background_color()): ?>
 body.public-page{
   background-color: <?php echo get_site_background_color(); ?>;
 }
 <?php endif ?>
 <?php //サイトリンク色
-if (get_site_link_color()): ?>
+if (!is_admin() && get_site_link_color()): ?>
 a{
   color: <?php echo get_site_link_color(); ?>;
 }
@@ -489,7 +490,8 @@ if (is_singular_page_type_full_wide()):
 }
 <?php endif ?>
 <?php //選択文字色
-if ($selection_color = get_site_selection_color()): ?>
+$selection_color = get_site_selection_color();
+if (!is_admin() && $selection_color): ?>
 *::selection {
   color: <?php echo $selection_color; ?>;
 }
@@ -497,8 +499,9 @@ if ($selection_color = get_site_selection_color()): ?>
   color: <?php echo $selection_color; ?>;
 }
 <?php endif ?>
-<?php //選択背景色
-if ($selection_background_color = get_site_selection_background_color()): ?>
+<?php //選択文字背景色
+$selection_background_color = get_site_selection_background_color();
+if (!is_admin() && $selection_background_color): ?>
 *::selection {
   background: <?php echo $selection_background_color; ?>;
 }
