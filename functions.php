@@ -142,7 +142,7 @@ function get_archive_chapter_title(){
   if( is_category() ) { // カテゴリーページの場合
     $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
     $category = get_queried_object();
-    if ( $category ) {
+    if ( $category && isset($category->name) ) {
       $chapter_title .= $icon_font . esc_html($category->name);
     } else {
       $chapter_title .= single_cat_title($icon_font, false);

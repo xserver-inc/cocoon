@@ -135,13 +135,13 @@ function update_custom_insert_post_data( $data, $postarr ){
     }
   }
   elseif( $mydata === 'edit' ) {
-    $aa_mod = $_POST['aa_mod'] <= 0 ? date_i18n('Y') : $_POST['aa_mod'];
-    $mm_mod = $_POST['mm_mod'] <= 0 ? date_i18n('n') : $_POST['mm_mod'];
-    $jj_mod = $_POST['jj_mod'] > 31 ? 31 : $_POST['jj_mod'];
+    $aa_mod = (isset($_POST['aa_mod']) && $_POST['aa_mod'] > 0) ? $_POST['aa_mod'] : date_i18n('Y');
+    $mm_mod = (isset($_POST['mm_mod']) && $_POST['mm_mod'] > 0) ? $_POST['mm_mod'] : date_i18n('n');
+    $jj_mod = isset($_POST['jj_mod']) ? ($_POST['jj_mod'] > 31 ? 31 : $_POST['jj_mod']) : date_i18n('j');
     $jj_mod = $jj_mod <= 0 ? date_i18n('j') : $jj_mod;
-    $hh_mod = $_POST['hh_mod'] > 23 ? $_POST['hh_mod'] -24 : $_POST['hh_mod'];
-    $mn_mod = $_POST['mn_mod'] > 59 ? $_POST['mn_mod'] -60 : $_POST['mn_mod'];
-    $ss_mod = $_POST['ss_mod'] > 59 ? $_POST['ss_mod'] -60 : $_POST['ss_mod'];
+    $hh_mod = isset($_POST['hh_mod']) ? ($_POST['hh_mod'] > 23 ? $_POST['hh_mod'] -24 : $_POST['hh_mod']) : 0;
+    $mn_mod = isset($_POST['mn_mod']) ? ($_POST['mn_mod'] > 59 ? $_POST['mn_mod'] -60 : $_POST['mn_mod']) : 0;
+    $ss_mod = isset($_POST['ss_mod']) ? ($_POST['ss_mod'] > 59 ? $_POST['ss_mod'] -60 : $_POST['ss_mod']) : 0;
     $modified_date = sprintf( '%04d-%02d-%02d %02d:%02d:%02d', $aa_mod, $mm_mod, $jj_mod, $hh_mod, $mn_mod, $ss_mod );
     $post_date = get_the_date('Y-m-d H:i:s');
 if (( strtotime($modified_date) < strtotime($post_date) ) ||

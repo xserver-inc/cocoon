@@ -95,9 +95,12 @@ endif;
 if ( !function_exists( 'get_the_category_links' ) ):
 function get_the_category_links(){
   $categories = null;
-  foreach((get_the_category()) as $category){
-    $style = null;
-    $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'><span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>'.$category->cat_name.'</a>';
+  $category_list = get_the_category();
+  if (is_array($category_list)) {
+    foreach($category_list as $category){
+      $style = null;
+      $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'><span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>'.$category->cat_name.'</a>';
+    }
   }
   return $categories;
 }
@@ -2163,7 +2166,9 @@ endif;
 //現在表示しているページのURL
 if ( !function_exists( 'get_requested_url' ) ):
 function get_requested_url(){
-  return (!is_ssl() ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+  $uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+  return (!is_ssl() ? 'http://' : 'https://') . $host . $uri;
 }
 endif;
 
