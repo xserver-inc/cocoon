@@ -1,3 +1,7 @@
+.editor-styles-wrapper.cocoon-block-wrap.body.article{
+    background-color: var(--nagi_bg_color);
+    color:var(--nagi_text_color)
+}
 .editor-styles-wrapper.cocoon-block-wrap .toggle-button,.editor-styles-wrapper.cocoon-block-wrap .cocoon-block-faq.is-style-accordion.not-nested-style>.faq>.faq-question,
 .cocoon-bloc.editor-styles-wrapper.cocoon-block-wrap k-caption-box.not-nested-style>.box-label,.editor-styles-wrapper.cocoon-block-wrap .cocoon-block-balloon.not-nested-style>.speech-balloon,.editor-styles-wrapper.cocoon-block-wrap .recent-comment-content,.editor-styles-wrapper.cocoon-block-wrap .blank-box.sticky{
   color: var(--white_on_text);
