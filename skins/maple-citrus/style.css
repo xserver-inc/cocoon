@@ -11,7 +11,7 @@
 /*以下にスタイルシートを記入してください*/
 
 /* 全体 */
-body {
+body:not(.wp-admin) {
 	color: #6a859c;
 	background-color: #fef56b;
 }
@@ -821,7 +821,7 @@ input[type="submit"] {
 }
 
 /* 項目名を太字にする */
-form p {
+.public-page form p {
 	font-weight: 600;
 }
 
@@ -1098,3 +1098,7 @@ input[type="submit"]:hover {
 	--cocoon-custom-text-color: #6a859c;;
 }
 
+/* WP管理画面調整用CSS */
+.wp-admin a.help-page {
+	color: #2271b1;
+}

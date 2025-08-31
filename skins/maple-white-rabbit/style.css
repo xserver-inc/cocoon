@@ -11,8 +11,8 @@
 /*以下にスタイルシートを記入してください*/
 
 /* 全体 */
-body {
-    color: #6a859c;
+body:not(.wp-admin) {
+  color: #6a859c;
 	background: #c5ddf7;
 }
 /* link color */
@@ -780,7 +780,7 @@ border: 1px solid #ffbf7f; /* 枠線色 */
 }
 
 /* 項目名を太字にする */
-form p {
+.public-page form p {
 	font-weight: 600;
 }
 
@@ -921,3 +921,7 @@ ol.toc-list > li:before {
 	--cocoon-custom-text-color: #6a859c;;
 }
 
+/* WP管理画面調整用CSS */
+.wp-admin a.help-page {
+	color: #2271b1;
+}
