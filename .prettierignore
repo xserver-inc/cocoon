@@ -1,3 +1,94 @@
+# Dependencies
 node_modules
-blocks/dist
 blocks/node_modules
+vendor
+
+# Build outputs
+blocks/dist
+blocks/build
+dist
+build
+
+# Generated files
+**/*.min.js
+**/*.min.css
+
+# Third party libraries
+plugins/**
+webfonts/**
+
+# WordPress core files
+wp-admin/**
+wp-content/**
+wp-includes/**
+
+# Temporary files
+tmp/**
+tmp-*/**
+
+# Cache files
+.cache
+*.cache
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/settings.json
+.idea/**
+
+# Git files
+.git/**
+
+# Specific files that shouldn't be formatted
+crowdin.yml
+*.po
+*.pot
+*.mo
+update-info.json
+
+# PHP files (use PHP-specific formatters)
+*.php
+
+# CSS/SCSS files (use stylelint)
+*.css
+*.scss
+
+# Configuration files
+.claude/**
+.mcp.json
+.serena/**
+.vscode/**
+.github/**
+
+# WordPress theme files
+style.css
+theme.json
+
+# Documentation files with specific format requirements
+*.yml
+*.yaml
+*.md
+
+# Skin directories (WordPress theme skins)
+skins/**
+
+# Template files with mixed syntax
+templates/**
+
+# Block files with mixed syntax
+blocks/**
+
+# JSON files (maintain original formatting)
+*.json
+*.lock
+languages/*.json
+
+# Library and dependency files
+lib/**
+vendor/**
+package-lock.json
