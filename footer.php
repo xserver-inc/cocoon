@@ -48,18 +48,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           is_active_sidebar('footer-center') ||
           is_active_sidebar('footer-right') )  ): ?>
           <div class="footer-widgets cf">
-             <div class="footer-left">
-             <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('footer-left') ) : else : ?>
-             <?php endif; ?>
-             </div>
-             <div class="footer-center">
-             <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('footer-center') ) : else : ?>
-             <?php endif; ?>
-             </div>
-             <div class="footer-right">
-             <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('footer-right') ) : else : ?>
-             <?php endif; ?>
-             </div>
+             <div class="footer-left"><?php   if ( function_exists('dynamic_sidebar') && dynamic_sidebar('footer-left') )   : else : ?><?php endif; ?></div>
+             <div class="footer-center"><?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('footer-center') ) : else : ?><?php endif; ?></div>
+             <div class="footer-right"><?php  if ( function_exists('dynamic_sidebar') && dynamic_sidebar('footer-right') )  : else : ?><?php endif; ?></div>
           </div>
         <?php endif; ?>
 

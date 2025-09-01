@@ -8320,7 +8320,7 @@ div.fb-like-mobile {
 .footer-left,
 .footer-center,
 .footer-right {
-  width: 33.33%;
+  flex: 1;
 }
 
 .footer-widgets-mobile {

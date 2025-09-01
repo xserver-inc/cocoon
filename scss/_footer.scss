@@ -25,7 +25,7 @@
 .footer-center,
 .footer-right {
   @extend %footer_widget;
-  width: 33.33%;
+  flex: 1;
 }
 
 .footer-widgets-mobile{

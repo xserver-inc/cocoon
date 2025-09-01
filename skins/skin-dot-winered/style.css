@@ -192,7 +192,6 @@ blockquote::after {
 }
 
 .footer-left, .footer-center, .footer-right {
-  width: 33.33%;
   color: #fff;
 }
 
