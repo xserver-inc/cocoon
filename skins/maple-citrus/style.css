@@ -1097,8 +1097,3 @@ input[type="submit"]:hover {
 .micro-text{
 	--cocoon-custom-text-color: #6a859c;;
 }
-
-/* WP管理画面調整用CSS */
-.wp-admin a.help-page {
-	color: #2271b1;
-}
