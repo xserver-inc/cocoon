@@ -30,3 +30,8 @@ textarea[name="the_page_memo"]{
 .uploded-thumbnail img{
   max-width: 100%;
 }
+
+// ヘルプページリンクの色を指定（付近でリンク食が設定されていた場合色が変わるため）
+.help-page, .help-page:hover{
+  color: var(--wp-components-color-accent,var(--wp-admin-theme-color,#3858e9));
+}

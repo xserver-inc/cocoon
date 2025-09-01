@@ -129,3 +129,7 @@ textarea[name=the_page_memo] {
 .uploded-thumbnail img {
   max-width: 100%;
 }
+
+.help-page, .help-page:hover {
+  color: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+}

@@ -510,27 +510,27 @@ $bb-profile-text: "PROFILE";
   }
 }
 
-@mixin toggle_link {
-  .toggle-link {
-    font-size: 0.8em;
-    cursor: pointer;
-    margin-left: 6px;
-    text-decoration: underline;
-    color: #0073aa;
-    transition-duration: 0.05s;
-    transition-property: border, background, color;
-    transition-timing-function: ease-in-out;
+// .toggle-link {
+//     @mixin toggle_link {
+//     font-size: 0.8em;
+//     cursor: pointer;
+//     margin-left: 6px;
+//     text-decoration: underline;
+//     color: #0073aa;
+//     transition-duration: 0.05s;
+//     transition-property: border, background, color;
+//     transition-timing-function: ease-in-out;
 
-    &:hover {
-      color: #00a0d2;
-    }
-  }
+//     &:hover {
+//       color: #00a0d2;
+//     }
+//   }
 
-  .toggle-content {
-    display: none;
-    width: 100%;
-  }
-}
+//   .toggle-content {
+//     display: none;
+//     width: 100%;
+//   }
+// }
 
 %copy_info{
   display: none;
@@ -546,4 +546,3 @@ $bb-profile-text: "PROFILE";
   box-shadow: 0 4px 8px var(--cocoon-x-pallid-text-color);
   z-index: 2;
 }
-
