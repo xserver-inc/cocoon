@@ -3,3 +3,10 @@ prepros.config
 blocks/src/demo/
 blocks/src/sample/
 node_modules/
+
+#CLAUDE
+.mcp.json
+CLAUDE.md
+.claude
+.serena
+claudedocs
