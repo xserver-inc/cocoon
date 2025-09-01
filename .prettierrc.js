@@ -3,7 +3,7 @@ module.exports = {
   parser: 'babel',
   useTabs: false,
   tabWidth: 2,
-  endOofLine: 'lf',
+  endOfLine: 'lf',
   printWidth: 80,
   singleQuote: true,
   trailingComma: 'es5',
