@@ -2023,8 +2023,7 @@ endif;
 //リダイレクト
 if ( !function_exists( 'redirect_to_url' ) ):
 function redirect_to_url($url){
-  header( "HTTP/1.1 301 Moved Permanently" );
-  header( "location: " . $url  );
+  wp_redirect($url, 301);
   exit;
 }
 endif;
