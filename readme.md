@@ -30,6 +30,10 @@ Cocoon テーマの再配布もしくは、Cocoon を基盤として作成した
 
 ライセンス：[GNU General Public License](http://www.gnu.org/licenses/gpl-2.0.html)
 
+## 貢献について
+
+プロジェクトへの貢献方法については、[CONTRIBUTING.md](./CONTRIBUTING.md) をご確認ください。
+
 ## 開発者
 
 わいひら： [yhira](https://github.com/yhira)
