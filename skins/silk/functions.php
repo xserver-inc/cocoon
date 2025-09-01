@@ -410,23 +410,25 @@ class Skin_Silk_Functions {
     .toc,
     .box-menu {
       background: '.$dark_white.';
-    }
-
-    .search-edit,
-    input[type="text"],
-    input[type="password"],
-    input[type="date"],
-    input[type="datetime"],
-    input[type="email"],
-    input[type="number"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="time"],
-    input[type="url"],
-    textarea,
-    select {
-      background: '.$dark_black.';
     }';
+
+    if (!is_admin()) {
+      echo '.search-edit,
+      input[type="text"],
+      input[type="password"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="email"],
+      input[type="number"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="time"],
+      input[type="url"],
+      textarea,
+      select {
+        background: '.$dark_black.';
+      }';
+    }
 
     //文字色
     $site_color = get_site_text_color() ?: '#484848';
@@ -665,11 +667,13 @@ class Skin_Silk_Functions {
     .is-style-text .a-wrap,
     .is-style-text .a-wrap:hover {
       color: '.$link_color.';
-    }
-
-    input[type="submit"] {
-      background: '.$link_color.';
     }';
+
+    if (!is_admin()) {
+      echo 'input[type="submit"] {
+        background: '.$link_color.';
+      }';
+    }
 
     //モバイルボタン
     $mobile_background = get_header_background_color() ?: get_header_container_background_color() ?: '#fff';

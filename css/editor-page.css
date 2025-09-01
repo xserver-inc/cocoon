@@ -132,4 +132,5 @@ textarea[name=the_page_memo] {
 
 .help-page, .help-page:hover {
   color: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+  opacity: 1;
 }

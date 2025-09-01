@@ -816,25 +816,25 @@ a.page-numbers {
 }
 
 /* フォーム */
-.search-edit,
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea,
-select {
+.public-page .search-edit,
+.public-page input[type="text"],
+.public-page input[type="password"],
+.public-page input[type="date"],
+.public-page input[type="datetime"],
+.public-page input[type="email"],
+.public-page input[type="number"],
+.public-page input[type="search"],
+.public-page input[type="tel"],
+.public-page input[type="time"],
+.public-page input[type="url"],
+.public-page textarea,
+.public-page select {
   border-radius: 2px;
   border-width: 2px;
   border-color: rgba(153, 153, 153, 0.4);
 }
 
-input[type="submit"] {
+.public-page input[type="submit"] {
   padding: 1em;
   color: #fff;
   font-size: 0.85em;
