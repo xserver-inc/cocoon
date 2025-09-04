@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_related_entries_visible()): ?>
+if ( is_related_entries_visible() && !is_attachment() ): ?>
 <aside id="related-entries" class="related-entries<?php echo get_additional_related_entries_classes(); ?>">
   <h2 class="related-entry-heading">
     <span class="related-entry-main-heading main-caption">
