@@ -172,22 +172,22 @@ if (isRubyVisible) {
       // @see keycodes/src/index.js
       const shortcutType = 'primaryAlt';
       const shortcutCharacter = 'r';
-      const icon = <FontAwesomeIcon icon={faEllipsisH} />;
+      const icon = <FontAwesomeIcon icon={ faEllipsisH } />;
 
       return (
         <Fragment>
           <RichTextShortcut
-            type={shortcutType}
-            character={shortcutCharacter}
-            onUse={onToggle}
+            type={ shortcutType }
+            character={ shortcutCharacter }
+            onUse={ onToggle }
           />
           <RichTextToolbarButton
-            icon={icon}
-            title={__('ふりがな（ルビ）', THEME_NAME)}
-            onClick={onToggle}
-            isActive={isActive}
-            shortcutType={shortcutType}
-            shortcutCharacter={shortcutCharacter}
+            icon={ icon }
+            title={ __('ふりがな（ルビ）', THEME_NAME) }
+            onClick={ onToggle }
+            isActive={ isActive }
+            shortcutType={ shortcutType }
+            shortcutCharacter={ shortcutCharacter }
           />
         </Fragment>
       );
