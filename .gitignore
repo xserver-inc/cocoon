@@ -3,6 +3,7 @@ prepros.config
 blocks/src/demo/
 blocks/src/sample/
 node_modules/
+package-lock.json
 
 #CLAUDE
 .mcp.json
