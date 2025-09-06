@@ -24,7 +24,8 @@
     "@wordpress/scripts": "^26.15.0",
     "classnames": "^2.3.2",
     "compare-versions": "^6.1.0",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-native": "^0.72.6"
   },
   "dependencies": {
     "caniuse-lite": "^1.0.30001662",
