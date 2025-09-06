@@ -1,0 +1,74 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# トップレベル設定ファイル
+root = true
+
+# すべてのファイルに適用される設定
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# PHP ファイルの設定
+[*.php]
+indent_size = 2
+max_line_length = 120
+
+# JavaScript ファイルの設定
+[*.{js,jsx,ts,tsx}]
+indent_size = 2
+max_line_length = 80
+
+# CSS/SCSS ファイルの設定
+[*.{css,scss,sass}]
+indent_size = 2
+max_line_length = 120
+
+# JSON ファイルの設定
+[*.json]
+indent_size = 2
+max_line_length = off
+
+# YAML ファイルの設定
+[*.{yml,yaml}]
+indent_size = 2
+
+# Markdown ファイルの設定
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# HTML ファイルの設定
+[*.html]
+indent_size = 2
+max_line_length = 120
+
+# XML ファイルの設定
+[*.{xml,svg}]
+indent_size = 2
+
+# Batch ファイル（Windows）
+[*.{bat,cmd}]
+end_of_line = crlf
+
+# 特定ファイルの設定
+[gulpfile.js]
+indent_size = 2
+
+[webpack.config.js]
+indent_size = 2
+
+[package.json]
+indent_size = 2
+
+# 生成ファイルは除外
+[{dist,build,node_modules,vendor}/**]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset

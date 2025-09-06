@@ -19,14 +19,21 @@
   },
   "devDependencies": {
     "@prettier/plugin-php": "^0.19.1",
+    "@wordpress/eslint-plugin": "^16.0.0",
+    "eslint": "^8.57.0",
     "gulp": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "po2json": "^0.4.5",
+    "postcss-scss": "^4.0.9",
     "prettier": "npm:wp-prettier@^2.6.2",
     "run-script-os": "^1.1.6",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-scss": "^6.0.0"
   },
   "scripts": {
     "watch": "gulp watch",
@@ -35,6 +42,15 @@
     "build": "gulp && cd blocks && npm run build",
     "po2json": "run-script-os",
     "po2json:windows": "po2json -f jed1.x languages/%npm_config_locale%.po languages/cocoon-%npm_config_locale%-cocoon-blocks-js.json",
-    "po2json:nix": "./node_modules/po2json/bin/po2json -f jed1.x languages/${npm_config_locale}.po languages/cocoon-${npm_config_locale}-cocoon-blocks-js.json"
+    "po2json:nix": "./node_modules/po2json/bin/po2json -f jed1.x languages/${npm_config_locale}.po languages/cocoon-${npm_config_locale}-cocoon-blocks-js.json",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:php",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:js:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:css": "stylelint **/*.{css,scss,sass}",
+    "lint:css:fix": "stylelint **/*.{css,scss,sass} --fix",
+    "lint:php": "phpcs -d memory_limit=512M --standard=WordPress --ignore=*/node_modules/*,*/vendor/*,*/blocks/* --extensions=php .",
+    "lint:php:fix": "phpcbf -d memory_limit=512M --standard=WordPress --ignore=*/node_modules/*,*/vendor/*,*/blocks/* --extensions=php .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   }
 }

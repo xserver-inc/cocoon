@@ -1,0 +1,67 @@
+# Git関連
+.git
+.gitignore
+.github
+
+# Node.js関連
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Docker関連
+docker/
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# 開発ツール設定
+.vscode/
+.serena/
+.mcp.json
+.prettierrc.js
+.prettierignore
+
+# ビルド・一時ファイル
+tmp/
+tmp-user/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# 言語ファイルは多言語テストで使用するため含める
+
+# 設定ファイル
+gulpfile.js
+crowdin.yml
+CONTRIBUTING.md
+
+# テスト関連
+tests/
+test/
+*.test.js
+*.spec.js
+
+# エディタ・IDE設定
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-*
+
+# OS固有ファイル
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# その他の開発関連ファイル
+*.orig
+*.rej
+*.diff
+*.patch

@@ -1,6 +1,30 @@
 {
   "recommendations": [
-    "esbenp.prettier-vscode"
+    // 必須: コードフォーマット
+    "esbenp.prettier-vscode",
+
+    // 必須: JavaScript品質チェック
+    "dbaeumer.vscode-eslint",
+
+    // 必須: CSS/SCSS品質チェック
+    "stylelint.vscode-stylelint",
+
+    // 必須: PHP IntelliSense・WordPress開発
+    "bmewburn.vscode-intelephense-client",
+
+    // 必須: エディター設定統一
+    "editorconfig.editorconfig"
+  ],
+  "unwantedRecommendations": [
+    // フォーマッター競合回避
+    "hookyqr.beautify",
+    "esbenp.prettier-vscode-standard",
+
+    // PHP拡張機能競合回避
+    "felixfbecker.php-intellisense",
+
+    // CSS/SCSS競合回避
+    "glen-84.sass-lint"
   ]
 }
 
