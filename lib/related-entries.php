@@ -76,15 +76,9 @@ if ( !function_exists( 'get_the_category_ids' ) ):
 function get_the_category_ids($post_id){
   $categories = get_the_category($post_id);
   $category_IDs = array();
-  $cat_count = 0;
   foreach($categories as $category):
-    $cat_count += (intval($category->count) - 1);
+    array_push( $category_IDs, $category->cat_ID);
   endforeach ;
-  if ($cat_count > 0) {
-    foreach($categories as $category):
-      array_push( $category_IDs, $category->cat_ID);
-    endforeach ;
-  }
   return $category_IDs;
 }
 endif;
