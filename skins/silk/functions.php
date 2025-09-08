@@ -1244,8 +1244,6 @@ class Skin_Silk_Functions {
                       <input type="submit" class="button" value="設定の追加" />
                       <input type="hidden" name="<?php echo self::HIDDEN; ?>" value="<?php echo wp_create_nonce('skin-option'); ?>">
                       <?php generate_tips_tag('スキンのオプション設定が書かれたJSONファイルを選択し、「設定の追加」ボタンを押してください。JSONファイルの作成方法はファイル名を除き、スキン制御に従います。'.get_help_page_tag('https://wp-cocoon.com/option-json/')); ?>
-                      <p><span class="fa fa-arrow-right" aria-hidden="true"></span> <a href="https://dateqa.com/cocoon/#silk" target="_blank" rel="noopener">設定ファイルをダウンロードする</a></p>
-                      <p><span class="fa fa-arrow-right" aria-hidden="true"></span> <a href="https://dateqa.com/cocoon/#option" target="_blank" rel="noopener">オプションの詳しい設定方法を見る</a></p>
                     </form>
                   </td>
                 </tr>
