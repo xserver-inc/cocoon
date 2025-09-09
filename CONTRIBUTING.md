@@ -164,13 +164,6 @@ blocks/
 - `skins/*/style.css` — 各スキンのSCSSから自動生成
 - `blocks/dist/` — Webpackから自動生成されたビルド済みファイル
 
-### 新しいスキンの作成
-
-1. `skins/skin-template/` をコピー
-2. フォルダ名を変更
-3. `scss/style.scss` を編集
-4. `npm run build` でコンパイル
-
 ## 開発環境のセットアップ
 
 ### 必要な環境
@@ -196,7 +189,13 @@ blocks/
 3. **依存関係のインストール**
 
    ```bash
+   # メインプロジェクトの依存関係をインストール
    npm install
+
+   # Gutenbergブロック開発の依存関係もインストール
+   cd blocks
+   npm install
+   cd ..
    ```
 
 4. **WordPress環境へのテーマ配置**
@@ -206,6 +205,25 @@ blocks/
 5. **子テーマの設置（推奨）**
 
    開発時は[Cocoon子テーマ](https://github.com/yhira/cocoon-child)の使用を推奨します。
+
+6. **VSCode開発環境の最適化**
+
+   プロジェクトにはVSCode用の設定ファイルが含まれています。以下の拡張機能のインストールが推奨されます：
+
+   ```bash
+   # 推奨拡張機能（VSCode Extension ID）
+   code --install-extension esbenp.prettier-vscode
+   code --install-extension dbaeumer.vscode-eslint
+   code --install-extension stylelint.vscode-stylelint
+   code --install-extension bmewburn.vscode-intelephense-client
+   code --install-extension wordpresstoolbox.wordpress-toolbox
+   ```
+
+   設定完了後、以下の機能が自動で有効になります：
+   - **保存時フォーマット**: ファイル保存時の自動整形
+   - **リアルタイムlint**: 入力中のエラー・警告表示
+   - **PHP IntelliSense**: WordPress関数の自動補完
+   - **ファイル種別最適化**: PHP/JS/SCSS個別の最適設定
 
 ## コード貢献の流れ
 
@@ -241,9 +259,50 @@ npm run build
 
 # 開発中の自動ビルド
 npm run watch
+
+# Gutenbergブロックのビルド（blocks内で作業する場合）
+cd blocks
+npm run build    # 本番用ビルド
+npm run start    # 開発サーバー起動
 ```
 
-### 5. コミット
+### 5. コード品質チェック（推奨）
+
+**利用可能なコマンド**：
+
+```bash
+# メインプロジェクト（プロジェクトルートで実行、blocks除外）
+npm run lint             # JavaScript + CSS + PHP lintを実行
+npm run lint:js          # JavaScript ESLint
+npm run lint:css         # CSS/SCSS Stylelint
+npm run lint:php         # PHP品質チェック（PHPCS）
+npm run lint:js:fix      # JavaScript自動修正
+npm run lint:css:fix     # CSS/SCSS自動修正
+npm run lint:php:fix     # PHP自動修正（PHPCBF）
+npm run format           # Prettier自動フォーマット
+npm run format:check     # フォーマットチェックのみ
+
+# Gutenbergブロック開発時（blocks内で実行、独立管理）
+cd blocks
+npm run lint             # 全体のlintチェック（JS + CSS + PHP）
+npm run lint:js          # ブロック用JavaScript lint（wp-scripts）
+npm run lint:js:fix      # ブロック用JavaScript自動修正
+npm run lint:css         # ブロック用CSS lint（wp-scripts）
+npm run lint:css:fix     # ブロック用CSS自動修正
+npm run lint:php         # ブロック用PHP lint（PHPCS WordPress標準）
+npm run lint:php:fix     # ブロック用PHP自動修正（PHPCBF）
+npm run format           # Prettier自動フォーマット（wp-scripts）
+npm run format:check     # フォーマットチェックのみ
+```
+
+#### VSCodeでの自動品質チェック
+
+VSCodeを使用している場合、以下が自動で実行されます：
+- **Ctrl+S（保存時）**: 自動フォーマット + lint修正
+- **入力中**: リアルタイムエラー表示
+- **Ctrl+Shift+P → "Format Document"**: 手動フォーマット
+
+### 6. コミット
 
 コミットメッセージは以下の形式で記述してください：
 
@@ -265,7 +324,7 @@ npm run watch
 - `perf`: パフォーマンス改善
 - `test`: テスト追加・修正
 
-### 6. プルリクエスト作成
+### 7. プルリクエスト作成
 
 1. 変更をプッシュ：
    ```bash
@@ -278,32 +337,44 @@ npm run watch
 
 ## コーディング規約
 
+プロジェクトでは**自動フォーマット**により一貫したコードスタイルを維持しています。
+
+### 自動フォーマット設定
+
+以下のファイルで統一されたコーディングスタイルが自動適用されます：
+
+- **`.prettierrc.js`**: JavaScript/CSS/SCSS/JSON/Markdown
+- **`.eslintrc.js`**: JavaScript品質・セキュリティルール
+- **`.stylelintrc.js`**: CSS/SCSS品質ルール
+- **`.editorconfig`**: 全ファイル共通の基本設定
+
 ### PHP
 
 - [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/)に準拠
-- インデントはタブを使用
+- インデントは**2スペース**（プロジェクト統一）
 - 関数名やクラス名はWordPressの命名規則に従う
 
 ```php
 // 良い例
 function cocoon_get_user_data( $user_id ) {
-    // 処理
+  // 処理内容
+  return $data;
 }
 
 // 悪い例
 function getUserData($userId) {
-    // 処理
+  // 処理内容
 }
 ```
 
 ### CSS/SCSS
 
+- **自動フォーマット**: Prettierにより保存時自動整形
 - インデントは2スペース
-- プロパティはアルファベット順に配置
-- ベンダープレフィックスは必要に応じて追加
+- Stylelintによる品質チェック
 
 ```scss
-// 良い例
+// 良い例（Prettierで自動整形される）
 .example-class {
   background-color: #ffffff;
   color: #333333;
@@ -314,12 +385,13 @@ function getUserData($userId) {
 
 ### JavaScript
 
-- インデントは2スペース
-- セミコロンを使用
-- ES5で記述（WordPress互換性のため）
+- **自動フォーマット**: Prettierにより保存時自動整形
+- **品質チェック**: ESLintによるリアルタイム検証
+- セキュリティルール適用（`eval()`等の禁止）
+- WordPress/jQuery環境最適化
 
 ```javascript
-// 良い例
+// 良い例（ESLint + Prettierで自動整形）
 function exampleFunction() {
   var element = document.getElementById('example');
   if (element) {
@@ -328,24 +400,22 @@ function exampleFunction() {
 }
 ```
 
-## テスト・検証方法
+### VSCodeでの自動適用
 
-### 基本的な動作確認
+設定完了後、以下が自動実行されます：
 
-1. **WordPress環境での確認**
-   - 異なるWordPressバージョンでのテスト
-   - 各種ブラウザでの表示確認
-   - モバイル端末での表示確認
+1. **保存時（Ctrl+S）**
+   - Prettier自動フォーマット
+   - ESLint自動修正（可能な部分）
+   - Stylelint自動修正（可能な部分）
 
-2. **機能別テスト**
-   - 管理画面での設定変更
-   - フロントエンドでの表示確認
-   - パフォーマンステスト
+2. **入力中**
+   - リアルタイムエラー・警告表示
+   - 自動補完・IntelliSense
 
-3. **互換性確認**
-   - 子テーマとの互換性
-   - 主要プラグインとの互換性
-   - 異なるPHPバージョンでの動作
+3. **コマンドパレット**
+   - `Format Document`: 手動フォーマット
+   - `Fix all auto-fixable Problems`: lint自動修正
 
 ### ビルドプロセスの確認
 
@@ -355,6 +425,12 @@ npm run build
 
 # エラーがないことを確認
 npm run watch
+
+# Gutenbergブロックのビルド確認
+cd blocks
+npm install  # 初回のみ必要
+npm run build
+npm run start  # 開発サーバーでの確認
 ```
 
 ## 問題報告（Issue）ガイドライン
@@ -457,4 +533,4 @@ Cocoonプロジェクトへの貢献を検討していただき、ありがと�
 ---
 
 **開発者**: わいひら ([yhira](https://github.com/yhira))
-**最終更新**: 2025年1月
+**最終更新**: 2025年9月
