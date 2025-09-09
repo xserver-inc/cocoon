@@ -168,8 +168,14 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
         $text = preg_replace('{<a.*?>(.*?)</a>}', "$1", $text);
       }
       if ($is_multi_page_toc_visible) {
-        $link = get_permalink($post);
-        if ($headers[$i]['page'] > 1) $link = trailingslashit($link).$headers[$i]['page'].'/';
+        global $page; // 現在のページ番号（未定義なら 0）
+        $current = $page ?: 1;
+        $link = '';
+        // 現在のページでは、ページ遷移しないようにURLを出力しない
+        if ($current !== intval($headers[$i]['page'])) {
+          $link = get_permalink($post);
+          if ($headers[$i]['page'] > 1) $link = trailingslashit($link).$headers[$i]['page'].'/';
+        }
 
         $toc_list .= '<li'.$hide_class.'><a href="'.$link.'#'.$headers[$i]['id'].'" tabindex="0">' . $text . '</a>';
       } else {
