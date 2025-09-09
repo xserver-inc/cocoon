@@ -85,9 +85,15 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   if ($is_multi_page_toc_visible) {
     // 分割ページごとに見出しを取得
     $page_num = 1;
+    $past_page_num = 1;
     foreach ($pages as $page_content) {
       if (preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6]>/us', $page_content, $matches, PREG_SET_ORDER)) {
         foreach ($matches as $m) {
+          // 違うページになったらカウンターをリセットする
+          if ($page_num !== $past_page_num) {
+            $past_page_num = $page_num;
+            $counter = 0;
+          }
           $counter++;
           $headers[] = array(
             'tag'  => $m[1],
@@ -166,7 +172,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
         if ($headers[$i]['page'] > 1) $link = trailingslashit($link).$headers[$i]['page'].'/';
 
         $toc_list .= '<li'.$hide_class.'><a href="'.$link.'#'.$headers[$i]['id'].'" tabindex="0">' . $text . '</a>';
-      }else {
+      } else {
         $toc_list .= '<li'.$hide_class.'><a href="#toc' . $counter . '" tabindex="0">' . $text . '</a>';
       }
       $prev_depth = $depth;
