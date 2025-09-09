@@ -10,6 +10,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //目次の表示
 update_theme_option(OP_TOC_VISIBLE);
 
+//全ページの目次の表示
+update_theme_option(OP_MULTI_PAGE_TOC_VISIBLE);
+
 //投稿ページで目次の表示
 update_theme_option(OP_SINGLE_TOC_VISIBLE);
 

@@ -15,6 +15,14 @@ function is_toc_visible(){
 }
 endif;
 
+//全ページの目次を表示する
+define('OP_MULTI_PAGE_TOC_VISIBLE', 'multi_page_toc_visible');
+if ( !function_exists( 'is_multi_page_toc_visible' ) ):
+function is_multi_page_toc_visible(){
+  return get_theme_option(OP_MULTI_PAGE_TOC_VISIBLE, 0); // 後でする、デフォルトを有効に
+}
+endif;
+
 //投稿ページで目次の表示
 define('OP_SINGLE_TOC_VISIBLE', 'single_toc_visible');
 if ( !function_exists( 'is_single_toc_visible' ) ):

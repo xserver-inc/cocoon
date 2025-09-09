@@ -33,12 +33,19 @@ endif;
 //目次部分の取得（$expanded_contentには、ショートコードが展開された本文を入れる）
 if ( !function_exists( 'get_toc_tag' ) ):
 function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_option = 0){
+  global $post;
+  $is_multi_page_toc_visible = is_multi_page_toc_visible();
+
   //フォーラムページだと表示しない
   if (is_plugin_fourm_page()) {
     return;
   }
 
   $content     = $expanded_content;
+  if ($is_multi_page_toc_visible) {
+    $content = $post->post_content;
+    $pages = explode('<!--nextpage-->', $content);
+  }
   $headers     = array();
   $html        = '';
   $toc_list    = '';
@@ -75,8 +82,28 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   if($targetclass===''){$targetclass = get_post_type();}
   for($h = $top_level; $h <= 6; $h++){$harray[] = 'h' . $h . '';}
 
-  preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/us', $content, $headers);
-  $header_count = count($headers[0]);
+  if ($is_multi_page_toc_visible) {
+    // 分割ページごとに見出しを取得
+    $page_num = 1;
+    foreach ($pages as $page_content) {
+      if (preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6]>/us', $page_content, $matches, PREG_SET_ORDER)) {
+        foreach ($matches as $m) {
+          $counter++;
+          $headers[] = array(
+            'tag'  => $m[1],
+            'text' => $m[2],
+            'id'   => 'toc' . $counter,
+            'page' => $page_num,
+          );
+        }
+      }
+      $page_num++;
+    }
+    $header_count = count($headers);
+  }else {
+    preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/us', $content, $headers);
+    $header_count = count($headers[0]);
+  }
 
   if($top_level < 1){$top_level = 1;}
   if($top_level > 6){$top_level = 6;}
@@ -91,7 +118,9 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   }
   for($i=0;$i < $header_count;$i++){
     $depth = 0;
-    switch(strtolower($headers[1][$i])){
+    $h_actual = $is_multi_page_toc_visible ? strtolower($headers[$i]['tag']) : strtolower($headers[1][$i]);
+
+    switch($h_actual) {
       case 'h1': $depth = 1 - $top_level + 1; break;
       case 'h2': $depth = 2 - $top_level + 1; break;
       case 'h3': $depth = 3 - $top_level + 1; break;
@@ -127,12 +156,19 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
         $hide_class = ' class="display-none"';
       }
       $counter++;
-      $text = strip_tags($headers[2][$i]);
+      $text = $is_multi_page_toc_visible ? strip_tags($headers[$i]['text']) : strip_tags($headers[2][$i]);
       if (is_toc_heading_inner_html_tag_enable()) {
-        $text = $headers[2][$i];
+        $text = $is_multi_page_toc_visible ? $headers[$i]['text'] : $headers[2][$i];
         $text = preg_replace('{<a.*?>(.*?)</a>}', "$1", $text);
       }
-      $toc_list .= '<li'.$hide_class.'><a href="#toc' . $counter . '" tabindex="0">' . $text . '</a>';
+      if ($is_multi_page_toc_visible) {
+        $link = get_permalink($post);
+        if ($headers[$i]['page'] > 1) $link = trailingslashit($link).$headers[$i]['page'].'/';
+
+        $toc_list .= '<li'.$hide_class.'><a href="'.$link.'#'.$headers[$i]['id'].'" tabindex="0">' . $text . '</a>';
+      }else {
+        $toc_list .= '<li'.$hide_class.'><a href="#toc' . $counter . '" tabindex="0">' . $text . '</a>';
+      }
       $prev_depth = $depth;
     }
   }
@@ -394,20 +430,20 @@ endif;
 
 //
 if ( !function_exists( 'is_toc_widget_used_in_singular_content_widget_area' ) ):
-  function is_toc_widget_used_in_singular_content_widget_area($widget_id) {
-     $widget_areas = wp_get_sidebars_widgets();
-     foreach ($widget_areas as $key => $widget_area) {
-        // _v($key);
-        if (isset($key) && (($key === 'single-content-middle') || ($key === 'page-content-middle'))) {
-           $widgets = $widget_area;
-           foreach ($widgets as $keyw => $widget) {
-              if ($widget === $widget_id) {
-                 return true;
-              }
-           }
+function is_toc_widget_used_in_singular_content_widget_area($widget_id) {
+  $widget_areas = wp_get_sidebars_widgets();
+  foreach ($widget_areas as $key => $widget_area) {
+    // _v($key);
+    if (isset($key) && (($key === 'single-content-middle') || ($key === 'page-content-middle'))) {
+        $widgets = $widget_area;
+        foreach ($widgets as $keyw => $widget) {
+          if ($widget === $widget_id) {
+              return true;
+          }
         }
-     }
-     return false;
+    }
   }
-  endif;
+  return false;
+}
+endif;
 
