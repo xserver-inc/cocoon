@@ -107,6 +107,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                   resetFallbackValue={ 0 }
                   initialPosition={ 0 }
                   marks={ marks }
+                  help={ __( '※WordPress標準のマージンボトム設定よりこちらが優先されます。', THEME_NAME ) }
                 />
               </PanelBody>
             </InspectorControls>

@@ -757,9 +757,10 @@ if (!$entry_content_margin_hight) {
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
 
-.is-root-container > * {
-  margin-bottom: <?php echo $entry_content_margin_hight; ?>em !important;
+#wpcontent #wpbody .is-root-container > * {
+  margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
+
 .article h2,
 .article h3,
 .article h4,
