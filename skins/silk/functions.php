@@ -171,11 +171,6 @@ class Skin_Silk_Functions {
       define('SILK_SWITCH', false);
     }
 
-    //見出しナンバリング
-    if (!defined('SILK_COUNTER')) {
-      define('SILK_COUNTER', true);
-    }
-
     //縦型ブログカード
     if (!defined('SILK_BLOGCARD')) {
       define('SILK_BLOGCARD', true);
@@ -294,7 +289,7 @@ class Skin_Silk_Functions {
     #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"],
     .cat-label,
     .pagination .current,
-    .article h2 span::after,
+    .article h2::after,
     blockquote p:first-of-type::before,
     .blogcard-label,
     .timeline-item::before,
@@ -311,7 +306,7 @@ class Skin_Silk_Functions {
     .slick-dots li button:before,
     .slick-dots li.slick-active button:before,
     .archive-title span,
-    .article h4 > span::before,
+    .article h4::before,
     .article h5,
     .sidebar h2,
     .sidebar h3,
@@ -710,7 +705,7 @@ class Skin_Silk_Functions {
       $font   = 'font-family: "Font Awesome 5 Free";';
       $weight = 'font-weight: 900;';
     }
-    echo '.article h4 > span::before,
+    echo '.article h4::before,
     blockquote p:first-of-type::before,
     ul.is-style-link li a::before,
     ol.is-style-link li a::before,
@@ -737,18 +732,6 @@ class Skin_Silk_Functions {
       .header-container.fixed-header {
         padding-top: 0;
         border-top: 3px solid '.$color.';
-      }';
-    }
-
-    //見出しカウント
-    if (SILK_COUNTER) {
-      echo '.entry-content {
-        counter-reset: h2;
-      }
-
-      .entry-content h2 > span::before {
-        content: counter(h2, decimal) ". ";
-        counter-increment: h2;
       }';
     }
 
