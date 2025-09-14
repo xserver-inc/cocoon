@@ -53,7 +53,7 @@ define('THEME_PARENT_DIR', THEME_NAME.'-master');
 //子テーマフォルダ
 define('THEME_CHILD_DIR', THEME_NAME.'-child');
 //テーマ設定ページ用のURLクエリ
-define('THEME_SETTINGS_PAFE', 'theme-settings');
+define('THEME_SETTINGS_PAGE', 'theme-settings');
 //ホームバスの取得
 $document_root = isset($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : '';
 define('ROOT_PATH', trailingslashit($document_root));

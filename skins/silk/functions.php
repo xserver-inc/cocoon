@@ -1207,7 +1207,7 @@ class Skin_Silk_Functions {
 
   //設定追加
   public function option_setting() {
-    $hook = get_plugin_page_hook('theme-backup', THEME_SETTINGS_PAFE);
+    $hook = get_plugin_page_hook('theme-backup', THEME_SETTINGS_PAGE);
     if (!is_null($hook)) {
       add_action($hook, [$this, 'option_field']);
     }

@@ -1488,7 +1488,7 @@ endif;
 if ( !function_exists( 'is_admin_php_page' ) ):
 function is_admin_php_page(){
   global $pagenow;
-  $is_theme_settings = isset($_GET['page']) && $_GET['page'] == THEME_SETTINGS_PAFE;
+  $is_theme_settings = isset($_GET['page']) && $_GET['page'] == THEME_SETTINGS_PAGE;
   return $pagenow == 'admin.php' && $is_theme_settings;
 }
 endif;
