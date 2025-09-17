@@ -11748,7 +11748,7 @@ msgid "記事を書いた著者のプロフィール情報を表示するウィ�
 msgstr ""
 
 #: lib/widgets/author-box.php:75
-msgid "肩書きラベル"
+msgid "ラベル"
 msgstr ""
 
 #: lib/widgets/author-box.php:77

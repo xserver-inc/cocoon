@@ -72,7 +72,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
     <?php //ウィジェット名 ?>
     <p>
       <label for="<?php echo $this->get_field_id('label'); ?>">
-        <?php _e( '肩書きラベル', THEME_NAME ) ?>
+        <?php _e( 'ラベル', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('label'); ?>" name="<?php echo $this->get_field_name('label'); ?>" type="text" value="<?php echo $label; ?>" placeholder="<?php _e( '例：この記事を書いた人', THEME_NAME ) ?>" />
     </p>
