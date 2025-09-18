@@ -200,6 +200,9 @@ if ( !function_exists( 'get_image_sized_url' ) ):
 function get_image_sized_url($url, $w, $h){
   $ext = get_extention($url);
   $sized_url = str_replace('.'.$ext, '-'.$w.'x'.$h.'.'.$ext, $url);
+  if (!file_exists(url_to_local($sized_url))) {
+    $sized_url = $url;
+  }
   return apply_filters('get_image_sized_url', $sized_url, $url, $w, $h);
 }
 endif;
