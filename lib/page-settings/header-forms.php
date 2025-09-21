@@ -15,11 +15,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <p><?php _e( 'ヘッダーの表示設定を行います。', THEME_NAME ) ?></p>
 
-    <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_header', true)): ?>
-    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
-    <div class="demo header-demo">
-      <?php get_sanitize_preview_template_part('tmp/header-container'); ?>
-    </div>
+    <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_columns', true)): ?>
+      <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+      <div class="demo iframe-standard-demo column-demo">
+        <?php
+            //iframeからページを呼び出すと以下のPHP警告が出る
+            //unlink(/app/public/wp-content/temp-write-test-1512636307): Text file busy
+            //原因はよくわからないけど警告なので様子見
+        ?>
+        <iframe id="column-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400" loading="lazy"></iframe>
+      </div>
     <?php endif; ?>
 
     <table class="form-table">

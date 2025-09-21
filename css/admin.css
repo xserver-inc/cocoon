@@ -20069,6 +20069,7 @@ body.wp-admin {
 }
 .admin-settings .demo.iframe-standard-demo {
   height: 400px;
+  overflow: hidden;
 }
 .admin-settings .demo.mobile-demo {
   height: 640px;
