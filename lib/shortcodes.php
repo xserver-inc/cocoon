@@ -146,6 +146,7 @@ function popular_entries_shortcode($atts) {
     'author' => null,
     'post_type' => 'post',
     'horizontal' => 0,
+    'action' => null,
   ), $atts, 'popular_list'));
 
   //countオプションに異常値が入っていた場合
@@ -187,6 +188,7 @@ function popular_entries_shortcode($atts) {
     'author' => $author,
     'post_type' => $post_type,
     'horizontal' => $horizontal,
+    'action' => $action,
   );
   ob_start();
   generate_popular_entries_tag($atts);

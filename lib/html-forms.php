@@ -1049,6 +1049,7 @@ function generate_popular_entries_tag($atts){
     'author' => null,
     'post_type' => 'post',
     'horizontal' => 0,
+    'action' => null,
   ), $atts, 'generate_popular_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
