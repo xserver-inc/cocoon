@@ -27,6 +27,7 @@ class ItemRankingWidgetItem extends WP_Widget {
     $title = !empty($instance['title']) ? $instance['title'] : '';
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $ranking_id = !empty($instance['ranking_id']) ? $instance['ranking_id'] : null;
+    $ranking_id = apply_filters( 'ranking_widget_id', $ranking_id );
 
     if ( !is_404() ): //パソコン表示かつ404ページでないとき
       echo $args['before_widget'];
