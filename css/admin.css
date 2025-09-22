@@ -20052,9 +20052,6 @@ body.wp-admin {
 .admin-settings .demo.toc .entry-footer {
   display: none;
 }
-.admin-settings .demo.header-demo {
-  overflow: visible;
-}
 .admin-settings .demo .go-to-top {
   position: relative;
   display: inline-block;
