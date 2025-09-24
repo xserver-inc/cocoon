@@ -1049,6 +1049,7 @@ function generate_popular_entries_tag($atts){
     'author' => null,
     'post_type' => 'post',
     'horizontal' => 0,
+    'action' => null,
   ), $atts, 'generate_popular_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1556,7 +1557,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
             echo wpautop(__( '未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。', THEME_NAME ));
           }
         } elseif (is_user_logged_in()) {
-          echo wpautop(__( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="' . esc_url(home_url() . '/wp-admin/user-edit.php?user_id='.get_the_author_meta( 'ID' )).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME ));
+          echo wpautop(__( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="' . esc_url(home_url() . '/wp-admin/user-edit.php?user_id='.$user_id).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME ));
         }
         ?>
 

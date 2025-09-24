@@ -20052,9 +20052,6 @@ body.wp-admin {
 .admin-settings .demo.toc .entry-footer {
   display: none;
 }
-.admin-settings .demo.header-demo {
-  overflow: visible;
-}
 .admin-settings .demo .go-to-top {
   position: relative;
   display: inline-block;
@@ -20069,6 +20066,7 @@ body.wp-admin {
 }
 .admin-settings .demo.iframe-standard-demo {
   height: 400px;
+  overflow: hidden;
 }
 .admin-settings .demo.mobile-demo {
   height: 640px;

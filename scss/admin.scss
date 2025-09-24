@@ -83,10 +83,6 @@ body.wp-admin{
     }
   }
 
-  &.header-demo{
-    overflow: visible;
-  }
-
   .go-to-top{
     position: relative;
     display: inline-block;
@@ -105,6 +101,7 @@ body.wp-admin{
 
   &.iframe-standard-demo{
     height: 400px;
+    overflow: hidden;
   }
 
   &.mobile-demo{
