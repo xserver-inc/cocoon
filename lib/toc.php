@@ -42,10 +42,23 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   }
 
   $content     = $expanded_content;
+
   if ($is_multi_page_toc_visible) {
-    $content = $post->post_content;
-    $pages = explode('<!--nextpage-->', $content);
+    $raw_pages = explode('<!--nextpage-->', $post->post_content);
+    $pages = [];
+
+    // 分割ページ単位にブロック・パターン・ショートコードを展開
+    foreach ($raw_pages as $page_content) {
+      $page_content = get_shortcode_removed_content($page_content);
+      if (function_exists('do_blocks')) {
+        $page_content = do_blocks($page_content);
+      }
+      // パターン展開（同期パターン）
+      $page_content = expand_synced_patterns($page_content);
+      $pages[] = $page_content;
+    }
   }
+
   $headers     = array();
   $html        = '';
   $toc_list    = '';
@@ -440,22 +453,62 @@ function is_toc_display_count_available($h_count){
 }
 endif;
 
-//
+// 投稿・固定ページやウィジェットなどに目次が使われているか
 if ( !function_exists( 'is_toc_widget_used_in_singular_content_widget_area' ) ):
 function is_toc_widget_used_in_singular_content_widget_area($widget_id) {
   $widget_areas = wp_get_sidebars_widgets();
   foreach ($widget_areas as $key => $widget_area) {
-    // _v($key);
     if (isset($key) && (($key === 'single-content-middle') || ($key === 'page-content-middle'))) {
-        $widgets = $widget_area;
-        foreach ($widgets as $keyw => $widget) {
-          if ($widget === $widget_id) {
-              return true;
-          }
+      $widgets = $widget_area;
+      foreach ($widgets as $keyw => $widget) {
+        if ($widget === $widget_id) {
+          return true;
         }
+      }
     }
   }
   return false;
 }
 endif;
 
+/**
+ * 投稿のソースコードから同期パターンブロックを展開する
+ *
+ * @param string $content 投稿のソースコード（HTML形式のブロックコンテンツ）
+ * @return string 同期パターンが展開されたコンテンツ
+ */
+if ( !function_exists( 'expand_synced_patterns' ) ):
+function expand_synced_patterns($content) {
+  // ブロックエディタが有効な場合のみ同期パターンを展開
+  if (!function_exists('do_blocks')) {
+    // ブロックエディタが無効な場合はそのまま返す
+    return $content;
+  }
+
+  // 同期パターンブロックの正規表現パターン
+  $pattern = '/<!-- wp:block \{"ref":(\d+)\} \/-->/';
+
+  // パターンマッチして置換を実行
+  $expanded_content = preg_replace_callback($pattern, function($matches) {
+    $pattern_id = intval($matches[1]);
+
+    // パターンブロックの投稿を取得
+    $pattern_post = get_post($pattern_id);
+
+    // パターンが存在し、正しいタイプかチェック
+    if ($pattern_post &&
+      $pattern_post->post_type === 'wp_block' &&
+      $pattern_post->post_status === 'publish') {
+
+      // パターンのコンテンツを再帰的に処理（入れ子の同期パターンにも対応）
+      return expand_synced_patterns($pattern_post->post_content);
+    }
+
+    // パターンが見つからない場合は元のブロックをそのまま返す
+    return $matches[0];
+
+  }, $content);
+
+  return $expanded_content;
+}
+endif;
