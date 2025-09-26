@@ -44,7 +44,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   $content     = $expanded_content;
 
   if ($is_multi_page_toc_visible) {
-    $raw_pages = preg_split('/<!--\s*?wp:nextpage\s*-->.*?<!--\s*\/wp:nextpage\s*?-->/is', $post->post_content);
+    $raw_pages = preg_split('/<!--\s*?wp:nextpage\s*?-->.*?<!--\s*?\/wp:nextpage\s*?-->/is', $post->post_content);
     $pages = [];
 
     // 分割ページ単位にブロック・パターン・ショートコードを展開
