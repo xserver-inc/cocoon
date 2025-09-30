@@ -107,13 +107,20 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
             $past_page_num = $page_num;
             $counter = 0;
           }
-          $counter++;
-          $headers[] = array(
-            'tag'  => $m[1],
-            'text' => $m[2],
-            'id'   => 'toc' . $counter,
-            'page' => $page_num,
-          );
+
+          // 目次の深さ取得
+          $now_depth = intval(substr(strtolower($m[1]), 1, 1));
+
+          // $set_depth より深い見出しは目次に追加しない
+          if ($now_depth <= $set_depth) {
+            $counter++;
+            $headers[] = array(
+              'tag'  => $m[1],
+              'text' => $m[2],
+              'id'   => 'toc' . $counter,
+              'page' => $page_num,
+            );
+          }
         }
       }
       $page_num++;
