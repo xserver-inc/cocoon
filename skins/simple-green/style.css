@@ -11,11 +11,6 @@
 */
 /*以下にスタイルシートを記入してください*/
 /* 全体 */
-body:not(.wp-admin) {
-  font-family: Avenir, "Helvetica neue", Helvetica, "Segoe UI", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-  background-color: #f4f5f7;
-}
-
 .main,
 .sidebar {
   background-color: #f4f5f7;

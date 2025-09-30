@@ -3,11 +3,6 @@
 
 /* 全体 */
 
-body:not(.wp-admin) {
-  font-family: Avenir, 'Helvetica neue', Helvetica, 'Segoe UI', '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-  background-color: $bg_color;
-}
-
 .main,
 .sidebar {
   background-color: $bg_color;
