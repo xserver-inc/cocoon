@@ -45,6 +45,9 @@ foreach ($domains as $domain): ?>
 <link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>" crossorigin>
 <?php endif; ?>
+<?php if (get_header_background_image_url()): ?>
+<link rel="preload" as="image" href="<?php echo get_header_background_image_url() ?>" fetchpriority="high" crossorigin>
+<?php endif; ?>
 <?php //WordPressが出力するヘッダー情報
 wp_head();
 ?>
