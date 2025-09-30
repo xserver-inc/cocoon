@@ -10707,8 +10707,6 @@ input[name=tab_item] {
   padding: 0;
 }
 .entry-card .admin-pv .admin-pv-by {
-  background-color: transparent;
-  bottom: 0;
   display: none;
 }
 
