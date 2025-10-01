@@ -14,10 +14,6 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 @import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
 
-body:not(.wp-admin) {
-	font-family: "Noto Sans Japanese", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
-}
-
 .wrap {
 	width: 1000px;
 }
