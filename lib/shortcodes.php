@@ -720,31 +720,6 @@ function get_recommend_cards_tag($atts){
 }
 endif;
 
-//ナビメニューショートコード
-//参考：https://www.orank.net/1972
-add_shortcode('navi', 'get_ord_navi_card_list_tag');
-if ( !function_exists( 'get_ord_navi_card_list_tag' ) ):
-function get_ord_navi_card_list_tag($atts){
-  extract(shortcode_atts(array(
-    'name' => '', // メニュー名
-    'type' => '',
-    'bold' => 1,
-    'arrow' => 1,
-    'class' => null,
-  ), $atts, 'navi'));
-  $atts = array(
-    'name' => $name,
-    'type' => $type,
-    'bold' => $bold,
-    'arrow' => $arrow,
-    'class' => $class,
-  );
-  $tag = get_navi_card_list_tag($atts);
-
-  return apply_filters('get_ord_navi_card_list_tag', $tag);
-}
-endif;
-
 //ボックスメニューショートコード
 add_shortcode('box_menu', 'get_box_menu_tag');
 if ( !function_exists( 'get_box_menu_tag' ) ):
