@@ -113,7 +113,6 @@ function new_entries_shortcode($atts) {
     'ex_posts' => $exclude_post_ids,
     'ex_cats' => $exclude_cat_ids,
     'ordered_posts' => $ordered_post_ids,
-    'author' => $author,
   );
   ob_start();
   generate_widget_entries_tag($atts);
