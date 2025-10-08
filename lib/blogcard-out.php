@@ -94,7 +94,7 @@ function fetch_card_image($image, $url = null){
   //拡張子取得
   $ext = 'png';
   $temp_ext = get_extention($filename);
-  if ( !in_array($temp_ext, $allow_exts) ) {
+  if ( $temp_ext && !in_array($temp_ext, $allow_exts) ) {
     return ;
   }
 
@@ -105,7 +105,20 @@ function fetch_card_image($image, $url = null){
   //キャッシュディレクトリ
   $dir = get_theme_blog_card_cache_path();
   //画像の読み込み
-  if ( $file_data = @wp_filesystem_get_contents($image, true) ) {
+  $file_data = @wp_filesystem_get_contents($image, true);
+  
+  // wp_filesystem_get_contents が失敗した場合のフォールバック
+  if (!$file_data) {
+    $response = wp_remote_get($image, array(
+      'timeout' => 30,
+      'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    ));
+    if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
+      $file_data = wp_remote_retrieve_body($response);
+    }
+  }
+  
+  if ( $file_data ) {
 
     //ディレクトリがないときには作成する
     if ( !file_exists($dir) ) {
@@ -178,13 +191,12 @@ function url_to_external_ogp_blogcard_tag($url){
     if ( $ogp == false ) {
       $ogp = 'error';
     } else {
-
-      if (isset($ogp->image) && empty($ogp->image)) {
+      if (isset($ogp->image) && !empty($ogp->image)) {
         //キャッシュ画像の取得
         $res = fetch_card_image($ogp->image, $url);
 
         if ( $res ) {
-          $ogp->image = $res;
+          $ogp->_values['image'] = $res;
         }
       }
 
@@ -232,9 +244,22 @@ function url_to_external_ogp_blogcard_tag($url){
   }
 
 
-  //og:imageが相対パスのとき
-  if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか
-    //相対パスの時はエラー用の画像を表示
+  //og:imageが相対パスのとき絶対URLに変換
+  if($image && (strpos($image, '//') === false)) {
+    // 相対パスの場合は絶対URLに変換
+    $parsed_url = parse_url($url);
+    $base_url = $parsed_url['scheme'] . '://' . $parsed_url['host'];
+    if (strpos($image, '/') === 0) {
+      // ルート相対パス (/path/image.jpg)
+      $image = $base_url . $image;
+    } else {
+      // 相対パス (path/image.jpg)
+      $image = $base_url . '/' . $image;
+    }
+  }
+  
+  //画像URLが存在しないか、HTTPSサイトでHTTP画像の場合はエラー画像を使用
+  if(!$image || (is_ssl() && (strpos($image, 'https:') === false))){
     $image = $error_image;
   }
   $title = strip_tags($title);
