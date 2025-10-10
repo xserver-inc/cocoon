@@ -206,19 +206,15 @@ function url_to_external_ogp_blogcard_tag($url){
   } elseif ( $ogp == 'error' ) {
     //前回取得したとき404ページだったら何も出力しない
   } else {
-    // キャッシュされたOGPデータの処理
+
     if ( isset( $ogp->title ) && $ogp->title )
       $title = $ogp->title;//タイトルの取得
 
     if ( isset( $ogp->description ) && $ogp->description )
       $snippet = $ogp->description;//ディスクリプションの取得
 
-    // キャッシュされた画像URLを取得（_valuesから優先的に取得）
-    if ( isset( $ogp->_values['image'] ) && $ogp->_values['image'] ) {
-      $image = $ogp->_values['image'];
-    } elseif ( isset( $ogp->image ) && $ogp->image ) {
-      $image = $ogp->image;
-    }
+  if ( isset( $ogp->image ) && $ogp->image )
+    $image = $ogp->image;//画像URLの取得
 
     $error_rel_nofollow = null;
   }
@@ -237,9 +233,10 @@ function url_to_external_ogp_blogcard_tag($url){
   }
 
 
-  //og:imageが相対パスのとき	  //og:imageが相対パスのとき絶対URLに変換
-  if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか	  if($image && (strpos($image, '//') === false)) {
-    //相対パスの時はエラー用の画像を
+  //og:imageが相対パスのとき
+  if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか    //相対パスの時はエラー用の画像を表示
+    
+    //相対パスの時はエラー用の画像を表示
     $image = $error_image;
   }
   $title = strip_tags($title);
