@@ -83,8 +83,6 @@ class OpenGraphGetter implements Iterator
           //通常のユーザーエージェントだと楽天でOGP情報が取得できないため
           $args['user-agent'] = 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain();
         } else {
-          //その他のサイトでは標準的なブラウザのUser-Agentを使用（多くのサイトでOGP取得に有効）
-          // $args['user-agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
           unset($args['headers']);
         }
 
