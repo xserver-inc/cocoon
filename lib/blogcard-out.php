@@ -94,7 +94,7 @@ function fetch_card_image($image, $url = null){
   //拡張子取得
   $ext = 'png';
   $temp_ext = get_extention($filename);
-  if ( $temp_ext && !in_array($temp_ext, $allow_exts) ) {
+  if ( !in_array($temp_ext, $allow_exts) ) {
     return ;
   }
 
@@ -105,20 +105,7 @@ function fetch_card_image($image, $url = null){
   //キャッシュディレクトリ
   $dir = get_theme_blog_card_cache_path();
   //画像の読み込み
-  $file_data = @wp_filesystem_get_contents($image, true);
-  
-  // wp_filesystem_get_contents が失敗した場合のフォールバック
-  if (!$file_data) {
-    $response = wp_remote_get($image, array(
-      'timeout' => 30,
-      'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-    ));
-    if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
-      $file_data = wp_remote_retrieve_body($response);
-    }
-  }
-  
-  if ( $file_data ) {
+  if ( $file_data = @wp_filesystem_get_contents($image, true) ) {
 
     //ディレクトリがないときには作成する
     if ( !file_exists($dir) ) {
@@ -196,7 +183,8 @@ function url_to_external_ogp_blogcard_tag($url){
         $res = fetch_card_image($ogp->image, $url);
 
         if ( $res ) {
-          $ogp->_values['image'] = $res;
+          // $ogp->_values['image'] = $res;
+          $ogp->image = $res;
         }
       }
 
@@ -218,14 +206,19 @@ function url_to_external_ogp_blogcard_tag($url){
   } elseif ( $ogp == 'error' ) {
     //前回取得したとき404ページだったら何も出力しない
   } else {
+    // キャッシュされたOGPデータの処理
     if ( isset( $ogp->title ) && $ogp->title )
       $title = $ogp->title;//タイトルの取得
 
     if ( isset( $ogp->description ) && $ogp->description )
       $snippet = $ogp->description;//ディスクリプションの取得
 
-    if ( isset( $ogp->image ) && $ogp->image )
-      $image = $ogp->image;//画像URLの取得
+    // キャッシュされた画像URLを取得（_valuesから優先的に取得）
+    if ( isset( $ogp->_values['image'] ) && $ogp->_values['image'] ) {
+      $image = $ogp->_values['image'];
+    } elseif ( isset( $ogp->image ) && $ogp->image ) {
+      $image = $ogp->image;
+    }
 
     $error_rel_nofollow = null;
   }
@@ -244,22 +237,9 @@ function url_to_external_ogp_blogcard_tag($url){
   }
 
 
-  //og:imageが相対パスのとき絶対URLに変換
-  if($image && (strpos($image, '//') === false)) {
-    // 相対パスの場合は絶対URLに変換
-    $parsed_url = parse_url($url);
-    $base_url = $parsed_url['scheme'] . '://' . $parsed_url['host'];
-    if (strpos($image, '/') === 0) {
-      // ルート相対パス (/path/image.jpg)
-      $image = $base_url . $image;
-    } else {
-      // 相対パス (path/image.jpg)
-      $image = $base_url . '/' . $image;
-    }
-  }
-  
-  //画像URLが存在しないか、HTTPSサイトでHTTP画像の場合はエラー画像を使用
-  if(!$image || (is_ssl() && (strpos($image, 'https:') === false))){
+  //og:imageが相対パスのとき	  //og:imageが相対パスのとき絶対URLに変換
+  if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか	  if($image && (strpos($image, '//') === false)) {
+    //相対パスの時はエラー用の画像を
     $image = $error_image;
   }
   $title = strip_tags($title);
