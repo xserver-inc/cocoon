@@ -187,6 +187,7 @@ function url_to_external_ogp_blogcard_tag($url){
           $ogp->image = $res;
         }
       }
+
       if ( isset( $ogp->title ) && $ogp->title )
         $title = $ogp->title;//タイトルの取得
 
@@ -229,6 +230,7 @@ function url_to_external_ogp_blogcard_tag($url){
   if ($domain_style === 'name' && !empty($ogp->site_name)) {
     $domain = $ogp->site_name; // OGPのサイト名を優先
   }
+
 
   //og:imageが相対パスのとき
   if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか
