@@ -187,7 +187,6 @@ function url_to_external_ogp_blogcard_tag($url){
           $ogp->image = $res;
         }
       }
-
       if ( isset( $ogp->title ) && $ogp->title )
         $title = $ogp->title;//タイトルの取得
 
@@ -213,8 +212,8 @@ function url_to_external_ogp_blogcard_tag($url){
     if ( isset( $ogp->description ) && $ogp->description )
       $snippet = $ogp->description;//ディスクリプションの取得
 
-  if ( isset( $ogp->image ) && $ogp->image )
-    $image = $ogp->image;//画像URLの取得
+    if ( isset( $ogp->image ) && $ogp->image )
+      $image = $ogp->image;//画像URLの取得
 
     $error_rel_nofollow = null;
   }
@@ -234,7 +233,7 @@ function url_to_external_ogp_blogcard_tag($url){
 
 
   //og:imageが相対パスのとき
-  if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか    //相対パスの時はエラー用の画像を表示
+  if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか
     
     //相対パスの時はエラー用の画像を表示
     $image = $error_image;
