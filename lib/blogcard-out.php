@@ -178,6 +178,7 @@ function url_to_external_ogp_blogcard_tag($url){
     if ( $ogp == false ) {
       $ogp = 'error';
     } else {
+
       if (isset($ogp->image) && !empty($ogp->image)) {
         //キャッシュ画像の取得
         $res = fetch_card_image($ogp->image, $url);
@@ -231,7 +232,6 @@ function url_to_external_ogp_blogcard_tag($url){
 
   //og:imageが相対パスのとき
   if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか
-    
     //相対パスの時はエラー用の画像を表示
     $image = $error_image;
   }
