@@ -183,7 +183,6 @@ function url_to_external_ogp_blogcard_tag($url){
         $res = fetch_card_image($ogp->image, $url);
 
         if ( $res ) {
-          // $ogp->_values['image'] = $res;
           $ogp->image = $res;
         }
       }
@@ -205,7 +204,6 @@ function url_to_external_ogp_blogcard_tag($url){
   } elseif ( $ogp == 'error' ) {
     //前回取得したとき404ページだったら何も出力しない
   } else {
-
     if ( isset( $ogp->title ) && $ogp->title )
       $title = $ogp->title;//タイトルの取得
 
@@ -230,7 +228,6 @@ function url_to_external_ogp_blogcard_tag($url){
   if ($domain_style === 'name' && !empty($ogp->site_name)) {
     $domain = $ogp->site_name; // OGPのサイト名を優先
   }
-
 
   //og:imageが相対パスのとき
   if(!$image || (strpos($image, '//') === false) || (is_ssl() && (strpos($image, 'https:') === false))){    // //OGPのURL情報があるか
