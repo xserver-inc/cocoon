@@ -78,12 +78,13 @@ class OpenGraphGetter implements Iterator
         // _v($args);
         if (is_amazon_site_page($URI)) {
           $args['user-agent'] = 'Twitterbot/1.0';
-        } elseif (is_rakuten_site_page($URI)) {
+        }
+        if (is_rakuten_site_page($URI)) {
           //通常のユーザーエージェントだと楽天でOGP情報が取得できないため
           $args['user-agent'] = 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain();
         } else {
           //その他のサイトでは標準的なブラウザのUser-Agentを使用（多くのサイトでOGP取得に有効）
-          $args['user-agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+          // $args['user-agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
           unset($args['headers']);
         }
 
@@ -188,7 +189,7 @@ class OpenGraphGetter implements Iterator
         }
 
         //Fallback to use image_src if ogp::image isn't set.
-        if (!isset($page->_values['image'])) {
+        if (!isset($page->values['image'])) {
             $domxpath = new DOMXPath($doc);
             $elements = $domxpath->query("//link[@rel='image_src']");
 
