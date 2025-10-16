@@ -110,6 +110,9 @@ add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
 add_filter( 'manage_pages_columns', 'customize_admin_manage_posts_columns' );
 if ( !function_exists( 'customize_admin_manage_posts_columns' ) ):
 function customize_admin_manage_posts_columns($columns) {
+  //現在のスクリーン情報を取得
+  $screen = get_current_screen();
+
   //作成者表示
   if (!is_admin_list_author_visible()) {
     unset($columns['author']);
@@ -145,18 +148,18 @@ function customize_admin_manage_posts_columns($columns) {
     $columns['word-count'] = __( '文字数', THEME_NAME );
   }
 
-  //文字数表示
-  if (is_admin_list_pv_visible()) {
+  //PV表示
+  if (is_admin_list_pv_visible() && ($screen && $screen->id !== 'edit-wp_block')) {
     $columns['pv'] = __( 'PV', THEME_NAME );
   }
 
   //アイキャッチ表示
-  if (is_admin_list_eyecatch_visible()) {
+  if (is_admin_list_eyecatch_visible() && ($screen && $screen->id !== 'edit-wp_block')) {
     $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
   }
 
   //メモ表示
-  if (is_admin_list_memo_visible()) {
+  if (is_admin_list_memo_visible() && ($screen && $screen->id !== 'edit-wp_block')) {
     $columns['memo'] = __( 'メモ', THEME_NAME );
   }
 
