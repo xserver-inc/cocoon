@@ -351,7 +351,7 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
     WHERE post_status = 'publish' AND
           post_type = '{$post_type}'".
           $author_query."
-    ORDER BY sum_count DESC, post_date DESC
+    ORDER BY sum_count DESC, post_id
     LIMIT $limit
   ";
   //_v($query);
@@ -465,20 +465,35 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
         ) AS {$joined_table} #カテゴリーとアクセステーブルを内部結合した仮の名前
 
         GROUP BY {$joined_table}.post_id
-        ORDER BY sum_count DESC, {$joined_table}.post_id
+        ORDER BY sum_count DESC, post_id
     ";
     //_v($query);
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
+
+    // wrap_joined_wp_posts_query の内部ORDERを上書き（PV同率時に新しい投稿を優先）
+    $query = preg_replace(
+      '/ORDER BY\s+[^)]*$/i',
+      'ORDER BY sum_count DESC, wp_posts.post_date DESC',
+      $query
+    );
+
   } else {
     $query = "
       SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
         FROM {$access_table} $where
         GROUP BY {$access_table}.post_id
-        ORDER BY sum_count DESC, {$access_table}.post_id
+        ORDER BY sum_count DESC, post_id
     ";
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
+
+    // 同様に、post_dateで並び替えを補強
+    $query = preg_replace(
+      '/ORDER BY\s+[^)]*$/i',
+      'ORDER BY sum_count DESC, wp_posts.post_date DESC',
+      $query
+    );
   }
   $records = $wpdb->get_results( $query );
   // var_dump($query);
