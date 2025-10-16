@@ -113,7 +113,6 @@ function new_entries_shortcode($atts) {
     'ex_posts' => $exclude_post_ids,
     'ex_cats' => $exclude_cat_ids,
     'ordered_posts' => $ordered_post_ids,
-    'author' => $author,
   );
   ob_start();
   generate_widget_entries_tag($atts);
@@ -718,31 +717,6 @@ function get_recommend_cards_tag($atts){
     $tag = (ob_get_clean());
     return apply_filters('get_recommend_cards_tag', $tag);
   }
-}
-endif;
-
-//ナビメニューショートコード
-//参考：https://www.orank.net/1972
-add_shortcode('navi', 'get_ord_navi_card_list_tag');
-if ( !function_exists( 'get_ord_navi_card_list_tag' ) ):
-function get_ord_navi_card_list_tag($atts){
-  extract(shortcode_atts(array(
-    'name' => '', // メニュー名
-    'type' => '',
-    'bold' => 1,
-    'arrow' => 1,
-    'class' => null,
-  ), $atts, 'navi'));
-  $atts = array(
-    'name' => $name,
-    'type' => $type,
-    'bold' => $bold,
-    'arrow' => $arrow,
-    'class' => $class,
-  );
-  $tag = get_navi_card_list_tag($atts);
-
-  return apply_filters('get_ord_navi_card_list_tag', $tag);
 }
 endif;
 

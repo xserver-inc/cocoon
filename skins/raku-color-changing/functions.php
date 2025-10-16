@@ -265,5 +265,6 @@ class SkinRakuColorChanging {
     }
 }
 
-$skin_raku = new SkinRakuColorChanging();
-
+add_action( 'after_setup_theme', function (){
+  $skin_raku = new SkinRakuColorChanging();
+} );

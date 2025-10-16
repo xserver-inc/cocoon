@@ -34,6 +34,8 @@ endif;
 if ( !function_exists( 'get_toc_tag' ) ):
 function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_option = 0){
   global $post;
+  if (empty($post) || !isset($post->post_content)) return '';
+
   $is_multi_page_toc_visible = is_multi_page_toc_visible();
 
   //フォーラムページだと表示しない
