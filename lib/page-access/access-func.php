@@ -330,7 +330,7 @@ function get_all_access_count($post_id = null){
 endif;
 
 if ( !function_exists( 'wrap_joined_wp_posts_query' ) ):
-function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet = 0){
+function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet = 0, $secondary_sort = 'post_date DESC'){
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
@@ -351,7 +351,7 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
     WHERE post_status = 'publish' AND
           post_type = '{$post_type}'".
           $author_query."
-    ORDER BY sum_count DESC, post_id
+    ORDER BY sum_count DESC, {$secondary_sort}
     LIMIT $limit
   ";
   //_v($query);
@@ -470,6 +470,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     //_v($query);
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
+
   } else {
     $query = "
       SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
