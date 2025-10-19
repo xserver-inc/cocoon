@@ -149,17 +149,17 @@ function customize_admin_manage_posts_columns($columns) {
   }
 
   //PV表示
-  if (is_admin_list_pv_visible() && ($current_screen && $current_screen->id !== 'edit-wp_block')) {
+  if (is_admin_list_pv_visible() && ($current_screen->id !== 'edit-wp_block')) {
     $columns['pv'] = __( 'PV', THEME_NAME );
   }
 
   //アイキャッチ表示
-  if (is_admin_list_eyecatch_visible() && ($current_screen && $current_screen->id !== 'edit-wp_block')) {
+  if (is_admin_list_eyecatch_visible() && ($current_screen->id !== 'edit-wp_block')) {
     $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
   }
 
   //メモ表示
-  if (is_admin_list_memo_visible() && ($current_screen && $current_screen->id !== 'edit-wp_block')) {
+  if (is_admin_list_memo_visible() && ($current_screen->id !== 'edit-wp_block')) {
     $columns['memo'] = __( 'メモ', THEME_NAME );
   }
 
