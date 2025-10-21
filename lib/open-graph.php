@@ -26,6 +26,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+#[AllowDynamicProperties]
 class OpenGraphGetter implements Iterator
 {
   /**
