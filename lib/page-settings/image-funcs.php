@@ -180,7 +180,8 @@ endif;
 define('OP_RETINA_THUMBNAIL_ENABLE', 'retina_thumbnail_enable');
 if ( !function_exists( 'is_retina_thumbnail_enable' ) ):
 function is_retina_thumbnail_enable(){
-  return get_theme_option(OP_RETINA_THUMBNAIL_ENABLE);
+  // return get_theme_option(OP_RETINA_THUMBNAIL_ENABLE);
+  return get_theme_option(OP_RETINA_THUMBNAIL_ENABLE, 1);
 }
 endif;
 

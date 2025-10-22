@@ -187,6 +187,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <?php if (false): //フォームの非表示 ?>
         <!-- Retinaディスプレイ -->
         <tr>
           <th scope="row">
@@ -199,6 +200,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
+        <?php endif; ?>
 
 
       </tbody>
