@@ -1670,7 +1670,7 @@ function get_widget_entry_card_link_tag($atts){
             if ($thumbnail_tag) {
               echo $thumbnail_tag;
             } else {
-              echo get_widget_entry_card_no_image_tag(ET_DEFAULT, $prefix);
+              echo get_widget_entry_card_no_image_tag(ET_LARGE_THUMB, $prefix);
             }
           } else {
             if ($object === 'category') {
