@@ -2969,6 +2969,7 @@ body.wp-admin {
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
+  width: 100%;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .e-card {
   font-size: var(--cocoon-default-text-size);
@@ -11532,6 +11533,7 @@ body.wp-admin {
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
+  width: 100%;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .e-card {
   font-size: var(--cocoon-default-text-size);

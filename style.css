@@ -2769,6 +2769,7 @@ label.screen-reader-text {
 ************************************/
 .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
+  width: 100%;
 }
 .widget-entry-cards.card-large-image .e-card {
   font-size: var(--cocoon-default-text-size);
