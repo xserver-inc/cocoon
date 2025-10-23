@@ -4,7 +4,11 @@ javascript: (function() {
   var item_code = null;
   var shortcode = null;
   var title = null;
+  var purchase_type = null;
   if(host == 'item.rakuten.co.jp') {
+    if (document.querySelector('tr[irc="ItemPriceNormalSubscription"]')) {
+      purchase_type = 1;
+    }
     var scripts = document.getElementsByTagName('script');
     for(var i = 0; i < scripts.length; i++) {
         var script = scripts[i].innerHTML;
@@ -21,7 +25,11 @@ javascript: (function() {
         title = metas[i].getAttribute('content').replace(/\r?\n|[\[\]]/g, '');
       }
     }
-    shortcode = '[rakuten id="' + item_code + '" kw="' + title + '"]'
+    var purchase_type_code = '';
+    if (purchase_type) {
+      purchase_type_code = ' purchase_type="1"';
+    }
+    shortcode = '[rakuten id="' + item_code + '" kw="' + title + '"' + purchase_type_code + ']'
   } else if(host == 'product.rakuten.co.jp') {
     var elements = document.getElementsByClassName('topProduct__specsInfo');
     var code_no = null;
