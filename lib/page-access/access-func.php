@@ -351,7 +351,7 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
     WHERE post_status = 'publish' AND
           post_type = '{$post_type}'".
           $author_query."
-    ORDER BY sum_count DESC, post_id
+    ORDER BY sum_count DESC, post_date DESC
     LIMIT $limit
   ";
   //_v($query);
