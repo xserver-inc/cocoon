@@ -21,6 +21,7 @@ function rakuten_product_link_shortcode($atts){
     'kw' => null,
     'title' => null,
     'desc' => null,
+    'purchase_type' => null,
     'size' => 'm',
     'price' => null,
     'amazon' => 1,
@@ -137,6 +138,10 @@ function rakuten_product_link_shortcode($atts){
       $itemCode = '&itemCode='.$id;
     }
 
+    $purchaseTypeCode = null;
+    if ($purchase_type) {
+      $purchaseTypeCode = '&purchaseType='.$purchase_type;
+    }
 
     $sortQuery = '&sort='.get_rakuten_api_sort();
     if ($sort && !$id) {
@@ -152,7 +157,7 @@ function rakuten_product_link_shortcode($atts){
     if ($search && !$id) {
       $searchkw = '&keyword='.$search;
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sortQuery.$shopCode.'&hits=1'.$searchkw.$itemCode;
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sortQuery.$shopCode.'&hits=1'.$searchkw.$itemCode.$purchaseTypeCode;
     //_v($request_url);
     $args = array( 'sslverify' => true );
     $args = apply_filters('wp_remote_get_rakuten_args', $args);
