@@ -330,7 +330,7 @@ function get_all_access_count($post_id = null){
 endif;
 
 if ( !function_exists( 'wrap_joined_wp_posts_query' ) ):
-function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet = 0, $secondary_sort = 'post_date DESC'){
+function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet = 0){
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
@@ -351,7 +351,7 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
     WHERE post_status = 'publish' AND
           post_type = '{$post_type}'".
           $author_query."
-    ORDER BY sum_count DESC, {$secondary_sort}
+    ORDER BY sum_count DESC, post_date DESC
     LIMIT $limit
   ";
   //_v($query);
