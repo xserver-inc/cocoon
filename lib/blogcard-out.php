@@ -178,13 +178,13 @@ function url_to_external_ogp_blogcard_tag($url){
     if ( $ogp == false ) {
       $ogp = 'error';
     } else {
-
-      if (isset($ogp->image) && !empty($ogp->image)) {
-        //キャッシュ画像の取得
+      // og:image が存在する場合、必ずキャッシュ画像を参照
+      if ( isset($ogp->image) && $ogp->image ) {
         $res = fetch_card_image($ogp->image, $url);
-
-        if ( $res ) {
-          $ogp->image = $res;
+        if ($res) {
+          $image = $res; // キャッシュ画像をセット
+        } else {
+          $image = $ogp->image; // キャッシュが作れなければ元の og:image
         }
       }
 
@@ -193,9 +193,6 @@ function url_to_external_ogp_blogcard_tag($url){
 
       if ( isset( $ogp->description ) && $ogp->description )
         $snippet = $ogp->description;//ディスクリプションの取得
-
-      if ( isset( $ogp->image ) && $ogp->image )
-        $image = $ogp->image;////画像URLの取得
 
       $error_rel_nofollow = null;
     }
@@ -212,8 +209,15 @@ function url_to_external_ogp_blogcard_tag($url){
     if ( isset( $ogp->description ) && $ogp->description )
       $snippet = $ogp->description;//ディスクリプションの取得
 
-    if ( isset( $ogp->image ) && $ogp->image )
-      $image = $ogp->image;//画像URLの取得
+    // og:image が存在する場合、必ずキャッシュ画像を参照
+    if ( isset($ogp->image) && $ogp->image ) {
+      $res = fetch_card_image($ogp->image, $url);
+      if ($res) {
+        $image = $res; // キャッシュ画像をセット
+      } else {
+        $image = $ogp->image; // キャッシュが作れなければ元の og:image
+      }
+    }
 
     $error_rel_nofollow = null;
   }
