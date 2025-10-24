@@ -747,7 +747,7 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
   }
     // wpse-41548 // alchymyth // a hierarchical list of all categories //
 
-  $next = get_categories('hide_empty=false&orderby=name&order=ASC&parent=' . $cat);
+  $next = get_categories('hide_empty=0&orderby=name&order=ASC&parent=' . $cat);
 
   if( $next ) {
     foreach( $next as $cat ) :
