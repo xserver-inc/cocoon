@@ -793,96 +793,49 @@ endif;
 //ページ表示チェックリスト
 if ( !function_exists( 'generate_page_display_check_list' ) ):
 function generate_page_display_check_list( $name, $checks, $width = 0 ) {
-  if ($width == 0) {
-    $width = 'auto';
-  } else {
-    $width = $width.'px';
+  $width = ($width == 0) ? 'auto' : $width . 'px';
+  $checks = (array) $checks;
+
+  // 基本のチェック項目
+  $page_types = array(
+    'is_front_page'  => __( 'フロントページのみ', THEME_NAME ),
+    'is_single'      => __( '投稿', THEME_NAME ),
+    'is_page'        => __( '固定ページ', THEME_NAME ),
+    'is_category'    => __( 'カテゴリー一覧', THEME_NAME ),
+    'is_tag'         => __( 'タグ一覧', THEME_NAME ),
+    'is_author'      => __( '著者一覧', THEME_NAME ),
+    'is_archive'     => __( 'アーカイブ一覧', THEME_NAME ),
+    'is_search'      => __( '検索結果一覧', THEME_NAME ),
+    'is_404'         => __( '404ページ', THEME_NAME ),
+  );
+
+  // 条件付きのチェック項目を動的に追加
+  if ( function_exists('is_amp_enable') && is_amp_enable() ) {
+    $page_types['is_amp'] = __( 'AMPページ', THEME_NAME );
+  }
+  if ( function_exists('is_wpforo_exist') && is_wpforo_exist() ) {
+    $page_types['is_wpforo_plugin_page'] = __( 'wpForoページ', THEME_NAME );
+  }
+  if ( function_exists('is_bbpress_exist') && is_bbpress_exist() ) {
+    $page_types['is_bbpress_page'] = __( 'bbPressページ', THEME_NAME );
+  }
+  if ( function_exists('is_buddypress_exist') && is_buddypress_exist() ) {
+    $page_types['is_buddypress_page'] = __( 'BuddyPressページ', THEME_NAME );
+  }
+  if ( function_exists('is_plugin_fourm_exist') && is_plugin_fourm_exist() ) {
+    $page_types['is_plugin_fourm_page'] = __( 'プラグインフォーラムページ（bbPress、BuddyPress、wpForo）', THEME_NAME );
   }
 
-  if (empty($checks)) {
-    $checks = array();
-  }
+  echo '<div class="tab-content page-display-check-list ' . esc_attr($name) . '-list" style="width:' . esc_attr($width) . ';">';
+  echo '<ul>';
 
-  echo '<div class="tab-content page-display-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
-
-  $id = $name.'_'.'is_front_page';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_front_page" id="'.$id.'" ';
-  checked(in_array('is_front_page', $checks));
-  echo '><label for="'.$id.'">' . __( 'フロントページのみ', THEME_NAME ) . '</label></li>';
-
-  $id = $name.'_'.'is_single';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_single" id="'.$id.'" ';
-  checked(in_array('is_single', $checks));
-  echo '><label for="'.$id.'">' . __( '投稿', THEME_NAME ) . '</label></li>';
-
-  $id = $name.'_'.'is_page';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_page" id="'.$id.'" ';
-  checked(in_array('is_page', $checks));
-  echo '><label for="'.$id.'">' . __( '固定ページ', THEME_NAME ) . '</label></li>';
-
-  $id = $name.'_'.'is_category';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_category" id="'.$id.'" ';
-  checked(in_array('is_category', $checks));
-  echo '><label for="'.$id.'">' . __( 'カテゴリー一覧', THEME_NAME ) . '</label></li>';
-
-  $id = $name.'_'.'is_tag';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_tag" id="'.$id.'" ';
-  checked(in_array('is_tag', $checks));
-  echo '><label for="'.$id.'">' . __( 'タグ一覧', THEME_NAME ) . '</label></li>';
-
-  $id = $name.'_'.'is_author';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_author" id="'.$id.'" ';
-  checked(in_array('is_author', $checks));
-  echo '><label for="'.$id.'">' . __( '著者一覧', THEME_NAME ) . '</label></li>';
-
-  $id = $name.'_'.'is_archive';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_archive" id="'.$id.'" ';
-  checked(in_array('is_archive', $checks));
-  echo '><label for="'.$id.'">' . __( 'アーカイブ一覧', THEME_NAME ) . '</label></li>';
-
-  $id = $name.'_'.'is_search';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_search" id="'.$id.'" ';
-  checked(in_array('is_search', $checks));
-  echo '><label for="'.$id.'">' . __( '検索結果一覧', THEME_NAME ) . '</label></li>';
-
-  $id = $name.'_'.'is_404';
-  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_404" id="'.$id.'" ';
-  checked(in_array('is_404', $checks));
-  echo '><label for="'.$id.'">' . __( '404ページ', THEME_NAME ) . '</label></li>';
-
-  if (is_amp_enable()) {
-    $id = $name.'_'.'is_amp';
-    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_amp" id="'.$id.'" ';
-    checked(in_array('is_amp', $checks));
-    echo '><label for="'.$id.'">' . __( 'AMPページ', THEME_NAME ) . '</label></li>';
-  }
-
-  if (is_wpforo_exist()) {
-    $id = $name.'_'.'is_wpforo_plugin_page';
-    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_wpforo_plugin_page" id="'.$id.'" ';
-    checked(in_array('is_wpforo_plugin_page', $checks));
-    echo '><label for="'.$id.'">' . __( 'wpForoページ', THEME_NAME ) . '</label></li>';
-  }
-
-  if (is_bbpress_exist()) {
-    $id = $name.'_'.'is_bbpress_page';
-    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_bbpress_page" id="'.$id.'" ';
-    checked(in_array('is_bbpress_page', $checks));
-    echo '><label for="'.$id.'">' . __( 'bbPressページ', THEME_NAME ) . '</label></li>';
-  }
-
-  if (is_buddypress_exist()) {
-    $id = $name.'_'.'is_buddypress_page';
-    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_buddypress_page" id="'.$id.'" ';
-    checked(in_array('is_buddypress_page', $checks));
-    echo '><label for="'.$id.'">' . __( 'BuddyPressページ', THEME_NAME ) . '</label></li>';
-  }
-
-  if (is_plugin_fourm_exist()) {
-    $id = $name.'_'.'is_plugin_fourm_page';
-    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_plugin_fourm_page" id="'.$id.'" ';
-    checked(in_array('is_plugin_fourm_page', $checks));
-    echo '><label for="'.$id.'">' . __( 'プラグインフォーラムページ（bbPress、BuddyPress、wpForo）', THEME_NAME ) . '</label></li>';
+  foreach ( $page_types as $value => $label ) {
+    $id = $name . '_' . $value;
+    echo '<li>';
+    echo '<input type="checkbox" name="' . esc_attr($name) . '[]" value="' . esc_attr($value) . '" id="' . esc_attr($id) . '" ';
+    checked( in_array( $value, $checks, true ) );
+    echo '><label for="' . esc_attr($id) . '">' . esc_html($label) . '</label>';
+    echo '</li>';
   }
 
   echo '</ul></div>';
