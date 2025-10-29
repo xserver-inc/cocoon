@@ -826,7 +826,7 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
     $page_types['is_plugin_fourm_page'] = __( 'プラグインフォーラムページ（bbPress、BuddyPress、wpForo）', THEME_NAME );
   }
 
-  echo '<div class="tab-content page-display-check-list ' . esc_attr($name) . '-list" style="width:' . esc_attr($width) . ';">';
+  echo '<div class="tab-content page-display-check-list ' . esc_attr($name) . '-list" style="width: ' . esc_attr($width) . ';">';
   echo '<ul>';
 
   foreach ( $page_types as $value => $label ) {
