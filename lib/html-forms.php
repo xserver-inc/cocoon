@@ -774,17 +774,17 @@ function generate_tagcloud_check_list($name, $checks = array()){
   $html = '<div class="tagcloud tagcloud-list '.$name.'-list" style="width: 100%;">';
   $tags = get_tags();
   //_v($tags);
-	if ($tags) {
-		foreach($tags as $tag) {
+  if ($tags) {
+    foreach($tags as $tag) {
       $checked = null;
       if (in_array($tag->term_id, $checks)) {
         $checked = ' checked="checked"';
       }
       $id = $tag->term_id;
       $input_id = $name.'-'.$id;
-			$html .= '<span class="tag-cloud-link admin-tag tag-link-"'.$id.'"><label for="'.$input_id.'"><input type="checkbox" id="'.$input_id.'" name="'.$name.'[]" value="'.$id.'"'.$checked.'>' . $tag->name . '<span class="tag-link-count">('.$tag->count.')</span></label></span>';
-		}
-	}
+      $html .= '<span class="tag-cloud-link admin-tag tag-link-"'.$id.'"><label for="'.$input_id.'"><input type="checkbox" id="'.$input_id.'" name="'.$name.'[]" value="'.$id.'"'.$checked.'>' . $tag->name . '<span class="tag-link-count">('.$tag->count.')</span></label></span>';
+    }
+  }
   $html .= '</div>';
   echo apply_filters('admin_input_form_tag', $html, $name);
 }
@@ -1003,6 +1003,7 @@ function generate_popular_entries_tag($atts){
     'post_type' => 'post',
     'horizontal' => 0,
     'action' => null,
+    'comment' => 0,
   ), $atts, 'generate_popular_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1052,7 +1053,7 @@ function generate_popular_entries_tag($atts){
       } else {
         $post_thumbnail_img = get_original_image_tag($no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
       }
-
+      $count = get_comments_number( $post->ID );
       //スニペット表示
       $snippet_tag = '';
       //「タイトルを重ねた大きなサムネイル」の時はスニペットを表示させない
@@ -1085,7 +1086,15 @@ function generate_popular_entries_tag($atts){
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
         <?php endif ?>
-        <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date); ?>
+        <div class="entry-card-meta card-meta e-card-meta">
+          <div class="entry-card-info e-card-info">
+        <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date);
+        if ($comment): ?>
+          <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+        <?php endif; ?>
+
+        </div>
+      </div>
       </div><!-- /.popular-entry-content -->
       <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
         <?php echo $pv_tag; ?>
@@ -1145,6 +1154,7 @@ function generate_widget_entries_tag($atts){
     'ex_posts' => null,
     'ex_cats' => null,
     'ordered_posts' => null,
+    'comment' => 0,
   ), $atts, 'generate_widget_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1322,6 +1332,7 @@ function generate_widget_entries_tag($atts){
       'type' => $type,
       'horizontal' => $horizontal,
       'date' => $date,
+      'comment' => $comment,
     );
 
     if ($snippet) {
@@ -1575,6 +1586,7 @@ function get_widget_entry_card_link_tag($atts){
     'object_id' => null,
     'horizontal' => 0,
     'target' => null,
+    'comment' => null,
   ), $atts, 'get_widget_entry_card_link_tag'));
 
   $class_text = null;
@@ -1648,11 +1660,18 @@ function get_widget_entry_card_link_tag($atts){
         <?php if ($snippet): ?>
         <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
         <?php endif; ?>
+        <div class="entry-card-meta card-meta e-card-meta">
+          <div class="entry-card-info e-card-info">
         <?php
         if (!is_widget_navi_entry_card_prefix($prefix)) {
           generate_widget_entry_card_date($prefix, null, $display = $date);
-        } ?>
-
+        }
+        $count = get_comments_number();
+        if ($comment): ?>
+          <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+        <?php endif; ?>
+          </div>
+        </div>
       </div><!-- /.entry-content -->
     </div><!-- /.entry-card -->
   </a><!-- /.entry-card-link -->
@@ -1828,6 +1847,7 @@ function generate_info_list_tag($atts){
     'action' => null,
     'post_type' => 'post',
     'taxonomy' => 'category',
+    'comment' => 0,
   ), $atts, 'generate_info_list_tag'));
 
   $args = array(
@@ -1888,12 +1908,16 @@ function generate_info_list_tag($atts){
         if ($modified && $update_date) {
           $date = $update_date;
         }
+        $count = get_comments_number();
       ?>
         <div <?php post_class('info-list-item'); ?>>
           <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php echo escape_shortcodes(get_the_title());?></a></div>
           <?php do_action('info_list_item_meta_before'); ?>
           <div class="info-list-item-meta">
             <span class="info-list-item-date"><?php echo $date; ?></span>
+            <?php if ($comment): ?>
+              <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+            <?php endif; ?>
             <span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
           </div>
         </div>
