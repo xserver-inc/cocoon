@@ -189,7 +189,6 @@ function url_to_external_ogp_blogcard_tag($url){
 
   $image = $error_image;
   $snippet = '';
-  $error_rel_nofollow = ' rel="nofollow"';
 
 
 
@@ -200,54 +199,36 @@ function url_to_external_ogp_blogcard_tag($url){
     $ogp = get_transient( $url_hash );
   }
 
-  if ( empty($ogp) ) {
-    $ogp = OpenGraphGetter::fetch( $url );
-    // _v($ogp);
-    if ( $ogp == false ) {
+  // キャッシュがない場合
+  if (empty($ogp)) {
+    $ogp_fetched = OpenGraphGetter::fetch($url);
+    if ($ogp_fetched == false) {
       $ogp = 'error';
     } else {
-      // og:image が存在する場合、必ずキャッシュ画像を参照
-      if ( isset($ogp->image) && $ogp->image ) {
-        $res = fetch_card_image($ogp->image, $url);
-        if ($res) {
-          $image = $res; // キャッシュ画像をセット
-        } else {
-          $image = $ogp->image; // キャッシュが作れなければ元の og:image
-        }
-      }
+      // 必要な値だけコピーして stdClass に格納
+      $ogp = new stdClass();
+      $ogp->title       = $ogp_fetched->title ?? '';
+      $ogp->description = $ogp_fetched->description ?? '';
+      $ogp->site_name   = $ogp_fetched->site_name ?? '';
+      $ogp->image       = isset($ogp_fetched->image) ? fetch_card_image($ogp_fetched->image, $url) : '';
 
-      if ( isset( $ogp->title ) && $ogp->title )
-        $title = $ogp->title;//タイトルの取得
-
-      if ( isset( $ogp->description ) && $ogp->description )
-        $snippet = $ogp->description;//ディスクリプションの取得
-
-      $error_rel_nofollow = null;
+      // キャッシュ保存
+      set_transient( $url_hash, $ogp,
+                     DAY_IN_SECONDS * intval(get_external_blogcard_cache_retention_period()) );
     }
+  }
 
-    set_transient( $url_hash, $ogp,
-                   DAY_IN_SECONDS * intval(get_external_blogcard_cache_retention_period()) );
-
-  } elseif ( $ogp == 'error' ) {
-    //前回取得したとき404ページだったら何も出力しない
-  } else {
+  // キャッシュがある場合
+  if ($ogp !== 'error') {
     if ( isset( $ogp->title ) && $ogp->title )
       $title = $ogp->title;//タイトルの取得
 
     if ( isset( $ogp->description ) && $ogp->description )
       $snippet = $ogp->description;//ディスクリプションの取得
 
-    // og:image が存在する場合、必ずキャッシュ画像を参照
     if ( isset($ogp->image) && $ogp->image ) {
-      $res = fetch_card_image($ogp->image, $url);
-      if ($res) {
-        $image = $res; // キャッシュ画像をセット
-      } else {
-        $image = $ogp->image; // キャッシュが作れなければ元の og:image
-      }
+      $image = $ogp->image;// 画像の取得
     }
-
-    $error_rel_nofollow = null;
   }
   //var_dump($image);
 
