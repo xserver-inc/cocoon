@@ -85,85 +85,34 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
 //外部サイトからブログカードサムネイルを取得する
 if ( !function_exists( 'fetch_card_image' ) ):
 function fetch_card_image($image, $url = null){
-  //var_dump($image);
-  //URLの？以降のクエリを削除
+  // URLのクエリを除去（?以降を削除）
   $image = preg_replace('/\?.*$/i', '', $image);
-  $filename = substr($image, (strrpos($image, '/'))+1);
-  $allow_exts = array('png', 'jpg', 'jpeg', 'gif' );
 
-  //拡張子取得
-  $ext = 'png';
-  $temp_ext = get_extention($filename);
-  if ( !in_array($temp_ext, $allow_exts) ) {
-    return ;
-  }
+  // ファイル名・拡張子をそのまま使用
+  $filename = basename($image);
+  $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
-  if ( $temp_ext ) {
-    $ext = $temp_ext;
-  }
-
-  //キャッシュディレクトリ
+  // キャッシュディレクトリを取得・存在しなければ作成
   $dir = get_theme_blog_card_cache_path();
-  //画像の読み込み
-  if ( $file_data = @wp_filesystem_get_contents($image, true) ) {
-
-    //ディレクトリがないときには作成する
-    if ( !file_exists($dir) ) {
-      mkdir($dir, 0777);
-    }
-    //ローカル画像ファイルパス
-    $new_file = $dir.md5($image).'.'.$ext;
-    // var_dump($new_file);
-
-    if ( $file_data ) {
-      wp_filesystem_put_contents($new_file, $file_data);
-
-      // GDでPNGをRGB化（インデックスカラー・透過対応）
-      if ($ext === 'png' && function_exists('imagecreatefrompng')) {
-        // ファイルからPNG画像リソースを作成する
-        $img = imagecreatefrompng($new_file);
-        // 画像リソースが正常に作成されたかをチェックする
-        if ($img) {
-          // 元画像と同じ幅・高さの真のカラー画像（透過対応）を作成する
-          $truecolor = imagecreatetruecolor(imagesx($img), imagesy($img));
-          // 作成した画像でアルファチャンネル（透過）を保持するよう設定する
-          imagesavealpha($truecolor, true);
-          // 完全に透明な色を割り当てる（アルファ127）
-          $transparent = imagecolorallocatealpha($truecolor, 0, 0, 0, 127);
-          // 真のカラー画像を透明色で塗りつぶす
-          imagefill($truecolor, 0, 0, $transparent);
-          // 元の画像を真のカラー画像にコピーして透過を正しく保持する
-          imagecopy($truecolor, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
-          // 真のカラー画像をPNG形式で上書き保存する
-          imagepng($truecolor, $new_file);
-          // 元の画像リソースを解放する
-          imagedestroy($img);
-          // 真のカラー画像リソースを解放する
-          imagedestroy($truecolor);
-        }
-        // 内側のif終了
-      }
-      // 外側のif終了
-
-      //画像編集オブジェクトの作成
-      $image_editor = wp_get_image_editor($new_file);
-      if ( !is_wp_error($image_editor) ){
-        if (is_amazon_site_page($url)) {
-          $width = apply_filters('external_blogcard_amazon_image_width',THUMB160WIDTH );
-          $height = apply_filters('external_blogcard_amazon_image_height',THUMB160WIDTH );
-          $image_editor->resize($width, $height, true);
-        } else {
-          $width = apply_filters('external_blogcard_image_width',THUMB160WIDTH );
-          $height = apply_filters('external_blogcard_image_height',THUMB160HEIGHT );
-          $image_editor->resize($width, $height, true);
-        }
-
-        $image_editor->save( $new_file );
-        return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
-      }
-      wp_filesystem_delete($new_file);
-    }
+  if ( !file_exists($dir) ) {
+    mkdir($dir, 0777);
   }
+
+  // キャッシュ保存先パス
+  $new_file = trailingslashit($dir) . md5($image) . '.' . $ext;
+
+  // WordPress関数を用い一時ダウンロード
+  $tmp = download_url($image);
+  if ( is_wp_error($tmp) ) {
+    return;
+  }
+
+  // キャッシュにコピー
+  copy($tmp, $new_file);
+  @unlink($tmp);
+
+  // 公開URLに変換して返す
+  return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
 }
 endif;
 

@@ -190,10 +190,10 @@ class Skin_Silk_Functions {
 
     //ブログカード
     add_filter('get_blogcard_thumbnail_size', [$this, 'blogcard_size']);
-    add_filter('external_blogcard_amazon_image_width', [$this, 'blogcard_width']);
-    add_filter('external_blogcard_image_width', [$this, 'blogcard_width']);
-    add_filter('external_blogcard_amazon_image_height', [$this, 'blogcard_height']);
-    add_filter('external_blogcard_image_height', [$this, 'blogcard_height']);
+    // add_filter('external_blogcard_amazon_image_width', [$this, 'blogcard_width']);
+    // add_filter('external_blogcard_image_width', [$this, 'blogcard_width']);
+    // add_filter('external_blogcard_amazon_image_height', [$this, 'blogcard_height']);
+    // add_filter('external_blogcard_image_height', [$this, 'blogcard_height']);
 
     //ブロックカスタマイズ
     add_action('enqueue_block_editor_assets', [$this, 'editor_assets'], 11);
@@ -1181,10 +1181,10 @@ class Skin_Silk_Functions {
       remove_filter('wp_tag_cloud', [$this, 'tag_cloud'], 11);
       remove_filter('the_author_box_name', [$this, 'author_box']);
       remove_filter('get_blogcard_thumbnail_size', [$this, 'blogcard_size']);
-      remove_filter('external_blogcard_amazon_image_width', [$this, 'blogcard_width']);
-      remove_filter('external_blogcard_image_width', [$this, 'blogcard_width']);
-      remove_filter('external_blogcard_amazon_image_height', [$this, 'blogcard_height']);
-      remove_filter('external_blogcard_image_height', [$this, 'blogcard_height']);
+      // remove_filter('external_blogcard_amazon_image_width', [$this, 'blogcard_width']);
+      // remove_filter('external_blogcard_image_width', [$this, 'blogcard_width']);
+      // remove_filter('external_blogcard_amazon_image_height', [$this, 'blogcard_height']);
+      // remove_filter('external_blogcard_image_height', [$this, 'blogcard_height']);
     }
   }
 
