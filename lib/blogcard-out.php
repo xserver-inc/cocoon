@@ -179,8 +179,6 @@ function url_to_external_ogp_blogcard_tag($url){
   $params = get_url_params($url);
   $user_title = !empty($params['title']) ? $params['title'] : null;
   $user_snippet = !empty($params['snippet']) ? $params['snippet'] : null;
-  //$url = add_query_arg(array('title' => null, 'snippet' => null), $url);
-  //_v($url);
 
   $url_hash = TRANSIENT_BLOGCARD_PREFIX.md5( $url );
   $error_title = $url; //エラーの場合はURLを表示
@@ -230,7 +228,6 @@ function url_to_external_ogp_blogcard_tag($url){
       $image = $ogp->image;// 画像の取得
     }
   }
-  //var_dump($image);
 
   //ドメイン名を取得（OGP情報のURLが正しいかのチェック）
   $durl = punycode_decode($url);
