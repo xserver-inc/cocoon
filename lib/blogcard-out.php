@@ -157,7 +157,18 @@ function url_to_external_ogp_blogcard_tag($url){
       $ogp->title       = $ogp_fetched->title ?? '';
       $ogp->description = $ogp_fetched->description ?? '';
       $ogp->site_name   = $ogp_fetched->site_name ?? '';
-      $ogp->image       = isset($ogp_fetched->image) ? fetch_card_image($ogp_fetched->image, $url) : '';
+      if (isset($ogp_fetched->image)) {
+        if (apply_filters('is_externa_blogcard_thumbnail_cache', true)) {
+          // キャッシュを取得した場合
+          $ogp->image = fetch_card_image($ogp_fetched->image, $url);
+        } else {
+          // キャッシュを取得しなかった場合
+          $ogp->image = $ogp_fetched->image;
+        }
+      } else {
+        // 画像がない場合
+        $ogp->image = '';
+      }
 
       // キャッシュ保存
       set_transient( $url_hash, $ogp,
