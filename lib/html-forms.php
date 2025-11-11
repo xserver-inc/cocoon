@@ -1090,7 +1090,7 @@ function generate_popular_entries_tag($atts){
           <div class="popular-entry-card-info widget-entry-card-info card-info">
         <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date);
         if ($comment): ?>
-          <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+          <span class="popular-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
         <?php endif; ?>
 
         </div>
@@ -1668,7 +1668,7 @@ function get_widget_entry_card_link_tag($atts){
         }
         $count = get_comments_number();
         if ($comment): ?>
-          <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+          <span class="<?php echo $prefix; ?>-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
         <?php endif; ?>
           </div>
         </div>
@@ -1916,7 +1916,7 @@ function generate_info_list_tag($atts){
           <div class="info-list-item-meta">
             <span class="info-list-item-date"><?php echo $date; ?></span>
             <?php if ($comment): ?>
-              <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+              <span class="info-list-item-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
             <?php endif; ?>
             <span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
           </div>

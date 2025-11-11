@@ -4893,7 +4893,14 @@ label.screen-reader-text {
 
 .widget-entry-card-info {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-top: 4px;
+}
+
+.widget-entry-card-comment {
+  font-size: 0.7em;
+  padding: 5px 2px 2px 2px;
 }
 
 .widget-entry-card-pv {
@@ -5373,6 +5380,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .info-list-item-date {
   margin-right: 18px;
+}
+
+.info-list-item-comment {
+  margin-left: -10px;
+  margin-right: 12px;
 }
 
 .info-list-item-categorys .entry-category {
