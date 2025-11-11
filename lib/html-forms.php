@@ -774,17 +774,17 @@ function generate_tagcloud_check_list($name, $checks = array()){
   $html = '<div class="tagcloud tagcloud-list '.$name.'-list" style="width: 100%;">';
   $tags = get_tags();
   //_v($tags);
-  if ($tags) {
-    foreach($tags as $tag) {
+	if ($tags) {
+		foreach($tags as $tag) {
       $checked = null;
       if (in_array($tag->term_id, $checks)) {
         $checked = ' checked="checked"';
       }
       $id = $tag->term_id;
       $input_id = $name.'-'.$id;
-      $html .= '<span class="tag-cloud-link admin-tag tag-link-"'.$id.'"><label for="'.$input_id.'"><input type="checkbox" id="'.$input_id.'" name="'.$name.'[]" value="'.$id.'"'.$checked.'>' . $tag->name . '<span class="tag-link-count">('.$tag->count.')</span></label></span>';
-    }
-  }
+			$html .= '<span class="tag-cloud-link admin-tag tag-link-"'.$id.'"><label for="'.$input_id.'"><input type="checkbox" id="'.$input_id.'" name="'.$name.'[]" value="'.$id.'"'.$checked.'>' . $tag->name . '<span class="tag-link-count">('.$tag->count.')</span></label></span>';
+		}
+	}
   $html .= '</div>';
   echo apply_filters('admin_input_form_tag', $html, $name);
 }
