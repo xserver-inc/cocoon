@@ -2914,6 +2914,10 @@ body.wp-admin {
   font-size: 12px;
   opacity: 0.8;
 }
+.admin-settings .demo .widget-entry-card-info {
+  display: flex;
+  margin-top: 4px;
+}
 .admin-settings .demo .widget-entry-card-pv {
   margin-left: 5px;
   font-style: italic;
@@ -11477,6 +11481,10 @@ body.wp-admin {
   margin-top: 6px;
   font-size: 12px;
   opacity: 0.8;
+}
+.admin-settings .demo .widget-entry-card-info {
+  display: flex;
+  margin-top: 4px;
 }
 .admin-settings .demo .widget-entry-card-pv {
   margin-left: 5px;

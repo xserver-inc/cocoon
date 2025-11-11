@@ -34,7 +34,7 @@ import { THEME_NAME, CreateCategoryList } from '../../helpers';
 
 export default function edit( props ) {
   const { attributes, setAttributes, className } = props;
-  const { count, showAllCats, cats, caption, showFrame, showDivider, modified } =
+  const { count, showAllCats, cats, caption, showFrame, showDivider, modified, comment } =
     attributes;
 
   const classes = classnames( 'info-list-box', 'block-box', {
@@ -117,6 +117,13 @@ export default function edit( props ) {
             checked={ modified }
             onChange={ ( isChecked ) =>
               setAttributes( { modified: isChecked } )
+            }
+          />
+          <ToggleControl
+            label={ __( 'コメント数を表示する', THEME_NAME ) }
+            checked={ comment }
+            onChange={ ( isChecked ) =>
+              setAttributes( { comment: isChecked } )
             }
           />
         </PanelBody>

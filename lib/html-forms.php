@@ -1086,8 +1086,8 @@ function generate_popular_entries_tag($atts){
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
         <?php endif ?>
-        <div class="entry-card-meta card-meta e-card-meta">
-          <div class="entry-card-info e-card-info">
+        <div class="popular-entry-card-meta widget-entry-card-meta card-meta">
+          <div class="popular-entry-card-info widget-entry-card-info card-info">
         <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date);
         if ($comment): ?>
           <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
@@ -1660,8 +1660,8 @@ function get_widget_entry_card_link_tag($atts){
         <?php if ($snippet): ?>
         <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
         <?php endif; ?>
-        <div class="entry-card-meta card-meta e-card-meta">
-          <div class="entry-card-info e-card-info">
+        <div class="<?php echo $prefix; ?>-entry-card-meta widget-entry-card-meta card-meta">
+          <div class="<?php echo $prefix; ?>-entry-card-info widget-entry-card-info card-info">
         <?php
         if (!is_widget_navi_entry_card_prefix($prefix)) {
           generate_widget_entry_card_date($prefix, null, $display = $date);
