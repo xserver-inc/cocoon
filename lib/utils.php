@@ -518,13 +518,13 @@ function get_jquery_core_url($ver){
   $url = null;
   switch ($ver) {
     case '3':
-      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js';
+      $url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js';
       break;
     case '2':
-      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js';
+      $url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js';
       break;
     case '1':
-      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js';
+      $url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js';
       break;
   }
   return $url;
