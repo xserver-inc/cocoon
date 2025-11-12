@@ -1053,7 +1053,6 @@ function generate_popular_entries_tag($atts){
       } else {
         $post_thumbnail_img = get_original_image_tag($no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
       }
-      $count = get_comments_number( $post->ID );
       //スニペット表示
       $snippet_tag = '';
       //「タイトルを重ねた大きなサムネイル」の時はスニペットを表示させない
@@ -1090,11 +1089,10 @@ function generate_popular_entries_tag($atts){
           <div class="popular-entry-card-info widget-entry-card-info card-info">
         <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date);
         if ($comment): ?>
-          <span class="popular-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+          <span class="popular-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number( $post->ID ); ?></span>
         <?php endif; ?>
-
+          </div>
         </div>
-      </div>
       </div><!-- /.popular-entry-content -->
       <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
         <?php echo $pv_tag; ?>
@@ -1617,7 +1615,8 @@ function get_widget_entry_card_link_tag($atts){
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php //$prefixがnaviのとき
-        if (is_widget_navi_entry_card_prefix($prefix)) {
+        $is_navi = is_widget_navi_entry_card_prefix($prefix);
+        if ($is_navi) {
           $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
 
           //投稿・固定ページ・カスタム投稿の場合
@@ -1663,12 +1662,11 @@ function get_widget_entry_card_link_tag($atts){
         <div class="<?php echo $prefix; ?>-entry-card-meta widget-entry-card-meta card-meta">
           <div class="<?php echo $prefix; ?>-entry-card-info widget-entry-card-info card-info">
         <?php
-        if (!is_widget_navi_entry_card_prefix($prefix)) {
+        if (!$is_navi) {
           generate_widget_entry_card_date($prefix, null, $display = $date);
         }
-        $count = get_comments_number();
         if ($comment): ?>
-          <span class="<?php echo $prefix; ?>-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+          <span class="<?php echo $prefix; ?>-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
         <?php endif; ?>
           </div>
         </div>
@@ -1908,7 +1906,6 @@ function generate_info_list_tag($atts){
         if ($modified && $update_date) {
           $date = $update_date;
         }
-        $count = get_comments_number();
       ?>
         <div <?php post_class('info-list-item'); ?>>
           <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php echo escape_shortcodes(get_the_title());?></a></div>
@@ -1916,7 +1913,7 @@ function generate_info_list_tag($atts){
           <div class="info-list-item-meta">
             <span class="info-list-item-date"><?php echo $date; ?></span>
             <?php if ($comment): ?>
-              <span class="info-list-item-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+              <span class="info-list-item-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
             <?php endif; ?>
             <span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
           </div>
