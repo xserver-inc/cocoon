@@ -1615,8 +1615,7 @@ function get_widget_entry_card_link_tag($atts){
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php //$prefixがnaviのとき
-        $is_navi = is_widget_navi_entry_card_prefix($prefix);
-        if ($is_navi) {
+        if (is_widget_navi_entry_card_prefix($prefix)) {
           $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
 
           //投稿・固定ページ・カスタム投稿の場合
@@ -1662,7 +1661,7 @@ function get_widget_entry_card_link_tag($atts){
         <div class="<?php echo $prefix; ?>-entry-card-meta widget-entry-card-meta card-meta">
           <div class="<?php echo $prefix; ?>-entry-card-info widget-entry-card-info card-info">
         <?php
-        if (!$is_navi) {
+        if (!is_widget_navi_entry_card_prefix($prefix)) {
           generate_widget_entry_card_date($prefix, null, $display = $date);
         }
         if ($comment): ?>
