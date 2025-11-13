@@ -2675,10 +2675,6 @@ label.screen-reader-text {
   opacity: 0.8;
 }
 
-.widget-entry-card-date-before-hook {
-  width: 100%;
-}
-
 .widget-entry-card-info {
   display: flex;
   flex-wrap: wrap;

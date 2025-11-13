@@ -2914,9 +2914,6 @@ body.wp-admin {
   font-size: 12px;
   opacity: 0.8;
 }
-.admin-settings .demo .widget-entry-card-date-before-hook {
-  width: 100%;
-}
 .admin-settings .demo .widget-entry-card-info {
   display: flex;
   flex-wrap: wrap;
@@ -11494,9 +11491,6 @@ body.wp-admin {
   margin-top: 6px;
   font-size: 12px;
   opacity: 0.8;
-}
-.admin-settings .demo .widget-entry-card-date-before-hook {
-  width: 100%;
 }
 .admin-settings .demo .widget-entry-card-info {
   display: flex;

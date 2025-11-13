@@ -1415,12 +1415,8 @@ function generate_widget_entry_card_date($prefix, $post_id = null, $display = fa
 // クラスのON/OFFを制御するオプション
 $display_class = $display ? '' : ' display-none';
 ?>
-<?php if (has_action('widget_entry_card_date_before')): ?>
-<div class="widget-entry-card-date-before-hook">
 <?php do_action( 'widget_entry_card_date_before', $prefix, $post_id); ?>
-</div>
-<?php endif; ?>
-<div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date">
+<div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date<?php echo $display_class; ?>">
   <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span></span><?php
     //更新日の取得
     $update_time = get_update_time(get_site_date_format(), $post_id);
