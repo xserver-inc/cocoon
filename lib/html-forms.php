@@ -1332,6 +1332,7 @@ function generate_widget_entries_tag($atts){
       'horizontal' => $horizontal,
       'date' => $date,
       'comment' => $comment,
+      'post_id' => get_the_ID(),
     );
 
     if ($snippet) {
@@ -1582,6 +1583,7 @@ function get_widget_entry_card_link_tag($atts){
     'classes' => null,
     'object' => 'post',
     'object_id' => null,
+    'post_id' => null,
     'horizontal' => 0,
     'target' => null,
     'comment' => null,
@@ -1659,7 +1661,7 @@ function get_widget_entry_card_link_tag($atts){
         <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
         <?php endif;
         if (!is_widget_navi_entry_card_prefix($prefix)) {
-          do_action( 'widget_entry_card_date_before', $prefix, $object_id);
+          do_action( 'widget_entry_card_date_before', $prefix, $post_id);
         }
         ?>
         <div class="<?php echo $prefix; ?>-entry-card-meta widget-entry-card-meta card-meta">
