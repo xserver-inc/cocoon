@@ -164,7 +164,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'vertical_card_4' => __( '縦型カード4列（推奨表示数：4, 8, 12...）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_RELATED_ENTRY_TYPE, $options, get_related_entry_type());
-            generate_tips_tag(__( '関連記事の表示タイプを選択します。', THEME_NAME ));
+            generate_tips_tag(__( '関連記事の表示タイプを選択します。', THEME_NAME ).__( '「ミニカード」を選択した際は、スニペット（説明文）は非表示になります。', THEME_NAME ));
             ?>
           </td>
         </tr>
