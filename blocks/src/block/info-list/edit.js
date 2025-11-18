@@ -113,17 +113,17 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
-            label={ __( '更新日順に並び替える', THEME_NAME ) }
-            checked={ modified }
-            onChange={ ( isChecked ) =>
-              setAttributes( { modified: isChecked } )
-            }
-          />
-          <ToggleControl
             label={ __( 'コメント数を表示する', THEME_NAME ) }
             checked={ comment }
             onChange={ ( isChecked ) =>
               setAttributes( { comment: isChecked } )
+            }
+          />
+          <ToggleControl
+            label={ __( '更新日順に並び替える', THEME_NAME ) }
+            checked={ modified }
+            onChange={ ( isChecked ) =>
+              setAttributes( { modified: isChecked } )
             }
           />
         </PanelBody>
