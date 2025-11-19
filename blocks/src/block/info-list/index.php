@@ -36,6 +36,7 @@ function render_block_cocoon_block_info_list($attributes, $content)
 	if (is_rest()) {
 		$html = replace_a_tags_to_span_tags($html);
 	}
+  $html = change_fa($html);
 	return $html;
 }
 
