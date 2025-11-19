@@ -56,6 +56,7 @@ export default function edit( props ) {
     post_type,
     taxonomy,
     author,
+    comment,
   } = attributes;
 
   const classes = classnames( 'new-list-box', 'block-box', {
@@ -233,6 +234,13 @@ export default function edit( props ) {
             checked={date}
             onChange={(isChecked) =>
               setAttributes({ date: isChecked })
+            }
+          />
+          <ToggleControl
+            label={__('コメント数を表示する', THEME_NAME)}
+            checked={comment}
+            onChange={(isChecked) =>
+              setAttributes({ comment: isChecked })
             }
           />
         </PanelBody>

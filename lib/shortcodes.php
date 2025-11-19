@@ -56,6 +56,7 @@ function new_entries_shortcode($atts) {
     'ex_posts' => null,
     'ex_cats' => null,
     'ordered_posts' => null,
+    'comment' => 0,
   ), $atts, 'new_list'));
 
   //countオプションに異常値が入っていた場合
@@ -113,6 +114,7 @@ function new_entries_shortcode($atts) {
     'ex_posts' => $exclude_post_ids,
     'ex_cats' => $exclude_cat_ids,
     'ordered_posts' => $ordered_post_ids,
+    'comment' => $comment,
   );
   ob_start();
   generate_widget_entries_tag($atts);
@@ -146,6 +148,7 @@ function popular_entries_shortcode($atts) {
     'post_type' => 'post',
     'horizontal' => 0,
     'action' => null,
+    'comment' => 0,
   ), $atts, 'popular_list'));
 
   //countオプションに異常値が入っていた場合
@@ -188,6 +191,7 @@ function popular_entries_shortcode($atts) {
     'post_type' => $post_type,
     'horizontal' => $horizontal,
     'action' => $action,
+    'comment' => $comment,
   );
   ob_start();
   generate_popular_entries_tag($atts);
@@ -998,6 +1002,7 @@ function get_info_list_shortcode($atts){
     'action' => null,
     'post_type' => 'post',
     'taxonomy' => null,
+    'comment' => 0,
   ), $atts, 'info_list'));
 
   //countオプションに異常値が入っていた場合
@@ -1022,6 +1027,7 @@ function get_info_list_shortcode($atts){
     'action' => $action,
     'post_type' => $post_type,
     'taxonomy' => $taxonomy,
+    'comment' => $comment,
   );
   ob_start();
   generate_info_list_tag($atts);

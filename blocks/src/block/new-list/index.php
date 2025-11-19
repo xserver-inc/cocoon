@@ -36,6 +36,7 @@ function render_block_cocoon_block_new_list($attributes, $content)
 		'author' => $attributes['author'],
 		'offset' => $attributes['offset'],
 		'horizontal' => $attributes['horizontal'] ? 1 : 0,
+		'comment' => $attributes['comment'] ? 1 : 0,
 	];
 
 	$new_list_content = new_entries_shortcode($atts);
