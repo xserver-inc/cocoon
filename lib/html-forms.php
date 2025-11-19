@@ -1003,6 +1003,7 @@ function generate_popular_entries_tag($atts){
     'post_type' => 'post',
     'horizontal' => 0,
     'action' => null,
+    'comment' => 0,
   ), $atts, 'generate_popular_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1052,7 +1053,6 @@ function generate_popular_entries_tag($atts){
       } else {
         $post_thumbnail_img = get_original_image_tag($no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
       }
-
       //スニペット表示
       $snippet_tag = '';
       //「タイトルを重ねた大きなサムネイル」の時はスニペットを表示させない
@@ -1085,7 +1085,15 @@ function generate_popular_entries_tag($atts){
         <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
           <?php echo $pv_tag; ?>
         <?php endif ?>
-        <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date); ?>
+        <?php do_action( 'widget_entry_card_date_before', 'popular', $post->ID); ?>
+        <div class="popular-entry-card-meta widget-entry-card-meta card-meta">
+          <div class="popular-entry-card-info widget-entry-card-info card-info">
+        <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date);
+        if ($comment): ?>
+          <span class="popular-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number( $post->ID ); ?></span>
+        <?php endif; ?>
+          </div>
+        </div>
       </div><!-- /.popular-entry-content -->
       <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
         <?php echo $pv_tag; ?>
@@ -1145,6 +1153,7 @@ function generate_widget_entries_tag($atts){
     'ex_posts' => null,
     'ex_cats' => null,
     'ordered_posts' => null,
+    'comment' => 0,
   ), $atts, 'generate_widget_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1322,6 +1331,8 @@ function generate_widget_entries_tag($atts){
       'type' => $type,
       'horizontal' => $horizontal,
       'date' => $date,
+      'comment' => $comment,
+      'post_id' => get_the_ID(),
     );
 
     if ($snippet) {
@@ -1406,7 +1417,6 @@ function generate_widget_entry_card_date($prefix, $post_id = null, $display = fa
 // クラスのON/OFFを制御するオプション
 $display_class = $display ? '' : ' display-none';
 ?>
-<?php do_action( 'widget_entry_card_date_before', $prefix, $post_id); ?>
 <div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date<?php echo $display_class; ?>">
   <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><span class="fa fa-clock-o" aria-hidden="true"></span><span class="entry-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span></span><?php
     //更新日の取得
@@ -1573,8 +1583,10 @@ function get_widget_entry_card_link_tag($atts){
     'classes' => null,
     'object' => 'post',
     'object_id' => null,
+    'post_id' => null,
     'horizontal' => 0,
     'target' => null,
+    'comment' => null,
   ), $atts, 'get_widget_entry_card_link_tag'));
 
   $class_text = null;
@@ -1647,12 +1659,22 @@ function get_widget_entry_card_link_tag($atts){
         <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
         <?php if ($snippet): ?>
         <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
-        <?php endif; ?>
+        <?php endif;
+        if (!is_widget_navi_entry_card_prefix($prefix)) {
+          do_action( 'widget_entry_card_date_before', $prefix, $post_id);
+        }
+        ?>
+        <div class="<?php echo $prefix; ?>-entry-card-meta widget-entry-card-meta card-meta">
+          <div class="<?php echo $prefix; ?>-entry-card-info widget-entry-card-info card-info">
         <?php
         if (!is_widget_navi_entry_card_prefix($prefix)) {
           generate_widget_entry_card_date($prefix, null, $display = $date);
-        } ?>
-
+        }
+        if ($comment): ?>
+          <span class="<?php echo $prefix; ?>-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
+        <?php endif; ?>
+          </div>
+        </div>
       </div><!-- /.entry-content -->
     </div><!-- /.entry-card -->
   </a><!-- /.entry-card-link -->
@@ -1828,6 +1850,7 @@ function generate_info_list_tag($atts){
     'action' => null,
     'post_type' => 'post',
     'taxonomy' => 'category',
+    'comment' => 0,
   ), $atts, 'generate_info_list_tag'));
 
   $args = array(
@@ -1894,6 +1917,9 @@ function generate_info_list_tag($atts){
           <?php do_action('info_list_item_meta_before'); ?>
           <div class="info-list-item-meta">
             <span class="info-list-item-date"><?php echo $date; ?></span>
+            <?php if ($comment): ?>
+              <span class="info-list-item-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
+            <?php endif; ?>
             <span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
           </div>
         </div>

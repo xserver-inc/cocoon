@@ -2675,6 +2675,17 @@ label.screen-reader-text {
   opacity: 0.8;
 }
 
+.widget-entry-card-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.widget-entry-card-comment {
+  font-size: 0.7em;
+  padding: 4px 2px 2px 2px;
+}
+
 .widget-entry-card-pv {
   margin-left: 5px;
   font-style: italic;
@@ -9613,6 +9624,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .info-list-item-date {
   margin-right: 18px;
+}
+
+.info-list-item-comment {
+  margin-left: -10px;
+  margin-right: 12px;
 }
 
 .info-list-item-categorys .entry-category {

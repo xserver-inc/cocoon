@@ -36,6 +36,10 @@
     "modified": {
       "type": "boolean",
       "default": false
+    },
+    "comment": {
+      "type": "boolean",
+      "default": false
     }
   },
   "example": {},

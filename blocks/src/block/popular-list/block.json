@@ -72,6 +72,10 @@
     "ex_cats": {
       "type": "string",
       "default": ""
+    },
+    "comment": {
+      "type": "boolean",
+      "default": false
     }
   },
   "example": {},
