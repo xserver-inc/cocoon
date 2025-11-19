@@ -2918,11 +2918,10 @@ body.wp-admin {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 4px;
 }
 .admin-settings .demo .widget-entry-card-comment {
   font-size: 0.7em;
-  padding: 5px 2px 2px 2px;
+  padding: 4px 2px 2px 2px;
 }
 .admin-settings .demo .widget-entry-card-pv {
   margin-left: 5px;
@@ -11496,11 +11495,10 @@ body.wp-admin {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 4px;
 }
 .admin-settings .demo .widget-entry-card-comment {
   font-size: 0.7em;
-  padding: 5px 2px 2px 2px;
+  padding: 4px 2px 2px 2px;
 }
 .admin-settings .demo .widget-entry-card-pv {
   margin-left: 5px;
