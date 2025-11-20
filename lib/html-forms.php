@@ -1660,21 +1660,19 @@ function get_widget_entry_card_link_tag($atts){
         <?php if ($snippet): ?>
         <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
         <?php endif;
-        if (!is_widget_navi_entry_card_prefix($prefix)) {
+        if (!is_widget_navi_entry_card_prefix($prefix)):
           do_action( 'widget_entry_card_date_before', $prefix, $post_id);
-        }
-        ?>
-        <div class="<?php echo $prefix; ?>-entry-card-meta widget-entry-card-meta card-meta">
-          <div class="<?php echo $prefix; ?>-entry-card-info widget-entry-card-info card-info">
-        <?php
-        if (!is_widget_navi_entry_card_prefix($prefix)) {
+          ?>
+          <div class="<?php echo $prefix; ?>-entry-card-meta widget-entry-card-meta card-meta">
+            <div class="<?php echo $prefix; ?>-entry-card-info widget-entry-card-info card-info">
+          <?php
           generate_widget_entry_card_date($prefix, null, $display = $date);
-        }
-        if ($comment): ?>
-          <span class="<?php echo $prefix; ?>-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
+          if ($comment): ?>
+            <span class="<?php echo $prefix; ?>-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
+          <?php endif; ?>
+          </div><!-- /.entry-card-info -->
+        </div><!-- /.entry-card-meta -->
         <?php endif; ?>
-          </div>
-        </div>
       </div><!-- /.entry-content -->
     </div><!-- /.entry-card -->
   </a><!-- /.entry-card-link -->
