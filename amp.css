@@ -8407,7 +8407,7 @@ div.fb-like-mobile {
   display: block;
   right: 10px;
   bottom: 10px;
-  z-index: 99999;
+  z-index: 999;
   visibility: hidden;
   opacity: 0;
   transition: 0.6s;

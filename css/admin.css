@@ -7867,7 +7867,7 @@ body.wp-admin {
   display: block;
   right: 10px;
   bottom: 10px;
-  z-index: 99999;
+  z-index: 999;
   visibility: hidden;
   opacity: 0;
   transition: 0.6s;
@@ -16444,7 +16444,7 @@ body.wp-admin {
   display: block;
   right: 10px;
   bottom: 10px;
-  z-index: 99999;
+  z-index: 999;
   visibility: hidden;
   opacity: 0;
   transition: 0.6s;
@@ -18316,7 +18316,7 @@ body.wp-admin {
   flex-direction: row;
   flex-wrap: wrap;
   transition: 0.3s;
-  z-index: 9999;
+  z-index: 980;
 }
 .admin-settings .demo .admin-panel a {
   color: var(--cocoon-white-color);
