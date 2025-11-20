@@ -18874,6 +18874,10 @@ body.wp-admin {
 .admin-settings .demo .grecaptcha-badge {
   bottom: 60px !important;
 }
+.admin-settings .demo html.lity-active,
+.admin-settings .demo body.baguetteBox-open {
+  overflow-y: hidden;
+}
 .admin-settings .demo .video-click {
   cursor: pointer;
 }

@@ -48,3 +48,9 @@ body:has(#spotlight.show) .header {
 .grecaptcha-badge {
   bottom: 60px !important;
 }
+
+// LityやbaguetteBoxが開いている場合はスクロールを禁止
+html.lity-active,
+body.baguetteBox-open {
+  overflow-y: hidden;
+}

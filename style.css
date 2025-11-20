@@ -11313,6 +11313,11 @@ body:has(#spotlight.show) .header {
   bottom: 60px !important;
 }
 
+html.lity-active,
+body.baguetteBox-open {
+  overflow-y: hidden;
+}
+
 /**
  * Cocoon WordPress Theme
  * @author: yhira
