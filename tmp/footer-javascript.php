@@ -260,17 +260,6 @@ if (!is_amp()): ?>
   </script>
   <?php endif; //Swiper ?>
 
-  <?php //Lightbox
-  if (is_lightbox_effect_enable()): ?>
-  <script>
-  $(function () {
-    lightbox.option({
-      'disableScrolling': true
-    });
-  })(jQuery);
-  </script>
-  <?php endif; //Lightbox ?>
-
   <?php //数式表示
   if (is_formula_enable() && is_math_shortcode_exist()): ?>
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">

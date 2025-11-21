@@ -729,12 +729,20 @@ endif;
 //Lightboxの読み込み
 if ( !function_exists( 'wp_enqueue_lightbox' ) ):
 function wp_enqueue_lightbox(){
-  //_v(get_image_zoom_effect());
  if ( ((is_lightbox_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
     //Lightboxスタイルの呼び出し
     wp_enqueue_style( 'lightbox-style', get_cocoon_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css' );
     //Lightboxスクリプトの呼び出し
     wp_enqueue_script( 'lightbox-js', get_cocoon_template_directory_uri() . '/plugins/lightbox2/dist/js/lightbox.min.js', array( 'jquery' ), false, true  );
+
+    $data = '
+            (function($){
+              lightbox.option({
+                "disableScrolling": true
+              });
+            })(jQuery);
+          ';
+    wp_add_inline_script('lightbox-js', $data);
   }
 }
 endif;
