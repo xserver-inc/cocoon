@@ -1095,8 +1095,9 @@ div.speech-balloon {
     }
 }
 @media screen and (max-width: 480px) {
-    .ect-entry-card .card-thumb, .rect-entry-card .card-thumb, .ect-big-card-first .card-thumb {
-        margin-bottom: 2px;
+    .ect-entry-card .a-wrap:not(.ec-big-card-first) .card-thumb,
+    .rect-entry-card .a-wrap:not(.ec-big-card-first) .card-thumb {
+      margin-bottom: 2px;
     }
 }
 @media screen and (max-width: 440px) {
