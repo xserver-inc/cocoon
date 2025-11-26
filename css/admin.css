@@ -7151,6 +7151,10 @@ body.wp-admin {
 .admin-settings .demo .acquired-date {
   font-size: 0.9em;
 }
+.admin-settings .demo .amazon-search-message {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
 .admin-settings .demo .nwa .booklink-box, .admin-settings .demo .nwa .kaerebalink-box, .admin-settings .demo .nwa .tomarebalink-box, .admin-settings .demo .nwa .product-item-box {
   padding: 10px 10px 24px;
   display: block;
@@ -15727,6 +15731,10 @@ body.wp-admin {
 }
 .admin-settings .demo .acquired-date {
   font-size: 0.9em;
+}
+.admin-settings .demo .amazon-search-message {
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 .admin-settings .demo .nwa .booklink-box, .admin-settings .demo .nwa .kaerebalink-box, .admin-settings .demo .nwa .tomarebalink-box, .admin-settings .demo .nwa .product-item-box {
   padding: 10px 10px 24px;

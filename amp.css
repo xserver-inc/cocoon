@@ -7580,6 +7580,11 @@ div.sbs-think:not(.not-nested-style) .speech-balloon::after {
   font-size: 0.9em;
 }
 
+.amazon-search-message {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
 .nwa .booklink-box, .nwa .kaerebalink-box, .nwa .tomarebalink-box, .nwa .product-item-box {
   padding: 10px 10px 24px;
   display: block;

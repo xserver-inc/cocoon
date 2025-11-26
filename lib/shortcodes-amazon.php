@@ -480,11 +480,44 @@ function amazon_product_link_shortcode($atts){
   //アソシエイトurlの取得
   $associate_url = get_amazon_associate_url($asin, $associate_tracking_id);
 
+  ///////////////////////////////////////////
+  // 検索ボタンの作成（エラー時にも表示するため先に作成）
+  ///////////////////////////////////////////
+  $args = array(
+    'keyword' => $keyword,
+    'associate_tracking_id' => $associate_tracking_id,
+    'rakuten_affiliate_id' => $rakuten_affiliate_id,
+    'sid' => $sid,
+    'pid' => $pid,
+    'mercari_affiliate_id' => $mercari_affiliate_id,
+    'dmm_affiliate_id' => $dmm_affiliate_id,
+    'moshimo_amazon_id' => $moshimo_amazon_id,
+    'moshimo_rakuten_id' => $moshimo_rakuten_id,
+    'moshimo_yahoo_id' => $moshimo_yahoo_id,
+    'amazon' => $amazon,
+    'rakuten' => $rakuten,
+    'yahoo' => $yahoo,
+    'mercari' => $mercari,
+    'dmm' => $dmm,
+    'amazon_page_url' => $associate_url,
+    'rakuten_page_url' => null,
+    'btn1_url' => $btn1_url,
+    'btn1_text' => $btn1_text,
+    'btn1_tag' => $btn1_tag,
+    'btn2_url' => $btn2_url,
+    'btn2_text' => $btn2_text,
+    'btn2_tag' => $btn2_tag,
+    'btn3_url' => $btn3_url,
+    'btn3_text' => $btn3_text,
+    'btn3_tag' => $btn3_tag,
+  );
+  $buttons_tag = get_search_buttons_tag($args);
+
   //商品情報の取得
   $res = get_amazon_itemlookup_json($asin, $associate_tracking_id);
 
   if ($res === false) {//503エラーの場合
-    return get_amazon_admin_error_message_tag($associate_url, __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。サーバーの「php.ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してください。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME ));
+    return get_amazon_admin_error_message_tag($associate_url, __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。サーバーの「php.ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してください。', THEME_NAME ), null, null, $buttons_tag, $title);
   }
 
   //_v($res);
@@ -494,11 +527,15 @@ function amazon_product_link_shortcode($atts){
 
     if (is_paapi_json_error($json)) {
 
-      $json_error_code    = $json->{'Errors'}[0]->{'Code'};
-      $json_error_message = $json->{'Errors'}[0]->{'Message'};
+      // 安全にエラー情報を抽出
+      $errors = isset($json->{'Errors'}) ? $json->{'Errors'} : null;
+      $first_error = (is_array($errors) && isset($errors[0])) ? $errors[0] : null;
+      $json_error_code = ($first_error && isset($first_error->{'Code'})) ? $first_error->{'Code'} : '';
+      $json_error_message = ($first_error && isset($first_error->{'Message'})) ? $first_error->{'Message'} : '';
+      $json_error_message_str = is_string($json_error_message) ? $json_error_message : '';
 
       $admin_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
-      $admin_message .= '<pre class="nohighlight"><b>'.$json_error_code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $json_error_message).'</pre>';
+      $admin_message .= '<pre class="nohighlight"><b>'.$json_error_code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $json_error_message_str).'</pre>';
       $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
 
       //キャッシュ名の取得
@@ -521,7 +558,7 @@ function amazon_product_link_shortcode($atts){
         }
       }
 
-      return get_amazon_admin_error_message_tag($associate_url, $admin_message);
+      return get_amazon_admin_error_message_tag($associate_url, $admin_message, null, null, $buttons_tag, $title);
     }
 
     //var_dump($item);
@@ -531,7 +568,7 @@ function amazon_product_link_shortcode($atts){
     $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
 
     if (!is_paapi_json_item_exist($json)) {
-      return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin);
+      return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin, $buttons_tag, $title);
     }
 
     if (is_paapi_json_item_exist($json)) {
@@ -951,7 +988,7 @@ function amazon_product_link_shortcode($atts){
           $product_item_admin_tag.
         '</div>';
     } else {
-      $tag = get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin);
+      $tag = get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin, $buttons_tag, $title);
     }
 
     return apply_filters('amazon_product_link_tag', $tag);
@@ -989,21 +1026,34 @@ endif;
 
 //Amazonエラーの際に出力するリンクを
 if ( !function_exists( 'get_amazon_error_product_link' ) ):
-function get_amazon_error_product_link($url){
-  return '<a href="'.esc_url($url).'" target="_blank" rel="nofollow noopener">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
+function get_amazon_error_product_link($associate_url, $title = ''){
+  // null を渡さないように防御的に文字列化
+  $safe_url = is_string($associate_url) ? $associate_url : '';
+  $text = __( 'Amazonで商品の詳細を見る', THEME_NAME );
+  if ($title) {
+    $text = $title;
+  }
+  return '<a href="'.esc_url($safe_url).'" target="_blank" rel="nofollow noopener">'.$text.'</a>';
 }
 endif;
 
 //AmazonのASINエラータグ取得
 if ( !function_exists( 'get_amazon_admin_error_message_tag' ) ):
-function get_amazon_admin_error_message_tag($url, $message, $cache_delete_tag = null, $asin = null){
-  $error_message = get_amazon_error_product_link($url);
+function get_amazon_admin_error_message_tag($url, $message, $cache_delete_tag = '', $asin = '', $buttons_tag = '', $title = ''){
+  $error_message = '';
   if (is_user_administrator()) {
-    $asin_msg = null;
+    $asin_msg = '';
     if ($asin) {
       $asin_msg = '(ASIN:'.$asin.')';
     }
-    $error_message .= '<br><br>'.get_admin_errormessage_box_tag($message.$asin_msg);
+    $error_message .= get_admin_errormessage_box_tag($message.$asin_msg);
+  }
+  $link = get_amazon_error_product_link($url, $title);
+  if ($link) {
+    $error_message .= '<p class="amazon-search-message">'.$link.'</p>';
+  }
+  if ($buttons_tag) {
+    $error_message .= $buttons_tag;
   }
   return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
 }
