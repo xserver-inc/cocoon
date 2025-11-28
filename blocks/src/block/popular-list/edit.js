@@ -78,6 +78,7 @@ export default function edit( props ) {
   let catsTextControl = (
     <Fragment>
       <TextControl
+        __nextHasNoMarginBottom={ true }
         __next40pxDefaultSize={ true }
         label={ __( '表示するカテゴリーをカンマ区切りで指定', THEME_NAME ) }
         value={ cats }
@@ -109,6 +110,7 @@ export default function edit( props ) {
   let exCatsTextControl = (
     <Fragment>
       <TextControl
+        __nextHasNoMarginBottom={ true }
         __next40pxDefaultSize={ true }
         label={ __( '除外するカテゴリーをカンマ区切りで指定', THEME_NAME ) }
         value={ ex_cats }
@@ -308,6 +310,7 @@ export default function edit( props ) {
           { exCatsTextControl }
           <Divider />
           <TextControl
+            __nextHasNoMarginBottom={ true }
             __next40pxDefaultSize={ true }
             label={ __( '投稿タイプ', THEME_NAME ) }
             value={ post_type }
@@ -316,6 +319,7 @@ export default function edit( props ) {
             }
           />
           <TextControl
+            __nextHasNoMarginBottom={ true }
             __next40pxDefaultSize={ true }
             label={ __( '除外投稿(ID)', THEME_NAME ) }
             value={ ex_posts }

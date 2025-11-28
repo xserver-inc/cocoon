@@ -65,6 +65,7 @@ registerBlockType( 'cocoon-blocks/button', {
         <InspectorControls>
           <PanelBody title={ __( 'ボタン設定', THEME_NAME ) }>
             <TextControl
+              __nextHasNoMarginBottom={ true }
               label={ __( 'URL', THEME_NAME ) }
               value={ url }
               onChange={ ( value ) => setAttributes( { url: value } ) }
@@ -85,7 +86,7 @@ registerBlockType( 'cocoon-blocks/button', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -167,7 +168,7 @@ registerBlockType( 'cocoon-blocks/button', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -189,7 +190,7 @@ registerBlockType( 'cocoon-blocks/button', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>

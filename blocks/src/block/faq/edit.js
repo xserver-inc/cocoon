@@ -130,6 +130,7 @@ export function FAQEdit( props ) {
             label={ __( '質問ラベル', THEME_NAME ) }
           >
             <TextControl
+              __nextHasNoMarginBottom={ true }
               __next40pxDefaultSize={ true }
               value={ questionLabel }
               placeholder={ __( 'Q', THEME_NAME ) }
@@ -144,6 +145,7 @@ export function FAQEdit( props ) {
             label={ __( '回答ラベル', THEME_NAME ) }
           >
             <TextControl
+              __nextHasNoMarginBottom={ true }
               __next40pxDefaultSize={ true }
               value={ answerLabel }
               placeholder={ __( 'A', THEME_NAME ) }

@@ -69,6 +69,7 @@ export function ButtonEdit( props ) {
       <InspectorControls>
         <PanelBody title={ __( 'ボタン設定', THEME_NAME ) }>
           <TextControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'URL', THEME_NAME ) }
             value={ url }
             onChange={ ( value ) => setAttributes( { url: value } ) }
@@ -89,7 +90,7 @@ export function ButtonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
 
           <SelectControl
@@ -111,7 +112,7 @@ export function ButtonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
 
           <ToggleControl
@@ -143,7 +144,7 @@ export function ButtonEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
-          enableAlpha={true}
+          enableAlpha={ true }
           colorSettings={ [
             {
               label: __( '背景色', THEME_NAME ),
@@ -170,8 +171,8 @@ export function ButtonEdit( props ) {
           className={ classnames( className, {
             btn: true,
             [ size ]: size,
-            [ 'btn-circle' ]: !! isCircle,
-            [ 'btn-shine' ]: !! isShine,
+            'btn-circle': !! isCircle,
+            'btn-shine': !! isShine,
             'has-text-color': textColor.color,
             'has-background': backgroundColor.color,
             'has-border-color': borderColor.color,
@@ -179,7 +180,7 @@ export function ButtonEdit( props ) {
             [ textColor.class ]: textColor.class,
             [ borderColor.class ]: borderColor.class,
             [ fontSize.class ]: fontSize.class,
-            [ 'has-custom-width' ]: width,
+            'has-custom-width': width,
             [ `cocoon-block-button__width-${ width }` ]: width,
           } ) }
           href={ url }

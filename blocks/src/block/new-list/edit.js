@@ -112,6 +112,7 @@ export default function edit( props ) {
 
   let tagsTextControl = (
     <TextControl
+      __nextHasNoMarginBottom={ true }
       __next40pxDefaultSize={ true }
       label={ __( 'タグ', THEME_NAME ) }
       value={ tags }
@@ -280,6 +281,7 @@ export default function edit( props ) {
             onChange={ ( isChecked ) => setAttributes( { sticky: isChecked } ) }
           />
           <TextControl
+            __nextHasNoMarginBottom={ true }
             __next40pxDefaultSize={ true }
             label={ __( '投稿タイプ', THEME_NAME ) }
             value={ post_type }
@@ -288,12 +290,14 @@ export default function edit( props ) {
             }
           />
           <TextControl
+            __nextHasNoMarginBottom={ true }
             __next40pxDefaultSize={ true }
             label={ __( '検索グループ', THEME_NAME ) }
             value={ taxonomy }
             onChange={ ( newValue ) => setAttributes( { taxonomy: newValue } ) }
           />
           <TextControl
+            __nextHasNoMarginBottom={ true }
             __next40pxDefaultSize={ true }
             label={ __( '投稿ユーザ', THEME_NAME ) }
             value={ author }

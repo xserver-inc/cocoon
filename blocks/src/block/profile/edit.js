@@ -28,7 +28,7 @@ export default function edit( props ) {
   let abledDropdownListItemCount = 0;
 
   function createOptions() {
-    var options = [];
+    const options = [];
     options.push( { value: '-1', label: __( '未選択', THEME_NAME ) } );
     if ( typeof gbUsers !== 'undefined' ) {
       gbUsers.forEach( ( user ) => {
@@ -58,7 +58,7 @@ export default function edit( props ) {
       return '';
     }
     return (
-      <div class="cocoon-render-message editor-profile-block-box-message">
+      <div className="cocoon-render-message editor-profile-block-box-message">
         { msg }
       </div>
     );
@@ -67,14 +67,11 @@ export default function edit( props ) {
   const getProfileContent = () => {
     if ( id == '-1' ) {
       return getProfileMessage();
-    } else {
-      return (
-        <ServerSideRender block={ props.name } attributes={ attributes } />
-      );
     }
+    return <ServerSideRender block={ props.name } attributes={ attributes } />;
   };
 
-  var options = createOptions();
+  const options = createOptions();
 
   if ( ! isProfileIdExist ) {
     setAttributes( { id: '-1' } );
@@ -85,6 +82,7 @@ export default function edit( props ) {
       <InspectorControls>
         <PanelBody>
           <TextControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'ラベル', THEME_NAME ) }
             value={ label }
             onChange={ ( value ) => setAttributes( { label: value } ) }
@@ -109,7 +107,7 @@ export default function edit( props ) {
           }
           options={ options }
           __nextHasNoMarginBottom={ true }
-          __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+          __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
         />
         { getProfileContent() }
       </div>

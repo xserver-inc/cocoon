@@ -259,6 +259,7 @@ export default function edit( props ) {
             return (
               <div className={ 'tab-setting tab-setting-' + index }>
                 <TextControl
+                  __nextHasNoMarginBottom={ true }
                   __next40pxDefaultSize={ true }
                   label={ __( 'タブ', THEME_NAME ) + ( index + 1 ) }
                   value={ label }

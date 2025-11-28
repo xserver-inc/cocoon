@@ -15,7 +15,12 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { RichText, InspectorControls, PanelColorSettings, ContrastChecker } from '@wordpress/block-editor';
+import {
+  RichText,
+  InspectorControls,
+  PanelColorSettings,
+  ContrastChecker,
+} from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, TextControl, ToggleControl } =
   wp.components;
 import { Fragment } from '@wordpress/element';
@@ -26,8 +31,8 @@ function getClasses( color, size, isCircle, isShine ) {
     btn: true,
     [ `btn-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
     [ size ]: size,
-    [ 'btn-circle' ]: !! isCircle,
-    [ 'btn-shine' ]: !! isShine,
+    'btn-circle': !! isCircle,
+    'btn-shine': !! isShine,
   } );
   return classes;
 }
@@ -82,6 +87,7 @@ registerBlockType( 'cocoon-blocks/button-1', {
         <InspectorControls>
           <PanelBody title={ __( 'ボタン設定', THEME_NAME ) }>
             <TextControl
+              __nextHasNoMarginBottom={ true }
               label={ __( 'URL', THEME_NAME ) }
               value={ url }
               onChange={ ( value ) => setAttributes( { url: value } ) }
@@ -102,7 +108,7 @@ registerBlockType( 'cocoon-blocks/button-1', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -124,7 +130,7 @@ registerBlockType( 'cocoon-blocks/button-1', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <ToggleControl

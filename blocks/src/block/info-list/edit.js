@@ -65,6 +65,7 @@ export default function edit( props ) {
   let catsTextControl = (
     <Fragment>
       <TextControl
+        __nextHasNoMarginBottom={ true }
         __next40pxDefaultSize={ true }
         label={ __( '表示するカテゴリーをカンマ区切りで指定', THEME_NAME ) }
         value={ cats }
@@ -97,6 +98,7 @@ export default function edit( props ) {
       <InspectorControls>
         <PanelBody title={ __( '基本設定', THEME_NAME ) } initialOpen={ true }>
           <TextControl
+            __nextHasNoMarginBottom={ true }
             __next40pxDefaultSize={ true }
             label={ __( 'キャプション(枠線内表示)', THEME_NAME ) }
             value={ caption }
