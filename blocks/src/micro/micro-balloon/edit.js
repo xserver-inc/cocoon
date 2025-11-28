@@ -47,9 +47,9 @@ export function MicroBalloonEdit( props ) {
   } = attributes;
 
   const classes = classnames( className, {
-    [ 'micro-balloon' ]: true,
+    'micro-balloon': true,
     [ type ]: !! type,
-    [ 'mc-circle' ]: !! isCircle,
+    'mc-circle': !! isCircle,
     [ MICRO_COPY_CLASS ]: true,
     'has-text-color': textColor.color,
     'has-background': backgroundColor.color,
@@ -90,10 +90,11 @@ export function MicroBalloonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
 
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '円形にする', THEME_NAME ) }
             checked={ isCircle }
             onChange={ ( value ) => setAttributes( { isCircle: value } ) }

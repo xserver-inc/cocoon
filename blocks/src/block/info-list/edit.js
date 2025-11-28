@@ -113,6 +113,7 @@ export default function edit( props ) {
             max={ 100 }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '枠線を表示する', THEME_NAME ) }
             checked={ showFrame }
             onChange={ ( isChecked ) =>
@@ -120,6 +121,7 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '仕切り線を表示する', THEME_NAME ) }
             checked={ showDivider }
             onChange={ ( isChecked ) =>
@@ -127,6 +129,7 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'コメント数を表示する', THEME_NAME ) }
             checked={ comment }
             onChange={ ( isChecked ) =>
@@ -134,6 +137,7 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '更新日順に並び替える', THEME_NAME ) }
             checked={ modified }
             onChange={ ( isChecked ) =>
@@ -143,6 +147,7 @@ export default function edit( props ) {
         </PanelBody>
         <PanelBody title={ __( 'フィルタ', THEME_NAME ) } initialOpen={ false }>
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '全カテゴリーを表示する', THEME_NAME ) }
             checked={ showAllCats }
             onChange={ ( isChecked ) => {

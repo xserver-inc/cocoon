@@ -356,6 +356,7 @@ export default function edit( props ) {
           <br />
           <br />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'タイトルを表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayTitle }
             onChange={ ( value ) => setAttributes( { displayTitle: value } ) }
@@ -373,6 +374,7 @@ export default function edit( props ) {
             />
           ) }
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'データ名を表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayLegend }
             onChange={ ( value ) => setAttributes( { displayLegend: value } ) }
@@ -427,11 +429,13 @@ export default function edit( props ) {
             placeholder={ __( '1, 2, 3, 4, 5', THEME_NAME ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '総計を表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayTotal }
             onChange={ ( value ) => setAttributes( { displayTotal: value } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '項目に値を表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayLabelValue }
             onChange={ ( value ) =>
@@ -439,11 +443,13 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '値が最大値を超えるのを許可する', THEME_NAME ) } // ToggleControlを追加
             checked={ allowMaxOver }
             onChange={ ( value ) => setAttributes( { allowMaxOver: value } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'アングルラインを表示する', THEME_NAME ) } // ToggleControlを追加
             checked={ displayAngleLines }
             onChange={ ( value ) =>

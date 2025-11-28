@@ -97,6 +97,7 @@ export default function edit( props ) {
         } ) }
       </PanelBody>
       <ToggleControl
+        __nextHasNoMarginBottom={ true }
         label={ __( '子カテゴリーの内容を含めて表示する', THEME_NAME ) }
         checked={ children }
         onChange={ ( isChecked ) => setAttributes( { children: isChecked } ) }
@@ -210,6 +211,7 @@ export default function edit( props ) {
             min={ 1 }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '全期間集計', THEME_NAME ) }
             checked={ showAllDays }
             onChange={ ( isChecked ) => {
@@ -253,6 +255,7 @@ export default function edit( props ) {
           />
           <Divider />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '横並び表示にする', THEME_NAME ) }
             checked={ horizontal }
             onChange={ ( isChecked ) =>
@@ -260,11 +263,13 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'タイトルを太字にする', THEME_NAME ) }
             checked={ bold }
             onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'ランキング番号を表示する', THEME_NAME ) }
             checked={ rank }
             onChange={ ( isChecked ) => {
@@ -272,6 +277,7 @@ export default function edit( props ) {
             } }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'PV数を表示する', THEME_NAME ) }
             checked={ pv }
             onChange={ ( isChecked ) => {
@@ -279,16 +285,19 @@ export default function edit( props ) {
             } }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'カードに矢印を表示する', THEME_NAME ) }
             checked={ arrow }
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '投稿日・更新日を表示する', THEME_NAME ) }
             checked={ date }
             onChange={ ( isChecked ) => setAttributes( { date: isChecked } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'コメント数を表示する', THEME_NAME ) }
             checked={ comment }
             onChange={ ( isChecked ) =>
@@ -298,6 +307,7 @@ export default function edit( props ) {
         </PanelBody>
         <PanelBody title={ __( 'フィルタ', THEME_NAME ) } initialOpen={ false }>
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '全カテゴリーを表示する', THEME_NAME ) }
             checked={ showAllCats }
             onChange={ ( isChecked ) => {

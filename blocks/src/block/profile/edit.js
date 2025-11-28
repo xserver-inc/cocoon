@@ -88,6 +88,7 @@ export default function edit( props ) {
             onChange={ ( value ) => setAttributes( { label: value } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '画像を円形にする', THEME_NAME ) }
             checked={ isImageCircle }
             onChange={ ( isChecked ) =>

@@ -134,12 +134,14 @@ registerBlockType( 'cocoon-blocks/button-1', {
             />
 
             <ToggleControl
+              __nextHasNoMarginBottom={ true }
               label={ __( '円形にする', THEME_NAME ) }
               checked={ isCircle }
               onChange={ ( value ) => setAttributes( { isCircle: value } ) }
             />
 
             <ToggleControl
+              __nextHasNoMarginBottom={ true }
               label={ __( '光らせる', THEME_NAME ) }
               checked={ isShine }
               onChange={ ( value ) => setAttributes( { isShine: value } ) }

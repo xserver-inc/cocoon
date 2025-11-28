@@ -218,6 +218,7 @@ export default function edit( props ) {
           />
           <Divider />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '横並び表示にする', THEME_NAME ) }
             checked={ horizontal }
             onChange={ ( isChecked ) =>
@@ -225,16 +226,19 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'タイトルを太字にする', THEME_NAME ) }
             checked={ bold }
             onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'カードに矢印を表示する', THEME_NAME ) }
             checked={ arrow }
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '説明文を表示する', THEME_NAME ) }
             checked={ snippet }
             onChange={ ( isChecked ) =>
@@ -242,11 +246,13 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '投稿日・更新日を表示する', THEME_NAME ) }
             checked={ date }
             onChange={ ( isChecked ) => setAttributes( { date: isChecked } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'コメント数を表示する', THEME_NAME ) }
             checked={ comment }
             onChange={ ( isChecked ) =>
@@ -256,6 +262,7 @@ export default function edit( props ) {
         </PanelBody>
         <PanelBody title={ __( 'フィルタ', THEME_NAME ) } initialOpen={ false }>
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '全カテゴリーを表示する', THEME_NAME ) }
             checked={ showAllCats }
             onChange={ ( isChecked ) => {
@@ -267,6 +274,7 @@ export default function edit( props ) {
           { catsTextControl }
           <Divider />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '全タグを表示する', THEME_NAME ) }
             checked={ showAllTags }
             onChange={ ( isChecked ) => {
@@ -276,6 +284,7 @@ export default function edit( props ) {
           { tagsTextControl }
           <Divider />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '固定記事を表示する', THEME_NAME ) }
             checked={ sticky }
             onChange={ ( isChecked ) => setAttributes( { sticky: isChecked } ) }

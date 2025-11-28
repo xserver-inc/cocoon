@@ -26,9 +26,9 @@ export default function edit( props ) {
   let abledDropdownListItemCount = 0;
 
   function getMenuNameFromId( id ) {
-    var name = '';
+    let name = '';
     if ( typeof gbNavMenus !== 'undefined' ) {
-      for ( let menu of gbNavMenus ) {
+      for ( const menu of gbNavMenus ) {
         if ( menu.term_id == id ) {
           name = menu.name;
           break;
@@ -39,7 +39,7 @@ export default function edit( props ) {
   }
 
   function createOptions() {
-    var options = [];
+    const options = [];
     options.push( { value: '-1', label: __( '未選択', THEME_NAME ) } );
     if ( typeof gbNavMenus !== 'undefined' ) {
       gbNavMenus.forEach( ( menu ) => {
@@ -73,21 +73,20 @@ export default function edit( props ) {
     }
 
     return (
-      <div class="cocoon-render-message editor-navicard-message">{ msg }</div>
+      <div className="cocoon-render-message editor-navicard-message">
+        { msg }
+      </div>
     );
   };
 
   const getNavicardContent = () => {
     if ( id == '-1' ) {
       return getNavicardMessage();
-    } else {
-      return (
-        <ServerSideRender block={ props.name } attributes={ attributes } />
-      );
     }
+    return <ServerSideRender block={ props.name } attributes={ attributes } />;
   };
 
-  var options = createOptions();
+  const options = createOptions();
 
   if ( ! isNavicardIdExist ) {
     setAttributes( { id: '-1' } );
@@ -107,7 +106,9 @@ export default function edit( props ) {
                 value: 'default',
               },
               {
-                label: __( 'カードの上下に区切り線を入れる', THEME_NAME ) + __( '（縦並び表示のみ）', THEME_NAME ),
+                label:
+                  __( 'カードの上下に区切り線を入れる', THEME_NAME ) +
+                  __( '（縦並び表示のみ）', THEME_NAME ),
                 value: 'border_partition',
               },
               {
@@ -119,15 +120,19 @@ export default function edit( props ) {
                 value: 'large_thumb',
               },
               {
-                label: __( '大きなサムネイルにタイトルを重ねて表示する', THEME_NAME ),
+                label: __(
+                  '大きなサムネイルにタイトルを重ねて表示する',
+                  THEME_NAME
+                ),
                 value: 'large_thumb_on',
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
           <Divider />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( '横並び表示にする', THEME_NAME ) }
             checked={ horizontal }
             onChange={ ( isChecked ) =>
@@ -135,11 +140,13 @@ export default function edit( props ) {
             }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'タイトルを太字にする', THEME_NAME ) }
             checked={ bold }
             onChange={ ( isChecked ) => setAttributes( { bold: isChecked } ) }
           />
           <ToggleControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'カードに矢印を表示する', THEME_NAME ) }
             checked={ arrow }
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
@@ -161,7 +168,7 @@ export default function edit( props ) {
           }
           options={ options }
           __nextHasNoMarginBottom={ true }
-          __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+          __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
         />
         { getNavicardContent() }
       </div>

@@ -76,7 +76,7 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -106,10 +106,11 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <ToggleControl
+              __nextHasNoMarginBottom={ true }
               label={ __( '円形にする', THEME_NAME ) }
               checked={ isCircle }
               onChange={ ( value ) => setAttributes( { isCircle: value } ) }
