@@ -17,8 +17,8 @@ import {
   PanelBody,
   TextControl,
   RangeControl,
-  ButtonGroup,
-  Button,
+  __experimentalToggleGroupControl as ToggleGroupControl,
+  __experimentalToggleGroupControlOption as ToggleGroupControlOption,
   ToggleControl,
 } from '@wordpress/components';
 import classnames from 'classnames';
@@ -341,18 +341,22 @@ export default function edit( props ) {
             max="24"
             step="1"
           />
-          <p>{ __( '最大値', THEME_NAME ) }</p>
-          <ButtonGroup>
+          <ToggleGroupControl
+            label={ __( '最大値', THEME_NAME ) }
+            isBlock
+            value={ String( maximum ) }
+            onChange={ ( value ) =>
+              handleMaximumChange( parseInt( value, 10 ) )
+            }
+          >
             { [ 5, 10, 100 ].map( ( value ) => (
-              <Button
+              <ToggleGroupControlOption
                 key={ value }
-                isPrimary={ value === maximum }
-                onClick={ () => handleMaximumChange( value ) }
-              >
-                { value }
-              </Button>
+                value={ String( value ) }
+                label={ String( value ) }
+              />
             ) ) }
-          </ButtonGroup>
+          </ToggleGroupControl>
           <br />
           <br />
           <ToggleControl
