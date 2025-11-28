@@ -69,13 +69,16 @@ export default function edit( props ) {
 
   // wp.coreから全カテゴリー情報の取得
   const categoryData = useSelect( ( select ) => {
-    return select( 'core' ).getEntityRecords( 'taxonomy', 'category', { per_page: -1 } );
+    return select( 'core' ).getEntityRecords( 'taxonomy', 'category', {
+      per_page: -1,
+    } );
   } );
 
   // 可変コントロールの定義
   let catsTextControl = (
     <Fragment>
       <TextControl
+        __next40pxDefaultSize={ true }
         label={ __( '表示するカテゴリーをカンマ区切りで指定', THEME_NAME ) }
         value={ cats }
         onChange={ ( value ) => setAttributes( { cats: value } ) }
@@ -106,6 +109,7 @@ export default function edit( props ) {
   let exCatsTextControl = (
     <Fragment>
       <TextControl
+        __next40pxDefaultSize={ true }
         label={ __( '除外するカテゴリーをカンマ区切りで指定', THEME_NAME ) }
         value={ ex_cats }
         onChange={ ( value ) => setAttributes( { ex_cats: value } ) }
@@ -137,53 +141,51 @@ export default function edit( props ) {
     <SelectControl
       label={ __( 'データの集計期間', THEME_NAME ) }
       value={ days }
-      onChange={ ( newValue ) =>
-        setAttributes( { days: newValue } )
-      }
+      onChange={ ( newValue ) => setAttributes( { days: newValue } ) }
       options={ [
         {
           label: __( '全期間', THEME_NAME ),
-          value: "all",
+          value: 'all',
         },
         {
           label: __( '1日', THEME_NAME ),
-          value: "1",
+          value: '1',
         },
         {
           label: __( '3日', THEME_NAME ),
-          value: "3",
+          value: '3',
         },
         {
           label: __( '1週間', THEME_NAME ),
-          value: "7",
+          value: '7',
         },
         {
           label: __( '2週間', THEME_NAME ),
-          value: "14",
+          value: '14',
         },
         {
           label: __( '1ヶ月', THEME_NAME ),
-          value: "30",
+          value: '30',
         },
         {
           label: __( '2ヶ月', THEME_NAME ),
-          value: "60",
+          value: '60',
         },
         {
           label: __( '3ヶ月', THEME_NAME ),
-          value: "90",
+          value: '90',
         },
         {
           label: __( '半年', THEME_NAME ),
-          value: "182",
+          value: '182',
         },
         {
           label: __( '1年', THEME_NAME ),
-          value: "365",
+          value: '365',
         },
       ] }
       __nextHasNoMarginBottom={ true }
-      __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+      __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
     />
   );
   if ( showAllDays ) {
@@ -223,7 +225,9 @@ export default function edit( props ) {
                 value: 'default',
               },
               {
-                label: __( 'カードの上下に区切り線を入れる', THEME_NAME ) + __( '（縦並び表示のみ）', THEME_NAME ),
+                label:
+                  __( 'カードの上下に区切り線を入れる', THEME_NAME ) +
+                  __( '（縦並び表示のみ）', THEME_NAME ),
                 value: 'border_partition',
               },
               {
@@ -235,12 +239,15 @@ export default function edit( props ) {
                 value: 'large_thumb',
               },
               {
-                label: __( '大きなサムネイルにタイトルを重ねて表示する', THEME_NAME ),
+                label: __(
+                  '大きなサムネイルにタイトルを重ねて表示する',
+                  THEME_NAME
+                ),
                 value: 'large_thumb_on',
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
           <Divider />
           <ToggleControl
@@ -275,14 +282,16 @@ export default function edit( props ) {
             onChange={ ( isChecked ) => setAttributes( { arrow: isChecked } ) }
           />
           <ToggleControl
-            label={__('投稿日・更新日を表示する', THEME_NAME)}
-            checked={date}
-            onChange={(isChecked) => setAttributes({ date: isChecked })}
+            label={ __( '投稿日・更新日を表示する', THEME_NAME ) }
+            checked={ date }
+            onChange={ ( isChecked ) => setAttributes( { date: isChecked } ) }
           />
           <ToggleControl
-            label={__('コメント数を表示する', THEME_NAME)}
-            checked={comment}
-            onChange={(isChecked) => setAttributes({ comment: isChecked })}
+            label={ __( 'コメント数を表示する', THEME_NAME ) }
+            checked={ comment }
+            onChange={ ( isChecked ) =>
+              setAttributes( { comment: isChecked } )
+            }
           />
         </PanelBody>
         <PanelBody title={ __( 'フィルタ', THEME_NAME ) } initialOpen={ false }>
@@ -299,6 +308,7 @@ export default function edit( props ) {
           { exCatsTextControl }
           <Divider />
           <TextControl
+            __next40pxDefaultSize={ true }
             label={ __( '投稿タイプ', THEME_NAME ) }
             value={ post_type }
             onChange={ ( newValue ) =>
@@ -306,6 +316,7 @@ export default function edit( props ) {
             }
           />
           <TextControl
+            __next40pxDefaultSize={ true }
             label={ __( '除外投稿(ID)', THEME_NAME ) }
             value={ ex_posts }
             onChange={ ( newValue ) => setAttributes( { ex_posts: newValue } ) }

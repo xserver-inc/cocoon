@@ -34,8 +34,16 @@ import { THEME_NAME, CreateCategoryList } from '../../helpers';
 
 export default function edit( props ) {
   const { attributes, setAttributes, className } = props;
-  const { count, showAllCats, cats, caption, showFrame, showDivider, modified, comment } =
-    attributes;
+  const {
+    count,
+    showAllCats,
+    cats,
+    caption,
+    showFrame,
+    showDivider,
+    modified,
+    comment,
+  } = attributes;
 
   const classes = classnames( 'info-list-box', 'block-box', {
     [ className ]: !! className,
@@ -48,13 +56,16 @@ export default function edit( props ) {
 
   // wp.coreから全カテゴリー情報の取得
   const categoryData = useSelect( ( select ) => {
-    return select( 'core' ).getEntityRecords( 'taxonomy', 'category', { per_page: -1 } );
+    return select( 'core' ).getEntityRecords( 'taxonomy', 'category', {
+      per_page: -1,
+    } );
   } );
 
   // 可変コントロールの定義
   let catsTextControl = (
     <Fragment>
       <TextControl
+        __next40pxDefaultSize={ true }
         label={ __( '表示するカテゴリーをカンマ区切りで指定', THEME_NAME ) }
         value={ cats }
         onChange={ ( value ) => setAttributes( { cats: value } ) }
@@ -86,6 +97,7 @@ export default function edit( props ) {
       <InspectorControls>
         <PanelBody title={ __( '基本設定', THEME_NAME ) } initialOpen={ true }>
           <TextControl
+            __next40pxDefaultSize={ true }
             label={ __( 'キャプション(枠線内表示)', THEME_NAME ) }
             value={ caption }
             onChange={ ( newValue ) => setAttributes( { caption: newValue } ) }

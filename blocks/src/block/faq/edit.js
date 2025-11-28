@@ -130,6 +130,7 @@ export function FAQEdit( props ) {
             label={ __( '質問ラベル', THEME_NAME ) }
           >
             <TextControl
+              __next40pxDefaultSize={ true }
               value={ questionLabel }
               placeholder={ __( 'Q', THEME_NAME ) }
               onChange={ ( value ) =>
@@ -143,6 +144,7 @@ export function FAQEdit( props ) {
             label={ __( '回答ラベル', THEME_NAME ) }
           >
             <TextControl
+              __next40pxDefaultSize={ true }
               value={ answerLabel }
               placeholder={ __( 'A', THEME_NAME ) }
               onChange={ ( value ) => setAttributes( { answerLabel: value } ) }
@@ -153,7 +155,7 @@ export function FAQEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
-          enableAlpha={true}
+          enableAlpha={ true }
           colorSettings={ [
             {
               label: __( '質問ラベル色', THEME_NAME ),
