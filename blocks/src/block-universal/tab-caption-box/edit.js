@@ -110,6 +110,7 @@ export function TabCaptionBoxEdit( props ) {
       <InspectorControls>
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
           <BaseControl
+            __nextHasNoMarginBottom={ true }
             id="tabCaptionBoxIcon"
             label={ __( 'アイコン', THEME_NAME ) }
           >
@@ -135,7 +136,7 @@ export function TabCaptionBoxEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
-          enableAlpha={true}
+          enableAlpha={ true }
           colorSettings={ [
             {
               label: __( 'ボーダー色', THEME_NAME ),

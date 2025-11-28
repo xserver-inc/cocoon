@@ -109,7 +109,11 @@ export function LabelBoxEdit( props ) {
     <Fragment>
       <InspectorControls>
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-          <BaseControl id="labelBoxIcon" label={ __( 'アイコン', THEME_NAME ) }>
+          <BaseControl
+            __nextHasNoMarginBottom={ true }
+            id="labelBoxIcon"
+            label={ __( 'アイコン', THEME_NAME ) }
+          >
             <div className="icon-setting-buttons">
               { times( ICONS.length, ( index ) => {
                 return (
@@ -132,7 +136,7 @@ export function LabelBoxEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
-          enableAlpha={true}
+          enableAlpha={ true }
           colorSettings={ [
             {
               label: __( 'ボーダー色', THEME_NAME ),

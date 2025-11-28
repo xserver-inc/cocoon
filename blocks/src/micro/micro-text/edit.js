@@ -29,7 +29,7 @@ export function MicroTextEdit( props ) {
 
   const classes = classnames( className, {
     // [ 'wp-block' ]: true,
-    [ 'micro-text' ]: true,
+    'micro-text': true,
     [ MICRO_COPY_CLASS ]: true,
     [ type ]: !! type,
     'has-text-color': textColor.color,
@@ -64,10 +64,13 @@ export function MicroTextEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
 
-          <BaseControl label={ __( 'アイコン', THEME_NAME ) }>
+          <BaseControl
+            __nextHasNoMarginBottom={ true }
+            label={ __( 'アイコン', THEME_NAME ) }
+          >
             <div className="icon-setting-buttons">
               { times( ICONS.length, ( index ) => {
                 return (
@@ -90,7 +93,7 @@ export function MicroTextEdit( props ) {
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
-          enableAlpha={true}
+          enableAlpha={ true }
           colorSettings={ [
             {
               label: __( '文字色', THEME_NAME ),

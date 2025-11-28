@@ -147,12 +147,14 @@ export default function edit( props ) {
               </div>
             </BaseControl>
             <TextareaControl
+              __nextHasNoMarginBottom={ true }
               className={ 'cta-textarea-control cta-message-textarea-control' }
               label={ __( 'メッセージ', THEME_NAME ) }
               value={ message }
               onChange={ ( value ) => setAttributes( { message: value } ) }
             />
             <CheckboxControl
+              __nextHasNoMarginBottom={ true }
               className={
                 'cta-checkbox-control cta-paragraph-checkbox-control'
               }

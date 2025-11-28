@@ -16,7 +16,12 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { RichText, InspectorControls, PanelColorSettings, ContrastChecker } from '@wordpress/block-editor';
+import {
+  RichText,
+  InspectorControls,
+  PanelColorSettings,
+  ContrastChecker,
+} from '@wordpress/block-editor';
 const {
   PanelBody,
   SelectControl,
@@ -29,12 +34,12 @@ import { Fragment } from '@wordpress/element';
 //classの取得
 function getClasses( color, size, isCircle, isShine ) {
   const classes = classnames( {
-    [ 'btn-wrap' ]: true,
+    'btn-wrap': true,
     [ `btn-wrap-${ colorValueToSlug( color ) }` ]: !! colorValueToSlug( color ),
     [ size ]: size,
     [ BUTTON_BLOCK ]: true,
-    [ 'btn-wrap-circle' ]: !! isCircle,
-    [ 'btn-wrap-shine' ]: !! isShine,
+    'btn-wrap-circle': !! isCircle,
+    'btn-wrap-shine': !! isShine,
   } );
   return classes;
 }
@@ -90,6 +95,7 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
         <InspectorControls>
           <PanelBody title={ __( '囲みボタン設定', THEME_NAME ) }>
             <TextareaControl
+              __nextHasNoMarginBottom={ true }
               label={ __( 'リンクタグ・ショートコード', THEME_NAME ) }
               value={ tag }
               onChange={ ( value ) => setAttributes( { tag: value } ) }
@@ -114,7 +120,7 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <ToggleControl

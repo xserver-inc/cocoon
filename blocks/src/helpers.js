@@ -21,7 +21,6 @@ import {
 } from '@wordpress/block-editor';
 import { displayShortcut } from '@wordpress/keycodes';
 
-
 const { getComputedStyle } = window;
 
 export const THEME_NAME = 'cocoon';
@@ -35,20 +34,20 @@ export const CLICK_POINT_MSG = __(
 );
 export const BLOCK_SERIES = 'cocoon-blocks';
 
-export const keyColor = gbColors[ 'keyColor' ];
+export const keyColor = gbColors.keyColor;
 
 //日時をもとにしたID作成
 export function getDateID() {
   //Dateオブジェクトを利用
-  var d = new Date();
-  var year = d.getFullYear();
+  const d = new Date();
+  const year = d.getFullYear();
   var month = d.getMonth() + 1;
   var month = month < 10 ? '0' + month : month;
-  var day = d.getDate() < 10 ? '0' + d.getDate() : d.getDate();
-  var hour = d.getHours() < 10 ? '0' + d.getHours() : d.getHours();
-  var min = d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes();
-  var sec = d.getSeconds() < 10 ? '0' + d.getSeconds() : d.getSeconds();
-  var dateID = '' + year + month + day + hour + min + sec;
+  const day = d.getDate() < 10 ? '0' + d.getDate() : d.getDate();
+  const hour = d.getHours() < 10 ? '0' + d.getHours() : d.getHours();
+  const min = d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes();
+  const sec = d.getSeconds() < 10 ? '0' + d.getSeconds() : d.getSeconds();
+  const dateID = '' + year + month + day + hour + min + sec;
   return dateID;
 }
 
@@ -60,13 +59,13 @@ export function getIconClass( icon ) {
 //バルーンclassの取得
 export function getBalloonClasses( id, style, position, iconstyle ) {
   const classes = classnames( {
-    [ 'speech-wrap' ]: true,
+    'speech-wrap': true,
     [ `sb-id-${ id }` ]: !! id,
     [ `sbs-${ style }` ]: !! style,
     [ `sbp-${ position }` ]: !! position,
     [ `sbis-${ iconstyle }` ]: !! iconstyle,
-    [ 'cf' ]: true,
-    [ 'block-box' ]: true,
+    cf: true,
+    'block-box': true,
   } );
   return classes;
 }
@@ -149,7 +148,7 @@ export function htmlEscape( str ) {
 
 //吹き出しが存在しているかどうか
 export function isBalloonExist( speechBalloons ) {
-  var res = false;
+  let res = false;
   if ( speechBalloons && speechBalloons[ 0 ] ) {
     speechBalloons.some( function ( balloon ) {
       if ( balloon.visible == 1 ) {
@@ -834,17 +833,17 @@ export const CODE_LANGUAGES = gbCodeLanguages;
 
 /**
  * カンマ区切りの数字を羅列した文字列に数字を追加する関数
- * @param {string} data 数字を羅列した文字列
- * @param {integer} num 追加する数字
+ * @param {string}  data 数字を羅列した文字列
+ * @param {integer} num  追加する数字
  */
 export function AddNumToData( data, num ) {
   let newData = '';
   if ( data == '' ) {
     newData = String( num );
   } else {
-    let dataArray = data.split( ',' );
+    const dataArray = data.split( ',' );
     let found = false;
-    for ( var i = 0; i < dataArray.length; i++ ) {
+    for ( let i = 0; i < dataArray.length; i++ ) {
       if ( dataArray[ i ] == num ) {
         found = true;
         break;
@@ -860,12 +859,12 @@ export function AddNumToData( data, num ) {
 
 /**
  * カンマ区切りの数字を羅列した文字列から数字を削除する関数
- * @param {string} data 数字を羅列した文字列
- * @param {integer} num 削除する数字
+ * @param {string}  data 数字を羅列した文字列
+ * @param {integer} num  削除する数字
  */
 export function DeleteNumFromData( data, num ) {
-  let dataArray = data.split( ',' );
-  for ( var i = 0; i < dataArray.length; i++ ) {
+  const dataArray = data.split( ',' );
+  for ( let i = 0; i < dataArray.length; i++ ) {
     if ( dataArray[ i ] == num ) {
       dataArray.splice( i, 1 );
     }
@@ -875,13 +874,14 @@ export function DeleteNumFromData( data, num ) {
 
 /**
  * カテゴリ検索用のCheckboxControlを作成する関数
- * @param {boolean} isChecked チェックボックスの選択状態
- * @param {string} label チェックボックスのラベル
- * @param {function} onChange チェック状態変更時のコールバック関数
+ * @param {boolean}  isChecked チェックボックスの選択状態
+ * @param {string}   label     チェックボックスのラベル
+ * @param {Function} onChange  チェック状態変更時のコールバック関数
  */
 export function CreateCategory( isChecked, label, onChange ) {
   return (
     <CheckboxControl
+      __nextHasNoMarginBottom={ true }
       label={ label }
       checked={ isChecked }
       onChange={ ( isChecked ) => {
@@ -893,20 +893,21 @@ export function CreateCategory( isChecked, label, onChange ) {
 
 /**
  * 検索文字列に応じてカテゴリのリストを作成する関数
- * @param {entityRecords}} catData wpcoreから取得したカテゴリ情報一覧
- * @param {string} input 検索文字列
- * @param {string} data 現在のカテゴリ一覧(カンマ区切り文字列)
- * @param {function} updateAttr attributes更新用コールバック関数
+ * @param {entityRecords} }          catData wpcoreから取得したカテゴリ情報一覧
+ * @param                 catData
+ * @param {string}        input      検索文字列
+ * @param {string}        data       現在のカテゴリ一覧(カンマ区切り文字列)
+ * @param {Function}      updateAttr attributes更新用コールバック関数
  */
 export function CreateCategoryList( catData, input, data, updateAttr ) {
   if ( catData == null ) return null;
 
-  let control = [];
+  const control = [];
 
-  let dataArray = data.split( ',' );
+  const dataArray = data.split( ',' );
   catData.forEach( ( record ) => {
     let isChecked = false;
-    for ( var i = 0; i < dataArray.length; i++ ) {
+    for ( let i = 0; i < dataArray.length; i++ ) {
       if ( dataArray[ i ] == String( record.id ) ) {
         isChecked = true;
         break;
@@ -918,7 +919,7 @@ export function CreateCategoryList( catData, input, data, updateAttr ) {
     }
     control.push(
       CreateCategory( isChecked, record.name, function ( isChecked ) {
-        var newData = '';
+        let newData = '';
         if ( isChecked == true ) {
           newData = AddNumToData( data, String( record.id ) );
         } else {
@@ -929,44 +930,43 @@ export function CreateCategoryList( catData, input, data, updateAttr ) {
     );
   } );
 
-  return (
-    <div className="category-checkbox-list">
-      {control}
-    </div>
-  );
+  return <div className="category-checkbox-list">{ control }</div>;
 }
 
-export function hexToRgba(hex, alpha = 1) {
+export function hexToRgba( hex, alpha = 1 ) {
   // 先頭の#を取り除く
-  hex = hex.replace('#', '');
+  hex = hex.replace( '#', '' );
 
   // 3桁のカラーコードを6桁に変換
-  if (hex.length === 3) {
-    hex = hex.split('').map(function(h) {
-      return h + h;
-    }).join('');
+  if ( hex.length === 3 ) {
+    hex = hex
+      .split( '' )
+      .map( function ( h ) {
+        return h + h;
+      } )
+      .join( '' );
   }
 
   // 16進数を10進数に変換してRGBの形式に
-  var r = parseInt(hex.substring(0, 2), 16);
-  var g = parseInt(hex.substring(2, 4), 16);
-  var b = parseInt(hex.substring(4, 6), 16);
+  const r = parseInt( hex.substring( 0, 2 ), 16 );
+  const g = parseInt( hex.substring( 2, 4 ), 16 );
+  const b = parseInt( hex.substring( 4, 6 ), 16 );
 
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  return `rgba(${ r }, ${ g }, ${ b }, ${ alpha })`;
 }
 
 // キャンバス用のユニークなIDを取得する
 export function getCanvasId() {
-  return `canvas-${Math.random().toString(36).substr(2, 9)}`;
+  return `canvas-${ Math.random().toString( 36 ).substr( 2, 9 ) }`;
 }
 
 // 配列の値の総計
-export function arrayValueTotal(array) {
-  return array.reduce((accumulator, currentValue) => {
+export function arrayValueTotal( array ) {
+  return array.reduce( ( accumulator, currentValue ) => {
     // 空文字をチェックし、空なら0に置き換える
-    const value = isNaN(currentValue) ? 0 : Number(currentValue);
+    const value = isNaN( currentValue ) ? 0 : Number( currentValue );
     return accumulator + value;
-  }, 0);
+  }, 0 );
 }
 
 // // 配列の値の総計
@@ -975,12 +975,13 @@ export function arrayValueTotal(array) {
 // }
 
 // フォントの高さを取得
-export function getChartJsFontHeight(fontSize) {
+export function getChartJsFontHeight( fontSize ) {
   // 一時的な要素を作成
-  let element = document.createElement('span');
+  const element = document.createElement( 'span' );
 
   // 要素のスタイルを設定
-  element.style.fontFamily = "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif'";
+  element.style.fontFamily =
+    "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif'";
   element.style.fontSize = fontSize;
   element.style.position = 'absolute';
   element.style.visibility = 'hidden';
@@ -990,14 +991,13 @@ export function getChartJsFontHeight(fontSize) {
   element.innerText = 'Hg'; // 「H」と「g」は高い文字と低い文字の代表例
 
   // DOM に追加
-  document.body.appendChild(element);
+  document.body.appendChild( element );
 
   // 高さを取得
-  let height = element.offsetHeight;
+  const height = element.offsetHeight;
 
   // 要素をDOMから削除
-  document.body.removeChild(element);
+  document.body.removeChild( element );
 
   return height;
 }
-

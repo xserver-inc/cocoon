@@ -87,7 +87,10 @@ export function IconListEdit( props ) {
     <Fragment>
       <InspectorControls>
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
-          <BaseControl label={ __( 'アイコン', THEME_NAME ) }>
+          <BaseControl
+            __nextHasNoMarginBottom={ true }
+            label={ __( 'アイコン', THEME_NAME ) }
+          >
             <div className="icon-setting-buttons">
               { times( LIST_ICONS.length, ( index ) => {
                 return (
@@ -109,7 +112,7 @@ export function IconListEdit( props ) {
         </PanelBody>
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
-          enableAlpha={true}
+          enableAlpha={ true }
           colorSettings={ [
             {
               label: __( 'アイコン色', THEME_NAME ),

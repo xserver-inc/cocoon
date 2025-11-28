@@ -10,7 +10,11 @@ import { THEME_NAME, BLOCK_CLASS, ICONS, getIconClass } from '../../helpers';
 const { times } = lodash;
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
+import {
+  InnerBlocks,
+  RichText,
+  InspectorControls,
+} from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, Button } = wp.components;
 import { Fragment } from '@wordpress/element';
 const CAPTION_BOX_CLASS = 'label-box';
@@ -78,10 +82,13 @@ registerBlockType( 'cocoon-blocks/label-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
-            <BaseControl label={ __( 'アイコン', THEME_NAME ) }>
+            <BaseControl
+              __nextHasNoMarginBottom={ true }
+              label={ __( 'アイコン', THEME_NAME ) }
+            >
               <div className="icon-setting-buttons">
                 { times( ICONS.length, ( index ) => {
                   return (

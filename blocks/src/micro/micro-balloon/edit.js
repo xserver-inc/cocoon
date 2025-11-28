@@ -100,7 +100,10 @@ export function MicroBalloonEdit( props ) {
             onChange={ ( value ) => setAttributes( { isCircle: value } ) }
           />
 
-          <BaseControl label={ __( 'アイコン', THEME_NAME ) }>
+          <BaseControl
+            __nextHasNoMarginBottom={ true }
+            label={ __( 'アイコン', THEME_NAME ) }
+          >
             <div className="icon-setting-buttons">
               { times( ICONS.length, ( index ) => {
                 return (

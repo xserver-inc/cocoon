@@ -126,6 +126,7 @@ export function FAQEdit( props ) {
       <InspectorControls>
         <PanelBody title={ __( '設定', THEME_NAME ) }>
           <BaseControl
+            __nextHasNoMarginBottom={ true }
             id="questionLabel"
             label={ __( '質問ラベル', THEME_NAME ) }
           >
@@ -141,6 +142,7 @@ export function FAQEdit( props ) {
             />
           </BaseControl>
           <BaseControl
+            __nextHasNoMarginBottom={ true }
             id="answerLabel"
             label={ __( '回答ラベル', THEME_NAME ) }
           >

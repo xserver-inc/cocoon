@@ -66,6 +66,7 @@ registerBlockType( 'cocoon-blocks/button-wrap', {
         <InspectorControls>
           <PanelBody title={ __( '囲みボタン設定', THEME_NAME ) }>
             <TextareaControl
+              __nextHasNoMarginBottom={ true }
               label={ __( 'リンクタグ・ショートコード', THEME_NAME ) }
               value={ tag }
               onChange={ ( value ) => setAttributes( { tag: value } ) }
@@ -150,7 +151,7 @@ registerBlockType( 'cocoon-blocks/button-wrap', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -172,7 +173,7 @@ registerBlockType( 'cocoon-blocks/button-wrap', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>

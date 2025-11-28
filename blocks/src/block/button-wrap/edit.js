@@ -82,6 +82,7 @@ export function ButtonWrapEdit( props ) {
       <InspectorControls>
         <PanelBody title={ __( '囲みボタン設定', THEME_NAME ) }>
           <TextareaControl
+            __nextHasNoMarginBottom={ true }
             label={ __( 'リンクタグ・ショートコード', THEME_NAME ) }
             value={ tag }
             onChange={ ( value ) => setAttributes( { tag: value } ) }
