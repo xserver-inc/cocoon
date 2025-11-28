@@ -64,8 +64,8 @@ export function TimelineEdit( props ) {
   // インターブロックの数が変わったらitemsを更新
   useEffect( () => {
     if (
-      ( items !== innerBlockIds.length )
-      && ( innerBlockIds.length > 0 ) // タイムラインアイテムが0になることはないので除外
+      items !== innerBlockIds.length &&
+      innerBlockIds.length > 0 // タイムラインアイテムが0になることはないので除外
     ) {
       setAttributes( { items: innerBlockIds.length } );
     }
@@ -146,12 +146,14 @@ export function TimelineEdit( props ) {
             onChange={ ( value ) => setAttributes( { items: value } ) }
             min={ 1 }
             max={ 50 }
+            __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
           />
         </PanelBody>
 
         <PanelColorSettings
           title={ __( '色設定', THEME_NAME ) }
-          enableAlpha={true}
+          enableAlpha={ true }
           colorSettings={ [
             {
               label: __( 'ポイント色', THEME_NAME ),

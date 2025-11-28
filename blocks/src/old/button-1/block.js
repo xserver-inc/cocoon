@@ -88,6 +88,7 @@ registerBlockType( 'cocoon-blocks/button-1', {
           <PanelBody title={ __( 'ボタン設定', THEME_NAME ) }>
             <TextControl
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }
               label={ __( 'URL', THEME_NAME ) }
               value={ url }
               onChange={ ( value ) => setAttributes( { url: value } ) }

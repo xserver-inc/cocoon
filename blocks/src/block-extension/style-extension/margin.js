@@ -46,7 +46,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
       const { setAttributes, isSelected, attributes } = props;
       const { className, extraBottomMargin } = attributes;
 
-      var title = '';
+      let title = '';
       if ( props.name.includes( BLOCK_SERIES ) ) {
         title = __( 'ブロック下余白', THEME_NAME );
       } else {
@@ -54,7 +54,7 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
       }
 
       function createLabel() {
-        var labelStr = '';
+        let labelStr = '';
         if ( extraBottomMargin === '' ) {
           labelStr += __( '未設定', THEME_NAME );
         } else {
@@ -69,9 +69,8 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
       function createValue() {
         if ( extraBottomMargin === '' ) {
           return 0;
-        } else {
-          return Number( extraBottomMargin );
         }
+        return Number( extraBottomMargin );
       }
 
       return (
@@ -81,15 +80,15 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
             <InspectorControls>
               <PanelBody title={ title } initialOpen={ false }>
                 {
-                  <div class="__clearBtn">
+                  <div className="__clearBtn">
                     <button
                       type="button"
-                      class="components-button is-small"
+                      className="components-button is-small"
                       onClick={ () =>
                         setAttributes( { extraBottomMargin: '' } )
                       }
                     >
-                      <span class="dashicons dashicons-editor-removeformatting"></span>
+                      <span className="dashicons dashicons-editor-removeformatting"></span>
                       { __( '余白をクリア', THEME_NAME ) }
                     </button>
                   </div>
@@ -107,7 +106,12 @@ const addCustomEdit = createHigherOrderComponent( ( BlockEdit ) => {
                   resetFallbackValue={ 0 }
                   initialPosition={ 0 }
                   marks={ marks }
-                  help={ __( '※WordPress標準のマージンボトム設定よりこちらが優先されます。', THEME_NAME ) }
+                  help={ __(
+                    '※WordPress標準のマージンボトム設定よりこちらが優先されます。',
+                    THEME_NAME
+                  ) }
+                  __nextHasNoMarginBottom={ true }
+                  __next40pxDefaultSize={ true }
                 />
               </PanelBody>
             </InspectorControls>
@@ -141,7 +145,7 @@ const applyAttributesToBlock = createHigherOrderComponent(
               [ className ]: !! className,
               [ 'is-style-bottom-margin-' + extraBottomMargin + 'em' ]:
                 !! extraBottomMargin,
-              [ 'has-bottom-margin' ]: extraBottomMargin,
+              'has-bottom-margin': extraBottomMargin,
             } ) }
           />
         );
@@ -168,7 +172,7 @@ const addCustomSave = ( props, blockType, attributes ) => {
       [ className ]: !! className,
       [ 'is-style-bottom-margin-' + extraBottomMargin + 'em' ]:
         !! extraBottomMargin,
-      [ 'has-bottom-margin' ]: extraBottomMargin,
+      'has-bottom-margin': extraBottomMargin,
     } );
   }
 

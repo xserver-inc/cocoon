@@ -22,6 +22,8 @@ export default function WidthPanel( { selectedWidth, setAttributes } ) {
         isBlock
         value={ selectedWidth }
         onChange={ ( newValue ) => handleChange( newValue ) }
+        __nextHasNoMarginBottom={ true }
+        __next40pxDefaultSize={ true }
       >
         { [ '25', '50', '75', '100' ].map( ( widthValue ) => (
           <ToggleGroupControlOption

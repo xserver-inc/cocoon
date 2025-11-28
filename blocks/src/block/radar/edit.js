@@ -332,6 +332,8 @@ export default function edit( props ) {
             min={ MIN_SIZE }
             max={ MAX_SIZE }
             step="10"
+            __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
           />
           <RangeControl
             label={ __( 'フォントサイズ', THEME_NAME ) }
@@ -340,6 +342,8 @@ export default function edit( props ) {
             min="8"
             max="24"
             step="1"
+            __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
           />
           <ToggleGroupControl
             label={ __( '最大値', THEME_NAME ) }
@@ -348,6 +352,8 @@ export default function edit( props ) {
             onChange={ ( value ) =>
               handleMaximumChange( parseInt( value, 10 ) )
             }
+            __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
           >
             { [ 5, 10, 100 ].map( ( value ) => (
               <ToggleGroupControlOption
@@ -368,6 +374,7 @@ export default function edit( props ) {
           { displayTitle && (
             <TextControl
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }
               label={ __( 'タイトル', THEME_NAME ) }
               value={ title }
               onChange={ ( value ) => setAttributes( { title: value } ) }
@@ -386,6 +393,7 @@ export default function edit( props ) {
           { displayLegend && (
             <TextControl
               __nextHasNoMarginBottom={ true }
+              __next40pxDefaultSize={ true }
               label={ __( 'データ名', THEME_NAME ) }
               value={ legendText }
               onChange={ ( value ) => setAttributes( { legendText: value } ) }
@@ -394,6 +402,7 @@ export default function edit( props ) {
           ) }
           <TextControl
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
             label={
               __( '項目', THEME_NAME ) +
               __( '（カンマ区切りで何項目でも入力可）', THEME_NAME )
@@ -411,6 +420,7 @@ export default function edit( props ) {
           />
           <TextControl
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
             label={
               __( '値', THEME_NAME ) +
               __( '（カンマ区切りで項目の数だけ入力可）', THEME_NAME )

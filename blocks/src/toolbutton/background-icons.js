@@ -15,7 +15,7 @@ import {
   Slot,
   ToolbarGroup,
   ToolbarButton,
-  DropdownMenu,
+  ToolbarDropdownMenu,
 } from '@wordpress/components';
 import { displayShortcut } from '@wordpress/keycodes';
 import { orderBy } from 'lodash';
@@ -60,11 +60,9 @@ registerFormatType( FORMAT_TYPE_NAME, {
               { ( fills ) => {
                 return (
                   fills.length !== 0 && (
-                    <DropdownMenu
+                    <ToolbarDropdownMenu
                       icon="marker"
                       label={ __( '背景アイコン', THEME_NAME ) }
-                      hasArrowIndicator={ true }
-                      position="bottom left"
                       controls={ orderBy(
                         fills.map( ( [ { props } ] ) => props ),
                         'title'

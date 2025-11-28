@@ -83,6 +83,7 @@ export default function edit( props ) {
         <PanelBody>
           <TextControl
             __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
             label={ __( 'ラベル', THEME_NAME ) }
             value={ label }
             onChange={ ( value ) => setAttributes( { label: value } ) }

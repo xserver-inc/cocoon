@@ -209,6 +209,8 @@ export default function edit( props ) {
             value={ count }
             onChange={ ( newValue ) => setAttributes( { count: newValue } ) }
             min={ 1 }
+            __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
           />
           <ToggleControl
             __nextHasNoMarginBottom={ true }

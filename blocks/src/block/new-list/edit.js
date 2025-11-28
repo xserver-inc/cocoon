@@ -138,6 +138,8 @@ export default function edit( props ) {
             onChange={ ( newValue ) => setAttributes( { count: newValue } ) }
             min={ 1 }
             max={ 100 }
+            __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
           />
           <SelectControl
             label={ __( '表示タイプ', THEME_NAME ) }
@@ -215,6 +217,8 @@ export default function edit( props ) {
             value={ offset }
             onChange={ ( newValue ) => setAttributes( { offset: newValue } ) }
             min={ 0 }
+            __nextHasNoMarginBottom={ true }
+            __next40pxDefaultSize={ true }
           />
           <Divider />
           <ToggleControl
