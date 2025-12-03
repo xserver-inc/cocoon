@@ -57,6 +57,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
       }
       // パターン展開（同期パターン）
       $page_content = expand_synced_patterns($page_content);
+      $page_content = do_shortcode($page_content);
       $pages[] = $page_content;
     }
   }
