@@ -4013,8 +4013,16 @@ endif;
 // 本文の文字数を取得
 if ( !function_exists( 'get_post_content_word_count' ) ):
 function get_post_content_word_count($content) {
+  // HTMLタグを削除
   $text = strip_tags($content);
-  $text = str_replace(["\r", "\n"], '', $text); // 改行を完全に削除
+
+  // HTMLエンティティを実体化
+  $text = html_entity_decode($text, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+  // 改行を完全に削除
+  $text = str_replace(["\r", "\n"], '', $text);
+
+  // 文字数を取得
   return mb_strlen($text);
 }
 endif;
