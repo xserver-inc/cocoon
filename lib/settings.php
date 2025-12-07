@@ -415,6 +415,8 @@ remove_action( 'wp_head', 'rest_output_link_wp_head' );
 
 //WordPress3.5で廃止されたリンクマネージャを表示する
 add_filter('pre_option_link_manager_enabled','__return_true');
+// WordPress 6.9で変更されたブロックスタイルの個別読み込みを無効化（CSS縮小時などに不具合が出るため）
+add_filter( 'should_load_separate_core_block_assets', '__return_false' );
 
 //はてな oEmbed対応
 wp_oembed_add_provider('https://*', 'https://hatenablog.com/oembed');
