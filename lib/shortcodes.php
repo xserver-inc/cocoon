@@ -829,7 +829,14 @@ function get_rss_feed_tag( $atts ) {
       $rss_items = $rss->get_items( 0, $maxitems );
       foreach ( $rss_items as $item ) :
         $first_img = '';
-        if ( preg_match( '/<img.+?src=[\'"]([^\'"]+?)[\'"].*?>/msi', $item->get_content(), $matches )) $first_img = $matches[1];
+        // get_content() が null を返す場合があるため、確実に文字列にしてから利用
+        $item_content = $item->get_content();
+        if ( !is_string( $item_content ) ) {
+          $item_content = '';
+        }
+        if ( preg_match( '/<img.+?src=[\'"]([^\'"]+?)[\'"].*?>/msi', $item_content, $matches )) {
+          $first_img = $matches[1];
+        }
         if ( !empty( $first_img ) ) :
           $feed_img = esc_attr( $first_img );
         else:
@@ -839,7 +846,8 @@ function get_rss_feed_tag( $atts ) {
         $feed_title = $item->get_title() ?? '';
         $feed_title = str_replace(["\r\n", "\r", "\n"], '', $feed_title);
         $feed_date = $item->get_date(get_site_date_format());
-        $feed_text = get_content_excerpt(strip_tags($item->get_content()), get_entry_card_excerpt_max_length());
+        // 上で文字列化した $item_content を再利用
+        $feed_text = get_content_excerpt(strip_tags($item_content), get_entry_card_excerpt_max_length());
 
         $feed_content .= '<a href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'"'.get_rel_by_target($target).'>';
         $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
