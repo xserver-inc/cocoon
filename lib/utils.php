@@ -3102,8 +3102,8 @@ endif;
 //本文を読むのにかかる時間
 if ( !function_exists( 'get_time_to_content_read' ) ):
 function get_time_to_content_read($content){
-  $count = mb_strlen(strip_tags($content));
-  if ($count == 0) {
+  $count = get_post_content_word_count($content);
+  if ($count === 0) {
     return 0;
   }
   $minutes = floor($count / 600) + 1;
@@ -4010,3 +4010,11 @@ if ( !function_exists( 'is_google_analytics_script_gtag_js' ) ):
 function is_google_analytics_script_gtag_js(){}
 endif;
 
+// 本文の文字数を取得
+if ( !function_exists( 'get_post_content_word_count' ) ):
+function get_post_content_word_count($content) {
+  $text = strip_tags($content);
+  $text = str_replace(["\r", "\n"], '', $text); // 改行を完全に削除
+  return mb_strlen($text);
+}
+endif;

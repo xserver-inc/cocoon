@@ -87,8 +87,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           cocoon_template_part('tmp/categories-tags');
         } ?>
 
-        <?php if (is_content_read_time_visible() && is_the_page_read_time_visible() && !is_plugin_fourm_page()): ?>
-          <div class="read-time"><?php echo '<span class="fa fa-hourglass-half hourglass-half-icon" aria-hidden="true"></span>'.sprintf(__( 'この記事は<span class="bold">約%s分</span>で読めます。', THEME_NAME ), get_time_to_content_read(get_the_content())); ?></div>
+        <?php if (is_content_read_time_visible() && is_the_page_read_time_visible() && !is_plugin_fourm_page()):
+          // ページ分割前のすべての本文（生コンテンツ）を取得
+          $expanded_content = get_post_field( 'post_content', get_the_ID() );
+          ?><div class="read-time"><?php
+              echo '<span class="fa fa-hourglass-half hourglass-half-icon" aria-hidden="true"></span>'.
+                sprintf(
+                  __( 'この記事は<span class="bold">約%s分</span>で読めます。', THEME_NAME ),
+                  get_time_to_content_read( $expanded_content )
+                );
+            ?></div>
         <?php endif; ?>
 
         <?php //PR表記（大）の出力

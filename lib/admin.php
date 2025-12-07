@@ -184,11 +184,8 @@ function customize_admin_add_column($column_name, $post_id) {
   if ( is_admin_list_word_count_visible() && ('word-count' === $column_name) ) {
     //テーマで設定されているサムネイルを利用する場合
     $post = get_post($post_id);
-    //_v($post);
     $title_count = mb_strlen(strip_tags($post->post_title));
-    $content_count = mb_strlen(strip_tags($post->post_content));
-    $digit = max(array(strlen($title_count), strlen($content_count)));
-    //var_dump($digit);
+    $content_count = get_post_content_word_count($post->post_content);
     $thum =
     '<div class="word-count-wrap">'.
       '<div class="word-count-title">'.
@@ -212,13 +209,6 @@ function customize_admin_add_column($column_name, $post_id) {
 
   //PV表示
   if ( is_admin_list_pv_visible() && ('pv' === $column_name) ) {
-    //テーマで設定されているサムネイルを利用する場合
-    $post = get_post($post_id);
-    //_v($post);
-    $title_count = mb_strlen(strip_tags($post->post_title));
-    $content_count = mb_strlen(strip_tags($post->post_content));
-    $digit = max(array(strlen($title_count), strlen($content_count)));
-    //var_dump($digit);
     $thum =
     '<div class="pv-wrap">'.
       '<div class="pv-title">'.
