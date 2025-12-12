@@ -598,14 +598,14 @@ endif;
 
 //全期間のアクセス数取得
 if ( !function_exists( 'get_all_pv' ) ):
-function get_all_pv(){
+function get_all_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_all_jetpack_access_count();
+      $res = get_all_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_all_access_count());
+      $res = intval(get_all_access_count($post_id));
       break;
   }
   return $res;
