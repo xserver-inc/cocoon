@@ -553,14 +553,14 @@ endif;
 
 //今日のアクセス数取得
 if ( !function_exists( 'get_todays_pv' ) ):
-function get_todays_pv(){
+function get_todays_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_todays_jetpack_access_count();
+      $res = get_todays_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_todays_access_count());
+      $res = intval(get_todays_access_count($post_id));
       break;
   }
   return $res;
@@ -569,14 +569,14 @@ endif;
 
 //直近7日間のアクセス数取得
 if ( !function_exists( 'get_last_7days_pv' ) ):
-function get_last_7days_pv(){
+function get_last_7days_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_last_7days_jetpack_access_count();
+      $res = get_last_7days_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_last_7days_access_count());
+      $res = intval(get_last_7days_access_count($post_id));
       break;
   }
   return $res;
@@ -585,14 +585,14 @@ endif;
 
 //直近30日間のアクセス数取得
 if ( !function_exists( 'get_last_30days_pv' ) ):
-function get_last_30days_pv(){
+function get_last_30days_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_last_30days_jetpack_access_count();
+      $res = get_last_30days_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_last_30days_access_count());
+      $res = intval(get_last_30days_access_count($post_id));
       break;
   }
   return $res;
@@ -601,14 +601,14 @@ endif;
 
 //全期間のアクセス数取得
 if ( !function_exists( 'get_all_pv' ) ):
-function get_all_pv(){
+function get_all_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_all_jetpack_access_count();
+      $res = get_all_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_all_access_count());
+      $res = intval(get_all_access_count($post_id));
       break;
   }
   return $res;
