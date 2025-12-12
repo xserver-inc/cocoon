@@ -154,8 +154,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'pagetitle_only' => __( 'ページタイトル', THEME_NAME ),
-              'pagetitle_sitename' => __( 'ページタイトル', THEME_NAME ).get_title_separator_caption().__( 'サイト名', THEME_NAME ),
-              'sitename_pagetitle' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'ページタイトル', THEME_NAME ),
+              'pagetitle_sitename' => __( 'ページタイトル', THEME_NAME ).' '.get_title_separator_caption().' '.__( 'サイト名', THEME_NAME ),
+              'sitename_pagetitle' => __( 'サイト名', THEME_NAME ).' '.get_title_separator_caption().' '.__( 'ページタイトル', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SINGULAR_PAGE_TITLE_FORMAT, $options, get_singular_page_title_format());
             generate_tips_tag(__( '投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
@@ -256,8 +256,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'category_only' => __( 'ページタイトル', THEME_NAME ),
-              'category_sitename' => __( 'ページタイトル', THEME_NAME ).get_title_separator_caption().__( 'サイト名', THEME_NAME ),
-              'sitename_category' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'ページタイトル', THEME_NAME ),
+              'category_sitename' => __( 'ページタイトル', THEME_NAME ).' '.get_title_separator_caption().' '.__( 'サイト名', THEME_NAME ),
+              'sitename_category' => __( 'サイト名', THEME_NAME ).' '.get_title_separator_caption().' '.__( 'ページタイトル', THEME_NAME ),
             );
             generate_radiobox_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, $options, get_category_page_title_format());
             generate_tips_tag(__( 'カテゴリー・タグページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));

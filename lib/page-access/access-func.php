@@ -334,28 +334,33 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
-  //$post_type = is_page() ? 'page' : 'post';
-  $author_query = null;
+
+  // LIMIT句の組み立て（-1 の場合は全件取得のため LIMIT を付けない）
+  $limit = intval($limit);
+  $limit_query = '';
+  if ( $limit > 0 ) {
+    $limit_query = " LIMIT {$limit}\n";
+  }
+
+  $author_query = '';
   if ($author) {
     $author_query = ' AND post_author = '.esc_sql($author);
   }
-  // $snippet_column = '';
-  // if ($snippet) {
-  //   $snippet_column = 'post_content, ';
-  // }
+
   $query = "
     SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
     ) AS {$ranks_posts}
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
     WHERE post_status = 'publish' AND
-          post_type = '{$post_type}'".
-          $author_query."
+          post_type = '{$post_type}'" .
+          $author_query . "
     ORDER BY sum_count DESC, post_date DESC
-    LIMIT $limit
   ";
-  //_v($query);
-  //var_dump($query);
+
+  // 必要に応じて LIMIT 句を後ろに付け足す
+  $query .= $limit_query;
+
   return $query;
 }
 endif;
@@ -467,7 +472,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
         GROUP BY {$joined_table}.post_id
         ORDER BY sum_count DESC, post_id
     ";
-    //_v($query);
+
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
   } else {
@@ -481,8 +486,6 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
   }
   $records = $wpdb->get_results( $query );
-  // var_dump($query);
-  // _v($records);
 
   if (is_access_count_cache_enable() && $records) {
     set_transient( $transient_id, $records, 60 * get_access_count_cache_interval() );
@@ -550,14 +553,14 @@ endif;
 
 //今日のアクセス数取得
 if ( !function_exists( 'get_todays_pv' ) ):
-function get_todays_pv(){
+function get_todays_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_todays_jetpack_access_count();
+      $res = get_todays_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_todays_access_count());
+      $res = intval(get_todays_access_count($post_id));
       break;
   }
   return $res;
@@ -566,14 +569,14 @@ endif;
 
 //直近7日間のアクセス数取得
 if ( !function_exists( 'get_last_7days_pv' ) ):
-function get_last_7days_pv(){
+function get_last_7days_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_last_7days_jetpack_access_count();
+      $res = get_last_7days_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_last_7days_access_count());
+      $res = intval(get_last_7days_access_count($post_id));
       break;
   }
   return $res;
@@ -582,14 +585,14 @@ endif;
 
 //直近30日間のアクセス数取得
 if ( !function_exists( 'get_last_30days_pv' ) ):
-function get_last_30days_pv(){
+function get_last_30days_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_last_30days_jetpack_access_count();
+      $res = get_last_30days_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_last_30days_access_count());
+      $res = intval(get_last_30days_access_count($post_id));
       break;
   }
   return $res;
@@ -598,14 +601,14 @@ endif;
 
 //全期間のアクセス数取得
 if ( !function_exists( 'get_all_pv' ) ):
-function get_all_pv(){
+function get_all_pv($post_id = null){
   $res = 0;
   switch (get_admin_panel_pv_type()) {
     case 'jetpack':
-      $res = get_all_jetpack_access_count();
+      $res = get_all_jetpack_access_count($post_id);
       break;
     default:
-      $res = intval(get_all_access_count());
+      $res = intval(get_all_access_count($post_id));
       break;
   }
   return $res;

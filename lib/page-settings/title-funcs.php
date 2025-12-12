@@ -50,7 +50,7 @@ if ( !function_exists( 'get_front_page_title_caption' ) ):
 function get_front_page_title_caption(){
   switch (get_front_page_title_format()) {
     case 'sitename_tagline':
-      $title = get_bloginfo('name').get_title_separator_caption().get_bloginfo('description');
+      $title = get_bloginfo('name').' '.get_title_separator_caption().' '.get_bloginfo('description');
       break;
     case 'free':
       $title = esc_html( get_free_front_page_title() );
@@ -124,10 +124,10 @@ function get_singular_title_caption($post){
   }
   switch (get_singular_page_title_format()) {
     case 'pagetitle_sitename':
-      $title = $post->post_title.get_title_separator_caption().$site_name;
+      $title = $post->post_title.' '.get_title_separator_caption().' '.$site_name;
       break;
     case 'sitename_pagetitle':
-      $title = $site_name.get_title_separator_caption().$post->post_title;
+      $title = $site_name.' '.get_title_separator_caption().' '.$post->post_title;
       break;
     default:
       $title = $post->post_title;
@@ -170,10 +170,10 @@ function get_category_title_caption($category){
   }
   switch (get_category_page_title_format()) {
     case 'category_sitename':
-      $title = $category->name.get_title_separator_caption().$site_name;
+      $title = $category->name.' '.get_title_separator_caption().' '.$site_name;
       break;
     case 'sitename_category':
-      $title = $site_name.get_title_separator_caption().$category->name;
+      $title = $site_name.' '.get_title_separator_caption().' '.$category->name;
       break;
     default:
       $title = $category->name;
