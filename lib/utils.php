@@ -2063,10 +2063,21 @@ function get_current_db_date(){
 }
 endif;
 
-//アクセステーブル用の現在の日時文字列（$days日前）
+//アクセステーブル用の現在の日時文字列（$days日分の期間開始日）
 if ( !function_exists( 'get_current_db_date_before' ) ):
 function get_current_db_date_before($days){
-  return date_i18n('Y-m-d', strtotime(current_time('Y-m-d').' -'.$days.' day'));
+  // popular_list などの「days=◯日分」の指定に合わせて、
+  // 「今日を含めて $days 日分」を取得できるようにする。
+  // 例）days=1 → 今日のみ, days=7 → 今日＋過去6日間（7日分）
+  $days = intval($days);
+
+  // 1日以下は「今日」スタート
+  if ( $days <= 1 ) {
+    return get_current_db_date();
+  }
+
+  // 2日以上は「$days - 1 日前」を開始日とする
+  return date_i18n('Y-m-d', strtotime(current_time('Y-m-d').' -'.($days - 1).' day'));
 }
 endif;
 
