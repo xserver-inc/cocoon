@@ -2978,7 +2978,6 @@ body.wp-admin {
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
-  width: 100%;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .e-card {
   font-size: var(--cocoon-default-text-size);
@@ -8621,6 +8620,7 @@ body.wp-admin {
 .admin-settings .demo .recommended .navi-entry-cards a {
   padding: 0;
   margin: 0;
+  width: 100%;
   border-radius: 0;
 }
 .admin-settings .demo .recommended figure {
@@ -11559,7 +11559,6 @@ body.wp-admin {
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
-  width: 100%;
 }
 .admin-settings .demo .widget-entry-cards.card-large-image .e-card {
   font-size: var(--cocoon-default-text-size);
@@ -17202,6 +17201,7 @@ body.wp-admin {
 .admin-settings .demo .recommended .navi-entry-cards a {
   padding: 0;
   margin: 0;
+  width: 100%;
   border-radius: 0;
 }
 .admin-settings .demo .recommended figure {
