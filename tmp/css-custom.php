@@ -444,9 +444,10 @@ if ($color = get_notice_area_text_color()): ?>
 }
 <?php endif ?>
 <?php //アクセスカウント取得用スタイル
-if (!is_admin() && is_singular() && is_access_count_enable()): ?>
+if (!is_admin() && is_singular() && is_access_count_enable()):
+  $timestamp = time(); ?>
 body::after{
-  content: url("<?php echo get_cocoon_template_directory_uri(); ?>/lib/analytics/access.php?post_id=<?php echo get_the_ID(); ?>&post_type=<?php echo get_accesses_post_type(); ?>") !important;
+  content: url("<?php echo get_cocoon_template_directory_uri(); ?>/lib/analytics/access.php?post_id=<?php echo get_the_ID(); ?>&post_type=<?php echo get_accesses_post_type(); ?>&t=<?php echo $timestamp; ?>") !important;
   visibility: hidden;
   position: absolute;
   bottom: 0;
