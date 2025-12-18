@@ -823,7 +823,21 @@ function get_rss_feed_tag( $atts ) {
 
   //キャッシュが存在しない場合URLから取得
   if (!$feed_contents) {
+    // WordPress 6.9対応: SimplePieの内部キャッシュを無効化するためのコールバック関数
+    $feed_options_callback = function($feed) {
+      // SimplePieの内部キャッシュを無効化（独自のtransientキャッシュを使用するため）
+      $feed->enable_cache(false);
+      // 日付順ソートを無効化（RSS配信側の順序を尊重するため）
+      $feed->enable_order_by_date(false);
+    };
+    // フィード取得前にアクションを追加
+    add_action('wp_feed_options', $feed_options_callback);
+
     $rss = fetch_feed( $feed_url );
+
+    // フィード取得後にアクションを削除（他のフィード取得に影響しないようにする）
+    remove_action('wp_feed_options', $feed_options_callback);
+
     if ( !is_wp_error( $rss ) ) {
       $maxitems = $rss->get_item_quantity( $feed_count );
       $rss_items = $rss->get_items( 0, $maxitems );
@@ -869,7 +883,7 @@ function get_rss_feed_tag( $atts ) {
         $feed_content .= '</a>';
       endforeach;
     } else {
-      $feed_content = '<p>RSSフィードを取得できません</p>';
+      $feed_content = '<p>' . __( 'RSSフィードを取得できません', THEME_NAME ) . '</p>';
     }
 
     $atts = array(
