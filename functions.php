@@ -183,10 +183,26 @@ function get_archive_chapter_title(){
     $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>' . get_the_time('Y');
   } elseif (is_author()) { // 著者ページ
     $chapter_title .= '<span class="fa fa-user" aria-hidden="true"></span>' . esc_html(get_the_author());
+
+  } elseif ( is_post_type_archive() ) { // カスタム投稿タイプアーカイブ
+    $post_type = get_query_var('post_type');
+    // get_query_var('post_type') が配列を返す可能性があるため、文字列に変換
+    if ( is_array( $post_type ) ) {
+      // 配列の場合は先頭要素を取得して文字列に変換（get_post_type_object()は文字列を期待するため）
+      $post_type = reset( $post_type );
+    }
+    // 投稿タイプオブジェクトを取得（ラベル名などの情報を取得するため）
+    $pt_obj = get_post_type_object($post_type);
+    if ( $pt_obj ) {
+      $chapter_title .= '<span class="fa fa-folder-open" aria-hidden="true"></span>' . esc_html( $pt_obj->labels->name );
+    } else {
+      $chapter_title .= __( 'Archives', THEME_NAME );
+    }
+
   } elseif (is_paged()) { // 2ページ目以降
-    $chapter_title .= 'Archives';
+    $chapter_title .= __( 'Archives', THEME_NAME );
   } else { // その他
-    $chapter_title .= 'Archives';
+    $chapter_title .= __( 'Archives', THEME_NAME );
   }
 
   return apply_filters('get_archive_chapter_title', $chapter_title);
