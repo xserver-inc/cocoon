@@ -45,8 +45,17 @@ foreach ($domains as $domain): ?>
 <link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>" crossorigin>
 <?php endif; ?>
-<?php if (get_header_background_image_url()): ?>
-<link rel="preload" as="image" href="<?php echo get_header_background_image_url() ?>" fetchpriority="high" crossorigin>
+<?php // ヘッダー背景画像のpreload
+$header_image_url = get_header_background_image_url();
+if ($header_image_url):
+  // ヘッダー画像のURLがサイトドメインと同じかどうかを判定
+  $header_image_domain = get_domain_name($header_image_url);
+  $site_domain = get_the_site_domain();
+  $is_same_domain = ($header_image_domain === $site_domain);
+  // サイトドメインと同じ場合はcrossoriginを削除、異なる場合は追加
+  $crossorigin_attr = $is_same_domain ? '' : ' crossorigin';
+?>
+<link rel="preload" as="image" href="<?php echo esc_url($header_image_url); ?>" fetchpriority="high"<?php echo $crossorigin_attr; ?>>
 <?php endif; ?>
 <?php //WordPressが出力するヘッダー情報
 wp_head();
