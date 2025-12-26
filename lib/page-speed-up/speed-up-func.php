@@ -172,6 +172,8 @@ cms.quantserve.com
 secure.gravatar.com
 cdn.syndication.twimg.com
 cdn.jsdelivr.net
+cdn.mathjax.org
+assets.pinterest.com
 images-fe.ssl-images-amazon.com
 completion.amazon.com
 m.media-amazon.com
