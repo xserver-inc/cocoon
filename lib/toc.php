@@ -100,6 +100,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
 
   if ($is_multi_page_toc_visible) {
     // 分割ページごとに見出しを取得
+    $toc_counter = 0;
     $page_num = 1;
     $past_page_num = 1;
     foreach ($pages as $page_content) {
@@ -108,7 +109,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
           // 違うページになったらカウンターをリセットする
           if ($page_num !== $past_page_num) {
             $past_page_num = $page_num;
-            $counter = 0;
+            $toc_counter = 0;
           }
 
           // 目次の深さ取得
@@ -116,11 +117,11 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
 
           // $set_depth より深い見出しは目次に追加しない
           if ($now_depth <= $set_depth) {
-            $counter++;
+            $toc_counter++;
             $headers[] = array(
               'tag'  => $m[1],
               'text' => $m[2],
-              'id'   => 'toc' . $counter,
+              'id'   => 'toc' . $toc_counter,
               'page' => $page_num,
             );
           }
@@ -252,9 +253,8 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   </div>';
 
   global $_TOC_AVAILABLE_H_COUNT;
-  // 表示条件は本文中の全見出し数で判定（深さ制限で除外される見出しも含む）
-  $_TOC_AVAILABLE_H_COUNT = $header_count;
-  if (!is_toc_display_count_available($header_count)){
+  $_TOC_AVAILABLE_H_COUNT = $counter;
+  if (!is_toc_display_count_available($counter)){
     return ;
   }
 
