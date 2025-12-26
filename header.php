@@ -51,7 +51,11 @@ if ($header_image_url):
   // ヘッダー画像のURLがサイトドメインと同じかどうかを判定
   $header_image_domain = get_domain_name($header_image_url);
   $site_domain = get_the_site_domain();
-  $is_same_domain = ($header_image_domain === $site_domain);
+  // 両方のドメインが取得できて、かつ同じ場合のみtrue
+  $is_same_domain = false;
+  if ($header_image_domain && $site_domain) {
+    $is_same_domain = ($header_image_domain === $site_domain);
+  }
   // サイトドメインと同じ場合はcrossoriginを削除、異なる場合は追加
   $crossorigin_attr = $is_same_domain ? '' : ' crossorigin';
 ?>

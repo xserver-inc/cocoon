@@ -1587,7 +1587,8 @@ endif;
 if ( !function_exists( 'get_domain_name' ) ):
 function get_domain_name($url){
   if (empty($url)) return;
-  return parse_url($url, PHP_URL_HOST);
+  $host = wp_parse_url($url, PHP_URL_HOST);
+  return $host ? $host : null;
 }
 endif;
 
@@ -2607,7 +2608,7 @@ endif;
 if ( !function_exists( 'get_url_params' ) ):
 function get_url_params($url){
   $url = ampersand_urldecode($url);
-  $parse_url = parse_url($url);//URLを配列に分解
+  $parse_url = wp_parse_url($url);//URLを配列に分解
   if (isset($parse_url['query'])) {
     $query = $parse_url['query'];//URLの中からクエリ部分を取り出す
     parse_str($query, $arr);//クエリを配列にする
