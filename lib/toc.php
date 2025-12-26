@@ -100,7 +100,6 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
 
   if ($is_multi_page_toc_visible) {
     // 分割ページごとに見出しを取得
-    $toc_counter = 0;
     $page_num = 1;
     $past_page_num = 1;
     foreach ($pages as $page_content) {
@@ -109,7 +108,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
           // 違うページになったらカウンターをリセットする
           if ($page_num !== $past_page_num) {
             $past_page_num = $page_num;
-            $toc_counter = 0;
+            $counter = 0;
           }
 
           // 目次の深さ取得
@@ -117,11 +116,11 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
 
           // $set_depth より深い見出しは目次に追加しない
           if ($now_depth <= $set_depth) {
-            $toc_counter++;
+            $counter++;
             $headers[] = array(
               'tag'  => $m[1],
               'text' => $m[2],
-              'id'   => 'toc' . $toc_counter,
+              'id'   => 'toc' . $counter,
               'page' => $page_num,
             );
           }
