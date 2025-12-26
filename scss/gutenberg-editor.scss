@@ -986,8 +986,13 @@ body::before,
   margin-right: auto;
   margin-left: auto;
 }
+// WordPress 6.8以前？のマイクロバルーンのCSSの調整
 .wp-block[data-align=right] .micro-balloon{
   margin-left: auto;
+  margin-right: 0;
+}
+// WordPress 6.9以降？のマイクロバルーンのCSSの調整
+.micro-balloon.alignright{
   margin-right: 0;
 }
 

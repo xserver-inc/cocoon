@@ -5764,6 +5764,10 @@ body::before,
   margin-right: 0;
 }
 
+.micro-balloon.alignright {
+  margin-right: 0;
+}
+
 .wp-block[data-align=wide], .wp-block[data-align=full] {
   margin-left: auto !important;
   margin-right: auto !important;
