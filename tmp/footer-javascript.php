@@ -57,23 +57,27 @@ if (!is_amp()): ?>
       })(jQuery);
       </script>
     <?php else: // httpの際?>
-      <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+      <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js" defer onload="initClipboard()"></script>
       <script>
-      (function($){
-        const selector = '.copy-button';//clipboardで使う要素を指定
-        $(selector).click(function(event){
-          //クリック動作をキャンセル
-          event.preventDefault();
-        });
+      function initClipboard() {
+        if (typeof Clipboard !== 'undefined' && typeof jQuery !== 'undefined') {
+          (function($){
+            const selector = '.copy-button';//clipboardで使う要素を指定
+            $(selector).click(function(event){
+              //クリック動作をキャンセル
+              event.preventDefault();
+            });
 
-        //クリップボード動作
-        const clipboard = new Clipboard(selector);
-        clipboard.on('success', function(e) {
-          $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+            //クリップボード動作
+            const clipboard = new Clipboard(selector);
+            clipboard.on('success', function(e) {
+              $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
 
-          e.clearSelection();
-        });
-      })(jQuery);
+              e.clearSelection();
+            });
+          })(jQuery);
+        }
+      }
       </script>
     <?php endif; ?>
 
@@ -246,17 +250,21 @@ if (!is_amp()): ?>
   global $_IS_SWIPER_ENABLE;
   if ($_IS_SWIPER_ENABLE): ?>
   <link rel='stylesheet' id='swiper-style-css' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer onload="initSwiper()"></script>
   <script>
-  const mySwiper = new Swiper('.is-list-horizontal.swiper', {
-    // Optional parameters
-    slidesPerView: 'auto',
-    spaceBetween: 4,
-    navigation: {
-      prevEl: '.is-list-horizontal .swiper-button-prev',
-      nextEl: '.is-list-horizontal .swiper-button-next',
-    },
-  });
+  function initSwiper() {
+    if (typeof Swiper !== 'undefined') {
+      const mySwiper = new Swiper('.is-list-horizontal.swiper', {
+        // Optional parameters
+        slidesPerView: 'auto',
+        spaceBetween: 4,
+        navigation: {
+          prevEl: '.is-list-horizontal .swiper-button-prev',
+          nextEl: '.is-list-horizontal .swiper-button-next',
+        },
+      });
+    }
+  }
   </script>
   <?php endif; //Swiper ?>
 
