@@ -37,13 +37,13 @@ foreach ($domains as $domain): ?>
 <?php endforeach; ?>
 
 <!-- Preload -->
-<link rel="preload" as="font" type="font/woff" href="<?php echo FONT_ICOMOON_WOFF_URL; ?>" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="<?php echo FONT_ICOMOON_WOFF_URL; ?>" crossorigin="anonymous">
 <?php if (is_site_icon_font_font_awesome_4()): ?>
-<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_4_WOFF2_URL; ?>" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_4_WOFF2_URL; ?>" crossorigin="anonymous">
 <?php else: ?>
-<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_BRANDS_WOFF2_URL; ?>" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_BRANDS_WOFF2_URL; ?>" crossorigin="anonymous">
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>" crossorigin="anonymous">
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>" crossorigin="anonymous">
 <?php endif; ?>
 <?php // ヘッダー背景画像のpreload
 $header_image_url = get_header_background_image_url();
@@ -57,7 +57,7 @@ if ($header_image_url):
     $is_same_domain = ($header_image_domain === $site_domain);
   }
   // サイトドメインと同じ場合はcrossoriginを削除、異なる場合は追加
-  $crossorigin_attr = $is_same_domain ? '' : ' crossorigin';
+  $crossorigin_attr = $is_same_domain ? '' : ' crossorigin="anonymous"';
 ?>
 <link rel="preload" as="image" href="<?php echo esc_url($header_image_url); ?>" fetchpriority="high"<?php echo $crossorigin_attr; ?>>
 <?php endif; ?>
