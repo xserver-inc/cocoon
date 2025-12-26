@@ -200,7 +200,6 @@ class Skin_Silk_Functions {
     add_action('admin_menu', [$this, 'reusable_menu']);
     add_filter('image_size_names_choose', [$this, 'image_size']);
     add_action('init', [$this, 'block_pattern']);
-    add_filter('render_block_core/heading', [$this, 'blocks_heading'], 10, 2);
     add_filter('render_block_core/group', [$this, 'blocks_group'], 10, 2);
     add_filter('render_block_cocoon-blocks/toggle-box-1', [$this, 'blocks_toggle'], 10, 2);
     add_filter('render_block_cocoon-blocks/faq', [$this, 'blocks_faq'], 10, 2);
@@ -1071,13 +1070,6 @@ class Skin_Silk_Functions {
     if (function_exists('register_block_pattern_category')) {
       register_block_pattern_category('silk', ['label' => 'Cocoonスキン「SILK」']);
     }
-  }
-
-  //見出しブロック
-  public function blocks_heading($content, $block) {
-    $level   = array_key_exists('level', $block['attrs']) ? 'h'.strval($block['attrs']['level']) : 'h2';
-    $content = preg_replace('/<'.$level.'(.*?)>(.*?)<\/'.$level.'>/', '<'.$level.'$1><span>$2</span></'.$level.'>', $content);
-    return $content;
   }
 
   //グループブロック
