@@ -31,7 +31,7 @@ if(!function_exists('puny_http_build_url')){
     //置き換えるキー
     $key=array('user','pass','port','path','query','fragment');
     //urlをパースする
-    $new_url=parse_url($url);
+    $new_url=wp_parse_url($url);
     //スキーマとホストが設定されていれば置き換える
     if(isset($parts['scheme'])) {
       $new_url['scheme']=$parts['scheme'];
@@ -81,7 +81,7 @@ include 'punycode-obj.php';
 ///////////////////////////////////////
 function convert_punycode($url, $is_encode = true){
   if (empty($url)) return;
-  $url_parts = parse_url($url);
+  $url_parts = wp_parse_url($url);
   $Punycode = new Punycode();
   $url_host = null;
   if (isset($url_parts['host'])) {

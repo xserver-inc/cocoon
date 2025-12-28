@@ -127,7 +127,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     $default_args = apply_filters('youtube_embed_default_args', $default_args);
 
     //元のURL情報の取得
-    $urls = parse_url($url);
+    $urls = wp_parse_url($url);
     $query = isset($urls['query']) ? $urls['query'] : '';
     parse_str($query, $args);
     //デフォルトパラメータと結合
