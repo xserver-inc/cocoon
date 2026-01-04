@@ -333,6 +333,36 @@ class SkinRaku {
     }
 }
 
-add_action( 'after_setup_theme', function (){
-  $skin_raku = new SkinRaku();
-} );
+// スキン初期化関数（二重読み込み防止用）
+if ( !function_exists( 'cocoon_skin_raku_add_fadein_init' ) ):
+function cocoon_skin_raku_add_fadein_init(){
+  // 既にインスタンスが存在する場合は何もしない
+  if (isset($GLOBALS['skin_raku_add_fadein_instance']) && ($GLOBALS['skin_raku_add_fadein_instance'] instanceof SkinRaku)) {
+    return;
+  }
+  $GLOBALS['skin_raku_add_fadein_instance'] = new SkinRaku();
+}
+endif;
+
+// 管理画面ではなるべく早く読み込まれるフックを使用
+// 公開ページではafter_setup_themeフックを使用
+if (is_admin()) {
+  // 管理画面の場合
+  if (did_action('admin_init')) {
+    // admin_initが既に実行済みの場合は即座に初期化
+    cocoon_skin_raku_add_fadein_init();
+  } else {
+    // admin_initフックで初期化
+    add_action('admin_init', 'cocoon_skin_raku_add_fadein_init');
+  }
+} else {
+  // 公開ページの場合
+  if (did_action('after_setup_theme')) {
+    // after_setup_themeが既に実行済みの場合は即座に初期化
+    // （保存後にcocoon_skin_settings()で読み込まれる場合に対応）
+    cocoon_skin_raku_add_fadein_init();
+  } else {
+    // after_setup_themeフックで初期化
+    add_action('after_setup_theme', 'cocoon_skin_raku_add_fadein_init');
+  }
+}

@@ -101,6 +101,12 @@ class SkinRakuColorChanging {
          管理画面用のみの処理
         ----------------------------------------------------*/
         add_filter('admin_footer_text', [$this, 'custom_admin_footer']);
+        /*----------------------------------------------------
+         カラーピッカーのスクリプトを読み込む
+        ----------------------------------------------------*/
+        // if (is_admin()) {
+        //     add_action('admin_enqueue_scripts', [$this, 'enqueue_color_picker_scripts']);
+        // }
     }
     /*----------------------------------------------------
      css追加
@@ -178,6 +184,32 @@ class SkinRakuColorChanging {
         return $content;
     }
     /*----------------------------------------------------
+     出力関数をキャプチャして改行を削除
+    ----------------------------------------------------*/
+    private function capture_and_clean($callback) {
+        ob_start();
+        call_user_func($callback);
+        $content = ob_get_clean();
+        return str_replace(["\n", "\r"], "", $content);
+    }
+    /*----------------------------------------------------
+     カラーピッカーのスクリプトを読み込む
+    ----------------------------------------------------*/
+    // public function enqueue_color_picker_scripts() {
+    //     // Cocoon設定（スキン）画面でのみ読み込む
+    //     if (!function_exists('is_admin_php_page') || !is_admin_php_page()) {
+    //         return;
+    //     }
+    //     // 現在選択されているスキンが当スキンでない場合は何もしない
+    //     $current_skin_url = get_skin_url();
+    //     if (!is_string($current_skin_url) || strpos($current_skin_url, 'raku-color-changing') === false) {
+    //         return;
+    //     }
+    //     wp_enqueue_script('wp-color-picker');
+    //     wp_enqueue_style('wp-color-picker');
+    // }
+
+    /*----------------------------------------------------
      管理画面用のみの処理
     ----------------------------------------------------*/
     public function custom_admin_footer() {
@@ -189,12 +221,12 @@ class SkinRakuColorChanging {
      「スキンカラー」用HTMLを作成
     ----------------------------------------------------*/
     tr_setting += '<tr>';
-    tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('スキンカラー', THEME_NAME) ); ?> <?php echo str_replace("\n", "", get_select_color_tip_tag()); ?></th>';
+    tr_setting += '<th scope="row"><?php ob_start(); generate_label_tag(OP_SKIN_URL, __('スキンカラー', THEME_NAME) ); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?> <?php echo str_replace(["\n", "\r"], "", get_select_color_tip_tag()); ?></th>';
     tr_setting += '<td><ul>';
-    tr_setting += '<li><?php echo str_replace("\n", "", $this->get_color_picker_tag(self::COLOR1,  $this->color['color1'], '')); ?></li>';
-    tr_setting += '<li><?php echo str_replace("\n", "", $this->get_color_picker_tag(self::COLOR2,  $this->color['color2'], '')); ?></li>';
-    tr_setting += '<li><?php echo str_replace("\n", "", $this->get_color_picker_tag(self::COLOR3,  $this->color['color3'], '')); ?></li>';
-    tr_setting += '<li><?php echo str_replace("\n", "", $this->get_color_picker_tag(self::COLOR4,  $this->color['color4'], '')); ?></li>';
+    tr_setting += '<li><?php echo str_replace(["\n", "\r"], "", $this->get_color_picker_tag(self::COLOR1,  $this->color['color1'], '')); ?></li>';
+    tr_setting += '<li><?php echo str_replace(["\n", "\r"], "", $this->get_color_picker_tag(self::COLOR2,  $this->color['color2'], '')); ?></li>';
+    tr_setting += '<li><?php echo str_replace(["\n", "\r"], "", $this->get_color_picker_tag(self::COLOR3,  $this->color['color3'], '')); ?></li>';
+    tr_setting += '<li><?php echo str_replace(["\n", "\r"], "", $this->get_color_picker_tag(self::COLOR4,  $this->color['color4'], '')); ?></li>';
     tr_setting += '</ul>';
     tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('4色 選択してください。', THEME_NAME); ?></p>';
     tr_setting += '</td></tr>';
@@ -202,13 +234,13 @@ class SkinRakuColorChanging {
      「背景アニメーション」用HTMLを作成
     ----------------------------------------------------*/
     tr_setting += '<tr>';
-    tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>', THEME_NAME) ); ?></th>';
+    tr_setting += '<th scope="row"><?php ob_start(); generate_label_tag(OP_SKIN_URL, __('背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>', THEME_NAME) ); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?></th>';
     tr_setting += '<td>';
     tr_setting += '<p><?php _e('【一通り変化するまでの時間】', THEME_NAME); ?></p>';
-    tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::DURATION, $this->duration, "", 1, 120)); ?><?php _e('秒（1～120秒）', THEME_NAME); ?></p>';
+    tr_setting += '<p><?php echo str_replace(["\n", "\r"], "", $this->get_generate_number_tag(self::DURATION, $this->duration, "", 1, 120)); ?><?php _e('秒（1～120秒）', THEME_NAME); ?></p>';
     tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('時間を短くする程「早く」、長くする程「ゆっくり」変化します。', THEME_NAME); ?></p>';
     tr_setting += '<p><?php _e('【不透明度】', THEME_NAME); ?></p>';
-    tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::OPACITY, $this->opacity['bg'])); ?>%（1～100%）</p>';
+    tr_setting += '<p><?php echo str_replace(["\n", "\r"], "", $this->get_generate_number_tag(self::OPACITY, $this->opacity['bg'])); ?>%（1～100%）</p>';
     tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('数字を小さくする程、透明になります。', THEME_NAME); ?>';
     tr_setting += '<br><?php _e('透明にする程、【Cocoon設定 > 全体】の「サイト背景色」や「サイト背景画像」がより透けて見えます。', THEME_NAME); ?>';
     tr_setting += '<br><?php _e('設定していない場合は単純に色が薄くなります。', THEME_NAME); ?></p>';
@@ -217,7 +249,7 @@ class SkinRakuColorChanging {
     「記事内のタイトルに色を適応させるかどうか」用HTMLを作成
     ----------------------------------------------------*/
     tr_setting += '<tr>';
-    tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('記事内のタイトル<br><small>（選択した4色を順に適用する）</small>', THEME_NAME) ); ?></th>';
+    tr_setting += '<th scope="row"><?php ob_start(); generate_label_tag(OP_SKIN_URL, __('記事内のタイトル<br><small>（選択した4色を順に適用する）</small>', THEME_NAME) ); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?></th>';
     tr_setting += '<td><ul>';
     <?php
     $on_off_article_title = [
@@ -225,21 +257,21 @@ class SkinRakuColorChanging {
         self::ARTICLE_TITLE.'2' => __('適用しない' , THEME_NAME),
     ];
     foreach ($on_off_article_title as $id => $val) : ?>
-    tr_setting += '<li><input type="radio" name="<?=self::ARTICLE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php the_checkbox_checked($val, $this->article_title); ?>><label for="<?=$id?>"><?=$val?></label></li>';
+    tr_setting += '<li><input type="radio" name="<?=self::ARTICLE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php ob_start(); the_checkbox_checked($val, $this->article_title); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?>><label for="<?=$id?>"><?=$val?></label></li>';
     <?php endforeach; ?>
     tr_setting += '</ul>';
     tr_setting += '<p><?php _e('【不透明度（背景と線の色）】', THEME_NAME); ?></p>';
-    tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::ARTICLE_OPACITY, $this->opacity['article'])); ?>%（1～100%）</p>';
+    tr_setting += '<p><?php echo str_replace(["\n", "\r"], "", $this->get_generate_number_tag(self::ARTICLE_OPACITY, $this->opacity['article'])); ?>%（1～100%）</p>';
     tr_setting += '<p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('数字を小さくする程、色が薄くなります。', THEME_NAME); ?>';
     tr_setting += '<p><?php _e('【不透明度（H3タイトルの左側の線の色）】', THEME_NAME); ?></p>';
-    tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::ARTICLE_H3_OPACITY, $this->opacity['article_h3'])); ?>%（1～100%）</p>';
+    tr_setting += '<p><?php echo str_replace(["\n", "\r"], "", $this->get_generate_number_tag(self::ARTICLE_H3_OPACITY, $this->opacity['article_h3'])); ?>%（1～100%）</p>';
     tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span><?php _e(' H3タイトルの左側の線だけ色が濃い方が綺麗なため、個別に設定できます。', THEME_NAME); ?>';
     tr_setting += '</td></tr>';
     /*----------------------------------------------------
      「サイドバーのタイトルに色を適応させるかどうか」用HTMLを作成
     ----------------------------------------------------*/
     tr_setting += '<tr>';
-    tr_setting += '<th scope="row"><?php generate_label_tag(OP_SKIN_URL, __('サイドバー内のタイトル<br><small>（選択した4色を順に適用する）</small>', THEME_NAME) ); ?></th>';
+    tr_setting += '<th scope="row"><?php ob_start(); generate_label_tag(OP_SKIN_URL, __('サイドバー内のタイトル<br><small>（選択した4色を順に適用する）</small>', THEME_NAME) ); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?></th>';
     tr_setting += '<td><ul>';
     <?php
     $on_off_side_title = [
@@ -247,24 +279,76 @@ class SkinRakuColorChanging {
         self::SIDE_TITLE.'2' => __('適用しない' , THEME_NAME),
     ];
     foreach ($on_off_side_title as $id => $val) : ?>
-    tr_setting += '<li><input type="radio" name="<?=self::SIDE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php the_checkbox_checked($val, $this->side_title); ?>><label for="<?=$id?>"><?=$val?></label></li>';
+    tr_setting += '<li><input type="radio" name="<?=self::SIDE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php ob_start(); the_checkbox_checked($val, $this->side_title); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?>><label for="<?=$id?>"><?=$val?></label></li>';
     <?php endforeach; ?>
     tr_setting += '</ul>';
     tr_setting += '<p><?php _e('【不透明度（背景色）】', THEME_NAME); ?></p>';
-    tr_setting += '<p><?php echo str_replace("\n", "", $this->get_generate_number_tag(self::SIDE_OPACITY, $this->opacity['side'])); ?>%（1～100%）</p>';
+    tr_setting += '<p><?php echo str_replace(["\n", "\r"], "", $this->get_generate_number_tag(self::SIDE_OPACITY, $this->opacity['side'])); ?>%（1～100%）</p>';
     tr_setting += '<p><span class="fa fa-info-circle" aria-hidden="true"></span> <?php _e('数字を小さくする程、色が薄くなります。', THEME_NAME); ?>';
     tr_setting += '</td></tr>';
     /*----------------------------------------------------
      追加
     ----------------------------------------------------*/
-    const skin_url_list = $('#skin .form-table [name="include_skin_type"]');
-    skin_url_list.closest('tr').after(tr_setting);
+    $(document).ready(function() {
+        const skin_url_list = $('#skin .form-table [name="skin_url"]');
+        // 要素が存在しない場合は処理を中断
+        if (skin_url_list.length === 0) {
+            return;
+        }
+        skin_url_list.closest('tr').after(tr_setting);
+        /*----------------------------------------------------
+         カラーピッカーの初期化
+        ----------------------------------------------------*/
+        // 追加したHTML内のカラーピッカーinput要素を取得
+        const colorInputs = $('#skin .form-table input[type="text"][name="<?=self::COLOR1?>"], #skin .form-table input[type="text"][name="<?=self::COLOR2?>"], #skin .form-table input[type="text"][name="<?=self::COLOR3?>"], #skin .form-table input[type="text"][name="<?=self::COLOR4?>"]');
+        if (colorInputs.length > 0 && typeof $.fn.wpColorPicker !== 'undefined') {
+            colorInputs.each(function() {
+                $(this).wpColorPicker({
+                    defaultColor: false,
+                    change: function(event, ui){},
+                    clear: function() {},
+                    hide: true,
+                    palettes: true
+                });
+            });
+        }
+    });
 })(jQuery);
 </script>
     <?php
     }
 }
 
-add_action( 'after_setup_theme', function (){
-  $skin_raku = new SkinRakuColorChanging();
-} );
+// スキン初期化関数（二重読み込み防止用）
+if ( !function_exists( 'cocoon_skin_raku_color_changing_init' ) ):
+function cocoon_skin_raku_color_changing_init(){
+  // 既にインスタンスが存在する場合は何もしない
+  if (isset($GLOBALS['skin_raku_color_changing_instance']) && ($GLOBALS['skin_raku_color_changing_instance'] instanceof SkinRakuColorChanging)) {
+    return;
+  }
+  $GLOBALS['skin_raku_color_changing_instance'] = new SkinRakuColorChanging();
+}
+endif;
+
+// 管理画面ではなるべく早く読み込まれるフックを使用
+// 公開ページではafter_setup_themeフックを使用
+if (is_admin()) {
+  // 管理画面の場合
+  if (did_action('admin_init')) {
+    // admin_initが既に実行済みの場合は即座に初期化
+    cocoon_skin_raku_color_changing_init();
+  } else {
+    // admin_initフックで初期化
+    add_action('admin_init', 'cocoon_skin_raku_color_changing_init');
+  }
+} else {
+  // 公開ページの場合
+  if (did_action('after_setup_theme')) {
+    // after_setup_themeが既に実行済みの場合は即座に初期化
+    // （保存後にcocoon_skin_settings()で読み込まれる場合に対応）
+    cocoon_skin_raku_color_changing_init();
+  } else {
+    // after_setup_themeフックで初期化
+    add_action('after_setup_theme', 'cocoon_skin_raku_color_changing_init');
+  }
+}
