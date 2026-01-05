@@ -54,3 +54,15 @@ html.lity-active,
 body.baguetteBox-open {
   overflow-y: hidden;
 }
+
+// stickyが有効な場合、ヘッダーの位置オフセットを考慮
+.body .is-position-sticky {
+  top: calc(var(--wp-admin--admin-bar--position-offset, 0px) + var(--cocoon--header-container--position-offset, 0px));
+}
+
+// 600px以下の場合、ヘッダーメニューの位置を0にする（WordPressのアドミンバーは600px以下だと固定されないため）
+@media screen and (max-width: 600px) {
+  .body .mobile-header-menu-buttons {
+    top: 0;
+  }
+}

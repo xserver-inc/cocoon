@@ -99,6 +99,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --cocoon-box-border-color: #47585c;
   --cocoon-sns-color: var(--cocoon-text-color);
   --card-ratio: 16/9;
+  --cocoon--header-container--position-offset: 0px;
 }
 
 .faw::before {
@@ -8046,7 +8047,7 @@ https://codepen.io/nxworld/pen/oLdoWb
     align-items: stretch;
   }
   .mobile-header-menu-buttons {
-    top: 0;
+    top: var(--wp-admin--admin-bar--height, 0px);
     bottom: auto;
     justify-content: space-between;
     min-width: 46px;

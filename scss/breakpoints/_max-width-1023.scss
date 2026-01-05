@@ -92,7 +92,7 @@ div.sidebar {
 }
 
 .mobile-header-menu-buttons {
-  top: 0;
+  top: var(--wp-admin--admin-bar--height, 0px);
   bottom: auto;
   justify-content: space-between;
   min-width: 46px;

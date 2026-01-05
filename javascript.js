@@ -8,32 +8,32 @@
 // JavaScriptコード
 /////////////////////////////////
 
-(function ($) {
+( function ( $ ) {
   /////////////////////////////////
   //TOPへ戻るボタン
   /////////////////////////////////
   var prevScrollTop = -1;
-  var $window = $(window);
-  $window.scroll(function () {
+  var $window = $( window );
+  $window.scroll( function () {
     //最上部から現在位置までの距離を取得して、変数[scrollTop]に格納
     var scrollTop = $window.scrollTop();
     var threashold = 600;
-    var s1 = (prevScrollTop > threashold);
-    var s2 = (scrollTop > threashold);
+    var s1 = prevScrollTop > threashold;
+    var s2 = scrollTop > threashold;
 
     // スレッショルドを跨いだ時のみ処理をする
-    if (s1 ^ s2) {
-      if (s2) {
+    if ( s1 ^ s2 ) {
+      if ( s2 ) {
         // トップへ戻るボタンが見えている時
-        $('.body').addClass('go-to-top-visible');
+        $( '.body' ).addClass( 'go-to-top-visible' );
 
         // //[.go-to-to]をゆっくりフェードインする
         // $('.go-to-top').fadeIn('slow');
       } else {
         //トップへ戻る間だけ追加したクラスを除去
-        $('.go-to-top-common').removeClass('go-to-top-up');
+        $( '.go-to-top-common' ).removeClass( 'go-to-top-up' );
         // トップへ戻るボタンが見えていない時
-        $('.body').removeClass('go-to-top-visible');
+        $( '.body' ).removeClass( 'go-to-top-visible' );
 
         // //それ以外だったらフェードアウトする
         // $('.go-to-top').fadeOut('slow');
@@ -41,200 +41,293 @@
     }
 
     prevScrollTop = scrollTop;
-  });
+  } );
 
   //ボタン(.go-to-top-common)のクリックイベント
-  $('.go-to-top-common').click(function () {
+  $( '.go-to-top-common' ).click( function () {
     //トップへ戻る間だけクラスを追加
-    $(this).addClass('go-to-top-up');
+    $( this ).addClass( 'go-to-top-up' );
     //ページトップへ移動する
-    $('body,html').animate({
-      scrollTop: 1
-    }, 800);
-  });
+    $( 'body,html' ).animate(
+      {
+        scrollTop: 1,
+      },
+      800
+    );
+  } );
   //ボタン(.go-to-toc-common)のクリックイベント
-  $('.go-to-toc-common').click(function () {
+  $( '.go-to-toc-common' ).click( function () {
     //目次へ移動する
-    $('body,html').animate({
-      scrollTop: $('.entry-content .toc').offset().top
-    }, 800);
-  });
+    $( 'body,html' ).animate(
+      {
+        scrollTop: $( '.entry-content .toc' ).offset().top,
+      },
+      800
+    );
+  } );
 
   //検索ボタンクリックでフォーカスを入力エリアに移す
-  $('#search-menu-input').change(function (e) {
-    var searchEdit = $('#search-menu-content .search-edit').first();
-    if (e.target.checked) {
+  $( '#search-menu-input' ).change( function ( e ) {
+    var searchEdit = $( '#search-menu-content .search-edit' ).first();
+    if ( e.target.checked ) {
       searchEdit.focus();
     } else {
       searchEdit.blur();
     }
-  });
+  } );
 
   //下にスクロールで管理パネルを隠す
   //上にスクロールで管理パネルを表示
-  var adminMenu = $("#admin-panel");
+  var adminMenu = $( '#admin-panel' );
   var adminHeight = adminMenu.outerHeight();
   var adminStartPos = 0;
-  $(window).scroll(function () {
-    var adminCurrentPos = $(this).scrollTop();
-    if (adminCurrentPos > adminStartPos) {
-      if (adminCurrentPos >= 200) {
-        adminMenu.css("bottom", "-" + adminHeight + "px");
+  $( window ).scroll( function () {
+    var adminCurrentPos = $( this ).scrollTop();
+    if ( adminCurrentPos > adminStartPos ) {
+      if ( adminCurrentPos >= 200 ) {
+        adminMenu.css( 'bottom', '-' + adminHeight + 'px' );
       }
     } else {
-      adminMenu.css("bottom", 0);
+      adminMenu.css( 'bottom', 0 );
     }
     adminStartPos = adminCurrentPos;
-  });
+  } );
 
   //モバイルボタンが固定じゃない場合
-  if (cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1) {
+  if ( cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1 ) {
     //ヘッダーモバイルメニュー
-    var headerMenu = $('.mobile-header-menu-buttons');
+    var headerMenu = $( '.mobile-header-menu-buttons' );
     var headerHight = headerMenu.outerHeight();
     var headerStartPos = 0;
-    $(window).scroll(function () {
-      var headerCurrentPos = $(this).scrollTop();
-      if (headerCurrentPos > headerStartPos) {
-        if (headerCurrentPos >= 100) {
-          headerMenu.css('top', '-' + headerHight + 'px');
+    $( window ).scroll( function () {
+      var headerCurrentPos = $( this ).scrollTop();
+      // 画面幅が600px以下の場合は、--wp-admin--admin-bar--heightを考慮しない（WordPressアドミンバーが固定とならないため、ヘッダーメニューの位置を0にする）
+      if ( window.innerWidth <= 600 ) {
+        if ( headerCurrentPos > headerStartPos ) {
+          if ( headerCurrentPos >= 100 ) {
+            headerMenu.css( 'top', '-' + headerHight + 'px' );
+          }
+        } else {
+          headerMenu.css( 'top', 0 );
         }
       } else {
-        headerMenu.css('top', 0);
+        // CSS変数--wp-admin--admin-bar--heightの値を取得
+        var adminBarHeight =
+          getComputedStyle( document.documentElement )
+            .getPropertyValue( '--wp-admin--admin-bar--height' )
+            .trim() || '0px';
+        if ( headerCurrentPos > headerStartPos ) {
+          if ( headerCurrentPos >= 100 ) {
+            // 管理バーの高さを考慮してtopを設定
+            headerMenu.css(
+              'top',
+              'calc(' + adminBarHeight + ' - ' + headerHight + 'px)'
+            );
+          }
+        } else {
+          // 管理バーの高さを考慮してtopを設定
+          headerMenu.css( 'top', 'calc(' + adminBarHeight + ')' );
+        }
       }
       headerStartPos = headerCurrentPos;
-    });
+    } );
 
     //フッターモバイルメニュー
-    var footerMenu = $(".mobile-footer-menu-buttons");
+    var footerMenu = $( '.mobile-footer-menu-buttons' );
     var footerHeight = footerMenu.outerHeight();
     var footerStartPos = 0;
-    $(window).scroll(function () {
-      var footerCurrentPos = $(this).scrollTop();
+    $( window ).scroll( function () {
+      var footerCurrentPos = $( this ).scrollTop();
 
-      if (footerCurrentPos > footerStartPos) {
-        if (footerCurrentPos >= 100) {
-          footerMenu.css("bottom", "calc( -1 * (env(safe-area-inset-bottom) + " + footerHeight + "px) )");
+      if ( footerCurrentPos > footerStartPos ) {
+        if ( footerCurrentPos >= 100 ) {
+          footerMenu.css(
+            'bottom',
+            'calc( -1 * (env(safe-area-inset-bottom) + ' +
+              footerHeight +
+              'px) )'
+          );
         }
-      } else if (footerCurrentPos - footerStartPos < -8) {
-        footerMenu.css("bottom", 0);
+      } else if ( footerCurrentPos - footerStartPos < -8 ) {
+        footerMenu.css( 'bottom', 0 );
       }
 
       footerStartPos = footerCurrentPos;
-    });
+    } );
 
-    var headerButtons = $(".mobile-header-menu-buttons");
-    var footerButtons = $(".mobile-footer-menu-buttons");
-    headerButtons.click(function () {
-      headerButtons.css("z-index", "3");
-      footerButtons.css("z-index", "2");
-    });
+    var headerButtons = $( '.mobile-header-menu-buttons' );
+    var footerButtons = $( '.mobile-footer-menu-buttons' );
+    headerButtons.click( function () {
+      headerButtons.css( 'z-index', '3' );
+      footerButtons.css( 'z-index', '2' );
+    } );
 
-    footerButtons.click(function () {
-      headerButtons.css("z-index", "2");
-      footerButtons.css("z-index", "3");
-    })
+    footerButtons.click( function () {
+      headerButtons.css( 'z-index', '2' );
+      footerButtons.css( 'z-index', '3' );
+    } );
   }
 
   //コメントボタンがクリックされたとき
-  const clickEventType = ((window.ontouchstart !== null) ? 'click' : 'touchend');
-  $(document).on(clickEventType,'#comment-reply-btn, .comment-reply-link', function() {
-    $('#comment-reply-btn').slideUp();
-    const respond = document.getElementById('respond');
-    const styles = { inset: 'auto', position: 'static', visibility: 'visible' };
-    Object.entries(styles).forEach(([key, value]) => {
-      respond.style[key] = value;
-    });
-    $('#respond').slideDown();
-  });
+  const clickEventType = window.ontouchstart !== null ? 'click' : 'touchend';
+  $( document ).on(
+    clickEventType,
+    '#comment-reply-btn, .comment-reply-link',
+    function () {
+      $( '#comment-reply-btn' ).slideUp();
+      const respond = document.getElementById( 'respond' );
+      const styles = {
+        inset: 'auto',
+        position: 'static',
+        visibility: 'visible',
+      };
+      Object.entries( styles ).forEach( ( [ key, value ] ) => {
+        respond.style[ key ] = value;
+      } );
+      $( '#respond' ).slideDown();
+    }
+  );
 
   //Google検索ボタン
-  $('.sbtn').click(function () {
-    var w = $(this).prev('.sform').text();
-    if (w) window.open('https://www.google.co.jp/search?q=' + encodeURIComponent(w), '_blank');
-  });
+  $( '.sbtn' ).click( function () {
+    var w = $( this ).prev( '.sform' ).text();
+    if ( w )
+      window.open(
+        'https://www.google.co.jp/search?q=' + encodeURIComponent( w ),
+        '_blank'
+      );
+  } );
 
   //スライドインサイドバーのアーカイブセレクトボックス選択処理
-  $('.sidebar-menu-content .widget_archive select').change(function () {
-    document.location.href = this.options[this.selectedIndex].value;
-  });
+  $( '.sidebar-menu-content .widget_archive select' ).change( function () {
+    document.location.href = this.options[ this.selectedIndex ].value;
+  } );
 
   //スライドインサイドバーのカテゴリーセレクトボックス選択処理
-  $('.sidebar-menu-content .widget_categories select').change(function () {
-    if (this.options[this.selectedIndex].value > 0) {
+  $( '.sidebar-menu-content .widget_categories select' ).change( function () {
+    if ( this.options[ this.selectedIndex ].value > 0 ) {
       this.parentNode.submit();
     }
-  });
+  } );
 
-  function drawerCloser(selecter, checkbox) {
-    $(selecter).click(function () {
-      $(checkbox).prop('checked', false);
+  function drawerCloser( selecter, checkbox ) {
+    $( selecter ).click( function () {
+      $( checkbox ).prop( 'checked', false );
       // const href = $(this).attr('href');
       // if (href.match(/#/)) {
       //   $(checkbox).prop('checked', false);
       // }
-    })
+    } );
   }
 
   //モバイルメニューをクリックしたら閉じる
-  drawerCloser('.menu-drawer .menu-item a', '#navi-menu-input');
+  drawerCloser( '.menu-drawer .menu-item a', '#navi-menu-input' );
 
   //モバイルサイドバーをクリックしたら閉じる
-  drawerCloser('#slide-in-sidebar a', '#sidebar-menu-input');
+  drawerCloser( '#slide-in-sidebar a', '#sidebar-menu-input' );
 
   //モバイルヘッダーメニューのロゴ処理
-  $('.mobile-menu-buttons').each(function () {
-    if ($(this).has('.logo-menu-button').length) {
-      $(this).addClass('has-logo-button');
+  $( '.mobile-menu-buttons' ).each( function () {
+    if ( $( this ).has( '.logo-menu-button' ).length ) {
+      $( this ).addClass( 'has-logo-button' );
     }
-  });
+  } );
 
-  $(window).on('load', function () {
-    $('#carousel').addClass('loaded');
-  });
+  $( window ).on( 'load', function () {
+    $( '#carousel' ).addClass( 'loaded' );
+  } );
 
   //FAQボックスのアコーディオン化用
-  $('.is-style-accordion > .faq > .faq-answer').hide();
-  $('.is-style-accordion > .faq > .faq-question').click(function () {
-    $(this).next('.is-style-accordion .faq-answer').slideToggle();
-    $(this).toggleClass('active');
-  });
+  $( '.is-style-accordion > .faq > .faq-answer' ).hide();
+  $( '.is-style-accordion > .faq > .faq-question' ).click( function () {
+    $( this ).next( '.is-style-accordion .faq-answer' ).slideToggle();
+    $( this ).toggleClass( 'active' );
+  } );
 
   //モバイルサイドバー表示時にサイドバーを移動する・モバイルサイドバーを閉じる時に元の位置に戻す
-  $(document).on("change", '#sidebar-menu-input', function () {
-    if ($(this).prop('checked')) {
-      $('#sidebar').appendTo('#sidebar-menu-content');
-      $('#sidebar').attr('id', 'slide-in-sidebar');
-      $('#sidebar').addClass('slide-in-sidebar');
+  $( document ).on( 'change', '#sidebar-menu-input', function () {
+    if ( $( this ).prop( 'checked' ) ) {
+      $( '#sidebar' ).appendTo( '#sidebar-menu-content' );
+      $( '#sidebar' ).attr( 'id', 'slide-in-sidebar' );
+      $( '#sidebar' ).addClass( 'slide-in-sidebar' );
       //モバイルサイドバーのリンクをクリックしたら閉じる
-      drawerCloser('#slide-in-sidebar a', '#sidebar-menu-input');
+      drawerCloser( '#slide-in-sidebar a', '#sidebar-menu-input' );
     } else {
-      $('#sidebar').removeClass('slide-in-sidebar');
-      $('#slide-in-sidebar').attr('id', 'sidebar');
-      $('#sidebar').insertAfter('#main');
+      $( '#sidebar' ).removeClass( 'slide-in-sidebar' );
+      $( '#slide-in-sidebar' ).attr( 'id', 'sidebar' );
+      $( '#sidebar' ).insertAfter( '#main' );
     }
-  });
+  } );
 
   //リサイズした時はサイドバーを元に戻す
   var vw = window.innerWidth;
-  $(window).resize(function () {
-    if (vw != window.innerWidth) {
-      $('#sidebar-menu-input').prop('checked', false).change();
+  $( window ).resize( function () {
+    if ( vw != window.innerWidth ) {
+      $( '#sidebar-menu-input' ).prop( 'checked', false ).change();
     }
     vw = window.innerWidth;
-  });
-})(jQuery);
+  } );
+} )( jQuery );
 
 /*
 * Cocoon WordPress Theme incorporates code from "Youtube SpeedLoad" WordPress Plugin, Copyright 2017 Alexufo[http://habrahabr.ru/users/alexufo/]
 "Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2
 */
-(function () {
-  var f = document.querySelectorAll(".video-click");
-  for (var i = 0; i < f.length; ++i) {
-    f[i].onclick = function () {
-      var iframe = this.getAttribute("data-iframe");
+( function () {
+  var f = document.querySelectorAll( '.video-click' );
+  for ( var i = 0; i < f.length; ++i ) {
+    f[ i ].onclick = function () {
+      var iframe = this.getAttribute( 'data-iframe' );
       this.parentElement.innerHTML = '<div class="video">' + iframe + '</div>';
-    }
+    };
   }
-})();
+} )();
+
+// ヘッダーの位置オフセットを更新
+( function () {
+  function updateHeaderOffset() {
+    const header = document.getElementById( 'header-container' );
+
+    let offset = 0;
+
+    if ( header && header.classList.contains( 'fixed-header' ) ) {
+      offset = header.offsetHeight;
+    }
+
+    // .mobile-header-menu-buttonsのtopを取得して処理
+    const mobileHeaderMenuButtons = document.querySelector(
+      '.mobile-header-menu-buttons'
+    );
+    if ( mobileHeaderMenuButtons ) {
+      const computedStyle = window.getComputedStyle( mobileHeaderMenuButtons );
+      const topValue = parseFloat( computedStyle.top );
+
+      if ( topValue >= 0 ) {
+        // topが0以上の場合は、その要素の高さを反映
+        offset += mobileHeaderMenuButtons.offsetHeight;
+      } else {
+        // topが0未満の場合は、0pxとして扱う（offsetは変更しない）
+        // 必要に応じて、ここで追加の処理を行う
+      }
+    }
+
+    document.documentElement.style.setProperty(
+      '--cocoon--header-container--position-offset',
+      offset + 'px'
+    );
+  }
+
+  document.addEventListener( 'DOMContentLoaded', updateHeaderOffset );
+
+  // ブラウザサイズ変更時に更新（リサイズ処理が完了してから実行するため、少し遅延させる）
+  let resizeTimer;
+  window.addEventListener( 'resize', function () {
+    clearTimeout( resizeTimer );
+    resizeTimer = setTimeout( function () {
+      updateHeaderOffset();
+    }, 100 );
+  } );
+
+  // スクロール時にも更新（.mobile-header-menu-buttonsのtopが変更される可能性があるため）
+  window.addEventListener( 'scroll', updateHeaderOffset );
+} )();
