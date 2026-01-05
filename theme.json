@@ -32,6 +32,12 @@
 			"defaultPalette": true,
 			"custom": true,
 			"link": true
+		},
+		"position": {
+			"sticky": true
+		},
+		"dimensions": {
+			"minHeight": true
 		}
 	}
 }
