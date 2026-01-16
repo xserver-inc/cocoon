@@ -58,51 +58,66 @@ class OpenGraphGetter implements Iterator
    * @return OpenGraphGetter
    */
 	static public function fetch($URI) {
-        global $wp_version;
+    // wp_remote_get() の第2引数 args に渡すパラメータを組み立てる
+    $args = array(
+      'cocoon' => true,
+      'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',
+      // wp_remote_get() のデフォルトでは HTTP/1.0 でアクセスされるが、さすがに古すぎるので HTTP/1.1 に変更
+      'httpversion' => '1.1',
+      // gzip, deflate で圧縮されたレスポンスを自動展開する (既定で true のはずだが念のため明示)
+      'decompress' => true,
+    );
+    if (is_amazon_site_page($URI)) {
+      // Amazon では常に Twitterbot のユーザーエージェントでアクセスする
+      // ref: https://github.com/xserver-inc/cocoon/pull/60
+      $args['user-agent'] = 'Twitterbot/1.0';
+    }
+    if (is_rakuten_site_page($URI)) {
+      // 2026年1月現在、何も HTTP ヘッダーを指定せずに楽天の商品ページにアクセスすると、
+      // クローラーと判定されてしまうのか、レスポンスが10秒以上返ってこない問題がある
+      // レスポンス返却に時間がかかると、wp_remote_get() の既定タイムアウト秒数に引っ掛かって取得に失敗する
+      // 取得失敗時は DB キャッシュが登録されないため、結果楽天の URL を貼れば貼るほど毎回 OGP 取得が試行されロードが遅くなる
+      // 以下のヘッダーを全て設定しブラウザ (macOS Chrome) に偽装することで、大半の環境ではクローラー判定を回避できる
+      $args['headers'] = array(
+        'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'accept-encoding' => 'gzip, deflate',  // ブラウザでは br, zstd も指定するが、WordPress が対応していない
+        'accept-language' => 'ja',
+        'cache-control' => 'no-cache',
+        'pragma' => 'no-cache',
+        'priority' => 'u=0, i',
+        'sec-ch-ua' => '"Google Chrome";v="143", "Chromium";v="143", "Not A(Brand";v="24"',
+        'sec-ch-ua-mobile' => '?0',
+        'sec-ch-ua-platform' => '"macOS"',
+        'sec-fetch-dest' => 'document',
+        'sec-fetch-mode' => 'navigate',
+        'sec-fetch-site' => 'same-origin',
+        'sec-fetch-user' => '?1',
+        'upgrade-insecure-requests' => '1',
+      );
+      $args['user-agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36';
+      // フェイルセーフ: 今後楽天側の仕様変更で上記対策が効かなくなった時向けに、楽天のみタイムアウトを15秒に延長する
+      // あくまで取得に10秒強かかるだけで HTML は通常と同じものが返されるので、その場合に取得失敗しないようにする
+      $args['timeout'] = 15;
+    }
 
-        $args = array(
-          'headers' => array(
-            'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'Accept-Encoding' => 'gzip, deflate, br',
-            'Accept-Language' => 'ja,ja-JP;q=0.9,und;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5',
-            'Cache-Control' => 'no-cache',
-          ),
-          'cocoon' => true,
-          'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',//×
-          // 楽天OGP情報取得テスト
-          // 'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain(),//○
-          // 'user-agent' => 'Mozilla/5.0',//○
-          // 'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0',//○
-          // 'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.home_url(),//×
-        );
-        // _v($args);
-        if (is_amazon_site_page($URI)) {
-          $args['user-agent'] = 'Twitterbot/1.0';
-        }
-        if (is_rakuten_site_page($URI)) {
-          //通常のユーザーエージェントだと楽天でOGP情報が取得できないため
-          $args['user-agent'] = 'WordPress/'.get_bloginfo('version').'; '.get_the_site_domain();
-        } else {
-          unset($args['headers']);
-        }
+    $res = wp_remote_get( $URI, $args );
+    $response_code = wp_remote_retrieve_response_code( $res );
 
-        $res = wp_remote_get( $URI, $args );
-        $response_code = wp_remote_retrieve_response_code( $res );
+    $response = null;
+    if (!is_wp_error( $res ) && $response_code === 200) {
+      $response = $res['body'];
+    } else if (!is_admin()) {
+      $response = wp_filesystem_get_contents($URI, true);
 
-        if (!is_wp_error( $res ) && $response_code === 200) {
-          $response = $res['body'];
-        } else if (!is_admin()) {
-          $response = wp_filesystem_get_contents($URI, true);
-
-          if (!$response) {
-            $response = get_http_content($URI);
-          }
-        }
-        if (!empty($response)) {
-            return self::_parse($response, $URI);
-        } else {
-            return false;
-        }
+      if (!$response) {
+        $response = get_http_content($URI);
+      }
+    }
+    if (!empty($response)) {
+        return self::_parse($response, $URI);
+    } else {
+        return false;
+    }
 	}
 
   /**
