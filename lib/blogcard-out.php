@@ -48,10 +48,15 @@ function url_to_external_blog_card($the_content) {
 
     //ブログカード化しないURLで除外
     $exclude_urls = apply_filters('exclusion_external_blog_card_urls', array());
+    $is_excluded = false;
     foreach ($exclude_urls as $exclude_url) {
       if (includes_string($url, $exclude_url)) {
-        return $match;
+        $is_excluded = true;
+        break;
       }
+    }
+    if ($is_excluded) {
+      continue;
     }
 
     $tag = url_to_external_blog_card_tag($url);
