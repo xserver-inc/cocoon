@@ -268,7 +268,8 @@ endif;
 define('OP_DMM_SEARCH_BUTTON_VISIBLE', 'dmm_search_button_visible');
 if ( !function_exists( 'is_dmm_search_button_visible' ) ):
 function is_dmm_search_button_visible(){
-  return get_theme_option(OP_DMM_SEARCH_BUTTON_VISIBLE, 1);
+  // return get_theme_option(OP_DMM_SEARCH_BUTTON_VISIBLE, 1);
+  return false;
 }
 endif;
 

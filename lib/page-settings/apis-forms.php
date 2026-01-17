@@ -224,6 +224,7 @@ $help_text = __( '取得方法', THEME_NAME );
 
 
         <!-- DMM -->
+        <?php if (false) : ?>
         <tr>
           <th scope="row">
             <?php
@@ -252,6 +253,7 @@ $help_text = __( '取得方法', THEME_NAME );
             ?>
           </td>
         </tr>
+        <?php endif; ?>
 
 
         <!-- もしもアフィリエイト -->
