@@ -145,6 +145,9 @@ endif;
 //JSONがエラーを出力しているか
 if ( !function_exists( 'is_paapi_json_error' ) ):
 function is_paapi_json_error($json){
+  if (is_null($json) || !is_object($json)) {
+    return false;
+  }
   return property_exists($json, 'Errors');
 }
 endif;
@@ -152,10 +155,14 @@ endif;
 //PA-APIの返り値のJSONにアイテムが存在するか
 if ( !function_exists( 'is_paapi_json_item_exist' ) ):
 function is_paapi_json_item_exist($json){
+  if (is_null($json) || !is_object($json)) {
+    return false;
+  }
   if (isset($json->{'ItemsResult'})) {
     $ItemsResult = $json->{'ItemsResult'};
     return property_exists($ItemsResult, 'Items');
   }
+  return false;
 }
 endif;
 
