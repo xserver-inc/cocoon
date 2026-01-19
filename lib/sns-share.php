@@ -671,9 +671,10 @@ endif;
 //Pocketシェアボタンを表示するか
 if ( !function_exists( 'is_pocket_share_button_visible' ) ):
 function is_pocket_share_button_visible($option){
-  $res = (is_bottom_pocket_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_pocket_share_button_visible() && $option == SS_TOP) ||
-         ($option == SS_MOBILE);
+  // $res = (is_bottom_pocket_share_button_visible() && $option == SS_BOTTOM) ||
+  //        (is_top_pocket_share_button_visible() && $option == SS_TOP) ||
+  //        ($option == SS_MOBILE);
+  $res = 0;
   return apply_filters('is_pocket_share_button_visible', $res, $option);
 }
 endif;
