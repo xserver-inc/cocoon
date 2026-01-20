@@ -22,6 +22,11 @@ endif;
 //見出し内容取得関数
 if ( !function_exists( 'get_h_inner_content' ) ):
 function get_h_inner_content($h_content){
+  // アコーディオンボタンの場合はそのまま返す
+  if (strpos($h_content, '<button aria-expanded="false" aria-controls=') === 0) {
+    return $h_content;
+  }
+  // 見出し内のHTMLタグを有効にするかどうかの処理
   if (is_toc_heading_inner_html_tag_enable()) {
     return $h_content;
   } else {
@@ -186,11 +191,16 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
         $hide_class = ' class="display-none"';
       }
       $counter++;
-      $text = $is_multi_page_toc_visible ? strip_tags($headers[$i]['text']) : strip_tags($headers[2][$i]);
-      if (is_toc_heading_inner_html_tag_enable()) {
-        $text = $is_multi_page_toc_visible ? $headers[$i]['text'] : $headers[2][$i];
-        $text = preg_replace('{<a.*?>(.*?)</a>}', "$1", $text);
-      }
+
+      // 見出しテキストを取得
+      $text = $is_multi_page_toc_visible ? $headers[$i]['text'] : $headers[2][$i];
+      // アコーディオンボタンのアイコンを削除
+      $text = str_replace(
+        '<span class="wp-block-accordion-heading__toggle-icon" aria-hidden="true">+</span>',
+        '',
+        $text
+      );
+      $text = strip_tags($text);
       if ($is_multi_page_toc_visible) {
         global $page; // 現在のページ番号（未定義なら 0）
         $current = $page ?: 1;
