@@ -23,7 +23,7 @@ endif;
 if ( !function_exists( 'get_h_inner_content' ) ):
 function get_h_inner_content($h_content){
   // アコーディオンボタンの場合はそのまま返す
-  if (strpos($h_content, '<button aria-expanded="false" aria-controls=') === 0) {
+  if (preg_match('/<button\b[^>]*\baria-expanded="(?:true|false)"/i', $h_content)) {
     return $h_content;
   }
   // 見出し内のHTMLタグを有効にするかどうかの処理
