@@ -7,6 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+require_once __DIR__.'/creators-api.php';
+
 
 if ( !class_exists( 'CocoonAwsV4' ) ):
 class CocoonAwsV4 {
@@ -173,6 +175,12 @@ endif;
 if ( !function_exists( 'get_amazon_itemlookup_json' ) ):
 function get_amazon_itemlookup_json($asin, $tracking_id = null){
   $asin = trim($asin);
+  if (is_amazon_creators_api_credentials_available()) {
+    $creators_res = get_amazon_creators_itemlookup_json($asin, $tracking_id);
+    if ($creators_res) {
+      return $creators_res;
+    }
+  }
 
   //トラッキングIDが存在する場合
   $tracking_id = trim($tracking_id);
@@ -480,11 +488,21 @@ function amazon_product_link_shortcode($atts){
   $moshimo_rakuten_id = trim(get_moshimo_rakuten_id());
   $moshimo_yahoo_id   = trim(get_moshimo_yahoo_id());
 
-  //アクセスキーもしくはシークレットキーがない場合
-  if (empty($access_key_id) || empty($secret_access_key) || empty($associate_tracking_id)) {
-    $error_message = __( 'Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
-    return wrap_product_item_box($error_message);
+  // Creators APIが利用可能な場合
+  if (is_amazon_creators_api_credentials_available()) {
+    if (empty($associate_tracking_id)) {
+      $error_message = __( 'Creators APIの「認証情報ID」もしくは「シークレット」もしくは「トラッキングID」が入力されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
+      return wrap_product_item_box($error_message);
+    }
+  } else { // PA-APIの場合
+    //アクセスキーもしくはシークレットキーがない場合
+    if (empty($access_key_id) || empty($secret_access_key) || empty($associate_tracking_id)) {
+      $error_message = __( 'Amazon APIの「アクセスキーID」もしくは「シークレットキー」もしくは「トラッキングID」が設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
+      return wrap_product_item_box($error_message);
+    }
   }
+
+
 
   //ASINがない場合
   if (empty($asin)) {

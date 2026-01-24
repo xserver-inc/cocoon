@@ -1,0 +1,2 @@
+Creators API 1.0 SDK for PHP
+Copyright 2025-2025 Amazon.com, Inc. or its affiliates. All Rights Reserved. 

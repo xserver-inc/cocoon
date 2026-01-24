@@ -1,0 +1,599 @@
+<?php
+/**
+ * Copyright 2025 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+
+namespace Amazon\CreatorsAPI\v1\com\amazon\creators\model;
+
+use \ArrayAccess;
+use \Amazon\CreatorsAPI\v1\ObjectSerializer;
+
+/**
+ * BrowseNode Class Doc Comment
+ *
+ * @description Container for BrowseNode information which includes BrowseNodeId, DisplayName, ContextFreeName, IsRoot, Ancestor, Children, SalesRank associated, etc.
+ * @implements \ArrayAccess<string, mixed>
+ */
+class BrowseNode implements ModelInterface, ArrayAccess, \JsonSerializable
+{
+    public const DISCRIMINATOR = null;
+
+    /**
+      * The original name of the model.
+      *
+      * @var string
+      */
+    protected static $openAPIModelName = 'BrowseNode';
+
+    /**
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
+    protected static $openAPITypes = [
+        'ancestor' => '\Amazon\CreatorsAPI\v1\com\amazon\creators\model\BrowseNodeAncestor',
+        'children' => '\Amazon\CreatorsAPI\v1\com\amazon\creators\model\BrowseNodeChild[]',
+        'contextFreeName' => 'string',
+        'displayName' => 'string',
+        'id' => 'string',
+        'isRoot' => 'bool',
+        'salesRank' => 'float'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
+      */
+    protected static $openAPIFormats = [
+        'ancestor' => null,
+        'children' => null,
+        'contextFreeName' => null,
+        'displayName' => null,
+        'id' => null,
+        'isRoot' => null,
+        'salesRank' => null
+    ];
+
+    /**
+      * Array of nullable properties. Used for (de)serialization
+      *
+      * @var boolean[]
+      */
+    protected static array $openAPINullables = [
+        'ancestor' => false,
+        'children' => false,
+        'contextFreeName' => false,
+        'displayName' => false,
+        'id' => false,
+        'isRoot' => false,
+        'salesRank' => false
+    ];
+
+    /**
+      * If a nullable field gets set to null, insert it here
+      *
+      * @var boolean[]
+      */
+    protected array $openAPINullablesSetToNull = [];
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function openAPITypes()
+    {
+        return self::$openAPITypes;
+    }
+
+    /**
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function openAPIFormats()
+    {
+        return self::$openAPIFormats;
+    }
+
+    /**
+     * Array of nullable properties
+     *
+     * @return array
+     */
+    protected static function openAPINullables(): array
+    {
+        return self::$openAPINullables;
+    }
+
+    /**
+     * Array of nullable field names deliberately set to null
+     *
+     * @return boolean[]
+     */
+    private function getOpenAPINullablesSetToNull(): array
+    {
+        return $this->openAPINullablesSetToNull;
+    }
+
+    /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
+     * Checks if a property is nullable
+     *
+     * @param string $property
+     * @return bool
+     */
+    public static function isNullable(string $property): bool
+    {
+        return self::openAPINullables()[$property] ?? false;
+    }
+
+    /**
+     * Checks if a nullable property is set to null.
+     *
+     * @param string $property
+     * @return bool
+     */
+    public function isNullableSetToNull(string $property): bool
+    {
+        return in_array($property, $this->getOpenAPINullablesSetToNull(), true);
+    }
+
+    /**
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
+     *
+     * @var string[]
+     */
+    protected static $attributeMap = [
+        'ancestor' => 'ancestor',
+        'children' => 'children',
+        'contextFreeName' => 'contextFreeName',
+        'displayName' => 'displayName',
+        'id' => 'id',
+        'isRoot' => 'isRoot',
+        'salesRank' => 'salesRank'
+    ];
+
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     *
+     * @var string[]
+     */
+    protected static $setters = [
+        'ancestor' => 'setAncestor',
+        'children' => 'setChildren',
+        'contextFreeName' => 'setContextFreeName',
+        'displayName' => 'setDisplayName',
+        'id' => 'setId',
+        'isRoot' => 'setIsRoot',
+        'salesRank' => 'setSalesRank'
+    ];
+
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     *
+     * @var string[]
+     */
+    protected static $getters = [
+        'ancestor' => 'getAncestor',
+        'children' => 'getChildren',
+        'contextFreeName' => 'getContextFreeName',
+        'displayName' => 'getDisplayName',
+        'id' => 'getId',
+        'isRoot' => 'getIsRoot',
+        'salesRank' => 'getSalesRank'
+    ];
+
+    /**
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
+     *
+     * @return array
+     */
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     *
+     * @return array
+     */
+    public static function setters()
+    {
+        return self::$setters;
+    }
+
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     *
+     * @return array
+     */
+    public static function getters()
+    {
+        return self::$getters;
+    }
+
+    /**
+     * The original name of the model.
+     *
+     * @return string
+     */
+    public function getModelName()
+    {
+        return self::$openAPIModelName;
+    }
+
+
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /**
+     * Constructor
+     *
+     * @param mixed[]|null $data Associated array of property values
+     *                      initializing the model
+     */
+    public function __construct(?array $data = null)
+    {
+        $this->setIfExists('ancestor', $data ?? [], null);
+        $this->setIfExists('children', $data ?? [], null);
+        $this->setIfExists('contextFreeName', $data ?? [], null);
+        $this->setIfExists('displayName', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('isRoot', $data ?? [], null);
+        $this->setIfExists('salesRank', $data ?? [], null);
+    }
+
+    /**
+    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+    * $this->openAPINullablesSetToNull array
+    *
+    * @param string $variableName
+    * @param array  $fields
+    * @param mixed  $defaultValue
+    */
+    private function setIfExists(string $variableName, array $fields, $defaultValue): void
+    {
+        if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
+            $this->openAPINullablesSetToNull[] = $variableName;
+        }
+
+        $this->container[$variableName] = $fields[$variableName] ?? $defaultValue;
+    }
+
+    /**
+     * Show all the invalid properties with reasons.
+     *
+     * @return array invalid properties with reasons
+     */
+    public function listInvalidProperties()
+    {
+        $invalidProperties = [];
+
+        return $invalidProperties;
+    }
+
+    /**
+     * Validate all the properties in the model
+     * return true if all passed
+     *
+     * @return bool True if all properties are valid
+     */
+    public function valid()
+    {
+        return count($this->listInvalidProperties()) === 0;
+    }
+
+
+    /**
+     * Gets ancestor
+     *
+     * @return \Amazon\CreatorsAPI\v1\com\amazon\creators\model\BrowseNodeAncestor|null
+     */
+    public function getAncestor()
+    {
+        return $this->container['ancestor'];
+    }
+
+    /**
+     * Sets ancestor
+     *
+     * @param \Amazon\CreatorsAPI\v1\com\amazon\creators\model\BrowseNodeAncestor|null $ancestor ancestor
+     *
+     * @return self
+     */
+    public function setAncestor($ancestor)
+    {
+        if (is_null($ancestor)) {
+            throw new \InvalidArgumentException('non-nullable ancestor cannot be null');
+        }
+        $this->container['ancestor'] = $ancestor;
+
+        return $this;
+    }
+
+    /**
+     * Gets children
+     *
+     * @return \Amazon\CreatorsAPI\v1\com\amazon\creators\model\BrowseNodeChild[]|null
+     */
+    public function getChildren()
+    {
+        return $this->container['children'];
+    }
+
+    /**
+     * Sets children
+     *
+     * @param \Amazon\CreatorsAPI\v1\com\amazon\creators\model\BrowseNodeChild[]|null $children List of BrowseNode Children for a particular BrowseNode.
+     *
+     * @return self
+     */
+    public function setChildren($children)
+    {
+        if (is_null($children)) {
+            throw new \InvalidArgumentException('non-nullable children cannot be null');
+        }
+        $this->container['children'] = $children;
+
+        return $this;
+    }
+
+    /**
+     * Gets contextFreeName
+     *
+     * @return string|null
+     */
+    public function getContextFreeName()
+    {
+        return $this->container['contextFreeName'];
+    }
+
+    /**
+     * Sets contextFreeName
+     *
+     * @param string|null $contextFreeName Indicates a displayable name for a BrowseNode that is fully context free. For e.g. DisplayName of BrowseNodeId: 3060 in US marketplace is 'Orphans & Foster Homes'. One can not infer which root category this browse node belongs to unless we have the ancestry ladder for this browse node i.e. it requires a 'context' for being intuitive. However, the ContextFreeName of this browse node is 'Children's Orphans & Foster Homes Books'. Note that, for a BrowseNode whose DisplayName is already context free will have the same ContextFreeName as DisplayName.
+     *
+     * @return self
+     */
+    public function setContextFreeName($contextFreeName)
+    {
+        if (is_null($contextFreeName)) {
+            throw new \InvalidArgumentException('non-nullable contextFreeName cannot be null');
+        }
+        $this->container['contextFreeName'] = $contextFreeName;
+
+        return $this;
+    }
+
+    /**
+     * Gets displayName
+     *
+     * @return string|null
+     */
+    public function getDisplayName()
+    {
+        return $this->container['displayName'];
+    }
+
+    /**
+     * Sets displayName
+     *
+     * @param string|null $displayName The display name of the BrowseNode as visible on the Amazon retail website.
+     *
+     * @return self
+     */
+    public function setDisplayName($displayName)
+    {
+        if (is_null($displayName)) {
+            throw new \InvalidArgumentException('non-nullable displayName cannot be null');
+        }
+        $this->container['displayName'] = $displayName;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Indicates the unique identifier of the BrowseNode
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        }
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets isRoot
+     *
+     * @return bool|null
+     */
+    public function getIsRoot()
+    {
+        return $this->container['isRoot'];
+    }
+
+    /**
+     * Sets isRoot
+     *
+     * @param bool|null $isRoot Indicates if the current BrowseNode is a root category.
+     *
+     * @return self
+     */
+    public function setIsRoot($isRoot)
+    {
+        if (is_null($isRoot)) {
+            throw new \InvalidArgumentException('non-nullable isRoot cannot be null');
+        }
+        $this->container['isRoot'] = $isRoot;
+
+        return $this;
+    }
+
+    /**
+     * Gets salesRank
+     *
+     * @return float|null
+     */
+    public function getSalesRank()
+    {
+        return $this->container['salesRank'];
+    }
+
+    /**
+     * Sets salesRank
+     *
+     * @param float|null $salesRank salesRank
+     *
+     * @return self
+     */
+    public function setSalesRank($salesRank)
+    {
+        if (is_null($salesRank)) {
+            throw new \InvalidArgumentException('non-nullable salesRank cannot be null');
+        }
+        $this->container['salesRank'] = $salesRank;
+
+        return $this;
+    }
+    /**
+     * Returns true if offset exists. False otherwise.
+     *
+     * @param integer $offset Offset
+     *
+     * @return boolean
+     */
+    public function offsetExists($offset): bool
+    {
+        return isset($this->container[$offset]);
+    }
+
+    /**
+     * Gets offset.
+     *
+     * @param integer $offset Offset
+     *
+     * @return mixed|null
+     */
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset)
+    {
+        return $this->container[$offset] ?? null;
+    }
+
+    /**
+     * Sets value based on offset.
+     *
+     * @param int|null $offset Offset
+     * @param mixed    $value  Value to be set
+     *
+     * @return void
+     */
+    public function offsetSet($offset, $value): void
+    {
+        if (is_null($offset)) {
+            $this->container[] = $value;
+        } else {
+            $this->container[$offset] = $value;
+        }
+    }
+
+    /**
+     * Unsets offset.
+     *
+     * @param integer $offset Offset
+     *
+     * @return void
+     */
+    public function offsetUnset($offset): void
+    {
+        unset($this->container[$offset]);
+    }
+
+    /**
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize()
+    {
+       return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
+
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue()
+    {
+        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+    }
+}
+
+

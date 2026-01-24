@@ -31,6 +31,14 @@ $help_text = __( '取得方法', THEME_NAME );
           </th>
           <td>
             <?php
+            echo '<strong class="cocoon-section-title">';
+            _e( 'PA-API', THEME_NAME );
+            echo '</strong>';
+
+            echo '<strong style="display: block; margin-bottom: 6px;">';
+            _e( '※こちらの設定は非推奨です。2026年1月末後には、一部商品情報が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。', THEME_NAME );
+            echo '</strong>';
+
             generate_label_tag(OP_AMAZON_API_ACCESS_KEY_ID, __( 'アクセスキーID', THEME_NAME ));
             generate_amazon_badge_tag(__( 'Amazon必須', THEME_NAME ));
             generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
@@ -44,6 +52,28 @@ $help_text = __( '取得方法', THEME_NAME );
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_API_SECRET_KEY, get_amazon_api_secret_key(), '');
             generate_tips_tag(__( 'Amazon APIを使用するためのシークレットキーを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/product-advertising-api/', $help_text));
+
+            echo '<hr class="cocoon-section-divider">';
+
+            echo '<strong class="cocoon-section-title">';
+            _e( 'Creators API', THEME_NAME );
+            echo '</strong>';
+            generate_label_tag(OP_AMAZON_CREATORS_API_CREDENTIAL_ID, __( '認証情報ID', THEME_NAME ));
+            generate_amazon_badge_tag(__( 'Amazon必須', THEME_NAME ));
+            generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_AMAZON_CREATORS_API_CREDENTIAL_ID, get_amazon_creators_api_credential_id(), '');
+            generate_tips_tag(__( 'Creators APIの認証情報IDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/creators-api', $help_text));
+
+            generate_label_tag(OP_AMAZON_CREATORS_API_SECRET, __( 'シークレット', THEME_NAME ));
+            generate_amazon_badge_tag(__( 'Amazon必須', THEME_NAME ));
+            generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_AMAZON_CREATORS_API_SECRET, get_amazon_creators_api_secret(), '');
+            generate_tips_tag(__( 'Creators APIのシークレットを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/creators-api', $help_text));
+            generate_tips_tag(__( 'Creators APIとPA-APIの両方が設定されている場合、Creators APIが優先されます。', THEME_NAME ));
+
+            echo '<hr class="cocoon-section-divider">';
 
             generate_label_tag(OP_AMAZON_ASSOCIATE_TRACKING_ID, __( 'トラッキングID', THEME_NAME ));
             generate_amazon_badge_tag(__( 'Amazon必須', THEME_NAME ));
@@ -72,6 +102,7 @@ $help_text = __( '取得方法', THEME_NAME );
 
 
               generate_tips_tag(__( 'データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-price.png'));
+              generate_tips_tag(__( '仕様変更によりPA-APIが利用されている場合は、価格は取得できません。価格を表示する場合は、Creators APIを利用してください。', THEME_NAME ));
 
 
               generate_checkbox_tag(OP_AMAZON_ITEM_DESCRIPTION_VISIBLE , is_amazon_item_description_visible(), __( '説明文を表示する', THEME_NAME ));

@@ -24118,3 +24118,15 @@ select option.fa:before {
   top: 6px;
   bottom: 6px;
 }
+
+.cocoon-section-divider {
+  margin: 26px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.cocoon-section-title {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 6px;
+}

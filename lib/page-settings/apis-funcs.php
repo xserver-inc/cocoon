@@ -23,6 +23,22 @@ function get_amazon_api_secret_key(){
 }
 endif;
 
+//Creators API認証情報ID
+define('OP_AMAZON_CREATORS_API_CREDENTIAL_ID', 'amazon_creators_api_credential_id');
+if ( !function_exists( 'get_amazon_creators_api_credential_id' ) ):
+function get_amazon_creators_api_credential_id(){
+  return get_theme_option(OP_AMAZON_CREATORS_API_CREDENTIAL_ID, '');
+}
+endif;
+
+//Creators APIシークレット
+define('OP_AMAZON_CREATORS_API_SECRET', 'amazon_creators_api_secret');
+if ( !function_exists( 'get_amazon_creators_api_secret' ) ):
+function get_amazon_creators_api_secret(){
+  return get_theme_option(OP_AMAZON_CREATORS_API_SECRET, '');
+}
+endif;
+
 //AmazonトラッキングID
 define('OP_AMAZON_ASSOCIATE_TRACKING_ID', 'amazon_associate_tracking_id');
 if ( !function_exists( 'get_amazon_associate_tracking_id' ) ):

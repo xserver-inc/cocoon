@@ -1104,3 +1104,18 @@ select option.fa{
 .copy-info {
   @extend %copy_info;
 }
+
+
+// セクション区切り
+.cocoon-section-divider {
+  margin: 26px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+// API見出し
+.cocoon-section-title {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 6px;
+}
