@@ -36,7 +36,7 @@ $help_text = __( '取得方法', THEME_NAME );
             echo '</strong>';
 
             echo '<strong style="display: block; margin-bottom: 6px;">';
-            _e( '※こちらの設定は非推奨です。2026年1月末後には、一部商品情報が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。', THEME_NAME );
+            _e( '※こちらの設定は非推奨です。2026年1月末後には、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。', THEME_NAME );
             echo '</strong>';
 
             generate_label_tag(OP_AMAZON_API_ACCESS_KEY_ID, __( 'アクセスキーID', THEME_NAME ));
