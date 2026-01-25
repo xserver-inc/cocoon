@@ -41,7 +41,12 @@ function amazon_creators_api_debug_log($message){
   if (!amazon_creators_api_debug_enabled()) {
     return;
   }
+  // デバッグログの保存先を決めて、必要ならフォルダを作る
   $log_file = apply_filters('amazon_creators_api_debug_log_file', get_theme_resources_path().'creators_api_debug.log');
+  $log_dir = dirname($log_file);
+  if (!is_dir($log_dir)) {
+    wp_mkdir_p($log_dir);
+  }
   $timestamp = date_i18n('Y-m-d H:i:s');
   error_log('[CreatorsAPI] '.$timestamp.' '.$message.PHP_EOL, 3, $log_file);
 }
@@ -142,19 +147,50 @@ function amazon_creators_api_convert_offers($offers_v2){
   if (!$listing || !is_object($listing)) {
     return null;
   }
-  // 値段や基準価格の情報を拾う
+  // 価格情報を取得
   $price = isset($listing->price) && is_object($listing->price) ? $listing->price : null;
+  // 価格の通貨/表示額を取得
   $price_money = ($price && isset($price->money) && is_object($price->money)) ? $price->money : null;
+  // 基準価格の情報を取得
   $saving_basis = ($price && isset($price->savingBasis) && is_object($price->savingBasis)) ? $price->savingBasis : null;
+  // 基準価格の通貨/表示額を取得
   $saving_money = ($saving_basis && isset($saving_basis->money) && is_object($saving_basis->money)) ? $saving_basis->money : null;
+  // 在庫や発送状況の情報を取得
+  $availability = isset($listing->availability) && is_object($listing->availability) ? $listing->availability : null;
+  // 商品状態の情報を取得
+  $condition = isset($listing->condition) && is_object($listing->condition) ? $listing->condition : null;
+  // ポイント情報を取得
+  $loyalty = isset($listing->loyaltyPoints) && is_object($listing->loyaltyPoints) ? $listing->loyaltyPoints : null;
 
   // Listings用のオブジェクトを作る
   $listing_obj = new stdClass();
   if ($price_money && isset($price_money->displayAmount)) {
+    // 販売価格の表示用金額を入れる
     $listing_obj->Price = (object)array('DisplayAmount' => $price_money->displayAmount);
   }
   if ($saving_money && isset($saving_money->displayAmount)) {
+    // 参考価格の表示用金額を入れる
     $listing_obj->SavingBasis = (object)array('DisplayAmount' => $saving_money->displayAmount);
+  }
+  if ($availability) {
+    // 在庫・購入可能数などの情報を入れる
+    $listing_obj->Availability = (object)array(
+      'Message' => isset($availability->message) ? $availability->message : null,
+      'Type' => isset($availability->type) ? $availability->type : null,
+      'MaxOrderQuantity' => isset($availability->maxOrderQuantity) ? $availability->maxOrderQuantity : null,
+      'MinOrderQuantity' => isset($availability->minOrderQuantity) ? $availability->minOrderQuantity : null,
+    );
+  }
+  if ($condition) {
+    // 商品状態の情報を入れる
+    $listing_obj->Condition = (object)array(
+      'Value' => isset($condition->value) ? $condition->value : null,
+      'SubCondition' => isset($condition->subCondition) ? $condition->subCondition : null,
+      'ConditionNote' => isset($condition->conditionNote) ? $condition->conditionNote : null,
+    );
+  }
+  if ($loyalty && isset($loyalty->points)) {
+    $listing_obj->LoyaltyPoints = (object)array('Points' => $loyalty->points);
   }
   // 出品者情報があれば変換して入れる
   if (isset($listing->merchantInfo) && is_object($listing->merchantInfo)) {
@@ -164,13 +200,17 @@ function amazon_creators_api_convert_offers($offers_v2){
   // Summariesに最低/最高価格を入れる
   $summaries = new stdClass();
   if ($price_money && isset($price_money->displayAmount)) {
+    // 最高価格の表示用金額を入れる
     $summaries->HighestPrice = (object)array('DisplayAmount' => $price_money->displayAmount);
+    // 最低価格の表示用金額を入れる
     $summaries->LowestPrice = (object)array('DisplayAmount' => $price_money->displayAmount);
   }
 
   // Offers全体を組み立てる
   $offers = new stdClass();
+  // Listings（出品情報）を入れる
   $offers->Listings = array($listing_obj);
+  // Summaries（価格のまとめ）を入れる
   $offers->Summaries = array($summaries);
   return $offers;
 }
@@ -424,7 +464,16 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
       $res = wp_json_encode($json);
     }
 
-    // PA-APIのエラーハンドリングに合わせる
+    // PA-API互換のErrorsがあればエラー扱いにする
+    if (function_exists('is_paapi_json_error') && is_paapi_json_error($json)) {
+      $json_cache = get_transient( $transient_bk_id );
+      if ($json_cache && DEBUG_CACHE_ENABLE) {
+        return $json_cache;
+      }
+      return $res;
+    }
+
+    // Creators APIのエラーならキャッシュを返すか、そのまま返す
     if (is_creators_api_json_error($json)) {
       $json_cache = get_transient( $transient_bk_id );
       if ($json_cache && DEBUG_CACHE_ENABLE) {
@@ -444,7 +493,12 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   if (DEBUG_CACHE_ENABLE) {
     // キャッシュ更新時刻を挿入して可視化
     $count = 1;
-    $res = str_replace(',"browseNodeInfo":{', ',"date":"'.date_i18n( 'Y/m/d H:i').'","browseNodeInfo":{', $res, $count);
+    $res = str_replace(
+      array(',"browseNodeInfo":{', ',"BrowseNodeInfo":{'),
+      array(',"date":"'.date_i18n( 'Y/m/d H:i').'","browseNodeInfo":{', ',"date":"'.date_i18n( 'Y/m/d H:i').'","BrowseNodeInfo":{'),
+      $res,
+      $count
+    );
     $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
     set_transient($transient_id, $res, $expiration);
     set_transient($transient_bk_id, $res, $expiration * 2);
