@@ -54,10 +54,15 @@ function remove_post_count_parentheses( $output, $instance ) {
     return $output;
   }
 
-  // 「投稿数を表示」が有効でないとき
-  $output = preg_replace('/<\/a>\n?<\/li>/', '</span></a></li>', $output);
+
+  // カテゴリー名をspanで囲んで装飾できるようにする
   $output = preg_replace('/<a [^>]+?>/', '$0<span class="list-item-caption">', $output);
-  $output = preg_replace('/<\/a>.*\(([0-9,]+)\)/', '</span><span class="post-count">$1</span></a>', $output);
+  // 投稿数の有無でリンク内の閉じspan位置を分岐
+  if (preg_match('/<\/a>\s*\(([0-9,]+)\)/', $output)) {
+    $output = preg_replace('/<\/a>\s*\(([0-9,]+)\)/', '</span><span class="post-count">$1</span></a>', $output);
+  } else {
+    $output = preg_replace('/<\/a>/', '</span></a>', $output);
+  }
 
   return $output;
 }
