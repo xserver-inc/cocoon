@@ -15,16 +15,109 @@ function is_amazon_creators_api_credentials_available(){
 }
 endif;
 
-// Creators API SDKを読み込む
-if ( !function_exists( 'amazon_creators_api_autoload' ) ):
-function amazon_creators_api_autoload(){
-  // テーマ内に配置されたCreators API SDKを読み込む
-  $autoload_path = apply_filters('amazon_creators_api_autoload_path', __DIR__.'/../creatorsapi-php-sdk/vendor/autoload.php');
-  if (!$autoload_path || !file_exists($autoload_path)) {
-    return false;
+// Creators APIのOAuth2トークンエンドポイントを取得
+if ( !function_exists( 'amazon_creators_api_get_token_endpoint' ) ):
+function amazon_creators_api_get_token_endpoint($version){
+  switch ($version) {
+    case '2.1':
+      return 'https://creatorsapi.auth.us-east-1.amazoncognito.com/oauth2/token';
+    case '2.2':
+      return 'https://creatorsapi.auth.eu-south-2.amazoncognito.com/oauth2/token';
+    case '2.3':
+      return 'https://creatorsapi.auth.us-west-2.amazoncognito.com/oauth2/token';
+    default:
+      return '';
   }
-  require_once $autoload_path;
-  return class_exists('Amazon\\CreatorsAPI\\v1\\Configuration');
+}
+endif;
+
+// Creators APIのOAuth2アクセストークンを取得
+if ( !function_exists( 'amazon_creators_api_get_access_token' ) ):
+function amazon_creators_api_get_access_token($credential_id, $credential_secret, $version){
+  if (!function_exists('curl_init')) {
+    return array(
+      'error' => amazon_creators_api_error_json(
+        'CreatorsApiCurlMissing',
+        __( 'Creators APIを利用するにはPHPのcURL拡張が必要です。', THEME_NAME )
+      ),
+    );
+  }
+
+  $transient_key = 'amazon_creators_api_token_'.md5($credential_id.'|'.$version);
+  $cached = get_transient($transient_key);
+  if ($cached) {
+    return array('token' => $cached);
+  }
+
+  $token_endpoint = amazon_creators_api_get_token_endpoint($version);
+  if (!$token_endpoint) {
+    return array(
+      'error' => amazon_creators_api_error_json(
+        'CreatorsApiInvalidVersion',
+        __( 'Creators APIの認証バージョンが正しくありません。', THEME_NAME )
+      ),
+    );
+  }
+
+  $post_fields = http_build_query(array(
+    'grant_type' => 'client_credentials',
+    'client_id' => $credential_id,
+    'client_secret' => $credential_secret,
+    'scope' => 'creatorsapi/default',
+  ));
+
+  $ch = curl_init($token_endpoint);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, (int)apply_filters('amazon_creators_api_connect_timeout', 10));
+  curl_setopt($ch, CURLOPT_TIMEOUT, (int)apply_filters('amazon_creators_api_timeout', 20));
+
+  $response = curl_exec($ch);
+  $curl_errno = curl_errno($ch);
+  $curl_error = curl_error($ch);
+  $http_code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  curl_close($ch);
+
+  if ($curl_errno) {
+    amazon_creators_api_debug_log('token curl error: '.$curl_error);
+    return array(
+      'error' => amazon_creators_api_error_json('CreatorsApiTokenCurlError', $curl_error),
+    );
+  }
+
+  if (!$response) {
+    return array(
+      'error' => amazon_creators_api_error_json('CreatorsApiTokenEmpty', __( 'Creators APIのトークン取得に失敗しました。', THEME_NAME )),
+    );
+  }
+
+  $data = json_decode($response, true);
+  if (json_last_error() !== JSON_ERROR_NONE || !is_array($data)) {
+    return array(
+      'error' => amazon_creators_api_error_json('CreatorsApiTokenJsonDecodeError', __( 'Creators APIのトークンレスポンスを解析できませんでした。', THEME_NAME )),
+    );
+  }
+
+  if ($http_code >= 400) {
+    $message = isset($data['error_description']) ? $data['error_description'] : (isset($data['error']) ? $data['error'] : 'token error');
+    return array(
+      'error' => amazon_creators_api_error_json('CreatorsApiTokenHttpError', $message),
+    );
+  }
+
+  if (empty($data['access_token'])) {
+    return array(
+      'error' => amazon_creators_api_error_json('CreatorsApiTokenMissing', __( 'Creators APIのアクセストークンが取得できませんでした。', THEME_NAME )),
+    );
+  }
+
+  $expires_in = isset($data['expires_in']) ? (int)$data['expires_in'] : 3600;
+  $expiration = max(60, $expires_in - 30);
+  set_transient($transient_key, $data['access_token'], $expiration);
+
+  return array('token' => $data['access_token']);
 }
 endif;
 
@@ -318,18 +411,10 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   // デバッグ開始
   amazon_creators_api_debug_log('start asin='.$asin);
 
-  // 認証情報やSDKが不足している場合は処理しない
+  // 認証情報が不足している場合は処理しない
   if (!is_amazon_creators_api_credentials_available()) {
     amazon_creators_api_debug_log('missing credentials');
     return false;
-  }
-
-  if (!amazon_creators_api_autoload()) {
-    amazon_creators_api_debug_log('autoload failed');
-    return amazon_creators_api_error_json(
-      'CreatorsApiSdkMissing',
-      __( 'Creators API SDKが見つかりません。テーマ直下のcreatorsapi-php-sdk/vendor/autoload.phpが読み込めることを確認してください。', THEME_NAME )
-    );
   }
 
   // 追跡IDの有無でキャッシュキーを変える
@@ -361,78 +446,98 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
 
   // 既存のPA-API利用に近いリソースを要求
   $resources = array(
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::BROWSE_NODE_INFO_BROWSE_NODES,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::BROWSE_NODE_INFO_BROWSE_NODES_ANCESTOR,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::BROWSE_NODE_INFO_BROWSE_NODES_SALES_RANK,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::BROWSE_NODE_INFO_WEBSITE_SALES_RANK,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::CUSTOMER_REVIEWS_COUNT,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::CUSTOMER_REVIEWS_STAR_RATING,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::IMAGES_PRIMARY_SMALL,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::IMAGES_PRIMARY_MEDIUM,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::IMAGES_PRIMARY_LARGE,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::IMAGES_VARIANTS_SMALL,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::IMAGES_VARIANTS_MEDIUM,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::IMAGES_VARIANTS_LARGE,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_BY_LINE_INFO,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_CONTENT_INFO,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_CONTENT_RATING,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_CLASSIFICATIONS,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_EXTERNAL_IDS,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_FEATURES,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_MANUFACTURE_INFO,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_PRODUCT_INFO,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_TECHNICAL_INFO,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_TITLE,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::ITEM_INFO_TRADE_IN_INFO,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::PARENT_ASIN,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::OFFERS_V2_LISTINGS_AVAILABILITY,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::OFFERS_V2_LISTINGS_CONDITION,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::OFFERS_V2_LISTINGS_DEAL_DETAILS,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::OFFERS_V2_LISTINGS_IS_BUY_BOX_WINNER,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::OFFERS_V2_LISTINGS_LOYALTY_POINTS,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::OFFERS_V2_LISTINGS_MERCHANT_INFO,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::OFFERS_V2_LISTINGS_PRICE,
-    \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsResource::OFFERS_V2_LISTINGS_TYPE,
+    'browseNodeInfo.browseNodes',
+    'browseNodeInfo.browseNodes.ancestor',
+    'browseNodeInfo.browseNodes.salesRank',
+    'browseNodeInfo.websiteSalesRank',
+    'customerReviews.count',
+    'customerReviews.starRating',
+    'images.primary.small',
+    'images.primary.medium',
+    'images.primary.large',
+    'images.variants.small',
+    'images.variants.medium',
+    'images.variants.large',
+    'itemInfo.byLineInfo',
+    'itemInfo.contentInfo',
+    'itemInfo.contentRating',
+    'itemInfo.classifications',
+    'itemInfo.externalIds',
+    'itemInfo.features',
+    'itemInfo.manufactureInfo',
+    'itemInfo.productInfo',
+    'itemInfo.technicalInfo',
+    'itemInfo.title',
+    'itemInfo.tradeInInfo',
+    'parentASIN',
+    'offersV2.listings.availability',
+    'offersV2.listings.condition',
+    'offersV2.listings.dealDetails',
+    'offersV2.listings.isBuyBoxWinner',
+    'offersV2.listings.loyaltyPoints',
+    'offersV2.listings.merchantInfo',
+    'offersV2.listings.price',
+    'offersV2.listings.type',
   );
   $resources = apply_filters('amazon_creators_api_get_items_resources', $resources);
 
   // キャッシュ保持はPA-APIと同じく24時間
   $days = 1;
 
-  try {
-    // SDKを使ってGetItemsを実行
-    $config = new \Amazon\CreatorsAPI\v1\Configuration();
-    $config->setCredentialId($credential_id);
-    $config->setCredentialSecret($credential_secret);
-    $config->setVersion($version);
-
-    $apiInstance = new \Amazon\CreatorsAPI\v1\com\amazon\creators\api\DefaultApi(null, $config);
-    $getItemsRequest = new \Amazon\CreatorsAPI\v1\com\amazon\creators\model\GetItemsRequestContent();
-    $getItemsRequest->setPartnerTag($partnerTag);
-    $getItemsRequest->setItemIds(array($asin));
-    $getItemsRequest->setResources($resources);
-
-    // APIを呼び出す
-    $response = $apiInstance->getItems($marketplace, $getItemsRequest);
-    $res = json_encode($response, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    amazon_creators_api_debug_log('response received');
-  } catch (\Amazon\CreatorsAPI\v1\ApiException $e) {
-    $res_body = $e->getResponseBody();
-    // 可能な限りレスポンス内容を保持して管理画面に表示
-    if (is_string($res_body)) {
-      $res = $res_body;
-    } else {
-      $res = json_encode($res_body, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    }
-    if (!$res) {
-      amazon_creators_api_debug_log('api exception: '.$e->getMessage());
-      return amazon_creators_api_error_json('CreatorsApiException', $e->getMessage());
-    }
-  } catch (Exception $e) {
-    // 予期しない例外は統一フォーマットで返す
-    amazon_creators_api_debug_log('exception: '.$e->getMessage());
-    return amazon_creators_api_error_json('CreatorsApiException', $e->getMessage());
+  // OAuth2トークンを取得
+  $token_result = amazon_creators_api_get_access_token($credential_id, $credential_secret, $version);
+  if (isset($token_result['error'])) {
+    return $token_result['error'];
   }
+  $access_token = isset($token_result['token']) ? $token_result['token'] : '';
+  if (!$access_token) {
+    return amazon_creators_api_error_json('CreatorsApiTokenMissing', __( 'Creators APIのアクセストークンが取得できませんでした。', THEME_NAME ));
+  }
+
+  // リクエストの本文を作成
+  $request_body = array(
+    'partnerTag' => $partnerTag,
+    'itemIds' => array($asin),
+    'resources' => $resources,
+  );
+  $request_body = apply_filters('amazon_creators_api_get_items_payload', $request_body, $asin, $partnerTag);
+  $request_json = wp_json_encode($request_body);
+
+  $host = apply_filters('amazon_creators_api_host', 'https://creatorsapi.amazon');
+  $endpoint = $host.'/catalog/v1/getItems';
+
+  $headers = array(
+    'Authorization: Bearer '.$access_token.', Version '.$version,
+    'Content-Type: application/json',
+    'Accept: application/json',
+    'x-marketplace: '.$marketplace,
+    'User-Agent: cocoon-creatorsapi-curl',
+  );
+
+  $ch = curl_init($endpoint);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $request_json);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, (int)apply_filters('amazon_creators_api_connect_timeout', 10));
+  curl_setopt($ch, CURLOPT_TIMEOUT, (int)apply_filters('amazon_creators_api_timeout', 20));
+
+  $res = curl_exec($ch);
+  $curl_errno = curl_errno($ch);
+  $curl_error = curl_error($ch);
+  $http_code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  curl_close($ch);
+
+  if ($curl_errno) {
+    amazon_creators_api_debug_log('api curl error: '.$curl_error);
+    return amazon_creators_api_error_json('CreatorsApiCurlError', $curl_error);
+  }
+
+  if ($http_code >= 400 && $res) {
+    amazon_creators_api_debug_log('api http error: '.$http_code);
+  }
+
+  amazon_creators_api_debug_log('response received');
 
   // 空のレスポンスなら失敗扱い
   if (!$res) {
