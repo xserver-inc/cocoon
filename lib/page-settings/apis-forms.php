@@ -82,8 +82,7 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_textbox_tag(OP_AMAZON_ASSOCIATE_TRACKING_ID, get_amazon_associate_tracking_id(), __( 'yourid-22', THEME_NAME ));
             generate_tips_tag(__( 'AmazonアソシエイトのトラッキングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-tracking-id/', $help_text));
 
-
-            echo '<div'.get_not_allowed_form_class(get_amazon_api_access_key_id() && get_amazon_api_secret_key() && get_amazon_associate_tracking_id()).'>';
+            echo '<div'.get_not_allowed_form_class((is_amazon_api_credentials_available() || is_amazon_creators_api_credentials_available()) && get_amazon_associate_tracking_id()).'>';
 
               generate_checkbox_tag(OP_AMAZON_ITEM_CATALOG_IMAGE_VISIBLE , is_amazon_item_catalog_image_visible(), __( 'カタログ写真を表示する', THEME_NAME ));
               generate_tips_tag(__( 'サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-shortcode-catalog-option/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/catalog.gif'));

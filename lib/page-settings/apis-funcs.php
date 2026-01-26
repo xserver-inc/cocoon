@@ -344,3 +344,11 @@ function is_api_error_mail_enable(){
   return get_theme_option(OP_API_ERROR_MAIL_ENABLE, 1);
 }
 endif;
+
+//Amazon APIの認証情報が有効かどうか
+if ( !function_exists( 'is_amazon_api_credentials_available' ) ):
+function is_amazon_api_credentials_available(){
+  // アクセスキーIDとシークレットキーの両方がある場合のみ有効
+  return (bool)(get_amazon_api_access_key_id() && get_amazon_api_secret_key());
+}
+endif;
