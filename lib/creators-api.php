@@ -43,7 +43,7 @@ function amazon_creators_api_get_access_token($credential_id, $credential_secret
     );
   }
 
-  $transient_key = 'amazon_creators_api_token_'.md5($credential_id.'|'.$version);
+  $transient_key = 'amazon_creators_api_token_'.md5($credential_id.'|'.$credential_secret.'|'.$version);
   $cached = get_transient($transient_key);
   if ($cached) {
     return array('token' => $cached);
