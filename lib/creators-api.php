@@ -533,8 +533,15 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
     return amazon_creators_api_error_json('CreatorsApiCurlError', $curl_error);
   }
 
-  if ($http_code >= 400 && $res) {
+  if ($http_code >= 400) {
     amazon_creators_api_debug_log('api http error: '.$http_code);
+    if (!$res) {
+      return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
+    }
+    $error_json = json_decode($res, true);
+    if (json_last_error() !== JSON_ERROR_NONE || !is_array($error_json)) {
+      return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
+    }
   }
 
   amazon_creators_api_debug_log('response received');
