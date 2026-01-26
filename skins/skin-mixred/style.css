@@ -20,6 +20,12 @@
   box-shadow: 0 6px 5px -3px rgba(0,0,0,0.24),
                 0 6px 10px -3px rgba(0,0,0,0.18);
 }
+.hlt-top-menu-wrap .site-name-text-link {
+  color: #fff;
+}
+.hlt-top-menu-wrap .header-container {
+  background-color: #ce2c5a;
+}
 
 .header-container .navi {
   background-color:#ce2c5a;

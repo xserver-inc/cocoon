@@ -347,6 +347,19 @@ div #carousel-in {
   font-weight: bold;
 }
 
+.hlt-top-menu-wrap .header-container {
+  background-color: var(--bg3);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.hlt-top-menu-wrap .header {
+  background-color: unset;
+}
+
+.hlt-top-menu-wrap .navi {
+  box-shadow: unset;
+}
+
 .navi a {
   color: var(--text-main);
 }

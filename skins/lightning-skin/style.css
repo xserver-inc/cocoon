@@ -19,8 +19,11 @@ body{
 	background-attachment: scroll;
 }
 
-#header-container{
+.header-container{
 	background-color: #faf7ef;
+}
+.hlt-top-menu-wrap .header-container{
+	background-color: #95e7a5;
 }
 
 #main{

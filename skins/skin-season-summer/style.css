@@ -109,6 +109,15 @@ a {
 	color: #00a0e9;
 	font-weight: bold;
 }
+/*************************************
+** トップメニュー
+************************************/
+.hlt-top-menu-wrap .header-container{
+	background-color: #00a0e9;
+}
+.hlt-top-menu-wrap #header .logo a{
+	color:#fff;
+}
 #header .logo .site-name-text {
 	font-size: 1em;
 }

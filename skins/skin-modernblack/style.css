@@ -23,6 +23,12 @@ body {
 .header-container {
 	border-top: 3px solid #202020;
 }
+.hlt-top-menu-wrap .header-container {
+	background-color: #202020;
+}
+.hlt-top-menu-wrap .site-name-text-link {
+	color: #fff;
+}
 
 /************************************
 ** WordPress Misc

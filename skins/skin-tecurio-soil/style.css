@@ -34,8 +34,19 @@ body p{
 .header{
 	background-image: linear-gradient( 135deg, #F0C27B 10%, #4B1248 100%);
 }
+.hlt-top-menu-wrap .header-container{
+	background-image: linear-gradient( 135deg, #F0C27B 10%, #4B1248 100%);
+}
 .header-container, .navi, .notice-area, .carousel-in {
 	box-shadow: 0 2px 3px rgba(0,0,0,.1);
+}
+.hlt-top-menu-wrap .navi{
+	box-shadow: none;
+}
+.hlt-top-menu-wrap .navi,
+.hlt-top-menu-wrap .navi a{
+	background-color: transparent;
+	color: #fff;
 }
 .notice-area {
 	background-image: linear-gradient( 135deg, #e74c3c 10%, #000 100%);
