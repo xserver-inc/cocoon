@@ -20,6 +20,12 @@
 .navi-in > ul .sub-menu {
     background-color: #333;
 }
+.hlt-top-menu-wrap .header-container {
+    background-color: #333333;
+}
+.hlt-top-menu-wrap .site-name-text-link {
+    color: #ffffff;
+}
 
 .navi-in a {
     color: #ffffff;
