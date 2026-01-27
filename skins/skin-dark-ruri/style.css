@@ -60,7 +60,8 @@ body {
   background-color: #1b51ad;
 }
 
-.header-container.fixed-header {
+.header-container.fixed-header,
+.hlt-top-menu-wrap .header-container {
   background-color: #1b51ad;
 }
 
