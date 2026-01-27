@@ -9,3 +9,9 @@ post_navi_type,square
 eyecatch_center_enable,1
 tagline_position,header_top
 toc_number_type,number
+header_container_background_color,
+header_container_text_color,
+header_background_color,
+header_text_color,
+global_navi_background_color,
+global_navi_text_color,
