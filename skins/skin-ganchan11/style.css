@@ -24,6 +24,10 @@ article.article {
 body.public-page,.content .main, .navi {
     background-color: #F1EDD0;
 }
+.is-header-fixed .header-container,
+.hlt-top-menu-wrap .header-container {
+    background-color: #F1EDD0;
+}
 
 
 /*インデックスカード*/

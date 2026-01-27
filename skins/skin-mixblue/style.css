@@ -20,6 +20,7 @@
   box-shadow: 0 6px 5px -3px rgba(0,0,0,0.24),
                 0 6px 10px -3px rgba(0,0,0,0.18);
 }
+.fixed-header .site-name-text-link,
 .hlt-top-menu-wrap .site-name-text-link {
   color: #fff;
 }

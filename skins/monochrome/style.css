@@ -36,9 +36,11 @@
 	box-shadow: 0 6px 5px -3px rgba(0, 0, 0, 0.24),
 		0 6px 10px -3px rgba(0, 0, 0, 0.18);
 }
+.is-header-fixed  .header-container,
 .hlt-top-menu-wrap .header-container {
 	background-color: #333333;
 }
+.is-header-fixed .site-name-text-link,
 .hlt-top-menu-wrap .site-name-text-link {
 	color: #e9e9e9;
 }

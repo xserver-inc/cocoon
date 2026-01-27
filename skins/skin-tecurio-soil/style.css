@@ -34,15 +34,19 @@ body p{
 .header{
 	background-image: linear-gradient( 135deg, #F0C27B 10%, #4B1248 100%);
 }
+.header-container.fixed-header,
 .hlt-top-menu-wrap .header-container{
 	background-image: linear-gradient( 135deg, #F0C27B 10%, #4B1248 100%);
 }
 .header-container, .navi, .notice-area, .carousel-in {
 	box-shadow: 0 2px 3px rgba(0,0,0,.1);
 }
+.fixed-header .navi,
 .hlt-top-menu-wrap .navi{
 	box-shadow: none;
 }
+.fixed-header .navi,
+.fixed-header .navi a,
 .hlt-top-menu-wrap .navi,
 .hlt-top-menu-wrap .navi a{
 	background-color: transparent;
