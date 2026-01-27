@@ -353,6 +353,11 @@ div #carousel-in {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
+.fixed-header .site-name-text,
+.hlt-top-menu-wrap .site-name-text {
+  color: var(--text-main);
+}
+
 #header-container.fixed-header .navi,
 .hlt-top-menu-wrap #header-container .navi {
   box-shadow: none;
