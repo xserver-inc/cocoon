@@ -55,8 +55,14 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
 
   // 分割ページ目次の場合
   if ($is_multi_page_toc_visible) {
-    // 分割ページを抽出
-    $raw_pages = preg_split('/<!--\s*wp:nextpage\s*-->.*?<!--\s*\/wp:nextpage\s*-->/is', $post->post_content);
+    // 分割ページを抽出（ブロックエディター/クラシックの両方に対応）
+    if (function_exists('has_block') && has_block('core/nextpage', $post->post_content)) {
+      // ブロックエディター
+      $raw_pages = preg_split('/<!--\s*wp:nextpage\s*-->.*?<!--\s*\/wp:nextpage\s*-->/is', $post->post_content);
+    } else {
+      // クラシックエディター
+      $raw_pages = preg_split('/<!--\s*nextpage\s*-->/', $post->post_content);
+    }
     $pages = [];
 
     // 分割ページ単位にブロック・パターン・ショートコードを展開
