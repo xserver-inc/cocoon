@@ -39,18 +39,23 @@ endif;
 if ( !function_exists( 'get_toc_tag' ) ):
 function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_option = 0){
   global $post;
-  if (empty($post) || !isset($post->post_content)) return '';
+  // 投稿情報がない場合でも、カテゴリ/タグページは処理を続行する
+  if ((empty($post) || !isset($post->post_content)) && !is_category() && !is_tag()) return '';
 
-  $is_multi_page_toc_visible = is_multi_page_toc_visible();
+  // 分割ページ目次は投稿/固定ページのときだけ有効にする
+  $is_multi_page_toc_visible = is_multi_page_toc_visible() && is_singular();
 
   //フォーラムページだと表示しない
   if (is_plugin_fourm_page()) {
     return;
   }
 
+  // 目次生成には展開済み本文を使用する
   $content     = $expanded_content;
 
+  // 分割ページ目次の場合
   if ($is_multi_page_toc_visible) {
+    // 分割ページを抽出
     $raw_pages = preg_split('/<!--\s*wp:nextpage\s*-->.*?<!--\s*\/wp:nextpage\s*-->/is', $post->post_content);
     $pages = [];
 
