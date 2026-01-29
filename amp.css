@@ -2350,6 +2350,7 @@ img.blogcard-favicon-image {
 }
 .toc .toc-list {
   padding-left: 1em;
+  margin-bottom: 0;
 }
 .toc .toc-list ul, .toc .toc-list ol {
   padding-left: 1em;

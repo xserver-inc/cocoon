@@ -2644,6 +2644,7 @@ body.wp-admin {
 }
 .admin-settings .demo .toc .toc-list {
   padding-left: 1em;
+  margin-bottom: 0;
 }
 .admin-settings .demo .toc .toc-list ul, .admin-settings .demo .toc .toc-list ol {
   padding-left: 1em;
@@ -11226,6 +11227,7 @@ body.wp-admin {
 }
 .admin-settings .demo .toc .toc-list {
   padding-left: 1em;
+  margin-bottom: 0;
 }
 .admin-settings .demo .toc .toc-list ul, .admin-settings .demo .toc .toc-list ol {
   padding-left: 1em;
