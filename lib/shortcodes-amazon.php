@@ -197,8 +197,20 @@ function get_amazon_itemlookup_json($asin, $tracking_id = null){
   // $json_error_code    = isset($json->{'Errors'}[0]->{'Code'}) ? $json->{'Errors'}[0]->{'Code'} : null;
   //_v($json_cache);
   if ($json_cache /* && ($json_error_code != 'TooManyRequests')*/ && DEBUG_CACHE_ENABLE) {
-    //_v($json_cache);
-    return $json_cache;
+    $cache_json = json_decode( $json_cache );
+    if (json_last_error() === JSON_ERROR_NONE && $cache_json) {
+      // PA-APIエラーのキャッシュはそのまま返す
+      if (is_paapi_json_error($cache_json)) {
+        return $json_cache;
+      }
+      // アイテム情報が欠落しているキャッシュは破棄して再取得する
+      $ItemsResult = isset($cache_json->{'ItemsResult'}) ? $cache_json->{'ItemsResult'} : null;
+      if ($ItemsResult && isset($ItemsResult->{'Items'}) && is_array($ItemsResult->{'Items'}) && !empty($ItemsResult->{'Items'}[0])) {
+        return $json_cache;
+      }
+    }
+    delete_transient($transient_id);
+    delete_transient($transient_bk_id);
   }
 
   $serviceName = 'ProductAdvertisingAPI';

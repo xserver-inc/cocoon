@@ -429,7 +429,20 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   $transient_bk_id = get_amazon_api_transient_bk_id($asin.$tid);
   $json_cache = get_transient( $transient_id );
   if ($json_cache && DEBUG_CACHE_ENABLE) {
-    return $json_cache;
+    $cache_json = json_decode($json_cache);
+    if (json_last_error() === JSON_ERROR_NONE && $cache_json) {
+      // エラーキャッシュは維持する
+      if (function_exists('is_paapi_json_error') && is_paapi_json_error($cache_json)) {
+        return $json_cache;
+      }
+      // 商品情報が揃っているキャッシュのみ返す
+      $ItemsResult = isset($cache_json->{'ItemsResult'}) ? $cache_json->{'ItemsResult'} : null;
+      if ($ItemsResult && isset($ItemsResult->{'Items'}) && is_array($ItemsResult->{'Items'}) && !empty($ItemsResult->{'Items'}[0])) {
+        return $json_cache;
+      }
+    }
+    delete_transient($transient_id);
+    delete_transient($transient_bk_id);
   }
 
   // 認証情報とトラッキングIDを取得
