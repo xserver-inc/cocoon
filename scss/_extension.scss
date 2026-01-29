@@ -265,21 +265,22 @@ $marker_u_blue: $marker_blue;
 
 
 .body {
+  // 直下のみ
   blockquote,
   .wp-block-media-text__content,
-  .wp-block-columns,
+  .wp-block-column,
   .column-left,
   .column-center,
   .column-right,
-  // .column-wrap,
-  .timeline-box,
-  .wp-block-cover,
-  .blogcard-type,
-  .btn-wrap,
+  .timeline-item-snippet,
+  .wp-block-cover__inner-container,
   .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between, .is-layout-flex),
-  .wp-block-gallery,
   .block-box,
   .blank-box,
+  .toggle-content,
+  .tab-content,
+  .faq-item-content,
+  .block-box-content,
   .common-icon-box,
   .info-box,
   .primary-box,
@@ -288,13 +289,15 @@ $marker_u_blue: $marker_blue;
   .danger-box,
   .secondary-box,
   .light-box,
-  .dark-box,
-  .tab-content,
-  .toc,
-  .wp-block-social-links{
+  .dark-boxs{
     > :last-child{
       margin-bottom: 0;
     }
+  }
+
+  // 囲みボタンは横並びなので、すべての子要素のmargin-bottomを0にする（リンク以外を入れないことを想定）
+  .btn-wrap.button-block > *{
+    margin-bottom: 0;
   }
 
   div.scrollable-table,

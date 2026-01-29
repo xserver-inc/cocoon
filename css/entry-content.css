@@ -766,18 +766,19 @@ html[lang=en] .ribbon-top-left::after {
 
 .body blockquote > :last-child,
 .body .wp-block-media-text__content > :last-child,
-.body .wp-block-columns > :last-child,
+.body .wp-block-column > :last-child,
 .body .column-left > :last-child,
 .body .column-center > :last-child,
 .body .column-right > :last-child,
-.body .timeline-box > :last-child,
-.body .wp-block-cover > :last-child,
-.body .blogcard-type > :last-child,
-.body .btn-wrap > :last-child,
+.body .timeline-item-snippet > :last-child,
+.body .wp-block-cover__inner-container > :last-child,
 .body .wp-block-group:not(.is-content-justification-left, .is-content-justification-center, .is-content-justification-right, .is-content-justification-space-between, .is-layout-flex) > :last-child,
-.body .wp-block-gallery > :last-child,
 .body .block-box > :last-child,
 .body .blank-box > :last-child,
+.body .toggle-content > :last-child,
+.body .tab-content > :last-child,
+.body .faq-item-content > :last-child,
+.body .block-box-content > :last-child,
 .body .common-icon-box > :last-child,
 .body .info-box > :last-child,
 .body .primary-box > :last-child,
@@ -786,10 +787,10 @@ html[lang=en] .ribbon-top-left::after {
 .body .danger-box > :last-child,
 .body .secondary-box > :last-child,
 .body .light-box > :last-child,
-.body .dark-box > :last-child,
-.body .tab-content > :last-child,
-.body .toc > :last-child,
-.body .wp-block-social-links > :last-child {
+.body .dark-boxs > :last-child {
+  margin-bottom: 0;
+}
+.body .btn-wrap.button-block > * {
   margin-bottom: 0;
 }
 .body div.scrollable-table table,
