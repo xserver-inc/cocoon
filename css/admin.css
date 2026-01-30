@@ -1316,6 +1316,18 @@ body.wp-admin {
   font-weight: normal;
   float: none;
 }
+.admin-settings .demo p[style*=writing-mode][style*=vertical] {
+  align-items: flex-end;
+  display: flex;
+  width: 100%;
+}
+.admin-settings .demo p.has-text-align-center[style*=writing-mode][style*=vertical] {
+  align-items: center;
+}
+.admin-settings .demo p.has-text-align-right[style*=writing-mode][style*=vertical] {
+  align-items: flex-start !important;
+  rotate: unset !important;
+}
 .admin-settings .demo figure {
   margin: 0;
 }
@@ -9898,6 +9910,18 @@ body.wp-admin {
   font-size: 3em;
   font-weight: normal;
   float: none;
+}
+.admin-settings .demo p[style*=writing-mode][style*=vertical] {
+  align-items: flex-end;
+  display: flex;
+  width: 100%;
+}
+.admin-settings .demo p.has-text-align-center[style*=writing-mode][style*=vertical] {
+  align-items: center;
+}
+.admin-settings .demo p.has-text-align-right[style*=writing-mode][style*=vertical] {
+  align-items: flex-start !important;
+  rotate: unset !important;
 }
 .admin-settings .demo figure {
   margin: 0;

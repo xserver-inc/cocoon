@@ -773,6 +773,21 @@ p.has-background {
   float: none;
 }
 
+p[style*=writing-mode][style*=vertical] {
+  align-items: flex-end;
+  display: flex;
+  width: 100%;
+}
+
+p.has-text-align-center[style*=writing-mode][style*=vertical] {
+  align-items: center;
+}
+
+p.has-text-align-right[style*=writing-mode][style*=vertical] {
+  align-items: flex-start !important;
+  rotate: unset !important;
+}
+
 /************************************
 ** 画像関係のスタイル
 ************************************/
