@@ -168,7 +168,7 @@ endif;
 if ( !function_exists( 'is_db_table_exist' ) ):
 function is_db_table_exist($table){
   global $wpdb; //グローバル変数「$wpdb」を使うよっていう記述
-  $table_search = $wpdb->get_row("SHOW TABLES FROM " . DB_NAME . " LIKE '" . $table . "'"); //「$wpdb->posts」テーブルがあるかどうか探す
+  $table_search = $wpdb->get_row("SHOW TABLES FROM `" . DB_NAME . "` LIKE '" . $table . "'"); //「$wpdb->posts」テーブルがあるかどうか探す
   if( $wpdb->num_rows == 1 ){ //結果を判別して条件分岐
     //テーブルがある場合の処理
     return true;
