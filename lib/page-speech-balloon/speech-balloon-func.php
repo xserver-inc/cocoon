@@ -243,7 +243,7 @@ function create_speech_balloons_table() {
     $add_default_records = true;
   }
   // SQL文でテーブルを作る
-  $sql = "CREATE TABLE ".SPEECH_BALLOONS_TABLE_NAME." (
+  $sql = "CREATE TABLE `".SPEECH_BALLOONS_TABLE_NAME."` (
     id bigint(20) NOT NULL AUTO_INCREMENT,
     date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,

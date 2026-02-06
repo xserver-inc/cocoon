@@ -71,7 +71,7 @@ function get_db_table_records( $table_name, $column, $keyword = null, $order_by 
   if ($order_by) {
     $order_by = esc_sql(' ORDER BY '.$order_by);
   }
-  $query = "SELECT * FROM {$table_name}".
+  $query = "SELECT * FROM `{$table_name}`".
               $where.
               $order_by;
 
@@ -88,7 +88,7 @@ if ( !function_exists( 'uninstall_db_table' ) ):
 function uninstall_db_table($table_name) {
   global $wpdb;
 
-  $wpdb->query('DROP TABLE IF EXISTS '.$table_name);
+  $wpdb->query('DROP TABLE IF EXISTS `'.$table_name.'`');
 }
 endif;
 
@@ -98,7 +98,7 @@ if ( !function_exists( 'get_db_table_record' ) ):
 function get_db_table_record( $table_name, $id ) {
   global $wpdb;
 
-  $query = $wpdb->prepare("SELECT * FROM {$table_name}  WHERE id = %d", $id);
+  $query = $wpdb->prepare("SELECT * FROM `{$table_name}`  WHERE id = %d", $id);
 
   $record = $wpdb->get_row( $query );
 
@@ -124,7 +124,7 @@ endif;
 if ( !function_exists( 'delete_db_cache_records' ) ):
 function delete_db_cache_records( $option_name_part ) {
   global $wpdb;
-  $query = "DELETE FROM {$wpdb->options} WHERE option_name LIKE '%{$option_name_part}%';";
+  $query = $wpdb->prepare("DELETE FROM `{$wpdb->options}` WHERE option_name LIKE %s", '%' . $wpdb->esc_like($option_name_part) . '%');
   return $wpdb->query($query);
 }
 endif;
@@ -149,7 +149,7 @@ endif;
 if ( !function_exists( 'get_db_table_record_count' ) ):
 function get_db_table_record_count($table){
   global $wpdb;
-  $query = "SELECT COUNT(id) FROM {$table}";
+  $query = "SELECT COUNT(id) FROM `{$table}`";
   $count = $wpdb->get_var( $query );
   //var_dump($count);
 

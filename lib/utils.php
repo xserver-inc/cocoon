@@ -3674,7 +3674,8 @@ endif;
 if ( !function_exists( 'get_postmeta_value_enable_post_ids' ) ):
 function get_postmeta_value_enable_post_ids($meta_key){
   global $wpdb;
-  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM {$wpdb->prefix}postmeta WHERE (meta_key = '{$meta_key}') AND (meta_value = 1)");
+  $query = $wpdb->prepare("SELECT DISTINCT GROUP_CONCAT(post_id) AS ids FROM `{$wpdb->prefix}postmeta` WHERE (meta_key = %s) AND (meta_value = 1)", $meta_key);
+  $res = $wpdb->get_results($query);
   $result = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
   return $result;
 }
@@ -3684,7 +3685,8 @@ endif;
 if ( !function_exists( 'get_termmeta_value_enable_ids' ) ):
 function get_termmeta_value_enable_ids($meta_key){
   global $wpdb;
-  $res = $wpdb->get_results("SELECT DISTINCT GROUP_CONCAT(term_id) AS ids FROM {$wpdb->prefix}termmeta WHERE (meta_key = '{$meta_key}') AND (meta_value = 1)");
+  $query = $wpdb->prepare("SELECT DISTINCT GROUP_CONCAT(term_id) AS ids FROM `{$wpdb->prefix}termmeta` WHERE (meta_key = %s) AND (meta_value = 1)", $meta_key);
+  $res = $wpdb->get_results($query);
   $ids = (isset($res[0]) && $res[0]->ids) ? explode(',', $res[0]->ids) : array();
   $result = array();
   if ($meta_key === 'the_category_noindex') {

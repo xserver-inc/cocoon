@@ -25,7 +25,7 @@ if ( !function_exists( 'delete_blogcard_cache_transients' ) ):
 function delete_blogcard_cache_transients(){
   global $wpdb;
   //ブログカードキャッシュの削除（bcc = Blog Card Cache)
-  $wpdb->query("DELETE FROM $wpdb->options WHERE (`option_name` LIKE '%_transient_bcc_%') OR (`option_name` LIKE '%_transient_timeout_bcc_%')");
+  $wpdb->query("DELETE FROM `{$wpdb->options}` WHERE (`option_name` LIKE '%_transient_bcc_%') OR (`option_name` LIKE '%_transient_timeout_bcc_%')");
 }
 endif;
 //delete_blogcard_cache_transients();
@@ -35,9 +35,9 @@ if ( !function_exists( 'delete_sns_cache_transients' ) ):
 function delete_sns_cache_transients(){
   global $wpdb;
   //シェアカウントキャッシュの削除
-  $wpdb->query("DELETE FROM $wpdb->options WHERE (`option_name` LIKE '%_transient_".TRANSIENT_SHARE_PREFIX."%') OR (`option_name` LIKE '%_transient_timeout_".TRANSIENT_SHARE_PREFIX."%')");
+  $wpdb->query("DELETE FROM `{$wpdb->options}` WHERE (`option_name` LIKE '%_transient_".TRANSIENT_SHARE_PREFIX."%') OR (`option_name` LIKE '%_transient_timeout_".TRANSIENT_SHARE_PREFIX."%')");
   //フォローカントキャッシュの削除
-  $wpdb->query("DELETE FROM $wpdb->options WHERE (`option_name` LIKE '%_transient_".TRANSIENT_FOLLOW_PREFIX."%') OR (`option_name` LIKE '%_transient_timeout_".TRANSIENT_FOLLOW_PREFIX."%')");
+  $wpdb->query("DELETE FROM `{$wpdb->options}` WHERE (`option_name` LIKE '%_transient_".TRANSIENT_FOLLOW_PREFIX."%') OR (`option_name` LIKE '%_transient_timeout_".TRANSIENT_FOLLOW_PREFIX."%')");
 }
 endif;
 //delete_sns_cache_transients();

@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 global $_ALL_USER_COUNT;
-$_ALL_USER_COUNT = intval($wpdb->get_var("SELECT COUNT(ID) FROM $wpdb->users"));
+$_ALL_USER_COUNT = intval($wpdb->get_var("SELECT COUNT(ID) FROM `{$wpdb->users}`"));
 
 //ウィジェットはD&Dされたものか
 if ( !function_exists( 'is_widget_dropped' ) ):
