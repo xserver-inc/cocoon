@@ -171,10 +171,7 @@ border-bottom:4px solid #5572ff;
     margin: 10px 15px 0 15px;
     color: #d7d5ef;
 }
-.carousel-entry-card-thumb,
-.related-entry-card-thumb,
-.widget-entry-card-thumb,
-.entry-card-thumb {
+.ect-vertical-card .entry-card-wrap .entry-card-thumb {
     margin-top: 0;
 }
 .ect-vertical-card .entry-card-wrap .entry-card-thumb img {
