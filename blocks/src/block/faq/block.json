@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "cocoon-blocks/faq",
   "category": "cocoon-block",
   "keywords": [ "faq", "box" ],

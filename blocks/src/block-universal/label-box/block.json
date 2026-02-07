@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "cocoon-blocks/label-box-1",
   "category": "cocoon-universal-block",
   "keywords": [ "label", "caption", "box" ],

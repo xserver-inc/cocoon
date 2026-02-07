@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "cocoon-blocks/box-menu",
   "category": "cocoon-block",
   "keywords": ["box-menu"],

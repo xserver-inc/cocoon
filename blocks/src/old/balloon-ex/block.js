@@ -11,13 +11,19 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { InnerBlocks, RichText, MediaUpload, InspectorControls } from '@wordpress/block-editor';
+import {
+  InnerBlocks,
+  RichText,
+  MediaUpload,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 const { Button, PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
 
-const defaultIconUrl = gbSettings[ 'speechBalloonDefaultIconUrl' ]
-  ? gbSettings[ 'speechBalloonDefaultIconUrl' ]
+const defaultIconUrl = gbSettings.speechBalloonDefaultIconUrl
+  ? gbSettings.speechBalloonDefaultIconUrl
   : '';
 
 let speechBalloons = gbSpeechBalloons;
@@ -39,18 +45,19 @@ if ( ! isBalloonExist( speechBalloons ) ) {
 //classの取得
 function getClasses( index, style, position, iconstyle ) {
   const classes = classnames( {
-    [ 'speech-wrap' ]: true,
+    'speech-wrap': true,
     [ `sb-id-${ speechBalloons[ index ].id }` ]: !! speechBalloons[ index ].id,
     [ `sbs-${ style }` ]: !! style,
     [ `sbp-${ position }` ]: !! position,
     [ `sbis-${ iconstyle }` ]: !! iconstyle,
-    [ 'cf' ]: true,
-    [ 'block-box' ]: true,
+    cf: true,
+    'block-box': true,
   } );
   return classes;
 }
 
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
+  apiVersion: 3,
   title: __( '吹き出しEX', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
@@ -95,7 +102,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
   },
 
   edit( { attributes, setAttributes } ) {
-    var { name, index, style, position, iconstyle, icon, iconid } = attributes;
+    let { name, index, style, position, iconstyle, icon, iconid } = attributes;
     if ( ! speechBalloons[ index ] ) {
       index = 0;
     }
@@ -120,7 +127,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
     };
 
     //console.log(speechBalloons);
-    var balloons = [];
+    const balloons = [];
     speechBalloons.map( ( balloon, index ) => {
       //console.log(balloon);
       if ( speechBalloons[ index ].visible == '1' ) {
@@ -144,7 +151,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
               }
               options={ balloons }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -170,7 +177,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -188,7 +195,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -214,7 +221,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>
@@ -224,7 +231,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
             <figure className="speech-icon">
               <MediaUpload
                 onSelect={ ( media ) => {
-                  let newicon = !! media.sizes.thumbnail
+                  const newicon = !! media.sizes.thumbnail
                     ? media.sizes.thumbnail.url
                     : media.url;
                   //console.log(newicon);
@@ -252,12 +259,15 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
   },
 
   save( { attributes } ) {
-    var { name, index, style, position, iconstyle, icon } = attributes;
+    let { name, index, style, position, iconstyle, icon } = attributes;
     if ( ! speechBalloons[ index ] ) {
       index = 0;
     }
+    const blockProps = useBlockProps.save( {
+      className: getClasses( index, style, position, iconstyle ),
+    } );
     return (
-      <div className={ getClasses( index, style, position, iconstyle ) }>
+      <div { ...blockProps }>
         <div className="speech-person">
           <figure className="speech-icon">
             <img

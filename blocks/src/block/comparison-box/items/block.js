@@ -24,7 +24,7 @@ const TEMPLATE = [ 'cocoon-blocks/iconlist-box' ];
 
 //左カラム
 registerBlockType( 'cocoon-blocks/comparison-left', {
-  apiVersion: 2,
+  apiVersion: 3,
   title: __( '左側', THEME_NAME ),
   parent: [ 'cocoon-blocks/comparison-box' ],
   icon: <FontAwesomeIcon icon={ faSquare } />,
@@ -50,7 +50,7 @@ registerBlockType( 'cocoon-blocks/comparison-left', {
 
 //右カラム
 registerBlockType( 'cocoon-blocks/comparison-right', {
-  apiVersion: 2,
+  apiVersion: 3,
   title: __( '右側', THEME_NAME ),
   parent: [ 'cocoon-blocks/comparison-box' ],
   icon: <FontAwesomeIcon icon={ faSquare } />,

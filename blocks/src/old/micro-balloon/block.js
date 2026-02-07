@@ -9,7 +9,11 @@ import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { RichText, InspectorControls } from '@wordpress/block-editor';
+import {
+  RichText,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, ToggleControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __( 'マイクロコピーバルーン', THEME_NAME );
@@ -20,6 +24,7 @@ function getCircleClass( isCircle ) {
 }
 
 registerBlockType( 'cocoon-blocks/micro-balloon', {
+  apiVersion: 3,
   title: __( 'マイクロバルーン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
@@ -138,16 +143,16 @@ registerBlockType( 'cocoon-blocks/micro-balloon', {
   save( { attributes } ) {
     const { content, style, isCircle, color } = attributes;
     //let circleClass = isCircle ? ' mc-circle' : '';
+    const blockProps = useBlockProps.save( {
+      className:
+        style +
+        color +
+        getCircleClass( isCircle ) +
+        MICRO_COPY_CLASS +
+        BLOCK_CLASS,
+    } );
     return (
-      <div
-        className={
-          style +
-          color +
-          getCircleClass( isCircle ) +
-          MICRO_COPY_CLASS +
-          BLOCK_CLASS
-        }
-      >
+      <div { ...blockProps }>
         <RichText.Content value={ content } />
       </div>
     );

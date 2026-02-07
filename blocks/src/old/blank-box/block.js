@@ -11,7 +11,12 @@ import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
+import {
+  InnerBlocks,
+  RichText,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __(
@@ -20,6 +25,7 @@ const DEFAULT_MSG = __(
 );
 
 registerBlockType( 'cocoon-blocks/blank-box', {
+  apiVersion: 3,
   title: __( '白抜きボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
@@ -85,7 +91,7 @@ registerBlockType( 'cocoon-blocks/blank-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>
@@ -102,8 +108,11 @@ registerBlockType( 'cocoon-blocks/blank-box', {
 
   save( { attributes } ) {
     const { content } = attributes;
+    const blockProps = useBlockProps.save( {
+      className: attributes.style + BLOCK_CLASS,
+    } );
     return (
-      <div className={ attributes.style + BLOCK_CLASS }>
+      <div { ...blockProps }>
         <InnerBlocks.Content />
       </div>
     );

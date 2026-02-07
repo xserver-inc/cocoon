@@ -21,6 +21,7 @@ import {
   InspectorControls,
   PanelColorSettings,
   ContrastChecker,
+  useBlockProps,
 } from '@wordpress/block-editor';
 const {
   PanelBody,
@@ -45,6 +46,7 @@ function getClasses( color, size, isCircle, isShine ) {
 }
 
 registerBlockType( 'cocoon-blocks/button-wrap-1', {
+  apiVersion: 3,
   title: __( '囲みボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
@@ -163,8 +165,11 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
 
   save( { attributes } ) {
     const { content, color, size, tag, isCircle, isShine } = attributes;
+    const blockProps = useBlockProps.save( {
+      className: getClasses( color, size, isCircle, isShine ),
+    } );
     return (
-      <div className={ getClasses( color, size, isCircle, isShine ) }>
+      <div { ...blockProps }>
         <RichText.Content value={ tag } />
       </div>
     );
