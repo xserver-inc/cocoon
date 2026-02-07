@@ -20,6 +20,7 @@ function getCircleClass( isCircle ) {
 }
 
 registerBlockType( 'cocoon-blocks/micro-balloon', {
+  apiVersion: 3,
   title: __( 'マイクロバルーン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

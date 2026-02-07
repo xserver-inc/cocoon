@@ -101,4 +101,38 @@ const v2 = {
   },
 };
 
-export default [ v2, v1 ];
+// API version 2で保存されたブロック（wp-block-*クラスなし）
+const v3 = {
+  save( { attributes } ) {
+    const { content, type, icon, textColor, customTextColor } = attributes;
+
+    const textClass = getColorClassName( 'color', textColor );
+
+    const className = classnames( {
+      [ 'micro-text' ]: true,
+      [ MICRO_COPY_CLASS ]: true,
+      [ type ]: !! type,
+      'has-text-color': textColor || customTextColor,
+      [ textClass ]: textClass,
+    } );
+
+    const styles = {
+      '--cocoon-custom-text-color': customTextColor || undefined,
+    };
+
+    return (
+      <div className={ className } style={ styles }>
+        <span className="micro-text-content micro-content">
+          { icon && (
+            <span
+              className={ classnames( 'micro-text-icon', 'micro-icon', icon ) }
+            ></span>
+          ) }
+          <RichText.Content value={ content } />
+        </span>
+      </div>
+    );
+  },
+};
+
+export default [ v3, v2, v1 ];

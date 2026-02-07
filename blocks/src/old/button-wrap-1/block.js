@@ -45,6 +45,7 @@ function getClasses( color, size, isCircle, isShine ) {
 }
 
 registerBlockType( 'cocoon-blocks/button-wrap-1', {
+  apiVersion: 3,
   title: __( '囲みボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

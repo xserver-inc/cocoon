@@ -15,6 +15,7 @@ import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __( 'トグルボックス見出し', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/toggle-box', {
+  apiVersion: 3,
   title: __( 'トグルボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

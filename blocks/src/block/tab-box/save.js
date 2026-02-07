@@ -47,7 +47,7 @@ export default function save( props ) {
   };
 
   const blockProps = useBlockProps.save( {
-    className: className,
+    className,
     style: styles,
   } );
 

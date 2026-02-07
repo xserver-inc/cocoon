@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "cocoon-blocks/search-box",
   "category": "cocoon-block",
   "keywords": [ "search", "box" ],

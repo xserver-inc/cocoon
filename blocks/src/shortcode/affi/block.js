@@ -12,6 +12,7 @@ import { registerBlockType } from '@wordpress/blocks';
 
 //左カラム
 registerBlockType( 'cocoon-blocks/affi', {
+  apiVersion: 3,
   title: __( 'アフィリエイトタグタグ', THEME_NAME ),
   icon: 'grid-view',
   category: THEME_NAME + '-shortcode',

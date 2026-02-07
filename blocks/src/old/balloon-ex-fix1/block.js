@@ -54,6 +54,7 @@ function getBalloonName( id ) {
 }
 
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
+  apiVersion: 3,
   title: __( '吹き出しEX', THEME_NAME ),
   icon: <FontAwesomeIcon icon={ faComments } />,
   category: THEME_NAME + '-block',

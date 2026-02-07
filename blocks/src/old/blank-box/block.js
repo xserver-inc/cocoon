@@ -20,6 +20,7 @@ const DEFAULT_MSG = __(
 );
 
 registerBlockType( 'cocoon-blocks/blank-box', {
+  apiVersion: 3,
   title: __( '白抜きボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

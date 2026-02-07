@@ -115,4 +115,54 @@ const v2 = {
   },
 };
 
-export default [ v2, v1 ];
+// API version 2で保存されたブロック（wp-block-*クラスなし）
+const v3 = {
+  save( props ) {
+    const {
+      label,
+      backgroundColor,
+      textColor,
+      borderColor,
+      customBackgroundColor,
+      customTextColor,
+      customBorderColor,
+      fontSize,
+    } = props.attributes;
+
+    const backgroundClass = getColorClassName(
+      'background-color',
+      backgroundColor
+    );
+    const textClass = getColorClassName( 'color', textColor );
+    const borderClass = getColorClassName( 'border-color', borderColor );
+    const fontSizeClass = getFontSizeClass( fontSize );
+
+    const className = classnames( {
+      'blank-box': true,
+      'bb-tab': true,
+      [ label ]: !! label,
+      'block-box': true,
+      'has-text-color': textColor || customTextColor,
+      'has-background': backgroundColor || customBackgroundColor,
+      'has-border-color': borderColor || customBorderColor,
+      [ textClass ]: textClass,
+      [ backgroundClass ]: backgroundClass,
+      [ borderClass ]: borderClass,
+      [ fontSizeClass ]: fontSizeClass,
+    } );
+
+    const styles = {
+      '--cocoon-custom-background-color': customBackgroundColor || undefined,
+      '--cocoon-custom-text-color': customTextColor || undefined,
+      '--cocoon-custom-border-color': customBorderColor || undefined,
+    };
+
+    return (
+      <div className={ className } style={ styles }>
+        <InnerBlocks.Content />
+      </div>
+    );
+  },
+};
+
+export default [ v3, v2, v1 ];

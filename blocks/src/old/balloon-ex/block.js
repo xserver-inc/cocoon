@@ -51,6 +51,7 @@ function getClasses( index, style, position, iconstyle ) {
 }
 
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
+  apiVersion: 3,
   title: __( '吹き出しEX', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

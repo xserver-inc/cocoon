@@ -36,6 +36,7 @@ if ( ! isBalloonExist( speechBalloons ) ) {
 }
 
 registerBlockType( 'cocoon-blocks/balloon-box', {
+  apiVersion: 3,
   title: __( '吹き出し', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

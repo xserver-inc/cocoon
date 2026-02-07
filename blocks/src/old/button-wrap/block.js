@@ -18,6 +18,7 @@ import { Fragment } from '@wordpress/element';
 const BUTTON_BLOCK = ' button-block';
 
 registerBlockType( 'cocoon-blocks/button-wrap', {
+  apiVersion: 3,
   title: __( '囲みボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

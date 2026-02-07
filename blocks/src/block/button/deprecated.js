@@ -162,4 +162,71 @@ const v2 = {
   },
 };
 
-export default [ v2, v1 ];
+// API version 2で保存されたブロック（wp-block-*クラスなし）
+const v3 = {
+  save( { attributes } ) {
+    const {
+      content,
+      size,
+      url,
+      target,
+      isCircle,
+      isShine,
+      backgroundColor,
+      textColor,
+      borderColor,
+      customBackgroundColor,
+      customTextColor,
+      customBorderColor,
+      fontSize,
+      width,
+    } = attributes;
+
+    const backgroundClass = getColorClassName(
+      'background-color',
+      backgroundColor
+    );
+    const textClass = getColorClassName( 'color', textColor );
+    const borderClass = getColorClassName( 'border-color', borderColor );
+    const fontSizeClass = getFontSizeClass( fontSize );
+
+    const classes = classnames( {
+      [ BUTTON_BLOCK ]: true,
+    } );
+
+    const styles = {
+      '--cocoon-custom-background-color': customBackgroundColor || undefined,
+      '--cocoon-custom-text-color': customTextColor || undefined,
+      '--cocoon-custom-border-color': customBorderColor || undefined,
+    };
+
+    return (
+      <div className={ classes } style={ styles }>
+        <a
+          href={ url }
+          className={ classnames( {
+            btn: true,
+            [ size ]: size,
+            [ 'btn-circle' ]: !! isCircle,
+            [ 'btn-shine' ]: !! isShine,
+            'has-text-color': textColor || customTextColor,
+            'has-background': backgroundColor || customBackgroundColor,
+            'has-border-color': borderColor || customBorderColor,
+            [ textClass ]: textClass,
+            [ backgroundClass ]: backgroundClass,
+            [ borderClass ]: borderClass,
+            [ fontSizeClass ]: fontSizeClass,
+            [ 'has-custom-width' ]: width,
+            [ `cocoon-block-button__width-${ width }` ]: width,
+          } ) }
+          target={ target }
+          rel="noopener"
+        >
+          <RichText.Content value={ content } />
+        </a>
+      </div>
+    );
+  },
+};
+
+export default [ v3, v2, v1 ];
