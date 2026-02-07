@@ -1,5 +1,5 @@
 {
-  "apiVersion": 3,
+  "apiVersion": 2,
   "name": "cocoon-blocks/profile",
   "category": "cocoon-block",
   "keywords": ["profile", "author", "box"],

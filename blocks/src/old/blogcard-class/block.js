@@ -26,7 +26,6 @@ function getClasses( style ) {
 }
 
 registerBlockType( 'cocoon-blocks/blogcard', {
-  apiVersion: 3,
   title: __( 'ブログカード', THEME_NAME ),
   icon: <FontAwesomeIcon icon={ faAddressCard } />,
   category: THEME_NAME + '-block',

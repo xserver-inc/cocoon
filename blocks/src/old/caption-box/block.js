@@ -22,7 +22,6 @@ const CAPTION_BOX_CLASS = 'caption-box';
 const DEFAULT_MSG = __( '見出し', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/caption-box', {
-  apiVersion: 3,
   title: __( '見出しボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

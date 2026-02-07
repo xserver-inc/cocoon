@@ -1,5 +1,5 @@
 {
-  "apiVersion": 3,
+  "apiVersion": 2,
   "name": "cocoon-blocks/button-1",
   "category": "cocoon-block",
   "keywords": [ "button", "btn" ],

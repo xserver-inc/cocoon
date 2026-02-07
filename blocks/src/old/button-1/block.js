@@ -38,7 +38,6 @@ function getClasses( color, size, isCircle, isShine ) {
 }
 
 registerBlockType( 'cocoon-blocks/button-1', {
-  apiVersion: 3,
   title: __( 'ボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

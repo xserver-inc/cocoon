@@ -17,7 +17,6 @@ import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
-  apiVersion: 3,
   title: __( '吹き出しEX', THEME_NAME ),
   icon: <FontAwesomeIcon icon={ faComments } />,
   category: THEME_NAME + '-block',

@@ -1,5 +1,5 @@
 {
-  "apiVersion": 3,
+  "apiVersion": 2,
   "name": "cocoon-blocks/balloon-ex-box-1",
   "category": "cocoon-block",
   "keywords": [ "balloon", "box" ],

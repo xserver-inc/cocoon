@@ -20,7 +20,7 @@ const ALLOWED_BLOCKS = [
 ];
 
 registerBlockType( 'cocoon-blocks/column-3', {
-  apiVersion: 3,
+  apiVersion: 2,
   title: __( '3カラム', THEME_NAME ),
   icon: (
     <svg

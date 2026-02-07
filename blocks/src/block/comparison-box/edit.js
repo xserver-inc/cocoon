@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 import {
   InnerBlocks,
   useBlockProps,
-  useInnerBlocksProps,
+  __experimentalUseInnerBlocksProps as useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';

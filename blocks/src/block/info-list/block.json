@@ -1,5 +1,5 @@
 {
-  "apiVersion": 3,
+  "apiVersion": 2,
   "name": "cocoon-blocks/info-list",
   "category": "cocoon-block",
   "keywords": ["info", "list"],

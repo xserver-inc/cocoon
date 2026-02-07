@@ -18,7 +18,6 @@ const DEFAULT_MSG = __(
 );
 
 registerBlockType( 'cocoon-blocks/tab-box', {
-  apiVersion: 3,
   title: __( 'タブボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

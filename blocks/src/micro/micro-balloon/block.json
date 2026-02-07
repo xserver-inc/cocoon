@@ -1,5 +1,5 @@
 {
-  "apiVersion": 3,
+  "apiVersion": 2,
   "name": "cocoon-blocks/micro-balloon-2",
   "category": "cocoon-micro",
   "keywords": [ "micro", "copy", "balloon" ],

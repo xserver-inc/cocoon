@@ -16,7 +16,6 @@ import { Fragment } from '@wordpress/element';
 const BUTTON_BLOCK = ' button-block';
 
 registerBlockType( 'cocoon-blocks/button', {
-  apiVersion: 3,
   title: __( 'ボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',

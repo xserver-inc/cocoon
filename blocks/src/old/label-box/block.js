@@ -21,7 +21,6 @@ const CAPTION_BOX_CLASS = 'label-box';
 const DEFAULT_MSG = __( '見出し', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/label-box', {
-  apiVersion: 3,
   title: __( 'ラベルボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
