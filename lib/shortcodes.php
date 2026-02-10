@@ -882,7 +882,7 @@ function get_rss_feed_tag( $atts ) {
         $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">';
         $feed_content .= esc_html($feed_title);
         if ($site == 1 && !empty($site_title)) {
-          $feed_content .= ' <span class="rss-entry-card-site">｜' . esc_html($site_title) . '</span>';
+          $feed_content .= ' <span class="rss-entry-card-site">' . get_title_separator_caption() . ' ' . esc_html($site_title) . '</span>';
         }
         $feed_content .= '</div>';
 
