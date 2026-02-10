@@ -9,14 +9,19 @@ import { THEME_NAME, BLOCK_CLASS, isBalloonExist } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
 const { registerBlockType, createBlock } = wp.blocks;
-import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
+import {
+  InnerBlocks,
+  RichText,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const defaultIconUrl = gbSettings[ 'speechBalloonDefaultIconUrl' ]
-  ? gbSettings[ 'speechBalloonDefaultIconUrl' ]
+const defaultIconUrl = gbSettings.speechBalloonDefaultIconUrl
+  ? gbSettings.speechBalloonDefaultIconUrl
   : '';
 
 let speechBalloons = gbSpeechBalloons;
@@ -36,6 +41,7 @@ if ( ! isBalloonExist( speechBalloons ) ) {
 }
 
 registerBlockType( 'cocoon-blocks/balloon-box', {
+  apiVersion: 3,
   title: __( '吹き出し', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
@@ -57,12 +63,12 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
   },
 
   edit( { attributes, setAttributes } ) {
-    var { content, index } = attributes;
+    let { content, index } = attributes;
     if ( ! speechBalloons[ index ] ) {
       index = 0;
     }
 
-    var balloons = [];
+    const balloons = [];
     speechBalloons.map( ( balloon, index ) => {
       //console.log(balloon);
       if ( speechBalloons[ index ].visible == '1' ) {
@@ -84,7 +90,7 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
               onChange={ ( value ) => setAttributes( { index: value } ) }
               options={ balloons }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>
@@ -128,25 +134,25 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
   },
 
   save( { attributes } ) {
-    var { content, index } = attributes;
+    let { content, index } = attributes;
     if ( ! speechBalloons[ index ] ) {
       index = 0;
     }
+    const blockProps = useBlockProps.save( {
+      className:
+        'speech-wrap sb-id-' +
+        speechBalloons[ index ].id +
+        ' sbs-' +
+        speechBalloons[ index ].style +
+        ' sbp-' +
+        speechBalloons[ index ].position +
+        ' sbis-' +
+        speechBalloons[ index ].iconindex +
+        ' cf' +
+        BLOCK_CLASS,
+    } );
     return (
-      <div
-        className={
-          'speech-wrap sb-id-' +
-          speechBalloons[ index ].id +
-          ' sbs-' +
-          speechBalloons[ index ].style +
-          ' sbp-' +
-          speechBalloons[ index ].position +
-          ' sbis-' +
-          speechBalloons[ index ].iconindex +
-          ' cf' +
-          BLOCK_CLASS
-        }
-      >
+      <div { ...blockProps }>
         <div className="speech-person">
           <figure className="speech-icon">
             <img

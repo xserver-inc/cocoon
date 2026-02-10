@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "cocoon-blocks/blank-box-1",
   "category": "cocoon-block",
   "keywords": [ "blank", "box" ],

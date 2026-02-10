@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "cocoon-blocks/popular-list",
   "category": "cocoon-block",
   "keywords": ["popular", "list"],

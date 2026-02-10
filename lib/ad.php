@@ -233,7 +233,7 @@ endif;
 if ( !function_exists( 'get_all_post_count_in_publish' ) ):
 function get_all_post_count_in_publish(){
   global $wpdb;
-  return intval($wpdb->get_var("SELECT count(*) FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post'"));
+  return intval($wpdb->get_var("SELECT count(*) FROM `{$wpdb->posts}` WHERE post_status = 'publish' AND post_type = 'post'"));
 }
 endif;
 

@@ -108,7 +108,7 @@ function create_item_rankings_table() {
     $add_default_records = true;
   }
   // SQL文でテーブルを作る
-  $sql = "CREATE TABLE ".ITEM_RANKINGS_TABLE_NAME." (
+  $sql = "CREATE TABLE `".ITEM_RANKINGS_TABLE_NAME."` (
     id bigint(20) NOT NULL AUTO_INCREMENT,
     date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,

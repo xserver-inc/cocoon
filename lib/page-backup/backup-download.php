@@ -14,10 +14,11 @@ if (is_user_administrator()) {
   global $wpdb;
 
   $option_name = get_theme_mods_option_name();
-  $res = $wpdb->get_row("
-    SELECT * FROM {$wpdb->options}
-    WHERE option_name = '{$option_name}';
-  ");
+  $query = $wpdb->prepare("
+    SELECT * FROM `{$wpdb->options}`
+    WHERE option_name = %s
+  ", $option_name);
+  $res = $wpdb->get_row($query);
   //_v($res);
   $text_file   = THEME_NAME.'_settings.txt';
   if ($res && $res->option_value) {

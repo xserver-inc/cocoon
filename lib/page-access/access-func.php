@@ -127,7 +127,7 @@ function create_accesses_table() {
     $add_default_records = true;
   }
   // SQL文でテーブルを作る
-  $sql = "CREATE TABLE ".ACCESSES_TABLE_NAME." (
+  $sql = "CREATE TABLE `".ACCESSES_TABLE_NAME."` (
       id bigint(20) NOT NULL AUTO_INCREMENT,
       post_id bigint(20),
       post_type varchar(126) DEFAULT 'post',
@@ -135,7 +135,7 @@ function create_accesses_table() {
       count bigint(20) DEFAULT 0,
       last_ip varchar(40),
       PRIMARY KEY (id),
-      INDEX ".INDEX_ACCESSES_PID_PTYPE_DATE." (post_id,post_type,date)
+      INDEX `".INDEX_ACCESSES_PID_PTYPE_DATE."` (post_id,post_type,date)
     )";
   $res = create_db_table($sql);
 
@@ -224,7 +224,7 @@ function get_accesse_record_from($post_id, $date, $post_type = 'post'){
   $index = INDEX_ACCESSES_PID_PTYPE_DATE;
   $args = array($post_id, $date, $post_type);
 
-  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX({$index}) WHERE post_id = %d AND date = %s AND post_type = %s", $args);
+  $query = $wpdb->prepare("SELECT * FROM `{$table_name}` USE INDEX(`{$index}`) WHERE post_id = %d AND date = %s AND post_type = %s", $args);
 
   $record = $wpdb->get_row( $query );
   //_v($query);
@@ -299,7 +299,7 @@ function get_several_access_count($post_id = null, $days = 'all'){
     }
     //_v($days);
 
-    $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} WHERE post_id = %d AND post_type = %s".$add_where, $args);
+    $query = $wpdb->prepare("SELECT SUM(count) FROM `{$table_name}` WHERE post_id = %d AND post_type = %s".$add_where, $args);
 
     $res = $wpdb->get_var( $query );
     //_v($query );
@@ -350,8 +350,8 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
   $query = "
     SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
-    ) AS {$ranks_posts}
-    INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
+    ) AS `{$ranks_posts}`
+    INNER JOIN `{$wp_posts}` ON `{$ranks_posts}`.post_id = `{$wp_posts}`.id
     WHERE post_status = 'publish' AND
           post_type = '{$post_type}'" .
           $author_query . "
@@ -421,14 +421,14 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   $date = get_current_db_date();
 
 
-  $where = " WHERE {$access_table}.post_type = '$post_type' ".PHP_EOL;
+  $where = " WHERE `{$access_table}`.post_type = '$post_type' ".PHP_EOL;
   if ($days != 'all') {
     $date_before = get_current_db_date_before($days);
-    $where .= " AND {$access_table}.date BETWEEN '$date_before' AND '$date' ".PHP_EOL;
+    $where .= " AND `{$access_table}`.date BETWEEN '$date_before' AND '$date' ".PHP_EOL;
   }
 
   if (is_ids_exist($exclude_post_ids)) {
-    $where .= " AND {$access_table}.post_id NOT IN(".implode(',', $exclude_post_ids).") ".PHP_EOL;
+    $where .= " AND `{$access_table}`.post_id NOT IN(".implode(',', $exclude_post_ids).") ".PHP_EOL;
   }
 
   if (!is_numeric($limit)) {
@@ -442,7 +442,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     //カテゴリー指定
     if (is_ids_exist($cat_ids)) {
       $cat_ids = implode(',', $cat_ids);
-      $where .= " AND {$term_taxonomy}.term_id IN ({$cat_ids}) ".PHP_EOL;
+      $where .= " AND `{$term_taxonomy}`.term_id IN ({$cat_ids}) ".PHP_EOL;
     }
     //除外カテゴリー指定
     if (is_ids_exist($exclude_cat_ids)) {
@@ -451,25 +451,25 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
       //カンマ区切りにする
       $ex_cat_ids = implode(',', $exclude_cat_ids);
       $ex_cat_ids = preg_replace('/,$/', '', $ex_cat_ids);
-      $where .= " AND {$term_relationships}.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
+      $where .= " AND `{$term_relationships}`.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
     }
 
-    $where .= " AND {$term_taxonomy}.taxonomy = 'category' ".PHP_EOL;
+    $where .= " AND `{$term_taxonomy}`.taxonomy = 'category' ".PHP_EOL;
     $query = "
-      SELECT {$joined_table}.post_id, SUM({$joined_table}.count) AS sum_count, {$joined_table}.term_taxonomy_id, {$joined_table}.taxonomy
+      SELECT `{$joined_table}`.post_id, SUM(`{$joined_table}`.count) AS sum_count, `{$joined_table}`.term_taxonomy_id, `{$joined_table}`.taxonomy
         FROM (
 
           #カテゴリーとアクセステーブルを内部結合してグルーピングし並び替えた結果
-          SELECT {$access_table}.post_id, {$access_table}.count, {$term_relationships}.term_taxonomy_id, {$term_taxonomy}.taxonomy
-            FROM {$term_relationships}
-            INNER JOIN {$access_table} ON {$term_relationships}.object_id = {$access_table}.post_id
-            INNER JOIN {$term_taxonomy} ON {$term_relationships}.term_taxonomy_id = {$term_taxonomy}.term_taxonomy_id
+          SELECT `{$access_table}`.post_id, `{$access_table}`.count, `{$term_relationships}`.term_taxonomy_id, `{$term_taxonomy}`.taxonomy
+            FROM `{$term_relationships}`
+            INNER JOIN `{$access_table}` ON `{$term_relationships}`.object_id = `{$access_table}`.post_id
+            INNER JOIN `{$term_taxonomy}` ON `{$term_relationships}`.term_taxonomy_id = `{$term_taxonomy}`.term_taxonomy_id
             $where #WHERE句
-            GROUP BY {$access_table}.id
+            GROUP BY `{$access_table}`.id
 
-        ) AS {$joined_table} #カテゴリーとアクセステーブルを内部結合した仮の名前
+        ) AS `{$joined_table}` #カテゴリーとアクセステーブルを内部結合した仮の名前
 
-        GROUP BY {$joined_table}.post_id
+        GROUP BY `{$joined_table}`.post_id
         ORDER BY sum_count DESC, post_id
     ";
 
@@ -477,9 +477,9 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
   } else {
     $query = "
-      SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
-        FROM {$access_table} $where
-        GROUP BY {$access_table}.post_id
+      SELECT `{$access_table}`.post_id, SUM(`{$access_table}`.count) AS sum_count
+        FROM `{$access_table}` $where
+        GROUP BY `{$access_table}`.post_id
         ORDER BY sum_count DESC, post_id
     ";
     //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
