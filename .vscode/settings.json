@@ -121,7 +121,6 @@
   },
 
   // その他
-  "extensions.ignoreRecommendations": false,
   "problems.decorations.enabled": true,
 
   // ターミナル設定

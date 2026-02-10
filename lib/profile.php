@@ -77,11 +77,17 @@ add_action('edit_user_profile_update', 'update_avatar_to_user_profile');
 if ( !function_exists( 'update_avatar_to_user_profile' ) ):
 function update_avatar_to_user_profile($user_id) {
   if ( current_user_can('edit_user',$user_id) || is_user_administrator() ){
-    update_user_meta($user_id, 'upladed_avatar', $_POST['upladed_avatar']);
-    update_user_meta($user_id, 'profile_page_url', $_POST['profile_page_url']);
+    // URL値をサニタイズしてからDB保存
+    $upladed_avatar = isset($_POST['upladed_avatar']) ? esc_url_raw($_POST['upladed_avatar']) : '';
+    update_user_meta($user_id, 'upladed_avatar', $upladed_avatar);
+    $profile_page_url = isset($_POST['profile_page_url']) ? esc_url_raw($_POST['profile_page_url']) : '';
+    update_user_meta($user_id, 'profile_page_url', $profile_page_url);
 
     //LINE@ URLの%40が消えるので@に変換する処理
-    $_POST['line_at_url'] = str_replace('%40', '@', $_POST['line_at_url']);
+    if (isset($_POST['line_at_url'])) {
+      // %40を@に変換してからURLをサニタイズ
+      $_POST['line_at_url'] = esc_url_raw(str_replace('%40', '@', $_POST['line_at_url']));
+    }
     //_v($_POST['line_at_url']);
   }
 }

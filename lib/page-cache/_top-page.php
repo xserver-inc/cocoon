@@ -24,7 +24,8 @@ if( isset($_GET['cache']) && isset($_GET[HIDDEN_DELETE_FIELD_NAME]) && wp_verify
   $message = __( 'キャッシュを削除しました。', THEME_NAME );
 
   //Amazon個別商品情報を削除する場合
-  $asin = isset($_GET['asin']) ? trim($_GET['asin']) : null;
+  // ASINをサニタイズ
+  $asin = isset($_GET['asin']) ? sanitize_text_field($_GET['asin']) : null;
   if ($asin) {
     $asin_before = sprintf(__( 'ASIN:%sの', THEME_NAME ), $asin);
     $asin_after = __( '該当の商品リンクページをリロードしてご確認ください。', THEME_NAME );
@@ -32,7 +33,8 @@ if( isset($_GET['cache']) && isset($_GET[HIDDEN_DELETE_FIELD_NAME]) && wp_verify
   }
 
   //楽天個別商品情報を削除する場合
-  $id = isset($_GET['id']) ? trim($_GET['id']) : null;
+  // 楽天商品番号をサニタイズ
+  $id = isset($_GET['id']) ? sanitize_text_field($_GET['id']) : null;
   if ($id) {
     $id_before = sprintf(__( '楽天商品番号:%sの', THEME_NAME ), $id);
     $id_after = __( '該当の商品リンクページをリロードしてご確認ください。', THEME_NAME );
@@ -46,7 +48,7 @@ if( isset($_GET['cache']) && isset($_GET[HIDDEN_DELETE_FIELD_NAME]) && wp_verify
 <div class="updated">
   <p>
     <strong>
-      <?php echo $message; ?>
+      <?php echo esc_html($message); ?>
     </strong>
   </p>
 </div>

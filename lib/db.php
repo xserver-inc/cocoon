@@ -69,7 +69,26 @@ function get_db_table_records( $table_name, $column, $keyword = null, $order_by 
     $where = $wpdb->prepare(' WHERE '.$column.' LIKE %s', '%'.$keyword.'%');
   }
   if ($order_by) {
-    $order_by = esc_sql(' ORDER BY '.$order_by);
+    // 許可されたORDER BY値のホワイトリスト（SQLインジェクション対策）
+    // generate_sort_options_tag()の選択肢と各ファイルのデフォルト値を網羅
+    $allowed_order = array(
+      'title',                    // タイトル昇順（TinyMCEドロップダウン + ソート選択）
+      'title DESC',               // タイトル降順
+      'title ASC',                // タイトル昇順（明示的）
+      'date',                     // 作成日昇順
+      'date DESC',                // 作成日降順（テンプレート/アフィリエイトのデフォルト）
+      'date DESC, id DESC',       // 作成日降順+ID降順（ランキング/吹き出しのデフォルト）
+      'date ASC, id ASC',         // 作成日昇順+ID昇順
+      'modified',                 // 編集日昇順
+      'modified DESC, id DESC',   // 編集日降順
+      'id DESC',                  // ID降順
+      'id ASC',                   // ID昇順
+    );
+    // ホワイトリストに含まれない場合はデフォルト値を使用
+    if (!in_array($order_by, $allowed_order, true)) {
+      $order_by = 'date DESC, id DESC';
+    }
+    $order_by = ' ORDER BY ' . $order_by;
   }
   $query = "SELECT * FROM `{$table_name}`".
               $where.

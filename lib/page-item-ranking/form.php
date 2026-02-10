@@ -10,16 +10,21 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <p><?php _e( 'ランキングを作成します。次のランキングを入力するには保存ボタンを押してください。', THEME_NAME ) ?></p>
 <?php //IDがある場合はIDの取得（編集モードの場合）
 $id = isset($_GET['id']) ? intval($_GET['id']) : null;
-$action = isset($_GET['action']) ? $_GET['action'] : null;
-//アイテムの移動
-if ( $id && ($action == 'move') && isset($_GET['from']) && isset($_GET['to']) ) {
-  $from = $_GET['from'];
-  $to = $_GET['to'];
+// アクションパラメータをサニタイズ
+$action = isset($_GET['action']) ? sanitize_key($_GET['action']) : null;
+//アイテムの移動（nonce検証付き）
+if ( $id && ($action == 'move') && isset($_GET['from']) && isset($_GET['to'])
+  && isset($_GET['_wpnonce']) && wp_verify_nonce($_GET['_wpnonce'], 'ranking_item_action') ) {
+  // 移動位置を整数にサニタイズ
+  $from = intval($_GET['from']);
+  $to = intval($_GET['to']);
   move_ranking_item($id, $from, $to);
 }
-//アイテムの削除
-if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET['conf_no']) && ($_GET['del_no'] == $_GET['conf_no']) ) {
-  $del_no = $_GET['del_no'];
+//アイテムの削除（nonce検証付き）
+if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET['conf_no']) && ($_GET['del_no'] == $_GET['conf_no'])
+  && isset($_GET['_wpnonce']) && wp_verify_nonce($_GET['_wpnonce'], 'ranking_item_action') ) {
+  // 削除対象番号を整数にサニタイズ
+  $del_no = intval($_GET['del_no']);
   delete_ranking_item($id, $del_no);
 }
  ?>
@@ -200,30 +205,32 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
           //先頭と最後にはアイテム移動リンクを表示しないための判別
           $is_move_link_visible = ($i != 1) && ($i != $count);
           if ($is_move_link_visible):
-            $move_url = add_query_arg(
+            // nonce付きURL生成（移動用）
+            $move_url = wp_nonce_url(add_query_arg(
               array(
                 'action' => 'move',
                 'id' => $id,
                 'from' => $i,
                 'to' => $i - 1,
               )
-            );
+            ), 'ranking_item_action');
            ?>
-            <a href="<?php echo $move_url; ?>"><?php _e( 'アイテムを上に移動', THEME_NAME ) ?></a>
+            <a href="<?php echo esc_url($move_url); ?>"><?php _e( 'アイテムを上に移動', THEME_NAME ) ?></a>
           <?php endif ?>
           <?php //削除リンク
           //最後は削除しないための判別
           $is_delete_link_visible = ($i != $count);
           if ($is_delete_link_visible):
-            $delete_url = add_query_arg(
+            // nonce付きURL生成（削除用）
+            $delete_url = wp_nonce_url(add_query_arg(
               array(
                 'action' => 'item_delete',
                 'id' => $id,
                 'del_no' => $i,
                 'conf_no' => $i,
               )
-            ); ?>
-            <a href="<?php echo $delete_url; ?>" onclick="if(!confirm('本当に削除してもいいですか？'))return false"><?php _e( '削除', THEME_NAME ) ?></a>
+            ), 'ranking_item_action'); ?>
+            <a href="<?php echo esc_url($delete_url); ?>" onclick="if(!confirm('本当に削除してもいいですか？'))return false"><?php _e( '削除', THEME_NAME ) ?></a>
           <?php endif ?>
         </div>
 
@@ -233,9 +240,9 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
 
   <?php endfor ?>
 
-  <input type="hidden" name="count" value="<?php echo $count; ?>">
-  <input type="hidden" name="action" value="<?php echo $action; ?>">
-  <input type="hidden" name="id" value="<?php echo $id; ?>">
+  <input type="hidden" name="count" value="<?php echo esc_attr($count); ?>">
+  <input type="hidden" name="action" value="<?php echo esc_attr($action); ?>">
+  <input type="hidden" name="id" value="<?php echo esc_attr($id); ?>">
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('item-ranking');?>">
 
   </div>

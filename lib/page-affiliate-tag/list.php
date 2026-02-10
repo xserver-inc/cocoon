@@ -8,8 +8,9 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //var_dump($_POST);
-$keyword = !empty($_POST['s']) ? $_POST['s'] : null;
-$order_by = isset($_POST['order']) ? $_POST['order'] : 'date DESC';
+// 検索キーワードとソート順をサニタイズ
+$keyword = !empty($_POST['s']) ? sanitize_text_field($_POST['s']) : null;
+$order_by = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'date DESC';
 //var_dump($order_by);
 $records = get_affiliate_tags($keyword, $order_by);
 //var_dump($records);
@@ -28,8 +29,9 @@ generate_sort_options_tag($keyword, $order_by);
 <div class="snippet-list">
   <?php foreach ($records as $record):
   //var_dump($record);
-  $edit_url   = add_query_arg(array('action' => 'edit',   'id' => $record->id));
-  $delete_url = add_query_arg(array('action' => 'delete', 'id' => $record->id));
+  // URLをエスケープ
+  $edit_url   = esc_url(add_query_arg(array('action' => 'edit',   'id' => $record->id)));
+  $delete_url = esc_url(add_query_arg(array('action' => 'delete', 'id' => $record->id)));
    ?>
     <div class="snippet-wrap">
       <div class="snippet-title">

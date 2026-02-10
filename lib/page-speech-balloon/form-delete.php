@@ -14,9 +14,14 @@ $list_url = SB_LIST_URL;
   <?php
   $id = isset($_GET['id']) ? intval($_GET['id']) : null;
 
+  // IDが無効な場合は一覧にリダイレクト
+  if (!$id) {
+    redirect_to_url($list_url);
+  }
+
   $record = get_speech_balloon($id);
   if (!$record) {
-	  //指定IDの関数テキストが存在しない場合は一覧にリダイレクト
+	  //指定IDの吹き出しが存在しない場合は一覧にリダイレクト
 	  redirect_to_url($list_url);
   }
   ?>
@@ -32,6 +37,6 @@ $list_url = SB_LIST_URL;
   </div>
 
   <input type="hidden" name="action" value="delete">
-  <input type="hidden" name="id" value="<?php echo $id; ?>">
+  <input type="hidden" name="id" value="<?php echo esc_attr($id); ?>">
   <input type="hidden" name="<?php echo HIDDEN_DELETE_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('delete-speech-balloon');?>">
 </form>

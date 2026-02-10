@@ -45,7 +45,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
       <p><?php _e( 'アフィリエイトタグの一括管理を行います。ショートコードで何度でも使い回すことができます。', THEME_NAME ) ?></p>
 
       <?php //一覧リストの表示
-      $action = isset($_GET['action']) ? $_GET['action'] : null;
+      // アクションパラメータをサニタイズ
+      $action = isset($_GET['action']) ? sanitize_key($_GET['action']) : null;
       if ($action == 'delete') {
         require_once abspath(__FILE__).'form-delete.php';
       } else {

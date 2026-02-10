@@ -181,7 +181,8 @@ endif;
 
 //拡張タグ編集フォーム
 //タクソノミーがcategoryもしくはpost_tagの場合はpost_tagに統一。その他はカスタム分類のタクソノミー。
-$taxonomy = (isset($_GET['taxonomy']) && $_GET['taxonomy'] !== 'category') ? wp_unslash($_GET['taxonomy']) : 'post_tag';
+// タクソノミー名をsanitize_key()でサニタイズ
+$taxonomy = (isset($_GET['taxonomy']) && $_GET['taxonomy'] !== 'category') ? sanitize_key($_GET['taxonomy']) : 'post_tag';
 add_action ( $taxonomy.'_edit_form_fields', 'extra_tag_fields');
 if ( !function_exists( 'extra_tag_fields' ) ):
 function extra_tag_fields( $tag ) {
@@ -204,7 +205,7 @@ function extra_tag_fields( $tag ) {
       ?>
       <p class="description"><?php _e( 'カテゴリーの色を指定します。', THEME_NAME ) ?></p>
     </div>
-    <div style="">
+    <div>
       <?php
       $the_category_text_color = get_the_category_text_color($tag_id);
       generate_label_tag('the_category_text_color', __( '文字色', THEME_NAME ));
@@ -289,37 +290,54 @@ function save_extra_tag_fileds( $term_id ) {
   if (isset($_POST['taxonomy'])) {
     $tag_id = $term_id;
     if ( isset( $_POST['the_category_color'] ) ) {
+      // カラーコードをサニタイズ（空文字は色クリアとして許可、無効値はクリア）
       $the_category_color = $_POST['the_category_color'];
+      if ($the_category_color !== '') {
+        $sanitized = sanitize_hex_color($the_category_color);
+        // sanitize_hex_colorは無効な値に対してnullを返すため、nullの場合は空文字にする
+        $the_category_color = $sanitized !== null ? $sanitized : '';
+      }
       update_term_meta( $tag_id, 'the_category_color', $the_category_color );
     }
 
     if ( isset( $_POST['the_category_text_color'] ) ) {
+      // カラーコードをサニタイズ（空文字は色クリアとして許可、無効値はクリア）
       $the_category_text_color = $_POST['the_category_text_color'];
+      if ($the_category_text_color !== '') {
+        $sanitized = sanitize_hex_color($the_category_text_color);
+        // sanitize_hex_colorは無効な値に対してnullを返すため、nullの場合は空文字にする
+        $the_category_text_color = $sanitized !== null ? $sanitized : '';
+      }
       update_term_meta( $tag_id, 'the_category_text_color', $the_category_text_color );
     }
 
     if ( isset( $_POST['the_tag_title'] ) ) {
-      $the_tag_title = $_POST['the_tag_title'];
+      // テキストフィールドをサニタイズ
+      $the_tag_title = sanitize_text_field($_POST['the_tag_title']);
       update_term_meta( $tag_id, 'the_tag_title', $the_tag_title );
     }
 
     if ( isset( $_POST['the_tag_content'] ) ) {
-      $the_tag_content = $_POST['the_tag_content'];
+      // HTMLを含むコンテンツを安全なタグのみ許可
+      $the_tag_content = wp_kses_post($_POST['the_tag_content']);
       update_term_meta( $tag_id, 'the_tag_content', $the_tag_content );
     }
 
     if ( isset( $_POST['the_tag_eye_catch_url'] ) ) {
-      $the_tag_eye_catch_url = $_POST['the_tag_eye_catch_url'];
+      // URLをサニタイズ
+      $the_tag_eye_catch_url = esc_url_raw($_POST['the_tag_eye_catch_url']);
       update_term_meta( $tag_id, 'the_tag_eye_catch_url', $the_tag_eye_catch_url );
     }
 
     if ( isset( $_POST['the_tag_meta_description'] ) ) {
-      $the_tag_meta_description = $_POST['the_tag_meta_description'];
+      // テキストフィールドをサニタイズ
+      $the_tag_meta_description = sanitize_textarea_field($_POST['the_tag_meta_description']);
       update_term_meta( $tag_id, 'the_tag_meta_description', $the_tag_meta_description );
     }
 
     if ( isset( $_POST['the_tag_meta_keywords'] ) ) {
-      $the_tag_meta_keywords = $_POST['the_tag_meta_keywords'];
+      // テキストフィールドをサニタイズ
+      $the_tag_meta_keywords = sanitize_text_field($_POST['the_tag_meta_keywords']);
       update_term_meta( $tag_id, 'the_tag_meta_keywords', $the_tag_meta_keywords );
     }
 

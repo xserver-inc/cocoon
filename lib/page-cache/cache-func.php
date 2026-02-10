@@ -132,21 +132,24 @@ function delete_theme_storaged_caches(){
         return delete_amazon_api_caches();
         break;
       case 'amazon_asin_cache':
-        $asin = isset($_GET['asin']) ? $_GET['asin'] : null;
+        // GETパラメータをサニタイズ
+        $asin = isset($_GET['asin']) ? sanitize_text_field($_GET['asin']) : null;
         return delete_amazon_asin_cache($asin);
         break;
         case 'rakuten_api_caches':
           return delete_rakuten_api_caches();
           break;
           case 'rakuten_id_cache':
-            $id = isset($_GET['id']) ? $_GET['id'] : null;
+            // GETパラメータをサニタイズ
+            $id = isset($_GET['id']) ? sanitize_text_field($_GET['id']) : null;
             return delete_rakuten_id_cache($id);
             break;
       case 'amp_caches':
         return delete_amp_caches();
         break;
       case 'amp_page_cache':
-        $ampid = isset($_GET['ampid']) ? $_GET['ampid'] : null;
+        // GETパラメータをサニタイズ
+        $ampid = isset($_GET['ampid']) ? sanitize_text_field($_GET['ampid']) : null;
         return delete_amp_page_cache($ampid);
         break;
     }

@@ -59,7 +59,7 @@ function generate_affiliate_tags($value){
 
     var count = <?php echo $count; ?>;
     affiliateTags[count] = new Array();
-    affiliateTags[count].title  = '<?php echo $record->title; ?>';
+    affiliateTags[count].title  = '<?php echo esc_js($record->title); ?>';
     affiliateTags[count].id     = '<?php echo $record->id; ?>';
     affiliateTags[count].shrotecode = '<?php echo get_affiliate_tag_shortcode($record->id); ?>';
 

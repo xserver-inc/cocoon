@@ -62,7 +62,7 @@ function generate_item_rankings($value){
 
       var count = <?php echo $count; ?>;
       itemRankings[count] = new Array();
-      itemRankings[count].title  = '<?php echo $record->title; ?>';
+      itemRankings[count].title  = '<?php echo esc_js($record->title); ?>';
       itemRankings[count].id     = '<?php echo $record->id; ?>';
       itemRankings[count].shrotecode = '<?php echo get_item_ranking_shortcode($record->id); ?>';
 

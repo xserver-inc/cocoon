@@ -82,7 +82,7 @@ function generate_selectbox_tag($name, $options, $now_value, $label = null, $ico
       //アイコンフォントを利用する場合
       $add_option_class = null;
       ?>
-      <option value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?><?php echo $add_option_class; ?>><?php echo $caption; ?></option>
+      <option value="<?php echo esc_attr($value); ?>"<?php the_option_selected($value, $now_value) ?><?php echo $add_option_class; ?>><?php echo esc_html($caption); ?></option>
     <?php } ?>
   </select>
   <?php
@@ -370,7 +370,7 @@ function generate_sort_options_tag($keyword = null, $order_by = null){?>
   <!-- 抽出フォーム -->
   <div class="sort-options">
     <form method="post" action="">
-    <input type="text" name="s" value="<?php echo $keyword; ?>" placeholder="<?php _e( 'タイトル検索', THEME_NAME ) ?>">
+    <input type="text" name="s" value="<?php echo esc_attr($keyword); ?>" placeholder="<?php _e( 'タイトル検索', THEME_NAME ) ?>">
     <?php
 
       $options = array(
