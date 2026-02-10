@@ -20,6 +20,7 @@ import {
   InspectorControls,
   PanelColorSettings,
   ContrastChecker,
+  useBlockProps,
 } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, TextControl, ToggleControl } =
   wp.components;
@@ -38,6 +39,7 @@ function getClasses( color, size, isCircle, isShine ) {
 }
 
 registerBlockType( 'cocoon-blocks/button-1', {
+  apiVersion: 3,
   title: __( 'ボタン', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
@@ -182,8 +184,11 @@ registerBlockType( 'cocoon-blocks/button-1', {
 
   save( { attributes } ) {
     const { content, color, size, url, target, isCircle, isShine } = attributes;
+    const blockProps = useBlockProps.save( {
+      className: BUTTON_BLOCK,
+    } );
     return (
-      <div className={ BUTTON_BLOCK }>
+      <div { ...blockProps }>
         <a
           href={ url }
           className={ getClasses( color, size, isCircle, isShine ) }

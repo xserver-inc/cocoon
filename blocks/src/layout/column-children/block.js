@@ -17,7 +17,7 @@ import { Fragment } from '@wordpress/element';
 
 //左カラム
 registerBlockType( 'cocoon-blocks/column-left', {
-  apiVersion: 2,
+  apiVersion: 3,
   title: __( '左カラム', THEME_NAME ),
   parent: [ 'cocoon-blocks/column-2', 'cocoon-blocks/column-3' ],
   icon: <FontAwesomeIcon icon={ faSquare } />,
@@ -65,7 +65,7 @@ registerBlockType( 'cocoon-blocks/column-left', {
 
 //中央カラム
 registerBlockType( 'cocoon-blocks/column-center', {
-  apiVersion: 2,
+  apiVersion: 3,
   title: __( '中央カラム', THEME_NAME ),
   parent: [ 'cocoon-blocks/column-2', 'cocoon-blocks/column-3' ],
   icon: <FontAwesomeIcon icon={ faSquare } />,
@@ -113,7 +113,7 @@ registerBlockType( 'cocoon-blocks/column-center', {
 
 //右カラム
 registerBlockType( 'cocoon-blocks/column-right', {
-  apiVersion: 2,
+  apiVersion: 3,
   title: __( '右カラム', THEME_NAME ),
   parent: [ 'cocoon-blocks/column-2', 'cocoon-blocks/column-3' ],
   icon: <FontAwesomeIcon icon={ faSquare } />,

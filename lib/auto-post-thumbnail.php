@@ -167,7 +167,7 @@ function auto_post_thumbnail_image($post_id) {
   }
 
 
-  $the_post = $wpdb->get_results("SELECT * FROM {$wpdb->posts} WHERE id = $post_id");
+  $the_post = $wpdb->get_results($wpdb->prepare("SELECT * FROM `{$wpdb->posts}` WHERE id = %d", $post_id));
 
   //正規表現にマッチしたイメージのリストを格納する変数の初期化
   $matches = array();
@@ -202,7 +202,7 @@ function auto_post_thumbnail_image($post_id) {
         if ( isset($m[1]) ) {
 
           //wp_postsテーブルからguidがファイルパスのものを検索してIDを取得
-          $result = $wpdb->get_results("SELECT ID FROM {$wpdb->posts} WHERE guid = '".$image."'");
+          $result = $wpdb->get_results($wpdb->prepare("SELECT ID FROM `{$wpdb->posts}` WHERE guid = %s", $image));
           //IDをサムネイルをIDにセットする
           if ( isset($result[0]) )
             $thumb_id = $result[0]->ID;
@@ -221,7 +221,7 @@ function auto_post_thumbnail_image($post_id) {
             //新しいファイル名を利用してファイルパスを結語
             $new_filepath = $path_parts["dirname"].'/'.$new_filename.'.'.$path_parts["extension"];
             //wp_postsテーブルからguidがファイルパスのものを検索してIDを取得
-            $result = $wpdb->get_results("SELECT ID FROM {$wpdb->posts} WHERE guid = '".$new_filepath."'");
+            $result = $wpdb->get_results($wpdb->prepare("SELECT ID FROM `{$wpdb->posts}` WHERE guid = %s", $new_filepath));
             //IDをサムネイルをIDにセットする
             if ( isset($result[0]) )
               $thumb_id = $result[0]->ID;

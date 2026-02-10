@@ -11,12 +11,18 @@ import { faComments } from '@fortawesome/free-regular-svg-icons';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { InnerBlocks, RichText, InspectorControls } from '@wordpress/block-editor';
+import {
+  InnerBlocks,
+  RichText,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
+  apiVersion: 3,
   title: __( '吹き出しEX', THEME_NAME ),
   icon: <FontAwesomeIcon icon={ faComments } />,
   category: THEME_NAME + '-block',
@@ -75,7 +81,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
               onChange={ ( value ) => setAttributes( { index: value } ) }
               options={ balloons }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -101,7 +107,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -119,7 +125,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
 
             <SelectControl
@@ -147,7 +153,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
                 },
               ] }
               __nextHasNoMarginBottom={ true }
-              __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+              __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
             />
           </PanelBody>
         </InspectorControls>
@@ -192,21 +198,21 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
 
   save( { attributes } ) {
     const { name, index, style, position, iconstyle } = attributes;
+    const blockProps = useBlockProps.save( {
+      className:
+        'speech-wrap sb-id-' +
+        gbSpeechBalloons[ index ].id +
+        ' sbs-' +
+        style +
+        ' sbp-' +
+        position +
+        ' sbis-' +
+        iconstyle +
+        ' cf' +
+        BLOCK_CLASS,
+    } );
     return (
-      <div
-        className={
-          'speech-wrap sb-id-' +
-          gbSpeechBalloons[ index ].id +
-          ' sbs-' +
-          style +
-          ' sbp-' +
-          position +
-          ' sbis-' +
-          iconstyle +
-          ' cf' +
-          BLOCK_CLASS
-        }
-      >
+      <div { ...blockProps }>
         <div className="speech-person">
           <figure className="speech-icon">
             <img

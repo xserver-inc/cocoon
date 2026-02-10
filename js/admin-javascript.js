@@ -6,36 +6,46 @@
  */
 
 // 管理タブの何番目がクリックされたか
-document.querySelectorAll("#tabs > ul > li").forEach((tab, index) => {
-  tab.addEventListener("click", () => {
-    document.getElementById("select_index").value = index;
-  });
-});
+document.querySelectorAll( '#tabs > ul > li' ).forEach( ( tab, index ) => {
+  tab.addEventListener( 'click', () => {
+    document.getElementById( 'select_index' ).value = index;
+  } );
+} );
 
 // トグルスイッチ
-document.querySelectorAll('.toggle-link').forEach(toggleLink => {
-  toggleLink.addEventListener('click', () => {
+document.querySelectorAll( '.toggle-link' ).forEach( ( toggleLink ) => {
+  toggleLink.addEventListener( 'click', () => {
     const toggleContent = toggleLink.nextElementSibling;
-    if (toggleContent && toggleContent.classList.contains('toggle-content')) {
-      toggleContent.style.display = toggleContent.style.display === 'none' ? 'block' : 'none';
+    if (
+      toggleContent &&
+      toggleContent.classList.contains( 'toggle-content' )
+    ) {
+      toggleContent.style.display =
+        toggleContent.style.display === 'none' ? 'block' : 'none';
     }
-  });
-});
+  } );
+} );
 
 // WordPressの管理バー削除処理
-function deleteWpAdminBar(selector) {
-  document.querySelectorAll(selector).forEach(iframe => {
-    iframe.addEventListener('load', () => {
+function deleteWpAdminBar( selector ) {
+  document.querySelectorAll( selector ).forEach( ( iframe ) => {
+    iframe.addEventListener( 'load', () => {
       const iframeContent = iframe.contentDocument;
-      if (iframeContent) {
-        const wpAdminBar = iframeContent.getElementById('wpadminbar');
-        if (wpAdminBar) wpAdminBar.style.display = 'none';
-        const adminPanel = iframeContent.querySelector('.admin-panel');
-        if (adminPanel) adminPanel.style.display = 'none';
-        iframeContent.documentElement.style.cssText = 'margin-top: 0px !important';
+      if ( iframeContent ) {
+        const wpAdminBar = iframeContent.getElementById( 'wpadminbar' );
+        if ( wpAdminBar ) wpAdminBar.style.display = 'none';
+        const adminPanel = iframeContent.querySelector( '.admin-panel' );
+        if ( adminPanel ) adminPanel.style.display = 'none';
+        iframeContent.documentElement.style.cssText =
+          'margin-top: 0px !important';
+        // プレビュー内でadminbarを非表示にした際、ヘッダーモバイルボタンの位置ずれを防ぐため、CSS変数も0pxに設定
+        iframeContent.documentElement.style.setProperty(
+          '--wp-admin--admin-bar--height',
+          '0px'
+        );
       }
-    });
-  });
+    } );
+  } );
 }
 
-deleteWpAdminBar('.iframe-demo');
+deleteWpAdminBar( '.iframe-demo' );

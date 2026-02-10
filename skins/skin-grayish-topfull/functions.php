@@ -2102,13 +2102,17 @@ endif;
 // ブロックエディター編集画面にもスタイルを当てる：cocoon-gutenbergで親テーマのあとに読み込み
 // -----------------------------------------------------------------------------
 add_theme_support('editor-styles');
-add_action('enqueue_block_assets', 'skin_block_editor_style_setup');
+add_action('enqueue_block_assets', 'skin_block_editor_style_setup', 20);
 if (!function_exists('skin_block_editor_style_setup')) :
   function skin_block_editor_style_setup()
   {
     $cocoon_gutenberg = THEME_NAME . '-gutenberg';
     $editor_style_url = get_theme_file_uri('/skins/skin-grayish-topfull/editor-style.css');
-    wp_enqueue_style('block-editor-style', $editor_style_url, array($cocoon_gutenberg));
+    $deps = array();
+    if (wp_style_is($cocoon_gutenberg, 'registered')) {
+      $deps[] = $cocoon_gutenberg;
+    }
+    wp_enqueue_style('block-editor-style', $editor_style_url, $deps);
   }
 endif;
 

@@ -392,7 +392,7 @@ function get_attachment_id_from_url($url) {
   // 添付ファイルURLからIDを取得
   $attachment_id = $wpdb->get_var(
       $wpdb->prepare(
-          "SELECT ID FROM $wpdb->posts WHERE guid = %s AND post_type = 'attachment'",
+          "SELECT ID FROM `{$wpdb->posts}` WHERE guid = %s AND post_type = 'attachment'",
           $url
       )
   );

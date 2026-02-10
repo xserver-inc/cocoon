@@ -15,6 +15,7 @@ import {
   InnerBlocks,
   RichText,
   InspectorControls,
+  useBlockProps,
 } from '@wordpress/block-editor';
 const { PanelBody, SelectControl, BaseControl, Button } = wp.components;
 import { Fragment } from '@wordpress/element';
@@ -22,6 +23,7 @@ const CAPTION_BOX_CLASS = 'tab-caption-box';
 const DEFAULT_MSG = __( '見出し', THEME_NAME );
 
 registerBlockType( 'cocoon-blocks/tab-caption-box', {
+  apiVersion: 3,
   title: __( 'タブ見出しボックス', THEME_NAME ),
   icon: 'dismiss',
   category: THEME_NAME + '-old',
@@ -134,8 +136,11 @@ registerBlockType( 'cocoon-blocks/tab-caption-box', {
 
   save( { attributes } ) {
     const { content, color, icon } = attributes;
+    const blockProps = useBlockProps.save( {
+      className: CAPTION_BOX_CLASS + color + BLOCK_CLASS,
+    } );
     return (
-      <div className={ CAPTION_BOX_CLASS + color + BLOCK_CLASS }>
+      <div { ...blockProps }>
         <div
           className={
             'tab-caption-box-label block-box-label' + getIconClass( icon )
