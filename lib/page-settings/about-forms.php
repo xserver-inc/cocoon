@@ -52,6 +52,40 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     }
     $all .= __( 'WordPressバージョン：', THEME_NAME ).get_bloginfo('version').PHP_EOL;
     $all .= __( 'PHPバージョン：', THEME_NAME ).phpversion().PHP_EOL;
+    // データベースのバージョンを取得して表示する
+    global $wpdb;
+    $all .= __( 'データベース：', THEME_NAME ).$wpdb->db_version().PHP_EOL;
+    $all .= __( 'サイト言語：', THEME_NAME ).get_locale().PHP_EOL;
+    // タイムゾーン設定を取得（文字列がない場合はUTCオフセットで表示する）
+    $timezone = get_option('timezone_string');
+    if ( ! $timezone ) {
+      $gmt_offset = get_option( 'gmt_offset' );
+      $timezone   = 'UTC' . ( $gmt_offset >= 0 ? '+' : '' ) . $gmt_offset;
+    }
+    $all .= __( 'タイムゾーン：', THEME_NAME ).$timezone.PHP_EOL;
+    // HTTPS接続かどうかを判定して表示する
+    $all .= __( 'HTTPS：', THEME_NAME ).( is_ssl() ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) ).PHP_EOL;
+    // マルチサイト環境かどうかを判定して表示する
+    $all .= __( 'マルチサイト：', THEME_NAME ).( is_multisite() ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) ).PHP_EOL;
+    // WordPressのデバッグモードが有効かどうかを表示する
+    $all .= __( 'WP_DEBUG：', THEME_NAME ).( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) ).PHP_EOL;
+    // パーマリンク構造の設定値を表示する（未設定の場合は「デフォルト」と表示）
+    $permalink = get_option( 'permalink_structure' );
+    $all .= __( 'パーマリンク構造：', THEME_NAME ).( $permalink ? $permalink : __( 'デフォルト', THEME_NAME ) ).PHP_EOL;
+    // ホームページの表示設定（最新の投稿か固定ページか）を表示する
+    $all .= __( 'ホームページ表示：', THEME_NAME ).( get_option( 'show_on_front' ) === 'page' ? __( '固定ページ', THEME_NAME ) : __( '最新の投稿', THEME_NAME ) ).PHP_EOL;
+    // PHPのメモリ上限を取得して表示する
+    $all .= __( 'PHPメモリ上限：', THEME_NAME ).ini_get( 'memory_limit' ).PHP_EOL;
+    // WordPressが使用できるメモリ上限を表示する
+    $all .= __( 'WPメモリ上限：', THEME_NAME ).WP_MEMORY_LIMIT.PHP_EOL;
+    // PHPスクリプトの最大実行時間を表示する
+    $all .= __( 'PHP最大実行時間：', THEME_NAME ).ini_get( 'max_execution_time' ).__( '秒', THEME_NAME ).PHP_EOL;
+    // PHP max_input_vars（送信できる変数の最大数）を表示する
+    $all .= 'PHP max_input_vars：'.ini_get( 'max_input_vars' ).PHP_EOL;
+    // ファイルアップロードの上限サイズを表示する
+    $all .= __( 'アップロード上限：', THEME_NAME ).ini_get( 'upload_max_filesize' ).PHP_EOL;
+    // POSTデータの上限サイズを表示する
+    $all .= __( 'POST上限：', THEME_NAME ).ini_get( 'post_max_size' ).PHP_EOL;
     if (isset($_SERVER['HTTP_USER_AGENT']))
       $all .= __( 'ブラウザ：', THEME_NAME ).$_SERVER['HTTP_USER_AGENT'].PHP_EOL;
     if (isset($_SERVER['SERVER_SOFTWARE']))
@@ -88,6 +122,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       $tags = get_tags( $args );
       $all .= __( 'タグ数：', THEME_NAME ).count($tags).PHP_EOL;
 
+      // 公開済みの投稿数を取得して表示する
+      $count_posts = wp_count_posts();
+      $all .= __( '投稿数：', THEME_NAME ).$count_posts->publish.PHP_EOL;
+      // 公開済みの固定ページ数を取得して表示する
+      $count_pages = wp_count_posts( 'page' );
+      $all .= __( '固定ページ数：', THEME_NAME ).$count_pages->publish.PHP_EOL;
+
       $all .= __( 'ユーザー数：', THEME_NAME ).count(get_users()).PHP_EOL;
 
       $all .= $sep;
@@ -122,15 +163,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     //Cocoon設定
     $all .= __( 'Gutenberg：', THEME_NAME ).intval(get_env_info_option_value(OP_GUTENBERG_EDITOR_ENABLE, 1)).PHP_EOL;
-    if (is_amp_enable()) {
-      $all .= __( 'AMP：', THEME_NAME ).intval(get_env_info_option_value(OP_AMP_ENABLE)).PHP_EOL;
-    }
-    if (is_pwa_enable()) {
-      $all .= __( 'PWA：', THEME_NAME ).intval(get_env_info_option_value(OP_PWA_ENABLE)).PHP_EOL;
-    }
     $all .= __( 'Font Awesome：', THEME_NAME ).str_replace('font_awesome_', '', get_env_info_option_value(OP_SITE_ICON_FONT, SITE_ICON_FONT_DEFAULT)).PHP_EOL;
     $all .= __( 'Auto Post Thumbnail：', THEME_NAME ).intval(get_env_info_option_value(OP_AUTO_POST_THUMBNAIL_ENABLE)).PHP_EOL;
-    $all .= __( 'Retina：', THEME_NAME ).intval(get_env_info_option_value(OP_RETINA_THUMBNAIL_ENABLE)).PHP_EOL;
     $all .= __( 'ホームイメージ：', THEME_NAME ).get_remove_home_url(get_env_info_option_value(OP_OGP_HOME_IMAGE_URL, OGP_HOME_IMAGE_URL_DEFAULT)).PHP_EOL;
     $all .= $sep;
 

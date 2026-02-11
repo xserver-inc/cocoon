@@ -25,3 +25,4 @@ composer.lock
 # PHPUnit
 .phpunit.cache/
 tests/coverage/
+configs/
