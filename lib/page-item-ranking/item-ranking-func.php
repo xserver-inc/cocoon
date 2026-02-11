@@ -171,7 +171,7 @@ function get_item_ranking( $id ) {
   $record = get_db_table_record( $table_name, $id );
   if ($record) {
     $record->title = !empty($record->title) ? stripslashes_deep($record->title) : '';
-    $record->item_ranking = !empty($record->item_ranking) ? stripslashes_deep(unserialize($record->item_ranking)) : array();
+    $record->item_ranking = !empty($record->item_ranking) ? stripslashes_deep(maybe_unserialize($record->item_ranking)) : array();
     $record->count = !empty($record->count) ? $record->count : 1;
     $record->visible = !empty($record->visible) ? $record->visible : 0;
   }

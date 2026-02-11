@@ -41,7 +41,7 @@ function sns_image_custom_box_save_data(){
   $id = get_the_ID();
   //SNS画像
   if ( isset( $_POST['sns_image_url'] ) ){
-    $sns_image_url = $_POST['sns_image_url'];
+    $sns_image_url = esc_url_raw($_POST['sns_image_url']);
     $sns_image_url_key = 'sns_image_url';
     add_post_meta($id, $sns_image_url_key, $sns_image_url, true);
     update_post_meta($id, $sns_image_url_key, $sns_image_url);

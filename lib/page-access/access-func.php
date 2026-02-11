@@ -344,16 +344,17 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
 
   $author_query = '';
   if ($author) {
-    $author_query = ' AND post_author = '.esc_sql($author);
+    $author_query = $wpdb->prepare(' AND post_author = %d', $author);
   }
 
+  $post_type_safe = esc_sql($post_type);
   $query = "
     SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
     ) AS `{$ranks_posts}`
     INNER JOIN `{$wp_posts}` ON `{$ranks_posts}`.post_id = `{$wp_posts}`.id
     WHERE post_status = 'publish' AND
-          post_type = '{$post_type}'" .
+          post_type = '{$post_type_safe}'" .
           $author_query . "
     ORDER BY sum_count DESC, post_date DESC
   ";
@@ -421,14 +422,15 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   $date = get_current_db_date();
 
 
-  $where = " WHERE `{$access_table}`.post_type = '$post_type' ".PHP_EOL;
+  $where = $wpdb->prepare(" WHERE `{$access_table}`.post_type = %s ", $post_type).PHP_EOL;
   if ($days != 'all') {
     $date_before = get_current_db_date_before($days);
     $where .= " AND `{$access_table}`.date BETWEEN '$date_before' AND '$date' ".PHP_EOL;
   }
 
   if (is_ids_exist($exclude_post_ids)) {
-    $where .= " AND `{$access_table}`.post_id NOT IN(".implode(',', $exclude_post_ids).") ".PHP_EOL;
+    $exclude_post_ids_safe = array_map('intval', $exclude_post_ids);
+    $where .= " AND `{$access_table}`.post_id NOT IN(".implode(',', $exclude_post_ids_safe).") ".PHP_EOL;
   }
 
   if (!is_numeric($limit)) {
@@ -441,16 +443,12 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     $joined_table = 'terms_accesses';
     //カテゴリー指定
     if (is_ids_exist($cat_ids)) {
-      $cat_ids = implode(',', $cat_ids);
-      $where .= " AND `{$term_taxonomy}`.term_id IN ({$cat_ids}) ".PHP_EOL;
+      $cat_ids_safe = implode(',', array_map('intval', $cat_ids));
+      $where .= " AND `{$term_taxonomy}`.term_id IN ({$cat_ids_safe}) ".PHP_EOL;
     }
     //除外カテゴリー指定
     if (is_ids_exist($exclude_cat_ids)) {
-      //空の配列を取り除く
-      $exclude_cat_ids = array_filter($exclude_cat_ids, "is_numeric");
-      //カンマ区切りにする
-      $ex_cat_ids = implode(',', $exclude_cat_ids);
-      $ex_cat_ids = preg_replace('/,$/', '', $ex_cat_ids);
+      $ex_cat_ids = implode(',', array_map('intval', $exclude_cat_ids));
       $where .= " AND `{$term_relationships}`.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
     }
 

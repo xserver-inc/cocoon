@@ -82,7 +82,7 @@ function review_custom_box_save_data(){
 
   //対象
   if ( isset( $_POST['the_review_type'] ) ){
-    $the_review_type = $_POST['the_review_type'];
+    $the_review_type = sanitize_text_field($_POST['the_review_type']);
     $the_review_type_key = 'the_review_type';
     add_post_meta($id, $the_review_type_key, $the_review_type, true);
     update_post_meta($id, $the_review_type_key, $the_review_type);
@@ -90,7 +90,7 @@ function review_custom_box_save_data(){
 
   //名前
   if ( isset( $_POST['the_review_name'] ) ){
-    $the_review_name = $_POST['the_review_name'];
+    $the_review_name = sanitize_text_field($_POST['the_review_name']);
     $the_review_name_key = 'the_review_name';
     add_post_meta($id, $the_review_name_key, $the_review_name, true);
     update_post_meta($id, $the_review_name_key, $the_review_name);
@@ -98,7 +98,7 @@ function review_custom_box_save_data(){
 
   //レート
   if ( isset( $_POST['the_review_rate'] ) ){
-    $the_review_rate = $_POST['the_review_rate'];
+    $the_review_rate = floatval($_POST['the_review_rate']);
     $the_review_rate_key = 'the_review_rate';
     add_post_meta($id, $the_review_rate_key, $the_review_rate, true);
     update_post_meta($id, $the_review_rate_key, $the_review_rate);
