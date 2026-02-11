@@ -5,6 +5,9 @@ blocks/src/sample/
 node_modules/
 package-lock.json
 
+# Cursor
+.cursor/
+
 #CLAUDE
 .mcp.json
 CLAUDE.md
