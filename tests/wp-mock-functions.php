@@ -643,3 +643,175 @@ if (!function_exists('is_attachment')) {
         return false;
     }
 }
+
+// === SSL関連 ===
+if (!function_exists('is_easy_ssl_enable')) {
+    function is_easy_ssl_enable() {
+        return false;
+    }
+}
+
+// === 広告関連 ===
+if (!function_exists('get_ad_code')) {
+    function get_ad_code() {
+        return '';
+    }
+}
+
+if (!function_exists('get_ad_exclude_post_ids')) {
+    function get_ad_exclude_post_ids() {
+        return '';
+    }
+}
+
+if (!function_exists('get_ad_exclude_category_ids')) {
+    function get_ad_exclude_category_ids() {
+        return [];
+    }
+}
+
+if (!function_exists('is_all_ads_visible')) {
+    function is_all_ads_visible() {
+        return true;
+    }
+}
+
+if (!function_exists('is_the_page_ads_visible')) {
+    function is_the_page_ads_visible() {
+        return true;
+    }
+}
+
+if (!function_exists('is_all_adsenses_visible')) {
+    function is_all_adsenses_visible() {
+        return true;
+    }
+}
+
+if (!function_exists('is_amp')) {
+    function is_amp() {
+        return false;
+    }
+}
+
+if (!function_exists('is_mobile_adsense_width_wide')) {
+    function is_mobile_adsense_width_wide() {
+        return false;
+    }
+}
+
+if (!function_exists('is_ad_pos_content_middle_visible')) {
+    function is_ad_pos_content_middle_visible() {
+        return false;
+    }
+}
+
+if (!function_exists('in_category')) {
+    function in_category($ids) {
+        return false;
+    }
+}
+
+if (!function_exists('is_category')) {
+    function is_category($ids = '') {
+        return false;
+    }
+}
+
+if (!function_exists('is_single')) {
+    function is_single($post = '') {
+        return false;
+    }
+}
+
+if (!function_exists('is_singular')) {
+    function is_singular($post_types = '') {
+        return false;
+    }
+}
+
+// === CSSクラス関連 ===
+if (!function_exists('get_site_font_family')) {
+    function get_site_font_family() {
+        return 'Noto_Sans_JP';
+    }
+}
+
+if (!function_exists('get_site_font_size')) {
+    function get_site_font_size() {
+        return '16px';
+    }
+}
+
+if (!function_exists('get_site_font_weight')) {
+    function get_site_font_weight() {
+        return '400';
+    }
+}
+
+if (!function_exists('is_front_top_page')) {
+    function is_front_top_page() {
+        return false;
+    }
+}
+
+if (!function_exists('is_header_layout_type_top')) {
+    function is_header_layout_type_top() {
+        return false;
+    }
+}
+
+if (!function_exists('is_singular_page_type_column1')) {
+    function is_singular_page_type_column1() {
+        return false;
+    }
+}
+
+if (!function_exists('is_singular_page_type_content_only')) {
+    function is_singular_page_type_content_only() {
+        return false;
+    }
+}
+
+if (!function_exists('is_singular_page_type_narrow')) {
+    function is_singular_page_type_narrow() {
+        return false;
+    }
+}
+
+if (!function_exists('is_singular_page_type_wide')) {
+    function is_singular_page_type_wide() {
+        return false;
+    }
+}
+
+if (!function_exists('is_singular_page_type_full_wide')) {
+    function is_singular_page_type_full_wide() {
+        return false;
+    }
+}
+
+if (!function_exists('get_the_tags')) {
+    function get_the_tags($post_id = 0) {
+        return false;
+    }
+}
+
+// === リンク関連 ===
+if (!function_exists('includes_string')) {
+    function includes_string($haystack, $needle) {
+        return strpos($haystack, $needle) !== false;
+    }
+}
+
+if (!function_exists('includes_target_blalk')) {
+    function includes_target_blalk($tag) {
+        return strpos($tag, 'target="_blank"') !== false;
+    }
+}
+
+if (!function_exists('is_comment_external_blogcard_enable')) {
+    function is_comment_external_blogcard_enable() {
+        return false;
+    }
+}
