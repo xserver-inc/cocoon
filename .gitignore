@@ -14,3 +14,11 @@ claudedocs
 
 # NVM
 .nvmrc
+
+# Composer
+vendor/
+composer.lock
+
+# PHPUnit
+.phpunit.cache/
+tests/coverage/

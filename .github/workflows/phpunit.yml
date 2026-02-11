@@ -1,0 +1,146 @@
+name: PHPUnit Tests
+
+on:
+  push:
+    branches: [ master, main, develop ]
+  pull_request:
+    branches: [ master, main, develop ]
+
+jobs:
+  # ====================================================================
+  # ユニットテスト（WordPress不要）
+  # ====================================================================
+  unit-tests:
+    name: Unit Tests (PHP ${{ matrix.php-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.1', '8.2', '8.3']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, intl, json
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Run unit tests
+        run: vendor/bin/phpunit --testsuite unit --colors=always
+
+      - name: Run unit tests with coverage
+        if: matrix.php-version == '8.3'
+        run: vendor/bin/phpunit --testsuite unit --coverage-text --coverage-clover=coverage.xml
+
+      - name: Upload coverage report
+        if: matrix.php-version == '8.3'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+          retention-days: 30
+
+  # ====================================================================
+  # WordPress 統合テスト
+  # ====================================================================
+  integration-tests:
+    name: Integration Tests (PHP ${{ matrix.php-version }}, WP ${{ matrix.wp-version }})
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.2', '8.3']
+        wp-version: ['latest']
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wordpress_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, intl, json, mysqli, pdo_mysql
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Install WordPress test suite
+        run: |
+          # WordPress テストスイートをダウンロード・セットアップ
+          WP_TESTS_DIR=/tmp/wordpress-tests-lib
+          WP_CORE_DIR=/tmp/wordpress
+
+          # WordPress コアをダウンロード
+          mkdir -p $WP_CORE_DIR
+          curl -s "https://wordpress.org/latest.tar.gz" | tar xz --strip-components=1 -C $WP_CORE_DIR
+
+          # テストスイートをダウンロード
+          mkdir -p $WP_TESTS_DIR
+          svn co --quiet https://develop.svn.wordpress.org/tags/$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -o '"version":"[^"]*"' | head -1 | cut -d'"' -f4)/tests/phpunit/includes/ $WP_TESTS_DIR/includes
+          svn co --quiet https://develop.svn.wordpress.org/tags/$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -o '"version":"[^"]*"' | head -1 | cut -d'"' -f4)/tests/phpunit/data/ $WP_TESTS_DIR/data
+
+          # wp-tests-config.php を作成
+          cat > $WP_TESTS_DIR/wp-tests-config.php << EOF
+          <?php
+          define('ABSPATH', '$WP_CORE_DIR/');
+          define('DB_NAME', 'wordpress_test');
+          define('DB_USER', 'root');
+          define('DB_PASSWORD', 'root');
+          define('DB_HOST', '127.0.0.1');
+          define('DB_CHARSET', 'utf8');
+          define('DB_COLLATE', '');
+          \$table_prefix = 'wptests_';
+          define('WP_TESTS_DOMAIN', 'example.org');
+          define('WP_TESTS_EMAIL', 'admin@example.org');
+          define('WP_TESTS_TITLE', 'Test Blog');
+          define('WP_PHP_BINARY', 'php');
+          define('WPLANG', '');
+          EOF
+
+          # テーマをWordPressにシンボリックリンク
+          mkdir -p $WP_CORE_DIR/wp-content/themes
+          ln -s $GITHUB_WORKSPACE $WP_CORE_DIR/wp-content/themes/cocoon-master
+
+          echo "WP_TESTS_DIR=$WP_TESTS_DIR" >> $GITHUB_ENV
+
+      - name: Run integration tests
+        env:
+          WP_TESTS_DIR: /tmp/wordpress-tests-lib
+        run: vendor/bin/phpunit --testsuite integration --colors=always

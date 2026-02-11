@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache"
+         executionOrder="depends,defects"
+         failOnRisky="true"
+         failOnWarning="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerNotices="true">
+
+    <testsuites>
+        <testsuite name="unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="integration">
+            <directory>tests/Integration</directory>
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <!-- 統合テスト用の環境変数（必要に応じて設定） -->
+        <!-- <env name="WP_TESTS_DIR" value="/path/to/wordpress-tests-lib" /> -->
+    </php>
+
+    <source>
+        <include>
+            <directory>lib</directory>
+        </include>
+        <exclude>
+            <directory>lib/minify</directory>
+            <directory>lib/plugin-update-checker</directory>
+        </exclude>
+    </source>
+
+</phpunit>
