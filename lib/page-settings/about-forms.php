@@ -69,6 +69,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'マルチサイト：', THEME_NAME ).( is_multisite() ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) ).PHP_EOL;
     // WordPressのデバッグモードが有効かどうかを表示する
     $all .= __( 'WP_DEBUG：', THEME_NAME ).( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) ).PHP_EOL;
+    // WP_CRONの無効化設定（予約投稿やスケジュール処理に影響する）
+    $all .= 'DISABLE_WP_CRON：'.( ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ) ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) ).PHP_EOL;
+    // キャッシュ機能が有効かどうかを表示する
+    $all .= 'WP_CACHE：'.( ( defined( 'WP_CACHE' ) && WP_CACHE ) ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) ).PHP_EOL;
+    // テーマ・プラグインエディタの編集が禁止されているかを表示する
+    $all .= 'DISALLOW_FILE_EDIT：'.( ( defined( 'DISALLOW_FILE_EDIT' ) && DISALLOW_FILE_EDIT ) ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) ).PHP_EOL;
     // パーマリンク構造の設定値を表示する（未設定の場合は「デフォルト」と表示）
     $permalink = get_option( 'permalink_structure' );
     $all .= __( 'パーマリンク構造：', THEME_NAME ).( $permalink ? $permalink : __( 'デフォルト', THEME_NAME ) ).PHP_EOL;
@@ -78,6 +84,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'PHPメモリ上限：', THEME_NAME ).ini_get( 'memory_limit' ).PHP_EOL;
     // WordPressが使用できるメモリ上限を表示する
     $all .= __( 'WPメモリ上限：', THEME_NAME ).WP_MEMORY_LIMIT.PHP_EOL;
+    // WordPress管理画面で使用できるメモリ上限を表示する
+    $all .= __( 'WP管理画面メモリ上限：', THEME_NAME ).WP_MAX_MEMORY_LIMIT.PHP_EOL;
     // PHPスクリプトの最大実行時間を表示する
     $all .= __( 'PHP最大実行時間：', THEME_NAME ).ini_get( 'max_execution_time' ).__( '秒', THEME_NAME ).PHP_EOL;
     // PHP max_input_vars（送信できる変数の最大数）を表示する
@@ -86,6 +94,21 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'アップロード上限：', THEME_NAME ).ini_get( 'upload_max_filesize' ).PHP_EOL;
     // POSTデータの上限サイズを表示する
     $all .= __( 'POST上限：', THEME_NAME ).ini_get( 'post_max_size' ).PHP_EOL;
+    // WordPressの動作に重要なPHP拡張モジュールの有効・無効を一覧で表示する
+    $php_extensions = array( 'curl', 'mbstring', 'gd', 'imagick', 'xml', 'zip', 'intl', 'exif' );
+    $ext_status     = array();
+    foreach ( $php_extensions as $ext ) {
+      $ext_status[] = $ext . ':' . ( extension_loaded( $ext ) ? __( '有効', THEME_NAME ) : __( '無効', THEME_NAME ) );
+    }
+    $all .= __( 'PHP拡張：', THEME_NAME ).implode( ', ', $ext_status ).PHP_EOL;
+    // 使用中のWordPress画像エディタ（GDまたはImagick）を表示する
+    if ( function_exists( '_wp_image_editor_choose' ) ) {
+      $image_editor = _wp_image_editor_choose();
+      if ( $image_editor ) {
+        // クラス名からプレフィックスを除いて読みやすくする
+        $all .= __( '画像エディタ：', THEME_NAME ).str_replace( 'WP_Image_Editor_', '', $image_editor ).PHP_EOL;
+      }
+    }
     if (isset($_SERVER['HTTP_USER_AGENT']))
       $all .= __( 'ブラウザ：', THEME_NAME ).$_SERVER['HTTP_USER_AGENT'].PHP_EOL;
     if (isset($_SERVER['SERVER_SOFTWARE']))
@@ -166,11 +189,52 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'Font Awesome：', THEME_NAME ).str_replace('font_awesome_', '', get_env_info_option_value(OP_SITE_ICON_FONT, SITE_ICON_FONT_DEFAULT)).PHP_EOL;
     $all .= __( 'Auto Post Thumbnail：', THEME_NAME ).intval(get_env_info_option_value(OP_AUTO_POST_THUMBNAIL_ENABLE)).PHP_EOL;
     $all .= __( 'ホームイメージ：', THEME_NAME ).get_remove_home_url(get_env_info_option_value(OP_OGP_HOME_IMAGE_URL, OGP_HOME_IMAGE_URL_DEFAULT)).PHP_EOL;
+    // 内部リンクをHTTPSに置換する簡単SSL設定の状態を表示する
+    $all .= __( '簡単SSL：', THEME_NAME ).intval(get_env_info_option_value(OP_EASY_SSL_ENABLE)).PHP_EOL;
+    // コードハイライト機能の有効・無効を表示する
+    $all .= __( 'コードハイライト：', THEME_NAME ).intval(get_env_info_option_value(OP_CODE_HIGHLIGHT_ENABLE)).PHP_EOL;
+    $all .= $sep;
+
+    //SEO設定
+    // canonicalタグの出力が有効かどうかを表示する
+    $all .= __( 'canonicalタグ：', THEME_NAME ).intval(get_env_info_option_value(OP_CANONICAL_TAG_ENABLE, 1)).PHP_EOL;
+    // カテゴリーページにnoindexを付与しているかを表示する
+    $all .= __( 'カテゴリnoindex：', THEME_NAME ).intval(get_env_info_option_value(OP_CATEGORY_PAGE_NOINDEX)).PHP_EOL;
+    // タグページにnoindexを付与しているかを表示する
+    $all .= __( 'タグnoindex：', THEME_NAME ).intval(get_env_info_option_value(OP_TAG_PAGE_NOINDEX)).PHP_EOL;
+    $all .= $sep;
+
+    //レイアウト設定
+    // サイドバーの配置位置（左・右・なし）を表示する
+    $all .= __( 'サイドバー位置：', THEME_NAME ).get_env_info_option_value(OP_SIDEBAR_POSITION, 'sidebar_right').PHP_EOL;
+    // サイドバーの表示タイプを表示する
+    $all .= __( 'サイドバー表示：', THEME_NAME ).get_env_info_option_value(OP_SIDEBAR_DISPLAY_TYPE, 'display_all').PHP_EOL;
+    // メインカラムのコンテンツ幅を表示する（未設定の場合は「デフォルト」と表示）
+    $main_width = get_env_info_option_value( OP_MAIN_COLUMN_CONTENTS_WIDTH, '' );
+    $all .= __( 'メインカラム幅：', THEME_NAME ).( $main_width ? $main_width . 'px' : __( 'デフォルト', THEME_NAME ) ).PHP_EOL;
+    // サイドバーのコンテンツ幅を表示する（未設定の場合は「デフォルト」と表示）
+    $sidebar_width = get_env_info_option_value( OP_SIDEBAR_CONTENTS_WIDTH, '' );
+    $all .= __( 'サイドバー幅：', THEME_NAME ).( $sidebar_width ? $sidebar_width . 'px' : __( 'デフォルト', THEME_NAME ) ).PHP_EOL;
+    $all .= $sep;
+
+    //広告設定
+    // 全ての広告を表示するかどうかの設定を表示する
+    $all .= __( '全広告表示：', THEME_NAME ).intval(get_env_info_option_value(OP_ALL_ADS_VISIBLE, 1)).PHP_EOL;
+    // AdSenseの表示方法（自動・手動）を表示する
+    $all .= __( 'AdSense表示方法：', THEME_NAME ).get_env_info_option_value(OP_ADSENSE_DISPLAY_METHOD, 'by_myself').PHP_EOL;
+    $all .= $sep;
+
+    //アクセス解析設定（IDの有無のみ表示し、IDそのものは出力しない）
+    // GA4のトラッキングIDが設定されているかどうかを表示する
+    $all .= 'GA4：'.( get_env_info_option_value( OP_GA4_TRACKING_ID, '' ) ? __( '設定済み', THEME_NAME ) : __( '未設定', THEME_NAME ) ).PHP_EOL;
+    // Googleタグマネージャーが設定されているかどうかを表示する
+    $all .= 'GTM：'.( get_env_info_option_value( OP_GOOGLE_TAG_MANAGER_TRACKING_ID, '' ) ? __( '設定済み', THEME_NAME ) : __( '未設定', THEME_NAME ) ).PHP_EOL;
+    // Google Search Consoleが設定されているかどうかを表示する
+    $all .= 'Search Console：'.( get_env_info_option_value( OP_GOOGLE_SEARCH_CONSOLE_ID, '' ) ? __( '設定済み', THEME_NAME ) : __( '未設定', THEME_NAME ) ).PHP_EOL;
     $all .= $sep;
 
     //高速化設定
     $all .= __( 'ブラウザキャッシュ有効化：', THEME_NAME ).intval(is_browser_cache_enable()).PHP_EOL;
-    $all .= __( 'HTML縮小化：', THEME_NAME ).intval(is_html_minify_enable()).PHP_EOL;
     $all .= __( 'CSS縮小化：', THEME_NAME ).intval(is_css_minify_enable()).PHP_EOL;
     $all .= __( 'JavaScript縮小化：', THEME_NAME ).intval(is_js_minify_enable()).PHP_EOL;
     $all .= __( 'Lazy Load：', THEME_NAME ).intval(is_lazy_load_enable()).PHP_EOL;
@@ -188,6 +252,23 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         }
       }
       $all .= $sep;
+    }
+
+    // 非アクティブなプラグインの一覧を表示する（問題の切り分け時に参考になる）
+    if ( ! empty( $plugins ) ) {
+      $inactive_plugins = array();
+      foreach ( $plugins as $path => $plugin ) {
+        if ( ! is_plugin_active( $path ) ) {
+          $inactive_plugins[] = $plugin['Name'] . ' ' . $plugin['Version'];
+        }
+      }
+      if ( ! empty( $inactive_plugins ) ) {
+        $all .= __( '停止中のプラグイン：' ).PHP_EOL;
+        foreach ( $inactive_plugins as $inactive_plugin ) {
+          $all .= $inactive_plugin . PHP_EOL;
+        }
+        $all .= $sep;
+      }
     }
 
     //var_dump($all);
