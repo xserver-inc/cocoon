@@ -42,7 +42,7 @@ function redirect_custom_box_save_data(){
   $id = get_the_ID();
   //リダイレクトURL
   if ( isset( $_POST['redirect_url'] ) ){
-    $redirect_url = esc_url_raw($_POST['redirect_url']);
+    $redirect_url = $_POST['redirect_url'];
     $redirect_url_key = 'redirect_url';
     add_post_meta($id, $redirect_url_key, $redirect_url, true);
     update_post_meta($id, $redirect_url_key, $redirect_url);

@@ -70,9 +70,9 @@ function generate_speech_balloons_js($value){
     var count = <?php echo $count; ?>;
     speechBalloons[count] = new Array();
     speechBalloons[count].title  = '<?php echo esc_js($record->title); ?>';
-    speechBalloons[count].id     = '<?php echo esc_js($record->id); ?>';
-    speechBalloons[count].before = '<?php echo esc_js($sb_tag_before); ?>';
-    speechBalloons[count].after  = '<?php echo esc_js($sb_tag_after); ?>';
+    speechBalloons[count].id     = '<?php echo $record->id; ?>';
+    speechBalloons[count].before = '<?php echo $sb_tag_before; ?>';
+    speechBalloons[count].after  = '<?php echo $sb_tag_after; ?>';
 
     <?php
     $count++;

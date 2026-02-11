@@ -169,7 +169,7 @@ function update_custom_box_save_data(){
   //タイトル
   $update_level = null;
   if ( isset( $_POST['update_level'] ) ){
-    $update_level = sanitize_text_field($_POST['update_level']);
+    $update_level = $_POST['update_level'];
     $update_level_key = 'update_level';
     add_post_meta($id, $update_level_key, $update_level, true);
     update_post_meta($id, $update_level_key, $update_level);
