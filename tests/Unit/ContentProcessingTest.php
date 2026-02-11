@@ -161,9 +161,7 @@ class ContentProcessingTest extends TestCase
     // ファイル拡張子除外正規表現テスト（OGPブログカード）
     // ========================================================================
 
-    /**
-     * @dataProvider mediaFileExtensionProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('mediaFileExtensionProvider')]
     public function test_メディアファイルURLは除外される(string $url): void
     {
         $pattern = '/.+(\.mp3|\.midi|\.mp4|\.mpeg|\.mpg|\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pdf)$/i';

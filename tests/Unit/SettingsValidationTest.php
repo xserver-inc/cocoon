@@ -19,9 +19,7 @@ class SettingsValidationTest extends TestCase
     // カラーコードのバリデーション（is_dark_hexcolor を活用）
     // ========================================================================
 
-    /**
-     * @dataProvider colorCodeProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('colorCodeProvider')]
     public function test_colorcode_to_rgb_各種カラーコード(string $hex, int $r, int $g, int $b): void
     {
         $result = colorcode_to_rgb($hex);
@@ -47,9 +45,7 @@ class SettingsValidationTest extends TestCase
     // URL バリデーション
     // ========================================================================
 
-    /**
-     * @dataProvider urlDelimiterProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('urlDelimiterProvider')]
     public function test_add_delimiter_各種URLパターン(string $input, string $expected): void
     {
         $this->assertSame($expected, add_delimiter_to_url_if_last_nothing($input));
@@ -70,9 +66,7 @@ class SettingsValidationTest extends TestCase
     // チェックボックス値のバリデーション
     // ========================================================================
 
-    /**
-     * @dataProvider checkboxValueProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('checkboxValueProvider')]
     public function test_is_field_checkbox_value_default_各種値(mixed $value, bool $expected): void
     {
         $this->assertSame($expected, is_field_checkbox_value_default($value));
@@ -95,9 +89,7 @@ class SettingsValidationTest extends TestCase
     // サニタイズ関数の包括テスト
     // ========================================================================
 
-    /**
-     * @dataProvider commaTextProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('commaTextProvider')]
     public function test_sanitize_comma_text_各種パターン(string $input, string $expected): void
     {
         $this->assertSame($expected, sanitize_comma_text($input));
