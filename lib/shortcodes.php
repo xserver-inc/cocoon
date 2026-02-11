@@ -948,7 +948,8 @@ if (!shortcode_exists('html')) {
 }
 if ( !function_exists( 'html_shortcode' ) ):
 function html_shortcode( $atts, $content = null ) {
-  return html_entity_decode($content, ENT_NOQUOTES);
+  // $content が null の場合は空文字に変換してから処理する
+  return html_entity_decode($content ?? '', ENT_NOQUOTES);
 }
 endif;
 
