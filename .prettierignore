@@ -60,10 +60,12 @@ update-info.json
 
 # Configuration files
 .claude/**
+.cursor/**
 .mcp.json
 .serena/**
 .vscode/**
 .github/**
+*.mdc
 
 # WordPress theme files
 style.css
