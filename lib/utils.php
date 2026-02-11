@@ -2125,7 +2125,12 @@ function get_file_contents($file){
 endif;
 
 if (!defined('FS_CHMOD_FILE')) {
-  define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
+  $abspath_index = ABSPATH . 'index.php';
+  if (file_exists($abspath_index)) {
+    define( 'FS_CHMOD_FILE', ( fileperms( $abspath_index ) & 0777 | 0644 ) );
+  } else {
+    define( 'FS_CHMOD_FILE', 0644 );
+  }
 }
 //ファイル内容の出力
 if ( !function_exists( 'wp_filesystem_put_contents' ) ):

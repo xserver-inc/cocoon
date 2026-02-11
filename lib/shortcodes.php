@@ -200,7 +200,9 @@ function popular_entries_shortcode($atts) {
 }
 endif;
 
-define('AFFI_SHORTCODE', 'affi');
+if (!defined('AFFI_SHORTCODE')) {
+  define('AFFI_SHORTCODE', 'affi');
+}
 //アフィリエイトタグショートコード関数
 if (!shortcode_exists(AFFI_SHORTCODE)) {
   add_shortcode(AFFI_SHORTCODE, 'affiliate_tag_shortcode');
@@ -241,7 +243,9 @@ function get_affiliate_tag_shortcode($id) {
 }
 endif;
 
-define('TEMPLATE_SHORTCODE', 'temp');
+if (!defined('TEMPLATE_SHORTCODE')) {
+  define('TEMPLATE_SHORTCODE', 'temp');
+}
 //関数テキストショートコード関数
 if (!shortcode_exists(TEMPLATE_SHORTCODE)) {
   add_shortcode(TEMPLATE_SHORTCODE, 'function_text_shortcode');
@@ -275,7 +279,9 @@ function get_function_text_shortcode($id) {
 }
 endif;
 
-define('RANKING_SHORTCODE', 'rank');
+if (!defined('RANKING_SHORTCODE')) {
+  define('RANKING_SHORTCODE', 'rank');
+}
 //ランキングショートコード関数
 if (!shortcode_exists(RANKING_SHORTCODE)) {
   add_shortcode(RANKING_SHORTCODE, 'item_ranking_shortcode');
