@@ -29,7 +29,21 @@ $_SB_SAMPLE_TEXTS =
 $keyword = !empty($_POST['s']) ? sanitize_text_field($_POST['s']) : null;
 $order_by = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'date DESC, id DESC';
 //var_dump($order_by);
-$records = get_speech_balloons($keyword, $order_by);
+// 現在のページ番号を取得
+$paged = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
+// 1ページあたりの表示件数
+$limit = 20; // 任意の数に変更可能
+// オフセット計算
+$offset = ($paged - 1) * $limit;
+
+// レコード取得（ページネーション対応）
+$records = get_speech_balloons($keyword, $order_by, $limit, $offset);
+
+// 総レコード数取得
+$total = get_speech_balloons_count($keyword);
+// 総ページ数計算
+$pages = ceil($total / $limit);
+
 //var_dump($records);
 //並び替えオプション
 generate_sort_options_tag($keyword, $order_by);
@@ -46,6 +60,23 @@ generate_sort_options_tag($keyword, $order_by);
 <div id="sb-list" class="postbox" style="max-width: 980px; margin-top: 20px;">
   <h2 class="hndle"><?php _e( '吹き出し一覧', THEME_NAME ) ?></h2>
   <div class="inside">
+
+<!-- ページネーション -->
+<div class="tablenav top">
+  <div class="tablenav-pages">
+    <?php
+    $pagination_args = array(
+      'base' => add_query_arg('paged', '%#%'),
+      'format' => '',
+      'total' => $pages,
+      'current' => $paged,
+      'prev_text' => __('&laquo;'),
+      'next_text' => __('&raquo;'),
+    );
+    echo paginate_links($pagination_args);
+    ?>
+  </div>
+</div>
 
 <!-- <table class="sb-list" style="width: 100%;"> -->
   <?php foreach ($records as $record):
@@ -96,6 +127,15 @@ generate_sort_options_tag($keyword, $order_by);
   </tr> -->
   <?php endforeach ?>
 <!-- </table> -->
+
+<!-- ページネーション (下部) -->
+<div class="tablenav bottom">
+  <div class="tablenav-pages">
+    <?php
+    echo paginate_links($pagination_args);
+    ?>
+  </div>
+</div>
 
   </div>
 </div>

@@ -14,7 +14,7 @@ define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_function_tex
 //_v(FUNCTION_TEXTS_TABLE_NAME);
 
 //関数テキスト移動用URL
-define('FT_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
+define('FT_LIST_URL',   add_query_arg(array('action' => false,   'id' => false, 'paged' => false)));
 define('FT_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
 
 
@@ -101,9 +101,17 @@ endif;
 
 //関数テキストレコードの取得
 if ( !function_exists( 'get_function_texts' ) ):
-function get_function_texts( $keyword = null, $order_by = null ) {
+function get_function_texts( $keyword = null, $order_by = null, $limit = null, $offset = null ) {
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
-  return get_db_table_records($table_name, 'title', $keyword, $order_by);
+  return get_db_table_records($table_name, 'title', $keyword, $order_by, $limit, $offset);
+}
+endif;
+
+//レコード数の取得
+if ( !function_exists( 'get_function_texts_count' ) ):
+function get_function_texts_count( $keyword = null ) {
+  $table_name = FUNCTION_TEXTS_TABLE_NAME;
+  return get_db_table_record_count_with_keyword($table_name, 'title', $keyword);
 }
 endif;
 

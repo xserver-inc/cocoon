@@ -62,7 +62,7 @@ endif;
 
 //汎用的なテーブルからレコードの取得
 if ( !function_exists( 'get_db_table_records' ) ):
-function get_db_table_records( $table_name, $column, $keyword = null, $order_by = null){
+function get_db_table_records( $table_name, $column, $keyword = null, $order_by = null, $limit = null, $offset = null){
   global $wpdb;
   $where = null;
   if ($column && $keyword) {
@@ -90,9 +90,20 @@ function get_db_table_records( $table_name, $column, $keyword = null, $order_by 
     }
     $order_by = ' ORDER BY ' . $order_by;
   }
+
+  $limit_query = '';
+  if ($limit) {
+    if ($offset) {
+      $limit_query = $wpdb->prepare(' LIMIT %d, %d', $offset, $limit);
+    } else {
+      $limit_query = $wpdb->prepare(' LIMIT %d', $limit);
+    }
+  }
+
   $query = "SELECT * FROM `{$table_name}`".
               $where.
-              $order_by;
+              $order_by.
+              $limit_query;
 
   $records = $wpdb->get_results( $query );
   //_v($query);
@@ -171,6 +182,21 @@ function get_db_table_record_count($table){
   $query = "SELECT COUNT(id) FROM `{$table}`";
   $count = $wpdb->get_var( $query );
   //var_dump($count);
+
+  return intval($count);
+}
+endif;
+
+//レコード数（検索条件付き）を取得
+if ( !function_exists( 'get_db_table_record_count_with_keyword' ) ):
+function get_db_table_record_count_with_keyword($table, $column, $keyword = null){
+  global $wpdb;
+  $where = '';
+  if ($column && $keyword) {
+    $where = $wpdb->prepare(' WHERE '.$column.' LIKE %s', '%'.$keyword.'%');
+  }
+  $query = "SELECT COUNT(id) FROM `{$table}`{$where}";
+  $count = $wpdb->get_var( $query );
 
   return intval($count);
 }

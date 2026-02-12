@@ -649,9 +649,7 @@ select option.fa{
   //   }
   // }
 
-  .ranking-item-name{
 
-  }
 
   // .tips{
   //   margin: 0;
@@ -934,7 +932,7 @@ select option.fa{
   }
 
   .mce-menu-item-preview.mce-active,
-  .mce-menu-item:focus,{
+  .mce-menu-item:focus{
     background: #e7609e !important;
     border-left: 5px solid #60e5a7 !important;
   }
@@ -1118,4 +1116,43 @@ select option.fa{
   display: block;
   font-size: 1.2em;
   margin-bottom: 6px;
+}
+
+//ページネーション
+.tablenav-pages{
+  text-align: center;
+  margin: 0 1em !important;
+
+  .page-numbers{
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #555;
+    font-size: 14px;
+    line-height: 1;
+
+    &:hover{
+      background-color: #eee;
+      border-color: #999;
+      color: #333;
+    }
+
+    &.current{
+      background-color: #eee;
+      border-color: #999;
+      color: #333;
+      pointer-events: none;
+    }
+
+    &.dots{
+      border: none;
+      background: none;
+      pointer-events: none;
+    }
+  }
 }

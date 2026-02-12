@@ -24159,3 +24159,37 @@ select option.fa:before {
   font-size: 1.2em;
   margin-bottom: 6px;
 }
+
+.tablenav-pages {
+  text-align: center;
+  margin: 0 1em !important;
+}
+.tablenav-pages .page-numbers {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+  line-height: 1;
+}
+.tablenav-pages .page-numbers:hover {
+  background-color: #eee;
+  border-color: #999;
+  color: #333;
+}
+.tablenav-pages .page-numbers.current {
+  background-color: #eee;
+  border-color: #999;
+  color: #333;
+  pointer-events: none;
+}
+.tablenav-pages .page-numbers.dots {
+  border: none;
+  background: none;
+  pointer-events: none;
+}
