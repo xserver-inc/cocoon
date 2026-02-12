@@ -16,7 +16,7 @@ function add_update_custom_box() {
   add_meta_box( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'post', 'side', 'default' );
   add_meta_box( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'page', 'side', 'default' );
   //カスタム投稿タイプに登録
-  add_meta_box_custom_post_types( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'custum_post', 'side', 'default' );
+  add_meta_box_custom_post_types( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'custom_post', 'side', 'default' );
 }
 endif;
 
@@ -24,6 +24,8 @@ endif;
 if( !function_exists( 'update_custom_box_view' ) ):
 function update_custom_box_view() {
   global $post;
+  // CSRF対策用のnonceフィールドを出力
+  wp_nonce_field('cocoon_update_custom_box', 'cocoon_update_custom_box_nonce');
   $update_level = get_the_page_update_level();
   if (empty($update_level)) {
     $update_level = 'high';
@@ -113,7 +115,8 @@ function time_mod_form_view() {
 endif;
 
 //「修正のみ」は更新しない。それ以外は、それぞれの更新日時に変更する
-if (isset( $_POST['update_level'] )) {
+// nonce検証を通過した場合のみフィルターを追加する
+if (isset( $_POST['update_level'] ) && isset($_POST['cocoon_update_custom_box_nonce']) && wp_verify_nonce($_POST['cocoon_update_custom_box_nonce'], 'cocoon_update_custom_box')) {
   add_filter( 'wp_insert_post_data', 'update_custom_insert_post_data', 10, 2 );
 }
 if( !function_exists( 'update_custom_insert_post_data' ) ):
@@ -164,8 +167,14 @@ endif;
 //データ保存
 add_action('save_post', 'update_custom_box_save_data');
 if ( !function_exists( 'update_custom_box_save_data' ) ):
-function update_custom_box_save_data(){
-  $id = get_the_ID();
+function update_custom_box_save_data($post_id){
+  // nonce検証（CSRF対策）
+  if (!isset($_POST['cocoon_update_custom_box_nonce']) || !wp_verify_nonce($_POST['cocoon_update_custom_box_nonce'], 'cocoon_update_custom_box')) return;
+  // 自動保存時はスキップ
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+  // 投稿の編集権限をチェック
+  if (!current_user_can('edit_post', $post_id)) return;
+  $id = $post_id;
   //タイトル
   $update_level = null;
   if ( isset( $_POST['update_level'] ) ){

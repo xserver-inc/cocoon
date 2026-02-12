@@ -308,6 +308,10 @@ add_action ( 'edited_term', 'save_extra_category_fileds');
 if ( !function_exists( 'save_extra_category_fileds' ) ):
 function save_extra_category_fileds( $term_id ) {
   if (isset($_POST['taxonomy']) && ($_POST['taxonomy'] === 'category')) {
+    // WordPressの組み込みnonceを検証（CSRF対策）
+    if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'update-tag_' . $term_id)) return;
+    // タームの編集権限をチェック
+    if (!current_user_can('edit_term', $term_id)) return;
     $cat_id = $term_id;
 
     if ( isset( $_POST['the_category_color'] ) ) {

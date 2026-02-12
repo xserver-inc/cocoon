@@ -17,7 +17,7 @@ function add_ad_custom_box(){
   add_meta_box( 'singular_ad_settings',__( '広告', THEME_NAME ), 'view_ad_custom_box', 'post', 'side' );
   add_meta_box( 'singular_ad_settings',__( '広告', THEME_NAME ), 'view_ad_custom_box', 'page', 'side' );
   //カスタム投稿タイプに登録
-  add_meta_box_custom_post_types( 'singular_ad_settings',__( '広告', THEME_NAME ), 'view_ad_custom_box', 'custum_post', 'side' );
+  add_meta_box_custom_post_types( 'singular_ad_settings',__( '広告', THEME_NAME ), 'view_ad_custom_box', 'custom_post', 'side' );
 }
 endif;
 
@@ -27,6 +27,8 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'view_ad_custom_box' ) ):
 function view_ad_custom_box(){
+  // CSRF対策用のnonceフィールドを出力
+  wp_nonce_field('cocoon_ad_custom_box', 'cocoon_ad_custom_box_nonce');
   //広告を除外する
   generate_checkbox_tag('the_page_ads_novisible' , is_the_page_ads_novisible(), __( '広告を除外する', THEME_NAME ));
   generate_howto_tag(__( 'ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリーごとの設定も行えます。', THEME_NAME ), 'the_page_ads_novisible');
@@ -41,8 +43,14 @@ endif;
 
 add_action('save_post', 'ad_custom_box_save_data');
 if ( !function_exists( 'ad_custom_box_save_data' ) ):
-function ad_custom_box_save_data(){
-  $id = get_the_ID();
+function ad_custom_box_save_data($post_id){
+  // nonce検証（CSRF対策）
+  if (!isset($_POST['cocoon_ad_custom_box_nonce']) || !wp_verify_nonce($_POST['cocoon_ad_custom_box_nonce'], 'cocoon_ad_custom_box')) return;
+  // 自動保存時はスキップ
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+  // 投稿の編集権限をチェック
+  if (!current_user_can('edit_post', $post_id)) return;
+  $id = $post_id;
 
   //広告の除外
   $the_page_ads_novisible = !empty($_POST['the_page_ads_novisible']) ? 1 : 0;

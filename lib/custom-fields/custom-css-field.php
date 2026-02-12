@@ -13,7 +13,7 @@ function add_custom_css_custom_box() {
   add_meta_box( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'post', 'normal', 'low' );
   add_meta_box( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'page', 'normal', 'low' );
   //カスタム投稿タイプに登録
-  add_meta_box_custom_post_types( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'custum_post', 'normal', 'low' );
+  add_meta_box_custom_post_types( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'custom_post', 'normal', 'low' );
 }
 endif;
 
@@ -34,7 +34,9 @@ function custom_css_custom_box_save_data($post_id) {
   $custom_css_noncename = isset($_POST['custom_css_noncename']) ? $_POST['custom_css_noncename'] : null;
   if ( !wp_verify_nonce( $custom_css_noncename, 'custom-css' ) ) return $post_id;
   if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) return $post_id;
-  $custom_css = $_POST['custom_css'];
+  // 編集権限を持つユーザーのみ保存を許可
+  if (!current_user_can('edit_post', $post_id)) return $post_id;
+  $custom_css = isset($_POST['custom_css']) ? $_POST['custom_css'] : '';
   update_post_meta( $post_id, '_custom_css', $custom_css );
 }
 endif;
