@@ -171,6 +171,9 @@ border-bottom:4px solid #5572ff;
     margin: 10px 15px 0 15px;
     color: #d7d5ef;
 }
+.ect-vertical-card .entry-card-wrap .entry-card-thumb {
+    margin-top: 0;
+}
 .ect-vertical-card .entry-card-wrap .entry-card-thumb img {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
