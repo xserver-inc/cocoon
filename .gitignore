@@ -8,6 +8,9 @@ package-lock.json
 # Cursor
 .cursor/
 
+# Agent
+.agent
+
 #CLAUDE
 .mcp.json
 CLAUDE.md
