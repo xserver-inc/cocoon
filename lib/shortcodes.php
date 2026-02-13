@@ -812,6 +812,7 @@ function get_rss_feed_tag( $atts ) {
       'bold' => 0, //タイトルを太字にするか
       'arrow' => 0, //矢印を出すか
       'class' => null, //拡張クラス
+      'site' => 0, //サイト名を表示するか
     ),
     $atts,
     'rss'
@@ -824,7 +825,7 @@ function get_rss_feed_tag( $atts ) {
   $feed_contents = '';
 
   //Cache処理（かなり簡易的なもの）
-  $transient_id = 'ree_feed_'.md5($feed_url.'_'.$count.'_'.$img_url.'_'.$target.'_'.$desc.'_'.$date.'_'.$type.'_'.$bold.'_'.$arrow.'_'.$class);
+  $transient_id = 'ree_feed_'.md5($feed_url.'_'.$count.'_'.$img_url.'_'.$target.'_'.$desc.'_'.$date.'_'.$type.'_'.$bold.'_'.$arrow.'_'.$class.'_'.$site);
   $feed_contents = get_transient( $transient_id );
 
   //キャッシュが存在しない場合URLから取得
@@ -845,6 +846,13 @@ function get_rss_feed_tag( $atts ) {
     remove_action('wp_feed_options', $feed_options_callback);
 
     if ( !is_wp_error( $rss ) ) {
+
+      // サイト名取得（無条件）
+      $site_title = trim( (string) $rss->get_title() );
+      if ( empty($site_title) ) {
+        $site_title = parse_url($feed_url, PHP_URL_HOST);
+      }
+
       $maxitems = $rss->get_item_quantity( $feed_count );
       $rss_items = $rss->get_items( 0, $maxitems );
       foreach ( $rss_items as $item ) :
@@ -875,7 +883,15 @@ function get_rss_feed_tag( $atts ) {
         $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';
         $feed_content .= '</figure>';
         $feed_content .= '<div class="rss-entry-card-content widget-entry-card-content card-content">';
-        $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">' . esc_html($feed_title) . '</div>';
+
+        // タイトルの後ろにサイト名（site=1なら出力）
+        $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">';
+        $feed_content .= esc_html($feed_title);
+        if ($site == 1 && !empty($site_title)) {
+          $feed_content .= ' <span class="rss-entry-card-site">' . get_title_separator_caption() . ' ' . esc_html($site_title) . '</span>';
+        }
+        $feed_content .= '</div>';
+
         if ($desc) {
           $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '</div>';
         }
