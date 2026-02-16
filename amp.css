@@ -2902,6 +2902,10 @@ label.screen-reader-text {
   margin-top: 3px;
 }
 
+.recent-comment-article .fa {
+  margin-right: 6px;
+}
+
 .recent-comment-content {
   position: relative;
   background: var(--cocoon-white-color);
