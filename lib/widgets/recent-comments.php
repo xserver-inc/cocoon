@@ -84,7 +84,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
                       <div class="recent-comment-date">' . $date . '</div>
                     </div>
                     <div class="recent-comment-content">' . $comment_content . '</div>
-                    <div class="recent-comment-article"><span class="fa fa-link" aria-hidden="true"></span>' . $title . '</div>
+                    <div class="recent-comment-article"><span class="fa fa-link" aria-hidden="true"></span> ' . $title . '</div>
                   </div>
                 </a>';
             }
