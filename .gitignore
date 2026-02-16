@@ -9,7 +9,7 @@ package-lock.json
 .cursor/
 
 # Agent
-.agent
+.agent/
 
 #CLAUDE
 .mcp.json
