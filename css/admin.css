@@ -8789,6 +8789,7 @@ body.wp-admin {
   flex-direction: row;
   position: relative;
   /* カードのサムネイル幅200px */
+  /* Swiper初期化前はナビゲーションボタンを非表示にする（チラつき防止） */
 }
 .admin-settings .demo .is-list-horizontal .widget-entry-card-link {
   flex-shrink: 0;
@@ -8819,6 +8820,10 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .swiper-wrapper {
   height: initial;
+}
+.admin-settings .demo .is-list-horizontal:not(.swiper-initialized) .swiper-button-next,
+.admin-settings .demo .is-list-horizontal:not(.swiper-initialized) .swiper-button-prev {
+  display: none;
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next,
 .admin-settings .demo .is-list-horizontal .swiper-button-prev {
@@ -17384,6 +17389,7 @@ body.wp-admin {
   flex-direction: row;
   position: relative;
   /* カードのサムネイル幅200px */
+  /* Swiper初期化前はナビゲーションボタンを非表示にする（チラつき防止） */
 }
 .admin-settings .demo .is-list-horizontal .widget-entry-card-link {
   flex-shrink: 0;
@@ -17414,6 +17420,10 @@ body.wp-admin {
 }
 .admin-settings .demo .is-list-horizontal .swiper-wrapper {
   height: initial;
+}
+.admin-settings .demo .is-list-horizontal:not(.swiper-initialized) .swiper-button-next,
+.admin-settings .demo .is-list-horizontal:not(.swiper-initialized) .swiper-button-prev {
+  display: none;
 }
 .admin-settings .demo .is-list-horizontal .swiper-button-next,
 .admin-settings .demo .is-list-horizontal .swiper-button-prev {

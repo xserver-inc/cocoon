@@ -67,6 +67,14 @@
     height: initial;
   }
 
+  /* Swiper初期化前はナビゲーションボタンを非表示にする（チラつき防止） */
+  &:not(.swiper-initialized) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+
   .swiper-button-next,
   .swiper-button-prev {
     background-color: rgba(0, 0, 0, 0.3);
