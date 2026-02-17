@@ -6,7 +6,7 @@
   Author: ゆうそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-dark-sky.jpg
-  Version: 1.0.7.8
+  Version: 1.0.7.9
   Priority: 9140005000
 */
 
@@ -416,6 +416,13 @@ div:not(list-columns) .list:after {
 /************************
 * メニュー
 ************************/
+/* モバイルメニュー・サイドバーメニュー内見出し・ウィジェット見出しの文字色 */
+.mobile-menu-buttons,
+.mobile-menu-buttons .menu-icon, .mobile-menu-buttons .menu-caption,
+.sidebar-menu-content .sidebar h3, .widget h2 {
+	color: rgba(var(--gray-color), 1);
+}
+
 .navi-in a {
 	transition: all .8s ease;
 	cursor: pointer;
