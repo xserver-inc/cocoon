@@ -111,10 +111,22 @@ jobs:
           mkdir -p $WP_CORE_DIR
           curl -s "https://wordpress.org/latest.tar.gz" | tar xz --strip-components=1 -C $WP_CORE_DIR
 
-          # テストスイートをダウンロード
+          # テストスイートをダウンロード（gitを使用、svn不要）
           mkdir -p $WP_TESTS_DIR
-          svn co --quiet https://develop.svn.wordpress.org/tags/$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -o '"version":"[^"]*"' | head -1 | cut -d'"' -f4)/tests/phpunit/includes/ $WP_TESTS_DIR/includes
-          svn co --quiet https://develop.svn.wordpress.org/tags/$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -o '"version":"[^"]*"' | head -1 | cut -d'"' -f4)/tests/phpunit/data/ $WP_TESTS_DIR/data
+          WP_VERSION=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -o '"version":"[^"]*"' | head -1 | cut -d'"' -f4)
+          echo "WordPress version: $WP_VERSION"
+          cd $WP_TESTS_DIR
+          git init
+          git remote add origin https://github.com/WordPress/wordpress-develop.git
+          git config core.sparseCheckout true
+          echo "tests/phpunit/includes/" >> .git/info/sparse-checkout
+          echo "tests/phpunit/data/" >> .git/info/sparse-checkout
+          git fetch --depth=1 origin tag $WP_VERSION
+          git checkout $WP_VERSION
+          # テストファイルを期待されるディレクトリ構造に移動
+          mv tests/phpunit/includes $WP_TESTS_DIR/includes
+          mv tests/phpunit/data $WP_TESTS_DIR/data
+          rm -rf $WP_TESTS_DIR/tests $WP_TESTS_DIR/.git
 
           # wp-tests-config.php を作成
           cat > $WP_TESTS_DIR/wp-tests-config.php << EOF
