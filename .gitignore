@@ -29,3 +29,6 @@ composer.lock
 .phpunit.cache/
 tests/coverage/
 configs/
+
+# VS Code設定
+.vscode/
