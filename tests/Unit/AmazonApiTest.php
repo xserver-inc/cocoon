@@ -19,6 +19,22 @@ class AmazonApiTest extends TestCase
         if (!defined('DEBUG_CACHE_ENABLE')) {
             define('DEBUG_CACHE_ENABLE', false);
         }
+        if (!defined('AMAZON_DOMAIN')) {
+            define('AMAZON_DOMAIN', 'www.amazon.co.jp');
+        }
+        // キャッシュID用プレフィックス定数
+        if (!defined('TRANSIENT_AMAZON_API_PREFIX')) {
+            define('TRANSIENT_AMAZON_API_PREFIX', THEME_NAME . '_amazon_paapi_v5_asin_');
+        }
+        if (!defined('TRANSIENT_BACKUP_AMAZON_API_PREFIX')) {
+            define('TRANSIENT_BACKUP_AMAZON_API_PREFIX', THEME_NAME . '_backup_amazon_paapi_v5_asin_');
+        }
+        if (!defined('TRANSIENT_RAKUTEN_API_PREFIX')) {
+            define('TRANSIENT_RAKUTEN_API_PREFIX', THEME_NAME . '_rakuten_api_id_');
+        }
+        if (!defined('TRANSIENT_BACKUP_RAKUTEN_API_PREFIX')) {
+            define('TRANSIENT_BACKUP_RAKUTEN_API_PREFIX', THEME_NAME . '_backup_rakuten_api_id_');
+        }
 
         // creators-api.php の依存関数
         if (!function_exists('get_amazon_creators_api_credential_id')) {
@@ -29,12 +45,6 @@ class AmazonApiTest extends TestCase
         }
         if (!function_exists('get_amazon_creators_api_version')) {
             function get_amazon_creators_api_version() { return '2.1'; }
-        }
-        if (!function_exists('get_amazon_api_transient_id')) {
-            function get_amazon_api_transient_id($key) { return 'transient_' . $key; }
-        }
-        if (!function_exists('get_amazon_api_transient_bk_id')) {
-            function get_amazon_api_transient_bk_id($key) { return 'transient_bk_' . $key; }
         }
         if (!function_exists('shortcode_atts')) {
             function shortcode_atts($pairs, $atts, $shortcode = '') {
@@ -50,6 +60,8 @@ class AmazonApiTest extends TestCase
             }
         }
 
+        // 本物の関数を読み込む（スタブではなく実装を使用）
+        require_once dirname(__DIR__, 2) . '/lib/shortcodes-product-func.php';
         require_once dirname(__DIR__, 2) . '/lib/shortcodes-amazon.php';
     }
 
