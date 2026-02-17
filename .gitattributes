@@ -1,0 +1,22 @@
+# =============================================================================
+# 配布ZIP（git archive / GitHub Download ZIP）から除外するファイル
+# 開発者の git clone / git pull や GitHub Actions CI には影響しません
+# =============================================================================
+
+# テスト関連
+/tests/                export-ignore
+/phpunit.xml           export-ignore
+/.phpunit.cache/       export-ignore
+
+# CI / 開発ツール設定
+/.github/              export-ignore
+/.vscode/              export-ignore
+/.gitattributes        export-ignore
+/.gitignore            export-ignore
+
+# Composer（本番テーマには不要）
+/composer.json         export-ignore
+/composer.lock         export-ignore
+
+# SCSSソース（コンパイル済みCSSが配布対象）
+/scss/                 export-ignore
