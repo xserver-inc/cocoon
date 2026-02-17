@@ -440,7 +440,7 @@ div:not(list-columns) .list:after {
 
 .navi .sub-caption {
 	opacity: 1;
-	color: rgba(rgba(var(--gray-color), 1), .5);
+	color: rgba(var(--gray-color), .5);
 	width: auto !important;
 	border-radius: 5px;
 }
