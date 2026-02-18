@@ -93,7 +93,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
 
             generate_checkbox_tag(OP_AUTO_POST_THUMBNAIL_ENABLE, is_auto_post_thumbnail_enable(), __( 'アイキャッチ自動設定を有効にする', THEME_NAME ).__( '（※投稿・固定ページのみ）', THEME_NAME ));
-            generate_tips_tag(__( '記事を保存したり公開したりするときに、本文中に最初に出てくる画像をアイキャッチにします。※プレビューには反映されません。', THEME_NAME ));
+            generate_tips_tag(__( '記事を保存したり公開したりするときに、本文中に最初に出てくる画像をアイキャッチにします。', THEME_NAME ) . __('パターン内にある画像は取得されません。', THEME_NAME).__( '※プレビューには反映されません。', THEME_NAME ));
             ?>
           </td>
         </tr>
