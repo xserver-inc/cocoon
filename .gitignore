@@ -32,3 +32,6 @@ configs/
 
 # VS Code設定
 .vscode/
+
+# Gemini
+.gemini/
