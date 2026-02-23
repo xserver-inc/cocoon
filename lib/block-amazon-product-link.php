@@ -69,7 +69,8 @@ function cocoon_amazon_block_search($request){
     if (is_array($json->Errors) && isset($json->Errors[0])) {
       $error_msg = isset($json->Errors[0]->Message) ? $json->Errors[0]->Message : '';
     }
-    return new WP_Error('api_error', $error_msg, array('status' => 400));
+    // エラーメッセージが空の場合はフォールバックメッセージを使用
+    return new WP_Error('api_error', $error_msg ?: __('Amazon APIからエラーが返されました。', THEME_NAME), array('status' => 400));
   }
 
   // 検索結果を整形して返し
@@ -344,7 +345,20 @@ function cocoon_amazon_block_render_preview($request){
   }
 
   $json = is_string($res) ? json_decode($res) : $res;
-  if (!$json || !isset($json->ItemsResult) || !isset($json->ItemsResult->Items) || empty($json->ItemsResult->Items[0])) {
+  if (!$json) {
+    return new WP_Error('parse_error', __('APIレスポンスの解析に失敗しました。', THEME_NAME), array('status' => 500));
+  }
+
+  // PA-APIエラー形式のチェック（AccessDeniedなどを「商品が見つかりません」と誤表示しないよう先にチェック）
+  if (isset($json->Errors)) {
+    $error_msg = '';
+    if (is_array($json->Errors) && isset($json->Errors[0])) {
+      $error_msg = isset($json->Errors[0]->Message) ? $json->Errors[0]->Message : '';
+    }
+    return new WP_Error('api_error', $error_msg ?: __('Amazon APIからエラーが返されました。', THEME_NAME), array('status' => 400));
+  }
+
+  if (!isset($json->ItemsResult) || !isset($json->ItemsResult->Items) || empty($json->ItemsResult->Items[0])) {
     return new WP_Error('not_found', __('商品が見つかりませんでした。', THEME_NAME), array('status' => 404));
   }
 

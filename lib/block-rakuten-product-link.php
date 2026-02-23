@@ -88,7 +88,8 @@ function cocoon_rakuten_block_search($request){
   if (is_wp_error($response)) {
     return new WP_Error('api_error', __('楽天APIに接続できませんでした。', THEME_NAME), array('status' => 500));
   }
-  if ($response['response']['code'] !== 200) {
+  // HTTPステータスコードを(int)キャストして型の不一致による誤判定を防ぐ
+  if ((int)$response['response']['code'] !== 200) {
     // エラーレスポンスの解析
     $ebody = json_decode($response['body']);
     $error_desc = isset($ebody->error_description) ? $ebody->error_description : '';
@@ -207,7 +208,8 @@ function cocoon_rakuten_block_fetch_item($itemCode){
     .'&affiliateId='.$rakuten_affiliate_id
     .'&imageFlag=1'
     .'&hits=1'
-    .'&itemCode='.$itemCode;
+  // 商品コードには「shopCode:itemCode」形式でコロンを含む場傐があるため urlencode() でエンコードする
+    .'&itemCode='.urlencode($itemCode);
 
   // キャッシュの取得
   $transient_id = get_rakuten_api_transient_id($itemCode);
@@ -408,7 +410,8 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
   // 商品情報の取得
   $itemName      = isset($Item->itemName) ? $Item->itemName : '';
   $itemPrice     = isset($Item->itemPrice) ? $Item->itemPrice : 0;
-  $shopName      = isset($Item->shopName) ? esc_html($Item->shopName) : '';
+  // ショップ名の取得（エスケープは出力時に行う）
+  $shopName      = isset($Item->shopName) ? $Item->shopName : '';
   // ロジック中は生URLを保持（HTML出力時にesc_url()でエスケープする）
   $affiliateUrl  = isset($Item->affiliateUrl) ? $Item->affiliateUrl : '';
 
@@ -604,7 +607,7 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
         $text_link_tag.
       '</div>'.
       '<div class="rakuten-item-snippet product-item-snippet">'.
-        '<div class="rakuten-item-maker product-item-maker">'.$shopName.'</div>'.
+        '<div class="rakuten-item-maker product-item-maker">'.esc_html($shopName).'</div>'.
         $item_price_tag.
         $description_tag.
       '</div>'.

@@ -32,7 +32,7 @@ export default function SearchResults( {
 
       { /* 検索結果リスト */ }
       <div style={ { maxHeight: '400px', overflowY: 'auto' } }>
-        { items.map( ( item ) => (
+        { ( items || [] ).map( ( item ) => (
           <div
             key={ item.itemCode }
             className="cocoon-rakuten-search-item"

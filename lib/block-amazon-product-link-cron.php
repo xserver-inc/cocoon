@@ -98,15 +98,19 @@ function cocoon_amazon_block_batch_update(){
   }
 
   // 投稿ごとに処理
+  // ループ変数 $post はループ外で参照すると危険なため別変数 $last_id に保持する
+  $last_id = 0;
   foreach ($posts as $post) {
     cocoon_amazon_block_update_post_blocks($post);
     // 処理位置を更新
-    update_option('cocoon_amazon_block_last_processed_id', $post->ID);
+    $last_id = $post->ID;
+    update_option('cocoon_amazon_block_last_processed_id', $last_id);
     // 投稿間のスリープ
     sleep(PRODUCT_BLOCK_CRON_POST_SLEEP_SECONDS);
   }
 
-  amazon_creators_api_debug_log('cron: batch completed, last_id='.$post->ID);
+  // ループ変数ではなく明示的な変数でログ出力
+  amazon_creators_api_debug_log('cron: batch completed, last_id='.$last_id);
 }
 endif;
 
