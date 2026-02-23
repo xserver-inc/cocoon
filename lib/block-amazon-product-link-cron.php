@@ -40,7 +40,7 @@ if ( !function_exists( 'cocoon_amazon_block_cron_manage' ) ):
 function cocoon_amazon_block_cron_manage(){
   $event_hook = 'cocoon_amazon_block_update_event';
   // 自動更新が無効な場合はスケジュールを解除
-  if (!get_theme_option('amazon_block_auto_update_enable', false)) {
+  if (!is_product_block_auto_update_enable()) {
     $timestamp = wp_next_scheduled($event_hook);
     if ($timestamp) {
       wp_unschedule_event($timestamp, $event_hook);
@@ -48,7 +48,7 @@ function cocoon_amazon_block_cron_manage(){
     return;
   }
   // 更新間隔の取得（デフォルト: 1ヶ月）
-  $interval = get_theme_option('amazon_block_auto_update_interval', 'cocoon_monthly');
+  $interval = get_product_block_auto_update_interval();
   // まだスケジュールされていない場合は登録
   if (!wp_next_scheduled($event_hook)) {
     wp_schedule_event(time(), $interval, $event_hook);
@@ -63,13 +63,13 @@ add_action('cocoon_amazon_block_update_event', 'cocoon_amazon_block_batch_update
 if ( !function_exists( 'cocoon_amazon_block_batch_update' ) ):
 function cocoon_amazon_block_batch_update(){
   // 自動更新がOFFなら処理しない
-  if (!get_theme_option('amazon_block_auto_update_enable', false)) {
+  if (!is_product_block_auto_update_enable()) {
     return;
   }
 
-  // 1回あたりの処理件数（デフォルト: 5投稿）
-  $batch_size = (int)get_theme_option('amazon_block_auto_update_batch_size', 5);
-  if ($batch_size < 1) $batch_size = 5;
+  // 1回あたりの処理件数（共通設定から取得）
+  $batch_size = get_product_block_auto_update_batch_size();
+  if ($batch_size < 1) $batch_size = PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT;
 
   // 前回の処理位置を取得
   $last_processed_id = (int)get_option('cocoon_amazon_block_last_processed_id', 0);
@@ -102,8 +102,8 @@ function cocoon_amazon_block_batch_update(){
     cocoon_amazon_block_update_post_blocks($post);
     // 処理位置を更新
     update_option('cocoon_amazon_block_last_processed_id', $post->ID);
-    // APIレート制限対策のスリープ
-    sleep(1);
+    // 投稿間のスリープ
+    sleep(PRODUCT_BLOCK_CRON_POST_SLEEP_SECONDS);
   }
 
   amazon_creators_api_debug_log('cron: batch completed, last_id='.$post->ID);
@@ -175,6 +175,8 @@ function cocoon_amazon_block_update_blocks_recursive($blocks, &$updated){
 
       // Creators APIで商品情報を再取得
       $res = get_amazon_creators_itemlookup_json($asin);
+      // APIレート制限対策：1ブロックのAPIリクエストごとに待機
+      sleep(PRODUCT_BLOCK_CRON_API_SLEEP_SECONDS);
       if ($res === false) continue;
 
       $json = is_string($res) ? json_decode($res) : $res;

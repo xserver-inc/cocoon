@@ -342,6 +342,78 @@ $help_text = __( '取得方法', THEME_NAME );
 </div>
 
 
+<!-- 商品リンクブロックの自動更新 -->
+<div id="product-block-auto-update" class="postbox">
+  <h2 class="hndle"><?php _e( '商品リンクブロックの自動更新', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'Amazon・楽天商品リンクブロックの商品情報をWP-Cronで定期的に自動更新する設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+        <!-- 自動更新の有効/無効 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_PRODUCT_BLOCK_AUTO_UPDATE_ENABLE, __( '自動更新', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(
+              OP_PRODUCT_BLOCK_AUTO_UPDATE_ENABLE,
+              is_product_block_auto_update_enable(),
+              __( '商品リンクブロックの情報を自動的に定期更新する', THEME_NAME )
+            );
+            generate_tips_tag(__( 'ONにすると、下記の更新間隔で全投稿・固定ページのAmazon・楽天商品リンクブロックを自動更新します。OFFにするとスケジュールが解除されます。', THEME_NAME ));
+            ?>
+
+            <?php
+            // 自動更新がONのときのみ更新間隔を表示
+            echo '<div' . get_not_allowed_form_class(is_product_block_auto_update_enable(), true) . '>';
+              $interval_options = array(
+                'weekly'            => __( '毎週', THEME_NAME ),
+                'cocoon_biweekly'   => __( '2週間ごと（推奨）', THEME_NAME ),
+                'cocoon_monthly'    => __( '1ヶ月ごと', THEME_NAME ),
+                'cocoon_quarterly'  => __( '3ヶ月ごと', THEME_NAME ),
+              );
+              generate_radiobox_tag(
+                OP_PRODUCT_BLOCK_AUTO_UPDATE_INTERVAL,
+                $interval_options,
+                get_product_block_auto_update_interval(),
+                __( '更新間隔', THEME_NAME )
+              );
+              generate_tips_tag(__( '更新間隔が短いほどAPIのリクエスト数が増えます。Amazon Creators APIのリクエスト制限にご注意ください。', THEME_NAME ));
+
+              // 1回のCronで処理する投稿数
+              $batch_size_options = array(
+                '10'  => __( '10投稿', THEME_NAME ),
+                '20'  => __( '20投稿', THEME_NAME ),
+                '30'  => __( '30投稿', THEME_NAME ),
+                '40'  => __( '40投稿', THEME_NAME ),
+                '50'  => __( '50投稿', THEME_NAME ),
+                '60'  => __( '60投稿', THEME_NAME ),
+                '70'  => __( '70投稿', THEME_NAME ),
+                '80'  => __( '80投稿', THEME_NAME ),
+                '90'  => __( '90投稿', THEME_NAME ),
+                '100' => __( '100投稿', THEME_NAME ),
+              );
+              generate_selectbox_tag(
+                OP_PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE,
+                $batch_size_options,
+                (string)get_product_block_auto_update_batch_size(),
+                __( '1回あたりの処理投稿数', THEME_NAME )
+              );
+              generate_tips_tag(__( '1回のCron実行で処理する投稿数です。投稿数が多いサイトでは大きめの値にしてください。ただし、1投稿あたりのブロック数が多いほどAPIリクエストも増えます。', THEME_NAME ));
+            echo '</div>';
+            ?>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 <!-- エラー -->
 <div id="api-error" class="postbox">
   <h2 class="hndle"><?php _e( 'エラー設定', THEME_NAME ) ?></h2>
