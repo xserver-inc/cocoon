@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/amazon-product-link",
   "title": "Amazon商品リンク",
-  "category": "cocoon-blocks",
+  "category": "cocoon-block",
   "icon": "cart",
   "description": "Amazon商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。",
   "textdomain": "cocoon",

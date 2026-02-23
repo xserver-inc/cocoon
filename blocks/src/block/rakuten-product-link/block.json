@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "cocoon-blocks/rakuten-product-link",
   "title": "楽天商品リンク",
-  "category": "cocoon-blocks",
+  "category": "cocoon-block",
   "icon": "cart",
   "description": "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。",
   "textdomain": "cocoon",
