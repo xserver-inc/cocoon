@@ -90,7 +90,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
-        <!-- 生地の切り替え -->
+        <!-- 目次の切り替え -->
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_TOC_TOGGLE_SWITCH_ENABLE, __('目次切り替え', THEME_NAME) ); ?>
