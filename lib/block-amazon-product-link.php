@@ -447,7 +447,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   } else {
     $Title = '';
   }
-  $TitleAttr = esc_attr($Title);
+  // HTML出力時に各箇所でエスケープするため、ここではエスケープしない
   $TitleHtml = esc_html($Title);
 
   // 商品グループの取得
@@ -470,8 +470,8 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
 
   // 画像のみモードの処理
   if ($displayMode === 'image_only') {
-    $image_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-thumb-link product-item-thumb-link image-thumb amazon-item-image-only product-item-image-only no-icon" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
-      '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image">'.
+    $image_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-thumb-link product-item-thumb-link image-thumb amazon-item-image-only product-item-image-only no-icon" target="_blank" title="'.esc_attr($Title).'" rel="nofollow noopener">'.
+      '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($Title).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image">'.
       $moshimo_amazon_impression_tag.
     '</a>';
     return $image_link_tag;
@@ -479,7 +479,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
 
   // テキストのみモードの処理
   if ($displayMode === 'text_only') {
-    $text_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link amazon-item-text-only product-item-text-only" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+    $text_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link amazon-item-text-only product-item-text-only" target="_blank" title="'.esc_attr($Title).'" rel="nofollow noopener">'.
       $TitleHtml.
       $moshimo_amazon_impression_tag.
     '</a>';
@@ -540,8 +540,8 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   }
 
   // 画像リンクタグの生成
-  $image_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-thumb-link product-item-thumb-link image-thumb" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
-    '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image">'.
+  $image_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-thumb-link product-item-thumb-link image-thumb" target="_blank" title="'.esc_attr($Title).'" rel="nofollow noopener">'.
+    '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($Title).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image">'.
     $moshimo_amazon_impression_tag.
     $image_l_tag.
   '</a>'.
@@ -551,7 +551,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   $image_figure_tag = '<figure class="amazon-item-thumb product-item-thumb">'.$image_link_tag.'</figure>';
 
   // テキストリンク
-  $text_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+  $text_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($Title).'" rel="nofollow noopener">'.
     $TitleHtml.
     $moshimo_amazon_impression_tag.
   '</a>';

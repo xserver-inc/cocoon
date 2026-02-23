@@ -133,6 +133,8 @@ require_once abspath(__FILE__).'shortcodes-amazon.php'; //Amazon商品リンク�
 require_once abspath(__FILE__).'block-amazon-product-link.php'; //Amazon商品リンクブロック REST API
 require_once abspath(__FILE__).'block-amazon-product-link-cron.php'; //Amazon商品リンクブロック 定期自動更新
 require_once abspath(__FILE__).'shortcodes-rakuten.php'; //楽天商品リンク関係の処理
+require_once abspath(__FILE__).'block-rakuten-product-link.php'; //楽天商品リンクブロック REST API
+require_once abspath(__FILE__).'block-rakuten-product-link-cron.php'; //楽天商品リンクブロック 定期自動更新
 require_once abspath(__FILE__).'html5.php'; //HTML5チェック関係
 //フルパスを指定しないとうまくいかないファイル
 require_once abspath(__FILE__).'profile.php'; //プロフィール関係の処理

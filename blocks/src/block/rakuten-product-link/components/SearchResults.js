@@ -1,5 +1,5 @@
 /**
- * Amazon商品リンクブロック - 検索結果一覧
+ * 楽天商品リンクブロック - 検索結果一覧
  */
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
@@ -15,11 +15,11 @@ export default function SearchResults( {
 } ) {
   // totalResultsの安全な値への変換（undefinedの場合NaN防止）
   const total = totalResults || 0;
-  // 最大ページ数（API制限: 最大10ページ）
-  const maxPage = Math.min( 10, Math.ceil( total / 10 ) );
+  // 最大ページ数（楽天API制限: 最大30ページ）
+  const maxPage = Math.min( 30, Math.ceil( total / 30 ) );
 
   return (
-    <div className="cocoon-amazon-search-results">
+    <div className="cocoon-rakuten-search-results">
       { /* 検索結果ヘッダー */ }
       <div style={ { fontSize: '12px', color: '#666', marginBottom: '8px' } }>
         { totalResults > 0 && (
@@ -34,8 +34,8 @@ export default function SearchResults( {
       <div style={ { maxHeight: '400px', overflowY: 'auto' } }>
         { items.map( ( item ) => (
           <div
-            key={ item.asin }
-            className="cocoon-amazon-search-item"
+            key={ item.itemCode }
+            className="cocoon-rakuten-search-item"
             style={ {
               display: 'flex',
               gap: '12px',
@@ -89,6 +89,7 @@ export default function SearchResults( {
 
             { /* 商品情報 */ }
             <div style={ { flex: 1, minWidth: 0 } }>
+              { /* 商品名 */ }
               <div
                 style={ {
                   fontWeight: 'bold',
@@ -101,16 +102,18 @@ export default function SearchResults( {
               >
                 { item.title }
               </div>
-              { item.maker && (
+              { /* ショップ名 */ }
+              { item.shopName && (
                 <div style={ { fontSize: '11px', color: '#666' } }>
-                  { item.maker }
+                  { item.shopName }
                 </div>
               ) }
+              { /* 価格（楽天は価格表示可能） */ }
               { item.price && (
                 <div
                   style={ {
                     fontSize: '12px',
-                    color: '#b12704',
+                    color: '#bf0000',
                     marginTop: '2px',
                   } }
                 >

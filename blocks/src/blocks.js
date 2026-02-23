@@ -52,6 +52,8 @@ import * as cta from './block/cta';
 import * as radar from './block/radar';
 // Amazon商品リンクブロック
 import * as amazonProductLink from './block/amazon-product-link';
+// 楽天商品リンクブロック
+import * as rakutenProductLink from './block/rakuten-product-link';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -90,6 +92,7 @@ const cocoonBlocks = [
   cta,
   radar,
   amazonProductLink,
+  rakutenProductLink,
 
   captionBox,
   tabCaptionBox,
