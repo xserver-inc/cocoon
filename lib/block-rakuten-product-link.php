@@ -532,13 +532,15 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
     $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
   }
 
-  // 説明文の処理
+  // 説明文の処理（showDescriptionが無効なときはカスタム説明文の入力があっても表示しない）
   $description = '';
-  if ($customDescription) {
-    $description = $customDescription;
-  } elseif ($showDescription && isset($Item->itemCaption)) {
-    // 商品説明文を先頭200文字に制限
-    $description = mb_substr(strip_tags($Item->itemCaption), 0, 200);
+  if ($showDescription) {
+    if ($customDescription) {
+      $description = $customDescription;
+    } elseif (isset($Item->itemCaption)) {
+      // 商品説明文を先頭200文字に制限
+      $description = mb_substr(strip_tags($Item->itemCaption), 0, 200);
+    }
   }
   $description_tag = get_item_description_tag($description);
 

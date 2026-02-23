@@ -462,12 +462,14 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   // 著者/ブランド名の取得
   $maker = cocoon_amazon_block_extract_maker($item);
 
-  // 説明文の取得
+  // 説明文の取得（showDescriptionが無効なときはカスタム説明文の入力があっても表示しない）
   $description = '';
-  if ($customDescription) {
-    $description = $customDescription;
-  } elseif ($showDescription && $ItemInfo && isset($ItemInfo->Features) && isset($ItemInfo->Features->DisplayValues) && isset($ItemInfo->Features->DisplayValues[0])) {
-    $description = $ItemInfo->Features->DisplayValues[0];
+  if ($showDescription) {
+    if ($customDescription) {
+      $description = $customDescription;
+    } elseif ($ItemInfo && isset($ItemInfo->Features) && isset($ItemInfo->Features->DisplayValues) && isset($ItemInfo->Features->DisplayValues[0])) {
+      $description = $ItemInfo->Features->DisplayValues[0];
+    }
   }
 
   // 画像のみモードの処理

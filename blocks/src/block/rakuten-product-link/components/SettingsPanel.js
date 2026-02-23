@@ -100,11 +100,20 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
           onChange={ ( val ) => setAttributes( { customTitle: val } ) }
           help={ __( '空欄の場合はAPIから取得したタイトルを使用', THEME_NAME ) }
         />
+        { /* カスタム説明文（説明文表示がOFFのときは無効化） */ }
         <TextareaControl
           label={ __( 'カスタム説明文', THEME_NAME ) }
           value={ customDescription }
           onChange={ ( val ) => setAttributes( { customDescription: val } ) }
-          help={ __( '空欄の場合はAPIから取得した説明文を使用', THEME_NAME ) }
+          disabled={ ! showDescription }
+          help={
+            ! showDescription
+              ? __(
+                  '「説明文を表示」がOFFのため、カスタム説明文は表示されません',
+                  THEME_NAME
+                )
+              : __( '空欄の場合はAPIから取得した説明文を使用', THEME_NAME )
+          }
         />
         <TextControl
           label={ __( '検索キーワード', THEME_NAME ) }
@@ -118,10 +127,7 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
       </PanelBody>
 
       { /* 購入タイプパネル（楽天固有） */ }
-      <PanelBody
-        title={ __( '購入タイプ', THEME_NAME ) }
-        initialOpen={ false }
-      >
+      <PanelBody title={ __( '購入タイプ', THEME_NAME ) } initialOpen={ false }>
         <SelectControl
           label={ __( '購入タイプ', THEME_NAME ) }
           value={ String( purchaseType ) }
@@ -130,7 +136,9 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
             { label: __( '定期購入', THEME_NAME ), value: '1' },
             { label: __( '頒布会購入', THEME_NAME ), value: '2' },
           ] }
-          onChange={ ( val ) => setAttributes( { purchaseType: Number( val ) } ) }
+          onChange={ ( val ) =>
+            setAttributes( { purchaseType: Number( val ) } )
+          }
           help={ __( '商品検索時のフィルタリングに使用されます', THEME_NAME ) }
         />
       </PanelBody>

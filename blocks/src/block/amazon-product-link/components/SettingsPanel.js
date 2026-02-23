@@ -112,11 +112,20 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
           onChange={ ( val ) => setAttributes( { customTitle: val } ) }
           help={ __( '空欄の場合はAPIから取得したタイトルを使用', THEME_NAME ) }
         />
+        { /* カスタム説明文（説明文表示がOFFのときは無効化） */ }
         <TextareaControl
           label={ __( 'カスタム説明文', THEME_NAME ) }
           value={ customDescription }
           onChange={ ( val ) => setAttributes( { customDescription: val } ) }
-          help={ __( '空欄の場合はAPIから取得した説明文を使用', THEME_NAME ) }
+          disabled={ ! showDescription }
+          help={
+            ! showDescription
+              ? __(
+                  '「説明文を表示」がOFFのため、カスタム説明文は表示されません',
+                  THEME_NAME
+                )
+              : __( '空欄の場合はAPIから取得した説明文を使用', THEME_NAME )
+          }
         />
         <TextControl
           label={ __( '検索キーワード', THEME_NAME ) }
