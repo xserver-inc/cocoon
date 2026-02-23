@@ -90,10 +90,12 @@ function cocoon_rakuten_block_search($request){
   }
   // HTTPステータスコードを(int)キャストして型の不一致による誤判定を防ぐ
   if ((int)$response['response']['code'] !== 200) {
-    // エラーレスポンスの解析
-    $ebody = json_decode($response['body']);
+    // 楽天APIのレスポンスボディのエラー情報を取得 (bodyKeyがない場合も考慮)
+    $ebody = isset($response['body']) ? json_decode($response['body']) : null;
     $error_desc = isset($ebody->error_description) ? $ebody->error_description : '';
-    return new WP_Error('api_error', $error_desc ?: __('楽天APIからエラーが返されました。', THEME_NAME), array('status' => 400));
+    // 楽天APIのHTTPステータスコードをそのまま伝損（429 Too Many・503 Unavailableなどを正確に伝える）
+    $rakuten_status = (int)$response['response']['code'];
+    return new WP_Error('api_error', $error_desc ?: __('楽天APIからエラーが返されました。', THEME_NAME), array('status' => $rakuten_status));
   }
 
   // レスポンスをJSONデコード
@@ -224,8 +226,8 @@ function cocoon_rakuten_block_fetch_item($itemCode){
     $response = wp_remote_get( $request_url, $args );
   }
 
-  // ジェイソンのリクエスト結果チェック
-  $is_request_success = !is_wp_error( $response ) && isset($response['response']['code']) && $response['response']['code'] === 200;
+  // ジェイソンのリクエスト結果チェック（HTTPcodeを(int)キャストして型不一致による誤判定を防ぐ）
+  $is_request_success = !is_wp_error( $response ) && isset($response['response']['code']) && (int)$response['response']['code'] === 200;
 
   // JSON取得に失敗した場合はバックアップキャッシュを取得
   if (!$is_request_success) {
@@ -236,12 +238,16 @@ function cocoon_rakuten_block_fetch_item($itemCode){
     }
   }
 
-  // リクエスト失敗のチェック
   if (is_wp_error($response)) {
     return new WP_Error('api_error', __('楽天APIに接続できませんでした。', THEME_NAME), array('status' => 500));
   }
-  if (!isset($response['response']['code']) || $response['response']['code'] !== 200) {
-    return new WP_Error('api_error', __('楽天APIからエラーが返されました。', THEME_NAME), array('status' => 400));
+  if (!isset($response['response']['code']) || (int)$response['response']['code'] !== 200) {
+    // 楽天APIのレスポンスボディのエラー情報を取得 (bodyキーがない場合も考慮)
+    $ebody = isset($response['body']) ? json_decode($response['body']) : null;
+    $error_desc = isset($ebody->error_description) ? $ebody->error_description : '';
+    // 楽天APIのHTTPコードを伝搬（コード未取得の場合は400として返す）
+    $rakuten_status = isset($response['response']['code']) ? (int)$response['response']['code'] : 400;
+    return new WP_Error('api_error', $error_desc ?: __('楽天APIからエラーが返されました。', THEME_NAME), array('status' => $rakuten_status));
   }
 
   $body = is_string($response['body']) ? json_decode($response['body']) : $response['body'];
@@ -254,6 +260,7 @@ function cocoon_rakuten_block_fetch_item($itemCode){
     $cache_expiration = DAY_IN_SECONDS + (rand(0, 60) * 60);
     $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
     $save_response = $response;
+    // wp_remote_get()の直後はbodyは必ず文字列（キャッシュ保存前なのでデコード済みオブジェクトではない）
     if (is_string($save_response['body'])) {
       $save_response['body'] = preg_replace('/{/', '{"date":"'.$acquired_date.'",', $save_response['body'], 1);
     }

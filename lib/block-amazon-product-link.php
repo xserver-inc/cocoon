@@ -77,8 +77,9 @@ function cocoon_amazon_block_search($request){
   $items = array();
   $total = 0;
 
-  // PA-API互換のSearchResult形式
-  if (isset($json->SearchResult) && isset($json->SearchResult->Items)) {
+  // PA-API互换のSearchResult形式
+  // Itemsが配列であることをis_array()で確認してから処理
+  if (isset($json->SearchResult) && isset($json->SearchResult->Items) && is_array($json->SearchResult->Items)) {
     $total = isset($json->SearchResult->TotalResultCount) ? (int)$json->SearchResult->TotalResultCount : 0;
     foreach ($json->SearchResult->Items as $item) {
       $items[] = cocoon_amazon_block_format_search_item($item);
@@ -188,7 +189,8 @@ function cocoon_amazon_block_get_item($request){
     if (is_array($json->Errors) && isset($json->Errors[0])) {
       $error_msg = isset($json->Errors[0]->Message) ? $json->Errors[0]->Message : '';
     }
-    return new WP_Error('api_error', $error_msg, array('status' => 400));
+    // エラーメッセージが空の場合はフォールバックメッセージを使用
+    return new WP_Error('api_error', $error_msg ?: __('Amazon APIからエラーが返されました。', THEME_NAME), array('status' => 400));
   }
 
   // アイテム情報の抽出
