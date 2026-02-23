@@ -84,13 +84,13 @@ class AmazonBlockTest extends TestCase
         }
 
         // creators-api.php の依存関数
-        if (!function_exists('get_amazon_creators_api_credential_id')) {
+        if (!function_exists(__NAMESPACE__ . '\\get_amazon_creators_api_credential_id')) {
             function get_amazon_creators_api_credential_id() { return ''; }
         }
-        if (!function_exists('get_amazon_creators_api_secret')) {
+        if (!function_exists(__NAMESPACE__ . '\\get_amazon_creators_api_secret')) {
             function get_amazon_creators_api_secret() { return ''; }
         }
-        if (!function_exists('get_amazon_creators_api_version')) {
+        if (!function_exists(__NAMESPACE__ . '\\get_amazon_creators_api_version')) {
             function get_amazon_creators_api_version() { return '2.1'; }
         }
 
