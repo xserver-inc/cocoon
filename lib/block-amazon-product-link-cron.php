@@ -210,6 +210,7 @@ function cocoon_amazon_block_update_blocks_recursive($blocks, &$updated){
       $settings = array(
         'size'              => isset($attrs['size']) ? $attrs['size'] : 'm',
         'displayMode'       => isset($attrs['displayMode']) ? $attrs['displayMode'] : 'normal',
+        'showPrice'         => isset($attrs['showPrice']) ? (bool)$attrs['showPrice'] : true,
         'showReview'        => isset($attrs['showReview']) ? (bool)$attrs['showReview'] : false,
         'showDescription'   => isset($attrs['showDescription']) ? (bool)$attrs['showDescription'] : false,
         'showLogo'          => isset($attrs['showLogo']) ? (bool)$attrs['showLogo'] : true,

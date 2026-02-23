@@ -32,6 +32,7 @@
     "variantImages": { "type": "array", "default": [] },
     "size": { "type": "string", "default": "m" },
     "displayMode": { "type": "string", "default": "normal" },
+    "showPrice": { "type": "boolean", "default": true },
     "showReview": { "type": "boolean", "default": false },
     "showDescription": { "type": "boolean", "default": false },
     "showLogo": { "type": "boolean", "default": true },

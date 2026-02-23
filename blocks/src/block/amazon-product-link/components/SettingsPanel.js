@@ -17,6 +17,7 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
   const {
     size,
     displayMode,
+    showPrice,
     showReview,
     showDescription,
     showLogo,
@@ -82,6 +83,12 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
           checked={ showCatalogImages }
           onChange={ ( val ) => setAttributes( { showCatalogImages: val } ) }
         />
+        { /* 価格表示・説明文・レビュートグル */ }
+        <ToggleControl
+          label={ __( '価格を表示', THEME_NAME ) }
+          checked={ showPrice }
+          onChange={ ( val ) => setAttributes( { showPrice: val } ) }
+        />
         <ToggleControl
           label={ __( '説明文を表示', THEME_NAME ) }
           checked={ showDescription }
@@ -92,23 +99,6 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
           checked={ showReview }
           onChange={ ( val ) => setAttributes( { showReview: val } ) }
         />
-        { /* 価格非表示の注意文 */ }
-        <p
-          style={ {
-            fontSize: '12px',
-            color: '#757575',
-            marginTop: '8px',
-            padding: '8px',
-            backgroundColor: '#f9f9f9',
-            borderLeft: '3px solid #f0b849',
-            lineHeight: '1.5',
-          } }
-        >
-          { __(
-            '※ 当ブロックでは静的HTMLを挿入する仕様のため、価格表示はAmazon APIの利用規約に抵触する可能性があることから、価格表示機能はありません。',
-            THEME_NAME
-          ) }
-        </p>
       </PanelBody>
 
       { /* カスタムコンテンツパネル */ }

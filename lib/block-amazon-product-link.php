@@ -310,6 +310,7 @@ function cocoon_amazon_block_render_preview($request){
   $settings = array(
     'size'               => sanitize_text_field($request->get_param('size') ?: 'm'),
     'displayMode'        => sanitize_text_field($request->get_param('displayMode') ?: 'normal'),
+    'showPrice'          => $request->get_param('showPrice') !== null ? (bool)$request->get_param('showPrice') : true,
     'showReview'         => (bool)$request->get_param('showReview'),
     'showDescription'    => (bool)$request->get_param('showDescription'),
     'showLogo'           => $request->get_param('showLogo') !== null ? (bool)$request->get_param('showLogo') : true,
@@ -382,6 +383,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   // 表示設定の展開
   $size              = strtolower($settings['size']);
   $displayMode       = $settings['displayMode'];
+  $showPrice         = isset($settings['showPrice']) ? (bool)$settings['showPrice'] : true;
   $showReview        = $settings['showReview'];
   $showDescription   = $settings['showDescription'];
   $showLogo          = $settings['showLogo'];
@@ -567,6 +569,20 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
     '</div>';
   }
 
+  // 価格タグの生成（Offers.Listings[0].Price.DisplayAmountから取得）
+  $item_price_tag = null;
+  $acquired_date  = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+  if ($showPrice) {
+    $DisplayAmount = '';
+    if (isset($item->Offers) && isset($item->Offers->Listings) && isset($item->Offers->Listings[0])
+        && isset($item->Offers->Listings[0]->Price) && isset($item->Offers->Listings[0]->Price->DisplayAmount)) {
+      $DisplayAmount = $item->Offers->Listings[0]->Price->DisplayAmount;
+    }
+    if ($DisplayAmount) {
+      $item_price_tag = get_item_price_tag($DisplayAmount, $acquired_date);
+    }
+  }
+
   // 説明文タグ
   $description_tag = get_item_description_tag($description);
 
@@ -621,6 +637,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
       '</div>'.
       '<div class="amazon-item-snippet product-item-snippet">'.
         '<div class="amazon-item-maker product-item-maker">'.esc_html($maker).'</div>'.
+        $item_price_tag.
         $description_tag.
         $review_tag.
       '</div>'.
