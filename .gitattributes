@@ -20,3 +20,6 @@
 
 # SCSSソース（コンパイル済みCSSが配布対象）
 /scss/                 export-ignore
+
+# 翻訳ワークフロー用開発スクリプト
+/scripts/              export-ignore
