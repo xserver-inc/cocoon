@@ -1,7 +1,7 @@
 /**
  * Amazon商品リンクブロック - 検索モーダル
  */
-import { useState, useCallback } from '@wordpress/element';
+import { useState, useCallback, useRef, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import {
   Modal,
@@ -30,6 +30,21 @@ export default function SearchModal( { isOpen, onClose, onSelect } ) {
   const [ totalResults, setTotalResults ] = useState( 0 );
   // 検索実行済みフラグ
   const [ hasSearched, setHasSearched ] = useState( false );
+  // 検索入力欄のDOM参照（自動フォーカス用）
+  const inputRef = useRef( null );
+
+  // モーダルが開いたときに検索欄へ自動フォーカス
+  useEffect( () => {
+    // WordPressのModalがフォーカス制御を持つため非同期で実行
+    const timer = setTimeout( () => {
+      if ( inputRef.current ) {
+        // TextControlが内部生成するinput要素を取得してフォーカス
+        const input = inputRef.current.querySelector( 'input' );
+        if ( input ) input.focus();
+      }
+    }, 0 );
+    return () => clearTimeout( timer );
+  }, [] );
 
   // 検索実行関数
   const doSearch = useCallback(
@@ -93,7 +108,7 @@ export default function SearchModal( { isOpen, onClose, onSelect } ) {
           alignItems: 'flex-end',
         } }
       >
-        <div style={ { flex: 1 } }>
+        <div style={ { flex: 1 } } ref={ inputRef }>
           <TextControl
             placeholder={ __( 'キーワードを入力…', THEME_NAME ) }
             value={ keyword }
@@ -159,7 +174,7 @@ export default function SearchModal( { isOpen, onClose, onSelect } ) {
         } }
       >
         { __(
-          '※ Amazon APIの規約上、Amazon商品リンクに価格は挿入されません。',
+          '※ 検索結果の価格は参考値です。実際の価格は販売ページでご確認ください。',
           THEME_NAME
         ) }
       </p>

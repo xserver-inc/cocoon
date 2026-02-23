@@ -52,6 +52,7 @@
     "btn3Text": { "type": "string", "default": "" },
     "btn3Tag": { "type": "string", "default": "" },
     "useMoshimoAffiliate": { "type": "boolean", "default": false },
+    "priceFetchedAt": { "type": "string", "default": "" },
     "staticHtml": { "type": "string", "default": "" }
   }
 }

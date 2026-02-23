@@ -333,6 +333,8 @@ function cocoon_amazon_block_render_preview($request){
     'btn3Text'           => sanitize_text_field($request->get_param('btn3Text') ?: ''),
     'btn3Tag'            => wp_kses_post($request->get_param('btn3Tag') ?: ''),
     'useMoshimoAffiliate' => $request->get_param('useMoshimoAffiliate') !== null ? (bool)$request->get_param('useMoshimoAffiliate') : false,
+    // JSから価格取得時刻が渡された場合はそれを使用（プレビュー再生成時に時刻が変わらないようにする）
+    'priceFetchedAt'     => sanitize_text_field($request->get_param('priceFetchedAt') ?: ''),
   );
 
   // Creators APIで商品情報を取得
@@ -573,7 +575,15 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
 
   // 価格タグの生成（Offers.Listings[0].Price.DisplayAmountから取得）
   $item_price_tag = null;
-  $acquired_date  = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+  // JSから渡された取得時刻があればそれを使用。なければ現在時刻（必ず価格と同時に取得された時刻になる）
+  $priceFetchedAt = isset($settings['priceFetchedAt']) ? $settings['priceFetchedAt'] : '';
+  if ($priceFetchedAt) {
+    // ISO文字列（UTC）→ UnixタイムスタンプをWordPressのタイムゾーンでフォーマット
+    $ts = strtotime($priceFetchedAt);
+    $acquired_date = $ts ? wp_date(__( 'Y/m/d H:i', THEME_NAME ), $ts) : date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+  } else {
+    $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+  }
   if ($showPrice) {
     $DisplayAmount = '';
     if (isset($item->Offers) && isset($item->Offers->Listings) && isset($item->Offers->Listings[0])

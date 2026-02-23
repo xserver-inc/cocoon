@@ -87,12 +87,20 @@ export default function Edit( { attributes, setAttributes } ) {
         btn3Text: currentAttrs.btn3Text,
         btn3Tag: currentAttrs.btn3Tag,
         useMoshimoAffiliate: currentAttrs.useMoshimoAffiliate,
+        // 価格取得時刻を渡す（既存あればそのまま、なければ現在時刻で新規記録）
+        priceFetchedAt: currentAttrs.priceFetchedAt || new Date().toISOString(),
       } );
       // 最新のリクエストでなければ結果を破棄（レースコンディション防止）
       if ( requestId !== previewRequestId.current ) return;
       if ( res.success ) {
         // staticHtmlとアイテムデータを一括で更新（再レンダリング削減）
-        const updateAttrs = { staticHtml: res.html };
+        const updateAttrs = {
+          staticHtml: res.html,
+          // priceFetchedAtが未設定の場合は現在時刻で初期化（次回以降変わらない）
+          ...( ! currentAttrs.priceFetchedAt && {
+            priceFetchedAt: new Date().toISOString(),
+          } ),
+        };
         if ( res.itemData ) {
           // APIの元タイトルを常に保存（customTitleは別属性で管理）
           updateAttrs.title = res.itemData.title;

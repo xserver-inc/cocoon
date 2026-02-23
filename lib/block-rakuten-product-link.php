@@ -354,6 +354,8 @@ function cocoon_rakuten_block_render_preview($request){
     'btn3Text'           => sanitize_text_field($request->get_param('btn3Text') ?: ''),
     'btn3Tag'            => wp_kses_post($request->get_param('btn3Tag') ?: ''),
     'useMoshimoAffiliate' => $request->get_param('useMoshimoAffiliate') !== null ? (bool)$request->get_param('useMoshimoAffiliate') : false,
+    // JSから価格取得時刻が渡された場合はそれを使用（プレビュー再生成時に時刻が変わらないようにする）
+    'priceFetchedAt'     => sanitize_text_field($request->get_param('priceFetchedAt') ?: ''),
   );
 
   // 楽天APIで商品情報を取得
@@ -526,7 +528,15 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
 
   // 価格表示タグ
   $item_price_tag = null;
-  $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+  // JSから渡された取得時刻があればそれを使用。なければ現在時刻
+  $priceFetchedAt = isset($settings['priceFetchedAt']) ? $settings['priceFetchedAt'] : '';
+  if ($priceFetchedAt) {
+    // ISO文字列（UTC）→ UnixタイムスタンプをWordPressのタイムゾーンでフォーマット
+    $ts = strtotime($priceFetchedAt);
+    $acquired_date = $ts ? wp_date(__( 'Y/m/d H:i', THEME_NAME ), $ts) : date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+  } else {
+    $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+  }
   if ($showPrice && $itemPrice) {
     $FormattedPrice = '￥ '.number_format($itemPrice);
     $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);

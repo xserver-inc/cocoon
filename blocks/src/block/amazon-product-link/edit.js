@@ -39,6 +39,7 @@ export default function Edit( { attributes, setAttributes } ) {
           showBorder: !! Number( defaults.showBorder ),
           showLogo: !! Number( defaults.showLogo ),
           showCatalogImages: !! Number( defaults.showCatalogImages ),
+          showPrice: !! Number( defaults.showPrice ),
           showDescription: !! Number( defaults.showDescription ),
           showReview: !! Number( defaults.showReview ),
           showAmazonButton: !! Number( defaults.showAmazonButton ),
@@ -67,6 +68,7 @@ export default function Edit( { attributes, setAttributes } ) {
       const res = await renderPreview( currentAttrs.asin, {
         size: currentAttrs.size,
         displayMode: currentAttrs.displayMode,
+        showPrice: currentAttrs.showPrice,
         showReview: currentAttrs.showReview,
         showDescription: currentAttrs.showDescription,
         showLogo: currentAttrs.showLogo,
@@ -89,12 +91,20 @@ export default function Edit( { attributes, setAttributes } ) {
         btn3Text: currentAttrs.btn3Text,
         btn3Tag: currentAttrs.btn3Tag,
         useMoshimoAffiliate: currentAttrs.useMoshimoAffiliate,
+        // 価格取得時刻を渡す（既存あればそのまま、なければ現在時刻で新規記録）
+        priceFetchedAt: currentAttrs.priceFetchedAt || new Date().toISOString(),
       } );
       // 最新のリクエストでなければ結果を破棄（レースコンディション防止）
       if ( requestId !== previewRequestId.current ) return;
       if ( res.success ) {
-        // staticHtmlとアイテムデータを一括で更新（再レンダリング削減）
-        const updateAttrs = { staticHtml: res.html };
+        // staticHtmlとイテムデータを一括で更新（再レンダリング削減）
+        const updateAttrs = {
+          staticHtml: res.html,
+          // priceFetchedAtが未設定の場合は現在時刻で初期化（次回以降変わらない）
+          ...( ! currentAttrs.priceFetchedAt && {
+            priceFetchedAt: new Date().toISOString(),
+          } ),
+        };
         if ( res.itemData ) {
           // APIの元タイトルを常に保存（customTitleは別属性で管理）
           updateAttrs.title = res.itemData.title;
@@ -191,6 +201,7 @@ export default function Edit( { attributes, setAttributes } ) {
       const displayAttrs = [
         'size',
         'displayMode',
+        'showPrice',
         'showReview',
         'showDescription',
         'showLogo',

@@ -65,7 +65,18 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
           onChange={ ( val ) => setAttributes( { displayMode: val } ) }
         />
 
+        { /* 価格表示トグル（楽天固有） */ }
+        <ToggleControl
+          label={ __( '価格を表示', THEME_NAME ) }
+          checked={ showPrice }
+          onChange={ ( val ) => setAttributes( { showPrice: val } ) }
+        />
         { /* 外観トグル */ }
+        <ToggleControl
+          label={ __( '説明文を表示', THEME_NAME ) }
+          checked={ showDescription }
+          onChange={ ( val ) => setAttributes( { showDescription: val } ) }
+        />
         <ToggleControl
           label={ __( '枠線を表示', THEME_NAME ) }
           checked={ showBorder }
@@ -75,17 +86,6 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
           label={ __( '楽天ロゴを表示', THEME_NAME ) }
           checked={ showLogo }
           onChange={ ( val ) => setAttributes( { showLogo: val } ) }
-        />
-        <ToggleControl
-          label={ __( '説明文を表示', THEME_NAME ) }
-          checked={ showDescription }
-          onChange={ ( val ) => setAttributes( { showDescription: val } ) }
-        />
-        { /* 価格表示トグル（楽天固有） */ }
-        <ToggleControl
-          label={ __( '価格を表示', THEME_NAME ) }
-          checked={ showPrice }
-          onChange={ ( val ) => setAttributes( { showPrice: val } ) }
         />
       </PanelBody>
 
@@ -101,20 +101,31 @@ export default function SettingsPanel( { attributes, setAttributes } ) {
           help={ __( '空欄の場合はAPIから取得したタイトルを使用', THEME_NAME ) }
         />
         { /* カスタム説明文（説明文表示がOFFのときは無効化） */ }
-        <TextareaControl
-          label={ __( 'カスタム説明文', THEME_NAME ) }
-          value={ customDescription }
-          onChange={ ( val ) => setAttributes( { customDescription: val } ) }
-          disabled={ ! showDescription }
-          help={
-            ! showDescription
-              ? __(
-                  '「説明文を表示」がOFFのため、カスタム説明文は表示されません',
-                  THEME_NAME
-                )
-              : __( '空欄の場合はAPIから取得した説明文を使用', THEME_NAME )
-          }
-        />
+        <div
+          style={ {
+            opacity: showDescription ? 1 : 0.4,
+            backgroundColor: showDescription ? 'transparent' : '#f0f0f0',
+            borderRadius: '4px',
+            padding: showDescription ? '0' : '4px',
+            pointerEvents: showDescription ? 'auto' : 'none',
+            transition: 'opacity 0.2s, background-color 0.2s',
+          } }
+        >
+          <TextareaControl
+            label={ __( 'カスタム説明文', THEME_NAME ) }
+            value={ customDescription }
+            onChange={ ( val ) => setAttributes( { customDescription: val } ) }
+            disabled={ ! showDescription }
+            help={
+              ! showDescription
+                ? __(
+                    '「説明文を表示」がOFFのため、カスタム説明文は表示されません',
+                    THEME_NAME
+                  )
+                : __( '空欄の場合はAPIから取得した説明文を使用', THEME_NAME )
+            }
+          />
+        </div>
         <TextControl
           label={ __( '検索キーワード', THEME_NAME ) }
           value={ searchKeyword }

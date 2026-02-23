@@ -49,6 +49,7 @@
     "btn3Url": { "type": "string", "default": "" },
     "btn3Text": { "type": "string", "default": "" },
     "btn3Tag": { "type": "string", "default": "" },
-    "staticHtml": { "type": "string", "default": "" }
+    "staticHtml": { "type": "string", "default": "" },
+    "priceFetchedAt": { "type": "string", "default": "" }
   }
 }
