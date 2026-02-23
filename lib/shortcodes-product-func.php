@@ -219,10 +219,15 @@ function get_search_buttons_tag($args){
     //ボタン1の作成
     $button1_tag = get_additional_button_tag($btn1_url, $btn1_text, $btn1_tag, 'btn1');
 
+    // skip_visibility_check: ブロックからの呼び出し時はCocoon設定チェックをスキップ
+    $skip_vis = !empty($skip_visibility_check);
+    // use_moshimo: ブロックからの呼び出し時はもしもアフィリエイトの有効/無効を制御
+    $moshimo_enabled = !empty($use_moshimo) ? (bool)$use_moshimo : is_moshimo_affiliate_link_enable();
+
     //Amazonボタンの取得
     $amazon_btn_tag = null;
-    $is_moshimo_amazon = $moshimo_amazon_id && is_moshimo_affiliate_link_enable();
-    if (is_amazon_search_button_visible() && $amazon) {
+    $is_moshimo_amazon = $moshimo_amazon_id && $moshimo_enabled;
+    if (($skip_vis || is_amazon_search_button_visible()) && $amazon) {
       $amazon_url = get_amazon_search_url($keyword, $associate_tracking_id);
       if ($is_moshimo_amazon) {
         $amazon_url = get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id);
@@ -244,8 +249,8 @@ function get_search_buttons_tag($args){
 
     //楽天ボタンの取得
     $rakuten_btn_tag = null;
-    $is_moshimo_rakuten = $moshimo_rakuten_id && is_moshimo_affiliate_link_enable();
-    if (($rakuten_affiliate_id || $is_moshimo_rakuten) && is_rakuten_search_button_visible() && $rakuten) {
+    $is_moshimo_rakuten = $moshimo_rakuten_id && $moshimo_enabled;
+    if (($rakuten_affiliate_id || $is_moshimo_rakuten) && ($skip_vis || is_rakuten_search_button_visible()) && $rakuten) {
       $rakuten_keyword = $keyword;
       $keys = explode(' -', $rakuten_keyword);
       $ng_keywords = array();
@@ -284,8 +289,8 @@ function get_search_buttons_tag($args){
 
     //Yahoo!ボタンの取得
     $yahoo_tag = null;
-    $is_moshimo_yahoo = $moshimo_yahoo_id && is_moshimo_affiliate_link_enable();
-    if ((($sid && $pid) || $is_moshimo_yahoo) && is_yahoo_search_button_visible() && $yahoo) {
+    $is_moshimo_yahoo = $moshimo_yahoo_id && $moshimo_enabled;
+    if ((($sid && $pid) || $is_moshimo_yahoo) && ($skip_vis || is_yahoo_search_button_visible()) && $yahoo) {
 
       $yahoo_url = get_valucomace_yahoo_search_url($keyword, $sid, $pid);
       //もしもアフィリエイトIDがある場合
@@ -307,7 +312,7 @@ function get_search_buttons_tag($args){
 
     //メルカリボタンの取得
     $mercari_tag = null;
-    if ($mercari_affiliate_id && is_mercari_search_button_visible() && $mercari) {
+    if ($mercari_affiliate_id && ($skip_vis || is_mercari_search_button_visible()) && $mercari) {
 
       $mercari_url = get_mercari_search_url($keyword, $mercari_affiliate_id);
 

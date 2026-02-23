@@ -274,6 +274,26 @@ function cocoon_blocks_cgb_editor_assets()
 		'gbCodeLanguages', //任意のオブジェクト名
 		get_block_editor_code_languages() //カラーパレット
 	);
+
+	// Amazon商品リンクブロックの初期値をCocoon設定から渡す
+	$amazon_block_defaults = array(
+		'showBorder'        => 1,
+		'showLogo'          => is_amazon_item_logo_visible() ? 1 : 0,
+		'showCatalogImages' => is_amazon_item_catalog_image_visible() ? 1 : 0,
+		'showDescription'   => is_amazon_item_description_visible() ? 1 : 0,
+		'showReview'        => is_amazon_item_customer_reviews_visible() ? 1 : 0,
+		'showAmazonButton'  => is_amazon_search_button_visible() ? 1 : 0,
+		'showRakutenButton' => is_rakuten_search_button_visible() ? 1 : 0,
+		'showYahooButton'   => is_yahoo_search_button_visible() ? 1 : 0,
+		'showMercariButton' => is_mercari_search_button_visible() ? 1 : 0,
+		'useMoshimoAffiliate' => is_moshimo_affiliate_link_enable() ? 1 : 0,
+		'hasMoshimoIds' => (get_moshimo_amazon_id() || get_moshimo_rakuten_id() || get_moshimo_yahoo_id()) ? 1 : 0,
+	);
+	wp_localize_script(
+		'cocoon-blocks-js',
+		'gbAmazonBlockDefaults',
+		$amazon_block_defaults
+	);
 }
 endif;
 

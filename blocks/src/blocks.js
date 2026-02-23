@@ -12,15 +12,14 @@ import { compareVersions } from 'compare-versions';
 const cocoonBlocksPro = [];
 import { subscribe } from '@wordpress/data';
 
-
 //パターンエディターでアコーディオンブロックを使用しない
-const unsubscribe = subscribe(() => {
-    const postType = wp.data.select('core/editor').getCurrentPostType();
-    if (postType === 'wp_block') {
-      wp.blocks.unregisterBlockType('cocoon-blocks/toggle-box-1');
-      unsubscribe(); // 取得できたらサブスクリプションを解除
-    }
-});
+const unsubscribe = subscribe( () => {
+  const postType = wp.data.select( 'core/editor' ).getCurrentPostType();
+  if ( postType === 'wp_block' ) {
+    wp.blocks.unregisterBlockType( 'cocoon-blocks/toggle-box-1' );
+    unsubscribe(); // 取得できたらサブスクリプションを解除
+  }
+} );
 
 //構造化したブロック
 import * as balloon from './block/balloon';
@@ -51,6 +50,8 @@ import * as tab from './block/tab';
 import * as tabItem from './block/tab-item';
 import * as cta from './block/cta';
 import * as radar from './block/radar';
+// Amazon商品リンクブロック
+import * as amazonProductLink from './block/amazon-product-link';
 
 import * as captionBox from './block-universal/caption-box';
 import * as labelBox from './block-universal/label-box';
@@ -88,6 +89,7 @@ const cocoonBlocks = [
   tabItem,
   cta,
   radar,
+  amazonProductLink,
 
   captionBox,
   tabCaptionBox,
@@ -108,8 +110,8 @@ const registerBlock = ( block ) => {
 
   // WP5.5未満の場合
   let wpVersion = 0;
-  if ( gbSettings[ 'wpVersion' ] ) {
-    wpVersion = gbSettings[ 'wpVersion' ];
+  if ( gbSettings.wpVersion ) {
+    wpVersion = gbSettings.wpVersion;
     // console.log(wpVersion);
   }
   //-RC版などの文字列が組まれる場合は取り除く

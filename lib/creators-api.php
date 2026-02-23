@@ -632,3 +632,179 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   return $res;
 }
 endif;
+
+// Creators APIのSearchItemsレスポンスをPA-API互換に変換
+if ( !function_exists( 'amazon_creators_api_convert_search_response_to_paapi' ) ):
+function amazon_creators_api_convert_search_response_to_paapi($json){
+  // searchResult.items がないと変換できない
+  if (!is_object($json) || !isset($json->searchResult) || !isset($json->searchResult->items) || !is_array($json->searchResult->items)) {
+    return null;
+  }
+  // itemを1つずつPA-API形式に変換
+  $items = array();
+  foreach ($json->searchResult->items as $item) {
+    $pa_item = amazon_creators_api_convert_item_to_paapi($item);
+    if ($pa_item) {
+      // ASINを保持する（searchResultではitemオブジェクトに直接asinがある）
+      if (isset($item->asin) && !isset($pa_item->ASIN)) {
+        $pa_item->ASIN = $item->asin;
+      }
+      $items[] = $pa_item;
+    }
+  }
+  // PA-API互換のレスポンスを組み立て
+  $pa = new stdClass();
+  $pa->SearchResult = (object)array(
+    'Items' => $items,
+    'TotalResultCount' => isset($json->searchResult->totalResultCount) ? (int)$json->searchResult->totalResultCount : 0,
+    'SearchURL' => isset($json->searchResult->searchURL) ? $json->searchResult->searchURL : '',
+  );
+  return $pa;
+}
+endif;
+
+// Creators APIでキーワード検索を実行
+if ( !function_exists( 'get_amazon_creators_search_json' ) ):
+function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_count = 10, $item_page = 1){
+  // キーワードが空なら処理しない
+  $keyword = trim($keyword);
+  if (empty($keyword)) {
+    return false;
+  }
+
+  amazon_creators_api_debug_log('search start keyword='.$keyword);
+
+  // 認証情報が不足している場合は処理しない
+  if (!is_amazon_creators_api_credentials_available()) {
+    amazon_creators_api_debug_log('missing credentials');
+    return false;
+  }
+
+  // 認証情報とトラッキングIDを取得
+  $credential_id = trim(get_amazon_creators_api_credential_id());
+  $credential_secret = trim(get_amazon_creators_api_secret());
+  $partnerTag = trim(get_amazon_associate_tracking_id($tracking_id));
+
+  // APIバージョンとマーケットプレイスの設定
+  $version = apply_filters('amazon_creators_api_version', '2.3');
+  $marketplace = apply_filters('amazon_creators_api_marketplace', AMAZON_DOMAIN);
+
+  amazon_creators_api_debug_log('search request marketplace='.$marketplace.' version='.$version);
+
+  // 検索に必要なリソースを指定
+  $resources = array(
+    'images.primary.small',
+    'images.primary.medium',
+    'images.primary.large',
+    'images.variants.small',
+    'images.variants.large',
+    'itemInfo.byLineInfo',
+    'itemInfo.classifications',
+    'itemInfo.features',
+    'itemInfo.manufactureInfo',
+    'itemInfo.title',
+    'offersV2.listings.price',
+    'parentASIN',
+  );
+  $resources = apply_filters('amazon_creators_api_search_items_resources', $resources);
+
+  // OAuth2トークンを取得
+  $token_result = amazon_creators_api_get_access_token($credential_id, $credential_secret, $version);
+  if (isset($token_result['error'])) {
+    return $token_result['error'];
+  }
+  $access_token = isset($token_result['token']) ? $token_result['token'] : '';
+  if (!$access_token) {
+    return amazon_creators_api_error_json('CreatorsApiTokenMissing', __( 'Creators APIのアクセストークンが取得できませんでした。', THEME_NAME ));
+  }
+
+  // itemCountは1〜10の範囲に制限
+  $item_count = max(1, min(10, (int)$item_count));
+  // itemPageは1〜10の範囲に制限
+  $item_page = max(1, min(10, (int)$item_page));
+
+  // リクエスト本文を組み立て
+  $request_body = array(
+    'partnerTag' => $partnerTag,
+    'keywords'   => $keyword,
+    'itemCount'  => $item_count,
+    'itemPage'   => $item_page,
+    'resources'  => $resources,
+  );
+  $request_body = apply_filters('amazon_creators_api_search_items_payload', $request_body, $keyword, $partnerTag);
+  $request_json = wp_json_encode($request_body);
+
+  // SearchItemsエンドポイントにリクエスト
+  $host = apply_filters('amazon_creators_api_host', 'https://creatorsapi.amazon');
+  $endpoint = $host.'/catalog/v1/searchItems';
+
+  $headers = array(
+    'Authorization: Bearer '.$access_token.', Version '.$version,
+    'Content-Type: application/json',
+    'Accept: application/json',
+    'x-marketplace: '.$marketplace,
+    'User-Agent: cocoon-creatorsapi-curl',
+  );
+
+  $ch = curl_init($endpoint);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $request_json);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, (int)apply_filters('amazon_creators_api_connect_timeout', 10));
+  curl_setopt($ch, CURLOPT_TIMEOUT, (int)apply_filters('amazon_creators_api_timeout', 20));
+
+  $res = curl_exec($ch);
+  $curl_errno = curl_errno($ch);
+  $curl_error = curl_error($ch);
+  $http_code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  curl_close($ch);
+
+  // cURLエラーの処理
+  if ($curl_errno) {
+    amazon_creators_api_debug_log('search curl error: '.$curl_error);
+    return amazon_creators_api_error_json('CreatorsApiCurlError', $curl_error);
+  }
+
+  // HTTPエラーの処理
+  if ($http_code >= 400) {
+    amazon_creators_api_debug_log('search http error: '.$http_code);
+    if (!$res) {
+      return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
+    }
+  }
+
+  amazon_creators_api_debug_log('search response received');
+
+  // 空のレスポンスなら失敗扱い
+  if (!$res) {
+    return false;
+  }
+
+  // JSONを解析
+  $json = json_decode($res);
+  if (json_last_error() !== JSON_ERROR_NONE) {
+    amazon_creators_api_debug_log('search json decode error');
+    return amazon_creators_api_error_json('CreatorsApiJsonDecodeError', __( 'Creators APIのレスポンスを解析できませんでした。', THEME_NAME ));
+  }
+
+  if ($json) {
+    // Creators APIのerrorsを処理
+    if (isset($json->errors)) {
+      amazon_creators_api_debug_log('search errors in response');
+      $normalized_errors = amazon_creators_api_normalize_errors($json->errors);
+      if ($normalized_errors) {
+        return $normalized_errors;
+      }
+    }
+
+    // SearchResultをPA-API互換形式に変換
+    $paapi_json = amazon_creators_api_convert_search_response_to_paapi($json);
+    if ($paapi_json) {
+      return wp_json_encode($paapi_json);
+    }
+  }
+
+  return $res;
+}
+endif;
