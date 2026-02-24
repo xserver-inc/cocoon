@@ -184,7 +184,8 @@ function get_item_ranking( $id ) {
     $record->visible = !empty($record->visible) ? $record->visible : 0;
   }
 
-  //var_dump($record);
+  // フィルターフックでレコードを外部から加工可能にする
+  $record = apply_filters('cocoon_get_item_ranking', $record, $id);
 
   return $record;
 }
