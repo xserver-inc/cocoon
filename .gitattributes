@@ -17,6 +17,3 @@
 # Composer（本番テーマには不要）
 /composer.json         export-ignore
 /composer.lock         export-ignore
-
-# SCSSソース（コンパイル済みCSSが配布対象）
-/scss/                 export-ignore
