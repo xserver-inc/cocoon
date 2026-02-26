@@ -548,13 +548,35 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
 
   if ($http_code >= 400) {
     amazon_creators_api_debug_log('api http error: '.$http_code);
+    // レスポンスが空の場合はHTTPステータスコードのみ返す
     if (!$res) {
       return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
     }
+    // レスポンス本文をJSONとして解析
     $error_json = json_decode($res, true);
     if (json_last_error() !== JSON_ERROR_NONE || !is_array($error_json)) {
       return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
     }
+    // APIが返すerrorsの詳細をメッセージに含める
+    if (isset($error_json['errors']) && is_array($error_json['errors'])) {
+      $error_messages = array();
+      foreach ($error_json['errors'] as $err) {
+        // Creators APIのエラーオブジェクトからcode/messageを取得
+        $code = isset($err['code']) ? $err['code'] : '';
+        $msg = isset($err['message']) ? $err['message'] : '';
+        if ($code || $msg) {
+          $error_messages[] = $code . ($msg ? ': ' . $msg : '');
+        }
+      }
+      if (!empty($error_messages)) {
+        return amazon_creators_api_error_json(
+          'CreatorsApiHttpError',
+          'HTTP ' . $http_code . ' - ' . implode('; ', $error_messages)
+        );
+      }
+    }
+    // エラーの詳細が取得できなかった場合もHTTPステータスコードを返す
+    return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
   }
 
   amazon_creators_api_debug_log('response received');
@@ -610,7 +632,9 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
     // 取得失敗は既存のAmazonエラーログに記録
     if (!is_paapi_json_item_exist($json) && !is_creators_api_json_item_exist($json)) {
       amazon_creators_api_debug_log('items not found in response');
-      error_log_to_amazon_product($asin, AMAZON_ASIN_ERROR_MESSAGE);
+      // Creators API用の詳細メッセージがあればそれを使う
+      $log_msg = function_exists('get_amazon_asin_error_message') ? get_amazon_asin_error_message() : AMAZON_ASIN_ERROR_MESSAGE;
+      error_log_to_amazon_product($asin, $log_msg);
     }
   }
 
