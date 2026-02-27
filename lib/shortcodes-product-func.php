@@ -156,7 +156,7 @@ endif;
 if ( !function_exists( 'get_moshimo_amazon_impression_tag' ) ):
 function get_moshimo_amazon_impression_tag(){
   $moshimo_amazon_id  = trim(get_moshimo_amazon_id());
-  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.esc_attr($moshimo_amazon_id).'&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;">';
 }
 endif;
 
@@ -164,7 +164,7 @@ endif;
 if ( !function_exists( 'get_moshimo_rakuten_impression_tag' ) ):
 function get_moshimo_rakuten_impression_tag(){
   $moshimo_rakuten_id  = trim(get_moshimo_rakuten_id());
-  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.esc_attr($moshimo_rakuten_id).'&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;">';
 }
 endif;
 
@@ -175,7 +175,7 @@ function get_valucomace_yahoo_impression_tag(){
   $sid = trim(get_yahoo_valuecommerce_sid());
   //Yahoo!バリューコマースPID
   $pid = trim(get_yahoo_valuecommerce_pid());
-  return '<img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid='.$sid.'&pid='.$pid.'" width="1" height="1" border="0">';
+  return '<img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid='.esc_attr($sid).'&pid='.esc_attr($pid).'" width="1" height="1" border="0">';
 }
 endif;
 
@@ -183,7 +183,7 @@ endif;
 if ( !function_exists( 'get_moshimo_yahoo_impression_tag' ) ):
 function get_moshimo_yahoo_impression_tag(){
   $moshimo_yahoo_id  = trim(get_moshimo_yahoo_id());
-  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.$moshimo_yahoo_id.'&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.esc_attr($moshimo_yahoo_id).'&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;">';
 }
 endif;
 
@@ -196,7 +196,7 @@ function get_additional_button_tag($btn_url, $btn_text, $btn_tag, $name = 'btnex
     if ($btn_tag) {
       $button_link = htmlspecialchars_decode($btn_tag);
     } else {
-      $button_link = '<a href="'.esc_attr($btn_url).'" target="_blank" rel="nofollow noopener">'.esc_html($btn_text).'</a>';
+      $button_link = '<a href="'.esc_url($btn_url).'" target="_blank" rel="nofollow noopener">'.esc_html($btn_text).'</a>';
     }
 
     $button_tag =
@@ -219,10 +219,15 @@ function get_search_buttons_tag($args){
     //ボタン1の作成
     $button1_tag = get_additional_button_tag($btn1_url, $btn1_text, $btn1_tag, 'btn1');
 
+    // skip_visibility_check: ブロックからの呼び出し時はCocoon設定チェックをスキップ
+    $skip_vis = !empty($skip_visibility_check);
+    // use_moshimo: ブロックからの呼び出し時はもしもアフィリエイトの有効/無効を制御
+    $moshimo_enabled = !empty($use_moshimo) ? (bool)$use_moshimo : is_moshimo_affiliate_link_enable();
+
     //Amazonボタンの取得
     $amazon_btn_tag = null;
-    $is_moshimo_amazon = $moshimo_amazon_id && is_moshimo_affiliate_link_enable();
-    if (is_amazon_search_button_visible() && $amazon) {
+    $is_moshimo_amazon = $moshimo_amazon_id && $moshimo_enabled;
+    if (($skip_vis || is_amazon_search_button_visible()) && $amazon) {
       $amazon_url = get_amazon_search_url($keyword, $associate_tracking_id);
       if ($is_moshimo_amazon) {
         $amazon_url = get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id);
@@ -244,8 +249,8 @@ function get_search_buttons_tag($args){
 
     //楽天ボタンの取得
     $rakuten_btn_tag = null;
-    $is_moshimo_rakuten = $moshimo_rakuten_id && is_moshimo_affiliate_link_enable();
-    if (($rakuten_affiliate_id || $is_moshimo_rakuten) && is_rakuten_search_button_visible() && $rakuten) {
+    $is_moshimo_rakuten = $moshimo_rakuten_id && $moshimo_enabled;
+    if (($rakuten_affiliate_id || $is_moshimo_rakuten) && ($skip_vis || is_rakuten_search_button_visible()) && $rakuten) {
       $rakuten_keyword = $keyword;
       $keys = explode(' -', $rakuten_keyword);
       $ng_keywords = array();
@@ -284,8 +289,8 @@ function get_search_buttons_tag($args){
 
     //Yahoo!ボタンの取得
     $yahoo_tag = null;
-    $is_moshimo_yahoo = $moshimo_yahoo_id && is_moshimo_affiliate_link_enable();
-    if ((($sid && $pid) || $is_moshimo_yahoo) && is_yahoo_search_button_visible() && $yahoo) {
+    $is_moshimo_yahoo = $moshimo_yahoo_id && $moshimo_enabled;
+    if ((($sid && $pid) || $is_moshimo_yahoo) && ($skip_vis || is_yahoo_search_button_visible()) && $yahoo) {
 
       $yahoo_url = get_valucomace_yahoo_search_url($keyword, $sid, $pid);
       //もしもアフィリエイトIDがある場合
@@ -307,7 +312,7 @@ function get_search_buttons_tag($args){
 
     //メルカリボタンの取得
     $mercari_tag = null;
-    if ($mercari_affiliate_id && is_mercari_search_button_visible() && $mercari) {
+    if ($mercari_affiliate_id && ($skip_vis || is_mercari_search_button_visible()) && $mercari) {
 
       $mercari_url = get_mercari_search_url($keyword, $mercari_affiliate_id);
 
@@ -394,7 +399,8 @@ if ( !function_exists( 'get_item_description_tag' ) ):
 function get_item_description_tag($description){
   $description_tag = null;
   if ($description) {
-    $description_tag = '<div class="product-item-description">'.htmlspecialchars_decode($description).'</div>';
+    // 既存ショートコードとの互換性のため decode を行うが、安全のため wp_kses_post を通す
+    $description_tag = '<div class="product-item-description">'.wp_kses_post(htmlspecialchars_decode($description)).'</div>';
   }
   return apply_filters('get_item_description_tag', $description_tag);
 }
@@ -429,7 +435,7 @@ endif;
 if ( !function_exists( 'get_rakuten_image_size' ) ):
 function get_rakuten_image_size($url){
   preg_match('{ex=(\d+)x(\d+)}i', $url, $m);
-  if ($m[1] && $m[2]) {
+  if (isset($m[1], $m[2]) && $m[1] && $m[2]) {
     $sizes = array();
     $sizes['width'] =  intval($m[1]);
     $sizes['height'] =  intval($m[2]);

@@ -17,3 +17,6 @@
 # Composer（本番テーマには不要）
 /composer.json         export-ignore
 /composer.lock         export-ignore
+
+# 翻訳ワークフロー用開発スクリプト
+/scripts/              export-ignore

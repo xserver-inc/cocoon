@@ -345,6 +345,38 @@ function is_api_error_mail_enable(){
 }
 endif;
 
+// 商品リンクブロック自動更新を有効にする（Amazon・楽天 共通）
+define('OP_PRODUCT_BLOCK_AUTO_UPDATE_ENABLE', 'product_block_auto_update_enable');
+if ( !function_exists( 'is_product_block_auto_update_enable' ) ):
+function is_product_block_auto_update_enable(){
+  return get_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_ENABLE, 1);
+}
+endif;
+
+// 商品リンクブロック自動更新間隔（Amazon・楽天 共通）
+define('OP_PRODUCT_BLOCK_AUTO_UPDATE_INTERVAL', 'product_block_auto_update_interval');
+if ( !function_exists( 'get_product_block_auto_update_interval' ) ):
+function get_product_block_auto_update_interval(){
+  // デフォルト: 2週間ごと
+  return get_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_INTERVAL, 'cocoon_biweekly');
+}
+endif;
+
+// 商品リンクブロック自動更新のバッチサイズ（1回のCronで処理する投稿数）のデフォルト値
+define('PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT', 30);
+// Cron: 投稿1件の処理後に待機する秒数
+define('PRODUCT_BLOCK_CRON_POST_SLEEP_SECONDS', 60);
+// Cron: ブロック1つのAPIリクエスト後に待機する秒数
+define('PRODUCT_BLOCK_CRON_API_SLEEP_SECONDS', 30);
+// 商品リンクブロック自動更新のバッチサイズ（1回のCronで処理する投稿数）
+define('OP_PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE', 'product_block_auto_update_batch_size');
+if ( !function_exists( 'get_product_block_auto_update_batch_size' ) ):
+function get_product_block_auto_update_batch_size(){
+  // デフォルト: PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT の値
+  return (int)get_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE, PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT);
+}
+endif;
+
 //Amazon APIの認証情報が有効かどうか
 if ( !function_exists( 'is_amazon_api_credentials_available' ) ):
 function is_amazon_api_credentials_available(){
