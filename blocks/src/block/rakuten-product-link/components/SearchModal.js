@@ -38,18 +38,19 @@ export default function SearchModal( {
   // 検索入力欄のDOM参照（自動フォーカス用）
   const inputRef = useRef( null );
 
-  // モーダルが開いたときに検索欄へ自動フォーカス
+  // モーダルが開くたびに検索欄へ自動フォーカス
   useEffect( () => {
-    // WordPressのModalがフォーカス制御を持つため非同期で実行
+    if ( ! isOpen ) return;
+    // WordPressのModalがフォーカス制御を完了するのを待ってから実行
     const timer = setTimeout( () => {
       if ( inputRef.current ) {
         // TextControlが内部生成するinput要素を取得してフォーカス
         const input = inputRef.current.querySelector( 'input' );
         if ( input ) input.focus();
       }
-    }, 0 );
+    }, 100 );
     return () => clearTimeout( timer );
-  }, [] );
+  }, [ isOpen ] );
 
   // 検索実行関数
   const doSearch = useCallback(
