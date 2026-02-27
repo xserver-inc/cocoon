@@ -68,6 +68,9 @@ update_theme_option(OP_GET_RAKUTEN_API_SORT);
 //楽天商品リンク価格表示
 update_theme_option(OP_RAKUTEN_ITEM_PRICE_VISIBLE);
 
+//楽天商品リンク説明文表示
+update_theme_option(OP_RAKUTEN_ITEM_DESCRIPTION_VISIBLE);
+
 //楽天ロゴ表示
 update_theme_option(OP_RAKUTEN_ITEM_LOGO_VISIBLE);
 

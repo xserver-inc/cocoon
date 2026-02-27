@@ -170,6 +170,9 @@ $help_text = __( '取得方法', THEME_NAME );
               generate_checkbox_tag(OP_RAKUTEN_ITEM_PRICE_VISIBLE , is_rakuten_item_price_visible(), __( '価格を表示する', THEME_NAME ));
               generate_tips_tag(__( 'データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rakuten-price.png'));
 
+              generate_checkbox_tag(OP_RAKUTEN_ITEM_DESCRIPTION_VISIBLE , is_rakuten_item_description_visible(), __( '説明文を表示する', THEME_NAME ));
+              generate_tips_tag(__( '楽天側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。', THEME_NAME ));
+
               generate_checkbox_tag(OP_RAKUTEN_ITEM_LOGO_VISIBLE , is_rakuten_item_logo_visible(), __( 'ロゴを表示する', THEME_NAME ));
               generate_tips_tag(__( '楽天商品リンクのロゴの表示切り替え。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rakuten-logo.png'));
 

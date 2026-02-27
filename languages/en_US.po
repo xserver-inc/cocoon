@@ -15519,3 +15519,5 @@ msgid "楽天商品をエディタ内で検索・選択し、静的な商品リ�
 msgstr ""
 "Search and select Rakuten products in the editor, then insert a static "
 "product link."
+msgid "（%s時点）"
+msgstr "(as of %s)"

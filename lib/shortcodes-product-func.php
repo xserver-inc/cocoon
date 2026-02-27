@@ -383,7 +383,8 @@ function get_item_price_tag($price, $date = null){
   if ($price) {
     $date_tag = null;
     if ($date) {
-      $date_tag = '<span class="acquired-date">'.__( '（', THEME_NAME ).esc_html($date).__( '時点', THEME_NAME ).__( '）', THEME_NAME ).'</span>';
+      // 日付を1つの翻訳文字列に埋め込む（英語環境でも自然な表現になるように）
+      $date_tag = '<span class="acquired-date">'.sprintf( __( '（%s時点）', THEME_NAME ), esc_html($date) ).'</span>';
     }
     $item_price_tag = '<div class="product-item-price">'.
       '<span class="item-price">'.esc_html($price).'</span>'.

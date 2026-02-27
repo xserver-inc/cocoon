@@ -183,6 +183,15 @@ function is_rakuten_item_price_visible(){
 }
 endif;
 
+//楽天商品リンク説明文表示
+define('OP_RAKUTEN_ITEM_DESCRIPTION_VISIBLE', 'rakuten_item_description_visible');
+if ( !function_exists( 'is_rakuten_item_description_visible' ) ):
+function is_rakuten_item_description_visible(){
+  return get_theme_option(OP_RAKUTEN_ITEM_DESCRIPTION_VISIBLE);
+}
+endif;
+
+
 //楽天ロゴ表示
 define('OP_RAKUTEN_ITEM_LOGO_VISIBLE', 'rakuten_item_logo_visible');
 if ( !function_exists( 'is_rakuten_item_logo_visible' ) ):

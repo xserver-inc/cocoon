@@ -277,16 +277,29 @@ function cocoon_blocks_cgb_editor_assets()
 
 	// Amazon商品リンクブロックの初期値をCocoon設定から渡す
 	$amazon_block_defaults = array(
+		// 枠線を表示するか（常に有効）
 		'showBorder'        => 1,
+		// Amazonロゴを表示するかどうか
 		'showLogo'          => is_amazon_item_logo_visible() ? 1 : 0,
+		// カタログ画像（バリエーション画像）を表示するかどうか
 		'showCatalogImages' => is_amazon_item_catalog_image_visible() ? 1 : 0,
+		// 価格を表示するかどうか
+		'showPrice'         => is_amazon_item_price_visible() ? 1 : 0,
+		// 商品説明を表示するかどうか
 		'showDescription'   => is_amazon_item_description_visible() ? 1 : 0,
+		// カスタマーレビューを表示するかどうか
 		'showReview'        => is_amazon_item_customer_reviews_visible() ? 1 : 0,
+		// Amazon検索ボタンを表示するかどうか
 		'showAmazonButton'  => is_amazon_search_button_visible() ? 1 : 0,
+		// 楽天検索ボタンを表示するかどうか
 		'showRakutenButton' => is_rakuten_search_button_visible() ? 1 : 0,
+		// Yahoo!検索ボタンを表示するかどうか
 		'showYahooButton'   => is_yahoo_search_button_visible() ? 1 : 0,
+		// メルカリ検索ボタンを表示するかどうか
 		'showMercariButton' => is_mercari_search_button_visible() ? 1 : 0,
+		// もしもアフィリエイトリンクを使用するかどうか
 		'useMoshimoAffiliate' => is_moshimo_affiliate_link_enable() ? 1 : 0,
+		// もしものAmazon/楽天/Yahoo! IDが設定済みかどうか（設定パネルの表示制御用）
 		'hasMoshimoIds' => (get_moshimo_amazon_id() || get_moshimo_rakuten_id() || get_moshimo_yahoo_id()) ? 1 : 0,
 	);
 	wp_localize_script(
@@ -297,16 +310,27 @@ function cocoon_blocks_cgb_editor_assets()
 
 	// 楽天商品リンクブロックの初期値をCocoon設定から渡す
 	$rakuten_block_defaults = array(
+		// 枠線を表示するか（常に有効）
 		'showBorder'        => 1,
+		// 楽天ロゴを表示するかどうか
 		'showLogo'          => is_rakuten_item_logo_visible() ? 1 : 0,
-		'showDescription'   => 0,
+		// 商品説明を表示するかどうか
+		'showDescription'   => is_rakuten_item_description_visible() ? 1 : 0,
+		// 価格を表示するかどうか
 		'showPrice'         => is_rakuten_item_price_visible() ? 1 : 0,
+		// Amazon検索ボタンを表示するかどうか
 		'showAmazonButton'  => is_amazon_search_button_visible() ? 1 : 0,
+		// 楽天検索ボタンを表示するかどうか
 		'showRakutenButton' => is_rakuten_search_button_visible() ? 1 : 0,
+		// Yahoo!検索ボタンを表示するかどうか
 		'showYahooButton'   => is_yahoo_search_button_visible() ? 1 : 0,
+		// メルカリ検索ボタンを表示するかどうか
 		'showMercariButton' => is_mercari_search_button_visible() ? 1 : 0,
+		// もしもアフィリエイトリンクを使用するかどうか
 		'useMoshimoAffiliate' => is_moshimo_affiliate_link_enable() ? 1 : 0,
+		// もしものAmazon/楽天/Yahoo! IDが設定済みかどうか（設定パネルの表示制御用）
 		'hasMoshimoIds' => (get_moshimo_amazon_id() || get_moshimo_rakuten_id() || get_moshimo_yahoo_id()) ? 1 : 0,
+
 	);
 	wp_localize_script(
 		'cocoon-blocks-js',

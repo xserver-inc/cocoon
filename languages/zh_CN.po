@@ -1,4 +1,4 @@
-msgid ""
+﻿msgid ""
 msgstr ""
 "Project-Id-Version: wp-cocoon\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
@@ -14687,3 +14687,5 @@ msgstr "在编辑器中搜索并选择Amazon商品，插入静态商品链接。
 msgctxt "block description"
 msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
 msgstr "在编辑器中搜索并选择乐天商品，插入静态商品链接。"
+msgid "（%s時点）"
+msgstr "（%s 时点）"

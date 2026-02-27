@@ -1,4 +1,4 @@
-msgid ""
+﻿msgid ""
 msgstr ""
 "Project-Id-Version: wp-cocoon\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
@@ -15900,3 +15900,5 @@ msgid "楽天商品をエディタ内で検索・選択し、静的な商品リ�
 msgstr ""
 "Busque y seleccione productos de Rakuten en el editor e inserte un enlace "
 "de producto estático."
+msgid "（%s時点）"
+msgstr "(al %s)"

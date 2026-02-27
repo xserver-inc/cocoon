@@ -10,6 +10,7 @@ package-lock.json
 
 # Agent
 .agent
+.agents/
 
 #CLAUDE
 .mcp.json
