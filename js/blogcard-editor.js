@@ -64,6 +64,22 @@
     } );
 
     // ==============================================================================
+    // ブログカード内のリンク遷移をエディター上で無効化する
+    // ==============================================================================
+    document.addEventListener(
+      'click',
+      function ( e ) {
+        var link = e.target.closest(
+          '.blogcard a, .internal-blogcard a, .external-blogcard a, .wp-block-cocoon-blocks-embed-blogcard a'
+        );
+        if ( link ) {
+          e.preventDefault();
+        }
+      },
+      true
+    );
+
+    // ==============================================================================
     // oEmbedの解決はWordPressコアに任せ、解決失敗したembedブロックを監視して変換する
     // ==============================================================================
     var isMonitoring = false;
@@ -108,6 +124,15 @@
 
           // プレビューデータの取得中（undefined）の場合はまだ判定しない
           if ( preview === undefined ) {
+            return;
+          }
+
+          // URL書き換え対応（ブロックIDとURLをセットで管理）
+          // ユーザーが既存の埋め込みブロックのURLだけを編集した場合にも再評価させるため
+          var blockKey = block.clientId + '_' + url;
+
+          // 既に判定済み・変換済みのブロックはスキップして無限ループ防止
+          if ( processedBlocks.has( blockKey ) ) {
             return;
           }
 
