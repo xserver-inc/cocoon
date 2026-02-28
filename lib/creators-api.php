@@ -403,7 +403,7 @@ endif;
 if ( !function_exists( 'get_amazon_creators_itemlookup_json' ) ):
 function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   // 空白を取り除く
-  $asin = trim($asin);
+  $asin = trim((string)$asin);
   if (empty($asin)) {
     return false;
   }
@@ -418,7 +418,7 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   }
 
   // 追跡IDの有無でキャッシュキーを変える
-  $tracking_id = trim($tracking_id);
+  $tracking_id = trim((string)$tracking_id);
   $tid = null;
   if ($tracking_id) {
     $tid = '+'.$tracking_id;
@@ -446,9 +446,9 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   }
 
   // 認証情報とトラッキングIDを取得
-  $credential_id = trim(get_amazon_creators_api_credential_id());
-  $credential_secret = trim(get_amazon_creators_api_secret());
-  $partnerTag = trim(get_amazon_associate_tracking_id($tracking_id));
+  $credential_id = trim((string)get_amazon_creators_api_credential_id());
+  $credential_secret = trim((string)get_amazon_creators_api_secret());
+  $partnerTag = trim((string)get_amazon_associate_tracking_id($tracking_id));
 
   // 既定は日本向け(FE)・JPマーケット。必要ならフィルタで変更
   $version = apply_filters('amazon_creators_api_version', '2.3');
@@ -575,6 +575,10 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
         );
       }
     }
+    // 汎用的なエラーメッセージ（Amazon API Gatewayのレートリミットなど {"message": "Too Many Requests"} 形式）の処理
+    if (isset($error_json['message']) && is_string($error_json['message'])) {
+      return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code . ' - ' . $error_json['message']);
+    }
     // エラーの詳細が取得できなかった場合もHTTPステータスコードを返す
     return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
   }
@@ -691,7 +695,7 @@ endif;
 if ( !function_exists( 'get_amazon_creators_search_json' ) ):
 function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_count = 10, $item_page = 1){
   // キーワードが空なら処理しない
-  $keyword = trim($keyword);
+  $keyword = trim((string)$keyword);
   if (empty($keyword)) {
     return false;
   }
@@ -705,9 +709,9 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
   }
 
   // 認証情報とトラッキングIDを取得
-  $credential_id = trim(get_amazon_creators_api_credential_id());
-  $credential_secret = trim(get_amazon_creators_api_secret());
-  $partnerTag = trim(get_amazon_associate_tracking_id($tracking_id));
+  $credential_id = trim((string)get_amazon_creators_api_credential_id());
+  $credential_secret = trim((string)get_amazon_creators_api_secret());
+  $partnerTag = trim((string)get_amazon_associate_tracking_id($tracking_id));
 
   // APIバージョンとマーケットプレイスの設定
   $version = apply_filters('amazon_creators_api_version', '2.3');
@@ -796,6 +800,35 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
     if (!$res) {
       return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
     }
+    // レスポンス本文をJSONとして解析
+    $error_json = json_decode($res, true);
+    if (json_last_error() !== JSON_ERROR_NONE || !is_array($error_json)) {
+      return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
+    }
+    // APIが返すerrorsの詳細をメッセージに含める
+    if (isset($error_json['errors']) && is_array($error_json['errors'])) {
+      $error_messages = array();
+      foreach ($error_json['errors'] as $err) {
+        // Creators APIのエラーオブジェクトからcode/messageを取得
+        $code = isset($err['code']) ? $err['code'] : '';
+        $msg = isset($err['message']) ? $err['message'] : '';
+        if ($code || $msg) {
+          $error_messages[] = $code . ($msg ? ': ' . $msg : '');
+        }
+      }
+      if (!empty($error_messages)) {
+        return amazon_creators_api_error_json(
+          'CreatorsApiHttpError',
+          'HTTP ' . $http_code . ' - ' . implode('; ', $error_messages)
+        );
+      }
+    }
+    // 汎用的なエラーメッセージ（Amazon API Gatewayのレートリミットなど {"message": "Too Many Requests"} 形式）の処理
+    if (isset($error_json['message']) && is_string($error_json['message'])) {
+      return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code . ' - ' . $error_json['message']);
+    }
+    // エラーの詳細が取得できなかった場合もHTTPステータスコードを返す
+    return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
   }
 
   amazon_creators_api_debug_log('search response received');
