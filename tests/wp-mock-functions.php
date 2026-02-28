@@ -212,7 +212,12 @@ if (!function_exists('is_front_page')) {
 }
 
 if (!function_exists('get_theme_mod')) {
+    // テスト用: グローバル変数 $test_theme_mods で戻り値を制御可能
     function get_theme_mod($name, $default = false) {
+        global $test_theme_mods;
+        if (is_array($test_theme_mods) && array_key_exists($name, $test_theme_mods)) {
+            return $test_theme_mods[$name];
+        }
         return $default;
     }
 }
