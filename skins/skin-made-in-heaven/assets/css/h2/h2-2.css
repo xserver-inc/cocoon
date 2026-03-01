@@ -2,6 +2,7 @@
 
 /* 帯 */
 
+.editor-styles-wrapper .article h2,
 .article h2,
 .main .article .widget-title,
 .main .under-entry-content h2 {
@@ -11,4 +12,3 @@
   color: var(--text-color);
   padding: 16px 25px;
 }
-

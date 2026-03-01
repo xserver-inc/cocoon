@@ -2,6 +2,7 @@
 
 /* 下線(メイン・薄) */
 
+.editor-styles-wrapper .article h3,
 .article h3 {
   border-bottom: 2px solid var(--hover-color);
   display: block;
@@ -17,4 +18,3 @@
   position: absolute;
   width: 30%;
 }
-

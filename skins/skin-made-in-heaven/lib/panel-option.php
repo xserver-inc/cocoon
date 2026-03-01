@@ -32,14 +32,15 @@ function hvn_option($wp_customize) {
       'required'  => '',
     ]
   ];
-  hvn_panel_control($wp_customize, $section, 'hvn_index_new_setting'     , ['default' => 0, 'sanitize_callback' => 'hvn_sanitize_number_range'], '', __('NEWマーク(0～5日、0はオフ)', THEME_NAME), $input_attrs, 'number');
-  hvn_panel_control($wp_customize, $section, 'hvn_like_setting'          , ['default' =>false], __('いいねボタン', THEME_NAME),'', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_eyecatch_setting'      , ['default' =>false], __('縦アイキャッチ背景ぼかし', THEME_NAME)  ,'', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_swiper_auto_setting'   , ['default' =>false], __('オートプレイ', THEME_NAME)              ,'', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_accordion_setting'     , ['default' =>false], __('アコーディオン化', THEME_NAME)          ,'', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_notice_setting'        , ['default' =>false], __('通知エリア固定', THEME_NAME)            ,'', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_notice_scroll_setting' , ['default' =>false], __('通知メッセージ横スクロール', THEME_NAME),'', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_star_setting'          , ['default' =>false], __('評価・ランキングハート', THEME_NAME)    ,'', [], 'checkbox');
+  $label = sprintf(__('NEWマーク（%d～%d日、0はオフ）', THEME_NAME), $input_attrs['input_attrs']['min'], $input_attrs['input_attrs']['max']);
+  hvn_panel_control($wp_customize, $section, 'hvn_index_new_setting'    , ['default' => 0, 'sanitize_callback' => 'hvn_sanitize_number_range'], '', $label, $input_attrs, 'number');
+  hvn_panel_control($wp_customize, $section, 'hvn_like_setting'          , ['default' => false], __('いいねボタン', THEME_NAME)               ,'', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_eyecatch_setting'      , ['default' => false], __('縦アイキャッチ背景ぼかし', THEME_NAME)   ,'', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_swiper_auto_setting'   , ['default' => false], __('オートプレイ', THEME_NAME)               ,'', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_accordion_setting'     , ['default' => false], __('アコーディオン化', THEME_NAME)           ,'', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_notice_setting'        , ['default' => false], __('通知エリア固定', THEME_NAME)             ,'', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_notice_scroll_setting' , ['default' => false], __('通知メッセージ横スクロール', THEME_NAME) ,'', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_star_setting'          , ['default' => false], __('評価・ランキングハート', THEME_NAME)     ,'', [], 'checkbox');
 
   $label_array = [
     'wide'          => '9:6',
@@ -52,11 +53,7 @@ function hvn_option($wp_customize) {
   $thumb = get_theme_mod('thumbnail_image_type', 'wide');
   $label = sprintf(__('サムネイル画像の比率（%s）に従う', THEME_NAME), $label_array[$thumb]);
   hvn_panel_control($wp_customize, $section, 'hvn_thumb_option_setting'  , ['default' => false], $label, '', [], 'checkbox');
-
-  // 隠しオプション
-  if (defined('HVN_OPTION') && HVN_OPTION) {
-    hvn_panel_control($wp_customize, $section, 'hvn_orderby_option_setting', ['default' => false], __('並び替え選択', THEME_NAME), '', [], 'checkbox');
-  }
+  hvn_panel_control($wp_customize, $section, 'hvn_darkmode_setting'      , ['default' => false], __('ダークモード', THEME_NAME) ,'', [], 'checkbox');
 
 
 //******************************************************************************
@@ -69,7 +66,7 @@ function hvn_option($wp_customize) {
   hvn_panel_control($wp_customize, $section, 'hvn_breadcrumbs_setting', ['default' => __('ホーム'    , THEME_NAME), 'sanitize_callback' => 'hvn_sanitize_text'], '', __('パンくずリストテキスト', THEME_NAME), ['required'  => ''], 'text');
 
   // タイトル
-  hvn_panel_control($wp_customize, $section, 'hvn_tcheck_option_setting'             , ['default' =>false], __('フロントページタイトル変更', THEME_NAME), '', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_tcheck_option_setting'             , ['default' => false], __('フロントページタイトル変更', THEME_NAME), '', [], 'checkbox');
   hvn_panel_control($wp_customize, $section, 'hvn_title_new_option_setting'          , ['default' => 'New Post'                                  , 'sanitize_callback' => 'hvn_sanitize_text'], __('新着記事', THEME_NAME)       , __('タイトル', THEME_NAME), ['required'  => ''], 'text');
   hvn_panel_control($wp_customize, $section, 'hvn_title_new_sub_option_setting'      , ['default' =>  __('新着・更新された記事です', THEME_NAME) , 'sanitize_callback' => 'hvn_sanitize_text'], ''                               , __('説明文', THEME_NAME)  , ['required'  => ''], 'text');
   hvn_panel_control($wp_customize, $section, 'hvn_title_popular_option_setting'      , ['default' => 'Popular'                                   , 'sanitize_callback' => 'hvn_sanitize_text'], __('人気記事', THEME_NAME)       , __('タイトル', THEME_NAME), ['required'  => ''], 'text');

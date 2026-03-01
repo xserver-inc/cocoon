@@ -2,6 +2,7 @@
 
 /* 左縦線(2色) */
 
+.editor-styles-wrapper .article h2,
 .article h2,
 .main .article .widget-title,
 .main .under-entry-content h2 {
@@ -9,9 +10,9 @@
   padding: 20px 25px 20px 15px;
 }
 
-.article h2::before,
-.main .article .widget-title::before,
-.main .under-entry-content h2::before {
+.article h2:before,
+.main .article .widget-title:before,
+.main .under-entry-content h2:before {
   background-color: var(--main-color);
   bottom: 0px;
   content: '';
@@ -21,4 +22,3 @@
   top: 0px;
   width: 10px;
 }
-

@@ -82,27 +82,27 @@ endif;
 //******************************************************************************
 if (!function_exists('hvn_h2_h4_css')):
 function hvn_h2_h4_css() {
-  for ($i=2; $i<=4; $i++) {
-    $no = get_theme_mod("hvn_h{$i}_css_setting", '0');
+  foreach (['h2','h3','h4'] as $tag) {
+    $no = get_theme_mod("hvn_{$tag}_css_setting", '0');
     if ($no) {
-      $h_url = get_theme_file_uri(HVN_SKIN . "assets/css/h{$i}/h{$i}-{$no}.css");
-      wp_enqueue_style("hvn-h{$i}-style", $h_url);
+      $h_url = get_theme_file_uri(HVN_SKIN . "assets/css/{$tag}/{$tag}-{$no}.css");
+      wp_enqueue_style("hvn-{$tag}-style", $h_url, ["cocoon-skin-style"]);
     }
   }
 
   $widget = get_theme_mod('hvn_widget_css_setting', '0');
   if ($widget) {
     $widget_url = get_theme_file_uri(HVN_SKIN . "assets/css/w/w-{$widget}.css");
-    wp_enqueue_style('hvn-widget-style', $widget_url);
+    wp_enqueue_style('hvn-widget-style', $widget_url, ["cocoon-skin-style"]);
   }
 
   $scroll = get_theme_mod('hvn_header_scroll_setting', '0');
   if ($scroll) {
     $scroll_url = get_theme_file_uri(HVN_SKIN . "assets/css/s/s-{$scroll}.css");
-    wp_enqueue_style('hvn-scroll-style', $scroll_url);
+    wp_enqueue_style('hvn-scroll-style', $scroll_url,  ["cocoon-skin-style"]);
   }
 
-  wp_enqueue_style('hvn-original-style', HVN_SKIN_URL . 'assets/css/original.css');
+  wp_enqueue_style('hvn-original-style', HVN_SKIN_URL . 'assets/css/original.css', ["cocoon-skin-style"]);
 }
 endif;
 
@@ -121,32 +121,34 @@ function hvn_color_css() {
 
   // サイトカラー
   $main_color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
-  if ($main_color) {
-    $css .= "--main-color: {$main_color};";
+  $css .= "--main-color: {$main_color};";
 
-    $rgb = colorcode_to_rgb($main_color);
-    $css .= "--main-rgb-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};";
+  $rgb = colorcode_to_rgb($main_color);
+  $css .= "--main-rgb-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};";
 
-    $rgb = hvn_color_mix_rgb($main_color, 0.15);
-    $css .= "--hover-color: {$rgb['hex']};";
-  }
+  $rgb = hvn_color_mix_rgb($main_color, 0.15);
+  $css .= "--hover-color: {$rgb['hex']};";
 
   // テキストカラー
   $text_color = get_theme_mod('hvn_text_color_setting', HVN_TEXT_COLOR);
-  if ($text_color) {
-    $css .= "--text-color: {$text_color};";
-  }
+  $css .= "--text-color: {$text_color};";
 
   // 背景カラー
   $body_color = get_theme_mod('hvn_body_color_setting', HVN_BODY_COLOR);
-  if ($body_color) {
-    $title_color = is_dark_hexcolor($body_color) ? '#fff' : '#333';
+  $title_color = is_dark_hexcolor($body_color) ? '#fff' : '#333';
 
-    $rgb = colorcode_to_rgb($body_color);
-    $css .= "--title-color: {$title_color};";
-    $css .= "--body-color: {$body_color};";
-    $css .= "--body-rgb-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};";
-  }
+  $rgb = colorcode_to_rgb($body_color);
+  $css .= "--title-color: {$title_color};";
+  $css .= "--body-color: {$body_color};";
+  $css .= "--body-rgb-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};";
+
+  // コンテンツ背景カラー
+  $content_bgcolor = get_theme_mod('hvn_content_bgcolor_setting', HVN_CONTENT_BGCOLOR);
+  $css .= "--hvn-white-color: {$content_bgcolor};";
+
+  // Scrollボタンカラー
+  $scroll_gcolor = get_theme_mod('hvn_header_scroll_color_setting', HVN_SCROLL_COLOR);
+  $css .= "--hvn-scroll: {$scroll_gcolor};";
 
   // プロフィール背景画像
   $img = wp_get_attachment_url(get_theme_mod('hvn_prof_setting'));
@@ -243,7 +245,7 @@ function hvn_add_header() {
     case 'video':
       $video  = wp_get_attachment_url(get_theme_mod('hvn_header_video_setting'));
       if ($video) {
-        $html .= "<div class=video_wrapper><video autoplay loop muted playsinline><source src={$video}></video></div>";
+        $html .= '<div class="video_wrapper"><video autoplay loop muted playsinline><source src="' . esc_url($video) . '"></video></div>';
       }
       break;
 
@@ -260,14 +262,14 @@ function hvn_add_header() {
         if ($img) {
           $img_html .= '<div class="swiper-slide">';
           for ($j=1; $j<=$cnt; $j++) {
-            $img_html .= "<div class=img{$j}><img src={$img}></div>" ;
+            $img_html .= '<div class="img' . $j . '"><img src="' . esc_url($img) . '" alt=""></div>';
           }
           $img_html .= '</div>';
         }
       }
 
       if ($img_html) {
-        $html .= "<div class=hvn-swiper><div class=swiper-wrapper>{$img_html}</div></div>";
+        $html .= '<div class="hvn-swiper"><div class="swiper-wrapper">' . $img_html . '</div></div>';
       }
       break;
   }
@@ -277,17 +279,17 @@ function hvn_add_header() {
   $msg = get_theme_mod('hvn_header_message_setting');
   if ($msg) {
     $msg = do_shortcode($msg);
-    $msg = "<div class=message><div>{$msg}</div></div>";
+    $msg  = '<div class="message"><div>' . $msg . '</div></div>';
   }
 
   // ヘッダーロゴ
   if (get_theme_mod('hvn_header_logo_setting')) {
     $url = get_the_site_logo_url();
     if ($url) {
-      $msg = "<div class=message><img src={$url}></div>";
+      $msg = '<div class="message"><img src="' . esc_url($url) . '" alt=""></div>';
     } else {
       $site_logo_text = apply_filters('site_logo_text', get_bloginfo('name'));
-      $msg = "<div class=message>{$site_logo_text}</div>";
+      $msg = '<div class="message">' . $site_logo_text . '</div>';
     }
   }
   $html .= $msg;
@@ -358,6 +360,8 @@ endif;
 //******************************************************************************
 if (!function_exists('hvn_like_ajax')):
 function hvn_like_ajax() {
+  check_ajax_referer('hvn_like_nonce');
+
   $id   = $_POST['id'];
   $mode = $_POST['mode'];
   $key_like = 'post_like';
@@ -487,5 +491,15 @@ endif;
 if (!function_exists('get_sidebar_width')):
 function get_sidebar_width() {
   return HVN_SIDE_WIDTH;
+}
+endif;
+
+//******************************************************************************
+//  エディター用CSSファイルキャッシュ取得
+//******************************************************************************
+if (!function_exists('hvn_editor_css_cache_file')):
+function hvn_editor_css_cache_file(){
+  $file = get_theme_css_cache_path() . 'hvn-editor.css';
+  return $file;
 }
 endif;

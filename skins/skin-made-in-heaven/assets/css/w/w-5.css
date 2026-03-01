@@ -14,4 +14,3 @@ aside.widget .widget-title {
 .body aside.widget:has(.widget-title) {
   padding-top: 0;
 }
-

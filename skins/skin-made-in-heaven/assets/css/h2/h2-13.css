@@ -10,6 +10,7 @@
   padding: 20px 10px;
 }
 
+.editor-styles-wrapper .article h2,
 .article h2 {
   align-items: flex-end;
   border-bottom: 5px solid var(--hover-color);
@@ -22,7 +23,7 @@
   padding: 0px 20px 5px;
 }
 
-.article h2::before {
+.article h2:before {
   font-family: Arial;
   bottom: -28px;
   color: var(--hover-color);
@@ -39,7 +40,7 @@
   padding-left: 1.8em;
 }
 
-.toc-list > li::before {
+.toc-list > li:before {
   background-color: var(--main-color);
   border-radius: 50%;
   color: var(--text-color)!important;
@@ -52,11 +53,10 @@
   width: 1.6em;
 }
 
-.hvn-scroll-toc .sidebar-scroll .toc-list > li::before {
+.hvn-scroll-toc .sidebar-scroll .toc-list > li:before {
   background-color: var(--hover-color);
 }
 
-.hvn-scroll-toc .sidebar-scroll .toc-list > li.current::before {
+.hvn-scroll-toc .sidebar-scroll .toc-list > li.current:before {
   background-color: var(--main-color);
 }
-

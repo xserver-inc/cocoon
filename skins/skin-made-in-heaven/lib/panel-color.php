@@ -35,6 +35,8 @@ function hvn_color($wp_customize) {
 //******************************************************************************
   hvn_panel_label($wp_customize, $section, __('個別カラー', THEME_NAME), 2);
 
+  hvn_panel_control($wp_customize, $section, 'hvn_content_bgcolor_setting'  , ['default' => HVN_CONTENT_BGCOLOR, 'sanitize_callback' => 'hvn_sanitize_color'], '', __('コンテンツ背景カラー', THEME_NAME), [], 'color');
+  hvn_panel_control($wp_customize, $section, 'site_text_color'              , ['sanitize_callback' => 'hvn_sanitize_color'], '', __('コンテンツテキストカラー'     , THEME_NAME), [], 'color');
   hvn_panel_control($wp_customize, $section, 'header_background_color'      , ['sanitize_callback' => 'hvn_sanitize_color'], '', __('ヘッダー背景カラー'           , THEME_NAME), [], 'color');
   hvn_panel_control($wp_customize, $section, 'header_text_color'            , ['sanitize_callback' => 'hvn_sanitize_color'], '', __('ヘッダーテキストカラー'       , THEME_NAME), [], 'color');
   hvn_panel_control($wp_customize, $section, 'global_navi_background_color' , ['sanitize_callback' => 'hvn_sanitize_color'], '', __('グローバルナビ背景カラー'     , THEME_NAME), [], 'color');

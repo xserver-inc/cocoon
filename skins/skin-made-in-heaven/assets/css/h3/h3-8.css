@@ -2,9 +2,9 @@
 
 /* 塗りつぶし（薄） */
 
+.editor-styles-wrapper .article h3,
 .article h3 {
   background-color: var(--hover-color);
   color: #333;
   padding: 10px 15px;
 }
-

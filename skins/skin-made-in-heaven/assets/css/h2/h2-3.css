@@ -2,6 +2,7 @@
 
 /* 塗りつぶし */
 
+.editor-styles-wrapper .article h2,
 .article h2,
 .main .article .widget-title,
 .main .under-entry-content h2 {
@@ -9,4 +10,3 @@
   color: var(--text-color);
   padding: 20px 25px;
 }
-

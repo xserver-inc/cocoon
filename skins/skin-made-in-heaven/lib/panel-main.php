@@ -44,7 +44,7 @@ function hvn_main($wp_customize) {
   ];
   hvn_panel_control($wp_customize, $section, 'front_page_type'            , ['default' => 'index'], __('フロントページタイプ', THEME_NAME), '', $input_attrs, 'select');
   hvn_panel_control($wp_customize, $section, 'hvn_card_expansion_setting' , ['default' => false]  , __('拡張タイプ', THEME_NAME)                            , '', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_front_none_setting'     , ['default' => true ]  , __('「新着記事」タブ表示', THEME_NAME)                  , '', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_front_none_setting'     , ['default' => true ]  , __('「新着記事」表示', THEME_NAME)                  , '', [], 'checkbox');
   hvn_panel_control($wp_customize, $section, 'hvn_categories_card_setting', ['default' => false]  , __('カテゴリーごと（2、3カラム）縦型カード', THEME_NAME), '', [], 'checkbox');
   hvn_panel_control($wp_customize, $section, 'hvn_category_color_setting' , ['default' => false]  , __('カテゴリーごと背景色', THEME_NAME)                  , '', [], 'checkbox');
 
@@ -85,8 +85,8 @@ function hvn_main($wp_customize) {
     ]
   ];
   hvn_panel_control($wp_customize, $section, 'hvn_toc_hidden_setting' , ['default' => '0'], '', __('省略表示', THEME_NAME), $input_attrs, 'select');
-  hvn_panel_control($wp_customize, $section, 'hvn_toc_setting'        , ['default' =>false], __('スクロール追従ハイライト', THEME_NAME) ,'', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_toc_fix_setting'    , ['default' =>false], __('目次ボタン', THEME_NAME)               ,'', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_toc_setting'        , ['default' => false], __('スクロール追従ハイライト', THEME_NAME) ,'', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_toc_fix_setting'    , ['default' => false], __('目次ボタン', THEME_NAME)               ,'', [], 'checkbox');
 
 
 //******************************************************************************
@@ -95,7 +95,7 @@ function hvn_main($wp_customize) {
   hvn_panel_label($wp_customize, $section, __('プロフィール', THEME_NAME), 6);
 
   hvn_panel_control($wp_customize, $section, 'hvn_prof_setting'            , [], '', __('背景画像', THEME_NAME), [], 'image');
-  hvn_panel_control($wp_customize, $section, 'hvn_site_date_setting'       , [], __('サイト開設日', THEME_NAME), '', [], 'date');
+  hvn_panel_control($wp_customize, $section, 'hvn_site_date_setting'       , [], '', __('サイト開設日', THEME_NAME), [], 'date');
   hvn_panel_control($wp_customize, $section, 'hvn_site_date_onoff_setting' , ['default' => false], __('サイト開設経過日数', THEME_NAME)     ,'', [], 'checkbox');
   hvn_panel_control($wp_customize, $section, 'hvn_profile_btn_setting'     , ['default' => false], __('プロフィールボタン表示', THEME_NAME) ,'', [], 'checkbox');
   hvn_panel_control($wp_customize, $section, 'hvn_profile_follows_setting' , ['default' => true ], __('SNSフォロー表示', THEME_NAME)        ,'', [], 'checkbox');

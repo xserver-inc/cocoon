@@ -3,7 +3,7 @@
 /* 線1（下に流れる） */
 
 .scrolldown {
-  color: #fff;
+  color: var(--hvn-scroll);
   height: fit-content;
   inset: 0;
   letter-spacing: 0.05em;
@@ -19,7 +19,7 @@
 
 .scrolldown:after {
   animation: pathmove 1.4s ease-in-out infinite;
-  background-color: #fff;
+  background-color: var(--hvn-scroll);
   content: '';
   display: block;
   height: 50px;
@@ -46,4 +46,3 @@
     top: 65px;
   }
 }
-

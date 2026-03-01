@@ -226,7 +226,7 @@
   --cocoon-custom-point-color: var(--main-color);
 }
 
-.is-style-hvn-timeline-line .timeline-item::before {
+.is-style-hvn-timeline-line .timeline-item:before {
   background-color: var(--cocoon-custom-point-color);
   height: 10px;
   left: 112px;
@@ -256,7 +256,7 @@
   .is-style-hvn-timeline-line .timeline-item-content {
     border: 0;
   }
-  .is-style-hvn-timeline-line .timeline-item::before {
+  .is-style-hvn-timeline-line .timeline-item:before {
     left: -12px;
   }
   .is-style-hvn-timeline-line .timeline-item-content:before {
@@ -360,11 +360,11 @@
   font-size: var(--cocoon-text-size-s);
   line-height: 20px;
   left: 0;
-  padding: 0 4px;
+  padding: 0;
   position: absolute;
   text-align: center;
   top: -5px;
-  width: 42px;
+  width: 50px;
   z-index: 1;
 }
 
@@ -592,7 +592,7 @@
 }
 
 .body :is(.is-style-2-columns, .is-style-3-columns) .border-partition .a-wrap {
-  border: 0;
+  border: 0!important;
   padding-bottom: 0;
 }
 
@@ -679,3 +679,14 @@
   height: 0.75em;
 }
 
+
+/*******************************************************************************
+**  タイムライン,FAQのタイトルHTMLタグを変更
+*******************************************************************************/
+
+[class*="hvn-h"] .faq-question-content:before,
+[class*="hvn-h"] .faq-question-content:after,
+[class*="hvn-h"] .timeline-item-title:before,
+[class*="hvn-h"] .timeline-item-title:after {
+  content: none;
+}

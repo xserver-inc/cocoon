@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 
 
 //******************************************************************************
-//  カスタマイザー（メインビジュアル）
+//  カスタマイザー（エディター）
 //******************************************************************************
 if (!function_exists('hvn_editor')):
 function hvn_editor($wp_customize) {
@@ -45,7 +45,7 @@ function hvn_editor($wp_customize) {
     ['赤色', '#ffd0d1'],
     ['青色', '#a8dafb'],
   ];
-  for ($i=0; $i<count($text); $i++) {
+  for ($i=0; $i<count($marker); $i++) {
     hvn_panel_control($wp_customize, $section, "hvn_marker_color{$i}_setting", ['default' => $marker[$i][1], 'sanitize_callback' => 'hvn_sanitize_color'], '', __($marker[$i][0], THEME_NAME), [], 'color');
   }
 
