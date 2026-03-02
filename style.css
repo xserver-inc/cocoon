@@ -2927,7 +2927,7 @@ label.screen-reader-text {
   margin-top: 3px;
 }
 
-.recent-comment-article .fa {
+.recent-comment-article > span:before {
   margin-right: 6px;
 }
 
