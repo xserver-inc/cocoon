@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/sticky-box",
   "category": "cocoon-block",
-  "keywords": [ "sticky", "box" ],
-
+  "keywords": [
+    "sticky",
+    "box"
+  ],
   "attributes": {
     "style": {
       "type": "string",
@@ -21,7 +23,7 @@
     ]
   },
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }
-

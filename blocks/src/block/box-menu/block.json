@@ -2,8 +2,9 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/box-menu",
   "category": "cocoon-block",
-  "keywords": ["box-menu"],
-
+  "keywords": [
+    "box-menu"
+  ],
   "attributes": {
     "id": {
       "type": "string",
@@ -25,7 +26,7 @@
   "example": {},
   "supports": {
     "customClassName": true,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }
-

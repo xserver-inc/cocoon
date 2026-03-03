@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/tab-box-1",
   "category": "cocoon-block",
-  "keywords": [ "tab", "box" ],
-
+  "keywords": [
+    "tab",
+    "box"
+  ],
   "attributes": {
     "label": {
       "type": "string",
@@ -42,6 +44,7 @@
     ]
   },
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }

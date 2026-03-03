@@ -2,8 +2,11 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/toggle-box-1",
   "category": "cocoon-block",
-  "keywords": [ "toggle", "accordion", "box" ],
-
+  "keywords": [
+    "toggle",
+    "accordion",
+    "box"
+  ],
   "attributes": {
     "content": {
       "type": "string",
@@ -51,7 +54,7 @@
   },
   "example": {
     "attributes": {
-        "content": "Accordion heading"
+      "content": "Accordion heading"
     },
     "innerBlocks": [
       {
@@ -64,6 +67,7 @@
   },
   "supports": {
     "reusable": false,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }

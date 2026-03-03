@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/icon-box",
   "category": "cocoon-block",
-  "keywords": [ "icon", "box" ],
-
+  "keywords": [
+    "icon",
+    "box"
+  ],
   "attributes": {
     "style": {
       "type": "string",
@@ -21,6 +23,7 @@
     ]
   },
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }

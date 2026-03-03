@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/timeline",
   "category": "cocoon-block",
-  "keywords": [ "timeline", "box" ],
-
+  "keywords": [
+    "timeline",
+    "box"
+  ],
   "attributes": {
     "title": {
       "type": "string",
@@ -110,6 +112,7 @@
     ]
   },
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }

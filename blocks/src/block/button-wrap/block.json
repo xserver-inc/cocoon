@@ -67,7 +67,7 @@
       "right"
     ],
     "customClassName": true,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }
-

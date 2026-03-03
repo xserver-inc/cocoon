@@ -2,8 +2,9 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/timeline-item",
   "category": "cocoon-block",
-  "parent": ["cocoon-blocks/timeline"],
-
+  "parent": [
+    "cocoon-blocks/timeline"
+  ],
   "attributes": {
     "label": {
       "type": "string",
@@ -17,6 +18,7 @@
   "example": {},
   "supports": {
     "anchor": true,
-    "inserter": false
+    "inserter": false,
+    "html": false
   }
 }

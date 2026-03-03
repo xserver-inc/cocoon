@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/button-1",
   "category": "cocoon-block",
-  "keywords": [ "button", "btn" ],
-
+  "keywords": [
+    "button",
+    "btn"
+  ],
   "attributes": {
     "content": {
       "type": "string",
@@ -63,8 +65,13 @@
     }
   },
   "supports": {
-    "align": [ "left", "center", "right" ],
+    "align": [
+      "left",
+      "center",
+      "right"
+    ],
     "customClassName": true,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }

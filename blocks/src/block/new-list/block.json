@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/new-list",
   "category": "cocoon-block",
-  "keywords": ["new", "list"],
-
+  "keywords": [
+    "new",
+    "list"
+  ],
   "attributes": {
     "classNames": {
       "type": "string",
@@ -93,6 +95,7 @@
   "example": {},
   "supports": {
     "customClassName": true,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }
