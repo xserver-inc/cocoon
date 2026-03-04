@@ -47,7 +47,7 @@ registerBlockType( 'cocoon-blocks/tab-caption-box', {
       default: '',
     },
   },
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -157,3 +157,4 @@ registerBlockType( 'cocoon-blocks/tab-caption-box', {
     );
   },
 } );
+

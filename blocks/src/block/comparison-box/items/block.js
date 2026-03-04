@@ -30,7 +30,7 @@ registerBlockType( 'cocoon-blocks/comparison-left', {
   icon: <FontAwesomeIcon icon={ faSquare } />,
   category: 'cocoon-block',
   description: __( '比較ボックスの左。', THEME_NAME ),
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -56,7 +56,7 @@ registerBlockType( 'cocoon-blocks/comparison-right', {
   icon: <FontAwesomeIcon icon={ faSquare } />,
   category: 'cocoon-block',
   description: __( '比較ボックスの右。', THEME_NAME ),
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -73,3 +73,4 @@ registerBlockType( 'cocoon-blocks/comparison-right', {
     return <InnerBlocks.Content />;
   },
 } );
+

@@ -45,7 +45,7 @@ registerBlockType( 'cocoon-blocks/blank-box', {
       default: 'blank-box',
     },
   },
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -118,3 +118,4 @@ registerBlockType( 'cocoon-blocks/blank-box', {
     );
   },
 } );
+

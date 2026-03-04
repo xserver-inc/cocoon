@@ -25,6 +25,7 @@ registerBlockType( 'cocoon-blocks/column-left', {
   description: __( 'カラム左側に表示される内容内容を入力。', THEME_NAME ),
   supports: {
     inserter: false,
+    html: false,
   },
   example: {},
 
@@ -73,6 +74,7 @@ registerBlockType( 'cocoon-blocks/column-center', {
   description: __( 'カラム中央に表示される内容内容を入力。', THEME_NAME ),
   supports: {
     inserter: false,
+    html: false,
   },
   example: {},
 
@@ -121,6 +123,7 @@ registerBlockType( 'cocoon-blocks/column-right', {
   description: __( 'カラム右側に表示される内容内容を入力。', THEME_NAME ),
   supports: {
     inserter: false,
+    html: false,
   },
   example: {},
 

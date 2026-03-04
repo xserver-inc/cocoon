@@ -97,7 +97,7 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
       default: 0,
     },
   },
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -289,3 +289,4 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
     );
   },
 } );
+

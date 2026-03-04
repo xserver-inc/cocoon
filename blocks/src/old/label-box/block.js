@@ -46,7 +46,7 @@ registerBlockType( 'cocoon-blocks/label-box', {
       default: '',
     },
   },
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -152,3 +152,4 @@ registerBlockType( 'cocoon-blocks/label-box', {
     );
   },
 } );
+

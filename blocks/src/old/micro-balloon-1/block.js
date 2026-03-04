@@ -53,7 +53,7 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
       default: false,
     },
   },
-  supports: {
+  supports: { html: false,
     align: [ 'left', 'center', 'right' ],
     customClassName: true,
     inserter: false,
@@ -161,3 +161,4 @@ registerBlockType( 'cocoon-blocks/micro-balloon-1', {
     );
   },
 } );
+

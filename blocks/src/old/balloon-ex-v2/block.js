@@ -21,7 +21,7 @@ const { PanelBody, SelectControl, BaseControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
 
-registerBlockType( 'cocoon-blocks/balloon-ex-box', {
+registerBlockType( 'cocoon-blocks/balloon-ex-box', { supports: { html: false },
   apiVersion: 3,
   title: __( '吹き出しEX', THEME_NAME ),
   icon: <FontAwesomeIcon icon={ faComments } />,
@@ -234,3 +234,5 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
     );
   },
 } );
+
+

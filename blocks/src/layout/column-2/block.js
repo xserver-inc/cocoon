@@ -66,6 +66,10 @@ registerBlockType( 'cocoon-blocks/column-2', {
   ),
   keywords: [ 'column', '2' ],
 
+  supports: {
+    html: false,
+  },
+
   attributes: {
     ratio: {
       type: 'string',
