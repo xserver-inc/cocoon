@@ -128,7 +128,7 @@
 **                            Cocoon 2.8.2.3対応
 **                            important見直し
 **        2.14.0  2025-05-18  仕様変更
-**        2.14.1  2026-02-28  バグ対策
+**        2.14.1  2026-03-05  バグ対策
 **
 *******************************************************************************/
 
@@ -167,6 +167,7 @@
   --thumb-width: 120px;
   --main-padding: var(--gap30);
   --padding15: 15px;
+  --hvn-white-color: #fff;
 }
 
 .hvn-radius {
@@ -3128,7 +3129,6 @@ select {
 
 .widget_recent_comments li,
 .widget_recent_entries li {
-  border-bottom: 1px dotted var(--border-color);
   border-bottom: 1px dotted var(--border-color);
   padding-bottom: var(--padding15);
 }
