@@ -59,7 +59,7 @@ function getBalloonName( id ) {
   return '';
 }
 
-registerBlockType( 'cocoon-blocks/balloon-ex-box', {
+registerBlockType( 'cocoon-blocks/balloon-ex-box', { supports: { html: false },
   apiVersion: 3,
   title: __( '吹き出しEX', THEME_NAME ),
   icon: <FontAwesomeIcon icon={ faComments } />,
@@ -304,3 +304,5 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
     );
   },
 } );
+
+

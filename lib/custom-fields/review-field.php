@@ -18,7 +18,7 @@ function add_review_custom_box(){
   add_meta_box( 'singular_review_settings',__( 'レビュー', THEME_NAME ), 'review_custom_box_view', 'post', 'side' );
   add_meta_box( 'singular_review_settings',__( 'レビュー', THEME_NAME ), 'review_custom_box_view', 'page', 'side' );
   //カスタム投稿タイプに登録
-  add_meta_box_custom_post_types( 'singular_review_settings',__( 'レビュー', THEME_NAME ), 'review_custom_box_view', 'custum_post', 'side' );
+  add_meta_box_custom_post_types( 'singular_review_settings',__( 'レビュー', THEME_NAME ), 'review_custom_box_view', 'custom_post', 'side' );
 }
 endif;
 
@@ -27,6 +27,8 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'review_custom_box_view' ) ):
 function review_custom_box_view(){
+  // CSRF対策用のnonceフィールドを出力
+  wp_nonce_field('cocoon_review_custom_box', 'cocoon_review_custom_box_nonce');
   //レビュー切り換え
   $the_review_enable = is_the_review_enable();
   generate_checkbox_tag('the_review_enable' , $the_review_enable, __( '評価を表示する', THEME_NAME ));
@@ -72,8 +74,14 @@ endif;
 
 add_action('save_post', 'review_custom_box_save_data');
 if ( !function_exists( 'review_custom_box_save_data' ) ):
-function review_custom_box_save_data(){
-  $id = get_the_ID();
+function review_custom_box_save_data($post_id){
+  // nonce検証（CSRF対策）
+  if (!isset($_POST['cocoon_review_custom_box_nonce']) || !wp_verify_nonce($_POST['cocoon_review_custom_box_nonce'], 'cocoon_review_custom_box')) return;
+  // 自動保存時はスキップ
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+  // 投稿の編集権限をチェック
+  if (!current_user_can('edit_post', $post_id)) return;
+  $id = $post_id;
   //有効/無効
   $the_review_enable = !empty($_POST['the_review_enable']) ? 1 : 0;
   $the_review_enable_key = 'the_review_enable';
@@ -82,7 +90,7 @@ function review_custom_box_save_data(){
 
   //対象
   if ( isset( $_POST['the_review_type'] ) ){
-    $the_review_type = $_POST['the_review_type'];
+    $the_review_type = sanitize_text_field($_POST['the_review_type']);
     $the_review_type_key = 'the_review_type';
     add_post_meta($id, $the_review_type_key, $the_review_type, true);
     update_post_meta($id, $the_review_type_key, $the_review_type);
@@ -90,7 +98,7 @@ function review_custom_box_save_data(){
 
   //名前
   if ( isset( $_POST['the_review_name'] ) ){
-    $the_review_name = $_POST['the_review_name'];
+    $the_review_name = sanitize_text_field($_POST['the_review_name']);
     $the_review_name_key = 'the_review_name';
     add_post_meta($id, $the_review_name_key, $the_review_name, true);
     update_post_meta($id, $the_review_name_key, $the_review_name);
@@ -98,7 +106,7 @@ function review_custom_box_save_data(){
 
   //レート
   if ( isset( $_POST['the_review_rate'] ) ){
-    $the_review_rate = $_POST['the_review_rate'];
+    $the_review_rate = floatval($_POST['the_review_rate']);
     $the_review_rate_key = 'the_review_rate';
     add_post_meta($id, $the_review_rate_key, $the_review_rate, true);
     update_post_meta($id, $the_review_rate_key, $the_review_rate);

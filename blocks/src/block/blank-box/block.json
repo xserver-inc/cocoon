@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/blank-box-1",
   "category": "cocoon-block",
-  "keywords": [ "blank", "box" ],
-
+  "keywords": [
+    "blank",
+    "box"
+  ],
   "attributes": {
     "backgroundColor": {
       "type": "string"
@@ -38,6 +40,7 @@
     ]
   },
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }

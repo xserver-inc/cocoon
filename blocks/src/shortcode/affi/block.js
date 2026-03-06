@@ -17,6 +17,10 @@ registerBlockType( 'cocoon-blocks/affi', {
   category: THEME_NAME + '-shortcode',
   description: __( 'アフィリエイトタグ', THEME_NAME ),
 
+  supports: {
+    html: false,
+  },
+
   edit( { attributes, setAttributes } ) {
     return '[affi id=1]';
   },

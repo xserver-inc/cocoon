@@ -18,7 +18,7 @@ function add_page_custom_box(){
   add_meta_box( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'post', 'side' );
   add_meta_box( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'page', 'side' );
   //カスタム投稿タイプに登録
-  add_meta_box_custom_post_types( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'custum_post', 'side' );
+  add_meta_box_custom_post_types( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'custom_post', 'side' );
 }
 endif;
 
@@ -28,6 +28,8 @@ endif;
 if ( !function_exists( 'page_custom_box_view' ) ):
 function page_custom_box_view() {
   global $post;
+  // CSRF対策用のnonceフィールドを出力
+  wp_nonce_field('cocoon_page_custom_box', 'cocoon_page_custom_box_nonce');
 
   // メインカテゴリー
   if (is_admin_single()) {
@@ -91,6 +93,8 @@ add_action('save_post', 'page_custom_box_save_data');
 // メタボックスのデータを保存
 if ( !function_exists( 'page_custom_box_save_data' ) ):
 function page_custom_box_save_data($post_id) {
+  // nonce検証（CSRF対策）
+  if (!isset($_POST['cocoon_page_custom_box_nonce']) || !wp_verify_nonce($_POST['cocoon_page_custom_box_nonce'], 'cocoon_page_custom_box')) return;
   if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
   if (!isset($_POST['post_type'])) return;
   if (!current_user_can('edit_post', $post_id)) return;

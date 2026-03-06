@@ -48,7 +48,7 @@ registerBlockType( 'cocoon-blocks/tab-box', {
       default: '',
     },
   },
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -199,3 +199,4 @@ registerBlockType( 'cocoon-blocks/tab-box', {
     );
   },
 } );
+

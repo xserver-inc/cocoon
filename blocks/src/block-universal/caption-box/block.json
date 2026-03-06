@@ -61,6 +61,8 @@
     ]
   },
   "supports": {
+    "html": false,
+    "customClassName": true,
     "anchor": true
   }
 }

@@ -51,6 +51,7 @@
     }
   },
   "supports": {
+    "html": false,
     "align": [ "left", "center", "right" ],
     "customClassName": true,
     "anchor": true

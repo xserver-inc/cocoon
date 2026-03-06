@@ -2,10 +2,10 @@
 
 /* 左縦線 */
 
+.editor-styles-wrapper .article h2,
 .article h2,
 .main .article .widget-title,
 .main .under-entry-content h2 {
   border-left: 10px solid var(--main-color);
   padding: 20px 25px 20px 15px;
 }
-

@@ -39,6 +39,10 @@ registerBlockType( 'cocoon-blocks/column-3', {
   description: __( '本文を左・中央・右カラムに分けます。', THEME_NAME ),
   keywords: [ 'column', '3' ],
 
+  supports: {
+    html: false,
+  },
+
   edit( { className } ) {
     const classes = classnames( className, {
       'column-wrap': true,

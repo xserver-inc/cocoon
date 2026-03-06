@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/navicard",
   "category": "cocoon-block",
-  "keywords": ["navi", "card"],
-
+  "keywords": [
+    "navi",
+    "card"
+  ],
   "attributes": {
     "id": {
       "type": "string",
@@ -37,7 +39,7 @@
   "example": {},
   "supports": {
     "customClassName": true,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }
-

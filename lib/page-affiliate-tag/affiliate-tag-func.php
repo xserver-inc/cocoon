@@ -13,7 +13,7 @@ define('AFFILIATE_TAGS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
 define('AFFILIATE_TAGS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_affiliate_tags');
 
 //移動用URL
-define('AT_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
+define('AT_LIST_URL',   add_query_arg(array('action' => false,   'id' => false, 'paged' => false)));
 define('AT_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
 
 
@@ -98,9 +98,17 @@ endif;
 
 //レコードの取得
 if ( !function_exists( 'get_affiliate_tags' ) ):
-function get_affiliate_tags( $keyword = null, $order_by = null ) {
+function get_affiliate_tags( $keyword = null, $order_by = null, $limit = null, $offset = null ) {
   $table_name = AFFILIATE_TAGS_TABLE_NAME;
-  return get_db_table_records($table_name, 'title', $keyword, $order_by);
+  return get_db_table_records($table_name, 'title', $keyword, $order_by, $limit, $offset);
+}
+endif;
+
+//レコード数の取得
+if ( !function_exists( 'get_affiliate_tags_count' ) ):
+function get_affiliate_tags_count( $keyword = null ) {
+  $table_name = AFFILIATE_TAGS_TABLE_NAME;
+  return get_db_table_record_count_with_keyword($table_name, 'title', $keyword);
 }
 endif;
 

@@ -41,7 +41,7 @@ echo <<<EOF
   --swiper-pagination-bullet-inactive-color: var(--dark-text-color, #333);
 }
 
-.body.hvn-dark {
+.hvn-dark {
   --body-rgb-color: 51 51 51;
   --hover-color: #777;
   --dark-body-color: #333;
@@ -346,7 +346,7 @@ $no = get_theme_mod('hvn_navi_setting');
 if ($no) {
   $o_array = ['', 'center', 'left'];
   echo <<<EOF
-.navi-in a:hover {
+#navi .navi-in a:hover {
   background-color: unset;
 }
 
@@ -514,30 +514,12 @@ EOF;
   display: flex;
 }
 
-.list-new-entries .widget-entry-card-date,
-.list-popular .widget-entry-card-date {
-  bottom: 0;
-  display: flex;
-  justify-content: flex-end;
-  position: absolute;
-  width: 100%;
-}
-
-.list-new-entries .widget-entry-card-date,
-.list-popular .widget-entry-card-date {
-  bottom: 0;
-  display: flex;
-  gap: 5px;
-  justify-content: flex-end;
-  position: absolute;
-  width: 100%;
-}
 
 /* 人気記事なし */
 
 .list.widget-entry-cards p {
   color: var(--title-color);
-  width:100%;
+  width: 100%;
 }
 
 EOF;
@@ -568,7 +550,7 @@ EOF;
 .entry-card-snippet {
   color: var(--s-text-color);
   line-height: 1.4;
-  margin-top: 5px;
+  margin: 5px 0;
 }
 
 EOF;
@@ -658,13 +640,14 @@ EOF;
 
 
 //******************************************************************************
-//  「新着記事」タブ表示
+//  「新着記事」表示
 //******************************************************************************
 if (!get_theme_mod('hvn_front_none_setting', true)) {
   echo <<<EOF
 .body .index-tab-button[for="index-tab-1"],
-.body .tab-cont.tb1 {
-  display: none;
+.body .tab-cont.tb1,
+.body .list-new-entries {
+  display: none!important;
 }
 
 EOF;
@@ -867,7 +850,7 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_like_setting')) {
   echo <<<EOF
-.list .like {
+.body .list .like {
   bottom: 0;
   display: flex;
   position: absolute;
@@ -1132,37 +1115,6 @@ EOF;
 //
 //******************************************************************************
 
-if (defined('HVN_OPTION') && HVN_OPTION) {
-
-//******************************************************************************
-//  並び替え選択
-//******************************************************************************
-  if (get_theme_mod('hvn_orderby_option_setting')) {
-    echo <<<EOF
-.orderby {
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-}
-
-.hvn-dark .orderby .sort-select {
-  background-color: transparent;
-}
-
-.sort-title {
-  color: var(--title-color);
-}
-
-.sort-title i {
-  margin-right: 3px;
-}
-
-EOF;
-  }
-}
-
-
 //******************************************************************************
 //  タイトル・説明文表示
 //******************************************************************************
@@ -1236,7 +1188,7 @@ if (get_theme_mod('hvn_tcheck_option_setting')) {
 
 .hvn .list-new-entries,
 .hvn .list-columns {
-  padding-top: calc((var(--main-font-size) + var(--sub-font-size)) * 1.8 + var(--gap30));
+  padding-top: calc((var(--main-font-size) + var(--sub-font-size)) * 1.8 + var(--gap30))!important;
 }
 
 EOF;
@@ -1357,7 +1309,7 @@ echo <<<EOF
 }
 
 @media (width <=1023px) {
-   :root {
+  :root {
     --height: calc(100svh - var(--ah) - 50px);
   }
 }

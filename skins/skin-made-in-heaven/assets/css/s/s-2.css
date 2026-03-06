@@ -3,7 +3,7 @@
 /* 矢印1（アイコン上下） */
 
 .scrolldown {
-  color: #fff;
+  color: var(--hvn-scroll);
   height: fit-content;
   inset: 0;
   letter-spacing: 0.05em;
@@ -35,4 +35,3 @@
     bottom: -50px;
   }
 }
-

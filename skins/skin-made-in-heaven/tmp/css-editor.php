@@ -191,7 +191,7 @@ EOF;
   case 2:
     $id =  implode(':before,', $id_array);
     echo <<<EOF
-{$id}:before{
+{$id}:before {
   border: 0;
   color: #fff;
   margin: 0;
@@ -253,7 +253,7 @@ EOF;
   padding-top: calc(var(--padding15) + 1.8em);
 }
 
-.editor-styles-wrapper .blank-box.bb-tab::before,
+.editor-styles-wrapper .blank-box.bb-tab:before,
 .blank-box.bb-tab .bb-label {
   top: -1px;
 }

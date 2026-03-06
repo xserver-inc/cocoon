@@ -61,8 +61,8 @@ function generate_function_texts_is($value){
     var count = <?php echo $count; ?>;
     functionTexts[count] = new Array();
     functionTexts[count].title  = '<?php echo esc_js($record->title); ?>';
-    functionTexts[count].id     = '<?php echo $record->id; ?>';
-    functionTexts[count].shrotecode = '<?php echo get_function_text_shortcode($record->id); ?>';
+    functionTexts[count].id     = '<?php echo esc_js($record->id); ?>';
+    functionTexts[count].shrotecode = '<?php echo esc_js(get_function_text_shortcode($record->id)); ?>';
 
     <?php
     $count++;

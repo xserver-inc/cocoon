@@ -166,7 +166,8 @@ border-bottom:4px solid #5572ff;
     text-align: center;
     font-style: italic;
 }
-.ect-vertical-card .entry-card-wrap .entry-card-snippet {
+.ect-vertical-card .entry-card-wrap .entry-card-snippet,
+.ect-vertical-card .entry-card-wrap .admin-pv {
     font-size: 12px;
     margin: 10px 15px 0 15px;
     color: #d7d5ef;

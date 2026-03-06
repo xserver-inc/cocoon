@@ -75,7 +75,7 @@ if(!function_exists('puny_http_build_url')){
 }
 
 //Punycode変換ライブラリを読み込む
-include 'punycode-obj.php';
+include_once 'punycode-obj.php';
 ///////////////////////////////////////
 //Punycode変換関数
 ///////////////////////////////////////

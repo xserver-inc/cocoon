@@ -113,13 +113,13 @@ add_filter('the_author_box_description', function($description, $user_id) {
   $date = get_theme_mod('hvn_site_date_setting');
   if ($date  && get_theme_mod('hvn_site_date_onoff_setting')) {
     $day = number_format(ceil(date_i18n('U') - strtotime($date)) / DAY_IN_SECONDS);
-    $description .= "<p class=hvn_site_date>" . sprintf(__('%s開設から%s日目です。', THEME_NAME), $date, $day) . "</p>";
+    $description .= '<p class="hvn_site_date">' . sprintf(__('%s開設から%s日目です。', THEME_NAME), $date, $day) . '</p>';
   }
 
   if (get_theme_mod('hvn_profile_btn_setting')) {
     $url = get_the_author_profile_page_url($user_id);
     if ($url) {
-      $description .= "<div class=hvn-profile-btn><a class=key-btn href=\"{$url}\">" . __('プロフィール', THEME_NAME) . "</a></div>";
+      $description .= '<div class="hvn-profile-btn"><a class="key-btn" href="' . esc_url($url) . '">' . __('プロフィール', THEME_NAME) . '</a></div>';
     }
   }
 
@@ -128,11 +128,17 @@ add_filter('the_author_box_description', function($description, $user_id) {
 
 
 //******************************************************************************
-//  エントリーカードいいねボタン
+//  エントリーカードいいねボタン・リボン追加
 //******************************************************************************
 add_action('entry_card_snippet_after', function($post_ID) {
   if (get_theme_mod('hvn_like_setting')) {
     echo hvn_like_tag($post_ID);
+  }
+
+  $memo = get_post_meta($post_ID, 'the_page_memo', true);
+  preg_match('/ribbon-color-[1-5]/', $memo, $class);
+  if ($class) {
+    echo '<div class="ribbon ribbon-top-left ' . $class[0] . '"></div>';
   }
 });
 
@@ -176,7 +182,7 @@ add_filter('popular_entry_card_pv_text', function($pv_text, $pv, $pv_unit) {
 add_action('cocoon_part_before__tmp/appeal', function() {
   if ((get_theme_mod('hvn_header_setting', 'none') != 'none') && is_front_top_page() && !is_singular_page_type_content_only()) {
     $html = hvn_add_header();
-    echo "<div class=hvn-header>{$html}</div>";
+    echo '<div class="hvn-header">' . $html . '</div>';
   }
 });
 
@@ -250,7 +256,10 @@ EOF;
 //  オリジナルレイアウト変更
 //******************************************************************************
 add_filter('front_page_type_map', function($template_map) {
-  if (get_theme_mod('hvn_card_expansion_setting')) {
+  if (
+    get_theme_mod('hvn_card_expansion_setting') &&
+    (is_entry_card_type_vertical_card_2() || is_entry_card_type_vertical_card_3())
+  ) {
     $template_map['category_2_columns'] = HVN_SKIN . 'tmp/list-category-columns';
     $template_map['category_3_columns'] = HVN_SKIN . 'tmp/list-category-columns';
   }
@@ -268,7 +277,7 @@ add_filter('cocoon_part__tmp/list', function($content) {
    && get_theme_mod('hvn_category_color_setting')
    && get_theme_mod('hvn_header_wave_setting')
    && (!is_the_page_sidebar_visible())) {
-    $html = hvn_wave("hvn-wave-category");
+    $html = hvn_wave('hvn-wave-category');
     $content = str_replace('<div id="list-columns"', $html . '<div id="list-columns"', $content);
   }
   return $content;
@@ -276,13 +285,15 @@ add_filter('cocoon_part__tmp/list', function($content) {
 
 
 //******************************************************************************
-//  カテゴリーごと（2、3カード）縦型カード
+//  カテゴリーごと（2、3カード）変更
 //******************************************************************************
-add_filter('index_widget_entry_card_type', function($type, $cat_id) {
+add_filter('list_category_column_atts', function($atts, $cat_id) {
   if (get_theme_mod('hvn_categories_card_setting')) {
-    $type = 'large_thumb';
+    $atts['type'] = ET_LARGE_THUMB;
   }
-  return $type;
+  $atts['comment'] = is_entry_card_post_comment_count_visible();
+  $atts['date'] = 1;
+  return $atts;
 }, 2, 10);
 
 
@@ -303,13 +314,15 @@ add_filter('cocoon_part__tmp/sns-follow-buttons', function($content) {
 //  ダークモード
 //******************************************************************************
 add_filter('cocoon_part__tmp/footer-bottom', function($content) {
-  $html = <<<EOF
+  if (get_theme_mod('hvn_darkmode_setting')) {
+    $html = <<<EOF
 <span class="hvn-dark-switch">
   <input type="checkbox" name="hvn-dark" id="hvn-dark">
   <label for="hvn-dark"></label>
 </span>
 EOF;
-  $content =  preg_replace('/(class="source-org copyright">.*)<\/div>/', "$1$html</div>", $content);
+    $content =  preg_replace('/(class="source-org copyright">.*)<\/div>/', "$1$html</div>", $content);
+  }
   return $content; 
 });
 
@@ -318,23 +331,11 @@ EOF;
 //  タイトルとURLをコピー
 //******************************************************************************
 add_filter('cocoon_part__tmp/sns-share-buttons', function($content) {
-  $before ='/data-clipboard-text=".*" title/';
+  $before = '/data-clipboard-text="[^"]*" title/';
   $after = 'data-clipboard-text="&lt;a href=' . get_share_page_url() . '&gt;' . get_share_page_title() . '&lt;/a&gt;" title';
   $content = preg_replace($before, $after, $content);
 
   return $content;
-});
-
-
-//******************************************************************************
-//  エントリーカードにリボンを追加
-//******************************************************************************
-add_action('entry_card_snippet_after', function($post_ID) {
-  $memo = get_post_meta($post_ID, 'the_page_memo', true);
-  preg_match('/ribbon-color-[1-5]/', $memo, $class);
-  if ($class) {
-    echo '<div class="ribbon ribbon-top-left ' . $class[0] . '"></div>';
-  }
 });
 
 
@@ -347,51 +348,6 @@ add_filter('is_comment_share_button_visible', function($res, $option) {
   }
   return $res;
 }, 10, 2);
-
-
-//******************************************************************************
-//  一覧ページに表示順フォームを追加
-//******************************************************************************
-add_action('cocoon_part_before__tmp/list-index', function() {
-  if (defined('HVN_OPTION') && HVN_OPTION) {
-    if (!is_home() || !get_theme_mod('hvn_orderby_option_setting')) return;
-
-    $orderby = isset($_GET['orderby-switch']) ? esc_html($_GET['orderby-switch']) : null;
-    if (isset($_COOKIE['orderby-switch'])) {
-      $orderby = $_COOKIE['orderby-switch'];
-    }
-
-    ob_start();
-?>
-<div class="orderby">
-  <span class="sort-title"><i class="fas fa-sort-amount-down"></i><?php echo __('並び替え', THEME_NAME) ?></span>
-  <span class="sort-select">
-    <select id="orderby-switch" class="orderby-switch-dropdown" 
-      onchange="
-        var selectedValue = this.options[this.selectedIndex].value;
-        var currentUrl = window.location.href;
-        currentUrl = currentUrl.replace(/[&?]time=\d+/, '');
-
-        var timestamp = new Date().getTime();
-        if (currentUrl.indexOf('?') > -1) {
-          currentUrl += '&time=' + timestamp;
-        } else {
-          currentUrl += '?time=' + timestamp;
-        }
-        document.cookie = selectedValue + ';path=/';
-        window.document.location.href = currentUrl;
-      ">
-      <option value="orderby-switch="         <?php the_option_selected($orderby, '');          ?>><?php echo __('新着順', THEME_NAME) ?></option>
-      <option value="orderby-switch=modified" <?php the_option_selected($orderby, 'modified');  ?>><?php echo __('更新順', THEME_NAME) ?></option>
-      <option value="orderby-switch=popular"  <?php the_option_selected($orderby, 'popular');   ?>><?php echo __('人気順', THEME_NAME) ?></option>
-      <option value="orderby-switch=comment"  <?php the_option_selected($orderby, 'comment');   ?>><?php echo __('コメント数順', THEME_NAME) ?></option>
-    </select>
-  </span>
-</div>
-<?php
-    echo ob_get_clean();
-  }
-});
 
 
 //******************************************************************************
@@ -460,11 +416,16 @@ add_filter('get_notice_area_message', function($msg) {
 
     $html = '';
     for ($i=0; $i<count($msg_array); $i++) {
-      $html .= "<div class=swiper-slide>{$msg_array[$i]}</div>";
+      $html .= '<div class="swiper-slide">' . $msg_array[$i] . '</div>';
+    }
+
+    $swiper_vertical = '';
+    if (!get_theme_mod('hvn_notice_scroll_setting')) {
+      $swiper_vertical = 'swiper-vertical';
     }
 
     if ($html) {
-      $msg = "<div class=swiper><div class=swiper-wrapper>{$html}</div></div>";
+      $msg = '<div class="swiper ' . $swiper_vertical . '"><div class="swiper-wrapper">' . $html . '</div></div>';
     } else {
       $msg = '';
     }
@@ -494,3 +455,13 @@ add_filter('featured_image_text_color_code', function($color) {
 add_filter('featured_image_border_color_code', function($color) {
   return get_theme_mod('hvn_thumb_color2_setting', '#a2d7dd');
 });
+
+
+//******************************************************************************
+//  Gutenbergエディター用CSS追加
+//******************************************************************************
+add_filter('cocoon_gutenberg_stylesheets', function($stylesheets) {
+  $url = local_to_url(hvn_editor_css_cache_file());
+  array_push($stylesheets, $url);
+  return $stylesheets;
+}, 999);

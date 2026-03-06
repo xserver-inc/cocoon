@@ -85,7 +85,7 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
       default: false,
     },
   },
-  supports: {
+  supports: { html: false,
     align: [ 'left', 'center', 'right' ],
   },
 
@@ -175,3 +175,4 @@ registerBlockType( 'cocoon-blocks/button-wrap-1', {
     );
   },
 } );
+

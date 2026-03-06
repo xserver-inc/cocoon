@@ -2,8 +2,8 @@
 
 /* 下点線 */
 
+.editor-styles-wrapper .article h3,
 .article h3 {
   border-bottom: 4px dotted var(--main-color);
   padding: 10px 0 6px;
 }
-

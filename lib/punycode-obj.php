@@ -130,13 +130,15 @@ class Punycode
                             break;
                         }
 
-                        $code = $t + (($q - $t) % (self::BASE - $t));
+                        // 剰余演算の結果を整数にキャストする（PHP 8.1以降の暗黙変換警告を回避）
+                        $code = (int) ($t + (($q - $t) % (self::BASE - $t)));
                         $output .= self::$_encodeTable[$code];
 
-                        $q = ($q - $t) / (self::BASE - $t);
+                        // 除算の結果を整数にキャストする（float→int 暗黙変換を防ぐ）
+                        $q = (int) (($q - $t) / (self::BASE - $t));
                     }
 
-                    $output .= self::$_encodeTable[$q];
+                    $output .= self::$_encodeTable[(int) $q];
                     $bias = $this->_adapt($delta, $h + 1, ($h === $b));
                     $delta = 0;
                     $h++;

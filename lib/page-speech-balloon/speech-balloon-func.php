@@ -13,7 +13,7 @@ define('SPEECH_BALLOONS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.0');
 define('SPEECH_BALLOONS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_speech_balloons');
 
 //関数テキスト移動用URL
-define('SB_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
+define('SB_LIST_URL',   add_query_arg(array('action' => false,   'id' => false, 'paged' => false)));
 define('SB_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
 
 //スタイル
@@ -295,9 +295,17 @@ endif;
 
 //吹き出しテーブルレコードの取得
 if ( !function_exists( 'get_speech_balloons' ) ):
-function get_speech_balloons( $keyword = null, $order_by = null ) {
+function get_speech_balloons( $keyword = null, $order_by = null, $limit = null, $offset = null ) {
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
-  return get_db_table_records($table_name, 'title', $keyword, $order_by);
+  return get_db_table_records($table_name, 'title', $keyword, $order_by, $limit, $offset);
+}
+endif;
+
+//レコード数の取得
+if ( !function_exists( 'get_speech_balloons_count' ) ):
+function get_speech_balloons_count( $keyword = null ) {
+  $table_name = SPEECH_BALLOONS_TABLE_NAME;
+  return get_db_table_record_count_with_keyword($table_name, 'title', $keyword);
 }
 endif;
 

@@ -2,8 +2,11 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/iconlist-box",
   "category": "cocoon-block",
-  "keywords": [ "icon", "list", "box" ],
-
+  "keywords": [
+    "icon",
+    "list",
+    "box"
+  ],
   "attributes": {
     "title": {
       "type": "string",
@@ -42,7 +45,8 @@
     }
   },
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "html": false
   },
   "example": {
     "attributes": {
@@ -55,31 +59,31 @@
           {
             "name": "core/list-item",
             "attributes": {
-                "content": "Lorem ipsum dolor sit amet."
+              "content": "Lorem ipsum dolor sit amet."
             }
           },
           {
             "name": "core/list-item",
             "attributes": {
-                "content": "Lorem ipsum dolor sit amet."
+              "content": "Lorem ipsum dolor sit amet."
             }
           },
           {
             "name": "core/list-item",
             "attributes": {
-                "content": "Lorem ipsum dolor sit amet."
+              "content": "Lorem ipsum dolor sit amet."
             }
           },
           {
             "name": "core/list-item",
             "attributes": {
-                "content": "Lorem ipsum dolor sit amet."
+              "content": "Lorem ipsum dolor sit amet."
             }
           },
           {
             "name": "core/list-item",
             "attributes": {
-                "content": "Lorem ipsum dolor sit amet."
+              "content": "Lorem ipsum dolor sit amet."
             }
           }
         ]

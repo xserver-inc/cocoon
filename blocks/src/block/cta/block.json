@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/cta",
   "category": "cocoon-block",
-  "keywords": ["cta", "box"],
-
+  "keywords": [
+    "cta",
+    "box"
+  ],
   "attributes": {
     "initialized": {
       "type": "boolean",
@@ -53,7 +55,7 @@
   "example": {},
   "supports": {
     "customClassName": true,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }
-

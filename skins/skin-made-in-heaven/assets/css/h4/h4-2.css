@@ -2,6 +2,7 @@
 
 /* チェックアイコン */
 
+.editor-styles-wrapper .article h4,
 .article h4 {
   border: 0;
   padding: 10px 25px;
@@ -17,4 +18,3 @@
   top: 50%;
   transform: translateY(-50%);
 }
-

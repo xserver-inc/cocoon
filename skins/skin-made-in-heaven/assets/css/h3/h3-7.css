@@ -2,6 +2,7 @@
 
 /* 左2色縦線 */
 
+.editor-styles-wrapper .article h3,
 .article h3 {
   border-left: 10px solid var(--hover-color);
   padding: 10px 25px 10px 15px;
@@ -17,4 +18,3 @@
   top: 0;
   width: 10px;
 }
-

@@ -58,7 +58,7 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
       default: '0',
     },
   },
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -174,3 +174,4 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
     );
   },
 } );
+

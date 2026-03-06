@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/info-box",
   "category": "cocoon-block",
-  "keywords": [ "info", "box" ],
-
+  "keywords": [
+    "info",
+    "box"
+  ],
   "attributes": {
     "style": {
       "type": "string",
@@ -21,7 +23,7 @@
     ]
   },
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }
-

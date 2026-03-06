@@ -2,8 +2,10 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/popular-list",
   "category": "cocoon-block",
-  "keywords": ["popular", "list"],
-
+  "keywords": [
+    "popular",
+    "list"
+  ],
   "attributes": {
     "classNames": {
       "type": "string",
@@ -81,6 +83,7 @@
   "example": {},
   "supports": {
     "customClassName": true,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }

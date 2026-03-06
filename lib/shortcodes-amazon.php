@@ -620,14 +620,14 @@ function amazon_product_link_shortcode($atts){
     $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
 
     if (!is_paapi_json_item_exist($json)) {
-      return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin, $buttons_tag, $title, $keyword);
+      return get_amazon_admin_error_message_tag($associate_url, get_amazon_asin_error_message(), $cache_delete_tag, $asin, $buttons_tag, $title, $keyword);
     }
 
     if (is_paapi_json_item_exist($json)) {
       // 安全にアイテムを取得
       $ItemsResult = isset($json->{'ItemsResult'}) ? $json->{'ItemsResult'} : null;
       if (!$ItemsResult || !isset($ItemsResult->{'Items'}) || !is_array($ItemsResult->{'Items'}) || empty($ItemsResult->{'Items'}[0])) {
-        return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin, $buttons_tag, $title, $keyword);
+        return get_amazon_admin_error_message_tag($associate_url, get_amazon_asin_error_message(), $cache_delete_tag, $asin, $buttons_tag, $title, $keyword);
       }
       $item = $ItemsResult->{'Items'}[0];
       //_v($item);
@@ -653,7 +653,7 @@ function amazon_product_link_shortcode($atts){
       //イメージセットを取得する
       $Images = isset($item->{'Images'}) ? $item->{'Images'} : null;
       if (!$Images || !isset($Images->{'Primary'})) {
-        return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin, $buttons_tag, $title, $keyword);
+        return get_amazon_admin_error_message_tag($associate_url, get_amazon_asin_error_message(), $cache_delete_tag, $asin, $buttons_tag, $title, $keyword);
       }
       $ImageItem = $Images->{'Primary'};
       //メイン画像以外の画像
@@ -1068,7 +1068,7 @@ function amazon_product_link_shortcode($atts){
           $product_item_admin_tag.
         '</div>';
     } else {
-      $tag = get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin, $buttons_tag, $title, $keyword);
+      $tag = get_amazon_admin_error_message_tag($associate_url, get_amazon_asin_error_message(), $cache_delete_tag, $asin, $buttons_tag, $title, $keyword);
     }
 
     return apply_filters('amazon_product_link_tag', $tag);
@@ -1140,3 +1140,25 @@ function get_amazon_admin_error_message_tag($url, $message, $cache_delete_tag = 
   return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
 }
 endif;
+
+// Creators API利用時の詳細なASINエラーメッセージを取得
+if ( !function_exists( 'get_amazon_asin_error_message' ) ):
+function get_amazon_asin_error_message(){
+  // Creators APIを使っている場合は詳細なヒントを返す
+  if (function_exists('is_amazon_creators_api_credentials_available')
+    && is_amazon_creators_api_credentials_available()) {
+    return __( '商品を取得できませんでした。Creators APIは正常に応答しましたが、商品情報が含まれていません。', THEME_NAME )
+      .'<br>'.__( '考えられる原因：', THEME_NAME )
+      .'<ul>'
+      .'<li>'.__( '存在しないASINを指定している', THEME_NAME ).'</li>'
+      .'<li>'.__( 'ASINが正しくない（半角英数字10文字）', THEME_NAME ).'</li>'
+      .'<li>'.__( '商品が販売終了・取り下げされている', THEME_NAME ).'</li>'
+      .'<li>'.__( 'トラッキングIDが正しくない', THEME_NAME ).'</li>'
+      .'<li>'.__( 'Creators APIの認証情報が正しくない', THEME_NAME ).'</li>'
+      .'</ul>';
+  }
+  // PA-APIの場合は従来通り
+  return AMAZON_ASIN_ERROR_MESSAGE;
+}
+endif;
+

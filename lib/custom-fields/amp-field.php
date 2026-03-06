@@ -29,6 +29,8 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'view_amp_custom_box' ) ):
 function view_amp_custom_box(){
+  // CSRF対策用のnonceフィールドを出力
+  wp_nonce_field('cocoon_amp_custom_box', 'cocoon_amp_custom_box_nonce');
   //AMPページを生成する
   generate_checkbox_tag('the_page_no_amp' , is_the_page_no_amp(), __( 'AMPページを生成しない', THEME_NAME ));
   generate_howto_tag(__( 'AMP(Accelerated Mobile Pages)ページを生成して、モバイル端末に最適化するかを切り替えます。', THEME_NAME ), 'the_page_no_amp');
@@ -38,8 +40,14 @@ endif;
 
 add_action('save_post', 'amp_custom_box_save_data');
 if ( !function_exists( 'amp_custom_box_save_data' ) ):
-function amp_custom_box_save_data(){
-  $id = get_the_ID();
+function amp_custom_box_save_data($post_id){
+  // nonce検証（CSRF対策）
+  if (!isset($_POST['cocoon_amp_custom_box_nonce']) || !wp_verify_nonce($_POST['cocoon_amp_custom_box_nonce'], 'cocoon_amp_custom_box')) return;
+  // 自動保存時はスキップ
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+  // 投稿の編集権限をチェック
+  if (!current_user_can('edit_post', $post_id)) return;
+  $id = $post_id;
 
   //AMPの除外
   $the_page_no_amp = !empty($_POST['the_page_no_amp']) ? 1 : 0;

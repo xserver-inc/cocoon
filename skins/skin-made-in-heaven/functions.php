@@ -37,6 +37,9 @@ foreach ($files as $file) {
 define('HVN_MAIN_COLOR', '#40210f');
 define('HVN_TEXT_COLOR', '#ffffff');
 define('HVN_BODY_COLOR', '#f5f4f1');
+define('HVN_SCROLL_COLOR'   , '#ffffff');
+define('HVN_CONTENT_BGCOLOR', '#ffffff');
+
 
 define('HVN_GAP' , 30);
 define('HVN_MAIN_WIDTH', 770);
@@ -49,7 +52,6 @@ $_THEME_OPTIONS = [
   'site_key_text_color' => '',
   'site_font_family' => 'meiryo',
   'site_font_size' => '16px',
-  'site_text_color' => '',
   'mobile_site_font_size' => '16px',
   'site_font_weight' => 400,
   'site_icon_font' => 'font_awesome_5',

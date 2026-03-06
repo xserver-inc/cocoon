@@ -53,13 +53,13 @@
 }
 
 [id*="section-hvn"] .customize-control-radio label {
-  box-shadow: inset 1px 1px 0 0 #007cba, 1px 1px 0 0 #007cba, 1px 0 0 0 #007cba, 0 1px 0 0 #007cba;
-  color: #007cba;
+  box-shadow: inset 1px 1px 0 0 #2271b1, 1px 1px 0 0 #2271b1, 1px 0 0 0 #2271b1, 0 1px 0 0 #2271b1;
+  color: #2271b1;
   padding: 5px 10px;
 }
 
 [id*="section-hvn"] .customize-control-radio input:checked ~ label {
-  background-color: #007cba;
+  background-color: #2271b1;
   color: #fff;
 }
 
@@ -150,4 +150,3 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
 [id*="customize-control-hvn_inline_button_color"] .description {
   width: 55px;
 }
-

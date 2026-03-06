@@ -76,7 +76,7 @@ registerBlockType( 'cocoon-blocks/button-1', {
       default: false,
     },
   },
-  supports: {
+  supports: { html: false,
     align: [ 'left', 'center', 'right' ],
     customClassName: true,
   },
@@ -200,3 +200,4 @@ registerBlockType( 'cocoon-blocks/button-1', {
     );
   },
 } );
+

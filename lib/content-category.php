@@ -308,40 +308,59 @@ add_action ( 'edited_term', 'save_extra_category_fileds');
 if ( !function_exists( 'save_extra_category_fileds' ) ):
 function save_extra_category_fileds( $term_id ) {
   if (isset($_POST['taxonomy']) && ($_POST['taxonomy'] === 'category')) {
+    // WordPressの組み込みnonceを検証（CSRF対策）
+    if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'update-tag_' . $term_id)) return;
+    // タームの編集権限をチェック
+    if (!current_user_can('edit_term', $term_id)) return;
     $cat_id = $term_id;
 
     if ( isset( $_POST['the_category_color'] ) ) {
+      // カラーコードをサニタイズ（空文字は色クリアとして許可、無効値はクリア）
       $the_category_color = $_POST['the_category_color'];
+      if ($the_category_color !== '') {
+        $sanitized = sanitize_hex_color($the_category_color);
+        $the_category_color = $sanitized !== null ? $sanitized : '';
+      }
       update_term_meta( $cat_id, 'the_category_color', $the_category_color );
     }
 
     if ( isset( $_POST['the_category_text_color'] ) ) {
+      // カラーコードをサニタイズ（空文字は色クリアとして許可、無効値はクリア）
       $the_category_text_color = $_POST['the_category_text_color'];
+      if ($the_category_text_color !== '') {
+        $sanitized = sanitize_hex_color($the_category_text_color);
+        $the_category_text_color = $sanitized !== null ? $sanitized : '';
+      }
       update_term_meta( $cat_id, 'the_category_text_color', $the_category_text_color );
     }
 
     if ( isset( $_POST['the_category_title'] ) ) {
-      $the_category_title = $_POST['the_category_title'];
+      // テキストフィールドをサニタイズ
+      $the_category_title = sanitize_text_field($_POST['the_category_title']);
       update_term_meta( $cat_id, 'the_category_title', $the_category_title );
     }
 
     if ( isset( $_POST['the_category_content'] ) ) {
-      $the_category_content = $_POST['the_category_content'];
+      // HTMLを含むコンテンツを安全なタグのみ許可
+      $the_category_content = wp_kses_post($_POST['the_category_content']);
       update_term_meta( $cat_id, 'the_category_content', $the_category_content );
     }
 
     if ( isset( $_POST['the_category_eye_catch_url'] ) ) {
-      $the_category_eye_catch_url = $_POST['the_category_eye_catch_url'];
+      // URLをサニタイズ
+      $the_category_eye_catch_url = esc_url_raw($_POST['the_category_eye_catch_url']);
       update_term_meta( $cat_id, 'the_category_eye_catch_url', $the_category_eye_catch_url );
     }
 
     if ( isset( $_POST['the_category_meta_description'] ) ) {
-      $the_category_meta_description = $_POST['the_category_meta_description'];
+      // テキストフィールドをサニタイズ
+      $the_category_meta_description = sanitize_textarea_field($_POST['the_category_meta_description']);
       update_term_meta( $cat_id, 'the_category_meta_description', $the_category_meta_description );
     }
 
     if ( isset( $_POST['the_category_meta_keywords'] ) ) {
-      $the_category_meta_keywords = $_POST['the_category_meta_keywords'];
+      // テキストフィールドをサニタイズ
+      $the_category_meta_keywords = sanitize_text_field($_POST['the_category_meta_keywords']);
       update_term_meta( $cat_id, 'the_category_meta_keywords', $the_category_meta_keywords );
     }
 

@@ -47,7 +47,7 @@ registerBlockType( 'cocoon-blocks/caption-box', {
       default: '',
     },
   },
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -155,3 +155,4 @@ registerBlockType( 'cocoon-blocks/caption-box', {
     );
   },
 } );
+

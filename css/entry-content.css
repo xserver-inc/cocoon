@@ -6780,6 +6780,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   flex-direction: row;
   position: relative;
   /* カードのサムネイル幅200px */
+  /* Swiper初期化前はナビゲーションボタンを非表示にする（チラつき防止） */
 }
 .is-list-horizontal .widget-entry-card-link {
   flex-shrink: 0;
@@ -6810,6 +6811,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .is-list-horizontal .swiper-wrapper {
   height: initial;
+}
+.is-list-horizontal:not(.swiper-initialized) .swiper-button-next,
+.is-list-horizontal:not(.swiper-initialized) .swiper-button-prev {
+  display: none;
 }
 .is-list-horizontal .swiper-button-next,
 .is-list-horizontal .swiper-button-prev {

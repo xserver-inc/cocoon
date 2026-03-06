@@ -68,7 +68,8 @@ define('DEBAG_VALUE', ($http_host == THEME_NAME.'.jp') /*|| ($http_host == 'wp-c
 
 //デバッグモード
 define('DEBUG_MODE', DEBAG_VALUE);
-define('DEBUG_CACHE_ENABLE', 1);//キャッシュ機能を有効にするか（def：1）
+// デバッグ時に0(false)にするとキャッシュをバイパスして毎回APIリクエストを送る（通常時は1のまま）
+define('DEBUG_CACHE_ENABLE', 1);
 define('DEBUG_ADMIN_DEMO_ENABLE', apply_filters('cocoon_setting_all_previews', true));//設定ページのプレビューを有効にするか（def：1）
 
 

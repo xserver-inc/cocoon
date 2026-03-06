@@ -2,6 +2,7 @@
 
 /* ステッチ */
 
+.editor-styles-wrapper .article h2,
 .article h2,
 .main .article .widget-title,
 .main .under-entry-content h2 {
@@ -25,4 +26,3 @@
   top: 4px;
   width: calc(100% - 8px);
 }
-

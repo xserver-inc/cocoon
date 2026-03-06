@@ -2,8 +2,11 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/blogcard",
   "category": "cocoon-block",
-  "keywords": [ "blogcard", "box", "wrap" ],
-
+  "keywords": [
+    "blogcard",
+    "box",
+    "wrap"
+  ],
   "attributes": {
     "content": {
       "type": "string",
@@ -22,6 +25,7 @@
     }
   },
   "supports": {
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }

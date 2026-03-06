@@ -13,7 +13,7 @@ define('ITEM_RANKINGS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
 define('ITEM_RANKINGS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_item_rankings');
 
 //関数テキスト移動用URL
-define('IR_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
+define('IR_LIST_URL',   add_query_arg(array('action' => false,   'id' => false, 'paged' => false)));
 define('IR_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
 
 //テーブルのバージョン取得
@@ -156,10 +156,18 @@ endif;
 
 //テーブルレコードの取得
 if ( !function_exists( 'get_item_rankings' ) ):
-function get_item_rankings( $keyword = null, $order_by = null ) {
+function get_item_rankings( $keyword = null, $order_by = null, $limit = null, $offset = null ) {
 
   $table_name = ITEM_RANKINGS_TABLE_NAME;
-  return get_db_table_records($table_name, 'title', $keyword, $order_by);
+  return get_db_table_records($table_name, 'title', $keyword, $order_by, $limit, $offset);
+}
+endif;
+
+//レコード数の取得
+if ( !function_exists( 'get_item_rankings_count' ) ):
+function get_item_rankings_count( $keyword = null ) {
+  $table_name = ITEM_RANKINGS_TABLE_NAME;
+  return get_db_table_record_count_with_keyword($table_name, 'title', $keyword);
 }
 endif;
 
@@ -171,12 +179,13 @@ function get_item_ranking( $id ) {
   $record = get_db_table_record( $table_name, $id );
   if ($record) {
     $record->title = !empty($record->title) ? stripslashes_deep($record->title) : '';
-    $record->item_ranking = !empty($record->item_ranking) ? stripslashes_deep(unserialize($record->item_ranking)) : array();
+    $record->item_ranking = !empty($record->item_ranking) ? stripslashes_deep(maybe_unserialize($record->item_ranking)) : array();
     $record->count = !empty($record->count) ? $record->count : 1;
     $record->visible = !empty($record->visible) ? $record->visible : 0;
   }
 
-  //var_dump($record);
+  // フィルターフックでレコードを外部から加工可能にする
+  $record = apply_filters('cocoon_get_item_ranking', $record, $id);
 
   return $record;
 }

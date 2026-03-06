@@ -390,6 +390,22 @@ function update_theme_option($option_name){
 }
 endif;
 
+// テーマオプション用：配列データの各要素を再帰的にサニタイズする
+if ( !function_exists( 'cocoon_sanitize_option_array' ) ):
+function cocoon_sanitize_option_array($array) {
+  $sanitized = array();
+  foreach ($array as $key => $value) {
+    $key = sanitize_text_field($key);
+    if (is_array($value)) {
+      $sanitized[$key] = cocoon_sanitize_option_array($value);
+    } else {
+      $sanitized[$key] = sanitize_text_field($value);
+    }
+  }
+  return $sanitized;
+}
+endif;
+
 //オプションの値をデータベースから取得する
 if ( !function_exists( 'get_theme_option' ) ):
 function get_theme_option($option_name, $default = null){
@@ -2125,7 +2141,12 @@ function get_file_contents($file){
 endif;
 
 if (!defined('FS_CHMOD_FILE')) {
-  define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
+  $abspath_index = ABSPATH . 'index.php';
+  if (file_exists($abspath_index)) {
+    define( 'FS_CHMOD_FILE', ( fileperms( $abspath_index ) & 0777 | 0644 ) );
+  } else {
+    define( 'FS_CHMOD_FILE', 0644 );
+  }
 }
 //ファイル内容の出力
 if ( !function_exists( 'wp_filesystem_put_contents' ) ):

@@ -44,7 +44,7 @@ registerBlockType( 'cocoon-blocks/toggle-box', {
       default: '',
     },
   },
-  supports: {
+  supports: { html: false,
     inserter: false,
   },
 
@@ -142,3 +142,4 @@ registerBlockType( 'cocoon-blocks/toggle-box', {
     );
   },
 } );
+

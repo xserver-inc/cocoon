@@ -2,8 +2,11 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/profile",
   "category": "cocoon-block",
-  "keywords": ["profile", "author", "box"],
-
+  "keywords": [
+    "profile",
+    "author",
+    "box"
+  ],
   "attributes": {
     "id": {
       "type": "string",
@@ -25,7 +28,7 @@
   "example": {},
   "supports": {
     "customClassName": true,
-    "anchor": true
+    "anchor": true,
+    "html": false
   }
 }
-

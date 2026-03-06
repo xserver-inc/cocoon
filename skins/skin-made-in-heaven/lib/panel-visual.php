@@ -52,18 +52,21 @@ function hvn_header($wp_customize) {
       'required'  => '',
     ]
   ];
-  hvn_panel_control($wp_customize, $section, 'hvn_appea_font_size_setting', ['default' => 40, 'sanitize_callback' => 'hvn_sanitize_number_range'], '', __('フォントサイズ', THEME_NAME) . '(10～50px)', $input_attrs, 'number');
-  hvn_panel_control($wp_customize, $section, 'hvn_header_vertival_setting', ['default' => false] , __('テキスト縦書き', THEME_NAME), '', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_header_scroll_setting'  , ['default' => '0'], '', __('Scrollボタン', THEME_NAME), hvn_menu_setting('s'), 'select');
-  hvn_panel_control($wp_customize, $section, 'hvn_header_wave_setting'    , ['default' => false] , __('波線', THEME_NAME), '', [], 'checkbox');
-  hvn_panel_control($wp_customize, $section, 'hvn_header_video_setting'   , [], __('動画', THEME_NAME), '', [], 'video');
+
+  $label = sprintf(__('フォントサイズ（%d～%dpx）', THEME_NAME), $input_attrs['input_attrs']['min'], $input_attrs['input_attrs']['max']);
+  hvn_panel_control($wp_customize, $section, 'hvn_appea_font_size_setting'    , ['default' => 40, 'sanitize_callback' => 'hvn_sanitize_number_range'], '', $label,  $input_attrs, 'number');
+  hvn_panel_control($wp_customize, $section, 'hvn_header_vertival_setting'    , ['default' => false] , __('テキスト縦書き', THEME_NAME), '', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_header_scroll_setting'      , ['default' => '0'] , '', __('Scrollボタン', THEME_NAME), hvn_menu_setting('s'), 'select');
+  hvn_panel_control($wp_customize, $section, 'hvn_header_scroll_color_setting', ['default' => HVN_SCROLL_COLOR, 'sanitize_callback' => 'hvn_sanitize_color'], '', __('Scrollボタンカラー', THEME_NAME), [], 'color');
+  hvn_panel_control($wp_customize, $section, 'hvn_header_wave_setting'        , ['default' => false] , __('波線', THEME_NAME), '', [], 'checkbox');
+  hvn_panel_control($wp_customize, $section, 'hvn_header_video_setting'       , [], __('動画', THEME_NAME), '', [], 'video');
 
   for ($i=1; $i<=3; $i++) {
     $label = null;
     if ($i == 1) {
       $label = __('画像', THEME_NAME);
     }
-    hvn_panel_control($wp_customize, $section, 'hvn_header_img' . $i . '_setting', [], $label, __('画像', THEME_NAME) . "[{$i}]", [], 'image');
+    hvn_panel_control($wp_customize, $section, 'hvn_header_img' . $i . '_setting', [], $label, __('画像', THEME_NAME) . " [{$i}]", [], 'image');
   }
 
 
@@ -125,6 +128,8 @@ function hvn_header($wp_customize) {
       'required'  => '',
     ]
   ];
-  hvn_panel_control($wp_customize, $section, 'hvn_header_opacity_setting', ['default' => 0, 'sanitize_callback' => 'hvn_sanitize_number_range'], '', __('不透明度(opacity値0～50%)', THEME_NAME), $input_attrs, 'number');
+
+  $label = sprintf(__('不透明度（opacity値%d～%d%%）', THEME_NAME), $input_attrs['input_attrs']['min'], $input_attrs['input_attrs']['max']);
+  hvn_panel_control($wp_customize, $section, 'hvn_header_opacity_setting', ['default' => 0, 'sanitize_callback' => 'hvn_sanitize_number_range'], '',$label , $input_attrs, 'number');
 }
 endif;

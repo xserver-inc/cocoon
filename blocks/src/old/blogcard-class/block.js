@@ -29,7 +29,7 @@ function getClasses( style ) {
   return classes;
 }
 
-registerBlockType( 'cocoon-blocks/blogcard', {
+registerBlockType( 'cocoon-blocks/blogcard', { supports: { html: false },
   apiVersion: 3,
   title: __( 'ブログカード', THEME_NAME ),
   icon: <FontAwesomeIcon icon={ faAddressCard } />,
@@ -128,3 +128,5 @@ registerBlockType( 'cocoon-blocks/blogcard', {
     );
   },
 } );
+
+

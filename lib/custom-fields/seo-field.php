@@ -17,7 +17,7 @@ function add_seo_custom_box(){
   add_meta_box( 'singular_seo_settings',__( 'SEO', THEME_NAME ), 'seo_custom_box_view', 'post', 'normal', 'core' );
   add_meta_box( 'singular_seo_settings',__( 'SEO', THEME_NAME ), 'seo_custom_box_view', 'page', 'normal', 'core' );
   //カスタム投稿タイプに登録
-  add_meta_box_custom_post_types( 'singular_seo_settings',__( 'SEO', THEME_NAME ), 'seo_custom_box_view', 'custum_post', 'normal', 'core' );
+  add_meta_box_custom_post_types( 'singular_seo_settings',__( 'SEO', THEME_NAME ), 'seo_custom_box_view', 'custom_post', 'normal', 'core' );
 }
 endif;
 
@@ -103,6 +103,8 @@ endif;
 
 if ( !function_exists( 'seo_custom_box_view' ) ):
 function seo_custom_box_view(){
+  // CSRF対策用のnonceフィールドを出力
+  wp_nonce_field('cocoon_seo_custom_box', 'cocoon_seo_custom_box_nonce');
   $the_page_seo_title = get_the_page_seo_title();
   $the_page_meta_description = get_the_page_meta_description();
   $the_page_meta_keywords = get_the_page_meta_keywords();
@@ -154,12 +156,18 @@ endif;
 //SEO保存データ
 add_action('save_post', 'seo_custom_box_save_data');
 if ( !function_exists( 'seo_custom_box_save_data' ) ):
-function seo_custom_box_save_data(){
-  $id = get_the_ID();
+function seo_custom_box_save_data($post_id){
+  // nonce検証（CSRF対策）
+  if (!isset($_POST['cocoon_seo_custom_box_nonce']) || !wp_verify_nonce($_POST['cocoon_seo_custom_box_nonce'], 'cocoon_seo_custom_box')) return;
+  // 自動保存時はスキップ
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+  // 投稿の編集権限をチェック
+  if (!current_user_can('edit_post', $post_id)) return;
+  $id = $post_id;
   //タイトル
   $the_page_seo_title = null;
   if ( isset( $_POST['the_page_seo_title'] ) ){
-    $the_page_seo_title = $_POST['the_page_seo_title'];
+    $the_page_seo_title = sanitize_text_field($_POST['the_page_seo_title']);
     $the_page_seo_title_key = 'the_page_seo_title';
     add_post_meta($id, $the_page_seo_title_key, $the_page_seo_title, true);
     update_post_meta($id, $the_page_seo_title_key, $the_page_seo_title);
@@ -171,7 +179,7 @@ function seo_custom_box_save_data(){
   //メタディスクリプション
   $the_page_meta_description = null;
   if ( isset( $_POST['the_page_meta_description'] ) ){
-    $the_page_meta_description = $_POST['the_page_meta_description'];
+    $the_page_meta_description = sanitize_textarea_field($_POST['the_page_meta_description']);
     $the_page_meta_description_key = 'the_page_meta_description';
     add_post_meta($id, $the_page_meta_description_key, $the_page_meta_description, true);
     update_post_meta($id, $the_page_meta_description_key, $the_page_meta_description);
@@ -183,7 +191,7 @@ function seo_custom_box_save_data(){
   //メタキーワード
   $the_page_meta_keywords = null;
   if ( isset( $_POST['the_page_meta_keywords'] ) ){
-    $the_page_meta_keywords = $_POST['the_page_meta_keywords'];
+    $the_page_meta_keywords = sanitize_text_field($_POST['the_page_meta_keywords']);
     $the_page_meta_keywords_key = 'the_page_meta_keywords';
     add_post_meta($id, $the_page_meta_keywords_key, $the_page_meta_keywords, true);
     update_post_meta($id, $the_page_meta_keywords_key, $the_page_meta_keywords);
@@ -213,7 +221,7 @@ function seo_custom_box_save_data(){
   //canonical
   $the_page_canonical_url = null;
   if ( isset( $_POST['the_page_canonical_url'] ) ){
-    $the_page_canonical_url = $_POST['the_page_canonical_url'];
+    $the_page_canonical_url = esc_url_raw($_POST['the_page_canonical_url']);
     $the_page_canonical_url_key = 'the_page_canonical_url';
     add_post_meta($id, $the_page_canonical_url_key, $the_page_canonical_url, true);
     update_post_meta($id, $the_page_canonical_url_key, $the_page_canonical_url);

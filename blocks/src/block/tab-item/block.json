@@ -2,7 +2,9 @@
   "apiVersion": 3,
   "name": "cocoon-blocks/tab-item",
   "category": "cocoon-block",
-  "parent": ["cocoon-blocks/tab"],
+  "parent": [
+    "cocoon-blocks/tab"
+  ],
   "attributes": {
     "isActive": {
       "type": "boolean",
@@ -13,7 +15,7 @@
   "supports": {
     "anchor": false,
     "lock": false,
-    "inserter": false
+    "inserter": false,
+    "html": false
   }
 }
-

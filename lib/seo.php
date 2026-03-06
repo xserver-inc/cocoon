@@ -682,13 +682,15 @@ function get_the_meta_description(){
   }
 
   if ( $tmp_desc ) {
-    $desc = get_content_excerpt( $tmp_desc, 120 );
+    // 抜粋もメタディスクリプションと同様に最大1000文字まで出力する
+    $desc = get_content_excerpt( $tmp_desc, 1000 );
   }
 
   //投稿・固定ページにメタディスクリプションが設定してあれば取得
   $tmp_desc = get_the_page_meta_description();
   if ( $tmp_desc ) {
-    $desc = get_content_excerpt( $tmp_desc, 1000 );//メタディスクリプションは基本全部出力するが最大1000文字まで
+      // メタディスクリプションは基本全部出力するが最大1000文字まで（抜粋と同様の文字数）
+      $desc = get_content_excerpt( $tmp_desc, 1000 );
   }
 
   $desc = htmlspecialchars($desc);

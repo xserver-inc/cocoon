@@ -5,6 +5,13 @@ blocks/src/sample/
 node_modules/
 package-lock.json
 
+# Cursor
+.cursor/
+
+# Agent
+.agent
+.agents/
+
 #CLAUDE
 .mcp.json
 CLAUDE.md
@@ -14,3 +21,18 @@ claudedocs
 
 # NVM
 .nvmrc
+
+# Composer
+vendor/
+composer.lock
+
+# PHPUnit
+.phpunit.cache/
+tests/coverage/
+configs/
+
+# VS Code設定
+.vscode/
+
+# Gemini
+.gemini/

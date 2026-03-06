@@ -7,8 +7,9 @@
 </head>
 <body>
 <textarea name="copy-text" id="copy-text" cols="30" rows="5"><?php
-  $title = isset($_GET['title']) ? strip_tags($_GET['title']).' ' : '';
-  $url = isset($_GET['url']) ? strip_tags($_GET['url']) : '';
+  // タイトルはHTMLエスケープ、URLはURL用エスケープで安全に出力する
+  $title = isset($_GET['title']) ? esc_html($_GET['title']).' ' : '';
+  $url = isset($_GET['url']) ? esc_url($_GET['url']) : '';
   echo $title;
   echo $url;
 ?></textarea>
