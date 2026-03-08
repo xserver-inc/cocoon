@@ -45,7 +45,7 @@ endif;
 //もしもアフィリエイトでAmazon検索用のURLを生成する
 if ( !function_exists( 'get_moshimo_amazon_search_url' ) ):
 function get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id){
-  return 'https://af.moshimo.com/af/c/click?a_id='.trim($moshimo_amazon_id).'&p_id=170&pc_id=185&pl_id=4062&url='.urlencode(get_amazon_search_url($keyword));
+  return 'https://af.moshimo.com/af/c/click?a_id='.urlencode(trim($moshimo_amazon_id)).'&p_id=170&pc_id=185&pl_id=4062&url='.urlencode(get_amazon_search_url($keyword));
 }
 endif;
 
@@ -75,7 +75,7 @@ endif;
 //もしもアフィリエイトの楽天検索用のURL生成
 if ( !function_exists( 'get_moshimo_rakuten_search_url' ) ):
 function get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id, $ng_keywords){
-  return 'https://af.moshimo.com/af/c/click?a_id='.trim($moshimo_rakuten_id).'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword, $ng_keywords));
+  return 'https://af.moshimo.com/af/c/click?a_id='.urlencode(trim($moshimo_rakuten_id)).'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword, $ng_keywords));
 }
 endif;
 
@@ -96,7 +96,7 @@ endif;
 //もしもアフィリエイトのYahoo!ショッピング検索用のURL生成
 if ( !function_exists( 'get_moshimo_yahoo_search_url' ) ):
 function get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id){
-  return 'https://af.moshimo.com/af/c/click?a_id='.trim($moshimo_yahoo_id).'&p_id=1225&pc_id=1925&pl_id=18502&url='.urlencode(get_yahoo_search_url($keyword));
+  return 'https://af.moshimo.com/af/c/click?a_id='.urlencode(trim($moshimo_yahoo_id)).'&p_id=1225&pc_id=1925&pl_id=18502&url='.urlencode(get_yahoo_search_url($keyword));
 }
 endif;
 
@@ -156,7 +156,7 @@ endif;
 if ( !function_exists( 'get_moshimo_amazon_impression_tag' ) ):
 function get_moshimo_amazon_impression_tag(){
   $moshimo_amazon_id  = trim(get_moshimo_amazon_id());
-  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.esc_attr($moshimo_amazon_id).'&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.urlencode($moshimo_amazon_id).'&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;">';
 }
 endif;
 
@@ -164,7 +164,7 @@ endif;
 if ( !function_exists( 'get_moshimo_rakuten_impression_tag' ) ):
 function get_moshimo_rakuten_impression_tag(){
   $moshimo_rakuten_id  = trim(get_moshimo_rakuten_id());
-  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.esc_attr($moshimo_rakuten_id).'&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.urlencode($moshimo_rakuten_id).'&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;">';
 }
 endif;
 
@@ -183,7 +183,7 @@ endif;
 if ( !function_exists( 'get_moshimo_yahoo_impression_tag' ) ):
 function get_moshimo_yahoo_impression_tag(){
   $moshimo_yahoo_id  = trim(get_moshimo_yahoo_id());
-  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.esc_attr($moshimo_yahoo_id).'&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.urlencode($moshimo_yahoo_id).'&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;">';
 }
 endif;
 

@@ -422,7 +422,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   $use_moshimo = isset($settings['useMoshimoAffiliate']) ? (bool)$settings['useMoshimoAffiliate'] : is_moshimo_affiliate_link_enable();
   $moshimo_amazon_impression_tag = null;
   if ($moshimo_amazon_id && $use_moshimo) {
-    $moshimo_amazon_base_url = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062&url=';
+    $moshimo_amazon_base_url = 'https://af.moshimo.com/af/c/click?a_id='.urlencode($moshimo_amazon_id).'&p_id=170&pc_id=185&pl_id=4062&url=';
     $associate_url = $moshimo_amazon_base_url.urlencode(get_amazon_associate_url($asin));
     $moshimo_amazon_impression_tag = get_moshimo_amazon_impression_tag();
   }

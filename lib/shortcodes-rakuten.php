@@ -328,7 +328,7 @@ function rakuten_product_link_shortcode($atts){
             if (preg_match_all('{\?pc=(.+?)&m=}i', urldecode($decoded_affiliateUrl), $m)) {
               if ($m[1][0]) {
                 $rakuten_product_page_url = $m[1][0];
-                $moshimo_rakuten_url = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode($rakuten_product_page_url);
+                $moshimo_rakuten_url = 'https://af.moshimo.com/af/c/click?a_id='.urlencode($moshimo_rakuten_id).'&p_id=54&pc_id=54&pl_id=616&url='.urlencode($rakuten_product_page_url);
                 $affiliateUrl = $moshimo_rakuten_url;
                 //インプレッションタグ
                 $moshimo_rakuten_impression_tag = get_moshimo_rakuten_impression_tag();
