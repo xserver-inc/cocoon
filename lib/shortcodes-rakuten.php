@@ -143,11 +143,11 @@ function rakuten_product_link_shortcode($atts){
       $purchaseTypeCode = '&purchaseType=' . urlencode($purchase_type);
     }
 
-    $sortQuery = '&sort=' . urlencode(get_rakuten_api_sort());
+    // sortは「+itemPrice」等の+を含むため、rawurlencodeでスペース%20・+は%2Bにエンコード（urlencode+str_replaceの代替）
+    $sortQuery = '&sort=' . rawurlencode(get_rakuten_api_sort());
     if ($sort && !$id) {
-      $sortQuery = '&sort=' . urlencode($sort);
+      $sortQuery = '&sort=' . rawurlencode($sort);
     }
-    $sortQuery = str_replace('+', '%2B', $sortQuery);
 
     $shopCode = null;
     if ($shop && !$id) {
