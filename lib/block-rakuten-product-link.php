@@ -614,7 +614,9 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
   $logo_class = $showLogo ? '' : ' no-after';
 
   // 商品リンクタグの生成（既存ショートコードと同じ構造）
-  $tag = '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.esc_attr($itemCode).' cf">'.
+  // itemCodeは「shopCode:itemCode」形式でコロンを含む場合があり、CSSセレクタで疑似クラスと誤解釈されるためハイフンに置換
+  $item_code_class = esc_attr(str_replace(':', '-', $itemCode));
+  $tag = '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$item_code_class.' cf">'.
     $image_figure_tag.
     '<div class="rakuten-item-content product-item-content cf">'.
       '<div class="rakuten-item-title product-item-title">'.
