@@ -67,6 +67,33 @@ function cocoon_amazon_block_batch_update(){
     return;
   }
 
+  // 多重起動防止ロック（トランジェント＋永続キャッシュ環境向けのアトミック操作）
+  $lock_key = 'cocoon_amazon_block_cron_running';
+  if (get_transient($lock_key)) {
+    amazon_creators_api_debug_log('cron: skipped (already running)');
+    return;
+  }
+  // 永続キャッシュ（Redis/Memcached等）がある場合はアトミックに取得
+  if (wp_using_ext_object_cache()) {
+    $added = wp_cache_add($lock_key, 1, '', HOUR_IN_SECONDS);
+    if (!$added) {
+      amazon_creators_api_debug_log('cron: skipped (already running)');
+      return;
+    }
+  }
+  set_transient($lock_key, 1, HOUR_IN_SECONDS);
+
+  // Fatal Error時にもロックを解放する
+  $lock_released = false;
+  register_shutdown_function(function() use ($lock_key, &$lock_released) {
+    if ($lock_released) return;
+    delete_transient($lock_key);
+    wp_cache_delete($lock_key);
+  });
+
+  // Cronバックグラウンド処理のためタイムアウトを無制限化
+  @set_time_limit(0);
+
   // 1回あたりの処理件数（共通設定から取得）
   $batch_size = get_product_block_auto_update_batch_size();
   if ($batch_size < 1) $batch_size = PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT;
@@ -94,6 +121,9 @@ function cocoon_amazon_block_batch_update(){
   if (empty($posts)) {
     update_option('cocoon_amazon_block_last_processed_id', 0);
     amazon_creators_api_debug_log('cron: all posts processed, resetting');
+    delete_transient($lock_key);
+    wp_cache_delete($lock_key);
+    $lock_released = true;
     return;
   }
 
@@ -111,6 +141,11 @@ function cocoon_amazon_block_batch_update(){
 
   // ループ変数ではなく明示的な変数でログ出力
   amazon_creators_api_debug_log('cron: batch completed, last_id='.$last_id);
+
+  // ロック解放
+  delete_transient($lock_key);
+  wp_cache_delete($lock_key);
+  $lock_released = true;
 }
 endif;
 
