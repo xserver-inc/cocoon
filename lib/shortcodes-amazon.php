@@ -967,6 +967,7 @@ function amazon_product_link_shortcode($atts){
           $Variants = array();
         }
         $variants_count = count($Variants);
+        // 最後の要素はプライマリ画像と重複するため除外
         for ($i=0; $i < $variants_count-1; $i++) {
           $display_none_class = null;
           if (($size != 'l') && ($i >= 3)) {

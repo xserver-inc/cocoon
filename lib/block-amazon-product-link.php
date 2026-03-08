@@ -525,6 +525,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   if ($showCatalogImages && is_array($Variants) && !empty($Variants)) {
     $tmp_tag = null;
     $variants_count = count($Variants);
+    // 最後の要素はプライマリ画像と重複するため除外
     for ($i = 0; $i < $variants_count - 1; $i++) {
       $display_none_class = null;
       if (($size != 'l') && ($i >= 3)) {
