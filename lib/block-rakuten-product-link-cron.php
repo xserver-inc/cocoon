@@ -104,20 +104,26 @@ function cocoon_rakuten_block_batch_update(){
   // 結果が空の場合はリスタート
   if (empty($posts)) {
     update_option('cocoon_rakuten_block_last_processed_id', 0);
+    error_log('cocoon rakuten cron: all posts processed, resetting');
     delete_transient($lock_key);
     wp_cache_delete($lock_key);
     $lock_released = true;
     return;
   }
 
-  // 投稿ごとに処理
+  // 投稿ごとに処理（ループ変数 $post はループ外で参照すると危険なため別変数 $last_id に保持する）
+  $last_id = 0;
   foreach ($posts as $post) {
     cocoon_rakuten_block_update_post_blocks($post);
     // 処理位置を更新
-    update_option('cocoon_rakuten_block_last_processed_id', $post->ID);
+    $last_id = $post->ID;
+    update_option('cocoon_rakuten_block_last_processed_id', $last_id);
     // 投稿間のスリープ
     sleep(PRODUCT_BLOCK_CRON_POST_SLEEP_SECONDS);
   }
+
+  // ループ変数ではなく明示的な変数でログ出力
+  error_log('cocoon rakuten cron: batch completed, last_id=' . $last_id);
 
   // ロック解放
   delete_transient($lock_key);
