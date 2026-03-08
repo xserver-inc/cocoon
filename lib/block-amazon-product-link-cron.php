@@ -38,9 +38,9 @@ function cocoon_amazon_block_cron_schedules($schedules){
 endif;
 
 ///////////////////////////////////////////
-// Cronスケジュールの管理
+// Cronスケジュールの管理（admin_initで毎リクエストのDB照会を回避）
 ///////////////////////////////////////////
-add_action('init', 'cocoon_amazon_block_cron_manage');
+add_action('admin_init', 'cocoon_amazon_block_cron_manage');
 if ( !function_exists( 'cocoon_amazon_block_cron_manage' ) ):
 function cocoon_amazon_block_cron_manage(){
   $event_hook = 'cocoon_amazon_block_update_event';

@@ -8,11 +8,11 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 ///////////////////////////////////////////
-// Cronスケジュールの管理
+// Cronスケジュールの管理（admin_initで毎リクエストのDB照会を回避）
 // ※ カスタムスケジュール（cocoon_every_2_days, cocoon_every_3_days 等）は
 //    Amazon版ブロックのCronファイルで既に追加済みのため再定義しない
 ///////////////////////////////////////////
-add_action('init', 'cocoon_rakuten_block_cron_manage');
+add_action('admin_init', 'cocoon_rakuten_block_cron_manage');
 if ( !function_exists( 'cocoon_rakuten_block_cron_manage' ) ):
 function cocoon_rakuten_block_cron_manage(){
   $event_hook = 'cocoon_rakuten_block_update_event';
