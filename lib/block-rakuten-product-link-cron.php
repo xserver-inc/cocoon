@@ -24,10 +24,17 @@ function cocoon_rakuten_block_cron_manage(){
     }
     return;
   }
-  // 更新間隔の取得（デフォルト: 1ヶ月）
+  // 更新間隔の取得（デフォルト: 3日ごと）
   $interval = get_product_block_auto_update_interval();
-  // まだスケジュールされていない場合は登録
-  if (!wp_next_scheduled($event_hook)) {
+  $timestamp = wp_next_scheduled($event_hook);
+  if ($timestamp) {
+    // 登録済みのインターバルと設定値が異なる場合は再スケジュール
+    $current_schedule = wp_get_schedule($event_hook);
+    if ($current_schedule !== $interval) {
+      wp_unschedule_event($timestamp, $event_hook);
+      wp_schedule_event(time(), $interval, $event_hook);
+    }
+  } else {
     wp_schedule_event(time(), $interval, $event_hook);
   }
 }
