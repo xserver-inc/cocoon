@@ -435,8 +435,10 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           // 商品リンクタグの生成
           ///////////////////////////////////////////
+          // itemCodeは「shopCode:itemCode」形式でコロンを含む場合があり、CSSセレクタで疑似クラスと誤解釈されるためハイフンに置換
+          $id_class = $id ? esc_attr(str_replace(':', '-', $id)) : '';
           $tag =
-            '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$id.' cf">'.
+            '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$id_class.' cf">'.
               '<figure class="rakuten-item-thumb product-item-thumb">'.
               $image_link_tag.
               '</figure>'.
