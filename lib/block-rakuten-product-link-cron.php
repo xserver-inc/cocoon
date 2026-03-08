@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 ///////////////////////////////////////////
 // Cronスケジュールの管理
-// ※ カスタムスケジュール（cocoon_biweekly, cocoon_monthly, cocoon_quarterly）は
+// ※ カスタムスケジュール（cocoon_every_2_days, cocoon_every_3_days 等）は
 //    Amazon版ブロックのCronファイルで既に追加済みのため再定義しない
 ///////////////////////////////////////////
 add_action('init', 'cocoon_rakuten_block_cron_manage');

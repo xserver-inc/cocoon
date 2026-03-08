@@ -366,14 +366,17 @@ endif;
 define('OP_PRODUCT_BLOCK_AUTO_UPDATE_INTERVAL', 'product_block_auto_update_interval');
 if ( !function_exists( 'get_product_block_auto_update_interval' ) ):
 function get_product_block_auto_update_interval(){
-  // デフォルト: 2週間ごと
-  return get_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_INTERVAL, 'cocoon_biweekly');
+  $interval = get_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_INTERVAL, 'cocoon_every_3_days');
+  // 削除されたスケジュールの場合は2週間ごとにフォールバック
+  if (in_array($interval, array('cocoon_monthly', 'cocoon_quarterly'), true)) {
+    return 'cocoon_biweekly';
+  }
+  return $interval;
 }
 endif;
 
 // 商品リンクブロック自動更新のバッチサイズ（1回のCronで処理する投稿数）のデフォルト値
-// 想定: 投稿あたり最大5ブロック × バッチ5件 → 約60秒以内（PHPタイムアウトに収める）
-define('PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT', 5);
+define('PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT', 30);
 // Cron: 投稿1件の処理後に待機する秒数（API負荷を分散）
 define('PRODUCT_BLOCK_CRON_POST_SLEEP_SECONDS', 2);
 // Cron: ブロック1つのAPIリクエスト後に待機する秒数（Amazon PA-API は 1 TPS 目安のため 2 秒で余裕を持たせる）
@@ -382,8 +385,13 @@ define('PRODUCT_BLOCK_CRON_API_SLEEP_SECONDS', 2);
 define('OP_PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE', 'product_block_auto_update_batch_size');
 if ( !function_exists( 'get_product_block_auto_update_batch_size' ) ):
 function get_product_block_auto_update_batch_size(){
-  // デフォルト: PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT の値
-  return (int)get_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE, PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT);
+  $batch_size = (int)get_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE, PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT);
+  // 選択肢にない値の場合はデフォルトにフォールバック
+  $valid = array(5, 10, 20, 30, 50, 100);
+  if (!in_array($batch_size, $valid)) {
+    return PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT;
+  }
+  return $batch_size;
 }
 endif;
 

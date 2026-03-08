@@ -13,20 +13,25 @@ if ( !defined( 'ABSPATH' ) ) exit;
 add_filter('cron_schedules', 'cocoon_amazon_block_cron_schedules');
 if ( !function_exists( 'cocoon_amazon_block_cron_schedules' ) ):
 function cocoon_amazon_block_cron_schedules($schedules){
+  // 2日ごと
+  $schedules['cocoon_every_2_days'] = array(
+    'interval' => 2 * DAY_IN_SECONDS,
+    'display'  => __('2日ごと', THEME_NAME),
+  );
+  // 3日ごと
+  $schedules['cocoon_every_3_days'] = array(
+    'interval' => 3 * DAY_IN_SECONDS,
+    'display'  => __('3日ごと', THEME_NAME),
+  );
+  // 5日ごと
+  $schedules['cocoon_every_5_days'] = array(
+    'interval' => 5 * DAY_IN_SECONDS,
+    'display'  => __('5日ごと', THEME_NAME),
+  );
   // 2週間ごと
   $schedules['cocoon_biweekly'] = array(
     'interval' => 14 * DAY_IN_SECONDS,
     'display'  => __('2週間ごと', THEME_NAME),
-  );
-  // 1ヶ月ごと（30日）
-  $schedules['cocoon_monthly'] = array(
-    'interval' => 30 * DAY_IN_SECONDS,
-    'display'  => __('1ヶ月ごと', THEME_NAME),
-  );
-  // 3ヶ月ごと（90日）
-  $schedules['cocoon_quarterly'] = array(
-    'interval' => 90 * DAY_IN_SECONDS,
-    'display'  => __('3ヶ月ごと', THEME_NAME),
   );
   return $schedules;
 }
@@ -47,7 +52,7 @@ function cocoon_amazon_block_cron_manage(){
     }
     return;
   }
-  // 更新間隔の取得（デフォルト: 1ヶ月）
+  // 更新間隔の取得（デフォルト: 3日ごと）
   $interval = get_product_block_auto_update_interval();
   // まだスケジュールされていない場合は登録
   if (!wp_next_scheduled($event_hook)) {
