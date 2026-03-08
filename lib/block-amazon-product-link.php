@@ -509,9 +509,9 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   }
 
   // カタログ拡大画像の生成
-  $LargeImageUrl = ($LargeImage && isset($LargeImage->URL)) ? $LargeImage->URL : null;
-  $LargeImageWidth = ($LargeImage && isset($LargeImage->Width)) ? $LargeImage->Width : null;
-  $LargeImageHeight = ($LargeImage && isset($LargeImage->Height)) ? $LargeImage->Height : null;
+  $LargeImageUrl    = ($LargeImage && isset($LargeImage->URL))    ? $LargeImage->URL              : null;
+  $LargeImageWidth  = ($LargeImage && isset($LargeImage->Width))  ? (int)$LargeImage->Width  : 0;
+  $LargeImageHeight = ($LargeImage && isset($LargeImage->Height)) ? (int)$LargeImage->Height : 0;
 
   $image_l_tag = null;
   if ($showCatalogImages && ($size != 'l') && $LargeImageUrl) {
@@ -540,13 +540,13 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
 
       $SwatchImage = isset($Variant->Small) ? $Variant->Small : null;
       $SwatchImageURL = ($SwatchImage && isset($SwatchImage->URL)) ? $SwatchImage->URL : null;
-      $SwatchImageWidth = ($SwatchImage && isset($SwatchImage->Width)) ? $SwatchImage->Width : null;
-      $SwatchImageHeight = ($SwatchImage && isset($SwatchImage->Height)) ? $SwatchImage->Height : null;
+      $SwatchImageWidth  = ($SwatchImage && isset($SwatchImage->Width))  ? (int)$SwatchImage->Width  : 0;
+      $SwatchImageHeight = ($SwatchImage && isset($SwatchImage->Height)) ? (int)$SwatchImage->Height : 0;
 
       $VariantLarge = isset($Variant->Large) ? $Variant->Large : null;
-      $VLargeURL = ($VariantLarge && isset($VariantLarge->URL)) ? $VariantLarge->URL : null;
-      $VLargeW = ($VariantLarge && isset($VariantLarge->Width)) ? $VariantLarge->Width : null;
-      $VLargeH = ($VariantLarge && isset($VariantLarge->Height)) ? $VariantLarge->Height : null;
+      $VLargeURL = ($VariantLarge && isset($VariantLarge->URL))    ? $VariantLarge->URL              : null;
+      $VLargeW   = ($VariantLarge && isset($VariantLarge->Width))  ? (int)$VariantLarge->Width  : 0;
+      $VLargeH   = ($VariantLarge && isset($VariantLarge->Height)) ? (int)$VariantLarge->Height : 0;
 
       if (!$SwatchImageURL || !$VLargeURL) continue;
 
