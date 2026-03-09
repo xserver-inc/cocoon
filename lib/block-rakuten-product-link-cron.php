@@ -42,12 +42,16 @@ function cocoon_rakuten_block_cron_manage(){
       $scheduled = wp_schedule_event(time() + $schedule_offset, $interval, $event_hook);
       if ($scheduled !== false && !is_wp_error($scheduled)) {
         update_option('cocoon_rakuten_block_cron_batch_size', $batch_size, false);
+      } else {
+        cocoon_product_block_debug_log('cron: schedule_event failed', 'RakutenCron');
       }
     }
   } else {
     $scheduled = wp_schedule_event(time() + $schedule_offset, $interval, $event_hook);
     if ($scheduled !== false && !is_wp_error($scheduled)) {
       update_option('cocoon_rakuten_block_cron_batch_size', $batch_size, false);
+    } else {
+      cocoon_product_block_debug_log('cron: schedule_event failed', 'RakutenCron');
     }
   }
 }
