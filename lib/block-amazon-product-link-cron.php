@@ -208,7 +208,7 @@ function cocoon_amazon_block_update_post_blocks($post){
   // 投稿を更新（成功時は投稿ID、失敗時は0またはWP_Errorを返す）
   $result = wp_update_post(array(
     'ID'           => $post->ID,
-    'post_content' => $new_content,
+    'post_content' => wp_slash($new_content),
   ));
 
   // 更新失敗時はログを残して抜ける（更新日時復元・キャッシュクリアは行わない）

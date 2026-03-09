@@ -1001,3 +1001,40 @@ export function getChartJsFontHeight( fontSize ) {
 
   return height;
 }
+
+/**
+ * バックスラッシュ消失で壊れたstaticHtmlを修復するヘルパー関数
+ *
+ * cronの wp_update_post() が serialize_blocks() の出力から
+ * バックスラッシュを消失させた場合、\u003c → u003c のように壊れる。
+ * このヘルパーで壊れた文字列を正しいHTMLに復元する。
+ *
+ * 対象はPHPの json_encode(JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT)
+ * がエスケープする文字のみ: < > & ' " /
+ *
+ * @param {string} html 壊れた可能性のあるHTML文字列
+ * @return {string} 修復されたHTML文字列
+ */
+export function fixBrokenStaticHtml( html ) {
+  if ( ! html || typeof html !== 'string' || ! html.startsWith( 'u003c' ) ) {
+    return html;
+  }
+  return (
+    html
+      // HTMLタグ: \u003c → < , \u003e → >
+      .replace( /u003c/gi, '<' )
+      .replace( /u003e/gi, '>' )
+      // クォート: \u0022 → " , \u0027 → '
+      .replace( /u0022/g, '"' )
+      .replace( /u0027/g, "'" )
+      // スラッシュ: \u002F → / （json_encode の JSON_HEX_TAG がエスケープする場合がある）
+      .replace( /u002f/gi, '/' )
+      // アンパサンド系: 長いパターンから順に処理（短いパターンが食い込むのを防ぐ）
+      // u0026#038; → &amp; （WPが & を &#038; にエンコードした結果の壊れた形）
+      .replace( /u0026#038;/g, '&amp;' )
+      // u0026amp; → &amp; （WPが &amp; をそのまま保存した場合の壊れた形）
+      .replace( /u0026amp;/g, '&amp;' )
+      // u0026 → & （純粋な & の壊れた形）
+      .replace( /u0026/g, '&' )
+  );
+}
