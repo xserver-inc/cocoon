@@ -131,6 +131,14 @@ update_theme_option(OP_MOSHIMO_YAHOO_ID);
 //APIキャッシュの保存期間
 update_theme_option(OP_API_CACHE_RETENTION_PERIOD);
 
-
 //APIエラーメールを送信する
 update_theme_option(OP_API_ERROR_MAIL_ENABLE);
+
+//商品リンクブロック自動更新を有効にする
+update_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_ENABLE);
+
+//商品リンクブロック自動更新間隔
+update_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_INTERVAL);
+
+//商品リンクブロック自動更新のバッチサイズ
+update_theme_option(OP_PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE);
