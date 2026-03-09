@@ -26,16 +26,25 @@ function cocoon_rakuten_block_cron_manage(){
   }
   // 更新間隔の取得（デフォルト: 3日ごと）
   $interval = get_product_block_auto_update_interval();
+  // Amazon版Cronとの同時発火を避けるためバッチサイズに応じたオフセットを設ける
+  // 1投稿あたり post_sleep + API_sleep × 平均ブロック数 を余裕込みで約10秒と見積もる
+  $batch_size = get_product_block_auto_update_batch_size();
+  $schedule_offset = $batch_size * 10;
+  // 前回スケジュール時のバッチサイズを保持し、変更を検知する
+  $last_batch_size = (int)get_option('cocoon_rakuten_block_cron_batch_size', 0);
+  $needs_reschedule = ($last_batch_size !== $batch_size);
   $timestamp = wp_next_scheduled($event_hook);
   if ($timestamp) {
-    // 登録済みのインターバルと設定値が異なる場合は再スケジュール
     $current_schedule = wp_get_schedule($event_hook);
-    if ($current_schedule !== $interval) {
+    // 更新間隔またはバッチサイズが変わった場合は再スケジュール
+    if ($current_schedule !== $interval || $needs_reschedule) {
       wp_unschedule_event($timestamp, $event_hook);
-      wp_schedule_event(time(), $interval, $event_hook);
+      wp_schedule_event(time() + $schedule_offset, $interval, $event_hook);
+      update_option('cocoon_rakuten_block_cron_batch_size', $batch_size);
     }
   } else {
-    wp_schedule_event(time(), $interval, $event_hook);
+    wp_schedule_event(time() + $schedule_offset, $interval, $event_hook);
+    update_option('cocoon_rakuten_block_cron_batch_size', $batch_size);
   }
 }
 endif;
