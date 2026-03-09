@@ -51,21 +51,25 @@ function cocoon_rakuten_block_batch_update(){
     return;
   }
 
-  // 多重起動防止ロック（トランジェント＋永続キャッシュ環境向けのアトミック操作）
+  // 多重起動防止ロック（トランジェント／永続キャッシュのいずれか一方のみ使用し二重設定を避ける）
   $lock_key = 'cocoon_rakuten_block_cron_running';
-  if (get_transient($lock_key)) {
-    error_log('cocoon rakuten cron: skipped (already running)');
-    return;
-  }
-  // 永続キャッシュ（Redis/Memcached等）がある場合はアトミックに取得
   if (wp_using_ext_object_cache()) {
+    if (wp_cache_get($lock_key)) {
+      error_log('cocoon rakuten cron: skipped (already running)');
+      return;
+    }
     $added = wp_cache_add($lock_key, 1, '', HOUR_IN_SECONDS);
     if (!$added) {
       error_log('cocoon rakuten cron: skipped (already running)');
       return;
     }
+  } else {
+    if (get_transient($lock_key)) {
+      error_log('cocoon rakuten cron: skipped (already running)');
+      return;
+    }
+    set_transient($lock_key, 1, HOUR_IN_SECONDS);
   }
-  set_transient($lock_key, 1, HOUR_IN_SECONDS);
 
   // Fatal Error時にもロックを解放する
   $lock_released = false;
