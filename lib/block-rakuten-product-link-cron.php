@@ -39,12 +39,16 @@ function cocoon_rakuten_block_cron_manage(){
     // 更新間隔またはバッチサイズが変わった場合は再スケジュール
     if ($current_schedule !== $interval || $needs_reschedule) {
       wp_unschedule_event($timestamp, $event_hook);
-      wp_schedule_event(time() + $schedule_offset, $interval, $event_hook);
-      update_option('cocoon_rakuten_block_cron_batch_size', $batch_size);
+      $scheduled = wp_schedule_event(time() + $schedule_offset, $interval, $event_hook);
+      if ($scheduled !== false && !is_wp_error($scheduled)) {
+        update_option('cocoon_rakuten_block_cron_batch_size', $batch_size, false);
+      }
     }
   } else {
-    wp_schedule_event(time() + $schedule_offset, $interval, $event_hook);
-    update_option('cocoon_rakuten_block_cron_batch_size', $batch_size);
+    $scheduled = wp_schedule_event(time() + $schedule_offset, $interval, $event_hook);
+    if ($scheduled !== false && !is_wp_error($scheduled)) {
+      update_option('cocoon_rakuten_block_cron_batch_size', $batch_size, false);
+    }
   }
 }
 endif;
@@ -65,17 +69,17 @@ function cocoon_rakuten_block_batch_update(){
   $use_ext_cache = wp_using_ext_object_cache();
   if ($use_ext_cache) {
     if (wp_cache_get($lock_key)) {
-      error_log('cocoon rakuten cron: skipped (already running)');
+      cocoon_product_block_debug_log('cron: skipped (already running)', 'RakutenCron');
       return;
     }
     $added = wp_cache_add($lock_key, 1, '', HOUR_IN_SECONDS);
     if (!$added) {
-      error_log('cocoon rakuten cron: skipped (already running)');
+      cocoon_product_block_debug_log('cron: skipped (already running)', 'RakutenCron');
       return;
     }
   } else {
     if (get_transient($lock_key)) {
-      error_log('cocoon rakuten cron: skipped (already running)');
+      cocoon_product_block_debug_log('cron: skipped (already running)', 'RakutenCron');
       return;
     }
     set_transient($lock_key, 1, HOUR_IN_SECONDS);
@@ -121,7 +125,7 @@ function cocoon_rakuten_block_batch_update(){
   // 結果が空の場合はリスタート
   if (empty($posts)) {
     update_option('cocoon_rakuten_block_last_processed_id', 0);
-    error_log('cocoon rakuten cron: all posts processed, resetting');
+    cocoon_product_block_debug_log('cron: all posts processed, resetting', 'RakutenCron');
     if ($use_ext_cache) {
       wp_cache_delete($lock_key);
     } else {
@@ -143,7 +147,7 @@ function cocoon_rakuten_block_batch_update(){
   }
 
   // ループ変数ではなく明示的な変数でログ出力
-  error_log('cocoon rakuten cron: batch completed, last_id=' . $last_id);
+  cocoon_product_block_debug_log('cron: batch completed, last_id=' . $last_id, 'RakutenCron');
 
   // ロック解放
   if ($use_ext_cache) {
@@ -187,7 +191,7 @@ function cocoon_rakuten_block_update_post_blocks($post){
 
   // 更新失敗時はログを残して抜ける（更新日時復元・キャッシュクリアは行わない）
   if (!$result || is_wp_error($result)) {
-    error_log('cocoon rakuten cron: post '.$post->ID.' update failed');
+    cocoon_product_block_debug_log('cron: post '.$post->ID.' update failed', 'RakutenCron');
     return;
   }
 
