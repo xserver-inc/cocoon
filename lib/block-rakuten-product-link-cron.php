@@ -62,7 +62,8 @@ function cocoon_rakuten_block_batch_update(){
 
   // 多重起動防止ロック（トランジェント／永続キャッシュのいずれか一方のみ使用し二重設定を避ける）
   $lock_key = 'cocoon_rakuten_block_cron_running';
-  if (wp_using_ext_object_cache()) {
+  $use_ext_cache = wp_using_ext_object_cache();
+  if ($use_ext_cache) {
     if (wp_cache_get($lock_key)) {
       error_log('cocoon rakuten cron: skipped (already running)');
       return;
@@ -82,10 +83,13 @@ function cocoon_rakuten_block_batch_update(){
 
   // Fatal Error時にもロックを解放する
   $lock_released = false;
-  register_shutdown_function(function() use ($lock_key, &$lock_released) {
+  register_shutdown_function(function() use ($lock_key, &$lock_released, $use_ext_cache) {
     if ($lock_released) return;
-    delete_transient($lock_key);
-    wp_cache_delete($lock_key);
+    if ($use_ext_cache) {
+      wp_cache_delete($lock_key);
+    } else {
+      delete_transient($lock_key);
+    }
   });
 
   // Cronバックグラウンド処理のためタイムアウトを無制限化
@@ -118,8 +122,11 @@ function cocoon_rakuten_block_batch_update(){
   if (empty($posts)) {
     update_option('cocoon_rakuten_block_last_processed_id', 0);
     error_log('cocoon rakuten cron: all posts processed, resetting');
-    delete_transient($lock_key);
-    wp_cache_delete($lock_key);
+    if ($use_ext_cache) {
+      wp_cache_delete($lock_key);
+    } else {
+      delete_transient($lock_key);
+    }
     $lock_released = true;
     return;
   }
@@ -139,8 +146,11 @@ function cocoon_rakuten_block_batch_update(){
   error_log('cocoon rakuten cron: batch completed, last_id=' . $last_id);
 
   // ロック解放
-  delete_transient($lock_key);
-  wp_cache_delete($lock_key);
+  if ($use_ext_cache) {
+    wp_cache_delete($lock_key);
+  } else {
+    delete_transient($lock_key);
+  }
   $lock_released = true;
 }
 endif;
