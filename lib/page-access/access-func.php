@@ -425,7 +425,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   $where = $wpdb->prepare(" WHERE `{$access_table}`.post_type = %s ", $post_type).PHP_EOL;
   if ($days != 'all') {
     $date_before = get_current_db_date_before($days);
-    $where .= " AND `{$access_table}`.date BETWEEN '$date_before' AND '$date' ".PHP_EOL;
+    $where .= $wpdb->prepare( " AND `{$access_table}`.date BETWEEN %s AND %s ", $date_before, $date ) . PHP_EOL;
   }
 
   if (is_ids_exist($exclude_post_ids)) {
