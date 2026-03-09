@@ -347,14 +347,14 @@ function wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippe
     $author_query = $wpdb->prepare(' AND post_author = %d', $author);
   }
 
-  $post_type_safe = esc_sql($post_type);
+  $post_type_where = $wpdb->prepare('post_type = %s', $post_type);
   $query = "
     SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
     ) AS `{$ranks_posts}`
     INNER JOIN `{$wp_posts}` ON `{$ranks_posts}`.post_id = `{$wp_posts}`.id
     WHERE post_status = 'publish' AND
-          post_type = '{$post_type_safe}'" .
+          {$post_type_where}" .
           $author_query . "
     ORDER BY sum_count DESC, post_date DESC
   ";
