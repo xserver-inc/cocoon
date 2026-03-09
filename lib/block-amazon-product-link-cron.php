@@ -117,7 +117,7 @@ function cocoon_amazon_block_batch_update(){
   global $wpdb;
   $posts = $wpdb->get_results($wpdb->prepare(
     "SELECT ID, post_content, post_modified, post_modified_gmt
-     FROM {$wpdb->posts}
+     FROM `{$wpdb->posts}`
      WHERE post_status = 'publish'
        AND post_type IN ('post', 'page')
        AND post_content LIKE %s
