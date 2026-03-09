@@ -27,9 +27,17 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <div class="demo" style="height: 300px;overflow: auto;">
               <div <?php body_class(); ?>>
-              <?php query_posts('no_found_rows=1&posts_per_page=10'); ?>
-              <?php get_sanitize_preview_template_part('tmp/list'); ?>
-              <?php wp_reset_query(); ?>
+              <?php
+              $index_preview_query = new WP_Query( array(
+                'no_found_rows'  => true,
+                'posts_per_page' => 10,
+              ) );
+              $prev_wp_query = $GLOBALS['wp_query'];
+              $GLOBALS['wp_query'] = $index_preview_query;
+              get_sanitize_preview_template_part('tmp/list');
+              $GLOBALS['wp_query'] = $prev_wp_query;
+              wp_reset_postdata();
+              ?>
               </div>
             </div>
             <!-- <p><?php _e( '※タイル表示はうまくプレビューできないかも。今のところ原因不明。', THEME_NAME ) ?></p> -->
