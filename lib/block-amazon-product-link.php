@@ -40,7 +40,7 @@ endif;
 if ( !function_exists( 'cocoon_amazon_block_search' ) ):
 function cocoon_amazon_block_search($request){
   // リクエストパラメータを取得
-  $keyword    = sanitize_text_field($request->get_param('keyword'));
+  $keyword    = sanitize_text_field($request->get_param('keyword') ?: '');
   $item_page  = (int)$request->get_param('page');
   if ($item_page < 1) $item_page = 1;
 
@@ -167,7 +167,7 @@ endif;
 ///////////////////////////////////////////
 if ( !function_exists( 'cocoon_amazon_block_get_item' ) ):
 function cocoon_amazon_block_get_item($request){
-  $asin = sanitize_text_field($request->get_param('asin'));
+  $asin = sanitize_text_field($request->get_param('asin') ?: '');
   if (empty($asin)) {
     return new WP_Error('missing_asin', __('ASINを指定してください。', THEME_NAME), array('status' => 400));
   }
@@ -304,7 +304,7 @@ endif;
 ///////////////////////////////////////////
 if ( !function_exists( 'cocoon_amazon_block_render_preview' ) ):
 function cocoon_amazon_block_render_preview($request){
-  $asin = sanitize_text_field($request->get_param('asin'));
+  $asin = sanitize_text_field($request->get_param('asin') ?: '');
   if (empty($asin)) {
     return new WP_Error('missing_asin', __('ASINを指定してください。', THEME_NAME), array('status' => 400));
   }
