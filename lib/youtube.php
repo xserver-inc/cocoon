@@ -36,8 +36,6 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
       return $cache;
     }
 
-
-
     // 古いデータの除去
     $cache = preg_replace('/data-picprefix=\\"(.+?)\\"/s', "", $cache);
     // プレイリストIDがある場合
@@ -66,7 +64,6 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
           'Accept-language' => 'en',
         ),
         'user-agent' => 'Mozilla/5.0 (iPad; CPU OS 7_0_4 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11B554a Safari',
-        'sslverify' => false,
         'timeout'   => 10,
       )
     );

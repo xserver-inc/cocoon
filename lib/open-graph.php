@@ -60,7 +60,6 @@ class OpenGraphGetter implements Iterator
   static public function fetch($URI) {
     // wp_remote_get() の第2引数 args に渡すパラメータを組み立てる
     $args = array(
-      'cocoon' => true,
       'user-agent' => (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '',
       // wp_remote_get() のデフォルトでは HTTP/1.0 でアクセスされるが、さすがに古すぎるので HTTP/1.1 に変更
       'httpversion' => '1.1',

@@ -334,7 +334,6 @@ function get_amazon_itemlookup_json($asin, $tracking_id = null){
     return false;
   }
 
-
   //503エラーの場合はfalseを返す
   if (includes_string($res, 'Website Temporarily Unavailable')) {
     return false;
