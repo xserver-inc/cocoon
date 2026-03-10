@@ -36,10 +36,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
       return $cache;
     }
 
-    // curlの存在確認
-    if (!function_exists('curl_version')) {
-      return $cache;
-    }
+
 
     // 古いデータの除去
     $cache = preg_replace('/data-picprefix=\\"(.+?)\\"/s', "", $cache);
@@ -61,26 +58,32 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
       return $cache;
     }
 
-    $ch = curl_init();
-    $headers = array(
-      'Accept-language: en',
-      'User-Agent: Mozilla/5.0 (iPad; CPU OS 7_0_4 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11B554a Safari',
+    // WordPress標準のHTTP APIでYouTube oEmbed情報を取得する
+    $oembed_response = wp_remote_get(
+      "https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=" . $video_id[0] . "&format=json",
+      array(
+        'headers' => array(
+          'Accept-language' => 'en',
+        ),
+        'user-agent' => 'Mozilla/5.0 (iPad; CPU OS 7_0_4 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11B554a Safari',
+        'sslverify' => false,
+        'timeout'   => 10,
+      )
     );
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_setopt($ch, CURLOPT_URL, "https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=" . $video_id[0] . "&format=json");
 
-    $data = curl_exec($ch);
-
-    $info = curl_getinfo($ch);
-    curl_close($ch);
-
-    if ($info['http_code'] != 200){
+    // リクエストが失敗した場合は元のキャッシュを返す
+    if (is_wp_error($oembed_response)) {
       return $cache;
     }
+
+    // HTTPステータスコードが200以外の場合は元のキャッシュを返す
+    $http_code = (int)wp_remote_retrieve_response_code($oembed_response);
+    if ($http_code != 200){
+      return $cache;
+    }
+
+    // レスポンスのボディを取得する
+    $data = wp_remote_retrieve_body($oembed_response);
 
     // もしYouTubeがJSONを変更したら
     if (empty($data)) {
