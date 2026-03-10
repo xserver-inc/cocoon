@@ -40,7 +40,7 @@ endif;
 if ( !function_exists( 'cocoon_amazon_block_search' ) ):
 function cocoon_amazon_block_search($request){
   // リクエストパラメータを取得
-  $keyword    = sanitize_text_field($request->get_param('keyword'));
+  $keyword    = sanitize_text_field($request->get_param('keyword') ?: '');
   $item_page  = (int)$request->get_param('page');
   if ($item_page < 1) $item_page = 1;
 
@@ -167,7 +167,7 @@ endif;
 ///////////////////////////////////////////
 if ( !function_exists( 'cocoon_amazon_block_get_item' ) ):
 function cocoon_amazon_block_get_item($request){
-  $asin = sanitize_text_field($request->get_param('asin'));
+  $asin = sanitize_text_field($request->get_param('asin') ?: '');
   if (empty($asin)) {
     return new WP_Error('missing_asin', __('ASINを指定してください。', THEME_NAME), array('status' => 400));
   }
@@ -304,7 +304,7 @@ endif;
 ///////////////////////////////////////////
 if ( !function_exists( 'cocoon_amazon_block_render_preview' ) ):
 function cocoon_amazon_block_render_preview($request){
-  $asin = sanitize_text_field($request->get_param('asin'));
+  $asin = sanitize_text_field($request->get_param('asin') ?: '');
   if (empty($asin)) {
     return new WP_Error('missing_asin', __('ASINを指定してください。', THEME_NAME), array('status' => 400));
   }
@@ -422,7 +422,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   $use_moshimo = isset($settings['useMoshimoAffiliate']) ? (bool)$settings['useMoshimoAffiliate'] : is_moshimo_affiliate_link_enable();
   $moshimo_amazon_impression_tag = null;
   if ($moshimo_amazon_id && $use_moshimo) {
-    $moshimo_amazon_base_url = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062&url=';
+    $moshimo_amazon_base_url = 'https://af.moshimo.com/af/c/click?a_id='.urlencode($moshimo_amazon_id).'&p_id=170&pc_id=185&pl_id=4062&url=';
     $associate_url = $moshimo_amazon_base_url.urlencode(get_amazon_associate_url($asin));
     $moshimo_amazon_impression_tag = get_moshimo_amazon_impression_tag();
   }
@@ -509,9 +509,9 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   }
 
   // カタログ拡大画像の生成
-  $LargeImageUrl = ($LargeImage && isset($LargeImage->URL)) ? $LargeImage->URL : null;
-  $LargeImageWidth = ($LargeImage && isset($LargeImage->Width)) ? $LargeImage->Width : null;
-  $LargeImageHeight = ($LargeImage && isset($LargeImage->Height)) ? $LargeImage->Height : null;
+  $LargeImageUrl    = ($LargeImage && isset($LargeImage->URL))    ? $LargeImage->URL              : null;
+  $LargeImageWidth  = ($LargeImage && isset($LargeImage->Width))  ? (int)$LargeImage->Width  : 0;
+  $LargeImageHeight = ($LargeImage && isset($LargeImage->Height)) ? (int)$LargeImage->Height : 0;
 
   $image_l_tag = null;
   if ($showCatalogImages && ($size != 'l') && $LargeImageUrl) {
@@ -525,6 +525,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   if ($showCatalogImages && is_array($Variants) && !empty($Variants)) {
     $tmp_tag = null;
     $variants_count = count($Variants);
+    // 最後の要素はプライマリ画像と重複するため除外
     for ($i = 0; $i < $variants_count - 1; $i++) {
       $display_none_class = null;
       if (($size != 'l') && ($i >= 3)) {
@@ -539,13 +540,13 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
 
       $SwatchImage = isset($Variant->Small) ? $Variant->Small : null;
       $SwatchImageURL = ($SwatchImage && isset($SwatchImage->URL)) ? $SwatchImage->URL : null;
-      $SwatchImageWidth = ($SwatchImage && isset($SwatchImage->Width)) ? $SwatchImage->Width : null;
-      $SwatchImageHeight = ($SwatchImage && isset($SwatchImage->Height)) ? $SwatchImage->Height : null;
+      $SwatchImageWidth  = ($SwatchImage && isset($SwatchImage->Width))  ? (int)$SwatchImage->Width  : 0;
+      $SwatchImageHeight = ($SwatchImage && isset($SwatchImage->Height)) ? (int)$SwatchImage->Height : 0;
 
       $VariantLarge = isset($Variant->Large) ? $Variant->Large : null;
-      $VLargeURL = ($VariantLarge && isset($VariantLarge->URL)) ? $VariantLarge->URL : null;
-      $VLargeW = ($VariantLarge && isset($VariantLarge->Width)) ? $VariantLarge->Width : null;
-      $VLargeH = ($VariantLarge && isset($VariantLarge->Height)) ? $VariantLarge->Height : null;
+      $VLargeURL = ($VariantLarge && isset($VariantLarge->URL))    ? $VariantLarge->URL              : null;
+      $VLargeW   = ($VariantLarge && isset($VariantLarge->Width))  ? (int)$VariantLarge->Width  : 0;
+      $VLargeH   = ($VariantLarge && isset($VariantLarge->Height)) ? (int)$VariantLarge->Height : 0;
 
       if (!$SwatchImageURL || !$VLargeURL) continue;
 

@@ -635,7 +635,7 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////
       // アマゾンURL
       ///////////////////////////////////////
-      $moshimo_amazon_base_url = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062&url=';
+      $moshimo_amazon_base_url = 'https://af.moshimo.com/af/c/click?a_id='.urlencode($moshimo_amazon_id).'&p_id=170&pc_id=185&pl_id=4062&url=';
       $DetailPageURL = isset($item->DetailPageURL) ? esc_url($item->DetailPageURL) : null;
       if ($DetailPageURL) {
         $associate_url = $DetailPageURL;
@@ -967,6 +967,7 @@ function amazon_product_link_shortcode($atts){
           $Variants = array();
         }
         $variants_count = count($Variants);
+        // 最後の要素はプライマリ画像と重複するため除外
         for ($i=0; $i < $variants_count-1; $i++) {
           $display_none_class = null;
           if (($size != 'l') && ($i >= 3)) {

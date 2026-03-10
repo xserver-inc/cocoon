@@ -230,11 +230,13 @@ function cocoon_rakuten_block_fetch_item($itemCode){
   $is_request_success = !is_wp_error( $response ) && isset($response['response']['code']) && (int)$response['response']['code'] === 200;
 
   // JSON取得に失敗した場合はバックアップキャッシュを取得
+  $used_bk_cache = false;
   if (!$is_request_success) {
     $json_bk_cache = get_transient( $transient_bk_id );
     if ($json_bk_cache && DEBUG_CACHE_ENABLE) {
       $response = $json_bk_cache;
       $is_request_success = true;
+      $used_bk_cache = true;
     }
   }
 
@@ -255,14 +257,19 @@ function cocoon_rakuten_block_fetch_item($itemCode){
     return new WP_Error('not_found', __('商品が見つかりませんでした。', THEME_NAME), array('status' => 404));
   }
 
-  // リクエストが成功し、キャッシュがなかった場合のみ保存
-  if (!$json_cache && $is_request_success && DEBUG_CACHE_ENABLE) {
+  // リクエストが成功し、キャッシュがなかった場合のみ保存（バックアップキャッシュからの復元時は日付が既に挿入済みのためスキップ）
+  if (!$json_cache && $is_request_success && !$used_bk_cache && DEBUG_CACHE_ENABLE) {
     $cache_expiration = DAY_IN_SECONDS + (rand(0, 60) * 60);
     $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
     $save_response = $response;
     // wp_remote_get()の直後はbodyは必ず文字列（キャッシュ保存前なのでデコード済みオブジェクトではない）
+    // preg_replaceを避けバックリファレンス展開の問題を回避するためsubstr_replaceを使用
     if (is_string($save_response['body'])) {
-      $save_response['body'] = preg_replace('/{/', '{"date":"'.$acquired_date.'",', $save_response['body'], 1);
+      $pos = strpos($save_response['body'], '{');
+      if ($pos !== false) {
+        $insert = '{"date":"' . $acquired_date . '",';
+        $save_response['body'] = substr_replace($save_response['body'], $insert, $pos, 1);
+      }
     }
     set_transient($transient_id, $save_response, $cache_expiration);
     set_transient($transient_bk_id, $save_response, $cache_expiration * 2);
@@ -496,7 +503,7 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
     if (preg_match_all('{\\?pc=(.+?)&m=}i', urldecode($decoded_affiliateUrl), $m)) {
       if (isset($m[1][0]) && $m[1][0]) {
         $rakuten_product_page_url = $m[1][0];
-        $affiliateUrl = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode($rakuten_product_page_url);
+        $affiliateUrl = 'https://af.moshimo.com/af/c/click?a_id='.urlencode($moshimo_rakuten_id).'&p_id=54&pc_id=54&pl_id=616&url='.urlencode($rakuten_product_page_url);
         // インプレッションタグ
         $moshimo_rakuten_impression_tag = get_moshimo_rakuten_impression_tag();
       }
@@ -607,7 +614,9 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
   $logo_class = $showLogo ? '' : ' no-after';
 
   // 商品リンクタグの生成（既存ショートコードと同じ構造）
-  $tag = '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.esc_attr($itemCode).' cf">'.
+  // itemCodeは「shopCode:itemCode」形式でコロンを含む場合があり、CSSセレクタで疑似クラスと誤解釈されるためハイフンに置換
+  $item_code_class = esc_attr(str_replace(':', '-', $itemCode));
+  $tag = '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$item_code_class.' cf">'.
     $image_figure_tag.
     '<div class="rakuten-item-content product-item-content cf">'.
       '<div class="rakuten-item-title product-item-title">'.

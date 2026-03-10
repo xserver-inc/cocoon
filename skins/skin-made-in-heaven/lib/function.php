@@ -142,10 +142,6 @@ function hvn_color_css() {
   $css .= "--body-color: {$body_color};";
   $css .= "--body-rgb-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};";
 
-  // コンテンツ背景カラー
-  $content_bgcolor = get_theme_mod('hvn_content_bgcolor_setting', HVN_CONTENT_BGCOLOR);
-  $css .= "--hvn-white-color: {$content_bgcolor};";
-
   // Scrollボタンカラー
   $scroll_gcolor = get_theme_mod('hvn_header_scroll_color_setting', HVN_SCROLL_COLOR);
   $css .= "--hvn-scroll: {$scroll_gcolor};";

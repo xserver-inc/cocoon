@@ -66,7 +66,7 @@ function get_db_table_records( $table_name, $column, $keyword = null, $order_by 
   global $wpdb;
   $where = null;
   if ($column && $keyword) {
-    $where = $wpdb->prepare(' WHERE '.$column.' LIKE %s', '%'.$keyword.'%');
+    $where = $wpdb->prepare(' WHERE '.$column.' LIKE %s', '%'.$wpdb->esc_like($keyword).'%');
   }
   if ($order_by) {
     // 許可されたORDER BY値のホワイトリスト（SQLインジェクション対策）
@@ -193,7 +193,7 @@ function get_db_table_record_count_with_keyword($table, $column, $keyword = null
   global $wpdb;
   $where = '';
   if ($column && $keyword) {
-    $where = $wpdb->prepare(' WHERE '.$column.' LIKE %s', '%'.$keyword.'%');
+    $where = $wpdb->prepare(' WHERE '.$column.' LIKE %s', '%'.$wpdb->esc_like($keyword).'%');
   }
   $query = "SELECT COUNT(id) FROM `{$table}`{$where}";
   $count = $wpdb->get_var( $query );

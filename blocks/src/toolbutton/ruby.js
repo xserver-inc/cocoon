@@ -6,7 +6,7 @@
  */
 
 import { THEME_NAME } from '../helpers.js';
-import { Fragment } from '@wordpress/element';
+import { Fragment, useState, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import {
   toggleFormat,
@@ -19,6 +19,7 @@ import {
   RichTextToolbarButton,
   RichTextShortcut,
 } from '@wordpress/block-editor';
+import { Modal, TextControl, Button } from '@wordpress/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,6 +45,10 @@ if (isRubyVisible) {
     className: null,
 
     edit({ isActive, value, onChange }) {
+      const [ isRubyModalOpen, setIsRubyModalOpen ] = useState( false );
+      const [ rubyInputValue, setRubyInputValue ] = useState( '' );
+      const savedValueRef = useRef( null );
+
       // ---- ユーティリティ ----
       const hasTypeAt = (formatsArr, idx, type) => {
         const f = formatsArr?.[idx];
@@ -105,31 +110,43 @@ if (isRubyVisible) {
         return { val, rubyStart, rubyEnd };
       };
 
+      const applyRubyToValue = (val, rubyStart, rubyEnd, rubyText) => {
+        const ruby = rubyText || val.text.substr(rubyStart, rubyEnd - rubyStart);
+
+        let v = insert(val, ruby, rubyEnd);
+        v.start = rubyStart;
+        v.end = rubyEnd + ruby.length;
+        v = applyFormat(v, { type: 'cocoon-blocks/ruby' }, rubyStart, rubyEnd + ruby.length);
+        v = applyFormat(v, { type: 'cocoon-blocks/rt' }, rubyEnd, rubyEnd + ruby.length);
+        return v;
+      };
+
+      const onRubyModalConfirm = () => {
+        const saved = savedValueRef.current;
+        if ( ! saved ) return;
+        const rubyText = rubyInputValue.trim();
+        const v = applyRubyToValue(value, saved.start, saved.end, rubyText);
+        onChange(v);
+        setIsRubyModalOpen( false );
+        setRubyInputValue( '' );
+        savedValueRef.current = null;
+      };
+
+      const onRubyModalClose = () => {
+        setIsRubyModalOpen( false );
+        setRubyInputValue( '' );
+        savedValueRef.current = null;
+      };
+
       const onToggle = () => {
         let v = value;
 
         if (!isActive) {
-          // 付与
-          const ruby =
-            window.prompt(
-              __('ふりがな（ルビ）を入力してください。', THEME_NAME)
-            ) || v.text.substr(v.start, v.end - v.start);
-
-          const rubyEnd = v.end;
-          const rubyStart = v.start;
-
-          // ルビ文字列を直後に挿入
-          v = insert(v, ruby, rubyEnd);
-
-          // ベース + rt 部分までを ruby で囲う
-          v.start = rubyStart;
-          v.end = rubyEnd + ruby.length;
-          v = applyFormat(v, { type: 'cocoon-blocks/ruby' }, rubyStart, rubyEnd + ruby.length);
-
-          // 追加されたルビ文字列部分に <rt> を適用
-          v = applyFormat(v, { type: 'cocoon-blocks/rt' }, rubyEnd, rubyEnd + ruby.length);
-
-          return onChange(v);
+          // 付与: モーダルを開く（iframe 対応のため window.prompt を使わない）
+          savedValueRef.current = { start: v.start, end: v.end };
+          setRubyInputValue( v.text.substr(v.start, v.end - v.start) || '' );
+          setIsRubyModalOpen( true );
+          return;
         }
 
         // 解除（選択でもカーソルでも同じ挙動）
@@ -189,6 +206,37 @@ if (isRubyVisible) {
             shortcutType={ shortcutType }
             shortcutCharacter={ shortcutCharacter }
           />
+          { isRubyModalOpen && (
+            <Modal
+              title={ __('ふりがな（ルビ）', THEME_NAME) }
+              onRequestClose={ onRubyModalClose }
+              className="cocoon-ruby-modal"
+            >
+              <TextControl
+                label={ __('ふりがな（ルビ）を入力してください。', THEME_NAME) }
+                value={ rubyInputValue }
+                onChange={ setRubyInputValue }
+                onKeyDown={ ( e ) => {
+                  if ( e.key === 'Enter' && ! e.nativeEvent.isComposing ) {
+                    e.preventDefault();
+                    onRubyModalConfirm();
+                  }
+                } }
+                help={ __(
+                  '選択した文字の上に表示する読み仮名を入力します。空欄の場合は選択文字がそのまま使われます。',
+                  THEME_NAME
+                ) }
+              />
+              <div style={ { marginTop: '16px', display: 'flex', gap: '8px', justifyContent: 'flex-end' } }>
+                <Button variant="secondary" onClick={ onRubyModalClose }>
+                  { __('キャンセル', THEME_NAME) }
+                </Button>
+                <Button variant="primary" onClick={ onRubyModalConfirm }>
+                  { __('OK', THEME_NAME) }
+                </Button>
+              </div>
+            </Modal>
+          ) }
         </Fragment>
       );
     },

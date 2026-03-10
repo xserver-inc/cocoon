@@ -108,6 +108,20 @@ if (!function_exists('is_admin')) {
     }
 }
 
+// lib/admin.php 読み込み時に必要（admin_bar_menu 登録をスキップするため）
+if (!function_exists('is_admin_tool_menu_visible')) {
+    function is_admin_tool_menu_visible() {
+        return false;
+    }
+}
+
+// lib/admin.php 読み込み時に必要（register_tag_check_list 登録をスキップするため）
+if (!function_exists('is_editor_tag_check_list_enable')) {
+    function is_editor_tag_check_list_enable() {
+        return false;
+    }
+}
+
 if (!function_exists('get_locale')) {
     function get_locale() {
         return 'ja';

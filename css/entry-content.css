@@ -136,6 +136,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   z-index: 2;
 }
 
+/* クリアフィックス */
+.cf::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
 .fz-12px {
   font-size: 12px;
 }
@@ -8947,13 +8954,6 @@ https://codepen.io/nxworld/pen/oLdoWb
     width: 100% !important;
   }
 }
-/* クリアフィックス */
-.cf::after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
 /* 後で消す */
 .block-box p:first-of-type,
 .tab-block p:first-of-type {

@@ -135,29 +135,29 @@ function rakuten_product_link_shortcode($atts){
     // _v('api');
     $itemCode = null;
     if ($id) {
-      $itemCode = '&itemCode='.$id;
+      $itemCode = '&itemCode=' . urlencode($id);
     }
 
     $purchaseTypeCode = null;
     if ($purchase_type) {
-      $purchaseTypeCode = '&purchaseType='.$purchase_type;
+      $purchaseTypeCode = '&purchaseType=' . urlencode($purchase_type);
     }
 
-    $sortQuery = '&sort='.get_rakuten_api_sort();
+    // sortは「+itemPrice」等の+を含むため、rawurlencodeでスペース%20・+は%2Bにエンコード（urlencode+str_replaceの代替）
+    $sortQuery = '&sort=' . rawurlencode(get_rakuten_api_sort());
     if ($sort && !$id) {
-      $sortQuery = '&sort='.$sort;
+      $sortQuery = '&sort=' . rawurlencode($sort);
     }
-    $sortQuery = str_replace('+', '%2B', $sortQuery);
 
     $shopCode = null;
     if ($shop && !$id) {
-      $shopCode = '&shopCode='.$shop;
+      $shopCode = '&shopCode=' . urlencode($shop);
     }
     $searchkw = null;
     if ($search && !$id) {
-      $searchkw = '&keyword='.$search;
+      $searchkw = '&keyword=' . urlencode($search);
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sortQuery.$shopCode.'&hits=1'.$searchkw.$itemCode.$purchaseTypeCode;
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId=' . urlencode($rakuten_application_id) . '&affiliateId=' . urlencode($rakuten_affiliate_id) . '&imageFlag=1' . $sortQuery . $shopCode . '&hits=1' . $searchkw . $itemCode . $purchaseTypeCode;
     //_v($request_url);
     $args = array( 'sslverify' => true );
     $args = apply_filters('wp_remote_get_rakuten_args', $args);
@@ -328,7 +328,7 @@ function rakuten_product_link_shortcode($atts){
             if (preg_match_all('{\?pc=(.+?)&m=}i', urldecode($decoded_affiliateUrl), $m)) {
               if ($m[1][0]) {
                 $rakuten_product_page_url = $m[1][0];
-                $moshimo_rakuten_url = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode($rakuten_product_page_url);
+                $moshimo_rakuten_url = 'https://af.moshimo.com/af/c/click?a_id='.urlencode($moshimo_rakuten_id).'&p_id=54&pc_id=54&pl_id=616&url='.urlencode($rakuten_product_page_url);
                 $affiliateUrl = $moshimo_rakuten_url;
                 //インプレッションタグ
                 $moshimo_rakuten_impression_tag = get_moshimo_rakuten_impression_tag();
@@ -435,8 +435,10 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           // 商品リンクタグの生成
           ///////////////////////////////////////////
+          // itemCodeは「shopCode:itemCode」形式でコロンを含む場合があり、CSSセレクタで疑似クラスと誤解釈されるためハイフンに置換
+          $id_class = $id ? esc_attr(str_replace(':', '-', $id)) : '';
           $tag =
-            '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$id.' cf">'.
+            '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$id_class.' cf">'.
               '<figure class="rakuten-item-thumb product-item-thumb">'.
               $image_link_tag.
               '</figure>'.

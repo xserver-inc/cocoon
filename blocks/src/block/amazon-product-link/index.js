@@ -4,8 +4,9 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-import { THEME_NAME } from '../../helpers';
+import { THEME_NAME, fixBrokenStaticHtml } from '../../helpers';
 import { __ } from '@wordpress/i18n';
+import { RawHTML } from '@wordpress/element';
 
 import edit from './edit';
 import save from './save';
@@ -30,6 +31,41 @@ const amazonIcon = (
   </svg>
 );
 
+// deprecated: 過去にバックスラッシュが消失したstaticHtmlを持つブロックのマイグレーション
+const deprecated = [
+  {
+    // 旧バージョンの属性定義（block.jsonと同一）
+    attributes: metadata.attributes,
+    // 壊れたデータを持つブロックかどうかを判定
+    isEligible( attributes ) {
+      const { staticHtml } = attributes;
+      // staticHtmlが u003c で始まっていれば壊れたデータ
+      return (
+        staticHtml &&
+        typeof staticHtml === 'string' &&
+        staticHtml.startsWith( 'u003c' )
+      );
+    },
+    // 壊れたstaticHtmlを修復して新しい属性に変換
+    migrate( attributes ) {
+      return {
+        ...attributes,
+        staticHtml: fixBrokenStaticHtml( attributes.staticHtml ),
+      };
+    },
+    // 旧save関数: 壊れたstaticHtmlを復元してからHTML出力（DB内のコンテンツと一致させる）
+    save( { attributes } ) {
+      const { staticHtml, asin } = attributes;
+      if ( ! asin ) {
+        return null;
+      }
+      // DB内のinnerHTMLは正常なHTMLなので、壊れたテキストを復元して一致させる
+      const html = fixBrokenStaticHtml( staticHtml );
+      return <RawHTML>{ html }</RawHTML>;
+    },
+  },
+];
+
 // ブロック設定をエクスポート
 export const settings = {
   // ブロック表示名
@@ -45,4 +81,6 @@ export const settings = {
   edit,
   // 保存コンポーネント
   save,
+  // 旧フォーマットのブロックデータを自動修復するための定義
+  deprecated,
 };

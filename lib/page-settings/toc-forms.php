@@ -27,9 +27,18 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <div class="demo toc" style="height: 300px;overflow: auto;">
               <article class="article">
-                <?php query_posts('posts_per_page=1&orderby=rand&no_found_rows=1'); ?>
-                <?php get_sanitize_preview_template_part('tmp/content') ?>
-                <?php wp_reset_query(); ?>
+                <?php
+                $toc_preview_query = new WP_Query( array(
+                  'posts_per_page' => 1,
+                  'orderby'        => 'rand',
+                  'no_found_rows'  => true,
+                ) );
+                $prev_wp_query = $GLOBALS['wp_query'];
+                $GLOBALS['wp_query'] = $toc_preview_query;
+                get_sanitize_preview_template_part('tmp/content');
+                $GLOBALS['wp_query'] = $prev_wp_query;
+                wp_reset_postdata();
+                ?>
               </article>
             </div>
             <?php generate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>

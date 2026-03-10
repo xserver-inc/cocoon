@@ -7,6 +7,19 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// Creators API用のユーザーエージェントを取得（サイトごとに一意）
+if ( !function_exists( 'amazon_creators_api_get_user_agent' ) ):
+function amazon_creators_api_get_user_agent(){
+  $base = 'cocoon-creatorsapi-wp';
+  $site_url = home_url();
+  if ($site_url) {
+    $hash = substr(md5($site_url), 0, 8);
+    $base .= '/'.$hash;
+  }
+  return apply_filters('amazon_creators_api_user_agent', $base, $site_url);
+}
+endif;
+
 // Creators APIの認証情報が有効かどうか
 if ( !function_exists( 'is_amazon_creators_api_credentials_available' ) ):
 function is_amazon_creators_api_credentials_available(){
@@ -34,15 +47,6 @@ endif;
 // Creators APIのOAuth2アクセストークンを取得
 if ( !function_exists( 'amazon_creators_api_get_access_token' ) ):
 function amazon_creators_api_get_access_token($credential_id, $credential_secret, $version){
-  if (!function_exists('curl_init')) {
-    return array(
-      'error' => amazon_creators_api_error_json(
-        'CreatorsApiCurlMissing',
-        __( 'Creators APIを利用するにはPHPのcURL拡張が必要です。', THEME_NAME )
-      ),
-    );
-  }
-
   $transient_key = 'amazon_creators_api_token_'.md5($credential_id.'|'.$credential_secret.'|'.$version);
   $cached = get_transient($transient_key);
   if ($cached) {
@@ -66,34 +70,33 @@ function amazon_creators_api_get_access_token($credential_id, $credential_secret
     'scope' => 'creatorsapi/default',
   ));
 
-  $ch = curl_init($token_endpoint);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_POST, true);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
-  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, (int)apply_filters('amazon_creators_api_connect_timeout', 10));
-  curl_setopt($ch, CURLOPT_TIMEOUT, (int)apply_filters('amazon_creators_api_timeout', 20));
+  $timeout = (int)apply_filters('amazon_creators_api_timeout', 20);
+  $wp_response = wp_remote_post($token_endpoint, array(
+    'headers' => array(
+      'Content-Type' => 'application/x-www-form-urlencoded',
+    ),
+    'body' => $post_fields,
+    'timeout' => $timeout,
+    'user-agent' => amazon_creators_api_get_user_agent(),
+  ));
 
-  $response = curl_exec($ch);
-  $curl_errno = curl_errno($ch);
-  $curl_error = curl_error($ch);
-  $http_code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-  curl_close($ch);
-
-  if ($curl_errno) {
-    amazon_creators_api_debug_log('token curl error: '.$curl_error);
+  if (is_wp_error($wp_response)) {
+    cocoon_product_block_debug_log('token request error: '.$wp_response->get_error_message());
     return array(
-      'error' => amazon_creators_api_error_json('CreatorsApiTokenCurlError', $curl_error),
+      'error' => amazon_creators_api_error_json('CreatorsApiTokenRequestError', $wp_response->get_error_message()),
     );
   }
 
-  if (!$response) {
+  $http_code = (int)wp_remote_retrieve_response_code($wp_response);
+  $body = wp_remote_retrieve_body($wp_response);
+
+  if (!$body) {
     return array(
       'error' => amazon_creators_api_error_json('CreatorsApiTokenEmpty', __( 'Creators APIのトークン取得に失敗しました。', THEME_NAME )),
     );
   }
 
-  $data = json_decode($response, true);
+  $data = json_decode($body, true);
   if (json_last_error() !== JSON_ERROR_NONE || !is_array($data)) {
     return array(
       'error' => amazon_creators_api_error_json('CreatorsApiTokenJsonDecodeError', __( 'Creators APIのトークンレスポンスを解析できませんでした。', THEME_NAME )),
@@ -121,27 +124,26 @@ function amazon_creators_api_get_access_token($credential_id, $credential_secret
 }
 endif;
 
-// デバッグのON/OFFを切り替えるためのフラグを取得
-if ( !function_exists( 'amazon_creators_api_debug_enabled' ) ):
-function amazon_creators_api_debug_enabled(){
-  return (bool)apply_filters('amazon_creators_api_debug', false);
+// デバッグのON/OFFを切り替えるためのフラグを取得（Amazon・楽天 共通）
+if ( !function_exists( 'cocoon_product_block_debug_enabled' ) ):
+function cocoon_product_block_debug_enabled(){
+  return (bool)apply_filters('cocoon_product_block_debug', false);
 }
 endif;
 
-// Creators APIのデバッグログを書き出す
-if ( !function_exists( 'amazon_creators_api_debug_log' ) ):
-function amazon_creators_api_debug_log($message){
-  if (!amazon_creators_api_debug_enabled()) {
+// 商品ブロックのデバッグログを書き出す（Amazon・楽天 共通）
+if ( !function_exists( 'cocoon_product_block_debug_log' ) ):
+function cocoon_product_block_debug_log($message, $tag = 'CreatorsAPI'){
+  if (!cocoon_product_block_debug_enabled()) {
     return;
   }
-  // デバッグログの保存先を決めて、必要ならフォルダを作る
-  $log_file = apply_filters('amazon_creators_api_debug_log_file', get_theme_resources_path().'creators_api_debug.log');
+  $log_file = apply_filters('cocoon_product_block_debug_log_file', get_theme_resources_path().'creators_api_debug.log');
   $log_dir = dirname($log_file);
   if (!is_dir($log_dir)) {
     wp_mkdir_p($log_dir);
   }
   $timestamp = date_i18n('Y-m-d H:i:s');
-  error_log('[CreatorsAPI] '.$timestamp.' '.$message.PHP_EOL, 3, $log_file);
+  error_log('['.$tag.'] '.$timestamp.' '.$message.PHP_EOL, 3, $log_file);
 }
 endif;
 
@@ -409,11 +411,11 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   }
 
   // デバッグ開始
-  amazon_creators_api_debug_log('start asin='.$asin);
+  cocoon_product_block_debug_log('start asin='.$asin);
 
   // 認証情報が不足している場合は処理しない
   if (!is_amazon_creators_api_credentials_available()) {
-    amazon_creators_api_debug_log('missing credentials');
+    cocoon_product_block_debug_log('missing credentials');
     return false;
   }
 
@@ -455,7 +457,7 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   $marketplace = apply_filters('amazon_creators_api_marketplace', AMAZON_DOMAIN);
 
   // デバッグ用に送信情報の状態を記録
-  amazon_creators_api_debug_log('request marketplace='.$marketplace.' version='.$version.' partnerTag='.($partnerTag ? 'set' : 'empty'));
+  cocoon_product_block_debug_log('request marketplace='.$marketplace.' version='.$version.' partnerTag='.($partnerTag ? 'set' : 'empty'));
 
   // 既存のPA-API利用に近いリソースを要求
   $resources = array(
@@ -519,35 +521,29 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   $host = apply_filters('amazon_creators_api_host', 'https://creatorsapi.amazon');
   $endpoint = $host.'/catalog/v1/getItems';
 
-  $headers = array(
-    'Authorization: Bearer '.$access_token.', Version '.$version,
-    'Content-Type: application/json',
-    'Accept: application/json',
-    'x-marketplace: '.$marketplace,
-    'User-Agent: cocoon-creatorsapi-curl',
-  );
+  $timeout = (int)apply_filters('amazon_creators_api_timeout', 20);
+  $wp_response = wp_remote_post($endpoint, array(
+    'headers' => array(
+      'Authorization' => 'Bearer '.$access_token.', Version '.$version,
+      'Content-Type' => 'application/json',
+      'Accept' => 'application/json',
+      'x-marketplace' => $marketplace,
+    ),
+    'body' => $request_json,
+    'timeout' => $timeout,
+    'user-agent' => amazon_creators_api_get_user_agent(),
+  ));
 
-  $ch = curl_init($endpoint);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_POST, true);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, $request_json);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, (int)apply_filters('amazon_creators_api_connect_timeout', 10));
-  curl_setopt($ch, CURLOPT_TIMEOUT, (int)apply_filters('amazon_creators_api_timeout', 20));
-
-  $res = curl_exec($ch);
-  $curl_errno = curl_errno($ch);
-  $curl_error = curl_error($ch);
-  $http_code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-  curl_close($ch);
-
-  if ($curl_errno) {
-    amazon_creators_api_debug_log('api curl error: '.$curl_error);
-    return amazon_creators_api_error_json('CreatorsApiCurlError', $curl_error);
+  if (is_wp_error($wp_response)) {
+    cocoon_product_block_debug_log('api request error: '.$wp_response->get_error_message());
+    return amazon_creators_api_error_json('CreatorsApiRequestError', $wp_response->get_error_message());
   }
 
+  $http_code = (int)wp_remote_retrieve_response_code($wp_response);
+  $res = wp_remote_retrieve_body($wp_response);
+
   if ($http_code >= 400) {
-    amazon_creators_api_debug_log('api http error: '.$http_code);
+    cocoon_product_block_debug_log('api http error: '.$http_code);
     // レスポンスが空の場合はHTTPステータスコードのみ返す
     if (!$res) {
       return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
@@ -583,7 +579,7 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
     return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
   }
 
-  amazon_creators_api_debug_log('response received');
+  cocoon_product_block_debug_log('response received');
 
   // 空のレスポンスなら失敗扱い
   if (!$res) {
@@ -594,14 +590,14 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   $json = json_decode($res);
   if (json_last_error() !== JSON_ERROR_NONE) {
     // JSONとして解析できない場合はエラーを返す
-    amazon_creators_api_debug_log('json decode error');
+    cocoon_product_block_debug_log('json decode error');
     return amazon_creators_api_error_json('CreatorsApiJsonDecodeError', __( 'Creators APIのレスポンスを解析できませんでした。', THEME_NAME ));
   }
 
   if ($json) {
     // Creators APIのerrorsをPA-API互換のErrorsに変換
     if (isset($json->errors)) {
-      amazon_creators_api_debug_log('errors in response');
+      cocoon_product_block_debug_log('errors in response');
       $normalized_errors = amazon_creators_api_normalize_errors($json->errors);
       if ($normalized_errors) {
         return $normalized_errors;
@@ -635,7 +631,7 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
 
     // 取得失敗は既存のAmazonエラーログに記録
     if (!is_paapi_json_item_exist($json) && !is_creators_api_json_item_exist($json)) {
-      amazon_creators_api_debug_log('items not found in response');
+      cocoon_product_block_debug_log('items not found in response');
       // Creators API用の詳細メッセージがあればそれを使う
       $log_msg = function_exists('get_amazon_asin_error_message') ? get_amazon_asin_error_message() : AMAZON_ASIN_ERROR_MESSAGE;
       error_log_to_amazon_product($asin, $log_msg);
@@ -700,11 +696,11 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
     return false;
   }
 
-  amazon_creators_api_debug_log('search start keyword='.$keyword);
+  cocoon_product_block_debug_log('search start keyword='.$keyword);
 
   // 認証情報が不足している場合は処理しない
   if (!is_amazon_creators_api_credentials_available()) {
-    amazon_creators_api_debug_log('missing credentials');
+    cocoon_product_block_debug_log('missing credentials');
     return false;
   }
 
@@ -717,7 +713,7 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
   $version = apply_filters('amazon_creators_api_version', '2.3');
   $marketplace = apply_filters('amazon_creators_api_marketplace', AMAZON_DOMAIN);
 
-  amazon_creators_api_debug_log('search request marketplace='.$marketplace.' version='.$version);
+  cocoon_product_block_debug_log('search request marketplace='.$marketplace.' version='.$version);
 
   // 検索に必要なリソースを指定
   $resources = array(
@@ -766,37 +762,30 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
   $host = apply_filters('amazon_creators_api_host', 'https://creatorsapi.amazon');
   $endpoint = $host.'/catalog/v1/searchItems';
 
-  $headers = array(
-    'Authorization: Bearer '.$access_token.', Version '.$version,
-    'Content-Type: application/json',
-    'Accept: application/json',
-    'x-marketplace: '.$marketplace,
-    'User-Agent: cocoon-creatorsapi-curl',
-  );
+  $timeout = (int)apply_filters('amazon_creators_api_timeout', 20);
+  $wp_response = wp_remote_post($endpoint, array(
+    'headers' => array(
+      'Authorization' => 'Bearer '.$access_token.', Version '.$version,
+      'Content-Type' => 'application/json',
+      'Accept' => 'application/json',
+      'x-marketplace' => $marketplace,
+    ),
+    'body' => $request_json,
+    'timeout' => $timeout,
+    'user-agent' => amazon_creators_api_get_user_agent(),
+  ));
 
-  $ch = curl_init($endpoint);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_POST, true);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, $request_json);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, (int)apply_filters('amazon_creators_api_connect_timeout', 10));
-  curl_setopt($ch, CURLOPT_TIMEOUT, (int)apply_filters('amazon_creators_api_timeout', 20));
-
-  $res = curl_exec($ch);
-  $curl_errno = curl_errno($ch);
-  $curl_error = curl_error($ch);
-  $http_code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-  curl_close($ch);
-
-  // cURLエラーの処理
-  if ($curl_errno) {
-    amazon_creators_api_debug_log('search curl error: '.$curl_error);
-    return amazon_creators_api_error_json('CreatorsApiCurlError', $curl_error);
+  if (is_wp_error($wp_response)) {
+    cocoon_product_block_debug_log('search request error: '.$wp_response->get_error_message());
+    return amazon_creators_api_error_json('CreatorsApiRequestError', $wp_response->get_error_message());
   }
+
+  $http_code = (int)wp_remote_retrieve_response_code($wp_response);
+  $res = wp_remote_retrieve_body($wp_response);
 
   // HTTPエラーの処理
   if ($http_code >= 400) {
-    amazon_creators_api_debug_log('search http error: '.$http_code);
+    cocoon_product_block_debug_log('search http error: '.$http_code);
     if (!$res) {
       return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
     }
@@ -831,7 +820,7 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
     return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
   }
 
-  amazon_creators_api_debug_log('search response received');
+  cocoon_product_block_debug_log('search response received');
 
   // 空のレスポンスなら失敗扱い
   if (!$res) {
@@ -841,14 +830,14 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
   // JSONを解析
   $json = json_decode($res);
   if (json_last_error() !== JSON_ERROR_NONE) {
-    amazon_creators_api_debug_log('search json decode error');
+    cocoon_product_block_debug_log('search json decode error');
     return amazon_creators_api_error_json('CreatorsApiJsonDecodeError', __( 'Creators APIのレスポンスを解析できませんでした。', THEME_NAME ));
   }
 
   if ($json) {
     // Creators APIのerrorsを処理
     if (isset($json->errors)) {
-      amazon_creators_api_debug_log('search errors in response');
+      cocoon_product_block_debug_log('search errors in response');
       $normalized_errors = amazon_creators_api_normalize_errors($json->errors);
       if ($normalized_errors) {
         return $normalized_errors;
