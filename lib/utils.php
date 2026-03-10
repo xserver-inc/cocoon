@@ -3020,24 +3020,19 @@ endif;
 //httpコンテンツの取得
 if ( !function_exists( 'get_http_content' ) ):
 function get_http_content($url){
-  try {
-    $ch = curl_init();
-    curl_setopt_array($ch, array(
-      CURLOPT_URL => $url,
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_TIMEOUT => 1.5,
-    ));
-    $body = curl_exec($ch);
-    $errno = curl_errno($ch);
-    $error = curl_error($ch);
-    curl_close($ch);
-    if (CURLE_OK !== $errno) {
-      throw new RuntimeException($error, $errno);
-    }
-    return $body;
-  } catch (Exception $e) {
+  // WordPress標準のHTTP APIでコンテンツを取得する
+  $wp_response = wp_remote_get($url, array(
+    'timeout' => 2,
+  ));
+
+  // リクエストが失敗した場合はfalseを返す
+  if (is_wp_error($wp_response)) {
     return false;
   }
+
+  // レスポンスのボディを返す
+  $body = wp_remote_retrieve_body($wp_response);
+  return $body ? $body : false;
 }
 endif;
 
