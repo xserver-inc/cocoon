@@ -1026,7 +1026,16 @@ class Skin_Silk_Functions {
       wp_enqueue_script(
         'silk-gutenberg',
         $file,
-        ['wp-rich-text']
+        [
+          'wp-rich-text',
+          'wp-element',
+          'wp-block-editor',
+          'wp-components',
+          'wp-compose',
+          'wp-hooks',
+          'wp-data',
+          'wp-primitives',
+        ]
       );
 
       wp_add_inline_style(

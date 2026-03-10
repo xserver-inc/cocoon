@@ -585,9 +585,10 @@ class DistributionFilesTest extends TestCase
     public static function jsFilesProvider(): array
     {
         return [
-            'admin-javascript.js' => ['js/admin-javascript.js', '管理画面JS'],
-            'gutenberg.js'        => ['js/gutenberg.js', 'GutenbergエディタJS'],
-            'set-event-passive.js'=> ['js/set-event-passive.js', 'パッシブイベントJS'],
+            'admin-javascript.js'            => ['js/admin-javascript.js', '管理画面JS'],
+            'gutenberg-editor-classes.js'     => ['js/gutenberg-editor-classes.js', 'Gutenbergエディタクラス付与JS'],
+            'gutenberg-toolbar.js'            => ['js/gutenberg-toolbar.js', 'Gutenbergツールバー用JS'],
+            'set-event-passive.js'            => ['js/set-event-passive.js', 'パッシブイベントJS'],
         ];
     }
 

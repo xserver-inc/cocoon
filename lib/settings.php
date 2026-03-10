@@ -177,8 +177,66 @@ if ( !function_exists( 'gutenberg_stylesheets_custom' ) ):
 function gutenberg_stylesheets_custom() {
   if ( is_visual_editor_style_enable() && is_admin() ) {
 
-    // Gutenberg用のCSSとJSのみ読み込み
-    wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_cocoon_template_directory_uri() . '/js/gutenberg.js', array( 'jquery' ), false, true );
+    // --- WP 7.0 iframe 対応: エディター内クラス付与スクリプト ---
+    // jQuery に依存しない vanilla JS として enqueue_block_assets 経由で読み込む。
+    // WP 6.3+ では iframe 内でも実行される。WP < 6.3 では外側で実行される。
+    // スクリプトファイルのパスを変数に保持する（filemtime でバージョン管理するため）
+    $editor_classes_js = '/js/gutenberg-editor-classes.js';
+    $editor_classes_js_path = get_cocoon_template_directory() . $editor_classes_js;
+    wp_enqueue_script(
+      THEME_NAME . '-gutenberg-editor-classes',
+      get_cocoon_template_directory_uri() . $editor_classes_js,
+      array(),  // jQuery 不要
+      // ファイルが存在しない場合は false（WP バージョン）にフォールバックして Warning を防ぐ
+      file_exists( $editor_classes_js_path ) ? filemtime( $editor_classes_js_path ) : false,
+      true
+    );
+
+    // エディタールート要素に付与するクラスを構築する
+    $editor_add_classes = array( 'cocoon-block-wrap', 'body', 'article', 'admin-page' );
+    $site_icon_font = get_site_icon_font_class();
+    if ( $site_icon_font ) {
+      $editor_add_classes[] = str_replace( ' ', '', $site_icon_font );
+    }
+    $page_type_class = get_editor_page_type_class();
+    if ( $page_type_class ) {
+      $editor_add_classes[] = str_replace( ' ', '', $page_type_class );
+    }
+
+    // iframe body に付与するフォント関連クラスを構築する
+    // （iframe 内で body に直接付与することで、CSS の親子セレクタが同一 document 内で機能する）
+    // 値が空プレフィックスのみ（例: 'ff-'）の場合は除外して、不要なクラス付与を防ぐ
+    $editor_font_classes = array();
+    $font_family_class = get_site_font_family_class();
+    $font_size_class   = get_site_font_size_class();
+    $font_weight_class = get_site_font_weight_class();
+    if ( $font_family_class && $font_family_class !== 'ff-' ) {
+      $editor_font_classes[] = 'wp-admin-' . $font_family_class;
+    }
+    if ( $font_size_class && $font_size_class !== 'fz-' ) {
+      $editor_font_classes[] = 'wp-admin-' . $font_size_class;
+    }
+    if ( $font_weight_class && $font_weight_class !== 'fw-' ) {
+      $editor_font_classes[] = 'wp-admin-' . $font_weight_class;
+    }
+
+    // wp_localize_script は iframe 内で動作しない場合があるため、
+    // wp_add_inline_script でスクリプト実行前にグローバル変数として注入する
+    wp_add_inline_script(
+      THEME_NAME . '-gutenberg-editor-classes',
+      sprintf(
+        'window.cocoonEditorClassConfig = %s;',
+        // JSON_HEX_TAG で <> をエスケープし、<script> タグ内への出力時の XSS を防御
+        wp_json_encode( array(
+          'addClasses'  => $editor_add_classes,
+          'fontClasses' => $editor_font_classes,
+        ), JSON_HEX_TAG )
+      ),
+      'before'
+    );
+
+    // Gutenberg エディター用 CSS を読み込む
+    // （silk スキンの wp_add_inline_style が cocoon-gutenberg ハンドルを参照しているため変更しない）
     wp_enqueue_style( THEME_NAME . '-gutenberg', get_cocoon_template_directory_uri() . '/css/gutenberg-editor.css' );
 
     // IcoMoonを読み込む
@@ -233,7 +291,30 @@ function gutenberg_stylesheets_custom() {
       'background' => true,
       'title'      => false,
     ) );
-    wp_localize_script( THEME_NAME . '-gutenberg-js', $name, $value );
+    // フックを維持しつつ、新しい JS ハンドルに付け替える
+    // （外部スキン・プラグインが cocoon_gutenberg_param_name/value フィルターを利用している可能性がある）
+    wp_localize_script( THEME_NAME . '-gutenberg-editor-classes', $name, $value );
+  }
+}
+endif;
+
+// ツールバーボタンスタイリング用スクリプト
+// enqueue_block_editor_assets で登録することで、常に iframe の外側で実行される。
+add_action( 'enqueue_block_editor_assets', 'cocoon_enqueue_toolbar_script' );
+if ( ! function_exists( 'cocoon_enqueue_toolbar_script' ) ):
+function cocoon_enqueue_toolbar_script() {
+  if ( is_visual_editor_style_enable() && is_admin() ) {
+    // スクリプトファイルのパスを変数に保持する（filemtime でバージョン管理するため）
+    $toolbar_js = '/js/gutenberg-toolbar.js';
+    $toolbar_js_path = get_cocoon_template_directory() . $toolbar_js;
+    wp_enqueue_script(
+      THEME_NAME . '-gutenberg-toolbar',
+      get_cocoon_template_directory_uri() . $toolbar_js,
+      array(),  // jQuery 不要
+      // ファイルが存在しない場合は false（WP バージョン）にフォールバックして Warning を防ぐ
+      file_exists( $toolbar_js_path ) ? filemtime( $toolbar_js_path ) : false,
+      true
+    );
   }
 }
 endif;

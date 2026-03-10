@@ -47,9 +47,19 @@ function cocoon_blocks_cgb_block_assets()
 	add_filter('admin_body_class', 'add_site_font_settings_to_admin_body_class');
 	if (!function_exists('add_site_font_settings_to_admin_body_class')) {
 		function add_site_font_settings_to_admin_body_class($classes) {
-			$classes .= ' wp-admin-' . get_site_font_family_class();
-			$classes .= ' wp-admin-' . get_site_font_size_class();
-			$classes .= ' wp-admin-' . get_site_font_weight_class();
+			// 値が空プレフィックスのみ（例: 'ff-'）の場合は除外して、不要なクラス付与を防ぐ
+			$font_family_class = get_site_font_family_class();
+			$font_size_class   = get_site_font_size_class();
+			$font_weight_class = get_site_font_weight_class();
+			if ( $font_family_class && $font_family_class !== 'ff-' ) {
+				$classes .= ' wp-admin-' . $font_family_class;
+			}
+			if ( $font_size_class && $font_size_class !== 'fz-' ) {
+				$classes .= ' wp-admin-' . $font_size_class;
+			}
+			if ( $font_weight_class && $font_weight_class !== 'fw-' ) {
+				$classes .= ' wp-admin-' . $font_weight_class;
+			}
 			return $classes;
 		}
 	}
