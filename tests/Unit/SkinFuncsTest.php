@@ -56,6 +56,39 @@ class SkinFuncsTest extends TestCase
         $this->assertSame(1, skin_files_comp($a, $b));
     }
 
+    public function test_skin_files_comp_優先度が同じ場合スキン名のアルファベット順になる(): void
+    {
+        $a = ['priority' => 10, 'skin_name' => 'Skin B'];
+        $b = ['priority' => 10, 'skin_name' => 'Skin A'];
+        // 優先度が同じ → skin_name 昇順（'Skin A' < 'Skin B' なので $b が先 → 戻り値 > 0）
+        $this->assertGreaterThan(0, skin_files_comp($a, $b));
+        $this->assertLessThan(0, skin_files_comp($b, $a));
+    }
+
+    public function test_skin_files_comp_優先度もスキン名も同じ場合0を返す(): void
+    {
+        $a = ['priority' => 10, 'skin_name' => 'Skin A'];
+        $b = ['priority' => 10, 'skin_name' => 'Skin A'];
+        // 完全に同値 → 0 を返す（PHP 8.0 安定ソートの必須要件）
+        $this->assertSame(0, skin_files_comp($a, $b));
+    }
+
+    public function test_skin_files_comp_自己比較は0を返す(): void
+    {
+        $a = ['priority' => 5, 'skin_name' => 'My Skin'];
+        // comp($a, $a) は必ず 0（PHP 8.0 安定ソートの前提）
+        $this->assertSame(0, skin_files_comp($a, $a));
+    }
+
+    public function test_skin_files_comp_priorityキーなし同士はスキン名で比較する(): void
+    {
+        $a = ['skin_name' => 'Zen'];
+        $b = ['skin_name' => 'Alpha'];
+        // 両方 priority 未設定（99999999999）→ skin_name のアルファベット順（'Alpha' < 'Zen'）
+        $this->assertLessThan(0, skin_files_comp($b, $a));
+        $this->assertGreaterThan(0, skin_files_comp($a, $b));
+    }
+
     // ========================================================================
     // get_skin_js_url() / get_skin_php_url() / get_skin_csv_url() / get_skin_json_url()
     // ========================================================================

@@ -77,15 +77,17 @@ endif;
 //スキンファイルリストの並べ替え用の関数
 if ( !function_exists( 'skin_files_comp' ) ):
   function skin_files_comp($a, $b) {
-    $f1 = (float)isset($a['priority']) ? $a['priority'] : 99999999999;
-    $f2 = (float)isset($b['priority']) ? $b['priority'] : 99999999999;
+    // 優先度を数値として取得（未設定の場合はデフォルト値を使用）
+    $f1 = (float)($a['priority'] ?? 99999999999);
+    $f2 = (float)($b['priority'] ?? 99999999999);
     //優先度（priority）で比較する
-    if ($f1 == $f2) {
-      $f1 = (float)isset($a['skin_name']) ? $a['skin_name'] : 99999999999;
-      $f2 = (float)isset($b['skin_name']) ? $b['skin_name'] : 99999999999;
-      // return $n1 <=> $n2;
+    if ($f1 === $f2) {
+      //優先度が同じ場合はスキン名（アルファベット順）で比較する
+      $n1 = $a['skin_name'] ?? '';
+      $n2 = $b['skin_name'] ?? '';
+      return $n1 <=> $n2;
     }
-    return ($f1 < $f2) ? -1 : 1;
+    return $f1 <=> $f2;
   }
 endif;
 
@@ -153,7 +155,7 @@ function get_skin_infos(){
           if (preg_match('/Priority: *(.+)/i', $css, $m)) {
             $priority = floatval(trim($m[1]));
           } else {
-            $priority = 9999999;
+            $priority = 99999999999;
           }
           //説明文が設定されている場合
           $description = null;
