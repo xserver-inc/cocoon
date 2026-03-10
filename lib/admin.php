@@ -575,25 +575,6 @@ function add_head_post_custum() {
     // var_dump($now);
   }
 ?>
-<style>
-div.editor-block-list__block,
-div.editor-block-list__block p{
-  <?php //フォントサイズ
-  if(get_site_font_size()): ?>
-    font-size: <?php echo get_site_font_size(); ?>;
-  <?php endif; ?>
-
-  <?php //フォントファミリー
-  if(get_site_font_family()): ?>
-    font-family: <?php echo get_site_font_family(); ?>;
-  <?php endif; ?>
-
-  <?php //文字の太さ
-  if(get_site_font_weight()): ?>
-    font-weight: <?php echo get_site_font_weight(); ?>;
-  <?php endif; ?>
-}
-</style>
 <script type="text/javascript">
 jQuery(function($) {
   function zenToHan(text) {
@@ -799,3 +780,84 @@ function add_custom_admin_body_class($classes) {
   $classes .= ' classicpress';
   return $classes;
 }
+
+// ブロックエディター用フォント設定（iframe 内に注入）
+// WP 6.3+ では enqueue_block_assets が iframe 内で実行されるため、
+// admin_head で div.editor-block-list__block を対象にしていた旧方式を置き換える
+add_action( 'enqueue_block_assets', 'cocoon_enqueue_editor_font_styles' );
+if ( !function_exists( 'cocoon_enqueue_editor_font_styles' ) ):
+function cocoon_enqueue_editor_font_styles() {
+  // 管理画面以外では実行しない
+  if ( !is_admin() ) return;
+
+  // フォントファミリーのキー文字列から CSS の font-family 値への変換マップ
+  // _font.scss のクラス定義と対応させる
+  $font_family_map = array(
+    'meiryo'             => 'Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif',
+    'yu_gothic'          => 'YuGothic, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif',
+    'ms_pgothic'         => '"MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
+    'noto_sans_jp'       => '"Noto Sans JP", sans-serif',
+    'noto_serif_jp'      => '"Noto Serif JP", sans-serif',
+    'mplus_1p'           => '"M PLUS 1p", sans-serif',
+    'rounded_mplus_1c'   => '"M PLUS Rounded 1c", sans-serif',
+    'kosugi'             => '"Kosugi", sans-serif',
+    'kosugi_maru'        => '"Kosugi Maru", sans-serif',
+    'sawarabi_gothic'    => '"Sawarabi Gothic", sans-serif',
+    'sawarabi_mincho'    => '"Sawarabi Mincho", sans-serif',
+    'noto_sans_korean'   => '"Noto Sans KR", sans-serif',
+    'pretendard'         => '"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif',
+    'microsoft_jhenghei' => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif',
+    'noto_sans_tc'       => '"Noto Sans TC", sans-serif',
+    // hiragino はブラウザデフォルトと同等なのでマップに含めない（空の扱い）
+  );
+
+  // フォント設定値を配列に集める
+  $rules = array();
+  if ( get_site_font_size() ) {
+    $rules[] = 'font-size: ' . esc_attr( get_site_font_size() ) . ';';
+  }
+  // フォントファミリーはキー値を CSS の font-family 値に変換して出力する
+  $font_family_key = get_site_font_family();
+  if ( $font_family_key && isset( $font_family_map[ $font_family_key ] ) ) {
+    $rules[] = 'font-family: ' . $font_family_map[ $font_family_key ] . ';';
+  }
+  if ( get_site_font_weight() ) {
+    $rules[] = 'font-weight: ' . esc_attr( get_site_font_weight() ) . ';';
+  }
+
+  // フォント設定がなければ何もしない
+  if ( empty( $rules ) ) return;
+
+  // .editor-styles-wrapper はブロックエディター iframe 内のコンテンツ領域のラッパー
+  $css = '.editor-styles-wrapper, .editor-styles-wrapper p { '
+       . implode( ' ', $rules )
+       . ' }';
+
+  // ダミーハンドルにインライン CSS を付加して iframe 内の <style> として出力
+  wp_register_style( 'cocoon-editor-font-inline', false, array(), false );
+  wp_enqueue_style( 'cocoon-editor-font-inline' );
+  wp_add_inline_style( 'cocoon-editor-font-inline', $css );
+}
+endif;
+
+// ブロックエディター内の文字数カウンター非表示（iframe 内に注入）
+// admin_print_styles での外側注入は WP 7.0 の iframe 内に届かないため、
+// enqueue_block_assets で補完する
+add_action( 'enqueue_block_assets', 'cocoon_enqueue_editor_counter_style' );
+if ( !function_exists( 'cocoon_enqueue_editor_counter_style' ) ):
+function cocoon_enqueue_editor_counter_style() {
+  // 管理画面以外では実行しない
+  if ( !is_admin() ) return;
+  // 投稿編集画面以外では実行しない
+  if ( !is_admin_post_page() ) return;
+  // カウンター表示設定がオンなら何もしない
+  if ( is_admin_editor_counter_visible() ) return;
+
+  // 文字数カウンターの疑似要素を非表示にする CSS
+  wp_register_style( 'cocoon-editor-counter-hide', false, array(), false );
+  wp_enqueue_style( 'cocoon-editor-counter-hide' );
+  wp_add_inline_style( 'cocoon-editor-counter-hide',
+    '.editor-post-title::after { display: none !important; }'
+  );
+}
+endif;

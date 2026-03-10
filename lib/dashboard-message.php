@@ -49,24 +49,22 @@ function dashboard_message_css() {
 	echo "
 	<style type='text/css'>
 	#dashboard-message {
-		float: right;
+		display: block;
+		width: fit-content;
+		margin-inline-start: auto;
 		padding: 5px 10px;
-		margin: 0;
+		margin-block: 0;
 		font-size: 12px;
 		line-height: 1.6666;
-	}
-	.rtl #dashboard-message {
-		float: left;
 	}
 	.block-editor-page #dashboard-message {
 		display: none;
 	}
 	@media screen and (max-width: 782px) {
-		#dashboard-message,
-		.rtl #dashboard-message {
-			float: none;
-			padding-left: 0;
-			padding-right: 0;
+		#dashboard-message {
+			width: auto;
+			margin-inline-start: 0;
+			padding-inline: 0;
 		}
 	}
 	</style>

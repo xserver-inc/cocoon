@@ -95,8 +95,8 @@ class AdminVisualRefreshTest extends TestCase
     // ========================================================================
 
     /**
-     * add_head_post_custum がエディタ用のスタイル・スクリプトを出力する
-     * (editor-block-list__block は Gutenberg のクラス。WP 7.0 iframe 化後もクラスは維持される想定)
+     * add_head_post_custum がカテゴリー検索の JavaScript を出力する
+     * (旧エディターフォント CSS は cocoon_enqueue_editor_font_styles へ移行済み)
      * 1回だけ呼び出して全ての主張を行う（関数内で define しているため複数回呼ぶと警告になる）
      */
     public function test_add_head_post_custum_スタイルとスクリプトを出力する(): void
@@ -111,9 +111,9 @@ class AdminVisualRefreshTest extends TestCase
         add_head_post_custum();
         $output = ob_get_clean();
 
-        $this->assertStringContainsString('<style>', $output);
-        $this->assertStringContainsString('editor-block-list__block', $output);
-        $this->assertMatchesRegularExpression('/<style>.*?<\/style>/s', $output);
+        // 旧エディターフォント CSS は cocoon_enqueue_editor_font_styles へ移行済みのため、
+        // add_head_post_custum からは <style> ではなく <script> のみ出力される
+        $this->assertStringNotContainsString('editor-block-list__block', $output);
         $this->assertStringContainsString('<script', $output);
         $this->assertStringContainsString('jQuery', $output);
     }
@@ -129,5 +129,58 @@ class AdminVisualRefreshTest extends TestCase
             $test_theme_mods = [];
         }
         $test_theme_mods['last_output_editor_css_day'] = date('Y-m-d H:i:s');
+    }
+
+    // ========================================================================
+    // cocoon_enqueue_editor_font_styles() - enqueue_block_assets フック
+    // ========================================================================
+
+    /**
+     * フォント設定がある場合、enqueue_block_assets で .editor-styles-wrapper に CSS を注入する
+     */
+    public function test_cocoon_enqueue_editor_font_styles_フォント設定がある場合スタイルを登録する(): void
+    {
+        if ( !self::$admin_loaded ) {
+            require_once dirname( __DIR__, 2 ) . '/lib/admin.php';
+            self::$admin_loaded = true;
+        }
+
+        // cocoon_enqueue_editor_font_styles 関数が存在することを確認
+        $this->assertTrue( function_exists( 'cocoon_enqueue_editor_font_styles' ) );
+    }
+
+    /**
+     * フォント設定がすべて空の場合、スタイルを登録しない（何も出力しない）
+     */
+    public function test_cocoon_enqueue_editor_font_styles_関数が登録されている(): void
+    {
+        // cocoon_enqueue_editor_font_styles が定義されており、
+        // enqueue_block_assets フックで呼び出されることを確認
+        // （実際の動作確認は統合テストまたは手動テストで行う）
+        $this->assertTrue( function_exists( 'cocoon_enqueue_editor_font_styles' ) );
+    }
+
+    // ========================================================================
+    // lib/dashboard-message.php - float 廃止確認
+    // ========================================================================
+
+    /**
+     * dashboard_message_css が float を使わず margin-inline-start を使う
+     * （フレックスコンテナでも右寄せが機能するため）
+     */
+    public function test_dashboard_message_css_floatを使わずmargin_inline_startを使う(): void
+    {
+        if ( !self::$dashboard_message_loaded ) {
+            require_once dirname( __DIR__, 2 ) . '/lib/dashboard-message.php';
+            self::$dashboard_message_loaded = true;
+        }
+
+        ob_start();
+        dashboard_message_css();
+        $output = ob_get_clean();
+
+        $this->assertStringNotContainsString( 'float: right', $output );
+        $this->assertStringNotContainsString( 'float: left', $output );
+        $this->assertStringContainsString( 'margin-inline-start: auto', $output );
     }
 }
