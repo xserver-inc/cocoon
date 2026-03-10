@@ -597,9 +597,9 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
   if ($priceFetchedAt) {
     // ISO文字列（UTC）→ UnixタイムスタンプをWordPressのタイムゾーンでフォーマット
     $ts = strtotime($priceFetchedAt);
-    $acquired_date = $ts ? wp_date(__( 'Y/m/d H:i', THEME_NAME ), $ts) : date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+    $acquired_date = $ts ? wp_date(__( 'Y/m/d H:i', THEME_NAME ), $ts) : wp_date(__( 'Y/m/d H:i', THEME_NAME ));
   } else {
-    $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+    $acquired_date = wp_date(__( 'Y/m/d H:i', THEME_NAME ));
   }
   if ($showPrice) {
     $DisplayAmount = '';

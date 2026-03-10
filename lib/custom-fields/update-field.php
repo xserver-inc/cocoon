@@ -44,7 +44,7 @@ function update_custom_box_view() {
       $stamp = __( '更新日時:', THEME_NAME ).'<span style="font-weight:bold">未更新</span>';
     }
     if (isset($post->post_modified)) {
-      $date = date_i18n( get_option('date_format') . ' @ ' . get_option('time_format'), strtotime( $post->post_modified ) );
+      $date = get_the_modified_time( get_option('date_format') . ' @ ' . get_option('time_format'), $post );
     }
   ?>
   <style>
@@ -138,10 +138,10 @@ function update_custom_insert_post_data( $data, $postarr ){
     }
   }
   elseif( $mydata === 'edit' ) {
-    $aa_mod = (isset($_POST['aa_mod']) && $_POST['aa_mod'] > 0) ? $_POST['aa_mod'] : date_i18n('Y');
-    $mm_mod = (isset($_POST['mm_mod']) && $_POST['mm_mod'] > 0) ? $_POST['mm_mod'] : date_i18n('n');
-    $jj_mod = isset($_POST['jj_mod']) ? ($_POST['jj_mod'] > 31 ? 31 : $_POST['jj_mod']) : date_i18n('j');
-    $jj_mod = $jj_mod <= 0 ? date_i18n('j') : $jj_mod;
+    $aa_mod = (isset($_POST['aa_mod']) && $_POST['aa_mod'] > 0) ? $_POST['aa_mod'] : wp_date('Y');
+    $mm_mod = (isset($_POST['mm_mod']) && $_POST['mm_mod'] > 0) ? $_POST['mm_mod'] : wp_date('n');
+    $jj_mod = isset($_POST['jj_mod']) ? ($_POST['jj_mod'] > 31 ? 31 : $_POST['jj_mod']) : wp_date('j');
+    $jj_mod = $jj_mod <= 0 ? wp_date('j') : $jj_mod;
     $hh_mod = isset($_POST['hh_mod']) ? ($_POST['hh_mod'] > 23 ? $_POST['hh_mod'] -24 : $_POST['hh_mod']) : 0;
     $mn_mod = isset($_POST['mn_mod']) ? ($_POST['mn_mod'] > 59 ? $_POST['mn_mod'] -60 : $_POST['mn_mod']) : 0;
     $ss_mod = isset($_POST['ss_mod']) ? ($_POST['ss_mod'] > 59 ? $_POST['ss_mod'] -60 : $_POST['ss_mod']) : 0;

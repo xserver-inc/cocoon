@@ -561,7 +561,7 @@ endif;
 //カウントダウンタイマーの取得
 if ( !function_exists( 'get_countdown_days' ) ):
 function get_countdown_days( $to ) {
-  $now = date_i18n('U');
+  $now = wp_date('U');
   $diff = (int) ($to - $now);
   $days = ceil($diff / 86400);
   if ($days <= 0) {
@@ -937,7 +937,7 @@ function campaign_shortcode( $atts, $content = null ) {
   //内容がない場合は何も表示しない
   if (!$content) return null;
   //現在の日時を取得
-  $now = date_i18n('U');
+  $now = wp_date('U');
 
   //いつから（開始日時）
   $from = sanitize_shortcode_value($from);
@@ -992,7 +992,7 @@ function date_shortcode( $atts ) {
     'format' => 'Y/m/d',
   ), $atts, 'date' ) );
 
-  return date_i18n($format);
+  return wp_date($format);
 }
 endif;
 

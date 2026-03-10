@@ -21,7 +21,7 @@ function get_common_related_args($post_id){
   );
   //取得期間指定
   if (get_related_entry_period()) {
-    $ago = date_i18n('Y-m-d 0:0:0', strtotime(get_related_entry_period()));
+    $ago = wp_date('Y-m-d 0:0:0', strtotime(get_related_entry_period()));
     $related_args['date_query'] = array(
       array(
         'after'     => $ago,

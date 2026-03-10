@@ -399,7 +399,7 @@ function get_amazon_itemlookup_json($asin, $tracking_id = null){
     if (DEBUG_CACHE_ENABLE) {
       //一応、XML取得時のタイムスタンプを保存しておく
       $count = 1;
-      $res = str_replace(',"BrowseNodeInfo":{', ',"date":"'.date_i18n( 'Y/m/d H:i').'","BrowseNodeInfo":{', $res, $count);
+      $res = str_replace(',"BrowseNodeInfo":{', ',"date":"'.wp_date( 'Y/m/d H:i').'","BrowseNodeInfo":{', $res, $count);
       //_v($res);
       //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
       $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
@@ -861,7 +861,7 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////////
       $item_price_tag = null;
       //JSONから時間情報を取得（無い場合は現時間）
-      $acquired_date = isset($item->{'date'}) ? $item->{'date'} : date_i18n( 'Y/m/d H:i');
+      $acquired_date = isset($item->{'date'}) ? $item->{'date'} : wp_date( 'Y/m/d H:i');
       if ((is_amazon_item_price_visible() || $price === '1')
             && $FormattedPrice
             && $price !== '0'
@@ -1083,7 +1083,7 @@ endif;
 if ( !function_exists( 'error_log_to_amazon_product' ) ):
 function error_log_to_amazon_product($asin, $message = ''){
   //エラーログに出力
-  $date = date_i18n("Y-m-d H:i:s");
+  $date = wp_date("Y-m-d H:i:s");
   $msg = $date.','.
          $asin.','.
          get_the_permalink().

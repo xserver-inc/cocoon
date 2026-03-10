@@ -260,7 +260,7 @@ function cocoon_rakuten_block_fetch_item($itemCode){
   // リクエストが成功し、キャッシュがなかった場合のみ保存（バックアップキャッシュからの復元時は日付が既に挿入済みのためスキップ）
   if (!$json_cache && $is_request_success && !$used_bk_cache && DEBUG_CACHE_ENABLE) {
     $cache_expiration = DAY_IN_SECONDS + (rand(0, 60) * 60);
-    $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+    $acquired_date = wp_date(__( 'Y/m/d H:i', THEME_NAME ));
     $save_response = $response;
     // wp_remote_get()の直後はbodyは必ず文字列（キャッシュ保存前なのでデコード済みオブジェクトではない）
     // preg_replaceを避けバックリファレンス展開の問題を回避するためsubstr_replaceを使用
@@ -550,9 +550,9 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
   if ($priceFetchedAt) {
     // ISO文字列（UTC）→ UnixタイムスタンプをWordPressのタイムゾーンでフォーマット
     $ts = strtotime($priceFetchedAt);
-    $acquired_date = $ts ? wp_date(__( 'Y/m/d H:i', THEME_NAME ), $ts) : date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+    $acquired_date = $ts ? wp_date(__( 'Y/m/d H:i', THEME_NAME ), $ts) : wp_date(__( 'Y/m/d H:i', THEME_NAME ));
   } else {
-    $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+    $acquired_date = wp_date(__( 'Y/m/d H:i', THEME_NAME ));
   }
   if ($showPrice && $itemPrice) {
     $FormattedPrice = '￥ '.number_format($itemPrice);

@@ -142,7 +142,7 @@ function cocoon_product_block_debug_log($message, $tag = 'CreatorsAPI'){
   if (!is_dir($log_dir)) {
     wp_mkdir_p($log_dir);
   }
-  $timestamp = date_i18n('Y-m-d H:i:s');
+  $timestamp = wp_date('Y-m-d H:i:s');
   error_log('['.$tag.'] '.$timestamp.' '.$message.PHP_EOL, 3, $log_file);
 }
 endif;
@@ -644,7 +644,7 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
     $count = 1;
     $res = str_replace(
       array(',"browseNodeInfo":{', ',"BrowseNodeInfo":{'),
-      array(',"date":"'.date_i18n( 'Y/m/d H:i').'","browseNodeInfo":{', ',"date":"'.date_i18n( 'Y/m/d H:i').'","BrowseNodeInfo":{'),
+      array(',"date":"'.wp_date( 'Y/m/d H:i').'","browseNodeInfo":{', ',"date":"'.wp_date( 'Y/m/d H:i').'","BrowseNodeInfo":{'),
       $res,
       $count
     );

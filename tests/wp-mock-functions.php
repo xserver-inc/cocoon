@@ -146,9 +146,9 @@ if (!function_exists('is_category')) {
     }
 }
 
-if (!function_exists('date_i18n')) {
-    function date_i18n($format, $timestamp = false, $gmt = false) {
-        if ($timestamp === false) {
+if (!function_exists('wp_date')) {
+    function wp_date($format, $timestamp = null, $timezone = null) {
+        if ($timestamp === null) {
             return date($format);
         }
         return date($format, $timestamp);

@@ -57,24 +57,16 @@ class RakutenBlockTest extends TestCase
         if (!function_exists(__NAMESPACE__ . '\\is_wp_error')) {
             function is_wp_error($obj) { return ($obj instanceof \WP_Error); }
         }
-        if (!function_exists(__NAMESPACE__ . '\\date_i18n')) {
-            // テスト環境では単純にPHPのdate()を使用
-            function date_i18n($format, $timestamp = null) {
-                if ($timestamp !== null) {
-                    return date($format, $timestamp);
-                }
-                return date($format);
-            }
-        }
         if (!function_exists(__NAMESPACE__ . '\\wp_date')) {
-            // テスト環境では単純にdate()で代用
-            function wp_date($format, $timestamp = null) {
+            // テスト環境では単純にPHPのdate()を使用
+            function wp_date($format, $timestamp = null, $timezone = null) {
                 if ($timestamp !== null) {
                     return date($format, $timestamp);
                 }
                 return date($format);
             }
         }
+
 
         // 定数定義
         if (!defined('DEBUG_CACHE_ENABLE')) {

@@ -192,9 +192,8 @@ function manage_cocoon_pwa_files(){
     );
     $query = new WP_Query( $args );
     if (isset($query->post->post_modified)) {
-      $modified_date = '_'.date_i18n('YmdHis', strtotime($query->post->post_modified));
+      $modified_date = '_'.get_the_modified_time('YmdHis', $query->post);
     }
-    // $modified_date = '_'.date_i18n('YmdHis');
 
     //service-worker.js
     $service_worker_ver = THEME_NAME.'_'.PWA_SERVICE_WORKER_VERSION.$modified_date; //PWAに変更を加えたらバージョン変更

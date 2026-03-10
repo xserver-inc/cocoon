@@ -1985,7 +1985,7 @@ endif;
 //アクセステーブル用の現在の日時文字列
 if ( !function_exists( 'get_current_db_date' ) ):
 function get_current_db_date(){
-  return date_i18n('Y-m-d');
+  return wp_date('Y-m-d');
 }
 endif;
 
@@ -2003,7 +2003,7 @@ function get_current_db_date_before($days){
   }
 
   // 2日以上は「$days - 1 日前」を開始日とする
-  return date_i18n('Y-m-d', strtotime(current_time('Y-m-d').' -'.($days - 1).' day'));
+  return wp_date('Y-m-d', strtotime('-' . ($days - 1) . ' days'));
 }
 endif;
 
@@ -2602,7 +2602,7 @@ endif;
 if ( !function_exists( 'get_human_time_diff_advance' ) ):
 function get_human_time_diff_advance( $from, $to = '' ) {
   if ( empty($to) )
-    $to = date_i18n('U');
+    $to = wp_date('U');
   $diff = (int) abs($to - $from);
   // 条件: 3600秒 = 1時間以下なら (元のまま)
   if ($diff <= 3600) {

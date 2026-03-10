@@ -186,7 +186,7 @@ function rakuten_product_link_shortcode($atts){
     $cache_delete_tag = get_cache_delete_tag('rakuten', $cache_id);
     //リクエストが成功した時タグを作成する
     if ($is_request_success) {
-      $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
+      $acquired_date = wp_date(__( 'Y/m/d H:i', THEME_NAME ));
 
       //キャッシュの保存
       if (!$json_cache) {
@@ -505,7 +505,7 @@ endif;
 if ( !function_exists( 'error_log_to_rakuten_product' ) ):
   function error_log_to_rakuten_product($id, $no, $message = '', $keyword = ''){
     //エラーログに出力
-    $msg = date_i18n("Y-m-d H:i:s").','.
+    $msg = wp_date("Y-m-d H:i:s").','.
            $id.','.
            $no.','.
            get_the_permalink().
