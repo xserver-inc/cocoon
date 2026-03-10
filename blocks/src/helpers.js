@@ -34,7 +34,11 @@ export const CLICK_POINT_MSG = __(
 );
 export const BLOCK_SERIES = 'cocoon-blocks';
 
-export const keyColor = gbColors.keyColor;
+// gbColors が未定義の場合に備えた防御的ガード（フォールバック: Cocoon デフォルトキーカラー）
+export const keyColor =
+  typeof gbColors !== 'undefined' && gbColors != null
+    ? gbColors.keyColor
+    : '#19448e';
 
 //日時をもとにしたID作成
 export function getDateID() {
@@ -829,7 +833,9 @@ export function RankingToolbarButton( {
 }
 
 //コードブロックの言語配列
-export const CODE_LANGUAGES = gbCodeLanguages;
+// gbCodeLanguages が未定義の場合に備えた防御的ガード
+export const CODE_LANGUAGES =
+  typeof gbCodeLanguages !== 'undefined' ? gbCodeLanguages : [];
 
 /**
  * カンマ区切りの数字を羅列した文字列に数字を追加する関数
