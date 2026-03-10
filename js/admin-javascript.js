@@ -36,8 +36,12 @@ function deleteWpAdminBar( selector ) {
         if ( wpAdminBar ) wpAdminBar.style.display = 'none';
         const adminPanel = iframeContent.querySelector( '.admin-panel' );
         if ( adminPanel ) adminPanel.style.display = 'none';
-        iframeContent.documentElement.style.cssText =
-          'margin-top: 0px !important';
+        // インラインスタイルを個別に設定し、他のプロパティ（WPコアのCSS変数等）を保持する
+        iframeContent.documentElement.style.setProperty(
+          'margin-top',
+          '0px',
+          'important'
+        );
         // プレビュー内でadminbarを非表示にした際、ヘッダーモバイルボタンの位置ずれを防ぐため、CSS変数も0pxに設定
         iframeContent.documentElement.style.setProperty(
           '--wp-admin--admin-bar--height',
