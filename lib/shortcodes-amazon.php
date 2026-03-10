@@ -310,55 +310,30 @@ function get_amazon_itemlookup_json($asin, $tracking_id = null){
   $awsv4->addHeader ('host', $host);
   $awsv4->addHeader ('x-amz-target', 'com.amazon.paapi5.v1.ProductAdvertisingAPIv1.GetItems');
   $headers = $awsv4->getHeaders ();
-  $headerString = "";
+  // ヘッダーを連想配列形式で整形する（wp_remote_post向け）
+  $wp_headers = array();
   foreach ( $headers as $key => $value ) {
-		$curl_headers[] = $key . ': ' . $value;
-    $headerString .= $key . ': ' . $value . "\r\n";
+    $wp_headers[$key] = $value;
   }
 
-  //cURLがインストールされていれば利用する
-  if ( ini_get('allow_url_fopen') == '1' ) {
-    $params = array (
-      'http' => array (
-        'header' => $headerString,
-        'method' => 'POST',
-        'content' => $payload,
-        'ignore_errors' => true,
-      )
-    );
-    $stream = stream_context_create( $params );
+  // WordPress標準のHTTP APIでリクエストを送信する
+  $wp_response = wp_remote_post('https://'.$host.$uriPath, array(
+    'headers' => $wp_headers,
+    'body'    => $payload,
+    'timeout' => 10,
+  ));
 
-    $fp = @fopen ( 'https://'.$host.$uriPath, 'rb', false, $stream );
-
-    if (!$fp) {
-      //throw new Exception ( "Exception Occured" );
-      return false;
-    }
-    $res = @stream_get_contents( $fp );
-    if ($res === false) {
-      //throw new Exception ( "Exception Occured" );
-      return false;
-    }
-  } elseif (function_exists( 'curl_version' )) {
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, 'https://' . $host.$uriPath );
-    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST' );
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $payload );
-    curl_setopt($curl, CURLOPT_HTTPHEADER, $curl_headers );
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true );
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true );
-    curl_setopt($curl, CURLOPT_HEADER, true );
-    curl_setopt($curl, CURLOPT_TIMEOUT, 10 );
-    $response	= curl_exec( $curl );
-    $info		= curl_getinfo( $curl );
-    $error_no	= curl_errno( $curl );
-
-    $status_code = $info[ 'http_code' ];
-    $header_size = curl_getinfo( $curl, CURLINFO_HEADER_SIZE );
-    $res = substr( $response, $header_size );
-  } else {
+  // リクエスト自体が失敗した場合（ネットワークエラーなど）
+  if (is_wp_error($wp_response)) {
     return false;
   }
+
+  // レスポンスのボディを取得する
+  $res = wp_remote_retrieve_body($wp_response);
+  if (empty($res)) {
+    return false;
+  }
+
 
   //503エラーの場合はfalseを返す
   if (includes_string($res, 'Website Temporarily Unavailable')) {
