@@ -1122,21 +1122,26 @@ function pattern_editor_save_post($post_id) {
     return;
   }
 
+  // リビジョン保存時は処理をスキップする
+  if (wp_is_post_revision($post_id)) {
+    return;
+  }
+
   $content = get_post_field('post_content', $post_id);
   // tocショートコードが含まれている場合、もしくは投稿タイプが wp_block の場合に処理
   if (is_toc_shortcode_includes($content) && (get_post_type($post_id) === 'wp_block')) {
-    if (!is_classic_editor()) {
-      // ブロックエディターのケース
+    // ブロックエディター（REST API経由の保存）のケース
+    if (is_rest()) {
 
-      // 保存処理をキャンセル
+      // 保存処理をキャンセル（wp_die() は内部で exit するため以降の処理は実行されない）
       wp_die(TOC_SHORTCODE_ERROR_MESSAGE, __('保存エラー' , THEME_NAME), array('response' => 400));
-      return false;
     } else {
-      // クラシックエディターのケース
+      // クラシックエディター（通常のPOST送信）のケース
       add_filter('redirect_post_location', function($location) {
         return add_query_arg('toc_error', 1, $location);
       });
-      // 保存をキャンセルするため false を返す
+      // save_post はアクションフックのため戻り値では保存をキャンセルできない
+      // （この時点で投稿は既にDB保存済み）。エラー通知のみ行い処理を終了する
       return false;
     }
   }

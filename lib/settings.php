@@ -117,7 +117,10 @@ function visual_editor_stylesheets_custom($stylesheets) {
       );
     }
 
-    //ブロックエディターを利用しているとき
+    // アイコンフォントURL: ブロックエディター経由の呼び出し時（gutenberg_editor_settings()）
+    // では use_gutenberg_editor() が常に true を返すためスキップされる。
+    // ブロックエディターではアイコンフォントは gutenberg_stylesheets_custom() 内の
+    // wp_enqueue_style_icomoon() で別途読み込まれるため、二重読み込み防止として正しい動作。
     if (!use_gutenberg_editor()) {
       array_push($stylesheets,
         add_file_ver_to_css_js(get_site_icon_font_url())
@@ -250,15 +253,18 @@ function gutenberg_stylesheets_custom() {
         wp_enqueue_style( THEME_NAME . '-font-awesome-5-style', FONT_AWESOME_5_UPDATE_URL );
       }
 
+      // カラーパレットCSSキャッシュファイルを常に最新状態に保つ
+      // （ブロックエディタ/クラシックエディタ問わず生成しておく）
+      $css = get_block_editor_color_palette_css();
+      $file = get_block_color_palette_css_cache_file();
+      wp_filesystem_put_contents($file, $css, 0);
+
       // ブロックエディタでは gutenberg_editor_settings() が同じ CSS を
       // <style> タグとしてエディタ内に注入するため、wp_enqueue_style() による
       // <link> タグの重複読み込みをスキップする
       // ブロックエディタ以外の画面（Classic Editor 等）でのみ <link> タグでも読み込む
       if ( !use_gutenberg_editor() ) {
         //カラーパレットスタイル
-        $css = get_block_editor_color_palette_css();
-        $file = get_block_color_palette_css_cache_file();
-        wp_filesystem_put_contents($file, $css, 0);
         wp_enqueue_style( THEME_NAME . '-color-palette-style', get_block_color_palette_css_cache_url() );
 
         //スキンが設定されている場合
@@ -359,7 +365,9 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
         $response = wp_remote_get( $item );
         if ( ! is_wp_error( $response ) && wp_remote_retrieve_response_code( $response ) === 200 ) {
           $styles[] = array(
-            'css' => wp_remote_retrieve_body( $response ),
+            'css'     => wp_remote_retrieve_body( $response ),
+            // リモートCSSでもローカル同様に baseURL を設定し、相対URLを正しく解決させる
+            'baseURL' => $item,
           );
         }
       } else {
@@ -372,7 +380,11 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
         }
       }
     }
-    $editor_settings['styles'] = $styles;
+    // 他のプラグインが設定した既存スタイルを保持しつつ、Cocoon のスタイルを追加する
+    $editor_settings['styles'] = array_merge(
+      $editor_settings['styles'] ?? array(),
+      $styles
+    );
   }
 
   return $editor_settings;
