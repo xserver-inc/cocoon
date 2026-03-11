@@ -2901,8 +2901,7 @@ label.screen-reader-text {
 .recent-comment-article {
   margin-top: 3px;
 }
-
-.recent-comment-article > span:before {
+.recent-comment-article > span {
   margin-right: 6px;
 }
 

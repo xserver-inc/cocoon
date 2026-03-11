@@ -3105,6 +3105,9 @@ body.wp-admin {
 .admin-settings .demo .recent-comment-article {
   margin-top: 3px;
 }
+.admin-settings .demo .recent-comment-article > span {
+  margin-right: 6px;
+}
 .admin-settings .demo .recent-comment-content {
   position: relative;
   background: var(--cocoon-white-color);
@@ -11704,6 +11707,9 @@ body.wp-admin {
 }
 .admin-settings .demo .recent-comment-article {
   margin-top: 3px;
+}
+.admin-settings .demo .recent-comment-article > span {
+  margin-right: 6px;
 }
 .admin-settings .demo .recent-comment-content {
   position: relative;

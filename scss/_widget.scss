@@ -404,6 +404,10 @@ label.screen-reader-text{
 
 .recent-comment-article{
   margin-top: 3px;
+
+  > span {
+    margin-right: 6px;
+  }
 }
 
 .recent-comment-content {

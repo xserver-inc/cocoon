@@ -5109,6 +5109,9 @@ label.screen-reader-text {
 .recent-comment-article {
   margin-top: 3px;
 }
+.recent-comment-article > span {
+  margin-right: 6px;
+}
 
 .recent-comment-content {
   position: relative;
