@@ -245,32 +245,37 @@ function gutenberg_stylesheets_custom() {
     //WordPressバージョンが5.8以上の時
     if (is_wp_5_8_or_over()) {
 
-      //カラーパレットスタイル
-      $css = get_block_editor_color_palette_css();
-      $file = get_block_color_palette_css_cache_file();
-      wp_filesystem_put_contents($file, $css, 0);
-      wp_enqueue_style( THEME_NAME . '-color-palette-style', get_block_color_palette_css_cache_url() );
-      // var_dump(get_block_color_palette_css_cache_url());
-
-      //Font Awesome5が有効な場合
+      //Font Awesome5が有効な場合（外部 CDN のため常に wp_enqueue_style で読み込む）
       if (is_site_icon_font_font_awesome_5()) {
         wp_enqueue_style( THEME_NAME . '-font-awesome-5-style', FONT_AWESOME_5_UPDATE_URL );
       }
 
-      //スキンが設定されている場合
-      if (get_skin_url() &&
-          //エディター除外スキンの場合
-          !is_exclude_skin(get_skin_url(), get_editor_exclude_skins())) {
-        wp_enqueue_style( THEME_NAME . '-skin-style', get_skin_url() );
-      }
+      // ブロックエディタでは gutenberg_editor_settings() が同じ CSS を
+      // <style> タグとしてエディタ内に注入するため、wp_enqueue_style() による
+      // <link> タグの重複読み込みをスキップする
+      // ブロックエディタ以外の画面（Classic Editor 等）でのみ <link> タグでも読み込む
+      if ( !use_gutenberg_editor() ) {
+        //カラーパレットスタイル
+        $css = get_block_editor_color_palette_css();
+        $file = get_block_color_palette_css_cache_file();
+        wp_filesystem_put_contents($file, $css, 0);
+        wp_enqueue_style( THEME_NAME . '-color-palette-style', get_block_color_palette_css_cache_url() );
 
-      //カスタムスタイル
-      $cache_file_url = get_theme_css_cache_file_url();
-      wp_enqueue_style( THEME_NAME . '-css-cache-style', $cache_file_url );
+        //スキンが設定されている場合
+        if (get_skin_url() &&
+            //エディター除外スキンの場合
+            !is_exclude_skin(get_skin_url(), get_editor_exclude_skins())) {
+          wp_enqueue_style( THEME_NAME . '-skin-style', get_skin_url() );
+        }
 
-      //子テーマがある場合
-      if (is_child_theme()) {
-        wp_enqueue_style( THEME_NAME . '-child-style', CHILD_THEME_STYLE_CSS_URL );
+        //カスタムスタイル
+        $cache_file_url = get_theme_css_cache_file_url();
+        wp_enqueue_style( THEME_NAME . '-css-cache-style', $cache_file_url );
+
+        //子テーマがある場合
+        if (is_child_theme()) {
+          wp_enqueue_style( THEME_NAME . '-child-style', CHILD_THEME_STYLE_CSS_URL );
+        }
       }
     }
 
@@ -361,7 +366,8 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
         if ( file_exists( $path ) ) {
           $styles[] = array(
             'css'     => wp_filesystem_get_contents( $path ),
-            // 'baseURL' => $item,
+            // CSS 内の相対 URL（url(images/bg.png) 等）をこの URL を基準に解決させる
+            'baseURL' => $item,
           );
         }
       }
