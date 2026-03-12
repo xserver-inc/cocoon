@@ -11262,6 +11262,18 @@ msgstr ""
 msgid "HTMLを挿入してください"
 msgstr ""
 
+#: blocks/src/toolbutton/html.js:68
+msgid "HTMLを入力してください。"
+msgstr ""
+
+#: blocks/src/toolbutton/html.js:79
+msgid "挿入するHTMLコードを入力します。[html]...[/html] ショートコードとして埋め込まれます。"
+msgstr ""
+
+#: blocks/src/toolbutton/html.js:100
+msgid "キャンセル"
+msgstr ""
+
 #: lib/tinymce/shortcodes.php:54
 msgid "広告 [ad]"
 msgstr ""

@@ -11033,6 +11033,19 @@ msgstr "插入HTML"
 msgid "HTMLを挿入してください"
 msgstr "请插入HTML"
 
+
+#: blocks/src/toolbutton/html.js:68
+msgid "HTMLを入力してください。"
+msgstr "请输入HTML。"
+
+#: blocks/src/toolbutton/html.js:79
+msgid "挿入するHTMLコードを入力します。[html]...[/html] ショートコードとして埋め込まれます。"
+msgstr "输入要插入的HTML代码。将作为 [html]...[/html] 短代码嵌入。"
+
+#: blocks/src/toolbutton/html.js:100
+msgid "キャンセル"
+msgstr "取消"
+
 #: lib/tinymce/shortcodes.php:54
 msgid "広告 [ad]"
 msgstr "广告 [ad]"
