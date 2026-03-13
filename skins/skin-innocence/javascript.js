@@ -1,3 +1,4 @@
 //ここにスキンで利用するJavaScriptを記入する
-$(function () { $('.date-tags').insertAfter('.entry-title'); });
-
+(function ($) {
+  $(function () { $('.date-tags').insertAfter('.entry-title'); });
+})(jQuery);

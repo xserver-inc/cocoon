@@ -17,7 +17,8 @@
 })();
 
 //目次へスクロールで移動
-  $(function(){
+(function ($) {
+  $(function(){
     // #で始まるアンカーをクリックした場合に処理
     $('a[href^=#]').click(function() {
       // スクロールの速度
@@ -33,4 +34,4 @@
       return false;
     });
   });
-
+})(jQuery);
