@@ -285,7 +285,7 @@ endif;
 //通知メッセージの生成
 if ( !function_exists( 'generate_notice_message_tag' ) ):
 function generate_notice_message_tag($caption){?>
-  <div class="updated">
+  <div class="notice notice-success is-dismissible">
     <p>
       <strong>
         <?php echo $caption; ?>
@@ -299,7 +299,7 @@ endif;
 //エラーメッセージの生成
 if ( !function_exists( 'generate_error_message_tag' ) ):
 function generate_error_message_tag($caption){?>
-  <div class="error">
+  <div class="notice notice-error is-dismissible">
     <p>
       <strong>
         <?php echo $caption; ?>

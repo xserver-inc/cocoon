@@ -22,7 +22,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
-<div class="updated">
+<div class="notice notice-success is-dismissible">
   <p>
     <strong>
       <?php _e('設定をリストアしました。', THEME_NAME ); ?>

@@ -131,7 +131,7 @@ endif;
 $is_reset_ok = isset($_GET['reset']) && $_GET['reset'];
 if ($is_post_ok || $is_reset_ok):
 ?>
-<div class="updated">
+<div class="notice notice-success is-dismissible">
   <p>
     <strong>
       <?php

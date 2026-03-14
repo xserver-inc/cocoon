@@ -45,7 +45,7 @@ if( isset($_GET['cache']) && isset($_GET[HIDDEN_DELETE_FIELD_NAME]) && wp_verify
 
 ?>
 <?php if ($res): ?>
-<div class="updated">
+<div class="notice notice-success is-dismissible">
   <p>
     <strong>
       <?php echo esc_html($message); ?>

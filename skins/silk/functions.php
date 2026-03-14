@@ -1202,9 +1202,9 @@ class Skin_Silk_Functions {
     if (isset($_POST[self::HIDDEN]) && wp_verify_nonce($_POST[self::HIDDEN], 'skin-option') && $_FILES['options']['name'] != '') {
       if ($_FILES['options']['type'] === 'application/json') {
         $this->update_option($_FILES);
-        echo '<div class="updated"><p><strong>設定を追加しました。</strong></p></div>';
+        echo '<div class="notice notice-success is-dismissible"><p><strong>設定を追加しました。</strong></p></div>';
       } else {
-        echo '<div class="error"><p><strong>JSONファイルを選択してください。</strong></p></div>';
+        echo '<div class="notice notice-error is-dismissible"><p><strong>JSONファイルを選択してください。</strong></p></div>';
       }
     } ?>
 
