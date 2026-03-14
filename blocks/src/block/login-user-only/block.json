@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "cocoon-blocks/login-user-only",
+  "title": "ログインユーザー限定",
+  "category": "cocoon-block",
+  "description": "ログインしているユーザーにのみコンテンツを表示します",
+  "keywords": [ "login", "user", "only", "member", "会員" ],
+  "textdomain": "cocoon",
+  "attributes": {
+    "msg": {
+      "type": "string",
+      "default": "こちらのコンテンツはログインユーザーのみに表示されます。"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [ "wide", "full" ],
+    "anchor": true,
+    "__experimentalLayout": true
+  }
+}

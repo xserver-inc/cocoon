@@ -493,13 +493,14 @@ require_once abspath(__FILE__) . 'block/profile/index.php';
 require_once abspath(__FILE__) . 'block/new-list/index.php';
 require_once abspath(__FILE__) . 'block/popular-list/index.php';
 require_once abspath(__FILE__) . 'block/info-list/index.php';
-require_once abspath(__FILE__) . 'block/navicard/index.php';
-require_once abspath(__FILE__) . 'block/tab/index.php';
-require_once abspath(__FILE__) . 'block/tab-item/index.php';
 require_once abspath(__FILE__) . 'block/cta/index.php';
 require_once abspath(__FILE__) . 'block/radar/index.php';
 require_once abspath(__FILE__) . 'block/faq/index.php';
 require_once abspath(__FILE__) . 'block/campaign/index.php';
+require_once abspath(__FILE__) . 'block/navicard/index.php';
+require_once abspath(__FILE__) . 'block/tab/index.php';
+require_once abspath(__FILE__) . 'block/tab-item/index.php';
+require_once abspath(__FILE__) . 'block/login-user-only/index.php';
 
 require_once abspath(__FILE__) . 'block-universal/caption-box/index.php';
 require_once abspath(__FILE__) . 'block-universal/tab-caption-box/index.php';
