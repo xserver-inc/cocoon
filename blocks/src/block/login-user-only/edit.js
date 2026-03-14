@@ -21,7 +21,7 @@ export default function LoginUserOnlyEdit( { attributes, setAttributes } ) {
   const blockProps = useBlockProps( {
     className: 'login-user-only block-box',
     style: {
-      border: '2px dotted #4caf50',
+      border: '2px dotted #3f51b5',
       padding: '24px',
       position: 'relative',
       textAlign: 'center',
@@ -50,7 +50,7 @@ export default function LoginUserOnlyEdit( { attributes, setAttributes } ) {
             position: 'absolute',
             top: '-12px',
             left: '16px',
-            background: '#4caf50',
+            background: '#3f51b5',
             color: '#fff',
             padding: '4px 8px',
             fontSize: '12px',
@@ -59,7 +59,7 @@ export default function LoginUserOnlyEdit( { attributes, setAttributes } ) {
             zIndex: 1,
           } }
         >
-          { __( '🔒 ログインユーザー限定', THEME_NAME ) }
+          { __( 'ログインユーザー限定', THEME_NAME ) }
         </div>
         { /* 注意: エディタ上では常に中身（InnerBlocks）が表示されます */ }
         <div style={ { marginTop: '8px' } }>
