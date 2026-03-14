@@ -2602,7 +2602,7 @@ endif;
 if ( !function_exists( 'get_human_time_diff_advance' ) ):
 function get_human_time_diff_advance( $from, $to = '' ) {
   if ( empty($to) )
-    $to = wp_date('U');
+    $to = current_time('timestamp');
   $diff = (int) abs($to - $from);
   // 条件: 3600秒 = 1時間以下なら (元のまま)
   if ($diff <= 3600) {
