@@ -1,0 +1,39 @@
+{
+  "apiVersion": 3,
+  "name": "cocoon-blocks/campaign",
+  "category": "cocoon-block",
+  "keywords": [
+    "campaign",
+    "キャンペーン",
+    "期間"
+  ],
+  "attributes": {
+    "from": {
+      "type": "string",
+      "default": ""
+    },
+    "to": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "example": {
+    "attributes": {
+      "from": "2025/01/01",
+      "to": "2025/12/31"
+    },
+    "innerBlocks": [
+      {
+        "name": "core/paragraph",
+        "attributes": {
+          "content": "キャンペーン期間中のみ表示されるコンテンツです。"
+        }
+      }
+    ]
+  },
+  "supports": {
+    "anchor": true,
+    "html": false,
+    "className": true
+  }
+}

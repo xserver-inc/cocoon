@@ -50,6 +50,8 @@ import * as tab from './block/tab';
 import * as tabItem from './block/tab-item';
 import * as cta from './block/cta';
 import * as radar from './block/radar';
+// キャンペーンブロック
+import * as campaign from './block/campaign';
 // Amazon商品リンクブロック
 import * as amazonProductLink from './block/amazon-product-link';
 // 楽天商品リンクブロック
@@ -91,6 +93,7 @@ const cocoonBlocks = [
   tabItem,
   cta,
   radar,
+  campaign,
   amazonProductLink,
   rakutenProductLink,
 
