@@ -342,6 +342,53 @@ function add_wp_block_custom_fields($column_name, $term_id){
 }
 endif;
 
+/**
+ * パターン管理画面のカテゴリーカラムをソート可能にする
+ */
+add_filter( 'manage_edit-wp_block_sortable_columns', 'customize_wp_block_sortable_columns' );
+if ( !function_exists( 'customize_wp_block_sortable_columns' ) ):
+function customize_wp_block_sortable_columns( $columns ) {
+  $columns['taxonomy-wp_pattern_category'] = 'pattern_category';
+  return $columns;
+}
+endif;
+
+/**
+ * パターン管理画面のカテゴリーソート処理
+ */
+add_action( 'pre_get_posts', 'customize_wp_block_category_sort' );
+if ( !function_exists( 'customize_wp_block_category_sort' ) ):
+function customize_wp_block_category_sort( $query ) {
+  if ( !is_admin() || !$query->is_main_query() ) {
+    return;
+  }
+
+  // 対象のポストタイプとソートキーを確認
+  if ( $query->get( 'post_type' ) === 'wp_block' && $query->get( 'orderby' ) === 'pattern_category' ) {
+    add_filter( 'posts_clauses', 'customize_wp_block_category_sort_clauses', 10, 2 );
+  }
+}
+endif;
+
+/**
+ * カテゴリー名でソートするためのSQLクエリを構築する
+ */
+if ( !function_exists( 'customize_wp_block_category_sort_clauses' ) ):
+function customize_wp_block_category_sort_clauses( $clauses, $query ) {
+  global $wpdb;
+  // ソート順を取得
+  $order = strtoupper( $query->get( 'order' ) ) === 'ASC' ? 'ASC' : 'DESC';
+  // カテゴリーテーブルをジョイン
+  $clauses['join'] .= " LEFT JOIN {$wpdb->term_relationships} AS tr ON ({$wpdb->posts}.ID = tr.object_id) LEFT JOIN {$wpdb->term_taxonomy} AS tt ON (tr.term_taxonomy_id = tt.term_taxonomy_id AND tt.taxonomy = 'wp_pattern_category') LEFT JOIN {$wpdb->terms} AS t ON (tt.term_id = t.term_id) ";
+  // ソート順序を指定
+  $clauses['orderby'] = "t.name {$order}";
+  // グループ化して重複を避ける
+  $clauses['groupby'] = "{$wpdb->posts}.ID";
+  return $clauses;
+}
+endif;
+
+
 //管理ツールバーにメニュー追加
 if (is_admin_tool_menu_visible() && is_user_administrator()) {
   add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
