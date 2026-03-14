@@ -45,7 +45,7 @@ export default function CampaignEdit( { attributes, setAttributes } ) {
     className: 'campaign block-box',
     style: {
       opacity: inPeriod ? 1 : 0.6,
-      border: inPeriod ? 'none' : '2px dashed #999',
+      border: `2px dashed ${ inPeriod ? '#4caf50' : '#999' }`,
       padding: '24px',
     },
   } );
@@ -131,24 +131,25 @@ export default function CampaignEdit( { attributes, setAttributes } ) {
       </InspectorControls>
 
       <div { ...blockProps }>
-        { /* 期間外の場合にラベルを表示 */ }
-        { ! inPeriod && (
-          <div
-            style={ {
-              background: '#e09b3d',
-              color: '#111',
-              padding: '6px 12px',
-              fontSize: '13px',
-              fontWeight: 'bold',
-              borderRadius: '4px',
-              marginBottom: '16px',
-              display: 'inline-block',
-            } }
-          >
-            { __( '⏳ 現在は表示期間外です', THEME_NAME ) }
-          </div>
-        ) }
+        { /* 状態ラベルの表示 */ }
+        <div
+          style={ {
+            background: inPeriod ? '#4caf50' : '#e09b3d',
+            color: inPeriod ? '#fff' : '#111',
+            padding: '6px 12px',
+            fontSize: '13px',
+            fontWeight: 'bold',
+            borderRadius: '4px',
+            marginBottom: '16px',
+            display: 'inline-block',
+          } }
+        >
+          { inPeriod
+            ? __( '現在は表示期間内です', THEME_NAME )
+            : __( '現在は表示期間外です', THEME_NAME ) }
+        </div>
         <InnerBlocks />
+
       </div>
     </Fragment>
   );
