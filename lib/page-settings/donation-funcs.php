@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_PRIVILEGE_ACTIVATION_CODE', 'privilege_activation_code');
 if ( !function_exists( 'get_privilege_activation_code' ) ):
 function get_privilege_activation_code(){
-  return get_theme_option(OP_PRIVILEGE_ACTIVATION_CODE);
+  return get_theme_option(OP_PRIVILEGE_ACTIVATION_CODE, '');
 }
 endif;
 

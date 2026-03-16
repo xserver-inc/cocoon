@@ -31,7 +31,7 @@ endif;
 define('OP_HIGHSPEED_MODE_EXCLUDE_LIST', 'highspeed_mode_exclude_list');
 if ( !function_exists( 'get_highspeed_mode_exclude_list' ) ):
 function get_highspeed_mode_exclude_list(){
-  return stripslashes_deep(get_theme_option(OP_HIGHSPEED_MODE_EXCLUDE_LIST));
+  return stripslashes_deep(get_theme_option(OP_HIGHSPEED_MODE_EXCLUDE_LIST, ''));
 }
 endif;
 
@@ -64,7 +64,7 @@ endif;
 define('OP_CSS_MINIFY_EXCLUDE_LIST', 'css_minify_exclude_list');
 if ( !function_exists( 'get_css_minify_exclude_list' ) ):
 function get_css_minify_exclude_list(){
-  return stripslashes_deep(get_theme_option(OP_CSS_MINIFY_EXCLUDE_LIST));
+  return stripslashes_deep(get_theme_option(OP_CSS_MINIFY_EXCLUDE_LIST, ''));
 }
 endif;
 
@@ -80,7 +80,7 @@ endif;
 define('OP_JS_MINIFY_EXCLUDE_LIST', 'js_minify_exclude_list');
 if ( !function_exists( 'get_js_minify_exclude_list' ) ):
 function get_js_minify_exclude_list(){
-  return stripslashes_deep(get_theme_option(OP_JS_MINIFY_EXCLUDE_LIST));
+  return stripslashes_deep(get_theme_option(OP_JS_MINIFY_EXCLUDE_LIST, ''));
 }
 endif;
 
@@ -96,7 +96,7 @@ endif;
 define('OP_LAZY_LOAD_EXCLUDE_LIST', 'lazy_load_exclude_list');
 if ( !function_exists( 'get_lazy_load_exclude_list' ) ):
 function get_lazy_load_exclude_list(){
-  return stripslashes_deep(get_theme_option(OP_LAZY_LOAD_EXCLUDE_LIST));
+  return stripslashes_deep(get_theme_option(OP_LAZY_LOAD_EXCLUDE_LIST, ''));
 }
 endif;
 
@@ -147,7 +147,7 @@ endif;
 // define('OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST', 'footer_javascript_exclude_list');
 // if ( !function_exists( 'get_footer_javascript_exclude_list' ) ):
 // function get_footer_javascript_exclude_list(){
-//   return stripslashes_deep(get_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST));
+//   return stripslashes_deep(get_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST, ''));
 // }
 // endif;
 

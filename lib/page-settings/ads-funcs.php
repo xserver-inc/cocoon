@@ -561,7 +561,7 @@ endif;
 define('OP_AD_LINKSWITCH_ID', 'ad_linkswitch_id');
 if ( !function_exists( 'get_ad_linkswitch_id' ) ):
 function get_ad_linkswitch_id(){
-  $linkswitch_id = get_theme_option(OP_AD_LINKSWITCH_ID);
+  $linkswitch_id = get_theme_option(OP_AD_LINKSWITCH_ID, '');
   $linkswitch_id = trim($linkswitch_id);
   $linkswitch_id = strip_tags($linkswitch_id);
   return $linkswitch_id;

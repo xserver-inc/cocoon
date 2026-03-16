@@ -80,7 +80,7 @@ endif;
 define('OP_INDEX_CATEGORY_IDS_COMMA_TEXT', 'index_category_ids_comma_text');
 if ( !function_exists( 'get_index_category_ids_comma_text' ) ):
 function get_index_category_ids_comma_text(){
-  return get_theme_option(OP_INDEX_CATEGORY_IDS_COMMA_TEXT);
+  return get_theme_option(OP_INDEX_CATEGORY_IDS_COMMA_TEXT, '');
 }
 endif;
 
@@ -88,7 +88,7 @@ endif;
 define('OP_INDEX_SORT_ORDERBY', 'index_sort_orderby');
 if ( !function_exists( 'get_index_sort_orderby' ) ):
 function get_index_sort_orderby(){
-  return get_theme_option(OP_INDEX_SORT_ORDERBY);
+  return get_theme_option(OP_INDEX_SORT_ORDERBY, '');
 }
 endif;
 //インデックスの並び順は投稿日順か
