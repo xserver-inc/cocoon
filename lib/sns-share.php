@@ -528,6 +528,20 @@ function get_facebook_share_url(){
 }
 endif;
 
+//ThreadsのシェアURLを取得
+if ( !function_exists( 'get_threads_share_url' ) ):
+function get_threads_share_url(){
+  return 'https://www.threads.net/intent/post?text='.urlencode( get_share_page_title().' '.get_share_page_url() );
+}
+endif;
+
+//Threadsカウントの取得（取得方法が出てきた時・カスタマイズ用）
+if ( !function_exists( 'get_threads_count' ) ):
+function get_threads_count($url = null) {
+  return '';
+}
+endif;
+
 //はてブのシェアURLを取得
 if ( !function_exists( 'get_hatebu_share_url' ) ):
 function get_hatebu_share_url(){
@@ -645,6 +659,16 @@ function is_facebook_share_button_visible($option){
          (is_top_facebook_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
   return apply_filters('is_facebook_share_button_visible', $res, $option);
+}
+endif;
+
+//Threadsシェアボタンを表示するか
+if ( !function_exists( 'is_threads_share_button_visible' ) ):
+function is_threads_share_button_visible($option){
+  $res = (is_bottom_threads_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_threads_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
+  return apply_filters('is_threads_share_button_visible', $res, $option);
 }
 endif;
 

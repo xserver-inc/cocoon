@@ -49,6 +49,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo esc_url(get_the_author_facebook_url($user_id)); //FacebookフォローIDの取得?>" class="sns-button follow-button facebook-button facebook-follow-button-sq" target="_blank" title="<?php _e( 'Facebookをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Facebookをフォロー', THEME_NAME ) ?>"><span class="icon-facebook-logo"></span></a>
   <?php endif; ?>
 
+  <?php if ( get_the_author_threads_url($user_id) )://Threadsフォローボタンを表示するか ?>
+    <a href="<?php echo esc_url(get_the_author_threads_url($user_id)); //ThreadsフォローURLの取得?>" class="sns-button follow-button threads-button threads-follow-button-sq" target="_blank" title="<?php _e( 'Threadsをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Threadsをフォロー', THEME_NAME ) ?>"><span class="icon-threads-logo"></span></a>
+  <?php endif; ?>
+
   <?php if ( get_the_author_hatebu_url($user_id) )://はてブフォローボタンを表示するか ?>
     <a href="<?php echo esc_url(get_the_author_hatebu_url($user_id)); //はてブフォローIDの取得 ?>" class="sns-button follow-button hatebu-button hatebu-follow-button-sq" target="_blank" title="<?php _e( 'はてブをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'はてブをフォロー', THEME_NAME ) ?>"><span class="icon-hatebu-logo"></span></a>
   <?php endif; ?>

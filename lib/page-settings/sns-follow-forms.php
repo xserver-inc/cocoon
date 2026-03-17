@@ -74,6 +74,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li><?php _e( 'Bluesky', THEME_NAME ) ?></li>
               <li><?php _e( 'Misskey', THEME_NAME ) ?></li>
               <li><?php _e( 'Facebook', THEME_NAME ) ?></li>
+              <li><?php _e( 'Threads', THEME_NAME ) ?></li>
               <!-- <li><?php _e( 'Google+', THEME_NAME ) ?></li> -->
               <li><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>
               <li><?php _e( 'Instagram', THEME_NAME ) ?></li>

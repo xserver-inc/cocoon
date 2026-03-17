@@ -14021,6 +14021,18 @@ msgstr "Misskey에 공유"
 msgid "Facebookでシェア"
 msgstr "페이스북에 공유"
 
+
+#: tmp/sns-share-buttons.php:37
+msgid "Threadsでシェア"
+msgstr "Threads에서 공유"
+
+#: tmp/sns-share-buttons.php:37
+msgid "Threads"
+msgstr "Threads"
+
+#: tmp/sns-follow-buttons.php:53
+msgid "Threadsをフォロー"
+msgstr "Threads 팔로우"
 #: tmp/sns-share-buttons.php:37
 msgid "はてブでブックマーク"
 msgstr "하테나 북마크에 북마크하기"

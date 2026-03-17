@@ -72,6 +72,10 @@
   --cocoon-sns-color: var(--cocoon-facebook-color);
 }
 
+[class*="bc-brand-color"] .threads-button {
+  --cocoon-sns-color: var(--cocoon-threads-color);
+}
+
 [class*="bc-brand-color"] .hatebu-button {
   --cocoon-sns-color: var(--cocoon-hatebu-color);
 }

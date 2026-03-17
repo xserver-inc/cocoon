@@ -14128,6 +14128,19 @@ msgid "Facebookでシェア"
 msgstr ""
 
 #: tmp/sns-share-buttons.php:37
+msgid "Threadsでシェア"
+msgstr ""
+
+#: tmp/sns-share-buttons.php:37
+msgid "Threads"
+msgstr ""
+
+#: tmp/sns-follow-buttons.php:53
+msgid "Threadsをフォロー"
+msgstr ""
+
+
+#: tmp/sns-share-buttons.php:37
 msgid "はてブでブックマーク"
 msgstr ""
 
