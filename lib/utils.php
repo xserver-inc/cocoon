@@ -3965,3 +3965,23 @@ function get_post_content_word_count($content) {
   return mb_strlen($text);
 }
 endif;
+// 背景色から見やすい文字色（白か黒系）を自動判定して返す
+if ( !function_exists( 'get_text_color_from_background_color' ) ):
+function get_text_color_from_background_color($bg_color, $light_color = '#fff', $dark_color = '#333'){
+  $hex = str_replace('#', '', $bg_color);
+  if (strlen($hex) == 3) {
+    $r = hexdec(substr($hex, 0, 1).substr($hex, 0, 1));
+    $g = hexdec(substr($hex, 1, 1).substr($hex, 1, 1));
+    $b = hexdec(substr($hex, 2, 1).substr($hex, 2, 1));
+  } elseif (strlen($hex) == 6) {
+    $r = hexdec(substr($hex, 0, 2));
+    $g = hexdec(substr($hex, 2, 2));
+    $b = hexdec(substr($hex, 4, 2));
+  } else {
+    return $light_color;
+  }
+  // YIQ で輝度を計算
+  $yiq = (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+  return ($yiq >= 128) ? $dark_color : $light_color;
+}
+endif;

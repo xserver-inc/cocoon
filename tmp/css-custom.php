@@ -99,7 +99,7 @@ table tr:nth-of-type(2n+1),
 .sidebar h3,
 #footer,
 #footer a:not(.sns-button){
-  color: #fff;
+  color: <?php echo get_text_color_from_background_color($site_key_color); ?>;
 }
 
 <?php endif ?>
@@ -171,7 +171,7 @@ if ($header_container_background_color = get_header_container_background_color()
 .header .site-name-text,
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: #fff;
+  color: <?php echo get_text_color_from_background_color($header_container_background_color); ?>;
 }
 
 <?php endif ?>
@@ -192,7 +192,7 @@ if ($header_background_color = get_header_background_color()): ?>
 
 .header,
 .header .site-name-text{
-  color: #fff;
+  color: <?php echo get_text_color_from_background_color($header_background_color); ?>;
 }
 
 <?php endif ?>
@@ -212,7 +212,7 @@ if ($global_navi_background_color = get_global_navi_background_color()): ?>
 
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: #fff;
+  color: <?php echo get_text_color_from_background_color($global_navi_background_color); ?>;
 }
 
 <?php endif ?>
