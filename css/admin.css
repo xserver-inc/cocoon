@@ -24120,13 +24120,6 @@ select option.fa:before {
   margin-right: 5px;
 }
 
-.wp-core-ui .button-primary {
-  background: #0071a1 !important;
-  border-color: #0071a1 !important;
-  color: #fff !important;
-  line-height: 2;
-}
-
 .demo .carousel {
   opacity: 1 !important;
 }
