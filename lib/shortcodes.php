@@ -719,6 +719,8 @@ function get_recommend_cards_tag($atts){
           'name' => $name,
           'type' => ET_LARGE_THUMB_ON,
         );
+        //おすすめカードのパラメータ変更用フック
+        $atts = apply_filters('recommend_cards_navi_list_atts', $atts);
         echo get_navi_card_list_tag($atts);
         ?>
       </div><!-- /.recommended-in -->
