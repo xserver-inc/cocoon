@@ -1,4 +1,4 @@
-<?php //モバイル用の検索ボタン
+<?php //モバイル用のフォローボタン
 /**
  * Cocoon WordPress Theme
  * @author: yhira
