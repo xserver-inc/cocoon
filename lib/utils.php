@@ -3051,54 +3051,91 @@ endif;
 //内部URLからカテゴリーオブジェクトを取得する
 if ( !function_exists( 'url_to_category_object' ) ):
 function url_to_category_object($url){
-  //タグのベースURLの正規表現
+  // URLをパスとクエリに分解してパラメータによる誤解析を防ぐ
+  $parsed_url = wp_parse_url($url);
+  if (!$parsed_url) return null;
+
+  $path  = isset($parsed_url['path']) ? $parsed_url['path'] : '';
+  $query = isset($parsed_url['query']) ? $parsed_url['query'] : '';
+
+  // カテゴリーベース名（デフォルトは'category'）をエスケープして取得
   $category_base = get_option('category_base');
-  $category_base = $category_base ? preg_quote($category_base, '/') : 'category';
-  $quoteed_category_base = preg_quote($category_base);
-  $reg = '{/'.$quoteed_category_base.'/([^/]+)|/\?cat\=([^&]+)}';
-  preg_match($reg, $url, $m);
-  $slug = null;
-  if (isset($m[1]) && $m[1]) {
-    $slug = $m[1];
-    //カテゴリーの取得
-    if ($slug) {
-      $category = get_category_by_slug($slug);
-      if ($category) {
+  $category_base = $category_base ? preg_quote(trim($category_base, '/'), '/') : 'category';
+
+  // パスからの取得判定（パーマリンク形式）
+  if ($path) {
+    // 階層構造（親/子カテゴリ）を考慮し、ベース名以降を丸ごと取得
+    $reg = '{/'.$category_base.'/(.+)}';
+    if (preg_match($reg, $path, $m)) {
+      $category_path = trim($m[1], '/');
+      if ($category_path) {
+        $category = get_category_by_path($category_path, false);
+        if ($category && !is_wp_error($category)) {
+          return $category;
+        }
+      }
+    }
+  }
+
+  // クエリからの取得判定（?cat=形式）
+  if ($query) {
+    parse_str($query, $query_params);
+    if (!empty($query_params['cat'])) {
+      $category = get_category($query_params['cat']);
+      if ($category && !is_wp_error($category)) {
         return $category;
       }
     }
-  } elseif (isset($m[2]) && $m[2]) {
-    $cat_id = $m[2];
-    $category = get_category($cat_id);
-    if ($category) {
-      return $category;
-    }
   }
+
+  return null;
 }
 endif;
 
 //内部URLからタグオブジェクトを取得する
 if ( !function_exists( 'url_to_tag_object' ) ):
 function url_to_tag_object($url){
-  //タグのベースURLの正規表現
+  // URLをパスとクエリに分解
+  $parsed_url = wp_parse_url($url);
+  if (!$parsed_url) return null;
+
+  $path  = isset($parsed_url['path']) ? $parsed_url['path'] : '';
+  $query = isset($parsed_url['query']) ? $parsed_url['query'] : '';
+
+  // タグベース名（デフォルトは'tag'）をエスケープして取得
   $tag_base = get_option('tag_base');
-  $tag_base = $tag_base ? preg_quote($tag_base, '/') : 'tag';
-  $quoteed_tag_base = preg_quote($tag_base);
-  $reg = '{/'.$quoteed_tag_base.'/([^/]+)|/\?'.$quoteed_tag_base.'\=([^&]+)}';
-  preg_match($reg, $url, $m);
-  $slug = null;
-  if (isset($m[1]) && $m[1]) {
-    $slug = $m[1];
-  } elseif (isset($m[2]) && $m[2]) {
-    $slug = $m[2];
-  }
-  //タグの取得
-  if ($slug) {
-    $tag = get_term_by('slug', $slug, 'post_tag');
-    if ($tag) {
-      return $tag;
+  $tag_base = $tag_base ? preg_quote(trim($tag_base, '/'), '/') : 'tag';
+
+  // パスからの取得判定（パーマリンク形式）
+  if ($path) {
+    // タグは階層を持たないため、直後のスラッシュまでをスラグとして取得
+    $reg = '{/'.$tag_base.'/([^/]+)}';
+    if (preg_match($reg, $path, $m)) {
+      $slug = trim($m[1], '/');
+      if ($slug) {
+        $tag = get_term_by('slug', $slug, 'post_tag');
+        if ($tag && !is_wp_error($tag)) {
+          return $tag;
+        }
+      }
     }
   }
+
+  // クエリからの取得判定（?tag=形式）
+  if ($query) {
+    parse_str($query, $query_params);
+    // パス判定用の $tag_base は preg_quote 済みのためクエリキーには使えず、元の値を再取得
+    $tag_base_raw = get_option('tag_base') ?: 'tag';
+    if (!empty($query_params[$tag_base_raw])) {
+      $slug = $query_params[$tag_base_raw];
+      $tag = get_term_by('slug', $slug, 'post_tag');
+      if ($tag && !is_wp_error($tag)) {
+        return $tag;
+      }
+    }
+  }
+
+  return null;
 }
 endif;
 
