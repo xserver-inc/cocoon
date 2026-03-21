@@ -134,7 +134,8 @@ if (is_sns_follow_buttons_visible() && !is_paged() &&
 ////////////////////////////
 //ページネーション
 ////////////////////////////
-if (is_front_page_type_index() || !is_front_top_page()) {
+// タブ一覧のフロントページも含める
+if (is_front_page_type_index() || is_front_page_type_tab_index() || !is_front_top_page()) {
   cocoon_template_part('tmp/pagination');
 }
 

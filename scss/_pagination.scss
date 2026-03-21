@@ -83,3 +83,22 @@ $pagination_wh: 46px;
 .six-digits-or-more{
   font-size: 11px;
 }
+
+/************************************
+** タブ一覧1ページ目のページネーション制御
+** 新着記事タブ以外ではページネーション非表示
+************************************/
+// タブ一覧のフロントトップページでは全て非表示にする
+.front-top-page:has(.front-page-type-tab-index) :is(.pagination, .pagination-next) {
+  display: none;
+}
+// 新着記事タブ（#index-tab-1）がチェックされている時のみ表示する
+.front-top-page:has(.front-page-type-tab-index) .main:has(#index-tab-1:checked) {
+  :is(.pagination, .pagination-next) {
+    display: block;
+  }
+  // .paginationは元々inline-flexなので上書き
+  .pagination {
+    display: inline-flex;
+  }
+}

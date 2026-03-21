@@ -57,7 +57,6 @@ $cat_count = apply_filters('cocoon_index_max_category_tab_count', 3);
   <!-- 新着記事タブの中身 -->
   <div class="tab-cont tb1">
     <?php cocoon_template_part('tmp/list-index'); ?>
-    <?php cocoon_template_part('tmp/pagination'); ?>
   </div>
 
   <?php

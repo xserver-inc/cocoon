@@ -6591,6 +6591,21 @@ th:has(.s-circle), th:has(.d-circle), th:has(.triangle), th:has(.cross), th:has(
 }
 
 /************************************
+** タブ一覧1ページ目のページネーション制御
+** 新着記事タブ以外ではページネーション非表示
+************************************/
+.front-top-page:has(.front-page-type-tab-index) :is(.pagination, .pagination-next) {
+  display: none;
+}
+
+.front-top-page:has(.front-page-type-tab-index) .main:has(#index-tab-1:checked) :is(.pagination, .pagination-next) {
+  display: block;
+}
+.front-top-page:has(.front-page-type-tab-index) .main:has(#index-tab-1:checked) .pagination {
+  display: inline-flex;
+}
+
+/************************************
 ** マルチページのページャーリンク
 ************************************/
 .pager-links {
