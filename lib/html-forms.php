@@ -1635,7 +1635,8 @@ function get_widget_entry_card_link_tag($atts){
             if ($thumbnail_tag) {
               echo $thumbnail_tag;
             } else {
-              echo get_widget_entry_card_no_image_tag(ET_LARGE_THUMB, $prefix);
+              // ナビカード用に取得済みの属性を使ってNO IMAGEを出力
+              echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class . ' no-image');
             }
           } else {
             if ($object === 'category') {
@@ -1764,12 +1765,15 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
   //アイキャッチがない場合
   if (!$image_attributes) {
     $image_attributes = array();
+    // 投稿・固定ページ・カスタム投稿の場合はカテゴリー等のアイキャッチを反映させるため is_singular を true にする
+    $is_singular = ($object === 'post' || $object === 'page' || in_array($object, $post_types));
+    
     if ($is_large_image_use) {
-      $image_attributes[0] = get_no_image_320x180_url($object_id, false); //postするタイプのページではない引数を追加
+      $image_attributes[0] = get_no_image_320x180_url($object_id, $is_singular); //投稿タイプの時はtrueにしてタクソノミー画像を反映
       $image_attributes[1] = THUMB320WIDTH_DEF;
       $image_attributes[2] = THUMB320HEIGHT_DEF;
     } else {
-      $image_attributes[0] = get_no_image_120x68_url($object_id, false); //postするタイプのページではない引数を追加
+      $image_attributes[0] = get_no_image_120x68_url($object_id, $is_singular); //投稿タイプの時はtrueにしてタクソノミー画像を反映
       $image_attributes[1] = THUMB120WIDTH_DEF;
       $image_attributes[2] = THUMB120HEIGHT_DEF;
     }

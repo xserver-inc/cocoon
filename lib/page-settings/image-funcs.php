@@ -346,8 +346,8 @@ function get_categorized_no_image_url($url, $width = null, $height = null, $id =
     }
 
     //タグページのアイキャッチ画像取得
-    //get_the_tags() 関数を使用して、現在の投稿に関連付けられたタグを取得
-    $tags = get_the_tags();
+    //引数$idを指定して対象投稿のタグを取得（get_the_tags()はグローバル$post依存のため使用しない）
+    $tags = wp_get_post_tags($id);
     if ($tags && isset($tags[0])) {
       $tag = $tags[0];
       $tag_id = $tag->term_id;
