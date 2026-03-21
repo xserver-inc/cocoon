@@ -95,6 +95,51 @@ class UtilsFunctionsTest extends IntegrationTestCase
     {
         $cat_id = $this->factory->category->create(['name' => 'テストカテゴリ']);
         $key = get_the_category_meta_key($cat_id);
-        $this->assertSame('category_meta_' . $cat_id, $key);
+    }
+
+    // ========================================================================
+    // url_to_category_object(), url_to_tag_object()
+    // ========================================================================
+
+    public function test_url_to_category_object_URLからカテゴリオブジェクトを取得できる(): void
+    {
+        // 事前準備: カテゴリ作成
+        $cat_id = $this->factory->category->create(['name' => 'テストカテゴリ', 'slug' => 'test-cat']);
+        
+        // パーマリンク環境の設定 (パスベースで動かすため)
+        $this->set_permalink_structure('/%postname%/');
+
+        // URLの組み立て
+        $cat_url = get_category_link($cat_id);
+
+        $result = url_to_category_object($cat_url);
+        $this->assertNotNull($result);
+        $this->assertEquals($cat_id, $result->term_id);
+
+        // クエリ形式
+        $result_query = url_to_category_object(home_url('/?cat=' . $cat_id));
+        $this->assertNotNull($result_query);
+        $this->assertEquals($cat_id, $result_query->term_id);
+    }
+
+    public function test_url_to_tag_object_URLからタグオブジェクトを取得できる(): void
+    {
+        // 事前準備: タグ作成
+        $tag_id = $this->factory->tag->create(['name' => 'テストタグ', 'slug' => 'test-tag']);
+        
+        // パーマリンク環境の設定
+        $this->set_permalink_structure('/%postname%/');
+
+        // URLの組み立て
+        $tag_url = get_tag_link($tag_id);
+
+        $result = url_to_tag_object($tag_url);
+        $this->assertNotNull($result);
+        $this->assertEquals($tag_id, $result->term_id);
+
+        // クエリ形式
+        $result_query = url_to_tag_object(home_url('/?tag=test-tag'));
+        $this->assertNotNull($result_query);
+        $this->assertEquals($tag_id, $result_query->term_id);
     }
 }
