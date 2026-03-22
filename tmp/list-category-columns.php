@@ -82,8 +82,8 @@ $count = get_index_category_entry_card_count();
 
 
         <?php
-        // カウントが 0 より大きい場合のみ表示
-        if (get_query_var('count') > 0): ?>
+        // 記事がある場合のみ表示
+        if (get_query_var('has_entries')): ?>
           <div class="list-more-button-wrap">
             <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo apply_filters('more_button_caption', __( 'もっと見る', THEME_NAME )); ?></a>
           </div>

@@ -1344,10 +1344,10 @@ function generate_widget_entries_tag($atts){
     echo get_widget_entry_card_link_tag($atts);
     ?>
   <?php endwhile;
-    set_query_var('count', 1); // 記事がある場合は 1 を設定
+    set_query_var('has_entries', true); // 記事がある場合
   else :
     echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
-    set_query_var('count', 0); // 記事がない場合は 0 を設定
+    set_query_var('has_entries', false); // 記事がない場合
   endif; ?>
   <?php wp_reset_postdata(); ?>
   <?php if ( $horizontal ) : ?>
