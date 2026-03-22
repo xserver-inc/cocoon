@@ -1729,12 +1729,13 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
     $thumbnail_id = get_post_thumbnail_id($object_id);
     $image_attributes = wp_get_attachment_image_src($thumbnail_id, $thumb_size);
   }
-  elseif ($object == 'category'){//カテゴリーアイキャッチの取得
+  // カテゴリー・タグ・カスタムタクソノミーをtaxonomy_existsで統合判定
+  // ※get_term_meta直接ではなく既存関数を使用（旧バージョン互換性・ファイル存在チェックのため）
+  elseif (taxonomy_exists($object)){
     $image_url = get_the_category_eye_catch_url($object_id);
-    $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
-  }
-  elseif ($object == 'post_tag'){//タグアイキャッチの取得
-    $image_url = get_the_tag_eye_catch_url($object_id);
+    if (!$image_url) {
+      $image_url = get_the_tag_eye_catch_url($object_id);
+    }
     $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
   }
   elseif ($object == 'custom') {//カスタムメニュー
