@@ -1636,17 +1636,9 @@ function get_widget_entry_card_link_tag($atts){
               echo $thumbnail_tag;
             } else {
               // ナビカード用に取得済みの属性を使ってNO IMAGEを出力
-              echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class . ' no-image');
+              echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class);
             }
           } else {
-            if ($object === 'category') {
-              //カテゴリーの場合
-              $class = 'category-image '.$class;
-              if (!get_the_category_eye_catch_url($object_id)) {
-                //NO IMAGEの場合
-                $class = 'no-image '.$class;
-              }
-            }
             echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class);
           }
         } else {
