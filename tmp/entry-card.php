@@ -11,6 +11,8 @@ if (is_front_page_type_index()) {
   $article_id_attr = ' id="post-'.get_the_ID().'"';
 }
 $classes = '';
+// ループインデックスを安全に取得（set_query_varで設定されていない場合は0）
+$count = intval(get_query_var('count'));
 if (is_entry_card_type_big_card_first() && $count === 1) {
   $classes = ' ec-big-card-first';
 }
@@ -73,10 +75,10 @@ if (is_entry_card_type_big_card_first() && $count === 1) {
               <span class="post-author-name"><?php echo get_the_author(); ?></span>
             </span>
           <?php endif ?>
-          <?php //コメント数を表示する
-          $count = get_comments_number();
-          if(is_entry_card_post_comment_count_visible() && is_single_comment_visible() && apply_filters('entry_card_post_comment_count_visible', true, $count)): ?>
-            <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $count; ?></span>
+          <?php //コメント数を表示する（$countとの競合を避けるため専用変数を使用）
+          $comment_count = get_comments_number();
+          if(is_entry_card_post_comment_count_visible() && is_single_comment_visible() && apply_filters('entry_card_post_comment_count_visible', true, $comment_count)): ?>
+            <span class="post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo $comment_count; ?></span>
           <?php endif; ?>
         </div>
         <div class="entry-card-categorys e-card-categorys"><?php the_nolink_categories() ?></div>
