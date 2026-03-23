@@ -1768,6 +1768,17 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
     }
   }
 
+  // サムネイルがなく、タイトル属性がある場合
+  if (!$image_attributes && !empty($menu->attr_title)) {
+    // 空白やショートコードを取り除く
+    $attr_title = trim(escape_shortcodes($menu->attr_title));
+    // 入力値が画像URLであるか判定する（クエリパラメータ等も許容）
+    if (preg_match('/^https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\.(jpg|jpeg|gif|png|webp|avif)([\?\#].*)?$/i', $attr_title)) {
+      // 画像URLからサムネイル情報を生成する
+      $image_attributes = get_navi_card_image_url_attributes($attr_title, $type);
+    }
+  }
+
   //アイキャッチがない場合
   if (!$image_attributes) {
     $image_attributes = array();
