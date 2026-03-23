@@ -1740,15 +1740,7 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
   }
   elseif ($object == 'custom') {//カスタムメニュー
     // 投稿・固定ページ・カスタム投稿ページ
-    $transient_key = 'cocoon_url_tpi_' . md5($url);
-    // キャッシュから検索結果を取得する
-    $url_object_id = get_transient($transient_key);
-    
-    // キャッシュがない場合のみ、取得処理を実行して1日間保存する
-    if ($url_object_id === false) {
-      $url_object_id = url_to_postid($url);
-      set_transient($transient_key, (int)$url_object_id, DAY_IN_SECONDS);
-    }
+    $url_object_id = cocoon_url_to_postid($url);
 
     // 該当する記事が存在した場合（IDが0より大きい場合）
     if ($url_object_id > 0) {

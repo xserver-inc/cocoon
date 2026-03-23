@@ -25,7 +25,7 @@ function is_internal_blogcard_url($url){
   if (!includes_home_url($url)) {
     return false;
   }
-  $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
+  $id = cocoon_url_to_postid( $url );//IDを取得（URLから投稿IDへ変換・キャッシュ対応）
   $cat = url_to_category_object($url);
   $tag = url_to_tag_object($url);
 
@@ -48,7 +48,7 @@ if ( !function_exists( 'url_to_internal_blogcard_tag' ) ):
 function url_to_internal_blogcard_tag($url){
   if ( !$url ) return;
   $url = strip_tags($url);//URL
-  $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
+  $id = cocoon_url_to_postid( $url );//IDを取得（URLから投稿IDへ変換・キャッシュ対応）
   //内部ブログカード作成可能なURLかどうか
   if ( !is_internal_blogcard_url($url) ) return;
   //_v($url);

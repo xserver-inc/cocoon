@@ -4005,3 +4005,23 @@ function get_post_content_word_count($content) {
   return mb_strlen($text);
 }
 endif;
+
+// URLから投稿IDへ変換しキャッシュ処理を行う
+if ( !function_exists( 'cocoon_url_to_postid' ) ):
+function cocoon_url_to_postid($url) {
+  // キャッシュから検索結果を取得する
+  $transient_key = 'cocoon_url_tpi_' . md5($url);
+  $id = get_transient($transient_key);
+
+  // キャッシュがない場合のみ、取得処理を実行して保存する
+  if ($id === false) {
+    $id = url_to_postid($url);
+    
+    // 記事が見つかった場合は1日間、見つからなかった場合(0)は1時間だけキャッシュする
+    $cache_time = ($id > 0) ? DAY_IN_SECONDS : HOUR_IN_SECONDS;
+    set_transient($transient_key, (int)$id, $cache_time);
+  }
+
+  return $id;
+}
+endif;
