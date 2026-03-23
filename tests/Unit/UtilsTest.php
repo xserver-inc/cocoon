@@ -569,4 +569,109 @@ class UtilsTest extends TestCase
         $this->assertNull($info['platform']);
     }
 
+    // ========================================================================
+    // cocoon_template_part()
+    // ========================================================================
+
+    public function test_cocoon_template_part_エコーが出力される(): void
+    {
+        \Brain\Monkey\Functions\expect('get_template_part')
+            ->once()
+            ->with('test-slug', 'test-name', ['foo' => 'bar'])
+            ->andReturnUsing(function() {
+                echo 'template_content';
+            });
+
+        ob_start();
+        cocoon_template_part('test-slug', 'test-name', ['foo' => 'bar']);
+        $result = ob_get_clean();
+
+        $this->assertSame('template_content', $result);
+    }
+
+    public function test_cocoon_template_part_引数argsが配列以外なら空配列として渡されるか(): void
+    {
+        \Brain\Monkey\Functions\expect('get_template_part')
+            ->once()
+            ->with('test-slug', 'test-name', [])
+            ->andReturnUsing(function() {
+                echo 'safe_content';
+            });
+
+        ob_start();
+        // 直接配列以外を渡すことでフェイルセーフ機構の動作を確認
+        cocoon_template_part('test-slug', 'test-name', 'invalid_string');
+        $result = ob_get_clean();
+
+        $this->assertSame('safe_content', $result);
+    }
+
+    // ========================================================================
+    // cocoon_url_to_postid()
+    // ========================================================================
+
+    public function test_cocoon_url_to_postid_キャッシュがない場合は取得して保存する(): void
+    {
+        if (!defined('DAY_IN_SECONDS')) define('DAY_IN_SECONDS', 86400);
+
+        $url = 'https://example.com/test';
+        $transient_key = 'cocoon_url_tpi_' . md5($url);
+
+        \Brain\Monkey\Functions\expect('get_transient')
+            ->once()
+            ->with($transient_key)
+            ->andReturn(false);
+
+        \Brain\Monkey\Functions\expect('url_to_postid')
+            ->once()
+            ->with($url)
+            ->andReturn(123);
+
+        \Brain\Monkey\Functions\expect('set_transient')
+            ->once()
+            ->with($transient_key, 123, DAY_IN_SECONDS);
+
+        $this->assertSame(123, cocoon_url_to_postid($url));
+    }
+
+    public function test_cocoon_url_to_postid_見つからない場合は1時間キャッシュする(): void
+    {
+        if (!defined('HOUR_IN_SECONDS')) define('HOUR_IN_SECONDS', 3600);
+
+        $url = 'https://example.com/not-found';
+        $transient_key = 'cocoon_url_tpi_' . md5($url);
+
+        \Brain\Monkey\Functions\expect('get_transient')
+            ->once()
+            ->with($transient_key)
+            ->andReturn(false);
+
+        \Brain\Monkey\Functions\expect('url_to_postid')
+            ->once()
+            ->with($url)
+            ->andReturn(0);
+
+        \Brain\Monkey\Functions\expect('set_transient')
+            ->once()
+            ->with($transient_key, 0, HOUR_IN_SECONDS);
+
+        $this->assertSame(0, cocoon_url_to_postid($url));
+    }
+
+    public function test_cocoon_url_to_postid_キャッシュがある場合は取得処理をスキップする(): void
+    {
+        $url = 'https://example.com/cached';
+        $transient_key = 'cocoon_url_tpi_' . md5($url);
+
+        \Brain\Monkey\Functions\expect('get_transient')
+            ->once()
+            ->with($transient_key)
+            ->andReturn(456);
+
+        \Brain\Monkey\Functions\expect('url_to_postid')->never();
+        \Brain\Monkey\Functions\expect('set_transient')->never();
+
+        $this->assertSame(456, cocoon_url_to_postid($url));
+    }
+
 }
