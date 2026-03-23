@@ -1739,20 +1739,41 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
     $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
   }
   elseif ($object == 'custom') {//カスタムメニュー
-    //カテゴリーページのアイキャッチを取得
-    $category_obj = url_to_category_object($url);
-    if ($category_obj && isset($category_obj->term_id)) {
-      $image_url = get_the_category_eye_catch_url($category_obj->term_id);
-      $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
-    } else {
-      //タグページのアイキャッチを取得
-      $tag_obj = url_to_tag_object($url);
-      if ($tag_obj && isset($tag_obj->term_id)) {
-        $image_url = get_the_tag_eye_catch_url($tag_obj->term_id);
-        $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
-      }
+    // 投稿・固定ページ・カスタム投稿ページ
+    $transient_key = 'cocoon_url_tpi_' . md5($url);
+    // キャッシュから検索結果を取得する
+    $url_object_id = get_transient($transient_key);
+    
+    // キャッシュがない場合のみ、取得処理を実行して1日間保存する
+    if ($url_object_id === false) {
+      $url_object_id = url_to_postid($url);
+      set_transient($transient_key, (int)$url_object_id, DAY_IN_SECONDS);
     }
 
+    // 該当する記事が存在した場合（IDが0より大きい場合）
+    if ($url_object_id > 0) {
+      $object_id = $url_object_id;
+      // その記事のアイキャッチ画像と投稿タイプを取得して上書きする
+      $thumbnail_id = get_post_thumbnail_id($object_id);
+      $image_attributes = wp_get_attachment_image_src($thumbnail_id, $thumb_size);
+      $object = get_post_type($object_id);
+    }
+
+    if (empty($image_attributes)) {
+      //カテゴリーページのアイキャッチを取得
+      $category_obj = url_to_category_object($url);
+      if ($category_obj && isset($category_obj->term_id)) {
+        $image_url = get_the_category_eye_catch_url($category_obj->term_id);
+        $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
+      } else {
+        //タグページのアイキャッチを取得
+        $tag_obj = url_to_tag_object($url);
+        if ($tag_obj && isset($tag_obj->term_id)) {
+          $image_url = get_the_tag_eye_catch_url($tag_obj->term_id);
+          $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
+        }
+      }
+    }
   }
 
   //アイキャッチがない場合
