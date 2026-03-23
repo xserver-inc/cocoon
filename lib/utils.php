@@ -3169,26 +3169,29 @@ endif;
 
 //get_template_partに関するフック付加
 if ( !function_exists( 'cocoon_template_part' ) ):
-function cocoon_template_part($slug){
+function cocoon_template_part($slug, $name = null, $args = []){
+
+  $args = apply_filters("cocoon_part_args__{$slug}", $args, $name);
+  // 配列以外の値によるエラーを防止
+  if (!is_array($args)) {
+    $args = [];
+  }
+
   ob_start();
-  get_template_part($slug);
+  get_template_part($slug, $name, $args);
   $content = ob_get_clean();
 
-  // 読み込み前発火
-  if (has_filter("cocoon_part_before__{$slug}")) {
-    do_action("cocoon_part_before__{$slug}");
-  }
+  // WP内部で判定されるためhas_filterを省略
+  do_action("cocoon_part_before__{$slug}", $name, $args);
 
-  // 書き換え
-  if (has_filter("cocoon_part__{$slug}")) {
-    $content = apply_filters("cocoon_part__{$slug}" ,$content);
-  }
-  echo $content;
+  // WP内部で判定されるためhas_filterを省略
+  $content = apply_filters("cocoon_part__{$slug}", $content, $name, $args);
 
-  // 読み込み後発火
-  if (has_filter("cocoon_part_after__{$slug}")) {
-    do_action("cocoon_part_after__{$slug}");
-  }
+  // 配列等による表示崩れを防止
+  echo (string) $content;
+
+  // WP内部で判定されるためhas_filterを省略
+  do_action("cocoon_part_after__{$slug}", $name, $args);
 }
 endif;
 
