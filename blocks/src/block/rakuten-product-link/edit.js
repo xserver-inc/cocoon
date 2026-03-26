@@ -263,6 +263,7 @@ export default function Edit( { attributes, setAttributes } ) {
 
       { /* ツールバー領域 */ }
       <div
+        className="cocoon-product-toolbar"
         style={ {
           display: 'flex',
           justifyContent: 'space-between',
