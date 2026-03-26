@@ -1,4 +1,4 @@
-<?php //モバイル用のホームボタン
+<?php //モバイル用のロゴボタン
 /**
  * Cocoon WordPress Theme
  * @author: yhira
