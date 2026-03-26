@@ -1,4 +1,4 @@
-<?php //モバイル用の「次へ」ボタン
+<?php //モバイル用のコメントボタン
 /**
  * Cocoon WordPress Theme
  * @author: yhira
