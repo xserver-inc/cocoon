@@ -61,10 +61,6 @@ class ProductBlockCronTest extends TestCase
             define('TRANSIENT_BACKUP_RAKUTEN_API_PREFIX', THEME_NAME . '_backup_rakuten_api_id_');
         }
 
-        // 全てのグローバル関数スタブを別ファイル（グローバル名前空間）で読み込む
-        // 名前空間内でfunction定義すると同一名前空間の他テストと衝突するため
-        require_once dirname(__DIR__) . '/cron-test-stubs.php';
-
         // block-amazon-product-link.php の依存関数読み込み
         require_once dirname(__DIR__, 2) . '/lib/shortcodes-product-func.php';
         require_once dirname(__DIR__, 2) . '/lib/shortcodes-amazon.php';

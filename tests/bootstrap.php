@@ -28,5 +28,8 @@ if (!defined('THEME_NAME')) {
 // ほぼ全てのテーマファイルがこれに依存するため、ブートストラップで読み込む
 require_once dirname(__DIR__) . '/lib/utils.php';
 
+// APIスタブ・Cronスタブなど複数テストで共通利用するものを全テストの前に読み込む
+require_once __DIR__ . '/cron-test-stubs.php';
+
 // テストの基底クラス読み込み
 require_once __DIR__ . '/TestCase.php';
