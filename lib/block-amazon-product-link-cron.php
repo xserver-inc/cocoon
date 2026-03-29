@@ -201,34 +201,21 @@ function cocoon_amazon_block_update_post_blocks($post){
   // 更新後のコンテンツを生成
   $new_content = serialize_blocks($blocks);
 
-  // 更新日時を保存しておく（復元用）
-  $post_modified = $post->post_modified;
-  $post_modified_gmt = $post->post_modified_gmt;
+  // $wpdb->updateでpost_contentのみ直接更新（リビジョン生成・更新日時変更を防止）
+  global $wpdb;
+  $result = $wpdb->update(
+    $wpdb->posts,
+    array('post_content' => $new_content),
+    array('ID' => $post->ID),
+    array('%s'),
+    array('%d')
+  );
 
-  // 投稿を更新（成功時は投稿ID、失敗時は0またはWP_Errorを返す）
-  $result = wp_update_post(array(
-    'ID'           => $post->ID,
-    'post_content' => wp_slash($new_content),
-  ));
-
-  // 更新失敗時はログを残して抜ける（更新日時復元・キャッシュクリアは行わない）
-  if (!$result || is_wp_error($result)) {
+  // 更新失敗時はログを残して抜ける
+  if ($result === false) {
     cocoon_product_block_debug_log('cron: post '.$post->ID.' update failed', 'AmazonCron');
     return;
   }
-
-  // 更新日時を復元（変更しない）
-  global $wpdb;
-  $wpdb->update(
-    $wpdb->posts,
-    array(
-      'post_modified'     => $post_modified,
-      'post_modified_gmt' => $post_modified_gmt,
-    ),
-    array('ID' => $post->ID),
-    array('%s', '%s'),
-    array('%d')
-  );
 
   // キャッシュをクリア
   clean_post_cache($post->ID);
@@ -283,6 +270,10 @@ function cocoon_amazon_block_update_blocks_recursive($blocks, &$updated){
       $attrs['imageLargeHeight'] = $itemData['imageLargeHeight'];
       $attrs['variantImages']   = $itemData['variantImages'];
 
+      // 価格取得時刻を現在のUTC時刻で更新（エディタ再編集時の時刻巻き戻りを防止）
+      $now_utc = gmdate('Y-m-d\TH:i:s.000\Z');
+      $attrs['priceFetchedAt'] = $now_utc;
+
       // 設定を組み立てて静的HTMLを再生成
       $settings = array(
         'size'              => isset($attrs['size']) ? $attrs['size'] : 'm',
@@ -310,6 +301,8 @@ function cocoon_amazon_block_update_blocks_recursive($blocks, &$updated){
         'btn3Text'          => isset($attrs['btn3Text']) ? $attrs['btn3Text'] : '',
         'btn3Tag'           => isset($attrs['btn3Tag']) ? $attrs['btn3Tag'] : '',
         'useMoshimoAffiliate' => isset($attrs['useMoshimoAffiliate']) ? (bool)$attrs['useMoshimoAffiliate'] : false,
+        // Cron更新時の価格取得時刻を設定に渡す
+        'priceFetchedAt'    => $now_utc,
       );
 
       // 静的HTMLを再生成
