@@ -97,25 +97,42 @@ function amazon_creators_api_get_access_token($credential_id, $credential_secret
     );
   }
 
-  $post_fields = http_build_query(array(
+  // LwA (3.x系) ではダブルコロン区切り、従来 (2.x系) ではスラッシュ区切り
+  $scope = (strpos((string)$version, '3.') === 0) ? 'creatorsapi::default' : 'creatorsapi/default';
+  $scope = apply_filters('amazon_creators_api_scope', $scope, $version);
+
+  // LwA (3.x系) かどうかでリクエスト形式を切り替え
+  $is_lwa = (strpos((string)$version, '3.') === 0);
+
+  // リクエストボディの共通パラメータ
+  $request_params = array(
     'grant_type' => 'client_credentials',
     'client_id' => $credential_id,
     'client_secret' => $credential_secret,
-    'scope' => 'creatorsapi/default',
-  ));
+    'scope' => $scope,
+  );
+
+  if ($is_lwa) {
+    // LwA (3.x系): JSON形式で送信
+    $body = wp_json_encode($request_params);
+    $content_type = 'application/json';
+  } else {
+    // 従来方式 (2.x系): フォームエンコードで送信
+    $body = http_build_query($request_params);
+    $content_type = 'application/x-www-form-urlencoded';
+  }
 
   $timeout = (int)apply_filters('amazon_creators_api_timeout', 20);
   $wp_response = wp_remote_post($token_endpoint, array(
     'headers' => array(
-      'Content-Type' => 'application/x-www-form-urlencoded',
+      'Content-Type' => $content_type,
     ),
-    'body' => $post_fields,
+    'body' => $body,
     'timeout' => $timeout,
     'user-agent' => amazon_creators_api_get_user_agent(),
   ));
 
   if (is_wp_error($wp_response)) {
-    cocoon_product_block_debug_log('token request error: '.$wp_response->get_error_message());
     return array(
       'error' => amazon_creators_api_error_json('CreatorsApiTokenRequestError', $wp_response->get_error_message()),
     );
