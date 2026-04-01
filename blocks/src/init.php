@@ -286,6 +286,19 @@ function cocoon_blocks_cgb_editor_assets()
 	);
 
 	// Amazon商品リンクブロックの初期値をCocoon設定から渡す
+	$amazon_api_name    = '';
+	$amazon_api_version = '';
+	if ( function_exists( 'is_amazon_creators_api_credentials_available' ) && is_amazon_creators_api_credentials_available() ) {
+		$amazon_api_name = 'Creators API';
+		if ( function_exists( 'amazon_creators_api_get_version' ) && function_exists( 'get_amazon_creators_api_credential_id' ) ) {
+			$amazon_api_version = 'v' . amazon_creators_api_get_version( get_amazon_creators_api_credential_id() );
+		}
+	} else {
+		if ( function_exists( 'get_amazon_api_access_key_id' ) && get_amazon_api_access_key_id() && function_exists( 'get_amazon_api_secret_key' ) && get_amazon_api_secret_key() ) {
+			$amazon_api_name    = 'PA-API';
+			$amazon_api_version = 'v5';
+		}
+	}
 	$amazon_block_defaults = array(
 		// 枠線を表示するか（常に有効）
 		'showBorder'        => 1,
@@ -311,6 +324,8 @@ function cocoon_blocks_cgb_editor_assets()
 		'useMoshimoAffiliate' => is_moshimo_affiliate_link_enable() ? 1 : 0,
 		// もしものAmazon/楽天/Yahoo! IDが設定済みかどうか（設定パネルの表示制御用）
 		'hasMoshimoIds' => (get_moshimo_amazon_id() || get_moshimo_rakuten_id() || get_moshimo_yahoo_id()) ? 1 : 0,
+		'apiName'           => $amazon_api_name,
+		'apiVersion'        => $amazon_api_version,
 	);
 	wp_localize_script(
 		'cocoon-blocks-js',
@@ -319,6 +334,12 @@ function cocoon_blocks_cgb_editor_assets()
 	);
 
 	// 楽天商品リンクブロックの初期値をCocoon設定から渡す
+	$rakuten_api_name    = '';
+	$rakuten_api_version = '';
+	if ( function_exists( 'get_rakuten_application_id' ) && get_rakuten_application_id() && function_exists( 'get_rakuten_affiliate_id' ) && get_rakuten_affiliate_id() ) {
+		$rakuten_api_name    = '楽天商品検索API';
+		$rakuten_api_version = '20170706';
+	}
 	$rakuten_block_defaults = array(
 		// 枠線を表示するか（常に有効）
 		'showBorder'        => 1,
@@ -340,7 +361,8 @@ function cocoon_blocks_cgb_editor_assets()
 		'useMoshimoAffiliate' => is_moshimo_affiliate_link_enable() ? 1 : 0,
 		// もしものAmazon/楽天/Yahoo! IDが設定済みかどうか（設定パネルの表示制御用）
 		'hasMoshimoIds' => (get_moshimo_amazon_id() || get_moshimo_rakuten_id() || get_moshimo_yahoo_id()) ? 1 : 0,
-
+		'apiName'           => $rakuten_api_name,
+		'apiVersion'        => $rakuten_api_version,
 	);
 	wp_localize_script(
 		'cocoon-blocks-js',

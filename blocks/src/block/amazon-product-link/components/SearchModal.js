@@ -171,7 +171,7 @@ export default function SearchModal( { isOpen, onClose, onSelect } ) {
           color: '#999',
           textAlign: 'center',
           marginTop: '16px',
-          padding: '8px',
+          padding: '8px 8px 0',
         } }
       >
         { __(
@@ -179,6 +179,21 @@ export default function SearchModal( { isOpen, onClose, onSelect } ) {
           THEME_NAME
         ) }
       </p>
+
+      { /* 使用APIの表示（右下ギリギリに配置） */ }
+      <div
+        style={ {
+          position: 'absolute',
+          bottom: '8px',
+          right: '12px',
+          fontSize: '10px',
+          color: '#ccc',
+        } }
+      >
+        { window.gbAmazonBlockDefaults?.apiName && window.gbAmazonBlockDefaults?.apiVersion
+          ? `${ window.gbAmazonBlockDefaults.apiName } ${ window.gbAmazonBlockDefaults.apiVersion }`
+          : '' }
+      </div>
     </Modal>
   );
 }

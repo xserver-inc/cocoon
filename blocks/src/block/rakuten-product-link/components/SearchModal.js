@@ -181,7 +181,7 @@ export default function SearchModal( {
           color: '#999',
           textAlign: 'center',
           marginTop: '16px',
-          padding: '8px',
+          padding: '8px 8px 0',
         } }
       >
         { __(
@@ -189,6 +189,21 @@ export default function SearchModal( {
           THEME_NAME
         ) }
       </p>
+
+      { /* 使用APIの表示（右下ギリギリに配置） */ }
+      <div
+        style={ {
+          position: 'absolute',
+          bottom: '8px',
+          right: '12px',
+          fontSize: '10px',
+          color: '#ccc',
+        } }
+      >
+        { window.gbRakutenBlockDefaults?.apiName && window.gbRakutenBlockDefaults?.apiVersion
+          ? `${ window.gbRakutenBlockDefaults.apiName } ${ window.gbRakutenBlockDefaults.apiVersion }`
+          : '' }
+      </div>
     </Modal>
   );
 }
