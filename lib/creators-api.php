@@ -28,9 +28,43 @@ function is_amazon_creators_api_credentials_available(){
 }
 endif;
 
+// Creators APIの実行バージョンを決定
+if ( !function_exists( 'amazon_creators_api_get_version' ) ):
+function amazon_creators_api_get_version($credential_id){
+  // 既定のバージョン。必要ならフィルタで変更
+  $version = apply_filters('amazon_creators_api_version', '2.3');
+  // APIキーが「amzn1.」から始まる場合はバージョンを3.x（LwA）に自動設定
+  if (strpos((string)$credential_id, 'amzn1.') === 0) {
+    $version = apply_filters('amazon_creators_api_lwa_version', '3.3');
+  }
+  return $version;
+}
+endif;
+
 // Creators APIのOAuth2トークンエンドポイントを取得
 if ( !function_exists( 'amazon_creators_api_get_token_endpoint' ) ):
 function amazon_creators_api_get_token_endpoint($version){
+  // 新方式 (Login with Amazon, 3.x系) の場合
+  if (strpos((string)$version, '3.') === 0) {
+    // ユーザーが設定しているドメインを取得 (未定義時は日本)
+    $domain = defined('AMAZON_DOMAIN') ? AMAZON_DOMAIN : 'amazon.co.jp';
+    
+    // デフォルトはFE(日本等)用のエンドポイント
+    $lwa_endpoint = 'https://api.amazon.co.jp/auth/o2/token'; 
+    
+    // EU諸国用エンドポイント
+    if (preg_match('/\.co\.uk|\.de|\.fr|\.it|\.es|\.nl|\.se|\.pl|\.com\.be/i', $domain)) {
+      $lwa_endpoint = 'https://api.amazon.co.uk/auth/o2/token';
+    }
+    // NA諸国用エンドポイント
+    elseif (preg_match('/\.com$|\.ca|\.com\.mx|\.com\.br/i', $domain)) {
+      $lwa_endpoint = 'https://api.amazon.com/auth/o2/token';
+    }
+    
+    return apply_filters('amazon_creators_api_lwa_token_endpoint', $lwa_endpoint);
+  }
+
+  // 従来方式 (Cognito, 2.x系) の場合
   switch ($version) {
     case '2.1':
       return 'https://creatorsapi.auth.us-east-1.amazoncognito.com/oauth2/token';
@@ -452,8 +486,8 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   $credential_secret = trim((string)get_amazon_creators_api_secret());
   $partnerTag = trim((string)get_amazon_associate_tracking_id($tracking_id));
 
-  // 既定は日本向け(FE)・JPマーケット。必要ならフィルタで変更
-  $version = apply_filters('amazon_creators_api_version', '2.3');
+  // バージョンとマーケットプレイスの設定
+  $version = amazon_creators_api_get_version($credential_id);
   $marketplace = apply_filters('amazon_creators_api_marketplace', AMAZON_DOMAIN);
 
   // デバッグ用に送信情報の状態を記録
@@ -710,7 +744,7 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
   $partnerTag = trim((string)get_amazon_associate_tracking_id($tracking_id));
 
   // APIバージョンとマーケットプレイスの設定
-  $version = apply_filters('amazon_creators_api_version', '2.3');
+  $version = amazon_creators_api_get_version($credential_id);
   $marketplace = apply_filters('amazon_creators_api_marketplace', AMAZON_DOMAIN);
 
   cocoon_product_block_debug_log('search request marketplace='.$marketplace.' version='.$version);
