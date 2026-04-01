@@ -58,7 +58,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '外部リンク設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '外部リンク動作の設定です。外部ブログカードにも適用されます。', THEME_NAME ) ?></p>
+    <p><?php _e( '外部リンク動作の設定です。外部リンクすべてに適用されます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -76,7 +76,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'self' => __( '同じタブで開く（_self）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_EXTERNAL_LINK_OPEN_TYPE, $options, get_external_link_open_type());
-            generate_tips_tag(__( '本文内の外部リンクをどのように開くか。', THEME_NAME ));
+            generate_tips_tag(__( '外部リンクをどのように開くか。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -94,7 +94,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'follow' => __( 'フォローする（follow）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_EXTERNAL_LINK_FOLLOW_TYPE, $options, get_external_link_follow_type());
-            generate_tips_tag(__( '本文内の外部リンクのフォロー状態を設定します。', THEME_NAME ));
+            generate_tips_tag(__( '外部リンクのフォロー状態を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -181,7 +181,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '内部リンク設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '内部リンク動作の設定です。内部ブログカードにも適用されます。', THEME_NAME ) ?></p>
+    <p><?php _e( '内部リンク動作の設定です。内部リンクすべてに適用されます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -199,7 +199,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'self' => __( '同じタブで開く（_self）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_INTERNAL_LINK_OPEN_TYPE, $options, get_internal_link_open_type());
-            generate_tips_tag(__( '本文内の内部リンクをどのように開くか。', THEME_NAME ));
+            generate_tips_tag(__( '内部リンクをどのように開くか。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -217,7 +217,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'follow' => __( 'フォローする（follow）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_INTERNAL_LINK_FOLLOW_TYPE, $options, get_internal_link_follow_type());
-            generate_tips_tag(__( '本文内の内部リンクのフォロー状態を設定します。', THEME_NAME ));
+            generate_tips_tag(__( '内部リンクのフォロー状態を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>
