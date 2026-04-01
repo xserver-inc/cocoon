@@ -4,10 +4,8 @@
  *
  * エッジケースを含むバージョン判定や、リージョンごとのLwAトークンエンドポイント振り分けをテストします。
  *
- * 注意: このテストでは Brain\Monkey\Functions\expect() を使用しません。
- * bootstrap.php → wp-mock-functions.php / cron-test-stubs.php で既にグローバル関数が
- * 定義済みのため、Patchwork の DefinedTooEarly エラーが発生するためです。
- * 代わりに、グローバル変数でスタブの戻り値を制御する方式を採用しています。
+ * 注意: wp_remote_post 等のグローバル変数方式でスタブの戻り値を制御しているため、
+ * Brain\Monkey\Functions\expect() は一部関数（get_transient 等）のデフォルト動作設定にのみ使用しています。
  */
 
 namespace Cocoon\Tests\Unit;
@@ -37,6 +35,12 @@ class CreatorsApiTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
+        // transient 関数のデフォルト動作を Brain\Monkey で定義
+        // cron-test-stubs.php ではなくここで定義することで Patchwork の DefinedTooEarly を回避
+        \Brain\Monkey\Functions\when('get_transient')->justReturn(false);
+        \Brain\Monkey\Functions\when('set_transient')->justReturn(true);
+        \Brain\Monkey\Functions\when('delete_transient')->justReturn(true);
 
         // 各テスト前にグローバルモック変数をリセット
         global $test_mock_wp_remote_post_response;

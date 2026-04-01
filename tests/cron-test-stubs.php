@@ -77,16 +77,12 @@ if (!function_exists('get_amazon_creators_api_version')) {
 
 // ============================================================
 // WordPress コア関数のスタブ（creators-api.php の読み込み時に必要）
+// 注意: get_transient / set_transient / delete_transient はここで定義しない。
+// bootstrap.php 経由で読み込まれるファイルは Patchwork のストリームラッパーを
+// 通過しないため、ここで定義すると Brain\Monkey の expect() で再定義できず
+// DefinedTooEarly エラーになる。
+// 代わりに wp-mock-functions.php に Brain\Monkey 互換のスタブを定義する。
 // ============================================================
-if (!function_exists('get_transient')) {
-    function get_transient($key) { return false; } // 常に再取得を強制
-}
-if (!function_exists('set_transient')) {
-    function set_transient($key, $val, $exp = 0) { return true; }
-}
-if (!function_exists('delete_transient')) {
-    function delete_transient($key) { return true; }
-}
 if (!function_exists('wp_json_encode')) {
     function wp_json_encode($data, $options = 0, $depth = 512) {
         return json_encode($data, $options, $depth);

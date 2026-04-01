@@ -73,7 +73,7 @@ class ProductFuncTest extends TestCase
     public function test_get_amazon_associate_url_ASINのみでURLを生成する(): void
     {
         $result = get_amazon_associate_url('B08N5WRWNW');
-        $this->assertStringContainsString('www.amazon.co.jp', $result);
+        $this->assertStringContainsString(AMAZON_DOMAIN, $result);
         $this->assertStringContainsString('B08N5WRWNW', $result);
     }
 
@@ -91,7 +91,7 @@ class ProductFuncTest extends TestCase
     public function test_get_amazon_search_url_キーワードでURLを生成する(): void
     {
         $result = get_amazon_search_url('PHP入門');
-        $this->assertStringStartsWith('https://www.amazon.co.jp/gp/search?keywords=', $result);
+        $this->assertStringStartsWith('https://' . AMAZON_DOMAIN . '/gp/search?keywords=', $result);
         $this->assertStringContainsString(urlencode('PHP入門'), $result);
     }
 
@@ -114,7 +114,7 @@ class ProductFuncTest extends TestCase
     public function test_get_amazon_review_url_ASINでレビューURLを生成する(): void
     {
         $result = get_amazon_review_url('B08N5WRWNW');
-        $this->assertSame('https://www.amazon.co.jp/product-reviews/B08N5WRWNW/', $result);
+        $this->assertSame('https://' . AMAZON_DOMAIN . '/product-reviews/B08N5WRWNW/', $result);
     }
 
     public function test_get_amazon_review_url_トラッキングID付き(): void
