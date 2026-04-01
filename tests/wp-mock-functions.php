@@ -817,3 +817,11 @@ if (!function_exists('is_comment_external_blogcard_enable')) {
 
 if (!function_exists('get_image_sized_url')) { function get_image_sized_url($url, $w = 0, $h = 0) { return $url; } }
 if (!function_exists('url_to_local')) { function url_to_local($url) { return false; } }
+
+// lib/admin.php の get_admin_bar_menu_array が使用
+if (!function_exists('admin_url')) {
+    function admin_url($path = '', $scheme = 'admin') {
+        return 'http://example.com/wp-admin/' . $path;
+    }
+}
+
