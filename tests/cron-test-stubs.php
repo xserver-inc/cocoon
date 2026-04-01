@@ -78,13 +78,28 @@ if (!function_exists('get_amazon_creators_api_version')) {
 // ============================================================
 // WordPress コア関数のスタブ（creators-api.php の読み込み時に必要）
 // ============================================================
+if (!function_exists('get_transient')) {
+    function get_transient($key) { return false; } // 常に再取得を強制
+}
+if (!function_exists('set_transient')) {
+    function set_transient($key, $val, $exp = 0) { return true; }
+}
+if (!function_exists('delete_transient')) {
+    function delete_transient($key) { return true; }
+}
 if (!function_exists('wp_json_encode')) {
     function wp_json_encode($data, $options = 0, $depth = 512) {
         return json_encode($data, $options, $depth);
     }
 }
 if (!function_exists('wp_remote_retrieve_response_code')) {
-    function wp_remote_retrieve_response_code($response) { return 200; }
+    // テスト用: レスポンス配列から response code を取得する（wp_remote_post のモックと連携）
+    function wp_remote_retrieve_response_code($response) {
+        if (is_array($response) && isset($response['response']['code'])) {
+            return $response['response']['code'];
+        }
+        return 200;
+    }
 }
 if (!function_exists('wp_mkdir_p')) {
     function wp_mkdir_p($target) { return true; }

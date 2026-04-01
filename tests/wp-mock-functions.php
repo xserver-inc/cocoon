@@ -49,7 +49,12 @@ if (!function_exists('add_action')) {
 }
 
 if (!function_exists('apply_filters')) {
+    // テスト用: グローバル変数 $test_mock_apply_filters_callbacks で戻り値を制御可能
     function apply_filters($tag, $value, ...$args) {
+        global $test_mock_apply_filters_callbacks;
+        if (!empty($test_mock_apply_filters_callbacks[$tag]) && is_callable($test_mock_apply_filters_callbacks[$tag])) {
+            return ($test_mock_apply_filters_callbacks[$tag])($value, ...$args);
+        }
         return $value;
     }
 }
@@ -261,13 +266,25 @@ if (!function_exists('wp_remote_get')) {
 }
 
 if (!function_exists('wp_remote_post')) {
+    // テスト用: グローバル変数 $test_mock_wp_remote_post_response で戻り値を制御可能
+    // $test_mock_wp_remote_post_args にリクエスト引数をキャプチャ
     function wp_remote_post($url, $args = []) {
+        global $test_mock_wp_remote_post_response;
+        global $test_mock_wp_remote_post_args;
+        $test_mock_wp_remote_post_args = $args;
+        if (isset($test_mock_wp_remote_post_response)) {
+            return $test_mock_wp_remote_post_response;
+        }
         return [];
     }
 }
 
 if (!function_exists('wp_remote_retrieve_body')) {
+    // テスト用: レスポンス配列から body を取得する（wp_remote_post のモックと連携）
     function wp_remote_retrieve_body($response) {
+        if (is_array($response) && isset($response['body'])) {
+            return $response['body'];
+        }
         return '';
     }
 }

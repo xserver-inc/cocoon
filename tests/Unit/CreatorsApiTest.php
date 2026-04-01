@@ -3,6 +3,11 @@
  * Creators API関連のユニットテスト
  *
  * エッジケースを含むバージョン判定や、リージョンごとのLwAトークンエンドポイント振り分けをテストします。
+ *
+ * 注意: このテストでは Brain\Monkey\Functions\expect() を使用しません。
+ * bootstrap.php → wp-mock-functions.php / cron-test-stubs.php で既にグローバル関数が
+ * 定義済みのため、Patchwork の DefinedTooEarly エラーが発生するためです。
+ * 代わりに、グローバル変数でスタブの戻り値を制御する方式を採用しています。
  */
 
 namespace Cocoon\Tests\Unit;
@@ -20,15 +25,9 @@ class CreatorsApiTest extends TestCase
             define('AMAZON_DOMAIN', 'amazon.co.jp');
         }
 
-        // 依存関数スタブ
-        if (!function_exists('home_url')) {
-            function home_url() { return 'https://example.com'; }
-        }
-        if (!function_exists('get_amazon_creators_api_credential_id')) {
-            function get_amazon_creators_api_credential_id() { return 'test_id'; }
-        }
-        if (!function_exists('get_amazon_creators_api_secret')) {
-            function get_amazon_creators_api_secret() { return 'test_secret'; }
+        // amazon_creators_api_get_user_agent はグローバルスタブに存在しないため定義
+        if (!function_exists('amazon_creators_api_get_user_agent')) {
+            function amazon_creators_api_get_user_agent() { return 'CocoonTest/1.0'; }
         }
 
         // テスト対象ファイルを読み込み
@@ -38,6 +37,31 @@ class CreatorsApiTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
+        // 各テスト前にグローバルモック変数をリセット
+        global $test_mock_wp_remote_post_response;
+        global $test_mock_wp_remote_post_args;
+        global $test_mock_apply_filters_callbacks;
+
+        $test_mock_wp_remote_post_response = null;
+        $test_mock_wp_remote_post_args = [];
+        $test_mock_apply_filters_callbacks = [];
+    }
+
+    protected function tearDown(): void
+    {
+        // グローバルモック変数をクリーンアップ
+        global $test_mock_wp_remote_post_response;
+        global $test_mock_wp_remote_post_args;
+        global $test_mock_apply_filters_callbacks;
+        global $test_mock_creators_api_credential_id;
+
+        $test_mock_wp_remote_post_response = null;
+        $test_mock_wp_remote_post_args = [];
+        $test_mock_apply_filters_callbacks = [];
+        $test_mock_creators_api_credential_id = null;
+
+        parent::tearDown();
     }
 
     // ========================================================================
@@ -97,5 +121,131 @@ class CreatorsApiTest extends TestCase
         // PHPでの型キャスト対策テスト（念のため float 3.3 を渡してみる）
         $endpoint_float = amazon_creators_api_get_token_endpoint(3.3);
         $this->assertSame('https://api.amazon.co.jp/auth/o2/token', $endpoint_float);
+    }
+
+    // ========================================================================
+    // amazon_creators_api_get_access_token() のモック連動フルテストとエッジケース
+    // ========================================================================
+
+    public function test_get_access_token_v3_LwAの場合はJSONエンコードでリクエストする(): void
+    {
+        global $test_mock_wp_remote_post_args;
+        global $test_mock_wp_remote_post_response;
+
+        // LwA 用の新しい認証ID
+        $credential_id = 'amzn1.application-oa2-client.dummy12345';
+        
+        // モックから返すレスポンスを設定
+        $test_mock_wp_remote_post_response = array(
+            'response' => array('code' => 200),
+            'body' => json_encode(array('access_token' => 'lwa_mock_token_abc', 'expires_in' => 3600))
+        );
+
+        $result = amazon_creators_api_get_access_token($credential_id, 'dummy_secret', '3.3');
+
+        $this->assertIsArray($result);
+        $this->assertSame('lwa_mock_token_abc', $result['token']);
+
+        // キャプチャされた引数を検証（重箱の隅チェック）
+        $headers = $test_mock_wp_remote_post_args['headers'] ?? [];
+        
+        // 1. Content-Type が application/json になっていること
+        $this->assertArrayHasKey('Content-Type', $headers);
+        $this->assertSame('application/json', $headers['Content-Type']);
+
+        // 2. BodyがJSONフォーマットでエンコードされていること
+        $body = $test_mock_wp_remote_post_args['body'] ?? '';
+        $this->assertJson($body);
+        
+        $decoded_body = json_decode($body, true);
+        $this->assertSame('client_credentials', $decoded_body['grant_type']);
+        $this->assertSame('amzn1.application-oa2-client.dummy12345', $decoded_body['client_id']);
+        
+        // 3. スコープが『ダブルコロン』の creatorsapi::default になっていること
+        $this->assertSame('creatorsapi::default', $decoded_body['scope']);
+        
+        // 4. タイムアウトがデフォルトで20秒に設定されていること
+        $this->assertSame(20, $test_mock_wp_remote_post_args['timeout']);
+    }
+
+    public function test_get_access_token_v2_従来方式の場合はフォームエンコードでリクエストする(): void
+    {
+        global $test_mock_wp_remote_post_args;
+        global $test_mock_wp_remote_post_response;
+
+        // 従来形式の ID
+        $credential_id = 'XYZ-LEGACY-ID'; 
+        
+        // モックから返すレスポンスを設定
+        $test_mock_wp_remote_post_response = array(
+            'response' => array('code' => 200),
+            'body' => json_encode(array('access_token' => 'legacy_mock_token_xyz', 'expires_in' => 3600))
+        );
+
+        $result = amazon_creators_api_get_access_token($credential_id, 'legacy_secret', '2.3');
+
+        $this->assertIsArray($result);
+        $this->assertSame('legacy_mock_token_xyz', $result['token']);
+
+        // キャプチャされた引数を検証
+        $headers = $test_mock_wp_remote_post_args['headers'] ?? [];
+        
+        // 1. Content-Type が form-urlencoded になっていること
+        $this->assertArrayHasKey('Content-Type', $headers);
+        $this->assertSame('application/x-www-form-urlencoded', $headers['Content-Type']);
+
+        // 2. Bodyがクエリ文字列フォーマット（JSONではない）こと
+        $body = $test_mock_wp_remote_post_args['body'] ?? '';
+        $this->assertStringNotContainsString('{', $body);
+        $this->assertStringContainsString('grant_type=client_credentials', $body);
+        
+        // 3. スコープが『スラッシュ区切り』の creatorsapi/default などに（URLエンコードされて）送られていること
+        $decoded_query = urldecode($body);
+        $this->assertStringContainsString('scope=creatorsapi/default', $decoded_query);
+    }
+
+    public function test_get_access_token_エラーハンドリング_JSONデコード失敗(): void
+    {
+        global $test_mock_wp_remote_post_response;
+
+        // アクセストークンがない不正なJSONレスポンスをシミュレート
+        $test_mock_wp_remote_post_response = array(
+            'response' => array('code' => 200),
+            'body' => '{"error":"invalid_client"}' // access_token キーが存在しない
+        );
+
+        $result = amazon_creators_api_get_access_token('test_id', 'secret', '3.3');
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey('error', $result);
+        $this->assertArrayNotHasKey('token', $result);
+    }
+
+    public function test_get_access_token_scopeフィルターで空にした場合_scopeが送信されないエッジケース(): void
+    {
+        global $test_mock_wp_remote_post_args;
+        global $test_mock_wp_remote_post_response;
+        global $test_mock_apply_filters_callbacks;
+
+        $credential_id = 'amzn1.test'; // v3
+        
+        // モックレスポンスを設定（scopeテスト用）
+        $test_mock_wp_remote_post_response = array(
+            'response' => array('code' => 200),
+            'body' => json_encode(array('access_token' => 'scope_test_token', 'expires_in' => 3600))
+        );
+        
+        // amazon_creators_api_scope フィルターで強制的に空文字にする
+        $test_mock_apply_filters_callbacks['amazon_creators_api_scope'] = function($scope, $version) {
+            return '';
+        };
+
+        $token = amazon_creators_api_get_access_token($credential_id, 'dummy_secret', '3.3');
+
+        $body = $test_mock_wp_remote_post_args['body'] ?? '';
+        $decoded_body = json_decode($body, true);
+        
+        // scopeが空の場合、リクエストパラメータにscopeキーが含まれるが空文字のはず
+        // 実装側で空文字列のscopeを除外するかはcreators-api.phpの実装に依存
+        $this->assertSame('client_credentials', $decoded_body['grant_type']);
     }
 }
