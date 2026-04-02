@@ -157,7 +157,7 @@ function rakuten_product_link_shortcode($atts){
     if ($search && !$id) {
       $searchkw = '&keyword=' . urlencode($search);
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId=' . urlencode($rakuten_application_id) . '&affiliateId=' . urlencode($rakuten_affiliate_id) . '&imageFlag=1' . $sortQuery . $shopCode . '&hits=1' . $searchkw . $itemCode . $purchaseTypeCode;
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . RAKUTEN_API_VERSION . '?applicationId=' . urlencode($rakuten_application_id) . '&affiliateId=' . urlencode($rakuten_affiliate_id) . '&imageFlag=1' . $sortQuery . $shopCode . '&hits=1' . $searchkw . $itemCode . $purchaseTypeCode;
     //_v($request_url);
     $args = array( 'sslverify' => true );
     $args = apply_filters('wp_remote_get_rakuten_args', $args);
@@ -206,9 +206,12 @@ function rakuten_product_link_shortcode($atts){
       //ジェイソンの配列化
       $body = json_decode( $body );
       //IDの商品が見つからなかった場合
-      if (intval($body->{'count'}) > 0) {
+      if (isset($body->{'count'}) && intval($body->{'count'}) > 0 && isset($body->{'Items'}[0])) {
 
-        $Item = $body->{'Items'}['0']->{'Item'};
+        // 最新のAPIレスポンスの構造変化に対応できる形にItemを抽出
+        $rawItem = $body->{'Items'}[0];
+        $Item = isset($rawItem->{'Item'}) ? $rawItem->{'Item'} : $rawItem;
+        
         if ($Item) {
 
           $itemName = $Item->{'itemName'};
@@ -225,29 +228,37 @@ function rakuten_product_link_shortcode($atts){
 
 
           //小さな画像
-          $smallImageUrls = $Item->{'smallImageUrls'};
-          $smallImageUrl = $smallImageUrls['0']->{'imageUrl'};
+          $smallImageUrls = isset($Item->{'smallImageUrls'}) ? $Item->{'smallImageUrls'} : array();
+          $smallImageUrl = isset($smallImageUrls[0]->{'imageUrl'}) ? $smallImageUrls[0]->{'imageUrl'} : null;
           //画像サイズの取得
-          $sizes = get_rakuten_image_size($smallImageUrl);
-          if ($sizes) {
-            $smallImageWidth = $sizes['width'];
-            $smallImageHeight = $sizes['height'];
+          if ($smallImageUrl) {
+            $sizes = get_rakuten_image_size($smallImageUrl);
+            if ($sizes) {
+              $smallImageWidth = $sizes['width'];
+              $smallImageHeight = $sizes['height'];
+            } else {
+              $smallImageWidth = null;
+              $smallImageHeight = null;
+            }
           } else {
-            $smallImageUrl = null;
             $smallImageWidth = null;
             $smallImageHeight = null;
           }
 
           //標準画像
-          $mediumImageUrls = $Item->{'mediumImageUrls'};
-          $mediumImageUrl = $mediumImageUrls['0']->{'imageUrl'};
+          $mediumImageUrls = isset($Item->{'mediumImageUrls'}) ? $Item->{'mediumImageUrls'} : array();
+          $mediumImageUrl = isset($mediumImageUrls[0]->{'imageUrl'}) ? $mediumImageUrls[0]->{'imageUrl'} : null;
           //画像サイズの取得
-          $sizes = get_rakuten_image_size($mediumImageUrl);
-          if ($sizes) {
-            $mediumImageWidth = $sizes['width'];
-            $mediumImageHeight = $sizes['height'];
+          if ($mediumImageUrl) {
+            $sizes = get_rakuten_image_size($mediumImageUrl);
+            if ($sizes) {
+              $mediumImageWidth = $sizes['width'];
+              $mediumImageHeight = $sizes['height'];
+            } else {
+              $mediumImageWidth = null;
+              $mediumImageHeight = null;
+            }
           } else {
-            $mediumImageUrl = null;
             $mediumImageWidth = null;
             $mediumImageHeight = null;
           }
@@ -473,8 +484,9 @@ function rakuten_product_link_shortcode($atts){
     } else {
       if (is_array($json) && isset($json['body'])) {
         $ebody = json_decode( $json['body'] );
-        $error = $ebody->{'error'};
-        $error_description = $ebody->{'error_description'};
+        // APIのエラーレスポンス形式が異なる場合に備え、存在チェックを行う
+        $error = isset($ebody->{'error'}) ? $ebody->{'error'} : '';
+        $error_description = isset($ebody->{'error_description'}) ? $ebody->{'error_description'} : '';
         switch ($error) {
           case 'wrong_parameter':
           $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );

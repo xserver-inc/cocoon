@@ -242,6 +242,8 @@ define('TRANSIENT_BACKUP_AMAZON_API_PREFIX', THEME_NAME.'_backup_amazon_paapi_v5
 define('TRANSIENT_RAKUTEN_API_PREFIX', THEME_NAME.'_rakuten_api_id_');
 //楽天APIのバックアッププレフィックス
 define('TRANSIENT_BACKUP_RAKUTEN_API_PREFIX', THEME_NAME.'_backup_rakuten_api_id_');
+//楽天APIバージョン（楽天市場商品検索API）
+define('RAKUTEN_API_VERSION', '20220601');
 
 //最初のH2見出し用の優先度
 define('BEFORE_1ST_H2_WIDGET_PRIORITY_STANDARD', 10002);

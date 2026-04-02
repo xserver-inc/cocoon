@@ -60,7 +60,8 @@ function cocoon_rakuten_block_search($request){
   }
 
   // ソート順をCocoon設定から取得
-  $sort = str_replace('+', '%2B', '&sort='.get_rakuten_api_sort());
+  // sortは「+itemPrice」等の+を含むため、rawurlencodeでスペース%20・+は%2Bにエンコード
+  $sort = '&sort=' . rawurlencode(get_rakuten_api_sort());
 
   // 購入タイプパラメータの構築
   $purchase_type_query = '';
@@ -69,9 +70,9 @@ function cocoon_rakuten_block_search($request){
   }
 
   // 楽天APIリクエストURLの構築
-  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
-    .'?applicationId='.$rakuten_application_id
-    .'&affiliateId='.$rakuten_affiliate_id
+  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . RAKUTEN_API_VERSION
+    .'?applicationId='.urlencode($rakuten_application_id)
+    .'&affiliateId='.urlencode($rakuten_affiliate_id)
     .'&imageFlag=1'
     .$sort
     .'&hits=30'
@@ -205,9 +206,9 @@ function cocoon_rakuten_block_fetch_item($itemCode){
   }
 
   // 楽天APIリクエストURLの構築（商品コードで検索）
-  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
-    .'?applicationId='.$rakuten_application_id
-    .'&affiliateId='.$rakuten_affiliate_id
+  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . RAKUTEN_API_VERSION
+    .'?applicationId='.urlencode($rakuten_application_id)
+    .'&affiliateId='.urlencode($rakuten_affiliate_id)
     .'&imageFlag=1'
     .'&hits=1'
   // 商品コードには「shopCode:itemCode」形式でコロンを含む場傐があるため urlencode() でエンコードする
