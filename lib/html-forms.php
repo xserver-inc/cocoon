@@ -1920,7 +1920,7 @@ function generate_info_list_tag($atts){
   $frame_class = ($frame ? ' is-style-frame-border' : '');
   $divider_class = ($divider ? ' is-style-divider-line' : '');
   if( $query->have_posts() ): ?>
-    <div id="info-list" class="info-list<?php echo $frame_class; ?><?php echo $divider_class; ?>">
+    <div class="info-list<?php echo $frame_class; ?><?php echo $divider_class; ?>">
       <?php if ($caption): ?>
         <div class="info-list-caption"><?php echo esc_html($caption); ?></div>
       <?php endif; ?>
