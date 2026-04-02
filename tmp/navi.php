@@ -19,8 +19,8 @@
         'container' => false,
         //カスタムメニューを設定しない際に固定ページでメニューを作成しない
         'fallback_cb' => false,
-        //出力されるulに対してidやclassを表示しない
-        //'items_wrap' => '<ul>%3$s</ul>',
+        //メニューの出力されるulに対してidを表示しない
+        'items_wrap' => '<ul class="%2$s">%3$s</ul>',
         //説明出力用
         'walker' => new menu_description_walker()
       )
@@ -36,8 +36,8 @@
         'container' => false,
         //カスタムメニューを設定しない際に固定ページでメニューを作成しない
         'fallback_cb' => false,
-        //出力されるulに対してidやclassを表示しない
-        //'items_wrap' => '<ul>%3$s</ul>',
+        //メニューの出力されるulに対してidを表示しない
+        'items_wrap' => '<ul class="%2$s">%3$s</ul>',
         //説明出力用
         'walker' => new menu_description_walker()
       )
