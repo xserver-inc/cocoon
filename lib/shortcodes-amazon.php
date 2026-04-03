@@ -442,7 +442,7 @@ function amazon_product_link_shortcode($atts){
     $asin = sanitize_shortcode_value($id);
   }
   //キーワード
-  $keyword = sanitize_shortcode_value($kw);
+  $keyword = (string) sanitize_shortcode_value($kw);
 
   //説明文
   $description = $desc;

@@ -53,7 +53,7 @@ function rakuten_product_link_shortcode($atts){
   $search = sanitize_shortcode_value($search);
 
   //キーワード
-  $keyword = sanitize_shortcode_value($kw);
+  $keyword = (string) sanitize_shortcode_value($kw);
   //全角スペースを半角に置換
   $keyword = str_replace('　', ' ', $keyword);
   //連続した半角スペースを1つに置換
