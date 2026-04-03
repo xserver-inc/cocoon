@@ -201,7 +201,7 @@ class OpenGraphGetter implements Iterator
         }
 
         //Fallback to use image_src if ogp::image isn't set.
-        if (!isset($page->values['image'])) {
+        if (!isset($page->_values['image'])) {
             $domxpath = new DOMXPath($doc);
             $elements = $domxpath->query("//link[@rel='image_src']");
 
@@ -214,6 +214,79 @@ class OpenGraphGetter implements Iterator
                     $page->_values['image'] = $domattr->value;
                     $page->_values['image_src'] = $domattr->value;
                 }
+            }
+        }
+
+        // HTMLソースからのAmazon固有の画像抽出 (フォールバック処理)
+        if (is_amazon_site_page($URI)) {
+            // 汎用的なAmazonロゴが取得されている場合は無効化し、商品画像の再探索を許可する
+            $has_valid_image = isset($page->_values['image']) && !preg_match('/(?:amazon_logo|amazon-icon|no-image)/i', $page->_values['image']);
+            
+            if (!$has_valid_image) {
+                // XPathが未初期化の場合は初期化
+                if (!isset($domxpath)) {
+                    $domxpath = new DOMXPath($doc);
+                }
+
+                $amazon_img_src = null;
+
+                // 1. OGPやTwitterカードのメタタグから直接探索 (DOM解析で漏れた場合を考慮)
+                $meta_images = $domxpath->query("//meta[@property='og:image' or @name='twitter:image']");
+                foreach ($meta_images as $meta_img) {
+                    if ($meta_img instanceof DOMElement) {
+                        $content = $meta_img->getAttribute('content');
+                        // 汎用ロゴでないかをチェック
+                        if ($content && !preg_match('/(?:amazon_logo|amazon-icon|no-image)/i', $content)) {
+                            $amazon_img_src = $content;
+                            break;
+                        }
+                    }
+                }
+
+                // 2. ページ内の主な商品画像IDから抽出 (標準商品、書籍、Kindle、デジタルミュージック等のエッジケース対応)
+                if (!$amazon_img_src) {
+                    $img_nodes = $domxpath->query("//img[@id='landingImage' or @id='imgBlkFront' or @id='ebooksImgBlkFront' or @id='main-image'] | //div[@id='dmusicProductImage_feature_div']//img");
+                    if ($img_nodes->length > 0) {
+                        $img = $img_nodes->item(0);
+                        if ($img instanceof DOMElement) {
+                            // 高解像度画像属性を優先確認
+                            $amazon_img_src = $img->getAttribute('data-old-hires');
+                            
+                            // 動的画像プロパティ (JSON) を確認
+                            if (!$amazon_img_src) {
+                                $dynamic_img = $img->getAttribute('data-a-dynamic-image');
+                                if ($dynamic_img) {
+                                    $images = json_decode(htmlspecialchars_decode($dynamic_img, ENT_QUOTES), true);
+                                    if (is_array($images) && !empty($images)) {
+                                        $urls = array_keys($images);
+                                        // 最初のURL（通常はベースとなる高解像度画像）を取得
+                                        $amazon_img_src = $urls[0];
+                                    }
+                                }
+                            }
+                            
+                            // 通常のsrc属性へのフォールバック（遅延ロード用のbase64の場合は除外）
+                            if (!$amazon_img_src) {
+                                $src_attr = $img->getAttribute('src');
+                                if ($src_attr && strpos($src_attr, 'data:image') !== 0) {
+                                    $amazon_img_src = $src_attr;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                // 取得したURLを格納
+                if ($amazon_img_src) {
+                    $page->_values['image'] = $amazon_img_src;
+                }
+            }
+
+            // 3. Amazon特有の画像サイズ縮小パラメータの除去（OGP画像が先に採用されていた場合でも強制的に高解像度化する）
+            if (!empty($page->_values['image'])) {
+                // 例: https://m.media-amazon.com/images/I/41Pq23x1-AL._AC_SY400_.jpg -> ...AL.jpg
+                $clean_src = preg_replace('/\._[^.]+\.(jpg|jpeg|png|gif|webp)$/i', '.$1', $page->_values['image']);
+                $page->_values['image'] = $clean_src;
             }
         }
 
