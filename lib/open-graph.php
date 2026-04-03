@@ -200,8 +200,52 @@ class OpenGraphGetter implements Iterator
             $page->_values['description'] = $nonOgDescription;
         }
 
+        // 楽天商品ページの取得時は、汎用ロゴの回避と高画質メイン画像の抽出を行う
+        if (is_rakuten_site_page($URI)) {
+            // 楽天の汎用ロゴやnoimage画像を検知した場合は無効化し、商品画像を探し直す
+            if (isset($page->_values['image']) && preg_match('/(?:logo|no_?image)/i', $page->_values['image'])) {
+                unset($page->_values['image']);
+            }
+
+            // 画像URLがまだ見つかっていない場合、XPathを使用してHTML内からメイン商品画像を抽出
+            if (!isset($page->_values['image'])) {
+                $domxpath = new DOMXPath($doc);
+                $queries = array(
+                    "//meta[@itemprop='image']",
+                    "//img[@itemprop='image']",
+                    "//img[contains(@src, 'image.rakuten.co.jp') or contains(@src, 'tshop.r10s.jp') or contains(@src, 'thumbnail.image.rakuten.co.jp')]"
+                );
+                
+                foreach ($queries as $query) {
+                    $elements = $domxpath->query($query);
+                    if ($elements && $elements->length > 0) {
+                        // 対象が複数見つかった場合、有効なもの(ロゴ等でないもの)が見つかるまでループする
+                        foreach ($elements as $element) {
+                            // metaタグ用はcontent属性、imgタグ等はsrc属性から画像URLを取得
+                            if ($element instanceof DOMElement) {
+                                $src = $element->hasAttribute('content') ? $element->getAttribute('content') : ($element->hasAttribute('src') ? $element->getAttribute('src') : null);
+                                // data:image等のLazy Loadダミーを弾くため URL が記述されていることを確認
+                                if (!empty($src) && preg_match('/^(?:https?:)?\/\//i', $src) && !preg_match('/(?:logo|no_?image)/i', $src)) {
+                                    $page->_values['image']     = $src;
+                                    $page->_values['image_src'] = $src;
+                                    break 2; // 有効な画像が見つかれば外側の $queries ループごと抜ける
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 楽天の画像URLに付与されるサイズ制限パラメータ(?_ex=400x400や?fitin=...など)を除去してオリジナル最高画質化
+            // ※他社CDNの署名付きURL等でのパラメータ破壊を防ぐため、楽天の画像サーバであるかを検証した上で除去
+            if (isset($page->_values['image']) && preg_match('/(?:image\.rakuten\.co\.jp|r10s\.jp|thumbnail\.image\.rakuten\.co\.jp)/i', $page->_values['image'])) {
+                $page->_values['image']     = preg_replace('/[\?#].*$/', '', $page->_values['image']);
+                $page->_values['image_src'] = $page->_values['image'];
+            }
+        }
+
         //Fallback to use image_src if ogp::image isn't set.
-        if (!isset($page->values['image'])) {
+        if (!isset($page->_values['image'])) {
             $domxpath = new DOMXPath($doc);
             $elements = $domxpath->query("//link[@rel='image_src']");
 

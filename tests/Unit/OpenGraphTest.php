@@ -32,7 +32,9 @@ class OpenGraphTest extends TestCase
             function is_amazon_site_page($url) { return false; }
         }
         if (!function_exists('is_rakuten_site_page')) {
-            function is_rakuten_site_page($url) { return false; }
+            function is_rakuten_site_page($url) {
+                return (strpos((string)$url, 'rakuten.co.jp') !== false) || (strpos((string)$url, 'r10s.jp') !== false);
+            }
         }
 
         require_once dirname(__DIR__, 2) . '/lib/open-graph.php';
@@ -211,5 +213,44 @@ class OpenGraphTest extends TestCase
         $this->assertArrayHasKey('product', $types);
         $this->assertContains('blog', $types['website']);
         $this->assertContains('book', $types['product']);
+    }
+
+    // ========================================================================
+    // 楽天固有のエッジケース (Rakuten)
+    // ========================================================================
+
+    public function test_Rakuten_汎用ロゴを回避してHTMLから商品画像を抽出する(): void
+    {
+        $html = $this->makeHtml(
+            '<meta property="og:image" content="https://r.r10s.jp/com/img/home/2000/logo_r_fb.jpg">' .
+            '<img itemprop="image" src="https://image.rakuten.co.jp/shop/cabinet/item.jpg?_ex=400x400">' .
+            '<title>楽天テスト</title>'
+        );
+        
+        $og = $this->callParse($html, 'https://item.rakuten.co.jp/shop/item/');
+        // 汎用ロゴが除外され、itemprop="image"から抽出＋パラメータ除去が行われる想定
+        $this->assertSame('https://image.rakuten.co.jp/shop/cabinet/item.jpg', $og->image);
+    }
+
+    public function test_Rakuten_画像URLのサイズ制限パラメータを除去して高画質URLにする(): void
+    {
+        $html = $this->makeHtml(
+            '<meta property="og:image" content="https://thumbnail.image.rakuten.co.jp/@0_mall/shop/cabinet/item.jpg?_ex=300x300&fitin=300:300">' .
+            '<title>楽天テスト</title>'
+        );
+        
+        $og = $this->callParse($html, 'https://item.rakuten.co.jp/shop/item/');
+        $this->assertSame('https://thumbnail.image.rakuten.co.jp/@0_mall/shop/cabinet/item.jpg', $og->image);
+    }
+
+    public function test_Rakuten_og_imageがない場合にitemprop等から画像を抽出する(): void
+    {
+        $html = $this->makeHtml(
+            '<meta itemprop="image" content="https://tshop.r10s.jp/shop/cabinet/item2.jpg?fitin=128:128">' .
+            '<title>楽天テスト</title>'
+        );
+        
+        $og = $this->callParse($html, 'https://item.rakuten.co.jp/shop/item/');
+        $this->assertSame('https://tshop.r10s.jp/shop/cabinet/item2.jpg', $og->image);
     }
 }
