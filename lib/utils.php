@@ -3888,7 +3888,76 @@ if ( !function_exists( 'get_current_page_url' ) ):
 function get_current_page_url() {
   global $wp;
 
+  // CLI/Cronなど $wp が未初期化の場合はホームURLを返す（Fatal回避）
+  if (!is_object($wp) || !isset($wp->request)) {
+    return home_url('');
+  }
+
   return home_url(add_query_arg(array(), $wp->request));
+}
+endif;
+
+//URLがカレントページと同じかどうか判定する（無限ループ防止用など）
+if ( !function_exists( 'is_current_url_same' ) ):
+function is_current_url_same($url) {
+  if (empty($url) || !is_string($url)) return false;
+
+  // 全体URLの段階でPunycodeデコードし、日本語ドメインを統一する
+  if (function_exists('punycode_decode')) {
+    $url = punycode_decode($url);
+  }
+
+  // 現在のページURL（フロント）と、現在処理中の投稿URL（REST API等のプレビュー対策）の両方を比較対象とする
+  $urls_to_check = array(get_current_page_url());
+  $post_id = get_the_ID();
+  if ($post_id) {
+    $urls_to_check[] = get_permalink($post_id);
+  }
+
+  $target = trim($url);
+  $parsed_t = wp_parse_url($target);
+  if (empty($parsed_t)) return false;
+
+  $host_t = preg_replace('/^www\./i', '', strtolower(isset($parsed_t['host']) ? $parsed_t['host'] : ''));
+  if (empty($host_t)) return false; // ホスト名が取得できない場合は別サイト（または相対パス等）とみなす
+
+  $path_t = rawurldecode(isset($parsed_t['path']) ? $parsed_t['path'] : '');
+  $path_t = untrailingslashit(preg_replace('#/+#', '/', ltrim($path_t, '/')));
+  $query_t = isset($parsed_t['query']) ? $parsed_t['query'] : '';
+  parse_str($query_t, $arr_t);
+
+  foreach ($urls_to_check as $current) {
+    if (empty($current) || !is_string($current)) continue;
+
+    // 全体URLの段階でPunycodeデコードし、日本語ドメインを統一する
+    if (function_exists('punycode_decode')) {
+      $current = punycode_decode($current);
+    }
+
+    $parsed_c = wp_parse_url($current);
+    if (empty($parsed_c)) continue;
+
+    // ホスト名の比較
+    $host_c = preg_replace('/^www\./i', '', strtolower(isset($parsed_c['host']) ? $parsed_c['host'] : ''));
+    if (empty($host_c) || $host_c !== $host_t) continue;
+
+    // パスの比較
+    $path_c = rawurldecode(isset($parsed_c['path']) ? $parsed_c['path'] : '');
+    $path_c = untrailingslashit(preg_replace('#/+#', '/', ltrim($path_c, '/')));
+    if ($path_c !== $path_t) continue;
+
+    // クエリストリングの比較
+    $query_c = isset($parsed_c['query']) ? $parsed_c['query'] : '';
+    if ($query_c || $query_t) {
+      parse_str($query_c, $arr_c);
+      if ($arr_c != $arr_t) continue;
+    }
+
+    // 全て一致した（自己参照と判定）
+    return true;
+  }
+
+  return false;
 }
 endif;
 

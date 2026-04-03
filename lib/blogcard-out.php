@@ -12,6 +12,12 @@ if ( !function_exists( 'url_to_external_blog_card_tag' ) ):
 function url_to_external_blog_card_tag($url){
   $url = strip_tags($url);//URL
 
+  // 無限ループ対策: 自身のURLの場合は外部・内部関わらずいかなるフェーズでも処理しない
+  // (スキーム違いHTTP/HTTPSやクエリ違いなどによるセーフガードすり抜けを防止)
+  if ( is_current_url_same($url) ) {
+    return;
+  }
+
   //サイトの内部リンクは処理しない場合（※wpForoページは外部リンクとして処理する）
   if ( includes_home_url($url) && !includes_wpforo_url($url) ) {
     $id = cocoon_url_to_postid( $url );//IDを取得（URLから投稿IDへ変換・キャッシュ対応）
@@ -156,6 +162,9 @@ function url_to_external_ogp_blogcard_tag($url){
     $ogp_fetched = OpenGraphGetter::fetch($url);
     if ($ogp_fetched == false) {
       $ogp = 'error';
+      // エラー時もネガティブキャッシュを保存する（相手先サーバーダウン時の無限タイムアウトや504エラー対策）
+      // 1時間（HOUR_IN_SECONDS）キャッシュして、復旧までの間の自サイトへの負荷を防ぐ
+      set_transient( $url_hash, 'error', HOUR_IN_SECONDS );
     } else {
       // 必要な値だけコピーして stdClass に格納
       $ogp = new stdClass();
@@ -196,13 +205,14 @@ function url_to_external_ogp_blogcard_tag($url){
 
   //ドメイン名を取得（OGP情報のURLが正しいかのチェック）
   $durl = punycode_decode($url);
-  if (isset($ogp->url) && preg_match(URL_REG, $ogp->url)) {
+  // ネガティブキャッシュ('error'文字列)時は $ogp がオブジェクトではないためプロパティアクセスを避ける
+  if ($ogp !== 'error' && isset($ogp->url) && preg_match(URL_REG, $ogp->url)) {
     $durl = punycode_decode($ogp->url);
   }
   $domain = get_domain_name($durl);
 
   $domain_style = get_external_blogcard_domain_style(); // "domain" or "name"
-  if ($domain_style === 'name' && !empty($ogp->site_name)) {
+  if ($ogp !== 'error' && $domain_style === 'name' && !empty($ogp->site_name)) {
     $domain = $ogp->site_name; // OGPのサイト名を優先
   }
 

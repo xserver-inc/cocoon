@@ -47,6 +47,7 @@ endif;
 if ( !function_exists( 'url_to_internal_blogcard_tag' ) ):
 function url_to_internal_blogcard_tag($url){
   if ( !$url ) return;
+
   $url = strip_tags($url);//URL
   $id = cocoon_url_to_postid( $url );//IDを取得（URLから投稿IDへ変換・キャッシュ対応）
   //内部ブログカード作成可能なURLかどうか
@@ -227,7 +228,7 @@ function url_to_internal_blogcard($the_content) {
     }
 
     //カレントページのURLと$urlが同じ場合は、ブログカード化しない
-    if (get_current_page_url() === $url) {
+    if (is_current_url_same($url)) {
       continue;
     }
 
@@ -301,7 +302,7 @@ function url_shortcode_to_blogcard($the_content) {
     }
 
     //カレントページのURLと$urlが同じ場合は、ブログカード化しない
-    if (get_current_page_url() === $url) {
+    if (is_current_url_same($url)) {
       continue;
     }
 

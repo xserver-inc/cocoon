@@ -842,3 +842,25 @@ if (!function_exists('admin_url')) {
     }
 }
 
+// WordPress コア関数: URL の末尾スラッシュ操作
+if (!function_exists('untrailingslashit')) {
+    function untrailingslashit($value) {
+        return rtrim($value, '/\\');
+    }
+}
+if (!function_exists('trailingslashit')) {
+    function trailingslashit($value) {
+        return untrailingslashit($value) . '/';
+    }
+}
+
+// WordPress コア関数: クエリ引数の追加（簡易実装）
+if (!function_exists('add_query_arg')) {
+    function add_query_arg($args, $url = '') {
+        // テスト用: 空配列の場合はURLをそのまま返す
+        if (is_array($args) && empty($args)) {
+            return $url;
+        }
+        return $url . '?' . http_build_query($args);
+    }
+}
