@@ -106,10 +106,15 @@ class OpenGraphGetter implements Iterator
     if (!is_wp_error( $res ) && $response_code === 200) {
       $response = $res['body'];
     } else if (!is_admin()) {
-      $response = wp_filesystem_get_contents($URI, true);
+      // wp_remote_get が WP_Error を返した場合（タイムアウト・DNS解決失敗・接続拒否等）は
+      // フォールバック（file_get_contents等）でリトライしても同じネットワーク障害で失敗する可能性が高く、
+      // タイムアウト時間が加算されて 504 Gateway Timeout を引き起こすため、フォールバックは行わない
+      if ( !is_wp_error( $res ) ) {
+        $response = wp_filesystem_get_contents($URI, true);
 
-      if (!$response) {
-        $response = get_http_content($URI);
+        if (!$response) {
+          $response = get_http_content($URI);
+        }
       }
     }
     if (!empty($response)) {
@@ -200,8 +205,7 @@ class OpenGraphGetter implements Iterator
             $page->_values['description'] = $nonOgDescription;
         }
 
-        //Fallback to use image_src if ogp::image isn't set.
-        if (!isset($page->values['image'])) {
+        if (!isset($page->_values['image'])) {
             $domxpath = new DOMXPath($doc);
             $elements = $domxpath->query("//link[@rel='image_src']");
 
@@ -251,7 +255,8 @@ class OpenGraphGetter implements Iterator
       return $this->_values[$key];
     }
 
-    if ($key === 'schema') {
+    // schema プロパティへのアクセス時、og:type が設定されていない場合の E_WARNING を防止
+    if ($key === 'schema' && isset($this->_values['type'])) {
       foreach (self::$TYPES AS $schema => $types) {
         if (array_search($this->_values['type'], $types)) {
           return $schema;

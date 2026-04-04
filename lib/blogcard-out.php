@@ -102,6 +102,10 @@ function fetch_card_image($image, $url = null){
   // ファイル名・拡張子をそのまま使用
   $filename = basename($image);
   $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+  // 拡張子がない場合（例: https://example.com/image）はjpgをデフォルトとする
+  if (!$ext) {
+    $ext = 'jpg';
+  }
 
   // キャッシュディレクトリを取得・存在しなければ作成
   $dir = get_theme_blog_card_cache_path();
@@ -112,8 +116,8 @@ function fetch_card_image($image, $url = null){
   // キャッシュ保存先パス
   $new_file = trailingslashit($dir) . md5($image) . '.' . $ext;
 
-  // WordPress関数を用い一時ダウンロード
-  $tmp = download_url($image);
+  // WordPress関数を用い一時ダウンロード（タイムアウトをデフォルトの300秒から5秒に短縮してフリーズを防ぐ）
+  $tmp = download_url($image, 5);
   if ( is_wp_error($tmp) ) {
     return;
   }
@@ -147,12 +151,13 @@ function url_to_external_ogp_blogcard_tag($url){
 
   $image = $error_image;
   $snippet = '';
+  $ogp = null;
 
 
 
   require_once abspath(__FILE__).'open-graph.php';
-  //ブログカードキャッシュ更新モード、もしくはログインユーザー以外のときはキャッシュの取得
-  if ( !(is_external_blogcard_refresh_mode() && is_user_administrator()) ) {
+  //ブロックエディタ画面等REST API経由やクラシックエディタ保存時などバックエンド側の場合は、無駄な多重リクエストによるタイムアウト(504)を防ぐため既存キャッシュを優先する
+  if ( !(is_external_blogcard_refresh_mode() && is_user_administrator() && !is_admin() && !is_rest()) ) {
     //保存したキャッシュを取得
     $ogp = get_transient( $url_hash );
   }
@@ -265,6 +270,7 @@ function url_to_external_ogp_blogcard_tag($url){
   $site_logo_tag = '<div class="blogcard-site external-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 
   //サムネイルを取得できた場合
+  $thumbnail = '';
   $image = apply_filters('get_external_blogcard_thumbnail_url', $image);
   if ( $image ) {
     $thumbnail = get_original_image_tag($image, THUMB160WIDTH, THUMB160HEIGHT, 'blogcard-thumb-image external-blogcard-thumb-image');
