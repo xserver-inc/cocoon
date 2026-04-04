@@ -36,6 +36,8 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-bars'; ?>
             'container' => false,
             //カスタムメニューを設定しない際に固定ページでメニューを作成しない
             'fallback_cb' => false,
+            //メニューの出力されるulに対してidを表示しない
+            'items_wrap' => '<ul class="%2$s">%3$s</ul>',
           )
         );
       } else {
@@ -49,6 +51,8 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-bars'; ?>
             'container' => false,
             //カスタムメニューを設定しない際に固定ページでメニューを作成しない
             'fallback_cb' => false,
+            //メニューの出力されるulに対してidを表示しない
+            'items_wrap' => '<ul class="%2$s">%3$s</ul>',
           )
         );
       }

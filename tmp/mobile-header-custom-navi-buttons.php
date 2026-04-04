@@ -21,6 +21,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       'container' => false,
       //カスタムメニューを設定しない際に固定ページでメニューを作成しない
       'fallback_cb' => false,
+      //メニューの出力されるulに対してidを表示しない
+      'items_wrap' => '<ul class="%2$s">%3$s</ul>',
       'walker' => new mobile_menu_walker(),
     )
   );
