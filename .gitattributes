@@ -20,3 +20,17 @@
 
 # 翻訳ワークフロー用開発スクリプト
 /scripts/              export-ignore
+
+# 本番テーマに不要なリソース（ZIPサイズ削減用）
+/webfonts/fontawesome5/js/       export-ignore
+/webfonts/fontawesome5/metadata/ export-ignore
+/webfonts/fontawesome5/svgs/     export-ignore
+/webfonts/fontawesome5/sprites/  export-ignore
+/webfonts/fontawesome5/scss/     export-ignore
+/webfonts/fontawesome5/less/     export-ignore
+
+# NPMパッケージ管理（本番テーマには不要）
+/package.json             export-ignore
+/package-lock.json        export-ignore
+/blocks/package.json      export-ignore
+/blocks/package-lock.json export-ignore
