@@ -24,7 +24,6 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-bars'; ?>
     <div id="navi-menu-content" class="navi-menu-content menu-content">
       <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"><span class="fa fa-close" aria-hidden="true"></span></label>
       <?php //ヘッダーナビ
-      ob_start();
       if (has_nav_menu( NAV_MENU_MOBILE_SLIDE_IN )) {
         wp_nav_menu(
           array (
@@ -56,34 +55,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-bars'; ?>
           )
         );
       }
-
-      $wp_nav_menu = ob_get_clean();
-      //ドロワーメニュー用のグローバルナビからIDを削除（IDの重複HTML5エラー対応）
-      $wp_nav_menu = preg_replace('/ id="[^"]+?"/i', '', $wp_nav_menu);
-      // //ドロワーメニューのアンカーリンク対策
-      // if (preg_match_all('# href="(.+?)"#', $wp_nav_menu, $m)) {
-      //   foreach ($m[1] as $url) {
-      //     if (includes_string($url, '#')) {
-      //       $requested_url = get_requested_url();
-      //       // _v($requested_url);
-      //       // _v($url);
-      //       if (preg_match('/\?$/', $requested_url)) {
-      //         if (includes_string($url, '?')) {
-      //           $changed_url = str_replace('?', '', $url);
-      //         }
-      //       } else {
-      //         if (includes_string($url, '?')) {
-      //           $changed_url = str_replace('#', '&#', $url);
-      //         } else {
-      //           $changed_url = str_replace('#', '?#', $url);
-      //         }
-      //       }
-      //       $wp_nav_menu = str_replace($url, $changed_url, $wp_nav_menu);
-      //     }
-      //   }
-      // }
-      echo $wp_nav_menu;
-        ?>
+      ?>
     </div>
   </li>
 <?php endif ?>
