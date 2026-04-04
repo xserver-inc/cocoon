@@ -74,6 +74,8 @@ class Punycode
      */
     public function encode($input)
     {
+        // 入力値がnullの場合にexplode()で非推奨エラーが出るのを防ぐため、stringにキャスト
+        $input = (string) $input;
         $parts = explode('.', $input);
         foreach ($parts as &$part) {
             $part = $this->_encodePart($part);
@@ -160,6 +162,8 @@ class Punycode
      */
     public function decode($input)
     {
+        // 入力値がnullの場合にexplode()で非推奨エラーが出るのを防ぐため、stringにキャスト
+        $input = (string) $input;
         $parts = explode('.', $input);
         foreach ($parts as &$part) {
             if (strpos($part, self::PREFIX) !== 0) {
