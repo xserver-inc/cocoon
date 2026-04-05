@@ -201,6 +201,9 @@ function cocoon_rakuten_block_update_post_blocks($post){
 
   // キャッシュをクリア
   clean_post_cache($post->ID);
+  // 注意: wp_update_post() を介さないため、save_postやpost_updatedアクションは発火しません。
+  // サードパーティの静的HTMLキャッシュプラグインに更新が通知されず古いキャッシュが見える
+  // 可能性がありますが、Cronのバックグラウンド更新の性質上、許容範囲としています。
 }
 endif;
 

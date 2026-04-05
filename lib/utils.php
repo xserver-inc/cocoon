@@ -3902,11 +3902,6 @@ if ( !function_exists( 'is_current_url_same' ) ):
 function is_current_url_same($url) {
   if (empty($url) || !is_string($url)) return false;
 
-  // 全体URLの段階でPunycodeデコードし、日本語ドメインを統一する
-  if (function_exists('punycode_decode')) {
-    $url = punycode_decode($url);
-  }
-
   // 現在のページURL（フロント）と、現在処理中の投稿URL（REST API等のプレビュー対策）の両方を比較対象とする
   $urls_to_check = array(get_current_page_url());
   $post_id = get_the_ID();
@@ -3919,6 +3914,12 @@ function is_current_url_same($url) {
   if (empty($parsed_t)) return false;
 
   $host_t = preg_replace('/^www\./i', '', strtolower(isset($parsed_t['host']) ? $parsed_t['host'] : ''));
+  // ホスト名単体に対してPunycodeデコードを適用する
+  // punycode_decode() はフルURL用ラッパーのため、ホスト名だけにはPunycodeクラスを直接使用する
+  if (class_exists('Punycode') && $host_t) {
+    $punycode = new Punycode();
+    $host_t = $punycode->decode($host_t);
+  }
   if (empty($host_t)) return false; // ホスト名が取得できない場合は別サイト（または相対パス等）とみなす
 
   $path_t = rawurldecode(isset($parsed_t['path']) ? $parsed_t['path'] : '');
@@ -3929,16 +3930,16 @@ function is_current_url_same($url) {
   foreach ($urls_to_check as $current) {
     if (empty($current) || !is_string($current)) continue;
 
-    // 全体URLの段階でPunycodeデコードし、日本語ドメインを統一する
-    if (function_exists('punycode_decode')) {
-      $current = punycode_decode($current);
-    }
-
     $parsed_c = wp_parse_url($current);
     if (empty($parsed_c)) continue;
 
     // ホスト名の比較
     $host_c = preg_replace('/^www\./i', '', strtolower(isset($parsed_c['host']) ? $parsed_c['host'] : ''));
+    // ホスト名単体に対してPunycodeデコードを適用する
+    if (class_exists('Punycode') && $host_c) {
+      $punycode = new Punycode();
+      $host_c = $punycode->decode($host_c);
+    }
     if (empty($host_c) || $host_c !== $host_t) continue;
 
     // パスの比較

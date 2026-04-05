@@ -156,8 +156,14 @@ function url_to_external_ogp_blogcard_tag($url){
 
 
   require_once abspath(__FILE__).'open-graph.php';
+
+  //プラグイン等他環境下での Fatal Error を防ぐために function_exists で安全に判定する
+  $is_refresh_mode = function_exists('is_external_blogcard_refresh_mode') && is_external_blogcard_refresh_mode();
+  $is_user_admin   = function_exists('is_user_administrator') && is_user_administrator();
+  $is_rest_req     = function_exists('is_rest') ? is_rest() : (defined('REST_REQUEST') && REST_REQUEST);
+
   //ブロックエディタ画面等REST API経由やクラシックエディタ保存時などバックエンド側の場合は、無駄な多重リクエストによるタイムアウト(504)を防ぐため既存キャッシュを優先する
-  if ( !(is_external_blogcard_refresh_mode() && is_user_administrator() && !is_admin() && !is_rest()) ) {
+  if ( !($is_refresh_mode && $is_user_admin && !is_admin() && !$is_rest_req) ) {
     //保存したキャッシュを取得
     $ogp = get_transient( $url_hash );
   }
@@ -176,6 +182,8 @@ function url_to_external_ogp_blogcard_tag($url){
       $ogp->title       = $ogp_fetched->title ?? '';
       $ogp->description = $ogp_fetched->description ?? '';
       $ogp->site_name   = $ogp_fetched->site_name ?? '';
+      // og:url はリダイレクト先等のcanonical URLを示すため、ドメイン名取得やファビコン表示に使用
+      $ogp->url         = isset($ogp_fetched->url) ? $ogp_fetched->url : '';
       if (isset($ogp_fetched->image)) {
         if (apply_filters('is_externa_blogcard_thumbnail_cache', true)) {
           // キャッシュを取得した場合
@@ -209,11 +217,14 @@ function url_to_external_ogp_blogcard_tag($url){
   }
 
   //ドメイン名を取得（OGP情報のURLが正しいかのチェック）
-  $durl = punycode_decode($url);
+  // punycode_decode() はフルURL対応ラッパー（内部でホスト名のみデコード＆URL再構築）のため、
+  // フルURLに対してはこちらを使用する。$durl はファビコンAPIにも渡される。
+  $durl = function_exists('punycode_decode') ? punycode_decode($url) : $url;
   // ネガティブキャッシュ('error'文字列)時は $ogp がオブジェクトではないためプロパティアクセスを避ける
   if ($ogp !== 'error' && isset($ogp->url) && preg_match(URL_REG, $ogp->url)) {
-    $durl = punycode_decode($ogp->url);
+    $durl = function_exists('punycode_decode') ? punycode_decode($ogp->url) : $ogp->url;
   }
+  // $durl は既にPunycodeデコード済みのため、ドメイン名もデコード後の状態で取得される
   $domain = get_domain_name($durl);
 
   $domain_style = get_external_blogcard_domain_style(); // "domain" or "name"

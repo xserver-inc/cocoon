@@ -174,8 +174,13 @@ function url_to_internal_blogcard_tag($url){
     get_original_image_tag('https://www.google.com/s2/favicons?domain='.get_home_url(), 16, 16, 'blogcard-favicon-image internal-blogcard-favicon-image').
   '</div>';
 
-  //サイトロゴ
-  $domain = get_domain_name(punycode_decode($url));
+  // ドメイン名を抽出してからPunycodeデコードを適用する
+  // punycode_decode() はフルURL用ラッパーのため、ホスト名だけにはPunycodeクラスを直接使用する
+  $domain = get_domain_name($url);
+  if (class_exists('Punycode') && $domain) {
+    $punycode = new Punycode();
+    $domain = $punycode->decode($domain);
+  }
 
   if (get_internal_blogcard_domain_style() === 'name') {
     $domain = get_bloginfo('name');

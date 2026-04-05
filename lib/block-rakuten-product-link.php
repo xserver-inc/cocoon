@@ -70,7 +70,7 @@ function cocoon_rakuten_block_search($request){
   }
 
   // 楽天APIリクエストURLの構築
-  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . RAKUTEN_API_VERSION
+  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . COCOON_RAKUTEN_API_VERSION
     .'?applicationId='.urlencode($rakuten_application_id)
     .'&affiliateId='.urlencode($rakuten_affiliate_id)
     .'&imageFlag=1'
@@ -206,7 +206,7 @@ function cocoon_rakuten_block_fetch_item($itemCode){
   }
 
   // 楽天APIリクエストURLの構築（商品コードで検索）
-  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . RAKUTEN_API_VERSION
+  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . COCOON_RAKUTEN_API_VERSION
     .'?applicationId='.urlencode($rakuten_application_id)
     .'&affiliateId='.urlencode($rakuten_affiliate_id)
     .'&imageFlag=1'
