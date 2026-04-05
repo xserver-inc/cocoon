@@ -85,6 +85,7 @@ jQuery(document).ready(function($){
         var count = text.trim().length;
         if (postTitle.attr("data-title-count") != count) {
           postTitle.attr("data-title-count", count);
+          postTitle.attr("data-title-prefix", "<?php echo esc_js( __( '文字数', THEME_NAME ) ); ?>: ");
         }
       }
       return;
