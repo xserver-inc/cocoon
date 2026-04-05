@@ -23,7 +23,7 @@ class BlogcardTimeoutTest extends TestCase
 
         // ブロックエディタの保存中や管理画面で外部への同期通信が走るのを防ぐガード
         $this->assertStringContainsString(
-            '!(is_external_blogcard_refresh_mode() && is_user_administrator() && !is_admin() && !is_rest())',
+            '!($is_refresh_mode && $is_user_admin && !is_admin() && !$is_rest_req)',
             $file,
             'REST APIや管理画面での強制キャッシュ更新を防止するガードが必要です（エディター保存時の504 Time-out対策）'
         );
