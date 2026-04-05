@@ -71,31 +71,44 @@ jQuery(document).ready(function($){
 
 //ブロックエディタータイトルのカウント
 !function($) {
-  function countUp(element, h1) {
-      const text = "H1" === element.get(0).tagName ? h1.text() : h1.val();
-      element.attr("data-title-count", text.trim().length)
-  }
-  window.addEventListener("load", (function() {
-    setTimeout((() => {
-      !function() {
-        let postTitle = $(".editor-post-title");
-        if (postTitle) {
-          if (0 < postTitle.length) {
-            h1 = "H1" === postTitle.get(0).tagName ? postTitle : postTitle.find("textarea");
-          } else {
-            postTitle = $("#titlewrap");
-            h1 = postTitle.find("input");
-          }
-          if (0 !== postTitle.length) {
-            countUp(postTitle, h1);
-            h1.bind("keydown keyup keypress change", (() => {
-              countUp(postTitle, h1);
-            }))
-          }
+  var tryCount = 0;
+  var intervalId = setInterval(function() {
+    var editorCanvas = document.querySelector('iframe[name="editor-canvas"]');
+    var doc = editorCanvas && editorCanvas.contentDocument ? editorCanvas.contentDocument : document;
+    
+    // Gutenberg Editor
+    var postTitle = $(doc).find(".editor-post-title");
+    if (postTitle.length > 0) {
+      var h1 = "H1" === postTitle.get(0).tagName ? postTitle : postTitle.find("textarea");
+      if (h1.length > 0) {
+        var text = "H1" === postTitle.get(0).tagName ? h1.text() : h1.val();
+        var count = text.trim().length;
+        if (postTitle.attr("data-title-count") != count) {
+          postTitle.attr("data-title-count", count);
         }
-      }()
-    }), 50)
-  }))
+      }
+      return;
+    }
+
+    // Classic Editor
+    var classicTitleWrap = $("#titlewrap");
+    if (classicTitleWrap.length > 0) {
+      var classicInput = classicTitleWrap.find("input");
+      if (classicInput.length > 0) {
+        var count = classicInput.val().trim().length;
+        if (classicTitleWrap.attr("data-title-count") != count) {
+          classicTitleWrap.attr("data-title-count", count);
+        }
+      }
+      return;
+    }
+
+    // 要素が見つからない状態が60秒(120回)続いたら監視を終了
+    tryCount++;
+    if (tryCount > 120) {
+      clearInterval(intervalId);
+    }
+  }, 500);
 }(window.jQuery);
 </script><?php
 }
