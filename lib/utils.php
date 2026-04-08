@@ -3584,7 +3584,8 @@ function get_category_name_by_id($id){
   $category = get_category($id);
   if (isset($category->cat_name)) {
     //カテゴリー名表示
-    return $category->cat_name;
+    $category_name = $category->cat_name;
+    return apply_filters('get_category_name_by_id', $category_name, $id);
   }
 }
 endif;
@@ -4086,7 +4087,7 @@ function cocoon_url_to_postid($url) {
   // キャッシュがない場合のみ、取得処理を実行して保存する
   if ($id === false) {
     $id = url_to_postid($url);
-    
+
     // 記事が見つかった場合は1日間、見つからなかった場合(0)は1時間だけキャッシュする
     $cache_time = ($id > 0) ? DAY_IN_SECONDS : HOUR_IN_SECONDS;
     set_transient($transient_key, (int)$id, $cache_time);
