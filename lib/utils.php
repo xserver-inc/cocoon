@@ -3602,7 +3602,8 @@ endif;
 //存在するカテゴリIDかどうか
 if ( !function_exists( 'is_category_exist' ) ):
 function is_category_exist($cat_id){
-  return is_numeric($cat_id) && get_category($cat_id);
+  $is_exist = is_numeric($cat_id) && get_category($cat_id);
+  return apply_filters('is_category_exist', $is_exist, $cat_id);
 }
 endif;
 
