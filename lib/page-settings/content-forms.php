@@ -58,8 +58,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '外部リンク設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '外部リンク動作の設定です。外部ブログカードをはじめ、ショートコードや各ウィジェットに出力されるリンクにも適用されます。', THEME_NAME ) ?></p>
-
     <table class="form-table">
       <tbody>
 
@@ -180,8 +178,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <div id="internal-link" class="postbox">
   <h2 class="hndle"><?php _e( '内部リンク設定', THEME_NAME ) ?></h2>
   <div class="inside">
-
-    <p><?php _e( '内部リンク動作の設定です。内部ブログカードをはじめ、ショートコードや各ウィジェットに出力されるリンクにも適用されます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
