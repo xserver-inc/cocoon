@@ -418,17 +418,15 @@ function get_admin_bar_menu_array($wp_admin_bar = null) {
 
   // 管理者権限があれば追加
   if (current_user_can('manage_options')) {
-    $menus = array_merge($menus, [
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-theme-settings'    , 'meta' => [], 'title' => __('Cocoon 設定', THEME_NAME)        , 'href' => admin_url('admin.php?page=theme-settings')],
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-speech-balloon'    , 'meta' => [], 'title' => __('吹き出し', THEME_NAME)           , 'href' => admin_url('admin.php?page=speech-balloon')],
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-theme-func-text'   , 'meta' => [], 'title' => __('テンプレート', THEME_NAME)       , 'href' => admin_url('admin.php?page=theme-func-text')],
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-theme-affiliate-tag', 'meta' => [], 'title' => __('アフィリエイトタグ', THEME_NAME) , 'href' => admin_url('admin.php?page=theme-affiliate-tag')],
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-theme-ranking'     , 'meta' => [], 'title' => __('ランキング', THEME_NAME)         , 'href' => admin_url('admin.php?page=theme-ranking')],
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-theme-access'      , 'meta' => [], 'title' => __('アクセス集計', THEME_NAME)       , 'href' => admin_url('admin.php?page=theme-access')],
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-theme-speed-up'    , 'meta' => [], 'title' => __('高速化', THEME_NAME)             , 'href' => admin_url('admin.php?page=theme-speed-up')],
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-theme-backup'      , 'meta' => [], 'title' => __('バックアップ', THEME_NAME)       , 'href' => admin_url('admin.php?page=theme-backup')],
-      ['parent' => 'dashboard_menu', 'id' => 'dashboard_menu-theme-cache'       , 'meta' => [], 'title' => __('キャッシュ削除', THEME_NAME)     , 'href' => admin_url('admin.php?page=theme-cache')],
-    ]);
+    $definitions = get_cocoon_original_menu_definitions();
+    foreach ($definitions as $slug => $info) {
+      $menus[] = [
+        'parent' => 'dashboard_menu',
+        'id'     => "dashboard_menu-{$slug}",
+        'title'  => isset($info['title']) ? $info['title'] : '',
+        'href'   => admin_url("admin.php?page={$slug}"),
+      ];
+    }
   }
 
   return apply_filters('cocoon_admin_bar_menus', $menus, $wp_admin_bar);
