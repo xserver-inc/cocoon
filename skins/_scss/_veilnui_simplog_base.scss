@@ -135,7 +135,7 @@ body {
 
   .tagline,
   .site-name-text {
-    color: $white-color;
+    color: var(--cocoon-header-text-color, #{$white-color});
   }
 
   #header {
@@ -155,7 +155,7 @@ body {
 
       .sub-menu {
         background-color: $main-color-dark;
-        color: $white-color;
+        color: var(--cocoon-navi-text-color, #{$white-color});
       }
     }
   }
@@ -173,7 +173,7 @@ body {
 
       .sub-menu {
         background-color: $main-color-midium;
-        color: $white-color;
+        color: var(--cocoon-navi-text-color, #{$white-color});
       }
     }
   }
@@ -183,7 +183,7 @@ body {
   background-color: $main-color-dark;
   a {
     position: relative;
-    color: $white-color;
+    color: var(--cocoon-navi-text-color, #{$white-color});
     background-color: $main-color-dark;
 
     &::after {
@@ -202,7 +202,7 @@ body {
   }
 
   .fa-angle-down {
-    color: $white-color;
+    color: var(--cocoon-navi-text-color, #{$white-color});
 
     &:hover {
       color: $white-color;

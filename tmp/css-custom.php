@@ -99,7 +99,11 @@ table tr:nth-of-type(2n+1),
 .sidebar h3,
 #footer,
 #footer a:not(.sns-button){
-  color: #fff;
+  color: <?php echo get_text_color_from_background_color($site_key_color); ?>;
+}
+:root {
+  --cocoon-header-text-color: <?php echo get_text_color_from_background_color($site_key_color); ?>;
+  --cocoon-navi-text-color: <?php echo get_text_color_from_background_color($site_key_color); ?>;
 }
 
 <?php endif ?>
@@ -166,12 +170,16 @@ if ($header_container_background_color = get_header_container_background_color()
 #navi .navi-in > .menu-header .sub-menu{
   background-color: <?php echo $header_container_background_color; ?>;
 }
+#header-container {
+  --cocoon-header-text-color: <?php echo get_text_color_from_background_color($header_container_background_color); ?>;
+  --cocoon-navi-text-color: <?php echo get_text_color_from_background_color($header_container_background_color); ?>;
+}
 
 .header,
 .header .site-name-text,
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: #fff;
+  color: <?php echo get_text_color_from_background_color($header_container_background_color); ?>;
 }
 
 <?php endif ?>
@@ -188,11 +196,12 @@ if ($header_container_text_color = get_header_container_text_color()): ?>
 if ($header_background_color = get_header_background_color()): ?>
 .header{
   background-color: <?php echo $header_background_color; ?>;
+  --cocoon-header-text-color: <?php echo get_text_color_from_background_color($header_background_color); ?>;
 }
 
 .header,
 .header .site-name-text{
-  color: #fff;
+  color: <?php echo get_text_color_from_background_color($header_background_color); ?>;
 }
 
 <?php endif ?>
@@ -209,10 +218,13 @@ if ($global_navi_background_color = get_global_navi_background_color()): ?>
 #navi .navi-in > .menu-header .sub-menu{
   background-color: <?php echo $global_navi_background_color; ?>;
 }
+#navi {
+  --cocoon-navi-text-color: <?php echo get_text_color_from_background_color($global_navi_background_color); ?>;
+}
 
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: #fff;
+  color: <?php echo get_text_color_from_background_color($global_navi_background_color); ?>;
 }
 
 <?php endif ?>

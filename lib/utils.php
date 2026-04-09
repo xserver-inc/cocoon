@@ -4078,10 +4078,13 @@ function get_post_content_word_count($content) {
   return mb_strlen($text);
 }
 endif;
-
 // URLから投稿IDへ変換しキャッシュ処理を行う
 if ( !function_exists( 'cocoon_url_to_postid' ) ):
 function cocoon_url_to_postid($url) {
+  if (empty($url) || !is_string($url)) {
+    return 0;
+  }
+
   // キャッシュから検索結果を取得する
   $transient_key = 'cocoon_url_tpi_' . md5($url);
   $id = get_transient($transient_key);
@@ -4095,6 +4098,40 @@ function cocoon_url_to_postid($url) {
     set_transient($transient_key, (int)$id, $cache_time);
   }
 
-  return $id;
+  return (int)$id;
+}
+endif;
+
+// 背景色から見やすい文字色（白か黒系）を自動判定して返す
+if ( !function_exists( 'get_text_color_from_background_color' ) ):
+function get_text_color_from_background_color($bg_color, $light_color = '#fff', $dark_color = '#333'){
+  if (empty($bg_color) || !is_string($bg_color)) {
+    return $light_color;
+  }
+
+  $hex = str_replace('#', '', trim($bg_color));
+
+  // 8文字(RRGGBBAA)や4文字(RGBA)の場合は、先頭6文字/3文字を切り出すことでアルファチャンネル部を無視する
+  if (strlen($hex) === 8) {
+    $hex = substr($hex, 0, 6);
+  } elseif (strlen($hex) === 4) {
+    $hex = substr($hex, 0, 3);
+  }
+
+  if (strlen($hex) == 3) {
+    $r = hexdec(substr($hex, 0, 1).substr($hex, 0, 1));
+    $g = hexdec(substr($hex, 1, 1).substr($hex, 1, 1));
+    $b = hexdec(substr($hex, 2, 1).substr($hex, 2, 1));
+  } elseif (strlen($hex) == 6) {
+    $r = hexdec(substr($hex, 0, 2));
+    $g = hexdec(substr($hex, 2, 2));
+    $b = hexdec(substr($hex, 4, 2));
+  } else {
+    // rgb()やrgba(), カラーネームなどの場合は判定できないためデフォルトを返す
+    return $light_color;
+  }
+  // YIQ で輝度を計算
+  $yiq = (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+  return ($yiq >= 128) ? $dark_color : $light_color;
 }
 endif;

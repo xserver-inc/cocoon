@@ -42,7 +42,7 @@ body {
 }
 #header-container .tagline,
 #header-container .site-name-text {
-  color: white;
+  color: var(--cocoon-header-text-color, white);
 }
 #header-container #header {
   background-color: #D81B60;
@@ -58,7 +58,7 @@ body {
 }
 #header-container .hlt-top-menu #navi .sub-menu {
   background-color: #D81B60;
-  color: white;
+  color: var(--cocoon-navi-text-color, white);
 }
 #header-container .hlt-center-logo {
   background-color: #EC407A;
@@ -68,7 +68,7 @@ body {
 }
 #header-container .hlt-center-logo #navi .sub-menu {
   background-color: #EC407A;
-  color: white;
+  color: var(--cocoon-navi-text-color, white);
 }
 
 #navi {
@@ -76,7 +76,7 @@ body {
 }
 #navi a {
   position: relative;
-  color: white;
+  color: var(--cocoon-navi-text-color, white);
   background-color: #D81B60;
 }
 #navi a::after {
@@ -97,7 +97,7 @@ body {
   transform: scale(1, 1);
 }
 #navi .fa-angle-down {
-  color: white;
+  color: var(--cocoon-navi-text-color, white);
 }
 #navi .fa-angle-down:hover {
   color: white;

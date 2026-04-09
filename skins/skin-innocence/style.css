@@ -45,7 +45,8 @@ body {
 #navi .caption-wrap .item-label {
 	font-size: 15px;
 	/*line-height: 62px;*/
-	color: #888;
+	color: var(--cocoon-navi-text-color);
+	opacity: 0.7;
 	letter-spacing: 0.07em;
 }
 
