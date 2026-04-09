@@ -157,7 +157,7 @@ function rakuten_product_link_shortcode($atts){
     if ($search && !$id) {
       $searchkw = '&keyword=' . urlencode($search);
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . COCOON_RAKUTEN_API_VERSION . '?applicationId=' . urlencode($rakuten_application_id) . '&affiliateId=' . urlencode($rakuten_affiliate_id) . '&imageFlag=1' . $sortQuery . $shopCode . '&hits=1' . $searchkw . $itemCode . $purchaseTypeCode;
+    $request_url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/' . COCOON_RAKUTEN_API_VERSION . '?applicationId=' . urlencode($rakuten_application_id) . '&affiliateId=' . urlencode($rakuten_affiliate_id) . '&imageFlag=1' . $sortQuery . $shopCode . '&hits=1' . $searchkw . $itemCode . $purchaseTypeCode;
     //_v($request_url);
     $args = array( 'sslverify' => true );
     $args = apply_filters('wp_remote_get_rakuten_args', $args);
