@@ -3580,13 +3580,14 @@ endif;
 //カテゴリーIDからカテゴリー名を取得
 if ( !function_exists( 'get_category_name_by_id' ) ):
 function get_category_name_by_id($id){
+  $category_name = '';
   //カテゴリIDからカテゴリ情報取得
   $category = get_category($id);
   if (isset($category->cat_name)) {
     //カテゴリー名表示
     $category_name = $category->cat_name;
-    return apply_filters('get_category_name_by_id', $category_name, $id);
   }
+  return apply_filters('get_category_name_by_id', $category_name, $id);
 }
 endif;
 
