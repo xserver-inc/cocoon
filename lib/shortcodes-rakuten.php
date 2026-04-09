@@ -73,6 +73,8 @@ function rakuten_product_link_shortcode($atts){
   $rakuten_application_id = trim(get_rakuten_application_id());
   //楽天アフィリエイトID
   $rakuten_affiliate_id = trim(get_rakuten_affiliate_id());
+  //楽天アクセスキー
+  $rakuten_access_key = trim(get_rakuten_access_key());
   //アソシエイトタグ
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
   //Yahoo!バリューコマースSID
@@ -157,14 +159,17 @@ function rakuten_product_link_shortcode($atts){
     if ($search && !$id) {
       $searchkw = '&keyword=' . urlencode($search);
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . COCOON_RAKUTEN_API_VERSION . '?applicationId=' . urlencode($rakuten_application_id) . '&affiliateId=' . urlencode($rakuten_affiliate_id) . '&imageFlag=1' . $sortQuery . $shopCode . '&hits=1' . $searchkw . $itemCode . $purchaseTypeCode;
+    // 楽天APIエンドポイントの構築（共通ヘルパーで新旧APIを自動切替）
+    $endpoint = cocoon_rakuten_api_build_endpoint($rakuten_application_id, $rakuten_access_key);
+
+    $request_url = $endpoint['base'] . $endpoint['auth_query'] . '&affiliateId=' . urlencode($rakuten_affiliate_id) . '&imageFlag=1' . $sortQuery . $shopCode . '&hits=1' . $searchkw . $itemCode . $purchaseTypeCode;
     //_v($request_url);
-    $args = array( 'sslverify' => true );
-    $args = apply_filters('wp_remote_get_rakuten_args', $args);
+    // APIリクエストの実行（共通ヘルパーでReferer/Originヘッダーを付与）
+    $args = cocoon_rakuten_api_get_request_args();
     $json = wp_remote_get( $request_url, $args );
 
-    //ジェイソンのリクエスト結果チェック
-    $is_request_success = !is_wp_error( $json ) && $json['response']['code'] === 200;
+    //ジェイソンのリクエスト結果チェック（HTTPコードを(int)キャストして型不一致を防止）
+    $is_request_success = !is_wp_error( $json ) && (int)$json['response']['code'] === 200;
     //JSON取得に失敗した場合はバックアップキャッシュを取得
     if (!$is_request_success) {
       $json_cache = get_transient( $transient_bk_id );
@@ -178,8 +183,8 @@ function rakuten_product_link_shortcode($atts){
 
 
   if ($json) {
-    //ジェイソンのリクエスト結果チェック
-    $is_request_success = !is_wp_error( $json ) && $json['response']['code'] === 200;
+    //ジェイソンのリクエスト結果チェック（HTTPコードを(int)キャストして型不一致を防止）
+    $is_request_success = !is_wp_error( $json ) && (int)$json['response']['code'] === 200;
     ///////////////////////////////////////////
     // キャッシュ削除リンク
     ///////////////////////////////////////////
@@ -484,9 +489,17 @@ function rakuten_product_link_shortcode($atts){
     } else {
       if (is_array($json) && isset($json['body'])) {
         $ebody = json_decode( $json['body'] );
-        // APIのエラーレスポンス形式が異なる場合に備え、存在チェックを行う
+        // 新旧APIのエラーレスポンス形式を両方チェック
+        // 旧API形式: {"error": "wrong_parameter", "error_description": "..."}
+        // 新API（認証エラー）形式: {"errors": {"errorCode": 403, "errorMessage": "..."}}
         $error = isset($ebody->{'error'}) ? $ebody->{'error'} : '';
-        $error_description = isset($ebody->{'error_description'}) ? $ebody->{'error_description'} : '';
+        // デコード済みの $ebody から直接エラーメッセージを抽出（json_decode の二重実行を回避）
+        $error_description = '';
+        if (isset($ebody->errors->errorMessage)) {
+          $error_description = $ebody->errors->errorMessage;
+        } elseif (isset($ebody->error_description)) {
+          $error_description = $ebody->error_description;
+        }
         switch ($error) {
           case 'wrong_parameter':
           $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );
@@ -499,7 +512,9 @@ function rakuten_product_link_shortcode($atts){
           return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
             break;
           default:
-          $error_message = $error_description.':'.__( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いた後、リロードすると商品リンクが表示される可能性があります。', THEME_NAME );
+          // エラーメッセージが空の場合はコロンだけにならないよう制御
+          $error_prefix = $error_description ? $error_description.':' : '';
+          $error_message = $error_prefix.__( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いた後、リロードすると商品リンクが表示される可能性があります。', THEME_NAME );
             break;
         }
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);

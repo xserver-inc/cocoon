@@ -67,6 +67,7 @@ class ProductBlockCronTest extends TestCase
         require_once dirname(__DIR__, 2) . '/lib/block-amazon-product-link.php';
 
         // block-rakuten-product-link.php の依存関数読み込み
+        require_once dirname(__DIR__, 2) . '/lib/rakuten-api-helpers.php';
         require_once dirname(__DIR__, 2) . '/lib/block-rakuten-product-link.php';
 
         // Cronファイル読み込み（update_blocks_recursive関数が定義される）

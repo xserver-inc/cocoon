@@ -260,7 +260,20 @@ if (!function_exists('current_user_can')) {
 }
 
 if (!function_exists('wp_remote_get')) {
+    // テスト用: グローバル変数 $test_mock_wp_remote_get_response で戻り値を制御可能
+    // $test_mock_wp_remote_get_args にリクエスト引数をキャプチャ、 $test_mock_wp_remote_get_url にURLをキャプチャ
     function wp_remote_get($url, $args = []) {
+        global $test_mock_wp_remote_get_response;
+        global $test_mock_wp_remote_get_args;
+        global $test_mock_wp_remote_get_url;
+        $test_mock_wp_remote_get_url = $url;
+        $test_mock_wp_remote_get_args = $args;
+        if (isset($test_mock_wp_remote_get_response)) {
+            if (is_callable($test_mock_wp_remote_get_response)) {
+                return call_user_func($test_mock_wp_remote_get_response, $url, $args);
+            }
+            return $test_mock_wp_remote_get_response;
+        }
         return [];
     }
 }

@@ -338,7 +338,11 @@ function cocoon_blocks_cgb_editor_assets()
 	$rakuten_api_version = '';
 	if ( function_exists( 'get_rakuten_application_id' ) && get_rakuten_application_id() && function_exists( 'get_rakuten_affiliate_id' ) && get_rakuten_affiliate_id() ) {
 		$rakuten_api_name    = '楽天商品検索API';
-		$rakuten_api_version = COCOON_RAKUTEN_API_VERSION;
+		if ( function_exists( 'get_rakuten_access_key' ) && trim( get_rakuten_access_key() ) ) {
+			$rakuten_api_version = COCOON_RAKUTEN_API_VERSION;
+		} else {
+			$rakuten_api_version = COCOON_RAKUTEN_API_LEGACY_VERSION;
+		}
 	}
 	$rakuten_block_defaults = array(
 		// 枠線を表示するか（常に有効）

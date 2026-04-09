@@ -167,6 +167,14 @@ function get_rakuten_affiliate_id(){
 }
 endif;
 
+//楽天アクセスキー
+define('OP_RAKUTEN_ACCESS_KEY', 'rakuten_access_key');
+if ( !function_exists( 'get_rakuten_access_key' ) ):
+function get_rakuten_access_key(){
+  return get_theme_option(OP_RAKUTEN_ACCESS_KEY, '');
+}
+endif;
+
 //楽天商品検索APIの並び順
 define('OP_GET_RAKUTEN_API_SORT', 'get_rakuten_api_sort');
 if ( !function_exists( 'get_rakuten_api_sort' ) ):

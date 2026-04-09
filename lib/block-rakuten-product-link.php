@@ -50,9 +50,10 @@ function cocoon_rakuten_block_search($request){
     return new WP_Error('missing_keyword', __('キーワードを入力してください。', THEME_NAME), array('status' => 400));
   }
 
-  // 楽天アプリケーションID・アフィリエイトIDの取得
+  // 楽天アプリケーションID・アフィリエイトID・アクセスキーの取得
   $rakuten_application_id = trim(get_rakuten_application_id());
   $rakuten_affiliate_id   = trim(get_rakuten_affiliate_id());
+  $rakuten_access_key     = trim(get_rakuten_access_key());
 
   // IDが未設定の場合はエラー
   if (empty($rakuten_application_id) || empty($rakuten_affiliate_id)) {
@@ -69,9 +70,11 @@ function cocoon_rakuten_block_search($request){
     $purchase_type_query = '&purchaseType='.$purchase_type;
   }
 
-  // 楽天APIリクエストURLの構築
-  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . COCOON_RAKUTEN_API_VERSION
-    .'?applicationId='.urlencode($rakuten_application_id)
+  // 楽天APIリクエストURLの構築（共通ヘルパーでエンドポイントを決定）
+  $endpoint = cocoon_rakuten_api_build_endpoint($rakuten_application_id, $rakuten_access_key);
+
+  $request_url = $endpoint['base']
+    .$endpoint['auth_query']
     .'&affiliateId='.urlencode($rakuten_affiliate_id)
     .'&imageFlag=1'
     .$sort
@@ -80,9 +83,8 @@ function cocoon_rakuten_block_search($request){
     .'&keyword='.urlencode($keyword)
     .$purchase_type_query;
 
-  // APIリクエストの実行
-  $args = array( 'sslverify' => true );
-  $args = apply_filters('wp_remote_get_rakuten_args', $args);
+  // APIリクエストの実行（共通ヘルパーでReferer/Originヘッダーを付与）
+  $args = cocoon_rakuten_api_get_request_args();
   $response = wp_remote_get( $request_url, $args );
 
   // リクエスト失敗のチェック
@@ -91,10 +93,9 @@ function cocoon_rakuten_block_search($request){
   }
   // HTTPステータスコードを(int)キャストして型の不一致による誤判定を防ぐ
   if ((int)$response['response']['code'] !== 200) {
-    // 楽天APIのレスポンスボディのエラー情報を取得 (bodyKeyがない場合も考慮)
-    $ebody = isset($response['body']) ? json_decode($response['body']) : null;
-    $error_desc = isset($ebody->error_description) ? $ebody->error_description : '';
-    // 楽天APIのHTTPステータスコードをそのまま伝損（429 Too Many・503 Unavailableなどを正確に伝える）
+    // 楽天APIのレスポンスボディのエラー情報を取得（共通ヘルパーで新旧形式を吸収）
+    $error_desc = cocoon_rakuten_api_extract_error($response);
+    // 楽天APIのHTTPステータスコードをそのまま伝搬（429 Too Many・503 Unavailableなどを正確に伝える）
     $rakuten_status = (int)$response['response']['code'];
     return new WP_Error('api_error', $error_desc ?: __('楽天APIからエラーが返されました。', THEME_NAME), array('status' => $rakuten_status));
   }
@@ -200,18 +201,21 @@ if ( !function_exists( 'cocoon_rakuten_block_fetch_item' ) ):
 function cocoon_rakuten_block_fetch_item($itemCode){
   $rakuten_application_id = trim(get_rakuten_application_id());
   $rakuten_affiliate_id   = trim(get_rakuten_affiliate_id());
+  $rakuten_access_key     = trim(get_rakuten_access_key());
 
   if (empty($rakuten_application_id) || empty($rakuten_affiliate_id)) {
     return new WP_Error('missing_config', __('楽天APIの設定が不足しています。', THEME_NAME), array('status' => 400));
   }
 
-  // 楽天APIリクエストURLの構築（商品コードで検索）
-  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/' . COCOON_RAKUTEN_API_VERSION
-    .'?applicationId='.urlencode($rakuten_application_id)
+  // 楽天APIリクエストURLの構築（共通ヘルパーでエンドポイントを決定、商品コードで検索）
+  $endpoint = cocoon_rakuten_api_build_endpoint($rakuten_application_id, $rakuten_access_key);
+
+  $request_url = $endpoint['base']
+    .$endpoint['auth_query']
     .'&affiliateId='.urlencode($rakuten_affiliate_id)
     .'&imageFlag=1'
     .'&hits=1'
-  // 商品コードには「shopCode:itemCode」形式でコロンを含む場傐があるため urlencode() でエンコードする
+  // 商品コードには「shopCode:itemCode」形式でコロンを含む場合があるため urlencode() でエンコードする
     .'&itemCode='.urlencode($itemCode);
 
   // キャッシュの取得
@@ -222,8 +226,8 @@ function cocoon_rakuten_block_fetch_item($itemCode){
   if ($json_cache && DEBUG_CACHE_ENABLE) {
     $response = $json_cache;
   } else {
-    $args = array( 'sslverify' => true );
-    $args = apply_filters('wp_remote_get_rakuten_args', $args);
+    // APIリクエストの実行（共通ヘルパーでReferer/Originヘッダーを付与）
+    $args = cocoon_rakuten_api_get_request_args();
     $response = wp_remote_get( $request_url, $args );
   }
 
@@ -245,9 +249,8 @@ function cocoon_rakuten_block_fetch_item($itemCode){
     return new WP_Error('api_error', __('楽天APIに接続できませんでした。', THEME_NAME), array('status' => 500));
   }
   if (!isset($response['response']['code']) || (int)$response['response']['code'] !== 200) {
-    // 楽天APIのレスポンスボディのエラー情報を取得 (bodyキーがない場合も考慮)
-    $ebody = isset($response['body']) ? json_decode($response['body']) : null;
-    $error_desc = isset($ebody->error_description) ? $ebody->error_description : '';
+    // 楽天APIのレスポンスボディのエラー情報を取得（共通ヘルパーで新旧形式を吸収）
+    $error_desc = cocoon_rakuten_api_extract_error($response);
     // 楽天APIのHTTPコードを伝搬（コード未取得の場合は400として返す）
     $rakuten_status = isset($response['response']['code']) ? (int)$response['response']['code'] : 400;
     return new WP_Error('api_error', $error_desc ?: __('楽天APIからエラーが返されました。', THEME_NAME), array('status' => $rakuten_status));

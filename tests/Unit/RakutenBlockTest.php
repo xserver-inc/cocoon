@@ -107,6 +107,7 @@ class RakutenBlockTest extends TestCase
 
         // ファイルの読み込み
         require_once dirname(__DIR__, 2) . '/lib/shortcodes-product-func.php';
+        require_once dirname(__DIR__, 2) . '/lib/rakuten-api-helpers.php';
         require_once dirname(__DIR__, 2) . '/lib/block-rakuten-product-link.php';
     }
 

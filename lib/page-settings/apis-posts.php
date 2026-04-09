@@ -62,6 +62,9 @@ update_theme_option(OP_RAKUTEN_APPLICATION_ID);
 //楽天アフィリエイトID
 update_theme_option(OP_RAKUTEN_AFFILIATE_ID);
 
+//楽天アクセスキー
+update_theme_option(OP_RAKUTEN_ACCESS_KEY);
+
 //楽天商品検索APIの並び順
 update_theme_option(OP_GET_RAKUTEN_API_SORT);
 

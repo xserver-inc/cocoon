@@ -242,9 +242,13 @@ define('TRANSIENT_BACKUP_AMAZON_API_PREFIX', THEME_NAME.'_backup_amazon_paapi_v5
 define('TRANSIENT_RAKUTEN_API_PREFIX', THEME_NAME.'_rakuten_api_id_');
 //楽天APIのバックアッププレフィックス
 define('TRANSIENT_BACKUP_RAKUTEN_API_PREFIX', THEME_NAME.'_backup_rakuten_api_id_');
-//楽天APIバージョン（楽天市場商品検索API）
+//楽天APIバージョン（新バージョン）
 if ( !defined('COCOON_RAKUTEN_API_VERSION') ) {
-  define('COCOON_RAKUTEN_API_VERSION', '20220601');
+  define('COCOON_RAKUTEN_API_VERSION', '20260401');
+}
+// 楽天商品検索API（旧バージョン／アクセスキー未登録時のフォールバック用）
+if ( !defined('COCOON_RAKUTEN_API_LEGACY_VERSION') ) {
+  define('COCOON_RAKUTEN_API_LEGACY_VERSION', '20220601');
 }
 
 //最初のH2見出し用の優先度

@@ -148,12 +148,19 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_textbox_tag(OP_RAKUTEN_APPLICATION_ID, get_rakuten_application_id(), '');
             generate_tips_tag(__( '楽天APIを利用するためのアプリケーションIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-application-id/', $help_text));
 
+
             generate_label_tag(OP_RAKUTEN_AFFILIATE_ID, __( '楽天アフィリエイトID', THEME_NAME ));
             generate_rakuten_badge_tag(__( '楽天必須', THEME_NAME ));
             generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_RAKUTEN_AFFILIATE_ID, get_rakuten_affiliate_id(), '');
             generate_tips_tag(__( '楽天アフィリエイト用のIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-affiliate-id/', $help_text));
+
+            generate_label_tag(OP_RAKUTEN_ACCESS_KEY, __( '楽天アクセスキー', THEME_NAME ));
+            generate_rakuten_badge_tag(__('楽天必須', THEME_NAME));
+            echo '<br>';
+            generate_textbox_tag(OP_RAKUTEN_ACCESS_KEY, get_rakuten_access_key(), '');
+            generate_tips_tag(__( '楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。', THEME_NAME ));
 
 
             echo '<div'.get_not_allowed_form_class(get_rakuten_affiliate_id()).'>';
