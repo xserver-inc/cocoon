@@ -29,7 +29,7 @@ class OpenGraphTest extends TestCase
             function get_http_content($url) { return false; }
         }
         if (!function_exists('is_amazon_site_page')) {
-            function is_amazon_site_page($url) { return false; }
+            function is_amazon_site_page($url) { return strpos((string)$url, 'amazon') !== false || strpos((string)$url, 'amzn.to') !== false; }
         }
         if (!function_exists('is_rakuten_site_page')) {
             function is_rakuten_site_page($url) {
@@ -252,5 +252,74 @@ class OpenGraphTest extends TestCase
         
         $og = $this->callParse($html, 'https://item.rakuten.co.jp/shop/item/');
         $this->assertSame('https://tshop.r10s.jp/shop/cabinet/item2.jpg', $og->image);
+    }
+
+    // ========================================================================
+    // Amazon特有のエッジケース・画像抽出ロジックテスト
+    // ========================================================================
+
+    public function test_Amazonの汎用ロゴは無視して別属性から商品画像を取得する(): void
+    {
+        $uri = 'https://www.amazon.co.jp/dp/B000000000';
+        $html = $this->makeHtml(
+            '<meta property="og:image" content="https://m.media-amazon.com/images/G/09/social_share/amazon_logo.png">' .
+            '<title>Amazonテスト</title>',
+            '<img id="landingImage" data-old-hires="https://m.media-amazon.com/images/I/91XXXXXXX._AC_SY400_.jpg" src="https://m.media-amazon.com/images/I/91XXXXXXX._AC_SY200_.jpg">'
+        );
+        $og = $this->callParse($html, $uri);
+        // パラメータが除去されたクリーンなオリジナル解像度画像であることを確認
+        $this->assertSame('https://m.media-amazon.com/images/I/91XXXXXXX.jpg', $og->image);
+    }
+
+    public function test_Amazon_imgBlkFrontから書籍の画像を取得する(): void
+    {
+        $uri = 'https://www.amazon.co.jp/dp/B000000000';
+        $html = $this->makeHtml(
+            '<title>Amazon書籍</title>',
+            '<img id="imgBlkFront" src="https://m.media-amazon.com/images/I/51abcde._SX331_BO1,204,203,200_.jpg">'
+        );
+        $og = $this->callParse($html, $uri);
+        // パラメータが除去されることを確認
+        $this->assertSame('https://m.media-amazon.com/images/I/51abcde.jpg', $og->image);
+    }
+
+    public function test_Amazon_動的画像データ_data_a_dynamic_image_から取得する(): void
+    {
+        $uri = 'https://www.amazon.co.jp/dp/B000000000';
+        // JSON形式のキーとして画像URLが記述されているパターン
+        $dynamic_img = htmlspecialchars('{"https://m.media-amazon.com/images/I/81XYZ._AC_UL320_.jpg":[320,320],"https://m.media-amazon.com/images/I/81XYZ._AC_UL640_.jpg":[640,640]}', ENT_QUOTES);
+        $html = $this->makeHtml(
+            '<title>Amazon商品</title>',
+            '<img id="landingImage" data-a-dynamic-image="' . $dynamic_img . '">'
+        );
+        $og = $this->callParse($html, $uri);
+        // 最初の画像のパラメータが除去されたバージョンになることを確認
+        $this->assertSame('https://m.media-amazon.com/images/I/81XYZ.jpg', $og->image);
+    }
+
+    public function test_Amazon_正規のOGPが設定されていればそれを採用する(): void
+    {
+        $uri = 'https://www.amazon.co.jp/dp/B000000000';
+        $html = $this->makeHtml(
+            '<meta property="og:image" content="https://m.media-amazon.com/images/I/1234567.jpg">' .
+            '<title>Amazon商品</title>',
+            '<img id="landingImage" data-old-hires="https://m.media-amazon.com/images/I/91XXXXXXX.jpg">'
+        );
+        $og = $this->callParse($html, $uri);
+        // og:image が汎用ロゴでない場合は、HTML内探索の前にog:imageが優先される
+        $this->assertSame('https://m.media-amazon.com/images/I/1234567.jpg', $og->image);
+    }
+
+    public function test_非AmazonのURLではAmazon用処理が実行されない(): void
+    {
+        $uri = 'https://example.com/page'; // is_amazon_site_page が false のはず
+        $html = $this->makeHtml(
+            '<meta property="og:image" content="https://example.com/amazon_logo.png">' . // 汎用ロゴと同じ文字列
+            '<title>非Amazonサイト</title>',
+            '<img id="landingImage" data-old-hires="https://example.com/item.jpg">'
+        );
+        $og = $this->callParse($html, $uri);
+        // 非Amazonの場合は、amazon_logo文字列であっても無視されず、そのまま採用される
+        $this->assertSame('https://example.com/amazon_logo.png', $og->image);
     }
 }
