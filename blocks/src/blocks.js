@@ -158,6 +158,9 @@ import './block-extension/style-extension/style02.js';
 // マージン拡張
 import './block-extension/style-extension/margin.js';
 
+// グループブロック拡張（リンク化）
+import './block-extension/group-link.js';
+
 //レイアウト
 import './layout/column-children/block.js';
 import './layout/column-2/block.js';

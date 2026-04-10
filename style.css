@@ -11430,6 +11430,11 @@ body.baguetteBox-open {
   flex-wrap: wrap;
 }
 
+.is-cocoon-group-link {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
 /* 検索フォーム風スタイルのボタンを装飾 */
 .search-form div.sbtn {
   transition: 0.3s; /* 変化をなめらかにする */

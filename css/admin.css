@@ -19006,6 +19006,10 @@ body.wp-admin {
   display: flex;
   flex-wrap: wrap;
 }
+.admin-settings .demo .is-cocoon-group-link {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 .admin-settings .demo .search-form div.sbtn {
   transition: 0.3s; /* 変化をなめらかにする */
 }

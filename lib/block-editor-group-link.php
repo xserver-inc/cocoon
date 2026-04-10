@@ -1,0 +1,72 @@
+<?php // グループブロックの全体リンク化機能
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link: https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+if ( !defined( 'ABSPATH' ) ) exit;
+
+// カスタム属性の登録
+add_filter( 'register_block_type_args', 'cocoon_group_block_link_register_attributes', 10, 2 );
+if ( !function_exists( 'cocoon_group_block_link_register_attributes' ) ):
+function cocoon_group_block_link_register_attributes( $args, $block_type ) {
+	if ( 'core/group' === $block_type ) {
+		// すでに attributes が配列でない場合への備え
+		if ( ! isset( $args['attributes'] ) ) {
+			$args['attributes'] = array();
+		}
+		$args['attributes']['cocoonLinkUrl'] = array(
+			'type'    => 'string',
+			'default' => '',
+		);
+		$args['attributes']['cocoonLinkTarget'] = array(
+			'type'    => 'boolean',
+			'default' => false,
+		);
+	}
+	return $args;
+}
+endif;
+
+// フロントエンドでのレンダリング時の属性追加
+add_filter( 'render_block', 'cocoon_group_block_link_render', 10, 2 );
+if ( !function_exists( 'cocoon_group_block_link_render' ) ):
+function cocoon_group_block_link_render( $block_content, $block ) {
+	if ( 'core/group' !== $block['blockName'] ) {
+		return $block_content;
+	}
+
+	// ブロックコンテンツが空の場合は処理をスキップ
+	if ( empty( $block_content ) ) {
+		return $block_content;
+	}
+
+	$attrs = $block['attrs'];
+	$url   = isset( $attrs['cocoonLinkUrl'] ) ? trim( $attrs['cocoonLinkUrl'] ) : '';
+
+	if ( empty( $url ) ) {
+		return $block_content;
+	}
+
+	$new_tab = isset( $attrs['cocoonLinkTarget'] ) && $attrs['cocoonLinkTarget'];
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+	if ( $processor->next_tag() ) {
+		$processor->set_attribute( 'data-cocoon-group-link', esc_url( $url ) );
+		if ( $new_tab ) {
+			$processor->set_attribute( 'data-cocoon-group-link-target', '_blank' );
+		}
+		// アクセシビリティ用の属性を追加
+		$processor->set_attribute( 'role', 'link' );
+		$processor->set_attribute( 'tabindex', '0' );
+		// スクリーンリーダー向けにリンク先を通知
+		$processor->set_attribute( 'aria-label', esc_url( $url ) );
+
+		// フロントエンド用のクラスを追加
+		$processor->add_class( 'is-cocoon-group-link' );
+	}
+
+	return $processor->get_updated_html();
+}
+endif;

@@ -6182,3 +6182,37 @@ body .is-layout-grid {
 body.block-editor-page {
   background-color: initial;
 }
+
+.editor-cocoon-group-link-active {
+  position: relative;
+  outline: 1px dashed rgba(0, 0, 0, 0.2);
+  outline-offset: -1px;
+}
+
+.editor-cocoon-group-link-active::after {
+  content: "\f0c1"; /* fa-link */
+  font-family: FontAwesome; /* Font Awesome 4用 */
+  font-weight: 900;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Font Awesome 5利用時のアイコンフォント対応 */
+.editor-styles-wrapper.font-awesome-5 .editor-cocoon-group-link-active::after {
+  font-family: "Font Awesome 5 Free";
+}
+
+.cocoon-group-link-popover__content {
+  padding: 16px;
+  min-width: 300px;
+}
+
+.cocoon-group-link-popover__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
