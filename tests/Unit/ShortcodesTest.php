@@ -174,4 +174,101 @@ class ShortcodesTest extends TestCase
         $result = get_countdown_days($to);
         $this->assertSame('1', $result);
     }
+
+    // ========================================================================
+    // campaign_shortcode()
+    // ========================================================================
+
+    /**
+     * キャンペーン期間内の場合にコンテンツが表示されることをテスト
+     */
+    public function test_campaign_shortcode_期間内の場合コンテンツを表示する(): void
+    {
+        if (!defined('DAY_IN_SECONDS')) {
+            define('DAY_IN_SECONDS', 86400);
+        }
+
+        $tz = new \DateTimeZone('Asia/Tokyo');
+        $now = new \DateTimeImmutable('2026-04-10 15:00:00', $tz);
+
+        \Brain\Monkey\Functions\when('wp_timezone')->justReturn($tz);
+        \Brain\Monkey\Functions\when('current_datetime')->justReturn($now);
+
+        $atts = [
+            'from' => '2026-04-01',
+            'to' => '2026-04-30',
+            'class' => 'my-class'
+        ];
+        $content = 'テストコンテンツ';
+
+        // apply_filtersのモック（そのまま返す）
+        \Brain\Monkey\Filters\expectApplied('campaign_shortcode_content')->andReturn($content);
+
+        $result = campaign_shortcode($atts, $content);
+        $this->assertSame('<div class="campaign my-class">テストコンテンツ</div>', $result);
+    }
+
+    /**
+     * キャンペーン期間外（終了後）の場合にnullが返されることをテスト
+     */
+    public function test_campaign_shortcode_期間外はnullを返す(): void
+    {
+        if (!defined('DAY_IN_SECONDS')) {
+            define('DAY_IN_SECONDS', 86400);
+        }
+
+        $tz = new \DateTimeZone('Asia/Tokyo');
+        $now = new \DateTimeImmutable('2026-05-01 15:00:00', $tz);
+
+        \Brain\Monkey\Functions\when('wp_timezone')->justReturn($tz);
+        \Brain\Monkey\Functions\when('current_datetime')->justReturn($now);
+
+        $atts = [
+            'from' => '2026-04-01',
+            'to' => '2026-04-30',
+        ];
+        $content = 'テストコンテンツ';
+
+        \Brain\Monkey\Filters\expectApplied('campaign_shortcode_content')->andReturn($content);
+
+        $result = campaign_shortcode($atts, $content);
+        $this->assertNull($result);
+    }
+
+    // ========================================================================
+    // login_user_only_shortcode()
+    // ========================================================================
+
+    /**
+     * ログインユーザーの場合にコンテンツがそのまま評価されて表示されることをテスト
+     */
+    public function test_login_user_only_shortcode_ログイン時はコンテンツを表示する(): void
+    {
+        global $test_mock_is_user_logged_in;
+        $test_mock_is_user_logged_in = true;
+
+        $atts = [];
+        $content = 'ログイン限定コンテンツ';
+
+        $result = login_user_only_shortcode($atts, $content);
+        $this->assertSame('ログイン限定コンテンツ', $result);
+    }
+
+    /**
+     * 未ログインの場合に制限メッセージが表示されることをテスト
+     */
+    public function test_login_user_only_shortcode_未ログイン時はメッセージを表示する(): void
+    {
+        global $test_mock_is_user_logged_in;
+        $test_mock_is_user_logged_in = false;
+
+        // THEME_NAME 定数の回避のため、__()を使わずに固定値でテストするケースも考慮し、
+        // msg属性を明示的に指定してテストする
+        $atts = ['msg' => '制限されています'];
+        $content = 'ログイン限定コンテンツ';
+
+        $result = login_user_only_shortcode($atts, $content);
+        $this->assertSame('<div class="login-user-only">制限されています</div>', $result);
+    }
 }
+

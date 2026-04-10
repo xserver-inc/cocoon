@@ -26,7 +26,24 @@ if ( ! function_exists( 'render_block_cocoon_login_user_only' ) ) {
       return $content; // そのままInnerBlocksの中身を表示
     } else {
       // 未ログインユーザーの場合
-      return '<div class="login-user-only">' . htmlspecialchars_decode( $msg ) . '</div>';
+      // エディタで設定したalignやカスタムクラスが未ログイン時にも反映されるよう、
+      // ブロック本来のラッパークラスを生成してレイアウト崩れを防止する
+      $classes = 'wp-block-cocoon-blocks-login-user-only login-user-only block-box';
+      if ( ! empty( $attributes['align'] ) ) {
+        $classes .= ' align' . $attributes['align'];
+      }
+      if ( ! empty( $attributes['className'] ) ) {
+        $classes .= ' ' . $attributes['className'];
+      }
+      
+      // sanitize_shortcode_valueで既にesc_html済みのためそのまま出力する
+      // ※ 以前はここでhtmlspecialchars_decodeしていたが、
+      //    esc_htmlによるサニタイズを無効化してしまうため削除した
+      return sprintf(
+        '<div class="%s">%s</div>',
+        esc_attr( $classes ),
+        $msg
+      );
     }
   }
 }

@@ -7,7 +7,6 @@
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-// サーバーサイドレンダリングを使用するため、saveはnullを返す
 export default function save() {
   return (
     <div { ...useBlockProps.save( { className: 'campaign block-box' } ) }>

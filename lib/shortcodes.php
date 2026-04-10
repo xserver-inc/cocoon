@@ -319,11 +319,14 @@ function login_user_only_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
       'msg' => __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME ),
   ), $atts, 'login_user_only' ) );
+  // sanitize_shortcode_value内でesc_html済みのためそのまま出力する
+  // ※ 以前はhtmlspecialchars_decodeで戻していたが、
+  //    esc_htmlによるサニタイズが無効化されてしまうため削除した
   $msg = sanitize_shortcode_value($msg);
   if (is_user_logged_in()) {
     return do_shortcode($content);
   } else {
-    return '<div class="login-user-only">'.htmlspecialchars_decode($msg).'</div>';
+    return '<div class="login-user-only">'.$msg.'</div>';
   }
 }
 endif;
@@ -938,16 +941,25 @@ function campaign_shortcode( $atts, $content = null ) {
 
   //内容がない場合は何も表示しない
   if (!$content) return null;
-  //現在の日時を取得
-  $now = current_time('timestamp');
+  //WordPressのタイムゾーン設定に基づく現在日時を取得
+  // ※ current_time('timestamp') + strtotime() の組み合わせだと、
+  //    gmt_offsetのみ設定された環境でタイムゾーンのズレが生じるため、
+  //    wp_timezone() + DateTimeImmutable で統一して比較する
+  $tz     = wp_timezone();
+  $now    = current_datetime();
+  $now_ts = $now->getTimestamp();
 
   //いつから（開始日時）
   $from = sanitize_shortcode_value($from);
-  $from_time = !empty($from) ? strtotime($from) : strtotime('-1 day');
+  $from_time = !empty($from)
+    ? ( new DateTimeImmutable( $from, $tz ) )->getTimestamp()
+    : $now_ts - DAY_IN_SECONDS;
 
   //いつまで（終了日時）
   $to = sanitize_shortcode_value($to);
-  $to_time = !empty($to) ? strtotime($to) : strtotime('+1 day');
+  $to_time = !empty($to)
+    ? ( new DateTimeImmutable( $to, $tz ) )->getTimestamp()
+    : $now_ts + DAY_IN_SECONDS;
 
   //拡張クラス
   if ($class) {
@@ -956,7 +968,8 @@ function campaign_shortcode( $atts, $content = null ) {
 
   $tag = null;
   $content = apply_filters('campaign_shortcode_content', $content);
-  if (($from_time < $now) && ($to_time > $now)) {
+  // ※ 開始・終了時刻ちょうども期間内として扱うため <= を使用
+  if (($from_time <= $now_ts) && ($now_ts <= $to_time)) {
     $tag = '<div class="campaign'.esc_attr($class).'">'.
       $content.
     '</div>';

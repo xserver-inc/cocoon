@@ -575,6 +575,10 @@ if (!function_exists('get_function_text')) {
 
 if (!function_exists('is_user_logged_in')) {
     function is_user_logged_in() {
+        global $test_mock_is_user_logged_in;
+        if (isset($test_mock_is_user_logged_in)) {
+            return $test_mock_is_user_logged_in;
+        }
         return false;
     }
 }

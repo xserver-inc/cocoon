@@ -33,16 +33,26 @@ function render_block_cocoon_campaign( $attributes, $content ) {
   // 終了日時の取得
   $to = isset( $attributes['to'] ) ? $attributes['to'] : '';
 
-  // 現在のWordPressローカル日時を取得
-  $now = current_time( 'timestamp' );
+  // WordPressのタイムゾーン設定に基づく現在日時を取得
+  // ※ current_time('timestamp') + strtotime() の組み合わせだと、
+  //    gmt_offsetのみ設定された環境でタイムゾーンのズレが生じるため、
+  //    wp_timezone() + DateTimeImmutable で統一して比較する
+  $tz     = wp_timezone();
+  $now    = current_datetime();
+  $now_ts = $now->getTimestamp();
 
   // 開始日時の判定（未入力の場合は1日前扱い）
-  $from_time = ! empty( $from ) ? strtotime( $from ) : strtotime( '-1 day' );
+  $from_time = ! empty( $from )
+    ? ( new DateTimeImmutable( $from, $tz ) )->getTimestamp()
+    : $now_ts - DAY_IN_SECONDS;
   // 終了日時の判定（未入力の場合は1日後扱い）
-  $to_time = ! empty( $to ) ? strtotime( $to ) : strtotime( '+1 day' );
+  $to_time = ! empty( $to )
+    ? ( new DateTimeImmutable( $to, $tz ) )->getTimestamp()
+    : $now_ts + DAY_IN_SECONDS;
 
   // 期間外の場合は空文字を返す（表示しない）
-  if ( ! ( $from_time < $now && $to_time > $now ) ) {
+  // ※ 開始・終了時刻ちょうども期間内として扱うため <= を使用
+  if ( ! ( $from_time <= $now_ts && $now_ts <= $to_time ) ) {
     return '';
   }
 

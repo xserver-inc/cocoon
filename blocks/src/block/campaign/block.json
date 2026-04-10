@@ -1,7 +1,11 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "cocoon-blocks/campaign",
+  "title": "キャンペーン",
   "category": "cocoon-block",
+  "description": "指定した期間中のみコンテンツを表示するブロックです。開始日時と終了日時を設定できます。",
+  "textdomain": "cocoon",
   "keywords": [
     "campaign",
     "キャンペーン",
