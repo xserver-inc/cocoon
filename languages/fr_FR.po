@@ -6125,8 +6125,8 @@ msgid "外部リンク設定"
 msgstr "Paramètres des liens externes"
 
 #: lib/page-settings/content-forms.php:61
-msgid "外部リンク動作の設定です。外部ブログカードにも適用されます。"
-msgstr "Paramètre de fonctionnement des liens externes. Cela s'applique également aux cartes de blog externes."
+msgid "外部リンク動作の設定です。"
+msgstr "Paramètre de fonctionnement des liens externes."
 
 #: lib/page-settings/content-forms.php:69
 msgid "外部リンクの開き方"
@@ -6140,8 +6140,8 @@ msgid "変更しない"
 msgstr "Ne pas modifier"
 
 #: lib/page-settings/content-forms.php:79
-msgid "本文内の外部リンクをどのように開くか。"
-msgstr "Voulez-vous définir comment les liens externes dans le corps du texte seront ouverts ?"
+msgid "外部リンクをどのように開くか。"
+msgstr "Définit comment ouvrir les liens externes."
 
 #: lib/page-settings/content-forms.php:87
 #: lib/page-settings/content-forms.php:210
@@ -6159,8 +6159,8 @@ msgid "フォローする（follow）"
 msgstr "Suivre (follow)"
 
 #: lib/page-settings/content-forms.php:97
-msgid "本文内の外部リンクのフォロー状態を設定します。"
-msgstr "Définissez l'état de suivi des liens externes dans le corps du texte."
+msgid "外部リンクのフォロー状態を設定します。"
+msgstr "Définit l'état de suivi des liens externes."
 
 #: lib/page-settings/content-forms.php:105
 #: lib/page-settings/content-forms.php:228
@@ -6240,20 +6240,20 @@ msgid "内部リンク設定"
 msgstr "Paramètres des liens internes"
 
 #: lib/page-settings/content-forms.php:184
-msgid "内部リンク動作の設定です。内部ブログカードにも適用されます。"
-msgstr "Paramètre de fonctionnement des liens internes. Cela s'applique également aux cartes de blog internes."
+msgid "内部リンク動作の設定です。"
+msgstr "Paramètre de fonctionnement des liens internes."
 
 #: lib/page-settings/content-forms.php:192
 msgid "内部リンクの開き方"
 msgstr "Comment ouvrir les liens internes"
 
 #: lib/page-settings/content-forms.php:202
-msgid "本文内の内部リンクをどのように開くか。"
-msgstr "Définissez comment les liens internes dans le corps du texte seront ouverts."
+msgid "内部リンクをどのように開くか。"
+msgstr "Définit comment ouvrir les liens internes."
 
 #: lib/page-settings/content-forms.php:220
-msgid "本文内の内部リンクのフォロー状態を設定します。"
-msgstr "Définissez l'état de suivi des liens internes dans le corps du texte."
+msgid "内部リンクのフォロー状態を設定します。"
+msgstr "Définit l'état de suivi des liens internes."
 
 #: lib/page-settings/content-forms.php:261
 msgid "内部リンクの右部にFont Awesomeアイコンを表示するか。"

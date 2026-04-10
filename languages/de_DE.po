@@ -6125,8 +6125,8 @@ msgid "外部リンク設定"
 msgstr "Externe Link-Einstellungen"
 
 #: lib/page-settings/content-forms.php:61
-msgid "外部リンク動作の設定です。外部ブログカードにも適用されます。"
-msgstr "Legt die Aktion für externe Links fest. Diese Einstellung wird auch für externe Blogkarten übernommen."
+msgid "外部リンク動作の設定です。"
+msgstr "Einstellung für das Verhalten externer Links."
 
 #: lib/page-settings/content-forms.php:69
 msgid "外部リンクの開き方"
@@ -6140,8 +6140,8 @@ msgid "変更しない"
 msgstr "Nicht ändern"
 
 #: lib/page-settings/content-forms.php:79
-msgid "本文内の外部リンクをどのように開くか。"
-msgstr "Legen Sie fest, wie externe Links im Text geöffnet werden sollen."
+msgid "外部リンクをどのように開くか。"
+msgstr "Legt fest, wie externe Links geöffnet werden sollen."
 
 #: lib/page-settings/content-forms.php:87
 #: lib/page-settings/content-forms.php:210
@@ -6159,8 +6159,8 @@ msgid "フォローする（follow）"
 msgstr "Folgen (follow)"
 
 #: lib/page-settings/content-forms.php:97
-msgid "本文内の外部リンクのフォロー状態を設定します。"
-msgstr "Legt den Follow-Status von externen Links im Text fest."
+msgid "外部リンクのフォロー状態を設定します。"
+msgstr "Legt den Follow-Status für externe Links fest."
 
 #: lib/page-settings/content-forms.php:105
 #: lib/page-settings/content-forms.php:228
@@ -6240,20 +6240,20 @@ msgid "内部リンク設定"
 msgstr "Interne Linkeinstellungen"
 
 #: lib/page-settings/content-forms.php:184
-msgid "内部リンク動作の設定です。内部ブログカードにも適用されます。"
-msgstr "Legt das Verhalten von internen Links fest. Dies gilt auch für interne Blogkarten."
+msgid "内部リンク動作の設定です。"
+msgstr "Einstellung für das Verhalten interner Links."
 
 #: lib/page-settings/content-forms.php:192
 msgid "内部リンクの開き方"
 msgstr "Öffnen von internen Links"
 
 #: lib/page-settings/content-forms.php:202
-msgid "本文内の内部リンクをどのように開くか。"
-msgstr "Legt fest, wie interne Links im Text geöffnet werden."
+msgid "内部リンクをどのように開くか。"
+msgstr "Legt fest, wie interne Links geöffnet werden sollen."
 
 #: lib/page-settings/content-forms.php:220
-msgid "本文内の内部リンクのフォロー状態を設定します。"
-msgstr "Legt den Follow-Status von internen Links im Text fest."
+msgid "内部リンクのフォロー状態を設定します。"
+msgstr "Legt den Follow-Status für interne Links fest."
 
 #: lib/page-settings/content-forms.php:261
 msgid "内部リンクの右部にFont Awesomeアイコンを表示するか。"

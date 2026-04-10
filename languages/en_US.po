@@ -6125,8 +6125,8 @@ msgid "外部リンク設定"
 msgstr "External link settings"
 
 #: lib/page-settings/content-forms.php:61
-msgid "外部リンク動作の設定です。外部ブログカードにも適用されます。"
-msgstr "Sets the external link action. This will also be applied to external blog cards."
+msgid "外部リンク動作の設定です。"
+msgstr "Sets the external link action."
 
 #: lib/page-settings/content-forms.php:69
 msgid "外部リンクの開き方"
@@ -6140,8 +6140,8 @@ msgid "変更しない"
 msgstr "Do not change"
 
 #: lib/page-settings/content-forms.php:79
-msgid "本文内の外部リンクをどのように開くか。"
-msgstr "Do you want to set how external links in the body text are opened?"
+msgid "外部リンクをどのように開くか。"
+msgstr "Set how external links are opened."
 
 #: lib/page-settings/content-forms.php:87
 #: lib/page-settings/content-forms.php:210
@@ -6159,8 +6159,8 @@ msgid "フォローする（follow）"
 msgstr "Follow (follow)"
 
 #: lib/page-settings/content-forms.php:97
-msgid "本文内の外部リンクのフォロー状態を設定します。"
-msgstr "Sets the follow state of external links in the body text."
+msgid "外部リンクのフォロー状態を設定します。"
+msgstr "Sets the follow state of external links."
 
 #: lib/page-settings/content-forms.php:105
 #: lib/page-settings/content-forms.php:228
@@ -6240,20 +6240,20 @@ msgid "内部リンク設定"
 msgstr "Internal link settings"
 
 #: lib/page-settings/content-forms.php:184
-msgid "内部リンク動作の設定です。内部ブログカードにも適用されます。"
-msgstr "Sets the internal link action. This will also be applied to internal blog cards."
+msgid "内部リンク動作の設定です。"
+msgstr "Sets the internal link action."
 
 #: lib/page-settings/content-forms.php:192
 msgid "内部リンクの開き方"
 msgstr "How to open internal links"
 
 #: lib/page-settings/content-forms.php:202
-msgid "本文内の内部リンクをどのように開くか。"
-msgstr "Sets how internal links in the body text are opened."
+msgid "内部リンクをどのように開くか。"
+msgstr "Sets how internal links are opened."
 
 #: lib/page-settings/content-forms.php:220
-msgid "本文内の内部リンクのフォロー状態を設定します。"
-msgstr "Sets the follow state of internal links in the body text."
+msgid "内部リンクのフォロー状態を設定します。"
+msgstr "Sets the follow state of internal links."
 
 #: lib/page-settings/content-forms.php:261
 msgid "内部リンクの右部にFont Awesomeアイコンを表示するか。"

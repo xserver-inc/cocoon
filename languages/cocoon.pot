@@ -6576,7 +6576,7 @@ msgid "外部リンク設定"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:61
-msgid "外部リンク動作の設定です。外部ブログカードにも適用されます。"
+msgid "外部リンク動作の設定です。"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:69
@@ -6591,7 +6591,7 @@ msgid "変更しない"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:79
-msgid "本文内の外部リンクをどのように開くか。"
+msgid "外部リンクをどのように開くか。"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:87
@@ -6610,7 +6610,7 @@ msgid "フォローする（follow）"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:97
-msgid "本文内の外部リンクのフォロー状態を設定します。"
+msgid "外部リンクのフォロー状態を設定します。"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:105
@@ -6696,7 +6696,7 @@ msgid "内部リンク設定"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:184
-msgid "内部リンク動作の設定です。内部ブログカードにも適用されます。"
+msgid "内部リンク動作の設定です。"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:192
@@ -6704,11 +6704,11 @@ msgid "内部リンクの開き方"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:202
-msgid "本文内の内部リンクをどのように開くか。"
+msgid "内部リンクをどのように開くか。"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:220
-msgid "本文内の内部リンクのフォロー状態を設定します。"
+msgid "内部リンクのフォロー状態を設定します。"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:261

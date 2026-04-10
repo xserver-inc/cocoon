@@ -6125,8 +6125,8 @@ msgid "外部リンク設定"
 msgstr "외부 링크 설정"
 
 #: lib/page-settings/content-forms.php:61
-msgid "外部リンク動作の設定です。外部ブログカードにも適用されます。"
-msgstr "외부 링크 동작을 설정합니다. 이것은 외부 블로그 카드에도 적용됩니다."
+msgid "外部リンク動作の設定です。"
+msgstr "외부 링크 동작 설정입니다."
 
 #: lib/page-settings/content-forms.php:69
 msgid "外部リンクの開き方"
@@ -6140,8 +6140,8 @@ msgid "変更しない"
 msgstr "변경 안함"
 
 #: lib/page-settings/content-forms.php:79
-msgid "本文内の外部リンクをどのように開くか。"
-msgstr "본문 내의 외부 링크를 어떻게 여시겠습니까?"
+msgid "外部リンクをどのように開くか。"
+msgstr "외부 링크를 어떻게 열지 설정합니다."
 
 #: lib/page-settings/content-forms.php:87
 #: lib/page-settings/content-forms.php:210
@@ -6159,8 +6159,8 @@ msgid "フォローする（follow）"
 msgstr "follow 함 (follow)"
 
 #: lib/page-settings/content-forms.php:97
-msgid "本文内の外部リンクのフォロー状態を設定します。"
-msgstr "본문 내의 외부 링크의 follow 유형을 설정합니다."
+msgid "外部リンクのフォロー状態を設定します。"
+msgstr "외부 링크의 팔로우 상태를 설정합니다."
 
 #: lib/page-settings/content-forms.php:105
 #: lib/page-settings/content-forms.php:228
@@ -6240,20 +6240,20 @@ msgid "内部リンク設定"
 msgstr "내부 링크 설정"
 
 #: lib/page-settings/content-forms.php:184
-msgid "内部リンク動作の設定です。内部ブログカードにも適用されます。"
-msgstr "내부 링크 동작을 설정합니다. 이것은 내부 블로그 카드에도 적용됩니다."
+msgid "内部リンク動作の設定です。"
+msgstr "내부 링크 동작 설정입니다."
 
 #: lib/page-settings/content-forms.php:192
 msgid "内部リンクの開き方"
 msgstr "내부 링크 여는 방법"
 
 #: lib/page-settings/content-forms.php:202
-msgid "本文内の内部リンクをどのように開くか。"
-msgstr "본문의 내부 링크를 어떻게 여시겠습니까?"
+msgid "内部リンクをどのように開くか。"
+msgstr "내부 링크를 어떻게 열지 설정합니다."
 
 #: lib/page-settings/content-forms.php:220
-msgid "本文内の内部リンクのフォロー状態を設定します。"
-msgstr "본문의 내부 링크의 follow를 설정합니다."
+msgid "内部リンクのフォロー状態を設定します。"
+msgstr "내부 링크의 팔로우 상태를 설정합니다."
 
 #: lib/page-settings/content-forms.php:261
 msgid "内部リンクの右部にFont Awesomeアイコンを表示するか。"
