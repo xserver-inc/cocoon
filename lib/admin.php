@@ -701,6 +701,21 @@ function register_tag_check_list() {
 }
 endif;
 
+//タグ選択をチェックリスト形式にした場合、一覧・編集画面では階層化プロパティを元のfalseに戻すことで、不要な「親ターム」や「色」の出力を防ぐ
+add_action('current_screen', 'disable_post_tag_hierarchical_on_term_screens');
+if ( !function_exists( 'disable_post_tag_hierarchical_on_term_screens' ) ):
+function disable_post_tag_hierarchical_on_term_screens($screen) {
+  if ( function_exists('is_editor_tag_check_list_enable') && is_editor_tag_check_list_enable() ) {
+    if ( isset($screen->taxonomy) && $screen->taxonomy === 'post_tag' && in_array($screen->base, array('edit-tags', 'term')) ) {
+      $tax = get_taxonomy('post_tag');
+      if ($tax) {
+        $tax->hierarchical = false;
+      }
+    }
+  }
+}
+endif;
+
 //管理画面のbodyタグのクラスに挿入
 add_filter('admin_body_class', 'add_custom_admin_body_class');
 function add_custom_admin_body_class($classes) {
