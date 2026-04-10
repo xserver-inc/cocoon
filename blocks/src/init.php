@@ -289,13 +289,13 @@ function cocoon_blocks_cgb_editor_assets()
 	$amazon_api_name    = '';
 	$amazon_api_version = '';
 	if ( function_exists( 'is_amazon_creators_api_credentials_available' ) && is_amazon_creators_api_credentials_available() ) {
-		$amazon_api_name = 'Creators API';
+		$amazon_api_name = __( 'Creators API', THEME_NAME );
 		if ( function_exists( 'amazon_creators_api_get_version' ) && function_exists( 'get_amazon_creators_api_credential_id' ) ) {
 			$amazon_api_version = 'v' . amazon_creators_api_get_version( get_amazon_creators_api_credential_id() );
 		}
 	} else {
 		if ( function_exists( 'get_amazon_api_access_key_id' ) && get_amazon_api_access_key_id() && function_exists( 'get_amazon_api_secret_key' ) && get_amazon_api_secret_key() ) {
-			$amazon_api_name    = 'PA-API';
+			$amazon_api_name    = __( 'PA-API', THEME_NAME );
 			$amazon_api_version = 'v5';
 		}
 	}
@@ -337,7 +337,7 @@ function cocoon_blocks_cgb_editor_assets()
 	$rakuten_api_name    = '';
 	$rakuten_api_version = '';
 	if ( function_exists( 'get_rakuten_application_id' ) && get_rakuten_application_id() && function_exists( 'get_rakuten_affiliate_id' ) && get_rakuten_affiliate_id() ) {
-		$rakuten_api_name    = '楽天商品検索API';
+		$rakuten_api_name    = __( '楽天商品検索API', THEME_NAME );
 		if ( function_exists( 'get_rakuten_access_key' ) && trim( get_rakuten_access_key() ) ) {
 			$rakuten_api_version = COCOON_RAKUTEN_API_VERSION;
 		} else {

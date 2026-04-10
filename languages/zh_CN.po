@@ -14387,3 +14387,18 @@ msgstr ""
 msgctxt "block description"
 msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
 msgstr ""
+
+msgid "楽天商品検索API"
+msgstr "乐天商品搜索API"
+
+msgid "Creators API"
+msgstr "Creators API"
+
+msgid "PA-API"
+msgstr "PA-API"
+
+msgid "楽天アクセスキー"
+msgstr "乐天访问密钥"
+
+msgid "楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。"
+msgstr "使用乐天API所需的访问密钥。请重新注册应用以获取。<br>※旧API（app.rakuten.co.jp）预计于2026年5月废弃。如果未输入，将继续使用旧API直到其废除，但请尽快设置访问密钥。"

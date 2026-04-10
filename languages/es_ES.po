@@ -1,4 +1,4 @@
-msgid ""
+﻿msgid ""
 msgstr ""
 "Project-Id-Version: wp-cocoon\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
@@ -14392,3 +14392,19 @@ msgstr ""
 msgctxt "block description"
 msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
 msgstr ""
+
+msgid "楽天商品検索API"
+msgstr "API de búsqueda de productos de Rakuten"
+
+msgid "Creators API"
+msgstr "Creators API"
+
+msgid "PA-API"
+msgstr "PA-API"
+
+msgid "楽天アクセスキー"
+msgstr "Clave de acceso de Rakuten"
+
+msgid "楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。"
+msgstr "Clave de acceso requerida para utilizar la API de Rakuten. Vuelva a registrar la aplicación para obtenerla.<br>*Está previsto que la antigua API (app.rakuten.co.jp) quede en desuso en mayo de 2026. Se utilizará la API antigua si se deja en blanco hasta su desuso, pero configure la clave de acceso lo antes posible."
+
