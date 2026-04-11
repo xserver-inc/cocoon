@@ -45,9 +45,12 @@ if ( !function_exists( 'generate_function_texts_is' ) ):
 function generate_function_texts_is($value){
   $records = get_function_texts(null, 'title');
 
-  echo '<script type="text/javascript">
-  var functionTextsTitle = "'.__( 'テンプレート', THEME_NAME ).'";
-  var functionTexts = new Array();';
+  // esc_js()はHTMLの<>を&lt;&gt;に変換してしまうため、wp_json_encodeで安全にJS変数へ渡す
+  $json_flags = JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
+
+  echo '<script type="text/javascript">';
+  echo 'var functionTextsTitle = ' . wp_json_encode(__( 'テンプレート', THEME_NAME ), $json_flags) . ';';
+  echo 'var functionTexts = new Array();';
 
   $count = 0;
 
@@ -60,9 +63,9 @@ function generate_function_texts_is($value){
 
     var count = <?php echo $count; ?>;
     functionTexts[count] = new Array();
-    functionTexts[count].title  = '<?php echo esc_js($record->title); ?>';
-    functionTexts[count].id     = '<?php echo esc_js($record->id); ?>';
-    functionTexts[count].shrotecode = '<?php echo esc_js(get_function_text_shortcode($record->id)); ?>';
+    functionTexts[count].title  = <?php echo wp_json_encode($record->title, $json_flags); ?>;
+    functionTexts[count].id     = <?php echo wp_json_encode($record->id, $json_flags); ?>;
+    functionTexts[count].shrotecode = <?php echo wp_json_encode(get_function_text_shortcode($record->id), $json_flags); ?>;
 
     <?php
     $count++;

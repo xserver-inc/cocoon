@@ -47,9 +47,12 @@ function generate_item_rankings($value){
   $records = get_item_rankings(null, 'title');
   //_v($records);
   if ($records) {
-    echo '<script type="text/javascript">
-    var itemRankingsTitle = "'.__( 'ランキング', THEME_NAME ).'";
-    var itemRankings = new Array();';
+    // esc_js()はHTMLの<>を&lt;&gt;に変換してしまうため、wp_json_encodeで安全にJS変数へ渡す
+    $json_flags = JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
+
+    echo '<script type="text/javascript">';
+    echo 'var itemRankingsTitle = ' . wp_json_encode(__( 'ランキング', THEME_NAME ), $json_flags) . ';';
+    echo 'var itemRankings = new Array();';
 
     $count = 0;
 
@@ -62,9 +65,9 @@ function generate_item_rankings($value){
 
       var count = <?php echo $count; ?>;
       itemRankings[count] = new Array();
-      itemRankings[count].title  = '<?php echo esc_js($record->title); ?>';
-      itemRankings[count].id     = '<?php echo esc_js($record->id); ?>';
-      itemRankings[count].shrotecode = '<?php echo esc_js(get_item_ranking_shortcode($record->id)); ?>';
+      itemRankings[count].title  = <?php echo wp_json_encode($record->title, $json_flags); ?>;
+      itemRankings[count].id     = <?php echo wp_json_encode($record->id, $json_flags); ?>;
+      itemRankings[count].shrotecode = <?php echo wp_json_encode(get_item_ranking_shortcode($record->id), $json_flags); ?>;
 
       <?php
       $count++;

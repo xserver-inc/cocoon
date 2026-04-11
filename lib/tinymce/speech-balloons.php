@@ -46,10 +46,14 @@ if ( !function_exists( 'generate_speech_balloons_js' ) ):
 function generate_speech_balloons_js($value){
   $records = get_speech_balloons(null, 'title');
 
-  echo '<script type="text/javascript">
-  var speechBalloonsTitle = "'.__( '吹き出し', THEME_NAME ).'";
-  var speechBalloonsEmptyText = "'.__( '内容を入力してください。', THEME_NAME ).'";
-  var speechBalloons = new Array();';
+  // esc_js()はHTMLの<>を&lt;&gt;に変換してしまい、吹き出しHTMLがテキストとして
+  // 出力される不具合を引き起こすため、wp_json_encodeでJSONエンコードして安全に渡す
+  $json_flags = JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
+
+  echo '<script type="text/javascript">';
+  echo 'var speechBalloonsTitle = ' . wp_json_encode(__( '吹き出し', THEME_NAME ), $json_flags) . ';';
+  echo 'var speechBalloonsEmptyText = ' . wp_json_encode(__( '内容を入力してください。', THEME_NAME ), $json_flags) . ';';
+  echo 'var speechBalloons = new Array();';
 
   $count = 0;
 
@@ -69,10 +73,10 @@ function generate_speech_balloons_js($value){
 
     var count = <?php echo $count; ?>;
     speechBalloons[count] = new Array();
-    speechBalloons[count].title  = '<?php echo esc_js($record->title); ?>';
-    speechBalloons[count].id     = '<?php echo esc_js($record->id); ?>';
-    speechBalloons[count].before = '<?php echo esc_js($sb_tag_before); ?>';
-    speechBalloons[count].after  = '<?php echo esc_js($sb_tag_after); ?>';
+    speechBalloons[count].title  = <?php echo wp_json_encode($record->title, $json_flags); ?>;
+    speechBalloons[count].id     = <?php echo wp_json_encode($record->id, $json_flags); ?>;
+    speechBalloons[count].before = <?php echo wp_json_encode($sb_tag_before, $json_flags); ?>;
+    speechBalloons[count].after  = <?php echo wp_json_encode($sb_tag_after, $json_flags); ?>;
 
     <?php
     $count++;

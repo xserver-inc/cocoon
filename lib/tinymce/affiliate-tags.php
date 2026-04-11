@@ -44,9 +44,12 @@ if ( !function_exists( 'generate_affiliate_tags' ) ):
 function generate_affiliate_tags($value){
   $records = get_affiliate_tags(null, 'title');
 
-  echo '<script type="text/javascript">
-  var affiliateTagsTitle = "'.__( 'アフィリエイトタグ', THEME_NAME ).'";
-  var affiliateTags = new Array();';
+  // esc_js()はHTMLの<>を&lt;&gt;に変換してしまうため、wp_json_encodeで安全にJS変数へ渡す
+  $json_flags = JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
+
+  echo '<script type="text/javascript">';
+  echo 'var affiliateTagsTitle = ' . wp_json_encode(__( 'アフィリエイトタグ', THEME_NAME ), $json_flags) . ';';
+  echo 'var affiliateTags = new Array();';
 
   $count = 0;
 
@@ -59,9 +62,9 @@ function generate_affiliate_tags($value){
 
     var count = <?php echo $count; ?>;
     affiliateTags[count] = new Array();
-    affiliateTags[count].title  = '<?php echo esc_js($record->title); ?>';
-    affiliateTags[count].id     = '<?php echo esc_js($record->id); ?>';
-    affiliateTags[count].shrotecode = '<?php echo esc_js(get_affiliate_tag_shortcode($record->id)); ?>';
+    affiliateTags[count].title  = <?php echo wp_json_encode($record->title, $json_flags); ?>;
+    affiliateTags[count].id     = <?php echo wp_json_encode($record->id, $json_flags); ?>;
+    affiliateTags[count].shrotecode = <?php echo wp_json_encode(get_affiliate_tag_shortcode($record->id), $json_flags); ?>;
 
     <?php
     $count++;

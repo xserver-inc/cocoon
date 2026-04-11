@@ -34,9 +34,11 @@ if (is_admin())
   add_action('admin_head', 'generate_insert_html_label_js');
 if ( !function_exists( 'generate_insert_html_label_js' ) ):
 function generate_insert_html_label_js($value){
-  echo '<script type="text/javascript">
-  var insert_html_button_title = "'.__( 'HTML挿入', THEME_NAME ).'";
-  var insert_html_dialog_label = "'.__( 'HTMLを挿入してください', THEME_NAME ).'";';
+  // esc_js()はHTMLの<>を&lt;&gt;に変換してしまうため、wp_json_encodeで安全にJS変数へ渡す
+  $json_flags = JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
+  echo '<script type="text/javascript">';
+  echo 'var insert_html_button_title = ' . wp_json_encode(__( 'HTML挿入', THEME_NAME ), $json_flags) . ';';
+  echo 'var insert_html_dialog_label = ' . wp_json_encode(__( 'HTMLを挿入してください', THEME_NAME ), $json_flags) . ';';
   echo '</script>';
 }
 endif;
