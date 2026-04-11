@@ -3823,29 +3823,45 @@ function is_classic_editor() {
 }
 endif;
 
-//HTMLで使用するヘックスカラーが暗い色かどうか（）
+//色コードが暗い色かどうか（YIQ計算）
 if ( !function_exists( 'is_dark_hexcolor' ) ):
 function is_dark_hexcolor($hexcolor) {
-  if (!$hexcolor || (strlen($hexcolor) !== 7)) {
+  if (empty($hexcolor) || !is_string($hexcolor)) {
     return false;
   }
-  // カラーコードから"#"を削除
-  $hexcolor = ltrim($hexcolor, '#');
+  // カラーコードから"#"を削除しトリム
+  $hex = ltrim(trim($hexcolor), '#');
 
-  // 16進数のカラーコードを10進数のRGB値に変換
-  $r = hexdec(substr($hexcolor, 0, 2));
-  $g = hexdec(substr($hexcolor, 2, 2));
-  $b = hexdec(substr($hexcolor, 4, 2));
+  // 半透明を含む場合(RGBA等)はアルファチャンネル部を無視する
+  if (strlen($hex) === 8) {
+    $hex = substr($hex, 0, 6);
+  } elseif (strlen($hex) === 4) {
+    $hex = substr($hex, 0, 3);
+  }
 
-  // 平均輝度を計算
-  $luminance = ($r + $g + $b) / 3;
+  // 16進数文字列として有効かチェック（PHP 7.4+ で hexdec の Deprecated 警告を防止）
+  if (!ctype_xdigit($hex)) {
+    return false;
+  }
 
-  // しきい値（この値は調整可能、0から255の範囲）
-  // $threshold = 128; //半分
-  $threshold = 162;
+  if (strlen($hex) == 3) {
+    $r = hexdec(substr($hex, 0, 1).substr($hex, 0, 1));
+    $g = hexdec(substr($hex, 1, 1).substr($hex, 1, 1));
+    $b = hexdec(substr($hex, 2, 1).substr($hex, 2, 1));
+  } elseif (strlen($hex) == 6) {
+    $r = hexdec(substr($hex, 0, 2));
+    $g = hexdec(substr($hex, 2, 2));
+    $b = hexdec(substr($hex, 4, 2));
+  } else {
+    // 判定できない場合（カラーネーム等）はfalseを返す
+    return false;
+  }
 
-  // 輝度がしきい値より低いかどうかを返す
-  return $luminance < $threshold;
+  // W3CガイドラインによるYIQ輝度計算
+  $yiq = (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  // 輝度が128未満なら暗いと判定
+  return $yiq < 128;
 }
 endif;
 
@@ -4109,29 +4125,8 @@ function get_text_color_from_background_color($bg_color, $light_color = '#fff', 
     return $light_color;
   }
 
-  $hex = str_replace('#', '', trim($bg_color));
-
-  // 8文字(RRGGBBAA)や4文字(RGBA)の場合は、先頭6文字/3文字を切り出すことでアルファチャンネル部を無視する
-  if (strlen($hex) === 8) {
-    $hex = substr($hex, 0, 6);
-  } elseif (strlen($hex) === 4) {
-    $hex = substr($hex, 0, 3);
-  }
-
-  if (strlen($hex) == 3) {
-    $r = hexdec(substr($hex, 0, 1).substr($hex, 0, 1));
-    $g = hexdec(substr($hex, 1, 1).substr($hex, 1, 1));
-    $b = hexdec(substr($hex, 2, 1).substr($hex, 2, 1));
-  } elseif (strlen($hex) == 6) {
-    $r = hexdec(substr($hex, 0, 2));
-    $g = hexdec(substr($hex, 2, 2));
-    $b = hexdec(substr($hex, 4, 2));
-  } else {
-    // rgb()やrgba(), カラーネームなどの場合は判定できないためデフォルトを返す
-    return $light_color;
-  }
-  // YIQ で輝度を計算
-  $yiq = (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
-  return ($yiq >= 128) ? $dark_color : $light_color;
+  // 背景色が暗ければ明るい文字色を返し、明るければ暗い文字色を返す
+  // カラーコードのバリデーションはis_dark_hexcolor側で一元的に行う
+  return is_dark_hexcolor($bg_color) ? $light_color : $dark_color;
 }
 endif;

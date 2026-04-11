@@ -8,7 +8,8 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php //サイトキー色
-if ($site_key_color = get_site_key_color()): ?>
+if ($site_key_color = get_site_key_color()):
+  $site_key_text_color_auto = get_text_color_from_background_color($site_key_color); ?>
 #header-container,
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu,
@@ -99,11 +100,11 @@ table tr:nth-of-type(2n+1),
 .sidebar h3,
 #footer,
 #footer a:not(.sns-button){
-  color: <?php echo get_text_color_from_background_color($site_key_color); ?>;
+  color: <?php echo $site_key_text_color_auto; ?>;
 }
 :root {
-  --cocoon-header-text-color: <?php echo get_text_color_from_background_color($site_key_color); ?>;
-  --cocoon-navi-text-color: <?php echo get_text_color_from_background_color($site_key_color); ?>;
+  --cocoon-header-text-color: <?php echo $site_key_text_color_auto; ?>;
+  --cocoon-navi-text-color: <?php echo $site_key_text_color_auto; ?>;
 }
 
 <?php endif ?>
@@ -164,22 +165,23 @@ if (get_header_background_image_url()): ?>
 }
 <?php endif ?>
 <?php //ヘッダー全体背景色
-if ($header_container_background_color = get_header_container_background_color()): ?>
+if ($header_container_background_color = get_header_container_background_color()):
+  $header_container_text_color_auto = get_text_color_from_background_color($header_container_background_color); ?>
 #header-container,
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu{
   background-color: <?php echo $header_container_background_color; ?>;
 }
 #header-container {
-  --cocoon-header-text-color: <?php echo get_text_color_from_background_color($header_container_background_color); ?>;
-  --cocoon-navi-text-color: <?php echo get_text_color_from_background_color($header_container_background_color); ?>;
+  --cocoon-header-text-color: <?php echo $header_container_text_color_auto; ?>;
+  --cocoon-navi-text-color: <?php echo $header_container_text_color_auto; ?>;
 }
 
 .header,
 .header .site-name-text,
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: <?php echo get_text_color_from_background_color($header_container_background_color); ?>;
+  color: <?php echo $header_container_text_color_auto; ?>;
 }
 
 <?php endif ?>
@@ -193,15 +195,16 @@ if ($header_container_text_color = get_header_container_text_color()): ?>
 }
 <?php endif ?>
 <?php //ヘッダー背景色
-if ($header_background_color = get_header_background_color()): ?>
+if ($header_background_color = get_header_background_color()):
+  $header_text_color_auto = get_text_color_from_background_color($header_background_color); ?>
 .header{
   background-color: <?php echo $header_background_color; ?>;
-  --cocoon-header-text-color: <?php echo get_text_color_from_background_color($header_background_color); ?>;
+  --cocoon-header-text-color: <?php echo $header_text_color_auto; ?>;
 }
 
 .header,
 .header .site-name-text{
-  color: <?php echo get_text_color_from_background_color($header_background_color); ?>;
+  color: <?php echo $header_text_color_auto; ?>;
 }
 
 <?php endif ?>
@@ -213,18 +216,19 @@ if ($header_text_color = get_header_text_color()): ?>
 }
 <?php endif ?>
 <?php //グローバルナビ背景色
-if ($global_navi_background_color = get_global_navi_background_color()): ?>
+if ($global_navi_background_color = get_global_navi_background_color()):
+  $global_navi_text_color_auto = get_text_color_from_background_color($global_navi_background_color); ?>
 #header-container .navi,
 #navi .navi-in > .menu-header .sub-menu{
   background-color: <?php echo $global_navi_background_color; ?>;
 }
 #navi {
-  --cocoon-navi-text-color: <?php echo get_text_color_from_background_color($global_navi_background_color); ?>;
+  --cocoon-navi-text-color: <?php echo $global_navi_text_color_auto; ?>;
 }
 
 #navi .navi-in a,
 #navi .navi-in a:hover{
-  color: <?php echo get_text_color_from_background_color($global_navi_background_color); ?>;
+  color: <?php echo $global_navi_text_color_auto; ?>;
 }
 
 <?php endif ?>

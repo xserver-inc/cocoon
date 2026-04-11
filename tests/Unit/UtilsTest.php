@@ -173,21 +173,79 @@ class UtilsTest extends TestCase
         $this->assertFalse(is_dark_hexcolor(null));
     }
 
-    public function test_is_dark_hexcolor_不正な長さはfalseを返す(): void
+    public function test_is_dark_hexcolor_不正なフォーマットはfalseを返す(): void
     {
-        $this->assertFalse(is_dark_hexcolor('#FFF'));
+        $this->assertFalse(is_dark_hexcolor('#FF')); // 足りない
+        $this->assertFalse(is_dark_hexcolor('invalid')); // カラーコードではない
+        $this->assertFalse(is_dark_hexcolor('#ZZZZZZ')); // 長さ6だが非HEX文字
     }
 
     public function test_is_dark_hexcolor_中間色のしきい値判定(): void
     {
-        // 輝度 = (162 + 162 + 162) / 3 = 162, threshold=162 なので false (not dark)
+        // YIQ輝度 = (162*299 + 162*587 + 162*114) / 1000 = 162, threshold=128 なので false (not dark)
         $this->assertFalse(is_dark_hexcolor('#a2a2a2'));
     }
 
     public function test_is_dark_hexcolor_しきい値ギリギリ暗い色(): void
     {
-        // 輝度 = (161 + 161 + 161) / 3 = 161 < 162 なので true (dark)
-        $this->assertTrue(is_dark_hexcolor('#a1a1a1'));
+        // 旧式((161+161+161)/3=161 < 162)では暗い扱いだったが、
+        // YIQでは #a1a1a1 は輝度161となり、128以上のため「明るい(false)」となる。
+        // 代わりに YIQのしきい値(128)未満となるギリギリの暗い色(#7F7F7F, 輝度127)でテストする。
+        $this->assertTrue(is_dark_hexcolor('#7F7F7F'));
+    }
+
+    public function test_is_dark_hexcolor_短縮HEXはパースされて判定される(): void
+    {
+        $this->assertTrue(is_dark_hexcolor('#000'));
+        $this->assertFalse(is_dark_hexcolor('#FFF'));
+    }
+
+    public function test_is_dark_hexcolor_シャープなしでも判定される(): void
+    {
+        $this->assertTrue(is_dark_hexcolor('000000'));
+        $this->assertFalse(is_dark_hexcolor('FFFFFF'));
+    }
+
+    public function test_is_dark_hexcolor_アルファチャンネル付きの透過カラーも判定される(): void
+    {
+        $this->assertTrue(is_dark_hexcolor('#00000000')); // 8桁
+        $this->assertTrue(is_dark_hexcolor('#000F')); // 4桁
+        $this->assertFalse(is_dark_hexcolor('#FFFFFF00'));
+        $this->assertFalse(is_dark_hexcolor('#FFFF'));
+    }
+
+    // ========================================================================
+    // get_text_color_from_background_color()
+    // ========================================================================
+
+    public function test_get_text_color_from_background_color_暗い背景色には明るい文字色を返す(): void
+    {
+        $this->assertSame('#fff', get_text_color_from_background_color('#000000'));
+        $this->assertSame('#fff', get_text_color_from_background_color('#7F7F7F'));
+    }
+
+    public function test_get_text_color_from_background_color_明るい背景色には暗い文字色を返す(): void
+    {
+        $this->assertSame('#333', get_text_color_from_background_color('#FFFFFF'));
+        $this->assertSame('#333', get_text_color_from_background_color('#f5f4f1'));
+    }
+
+    public function test_get_text_color_from_background_color_カスタムデフォルト値を指定可能(): void
+    {
+        $this->assertSame('white', get_text_color_from_background_color('#000000', 'white', 'black'));
+        $this->assertSame('black', get_text_color_from_background_color('#FFFFFF', 'white', 'black'));
+    }
+
+    public function test_get_text_color_from_background_color_空や無効な値のフォールバック(): void
+    {
+        // 判定不能な非空文字列（RGB指定など）の場合、パース失敗により輝度128未満(dark)を満たさないため、
+        // 「明るい」と判定されて黒系($dark_color)のフォールバックが返る。
+        $this->assertSame('#333', get_text_color_from_background_color('rgb(255,255,255)'));
+        $this->assertSame('#333', get_text_color_from_background_color('invalid'));
+
+        // 空やnullの場合はガード節により白系($light_color)が返る（旧実装互換）
+        $this->assertSame('#fff', get_text_color_from_background_color(''));
+        $this->assertSame('#fff', get_text_color_from_background_color(null));
     }
 
     // ========================================================================
