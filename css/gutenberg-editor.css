@@ -5943,7 +5943,8 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   margin-top: 0 !important;
 }
 
-.editor-styles-wrapper.font-awesome-5 .card-arrow .a-wrap::after {
+.editor-styles-wrapper.font-awesome-5 .card-arrow .a-wrap::after,
+.editor-styles-wrapper .font-awesome-5 .card-arrow .a-wrap::after {
   font-family: "Font Awesome 5 Free";
 }
 
@@ -6202,7 +6203,8 @@ body.block-editor-page {
 }
 
 /* Font Awesome 5利用時のアイコンフォント対応 */
-.editor-styles-wrapper.font-awesome-5 .editor-cocoon-group-link-active::after {
+.editor-styles-wrapper.font-awesome-5 .editor-cocoon-group-link-active::after,
+.editor-styles-wrapper .font-awesome-5 .editor-cocoon-group-link-active::after {
   font-family: "Font Awesome 5 Free";
 }
 
