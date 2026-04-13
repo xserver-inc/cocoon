@@ -39,7 +39,7 @@ endif;
 define('OP_TOP_MASTODON_SHARE_BUTTON_VISIBLE', 'top_mastodon_share_button_visible');
 if ( !function_exists( 'is_top_mastodon_share_button_visible' ) ):
 function is_top_mastodon_share_button_visible(){
-  return get_theme_option(OP_TOP_MASTODON_SHARE_BUTTON_VISIBLE);
+  return get_theme_option(OP_TOP_MASTODON_SHARE_BUTTON_VISIBLE, 0);
 }
 endif;
 
@@ -47,7 +47,7 @@ endif;
 define('OP_TOP_BLUESKY_SHARE_BUTTON_VISIBLE', 'top_bluesky_share_button_visible');
 if ( !function_exists( 'is_top_bluesky_share_button_visible' ) ):
 function is_top_bluesky_share_button_visible(){
-  return get_theme_option(OP_TOP_BLUESKY_SHARE_BUTTON_VISIBLE);
+  return get_theme_option(OP_TOP_BLUESKY_SHARE_BUTTON_VISIBLE, 0);
 }
 endif;
 
@@ -55,7 +55,7 @@ endif;
 define('OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE', 'top_misskey_share_button_visible');
 if ( !function_exists( 'is_top_misskey_share_button_visible' ) ):
 function is_top_misskey_share_button_visible(){
-  return get_theme_option(OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE);
+  return get_theme_option(OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE, 0);
 }
 endif;
 
@@ -64,6 +64,14 @@ define('OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE', 'top_facebook_share_button_visibl
 if ( !function_exists( 'is_top_facebook_share_button_visible' ) ):
 function is_top_facebook_share_button_visible(){
   return get_theme_option(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//Threadsシェアボタンの表示
+define('OP_TOP_THREADS_SHARE_BUTTON_VISIBLE', 'top_threads_share_button_visible');
+if ( !function_exists( 'is_top_threads_share_button_visible' ) ):
+function is_top_threads_share_button_visible(){
+  return get_theme_option(OP_TOP_THREADS_SHARE_BUTTON_VISIBLE, 0);
 }
 endif;
 
@@ -112,7 +120,7 @@ endif;
 define('OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE', 'top_linkedin_share_button_visible');
 if ( !function_exists( 'is_top_linkedin_share_button_visible' ) ):
 function is_top_linkedin_share_button_visible(){
-  return get_theme_option(OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE);
+  return get_theme_option(OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE, 0);
 }
 endif;
 
@@ -128,7 +136,7 @@ endif;
 define('OP_TOP_COMMENT_SHARE_BUTTON_VISIBLE', 'top_comment_share_button_visible');
 if ( !function_exists( 'is_top_comment_share_button_visible' ) ):
 function is_top_comment_share_button_visible(){
-  return get_theme_option(OP_TOP_COMMENT_SHARE_BUTTON_VISIBLE);
+  return get_theme_option(OP_TOP_COMMENT_SHARE_BUTTON_VISIBLE, 0);
 }
 endif;
 

@@ -13504,6 +13504,18 @@ msgstr "Auf Misskey teilen"
 msgid "Facebookでシェア"
 msgstr "Auf Facebook teilen"
 
+
+#: tmp/sns-share-buttons.php:37
+msgid "Threadsでシェア"
+msgstr "Auf Threads teilen"
+
+#: tmp/sns-share-buttons.php:37
+msgid "Threads"
+msgstr "Threads"
+
+#: tmp/sns-follow-buttons.php:53
+msgid "Threadsをフォロー"
+msgstr "Auf Threads folgen"
 #: tmp/sns-share-buttons.php:37
 msgid "はてブでブックマーク"
 msgstr "Auf Hatena Bookmark speichern"

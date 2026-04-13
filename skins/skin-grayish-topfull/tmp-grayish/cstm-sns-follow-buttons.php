@@ -28,6 +28,7 @@ if (
     (($skin_gnavi_snsbtn_options['gnavi_sns_bluesky'] === 'snsbtn_select_On') && get_the_author_bluesky_url($user_id)) ||
     (($skin_gnavi_snsbtn_options['gnavi_sns_misskey'] === 'snsbtn_select_On') && get_the_author_misskey_url($user_id)) ||
     (($skin_gnavi_snsbtn_options['gnavi_sns_facebook'] === 'snsbtn_select_On') && get_the_author_facebook_url($user_id)) ||
+    (($skin_gnavi_snsbtn_options['gnavi_sns_threads'] === 'snsbtn_select_On') && get_the_author_threads_url($user_id)) ||
     (($skin_gnavi_snsbtn_options['gnavi_sns_hatena'] === 'snsbtn_select_On') && get_the_author_hatebu_url($user_id)) ||
     (($skin_gnavi_snsbtn_options['gnavi_sns_instagram'] === 'snsbtn_select_On') && get_the_author_instagram_url($user_id)) ||
     (($skin_gnavi_snsbtn_options['gnavi_sns_pinterest'] === 'snsbtn_select_On') && get_the_author_pinterest_url($user_id)) ||
@@ -109,6 +110,18 @@ if (
               <div class="caption-wrap">
                 <div class="item-label"><span class="icon-facebook"></span>
                 </div>
+              </div>
+            </a>
+          </li>
+        <?php endif; ?>
+
+        <?php if (($skin_gnavi_snsbtn_options['gnavi_sns_threads'] === 'snsbtn_select_On') && get_the_author_threads_url($user_id)) : //Threadsフォローボタンを表示するか
+        ?>
+          <li class="header-snsicon-submenu__listitem">
+            <a href="<?php echo esc_url(get_the_author_threads_url($user_id)); //ThreadsフォローURLの取得
+                      ?>" class="" target="_blank" title="<?php _e('Threadsをフォロー', THEME_NAME) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e('Threadsをフォロー', THEME_NAME) ?>">
+              <div class="caption-wrap">
+                <div class="item-label"><span class="icon-threads-logo"></span></div>
               </div>
             </a>
           </li>

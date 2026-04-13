@@ -137,6 +137,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['bluesky_url'] = __( 'Bluesky URL', THEME_NAME );
   $prof_items['misskey_url'] = __( 'Misskey URL', THEME_NAME );
   $prof_items['facebook_url'] = __( 'Facebook URL', THEME_NAME );
+  $prof_items['threads_url'] = __( 'Threads URL', THEME_NAME );
   //$prof_items['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
   $prof_items['hatebu_url'] = __( 'はてなブックマーク URL', THEME_NAME );
   $prof_items['instagram_url'] = __( 'Instagram URL', THEME_NAME );
@@ -222,7 +223,7 @@ endif;
 if ( !function_exists( 'get_the_author_website_url' ) ):
 function get_the_author_website_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('url', $user_id));
+  return esc_url(get_the_author_meta('url', $user_id));
 }
 endif;
 
@@ -230,7 +231,7 @@ endif;
 if ( !function_exists( 'get_the_author_twitter_url' ) ):
 function get_the_author_twitter_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('twitter_url', $user_id));
+  return esc_url(get_the_author_meta('twitter_url', $user_id));
 }
 endif;
 
@@ -251,7 +252,7 @@ endif;
 if ( !function_exists( 'get_the_author_mastodon_url' ) ):
 function get_the_author_mastodon_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('mastodon_url', $user_id));
+  return esc_url(get_the_author_meta('mastodon_url', $user_id));
 }
 endif;
 
@@ -259,7 +260,7 @@ endif;
 if ( !function_exists( 'get_the_author_bluesky_url' ) ):
 function get_the_author_bluesky_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('bluesky_url', $user_id));
+  return esc_url(get_the_author_meta('bluesky_url', $user_id));
 }
 endif;
 
@@ -267,7 +268,7 @@ endif;
 if ( !function_exists( 'get_the_author_misskey_url' ) ):
 function get_the_author_misskey_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('misskey_url', $user_id));
+  return esc_url(get_the_author_meta('misskey_url', $user_id));
 }
 endif;
 
@@ -275,7 +276,15 @@ endif;
 if ( !function_exists( 'get_the_author_facebook_url' ) ):
 function get_the_author_facebook_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('facebook_url', $user_id));
+  return esc_url(get_the_author_meta('facebook_url', $user_id));
+}
+endif;
+
+//プロフィール画面で設定したThreads URLの取得
+if ( !function_exists( 'get_the_author_threads_url' ) ):
+function get_the_author_threads_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_url(get_the_author_meta('threads_url', $user_id));
 }
 endif;
 
@@ -283,7 +292,7 @@ endif;
 if ( !function_exists( 'get_the_author_google_plus_url' ) ):
 function get_the_author_google_plus_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return null;//esc_html(get_the_author_meta('google_plus_url', $user_id));
+  return null;//esc_url(get_the_author_meta('google_plus_url', $user_id));
 }
 endif;
 
@@ -291,7 +300,7 @@ endif;
 if ( !function_exists( 'get_the_author_hatebu_url' ) ):
 function get_the_author_hatebu_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('hatebu_url', $user_id));
+  return esc_url(get_the_author_meta('hatebu_url', $user_id));
 }
 endif;
 
@@ -299,7 +308,7 @@ endif;
 if ( !function_exists( 'get_the_author_instagram_url' ) ):
 function get_the_author_instagram_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('instagram_url', $user_id));
+  return esc_url(get_the_author_meta('instagram_url', $user_id));
 }
 endif;
 
@@ -307,7 +316,7 @@ endif;
 if ( !function_exists( 'get_the_author_pinterest_url' ) ):
 function get_the_author_pinterest_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('pinterest_url', $user_id));
+  return esc_url(get_the_author_meta('pinterest_url', $user_id));
 }
 endif;
 
@@ -315,7 +324,7 @@ endif;
 if ( !function_exists( 'get_the_author_youtube_url' ) ):
 function get_the_author_youtube_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('youtube_url', $user_id));
+  return esc_url(get_the_author_meta('youtube_url', $user_id));
 }
 endif;
 
@@ -323,7 +332,7 @@ endif;
 if ( !function_exists( 'get_the_author_tiktok_url' ) ):
 function get_the_author_tiktok_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('tiktok_url', $user_id));
+  return esc_url(get_the_author_meta('tiktok_url', $user_id));
 }
 endif;
 
@@ -331,7 +340,7 @@ endif;
 if ( !function_exists( 'get_the_author_linkedin_url' ) ):
 function get_the_author_linkedin_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('linkedin_url', $user_id));
+  return esc_url(get_the_author_meta('linkedin_url', $user_id));
 }
 endif;
 
@@ -339,7 +348,7 @@ endif;
 if ( !function_exists( 'get_the_author_note_url' ) ):
 function get_the_author_note_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('note_url', $user_id));
+  return esc_url(get_the_author_meta('note_url', $user_id));
 }
 endif;
 
@@ -347,7 +356,7 @@ endif;
 if ( !function_exists( 'get_the_author_soundcloud_url' ) ):
 function get_the_author_soundcloud_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('soundcloud_url', $user_id));
+  return esc_url(get_the_author_meta('soundcloud_url', $user_id));
 }
 endif;
 
@@ -355,7 +364,7 @@ endif;
 if ( !function_exists( 'get_the_author_flickr_url' ) ):
 function get_the_author_flickr_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('flickr_url', $user_id));
+  return esc_url(get_the_author_meta('flickr_url', $user_id));
 }
 endif;
 
@@ -363,7 +372,7 @@ endif;
 if ( !function_exists( 'get_the_author_line_at_url' ) ):
 function get_the_author_line_at_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('line_at_url', $user_id));
+  return esc_url(get_the_author_meta('line_at_url', $user_id));
 }
 endif;
 //プロフィール画面で設定したTwitter URLからLINE IDの取得
@@ -387,7 +396,7 @@ endif;
 if ( !function_exists( 'get_the_author_amazon_url' ) ):
 function get_the_author_amazon_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('amazon_url', $user_id));
+  return esc_url(get_the_author_meta('amazon_url', $user_id));
 }
 endif;
 
@@ -395,7 +404,7 @@ endif;
 if ( !function_exists( 'get_the_author_twitch_url' ) ):
 function get_the_author_twitch_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('twitch_url', $user_id));
+  return esc_url(get_the_author_meta('twitch_url', $user_id));
 }
 endif;
 
@@ -403,7 +412,7 @@ endif;
 if ( !function_exists( 'get_the_author_rakuten_room_url' ) ):
 function get_the_author_rakuten_room_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('rakuten_room_url', $user_id));
+  return esc_url(get_the_author_meta('rakuten_room_url', $user_id));
 }
 endif;
 
@@ -411,7 +420,7 @@ endif;
 if ( !function_exists( 'get_the_author_slack_url' ) ):
 function get_the_author_slack_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('slack_url', $user_id));
+  return esc_url(get_the_author_meta('slack_url', $user_id));
 }
 endif;
 
@@ -419,7 +428,7 @@ endif;
 if ( !function_exists( 'get_the_author_github_url' ) ):
 function get_the_author_github_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('github_url', $user_id));
+  return esc_url(get_the_author_meta('github_url', $user_id));
 }
 endif;
 
@@ -427,7 +436,7 @@ endif;
 if ( !function_exists( 'get_the_author_codepen_url' ) ):
 function get_the_author_codepen_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('codepen_url', $user_id));
+  return esc_url(get_the_author_meta('codepen_url', $user_id));
 }
 endif;
 
@@ -440,6 +449,7 @@ function is_author_follow_buttons_exits(){
          || get_the_author_bluesky_url()
          || get_the_author_misskey_url()
          || get_the_author_facebook_url()
+         || get_the_author_threads_url()
          //|| get_the_author_google_plus_url()
          || get_the_author_hatebu_url()
          || get_the_author_instagram_url()

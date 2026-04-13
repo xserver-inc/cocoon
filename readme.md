@@ -86,6 +86,8 @@ Translations are done by Crowdin, a translation management platform. If you are 
 
 [IcoMoon](https://icomoon.io/app/)
 
+[Bootstrap Icons](https://icons.getbootstrap.com/) (MIT License, Copyright (c) 2019-2024 The Bootstrap Authors)
+
 [ScrollHint](https://appleple.github.io/scroll-hint/)
 
 [Lozad.js](https://github.com/ApoorvSaxena/lozad.js)

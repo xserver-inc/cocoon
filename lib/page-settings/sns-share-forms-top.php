@@ -67,6 +67,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 <?php generate_checkbox_tag(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE, is_top_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
               </li>
               <li>
+                <?php generate_checkbox_tag(OP_TOP_THREADS_SHARE_BUTTON_VISIBLE, is_top_threads_share_button_visible(), __( 'Threads', THEME_NAME )); ?>
+              </li>
+              <li>
                 <?php generate_checkbox_tag(OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE, is_top_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
               </li>
               <!-- <li>

@@ -21,6 +21,8 @@ update_theme_option(OP_BOTTOM_BLUESKY_SHARE_BUTTON_VISIBLE);
 update_theme_option(OP_BOTTOM_MISSKEY_SHARE_BUTTON_VISIBLE);
 //Facebookシェアボタンの表示
 update_theme_option(OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE);
+//Threadsシェアボタンの表示
+update_theme_option(OP_BOTTOM_THREADS_SHARE_BUTTON_VISIBLE);
 //はてなブックマークシェアボタンの表示
 update_theme_option(OP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE);
 //Google+シェアボタンの表示
