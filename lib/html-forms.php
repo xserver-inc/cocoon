@@ -1004,6 +1004,7 @@ function generate_popular_entries_tag($atts){
     'horizontal' => 0,
     'action' => null,
     'comment' => 0,
+    'offset' => 0,
   ), $atts, 'generate_popular_entries_tag'));
 
   //Swiperスクリプトコードを呼び出すかどうか
@@ -1012,8 +1013,16 @@ function generate_popular_entries_tag($atts){
     $_IS_SWIPER_ENABLE = true;
   }
 
+  // offsetを考慮して取得件数を調整
+  $offset = max(0, intval($offset));
+  $total_fetch_count = $offset + intval($entry_count);
+  $all_records = get_access_ranking_records($days, $total_fetch_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type, $snippet);
 
-  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type, $snippet);
+  // offset分を除外して抽出
+  $records = array();
+  if ($all_records) {
+    $records = array_slice($all_records, $offset, $entry_count);
+  }
 
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   $atts = array(
@@ -1031,13 +1040,17 @@ function generate_popular_entries_tag($atts){
   if ($horizontal) {
     $swiper_slide = ' swiper-slide';
   }
+
+  // ランキングの開始番号をCSSカウンターに反映させるためのスタイル
+  // offset=0の場合はCSSのデフォルト値と同じなのでインラインスタイルは不要
+  $counter_style = ($ranking_visible && $offset > 0) ? ' style="counter-reset: p-rank ' . $offset . ';"' : '';
   ?>
-  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>">
+  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>"<?php echo $counter_style; ?>>
   <?php if ( $horizontal ) : ?>
     <div class="swiper-wrapper">
   <?php endif; ?>
   <?php if ( $records ) :
-    $i = 1;
+    $i = 1 + $offset;
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;

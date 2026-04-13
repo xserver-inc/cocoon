@@ -149,6 +149,7 @@ function popular_entries_shortcode($atts) {
     'horizontal' => 0,
     'action' => null,
     'comment' => 0,
+    'offset' => 0,
   ), $atts, 'popular_list'));
 
   //countオプションに異常値が入っていた場合
@@ -192,6 +193,7 @@ function popular_entries_shortcode($atts) {
     'horizontal' => $horizontal,
     'action' => $action,
     'comment' => $comment,
+    'offset' => $offset,
   );
   ob_start();
   generate_popular_entries_tag($atts);
