@@ -42,7 +42,8 @@ function cocoon_group_block_link_render( $block_content, $block ) {
 		return $block_content;
 	}
 
-	$attrs = $block['attrs'];
+	// ブロック属性が未設定の場合への備え
+	$attrs = isset( $block['attrs'] ) ? $block['attrs'] : array();
 	$url   = isset( $attrs['cocoonLinkUrl'] ) ? trim( $attrs['cocoonLinkUrl'] ) : '';
 
 	if ( empty( $url ) ) {
@@ -50,6 +51,11 @@ function cocoon_group_block_link_render( $block_content, $block ) {
 	}
 
 	$new_tab = isset( $attrs['cocoonLinkTarget'] ) && $attrs['cocoonLinkTarget'];
+
+	// WP 6.2 未満の場合は処理をスキップ（WP_HTML_Tag_Processor が存在しないため Fatal Error になるのを防ぐ）
+	if ( ! function_exists( 'is_wp_6_2_or_over' ) || ! is_wp_6_2_or_over() || ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 	if ( $processor->next_tag() ) {
