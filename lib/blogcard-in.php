@@ -416,12 +416,12 @@ endif;
 if ( ! function_exists( 'cocoon_register_embed_blogcard_block' ) ) :
 function cocoon_register_embed_blogcard_block() {
   // エディター用JSのファイルパス
-  $js_path = get_template_directory() . '/js/blogcard-editor.js';
+  $js_path = get_cocoon_template_directory() . '/js/blogcard-editor.js';
 
   // エディター用JSを登録（ファイルが存在しない場合のWarning防止）
   wp_register_script(
     'cocoon-blogcard-editor',
-    get_template_directory_uri() . '/js/blogcard-editor.js',
+    get_cocoon_template_directory_uri() . '/js/blogcard-editor.js',
     array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-server-side-render', 'wp-dom-ready', 'wp-data', 'wp-core-data' ),
     file_exists( $js_path ) ? filemtime( $js_path ) : false
   );

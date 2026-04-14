@@ -223,4 +223,32 @@ class HardeningRegressionTest extends TestCase
             'Rakuten Cron' => ['lib/block-rakuten-product-link-cron.php'],
         ];
     }
+
+    // ========================================================================
+    // プラグイン/テーマのディレクトリパス取得関数の厳格化
+    // ========================================================================
+
+    /**
+     * @dataProvider blogcardFileProvider
+     */
+    public function test_blogcard関連ファイルでget_template_directory系関数を直接使用していないこと(string $relativePath): void
+    {
+        $file = file_get_contents(dirname(__DIR__, 2) . '/' . $relativePath);
+
+        // get_template_directory() や get_template_directory_uri() が使われていないことを確認
+        // 必ず get_cocoon_template_directory() 系を使わなければならない
+        $this->assertDoesNotMatchRegularExpression(
+            '/(?<!get_cocoon_)get_template_directory(_uri)?\s*\(/',
+            $file,
+            "$relativePath では get_template_directory() 系の関数は使用禁止です。プラグイン・テーマ両対応のため、get_cocoon_template_directory() 系を使用してください。"
+        );
+    }
+
+    public static function blogcardFileProvider(): array
+    {
+        return [
+            'blogcard-in' => ['lib/blogcard-in.php'],
+            'blogcard-out' => ['lib/blogcard-out.php'],
+        ];
+    }
 }
