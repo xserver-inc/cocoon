@@ -231,8 +231,9 @@ class OpenGraphGetter implements Iterator
                                 $src = $element->hasAttribute('content') ? $element->getAttribute('content') : ($element->hasAttribute('src') ? $element->getAttribute('src') : null);
                                 // data:image等のLazy Loadダミーを弾くため URL が記述されていることを確認
                                 if (!empty($src) && preg_match('/^(?:https?:)?\/\//i', $src) && !preg_match('/(?:logo|no_?image)/i', $src)) {
-                                    $page->_values['image']     = esc_url($src);
-                                    $page->_values['image_src'] = esc_url($src);
+                                    // 格納時は生URLを保持
+                                    $page->_values['image']     = $src;
+                                    $page->_values['image_src'] = $src;
                                     break 2; // 有効な画像が見つかれば外側の $queries ループごと抜ける
                                 }
                             }
@@ -244,7 +245,7 @@ class OpenGraphGetter implements Iterator
             // 楽天の画像URLに付与されるサイズ制限パラメータ(?_ex=400x400や?fitin=...など)を除去してオリジナル最高画質化
             // ※他社CDNの署名付きURL等でのパラメータ破壊を防ぐため、楽天の画像サーバであるかを検証した上で除去
             if (isset($page->_values['image']) && preg_match('/(?:image\.rakuten\.co\.jp|r10s\.jp|thumbnail\.image\.rakuten\.co\.jp)/i', $page->_values['image'])) {
-                $page->_values['image']     = esc_url(preg_replace('/[\?#].*$/', '', $page->_values['image']));
+                $page->_values['image'] = preg_replace('/[\?#].*$/', '', $page->_values['image']);
                 $page->_values['image_src'] = $page->_values['image'];
             }
         }
@@ -260,8 +261,9 @@ class OpenGraphGetter implements Iterator
                     if (is_amazon_site_page($URI)) {
                       $domattr->value = preg_replace('/[^\.]+?\.jpg$/', '.jpg', $domattr->value);
                     }
-                    $page->_values['image'] = esc_url($domattr->value);
-                    $page->_values['image_src'] = esc_url($domattr->value);
+                    // ここでのエスケープは外し、生URLを保持
+                    $page->_values['image'] = $domattr->value;
+                    $page->_values['image_src'] = $domattr->value;
                 }
             }
         }
@@ -325,21 +327,28 @@ class OpenGraphGetter implements Iterator
                     }
                 }
                 
-                // 取得したURLを格納
+                // 取得したURLを格納（エスケープせず生URLを保持）
                 if ($amazon_img_src) {
-                    $page->_values['image'] = esc_url($amazon_img_src);
+                    $page->_values['image'] = $amazon_img_src;
                 }
             }
 
             // 3. Amazon特有の画像サイズ縮小パラメータの除去（OGP画像が先に採用されていた場合でも強制的に高解像度化する）
             if (!empty($page->_values['image'])) {
                 // 例: https://m.media-amazon.com/images/I/41Pq23x1-AL._AC_SY400_.jpg -> ...AL.jpg
-                $clean_src = preg_replace('/\._[^.]+\.(jpg|jpeg|png|gif|webp)$/i', '.$1', $page->_values['image']);
-                $page->_values['image'] = esc_url($clean_src);
+                $page->_values['image'] = preg_replace('/\._[^.]+\.(jpg|jpeg|png|gif|webp)$/i', '.$1', $page->_values['image']);
             }
         }
 
     if (empty($page->_values)) { return false; }
+
+    // 画像URLのエスケープを全経路で一括適用（二重適用を防ぐため、ここで1回だけ実施）
+    if (isset($page->_values['image'])) {
+      $page->_values['image'] = esc_url($page->_values['image']);
+    }
+    if (isset($page->_values['image_src'])) {
+      $page->_values['image_src'] = esc_url($page->_values['image_src']);
+    }
 
     //og:titleが空文字だったとき
     $page_title = null;
