@@ -3701,7 +3701,10 @@ th:has(.s-circle), th:has(.d-circle), th:has(.triangle), th:has(.cross), th:has(
 
 .is-cocoon-group-link {
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.is-cocoon-group-link:hover {
+  opacity: 0.8;
 }
 
 .column-wrap {
