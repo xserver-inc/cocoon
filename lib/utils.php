@@ -3681,28 +3681,35 @@ endif;
 //WordPressバージョンが5.5以上かどうか
 if ( !function_exists( 'is_wp_5_5_or_over' ) ):
 function is_wp_5_5_or_over(){
-  return get_bloginfo('version') >= '5.5';
+  return version_compare( get_bloginfo('version'), '5.5', '>=' );
 }
 endif;
 
 //WordPressバージョンが5.8以上かどうか
 if ( !function_exists( 'is_wp_5_8_or_over' ) ):
 function is_wp_5_8_or_over(){
-  return get_bloginfo('version') >= '5.8';
+  return version_compare( get_bloginfo('version'), '5.8', '>=' );
 }
 endif;
 
 //WordPressバージョンが6.1以上かどうか
 if ( !function_exists( 'is_wp_6_1_or_over' ) ):
 function is_wp_6_1_or_over(){
-  return get_bloginfo('version') >= '6.1';
+  return version_compare( get_bloginfo('version'), '6.1', '>=' );
+}
+endif;
+
+//WordPressバージョンが6.2以上かどうか
+if ( !function_exists( 'is_wp_6_2_or_over' ) ):
+function is_wp_6_2_or_over(){
+  return version_compare( get_bloginfo('version'), '6.2', '>=' );
 }
 endif;
 
 //WordPressバージョンが6.5以上かどうか
 if ( !function_exists( 'is_wp_6_5_or_over' ) ):
 function is_wp_6_5_or_over(){
-  return get_bloginfo('version') >= '6.5';
+  return version_compare( get_bloginfo('version'), '6.5', '>=' );
 }
 endif;
 
