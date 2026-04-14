@@ -3850,7 +3850,8 @@ function is_dark_hexcolor($hexcolor) {
   }
 
   // 16進数文字列として有効かチェック（PHP 7.4+ で hexdec の Deprecated 警告を防止）
-  if (!ctype_xdigit($hex)) {
+  // PHP 8.1未満では ctype_xdigit('') が true を返すため、空文字チェックを前に追加
+  if ($hex === '' || !ctype_xdigit($hex)) {
     return false;
   }
 
