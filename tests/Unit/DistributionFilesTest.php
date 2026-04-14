@@ -589,6 +589,7 @@ class DistributionFilesTest extends TestCase
             'gutenberg-editor-classes.js'     => ['js/gutenberg-editor-classes.js', 'Gutenbergエディタクラス付与JS'],
             'gutenberg-toolbar.js'            => ['js/gutenberg-toolbar.js', 'Gutenbergツールバー用JS'],
             'set-event-passive.js'            => ['js/set-event-passive.js', 'パッシブイベントJS'],
+            'group-link.js'                   => ['js/group-link.js', 'グループブロックリンク化JS'],
         ];
     }
 
