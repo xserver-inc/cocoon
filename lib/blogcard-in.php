@@ -362,3 +362,84 @@ function remove_wp_block_embeds($the_content){
   return $the_content;
 }
 endif;
+
+// ブロックエディターでoEmbed非対応URLをブログカードとして表示するブロックを登録
+// ブログカード機能（内部または外部）が有効な場合のみ動作する
+if ( is_internal_blogcard_enable() || is_external_blogcard_enable() ) {
+  add_action( 'init', 'cocoon_register_embed_blogcard_block' );
+}
+
+// ブログカード埋め込みブロックのレンダリングコールバック
+// URLを受け取り、内部/外部ブログカードのHTMLを生成して返す
+if ( ! function_exists( 'cocoon_embed_blogcard_render' ) ) :
+function cocoon_embed_blogcard_render( $attributes ) {
+  $url = isset( $attributes['url'] ) ? $attributes['url'] : '';
+  if ( ! $url ) {
+    return '';
+  }
+
+  // URLをサニタイズし、http/httpsスキームのみ許可する
+  $url = esc_url_raw( $url, array( 'http', 'https' ) );
+  if ( ! $url ) {
+    return '';
+  }
+
+  // 無限ループ防止: 自ページのURLと同一の場合はブログカード化しない
+  if ( function_exists( 'is_current_url_same' ) && is_current_url_same( $url ) ) {
+    return '<p>' . esc_html( $url ) . '</p>';
+  }
+
+  // 内部URLの場合（自サイトのURL）
+  if ( function_exists( 'is_internal_blogcard_url' ) && is_internal_blogcard_url( $url ) ) {
+    $tag = url_to_internal_blogcard_tag( $url );
+    if ( $tag ) {
+      return $tag;
+    }
+  }
+
+  // 外部URLの場合（他サイトのURL）
+  // ※ url_to_external_ogp_blogcard_tag() 内でキャッシュ優先・ネガティブキャッシュ（1時間）が
+  //    既に実装されているため、REST API経由でも安全にフェッチできる
+  if ( function_exists( 'url_to_external_blog_card_tag' ) ) {
+    $tag = url_to_external_blog_card_tag( $url );
+    if ( $tag ) {
+      return $tag;
+    }
+  }
+
+  // どちらでも生成できなかった場合のフォールバック
+  return '<p>' . esc_html( $url ) . '</p>';
+}
+endif;
+
+// ブログカード埋め込みブロックの登録
+if ( ! function_exists( 'cocoon_register_embed_blogcard_block' ) ) :
+function cocoon_register_embed_blogcard_block() {
+  // エディター用JSのファイルパス
+  $js_path = get_template_directory() . '/js/blogcard-editor.js';
+
+  // エディター用JSを登録（ファイルが存在しない場合のWarning防止）
+  wp_register_script(
+    'cocoon-blogcard-editor',
+    get_template_directory_uri() . '/js/blogcard-editor.js',
+    array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-server-side-render', 'wp-dom-ready', 'wp-data', 'wp-core-data' ),
+    file_exists( $js_path ) ? filemtime( $js_path ) : false
+  );
+
+  // ダイナミックブロックとして登録（PHPのrender_callbackでHTMLを生成）
+  $block_args = array(
+    'api_version'     => 3,
+    'attributes'      => array(
+      'url' => array( 'type' => 'string', 'default' => '' ),
+    ),
+    'render_callback' => 'cocoon_embed_blogcard_render',
+  );
+  // WP 6.1+ は editor_script_handles（推奨形式）、WP 6.0以下は editor_script（旧形式）を使用
+  if ( function_exists( 'is_wp_6_1_or_over' ) && is_wp_6_1_or_over() ) {
+    $block_args['editor_script_handles'] = array( 'cocoon-blogcard-editor' );
+  } else {
+    $block_args['editor_script'] = 'cocoon-blogcard-editor';
+  }
+  register_block_type( 'cocoon-blocks/embed-blogcard', $block_args );
+}
+endif;

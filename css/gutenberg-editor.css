@@ -6218,3 +6218,15 @@ body.block-editor-page {
   gap: 8px;
   margin-top: 16px;
 }
+
+/* ブロックエディター上でブログカード上のマウスカーソルを通常の矢印（default）にする */
+.blogcard,
+.blogcard a,
+.internal-blogcard,
+.internal-blogcard a,
+.external-blogcard,
+.external-blogcard a,
+.wp-block-cocoon-blocks-embed-blogcard,
+.wp-block-cocoon-blocks-embed-blogcard a {
+  cursor: default !important;
+}

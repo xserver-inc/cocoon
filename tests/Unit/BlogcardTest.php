@@ -329,4 +329,22 @@ class BlogcardTest extends TestCase
         $this->assertStringEndsWith('歳', $result);
     }
 
+    // ========================================================================
+    // cocoon_embed_blogcard_render() - ブログカード埋め込みブロックレンダリング
+    // ========================================================================
+
+    public function test_cocoon_embed_blogcard_render_urlがない場合は空文字を返す(): void
+    {
+        $attributes = [];
+        $this->assertSame('', cocoon_embed_blogcard_render($attributes));
+    }
+
+    public function test_cocoon_embed_blogcard_render_生成できなかった場合はフォールバックとしてpタグで囲んで返す(): void
+    {
+        // WordPressコアのesc_url_rawや外部取得がモックで無効化されている環境下では、
+        // 最終的なフォールバックのpタグ囲みURLになって返ることを確認する。
+        $attributes = ['url' => 'https://example.test/page'];
+        $this->assertSame('<p>https://example.test/page</p>', cocoon_embed_blogcard_render($attributes));
+    }
+
 }
