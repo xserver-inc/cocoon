@@ -1043,9 +1043,9 @@ function generate_popular_entries_tag($atts){
 
   // ランキングの開始番号をCSSカウンターに反映させるためのスタイル
   // offset=0の場合はCSSのデフォルト値と同じなのでインラインスタイルは不要
-  $counter_style = ($ranking_visible && $offset > 0) ? ' style="counter-reset: p-rank ' . $offset . ';"' : '';
+  $counter_style = ($ranking_visible && $offset > 0) ? 'counter-reset: p-rank ' . $offset . ';' : '';
   ?>
-  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>"<?php echo $counter_style; ?>>
+  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>"<?php echo $counter_style ? ' style="' . esc_attr( $counter_style ) . '"' : ''; ?>>
   <?php if ( $horizontal ) : ?>
     <div class="swiper-wrapper">
   <?php endif; ?>
