@@ -108,6 +108,7 @@ namespace Cocoon\Tests\Unit {
             $this->assertStringNotContainsString('data-cocoon-group-link-target', $result);
             $this->assertStringContainsString('role="link"', $result);
             $this->assertStringContainsString('tabindex="0"', $result);
+            $this->assertStringContainsString('onkeydown="if(event.target === this && (event.key === \'Enter\' || event.key === \' \')){ event.preventDefault(); this.click(); }"', $result);
             $this->assertStringContainsString('aria-label="https://example.com/"', $result);
             $this->assertStringContainsString('class="is-cocoon-group-link"', $result);
         }

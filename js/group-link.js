@@ -58,20 +58,6 @@
         e.preventDefault();
         navigate();
       } );
-
-      // キーボード操作（Enter, Space）での遷移対応
-      group.addEventListener( 'keydown', function ( e ) {
-        if ( e.key === 'Enter' || e.key === ' ' ) {
-          var activeEl = document.activeElement;
-          // フォーカスが子要素のリンク等にある場合は親の遷移を発火させない
-          if ( activeEl !== group ) {
-            return;
-          }
-
-          e.preventDefault();
-          navigate();
-        }
-      } );
     } );
   }
 

@@ -69,6 +69,10 @@ function cocoon_group_block_link_render( $block_content, $block ) {
 		// スクリーンリーダー向けにリンク先を通知
 		$processor->set_attribute( 'aria-label', esc_url( $url ) );
 
+		// キーボード用のハンドラを追加（WCAG 2.1 SC 2.1.1 対応）
+		// PHP側でインライン属性として出力し、js側のclickイベントへ委譲
+		$processor->set_attribute( 'onkeydown', "if(event.target === this && (event.key === 'Enter' || event.key === ' ')){ event.preventDefault(); this.click(); }" );
+
 		// フロントエンド用のクラスを追加
 		$processor->add_class( 'is-cocoon-group-link' );
 	}
