@@ -88,4 +88,27 @@ class CampaignBlockTest extends TestCase
         $result = render_block_cocoon_campaign($attributes, $content);
         $this->assertSame('', $result);
     }
+
+    /**
+     * 不正な日付フォーマットが渡された場合にFatal Errorとならずフォールバックされることをテスト
+     */
+    public function test_render_block_cocoon_campaign_不正な日付フォーマットの場合はフォールバックする()
+    {
+        $tz = new \DateTimeZone('Asia/Tokyo');
+        $now = new \DateTimeImmutable('2026-04-10 15:00:00', $tz);
+
+        Functions\when('wp_timezone')->justReturn($tz);
+        Functions\when('current_datetime')->justReturn($now);
+
+        $attributes = [
+            'from' => 'invalid-date-format', // 不正な日付
+            'to'   => 'invalid-date-format', // 不正な日付
+        ];
+        $content = 'キャンペーン中';
+
+        // catchブロック内で $now_ts - DAY_IN_SECONDS と $now_ts + DAY_IN_SECONDS になるため、
+        // 期間中と判定されてコンテンツが表示される想定
+        $result = render_block_cocoon_campaign($attributes, $content);
+        $this->assertSame('キャンペーン中', $result);
+    }
 }

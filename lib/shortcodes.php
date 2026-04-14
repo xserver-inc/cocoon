@@ -953,15 +953,23 @@ function campaign_shortcode( $atts, $content = null ) {
 
   //いつから（開始日時）
   $from = sanitize_shortcode_value($from);
-  $from_time = !empty($from)
-    ? ( new DateTimeImmutable( $from, $tz ) )->getTimestamp()
-    : $now_ts - DAY_IN_SECONDS;
+  try {
+    $from_time = !empty($from)
+      ? ( new DateTimeImmutable( $from, $tz ) )->getTimestamp()
+      : $now_ts - DAY_IN_SECONDS;
+  } catch ( \Exception $e ) {
+    $from_time = $now_ts - DAY_IN_SECONDS;
+  }
 
   //いつまで（終了日時）
   $to = sanitize_shortcode_value($to);
-  $to_time = !empty($to)
-    ? ( new DateTimeImmutable( $to, $tz ) )->getTimestamp()
-    : $now_ts + DAY_IN_SECONDS;
+  try {
+    $to_time = !empty($to)
+      ? ( new DateTimeImmutable( $to, $tz ) )->getTimestamp()
+      : $now_ts + DAY_IN_SECONDS;
+  } catch ( \Exception $e ) {
+    $to_time = $now_ts + DAY_IN_SECONDS;
+  }
 
   //拡張クラス
   if ($class) {

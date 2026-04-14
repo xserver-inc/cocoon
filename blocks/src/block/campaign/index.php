@@ -42,13 +42,22 @@ function render_block_cocoon_campaign( $attributes, $content ) {
   $now_ts = $now->getTimestamp();
 
   // 開始日時の判定（未入力の場合は1日前扱い）
-  $from_time = ! empty( $from )
-    ? ( new DateTimeImmutable( $from, $tz ) )->getTimestamp()
-    : $now_ts - DAY_IN_SECONDS;
+  try {
+    $from_time = ! empty( $from )
+      ? ( new DateTimeImmutable( $from, $tz ) )->getTimestamp()
+      : $now_ts - DAY_IN_SECONDS;
+  } catch ( \Exception $e ) {
+    $from_time = $now_ts - DAY_IN_SECONDS;
+  }
+
   // 終了日時の判定（未入力の場合は1日後扱い）
-  $to_time = ! empty( $to )
-    ? ( new DateTimeImmutable( $to, $tz ) )->getTimestamp()
-    : $now_ts + DAY_IN_SECONDS;
+  try {
+    $to_time = ! empty( $to )
+      ? ( new DateTimeImmutable( $to, $tz ) )->getTimestamp()
+      : $now_ts + DAY_IN_SECONDS;
+  } catch ( \Exception $e ) {
+    $to_time = $now_ts + DAY_IN_SECONDS;
+  }
 
   // 期間外の場合は空文字を返す（表示しない）
   // ※ 開始・終了時刻ちょうども期間内として扱うため <= を使用

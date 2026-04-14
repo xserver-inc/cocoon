@@ -235,6 +235,35 @@ class ShortcodesTest extends TestCase
         $this->assertNull($result);
     }
 
+    /**
+     * 不正な日付フォーマットが渡された場合にFatal Errorとならずフォールバックされることをテスト
+     */
+    public function test_campaign_shortcode_不正な日付フォーマットの場合はフォールバックする(): void
+    {
+        if (!defined('DAY_IN_SECONDS')) {
+            define('DAY_IN_SECONDS', 86400);
+        }
+
+        $tz = new \DateTimeZone('Asia/Tokyo');
+        $now = new \DateTimeImmutable('2026-04-10 15:00:00', $tz);
+
+        \Brain\Monkey\Functions\when('wp_timezone')->justReturn($tz);
+        \Brain\Monkey\Functions\when('current_datetime')->justReturn($now);
+
+        $atts = [
+            'from' => 'invalid-date-format', // 不正な日付
+            'to'   => 'invalid-date-format', // 不正な日付
+        ];
+        $content = 'テストコンテンツ';
+
+        \Brain\Monkey\Filters\expectApplied('campaign_shortcode_content')->andReturn($content);
+
+        // catchブロック内で $now_ts - DAY_IN_SECONDS と $now_ts + DAY_IN_SECONDS にフォールバックされるため、
+        // 期間中と判定されてコンテンツが表示される想定
+        $result = campaign_shortcode($atts, $content);
+        $this->assertSame('<div class="campaign">テストコンテンツ</div>', $result);
+    }
+
     // ========================================================================
     // login_user_only_shortcode()
     // ========================================================================
