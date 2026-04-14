@@ -1074,7 +1074,7 @@ endif;
 //ターゲットに文字列が含まれているか
 if ( !function_exists( 'includes_string' ) ):
 function includes_string($target, $searchstr){
-  if (strpos($target, $searchstr) === false) {
+  if (strpos((string)$target, (string)$searchstr) === false) {
     return false;
   } else {
     return true;
@@ -3630,6 +3630,7 @@ endif;
 //URLがAmazonかどうか
 if ( !function_exists( 'is_amazon_site_page' ) ):
 function is_amazon_site_page($URI){
+  if (empty($URI) || !is_string($URI)) return false;
   return includes_string($URI, '//amzn.to/') || includes_string($URI, '//www.amazon.co');
 }
 endif;
@@ -3637,6 +3638,7 @@ endif;
 //URLが楽天かどうか
 if ( !function_exists( 'is_rakuten_site_page' ) ):
 function is_rakuten_site_page($URI){
+  if (empty($URI) || !is_string($URI)) return false;
   return includes_string($URI, '//a.r10.to/') || preg_match('{//.+\.rakuten\.co\.jp/}', $URI);
 }
 endif;

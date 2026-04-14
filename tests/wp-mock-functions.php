@@ -87,7 +87,7 @@ if (!function_exists('esc_html')) {
 
 if (!function_exists('esc_attr')) {
     function esc_attr($text) {
-        return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+        return htmlspecialchars((string)$text, ENT_QUOTES, 'UTF-8');
     }
 }
 
@@ -835,7 +835,7 @@ if (!function_exists('get_the_tags')) {
 // === リンク関連 ===
 if (!function_exists('includes_string')) {
     function includes_string($haystack, $needle) {
-        return strpos($haystack, $needle) !== false;
+        return strpos((string)$haystack, (string)$needle) !== false;
     }
 }
 
