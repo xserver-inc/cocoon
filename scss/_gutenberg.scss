@@ -5,11 +5,3 @@
 	display: flex;
 	flex-wrap: wrap;
 }
-
-// グループブロックの全体リンク化
-.is-cocoon-group-link {
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-}
-// ※ Cocoon設定の「リンクのホバーエフェクト」と連携できるよう、最低限のカーソル変更とトランジションのみ定義しています。
-// .is-cocoon-group-link:hover {} で個別にエフェクトを追加することも可能です。

@@ -5968,6 +5968,10 @@ body.wp-admin {
   background-color: #777;
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 4,12 H 20"></path></svg>');
 }
+.admin-settings .demo .is-cocoon-group-link {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -14583,6 +14587,10 @@ body.wp-admin {
   background-color: #777;
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 4,12 H 20"></path></svg>');
 }
+.admin-settings .demo .is-cocoon-group-link {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 .admin-settings .demo .column-wrap {
   display: flex;
   justify-content: space-between;
@@ -19012,10 +19020,6 @@ body.wp-admin {
 .admin-settings .demo .is-layout-flex {
   display: flex;
   flex-wrap: wrap;
-}
-.admin-settings .demo .is-cocoon-group-link {
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 .admin-settings .demo .search-form div.sbtn {
   transition: 0.3s; /* 変化をなめらかにする */
@@ -23864,6 +23868,10 @@ select option.fa:before {
 .components-popover__content .b-none:before {
   background-color: #777;
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 4,12 H 20"></path></svg>');
+}
+.components-popover__content .is-cocoon-group-link {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .components-popover__content .red {
   margin: 0;
