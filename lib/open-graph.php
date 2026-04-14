@@ -245,8 +245,12 @@ class OpenGraphGetter implements Iterator
             // 楽天の画像URLに付与されるサイズ制限パラメータ(?_ex=400x400や?fitin=...など)を除去してオリジナル最高画質化
             // ※他社CDNの署名付きURL等でのパラメータ破壊を防ぐため、楽天の画像サーバであるかを検証した上で除去
             if (isset($page->_values['image']) && preg_match('/(?:image\.rakuten\.co\.jp|r10s\.jp|thumbnail\.image\.rakuten\.co\.jp)/i', $page->_values['image'])) {
-                $page->_values['image'] = preg_replace('/[\?#].*$/', '', $page->_values['image']);
-                $page->_values['image_src'] = $page->_values['image'];
+                // preg_replace は正規表現エラー時に null を返すため、元のURLが消失しないようにチェックする
+                $clean_src = preg_replace('/[\?#].*$/', '', $page->_values['image']);
+                if ($clean_src !== null) {
+                    $page->_values['image'] = $clean_src;
+                    $page->_values['image_src'] = $clean_src;
+                }
             }
         }
 
@@ -259,7 +263,11 @@ class OpenGraphGetter implements Iterator
                 $domattr = $elements->item(0)->attributes->getNamedItem('href');
                 if ($domattr) {
                     if (is_amazon_site_page($URI)) {
-                      $domattr->value = preg_replace('/[^\.]+?\.jpg$/', '.jpg', $domattr->value);
+                      // preg_replace は正規表現エラー時に null を返すため、元のURLが消失しないようにチェックする
+                      $clean_src = preg_replace('/[^\.]+?\.jpg$/', '.jpg', $domattr->value);
+                      if ($clean_src !== null) {
+                          $domattr->value = $clean_src;
+                      }
                     }
                     // ここでのエスケープは外し、生URLを保持
                     $page->_values['image'] = $domattr->value;
@@ -336,7 +344,11 @@ class OpenGraphGetter implements Iterator
             // 3. Amazon特有の画像サイズ縮小パラメータの除去（OGP画像が先に採用されていた場合でも強制的に高解像度化する）
             if (!empty($page->_values['image'])) {
                 // 例: https://m.media-amazon.com/images/I/41Pq23x1-AL._AC_SY400_.jpg -> ...AL.jpg
-                $page->_values['image'] = preg_replace('/\._[^.]+\.(jpg|jpeg|png|gif|webp)$/i', '.$1', $page->_values['image']);
+                // preg_replace は正規表現エラー時に null を返すため、元のURLが消失しないようにチェックする
+                $clean_src = preg_replace('/\._[^.]+\.(jpg|jpeg|png|gif|webp)$/i', '.$1', $page->_values['image']);
+                if ($clean_src !== null) {
+                    $page->_values['image'] = $clean_src;
+                }
             }
         }
 
