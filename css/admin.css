@@ -5970,7 +5970,10 @@ body.wp-admin {
 }
 .admin-settings .demo .is-cocoon-group-link {
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.admin-settings .demo .is-cocoon-group-link:hover {
+  opacity: 0.8;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -14589,7 +14592,10 @@ body.wp-admin {
 }
 .admin-settings .demo .is-cocoon-group-link {
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.admin-settings .demo .is-cocoon-group-link:hover {
+  opacity: 0.8;
 }
 .admin-settings .demo .column-wrap {
   display: flex;
@@ -23871,7 +23877,10 @@ select option.fa:before {
 }
 .components-popover__content .is-cocoon-group-link {
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.components-popover__content .is-cocoon-group-link:hover {
+  opacity: 0.8;
 }
 .components-popover__content .red {
   margin: 0;

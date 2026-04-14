@@ -11,7 +11,10 @@
 ( function () {
   // WordPress APIへの参照
   var createElement = wp.element.createElement;
-  var ServerSideRender = wp.serverSideRender;
+  // WordPress 6.x 以降で { default: Component } 形式に変わるケースに対応
+  var ServerSideRender = ( wp.serverSideRender && wp.serverSideRender.default )
+    || wp.serverSideRender
+    || null;
   var useBlockProps = wp.blockEditor.useBlockProps;
   var createBlock = wp.blocks.createBlock;
   var select = wp.data.select;

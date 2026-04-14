@@ -1,6 +1,6 @@
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { Fragment, useState } from '@wordpress/element';
+import { Fragment, useState, useEffect } from '@wordpress/element';
 import { BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup, ToolbarButton, Dropdown, TextControl, ToggleControl, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
@@ -50,6 +50,12 @@ const withGroupLinkControls = createHigherOrderComponent( ( BlockEdit ) => {
 		const [ urlValue, setUrlValue ] = useState( cocoonLinkUrl || '' );
 		const [ newTabValue, setNewTabValue ] = useState( !! cocoonLinkTarget );
 
+		// Undo/Redo などにより属性が外部から変更された場合にローカルステートを同期する
+		useEffect( () => {
+			setUrlValue( cocoonLinkUrl || '' );
+			setNewTabValue( !! cocoonLinkTarget );
+		}, [ cocoonLinkUrl, cocoonLinkTarget ] );
+
 		// すでにリンクURLが設定されているかを判定
 		const hasLink = !! cocoonLinkUrl;
 
@@ -69,6 +75,8 @@ const withGroupLinkControls = createHigherOrderComponent( ( BlockEdit ) => {
 									icon={ hasLink ? linkOff : link }
 									label={ hasLink ? __( 'リンク編集', THEME_NAME ) : __( 'リンク追加', THEME_NAME ) }
 									onClick={ () => {
+										// useEffect による自動同期に加え、ポップオーバーを開く際に
+										// 編集途中の値を属性値にリセットする役割も兼ねる
 										if ( ! isOpen ) {
 											setUrlValue( cocoonLinkUrl || '' );
 											setNewTabValue( !! cocoonLinkTarget );
@@ -92,7 +100,7 @@ const withGroupLinkControls = createHigherOrderComponent( ( BlockEdit ) => {
 									<ToggleControl
 										label={ __( '新しいタブで開く', THEME_NAME ) }
 										checked={ newTabValue }
-										onChange={ ( checked ) => setNewTabValue( checked ) }
+										onChange={ setNewTabValue }
 										__nextHasNoMarginBottom
 									/>
 									<div className="cocoon-group-link-popover__actions">
@@ -175,7 +183,7 @@ const withGroupLinkIndicator = createHigherOrderComponent( ( BlockListBlock ) =>
 		}
 
 		// リンク設定済みの場合、エディターでの視覚的な表示用のCSSクラスを追加する
-		let extraClass = 'is-cocoon-group-link editor-cocoon-group-link-active';
+		const extraClass = 'is-cocoon-group-link editor-cocoon-group-link-active';
 		const className = props.className
 			? props.className + ' ' + extraClass
 			: extraClass;

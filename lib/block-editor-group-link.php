@@ -70,7 +70,10 @@ function cocoon_group_block_link_render( $block_content, $block ) {
 		$processor->set_attribute( 'aria-label', esc_url( $url ) );
 
 		// キーボード用のハンドラを追加（WCAG 2.1 SC 2.1.1 対応）
-		// PHP側でインライン属性として出力し、js側のclickイベントへ委譲
+		// 【設計意図】キーボード操作は PHP 側のインライン onkeydown で this.click() を呼び、
+		// js/group-link.js 側の click イベントリスナーに処理を委譲する。
+		// これにより安全チェック（プロトコル検証・インタラクティブ要素判定）の
+		// ロジック重複を避けている。JS 側に keydown リスナーを移動しないこと。
 		$processor->set_attribute( 'onkeydown', "if(event.target === this && (event.key === 'Enter' || event.key === ' ')){ event.preventDefault(); this.click(); }" );
 
 		// フロントエンド用のクラスを追加
