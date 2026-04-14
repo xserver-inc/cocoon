@@ -2,14 +2,6 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"settings": {
-		"blocks": {
-			"core/image": {
-				"lightbox": {
-					"allowEditing": false,
-					"enabled": false
-				}
-			}
-		},
 		"spacing": {
 			"blockGap": true,
 			"margin": true,

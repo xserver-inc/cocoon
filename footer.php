@@ -73,33 +73,33 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php //フッター後アクションフック
     do_action('cocoon_footer_after'); ?>
 
-    <?php //管理者用パネル
-    cocoon_template_part('tmp/admin-panel'); ?>
-
-    <?php //モバイルヘッダーメニューボタン
-    cocoon_template_part('tmp/mobile-header-menu-buttons'); ?>
-
-    <?php //モバイルフッターメニューボタン
-    cocoon_template_part('tmp/mobile-footer-menu-buttons'); ?>
-
-    <?php //トップへ戻るボタンテンプレート
-    cocoon_template_part('tmp/button-go-to-top'); ?>
-
-    <?php if (!is_amp()) {
-      //再利用用にフッターコードを取得
-      //wp_footer()関数では、一度しか出力が行われないようなので事前にグローバル変数に格納しておく
-      global $_WP_FOOTER;
-      ob_start();
-      wp_footer();
-      $f = ob_get_clean();
-      echo $f;
-      $_WP_FOOTER = $f;
-    } ?>
-
-    <?php //フッターで読み込むscriptをまとめたもの
-    cocoon_template_part('tmp/footer-scripts');?>
-
   </div><!-- #container -->
+
+  <?php //管理者用パネル
+  cocoon_template_part('tmp/admin-panel'); ?>
+
+  <?php //モバイルヘッダーメニューボタン
+  cocoon_template_part('tmp/mobile-header-menu-buttons'); ?>
+
+  <?php //モバイルフッターメニューボタン
+  cocoon_template_part('tmp/mobile-footer-menu-buttons'); ?>
+
+  <?php //トップへ戻るボタンテンプレート
+  cocoon_template_part('tmp/button-go-to-top'); ?>
+
+  <?php if (!is_amp()) {
+    //再利用用にフッターコードを取得
+    //wp_footer()関数では、一度しか出力が行われないようなので事前にグローバル変数に格納しておく
+    global $_WP_FOOTER;
+    ob_start();
+    wp_footer();
+    $f = ob_get_clean();
+    echo $f;
+    $_WP_FOOTER = $f;
+  } ?>
+
+  <?php //フッターで読み込むscriptをまとめたもの
+  cocoon_template_part('tmp/footer-scripts');?>
 
 </body>
 
