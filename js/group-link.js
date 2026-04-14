@@ -22,6 +22,16 @@
       }
 
       var navigate = function() {
+        // 多層防御: 危険なプロトコル（javascript:, vbscript:, data:）をブロック
+        var sanitized = url.replace( /[\u0000-\u001F\u007F-\u009F\s]+/g, '' ).toLowerCase();
+        if (
+          sanitized.indexOf( 'javascript:' ) === 0 ||
+          sanitized.indexOf( 'vbscript:' ) === 0 ||
+          sanitized.indexOf( 'data:' ) === 0
+        ) {
+          return;
+        }
+
         if ( newTab ) {
           window.open( url, '_blank', 'noopener,noreferrer' );
         } else {

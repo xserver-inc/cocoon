@@ -99,9 +99,23 @@ const withGroupLinkControls = createHigherOrderComponent( ( BlockEdit ) => {
 										<Button
 											variant="primary"
 											onClick={ () => {
-												// 前後の空白を除去してから保存
+												const safeUrl = urlValue.trim();
+
+												// プロトコルのチェック用に空白と制御文字を除外した文字列を作成
+												const sanitizedForCheck = safeUrl.replace( /[\u0000-\u001F\u007F-\u009F\s]+/g, '' ).toLowerCase();
+												// javascript:, vbscript:, data: などの危険なプロトコルを除外する
+												if (
+													sanitizedForCheck.startsWith( 'javascript:' ) ||
+													sanitizedForCheck.startsWith( 'vbscript:' ) ||
+													sanitizedForCheck.startsWith( 'data:' )
+												) {
+													// 不正なURLの場合は保存せず、ポップオーバーを閉じずに留める
+													setUrlValue( '' );
+													return;
+												}
+
 												setAttributes( {
-													cocoonLinkUrl: urlValue.trim(),
+													cocoonLinkUrl: safeUrl,
 													cocoonLinkTarget: newTabValue,
 												} );
 												onClose();
