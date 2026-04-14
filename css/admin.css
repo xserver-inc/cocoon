@@ -13,6 +13,7 @@ body.wp-admin {
   --cocoon-bluesky-color: #0085ff;
   --cocoon-misskey-color: #96d04a;
   --cocoon-facebook-color: #3b5998;
+  --cocoon-threads-color: #000000;
   --cocoon-hatebu-color: #2c6ebd;
   --cocoon-google-plus-color: #dd4b39;
   --cocoon-pocket-color: #ef4056;
@@ -2006,6 +2007,9 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=bc-brand-color] .facebook-button {
   --cocoon-sns-color: var(--cocoon-facebook-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .threads-button {
+  --cocoon-sns-color: var(--cocoon-threads-color);
 }
 .admin-settings .demo [class*=bc-brand-color] .hatebu-button {
   --cocoon-sns-color: var(--cocoon-hatebu-color);
@@ -10618,6 +10622,9 @@ body.wp-admin {
 }
 .admin-settings .demo [class*=bc-brand-color] .facebook-button {
   --cocoon-sns-color: var(--cocoon-facebook-color);
+}
+.admin-settings .demo [class*=bc-brand-color] .threads-button {
+  --cocoon-sns-color: var(--cocoon-threads-color);
 }
 .admin-settings .demo [class*=bc-brand-color] .hatebu-button {
   --cocoon-sns-color: var(--cocoon-hatebu-color);
@@ -20122,7 +20129,9 @@ body.wp-admin {
   }
   .admin-settings .demo #wpadminbar,
   .admin-settings .demo #go-to-top,
-  .admin-settings .demo #admin-panel {
+  .admin-settings .demo .go-to-top-button,
+  .admin-settings .demo #admin-panel,
+  .admin-settings .demo .mobile-menu-buttons {
     display: none !important;
   }
   .admin-settings .demo body {
