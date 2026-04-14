@@ -57,6 +57,11 @@ endif;
 ///////////////////////////////////////////
 if ( !function_exists( 'cocoon_rakuten_api_extract_error' ) ):
 function cocoon_rakuten_api_extract_error($response) {
+  // WP_Errorが渡された場合のガード
+  if ( is_wp_error( $response ) ) {
+    return $response->get_error_message();
+  }
+
   $ebody = isset($response['body']) ? json_decode($response['body']) : null;
   // 新API形式: {"errors": {"errorCode": 403, "errorMessage": "..."}}
   // 旧API形式: {"error": "...", "error_description": "..."}
