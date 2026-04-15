@@ -38,6 +38,7 @@
       supports: {
         html: false,
         anchor: true,
+        inserter: false,
       },
       // エディター表示: PHPのrender_callbackで生成したブログカードHTMLを表示
       edit: function ( props ) {
