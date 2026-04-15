@@ -15,14 +15,25 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <p><?php _e( 'モバイル環境で表示するレイアウトの設定です。', THEME_NAME ) ?></p>
 
-    <div class="col-2">
-      <div style="width: 100%">
+    <table class="form-table">
+      <tbody>
 
-        <table class="form-table">
-          <tbody>
+        <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_mobile', true)): ?>
+        <!-- プレビュー画面 -->
+        <tr>
+          <th scope="row">
+            <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <div class="demo mobile-demo" style="width: 370px;">
+              <iframe id="mobile-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="360" height="640" loading="lazy"></iframe>
+            </div>
+          </td>
+        </tr>
+        <?php endif; ?>
 
-            <!-- モバイルメニュー -->
-            <tr>
+        <!-- モバイルメニュー -->
+        <tr>
               <th scope="row">
                 <?php generate_label_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, __('モバイルメニュー', THEME_NAME) ); ?>
               </th>
@@ -70,18 +81,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
           </tbody>
         </table>
-
-      </div>
-
-      <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_mobile', true)): ?>
-      <div style="width: 380px">
-          <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
-          <div class="demo mobile-demo" style="width: 370px;">
-            <iframe id="mobile-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="360" height="640" loading="lazy"></iframe>
-          </div>
-      </div>
-      <?php endif; ?>
-    </div>
 
   </div>
 </div>

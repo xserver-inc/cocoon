@@ -20210,6 +20210,7 @@ body.wp-admin {
 }
 .admin-settings .demo.mobile-demo {
   height: 640px;
+  overflow: hidden;
 }
 .admin-settings .demo .iframe-demo {
   width: 100%;
