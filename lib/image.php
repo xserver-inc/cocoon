@@ -27,8 +27,8 @@ endif;
 
 //画像リンクのAタグをLightboxに対応するように付け替え
 if ( is_lightbox_effect_enable() ) {
-  add_filter( 'the_content', 'add_lightbox_property', 9 );
-  add_filter( 'the_category_tag_content', 'add_lightbox_property', 9 );
+  add_filter( 'the_content', 'add_lightbox_property', 10 );
+  add_filter( 'the_category_tag_content', 'add_lightbox_property', 10 );
 }
 if ( !function_exists( 'add_lightbox_property' ) ):
 function add_lightbox_property( $content ) {
