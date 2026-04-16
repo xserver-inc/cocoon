@@ -458,7 +458,8 @@ function custmuize_restrict_manage_posts(){
       wp_dropdown_users(
       array(
         'show_option_all' => 'すべてのユーザー',
-        'name' => 'author'
+        'name' => 'author',
+        'who'             => 'authors'
       )
     );
   }
