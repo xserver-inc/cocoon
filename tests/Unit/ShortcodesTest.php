@@ -299,5 +299,59 @@ class ShortcodesTest extends TestCase
         $result = login_user_only_shortcode($atts, $content);
         $this->assertSame('<div class="login-user-only">制限されています</div>', $result);
     }
+    /**
+     * $contentにnullが渡された場合でもエラーにならず（空文字扱い）、例外なく処理されることをテスト
+     */
+    public function test_login_user_only_shortcode_nullコンテンツの場合もエラーにならない(): void
+    {
+        global $test_mock_is_user_logged_in;
+        $test_mock_is_user_logged_in = true;
+
+        $atts = [];
+        $result = login_user_only_shortcode($atts, null);
+        $this->assertSame('', $result);
+    }
+
+    // ========================================================================
+    // timeline_shortcode()
+    // ========================================================================
+
+    public function test_timeline_shortcode_nullコンテンツの場合もエラーにならない(): void
+    {
+        $atts = ['title' => 'タイムライン'];
+        $result = timeline_shortcode($atts, null);
+        $this->assertStringContainsString('タイムライン', $result);
+        $this->assertStringContainsString('timeline', $result);
+    }
+
+    // ========================================================================
+    // timeline_item_shortcode()
+    // ========================================================================
+
+    public function test_timeline_item_shortcode_nullコンテンツの場合もエラーにならない(): void
+    {
+        $atts = ['title' => 'ステップ1', 'label' => '手順'];
+        $result = timeline_item_shortcode($atts, null);
+        $this->assertStringContainsString('ステップ1', $result);
+        $this->assertStringContainsString('手順', $result);
+        $this->assertStringContainsString('timeline-item', $result);
+    }
+
+    // ========================================================================
+    // get_cta_tag()
+    // ========================================================================
+
+    public function test_get_cta_tag_nullコンテンツの場合もエラーにならない(): void
+    {
+        $atts = ['heading' => 'CTAタイトル'];
+        
+        \Brain\Monkey\Functions\when('get_template_part')->justReturn();
+        
+        // 内部で wpautop() やテンプレート呼び出しなどを通すが、
+        // get_cta_tag() 自体が null を受け取っても警告が出ず安全に実行できるかテスト
+        $result = get_cta_tag($atts, null);
+        // get_template_partなどをモックしているため、出力はなく空文字として扱われる
+        $this->assertSame('', $result);
+    }
 }
 
