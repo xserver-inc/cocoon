@@ -1,4 +1,4 @@
-﻿msgid ""
+msgid ""
 msgstr ""
 "Project-Id-Version: wp-cocoon\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
@@ -2924,8 +2924,8 @@ msgid "ブログカードキャッシュの削除"
 msgstr "Delete blog card cache"
 
 #: lib/page-cache/cache-forms.php:69
-msgid "外部ブログカードのOGP情報キャッシュを削除します。"
-msgstr "Delete the OGP information cache for external blog cards."
+msgid "内部ブログカードのURL判定キャッシュと、外部ブログカードのOGP情報キャッシュを削除します。"
+msgstr "Deletes the URL resolution cache for internal blog cards and the OGP information cache for external blog cards."
 
 #: lib/page-cache/cache-forms.php:82
 msgid "AMPキャッシュの削除"

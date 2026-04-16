@@ -3036,7 +3036,7 @@ msgid "ブログカードキャッシュの削除"
 msgstr ""
 
 #: lib/page-cache/cache-forms.php:69
-msgid "外部ブログカードのOGP情報キャッシュを削除します。"
+msgid "内部ブログカードのURL判定キャッシュと、外部ブログカードのOGP情報キャッシュを削除します。"
 msgstr ""
 
 #: lib/page-cache/cache-forms.php:82

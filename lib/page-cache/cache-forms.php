@@ -66,7 +66,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <a href="<?php echo add_query_arg(array('cache' => 'blogcard_caches', HIDDEN_DELETE_FIELD_NAME => wp_create_nonce('delete-cache'))); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'ブログカードキャッシュの削除', THEME_NAME ) ?></a>
             <?php
-              generate_tips_tag(__( '外部ブログカードのOGP情報キャッシュを削除します。', THEME_NAME ));
+              generate_tips_tag(__( '内部ブログカードのURL判定キャッシュと、外部ブログカードのOGP情報キャッシュを削除します。', THEME_NAME ));
             ?>
           </td>
         </tr>

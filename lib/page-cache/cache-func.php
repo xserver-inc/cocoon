@@ -33,7 +33,10 @@ endif;
 if ( !function_exists( 'delete_blogcard_caches' ) ):
 function delete_blogcard_caches(){
   if (is_user_administrator()) {
-    return delete_db_cache_records(TRANSIENT_BLOGCARD_PREFIX);
+    $result = delete_db_cache_records(TRANSIENT_BLOGCARD_PREFIX);
+    // URL to PostID のキャッシュも削除（cocoon_url_to_postid() が保存する一時データ）
+    $result |= delete_db_cache_records('cocoon_url_tpi_');
+    return $result;
   }
   return false;
 }

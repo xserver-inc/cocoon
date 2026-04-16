@@ -20,7 +20,7 @@ function delete_theme_resource_caches() {
 }
 endif;
 
-//transientSNSキャッシュの削除
+//transientブログカードキャッシュの削除
 if ( !function_exists( 'delete_blogcard_cache_transients' ) ):
 function delete_blogcard_cache_transients(){
   global $wpdb;
@@ -29,6 +29,12 @@ function delete_blogcard_cache_transients(){
     "DELETE FROM `{$wpdb->options}` WHERE (`option_name` LIKE %s) OR (`option_name` LIKE %s)",
     '%' . $wpdb->esc_like( '_transient_bcc_' ) . '%',
     '%' . $wpdb->esc_like( '_transient_timeout_bcc_' ) . '%'
+  ) );
+  // URL to PostID のキャッシュも削除
+  $wpdb->query( $wpdb->prepare(
+    "DELETE FROM `{$wpdb->options}` WHERE (`option_name` LIKE %s) OR (`option_name` LIKE %s)",
+    '%' . $wpdb->esc_like( '_transient_cocoon_url_tpi_' ) . '%',
+    '%' . $wpdb->esc_like( '_transient_timeout_cocoon_url_tpi_' ) . '%'
   ) );
 }
 endif;

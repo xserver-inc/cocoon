@@ -2924,8 +2924,8 @@ msgid "ブログカードキャッシュの削除"
 msgstr "删除博客卡片缓存"
 
 #: lib/page-cache/cache-forms.php:69
-msgid "外部ブログカードのOGP情報キャッシュを削除します。"
-msgstr "删除外部博客卡片的OGP信息缓存。"
+msgid "内部ブログカードのURL判定キャッシュと、外部ブログカードのOGP情報キャッシュを削除します。"
+msgstr "删除内部博客卡片的URL判定缓存和外部博客卡片的OGP信息缓存。"
 
 #: lib/page-cache/cache-forms.php:82
 msgid "AMPキャッシュの削除"
