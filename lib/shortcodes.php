@@ -317,7 +317,8 @@ if (!shortcode_exists('login_user_only')) {
   add_shortcode('login_user_only', 'login_user_only_shortcode');
 }
 if ( !function_exists( 'login_user_only_shortcode' ) ):
-function login_user_only_shortcode( $atts, $content = null ) {
+function login_user_only_shortcode( $atts, $content = '' ) {
+  $content = (string)$content;
   extract( shortcode_atts( array(
       'msg' => __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME ),
   ), $atts, 'login_user_only' ) );
@@ -338,12 +339,13 @@ if (!shortcode_exists('timeline')) {
   add_shortcode('timeline', 'timeline_shortcode');
 }
 if ( !function_exists( 'timeline_shortcode' ) ):
-function timeline_shortcode( $atts, $content = null ){
+function timeline_shortcode( $atts, $content = '' ){
+  $content = (string)$content;
   extract( shortcode_atts( array(
     'title' => null,
   ), $atts, 'timeline' ) );
   $content = remove_wrap_shortcode_wpautop('ti', $content);
-  $content = do_shortcode( shortcode_unautop( $content ) );
+  $content = do_shortcode( shortcode_unautop( (string)$content ) );
   $title = sanitize_shortcode_value($title);
   $title_tag = null;
   if ($title) {
@@ -364,13 +366,14 @@ if ( !function_exists( 'remove_wrap_shortcode_wpautop' ) ):
 function remove_wrap_shortcode_wpautop($shortcode, $content){
   //tiショートコードのみを抽出
   $pattern = '/\['.$shortcode.'.*?\].*?\[\/'.$shortcode.'\]/is';
-  if (preg_match_all($pattern, $content, $m)) {
+  if (preg_match_all($pattern, (string)$content, $m)) {
     $all = null;
     foreach ($m[0] as $code) {
       $all .= $code;
     }
     return $all;
   }
+  return '';
 }
 endif;
 
@@ -379,7 +382,8 @@ if (!shortcode_exists('ti')) {
   add_shortcode('ti', 'timeline_item_shortcode');
 }
 if ( !function_exists( 'timeline_item_shortcode' ) ):
-function timeline_item_shortcode( $atts, $content = null ){
+function timeline_item_shortcode( $atts, $content = '' ){
+  $content = (string)$content;
   extract( shortcode_atts( array(
     'title' => null,
     'label' => null,
@@ -467,7 +471,7 @@ if (!shortcode_exists('star')) {
   add_shortcode('star', 'rating_star_shortcode');
 }
 if ( !function_exists( 'rating_star_shortcode' ) ):
-function rating_star_shortcode( $atts, $content = null ) {
+function rating_star_shortcode( $atts, $content = '' ) {
   extract( shortcode_atts( array(
       'rate' => 5,
       'max' => 5,
@@ -483,7 +487,7 @@ if (!shortcode_exists('toc')) {
   add_shortcode('toc', 'toc_shortcode');
 }
 if ( !function_exists( 'toc_shortcode' ) ):
-function toc_shortcode( $atts, $content = null ) {
+function toc_shortcode( $atts, $content = '' ) {
   extract(shortcode_atts(array(
     'depth' => 0,
   ), $atts, 'toc'));
@@ -500,7 +504,7 @@ endif;
 //サイトマップショートコード
 add_shortcode('sitemap', 'sitemap_shortcode');
 if ( !function_exists( 'sitemap_shortcode' ) ):
-function sitemap_shortcode( $atts, $content = null ) {
+function sitemap_shortcode( $atts, $content = '' ) {
   extract( shortcode_atts( array(
     'page' => 1,
     'single' => 1,
@@ -549,7 +553,7 @@ if (!shortcode_exists('blogcard')) {
   add_shortcode('blogcard', 'blogcard_shortcode');
 }
 if ( !function_exists( 'blogcard_shortcode' ) ):
-function blogcard_shortcode( $atts, $content = null ) {
+function blogcard_shortcode( $atts, $content = '' ) {
   extract( shortcode_atts( array(
     'url' => null,
   ), $atts, 'blogcard' ) );
@@ -1185,7 +1189,8 @@ endif;
 //CTAショートコード（主にCTAブロック用）
 add_shortcode('cta', 'get_cta_tag');
 if ( !function_exists( 'get_cta_tag' ) ):
-function get_cta_tag($atts, $content = null ){
+function get_cta_tag($atts, $content = '' ){
+  $content = (string)$content;
   extract(shortcode_atts(array(
     'heading' => __( '見出し', THEME_NAME ),
     'image_url' => '',
