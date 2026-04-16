@@ -459,7 +459,7 @@ function custmuize_restrict_manage_posts(){
       array(
         'show_option_all' => 'すべてのユーザー',
         'name' => 'author',
-        'who'             => 'authors'
+        'capability'      => 'edit_posts'
       )
     );
   }

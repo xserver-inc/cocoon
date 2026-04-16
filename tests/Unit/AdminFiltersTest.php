@@ -22,7 +22,7 @@ class AdminFiltersTest extends TestCase
         }
     }
 
-    public function test_customize_restrict_manage_posts_ユーザー絞り込みにwho_authorsを指定する(): void
+    public function test_customize_restrict_manage_posts_ユーザー絞り込みにcapability_edit_postsを指定する(): void
     {
         global $post_type, $tag;
         $post_type = 'post';
@@ -34,13 +34,13 @@ class AdminFiltersTest extends TestCase
             ->with('post', 'post_tag')
             ->andReturn(false); // タグ側のドロップダウンのテストは省略
 
-        // wp_dropdown_users関数が呼ばれる際、'who' => 'authors'が含まれているかを検証
+        // wp_dropdown_users関数が呼ばれる際、'capability' => 'edit_posts'が含まれているかを検証
         Functions\expect('wp_dropdown_users')
             ->once()
             ->with(\Mockery::on(function ($args) {
                 return is_array($args) &&
                        isset($args['name']) && $args['name'] === 'author' &&
-                       isset($args['who']) && $args['who'] === 'authors';
+                       isset($args['capability']) && $args['capability'] === 'edit_posts';
             }));
 
         custmuize_restrict_manage_posts();

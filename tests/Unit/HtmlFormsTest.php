@@ -265,13 +265,13 @@ class HtmlFormsTest extends TestCase
         $this->assertSame('https://example.com/test.jpg', $result[0]);
     }
 
-    public function test_get_author_list_selectbox_tag_ユーザー取得時にwho_authorsを指定する(): void
+    public function test_get_author_list_selectbox_tag_ユーザー取得時にcapability_edit_postsを指定する(): void
     {
         \Brain\Monkey\Functions\expect('get_users')
             ->once()
             ->with(\Mockery::on(function ($args) {
                 return is_array($args) &&
-                       isset($args['who']) && $args['who'] === 'authors';
+                       isset($args['capability']) && $args['capability'] === 'edit_posts';
             }))
             ->andReturn([]);
 
@@ -280,13 +280,13 @@ class HtmlFormsTest extends TestCase
         $this->assertTrue(true);
     }
 
-    public function test_generate_author_check_list_ユーザー取得時にwho_authorsを指定する(): void
+    public function test_generate_author_check_list_ユーザー取得時にcapability_edit_postsを指定する(): void
     {
         \Brain\Monkey\Functions\expect('get_users')
             ->once()
             ->with(\Mockery::on(function ($args) {
                 return is_array($args) &&
-                       isset($args['who']) && $args['who'] === 'authors';
+                       isset($args['capability']) && $args['capability'] === 'edit_posts';
             }))
             ->andReturn([]);
 

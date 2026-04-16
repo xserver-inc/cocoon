@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'get_author_list_selectbox_tag' ) ):
 function get_author_list_selectbox_tag($name, $value){
   // 登録者数が数万人規模のサイトで全件取得によるメモリ枯渇・UI描画フリーズを防ぐため、執筆権限者に限定
-  $users = get_users( array('orderby'=>'ID','order'=>'ASC', 'who'=>'authors') );
+  $users = get_users( array('orderby'=>'ID','order'=>'ASC', 'capability'=>'edit_posts') );
   $html = '<select id="'.$name.'" name="'.$name.'">'.PHP_EOL;
   foreach($users as $user) {
     $uid = $user->ID;
@@ -859,7 +859,7 @@ function generate_author_check_list( $name, $checks, $width = 0 ) {
   echo '<div class="tab-content author-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
 
   // 登録者数が数万人規模のサイトで全件取得によるメモリ枯渇・UI描画フリーズを防ぐため、執筆権限者に限定
-  $users = get_users( array('orderby'=>'ID','order'=>'ASC', 'who'=>'authors') );
+  $users = get_users( array('orderby'=>'ID','order'=>'ASC', 'capability'=>'edit_posts') );
   foreach($users as $user) {
     $uid = $user->ID;
     $id = $name.'_'.$uid;
