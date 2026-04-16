@@ -80,11 +80,11 @@ class ShortcodesTest extends TestCase
         $this->assertSame('[ti title="手順1"]内容1[/ti][ti title="手順2"]内容2[/ti]', $result);
     }
 
-    public function test_remove_wrap_shortcode_wpautop_マッチしない場合nullを返す(): void
+    public function test_remove_wrap_shortcode_wpautop_マッチしない場合空文字を返す(): void
     {
         $content = '<p>テキストのみ</p>';
         $result = remove_wrap_shortcode_wpautop('ti', $content);
-        $this->assertNull($result);
+        $this->assertSame('', $result);
     }
 
     public function test_remove_wrap_shortcode_wpautop_ネストしたコンテンツを処理する(): void
