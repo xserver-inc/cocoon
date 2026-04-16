@@ -282,6 +282,9 @@ div.mce-content-body {
 /* full width */
 
 .editor-styles-wrapper {
+  // iframe版エディタ利用時に、親テーマのbody背景色が継承される不具合を修正する
+  background-color: #fff;
+
   .wp-block[data-align=full] {
     max-width: none;
     margin-left: auto;
