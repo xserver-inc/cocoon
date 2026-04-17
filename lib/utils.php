@@ -545,7 +545,10 @@ function wp_enqueue_script_theme_js(){
   wp_localize_script( THEME_JS, $name, $value );
 
   // グループブロックリンク化JS
-  wp_enqueue_script( 'cocoon-group-link', get_cocoon_template_directory_uri() . '/js/group-link.js', array(), filemtime( get_cocoon_template_directory() . '/js/group-link.js' ), true );
+  $group_link_js = get_cocoon_template_directory() . '/js/group-link.js';
+  if ( file_exists( $group_link_js ) ) {
+    wp_enqueue_script( 'cocoon-group-link', get_cocoon_template_directory_uri() . '/js/group-link.js', array(), filemtime( $group_link_js ), true );
+  }
 
   // // TODO: ファイル読みこみ位置 もしくは HTML側に直接出力など よい方法を考慮
   // wp_enqueue_script( 'set-event-passive', SET_EVENT_PASSIVE_JS_URL, array( ), false, true );
