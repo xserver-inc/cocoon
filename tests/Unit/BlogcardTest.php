@@ -321,6 +321,58 @@ class BlogcardTest extends TestCase
         $this->assertSame('https://example.com/path', $result);
     }
 
+    public function test_cancel_blog_card_deactivation_エクスクラメーションとURLの間にスペースがあるpタグ内無効化を解除する(): void
+    {
+        $content = '<p>! https://example.com/path</p>';
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p>https://example.com/path</p>', $result);
+    }
+
+    public function test_cancel_blog_card_deactivation_エクスクラメーション付きaタグURLのpタグ内無効化を解除する(): void
+    {
+        // Gutenbergがリンクに変換した場合（<a>タグ内テキストに先頭スペースあり）
+        $content = '<p>!<a href="https://example.com/path"> https://example.com/path</a></p>';
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p><a href="https://example.com/path"> https://example.com/path</a></p>', $result);
+    }
+
+    public function test_cancel_blog_card_deactivation_エクスクラメーション付きaタグURLのpタグなし無効化を解除する(): void
+    {
+        $content = '!<a href="https://example.com/path"> https://example.com/path</a>';
+        $result = cancel_blog_card_deactivation($content, false);
+        $this->assertSame('<a href="https://example.com/path"> https://example.com/path</a>', $result);
+    }
+
+    public function test_cancel_blog_card_deactivation_make_clickable変換後のaタグURLの無効化を解除する(): void
+    {
+        // make_clickable が「! URL」を「! <a ...>URL</a>」に変換した後の状態
+        $content = '<p>! <a href="https://www.yahoo.co.jp/" rel="nofollow">https://www.yahoo.co.jp/</a></p>';
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p><a href="https://www.yahoo.co.jp/" rel="nofollow">https://www.yahoo.co.jp/</a></p>', $result);
+    }
+
+    public function test_cancel_blog_card_deactivation_スペースなしaタグURLの無効化を解除する(): void
+    {
+        // !<a>形式（スペースなし、aタグ内テキストにスペースなし）
+        $content = '<p>!<a href="https://www.yahoo.co.jp/">https://www.yahoo.co.jp/</a></p>';
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p><a href="https://www.yahoo.co.jp/">https://www.yahoo.co.jp/</a></p>', $result);
+    }
+
+    public function test_cancel_blog_card_deactivation_pタグ属性付きURLの無効化を解除する(): void
+    {
+        $content = '<p class="wp-block-paragraph">! https://example.com/path</p>';
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p>https://example.com/path</p>', $result);
+    }
+
+    public function test_cancel_blog_card_deactivation_行頭インデント付きURLの無効化を解除する(): void
+    {
+        $content = "    ! https://example.com/path";
+        $result = cancel_blog_card_deactivation($content, false);
+        $this->assertSame('https://example.com/path', $result);
+    }
+
     // ========================================================================
     // get_human_years_ago() - 年齢計算
     // ========================================================================

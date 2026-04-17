@@ -2725,23 +2725,23 @@ endif;
 if ( !function_exists( 'cancel_blog_card_deactivation' ) ):
 function cancel_blog_card_deactivation($the_content, $is_p = true){
   //テキストのみ
-  $not_url_reg = '!(https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+)';
+  $not_url_reg = '!\s*(https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+)';
   if ($is_p) {
-    $pattern = '{^<p>'.$not_url_reg.'</p>}im';
+    $pattern = '{^\s*<p[^>]*>\s*'.$not_url_reg.'\s*</p>\s*$}im';
     $append = '<p>$1</p>';
   } else {
-    $pattern = '{^'.$not_url_reg.'}im';
+    $pattern = '{^\s*'.$not_url_reg.'}im';
     $append = '$1';
   }
   $the_content = preg_replace($pattern, $append, $the_content);
 
-  //URLリンク
-  $not_url_reg = '!(<a.+>https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+</a>)';
+  //URLリンク（<a>タグ内テキストの先頭・末尾スペースや!とaタグ間のスペースを許容）
+  $not_url_reg = '!\s*(<a[^>]+>\s*https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+\s*</a>)';
   if ($is_p) {
-    $pattern = '{^<p>'.$not_url_reg.'</p>}im';
+    $pattern = '{^\s*<p[^>]*>\s*'.$not_url_reg.'\s*</p>\s*$}im';
     $append = '<p>$1</p>';
   } else {
-    $pattern = '{^'.$not_url_reg.'}im';
+    $pattern = '{^\s*'.$not_url_reg.'}im';
     $append = '$1';
   }
   $the_content = preg_replace($pattern, $append, $the_content);
