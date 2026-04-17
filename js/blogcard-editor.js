@@ -20,6 +20,7 @@
   var select = wp.data.select;
   var dispatch = wp.data.dispatch;
   var subscribe = wp.data.subscribe;
+  var useEffect = wp.element.useEffect;
 
   wp.domReady( function () {
     // PHP側で既に登録されている場合は解除してからJS側で再登録する
@@ -44,6 +45,36 @@
       edit: function ( props ) {
         var blockProps = useBlockProps();
         var url = props.attributes.url;
+
+        var isInternalActive = true;
+        var isExternalActive = true;
+        if ( typeof cocoonBlogcardSettings !== 'undefined' ) {
+          isInternalActive = cocoonBlogcardSettings.isInternalActive;
+          isExternalActive = cocoonBlogcardSettings.isExternalActive;
+        }
+
+        // URLが内部か外部かを判定する
+        var isInternalUrl = false;
+        if ( url ) {
+          try {
+            var urlObj = new URL( url );
+            if ( urlObj.hostname === window.location.hostname ) {
+              isInternalUrl = true;
+            }
+          } catch ( e ) {}
+        }
+
+        // このURLに対するブログカード設定が有効かどうか
+        var isUrlActive = isInternalUrl ? isInternalActive : isExternalActive;
+
+        // 設定オフ時は、Gutenberg標準の core/embed に逆変換して処理をコアに委ねる
+        useEffect( function () {
+          if ( ! isUrlActive && url ) {
+            var newBlock = createBlock('core/embed', { url: url });
+            dispatch('core/block-editor').replaceBlock(props.clientId, newBlock);
+          }
+        }, [ isUrlActive, url, props.clientId ] );
+
         if ( ! url ) {
           return createElement(
             'div',
@@ -51,6 +82,12 @@
             createElement( 'p', null, 'URLが設定されていません' )
           );
         }
+
+        // ブロックが置換されるまでは何も表示しない（またはローディング等）
+        if ( ! isUrlActive ) {
+          return null;
+        }
+
         // ServerSideRenderでPHP側のrender_callbackを呼び出してプレビュー表示
         return createElement(
           'div',
@@ -260,16 +297,24 @@
         // 3. WordPressコアが知っているエンベッド対象かどうか（embedブロックのみ保持）
         var isKnownProvider = isEmbed ? !! ( block.attributes && block.attributes.providerNameSlug ) : false;
 
+        // 設定の状態を取得
+        var isInternalActive = typeof cocoonBlogcardSettings !== 'undefined' ? cocoonBlogcardSettings.isInternalActive : true;
+        var isExternalActive = typeof cocoonBlogcardSettings !== 'undefined' ? cocoonBlogcardSettings.isExternalActive : true;
+
         // 変換方針の決定
         var shouldConvertToBlogcard = false;
 
         if ( isInternal ) {
-          // 自サイトのURLは、プレビューの成否に関わらず内部ブログカード化
-          shouldConvertToBlogcard = true;
+          // 自サイトのURLは、プレビューの成否に関わらず内部ブログカード化（設定が有効な場合のみ）
+          if ( isInternalActive ) {
+            shouldConvertToBlogcard = true;
+          }
         } else if ( isFailed && ! isKnownProvider ) {
           // 外部URLのうち、公式プロバイダーに該当せず、エンベッド取得に失敗したもの
           // （Gutenbergが自動的にparagraphにフォールバックした場合もここに入る）
-          shouldConvertToBlogcard = true;
+          if ( isExternalActive ) {
+            shouldConvertToBlogcard = true;
+          }
         }
 
         if ( shouldConvertToBlogcard ) {
@@ -312,7 +357,16 @@
       } );
     }
 
-    // 監視をスタート
-    monitorEmbedBlocks();
+    // 監視をスタート（ブログカード設定がどちらか一方でも有効な場合のみ）
+    var isInternalActive = true;
+    var isExternalActive = true;
+    if ( typeof cocoonBlogcardSettings !== 'undefined' ) {
+      isInternalActive = cocoonBlogcardSettings.isInternalActive;
+      isExternalActive = cocoonBlogcardSettings.isExternalActive;
+    }
+
+    if ( isInternalActive || isExternalActive ) {
+      monitorEmbedBlocks();
+    }
   } );
 } )();

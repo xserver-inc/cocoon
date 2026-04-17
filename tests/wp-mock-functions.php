@@ -97,6 +97,20 @@ if (!function_exists('esc_url')) {
     }
 }
 
+if (!function_exists('esc_url_raw')) {
+    function esc_url_raw($url, $protocols = array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'irc6', 'ircs', 'gopher', 'nntp', 'feed', 'telnet')) {
+        $url = trim($url);
+        if (!$url) return '';
+        // スキームチェック: 許可されたプロトコルのみ通す
+        if (preg_match('/^([a-z][a-z0-9+.\-]*):/', $url, $m)) {
+            if (!in_array(strtolower($m[1]), $protocols, true)) {
+                return '';
+            }
+        }
+        return filter_var($url, FILTER_SANITIZE_URL);
+    }
+}
+
 if (!function_exists('wp_kses_post')) {
     function wp_kses_post($data) {
         return $data;
@@ -407,6 +421,10 @@ if (!function_exists('is_toc_shortcode_includes')) {
 // blogcard-in.php 依存
 if (!function_exists('is_internal_blogcard_enable')) {
     function is_internal_blogcard_enable() {
+        global $test_mock_is_internal_blogcard_enable;
+        if (isset($test_mock_is_internal_blogcard_enable)) {
+            return $test_mock_is_internal_blogcard_enable;
+        }
         return false;
     }
 }
@@ -605,6 +623,10 @@ if (!function_exists('_n')) {
 
 if (!function_exists('url_to_internal_blogcard_tag')) {
     function url_to_internal_blogcard_tag($url) {
+        global $test_mock_url_to_internal_blogcard_tag_return;
+        if (isset($test_mock_url_to_internal_blogcard_tag_return)) {
+            return $test_mock_url_to_internal_blogcard_tag_return;
+        }
         return null;
     }
 }
@@ -617,6 +639,10 @@ if (!function_exists('is_ad_shortcode_enable')) {
 
 if (!function_exists('is_external_blogcard_enable')) {
     function is_external_blogcard_enable() {
+        global $test_mock_is_external_blogcard_enable;
+        if (isset($test_mock_is_external_blogcard_enable)) {
+            return $test_mock_is_external_blogcard_enable;
+        }
         return false;
     }
 }
@@ -624,6 +650,26 @@ if (!function_exists('is_external_blogcard_enable')) {
 if (!function_exists('wp_rand')) {
     function wp_rand($min = 0, $max = 0) {
         return rand($min, $max);
+    }
+}
+
+if (!function_exists('is_internal_blogcard_url')) {
+    function is_internal_blogcard_url($url) {
+        global $test_mock_is_internal_blogcard_url;
+        if (isset($test_mock_is_internal_blogcard_url)) {
+            return $test_mock_is_internal_blogcard_url;
+        }
+        return false; // デフォルト
+    }
+}
+
+if (!function_exists('url_to_external_blog_card_tag')) {
+    function url_to_external_blog_card_tag($url) {
+        global $test_mock_url_to_external_blog_card_tag_return;
+        if (isset($test_mock_url_to_external_blog_card_tag_return)) {
+            return $test_mock_url_to_external_blog_card_tag_return;
+        }
+        return null;
     }
 }
 
