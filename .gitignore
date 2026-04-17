@@ -12,6 +12,9 @@ package-lock.json
 .agent
 .agents/
 
+# GitHub Copilot
+.github/copilot-instructions.md
+
 #CLAUDE
 .mcp.json
 CLAUDE.md
