@@ -89,12 +89,26 @@
         }
 
         // ServerSideRenderでPHP側のrender_callbackを呼び出してプレビュー表示
+        // オーバーレイdivでリンクへのクリックを吸収し、iFrame内でのページ遷移を防ぐ
         return createElement(
           'div',
-          blockProps,
+          Object.assign( {}, blockProps, {
+            style: Object.assign( {}, blockProps.style || {}, { position: 'relative' } ),
+          } ),
           createElement( ServerSideRender, {
             block: 'cocoon-blocks/embed-blogcard',
             attributes: { url: url },
+          } ),
+          createElement( 'div', {
+            style: {
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              cursor: 'default',
+            },
+            'aria-hidden': 'true',
           } )
         );
       },
