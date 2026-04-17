@@ -44,12 +44,6 @@
 
       // クリック時の遷移イベント
       group.addEventListener( 'click', function ( e ) {
-        // 修飾キー（Ctrl/Cmd/Shift）押下時は新しいタブで開く
-        if ( e.ctrlKey || e.metaKey || e.shiftKey ) {
-          window.open( url, '_blank', 'noopener,noreferrer' );
-          return;
-        }
-
         // ユーザーがテキスト選択中（ドラッグによる選択）の場合は遷移しない
         var selection = window.getSelection();
         if ( selection && selection.toString().length > 0 ) {
@@ -67,6 +61,17 @@
           'a, button, input, textarea, select, details, summary, video, audio, [role="button"]';
         var clickedEl = e.target.closest( interactiveSelectors );
         if ( clickedEl && group.contains( clickedEl ) && clickedEl !== group ) {
+          return;
+        }
+
+        // 修飾キー（Ctrl/Cmd/Shift）押下時は新しいタブで開く
+        // navigate() の安全判定（危険プロトコル除外）を共通利用するため、newTab を一時的に上書きする
+        if ( e.ctrlKey || e.metaKey || e.shiftKey ) {
+          e.preventDefault();
+          var wasNewTab = newTab;
+          newTab = true;
+          navigate();
+          newTab = wasNewTab;
           return;
         }
 
