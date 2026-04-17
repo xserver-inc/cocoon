@@ -64,10 +64,10 @@ function cocoon_group_block_link_render( $block_content, $block ) {
 			$processor->set_attribute( 'data-cocoon-group-link-target', '_blank' );
 		}
 		// アクセシビリティ用の属性を追加
+		// role="link" + tabindex="0" により、ブロック内テキストがアクセシブルネームとなる
+		// aria-label に生 URL を設定するとスクリーンリーダーが URL を1文字ずつ読み上げるため使用しない（WCAG 2.4.6）
 		$processor->set_attribute( 'role', 'link' );
 		$processor->set_attribute( 'tabindex', '0' );
-		// スクリーンリーダー向けにリンク先を通知
-		$processor->set_attribute( 'aria-label', esc_url( $url ) );
 
 		// キーボード用のハンドラを追加（WCAG 2.1 SC 2.1.1 対応）
 		// 【設計意図】キーボード操作は PHP 側のインライン onkeydown で this.click() を呼び、
