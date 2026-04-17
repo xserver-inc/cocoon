@@ -161,7 +161,7 @@
     }
 
     // ネストを含む全ブロックから、処理対象のブロック（embedおよび単一URLのparagraph）を再帰的に収集する関数
-    function collectTargetBlocks( blocks, result ) {
+    function collectTargetBlocks( blocks, result, selectedBlockClientIds ) {
       for ( var i = 0; i < blocks.length; i++ ) {
         var block = blocks[ i ];
 
@@ -174,6 +174,11 @@
         // core/paragraph ブロック: URLのみの段落を収集
         // ※ GutenbergがembedのoEmbed解決失敗時に自動でparagraphにフォールバックするケースに対応
         else if ( block.name === 'core/paragraph' ) {
+          // 現在フォーカス（選択）されている段落ブロックなら、URL入力中の可能性があるため変換をスキップ
+          if ( selectedBlockClientIds && selectedBlockClientIds.indexOf( block.clientId ) !== -1 ) {
+            continue;
+          }
+
           // RichTextData対応: WordPress 6.x ではcontent属性がRichTextDataオブジェクトの場合がある
           // String()で文字列に確実に変換してから文字列操作を行う
           var rawContent = block.attributes.content;
@@ -211,7 +216,7 @@
 
         // ネストされたインナーブロックも再帰的に走査する
         if ( block.innerBlocks && block.innerBlocks.length > 0 ) {
-          collectTargetBlocks( block.innerBlocks, result );
+          collectTargetBlocks( block.innerBlocks, result, selectedBlockClientIds );
         }
       }
       return result;
@@ -254,8 +259,17 @@
       // 不要になったprocessedBlocksエントリを定期的にクリーンアップ
       cleanupProcessedBlocks( allBlocks );
 
+      // 現在選択されているブロックのIDリストを取得（入力中の変換を避けるため）
+      var selectedBlockClientIds = [];
+      if ( editorSelect.getSelectedBlockClientIds ) {
+        selectedBlockClientIds = editorSelect.getSelectedBlockClientIds();
+      } else if ( editorSelect.getSelectedBlockClientId ) {
+        var id = editorSelect.getSelectedBlockClientId();
+        if ( id ) selectedBlockClientIds.push( id );
+      }
+
       // ネストを含む全ブロックから対象ブロック（embedおよび単一URLのparagraph）を収集する
-      var targetItems = collectTargetBlocks( allBlocks, [] );
+      var targetItems = collectTargetBlocks( allBlocks, [], selectedBlockClientIds );
 
       for ( var i = 0; i < targetItems.length; i++ ) {
         var item = targetItems[ i ];
