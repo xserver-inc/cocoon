@@ -47,7 +47,7 @@ function cocoon_rakuten_api_get_request_args() {
     ),
   );
   // フィルターフックでカスタマイズ可能にする
-  return apply_filters('wp_remote_get_rakuten_args', $args);
+  return apply_filters('cocoon_rakuten_api_request_args', $args);
 }
 endif;
 
