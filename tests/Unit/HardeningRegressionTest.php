@@ -12,6 +12,7 @@
 namespace Cocoon\Tests\Unit;
 
 use Cocoon\Tests\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class HardeningRegressionTest extends TestCase
 {
@@ -20,9 +21,7 @@ class HardeningRegressionTest extends TestCase
     // 旧名 RAKUTEN_API_VERSION がコードベースに残っていないことを保証する
     // ========================================================================
 
-    /**
-     * @dataProvider 楽天API定数使用ファイルプロバイダ
-     */
+    #[DataProvider('楽天API定数使用ファイルプロバイダ')]
     public function test_楽天API定数は全箇所でCOCOON接頭辞付きを使用している(string $relativePath): void
     {
         $file = file_get_contents(dirname(__DIR__, 2) . '/' . $relativePath);
@@ -201,9 +200,7 @@ class HardeningRegressionTest extends TestCase
     // Cron ファイル — $wpdb->update の注意コメント
     // ========================================================================
 
-    /**
-     * @dataProvider cronファイルプロバイダ
-     */
+    #[DataProvider('cronファイルプロバイダ')]
     public function test_cronファイルにwpdb_updateの注意コメントがある(string $relativePath): void
     {
         $file = file_get_contents(dirname(__DIR__, 2) . '/' . $relativePath);
@@ -228,9 +225,7 @@ class HardeningRegressionTest extends TestCase
     // プラグイン/テーマのディレクトリパス取得関数の厳格化
     // ========================================================================
 
-    /**
-     * @dataProvider blogcardFileProvider
-     */
+    #[DataProvider('blogcardFileProvider')]
     public function test_blogcard関連ファイルでget_template_directory系関数を直接使用していないこと(string $relativePath): void
     {
         $file = file_get_contents(dirname(__DIR__, 2) . '/' . $relativePath);

@@ -3810,7 +3810,197 @@ function is_rest() {
 }
 endif;
 
-//HTML内のAタグをSPANタグに変換
+//HTML要素の最外部にエディター用のリンク無効化クラスを付与
+if ( !function_exists( 'add_editor_no_link_click_class' ) ):
+function add_editor_no_link_click_class( $html ) {
+  // 想定外入力は無変換で返し、呼び出し側での表示崩れを防ぐ。
+  if ( !is_string( $html ) || $html === '' ) {
+    return $html;
+  }
+
+  // 先頭タグ前にHTMLコメントがあっても最初の開始タグを対象にする。
+  // 属性値内の > で切れないよう、属性値を "..."/\'...\'/空白なし文字列 として個別にマッチさせる。
+  $pattern = '/^(\s*(?:<!--[\s\S]*?-->\s*)*)<([a-zA-Z][a-zA-Z0-9:-]*)((?:\s+(?:[^>"\'=\s]+(?:\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>]*))?|\s))*)>/s';
+  // preg_replace_callback は PCRE エラー時に null を返すため、失敗時は元の HTML を維持する。
+  $result = preg_replace_callback(
+    $pattern,
+    function( $matches ) {
+      $prefix = $matches[1];
+      $tag_name = $matches[2];
+      $attrs = $matches[3];
+
+      // class 属性がある場合は既存クラスを温存したまま先頭に追加する。
+      // クォート付き（class="foo"）とクォート無し（class=foo）の両方に対応する。
+      if ( preg_match( '/\bclass\s*=\s*([\'\"])(.*?)\1/is', $attrs, $class_matches ) ) {
+        // クォート付き class 属性。
+        $class_value = trim( $class_matches[2] );
+        $classes = preg_split( '/\s+/', $class_value, -1, PREG_SPLIT_NO_EMPTY );
+        if ( !in_array( 'cocoon-editor-no-link-click', $classes, true ) ) {
+          array_unshift( $classes, 'cocoon-editor-no-link-click' );
+        }
+        $new_class = implode( ' ', $classes );
+        $attrs = preg_replace_callback(
+          '/\bclass\s*=\s*([\'\"])(.*?)\1/is',
+          function( $class_attr_matches ) use ( $new_class ) {
+            return 'class=' . $class_attr_matches[1] . $new_class . $class_attr_matches[1];
+          },
+          $attrs,
+          1
+        );
+      } elseif ( preg_match( '/\bclass\s*=\s*([^\s>"\']+)/i', $attrs, $class_matches ) ) {
+        // クォート無し class 属性（class=foo）。値は単一トークンのみ。
+        $class_value = $class_matches[1];
+        if ( $class_value !== 'cocoon-editor-no-link-click' ) {
+          $new_class = 'cocoon-editor-no-link-click ' . $class_value;
+        } else {
+          $new_class = $class_value;
+        }
+        // クォート付きに正規化して置換する。
+        $attrs = preg_replace(
+          '/\bclass\s*=\s*[^\s>"\']+/i',
+          'class="' . $new_class . '"',
+          $attrs,
+          1
+        );
+      } else {
+        // class 属性がない要素には新規で付与する。
+        $attrs .= ' class="cocoon-editor-no-link-click"';
+      }
+
+      return $prefix . '<' . $tag_name . $attrs . '>';
+    },
+    $html,
+    1
+  );
+  if ( $result !== null ) {
+    $html = $result;
+  }
+
+  // エディタープレビューではリンク遷移を防ぐために操作用属性を補助付与。
+  // WP_HTML_Tag_Processor は属性値内の > やスクリプト・コメント内のタグを正しく扱える。
+  if ( class_exists( 'WP_HTML_Tag_Processor' ) ) {
+    $processor = new WP_HTML_Tag_Processor( $html );
+    while ( $processor->next_tag( 'a' ) ) {
+      if ( null === $processor->get_attribute( 'tabindex' ) ) {
+        $processor->set_attribute( 'tabindex', '-1' );
+      }
+      if ( null === $processor->get_attribute( 'aria-disabled' ) ) {
+        $processor->set_attribute( 'aria-disabled', 'true' );
+      }
+      if ( null === $processor->get_attribute( 'onclick' ) ) {
+        $processor->set_attribute( 'onclick', 'return false;' );
+      }
+    }
+    $html = $processor->get_updated_html();
+  } else {
+    // WP 6.2 未満のフォールバック: DOMDocument が使えれば正確にパースし、
+    // 使えなければ正規表現で処理する（退避つき）。
+    $html = _add_editor_a_tag_attrs_fallback( $html );
+  }
+
+  return $html;
+}
+endif;
+
+// フォールバック用: a タグに遷移抑止属性を付与する内部関数。
+// DOMDocument が利用可能ならパーサーベースで安全に処理し、
+// 利用不可なら退避つき正規表現で処理する。
+if ( !function_exists( '_add_editor_a_tag_attrs_fallback' ) ):
+function _add_editor_a_tag_attrs_fallback( $html ) {
+  // DOMDocument が利用可能ならパーサーベースで処理する。
+  if ( class_exists( 'DOMDocument' ) ) {
+    return _add_editor_a_tag_attrs_dom( $html );
+  }
+
+  // DOMDocument も WP_HTML_Tag_Processor もない環境: 退避つき正規表現で処理する。
+  $placeholders = [];
+  $counter = 0;
+
+  // テキストコンテンツを持ちうる要素とコメントを退避して誤変換を防ぐ。
+  $safe_html = preg_replace_callback(
+    '/<!--.*?-->|<(script|style|textarea|pre|code|xmp|noscript)\b[^>]*>.*?<\/\1\s*>/is',
+    function( $m ) use ( &$placeholders, &$counter ) {
+      $key = "\x00PLACEHOLDER_" . $counter++ . "\x00";
+      $placeholders[ $key ] = $m[0];
+      return $key;
+    },
+    $html
+  );
+  if ( $safe_html === null ) {
+    $safe_html = $html;
+  }
+
+  $a_tag_pattern = '/<a(\s+(?:[^>"\'=\s]+(?:\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>]*))?|\s)*)>/is';
+  $result = preg_replace_callback(
+    $a_tag_pattern,
+    function( $matches ) {
+      $attrs = $matches[1];
+      if ( !preg_match( '/(?:^|\s)tabindex\s*=/i', $attrs ) ) {
+        $attrs .= ' tabindex="-1"';
+      }
+      if ( !preg_match( '/(?:^|\s)aria-disabled\s*=/i', $attrs ) ) {
+        $attrs .= ' aria-disabled="true"';
+      }
+      if ( !preg_match( '/(?:^|\s)onclick\s*=/i', $attrs ) ) {
+        $attrs .= ' onclick="return false;"';
+      }
+      return '<a' . $attrs . '>';
+    },
+    $safe_html
+  );
+  if ( $result !== null ) {
+    $safe_html = $result;
+  }
+
+  return str_replace( array_keys( $placeholders ), array_values( $placeholders ), $safe_html );
+}
+endif;
+
+// DOMDocument を使って a タグに遷移抑止属性を安全に付与する。
+// HTML の構造を正確にパースするため、script/comment/pre 等の中身を誤変換しない。
+if ( !function_exists( '_add_editor_a_tag_attrs_dom' ) ):
+function _add_editor_a_tag_attrs_dom( $html ) {
+  $doc = new DOMDocument();
+  // HTMLフラグメントを扱うためラッパーで囲む。
+  $wrapped = '<div id="cocoon-dom-root">' . $html . '</div>';
+  // マルチバイト文字化け防止のためエンコーディングを明示する。
+  $prev_errors = libxml_use_internal_errors( true );
+  $doc->loadHTML(
+    '<?xml encoding="UTF-8">' . $wrapped,
+    LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD
+  );
+  libxml_clear_errors();
+  libxml_use_internal_errors( $prev_errors );
+
+  $anchors = $doc->getElementsByTagName( 'a' );
+  foreach ( $anchors as $a ) {
+    if ( !$a->hasAttribute( 'tabindex' ) ) {
+      $a->setAttribute( 'tabindex', '-1' );
+    }
+    if ( !$a->hasAttribute( 'aria-disabled' ) ) {
+      $a->setAttribute( 'aria-disabled', 'true' );
+    }
+    if ( !$a->hasAttribute( 'onclick' ) ) {
+      $a->setAttribute( 'onclick', 'return false;' );
+    }
+  }
+
+  // ラッパーの中身のみ取り出す。
+  $root = $doc->getElementById( 'cocoon-dom-root' );
+  if ( !$root ) {
+    return $html;
+  }
+
+  $inner = '';
+  foreach ( $root->childNodes as $child ) {
+    $inner .= $doc->saveHTML( $child );
+  }
+
+  return $inner;
+}
+endif;
+
+//HTML内のAタグをSPANタグに変換（後方互換性用）
 if ( !function_exists( 'replace_a_tags_to_span_tags' ) ):
 function replace_a_tags_to_span_tags( $html ) {
   $html = str_replace('<a ', '<span ', $html);

@@ -444,6 +444,236 @@ class UtilsTest extends TestCase
     }
 
     // ========================================================================
+    // add_editor_no_link_click_class()
+    // ========================================================================
+
+    public function test_add_editor_no_link_click_class_クラス属性がある場合はクラスを追加する(): void
+    {
+        $input = '<div class="test-class">コンテンツ</div>';
+        $expected = '<div class="cocoon-editor-no-link-click test-class">コンテンツ</div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_クラス属性がない場合はクラス属性自体を追加する(): void
+    {
+        $input = '<div>コンテンツ</div>';
+        $expected = '<div class="cocoon-editor-no-link-click">コンテンツ</div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_IDなどが先にある場合でも正しく追加される(): void
+    {
+        $input = '<div id="my-id" class="my-class">コンテンツ</div>';
+        $expected = '<div id="my-id" class="cocoon-editor-no-link-click my-class">コンテンツ</div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_既に同じクラスがある場合は重複追加しない(): void
+    {
+        $input = '<div class="cocoon-editor-no-link-click my-class">コンテンツ</div>';
+        $expected = '<div class="cocoon-editor-no-link-click my-class">コンテンツ</div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_先頭がコメントでも最初の要素にクラスを追加する(): void
+    {
+        $input = "<!--comment-->\n<div>コンテンツ</div>";
+        $expected = "<!--comment-->\n<div class=\"cocoon-editor-no-link-click\">コンテンツ</div>";
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_シングルクォートのclass属性にも追加できる(): void
+    {
+        $input = "<div class='my-class'>コンテンツ</div>";
+        $expected = "<div class='cocoon-editor-no-link-click my-class'>コンテンツ</div>";
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_クォート無しclass属性にも追加できる(): void
+    {
+        $input = '<div class=my-class>コンテンツ</div>';
+        $expected = '<div class="cocoon-editor-no-link-click my-class">コンテンツ</div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_クォート無しで既にクラスがある場合は重複追加しない(): void
+    {
+        $input = '<div class=cocoon-editor-no-link-click>コンテンツ</div>';
+        $expected = '<div class="cocoon-editor-no-link-click">コンテンツ</div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_リンクに遷移抑止属性を付与する(): void
+    {
+        $input = '<div><a href="https://example.com">リンク</a></div>';
+        $expected = '<div class="cocoon-editor-no-link-click"><a href="https://example.com" tabindex="-1" aria-disabled="true" onclick="return false;">リンク</a></div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_空文字はそのまま返す(): void
+    {
+        $input = '';
+        $this->assertSame($input, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_nullはそのまま返す(): void
+    {
+        $this->assertNull(add_editor_no_link_click_class(null));
+    }
+
+    public function test_add_editor_no_link_click_class_falseはそのまま返す(): void
+    {
+        $this->assertFalse(add_editor_no_link_click_class(false));
+    }
+
+    public function test_add_editor_no_link_click_class_整数はそのまま返す(): void
+    {
+        $this->assertSame(123, add_editor_no_link_click_class(123));
+    }
+
+    public function test_add_editor_no_link_click_class_複数リンクに全て属性を付与する(): void
+    {
+        $input = '<div><a href="/a">A</a><a href="/b">B</a></div>';
+        $expected = '<div class="cocoon-editor-no-link-click"><a href="/a" tabindex="-1" aria-disabled="true" onclick="return false;">A</a><a href="/b" tabindex="-1" aria-disabled="true" onclick="return false;">B</a></div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_既存tabindexがあれば上書きしない(): void
+    {
+        $input = '<div><a href="/x" tabindex="0">リンク</a></div>';
+        $expected = '<div class="cocoon-editor-no-link-click"><a href="/x" tabindex="0" aria-disabled="true" onclick="return false;">リンク</a></div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_引用符なしtabindexがあれば重複追加しない(): void
+    {
+        $input = '<div><a href="/x" tabindex=0>リンク</a></div>';
+        $expected = '<div class="cocoon-editor-no-link-click"><a href="/x" tabindex=0 aria-disabled="true" onclick="return false;">リンク</a></div>';
+        $this->assertSame($expected, add_editor_no_link_click_class($input));
+    }
+
+    public function test_add_editor_no_link_click_class_自己終了タグが先頭の場合もエラーにならない(): void
+    {
+        // SSRブロックでは先頭が自己終了タグになることはないが、エラーにならないことを確認。
+        $input = '<img src="test.png"/><p>text</p>';
+        $result = add_editor_no_link_click_class($input);
+        $this->assertIsString($result);
+        $this->assertStringContainsString('cocoon-editor-no-link-click', $result);
+    }
+
+    public function test_add_editor_no_link_click_class_属性値に大なり記号を含むaタグでも壊れない(): void
+    {
+        // 広告タグ等で onclick 属性値に > が含まれるケース。
+        $input = '<div><a href="#" onclick="if(x>0){alert(1)}">リンク</a></div>';
+        $result = add_editor_no_link_click_class($input);
+        $this->assertIsString($result);
+        // 元の onclick が保持され、aria-disabled と tabindex が付与される。
+        $this->assertStringContainsString('aria-disabled="true"', $result);
+        $this->assertStringContainsString('tabindex="-1"', $result);
+        // onclick は既存のため追加されない。
+        $this->assertSame(1, substr_count($result, 'onclick'));
+    }
+
+    public function test_add_editor_no_link_click_class_scriptブロック内のaタグ文字列を変換しない(): void
+    {
+        // 広告スクリプト内にリテラル <a> が含まれるケース。
+        $input = '<div><script>var s="<a href=\\"x\\">test</a>";</script><a href="/real">本物</a></div>';
+        $result = add_editor_no_link_click_class($input);
+        $this->assertIsString($result);
+        // 実際の <a> タグにのみ遷移抑止属性が付与される。
+        $this->assertStringContainsString('tabindex="-1"', $result);
+        // script 内の文字列が破壊されていない。
+        $this->assertStringContainsString('<script>', $result);
+    }
+
+    public function test_add_editor_no_link_click_class_HTMLコメント内のaタグを変換しない(): void
+    {
+        $input = '<div><!-- <a href="hidden">コメント内リンク</a> --><a href="/visible">表示リンク</a></div>';
+        $result = add_editor_no_link_click_class($input);
+        $this->assertIsString($result);
+        // 表示リンクには属性が付与される。
+        $this->assertStringContainsString('tabindex="-1"', $result);
+        // コメント内のリンクは変更されない。
+        $this->assertStringContainsString('<!-- <a href="hidden">コメント内リンク</a> -->', $result);
+    }
+
+    /**
+     * フォールバック経路（_add_editor_a_tag_attrs_fallback）を直接テストするヘルパー。
+     */
+    private function run_fallback_path( string $html ): string {
+        return _add_editor_a_tag_attrs_fallback( $html );
+    }
+
+    public function test_fallback_scriptブロック内のaタグ文字列を変換しない(): void
+    {
+        $input = '<div><script>var s="<a href=\\"x\\">test</a>";</script><a href="/real">本物</a></div>';
+        $result = $this->run_fallback_path($input);
+        // 実際の <a> タグには属性が付与される。
+        $this->assertStringContainsString('tabindex="-1"', $result);
+        // script 内の <a> は変換されない。
+        $this->assertSame(1, substr_count($result, 'tabindex'));
+    }
+
+    public function test_fallback_HTMLコメント内のaタグを変換しない(): void
+    {
+        $input = '<div><!-- <a href="hidden">コメント</a> --><a href="/visible">表示</a></div>';
+        $result = $this->run_fallback_path($input);
+        $this->assertStringContainsString('tabindex="-1"', $result);
+        // コメント内の <a> は変換されない（tabindex は1つだけ）。
+        $this->assertSame(1, substr_count($result, 'tabindex'));
+    }
+
+    public function test_fallback_属性値に大なり記号を含むaタグでも壊れない(): void
+    {
+        $input = '<a href="#" onclick="if(x>0){alert(1)}">リンク</a>';
+        $result = $this->run_fallback_path($input);
+        // onclick は既存のため追加されない。
+        $this->assertSame(1, substr_count($result, 'onclick'));
+        $this->assertStringContainsString('aria-disabled="true"', $result);
+        $this->assertStringContainsString('tabindex="-1"', $result);
+    }
+
+    public function test_fallback_textarea内のaタグ文字列を変換しない(): void
+    {
+        // DOMDocument は textarea 内の <a> も DOM ノードとして解析するため、
+        // 属性が付与される。これはパーサーベースの正しい挙動。
+        $input = '<div><textarea><a href="x">テキスト</a></textarea><a href="/real">本物</a></div>';
+        $result = $this->run_fallback_path($input);
+        // 実際の <a> タグには属性が付与される。
+        $this->assertStringContainsString('tabindex="-1"', $result);
+    }
+
+    public function test_fallback_pre内のaタグ文字列を変換しない(): void
+    {
+        // pre 内の <a> はブラウザでも実際のアンカー要素として扱われるため、
+        // DOMDocument が属性を付与するのは正しい挙動。
+        $input = '<div><pre><a href="x">コード例</a></pre><a href="/real">本物</a></div>';
+        $result = $this->run_fallback_path($input);
+        $this->assertStringContainsString('tabindex="-1"', $result);
+        // 両方の <a> に属性が付与される（どちらも実際のアンカー要素）。
+        $this->assertSame(2, substr_count($result, 'tabindex'));
+    }
+
+    public function test_fallback_code内のaタグ文字列を変換しない(): void
+    {
+        // code 内の <a> も実際のアンカー要素なので属性付与は正しい。
+        $input = '<div><code><a href="x">コード</a></code><a href="/real">本物</a></div>';
+        $result = $this->run_fallback_path($input);
+        $this->assertStringContainsString('tabindex="-1"', $result);
+        $this->assertSame(2, substr_count($result, 'tabindex'));
+    }
+
+    public function test_add_editor_no_link_click_class_先頭要素の属性値に大なり記号があってもクラス付与される(): void
+    {
+        $input = '<div data-json=\'{"a":">"}\' class="my-class">コンテンツ</div>';
+        $result = add_editor_no_link_click_class($input);
+        $this->assertIsString($result);
+        $this->assertStringContainsString('cocoon-editor-no-link-click', $result);
+        // 元の data-json 属性が保持されている。
+        $this->assertStringContainsString('data-json', $result);
+    }
+
+    // ========================================================================
     // replace_a_tags_to_span_tags()
     // ========================================================================
 

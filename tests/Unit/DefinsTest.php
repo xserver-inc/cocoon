@@ -15,6 +15,7 @@
 namespace Cocoon\Tests\Unit;
 
 use Cocoon\Tests\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class DefinsTest extends TestCase
 {
@@ -161,9 +162,7 @@ class DefinsTest extends TestCase
     // 画像拡張子正規表現
     // ========================================================================
 
-    /**
-     * @dataProvider 画像拡張子パターンプロバイダ
-     */
+    #[DataProvider('画像拡張子パターンプロバイダ')]
     public function test_IMAGE_RECOGNITION_EXTENSIONS_REG_が正しい拡張子にマッチ(string $extension, bool $shouldMatch): void
     {
         // 正規表現パターンとしてマッチテスト

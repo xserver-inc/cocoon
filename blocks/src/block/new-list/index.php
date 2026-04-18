@@ -46,7 +46,7 @@ function render_block_cocoon_block_new_list($attributes, $content)
 	echo '</div>';
 	$html = ob_get_clean();
 	if (is_rest()) {
-		$html = replace_a_tags_to_span_tags($html);
+		$html = add_editor_no_link_click_class($html);
 	}
 	return $html;
 }

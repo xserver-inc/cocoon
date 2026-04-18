@@ -929,3 +929,158 @@ if (!function_exists('add_query_arg')) {
         return $url . '?' . http_build_query($args);
     }
 }
+
+// WP_HTML_Tag_Processor のテスト用モッククラス（WP 6.2+ 相当の簡易実装）
+// add_editor_no_link_click_class 等のテストで使用する。
+if (!class_exists('WP_HTML_Tag_Processor')) {
+    class WP_HTML_Tag_Processor {
+        private $html;
+        private $tags = [];
+        private $cursor = -1;
+        private $attr_changes = [];
+        private $class_additions = [];
+
+        public function __construct( $html ) {
+            $this->html = $html;
+            $this->parse_tags();
+        }
+
+        // 開始タグの位置・名前・属性文字列をパースする簡易実装。
+        private function parse_tags() {
+            $len = strlen( $this->html );
+            $i = 0;
+            while ( $i < $len ) {
+                // コメントをスキップ。
+                if ( substr( $this->html, $i, 4 ) === '<!--' ) {
+                    $end = strpos( $this->html, '-->', $i + 4 );
+                    $i = $end === false ? $len : $end + 3;
+                    continue;
+                }
+                // <script> ブロックをスキップ。
+                if ( preg_match( '/\G<script\b[^>]*>/i', $this->html, $m, 0, $i ) ) {
+                    $close = stripos( $this->html, '</script', $i + strlen( $m[0] ) );
+                    $i = $close === false ? $len : $close + 9;
+                    continue;
+                }
+                // <style> ブロックをスキップ。
+                if ( preg_match( '/\G<style\b[^>]*>/i', $this->html, $m, 0, $i ) ) {
+                    $close = stripos( $this->html, '</style', $i + strlen( $m[0] ) );
+                    $i = $close === false ? $len : $close + 8;
+                    continue;
+                }
+                // 開始タグを検出。
+                if ( preg_match( '/\G<([a-zA-Z][a-zA-Z0-9:-]*)((?:\s+(?:[^>"\'=\s]+(?:\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>]*))?))*)(\s*\/?)>/s', $this->html, $m, 0, $i ) ) {
+                    $this->tags[] = [
+                        'offset' => $i,
+                        'length' => strlen( $m[0] ),
+                        'name'   => strtolower( $m[1] ),
+                        'attrs'  => $m[2],
+                    ];
+                    $i += strlen( $m[0] );
+                    continue;
+                }
+                $i++;
+            }
+        }
+
+        public function next_tag( $query = null ) {
+            $target = is_string( $query ) ? strtolower( $query ) : null;
+            while ( ++$this->cursor < count( $this->tags ) ) {
+                if ( $target === null || $this->tags[ $this->cursor ]['name'] === $target ) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public function get_tag() {
+            if ( $this->cursor < 0 || $this->cursor >= count( $this->tags ) ) {
+                return null;
+            }
+            return strtoupper( $this->tags[ $this->cursor ]['name'] );
+        }
+
+        public function get_attribute( $name ) {
+            if ( $this->cursor < 0 || $this->cursor >= count( $this->tags ) ) {
+                return null;
+            }
+            $idx = $this->cursor;
+            // 変更済みの属性を優先する。
+            if ( isset( $this->attr_changes[ $idx ][ $name ] ) ) {
+                return $this->attr_changes[ $idx ][ $name ];
+            }
+            $attrs = $this->tags[ $idx ]['attrs'];
+            // 引用符付き属性値。
+            if ( preg_match( '/(?:^|\s)' . preg_quote( $name, '/' ) . '\s*=\s*(["\'])(.*?)\1/is', $attrs, $m ) ) {
+                return $m[2];
+            }
+            // 引用符なし属性値。
+            if ( preg_match( '/(?:^|\s)' . preg_quote( $name, '/' ) . '\s*=\s*([^\s>"\']+)/i', $attrs, $m ) ) {
+                return $m[1];
+            }
+            // 値なし（boolean）属性。
+            if ( preg_match( '/(?:^|\s)' . preg_quote( $name, '/' ) . '(?:\s|$)/i', $attrs ) ) {
+                return true;
+            }
+            return null;
+        }
+
+        public function set_attribute( $name, $value ) {
+            if ( $this->cursor < 0 || $this->cursor >= count( $this->tags ) ) {
+                return;
+            }
+            $this->attr_changes[ $this->cursor ][ $name ] = $value;
+        }
+
+        public function add_class( $class ) {
+            if ( $this->cursor < 0 || $this->cursor >= count( $this->tags ) ) {
+                return;
+            }
+            $this->class_additions[ $this->cursor ][] = $class;
+        }
+
+        public function get_updated_html() {
+            $result = $this->html;
+            // オフセットがずれないよう逆順で適用する。
+            for ( $i = count( $this->tags ) - 1; $i >= 0; $i-- ) {
+                $tag = $this->tags[ $i ];
+                $name = $tag['name'];
+                $attrs = $tag['attrs'];
+                $suffix = '';
+
+                // 属性の追加・上書き。
+                if ( isset( $this->attr_changes[ $i ] ) ) {
+                    foreach ( $this->attr_changes[ $i ] as $attr_name => $attr_value ) {
+                        $pattern = '/(\s)' . preg_quote( $attr_name, '/' ) . '\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>]*)/i';
+                        if ( preg_match( $pattern, $attrs ) ) {
+                            $attrs = preg_replace( $pattern, '$1' . $attr_name . '="' . $attr_value . '"', $attrs, 1 );
+                        } else {
+                            $suffix .= ' ' . $attr_name . '="' . $attr_value . '"';
+                        }
+                    }
+                }
+
+                // クラスの追加。
+                if ( isset( $this->class_additions[ $i ] ) ) {
+                    $new_classes = $this->class_additions[ $i ];
+                    if ( preg_match( '/(\s)class\s*=\s*(["\'])(.*?)\2/is', $attrs, $m ) ) {
+                        $existing = trim( $m[3] );
+                        $all = $existing ? $existing . ' ' . implode( ' ', $new_classes ) : implode( ' ', $new_classes );
+                        $attrs = preg_replace(
+                            '/(\s)class\s*=\s*(["\'])(.*?)\2/is',
+                            '$1class=$2' . $all . '$2',
+                            $attrs,
+                            1
+                        );
+                    } else {
+                        $suffix .= ' class="' . implode( ' ', $new_classes ) . '"';
+                    }
+                }
+
+                $new_tag = '<' . $name . $attrs . $suffix . '>';
+                $result = substr_replace( $result, $new_tag, $tag['offset'], $tag['length'] );
+            }
+            return $result;
+        }
+    }
+}

@@ -10,7 +10,13 @@ function render_ranking_list($attributes, $content) {
     generate_item_ranking_tag($id);
     echo '</div>';
     $html = ob_get_clean();
-    return change_fa( $html );
+    $html = change_fa( $html );
+
+    if (is_rest()) {
+      $html = add_editor_no_link_click_class($html);
+    }
+
+    return $html;
   }
 }
 

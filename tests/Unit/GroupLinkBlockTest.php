@@ -111,7 +111,8 @@ namespace Cocoon\Tests\Unit {
             $this->assertStringContainsString('onkeydown="if(event.target === this && (event.key === \'Enter\' || event.key === \' \')){ event.preventDefault(); this.click(); }"', $result);
             // aria-label は URL 読み上げを避けるため付与しない設計
             $this->assertStringNotContainsString('aria-label=', $result);
-            $this->assertStringContainsString('class="is-cocoon-group-link"', $result);
+            // is-cocoon-group-link クラスが class 属性に含まれている（既存クラスと共存する）。
+            $this->assertMatchesRegularExpression('/class="[^"]*is-cocoon-group-link[^"]*"/', $result);
         }
 
         /**

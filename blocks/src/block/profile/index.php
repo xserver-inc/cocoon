@@ -11,7 +11,13 @@ function render_profile($attributes, $content) {
     echo '<div class="'.$classes.'">';
     generate_author_box_tag($id, $label, $isImageCircle);
     echo '</div>';
-    return ob_get_clean();
+    $html = ob_get_clean();
+
+    if (is_rest()) {
+      $html = add_editor_no_link_click_class($html);
+    }
+
+    return $html;
   }
 }
 

@@ -1521,3 +1521,13 @@ body.block-editor-page{
 .is-cocoon-group-link a {
   cursor: default !important;
 }
+
+/*エディタープレビュー上でServerSideRenderブロック内のリンククリックによるクラッシュ遷移を防止*/
+.cocoon-editor-no-link-click a {
+  pointer-events: none;
+  cursor: default;
+}
+
+.cocoon-editor-no-link-click a:focus {
+  outline: none;
+}

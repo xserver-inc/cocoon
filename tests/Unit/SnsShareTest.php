@@ -7,6 +7,7 @@ namespace Cocoon\Tests\Unit;
 
 use Cocoon\Tests\TestCase;
 use Brain\Monkey\Functions;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class SnsShareTest extends TestCase
 {
@@ -43,9 +44,7 @@ class SnsShareTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideShareUrls
-     */
+    #[DataProvider('provideShareUrls')]
     public function test_各種SNSのシェアURLが正しく生成されるか(string $func, string $expected_url): void
     {
         // 共通のモック対象関数

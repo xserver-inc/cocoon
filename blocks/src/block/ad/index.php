@@ -8,7 +8,13 @@ function render_ad($attributes, $content) {
   echo '<div class="'.$classes.'">';
   echo $ad_content;
   echo '</div>';
-  return ob_get_clean();
+  $html = ob_get_clean();
+
+  if (is_rest()) {
+    $html = add_editor_no_link_click_class($html);
+  }
+
+  return $html;
 }
 
 if( function_exists('register_block_type')) {

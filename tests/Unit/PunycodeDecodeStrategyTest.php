@@ -15,6 +15,7 @@ namespace Cocoon\Tests\Unit;
 
 use Cocoon\Tests\TestCase;
 use Punycode;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class PunycodeDecodeStrategyTest extends TestCase
 {
@@ -30,9 +31,7 @@ class PunycodeDecodeStrategyTest extends TestCase
     // Punycode::decode() — ホスト名単体でのデコード（正しい使い方）
     // ========================================================================
 
-    /**
-     * @dataProvider ホスト名デコードプロバイダ
-     */
+    #[DataProvider('ホスト名デコードプロバイダ')]
     public function test_Punycodeクラスはホスト名単体を正しくデコードする(string $input, string $expected): void
     {
         $punycode = new Punycode();
