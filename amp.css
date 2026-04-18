@@ -3963,6 +3963,7 @@ div.search-form {
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a,
 [class*=inline-button-] {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);

@@ -4015,6 +4015,7 @@ body.wp-admin {
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a,
 .admin-settings .demo [class*=inline-button-] {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -12637,6 +12638,7 @@ body.wp-admin {
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a,
 .admin-settings .demo [class*=inline-button-] {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -21922,6 +21924,7 @@ select option.fa:before {
 .components-popover__content .btn-wrap > a,
 .components-popover__content .wp-block-freeform .btn-wrap > a,
 .components-popover__content [class*=inline-button-] {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);

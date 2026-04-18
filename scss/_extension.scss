@@ -857,6 +857,8 @@ div.search-form{
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a,
 [class*="inline-button-"]{
+  // 親要素のテキスト色指定に影響されないように、ボタンのテキスト色を白にリセットする
+  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
