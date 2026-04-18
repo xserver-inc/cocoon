@@ -11,12 +11,13 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_404_IMAGE_URL', '404_image_url');
 if ( !function_exists( 'get_404_image_url' ) ):
 function get_404_image_url(){
-  $url = get_theme_option(OP_404_IMAGE_URL, get_default_404_image_url());
-  $url = trim($url);
-  if (empty($url)) {
+  // デフォルトなしで取得し、null（未保存）のときのみデフォルト画像を使う
+  // 空文字列（ユーザーが意図的に消去）の場合は空のまま返し、非表示を許可する
+  $url = get_theme_option(OP_404_IMAGE_URL);
+  if ( is_null($url) ) {
     $url = get_default_404_image_url();
   }
-  return apply_filters('get_404_image_url', $url);
+  return apply_filters('get_404_image_url', trim($url));
 }
 endif;
 if ( !function_exists( 'get_default_404_image_url' ) ):

@@ -8,13 +8,21 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php get_header(); ?>
 
-<article class="post article">
-  <!--ループ開始-->
-  <?php if (get_404_page_title()): ?>
-    <h1 class="entry-title"><?php echo get_404_page_title(); ?></h1>
+<article class="not-found article">
+
+  <?php
+  // 各値を変数に格納
+  $not_found_title     = get_404_page_title();
+  $not_found_image_url = get_404_image_url();
+  ?>
+
+  <?php if ($not_found_title): ?>
+    <h1 class="entry-title"><?php echo $not_found_title; ?></h1>
   <?php endif; ?>
 
-  <img class="not-found" src="<?php echo get_404_image_url(); ?>" alt="404 Not Found" />
+  <?php if ($not_found_image_url): ?>
+    <img class="not-found" src="<?php echo esc_url($not_found_image_url); ?>" alt="404 Not Found" />
+  <?php endif; ?>
 
   <?php echo do_shortcode(wpautop(get_404_page_message())); ?>
 
@@ -24,5 +32,5 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <?php endif; ?>
 
 </article>
-<!-- END div.post -->
+<!-- END article.not-found -->
 <?php get_footer(); ?>
