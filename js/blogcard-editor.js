@@ -11,6 +11,8 @@
 ( function () {
   // WordPress APIへの参照
   var createElement = wp.element.createElement;
+  // 翻訳関数を取得する
+  var __ = wp.i18n.__;
   // WordPress 6.x 以降で { default: Component } 形式に変わるケースに対応
   var ServerSideRender = ( wp.serverSideRender && wp.serverSideRender.default )
     || wp.serverSideRender
@@ -30,7 +32,7 @@
 
     // ブログカード埋め込みブロックを登録
     wp.blocks.registerBlockType( 'cocoon-blocks/embed-blogcard', {
-      title: 'ブログカード（埋め込み）',
+      title: __( 'ブログカード（埋め込み）', 'cocoon' ),
       icon: 'admin-links',
       category: 'cocoon-block',
       attributes: {
@@ -79,7 +81,7 @@
           return createElement(
             'div',
             blockProps,
-            createElement( 'p', null, 'URLが設定されていません' )
+            createElement( 'p', null, __( 'URLが設定されていません', 'cocoon' ) )
           );
         }
 

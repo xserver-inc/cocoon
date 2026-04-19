@@ -14246,159 +14246,159 @@ msgstr "在编辑器中搜索并选择Amazon商品，插入静态商品链接。
 #: lib/block-amazon-product-link-cron.php:19
 #: lib/page-settings/apis-forms.php:377
 msgid "2日ごと"
-msgstr ""
+msgstr "每2天"
 
 #: lib/block-amazon-product-link-cron.php:24
 msgid "3日ごと"
-msgstr ""
+msgstr "每3天"
 
 #: lib/block-amazon-product-link-cron.php:29
 #: lib/page-settings/apis-forms.php:379
 msgid "5日ごと"
-msgstr ""
+msgstr "每5天"
 
 #: lib/page-settings/apis-forms.php:174
 msgid "楽天側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。"
-msgstr ""
+msgstr "显示在乐天注册的说明（若无信息则不显示）。若设置了desc选项，则优先显示选项值。"
 
 #: lib/page-settings/apis-forms.php:376
 msgid "1日ごと"
-msgstr ""
+msgstr "每天"
 
 #: lib/page-settings/apis-forms.php:378
 msgid "3日ごと（推奨）"
-msgstr ""
+msgstr "每3天（推荐）"
 
 #: lib/page-settings/apis-forms.php:380
 msgid "1週間ごと"
-msgstr ""
+msgstr "每周"
 
 #: lib/page-settings/apis-forms.php:389
 msgid "更新間隔が短いほどAPIのリクエスト数が増えます。Amazon・楽天それぞれのAPIリクエスト制限にご注意ください。"
-msgstr ""
+msgstr "更新间隔越短，API请求次数越多。请注意Amazon・乐天各自的API请求限制。"
 
 #: lib/page-settings/apis-forms.php:393
 msgid "5投稿"
-msgstr ""
+msgstr "5篇文章"
 
 #: lib/page-settings/apis-forms.php:407
 msgid "※共有ホスティングをご利用の場合は30以下を推奨します。50以上に設定するとサーバー側のタイムアウト制限により処理が中断される場合があります。"
-msgstr ""
+msgstr "※如果您使用共享主机，建议设置为30以下。设置为50以上可能会因服务器端超时限制而导致处理中断。"
 
 #: lib/shortcodes-amazon.php:1125
 msgid "商品を取得できませんでした。Creators APIは正常に応答しましたが、商品情報が含まれていません。"
-msgstr ""
+msgstr "无法获取商品。Creators API已正常响应，但未包含商品信息。"
 
 #: lib/shortcodes-amazon.php:1126
 msgid "考えられる原因："
-msgstr ""
+msgstr "可能的原因："
 
 #: lib/shortcodes-amazon.php:1128
 msgid "存在しないASINを指定している"
-msgstr ""
+msgstr "指定了不存在的ASIN"
 
 #: lib/shortcodes-amazon.php:1129
 msgid "ASINが正しくない（半角英数字10文字）"
-msgstr ""
+msgstr "ASIN不正确（10位英文字母和数字）"
 
 #: lib/shortcodes-amazon.php:1130
 msgid "商品が販売終了・取り下げされている"
-msgstr ""
+msgstr "商品已停售或下架"
 
 #: lib/shortcodes-amazon.php:1131
 msgid "トラッキングIDが正しくない"
-msgstr ""
+msgstr "跟踪ID不正确"
 
 #: lib/shortcodes-amazon.php:1132
 msgid "Creators APIの認証情報が正しくない"
-msgstr ""
+msgstr "Creators API认证信息不正确"
 
 #: lib/shortcodes-product-func.php:387
 #, php-format
 msgid "（%s時点）"
-msgstr ""
+msgstr "（%s时）"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:47
 msgid "「新着記事」表示"
-msgstr ""
+msgstr "显示\"最新文章\""
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:35
 #, php-format
 msgid "NEWマーク（%d～%d日、0はオフ）"
-msgstr ""
+msgstr "NEW标记（%d～%d天，0为关闭）"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:56
 msgid "ダークモード"
-msgstr ""
+msgstr "深色模式"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:56
 #, php-format
 msgid "フォントサイズ（%d～%dpx）"
-msgstr ""
+msgstr "字体大小（%d～%dpx）"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:60
 msgid "Scrollボタンカラー"
-msgstr ""
+msgstr "滚动按钮颜色"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:132
 #, php-format
 msgid "不透明度（opacity値%d～%d%%）"
-msgstr ""
+msgstr "不透明度（opacity值%d～%d%%）"
 
 #: blocks/src/block/campaign/block.json
 msgctxt "block keyword"
 msgid "campaign"
-msgstr ""
+msgstr "campaign"
 
 #: blocks/src/block/campaign/block.json
 msgctxt "block keyword"
 msgid "キャンペーン"
-msgstr ""
+msgstr "活动"
 
 #: blocks/src/block/campaign/block.json
 msgctxt "block keyword"
 msgid "期間"
-msgstr ""
+msgstr "期间"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block title"
 msgid "ログインユーザー限定"
-msgstr ""
+msgstr "仅限登录用户"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block description"
 msgid "ログインしているユーザーにのみコンテンツを表示します"
-msgstr ""
+msgstr "仅向已登录的用户显示内容"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "login"
-msgstr ""
+msgstr "login"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "user"
-msgstr ""
+msgstr "user"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "only"
-msgstr ""
+msgstr "only"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "member"
-msgstr ""
+msgstr "member"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "会員"
-msgstr ""
+msgstr "会员"
 
 #: blocks/src/block/rakuten-product-link/block.json
 msgctxt "block description"
 msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
-msgstr ""
+msgstr "在编辑器内搜索并选择乐天商品，插入静态商品链接。"
 
 msgid "楽天商品検索API"
 msgstr "乐天商品搜索API"
@@ -14414,3 +14414,11 @@ msgstr "乐天访问密钥"
 
 msgid "楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。"
 msgstr "使用乐天API所需的访问密钥。请重新注册应用以获取。<br>※旧API（app.rakuten.co.jp）预计于2026年5月废弃。如果未输入，将继续使用旧API直到其废除，但请尽快设置访问密钥。"
+
+#: js/blogcard-editor.js
+msgid "ブログカード（埋め込み）"
+msgstr "博客卡片（嵌入）"
+
+#: js/blogcard-editor.js
+msgid "URLが設定されていません"
+msgstr "未设置URL"

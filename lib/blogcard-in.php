@@ -439,10 +439,10 @@ function cocoon_register_embed_blogcard_block() {
     'isInternalActive' => is_internal_blogcard_enable(),
     'isExternalActive' => is_external_blogcard_enable(),
   );
-  wp_add_inline_script( 
-    'cocoon-blogcard-editor', 
-    'var cocoonBlogcardSettings = ' . wp_json_encode( $blogcard_settings ) . ';', 
-    'before' 
+  wp_add_inline_script(
+    'cocoon-blogcard-editor',
+    'var cocoonBlogcardSettings = ' . wp_json_encode( $blogcard_settings ) . ';',
+    'before'
   );
 
   // ダイナミックブロックとして登録（PHPのrender_callbackでHTMLを生成）
@@ -452,7 +452,10 @@ function cocoon_register_embed_blogcard_block() {
       'url' => array( 'type' => 'string', 'default' => '' ),
     ),
     'render_callback' => 'cocoon_embed_blogcard_render',
+    'script_handles'  => array(),
   );
+  // エディタースクリプトに翻訳を適用する
+  wp_set_script_translations( 'cocoon-blogcard-editor', 'cocoon', get_cocoon_template_directory() . '/languages' );
   // ブロック登録自体は常に行い、設定オフ時に既存ブロックが「非サポート」になるのを防止する
   // WP 6.1+ は editor_script_handles（推奨形式）、WP 6.0以下は editor_script（旧形式）を使用
   if ( function_exists( 'is_wp_6_1_or_over' ) && is_wp_6_1_or_over() ) {

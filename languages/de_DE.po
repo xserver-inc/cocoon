@@ -14251,159 +14251,159 @@ msgstr "Suchen und wählen Sie Amazon-Produkte im Editor aus und fügen Sie eine
 #: lib/block-amazon-product-link-cron.php:19
 #: lib/page-settings/apis-forms.php:377
 msgid "2日ごと"
-msgstr ""
+msgstr "Alle 2 Tage"
 
 #: lib/block-amazon-product-link-cron.php:24
 msgid "3日ごと"
-msgstr ""
+msgstr "Alle 3 Tage"
 
 #: lib/block-amazon-product-link-cron.php:29
 #: lib/page-settings/apis-forms.php:379
 msgid "5日ごと"
-msgstr ""
+msgstr "Alle 5 Tage"
 
 #: lib/page-settings/apis-forms.php:174
 msgid "楽天側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。"
-msgstr ""
+msgstr "Zeigt die bei Rakuten registrierte Beschreibung an (wird nicht angezeigt, wenn keine Informationen vorhanden sind). Wenn die desc-Option gesetzt ist, wird der Optionswert bevorzugt angezeigt."
 
 #: lib/page-settings/apis-forms.php:376
 msgid "1日ごと"
-msgstr ""
+msgstr "Täglich"
 
 #: lib/page-settings/apis-forms.php:378
 msgid "3日ごと（推奨）"
-msgstr ""
+msgstr "Alle 3 Tage (empfohlen)"
 
 #: lib/page-settings/apis-forms.php:380
 msgid "1週間ごと"
-msgstr ""
+msgstr "Wöchentlich"
 
 #: lib/page-settings/apis-forms.php:389
 msgid "更新間隔が短いほどAPIのリクエスト数が増えます。Amazon・楽天それぞれのAPIリクエスト制限にご注意ください。"
-msgstr ""
+msgstr "Je kürzer das Aktualisierungsintervall, desto mehr API-Anfragen werden gestellt. Bitte beachten Sie die API-Anfragebeschränkungen von Amazon und Rakuten."
 
 #: lib/page-settings/apis-forms.php:393
 msgid "5投稿"
-msgstr ""
+msgstr "5 Beiträge"
 
 #: lib/page-settings/apis-forms.php:407
 msgid "※共有ホスティングをご利用の場合は30以下を推奨します。50以上に設定するとサーバー側のタイムアウト制限により処理が中断される場合があります。"
-msgstr ""
+msgstr "* Bei Shared Hosting empfehlen wir einen Wert von maximal 30. Bei einem Wert von 50 oder mehr kann die Verarbeitung aufgrund serverseitiger Zeitlimits unterbrochen werden."
 
 #: lib/shortcodes-amazon.php:1125
 msgid "商品を取得できませんでした。Creators APIは正常に応答しましたが、商品情報が含まれていません。"
-msgstr ""
+msgstr "Produkt konnte nicht abgerufen werden. Die Creators API hat erfolgreich geantwortet, aber keine Produktinformationen wurden zurückgegeben."
 
 #: lib/shortcodes-amazon.php:1126
 msgid "考えられる原因："
-msgstr ""
+msgstr "Mögliche Ursachen:"
 
 #: lib/shortcodes-amazon.php:1128
 msgid "存在しないASINを指定している"
-msgstr ""
+msgstr "Eine ungültige ASIN wurde angegeben"
 
 #: lib/shortcodes-amazon.php:1129
 msgid "ASINが正しくない（半角英数字10文字）"
-msgstr ""
+msgstr "Die ASIN ist falsch (10 alphanumerische Zeichen)"
 
 #: lib/shortcodes-amazon.php:1130
 msgid "商品が販売終了・取り下げされている"
-msgstr ""
+msgstr "Das Produkt wurde eingestellt oder zurückgezogen"
 
 #: lib/shortcodes-amazon.php:1131
 msgid "トラッキングIDが正しくない"
-msgstr ""
+msgstr "Die Tracking-ID ist falsch"
 
 #: lib/shortcodes-amazon.php:1132
 msgid "Creators APIの認証情報が正しくない"
-msgstr ""
+msgstr "Die Credentials der Creators API sind falsch"
 
 #: lib/shortcodes-product-func.php:387
 #, php-format
 msgid "（%s時点）"
-msgstr ""
+msgstr "(Stand: %s)"
 
 #: skins/skin-made-in-heaven/lib/panel-main.php:47
 msgid "「新着記事」表示"
-msgstr ""
+msgstr "Anzeige \"Neue Artikel\""
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:35
 #, php-format
 msgid "NEWマーク（%d～%d日、0はオフ）"
-msgstr ""
+msgstr "NEU-Markierung (%d–%d Tage, 0 = aus)"
 
 #: skins/skin-made-in-heaven/lib/panel-option.php:56
 msgid "ダークモード"
-msgstr ""
+msgstr "Dunkelmodus"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:56
 #, php-format
 msgid "フォントサイズ（%d～%dpx）"
-msgstr ""
+msgstr "Schriftgröße (%d–%dpx)"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:60
 msgid "Scrollボタンカラー"
-msgstr ""
+msgstr "Scroll-Schaltflächenfarbe"
 
 #: skins/skin-made-in-heaven/lib/panel-visual.php:132
 #, php-format
 msgid "不透明度（opacity値%d～%d%%）"
-msgstr ""
+msgstr "Deckkraft (opacity-Wert %d–%d%%)"
 
 #: blocks/src/block/campaign/block.json
 msgctxt "block keyword"
 msgid "campaign"
-msgstr ""
+msgstr "campaign"
 
 #: blocks/src/block/campaign/block.json
 msgctxt "block keyword"
 msgid "キャンペーン"
-msgstr ""
+msgstr "Kampagne"
 
 #: blocks/src/block/campaign/block.json
 msgctxt "block keyword"
 msgid "期間"
-msgstr ""
+msgstr "Zeitraum"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block title"
 msgid "ログインユーザー限定"
-msgstr ""
+msgstr "Nur für eingeloggte Benutzer"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block description"
 msgid "ログインしているユーザーにのみコンテンツを表示します"
-msgstr ""
+msgstr "Zeigt Inhalte nur für eingeloggte Benutzer an"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "login"
-msgstr ""
+msgstr "login"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "user"
-msgstr ""
+msgstr "user"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "only"
-msgstr ""
+msgstr "only"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "member"
-msgstr ""
+msgstr "member"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "会員"
-msgstr ""
+msgstr "Mitglied"
 
 #: blocks/src/block/rakuten-product-link/block.json
 msgctxt "block description"
 msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
-msgstr ""
+msgstr "Suchen und wählen Sie Rakuten-Produkte im Editor und fügen Sie einen statischen Produktlink ein."
 
 msgid "楽天商品検索API"
 msgstr "Rakuten-Produktsuche API"
@@ -14420,3 +14420,11 @@ msgstr "Rakuten-Zugangsschlüssel"
 msgid "楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。"
 msgstr "Für die Nutzung der Rakuten-API ist ein Zugangsschlüssel erforderlich. Bitte registrieren Sie die App erneut, um ihn zu erhalten.<br>*Die alte API (app.rakuten.co.jp) wird voraussichtlich im Mai 2026 eingestellt. Solange sie nicht angegeben wird, wird die alte API bis zur Einstellung verwendet. Bitte legen Sie den Zugangsschlüssel jedoch so bald wie möglich fest."
 
+
+#: js/blogcard-editor.js
+msgid "ブログカード（埋め込み）"
+msgstr "Blogkarte (Eingebettet)"
+
+#: js/blogcard-editor.js
+msgid "URLが設定されていません"
+msgstr "URL ist nicht festgelegt"
