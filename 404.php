@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php get_header(); ?>
 
-<article class="not-found article">
+<article class="post article">
 
   <?php
   // 各値を変数に格納
