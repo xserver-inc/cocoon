@@ -4127,11 +4127,15 @@ if ( !function_exists( 'is_current_url_same' ) ):
 function is_current_url_same($url) {
   if (empty($url) || !is_string($url)) return false;
 
-  // 現在のページURL（フロント）と、現在処理中の投稿URL（REST API等のプレビュー対策）の両方を比較対象とする
+  // 現在のページURL（フロント）を比較対象とする
   $urls_to_check = array(get_current_page_url());
-  $post_id = get_the_ID();
-  if ($post_id) {
-    $urls_to_check[] = get_permalink($post_id);
+  // アーカイブページ等では get_the_ID() がループ先頭の投稿IDを返し誤判定になるため
+  // is_singular() のとき（個別の投稿・固定ページ）のみ投稿IDによるチェックを行う
+  if ( is_singular() ) {
+    $post_id = get_the_ID();
+    if ($post_id) {
+      $urls_to_check[] = get_permalink($post_id);
+    }
   }
 
   $target = trim($url);
