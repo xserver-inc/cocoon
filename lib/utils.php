@@ -4136,6 +4136,13 @@ function is_current_url_same($url) {
     if ($post_id) {
       $urls_to_check[] = get_permalink($post_id);
     }
+  } elseif ( defined('REST_REQUEST') && REST_REQUEST ) {
+    // REST API経由の描画時（Gutenbergブロックプレビュー等）は
+    // is_singular() が false になるため get_post() から現在投稿を補完する
+    $current_post = get_post();
+    if ($current_post && $current_post->ID) {
+      $urls_to_check[] = get_permalink($current_post->ID);
+    }
   }
 
   $target = trim($url);
