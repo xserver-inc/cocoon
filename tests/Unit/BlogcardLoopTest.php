@@ -247,11 +247,11 @@ class BlogcardLoopTest extends TestCase
         // そのため、同一ドメインの日本語/Punycodeのすり合わせテストはここで行わず、
         // 別の独立したテストを用意するか、あるいはテスト内で明示的に
         // home_url や get_current_page_url の振る舞いまでモックする必要がある。
-        // 
+        //
         // 簡略化のため、ここでは $url に直接 current URL をセットする方式ではなく
         // is_current_url_same が punycode_decode の上で動く前提として
         // 挙動を確認できる簡単なケースのみを残す。
-        
+
         // 異なるドメインのURLはFALSEを返す
         $this->setCurrentPageUrl('https://example.com/post/');
         $this->assertFalse(is_current_url_same('https://xn--eckwd4c7c.com/post/'));
@@ -408,10 +408,10 @@ class BlogcardLoopTest extends TestCase
     {
         global $wp;
         $original_wp = $wp;
-        
+
         // $wp を null にしてテスト
         $wp = null;
-        
+
         try {
             $url = get_current_page_url();
             // home_url('') である http://example.com が返るはず（テスト環境の home_url スタブによる）
@@ -428,7 +428,7 @@ class BlogcardLoopTest extends TestCase
 
         // $ogp が \'error\' の時に $ogp->url や $ogp->site_name にアクセスしないガードがあること
         $this->assertStringContainsString(
-            "\$ogp !== 'error'", 
+            "\$ogp !== 'error'",
             $file,
             'blogcard-out.php にネガティブキャッシュ（$ogp === \'error\'）時のプロパティアクセスガード（$ogp !== \'error\'）が必要です'
         );
@@ -437,5 +437,119 @@ class BlogcardLoopTest extends TestCase
             $file,
             '$ogp->url に対する無条件アクセスは PHP 8.2+ で Deprecated になるため修正が必要です'
         );
+    }
+
+    // ========================================================================
+    // is_current_url_same() - アーカイブページでの誤判定回避（修正検証）
+    // get_the_ID() がループ先頭投稿IDを返しても誤判定しないことを確認
+    // ========================================================================
+
+    public function test_アーカイブ文脈では投稿パーマリンクで誤判定しない(): void
+    {
+        // is_singular = false（アーカイブページ相当）
+        // get_the_ID() = 99（ループ先頭投稿ID）
+        // get_permalink(99) = 'http://example.com/post-99/'
+        // カレントページ = 'http://example.com/category/news/'
+        // ブログカード対象URL = 'http://example.com/post-99/'
+        // → is_singular=false なので投稿URLは比較対象に追加されず FALSE を返すべき
+        global $test_mock_is_singular, $test_mock_get_the_id, $test_mock_get_permalink_map;
+        $test_mock_is_singular = false;
+        $test_mock_get_the_id  = 99;
+        $test_mock_get_permalink_map = [99 => 'http://example.com/post-99/'];
+
+        $this->setCurrentPageUrl('http://example.com/category/news/');
+
+        $result = is_current_url_same('http://example.com/post-99/');
+        $this->assertFalse($result,
+            'アーカイブページで get_the_ID() のループ先頭投稿URLをブログカード指定しても誤判定してはいけない');
+
+        unset($test_mock_is_singular, $test_mock_get_the_id, $test_mock_get_permalink_map);
+    }
+
+    public function test_個別ページ文脈では自己参照を正しく検知する(): void
+    {
+        // is_singular = true（個別投稿ページ）
+        // get_the_ID() = 42
+        // get_permalink(42) = 'http://example.com/my-post/'
+        // ブログカード対象URL = 'http://example.com/my-post/'
+        // → 自己参照なので TRUE を返すべき
+        global $test_mock_is_singular, $test_mock_get_the_id, $test_mock_get_permalink_map;
+        $test_mock_is_singular = true;
+        $test_mock_get_the_id  = 42;
+        $test_mock_get_permalink_map = [42 => 'http://example.com/my-post/'];
+
+        $this->setCurrentPageUrl('http://example.com/my-post/');
+
+        $result = is_current_url_same('http://example.com/my-post/');
+        $this->assertTrue($result,
+            '個別投稿ページで自己URLへのブログカードは自己参照として検知する必要がある');
+
+        unset($test_mock_is_singular, $test_mock_get_the_id, $test_mock_get_permalink_map);
+    }
+
+    public function test_個別ページ文脈では別記事への参照はfalseを返す(): void
+    {
+        // is_singular = true（個別投稿ページ）で別記事URLは FALSE
+        global $test_mock_is_singular, $test_mock_get_the_id, $test_mock_get_permalink_map;
+        $test_mock_is_singular = true;
+        $test_mock_get_the_id  = 42;
+        $test_mock_get_permalink_map = [42 => 'http://example.com/my-post/'];
+
+        $this->setCurrentPageUrl('http://example.com/my-post/');
+
+        $result = is_current_url_same('http://example.com/other-post/');
+        $this->assertFalse($result,
+            '個別投稿ページで別記事URLはブログカード化できるべき');
+
+        unset($test_mock_is_singular, $test_mock_get_the_id, $test_mock_get_permalink_map);
+    }
+
+    // ========================================================================
+    // is_current_url_same() - REST API経由の自己参照判定（修正検証）
+    // ========================================================================
+
+    public function test_REST_API文脈では自己参照URLを正しく検知する(): void
+    {
+        // REST_REQUEST = true, is_singular = false
+        // get_post() が投稿オブジェクト（ID=55）を返す
+        // get_permalink(55) = 'http://example.com/rest-post/'
+        // ブログカード対象URL = 'http://example.com/rest-post/'
+        // → 自己参照なので TRUE を返すべき
+        global $test_mock_is_singular, $test_mock_get_post, $test_mock_get_permalink_map;
+        $test_mock_is_singular = false;
+
+        $post_obj     = new \stdClass();
+        $post_obj->ID = 55;
+        $test_mock_get_post        = $post_obj;
+        $test_mock_get_permalink_map = [55 => 'http://example.com/rest-post/'];
+
+        $this->setCurrentPageUrl('http://example.com/');
+
+        if (!defined('REST_REQUEST')) {
+            define('REST_REQUEST', true);
+        }
+
+        $result = is_current_url_same('http://example.com/rest-post/');
+        $this->assertTrue($result,
+            'REST API文脈では get_post() 経由の投稿URLを自己参照として検知する必要がある');
+
+        unset($test_mock_is_singular, $test_mock_get_post, $test_mock_get_permalink_map);
+    }
+
+    public function test_REST_API文脈でget_postがnullのときはfalseを返す(): void
+    {
+        // REST_REQUEST = true だが get_post() = null（投稿なし）の場合は判定しない
+        global $test_mock_is_singular, $test_mock_get_post;
+        $test_mock_is_singular = false;
+        $test_mock_get_post    = null;
+
+        $this->setCurrentPageUrl('http://example.com/');
+
+        // REST_REQUEST は一度定義すると変更不可のため、定義済み前提で進む
+        $result = is_current_url_same('http://example.com/some-post/');
+        $this->assertFalse($result,
+            'REST API文脈で get_post() が null なら自己参照とみなさない');
+
+        unset($test_mock_is_singular, $test_mock_get_post);
     }
 }

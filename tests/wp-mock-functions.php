@@ -8,6 +8,11 @@
  * "undefined function" エラーが発生しなくなります。
  */
 
+// WordPress コア定数（関数のデフォルト引数で使われるため関数定義より先に宣言が必要）
+if (!defined('OBJECT'))       define('OBJECT',       'OBJECT');
+if (!defined('ARRAY_A'))      define('ARRAY_A',      'ARRAY_A');
+if (!defined('ARRAY_N'))      define('ARRAY_N',      'ARRAY_N');
+
 // WordPress のコア関数スタブ（テーマファイル読み込み時に必要）
 // これらはBrain\Monkeyのセットアップ前に必要な最小限のスタブです。
 // テスト内での動作カスタマイズはBrain\Monkey::functions()->when() を使用してください。
@@ -186,7 +191,8 @@ if (!function_exists('is_wp_error')) {
 
 if (!function_exists('get_the_ID')) {
     function get_the_ID() {
-        return 1;
+        global $test_mock_get_the_id;
+        return isset($test_mock_get_the_id) ? $test_mock_get_the_id : 1;
     }
 }
 
@@ -210,7 +216,8 @@ if (!function_exists('strip_tags')) {
 
 if (!function_exists('is_singular')) {
     function is_singular($post_types = '') {
-        return false;
+        global $test_mock_is_singular;
+        return isset($test_mock_is_singular) ? (bool)$test_mock_is_singular : false;
     }
 }
 
@@ -438,7 +445,13 @@ if (!function_exists('get_post_status')) {
 }
 
 if (!function_exists('get_permalink')) {
+    // テスト用: $test_mock_get_permalink_map[$post_id] に URL をセットすると
+    // その ID の get_permalink() がそのURLを返す
     function get_permalink($post = 0) {
+        global $test_mock_get_permalink_map;
+        if (is_array($test_mock_get_permalink_map) && isset($test_mock_get_permalink_map[$post])) {
+            return $test_mock_get_permalink_map[$post];
+        }
         return 'http://example.com/';
     }
 }
@@ -458,8 +471,10 @@ if (!function_exists('has_post_thumbnail')) {
 
 
 if (!function_exists('get_post')) {
+    // テスト用: $test_mock_get_post にオブジェクトをセットすると get_post() がそれを返す
     function get_post($post = null, $output = OBJECT, $filter = 'raw') {
-        return null;
+        global $test_mock_get_post;
+        return isset($test_mock_get_post) ? $test_mock_get_post : null;
     }
 }
 
