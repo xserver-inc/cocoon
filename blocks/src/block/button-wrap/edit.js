@@ -51,6 +51,7 @@ export function ButtonWrapEdit( props ) {
     'btn-wrap': true,
     'btn-wrap-block': true,
     [ BUTTON_BLOCK ]: true,
+    'cocoon-editor-no-link-click': true,
     [ size ]: size,
     'btn-wrap-circle': !! isCircle,
     'btn-wrap-shine': !! isShine,

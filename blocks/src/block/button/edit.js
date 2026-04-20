@@ -51,6 +51,7 @@ export function ButtonEdit( props ) {
 
   const classes = classnames( className, {
     [ BUTTON_BLOCK ]: true,
+    'cocoon-editor-no-link-click': true,
   } );
 
   const styles = {
