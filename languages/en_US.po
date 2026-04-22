@@ -14428,3 +14428,19 @@ msgstr "Blog Card (Embed)"
 #: js/blogcard-editor.js
 msgid "URLが設定されていません"
 msgstr "URL is not set"
+
+#: lib/page-settings/single-forms.php:457
+msgid "カテゴリーの取得設定"
+msgstr "Category selection setting"
+
+#: lib/page-settings/single-forms.php:462
+msgid "従来通り（最初のカテゴリーを基準：デフォルト）"
+msgstr "As before (use the first category as the base: default)"
+
+#: lib/page-settings/single-forms.php:463
+msgid "最も深く階層を持つ子カテゴリーを優先"
+msgstr "Prioritize the child category with the deepest hierarchy"
+
+#: lib/page-settings/single-forms.php:466
+msgid "階層化された複数のカテゴリーにチェックが入っている場合に、起点となるカテゴリーの設定をします。なお、投稿のメインカテゴリーが指定されている場合は、そちらの設定が優先されます。"
+msgstr "Set which category to use as the starting point when multiple hierarchical categories are checked. If a main category is specified for the post, that setting takes priority."

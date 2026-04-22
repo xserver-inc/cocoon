@@ -49,9 +49,29 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_tax() || is_category()
 
     // 最初の階層型タクソノミーでタームを取得
     $cats = wp_get_post_terms($post->ID, reset($hierarchical_taxonomies), $args);
-    if (!empty($cats)) {
+    // wp_get_post_terms は失敗時に WP_Error を返すため、配列であることを確認する
+    if (!empty($cats) && !is_wp_error($cats)) {
       // 最初のタクソノミーを取得
       $cat = $cats[0];
+
+      // 最も深い階層の子カテゴリーを優先する場合
+      // 同じ深さのカテゴリーが複数ある場合は、wp_get_post_terms の取得順
+      // （上記 $args により name 昇順）で最初に現れたものが選ばれる。
+      // これは従来の $cats[0] と同じ並び順基準であり、一貫性を保っている。
+      if (is_single_breadcrumbs_category_priority_deepest()) {
+        $max_depth = -1;
+        $deepest_cat = $cat;
+
+        foreach ($cats as $t) {
+          $ancestors = get_ancestors($t->term_id, $t->taxonomy);
+          $depth = count($ancestors);
+          if ($depth > $max_depth) {
+            $max_depth = $depth;
+            $deepest_cat = $t;
+          }
+        }
+        $cat = $deepest_cat;
+      }
     }
 
     // 投稿にメインカテゴリー設定の場合

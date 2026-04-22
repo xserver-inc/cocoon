@@ -99,3 +99,6 @@ update_theme_option(OP_SINGLE_BREADCRUMBS_POSITION);
 
 //パンくずリストに当該記事を含めるか
 update_theme_option(OP_SINGLE_BREADCRUMBS_INCLUDE_POST);
+
+//パンくずリストのカテゴリー取得設定
+update_theme_option(OP_SINGLE_BREADCRUMBS_CATEGORY_PRIORITY);

@@ -451,6 +451,23 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- カテゴリー取得設定 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SINGLE_BREADCRUMBS_CATEGORY_PRIORITY, __('カテゴリーの取得設定', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'default' => __( '従来通り（最初のカテゴリーを基準：デフォルト）', THEME_NAME ),
+              'deepest' => __( '最も深く階層を持つ子カテゴリーを優先', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_SINGLE_BREADCRUMBS_CATEGORY_PRIORITY, $options, get_single_breadcrumbs_category_priority());
+            generate_tips_tag(__( '階層化された複数のカテゴリーにチェックが入っている場合に、起点となるカテゴリーの設定をします。なお、投稿のメインカテゴリーが指定されている場合は、そちらの設定が優先されます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

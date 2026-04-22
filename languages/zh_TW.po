@@ -14423,3 +14423,19 @@ msgstr "部落格卡片（嵌入）"
 #: js/blogcard-editor.js
 msgid "URLが設定されていません"
 msgstr "未設定URL"
+
+#: lib/page-settings/single-forms.php:457
+msgid "カテゴリーの取得設定"
+msgstr "分類選擇設定"
+
+#: lib/page-settings/single-forms.php:462
+msgid "従来通り（最初のカテゴリーを基準：デフォルト）"
+msgstr "沿用原有方式（以第一個分類為基準：預設）"
+
+#: lib/page-settings/single-forms.php:463
+msgid "最も深く階層を持つ子カテゴリーを優先"
+msgstr "優先選擇階層最深的子分類"
+
+#: lib/page-settings/single-forms.php:466
+msgid "階層化された複数のカテゴリーにチェックが入っている場合に、起点となるカテゴリーの設定をします。なお、投稿のメインカテゴリーが指定されている場合は、そちらの設定が優先されます。"
+msgstr "當勾選多個具階層的分類時，設定要作為起點的分類。若文章已指定主要分類，則優先採用主要分類設定。"

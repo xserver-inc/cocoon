@@ -313,3 +313,16 @@ function is_single_breadcrumbs_include_post(){
   return get_theme_option(OP_SINGLE_BREADCRUMBS_INCLUDE_POST);
 }
 endif;
+
+//パンくずリストのカテゴリー取得設定
+define('OP_SINGLE_BREADCRUMBS_CATEGORY_PRIORITY', 'single_breadcrumbs_category_priority');
+if ( !function_exists( 'get_single_breadcrumbs_category_priority' ) ):
+function get_single_breadcrumbs_category_priority(){
+  return get_theme_option(OP_SINGLE_BREADCRUMBS_CATEGORY_PRIORITY, 'default');
+}
+endif;
+if ( !function_exists( 'is_single_breadcrumbs_category_priority_deepest' ) ):
+function is_single_breadcrumbs_category_priority_deepest(){
+  return get_single_breadcrumbs_category_priority() == 'deepest';
+}
+endif;

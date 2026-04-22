@@ -14423,3 +14423,19 @@ msgstr "블로그 카드（임베드）"
 #: js/blogcard-editor.js
 msgid "URLが設定されていません"
 msgstr "URL이 설정되지 않았습니다"
+
+#: lib/page-settings/single-forms.php:457
+msgid "カテゴリーの取得設定"
+msgstr "카테고리 선택 설정"
+
+#: lib/page-settings/single-forms.php:462
+msgid "従来通り（最初のカテゴリーを基準：デフォルト）"
+msgstr "기존 방식(첫 번째 카테고리를 기준으로 사용: 기본값)"
+
+#: lib/page-settings/single-forms.php:463
+msgid "最も深く階層を持つ子カテゴリーを優先"
+msgstr "계층이 가장 깊은 하위 카테고리를 우선"
+
+#: lib/page-settings/single-forms.php:466
+msgid "階層化された複数のカテゴリーにチェックが入っている場合に、起点となるカテゴリーの設定をします。なお、投稿のメインカテゴリーが指定されている場合は、そちらの設定が優先されます。"
+msgstr "계층 구조가 있는 여러 카테고리가 선택된 경우, 기준으로 사용할 카테고리를 설정합니다. 게시글의 메인 카테고리가 지정되어 있으면 해당 설정이 우선됩니다."
