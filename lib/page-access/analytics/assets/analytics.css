@@ -1,0 +1,564 @@
+/* Cocoon Analytics Dashboard Styles */
+
+/* カレンダーヒートマップ */
+.cocoon-analytics-heatmap {
+  overflow-x: auto;
+  padding: 4px 0;
+}
+.cocoon-analytics-heatmap-grid {
+  display: flex;
+  gap: 4px;
+  min-width: 720px;
+}
+.cocoon-analytics-heatmap-days {
+  display: grid;
+  grid-template-rows: 16px repeat(7, 13px);
+  gap: 3px;
+  font-size: 10px;
+  color: #666;
+  padding-right: 4px;
+  padding-top: 16px;
+}
+.cocoon-analytics-heatmap-day {
+  line-height: 13px;
+  text-align: right;
+  width: 18px;
+}
+.cocoon-analytics-heatmap-day.is-invisible {
+  visibility: hidden;
+}
+.cocoon-analytics-heatmap-weeks {
+  display: flex;
+  gap: 3px;
+}
+.cocoon-analytics-heatmap-week {
+  display: grid;
+  grid-template-rows: 16px repeat(7, 13px);
+  gap: 3px;
+}
+.cocoon-analytics-heatmap-month {
+  font-size: 10px;
+  color: #666;
+  line-height: 16px;
+  height: 16px;
+  white-space: nowrap;
+}
+.cocoon-analytics-heatmap-cell {
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  background: #ebedf0;
+  transition: transform .1s;
+}
+.cocoon-analytics-heatmap-cell:hover {
+  transform: scale(1.25);
+}
+.cocoon-analytics-heatmap-cell.is-empty {
+  background: transparent;
+}
+.cocoon-analytics-heatmap-cell.is-future {
+  background: #f5f6f8;
+  opacity: 0.4;
+}
+.cocoon-analytics-heatmap-cell.is-level-0 { background: #ebedf0; }
+.cocoon-analytics-heatmap-cell.is-level-1 { background: #c6e48b; }
+.cocoon-analytics-heatmap-cell.is-level-2 { background: #7bc96f; }
+.cocoon-analytics-heatmap-cell.is-level-3 { background: #239a3b; }
+.cocoon-analytics-heatmap-cell.is-level-4 { background: #196127; }
+
+.cocoon-analytics-heatmap-legend {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #666;
+  justify-content: flex-end;
+}
+.cocoon-analytics-heatmap-legend .cocoon-analytics-heatmap-cell {
+  display: inline-block;
+  pointer-events: none;
+}
+
+.cocoon-analytics-wrap .nav-tab-wrapper {
+  margin: 16px 0;
+}
+
+.cocoon-analytics-period-form,
+.cocoon-analytics-filter-bar {
+  margin: 12px 0 20px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cocoon-analytics-period-form label,
+.cocoon-analytics-filter-bar label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.cocoon-analytics-range-label {
+  color: #666;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.cocoon-analytics-section {
+  margin: 16px 0;
+}
+
+/* KPI カード */
+.cocoon-analytics-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cocoon-analytics-kpi-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.cocoon-analytics-kpi-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.cocoon-analytics-kpi-value {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1d2327;
+  line-height: 1.2;
+}
+
+.cocoon-analytics-kpi-compare {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #666;
+}
+
+.cocoon-analytics-diff {
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.cocoon-analytics-diff-up    { color: #1e8e3e; }
+.cocoon-analytics-diff-down  { color: #d93025; }
+.cocoon-analytics-diff-neutral { color: #5f6368; }
+
+/* カード */
+.cocoon-analytics-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.cocoon-analytics-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #1d2327;
+}
+
+.cocoon-analytics-card canvas {
+  max-width: 100%;
+  height: 280px !important;
+}
+
+/* ドーナツ/パイ系は凡例が右に出るためやや高めに確保 */
+.cocoon-analytics-card canvas#cocoon-analytics-type,
+.cocoon-analytics-card canvas#cocoon-analytics-category,
+.cocoon-analytics-card canvas#cocoon-analytics-tag,
+.cocoon-analytics-card canvas#cocoon-analytics-terms,
+.cocoon-analytics-card canvas#cocoon-analytics-authors {
+  height: 320px !important;
+}
+
+/* 2カラムグリッド */
+.cocoon-analytics-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 16px;
+  align-items: start; /* 高さ合わせで他カードが引き延ばされないように */
+}
+
+/* 2カラム時に最終カードが奇数で余ったとき、横幅を半分に制限してバランスを保つ */
+@media (min-width: 880px) {
+  .cocoon-analytics-grid-2 > .cocoon-analytics-card:last-child:nth-child(odd) {
+    max-width: calc(50% - 8px);
+  }
+}
+
+/* 3カラムグリッド */
+.cocoon-analytics-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* ------------------------------------------------------------------
+ * タイルレイアウト（WordPressダッシュボード風・ドラッグ&ドロップ対応）
+ * 各列は独立した Sortable コンテナ。タイルは縦に隙間なく詰まる。
+ * ------------------------------------------------------------------ */
+.cocoon-analytics-tiles-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 8px 0 12px;
+  padding: 8px 12px;
+  background: #f6f7f7;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+}
+.cocoon-analytics-tiles-hint {
+  color: #50575e;
+  font-size: 12px;
+  flex: 1 1 auto;
+}
+.cocoon-analytics-save-status {
+  font-size: 12px;
+  color: #2271b1;
+  min-width: 180px;
+  text-align: right;
+}
+.cocoon-analytics-save-status.is-error { color: #b32d2e; }
+
+.cocoon-analytics-tiles {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .cocoon-analytics-tiles { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1400px) {
+  .cocoon-analytics-tiles[data-col-count="3"],
+  .cocoon-analytics-tiles[data-col-count="4"] {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.cocoon-analytics-tiles-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 60px;
+}
+
+.cocoon-analytics-tile {
+  /* .cocoon-analytics-card ベースのまま */
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.cocoon-analytics-tile-handle {
+  cursor: grab;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cocoon-analytics-tile-handle:active { cursor: grabbing; }
+.cocoon-analytics-tile-grip {
+  color: #8c8f94;
+  font-weight: bold;
+  letter-spacing: -2px;
+  font-size: 14px;
+}
+.cocoon-analytics-tile-grip:hover { color: #2271b1; }
+
+/* ドラッグ中の視覚フィードバック */
+.cocoon-analytics-tile.sortable-ghost {
+  opacity: 0.4;
+  background: #eef3fa;
+  border: 2px dashed #2271b1;
+}
+.cocoon-analytics-tile.sortable-chosen {
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+.cocoon-analytics-tile.sortable-drag {
+  opacity: 0.95;
+  transform: rotate(1deg);
+}
+.cocoon-analytics-tiles-col.cocoon-analytics-drop-hover {
+  outline: 2px dashed #2271b1;
+  outline-offset: -6px;
+  border-radius: 4px;
+}
+
+/* テーブル */
+.cocoon-analytics-table .row-actions {
+  color: #999;
+  font-size: 12px;
+}
+
+.cocoon-analytics-table td {
+  vertical-align: middle;
+}
+
+/* 人気記事ランキング（カード表示） */
+.cocoon-analytics-ranking-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cocoon-analytics-ranking-item {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid #e2e4e7;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+
+.cocoon-analytics-ranking-item:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cocoon-analytics-ranking-item.is-rank-1 { border-left: 4px solid #f5b301; }
+.cocoon-analytics-ranking-item.is-rank-2 { border-left: 4px solid #9aa4ad; }
+.cocoon-analytics-ranking-item.is-rank-3 { border-left: 4px solid #c07a3a; }
+
+/* 順位バッジ（サムネイル左上にオーバーレイ） */
+.cocoon-analytics-ranking-num {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  z-index: 2;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: #555;
+  border: 2px solid #fff;
+  border-radius: 13px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+
+.is-rank-1 .cocoon-analytics-ranking-num { background: #f5b301; }
+.is-rank-2 .cocoon-analytics-ranking-num { background: #9aa4ad; }
+.is-rank-3 .cocoon-analytics-ranking-num { background: #c07a3a; }
+
+.cocoon-analytics-ranking-thumb-wrap {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  overflow: visible;
+  border-radius: 6px;
+  background: #f5f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cocoon-analytics-ranking-thumb-wrap > img,
+.cocoon-analytics-ranking-thumb-wrap > .cocoon-analytics-ranking-thumb {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cocoon-analytics-ranking-thumb {
+  width: 88px !important;
+  height: 88px !important;
+  object-fit: cover;
+  display: block;
+}
+
+.cocoon-analytics-ranking-thumb-placeholder {
+  color: #bbb;
+}
+.cocoon-analytics-ranking-thumb-placeholder .dashicons {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.cocoon-analytics-ranking-body {
+  min-width: 0; /* grid 内でのテキスト折り返しを有効化 */
+}
+
+.cocoon-analytics-ranking-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.cocoon-analytics-ranking-title a {
+  color: #1d2327;
+  text-decoration: none;
+}
+
+.cocoon-analytics-ranking-title a:hover {
+  color: #2271b1;
+  text-decoration: underline;
+}
+
+.cocoon-analytics-ranking-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.cocoon-analytics-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.cocoon-analytics-meta-item .dashicons {
+  font-size: 14px;
+  width: 14px;
+  height: 14px;
+  color: #888;
+}
+
+.cocoon-analytics-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  background: #eef4fb;
+  color: #2271b1;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.cocoon-analytics-ranking-bar {
+  height: 6px;
+  background: #f0f2f5;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.cocoon-analytics-ranking-bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #2271b1, #4f8fd1);
+  border-radius: 3px;
+  transition: width .4s ease;
+}
+
+.is-rank-1 .cocoon-analytics-ranking-bar > span { background: linear-gradient(90deg, #f5b301, #ffd34d); }
+.is-rank-2 .cocoon-analytics-ranking-bar > span { background: linear-gradient(90deg, #9aa4ad, #c5cbd1); }
+.is-rank-3 .cocoon-analytics-ranking-bar > span { background: linear-gradient(90deg, #c07a3a, #e0a772); }
+
+.cocoon-analytics-ranking-actions {
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #999;
+}
+
+.cocoon-analytics-ranking-actions a {
+  color: #2271b1;
+  text-decoration: none;
+}
+
+.cocoon-analytics-ranking-actions a:hover {
+  text-decoration: underline;
+}
+
+.cocoon-analytics-ranking-pv {
+  text-align: right;
+  min-width: 80px;
+  padding-left: 8px;
+  border-left: 1px solid #eee;
+}
+
+.cocoon-analytics-ranking-pv-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1d2327;
+  line-height: 1.1;
+}
+
+.cocoon-analytics-ranking-pv-label {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: .05em;
+  margin-top: 2px;
+}
+
+.cocoon-analytics-ranking-pv-share {
+  font-size: 11px;
+  color: #2271b1;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* 急上昇バッジ */
+.cocoon-analytics-growth-up { color: #1e7a32; }
+.cocoon-analytics-growth-down { color: #b32d2e; }
+.cocoon-analytics-growth-new {
+  color: #fff;
+  background: #e7453c;
+  padding: 1px 8px;
+  border-radius: 10px;
+  display: inline-block;
+  line-height: 1.6;
+}
+
+/* 狭い画面用 */
+@media screen and (max-width: 782px) {
+  .cocoon-analytics-ranking-item {
+    grid-template-columns: 72px 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+  }
+  .cocoon-analytics-ranking-thumb-wrap {
+    width: 72px !important;
+    height: 72px !important;
+  }
+  .cocoon-analytics-ranking-thumb {
+    width: 72px !important;
+    height: 72px !important;
+  }
+  .cocoon-analytics-ranking-pv {
+    grid-column: 1 / -1;
+    text-align: left;
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding: 8px 0 0;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .cocoon-analytics-ranking-pv-num { font-size: 18px; }
+}
