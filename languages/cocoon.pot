@@ -14416,3 +14416,16 @@ msgstr ""
 #: lib/page-settings/single-forms.php:466
 msgid "階層化された複数のカテゴリーにチェックが入っている場合に、起点となるカテゴリーの設定をします。なお、投稿のメインカテゴリーが指定されている場合は、そちらの設定が優先されます。"
 msgstr ""
+
+
+#: lib/utils.php
+msgid "Cocoon："
+msgstr ""
+
+#: lib/utils.php
+msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
+msgstr ""
+
+#: lib/utils.php
+msgid "表示設定を開く"
+msgstr ""

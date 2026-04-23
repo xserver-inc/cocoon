@@ -2493,7 +2493,35 @@ endif;
 //フロントトップページかどうか
 if ( !function_exists( 'is_front_top_page' ) ):
 function is_front_top_page(){
-  return is_front_page() && !is_paged() && !isset($_GET['cat']);
+  $is_front = is_front_page();
+  //「ホームページの表示＝固定ページ」なのにページが未割り当て（ID 0）の矛盾設定では
+  // WordPress は投稿一覧（is_home）を表示するが is_front_page() は false になる。
+  // この場合 Cocoon の各種フロントトップ判定が崩れるため、実質フロントトップとして扱う。
+  if ( ! $is_front
+    && is_home()
+    && get_option( 'show_on_front' ) === 'page'
+    && ! (int) get_option( 'page_on_front' )
+  ) {
+    $is_front = true;
+  }
+  return $is_front && !is_paged() && !isset($_GET['cat']);
+}
+endif;
+
+//「ホームページの表示」が「固定ページ」だが表示ページ未割り当ての矛盾設定を管理画面で警告
+add_action( 'admin_notices', 'cocoon_front_page_misconfig_notice' );
+if ( ! function_exists( 'cocoon_front_page_misconfig_notice' ) ):
+function cocoon_front_page_misconfig_notice() {
+  //権限のないユーザーには表示しない
+  if ( ! current_user_can( 'manage_options' ) ) {
+    return;
+  }
+  if ( get_option( 'show_on_front' ) === 'page' && ! (int) get_option( 'page_on_front' ) ) {
+    echo '<div class="notice notice-warning"><p><strong>' . esc_html__( 'Cocoon：', THEME_NAME ) . '</strong>'
+      . esc_html__( '「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。', THEME_NAME )
+      . ' <a href="' . esc_url( admin_url( 'options-reading.php' ) ) . '">'
+      . esc_html__( '表示設定を開く', THEME_NAME ) . '</a></p></div>';
+  }
 }
 endif;
 

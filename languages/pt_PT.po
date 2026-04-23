@@ -14444,3 +14444,16 @@ msgstr "Dar prioridade à subcategoria com hierarquia mais profunda"
 #: lib/page-settings/single-forms.php:466
 msgid "階層化された複数のカテゴリーにチェックが入っている場合に、起点となるカテゴリーの設定をします。なお、投稿のメインカテゴリーが指定されている場合は、そちらの設定が優先されます。"
 msgstr "Define qual categoria usar como ponto de partida quando várias categorias hierárquicas estão selecionadas. Se uma categoria principal estiver definida para o artigo, essa definição terá prioridade."
+
+
+#: lib/utils.php
+msgid "Cocoon："
+msgstr "Cocoon:"
+
+#: lib/utils.php
+msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
+msgstr "A exibição da página inicial está definida como página estática, mas nenhuma página foi selecionada. As configurações podem não ser aplicadas corretamente."
+
+#: lib/utils.php
+msgid "表示設定を開く"
+msgstr "Abrir definições de leitura"
