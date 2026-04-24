@@ -173,6 +173,11 @@ div.sidebar {
     line-height: 16px;
   }
 
+  // サブメニューは表示されないため、展開アイコンも非表示にする
+  .has-sub {
+    display: none;
+  }
+
   li {
     width: 50%;
     height: 40px;

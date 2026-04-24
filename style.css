@@ -11656,6 +11656,10 @@ _:-ms-lang(x), .mc-circle {
     height: 40px;
     line-height: 16px;
   }
+  /* サブメニューは表示されないため、展開アイコンも非表示にする */
+  #navi .navi-in > .menu-mobile .has-sub {
+    display: none;
+  }
   #navi .navi-in > .menu-mobile li {
     width: 50%;
     height: 40px;
