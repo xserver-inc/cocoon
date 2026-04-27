@@ -3959,11 +3959,17 @@ div.search-form {
   --cocoon-custom-border-color: transparent;
 }
 
+.btn:not(.has-text-color), .ranking-item-link-buttons a:not(.has-text-color),
+.btn-wrap:not(.has-text-color) > a,
+.wp-block-freeform .btn-wrap:not(.has-text-color) > a,
+[class*=inline-button-] {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+}
+
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a,
 [class*=inline-button-] {
-  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -9435,6 +9441,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   transition: all 0.5s;
   border-radius: 99px;
   font-size: 0.9em;
+  line-height: 1.6;
+  max-height: calc(3.2em + 12px);
+  overflow: hidden;
 }
 .recommended.rcs-center-label-title .card-content:hover .card-title {
   opacity: 0;
@@ -10507,6 +10516,9 @@ pre {
   #navi .navi-in > .menu-mobile > .menu-item-has-description > a > .caption-wrap {
     height: 40px;
     line-height: 16px;
+  }
+  #navi .navi-in > .menu-mobile .has-sub {
+    display: none;
   }
   #navi .navi-in > .menu-mobile li {
     width: 50%;

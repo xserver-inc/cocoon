@@ -9466,6 +9466,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   transition: all 0.5s;
   border-radius: 99px;
   font-size: 0.9em;
+  line-height: 1.6;
+  max-height: calc(3.2em + 12px);
+  overflow: hidden;
 }
 .recommended.rcs-center-label-title .card-content:hover .card-title {
   opacity: 0;
@@ -11656,7 +11659,6 @@ _:-ms-lang(x), .mc-circle {
     height: 40px;
     line-height: 16px;
   }
-  /* サブメニューは表示されないため、展開アイコンも非表示にする */
   #navi .navi-in > .menu-mobile .has-sub {
     display: none;
   }

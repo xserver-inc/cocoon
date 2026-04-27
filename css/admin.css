@@ -4011,11 +4011,16 @@ body.wp-admin {
 .admin-settings .demo .btn[class*=btn-], .admin-settings .demo .ranking-item-link-buttons a[class*=btn-] {
   --cocoon-custom-border-color: transparent;
 }
+.admin-settings .demo .btn:not(.has-text-color), .admin-settings .demo .ranking-item-link-buttons a:not(.has-text-color),
+.admin-settings .demo .btn-wrap:not(.has-text-color) > a,
+.admin-settings .demo .wp-block-freeform .btn-wrap:not(.has-text-color) > a,
+.admin-settings .demo [class*=inline-button-] {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+}
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a,
 .admin-settings .demo [class*=inline-button-] {
-  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -8719,6 +8724,9 @@ body.wp-admin {
   transition: all 0.5s;
   border-radius: 99px;
   font-size: 0.9em;
+  line-height: 1.6;
+  max-height: calc(3.2em + 12px);
+  overflow: hidden;
 }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title {
   opacity: 0;
@@ -12634,11 +12642,16 @@ body.wp-admin {
 .admin-settings .demo .btn[class*=btn-], .admin-settings .demo .ranking-item-link-buttons a[class*=btn-] {
   --cocoon-custom-border-color: transparent;
 }
+.admin-settings .demo .btn:not(.has-text-color), .admin-settings .demo .ranking-item-link-buttons a:not(.has-text-color),
+.admin-settings .demo .btn-wrap:not(.has-text-color) > a,
+.admin-settings .demo .wp-block-freeform .btn-wrap:not(.has-text-color) > a,
+.admin-settings .demo [class*=inline-button-] {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+}
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a,
 .admin-settings .demo .btn-wrap > a,
 .admin-settings .demo .wp-block-freeform .btn-wrap > a,
 .admin-settings .demo [class*=inline-button-] {
-  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);
@@ -17342,6 +17355,9 @@ body.wp-admin {
   transition: all 0.5s;
   border-radius: 99px;
   font-size: 0.9em;
+  line-height: 1.6;
+  max-height: calc(3.2em + 12px);
+  overflow: hidden;
 }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title {
   opacity: 0;
@@ -19221,6 +19237,9 @@ body.wp-admin {
   .admin-settings .demo #navi .navi-in > .menu-mobile > .menu-item-has-description > a > .caption-wrap {
     height: 40px;
     line-height: 16px;
+  }
+  .admin-settings .demo #navi .navi-in > .menu-mobile .has-sub {
+    display: none;
   }
   .admin-settings .demo #navi .navi-in > .menu-mobile li {
     width: 50%;
@@ -21920,11 +21939,16 @@ select option.fa:before {
 .components-popover__content .btn[class*=btn-], .components-popover__content .admin-settings .demo .ranking-item-link-buttons a[class*=btn-], .admin-settings .demo .ranking-item-link-buttons .components-popover__content a[class*=btn-] {
   --cocoon-custom-border-color: transparent;
 }
+.components-popover__content .btn:not(.has-text-color), .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:not(.has-text-color), .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:not(.has-text-color),
+.components-popover__content .btn-wrap:not(.has-text-color) > a,
+.components-popover__content .wp-block-freeform .btn-wrap:not(.has-text-color) > a,
+.components-popover__content [class*=inline-button-] {
+  --cocoon-custom-text-color: var(--cocoon-white-color);
+}
 .components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a,
 .components-popover__content .btn-wrap > a,
 .components-popover__content .wp-block-freeform .btn-wrap > a,
 .components-popover__content [class*=inline-button-] {
-  --cocoon-custom-text-color: var(--cocoon-white-color);
   border-width: 2px;
   border-style: solid;
   color: var(--cocoon-custom-text-color, #fff);

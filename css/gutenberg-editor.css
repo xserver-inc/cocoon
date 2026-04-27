@@ -1915,8 +1915,6 @@ div.search-form {
   --cocoon-custom-border-color: transparent;
 }
 
-/* カスタムカラーが設定されていない場合、ボタンの文字色を白にリセットする */
-/* （親ブロックのテキスト色指定の影響を防止する。has-text-colorが付与されている場合は除外） */
 .btn:not(.has-text-color),
 .btn-wrap:not(.has-text-color) > a,
 .wp-block-freeform .btn-wrap:not(.has-text-color) > a,
