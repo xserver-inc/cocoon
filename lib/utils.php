@@ -3211,12 +3211,13 @@ function cocoon_template_part($slug, $name = null, $args = []){
     $args = [];
   }
 
+  // テンプレート読み込み前に発火させ、フック名「before」と実行順序を一致させる
+  // WP内部で判定されるためhas_filterを省略
+  do_action("cocoon_part_before__{$slug}", $name, $args);
+
   ob_start();
   get_template_part($slug, $name, $args);
   $content = ob_get_clean();
-
-  // WP内部で判定されるためhas_filterを省略
-  do_action("cocoon_part_before__{$slug}", $name, $args);
 
   // WP内部で判定されるためhas_filterを省略
   $content = apply_filters("cocoon_part__{$slug}", $content, $name, $args);
