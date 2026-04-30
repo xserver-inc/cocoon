@@ -75,12 +75,17 @@
         transition: all .5s;
         border-radius: 99px;
         font-size: 0.9em;
-        // line-height を明示し、line-clamp + padding 併用時の
-        // 描画ズレ（3行目以降がラベル外にはみ出す）を防ぐため
-        // 最大高さで強制クリップする
         line-height: 1.6;
-        max-height: calc(1.6em * 2 + 12px);
+        // 2行を超える場合は末尾を三点リーダーで省略する
+        // 行数で直接クリップするため box-sizing や padding の影響を受けない
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
         overflow: hidden;
+        // -webkit-box は既定で親幅まで広がるため、
+        // テキスト幅に合わせて縮むよう shrink-to-fit を明示
+        width: max-content;
+        max-width: 90%;
       }
       &:hover{
         .card-title{
