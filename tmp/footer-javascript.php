@@ -79,17 +79,6 @@ if (!is_amp()): ?>
 
   <?php endif //コピーシェアボタン用のスクリプト ?>
 
-  <?php //カルーセルが表示されている時
-  if (false && is_carousel_visible() && get_carousel_category_ids()): ?>
-  <script>
-  (function($){
-    //カルーセルの表示
-    $('.carousel').fadeIn();
-  })(jQuery);
-  </script>
-  <?php endif //カルーセルが表示されている時?>
-
-
   <?php //本文中のJavaScriptをまとめて出力
   global $_THE_CONTENT_SCRIPTS;
   if ($_THE_CONTENT_SCRIPTS): ?>
