@@ -254,6 +254,18 @@ class OpenGraphTest extends TestCase
         $this->assertSame('https://tshop.r10s.jp/shop/cabinet/item2.jpg', $og->image);
     }
 
+    public function test_Rakuten_ショップ画像パスにlogoディレクトリを含むogImageは除外しない(): void
+    {
+        $html = $this->makeHtml(
+            '<meta property="og:image" content="https://thumbnail.image.rakuten.co.jp/@0_mall/tonya/logo/logo1n.jpg?_ex=200x200">' .
+            '<title>楽天ショップテスト</title>'
+        );
+
+        $og = $this->callParse($html, 'https://www.rakuten.co.jp/tonya/');
+        // ショップ独自画像は除外されず、パラメータ除去のみ行われるべき
+        $this->assertSame('https://thumbnail.image.rakuten.co.jp/@0_mall/tonya/logo/logo1n.jpg', $og->image);
+    }
+
     // ========================================================================
     // Amazon特有のエッジケース・画像抽出ロジックテスト
     // ========================================================================

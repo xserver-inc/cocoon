@@ -208,7 +208,7 @@ class OpenGraphGetter implements Iterator
         // 楽天商品ページの取得時は、汎用ロゴの回避と高画質メイン画像の抽出を行う
         if (is_rakuten_site_page($URI)) {
             // 楽天の汎用ロゴやnoimage画像を検知した場合は無効化し、商品画像を探し直す
-            if (isset($page->_values['image']) && preg_match('/(?:logo|no_?image)/i', $page->_values['image'])) {
+            if (isset($page->_values['image']) && preg_match('#(?:r10s\.jp/com/img/.*logo|no_?image)#i', $page->_values['image'])) {
                 unset($page->_values['image']);
             }
 
@@ -230,7 +230,7 @@ class OpenGraphGetter implements Iterator
                             if ($element instanceof DOMElement) {
                                 $src = $element->hasAttribute('content') ? $element->getAttribute('content') : ($element->hasAttribute('src') ? $element->getAttribute('src') : null);
                                 // data:image等のLazy Loadダミーを弾くため URL が記述されていることを確認
-                                if (!empty($src) && preg_match('/^(?:https?:)?\/\//i', $src) && !preg_match('/(?:logo|no_?image)/i', $src)) {
+                                if (!empty($src) && preg_match('/^(?:https?:)?\/\//i', $src) && !preg_match('#(?:r10s\.jp/com/img/.*logo|no_?image)#i', $src)) {
                                     // 格納時は生URLを保持
                                     $page->_values['image']     = $src;
                                     $page->_values['image_src'] = $src;
