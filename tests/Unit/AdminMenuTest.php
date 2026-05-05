@@ -6,7 +6,7 @@
  * customize_admin_bar_menu 関数が正しく動作することを検証します。
  *
  * 注意: wp-mock-functions.php で既にグローバル定義されている関数
- * (is_classicpress, current_user_can 等) は Brain\Monkey で上書きできないため、
+ * (is_classicpress 等) は Brain\Monkey で上書きできないため、
  * それらのデフォルト返り値 (false) を前提としたテストを記述しています。
  */
 
@@ -154,7 +154,7 @@ class AdminMenuTest extends TestCase
     /**
      * current_user_can('manage_options') が false を返す場合（デフォルト）、
      * 管理者専用サブメニューが含まれないこと
-     * ※ wp-mock-functions.php で current_user_can() は false を返す
+     * ※ TestCase::setUp() で current_user_can() は false を返すようにモックされている
      */
     public function test_get_admin_bar_menu_array_非管理者では管理専用メニューが含まれない(): void
     {

@@ -116,11 +116,7 @@ if (!function_exists('esc_url_raw')) {
     }
 }
 
-if (!function_exists('wp_kses_post')) {
-    function wp_kses_post($data) {
-        return $data;
-    }
-}
+// wp_kses_post は各テストで必要に応じてモックするため削除
 
 if (!function_exists('is_ssl')) {
     function is_ssl() {
@@ -274,11 +270,7 @@ if (!function_exists('is_site_icon_font_font_awesome_4')) {
     }
 }
 
-if (!function_exists('current_user_can')) {
-    function current_user_can($capability) {
-        return false;
-    }
-}
+// current_user_can は各テストで Brain\Monkey を使ってモックするためネイティブ定義を削除
 
 if (!function_exists('wp_remote_get')) {
     // テスト用: グローバル変数 $test_mock_wp_remote_get_response で戻り値を制御可能
@@ -371,17 +363,7 @@ if (!function_exists('is_admin_php_page')) {
     }
 }
 
-if (!function_exists('term_metadata_exists')) {
-    function term_metadata_exists($term_id, $meta_key) {
-        return false;
-    }
-}
-
-if (!function_exists('get_term_meta')) {
-    function get_term_meta($term_id, $key = '', $single = false) {
-        return '';
-    }
-}
+// term_metadata_exists と get_term_meta は各テストで必要に応じてモックするため削除
 
 if (!function_exists('get_query_var')) {
     function get_query_var($var, $default = '') {

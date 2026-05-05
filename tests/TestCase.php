@@ -21,6 +21,11 @@ abstract class TestCase extends PHPUnitTestCase
     {
         parent::setUp();
         Monkey\setUp();
+        
+        // テスト環境全体のデフォルトモック定義（wp-mock-functions.php から移行）
+        Monkey\Functions\when('current_user_can')->justReturn(false);
+        Monkey\Functions\when('wp_kses_post')->returnArg();
+        Monkey\Functions\when('metadata_exists')->justReturn(false);
     }
 
     /**

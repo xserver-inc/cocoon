@@ -322,8 +322,12 @@ function save_extra_tag_fileds( $term_id ) {
     }
 
     if ( isset( $_POST['the_tag_content'] ) ) {
-      // HTMLを含むコンテンツを安全なタグのみ許可
-      $the_tag_content = wp_kses_post($_POST['the_tag_content']);
+      // HTMLを含むコンテンツを安全なタグのみ許可（権限がある場合はそのまま許可）
+      if ( current_user_can( 'unfiltered_html' ) ) {
+        $the_tag_content = $_POST['the_tag_content'];
+      } else {
+        $the_tag_content = wp_kses_post($_POST['the_tag_content']);
+      }
       update_term_meta( $tag_id, 'the_tag_content', $the_tag_content );
     }
 
