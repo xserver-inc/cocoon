@@ -233,7 +233,8 @@ function url_to_internal_blogcard($the_content) {
     }
 
     //カレントページのURLと$urlが同じ場合は、ブログカード化しない
-    if (is_current_url_same($url)) {
+    //ただしウィジェットなどの the_content 以外からの呼び出し時は無限ループの恐れがないため許可する
+    if (doing_filter('the_content') && is_current_url_same($url)) {
       continue;
     }
 
@@ -307,7 +308,8 @@ function url_shortcode_to_blogcard($the_content) {
     }
 
     //カレントページのURLと$urlが同じ場合は、ブログカード化しない
-    if (is_current_url_same($url)) {
+    //ただしウィジェットなどの the_content 以外からの呼び出し時は無限ループの恐れがないため許可する
+    if (doing_filter('the_content') && is_current_url_same($url)) {
       continue;
     }
 
