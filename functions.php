@@ -665,3 +665,13 @@ function override_bbpress_templates_if_inactive( $template ) {
   return $template;
 }
 
+// ナビゲーションメニューの日本語IDを削除する
+add_filter( 'wp_nav_menu_args', 'cocoon_wp_nav_menu_args_custom' );
+if ( !function_exists( 'cocoon_wp_nav_menu_args_custom' ) ):
+function cocoon_wp_nav_menu_args_custom( $args ) {
+  // フォーラムの提案通り、コンテナとIDを削除してシンプルなリストにする
+  $args['container'] = false;
+  $args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
+  return $args;
+}
+endif;
