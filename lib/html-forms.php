@@ -1021,105 +1021,42 @@ function generate_popular_entries_tag($atts){
   $all_records = get_access_ranking_records($days, $total_fetch_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children, $author, $post_type, $snippet);
 
   // offset分を除外して抽出
-  $records = array();
-  if ($all_records) {
-    $records = array_slice($all_records, $offset, $entry_count);
-  }
+  $records = $all_records ? array_slice($all_records, $offset, $entry_count) : array();
 
-  $thumb_size = get_popular_entries_thumbnail_size($entry_type);
-  $atts = array(
-    'type' => $entry_type,
+  $cards_classes = get_additional_widget_entry_cards_classes(array(
+    'type'            => $entry_type,
     'ranking_visible' => $ranking_visible,
-    'pv_visible' => $pv_visible,
-    'bold' => $bold,
-    'arrow' => $arrow,
-    'class' => $class,
-    'horizontal' => $horizontal,
-    'date' => $date,
-  );
-  $cards_classes = get_additional_widget_entry_cards_classes($atts);
-  $swiper_slide = null;
-  if ($horizontal) {
-    $swiper_slide = ' swiper-slide';
-  }
+    'pv_visible'      => $pv_visible,
+    'bold'            => $bold,
+    'arrow'           => $arrow,
+    'class'           => $class,
+    'horizontal'      => $horizontal,
+    'date'            => $date,
+  ));
+  $swiper_slide = $horizontal ? ' swiper-slide' : null;
 
   // ランキングの開始番号をCSSカウンターに反映させるためのスタイル
   // offset=0の場合はCSSのデフォルト値と同じなのでインラインスタイルは不要
   $counter_style = ($ranking_visible && $offset > 0) ? 'counter-reset: p-rank ' . $offset . ';' : '';
   ?>
   <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>"<?php echo $counter_style ? ' style="' . esc_attr( $counter_style ) . '"' : ''; ?>>
-  <?php if ( $horizontal ) : ?>
-    <div class="swiper-wrapper">
-  <?php endif; ?>
+  <?php if ( $horizontal ) echo '<div class="swiper-wrapper">'; ?>
   <?php if ( $records ) :
     $i = 1 + $offset;
     foreach ($records as $post):
-      $permalink = get_permalink( $post->ID );
-      $title = $post->post_title;
-      $no_thumbnail_url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url($post->ID) : get_no_image_320x180_url($post->ID);
-      $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
-      $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
-
-      $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '') );
-      $pv = $post->sum_count;
-
-      if ($post_thumbnail) {
-        $post_thumbnail_img = $post_thumbnail;
-      } else {
-        $post_thumbnail_img = get_original_image_tag($no_thumbnail_url, $w, $h, 'no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image', '');
-      }
-      //スニペット表示
-      $snippet_tag = '';
-      //「タイトルを重ねた大きなサムネイル」の時はスニペットを表示させない
-      if ($snippet && isset($post->ID) && isset(get_post($post->ID)->post_content) && $entry_type !== ET_LARGE_THUMB_ON) {
-        $snippet_tag = '<div class="popular-entry-card-snippet widget-entry-card-snippet card-snippet">'.get_the_snippet(get_post($post->ID)->post_content, get_entry_card_excerpt_max_length(), $post->ID).'</div>';
-      }
-
-      $pv_tag = null;
-      if ($pv_visible){
-        $pv_unit = ($pv == '1') ? 'view' : 'views';
-        // $pv_unit = apply_filters('popular_entry_card_pv_unit', $pv_unit, $pv);
-        $pv_text = $pv.' '.$pv_unit;
-        $pv_text = apply_filters('popular_entry_card_pv_text', $pv_text, $pv, $pv_unit);
-        $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
-      }
-      ?>
-  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link widget-entry-card-link a-wrap no-<?php echo $i; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr(escape_shortcodes($title)); ?>">
-    <div <?php post_class( array('post-'.$post->ID, 'popular-entry-card', 'widget-entry-card', 'e-card', 'cf'), $post->ID ); ?>>
-      <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
-        <?php echo $post_thumbnail_img; ?>
-        <?php
-        $is_visible = apply_filters('is_popular_entry_card_category_label_visible', false);
-        $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
-        the_nolink_category($post->ID, $is_visible); //カテゴリーラベルの取得 ?>
-      </figure><!-- /.popular-entry-card-thumb -->
-
-      <div class="popular-entry-card-content widget-entry-card-content card-content">
-        <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo escape_shortcodes($title);?></div>
-        <?php echo $snippet_tag; ?>
-        <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
-          <?php echo $pv_tag; ?>
-        <?php endif ?>
-        <?php do_action( 'widget_entry_card_date_before', 'popular', $post->ID); ?>
-        <div class="popular-entry-card-meta widget-entry-card-meta card-meta">
-          <div class="popular-entry-card-info widget-entry-card-info card-info">
-        <?php generate_widget_entry_card_date('popular', $post->ID, $display = $date);
-        if ($comment): ?>
-          <span class="popular-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number( $post->ID ); ?></span>
-        <?php endif; ?>
-          </div>
-        </div>
-      </div><!-- /.popular-entry-content -->
-      <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
-        <?php echo $pv_tag; ?>
-      <?php endif ?>
-
-    </div><!-- /.popular-entry-card -->
-  </a><!-- /.popular-entry-card-link -->
-
-  <?php
-  $i++;
-  endforeach;
+      cocoon_template_part('tmp/popular-card', null, array(
+        'post'            => $post,
+        'index'           => $i,
+        'entry_type'      => $entry_type,
+        'ranking_visible' => $ranking_visible,
+        'pv_visible'      => $pv_visible,
+        'date'            => $date,
+        'snippet'         => $snippet,
+        'comment'         => $comment,
+        'swiper_slide'    => $swiper_slide,
+      ));
+      $i++;
+    endforeach;
   else :
     echo '<p>'.__( '人気記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
   endif; ?>
@@ -1446,7 +1383,7 @@ endif;
 //プロフィール生成関数
 if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0){
-  $description = '';
+  // --- 1. データ取得・ロジック部分 ---
   $user_id = get_the_author_meta( 'ID' );
   if (!$user_id || (!is_singular() && !is_author($user_id))) {
     $user_id = get_sns_default_follow_user();
@@ -1454,106 +1391,66 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
   if ($id && get_userdata( $id )) {
     $user_id = $id;
   }
-  //WordPressインストール初期時でユーザーが取得できないとき
-  if ($user_id === 0) {
-    # code...
+
+  $description = '';
+  $name        = '';
+
+  if ($user_id) {
+    // プロフィール文の取得と加工
+    $description = get_the_author_description_text($user_id);
+    if (empty($description)) {
+      $description = get_the_author_meta('description', $user_id);
+    }
+    $description = wpautop($description);
+    // wpautopで付く不要なpタグを除去
+    $description = shortcode_unautop($description);
+    $description = do_shortcode($description);
+    $description = apply_filters( 'the_author_box_description', $description, $user_id );
+
+    // 名前の取得と加工
+    $author_display_name = strip_tags(get_the_author_display_name($user_id));
+
+    if (!is_buddypress_page()) {
+      //プロフィールページURLの取得
+      $profile_page_url = get_the_author_profile_page_url($user_id);
+      if ($profile_page_url) {
+        $name = '<a href="'.esc_url($profile_page_url).'">'.esc_html($author_display_name).'</a>';
+      } else {
+        $user = get_userdata( $user_id );
+        if ($user) {
+          $name = sprintf( '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
+            esc_url( get_author_posts_url( $user->ID, $user->user_nicename ) ),
+            /* translators: %s: author's display name */
+            esc_attr( sprintf( __( 'Posts by %s' ), $user->display_name ) ),
+            $user->display_name
+          );
+        } else {
+          $name = __( 'NO USER' );
+        }
+      }
+    } else {
+      $author_website_url = strip_tags(get_the_author_website_url($user_id));
+      $name = $author_display_name;
+      if ($author_website_url) {
+        $name = '<a href="'.esc_url($author_website_url).'" target="_blank" rel="nofollow noopener">'.esc_html($author_display_name).'</a>';
+      }
+    }
+    $name = apply_filters( 'the_author_box_name', $name, $user_id );
   }
 
-  ?>
-  <div class="author-box border-element no-icon cf">
-    <?php //ウィジェット名がある場合
-    $image_class = $is_image_circle ? ' circle-image' : null;
-    if ($label): ?>
-      <div class="author-widget-name">
-        <?php echo $label; ?>
-      </div>
-    <?php endif ?>
-    <figure class="author-thumb<?php echo $image_class; ?>">
-      <?php echo get_avatar( $user_id, 200 ); ?>
-    </figure>
-    <div class="author-content">
-      <div class="author-name">
-        <?php
-        if ($user_id) {
-          $description = get_the_author_description_text($user_id);
-          if (empty($description)) {
-            $description = get_the_author_meta('description', $user_id);
-          }
-          $description = wpautop($description);
-          // wpautopで付く不要なpタグを除去
-          $description = shortcode_unautop($description);
-          $description = do_shortcode($description);
+  // テンプレートに渡す変数を配列にまとめる
+  $args = [
+    'user_id'         => $user_id,
+    'label'           => $label,
+    'is_image_circle' => $is_image_circle,
+    'avatar'          => get_avatar( $user_id, 200 ),
+    'name'            => $name,
+    'description'     => $description,
+    'is_bp_exist'     => is_buddypress_exist(),
+    'is_logged_in'    => is_user_logged_in(),
+  ];
 
-          if (!is_buddypress_page()) {
-            //プロフィールページURLの取得
-            $profile_page_url = get_the_author_profile_page_url($user_id);
-
-            $author_display_name = strip_tags(get_the_author_display_name($user_id));
-            if ($profile_page_url) {
-              $name = '<a href="'.esc_url($profile_page_url).'">'.esc_html($author_display_name).'</a>';
-            } else {
-              $user = get_userdata( $user_id );
-              if ($user) {
-                $name = sprintf( '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
-                  esc_url( get_author_posts_url( $user->ID, $user->user_nicename ) ),
-                  /* translators: %s: author's display name */
-                  esc_attr( sprintf( __( 'Posts by %s' ), $user->display_name ) ),
-                  $user->display_name
-                );
-              } else {
-                $name = __( 'NO USER' );
-              }
-            }
-          } else {
-            $author_display_name = strip_tags(get_the_author_display_name($user_id));
-            $author_website_url = strip_tags(get_the_author_website_url($user_id));
-            $name = $author_display_name;
-            if ($author_website_url) {
-              $name = '<a href="'.esc_url($author_website_url).'" target="_blank" rel="nofollow noopener">'.esc_html($author_display_name).'</a>';
-            }
-          }
-          echo apply_filters( 'the_author_box_name', $name, $user_id );
-
-
-        } else {
-          echo __( '未登録のユーザーさん', THEME_NAME );
-        }
-         ?>
-      </div>
-      <div class="author-description">
-        <?php
-        if ($description) {
-          echo apply_filters( 'the_author_box_description', $description, $user_id );
-        } elseif (!$user_id) {
-          if (is_buddypress_exist()) {
-            $msg = __( '未登録のユーザーさんです。', THEME_NAME );
-            $msg .= '<br>';
-            $msg .= __( 'ログイン・登録はこちら→', THEME_NAME );
-            $msg .= '<a href="'.wp_login_url().'">';
-            $msg .= __( 'ログインページ', THEME_NAME );
-            $msg .= '</a>';
-            echo wpautop($msg);
-          } else {//WordPressインストール初期時のユーザーID。未ログインでCocoon設定を保存していない時
-            echo wpautop(__( '未登録ユーザーです。ログインして、Cocoon設定の保存ボタンを押してください。', THEME_NAME ));
-          }
-        } elseif (is_user_logged_in()) {
-          echo wpautop(__( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="' . esc_url(home_url() . '/wp-admin/user-edit.php?user_id='.$user_id).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME ));
-        }
-        ?>
-
-      </div>
-      <?php if ($user_id): ?>
-      <div class="profile-follows author-follows">
-        <?php
-        set_query_var( '_USER_ID', $user_id );
-        get_template_part_with_option('tmp/sns-follow-buttons', SF_PROFILE);
-        set_query_var( '_USER_ID', null ); ?>
-      </div>
-      <?php endif ?>
-
-    </div>
-  </div>
-<?php
+  cocoon_template_part('tmp/author-box', null, $args);
 }
 endif;
 
