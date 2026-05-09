@@ -1480,6 +1480,8 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
             $description = get_the_author_meta('description', $user_id);
           }
           $description = wpautop($description);
+          // wpautopで付く不要なpタグを除去
+          $description = shortcode_unautop($description);
           $description = do_shortcode($description);
 
           if (!is_buddypress_page()) {
@@ -1799,7 +1801,7 @@ function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
     $image_attributes = array();
     // 投稿・固定ページ・カスタム投稿の場合はカテゴリー等のアイキャッチを反映させるため is_singular を true にする
     $is_singular = ($object === 'post' || $object === 'page' || in_array($object, $post_types));
-    
+
     if ($is_large_image_use) {
       $image_attributes[0] = get_no_image_320x180_url($object_id, $is_singular); //投稿タイプの時はtrueにしてタクソノミー画像を反映
       $image_attributes[1] = THUMB320WIDTH_DEF;
