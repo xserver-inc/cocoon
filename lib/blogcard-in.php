@@ -259,6 +259,8 @@ if ( is_internal_blogcard_enable() ) {
   //add_filter('widget_classic_text', 'url_to_internal_blogcard', 11);
   add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 11);
   add_filter('the_category_tag_content', 'url_to_internal_blogcard', 11);
+  add_filter('appeal_area_message', 'url_to_internal_blogcard', 11);
+  add_filter('the_author_box_description', 'url_to_internal_blogcard', 11);
   //コメント内ブログカード
   if (is_comment_internal_blogcard_enable()) {
     add_filter('comment_text', 'url_to_internal_blogcard' ,11);
@@ -341,6 +343,8 @@ add_filter('widget_text_pc_text', 'url_shortcode_to_blogcard', 11);
 add_filter('widget_text_mobile_text', 'url_shortcode_to_blogcard', 11);
 add_filter('comment_text', 'url_shortcode_to_blogcard', 11);
 add_filter('the_category_tag_content', 'url_shortcode_to_blogcard', 11);
+add_filter('appeal_area_message', 'url_shortcode_to_blogcard', 11);
+add_filter('the_author_box_description', 'url_shortcode_to_blogcard', 11);
 
 //ブログカード置換用テキストにpタグが含まれているかどうか
 if ( !function_exists( 'is_p_tag_appropriate' ) ):
