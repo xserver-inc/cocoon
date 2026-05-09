@@ -1137,6 +1137,8 @@ function get_block_pattern_shortcode($atts) {
   }
   if (!is_classicpress()) {
     $content = do_blocks($content);
+    // core/shortcodeの整形で付く不要なpタグを除去
+    $content = shortcode_unautop($content);
   }
   return do_shortcode($content);
 }
