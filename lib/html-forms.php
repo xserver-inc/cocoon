@@ -1525,65 +1525,42 @@ function get_widget_entry_card_link_tag($atts){
   // target 属性の設定
   $target_attr = $target ? ' target="' . esc_attr($target) . '"' : '';
 
-  ob_start(); ?>
-  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr(escape_shortcodes($title)); ?>"<?php echo $target_attr; ?>>
-    <div <?php echo $div_class; ?>>
-      <?php echo $ribbon_tag; ?>
-      <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
-        <?php //$prefixがnaviのとき
-        if (is_widget_navi_entry_card_prefix($prefix)) {
-          $class = 'navi-entry-card-image widget-entry-card-image card-thumb';
+  // サムネイルHTMLを事前生成（ループコンテキストが必要な処理はここで実行）
+  if (is_widget_navi_entry_card_prefix($prefix)) {
+    $thumb_class = 'navi-entry-card-image widget-entry-card-image card-thumb';
+    $post_types = get_custum_post_types();
+    if ($object === 'post' || $object === 'page' || in_array($object, $post_types)) {
+      $size = ($type === ET_DEFAULT) ? THUMB120 : THUMB320;
+      $thumbnail_tag = get_the_post_thumbnail($object_id, $size, array('class' => $thumb_class));
+      if (!$thumbnail_tag) {
+        $thumbnail_tag = get_navi_entry_card_thumbnail_tag($image_attributes, $title, $thumb_class);
+      }
+    } else {
+      $thumbnail_tag = get_navi_entry_card_thumbnail_tag($image_attributes, $title, $thumb_class);
+    }
+  } else {
+    //新着記事・関連記事など
+    $thumbnail_tag = get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type);
+  }
 
-          //投稿・固定ページ・カスタム投稿の場合
-          $post_types = get_custum_post_types();
-          if ($object === 'post' || $object === 'page' || in_array($object, $post_types)) {
-            if ($type === ET_DEFAULT) {
-              $size = THUMB120;
-            } else {
-              $size = THUMB320;
-            }
-            $attr = array();
-            $attr['class'] = $class;
+  $template_args = array(
+    'prefix'       => $prefix,
+    'url'          => $url,
+    'title'        => $title,
+    'snippet'      => $snippet,
+    'date'         => $date,
+    'swiper_slide' => $swiper_slide,
+    'class_text'   => $class_text,
+    'target_attr'  => $target_attr,
+    'ribbon_tag'   => $ribbon_tag,
+    'div_class'    => $div_class,
+    'thumbnail'    => $thumbnail_tag,
+    'post_id'      => $post_id,
+    'comment'      => $comment,
+  );
 
-            $thumbnail_tag = get_the_post_thumbnail( $object_id, $size, $attr );
-            if ($thumbnail_tag) {
-              echo $thumbnail_tag;
-            } else {
-              // ナビカード用に取得済みの属性を使ってNO IMAGEを出力
-              echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class);
-            }
-          } else {
-            echo get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class);
-          }
-        } else {
-          //新着記事・関連記事など
-          echo get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type);
-        }
-        ?>
-      </figure><!-- /.entry-card-thumb -->
-
-      <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
-        <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
-        <?php if ($snippet): ?>
-        <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
-        <?php endif;
-        if (!is_widget_navi_entry_card_prefix($prefix)):
-          do_action( 'widget_entry_card_date_before', $prefix, $post_id);
-          ?>
-          <div class="<?php echo $prefix; ?>-entry-card-meta widget-entry-card-meta card-meta">
-            <div class="<?php echo $prefix; ?>-entry-card-info widget-entry-card-info card-info">
-          <?php
-          generate_widget_entry_card_date($prefix, null, $display = $date);
-          if ($comment): ?>
-            <span class="<?php echo $prefix; ?>-entry-card-comment widget-entry-card-comment card-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
-          <?php endif; ?>
-          </div><!-- /.entry-card-info -->
-        </div><!-- /.entry-card-meta -->
-        <?php endif; ?>
-      </div><!-- /.entry-content -->
-    </div><!-- /.entry-card -->
-  </a><!-- /.entry-card-link -->
-<?php
+  ob_start();
+  cocoon_template_part('tmp/widget-entry-card', null, $template_args);
   return ob_get_clean();
 }
 endif;
