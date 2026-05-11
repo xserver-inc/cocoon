@@ -442,6 +442,20 @@ endif;
 add_filter('render_block_cocoon-blocks/faq', 'cocoon_blocks_faq', 10, 2);
 
 function cocoon_blocks_faq($content, $block) {
+  // 同一リクエスト内で処理済みのブロックを管理する静的変数
+  static $processed_faq_blocks = [];
+
+  // ブロック属性と内容からハッシュを生成し、重複レンダリングを検出
+  $block_id = md5(serialize($block['attrs']) . $block['innerHTML']);
+
+  // 処理済みの場合はフッターへのデータ登録をスキップしてHTMLのみ返す
+  if (isset($processed_faq_blocks[$block_id])) {
+    return $content;
+  }
+
+  // 未処理としてマーク
+  $processed_faq_blocks[$block_id] = true;
+
   add_filter('cocoon_faq_entity', function ($faq) use ($content, $block) {
     return cocoon_add_faq($content, $block, $faq, 'question');
   });
