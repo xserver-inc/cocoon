@@ -13,7 +13,7 @@ $image_class = $args['is_image_circle'] ? ' circle-image' : null;
 <div class="author-box border-element no-icon cf">
   <?php if ($args['label']): ?>
     <div class="author-widget-name">
-      <?php echo esc_html($args['label']); ?>
+      <?php echo wp_kses_post($args['label']); ?>
     </div>
   <?php endif; ?>
 

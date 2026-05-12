@@ -31,8 +31,9 @@ $post_thumbnail_img = $post_thumbnail ? $post_thumbnail : get_original_image_tag
 
 // スニペット表示（「タイトルを重ねた大きなサムネイル」の時は非表示）
 $snippet_tag = '';
-if ($snippet && isset($post->ID) && isset(get_post($post->ID)->post_content) && $entry_type !== ET_LARGE_THUMB_ON) {
-  $snippet_tag = '<div class="popular-entry-card-snippet widget-entry-card-snippet card-snippet">'.get_the_snippet(get_post($post->ID)->post_content, get_entry_card_excerpt_max_length(), $post->ID).'</div>';
+$post_obj = get_post($post->ID);
+if ($snippet && isset($post->ID) && isset($post_obj->post_content) && $entry_type !== ET_LARGE_THUMB_ON) {
+  $snippet_tag = '<div class="popular-entry-card-snippet widget-entry-card-snippet card-snippet">'.get_the_snippet($post_obj->post_content, get_entry_card_excerpt_max_length(), $post->ID).'</div>';
 }
 
 // PV表示
