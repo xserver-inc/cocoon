@@ -260,7 +260,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               generate_tips_tag(__( '<a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">Nu Html Checker</a>リンクの表示。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_SEOCHEKI_VISIBLE, is_admin_seocheki_visible(), __( 'SEOチェキを表示する', THEME_NAME ));
-              generate_tips_tag(__( '<a href="http://seocheki.net/" target="_blank" rel="noopener">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://seocheki.net/" target="_blank" rel="noopener">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_TWEET_CHECK_VISIBLE, is_admin_tweet_check_visible(), __( 'ツイート検索を表示する', THEME_NAME ));
               generate_tips_tag(__( '投稿・固定ページ・インデックスページに対するツイート検索リンクの表示。', THEME_NAME ));

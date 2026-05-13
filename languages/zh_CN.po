@@ -3727,8 +3727,8 @@ msgid "SEOチェキを表示する"
 msgstr "显示SEO检查"
 
 #: lib/page-settings/admin-forms.php:263
-msgid "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
-msgstr "显示链接以在<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO检查! 免费SEO工具</a>中检查。"
+msgid "<a href=\"https://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
+msgstr "显示链接以在<a href=\"https://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO检查! 免费SEO工具</a>中检查。"
 
 #: lib/page-settings/admin-forms.php:265
 msgid "ツイート検索を表示する"
@@ -9864,8 +9864,8 @@ msgid "テーマ情報"
 msgstr "主题信息"
 
 #: lib/page-speech-balloon/demo.php:26
-msgid "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモです。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意するか、「<a href=\"http://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
-msgstr "此图标是根据「いらすとや」的许可，通过本主题的CDN服务器分发的演示。随着访问量的增加，图标可能无法显示，因此建议您自行准备图片，或从「<a href=\"http://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」丰富的插图中寻找自己喜欢的图标，并上传到自己的服务器上使用。请理解，由于访问集中，无法保证CDN上的图像会一直显示。"
+msgid "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモです。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意するか、「<a href=\"https://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
+msgstr "此图标是根据「いらすとや」的许可，通过本主题的CDN服务器分发的演示。随着访问量的增加，图标可能无法显示，因此建议您自行准备图片，或从「<a href=\"https://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」丰富的插图中寻找自己喜欢的图标，并上传到自己的服务器上使用。请理解，由于访问集中，无法保证CDN上的图像会一直显示。"
 
 #: lib/page-speech-balloon/form.php:10
 msgid "吹き出し用の設定です。"

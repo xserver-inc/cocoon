@@ -33,7 +33,7 @@ define('SBIS_CIRCLE_NONE', 'cn');
 define('SBIS_CIRCLE_BORDER', 'cb');
 
 //いらすとやさん関係
-define('IRASUTOYA_ CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="_blank" rel="noopener">いらすとや</a>');
+define('IRASUTOYA_ CREDIT', '&copy; <a href="https://www.irasutoya.com/" target="_blank" rel="noopener">いらすとや</a>');
 define('IMAGE_CDN_DIR_URL', 'https://im-cocoon.net/wp-content/uploads');
 
 
