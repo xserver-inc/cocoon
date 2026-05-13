@@ -416,12 +416,6 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ +webkitAllowFullScreen(=["\'][^"\']*?["\'])?/i', '', $the_content);
   $the_content = preg_replace('/ +mozallowfullscreen(=["\'][^"\']*?["\'])?/i', '', $the_content);
 
-
-  //はてなブログカードiframe用の処理追加
-  $pattern = '{<iframe[^>]+?src="(https?://hatenablog-parts\.com/embed.+?)"[^>]+?></iframe>}is';
-  $append = '<amp-iframe src="$1" width="500" height="190"></amp-iframe>';
-  $the_content = preg_replace($pattern, $append, $the_content);
-
   //Amazon商品紹介iframeのAMP化
   $pattern = '{<iframe[^>]+?src="(.+?rcm-fe\.amazon-adsystem\.com[^"]+?)"[^>]+?(width="(\d+)")?.(height="(\d+)")?.+?</iframe>}is';
   if (preg_match_all($pattern, $the_content, $m)) {

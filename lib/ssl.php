@@ -68,11 +68,6 @@ function chagne_site_url_html_to_https($the_content){
   $replace = 'https://h.accesstrade.net';
   $the_content = str_replace($search, $replace, $the_content);
 
-  //はてなブログカードのSSL対応
-  $search  = 'http://hatenablog.com/embed?url=';
-  $replace = 'https://hatenablog-parts.com/embed?url=';
-  $the_content = str_replace($search, $replace, $the_content);
-
   //はてブ数画像のSSL対応
   $search  = 'http://b.hatena.ne.jp/entry/image/';
   $replace = 'https://b.hatena.ne.jp/entry/image/';

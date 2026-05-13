@@ -136,17 +136,6 @@ class SslTest extends TestCase
         $this->assertStringContainsString('https://h.accesstrade.net', $result);
     }
 
-    // ========================================================================
-    // はてなのSSL対応
-    // ========================================================================
-
-    public function test_はてなブログカードをHTTPSに変換する(): void
-    {
-        $content = '<iframe src="http://hatenablog.com/embed?url=test">';
-        $result = chagne_site_url_html_to_https($content);
-        $this->assertStringContainsString('https://hatenablog-parts.com/embed?url=', $result);
-    }
-
     public function test_はてブ数画像をHTTPSに変換する(): void
     {
         $content = '<img src="http://b.hatena.ne.jp/entry/image/test">';
