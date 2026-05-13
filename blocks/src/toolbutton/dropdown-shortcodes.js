@@ -133,7 +133,7 @@ registerBlockShortcodeFormatType(
 registerBlockShortcodeFormatType(
   'shortcode-profile',
   __( 'プロフィール', THEME_NAME ),
-  '[author_box label="' + __( 'この記事を書いた人', THEME_NAME ) + ']',
+  '[author_box label="' + __( 'この記事を書いた人', THEME_NAME ) + '"]',
   [ 'fas', 'user-circle' ]
 );
 //Amazonリンク
