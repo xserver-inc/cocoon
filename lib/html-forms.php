@@ -1043,9 +1043,9 @@ function generate_popular_entries_tag($atts){
   <?php if ( $horizontal ) echo '<div class="swiper-wrapper">'; ?>
   <?php if ( $records ) :
     $i = 1 + $offset;
-    foreach ($records as $post):
+    foreach ($records as $popular_post):
       cocoon_template_part('tmp/popular-card', null, array(
-        'post'            => $post,
+        'popular_post'    => $popular_post,
         'index'           => $i,
         'entry_type'      => $entry_type,
         'ranking_visible' => $ranking_visible,
