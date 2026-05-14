@@ -670,9 +670,28 @@ function get_sanitize_preview_template_part($slug, $name = null){
   restore_global_skin_theme_options();
   // global $_THEME_OPTIONS;
   // _v($_THEME_OPTIONS);
-  ob_start();
-  cocoon_template_part($slug, $name);
-  $tag = ob_get_clean();
+
+  // プレビュー中は外部リクエスト・DB書き込みを発生させるブロックを空出力にする
+  // （core/rss が fetch_feed() → set_site_transient() → add_option() を呼び出し DB エラーになるのを防ぐ）
+  // cocoon-blocks/embed-blogcard も外部 OGP 取得（wp_remote_get）を行うため対象に含める
+  $skip_external_blocks = function( $pre_render, $parsed_block ) {
+    $external_blocks = array( 'core/rss', 'core/embed', 'cocoon-blocks/embed-blogcard' );
+    if ( in_array( $parsed_block['blockName'], $external_blocks, true ) ) {
+      return '';
+    }
+    return $pre_render;
+  };
+  add_filter( 'pre_render_block', $skip_external_blocks, 10, 2 );
+
+  // try/finally で例外・wp_die 発生時もフィルターを確実に除去する
+  try {
+    ob_start();
+    cocoon_template_part($slug, $name);
+    $tag = ob_get_clean();
+  } finally {
+    remove_filter( 'pre_render_block', $skip_external_blocks, 10 );
+  }
+
   $tag = preg_replace('{<form.+?</form>}is', '', $tag);
   $tag = change_fa($tag);
   echo $tag;
