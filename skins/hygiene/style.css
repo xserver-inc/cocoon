@@ -791,6 +791,28 @@ border-bottom:4px solid #5572ff;
   color: var(--cocoon-instagram-color);
 }
 
+/* threads */
+.bc-brand-color-white.sns-follow .threads-button,
+.author-box .sns-follow-buttons a.follow-button.threads-button {
+  filter: drop-shadow(1px 1px 1px var(--cocoon-threads-color))
+}
+
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-threads-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-threads-logo {
+  color: var(--cocoon-threads-color);
+}
+
+/* reddit */
+.bc-brand-color-white.sns-follow .reddit-button,
+.author-box .sns-follow-buttons a.follow-button.reddit-button {
+  filter: drop-shadow(1px 1px 1px var(--cocoon-reddit-color))
+}
+
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-reddit-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-reddit-logo {
+  color: var(--cocoon-reddit-color);
+}
+
 /*********************
   SNSシェア(白抜き)
 **********************/
@@ -820,6 +842,24 @@ border-bottom:4px solid #5572ff;
 
 .sns-share-buttons a:hover .icon-misskey {
   color: var(--cocoon-misskey-color);
+}
+
+/* threads */
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-threads {
+  filter: drop-shadow(1px 1px 1px var(--cocoon-threads-color));
+}
+
+.sns-share-buttons a:hover .icon-threads {
+  color: var(--cocoon-threads-color);
+}
+
+/* reddit */
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-reddit {
+  filter: drop-shadow(1px 1px 1px var(--cocoon-reddit-color));
+}
+
+.sns-share-buttons a:hover .icon-reddit {
+  color: var(--cocoon-reddit-color);
 }
 
 /* pinterest */

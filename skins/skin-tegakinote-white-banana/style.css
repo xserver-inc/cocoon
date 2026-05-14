@@ -1388,6 +1388,14 @@ pre {
 	color: var( --cocoon-rss-color);
 }
 
+.bc-brand-color.sns-share .threads-button, .bc-brand-color.sns-follow .threads-button {
+	color: var(--cocoon-threads-color);
+}
+
+.bc-brand-color.sns-share .reddit-button, .bc-brand-color.sns-follow .reddit-button {
+	color: var(--cocoon-reddit-color);
+}
+
 /* ブランドカラー(白抜き) */
 .bc-brand-color-white.sns-share span, .bc-brand-color-white.sns-follow span {
 	color: transparent;
@@ -1495,6 +1503,14 @@ pre {
 
 .bc-brand-color-white.sns-share .rss-button, .bc-brand-color-white.sns-follow .rss-button {
 	-webkit-text-stroke: 1px var( --cocoon-rss-color);
+}
+
+.bc-brand-color-white.sns-share .threads-button, .bc-brand-color-white.sns-follow .threads-button {
+	-webkit-text-stroke: 1px var(--cocoon-threads-color);
+}
+
+.bc-brand-color-white.sns-share .reddit-button, .bc-brand-color-white.sns-follow .reddit-button {
+	-webkit-text-stroke: 1px var(--cocoon-reddit-color);
 }
 
 /* メインコンテンツ用 */

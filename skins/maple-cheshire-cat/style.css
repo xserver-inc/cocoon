@@ -439,6 +439,32 @@ table th {
 	background-color: #3b97f3;
 }
 
+/* Threads */
+.bc-brand-color-white.sns-share .threads-button, .bc-brand-color-white.sns-follow .threads-button {
+	border: 1px solid #666666; /* 枠線色 */
+	color: #666666; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .threads-button:hover, .bc-brand-color-white.sns-follow .threads-button:hover,
+/* color */
+.bc-brand-color.sns-share .threads-button, .bc-brand-color.sns-follow .threads-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.threads-button {
+	background-color: #666666;
+}
+
+/* Reddit */
+.bc-brand-color-white.sns-share .reddit-button, .bc-brand-color-white.sns-follow .reddit-button {
+	border: 1px solid #ff8a66; /* 枠線色 */
+	color: #ff8a66; /* 文字色 */
+}
+.bc-brand-color-white.sns-share .reddit-button:hover, .bc-brand-color-white.sns-follow .reddit-button:hover,
+/* color */
+.bc-brand-color.sns-share .reddit-button, .bc-brand-color.sns-follow .reddit-button,
+/* profile */
+.author-box .sns-follow-buttons a.follow-button.reddit-button {
+	background-color: #ff8a66;
+}
+
 /* LinkedIn */
 .bc-brand-color-white.sns-share .linkedin-button, .bc-brand-color-white.sns-follow .linkedin-button {
         border: 1px solid #57abd6; /* 枠線色 */
@@ -554,15 +580,15 @@ table th {
 }
 /* YouTube */.author-box .sns-follow-buttons a.follow-button
 .bc-brand-color-white.sns-share .youtube-button, .bc-brand-color-white.sns-follow .youtube-button {
-    color: #ea4c89;
-    border-color: #ea4c89;
+    color: #f48fb1;
+    border-color: #f48fb1;
 }
 .bc-brand-color-white.sns-share .youtube-button:hover, .bc-brand-color-white.sns-follow .youtube-button:hover,
 /* color */
 .bc-brand-color.sns-share .youtube-button, .bc-brand-color.sns-follow .youtube-button,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.youtube-button{
-    background-color: #ea4c89;
+    background-color: #f48fb1;
 }
 /* Github */
 .bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button{
@@ -588,8 +614,8 @@ border: 1px solid #ffbf7f; /* 枠線色 */
 }
 /* Rakuten */
 .bc-brand-color-white.sns-share .rakuten-room-button, .bc-brand-color-white.sns-follow .rakuten-room-button{
-	border: 1px solid #ea4c89; /* 枠線色 */
-	color: #ea4c89; /* 文字色 */
+	border: 1px solid #dc78ae; /* 枠線色 */
+	color: #dc78ae; /* 文字色 */
 }
 /* hover */
 .bc-brand-color-white.sns-share .rakuten-room-button:hover, .bc-brand-color-white.sns-follow .rakuten-room-button:hover,
@@ -597,7 +623,7 @@ border: 1px solid #ffbf7f; /* 枠線色 */
 .bc-brand-color.sns-share .rakuten-room-button, .bc-brand-color.sns-follow .rakuten-room-button,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.rakuten-room-button{
-	background-color: #ea4c89; /* 枠線色 */
+	background-color: #dc78ae; /* 枠線色 */
 	color: #fff; /* 文字色 */
 }
 /* CodePen, Instagram */
@@ -633,14 +659,14 @@ border: 1px solid #ffbf7f; /* 枠線色 */
 }
 /* flicker */
 .bc-brand-color-white.sns-share .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
-    color: var(--cocoon-instagram-color);
-    border-color: var(--cocoon-instagram-color);
+    color: #ff80c1;
+    border-color: #ff80c1;
 }
 .bc-brand-color-white.sns-share .flickr-button:hover, .bc-brand-color-white.sns-follow .flickr-button:hover,
 .bc-brand-color.sns-share .flickr-button, .bc-brand-color.sns-follow .flickr-button,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.flickr-button{
-    background-color: var(--cocoon-instagram-color);
+    background-color: #ff80c1;
 }
 
 /* Mastodon */

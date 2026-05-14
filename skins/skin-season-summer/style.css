@@ -565,6 +565,12 @@ article .tag-link:hover {
 .author-box .facebook-button {
 	background-color: var(--cocoon-facebook-color) !important;
 }
+.author-box .threads-button {
+	background-color: var(--cocoon-threads-color) !important;
+}
+.author-box .reddit-button {
+	background-color: var(--cocoon-reddit-color) !important;
+}
 .author-box .hatebu-button {
 	background-color: var(--cocoon-hatebu-color) !important;
 }

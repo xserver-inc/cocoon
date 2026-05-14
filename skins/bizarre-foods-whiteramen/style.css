@@ -697,8 +697,20 @@ a.tag-link {
     color:var(--cocoon-misskey-color);
 }
 
+.bc-brand-color a.bluesky-button {
+    color:var(--cocoon-bluesky-color);
+}
+
 .bc-brand-color a.facebook-button {
     color:var(--cocoon-facebook-color);
+}
+
+.bc-brand-color a.threads-button {
+    color: var(--cocoon-threads-color);
+}
+
+.bc-brand-color a.reddit-button {
+    color: var(--cocoon-reddit-color);
 }
 
 .bc-brand-color a.hatebu-button {

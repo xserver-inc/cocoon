@@ -138,6 +138,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['misskey_url'] = __( 'Misskey URL', THEME_NAME );
   $prof_items['facebook_url'] = __( 'Facebook URL', THEME_NAME );
   $prof_items['threads_url'] = __( 'Threads URL', THEME_NAME );
+  $prof_items['reddit_url'] = __( 'Reddit URL', THEME_NAME );
   //$prof_items['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
   $prof_items['hatebu_url'] = __( 'はてなブックマーク URL', THEME_NAME );
   $prof_items['instagram_url'] = __( 'Instagram URL', THEME_NAME );
@@ -285,6 +286,14 @@ if ( !function_exists( 'get_the_author_threads_url' ) ):
 function get_the_author_threads_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
   return esc_url(get_the_author_meta('threads_url', $user_id));
+}
+endif;
+
+//プロフィール画面で設定したReddit URLの取得
+if ( !function_exists( 'get_the_author_reddit_url' ) ):
+function get_the_author_reddit_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_url(get_the_author_meta('reddit_url', $user_id));
 }
 endif;
 
@@ -450,6 +459,7 @@ function is_author_follow_buttons_exits(){
          || get_the_author_misskey_url()
          || get_the_author_facebook_url()
          || get_the_author_threads_url()
+         || get_the_author_reddit_url()
          //|| get_the_author_google_plus_url()
          || get_the_author_hatebu_url()
          || get_the_author_instagram_url()
