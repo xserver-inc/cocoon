@@ -168,42 +168,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 
-<?php if(0): ?>
-<!-- スクリプト読み込み -->
-<div id="script-load" class="postbox">
-  <h2 class="hndle"><?php _e( 'スクリプト読み込み設定', THEME_NAME ) ?></h2>
-  <div class="inside">
-
-    <p><?php _e( 'JavaScriptの読み込み方式を変更する設定です。', THEME_NAME ) ?></p>
-
-    <table class="form-table">
-      <tbody>
-
-
-        <!-- Lazy Load画像 -->
-        <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_FOOTER_JAVASCRIPT_ENABLE, __('スクリプト', THEME_NAME) ); ?>
-          </th>
-          <td>
-            <?php
-            generate_checkbox_tag(OP_FOOTER_JAVASCRIPT_ENABLE , is_footer_javascript_enable(), __( 'JavaScriptをフッターで読み込む', THEME_NAME ));
-            generate_tips_tag(__( 'JavaScriptファイルのレンダリングブロックを避けるためにフッターでjsファイルを読み込みます。プラグインが正常に動作しない場合は、無効にしてください。ただしレンダリングブロックが発生するので、速さは犠牲になります。', THEME_NAME ));
-
-
-            // generate_textarea_tag(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST, get_footer_javascript_exclude_list(), __( '除外文字列を入力', THEME_NAME ) , 3);
-            // generate_tips_tag(__( '「JavaScriptのフッター読み込み」を行いたくない場合は、該当するスクリプトに含まれている文字列を改行区切りで入力してください。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-
-  </div>
-</div>
-<?php endif; ?>
-
 
 <!-- 事前読み込み -->
 <div id="pre-acquisition" class="postbox">

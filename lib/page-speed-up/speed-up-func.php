@@ -135,21 +135,12 @@ function remove_browser_cache_from_htacccess(){
 }
 endif;
 
-//スクリプトをフッターで読み込む
-define('OP_FOOTER_JAVASCRIPT_ENABLE', 'footer_javascript_enable');
+// 後方互換: フッターJS読み込み機能は廃止済み。子テーマでのオーバーライドを考慮し関数を残す
 if ( !function_exists( 'is_footer_javascript_enable' ) ):
 function is_footer_javascript_enable(){
-  return false;//get_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE, 1);
+  return false;
 }
 endif;
-
-// //フッターJavaScript除外ファイルリスト
-// define('OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST', 'footer_javascript_exclude_list');
-// if ( !function_exists( 'get_footer_javascript_exclude_list' ) ):
-// function get_footer_javascript_exclude_list(){
-//   return stripslashes_deep(get_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST, ''));
-// }
-// endif;
 
 //preconnect dns-prefetchドメインリスト
 define('OP_PRE_ACQUISITION_LIST', 'pre_acquisition_list');

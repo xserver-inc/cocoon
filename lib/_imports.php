@@ -34,7 +34,6 @@ require_once abspath(__FILE__).'content-category.php';   //カテゴリー関係
 require_once abspath(__FILE__).'content-tag.php';   //タグ関係の関数
 require_once abspath(__FILE__).'entry-card.php'; //エントリーカード関数
 require_once abspath(__FILE__).'amp.php';        //AMP関係の関数
-require_once abspath(__FILE__).'content.php';    //本文関係の関数
 require_once abspath(__FILE__).'comments.php';   //コメント関係の関数
 require_once abspath(__FILE__).'related-entries.php';   //関連記事関係の関数
 require_once abspath(__FILE__).'walkers.php';    //Walker_Nav_Menuまとめ
