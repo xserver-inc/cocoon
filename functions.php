@@ -224,14 +224,6 @@ function get_archive_chapter_text(){
 }
 endif;
 
-//'wp-color-picker'の呼び出し順操作（最初の方に読み込む）
-add_action('admin_enqueue_scripts', 'admin_enqueue_scripts_custom');
-if ( !function_exists( 'admin_enqueue_scripts_custom' ) ):
-function admin_enqueue_scripts_custom($hook) {
-  wp_enqueue_script('colorpicker-script', get_cocoon_template_directory_uri() . '/js/color-picker.js', array( 'wp-color-picker' ), false, true);
-}
-endif;
-
 //投稿管理画面のカテゴリーリストの階層を保つ
 add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2);
 if ( !function_exists( 'solecolor_wp_terms_checklist_args' ) ):
