@@ -6059,6 +6059,39 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   border-width: 1px;
   left: 0.6em;
 }
+.style-buttons .__prev.is-style-stitch-box {
+  box-shadow: unset;
+}
+.style-buttons .__prev.is-style-cross-line::before {
+  left: 5px;
+}
+.style-buttons .__prev.is-style-cross-line::after {
+  right: 5px;
+}
+.style-buttons .__prev.is-style-cross-line::before, .style-buttons .__prev.is-style-cross-line::after {
+  height: calc(100% + 10px);
+  top: -5px;
+}
+.style-buttons .__prev.is-style-clip-box::before {
+  height: 35px;
+  top: -5px;
+  width: 15px;
+}
+.style-buttons .__prevWrap:has(.is-style-stitch-box) {
+  background: #fbfaf5;
+}
+.style-buttons .__prevWrap:has(.is-style-balloon-left-box) {
+  padding-left: 10px;
+}
+.style-buttons .__prevWrap:has(.is-style-balloon-right-box) {
+  padding-right: 10px;
+}
+.style-buttons .__prevWrap:has(.is-style-balloon-top-box) {
+  padding-top: 10px;
+}
+.style-buttons .__prevWrap:has(.is-style-balloon-bottom-box) {
+  padding-bottom: 10px;
+}
 .style-buttons .__prevTitle {
   display: block;
   font-size: 10px;
