@@ -135,7 +135,7 @@ function remove_browser_cache_from_htacccess(){
 }
 endif;
 
-// 後方互換: フッターJS読み込み機能は廃止済み。子テーマでのオーバーライドを考慮し関数を残す
+// 後方互換: フッターJS読み込み機能は廃止済み。子テーマ等での関数使用時のエラーを回避するため関数を残す
 if ( !function_exists( 'is_footer_javascript_enable' ) ):
 function is_footer_javascript_enable(){
   return false;
