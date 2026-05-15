@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
 Theme Name: Cocoon
 Description: SEO・高速化・モバイルファースト最適化済みの無料テーマ。
@@ -6081,7 +6081,6 @@ figcaption {
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: #323232;
 }
@@ -9920,7 +9919,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: var(--cocoon-box-border-color);
 }

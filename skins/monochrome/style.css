@@ -1,4 +1,4 @@
-/*
+﻿/*
   Skin Name: モノクロ
   Description: モノクロを基調としています。
   Author: yurukei20
@@ -400,7 +400,6 @@ div.item-label {
 	left: 0.5em;
 	content: "";
 	width: 6px;
-	height: -webkit-calc(100% - 1em);
 	height: calc(100% - 1em);
 	background-color: #9da5a0;
 	border-radius: 4px;
@@ -412,7 +411,6 @@ div.item-label {
 	right: 0.5em;
 	content: "";
 	width: 6px;
-	height: -webkit-calc(100% - 1em);
 	height: calc(100% - 1em);
 	background-color: #9da5a0;
 	border-radius: 4px;

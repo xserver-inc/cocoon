@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 :root {
   --cocoon-twitter-color: #000000;
   --cocoon-mastodon-color: #6364FF;
@@ -4011,7 +4011,6 @@ figcaption {
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: #323232;
 }
@@ -4583,7 +4582,6 @@ th:has(.s-circle), th:has(.d-circle), th:has(.triangle), th:has(.cross), th:has(
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: var(--cocoon-box-border-color);
 }
