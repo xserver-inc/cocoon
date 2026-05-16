@@ -690,6 +690,9 @@ class Xwrite_Notice_Manager {
   private $meta_key_dismissed = 'xwrite_notice_dismissed_at';
   private $meta_key_graduated = 'xwrite_notice_graduated';
   private $meta_key_last_dismissed = 'xwrite_notice_last_dismissed_phase';
+  // 初回フェーズ判定用のメタキー（xwrite_notice_* プレフィックスに統一）
+  private $meta_key_base_index = 'xwrite_notice_initial_base_index';
+  private $meta_key_base_month = 'xwrite_notice_initial_base_month';
 
   public function __construct() {
     // dismiss処理はHTMLヘッダー出力前のフックで実行（wp_safe_redirect を確実に動作させるため）
@@ -926,8 +929,8 @@ class Xwrite_Notice_Manager {
     $defaults_cond = $data['global_settings']['defaults']['conditions'] ?? array();
 
     // 1. 【初回判定】開始フェーズと、その時の「経過月数」を保存
-    $base_index = get_user_meta( $user_id, 'xwrite_initial_base_index', true );
-    $start_month = get_user_meta( $user_id, 'xwrite_initial_base_month', true );
+    $base_index = get_user_meta( $user_id, $this->meta_key_base_index, true );
+    $start_month = get_user_meta( $user_id, $this->meta_key_base_month, true );
 
     // 初回のみ記事数を計算してフェーズを保存
     if ( $base_index === '' ) {
@@ -948,8 +951,8 @@ class Xwrite_Notice_Manager {
       }
 
       // 保存：どの案からスタートしたか、何ヶ月目の時にスタートしたか
-      update_user_meta( $user_id, 'xwrite_initial_base_index', $base_index );
-      update_user_meta( $user_id, 'xwrite_initial_base_month', $months_since_site_start );
+      update_user_meta( $user_id, $this->meta_key_base_index, $base_index );
+      update_user_meta( $user_id, $this->meta_key_base_month, $months_since_site_start );
       $start_month = $months_since_site_start;
     }
 
