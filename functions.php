@@ -692,7 +692,52 @@ class Xwrite_Notice_Manager {
   private $meta_key_last_dismissed = 'xwrite_notice_last_dismissed_phase';
 
   public function __construct() {
+    // dismiss処理はHTMLヘッダー出力前のフックで実行（wp_safe_redirect を確実に動作させるため）
+    add_action( 'admin_init', array( $this, 'handle_dismiss' ) );
+    // 通知の表示は admin_notices で実行
     add_action( 'admin_notices', array( $this, 'display_notice' ), 5 );
+  }
+
+  /**
+   * 「通知を表示しない」ボタン押下時の処理
+   * admin_init フックで実行することで、HTML出力前にリダイレクトを確実に行う
+   */
+  public function handle_dismiss() {
+
+    // 管理者権限がないユーザーは処理しない
+    if ( ! current_user_can( 'manage_options' ) ) return;
+
+    // xwrite_dismiss パラメータがなければ何もしない
+    if ( ! isset( $_GET['xwrite_dismiss'] ) ) return;
+
+    // Nonce を検証（失敗時は wp_die せず静かに終了する）
+    if ( ! check_admin_referer( 'xwrite_dismiss_action' ) ) return;
+
+    $user_id = get_current_user_id();
+
+    // dismiss 処理に必要なフェーズ数を取得するためJSONデータを取得
+    $data = $this->get_json_data();
+
+    // 現在のフェーズを取得（URLから受け取る）
+    $clicked_index = isset( $_GET['phase_index'] ) ? intval( $_GET['phase_index'] ) : 0;
+
+    // 冷却期間の保存（一律30日間隠すためのスタンプ）
+    update_user_meta( $user_id, $this->meta_key_dismissed, time() );
+
+    // 最後に非表示にしたフェーズ番号を保存
+    update_user_meta( $user_id, $this->meta_key_last_dismissed, $clicked_index );
+
+    // JSONの中の最後のフェーズインデックスを取得して判定
+    if ( $data && ! empty( $data['delivery_phases'] ) ) {
+      $last_index = count( $data['delivery_phases'] ) - 1;
+      if ( $last_index === $clicked_index ) {
+        update_user_meta( $user_id, $this->meta_key_graduated, true );
+      }
+    }
+
+    // パラメータを掃除してページをリロード
+    wp_safe_redirect( remove_query_arg( array( 'xwrite_dismiss', 'phase_index', '_wpnonce' ) ) );
+    exit;
   }
 
   /**
@@ -732,28 +777,6 @@ class Xwrite_Notice_Manager {
     // 【データ取得】外部サーバーからJSONデータを取得（失敗したら終了）
     $data = $this->get_json_data();
     if ( ! $data || empty($data['delivery_phases']) ) return;
-
-    // 非表示ボタン押下時の割り込み処理（保存してリロードするため、描画より前に実行）
-    if ( isset( $_GET['xwrite_dismiss'] ) && check_admin_referer( 'xwrite_dismiss_action' ) ) {
-      // 現在のフェーズを取得（URLから受け取る）
-      $clicked_index = isset( $_GET['phase_index'] ) ? intval( $_GET['phase_index'] ) : 0;
-
-      // 冷却期間の保存（一律30日間隠すためのスタンプ）
-      update_user_meta( $user_id, $this->meta_key_dismissed, time() );
-
-      // 最後に非表示にしたフェーズ番号を保存
-      update_user_meta( $user_id, $this->meta_key_last_dismissed, $clicked_index );
-
-      // 【修正】JSONの中の最後のフェーズインデックスを取得して判定
-      $last_index = count($data['delivery_phases']) - 1;
-      if ( $last_index === $clicked_index ) {
-        update_user_meta( $user_id, $this->meta_key_graduated, true );
-      }
-
-      // パラメータを掃除してページをリロード
-      wp_safe_redirect( remove_query_arg( array( 'xwrite_dismiss', 'phase_index', '_wpnonce' ) ) );
-      exit;
-    }
 
     // 案3を非表示にした人はここで即座に終了
     if ( get_user_meta( $user_id, $this->meta_key_graduated, true ) ) return;
