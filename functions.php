@@ -827,15 +827,12 @@ class Xwrite_Notice_Manager {
     // JSONから表示内容を取得（個別設定がなければデフォルトを採用）
     $text          = $target_phase['content']['text'] ?? '';
     $notice_type   = $target_phase['content']['type'] ?? $defaults['type'] ?? 'info';
+    $dismiss_label = $target_phase['content']['dismiss_label'] ?? $defaults['dismiss_label'] ?? '通知を表示しない';
 
     // JSONのデフォルト設定からラベルを取得
     $action_labels = $defaults['action_labels'] ?? array();
     // 各フェーズ固有のURLを取得
     $urls = $target_phase['content']['urls'] ?? array();
-
-    $text          = $target_phase['content']['text'] ?? '';
-    $notice_type   = $target_phase['content']['type'] ?? $defaults['type'] ?? 'info';
-    $dismiss_label = $target_phase['content']['dismiss_label'] ?? $defaults['dismiss_label'] ?? '通知を表示しない';
 
     $notice_class = 'notice notice-' . esc_attr( $notice_type ) . ' is-dismissible';
     ?>
