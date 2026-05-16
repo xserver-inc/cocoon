@@ -853,7 +853,8 @@ class Xwrite_Notice_Manager {
             $label = $action_labels[$key] ?? '';
 
             if ( ! empty( $url ) && ! empty( $label ) ) {
-              echo '<a href="' . esc_url( $url ) . '" style="text-decoration: none;" target="_blank">' . esc_html( $label ) . '</a>';
+              // target="_blank" に対して念のため rel="noopener noreferrer" を付与
+              echo '<a href="' . esc_url( $url ) . '" style="text-decoration: none;" target="_blank" rel="noopener noreferrer">' . esc_html( $label ) . '</a>';
               echo $sep;
             }
           }
