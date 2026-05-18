@@ -230,8 +230,10 @@ if (!function_exists('get_queried_object')) {
 }
 
 if (!function_exists('is_front_page')) {
+    // テスト用: グローバル変数 $test_mock_is_front_page で戻り値を制御可能
     function is_front_page() {
-        return false;
+        global $test_mock_is_front_page;
+        return isset($test_mock_is_front_page) ? (bool)$test_mock_is_front_page : false;
     }
 }
 
@@ -386,6 +388,14 @@ if (!function_exists('is_home')) {
 if (!function_exists('is_archive')) {
     function is_archive() {
         return false;
+    }
+}
+
+if (!function_exists('is_paged')) {
+    // テスト用: グローバル変数 $test_mock_is_paged で戻り値を制御可能
+    function is_paged() {
+        global $test_mock_is_paged;
+        return isset($test_mock_is_paged) ? (bool)$test_mock_is_paged : false;
     }
 }
 
@@ -1079,5 +1089,14 @@ if (!class_exists('WP_HTML_Tag_Processor')) {
             }
             return $result;
         }
+    }
+}
+
+// EntryCardTest 用: get_entry_card_type() のスタブ
+if (!function_exists('get_entry_card_type')) {
+    // テスト用: グローバル変数 $test_mock_entry_card_type で戻り値を制御可能
+    function get_entry_card_type() {
+        global $test_mock_entry_card_type;
+        return isset($test_mock_entry_card_type) ? $test_mock_entry_card_type : 'default';
     }
 }
