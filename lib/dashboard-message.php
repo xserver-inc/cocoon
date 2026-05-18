@@ -1,10 +1,9 @@
-<?php //ダッシュボード上部に表示するメッセージ
+<?php //管理画面上部に表示するメッセージ
 /**
  * Cocoon WordPress Theme
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- * @reference: https://github.com/rocket-martue/Hello-Musou
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
