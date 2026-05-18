@@ -13,7 +13,8 @@ if (is_front_page_type_index()) {
 $classes = '';
 // ループインデックスを安全に取得（set_query_varで設定されていない場合は0）
 $count = intval(get_query_var('count'));
-if (is_entry_card_type_big_card_first() && $count === 1) {
+// フロントページ1ページ目の先頭カードのみ大きなカードクラスを付与
+if (is_entry_card_type_big_card_first() && is_front_top_page() && $count === 1) {
   $classes = ' ec-big-card-first';
 }
 ?>
