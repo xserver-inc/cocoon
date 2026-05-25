@@ -756,6 +756,7 @@ function get_box_menu_tag($atts){
   }
 
   $tag = null;
+  $has_image_icon = false;
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
   if (!$menu_items) {
     return;
