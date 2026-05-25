@@ -528,9 +528,10 @@ function expand_synced_patterns($content) {
     $pattern_post = get_post($pattern_id);
 
     // パターンが存在し、正しいタイプかチェック
+    // isset() でプロパティの存在を確認してから比較する（stdClass 等でのプロパティ未定義警告を防ぐ）
     if ($pattern_post &&
-      $pattern_post->post_type === 'wp_block' &&
-      $pattern_post->post_status === 'publish') {
+      isset($pattern_post->post_type) && $pattern_post->post_type === 'wp_block' &&
+      isset($pattern_post->post_status) && $pattern_post->post_status === 'publish') {
 
       // パターンのコンテンツを再帰的に処理（入れ子の同期パターンにも対応）
       return expand_synced_patterns($pattern_post->post_content);
