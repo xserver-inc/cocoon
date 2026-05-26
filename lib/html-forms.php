@@ -1339,7 +1339,8 @@ endif;
 //ナビカードサムネイルの取得
 if ( !function_exists( 'get_navi_entry_card_thumbnail_tag' ) ):
 function get_navi_entry_card_thumbnail_tag($image_attributes, $title, $class){
-  return get_original_image_tag($image_attributes[0], $image_attributes[1], $image_attributes[2], $class, $title);
+  // カードタイトルは ..-entry-card-title テキストで読み上げられるため alt は空にする
+  return get_original_image_tag($image_attributes[0], $image_attributes[1], $image_attributes[2], $class, '');
 }
 endif;
 

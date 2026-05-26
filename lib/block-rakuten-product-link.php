@@ -534,7 +534,7 @@ function cocoon_rakuten_block_generate_static_html($Item, $itemCode, $settings){
 
   // 画像リンクタグの生成
   $image_link_tag = '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-thumb-link product-item-thumb-link image-thumb" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
-    '<img src="'.esc_url($ImageUrl).'" alt="'.$TitleAttr.'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="rakuten-item-thumb-image product-item-thumb-image">'.
+    '<img src="'.esc_url($ImageUrl).'" alt="" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="rakuten-item-thumb-image product-item-thumb-image">'.
     $moshimo_rakuten_impression_tag.
   '</a>';
 
