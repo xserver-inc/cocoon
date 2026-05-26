@@ -30,6 +30,21 @@ body {
   background-attachment: fixed;
 }
 
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 6px;
+  z-index: 9999;
+  padding: 6px 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+
+  &:focus {
+    top: 6px;
+  }
+}
+
 /*デフォルトリンク*/
 a{
   color: #1967d2;

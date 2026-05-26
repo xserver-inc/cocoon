@@ -16,6 +16,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       do_action( 'wp_body_open' );
   }?>
 
+  <a class="skip-link" href="#main"><?php esc_html_e('コンテンツへスキップ', THEME_NAME); ?></a>
+
   <?php //ユーザーカスタマイズ用
   cocoon_template_part('tmp-user/body-top-insert'); ?>
 
