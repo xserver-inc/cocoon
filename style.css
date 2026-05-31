@@ -614,6 +614,15 @@ body {
   top: 6px;
 }
 
+.admin-bar .skip-link:focus {
+  top: calc(var(--wp-admin--admin-bar--height, 32px) + 6px);
+  z-index: 100000;
+}
+
+main#main:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /*デフォルトリンク*/
 a {
   color: #1967d2;

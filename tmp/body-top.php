@@ -65,7 +65,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <div id="content-in" class="content-in wrap">
 
-        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" itemscope itemtype="https://schema.org/Blog">
+        <?php //スキップリンクからキーボードのフォーカスを直接受け取れるようにtabindex="-1"を設定する ?>
+        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" tabindex="-1" itemscope itemtype="https://schema.org/Blog">
 
         <?php
         //PRラベル（小）の表示

@@ -45,6 +45,17 @@ body {
   }
 }
 
+// 管理バー表示時は、スキップリンクを管理バーの下にずらして最前面に表示する
+.admin-bar .skip-link:focus {
+  top: calc(var(--wp-admin--admin-bar--height, 32px) + 6px);
+  z-index: 100000;
+}
+
+// マウスクリックでメイン領域に移動した際の青い枠線を抑制する（キーボード操作時の枠線は残す）
+main#main:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /*デフォルトリンク*/
 a{
   color: #1967d2;
