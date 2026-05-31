@@ -6,7 +6,8 @@
   --cocoon-custom-text-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
-
+  // WordPressコアによる意図しない枠線の表示防止
+  border: 0;
 }
 
 .speech-person{

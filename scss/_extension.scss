@@ -1406,6 +1406,8 @@ div.search-form{
   float: none;
   margin: 0;
   // margin-bottom: 1.2em;
+  // WordPressコアによる意図しない枠線の表示防止
+  border: 0;
   &.alignleft{
     text-align: left;
   }

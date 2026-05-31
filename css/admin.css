@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /************************************
 ** WordPress管理画面用のCSS
 ** ※管理画面にしか適用されません
@@ -1168,6 +1168,19 @@ body.wp-admin {
   -moz-text-size-adjust: 100%;
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
   background-attachment: fixed;
+}
+.admin-settings .demo .skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 6px;
+  z-index: 9999;
+  padding: 6px 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+.admin-settings .demo .skip-link:focus {
+  top: 6px;
 }
 .admin-settings .demo a {
   color: #1967d2;
@@ -4842,6 +4855,7 @@ body.wp-admin {
 .admin-settings .demo .button-block {
   float: none;
   margin: 0;
+  border: 0;
 }
 .admin-settings .demo .button-block.alignleft {
   text-align: left;
@@ -6578,6 +6592,7 @@ body.wp-admin {
   --cocoon-custom-text-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
+  border: 0;
 }
 .admin-settings .demo .speech-person {
   width: 12%;
@@ -9797,6 +9812,19 @@ body.wp-admin {
   -moz-text-size-adjust: 100%;
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
   background-attachment: fixed;
+}
+.admin-settings .demo .skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 6px;
+  z-index: 9999;
+  padding: 6px 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+.admin-settings .demo .skip-link:focus {
+  top: 6px;
 }
 .admin-settings .demo a {
   color: #1967d2;
@@ -13471,6 +13499,7 @@ body.wp-admin {
 .admin-settings .demo .button-block {
   float: none;
   margin: 0;
+  border: 0;
 }
 .admin-settings .demo .button-block.alignleft {
   text-align: left;
@@ -15207,6 +15236,7 @@ body.wp-admin {
   --cocoon-custom-text-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
+  border: 0;
 }
 .admin-settings .demo .speech-person {
   width: 12%;
@@ -22767,6 +22797,7 @@ select option.fa:before {
 .components-popover__content .button-block {
   float: none;
   margin: 0;
+  border: 0;
 }
 .components-popover__content .button-block.alignleft {
   text-align: left;
