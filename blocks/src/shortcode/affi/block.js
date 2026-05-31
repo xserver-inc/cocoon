@@ -12,7 +12,10 @@ import { registerBlockType } from '@wordpress/blocks';
 
 //左カラム
 registerBlockType( 'cocoon-blocks/affi', {
-  title: __( 'アフィリエイトタグタグ', THEME_NAME ),
+  // エディターのAPIバージョンを3に指定して、新しいiframeエディターに対応させる
+  apiVersion: 3,
+  // ブロックのタイトル（表示名）を設定する
+  title: __( 'アフィリエイトタグ', THEME_NAME ),
   icon: 'grid-view',
   category: THEME_NAME + '-shortcode',
   description: __( 'アフィリエイトタグ', THEME_NAME ),

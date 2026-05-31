@@ -32,6 +32,8 @@
 
     // ブログカード埋め込みブロックを登録
     wp.blocks.registerBlockType( 'cocoon-blocks/embed-blogcard', {
+      // エディターのAPIバージョンを3に指定して、新しいiframeエディターに対応させる
+      apiVersion: 3,
       title: __( 'ブログカード（埋め込み）', 'cocoon' ),
       icon: 'admin-links',
       category: 'cocoon-block',
