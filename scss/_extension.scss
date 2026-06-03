@@ -1033,8 +1033,10 @@ div.search-form{
 
 .btn:hover,
 .btn-wrap > a:hover{
+  // マウスを乗せた時にボタン全体を少し透けさせる（不透明度70%）
   opacity: 0.7;
-  color: var(--cocoon-white-color);
+  // マウスを乗せた時の文字色（カスタムカラー設定時はその色、未設定時は白色）
+  color: var(--cocoon-custom-text-color, var(--cocoon-white-color));
   &::after{
     right: -4px;
   }

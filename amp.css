@@ -589,6 +589,15 @@ body {
   top: 6px;
 }
 
+.admin-bar .skip-link:focus {
+  top: calc(var(--wp-admin--admin-bar--height, 32px) + 6px);
+  z-index: 100000;
+}
+
+main#main:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /*デフォルトリンク*/
 a {
   color: #1967d2;
@@ -4152,7 +4161,7 @@ div.search-form {
 .btn:hover, .ranking-item-link-buttons a:hover,
 .btn-wrap > a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
+  color: var(--cocoon-custom-text-color, var(--cocoon-white-color));
 }
 .btn:hover::after, .ranking-item-link-buttons a:hover::after,
 .btn-wrap > a:hover::after {

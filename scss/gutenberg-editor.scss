@@ -702,6 +702,12 @@ ol, ul {
   background-color: #f8e58c !important;
 }
 
+// エディター上では<a>タグがpointer-events: noneになりホバーを検知しないため、親要素ホバー経由で透過（opacity）を適用する（エディター限定）
+.btn-wrap:hover > a{
+  // マウスを乗せた時にボタン全体を少し透けさせる（不透明度70%）
+  opacity: 0.7;
+}
+
 .wp-block{
   // &[data-align] > *{
   //   // float: none;

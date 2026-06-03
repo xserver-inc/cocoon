@@ -2093,7 +2093,7 @@ div.search-form {
 .btn:hover,
 .btn-wrap > a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
+  color: var(--cocoon-custom-text-color, var(--cocoon-white-color));
 }
 .btn:hover::after,
 .btn-wrap > a:hover::after {
@@ -5560,6 +5560,10 @@ ol, ul {
 
 .btn-wrap {
   background-color: #f8e58c !important;
+}
+
+.btn-wrap:hover > a {
+  opacity: 0.7;
 }
 
 .wp-block[data-align=center] .btn-wrap,
