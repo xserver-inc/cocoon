@@ -1419,6 +1419,14 @@ div.search-form{
   &.alignright{
     text-align: right;
   }
+
+  // ボタンの横幅が100%のときは、左右の自動余白や回り込み（float）を打ち消して、
+  // 縦積み（flex）グループ内でも親要素いっぱいに広がるようにします
+  &:has(.cocoon-block-button__width-100) {
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 /************************************

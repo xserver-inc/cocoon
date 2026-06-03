@@ -4873,6 +4873,11 @@ body.wp-admin {
 .admin-settings .demo .button-block.alignright {
   text-align: right;
 }
+.admin-settings .demo .button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 .admin-settings .demo .block-box-label {
   display: flex;
 }
@@ -13523,6 +13528,11 @@ body.wp-admin {
 }
 .admin-settings .demo .button-block.alignright {
   text-align: right;
+}
+.admin-settings .demo .button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 .admin-settings .demo .block-box-label {
   display: flex;
@@ -22821,6 +22831,11 @@ select option.fa:before {
 }
 .components-popover__content .button-block.alignright {
   text-align: right;
+}
+.components-popover__content .button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 .components-popover__content .block-box-label {
   display: flex;

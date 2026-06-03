@@ -1051,6 +1051,9 @@ body::before,
 }
 
 .btn-wrap-block {
+	// 左寄せ・右寄せ時にコアの840px制限（is-root-container > :not(.alignleft)…）から外れても幅が広がらないように上限を持たせる
+	// 幅100%時も、自動余白（margin: auto）でコンテンツ列（中央寄せ）に揃え、WordPressコアのボタンブロックと同じ位置に表示する
+	max-width: 840px;
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
@@ -1163,6 +1166,18 @@ div.cocoon-render-dropdown {
   &.alignright{
     text-align: right;
   }
+
+  // 幅100%時も、コンテンツ列（中央寄せ）に揃える。
+  // _extension.scss の「.button-block:has(.cocoon-block-button__width-100){ margin: 0 !important }」が
+  // エディターでは後発のインラインCSSとして読み込まれ、同じ詳細度(0,2,0)＋!importantで基底の margin:auto を
+  // 打ち消してしまう。そこで .is-root-container を前置して詳細度を(0,3,0)に上げ、確実に margin:auto を効かせる。
+  // （幅100%ボタンは840pxのコンテンツ列を埋めるため、左/中央/右の区別は視覚的に同じで、
+  //   WordPressコアのボタンブロック（コンテンツ幅中央寄せ）と同じ位置に揃える）
+}
+
+.is-root-container .wp-block-cocoon-blocks-button-1:has(.cocoon-block-button__width-100) {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 //ブロックエディターのナンバーコントロールCSSの調整

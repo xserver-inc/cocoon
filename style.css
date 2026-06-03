@@ -4958,6 +4958,11 @@ div.search-form {
 .button-block.alignright {
   text-align: right;
 }
+.button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 /************************************
 ** 汎用ボックス共通

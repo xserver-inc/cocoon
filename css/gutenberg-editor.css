@@ -2865,6 +2865,11 @@ div.search-form {
 .button-block.alignright {
   text-align: right;
 }
+.button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 /************************************
 ** 汎用ボックス共通
@@ -5827,6 +5832,7 @@ body::before,
 }
 
 .btn-wrap-block {
+  max-width: 840px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -5935,6 +5941,11 @@ div.cocoon-render-dropdown select option[disabled] {
 }
 .wp-block-cocoon-blocks-button-1.alignright {
   text-align: right;
+}
+
+.is-root-container .wp-block-cocoon-blocks-button-1:has(.cocoon-block-button__width-100) {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .em5sgkm6 {
