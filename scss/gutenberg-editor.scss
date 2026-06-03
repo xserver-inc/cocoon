@@ -1180,6 +1180,23 @@ div.cocoon-render-dropdown {
   margin-right: auto !important;
 }
 
+// グループブロック（縦積み・横並びflex）内のCocoonボタン（幅100%）は
+// 上の rule（詳細度0,3,0）が適用されて margin:auto になり、flex コンテナの中で幅が縮んでしまう。
+// .wp-block-group を前置して詳細度(0,4,0)に上げ、margin:0 かつ width:100% で親いっぱいに広げる。
+// （縦積みflex=columnでstretchが効く場合もwidth:100%で確実に、横並びflex=rowでは特にwidth:100%が必須）
+.is-root-container .wp-block-group .wp-block-cocoon-blocks-button-1:has(.cocoon-block-button__width-100) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
+}
+
+// 囲みボタン（グループ内）も同様に margin:auto で縮むため、margin:0 かつ width:100% で修正
+.is-root-container .wp-block-group .btn-wrap-block {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
+}
+
 //ブロックエディターのナンバーコントロールCSSの調整
 .em5sgkm6{
   margin-bottom: 8px;
