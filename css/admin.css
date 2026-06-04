@@ -4873,6 +4873,32 @@ body.wp-admin {
 .admin-settings .demo .button-block.alignright {
   text-align: right;
 }
+.admin-settings .demo .button-block.is-content-justification-left {
+  text-align: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+.admin-settings .demo .button-block.is-content-justification-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.admin-settings .demo .button-block.is-content-justification-right {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-top {
+  align-self: flex-start;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-center {
+  align-self: center;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-bottom {
+  align-self: flex-end;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-stretch {
+  align-self: stretch;
+}
 .admin-settings .demo .button-block:has(.cocoon-block-button__width-100) {
   float: none !important;
   margin-left: 0 !important;
@@ -13528,6 +13554,32 @@ body.wp-admin {
 }
 .admin-settings .demo .button-block.alignright {
   text-align: right;
+}
+.admin-settings .demo .button-block.is-content-justification-left {
+  text-align: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+.admin-settings .demo .button-block.is-content-justification-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.admin-settings .demo .button-block.is-content-justification-right {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-top {
+  align-self: flex-start;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-center {
+  align-self: center;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-bottom {
+  align-self: flex-end;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-stretch {
+  align-self: stretch;
 }
 .admin-settings .demo .button-block:has(.cocoon-block-button__width-100) {
   float: none !important;
@@ -22831,6 +22883,32 @@ select option.fa:before {
 }
 .components-popover__content .button-block.alignright {
   text-align: right;
+}
+.components-popover__content .button-block.is-content-justification-left {
+  text-align: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+.components-popover__content .button-block.is-content-justification-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.components-popover__content .button-block.is-content-justification-right {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+.components-popover__content .button-block.is-vertically-aligned-top {
+  align-self: flex-start;
+}
+.components-popover__content .button-block.is-vertically-aligned-center {
+  align-self: center;
+}
+.components-popover__content .button-block.is-vertically-aligned-bottom {
+  align-self: flex-end;
+}
+.components-popover__content .button-block.is-vertically-aligned-stretch {
+  align-self: stretch;
 }
 .components-popover__content .button-block:has(.cocoon-block-button__width-100) {
   float: none !important;

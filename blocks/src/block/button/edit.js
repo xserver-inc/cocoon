@@ -3,6 +3,9 @@ import { WidthPanel } from '../../components';
 import { __ } from '@wordpress/i18n';
 import {
   InspectorControls,
+  BlockControls,
+  JustifyToolbar,
+  BlockVerticalAlignmentToolbar,
   RichText,
   withColors,
   PanelColorSettings,
@@ -47,11 +50,15 @@ export function ButtonEdit( props ) {
     customTextColor,
     customBorderColor,
     width,
+    justifyContent,
+    verticalAlignment,
   } = attributes;
 
   const classes = classnames( className, {
     [ BUTTON_BLOCK ]: true,
     'cocoon-editor-no-link-click': true,
+    [ `is-content-justification-${ justifyContent }` ]: justifyContent,
+    [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment,
   } );
 
   const styles = {
@@ -67,6 +74,19 @@ export function ButtonEdit( props ) {
 
   return (
     <Fragment>
+      <BlockControls group="block">
+        <JustifyToolbar
+          allowedControls={ [ 'left', 'center', 'right' ] }
+          value={ justifyContent }
+          onChange={ ( value ) => setAttributes( { justifyContent: value } ) }
+        />
+        <BlockVerticalAlignmentToolbar
+          value={ verticalAlignment }
+          onChange={ ( value ) =>
+            setAttributes( { verticalAlignment: value } )
+          }
+        />
+      </BlockControls>
       <InspectorControls>
         <PanelBody title={ __( 'ボタン設定', THEME_NAME ) }>
           <TextControl

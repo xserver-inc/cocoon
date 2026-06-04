@@ -3,6 +3,9 @@ import { WidthPanel } from '../../components';
 import { __ } from '@wordpress/i18n';
 import {
   InspectorControls,
+  BlockControls,
+  JustifyToolbar,
+  BlockVerticalAlignmentToolbar,
   RichText,
   withColors,
   PanelColorSettings,
@@ -45,6 +48,8 @@ export function ButtonWrapEdit( props ) {
     customTextColor,
     customBorderColor,
     width,
+    justifyContent,
+    verticalAlignment,
   } = attributes;
 
   const classes = classnames( className, {
@@ -64,6 +69,8 @@ export function ButtonWrapEdit( props ) {
     [ fontSize.class ]: fontSize.class,
     'has-custom-width': width,
     [ `cocoon-block-button__width-${ width }` ]: width,
+    [ `is-content-justification-${ justifyContent }` ]: justifyContent,
+    [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment,
   } );
 
   const styles = {
@@ -80,6 +87,19 @@ export function ButtonWrapEdit( props ) {
 
   return (
     <Fragment>
+      <BlockControls group="block">
+        <JustifyToolbar
+          allowedControls={ [ 'left', 'center', 'right' ] }
+          value={ justifyContent }
+          onChange={ ( value ) => setAttributes( { justifyContent: value } ) }
+        />
+        <BlockVerticalAlignmentToolbar
+          value={ verticalAlignment }
+          onChange={ ( value ) =>
+            setAttributes( { verticalAlignment: value } )
+          }
+        />
+      </BlockControls>
       <InspectorControls>
         <PanelBody title={ __( '囲みボタン設定', THEME_NAME ) }>
           <TextareaControl
