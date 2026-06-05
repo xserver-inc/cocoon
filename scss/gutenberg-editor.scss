@@ -1199,6 +1199,17 @@ div.cocoon-render-dropdown {
   width: 100%;
 }
 
+// 幅広・全幅グループはコンテンツ幅（840px）より広く表示されるため、上の width:100% だと
+// 囲みボタンだけグループ左端に張り付き、中央寄せの通常ボタンと位置がズレてしまう。
+// （Gutenbergは幅広/全幅を data-align ではなく .alignwide/.alignfull クラスで表現する）
+// 囲みボタンも通常ボタンと同じく中央寄せに戻して位置を揃える（エディター限定）。
+.is-root-container .alignwide.wp-block-group .btn-wrap-block,
+.is-root-container .alignfull.wp-block-group .btn-wrap-block {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
+}
+
 //ブロックエディターのナンバーコントロールCSSの調整
 .em5sgkm6{
   margin-bottom: 8px;

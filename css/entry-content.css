@@ -2421,6 +2421,13 @@ div.search-form {
   margin-right: 0 !important;
 }
 
+.is-vertical > .button-block {
+  width: 100%;
+}
+.is-vertical > .button-block.is-vertically-aligned-top, .is-vertical > .button-block.is-vertically-aligned-center, .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
+}
+
 /************************************
 ** 汎用ボックス共通
 ************************************/

@@ -4904,6 +4904,12 @@ body.wp-admin {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+.admin-settings .demo .is-vertical > .button-block {
+  width: 100%;
+}
+.admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-top, .admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-center, .admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
+}
 .admin-settings .demo .block-box-label {
   display: flex;
 }
@@ -13585,6 +13591,12 @@ body.wp-admin {
   float: none !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+}
+.admin-settings .demo .is-vertical > .button-block {
+  width: 100%;
+}
+.admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-top, .admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-center, .admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
 }
 .admin-settings .demo .block-box-label {
   display: flex;
@@ -22914,6 +22926,12 @@ select option.fa:before {
   float: none !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+}
+.components-popover__content .is-vertical > .button-block {
+  width: 100%;
+}
+.components-popover__content .is-vertical > .button-block.is-vertically-aligned-top, .components-popover__content .is-vertical > .button-block.is-vertically-aligned-center, .components-popover__content .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
 }
 .components-popover__content .block-box-label {
   display: flex;

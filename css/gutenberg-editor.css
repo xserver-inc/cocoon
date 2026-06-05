@@ -2897,6 +2897,13 @@ div.search-form {
   margin-right: 0 !important;
 }
 
+.is-vertical > .button-block {
+  width: 100%;
+}
+.is-vertical > .button-block.is-vertically-aligned-top, .is-vertical > .button-block.is-vertically-aligned-center, .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
+}
+
 /************************************
 ** 汎用ボックス共通
 ************************************/
@@ -5984,6 +5991,13 @@ div.cocoon-render-dropdown select option[disabled] {
   margin-left: 0 !important;
   margin-right: 0 !important;
   width: 100%;
+}
+
+.is-root-container .alignwide.wp-block-group .btn-wrap-block,
+.is-root-container .alignfull.wp-block-group .btn-wrap-block {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
 }
 
 .em5sgkm6 {
