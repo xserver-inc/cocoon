@@ -2755,8 +2755,8 @@ endif;
 //ブログカードの無効化を解除
 if ( !function_exists( 'cancel_blog_card_deactivation' ) ):
 function cancel_blog_card_deactivation($the_content, $is_p = true){
-  //テキストのみ
-  $not_url_reg = '!\s*(https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+)';
+  //テキストのみ（URLの後ろに文字列が続く場合も「!」を解除し、後続テキストは保持する）
+  $not_url_reg = '!\s*(https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+.*?)';
   if ($is_p) {
     $pattern = '{^\s*<p[^>]*>\s*'.$not_url_reg.'\s*</p>\s*$}im';
     $append = '<p>$1</p>';
@@ -2766,8 +2766,8 @@ function cancel_blog_card_deactivation($the_content, $is_p = true){
   }
   $the_content = preg_replace($pattern, $append, $the_content);
 
-  //URLリンク（<a>タグ内テキストの先頭・末尾スペースや!とaタグ間のスペースを許容）
-  $not_url_reg = '!\s*(<a[^>]+>\s*https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+\s*</a>)';
+  //URLリンク（<a>タグ内テキストの先頭・末尾スペースや!とaタグ間のスペースを許容。aタグ後ろに文字列が続く場合も解除する）
+  $not_url_reg = '!\s*(<a[^>]+>\s*https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+\s*</a>.*?)';
   if ($is_p) {
     $pattern = '{^\s*<p[^>]*>\s*'.$not_url_reg.'\s*</p>\s*$}im';
     $append = '<p>$1</p>';

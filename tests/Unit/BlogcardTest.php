@@ -373,6 +373,30 @@ class BlogcardTest extends TestCase
         $this->assertSame('https://example.com/path', $result);
     }
 
+    public function test_cancel_blog_card_deactivation_URLの後ろに文字列が続くpタグ内無効化を解除する(): void
+    {
+        // 「!」＋URL＋文字列の場合も「!」を解除し、後続テキストは保持する
+        $content = '<p>! https://example.com/path この記事はテキスト</p>';
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p>https://example.com/path この記事はテキスト</p>', $result);
+    }
+
+    public function test_cancel_blog_card_deactivation_エクスクラメーションとURLが改行で分かれ後続文字列が続く無効化を解除する(): void
+    {
+        // ブロックエディターで「!」とURLが改行で分かれ、URL後ろに日本語が続くケース
+        $content = "<p>!\nhttps://example.com/path この記事はテキスト</p>";
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p>https://example.com/path この記事はテキスト</p>', $result);
+    }
+
+    public function test_cancel_blog_card_deactivation_URLの後ろに文字列が続くaタグ内無効化を解除する(): void
+    {
+        // make_clickable でURLのみがリンク化され、後ろに文字列が続くケース
+        $content = '<p>! <a href="https://example.com/path">https://example.com/path</a> この記事はテキスト</p>';
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p><a href="https://example.com/path">https://example.com/path</a> この記事はテキスト</p>', $result);
+    }
+
     // ========================================================================
     // get_human_years_ago() - 年齢計算
     // ========================================================================
