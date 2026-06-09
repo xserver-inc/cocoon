@@ -2767,7 +2767,8 @@ function cancel_blog_card_deactivation($the_content, $is_p = true){
   $the_content = preg_replace($pattern, $append, $the_content);
 
   //URLリンク（<a>タグ内テキストの先頭・末尾スペースや!とaタグ間のスペースを許容。aタグ後ろに文字列が続く場合も解除する）
-  $not_url_reg = '!\s*(<a[^>]+>\s*https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+\s*</a>.*?)';
+  //※ aタグ内テキストは「<」以外を許容（[^<]+）。日本語スラッグなど未エンコードのマルチバイトURLでも「!」を解除できるようにする
+  $not_url_reg = '!\s*(<a[^>]+>\s*https?://[^<]+\s*</a>.*?)';
   if ($is_p) {
     $pattern = '{^\s*<p[^>]*>\s*'.$not_url_reg.'\s*</p>\s*$}im';
     $append = '<p>$1</p>';

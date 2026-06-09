@@ -397,6 +397,14 @@ class BlogcardTest extends TestCase
         $this->assertSame('<p><a href="https://example.com/path">https://example.com/path</a> この記事はテキスト</p>', $result);
     }
 
+    public function test_cancel_blog_card_deactivation_日本語スラッグを含むaタグURLの無効化を解除する(): void
+    {
+        // 日本語スラッグ（未エンコード）を含むリンクURLでも「!」を解除できること
+        $content = '<p>!<a href="http://example.com/temp/テスト/"> http://example.com/temp/テスト/</a>とエンコードしていないURLの場合</p>';
+        $result = cancel_blog_card_deactivation($content, true);
+        $this->assertSame('<p><a href="http://example.com/temp/テスト/"> http://example.com/temp/テスト/</a>とエンコードしていないURLの場合</p>', $result);
+    }
+
     // ========================================================================
     // get_human_years_ago() - 年齢計算
     // ========================================================================
