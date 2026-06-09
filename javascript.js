@@ -294,30 +294,53 @@
       offset = header.offsetHeight;
     }
 
-    // .mobile-header-menu-buttonsのtopを取得して処理
+    // .mobile-header-menu-buttonsのtop・高さを取得して処理
     const mobileHeaderMenuButtons = document.querySelector(
       '.mobile-header-menu-buttons'
     );
+    // 固定ボタンの下端位置（top + 高さ）。本文の余白計算に使用する
+    let mobileButtonsBottom = 0;
     if ( mobileHeaderMenuButtons ) {
       const computedStyle = window.getComputedStyle( mobileHeaderMenuButtons );
       const topValue = parseFloat( computedStyle.top );
 
       if ( topValue >= 0 ) {
-        // topが0以上の場合は、その要素の高さを反映
-        offset += mobileHeaderMenuButtons.offsetHeight;
-      } else {
-        // topが0未満の場合は、0pxとして扱う（offsetは変更しない）
-        // 必要に応じて、ここで追加の処理を行う
+        // topが0以上の場合は、その要素の高さ（ラベル折り返し時も実寸）を反映
+        const height = mobileHeaderMenuButtons.offsetHeight;
+        offset += height;
+        mobileButtonsBottom = topValue + height;
       }
+      // topが0未満の場合は0pxとして扱う（offsetは変更しない）
     }
 
-    document.documentElement.style.setProperty(
+    const root = document.documentElement;
+    root.style.setProperty(
       '--cocoon--header-container--position-offset',
       offset + 'px'
     );
+    // 本文がモバイルヘッダーボタンに隠れないための下端位置を更新
+    root.style.setProperty(
+      '--cocoon--mobile-header-menu-buttons--bottom',
+      mobileButtonsBottom + 'px'
+    );
   }
 
-  document.addEventListener( 'DOMContentLoaded', updateHeaderOffset );
+  function initHeaderOffset() {
+    updateHeaderOffset();
+
+    // モバイルヘッダーボタンのサイズ変化（遅延表示・ラベルの折り返し）を監視する。
+    // スクロールに依存しないため、初期表示時に高さが0pxになる問題を解消できる。
+    const target = document.querySelector( '.mobile-header-menu-buttons' );
+    if ( target && 'ResizeObserver' in window ) {
+      new ResizeObserver( updateHeaderOffset ).observe( target );
+    }
+  }
+
+  if ( document.readyState !== 'loading' ) {
+    initHeaderOffset();
+  } else {
+    document.addEventListener( 'DOMContentLoaded', initHeaderOffset );
+  }
 
   // ブラウザサイズ変更時に更新（リサイズ処理が完了してから実行するため、少し遅延させる）
   let resizeTimer;
@@ -328,7 +351,7 @@
     }, 100 );
   } );
 
-  // スクロール時にも更新（.mobile-header-menu-buttonsのtopが変更される可能性があるため）
+  // スクロール時にも更新（固定ヘッダーの表示切り替えに追従するため）
   window.addEventListener( 'scroll', updateHeaderOffset );
 } )();
 
