@@ -97,10 +97,12 @@
   if ( cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1 ) {
     //ヘッダーモバイルメニュー
     var headerMenu = $( '.mobile-header-menu-buttons' );
-    var headerHight = headerMenu.outerHeight();
     var headerStartPos = 0;
     $( window ).scroll( function () {
       var headerCurrentPos = $( this ).scrollTop();
+      // メニュー名の折り返しで高さが変わるため、隠す直前に都度高さを取得する。
+      // box-shadowはouterHeightに含まれないため、影の残り対策として余裕を加える。
+      var headerHight = headerMenu.outerHeight() + 5;
       // 画面幅が600px以下の場合は、--wp-admin--admin-bar--heightを考慮しない（WordPressアドミンバーが固定とならないため、ヘッダーメニューの位置を0にする）
       if ( window.innerWidth <= 600 ) {
         if ( headerCurrentPos > headerStartPos ) {
@@ -134,10 +136,12 @@
 
     //フッターモバイルメニュー
     var footerMenu = $( '.mobile-footer-menu-buttons' );
-    var footerHeight = footerMenu.outerHeight();
     var footerStartPos = 0;
     $( window ).scroll( function () {
       var footerCurrentPos = $( this ).scrollTop();
+      // メニュー名の折り返しで高さが変わるため、隠す直前に都度高さを取得する。
+      // box-shadowはouterHeightに含まれないため、影の残り対策として余裕を加える。
+      var footerHeight = footerMenu.outerHeight() + 5;
 
       if ( footerCurrentPos > footerStartPos ) {
         if ( footerCurrentPos >= 100 ) {
