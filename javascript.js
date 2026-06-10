@@ -299,7 +299,8 @@
       '.mobile-header-menu-buttons'
     );
     // 固定ボタンの下端位置（top + 高さ）。本文の余白計算に使用する
-    let mobileButtonsBottom = 0;
+    // 値が確定できない場合は更新しない（nullのまま）
+    let mobileButtonsBottom = null;
     if ( mobileHeaderMenuButtons ) {
       const computedStyle = window.getComputedStyle( mobileHeaderMenuButtons );
       const topValue = parseFloat( computedStyle.top );
@@ -310,7 +311,9 @@
         offset += height;
         mobileButtonsBottom = topValue + height;
       }
-      // topが0未満の場合は0pxとして扱う（offsetは変更しない）
+      // topが0未満の場合は、スクロールでボタンが隠れている最中。
+      // この間の負のtopを反映すると本文余白が0pxに落ち、再表示時もズレが残るため、
+      // 本文余白用の変数は更新せず、直前の有効値を保持する。
     }
 
     const root = document.documentElement;
@@ -319,10 +322,13 @@
       offset + 'px'
     );
     // 本文がモバイルヘッダーボタンに隠れないための下端位置を更新
-    root.style.setProperty(
-      '--cocoon--mobile-header-menu-buttons--bottom',
-      mobileButtonsBottom + 'px'
-    );
+    // （有効値が得られたときのみ更新し、隠れている最中は前回値を維持する）
+    if ( mobileButtonsBottom !== null ) {
+      root.style.setProperty(
+        '--cocoon--mobile-header-menu-buttons--bottom',
+        mobileButtonsBottom + 'px'
+      );
+    }
   }
 
   function initHeaderOffset() {
