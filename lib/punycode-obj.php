@@ -7,6 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// 念のため、同名クラスの衝突ガード
+if ( ! class_exists( 'Punycode' ) ):
 class Punycode
 {
 
@@ -337,3 +339,4 @@ class Punycode
         }
     }
 }
+endif;

@@ -32,6 +32,8 @@
 
     // ブログカード埋め込みブロックを登録
     wp.blocks.registerBlockType( 'cocoon-blocks/embed-blogcard', {
+      // エディターのAPIバージョンを3に指定して、新しいiframeエディターに対応させる
+      apiVersion: 3,
       title: __( 'ブログカード（埋め込み）', 'cocoon' ),
       icon: 'admin-links',
       category: 'cocoon-block',
@@ -192,7 +194,10 @@
               var matchedUrl = null;
 
               // パターン1: 素のURL文字列のみ
-              if ( /^https?:\/\/[^\s<]+$/.test( content ) ) {
+              // URL構成文字（RFC的に許可される文字）だけで段落全体が構成される場合のみ対象とする。
+              // ※ [^\s<]+ だとURL直後にスペースなしで日本語等が続く場合に
+              //   後続文字までURLとして取り込んでしまうため、PHP側と同じ厳密な文字クラスに合わせる
+              if ( /^https?:\/\/[-_.!~*'()a-zA-Z0-9;\/?:@&=+$,%#]+$/.test( content ) ) {
                 matchedUrl = content;
               }
               // パターン2: <a>タグのみの構成（Gutenbergのエンベッドフォールバック形式）

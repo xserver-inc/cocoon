@@ -16,6 +16,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       do_action( 'wp_body_open' );
   }?>
 
+  <a class="skip-link" href="#main"><?php esc_html_e('コンテンツへスキップ', THEME_NAME); ?></a>
+
   <?php //ユーザーカスタマイズ用
   cocoon_template_part('tmp-user/body-top-insert'); ?>
 
@@ -63,7 +65,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <div id="content-in" class="content-in wrap">
 
-        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" itemscope itemtype="https://schema.org/Blog">
+        <?php //スキップリンクからキーボードのフォーカスを直接受け取れるようにtabindex="-1"を設定する ?>
+        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" tabindex="-1" itemscope itemtype="https://schema.org/Blog">
 
         <?php
         //PRラベル（小）の表示

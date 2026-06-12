@@ -216,7 +216,7 @@ function rakuten_product_link_shortcode($atts){
         // 最新のAPIレスポンスの構造変化に対応できる形にItemを抽出
         $rawItem = $body->{'Items'}[0];
         $Item = isset($rawItem->{'Item'}) ? $rawItem->{'Item'} : $rawItem;
-        
+
         if ($Item) {
 
           $itemName = $Item->{'itemName'};
@@ -424,7 +424,7 @@ function rakuten_product_link_shortcode($atts){
             $image_only_class = ' rakuten-item-image-only product-item-image-only no-icon';
           }
           $image_link_tag = '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-thumb-link product-item-thumb-link'.esc_attr($image_only_class).'" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
-                  '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="rakuten-item-thumb-image product-item-thumb-image">'.
+                  '<img src="'.esc_url($ImageUrl).'" alt="'.($image_only ? esc_attr($TitleAttr) : '').'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="rakuten-item-thumb-image product-item-thumb-image">'.
                   $moshimo_rakuten_impression_tag.
                 '</a>';
           //画像のみ出力する場合

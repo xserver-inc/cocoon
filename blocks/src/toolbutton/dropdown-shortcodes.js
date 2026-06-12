@@ -19,9 +19,9 @@ const FORMAT_TYPE_NAME = 'cocoon-blocks/shortcodes';
 
 //ショートコード作成関数
 function registerShortcodeFormatType( name, title, code, icon ) {
-  var formatType = 'cocoon-blocks/' + name;
+  const formatType = 'cocoon-blocks/' + name;
   registerFormatType( formatType, {
-    title: title,
+    title,
     tagName: name,
     className: null,
     edit( { value, onChange } ) {
@@ -44,9 +44,9 @@ function registerShortcodeFormatType( name, title, code, icon ) {
 // ブロック要素を出力するショートコード作成関数
 // 段落ブロック内にテキスト挿入する代わりに、ショートコードブロック（core/shortcode）として挿入する
 function registerBlockShortcodeFormatType( name, title, code, icon ) {
-  var formatType = 'cocoon-blocks/' + name;
+  const formatType = 'cocoon-blocks/' + name;
   registerFormatType( formatType, {
-    title: title,
+    title,
     tagName: name,
     className: null,
     edit( { value, onChange } ) {
@@ -57,9 +57,7 @@ function registerBlockShortcodeFormatType( name, title, code, icon ) {
           const block = editor.getSelectedBlock();
           return {
             selectedBlock: block,
-            blockIndex: block
-              ? editor.getBlockIndex( block.clientId )
-              : 0,
+            blockIndex: block ? editor.getBlockIndex( block.clientId ) : 0,
             rootClientId: block
               ? editor.getBlockRootClientId( block.clientId )
               : undefined,
@@ -67,9 +65,7 @@ function registerBlockShortcodeFormatType( name, title, code, icon ) {
         }
       );
       // ブロック挿入・削除用のディスパッチ
-      const { insertBlock, removeBlock } = useDispatch(
-        'core/block-editor'
-      );
+      const { insertBlock, removeBlock } = useDispatch( 'core/block-editor' );
 
       const onToggle = () => {
         // ショートコードブロックを作成して、現在のブロックの後に挿入
@@ -79,12 +75,21 @@ function registerBlockShortcodeFormatType( name, title, code, icon ) {
         insertBlock( shortcodeBlock, blockIndex + 1, rootClientId );
 
         // 元の段落ブロックが空の場合は自動削除
+        // WordPress 6.2 以降、content 属性は文字列ではなく RichTextData オブジェクトになり、
+        // 空でもオブジェクト（truthy）のため、文字列化してから中身が空かどうかを判定する
+        const content = selectedBlock ? selectedBlock.attributes.content : '';
+        const isEmptyParagraph =
+          content === undefined ||
+          content === null ||
+          String( content ).trim() === '';
         if (
           selectedBlock &&
           selectedBlock.name === 'core/paragraph' &&
-          ! selectedBlock.attributes.content
+          isEmptyParagraph
         ) {
-          removeBlock( selectedBlock.clientId );
+          // 第2引数を false にして、削除時に前のブロックへ選択が奪われるのを防ぐ
+          // （insertBlock で挿入済みのショートコードブロックにフォーカスを残す）
+          removeBlock( selectedBlock.clientId, false );
         }
       };
 
@@ -102,10 +107,12 @@ function registerBlockShortcodeFormatType( name, title, code, icon ) {
 }
 
 //広告
-registerBlockShortcodeFormatType( 'shortcode-ad', __( '広告', THEME_NAME ), '[ad]', [
-  'fas',
-  'ad',
-] );
+registerBlockShortcodeFormatType(
+  'shortcode-ad',
+  __( '広告', THEME_NAME ),
+  '[ad]',
+  [ 'fas', 'ad' ]
+);
 //新着記事一覧
 registerBlockShortcodeFormatType(
   'shortcode-new-list',
@@ -284,8 +291,8 @@ registerBlockShortcodeFormatType(
 //   }
 // } );
 
-var isGeneralVisible = Number(
-  gbSettings[ 'isGeneralVisible' ] ? gbSettings[ 'isGeneralVisible' ] : 0
+const isGeneralVisible = Number(
+  gbSettings.isGeneralVisible ? gbSettings.isGeneralVisible : 0
 );
 if ( isGeneralVisible ) {
   registerFormatType( FORMAT_TYPE_NAME, {

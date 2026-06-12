@@ -26,6 +26,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// 念のため、同名クラスの衝突ガード
+if ( ! class_exists( 'OpenGraphGetter' ) ):
 class OpenGraphGetter implements Iterator
 {
   /**
@@ -455,4 +457,4 @@ class OpenGraphGetter implements Iterator
   #[\ReturnTypeWillChange]
   public function valid() { return $this->_position < sizeof($this->_values); }
 }
-
+endif;

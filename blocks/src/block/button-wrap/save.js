@@ -21,6 +21,8 @@ export default function save( { attributes } ) {
     customBorderColor,
     fontSize,
     width,
+    justifyContent,
+    verticalAlignment,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -32,12 +34,14 @@ export default function save( { attributes } ) {
   const fontSizeClass = getFontSizeClass( fontSize );
 
   const classes = classnames( {
-    [ 'btn-wrap' ]: true,
-    [ 'btn-wrap-block' ]: true,
+    'btn-wrap': true,
+    'btn-wrap-block': true,
     [ BUTTON_BLOCK ]: true,
+    [ `is-content-justification-${ justifyContent }` ]: justifyContent,
+    [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment,
     [ size ]: size,
-    [ 'btn-wrap-circle' ]: !! isCircle,
-    [ 'btn-wrap-shine' ]: !! isShine,
+    'btn-wrap-circle': !! isCircle,
+    'btn-wrap-shine': !! isShine,
     'has-text-color': textColor || customTextColor,
     'has-background': backgroundColor || customBackgroundColor,
     'has-border-color': borderColor || customBorderColor,
@@ -45,7 +49,7 @@ export default function save( { attributes } ) {
     [ backgroundClass ]: backgroundClass,
     [ borderClass ]: borderClass,
     [ fontSizeClass ]: fontSizeClass,
-    [ 'has-custom-width' ]: width,
+    'has-custom-width': width,
     [ `cocoon-block-button__width-${ width }` ]: width,
   } );
 

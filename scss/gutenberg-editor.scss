@@ -702,6 +702,12 @@ ol, ul {
   background-color: #f8e58c !important;
 }
 
+// エディター上では<a>タグがpointer-events: noneになりホバーを検知しないため、親要素ホバー経由で透過（opacity）を適用する（エディター限定）
+.btn-wrap:hover > a{
+  // マウスを乗せた時にボタン全体を少し透けさせる（不透明度70%）
+  opacity: 0.7;
+}
+
 .wp-block{
   // &[data-align] > *{
   //   // float: none;
@@ -1045,6 +1051,9 @@ body::before,
 }
 
 .btn-wrap-block {
+	// 左寄せ・右寄せ時にコアの840px制限（is-root-container > :not(.alignleft)…）から外れても幅が広がらないように上限を持たせる
+	// 幅100%時も、自動余白（margin: auto）でコンテンツ列（中央寄せ）に揃え、WordPressコアのボタンブロックと同じ位置に表示する
+	max-width: 840px;
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
@@ -1157,6 +1166,48 @@ div.cocoon-render-dropdown {
   &.alignright{
     text-align: right;
   }
+
+  // 幅100%時も、コンテンツ列（中央寄せ）に揃える。
+  // _extension.scss の「.button-block:has(.cocoon-block-button__width-100){ margin: 0 !important }」が
+  // エディターでは後発のインラインCSSとして読み込まれ、同じ詳細度(0,2,0)＋!importantで基底の margin:auto を
+  // 打ち消してしまう。そこで .is-root-container を前置して詳細度を(0,3,0)に上げ、確実に margin:auto を効かせる。
+  // （幅100%ボタンは840pxのコンテンツ列を埋めるため、左/中央/右の区別は視覚的に同じで、
+  //   WordPressコアのボタンブロック（コンテンツ幅中央寄せ）と同じ位置に揃える）
+}
+
+.is-root-container .wp-block-cocoon-blocks-button-1:has(.cocoon-block-button__width-100) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// グループブロック（縦積み・横並びflex）内のCocoonボタン（幅25%/50%/75%/100%）は
+// 上の rule（詳細度0,3,0）が適用されて margin:auto になり、flex コンテナの中で wrapperが縮んでしまう。
+// そのため内側の .btn に指定した % 幅が正しく計算されない（25%→縮んだ wrapper の 25% になる）。
+// .wp-block-group を前置して詳細度(0,4,0)に上げ、margin:0 かつ width:100% で親いっぱいに広げ、
+// % 幅の計算基準をグループ幅にする。has-custom-width は 25/50/75/100% すべてで付与されるクラス。
+// （縦積みflex=columnでstretchが効く場合もwidth:100%で確実に、横並びflex=rowでは特にwidth:100%が必須）
+.is-root-container .wp-block-group .wp-block-cocoon-blocks-button-1:has(.has-custom-width) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
+}
+
+// 囲みボタン（グループ内）も同様に margin:auto で縮むため、margin:0 かつ width:100% で修正
+.is-root-container .wp-block-group .btn-wrap-block {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
+}
+
+// 幅広・全幅グループはコンテンツ幅（840px）より広く表示されるため、上の width:100% だと
+// 囲みボタンだけグループ左端に張り付き、中央寄せの通常ボタンと位置がズレてしまう。
+// （Gutenbergは幅広/全幅を data-align ではなく .alignwide/.alignfull クラスで表現する）
+// 囲みボタンも通常ボタンと同じく中央寄せに戻して位置を揃える（エディター限定）。
+.is-root-container .alignwide.wp-block-group .btn-wrap-block,
+.is-root-container .alignfull.wp-block-group .btn-wrap-block {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
 }
 
 //ブロックエディターのナンバーコントロールCSSの調整
@@ -1304,7 +1355,42 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
       }
     }
 
+    // ステッチ（背景色と外枠shadowをリセット）
+    &.is-style-stitch-box {
+      box-shadow: unset;
+    }
+
+    // 交差線（疑似要素の高さが枠外にはみ出すのを補正）
+    &.is-style-cross-line::before { left: 5px; }
+    &.is-style-cross-line::after  { right: 5px; }
+    &.is-style-cross-line::before,
+    &.is-style-cross-line::after {
+      height: calc(100% + 10px);
+      top: -5px;
+    }
+
+    // クリップ（クリップ疑似要素が枠外にはみ出すのを補正）
+    &.is-style-clip-box::before {
+      height: 35px;
+      top: -5px;
+      width: 15px;
+    }
+
   }
+
+  // ステッチ（背景色を枠に合わせる）
+  .__prevWrap:has(.is-style-stitch-box) {
+    background: #fbfaf5;
+  }
+  // 左吹き出し（左の矢印が枠外にはみ出すのを防ぐ）
+  .__prevWrap:has(.is-style-balloon-left-box)   { padding-left:   10px; }
+  // 右吹き出し（右の矢印が枠外にはみ出すのを防ぐ）
+  .__prevWrap:has(.is-style-balloon-right-box)  { padding-right:  10px; }
+  // 上吹き出し（上の矢印が枠外にはみ出すのを防ぐ）
+  .__prevWrap:has(.is-style-balloon-top-box)    { padding-top:    10px; }
+  // 下吹き出し（下の矢印が枠外にはみ出すのを防ぐ）
+  .__prevWrap:has(.is-style-balloon-bottom-box) { padding-bottom: 10px; }
+
   .__prevTitle {
     display: block;
     font-size: 10px;

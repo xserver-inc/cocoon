@@ -40,7 +40,7 @@ $args = apply_filters('cocoon_carousel_args', $args);
 $query = new WP_Query( $args );
   if( $query -> have_posts() ): //カルーセルが設定されているとき
 ?>
-<div id="carousel" class="carousel<?php echo get_additional_carousel_area_classes(); ?>">
+<div id="carousel" class="carousel<?php echo get_additional_carousel_area_classes(); ?>" role="region" aria-label="<?php echo esc_attr( __( 'おすすめ記事カルーセル', THEME_NAME ) ); ?>">
   <div id="carousel-in" class="carousel-in wrap">
     <div class="carousel-content cf">
       <?php while ($query -> have_posts()) : $query -> the_post(); ?>

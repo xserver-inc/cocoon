@@ -207,7 +207,6 @@ class DistributionFilesTest extends TestCase
             'common > copy' => ['lib/common/copy.php', 'copy.php'],
             'content-category' => ['lib/content-category.php', 'content-category.php'],
             'content-tag' => ['lib/content-tag.php', 'content-tag.php'],
-            'content' => ['lib/content.php', 'content.php'],
             'creators-api' => ['lib/creators-api.php', 'creators-api.php'],
             'custom-fields > ad-field' => ['lib/custom-fields/ad-field.php', 'ad-field.php'],
             'custom-fields > amp-field' => ['lib/custom-fields/amp-field.php', 'amp-field.php'],

@@ -1170,6 +1170,26 @@ body.wp-admin {
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
   background-attachment: fixed;
 }
+.admin-settings .demo .skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 6px;
+  z-index: 9999;
+  padding: 6px 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+.admin-settings .demo .skip-link:focus {
+  top: 6px;
+}
+.admin-settings .demo .admin-bar .skip-link:focus {
+  top: calc(var(--wp-admin--admin-bar--height, 32px) + 6px);
+  z-index: 100000;
+}
+.admin-settings .demo main#main:focus:not(:focus-visible) {
+  outline: none;
+}
 .admin-settings .demo a {
   color: #1967d2;
 }
@@ -4173,7 +4193,7 @@ body.wp-admin {
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
 .admin-settings .demo .btn-wrap > a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
+  color: var(--cocoon-custom-text-color, var(--cocoon-white-color));
 }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after,
 .admin-settings .demo .btn-wrap > a:hover::after {
@@ -4846,6 +4866,7 @@ body.wp-admin {
 .admin-settings .demo .button-block {
   float: none;
   margin: 0;
+  border: 0;
 }
 .admin-settings .demo .button-block.alignleft {
   text-align: left;
@@ -4855,6 +4876,43 @@ body.wp-admin {
 }
 .admin-settings .demo .button-block.alignright {
   text-align: right;
+}
+.admin-settings .demo .button-block.is-content-justification-left {
+  text-align: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+.admin-settings .demo .button-block.is-content-justification-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.admin-settings .demo .button-block.is-content-justification-right {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-top {
+  align-self: flex-start;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-center {
+  align-self: center;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-bottom {
+  align-self: flex-end;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-stretch {
+  align-self: stretch;
+}
+.admin-settings .demo .button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.admin-settings .demo .is-vertical > .button-block {
+  width: 100%;
+}
+.admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-top, .admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-center, .admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
 }
 .admin-settings .demo .block-box-label {
   display: flex;
@@ -5842,7 +5900,6 @@ body.wp-admin {
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: #323232;
 }
@@ -6583,6 +6640,7 @@ body.wp-admin {
   --cocoon-custom-text-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
+  border: 0;
 }
 .admin-settings .demo .speech-person {
   width: 12%;
@@ -9125,7 +9183,6 @@ body.wp-admin {
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: var(--cocoon-box-border-color);
 }
@@ -9803,6 +9860,26 @@ body.wp-admin {
   -moz-text-size-adjust: 100%;
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
   background-attachment: fixed;
+}
+.admin-settings .demo .skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 6px;
+  z-index: 9999;
+  padding: 6px 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+.admin-settings .demo .skip-link:focus {
+  top: 6px;
+}
+.admin-settings .demo .admin-bar .skip-link:focus {
+  top: calc(var(--wp-admin--admin-bar--height, 32px) + 6px);
+  z-index: 100000;
+}
+.admin-settings .demo main#main:focus:not(:focus-visible) {
+  outline: none;
 }
 .admin-settings .demo a {
   color: #1967d2;
@@ -12807,7 +12884,7 @@ body.wp-admin {
 .admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover,
 .admin-settings .demo .btn-wrap > a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
+  color: var(--cocoon-custom-text-color, var(--cocoon-white-color));
 }
 .admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after,
 .admin-settings .demo .btn-wrap > a:hover::after {
@@ -13480,6 +13557,7 @@ body.wp-admin {
 .admin-settings .demo .button-block {
   float: none;
   margin: 0;
+  border: 0;
 }
 .admin-settings .demo .button-block.alignleft {
   text-align: left;
@@ -13489,6 +13567,43 @@ body.wp-admin {
 }
 .admin-settings .demo .button-block.alignright {
   text-align: right;
+}
+.admin-settings .demo .button-block.is-content-justification-left {
+  text-align: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+.admin-settings .demo .button-block.is-content-justification-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.admin-settings .demo .button-block.is-content-justification-right {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-top {
+  align-self: flex-start;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-center {
+  align-self: center;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-bottom {
+  align-self: flex-end;
+}
+.admin-settings .demo .button-block.is-vertically-aligned-stretch {
+  align-self: stretch;
+}
+.admin-settings .demo .button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.admin-settings .demo .is-vertical > .button-block {
+  width: 100%;
+}
+.admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-top, .admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-center, .admin-settings .demo .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
 }
 .admin-settings .demo .block-box-label {
   display: flex;
@@ -14476,7 +14591,6 @@ body.wp-admin {
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: #323232;
 }
@@ -15217,6 +15331,7 @@ body.wp-admin {
   --cocoon-custom-text-color: var(--cocoon-text-color);
   --cocoon-custom-border-color: var(--cocoon-basic-border-color);
   display: flex;
+  border: 0;
 }
 .admin-settings .demo .speech-person {
   width: 12%;
@@ -17759,7 +17874,6 @@ body.wp-admin {
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: var(--cocoon-box-border-color);
 }
@@ -22105,7 +22219,7 @@ select option.fa:before {
 .components-popover__content .btn:hover, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover,
 .components-popover__content .btn-wrap > a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
+  color: var(--cocoon-custom-text-color, var(--cocoon-white-color));
 }
 .components-popover__content .btn:hover::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover::after,
 .components-popover__content .btn-wrap > a:hover::after {
@@ -22778,6 +22892,7 @@ select option.fa:before {
 .components-popover__content .button-block {
   float: none;
   margin: 0;
+  border: 0;
 }
 .components-popover__content .button-block.alignleft {
   text-align: left;
@@ -22787,6 +22902,43 @@ select option.fa:before {
 }
 .components-popover__content .button-block.alignright {
   text-align: right;
+}
+.components-popover__content .button-block.is-content-justification-left {
+  text-align: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+.components-popover__content .button-block.is-content-justification-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.components-popover__content .button-block.is-content-justification-right {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+.components-popover__content .button-block.is-vertically-aligned-top {
+  align-self: flex-start;
+}
+.components-popover__content .button-block.is-vertically-aligned-center {
+  align-self: center;
+}
+.components-popover__content .button-block.is-vertically-aligned-bottom {
+  align-self: flex-end;
+}
+.components-popover__content .button-block.is-vertically-aligned-stretch {
+  align-self: stretch;
+}
+.components-popover__content .button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.components-popover__content .is-vertical > .button-block {
+  width: 100%;
+}
+.components-popover__content .is-vertical > .button-block.is-vertically-aligned-top, .components-popover__content .is-vertical > .button-block.is-vertically-aligned-center, .components-popover__content .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
 }
 .components-popover__content .block-box-label {
   display: flex;
@@ -23774,7 +23926,6 @@ select option.fa:before {
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: #323232;
 }

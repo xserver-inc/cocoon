@@ -30,6 +30,32 @@ body {
   background-attachment: fixed;
 }
 
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 6px;
+  z-index: 9999;
+  padding: 6px 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+
+  &:focus {
+    top: 6px;
+  }
+}
+
+// 管理バー表示時は、スキップリンクを管理バーの下にずらして最前面に表示する
+.admin-bar .skip-link:focus {
+  top: calc(var(--wp-admin--admin-bar--height, 32px) + 6px);
+  z-index: 100000;
+}
+
+// マウスクリックでメイン領域に移動した際の青い枠線を抑制する（キーボード操作時の枠線は残す）
+main#main:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /*デフォルトリンク*/
 a{
   color: #1967d2;

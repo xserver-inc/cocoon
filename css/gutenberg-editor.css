@@ -2094,7 +2094,7 @@ div.search-form {
 .btn:hover,
 .btn-wrap > a:hover {
   opacity: 0.7;
-  color: var(--cocoon-white-color);
+  color: var(--cocoon-custom-text-color, var(--cocoon-white-color));
 }
 .btn:hover::after,
 .btn-wrap > a:hover::after {
@@ -2855,6 +2855,7 @@ div.search-form {
 .button-block {
   float: none;
   margin: 0;
+  border: 0;
 }
 .button-block.alignleft {
   text-align: left;
@@ -2864,6 +2865,44 @@ div.search-form {
 }
 .button-block.alignright {
   text-align: right;
+}
+.button-block.is-content-justification-left {
+  text-align: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+.button-block.is-content-justification-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.button-block.is-content-justification-right {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+.button-block.is-vertically-aligned-top {
+  align-self: flex-start;
+}
+.button-block.is-vertically-aligned-center {
+  align-self: center;
+}
+.button-block.is-vertically-aligned-bottom {
+  align-self: flex-end;
+}
+.button-block.is-vertically-aligned-stretch {
+  align-self: stretch;
+}
+.button-block:has(.cocoon-block-button__width-100) {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.is-vertical > .button-block {
+  width: 100%;
+}
+.is-vertical > .button-block.is-vertically-aligned-top, .is-vertical > .button-block.is-vertically-aligned-center, .is-vertical > .button-block.is-vertically-aligned-bottom {
+  align-self: auto;
 }
 
 /************************************
@@ -4012,7 +4051,6 @@ figcaption {
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: #323232;
 }
@@ -4584,7 +4622,6 @@ th:has(.s-circle), th:has(.d-circle), th:has(.triangle), th:has(.cross), th:has(
   position: absolute;
   top: -10px;
   width: 2px;
-  height: -webkit-calc(100% + 20px);
   height: calc(100% + 20px);
   background-color: var(--cocoon-box-border-color);
 }
@@ -5564,6 +5601,10 @@ ol, ul {
   background-color: #f8e58c !important;
 }
 
+.btn-wrap:hover > a {
+  opacity: 0.7;
+}
+
 .wp-block[data-align=center] .btn-wrap,
 .wp-block[data-align=center] .wp-block-cocoon-blocks-button-1 {
   text-align: center;
@@ -5825,6 +5866,7 @@ body::before,
 }
 
 .btn-wrap-block {
+  max-width: 840px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -5933,6 +5975,30 @@ div.cocoon-render-dropdown select option[disabled] {
 }
 .wp-block-cocoon-blocks-button-1.alignright {
   text-align: right;
+}
+
+.is-root-container .wp-block-cocoon-blocks-button-1:has(.cocoon-block-button__width-100) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.is-root-container .wp-block-group .wp-block-cocoon-blocks-button-1:has(.has-custom-width) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
+}
+
+.is-root-container .wp-block-group .btn-wrap-block {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
+}
+
+.is-root-container .alignwide.wp-block-group .btn-wrap-block,
+.is-root-container .alignfull.wp-block-group .btn-wrap-block {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
 }
 
 .em5sgkm6 {
@@ -6059,6 +6125,39 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 .style-buttons .__prev.is-style-numeric-list-step li::after {
   border-width: 1px;
   left: 0.6em;
+}
+.style-buttons .__prev.is-style-stitch-box {
+  box-shadow: unset;
+}
+.style-buttons .__prev.is-style-cross-line::before {
+  left: 5px;
+}
+.style-buttons .__prev.is-style-cross-line::after {
+  right: 5px;
+}
+.style-buttons .__prev.is-style-cross-line::before, .style-buttons .__prev.is-style-cross-line::after {
+  height: calc(100% + 10px);
+  top: -5px;
+}
+.style-buttons .__prev.is-style-clip-box::before {
+  height: 35px;
+  top: -5px;
+  width: 15px;
+}
+.style-buttons .__prevWrap:has(.is-style-stitch-box) {
+  background: #fbfaf5;
+}
+.style-buttons .__prevWrap:has(.is-style-balloon-left-box) {
+  padding-left: 10px;
+}
+.style-buttons .__prevWrap:has(.is-style-balloon-right-box) {
+  padding-right: 10px;
+}
+.style-buttons .__prevWrap:has(.is-style-balloon-top-box) {
+  padding-top: 10px;
+}
+.style-buttons .__prevWrap:has(.is-style-balloon-bottom-box) {
+  padding-bottom: 10px;
 }
 .style-buttons .__prevTitle {
   display: block;

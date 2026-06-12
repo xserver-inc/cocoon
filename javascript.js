@@ -97,10 +97,12 @@
   if ( cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1 ) {
     //ヘッダーモバイルメニュー
     var headerMenu = $( '.mobile-header-menu-buttons' );
-    var headerHight = headerMenu.outerHeight();
     var headerStartPos = 0;
     $( window ).scroll( function () {
       var headerCurrentPos = $( this ).scrollTop();
+      // メニュー名の折り返しで高さが変わるため、隠す直前に都度高さを取得する。
+      // box-shadowはouterHeightに含まれないため、影の残り対策として余裕を加える。
+      var headerHight = headerMenu.outerHeight() + 5;
       // 画面幅が600px以下の場合は、--wp-admin--admin-bar--heightを考慮しない（WordPressアドミンバーが固定とならないため、ヘッダーメニューの位置を0にする）
       if ( window.innerWidth <= 600 ) {
         if ( headerCurrentPos > headerStartPos ) {
@@ -134,10 +136,12 @@
 
     //フッターモバイルメニュー
     var footerMenu = $( '.mobile-footer-menu-buttons' );
-    var footerHeight = footerMenu.outerHeight();
     var footerStartPos = 0;
     $( window ).scroll( function () {
       var footerCurrentPos = $( this ).scrollTop();
+      // メニュー名の折り返しで高さが変わるため、隠す直前に都度高さを取得する。
+      // box-shadowはouterHeightに含まれないため、影の残り対策として余裕を加える。
+      var footerHeight = footerMenu.outerHeight() + 5;
 
       if ( footerCurrentPos > footerStartPos ) {
         if ( footerCurrentPos >= 100 ) {
@@ -294,21 +298,27 @@
       offset = header.offsetHeight;
     }
 
-    // .mobile-header-menu-buttonsのtopを取得して処理
+    // .mobile-header-menu-buttonsのtop・高さを取得して処理
     const mobileHeaderMenuButtons = document.querySelector(
       '.mobile-header-menu-buttons'
     );
     if ( mobileHeaderMenuButtons ) {
       const computedStyle = window.getComputedStyle( mobileHeaderMenuButtons );
       const topValue = parseFloat( computedStyle.top );
+      // ボタンの実寸高さ（ラベル折り返し時も実寸）
+      const height = mobileHeaderMenuButtons.offsetHeight;
 
       if ( topValue >= 0 ) {
-        // topが0以上の場合は、その要素の高さを反映
-        offset += mobileHeaderMenuButtons.offsetHeight;
-      } else {
-        // topが0未満の場合は、0pxとして扱う（offsetは変更しない）
-        // 必要に応じて、ここで追加の処理を行う
+        // topが0以上（表示中）の場合は、sticky用オフセットに高さを反映
+        offset += height;
       }
+      // 本文余白用には高さのみを常時設定する。
+      // スクロールで隠れている最中（topが負）でも高さは変わらないため、
+      // 位置(top)に依存せず余白が安定する。
+      document.documentElement.style.setProperty(
+        '--cocoon--mobile-header-menu-buttons--height',
+        height + 'px'
+      );
     }
 
     document.documentElement.style.setProperty(
@@ -317,7 +327,22 @@
     );
   }
 
-  document.addEventListener( 'DOMContentLoaded', updateHeaderOffset );
+  function initHeaderOffset() {
+    updateHeaderOffset();
+
+    // モバイルヘッダーボタンのサイズ変化（遅延表示・ラベルの折り返し）を監視する。
+    // スクロールに依存しないため、初期表示時に高さが0pxになる問題を解消できる。
+    const target = document.querySelector( '.mobile-header-menu-buttons' );
+    if ( target && 'ResizeObserver' in window ) {
+      new ResizeObserver( updateHeaderOffset ).observe( target );
+    }
+  }
+
+  if ( document.readyState !== 'loading' ) {
+    initHeaderOffset();
+  } else {
+    document.addEventListener( 'DOMContentLoaded', initHeaderOffset );
+  }
 
   // ブラウザサイズ変更時に更新（リサイズ処理が完了してから実行するため、少し遅延させる）
   let resizeTimer;
@@ -328,7 +353,7 @@
     }, 100 );
   } );
 
-  // スクロール時にも更新（.mobile-header-menu-buttonsのtopが変更される可能性があるため）
+  // スクロール時にも更新（固定ヘッダーの表示切り替えに追従するため）
   window.addEventListener( 'scroll', updateHeaderOffset );
 } )();
 

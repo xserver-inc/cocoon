@@ -138,8 +138,16 @@ if ( !function_exists( 'url_to_external_ogp_blogcard_tag' ) ):
 function url_to_external_ogp_blogcard_tag($url){
   if ( !$url ) return;
   $url = strip_tags($url);//URL
-  if (preg_match('/.+(\.mp3|\.midi|\.mp4|\.mpeg|\.mpg|\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pdf)$/i', $url, $m)) {
-    return;
+  // URLのパス部分から拡張子を取得し、HTMLページ以外のバイナリファイル（動画・音声・画像等）を除外する
+  // wp_parse_url()を使うことで、クエリ文字列(?...)やフラグメント(#...)付きURLでも正しく判定できる
+  $url_path = wp_parse_url($url, PHP_URL_PATH);
+  if ($url_path) {
+    $ext = strtolower(pathinfo($url_path, PATHINFO_EXTENSION));
+    // 拡張子が数字のみ（例: /release-2.0 や /v1.2 のバージョン表記）の場合は本当のファイル拡張子ではないため除外しない
+    // 拡張子があり、かつHTMLページ系の拡張子でない場合はブログカード化しない
+    if ($ext && !ctype_digit($ext) && !in_array($ext, ['html', 'htm', 'xhtml', 'php', 'php5', 'php7', 'phtml', 'asp', 'aspx', 'jsp', 'cgi', 'shtml', 'do'], true)) {
+      return;
+    }
   }
   $url = ampersand_urldecode($url);
   $params = get_url_params($url);

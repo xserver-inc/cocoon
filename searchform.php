@@ -14,9 +14,9 @@ if (isset($_GET['s'])) {
 }
 
 if (!is_amp() || !is_ssl()): ?>
-<form class="search-box input-box" method="get" action="<?php echo home_url('/'); ?>">
+<form class="search-box input-box" method="get" action="<?php echo home_url('/'); ?>" role="search">
 <?php else: ?>
-<form class="amp-form search-box" method="get" action="<?php echo home_url('/'); ?>">
+<form class="amp-form search-box" method="get" action="<?php echo home_url('/'); ?>" role="search">
 <?php endif ?>
   <input type="text" placeholder="<?php _e( 'サイト内を検索', THEME_NAME ) ?>" name="s" class="search-edit" aria-label="input" value="<?php echo esc_attr($s); ?>">
   <button type="submit" class="search-submit" aria-label="button"><span class="fa fa-search" aria-hidden="true"></span></button>
