@@ -11,6 +11,15 @@ img{
   vertical-align: middle;
 }
 
+// WordPress 6.9以降は loading="lazy" の画像に sizes="auto" を自動付与し、
+// 「img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}」
+// というプレースホルダー領域（最大1500px）を確保する。
+// 画像が読み込めない場合この領域が巨大な空白として残るため、高さの予約だけを無効化して暴走を防ぐ。
+// （幅の予約は残すので、正しく読み込める画像のレイアウトずれ対策は維持される）
+img:is([sizes="auto" i], [sizes^="auto," i]){
+  contain-intrinsic-height: 0;
+}
+
 .circle-image img{
   border-radius: 50%;
 }

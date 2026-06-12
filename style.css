@@ -851,6 +851,10 @@ img {
   vertical-align: middle;
 }
 
+img:is([sizes=auto i], [sizes^="auto," i]) {
+  contain-intrinsic-height: 0;
+}
+
 .circle-image img {
   border-radius: 50%;
 }
