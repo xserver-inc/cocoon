@@ -87,6 +87,7 @@
   --cocoon-sns-color: var(--cocoon-text-color);
   --card-ratio: 16/9;
   --cocoon--header-container--position-offset: 0px;
+  --cocoon--mobile-header-menu-buttons--height: 50px;
 }
 
 .faw::before {

@@ -101,6 +101,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --cocoon-sns-color: var(--cocoon-text-color);
   --card-ratio: 16/9;
   --cocoon--header-container--position-offset: 0px;
+  --cocoon--mobile-header-menu-buttons--height: 50px;
 }
 
 .faw::before {
@@ -8192,13 +8193,16 @@ https://codepen.io/nxworld/pen/oLdoWb
   .slicknav_menu {
     display: block;
   }
-  /* モバイルヘッダー高さ分、余白を設ける */
+  /* モバイルヘッダーボタンの実寸高さ分、本文に余白を設ける（スクロール状態に依存しない） */
+  /* 601px〜1023px: アドミンバーは固定（htmlのmargin-topで確保済み）のため、ボタンの高さのみ */
   body:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
-    margin-top: 50px;
+    margin-top: var(--cocoon--mobile-header-menu-buttons--height, 50px);
   }
-  /* adminバーがある場合、その余白分を除いた余白とする */
-  .admin-bar:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
-    margin-top: calc(50px - var(--wp-admin--admin-bar--height));
+  /* 600px以下: アドミンバーが固定されずボタンが画面最上部(top:0)に来るため、バー分を差し引く */
+}
+@media screen and (max-width: 1023px) and (max-width: 600px) {
+  body:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) {
+    margin-top: calc(var(--cocoon--mobile-header-menu-buttons--height, 50px) - var(--wp-admin--admin-bar--height, 0px));
   }
 }
 @media screen and (max-width: 834px) {

@@ -26,7 +26,8 @@
     font-size: 0.8em;
     text-align: center;
   }
-  .card-snippet {
+  // 説明文（card-snippet）はおすすめカードでは非表示にする。
+  .large-thumb-on .card-snippet {
     display: none;
   }
   &.rcs-image-only{
