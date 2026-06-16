@@ -841,7 +841,8 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
 
   // HTTPエラーの処理
   if ($http_code >= 400) {
-    cocoon_product_block_debug_log('search http error: '.$http_code);
+    // 400系の原因切り分けのため、Amazonが返すレスポンス本文も常時記録する（再現困難な間欠エラー対策）
+    cocoon_product_block_debug_log('search http error: '.$http_code.' keyword='.$keyword.' marketplace='.$marketplace.' version='.$version.' body='.substr((string)$res, 0, 1000), 'CreatorsAPI', true);
     if (!$res) {
       return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
     }
