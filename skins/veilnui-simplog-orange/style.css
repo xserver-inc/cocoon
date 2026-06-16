@@ -346,6 +346,14 @@ body {
 #slide-in-sidebar .widget_author_box .author-box .soundcloud-button {
   background-color: var(--cocoon-soundcloud-color);
 }
+#sidebar .widget_author_box .author-box .threads-button,
+#slide-in-sidebar .widget_author_box .author-box .threads-button {
+  background-color: var(--cocoon-threads-color);
+}
+#sidebar .widget_author_box .author-box .reddit-button,
+#slide-in-sidebar .widget_author_box .author-box .reddit-button {
+  background-color: var(--cocoon-reddit-color);
+}
 #sidebar .widget_item_ranking .border-element,
 #slide-in-sidebar .widget_item_ranking .border-element {
   border-radius: 4px;

@@ -71,6 +71,14 @@ function is_bottom_threads_share_button_visible(){
 }
 endif;
 
+//ボトムRedditシェアボタンの表示
+define('OP_BOTTOM_REDDIT_SHARE_BUTTON_VISIBLE', 'bottom_reddit_share_button_visible');
+if ( !function_exists( 'is_bottom_reddit_share_button_visible' ) ):
+function is_bottom_reddit_share_button_visible(){
+  return get_theme_option(OP_BOTTOM_REDDIT_SHARE_BUTTON_VISIBLE, 0);
+}
+endif;
+
 //ボトムはてなブックマークシェアボタンの表示
 define('OP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE', 'bottom_hatebu_share_button_visible');
 if ( !function_exists( 'is_bottom_hatebu_share_button_visible' ) ):

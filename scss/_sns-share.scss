@@ -76,6 +76,10 @@
   --cocoon-sns-color: var(--cocoon-threads-color);
 }
 
+[class*="bc-brand-color"] .reddit-button {
+  --cocoon-sns-color: var(--cocoon-reddit-color);
+}
+
 [class*="bc-brand-color"] .hatebu-button {
   --cocoon-sns-color: var(--cocoon-hatebu-color);
 }

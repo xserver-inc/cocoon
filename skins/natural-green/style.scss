@@ -498,3 +498,36 @@ blockquote::after {
 .bc-brand-color.sns-follow .linkedin-button {
     background-color: #0091dc;
 }
+
+.bc-brand-color.sns-share .threads-button,
+.bc-brand-color.sns-follow .threads-button {
+    background-color: #505050;
+}
+
+.bc-brand-color.sns-share .reddit-button,
+.bc-brand-color.sns-follow .reddit-button {
+    background-color: #f5844e;
+}
+
+.bc-brand-color.sns-share .mastodon-button,
+.bc-brand-color.sns-follow .mastodon-button {
+    background-color: var(--cocoon-mastodon-color);
+}
+
+.bc-brand-color.sns-share .bluesky-button,
+.bc-brand-color.sns-follow .bluesky-button {
+    background-color: var(--cocoon-bluesky-color);
+}
+
+.bc-brand-color.sns-share .misskey-button,
+.bc-brand-color.sns-follow .misskey-button {
+    background-color: var(--cocoon-misskey-color);
+}
+
+.bc-brand-color.sns-follow .instagram-button {
+    background-color: var(--cocoon-instagram-color);
+}
+
+.bc-brand-color.sns-follow .youtube-button {
+    background-color: var(--cocoon-youtube-color);
+}

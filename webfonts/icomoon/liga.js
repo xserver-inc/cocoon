@@ -51,6 +51,8 @@
             'like': '&#xe9da;',
             'heart-broken': '&#xe9db;',
             'heart2': '&#xe9db;',
+            'reddit': '&#xeac6;',
+            'brand61': '&#xeac6;',
           '0': 0
         };
         delete icons['0'];

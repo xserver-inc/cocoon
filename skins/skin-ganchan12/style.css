@@ -617,6 +617,30 @@ body.public-page,.content .main, .navi {
   opacity:1;
 }
 
+.bc-brand-color.sns-share.ss-top .threads-button, .bc-brand-color.sns-share.ss-bottom .threads-button {
+   background-color: #fff;
+   color: var(--cocoon-threads-color);
+  border:solid 2px var(--cocoon-threads-color);
+}
+
+.bc-brand-color.sns-share.ss-top .threads-button:hover, .bc-brand-color.sns-share.ss-bottom .threads-button:hover {
+   background-color: var(--cocoon-threads-color);
+   color: #fff;
+  opacity:1;
+}
+
+.bc-brand-color.sns-share.ss-top .reddit-button, .bc-brand-color.sns-share.ss-bottom .reddit-button {
+   background-color: #fff;
+   color: var(--cocoon-reddit-color);
+  border:solid 2px var(--cocoon-reddit-color);
+}
+
+.bc-brand-color.sns-share.ss-top .reddit-button:hover, .bc-brand-color.sns-share.ss-bottom .reddit-button:hover {
+   background-color: var(--cocoon-reddit-color);
+   color: #fff;
+  opacity:1;
+}
+
 .bc-brand-color.sns-share.ss-top .hatebu-button, .bc-brand-color.sns-share.ss-bottom .hatebu-button {
   background-color: #fff;
    color: var(--cocoon-hatebu-color);
@@ -700,6 +724,62 @@ body.public-page,.content .main, .navi {
    background-color: var(--cocoon-linkedin-color);
 	color: #fff;
 	opacity:1;
+}
+
+.bc-brand-color.sns-share.ss-top .mastodon-button, .bc-brand-color.sns-share.ss-bottom .mastodon-button {
+	background-color: #fff;
+   color: var(--cocoon-mastodon-color);
+	border:solid 2px var(--cocoon-mastodon-color);
+}
+
+.bc-brand-color.sns-share.ss-top .mastodon-button:hover, .bc-brand-color.sns-share.ss-bottom .mastodon-button:hover {
+   background-color: var(--cocoon-mastodon-color);
+	color: #fff;
+	opacity:1;
+}
+
+.bc-brand-color.sns-share.ss-top .bluesky-button, .bc-brand-color.sns-share.ss-bottom .bluesky-button {
+	background-color: #fff;
+   color: var(--cocoon-bluesky-color);
+	border:solid 2px var(--cocoon-bluesky-color);
+}
+
+.bc-brand-color.sns-share.ss-top .bluesky-button:hover, .bc-brand-color.sns-share.ss-bottom .bluesky-button:hover {
+   background-color: var(--cocoon-bluesky-color);
+	color: #fff;
+	opacity:1;
+}
+
+.bc-brand-color.sns-share.ss-top .misskey-button, .bc-brand-color.sns-share.ss-bottom .misskey-button {
+	background-color: #fff;
+   color: var(--cocoon-misskey-color);
+	border:solid 2px var(--cocoon-misskey-color);
+}
+
+.bc-brand-color.sns-share.ss-top .misskey-button:hover, .bc-brand-color.sns-share.ss-bottom .misskey-button:hover {
+   background-color: var(--cocoon-misskey-color);
+	color: #fff;
+	opacity:1;
+}
+
+.bc-brand-color.sns-follow .instagram-button {
+	background-color: var(--cocoon-instagram-color);
+	color: #fff;
+}
+
+.bc-brand-color.sns-follow .youtube-button {
+	background-color: var(--cocoon-youtube-color);
+	color: #fff;
+}
+
+.bc-brand-color.sns-follow .threads-button {
+	background-color: var(--cocoon-threads-color);
+	color: #fff;
+}
+
+.bc-brand-color.sns-follow .reddit-button {
+	background-color: var(--cocoon-reddit-color);
+	color: #fff;
 }
 
 .sns-share a {

@@ -37,6 +37,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <a href="<?php echo esc_url(get_threads_share_url()); ?>" class="sns-button share-button threads-button threads-share-button-sq" target="_blank" title="<?php _e( 'Threadsでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Threadsでシェア', THEME_NAME ) ?>"><span class="social-icon icon-threads"></span><span class="button-caption"><?php _e( 'Threads', THEME_NAME ) ?></span><span class="share-count threads-share-count"><?php echo get_threads_count(); ?></span></a>
     <?php endif; ?>
 
+    <?php if ( is_reddit_share_button_visible($option) )://Redditボタンを表示するか ?>
+      <a href="<?php echo esc_url(get_reddit_share_url()); ?>" class="sns-button share-button reddit-button reddit-share-button-sq" target="_blank" title="<?php _e( 'Redditでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Redditでシェア', THEME_NAME ) ?>"><span class="social-icon icon-reddit"></span><span class="button-caption"><?php _e( 'Reddit', THEME_NAME ) ?></span><span class="share-count reddit-share-count"></span></a>
+    <?php endif; ?>
+
     <?php if ( is_hatebu_share_button_visible($option) )://はてなボタンを表示するか ?>
       <a href="<?php echo esc_url(get_hatebu_share_url()); ?>" class="sns-button share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq" data-hatena-bookmark-layout="simple" target="_blank" title="<?php _e( 'はてブでブックマーク', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'はてブでブックマーク', THEME_NAME ) ?>"><span class="social-icon icon-hatena"></span><span class="button-caption"><?php _e( 'はてブ', THEME_NAME ) ?></span><span class="share-count hatebu-share-count"><?php echo get_hatebu_count(); ?></span></a>
     <?php endif; ?>

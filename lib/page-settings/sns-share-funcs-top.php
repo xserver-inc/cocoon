@@ -75,6 +75,14 @@ function is_top_threads_share_button_visible(){
 }
 endif;
 
+//Redditシェアボタンの表示
+define('OP_TOP_REDDIT_SHARE_BUTTON_VISIBLE', 'top_reddit_share_button_visible');
+if ( !function_exists( 'is_top_reddit_share_button_visible' ) ):
+function is_top_reddit_share_button_visible(){
+  return get_theme_option(OP_TOP_REDDIT_SHARE_BUTTON_VISIBLE, 0);
+}
+endif;
+
 //はてなブックマークシェアボタンの表示
 define('OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE', 'top_hatebu_share_button_visible');
 if ( !function_exists( 'is_top_hatebu_share_button_visible' ) ):
