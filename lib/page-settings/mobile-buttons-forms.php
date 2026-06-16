@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <div class="demo mobile-demo" style="width: 370px;">
-              <iframe id="mobile-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="360" height="640" loading="lazy"></iframe>
+              <iframe id="mobile-demo" class="iframe-demo" src="<?php echo get_cocoon_settings_preview_url('mobile'); ?>" width="360" height="640" loading="lazy"></iframe>
             </div>
           </td>
         </tr>
