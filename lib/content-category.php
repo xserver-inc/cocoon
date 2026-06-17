@@ -87,7 +87,11 @@ function get_the_category_title($cat_id = null, $is_cat_name = true){
   }
   //タイトルが存在しない場合はカテゴリー名を利用する
   if (!$res && $is_cat_name) {
-    $res = get_category($cat_id)->name;
+    $category = get_category($cat_id);
+    //存在しないカテゴリーIDの場合はnullが返るため、正常に取得できたときのみ名前を利用する
+    if ($category && !is_wp_error($category)) {
+      $res = $category->name;
+    }
   }
   return $res;
 }

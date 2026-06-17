@@ -447,7 +447,8 @@ function get_category_meta_keywords(){
   } else {
     $res = single_cat_title('', false);
   }
-  $res = htmlspecialchars($res);
+  //PHP 8.1以降はhtmlspecialchars()にnullを渡すと非推奨警告が出るため、文字列にキャストする
+  $res = htmlspecialchars((string)$res);
   return apply_filters('get_category_meta_keywords', $res);
 }
 endif;
@@ -625,7 +626,8 @@ function get_tag_meta_keywords(){
   } else {
     $res = single_tag_title('', false);
   }
-  $res = htmlspecialchars($res);
+  //PHP 8.1以降はhtmlspecialchars()にnullを渡すと非推奨警告が出るため、文字列にキャストする
+  $res = htmlspecialchars((string)$res);
   return apply_filters('get_tag_meta_keywords', $res);
 }
 endif;
