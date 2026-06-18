@@ -216,8 +216,7 @@ endif;
 //本文中のURLをブログカードタグに変更する
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
-  // ブロックエディターのブログカードブロックは <a href="URL"> URL</a> のように<a>タグ直後に空白が入るため、[ \t]* でその空白を許容する
-  $res = preg_match_all('/^(<p[^>]*?>)?(<a[^>]+?>)?[ \t]*https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?(<\/a>)?(<\/p>)?/im', $the_content, $m);
+  $res = preg_match_all('/^(<p[^>]*?>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?(<\/a>)?(<\/p>)?/im', $the_content, $m);
   //_v($m);
   foreach ($m[0] as $match) {
 
