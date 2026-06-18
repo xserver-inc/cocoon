@@ -67,6 +67,10 @@ class OpenGraphGetter implements Iterator
       'httpversion' => '1.1',
       // gzip, deflate で圧縮されたレスポンスを自動展開する (既定で true のはずだが念のため明示)
       'decompress' => true,
+      // ダウンロードするレスポンスの最大バイト数を制限する（既定は無制限）
+      // OGP情報はHTMLの<head>内（ページ冒頭）にあるため数MBあれば十分で、
+      // 巨大な動画ファイル等を誤ってダウンロードしてもメモリ枯渇（PHP Fatal error）を防げる
+      'limit_response_size' => 3 * MB_IN_BYTES,
     );
     if (is_amazon_site_page($URI)) {
       // Amazon では常に Twitterbot のユーザーエージェントでアクセスする
@@ -106,6 +110,18 @@ class OpenGraphGetter implements Iterator
 
     $response = null;
     if (!is_wp_error( $res ) && $response_code === 200) {
+      // Content-Type が HTML 系以外（動画・音声・画像・PDF 等のバイナリ）の場合は OGP 解析対象外とする
+      // URL の拡張子だけでは判定しきれない「実体がバイナリのページ」をここで確実に弾ける
+      $content_type = wp_remote_retrieve_header( $res, 'content-type' );
+      // 複数 Content-Type ヘッダーが返る稀なケースでは配列になるため、先頭要素を採用する
+      if ( is_array( $content_type ) ) {
+        $content_type = reset( $content_type );
+      }
+      // 'html' を含めば text/html・application/xhtml+xml の両方にマッチする
+      // Content-Type が空の場合は判定できないので、従来どおり解析を試みる
+      if ( $content_type && stripos( $content_type, 'html' ) === false ) {
+        return false;
+      }
       $response = $res['body'];
     } else if (!is_admin()) {
       // wp_remote_get が WP_Error を返した場合（タイムアウト・DNS解決失敗・接続拒否等）は
@@ -222,7 +238,7 @@ class OpenGraphGetter implements Iterator
                     "//img[@itemprop='image']",
                     "//img[contains(@src, 'image.rakuten.co.jp') or contains(@src, 'tshop.r10s.jp') or contains(@src, 'thumbnail.image.rakuten.co.jp')]"
                 );
-                
+
                 foreach ($queries as $query) {
                     $elements = $domxpath->query($query);
                     if ($elements && $elements->length > 0) {
@@ -282,7 +298,7 @@ class OpenGraphGetter implements Iterator
         if (is_amazon_site_page($URI)) {
             // 汎用的なAmazonロゴが取得されている場合は無効化し、商品画像の再探索を許可する
             $has_valid_image = isset($page->_values['image']) && !preg_match('/(?:amazon_logo|amazon-icon|no-image)/i', $page->_values['image']);
-            
+
             if (!$has_valid_image) {
                 // XPathが未初期化の場合は初期化
                 if (!isset($domxpath)) {
@@ -312,7 +328,7 @@ class OpenGraphGetter implements Iterator
                         if ($img instanceof DOMElement) {
                             // 高解像度画像属性を優先確認
                             $amazon_img_src = $img->getAttribute('data-old-hires');
-                            
+
                             // 動的画像プロパティ (JSON) を確認
                             if (!$amazon_img_src) {
                                 $dynamic_img = $img->getAttribute('data-a-dynamic-image');
@@ -325,7 +341,7 @@ class OpenGraphGetter implements Iterator
                                     }
                                 }
                             }
-                            
+
                             // 通常のsrc属性へのフォールバック（遅延ロード用のbase64の場合は除外）
                             if (!$amazon_img_src) {
                                 $src_attr = $img->getAttribute('src');
@@ -336,7 +352,7 @@ class OpenGraphGetter implements Iterator
                         }
                     }
                 }
-                
+
                 // 取得したURLを格納（エスケープせず生URLを保持）
                 if ($amazon_img_src) {
                     $page->_values['image'] = $amazon_img_src;

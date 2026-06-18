@@ -138,14 +138,28 @@ if ( !function_exists( 'url_to_external_ogp_blogcard_tag' ) ):
 function url_to_external_ogp_blogcard_tag($url){
   if ( !$url ) return;
   $url = strip_tags($url);//URL
-  // URLのパス部分から拡張子を取得し、HTMLページ以外のバイナリファイル（動画・音声・画像等）を除外する
+  // URLのパス部分から拡張子を取得し、HTMLページではないことが明らかなバイナリファイル（動画・音声・画像・書庫等）を除外する
   // wp_parse_url()を使うことで、クエリ文字列(?...)やフラグメント(#...)付きURLでも正しく判定できる
+  // 注意: ホワイトリスト方式（HTMLページ系の拡張子のみ許可）にすると、GitHub等のソースコード表示ページ
+  //       （例: .../style.css や .../main.js は中身がHTML）まで弾いてしまうため、ブラックリスト方式を採用する
+  //       拡張子だけでは判定しきれないバイナリは、OGP取得時のContent-Type判定とダウンロードサイズ上限（open-graph.php）で別途防御する
   $url_path = wp_parse_url($url, PHP_URL_PATH);
   if ($url_path) {
     $ext = strtolower(pathinfo($url_path, PATHINFO_EXTENSION));
-    // 拡張子が数字のみ（例: /release-2.0 や /v1.2 のバージョン表記）の場合は本当のファイル拡張子ではないため除外しない
-    // 拡張子があり、かつHTMLページ系の拡張子でない場合はブログカード化しない
-    if ($ext && !ctype_digit($ext) && !in_array($ext, ['html', 'htm', 'xhtml', 'php', 'php5', 'php7', 'phtml', 'asp', 'aspx', 'jsp', 'cgi', 'shtml', 'do'], true)) {
+    // 明確に非HTMLなバイナリ拡張子の一覧（動画・音声・画像・ドキュメント・書庫・実行ファイル等）
+    $non_html_exts = array(
+      // 動画
+      'mp4', 'm4v', 'mov', 'avi', 'wmv', 'flv', 'mkv', 'webm', 'mpeg', 'mpg', 'mpe', 'ogv', '3gp', '3g2', 'm2ts',
+      // 音声
+      'mp3', 'wav', 'ogg', 'oga', 'm4a', 'aac', 'flac', 'wma', 'opus', 'mid', 'midi',
+      // 画像
+      'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'svg', 'ico', 'tif', 'tiff', 'avif', 'heic', 'heif', 'psd',
+      // ドキュメント・書庫・実行ファイル等
+      'pdf', 'zip', 'rar', '7z', 'tar', 'gz', 'bz2', 'xz', 'iso', 'dmg', 'exe', 'msi', 'apk',
+      'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx',
+    );
+    // 明確なバイナリ拡張子の場合のみブログカード化を中止する（それ以外はContent-Type判定に委ねる）
+    if ($ext && in_array($ext, $non_html_exts, true)) {
       return;
     }
   }
