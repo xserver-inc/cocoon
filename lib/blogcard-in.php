@@ -151,11 +151,13 @@ function url_to_internal_blogcard_tag($url){
     }
   }
   //タイトルのフック
-  $title = apply_filters('cocoon_blogcard_title',$title);
-  $title = apply_filters('cocoon_internal_blogcard_title',$title);
+  // 第2引数に内部URL($url)を渡すことで、フック側でどのブログカードかを判別可能に（外部カードとフックの引数を統一）
+  $title = apply_filters('cocoon_blogcard_title',$title, $url);
+  $title = apply_filters('cocoon_internal_blogcard_title',$title, $url);
   //スニペットのフック
-  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
-  $snippet = apply_filters( 'cocoon_internal_blogcard_snippet', $snippet );
+  // 第2引数に内部URL($url)を渡すことで、フック側でどのブログカードかを判別可能に（外部カードとフックの引数を統一）
+  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet, $url );
+  $snippet = apply_filters( 'cocoon_internal_blogcard_snippet', $snippet, $url );
 
   //サムネイルが存在しない場合
   if ( !$thumbnail ) {
