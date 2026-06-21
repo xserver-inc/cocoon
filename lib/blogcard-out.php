@@ -306,7 +306,8 @@ function url_to_external_ogp_blogcard_tag($url){
 
   //サムネイルを取得できた場合
   $thumbnail = '';
-  $image = apply_filters('get_external_blogcard_thumbnail_url', $image);
+  // 第2引数に元の外部URL($url)を渡すことで、フック側でどのブログカードかを判別して画像を出し分け可能に
+  $image = apply_filters('get_external_blogcard_thumbnail_url', $image, $url);
   if ( $image ) {
     $thumbnail = get_original_image_tag($image, THUMB160WIDTH, THUMB160HEIGHT, 'blogcard-thumb-image external-blogcard-thumb-image');
   }
