@@ -268,6 +268,7 @@ function url_to_external_ogp_blogcard_tag($url){
   }
   //タイトルのフック
   // 第2引数に元の外部URL($url)を渡すことで、フック側でどのブログカードかを判別可能に
+  // ※ $url は ampersand_urldecode() でデコード済み、かつ ?title= 等のCocoon独自パラメータを含む場合があるため、完全一致比較より strpos() 等での部分一致判定を推奨
   $title = apply_filters('cocoon_blogcard_title',$title, $url);
   $title = apply_filters('cocoon_external_blogcard_title',$title, $url);
 
@@ -280,6 +281,7 @@ function url_to_external_ogp_blogcard_tag($url){
     $snippet = $user_snippet;
   }
   // 第2引数に元の外部URL($url)を渡すことで、フック側でどのブログカードかを判別可能に
+  // ※ $url はデコード済み・Cocoon独自パラメータを含む場合がある（上記タイトルフックの注記参照）
   $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet, $url );
   $snippet = apply_filters( 'cocoon_external_blogcard_snippet', $snippet, $url );
 
@@ -309,6 +311,7 @@ function url_to_external_ogp_blogcard_tag($url){
   //サムネイルを取得できた場合
   $thumbnail = '';
   // 第2引数に元の外部URL($url)を渡すことで、フック側でどのブログカードかを判別して画像を出し分け可能に
+  // ※ $url はデコード済み・Cocoon独自パラメータを含む場合がある（上記タイトルフックの注記参照）
   $image = apply_filters('get_external_blogcard_thumbnail_url', $image, $url);
   if ( $image ) {
     $thumbnail = get_original_image_tag($image, THUMB160WIDTH, THUMB160HEIGHT, 'blogcard-thumb-image external-blogcard-thumb-image');
