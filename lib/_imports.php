@@ -144,6 +144,7 @@ if (apply_filters('cocoon_youtube_speed_up_enable', false)) {
 }
 require_once abspath(__FILE__).'font-awesome.php'; //Font Awesome
 require_once abspath(__FILE__).'admin.php'; //管理者機能
+require_once abspath(__FILE__).'settings-preview.php'; //テーマ設定画面の軽量プレビュー
 if ( function_exists( 'register_block_style' ) && is_block_editor_style_block_option_visible() && is_gutenberg_editor_enable() ){
   // require_once abspath(__FILE__).'block-editor-styles-paragraph.php'; //ブロックエディタースタイル（段落）
   // require_once abspath(__FILE__).'block-editor-styles-list.php'; //ブロックエディタースタイル（リスト）
