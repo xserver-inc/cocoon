@@ -267,8 +267,9 @@ function url_to_external_ogp_blogcard_tag($url){
     $title = $user_title;
   }
   //タイトルのフック
-  $title = apply_filters('cocoon_blogcard_title',$title);
-  $title = apply_filters('cocoon_external_blogcard_title',$title);
+  // 第2引数に元の外部URL($url)を渡すことで、フック側でどのブログカードかを判別可能に
+  $title = apply_filters('cocoon_blogcard_title',$title, $url);
+  $title = apply_filters('cocoon_external_blogcard_title',$title, $url);
 
 
   $image = strip_tags($image);
@@ -278,8 +279,9 @@ function url_to_external_ogp_blogcard_tag($url){
   if ($user_snippet) {
     $snippet = $user_snippet;
   }
-  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
-  $snippet = apply_filters( 'cocoon_external_blogcard_snippet', $snippet );
+  // 第2引数に元の外部URL($url)を渡すことで、フック側でどのブログカードかを判別可能に
+  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet, $url );
+  $snippet = apply_filters( 'cocoon_external_blogcard_snippet', $snippet, $url );
 
   //新しいタブで開く場合
   $target = is_external_blogcard_target_blank() ? ' target="_blank"' : '';
