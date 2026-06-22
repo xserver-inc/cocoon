@@ -372,7 +372,7 @@ function skin_mobile_nav_css() {
 			background-image: none;
 			border: none;
 			border-radius: 0;
-			width: 100%;
+			width: 50%;
 			margin: 0;
 		}
 	}
