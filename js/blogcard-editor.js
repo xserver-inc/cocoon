@@ -332,6 +332,14 @@
         // 3. WordPressコアが知っているエンベッド対象かどうか（embedブロックのみ保持）
         var isKnownProvider = isEmbed ? !! ( block.attributes && block.attributes.providerNameSlug ) : false;
 
+        // 4. WordPressサイトの汎用埋め込み（type: "wp-embed"）かどうか
+        // YouTube/X等のリッチ埋め込み（video/rich/photo）と区別する。
+        // wp-embedはoEmbedに成功してもフロントではブログカード化されるため、エディターでも合わせる。
+        var embedType = ( block.attributes && block.attributes.type )
+          || ( preview && preview.type )
+          || '';
+        var isWpEmbed = isEmbed && embedType === 'wp-embed';
+
         // 設定の状態を取得
         var isInternalActive = typeof cocoonBlogcardSettings !== 'undefined' ? cocoonBlogcardSettings.isInternalActive : true;
         var isExternalActive = typeof cocoonBlogcardSettings !== 'undefined' ? cocoonBlogcardSettings.isExternalActive : true;
@@ -342,6 +350,12 @@
         if ( isInternal ) {
           // 自サイトのURLは、プレビューの成否に関わらず内部ブログカード化（設定が有効な場合のみ）
           if ( isInternalActive ) {
+            shouldConvertToBlogcard = true;
+          }
+        } else if ( isWpEmbed ) {
+          // 外部のWordPressサイト埋め込みは、oEmbed成功時でもフロントでブログカード化される。
+          // エディターの表示をフロントに一致させるため、外部ブログカードが有効なら変換する。
+          if ( isExternalActive ) {
             shouldConvertToBlogcard = true;
           }
         } else if ( isFailed && ! isKnownProvider ) {
