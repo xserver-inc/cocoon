@@ -435,7 +435,7 @@ div:not(list-columns) .list:after {
 }
 
 /* モバイル */
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 1023px) {
 
 	#navi .navi-in > .menu-mobile {
 		padding-top: .2em;

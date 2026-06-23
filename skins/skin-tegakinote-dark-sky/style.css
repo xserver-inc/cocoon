@@ -472,7 +472,7 @@ ul .item-label:hover, ul .sub-menu .item-label:hover{
 }
 
 /* モバイル */
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 1023px) {
 
 	#navi .navi-in > .menu-mobile {
 		padding-top: .2em;

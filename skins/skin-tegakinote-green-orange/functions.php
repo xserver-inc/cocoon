@@ -21,8 +21,14 @@ add_action('get_template_part_tmp/css-custom','css_custom');
 function css_custom() {
 	$content_color = get_site_background_color() ?: '#f0f0e8';
 	echo '
-	.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons, #navi .navi-in > .menu-mobile li {
+	.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons {
 		background-color: '.$content_color.';
+	}
+
+	@media screen and (max-width: 1023px) {
+		#navi .navi-in > .menu-mobile li {
+			background-color: '.$content_color.';
+		}
 	}
 
 	.single .main, .page .main, .error404 .main, .list {
@@ -180,9 +186,15 @@ add_action( 'wp_head', 'bg_image_css');
 function bg_image_css() {
 	$style_template = '
 		<style>
-			.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons, #navi .navi-in > .menu-mobile li {
-				background-image: %s;
-				background-size: %s;
+			.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons {
+				background-image: %1$s;
+				background-size: %2$s;
+			}
+			@media screen and (max-width: 1023px) {
+				#navi .navi-in > .menu-mobile li {
+					background-image: %1$s;
+					background-size: %2$s;
+				}
 			}
 		</style>
 	';
@@ -345,7 +357,7 @@ function skin_global_nav_settings($wp_customize) {
 		'skin_mobile_nav_uncardify',
 		array(
 			'label' => 'グローバルナビ色を設定したらカード装飾を解除',
-			'description' => 'チェックを入れると、グローバルナビの色（背景色・文字色）を設定した際に、スマホのカード型メニューを通常表示に切り替えます（文字が見えなくなるのを防ぎます）。カード型を維持したい場合はチェックを外してください。<br>※ この設定はカスタマイザーのプレビューにはリアルタイムで反映されません。「公開」ボタンを押した後、実際のスマートフォンでご確認ください。',
+			'description' => 'チェックを入れると、グローバルナビの色（背景色・文字色）を設定した際に、スマホのカード型メニューを通常表示に切り替えます（文字が見えなくなるのを防ぎます）。カード型を維持したい場合はチェックを外してください。',
 			'setting' => 'skin_mobile_nav_uncardify',
 			'section' => 'skin_global_nav_section',
 			'type' => 'checkbox',
@@ -366,7 +378,7 @@ function skin_mobile_nav_css() {
 	// 解除チェックON（デフォルトON）かつ色設定ありのときだけ
 	if ( get_theme_mod('skin_mobile_nav_uncardify', '1') && $nav_color_set ) {
 		echo '<style>
-	@media screen and (max-width: 834px) {
+	@media screen and (max-width: 1023px) {
 		body #navi .navi-in > .menu-mobile li {
 			background-color: transparent;
 			background-image: none;
