@@ -3,10 +3,10 @@
   Skin Name: てがきノート(ダークスカイ)
   Description: アナログな手書き風をイメージした少し抜けのあるスキンです。
   Skin URI: https://usort.jp/cocoon/
-  Author: ゆうそうと
+  Author: ゆーそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-dark-sky.jpg
-  Version: 1.0.7.9
+  Version: 1.0.7.10
   Priority: 9140005000
 */
 
@@ -472,7 +472,7 @@ ul .item-label:hover, ul .sub-menu .item-label:hover{
 }
 
 /* モバイル */
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 1023px) {
 
 	#navi .navi-in > .menu-mobile {
 		padding-top: .2em;

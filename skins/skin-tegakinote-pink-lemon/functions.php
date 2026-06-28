@@ -21,8 +21,14 @@ add_action('get_template_part_tmp/css-custom','css_custom');
 function css_custom() {
 	$content_color = get_site_background_color() ?: '#f0eee8';
 	echo '
-	.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons, #navi .navi-in > .menu-mobile li {
+	.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons {
 		background-color: '.$content_color.';
+	}
+
+	@media screen and (max-width: 1023px) {
+		#navi .navi-in > .menu-mobile li {
+			background-color: '.$content_color.';
+		}
 	}
 
 	.single .main, .page .main, .error404 .main, .list {
@@ -180,9 +186,15 @@ add_action( 'wp_head', 'bg_image_css');
 function bg_image_css() {
 	$style_template = '
 		<style>
-			.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons, #navi .navi-in > .menu-mobile li {
-				background-image: %s;
-				background-size: %s;
+			.container, .sidebar-menu-content, .navi-menu-content, .mobile-menu-buttons {
+				background-image: %1$s;
+				background-size: %2$s;
+			}
+			@media screen and (max-width: 1023px) {
+				#navi .navi-in > .menu-mobile li {
+					background-image: %1$s;
+					background-size: %2$s;
+				}
 			}
 		</style>
 	';
@@ -318,3 +330,64 @@ function logo_text_dot_css() {
 	echo sprintf($style_template, $style_value, $style_value, $style_position, $style_position);
 }
 
+
+/*******************************
+* 【スキン】モバイルのグローバルナビ カード装飾の制御
+* グローバルナビの色（背景色・文字色）を設定すると、その色がカード背景や
+* 文字色と干渉してスマホでメニューが見えなくなる場合があるため、
+* 色設定時はカード装飾を解除して通常表示に切り替える（チェックで切替可）。
+*******************************/
+add_action('customize_register', 'skin_global_nav_settings');
+function skin_global_nav_settings($wp_customize) {
+	$wp_customize->add_section(
+		'skin_global_nav_section',
+		array(
+			'title' => '【スキン】グローバルナビ設定',
+			'priority' => 1001,
+		)
+	);
+	$wp_customize->add_setting(
+		'skin_mobile_nav_uncardify',
+		array(
+			'default' => '1',
+			'sanitize_callback' => 'skin_uncardify_sanitize',
+		)
+	);
+	$wp_customize->add_control(
+		'skin_mobile_nav_uncardify',
+		array(
+			'label' => 'グローバルナビ色を設定したらカード装飾を解除',
+			'description' => 'チェックを入れると、グローバルナビの色（背景色・文字色）を設定した際に、スマホのカード型メニューを通常表示に切り替えます（文字が見えなくなるのを防ぎます）。カード型を維持したい場合はチェックを外してください。',
+			'setting' => 'skin_mobile_nav_uncardify',
+			'section' => 'skin_global_nav_section',
+			'type' => 'checkbox',
+		)
+	);
+}
+
+// チェックボックスのサニタイズ
+function skin_uncardify_sanitize($input) {
+	return ($input === '1' || $input === 1 || $input === true) ? '1' : '';
+}
+
+// head内にCSSを追加：条件を満たす時だけカード装飾を解除
+add_action('wp_head', 'skin_mobile_nav_css');
+function skin_mobile_nav_css() {
+	// グローバルナビの色（背景 or 文字）が設定されているか
+	$nav_color_set = get_global_navi_background_color() || get_global_navi_text_color();
+	// 解除チェックON（デフォルトON）かつ色設定ありのときだけ
+	if ( get_theme_mod('skin_mobile_nav_uncardify', '1') && $nav_color_set ) {
+		echo '<style>
+	@media screen and (max-width: 1023px) {
+		body #navi .navi-in > .menu-mobile li {
+			background-color: transparent;
+			background-image: none;
+			border: none;
+			border-radius: 0;
+			width: 50%;
+			margin: 0;
+		}
+	}
+	</style>';
+	}
+}

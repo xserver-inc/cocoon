@@ -3,10 +3,10 @@
   Skin Name: てがきノート(グリーンオレンジ)
   Description: アナログな手書き風をイメージした少し抜けのあるスキンです。
   Skin URI: https://usort.jp/cocoon/
-  Author: ゆうそうと
+  Author: ゆーそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-green-orange.jpg
-  Version: 1.0.7.8
+  Version: 1.0.7.9
   Priority: 9140002000
 */
 
@@ -435,7 +435,7 @@ div:not(list-columns) .list:after {
 }
 
 /* モバイル */
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 1023px) {
 
 	#navi .navi-in > .menu-mobile {
 		padding-top: .2em;
