@@ -12,7 +12,7 @@ import {
   BaseControl,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { ServerSideRender } from '@wordpress/editor';
+import ServerSideRender from '@wordpress/server-side-render';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import classnames from 'classnames';
 

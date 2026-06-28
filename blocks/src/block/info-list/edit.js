@@ -24,7 +24,7 @@ import {
   Disabled,
 } from '@wordpress/components';
 import { Fragment, useState } from '@wordpress/element';
-import { ServerSideRender } from '@wordpress/editor';
+import ServerSideRender from '@wordpress/server-side-render';
 import { useSelect } from '@wordpress/data';
 
 /**
