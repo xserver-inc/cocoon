@@ -8,7 +8,9 @@
 import { THEME_NAME } from '../../helpers';
 
 import { __ } from '@wordpress/i18n';
-const { InnerBlocks, RichText } = wp.editor;
+// wp.editor 経由だと WP7.0 で InnerBlocks/RichText の提供が外れ、
+// deprecated 版 save 評価時にクラッシュするため block-editor から明示 import する。
+import { InnerBlocks, RichText } from '@wordpress/block-editor';
 
 const { Fragment } = wp.element;
 
