@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 import { SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import ServerSideRender from '@wordpress/server-side-render';
+import { ServerSideRender } from '@wordpress/editor';
 import classnames from 'classnames';
 
 export default function edit( props ) {
@@ -23,9 +23,9 @@ export default function edit( props ) {
   let abledDropdownListItemCount = 0;
 
   function getMenuNameFromId( id ) {
-    let name = '';
+    var name = '';
     if ( typeof gbNavMenus !== 'undefined' ) {
-      for ( const menu of gbNavMenus ) {
+      for ( let menu of gbNavMenus ) {
         if ( menu.term_id == id ) {
           name = menu.name;
           break;
@@ -36,7 +36,7 @@ export default function edit( props ) {
   }
 
   function createOptions() {
-    const options = [];
+    var options = [];
     options.push( { value: '-1', label: __( '未選択', THEME_NAME ) } );
     if ( typeof gbNavMenus !== 'undefined' ) {
       gbNavMenus.forEach( ( menu ) => {
@@ -80,20 +80,21 @@ export default function edit( props ) {
       return '';
     }
     return (
-      <div className="cocoon-render-message editor-box-menu-message">
-        { msg }
-      </div>
+      <div class="cocoon-render-message editor-box-menu-message">{ msg }</div>
     );
   };
 
   const getBoxMenuContent = () => {
     if ( id == '-1' ) {
       return getBoxMenuMessage();
+    } else {
+      return (
+        <ServerSideRender block={ props.name } attributes={ attributes } />
+      );
     }
-    return <ServerSideRender block={ props.name } attributes={ attributes } />;
   };
 
-  const options = createOptions();
+  var options = createOptions();
 
   if ( ! isBoxMenuIdExist ) {
     setAttributes( { id: '-1' } );
@@ -116,7 +117,7 @@ export default function edit( props ) {
           }
           options={ options }
           __nextHasNoMarginBottom={ true }
-          __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
+          __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
         />
         { getBoxMenuContent() }
       </div>

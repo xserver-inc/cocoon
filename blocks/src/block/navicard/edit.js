@@ -8,7 +8,7 @@ import {
   __experimentalDivider as Divider,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import ServerSideRender from '@wordpress/server-side-render';
+import { ServerSideRender } from '@wordpress/editor';
 import classnames from 'classnames';
 
 export default function edit( props ) {
