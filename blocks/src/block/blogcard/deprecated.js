@@ -9,7 +9,9 @@ import { THEME_NAME } from '../../helpers';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
-import { InspectorControls } from '@wordpress/block-editor';
+// RichText が未 import だと、後方互換（deprecated）版の save 評価時に
+// 「RichText is not defined」エラーになるため、明示的に読み込む。
+import { RichText, InspectorControls } from '@wordpress/block-editor';
 const { PanelBody, SelectControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 
