@@ -82,6 +82,8 @@ function cocoon_analytics_print_data(){
     'ajax'     => array(
       'url'   => admin_url('admin-ajax.php'),
       'nonce' => wp_create_nonce('cocoon_analytics_layout'),
+      // ライフサイクルデータの非同期取得で使うセキュリティトークン（nonce）を発行します
+      'lifecycle_nonce' => wp_create_nonce('cocoon_analytics_lifecycle'),
     ),
     'i18n'     => array(
       'pv'           => __('PV', THEME_NAME),

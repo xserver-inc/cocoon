@@ -12,3 +12,4 @@ require_once dirname(__FILE__) . '/render-func.php';
 require_once dirname(__FILE__) . '/export-func.php';
 require_once dirname(__FILE__) . '/layout-func.php';
 require_once dirname(__FILE__) . '/enqueue-func.php';
+require_once dirname(__FILE__) . '/ajax-func.php';

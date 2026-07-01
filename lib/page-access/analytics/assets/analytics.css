@@ -562,3 +562,199 @@
   }
   .cocoon-analytics-ranking-pv-num { font-size: 18px; }
 }
+
+/* ==================================================================
+ * ライフサイクルタブ: 左右2カラムレイアウト＆検索・無限スクロール用の追加スタイル
+ * ================================================================== */
+
+/* 左右を並べるためのコンテナ（デスクトップ時は横並び） */
+.cocoon-analytics-lifecycle-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+  align-items: stretch;
+}
+
+/* 左側：検索窓と記事のスクロールリストを収めるサイドバー */
+.lifecycle-sidebar {
+  flex: 0 0 350px;
+  width: 350px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* 検索ボックスのコンテナ */
+.lifecycle-search-box {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+/* 虫眼鏡やクリアボタンが収まる角丸の入力欄 */
+.lifecycle-search-box input[type="text"] {
+  width: 100%;
+  padding: 8px 30px 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* 入力欄にフォーカスした際の美しい光彩（青色） */
+.lifecycle-search-box input[type="text"]:focus {
+  border-color: #2271b1;
+  box-shadow: 0 0 0 1px #2271b1, 0 2px 4px rgba(34, 113, 177, 0.15);
+  outline: none;
+}
+
+/* 検索クリア用の「×」ボタン */
+.clear-search-btn {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.clear-search-btn:hover {
+  color: #333;
+}
+
+/* 縦スクロールが可能な記事リストエリア */
+.lifecycle-posts-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+/* リスト内の個々の記事アイテム（ホバー時に浮き上がるトランジション付き） */
+.lifecycle-post-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.lifecycle-post-item:last-child {
+  border-bottom: none;
+}
+
+/* ホバー時の背景色の変更 */
+.lifecycle-post-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* 選択（クリック）されている記事の青い強調表示 */
+.lifecycle-post-item.is-active {
+  background-color: #f0f7fc;
+  border-left-color: #2271b1;
+}
+
+/* 記事のタイトル（長文は2行に省略して3点リーダー表示） */
+.lifecycle-post-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d2327;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 投稿日とPV数を左右に配置するメタ情報 */
+.lifecycle-post-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #72777d;
+}
+
+.lifecycle-post-pv {
+  font-weight: 600;
+  color: #2271b1;
+}
+
+/* リストの一番下に表示されるローディング領域 */
+.lifecycle-loader {
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  text-align: center;
+}
+
+/* 右側：グラフを表示するメインエリア */
+.lifecycle-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.lifecycle-content h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: #1d2327;
+}
+
+.lifecycle-chart-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0;
+  min-height: 450px;
+}
+
+/* 記事が未選択の際の中央プレースホルダー */
+.lifecycle-chart-placeholder {
+  text-align: center;
+  color: #646970;
+  padding: 40px;
+}
+
+/* プレースホルダーのグラフアイコンにゆっくり明滅するアニメーションを適用 */
+.placeholder-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.lifecycle-chart-placeholder p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ゆっくり点滅するアニメーション */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+/* 画面幅が960px以下（タブレット・モバイル）の場合は縦並びに自動変換します */
+@media screen and (max-width: 960px) {
+  .cocoon-analytics-lifecycle-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .lifecycle-sidebar {
+    width: 100%;
+    flex: none;
+    height: 350px;
+  }
+  .lifecycle-chart-card {
+    min-height: 350px;
+  }
+}

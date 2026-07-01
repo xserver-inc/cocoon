@@ -488,6 +488,7 @@ function cocoon_analytics_posts_table($from, $to, $args = array()){
     'max_pv' => -1,
     'per_page' => 50,
     'page' => 1,
+    's' => '', // 検索キーワード（デフォルトは空）
   );
   $args = array_merge($defaults, $args);
   return cocoon_analytics_cached(array('posts_table', $from, $to, $args), function() use ($from, $to, $args){
@@ -505,6 +506,10 @@ function cocoon_analytics_posts_table($from, $to, $args = array()){
     $p2 = $in['args'];
     if ((int) $args['author'] > 0) {
       $where_parts[] = 'p.post_author = ' . (int) $args['author'];
+    }
+    // 検索キーワードが指定されている場合は、記事タイトルをあいまい検索する条件を追加します
+    if (!empty($args['s'])) {
+      $where_parts[] = $wpdb->prepare("p.post_title LIKE %s", '%' . $wpdb->esc_like($args['s']) . '%');
     }
     $join2 = '';
     if ((int) $args['category'] > 0) {

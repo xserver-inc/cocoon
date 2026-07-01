@@ -401,31 +401,53 @@ switch ($view) {
     break;
 
   case 'lifecycle':
+    // 遷移パラメータから投稿IDを取得します（ない場合は0）
     $post_id = isset($_GET['post_id']) ? (int) $_GET['post_id'] : 0;
-    ?>
-    <form method="get" class="cocoon-analytics-filter-bar">
-      <input type="hidden" name="page" value="theme-access">
-      <input type="hidden" name="view" value="lifecycle">
-      <label><?php _e('投稿ID:', THEME_NAME); ?>
-        <input type="number" name="post_id" value="<?php echo esc_attr($post_id); ?>" min="0" style="width:120px;">
-      </label>
-      <?php submit_button(__('表示', THEME_NAME), 'secondary', '', false); ?>
-      <span class="description"><?php _e('記事別タブの各行「ライフサイクル」リンクからも遷移できます。', THEME_NAME); ?></span>
-    </form>
-    <?php
+    $initial_lifecycle = array();
+    $initial_title = '';
+    // 投稿IDが指定されている場合は、初期グラフ表示用のデータを読み込みます
     if ($post_id > 0) {
-      $rows = cocoon_analytics_lifecycle($post_id);
-      $title = get_the_title($post_id);
-      echo '<h3>' . esc_html($title ?: '(' . __('不明', THEME_NAME) . ')') . '</h3>';
-      if (empty($rows)) {
-        cocoon_analytics_render_empty_notice();
-      } else {
-        echo '<div class="cocoon-analytics-card"><canvas id="cocoon-analytics-lifecycle" role="img"></canvas></div>';
-        $GLOBALS['cocoon_analytics_chart_data'] = array('lifecycle' => $rows);
-      }
-    } else {
-      echo '<p>' . esc_html__('投稿IDを指定してください。', THEME_NAME) . '</p>';
+      $initial_lifecycle = cocoon_analytics_lifecycle($post_id);
+      $initial_title = get_the_title($post_id) ?: '(' . __('不明', THEME_NAME) . ')';
+      $GLOBALS['cocoon_analytics_chart_data'] = array('lifecycle' => $initial_lifecycle);
     }
+    ?>
+    <!-- ライフサイクル画面のメインコンテナ。初期投稿IDをデータ属性として保持させます -->
+    <div class="cocoon-analytics-lifecycle-container" data-initial-post-id="<?php echo esc_attr($post_id); ?>">
+      <!-- 左側カラム: キーワード検索ボックスとスクロール可能な記事リスト -->
+      <div class="lifecycle-sidebar">
+        <div class="lifecycle-search-box">
+          <input type="text" id="lifecycle-search-input" placeholder="<?php esc_attr_e('記事タイトルで検索...', THEME_NAME); ?>" autocomplete="off">
+          <span class="clear-search-btn" id="clear-search-btn" style="display:none;">&times;</span>
+        </div>
+        <div id="lifecycle-posts-list" class="lifecycle-posts-list">
+          <!-- JavaScriptによってここに記事カードが追加されていきます -->
+        </div>
+        <!-- 読み込み中を示すスピナー（初期状態は非表示） -->
+        <div id="lifecycle-list-loader" class="lifecycle-loader" style="display:none;">
+          <span class="spinner is-active" style="float:none; margin:10px auto; display:block;"></span>
+        </div>
+      </div>
+
+      <!-- 右側カラム: 選択された記事のアクセス推移グラフ -->
+      <div class="lifecycle-content">
+        <h3 id="lifecycle-chart-title">
+          <?php echo $initial_title ? esc_html($initial_title) : esc_html__('記事を選択してください', THEME_NAME); ?>
+        </h3>
+        <div class="cocoon-analytics-card lifecycle-chart-card">
+          <!-- 記事が選択されていないときに表示するメッセージエリア -->
+          <div id="lifecycle-chart-placeholder" class="lifecycle-chart-placeholder" style="<?php echo $post_id > 0 ? 'display:none;' : ''; ?>">
+            <div class="placeholder-icon">📈</div>
+            <p><?php _e('左側のリストから記事を選択すると、公開後のアクセス推移グラフが表示されます。', THEME_NAME); ?></p>
+          </div>
+          <!-- グラフを描画するためのキャンバス領域 -->
+          <div id="lifecycle-chart-wrapper" style="<?php echo $post_id > 0 ? '' : 'display:none;'; ?> height: 400px; position: relative;">
+            <canvas id="cocoon-analytics-lifecycle" role="img"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php
     break;
 
   case 'export':
